@@ -1,0 +1,23 @@
+{
+  "shiurId": "en-emunah-en-17",
+  "kind": "extraction",
+  "x": {
+    "file": "out/pilot/en-emunah-en-17/judge-ext-so-X.json",
+    "counts": { "claimsChecked": 16, "unsupported": 1, "hallucinated": 0, "termsChecked": 10, "termErrors": 0, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 3, "boundariesBad": 2, "titleSummaryMismatch": 0,
+      "yiddishSentencesChecked": 10, "yiddishBadSentences": 3, "yiddishNotFromShiur": 1, "sourcesChecked": 12, "sourceErrors": 1, "sourcesMissed": 1,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "sources[4] gives 'Rashi, Bereishis 22:1' for nisayon = raising like a nes (segs 223-226); that drash is Bereishis Rabbah 55:1, not Rashi there (wrong ref); insights[1] sharpens seg 281 'it wasn't just a matter of sacrificing his son' into 'the difficulty was not the sacrifice itself' (unsupported); boundary 4|5 at seg 400|401 cuts mid-sentence ('a child who learns chumash knows the teretz because / when it was after the Akedah'), separating the setup at 394-400 from Rashi's answer; boundary 5|6 at 543|544 splits the Ramban citation (539-543) from its content (544-547); Yiddish: 'די מעדיע און די פובליקאציעס' (takeaways[1]), 'ער איז ארויס אן אז אפילו זיינע קליידער זאלן ווערן באשעדיגט' (stories[0]), abstract clause missing its verb; seg 4 'zocher bris Avraham v'akeidas Yitzchak' (Zichronos) not in sources. Otherwise the sources are thorough and correct (Megillah 13b, Bamidbar 23:19, Bereishis 21:12, Rashi 22:12, Yirmiyahu 31:2, Bamidbar 15:41, Bereishis 22:16-18)"
+  },
+  "y": {
+    "file": "out/pilot/en-emunah-en-17/judge-ext-so-Y.json",
+    "counts": { "claimsChecked": 16, "unsupported": 0, "hallucinated": 0, "termsChecked": 10, "termErrors": 0, "termsCopiedGarbled": 1,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 3, "boundariesBad": 1, "titleSummaryMismatch": 0,
+      "yiddishSentencesChecked": 10, "yiddishBadSentences": 7, "yiddishNotFromShiur": 3, "sourcesChecked": 13, "sourceErrors": 0, "sourcesMissed": 5,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "Boundary 4|5 at seg 613|614 falls in the middle of the Ramban application ('until they'll be complete / we Yidin did go through', segs 604-628); sources[] misses the Mishnah on the ten tests (seg 36), the Midrash 'please pass this test' (43), Haggadah 'Baruch HaMakom' (254), Bereishis 22:1 'v'haElokim nisa' (453-456) and Bereishis 13:2 (591-592), and the Rashi and Gemara entries have no refs; Yiddish is weak: YIVO/nikud forms 'פרימאָרגן', 'הייַנט', 'פײַנדלעכער'; 'נאך א ארומגעגאנגענער וועגן פורים' is ungrammatical; 'קען זיך נישט אליין געמאכט'; 'פארוואונדערונג' (astonishment) is used for confusion; English calques 'מיט די ציין און נעגל' (tooth and nail), 'זיך געשטעלט פאר' (introduced himself), 'געלאזט פילן ווי פרעמד'; questions[2].yi 'אין זיין אדר' renders Zayin Adar as 'his Adar' (garbled)"
+  },
+  "winner": "x",
+  "margin": "slight",
+  "rationale": "Neither side has hallucinations or rule violations, and both cover the single catalog topic. At tier 2 Y is slightly cleaner: X has 1 unsupported sharpening and 1 wrong source ref, while Y has none. At tier 3 X is ahead: it has 2 bad boundaries and misses 1 source, against Y's 1 bad boundary and 5 missed sources. Y's sources are also far less specific. At tier 4 X is clearly better: 3 bad Yiddish sentences out of 10, against 7 out of 10 for Y, whose Yiddish has YIVO spellings, calques and ungrammatical sentences. That gives X a slight overall edge."
+}

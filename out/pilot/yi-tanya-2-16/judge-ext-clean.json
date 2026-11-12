@@ -1,0 +1,23 @@
+{
+  "shiurId": "yi-tanya-2-16",
+  "kind": "extraction",
+  "x": {
+    "file": "out/pilot/yi-tanya-2-16/judge-ext-clean-X.json",
+    "counts": { "claimsChecked": 13, "unsupported": 0, "hallucinated": 0, "termsChecked": 11, "termErrors": 0, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 3, "boundariesBad": 1, "titleSummaryMismatch": 0,
+      "yiddishSentencesChecked": 10, "yiddishBadSentences": 2, "yiddishNotFromShiur": 1, "sourcesChecked": 4, "sourceErrors": 0, "sourcesMissed": 1,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "boundary 49|50 cuts mid-thought: seg 50 continues the 'thinking oneself nothing -> shiflus' line begun in seg 47-49; keyPoints[0].yi 'די אבייט מיטן יצר' (misspelled ארבעט); insights[0].yi 'אזוי אז דאס אנגיין דערמיט מיינט עס צובריכן' is translationese; misses the Yeshaya reference (seg 56); good recoveries: עצבות from 'עצות' (seg 50), David HaMelech from 'וויד מלך' (seg 41), sitra achra no longer pushing him from davening (seg 52)"
+  },
+  "y": {
+    "file": "out/pilot/yi-tanya-2-16/judge-ext-clean-Y.json",
+    "counts": { "claimsChecked": 13, "unsupported": 1, "hallucinated": 0, "termsChecked": 10, "termErrors": 0, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 3, "boundariesBad": 1, "titleSummaryMismatch": 0,
+      "yiddishSentencesChecked": 10, "yiddishBadSentences": 2, "yiddishNotFromShiur": 1, "sourcesChecked": 4, "sourceErrors": 1, "sourcesMissed": 2,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "insights[4] makes thinking oneself nothing the 'sign' of being credited in heaven, but seg 47 ties the sign to his inability to daven (misreading, unsupported); sources[2] Chabad tzaddikim 'tracht gut' marked resolved with work/ref null; David as baal teshuvah (seg 28) not listed in sources; Yeshaya ref (seg 56) missed; boundary 57|58 splits 'the whole existence is nothing' (segs 57-58) across sections; Yiddish 'שטארק צובראכן' for garbled audio and 'וואס ער זאגט אז איז עפעס א מציאות' clumsy; good: Chabad recovered from 'חב''ק' (seg 45), קדושה from 'גדושה'"
+  },
+  "winner": "x",
+  "margin": "slight",
+  "rationale": "The two are close and neither hallucinates. Y has one unsupported claim (insights[4] misreads seg 47) and one source error (a source marked resolved with no work identified), and it misses one more source than X (David as baal teshuvah, seg 28). Boundaries, catalog coverage and Yiddish quality are about even. That gives X a slight edge in tier 2."
+}
