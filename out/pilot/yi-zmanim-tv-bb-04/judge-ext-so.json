@@ -1,0 +1,23 @@
+{
+  "shiurId": "yi-zmanim-tv-bb-04",
+  "kind": "extraction",
+  "x": {
+    "file": "out/pilot/yi-zmanim-tv-bb-04/judge-ext-so-X.json",
+    "counts": { "claimsChecked": 17, "unsupported": 1, "hallucinated": 0, "termsChecked": 10, "termErrors": 0, "termsCopiedGarbled": 0,
+      "catalogTopics": 3, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 3, "boundariesBad": 0, "titleSummaryMismatch": 0,
+      "yiddishSentencesChecked": 9, "yiddishBadSentences": 2, "yiddishNotFromShiur": 1, "sourcesChecked": 12, "sourceErrors": 0, "sourcesMissed": 1,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "sections[3] 'including his zivug' sharpens seg 20 ('דעם חברות'), mild overstatement; insights[4].yi 'חמשה עשר באב פייערט דאס' is a calque of 'celebrates'; sections[0].yi 'שילדערט' Germanized; Avraham's naming of the place (seg 35, Bereishis 22:14) not listed separately; otherwise strong recoveries (Chiddushei HaRim seg 4, Chizkiyahu from 'יחזקאל המלך' seg 8, Av-lion Pesikta and future Yom Tov seg 28-29, night/day question seg 34)"
+  },
+  "y": {
+    "file": "out/pilot/yi-zmanim-tv-bb-04/judge-ext-so-Y.json",
+    "counts": { "claimsChecked": 16, "unsupported": 1, "hallucinated": 0, "termsChecked": 10, "termErrors": 1, "termsCopiedGarbled": 0,
+      "catalogTopics": 3, "catalogTopicsMissed": 2, "contradictsExtraction": null, "boundariesChecked": 3, "boundariesBad": 3, "titleSummaryMismatch": 1,
+      "yiddishSentencesChecked": 9, "yiddishBadSentences": 4, "yiddishNotFromShiur": 2, "sourcesChecked": 15, "sourceErrors": 0, "sourcesMissed": 6,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "abstract and rec2 sections[5] title frame the second recording as 'why Moshiach has not yet come', but segs 0-2 are about the many answers to the Gemara on TBA (unsupported framing, title mismatch); catalog parts 'zman shel shidduchim' (segs 7,12) and 'seven days after the future great Yom Tov of Tisha B'Av' (segs 28-29) never mentioned; concepts lists 'בני ויאלה' (= bnei be'ulah, the contrast) as heardAs of בני שוממה; boundaries rec1 12|13 cut mid-pasuk, 28|29 split the Av-lion Pesikta, rec2 8|9 split the Arizal story; sources omit dabru al lev (seg 4), Mishnah Taanis 4:8 (segs 6-7), Taanis 31a sun weakening (seg 11), Av-lion Pesikta (seg 28), mishenichnas Av / Eichah (seg 31), nachamu ami (seg 32); Chiddushei HaRim left unresolved; Yiddish 'אומריס', 'אין האפענונג', 'מער שטארק חשוב', 'שטעלט פאר ... ווי' are Germanized/translationese"
+  },
+  "winner": "x",
+  "margin": "clear",
+  "rationale": "Neither side has hallucinations and each has one unsupported claim. X is better in tier 2: Y has a term error (בני ויאלה listed as bnei shomemah), and X has none. Across tier 3, Y misses two of the three catalog elements (shidduchim and the seven days after the future Yom Tov of Tisha B'Av), has 3 bad boundaries in 3 checked against X's 0, and misses about 6 clear sources against X's 1. Y's Yiddish is also weaker (4 of 9 sentences bad, against 2 of 9 for X)."
+}

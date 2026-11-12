@@ -1,0 +1,23 @@
+{
+  "shiurId": "yi-simchos-unc-bar-mitzvah-04",
+  "kind": "extraction",
+  "x": {
+    "file": "out/pilot/yi-simchos-unc-bar-mitzvah-04/judge-ext-clean-X.json",
+    "counts": { "claimsChecked": 12, "unsupported": 1, "hallucinated": 0, "termsChecked": 8, "termErrors": 0, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 1, "boundariesBad": 0, "titleSummaryMismatch": 0,
+      "yiddishSentencesChecked": 9, "yiddishBadSentences": 1, "yiddishNotFromShiur": 2, "sourcesChecked": 4, "sourceErrors": 0, "sourcesMissed": 3,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "insights[2] says Shabbos and weekday tefillin 'each carry their own aspect of renewal'; seg 12 ties renewal to Shabbos and kabbalas ol to the weekday, so this overstates it (unsupported); speakers Shem MiShmuel (segs 0, 5) and Avnei Nezer (segs 1, 3-4) not named or listed as sources; the Achashverosh-feast setting of the Megilla midrash (segs 1-2) is left vague, though sources[2] captures it as a Midrash; Kadesh li kol bechor, the tefillin parsha (seg 8), is missed; only one internal boundary (5|6), and the turn to bar mitzvah falls mid-seg 6, within slack; concepts recovers 'אור מלכות שמים' as קבלת עול מלכות שמים (good)"
+  },
+  "y": {
+    "file": "out/pilot/yi-simchos-unc-bar-mitzvah-04/judge-ext-clean-Y.json",
+    "counts": { "claimsChecked": 12, "unsupported": 2, "hallucinated": 0, "termsChecked": 8, "termErrors": 0, "termsCopiedGarbled": 3,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 0, "boundariesBad": 0, "titleSummaryMismatch": 0,
+      "yiddishSentencesChecked": 9, "yiddishBadSentences": 3, "yiddishNotFromShiur": 2, "sourcesChecked": 3, "sourceErrors": 0, "sourcesMissed": 5,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "summary.oneLiner says Pharaoh seized the renewal of milah and Shabbos; in segs 1-4 the Shabbos oneg is taken in the Megilla/Achashverosh midrash, not by Pharaoh (unsupported conflation); abstract says he 'connects it to' Shabbos without the separate midrash (vague); garbled 'ניניון' copied into the yi of keyPoints[2], insights[2] and the abstract, along with the misspelling 'עבדת השם'; concepts keeps the garbled 'אור מלכות שמים' instead of recovering עול; misses the Gemara on tefillin (seg 10), the Megilla midrash (segs 1-2), Shem MiShmuel, Avnei Nezer and Kadesh li kol bechor (seg 8); a single section covers 0-16, which is within target but gives no boundaries to check"
+  },
+  "winner": "x",
+  "margin": "slight",
+  "rationale": "Neither side hallucinates. Y has 2 unsupported claims to X's 1, the worst being the oneLiner that makes Pharaoh seize the renewal of Shabbos as well as milah. X lists more of the citations (the Megilla midrash and the Gemara on tefillin): it misses 3 to Y's 5. X's Yiddish is cleaner: Y copies the garbled 'ניניון' and 'עבדת השם' into its prose, and X recovers עול מלכות שמים where Y does not. The differences are tier 2-4 and small, so the margin is slight."
+}

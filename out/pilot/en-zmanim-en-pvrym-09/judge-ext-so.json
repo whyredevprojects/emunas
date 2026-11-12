@@ -1,0 +1,23 @@
+{
+  "shiurId": "en-zmanim-en-pvrym-09",
+  "kind": "extraction",
+  "x": {
+    "file": "out/pilot/en-zmanim-en-pvrym-09/judge-ext-so-X.json",
+    "counts": { "claimsChecked": 13, "unsupported": 0, "hallucinated": 0, "termsChecked": 10, "termErrors": 1, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 3, "boundariesBad": 1, "titleSummaryMismatch": 0,
+      "yiddishSentencesChecked": 10, "yiddishBadSentences": 4, "yiddishNotFromShiur": 2, "sourcesChecked": 12, "sourceErrors": 0, "sourcesMissed": 5,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "concepts: 'Anani Kavit' (segs 509-515, ananei hakavod/clouds of glory) folded into כסא הכבוד (term error); sources[] misses Rashi 'bishvil Yisrael shenikre'u reishis' (406-407), Megillah 6b mismach geulah l'geulah (585-595), Moshe niftar 7 Adar (535-536), Rashi on the mekallel/stale bread (658-676), last words 'l'einei kol Yisrael' (533); 'Apsadzika Coyen'/'Siddhartha Kayin' (48, 626) left as 'a Rebbe' though R' Tzadok HaKohen was recoverable; boundary 229|230 splits the Lechem HaPanim pasuk (212-229) from its Adar point (230); Yiddish: 'צייטלן' for ציילן (questions[1]), 'ווייטסטנס' (oneLiner), 'פלעסער האלץ ... מילס ... קאנטראקט ... דאטום' (stories[0]), 'זיך אזוי באצויגן'; Megillah > Toras Moshe claim (40-47) omitted from intro"
+  },
+  "y": {
+    "file": "out/pilot/en-zmanim-en-pvrym-09/judge-ext-so-Y.json",
+    "counts": { "claimsChecked": 13, "unsupported": 1, "hallucinated": 0, "termsChecked": 12, "termErrors": 0, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 3, "boundariesBad": 0, "titleSummaryMismatch": 0,
+      "yiddishSentencesChecked": 10, "yiddishBadSentences": 3, "yiddishNotFromShiur": 2, "sourcesChecked": 12, "sourceErrors": 0, "sourcesMissed": 1,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "sections[6] states 'Memuchan ... is Haman' but segs 843-850 are blank fragments ('he's the one who is'); filled in from Megillah 12b (unsupported); sources[0] 'Chesam Saifa' marked inferred with null work, attribution of the Megillah>Toras Moshe line uncertain in garbled 15-47; Yiddish: 'פליטן פון בוידעם' (stories[0], בוידעם = attic, wrong word), 'ווונטש'/'הויכקייט' (sections[6]), 'צונויפגעשמאלצן' Germanized; strong recoveries: R' Tzadok HaKohen (48, 626), Ba'al HaTanya/Mezritcher Maggid (162-164), ענני הכבוד/נחשלים (508-510), Megillah 6b, Rashi Bereishis 1:1, Tikkunei Zohar, Rashi Vayikra 24:10 all correct"
+  },
+  "winner": "y",
+  "margin": "slight",
+  "rationale": "Neither side has hallucinations or rule violations. Tier 2 is roughly even: X makes one term error (Anani Kavit read as Kisei HaKavod) and Y has one unsupported claim (Memuchan is Haman, filled in where the transcript is blank). Y does better in tier 3. It misses about 1 clear citation against X's 5, and X's 229|230 cut splits the pasuk from its point, a weakness Y's boundaries avoid. Y also recovers names and sources correctly where X leaves them unresolved, and its Yiddish has slightly fewer bad sentences."
+}
