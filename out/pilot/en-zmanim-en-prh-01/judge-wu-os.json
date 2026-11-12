@@ -1,0 +1,23 @@
+{
+  "shiurId": "en-zmanim-en-prh-01",
+  "kind": "writeup",
+  "x": {
+    "file": "out/pilot/en-zmanim-en-prh-01/judge-wu-os-X.json",
+    "counts": { "claimsChecked": 14, "unsupported": 0, "hallucinated": 0, "termsChecked": 10, "termErrors": 1, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": 0, "boundariesChecked": null, "boundariesBad": null, "titleSummaryMismatch": null,
+      "yiddishSentencesChecked": 10, "yiddishBadSentences": 4, "yiddishNotFromShiur": 2, "sourcesChecked": 9, "sourceErrors": 2, "sourcesMissed": null,
+      "flowBreaks": 0, "paddingSentences": 0, "missingBlocks": 0, "ruleViolations": 0 },
+    "notes": "en[10] 'The Rav brings the Arizal': seg 1020 'Arachayim Akadosh brings it down from the Meqabalim' is the Ohr HaChaim HaKadosh, not the Arizal (wrong source, inherited from extraction); en[1] says 'the Zohar and Likutei Moharan call Parshas Parah a continuation of Purim', but seg 102 'Zara Kaidish' is the sefer Zera Kodesh, not the Zohar; yi[0] Daytshmerish 'וועמענס אש', 'מיט אויפמערקזאמקייט'; yi[5] translationese 'א הויכע אמביציע האט זיי געכאפט'; yi[9] typo 'דרייי שעה'; Yiddish follows English sentence by sentence"
+  },
+  "y": {
+    "file": "out/pilot/en-zmanim-en-prh-01/judge-wu-os-Y.json",
+    "counts": { "claimsChecked": 14, "unsupported": 0, "hallucinated": 0, "termsChecked": 10, "termErrors": 0, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": 0, "boundariesChecked": null, "boundariesBad": null, "titleSummaryMismatch": null,
+      "yiddishSentencesChecked": 10, "yiddishBadSentences": 2, "yiddishNotFromShiur": 2, "sourcesChecked": 12, "sourceErrors": 0, "sourcesMissed": null,
+      "flowBreaks": 0, "paddingSentences": 0, "missingBlocks": 0, "ruleViolations": 0 },
+    "notes": "en[10] cites 'the mekubalim' (seg 1021) and avoids the extraction's wrong Arizal attribution; en[1] does not name the Zohar; recovers 'a guy' as a gentile (segs 955, 959) and the Shemoneh Esrei bracha of da'as (segs 532-540); yi[8] ungrammatical doubled verb 'און דערפאר זענען אנטוישטע אידן זענען געגאנגען'; yi[1] stiff 'אזוי ווי דער פסוק הייסט מיט א טמא'; Yiddish closely mirrors the English sentence by sentence; en[9] ends on a bare 'Why?', terse but it carries the argument into en[10]"
+  },
+  "winner": "y",
+  "margin": "clear",
+  "rationale": "Neither side has hallucinated or unsupported claims in 14 sampled claims each, and both cover the single catalog topic and every extraction section. X names two wrong sources: the Arizal for the Ohr HaChaim's teaching at seg 1020, and the Zohar for 'Zara Kaidish' at seg 102. Y names neither and attributes both correctly or neutrally, so Y has 0 source errors to X's 2. Y's Yiddish also has fewer bad sentences (2 vs 4), though both are close renderings of the English."
+}

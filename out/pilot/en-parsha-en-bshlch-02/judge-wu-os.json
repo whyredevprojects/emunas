@@ -1,0 +1,23 @@
+{
+  "shiurId": "en-parsha-en-bshlch-02",
+  "kind": "writeup",
+  "x": {
+    "file": "out/pilot/en-parsha-en-bshlch-02/judge-wu-os-X.json",
+    "counts": { "claimsChecked": 16, "unsupported": 2, "hallucinated": 0, "termsChecked": 11, "termErrors": 0, "termsCopiedGarbled": 1,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": 0, "boundariesChecked": null, "boundariesBad": null, "titleSummaryMismatch": null,
+      "yiddishSentencesChecked": 10, "yiddishBadSentences": 5, "yiddishNotFromShiur": 3, "sourcesChecked": 12, "sourceErrors": 0, "sourcesMissed": null,
+      "flowBreaks": 1, "paddingSentences": 0, "missingBlocks": 0, "ruleViolations": 0 },
+    "notes": "en[1].paragraphs[1] 'belief in Isaiah's words' copies the garbled 'what Isaiah says' (seg 185) and ties it to Shirah, which segs 181-187 do not do (unsupported, garbled term); yi[0].paragraphs[1] says fasting 'מאנטאג און דינסטאג' (Monday and Tuesday) where seg 31 and the English say Monday and Thursday; en[3].paragraphs[1] says he 'returns to Miriam's reply' but never says what she answered (segs 620-638), so the Midrash question from section 2 is never resolved (flow break); kasha custom mentioned without its reason (segs 947-949); yi Germanisms and calques: 'אן אפשטערונג', 'קאנצענטרירונג', 'געוווינהייט', 'ער זעט עס דורכאויס', 'באזירט אויפן מדרש'; the Yiddish follows the English sentence by sentence"
+  },
+  "y": {
+    "file": "out/pilot/en-parsha-en-bshlch-02/judge-wu-os-Y.json",
+    "counts": { "claimsChecked": 15, "unsupported": 1, "hallucinated": 0, "termsChecked": 10, "termErrors": 0, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": 0, "boundariesChecked": null, "boundariesBad": null, "titleSummaryMismatch": null,
+      "yiddishSentencesChecked": 10, "yiddishBadSentences": 3, "yiddishNotFromShiur": 2, "sourcesChecked": 11, "sourceErrors": 0, "sourcesMissed": null,
+      "flowBreaks": 0, "paddingSentences": 0, "missingBlocks": 0, "ruleViolations": 0 },
+    "notes": "en[0].paragraphs[0] says the Zohar promises forgiveness of sins; that is at segs 66-69, not at cited seg 2 (bad evidence); good recoveries: Amen Yehei Shmei Rabba 'tears up a harsh decree' (seg 170), 'until sunset' (seg 908), kasha as 'kushya'/doubt (segs 947-949), Miriam's actual answer (seg 636); yi: 'ווערט אים מוחל זיינע עבירות' is ungrammatical, 'צווייטראנגיק' is Germanized, and yi[1] 'ווי טייערע רפואות קעגן א סגולה..., ערקלערט דער משגיח, פאדערט' carries English syntax; the Yiddish still mirrors the English structure"
+  },
+  "winner": "y",
+  "margin": "slight",
+  "rationale": "Neither side has hallucinations, rule violations or contradictions of the extraction, so tier 1 does not separate them. X has 2 unsupported claims to Y's 1: it copies the garbled 'Isaiah' into its prose, and its Yiddish turns Thursday into Tuesday. X also has a flow break: it never gives Miriam's answer, which is the point of the Midrash. Y keeps the argument whole and recovers more terms correctly. Y's Yiddish also has fewer bad sentences (3 vs 5)."
+}
