@@ -1,0 +1,23 @@
+{
+  "shiurId": "yi-parshas-hashavua-svldvs-07",
+  "kind": "writeup",
+  "x": {
+    "file": "out/pilot/yi-parshas-hashavua-svldvs-07/judge-wu-os-X.json",
+    "counts": { "claimsChecked": 14, "unsupported": 1, "hallucinated": 0, "termsChecked": 10, "termErrors": 2, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": 0, "boundariesChecked": null, "boundariesBad": null, "titleSummaryMismatch": null,
+      "yiddishSentencesChecked": 10, "yiddishBadSentences": 3, "yiddishNotFromShiur": 2, "sourcesChecked": 8, "sourceErrors": 0, "sourcesMissed": null,
+      "flowBreaks": 0, "paddingSentences": 0, "missingBlocks": 0, "ruleViolations": 0 },
+    "notes": "en[1] names the Bnei Yissaschar, but segs 19-20 point to the Levushei Serad / Arvei Nachal author who lived in Tzfas (error inherited from the extraction); en[1] 'a chassid brought him' where seg 21 says a balebos (minor sharpening); yi[2].paragraphs[1] 'בינדלעך' for beans (seg 43 בינס), plus calque 'מיט די ווערטער'; yi[5].paragraphs[1] 'שילדערט' is Germanized; it correctly recovers mumar (segs 47-48), Rivkah shechting at home and Esav bringing it (segs 56-58), and the one day Yaakov brought it while Esav's food tasted of issur (segs 62-66); en[4] closes the Midrash question with the Eretz Yisrael produce (segs 74-76)"
+  },
+  "y": {
+    "file": "out/pilot/yi-parshas-hashavua-svldvs-07/judge-wu-os-Y.json",
+    "counts": { "claimsChecked": 13, "unsupported": 2, "hallucinated": 0, "termsChecked": 9, "termErrors": 1, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": 0, "boundariesChecked": null, "boundariesBad": null, "titleSummaryMismatch": null,
+      "yiddishSentencesChecked": 10, "yiddishBadSentences": 4, "yiddishNotFromShiur": 3, "sourcesChecked": 6, "sourceErrors": 0, "sourcesMissed": null,
+      "flowBreaks": 3, "paddingSentences": 1, "missingBlocks": 0, "ruleViolations": 0 },
+    "notes": "en[3].paragraphs[0] answers 'how could Yitzchak eat Esav's food' with 'Rivkah prepared and Yaakov brought it'. In segs 56-60 Rivkah prepares it and Esav brings it; Yaakov comes in only on the day of the brachos (seg 63) (unsupported, breaks the argument); en[3].paragraphs[1] gives 'a hidden tzaddik is greater' with no link to Yitzchak thinking Esav was one (seg 60); en[4] 'by which Yaakov's food led Yitzchak toward holiness' garbles segs 74-76 and never closes the Midrash question from en[2]; en[1] Bnei Yissaschar should be the Levushei Serad (segs 19-20); yi Daytshmerish/translationese: 'אין אנבעטראכט עשוס אויפפירונג', 'ווערן באאיינפלוסט', 'דורך וועלכע', 'ווען דער רשע זאגט' (for 'while')"
+  },
+  "winner": "x",
+  "margin": "clear",
+  "rationale": "Neither side has a hallucination or a rule violation. Y has 2 unsupported claims against X's 1, and Y has 3 flow breaks against X's 0. The worst is that Y misstates the central answer: it says Yaakov brought the food that Yitzchak ate, and it never ties the Eretz Yisrael produce back to the Midrash question. X follows the Rav's argument step by step: mumar shechitah, Rivkah preparing the food, Esav taken for a tzaddik nistar, and the day Yaakov brought it. X has one more term error (בינדלעך), and its Yiddish is slightly better."
+}
