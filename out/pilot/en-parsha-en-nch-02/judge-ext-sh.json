@@ -1,0 +1,23 @@
+{
+  "shiurId": "en-parsha-en-nch-02",
+  "kind": "extraction",
+  "x": {
+    "file": "out/pilot/en-parsha-en-nch-02/judge-ext-sh-X.json",
+    "counts": { "claimsChecked": 16, "unsupported": 2, "hallucinated": 0, "termsChecked": 12, "termErrors": 1, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 3, "boundariesBad": 2, "titleSummaryMismatch": 0,
+      "yiddishSentencesChecked": 10, "yiddishBadSentences": 4, "yiddishNotFromShiur": 2, "sourcesChecked": 12, "sourceErrors": 1, "sourcesMissed": 6,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "keyPoints[1] and abstract say 'Adam's sin gave man control over the world'; segs 176-186 say Adam is by nature the nefesh chaya of the world, the sin only misused that control (unsupported x2); sources[17] and the concept list read 'Zoharim' (seg 583) as the Zohar; it is Zichronos of Rosh Hashanah Musaf (term + source error); boundary 526|527 splits the lion's attack (segs 525-530) across two sections; boundary 88|89 cuts the nisim/lion question mid-thought; missed sources: Or HaChaim (434), Bereishis 9:20 (455), Rashi on the rain (747-757), Bereishis 7:23 'Ach Noach' (540), Chafetz Chaim (898/910), Ramban on the world before the mabul (164); Yiddish Daytshmerish: 'שיקסאל-יאר', 'באפעלקערונג', 'ענטגעגנגעזעצטער', 'אטמאספערע'"
+  },
+  "y": {
+    "file": "out/pilot/en-parsha-en-nch-02/judge-ext-sh-Y.json",
+    "counts": { "claimsChecked": 16, "unsupported": 0, "hallucinated": 0, "termsChecked": 12, "termErrors": 0, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 3, "boundariesBad": 0, "titleSummaryMismatch": 0,
+      "yiddishSentencesChecked": 10, "yiddishBadSentences": 6, "yiddishNotFromShiur": 2, "sourcesChecked": 12, "sourceErrors": 1, "sourcesMissed": 3,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "sources[9] labels the Bechukosai passuk 'vehishbati chayah ra'ah' (segs 280-284) as Toras Kohanim; it is Vayikra 26:6 (source error); missed sources: Tehillim 8:7 (625-626), Bereishis 16:12 pere adam (896-902), Bereishis 6:7 (7); Yiddish uses YIVO nikud 'ײַ' throughout ('זײַן', 'הײַנט'), plus typos and garbles: 'אפעטן' for אפענדערן, 'פארבשטימט', 'רייען', 'א הילכות כותרת' for 'headline', 'געטוישט תשובה'; oneLiner yi is a run-on, not grammatical"
+  },
+  "winner": "y",
+  "margin": "clear",
+  "rationale": "Neither side has hallucinations. In tier 2 X has 2 unsupported claims (Adam's sin 'gave' man control), 1 term error and 1 source error (Zoharim read as the Zohar instead of Zichronos). Y has 0 unsupported claims and one source error (Toras Kohanim). In tier 3 X has 2 of 3 sampled boundaries bad (the lion-attack split at 526|527) and misses about 6 sources, against 0 bad boundaries and 3 missed for Y. Y's Yiddish is weaker (nikud, typos), but that is tier 4 and does not outweigh the rest."
+}
