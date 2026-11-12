@@ -1,8 +1,8 @@
-# P4 + P4b: extract a shiur of Harav Moshe Wolfson (prompt v1)
+# P4: extract a shiur of Harav Moshe Wolfson (prompt v2)
 
 You are building the structured record of one Torah shiur (class) given by Harav Moshe Wolfson zt"l, the Mashgiach of Mesivta Torah Vodaath and Rav of Bais Medrash Emunas Yisroel. The shiur is in Yiddish or English. You have two things: this file, and one **input file** containing the shiur's catalog metadata and its machine transcript. You produce one **JSON file** that follows the `Extraction` contract below exactly.
 
-The transcript itself will never be shown to the public. What you write *is* what people will read: chapter markers in the audio player, bilingual summaries, and a long-form write-up that lets someone learn the shiur without listening. It must be faithful to what the Rav actually said, and it must never put words in his mouth.
+The transcript itself will never be shown to the public. What you write *is* what people will read: chapter markers in the audio player, bilingual summaries, sources, insights and stories. It must be faithful to what the Rav actually said, and it must never put words in his mouth. (A long-form write-up is produced later, in a separate pass, on top of your sections and sources. You do **not** write it, but your sections and sources must be accurate enough to build it on.)
 
 **Output:** write ONLY valid JSON (no Markdown fences, no comments, no trailing commas, nothing before or after the object) to the output path given in your task message. Use the `model` and `variant` values given in the task message; if none are given use `"model": "unknown"`, `"variant": "raw"`. Do not write any other files.
 
@@ -39,7 +39,8 @@ recordings (in playback order):
 - Each transcript line is `[recordingId:idx|mm:ss] text`. `idx` is the **segment index within that recording**, starting at 0 for every recording. `mm:ss` is the segment's start time (minutes can exceed 59). A segment lasts until the next segment starts; the last segment lasts until the recording's duration in the header. Segments vary a lot in length: one segment can cover several minutes of audio (often where the ASR skipped or hallucinated).
 - A shiur may have more than one recording (two cassette sides, several tracks). They are listed in playback order.
 - `catalogConfidence: derived guess` means the title was guessed from a file path; use it as a hint only.
-- `targets` gives the allowed number of sections and the write-up length for this shiur. Use them.
+- The input may be a **machine-cleaned** transcript (the task message will say so, and the file is then `input.cleaned.txt`). The format is identical; a correction pass has tried to fix garbled terms line by line. Treat it like any transcript: it can still be wrong, including wrong "corrections", and every rule below still applies.
+- `targets` gives the allowed number of sections for this shiur. Use it. (Its write-up word count is for the later write-up pass; ignore it.)
 - You only ever output **segment indices**, never times. Code converts indices to times. Use the `mm:ss` stamps only to measure durations.
 
 ## 2. The transcript is bad. Recover meaning, don't invent it
@@ -82,7 +83,7 @@ Sections are chapter markers in the player. Each is `{ recordingId, startSeg, en
 - **Subsections** only inside a section longer than **12:00**, and then 2–4 of them, each at least **1:30**, in the same recording, tiling the parent exactly (first subsection starts at the parent's `startSeg`, last ends at its `endSeg`, no gaps or overlaps). Sections of 12:00 or less have `"subsections": []`. Use subsections when a long section has real internal steps (the question, then the sources, then the chiddush), not just to fill the slot.
 - Cut at **turns in the argument**: a new question, a new source, the move to a story, the move to the application. Not at arbitrary time intervals.
 
-**Kinds:** `intro` (opening words, setting the question), `main` (the body of the teaching), `story` (a maaseh is the main content of the stretch), `tangent` (a real digression from the shiur's line), `closing` (summary, final message), `brachah` (blessings, wishes for a simcha, closing tefilah), `singing` (niggun, zemiros), `other_speaker` (someone other than the Rav), `noise` (silence, hallucinated or unusable audio). Most of a shiur is `main`. `singing`, `other_speaker` and `noise` sections are excluded from summaries, key points, insights and the write-up.
+**Kinds:** `intro` (opening words, setting the question), `main` (the body of the teaching), `story` (a maaseh is the main content of the stretch), `tangent` (a real digression from the shiur's line), `closing` (summary, final message), `brachah` (blessings, wishes for a simcha, closing tefilah), `singing` (niggun, zemiros), `other_speaker` (someone other than the Rav), `noise` (silence, hallucinated or unusable audio). Most of a shiur is `main`. `singing`, `other_speaker` and `noise` sections are excluded from summaries, key points and insights (and from the later write-up).
 
 **Titles**: short (2–8 words), specific to what is said in that stretch, in both languages. **Summaries**: 1–3 sentences per language, saying what the Rav does there (asks, brings, explains, concludes), concrete enough that a listener could decide whether to jump to this point.
 
@@ -109,7 +110,7 @@ Good:
 ## 5. The other fields
 
 **Evidence.** Almost every item carries `evidence: { segs, confidence }`. `segs` is a non-empty list of the segment indices where the Rav actually says the thing (1–6 indices, the most direct ones, not a whole range). `confidence` is how sure you are that the item is what he said, given the ASR: 0.9+ clear speech and clear meaning; 0.7–0.85 meaning clear from context despite garbling; 0.6–0.7 plausible reconstruction; below 0.6 you should usually leave the item out (items under 0.6 are hidden anyway).
-**Multi-recording shiurim:** segment indices restart at 0 in each recording, so when the shiur has more than one recording every `evidence` object, and every `questions[]` item, must also carry `"recordingId": "<the recording its segs are in>"`, and all segs of one item must come from that one recording. In a single-recording shiur omit `recordingId` from evidence (it is allowed but not needed). Write-up paragraphs default to the recording of their section.
+**Multi-recording shiurim:** segment indices restart at 0 in each recording, so when the shiur has more than one recording every `evidence` object, and every `questions[]` item, must also carry `"recordingId": "<the recording its segs are in>"`, and all segs of one item must come from that one recording. In a single-recording shiur omit `recordingId` from evidence (it is allowed but not needed).
 
 - `summary.oneLiner`: one sentence per language, the heart of the shiur.
 - `summary.abstract`: 80–150 words per language, the shiur's line of thought in order.
@@ -118,7 +119,7 @@ Good:
 - `stories`: every maaseh he tells, with `title`, a `retelling` (2–6 sentences per language, only details audible in the transcript), and `people` (names in English transliteration, only if recoverable). **Empty is valid.** Never add a story he didn't tell.
 - `questions`: **at most 6** kushya/teretz pairs the Rav himself raises and answers. `questionSegs` and `answerSegs` both non-empty. **Empty is valid.**
 - `takeaways`: **at most 5** practical applications **the Rav himself states** (what to do, how to daven, how to look at something). **Empty is valid**, and better than a takeaway you inferred.
-- `sources`: every sefer, passuk, Chazal, Rishon, Acharon or Rebbe he cites or clearly alludes to. Uncapped, but each must be evidenced.
+- `sources`: every sefer, passuk, Chazal, Rishon, Acharon or Rebbe he cites or clearly alludes to. Uncapped, but each must be evidenced. (The later write-up refers to them by their index in this array.)
   - `heardAs`: the ASR text as it appears (copy the garbled form; short).
   - `work`: canonical English name of the work ("Tanya", "Bereishis", "Bnei Yissaschar", "Gemara Shabbos", "Zohar"), or `null` if only an author is named.
   - `ref`: as precise as the transcript supports ("Tanya ch. 2", "Bereishis 6:9", "Shabbos 156a"), else `null`.
@@ -130,7 +131,7 @@ Good:
 - `people`: people he names (Tanach figures, Chazal, Rishonim, Acharonim, Rebbes, people in stories), English transliteration in `name`, ASR spellings in `heardAs`. Only names you could recover.
 - `asrNotes`: 1–4 sentences in English: how bad the ASR was, which stretches or terms could not be recovered, catalog topics you could not locate, any long hallucinated or silent stretch.
 
-## 6. Language rules (every `Localized` field and the write-up)
+## 6. Language rules (every `Localized` field)
 
 Every `Localized` field is `{ "en": "...", "yi": "..." }`; both are required and non-empty. Do not output `he` in Localized fields.
 
@@ -144,21 +145,7 @@ Every `Localized` field is `{ "en": "...", "yi": "..." }`; both are required and
 8. **No biography, no dates, no occasions** beyond what the header gives or the Rav says in the evidence. Don't call the shiur "a Shabbos shiur", "delivered at a wedding", etc. unless the header or transcript shows it. No claims about the Rav's life, teachers or influence.
 9. Refer to him as "the Rav" in English and "דער משגיח" in Yiddish. Don't add titles or epithets beyond that.
 
-## 7. The write-up (`writeup.en`, `writeup.yi`)
-
-The write-up replaces the hidden transcript: a reader should be able to learn the shiur from it.
-
-- **One block per content section, in section order**: `{ "sectionIndex": <index into sections[]>, "heading": <string or null>, "paragraphs": [...] }`. Every `main` section must have a block in each language. Give blocks to `intro`, `story`, `tangent`, `closing` sections when they have content; a short `brachah` may be skipped. **Never** write a block for `singing`, `other_speaker` or `noise`. `sectionIndex` values strictly increase. `en` and `yi` normally have the same blocks.
-- **Length**: about **400–700 words per hour of audio per language** (the header's `targets` line gives the number for this shiur). Spread it according to content, not time: a dense 10-minute argument may get more than a 15-minute repetition. Yiddish length similar to English.
-- **Follow the Rav's argument as he builds it**: the question → the sources he brings → his chiddush → the story → the application. Keep his order. Make the logical links explicit ("To answer this, the Rav brings…", "From here he explains…").
-- **Paragraphs**: 2–5 sentences each, usually 1–3 per block. Each paragraph has:
-  - `text`: the paragraph, third-person reported speech (section 6).
-  - `sourceIdx`: indices into `sources[]` of every source the paragraph mentions (`[]` if none). Every source named in the paragraph must be in `sources[]` and listed here.
-  - `evidence`: the segments in **this section** (or within a couple of segments of its edges) that support the paragraph, plus confidence.
-- `heading`: the section's title or a short variant in that language, or `null`.
-- Do not pad. If the ASR leaves a section thin, write less and say so in `asrNotes`; do not fill with general Torah thoughts.
-
-## 8. Exact output shape
+## 7. Exact output shape
 
 TypeScript contract (the validator checks every field; no extra fields allowed):
 
@@ -184,14 +171,11 @@ interface Extraction {
   candidateTopics: string[];
   concepts: { he: string; heardAs: string[] }[];
   people: { name: string; heardAs: string[] }[];
-  writeup: { en: WriteupBlock[]; yi: WriteupBlock[] };
   asrNotes: string;
 }
-interface WriteupBlock { sectionIndex: number; heading: string|null;
-  paragraphs: { text: string; sourceIdx: number[]; evidence: Evidence }[] }
 ```
 
-Compact example for a hypothetical single-recording 20-minute shiur (segments 0..95). It is complete in structure and shortened in content: a real output has more items and longer write-up, as the rules above require. Its wording is illustrative, not a model of any real shiur.
+Compact example for a hypothetical single-recording 20-minute shiur (segments 0..95). It is complete in structure and shortened in content: a real output has more items, as the rules above require. Its wording is illustrative, not a model of any real shiur.
 
 ```json
 {
@@ -238,38 +222,23 @@ Compact example for a hypothetical single-recording 20-minute shiur (segments 0.
   "candidateTopics": ["G-dly soul", "Tanya chapter 2", "bond of the soul to its source", "animal soul", "self-worth"],
   "concepts": [ { "he": "נפש השנית", "heardAs": ["Nefesh Hashanah"] } ],
   "people": [ { "name": "the Alter Rebbe", "heardAs": ["Alter Rebbe"] } ],
-  "writeup": {
-    "en": [
-      { "sectionIndex": 0, "heading": "What 'mamash' adds",
-        "paragraphs": [ { "text": "The Rav opens with the Tanya's words in chapter two... (2-5 sentences)", "sourceIdx": [0], "evidence": { "segs": [3, 4, 12], "confidence": 0.8 } } ] },
-      { "sectionIndex": 1, "heading": null, "paragraphs": [ { "text": "...", "sourceIdx": [], "evidence": { "segs": [40, 45], "confidence": 0.75 } } ] },
-      { "sectionIndex": 2, "heading": null, "paragraphs": [ { "text": "...", "sourceIdx": [], "evidence": { "segs": [77, 80], "confidence": 0.7 } } ] }
-    ],
-    "yi": [
-      { "sectionIndex": 0, "heading": "וואס \"ממש\" לייגט צו",
-        "paragraphs": [ { "text": "דער משגיח עפנט מיט די ווערטער פונעם תניא אין פרק ב... (2-5 זאצן)", "sourceIdx": [0], "evidence": { "segs": [3, 4, 12], "confidence": 0.8 } } ] },
-      { "sectionIndex": 1, "heading": null, "paragraphs": [ { "text": "...", "sourceIdx": [], "evidence": { "segs": [40, 45], "confidence": 0.75 } } ] },
-      { "sectionIndex": 2, "heading": null, "paragraphs": [ { "text": "...", "sourceIdx": [], "evidence": { "segs": [77, 80], "confidence": 0.7 } } ] }
-    ]
-  },
   "asrNotes": "Yiddish ASR fair; Tanya quotations badly garbled but recoverable from the perek. Segments 60-63 unintelligible."
 }
 ```
 
-## 9. Procedure
+## 8. Procedure
 
 1. Read the header and the entire transcript.
 2. Locate where each catalog topic starts; note stories, questions, sources and non-speech stretches as you go.
 3. Cut the sections; measure each with the `mm:ss` stamps (≥ 3:00; subsections only in sections > 12:00, 2–4 of them, ≥ 1:30 each); check the count against `targets`.
-4. Fill sources first (so write-up `sourceIdx` can point at them), then summary, key points, insights, stories, questions, takeaways, topics, concepts, people.
-5. Write the write-up, Yiddish and English each from the transcript, section by section.
-6. Self-check before writing the file:
+4. Fill sources, then summary, key points, insights, stories, questions, takeaways, topics, concepts, people.
+5. Self-check before writing the file:
    - [ ] each recording tiled from seg 0 to its last seg, no gaps or overlaps; all segs in range
    - [ ] section count within `targets`; every section ≥ 3:00; subsection rules
    - [ ] keyPoints 3–7, insights 3–7, questions ≤ 6, takeaways ≤ 5, candidateTopics 5–10
    - [ ] every evidence `segs` non-empty; `recordingId` on every evidence and question if > 1 recording
    - [ ] every Localized has `en` and `yi`; `yi` in Hebrew script, Chassidish spelling; `en` has no Hebrew script
    - [ ] third person throughout; no psak, no own advice, no quotes from memory, no biography
-   - [ ] write-up: a block for every main section, `sectionIndex` increasing, no block for singing/noise/other_speaker, length near target, every `sourceIdx` valid
+   - [ ] no `writeup` field (the write-up is a separate pass)
    - [ ] nothing stated that you could not point to in the transcript
-7. Write the JSON object, and only it, to the output path.
+6. Write the JSON object, and only it, to the output path.

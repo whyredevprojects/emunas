@@ -1,13 +1,17 @@
-// Validate P4/P4b extraction outputs against the pilot meta.json.
+// Validate P4 extraction and P4b write-up outputs against the pilot meta.json.
 //
-//   npx tsx scripts/validate.ts out/pilot/<shiurId>/<variant>.json [...] [--meta path] [--quiet]
+//   npx tsx scripts/validate.ts out/pilot/<shiurId>/<file>.json [...] [--meta path] [--quiet]
 //   npx tsx scripts/validate.ts --summary out/pilot/<shiurId>/*.json
 //
+// The kind of each file is detected from its content: an Extraction has `sections`; a Writeup has
+// `extractionVariant` + `en`/`yi`. A write-up is checked against the extraction it references,
+// out/pilot/<shiurId>/<extractionVariant>.json (same directory), which must itself validate.
 // meta.json is taken from the same directory as each file unless --meta is given.
+// Non-output files in the directory (meta.json, input*.txt, judge-*.json) are skipped.
 // Exit code 1 when any file has errors.
 import { existsSync, readFileSync } from "node:fs";
 import { basename, dirname, join } from "node:path";
-import type { Evidence, Extraction, Localized, Section, SegRange } from "../src/types.js";
+import type { Evidence, Extraction, Localized, Section, Writeup } from "../src/types.js";
 import { hebrewRatio, mmss, wordCount, type PilotMeta, type PilotRecordingMeta } from "./lib/pilot.js";
 
 // ---------------- caps & thresholds ----------------
@@ -30,8 +34,11 @@ const EVIDENCE_SLACK_SEGS = 3;    // "near" the section
 const NON_CONTENT_KINDS = new Set(["singing", "noise", "other_speaker"]);
 
 // ---------------- report ----------------
+type Kind = "extraction" | "writeup";
+
 interface Report {
   file: string;
+  kind: Kind | null;
   errors: string[];
   warnings: string[];
   stats: Record<string, number | string>;
@@ -123,61 +130,78 @@ const extractionShape: Check = obj({
   candidateTopics: arr(nonEmptyStr),
   concepts: arr(obj({ he: nonEmptyStr, heardAs: arr(str) })),
   people: arr(obj({ name: nonEmptyStr, heardAs: arr(str) })),
-  writeup: obj({
-    en: arr(obj({ sectionIndex: int, heading: strOrNull, paragraphs: arr(obj({ text: nonEmptyStr, sourceIdx: arr(int), evidence })) })),
-    yi: arr(obj({ sectionIndex: int, heading: strOrNull, paragraphs: arr(obj({ text: nonEmptyStr, sourceIdx: arr(int), evidence })) })),
-  }),
   asrNotes: str,
 });
 
-// ---------------- semantic validation ----------------
-function validateFile(file: string, metaOverride: string | null): Report {
-  const r: Report = { file, errors: [], warnings: [], stats: {} };
-  const err = (m: string) => r.errors.push(m);
-  const warn = (m: string) => r.warnings.push(m);
+const writeupBlock: Check = obj({
+  sectionIndex: int,
+  heading: strOrNull,
+  paragraphs: arr(obj({ text: nonEmptyStr, sourceIdx: arr(int), evidence })),
+});
+const writeupShape: Check = obj({
+  shiurId: nonEmptyStr,
+  model: nonEmptyStr,
+  variant: nonEmptyStr,
+  extractionVariant: nonEmptyStr,
+  en: arr(writeupBlock),
+  yi: arr(writeupBlock),
+});
 
+function detectKind(v: unknown): Kind | null {
+  if (!isObj(v)) return null;
+  if ("extractionVariant" in v || ("en" in v && "yi" in v && !("sections" in v))) return "writeup";
+  if ("sections" in v || "summary" in v) return "extraction";
+  return null;
+}
+
+// ---------------- semantic validation ----------------
+function loadJson(file: string, r: Report): unknown {
+  try {
+    return JSON.parse(readFileSync(file, "utf8"));
+  } catch (e) {
+    r.errors.push(`JSON parse: ${(e as Error).message}`);
+    return undefined;
+  }
+}
+
+function checkShape(shape: Check, data: unknown, r: Report): boolean {
+  const shapeErrs: string[] = [];
+  shape(data, "$", shapeErrs);
+  if (!shapeErrs.length) return true;
+  r.errors.push(...shapeErrs.slice(0, 60));
+  if (shapeErrs.length > 60) r.errors.push(`... ${shapeErrs.length - 60} more shape errors`);
+  return false; // semantic checks assume the shape
+}
+
+function validateFile(file: string, metaOverride: string | null): Report {
+  const r: Report = { file, kind: null, errors: [], warnings: [], stats: {} };
   const metaPath = metaOverride ?? join(dirname(file), "meta.json");
-  if (!existsSync(metaPath)) return err(`meta not found: ${metaPath}`), r;
+  if (!existsSync(metaPath)) return r.errors.push(`meta not found: ${metaPath}`), r;
   const meta = JSON.parse(readFileSync(metaPath, "utf8")) as PilotMeta;
 
-  let data: unknown;
-  try {
-    data = JSON.parse(readFileSync(file, "utf8"));
-  } catch (e) {
-    return err(`JSON parse: ${(e as Error).message}`), r;
+  const data = loadJson(file, r);
+  if (data === undefined) return r;
+  r.kind = detectKind(data);
+  if (r.kind === "extraction") {
+    if (checkShape(extractionShape, data, r)) validateExtraction(data as Extraction, meta, r);
+  } else if (r.kind === "writeup") {
+    if (checkShape(writeupShape, data, r)) validateWriteup(data as Writeup, file, meta, metaOverride, r);
+  } else {
+    r.errors.push("unknown file kind: expected an Extraction (has `sections`) or a Writeup (has `extractionVariant`, `en`, `yi`)");
   }
-  const shapeErrs: string[] = [];
-  extractionShape(data, "$", shapeErrs);
-  if (shapeErrs.length) {
-    r.errors.push(...shapeErrs.slice(0, 60));
-    if (shapeErrs.length > 60) err(`... ${shapeErrs.length - 60} more shape errors`);
-    return r; // semantic checks assume the shape
-  }
-  const x = data as Extraction;
-  r.stats.model = x.model;
-  r.stats.variant = x.variant;
+  return r;
+}
 
-  if (x.shiurId !== meta.shiurId) err(`shiurId "${x.shiurId}" != meta "${meta.shiurId}"`);
-
+/** Helpers shared by the extraction and write-up checks. */
+function context(meta: PilotMeta, r: Report) {
+  const err = (m: string) => r.errors.push(m);
+  const warn = (m: string) => r.warnings.push(m);
   const recs = new Map<string, PilotRecordingMeta>(meta.recordings.map((m) => [m.recording.id, m]));
   const multi = meta.recordings.length > 1;
   const firstRec = meta.recordings[0]!;
   const hours = meta.totalDurationSec / 3600;
-
-  const secOf = (rec: PilotRecordingMeta, a: number, b: number) => (rec.ends[b] ?? 0) - (rec.starts[a] ?? 0);
   const inRange = (rec: PilotRecordingMeta, i: number) => i >= 0 && i < rec.segmentCount;
 
-  // --- localized text
-  const checkLoc = (l: Localized, p: string) => {
-    const yr = hebrewRatio(l.yi);
-    if (yr < YI_HARD_MIN) err(`${p}.yi: only ${(yr * 100).toFixed(0)}% Hebrew script`);
-    else if (yr < YI_MIN_HEBREW) warn(`${p}.yi: only ${(yr * 100).toFixed(0)}% Hebrew script`);
-    const er = hebrewRatio(l.en);
-    if (er > EN_MAX_HEBREW) warn(`${p}.en: ${(er * 100).toFixed(0)}% Hebrew script (transliterate in English)`);
-    if (l.en.trim() === l.yi.trim()) err(`${p}: en and yi are identical`);
-  };
-
-  // --- evidence resolution
   const resolveRec = (rid: string | undefined, p: string): PilotRecordingMeta | null => {
     if (rid === undefined) {
       if (multi) {
@@ -202,6 +226,27 @@ function validateFile(file: string, metaOverride: string | null): Report {
     const rec = ev.recordingId === undefined && defaultRec ? defaultRec : resolveRec(ev.recordingId, p);
     checkSegs(ev.segs, rec, `${p}.segs`);
     return rec;
+  };
+  return { err, warn, recs, multi, firstRec, hours, inRange, resolveRec, checkSegs, checkEvidence };
+}
+
+function validateExtraction(x: Extraction, meta: PilotMeta, r: Report): void {
+  const { err, warn, recs, multi, firstRec, hours, inRange, resolveRec, checkSegs, checkEvidence } = context(meta, r);
+  r.stats.model = x.model;
+  r.stats.variant = x.variant;
+
+  if (x.shiurId !== meta.shiurId) err(`shiurId "${x.shiurId}" != meta "${meta.shiurId}"`);
+
+  const secOf = (rec: PilotRecordingMeta, a: number, b: number) => (rec.ends[b] ?? 0) - (rec.starts[a] ?? 0);
+
+  // --- localized text
+  const checkLoc = (l: Localized, p: string) => {
+    const yr = hebrewRatio(l.yi);
+    if (yr < YI_HARD_MIN) err(`${p}.yi: only ${(yr * 100).toFixed(0)}% Hebrew script`);
+    else if (yr < YI_MIN_HEBREW) warn(`${p}.yi: only ${(yr * 100).toFixed(0)}% Hebrew script`);
+    const er = hebrewRatio(l.en);
+    if (er > EN_MAX_HEBREW) warn(`${p}.en: ${(er * 100).toFixed(0)}% Hebrew script (transliterate in English)`);
+    if (l.en.trim() === l.yi.trim()) err(`${p}: en and yi are identical`);
   };
 
   // --- sections: shape-level per section
@@ -335,63 +380,6 @@ function validateFile(file: string, metaOverride: string | null): Report {
     if (hebrewRatio(c.he) < YI_HARD_MIN) err(`concepts[${i}].he: not Hebrew script`);
   });
 
-  // --- writeup
-  const words: Record<"en" | "yi", number> = { en: 0, yi: 0 };
-  const contentSections = x.sections
-    .map((s, i) => ({ s, i }))
-    .filter(({ s }) => !NON_CONTENT_KINDS.has(s.kind));
-  for (const lang of ["en", "yi"] as const) {
-    const blocks = x.writeup[lang];
-    let prev = -1;
-    const seen = new Set<number>();
-    blocks.forEach((b, bi) => {
-      const p = `writeup.${lang}[${bi}]`;
-      const sec: Section | undefined = x.sections[b.sectionIndex];
-      if (!sec) return void err(`${p}: sectionIndex ${b.sectionIndex} out of range 0..${x.sections.length - 1}`);
-      if (b.sectionIndex <= prev) err(`${p}: sectionIndex ${b.sectionIndex} not increasing (one block per section, in order)`);
-      prev = b.sectionIndex;
-      seen.add(b.sectionIndex);
-      if (NON_CONTENT_KINDS.has(sec.kind)) warn(`${p}: block for a ${sec.kind} section`);
-      if (b.paragraphs.length === 0) err(`${p}: no paragraphs`);
-      if (b.heading !== null) {
-        const hr = hebrewRatio(b.heading);
-        if (lang === "yi" && hr < YI_HARD_MIN) err(`${p}.heading: not Hebrew script`);
-        if (lang === "en" && hr > EN_MAX_HEBREW) warn(`${p}.heading: Hebrew script in English heading`);
-      }
-      const secRec = recs.get(sec.recordingId);
-      b.paragraphs.forEach((para, pi) => {
-        const q = `${p}.paragraphs[${pi}]`;
-        words[lang] += wordCount(para.text);
-        const hr = hebrewRatio(para.text);
-        if (lang === "yi" && hr < YI_HARD_MIN) err(`${q}.text: only ${(hr * 100).toFixed(0)}% Hebrew script`);
-        else if (lang === "yi" && hr < YI_MIN_HEBREW) warn(`${q}.text: only ${(hr * 100).toFixed(0)}% Hebrew script`);
-        if (lang === "en" && hr > EN_MAX_HEBREW) warn(`${q}.text: ${(hr * 100).toFixed(0)}% Hebrew script`);
-        for (const si of para.sourceIdx) if (si < 0 || si >= x.sources.length) err(`${q}.sourceIdx: ${si} out of range 0..${x.sources.length - 1}`);
-        const rec = checkEvidence(para.evidence, `${q}.evidence`, secRec);
-        if (rec && sec && rec.recording.id === sec.recordingId) {
-          const far = para.evidence.segs.filter(
-            (s) => s < sec.startSeg - EVIDENCE_SLACK_SEGS || s > sec.endSeg + EVIDENCE_SLACK_SEGS,
-          );
-          if (far.length) warn(`${q}.evidence: segs ${far.join(",")} outside section ${b.sectionIndex} (${sec.startSeg}..${sec.endSeg})`);
-        } else if (rec && sec) {
-          warn(`${q}.evidence: points into ${rec.recording.id}, section is in ${sec.recordingId}`);
-        }
-      });
-    });
-    for (const { s, i } of contentSections) {
-      if (!seen.has(i) && s.kind === "main") err(`writeup.${lang}: no block for main section ${i} "${s.title.en}"`);
-    }
-    const lo = WRITEUP_WORDS_PER_HOUR.min * hours;
-    const hi = WRITEUP_WORDS_PER_HOUR.max * hours;
-    if (words[lang] < lo * 0.5) err(`writeup.${lang}: ${words[lang]} words, far below ${Math.round(lo)}-${Math.round(hi)} for ${mmss(meta.totalDurationSec)}`);
-    else if (words[lang] < lo * 0.85 || words[lang] > hi * 1.25) warn(`writeup.${lang}: ${words[lang]} words (target ${Math.round(lo)}-${Math.round(hi)})`);
-  }
-  if (x.writeup.en.length !== x.writeup.yi.length) warn(`writeup: ${x.writeup.en.length} en blocks vs ${x.writeup.yi.length} yi blocks`);
-  if (words.en && words.yi) {
-    const ratio = words.yi / words.en;
-    if (ratio < 0.6 || ratio > 1.6) warn(`writeup: yi/en word ratio ${ratio.toFixed(2)} (expected ~0.8-1.2)`);
-  }
-
   // --- evidence near the section for other items (soft): warn on evidence spanning many sections
   const spread = (ev: Evidence, p: string) => {
     const rec = ev.recordingId ? recs.get(ev.recordingId) : multi ? undefined : firstRec;
@@ -426,60 +414,192 @@ function validateFile(file: string, metaOverride: string | null): Report {
     topics: x.candidateTopics.length,
     concepts: x.concepts.length,
     people: x.people.length,
+    meanConf: mean(allConf),
+    catalogCovered: `${covered.size}/${meta.catalogTopics.length}`,
+  });
+}
+
+const mean = (xs: number[]) => (xs.length ? Number((xs.reduce((a, b) => a + b, 0) / xs.length).toFixed(2)) : 0);
+
+function validateWriteup(w: Writeup, file: string, meta: PilotMeta, metaOverride: string | null, r: Report): void {
+  const { err, warn, recs, multi, hours, checkEvidence } = context(meta, r);
+  r.stats.model = w.model;
+  r.stats.variant = w.variant;
+  r.stats.extractionVariant = w.extractionVariant;
+  if (w.shiurId !== meta.shiurId) err(`shiurId "${w.shiurId}" != meta "${meta.shiurId}"`);
+
+  // The write-up indexes into the extraction it was built on; that extraction must exist and validate.
+  const xFile = join(dirname(file), `${w.extractionVariant}.json`);
+  if (!existsSync(xFile)) return void err(`extraction not found: ${xFile} (from extractionVariant "${w.extractionVariant}")`);
+  const xr = validateFile(xFile, metaOverride);
+  if (xr.kind !== "extraction") return void err(`${xFile} is not an extraction`);
+  if (xr.errors.length) return void err(`extraction ${xFile} fails validation (${xr.errors.length} errors); fix it first`);
+  const x = JSON.parse(readFileSync(xFile, "utf8")) as Extraction;
+  if (x.shiurId !== w.shiurId) err(`shiurId "${w.shiurId}" != extraction "${x.shiurId}"`);
+
+  const sourcesUsed = new Set<number>();
+  // --- writeup
+  const words: Record<"en" | "yi", number> = { en: 0, yi: 0 };
+  const contentSections = x.sections
+    .map((s, i) => ({ s, i }))
+    .filter(({ s }) => !NON_CONTENT_KINDS.has(s.kind));
+  for (const lang of ["en", "yi"] as const) {
+    const blocks = w[lang];
+    let prev = -1;
+    const seen = new Set<number>();
+    blocks.forEach((b, bi) => {
+      const p = `writeup.${lang}[${bi}]`;
+      const sec: Section | undefined = x.sections[b.sectionIndex];
+      if (!sec) return void err(`${p}: sectionIndex ${b.sectionIndex} out of range 0..${x.sections.length - 1}`);
+      if (b.sectionIndex <= prev) err(`${p}: sectionIndex ${b.sectionIndex} not increasing (one block per section, in order)`);
+      prev = b.sectionIndex;
+      seen.add(b.sectionIndex);
+      if (NON_CONTENT_KINDS.has(sec.kind)) warn(`${p}: block for a ${sec.kind} section`);
+      if (b.paragraphs.length === 0) err(`${p}: no paragraphs`);
+      if (b.heading !== null) {
+        const hr = hebrewRatio(b.heading);
+        if (lang === "yi" && hr < YI_HARD_MIN) err(`${p}.heading: not Hebrew script`);
+        if (lang === "en" && hr > EN_MAX_HEBREW) warn(`${p}.heading: Hebrew script in English heading`);
+      }
+      const secRec = recs.get(sec.recordingId);
+      b.paragraphs.forEach((para, pi) => {
+        const q = `${p}.paragraphs[${pi}]`;
+        words[lang] += wordCount(para.text);
+        const hr = hebrewRatio(para.text);
+        if (lang === "yi" && hr < YI_HARD_MIN) err(`${q}.text: only ${(hr * 100).toFixed(0)}% Hebrew script`);
+        else if (lang === "yi" && hr < YI_MIN_HEBREW) warn(`${q}.text: only ${(hr * 100).toFixed(0)}% Hebrew script`);
+        if (lang === "en" && hr > EN_MAX_HEBREW) warn(`${q}.text: ${(hr * 100).toFixed(0)}% Hebrew script`);
+        for (const si of para.sourceIdx) if (si < 0 || si >= x.sources.length) err(`${q}.sourceIdx: ${si} out of range 0..${x.sources.length - 1}`);
+        if (multi && para.evidence.recordingId === undefined) warn(`${q}.evidence: no recordingId (multi-recording shiur; defaulting to the section's)`);
+        const rec = checkEvidence(para.evidence, `${q}.evidence`, secRec);
+        if (rec && sec && rec.recording.id === sec.recordingId) {
+          const far = para.evidence.segs.filter(
+            (s) => s < sec.startSeg - EVIDENCE_SLACK_SEGS || s > sec.endSeg + EVIDENCE_SLACK_SEGS,
+          );
+          if (far.length) warn(`${q}.evidence: segs ${far.join(",")} outside section ${b.sectionIndex} (${sec.startSeg}..${sec.endSeg})`);
+        } else if (rec && sec) {
+          warn(`${q}.evidence: points into ${rec.recording.id}, section is in ${sec.recordingId}`);
+        }
+      });
+    });
+    for (const { s, i } of contentSections) {
+      if (!seen.has(i) && s.kind === "main") err(`writeup.${lang}: no block for main section ${i} "${s.title.en}"`);
+    }
+    const lo = WRITEUP_WORDS_PER_HOUR.min * hours;
+    const hi = WRITEUP_WORDS_PER_HOUR.max * hours;
+    if (words[lang] < lo * 0.5) err(`writeup.${lang}: ${words[lang]} words, far below ${Math.round(lo)}-${Math.round(hi)} for ${mmss(meta.totalDurationSec)}`);
+    else if (words[lang] < lo * 0.85 || words[lang] > hi * 1.25) warn(`writeup.${lang}: ${words[lang]} words (target ${Math.round(lo)}-${Math.round(hi)})`);
+  }
+  if (w.en.length !== w.yi.length) warn(`writeup: ${w.en.length} en blocks vs ${w.yi.length} yi blocks`);
+  if (words.en && words.yi) {
+    const ratio = words.yi / words.en;
+    if (ratio < 0.6 || ratio > 1.6) warn(`writeup: yi/en word ratio ${ratio.toFixed(2)} (expected ~0.8-1.2)`);
+  }
+
+  for (const lang of ["en", "yi"] as const) {
+    for (const b of w[lang]) for (const para of b.paragraphs) for (const i of para.sourceIdx) if (i >= 0 && i < x.sources.length) sourcesUsed.add(i);
+  }
+
+  const conf = [...w.en, ...w.yi].flatMap((b) => b.paragraphs.map((p) => p.evidence.confidence));
+  Object.assign(r.stats, {
+    duration: mmss(meta.totalDurationSec),
+    blocksEn: w.en.length,
+    blocksYi: w.yi.length,
+    contentSections: contentSections.length,
+    parasEn: w.en.reduce((a, b) => a + b.paragraphs.length, 0),
+    parasYi: w.yi.reduce((a, b) => a + b.paragraphs.length, 0),
+    sourcesCited: `${sourcesUsed.size}/${x.sources.length}`,
     wordsEn: words.en,
     wordsYi: words.yi,
     wphEn: hours ? Math.round(words.en / hours) : 0,
     wphYi: hours ? Math.round(words.yi / hours) : 0,
-    meanConf: allConf.length ? Number((allConf.reduce((a, b) => a + b, 0) / allConf.length).toFixed(2)) : 0,
-    catalogCovered: `${covered.size}/${meta.catalogTopics.length}`,
+    meanConf: mean(conf),
   });
-  return r;
 }
 
 // ---------------- output ----------------
 function printReport(r: Report, quiet: boolean): void {
   const status = r.errors.length ? "FAIL" : "OK";
-  console.log(`\n== ${r.file}: ${status} (${r.errors.length} errors, ${r.warnings.length} warnings)`);
+  console.log(`\n== ${r.file} [${r.kind ?? "?"}]: ${status} (${r.errors.length} errors, ${r.warnings.length} warnings)`);
   for (const e of r.errors) console.log(`  ERROR ${e}`);
   if (!quiet) for (const w of r.warnings) console.log(`  warn  ${w}`);
   const s = r.stats;
-  if (Object.keys(s).length > 2) {
+  if (!s.duration) return;
+  if (r.kind === "extraction") {
     console.log(
       `  stats: ${s.duration} | sections ${s.sections} (main ${s.mainSections}, sub ${s.subsections}) | sources ${s.sources} (resolved ${s.resolvedSources}) | ` +
         `keyPts ${s.keyPoints} insights ${s.insights} stories ${s.stories} Q&A ${s.questions} takeaways ${s.takeaways} topics ${s.topics} | ` +
-        `writeup en ${s.wordsEn}w (${s.wphEn}/h) yi ${s.wordsYi}w (${s.wphYi}/h) | catalog ${s.catalogCovered} | meanConf ${s.meanConf}`,
+        `catalog ${s.catalogCovered} | meanConf ${s.meanConf}`,
+    );
+  } else {
+    console.log(
+      `  stats: ${s.duration} | on ${s.extractionVariant} | blocks en ${s.blocksEn} yi ${s.blocksYi} (content sections ${s.contentSections}) | ` +
+        `paras en ${s.parasEn} yi ${s.parasYi} | sources cited ${s.sourcesCited} | ` +
+        `en ${s.wordsEn}w (${s.wphEn}/h) yi ${s.wordsYi}w (${s.wphYi}/h) | meanConf ${s.meanConf}`,
     );
   }
 }
 
-function printSummary(reports: Report[]): void {
-  const cols: [string, (r: Report) => string][] = [
-    ["file", (r) => `${basename(dirname(r.file))}/${basename(r.file)}`],
-    ["model", (r) => String(r.stats.model ?? "")],
-    ["variant", (r) => String(r.stats.variant ?? "")],
-    ["err", (r) => String(r.errors.length)],
-    ["warn", (r) => String(r.warnings.length)],
-    ["sect", (r) => String(r.stats.sections ?? "")],
-    ["sub", (r) => String(r.stats.subsections ?? "")],
-    ["src", (r) => String(r.stats.sources ?? "")],
-    ["keyP", (r) => String(r.stats.keyPoints ?? "")],
-    ["ins", (r) => String(r.stats.insights ?? "")],
-    ["story", (r) => String(r.stats.stories ?? "")],
-    ["Q&A", (r) => String(r.stats.questions ?? "")],
-    ["take", (r) => String(r.stats.takeaways ?? "")],
-    ["cat", (r) => String(r.stats.catalogCovered ?? "")],
-    ["en w", (r) => String(r.stats.wordsEn ?? "")],
-    ["yi w", (r) => String(r.stats.wordsYi ?? "")],
-    ["en/h", (r) => String(r.stats.wphEn ?? "")],
-    ["yi/h", (r) => String(r.stats.wphYi ?? "")],
-    ["conf", (r) => String(r.stats.meanConf ?? "")],
-  ];
+type Col = [string, (r: Report) => string];
+const stat = (k: string) => (r: Report) => String(r.stats[k] ?? "");
+const COMMON_COLS: Col[] = [
+  ["file", (r) => `${basename(dirname(r.file))}/${basename(r.file)}`],
+  ["model", stat("model")],
+  ["variant", stat("variant")],
+  ["err", (r) => String(r.errors.length)],
+  ["warn", (r) => String(r.warnings.length)],
+];
+const EXTRACTION_COLS: Col[] = [
+  ...COMMON_COLS,
+  ["sect", stat("sections")],
+  ["sub", stat("subsections")],
+  ["src", stat("sources")],
+  ["keyP", stat("keyPoints")],
+  ["ins", stat("insights")],
+  ["story", stat("stories")],
+  ["Q&A", stat("questions")],
+  ["take", stat("takeaways")],
+  ["cat", stat("catalogCovered")],
+  ["conf", stat("meanConf")],
+];
+const WRITEUP_COLS: Col[] = [
+  ...COMMON_COLS,
+  ["on", stat("extractionVariant")],
+  ["blk en", stat("blocksEn")],
+  ["blk yi", stat("blocksYi")],
+  ["src", stat("sourcesCited")],
+  ["en w", stat("wordsEn")],
+  ["yi w", stat("wordsYi")],
+  ["en/h", stat("wphEn")],
+  ["yi/h", stat("wphYi")],
+  ["conf", stat("meanConf")],
+];
+
+function printTable(title: string, cols: Col[], reports: Report[]): void {
+  if (!reports.length) return;
   const rows = reports.map((r) => cols.map(([, f]) => f(r)));
   const widths = cols.map(([h], i) => Math.max(h.length, ...rows.map((row) => row[i]!.length)));
   const fmt = (cells: string[]) => cells.map((c, i) => (i === 0 ? c.padEnd(widths[i]!) : c.padStart(widths[i]!))).join("  ");
+  console.log(`\n${title} (${reports.length})`);
   console.log(fmt(cols.map(([h]) => h)));
   console.log(widths.map((w) => "-".repeat(w)).join("  "));
   for (const row of rows) console.log(fmt(row));
+}
+
+function printSummary(reports: Report[]): void {
+  printTable("EXTRACTIONS", EXTRACTION_COLS, reports.filter((r) => r.kind === "extraction"));
+  printTable("WRITE-UPS", WRITEUP_COLS, reports.filter((r) => r.kind === "writeup"));
+  const unknown = reports.filter((r) => r.kind === null);
+  if (unknown.length) {
+    console.log(`\nUNREADABLE (${unknown.length})`);
+    for (const r of unknown) console.log(`  ${r.file}: ${r.errors[0] ?? "?"}`);
+  }
+}
+
+/** Skip the pilot kit's own files and judge verdicts, so `out/pilot/<id>/*` globs work. */
+function isOutputFile(path: string): boolean {
+  const b = basename(path);
+  return b.endsWith(".json") && b !== "meta.json" && !b.startsWith("judge");
 }
 
 function main(): void {
@@ -496,10 +616,10 @@ function main(): void {
     else if (a.startsWith("--")) {
       console.error(`unknown flag ${a}`);
       process.exit(2);
-    } else if (basename(a) !== "meta.json") files.push(a);
+    } else if (isOutputFile(a)) files.push(a);
   }
   if (files.length === 0) {
-    console.error("usage: npx tsx scripts/validate.ts [--summary] [--quiet] [--meta meta.json] <extraction.json...>");
+    console.error("usage: npx tsx scripts/validate.ts [--summary] [--quiet] [--meta meta.json] <extraction-or-writeup.json...>");
     process.exit(2);
   }
   const reports = files.map((f) => validateFile(f, meta));

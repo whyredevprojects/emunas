@@ -5,22 +5,18 @@
 // For each shiur: loads every recording's transcript JSON from out/transcripts/ (downloads it from
 // R2 when missing), then writes out/pilot/<shiurId>/input.txt (what the extraction subagent reads)
 // and out/pilot/<shiurId>/meta.json (what validate.ts checks against). Segment text is kept as-is.
-import { S3Client, GetObjectCommand } from "@aws-sdk/client-s3";
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
-import { dirname, join } from "node:path";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
 import type { IngestOutput, Recording, Shiur } from "../src/types.js";
 import {
   hebrewYearLabel,
   langName,
-  loadDotEnv,
+  loadTranscript,
   mmss,
   splitCatalogTopics,
   type PilotMeta,
   type PilotRecordingMeta,
-  type TranscriptJson,
 } from "./lib/pilot.js";
-
-const TRANSCRIPT_CACHE = "out/transcripts";
 
 function parseArgs(argv: string[]): { ids: string[]; ingest: string; out: string } {
   const ids: string[] = [];
@@ -34,44 +30,6 @@ function parseArgs(argv: string[]): { ids: string[]; ingest: string; out: string
     else ids.push(a);
   }
   return { ids, ingest, out };
-}
-
-let s3: S3Client | null = null;
-function r2(): { client: S3Client; bucket: string } {
-  loadDotEnv();
-  const { R2_ENDPOINT, R2_BUCKET, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY } = process.env;
-  const missing = Object.entries({ R2_ENDPOINT, R2_BUCKET, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY })
-    .filter(([, v]) => !v)
-    .map(([k]) => k);
-  if (missing.length) throw new Error(`missing env (.env): ${missing.join(", ")}`);
-  s3 ??= new S3Client({
-    region: "auto",
-    endpoint: R2_ENDPOINT!,
-    credentials: { accessKeyId: R2_ACCESS_KEY_ID!, secretAccessKey: R2_SECRET_ACCESS_KEY! },
-  });
-  return { client: s3, bucket: R2_BUCKET! };
-}
-
-function cachePath(transcriptKey: string): string {
-  const rel = transcriptKey.replace(/^transcripts\//, "");
-  return join(TRANSCRIPT_CACHE, `${rel}.json`);
-}
-
-async function loadTranscript(transcriptKey: string): Promise<TranscriptJson> {
-  const local = cachePath(transcriptKey);
-  if (!existsSync(local)) {
-    const { client, bucket } = r2();
-    const key = `${transcriptKey}.json`;
-    process.stderr.write(`  downloading ${key}\n`);
-    const res = await client.send(new GetObjectCommand({ Bucket: bucket, Key: key }));
-    if (!res.Body) throw new Error(`empty body for ${key}`);
-    const body = await res.Body.transformToString("utf-8");
-    mkdirSync(dirname(local), { recursive: true });
-    writeFileSync(local, body);
-  }
-  const parsed = JSON.parse(readFileSync(local, "utf8")) as TranscriptJson;
-  if (!Array.isArray(parsed.segments)) throw new Error(`${local}: no segments[]`);
-  return parsed;
 }
 
 /** Keep text verbatim, except newlines, which would break the one-segment-per-line format. */

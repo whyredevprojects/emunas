@@ -1,5 +1,7 @@
-// Shared helpers for the P4 pilot kit (prepare-pilot.ts, validate.ts).
-import { readFileSync, existsSync } from "node:fs";
+// Shared helpers for the pilot kit (prepare-pilot.ts, pick-pilot.ts, validate.ts).
+import { S3Client, GetObjectCommand } from "@aws-sdk/client-s3";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { dirname, join } from "node:path";
 import type { Lang, Recording, Series, Shiur } from "../../src/types.js";
 
 /** One ASR segment as stored in the transcript JSON in R2 (faster-whisper output). */
@@ -100,4 +102,47 @@ export function hebrewRatio(text: string): number {
 export function wordCount(text: string): number {
   const t = text.trim();
   return t ? t.split(/\s+/u).length : 0;
+}
+
+// ---------------- transcripts (local cache, R2 fallback) ----------------
+
+export const TRANSCRIPT_CACHE = "out/transcripts";
+
+let s3: S3Client | null = null;
+function r2(): { client: S3Client; bucket: string } {
+  loadDotEnv();
+  const { R2_ENDPOINT, R2_BUCKET, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY } = process.env;
+  const missing = Object.entries({ R2_ENDPOINT, R2_BUCKET, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY })
+    .filter(([, v]) => !v)
+    .map(([k]) => k);
+  if (missing.length) throw new Error(`missing env (.env): ${missing.join(", ")}`);
+  s3 ??= new S3Client({
+    region: "auto",
+    endpoint: R2_ENDPOINT!,
+    credentials: { accessKeyId: R2_ACCESS_KEY_ID!, secretAccessKey: R2_SECRET_ACCESS_KEY! },
+  });
+  return { client: s3, bucket: R2_BUCKET! };
+}
+
+function cachePath(transcriptKey: string): string {
+  const rel = transcriptKey.replace(/^transcripts\//, "");
+  return join(TRANSCRIPT_CACHE, `${rel}.json`);
+}
+
+/** Load a transcript JSON from out/transcripts/, downloading it from R2 when missing. */
+export async function loadTranscript(transcriptKey: string): Promise<TranscriptJson> {
+  const local = cachePath(transcriptKey);
+  if (!existsSync(local)) {
+    const { client, bucket } = r2();
+    const key = `${transcriptKey}.json`;
+    process.stderr.write(`  downloading ${key}\n`);
+    const res = await client.send(new GetObjectCommand({ Bucket: bucket, Key: key }));
+    if (!res.Body) throw new Error(`empty body for ${key}`);
+    const body = await res.Body.transformToString("utf-8");
+    mkdirSync(dirname(local), { recursive: true });
+    writeFileSync(local, body);
+  }
+  const parsed = JSON.parse(readFileSync(local, "utf8")) as TranscriptJson;
+  if (!Array.isArray(parsed.segments)) throw new Error(`${local}: no segments[]`);
+  return parsed;
 }

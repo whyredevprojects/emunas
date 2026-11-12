@@ -75,7 +75,7 @@ export interface IngestOutput {
   warnings: string[];
 }
 
-// ---------- P4 / P4b: extraction (written by LLM, validated by code) ----------
+// ---------- P4 / P4b: extraction and write-up (written by LLM, validated by code) ----------
 
 export interface Evidence {
   segs: SegIdx[];             // segment indices into the recording transcript
@@ -129,11 +129,19 @@ export interface Extraction {
   candidateTopics: string[];  // free English noun phrases, 5-10
   concepts: { he: string; heardAs: string[] }[];            // glossary candidates
   people: { name: string; heardAs: string[] }[];
-  writeup: {
-    en: WriteupBlock[];
-    yi: WriteupBlock[];
-  };
   asrNotes: string;           // free text: how bad was the ASR, what couldn't be recovered
+}
+
+/** P4b output: the long-form write-up, written from input.txt + an already-validated Extraction. */
+export interface Writeup {
+  shiurId: string;
+  model: string;              // "opus" | "sonnet" | ...
+  variant: string;            // e.g. "raw"
+  /** File stem of the extraction this write-up was built on: out/pilot/<shiurId>/<extractionVariant>.json.
+   *  `sectionIndex` and `sourceIdx` index into that extraction's sections[] and sources[]. */
+  extractionVariant: string;
+  en: WriteupBlock[];
+  yi: WriteupBlock[];
 }
 
 export interface WriteupBlock {
