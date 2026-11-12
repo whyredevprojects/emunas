@@ -1,0 +1,23 @@
+{
+  "shiurId": "yi-zmanim-svds-zs-chnvkh-10",
+  "kind": "extraction",
+  "x": {
+    "file": "out/pilot/yi-zmanim-svds-zs-chnvkh-10/judge-ext-so-X.json",
+    "counts": { "claimsChecked": 12, "unsupported": 1, "hallucinated": 0, "termsChecked": 10, "termErrors": 0, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 3, "boundariesBad": 0, "titleSummaryMismatch": 0,
+      "yiddishSentencesChecked": 8, "yiddishBadSentences": 1, "yiddishNotFromShiur": 1, "sourcesChecked": 12, "sourceErrors": 0, "sourcesMissed": 2,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "sections[8].subsections[0] title 'the Ruzhiner's dreidel': only a 'game' (שפילן) is audible in segs 58-59, dreidel is an inference; subsection yi 'רוב פון דעם לאנגן שטיק איז נישט טראנסקריבירט' is meta translationese; correct recoveries: hallel v'hoda'ah (seg 8), b'apo=Chanukah (seg 6), Pinchas ben Yair (seg 40), 36 lights = 36 tractates (seg 14), pekidas akaros/Tziyon (segs 48-49); sources well identified (Bamidbar 7:84-85, Niddah 73a, Shabbos 23a, Ramban Bamidbar 8:2, Bereishis 45:22, Esther 8:15); missed Eruvin 13b 'elu va'elu' (seg 22) and 13 middos verse (seg 28)"
+  },
+  "y": {
+    "file": "out/pilot/yi-zmanim-svds-zs-chnvkh-10/judge-ext-so-Y.json",
+    "counts": { "claimsChecked": 12, "unsupported": 2, "hallucinated": 0, "termsChecked": 10, "termErrors": 1, "termsCopiedGarbled": 2,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 3, "boundariesBad": 1, "titleSummaryMismatch": 0,
+      "yiddishSentencesChecked": 8, "yiddishBadSentences": 6, "yiddishNotFromShiur": 3, "sourcesChecked": 12, "sourceErrors": 0, "sourcesMissed": 8,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "summary.keyPoints[2] 'its eight lights correspond to tractates' but seg 14 says the 36 (ל\"ו) lights match 36 tractates; 'Hallel and hiddur' throughout (keyPoints[1], insights[1], takeaways[1]) copies ASR 'הלל והידור' though seg 8 has 'הלל והדאה' (hoda'ah), and takeaways[1] 'recite Hallel with hiddur' is built on it; stories[1]/people 'Rabbi Pinchas ben Yoel' copied garbled (ben Yair, seg 40); sections[1] leaves the gematria word (b'apo) unrecovered; boundary 48|49 puts the Tziyon/akarah line (seg 49) into the baal teshuva story section; Yiddish Daytshmerish/translationese: 'קאראספאנדירן', 'וואָרצלען' with nikud, 'וועלטליכן הינטערגרונט', 'פייערן פורים', 'דריקט אויס ווינטשן', 'אנטפלעקט געווארן אלס'; sources omit Maoz Tzur, Bamidbar 7:84, Yechezkel 37, Ovadiah 1:18, Bereishis 21:1, Niddah 73a, Shabbos 23a, Esther 8:15"
+  },
+  "winner": "x",
+  "margin": "clear",
+  "rationale": "Neither side hallucinates. In tier 2 Y has more unsupported claims (2 vs 1, including the wrong 'eight lights = tractates') and a term error (hiddur for hoda'ah) that X recovers correctly; X has none. In tier 3 Y misses about 8 clear citations X identifies and has a bad boundary. Y's Yiddish is also markedly more Germanized and translated (6 of 8 bad sentences vs 1)."
+}

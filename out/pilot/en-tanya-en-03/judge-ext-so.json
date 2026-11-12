@@ -1,0 +1,23 @@
+{
+  "shiurId": "en-tanya-en-03",
+  "kind": "extraction",
+  "x": {
+    "file": "out/pilot/en-tanya-en-03/judge-ext-so-X.json",
+    "counts": { "claimsChecked": 15, "unsupported": 0, "hallucinated": 0, "termsChecked": 10, "termErrors": 0, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 3, "boundariesBad": 0, "titleSummaryMismatch": 0,
+      "yiddishSentencesChecked": 8, "yiddishBadSentences": 2, "yiddishNotFromShiur": 0, "sourcesChecked": 12, "sourceErrors": 0, "sourcesMissed": 0,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "sections[4] starts at 367 while the answer to the audience question begins at seg 365 (minor, within slack); sources 'Ahav Tal Reach' -> Vayikra 19:18 is a plausible but uncertain recovery (seg 189); Yiddish uses Germanisms 'אפווייכונג' (abstract) and 'אנערקענונג' (takeaways[0]); otherwise strong recoveries: esrog from 'eschig' (seg 102), Me'or Einayim/Rav Nachum of Chernobyl (seg 538-539), mem of 'mishpacha' as forty days of Torah (segs 471-475), Devarim 15:11 correct"
+  },
+  "y": {
+    "file": "out/pilot/en-tanya-en-03/judge-ext-so-Y.json",
+    "counts": { "claimsChecked": 12, "unsupported": 1, "hallucinated": 0, "termsChecked": 8, "termErrors": 0, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 3, "boundariesBad": 1, "titleSummaryMismatch": 1,
+      "yiddishSentencesChecked": 8, "yiddishBadSentences": 6, "yiddishNotFromShiur": 2, "sourcesChecked": 18, "sourceErrors": 2, "sourcesMissed": 5,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "sources 'Paseyach Tiftach ... Lachich Al Aniyecha' given as Devarim 15:8, but 'l'achicha la'aniyecha' is 15:11 (segs 191-192); Eitz Chaim marked 'resolved' with no ref; sections[7] 'Mamash in the Tanya' starts at 784 but segs 784-808 are the audience question about Leah, Tanya reading begins at 809; insights[2] eved/shifcha/Shabbos/yovel 'stages' cites Chanukah segs 574-575 and is muddled; sourcesMissed: Mishnah Shabbos 'psilos ushmanim' (543-545), Yirmiyahu 31:16 (645-647), Shemos 21:2 (492-493), Zohar on seven years (371) and 'man d'nafach' (916-918); Yiddish Germanized/calqued: 'גייסטיקע', 'אלטאגיקע', 'נאכגעפאלגט פון יובל', 'באקענט דער תניא', 'ער טענהט דאס אויף צדקה', nikud in 'וואַרטן'/'אָטעם', 'טמאות קליפות' word order"
+  },
+  "winner": "x",
+  "margin": "clear",
+  "rationale": "Neither side has hallucinations. X has no source errors against Y's 2 (wrong Devarim verse, a 'resolved' source without a ref), and X is better in tier 3: 0 bad boundaries vs 1, 0 title mismatches vs 1, and 0 missed sources vs 5 (Y leaves out the Mishnah on Chanukah wicks, Yirmiyahu 31:16, Shemos 21:2 and two Zohar citations). X's Yiddish is also much cleaner (2 of 8 bad sentences vs 6 of 8, with Y full of Germanisms and calques)."
+}

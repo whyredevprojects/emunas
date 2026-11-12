@@ -1,0 +1,23 @@
+{
+  "shiurId": "yi-simchos-unc-bris-pidyon-haben-03",
+  "kind": "extraction",
+  "x": {
+    "file": "out/pilot/yi-simchos-unc-bris-pidyon-haben-03/judge-ext-clean-X.json",
+    "counts": { "claimsChecked": 10, "unsupported": 1, "hallucinated": 0, "termsChecked": 6, "termErrors": 0, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 0, "boundariesBad": 0, "titleSummaryMismatch": 0,
+      "yiddishSentencesChecked": 8, "yiddishBadSentences": 4, "yiddishNotFromShiur": 2, "sourcesChecked": 1, "sourceErrors": 0, "sourcesMissed": 1,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "abstract/keyPoints[3]: nachas 'to his parents' and 'mentions the parents and the people involved' not clearly in segs 8-12 (seg 12 says kinderlech, Yidden, klal Yisrael) (unsupported); Gemara mentioned at seg 6 not captured in sources or text; Yiddish Daytshmerish/translationese: 'שפרעכט', 'שטעלט אין פארבינדונג', 'גייט ער ארויף צו ברכות', ungrammatical 'פארבינדט אויסגעזען' (insights[0]); good: Devarim 30:6 recovered at seg 2, Rosh Chodesh/Rosh Hashanah at seg 5, נחת רוח from 'נחת ורח'; single section, no boundaries to check"
+  },
+  "y": {
+    "file": "out/pilot/yi-simchos-unc-bris-pidyon-haben-03/judge-ext-clean-Y.json",
+    "counts": { "claimsChecked": 10, "unsupported": 2, "hallucinated": 0, "termsChecked": 5, "termErrors": 0, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 0, "boundariesBad": 0, "titleSummaryMismatch": 0,
+      "yiddishSentencesChecked": 8, "yiddishBadSentences": 3, "yiddishNotFromShiur": 2, "sourcesChecked": 1, "sourceErrors": 0, "sourcesMissed": 1,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "abstract: 'refers to the work of people who strengthen bris milah' sharpens garbled seg 7 (עסקנות) beyond what is audible (unsupported); abstract: nachas 'to the parents' not clearly at seg 12 (unsupported); Gemara at seg 6 noted in keyPoints but not entered in sources; Yiddish: 'באריט זיך אנהייב', 'א גמרא וואס שטייט מיט דעם', 'שטארק פארדרייטע מאשין-טעקסט' unnatural/calque; good: רבונו של עולם recovered from 'רבינו שלעולם' (seg 12), Devarim 30:6 at seg 2"
+  },
+  "winner": "tie",
+  "margin": "slight",
+  "rationale": "Both are cautious single-section extractions with no hallucinations, no term or source errors, and the same Devarim 30:6 identification. X has 1 unsupported claim vs Y's 2, but Y captures the Gemara reference at seg 6 that X omits and has slightly fewer bad Yiddish sentences (3 vs 4). The differences are small and in lower tiers, so neither side clearly wins."
+}

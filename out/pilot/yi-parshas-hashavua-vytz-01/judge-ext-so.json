@@ -1,0 +1,23 @@
+{
+  "shiurId": "yi-parshas-hashavua-vytz-01",
+  "kind": "extraction",
+  "x": {
+    "file": "out/pilot/yi-parshas-hashavua-vytz-01/judge-ext-so-X.json",
+    "counts": { "claimsChecked": 16, "unsupported": 1, "hallucinated": 0, "termsChecked": 12, "termErrors": 0, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 3, "boundariesBad": 1, "titleSummaryMismatch": 0,
+      "yiddishSentencesChecked": 10, "yiddishBadSentences": 2, "yiddishNotFromShiur": 1, "sourcesChecked": 12, "sourceErrors": 2, "sourcesMissed": 1,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "questions[1] answers 'why such a high price' (seg 46) with the seven middos, but seg 46 answers that Yaakov knew he had to go shepherd (unsupported link); sources[]: Bereishis 29:18 given evidence seg 61, the quote is in seg 45; 'וכל הבארות... סתמום פלשתים' (seg 107) is Bereishis 26:15, not 26:18; boundary 61|62 cuts inside the parnassah thought (seg 62 continues 'ס'איז צוליב א גזירה'); otherwise strong recoveries (Alshich, Kotzker, עקבתא דמשיחא, השכלה, Berachos 33b, Rambam Shemittah v'Yovel 13:13, Rashi 29:30/31:10/48:7) and the Arizal story's point (Lavan nodding, segs 105-106) is captured correctly"
+  },
+  "y": {
+    "file": "out/pilot/yi-parshas-hashavua-vytz-01/judge-ext-so-Y.json",
+    "counts": { "claimsChecked": 16, "unsupported": 2, "hallucinated": 0, "termsChecked": 10, "termErrors": 2, "termsCopiedGarbled": 1,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 3, "boundariesBad": 2, "titleSummaryMismatch": 0,
+      "yiddishSentencesChecked": 10, "yiddishBadSentences": 5, "yiddishNotFromShiur": 3, "sourcesChecked": 12, "sourceErrors": 1, "sourcesMissed": 8,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "sections[6] reads 'פארשען' (= פאשען, shepherd, segs 71-72,77) as 'investigate the state of Jewish souls' (term error); stories[0] Arizal: preacher not recovered as the Alshich, students' question misstated as why he went (segs 102-103), and the point that Lavan came and nodded (105-106) is dropped; 'Rabbi Chaim Brum' copied from garbled seg 123; sources[] labels עקבי יונתן (seg 20) as Midrash rather than Targum Yonasan; misses Tehillim 121:1, Bereishis 28:15, 31:1, Rashi 29:30, 31:10, 48:7, Berachos 33b, the יש הולך אצל זיווגו Midrash; boundaries 59|60 and 86|87 cut mid-explanation; Yiddish calques: 'אומאפגעבראכענע פרשה', 'זיבן קאראספאנדירט צו', 'אויסגעשטעלט צו דער וועלט', 'פרעמדער הערשאפט', 'א אנדער תפקיד'; catalogTopicIdx empty for sections 3-10"
+  },
+  "winner": "x",
+  "margin": "clear",
+  "rationale": "Neither side has hallucinations or rule violations. In tier 2, X has 1 unsupported claim and 0 term errors against Y's 2 and 2 (the 'investigate' misreading of פאשען and the unrecovered Alshich). Y has slightly fewer source errors (1 vs 2). In tier 3, though, X is clearly better: 1 bad boundary vs 2, and 1 missed source vs about 8. X's Yiddish is also more natural (2 bad sentences vs 5)."
+}
