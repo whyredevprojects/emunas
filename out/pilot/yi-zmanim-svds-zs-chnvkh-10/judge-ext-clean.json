@@ -1,0 +1,23 @@
+{
+  "shiurId": "yi-zmanim-svds-zs-chnvkh-10",
+  "kind": "extraction",
+  "x": {
+    "file": "out/pilot/yi-zmanim-svds-zs-chnvkh-10/judge-ext-clean-X.json",
+    "counts": { "claimsChecked": 16, "unsupported": 2, "hallucinated": 0, "termsChecked": 12, "termErrors": 0, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 3, "boundariesBad": 1, "titleSummaryMismatch": 0,
+      "yiddishSentencesChecked": 10, "yiddishBadSentences": 2, "yiddishNotFromShiur": 0, "sourcesChecked": 12, "sourceErrors": 1, "sourcesMissed": 3,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "questions[0].en frames the question as 'oil only needed for the one day that was not a miracle', not what seg 3 says (Yiddish version differs); sections[5] summary credits the Ramban with menorah-as-zecher/home-as-Mikdash, Ramban in segs 34-35 is about Aharon's chalishus hadaas and the lights (overstated); boundary 3|4 separates the eight-days question from its one-line answer at seg 4; sources: Ruzhiner marked 'resolved' with no work; missed gedolah legimah (seg 22), Beha'aloscha (segs 33-35), Maoz Tzur 'bnei binah yemei shmonah' (segs 3,16); Yiddish: nikud in 'אויספאָרשן' (sections[7], stories[2]), odd spelling 'ווונטש'"
+  },
+  "y": {
+    "file": "out/pilot/yi-zmanim-svds-zs-chnvkh-10/judge-ext-clean-Y.json",
+    "counts": { "claimsChecked": 16, "unsupported": 3, "hallucinated": 0, "termsChecked": 12, "termErrors": 1, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 3, "boundariesBad": 2, "titleSummaryMismatch": 0,
+      "yiddishSentencesChecked": 10, "yiddishBadSentences": 5, "yiddishNotFromShiur": 1, "sourcesChecked": 12, "sourceErrors": 0, "sourcesMissed": 4,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 1 },
+    "notes": "keyPoints[2] says Chanukah's 'eight lights' correspond to tractates; seg 14 says the ל\"ו (36) lights match the ל\"ו masechtos, which Y never recovers (term error); takeaways[1] 'one should recite Hallel with hiddur' is a directive built on garbled segs 9-10 (unsupported, preachy); sections[5] summary credits the Ramban with menorah-as-zecher (segs 34-35, overstated); boundaries 4|5 (mid-sentence, Ruzhiner's thought continues 'א גרויסן כח') and 48|49 (Bnei Yissaschar/pekidas akaros cut, seg 49 put in the story section) are bad; Yiddish: 'קאראספאנדירן' x3 (anglicism), 'וועלטליכן הינטערגרונט', 'שטאטישן וועלטליכן שולע', 'אנטפלעקט געווארן אלס' (Daytshmerish), nikud in 'וואָרצלען'; misses Niddah's closing Tanna dvei Eliyahu (seg 17), Yechezkel's two sticks (seg 27), the Midrash on akar (seg 49), Maoz Tzur"
+  },
+  "winner": "x",
+  "margin": "slight",
+  "rationale": "Neither side hallucinates. X has fewer unsupported claims (2 vs 3) and no term errors, while Y misses that the Rav ties the 36 lights to 36 masechtos and calls them 'eight lights'. Y also has a preachy takeaway directive (1 rule violation) and two bad section cuts to X's one. X's Yiddish is clearly more natural; Y has anglicisms and Daytshmerish (5 vs 2 bad sentences). Source identification is close: X has one more correct ref, Y adds gedolah legimah."
+}
