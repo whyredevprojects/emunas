@@ -6,7 +6,8 @@
     "typecheck": "tsc --noEmit",
     "pilot:prepare": "tsx scripts/prepare-pilot.ts",
     "pilot:validate": "tsx scripts/validate.ts",
-    "pilot:summary": "tsx scripts/validate.ts --summary"
+    "pilot:summary": "tsx scripts/validate.ts --summary",
+    "ingest": "tsx scripts/ingest.ts"
   },
   "devDependencies": {
     "@types/node": "^26.6.6",

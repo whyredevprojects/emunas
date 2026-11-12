@@ -388,7 +388,9 @@ interface Segment {
 
 /** Find labelled segments ("צד א:", "א)", "א -", "#1", "תשנ"ח -") in order. Returns null if fewer than 2. */
 function findSegments(text: string): { prefix: string; segs: Segment[]; kind: string } | null {
-  const t = normQuotes(text);
+  // length-preserving glyph normalisation for matching; slices are taken from the original text
+  const t = text.replace(/[״”“„]/g, '"').replace(/[׳’‘`]/g, "'");
+  const orig = text;
   const LETTERS = ["א", "ב", "ג", "ד", "ה"];
   const strategies: { kind: string; label: (i: number) => RegExp | null }[] = [
     { kind: "side", label: (i) => (i < 2 ? new RegExp(`צד\\s*${LETTERS[i]}\\s*:`, "g") : null) },
@@ -408,19 +410,19 @@ function findSegments(text: string): { prefix: string; segs: Segment[]; kind: st
       from = m.index + m[0].length;
     }
     if (pos.length >= 2) {
-      const prefix = t.slice(0, pos[0]!.start).trim();
+      const prefix = orig.slice(0, pos[0]!.start).trim();
       // a letter label must open the text (or follow a short header); otherwise it's prose
       if (st.kind === "letter" && prefix.length > 0) continue;
-      const segs = pos.map((p, i) => ({ label: p.label, text: t.slice(p.end, i + 1 < pos.length ? pos[i + 1]!.start : undefined).trim() }));
+      const segs = pos.map((p, i) => ({ label: orig.slice(p.start, p.end).trim(), text: orig.slice(p.end, i + 1 < pos.length ? pos[i + 1]!.start : undefined).trim() }));
       return { prefix, segs, kind: st.kind };
     }
   }
   // year-labelled segments: "תשנ"ח- ..." / "תש"ס - ..."
-  const yre = /(?<![א-ת])(ת[ק-ת]?[א-ת]?"[א-ת])\s*-/g;
+  const yre = /(?<![א-ת])(ת[ק-ת]?[א-ת]?"\s*[א-ת])\s*-/g;
   const ypos = [...t.matchAll(yre)].map((m) => ({ start: m.index, end: m.index + m[0].length, label: m[1]! }));
   if (ypos.length >= 2) {
-    const prefix = t.slice(0, ypos[0]!.start).trim();
-    const segs = ypos.map((p, i) => ({ label: p.label, text: t.slice(p.start, i + 1 < ypos.length ? ypos[i + 1]!.start : undefined).trim() }));
+    const prefix = orig.slice(0, ypos[0]!.start).trim();
+    const segs = ypos.map((p, i) => ({ label: orig.slice(p.start, p.end).trim(), text: orig.slice(p.start, i + 1 < ypos.length ? ypos[i + 1]!.start : undefined).trim() }));
     return { prefix, segs, kind: "year" };
   }
   return null;
@@ -433,14 +435,16 @@ function sectionLang(sec: CatalogSection): Lang {
   return sec.dir === "ltr" ? "en" : "yi";
 }
 
-/** id component for the parsha/zman group: its 1-based ordinal in the pocket-guide section. */
-const groupOrdinals = new Map<string, Map<string, number>>();
-function groupOrdinal(sectionId: string, value: string | null): string {
-  let m = groupOrdinals.get(sectionId);
-  if (!m) groupOrdinals.set(sectionId, (m = new Map()));
-  const key = normQuotes(value ?? "?").replace(/\s+/g, " ");
-  if (!m.has(key)) m.set(key, m.size + 1);
-  return pad2(m.get(key)!);
+/** ASCII id component for a parsha/zman value: consonantal transliteration of the catalog spelling. */
+const TRANSLIT: Record<string, string> = {
+  א: "", ב: "b", ג: "g", ד: "d", ה: "h", ו: "v", ז: "z", ח: "ch", ט: "t", י: "y", כ: "k", ך: "k", ל: "l", מ: "m", ם: "m",
+  נ: "n", ן: "n", ס: "s", ע: "", פ: "p", ף: "f", צ: "tz", ץ: "tz", ק: "k", ר: "r", ש: "sh", ת: "s",
+};
+function groupSlug(value: string | null): string {
+  const v = normQuotes(value ?? "").replace(/["']/g, "");
+  const words = v.split(/[^א-תA-Za-z0-9]+/).filter(Boolean).slice(0, 3);
+  const slug = slugify(words.map((w) => [...w].map((c) => TRANSLIT[c] ?? c).join("")).join("-"));
+  return slug || "x";
 }
 
 function rowYears(r: Raw, ctx: string): number[] {
@@ -565,7 +569,7 @@ function addPocketDraft(
   const group = GROUPED[sec.id];
   const groupVal = group ? str(r, group) : null;
   const nSlug = slugify(n ?? `row-${rowIdx + 1}`);
-  const id = [lang, sec.id, group ? groupOrdinal(sec.id, groupVal) : null, pad2(nSlug) + dirSuffix(sec, files[0])]
+  const id = [lang, sec.id, group ? groupSlug(groupVal) : null, pad2(nSlug) + dirSuffix(sec, files[0])]
     .filter(Boolean)
     .join("-") + (side ? `-${side}` : "");
   const { title, heading } = titleOf(r);
@@ -649,7 +653,7 @@ function uncatRows(): void {
       const dirPart =
         sec.id === "simchos" ? slugify(basename(dirOf(file))) : series ? slugify(series.replace(/^\d+\s+/, "")) : null;
       // same n can recur within a folder for different recordings (e.g. 02-11 Purim Katan / 02-11 Purim Katan 5779)
-      let id = [lang, sec.id, "unc", group ? groupOrdinal(sec.id, str(r, group)) : null, dirPart, idTail].filter(Boolean).join("-");
+      let id = [lang, sec.id, "unc", group ? groupSlug(str(r, group)) : null, dirPart, idTail].filter(Boolean).join("-");
       if (draftById.has(id)) id += "-" + slugify(stripExt(basename(file))).slice(0, 40);
       const ctx = `uncatalogued ${sec.id} ${basename(file)}`;
       const { title, heading } = titleOf(r);
@@ -777,10 +781,13 @@ function recordingId(audioKey: string): string {
   for (const [re, rep] of PREFIX) p = p.replace(re, rep);
   const segs = p.split("/");
   const file = segs.pop()!;
-  const dirs = segs.map((d, i) => {
+  const dirs: string[] = [];
+  segs.forEach((d, i) => {
     let s = slugify(d);
-    if (i > 0) s = s.replace(/^(y|e)-/, "").replace(/^(\d+-)+/, "").replace(/-(e)$/, "");
-    return s || slugify(d);
+    if (i > 0) s = s.replace(/^(y|e)-/, "").replace(/^(\d+-)+/, "").replace(/-e$/, "");
+    const parent = dirs[dirs.length - 1];
+    if (i > 1 && parent && s.startsWith(parent + "-")) s = s.slice(parent.length + 1).replace(/^(\d+-)+/, "");
+    dirs.push(s || slugify(d));
   });
   return [...dirs, slugify(stripExt(file))].filter(Boolean).join("-");
 }
@@ -1045,22 +1052,27 @@ async function main(): Promise<void> {
   // 9. series
   const series: Series[] = [];
   const shiurById = new Map(shiurim.map((s) => [s.id, s]));
-  // tanya: carry perek forward over blank cells (PDF dropped them), warn on out-of-sequence perek
+  // tanya: numeric perek for ordering; blank cells inherit the previous row's perek (the PDF dropped them);
+  // a perek outside the range of its two neighbours is reported as a likely catalog error (value kept).
   for (const secId of ["tanya-1", "tanya-2", "tanya-en"]) {
+    const rows = drafts.filter((x) => x.sectionId === secId && !droppedDrafts.has(x)).sort((a, b) => cmpKey(a.sortKey, b.sortKey));
+    const nums = rows.map((d) => perekNum(d.perek));
     let prev: number | null = null;
-    for (const d of drafts.filter((x) => x.sectionId === secId && !droppedDrafts.has(x)).sort((a, b) => cmpKey(a.sortKey, b.sortKey))) {
-      let p = perekNum(d.perek);
+    rows.forEach((d, i) => {
+      const p = nums[i] ?? null;
       if (p === null) {
-        if (d.source === "pocket-guide-2012") warn("perek-blank", `${d.id}: perek blank in catalog; ordered after perek ${prev ?? "?"}`);
-        p = prev;
-      } else if (prev !== null && p < prev - 1 && d.source === "pocket-guide-2012") {
-        warn("perek-out-of-sequence", `${d.id}: perek "${d.perek}" (${p}) follows perek ${prev}; catalog value kept`);
-      } else if (prev !== null && p > prev + 3) {
-        warn("perek-out-of-sequence", `${d.id}: perek "${d.perek}" (${p}) jumps from perek ${prev}; catalog value kept`);
+        if (d.source === "pocket-guide-2012") warn("perek-blank", `${d.id}: perek blank in catalog (n=${d.n})`);
+        d.seriesPerek = prev;
+        return;
+      }
+      const before = nums.slice(0, i).reverse().find((x) => x !== null) ?? null;
+      const after = nums.slice(i + 1).find((x) => x !== null) ?? null;
+      if (before !== null && after !== null && before <= after && (p < before || p > after)) {
+        warn("perek-out-of-sequence", `${d.id}: perek "${d.perek}" (${p}) sits between perek ${before} and ${after}; catalog value kept`);
       }
       d.seriesPerek = p;
-      if (p !== null) prev = Math.max(prev ?? 0, p) === p ? p : prev;
-    }
+      prev = p;
+    });
   }
   for (const def of SERIES) {
     const members = shiurim
