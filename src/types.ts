@@ -43,6 +43,8 @@ export interface Shiur {
     page: number | null;
     titleOriginal: string;    // inyan/title as in catalog (Hebrew/Yiddish/English)
     subTitle: string | null;
+    /** topic heading (`inyan`) when the row has both inyan and a detailed title (shonos, English misc). */
+    heading?: string;
     derived: DerivedFrom;     // "catalog" for pocket-guide rows; uncatalogued rows carry their own `derived`
     note: string | null;
   };
