@@ -11,7 +11,7 @@ All 20 Sonnet extractions, 8 Opus, 4 Haiku, 4 cleaned, 20 Opus and 6 Sonnet writ
 |---|---|---|
 | Extraction: Opus vs Sonnet (8) | **Opus 8–0** (6 clear, 2 slight) | Sonnet misses ~5–8 cited sources vs ~1–2; 2–3 of 3 bad section boundaries vs ~0; more Germanized Yiddish (~6/8 bad sentences vs 1–2); more misread terms ("Ramban" for Ribono shel Olam, "Hallel and hiddur", wrong pasuk) |
 | Extraction: Sonnet vs Haiku (4) | **Sonnet 3–1** | Haiku invents themes from misread words (גדושה→"pride"), swaps who-did-what, 4–6 unsupported claims per shiur |
-| Raw vs cleaned transcript (4) | **Raw 2, cleaned 0, tie 1, raw slight 1** — cleanup adds nothing | Cleanup fixes only 14–29% of lines; the rest is unrecoverable, so extraction quality doesn't move |
+| Raw vs cleaned transcript (4) | **Raw 2 (slight), cleaned 1 (slight, Chanukah), tie 1** — no consistent gain | Cleanup fixes only 14–29% of lines; the rest is unrecoverable. The one cleaned win was the run where cleanup changed the most (29%) |
 | Write-up: Opus vs Sonnet (6) | **Opus 5–1** (2 clear, 3 slight) | Sonnet: wrong central answer (Toldos), misattributed sources (Ohr HaChaim→Arizal), unresolved arguments; Opus lost once on a reversed detail (Tefilah) |
 
 No model hallucinated outright in extraction except Haiku. Caveat: the judge is Opus; it was told to count verifiable errors, which limits self-preference, but it isn't zero.
