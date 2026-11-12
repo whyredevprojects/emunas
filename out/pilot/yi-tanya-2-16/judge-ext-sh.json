@@ -1,0 +1,23 @@
+{
+  "shiurId": "yi-tanya-2-16",
+  "kind": "extraction",
+  "x": {
+    "file": "out/pilot/yi-tanya-2-16/judge-ext-sh-X.json",
+    "counts": { "claimsChecked": 12, "unsupported": 1, "hallucinated": 0, "termsChecked": 10, "termErrors": 1, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 3, "boundariesBad": 1, "titleSummaryMismatch": 0,
+      "yiddishSentencesChecked": 9, "yiddishBadSentences": 1, "yiddishNotFromShiur": 0, "sourcesChecked": 4, "sourceErrors": 1, "sourcesMissed": 1,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "sections[4].summary: 'David HaMelech had true dreams' from seg 41 'וויד מלך ... אפילו פלעך געהאט אמת'ע חלומות', context is a gentile king / Pharaoh, not David (term error, unsupported); sources[3] cites seg 41 for David as well; boundary 49|50 cuts mid-thought (seg 50 continues thinking oneself nothing leading to shiflus); sources[2] 'ירום הלב בקול ראש' left unresolved though it is the Tanya ch. 29 line on rebuking the animal soul בקול רעש במחשבתו (segs 53-54); misses the 'טראכט גוט וועט זיין גוט' saying (seg 45) as a source; keyPoints[0].yi typo 'אבייט'. Good recoveries: עצות->עצבות vs מרירות (seg 50), wood-chopping mashal (segs 1, 30), holy darkness (65-66)"
+  },
+  "y": {
+    "file": "out/pilot/yi-tanya-2-16/judge-ext-sh-Y.json",
+    "counts": { "claimsChecked": 12, "unsupported": 2, "hallucinated": 1, "termsChecked": 10, "termErrors": 1, "termsCopiedGarbled": 3,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 3, "boundariesBad": 2, "titleSummaryMismatch": 2,
+      "yiddishSentencesChecked": 9, "yiddishBadSentences": 2, "yiddishNotFromShiur": 0, "sourcesChecked": 3, "sourceErrors": 1, "sourcesMissed": 1,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "insights[0], sections[4], abstract: 'pride disguised as humility' built on reading גדושה as גסות (concepts entry); in this transcript גדושה is קדושה (segs 64, 67 'ניצות פון גדושה', 'שבקידושה'), and no humility appears at seg 36 (hallucinated/term error); sections[5] summary 'cites the Baal Shem Tov on pride' but the Besht is at seg 34, outside 46-56, and sources[1] cites seg 50; sections[6] 'ends with the subject of creation' (creation is seg 56, the ending is about gashmiyus, seg 69); boundary 18|19 splits the yahrzeit question from its answer, 56|57 cuts mid-discussion of bitul of the world; garbled forms copied into Yiddish prose/concepts: 'בחצרה מלך', 'תמטום על לב', 'גדושה'; misses the בקול רעש במחשבתו teaching (segs 53-54) and the wood-chopping mashal. Strengths: yahrzeit Mishnayos/tzedakah (seg 18) and wedding/king mashal (seg 12) are correctly captured"
+  },
+  "winner": "x",
+  "margin": "clear",
+  "rationale": "Y has a hallucinated theme (pride disguised as humility, from misreading גדושה = קדושה as גסות) that runs through its abstract, a section title and an insight; X has no hallucinations. X's one term error (David's true dreams, seg 41) is minor next to that. Y also has more unsupported claims (2 vs 1), more bad boundaries (2 vs 1), 2 title/summary mismatches vs 0, and copies garbled forms into its Yiddish where X normalizes them."
+}
