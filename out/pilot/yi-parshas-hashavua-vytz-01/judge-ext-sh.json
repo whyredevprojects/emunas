@@ -1,0 +1,23 @@
+{
+  "shiurId": "yi-parshas-hashavua-vytz-01",
+  "kind": "extraction",
+  "x": {
+    "file": "out/pilot/yi-parshas-hashavua-vytz-01/judge-ext-sh-X.json",
+    "counts": { "claimsChecked": 16, "unsupported": 6, "hallucinated": 0, "termsChecked": 10, "termErrors": 0, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 3, "boundariesBad": 2, "titleSummaryMismatch": 1,
+      "yiddishSentencesChecked": 10, "yiddishBadSentences": 5, "yiddishNotFromShiur": 2, "sourcesChecked": 12, "sourceErrors": 1, "sourcesMissed": 5,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "insights[4] says Yaakov 'found a new way forward' each time, but seg 104 says Lavan kept finding new tricks; sections[4] says Hashem answered the requests for bread and clothing with 'I will give later', but segs 57-58 say those requests got no answer; sections[9] (112-119) puts Lavan's sons' accusation, which is seg 101, and sources Bereishis 31:1 cites seg 117 (wrong); it also compares Yaakov's test to Yosef's, but in segs 117-119 the comparison is about the students; stories[0] makes the Chazon Ish the narrator about 'a young man', when segs 123-124 say the Chazon Ish himself did this as a young man; sections[3] ties the seven years to Tikkun Chatzos (seg 37 ties Rachel/Leah, not the years); says the last minutes are unintelligible and leaves out the Besht/Toldos story (segs 130-132) and the Arizal-derashah story; misses Tehillim 121 (segs 50-52), Devarim 33:28 (seg 23), Bamidbar 23:7 (seg 21) and Bereishis 29:10-11 (seg 88); boundaries 59|60 and 111|112 cut mid-thought; Yiddish has Daytshmerish forms (ערמעגלעכט, פארגעשריטענע, ארדענונג) and the calque 'צו אויסלייזן זיי'"
+  },
+  "y": {
+    "file": "out/pilot/yi-parshas-hashavua-vytz-01/judge-ext-sh-Y.json",
+    "counts": { "claimsChecked": 17, "unsupported": 1, "hallucinated": 0, "termsChecked": 10, "termErrors": 1, "termsCopiedGarbled": 1,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 3, "boundariesBad": 2, "titleSummaryMismatch": 0,
+      "yiddishSentencesChecked": 10, "yiddishBadSentences": 4, "yiddishNotFromShiur": 2, "sourcesChecked": 12, "sourceErrors": 0, "sourcesMissed": 4,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "sections[6] reads ASR 'פארשען' as 'investigate' the souls, but context (seg 72 'פאשעט') means shepherding; the Arizal story (segs 101-106) leaves out the punchline that Lavan came to hear and nodded; 'Rabbi Chaim Brum' (seg 123) is copied from the ASR without checking; misses Berachos 33b (seg 64), Bereishis 31:1 (seg 101), Rashi (segs 77-78) and the Gemara Berachos at seg 40; boundaries 11|12 and 59|60 cut mid-sentence; catalogTopicIdx is left empty for sections 3-10, though sections 0-2 cover the topic; Yiddish calques: קאראספאנדירט, אומאפגעבראכענע, פרעמדער הערשאפט"
+  },
+  "winner": "y",
+  "margin": "clear",
+  "rationale": "Neither side has hallucinations. X has 6 unsupported claims in 16, Y has 1 in 17. X's errors include reversing who made the wage changes (insights[4]), misreading Hashem's non-answer on bread and clothing, misattributing the Chazon Ish story, and evidence that points outside the section's range. X also has 1 source error and Y none, and X has 1 title/summary mismatch. Boundaries and Yiddish quality are about even, and Y covers the Arizal and Baal Shem Tov stories accurately where X drops them."
+}
