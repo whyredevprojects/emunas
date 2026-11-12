@@ -79,7 +79,7 @@ P3 light cleanup (Sonnet, internal only)   per chunk: fix terms using glossary; 
 P4 extraction (Sonnet; Opus where the pilot says Yiddish needs it)
                         per shiur, one call: sections, bilingual summaries, sources, insights,
                         stories, Q&A, takeaways, candidate topics, segment kinds
-P4b write-up (Sonnet) per shiur: full write-up en + yi, from P4 sections + their segments
+P4b write-up (Opus)   per shiur: full write-up en + yi, from P4 sections + their segments
 P5 verify (Haiku)       every claim vs its cited segments → drop / lower confidence
 P6 source resolution    code + Sefaria index; Haiku fallback
 P7 taxonomy (Opus)      corpus, then freeze

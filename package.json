@@ -7,7 +7,10 @@
     "pilot:prepare": "tsx scripts/prepare-pilot.ts",
     "pilot:validate": "tsx scripts/validate.ts",
     "pilot:summary": "tsx scripts/validate.ts --summary",
-    "ingest": "tsx scripts/ingest.ts"
+    "ingest": "tsx scripts/ingest.ts",
+    "transcripts:sync": "tsx scripts/sync-transcripts.ts",
+    "pilot:pick": "tsx scripts/pick-pilot.ts",
+    "pilot:check-cleaned": "tsx scripts/check-cleaned.ts"
   },
   "devDependencies": {
     "@types/node": "^26.6.6",

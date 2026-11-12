@@ -2,8 +2,8 @@
 //
 //   npx tsx scripts/prepare-pilot.ts <shiurId...> [--ingest data/derived/ingest.json] [--out out/pilot]
 //
-// For each shiur: loads every recording's transcript JSON from out/transcripts/ (downloads it from
-// R2 when missing), then writes out/pilot/<shiurId>/input.txt (what the extraction subagent reads)
+// For each shiur: loads every recording's transcript from data/transcripts/<recordingId>.json
+// (committed in the repo; no R2 access or .env needed), then writes out/pilot/<shiurId>/input.txt (what the extraction subagent reads)
 // and out/pilot/<shiurId>/meta.json (what validate.ts checks against). Segment text is kept as-is.
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
@@ -74,7 +74,7 @@ function header(shiur: Shiur, meta: PilotMeta): string {
   return L.join("\n");
 }
 
-async function prepare(shiur: Shiur, ingest: IngestOutput, outRoot: string): Promise<void> {
+function prepare(shiur: Shiur, ingest: IngestOutput, outRoot: string): void {
   const recById = new Map(ingest.recordings.map((r) => [r.id, r]));
   const recs: PilotRecordingMeta[] = [];
   const bodies: string[] = [];
@@ -85,7 +85,7 @@ async function prepare(shiur: Shiur, ingest: IngestOutput, outRoot: string): Pro
       process.stderr.write(`  WARN ${rid}: no transcript, skipped\n`);
       continue;
     }
-    const tr = await loadTranscript(rec.transcriptKey);
+    const tr = loadTranscript(rec.id);
     const segs = tr.segments;
     const last = segs[segs.length - 1];
     const durationSec = tr.duration ?? rec.durationSec ?? (last ? last.end : 0);
@@ -123,7 +123,7 @@ async function prepare(shiur: Shiur, ingest: IngestOutput, outRoot: string): Pro
   console.log(`${shiur.id}: ${recs.length} recording(s), ${segTotal} segments, ${mmss(meta.totalDurationSec)} -> ${dir}/`);
 }
 
-async function main(): Promise<void> {
+function main(): void {
   const { ids, ingest: ingestPath, out } = parseArgs(process.argv.slice(2));
   if (ids.length === 0) {
     console.error("usage: npx tsx scripts/prepare-pilot.ts <shiurId...> [--ingest path] [--out dir]");
@@ -141,7 +141,7 @@ async function main(): Promise<void> {
     }
     if (!shiur.inScope) console.error(`  WARN ${id}: inScope=false (${shiur.outOfScopeReason ?? "?"}), preparing anyway`);
     try {
-      await prepare(shiur, ingest, out);
+      prepare(shiur, ingest, out);
     } catch (e) {
       console.error(`ERROR ${id}: ${(e as Error).message}`);
       failed++;
@@ -150,4 +150,4 @@ async function main(): Promise<void> {
   process.exit(failed ? 1 : 0);
 }
 
-await main();
+main();

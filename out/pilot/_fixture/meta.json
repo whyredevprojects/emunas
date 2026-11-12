@@ -1,0 +1,24 @@
+{
+ "shiurId": "_fixture",
+ "generatedAt": "2026-11-12T00:00:00.000Z",
+ "shiur": {
+  "id": "_fixture", "lang": "yi", "category": "set", "seriesId": "tanya-yi", "seriesOrder": 2,
+  "catalog": { "source": "pocket-guide-2012", "sectionId": "tanya-1", "sectionTitle": "תניא", "n": "2", "page": 20,
+   "titleOriginal": "נשמה חלק אלוק ממעל ממש; נפש השנית; צדיק ורשע", "subTitle": null, "derived": "catalog", "note": null },
+  "parsha": null, "zman": null, "perek": "ב", "hebrewYears": [5749],
+  "recordingIds": ["fix-a", "fix-b"], "inScope": true, "outOfScopeReason": null, "pathNotes": []
+ },
+ "series": { "id": "tanya-yi", "title": { "en": "Tanya", "yi": "תניא" }, "lang": "yi", "catalogSectionIds": ["tanya-1"], "shiurIds": ["_fixture"] },
+ "catalogTopics": ["נשמה חלק אלוק ממעל ממש", "נפש השנית", "צדיק ורשע"],
+ "totalDurationSec": 2400,
+ "recordings": [
+  { "recording": { "id": "fix-a", "audioKey": "fix/a.mp3", "transcriptKey": "transcripts/fix/a", "durationSec": 1800, "asrModel": "test", "sizeBytes": 1, "duplicateOf": null, "partOf": null },
+    "order": 0, "transcriptLanguage": "yi", "asrModel": "test", "durationSec": 1800, "segmentCount": 12,
+    "starts": [0, 150, 300, 420, 480, 660, 840, 1020, 1200, 1380, 1560, 1680],
+    "ends":   [150, 300, 420, 480, 660, 840, 1020, 1200, 1380, 1560, 1680, 1800] },
+  { "recording": { "id": "fix-b", "audioKey": "fix/b.mp3", "transcriptKey": "transcripts/fix/b", "durationSec": 600, "asrModel": "test", "sizeBytes": 1, "duplicateOf": null, "partOf": null },
+    "order": 1, "transcriptLanguage": "yi", "asrModel": "test", "durationSec": 600, "segmentCount": 5,
+    "starts": [0, 120, 240, 360, 480],
+    "ends":   [120, 240, 360, 480, 600] }
+ ]
+}

@@ -1,0 +1,95 @@
+{
+ "shiurId": "yi-simchos-unc-bar-mitzvah-04",
+ "generatedAt": "2026-11-12T23:11:17.868Z",
+ "shiur": {
+  "id": "yi-simchos-unc-bar-mitzvah-04",
+  "lang": "yi",
+  "category": "simcha",
+  "seriesId": null,
+  "seriesOrder": null,
+  "catalog": {
+   "source": "uncatalogued-guide",
+   "sectionId": "simchos",
+   "sectionTitle": "Simchos",
+   "n": "4",
+   "page": null,
+   "titleOriginal": "bar mitzva Shemos",
+   "subTitle": null,
+   "heading": "בר מצוה",
+   "derived": "filename",
+   "note": "type of simcha read from the file name, inside the \"Bar Mitzvah\" folder"
+  },
+  "parsha": "שמות",
+  "zman": null,
+  "perek": null,
+  "hebrewYears": [],
+  "recordingIds": [
+   "y-simchos-bar-mitzvah-04-bar-mitzva-shemos"
+  ],
+  "inScope": true,
+  "outOfScopeReason": null,
+  "pathNotes": []
+ },
+ "series": null,
+ "catalogTopics": [
+  "bar mitzva Shemos"
+ ],
+ "totalDurationSec": 528.1458125,
+ "recordings": [
+  {
+   "recording": {
+    "id": "y-simchos-bar-mitzvah-04-bar-mitzva-shemos",
+    "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Simchos/Bar Mitzvah/04 bar mitzva Shemos.mp3",
+    "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Simchos/Bar Mitzvah/04 bar mitzva Shemos",
+    "durationSec": 528.15,
+    "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+    "sizeBytes": 2628922,
+    "duplicateOf": null,
+    "partOf": null
+   },
+   "order": 0,
+   "transcriptLanguage": "yi",
+   "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+   "durationSec": 528.1458125,
+   "segmentCount": 17,
+   "starts": [
+    0,
+    33.17,
+    70.61,
+    100.72,
+    132.78,
+    161.62,
+    192.27,
+    226.46,
+    257.39,
+    283.41,
+    313.89,
+    343.02,
+    375.15,
+    410.32,
+    443.68,
+    470.8,
+    501.52
+   ],
+   "ends": [
+    32.5,
+    70.61,
+    100.72,
+    132.78,
+    161.36,
+    191.86,
+    226.46,
+    257.26,
+    283.25,
+    313.89,
+    342.9,
+    374.86,
+    409.94,
+    443.68,
+    470.35,
+    501.39,
+    526.83
+   ]
+  }
+ ]
+}

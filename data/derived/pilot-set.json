@@ -1,0 +1,1425 @@
+{
+ "seed": "pilot-v1",
+ "ingest": "data/derived/ingest.json",
+ "criteria": {
+  "durationPreferMin": {
+   "min": 30,
+   "max": 75
+  },
+  "shortSlotsMin": {
+   "min": 5,
+   "max": 20
+  },
+  "minTranscriptCharsPerMin": 150,
+  "slots": [
+   {
+    "name": "yi-parsha",
+    "lang": "yi",
+    "n": 2
+   },
+   {
+    "name": "yi-zman",
+    "lang": "yi",
+    "n": 2
+   },
+   {
+    "name": "yi-shonos",
+    "lang": "yi",
+    "n": 1
+   },
+   {
+    "name": "yi-tanya",
+    "lang": "yi",
+    "n": 2
+   },
+   {
+    "name": "yi-other-set",
+    "lang": "yi",
+    "n": 1
+   },
+   {
+    "name": "yi-simcha",
+    "lang": "yi",
+    "n": 1
+   },
+   {
+    "name": "yi-multi-recording",
+    "lang": "yi",
+    "n": 1
+   },
+   {
+    "name": "yi-imperfect-sound",
+    "lang": "yi",
+    "n": 1
+   },
+   {
+    "name": "yi-uncatalogued",
+    "lang": "yi",
+    "n": 1
+   },
+   {
+    "name": "en-parsha",
+    "lang": "en",
+    "n": 2
+   },
+   {
+    "name": "en-zman",
+    "lang": "en",
+    "n": 2
+   },
+   {
+    "name": "en-tanya",
+    "lang": "en",
+    "n": 2
+   },
+   {
+    "name": "en-emunah",
+    "lang": "en",
+    "n": 1
+   },
+   {
+    "name": "en-tefila-or-misc",
+    "lang": "en",
+    "n": 1
+   }
+  ],
+  "cleaned": "\"imperfect sound quality\" pick + the 3 other Yiddish picks with the lowest asrCommonWordShare",
+  "files": "out/pilot/<id>/: extraction <model>-<input>.json, write-up writeup-<model>.json (on sonnet-raw.json)"
+ },
+ "totals": {
+  "shiurim": 20,
+  "yi": 12,
+  "en": 8,
+  "extractionOpus": 8,
+  "extractionHaiku": 4,
+  "cleaned": 4,
+  "writeupSonnet": 6,
+  "hours": 14.42
+ },
+ "shiurim": [
+  {
+   "id": "yi-parshas-hashavua-vytz-01",
+   "slot": "yi-parsha",
+   "lang": "yi",
+   "category": "parsha",
+   "seriesId": null,
+   "catalogTitle": "עבודת יעקב ביציאה מסביבה של קדושה לארצת קליפת חכמת החיצוניות",
+   "catalogDerived": "catalog",
+   "parsha": "ויצא",
+   "zman": null,
+   "perek": null,
+   "recordings": 1,
+   "durationMin": 60.7,
+   "transcriptCharsPerMin": 708,
+   "pathNotes": [],
+   "asrCommonWordShare": 0.574,
+   "arms": {
+    "extraction": [
+     "sonnet",
+     "opus",
+     "haiku"
+    ],
+    "input": [
+     "raw"
+    ],
+    "writeup": [
+     "opus"
+    ]
+   },
+   "runs": [
+    {
+     "pass": "p4",
+     "model": "sonnet",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "sonnet-raw.json"
+    },
+    {
+     "pass": "p4",
+     "model": "opus",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "opus-raw.json"
+    },
+    {
+     "pass": "p4",
+     "model": "haiku",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "haiku-raw.json"
+    },
+    {
+     "pass": "p4b",
+     "model": "opus",
+     "variant": "raw",
+     "prompt": "prompts/p4b-writeup.md",
+     "input": "input.txt",
+     "extraction": "sonnet-raw.json",
+     "extractionVariant": "sonnet-raw",
+     "output": "writeup-opus.json"
+    }
+   ],
+   "compare": [
+    [
+     "opus-raw.json",
+     "sonnet-raw.json"
+    ],
+    [
+     "haiku-raw.json",
+     "sonnet-raw.json"
+    ]
+   ]
+  },
+  {
+   "id": "yi-parshas-hashavua-svldvs-07",
+   "slot": "yi-parsha",
+   "lang": "yi",
+   "category": "parsha",
+   "seriesId": null,
+   "catalogTitle": "“מכרה כיום את בכורתך לי” - חילוק בין שיטת הצדיק והרשע",
+   "catalogDerived": "catalog",
+   "parsha": "תולדות",
+   "zman": null,
+   "perek": null,
+   "recordings": 1,
+   "durationMin": 42,
+   "transcriptCharsPerMin": 622,
+   "pathNotes": [],
+   "asrCommonWordShare": 0.609,
+   "arms": {
+    "extraction": [
+     "sonnet"
+    ],
+    "input": [
+     "raw"
+    ],
+    "writeup": [
+     "opus",
+     "sonnet"
+    ]
+   },
+   "runs": [
+    {
+     "pass": "p4",
+     "model": "sonnet",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "sonnet-raw.json"
+    },
+    {
+     "pass": "p4b",
+     "model": "opus",
+     "variant": "raw",
+     "prompt": "prompts/p4b-writeup.md",
+     "input": "input.txt",
+     "extraction": "sonnet-raw.json",
+     "extractionVariant": "sonnet-raw",
+     "output": "writeup-opus.json"
+    },
+    {
+     "pass": "p4b",
+     "model": "sonnet",
+     "variant": "raw",
+     "prompt": "prompts/p4b-writeup.md",
+     "input": "input.txt",
+     "extraction": "sonnet-raw.json",
+     "extractionVariant": "sonnet-raw",
+     "output": "writeup-sonnet.json"
+    }
+   ],
+   "compare": [
+    [
+     "writeup-sonnet.json",
+     "writeup-opus.json"
+    ]
+   ]
+  },
+  {
+   "id": "yi-zmanim-svds-zs-chnvkh-10",
+   "slot": "yi-zman",
+   "lang": "yi",
+   "category": "zman",
+   "seriesId": null,
+   "catalogTitle": "בזאת חנוכה נעשה הדלקה אחת מכל הנרות",
+   "catalogDerived": "catalog",
+   "parsha": null,
+   "zman": "סעודת זאת חנוכה",
+   "perek": null,
+   "recordings": 1,
+   "durationMin": 61.7,
+   "transcriptCharsPerMin": 300,
+   "pathNotes": [],
+   "asrCommonWordShare": 0.555,
+   "arms": {
+    "extraction": [
+     "sonnet",
+     "opus"
+    ],
+    "input": [
+     "raw",
+     "cleaned"
+    ],
+    "writeup": [
+     "opus"
+    ]
+   },
+   "runs": [
+    {
+     "pass": "p3",
+     "model": "sonnet",
+     "prompt": "prompts/p3-cleanup.md",
+     "input": "input.txt",
+     "output": "input.cleaned.txt"
+    },
+    {
+     "pass": "p4",
+     "model": "sonnet",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "sonnet-raw.json"
+    },
+    {
+     "pass": "p4",
+     "model": "opus",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "opus-raw.json"
+    },
+    {
+     "pass": "p4",
+     "model": "sonnet",
+     "variant": "cleaned",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.cleaned.txt",
+     "output": "sonnet-cleaned.json"
+    },
+    {
+     "pass": "p4b",
+     "model": "opus",
+     "variant": "raw",
+     "prompt": "prompts/p4b-writeup.md",
+     "input": "input.txt",
+     "extraction": "sonnet-raw.json",
+     "extractionVariant": "sonnet-raw",
+     "output": "writeup-opus.json"
+    }
+   ],
+   "compare": [
+    [
+     "opus-raw.json",
+     "sonnet-raw.json"
+    ],
+    [
+     "sonnet-cleaned.json",
+     "sonnet-raw.json"
+    ]
+   ]
+  },
+  {
+   "id": "yi-zmanim-pvrym-03",
+   "slot": "yi-zman",
+   "lang": "yi",
+   "category": "zman",
+   "seriesId": null,
+   "catalogTitle": "ביאורי מהר\"ל על מגילת אסתר - כל דבר שהוא יותר בקדושה הוא יותר בהסתרה. ועוד",
+   "catalogDerived": "catalog",
+   "parsha": null,
+   "zman": "פורים",
+   "perek": null,
+   "recordings": 1,
+   "durationMin": 56.2,
+   "transcriptCharsPerMin": 650,
+   "pathNotes": [],
+   "asrCommonWordShare": 0.607,
+   "arms": {
+    "extraction": [
+     "sonnet"
+    ],
+    "input": [
+     "raw"
+    ],
+    "writeup": [
+     "opus",
+     "sonnet"
+    ]
+   },
+   "runs": [
+    {
+     "pass": "p4",
+     "model": "sonnet",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "sonnet-raw.json"
+    },
+    {
+     "pass": "p4b",
+     "model": "opus",
+     "variant": "raw",
+     "prompt": "prompts/p4b-writeup.md",
+     "input": "input.txt",
+     "extraction": "sonnet-raw.json",
+     "extractionVariant": "sonnet-raw",
+     "output": "writeup-opus.json"
+    },
+    {
+     "pass": "p4b",
+     "model": "sonnet",
+     "variant": "raw",
+     "prompt": "prompts/p4b-writeup.md",
+     "input": "input.txt",
+     "extraction": "sonnet-raw.json",
+     "extractionVariant": "sonnet-raw",
+     "output": "writeup-sonnet.json"
+    }
+   ],
+   "compare": [
+    [
+     "writeup-sonnet.json",
+     "writeup-opus.json"
+    ]
+   ]
+  },
+  {
+   "id": "yi-shonos-38",
+   "slot": "yi-shonos",
+   "lang": "yi",
+   "category": "shonos",
+   "seriesId": null,
+   "catalogTitle": "מיר דארפן זיך האלטן שטארק אין די אמעריקאנע בית לבן",
+   "catalogDerived": "catalog",
+   "parsha": null,
+   "zman": null,
+   "perek": null,
+   "recordings": 1,
+   "durationMin": 33.5,
+   "transcriptCharsPerMin": 518,
+   "pathNotes": [],
+   "asrCommonWordShare": 0.584,
+   "arms": {
+    "extraction": [
+     "sonnet"
+    ],
+    "input": [
+     "raw"
+    ],
+    "writeup": [
+     "opus"
+    ]
+   },
+   "runs": [
+    {
+     "pass": "p4",
+     "model": "sonnet",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "sonnet-raw.json"
+    },
+    {
+     "pass": "p4b",
+     "model": "opus",
+     "variant": "raw",
+     "prompt": "prompts/p4b-writeup.md",
+     "input": "input.txt",
+     "extraction": "sonnet-raw.json",
+     "extractionVariant": "sonnet-raw",
+     "output": "writeup-opus.json"
+    }
+   ],
+   "compare": []
+  },
+  {
+   "id": "yi-tanya-2-16",
+   "slot": "yi-tanya",
+   "lang": "yi",
+   "category": "set",
+   "seriesId": "tanya-yi",
+   "catalogTitle": "דברים שעושים טימטום הלב ואיך לתקן ולהזהר. בחינת האמת לפי מדריגתו. לפעמים אין התעוררות בשבת כי אז צריכים להיות במדריגה יותר זך. עצות כשיש טימטום הלב. למואס בגשמיות.",
+   "catalogDerived": "catalog",
+   "parsha": null,
+   "zman": null,
+   "perek": "כ”ט",
+   "recordings": 1,
+   "durationMin": 37.1,
+   "transcriptCharsPerMin": 617,
+   "pathNotes": [],
+   "asrCommonWordShare": 0.572,
+   "arms": {
+    "extraction": [
+     "sonnet",
+     "opus",
+     "haiku"
+    ],
+    "input": [
+     "raw",
+     "cleaned"
+    ],
+    "writeup": [
+     "opus"
+    ]
+   },
+   "runs": [
+    {
+     "pass": "p3",
+     "model": "sonnet",
+     "prompt": "prompts/p3-cleanup.md",
+     "input": "input.txt",
+     "output": "input.cleaned.txt"
+    },
+    {
+     "pass": "p4",
+     "model": "sonnet",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "sonnet-raw.json"
+    },
+    {
+     "pass": "p4",
+     "model": "opus",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "opus-raw.json"
+    },
+    {
+     "pass": "p4",
+     "model": "haiku",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "haiku-raw.json"
+    },
+    {
+     "pass": "p4",
+     "model": "sonnet",
+     "variant": "cleaned",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.cleaned.txt",
+     "output": "sonnet-cleaned.json"
+    },
+    {
+     "pass": "p4b",
+     "model": "opus",
+     "variant": "raw",
+     "prompt": "prompts/p4b-writeup.md",
+     "input": "input.txt",
+     "extraction": "sonnet-raw.json",
+     "extractionVariant": "sonnet-raw",
+     "output": "writeup-opus.json"
+    }
+   ],
+   "compare": [
+    [
+     "opus-raw.json",
+     "sonnet-raw.json"
+    ],
+    [
+     "haiku-raw.json",
+     "sonnet-raw.json"
+    ],
+    [
+     "sonnet-cleaned.json",
+     "sonnet-raw.json"
+    ]
+   ]
+  },
+  {
+   "id": "yi-tanya-1-12",
+   "slot": "yi-tanya",
+   "lang": "yi",
+   "category": "set",
+   "seriesId": "tanya-yi",
+   "catalogTitle": "המוחין מולידות המדות' מחלוקת אם מהמוחין באים למדות או להיפך. החכמה והבינה עוסקים באהבה ויראה והדעת מקשרם למדות.",
+   "catalogDerived": "catalog",
+   "parsha": null,
+   "zman": null,
+   "perek": "ג",
+   "recordings": 1,
+   "durationMin": 41.7,
+   "transcriptCharsPerMin": 587,
+   "pathNotes": [],
+   "asrCommonWordShare": 0.584,
+   "arms": {
+    "extraction": [
+     "sonnet"
+    ],
+    "input": [
+     "raw"
+    ],
+    "writeup": [
+     "opus"
+    ]
+   },
+   "runs": [
+    {
+     "pass": "p4",
+     "model": "sonnet",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "sonnet-raw.json"
+    },
+    {
+     "pass": "p4b",
+     "model": "opus",
+     "variant": "raw",
+     "prompt": "prompts/p4b-writeup.md",
+     "input": "input.txt",
+     "extraction": "sonnet-raw.json",
+     "extractionVariant": "sonnet-raw",
+     "output": "writeup-opus.json"
+    }
+   ],
+   "compare": []
+  },
+  {
+   "id": "yi-tefila-heb-19",
+   "slot": "yi-other-set",
+   "lang": "yi",
+   "category": "set",
+   "seriesId": "tefila-yi",
+   "catalogTitle": "סוף אשרי. הללוקה הללי נפשי",
+   "catalogDerived": "catalog",
+   "parsha": null,
+   "zman": null,
+   "perek": null,
+   "recordings": 1,
+   "durationMin": 43.5,
+   "transcriptCharsPerMin": 611,
+   "pathNotes": [],
+   "asrCommonWordShare": 0.591,
+   "arms": {
+    "extraction": [
+     "sonnet"
+    ],
+    "input": [
+     "raw"
+    ],
+    "writeup": [
+     "opus",
+     "sonnet"
+    ]
+   },
+   "runs": [
+    {
+     "pass": "p4",
+     "model": "sonnet",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "sonnet-raw.json"
+    },
+    {
+     "pass": "p4b",
+     "model": "opus",
+     "variant": "raw",
+     "prompt": "prompts/p4b-writeup.md",
+     "input": "input.txt",
+     "extraction": "sonnet-raw.json",
+     "extractionVariant": "sonnet-raw",
+     "output": "writeup-opus.json"
+    },
+    {
+     "pass": "p4b",
+     "model": "sonnet",
+     "variant": "raw",
+     "prompt": "prompts/p4b-writeup.md",
+     "input": "input.txt",
+     "extraction": "sonnet-raw.json",
+     "extractionVariant": "sonnet-raw",
+     "output": "writeup-sonnet.json"
+    }
+   ],
+   "compare": [
+    [
+     "writeup-sonnet.json",
+     "writeup-opus.json"
+    ]
+   ]
+  },
+  {
+   "id": "yi-simchos-unc-bar-mitzvah-04",
+   "slot": "yi-simcha",
+   "lang": "yi",
+   "category": "simcha",
+   "seriesId": null,
+   "catalogTitle": "bar mitzva Shemos",
+   "catalogDerived": "filename",
+   "parsha": "שמות",
+   "zman": null,
+   "perek": null,
+   "recordings": 1,
+   "durationMin": 8.8,
+   "transcriptCharsPerMin": 517,
+   "pathNotes": [],
+   "asrCommonWordShare": 0.571,
+   "arms": {
+    "extraction": [
+     "sonnet"
+    ],
+    "input": [
+     "raw",
+     "cleaned"
+    ],
+    "writeup": [
+     "opus"
+    ]
+   },
+   "runs": [
+    {
+     "pass": "p3",
+     "model": "sonnet",
+     "prompt": "prompts/p3-cleanup.md",
+     "input": "input.txt",
+     "output": "input.cleaned.txt"
+    },
+    {
+     "pass": "p4",
+     "model": "sonnet",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "sonnet-raw.json"
+    },
+    {
+     "pass": "p4",
+     "model": "sonnet",
+     "variant": "cleaned",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.cleaned.txt",
+     "output": "sonnet-cleaned.json"
+    },
+    {
+     "pass": "p4b",
+     "model": "opus",
+     "variant": "raw",
+     "prompt": "prompts/p4b-writeup.md",
+     "input": "input.txt",
+     "extraction": "sonnet-raw.json",
+     "extractionVariant": "sonnet-raw",
+     "output": "writeup-opus.json"
+    }
+   ],
+   "compare": [
+    [
+     "sonnet-cleaned.json",
+     "sonnet-raw.json"
+    ]
+   ]
+  },
+  {
+   "id": "yi-zmanim-tv-bb-04",
+   "slot": "yi-multi-recording",
+   "lang": "yi",
+   "category": "zman",
+   "seriesId": null,
+   "catalogTitle": "זמן לשאוב יראת שמים בעד הכנה לר\"ה' זמן של שידוכים' ז' ימים אחר היו\"ט הגדול של ט' באב לעתיד.",
+   "catalogDerived": "catalog",
+   "parsha": null,
+   "zman": "ט\"ו באב",
+   "perek": null,
+   "recordings": 2,
+   "durationMin": 50.5,
+   "transcriptCharsPerMin": 521,
+   "pathNotes": [],
+   "asrCommonWordShare": 0.585,
+   "arms": {
+    "extraction": [
+     "sonnet",
+     "opus"
+    ],
+    "input": [
+     "raw"
+    ],
+    "writeup": [
+     "opus"
+    ]
+   },
+   "runs": [
+    {
+     "pass": "p4",
+     "model": "sonnet",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "sonnet-raw.json"
+    },
+    {
+     "pass": "p4",
+     "model": "opus",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "opus-raw.json"
+    },
+    {
+     "pass": "p4b",
+     "model": "opus",
+     "variant": "raw",
+     "prompt": "prompts/p4b-writeup.md",
+     "input": "input.txt",
+     "extraction": "sonnet-raw.json",
+     "extractionVariant": "sonnet-raw",
+     "output": "writeup-opus.json"
+    }
+   ],
+   "compare": [
+    [
+     "opus-raw.json",
+     "sonnet-raw.json"
+    ]
+   ]
+  },
+  {
+   "id": "yi-simchos-unc-bris-pidyon-haben-03",
+   "slot": "yi-imperfect-sound",
+   "lang": "yi",
+   "category": "simcha",
+   "seriesId": null,
+   "catalogTitle": "Bris (Nitzavim Elul)",
+   "catalogDerived": "filename",
+   "parsha": "נצבים",
+   "zman": "אלול",
+   "perek": null,
+   "recordings": 1,
+   "durationMin": 7.2,
+   "transcriptCharsPerMin": 515,
+   "pathNotes": [
+    "imperfect sound quality"
+   ],
+   "asrCommonWordShare": 0.508,
+   "arms": {
+    "extraction": [
+     "sonnet"
+    ],
+    "input": [
+     "raw",
+     "cleaned"
+    ],
+    "writeup": [
+     "opus"
+    ]
+   },
+   "runs": [
+    {
+     "pass": "p3",
+     "model": "sonnet",
+     "prompt": "prompts/p3-cleanup.md",
+     "input": "input.txt",
+     "output": "input.cleaned.txt"
+    },
+    {
+     "pass": "p4",
+     "model": "sonnet",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "sonnet-raw.json"
+    },
+    {
+     "pass": "p4",
+     "model": "sonnet",
+     "variant": "cleaned",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.cleaned.txt",
+     "output": "sonnet-cleaned.json"
+    },
+    {
+     "pass": "p4b",
+     "model": "opus",
+     "variant": "raw",
+     "prompt": "prompts/p4b-writeup.md",
+     "input": "input.txt",
+     "extraction": "sonnet-raw.json",
+     "extractionVariant": "sonnet-raw",
+     "output": "writeup-opus.json"
+    }
+   ],
+   "compare": [
+    [
+     "sonnet-cleaned.json",
+     "sonnet-raw.json"
+    ]
+   ]
+  },
+  {
+   "id": "yi-current-unc-ey-bachurim-5769-09",
+   "slot": "yi-uncatalogued",
+   "lang": "yi",
+   "category": "current",
+   "seriesId": "current-ey-bachurim-5769",
+   "catalogTitle": "Vayeshev",
+   "catalogDerived": "filename",
+   "parsha": "וישב",
+   "zman": null,
+   "perek": null,
+   "recordings": 1,
+   "durationMin": 42.5,
+   "transcriptCharsPerMin": 559,
+   "pathNotes": [],
+   "asrCommonWordShare": 0.62,
+   "arms": {
+    "extraction": [
+     "sonnet"
+    ],
+    "input": [
+     "raw"
+    ],
+    "writeup": [
+     "opus"
+    ]
+   },
+   "runs": [
+    {
+     "pass": "p4",
+     "model": "sonnet",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "sonnet-raw.json"
+    },
+    {
+     "pass": "p4b",
+     "model": "opus",
+     "variant": "raw",
+     "prompt": "prompts/p4b-writeup.md",
+     "input": "input.txt",
+     "extraction": "sonnet-raw.json",
+     "extractionVariant": "sonnet-raw",
+     "output": "writeup-opus.json"
+    }
+   ],
+   "compare": []
+  },
+  {
+   "id": "en-parsha-en-nch-02",
+   "slot": "en-parsha",
+   "lang": "en",
+   "category": "parsha",
+   "seriesId": null,
+   "catalogTitle": "The Power of Man to Build or Destroy the World",
+   "catalogDerived": "catalog",
+   "parsha": "נח",
+   "zman": null,
+   "perek": null,
+   "recordings": 1,
+   "durationMin": 47.8,
+   "transcriptCharsPerMin": 555,
+   "pathNotes": [],
+   "asrCommonWordShare": null,
+   "arms": {
+    "extraction": [
+     "sonnet",
+     "opus",
+     "haiku"
+    ],
+    "input": [
+     "raw"
+    ],
+    "writeup": [
+     "opus"
+    ]
+   },
+   "runs": [
+    {
+     "pass": "p4",
+     "model": "sonnet",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "sonnet-raw.json"
+    },
+    {
+     "pass": "p4",
+     "model": "opus",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "opus-raw.json"
+    },
+    {
+     "pass": "p4",
+     "model": "haiku",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "haiku-raw.json"
+    },
+    {
+     "pass": "p4b",
+     "model": "opus",
+     "variant": "raw",
+     "prompt": "prompts/p4b-writeup.md",
+     "input": "input.txt",
+     "extraction": "sonnet-raw.json",
+     "extractionVariant": "sonnet-raw",
+     "output": "writeup-opus.json"
+    }
+   ],
+   "compare": [
+    [
+     "opus-raw.json",
+     "sonnet-raw.json"
+    ],
+    [
+     "haiku-raw.json",
+     "sonnet-raw.json"
+    ]
+   ]
+  },
+  {
+   "id": "en-parsha-en-bshlch-02",
+   "slot": "en-parsha",
+   "lang": "en",
+   "category": "parsha",
+   "seriesId": null,
+   "catalogTitle": "The Merit of the Righteous Women and their Song (Connection to ט”ו בשבט)",
+   "catalogDerived": "catalog",
+   "parsha": "בשלח",
+   "zman": null,
+   "perek": null,
+   "recordings": 1,
+   "durationMin": 56,
+   "transcriptCharsPerMin": 531,
+   "pathNotes": [],
+   "asrCommonWordShare": null,
+   "arms": {
+    "extraction": [
+     "sonnet"
+    ],
+    "input": [
+     "raw"
+    ],
+    "writeup": [
+     "opus",
+     "sonnet"
+    ]
+   },
+   "runs": [
+    {
+     "pass": "p4",
+     "model": "sonnet",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "sonnet-raw.json"
+    },
+    {
+     "pass": "p4b",
+     "model": "opus",
+     "variant": "raw",
+     "prompt": "prompts/p4b-writeup.md",
+     "input": "input.txt",
+     "extraction": "sonnet-raw.json",
+     "extractionVariant": "sonnet-raw",
+     "output": "writeup-opus.json"
+    },
+    {
+     "pass": "p4b",
+     "model": "sonnet",
+     "variant": "raw",
+     "prompt": "prompts/p4b-writeup.md",
+     "input": "input.txt",
+     "extraction": "sonnet-raw.json",
+     "extractionVariant": "sonnet-raw",
+     "output": "writeup-sonnet.json"
+    }
+   ],
+   "compare": [
+    [
+     "writeup-sonnet.json",
+     "writeup-opus.json"
+    ]
+   ]
+  },
+  {
+   "id": "en-zmanim-en-pvrym-09",
+   "slot": "en-zman",
+   "lang": "en",
+   "category": "zman",
+   "seriesId": null,
+   "catalogTitle": "פורים Reveals the Essence of the אידישע נשמה",
+   "catalogDerived": "catalog",
+   "parsha": null,
+   "zman": "פורים",
+   "perek": null,
+   "recordings": 1,
+   "durationMin": 38.8,
+   "transcriptCharsPerMin": 510,
+   "pathNotes": [],
+   "asrCommonWordShare": null,
+   "arms": {
+    "extraction": [
+     "sonnet",
+     "opus"
+    ],
+    "input": [
+     "raw"
+    ],
+    "writeup": [
+     "opus"
+    ]
+   },
+   "runs": [
+    {
+     "pass": "p4",
+     "model": "sonnet",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "sonnet-raw.json"
+    },
+    {
+     "pass": "p4",
+     "model": "opus",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "opus-raw.json"
+    },
+    {
+     "pass": "p4b",
+     "model": "opus",
+     "variant": "raw",
+     "prompt": "prompts/p4b-writeup.md",
+     "input": "input.txt",
+     "extraction": "sonnet-raw.json",
+     "extractionVariant": "sonnet-raw",
+     "output": "writeup-opus.json"
+    }
+   ],
+   "compare": [
+    [
+     "opus-raw.json",
+     "sonnet-raw.json"
+    ]
+   ]
+  },
+  {
+   "id": "en-zmanim-en-prh-01",
+   "slot": "en-zman",
+   "lang": "en",
+   "category": "zman",
+   "seriesId": null,
+   "catalogTitle": "פרה אדומה - A מצוה that is Above our Understanding",
+   "catalogDerived": "catalog",
+   "parsha": null,
+   "zman": "פרה",
+   "perek": null,
+   "recordings": 1,
+   "durationMin": 60.4,
+   "transcriptCharsPerMin": 555,
+   "pathNotes": [],
+   "asrCommonWordShare": null,
+   "arms": {
+    "extraction": [
+     "sonnet"
+    ],
+    "input": [
+     "raw"
+    ],
+    "writeup": [
+     "opus",
+     "sonnet"
+    ]
+   },
+   "runs": [
+    {
+     "pass": "p4",
+     "model": "sonnet",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "sonnet-raw.json"
+    },
+    {
+     "pass": "p4b",
+     "model": "opus",
+     "variant": "raw",
+     "prompt": "prompts/p4b-writeup.md",
+     "input": "input.txt",
+     "extraction": "sonnet-raw.json",
+     "extractionVariant": "sonnet-raw",
+     "output": "writeup-opus.json"
+    },
+    {
+     "pass": "p4b",
+     "model": "sonnet",
+     "variant": "raw",
+     "prompt": "prompts/p4b-writeup.md",
+     "input": "input.txt",
+     "extraction": "sonnet-raw.json",
+     "extractionVariant": "sonnet-raw",
+     "output": "writeup-sonnet.json"
+    }
+   ],
+   "compare": [
+    [
+     "writeup-sonnet.json",
+     "writeup-opus.json"
+    ]
+   ]
+  },
+  {
+   "id": "en-tanya-en-03",
+   "slot": "en-tanya",
+   "lang": "en",
+   "category": "set",
+   "seriesId": "tanya-en",
+   "catalogTitle": "“חסד לאומים חטאת.” נפש אלקות דישראל - חלק אלקי ממש.",
+   "catalogDerived": "catalog",
+   "parsha": null,
+   "zman": null,
+   "perek": "א-ב",
+   "recordings": 1,
+   "durationMin": 53,
+   "transcriptCharsPerMin": 540,
+   "pathNotes": [],
+   "asrCommonWordShare": null,
+   "arms": {
+    "extraction": [
+     "sonnet",
+     "opus",
+     "haiku"
+    ],
+    "input": [
+     "raw"
+    ],
+    "writeup": [
+     "opus"
+    ]
+   },
+   "runs": [
+    {
+     "pass": "p4",
+     "model": "sonnet",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "sonnet-raw.json"
+    },
+    {
+     "pass": "p4",
+     "model": "opus",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "opus-raw.json"
+    },
+    {
+     "pass": "p4",
+     "model": "haiku",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "haiku-raw.json"
+    },
+    {
+     "pass": "p4b",
+     "model": "opus",
+     "variant": "raw",
+     "prompt": "prompts/p4b-writeup.md",
+     "input": "input.txt",
+     "extraction": "sonnet-raw.json",
+     "extractionVariant": "sonnet-raw",
+     "output": "writeup-opus.json"
+    }
+   ],
+   "compare": [
+    [
+     "opus-raw.json",
+     "sonnet-raw.json"
+    ],
+    [
+     "haiku-raw.json",
+     "sonnet-raw.json"
+    ]
+   ]
+  },
+  {
+   "id": "en-tanya-en-05",
+   "slot": "en-tanya",
+   "lang": "en",
+   "category": "set",
+   "seriesId": "tanya-en",
+   "catalogTitle": "אפ' נשמות של שערות וצפרנים הם מקושר בקשר נפלא ועצום בעצמותו ומהותו הראשון.",
+   "catalogDerived": "catalog",
+   "parsha": null,
+   "zman": null,
+   "perek": "ב",
+   "recordings": 1,
+   "durationMin": 51.4,
+   "transcriptCharsPerMin": 572,
+   "pathNotes": [],
+   "asrCommonWordShare": null,
+   "arms": {
+    "extraction": [
+     "sonnet"
+    ],
+    "input": [
+     "raw"
+    ],
+    "writeup": [
+     "opus",
+     "sonnet"
+    ]
+   },
+   "runs": [
+    {
+     "pass": "p4",
+     "model": "sonnet",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "sonnet-raw.json"
+    },
+    {
+     "pass": "p4b",
+     "model": "opus",
+     "variant": "raw",
+     "prompt": "prompts/p4b-writeup.md",
+     "input": "input.txt",
+     "extraction": "sonnet-raw.json",
+     "extractionVariant": "sonnet-raw",
+     "output": "writeup-opus.json"
+    },
+    {
+     "pass": "p4b",
+     "model": "sonnet",
+     "variant": "raw",
+     "prompt": "prompts/p4b-writeup.md",
+     "input": "input.txt",
+     "extraction": "sonnet-raw.json",
+     "extractionVariant": "sonnet-raw",
+     "output": "writeup-sonnet.json"
+    }
+   ],
+   "compare": [
+    [
+     "writeup-sonnet.json",
+     "writeup-opus.json"
+    ]
+   ]
+  },
+  {
+   "id": "en-emunah-en-17",
+   "slot": "en-emunah",
+   "lang": "en",
+   "category": "set",
+   "seriesId": "emunah-en",
+   "catalogTitle": "Seeking Hashem from a Distance",
+   "catalogDerived": "catalog",
+   "parsha": null,
+   "zman": null,
+   "perek": null,
+   "recordings": 1,
+   "durationMin": 31.6,
+   "transcriptCharsPerMin": 557,
+   "pathNotes": [],
+   "asrCommonWordShare": null,
+   "arms": {
+    "extraction": [
+     "sonnet",
+     "opus"
+    ],
+    "input": [
+     "raw"
+    ],
+    "writeup": [
+     "opus"
+    ]
+   },
+   "runs": [
+    {
+     "pass": "p4",
+     "model": "sonnet",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "sonnet-raw.json"
+    },
+    {
+     "pass": "p4",
+     "model": "opus",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "opus-raw.json"
+    },
+    {
+     "pass": "p4b",
+     "model": "opus",
+     "variant": "raw",
+     "prompt": "prompts/p4b-writeup.md",
+     "input": "input.txt",
+     "extraction": "sonnet-raw.json",
+     "extractionVariant": "sonnet-raw",
+     "output": "writeup-opus.json"
+    }
+   ],
+   "compare": [
+    [
+     "opus-raw.json",
+     "sonnet-raw.json"
+    ]
+   ]
+  },
+  {
+   "id": "en-miscellaneous-en-14",
+   "slot": "en-tefila-or-misc",
+   "lang": "en",
+   "category": "misc",
+   "seriesId": null,
+   "catalogTitle": "The Recession - Give צדקה with שמחה. The קדושים of the Mumbai Massacre",
+   "catalogDerived": "catalog",
+   "parsha": null,
+   "zman": null,
+   "perek": null,
+   "recordings": 1,
+   "durationMin": 40.9,
+   "transcriptCharsPerMin": 496,
+   "pathNotes": [],
+   "asrCommonWordShare": null,
+   "arms": {
+    "extraction": [
+     "sonnet"
+    ],
+    "input": [
+     "raw"
+    ],
+    "writeup": [
+     "opus"
+    ]
+   },
+   "runs": [
+    {
+     "pass": "p4",
+     "model": "sonnet",
+     "variant": "raw",
+     "prompt": "prompts/p4-extract.md",
+     "input": "input.txt",
+     "output": "sonnet-raw.json"
+    },
+    {
+     "pass": "p4b",
+     "model": "opus",
+     "variant": "raw",
+     "prompt": "prompts/p4b-writeup.md",
+     "input": "input.txt",
+     "extraction": "sonnet-raw.json",
+     "extractionVariant": "sonnet-raw",
+     "output": "writeup-opus.json"
+    }
+   ],
+   "compare": []
+  }
+ ]
+}
