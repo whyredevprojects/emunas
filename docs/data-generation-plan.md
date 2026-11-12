@@ -38,6 +38,7 @@ Catalog gotchas the ingest step must handle:
 | C0 | **Shiur records** from catalog + path | Browse by section/parsha/zman/year/series, calendar, series order | Code. Resolve Shiur ↔ Recording(s), dedupe, Hebrew year → numeric, parsha/zman → occasion ids. |
 | C1 | **Sections (TOC)** with timestamps, optional subsections | Chapter markers in the player, deep links, search hit unit | LLM, seeded with the catalog title: "the catalog says this shiur covers A; B; C — find where each starts, add what's missing". Model cites segment indices; code converts to times. |
 | C2 | **Summaries** (one-liner, abstract, 3–7 key points), en + yi | Cards, shiur page, list views, cross-language reach | LLM. Yiddish shiur → English summary is the main bridge for English speakers, and vice versa. |
+| C2b | **Full write-up** (long-form summary), en + yi | The readable stand-in for the hidden transcript: someone can learn the shiur without listening to it. Each paragraph links to its timestamp. | LLM, written section by section from P4's sections (so it can't drift), in the order the Rav builds the argument: question → sources → chiddush → story → application. Length scales with content, ~400–700 words per hour in English, Yiddish similar. Each paragraph carries `segs[]` and goes through P5 verification. Written in third-person reported speech ("The Rav explains…") so it never reads as his own words. Sources mentioned inline link to the C3 entries. |
 | C3 | **Sources cited**, normalized to works + Sefaria refs | Sources panel; "every shiur that cites Tanya ch. 2 / Bnei Yissaschar" | LLM extract + code resolution against an offline Sefaria index. Unresolved stays unresolved. |
 | C4 | **Faceted tags** from a fixed vocabulary | Topic browse, filters, "more on this" | Two-pass taxonomy (below). |
 | C5 | **Search** | Bilingual search | Index generated text (section titles + summaries in en/yi, key points, catalog titles) in D1 FTS5 + Vectorize. Raw ASR text only as a low-weight lexical fallback, expanded with glossary spelling variants. |
@@ -78,6 +79,7 @@ P3 light cleanup (Sonnet, internal only)   per chunk: fix terms using glossary; 
 P4 extraction (Sonnet; Opus where the pilot says Yiddish needs it)
                         per shiur, one call: sections, bilingual summaries, sources, insights,
                         stories, Q&A, takeaways, candidate topics, segment kinds
+P4b write-up (Sonnet) per shiur: full write-up en + yi, from P4 sections + their segments
 P5 verify (Haiku)       every claim vs its cited segments → drop / lower confidence
 P6 source resolution    code + Sefaria index; Haiku fallback
 P7 taxonomy (Opus)      corpus, then freeze
@@ -107,6 +109,7 @@ Operational rules: Batch API; prompt-cache the glossary + instructions prefix; s
 - `ShiurMeta` gains `catalog: { source: "pocket-guide-2012" | "uncatalogued-guide"; section: string; n?: string; titleOriginal: string; derived?: "pocket-guide" | "dir-prefix" | "filename"; page?: number }`, `hebrewYears: number[]`, `perek?: string`.
 - Drop `SegmentLayer.corrected/translationEn` from published data and drop `Quote` entirely.
 - Add `reviewStatus` to all corpus entities.
+- Add `writeup: { en: WriteupBlock[]; yi: WriteupBlock[] }` where `WriteupBlock = { sectionId: string; heading?: string; paragraphs: { text: string; sourceIdx: number[]; evidence: Evidence }[] }`.
 
 ## Next steps
 1. P0 ingest script → `Shiur`/`Recording` JSON for all 917, with the dedupe rules above.
