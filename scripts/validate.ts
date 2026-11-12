@@ -1,0 +1,511 @@
+// Validate P4/P4b extraction outputs against the pilot meta.json.
+//
+//   npx tsx scripts/validate.ts out/pilot/<shiurId>/<variant>.json [...] [--meta path] [--quiet]
+//   npx tsx scripts/validate.ts --summary out/pilot/<shiurId>/*.json
+//
+// meta.json is taken from the same directory as each file unless --meta is given.
+// Exit code 1 when any file has errors.
+import { existsSync, readFileSync } from "node:fs";
+import { basename, dirname, join } from "node:path";
+import type { Evidence, Extraction, Localized, Section, SegRange } from "../src/types.js";
+import { hebrewRatio, mmss, wordCount, type PilotMeta, type PilotRecordingMeta } from "./lib/pilot.js";
+
+// ---------------- caps & thresholds ----------------
+const SECTIONS_PER_HOUR = { min: 4, max: 12 };
+const MIN_SECTION_SEC = 180;
+const SUBSECTION_PARENT_MIN_SEC = 12 * 60;
+const SUBSECTIONS = { min: 2, max: 4 };
+const MIN_SUBSECTION_SEC = 90;
+const KEY_POINTS = { min: 3, max: 7 };
+const INSIGHTS = { min: 3, max: 7 };
+const QUESTIONS_MAX = 6;
+const TAKEAWAYS_MAX = 5;
+const CANDIDATE_TOPICS = { min: 5, max: 10 };
+const ABSTRACT_WORDS = { min: 80, max: 150 };
+const WRITEUP_WORDS_PER_HOUR = { min: 400, max: 700 };
+const YI_MIN_HEBREW = 0.8;        // below: warning; below YI_HARD_MIN: error
+const YI_HARD_MIN = 0.5;
+const EN_MAX_HEBREW = 0.25;       // English text that is mostly Hebrew script is suspicious
+const EVIDENCE_SLACK_SEGS = 3;    // "near" the section
+const NON_CONTENT_KINDS = new Set(["singing", "noise", "other_speaker"]);
+
+// ---------------- report ----------------
+interface Report {
+  file: string;
+  errors: string[];
+  warnings: string[];
+  stats: Record<string, number | string>;
+}
+
+// ---------------- shape validation (hand-rolled) ----------------
+type Check = (v: unknown, path: string, errs: string[]) => void;
+
+const typeOf = (v: unknown): string => (v === null ? "null" : Array.isArray(v) ? "array" : typeof v);
+const isObj = (v: unknown): v is Record<string, unknown> => typeOf(v) === "object";
+
+const str: Check = (v, p, e) => {
+  if (typeof v !== "string") e.push(`${p}: expected string, got ${typeOf(v)}`);
+};
+const nonEmptyStr: Check = (v, p, e) => {
+  if (typeof v !== "string") e.push(`${p}: expected string, got ${typeOf(v)}`);
+  else if (!v.trim()) e.push(`${p}: empty string`);
+};
+const strOrNull: Check = (v, p, e) => {
+  if (v !== null && typeof v !== "string") e.push(`${p}: expected string|null, got ${typeOf(v)}`);
+};
+const int: Check = (v, p, e) => {
+  if (typeof v !== "number" || !Number.isInteger(v)) e.push(`${p}: expected integer, got ${JSON.stringify(v)}`);
+};
+const num01: Check = (v, p, e) => {
+  if (typeof v !== "number" || !(v >= 0 && v <= 1)) e.push(`${p}: expected number in 0..1, got ${JSON.stringify(v)}`);
+};
+const oneOf = (...vals: string[]): Check => (v, p, e) => {
+  if (typeof v !== "string" || !vals.includes(v)) e.push(`${p}: expected one of ${vals.join("|")}, got ${JSON.stringify(v)}`);
+};
+const arr = (item: Check): Check => (v, p, e) => {
+  if (!Array.isArray(v)) return void e.push(`${p}: expected array, got ${typeOf(v)}`);
+  v.forEach((x, i) => item(x, `${p}[${i}]`, e));
+};
+const strOrNullOrAbsent = (v: unknown, p: string, e: string[]) => {
+  if (v !== undefined) str(v, p, e);
+};
+/** Object with required keys (spec) and optional keys (opt). Unknown keys are reported as errors. */
+const obj = (spec: Record<string, Check>, opt: Record<string, Check> = {}): Check => (v, p, e) => {
+  if (!isObj(v)) return void e.push(`${p}: expected object, got ${typeOf(v)}`);
+  for (const [k, c] of Object.entries(spec)) {
+    if (!(k in v)) e.push(`${p}.${k}: missing`);
+    else c(v[k], `${p}.${k}`, e);
+  }
+  for (const [k, c] of Object.entries(opt)) if (k in v && v[k] !== undefined) c(v[k], `${p}.${k}`, e);
+  for (const k of Object.keys(v)) if (!(k in spec) && !(k in opt)) e.push(`${p}.${k}: unexpected field`);
+};
+
+const localized: Check = obj({ en: nonEmptyStr, yi: nonEmptyStr }, { he: str });
+const evidence: Check = obj({ segs: arr(int), confidence: num01 }, { recordingId: str });
+const segRange = { recordingId: nonEmptyStr, startSeg: int, endSeg: int };
+const textItem: Check = obj({ text: localized, evidence });
+
+const extractionShape: Check = obj({
+  shiurId: nonEmptyStr,
+  model: nonEmptyStr,
+  variant: nonEmptyStr,
+  summary: obj({ oneLiner: localized, abstract: localized, keyPoints: arr(textItem) }),
+  sections: arr(
+    obj({
+      ...segRange,
+      title: localized,
+      summary: localized,
+      kind: oneOf("intro", "main", "story", "tangent", "closing", "brachah", "singing", "other_speaker", "noise"),
+      catalogTopicIdx: arr(int),
+      subsections: arr(obj({ ...segRange, title: localized, summary: localized })),
+    }),
+  ),
+  sources: arr(
+    obj({
+      heardAs: str,
+      work: strOrNull,
+      ref: strOrNull,
+      sefariaRef: strOrNull,
+      resolution: oneOf("resolved", "inferred", "unresolved"),
+      mention: oneOf("quoted", "paraphrased", "alluded"),
+      evidence,
+    }),
+  ),
+  insights: arr(textItem),
+  stories: arr(obj({ title: localized, retelling: localized, people: arr(str), evidence })),
+  questions: arr(
+    obj(
+      { question: localized, answer: localized, questionSegs: arr(int), answerSegs: arr(int), confidence: num01 },
+      { recordingId: strOrNullOrAbsent },
+    ),
+  ),
+  takeaways: arr(textItem),
+  candidateTopics: arr(nonEmptyStr),
+  concepts: arr(obj({ he: nonEmptyStr, heardAs: arr(str) })),
+  people: arr(obj({ name: nonEmptyStr, heardAs: arr(str) })),
+  writeup: obj({
+    en: arr(obj({ sectionIndex: int, heading: strOrNull, paragraphs: arr(obj({ text: nonEmptyStr, sourceIdx: arr(int), evidence })) })),
+    yi: arr(obj({ sectionIndex: int, heading: strOrNull, paragraphs: arr(obj({ text: nonEmptyStr, sourceIdx: arr(int), evidence })) })),
+  }),
+  asrNotes: str,
+});
+
+// ---------------- semantic validation ----------------
+function validateFile(file: string, metaOverride: string | null): Report {
+  const r: Report = { file, errors: [], warnings: [], stats: {} };
+  const err = (m: string) => r.errors.push(m);
+  const warn = (m: string) => r.warnings.push(m);
+
+  const metaPath = metaOverride ?? join(dirname(file), "meta.json");
+  if (!existsSync(metaPath)) return err(`meta not found: ${metaPath}`), r;
+  const meta = JSON.parse(readFileSync(metaPath, "utf8")) as PilotMeta;
+
+  let data: unknown;
+  try {
+    data = JSON.parse(readFileSync(file, "utf8"));
+  } catch (e) {
+    return err(`JSON parse: ${(e as Error).message}`), r;
+  }
+  const shapeErrs: string[] = [];
+  extractionShape(data, "$", shapeErrs);
+  if (shapeErrs.length) {
+    r.errors.push(...shapeErrs.slice(0, 60));
+    if (shapeErrs.length > 60) err(`... ${shapeErrs.length - 60} more shape errors`);
+    return r; // semantic checks assume the shape
+  }
+  const x = data as Extraction;
+  r.stats.model = x.model;
+  r.stats.variant = x.variant;
+
+  if (x.shiurId !== meta.shiurId) err(`shiurId "${x.shiurId}" != meta "${meta.shiurId}"`);
+
+  const recs = new Map<string, PilotRecordingMeta>(meta.recordings.map((m) => [m.recording.id, m]));
+  const multi = meta.recordings.length > 1;
+  const firstRec = meta.recordings[0]!;
+  const hours = meta.totalDurationSec / 3600;
+
+  const secOf = (rec: PilotRecordingMeta, a: number, b: number) => (rec.ends[b] ?? 0) - (rec.starts[a] ?? 0);
+  const inRange = (rec: PilotRecordingMeta, i: number) => i >= 0 && i < rec.segmentCount;
+
+  // --- localized text
+  const checkLoc = (l: Localized, p: string) => {
+    const yr = hebrewRatio(l.yi);
+    if (yr < YI_HARD_MIN) err(`${p}.yi: only ${(yr * 100).toFixed(0)}% Hebrew script`);
+    else if (yr < YI_MIN_HEBREW) warn(`${p}.yi: only ${(yr * 100).toFixed(0)}% Hebrew script`);
+    const er = hebrewRatio(l.en);
+    if (er > EN_MAX_HEBREW) warn(`${p}.en: ${(er * 100).toFixed(0)}% Hebrew script (transliterate in English)`);
+    if (l.en.trim() === l.yi.trim()) err(`${p}: en and yi are identical`);
+  };
+
+  // --- evidence resolution
+  const resolveRec = (rid: string | undefined, p: string): PilotRecordingMeta | null => {
+    if (rid === undefined) {
+      if (multi) {
+        err(`${p}: recordingId required (shiur has ${meta.recordings.length} recordings)`);
+        return null;
+      }
+      return firstRec;
+    }
+    const rec = recs.get(rid);
+    if (!rec) err(`${p}: unknown recordingId "${rid}"`);
+    return rec ?? null;
+  };
+  const checkSegs = (segs: number[], rec: PilotRecordingMeta | null, p: string, allowEmpty = false) => {
+    if (segs.length === 0) {
+      if (!allowEmpty) err(`${p}: empty segs`);
+      return;
+    }
+    if (!rec) return;
+    for (const s of segs) if (!inRange(rec, s)) err(`${p}: seg ${s} out of range 0..${rec.segmentCount - 1} (${rec.recording.id})`);
+  };
+  const checkEvidence = (ev: Evidence, p: string, defaultRec?: PilotRecordingMeta) => {
+    const rec = ev.recordingId === undefined && defaultRec ? defaultRec : resolveRec(ev.recordingId, p);
+    checkSegs(ev.segs, rec, `${p}.segs`);
+    return rec;
+  };
+
+  // --- sections: shape-level per section
+  x.sections.forEach((s, i) => {
+    const p = `sections[${i}]`;
+    const rec = recs.get(s.recordingId);
+    checkLoc(s.title, `${p}.title`);
+    checkLoc(s.summary, `${p}.summary`);
+    for (const t of s.catalogTopicIdx) {
+      if (t < 0 || t >= meta.catalogTopics.length) err(`${p}.catalogTopicIdx: ${t} out of range 0..${meta.catalogTopics.length - 1}`);
+    }
+    if (!rec) return void err(`${p}: unknown recordingId "${s.recordingId}"`);
+    if (!inRange(rec, s.startSeg) || !inRange(rec, s.endSeg)) return void err(`${p}: range ${s.startSeg}..${s.endSeg} outside 0..${rec.segmentCount - 1}`);
+    if (s.startSeg > s.endSeg) return void err(`${p}: startSeg > endSeg`);
+    const dur = secOf(rec, s.startSeg, s.endSeg);
+    const tag = `${p} "${s.title.en}" [${mmss(rec.starts[s.startSeg] ?? 0)}–${mmss(rec.ends[s.endSeg] ?? 0)}]`;
+    if (dur < MIN_SECTION_SEC && rec.durationSec >= MIN_SECTION_SEC) err(`${tag}: ${Math.round(dur)}s < ${MIN_SECTION_SEC}s minimum`);
+
+    // subsections
+    if (s.subsections.length) {
+      if (dur <= SUBSECTION_PARENT_MIN_SEC) err(`${tag}: has subsections but is only ${mmss(dur)} (needs > 12:00)`);
+      if (s.subsections.length < SUBSECTIONS.min || s.subsections.length > SUBSECTIONS.max) {
+        err(`${tag}: ${s.subsections.length} subsections (allowed ${SUBSECTIONS.min}-${SUBSECTIONS.max})`);
+      }
+      let expect = s.startSeg;
+      s.subsections.forEach((ss, j) => {
+        const q = `${p}.subsections[${j}]`;
+        checkLoc(ss.title, `${q}.title`);
+        checkLoc(ss.summary, `${q}.summary`);
+        if (ss.recordingId !== s.recordingId) err(`${q}: recordingId differs from parent`);
+        if (ss.startSeg > ss.endSeg) err(`${q}: startSeg > endSeg`);
+        if (ss.startSeg !== expect) err(`${q}: starts at ${ss.startSeg}, expected ${expect} (subsections must tile the parent)`);
+        if (ss.endSeg > s.endSeg) err(`${q}: ends at ${ss.endSeg}, past parent end ${s.endSeg}`);
+        if (inRange(rec, ss.startSeg) && inRange(rec, ss.endSeg)) {
+          const sd = secOf(rec, ss.startSeg, ss.endSeg);
+          if (sd < MIN_SUBSECTION_SEC) err(`${q}: ${Math.round(sd)}s < ${MIN_SUBSECTION_SEC}s minimum`);
+        }
+        expect = ss.endSeg + 1;
+      });
+      if (expect !== s.endSeg + 1) err(`${p}: subsections end at ${expect - 1}, parent ends at ${s.endSeg}`);
+    } else if (dur > 25 * 60 && s.kind === "main") {
+      warn(`${tag}: ${mmss(dur)} long with no subsections`);
+    }
+  });
+
+  // --- tiling per recording, in array order
+  for (const rec of meta.recordings) {
+    const secs = x.sections.map((s, i) => ({ s, i })).filter(({ s }) => s.recordingId === rec.recording.id);
+    if (secs.length === 0) {
+      err(`recording ${rec.recording.id}: no sections`);
+      continue;
+    }
+    let expect = 0;
+    for (const { s, i } of secs) {
+      if (s.startSeg !== expect) {
+        err(`sections[${i}] (${rec.recording.id}): starts at seg ${s.startSeg}, expected ${expect} — ${s.startSeg > expect ? "gap" : "overlap"}`);
+      }
+      expect = s.endSeg + 1;
+    }
+    if (expect !== rec.segmentCount) err(`recording ${rec.recording.id}: sections end at seg ${expect - 1}, last seg is ${rec.segmentCount - 1}`);
+  }
+  // recordings must appear in playback order
+  const recOrder = x.sections.map((s) => recs.get(s.recordingId)?.order ?? -1);
+  for (let i = 1; i < recOrder.length; i++) {
+    if (recOrder[i]! < recOrder[i - 1]!) err(`sections[${i}]: recordings out of playback order`);
+  }
+
+  // --- section counts per hour
+  const nSections = x.sections.length;
+  const minSec = Math.max(1, Math.floor(SECTIONS_PER_HOUR.min * hours));
+  const maxSec = Math.max(minSec, Math.ceil(SECTIONS_PER_HOUR.max * hours));
+  if (nSections < minSec || nSections > maxSec) {
+    err(`${nSections} sections for ${mmss(meta.totalDurationSec)} (allowed ${minSec}-${maxSec})`);
+  }
+  // catalog coverage
+  const covered = new Set(x.sections.flatMap((s) => s.catalogTopicIdx));
+  meta.catalogTopics.forEach((t, i) => {
+    if (!covered.has(i)) warn(`catalog topic ${i} "${t}" not assigned to any section`);
+  });
+
+  // section index helpers for "near" checks
+  const sectionFor = (rec: PilotRecordingMeta, seg: number): number =>
+    x.sections.findIndex((s) => s.recordingId === rec.recording.id && seg >= s.startSeg && seg <= s.endSeg);
+
+  // --- summary
+  checkLoc(x.summary.oneLiner, "summary.oneLiner");
+  checkLoc(x.summary.abstract, "summary.abstract");
+  for (const lang of ["en", "yi"] as const) {
+    const w = wordCount(x.summary.abstract[lang]);
+    if (w < ABSTRACT_WORDS.min || w > ABSTRACT_WORDS.max) warn(`summary.abstract.${lang}: ${w} words (target ${ABSTRACT_WORDS.min}-${ABSTRACT_WORDS.max})`);
+  }
+  const capCheck = (n: number, lo: number, hi: number, label: string) => {
+    if (n < lo || n > hi) err(`${label}: ${n} (allowed ${lo}-${hi})`);
+  };
+  capCheck(x.summary.keyPoints.length, KEY_POINTS.min, KEY_POINTS.max, "summary.keyPoints");
+  capCheck(x.insights.length, INSIGHTS.min, INSIGHTS.max, "insights");
+  capCheck(x.questions.length, 0, QUESTIONS_MAX, "questions");
+  capCheck(x.takeaways.length, 0, TAKEAWAYS_MAX, "takeaways");
+  capCheck(x.candidateTopics.length, CANDIDATE_TOPICS.min, CANDIDATE_TOPICS.max, "candidateTopics");
+
+  const textItems = (list: { text: Localized; evidence: Evidence }[], label: string) =>
+    list.forEach((it, i) => {
+      checkLoc(it.text, `${label}[${i}].text`);
+      checkEvidence(it.evidence, `${label}[${i}].evidence`);
+    });
+  textItems(x.summary.keyPoints, "summary.keyPoints");
+  textItems(x.insights, "insights");
+  textItems(x.takeaways, "takeaways");
+
+  x.stories.forEach((s, i) => {
+    checkLoc(s.title, `stories[${i}].title`);
+    checkLoc(s.retelling, `stories[${i}].retelling`);
+    checkEvidence(s.evidence, `stories[${i}].evidence`);
+  });
+  x.questions.forEach((q, i) => {
+    const p = `questions[${i}]`;
+    checkLoc(q.question, `${p}.question`);
+    checkLoc(q.answer, `${p}.answer`);
+    const rec = resolveRec(q.recordingId, p);
+    checkSegs(q.questionSegs, rec, `${p}.questionSegs`);
+    checkSegs(q.answerSegs, rec, `${p}.answerSegs`);
+  });
+  x.sources.forEach((s, i) => {
+    const p = `sources[${i}]`;
+    checkEvidence(s.evidence, `${p}.evidence`);
+    if (s.resolution !== "unresolved" && !s.ref) warn(`${p}: resolution "${s.resolution}" but ref is null`);
+    if (s.resolution === "unresolved" && s.sefariaRef) warn(`${p}: unresolved but has sefariaRef`);
+    if (hebrewRatio(s.heardAs) === 0 && meta.shiur.lang === "yi" && s.heardAs) warn(`${p}.heardAs: no Hebrew script in a Yiddish shiur`);
+  });
+  x.concepts.forEach((c, i) => {
+    if (hebrewRatio(c.he) < YI_HARD_MIN) err(`concepts[${i}].he: not Hebrew script`);
+  });
+
+  // --- writeup
+  const words: Record<"en" | "yi", number> = { en: 0, yi: 0 };
+  const contentSections = x.sections
+    .map((s, i) => ({ s, i }))
+    .filter(({ s }) => !NON_CONTENT_KINDS.has(s.kind));
+  for (const lang of ["en", "yi"] as const) {
+    const blocks = x.writeup[lang];
+    let prev = -1;
+    const seen = new Set<number>();
+    blocks.forEach((b, bi) => {
+      const p = `writeup.${lang}[${bi}]`;
+      const sec: Section | undefined = x.sections[b.sectionIndex];
+      if (!sec) return void err(`${p}: sectionIndex ${b.sectionIndex} out of range 0..${x.sections.length - 1}`);
+      if (b.sectionIndex <= prev) err(`${p}: sectionIndex ${b.sectionIndex} not increasing (one block per section, in order)`);
+      prev = b.sectionIndex;
+      seen.add(b.sectionIndex);
+      if (NON_CONTENT_KINDS.has(sec.kind)) warn(`${p}: block for a ${sec.kind} section`);
+      if (b.paragraphs.length === 0) err(`${p}: no paragraphs`);
+      if (b.heading !== null) {
+        const hr = hebrewRatio(b.heading);
+        if (lang === "yi" && hr < YI_HARD_MIN) err(`${p}.heading: not Hebrew script`);
+        if (lang === "en" && hr > EN_MAX_HEBREW) warn(`${p}.heading: Hebrew script in English heading`);
+      }
+      const secRec = recs.get(sec.recordingId);
+      b.paragraphs.forEach((para, pi) => {
+        const q = `${p}.paragraphs[${pi}]`;
+        words[lang] += wordCount(para.text);
+        const hr = hebrewRatio(para.text);
+        if (lang === "yi" && hr < YI_HARD_MIN) err(`${q}.text: only ${(hr * 100).toFixed(0)}% Hebrew script`);
+        else if (lang === "yi" && hr < YI_MIN_HEBREW) warn(`${q}.text: only ${(hr * 100).toFixed(0)}% Hebrew script`);
+        if (lang === "en" && hr > EN_MAX_HEBREW) warn(`${q}.text: ${(hr * 100).toFixed(0)}% Hebrew script`);
+        for (const si of para.sourceIdx) if (si < 0 || si >= x.sources.length) err(`${q}.sourceIdx: ${si} out of range 0..${x.sources.length - 1}`);
+        const rec = checkEvidence(para.evidence, `${q}.evidence`, secRec);
+        if (rec && sec && rec.recording.id === sec.recordingId) {
+          const far = para.evidence.segs.filter(
+            (s) => s < sec.startSeg - EVIDENCE_SLACK_SEGS || s > sec.endSeg + EVIDENCE_SLACK_SEGS,
+          );
+          if (far.length) warn(`${q}.evidence: segs ${far.join(",")} outside section ${b.sectionIndex} (${sec.startSeg}..${sec.endSeg})`);
+        } else if (rec && sec) {
+          warn(`${q}.evidence: points into ${rec.recording.id}, section is in ${sec.recordingId}`);
+        }
+      });
+    });
+    for (const { s, i } of contentSections) {
+      if (!seen.has(i) && s.kind === "main") err(`writeup.${lang}: no block for main section ${i} "${s.title.en}"`);
+    }
+    const lo = WRITEUP_WORDS_PER_HOUR.min * hours;
+    const hi = WRITEUP_WORDS_PER_HOUR.max * hours;
+    if (words[lang] < lo * 0.5) err(`writeup.${lang}: ${words[lang]} words, far below ${Math.round(lo)}-${Math.round(hi)} for ${mmss(meta.totalDurationSec)}`);
+    else if (words[lang] < lo * 0.85 || words[lang] > hi * 1.25) warn(`writeup.${lang}: ${words[lang]} words (target ${Math.round(lo)}-${Math.round(hi)})`);
+  }
+  if (x.writeup.en.length !== x.writeup.yi.length) warn(`writeup: ${x.writeup.en.length} en blocks vs ${x.writeup.yi.length} yi blocks`);
+  if (words.en && words.yi) {
+    const ratio = words.yi / words.en;
+    if (ratio < 0.6 || ratio > 1.6) warn(`writeup: yi/en word ratio ${ratio.toFixed(2)} (expected ~0.8-1.2)`);
+  }
+
+  // --- evidence near the section for other items (soft): warn on evidence spanning many sections
+  const spread = (ev: Evidence, p: string) => {
+    const rec = ev.recordingId ? recs.get(ev.recordingId) : multi ? undefined : firstRec;
+    if (!rec) return;
+    const idx = new Set(ev.segs.map((s) => sectionFor(rec, s)).filter((i) => i >= 0));
+    if (idx.size > 3) warn(`${p}: evidence spread over ${idx.size} sections`);
+  };
+  x.summary.keyPoints.forEach((k, i) => spread(k.evidence, `summary.keyPoints[${i}]`));
+  x.insights.forEach((k, i) => spread(k.evidence, `insights[${i}]`));
+
+  // --- stats
+  const allConf = [
+    ...x.summary.keyPoints.map((k) => k.evidence.confidence),
+    ...x.insights.map((k) => k.evidence.confidence),
+    ...x.sources.map((k) => k.evidence.confidence),
+    ...x.stories.map((k) => k.evidence.confidence),
+    ...x.takeaways.map((k) => k.evidence.confidence),
+    ...x.questions.map((k) => k.confidence),
+  ];
+  Object.assign(r.stats, {
+    duration: mmss(meta.totalDurationSec),
+    sections: nSections,
+    mainSections: x.sections.filter((s) => s.kind === "main").length,
+    subsections: x.sections.reduce((a, s) => a + s.subsections.length, 0),
+    sources: x.sources.length,
+    resolvedSources: x.sources.filter((s) => s.resolution === "resolved").length,
+    keyPoints: x.summary.keyPoints.length,
+    insights: x.insights.length,
+    stories: x.stories.length,
+    questions: x.questions.length,
+    takeaways: x.takeaways.length,
+    topics: x.candidateTopics.length,
+    concepts: x.concepts.length,
+    people: x.people.length,
+    wordsEn: words.en,
+    wordsYi: words.yi,
+    wphEn: hours ? Math.round(words.en / hours) : 0,
+    wphYi: hours ? Math.round(words.yi / hours) : 0,
+    meanConf: allConf.length ? Number((allConf.reduce((a, b) => a + b, 0) / allConf.length).toFixed(2)) : 0,
+    catalogCovered: `${covered.size}/${meta.catalogTopics.length}`,
+  });
+  return r;
+}
+
+// ---------------- output ----------------
+function printReport(r: Report, quiet: boolean): void {
+  const status = r.errors.length ? "FAIL" : "OK";
+  console.log(`\n== ${r.file}: ${status} (${r.errors.length} errors, ${r.warnings.length} warnings)`);
+  for (const e of r.errors) console.log(`  ERROR ${e}`);
+  if (!quiet) for (const w of r.warnings) console.log(`  warn  ${w}`);
+  const s = r.stats;
+  if (Object.keys(s).length > 2) {
+    console.log(
+      `  stats: ${s.duration} | sections ${s.sections} (main ${s.mainSections}, sub ${s.subsections}) | sources ${s.sources} (resolved ${s.resolvedSources}) | ` +
+        `keyPts ${s.keyPoints} insights ${s.insights} stories ${s.stories} Q&A ${s.questions} takeaways ${s.takeaways} topics ${s.topics} | ` +
+        `writeup en ${s.wordsEn}w (${s.wphEn}/h) yi ${s.wordsYi}w (${s.wphYi}/h) | catalog ${s.catalogCovered} | meanConf ${s.meanConf}`,
+    );
+  }
+}
+
+function printSummary(reports: Report[]): void {
+  const cols: [string, (r: Report) => string][] = [
+    ["file", (r) => `${basename(dirname(r.file))}/${basename(r.file)}`],
+    ["model", (r) => String(r.stats.model ?? "")],
+    ["variant", (r) => String(r.stats.variant ?? "")],
+    ["err", (r) => String(r.errors.length)],
+    ["warn", (r) => String(r.warnings.length)],
+    ["sect", (r) => String(r.stats.sections ?? "")],
+    ["sub", (r) => String(r.stats.subsections ?? "")],
+    ["src", (r) => String(r.stats.sources ?? "")],
+    ["keyP", (r) => String(r.stats.keyPoints ?? "")],
+    ["ins", (r) => String(r.stats.insights ?? "")],
+    ["story", (r) => String(r.stats.stories ?? "")],
+    ["Q&A", (r) => String(r.stats.questions ?? "")],
+    ["take", (r) => String(r.stats.takeaways ?? "")],
+    ["cat", (r) => String(r.stats.catalogCovered ?? "")],
+    ["en w", (r) => String(r.stats.wordsEn ?? "")],
+    ["yi w", (r) => String(r.stats.wordsYi ?? "")],
+    ["en/h", (r) => String(r.stats.wphEn ?? "")],
+    ["yi/h", (r) => String(r.stats.wphYi ?? "")],
+    ["conf", (r) => String(r.stats.meanConf ?? "")],
+  ];
+  const rows = reports.map((r) => cols.map(([, f]) => f(r)));
+  const widths = cols.map(([h], i) => Math.max(h.length, ...rows.map((row) => row[i]!.length)));
+  const fmt = (cells: string[]) => cells.map((c, i) => (i === 0 ? c.padEnd(widths[i]!) : c.padStart(widths[i]!))).join("  ");
+  console.log(fmt(cols.map(([h]) => h)));
+  console.log(widths.map((w) => "-".repeat(w)).join("  "));
+  for (const row of rows) console.log(fmt(row));
+}
+
+function main(): void {
+  const args = process.argv.slice(2);
+  let summary = false;
+  let quiet = false;
+  let meta: string | null = null;
+  const files: string[] = [];
+  for (let i = 0; i < args.length; i++) {
+    const a = args[i]!;
+    if (a === "--summary") summary = true;
+    else if (a === "--quiet") quiet = true;
+    else if (a === "--meta") meta = args[++i] ?? null;
+    else if (a.startsWith("--")) {
+      console.error(`unknown flag ${a}`);
+      process.exit(2);
+    } else if (basename(a) !== "meta.json") files.push(a);
+  }
+  if (files.length === 0) {
+    console.error("usage: npx tsx scripts/validate.ts [--summary] [--quiet] [--meta meta.json] <extraction.json...>");
+    process.exit(2);
+  }
+  const reports = files.map((f) => validateFile(f, meta));
+  if (summary) printSummary(reports);
+  else for (const r of reports) printReport(r, quiet);
+  process.exit(reports.some((r) => r.errors.length) ? 1 : 0);
+}
+
+main();

@@ -78,6 +78,9 @@ export interface IngestOutput {
 export interface Evidence {
   segs: SegIdx[];             // segment indices into the recording transcript
   confidence: Confidence;
+  /** Which recording `segs` index into. Required when the shiur has >1 recording; may be omitted
+   *  for single-recording shiurim. Write-up paragraphs default to their section's recording. */
+  recordingId?: string;
 }
 
 export interface SegRange {
@@ -119,7 +122,7 @@ export interface Extraction {
   sources: SourceMention[];
   insights: { text: Localized; evidence: Evidence }[];      // 3-7
   stories: { title: Localized; retelling: Localized; people: string[]; evidence: Evidence }[];
-  questions: { question: Localized; answer: Localized; questionSegs: SegIdx[]; answerSegs: SegIdx[]; confidence: Confidence }[]; // <=6
+  questions: { question: Localized; answer: Localized; questionSegs: SegIdx[]; answerSegs: SegIdx[]; confidence: Confidence; recordingId?: string }[]; // <=6; recordingId as in Evidence
   takeaways: { text: Localized; evidence: Evidence }[];     // <=5
   candidateTopics: string[];  // free English noun phrases, 5-10
   concepts: { he: string; heardAs: string[] }[];            // glossary candidates
