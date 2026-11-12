@@ -3,7 +3,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "pilot:prepare": "tsx scripts/prepare-pilot.ts",
+    "pilot:validate": "tsx scripts/validate.ts",
+    "pilot:summary": "tsx scripts/validate.ts --summary"
   },
   "devDependencies": {
     "@types/node": "^26.6.6",
