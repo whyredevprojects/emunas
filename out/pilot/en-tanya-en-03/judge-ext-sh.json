@@ -1,0 +1,23 @@
+{
+  "shiurId": "en-tanya-en-03",
+  "kind": "extraction",
+  "x": {
+    "file": "out/pilot/en-tanya-en-03/judge-ext-sh-X.json",
+    "counts": { "claimsChecked": 12, "unsupported": 4, "hallucinated": 0, "termsChecked": 10, "termErrors": 3, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 3, "boundariesBad": 2, "titleSummaryMismatch": 1,
+      "yiddishSentencesChecked": 8, "yiddishBadSentences": 7, "yiddishNotFromShiur": 4, "sourcesChecked": 12, "sourceErrors": 1, "sourcesMissed": 5,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "keyPoints[1] and abstract say 'a person cannot act purely for G-d' but segs 63-65 say a goy ('guy') cannot; section[3] summary 'a person cannot reach this level by himself' vs seg 268 'A goy can never attain this madriga' (misrecovered term, inverts the point); keyPoints[5] 'built here, in this world' sharpens garbled seg 284; section[7] candle summary maps nefesh to the wick, not what segs 552-559 say; sources[19]/people list 'Isaiah' at seg 717, which is the Zohar ('Zayah') garbled; concept 'אכרת הבית' for עקרת הבית; boundaries 518|519 cut mid yovel sentence and 658|659 mid Beis Lechem; section[8] (659-833) title and summary ignore the Tanya 'mamash' opening at 805-833; Yiddish full of Latin-letter corruption ('הייבt', 'זאגt', 'געקענt') plus daytshmerish ('פארפייניקט זיינע געפיהלן', 'רייניגונג־פראצעס'); missed Meor Einayim (538-540), Zohar 'Kudsha Brich Hu' (855-856), Michah 'v'atah Migdal Eder' (747-748), Gemara on ptilos for Chanukah (543-545), Yisrael alu b'machshava (989-1006)"
+  },
+  "y": {
+    "file": "out/pilot/en-tanya-en-03/judge-ext-sh-Y.json",
+    "counts": { "claimsChecked": 12, "unsupported": 0, "hallucinated": 0, "termsChecked": 10, "termErrors": 0, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 3, "boundariesBad": 0, "titleSummaryMismatch": 0,
+      "yiddishSentencesChecked": 8, "yiddishBadSentences": 5, "yiddishNotFromShiur": 3, "sourcesChecked": 12, "sourceErrors": 1, "sourcesMissed": 4,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "sources Devarim 15:8 for 'pasoach tiftach... l'achicha la'aniyecha' (segs 191-192), which is 15:11; missed Yirmiyahu 31:16 'yesh tikvah' (645-647), Shemos 21:2 (492-493), the Zohar on Yaakov's seven years (371, 676), Gemara on ptilos for Chanukah (543-545); section 8 starting 784 swallows the fragmentary Leah question (785-814) before the Tanya; Yiddish daytshmerish/calques: 'ליבשאפט', 'גייסטיקע', 'באפרידיגונג', 'ער טענהט דאס אויף צדקה', 'די דריי טמאות קליפות'; correctly recovers Meor Einayim, Michah, Zohar 'Kudsha Brich Hu', Hakdamas Bno and Yisrael alu b'machshava; no stories or takeaways"
+  },
+  "winner": "y",
+  "margin": "clear",
+  "rationale": "Neither has hallucinations. X has 4 unsupported claims in 12 and 3 term errors, most seriously misreading the ASR 'guy' (goy) as 'a person', which turns the Rav's point about the nations into a general claim, plus 'Isaiah' for the Zohar. Y has 0 unsupported and 0 term errors. Y is also better in tier 3 (0 of 3 bad boundaries vs 2 of 3, no title/summary mismatch) and catches more sources (Meor Einayim, Michah, Zohar, Yisrael alu b'machshava). X's Yiddish is also corrupted with Latin letters."
+}
