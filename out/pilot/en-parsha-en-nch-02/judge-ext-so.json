@@ -1,0 +1,23 @@
+{
+  "shiurId": "en-parsha-en-nch-02",
+  "kind": "extraction",
+  "x": {
+    "file": "out/pilot/en-parsha-en-nch-02/judge-ext-so-X.json",
+    "counts": { "claimsChecked": 16, "unsupported": 1, "hallucinated": 0, "termsChecked": 12, "termErrors": 1, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 3, "boundariesBad": 0, "titleSummaryMismatch": 0,
+      "yiddishSentencesChecked": 10, "yiddishBadSentences": 3, "yiddishNotFromShiur": 1, "sourcesChecked": 12, "sourceErrors": 0, "sourcesMissed": 0,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "insights[5] says 'the more refined a creature is, the more concentrated food it needs'; segs 514-516 say the more tamei ('tummy') one is, the more concentrated food is needed (inverted meaning, term misread); Yiddish repeatedly uses 'נתפעל געמאכט' for 'affected' (wrong sense), and stories[0].yi 'ניטאמאל אויב' for 'no matter whether' is unidiomatic; sources are thorough and correctly referenced (Rashi 7:23, 6:18, 7:12, Sanhedrin 108b, Vayikra 26:6 + Ramban, Ramban Bamidbar 14:9, Bereishis 16:12)"
+  },
+  "y": {
+    "file": "out/pilot/en-parsha-en-nch-02/judge-ext-so-Y.json",
+    "counts": { "claimsChecked": 14, "unsupported": 1, "hallucinated": 0, "termsChecked": 10, "termErrors": 2, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 3, "boundariesBad": 2, "titleSummaryMismatch": 0,
+      "yiddishSentencesChecked": 10, "yiddishBadSentences": 6, "yiddishNotFromShiur": 1, "sourcesChecked": 12, "sourceErrors": 2, "sourcesMissed": 5,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "people[5] lists 'Ramban Shleilam' (seg 161) as the Ramban; it is Ribono shel Olam, and sources[6] cites seg 161 for the Ramban; sources[9] names 'Toras Kohanim, Bechukosai' for vehishbati chaya ra'ah, but he cites the pasuk (Vayikra 26:6) and the Ramban (segs 280-286); boundary 346|347 cuts the Eretz Yisrael Gemara off from the 'Noach's piece of geography' point it illustrates, and 735|736 splits 'we have to know it / so important this year'; misses Nefesh HaChaim (178), Rema on Gog uMagog (796-804), Bereishis 16:12 pere adam (895), Unesaneh Tokef (745), Rashi on top layer (229); Yiddish: sections[6].yi 'א הילכות כותרת' is nonsense, 'געטוישט תשובה', 'אפעטן די גזירה', 'רייען', YIVO spelling 'זײַן/הײַנט', Germanized 'אוטאפיע', 'באפעלקערונג', 'פלייש-פרעסער'"
+  },
+  "winner": "x",
+  "margin": "clear",
+  "rationale": "Neither side hallucinates; each has one unsupported claim (X inverts the tamei/concentrated-food point). In tier 2, Y has more term errors (2 vs 1, misreading Ribono shel Olam as the Ramban) and more source errors (2 vs 0, including Toras Kohanim). In tier 3, Y has 2 of 3 boundaries bad against 0 for X and misses about 5 sources that X lists correctly. Y's Yiddish is also clearly worse (6/10 bad vs 3/10)."
+}

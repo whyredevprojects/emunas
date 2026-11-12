@@ -1,0 +1,23 @@
+{
+  "shiurId": "yi-tanya-2-16",
+  "kind": "extraction",
+  "x": {
+    "file": "out/pilot/yi-tanya-2-16/judge-ext-so-X.json",
+    "counts": { "claimsChecked": 14, "unsupported": 1, "hallucinated": 0, "termsChecked": 10, "termErrors": 0, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 3, "boundariesBad": 0, "titleSummaryMismatch": 0,
+      "yiddishSentencesChecked": 10, "yiddishBadSentences": 2, "yiddishNotFromShiur": 2, "sourcesChecked": 9, "sourceErrors": 0, "sourcesMissed": 2,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "keyPoints[3] states the Besht's rule 'a person is where his thoughts are' as a full claim, but seg 34 cuts off and it is only implied by the Danzig story (segs 34-35); sourcesMissed: Micha 7:20 'titen emes l'Yaakov' (seg 6) and Bereishis 1:1 (seg 9); closing point lim'os bagashmiyus (segs 69-70) not in any summary, only noted in asrNotes; oneLiner.yi 'עפענען עס צוריק' reads as calque of 'open it again'; otherwise sins of youth, clothing mashal, Danzig and ceiling stories, Avodah Zarah 4b-5a, Tehillim 16:8/51:19, Yeshayahu 45:7 all check out"
+  },
+  "y": {
+    "file": "out/pilot/yi-tanya-2-16/judge-ext-so-Y.json",
+    "counts": { "claimsChecked": 14, "unsupported": 2, "hallucinated": 0, "termsChecked": 9, "termErrors": 1, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": null, "boundariesChecked": 3, "boundariesBad": 2, "titleSummaryMismatch": 1,
+      "yiddishSentencesChecked": 10, "yiddishBadSentences": 3, "yiddishNotFromShiur": 3, "sourcesChecked": 4, "sourceErrors": 0, "sourcesMissed": 6,
+      "flowBreaks": null, "paddingSentences": null, "missingBlocks": null, "ruleViolations": 0 },
+    "notes": "sections[4].summary and people: 'וויד מלך' (seg 41) recovered as David HaMelech having true dreams, but context ('even a ... king had true dreams') points to a gentile king (term error, unsupported); insights[4] ties time-above-this-world to yahrtzeit, whereas segs 9-11 tie it to teshuva for sins of youth, the shiur's central point, which Y never states; boundary 8|9 splits the Tanya text on chatas neurim (seg 8) from its explanation (9-11); boundary 49|50 cuts the 'thinking oneself nothing -> shiflus' thought; sourcesMissed: Tanya ch.13 (seg 4), Avodah Zarah (seg 28), Tehillim 51:19 (seg 49), Tehillim 16:8 (seg 60), Yeshayahu 45:7 (seg 66), Micha 7:20 (seg 6); Danzig and Ba'al haTanya ceiling stories dropped as too garbled though recoverable; yi 'זמן עקזיסטירט', 'אנגיין דערמיט' calques"
+  },
+  "winner": "x",
+  "margin": "clear",
+  "rationale": "Neither side has hallucinations or rule violations. Y has a term error (David HaMelech for a gentile king's dreams, seg 41) and 2 unsupported claims vs X's 1, and it misses the shiur's core argument about sins of youth and teshuva above time. Y also has 2 of 3 bad boundaries vs 0, and misses 6 clear sources vs 2. X recovers both stories and the clothing mashal correctly. X is clearly better across tiers 2-3."
+}
