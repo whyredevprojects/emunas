@@ -1,0 +1,29 @@
+{
+  "shiurId": "en-tanya-en-05",
+  "kind": "writeup",
+  "x": {
+    "file": "out/pilot/en-tanya-en-05/judge-wu-os-X.json",
+    "counts": { "claimsChecked": 14, "unsupported": 1, "hallucinated": 0,
+      "termsChecked": 10, "termErrors": 1, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": 0,
+      "boundariesChecked": null, "boundariesBad": null, "titleSummaryMismatch": null,
+      "yiddishSentencesChecked": 10, "yiddishBadSentences": 5, "yiddishNotFromShiur": 3,
+      "sourcesChecked": 13, "sourceErrors": 0, "sourcesMissed": null,
+      "flowBreaks": 0, "paddingSentences": 0, "missingBlocks": 0, "ruleViolations": 0 },
+    "notes": "en[6].paragraphs[1] says the word Yisrael 'contains both the head and the heel', but segs 729-745 contrast Yisrael (reish/rosh) with Yaakov (ekev) (unsupported); en[4].paragraphs[1] attributes the Achan derush to the Tzemach Tzedek, but 'Rav Tzaddik / Reb Tzedek' (segs 465, 481) more likely means R' Tzadok (follows the extraction; same on both sides); yi uses YIVO-dotted 'וווּ' (yi[0].paragraphs[0], yi[4].paragraphs[1]) and Daytshmerish 'וועגן וועלכן' and 'וועמענס' (yi[1].paragraphs[1], yi[4].paragraphs[1]); yi[3].paragraphs[1] has calques: 'דער גמרא וואס זאגט נישט', 'דער הימלישער כירורג', 'געווען אויף אלע זעקס און דרייסיק' (English 'on all 36'); the Yiddish is a sentence-by-sentence rendering of the English throughout"
+  },
+  "y": {
+    "file": "out/pilot/en-tanya-en-05/judge-wu-os-Y.json",
+    "counts": { "claimsChecked": 14, "unsupported": 0, "hallucinated": 0,
+      "termsChecked": 10, "termErrors": 1, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": 0,
+      "boundariesChecked": null, "boundariesBad": null, "titleSummaryMismatch": null,
+      "yiddishSentencesChecked": 10, "yiddishBadSentences": 1, "yiddishNotFromShiur": 1,
+      "sourcesChecked": 13, "sourceErrors": 0, "sourcesMissed": null,
+      "flowBreaks": 1, "paddingSentences": 0, "missingBlocks": 0, "ruleViolations": 0 },
+    "notes": "en[4].paragraphs[1] drops the step 'Moshe is the head of the nation, the last generation the heel' (segs 530-533), so en[5] 'Nisan matches Moshe' arrives with its link only implied (flow break); en[4].paragraphs[1] has the same Tzemach Tzedek attribution for 'Reb Tzedek' (segs 465, 481), probably R' Tzadok; en[5].paragraphs[1] mentions Daniel's miscalculation with empty sourceIdx (minor); Yiddish is idiomatic and Chassidish ('מבאר זיין', 'ל\"ו כריתות', 'טועה געווען אין חשבון פון שבעים שנה', 'אף על פי שחטא ישראל הוא'), with one weaker spelling, 'גויאישער' (yi[3].paragraphs[1])"
+  },
+  "winner": "y",
+  "margin": "slight",
+  "rationale": "Both write-ups follow the same extraction closely, and neither has a hallucination, rule violation or contradiction of the extraction. X has 1 unsupported claim (Yisrael 'contains both the head and the heel', which merges the Rav's Yisrael/Yaakov contrast) against 0 for Y. Y has 1 minor flow break (the head/heel parallel is dropped before the Nisan/Adar block). On Yiddish, Y is clearly better: 1 bad sentence out of 10 against X's 5 (YIVO-dotted 'וווּ', Daytshmerish, English calques). The tier-2 edge and the Yiddish gap give Y a slight win."
+}
