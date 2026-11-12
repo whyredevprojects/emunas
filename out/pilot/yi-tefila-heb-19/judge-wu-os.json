@@ -1,0 +1,29 @@
+{
+  "shiurId": "yi-tefila-heb-19",
+  "kind": "writeup",
+  "x": {
+    "file": "out/pilot/yi-tefila-heb-19/judge-wu-os-X.json",
+    "counts": { "claimsChecked": 14, "unsupported": 2, "hallucinated": 0,
+      "termsChecked": 12, "termErrors": 0, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": 0,
+      "boundariesChecked": null, "boundariesBad": null, "titleSummaryMismatch": null,
+      "yiddishSentencesChecked": 12, "yiddishBadSentences": 3, "yiddishNotFromShiur": 2,
+      "sourcesChecked": 12, "sourceErrors": 0, "sourcesMissed": null,
+      "flowBreaks": 1, "paddingSentences": 1, "missingBlocks": 0, "ruleViolations": 0 },
+    "notes": "en[4].paragraphs[1]: says David 'first' says hallelu nafshi, but Halleluka precedes it (seg 66-67), and the letter-of-recommendation story drops that the man added his own money (seg 65), so the point that one cannot command others without giving oneself is muddled (flow break); en[6].paragraphs[0] 'Sir Moshe Montefiore': title not audible, transcript says a lord in England (seg 90-91); en[3].paragraphs[1] drops Mephiboshes, so why David ruled himself loses its contrast (segs 49-56); yi: 'דאס לעבן אליין איז די גרעסטע חסד' (gender), 'די רעגירונג' (Daytshmerish), fragment 'ווי דער גמרא אין ברכות'; yi paragraphs mirror English clause order ('א צדיק, זאגט דער משגיח, ...'); length 626/612 words, above the 290-507 target"
+  },
+  "y": {
+    "file": "out/pilot/yi-tefila-heb-19/judge-wu-os-Y.json",
+    "counts": { "claimsChecked": 14, "unsupported": 0, "hallucinated": 0,
+      "termsChecked": 13, "termErrors": 0, "termsCopiedGarbled": 0,
+      "catalogTopics": 1, "catalogTopicsMissed": 0, "contradictsExtraction": 0,
+      "boundariesChecked": null, "boundariesBad": null, "titleSummaryMismatch": null,
+      "yiddishSentencesChecked": 12, "yiddishBadSentences": 3, "yiddishNotFromShiur": 1,
+      "sourcesChecked": 13, "sourceErrors": 0, "sourcesMissed": null,
+      "flowBreaks": 0, "paddingSentences": 0, "missingBlocks": 0, "ruleViolations": 0 },
+    "notes": "en[2].paragraphs[0] correctly carries the mikveh-hair proof for 'es' (segs 32-33) that X omits; en[3].paragraphs[1] correctly ties David asking Mephiboshes to Gemara Berachos (seg 49); en[4].paragraphs[1] keeps the money detail and correct Halleluka/hallelu nafshi order (segs 65-67); en[6].paragraphs[0] compresses the Montefiore story, omitting the Vorker's proposal (seg 92), still intelligible; yi: 'קען נכשל ווערן אין זיין גזירה' (wrong verb), 'גלייכט עס צו' (calque), 'ערווארטן' (Germanic where the Rav says עקספעקטן); yi[3].paragraphs[0] mirrors the English 'With ..., the Rav explains' structure"
+  },
+  "winner": "y",
+  "margin": "slight",
+  "rationale": "Neither write-up hallucinates or contradicts the extraction, and both name all sources correctly. X has 2 unsupported or sharpened claims (the inverted Halleluka/hallelu nafshi order, and 'Sir' Montefiore) and 1 flow break in the letter-of-recommendation story, while Y has none. Y also keeps the key proofs (mikveh hair for 'es', Mephiboshes from Berachos) and stays closer to the length target. Yiddish quality is about even (3 bad sentences each), so the margin is slight."
+}
