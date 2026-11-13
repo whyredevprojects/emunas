@@ -1,0 +1,419 @@
+{
+  "shiurId": "en-zmanim-en-pvrym-05",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that the miracles of the Megillah are hidden inside nature, just as Hashem's name is hidden in it, and that reading the Megillah trains a Jew to find Hashem behind world events and his own daily life.",
+      "yi": "דער משגיח ערקלערט אז די נסים פון דער מגילה זענען באהאלטן אין טבע, אזוי ווי דעם אויבערשטנס נאמען איז באהאלטן אין איר, און אז מגילה ליינען לערנט א איד צו געפינען דעם אויבערשטן הינטער די געשעענישן פון דער וועלט און פון זיין אייגענעם לעבן."
+    },
+    "abstract": {
+      "en": "The Rav opens with the joy of Adar and asks how we can make the bracha 'she'asa nisim' over a Megillah that reads like an ordinary court story, with no split sea and no mention of Hashem's name. He answers that Nisan, the first month, is the month of revealed miracles, while Adar, the last, means a cloak: its miracles are covered by nature. Nature itself is a miracle, as bread from the ground would be to someone raised on the mann. Through a parable of a dying patient saved by a medicine and a doctor arriving just in time, he shows that the Megillah's nes is a jigsaw puzzle of natural events, and that current events, from the Gulf War onward, are a Megillah being written now. 'HaMelech' means Hashem, rulers are marionettes, and His name hides in the words. Reading the Megillah teaches a Jew to read the world and his own life.",
+      "yi": "דער משגיח עפנט מיט דער שמחה פון אדר, און פרעגט ווי אזוי מ'מאכט די ברכה \"שעשה נסים\" אויף א מגילה וואס זעט אויס ווי א פשוטע מעשה פון א קעניגס הויף, אן קריעת ים סוף און אן דעם אויבערשטנס נאמען. ער ענטפערט אז ניסן, דער ערשטער חודש, איז דער חודש פון נסים גלוים, און אדר, דער לעצטער, מיינט א מאנטל: די נסים זענען צוגעדעקט מיט טבע. די טבע אליין איז א נס, אזוי ווי ברויט פון דער ערד וואלט געווען פאר א קינד וואס איז אויפגעוואקסן אויפן מן. מיט א משל פון א קראנקן וואס ווערט געראטעוועט ווען א רפואה און א דאקטער קומען פונקט אין דער ריכטיגער צייט, ווייזט ער אז דער נס פון דער מגילה איז א פאזל פון נאטירלעכע זאכן, און אז די היינטיגע געשעענישן זענען א מגילה וואס ווערט יעצט געשריבן. \"המלך\" מיינט דעם אויבערשטן, די הערשער זענען מאריאנעטן, און זיין נאמען איז באהאלטן אין די ווערטער. ווער ס'קען ליינען די מגילה, קען ליינען די וועלט און זיין אייגן לעבן."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The Megillah tells a seemingly natural story with no open miracle and no mention of Hashem's name, yet we make the bracha 'she'asa nisim' over it.",
+          "yi": "די מגילה דערציילט א מעשה וואס זעט אויס נאטירלעך, אן א נס גלוי און אן דעם אויבערשטנס נאמען, און פונדעסטוועגן מאכט מען אויף איר די ברכה \"שעשה נסים\"."
+        },
+        "evidence": { "segs": [34, 40, 51, 72, 74], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Nisan is the month of revealed miracles; Adar, the month furthest from it, means a cloak, and its miracles are hidden in nature.",
+          "yi": "ניסן איז דער חודש פון נסים גלוים; אדר, דער חודש וואס איז דער ווייטסטער דערפון, מיינט א מאנטל, און זיינע נסים זענען באהאלטן אין טבע."
+        },
+        "evidence": { "segs": [76, 96, 101, 106, 107, 115], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Nature itself is a miracle made by the same Hashem who makes open miracles; we fail to see it only because we are used to it.",
+          "yi": "די טבע אליין איז א נס, געמאכט פונעם זעלבן אויבערשטן וואס מאכט נסים גלוים; מ'זעט עס נאר נישט ווייל מ'איז צוגעוואוינט דערצו."
+        },
+        "evidence": { "segs": [117, 119, 182, 188, 189, 191], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The nes of the Megillah is a jigsaw puzzle of many small natural events, each one needed, put together by Hashem.",
+          "yi": "דער נס פון דער מגילה איז א פאזל פון אסאך קליינע נאטירלעכע זאכן, יעדע איינע נויטיג, צוזאמענגעשטעלט פונעם אויבערשטן."
+        },
+        "evidence": { "segs": [291, 295, 333, 335], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "In the Megillah 'HaMelech' alludes to Hashem, and in the same way world leaders are marionettes moved by strings from above.",
+          "yi": "אין דער מגילה מיינט \"המלך\" דעם אויבערשטן, און אזוי אויך זענען די הערשער פון דער וועלט מאריאנעטן וואס ווערן געצויגן מיט שטריקלעך פון אויבן."
+        },
+        "evidence": { "segs": [465, 473, 559, 585, 594, 598], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Hashem's name is in the Megillah, hidden in the first and last letters of words, and one has to look for it.",
+          "yi": "דעם אויבערשטנס נאמען איז יא דא אין דער מגילה, באהאלטן אין די ערשטע און לעצטע אותיות פון ווערטער, און מ'דארף עס זוכן."
+        },
+        "evidence": { "segs": [613, 615, 634, 660, 661, 664], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The Megillah is a drill in reading the world: one who learns to read it can find Hashem in current events and in his own life.",
+          "yi": "די מגילה איז א איבונג אין ליינען די וועלט: ווער ס'לערנט זיך ליינען די מגילה, קען געפינען דעם אויבערשטן אין די געשעענישן פון דער צייט און אין זיין אייגן לעבן."
+        },
+        "evidence": { "segs": [727, 730, 733, 792, 811, 812], "confidence": 0.85 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-zman-adar-purim-02-05-purim-e-not-so-clear",
+      "startSeg": 0,
+      "endSeg": 74,
+      "title": { "en": "A Megillah without open miracles", "yi": "א מגילה אן נסים גלוים" },
+      "summary": {
+        "en": "The Rav opens with the joy of Adar and the great kedusha of Megillas Esther, written with ruach hakodesh. He points out that Hashem's name never appears in it and that it reads like a plain court story, and asks how we can then make the bracha 'she'asa nisim'.",
+        "yi": "דער משגיח עפנט מיט דער שמחה פון אדר און מיט דער גרויסער קדושה פון מגילת אסתר, וואס איז געשריבן געווארן ברוח הקודש. ער ווייזט אן אז דעם אויבערשטנס נאמען שטייט נישט אין איר און אז זי איז ווי א פשוטע מעשה פון א קעניגס הויף, און פרעגט ווי אזוי מ'מאכט דען די ברכה \"שעשה נסים\"."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-adar-purim-02-05-purim-e-not-so-clear",
+      "startSeg": 75,
+      "endSeg": 191,
+      "title": { "en": "Nisan and Adar: revealed and cloaked miracles", "yi": "ניסן און אדר: נסים גלוים און פארדעקטע נסים" },
+      "summary": {
+        "en": "The Rav contrasts Nisan, the first month and the month of revealed miracles, with Adar, the last month, whose name means a cloak, as in 'aderes se'ar'. He explains that nature is itself a miracle, using the example of a child raised on the mann who first sees bread grow from the ground.",
+        "yi": "דער משגיח שטעלט אוועק ניסן, דער ערשטער חודש און דער חודש פון נסים גלוים, קעגן אדר, דער לעצטער חודש, וואס זיין נאמען מיינט א מאנטל, ווי \"אדרת שער\". ער ערקלערט אז די טבע אליין איז א נס, מיטן משל פון א קינד וואס איז אויפגעוואקסן אויפן מן און זעט צום ערשטן מאל ברויט וואקסן פון דער ערד."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-adar-purim-02-05-purim-e-not-so-clear",
+      "startSeg": 192,
+      "endSeg": 272,
+      "title": { "en": "Parable of the patient and the medicine", "yi": "משל פונעם קראנקן און דער רפואה" },
+      "summary": {
+        "en": "The Rav tells a parable of a dying patient whose only cure is a medicine from China and a doctor from America, both months away, who both arrive just in time. Nothing supernatural happened, yet anyone sees there was a plan, and this, he says, is the kind of nes in the Megillah.",
+        "yi": "דער משגיח דערציילט א משל פון א קראנקן וואס קען נאר געהיילט ווערן מיט א רפואה פון כינע און א דאקטער פון אמעריקע, ביידע חדשים אוועק, און ביידע קומען אן פונקט אין דער צייט. קיין נס גלוי איז נישט געשען, און פונדעסטוועגן זעט יעדער אז ס'איז געווען א פלאן, און דאס, זאגט ער, איז דער סארט נס פון דער מגילה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-adar-purim-02-05-purim-e-not-so-clear",
+      "startSeg": 273,
+      "endSeg": 456,
+      "title": { "en": "The jigsaw puzzle of the Megillah and of today", "yi": "דער פאזל פון דער מגילה און פון היינט" },
+      "summary": {
+        "en": "The Rav shows how every detail of the Megillah, from Vashti's removal to Mordechai understanding Bigsan and Teresh and the king's sleepless night, is a screw in one machine. He applies this to current events such as the Gulf War and the fall of Russia, and explains that court gossip a yeshiva boy rightly ignores was, in Achashverosh's time, the unfolding of a nes.",
+        "yi": "דער משגיח ווייזט ווי יעדע פרט אין דער מגילה, פון ושתי'ס אוועקנעמען ביז מרדכי וואס פארשטייט בגתן ותרש און דעם קעניגס נדודי שינה, איז א שרויף אין איין מאשין. ער ציט דאס אויף די היינטיגע געשעענישן, ווי די מלחמה קעגן איראק און דער פאל פון רוסלאנד, און ערקלערט אז דער קלאנג פון קעניגס הויף, וואס א ישיבה בחור דארף זיך נישט אינטערעסירן דערמיט, איז אין אחשורוש'ס צייטן געווען דער נס וואס האט זיך אנטוויקלט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-adar-purim-02-05-purim-e-not-so-clear",
+      "startSeg": 457,
+      "endSeg": 534,
+      "title": { "en": "Why Hashem's name is missing; 'HaMelech'", "yi": "פארוואס דער אויבערשטנס נאמען פעלט; \"המלך\"" },
+      "summary": {
+        "en": "The Rav gives a simple reason why Hashem's name is absent from the Megillah and brings the Midrash that 'HaMelech' alludes to Hashem, comparing it to a believer reading about the president in the newspaper. He brings the passuk that the hearts of kings are in Hashem's hand and Rashi that Amalek conceals Hashem's name and throne.",
+        "yi": "דער משגיח גיט א פשוטן טעם פארוואס דעם אויבערשטנס נאמען פעלט אין דער מגילה, און ברענגט דעם מדרש אז \"המלך\" מיינט דעם אויבערשטן, ווי א מאמין וואס ליינט וועגן דעם פרעזידענט אין דער צייטונג. ער ברענגט דעם פסוק אז דאס הארץ פון מלכים איז אין דעם אויבערשטנס האנט, און רש\"י אז עמלק פארדעקט דעם אויבערשטנס נאמען און כסא."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-adar-purim-02-05-purim-e-not-so-clear",
+      "startSeg": 535,
+      "endSeg": 611,
+      "title": { "en": "Rulers as marionettes", "yi": "די הערשער זענען מאריאנעטן" },
+      "summary": {
+        "en": "The Rav describes a marionette show whose thin strings the audience cannot see. Achashverosh's sudden change from Haman's side to Esther's shows that he was a marionette, and the Rav applies the same to the leaders of his day, who turn this way and that as Hashem pulls the strings.",
+        "yi": "דער משגיח באשרייבט א מאריאנעטן שפיל וואו דער עולם זעט נישט די דינע שטריקלעך. אחשורוש'ס פלוצלינגדיגע איבערדריי פון המן'ס זייט צו אסתר'ס זייט ווייזט אז ער איז געווען א מאריאנעט, און דער משגיח ציט דאס אויף די הערשער פון זיין צייט, וואס דרייען זיך אהין און אהער ווי דער אויבערשטער ציט די שטריקלעך."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-adar-purim-02-05-purim-e-not-so-clear",
+      "startSeg": 612,
+      "endSeg": 711,
+      "title": { "en": "Hashem's hidden name in the Megillah and in history", "yi": "דעם אויבערשטנס באהאלטענער נאמען אין דער מגילה און אין דער היסטאריע" },
+      "summary": {
+        "en": "The Rav explains why some ba'alei kriah read 'Yavo hamelech v'Haman hayom' in one breath: the Arizal explains that its first letters spell Hashem's name, which appears at turning points of the story, sometimes backwards in final letters. Likewise Hashem's hand is hidden in history, where the empires that oppressed the Jews are gone and the Jews live on.",
+        "yi": "דער משגיח ערקלערט פארוואס טייל בעלי קריאה ליינען \"יבוא המלך והמן היום\" מיט איין אטעם: דער אריז\"ל ערקלערט אז די ראשי תיבות זענען דעם אויבערשטנס נאמען, וואס קומט ארויס ביי די ווענדפונקטן פון דער מעשה, אמאל צוריקווערטס אין סופי תיבות. אזוי אויך איז דעם אויבערשטנס האנט באהאלטן אין דער היסטאריע, וואו די מלכיות וואס האבן געדריקט אידן זענען פארשוואונדן און אידן לעבן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-adar-purim-02-05-purim-e-not-so-clear",
+      "startSeg": 712,
+      "endSeg": 839,
+      "title": { "en": "Learning to read the Megillah and the world", "yi": "זיך לערנען ליינען די מגילה און די וועלט" },
+      "summary": {
+        "en": "The Rav explains the bracha 'al mikra Megillah' as learning to read, like a doctor reading an x-ray, and calls the Megillah a drill in finding Hashem in newspapers and history books. With the masked collector at the Purim seudah and a late lunch at home, he concludes that the world is masked, Hashem directs every detail, and one who learns this fears no one.",
+        "yi": "דער משגיח טייטשט די ברכה \"על מקרא מגילה\" אז מ'לערנט זיך ליינען, ווי א דאקטער וואס ליינט א רענטגען בילד, און רופט די מגילה א איבונג צו געפינען דעם אויבערשטן אין די צייטונגען און היסטאריע ספרים. מיטן פארשטעלטן קלייבער ביי דער פורים סעודה און מיט א מיטאג וואס פארשפעטיגט זיך אינדערהיים, שליסט ער אז די וועלט איז פארשטעלט, דער אויבערשטער פירט יעדע קלייניגקייט, און ווער ס'ווייסט דאס האט נישט מורא פאר קיינעם."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "Bishenichnas Adar Maaven B'Simphah",
+      "work": "Gemara Taanis",
+      "ref": "Taanis 29a",
+      "sefariaRef": "Taanit 29a",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [0], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Aroch HaKadosh Nam",
+      "work": "Gemara Megillah",
+      "ref": "Megillah 7a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [4, 5, 6], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "A Chaydesh Azalachem. Lash Chadashim",
+      "work": "Shemos",
+      "ref": "Shemos 12:2",
+      "sefariaRef": "Exodus 12:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [75, 76], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Kulayi Ka'adar as-sayah",
+      "work": "Bereishis",
+      "ref": "Bereishis 25:25",
+      "sefariaRef": "Genesis 25:25",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [107, 108, 109], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "what does the madrash tell us that whenever you have ha-melech",
+      "work": "Midrash Esther Rabbah",
+      "ref": "Esther Rabbah 3:10",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [464, 465, 467, 473], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Melech and the Seventh Vyad Hashem the Pesach says",
+      "work": "Mishlei",
+      "ref": "Mishlei 21:1",
+      "sefariaRef": "Proverbs 21:1",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [505, 506, 507, 509], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Rashi Vashem ... case cut ... it doesn't say Kisei Hashem",
+      "work": "Rashi",
+      "ref": "Rashi on Shemos 17:16",
+      "sefariaRef": "Rashi on Exodus 17:16",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [519, 520, 521, 525], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Yav El HaMelech Vahaman Hayayin",
+      "work": "Esther",
+      "ref": "Esther 5:4",
+      "sefariaRef": "Esther 5:4",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [625, 632, 633, 634], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the Iriah Kaddish explains this",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [631], "confidence": 0.7 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Adar, from 'aderes', a cloak, is the month furthest from Nisan: Nisan's miracles are revealed, Adar's are wrapped in nature, a nes twelve levels removed from an open nes.",
+        "yi": "אדר, פון \"אדרת\", א מאנטל, איז דער חודש וואס איז דער ווייטסטער פון ניסן: די נסים פון ניסן זענען גלוי, און די פון אדר זענען איינגעוויקלט אין טבע, א נס צוועלף מדריגות אוועק פון א נס גלוי."
+      },
+      "evidence": { "segs": [96, 107, 109, 336, 337], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "For a child raised in the desert on the mann, bread rising from the ground would be the wonder; what we call nature is a miracle we are simply used to.",
+        "yi": "פאר א קינד וואס איז אויפגעוואקסן אין מדבר אויפן מן, וואלט ברויט וואס וואקסט פון דער ערד געווען דער פלא; וואס מיר רופן טבע איז א נס וואס מ'איז פשוט צוגעוואוינט דערצו."
+      },
+      "evidence": { "segs": [150, 156, 170, 178, 190], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The news of the day is a Megillah being written now: events like Russia's collapse just before the Gulf War are pieces of one plan to protect the Jews.",
+        "yi": "די נייעס פון יעדן טאג זענען א מגילה וואס ווערט יעצט געשריבן: געשעענישן ווי דער פאל פון רוסלאנד פונקט פאר דער מלחמה קעגן איראק זענען שטיקלעך פון איין פלאן צו באשיצן אידן."
+      },
+      "evidence": { "segs": [380, 382, 390, 396, 401], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Gossip from the king's court that a yeshiva boy rightly refuses to hear was, in Shushan, the very unfolding of the nes without which the Jews would not exist today.",
+        "yi": "דער קלאנג פון קעניגס הויף, וואס א ישיבה בחור וויל מיט רעכט נישט הערן, איז אין שושן געווען דער נס אליין, און אן דעם וואלטן אידן היינט נישט געווען."
+      },
+      "evidence": { "segs": [422, 426, 430, 432, 436], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Just as 'HaMelech' in the Megillah alludes to Hashem, a believer reading about the president in the newspaper understands that the real ruler is Hashem, and the leaders are marionettes.",
+        "yi": "אזוי ווי \"המלך\" אין דער מגילה מיינט דעם אויבערשטן, פארשטייט א מאמין וואס ליינט וועגן דעם פרעזידענט אין דער צייטונג אז דער אמת'ער הערשער איז דער אויבערשטער, און די פירער זענען מאריאנעטן."
+      },
+      "evidence": { "segs": [477, 478, 594, 597, 598], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Purim masks teach that the whole world is a masked world, and under the mask Hashem directs nations, families and every small happening.",
+        "yi": "די פורים פארשטעלונגען לערנען אז די גאנצע וועלט איז א פארשטעלטע וועלט, און אונטער דער מאסקע פירט דער אויבערשטער פעלקער, משפחות און יעדע קליינע זאך."
+      },
+      "evidence": { "segs": [771, 773, 774, 777, 779], "confidence": 0.85 }
+    }
+  ],
+  "stories": [],
+  "questions": [
+    {
+      "question": {
+        "en": "How can we say 'she'asa nisim' over the Megillah when it contains no visible miracle?",
+        "yi": "ווי אזוי קען מען זאגן \"שעשה נסים\" אויף דער מגילה, אז ס'איז נישטא אין איר קיין נס וואס מ'זעט?"
+      },
+      "answer": {
+        "en": "Adar's miracles are real but cloaked in nature, and nature itself is Hashem's miracle.",
+        "yi": "די נסים פון אדר זענען אמת'דיגע נסים, נאר זיי זענען פארדעקט מיט טבע, און די טבע אליין איז דעם אויבערשטנס נס."
+      },
+      "questionSegs": [40, 50, 74],
+      "answerSegs": [104, 106, 115, 191],
+      "confidence": 0.85
+    },
+    {
+      "question": {
+        "en": "Why does Hashem's name not appear in the Megillah?",
+        "yi": "פארוואס שטייט נישט דעם אויבערשטנס נאמען אין דער מגילה?"
+      },
+      "answer": {
+        "en": "A simple reason is that the Megillah was also written down where the name could be desecrated; further, Amalek conceals Hashem's name, so in the Megillah it is hidden.",
+        "yi": "א פשוטער טעם איז ווייל די מגילה איז אויך פארשריבן געווארן וואו דער נאמען קען ווערן מחולל; און נאך, עמלק פארדעקט דעם אויבערשטנס נאמען, ממילא איז ער באהאלטן אין דער מגילה."
+      },
+      "questionSegs": [458, 459, 527],
+      "answerSegs": [461, 462, 463, 529],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "What made Achashverosh suddenly change from wanting to kill the Jews to taking Esther's side?",
+        "yi": "וואס האט גורם געווען אז אחשורוש זאל זיך פלוצלינג איבערדרייען פון וועלן הרג'נען די אידן צו שטיין אויף אסתר'ס זייט?"
+      },
+      "answer": {
+        "en": "He had no choice; he was a marionette moved by strings from above.",
+        "yi": "ער האט נישט געהאט קיין ברירה; ער איז געווען א מאריאנעט וואס ווערט געצויגן מיט שטריקלעך פון אויבן."
+      },
+      "questionSegs": [578, 579],
+      "answerSegs": [583, 585, 586],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why do some ba'alei kriah read 'Yavo hamelech v'Haman hayom' quickly in one breath?",
+        "yi": "פארוואס ליינען טייל בעלי קריאה \"יבוא המלך והמן היום\" גיך מיט איין אטעם?"
+      },
+      "answer": {
+        "en": "The Arizal explains that the first letters of these four words spell Hashem's name.",
+        "yi": "דער אריז\"ל ערקלערט אז די ראשי תיבות פון די פיר ווערטער זענען דעם אויבערשטנס נאמען."
+      },
+      "questionSegs": [626, 627, 630],
+      "answerSegs": [631, 634, 635, 636, 637],
+      "confidence": 0.85
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says one must learn to read the newspapers and the history books so as to find Hashem in them.",
+        "yi": "דער משגיח זאגט אז מ'דארף זיך לערנען ליינען די צייטונגען און די היסטאריע ספרים כדי צו געפינען דעם אויבערשטן דערין."
+      },
+      "evidence": { "segs": [728, 729, 731, 732], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "He says that if lunch is ten minutes late, one who knows how to see should not get angry, since Hashem made it so; one should find Hashem in one's own life.",
+        "yi": "ער זאגט אז אויב דער מיטאג פארשפעטיגט זיך צען מינוט, ווער ס'ווייסט ווי צו קוקן ווערט נישט אויפגעבראכט, ווייל דער אויבערשטער האט עס אזוי געמאכט; מ'זאל געפינען דעם אויבערשטן אין זיין אייגן לעבן."
+      },
+      "evidence": { "segs": [783, 786, 789, 790, 793], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He says yeshiva boys have no business filling their minds with the trivial news of the day; their minds belong in learning.",
+        "yi": "ער זאגט אז ישיבה בחורים האבן נישט וואס צו פולן זייער קאפ מיט די נישטיגע נייעס פונעם טאג; זייער קאפ דארף זיין אינעם לערנען."
+      },
+      "evidence": { "segs": [439, 442, 443, 446], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "Purim",
+    "hidden miracles in nature",
+    "Megillas Esther",
+    "Nisan and Adar",
+    "Hashem's name hidden in the Megillah",
+    "hashgachah pratis",
+    "seeing Hashem in current events",
+    "world leaders as marionettes",
+    "Amalek and concealment"
+  ],
+  "concepts": [
+    { "he": "נס", "heardAs": ["mess", "Ness", "nest", "Nisan", "Nisim", "nizam", "misen"] },
+    { "he": "טבע", "heardAs": ["Teva", "Tevah", "Teba"] },
+    { "he": "אדר", "heardAs": ["Adal", "Adol", "Ado", "Adr"] },
+    { "he": "אדרת", "heardAs": ["Ka'adar"] },
+    { "he": "שעשה נסים", "heardAs": ["Shasen Nisan", "HaShasa Nisim", "shazanizam"] },
+    { "he": "מקרא מגילה", "heardAs": ["mikra Megil", "Mikcha Megillah", "al mikha megillah"] },
+    { "he": "רבונו של עולם", "heardAs": ["Rabbani Shalim", "Rabbi Yashverim", "Urbani Shredden", "Rabban Yishleilam", "Rabbi Neshwadam", "Rabbi Yisraelim"] },
+    { "he": "מן", "heardAs": ["man", "mud"] },
+    { "he": "המוציא לחם מן הארץ", "heardAs": ["HaMaitziyalechem in the earth"] },
+    { "he": "המלך", "heardAs": ["ha-melech", "Himalach", "HaMelech"] },
+    { "he": "כס יה", "heardAs": ["case cut", "keis ka", "kaya gaf"] },
+    { "he": "הסתר פנים", "heardAs": ["Hesta Punna", "Hestoponim"] },
+    { "he": "בעל קריאה", "heardAs": ["Baalekhi", "Valkyrie"] },
+    { "he": "רוח הקודש", "heardAs": ["Aroch HaKadosh"] },
+    { "he": "מלכיות", "heardAs": ["manchiyos"] }
+  ],
+  "people": [
+    { "name": "Achashverosh", "heardAs": ["Hajverish", "Hashverosh", "Cheshwereh", "Cheshverish"] },
+    { "name": "Esther", "heardAs": ["Esther", "Asta"] },
+    { "name": "Mordechai", "heardAs": ["Mardchai"] },
+    { "name": "Haman", "heardAs": ["Haman", "Kilhaman", "Rahman"] },
+    { "name": "Vashti", "heardAs": ["Vashti"] },
+    { "name": "Bigsan and Teresh", "heardAs": ["Bixen and Suresh", "vixen and selesh"] },
+    { "name": "Charvona", "heardAs": ["Chavayna"] },
+    { "name": "Amalek", "heardAs": ["Amalek", "amalek"] },
+    { "name": "Rashi", "heardAs": ["Rashi"] },
+    { "name": "the Arizal", "heardAs": ["Iriah Kaddish"] }
+  ],
+  "asrNotes": "English ASR with heavy garbling of Hebrew terms: 'nes/nissim' is rendered as 'mess', 'Nisan', 'nest', and Ribono shel Olam in a dozen forms. The opening comparison of the Megillah's kedusha (segments 10-20) is too garbled to recover exactly. Segments 480-503 largely repeat 470-479 (a duplicated stretch in the transcript). The passage on Hashem's name appearing backwards in final letters (segments 651-660) is too garbled to identify the passuk."
+}

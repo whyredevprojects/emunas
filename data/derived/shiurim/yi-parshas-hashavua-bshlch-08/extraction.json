@@ -1,0 +1,139 @@
+{
+  "shiurId": "yi-parshas-hashavua-bshlch-08",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav shows that Parshas Beshalach is a parsha of emunah, and explains that the trial of our generation, the last before Mashiach, is holding on to simple faith in a time of double hiddenness, like Avraham at the Akeidah.",
+      "yi": "דער משגיח ווייזט אז פרשת בשלח איז א פרשה פון אמונה, און ער ערקלערט אז דער נסיון פון אונזער דור, דער לעצטער נסיון פאר משיח, איז זיך צו האלטן ביי פשוט'ע אמונה אין א צייט פון א טאפלטן הסתר פנים, אזוי ווי אברהם אבינו ביי דער עקידה."
+    },
+    "abstract": {
+      "en": "The Rav opens by showing that Beshalach is full of emunah: after the splitting of the sea the Jews reached the peak of faith, the mann is the foundation of emunah, and Amalek came when they asked whether Hashem is among them. He explains why he named his chevra Emunas Yisroel: tefillah itself is emunah. Avraham, the first believer, believed without the yud of chochmah, with simple faith. Purim, too, is emunah: Esther hints to hester panim. The Akeidah, Avraham's last trial, foretells the last trial before the geulah: to go on despite unanswered questions, as at Shema with closed eyes. Quoting the Ba'al Shem Tov, he describes a double hiddenness, which is history's month of Adar. He traces it to the world wars and to life among the nations, where the G-d-fearing are mocked, as the Gemara foretells. From Daniel and Malachi he concludes that believers must bind themselves together like roped mountain climbers.",
+      "yi": "דער משגיח עפנט מיט ווייזן אז פרשת בשלח איז פול מיט אמונה: נאך קריעת ים סוף זענען אידן דערגאנגען צום שפיץ אמונה, דער מן איז דער יסוד פון אמונה, און עמלק איז געקומען ווען זיי האבן געפרעגט צי השם איז צווישן זיי. ער דערציילט פארוואס ער האט אנגערופן זיין חברה אמונת ישראל: תפילה אליין איז אמונה. אברהם אבינו, דער ערשטער מאמין, האט געגלייבט אן דעם יו\"ד פון חכמה, מיט א פשוט'ע אמונה. אויך פורים איז אמונה, ווייל אסתר איז א רמז אויף הסתר פנים. די עקידה, אברהם'ס לעצטער נסיון, איז א סימן אויף דעם לעצטן נסיון פאר דער גאולה: צו גיין ווייטער טראץ די קשיות, אזוי ווי ביי קריאת שמע מיט פארמאכטע אויגן. ער ברענגט פונעם בעל שם טוב אז עס איז דא א טאפלטער הסתר, און דאס איז דער חודש אדר פון דער היסטאריע. ער ווייזט עס אויף די מלחמות און אויפן לעבן צווישן גוים, וואו מען לאכט פון יראי שמים, אזוי ווי די גמרא זאגט פאר. פון דניאל און מלאכי שליסט ער אז די מאמינים דארפן זיך צובינדן איינער צום אנדערן ווי בארג־קריכער מיט א שטריק."
+    },
+    "keyPoints": [
+      { "text": { "en": "Beshalach is a parsha of emunah: the sea, the mann and the war with Amalek all turn on faith.", "yi": "פרשת בשלח איז א פרשה פון אמונה: קריעת ים סוף, דער מן און די מלחמה מיט עמלק דרייען זיך אלע ארום אמונה." }, "evidence": { "segs": [10, 13, 24, 26], "confidence": 0.8 } },
+      { "text": { "en": "Tefillah is an expression of emunah, since one who davens shows that he believes Hashem can help him.", "yi": "תפילה איז אן אויסדרוק פון אמונה, ווייל ווער עס דאווענט ווייזט אז ער גלייבט אז השם קען אים העלפן." }, "evidence": { "segs": [66, 68, 91, 96], "confidence": 0.75 } },
+      { "text": { "en": "Avraham's emunah, written without a yud, was simple faith without chochmah, like that of the grandmothers of old.", "yi": "אברהם אבינו'ס אמונה, וואס איז געשריבן אן א יו\"ד, איז געווען א פשוט'ע אמונה אן חכמה, אזוי ווי די באבעס פון אמאל." }, "evidence": { "segs": [119, 131, 132, 141], "confidence": 0.7 } },
+      { "text": { "en": "The trial of the Akeidah, to go on with joy despite an unanswered question, is the model for the last trial before the geulah.", "yi": "דער נסיון פון דער עקידה, צו גיין מיט שמחה טראץ א קשיא אן א תירוץ, איז דער משל פאר דעם לעצטן נסיון פאר דער גאולה." }, "evidence": { "segs": [222, 238, 249, 251], "confidence": 0.75 } },
+      { "text": { "en": "Our time is a double hiddenness, history's month of Adar, when many do not even know that Hashem is watching.", "yi": "אונזער צייט איז א טאפלטער הסתר, דער חודש אדר פון דער היסטאריע, ווען אסאך ווייסן אפילו נישט אז השם קוקט." }, "evidence": { "segs": [306, 308, 312, 341], "confidence": 0.75 } },
+      { "text": { "en": "Before Mashiach, believers must bind themselves together and strengthen one another, like mountain climbers roped together.", "yi": "פאר משיח דארפן די מאמינים זיך צובינדן צוזאמען און שטארקן איינער דעם אנדערן, אזוי ווי בארג־קריכער וואס זענען צוגעבונדן מיט א שטריק." }, "evidence": { "segs": [488, 492, 497, 498], "confidence": 0.85 } }
+    ]
+  },
+  "sections": [
+    { "recordingId": "y-parsha-sefer-shemois-04-08-beshalach", "startSeg": 0, "endSeg": 58,
+      "title": { "en": "Beshalach, a parsha of emunah", "yi": "בשלח, א פרשה פון אמונה" },
+      "summary": { "en": "The Rav goes through the parsha: after the sea the Jews reached the peak of emunah, the mann is the foundation of emunah, and Amalek came when they doubted whether Hashem is among them. He calls this a great Shabbos, since the whole essence of a Jew is emunah.", "yi": "דער משגיח גייט דורך די פרשה: נאך קריעת ים סוף זענען אידן דערגאנגען צום שפיץ אמונה, דער מן איז דער יסוד פון אמונה, און עמלק איז געקומען ווען זיי האבן געצווייפלט צי השם איז צווישן זיי. ער רופט עס א גרויסער שבת, ווייל דער גאנצער ענין פון א איד איז אמונה." },
+      "kind": "intro", "catalogTopicIdx": [0], "subsections": [] },
+    { "recordingId": "y-parsha-sefer-shemois-04-08-beshalach", "startSeg": 59, "endSeg": 107,
+      "title": { "en": "Why the chevra is called Emunas Yisroel", "yi": "פארוואס די חברה הייסט אמונת ישראל" },
+      "summary": { "en": "The Rav tells that when he founded the chevra he named it Emunas Yisroel so that its people would work on emunah, and explains that tefillah is itself emunah; even boys davening to win color war show that they believe Hashem can help.", "yi": "דער משגיח דערציילט אז ווען ער האט געגרינדעט די חברה האט ער זי אנגערופן אמונת ישראל, כדי מען זאל דארט ארבעטן אויף אמונה, און ער ערקלערט אז תפילה איז אליין אמונה; אפילו יונגלעך וואס דאווענען צו געווינען קאלער וואר ווייזן אז זיי גלייבן אז השם קען העלפן." },
+      "kind": "main", "catalogTopicIdx": [], "subsections": [] },
+    { "recordingId": "y-parsha-sefer-shemois-04-08-beshalach", "startSeg": 108, "endSeg": 174,
+      "title": { "en": "Avraham's simple emunah without a yud", "yi": "אברהם אבינו'ס פשוט'ע אמונה אן א יו\"ד" },
+      "summary": { "en": "The Rav brings the Bnei Yissaschar that Avraham's 'vehe'emin' lacks a yud, the letter of chochmah: his was simple faith without philosophy, like that of the grandmothers and of the Chasam Sofer's mother. He then notes that today there is great hiddenness and many questions on Hashem's ways.", "yi": "דער משגיח ברענגט דעם בני יששכר אז ביי אברהם אבינו'ס \"והאמין\" פעלט דער יו\"ד, דער אות פון חכמה: זיין אמונה איז געווען פשוט, אן פילאסאפיע, אזוי ווי די באבעס און ווי דעם חתם סופר'ס מאמע. דערנאך זאגט ער אז היינט איז דא א גרויסער הסתר פנים און אסאך קשיות אויף השם'ס הנהגה." },
+      "kind": "main", "catalogTopicIdx": [], "subsections": [] },
+    { "recordingId": "y-parsha-sefer-shemois-04-08-beshalach", "startSeg": 175, "endSeg": 286,
+      "title": { "en": "Purim, hester panim and the Akeidah", "yi": "פורים, הסתר פנים און די עקידה" },
+      "summary": { "en": "The Rav calls Purim the peak of emunah, touches on the Purim drinking, and links Esther to hester panim. He brings the Ramban that the Akeidah foretells the last trial before the geulah, and explains its trial as going with joy despite the question on Hashem's promise, as one accepts Hashem's kingship at Shema with closed eyes.", "yi": "דער משגיח רופט פורים דער שפיץ פון אמונה, רירט אן דאס טרינקען פורים, און פארבינדט אסתר מיט הסתר פנים. ער ברענגט דעם רמב\"ן אז די עקידה איז א סימן אויף דעם לעצטן נסיון פאר דער גאולה, און ערקלערט אז דער נסיון איז געווען צו גיין מיט שמחה טראץ דער קשיא אויף השם'ס הבטחה, אזוי ווי מען נעמט אויף עול מלכות שמים ביי קריאת שמע מיט פארמאכטע אויגן." },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": [] },
+    { "recordingId": "y-parsha-sefer-shemois-04-08-beshalach", "startSeg": 287, "endSeg": 353,
+      "title": { "en": "Double hiddenness and the month of Adar", "yi": "טאפלטער הסתר און דער חודש אדר" },
+      "summary": { "en": "The Rav brings the Ba'al Shem Tov's two kinds of hiddenness with the parable of a child whose father is hidden in the house, and the Ba'al Shem Tov's fear of a double hiddenness before Mashiach. He contrasts Nisan, the month of open miracles, with Adar, the covered month, and says that in history we are now in Adar.", "yi": "דער משגיח ברענגט דעם בעל שם טוב'ס צוויי סארטן הסתר מיט דעם משל פון א קינד וועמענס טאטע איז באהאלטן אין הויז, און דעם בעל שם טוב'ס מורא פאר א טאפלטן הסתר פאר משיח. ער שטעלט אנטקעגן ניסן, דער חודש פון אפענע ניסים, מיט אדר, דער פארדעקטער חודש, און זאגט אז אין דער היסטאריע האלט מען יעצט אין אדר." },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": [] },
+    { "recordingId": "y-parsha-sefer-shemois-04-08-beshalach", "startSeg": 354, "endSeg": 419,
+      "title": { "en": "The hiddenness of our time", "yi": "דער הסתר פון אונזער צייט" },
+      "summary": { "en": "The Rav describes two aspects of today's hiddenness: the world wars, which uprooted the Jewry of Europe, brought new ideologies and the murder of six million; and life among the nations, which weakens Yiddishkeit until an ehrlicher Yid is mocked, as the Gemara at the end of Sotah foretells for the time before Mashiach.", "yi": "דער משגיח באשרייבט צוויי בחינות פון היינטיגן הסתר: די מלחמות, וואס האבן אויסגעריסן די אידישקייט פון אייראפע, געבראכט נייע שיטות און דעם הרג פון זעקס מיליאן; און דאס לעבן צווישן גוים, וואס שוואכט אפ די אידישקייט ביז מען לאכט פון אן ערליכן איד, אזוי ווי די גמרא אין סוף סוטה זאגט פאר אויף עקבתא דמשיחא." },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": [] },
+    { "recordingId": "y-parsha-sefer-shemois-04-08-beshalach", "startSeg": 420, "endSeg": 528,
+      "title": { "en": "Daniel, Malachi and the roped climbers", "yi": "דניאל, מלאכי און די צוגעבונדענע קריכער" },
+      "summary": { "en": "The Rav reads Daniel's prophecy of an unprecedented time of trouble as the tzarah his generation lived through, and Malachi's 'az nidberu yirei Hashem' as the call for believers to gather and strengthen one another. He brings the Ruzhiner's parable of climbing a smooth wall and describes roped mountain climbers, concluding that Jews must work on emunah and stay bound together.", "yi": "דער משגיח לערנט דעם פסוק אין דניאל פון אן עת צרה וואס איז נאך נישט געווען, אויף דער צרה וואס זיין דור האט דורכגעלעבט, און מלאכי'ס \"אז נדברו יראי ה'\" אלס א רוף אז די מאמינים זאלן זיך צוזאמענקומען און שטארקן. ער ברענגט דעם רוזשינער'ס משל פון קריכן אויף א גלייכע וואנט, באשרייבט בארג־קריכער וואס זענען צוגעבונדן מיט א שטריק, און שליסט אז אידן דארפן הארעווען אויף אמונה און בלייבן צוגעבונדן." },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": [] }
+  ],
+  "sources": [
+    { "heardAs": "וימינה ובדשם ולמשה אב זקן", "work": "Shemos", "ref": "Shemos 14:31", "sefariaRef": "Exodus 14:31", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [10, 11], "confidence": 0.85 } },
+    { "heardAs": "הישש שם בקומנא אים איין", "work": "Shemos", "ref": "Shemos 17:7", "sefariaRef": "Exodus 17:7", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [26, 28], "confidence": 0.85 } },
+    { "heardAs": "א נחש אישיאני ואוכל", "work": "Bereishis", "ref": "Bereishis 3:13", "sefariaRef": "Genesis 3:13", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [37], "confidence": 0.8 } },
+    { "heardAs": "ווייאו די אמונה אדבי השמש", "work": "Shemos", "ref": "Shemos 17:12", "sefariaRef": "Exodus 17:12", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [44], "confidence": 0.8 } },
+    { "heardAs": "והם און בחם", "work": "Bereishis", "ref": "Bereishis 15:6", "sefariaRef": "Genesis 15:6", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [113, 115, 116], "confidence": 0.75 } },
+    { "heardAs": "שי' פון בני יששכר", "work": "Bnei Yissaschar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [123, 130], "confidence": 0.75 } },
+    { "heardAs": "רבי און רבי זרע האבן געשיקעט צוזאמען", "work": "Gemara Megillah", "ref": "Megillah 7b", "sefariaRef": "Megillah 7b", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [188, 189, 190], "confidence": 0.75 } },
+    { "heardAs": "דער רמז זאגט אז מען זאל טרינקען אביסל מער", "work": "Rema", "ref": "Rema, Orach Chaim 695:2", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [195, 196, 197], "confidence": 0.65 } },
+    { "heardAs": "דער סאטמארער רוב שרייבט", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [198], "confidence": 0.6 } },
+    { "heardAs": "וינחי האסטע רעסטע רצפני", "work": "Devarim", "ref": "Devarim 31:18", "sefariaRef": "Deuteronomy 31:18", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [173, 215, 287], "confidence": 0.8 } },
+    { "heardAs": "עשתא מן הצורים מניים", "work": "Gemara Chullin", "ref": "Chullin 139b", "sefariaRef": "Chullin 139b", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [215], "confidence": 0.75 } },
+    { "heardAs": "דער רמב״ן זארגט ... סימן רבנים", "work": "Ramban", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [220, 222], "confidence": 0.7 } },
+    { "heardAs": "כיבור יצחק יקרא לך זרע", "work": "Bereishis", "ref": "Bereishis 21:12", "sefariaRef": "Genesis 21:12", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [239, 240], "confidence": 0.8 } },
+    { "heardAs": "כחות בונחת יחידך את יצחק, ועל לאה שם לילים", "work": "Bereishis", "ref": "Bereishis 22:2", "sefariaRef": "Genesis 22:2", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [241, 242], "confidence": 0.75 } },
+    { "heardAs": "הרהמה ולי יחזק, ודברה ולי יקומנה", "work": "Bamidbar", "ref": "Bamidbar 23:19", "sefariaRef": null, "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [246, 247], "confidence": 0.65 } },
+    { "heardAs": "אזוי שטעט אין די גמרא", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [253, 254], "confidence": 0.65 } },
+    { "heardAs": "משגיח מן החלון אתמתת מן החרקה", "work": "Shir HaShirim", "ref": "Shir HaShirim 2:9", "sefariaRef": "Song of Songs 2:9", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [300, 301], "confidence": 0.8 } },
+    { "heardAs": "עס שטעט נאך בעש''ט אז ס'איז דא צוויי סארטן העסטאו", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [288, 311, 312], "confidence": 0.75 } },
+    { "heardAs": "ויצי הראשון אדמנו כאלו כי אדרס", "work": "Bereishis", "ref": "Bereishis 25:25", "sefariaRef": "Genesis 25:25", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [326, 327], "confidence": 0.75 } },
+    { "heardAs": "די גמרא אין דעם לעצטן טאף פון מסכת הוסדות", "work": "Gemara Sotah", "ref": "Sotah 49b", "sefariaRef": "Sotah 49b", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [393, 396, 399, 402], "confidence": 0.8 } },
+    { "heardAs": "דניאל ... אבעת אהי ... יעמ'ד מוכר לסר הגדול", "work": "Daniel", "ref": "Daniel 12:1", "sefariaRef": "Daniel 12:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [424, 430, 432, 436, 452, 455], "confidence": 0.8 } },
+    { "heardAs": "אז ניטברא יראי השם איש אלע ראיה", "work": "Malachi", "ref": "Malachi 3:16", "sefariaRef": "Malachi 3:16", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [459, 462, 465], "confidence": 0.8 } },
+    { "heardAs": "דער אריזשינער האט עס געזאגט", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [468, 469, 500], "confidence": 0.75 } },
+    { "heardAs": "כתמים וחתמים הדברים ... יתבוכה רבי יתלבנה ... ומשכילים יבינו", "work": "Daniel", "ref": "Daniel 12:9-10", "sefariaRef": "Daniel 12:9-10", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [505, 508, 513, 514], "confidence": 0.75 } }
+  ],
+  "insights": [
+    { "text": { "en": "Amalek attacked right after the Jews asked whether Hashem is among them: a lapse in emunah is what opened the door to Amalek, whose essence is casting doubt.", "yi": "עמלק איז געקומען גלייך נאכדעם וואס אידן האבן געפרעגט \"היש ה' בקרבנו\": א פאל אין אמונה האט געעפנט די טיר פאר עמלק, וועמענס עצם איז ווארפן ספיקות." }, "evidence": { "segs": [23, 24, 27, 41], "confidence": 0.75 } },
+    { "text": { "en": "Even a prayer for something trivial, like winning color war, is an act of emunah, because it shows the belief that Hashem can help.", "yi": "אפילו א תפילה אויף א נארישקייט, ווי צו געווינען קאלער וואר, איז א מעשה פון אמונה, ווייל עס ווייזט אז מען גלייבט אז השם קען העלפן." }, "evidence": { "segs": [76, 81, 91, 95], "confidence": 0.7 } },
+    { "text": { "en": "Avraham's trial at the Akeidah was not the willingness to give his son, which he already had, but going on with joy in the face of an apparent contradiction to Hashem's promise.", "yi": "אברהם אבינו'ס נסיון ביי דער עקידה איז נישט געווען די גרייטקייט אוועקצוגעבן זיין זון, וואס ער האט שוין געהאט, נאר צו גיין מיט שמחה טראץ א סתירה צו השם'ס הבטחה." }, "evidence": { "segs": [230, 238, 245, 249], "confidence": 0.75 } },
+    { "text": { "en": "Closing the eyes at Shema expresses accepting Hashem's kingship blindly, without seeing or understanding, with readiness for mesirus nefesh.", "yi": "דאס צודעקן די אויגן ביי קריאת שמע ווייזט אז מען נעמט אויף עול מלכות שמים בלינד, אן זען און אן פארשטיין, מיט א גרייטקייט צו מסירות נפש." }, "evidence": { "segs": [253, 258, 263, 284], "confidence": 0.7 } },
+    { "text": { "en": "History has months like the year: Nisan is the time of open miracles, while our era is history's Adar, the hidden last month before the end.", "yi": "די היסטאריע האט חדשים אזוי ווי דאס יאר: ניסן איז די צייט פון אפענע ניסים, און אונזער צייט איז דער אדר פון דער היסטאריע, דער פארדעקטער לעצטער חודש פארן סוף." }, "evidence": { "segs": [319, 321, 338, 342], "confidence": 0.75 } },
+    { "text": { "en": "The 'sefer' in Daniel in which those to be saved are written is the 'sefer zikaron' of Malachi, which records those who hold on to emunah.", "yi": "דער \"ספר\" אין דניאל וואו די וואס וועלן געראטעוועט ווערן זענען פארשריבן, איז דער \"ספר זכרון\" פון מלאכי, וואו מען שרייבט איין די וואס האלטן זיך ביי אמונה." }, "evidence": { "segs": [455, 457, 459, 466], "confidence": 0.7 } }
+  ],
+  "stories": [
+    { "title": { "en": "The roped mountain climbers", "yi": "די בארג־קריכער מיט דעם שטריק" },
+      "retelling": { "en": "The Rav recalls that while at a camp he once went walking and passed a mountain with a sheer, smooth face, where twenty or thirty climbers were going up with spikes and nails. Because the rock was slippery, one of them would often slip and fall. But they were all tied to one rope, and since the others did not slip, the rope caught him and he did not fall down.", "yi": "דער משגיח דערציילט אז ווען ער איז געווען אין קעמפ איז ער אמאל געגאנגען שפאצירן און דורכגעגאנגען א בארג מיט א גלייכער וואנט, וואו צוואנציג דרייסיג מענטשן זענען געקראכן ארויף מיט נעגל. ווייל דער שטיין איז געווען גליטשיג, האט זיך אפט געטראפן אז איינער האט זיך אויסגעגליטשט. אבער זיי זענען אלע געווען צוגעבונדן צו איין שטריק, און ווייל די אנדערע האבן זיך נישט געגליטשט, האט דער שטריק אים געהאלטן און ער איז נישט אראפגעפאלן." },
+      "people": [], "evidence": { "segs": [477, 479, 482, 484, 488, 492], "confidence": 0.8 } }
+  ],
+  "questions": [
+    { "question": { "en": "Why is 'vehe'emin' said of Avraham written without a yud?", "yi": "פארוואס איז דאס ווארט \"והאמין\" ביי אברהם אבינו געשריבן אן א יו\"ד?" },
+      "answer": { "en": "The yud stands for thought and chochmah; Avraham's emunah was simple faith, without chochmah.", "yi": "דער יו\"ד מיינט מחשבה און חכמה; אברהם אבינו'ס אמונה איז געווען א פשוט'ע אמונה, אן חכמה." },
+      "questionSegs": [119, 122], "answerSegs": [124, 131, 132], "confidence": 0.7 },
+    { "question": { "en": "What was the trial of the Akeidah, if Avraham was already ready for mesirus nefesh?", "yi": "וואס איז געווען דער נסיון פון דער עקידה, אז אברהם אבינו איז שוין געווען גרייט צו מסירות נפש?" },
+      "answer": { "en": "Hashem had promised that his offspring would come from Yitzchak; the trial was to go with joy despite that question, without letting it stop him.", "yi": "השם האט צוגעזאגט אז זיין זרע וועט ארויסקומען פון יצחק; דער נסיון איז געווען צו גיין מיט שמחה טראץ דער קשיא, און זיך נישט לאזן אפשטעלן." },
+      "questionSegs": [227, 230], "answerSegs": [238, 239, 245, 249], "confidence": 0.75 },
+    { "question": { "en": "Why is Adar the month of Purim and the image of our time?", "yi": "פארוואס איז אדר דער חודש פון פורים און דער בילד פון אונזער צייט?" },
+      "answer": { "en": "Adar means covered, as Esav was born covered with hair; on Purim no open miracle was seen, everything came through nature.", "yi": "אדר מיינט פארדעקט, אזוי ווי עשו איז געבוירן געווארן פארדעקט מיט האר; פורים האט מען נישט געזען קיין אפענעם נס, אלעס איז געקומען דורך טבע." },
+      "questionSegs": [315, 321], "answerSegs": [327, 329, 333, 334], "confidence": 0.7 }
+  ],
+  "takeaways": [
+    { "text": { "en": "The Rav says that at Shema one must accept Hashem's kingship with complete emunah and a firm decision of mesirus nefesh, as Avraham did.", "yi": "דער משגיח זאגט אז ביי קריאת שמע דארף מען אויפנעמען עול מלכות שמים מיט א שלמות'דיגע אמונה און מיט אן החלטה פון מסירות נפש, אזוי ווי אברהם אבינו." }, "evidence": { "segs": [272, 274, 276, 277], "confidence": 0.75 } },
+    { "text": { "en": "The Rav says one must not be shaken by the questions that arise in a time of hiddenness.", "yi": "דער משגיח זאגט אז מען טאר זיך נישט לאזן נתפעל ווערן פון די קשיות וואס קומען אין א צייט פון הסתר." }, "evidence": { "segs": [350, 351, 352], "confidence": 0.75 } },
+    { "text": { "en": "The Rav says Jews must now come together and strengthen one another in emunah, bound to each other so that when one slips the others hold him.", "yi": "דער משגיח זאגט אז אידן דארפן זיך יעצט צוזאמענקומען און שטארקן איינער דעם אנדערן אין אמונה, צוגעבונדן איינער צום אנדערן, אז ווען איינער פאלט זאלן די אנדערע אים האלטן." }, "evidence": { "segs": [497, 498, 501], "confidence": 0.85 } },
+    { "text": { "en": "The Rav says one must toil for emunah and avoid sins that weaken it.", "yi": "דער משגיח זאגט אז מען דארף הארעווען אויף אמונה און זיך היטן פון עבירות וואס שוואכן אפ די אמונה." }, "evidence": { "segs": [518, 519, 520], "confidence": 0.8 } }
+  ],
+  "candidateTopics": ["Parshas Beshalach", "emunah peshutah", "tefillah as emunah", "Amalek and doubt", "the Akeidah", "hester panim", "Purim and the month of Adar", "ikvesa demeshicha", "mutual support in emunah", "Ruzhiner parable of the mountain climbers"],
+  "concepts": [
+    { "he": "אמונה", "heardAs": ["אמנה", "רמנה", "אמנע", "נמנה"] },
+    { "he": "הסתר פנים", "heardAs": ["היסטאפאנע", "העסט אפאנען", "האסטראפאנעמ'ס", "הפסק דערפאנען"] },
+    { "he": "עמלק", "heardAs": ["המולק", "עמאליק", "א מלוק"] },
+    { "he": "עקידה", "heardAs": ["אקעדע", "אקעזער", "עקזע"] },
+    { "he": "עקבתא דמשיחא", "heardAs": ["נקפות פון דער משיח'ער", "נקפה צו דער משיח", "איידער משיח'ער"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבינו שלילים", "רבונו שלאיך", "רבושה", "רבי אשתא"] },
+    { "he": "מסירות נפש", "heardAs": ["משה נפש", "מוח נפש", "נסירת נפש"] },
+    { "he": "קריאת שמע", "heardAs": ["שמי ישראל", "בעשמי ישור", "קריעה שמע"] },
+    { "he": "קץ", "heardAs": ["קענץ"] }
+  ],
+  "people": [
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו"] },
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינא", "אברהם אבינו"] },
+    { "name": "Adam HaRishon", "heardAs": ["אדם הזי'"] },
+    { "name": "the Chasam Sofer", "heardAs": ["תהלך סמסופר", "חשם סופר"] },
+    { "name": "Rabbah", "heardAs": ["רבי"] },
+    { "name": "Rabbi Zeira", "heardAs": ["רבי זרע"] },
+    { "name": "the Satmar Rav", "heardAs": ["סאטמארער רוב"] },
+    { "name": "the Ramban", "heardAs": ["רמב״ן"] },
+    { "name": "Yitzchak Avinu", "heardAs": ["יצחק"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["בעש''ט"] },
+    { "name": "Esav", "heardAs": ["אסף"] },
+    { "name": "Daniel", "heardAs": ["דניאל"] },
+    { "name": "Malachi", "heardAs": ["מלאכי"] },
+    { "name": "the Ruzhiner Rebbe", "heardAs": ["אריזשינער"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair to poor; most pesukim are garbled but recoverable from context. The Bnei Yissaschar's point (segs 123-132), the Chasam Sofer's words about his mother (segs 148-158), the Satmar Rav's view on Purim drinking (seg 198) and segs 54-58 and 102-104 could not be fully recovered. The date in seg 359 is an ASR error and was not used."
+}

@@ -1,0 +1,558 @@
+{
+  "shiurId": "yi-parshas-hashavua-ysrv-02",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that Shabbos Parshas Yisro is a second chance to receive the Torah even without preparation, because the Torah and its day stand above all calculation, and Hashem has special mercy on latecomers like Yisro.",
+      "yi": "דער משגיח ערקלערט אז שבת פרשת יתרו איז א צווייטע געלעגנהייט מקבל צו זיין די תורה אפילו אן הכנה, ווייל די תורה און איר טאג זענען העכער פון יעדן חשבון, און דער אייבערשטער האט א ספעציעלע רחמנות אויף די וואס קומען שפעט, אזוי ווי יתרו."
+    },
+    "abstract": {
+      "en": "The Rav opens by saying that the reading of the Ten Commandments in Parshas Yisro awakens the power of Matan Torah, so one who did not receive the Torah properly on Shavuos has another chance. Shavuos comes after forty-nine days of sefirah, but Yisro arrived without counting, and Shabbos, fixed by Hashem, needs no preparation. He then raises a question from the Masorah, which counts 72 pesukim in Yisro although one counts 75, and answers that the Ten Commandments are counted as ten parshiyos; the deeper reason is that whatever is connected to the Torah is above measure, like the Aron that took up no space and the fiftieth day that is not counted. The same applies to the parnassah of a talmid chacham, who is like Shabbos, and to the Rambam's words that anyone who devotes himself to Hashem throws off the yoke of calculations. He ends with Yisro, who heard of Amalek's attack on the latecomers and understood that it is never too late.",
+      "yi": "דער משגיח עפנט אז די קריאה פון די עשרת הדברות אין פרשת יתרו וועקט אויף דעם כח פון מתן תורה, אזוי אז ווער ס'האט נישט מקבל געווען די תורה ווי עס דארף צו זיין אום שבועות האט נאך א געלעגנהייט. שבועות קומט נאך ספירה, אבער יתרו איז געקומען אן ציילן, און שבת, וואס דער אייבערשטער האט מקדש געווען, דארף נישט קיין הכנה. דערנאך פרעגט ער א קשיא אויף דער מסורה, וואס ציילט 72 פסוקים אין יתרו כאטש מ'ציילט 75, און ענטפערט אז די עשרת הדברות ווערן גערעכנט ווי צען פרשיות. דער טיפערער פשט איז אז אלעס וואס האט א שייכות מיט דער תורה איז למעלה מן המדה, אזוי ווי דער ארון וואס האט נישט פארנומען קיין ארט, און דער פופציגסטער טאג וואס מ'ציילט נישט. דאס זעלבע איז ביי דער פרנסה פון א תלמיד חכם, וואס איז בבחינת שבת, און ביים רמב\"ם אז ווער ס'גיט זיך אוועק פאר דעם אייבערשטן ווארפט אראפ דעם עול פון חשבונות. צום סוף ברענגט ער יתרו, וואס האט געהערט ווי עמלק האט באפאלן די וואס זענען געבליבן הינטן, און פארשטאנען אז ס'איז קיינמאל נישט צו שפעט."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Reading the Ten Commandments in Parshas Yisro gives another chance to receive the Torah for one who did not receive it properly on Shavuos.",
+          "yi": "ווען מ'ליינט די עשרת הדברות אין פרשת יתרו האט מען נאך א געלעגנהייט מקבל צו זיין די תורה, פאר דעם וואס האט עס נישט געטון ווי עס דארף צו זיין אום שבועות."
+        },
+        "evidence": { "segs": [6, 8, 9, 18], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Shavuos comes after the preparation of sefirah, but Shabbos Parshas Yisro is for those who did not prepare, like Yisro himself.",
+          "yi": "שבועות קומט נאך דער הכנה פון ספירה, אבער שבת פרשת יתרו איז פאר די וואס האבן זיך נישט צוגעגרייט, אזוי ווי יתרו אליין."
+        },
+        "evidence": { "segs": [41, 51, 54, 59, 60, 61], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Whatever is connected to the Torah stands above place, time and calculation, as the Aron in the Kodesh HaKodashim took up no space.",
+          "yi": "אלעס וואס האט א שייכות מיט דער תורה איז למעלה מן המקום, למעלה מן הזמן און למעלה מן החשבון, אזוי ווי דער ארון אין קודש הקדשים האט נישט פארנומען קיין ארט."
+        },
+        "evidence": { "segs": [282, 283, 285, 286, 287], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The parnassah of a talmid chacham, who is like Shabbos, is not bound by arithmetic, and the working people who support him are like the weekdays blessed by Shabbos.",
+          "yi": "די פרנסה פון א תלמיד חכם, וואס איז בבחינת שבת, איז נישט אונטערגעווארפן צו חשבון, און די ארבעטנדע אידן וואס שטיצן אים זענען ווי די וואכנטעג וואס ווערן געבענטשט פון שבת."
+        },
+        "evidence": { "segs": [359, 369, 394, 395, 397, 463], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Hashem's lasting anger at Amalek for attacking the stragglers shows His mercy on latecomers; from this Yisro understood that he too could still come.",
+          "yi": "דער אייבערשטער איז נאך אלץ אין כעס אויף עמלק פאר'ן באפאלן די וואס זענען געבליבן הינטן, און דאס ווייזט זיין רחמנות אויף די וואס קומען שפעט; דערפון האט יתרו פארשטאנען אז ער קען אויך נאך קומען."
+        },
+        "evidence": { "segs": [685, 709, 710, 711, 719], "confidence": 0.75 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-parsha-sefer-shemois-05-02-yisro",
+      "startSeg": 0,
+      "endSeg": 62,
+      "title": {
+        "en": "A second chance to receive the Torah",
+        "yi": "א צווייטע געלעגנהייט מקבל צו זיין די תורה"
+      },
+      "summary": {
+        "en": "The Rav explains that the reading of the Ten Commandments in Parshas Yisro awakens the power of Matan Torah, and that each Shabbos brings its own parsha. Shavuos comes after the forty-nine days of sefirah, but Yisro came without counting and without preparation, so this Shabbos is special for those who did not prepare.",
+        "yi": "דער משגיח ערקלערט אז די קריאה פון די עשרת הדברות אין פרשת יתרו וועקט אויף דעם כח פון מתן תורה, און אז יעדער שבת ברענגט זיין אייגענע פרשה. שבועות קומט נאך די ניין און פערציג טעג ספירה, אבער יתרו איז געקומען אן ציילן און אן הכנה, ממילא איז דער שבת ספעציעל פאר די וואס האבן זיך נישט צוגעגרייט."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-05-02-yisro",
+      "startSeg": 63,
+      "endSeg": 123,
+      "title": {
+        "en": "Shabbos and the open heavens without preparation",
+        "yi": "שבת און די אפענע הימלען אן הכנה"
+      },
+      "summary": {
+        "en": "The Rav contrasts Yomim Tovim, which depend on Beis Din's sanctifying the month, with Shabbos, fixed by Hashem from creation and needing no preparation. At Matan Torah the heavens opened before a whole nation; the haftarah of Shavuos tells of Yechezkel seeing the heavens open, while the haftarah of Yisro tells of Yeshayah seeing Hashem at once, without any preparation.",
+        "yi": "דער משגיח שטעלט אוועק די ימים טובים, וואס הענגען אין בית דין'ס קידוש החודש, קעגן שבת, וואס דער אייבערשטער האט מקדש געווען פון בריאת העולם און דארף נישט קיין הכנה. ביי מתן תורה האבן זיך די הימלען געעפנט פאר א גאנץ פאלק; די הפטרה פון שבועות דערציילט ווי יחזקאל האט געזען די הימלען געעפנט, און די הפטרה פון יתרו ווי ישעיה האט באלד געזען דעם אייבערשטן, אן קיין שום הכנה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-05-02-yisro",
+      "startSeg": 124,
+      "endSeg": 228,
+      "title": {
+        "en": "The Masorah's 72 pesukim in Yisro",
+        "yi": "די 72 פסוקים פון דער מסורה אין יתרו"
+      },
+      "summary": {
+        "en": "The Rav notes that the Masorah at the end of Parshas Yisro counts 72 pesukim, yet his own count gives 75. He explains that the Ten Commandments have two sets of trop and answers that the Masorah counts them as ten parshiyos rather than thirteen pesukim, a strained answer he accepts, citing the Chasam Sofer that most strained answers are true.",
+        "yi": "דער משגיח מערקט אן אז די מסורה ביים סוף פרשת יתרו ציילט 72 פסוקים, און ווען ער האט אליין געציילט איז אויסגעקומען 75. ער ערקלערט אז די עשרת הדברות האבן צוויי סארטן טעמים, און ענטפערט אז די מסורה ציילט זיי ווי צען פרשיות און נישט ווי דרייצן פסוקים; ס'איז א דוחק, אבער ער ברענגט דעם חתם סופר אז רוב הדוחקים אמת."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-05-02-yisro",
+      "startSeg": 229,
+      "endSeg": 335,
+      "title": {
+        "en": "Above measure: the Aron and the fiftieth day",
+        "yi": "למעלה מן המדה: דער ארון און דער פופציגסטער טאג"
+      },
+      "summary": {
+        "en": "The Rav gives the deeper answer: there are wonders above nature and calculation. He brings the Gemara that the place of the Aron was not part of the measurement, because the Beis HaMikdash was a piece of heaven on earth, and explains that the fiftieth day of sefirah is not counted because it is a heavenly day. So too Parshas Yisro, the place of the Ten Commandments, is not subject to arithmetic.",
+        "yi": "דער משגיח גיט דעם טיפערן תירוץ: עס זענען פאראן פלאות וואס זענען העכער פון טבע און חשבון. ער ברענגט די גמרא אז מקום ארון אינו מן המדה, ווייל דער בית המקדש איז געווען א שטיק הימל אויף דער ערד, און ערקלערט אז דעם פופציגסטן טאג פון ספירה ציילט מען נישט ווייל ס'איז א הימלישער טאג. אזוי איז אויך פרשת יתרו, דער ארט פון די עשרת הדברות, נישט אונטערגעווארפן צו חשבון."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-05-02-yisro",
+      "startSeg": 336,
+      "endSeg": 466,
+      "title": {
+        "en": "The talmid chacham's parnassah and levels like Shabbos",
+        "yi": "די פרנסה פון א תלמיד חכם און מדריגות ווי שבת"
+      },
+      "summary": {
+        "en": "The Rav tells of the Bnei Yissaschar showing people that their expenses exceeded their income, so their parnassah was above calculation, and applies this to talmidei chachamim. A talmid chacham is like Shabbos, and there are levels: like Shabbos, Yom Tov, Chol HaMoed or Rosh Chodesh. Those who work and support Torah are the weekdays providing for Shabbos, and each person must be honest about his level.",
+        "yi": "דער משגיח דערציילט ווי דער בני יששכר האט געוויזן אידן אז זייערע הוצאות זענען מער ווי זייער הכנסה, ממילא איז זייער פרנסה למעלה מן החשבון, און ער ווענדט עס אן אויף תלמידי חכמים. א תלמיד חכם איז בבחינת שבת, און ס'זענען פאראן מדריגות: ווי שבת, ווי יום טוב, ווי חול המועד אדער ראש חודש. די וואס ארבעטן און שטיצן תורה זענען די וואכנטעג וואס שאפן פאר שבת, און יעדער איינער דארף זיין ערליך מיט זיך אויף וועלכע מדריגה ער שטייט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-05-02-yisro",
+      "startSeg": 467,
+      "endSeg": 592,
+      "title": {
+        "en": "Shemittah, Shevet Levi and the Rambam",
+        "yi": "שמיטה, שבט לוי און דער רמב\"ם"
+      },
+      "summary": {
+        "en": "The Rav explains that Shemittah is like Shabbos and brings the closing halachah of the Rambam's Hilchos Shemittah v'Yovel: Shevet Levi was set apart to serve Hashem and teach His laws, and he shows that most great poskim and roshei yeshivah were Kohanim or Leviim. Then he reads the Rambam that anyone whose spirit moves him may join and throws off the yoke of many calculations, linking it to the Masorah's sign for 72 pesukim.",
+        "yi": "דער משגיח ערקלערט אז שמיטה איז ווי שבת, און ברענגט די לעצטע הלכה אין רמב\"ם הלכות שמיטה ויובל: שבט לוי איז אפגעטיילט געווארן צו דינען דעם אייבערשטן און לערנען זיינע משפטים, און ער ווייזט אז רוב גרויסע פוסקים און ראשי ישיבות זענען געווען כהנים אדער לוים. דערנאך לערנט ער דעם רמב\"ם אז יעדער איינער וואס זיין רוח איז אים נודב קען זיך אנשליסן, און ווארפט אראפ דעם עול פון די סך חשבונות, און ער פארבינדט עס מיט דעם סימן פון דער מסורה פאר 72 פסוקים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-05-02-yisro",
+      "startSeg": 593,
+      "endSeg": 719,
+      "title": {
+        "en": "Yisro, Amalek and the latecomers",
+        "yi": "יתרו, עמלק און די וואס קומען שפעט"
+      },
+      "summary": {
+        "en": "The Rav asks why Yisro was moved by the splitting of the sea and the war with Amalek rather than by Yetzias Mitzrayim. He explains that Amalek attacked the stragglers outside the Clouds of Glory, and Hashem is still angry at Amalek for this; Yisro, a latecomer after Matan Torah, saw Hashem's mercy on latecomers and came. He closes that it is never too late.",
+        "yi": "דער משגיח פרעגט פארוואס יתרו איז אויפגעוועקט געווארן פון קריעת ים סוף און מלחמת עמלק און נישט פון יציאת מצרים. ער ערקלערט אז עמלק האט באפאלן די וואס זענען געבליבן אינדרויסן פון די ענני הכבוד, און דער אייבערשטער איז נאך אלץ אין כעס אויף עמלק דערפאר; יתרו, וואס איז געקומען שפעט נאך מתן תורה, האט געזען די רחמנות אויף די שפעטע און איז געקומען. ער ענדיגט אז ס'איז קיינמאל נישט צו שפעט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "וישמי ישראל",
+      "work": "Shemos",
+      "ref": "Shemos 18:1",
+      "sefariaRef": "Exodus 18:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [22, 597], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער מדין אברהם אין שולחן ערוך ברענגט",
+      "work": "Magen Avraham",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [26, 27], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "התפחה חמשים יום / תספרים חמישים יום",
+      "work": "Vayikra",
+      "ref": "Vayikra 23:16",
+      "sefariaRef": "Leviticus 23:16",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [39, 295], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אטם רעותים קומען השמים",
+      "work": "Shemos",
+      "ref": "Shemos 20:19",
+      "sefariaRef": "Exodus 20:19",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [79], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "פנים בפנים דבר ה' ומחן",
+      "work": "Devarim",
+      "ref": "Devarim 5:4",
+      "sefariaRef": "Deuteronomy 5:4",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [94], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "נפתך השמים וערה מראות אלוקים",
+      "work": "Yechezkel",
+      "ref": "Yechezkel 1:1",
+      "sefariaRef": "Ezekiel 1:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [103, 104, 105], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "שטעגט בארץ ה' ישו בקיסא רמבינתא",
+      "work": "Yeshayah",
+      "ref": "Yeshayah 6:1",
+      "sefariaRef": "Isaiah 6:1",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [113, 115, 117], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אויף די ענטע פון ישראל ... יו נאדב סימן",
+      "work": "Masorah",
+      "ref": "Masoretic note at the end of Parshas Yisro",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [132, 133, 135, 139], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אין שכר נרח און אייר חיים סימן תלצ''ג",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [182, 183, 185], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "כל פסוק דולי פסקי, משה דולי פסקינה",
+      "work": "Gemara Megillah",
+      "ref": "Megillah 22a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [200, 201], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער חתם ספר זאגט ... רב הדוחקים אמת, רב הפלטלים שקל",
+      "work": "Chasam Sofer",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [209, 210, 211], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אין פרשת התכנן איז נאכאמאל דארט די עשרת הדברות",
+      "work": "Masorah",
+      "ref": "Masoretic note at the end of Parshas Va'eschanan",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [221, 222, 225], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "גמרא זאגט אין מגילה מקום הארן אינם אין עמידה",
+      "work": "Gemara Megillah",
+      "ref": "Megillah 10b",
+      "sefariaRef": "Megillah 10b",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [238, 239, 257], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די משה רבינו האט דאך מסביר געוועזן – יו מרחד מידיתי",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 87a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [307, 308], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "עס שטייט אין מדרש, אז יעדער תלמיד חכם איז בבחינת שבת",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [368, 369], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "כהוא מכיר הברכה",
+      "work": "Lecha Dodi",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [399, 401], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "וכי תימא מה נחל ואשענע השבועות ... וצבי את עס ברכתו",
+      "work": "Vayikra",
+      "ref": "Vayikra 25:20-21",
+      "sefariaRef": "Leviticus 25:20-21",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [476, 477, 478], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "רמב״ם פון הוחד שמועתו ויעבעל",
+      "work": "Mishneh Torah",
+      "ref": "Rambam, Hilchos Shemittah v'Yovel 13:12-13",
+      "sefariaRef": "Mishneh Torah, Sabbatical Year and the Jubilee 13:12-13",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [483, 486, 487, 546, 555, 557], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "יואל משפטך על יעקב",
+      "work": "Devarim",
+      "ref": "Devarim 33:10",
+      "sefariaRef": "Deuteronomy 33:10",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [489, 514], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "שנעמע אני חלקיך ונחלסכך",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 18:20",
+      "sefariaRef": "Numbers 18:20",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [553], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "השם הנשחתי וחסי, אדער תמוך גורלי",
+      "work": "Tehillim",
+      "ref": "Tehillim 16:5",
+      "sefariaRef": "Psalms 16:5",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [577, 578], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דערוואס האט רש''ה געהאט קריאת ים-סוף פון מלכה מתמולק",
+      "work": "Rashi",
+      "ref": "Rashi on Shemos 18:1",
+      "sefariaRef": "Rashi on Exodus 18:1",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [596, 601, 603], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "זכרת את השלכה המלוק ויזנט בכל כבוד נחשולם אחר ועלכם",
+      "work": "Devarim",
+      "ref": "Devarim 25:17-18",
+      "sefariaRef": "Deuteronomy 25:17-18",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [611, 612, 683], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דאס מיינט דער תרגום יום, דאס מיינט די תרגום מנקלות",
+      "work": "Targum",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [674, 675], "confidence": 0.65 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Ten Commandments are counted by the Masorah as ten parshiyos rather than thirteen pesukim, which is why it gives 72 pesukim for Yisro; the Rav calls this a strained answer that is nevertheless true.",
+        "yi": "די מסורה ציילט די עשרת הדברות ווי צען פרשיות און נישט ווי דרייצן פסוקים, דערפאר שטייט 72 פסוקים ביי יתרו; דער משגיח רופט עס א דוחק וואס איז פונדעסטוועגן אמת."
+      },
+      "evidence": { "segs": [196, 198, 199, 218, 219], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The 'mistake' in the count of Parshas Yisro is itself the lesson: the place of the luchos, like the Aron that occupied no space, is not subject to arithmetic.",
+        "yi": "דער \"טעות\" אינעם חשבון פון פרשת יתרו איז אליין דער לימוד: דער ארט פון די לוחות, אזוי ווי דער ארון וואס האט נישט פארנומען קיין ארט, איז נישט אונטערגעווארפן צו חשבון."
+      },
+      "evidence": { "segs": [320, 324, 326, 331], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The fiftieth day of sefirah is not counted because it is a heavenly day beyond the fifty gates, on which Hashem brought heaven down to Har Sinai.",
+        "yi": "דעם פופציגסטן טאג פון ספירה ציילט מען נישט, ווייל ס'איז א הימלישער טאג פון די נ' שערי בינה, ווען דער אייבערשטער האט אראפגעבראכט דעם הימל אויף הר סיני."
+      },
+      "evidence": { "segs": [296, 297, 298, 301, 304], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The levels of talmidei chachamim parallel the holy days: one who does nothing but learn is like Shabbos, one who works only for food is like Yom Tov, and lesser levels are like Chol HaMoed and Rosh Chodesh.",
+        "yi": "די מדריגות פון תלמידי חכמים גייען לויט די הייליגע טעג: ווער ס'טוט גארנישט נאר לערנט איז ווי שבת, ווער ס'ארבעט נאר פאר'ן עסן איז ווי יום טוב, און נידעריגערע מדריגות זענען ווי חול המועד און ראש חודש."
+      },
+      "evidence": { "segs": [381, 382, 406, 407, 412, 415], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The Masorah's sign for the 72 pesukim of Yisro, 'v'Nadav', hints at the Rambam's words about one whose spirit moves him to give himself to Hashem.",
+        "yi": "דער סימן פון דער מסורה פאר די 72 פסוקים פון יתרו, \"ונדב\", איז א רמז אויף דעם רמב\"ם וועגן דעם וואס זיין רוח איז אים נודב זיך אוועקצוגעבן פאר'ן אייבערשטן."
+      },
+      "evidence": { "segs": [583], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Yisro was moved specifically by the war with Amalek because Amalek attacked the latecomers, and Hashem's anger at that showed Yisro that a latecomer is still precious to Hashem.",
+        "yi": "יתרו איז ספעציעל אויפגעוועקט געווארן פון מלחמת עמלק, ווייל עמלק האט זיך גענומען צו די שפעטע, און דעם אייבערשטנס כעס דערויף האט יתרו געוויזן אז א שפעטער איז נאך אלץ חשוב ביים אייבערשטן."
+      },
+      "evidence": { "segs": [614, 616, 685, 710, 711], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "The Bnei Yissaschar's calculation",
+        "yi": "דער חשבון פונעם בני יששכר"
+      },
+      "retelling": {
+        "en": "The Rav relates, as brought in the sefarim, that the Bnei Yissaschar sat with people and made a very exact calculation of their income and their expenses. He showed them that their expenses were greater than their income, and told them that their parnassah is above calculation.",
+        "yi": "דער משגיח דערציילט, ווי די ספרים ברענגען, אז דער בני יששכר האט זיך אוועקגעזעצט מיט אידן און געמאכט א גאר גענויען חשבון פון זייער הכנסה און זייערע הוצאות. ער האט זיי געוויזן אז די הוצאות זענען מער ווי די הכנסה, און זיי געזאגט אז זייער פרנסה איז למעלה מן החשבון."
+      },
+      "people": ["the Bnei Yissaschar"],
+      "evidence": { "segs": [337, 338, 341, 345, 348], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "How can the Masorah say Parshas Yisro has 72 pesukim when a count gives 75?",
+        "yi": "וויאזוי קען די מסורה זאגן אז פרשת יתרו האט 72 פסוקים, ווען מ'ציילט 75?"
+      },
+      "answer": {
+        "en": "The Masorah counts the Ten Commandments as ten parshiyos, not thirteen pesukim; and more deeply, the place of the Ten Commandments is above calculation.",
+        "yi": "די מסורה ציילט די עשרת הדברות ווי צען פרשיות, נישט ווי דרייצן פסוקים; און טיפער, דער ארט פון די עשרת הדברות איז למעלה מן החשבון."
+      },
+      "questionSegs": [143, 145, 147],
+      "answerSegs": [198, 199, 225, 331],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "How could the Aron stand in the middle of a twenty-amah room with ten amos on every side, when it has its own width?",
+        "yi": "וויאזוי קען דער ארון שטיין אינמיטן א חדר פון צוואנציג אמות מיט צען אמות אויף יעדער זייט, ווען ער פארנעמט אליין אויך ארט?"
+      },
+      "answer": {
+        "en": "It was a miracle: the Beis HaMikdash was a piece of heaven on earth, and earthly rules of calculation do not apply there.",
+        "yi": "ס'איז געווען א נס: דער בית המקדש איז געווען א שטיק הימל אויף דער ערד, און די ערדישע כללים פון חשבון גילטן דארט נישט."
+      },
+      "questionSegs": [249, 250, 252, 254],
+      "answerSegs": [258, 261, 262, 266],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why did Yisro come because he heard of the splitting of the sea and the war with Amalek, and not because of Yetzias Mitzrayim?",
+        "yi": "פארוואס איז יתרו געקומען ווייל ער האט געהערט פון קריעת ים סוף און מלחמת עמלק, און נישט פון יציאת מצרים?"
+      },
+      "answer": {
+        "en": "Amalek attacked the latecomers, and Hashem's anger at Amalek showed His mercy on latecomers; Yisro, himself a latecomer, understood that he could still come.",
+        "yi": "עמלק האט באפאלן די שפעטע, און דעם אייבערשטנס כעס אויף עמלק האט געוויזן זיין רחמנות אויף די שפעטע; יתרו, וואס איז אליין געקומען שפעט, האט פארשטאנען אז ער קען נאך קומען."
+      },
+      "questionSegs": [601, 603, 604, 606],
+      "answerSegs": [709, 710, 711, 712],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says that one who feels he did not receive the Torah properly on Shavuos should take hold of the chance of Shabbos Parshas Yisro.",
+        "yi": "דער משגיח זאגט אז ווער ס'פילט אז ער האט נישט מקבל געווען די תורה ווי עס דארף צו זיין אום שבועות, זאל זיך אנכאפן אין דער געלעגנהייט פון שבת פרשת יתרו."
+      },
+      "evidence": { "segs": [7, 8, 9, 120, 121, 123], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says each person must be honest with himself about which level he is on regarding learning and parnassah.",
+        "yi": "דער משגיח זאגט אז יעדער איינער דארף זיין ערליך מיט זיך אויף וועלכע מדריגה ער שטייט לגבי לערנען און פרנסה."
+      },
+      "evidence": { "segs": [458, 466], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The Rav says those who must work should give of their money to talmidei chachamim and yeshivos, as the weekdays provide for Shabbos.",
+        "yi": "דער משגיח זאגט אז די וואס דארפן ארבעטן זאלן געבן פון זייער געלט פאר תלמידי חכמים און ישיבות, אזוי ווי די וואכנטעג שאפן פאר שבת."
+      },
+      "evidence": { "segs": [459, 460, 463], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav concludes that it is never too late: a person can always take hold of himself.",
+        "yi": "דער משגיח שליסט אז ס'איז קיינמאל נישט צו שפעט: א מענטש קען זיך אלעמאל געבן א כאפ."
+      },
+      "evidence": { "segs": [719], "confidence": 0.85 }
+    }
+  ],
+  "candidateTopics": [
+    "Parshas Yisro",
+    "kabbalas haTorah without preparation",
+    "Shabbos and Yom Tov",
+    "sefirah and the fiftieth day",
+    "Masorah count of pesukim",
+    "above nature and calculation",
+    "parnassah of talmidei chachamim",
+    "Shevet Levi and Torah scholars",
+    "Amalek and the latecomers",
+    "it is never too late"
+  ],
+  "concepts": [
+    { "he": "מתן תורה", "heardAs": ["מארטן תורה", "מאטן תורה", "מאדן תורה", "מעטן תורה"] },
+    { "he": "ספירת העומר", "heardAs": ["ספירה", "ספורה"] },
+    { "he": "מסורה", "heardAs": ["מסורה", "מסירה", "דשאות"] },
+    { "he": "עשרת הדברות", "heardAs": ["עשרת הדברות", "יוסרות הדברות", "אסורת הדברות"] },
+    { "he": "טעם עליון וטעם תחתון", "heardAs": ["תלמוד עליין", "תלמוד תחתון"] },
+    { "he": "מקום ארון אינו מן המדה", "heardAs": ["מקום הארן אינם אין עמידה", "מה קען מעורן אינעם אין עמידה"] },
+    { "he": "קודש הקדשים", "heardAs": ["קידוש הקדשים", "קידוש הגדוש", "קודש קדוש"] },
+    { "he": "נ' שערי בינה", "heardAs": ["חמישים שערי מינע", "חמישים שערי בימער"] },
+    { "he": "למעלה מן החשבון", "heardAs": ["למעלה מן החשדון", "למעלה מן א טעלה"] },
+    { "he": "תלמיד חכם", "heardAs": ["תלמוד חכם", "תלמיד חתם"] },
+    { "he": "חול המועד", "heardAs": ["חאלעמויד"] },
+    { "he": "שמיטה", "heardAs": ["שמועת", "שמועתו"] },
+    { "he": "ענני הכבוד", "heardAs": ["עניני כבוד", "אנאנאקובייד", "אנאנים"] },
+    { "he": "נחשלים", "heardAs": ["נחשולם", "מסאכרים"] }
+  ],
+  "people": [
+    { "name": "Yisro", "heardAs": ["יצחק", "יוסחא", "ישראל", "ישכר"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבי", "משה רבינו"] },
+    { "name": "Yechezkel", "heardAs": ["יחזקאל"] },
+    { "name": "Yeshayah", "heardAs": ["ישעיה הנביא"] },
+    { "name": "Shlomo HaMelech", "heardAs": ["שלמה המלך"] },
+    { "name": "the Chasam Sofer", "heardAs": ["חתם ספר"] },
+    { "name": "the Bnei Yissaschar", "heardAs": ["בני יששכר"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם", "בראמבאם", "הרמב״ם"] },
+    { "name": "Rashi", "heardAs": ["רש''ה", "ראשו"] },
+    { "name": "Rav Chaim Brisker", "heardAs": ["ר' חיים בריסקא'ס"] },
+    { "name": "Dovid HaMelech", "heardAs": ["דוד"] },
+    { "name": "Amalek", "heardAs": ["המלעק", "מולק", "המלוק", "מלוכה"] },
+    { "name": "Dasan and Aviram", "heardAs": ["דאסן וואבורם", "דאסנט וואלט ווירים"] }
+  ],
+  "asrNotes": "Yiddish ASR fair to poor, with many English words; Yisro is consistently misheard as יצחק, יוסחא or ישראל. The source cited at seg 182 for the rule that every pasuk has at least three words could not be identified. The list of poskim and roshei yeshivah by kehunah/leviyah (segs 494-536) is badly garbled and only its general point is used; segs 591-592 and the gap at 32:00-32:34 are unintelligible. The extra parsha given for Yisro's sake at the end (segs 715-718) could not be recovered precisely."
+}

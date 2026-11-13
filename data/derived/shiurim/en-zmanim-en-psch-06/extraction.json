@@ -1,0 +1,229 @@
+{
+  "shiurId": "en-zmanim-en-psch-06",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains Pesach as the beginning and the opening of the bond between Hashem and Klal Yisrael, with the matzah as the key that opens a higher world for every Jew.",
+      "yi": "דער משגיח ערקלערט אז פסח איז דער אנהייב און די עפענונג פונעם קשר צווישן דעם רבונו של עולם און כלל ישראל, און די מצה איז דער שליסל וואס עפנט פאר יעדן איד א העכערע וועלט."
+    },
+    "abstract": {
+      "en": "The Rav opens with the idea that Pesach is the first stage of the nuptials between Hashem and Klal Yisrael, lesser than Shavuos and Sukkos, yet its prohibition of chametz carries kares, because eating matzah binds a Jew to Hashem just as strongly. Pesach is the reishis that holds everything, a time of renewal: the joy in Heaven in Nisan is mirrored in the reawakening of nature and in Shir Hashirim, and it is a time of techiyas hameisim and of becoming a new person. He then contrasts bread, which contains the ten utterances of creation and equals three times the Name of Hashem (78), with matzah, three times the full spelling of the Name (135), drawn from the world of 'Mah' that one can only ask about. Matzah is the key to rebirth and to opening up; Hashem knocks and asks Klal Yisrael to open for Him. He closes with tefillah for the geulah, seeing and being seen on Yom Tov, and wanting to be redeemed.",
+      "yi": "דער משגיח עפנט מיט דעם אז פסח איז די ערשטע מדרגה פון די חתונה צווישן דעם אייבערשטן און כלל ישראל, קלענער ווי שבועות און סוכות, און פונדעסטוועגן איז דער איסור חמץ בכרת, ווייל דאס עסן מצה פארבינדט א איד מיט'ן רבונו של עולם פונקט אזוי שטארק. פסח איז די ראשית וואס האלט אלעס אין זיך, א צייט פון התחדשות: די שמחה אין הימל אין ניסן שפיגלט זיך אפ אין דער טבע וואס וועקט זיך אויף און אין שיר השירים, און עס איז א צייט פון תחיית המתים און פון ווערן א נייער מענטש. דערנאך שטעלט ער אנטקעגן לחם, וואס האט אין זיך די עשרה מאמרות און איז די גימטריא פון דריי מאל שם הוי\"ה (78), מיט מצה, דריי מאל דער מילוי פונעם שם (135), פון דער וועלט פון \"מה\" וואו מ'קען נאר פרעגן. מצה איז דער שליסל צו א נייע לידה און צו עפענען; דער אייבערשטער קלאפט און בעט כלל ישראל זיי זאלן אים עפענען. ער ענדיגט מיט תפילה אויף דער גאולה, מיט ראיה אויף יום טוב, און מיט וועלן ארויסגיין צו גאולה."
+    },
+    "keyPoints": [
+      { "text": { "en": "Pesach is the beginning of the bond between Hashem and Klal Yisrael, lesser than the later Yamim Tovim, yet its chametz prohibition carries kares because eating matzah binds a Jew to Hashem.", "yi": "פסח איז דער אנהייב פונעם קשר צווישן דעם אייבערשטן און כלל ישראל, קלענער ווי די שפעטערדיגע ימים טובים, אבער דער איסור חמץ איז בכרת, ווייל עסן מצה פארבינדט א איד מיט'ן אייבערשטן." }, "evidence": { "segs": [1, 4, 47, 64, 78], "confidence": 0.8 } },
+      { "text": { "en": "Pesach is the reishis that contains everything and a time of renewal, mirrored in the reawakening of nature in Nisan.", "yi": "פסח איז די ראשית וואס האלט אלעס אין זיך און א צייט פון התחדשות, וואס מ'זעט אין דער טבע וואס לעבט אויף אין ניסן." }, "evidence": { "segs": [88, 89, 117, 161, 162], "confidence": 0.85 } },
+      { "text": { "en": "Bread contains the ten utterances of creation and therefore satisfies every kind of person, but its holiness is received only when one eats as a Jew should.", "yi": "לחם האט אין זיך די עשרה מאמרות און דערפאר זעטיגט עס יעדן סארט מענטש, אבער די קדושה דערפון באקומט מען נאר ווען מ'עסט ווי א איד דארף עסן." }, "evidence": { "segs": [333, 424, 436, 447, 472], "confidence": 0.8 } },
+      { "text": { "en": "Matzah, equal to three times the full spelling of Hashem's Name, comes from a higher source than bread and is the key that opens a world beyond grasp.", "yi": "מצה, די גימטריא פון דריי מאל דער מילוי פונעם שם הוי\"ה, קומט פון א העכערן שורש ווי לחם, און איז דער שליסל וואס עפנט א וועלט וואס מ'קען נישט באגרייפן." }, "evidence": { "segs": [656, 658, 661, 680, 681], "confidence": 0.75 } },
+      { "text": { "en": "On Pesach every Jew goes through a rebirth, and Hashem knocks on the door and asks Klal Yisrael to open up to Him.", "yi": "אויף פסח גייט יעדער איד דורך א נייע לידה, און דער אייבערשטער קלאפט אין דער טיר און בעט כלל ישראל זיי זאלן זיך עפענען פאר אים." }, "evidence": { "segs": [719, 720, 729, 802, 807], "confidence": 0.8 } },
+      { "text": { "en": "Each Yom Tov has its gift; the gift of Pesach is geulah, and only one who wants it receives it.", "yi": "יעדער יום טוב האט זיין מתנה; די מתנה פון פסח איז גאולה, און נאר דער וואס וויל זי באקומט זי." }, "evidence": { "segs": [994, 1000, 1001, 1023, 1035], "confidence": 0.75 } }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-zman-nissan-pesach-02-06-pesach-e", "startSeg": 0, "endSeg": 79,
+      "title": { "en": "Pesach as the first stage, and the kares of chametz", "yi": "פסח ווי די ערשטע מדרגה, און דער כרת פון חמץ" },
+      "summary": {
+        "en": "The Rav describes Pesach as the beginning of the nuptials with Hashem, lesser than Shavuos and Sukkos (full Hallel, chametz still unfit), and asks why its prohibition alone carries kares. He answers that kares cuts the bond, while eating matzah creates hiskashrus, binding a Jew to Hashem.",
+        "yi": "דער משגיח שילדערט פסח ווי דער אנהייב פון די חתונה מיט'ן אייבערשטן, קלענער ווי שבועות און סוכות (גאנץ הלל, חמץ נאך נישט גרייט), און פרעגט פארוואס נאר זיין איסור איז בכרת. ער ענטפערט אז כרת שניידט אפ דעם קשר, און עסן מצה מאכט התקשרות, עס פארבינדט א איד מיט'ן אייבערשטן."
+      },
+      "kind": "intro", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-06-pesach-e", "startSeg": 80, "endSeg": 204,
+      "title": { "en": "Reishis, renewal and the joy of Nisan", "yi": "ראשית, התחדשות און די שמחה פון ניסן" },
+      "summary": {
+        "en": "The Rav explains Pesach as the reishis that contains everything and as the renewal of the bond with Hashem. The joy in Heaven, shown in the tzeruf of Nisan from 'Yismechu hashamayim', comes down to earth: a new nation is born, nature wakes up in spring, and Shlomo HaMelech put this theme into Shir Hashirim.",
+        "yi": "דער משגיח ערקלערט פסח ווי די ראשית וואס האלט אלעס, און ווי די התחדשות פונעם קשר מיט'ן אייבערשטן. די שמחה אין הימל, וואס מ'זעט אין דעם צירוף פון ניסן פון \"ישמחו השמים\", קומט אראפ אויף דער ערד: א נייע אומה ווערט געבוירן, די טבע וועקט זיך אויף אין פרילינג, און שלמה המלך האט דאס אריינגעלייגט אין שיר השירים."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-06-pesach-e", "startSeg": 205, "endSeg": 321,
+      "title": { "en": "Techiyas hameisim and becoming new", "yi": "תחיית המתים און ווערן נייע" },
+      "summary": {
+        "en": "The Rav brings the tradition that techiyas hameisim will be on Pesach and connects it to the dew of life, for which we begin praying on Pesach. He says it is a time for every Jew to make a reckoning and become a new person, and shows the flavor of newness in the custom of new clothes, dishes and painting for Pesach.",
+        "yi": "דער משגיח ברענגט די קבלה אז תחיית המתים וועט זיין אויף פסח, און פארבינדט עס מיט'ן טל של תחיה וואס מ'הייבט אן צו בעטן אויף פסח. ער זאגט אז ס'איז א צייט פאר יעדן איד צו מאכן א חשבון און ווערן א נייער מענטש, און ווייזט דעם טעם פון חידוש אין דעם וואס מ'קויפט נייע קליידער און כלים און מ'מאלט אן די דירה צו פסח."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-06-pesach-e", "startSeg": 322, "endSeg": 499,
+      "title": { "en": "Bread holds the ten utterances", "yi": "לחם האט אין זיך די עשרה מאמרות" },
+      "summary": {
+        "en": "The Rav explains why Hamotzi has ten words: bread contains the ten utterances of creation, just as man, created last, contains all traits, though each person has a dominant one. Therefore people need variety in food but never tire of bread; yet one who eats like Esav, without a bracha, receives klipah instead of that holiness.",
+        "yi": "דער משגיח ערקלערט פארוואס המוציא האט צען ווערטער: לחם האט אין זיך די עשרה מאמרות, אזוי ווי דער מענטש, וואס איז באשאפן געווארן לעצט, האט אין זיך אלע מדות, כאטש יעדער האט איין מדה וואס הערשט. דערפאר דארף א מענטש פארשידענע מאכלים אבער ער ווערט קיינמאל נישט מיד פון ברויט; אבער ווער עס עסט ווי עשו, אן א ברכה, באקומט קליפה אנשטאט די קדושה."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-06-pesach-e", "startSeg": 500, "endSeg": 585,
+      "title": { "en": "The Malbim: how a Jew eats", "yi": "דער מלבי\"ם: ווי אזוי א איד עסט" },
+      "summary": {
+        "en": "The Rav tells how the Malbim, after a debate with maskilim, said that they may know much, but he knows how to eat, and listed the many steps a Jew takes before he may eat. He adds that bread holds a threefold holiness, three times the Name of Hashem, equal to lechem (78), which gives life to the soul.",
+        "yi": "דער משגיח דערציילט ווי דער מלבי\"ם האט נאך א וויכוח מיט משכילים געזאגט אז זיי ווייסן אסאך, אבער ער קען עסן, און האט אויסגערעכנט די אלע זאכן וואס א איד טוט איידער ער טאר עסן. ער לייגט צו אז לחם האט א משולש'דיגע קדושה, דריי מאל שם הוי\"ה, די גימטריא פון לחם (78), וואס גיט לעבן פאר דער נשמה."
+      },
+      "kind": "story", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-06-pesach-e", "startSeg": 586, "endSeg": 688,
+      "title": { "en": "Matzah: three times Mah", "yi": "מצה: דריי מאל \"מה\"" },
+      "summary": {
+        "en": "The Rav explains that matzah comes from a higher root than bread: Adam equals 45, the full spelling of the Name, called 'Mah', the world beyond grasp from which Yetzias Mitzrayim came. That is why the Seder opens with questions, and matzah, three times 45 (135), is the key to that world, eaten three times at the Seder.",
+        "yi": "דער משגיח ערקלערט אז מצה קומט פון א העכערן שורש ווי לחם: אדם איז די גימטריא 45, דער מילוי פונעם שם הוי\"ה, וואס הייסט \"מה\", די וועלט וואס מ'קען נישט באגרייפן, פון וואו יציאת מצרים איז געקומען. דערפאר הייבט זיך דער סדר אן מיט קשיות, און מצה, דריי מאל 45 (135), איז דער שליסל צו יענער וועלט, און מ'עסט עס דריי מאל ביים סדר."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-06-pesach-e", "startSeg": 689, "endSeg": 807,
+      "title": { "en": "The key of birth and opening", "yi": "דער שליסל פון לידה און עפענען" },
+      "summary": {
+        "en": "The Rav explains Yetzias Mitzrayim as a birth, a nation taken from within a nation, and brings the Gemara that Hashem keeps the keys of birth and techiyas hameisim himself: on Pesach every Jew is reborn through the matzah. He connects this to 'peter rechem', to Targum's 'patira' for matzah, to the opening of the aron with Brich Shmei, and to 'Pischi li' in Shir Hashirim.",
+        "yi": "דער משגיח ערקלערט יציאת מצרים ווי א לידה, א גוי מקרב גוי, און ברענגט די גמרא אז דעם מפתח פון חיה און פון תחיית המתים האלט דער אייבערשטער אליין: אויף פסח ווערט יעדער איד נייגעבוירן דורך דער מצה. ער פארבינדט דאס מיט \"פטר רחם\", מיט'ן תרגום \"פטירא\" פאר מצה, מיט פתיחת הארון און בריך שמיה, און מיט \"פתחי לי\" אין שיר השירים."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-06-pesach-e", "startSeg": 808, "endSeg": 910,
+      "title": { "en": "Tal, the matzah capsule and the open door", "yi": "טל, די מצה ווי א קאפסל, און די אפענע טיר" },
+      "summary": {
+        "en": "The Rav explains that the tal (39, the first letters of the Name in full spelling) comes down to the final hei, Klal Yisrael, and that is the matzah. He brings the Ba'al HaTanya that the flour and water are only a capsule holding the same light as the matzah eaten in Mitzrayim, and ends with opening the door for Eliyahu HaNavi, since all of Pesach is an opening.",
+        "yi": "דער משגיח ערקלערט אז דער טל (39, די ערשטע אותיות פונעם שם הוי\"ה במילוי) קומט אראפ צום לעצטן ה\"א, כלל ישראל, און דאס איז די מצה. ער ברענגט דעם בעל התניא אז דאס מעל מיט'ן וואסער זענען נאר א קאפסל וואס האט אין זיך די זעלבע אור ווי די מצה וואס מ'האט געגעסן אין מצרים, און ענדיגט מיט עפענען די טיר פאר אליהו הנביא, ווייל גאנץ פסח איז אן עפענונג."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-06-pesach-e", "startSeg": 911, "endSeg": 1046,
+      "title": { "en": "Tefillah for the King, re'iyah, and wanting geulah", "yi": "תפילה אויף דעם מלך, ראיה, און וועלן גאולה" },
+      "summary": {
+        "en": "The Rav calls the day Rosh Hashanah for kings, when appointments are made in Heaven, and says one should daven that Hashem alone be King, with Mashiach as His chariot. He speaks of seeing Hashem and being seen on Yom Tov with completeness, and closes that the gift of Pesach is geulah, which only one who wants to be freed from the yetzer hara receives.",
+        "yi": "דער משגיח רופט דעם טאג ראש השנה למלכים, ווען מ'נעמט אויף נייע שליחים אין הימל, און זאגט אז מ'זאל מתפלל זיין אז דער אייבערשטער אליין זאל זיין דער מלך, מיט משיח ווי זיין מרכבה. ער רעדט וועגן זען דעם אייבערשטן און געזען ווערן אויף יום טוב בשלימות, און ענדיגט אז די מתנה פון פסח איז גאולה, וואס נאר דער וואס וויל ארויס פונעם יצר הרע באקומט זי."
+      },
+      "kind": "closing", "catalogTopicIdx": [], "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "like the Zayar explains, the Pesach, we cannot yet partake of chametz", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [19, 20], "confidence": 0.7 } },
+    { "heardAs": "Chametz is clipper. The way the Tanya explains", "work": "Tanya", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [21, 22, 23], "confidence": 0.75 } },
+    { "heardAs": "as Aradosh Yirim explains the opposite of krisis is iskashris", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [63, 64], "confidence": 0.65 } },
+    { "heardAs": "Reish ... Neseis HaPesach ... Rosh Hashanah L'Ragal, so the Gemara says", "work": "Mishnah Rosh Hashanah", "ref": "Mishnah Rosh Hashanah 1:1", "sefariaRef": "Mishnah Rosh Hashanah 1:1", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [82, 83, 84, 916], "confidence": 0.7 } },
+    { "heardAs": "achayt ha-shehazal lachem, reish chadashin", "work": "Shemos", "ref": "Shemos 12:2", "sefariaRef": "Exodus 12:2", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [116], "confidence": 0.8 } },
+    { "heardAs": "Yismichu HaShemayim V'Sagyei El HaOretz", "work": "Tehillim", "ref": "Tehillim 96:11", "sefariaRef": "Psalms 96:11", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [141, 142], "confidence": 0.85 } },
+    { "heardAs": "Shalayim HaMelech caught that theme of Nisan and he put it into Shir Hashirim", "work": "Shir Hashirim", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [191, 196, 197, 200], "confidence": 0.85 } },
+    { "heardAs": "the Ramah brings it by Chalamayat Pesach that there is a Kabbalah that Tchiyas HaMaisen will be on Pesach", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [208, 210, 211, 213], "confidence": 0.7 } },
+    { "heardAs": "it says in Shulchan Aruch that Hamaiti has ten words in it", "work": "Shulchan Aruch", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [328, 329, 330], "confidence": 0.8 } },
+    { "heardAs": "like Rasha says Adam was created at the end", "work": "Rashi", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [358, 359, 361], "confidence": 0.7 } },
+    { "heardAs": "in Parshish Tala he's by Esav and Esav ate without a bracha", "work": "Bereishis", "ref": "Bereishis 25:34", "sefariaRef": "Genesis 25:34", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [462, 463, 464, 465], "confidence": 0.7 } },
+    { "heardAs": "the paschians say that there's ten words in amaitzi because of the asera sphires", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [479, 480, 481, 482], "confidence": 0.75 } },
+    { "heardAs": "Teirah Nebiyim Ksuvim at the Gemara says in Shabbos", "work": "Gemara Shabbos", "ref": "Shabbos 88a", "sefariaRef": "Shabbat 88a", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [554, 555, 556], "confidence": 0.75 } },
+    { "heardAs": "the Isaiah says that the Yetzirah Mitzchayim came from an Olam which is called Ma", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [636, 637, 638], "confidence": 0.65 } },
+    { "heardAs": "so the Gemara says a Goy ... Kirbayim of the Isha", "work": "Devarim", "ref": "Devarim 4:34", "sefariaRef": "Deuteronomy 4:34", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [689, 690, 692, 702], "confidence": 0.7 } },
+    { "heardAs": "the Gemara says the Mafteich of Chaya is by the Rabbani Sholeilam", "work": "Gemara Taanis", "ref": "Taanis 2a", "sefariaRef": "Taanit 2a", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [707, 710, 712, 715], "confidence": 0.8 } },
+    { "heardAs": "the parasha of kadash li kol choya Petel Kol Rechem", "work": "Shemos", "ref": "Shemos 13:2", "sefariaRef": "Exodus 13:2", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [741, 742, 743], "confidence": 0.8 } },
+    { "heardAs": "the Taragum Unculus is going to say Patiraya", "work": "Targum Onkelos", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [751, 753, 754, 755], "confidence": 0.8 } },
+    { "heardAs": "Brich Shmei is a piece of Zayah", "work": "Zohar", "ref": "Zohar, Vayakhel 206a (Brich Shmei)", "sefariaRef": null, "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [764, 765, 773, 775, 776, 777], "confidence": 0.75 } },
+    { "heardAs": "Pishhi Li Achai Sira Yasi; Pishili Achai Zirayasi Yanasi Salmasi", "work": "Shir Hashirim", "ref": "Shir Hashirim 5:2", "sefariaRef": "Song of Songs 5:2", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [374, 794, 795, 810], "confidence": 0.8 } },
+    { "heardAs": "Baratani explains ... the Balotanya explains", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [857, 872, 873], "confidence": 0.75 } },
+    { "heardAs": "it says from the Abnei Nazar", "work": "Avnei Nezer", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [937, 938, 939], "confidence": 0.65 } },
+    { "heardAs": "kishem shabar lirais kachbar lirais", "work": "Gemara Chagigah", "ref": "Chagigah 2a", "sefariaRef": "Chagigah 2a", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [979, 980, 981], "confidence": 0.75 } },
+    { "heardAs": "Most of them died out of Nishrei Shisimaya Feilah. so the message says", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [994, 995, 996], "confidence": 0.7 } },
+    { "heardAs": "V'asyeinu Hashem Alekeinu is Birkes Mayadacha", "work": "Yom Tov Amidah", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "quoted", "evidence": { "segs": [1027, 1028, 1029], "confidence": 0.75 } }
+  ],
+  "insights": [
+    { "text": { "en": "The Rav reads kares and kashrus as opposites: just as eating chametz on Pesach cuts the bond with Hashem, eating matzah ties it, a level of connection no other Yom Tov's mitzvah reaches.", "yi": "דער משגיח טייטשט כרת און קשר ווי פארקערטע זאכן: אזוי ווי חמץ עסן אויף פסח שניידט אפ דעם קשר מיט'ן אייבערשטן, אזוי בינדט מצה עסן אים צו, א מדרגה פון התקשרות וואס קיין אנדער יום טוב'ס מצוה האט נישט." }, "evidence": { "segs": [64, 67, 69, 70, 78], "confidence": 0.8 } },
+    { "text": { "en": "The spring that reawakens nature in Nisan is the earthly reflection of the joy in Heaven over the new bond with Klal Yisrael, the song of the Chassan and Kallah that Shlomo HaMelech put into Shir Hashirim.", "yi": "דער פרילינג וואס וועקט אויף די טבע אין ניסן איז דער אפשפיגל אויף דער ערד פון דער שמחה אין הימל איבער דעם נייעם קשר מיט כלל ישראל, דאס ליד פון חתן און כלה וואס שלמה המלך האט אריינגעלייגט אין שיר השירים." }, "evidence": { "segs": [142, 153, 161, 185, 194, 197], "confidence": 0.8 } },
+    { "text": { "en": "Bread equals three times the Name of Hashem (78), while matzah equals three times its full spelling, 'Mah' (135): matzah draws from a holiness so high it can only be asked about, which is why the Seder begins with questions.", "yi": "לחם איז די גימטריא פון דריי מאל שם הוי\"ה (78), און מצה פון דריי מאל דער מילוי, \"מה\" (135): מצה ציט פון א קדושה אזוי הויך אז מ'קען נאר פרעגן דערויף, און דערפאר הייבט זיך אן דער סדר מיט קשיות." }, "evidence": { "segs": [584, 633, 642, 658, 661], "confidence": 0.75 } },
+    { "text": { "en": "The matzah is the key of birth that Hashem keeps for Himself, and the Targum calls matzah 'patira', an opening, like 'peter rechem'.", "yi": "די מצה איז דער מפתח של חיה וואס דער אייבערשטער האלט פאר זיך, און דער תרגום רופט מצה \"פטירא\", אן עפענונג, אזוי ווי \"פטר רחם\"." }, "evidence": { "segs": [727, 729, 742, 749, 754, 755], "confidence": 0.75 } },
+    { "text": { "en": "Following the Ba'al HaTanya, the matzah's flour and water are only a capsule; inside is the same light of Yetzias Mitzrayim that the Jews ate in Mitzrayim, so the matzah is the original and not a copy.", "yi": "לויט דעם בעל התניא זענען דאס מעל און וואסער פון דער מצה נאר א קאפסל; אינעווייניג איז די זעלבע אור פון יציאת מצרים וואס אידן האבן געגעסן אין מצרים, ממילא איז די מצה דער ארגינעל און נישט קיין קאפיע." }, "evidence": { "segs": [872, 873, 875, 879, 881], "confidence": 0.8 } },
+    { "text": { "en": "The tal of 'my head is filled with dew' is the first three letters of the Name in full spelling (39), which descends to the final hei, Klal Yisrael, and that is the matzah.", "yi": "דער טל פון \"שראשי נמלא טל\" איז די ערשטע דריי אותיות פונעם שם הוי\"ה במילוי (39), וואס קומט אראפ צום לעצטן ה\"א, כלל ישראל, און דאס איז די מצה." }, "evidence": { "segs": [810, 813, 819, 826, 828, 840], "confidence": 0.7 } }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Malbim knows how to eat", "yi": "דער מלבי\"ם קען עסן" },
+      "retelling": {
+        "en": "The Malbim was a Rav in a German city with maskilim who had no yoke of Heaven, and he had many disputes with them. Once, after a group of them came to debate him and left, he said that they know. His students protested that he was much smarter and had beaten them, and he answered that they know, but he knows how to eat. He described waking up hungry and each time first doing what a Jew must do: negel vasser, dressing, davening, washing and dipping the bread in salt, before eating.",
+        "yi": "דער מלבי\"ם איז געווען רב אין א דייטשע שטאט מיט משכילים וואס האבן נישט געהאט קיין עול מלכות שמים, און ער האט געהאט אסאך מחלוקת מיט זיי. איינמאל איז א גרופע געקומען זיך וויכוחן מיט אים, און ווען זיי זענען אוועק האט ער געזאגט \"זיי קענען\". די תלמידים האבן געפרעגט, דער רבי איז דאך פיל קלוגער און האט זיי באזיגט, און ער האט געענטפערט: זיי קענען, אבער איך קען עסן. ער האט אויסגעשילדערט ווי ער שטייט אויף הונגעריג, און יעדעס מאל טוט ער פריער וואס א איד דארף: נעגל וואסער, זיך אנטון, דאווענען, וואשן און איינטונקען דאס ברויט אין זאלץ, און ערשט דערנאך עסט ער."
+      },
+      "people": ["the Malbim"],
+      "evidence": { "segs": [505, 511, 520, 527, 541, 546], "confidence": 0.7 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "If Pesach is the lesser beginning, why is its prohibition of chametz punished with kares, unlike the prohibitions of Shavuos and Sukkos?", "yi": "אויב פסח איז דער קלענערער אנהייב, פארוואס איז זיין איסור חמץ בכרת, נישט אזוי ווי די איסורים פון שבועות און סוכות?" },
+      "answer": { "en": "Because the opposite of kares is kashrus: eating matzah binds a Jew to Hashem in a way no mitzvah of the other Yamim Tovim does.", "yi": "ווייל דער היפוך פון כרת איז התקשרות: מצה עסן פארבינדט א איד מיט'ן אייבערשטן אויף אן אופן וואס קיין מצוה פון די אנדערע ימים טובים טוט נישט." },
+      "questionSegs": [44, 45, 46, 47], "answerSegs": [64, 67, 69, 78], "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why does every person need variety in food yet never tire of bread?", "yi": "פארוואס דארף יעדער מענטש פארשידענע מאכלים, און פון ברויט ווערט ער קיינמאל נישט מיד?" },
+      "answer": { "en": "Because bread contains all ten utterances of creation, just as man contains all the traits, so it answers every part of a person.", "yi": "ווייל ברויט האט אין זיך אלע עשרה מאמרות, אזוי ווי דער מענטש האט אין זיך אלע מדות, ממילא איז עס פאסיג פאר יעדן חלק פון א מענטש." },
+      "questionSegs": [402, 419, 422], "answerSegs": [424, 426, 436, 441], "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why is the Seder opened with a child asking?", "yi": "פארוואס הייבט מען אן דעם סדר מיט א קינד וואס פרעגט?" },
+      "answer": { "en": "Because Yetzias Mitzrayim came from the world called 'Mah', beyond grasp, about which one can only ask.", "yi": "ווייל יציאת מצרים איז געקומען פון דער וועלט וואס הייסט \"מה\", וואס מ'קען נישט באגרייפן, און מ'קען נאר פרעגן דערויף." },
+      "questionSegs": [641, 642, 643], "answerSegs": [633, 638, 639, 644], "confidence": 0.8
+    },
+    {
+      "question": { "en": "How can we say of our matzah 'this is the bread our fathers ate in Mitzrayim', when that matzah was eaten long ago?", "yi": "ווי אזוי קען מען זאגן אויף אונזער מצה \"הא לחמא עניא\" וואס די אבות האבן געגעסן אין מצרים, ווען יענע מצה איז שוין לאנג אויפגעגעסן?" },
+      "answer": { "en": "The flour and water are only a capsule; the light inside is the same light of Yetzias Mitzrayim, so it is the original and not a copy.", "yi": "דאס מעל און וואסער זענען נאר א קאפסל; די אור אינעווייניג איז די זעלבע אור פון יציאת מצרים, ממילא איז עס דער ארגינעל און נישט קיין קאפיע." },
+      "questionSegs": [859, 861, 862, 865], "answerSegs": [872, 873, 878, 879], "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why is Adam called Adam?", "yi": "פארוואס הייסט אדם אדם?" },
+      "answer": { "en": "Because Adam equals 45, the full spelling of the Name of Hashem; the perfect man is the full spelling of the Name.", "yi": "ווייל אדם איז די גימטריא 45, דער מילוי פונעם שם הוי\"ה; דער שלימות'דיגער אדם איז דער מילוי פונעם שם." },
+      "questionSegs": [595, 596], "answerSegs": [619, 620, 621, 622], "confidence": 0.7
+    }
+  ],
+  "takeaways": [
+    { "text": { "en": "The Rav says Pesach is a time for every Jew to make a reckoning and become a new person, throwing off the shrouds of the yetzer hara and aveiros.", "yi": "דער משגיח זאגט אז פסח איז א צייט פאר יעדן איד צו מאכן א חשבון און ווערן א נייער מענטש, און אראפווארפן די תכריכים פונעם יצר הרע און פון עבירות." }, "evidence": { "segs": [232, 234, 238, 240, 242], "confidence": 0.8 } },
+    { "text": { "en": "The Rav says one should approach the table with proper holiness and eat as a Jew is supposed to eat, with a bracha and preparation, not like Esav.", "yi": "דער משגיח זאגט אז מ'דארף צוגיין צום טיש מיט די ריכטיגע קדושה און עסן ווי א איד דארף עסן, מיט א ברכה און הכנה, נישט ווי עשו." }, "evidence": { "segs": [451, 453, 472, 499, 550], "confidence": 0.75 } },
+    { "text": { "en": "The Rav says that on this day one should daven that Hashem alone be King and that Mashiach be His chariot.", "yi": "דער משגיח זאגט אז היינט דארף מען מתפלל זיין אז דער אייבערשטער אליין זאל זיין דער מלך, און משיח זאל זיין זיין מרכבה." }, "evidence": { "segs": [923, 927, 930, 932, 934], "confidence": 0.75 } },
+    { "text": { "en": "The Rav says that just as Hashem shows Himself in completeness on Yom Tov, a Jew should prepare and present himself to Hashem in completeness.", "yi": "דער משגיח זאגט אז אזוי ווי דער אייבערשטער ווייזט זיך אויף יום טוב בשלימות, דארף א איד זיך צוגרייטן און זיך ווייזן פארן אייבערשטן בשלימות." }, "evidence": { "segs": [976, 977, 984, 985, 986], "confidence": 0.75 } },
+    { "text": { "en": "The Rav says a Jew should develop a desire for geulah, to be freed from the yetzer hara, and not pass Yom Tov nonchalantly.", "yi": "דער משגיח זאגט אז א איד דארף אנטוויקלען א רצון צו גאולה, ארויסצוגיין פונעם יצר הרע, און נישט דורכגיין דעם יום טוב גלייכגילטיג." }, "evidence": { "segs": [1001, 1009, 1014, 1035, 1038, 1041], "confidence": 0.75 } }
+  ],
+  "candidateTopics": [
+    "Pesach as the beginning of the bond with Hashem",
+    "kares and hiskashrus",
+    "matzah and chametz",
+    "renewal in Nisan",
+    "Shir Hashirim",
+    "gematria of lechem and matzah",
+    "the ten utterances of creation",
+    "techiyas hameisim and tal",
+    "the Seder and asking questions",
+    "desire for geulah"
+  ],
+  "concepts": [
+    { "he": "כרת", "heardAs": ["krisais", "krisis", "Krisos", "karetz"] },
+    { "he": "התקשרות", "heardAs": ["iskashris", "Makashach", "Makashras", "Mekash HaRas"] },
+    { "he": "ראשית", "heardAs": ["Reishis", "Reishas"] },
+    { "he": "קליפה", "heardAs": ["clipper", "klipas"] },
+    { "he": "רבונו של עולם", "heardAs": ["Rabbaniyashleil", "rabbinya shalei'la", "Rabbani Shalei", "Rabbani Sholeilam"] },
+    { "he": "שם הוי\"ה", "heardAs": ["Shey Mavayah", "shaymavaya", "sheim avaya", "Shem Havayah"] },
+    { "he": "מילוי", "heardAs": ["Millu", "milieu"] },
+    { "he": "עשרה מאמרות", "heardAs": ["Aserah Mamaris", "Mainzib Reishas", "asera mamaris"] },
+    { "he": "המוציא", "heardAs": ["Hamaiti", "Hamaitzi", "amaitzi"] },
+    { "he": "טל של תחיה", "heardAs": ["Tau Shal Tchiyah", "Tau Shot Chiyah", "towel", "tal"] },
+    { "he": "תחיית המתים", "heardAs": ["Tchiyas HaMaisen", "Tchiyas HaMesah"] },
+    { "he": "מפתח של חיה", "heardAs": ["Mafteich of Chaya", "mavteach of leidah"] },
+    { "he": "פטירא", "heardAs": ["Patiraya", "Pateraya", "patirayin"] },
+    { "he": "פתיחת הארון", "heardAs": ["Psyche Seore", "Psyche Sarek"] },
+    { "he": "יציאת מצרים", "heardAs": ["Yetzirah Mitzrayim", "Yitzhius Mitzrayim", "Yathirism"] },
+    { "he": "כנסת ישראל", "heardAs": ["Knesset Yisrael", "Klai Yisrael"] }
+  ],
+  "people": [
+    { "name": "Shlomo HaMelech", "heardAs": ["Shalayim HaMelech", "Shalim HaMelech"] },
+    { "name": "the Malbim", "heardAs": ["Maudim", "Ma'ubim"] },
+    { "name": "Esav", "heardAs": ["Esav", "Ace of Eight"] },
+    { "name": "the Ba'al HaTanya", "heardAs": ["Baratani", "Balotanya"] },
+    { "name": "Eliyahu HaNavi", "heardAs": ["Elia Novi"] },
+    { "name": "Rashi", "heardAs": ["Rasha"] },
+    { "name": "the Rema", "heardAs": ["the Ramah"] },
+    { "name": "the Avnei Nezer", "heardAs": ["Abnei Nazar"] },
+    { "name": "Adam HaRishon", "heardAs": ["Adam", "Yadam"] }
+  ],
+  "asrNotes": "English ASR with heavy mangling of Hebrew terms (Ribono shel Olam appears in many forms) and frequent fragmentation into one- or two-word segments. The cited author at seg 63 ('Aradosh Yirim') and at seg 636 ('the Isaiah') could not be identified, and the Rabbi Eliezer / Rabbi Yehoshua stretch (segs 294-305, 366) on chesed in Nisan is too garbled to reconstruct. Segs 559-566 are a repeated phrase ('in the Shulash'), three flagged, and segs 603-611 lose the explanation of Adam's name before the gematria resumes."
+}

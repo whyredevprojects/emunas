@@ -1,0 +1,444 @@
+{
+  "shiurId": "yi-parshas-hashavua-bshlch-04",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav shows that Parshas Beshalach is full of emunah, from the splitting of the sea and the mann to the shira of the women, and through the Rambam and Ramban on the days of Moshiach, ending with the call to leave this Shabbos with emunah and bitachon.",
+      "yi": "דער משגיח ווייזט אז פרשת בשלח איז פול מיט אמונה, פון קריעת ים סוף און דעם מן ביז די שירה פון די נשים, און דורך דעם רמב\"ם און רמב\"ן אויף ימות המשיח, און ער ענדיגט אז מען זאל ארויסגיין פון דעם שבת מיט אמונה און בטחון."
+    },
+    "abstract": {
+      "en": "The Rav opens with the Chasam Sofer's question why the Egyptians drowned at the sea and not in the Nile: one may not return to Egypt, so only at the sea could Jews later make a brachah on the place of the miracle. He adds that the danger at the sea was a test of emunah, through which they merited the shira. He then shows that the whole parsha is full of emunah: the mann and its trace in the Shabbos cholent, Shabbos Shirah customs, and a story of the Stoliner Rebbe. Walking through the parsha, he finds emunas chachamim, techiyas hameisim, Moshiach and all thirteen ikkarim. The mann teaches that each person has his own channel of parnassa, which he ties to a Gemara on city names. He discusses the Rambam, Raavad, Radbaz and Ramban on whether nature changes in the days of Moshiach, and the Chasam Sofer on why the women sang only one passuk. He closes on the power of Moshiach's word, unity, and Tu Bishvat.",
+      "yi": "דער משגיח עפנט מיט דער קשיא פונעם חתם סופר פארוואס די מצריים זענען דערטרונקען געווארן אין ים און נישט אינעם נילוס: מ'טאר נישט צוריקגיין קיין מצרים, און נאר ביים ים קענען אידן שפעטער מאכן א ברכה אויפן מקום הנס. ער לייגט צו אז די סכנה ביים ים איז געווען א נסיון פון אמונה, און דורך דעם זענען זיי זוכה געווען צו שירה. דערנאך ווייזט ער אז די גאנצע פרשה איז פול מיט אמונה: דער מן און זיין הארה אינעם שבת'דיגן טשאלנט, די מנהגים פון שבת שירה, און א מעשה מיטן סטאלינער רבי'ן. ער גייט דורך די פרשה און געפינט אמונת חכמים, תחיית המתים, משיח און אלע י\"ג עיקרים. דער מן לערנט אז יעדער האט זיין אייגענעם קאנאל פון פרנסה, און דאס בינדט ער צו א גמרא אויף נעמען פון שטעט. ער רעדט וועגן דעם רמב\"ם, ראב\"ד, רדב\"ז און רמב\"ן צי די טבע וועט זיך טוישן לימות המשיח, און וועגן דעם חתם סופר פארוואס די נשים האבן געזונגען נאר איין פסוק. ער ענדיגט מיטן כח פון משיח'ס ווארט, אחדות, און ט\"ו בשבט."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The Egyptians drowned at the sea rather than in the Nile so that Jews, who may never return to Egypt, could make a brachah at the place of the miracle.",
+          "yi": "די מצריים זענען דערטרונקען געווארן ביים ים און נישט אינעם נילוס, כדי אידן, וואס טארן נישט צוריקגיין קיין מצרים, זאלן קענען מאכן א ברכה אויפן מקום הנס."
+        },
+        "evidence": { "segs": [22, 23, 28, 29, 34, 37], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The danger at the sea was a test of emunah and bitachon, and in that merit the Jews were granted the shira with ruach hakodesh.",
+          "yi": "די סכנה ביים ים איז געווען א נסיון פון אמונה און בטחון, און אין דעם זכות זענען אידן זוכה געווען צו זאגן שירה מיט רוח הקודש."
+        },
+        "evidence": { "segs": [58, 59, 63, 68, 89], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The mann was food of emunah: each person received his own portion, so no one can take another's parnassa, and how much one works neither adds nor subtracts.",
+          "yi": "דער מן איז געווען א שפייז פון אמונה: יעדער האט באקומען זיין אייגענעם חלק, ממילא קען קיינער נישט צונעמען דעם אנדערנ'ס פרנסה, און ווי פיל מ'ארבעט לייגט נישט צו און נעמט נישט אראפ."
+        },
+        "evidence": { "segs": [285, 301, 308, 339, 393, 445], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The whole parsha is full of emunah; all thirteen principles of faith, including techiyas hameisim and Moshiach, can be found in it.",
+          "yi": "די גאנצע פרשה איז פול מיט אמונה; אלע י\"ג עיקרים, אריינגערעכנט תחיית המתים און משיח, געפינט מען אין איר."
+        },
+        "evidence": { "segs": [222, 334, 337, 338, 449], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Following the Ramban, nature was created to serve the tzaddik, and wild animals will return to their original peaceful nature when people stop sinning.",
+          "yi": "לויטן רמב\"ן איז די טבע באשאפן געווארן צו דינען דעם צדיק, און די חיות וועלן זיך אומקערן צו זייער ערשטער טבע ווען מענטשן וועלן אויפהערן צו זינדיגן."
+        },
+        "evidence": { "segs": [635, 638, 716, 721, 724], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "According to the Rambam Moshiach need not show wonders; his greatness is that by his word alone all Jews will follow him to Eretz Yisroel and unite in one Beis Hamikdash.",
+          "yi": "לויטן רמב\"ם דארף משיח נישט ווייזן קיין מופתים; זיין גרייסקייט איז אז מיט זיין ווארט אליין וועלן אלע אידן אים פאלגן, גיין קיין ארץ ישראל, און זיך פאראייניגן אין איין בית המקדש."
+        },
+        "evidence": { "segs": [785, 799, 820, 823, 859, 877], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-parsha-sefer-shemois-04-04-beshalach", "startSeg": 0, "endSeg": 92,
+      "title": { "en": "Why the sea and not the Nile", "yi": "פארוואס ביים ים און נישט ביים נילוס" },
+      "summary": {
+        "en": "The Rav brings the Chasam Sofer's answer why the Egyptians drowned at the sea: since one may not return to Egypt, only at the sea could Jews later make a brachah on the miracle. He adds that the danger at the sea was a test of emunah, in whose merit they sang the shira, and recalls Nachshon jumping into the sea.",
+        "yi": "דער משגיח ברענגט דעם חתם סופר'ס תירוץ פארוואס די מצריים זענען דערטרונקען געווארן ביים ים: וויבאלד מ'טאר נישט צוריקגיין קיין מצרים, קען מען נאר ביים ים מאכן א ברכה אויפן נס. ער לייגט צו אז די סכנה ביים ים איז געווען א נסיון פון אמונה, וואס אין איר זכות האבן זיי געזאגט שירה, און ער דערמאנט ווי נחשון איז אריינגעשפרונגען אין ים."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-04-04-beshalach", "startSeg": 93, "endSeg": 177,
+      "title": { "en": "The mann, the cholent and Jewish minhagim", "yi": "דער מן, דער טשאלנט און אידישע מנהגים" },
+      "summary": {
+        "en": "The Rav says the parsha is full of yeshuos, and that the Shabbos food, especially the cholent, carries a trace of the mann. He mentions the Shabbos Shirah custom, calls on a Jew to be able to swallow a question with simple emunah, and explains that minhagim come from the ruach hakodesh hidden in the whole of Klal Yisroel.",
+        "yi": "דער משגיח זאגט אז די פרשה איז פול מיט ישועות, און אז די שבת'דיגע מאכלים, בפרט דער טשאלנט, האבן אין זיך א הארה פונעם מן. ער דערמאנט דעם מנהג פון שבת שירה, זאגט אז א איד דארף קענען אראפשלינגען א קשיא מיט אמונה פשוטה, און ערקלערט אז מנהגים קומען פונעם רוח הקודש וואס איז באהאלטן אין כלל ישראל."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-04-04-beshalach", "startSeg": 178, "endSeg": 221,
+      "title": { "en": "The Stoliner Rebbe and the cholent", "yi": "דער סטאלינער רבי און דער טשאלנט" },
+      "summary": {
+        "en": "After saying that stories of tzaddikim which are reliably handed down bring to emunah, the Rav tells, in the name of R' Nosson Wachtfogel, how the Stoliner Rebbe in Williamsburg once spoke at length about cholent at the Shabbos kiddush and asked for a second plate, while that day there was no cholent at home.",
+        "yi": "נאכדעם וואס ער זאגט אז מעשיות פון צדיקים וואס זענען מקובל ברענגען צו אמונה, דערציילט דער משגיח אין נאמען פון ר' נתן וואכטפויגל ווי דער סטאלינער רבי אין וויליאמסבורג האט איינמאל ביים קידוש שבת לאנג גערעדט וועגן טשאלנט און געבעטן א צווייטן טעלער, בשעת אין דער היים איז יענעם טאג נישט געווען קיין טשאלנט."
+      },
+      "kind": "story", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-04-04-beshalach", "startSeg": 222, "endSeg": 280,
+      "title": { "en": "Emunas chachamim and Moshiach in the parsha", "yi": "אמונת חכמים און משיח אין דער פרשה" },
+      "summary": {
+        "en": "Walking briefly through the parsha, the Rav shows emunas chachamim in the Jews turning back toward the Egyptians at Moshe's word, techiyas hameisim in 'Az yashir', Moshiach in 'Hashem yimloch', and individual hashgachah in the sea splitting into a path for each tribe and each Jew.",
+        "yi": "דער משגיח גייט שנעל דורך די פרשה און ווייזט אמונת חכמים אין דעם וואס אידן האבן זיך אומגעקערט צו די מצריים לויט משה רבינו'ס ווארט, תחיית המתים אין \"אז ישיר\", משיח אין \"ה' ימלוך\", און השגחה פרטית אין דעם וואס דער ים האט זיך געשפאלטן פאר יעדן שבט און יעדן איד באזונדער."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-04-04-beshalach", "startSeg": 281, "endSeg": 338,
+      "title": { "en": "The mann as emunah; Amalek and Baal Tzefon", "yi": "דער מן איז אמונה; עמלק און בעל צפון" },
+      "summary": {
+        "en": "The Rav explains that the mann trained Jews in emunah: they left nothing for the next day, and gathering more or less made no difference, as with parnassa. He goes on to Amalek as doubt in emunah, Shabbos as testimony to creation, and Baal Tzefon, where the Jews davened only to Hashem, concluding that all thirteen ikkarim are in the parsha.",
+        "yi": "דער משגיח ערקלערט אז דער מן האט איינגעוואוינט אידן אין אמונה: זיי האבן גארנישט איבערגעלאזט אויף מארגן, און ווי פיל מען האט געקליבן האט נישט געמאכט קיין חילוק, אזוי ווי ביי פרנסה. ער גייט ווייטער צו עמלק וואס איז ספק אין אמונה, שבת וואס איז די עדות אויף חידוש העולם, און בעל צפון, וואו אידן האבן געדאווענט נאר צום רבונו של עולם, און ער ענדיגט אז אלע י\"ג עיקרים זענען אין דער פרשה."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-04-04-beshalach", "startSeg": 339, "endSeg": 398,
+      "title": { "en": "Each one his own channel of parnassa", "yi": "יעדער מיט זיין אייגענעם קאנאל פון פרנסה" },
+      "summary": {
+        "en": "The Rav explains that the mann teaches that each person's food is prepared for him, so no one can touch another's. He brings the Gemara that expounds the city names Kinah, Dimonah and Adadah, asks why city names are expounded at all, and explains that each tribe, like each month and each mishmar, draws its parnassa from its own root.",
+        "yi": "דער משגיח ערקלערט אז דער מן לערנט אז יעדנ'ס שפייז איז אים צוגעגרייט, און מ'קען נישט אנרירן דעם אנדערנ'ס. ער ברענגט די גמרא וואס דרש'נט די נעמען פון די שטעט קינה, דימונה און עדעדה, פרעגט פארוואס מ'דרש'נט בכלל נעמען פון שטעט, און ערקלערט אז יעדער שבט, אזוי ווי יעדער חודש און יעדע משמר, נעמט זיין פרנסה פון זיין אייגענעם שורש."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-04-04-beshalach", "startSeg": 399, "endSeg": 449,
+      "title": { "en": "The chassid, the mann at the door, and the borders", "yi": "דער חסיד, דער מן ביי דער טיר, און די גבולים" },
+      "summary": {
+        "en": "The Rav brings a Midrash about a chassid who learned from the hairs of the head that each one has its own source, and the Gemara that the mann fell at the doors of the tzaddikim. He returns to the city names: they hint that each one has his own border, so a person with bitachon stays silent when someone seems to take his parnassa.",
+        "yi": "דער משגיח ברענגט א מדרש וועגן א חסיד וואס האט געלערנט פון די הערלעך פונעם קאפ אז יעדעס האט איר אייגענעם מקור, און די גמרא אז ביי צדיקים איז דער מן געפאלן ביי דער טיר. ער קומט צוריק צו די נעמען פון די שטעט: זיי זענען א רמז אז יעדער האט זיין אייגענעם גבול, און דערפאר שווייגט א בעל בטחון ווען איינער נעמט אים כביכול צו זיין פרנסה."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-04-04-beshalach", "startSeg": 450, "endSeg": 519,
+      "title": { "en": "Shiras hayam and the Rambam on Moshiach", "yi": "שירת הים און דער רמב\"ם וועגן משיח" },
+      "summary": {
+        "en": "The Rav calls to 'eat' the parsha and to say the Shiras hayam with joy and together, noting that the shira ends with 'Hashem yimloch' and hints at Moshiach. He then brings the Rambam at the end of Hilchos Melachim that in the days of Moshiach the world follows its course and Yeshayahu's wolf and lamb are a parable, and the Raavad's objection from 'I will remove wild beasts from the land'.",
+        "yi": "דער משגיח רופט מ'זאל \"עסן\" די פרשה און זאגן שירת הים מיט שמחה און צוזאמען, און ער זאגט אז די שירה ענדיגט זיך מיט \"ה' ימלוך\", וואס איז א רמז אויף משיח. דערנאך ברענגט ער דעם רמב\"ם אין סוף הלכות מלכים אז לימות המשיח פירט זיך די וועלט ווי געווענליך און דער וואלף מיטן שעפעלע ביי ישעיה איז א משל, און די השגה פונעם ראב\"ד פון \"והשבתי חיה רעה מן הארץ\"."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-04-04-beshalach", "startSeg": 520, "endSeg": 575,
+      "title": { "en": "The Radbaz, and nature as Torah", "yi": "דער רדב\"ז, און די טבע איז תורה" },
+      "summary": {
+        "en": "The Rav brings the Radbaz that both are true: in Eretz Yisroel the pesukim will be literal, elsewhere a parable. He asks why the Rambam insists on this as a halachah, and explains that nature itself is the order of the Torah, bringing the Gemara in Shabbos that it was a disgrace that the order of creation was changed for a certain man.",
+        "yi": "דער משגיח ברענגט דעם רדב\"ז אז ביידע זענען אמת: אין ארץ ישראל וועלן די פסוקים זיין כפשוטו, און אין אנדערע לענדער א משל. ער פרעגט פארוואס דער רמב\"ם לייגט זיך אזוי אוועק אויף דעם ווי א הלכה, און ערקלערט אז די טבע אליין איז דער סדר התורה, און ער ברענגט די גמרא אין שבת אז ס'איז געווען א גנאי אז מ'האט פאר א געוויסן מענטש געטוישט די סדרי בראשית."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-04-04-beshalach", "startSeg": 576, "endSeg": 627,
+      "title": { "en": "The Midrash on Miriam's shira", "yi": "דער מדרש אויף מרים'ס שירה" },
+      "summary": {
+        "en": "The Rav brings the Chasam Sofer on the Midrash that the angels complained why the women too should sing before them, and Miriam answered with the first passuk of the shira. He asks what the complaint was, what Miriam answered, and why the women sang only one passuk, and brings the Gemara in Megillah that women were also part of the miracle, with the Rashbam and Tosafos on the word 'also'.",
+        "yi": "דער משגיח ברענגט דעם חתם סופר אויפן מדרש אז די מלאכים האבן טענה'ט פארוואס די נשים זאלן אויך זינגען פאר זיי, און מרים האט געענטפערט מיטן ערשטן פסוק פון דער שירה. ער פרעגט וואס איז געווען די טענה, וואס האט מרים געענטפערט, און פארוואס די נשים האבן געזונגען נאר איין פסוק, און ער ברענגט די גמרא אין מגילה אז נשים זענען אויך געווען אין יענעם נס, מיטן רשב\"ם און תוספות אויפן לשון \"אף\"."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-04-04-beshalach", "startSeg": 628, "endSeg": 683,
+      "title": { "en": "Nature serves the tzaddik: the women's shira", "yi": "די טבע דינט דעם צדיק: די שירה פון די נשים" },
+      "summary": {
+        "en": "The Chasam Sofer answers that shira is said only on what is beyond nature, and nature was created to serve the tzaddik. The righteous women's rescue was therefore natural and only the downfall of the Egyptians was a miracle for them, so Miriam answered the angels with the one passuk about that downfall.",
+        "yi": "דער חתם סופר ענטפערט אז שירה זאגט מען נאר אויף דעם וואס איז חוץ לדרך הטבע, און די טבע איז באשאפן געווארן צו דינען דעם צדיק. ממילא איז די הצלה פון די צדקניות געווען טבע, און נאר די מפלה פון די מצריים איז ביי זיי געווען א נס, דערפאר האט מרים געענטפערט די מלאכים מיט דעם איין פסוק וואס רעדט וועגן דער מפלה."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-04-04-beshalach", "startSeg": 684, "endSeg": 768,
+      "title": { "en": "The Ramban, and the Raavad's objection explained", "yi": "דער רמב\"ן, און די השגה פונעם ראב\"ד" },
+      "summary": {
+        "en": "The Rav brings the Ramban in Bechukosai that wild animals were created eating grass and became predators only through man's sin, and will return to their first nature in Eretz Yisroel when the mitzvos are kept. With this he explains the dispute: the Rambam cites Yeshayahu, where no condition of righteousness is stated, while the Raavad cites the passuk in Bechukosai, which is conditioned on keeping the Torah.",
+        "yi": "דער משגיח ברענגט דעם רמב\"ן אין בחוקותי אז די חיות זענען באשאפן געווארן צו עסן גראז, און נאר צוליב דעם חטא פון מענטשן האבן זיי גענומען צורייסן, און אין ארץ ישראל וועלן זיי זיך אומקערן צו זייער ערשטער טבע ווען מען וועט היטן די מצוות. דערמיט ערקלערט ער די מחלוקת: דער רמב\"ם ברענגט די פסוקים פון ישעיה, וואו ס'שטייט נישט קיין תנאי אז אידן וועלן זיין צדיקים, און דער ראב\"ד ברענגט דעם פסוק פון בחוקותי, וואס איז בתנאי אז מען היט די תורה."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-04-04-beshalach", "startSeg": 769, "endSeg": 830,
+      "title": { "en": "Moshiach without wonders", "yi": "משיח אן מופתים" },
+      "summary": {
+        "en": "The Rav brings the Rambam that Moshiach need not perform wonders, with the proof from Rabbi Akiva and Ben Koziba, and the Raavad who disagrees. He argues that the Rambam actually demands more of Moshiach: even Eliyahu's fire from heaven only moved the people briefly, while Moshiach will merely speak and all Jews will leave everything and go to Eretz Yisroel.",
+        "yi": "דער משגיח ברענגט דעם רמב\"ם אז משיח דארף נישט ווייזן קיין אותות ומופתים, מיט דער ראיה פון רבי עקיבא און בן כוזיבא, און דעם ראב\"ד וואס האלט אנדערש. ער טענה'ט אז דער רמב\"ם פאדערט באמת מער פון משיח: אפילו אליהו הנביא'ס פייער פון הימל האט נאר אויף א וויילע אויפגעוועקט דאס פאלק, און משיח וועט נאר זאגן א ווארט און אלע אידן וועלן איבערלאזן אלעס און גיין קיין ארץ ישראל."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-04-04-beshalach", "startSeg": 831, "endSeg": 892,
+      "title": { "en": "The power of a tzaddik's word; one Beis Hamikdash", "yi": "דער כח פון א צדיק'ס ווארט; איין בית המקדש" },
+      "summary": {
+        "en": "The Rav tells what an old man in Tzfas remembered of R' Avraham Kalisker's words, like nails hammered into the heart, and explains that a tzaddik's speech is malchus. He contrasts the dispute that would break out today if someone built the Beis Hamikdash with the unity when Moshiach builds it and all groups of Jews serve together.",
+        "yi": "דער משגיח דערציילט וואס אן אלטער איד אין צפת האט געדענקט פון ר' אברהם קאליסקער'ס דיבורים, אזוי ווי מ'קלאפט אריין נעגל אין הארצן, און ערקלערט אז דער דיבור פון א צדיק איז מלכות. ער שטעלט אקעגן די מחלוקת וואס וואלט היינט אויסגעבראכן ווען איינער וואלט געבויט דעם בית המקדש, מיט דער אחדות ווען משיח וועט עס בויען און אלע סארטן אידן וועלן דינען צוזאמען."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-04-04-beshalach", "startSeg": 893, "endSeg": 984,
+      "title": { "en": "Full suitcases, and which tree to be", "yi": "פולע טשעמאדאנעס, און וואספארא בוים צו זיין" },
+      "summary": {
+        "en": "The Rav concludes that one should leave Parshas Beshalach with full suitcases of emunah, bitachon and simcha. Since this Shabbos precedes Tu Bishvat and Shevat is the month of eating, he says the fruits should be eaten like the mann, and brings Yirmiyahu's two trees, the man who trusts in people and the one who trusts in Hashem, calling on each person to decide which tree he wants to be.",
+        "yi": "דער משגיח ענדיגט אז מ'זאל ארויסגיין פון פרשת בשלח מיט פולע טשעמאדאנעס פון אמונה, בטחון און שמחה. וויבאלד דער שבת איז פאר ט\"ו בשבט און שבט איז דער חודש פון אכילה, זאגט ער אז מ'זאל עסן די פירות אזוי ווי דעם מן, און ער ברענגט ירמיה'ס צוויי ביימער, דער וואס פארלאזט זיך אויף מענטשן און דער וואס פארלאזט זיך אויפן רבונו של עולם, און רופט יעדן צו באשליסן וואספארא בוים ער וויל זיין."
+      },
+      "kind": "closing", "catalogTopicIdx": [0], "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "תחתם סופר א פיינדיגע סדרה", "work": "Chasam Sofer", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [0, 3, 53], "confidence": 0.8 } },
+    { "heardAs": "לתתים לתים מרסם עד הדולם", "work": "Shemos", "ref": "Shemos 14:13", "sefariaRef": "Exodus 14:13", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [3, 17, 43], "confidence": 0.8 } },
+    { "heardAs": "דער גמרא זאגט אין ברכות און אין שולחן ערוך", "work": "Gemara Berachos", "ref": "Berachos 54a", "sefariaRef": "Berakhot 54a", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [25, 26, 28], "confidence": 0.8 } },
+    { "heardAs": "אין שולחן ערוך", "work": "Shulchan Aruch", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [25], "confidence": 0.75 } },
+    { "heardAs": "ווי חז״ל זאגן אז אלע אידן האבן מכוון געוועזן, ווארט ביי ווארט", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [69, 72], "confidence": 0.75 } },
+    { "heardAs": "נאך שם בן עמינדב איז אריינגעשפראנגען אין ים", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [77, 81, 84], "confidence": 0.7 } },
+    { "heardAs": "דער בני יששכר רעדט צוריק אין דעם", "work": "Bnei Yissaschar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [108], "confidence": 0.7 } },
+    { "heardAs": "ויבאי ביום השישי, וכינע את השי' יביאה", "work": "Shemos", "ref": "Shemos 16:5", "sefariaRef": "Exodus 16:5", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [110, 125], "confidence": 0.75 } },
+    { "heardAs": "אזוי ווי עס שטעט אין רבינו בחייה", "work": "Rabbeinu Bachya", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [143], "confidence": 0.65 } },
+    { "heardAs": "די ראשונים ברענגען, עס דער וואס פארעסט נישט קיין חיים אין שבת", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [151, 153, 154], "confidence": 0.7 } },
+    { "heardAs": "זאגט רשע, אז הרייבערשטער האט געזאגט מען זאל צוריקגיין להגד שבחים", "work": "Rashi", "ref": "Rashi on Shemos 14:4", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [229, 230, 231, 236], "confidence": 0.8 } },
+    { "heardAs": "אז יושע מיינט אז עולה במחשבתים ... די זכי' פארמעסטער מן התורה", "work": "Gemara Sanhedrin", "ref": "Sanhedrin 91b", "sefariaRef": "Sanhedrin 91b", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [254, 256, 257, 258], "confidence": 0.7 } },
+    { "heardAs": "ה' ימלך לעולם ... ימלך איז לשון אתות", "work": "Shemos", "ref": "Shemos 15:18", "sefariaRef": "Exodus 15:18", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [259, 260, 468], "confidence": 0.85 } },
+    { "heardAs": "לגזר ים19 לגזרים", "work": "Tehillim", "ref": "Tehillim 136:13", "sefariaRef": "Psalms 136:13", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [269, 278], "confidence": 0.75 } },
+    { "heardAs": "ויקרא בנתך שמי מן", "work": "Shemos", "ref": "Shemos 16:31", "sefariaRef": "Exodus 16:31", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [283], "confidence": 0.75 } },
+    { "heardAs": "ויסירה נשים ומנהג ... דאס זענען געוועזן די צוויי רשעים", "work": "Rashi", "ref": "Rashi on Shemos 16:20", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [290, 292, 293], "confidence": 0.65 } },
+    { "heardAs": "דבר יום ביומי, דער וואס ער זאגט מה נאכה למוח, ארייזא מכתני אמונה", "work": "Gemara Sotah", "ref": "Sotah 48b", "sefariaRef": "Sotah 48b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [295], "confidence": 0.7 } },
+    { "heardAs": "אלא המערבי ולהדף ... להכתיר", "work": "Shemos", "ref": "Shemos 16:18", "sefariaRef": "Exodus 16:18", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [299, 300, 308], "confidence": 0.75 } },
+    { "heardAs": "צנצנת המון ... ראה דבר השם", "work": "Rashi", "ref": "Rashi on Shemos 16:32", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [309, 310, 311], "confidence": 0.65 } },
+    { "heardAs": "אזוי ווי ספרים זארגן עמלק איז די גימט פון יסופק", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [315, 316], "confidence": 0.7 } },
+    { "heardAs": "א שבת רגי השם נתן עליכם", "work": "Shemos", "ref": "Shemos 16:29", "sefariaRef": "Exodus 16:29", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [325], "confidence": 0.7 } },
+    { "heardAs": "ולפני בעל זיין ... בעל צפין", "work": "Shemos", "ref": "Shemos 14:2", "sefariaRef": "Exodus 14:2", "resolution": "resolved", "mention": "alluded", "evidence": { "segs": [327, 328, 332], "confidence": 0.7 } },
+    { "heardAs": "דער גמרא זאגט ... כינע ודמינע ועדדע", "work": "Gemara Gittin", "ref": "Gittin 7a", "sefariaRef": "Gittin 7a", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [345, 347, 353, 356], "confidence": 0.7 } },
+    { "heardAs": "אין ספר ישעי' ... די גבולים פון ארץ ישראל", "work": "Yehoshua", "ref": "Yehoshua 15:22", "sefariaRef": "Joshua 15:22", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [429, 430, 432], "confidence": 0.65 } },
+    { "heardAs": "ודכתם סופר זאגט שבטים ושצחים טיטלעך לכל שבטי לשורך", "work": "Chasam Sofer", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [379, 380, 381], "confidence": 0.65 } },
+    { "heardAs": "אזוי ווי ער שטייט אין מדרש, עס איז געוועזן א געוויסער חסיד", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [399, 400, 401], "confidence": 0.65 } },
+    { "heardAs": "אזוי ווי שטעט אין זייער קוטש, טאקע ביי די מאנשאטא", "work": "Gemara Yoma", "ref": "Yoma 75a", "sefariaRef": "Yoma 75a", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [410, 415, 416], "confidence": 0.6 } },
+    { "heardAs": "דער וואס עס זאגט שירת היום איז מוחלון להיקל אבינתו ווי ס'שטעט אין חז״ל", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [456, 457], "confidence": 0.7 } },
+    { "heardAs": "אין די לעצטע פרק פון רמב״ם ... אל יעלע אלא לב", "work": "Rambam, Mishneh Torah", "ref": "Hilchos Melachim 12:1", "sefariaRef": "Mishneh Torah, Kings and Wars 12:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [473, 475, 476, 501], "confidence": 0.85 } },
+    { "heardAs": "יאזשאל לבטחים ... כבוקא יחד תבן", "work": "Yeshayahu", "ref": "Yeshayahu 11:6-9", "sefariaRef": "Isaiah 11:6-9", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [486, 489, 494, 738], "confidence": 0.8 } },
+    { "heardAs": "די רעבעט האבן א הסוגה אויפן רמב״ם", "work": "Raavad", "ref": "Raavad on Hilchos Melachim 12:1", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [509, 518, 519], "confidence": 0.75 } },
+    { "heardAs": "ווי שבטי חיה ראים מן הרי", "work": "Vayikra", "ref": "Vayikra 26:6", "sefariaRef": "Leviticus 26:6", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [514, 518, 684, 755], "confidence": 0.8 } },
+    { "heardAs": "אזוי זאגט דער רד בעז", "work": "Radbaz", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [521, 535, 536], "confidence": 0.75 } },
+    { "heardAs": "דער גמרא זאגט שבת ... כמה מגנה אדער מזון, שנשתנה עולה סדרי בראשית", "work": "Gemara Shabbos", "ref": "Shabbos 53b", "sefariaRef": "Shabbat 53b", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [562, 563, 571, 572], "confidence": 0.8 } },
+    { "heardAs": "דער סמסופר ... ברענגט א מדרש וואס שטעט ותנא להם ומרים", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [576, 577, 578, 599], "confidence": 0.8 } },
+    { "heardAs": "ותנא להם מרים שירה ליד השם כי גוי גוי", "work": "Shemos", "ref": "Shemos 15:21", "sefariaRef": "Exodus 15:21", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [579, 607, 675], "confidence": 0.85 } },
+    { "heardAs": "קדמה שורם אחה נוגנים בסך הלמות תפיפות", "work": "Tehillim", "ref": "Tehillim 68:26", "sefariaRef": "Psalms 68:26", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [582, 583, 588], "confidence": 0.75 } },
+    { "heardAs": "דער גמרא זאגט אין מגילה אז נושא מחייבות ... ביוסי הנס", "work": "Gemara Megillah", "ref": "Megillah 4a", "sefariaRef": "Megillah 4a", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [608, 611, 612], "confidence": 0.85 } },
+    { "heardAs": "דער רשב״ם פשט", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [614, 615, 616], "confidence": 0.75 } },
+    { "heardAs": "פרעגט אויף דעם תוספות דא לשון אף", "work": "Tosafos", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [620, 625, 626], "confidence": 0.75 } },
+    { "heardAs": "זאגט דער שמסופר ... אזוי זאגט אכסם סופר", "work": "Chasam Sofer", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [628, 678], "confidence": 0.8 } },
+    { "heardAs": "אזוי זאגט דער רמב״ן ... ובחוקותי", "work": "Ramban", "ref": "Ramban on Vayikra 26:6", "sefariaRef": "Ramban on Leviticus 26:6", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [684, 686, 716, 721, 725], "confidence": 0.8 } },
+    { "heardAs": "דער סיבה לכל חיות הארץ ... עס קאל ירק אסף ליוחלה", "work": "Bereishis", "ref": "Bereishis 1:30", "sefariaRef": "Genesis 1:30", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [699, 701, 703], "confidence": 0.8 } },
+    { "heardAs": "דער רמב״ן זאגט אויך אין סוף פרשת פחות כותה", "work": "Ramban", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [727, 728], "confidence": 0.65 } },
+    { "heardAs": "ויצא חטא מגוז אישי ונצא משרשף יפרי", "work": "Yeshayahu", "ref": "Yeshayahu 11:1", "sefariaRef": "Isaiah 11:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [733, 734], "confidence": 0.8 } },
+    { "heardAs": "בכל כסאי תליכל, ומת מצוותי תשמרו", "work": "Vayikra", "ref": "Vayikra 26:3", "sefariaRef": "Leviticus 26:3", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [754, 757, 758], "confidence": 0.8 } },
+    { "heardAs": "שחריר רבי יקיבא ... ומת המלך המשיח ... בן קוזיבא", "work": "Rambam, Mishneh Torah", "ref": "Hilchos Melachim 11:3-4", "sefariaRef": "Mishneh Torah, Kings and Wars 11:3-4", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [772, 775, 779, 786, 789], "confidence": 0.75 } },
+    { "heardAs": "ווען ער פרייבט א קשר אויף די רמב״ם פון בן קוזיבא", "work": "Raavad", "ref": "Raavad on Hilchos Melachim 11:3", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [776, 777, 780], "confidence": 0.65 } },
+    { "heardAs": "אליהו הנביא ... הר הקלמל ... השם ה' אלוקים", "work": "Melachim I", "ref": "Melachim I 18-19", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [800, 802, 803, 805], "confidence": 0.75 } },
+    { "heardAs": "לוקחי כלים בשם ה' לעובדי שכם עכד", "work": "Tzefaniah", "ref": "Tzefaniah 3:9", "sefariaRef": "Zephaniah 3:9", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [890], "confidence": 0.65 } },
+    { "heardAs": "מקדש ה' כננא ידכא", "work": "Shemos", "ref": "Shemos 15:17", "sefariaRef": "Exodus 15:17", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [896, 897, 898], "confidence": 0.8 } },
+    { "heardAs": "אזוי ווי שטעט אין ספר יצירה", "work": "Sefer Yetzirah", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [920, 921], "confidence": 0.7 } },
+    { "heardAs": "אורא הגבעה שיפטך באדום ... והיה כי יטש שאתה לעל מים", "work": "Yirmiyahu", "ref": "Yirmiyahu 17:5-8", "sefariaRef": "Jeremiah 17:5-8", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [929, 942, 944, 951], "confidence": 0.85 } },
+    { "heardAs": "חמישי אסאך ושבט ראש השנה לילונות", "work": "Mishnah Rosh Hashanah", "ref": "Rosh Hashanah 1:1", "sefariaRef": "Mishnah Rosh Hashanah 1:1", "resolution": "resolved", "mention": "alluded", "evidence": { "segs": [918, 958], "confidence": 0.75 } }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The prohibition of returning to Egypt explains why the miracle had to happen at the sea: a brachah on a miracle is made at its place, and only a place outside Egypt could be visited to make it.",
+        "yi": "דער איסור צו צוריקגיין קיין מצרים ערקלערט פארוואס דער נס האט געמוזט זיין ביים ים: א ברכה אויף א נס מאכט מען אויפן ארט, און נאר אויף אן ארט אויסער מצרים קען מען קומען זי מאכן."
+      },
+      "evidence": { "segs": [22, 28, 29, 35, 37], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Shabbos cholent, though by nature an unhealthy dish, carries a trace of the mann, since Shabbos food prepared on Erev Shabbos draws the blessing that rested on the mann.",
+        "yi": "דער שבת'דיגער טשאלנט, הגם על פי טבע איז ער נישט קיין געזונטע מאכל, האט אין זיך א הארה פונעם מן, ווייל שבת'דיגע מאכלים וואס מ'גרייט צו ערב שבת ציען די ברכה וואס איז געווען אויפן מן."
+      },
+      "evidence": { "segs": [111, 117, 118, 133, 134], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Laws, decrees and takanos come from the Sages, but minhagim rise from the people, even the simple folk, out of the ruach hakodesh hidden in the collective of Klal Yisroel.",
+        "yi": "הלכות, גזירות און תקנות קומען פון די חכמים, אבער מנהגים קומען פונעם פאלק, אפילו פון פשוטי עם, פונעם רוח הקודש וואס איז באהאלטן אינעם כלל פון כלל ישראל."
+      },
+      "evidence": { "segs": [173, 175, 176, 177], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The names of border cities are expounded because each border hints that every tribe and every person has his own boundary of parnassa that no one else can cross.",
+        "yi": "מ'דרש'נט די נעמען פון שטעט אויף די גבולים, ווייל יעדער גבול איז א רמז אז יעדער שבט און יעדער מענטש האט זיין אייגענעם גבול פון פרנסה וואס קיינער קען נישט אריבערגיין."
+      },
+      "evidence": { "segs": [430, 431, 434, 438, 439], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Shira is said only for what is above nature; since nature exists to protect the tzaddik, the righteous women's rescue was natural, and only the Egyptians' downfall was a miracle for them, which is why Miriam sang just that one passuk.",
+        "yi": "שירה זאגט מען נאר אויף דעם וואס איז העכער פון טבע; וויבאלד די טבע איז דא צו באשיצן דעם צדיק, איז די הצלה פון די צדקניות געווען טבע, און נאר די מפלה פון די מצריים איז ביי זיי געווען א נס, דערפאר האט מרים געזונגען נאר יענעם איין פסוק."
+      },
+      "evidence": { "segs": [630, 638, 661, 662, 676], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rambam and Raavad do not argue in principle: the Rambam cites Yeshayahu, which sets no condition of righteousness, while the Raavad cites Bechukosai, which promises the end of wild beasts only if the Torah is kept, as the Ramban explains.",
+        "yi": "דער רמב\"ם און דער ראב\"ד קריגן זיך נישט בעיקר: דער רמב\"ם ברענגט ישעיה, וואו ס'שטייט נישט קיין תנאי פון צדקות, און דער ראב\"ד ברענגט בחוקותי, וואו עס איז צוגעזאגט אז די חיה רעה וועט אויפהערן נאר אז מען היט די תורה, אזוי ווי דער רמב\"ן ערקלערט."
+      },
+      "evidence": { "segs": [739, 742, 756, 763, 767], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "By not requiring wonders, the Rambam demands more of Moshiach: Eliyahu's fire from heaven did not change the people for long, while Moshiach will move every Jew to leave everything by his word alone.",
+        "yi": "מיט דעם וואס דער רמב\"ם פאדערט נישט קיין מופתים, פאדערט ער מער פון משיח: אליהו'ס פייער פון הימל האט נישט געטוישט דאס פאלק אויף לאנג, און משיח וועט מיט זיין ווארט אליין ברענגען יעדן איד צו איבערלאזן אלעס."
+      },
+      "evidence": { "segs": [799, 805, 806, 820, 828], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Stoliner Rebbe's second plate of cholent", "yi": "דעם סטאלינער רבי'נס צווייטער טעלער טשאלנט" },
+      "retelling": {
+        "en": "The Rav relates what R' Nosson Wachtfogel told: the Stoliner Rebbe in Williamsburg never said Torah at the table, only plain talk in which those who understood heard hints. Once at the Shabbos kiddush, where cholent was served, he spoke at length about cholent, citing Rishonim and the Beis Yosef, to everyone's surprise. He gave R' Nosson a plate of cholent and then asked the gabbai for another plate. When R' Nosson came home, his wife told him the cholent had burned and there was none that day; he had already eaten two portions, one for himself and one for his household.",
+        "yi": "דער משגיח דערציילט וואס ר' נתן וואכטפויגל האט איבערגעגעבן: דער סטאלינער רבי אין וויליאמסבורג האט קיינמאל נישט געזאגט תורה ביים טיש, נאר סתם גערעדט, און די וואס האבן פארשטאנען האבן געהערט רמזים. איינמאל שבת ביים קידוש, וואו מ'האט געטיילט טשאלנט, האט ער לאנג גערעדט וועגן טשאלנט, מיט ראשונים און דעם בית יוסף, און אלע האבן זיך געוואונדערט. ער האט געגעבן ר' נתן א טעלער טשאלנט, און דערנאך געבעטן דעם גבאי נאך א טעלער. ווען ר' נתן איז אהיימגעקומען, האט זיין ווייב געזאגט אז דער טשאלנט איז פארברענט געווארן און היינט איז נישט דא קיין טשאלנט; ער האט שוין געגעסן צוויי חלקים, איינס פאר זיך און איינס פאר די בני בית."
+      },
+      "people": ["the Stoliner Rebbe", "R' Nosson Wachtfogel"],
+      "evidence": { "segs": [194, 198, 209, 216, 219, 220], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The chassid and the roots of the hair", "yi": "דער חסיד און די ווארצלען פון די האר" },
+      "retelling": {
+        "en": "The Rav brings from a Midrash a chassid who heard it expounded that every hair on a person's head has its own root, and no two hairs grow from one root. He concluded that Hashem provides each person his own source. When his wife asked why he did not go out to seek a livelihood, he relied on Hashem, and Hashem indeed helped him and he had parnassa while sitting at home.",
+        "yi": "דער משגיח ברענגט פון א מדרש א חסיד וואס האט געהערט א דרשה אז יעדעס הארל אויפן קאפ האט איר אייגענע גומא, און קיין צוויי הערלעך וואקסן נישט ארויס פון איין גומא. ער האט דערפון געלערנט אז דער אייבערשטער גרייט צו פאר יעדן זיין אייגענעם מקור. ווען זיין ווייב האט אים געפרעגט פארוואס ער גייט נישט ארויס זוכן פרנסה, האט ער זיך פארלאזט אויפן אייבערשטן, און דער אייבערשטער האט אים טאקע געהאלפן, און ער האט געהאט פרנסה זיצנדיג אין דער היים."
+      },
+      "people": [],
+      "evidence": { "segs": [400, 401, 404, 406, 410], "confidence": 0.65 }
+    },
+    {
+      "title": { "en": "What an old man remembered of R' Avraham Kalisker", "yi": "וואס אן אלטער איד האט געדענקט פון ר' אברהם קאליסקער" },
+      "retelling": {
+        "en": "The Rav relates a tradition from the time R' Avraham Kalisker lived in Tzfas: later tzaddikim asked an old man what he remembered of him. He said he did not know what R' Avraham had said and did not understand his words, but when he began to speak it was like someone hammering nails into the heart.",
+        "yi": "דער משגיח דערציילט א קבלה פון דער צייט ווען ר' אברהם קאליסקער איז געווען אין צפת: שפעטערדיגע צדיקים האבן געפרעגט אן אלטן איד וואס ער געדענקט פון אים. ער האט געזאגט אז ער ווייסט נישט וואס ר' אברהם האט געזאגט און ער האט נישט פארשטאנען זיינע ווערטער, אבער ווען ער האט אנגעהויבן רעדן, איז עס געווען ווי איינער קלאפט מיט א האמער נעגל אריין אין הארצן."
+      },
+      "people": ["R' Avraham Kalisker"],
+      "evidence": { "segs": [833, 835, 838, 840, 841, 842], "confidence": 0.8 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "Why did Hashem bring the Jews to the sea instead of drowning the Egyptians in the Nile, which would have been more fitting?", "yi": "פארוואס האט דער אייבערשטער געברענגט די אידן צום ים, אנשטאט צו דערטרינקען די מצריים אינעם נילוס, וואס וואלט מער געפאסט?" },
+      "answer": { "en": "Since one may never return to Egypt, Jews could not make a brachah at a miracle in the Nile; at the sea they could come and bless at the place of the miracle.", "yi": "וויבאלד מ'טאר קיינמאל נישט צוריקגיין קיין מצרים, וואלטן אידן נישט געקענט מאכן א ברכה אויף א נס אינעם נילוס; ביים ים קענען זיי קומען און מאכן א ברכה אויפן מקום הנס." },
+      "questionSegs": [7, 9, 11, 40, 41], "answerSegs": [22, 28, 29, 34, 37], "confidence": 0.8
+    },
+    {
+      "question": { "en": "In simple terms, why were the Jews put in danger at the sea at all?", "yi": "על פי פשט, פארוואס האט מען בכלל אריינגעשטעלט די אידן אין א סכנה ביים ים?" },
+      "answer": { "en": "So that they would face a test of emunah and bitachon, know that only Hashem can help, and in that merit be granted the shira.", "yi": "כדי זיי זאלן האבן א נסיון פון אמונה און בטחון, וויסן אז נאר דער רבונו של עולם קען העלפן, און אין דעם זכות זוכה זיין צו דער שירה." },
+      "questionSegs": [54, 55, 56], "answerSegs": [58, 59, 61, 63, 89], "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why does the Gemara expound the names of cities such as Kinah, Dimonah and Adadah?", "yi": "פארוואס דרש'נט די גמרא די נעמען פון שטעט ווי קינה, דימונה און עדעדה?" },
+      "answer": { "en": "They are border cities, and borders hint that each tribe and each person has his own allotted portion, so the names teach not to encroach on another's livelihood.", "yi": "דאס זענען שטעט אויף די גבולים, און א גבול איז א רמז אז יעדער שבט און יעדער מענטש האט זיין אייגענעם חלק, ממילא לערנען די נעמען אז מ'טאר נישט אריינקריכן אינעם אנדערנ'ס פרנסה." },
+      "questionSegs": [358, 359, 433, 434], "answerSegs": [430, 438, 439, 441, 444], "confidence": 0.7
+    },
+    {
+      "question": { "en": "What did the angels claim against the women singing, what did Miriam answer, and why did the women sing only one passuk?", "yi": "וואס האבן די מלאכים טענה'ט קעגן די נשים'ס זינגען, וואס האט מרים געענטפערט, און פארוואס האבן די נשים געזונגען נאר איין פסוק?" },
+      "answer": { "en": "The angels held that the righteous women's rescue was natural and needed no shira; Miriam answered with the passuk about the Egyptians' downfall, the one part that was a miracle for them too.", "yi": "די מלאכים האבן געהאלטן אז די הצלה פון די צדקניות איז געווען טבע און פאדערט נישט קיין שירה; מרים האט געענטפערט מיטן פסוק וועגן דער מפלה פון די מצריים, דער איינציגער חלק וואס איז ביי זיי אויך געווען א נס." },
+      "questionSegs": [595, 601, 603, 605], "answerSegs": [668, 672, 673, 675, 676], "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why does the Rambam insist, as a halachah, that the world will follow its course in the days of Moshiach?", "yi": "פארוואס לייגט זיך דער רמב\"ם אוועק, ווי א הלכה, אז לימות המשיח וועט די וועלט זיך פירן ווי געווענליך?" },
+      "answer": { "en": "Because nature is itself the order of the Torah, and a change in the order of creation is not a praise, as the Gemara in Shabbos shows.", "yi": "ווייל די טבע אליין איז דער סדר התורה, און א שינוי אין סדרי בראשית איז נישט קיין שבח, אזוי ווי די גמרא אין שבת ווייזט." },
+      "questionSegs": [542, 543, 548, 552], "answerSegs": [554, 556, 561, 572, 574], "confidence": 0.75
+    },
+    {
+      "question": { "en": "How can the Raavad object to the Rambam from 'I will remove wild beasts', if the Rambam's pesukim of Yeshayahu are parables?", "yi": "וויאזוי פרעגט דער ראב\"ד אויפן רמב\"ם פון \"והשבתי חיה רעה\", אז דער רמב\"ם זאגט אז די פסוקים פון ישעיה זענען א משל?" },
+      "answer": { "en": "Yeshayahu sets no condition that the Jews will be tzaddikim, so it can be a parable; the passuk in Bechukosai is conditioned on keeping the Torah, and then, as the Ramban says, nature returns to before the sin, literally.", "yi": "ביי ישעיה שטייט נישט קיין תנאי אז אידן וועלן זיין צדיקים, ממילא קען עס זיין א משל; דער פסוק אין בחוקותי איז בתנאי אז מען היט די תורה, און דעמאלט, אזוי ווי דער רמב\"ן זאגט, קערט זיך די טבע אום צו פארן חטא, כפשוטו." },
+      "questionSegs": [518, 519, 730], "answerSegs": [739, 756, 763, 767, 768], "confidence": 0.7
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Rav says a Jew must be able to swallow a question on Hashem, keep serving Him, and clothe himself in simple emunah that Hashem knows how to run the world.", "yi": "דער משגיח זאגט אז א איד דארף קענען אראפשלינגען א קשיא אויפן רבונו של עולם, ווייטער דינען דעם אייבערשטן, און זיך אנטון אין אמונה פשוטה אז דער רבונו של עולם ווייסט וויאזוי צו פירן די וועלט." },
+      "evidence": { "segs": [165, 166, 169], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Rav calls to say the Shiras hayam on this Shabbos together and with joy, and to come to davening on time for it.", "yi": "דער משגיח רופט צו זאגן שירת הים אום דעם שבת צוזאמען און בשמחה, און קומען צו דער צייט צום דאווענען." },
+      "evidence": { "segs": [454, 457, 459], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "The Rav says one should leave Parshas Beshalach with full suitcases of emunah, bitachon and joy in Hashem, and not let this Shabbos pass empty.", "yi": "דער משגיח זאגט אז מ'זאל ארויסגיין פון פרשת בשלח מיט פולע טשעמאדאנעס פון אמונה, בטחון און שמחה אינעם רבונו של עולם, און נישט לאזן דעם שבת אוועקגיין ליידיג." },
+      "evidence": { "segs": [903, 905, 906, 907], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "The Rav says the fruits of Tu Bishvat should be eaten the way the mann was eaten, with emunah.", "yi": "דער משגיח זאגט אז די פירות פון ט\"ו בשבט דארף מען עסן אזוי ווי דעם מן, מיט אמונה." },
+      "evidence": { "segs": [924, 925, 926], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "The Rav calls on each person this Shabbos to decide what kind of tree he wants to be, and to begin working on himself little by little to become the tree planted by water.", "yi": "דער משגיח רופט יעדן אום דעם שבת צו באשליסן וואספארא סארט בוים ער וויל זיין, און אנהייבן ארבעטן אויף זיך ביסלעכווייז צו ווערן דער בוים וואס איז געפלאנצט ביים וואסער." },
+      "evidence": { "segs": [962, 964, 965, 969], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "Parshas Beshalach",
+    "splitting of the sea",
+    "the mann and emunah",
+    "bitachon in parnassa",
+    "Shabbos cholent",
+    "days of Moshiach",
+    "Rambam and Raavad on nature in the days of Moshiach",
+    "shira of the women",
+    "nature serving the tzaddik",
+    "Tu Bishvat"
+  ],
+  "concepts": [
+    { "he": "רבונו של עולם", "heardAs": ["רבינו שלום", "רביה שלום", "רבונו שלענ'ען", "רביה׳ן של עולם"] },
+    { "he": "אמונה", "heardAs": ["אמנה", "אמאנע", "נאמנה"] },
+    { "he": "בטחון", "heardAs": ["בטחן", "בצרכים", "בטחה'נען"] },
+    { "he": "מן", "heardAs": ["מאן", "מון", "מנה", "מוין"] },
+    { "he": "קריעת ים סוף", "heardAs": ["קריאת ים סוף", "קריאת ימסא", "כקריעת ים2"] },
+    { "he": "מקום הנס", "heardAs": ["מקום הנס"] },
+    { "he": "שירה", "heardAs": ["שורה", "שטירע", "שורי"] },
+    { "he": "רוח הקודש", "heardAs": ["רוח הקידש", "רוח הקידוש"] },
+    { "he": "אמונת חכמים", "heardAs": ["אמונת חכמים", "אמנות חכמים"] },
+    { "he": "תחיית המתים", "heardAs": ["חיית המתים", "זכי' פארמעסטער"] },
+    { "he": "השגחה פרטית", "heardAs": ["השגחה פראטעסט"] },
+    { "he": "י\"ג עיקרים", "heardAs": ["י' ג' עקחים", "י' ג' עקרא'ם"] },
+    { "he": "ימות המשיח", "heardAs": ["ימות המשיח", "ימי שמשיך"] },
+    { "he": "סדרי בראשית", "heardAs": ["סדרי בראשית", "סודרי בראשית"] },
+    { "he": "אף הן היו באותו הנס", "heardAs": ["אף הינו וביוסי הנס", "אפהי' אייב יעשי הנס"] },
+    { "he": "צנצנת המן", "heardAs": ["צנצנת המון", "סענת המנה"] },
+    { "he": "ראש השנה לאילנות", "heardAs": ["ראש השנה לילונות", "ראש השנה לילה נת"] },
+    { "he": "משמרות", "heardAs": ["משמרות", "משמר"] }
+  ],
+  "people": [
+    { "name": "the Chasam Sofer", "heardAs": ["תחתם סופר", "דכתם סופר", "דער סמסופר", "שמסופר", "אכסם סופר"] },
+    { "name": "Nachshon ben Aminadav", "heardAs": ["שם בן עמינדב"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו", "בן עמרון", "בן עמרי'ם"] },
+    { "name": "Miriam", "heardAs": ["מרים"] },
+    { "name": "Rashi", "heardAs": ["רשע"] },
+    { "name": "the Bnei Yissaschar", "heardAs": ["בני יששכר"] },
+    { "name": "Rabbeinu Bachya", "heardAs": ["רבינו בחייה"] },
+    { "name": "R' Elazar Mendel", "heardAs": ["רבי אלעזר מנדל", "ר' אלעזר מנדל"] },
+    { "name": "the Stoliner Rebbe", "heardAs": ["סטאלינער רבי"] },
+    { "name": "R' Nosson Wachtfogel", "heardAs": ["ר' נתן וואכצאלגער", "ר' נתן וואך טאלגל"] },
+    { "name": "Dasan and Aviram", "heardAs": ["די צוויי רשעים"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "the Raavad", "heardAs": ["רעבעט", "ראטווייז", "אייבוד", "אייוועד"] },
+    { "name": "the Radbaz", "heardAs": ["רד בעז"] },
+    { "name": "the Ramban", "heardAs": ["רמב״ן"] },
+    { "name": "Rashbam", "heardAs": ["רשב״ם", "רשביים"] },
+    { "name": "Rabbi Akiva", "heardAs": ["רבי יקיבא"] },
+    { "name": "Ben Koziba", "heardAs": ["בן קוזיבא"] },
+    { "name": "Eliyahu HaNavi", "heardAs": ["אליהו הנביא"] },
+    { "name": "R' Avraham Kalisker", "heardAs": ["רב אברהם קאליסקער"] },
+    { "name": "Yirmiyahu HaNavi", "heardAs": ["יראי מראי הנביא"] },
+    { "name": "Adam HaRishon", "heardAs": ["אדם ראשון", "אדם הראשון"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair for the Rav's own speech but Hebrew quotations (pesukim, the Rambam, Ramban and Midrash) are heavily garbled and were recovered from context. The authorship attributed at seg 268 for the twelve paths of the sea, the source on mishmaros at seg 384, the book cited at seg 180 on telling stories of tzaddikim, and what was seen from R' Elazar Mendel at seg 149-150 could not be recovered. Seg 870 is flagged noise inside a passage about disputes over a Beis Hamikdash; its tail is unclear and was not used."
+}

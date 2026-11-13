@@ -1,0 +1,536 @@
+{
+  "shiurId": "en-zmanim-en-psch-07",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that the descendants of Haman who learned Torah in Bnei Brak carried a hidden holy point from Timna, and that the Tannaim came to Bnei Brak on Pesach to lift them to the level of Krias Shema.",
+      "yi": "דער משגיח ערקלערט אז די אייניקלעך פון המן וואס האבן געלערנט תורה אין בני ברק האבן געטראגן א באהאלטענע הייליגע נקודה פון תמנע, און די תנאים זענען געקומען קיין בני ברק אום פסח זיי אויפצוהייבן צו דער מדרגה פון קריאת שמע."
+    },
+    "abstract": {
+      "en": "The Rav opens with a sefer's words that on Pesach a Jew can leave his straits not step by step. He then asks how descendants of Haman could learn Torah in Bnei Brak, when Hashem swore no converts would come from Amalek. His answer runs through Timna: she longed to cling to Avraham's family, and as a mere pilegesh to Eliphaz her holy point never merged with Amalek. Bringing the Kedushas Levi, he explains that Esther's seudah, prepared from Pesach food, drew Haman briefly out of tumah, and suggests that Zeresh, who escaped, carried that spark to the forebears of Rav Shmuel bar Shilas. Haman's descendants could not say Krias Shema of Shacharis, because of Zeresh's advice to hang Mordechai at daybreak. The Tannaim therefore came to Bnei Brak on Pesach and lifted Timna's children to Shema Yisrael. He closes with the father's descent to his children on Seder night.",
+      "yi": "דער משגיח עפנט מיט א ספר וואס זאגט אז אום פסח קען א איד ארויסגיין פון זיינע מיצרים שלא בהדרגה. דערנאך פרעגט ער ווי אזוי קענען אייניקלעך פון המן לערנען תורה אין בני ברק, ווען דער אייבערשטער האט געשוואוירן אז ס'וועלן נישט זיין קיין גרים פון עמלק. דער תירוץ גייט דורך תמנע: זי האט געהאט א חשק זיך מדבק צו זיין אין זרע אברהם, און ווייל זי איז געווען בלויז א פילגש ביי אליפז, האט איר הייליגע נקודה זיך קיינמאל נישט פארמישט מיט עמלק. מיט דעם קדושת לוי ערקלערט ער אז אסתר'ס סעודה, פון פסח'דיגע מאכלים, האט המן ארויסגעצויגן פון דער טומאה אויף א רגע, און ער זאגט אז זרש, וואס איז אנטלאפן, האט געטראגן יענעם ניצוץ צו די אבות פון רב שמואל בר שילת. המנ'ס אייניקלעך האבן נישט געקענט זאגן קריאת שמע של שחרית, צוליב זרש'ס עצה צו הענגען מרדכי אינדערפרי. דערפאר זענען די תנאים געקומען קיין בני ברק אום פסח און האבן אויפגעהויבן די קינדער פון תמנע ביז שמע ישראל. ער שליסט מיט דעם וואס דער טאטע דארף אראפגיין צו זיינע קינדער ליל פסח."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The Rav quotes a sefer that on Pesach a Jew can leave his straits all at once, not step by step as at other times.",
+          "yi": "דער משגיח ברענגט פון א ספר אז אום פסח קען א איד ארויסגיין פון זיינע מיצרים מיט איין מאל, נישט שטופנווייז ווי אנדערע צייטן."
+        },
+        "evidence": { "segs": [0, 1, 591, 595, 596], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Timna's longing to join Avraham's family was never lost; because she was only a pilegesh, her point stayed separate from Esav's and Amalek's seed.",
+          "yi": "תמנע'ס חשק זיך צו באהעפטן מיט זרע אברהם איז קיינמאל נישט פארלוירן געגאנגען; ווייל זי איז נאר געווען א פילגש, איז איר נקודה געבליבן אפגעזונדערט פון זרע עשו און עמלק."
+        },
+        "evidence": { "segs": [105, 132, 149, 164, 169], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "That separate holy point is what allowed descendants of Haman to convert and learn Torah in Bnei Brak, among them Rav Shmuel bar Shilas.",
+          "yi": "די אפגעזונדערטע הייליגע נקודה האט ערמעגליכט אז אייניקלעך פון המן זאלן זיך מגייר זיין און לערנען תורה אין בני ברק, צווישן זיי רב שמואל בר שילת."
+        },
+        "evidence": { "segs": [185, 189, 304, 306], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Esther's seudah, made from Pesach food, brought Haman to the border of kedusha and roused in him the point from which Rav Shmuel bar Shilas would come.",
+          "yi": "אסתר'ס סעודה, פון פסח'דיגע מאכלים, האט געברענגט המן צום גבול פון קדושה און האט אין אים אויפגעוועקט די נקודה פון וועלכן ס'איז ארויסגעקומען רב שמואל בר שילת."
+        },
+        "evidence": { "segs": [209, 243, 458, 465, 467], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Haman's descendants could not say Krias Shema of Shacharis, a trait from Zeresh's advice to hang Mordechai at daybreak; the Tannaim came to Bnei Brak on Pesach to lift them out of it.",
+          "yi": "המנ'ס אייניקלעך האבן נישט געקענט זאגן קריאת שמע של שחרית, א קליפה פון זרש'ס עצה צו הענגען מרדכי באלד אינדערפרי; די תנאים זענען געקומען קיין בני ברק אום פסח זיי ארויסצונעמען דערפון."
+        },
+        "evidence": { "segs": [568, 569, 610, 649, 658], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "On Seder night a father must go down from his highest levels and tell his young children the story of Yetzias Mitzrayim.",
+          "yi": "ליל פסח דארף דער טאטע אראפגיין פון זיינע העכסטע מדרגות און דערציילן זיינע קליינע קינדער סיפור יציאת מצרים."
+        },
+        "evidence": { "segs": [728, 731, 734, 736], "confidence": 0.85 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-zman-nissan-pesach-02-07-pesach-e",
+      "startSeg": 0,
+      "endSeg": 96,
+      "title": {
+        "en": "Timna and the descendants of Haman in Bnei Brak",
+        "yi": "תמנע און המנ'ס אייניקלעך אין בני ברק"
+      },
+      "summary": {
+        "en": "After opening with a sefer's words that on Pesach one can leave his straits all at once, the Rav brings the Gemara about Menashe mocking the passuk of Timna and the Gemara that Haman's descendants learned Torah in Bnei Brak. He asks how this fits with the Midrash that no converts are accepted from Amalek.",
+        "yi": "נאכן עפענען מיט א ספר אז אום פסח קען מען ארויסגיין פון די מיצרים מיט איין מאל, ברענגט דער משגיח די גמרא וועגן מנשה וואס האט חוזק געמאכט פונעם פסוק פון תמנע, און די גמרא אז מבני בניו של המן למדו תורה בבני ברק. ער פרעגט ווי אזוי דאס שטימט מיט דעם מדרש אז מ'נעמט נישט אן קיין גרים פון עמלק."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-07-pesach-e",
+      "startSeg": 97,
+      "endSeg": 190,
+      "title": {
+        "en": "Timna's longing and the pilegesh who stays apart",
+        "yi": "תמנע'ס חשק און א פילגש וואס בלייבט אפגעזונדערט"
+      },
+      "summary": {
+        "en": "The Rav explains that a real longing shows a connection and is never lost, and that the first point of a thing endures even when hidden. Since Timna was only a pilegesh, who keeps her own identity unlike a wife, her point of longing for Avraham's seed stayed separate from Esav's seed and came out in Haman's descendants in Bnei Brak.",
+        "yi": "דער משגיח ערקלערט אז א אמת'ער חשק ווייזט אויף א שייכות און גייט קיינמאל נישט פארלוירן, און די ערשטע נקודה פון א זאך בלייבט אפילו ווען זי איז באהאלטן. ווייל תמנע איז נאר געווען א פילגש, וואס בלייבט ביי איר אייגענע מציאות נישט ווי אן אשה, איז איר נקודה פון חשק צו זרע אברהם געבליבן אפגעזונדערט פון זרע עשו און איז ארויסגעקומען ביי המנ'ס אייניקלעך אין בני ברק."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-07-pesach-e",
+      "startSeg": 191,
+      "endSeg": 306,
+      "title": {
+        "en": "Haman's simcha and the escape of Zeresh",
+        "yi": "המנ'ס שמחה און זרש'ס אנטלויפן"
+      },
+      "summary": {
+        "en": "The Rav brings the Kedushas Levi's question how Haman could leave Esther's seudah happy when simcha exists only in kedusha: the seudah drew him out of tumah to the border of kedusha, leaving him no source of life. Comparing this to Agag, he suggests that Zeresh, who escaped, carried from that night the spark of Timna that later surfaced in Haman's descendants in Bnei Brak.",
+        "yi": "דער משגיח ברענגט דעם קדושת לוי'ס קשיא ווי אזוי איז המן ארויס פון אסתר'ס סעודה שמח, ווען שמחה איז נאר אין קדושה: די סעודה האט אים ארויסגעצויגן פון דער טומאה צום גבול פון קדושה, און ער איז געבליבן אן א יניקה. ער פארגלייכט עס צו אגג, און זאגט אז זרש, וואס איז אנטלאפן, האט פון יענער נאכט געטראגן דעם ניצוץ פון תמנע וואס איז שפעטער ארויסגעקומען ביי המנ'ס אייניקלעך אין בני ברק."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-07-pesach-e",
+      "startSeg": 307,
+      "endSeg": 387,
+      "title": {
+        "en": "Ad d'lo yada: giving life to the holy spark",
+        "yi": "עד דלא ידע: חיות פאר דעם הייליגן ניצוץ"
+      },
+      "summary": {
+        "en": "The Rav brings the Ari HaKadosh's explanation of drinking until one does not know between cursed Haman and blessed Mordechai: a blessing on Haman said in drunkenness gives life to the holy point in him without feeding his klipah. He adds that a Jew who blesses Zeresh, perhaps Shilas the mother of Rav Shmuel, helps bring forth such a child.",
+        "yi": "דער משגיח ברענגט דעם אר\"י הקדוש'ס ביאור אויף חייב איניש לבסומי עד דלא ידע: א ברכה אויף המן וואס מ'זאגט אין שכרות גיט חיות צו דער הייליגער נקודה אין אים אן צו שפייזן די קליפה. ער לייגט צו אז א איד וואס בענטשט זרש, אפשר שילת די מאמע פון רב שמואל, העלפט ארויסברענגען אזא קינד."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-07-pesach-e",
+      "startSeg": 388,
+      "endSeg": 515,
+      "title": {
+        "en": "Esther's Pesach seudah and Rav Shmuel bar Shilas",
+        "yi": "אסתר'ס פסח'דיגע סעודה און רב שמואל בר שילת"
+      },
+      "summary": {
+        "en": "The Rav notes that Rav Shmuel bar Shilas is the source of the teaching that when Adar enters one increases simcha. Esther's seudah was made from the Pesach food she had prepared and not eaten during the fast, and Achashverosh loved such food; that kedusha gave Haman his simcha and roused the point of Rav Shmuel bar Shilas, so that his descendant taught the law of simcha.",
+        "yi": "דער משגיח מערקט אן אז רב שמואל בר שילת איז דער מקור פון משנכנס אדר מרבין בשמחה. אסתר'ס סעודה איז געמאכט געווארן פון די פסח'דיגע מאכלים וואס זי האט צוגעגרייט און נישט געגעסן ווייל מ'האט געפאסט, און אחשורוש האט ליב געהאט אזעלכע מאכלים; די קדושה האט געגעבן המן זיין שמחה און אויפגעוועקט די נקודה פון רב שמואל בר שילת, אזוי אז זיין אייניקל האט געזאגט די הלכה פון שמחה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-07-pesach-e",
+      "startSeg": 516,
+      "endSeg": 603,
+      "title": {
+        "en": "Why Haman's descendants could not say Krias Shema",
+        "yi": "פארוואס המנ'ס אייניקלעך האבן נישט געקענט זאגן קריאת שמע"
+      },
+      "summary": {
+        "en": "The Rav suggests that Haman's descendants in Bnei Brak could not say Krias Shema of Shacharis, comparing it to people who tell him they cannot say Krias Shema from overconcentration. He traces it to the Midrash on Zeresh's advice to hang Mordechai at daybreak, to stop his Krias Shema, and repeats that on Pesach a Jew can leap out of tumah.",
+        "yi": "דער משגיח זאגט אז המנ'ס אייניקלעך אין בני ברק האבן נישט געקענט זאגן קריאת שמע של שחרית, אזוי ווי מענטשן וואס קלאגן זיך פאר אים אז זיי קענען נישט זאגן קריאת שמע פון צופיל קאנצענטרירן. ער ברענגט עס צו דעם מדרש אויף זרש'ס עצה צו הענגען מרדכי באלד אינדערפרי, כדי מבטל צו זיין זיין קריאת שמע, און ער איבערחזרט אז אום פסח קען א איד ארויסשפרינגען פון דער טומאה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-07-pesach-e",
+      "startSeg": 604,
+      "endSeg": 694,
+      "title": {
+        "en": "The Tannaim come to Bnei Brak on Pesach",
+        "yi": "די תנאים קומען קיין בני ברק אום פסח"
+      },
+      "summary": {
+        "en": "The Rav explains that the Tannaim chose Pesach to come to Bnei Brak and tell of Yetzias Mitzrayim, intending to benefit the souls of Haman's descendants and break Zeresh's klipah. He brings a sefer that mentioning Yetzias Mitzrayim relieves distress, and the Rambam in Perek Chelek that Shema Yisrael and 'va'achos Lotan Timna' are equally Torah.",
+        "yi": "דער משגיח ערקלערט אז די תנאים האבן אויסגעקליבן פסח צו קומען קיין בני ברק און מספר זיין ביציאת מצרים, מיט דער כוונה צו טון א טובה פאר די נשמות פון המנ'ס אייניקלעך און צוברעכן זרש'ס קליפה. ער ברענגט א ספר אז דערמאנען יציאת מצרים נעמט אראפ די צרות, און דעם רמב\"ם אין פרק חלק אז שמע ישראל און ואחות לוטן תמנע זענען גלייך תורה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-07-pesach-e",
+      "startSeg": 695,
+      "endSeg": 751,
+      "title": {
+        "en": "From Timna to Shema; going down to the children",
+        "yi": "פון תמנע ביז שמע; אראפגיין צו די קינדער"
+      },
+      "summary": {
+        "en": "The Rav concludes that the Tannaim lifted the children of Timna, the 'lowest' passuk, to the level of saying Krias Shema, with the power of Pesach. He describes the holiness of Seder night and says that the Torah asks a great man to go down from his heights to tell his small children of Yetzias Mitzrayim, joining 'va'achos Lotan Timna' to Shema Yisrael.",
+        "yi": "דער משגיח שליסט אז די תנאים האבן אויפגעהויבן די קינדער פון תמנע, דעם 'נידעריגסטן' פסוק, צו דער מדרגה פון זאגן קריאת שמע, מיטן כח פון פסח. ער שילדערט די קדושה פון ליל פסח און זאגט אז די תורה פארלאנגט פון א גרויסן מענטש אראפצוגיין פון זיינע מדרגות און דערציילן זיינע קליינע קינדער יציאת מצרים, און אזוי פארבינדן ואחות לוטן תמנע מיט שמע ישראל."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "Rasmus writes that Ayid is m'choyev to believe",
+      "work": null, "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased",
+      "evidence": { "segs": [0, 1, 4, 585, 586], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Gemara says that Menashe ... He ridiculed",
+      "work": "Gemara Sanhedrin", "ref": "Sanhedrin 99b", "sefariaRef": "Sanhedrin 99b",
+      "resolution": "resolved", "mention": "paraphrased",
+      "evidence": { "segs": [34, 36, 44, 49, 62, 66], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "V'chais Leiton Timnah",
+      "work": "Bereishis", "ref": "Bereishis 36:22", "sefariaRef": "Genesis 36:22",
+      "resolution": "resolved", "mention": "quoted",
+      "evidence": { "segs": [49, 55, 694], "confidence": 0.9 }
+    },
+    {
+      "heardAs": "she became a Pelegash to Eliphaz Ben-Eisab",
+      "work": "Bereishis", "ref": "Bereishis 36:12", "sefariaRef": "Genesis 36:12",
+      "resolution": "resolved", "mention": "alluded",
+      "evidence": { "segs": [101, 136], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "B'v'nei B'nafshel Haman lamdu Taira b'v'nei Barak",
+      "work": "Gemara Gittin", "ref": "Gittin 57b", "sefariaRef": null,
+      "resolution": "inferred", "mention": "quoted",
+      "evidence": { "segs": [74, 75, 76, 78], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "there is a Madrash, Nish Ba HaKadosh Baruch Hu",
+      "work": "Midrash", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased",
+      "evidence": { "segs": [93, 94], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Pichit Tzadik",
+      "work": "Pri Tzaddik", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased",
+      "evidence": { "segs": [114, 115, 116, 118], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "the Kiddush's lady asks the Kasha; the Kedusha Suleyvi explains",
+      "work": "Kedushas Levi", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased",
+      "evidence": { "segs": [191, 192, 240], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "V'yayetziya Haman v'yaymehu Sameach",
+      "work": "Megillas Esther", "ref": "Esther 5:9", "sefariaRef": "Esther 5:9",
+      "resolution": "resolved", "mention": "quoted",
+      "evidence": { "segs": [469, 470, 246, 247], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "like we find by Agag",
+      "work": null, "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "alluded",
+      "evidence": { "segs": [248, 249, 252, 254], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "The Talmud says Zeresh she escaped",
+      "work": null, "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased",
+      "evidence": { "segs": [271, 273, 274, 277], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Ariya Kaddish says; the Raya Kedush says",
+      "work": null, "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased",
+      "evidence": { "segs": [333, 334, 364], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "mitzvah lepsumi beporia ad dolayada ben ha'aro ha'aman lebarach maradchai",
+      "work": "Gemara Megillah", "ref": "Megillah 7b", "sefariaRef": "Megillah 7b",
+      "resolution": "resolved", "mention": "quoted",
+      "evidence": { "segs": [333], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Rav Shmua Bashilas, in the Gemara Ta'ynis ... Mishenichnes Ado, Ma'avn B'Simcha",
+      "work": "Gemara Taanis", "ref": "Taanis 29a", "sefariaRef": "Taanit 29a",
+      "resolution": "resolved", "mention": "quoted",
+      "evidence": { "segs": [389, 393, 394, 395], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "It says in Medrash that he gave him a Soud as Eretz Yisrael",
+      "work": "Midrash", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased",
+      "evidence": { "segs": [416, 420], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "the Yairas Vash makes a Khashbin",
+      "work": "Yaaros Devash", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased",
+      "evidence": { "segs": [437, 438, 442], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "Yove HaMelech V'Haman HaYayim Ala Mishnah",
+      "work": "Megillas Esther", "ref": "Esther 5:4", "sefariaRef": "Esther 5:4",
+      "resolution": "resolved", "mention": "quoted",
+      "evidence": { "segs": [502, 503, 504, 507, 508, 509], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the message says why Bayka ... So the Mezuch says",
+      "work": "Midrash", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased",
+      "evidence": { "segs": [543, 545, 554, 555, 556], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Bayka means at the beginning",
+      "work": "Megillas Esther", "ref": "Esther 5:14", "sefariaRef": "Esther 5:14",
+      "resolution": "inferred", "mention": "alluded",
+      "evidence": { "segs": [545, 546, 551], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "like some cipher says",
+      "work": null, "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased",
+      "evidence": { "segs": [616, 622, 623], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "Zacher Tizker HaSharas Hashem Mitzrayim ... Rabban Goyim HaEle Mimani",
+      "work": "Devarim", "ref": "Devarim 7:17-18", "sefariaRef": "Deuteronomy 7:17-18",
+      "resolution": "resolved", "mention": "quoted",
+      "evidence": { "segs": [617, 618, 619, 620], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Rambam says in Pirash HaMishnayas ... in Paira Kheilik",
+      "work": "Rambam, Commentary on the Mishnah", "ref": "Commentary on the Mishnah, Sanhedrin ch. 10 (Perek Chelek), the principles of faith", "sefariaRef": null,
+      "resolution": "inferred", "mention": "paraphrased",
+      "evidence": { "segs": [659, 660, 662, 663, 671, 677], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Shema Yisrael; Vishmai Yisra Vashem Malakayna Vashem Echad",
+      "work": "Devarim", "ref": "Devarim 6:4", "sefariaRef": "Deuteronomy 6:4",
+      "resolution": "resolved", "mention": "quoted",
+      "evidence": { "segs": [675, 684, 750], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the Yitanoim who had those Talmidim who lived in the B'nai Barak that couldn't link Chishma Shachas",
+      "work": "Haggadah shel Pesach", "ref": "Haggadah, Maggid (Maaseh b'Rabbi Eliezer)", "sefariaRef": null,
+      "resolution": "inferred", "mention": "alluded",
+      "evidence": { "segs": [571, 572, 573, 575, 634], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "the Svarim say that you even have two heiligen nights",
+      "work": null, "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased",
+      "evidence": { "segs": [712, 713, 714], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Leil Shemur Mu Hu HaShem ... Hu HaLeil Azeh",
+      "work": "Shemos", "ref": "Shemos 12:42", "sefariaRef": "Exodus 12:42",
+      "resolution": "resolved", "mention": "quoted",
+      "evidence": { "segs": [715, 716], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Anoich Hashem l'kecha shesih hamerat Mitzrayim",
+      "work": "Shemos", "ref": "Shemos 20:2", "sefariaRef": "Exodus 20:2",
+      "resolution": "resolved", "mention": "quoted",
+      "evidence": { "segs": [741, 742], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "A isha is ki me'ish lukacha zays",
+      "work": "Bereishis", "ref": "Bereishis 2:23", "sefariaRef": "Genesis 2:23",
+      "resolution": "resolved", "mention": "quoted",
+      "evidence": { "segs": [143], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "so the Torah says ... talk to your tiny children",
+      "work": "Shemos", "ref": "Shemos 13:8", "sefariaRef": null,
+      "resolution": "inferred", "mention": "alluded",
+      "evidence": { "segs": [724, 728, 731], "confidence": 0.65 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav reads the halachic status of a pilegesh spiritually: unlike a wife, who merges with her husband, a pilegesh keeps her own identity, so Timna's holy longing passed through Amalek's line without ever becoming part of it.",
+        "yi": "דער משגיח טייטשט דעם דין פון א פילגש אויף א רוחניות'דיגן אופן: נישט ווי אן אשה וואס ווערט בטל צו איר מאן, בלייבט א פילגש ביי איר אייגענע מציאות, און דערפאר איז תמנע'ס הייליגער חשק דורכגעגאנגען דורך עמלק'ס זרע אן ווערן א חלק דערפון."
+      },
+      "evidence": { "segs": [138, 145, 149, 164, 169], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "Esther's seudah destroyed Haman by drawing him out of tumah to the edge of kedusha, which he could not enter, so that he was left with no source of life at all.",
+        "yi": "אסתר'ס סעודה האט פארניכטעט המן דורך אים ארויסציען פון דער טומאה צום ברעג פון קדושה, וואו ער האט נישט געקענט אריינגיין, אזוי אז ער איז געבליבן אן שום יניקה."
+      },
+      "evidence": { "segs": [218, 225, 229, 233, 234], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Rav Shmuel bar Shilas, a descendant of Haman, is the one who taught that when Adar enters one increases simcha, because his root lay in the simcha Haman drew from Esther's Pesach seudah.",
+        "yi": "רב שמואל בר שילת, אן אייניקל פון המן, איז דער וואס האט געזאגט משנכנס אדר מרבין בשמחה, ווייל זיין שורש איז געווען אין דער שמחה וואס המן האט באקומען פון אסתר'ס פסח'דיגער סעודה."
+      },
+      "evidence": { "segs": [389, 394, 477, 479, 480], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav connects the Haggadah's Bnei Brak to Haman's descendants: the talmidim who could not reach Krias Shema of Shacharis carried Zeresh's attempt to stop Mordechai's morning Shema, and the Tannaim chose Pesach to free them.",
+        "yi": "דער משגיח פארבינדט בני ברק פון דער הגדה מיט המנ'ס אייניקלעך: די תלמידים וואס האבן נישט געקענט צוקומען צו קריאת שמע של שחרית האבן געטראגן זרש'ס פרואוו אפצושטעלן מרדכי'ס קריאת שמע אינדערפרי, און די תנאים האבן אויסגעקליבן פסח זיי צו באפרייען."
+      },
+      "evidence": { "segs": [556, 568, 569, 572, 575, 604], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rambam's pairing of Shema Yisrael with 'va'achos Lotan Timna' becomes the story of Bnei Brak: the Tannaim lifted the children of the passuk Menashe mocked to the level of Shema.",
+        "yi": "דעם רמב\"ם'ס צוזאמשטעלן שמע ישראל מיט ואחות לוטן תמנע ווערט די מעשה פון בני ברק: די תנאים האבן אויפגעהויבן די קינדער פונעם פסוק וואס מנשה האט חוזק געמאכט ביז דער מדרגה פון שמע."
+      },
+      "evidence": { "segs": [684, 686, 694, 696, 706], "confidence": 0.8 }
+    }
+  ],
+  "stories": [],
+  "questions": [
+    {
+      "question": {
+        "en": "How could descendants of Haman learn Torah in Bnei Brak, when Hashem swore that no converts would come from Amalek?",
+        "yi": "ווי אזוי האבן אייניקלעך פון המן געקענט לערנען תורה אין בני ברק, ווען דער אייבערשטער האט געשוואוירן אז ס'וועלן נישט זיין קיין גרים פון עמלק?"
+      },
+      "answer": {
+        "en": "They came from Timna's holy point, which as a pilegesh never merged with Amalek's seed and remained independent through the generations.",
+        "yi": "זיי זענען געקומען פון תמנע'ס הייליגער נקודה, וואס ווייל זי איז געווען א פילגש האט זיך קיינמאל נישט פארמישט מיט זרע עמלק און איז געבליבן אפגעזונדערט דורך די דורות."
+      },
+      "questionSegs": [93, 94, 95, 96],
+      "answerSegs": [97, 164, 169, 304, 305, 306],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "How could Haman leave Esther's seudah happy, when simcha exists only in kedusha?",
+        "yi": "ווי אזוי איז המן ארויס פון אסתר'ס סעודה שמח, ווען שמחה איז נאר אין קדושה?"
+      },
+      "answer": {
+        "en": "The seudah, made in kedusha, drew him out of his tumah to the border of kedusha, and there he felt simcha.",
+        "yi": "די סעודה, וואס איז געמאכט געווארן בקדושה, האט אים ארויסגעצויגן פון זיין טומאה צום גבול פון קדושה, און דארט האט ער געפילט שמחה."
+      },
+      "questionSegs": [192, 194, 197, 200],
+      "answerSegs": [209, 211, 243, 244, 245],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why must one drink on Purim until he does not know between cursed Haman and blessed Mordechai?",
+        "yi": "פארוואס דארף מען זיך מבסם זיין אום פורים עד דלא ידע בין ארור המן לברוך מרדכי?"
+      },
+      "answer": {
+        "en": "According to the Ari HaKadosh, a blessing on Haman said in drunkenness gives life only to the holy spark in him; said soberly, it might feed his klipah.",
+        "yi": "לויט דעם אר\"י הקדוש, א ברכה אויף המן וואס מ'זאגט אין שכרות גיט חיות נאר צום הייליגן ניצוץ אין אים; ווען מ'איז ניכטער קען עס שפייזן זיין קליפה."
+      },
+      "questionSegs": [333],
+      "answerSegs": [334, 348, 358, 360, 362, 363],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why did Zeresh advise hanging Mordechai at daybreak, rather than later when more people would see?",
+        "yi": "פארוואס האט זרש געגעבן אן עצה צו הענגען מרדכי באלד אינדערפרי, און נישט שפעטער ווען מער מענטשן וואלטן געזען?"
+      },
+      "answer": {
+        "en": "The Midrash says she wanted to prevent his Krias Shema of Shacharis.",
+        "yi": "דער מדרש זאגט אז זי האט געוואלט מבטל זיין זיין קריאת שמע של שחרית."
+      },
+      "questionSegs": [551, 552, 553],
+      "answerSegs": [554, 555, 556, 567],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why does the Rambam choose 'va'achos Lotan Timna' as his example of a passuk equal to Shema Yisrael?",
+        "yi": "פארוואס קלייבט דער רמב\"ם אויס ואחות לוטן תמנע אלס דוגמא פון א פסוק וואס איז גלייך צו שמע ישראל?"
+      },
+      "answer": {
+        "en": "Because it seems the lowest passuk in the Torah, the very one Menashe picked to claim the Torah speaks of trivialities.",
+        "yi": "ווייל ער זעט אויס דער נידעריגסטער פסוק אין דער תורה, דער זעלבער וואס מנשה האט אויסגעקליבן צו זאגן אז די תורה רעדט פון נישטיגע זאכן."
+      },
+      "questionSegs": [680, 683],
+      "answerSegs": [685, 686, 688, 690, 694],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says, citing a sefer, that a Jew must believe that on Pesach he can leave his tumah and straits all at once, even if yesterday he was low.",
+        "yi": "דער משגיח זאגט, לויט א ספר, אז א איד מוז גלייבן אז אום פסח קען ער ארויסגיין פון זיין טומאה און מיצרים מיט איין מאל, אפילו ווען נעכטן איז ער געווען נידעריג."
+      },
+      "evidence": { "segs": [586, 588, 595, 596, 599], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "On Seder night, the Rav says, a great man must go down from his high levels and tell his small children the story of Yetzias Mitzrayim, teaching them emunah.",
+        "yi": "ליל פסח, זאגט דער משגיח, דארף א גרויסער מענטש אראפגיין פון זיינע הויכע מדרגות און דערציילן זיינע קליינע קינדער סיפור יציאת מצרים, און זיי לערנען אמונה."
+      },
+      "evidence": { "segs": [728, 731, 734, 736, 749], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "Pesach as a time of leaving straits not step by step",
+    "Timna and Amalek",
+    "descendants of Haman who learned Torah in Bnei Brak",
+    "Rav Shmuel bar Shilas",
+    "pilegesh and wife",
+    "Esther's seudah and Haman's simcha",
+    "ad d'lo yada",
+    "Krias Shema of Shacharis",
+    "Maaseh b'Rabbi Eliezer in Bnei Brak",
+    "telling children Yetzias Mitzrayim on Seder night"
+  ],
+  "concepts": [
+    { "he": "יציאת מצרים", "heardAs": ["Mitzis Mitzchayim", "Yitzhiya's Mitzchayim", "Isaac and Yitzir's Mitzrayim"] },
+    { "he": "שלא בהדרגה", "heardAs": ["Shiloi b'hadrag", "Shlei B'adraga"] },
+    { "he": "פילגש", "heardAs": ["pelagish", "Pelegesh", "balekish", "pilekish"] },
+    { "he": "חשק", "heardAs": ["chayshik", "cheshik", "acheshek"] },
+    { "he": "שייכות", "heardAs": ["shaykhist", "Shaykhus", "shaykhs"] },
+    { "he": "נקודה", "heardAs": ["nakutas", "Nekud", "nekuda", "Nakuta"] },
+    { "he": "יניקה", "heardAs": ["yinikah", "Yenika"] },
+    { "he": "קליפה", "heardAs": ["Klipper", "clip", "Klippa"] },
+    { "he": "קריאת שמע של שחרית", "heardAs": ["Krishna Shoshachas", "K'chishma Shoshachas", "Krishma Shoshachas", "Chishma Shachas"] },
+    { "he": "עד דלא ידע", "heardAs": ["ad dolayada"] },
+    { "he": "גרים", "heardAs": ["geirim", "Geirim"] },
+    { "he": "ליל שימורים", "heardAs": ["Leil Shemur Mu"] }
+  ],
+  "people": [
+    { "name": "Menashe", "heardAs": ["Menashe"] },
+    { "name": "Timna", "heardAs": ["Timnah", "Tilna", "Timunah", "Timino"] },
+    { "name": "Lotan", "heardAs": ["Leiton", "Laitan", "Loit"] },
+    { "name": "Avraham Avinu", "heardAs": ["Avram Avinu", "Avraham Avinu"] },
+    { "name": "Esav", "heardAs": ["Esau", "Aesav", "Esav"] },
+    { "name": "Eliphaz", "heardAs": ["Eliphaz Ben-Eisab", "Eliphaz"] },
+    { "name": "Amalek", "heardAs": ["Amalek", "Malik"] },
+    { "name": "Haman", "heardAs": ["Haman", "Shalhaman", "Raman"] },
+    { "name": "Rav Shmuel bar Shilas", "heardAs": ["Rav Shmuro Vashilas", "Bishmur Bashilas", "Rav Shmua Bashilas", "Shmur Vashiras"] },
+    { "name": "Rav Yehuda", "heardAs": ["Amar of Yehuda"] },
+    { "name": "Esther", "heardAs": ["Esther"] },
+    { "name": "Achashverosh", "heardAs": ["Achashvairish", "Ahasuerus", "chashverish"] },
+    { "name": "Zeresh", "heardAs": ["Zeresh"] },
+    { "name": "Mordechai", "heardAs": ["maradchai"] },
+    { "name": "Agag", "heardAs": ["Agag"] },
+    { "name": "Shaul", "heardAs": ["Sholah"] },
+    { "name": "Vashti", "heardAs": ["Vashti", "Rashi"] },
+    { "name": "the Ari HaKadosh", "heardAs": ["Ariya Kaddish", "Raya Kedush"] },
+    { "name": "the Kedushas Levi", "heardAs": ["Kiddush's lady", "Kedusha Suleyvi"] },
+    { "name": "the Rambam", "heardAs": ["Rambam"] }
+  ],
+  "asrNotes": "English ASR with heavily garbled Hebrew terms (Krias Shema came out as 'Krishna', Rav Shmuel bar Shilas as 'Shmur Vashiras'), but the line of thought is clear. A passage around segments 106-108 citing a source that a good desire is never lost could not be identified. The gematria claim around segments 505-511 linking the Megillah's words to the Torah learning in Bnei Brak is too garbled to state precisely, and the Yaaros Devash reckoning about Vashti (437-452) is only partly recoverable. The Haggadah's Maaseh b'Rabbi Eliezer is not quoted directly; the Rav refers to the Tannaim and their talmidim in Bnei Brak."
+}

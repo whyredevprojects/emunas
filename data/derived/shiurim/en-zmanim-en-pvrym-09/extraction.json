@@ -1,0 +1,556 @@
+{
+  "shiurId": "en-zmanim-en-pvrym-09",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that Purim reveals the innermost root of every Jewish soul, where even the lowest Jew wants Hashem's will and remains beloved, which is why Purim stands higher than Yom Kippur.",
+      "yi": "דער משגיח ערקלערט אז פורים אנטפלעקט דעם טיפסטן שורש פון יעדע אידישע נשמה, וואו אפילו דער נידריגסטער איד וויל דעם רצון השם און בלייבט באליבט, און דערפאר שטייט פורים העכער פון יום כיפור."
+    },
+    "abstract": {
+      "en": "The Rav opens by rejecting the view of Purim as a carnival and cites the Chasam Sofer and Rav Tzadok HaKohen that its holiness surpasses even Yom Kippur. Since each sedra shapes its week, illustrated by stories of the Rebbe of Belz and of the Ba'al HaTanya with the Maggid, he turns to the lechem hapanim in the first sedra of Adar. With the Noam Elimelech he describes Knesses Yisrael, the root where all souls are one and no sin reaches. The Rambam's explanation of coerced consent shows that every Jew inwardly wants Hashem's will; this root, 'reishis', is above letters and thought. Yom Kippur reaches it after ten days, Purim reveals it even in the lowest. Shevet Dan, Adar and the stale-bread taunt of the mekalel and Haman show the claim that low Jews are discarded, refuted by the ever-fresh lechem hapanim. Purim is Hashem's love for the lowest Jew.",
+      "yi": "דער משגיח הייבט אן מיט אפווארפן דעם מיינונג אז פורים איז א טאג פון פארשטעלן זיך און הוליען, און ברענגט פונעם חתם סופר און פון רב צדוק הכהן אז די קדושה פון פורים איז העכער אפילו פון יום כיפור. ווייל יעדע סדרה פירט די וואך, ווי ער ווייזט מיט מעשיות פונעם בעלזער רבי'ן און פונעם בעל התניא ביים מגיד, גייט ער צו צום לחם הפנים אין דער ערשטער סדרה פון אדר. מיטן נועם אלימלך באשרייבט ער כנסת ישראל, דעם שורש וואו אלע נשמות זענען איינס און קיין חטא דערגרייכט נישט. דער רמב\"ם'ס הסבר אויף \"כופין אותו עד שיאמר רוצה אני\" ווייזט אז יעדער איד וויל אינעווייניג דעם רצון השם; דער שורש, \"ראשית\", איז העכער פון אותיות און מחשבה. יום כיפור דערגרייכט עס נאך צען טעג, פורים אנטפלעקט עס אפילו ביים נידריגסטן. שבט דן, חודש אדר, און דער טענה פונעם מקלל און פון המן אז די לחם הפנים זענען אלט, ווערט אפגעפרעגט דורכן לחם הפנים וואס בלייבט פריש. פורים איז דעם אייבערשטנס אהבה צום נידריגסטן איד."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Purim is not a Jewish carnival; its holiness is greater than Yom Kippur.",
+          "yi": "פורים איז נישט קיין אידישער פארשטעל-טאג; זיין קדושה איז גרעסער פון יום כיפור."
+        },
+        "evidence": { "segs": [2, 4, 6, 50, 53], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Every sedra is the fabric of its week, and the first sedra of Adar contains the passuk of the lechem hapanim.",
+          "yi": "יעדע סדרה איז דער שטאף פון וואס די וואך איז געוועבט, און די ערשטע סדרה פון אדר האט דעם פסוק פון לחם הפנים."
+        },
+        "evidence": { "segs": [93, 95, 209, 225, 230], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "All Jewish souls are rooted in Knesses Yisrael, a level where they are one soul and no sin can enter.",
+          "yi": "אלע אידישע נשמות זענען איינגעווארצלט אין כנסת ישראל, א מדריגה וואו זיי זענען איין נשמה און קיין חטא קען נישט אריין."
+        },
+        "evidence": { "segs": [243, 247, 251, 255], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "In his innermost self every Jew wants to do Hashem's will; the yetzer hara only covers it, as the Rambam explains.",
+          "yi": "אינעווייניג וויל יעדער איד טון דעם רצון השם; דער יצר הרע דעקט עס נאר צו, ווי דער רמב\"ם ערקלערט."
+        },
+        "evidence": { "segs": [321, 323, 327, 356], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Even the lowest Jews, like Shevet Dan at the end of the camp, are rooted in 'reishis', and Haman's claim that they were cast off was false.",
+          "yi": "אפילו די נידריגסטע אידן, ווי שבט דן אין סוף פונעם מחנה, זענען איינגעווארצלט אין \"ראשית\", און המן'ס טענה אז זיי זענען אוועקגעווארפן איז געווען פאלש."
+        },
+        "evidence": { "segs": [581, 583, 603, 610], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The lechem hapanim, which stayed fresh all week, shows that no Jew becomes stale before Hashem; it corresponds to Purim.",
+          "yi": "דער לחם הפנים, וואס איז געבליבן פריש א גאנצע וואך, ווייזט אז קיין איד ווערט נישט אלט ביים רבונו של עולם; ער איז קעגן פורים."
+        },
+        "evidence": { "segs": [743, 747, 762, 870], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Purim is the day Hashem shows His love to every Jew, even the lowest, which is why the less observant are often the happiest on Purim.",
+          "yi": "פורים איז דער טאג וואס דער אייבערשטער ווייזט זיין אהבה צו יעדן איד, אפילו צום נידריגסטן, און דערפאר זענען אפט די וואס היטן ווייניגער מצוות די פריילעכסטע פורים."
+        },
+        "evidence": { "segs": [880, 882, 892, 897, 928], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-zman-adar-purim-02-09-purim-e-not-so-clear",
+      "startSeg": 0,
+      "endSeg": 77,
+      "title": {
+        "en": "Purim higher than Yom Kippur",
+        "yi": "פורים העכער פון יום כיפור"
+      },
+      "summary": {
+        "en": "The Rav sets aside the regular shiur to speak about Purim, rejecting the view of it as a 'Jewish Halloween'. He brings the Chasam Sofer that the holiness of the Megillah is higher than Toras Moshe, and Rav Tzadok HaKohen that Purim is far greater than Yom Kippur.",
+        "yi": "דער משגיח לייגט אוועק דעם געווענליכן שיעור כדי צו רעדן וועגן פורים, און ווארפט אפ דעם מיינונג אז פורים איז א טאג פון פארשטעלן זיך. ער ברענגט פונעם חתם סופר אז די קדושה פון דער מגילה איז העכער פון תורת משה, און פון רב צדוק הכהן אז פורים איז פיל גרעסער פון יום כיפור."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-adar-purim-02-09-purim-e-not-so-clear",
+      "startSeg": 78,
+      "endSeg": 209,
+      "title": {
+        "en": "The sedra shapes the week",
+        "yi": "די סדרה פירט די וואך"
+      },
+      "summary": {
+        "en": "The Rav explains that the weekly sedra is the fabric of the week. He tells of lumber merchants whose river stayed frozen because the children learned Miketz, and of the Ba'al HaTanya, who became the Maggid's ba'al korei because he knew the sedra's bond with each week, day and person called up.",
+        "yi": "דער משגיח ערקלערט אז די סדרה פון דער וואך איז דער שטאף פון וואס די וואך איז געוועבט. ער דערציילט פון האלץ-סוחרים וואס דער טייך איז געבליבן פארפרוירן ווייל די קינדער האבן געלערנט מקץ, און פונעם בעל התניא וואס איז געווארן דעם מגיד'ס בעל קורא ווייל ער האט געוואוסט די שייכות פון דער סדרה מיט יעדער וואך, יעדן טאג און יעדן וואס מ'רופט אויף."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-adar-purim-02-09-purim-e-not-so-clear",
+      "startSeg": 210,
+      "endSeg": 294,
+      "title": {
+        "en": "Lechem hapanim and Knesses Yisrael",
+        "yi": "לחם הפנים און כנסת ישראל"
+      },
+      "summary": {
+        "en": "The Rav notes the passuk of the lechem hapanim in the first sedra of Adar. He brings the Noam Elimelech that there is a world called Knesses Yisrael where all Jewish souls are fused into one and no sin or accusation enters, and identifies it with the yechidah, the innermost level of the soul, where no Jew wants to sin.",
+        "yi": "דער משגיח ווייזט אן אויפן פסוק פון לחם הפנים אין דער ערשטער סדרה פון אדר. ער ברענגט דעם נועם אלימלך אז ס'איז דא א עולם וואס הייסט כנסת ישראל, וואו אלע אידישע נשמות זענען צוזאמענגעשמאלצן אין איין נשמה און קיין חטא און קיין קטרוג קומט נישט אריין, און ער זאגט אז דאס איז די יחידה, די אינערלעכסטע מדריגה פון דער נשמה, וואו קיין איד וויל נישט זינדיגן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-adar-purim-02-09-purim-e-not-so-clear",
+      "startSeg": 295,
+      "endSeg": 472,
+      "title": {
+        "en": "Retzon Hashem, reishis, and Yom Kippur",
+        "yi": "רצון השם, ראשית, און יום כיפור"
+      },
+      "summary": {
+        "en": "The Rav explains the Rambam on coercing a Jew until he says 'I want': inwardly every Jew wants Hashem's will. He brings the Maggid that the maamar of 'Bereishis' is above letters and thought, and that Jews are called 'reishis'. Yom Kippur reaches this root after ten days; Purim revealed it even when the Jews had sinned.",
+        "yi": "דער משגיח ערקלערט דעם רמב\"ם אויף \"כופין אותו עד שיאמר רוצה אני\": אינעווייניג וויל יעדער איד דעם רצון השם. ער ברענגט פונעם מגיד אז דער מאמר \"בראשית\" איז העכער פון אותיות און מחשבה, און אז אידן ווערן גערופן \"ראשית\". יום כיפור דערגרייכט דעם שורש נאך צען טעג; פורים האט עס אנטפלעקט אפילו ווען אידן האבן געזינדיגט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-adar-purim-02-09-purim-e-not-so-clear",
+      "startSeg": 473,
+      "endSeg": 628,
+      "title": {
+        "en": "The lowest Jews: Dan, Adar and Haman",
+        "yi": "די נידריגסטע אידן: דן, אדר און המן"
+      },
+      "summary": {
+        "en": "The Rav explains that the lowest souls are at the end of the Torah, like Shevet Dan, who were outside the clouds of glory and exposed to Amalek, and like the month of Adar. Haman thought he could prevail over these low Jews, but Hashem showed that every Jew is rooted in Bereishis; this is why Purim, kept in the second Adar next to Nisan, is greater than Yom Kippur.",
+        "yi": "דער משגיח ערקלערט אז די נידריגסטע נשמות זענען אין סוף פון דער תורה, ווי שבט דן וואס איז געווען אינדרויסן פון די ענני הכבוד און אויסגעשטעלט צו עמלק, און ווי דער חודש אדר. המן האט געמיינט אז ער קען באזיגן די נידריגע אידן, אבער דער אייבערשטער האט געוויזן אז יעדער איד איז איינגעווארצלט אין בראשית; דערפאר איז פורים, וואס מ'האלט אין אדר שני נעבן ניסן, גרעסער פון יום כיפור."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-adar-purim-02-09-purim-e-not-so-clear",
+      "startSeg": 629,
+      "endSeg": 809,
+      "title": {
+        "en": "The mekalel and the fresh lechem hapanim",
+        "yi": "דער מקלל און דער פרישער לחם הפנים"
+      },
+      "summary": {
+        "en": "The Rav tells of the son of the Egyptian man who was turned away from Shevet Dan and mocked the nine-day-old lechem hapanim, meaning that Hashem no longer cares for the lowest Jews. He answers that the lechem hapanim miraculously stayed fresh, so no Jew becomes stale before Hashem, and says Haman made the same claim; the Kabbalists say Haman was a gilgul of that man's father.",
+        "yi": "דער משגיח דערציילט פונעם זון פונעם מצרי וואס מ'האט אים נישט אריינגעלאזט אין שבט דן, און ער האט געשפעט פונעם לחם הפנים וואס איז ניין טעג אלט, דאס הייסט אז דער אייבערשטער האלט שוין נישט פון די נידריגסטע אידן. ער ענטפערט אז דער לחם הפנים איז בדרך נס געבליבן פריש, אז קיין איד ווערט נישט אלט ביים רבונו של עולם, און זאגט אז המן האט געטענה'ט די זעלבע טענה; די מקובלים זאגן אז המן איז געווען א גלגול פון יענעם'ס טאטן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-adar-purim-02-09-purim-e-not-so-clear",
+      "startSeg": 810,
+      "endSeg": 971,
+      "title": {
+        "en": "Memuchan, Purim as lechem hapanim, and matanos la'evyonim",
+        "yi": "ממוכן, פורים ווי לחם הפנים, און מתנות לאביונים"
+      },
+      "summary": {
+        "en": "The Rav brings the Gemara that the names of Achashverosh's ministers allude to the korbanos, with Memuchan alluding to the lechem hapanim, and that the shemen zayis corresponds to Chanukah and the lechem hapanim to Purim. Purim is the day Hashem shows His love to the lowest Jew, which is why the less observant are happiest on it. He closes with Purim wishes and explains that matanos la'evyonim reaches higher than ordinary tzedakah.",
+        "yi": "דער משגיח ברענגט די גמרא אז די נעמען פון אחשורוש'ס שרים זענען רמזים אויף די קרבנות, און ממוכן איז א רמז אויפן לחם הפנים, און אז שמן זית איז קעגן חנוכה און לחם הפנים קעגן פורים. פורים איז דער טאג וואס דער אייבערשטער ווייזט זיין אהבה צום נידריגסטן איד, און דערפאר זענען די וואס היטן ווייניגער מצוות די פריילעכסטע. ער ענדיגט מיט ברכות פאר פורים און ערקלערט אז מתנות לאביונים דערגרייכט העכער פון געווענליכע צדקה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "Chesam Saifa ... the Kiddush of the Megillah of Purim is higher than Teras Maisha",
+      "work": "Chasam Sofer",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [15, 18, 40, 41, 42, 45], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "Apsadzika Coyen writes that Kudusha of Purim is much much greater than Yama Kippurim",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [48, 50, 51, 53, 626], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "The Neyam El-Melech writes in his Sefer, in Pasha's Dwarim",
+      "work": "Noam Elimelech",
+      "ref": "Noam Elimelech, Parshas Devarim",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [231, 238, 243, 246, 251], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Torah says the Nesata of the Shulchan Lechem Panem before my turnment",
+      "work": "Shemos",
+      "ref": "Shemos 25:30",
+      "sefariaRef": "Exodus 25:30",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [222, 225, 228], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Gemara says that neshama has five chalakim ... nefesh, ruach, neshama, chaya, yechida",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [264, 265, 268, 269], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Gemara says, Ma can I say, achi yai me reitza ani",
+      "work": "Gemara Arachin",
+      "ref": "Arachin 21a",
+      "sefariaRef": "Arakhin 21a",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [304, 309, 310, 311], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "you can be masked with a Rambam ... so the Rambam explains",
+      "work": "Rambam",
+      "ref": "Rambam, Hilchos Geirushin 2:20",
+      "sefariaRef": "Mishneh Torah, Divorce 2:20",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [295, 298, 321, 323, 327, 343], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "10 Mamo Reis ... the Gemara asks if you count the Vayaimers ... you only can find nine",
+      "work": "Gemara Rosh Hashanah",
+      "ref": "Rosh Hashanah 32a",
+      "sefariaRef": "Rosh Hashanah 32a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [361, 362, 366, 369, 370, 373], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the mazuchah magad explains that oisius of speech and of writing and of thought",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [380, 382, 389, 394, 398], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Braishas Barakim Bishwa Yisrael Shinnikro Rishas",
+      "work": "Bereishis",
+      "ref": "Bereishis 1:1",
+      "sefariaRef": "Genesis 1:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [405, 406, 407, 409], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Isaiah says what's Yom HaKipurim ... a day like Purim",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [434, 435, 438, 620, 622], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the last eight psalms of the Torah weren't written by Moshe Rabbeinu according to one Mandelma",
+      "work": "Gemara Bava Basra",
+      "ref": "Bava Basra 15a",
+      "sefariaRef": "Bava Batra 15a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [479, 481, 483, 486, 489, 490], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "they were Nechshel Nevei Dezare and Amalek had a Shlita on them",
+      "work": "Devarim",
+      "ref": "Devarim 25:18",
+      "sefariaRef": "Deuteronomy 25:18",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [506, 508, 510, 511, 516], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "the very last Oisius of the Seif HaTeirah is Kol Yisrael. Liayni Kol Yisrael",
+      "work": "Devarim",
+      "ref": "Devarim 34:12",
+      "sefariaRef": "Deuteronomy 34:12",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [533], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "When was Mesh Rabbeinu Neftar in Zayin Ador",
+      "work": "Gemara Megillah",
+      "ref": "Megillah 13b",
+      "sefariaRef": "Megillah 13b",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [535, 536, 537, 538], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "it was the end of the 70 years like the Gemara says",
+      "work": "Gemara Megillah",
+      "ref": "Megillah 11b",
+      "sefariaRef": "Megillah 11b",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [565, 566, 567], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "you keep it the second Adar because the Mitzmer Geula Legeula",
+      "work": "Gemara Megillah",
+      "ref": "Megillah 6b",
+      "sefariaRef": "Megillah 6b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [585, 593, 594, 595], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "in Parshah Samael ... there's a story of this Ben Yishra Ailes who Ben Ishmitzri",
+      "work": "Vayikra",
+      "ref": "Vayikra 24:10-11",
+      "sefariaRef": "Leviticus 24:10-11",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [631, 636, 637, 638, 684, 685], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Gemara says that there was a mess each Shabbos by the Lechem Aponim that it stayed fresh",
+      "work": "Gemara Chagigah",
+      "ref": "Chagigah 26b",
+      "sefariaRef": "Chagigah 26b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [744, 745, 747, 755, 756, 758], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Kabbalans say that Haman was a Gilgore of this Mitzri",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [801, 802, 803, 804], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "the Gemara says that all these are Ramizan Kabanas ... Memulchan",
+      "work": "Gemara Megillah",
+      "ref": "Megillah 12b",
+      "sefariaRef": "Megillah 12b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [820, 822, 839, 840, 842], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Shem and Zayas is the parish of Hanukkah and Lechem Aponim is Purim",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [866, 867, 868, 869, 870], "confidence": 0.7 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rambam's explanation of 'until he says I want' is read as a statement about the root of every Jewish soul: the coercion only weakens the body's interference so that his true will emerges.",
+        "yi": "דער רמב\"ם'ס הסבר אויף \"עד שיאמר רוצה אני\" ווערט געלערנט ווי א יסוד וועגן דעם שורש פון יעדע אידישע נשמה: די כפיה שוואכט נאר אפ דעם גוף'ס שטערונג, אז זיין אמת'ער רצון זאל ארויסקומען."
+      },
+      "evidence": { "segs": [321, 333, 340, 341, 356], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Yom Kippur reaches the level of 'I want' only after climbing through ten days, while Purim reveals it even in Jews who had sinned, which is why Yom Kippur is only 'a day like Purim'.",
+        "yi": "יום כיפור דערגרייכט די מדריגה פון \"רוצה אני\" ערשט נאכן ארויפגיין צען טעג, בשעת פורים אנטפלעקט עס אפילו ביי אידן וואס האבן געזינדיגט; דערפאר איז יום כיפור נאר \"א טאג ווי פורים\"."
+      },
+      "evidence": { "segs": [415, 417, 432, 438, 439, 455], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The order of the Torah, of the tribes and of the months runs from top to bottom: the last letters, Shevet Dan and the month of Adar all correspond to the lowest Jews of the generations before Mashiach.",
+        "yi": "דער סדר פון דער תורה, פון די שבטים און פון די חדשים גייט פון אויבן ביז אראפ: די לעצטע אותיות, שבט דן און חודש אדר זענען אלע קעגן די נידריגסטע אידן פון די דורות פאר משיח."
+      },
+      "evidence": { "segs": [474, 543, 547, 550, 553, 556], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Keeping Purim in the second Adar, next to Nisan, teaches that even the low Jews of Adar cannot be cut off from their root in Nisan and Bereishis.",
+        "yi": "וואס מ'האלט פורים אין אדר שני, נעבן ניסן, לערנט אז מ'קען אפילו די נידריגע אידן פון אדר נישט אפשניידן פון זייער שורש אין ניסן און בראשית."
+      },
+      "evidence": { "segs": [598, 599, 601, 603, 605], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The mekalel's mockery of 'stale' bread was a claim that Hashem no longer cares for the lowest Jews; the miracle of the bread staying fresh is the answer, and Haman made the same claim about the Jews in exile.",
+        "yi": "דעם מקלל'ס שפעט אויף \"אלטע\" ברויט איז געווען א טענה אז דער אייבערשטער האלט שוין נישט פון די נידריגסטע אידן; דער נס אז דאס ברויט איז געבליבן פריש איז דער תירוץ, און המן האט געטענה'ט דאס זעלבע אויף די אידן אין גלות."
+      },
+      "evidence": { "segs": [738, 740, 760, 762, 770, 782], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The less observant a Jew is, the happier he tends to be on Purim, because Purim is the day Hashem turns to the lowest and shows him love.",
+        "yi": "וואס ווייניגער א איד היט מצוות, אלץ פריילעכער איז ער פורים, ווייל פורים איז דער טאג וואס דער אייבערשטער ווענדט זיך צום נידריגסטן און ווייזט אים אהבה."
+      },
+      "evidence": { "segs": [891, 894, 897, 899, 900], "confidence": 0.8 }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "The frozen river and Parshas Miketz",
+        "yi": "דער פארפרוירענער טייך און פרשת מקץ"
+      },
+      "retelling": {
+        "en": "Lumber merchants floated rafts of timber down a river to distant mills. One very cold winter the river stayed frozen past the date they had contracted to deliver, and they faced a great loss, so they came to the Rebbe of Belz to ask that warm weather come. He asked what the children in their towns were learning in cheder, and they said Parshas Miketz. He told them that is why the river is frozen: Miketz is a winter sedra, read around Chanukah, and if the children learned the sedra of the week, near the beginning of Vayikra, the weather would follow the season.",
+        "yi": "האלץ-סוחרים האבן געשיקט פליטן פון האלץ אויפן טייך צו ווייטע מילן. איין זייער קאלטן ווינטער איז דער טייך געבליבן פארפרוירן ביז נאכן טאג וואס זיי האבן זיך אפגעמאכט צו ליפערן, און זיי זענען געשטאנען פאר א גרויסן היזק, איז מען געקומען צום בעלזער רבי'ן אז עס זאל ווערן ווארעם. ער האט זיי געפרעגט וואס די קינדער אין זייערע שטעט לערנען אין חדר, און זיי האבן געזאגט פרשת מקץ. האט ער זיי געזאגט אז דערפאר איז דער טייך פארפרוירן: מקץ איז א ווינטער-סדרה וואס מ'ליינט ארום חנוכה, און ווען די קינדער וואלטן געלערנט די סדרה פון דער וואך, נאענט צום אנהייב פון ויקרא, וואלט דאס וועטער זיך געפירט לויט דער צייט."
+      },
+      "people": ["the Rebbe of Belz"],
+      "evidence": { "segs": [98, 128, 130, 139, 146, 155], "confidence": 0.8 }
+    },
+    {
+      "title": {
+        "en": "The Ba'al HaTanya becomes the Maggid's ba'al korei",
+        "yi": "דער בעל התניא ווערט דעם מגיד'ס בעל קורא"
+      },
+      "retelling": {
+        "en": "When the Ba'al HaTanya was a young talmid of the Maggid of Mezritch, the Maggid's ba'al korei was no longer there, and they told him the newly arrived young man reads very well. The Maggid called him in and asked whether he knew what bond the sedra has with the week, what each day's portion has to do with that day, and why the gabbai calls up a particular person to a particular portion. Each time he answered that he knew, and the Maggid told him he could be his ba'al korei.",
+        "yi": "ווען דער בעל התניא איז געווען א יונגער תלמיד ביים מגיד פון מעזריטש, איז דעם מגיד'ס בעל קורא מער נישט געווען דא, און מ'האט אים געזאגט אז דער יונגער-מאן וואס איז ערשט אנגעקומען ליינט זייער שיין. דער מגיד האט אים אריינגערופן און געפרעגט צי ער ווייסט וואס פאר א שייכות די סדרה האט מיט דער וואך, וואס יעדן טאג'ס חלק האט צו טון מיט יענעם טאג, און פארוואס דער גבאי רופט אויף דווקא דעם מענטש צו דער פרשה. יעדעס מאל האט ער געענטפערט אז ער ווייסט, און דער מגיד האט אים געזאגט אז ער קען זיין זיין בעל קורא."
+      },
+      "people": ["the Ba'al HaTanya", "the Maggid of Mezritch"],
+      "evidence": { "segs": [162, 170, 174, 178, 197, 206], "confidence": 0.8 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "A korban must be brought willingly, yet the Gemara says one who refuses is compelled until he says 'I want'. How can a coerced 'I want' count?",
+        "yi": "א קרבן דארף מען ברענגען מיטן רצון, און פונדעסטוועגן זאגט די גמרא אז ווער עס וויל נישט, צווינגט מען אים ביז ער זאגט \"רוצה אני\". ווי אזוי קען א געצוואונגענער \"רוצה אני\" גילטן?"
+      },
+      "answer": {
+        "en": "The Rambam explains that every Jew wants Hashem's will and only the yetzer hara covers it; the lashes weaken the body, so when he says 'I want' it is his true inner will.",
+        "yi": "דער רמב\"ם ערקלערט אז יעדער איד וויל דעם רצון השם און נאר דער יצר הרע דעקט עס צו; די מלקות שוואכן אפ דעם גוף, און ווען ער זאגט \"רוצה אני\" איז דאס זיין אמת'ער אינערלעכער רצון."
+      },
+      "questionSegs": [309, 310, 313, 315],
+      "answerSegs": [321, 323, 333, 339, 340],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "The world was created with ten maamaros, yet only nine times does the Torah say 'and He said'; how is 'Bereishis' a maamar?",
+        "yi": "די וועלט איז באשאפן געווארן מיט צען מאמרות, און נאר ניין מאל שטייט \"ויאמר\"; ווי אזוי איז \"בראשית\" א מאמר?"
+      },
+      "answer": {
+        "en": "The Maggid explains that there is a level above the letters of speech, writing and even thought; 'Bereishis' is that first maamar, too spiritual to take the form of letters.",
+        "yi": "דער מגיד ערקלערט אז ס'איז דא א מדריגה העכער פון די אותיות פון דיבור, כתיבה און אפילו מחשבה; \"בראשית\" איז יענער ערשטער מאמר, צו רוחניות'דיג כדי צו ווערן אותיות."
+      },
+      "questionSegs": [366, 369, 370, 376],
+      "answerSegs": [380, 382, 389, 394, 397],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why did the son of the Egyptian man, turned away from Shevet Dan, mock specifically the lechem hapanim?",
+        "yi": "פארוואס האט דער זון פונעם מצרי, וואס מ'האט אים נישט אריינגעלאזט אין שבט דן, געשפעט דווקא פונעם לחם הפנים?"
+      },
+      "answer": {
+        "en": "The twelve loaves correspond to the twelve tribes, all rooted above; he claimed the bread was stale, meaning Hashem no longer cares for the lowest, and was answered that the bread stays fresh.",
+        "yi": "די צוועלף לחמים זענען קעגן די צוועלף שבטים, וואס זענען אלע איינגעווארצלט אויבן; ער האט געטענה'ט אז דאס ברויט איז אלט, דאס הייסט אז דער אייבערשטער האלט שוין נישט פון די נידריגסטע, און מ'האט אים געענטפערט אז דאס ברויט בלייבט פריש."
+      },
+      "questionSegs": [690, 692, 693],
+      "answerSegs": [696, 699, 738, 740, 743],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav wishes his listeners to enjoy Purim and the fact that Hashem enjoys them, and to make use of the day, saying that on Purim one can become everything he wants if he truly keeps Purim.",
+        "yi": "דער משגיח וואונטשט זיינע צוהערער אז זיי זאלן הנאה האבן פון פורים און דערפון וואס דער אייבערשטער האט הנאה פון זיי, און אז זיי זאלן אויסנוצן דעם טאג; ער זאגט אז פורים קען מען ווערן אלעס וואס מ'וויל, אויב מ'האלט טאקע פורים."
+      },
+      "evidence": { "segs": [941, 943, 945, 948, 949], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that matanos la'evyonim on Purim is a special mitzvah that reaches higher than tzedakah given on any other day.",
+        "yi": "דער משגיח זאגט אז מתנות לאביונים פורים איז א באזונדערע מצוה וואס דערגרייכט העכער ווי צדקה וואס מ'גיט אין א צווייטן טאג."
+      },
+      "evidence": { "segs": [953, 956, 958, 960, 962], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "Purim",
+    "Purim greater than Yom Kippur",
+    "lechem hapanim",
+    "Knesses Yisrael and the root of the Jewish soul",
+    "the inner will of every Jew",
+    "Shevet Dan and the lowest souls",
+    "Haman and Amalek",
+    "the weekly sedra and the week",
+    "matanos la'evyonim",
+    "Hashem's love for every Jew"
+  ],
+  "concepts": [
+    { "he": "כנסת ישראל", "heardAs": ["Kau Yisrael", "Kod Yisrael", "Klau Yisrael"] },
+    { "he": "לחם הפנים", "heardAs": ["Lechem Panem", "Lechem Apanem", "Lechem Aponim", "Rechem Apanim", "Alechim Hapanim"] },
+    { "he": "יחידה", "heardAs": ["yechida"] },
+    { "he": "רוצה אני", "heardAs": ["reitza ani", "Reitza Ani", "Rai Tz'ani", "Reitza Ami"] },
+    { "he": "רצון השם", "heardAs": ["Ratzin Hashem", "Ratz HaMashem", "Rats"] },
+    { "he": "ראשית", "heardAs": ["Rishas", "Reishas", "Seirish"] },
+    { "he": "עשרה מאמרות", "heardAs": ["10 Mamo Reis", "maima"] },
+    { "he": "אותיות", "heardAs": ["oisius", "Isis", "Oisius"] },
+    { "he": "פנימיות", "heardAs": ["Pneumius", "Pneemi"] },
+    { "he": "יצר הרע", "heardAs": ["Yitzhahara", "Yitzahara"] },
+    { "he": "ענני הכבוד", "heardAs": ["Anani Kavit", "Ananim", "Diyanam"] },
+    { "he": "כסא הכבוד", "heardAs": ["Kisei Akavite", "Kisa Yaakovite", "Kisei HaKavim"] },
+    { "he": "נחשלים", "heardAs": ["Nechshel", "Nechsholim"] },
+    { "he": "בן איש מצרי", "heardAs": ["Ben Ishmitzri", "banish mitzhi", "Spanish Mitzri"] },
+    { "he": "מתנות לאביונים", "heardAs": ["Matanus Laviayim"] },
+    { "he": "סמוך גאולה לגאולה", "heardAs": ["Mitzmer Geula Legeula"] },
+    { "he": "רבונו של עולם", "heardAs": ["Rabbani Shlevim", "Rabbi Yisraelim", "Rabbani Shaleelam", "Rabbi Yishalom"] }
+  ],
+  "people": [
+    { "name": "the Chasam Sofer", "heardAs": ["Chesam Saifa"] },
+    { "name": "Rav Tzadok HaKohen", "heardAs": ["Apsadzika Coyen", "Siddhartha Kayin"] },
+    { "name": "the Noam Elimelech", "heardAs": ["Neyam El-Melech"] },
+    { "name": "the Rambam", "heardAs": ["Rambam"] },
+    { "name": "the Maggid of Mezritch", "heardAs": ["Mazur Shah Magad", "mazuchah magad", "Magad"] },
+    { "name": "the Ba'al HaTanya", "heardAs": ["Balotanya", "Baba Tanya"] },
+    { "name": "the Rebbe of Belz", "heardAs": ["Rokshod and Belza"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["Moshe Rabbeinu", "Mesh Rabbeinu", "Marisha"] },
+    { "name": "Yehoshua", "heardAs": ["Yeshua"] },
+    { "name": "Haman", "heardAs": ["Haman", "Muhammad"] },
+    { "name": "Achashverosh", "heardAs": ["Chashverish", "Vachashverish"] },
+    { "name": "Vashti", "heardAs": ["Vashti"] },
+    { "name": "Memuchan", "heardAs": ["Memulchan"] },
+    { "name": "Dan", "heardAs": ["Dun", "Don", "Sheyvat Dan"] }
+  ],
+  "asrNotes": "English ASR is fair for the English speech but badly garbles Hebrew terms (Ribono shel Olam appears in many forms). The opening list of names around segs 14-30 (after the Chasam Sofer) and what 'preserves him' is not recoverable. The kabbalistic detail around segs 845-865 (the parshiyos after the lechem hapanim, the source equating shemen zayis with Chanukah) is very fragmentary, and the final segment is garbled. The source heard as 'Isaiah says' for 'Yom Kippurim, a day like Purim' could not be identified from the transcript."
+}

@@ -1,0 +1,756 @@
+{
+  "shiurId": "yi-parshas-hashavua-vychy-01",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that the closed parsha of Vayechi teaches that the true life of Yaakov, and the real purpose of a Jew, is found in the darkness of galus, where one must serve Hashem with strength and say chazak.",
+      "yi": "דער משגיח ערקלערט אז די פרשה סתומה פון ויחי לערנט אז דער אמת'ער חיות פון יעקב אבינו, און דער עיקר תכלית פון א איד, געפינט זיך אינמיטן דעם חושך פון גלות, וואו מ'דארף דינען דעם אייבערשטן מיט כח און זאגן חזק."
+    },
+    "abstract": {
+      "en": "The Rav opens with the Midrash's reasons why Vayechi is a closed parsha, and connects the filled space to Rebbi Yehudah HaNasi, a gilgul of Yaakov, who wrote down the Oral Torah that belongs in the white space of the Torah. From the Gemara that Yaakov did not die he shows that Yaakov's strength lives on in his children even far in exile. He ties this to the long dark nights of Teves and to the present darkness of galus, and explains that Yaakov truly lived in Mitzrayim because the purpose of the soul's descent is to reveal Hashem's kingship in darkness, not in the light of Shabbos. Bereishis ends with Yosef's coffin sunk by sorcery, which is the time to cry chazak. He closes with the weeks of Shovavim, the learning of Yevamos as a tikkun of the soul, and a Slonimer chassid's seven jokes.",
+      "yi": "דער משגיח עפנט מיט די טעמים פונעם מדרש פארוואס ויחי איז א פרשה סתומה, און ער פארבינדט דעם אנגעפילטן ארט מיט רבי יהודה הנשיא, א גלגול פון יעקב אבינו, וואס האט פארשריבן די תורה שבעל פה וואס געהערט אין דעם ווייסן גבול פון דער תורה. פון דער גמרא \"יעקב אבינו לא מת\" ווייזט ער אז דער כח פון יעקב לעבט ווייטער אין זיינע קינדער, אפילו ווייט אין גלות. דאס פארבינדט ער מיט די לאנגע פינסטערע נעכט פון טבת און מיטן היינטיגן חושך פון גלות, און ער ערקלערט אז יעקב האט באמת געלעבט אין מצרים, ווייל דער תכלית פון ירידת הנשמה איז מגלה זיין מלכות שמים אינמיטן חושך, נישט אין דער ליכטיגקייט פון שבת. ספר בראשית ענדיגט זיך מיט יוסף'ס ארון וואס איז פארזונקען געווארן מיט כישוף, און דאס איז די צייט צו שרייען חזק. צום סוף רעדט ער פון די וואכן פון שובבי\"ם, פון לערנען מסכת יבמות אלס א תיקון הנפש, און פון א סלאנימער חסיד'ס זיבן געלעכטערס."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The Rav explains that the white space around the letters of a Sefer Torah holds the Oral Torah, and Rebbi, a gilgul of Yaakov, wrote it down only because of the troubles of exile; this is hinted in the filled space before Vayechi.",
+          "yi": "דער משגיח ערקלערט אז דער ווייסער גבול ארום די אותיות פון א ספר תורה איז די תורה שבעל פה, און רבי, א גלגול פון יעקב אבינו, האט זי פארשריבן נאר צוליב די צרות פונעם גלות; דאס איז מרומז אין דעם אנגעפילטן ארט פאר ויחי."
+        },
+        "evidence": { "segs": [61, 62, 64, 87, 91, 93], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "According to the Rav, the strength of Yaakov was passed on to his children and never died, so even when they are far off and in captivity Yaakov lives with them.",
+          "yi": "לויט דעם משגיח איז דער כח פון יעקב אבינו איבערגעגעבן געווארן צו זיינע קינדער און איז קיינמאל נישט אפגעשטארבן, אזוי אז אפילו ווען זיי זענען ווייט און אין שביה לעבט יעקב מיט זיי."
+        },
+        "evidence": { "segs": [109, 110, 111, 113], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The Rav explains that the purpose of the soul's descent from beneath the Throne of Glory is to reveal Hashem's kingship specifically in a place of darkness, so the weekdays and galus are the main arena of avodah, not Shabbos.",
+          "yi": "דער משגיח ערקלערט אז דער תכלית פון ירידת הנשמה פון אונטערן כסא הכבוד איז מגלה צו זיין מלכות שמים דווקא אין אן ארט פון חושך, ממילא זענען די ימי החול און דער גלות דער עיקר פון דער עבודה, נישט שבת."
+        },
+        "evidence": { "segs": [254, 263, 264, 315, 323], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "He teaches that a Jew is measured not by his Shabbos table but by whether he stays standing in the night, as the passuk calls the servants of Hashem those who stand in His house at night.",
+          "yi": "ער לערנט אז מען מעסט א איד נישט מיט זיין שבת'דיגן טיש, נאר צי ער בלייבט שטיין ביינאכט, אזוי ווי דער פסוק רופט די עובדי השם די וואס שטייען אין בית השם בלילות."
+        },
+        "evidence": { "segs": [351, 352, 357, 359, 360], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The Rav explains that Yaakov did reveal the end of days: the end will come precisely when the eyes and hearts of Yisrael are closed and it seems impossible that Moshiach could come.",
+          "yi": "דער משגיח ערקלערט אז יעקב אבינו האט יא מגלה געווען דעם קץ: דער קץ וועט קומען דווקא ווען די עיני ולב פון ישראל זענען פארשטאפט און עס זעט אויס אז משיח קען נישט קומען."
+        },
+        "evidence": { "segs": [500, 501, 504, 505, 511], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "When Bereishis closes with Yosef's coffin sunk by sorcery and the forces of the other side seem to win, the Rav says one must not despair but cry chazak and declare Hashem's kingship.",
+          "yi": "ווען ספר בראשית ענדיגט זיך מיט יוסף'ס ארון וואס איז פארזונקען געווארן מיט כישוף, און די סטרא אחרא זעט אויס מנצח, זאגט דער משגיח אז מ'טאר נישט מיואש ווערן, נאר שרייען חזק און מכריז זיין מלכות שמים."
+        },
+        "evidence": { "segs": [571, 575, 577, 583, 586], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The Rav explains that Yevamos, the masechta being learned now in the weeks of Shovavim, deals with tikkun hanefesh, and therefore it comes with difficulty, because repairing the soul is not easy.",
+          "yi": "דער משגיח ערקלערט אז מסכת יבמות, וואס מ'לערנט יעצט אין די וואכן פון שובבי\"ם, רעדט פון תיקון הנפש, און דערפאר קומט זי אן מיט שוועריקייט, ווייל מתקן זיין דעם נפש איז נישט קיין גרינגע זאך."
+        },
+        "evidence": { "segs": [700, 708, 715, 724, 731, 732], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-parsha-sefer-bereishes-12-01-vayechi",
+      "startSeg": 0,
+      "endSeg": 43,
+      "title": {
+        "en": "Why Vayechi is a closed parsha",
+        "yi": "פארוואס ויחי איז א פרשה סתומה"
+      },
+      "summary": {
+        "en": "The Rav asks why there is no break between Vayigash and Vayechi and brings the Midrash's three reasons: the hearts of Yisrael were closed by the bondage, Yaakov wanted to reveal the end, and all troubles were hidden from him. He adds that Rebbi lived seventeen years in Tzippori, applied the passuk of Vayechi to himself, and was a gilgul of Yaakov.",
+        "yi": "דער משגיח פרעגט פארוואס עס איז נישטא קיין הפסק צווישן ויגש און ויחי, און ער ברענגט די דריי תירוצים פונעם מדרש: דאס הארץ פון ישראל איז פארשטאפט געווארן פונעם שעבוד, יעקב האט געוואלט מגלה זיין דעם קץ, און אלע צרות זענען פון אים פארשטאפט געווארן. ער לייגט צו אז רבי האט געוואוינט זיבעצן יאר אין ציפורי, האט געזאגט אויף זיך דעם פסוק ויחי, און איז געווען א גלגול פון יעקב אבינו."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-12-01-vayechi",
+      "startSeg": 44,
+      "endSeg": 113,
+      "title": {
+        "en": "The white space, Rebbi, and Yaakov who lives",
+        "yi": "דער ווייסער גבול, רבי, און יעקב וואס לעבט"
+      },
+      "summary": {
+        "en": "The Rav explains that the white margin of a Sefer Torah is the Oral Torah, brings a letter that left a blank space for the reader to understand, and shows that Rebbi hinted himself in the filled space because he wrote down the Oral Torah due to the troubles of exile. He then explains the Gemara that Yaakov did not die: Yaakov's strength lives on in his children even when they are far away.",
+        "yi": "דער משגיח ערקלערט אז דער ווייסער גבול פון א ספר תורה איז די תורה שבעל פה, ער ברענגט א בריוו וואס האט איבערגעלאזט א ליידיגן ארט צו פארשטיין, און ער ווייזט אז רבי האט זיך מרמז געווען אין דעם אנגעפילטן ארט, ווייל ער האט פארשריבן די תורה שבעל פה צוליב די צרות פונעם גלות. דערנאך איז ער מסביר די גמרא אז יעקב אבינו לא מת: דער כח פון יעקב לעבט ווייטער אין זיינע קינדער אפילו ווען זיי זענען ווייט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-12-01-vayechi",
+      "startSeg": 114,
+      "endSeg": 159,
+      "title": {
+        "en": "The long nights of Teves and of galus",
+        "yi": "די לאנגע נעכט פון טבת און פון גלות"
+      },
+      "summary": {
+        "en": "The Rav describes the season of the longest nights as a time of middas hadin, explains warmth and cold as chesed and din, and calls the present the longest night in the history of the Jewish people. He brings the Gemara about Adam HaRishon and the lengthening nights, and the custom not to learn on the longest night.",
+        "yi": "דער משגיח שילדערט די צייט פון די לענגסטע נעכט אלס א זמן פון מדת הדין, ער ערקלערט ווארעמקייט און קאלטקייט אלס חסד און דין, און ער רופט די היינטיגע צייט די לענגסטע נאכט אין דער היסטאריע פונעם אידישן פאלק. ער ברענגט די גמרא וועגן אדם הראשון און די נעכט וואס זענען געווארן לענגער, און דעם מנהג נישט צו לערנען אין דער לענגסטער נאכט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-12-01-vayechi",
+      "startSeg": 160,
+      "endSeg": 246,
+      "title": {
+        "en": "Yaakov truly lived in Mitzrayim",
+        "yi": "יעקב האט באמת געלעבט אין מצרים"
+      },
+      "summary": {
+        "en": "The Rav asks why the Torah says Yaakov 'lived' in Mitzrayim, the most impure land, and explains that Yaakov is the root of the Jews in galus. One must not despair in exile; Hashem sent each Jew there with a mission, and even in a closed place without room for a break, Yaakov lives.",
+        "yi": "דער משגיח פרעגט פארוואס די תורה זאגט אז יעקב האט \"געלעבט\" אין מצרים, דאס טמא'סטע לאנד, און ער ערקלערט אז יעקב אבינו איז דער שורש פון אידן אין גלות. מ'טאר נישט מיואש ווערן אין גלות; דער אייבערשטער האט יעדן איד אהין געשיקט מיט א שליחות, און אפילו אין א פארשטאפטן ארט אן א הפסק לעבט יעקב."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-12-01-vayechi",
+      "startSeg": 247,
+      "endSeg": 325,
+      "title": {
+        "en": "The purpose of creation: avodah in the dark",
+        "yi": "דער תכלית פון דער בריאה: עבודה אינמיטן חושך"
+      },
+      "summary": {
+        "en": "The Rav explains that the soul came down from the Throne of Glory to reveal Hashem's kingship in darkness, and that light and joy in avodah are already a reward. He brings Reb Zusha and the Lechovitcher's parable of a traveler at an inn to show that Shabbos is a rest along the way, while the weekdays are the real purpose.",
+        "yi": "דער משגיח ערקלערט אז די נשמה איז אראפגעקומען פון כסא הכבוד כדי מגלה צו זיין מלכות שמים אינמיטן חושך, און אז ליכטיגקייט און שמחה אין עבודה איז שוין א שכר. ער ברענגט פון רבי זושא און דעם לעכאוויטשער'ס משל פון א וואנדערער אין אן אכסניא, צו ווייזן אז שבת איז א רו אויפן וועג, און די ימי החול זענען דער אמת'ער תכלית."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-12-01-vayechi",
+      "startSeg": 326,
+      "endSeg": 383,
+      "title": {
+        "en": "Chazak at the end of Bereishis",
+        "yi": "חזק ביים סוף פון ספר בראשית"
+      },
+      "summary": {
+        "en": "The Rav notes that Bereishis ends sadly with the deaths of Yaakov and Yosef, and says this is the time to cry chazak. He teaches that a Jew is measured in the night, not at his Shabbos table, and brings the Kozhnitzer Maggid that from Vayeshev until Vayechi Hashem's name of mercy does not appear because galus was beginning.",
+        "yi": "דער משגיח מערקט אן אז ספר בראשית ענדיגט זיך טרויעריג מיט דער פטירה פון יעקב און יוסף, און ער זאגט אז דאס איז די צייט צו שרייען חזק. ער לערנט אז מען מעסט א איד ביינאכט, נישט ביי זיין שבת'דיגן טיש, און ער ברענגט דעם קאזשניצער מגיד אז פון וישב ביז ויחי שטייט נישט דער שם הוי\"ה, ווייל דער גלות האט זיך אנגעהויבן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-12-01-vayechi",
+      "startSeg": 384,
+      "endSeg": 432,
+      "title": {
+        "en": "Hoping to Hashem in every state",
+        "yi": "האפן צום אייבערשטן אין יעדן מצב"
+      },
+      "summary": {
+        "en": "The Rav explains that in every situation, light or dark, one must turn to Hashem, using the words 'lishuascha kivisi Hashem' and Yaakov's disappointment when he thought Shimshon was Moshiach. He adds that one must remember Hashem even in calm times, and brings Yehudah's greatness: even crouching, he remains a lion.",
+        "yi": "דער משגיח ערקלערט אז אין יעדן מצב, סיי ליכטיג סיי פינסטער, דארף מען אנקומען צום רבונו של עולם, מיט די ווערטער \"לישועתך קויתי ה'\" און מיט יעקב'ס אנטוישונג ווען ער האט געמיינט אז שמשון איז משיח. ער לייגט צו אז מ'דארף געדענקען דעם אייבערשטן אויך ווען אלעס גייט גוט, און ער ברענגט די גרויסקייט פון יהודה: אפילו ווען ער קניט בלייבט ער א לייב."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-12-01-vayechi",
+      "startSeg": 433,
+      "endSeg": 520,
+      "title": {
+        "en": "Closed hearts and the hidden end",
+        "yi": "פארשטאפטע הערצער און דער באהאלטענער קץ"
+      },
+      "summary": {
+        "en": "From Rashi's words the Rav shows that a Jew's heart affects the Torah itself, brings Reb Tzadok's Pri Tzaddik on Vayechi, and then asks why the Torah records Yaakov's attempt to reveal the end if he failed. He answers that the closing itself is the revelation: Moshiach will come precisely when hearts are closed.",
+        "yi": "פון רש\"י'ס ווערטער ווייזט דער משגיח אז דאס הארץ פון א איד ווירקט אויף דער תורה אליין, ער ברענגט דעם פרי צדיק פון רבי צדוק אויף ויחי, און דערנאך פרעגט ער פארוואס די תורה שרייבט אז יעקב האט געוואלט מגלה זיין דעם קץ, אויב ער האט עס נישט געקענט. ער ענטפערט אז דאס פארשטאפן אליין איז דער גילוי: משיח וועט קומען דווקא ווען די הערצער זענען פארשטאפט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-12-01-vayechi",
+      "startSeg": 521,
+      "endSeg": 592,
+      "title": {
+        "en": "Bereishis ends with sorcery",
+        "yi": "ספר בראשית ענדיגט זיך מיט כישוף"
+      },
+      "summary": {
+        "en": "The Rav explains that Bereishis is the book of creation, in which Hashem's light descended until one could even deny Him, and that it ends with the Egyptians sinking Yosef's coffin in the Nile by sorcery, which denies the heavenly household. At such a time one must not despair but cry chazak and say Aleinu.",
+        "yi": "דער משגיח ערקלערט אז ספר בראשית איז דער ספר פון דער בריאה, וואו דאס ליכט פונעם אייבערשטן איז אראפגעגאנגען ביז מ'קען אים אפילו מכחיש זיין, און אז ער ענדיגט זיך מיט די מצריים וואס האבן פארזונקען יוסף'ס ארון אינעם נילוס מיט כישוף, וואס איז מכחיש פמליא של מעלה. אין אזא צייט טאר מען נישט מיואש ווערן, נאר שרייען חזק און זאגן עלינו."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-12-01-vayechi",
+      "startSeg": 593,
+      "endSeg": 649,
+      "title": {
+        "en": "Souls bound to chutz la'aretz and darkness",
+        "yi": "נשמות וואס זענען שייך צו חוץ לארץ און חושך"
+      },
+      "summary": {
+        "en": "The Rav brings the letter of Reb Mendel of Vitebsk that some souls belong to Eretz Yisrael and some to chutz la'aretz, and that the Baal HaTanya was shown from heaven to stay. He explains that certain repairs of the soul can only be made in darkness and weekday struggle, and that when hopes are dashed as at Yosef's death one must cry chazak.",
+        "yi": "דער משגיח ברענגט דעם בריוו פון רבי מענדל פון וויטעבסק אז געוויסע נשמות זענען שייך צו ארץ ישראל און געוויסע צו חוץ לארץ, און אז דעם בעל התניא האט מען געוויזן מן השמים ער זאל בלייבן. ער ערקלערט אז געוויסע תיקונים פון דער נשמה קען מען נאר מאכן אינמיטן חושך און אין דער מי פון די ימי החול, און אז ווען די האפענונגען ווערן צעבראכן, אזוי ווי ביי יוסף'ס פטירה, דארף מען שרייען חזק."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-12-01-vayechi",
+      "startSeg": 650,
+      "endSeg": 749,
+      "title": {
+        "en": "Shovavim and learning Yevamos",
+        "yi": "שובבי\"ם און לערנען מסכת יבמות"
+      },
+      "summary": {
+        "en": "The Rav explains that after Vayechi come the weeks of Shovavim, a time of tikkun hanefesh for Klal Yisrael and for each Jew. He explains that each masechta carries its own light, sees hashgachah in the yeshivos learning Yevamos now, and explains that Yevamos deals with tikkun hanefesh and therefore comes with toil.",
+        "yi": "דער משגיח ערקלערט אז נאך ויחי קומען די וואכן פון שובבי\"ם, א צייט פון תיקון הנפש פאר כלל ישראל און פאר יעדן איד באזונדער. ער ערקלערט אז יעדע מסכת טראגט אין זיך איר אייגענע ליכט, ער זעט השגחה פרטית אין דעם וואס די ישיבות לערנען יעצט יבמות, און ער איז מסביר אז יבמות רעדט פון תיקון הנפש און דערפאר קומט זי אן מיט יגיעה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-12-01-vayechi",
+      "startSeg": 750,
+      "endSeg": 811,
+      "title": {
+        "en": "One step at a time: the seven jokes",
+        "yi": "שריט ביי שריט: די זיבן געלעכטערס"
+      },
+      "summary": {
+        "en": "The Rav returns to the traveler in the storm: a Jew in a period of trials must toil and know he will arrive at the day that is all Shabbos. He says one should take it calmly, one day and one task at a time, and closes with a Slonimer chassid who walked a long journey with 'seven jokes'.",
+        "yi": "דער משגיח קערט זיך אום צום וואנדערער אינעם שטורעם: א איד אין א צייט פון נסיונות דארף זיך מטריח זיין און וויסן אז ער וועט אנקומען צום יום שכולו שבת. ער זאגט אז מ'זאל עס נעמען רואיג, איין טאג און איין עבודה אויף אמאל, און ער שליסט מיט א סלאנימער חסיד וואס איז געגאנגען א לאנגן וועג מיט \"זיבן געלעכטערס\"."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "עס זאגט אויף דעם דער מדרש דריי צעריצן",
+      "work": "Bereishis Rabbah",
+      "ref": "Bereishis Rabbah 96:1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [5, 7, 11, 14, 484, 485], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "שפעת חשנא זאגט אויף דעם דעם מדרש אז רבי הקדש",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [19, 20, 21], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ויחי ידע וצפירי יד זיין שנא",
+      "work": "Bereishis",
+      "ref": "Bereishis 47:28",
+      "sefariaRef": "Genesis 47:28",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [38, 44, 170, 195], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "מרומז אין פרשת תולדות שנגעי בביתנך",
+      "work": "Bereishis",
+      "ref": "Bereishis 25:23",
+      "sefariaRef": "Genesis 25:23",
+      "resolution": "resolved",
+      "mention": "alluded",
+      "evidence": { "segs": [30, 31, 34], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "בית ארם פון רבי אהלן קאלינא איז דארטן דא א בריוו",
+      "work": "Beis Aharon",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [70, 71, 73, 74], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "יענקיף אבינו למות",
+      "work": "Gemara Taanis",
+      "ref": "Taanis 5b",
+      "sefariaRef": "Taanit 5b",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [97, 99, 100, 106], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "הוניני משיח המורחק וזרח המורת שבעים",
+      "work": "Yirmiyahu",
+      "ref": "Yirmiyahu 30:10",
+      "sefariaRef": "Jeremiah 30:10",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [102, 112, 216], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "האבן די גמרא דערציילט אין עובדי זרה",
+      "work": "Gemara Avodah Zarah",
+      "ref": "Avodah Zarah 8a",
+      "sefariaRef": "Avodah Zarah 8a",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [133, 134, 135, 136], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "מגילת תינות",
+      "work": "Megillas Taanis",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [146, 148, 149], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "אזוי ווי עס שטעט אין מדרש צגר לבנים",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [177, 178], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "תורת כהן ... לתבונן בן פרשי לפרשת",
+      "work": "Sifra",
+      "ref": "Sifra, Vayikra 1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [200, 204], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "היום די מבעס השם בלילות",
+      "work": "Tehillim",
+      "ref": "Tehillim 134:1",
+      "sefariaRef": "Psalms 134:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [359], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער קרשניצער אין זיין ספר עובדת ישראל",
+      "work": "Avodas Yisrael",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [366, 367, 376, 380], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "לשוות רכביתי ה'",
+      "work": "Bereishis",
+      "ref": "Bereishis 49:18",
+      "sefariaRef": "Genesis 49:18",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [376, 389, 396], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "הודע נחש עלי דרך",
+      "work": "Bereishis",
+      "ref": "Bereishis 49:17",
+      "sefariaRef": "Genesis 49:17",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [401, 402, 403, 405], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "עס שטעט אין חידושי ארום אין היינטליכע סדרה",
+      "work": "Chiddushei HaRim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [421, 422], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "כורא אפילו ווען ער קניט, שכב",
+      "work": "Bereishis",
+      "ref": "Bereishis 49:9",
+      "sefariaRef": "Genesis 49:9",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [423, 424, 425], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "לפערלאמיר פרשת הסתמא לפי שכשריך נפטר יעקב אבינו נסתמו ענין ולבן של ישראל מצורת השבט",
+      "work": "Rashi",
+      "ref": "Rashi, Bereishis 47:28",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [435], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "אני שיינער ולבי עהל, זאגט דער מדרש",
+      "work": "Shir HaShirim",
+      "ref": "Shir HaShirim 5:2",
+      "sefariaRef": "Song of Songs 5:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [450, 451], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "רבי צדק שמשט אין זיין סעטל פרי צדק אין היינטיגער סברא",
+      "work": "Pri Tzaddik",
+      "ref": "Pri Tzaddik, Vayechi",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [457, 458, 461, 480], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "היעשפער ביי גידולי חומשי יקרת וביחרית הימים",
+      "work": "Bereishis",
+      "ref": "Bereishis 49:1",
+      "sefariaRef": "Genesis 49:1",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [481, 482, 495, 496], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "בראשית בעלי כמעט א שמים ויסע ארץ",
+      "work": "Bereishis",
+      "ref": "Bereishis 1:1",
+      "sefariaRef": "Genesis 1:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [523], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "לאמיר נקרא שמעק שכם, מבנה שמקריכים פמליה שמילה",
+      "work": "Gemara Sanhedrin",
+      "ref": "Sanhedrin 67b",
+      "sefariaRef": "Sanhedrin 67b",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [539, 540, 541], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אזוי דער חז״ל זאגט אין אונז",
+      "work": "Gemara Sotah",
+      "ref": "Sotah 13a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [545, 548, 552, 554], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ויותם בארענדן מצרים",
+      "work": "Bereishis",
+      "ref": "Bereishis 50:26",
+      "sefariaRef": "Genesis 50:26",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [335, 573], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דארמאלס דארף מען זאגן עלינו",
+      "work": "Aleinu",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [586, 587], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "עד השם ימלך לעולם ועץ",
+      "work": "Shemos",
+      "ref": "Shemos 15:18",
+      "sefariaRef": "Exodus 15:18",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [589], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ער האט דעמאלט געשריבן א בריוו",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [596, 598, 599, 600], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ווי בעל כל המסגור הכאילו העובד דא איז וועדער זרה",
+      "work": "Gemara Sotah",
+      "ref": "Sotah 4b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [690, 693], "confidence": 0.65 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav reads the absence of a break before Vayechi as a hint to Rebbi: the white space of the Torah is the Oral Torah, which should not be written, and Rebbi, a gilgul of Yaakov, filled it only because of the troubles of exile.",
+        "yi": "דער משגיח לערנט אז דאס וואס עס פעלט א הפסק פאר ויחי איז א רמז אויף רבי: דער ווייסער גבול פון דער תורה איז די תורה שבעל פה וואס טאר נישט פארשריבן ווערן, און רבי, א גלגול פון יעקב, האט אים אנגעפילט נאר צוליב די צרות פונעם גלות."
+      },
+      "evidence": { "segs": [62, 64, 89, 91, 93, 95], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav turns the Midrash's 'all troubles were closed from him' into a stance: through bitachon a Jew in exile knows Hashem is with him, so the troubles are closed off from him even while they exist.",
+        "yi": "דער משגיח מאכט פון דעם מדרש \"נסתמו ממנו כל צרות\" א דרך: דורך ביטחון ווייסט א איד אין גלות אז דער אייבערשטער איז מיט אים, אזוי אז די צרות זענען פון אים פארשטאפט אפילו ווען זיי זענען דא."
+      },
+      "evidence": { "segs": [233, 234, 238, 239, 244], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Shabbos, in the Lechovitcher's parable, is the inn where the frozen traveler warms up to continue; Hashem did not send the soul down for Shabbos, which it already had beneath the Throne of Glory, but for the weekdays.",
+        "yi": "שבת, לויטן לעכאוויטשער'ס משל, איז די אכסניא וואו דער פארפרוירענער וואנדערער ווארעמט זיך אן כדי ווייטער צו גיין; דער אייבערשטער האט נישט אראפגעשיקט די נשמה צוליב שבת, וואס זי האט שוין געהאט ביים כסא הכבוד, נאר צוליב די ימי החול."
+      },
+      "evidence": { "segs": [284, 307, 310, 313, 315, 320], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "From Rashi's 'the hearts of Yisrael were closed, so the parsha is closed' the Rav learns that a Jew does not only relate to the Torah but affects it: when his heart is closed, the Torah itself becomes closed.",
+        "yi": "פון רש\"י'ס ווערטער \"נסתמו עיניהם ולבם של ישראל\", דערפאר איז די פרשה סתומה, לערנט דער משגיח אז א איד האט נישט נאר א שייכות צו דער תורה נאר ער ווירקט אויף איר: ווען זיין הארץ איז פארשטאפט ווערט די תורה אליין פארשטאפט."
+      },
+      "evidence": { "segs": [436, 438, 442, 443, 444], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Yaakov, a man of truth, did reveal the end: the very closing of the hearts is the sign, since Moshiach will come in the darkest time, when even many Jews forget him.",
+        "yi": "יעקב אבינו, א איש אמת, האט יא מגלה געווען דעם קץ: דאס פארשטאפן פון די הערצער אליין איז דער סימן, ווייל משיח וועט קומען אין דער פינסטערסטער צייט, ווען אפילו אסאך אידן פארגעסן אין אים."
+      },
+      "evidence": { "segs": [489, 500, 501, 505, 511, 516], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav sees hashgachah in the yeshivos learning Yevamos during Shovavim: a masechta about yibum, bringing back a soul that did not complete its task, is itself a tikkun hanefesh, and that is why it is hard.",
+        "yi": "דער משגיח זעט השגחה פרטית אין דעם וואס די ישיבות לערנען יבמות אין שובבי\"ם: א מסכת וואס רעדט פון יבום, צוריקברענגען א נשמה וואס האט נישט פארענדיגט איר תפקיד, איז אליין א תיקון הנפש, און דערפאר איז זי שווער."
+      },
+      "evidence": { "segs": [701, 704, 709, 712, 724, 749], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "Reb Mendel of Vitebsk and the souls of chutz la'aretz",
+        "yi": "רבי מענדל פון וויטעבסק און די נשמות פון חוץ לארץ"
+      },
+      "retelling": {
+        "en": "After the Maggid passed away there was a call to travel to Eretz Yisrael. Reb Mendel of Vitebsk traveled with Reb Avraham of Kalisk, and wrote a letter explaining that some souls are connected to Eretz Yisrael and some to chutz la'aretz. The Rav adds that the Baal HaTanya also wanted to go, and it was revealed to him from heaven that he must stay in chutz la'aretz and reveal Hashem's kingship there.",
+        "yi": "נאך דער פטירה פונעם מגיד איז געווען א רוף צו פארן קיין ארץ ישראל. רבי מענדל פון וויטעבסק איז געפארן מיט רבי אברהם קאליסקער, און ער האט געשריבן א בריוו וואו ער ערקלערט אז געוויסע נשמות האבן א שייכות צו ארץ ישראל און געוויסע צו חוץ לארץ. דער משגיח לייגט צו אז דער בעל התניא האט אויך געוואלט פארן, און מ'האט אים מגלה געווען מן השמים אז ער דארף בלייבן אין חוץ לארץ און דארט מגלה זיין מלכות שמים."
+      },
+      "people": ["the Maggid of Mezritch", "Reb Mendel of Vitebsk", "Reb Avraham of Kalisk", "the Baal HaTanya"],
+      "evidence": { "segs": [593, 596, 599, 600, 601, 602], "confidence": 0.7 }
+    },
+    {
+      "title": {
+        "en": "Learning mishnayos for his own soul",
+        "yi": "לערנען משניות פאר זיין אייגענע נשמה"
+      },
+      "retelling": {
+        "en": "Someone was found learning mishnayos and was asked for which deceased person he was learning. He answered that he was learning for his own soul: why wait until others learn mishnayos for him, when he can repair his soul now.",
+        "yi": "מ'האט געטראפן איינעם וואס לערנט משניות, און מ'האט אים געפרעגט נאך וועלכן נפטר ער לערנט. האט ער געענטפערט אז ער לערנט פאר זיין אייגענע נשמה: פארוואס זאל ער ווארטן ביז אנדערע וועלן לערנען משניות פאר אים, ווען ער קען יעצט מתקן זיין זיין נשמה."
+      },
+      "people": [],
+      "evidence": { "segs": [717, 718, 719, 720, 721], "confidence": 0.75 }
+    },
+    {
+      "title": {
+        "en": "The Slonimer chassid's seven jokes",
+        "yi": "דעם סלאנימער חסיד'ס זיבן געלעכטערס"
+      },
+      "retelling": {
+        "en": "One of the great Slonimer chassidim, an old and sick man, once had to walk a long, hard, uphill journey for a mitzvah, a matter of many hours. When he arrived he was asked how he managed it, and he said he did it with seven jokes. He divided the way into seven parts between towns: an hour and a half to the next town is nothing, a joke; two hours to the one after, also a joke; and so he arrived with seven jokes.",
+        "yi": "איינער פון די גרויסע סלאנימער חסידים, אן אלטער קראנקער איד, האט אמאל געדארפט גיין צו פוס א לאנגן שווערן וועג בארג ארויף צוליב א דבר מצוה, שטונדן לאנג. ווען ער איז אנגעקומען האט מען אים געפרעגט ווי אזוי ער האט דאס אויסגעהאלטן, און ער האט געזאגט אז ער האט עס געטון מיט זיבן געלעכטערס. ער האט צעטיילט דעם וועג אויף זיבן חלקים צווישן די שטעטלעך: א שטונדע און א האלב ביזן קומענדיגן שטעטל איז גארנישט, א געלעכטער; צוויי שעה ביזן נעקסטן, אויך א געלעכטער; און אזוי איז ער אנגעקומען מיט זיבן געלעכטערס."
+      },
+      "people": [],
+      "evidence": { "segs": [782, 784, 791, 797, 800, 808], "confidence": 0.8 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why is there no break between Vayigash and Vayechi?",
+        "yi": "פארוואס איז נישטא קיין הפסק צווישן ויגש און ויחי?"
+      },
+      "answer": {
+        "en": "The Midrash gives three reasons; the Rav adds that the filled space hints to Rebbi, a gilgul of Yaakov, who wrote down the Oral Torah that belongs in the white space, because of the troubles of exile.",
+        "yi": "דער מדרש גיט דריי טעמים; דער משגיח לייגט צו אז דער אנגעפילטער ארט איז א רמז אויף רבי, א גלגול פון יעקב, וואס האט פארשריבן די תורה שבעל פה וואס געהערט אין דעם ווייסן גבול, צוליב די צרות פונעם גלות."
+      },
+      "questionSegs": [1, 2, 4],
+      "answerSegs": [5, 7, 91, 93],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "How can the Gemara say Yaakov did not die, when he was eulogized and buried?",
+        "yi": "ווי אזוי קען די גמרא זאגן אז יעקב אבינו איז נישט געשטארבן, ווען מ'האט אים מספיד געווען און באגראבן?"
+      },
+      "answer": {
+        "en": "The power Yaakov embodies was passed on to his children and never died, so wherever his children live, even far off and in captivity, Yaakov lives with them.",
+        "yi": "דער כח וואס יעקב שטעלט מיט זיך פאר איז איבערגעגעבן געווארן צו זיינע קינדער און איז קיינמאל נישט אפגעשטארבן, ממילא וואו זיינע קינדער לעבן, אפילו ווייט און אין שביה, לעבט יעקב מיט זיי."
+      },
+      "questionSegs": [97, 99, 100],
+      "answerSegs": [109, 110, 111, 113],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why does the Torah say Yaakov 'lived' only in Mitzrayim, the most impure land, and not in Eretz Yisrael?",
+        "yi": "פארוואס שטייט \"ויחי\" נאר אין מצרים, דאס טמא'סטע לאנד, און נישט אין ארץ ישראל?"
+      },
+      "answer": {
+        "en": "Yaakov is the root of the Jews in galus, and his life in Mitzrayim shows his children that even in exile one must live and serve Hashem, who is with them there.",
+        "yi": "יעקב אבינו איז דער שורש פון אידן אין גלות, און זיין לעבן אין מצרים ווייזט זיינע קינדער אז אפילו אין גלות דארף מען לעבן און דינען דעם אייבערשטן, וואס איז מיט זיי דארט."
+      },
+      "questionSegs": [167, 168, 171, 174],
+      "answerSegs": [175, 176, 178, 189],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "If Yaakov could not reveal the end, why does the Torah record that he wanted to, and how could Yaakov, a man of truth, say 'I will tell you'?",
+        "yi": "אויב יעקב האט נישט געקענט מגלה זיין דעם קץ, פארוואס שרייבט די תורה אז ער האט עס געוואלט, און ווי אזוי האט יעקב, א איש אמת, געזאגט \"ואגידה לכם\"?"
+      },
+      "answer": {
+        "en": "He did reveal it: the closing of the hearts is itself the end, since Moshiach will come precisely when Yisrael's eyes and hearts are closed.",
+        "yi": "ער האט עס יא מגלה געווען: דאס פארשטאפן פון די הערצער איז אליין דער קץ, ווייל משיח וועט קומען דווקא ווען די עיני ולב פון ישראל זענען פארשטאפט."
+      },
+      "questionSegs": [486, 487, 489, 495],
+      "answerSegs": [500, 501, 505, 511],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why is Yevamos such a difficult masechta?",
+        "yi": "פארוואס איז יבמות אזא שווערע מסכת?"
+      },
+      "answer": {
+        "en": "Because it deals with tikkun hanefesh, and repairing a soul is never easy; it comes only with toil.",
+        "yi": "ווייל זי רעדט פון תיקון הנפש, און מתקן זיין א נשמה איז קיינמאל נישט גרינג; עס קומט נאר אן מיט יגיעה."
+      },
+      "questionSegs": [731, 749],
+      "answerSegs": [724, 732, 747, 748],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says that in galus one must not despair but strengthen oneself with joy and avodas Hashem, knowing Hashem is with him.",
+        "yi": "דער משגיח זאגט אז אין גלות טאר מען נישט מיואש ווערן, נאר מ'דארף זיך שטארקן מיט שמחה און עבודת השם, מיט'ן וויסן אז דער אייבערשטער איז מיט אים."
+      },
+      "evidence": { "segs": [183, 186, 189, 238, 239], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "When trials grow strong and serving Hashem feels hard, the Rav says one should rouse himself with joy, knowing this is now his task.",
+        "yi": "ווען די נסיונות שטארקן זיך און עס איז שווער צו דינען דעם אייבערשטן, זאגט דער משגיח אז מ'זאל זיך מחיה זיין מיט שמחה, מיט'ן וויסן אז דאס איז יעצט זיין תפקיד."
+      },
+      "evidence": { "segs": [324, 325], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one must turn to Hashem in every situation, also when business is good and the children are healthy.",
+        "yi": "דער משגיח זאגט אז מ'דארף אנקומען צום רבונו של עולם אין יעדן מצב, אויך ווען די געשעפטן גייען גוט און די קינדער זענען געזונט."
+      },
+      "evidence": { "segs": [412, 417, 418, 419, 420], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He says one should take hardship calmly: live each day for itself and each task for itself, without worrying about tomorrow.",
+        "yi": "ער זאגט אז מ'זאל נעמען די שוועריקייטן רואיג: יעדן טאג פאר זיך און יעדע עבודה פאר זיך, אן קלערן וועגן מארגן."
+      },
+      "evidence": { "segs": [776, 777, 778, 779, 780], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "parshas Vayechi",
+    "parsha stumah",
+    "galus as the arena of avodah",
+    "Yaakov Avinu did not die",
+    "Shabbos and the weekdays",
+    "the end of days and closed hearts",
+    "end of sefer Bereishis",
+    "Shovavim and tikkun hanefesh",
+    "masechta Yevamos",
+    "Oral Torah and the white space of the Torah"
+  ],
+  "concepts": [
+    { "he": "פרשה סתומה", "heardAs": ["פרשת הסתמא", "פרשת תלמוד"] },
+    { "he": "נסתמו עיניהם ולבם של ישראל", "heardAs": ["נסתמו עינים וליבים של ישראל", "נסתם הנבל לבן", "ניסת מונעים ולבבים"] },
+    { "he": "צרת השעבוד", "heardAs": ["מצהת השיבת", "מצורת השבט", "צרות השבט"] },
+    { "he": "תורה שבעל פה", "heardAs": ["תורה של יואל פה", "תורה שביעתא", "תא שבע יעלט פער"] },
+    { "he": "תורה שבכתב", "heardAs": ["תורה של בכסף", "תא שבע כסף"] },
+    { "he": "תקופת טבת", "heardAs": ["תקפת תלות", "תקופת טבעות", "התקפות טבעת"] },
+    { "he": "לילי טבת הארוכים", "heardAs": ["לולי תיבות הארכים", "לילי תיבות הערכים"] },
+    { "he": "מדת הדין", "heardAs": ["מידות הדין"] },
+    { "he": "סטרא אחרא", "heardAs": ["סידכי אחר", "סדכי אחרא", "הסוד פאר אחרא"] },
+    { "he": "מעשה אבות סימן לבנים", "heardAs": ["צגר לבנים", "סימן לבנים"] },
+    { "he": "ימי החול", "heardAs": ["ויאמת החול", "ימית החיל", "ימית החול"] },
+    { "he": "יום שכולו שבת", "heardAs": ["יום שקרולי שבת", "יום שקולי שבת", "יום שקלה שבת"] },
+    { "he": "כסא הכבוד", "heardAs": ["כיסאי הכבוד", "כיסא הקבץ", "כיסו הקובץ"] },
+    { "he": "תיקון הנפש", "heardAs": ["צוקן הנפש", "צוקענע נפש", "תקנון"] },
+    { "he": "שובבי\"ם", "heardAs": ["שובדים שמש", "שבעים"] },
+    { "he": "כישוף", "heardAs": ["קושיב", "קישאר"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבינו שלום", "רבנו שלולים", "רבי'נא שלולם"] },
+    { "he": "מלכות שמים", "heardAs": ["מלכות שמים"] }
+  ],
+  "people": [
+    { "name": "Yaakov Avinu", "heardAs": ["יעקב אבינא", "יענקב", "יענקי ובנהל"] },
+    { "name": "Rebbi Yehudah HaNasi", "heardAs": ["רבי הקדש", "רבי ירדה הנשיא", "ר' יואל דערנאסי"] },
+    { "name": "Antoninus", "heardAs": ["אנטונינוס"] },
+    { "name": "Yosef", "heardAs": ["יוסף", "יוסף אבינו"] },
+    { "name": "Adam HaRishon", "heardAs": ["אדם הראשון"] },
+    { "name": "Reb Zusha", "heardAs": ["רבי ר' זושא"] },
+    { "name": "the Lechovitcher", "heardAs": ["אלעכאוויטשער"] },
+    { "name": "the Kozhnitzer Maggid", "heardAs": ["קרשניצער מגיד"] },
+    { "name": "Shimshon", "heardAs": ["שמשון"] },
+    { "name": "Yehudah", "heardAs": ["יהודה"] },
+    { "name": "Reb Tzadok HaKohen", "heardAs": ["רבי צדק", "ר' צבי'ק"] },
+    { "name": "the Baal Shem Tov", "heardAs": ["דבר השם טוב"] },
+    { "name": "the Maggid of Mezritch", "heardAs": ["מגיד"] },
+    { "name": "the Chozeh of Lublin", "heardAs": ["לובלינע"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו"] },
+    { "name": "Reb Mendel of Vitebsk", "heardAs": ["רבי מענדל'ער דער טעפסקער"] },
+    { "name": "Reb Avraham of Kalisk", "heardAs": ["רבי אברהם קאליסקער"] },
+    { "name": "the Baal HaTanya", "heardAs": ["דער תניא"] }
+  ],
+  "asrNotes": "Yiddish ASR fair, Hebrew quotations badly garbled. The author of the letter in the Beis Aharon (segs 70-75), the source of the Rebbi-in-Tzippori Midrash (seg 19), the three orderings of 'lishuascha kivisi Hashem' (segs 389-399), the Chiddushei HaRim and the Pri Tzaddik content (segs 421, 457-480), and the Gemara cited around Eliyahu (seg 757) could not be recovered with confidence. The catalog title is a general description of the whole shiur rather than a list of topics. One short repeat-run noise segment (347) was ignored."
+}
