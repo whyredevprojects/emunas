@@ -1,0 +1,306 @@
+{
+  "shiurId": "yi-parshas-hashavua-nch-06",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that the teivah was meant to be the beginning of a rectified world, an olam hatikkun, until Cham's sin inside it spoiled that plan, and that Hashem remembered Noach only for the sake of Avraham Avinu who would come from him.",
+      "yi": "דער משגיח ערקלערט אז די תיבה האט געדארפט ווערן דער אנהייב פון א נייעם עולם התיקון, ביז חם האט געזינדיגט אין איר און קאליע געמאכט דעם פלאן, און אז דער אייבערשטער האט געדענקט נח נאר צוליב אברהם אבינו וואס איז ארויסגעקומען פון אים."
+    },
+    "abstract": {
+      "en": "The Rav opens with the Midrash that Noach found favor because of his offspring, and with the reckoning that Avraham was fifty-eight when Noach died, so that the 'tzaddik tamim' of the opening verse points to Avraham. He asks why the parsha first calls Noach 'tzaddik tamim in his generations' and later only 'tzaddik in this generation', and why Rosh Hashanah's Zichronos stress that Hashem remembered Noach 'with love'. After Rashi's account of the lion that struck Noach and the Ibn Ezra's question about meat for the carnivores, he explains through the covenant that kept the food from spoiling that decay entered the world with Adam's sin. The teivah was to begin a new olam hatikkun, an assembly of righteous creatures in which even the lion ate straw. When Cham sinned there the plan collapsed, the lion needed meat, and Noach was saved only for Avraham's sake. He applies this to Cheshvan after the Yamim Tovim.",
+      "yi": "דער משגיח עפנט מיטן מדרש אז נח האט געפונען חן צוליב זיינע תולדות, און מיטן חשבון אז אברהם אבינו איז געווען אכט און פופציג יאר אלט ווען נח איז נפטר געווארן, אזוי אז דער \"צדיק תמים\" אין אנהייב פון דער סדרה גייט אויף אברהם. ער פרעגט פארוואס עס שטייט צוערשט \"צדיק תמים בדורותיו\" און שפעטער נאר \"צדיק בדור הזה\", און פארוואס מען זאגט אין זכרונות \"וגם את נח באהבה זכרת\". נאך רש\"י וועגן דעם לייב וואס האט געשלאגן נח, און דעם אבן עזרא'ס קשיא וועגן פלייש פאר די חיות, ערקלערט ער דורכן ברית אויף די פירות אז פארפוילונג איז געקומען אויף דער וועלט דורכן חטא פון אדם הראשון. די תיבה האט געדארפט זיין דער אנהייב פון א נייעם עולם התיקון, א כנסיה פון צדיקים וואו אפילו דער לייב עסט שטרוי. ווען חם האט געזינדיגט אין דער תיבה איז דער פלאן בטל געווארן, דער לייב האט געדארפט פלייש, און נח איז ניצול געווארן נאר צוליב אברהם אבינו. צום סוף ווענדט ער עס אן אויף חודש חשון נאך די ימים טובים."
+    },
+    "keyPoints": [
+      {
+        "text": { "en": "Noach was saved from the Flood because Avraham Avinu, the true 'tzaddik tamim', would come from him.", "yi": "נח איז ניצול געווארן פונעם מבול ווייל פון אים איז ארויסגעקומען אברהם אבינו, דער אמת'ער \"צדיק תמים\"." },
+        "evidence": { "segs": [2, 7, 9, 113], "confidence": 0.75 }
+      },
+      {
+        "text": { "en": "Decay and spoilage came into the world through Adam's sin, and the covenant (bris) is what keeps things from spoiling.", "yi": "פארפוילונג איז געקומען אויף דער וועלט דורכן חטא פון אדם הראשון, און דער ברית איז דאס וואס היט אפ אז זאכן זאלן נישט פארפוילט ווערן." },
+        "evidence": { "segs": [50, 51, 52], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "Hashem created an olam hatikkun without death or predation, and in the future the lion will again eat straw like the ox.", "yi": "דער אייבערשטער האט באשאפן א עולם התיקון אן טויט און אן רויבערייען, און לעתיד לבוא וועט דער לייב ווידער עסן שטרוי ווי דער אקס." },
+        "evidence": { "segs": [63, 64, 69, 73], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "The teivah was meant to be a gathering of righteous creatures from which a new olam hatikkun would begin.", "yi": "די תיבה האט געדארפט זיין א כנסיה פון צדיקים וואס פון זיי זאל זיך אנהייבן א נייער עולם התיקון." },
+        "evidence": { "segs": [85, 86], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "Cham's sin in the teivah brought back the sin of Adam and cancelled the plan, so the lion became a meat-eater again.", "yi": "דער חטא פון חם אין דער תיבה האט צוריקגעברענגט דעם חטא פון אדם הראשון און בטל געמאכט דעם פלאן, און דער לייב איז ווידער געווארן א פלייש-עסער." },
+        "evidence": { "segs": [89, 92, 93, 100], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "The very bad inclination that caused the Flood became the reason for Hashem's promise never to bring another, showing that everything can be turned around.", "yi": "דער זעלבער יצר הרע וואס האט גורם געווען דעם מבול איז געווארן דער טעם פאר דער הבטחה אז עס וועט מער נישט זיין קיין מבול, און דערפון זעט מען אז מען קען אלעס איבערדרייען." },
+        "evidence": { "segs": [136, 137, 138, 139], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-parsha-sefer-bereishes-02-06-noach", "startSeg": 0, "endSeg": 13,
+      "title": { "en": "Noach saved for Avraham's sake", "yi": "נח ניצול געווארן צוליב אברהם אבינו" },
+      "summary": {
+        "en": "The Rav brings the Midrash that Noach found favor because of his offspring, and the reckoning that Avraham was fifty-eight when Noach died, so 'tzaddik tamim' refers to Avraham. He then asks why the parsha first calls Noach 'tzaddik tamim in his generations' and later only 'tzaddik in this generation'.",
+        "yi": "דער משגיח ברענגט דעם מדרש אז נח האט געפונען חן צוליב זיינע תולדות, און דעם חשבון אז אברהם אבינו איז געווען אכט און פופציג יאר ווען נח איז נפטר געווארן, ממילא גייט \"צדיק תמים\" אויף אברהם. דערנאך פרעגט ער פארוואס עס שטייט צוערשט \"צדיק תמים בדורותיו\" און שפעטער נאר \"צדיק בדור הזה\"."
+      },
+      "kind": "intro", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-02-06-noach", "startSeg": 14, "endSeg": 32,
+      "title": { "en": "Zichronos: 'You remembered Noach with love'", "yi": "זכרונות: \"וגם את נח באהבה זכרת\"" },
+      "summary": {
+        "en": "The Rav explains that Malchuyos and Shofros serve the Zichronos, whose first remembrance is that Hashem remembered Noach with love. He asks what great love there was in remembering Noach in the middle of the Flood, when saving him in the teivah was the plan from the start.",
+        "yi": "דער משגיח ערקלערט אז מלכיות און שופרות דינען די זכרונות, און די ערשטע זכירה דארט איז \"וגם את נח באהבה זכרת\". ער פרעגט וואס פאר א גרויסע אהבה איז דאס געווען צו געדענקען נח אינמיטן מבול, ווען זיין הצלה אין דער תיבה איז געווען דער פלאן פון אנהייב."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-02-06-noach", "startSeg": 33, "endSeg": 46,
+      "title": { "en": "The lion's bite and feeding the animals", "yi": "דער לייב'ס קלאפ און די שפייז אין דער תיבה" },
+      "summary": {
+        "en": "From Rashi on 'only Noach remained' the Rav tells how the lion struck Noach for bringing its food late. He shows that housing and feeding all creatures in the teivah was beyond nature, and brings the Ibn Ezra's question of where the meat for carnivores came from and his answer that they ate plants, against Chazal's reading that each animal had its own food.",
+        "yi": "פון רש\"י אויף \"וישאר אך נח\" דערציילט דער משגיח אז דער לייב האט געשלאגן נח ווייל ער האט פארשפעטיגט מיט זיין עסן. ער ווייזט אז צו האלטן און שפייזן אלע באשעפענישן אין דער תיבה איז געווען למעלה מדרך הטבע, און ברענגט דעם אבן עזרא'ס קשיא פון וואו מען האט גענומען פלייש פאר די חיות און זיין תירוץ אז זיי האבן געגעסן גראז, קעגן חז\"ל אז יעדע באשעפעניש האט געהאט איר אייגן עסן."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-02-06-noach", "startSeg": 47, "endSeg": 54,
+      "title": { "en": "The covenant against spoilage", "yi": "דער ברית אז עס זאל נישט פארפוילט ווערן" },
+      "summary": {
+        "en": "The Rav brings Rashi that the covenant with Noach was needed so the produce in the teivah would not rot, and explains that decay came into the world through Adam's sin, while where there is bris there is no spoilage. He cites Yosef HaTzaddik, the guardian of the bris, whose stored grain did not rot.",
+        "yi": "דער משגיח ברענגט רש\"י אז דער ברית מיט נח איז געווען נויטיג כדי די פירות אין דער תיבה זאלן נישט פארפוילט ווערן, און ערקלערט אז פארפוילונג איז געקומען דורכן חטא פון אדם הראשון, און וואו עס איז דא ברית איז נישטא קיין פארפוילונג. ער ברענגט יוסף הצדיק, דער שומר הברית, וואס זיין תבואה איז נישט פארפוילט געווארן."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-02-06-noach", "startSeg": 55, "endSeg": 62,
+      "title": { "en": "A tzaddik does not decay", "yi": "ביי א צדיק איז נישטא קיין פארפוילונג" },
+      "summary": {
+        "en": "The Rav tells of the Rebbe Reb Elimelech's grave opened under the Nazis and of a gabbai's letter whose ink faded while the tzaddik's signature stayed black, to show that with a tzaddik nothing spoils. With this he concludes that Noach's food did not spoil in the merit of the bris, so the Ibn Ezra's question about meat does not begin.",
+        "yi": "דער משגיח דערציילט וועגן דעם רבי ר' אלימלך'ס קבר וואס מען האט געעפנט אונטער די נאציס, און וועגן א בריוו פון א גבאי וואו די טינט איז געווארן ברוין און דעם צדיק'ס חתימה איז געבליבן שווארץ, צו ווייזן אז ביי א צדיק פארפוילט גארנישט. דערמיט ענדיגט ער אז נח'ס שפייז איז נישט פארפוילט געווארן אין זכות פונעם ברית, ממילא הייבט זיך נישט אן דעם אבן עזרא'ס קשיא."
+      },
+      "kind": "story", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-02-06-noach", "startSeg": 63, "endSeg": 77,
+      "title": { "en": "The olam hatikkun and its corruption", "yi": "דער עולם התיקון און זיין קלקול" },
+      "summary": {
+        "en": "The Rav describes the world Hashem first created, an olam hatikkun without death or decay, which Adam's sin spoiled, and the future when the lion will eat straw, bringing the Ramban on 'I will remove the wild beast from the land'. The deterioration grew until the generation of the Flood, so Hashem resolved to wipe it all out and start anew from one tzaddik.",
+        "yi": "דער משגיח שילדערט די וועלט וואס דער אייבערשטער האט צוערשט באשאפן, א עולם התיקון אן טויט און אן פארפוילונג, וואס אדם הראשון'ס חטא האט קאליע געמאכט, און די צוקונפט ווען דער לייב וועט עסן שטרוי, מיטן רמב\"ן אויף \"והשבתי חיה רעה מן הארץ\". די קלקול איז געוואקסן ביזן דור המבול, און דער אייבערשטער האט באשלאסן אויסמעקן אלעס און אנהייבן פון נייעם פון איין צדיק."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-02-06-noach", "startSeg": 78, "endSeg": 92,
+      "title": { "en": "The teivah as an assembly of tzaddikim", "yi": "די תיבה ווי א כנסיה פון צדיקים" },
+      "summary": {
+        "en": "The Rav explains that every person has his own portion of creation, so the sinners of the Flood corrupted even the animals and the earth, while Noach's portion stayed pure: the creatures in the teivah and Eretz Yisrael, where the Flood did not fall. The teivah was to be an assembly of tzaddikim from which a new olam hatikkun would begin, until Cham sinned there, repeating Adam's sin.",
+        "yi": "דער משגיח ערקלערט אז יעדער מענטש האט זיין חלק אין דער בריאה, ממילא האבן די זינדיגער פונעם דור המבול קאליע געמאכט אפילו די בהמות און די ערד, אבער נח'ס חלק איז געבליבן ריין: די באשעפענישן אין דער תיבה און ארץ ישראל, וואו דער מבול איז נישט געקומען. די תיבה האט געדארפט זיין א כנסיה פון צדיקים וואס פון איר זאל זיך אנהייבן א נייער עולם התיקון, ביז חם האט דארט געזינדיגט און איבערגעחזרט דעם חטא פון אדם הראשון."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-02-06-noach", "startSeg": 93, "endSeg": 103,
+      "title": { "en": "Why the lion suddenly needed meat", "yi": "פארוואס דער לייב האט פלוצלונג געדארפט פלייש" },
+      "summary": {
+        "en": "The Rav explains that once Cham sinned the plan was cancelled and the lion again became a predator that needs concentrated food, since straw holds far less life-force than meat. Noach had brought no meat and fed it straw, so it struck him; Hashem would no longer work miracles for creatures that had sinned.",
+        "yi": "דער משגיח ערקלערט אז ווען חם האט געזינדיגט איז דער פלאן בטל געווארן, און דער לייב איז ווידער געווארן א חיה טורפת וואס דארף קאנצענטרירטע שפייז, ווייל אין שטרוי איז פאראן אסאך ווייניגער כח ווי אין פלייש. נח האט נישט אריינגעברענגט קיין פלייש און אים געגעבן שטרוי, האט ער אים געשלאגן; פאר באשעפענישן וואס האבן געזינדיגט האט דער אייבערשטער שוין נישט געטון קיין נסים."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-02-06-noach", "startSeg": 104, "endSeg": 114,
+      "title": { "en": "From 'tzaddik' to 'man of the earth'", "yi": "פון \"איש צדיק\" צו \"איש האדמה\"" },
+      "summary": {
+        "en": "The Rav explains that after Cham's sin Noach is called 'man of the earth' rather than tzaddik, since a child's sin can reach back to his parents, and that by strict judgment the teivah should have been wiped out. Hashem remembered Noach with love only for the sake of Avraham, which also answers why 'tzaddik in this generation' was said before the Flood while 'tzaddik tamim' was written later.",
+        "yi": "דער משגיח ערקלערט אז נאך חם'ס חטא הייסט נח \"איש האדמה\" און נישט מער \"איש צדיק\", ווייל א זון'ס חטא קען צוריקגיין ביז צו די עלטערן, און לפי שורת הדין האט די תיבה געדארפט אויסגעמעקט ווערן. דער אייבערשטער האט געדענקט נח באהבה נאר צוליב אברהם אבינו, און דאס פארענטפערט אויך פארוואס \"צדיק בדור הזה\" איז געזאגט געווארן פארן מבול און \"צדיק תמים\" איז שפעטער געשריבן געווארן."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-02-06-noach", "startSeg": 115, "endSeg": 124,
+      "title": { "en": "Tishrei's new world and Cheshvan's fall", "yi": "דער נייער וועלט פון תשרי און דער פאל אין חשון" },
+      "summary": {
+        "en": "The Rav applies the parsha to the yearly cycle: on Rosh Hashanah a Jew begins his own world anew and grows through the Yamim Tovim, but after them he falls, and Cheshvan, a dark month without a Yom Tov, feels like his own olam hatikkun was cancelled. He brings the Ba'al Shem Tov on entering the teivah and the Bnei Yissaschar on Cheshvan.",
+        "yi": "דער משגיח ווענדט אן די פרשה אויפן יערליכן סדר: ראש השנה הייבט א איד אן פון נייעם זיין אייגענע וועלט און וואקסט דורך די ימים טובים, אבער נאכדעם פאלט ער, און חשון, א פינצטערער חודש אן א יום טוב, פילט זיך ווי זיין עולם התיקון איז בטל געווארן. ער ברענגט דעם בעל שם טוב אויף \"בא אל התיבה\" און דעם בני יששכר אויף חודש חשון."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-02-06-noach", "startSeg": 125, "endSeg": 140,
+      "title": { "en": "Cheshvan can be turned around", "yi": "חשון קען איבערגעדרייט ווערן" },
+      "summary": {
+        "en": "The Rav says the parsha of Noach comforts a Jew in Cheshvan: just as Noach was remembered for Avraham's sake, every Jew must believe he will yet become good, and decrees can still be annulled. He brings Rashi that the rain began as rain of mercy, and shows from the bad inclination that caused the Flood and later the promise against another Flood that a Jew can turn everything around.",
+        "yi": "דער משגיח זאגט אז די פרשה פון נח טרייסט א איד אין חשון: אזוי ווי נח איז געדענקט געווארן צוליב אברהם אבינו, דארף יעדער איד גלייבן אז ער וועט נאך ווערן גוט, און מען קען נאך מבטל זיין גזירות. ער ברענגט רש\"י אז דער רעגן האט זיך אנגעהויבן מיט רחמים, און ווייזט פון דעם יצר הרע וואס האט גורם געווען דעם מבול און שפעטער די הבטחה קעגן א מבול, אז א איד קען אלעס מהפך זיין."
+      },
+      "kind": "closing", "catalogTopicIdx": [], "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "שטעט אין מדרש ... העלות העודות נח", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [0, 1, 2], "confidence": 0.75 } },
+    { "heardAs": "אבנעזרא, אז אברהם אבינו איז געוועזן א בניייך", "work": "Ibn Ezra", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [3, 5], "confidence": 0.6 } },
+    { "heardAs": "דער סדר הדורות מאכט א חשבון", "work": "Seder HaDoros", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [3, 4], "confidence": 0.75 } },
+    { "heardAs": "זרע הקדוש פון רבשתא", "work": "Zera Kodesh", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [9], "confidence": 0.65 } },
+    { "heardAs": "אלא תולדות נייעך נייעך איש צדיק תמים היה בדורתיו", "work": "Bereishis", "ref": "Bereishis 6:9", "sefariaRef": "Genesis 6:9", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [7, 10], "confidence": 0.9 } },
+    { "heardAs": "כעוסח ראיתי צדיק לפני בדור הזה", "work": "Bereishis", "ref": "Bereishis 7:1", "sefariaRef": "Genesis 7:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [11, 12, 110], "confidence": 0.9 } },
+    { "heardAs": "ווי דער חתם סופר מערקט שוין אן", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [11], "confidence": 0.8 } },
+    { "heardAs": "חז״ל ענטפערן ... א מקוטש שבחה בפניו", "work": "Gemara Eruvin", "ref": "Eruvin 18b", "sefariaRef": "Eruvin 18b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [13], "confidence": 0.75 } },
+    { "heardAs": "אמורי לפני מלכות כדי שיאלס זכרונות לפני ... מיטן שפר", "work": "Gemara Rosh Hashanah", "ref": "Rosh Hashanah 16a", "sefariaRef": "Rosh Hashanah 16a", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [14, 15], "confidence": 0.75 } },
+    { "heardAs": "וגמ' נייע בעהבה זכרונתא", "work": "Rosh Hashanah Mussaf", "ref": "Mussaf of Rosh Hashanah, Zichronos blessing", "sefariaRef": null, "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [16, 21, 22], "confidence": 0.85 } },
+    { "heardAs": "ויסקרא לכם את נח וגמ' כל החיה", "work": "Bereishis", "ref": "Bereishis 8:1", "sefariaRef": "Genesis 8:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [24, 28], "confidence": 0.85 } },
+    { "heardAs": "וישור אך נייעך ... רשע ברענגט עס", "work": "Rashi", "ref": "Rashi on Bereishis 7:23", "sefariaRef": "Rashi on Genesis 7:23", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [33, 34, 35], "confidence": 0.85 } },
+    { "heardAs": "300 אמערס לאנג, און 50 אמערס אזוי, און 30 אמערס", "work": "Bereishis", "ref": "Bereishis 6:15", "sefariaRef": "Genesis 6:15", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [37], "confidence": 0.8 } },
+    { "heardAs": "אן רבינו וחי' רעדט טאקע וועגן דעם", "work": "Rabbeinu Bechaye", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [40], "confidence": 0.7 } },
+    { "heardAs": "דער אבן עזרא ברענגט א קשה פון די טייב בנה", "work": "Ibn Ezra", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [41, 43, 46], "confidence": 0.75 } },
+    { "heardAs": "מכל מאכל השי' יאכל", "work": "Bereishis", "ref": "Bereishis 6:21", "sefariaRef": "Genesis 6:21", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [44, 45], "confidence": 0.85 } },
+    { "heardAs": "אין חז״ל שטעט ... זמורי'ס לפיל ... זככות לנעמות", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [44, 45], "confidence": 0.75 } },
+    { "heardAs": "זאגט רשע, ברית היצריך על המחלים של יעקבל", "work": "Rashi", "ref": "Rashi on Bereishis 6:18", "sefariaRef": "Rashi on Genesis 6:18", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [48, 61], "confidence": 0.8 } },
+    { "heardAs": "והמקר אדם אברהם ברוס", "work": "Hoshea", "ref": "Hoshea 6:7", "sefariaRef": "Hosea 6:7", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [50, 52, 92], "confidence": 0.8 } },
+    { "heardAs": "וחז''ל זאגן רשע ברענגט עס אין ויגש", "work": "Rashi", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [53], "confidence": 0.75 } },
+    { "heardAs": "זאגט ישעיה הנביא אין די הפטורה פונעם אחרון של פסח ... ויאה יקבק היכל תבן", "work": "Yeshayahu", "ref": "Yeshayahu 11:7", "sefariaRef": "Isaiah 11:7", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [69, 70, 71], "confidence": 0.85 } },
+    { "heardAs": "לא יראה ולא ישכותה בכל הקדש ... כי מל הארץ דעת ה'", "work": "Yeshayahu", "ref": "Yeshayahu 11:9", "sefariaRef": "Isaiah 11:9", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [71], "confidence": 0.8 } },
+    { "heardAs": "בילא המבות לנצח ומך ה' דמה", "work": "Yeshayahu", "ref": "Yeshayahu 25:8", "sefariaRef": "Isaiah 25:8", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [66], "confidence": 0.75 } },
+    { "heardAs": "ותרחך א תמה א עבור מן הארץ", "work": "Zechariah", "ref": "Zechariah 13:2", "sefariaRef": "Zechariah 13:2", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [65, 93], "confidence": 0.7 } },
+    { "heardAs": "דער רמב״ן זאגט עס אין פרשת ... ושבטי חיה רע מן הארץ", "work": "Ramban", "ref": "Ramban on Vayikra 26:6", "sefariaRef": "Ramban on Leviticus 26:6", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [72, 73, 74], "confidence": 0.8 } },
+    { "heardAs": "הערת נתן לבני אדם", "work": "Tehillim", "ref": "Tehillim 115:16", "sefariaRef": "Psalms 115:16", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [78], "confidence": 0.75 } },
+    { "heardAs": "זאגט איר גמרא, ליגשמה ביום זעם", "work": "Gemara Zevachim", "ref": "Zevachim 113a", "sefariaRef": "Zevachim 113a", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [84], "confidence": 0.75 } },
+    { "heardAs": "עובדי גמל זאגט אין סנהדרין אז חם האט געזונדיגט", "work": "Gemara Sanhedrin", "ref": "Sanhedrin 108b", "sefariaRef": "Sanhedrin 108b", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [89, 90], "confidence": 0.8 } },
+    { "heardAs": "שטעט פארקי דמות ... זאגט רשע ... דארט האט מען די ברכת", "work": "Rashi", "ref": "Rashi on Vayikra 26:5", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [98], "confidence": 0.65 } },
+    { "heardAs": "רשע ברענגט עס ניינטיג אין סדרה, ויחל נייחיש האדמה, ניין ס'חלון", "work": "Rashi", "ref": "Rashi on Bereishis 9:20", "sefariaRef": "Rashi on Genesis 9:20", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [103, 104], "confidence": 0.75 } },
+    { "heardAs": "דער חיים הקודש זאגט פרשת חורך", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [105], "confidence": 0.6 } },
+    { "heardAs": "די בקשה פון יעקב אבינו, בסודו מהטב הנפשי", "work": "Bereishis", "ref": "Bereishis 49:6", "sefariaRef": "Genesis 49:6", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [105], "confidence": 0.75 } },
+    { "heardAs": "עובד בעש''ט זאגט צוה תעשה לטבע", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [119], "confidence": 0.65 } },
+    { "heardAs": "אין ספר בני יששכר", "work": "Bnei Yissaschar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [124], "confidence": 0.8 } },
+    { "heardAs": "עס זאגט רשע אז ווען ס'איז דאן געפאנגען ... מיט די רחמים", "work": "Rashi", "ref": "Rashi on Bereishis 7:12", "sefariaRef": "Rashi on Genesis 7:12", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [131], "confidence": 0.7 } },
+    { "heardAs": "דער בית השלישי אזוי ווי שטעט אין מדרשם", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [132], "confidence": 0.65 } },
+    { "heardAs": "א דבר נפלא אין בעל התניא", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [135], "confidence": 0.7 } },
+    { "heardAs": "וכו' יצא מחשבות ליבער רעק רעק על היום", "work": "Bereishis", "ref": "Bereishis 6:5", "sefariaRef": "Genesis 6:5", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [136, 137], "confidence": 0.8 } },
+    { "heardAs": "כי יצא לב אדם רע מן עריו, ולי יוסף", "work": "Bereishis", "ref": "Bereishis 8:21", "sefariaRef": "Genesis 8:21", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [137, 138], "confidence": 0.8 } }
+  ],
+  "insights": [
+    {
+      "text": { "en": "Since Avraham was fifty-eight when Noach died, the 'tzaddik tamim' among Noach's offspring is Avraham, and Noach was saved for his sake.", "yi": "וויבאלד אברהם אבינו איז געווען אכט און פופציג יאר ווען נח איז נפטר געווארן, איז דער \"צדיק תמים\" פון נח'ס תולדות אברהם אבינו, און צוליב אים איז נח ניצול געווארן." },
+      "evidence": { "segs": [5, 7, 8], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "The covenant with Noach over the produce reflects that bris itself is what keeps things from decaying, as decay came from Adam's breach of the bris.", "yi": "דער ברית מיט נח אויף די פירות ווייזט אז דער ברית אליין היט אפ פון פארפוילונג, ווייל פארפוילונג איז געקומען ווען אדם הראשון האט עובר געווען אויפן ברית." },
+      "evidence": { "segs": [48, 50, 52], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "Each person's sin corrupts his own portion of creation; Noach's portion, the animals of the teivah and Eretz Yisrael, did not sin, which is why the Flood did not fall on Eretz Yisrael.", "yi": "יעדער מענטש'ס חטא פארדארבט זיין חלק אין דער בריאה; נח'ס חלק, די באשעפענישן אין דער תיבה און ארץ ישראל, האט נישט געזינדיגט, דערפאר איז דער מבול נישט געקומען אין ארץ ישראל." },
+      "evidence": { "segs": [79, 81, 83, 84], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The lion struck Noach because after Cham's sin it had reverted to a meat-eating predator, while Noach had prepared only straw for an olam hatikkun lion.", "yi": "דער לייב האט געשלאגן נח ווייל נאך חם'ס חטא איז ער ווידער געווארן א חיה טורפת וואס עסט פלייש, און נח האט אנגעגרייט נאר שטרוי פאר א לייב פון עולם התיקון." },
+      "evidence": { "segs": [87, 100, 101], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The word 'ach' in 'only Noach remained' is a diminution: the lion that should have eaten straw like the ox no longer did.", "yi": "דאס ווארט \"אך\" אין \"וישאר אך נח\" איז א מיעוט: דער לייב וואס האט געדארפט עסן שטרוי ווי דער אקס האט שוין נישט אזוי געטון." },
+      "evidence": { "segs": [106], "confidence": 0.6 }
+    },
+    {
+      "text": { "en": "'Tzaddik in this generation' records what Hashem said to Noach before the Flood, while 'tzaddik tamim in his generations' is how the Torah describes him afterwards, pointing to Avraham.", "yi": "\"צדיק בדור הזה\" זענען די ווערטער וואס דער אייבערשטער האט געזאגט צו נח פארן מבול, און \"צדיק תמים בדורותיו\" איז ווי די תורה שילדערט אים שפעטער, און עס ווייזט אויף אברהם אבינו." },
+      "evidence": { "segs": [110, 111, 113], "confidence": 0.7 }
+    },
+    {
+      "text": { "en": "The same bad inclination that caused the Flood is the reason given for Hashem's promise never to bring another, a model for how a Jew can turn evil into good.", "yi": "דער זעלבער יצר לב האדם רע וואס האט גורם געווען דעם מבול איז דער טעם פאר דער הבטחה אז עס וועט מער נישט זיין קיין מבול, און דאס איז א משל ווי א איד קען איבערדרייען רע צו טוב." },
+      "evidence": { "segs": [136, 137, 138], "confidence": 0.8 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Rebbe Reb Elimelech's grave", "yi": "דעם רבי ר' אלימלך'ס קבר" },
+      "retelling": {
+        "en": "When the Nazis entered Lizhensk they forced ten Jews to dig up the grave of the Rebbe Reb Elimelech in order to degrade them. The Rav heard it from a Jew in Skver, a talmid chacham close to the earlier Skverer Rebbe, who saw the grave opened. About a hundred and fifty years after his passing the Rebbe Reb Elimelech's body was whole. The Nazis fled at the sight and the grave was closed again.",
+        "yi": "ווען די נאציס ימ\"ש זענען אריין אין ליזענסק האבן זיי געצוואונגען צען אידן אויפצוגראבן דעם רבי ר' אלימלך'ס קבר, כדי צו מבזה זיין אידן. דער משגיח האט עס געהערט פון א איד אין סקווער, א תלמיד חכם נאענט צום פריערדיגן סקווערער רבי'ן, וואס האט עס געזען. כמעט הונדערט און פופציג יאר נאך זיין פטירה איז דער רבי ר' אלימלך געווען גאנץ. די נאציס זענען אנטלאפן ווען זיי האבן עס געזען, און מען האט צוריק פארשאטן דעם קבר."
+      },
+      "people": ["the Rebbe Reb Elimelech of Lizhensk", "the earlier Skverer Rebbe"],
+      "evidence": { "segs": [55, 56, 57, 58], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The signature that did not fade", "yi": "די חתימה וואס איז נישט פארבלאסט געווארן" },
+      "retelling": {
+        "en": "The Rav has a document from the court of the Stoliner Rebbe, written by the gabbai and signed by the Rebbe some sixty or seventy years earlier. Ordinary pen ink turns light brown with age, and the gabbai's writing did. The tzaddik's signature stayed as black as if it had been written the day before.",
+        "yi": "דער משגיח האט ביי זיך א כתב פון סטאלינער הויף, געשריבן פונעם גבאי און אונטערגעשריבן פונעם רבי'ן, מיט זעכציג אדער זיבעציג יאר צוריק. געווענליכע טינט ווערט ברוין מיט די יארן, און דעם גבאי'ס שריפט איז אזוי געווארן. דעם צדיק'ס חתימה איז געבליבן שווארץ ווי ער וואלט עס נעכטן געשריבן."
+      },
+      "people": ["the Stoliner Rebbe"],
+      "evidence": { "segs": [59, 60], "confidence": 0.7 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "Why does the parsha first call Noach 'tzaddik tamim in his generations' and later only 'tzaddik in this generation'?", "yi": "פארוואס שטייט אין אנהייב פון דער סדרה \"צדיק תמים בדורותיו\" און שפעטער נאר \"צדיק בדור הזה\"?" },
+      "answer": { "en": "'Tzaddik in this generation' is what Hashem told Noach before the Flood; the opening verse, written later, points to Avraham, the tzaddik tamim for whose sake Noach was saved.", "yi": "\"צדיק בדור הזה\" האט דער אייבערשטער געזאגט צו נח פארן מבול; דער ערשטער פסוק, וואס איז שפעטער געשריבן געווארן, ווייזט אויף אברהם אבינו, דער צדיק תמים וואס צוליב אים איז נח ניצול געווארן." },
+      "questionSegs": [11, 12, 13], "answerSegs": [110, 111, 113], "confidence": 0.7
+    },
+    {
+      "question": { "en": "What great love was there in Hashem remembering Noach in the middle of the Flood, when saving him was the plan from the start?", "yi": "וואס פאר א גרויסע אהבה איז געווען אז דער אייבערשטער האט געדענקט נח אינמיטן מבול, ווען זיין הצלה איז געווען דער פלאן פון אנהייב?" },
+      "answer": { "en": "After Cham's sin the plan was void and by strict judgment the teivah deserved destruction; remembering Noach then was a new kindness, for the sake of Avraham.", "yi": "נאך חם'ס חטא איז דער פלאן בטל געווארן און לפי שורת הדין האט די תיבה געדארפט אויסגעמעקט ווערן; דעמאלט צו געדענקען נח איז געווען א נייער חסד, צוליב אברהם אבינו." },
+      "questionSegs": [25, 26, 29], "answerSegs": [108, 109, 114], "confidence": 0.75
+    },
+    {
+      "question": { "en": "Where did Noach get meat for the carnivores in the teivah, and how could it keep for a year?", "yi": "פון וואו האט נח גענומען פלייש פאר די חיות אין דער תיבה, און ווי אזוי האט עס זיך געקענט האלטן א יאר?" },
+      "answer": { "en": "The food was kept from spoiling by the covenant, and in the teivah, as an olam hatikkun, the lion ate straw, so no meat was needed.", "yi": "דורכן ברית איז די שפייז נישט פארפוילט געווארן, און אין דער תיבה, ווי א עולם התיקון, האט דער לייב געגעסן שטרוי, ממילא האט מען נישט געדארפט קיין פלייש." },
+      "questionSegs": [41, 42, 46], "answerSegs": [61, 62, 88, 89], "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why was Noach late with the lion's food?", "yi": "פארוואס האט נח פארשפעטיגט מיטן לייב'ס עסן?" },
+      "answer": { "en": "After Cham's sin the lion suddenly needed a great deal of meat, which Noach had not brought, and it could not be satisfied at the usual times.", "yi": "נאך חם'ס חטא האט דער לייב פלוצלונג געדארפט אסאך פלייש, וואס נח האט נישט אריינגעברענגט, און ער האט זיך נישט געקענט באנוגענען מיט די געווענליכע צייטן." },
+      "questionSegs": [41], "answerSegs": [100, 101], "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Rav says a Jew must strengthen himself with the parsha of Noach in Cheshvan and believe he will yet become a fine, good Jew.", "yi": "דער משגיח זאגט אז א איד דארף זיך מחזק זיין מיט דער פרשה פון נח אין חשון און גלייבן אז ער וועט נאך ווערן אן ערליכער, גוטער איד." },
+      "evidence": { "segs": [125, 126], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "He says one must know that even after Rosh Hashanah and Yom Kippur decrees can still be annulled.", "yi": "ער זאגט אז מען דארף וויסן אז אפילו נאך ראש השנה און יום כיפור קען מען נאך מבטל זיין די גזירות." },
+      "evidence": { "segs": [128, 129], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "He says a Jew should take on Torah, mitzvos and tefillah in Cheshvan, knowing he can turn things around, and that even one who cannot fix the world can fix himself.", "yi": "ער זאגט אז א איד זאל אויף זיך נעמען תורה, מצוות און תפילה אין חשון, וויסנדיג אז ער קען אלעס מהפך זיין, און אפילו ווער עס קען נישט מתקן זיין די גאנצע וועלט קען מתקן זיין זיך אליין." },
+      "evidence": { "segs": [134, 139, 140], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": ["parshas Noach", "the teivah as olam hatikkun", "sin of Cham in the teivah", "Noach saved for the sake of Avraham", "bris and freedom from decay", "the lion in the teivah", "Zichronos of Rosh Hashanah", "Cheshvan after the Yamim Tovim", "turning evil into good"],
+  "concepts": [
+    { "he": "עולם התיקון", "heardAs": ["עולם הצוקן", "עולם הצוקים", "עולם הצגון"] },
+    { "he": "תיבה", "heardAs": ["טבע", "טייב בנה", "תאיבה"] },
+    { "he": "זכרונות", "heardAs": ["זכרונות", "זכרונתא"] },
+    { "he": "וגם את נח באהבה זכרת", "heardAs": ["וגמ' נייע בעהבה זכרונתא", "גמ''ס נח פה אהבה זוכה אלטה"] },
+    { "he": "ברית", "heardAs": ["ברוס", "ברית"] },
+    { "he": "וישאר אך נח", "heardAs": ["וישור אך נייעך", "וישוע אכט נח"] },
+    { "he": "ואריה כבקר יאכל תבן", "heardAs": ["ויאה יקבק היכל תבן", "וי א יקבק יחל טובים"] },
+    { "he": "והשבתי חיה רעה מן הארץ", "heardAs": ["ושבטי חיה רע מן הארץ", "וויזשבאטי חיירה מן הארץ"] },
+    { "he": "כנסיה של צדיקים", "heardAs": ["קנסיעה של צדיקים", "כנסי'ע פון"] },
+    { "he": "יצר לב האדם רע", "heardAs": ["כי יצא לב אדם רע מן עריו"] },
+    { "he": "חשון", "heardAs": ["חשבון"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבינו של עולם", "רבינו שלום", "רבי ישראל", "רבי יהושע"] }
+  ],
+  "people": [
+    { "name": "Noach", "heardAs": ["נח", "נייעך", "ניח", "נייך"] },
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינו"] },
+    { "name": "Ibn Ezra", "heardAs": ["אבנעזרא", "רבי נעזרא", "אבינעזרא"] },
+    { "name": "Chasam Sofer", "heardAs": ["חתם סופר"] },
+    { "name": "Rabbeinu Bechaye", "heardAs": ["רבינו וחי'"] },
+    { "name": "Rashi", "heardAs": ["רשע"] },
+    { "name": "Ramban", "heardAs": ["רמב״ן"] },
+    { "name": "Adam HaRishon", "heardAs": ["אדם ראשון", "אדמה ראשון"] },
+    { "name": "Yosef HaTzaddik", "heardAs": ["יוסף הצדיק"] },
+    { "name": "the Rebbe Reb Elimelech of Lizhensk", "heardAs": ["רבי ר' מלך", "רבי'ן רבי מלך"] },
+    { "name": "Cham", "heardAs": ["חם", "חמד", "נחום"] },
+    { "name": "Shem", "heardAs": ["שם"] },
+    { "name": "Yeshayahu HaNavi", "heardAs": ["ישעיה הנביא"] },
+    { "name": "Rabbi Nachum of Chernobyl", "heardAs": ["ר' נחמן טשערנאבילא"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יעקב אבינו"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["בעש''ט"] },
+    { "name": "the Ba'al HaTanya", "heardAs": ["בעל התניא"] }
+  ],
+  "asrNotes": "Yiddish ASR fair, with many English words and heavy garbling of Hebrew quotations; 'Ribono shel Olam' and 'teivah' are often misheard (as 'רבי ישראל', 'טבע'). Segment 32 is a repeat-run hallucination and 54 a long sparse segment. The gematria in segment 9, the source named in segment 105, the Ba'al Shem Tov's teaching in 119 and the Tanya teaching in 135 are too garbled to state in detail, and the Cheshvan gematria in 133-134 was left out."
+}
