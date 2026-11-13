@@ -107,7 +107,7 @@ git add data/derived/manifest.json data/derived/usage.tsv data/derived/shiurim d
 git commit -m "Batch <batchId>: <done> done, <pending> retry, <failed> failed"
 git push -u origin claude/vibrant-curie-ioreux
 ```
-Push to `claude/vibrant-curie-ioreux` only. If the push is rejected because the remote moved, run `git pull --rebase` once and push again; if that fails, stop and report. Never force-push.
+Push to `claude/vibrant-curie-ioreux` only. If the push is rejected because the remote moved, run `git pull --rebase` once and push again. If the rebase stops on a conflict in `data/derived/manifest.json` only (a transcript refresh landed meanwhile), resolve it by taking this batch's version (`git checkout --theirs data/derived/manifest.json` during the rebase), then run `npm run -s batch:init` to re-apply the refreshed transcript info, `git add data/derived/manifest.json`, `git rebase --continue`, and push. Any other conflict: `git rebase --abort`, push to a new branch `claude/batch-<batchId>`, and report. Never force-push.
 
 ### 8. Report
 One paragraph: batch id; shiurim done / back to pending / failed this run; overall status counts (done of 959, hours done); total tokens this run (sum of the usage rows) and tokens per audio hour; the audit result (shiur, severity, the worst note); anything that stopped the run.
