@@ -3,6 +3,7 @@ import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import type { CompactTranscript } from "../sync-transcripts.js";
 import type { Lang, Recording, Series, Shiur } from "../../src/types.js";
+import type { NoiseFlag } from "./noise.js";
 
 /** One ASR segment as stored in the transcript JSON in R2 (faster-whisper output). */
 export interface TranscriptSegment {
@@ -29,9 +30,11 @@ export interface PilotRecordingMeta {
   segmentCount: number;
   starts: number[];           // seconds, one per segment
   ends: number[];             // seconds, one per segment
+  /** Segments flagged `[NOISE?]` in input.txt by scripts/lib/noise.ts (absent in pilot-era metas). */
+  noise?: NoiseFlag[];
 }
 
-/** out/pilot/<shiurId>/meta.json */
+/** <shiur dir>/meta.json (out/pilot/<shiurId>/ for the pilot, data/derived/shiurim/<shiurId>/ in production) */
 export interface PilotMeta {
   shiurId: string;
   generatedAt: string;

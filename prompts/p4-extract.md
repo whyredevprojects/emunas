@@ -1,10 +1,12 @@
-# P4: extract a shiur of Harav Moshe Wolfson (prompt v2)
+# P4: extract a shiur of Harav Moshe Wolfson (prompt p4-v3)
 
 You are building the structured record of one Torah shiur (class) given by Harav Moshe Wolfson zt"l, the Mashgiach of Mesivta Torah Vodaath and Rav of Bais Medrash Emunas Yisroel. The shiur is in Yiddish or English. You have two things: this file, and one **input file** containing the shiur's catalog metadata and its machine transcript. You produce one **JSON file** that follows the `Extraction` contract below exactly.
 
 The transcript itself will never be shown to the public. What you write *is* what people will read: chapter markers in the audio player, bilingual summaries, sources, insights and stories. It must be faithful to what the Rav actually said, and it must never put words in his mouth. (A long-form write-up is produced later, in a separate pass, on top of your sections and sources. You do **not** write it, but your sections and sources must be accurate enough to build it on.)
 
-**Output:** write ONLY valid JSON (no Markdown fences, no comments, no trailing commas, nothing before or after the object) to the output path given in your task message. Use the `model` and `variant` values given in the task message; if none are given use `"model": "unknown"`, `"variant": "raw"`. Do not write any other files.
+**Output:** write ONLY valid JSON (no Markdown fences, no comments, no trailing commas, nothing before or after the object) to the output path given in your task message. Use the `model` and `variant` values given in the task message; if none are given use `"model": "unknown"`, `"variant": "raw"`. Always set `"promptVersion": "p4-v3"` (this prompt's version). Do not write any other files.
+
+Also read **`prompts/yiddish-style.md`** (spelling, vocabulary and syntax for every `yi` field) before you write.
 
 ---
 
@@ -25,13 +27,15 @@ perek: ב
 year: 5749 (1988/89)
 series: Tanya / תניא (tanya-yi), part 2
 totalDuration: 58:12 (0.97 h)
-targets: 3-12 sections in total; write-up about 388-679 words per language
+targets: 3-12 sections in total; write-up about 776-970 words per language (800-1000 per audio hour; ...)
+asrNoise: 3 segment(s) marked [NOISE?] by code (long_sparse 1, repeat_run 2); see the prompt on how to treat them
 recordings (in playback order):
-  y-tanya-1-02: 412 segments (idx 0..411), 58:12, asr=ivrit-ai/yi-whisper-large-v3-ct2
+  y-tanya-1-02: 412 segments (idx 0..411), 58:12, asr=ivrit-ai/yi-whisper-large-v3-ct2, 3 [NOISE?]
 
 ## RECORDING y-tanya-1-02 — 412 segments, 58:12
 [y-tanya-1-02:0|00:00] text of segment 0 ...
 [y-tanya-1-02:1|00:07] text of segment 1 ...
+[y-tanya-1-02:2|00:15] [NOISE?] און און און און און און און און
 ...
 ```
 
@@ -39,7 +43,7 @@ recordings (in playback order):
 - Each transcript line is `[recordingId:idx|mm:ss] text`. `idx` is the **segment index within that recording**, starting at 0 for every recording. `mm:ss` is the segment's start time (minutes can exceed 59). A segment lasts until the next segment starts; the last segment lasts until the recording's duration in the header. Segments vary a lot in length: one segment can cover several minutes of audio (often where the ASR skipped or hallucinated).
 - A shiur may have more than one recording (two cassette sides, several tracks). They are listed in playback order.
 - `catalogConfidence: derived guess` means the title was guessed from a file path; use it as a hint only.
-- The input may be a **machine-cleaned** transcript (the task message will say so, and the file is then `input.cleaned.txt`). The format is identical; a correction pass has tried to fix garbled terms line by line. Treat it like any transcript: it can still be wrong, including wrong "corrections", and every rule below still applies.
+- **`[NOISE?]`** after a line's prefix means code flagged that segment as likely ASR noise: a very long segment with very little text (Whisper skipped silence, singing or bad audio), a word or phrase repeated over and over, an exact repeat of the line before, a near-empty line, or a stock Whisper filler ("תודה רבה", "Thank you for watching"). The segment index is unchanged. See section 2, point 6.
 - `targets` gives the allowed number of sections for this shiur. Use it. (Its write-up word count is for the later write-up pass; ignore it.)
 - You only ever output **segment indices**, never times. Code converts indices to times. Use the `mm:ss` stamps only to measure durations.
 
@@ -62,6 +66,7 @@ How to work:
 3. **When you cannot recover something with reasonable confidence, leave it out.** Do not guess a name, a source, a number, a story detail or a chiddush from a garbled stretch. A shorter honest record beats a fuller invented one. Mention unrecoverable stretches in `asrNotes`.
 4. **Never fill in from your own knowledge** what the Rav "probably" said. Your knowledge may help you *recognize* a garbled term or source; it may never *supply content* that is not audible in the transcript. Everything you state must be traceable to specific segments.
 5. Typical Whisper failures to watch for: the same sentence repeated many times, or generic phrases ("תודה רבה", "Thank you for watching", "Subtitles by…") during silence, singing or a niggun: that is hallucination, not speech. Another person speaking (a question from the audience, an introduction by someone else) is `other_speaker`.
+6. **`[NOISE?]` segments**: treat them as noise unless the words are clearly coherent speech that fits what comes before and after. In particular, a long segment with little text often does hold real speech: Whisper transcribed a sentence or two and skipped the rest (a niggun, silence, or audio it lost). Use its coherent words like any other line; what the flag tells you is that most of its time is not transcribed, which matters for section kinds and for how much the stretch can support. Never cite a `[NOISE?]` segment as `evidence` for repeated or filler text, and never build a claim on its garbage. A run of flagged segments lasting **3:00 or more** becomes its own `noise` section (or `singing` when the context shows a niggun); a shorter run is absorbed into the neighbouring section and simply ignored. Mention long flagged stretches in `asrNotes`. Code may also miss noise: the same judgment applies to unflagged lines.
 
 ## 3. The catalog title is the skeleton
 
@@ -113,7 +118,7 @@ Good:
 **Multi-recording shiurim:** segment indices restart at 0 in each recording, so when the shiur has more than one recording every `evidence` object, and every `questions[]` item, must also carry `"recordingId": "<the recording its segs are in>"`, and all segs of one item must come from that one recording. In a single-recording shiur omit `recordingId` from evidence (it is allowed but not needed).
 
 - `summary.oneLiner`: one sentence per language, the heart of the shiur.
-- `summary.abstract`: 80–150 words per language, the shiur's line of thought in order.
+- `summary.abstract`: the shiur's line of thought in order: **80–150 words in English, 80–180 words in Yiddish** (Yiddish runs longer for the same content).
 - `summary.keyPoints`: **3–7** main teachings, one sentence each.
 - `insights`: **3–7** chiddushim: the non-obvious ideas, distinctive readings or connections the Rav makes. Not a repeat of the key points in other words; an insight is something a learned listener would not have said himself.
 - `stories`: every maaseh he tells, with `title`, a `retelling` (2–6 sentences per language, only details audible in the transcript), and `people` (names in English transliteration, only if recoverable). **Empty is valid.** Never add a story he didn't tell.
@@ -122,9 +127,12 @@ Good:
 - `sources`: every sefer, passuk, Chazal, Rishon, Acharon or Rebbe he cites or clearly alludes to. Uncapped, but each must be evidenced. (The later write-up refers to them by their index in this array.)
   - `heardAs`: the ASR text as it appears (copy the garbled form; short).
   - `work`: canonical English name of the work ("Tanya", "Bereishis", "Bnei Yissaschar", "Gemara Shabbos", "Zohar"), or `null` if only an author is named.
-  - `ref`: as precise as the transcript supports ("Tanya ch. 2", "Bereishis 6:9", "Shabbos 156a"), else `null`.
+  - `ref`: the location, as precise as the transcript supports ("Tanya ch. 2", "Bereishis 6:9", "Shabbos 156a"). A ref names a location (chapter, verse, daf, siman), not just the work: "Zohar" alone is not a ref.
   - `sefariaRef`: a Sefaria-style ref (e.g. "Genesis 6:9", "Shabbat 156a") only if you are confident of the exact location; else `null`.
-  - `resolution`: `resolved` (work and location are clear from the transcript), `inferred` (you recognized it from garbled text and context), `unresolved` (he cites something you cannot identify; keep `heardAs`, work/ref may be null).
+  - `resolution`, which **fixes which fields are filled** (the validator enforces this):
+    - `resolved`: work and exact location are clear. **`ref` and `sefariaRef` are both required.**
+    - `inferred`: you recognized the location from garbled text and context. **`ref` is required**; `sefariaRef` only if you are confident of it, else `null`.
+    - `unresolved`: everything else: he names a work or author without a location you can pin down ("the Zohar says", "the Arizal writes"), or cites something you cannot identify. **`ref` and `sefariaRef` are `null`**; keep `heardAs`, and `work` if known.
   - `mention`: `quoted` (he reads or recites the words), `paraphrased`, `alluded`.
 - `candidateTopics`: **5–10** free English noun phrases for topic tagging ("bitachon", "free will and mazal", "Shabbos as the source of blessing", "Tanya chapter 2"). Lowercase unless a proper noun.
 - `concepts`: glossary candidates: Hebrew/Aramaic/Chassidus terms central to this shiur, in correct loshon-hakodesh spelling (`he`), with the ASR spellings you saw (`heardAs`). This doubles as the ASR correction list, so include the garbled forms.
@@ -136,7 +144,7 @@ Good:
 Every `Localized` field is `{ "en": "...", "yi": "..." }`; both are required and non-empty. Do not output `he` in Localized fields.
 
 1. **Write each language from the shiur itself.** Do not write the English and then translate it into Yiddish, or the reverse. Each should read as if a native writer of that language summarized the shiur. They must agree in content.
-2. **Yiddish**: standard Chassidish Yiddish orthography as in *Der Yid* / *Der Blatt*: `נישט`, `וואס`, `איז`, `ער זאגט`, `דער משגיח`, `אזוי`, `פארוואס`, `ווייל`; no YIVO spelling, no nikud. Hebrew and Aramaic words keep their **loshon-hakodesh spelling** (`שבת`, `אמונה`, `תפילה`, `צדיק`, `רבונו של עולם`, `נפש השנית`, `חז"ל`, `רש"י`), not phonetic Yiddish spellings (`שאבעס`, `צאדיק`). The `yi` text must be essentially all Hebrew script; at most an occasional unavoidable Latin name.
+2. **Yiddish**: follow **`prompts/yiddish-style.md`** exactly: Chassidish orthography as in *Der Yid* / *Der Blatt* (`נישט`, `וואס`, `וואו`, `אזוי`, `פארוואס`, `ווייל`, `אידן`), **no YIVO spelling, no nikud, no dotted or ligature letters** (`וווּ`, `אַ`, `פֿ`, `ײ` are all wrong), no Daytshmerish (`וועלכער` as "which", `עטוואס`, `ווירקליך`), no English calques (`נעמט פלאץ`, `מאכט זינען`) and no English words in Hebrew letters (`רעקארדינג`). Hebrew and Aramaic words keep their **loshon-hakodesh spelling** (`שבת`, `אמונה`, `תפילה`, `צדיק`, `רבונו של עולם`, `נפש השנית`, `חז"ל`, `רש"י`), not phonetic Yiddish spellings (`שאבעס`, `צאדיק`). The `yi` text must be essentially all Hebrew script; at most an occasional unavoidable Latin name.
 3. **English**: plain, clear English for a frum reader. Hebrew terms transliterated in the Ashkenazi/Chassidish way the audience uses (Shabbos, Hashem, Ribono shel Olam, emunah, bitachon, tzaddik, Chazal, Rashi, the Ba'al Shem Tov), with a short gloss the first time if the term is not common. **No Hebrew script in `en` fields.** Use "Hashem" or "G-d".
 4. **Third-person reported speech, always.** English: "The Rav explains…", "He asks…", "He brings the Zohar…", "According to the Rav…". Yiddish: "דער משגיח ערקלערט…", "ער פרעגט…", "ער ברענגט דעם זוהר…". Never first person as the Rav ("I want to tell you…", "מיר דארפן…"), never direct quotes of his words, never second-person preaching to the reader ("You must…", "מען דארף…" as the writer's own voice). If he says "one must…", write "The Rav says one must…".
 5. **No psak.** Do not state halachic rulings, even if he discusses halacha; describe what he explains ("The Rav discusses why…").
@@ -155,6 +163,7 @@ interface Evidence { segs: number[]; confidence: number; recordingId?: string } 
 interface SegRange { recordingId: string; startSeg: number; endSeg: number }     // endSeg inclusive
 interface Extraction {
   shiurId: string; model: string; variant: string;
+  promptVersion: "p4-v3";
   summary: { oneLiner: Localized; abstract: Localized; keyPoints: { text: Localized; evidence: Evidence }[] };
   sections: (SegRange & {
     title: Localized; summary: Localized;
@@ -180,11 +189,12 @@ Compact example for a hypothetical single-recording 20-minute shiur (segments 0.
 ```json
 {
   "shiurId": "y-tanya-1-02",
-  "model": "sonnet",
+  "model": "opus",
   "variant": "raw",
+  "promptVersion": "p4-v3",
   "summary": {
     "oneLiner": { "en": "The Rav explains what it means that the Jewish soul is 'truly a part of G-d above'.", "yi": "דער משגיח ערקלערט וואס עס מיינט אז די אידישע נשמה איז \"חלק אלוק ממעל ממש\"." },
-    "abstract": { "en": "(80-150 words)", "yi": "(80-150 ווערטער)" },
+    "abstract": { "en": "(80-150 words)", "yi": "(80-180 ווערטער)" },
     "keyPoints": [
       { "text": { "en": "The word 'mamash' teaches that the soul stays bound to its Source.", "yi": "דאס ווארט \"ממש\" לערנט אז די נשמה בלייבט צוגעבינדן צו איר מקור." }, "evidence": { "segs": [12, 14], "confidence": 0.8 } },
       { "text": { "en": "...", "yi": "..." }, "evidence": { "segs": [40], "confidence": 0.75 } },
@@ -205,7 +215,9 @@ Compact example for a hypothetical single-recording 20-minute shiur (segments 0.
   ],
   "sources": [
     { "heardAs": "היא חילק אלוקים מימעל ממיש", "work": "Tanya", "ref": "Tanya ch. 2", "sefariaRef": null,
-      "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [3, 4], "confidence": 0.8 } }
+      "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [3, 4], "confidence": 0.8 } },
+    { "heardAs": "דער זוהר הקדוש זאגט", "work": "Zohar", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [51], "confidence": 0.7 } }
   ],
   "insights": [
     { "text": { "en": "...", "yi": "..." }, "evidence": { "segs": [20, 21], "confidence": 0.75 } },
@@ -237,8 +249,11 @@ Compact example for a hypothetical single-recording 20-minute shiur (segments 0.
    - [ ] section count within `targets`; every section ≥ 3:00; subsection rules
    - [ ] keyPoints 3–7, insights 3–7, questions ≤ 6, takeaways ≤ 5, candidateTopics 5–10
    - [ ] every evidence `segs` non-empty; `recordingId` on every evidence and question if > 1 recording
-   - [ ] every Localized has `en` and `yi`; `yi` in Hebrew script, Chassidish spelling; `en` has no Hebrew script
+   - [ ] sources: `resolved` has `ref` + `sefariaRef`; `inferred` has `ref`; `unresolved` has both `null`
+   - [ ] `[NOISE?]` stretches of 3:00+ are `noise`/`singing` sections; no claim rests on flagged garbage
+   - [ ] abstract 80–150 words in English, 80–180 in Yiddish
+   - [ ] every Localized has `en` and `yi`; `yi` in Hebrew script, Chassidish spelling per `yiddish-style.md` (no YIVO letters, no Daytshmerish, no calques); `en` has no Hebrew script
    - [ ] third person throughout; no psak, no own advice, no quotes from memory, no biography
-   - [ ] no `writeup` field (the write-up is a separate pass)
+   - [ ] `promptVersion` is `"p4-v3"`; no `writeup` field (the write-up is a separate pass)
    - [ ] nothing stated that you could not point to in the transcript
 6. Write the JSON object, and only it, to the output path.

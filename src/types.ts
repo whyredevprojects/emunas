@@ -105,7 +105,8 @@ export interface SourceMention {
   heardAs: string;
   work: string | null;        // canonical work name, e.g. "Tanya", "Bereishis", "Bnei Yissaschar"
   ref: string | null;         // e.g. "Tanya ch. 2", "Bereishis 6:9"
-  sefariaRef: string | null;  // guessed Sefaria ref; resolution says how sure
+  sefariaRef: string | null;  // Sefaria-style ref
+  /** resolved: ref + sefariaRef both set; inferred: ref set (sefariaRef optional); unresolved: ref and sefariaRef null. */
   resolution: "resolved" | "inferred" | "unresolved";
   mention: "quoted" | "paraphrased" | "alluded";
   evidence: Evidence;
@@ -115,9 +116,11 @@ export interface Extraction {
   shiurId: string;
   model: string;              // "sonnet" | "opus" | "haiku"
   variant: string;            // e.g. "raw" | "cleaned"
+  /** Version of prompts/p4-extract.md that produced it ("p4-v3"); absent in pilot outputs. */
+  promptVersion?: string;
   summary: {
     oneLiner: Localized;
-    abstract: Localized;      // 80-150 words each
+    abstract: Localized;      // 80-150 words en, 80-180 yi
     keyPoints: { text: Localized; evidence: Evidence }[]; // 3-7
   };
   sections: Section[];        // must tile each recording with no gaps/overlaps
@@ -137,7 +140,10 @@ export interface Writeup {
   shiurId: string;
   model: string;              // "opus" | "sonnet" | ...
   variant: string;            // e.g. "raw"
-  /** File stem of the extraction this write-up was built on: out/pilot/<shiurId>/<extractionVariant>.json.
+  /** Version of prompts/p4b-writeup.md that produced it ("p4b-v2"); absent in pilot outputs. */
+  promptVersion?: string;
+  /** File stem of the extraction this write-up was built on, in the same directory
+   *  (production: "extraction" -> data/derived/shiurim/<shiurId>/extraction.json).
    *  `sectionIndex` and `sourceIdx` index into that extraction's sections[] and sources[]. */
   extractionVariant: string;
   en: WriteupBlock[];

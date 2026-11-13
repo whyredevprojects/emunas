@@ -1,5 +1,6 @@
-// Validate P4 extraction and P4b write-up outputs against the pilot meta.json.
+// Validate P4 extraction and P4b write-up outputs against the shiur's meta.json.
 //
+//   npm run -s validate -- data/derived/shiurim/<shiurId>/extraction.json data/derived/shiurim/<shiurId>/writeup.json
 //   npx tsx scripts/validate.ts out/pilot/<shiurId>/<file>.json [...] [--meta path] [--quiet]
 //   npx tsx scripts/validate.ts --summary out/pilot/<shiurId>/*.json
 //
@@ -10,8 +11,10 @@
 // Non-output files in the directory (meta.json, input*.txt, judge-*.json) are skipped.
 // Exit code 1 when any file has errors.
 import { existsSync, readFileSync } from "node:fs";
-import { basename, dirname, join } from "node:path";
+import { basename, dirname, join, resolve } from "node:path";
+import { pathToFileURL } from "node:url";
 import type { Evidence, Extraction, Localized, Section, Writeup } from "../src/types.js";
+import { BLOCK_TOLERANCE, NON_CONTENT_KINDS, WRITEUP_TOLERANCE, writeupBudget } from "./lib/budget.js";
 import { hebrewRatio, mmss, wordCount, type PilotMeta, type PilotRecordingMeta } from "./lib/pilot.js";
 
 // ---------------- caps & thresholds ----------------
@@ -25,18 +28,17 @@ const INSIGHTS = { min: 3, max: 7 };
 const QUESTIONS_MAX = 6;
 const TAKEAWAYS_MAX = 5;
 const CANDIDATE_TOPICS = { min: 5, max: 10 };
-const ABSTRACT_WORDS = { min: 80, max: 150 };
-const WRITEUP_WORDS_PER_HOUR = { min: 400, max: 700 };
+const ABSTRACT_WORDS = { en: { min: 80, max: 150 }, yi: { min: 80, max: 180 } };
+// Write-up length: 800-1000 words per audio hour per language, see scripts/lib/budget.ts.
 const YI_MIN_HEBREW = 0.8;        // below: warning; below YI_HARD_MIN: error
 const YI_HARD_MIN = 0.5;
 const EN_MAX_HEBREW = 0.25;       // English text that is mostly Hebrew script is suspicious
 const EVIDENCE_SLACK_SEGS = 3;    // "near" the section
-const NON_CONTENT_KINDS = new Set(["singing", "noise", "other_speaker"]);
 
 // ---------------- report ----------------
 type Kind = "extraction" | "writeup";
 
-interface Report {
+export interface Report {
   file: string;
   kind: Kind | null;
   errors: string[];
@@ -131,7 +133,7 @@ const extractionShape: Check = obj({
   concepts: arr(obj({ he: nonEmptyStr, heardAs: arr(str) })),
   people: arr(obj({ name: nonEmptyStr, heardAs: arr(str) })),
   asrNotes: str,
-});
+}, { promptVersion: nonEmptyStr });
 
 const writeupBlock: Check = obj({
   sectionIndex: int,
@@ -145,7 +147,7 @@ const writeupShape: Check = obj({
   extractionVariant: nonEmptyStr,
   en: arr(writeupBlock),
   yi: arr(writeupBlock),
-});
+}, { promptVersion: nonEmptyStr });
 
 function detectKind(v: unknown): Kind | null {
   if (!isObj(v)) return null;
@@ -173,7 +175,7 @@ function checkShape(shape: Check, data: unknown, r: Report): boolean {
   return false; // semantic checks assume the shape
 }
 
-function validateFile(file: string, metaOverride: string | null): Report {
+export function validateFile(file: string, metaOverride: string | null = null): Report {
   const r: Report = { file, kind: null, errors: [], warnings: [], stats: {} };
   const metaPath = metaOverride ?? join(dirname(file), "meta.json");
   if (!existsSync(metaPath)) return r.errors.push(`meta not found: ${metaPath}`), r;
@@ -234,6 +236,7 @@ function validateExtraction(x: Extraction, meta: PilotMeta, r: Report): void {
   const { err, warn, recs, multi, firstRec, hours, inRange, resolveRec, checkSegs, checkEvidence } = context(meta, r);
   r.stats.model = x.model;
   r.stats.variant = x.variant;
+  r.stats.promptVersion = x.promptVersion ?? "";
 
   if (x.shiurId !== meta.shiurId) err(`shiurId "${x.shiurId}" != meta "${meta.shiurId}"`);
 
@@ -336,7 +339,8 @@ function validateExtraction(x: Extraction, meta: PilotMeta, r: Report): void {
   checkLoc(x.summary.abstract, "summary.abstract");
   for (const lang of ["en", "yi"] as const) {
     const w = wordCount(x.summary.abstract[lang]);
-    if (w < ABSTRACT_WORDS.min || w > ABSTRACT_WORDS.max) warn(`summary.abstract.${lang}: ${w} words (target ${ABSTRACT_WORDS.min}-${ABSTRACT_WORDS.max})`);
+    const lim = ABSTRACT_WORDS[lang];
+    if (w < lim.min || w > lim.max) warn(`summary.abstract.${lang}: ${w} words (target ${lim.min}-${lim.max})`);
   }
   const capCheck = (n: number, lo: number, hi: number, label: string) => {
     if (n < lo || n > hi) err(`${label}: ${n} (allowed ${lo}-${hi})`);
@@ -372,8 +376,15 @@ function validateExtraction(x: Extraction, meta: PilotMeta, r: Report): void {
   x.sources.forEach((s, i) => {
     const p = `sources[${i}]`;
     checkEvidence(s.evidence, `${p}.evidence`);
-    if (s.resolution !== "unresolved" && !s.ref) warn(`${p}: resolution "${s.resolution}" but ref is null`);
-    if (s.resolution === "unresolved" && s.sefariaRef) warn(`${p}: unresolved but has sefariaRef`);
+    // resolved: ref + sefariaRef; inferred: ref (sefariaRef optional); unresolved: neither.
+    if (s.resolution === "resolved" && (!s.ref || !s.sefariaRef)) {
+      err(`${p}: "resolved" requires ref and sefariaRef (use "inferred" when only ref is known, else "unresolved")`);
+    }
+    if (s.resolution === "inferred" && !s.ref) err(`${p}: "inferred" requires ref (use "unresolved" with ref null)`);
+    if (s.resolution === "unresolved" && (s.ref || s.sefariaRef)) err(`${p}: "unresolved" must have ref and sefariaRef null`);
+    if (s.ref && s.work && s.ref.trim().toLowerCase() === s.work.trim().toLowerCase()) {
+      warn(`${p}: ref "${s.ref}" only repeats the work; a ref names a location (chapter, verse, daf), else use "unresolved"`);
+    }
     if (hebrewRatio(s.heardAs) === 0 && meta.shiur.lang === "yi" && s.heardAs) warn(`${p}.heardAs: no Hebrew script in a Yiddish shiur`);
   });
   x.concepts.forEach((c, i) => {
@@ -422,10 +433,11 @@ function validateExtraction(x: Extraction, meta: PilotMeta, r: Report): void {
 const mean = (xs: number[]) => (xs.length ? Number((xs.reduce((a, b) => a + b, 0) / xs.length).toFixed(2)) : 0);
 
 function validateWriteup(w: Writeup, file: string, meta: PilotMeta, metaOverride: string | null, r: Report): void {
-  const { err, warn, recs, multi, hours, checkEvidence } = context(meta, r);
+  const { err, warn, recs, multi, checkEvidence } = context(meta, r);
   r.stats.model = w.model;
   r.stats.variant = w.variant;
   r.stats.extractionVariant = w.extractionVariant;
+  r.stats.promptVersion = w.promptVersion ?? "";
   if (w.shiurId !== meta.shiurId) err(`shiurId "${w.shiurId}" != meta "${meta.shiurId}"`);
 
   // The write-up indexes into the extraction it was built on; that extraction must exist and validate.
@@ -436,6 +448,7 @@ function validateWriteup(w: Writeup, file: string, meta: PilotMeta, metaOverride
   if (xr.errors.length) return void err(`extraction ${xFile} fails validation (${xr.errors.length} errors); fix it first`);
   const x = JSON.parse(readFileSync(xFile, "utf8")) as Extraction;
   if (x.shiurId !== w.shiurId) err(`shiurId "${w.shiurId}" != extraction "${x.shiurId}"`);
+  const budget = writeupBudget(x, meta);
 
   const sourcesUsed = new Set<number>();
   // --- writeup
@@ -462,9 +475,10 @@ function validateWriteup(w: Writeup, file: string, meta: PilotMeta, metaOverride
         if (lang === "en" && hr > EN_MAX_HEBREW) warn(`${p}.heading: Hebrew script in English heading`);
       }
       const secRec = recs.get(sec.recordingId);
+      let blockWords = 0;
       b.paragraphs.forEach((para, pi) => {
         const q = `${p}.paragraphs[${pi}]`;
-        words[lang] += wordCount(para.text);
+        blockWords += wordCount(para.text);
         const hr = hebrewRatio(para.text);
         if (lang === "yi" && hr < YI_HARD_MIN) err(`${q}.text: only ${(hr * 100).toFixed(0)}% Hebrew script`);
         else if (lang === "yi" && hr < YI_MIN_HEBREW) warn(`${q}.text: only ${(hr * 100).toFixed(0)}% Hebrew script`);
@@ -481,14 +495,21 @@ function validateWriteup(w: Writeup, file: string, meta: PilotMeta, metaOverride
           warn(`${q}.evidence: points into ${rec.recording.id}, section is in ${sec.recordingId}`);
         }
       });
+      words[lang] += blockWords;
+      const planned = budget.sections[b.sectionIndex]?.words;
+      if (planned && blockWords > planned * BLOCK_TOLERANCE.warnHigh + BLOCK_TOLERANCE.slack) {
+        warn(`${p}: ${blockWords} words, budget for section ${b.sectionIndex} is ${planned}`);
+      }
     });
     for (const { s, i } of contentSections) {
       if (!seen.has(i) && s.kind === "main") err(`writeup.${lang}: no block for main section ${i} "${s.title.en}"`);
     }
-    const lo = WRITEUP_WORDS_PER_HOUR.min * hours;
-    const hi = WRITEUP_WORDS_PER_HOUR.max * hours;
-    if (words[lang] < lo * 0.5) err(`writeup.${lang}: ${words[lang]} words, far below ${Math.round(lo)}-${Math.round(hi)} for ${mmss(meta.totalDurationSec)}`);
-    else if (words[lang] < lo * 0.85 || words[lang] > hi * 1.25) warn(`writeup.${lang}: ${words[lang]} words (target ${Math.round(lo)}-${Math.round(hi)})`);
+    const { min: lo, max: hi } = budget;
+    const T = WRITEUP_TOLERANCE;
+    const range = `${lo}-${hi} (budget ${budget.total} for ${mmss(budget.contentSec)} of content; npm run -s writeup:budget)`;
+    if (words[lang] < lo * T.errLow) err(`writeup.${lang}: ${words[lang]} words, far below ${range}`);
+    else if (words[lang] > hi * T.errHigh) err(`writeup.${lang}: ${words[lang]} words, far above ${range}; trim to the budget`);
+    else if (words[lang] < lo * T.warnLow || words[lang] > hi * T.warnHigh) warn(`writeup.${lang}: ${words[lang]} words (target ${range})`);
   }
   if (w.en.length !== w.yi.length) warn(`writeup: ${w.en.length} en blocks vs ${w.yi.length} yi blocks`);
   if (words.en && words.yi) {
@@ -511,8 +532,9 @@ function validateWriteup(w: Writeup, file: string, meta: PilotMeta, metaOverride
     sourcesCited: `${sourcesUsed.size}/${x.sources.length}`,
     wordsEn: words.en,
     wordsYi: words.yi,
-    wphEn: hours ? Math.round(words.en / hours) : 0,
-    wphYi: hours ? Math.round(words.yi / hours) : 0,
+    budget: budget.total,
+    wphEn: budget.contentSec ? Math.round(words.en / (budget.contentSec / 3600)) : 0,
+    wphYi: budget.contentSec ? Math.round(words.yi / (budget.contentSec / 3600)) : 0,
     meanConf: mean(conf),
   });
 }
@@ -535,7 +557,7 @@ function printReport(r: Report, quiet: boolean): void {
     console.log(
       `  stats: ${s.duration} | on ${s.extractionVariant} | blocks en ${s.blocksEn} yi ${s.blocksYi} (content sections ${s.contentSections}) | ` +
         `paras en ${s.parasEn} yi ${s.parasYi} | sources cited ${s.sourcesCited} | ` +
-        `en ${s.wordsEn}w (${s.wphEn}/h) yi ${s.wordsYi}w (${s.wphYi}/h) | meanConf ${s.meanConf}`,
+        `budget ${s.budget}w | en ${s.wordsEn}w (${s.wphEn}/content-h) yi ${s.wordsYi}w (${s.wphYi}/content-h) | meanConf ${s.meanConf}`,
     );
   }
 }
@@ -568,6 +590,7 @@ const WRITEUP_COLS: Col[] = [
   ["blk en", stat("blocksEn")],
   ["blk yi", stat("blocksYi")],
   ["src", stat("sourcesCited")],
+  ["budget", stat("budget")],
   ["en w", stat("wordsEn")],
   ["yi w", stat("wordsYi")],
   ["en/h", stat("wphEn")],
@@ -628,4 +651,4 @@ function main(): void {
   process.exit(reports.some((r) => r.errors.length) ? 1 : 0);
 }
 
-main();
+if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) main();

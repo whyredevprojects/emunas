@@ -10,7 +10,18 @@
     "ingest": "tsx scripts/ingest.ts",
     "transcripts:sync": "tsx scripts/sync-transcripts.ts",
     "pilot:pick": "tsx scripts/pick-pilot.ts",
-    "pilot:check-cleaned": "tsx scripts/check-cleaned.ts"
+    "pilot:check-cleaned": "tsx scripts/check-cleaned.ts",
+    "validate": "tsx scripts/validate.ts",
+    "writeup:budget": "tsx scripts/writeup-budget.ts",
+    "noise:report": "tsx scripts/noise-report.ts",
+    "batch:init": "tsx scripts/batch.ts init",
+    "batch:next": "tsx scripts/batch.ts next",
+    "batch:finalize": "tsx scripts/batch.ts finalize",
+    "batch:status": "tsx scripts/batch.ts status",
+    "batch:reset-stale": "tsx scripts/batch.ts reset-stale",
+    "batch:mark": "tsx scripts/batch.ts mark",
+    "batch:pick-audit": "tsx scripts/batch.ts pick-audit",
+    "batch:usage": "tsx scripts/batch.ts usage"
   },
   "devDependencies": {
     "@types/node": "^26.6.6",

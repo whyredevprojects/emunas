@@ -37,6 +37,8 @@ Pilot total: 84 runs, ~10.4M tokens.
 - **Estimated full run:** ~924 shiurim × ~250k tokens (extraction + write-up) ≈ **230M subagent tokens**, plus verification and corpus-level passes. Fixed per-run overhead is ~80k, so batching several short shiurim per agent would cut this noticeably.
 
 ## Fixes before the full run
+Status: 1–4 and 6 are done in the production kit (prompts p4-v3 / p4b-v2, `scripts/lib/noise.ts`, `scripts/lib/budget.ts`, `docs/batch-runbook.md`); 5 is moot (P3 dropped).
+
 1. **Write-up length:** first drafts run 1.5–3× the target, costing a trim round almost every time. Give a per-section word budget in the prompt, or relax the target to what Opus naturally writes (~1,000 words/hour).
 2. **Source resolution rule:** "inferred"/"resolved" with `ref: null` is the most common warning. Make the prompt require a ref for those states, or allow `inferred` without one and fix the validator.
 3. **Abstract length:** Yiddish abstracts often run 150–175 words; loosen to 180 or tighten the prompt.
