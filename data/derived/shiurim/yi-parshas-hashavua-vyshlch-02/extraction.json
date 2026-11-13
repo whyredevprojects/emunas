@@ -1,0 +1,432 @@
+{
+  "shiurId": "yi-parshas-hashavua-vyshlch-02",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav reads the episode of Dinah and Shechem as a war for the tznius and kedushah of the Jewish people, the same war Chanukah commemorates, and closes with Yaakov's war against the influence of Esav and Lavan.",
+      "yi": "דער משגיח לערנט די מעשה פון דינה און שכם אלס א מלחמה פאר דער צניעות און קדושה פון כלל ישראל, די זעלבע מלחמה וואס חנוכה איז א זכר דערפון, און ער ענדיגט מיט יעקבס מלחמה קעגן דער השפעה פון עשו און לבן."
+    },
+    "abstract": {
+      "en": "The Rav opens with Chazal's criticism of Dinah for going out, and links it to Chanukah, whose main miracle came through women and through Yehudis's mesiras nefesh for tznius; he explains the Chasam Sofer's question why women do not light as mehadrin. He then asks how Shimon could marry Dinah and answers with the Targum Yonasan and the law of bnei Noach. He shows that Shechem belongs to Yosef's trait of shmiras habris, so it was first covered by the coarsest people, and reads the circumcision of Shechem through the Mishnah in Nedarim: a goy is all orlah, so Shimon and Levi removed them entirely. From Shechem's passion for Dinah the Midrash learns Hashem's love for Klal Yisrael, which leads to the Rambam's words on arayos and the advice to fill the mind with Torah. He contrasts Chanukah with Purim and Yaakov's war with Esav with the war on Shechem, and ends with Yaakov's words to Lavan and a call for a cheshbon hanefesh about whose logic one thinks with.",
+      "yi": "דער משגיח עפנט מיט דער טענה פון חז\"ל אויף דינה וואס זי איז ארויסגעגאנגען, און פארבינדט עס מיט חנוכה, וואו דער עיקר נס איז געווען דורך די נשים און דורך יהודית'ס מסירות נפש פאר צניעות; ער איז מסביר די קשיא פונעם חתם סופר פארוואס נשים צינדן נישט אלס מהדרין. דערנאך פרעגט ער ווי אזוי שמעון האט געמעגט חתונה האבן מיט דינה, און ענטפערט מיט'ן תרגום יונתן און מיט'ן דין פון בני נח. ער ווייזט אז שכם געהערט צו יוסף'ס מדה פון שמירת הברית, דערפאר איז עס פריער צוגעדעקט געווען מיט די גראבסטע מענטשן, און ער לערנט די מילה פון שכם לויט דער משנה אין נדרים: א גוי איז אינגאנצן ערלה, ממילא האבן שמעון און לוי זיי אינגאנצן אוועקגענומען. פון שכם'ס חשק צו דינה לערנט דער מדרש ארויס דעם אויבערשטנס אהבה צו כלל ישראל, און דאס פירט צום רמב\"ם וועגן עריות און דער עצה צו פארנעמען דעם מוח מיט תורה. ער שטעלט אנטקעגן חנוכה מיט פורים, און יעקבס מלחמה מיט עשו מיט דער מלחמה קעגן שכם, און ענדיגט מיט יעקבס ווערטער צו לבן און מיט א רוף צו א חשבון הנפש מיט וועמענס לאגיק מען טראכט."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The main miracle of Chanukah came through women, through Yehudis who gave her life for the tznius of the daughters of Israel, and the reward of Chanukah lights, sons who are talmidei chachamim, is the fruit of tznius.",
+          "yi": "דער עיקר נס פון חנוכה איז געווען דורך נשים, דורך יהודית וואס האט זיך מוסר נפש געווען פאר דער צניעות פון בנות ישראל, און דער שכר פון נר חנוכה, בנים תלמידי חכמים, איז די פרי פון צניעות."
+        },
+        "evidence": { "segs": [1, 2, 11, 12], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Shechem is bound up with Yosef's trait of guarding the bris, and like the peel that comes before the fruit, its holiness was first covered by the coarsest people, the Chivi.",
+          "yi": "שכם איז פארבונדן מיט יוסף'ס מדה פון שמירת הברית, און אזוי ווי די קליפה קומט פאר דער פרי, איז איר קדושה פריער צוגעדעקט געווען מיט די גראבסטע מענטשן, דעם חוי."
+        },
+        "evidence": { "segs": [31, 33, 39, 41], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "A Jew's orlah can be cut away and holiness remains, but a goy is orlah from head to foot, so the people of Shechem could only be 'circumcised' by being removed entirely.",
+          "yi": "ביי א איד קען מען אפשניידן די ערלה און עס בלייבט קדושה, אבער א גוי איז ערלה פון קאפ ביז די פיס, ממילא האט מען די מענטשן פון שכם נאר געקענט 'מל זיין' דורך זיי אינגאנצן אוועקנעמען."
+        },
+        "evidence": { "segs": [50, 52, 56, 57], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The Midrash learns the five expressions of Hashem's love for Klal Yisrael from Shechem's passion, to show how much a Jew should give for the true pleasure of closeness to Hashem.",
+          "yi": "דער מדרש לערנט ארויס די פינף לשונות פון דעם אויבערשטנס אהבה צו כלל ישראל פון שכם'ס חשק, כדי צו ווייזן וויפיל א איד דארף אוועקגעבן פאר דעם אמת'ן תענוג פון דביקות אין השם יתברך."
+        },
+        "evidence": { "segs": [66, 67, 74, 75], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Following the Rambam, the Rav says separating from arayos is the hardest thing, a person must always suspect himself, and the greatest remedy is to fill the mind with Torah.",
+          "yi": "לויט'ן רמב\"ם זאגט דער משגיח אז זיך אפשיידן פון עריות איז די שווערסטע זאך, א מענטש דארף זיך אלעמאל חושד זיין, און די גרעסטע עצה איז אנפילן דעם מוח מיט תורה."
+        },
+        "evidence": { "segs": [90, 92, 100, 101], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Yaakov's war with Esav was a spiritual war fought with tefillah, while the war on Shechem was a physical war against an attack on Jewish kedushah, like the war of Chanukah.",
+          "yi": "יעקבס מלחמה מיט עשו איז געווען א רוחניות'דיגע מלחמה מיט תפילה, און די מלחמה קעגן שכם איז געווען א גשמיות'דיגע מלחמה קעגן אן אנפאל אויף דער קדושה פון אידן, אזוי ווי די מלחמה פון חנוכה."
+        },
+        "evidence": { "segs": [110, 112, 113, 114], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Every Jew must ask whether his way of thinking was formed in the house of Shem and Ever or in the house of Lavan, and uproot the Esav within him through Torah.",
+          "yi": "יעדער איד דארף זיך פרעגן צי זיין געדאנקען גאנג איז געשאפן געווארן אין בית שם ועבר אדער אין בית לבן, און ארויסרייסן דעם עשו אין זיך דורך תורה."
+        },
+        "evidence": { "segs": [164, 166, 170, 172], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-parsha-sefer-bereishes-08-02-vayishlach", "startSeg": 0, "endSeg": 17,
+      "title": { "en": "Dinah, tznius and the women of Chanukah", "yi": "דינה, צניעות און די נשים פון חנוכה" },
+      "summary": {
+        "en": "The Rav opens with Chazal's complaint that Dinah went out, then turns to Chanukah: women are obligated because the main miracle came through them, through Yehudis's mesiras nefesh for tznius. He explains the Chasam Sofer's question why women do not light as mehadrin, and ties the reward of Chanukah lights, sons who are talmidei chachamim, to tznius.",
+        "yi": "דער משגיח עפנט מיט דער טענה פון חז\"ל אויף דינה וואס זי איז ארויסגעגאנגען, און גייט איבער צו חנוכה: נשים זענען מחויב ווייל דער עיקר נס איז געווען דורך זיי, דורך יהודית'ס מסירות נפש פאר צניעות. ער איז מסביר די קשיא פונעם חתם סופר פארוואס נשים צינדן נישט אלס מהדרין, און פארבינדט דעם שכר פון נר חנוכה, בנים תלמידי חכמים, מיט צניעות."
+      },
+      "kind": "intro", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-08-02-vayishlach", "startSeg": 18, "endSeg": 28,
+      "title": { "en": "How could Shimon marry Dinah?", "yi": "ווי אזוי האט שמעון געמעגט חתונה האבן מיט דינה?" },
+      "summary": {
+        "en": "The Rav notes the extra words 'bas Leah' and asks how Shimon could marry Dinah, a maternal sister forbidden even to bnei Noach. He answers with the Targum Yonasan that the unborn Dinah and Yosef were exchanged, and with the Rambam's law that for bnei Noach a fetus is already a nefesh, so by their law Dinah counts as Rachel's daughter.",
+        "yi": "דער משגיח מערקט אן די איבעריגע ווערטער 'בת לאה' און פרעגט ווי אזוי שמעון האט געמעגט חתונה האבן מיט דינה, א שוועסטער פון דער מוטער וואס איז אסור אפילו פאר בני נח. ער ענטפערט מיט'ן תרגום יונתן אז דינה און יוסף זענען פארביטן געווארן אין מוטערס לייב, און מיט'ן דין פונעם רמב\"ם אז ביי בני נח איז א עובר שוין א נפש, ממילא איז דינה לויט זייער דין רחל'ס טאכטער."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-08-02-vayishlach", "startSeg": 29, "endSeg": 41,
+      "title": { "en": "Shechem, Yosef and the covered bris", "yi": "שכם, יוסף און דער צוגעדעקטער ברית" },
+      "summary": {
+        "en": "The Rav explains why Yaakov gave Shechem to Yosef: Shechem is tied to Yosef's trait of shmiras habris. Since the peel precedes the fruit and the orlah covers the bris, the holy place was first occupied by Shechem ben Chamor the Chivi, whose names point to coarseness and to the serpent's skin, while 'Shechem' hints to shem kevod malchuso.",
+        "yi": "דער משגיח ערקלערט פארוואס יעקב האט געגעבן שכם צו יוסף: שכם איז פארבונדן מיט יוסף'ס מדה פון שמירת הברית. ווייל די קליפה קומט פאר דער פרי און די ערלה דעקט צו דעם ברית, איז דער הייליגער ארט פריער פארנומען געווען פון שכם בן חמור החוי, וועמענס נעמען ווייזן אויף גראבקייט און אויף דער הויט פונעם נחש, בשעת 'שכם' איז א רמז אויף שם כבוד מלכותו."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-08-02-vayishlach", "startSeg": 42, "endSeg": 53,
+      "title": { "en": "Why a goy cannot become circumcised", "yi": "פארוואס א גוי קען נישט ווערן א נימול" },
+      "summary": {
+        "en": "The Rav describes the people of Shechem as drawn to every sensation, and contrasts the sons of Yaakov's condition 'like us' with Shechem's 'as they are circumcised'. Through the Mishnah in Nedarim and the passuk 'all the nations are uncircumcised' he explains that a Jew's orlah can be removed but a goy is orlah entirely.",
+        "yi": "דער משגיח שילדערט די מענטשן פון שכם אלס מענטשן וואס זענען פאראינטערעסירט אין יעדער סענסאציע, און שטעלט אנטקעגן דעם תנאי פון די בני יעקב 'כמונו' מיט שכם'ס ווערטער 'כאשר הם נמולים'. דורך דער משנה אין נדרים און דעם פסוק 'כי כל הגוים ערלים' ערקלערט ער אז ביי א איד קען מען אוועקנעמען די ערלה, אבער א גוי איז אינגאנצן ערלה."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-08-02-vayishlach", "startSeg": 54, "endSeg": 64,
+      "title": { "en": "Shimon and Levi complete the circumcision of Shechem", "yi": "שמעון און לוי ענדיגן די מילה פון שכם" },
+      "summary": {
+        "en": "With a mashal of printers who imitated the Slavita editions, the Rav shows that Shechem only wanted to look circumcised. Shimon and Levi fulfilled the condition by removing the whole people, leaving Shechem as shem kevod malchuso; he contrasts 'all who go out of the gate of his city' here with 'all who come into the gate of his city' by Avraham.",
+        "yi": "מיט א משל פון דרוקערס וואס האבן נאכגעמאכט די סלאוויטער ספרים ווייזט דער משגיח אז שכם האט נאר געוואלט אויסזען ווי א נימול. שמעון און לוי האבן מקיים געווען דעם תנאי דורך אוועקנעמען דאס גאנצע פאלק, און שכם איז געבליבן שם כבוד מלכותו; ער שטעלט אנטקעגן 'כל יוצאי שער עירו' דא מיט 'כל באי שער עירו' ביי אברהם."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-08-02-vayishlach", "startSeg": 65, "endSeg": 77,
+      "title": { "en": "Learning Hashem's love from the wicked one", "yi": "לערנען דעם אויבערשטנס אהבה פונעם רשע" },
+      "summary": {
+        "en": "The Rav brings the Midrash that the five expressions of Hashem's love for Klal Yisrael are learned from the parsha of Shechem, and asks why from a rasha. Following the Ba'al Shem Tov's principle that everything in this world is a mashal, he explains that Shechem's sacrifice for a passing pleasure shows how much a Jew should give for closeness to Hashem.",
+        "yi": "דער משגיח ברענגט דעם מדרש אז די פינף לשונות פון דעם אויבערשטנס אהבה צו כלל ישראל לערנט מען ארויס פון דער פרשה פון שכם, און פרעגט פארוואס פון א רשע. לויט'ן כלל פונעם בעל שם טוב אז אלעס אויף דער וועלט איז א משל, ערקלערט ער אז שכם'ס מסירות נפש פאר א פארבייגייענדיגן תענוג ווייזט וויפיל א איד דארף אוועקגעבן פאר דביקות אין השם יתברך."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-08-02-vayishlach", "startSeg": 78, "endSeg": 89,
+      "title": { "en": "The pleasure of Torah and deadened senses", "yi": "דער תענוג פון תורה און אפגעטויטע חושים" },
+      "summary": {
+        "en": "The Rav tells how the Skverer Rav, after learning Maseches Mikvaos, could not imagine a greater pleasure. Only one who disdains worldly pleasures feels this, as the Lechovitcher read the Gemara's two jesters; sins numb the senses like a dentist's needle, and the Torah, the true eishes chayil, is the greatest pleasure.",
+        "yi": "דער משגיח דערציילט ווי דער סקווירער רב, נאכן לערנען מסכת מקוואות, האט זיך נישט געקענט פארשטעלן א גרעסערן תענוג. נאר ווער עס לאכט פון די תענוגים פון דער וועלט שפירט דאס, אזוי ווי דער לעכאוויטשער האט געטייטשט די צוויי בדחנים אין דער גמרא; עבירות טויטן אפ די חושים ווי א דענטיסט'ס נאדל, און די תורה, די אמת'ע אשת חיל, איז דער גרעסטער תענוג."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-08-02-vayishlach", "startSeg": 90, "endSeg": 104,
+      "title": { "en": "The Rambam on guarding from arayos", "yi": "דער רמב\"ם וועגן זיך היטן פון עריות" },
+      "summary": {
+        "en": "The Rav reads the Rambam that nothing in the Torah is as hard as separating from arayos, that no community is free of breaches, and that a person must suspect himself and not be ashamed of caution. The greatest advice is to turn the mind to Torah, since such thoughts grow only in a heart empty of wisdom; he adds the Kotzker's reading of the Targum on Matan Torah.",
+        "yi": "דער משגיח לערנט דעם רמב\"ם אז קיין זאך אין דער תורה איז נישט אזוי שווער ווי זיך אפשיידן פון עריות, אז קיין קהל איז נישט פריי פון פרצות, און אז א מענטש דארף זיך חושד זיין און זיך נישט שעמען מיט אכטונג געבן. די גרעסטע עצה איז מפנה זיין דעם מוח צו דברי תורה, ווייל אזעלכע מחשבות וואקסן נאר אין א הארץ וואס איז פוסט פון חכמה; ער לייגט צו דעם קאצקער'ס פשט אינעם תרגום ביי מתן תורה."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-08-02-vayishlach", "startSeg": 105, "endSeg": 112,
+      "title": { "en": "Chanukah, Purim and two kinds of war", "yi": "חנוכה, פורים און צוויי סארטן מלחמות" },
+      "summary": {
+        "en": "The Rav contrasts Purim, a physical threat celebrated with feasting, with Chanukah, a threat to Jewish spirituality celebrated with hallel and lights. He brings the Chofetz Chaim on fighting the maskilim from the start, notes that the Chashmonaim fought though few, and begins contrasting Yaakov's war with Esav, fought mainly with tefillah.",
+        "yi": "דער משגיח שטעלט אנטקעגן פורים, א גשמיות'דיגע סכנה וואס מען פייערט מיט משתה ושמחה, מיט חנוכה, א סכנה פאר דער רוחניות פון אידן וואס מען פייערט מיט הלל און ליכט. ער ברענגט דעם חפץ חיים וועגן מלחמה האלטן קעגן די משכילים פון אנהייב, מערקט אן אז די חשמונאים האבן מלחמה געהאלטן כאטש זיי זענען געווען ווייניג, און הייבט אן צו פארגלייכן יעקבס מלחמה מיט עשו, וואס איז געווען בעיקר מיט תפילה."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-08-02-vayishlach", "startSeg": 113, "endSeg": 126,
+      "title": { "en": "The war on Shechem and the fault of Shimon and Levi", "yi": "די מלחמה קעגן שכם און די טענה אויף שמעון און לוי" },
+      "summary": {
+        "en": "The Rav explains that Shechem sought to rob Klal Yisrael of its tznius and kedushah, making a 'nevalah' of them, so the war was justified, like Yehudis's war at Chanukah. Yet Shimon and Levi acted on their own without asking Yaakov; with the Or HaChaim on ir hanidachas he explains that one who kills without the merit of a mitzvah becomes cruel, which is Yaakov's complaint against them.",
+        "yi": "דער משגיח ערקלערט אז שכם האט געוואלט צונעמען פון כלל ישראל זיין צניעות און קדושה און מאכן פון זיי א 'נבלה', ממילא איז די מלחמה געווען גערעכט, אזוי ווי יהודית'ס מלחמה ביי חנוכה. פונדעסטוועגן האבן שמעון און לוי געטון אליין אן פרעגן יעקב; מיט'ן אור החיים ביי עיר הנדחת ערקלערט ער אז ווער עס הרג'עט אן דעם זכות פון א מצוה ווערט אן אכזר, און דאס איז יעקבס טענה אויף זיי."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-08-02-vayishlach", "startSeg": 127, "endSeg": 136,
+      "title": { "en": "The war against Edom, the red one", "yi": "די מלחמה קעגן אדום, דעם רויטן" },
+      "summary": {
+        "en": "The Rav says the end of the parsha, 'he is Esav the father of Edom', is a war against Edom. He explains the redness of Esav as the power of bloodshed, contrasts it with Dovid Hamelech who was also ruddy but 'with beautiful eyes', and applies Edom's redness to those in his day who call themselves the reds.",
+        "yi": "דער משגיח זאגט אז דער סוף פון דער סדרה, 'הוא עשו אבי אדום', איז א מלחמה קעגן אדום. ער ערקלערט עשו'ס רויטקייט אלס דעם כח פון בלוט פארגיסן, שטעלט עס אנטקעגן מיט דוד המלך וואס איז אויך געווען אדמוני אבער 'עם יפה עינים', און ווענדט אן אדום'ס רויטקייט אויף די וואס רופן זיך אין זיין צייט די רויטע."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-08-02-vayishlach", "startSeg": 137, "endSeg": 149,
+      "title": { "en": "'Im Lavan garti' and the Yismach Moshe's dream", "yi": "'עם לבן גרתי' און דעם ישמח משה'ס חלום" },
+      "summary": {
+        "en": "The Rav brings the Yismach Moshe's dream: Yaakov and Esav were twins so that something of each rubbed off on the other, which explains why Yaakov is rewarded and Esav punished. Yaakov's message 'im Lavan garti' hinted to Esav that nothing rubbed off on him from Lavan, so he could not be affected by Esav either; he said it only by hint for the sake of peace.",
+        "yi": "דער משגיח ברענגט דעם ישמח משה'ס חלום: יעקב און עשו זענען געבוירן געווארן אלס צווילינג כדי עפעס פון יעדן זאל זיך אפרייבן אויפן צווייטן, און דאס ערקלערט פארוואס יעקב באקומט שכר און עשו ווערט באשטראפט. יעקבס שליחות 'עם לבן גרתי' איז געווען א רמז צו עשו אז פון לבן האט זיך צו אים גארנישט צוגעקלעפט, ממילא קען אים עשו אויך נישט באווירקן; ער האט עס געזאגט נאר ברמז, מפני השלום."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-08-02-vayishlach", "startSeg": 150, "endSeg": 172,
+      "title": { "en": "Lavan's logic and a cheshbon hanefesh", "yi": "לבנ'ס לאגיק און א חשבון הנפש" },
+      "summary": {
+        "en": "The Rav warns that the newspapers, radio and surroundings of today are the house of Lavan, and that the Torah gives a Jew a different way of thinking. From Yaakov's sound argument with Lavan, which Lavan could not grasp, he shows that a person's logic is shaped by where he was formed, and calls on each one to ask whether he thinks like Yaakov or like Lavan and to uproot the Esav within through Torah.",
+        "yi": "דער משגיח ווארנט אז די צייטונגען, דער ראדיא און די סביבה פון היינט זענען דער בית לבן, און אז די תורה גיט א איד אן אנדער אופן פון טראכטן. פון יעקבס געזונטן ויכוח מיט לבן, וואס לבן האט נישט געקענט פארשטיין, ווייזט ער אז א מענטשנס לאגיק ווערט געשאפן לויט וואו ער איז אויסגעשולט געווארן, און רופט אז יעדער זאל זיך פרעגן צי ער טראכט ווי יעקב אדער ווי לבן, און ארויסרייסן דעם עשו אין זיך דורך תורה."
+      },
+      "kind": "closing", "catalogTopicIdx": [], "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "וצא דינע בת לאה", "work": "Bereishis", "ref": "Bereishis 34:1", "sefariaRef": "Genesis 34:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [0, 18], "confidence": 0.85 } },
+    { "heardAs": "כל כפרדע בת מלך פנימה", "work": "Tehillim", "ref": "Tehillim 45:14", "sefariaRef": "Psalms 45:14", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [0, 10], "confidence": 0.8 } },
+    { "heardAs": "נשים חייבת בני חנוכה שאף אין הו' ויוסי הנס", "work": "Gemara Shabbos", "ref": "Shabbos 23a", "sefariaRef": "Shabbat 23a", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [1], "confidence": 0.8 } },
+    { "heardAs": "דער ראש בעלום זאגט פשט", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1, 9], "confidence": 0.7 } },
+    { "heardAs": "דער חתם ספר אין זיינע חידושים, אויף מסך די שבת", "work": "Chiddushei Chasam Sofer", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [3, 5, 14], "confidence": 0.8 } },
+    { "heardAs": "אין דעם זכות פון נהי' חנוכה איז מען זוכה צו פנים זכורים, פנים תלמידי חכמים", "work": "Gemara Shabbos", "ref": "Shabbos 23b", "sefariaRef": "Shabbat 23b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [9, 10], "confidence": 0.75 } },
+    { "heardAs": "אשתך ג' פר' ביאג' וישכר ... בנך כשתולו זאתם", "work": "Tehillim", "ref": "Tehillim 128:3", "sefariaRef": "Psalms 128:3", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [10, 11], "confidence": 0.75 } },
+    { "heardAs": "תרגום יונתן וואס איז דא אין פרשת פאר יצא", "work": "Targum Yonasan", "ref": "Targum Yonasan on Bereishis 30:21", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [20, 21], "confidence": 0.8 } },
+    { "heardAs": "די רמב״ם פאסט ... בני נח זענען חייב אויף איבערן", "work": "Rambam, Mishneh Torah", "ref": "Rambam, Hilchos Melachim 9:4", "sefariaRef": "Mishneh Torah, Kings and Wars 9:4", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [22, 23, 25], "confidence": 0.75 } },
+    { "heardAs": "דער פרושת דרוכים מאכט א גאנצן חשבון", "work": "Parashas Derachim", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [24], "confidence": 0.75 } },
+    { "heardAs": "יעקב צו יוסף, איך געב דיר שכם", "work": "Bereishis", "ref": "Bereishis 48:22", "sefariaRef": "Genesis 48:22", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [29, 30], "confidence": 0.75 } },
+    { "heardAs": "דער מהר''ל זאגט לגבי אן אנדער זאך", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [36], "confidence": 0.65 } },
+    { "heardAs": "אום ציור קומעינו ... להימאל לכם כל זכר", "work": "Bereishis", "ref": "Bereishis 34:15", "sefariaRef": "Genesis 34:15", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [46, 52], "confidence": 0.8 } },
+    { "heardAs": "הקשה האמני מולם", "work": "Bereishis", "ref": "Bereishis 34:22", "sefariaRef": "Genesis 34:22", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [47, 53], "confidence": 0.75 } },
+    { "heardAs": "די משנה נדורים, אז איינער מאכט א נדר פון הרעלים", "work": "Mishnah Nedarim", "ref": "Mishnah Nedarim 3:11", "sefariaRef": "Mishnah Nedarim 3:11", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [47, 51], "confidence": 0.8 } },
+    { "heardAs": "כי כל הגויים ארלם", "work": "Yirmiyahu", "ref": "Yirmiyahu 9:25", "sefariaRef": "Jeremiah 9:25", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [51], "confidence": 0.85 } },
+    { "heardAs": "וימלל כל זכר, כל יצר שער עירי", "work": "Bereishis", "ref": "Bereishis 34:24", "sefariaRef": "Genesis 34:24", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [45, 58, 64], "confidence": 0.8 } },
+    { "heardAs": "ובאה שערירא", "work": "Bereishis", "ref": "Bereishis 23:10", "sefariaRef": "Genesis 23:10", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [58, 59], "confidence": 0.7 } },
+    { "heardAs": "עס שטעט אין מדרש אז די יאלע וואס זענען געקומען גימאל חסד זיין צו שרה", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [60, 61], "confidence": 0.7 } },
+    { "heardAs": "אין מדרש שטעט אזוי, מיט פינעטער לשונות ... מפשעתו של רשע זה", "work": "Bereishis Rabbah", "ref": "Bereishis Rabbah 80:7", "sefariaRef": "Bereshit Rabbah 80:7", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [65, 67, 68], "confidence": 0.75 } },
+    { "heardAs": "ויעצם הדברים ודשמ'לככם חיים", "work": "Devarim", "ref": "Devarim 4:4", "sefariaRef": "Deuteronomy 4:4", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [65], "confidence": 0.7 } },
+    { "heardAs": "דברי עליו ירושלים", "work": "Yeshayahu", "ref": "Yeshayahu 40:2", "sefariaRef": "Isaiah 40:2", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [66, 68], "confidence": 0.7 } },
+    { "heardAs": "וצד-בק נפשי בדינה ... שכם בני חשקה נפשי ... חפצה ככפץ בבת יענקב", "work": "Bereishis", "ref": "Bereishis 34:3", "sefariaRef": "Genesis 34:3", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [67], "confidence": 0.8 } },
+    { "heardAs": "דער בעל שם תפארצער, אסאך געארבעט אויף דעם כלל", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [69], "confidence": 0.75 } },
+    { "heardAs": "קמה לך נפשי, קמה לך בשרי, כי בארץ אייב ואייב בלי מים", "work": "Tehillim", "ref": "Tehillim 63:2", "sefariaRef": "Psalms 63:2", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [75], "confidence": 0.8 } },
+    { "heardAs": "די אלכעוויטשע האט געטייטשט, דער גמרא זאגט דאך ... צוויי בת חנה", "work": "Gemara Taanis", "ref": "Taanis 22a", "sefariaRef": "Taanit 22a", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [81, 82], "confidence": 0.75 } },
+    { "heardAs": "די גמרא זאגט אז אשת חיל האט א פשט מיט א רמז", "work": "Mishlei", "ref": "Mishlei 31:10", "sefariaRef": "Proverbs 31:10", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [86, 87], "confidence": 0.7 } },
+    { "heardAs": "ענליך דבר בכל התורה כלה, שהקשה לרב עם ... דאס איז ידחס פון רמב״ם", "work": "Rambam, Mishneh Torah", "ref": "Rambam, Hilchos Issurei Biah 22:18-21", "sefariaRef": "Mishneh Torah, Forbidden Intercourse 22:18-21", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [90, 91, 100, 101], "confidence": 0.8 } },
+    { "heardAs": "דער קאצקא געזאגט אויף א תלגים ... על תקשל על איש", "work": "Shemos", "ref": "Shemos 19:15", "sefariaRef": "Exodus 19:15", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [102, 103, 104], "confidence": 0.7 } },
+    { "heardAs": "חפץ חיים האט מסביר געווען", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [107], "confidence": 0.75 } },
+    { "heardAs": "הצלנו נעמו הדכו מהצי אסף כי יא יענך הוא", "work": "Bereishis", "ref": "Bereishis 32:12", "sefariaRef": "Genesis 32:12", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [110], "confidence": 0.8 } },
+    { "heardAs": "כנבלה אסור בישראל", "work": "Bereishis", "ref": "Bereishis 34:7", "sefariaRef": "Genesis 34:7", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [115], "confidence": 0.75 } },
+    { "heardAs": "כבוד שמשון אפילו הערשט זאגט אין זיין ביעור", "work": "Rav Hirsch on the Torah", "ref": "Rav Hirsch on Bereishis 34:7", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [115], "confidence": 0.7 } },
+    { "heardAs": "יחימאל בן אחים, זאג רשע", "work": "Rashi", "ref": "Rashi on Bereishis 49:5", "sefariaRef": "Rashi on Genesis 49:5", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [118, 123], "confidence": 0.7 } },
+    { "heardAs": "דער חיים הקדש פון נתן לך רחמן", "work": "Or HaChaim", "ref": "Or HaChaim on Devarim 13:18", "sefariaRef": "Or HaChaim on Deuteronomy 13:18", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [122, 123], "confidence": 0.7 } },
+    { "heardAs": "ה' אבי עדין ... אסף אבי עדים", "work": "Bereishis", "ref": "Bereishis 36:43", "sefariaRef": "Genesis 36:43", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [127, 172], "confidence": 0.8 } },
+    { "heardAs": "אדמיני, אם יפה עינים", "work": "Shmuel I", "ref": "Shmuel I 16:12", "sefariaRef": "I Samuel 16:12", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [130, 131], "confidence": 0.75 } },
+    { "heardAs": "דעם מלוה גלתי בטעי' מצוות שמעתי, ולא למדתי ממינתך", "work": "Rashi", "ref": "Rashi on Bereishis 32:5", "sefariaRef": "Rashi on Genesis 32:5:1", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [137, 147, 167], "confidence": 0.8 } },
+    { "heardAs": "ישמח משה ברענגט א חלום", "work": "Yismach Moshe", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [137, 143], "confidence": 0.8 } },
+    { "heardAs": "אהבתי ישכם אמרי השם", "work": "Malachi", "ref": "Malachi 1:2", "sefariaRef": "Malachi 1:2", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [143, 144], "confidence": 0.7 } },
+    { "heardAs": "ויכול לי יענקב היורב באלעוון ... מה פישו מחטתי", "work": "Bereishis", "ref": "Bereishis 31:36", "sefariaRef": "Genesis 31:36", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [154], "confidence": 0.8 } },
+    { "heardAs": "ושם מלכה מדברם יעקב מצוה וידרא", "work": "Bereishis", "ref": "Bereishis 31:29", "sefariaRef": "Genesis 31:29", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [159, 161], "confidence": 0.75 } },
+    { "heardAs": "הבנות בנו סבא בנים בני", "work": "Bereishis", "ref": "Bereishis 31:43", "sefariaRef": "Genesis 31:43", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [158], "confidence": 0.75 } },
+    { "heardAs": "דער בית יעקב להבא, דער בית אסף ... לכאש", "work": "Ovadiah", "ref": "Ovadiah 1:18", "sefariaRef": "Obadiah 1:18", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [169], "confidence": 0.75 } }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Women do not light as mehadrin because of tznius, yet that very tznius is the source of the mitzvah: Chanukah lights, whose reward is sons who are talmidei chachamim, came in the merit of Yehudis's mesiras nefesh for tznius.",
+        "yi": "נשים צינדן נישט אלס מהדרין צוליב צניעות, און דאך איז די צניעות גופא דער מקור פון דער מצוה: נר חנוכה, וועמענס שכר איז בנים תלמידי חכמים, איז געקומען אין זכות פון יהודית'ס מסירות נפש פאר צניעות."
+      },
+      "evidence": { "segs": [12, 13, 16], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Since for bnei Noach a fetus is already a nefesh, Dinah, conceived in Rachel and moved to Leah, remains Rachel's daughter by their law, which is why Shimon could marry her and why the Torah stresses 'bas Leah'.",
+        "yi": "ווייל ביי בני נח איז א עובר שוין א נפש, בלייבט דינה, וואס איז נתעבר געווארן ביי רחל און אריבערגעטון געווארן צו לאה, לויט זייער דין רחל'ס טאכטער, און דערפאר האט שמעון געמעגט חתונה האבן מיט איר און די תורה שרייבט 'בת לאה'."
+      },
+      "evidence": { "segs": [23, 25, 26, 27], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "'Shechem' is the acronym of shem kevod malchuso, and 'Chivi' recalls the serpent's skin, the orlah; the holiest place of the bris had to be covered first by its very opposite.",
+        "yi": "'שכם' איז ראשי תיבות שם כבוד מלכותו, און 'חוי' דערמאנט אין דער הויט פונעם נחש, די ערלה; דער הייליגסטער ארט פונעם ברית האט געמוזט פריער צוגעדעקט ווערן מיט זיין היפך."
+      },
+      "evidence": { "segs": [37, 38, 41], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The circumcision of Shechem was truly completed when Shimon and Levi removed the people entirely, since a goy is orlah from head to foot; their 'going out of the gate of the city' was itself the removal of the orlah.",
+        "yi": "די מילה פון שכם איז באמת פארענדיגט געווארן ווען שמעון און לוי האבן אינגאנצן אוועקגענומען דאס פאלק, ווייל א גוי איז ערלה פון קאפ ביז די פיס; זייער 'יוצאי שער עירו' איז גופא געווען דאס אוועקנעמען די ערלה."
+      },
+      "evidence": { "segs": [56, 57, 64], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Purim, a threat to Jewish bodies, is celebrated with physical feasting, while Chanukah, a threat to Jewish spirituality, is celebrated with hallel and lights; the war on Shechem was of the Chanukah kind.",
+        "yi": "פורים, א סכנה פאר דעם גוף פון אידן, פייערט מען מיט א גשמיות'דיגע סעודה, און חנוכה, א סכנה פאר דער רוחניות פון אידן, פייערט מען מיט הלל און ליכט; די מלחמה קעגן שכם איז געווען פון דעם סארט פון חנוכה."
+      },
+      "evidence": { "segs": [105, 106, 114], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Yaakov's 'im Lavan garti' answers the Yismach Moshe's question: because nothing of Lavan clung to Yaakov, he could also not be affected by Esav, and that made him worthy of the berachos.",
+        "yi": "יעקבס 'עם לבן גרתי' ענטפערט אויף דער קשיא פונעם ישמח משה: ווייל פון לבן האט זיך צו יעקב גארנישט צוגעקלעפט, קען אים עשו אויך נישט באווירקן, און דערמיט איז ער ראוי צו די ברכות."
+      },
+      "evidence": { "segs": [146, 147, 148], "confidence": 0.65 }
+    },
+    {
+      "text": {
+        "en": "Lavan was not lying when he claimed everything was his; his logic, formed in the house of Lavan, simply could not see Yaakov's argument, and so a person must examine where his own logic comes from.",
+        "yi": "לבן האט נישט געליגט ווען ער האט געטענה'ט אז אלעס געהערט צו אים; זיין לאגיק, וואס איז געשאפן געווארן אין בית לבן, האט פשוט נישט געקענט זען יעקבס טענה, און דערפאר דארף א מענטש נאכקוקן פון וואנען זיין אייגענע לאגיק קומט."
+      },
+      "evidence": { "segs": [161, 162, 163], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The printers who imitated Slavita", "yi": "די דרוקערס וואס האבן נאכגעמאכט סלאוויטא" },
+      "retelling": {
+        "en": "The Rav recalls that the Slavita press was run by great tzaddikim, and Jews and tzaddikim placed great value on buying its sefarim. Other printers, who wanted their own books bought, printed 'like' in tiny letters and 'in Slavita' in large ones, so the title page looked like a Slavita print. He uses this as a mashal for Shechem, who wanted only to look circumcised.",
+        "yi": "דער משגיח דערציילט אז די סלאוויטער דרוקעריי איז געפירט געווארן פון גרויסע צדיקים, און ביי אידן און צדיקים איז געווען א גרויסע חשיבות צו קויפן דווקא יענע ספרים. אנדערע דרוקערס, וואס האבן געוואלט מען זאל קויפן זייערע ספרים, האבן געדרוקט 'כמו' מיט קליינע אותיות און 'בסלאוויטא' מיט גרויסע, אז עס זאל אויסזען ווי א סלאוויטער דרוק. דאס איז א משל אויף שכם, וואס האט נאר געוואלט אויסזען ווי א נימול."
+      },
+      "people": [],
+      "evidence": { "segs": [54, 55], "confidence": 0.7 }
+    },
+    {
+      "title": { "en": "The Skverer Rav and Maseches Mikvaos", "yi": "דער סקווירער רב און מסכת מקוואות" },
+      "retelling": {
+        "en": "The Rav tells that the Skverer Rav, after learning through Maseches Mikvaos with the Shulchan Aruch on mikvaos, walked in the street and exclaimed what a sweet Torah we have. He was a man who did not speak idly, and it was a wonder to him that there could be any pleasure greater than learning Mikvaos.",
+        "yi": "דער משגיח דערציילט אז דער סקווירער רב, נאכדעם וואס ער האט דורכגעלערנט מסכת מקוואות מיט'ן שולחן ערוך אויף מקוואות, איז ער געגאנגען אין גאס און האט אויסגערופן וואס פאר א זיסע תורה מיר האבן. ער איז געווען א איד וואס האט נישט גערעדט סתם, און ביי אים איז געווען א חידוש אז ס'קען זיין א גרעסערער תענוג ווי לערנען מקוואות."
+      },
+      "people": ["the Skverer Rav"],
+      "evidence": { "segs": [78, 79, 80], "confidence": 0.7 }
+    },
+    {
+      "title": { "en": "The father who blamed the yeshiva", "yi": "דער טאטע וואס האט געטענה'ט אויף דער ישיבה" },
+      "retelling": {
+        "en": "The Rav recounts that someone came with a complaint: his son is in the yeshiva, so why does the son not have yiras Shamayim? The Rav answered that the complaint is right, but it applies to him as well, since the yeshiva is not the only influence on the son; there is also the house of Lavan, the subways, the New York Times and the very air.",
+        "yi": "דער משגיח דערציילט אז איינער איז געקומען מיט א טענה: זיין זון לערנט דאך אין דער ישיבה, פארוואס האט ער נישט קיין יראת שמים? דער משגיח האט געענטפערט אז די טענה איז גערעכט, אבער זי געהערט אויך צו אים, ווייל די ישיבה איז נישט די איינציגע וואס באווירקט דעם זון; ס'איז דא דער בית לבן, די סאבוועיס, די ניו יארק טיימס און די לופט אליין."
+      },
+      "people": [],
+      "evidence": { "segs": [165, 166], "confidence": 0.7 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "If women were the main miracle of Chanukah, why do they not light as mehadrin?", "yi": "אויב נשים זענען געווען דער עיקר נס פון חנוכה, פארוואס צינדן זיי נישט אלס מהדרין?" },
+      "answer": { "en": "The Chasam Sofer says the custom began when lights were lit outside, where it was not tznius for women to go among men; and the mitzvah itself came through tznius.", "yi": "דער חתם סופר זאגט אז דער מנהג האט זיך אנגעהויבן ווען מען האט געצינדן אינדרויסן, וואו ס'איז נישט געווען קיין צניעות פאר נשים צו גיין צווישן מענער; און די מצוה אליין איז געקומען דורך צניעות."
+      },
+      "questionSegs": [3, 4], "answerSegs": [5, 6, 14, 16], "confidence": 0.8
+    },
+    {
+      "question": { "en": "How could Shimon marry Dinah, a maternal sister forbidden even to bnei Noach?", "yi": "ווי אזוי האט שמעון געמעגט חתונה האבן מיט דינה, א שוועסטער פון דער מוטער וואס איז אסור אפילו פאר בני נח?" },
+      "answer": { "en": "According to the Targum Yonasan Dinah was conceived in Rachel and moved to Leah, and since for bnei Noach a fetus is a nefesh, by their law she is Rachel's daughter.", "yi": "לויט'ן תרגום יונתן איז דינה נתעבר געווארן ביי רחל און אריבערגעטון געווארן צו לאה, און ווייל ביי בני נח איז א עובר א נפש, איז זי לויט זייער דין רחל'ס טאכטער."
+      },
+      "questionSegs": [19], "answerSegs": [20, 21, 25, 26], "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why did Shechem say 'as they are circumcised' instead of 'like us'?", "yi": "פארוואס האט שכם געזאגט 'כאשר הם נמולים' אנשטאט 'כמונו'?" },
+      "answer": { "en": "He understood that a goy cannot truly become like a circumcised Jew, being orlah entirely, so he offered only an outward imitation.", "yi": "ער האט פארשטאנען אז א גוי קען נישט באמת ווערן ווי א נימול'דיגער איד, ווייל ער איז אינגאנצן ערלה, ממילא האט ער נאר געבאטן א נאכמאכן פון אויסן."
+      },
+      "questionSegs": [46, 47], "answerSegs": [50, 52, 53, 55], "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why does the passuk say 'all who go out of the gate of his city' here, while by Avraham it says 'all who come into the gate of his city'?", "yi": "פארוואס שטייט דא 'כל יוצאי שער עירו', און ביי אברהם שטייט 'כל באי שער עירו'?" },
+      "answer": { "en": "The people of Chevron, in the merit of Avraham, kept coming into their city with long life, but the people of Shechem, being orlah, were destined to go out of the city, leaving it holy.", "yi": "די מענטשן פון חברון האבן אין זכות פון אברהם ווייטער אריינגעקומען אין שטאט מיט אריכות ימים, אבער די מענטשן פון שכם, וואס זענען ערלה, האבן געמוזט ארויסגיין פון שטאט, אז די שטאט זאל בלייבן הייליג."
+      },
+      "questionSegs": [58, 59], "answerSegs": [61, 62, 64], "confidence": 0.65
+    },
+    {
+      "question": { "en": "Why must Hashem's love for Klal Yisrael be learned from the parsha of a rasha?", "yi": "פארוואס דארף מען ארויסלערנען דעם אויבערשטנס אהבה צו כלל ישראל פון דער פרשה פון א רשע?" },
+      "answer": { "en": "Everything in this world is a mashal; seeing how much Shechem gave for a passing pleasure teaches how much a Jew should give for the eternal pleasure of closeness to Hashem.", "yi": "אלעס אויף דער וועלט איז א משל; ווען מען זעט וויפיל שכם האט אוועקגעגעבן פאר א פארבייגייענדיגן תענוג, לערנט מען וויפיל א איד דארף אוועקגעבן פאר דעם אייביגן תענוג פון דביקות אין השם."
+      },
+      "questionSegs": [68], "answerSegs": [69, 74, 75], "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why is Yaakov rewarded for good if he was created a vessel of good, and Esav punished if he was created a vessel of evil?", "yi": "פארוואס באקומט יעקב שכר אויב ער איז באשאפן געווארן א כלי טוב, און פארוואס ווערט עשו באשטראפט אויב ער איז באשאפן געווארן א כלי רע?" },
+      "answer": { "en": "The Yismach Moshe explains that as twins something of each rubbed off on the other; Yaakov is rewarded for fighting off the evil that clung to him, and Esav punished for not using the good that clung to him.", "yi": "דער ישמח משה ערקלערט אז אלס צווילינג האט זיך עפעס פון יעדן אפגעריבן אויפן צווייטן; יעקב באקומט שכר ווייל ער קעמפט קעגן דעם רע וואס האט זיך צו אים צוגעקלעפט, און עשו ווערט באשטראפט ווייל ער ניצט נישט אויס דעם טוב וואס האט זיך צו אים צוגעקלעפט."
+      },
+      "questionSegs": [138, 139], "answerSegs": [140, 141, 142], "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "Following the Rambam, the Rav says a person must constantly suspect himself regarding arayos and not tell himself he is a normal person who need not worry.", "yi": "לויט'ן רמב\"ם זאגט דער משגיח אז א מענטש דארף זיך כסדר חושד זיין אין עניני עריות און זיך נישט איינרעדן אז ער איז א נארמאלער מענטש וואס דארף זיך נישט זארגן." },
+      "evidence": { "segs": [92, 94], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "The Rav says one should not be ashamed to be careful in these matters, and that the greatest remedy is to turn one's mind to words of Torah.", "yi": "דער משגיח זאגט אז מען זאל זיך נישט שעמען מיט אכטונג געבן אין די ענינים, און אז די גרעסטע עצה איז מפנה זיין דעם מוח צו דברי תורה." },
+      "evidence": { "segs": [97, 99, 100, 101], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Rav calls on every Jew to make a cheshbon hanefesh whether his thinking is shaped like Yaakov's or like Lavan's, given the newspapers, radio and surroundings of today.", "yi": "דער משגיח רופט אז יעדער איד זאל מאכן א חשבון הנפש צי זיין טראכטן איז געשאפן ווי יעקבס אדער ווי לבנ'ס, לויט די צייטונגען, דעם ראדיא און די סביבה פון היינט." },
+      "evidence": { "segs": [163, 166, 168], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Rav says each person has a small Esav and a small Yaakov within him, and must uproot the Esav through the power of Torah.", "yi": "דער משגיח זאגט אז יעדער מענטש האט אין זיך א קליין עשו'לע און א קליין יעקב'לע, און ער דארף ארויסרייסן דעם עשו מיט'ן כח פון דער תורה." },
+      "evidence": { "segs": [170, 171, 172], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "Dinah and Shechem",
+    "tznius",
+    "women and Chanukah lights",
+    "shmiras habris and Yosef",
+    "circumcision and orlah",
+    "love of Hashem learned from worldly desire",
+    "guarding from arayos",
+    "Chanukah versus Purim",
+    "Esav and Edom",
+    "Lavan's logic and Torah thinking"
+  ],
+  "concepts": [
+    { "he": "צניעות", "heardAs": ["תנועות", "סניעות", "צניעות"] },
+    { "he": "נר חנוכה", "heardAs": ["נהי' חנוכה", "נעה חנוכה", "דלקת נאר חנוכה"] },
+    { "he": "מהדרין", "heardAs": ["מהדרין"] },
+    { "he": "מסירות נפש", "heardAs": ["מעשה נפש", "מסועות נפש", "מסירת נפש"] },
+    { "he": "בני נח", "heardAs": ["לפני נח", "בני נח"] },
+    { "he": "אחות מן האם", "heardAs": ["אחת מן האם", "א חושה מן הרב"] },
+    { "he": "שמירת הברית", "heardAs": ["שמירת הברית", "גדושת הברית"] },
+    { "he": "קדושת הברית", "heardAs": ["קדשת הברית", "התברות קידוש", "עסברות קדש"] },
+    { "he": "ערלה", "heardAs": ["עולה", "אהלה", "ארלה", "אורלי"] },
+    { "he": "קליפה קודמת לפרי", "heardAs": ["קליפה איז קדמה לפרי"] },
+    { "he": "ברוך שם כבוד מלכותו", "heardAs": ["שם כבוד מלכותי", "שם כפד מלכותי"] },
+    { "he": "עריות", "heardAs": ["הריות", "אריות"] },
+    { "he": "דביקות", "heardAs": ["בדווקא", "דביקה"] },
+    { "he": "חשק", "heardAs": ["חשקא", "חשקה"] },
+    { "he": "תענוג", "heardAs": ["ציינוג", "תנגים", "תינוק", "תענוג"] },
+    { "he": "בדחני", "heardAs": ["בת חנה", "בתחנים", "דזשאקערס"] },
+    { "he": "נבלה", "heardAs": ["נבלה", "נעבעלע"] },
+    { "he": "עיר הנדחת", "heardAs": ["עיר הנאר דאכת"] },
+    { "he": "אדמוני", "heardAs": ["אדמיני", "אדמוינו"] },
+    { "he": "חשבון הנפש", "heardAs": ["חשבון הנפש"] },
+    { "he": "בית שם ועבר", "heardAs": ["בית שם ויבער", "בית שם ובא"] }
+  ],
+  "people": [
+    { "name": "Dinah", "heardAs": ["דינע", "דינא", "דינה"] },
+    { "name": "Leah", "heardAs": ["לאה"] },
+    { "name": "Rachel", "heardAs": ["רחל"] },
+    { "name": "Yehudis", "heardAs": ["יהודות", "יהודה"] },
+    { "name": "the Rashbam", "heardAs": ["ראש בעלום", "רשביים"] },
+    { "name": "the Chasam Sofer", "heardAs": ["חתם ספר", "חתם סופר", "סאם ספר"] },
+    { "name": "Shimon", "heardAs": ["שמעון"] },
+    { "name": "Levi", "heardAs": ["לוי", "לבי"] },
+    { "name": "Yosef", "heardAs": ["יוסף"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יעקב אבינא", "יענקב", "יענקא"] },
+    { "name": "Esav", "heardAs": ["אסף", "נתיב", "יוסף"] },
+    { "name": "Lavan", "heardAs": ["לאוון", "לווים", "לובן", "אלעוון"] },
+    { "name": "Shechem ben Chamor", "heardAs": ["שכם בן חמיר", "שכם בן חמל"] },
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינו"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "the Maharal", "heardAs": ["מהר''ל"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["בעל שם תפארצער"] },
+    { "name": "the Skverer Rav", "heardAs": ["סקווירא רב"] },
+    { "name": "the Lechovitcher Rebbe", "heardAs": ["אלכעוויטשע", "אלאכאוויטש"] },
+    { "name": "the Kotzker Rebbe", "heardAs": ["קאצקא", "קורצקע"] },
+    { "name": "the Chofetz Chaim", "heardAs": ["חפץ חיים"] },
+    { "name": "Rav Shimshon Raphael Hirsch", "heardAs": ["שמשון אפילו הערשט"] },
+    { "name": "Rashi", "heardAs": ["רשע"] },
+    { "name": "the Or HaChaim", "heardAs": ["חיים הקדש"] },
+    { "name": "the Yismach Moshe", "heardAs": ["ישמח משה", "יתמוך משה", "יששכר משה"] },
+    { "name": "Dovid Hamelech", "heardAs": ["דוד המלך"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair for the Rav's own speech but badly garbles pesukim and Chazal; Esav and Yosef are often confused ('אסף', 'יוסף'), and Lavan appears as 'לווים'. A second saying on the joy of learning (segment 80, attributed to a Rabbi Eliyahu) and the content of segments 129, 145 and 152 (Edom's red garments, a Shulchan Aruch reference, and 'R' Ber') could not be recovered. Segment 155 repeats one phrase three times and was ignored."
+}

@@ -1,0 +1,254 @@
+{
+  "shiurId": "en-parsha-en-vytz-03",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that Yaakov's taking of Lavan's sheep was not trickery but the redemption and cleansing of great souls, a forerunner of Yetzias Mitzrayim and of the Jewish people's history in golus.",
+      "yi": "דער משגיח ערקלערט אז וואס יעקב אבינו האט גענומען די שאף פון לבן איז נישט געווען קיין שווינדל, נאר א גאולה און א רייניגונג פון גרויסע נשמות, א הכנה צו יציאת מצרים און א בילד פון דעם כלל ישראל'ס היסטאריע אין גלות."
+    },
+    "abstract": {
+      "en": "The Rav opens with bechirah: each person is measured by Hashem according to his own nature, and the hardest test is to act against one's own character. Each of the Avos had his midah, and the Akeidah tested Avraham and Yitzchak against theirs; Yaakov's midah was emes, so his test was to say sheker at Rivka's prophetic command. He then explains why Hashem wanted Yitzchak to bless Yaakov thinking he was Esav. Turning to the sheep, he traces the great souls of the Dor HaMabul through the Dor HaHaflagah, a stage as Lavan's sheep, and Mitzrayim, explaining along the way why Noach was meant to be Moshe. Yaakov extricated these souls from Lavan; his sticks, says the Zohar, were the mitzvah of tefillin, done in secret against the Satan. Vayeitzei is the parsha of golus: Yaakov brought blessing to Lavan, who still claimed everything was his, as Jews have brought blessing to every land of their exile.",
+      "yi": "דער משגיח עפנט מיט בחירה: יעדער מענטש ווערט געמאסטן ביים רבונו של עולם לויט זיין אייגענע טבע, און דער שווערסטער נסיון איז צו טון קעגן זיין אייגענע מדה. יעדער פון די אבות האט געהאט זיין מדה, און די עקידה האט געפרואווט אברהם און יצחק קעגן זייער מדה; יעקב'ס מדה איז געווען אמת, ממילא איז זיין נסיון געווען צו זאגן א שקר ווען רבקה האט אים געהייסן מיט נבואה. דערנאך ערקלערט ער פארוואס דער אייבערשטער האט געוואלט אז יצחק זאל בענטשן יעקב'ן מיינענדיג אז ער איז עשו. דערנאך גייט ער איבער צו די שאף: די גרויסע נשמות פון דור המבול זענען געקומען צוריק אין דור הפלגה, דערנאך ווי די שאף פון לבן, און דערנאך אין מצרים; אונטערוועגנס ערקלערט ער פארוואס נח האט געדארפט זיין משה. יעקב האט ארויסגעריסן די נשמות פון לבן, און זיינע שטעקנס, זאגט דער זוהר, זענען געווען די מצוה פון תפילין, געטון בהסתר קעגן דעם שטן. ויצא איז די פרשה פון גלות: יעקב האט געבראכט ברכה צו לבן, און לבן האט פונדעסטוועגן געטענהט אז אלעס געהערט צו אים, אזוי ווי אידן האבן געבראכט ברכה אין יעדע מדינה פון גלות."
+    },
+    "keyPoints": [
+      {
+        "text": { "en": "Bechirah is measured individually: Hashem judges each person by what is expected of his nature, and the hardest test is one that goes against a person's own character.", "yi": "בחירה ווערט געמאסטן פאר יעדן באזונדער: דער אייבערשטער מאסט יעדן לויט וואס מ'ערווארט פון זיין טבע, און דער שווערסטער נסיון איז דער וואס גייט קעגן זיין אייגענע מדה." },
+        "evidence": { "segs": [11, 12, 16, 26], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "Yaakov's midah was emes, so his great test was to say sheker because Rivka told him so through prophecy.", "yi": "יעקב'ס מדה איז געווען אמת, ממילא איז זיין גרויסער נסיון געווען צו זאגן א שקר ווייל רבקה האט אים עס געהייסן מיט נבואה." },
+        "evidence": { "segs": [40, 70, 76, 100, 101], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "The great souls of the Dor HaMabul returned in the Dor HaHaflagah, then as Lavan's sheep, and then as the Jews of Mitzrayim, being cleansed at each stage.", "yi": "די גרויסע נשמות פון דור המבול זענען צוריקגעקומען אין דור הפלגה, דערנאך ווי די שאף פון לבן, און דערנאך ווי די אידן אין מצרים, און ביי יעדע מדרגה זענען זיי געווארן מער גערייניגט." },
+        "evidence": { "segs": [128, 199, 211, 222, 224], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "Yaakov extricated these souls from Lavan and brought them toward Eretz Yisrael and Mitzrayim, a redemption like Yetzias Mitzrayim.", "yi": "יעקב האט ארויסגעריסן די נשמות פון לבן און זיי געברענגט קיין ארץ ישראל און קיין מצרים, א גאולה אזוי ווי יציאת מצרים." },
+        "evidence": { "segs": [225, 266, 270, 363, 364], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "According to the Zohar, Yaakov's carved sticks were the mitzvah of tefillin, and he did not trick Lavan at all.", "yi": "לויט דעם זוהר זענען יעקב'ס שטעקנס מיט די קערבלעך געווען די מצוה פון תפילין, און ער האט לבן בכלל נישט אפגענארט." },
+        "evidence": { "segs": [356, 358, 359, 367], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "Vayeitzei is the parsha of golus: Yaakov brought blessing to Lavan's house, yet Lavan claimed everything was his, as the nations say of the Jews who enriched them.", "yi": "ויצא איז די פרשה פון גלות: יעקב האט געבראכט ברכה אין לבן'ס הויז, און פונדעסטוועגן האט לבן געטענהט אז אלעס איז זיינס, אזוי ווי די גוים זאגן אויף די אידן וואס האבן זיי באגליקט." },
+        "evidence": { "segs": [396, 426, 429, 434, 436, 457], "confidence": 0.85 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-parsha-bereshes-07-03-vayetza-e", "startSeg": 0, "endSeg": 17,
+      "title": { "en": "Bechirah is measured by each person's nature", "yi": "בחירה ווערט געמאסטן לויט יעדנ'ס טבע" },
+      "summary": { "en": "The Rav explains that the Torah gives every person bechirah, but Hashem measures each one by what is expected of his own nature: not killing earns nothing for one who cannot kill, and a natural masmid is asked why he did not learn even more.", "yi": "דער משגיח ערקלערט אז די תורה גיט יעדן מענטש בחירה, נאר דער אייבערשטער מאסט יעדן לויט וואס מ'ערווארט פון זיין טבע: איינער וואס קען נישט הרג'ענען באקומט גארנישט דערפאר, און א געבוירענער מתמיד ווערט געפרעגט פארוואס ער האט נישט געלערנט נאך מער." },
+      "kind": "intro", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-07-03-vayetza-e", "startSeg": 18, "endSeg": 47,
+      "title": { "en": "The midos of the Avos and the Akeidah", "yi": "די מדות פון די אבות און די עקידה" },
+      "summary": { "en": "The Rav describes Avraham's midah of chesed and Yitzchak's midah of din, and explains that the Akeidah tested each of them against his own midah. Yaakov's midah was emes, so pure that he would rather have died than say sheker.", "yi": "דער משגיח שילדערט אברהם אבינו'ס מדת החסד און יצחק'ס מדת הדין, און ערקלערט אז ביי דער עקידה איז יעדער געפרואווט געווארן קעגן זיין אייגענע מדה. יעקב'ס מדה איז געווען אמת, אזוי ריין אז ער וואלט זיך ליבער געלאזט הרג'ענען איידער זאגן א שקר." },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-07-03-vayetza-e", "startSeg": 48, "endSeg": 118,
+      "title": { "en": "Why Yaakov had to say sheker", "yi": "פארוואס יעקב האט געמוזט זאגן א שקר" },
+      "summary": { "en": "The Rav explains that every creation, even sheker, has a purpose, with a mashal of an artist offended by criticism of his painting. Rivka commanded Yaakov through prophecy to deceive Yitzchak; like Eliyahu at Har HaCarmel, a navi may command a one-time aveirah, and breaking his midah of emes was Yaakov's greatest avodah. He then explains why Hashem wanted Yitzchak to bless Yaakov while thinking he was Esav, and introduces the sheep of this week's parsha.", "yi": "דער משגיח ערקלערט אז יעדע באשעפעניש, אפילו שקר, האט א תכלית, מיט א משל פון א מאלער וואס ווערט באליידיגט ווען מ'שעלט זיין בילד. רבקה האט געהייסן יעקב מיט נבואה צו נארן יצחק'ן; אזוי ווי אליהו בהר הכרמל, מעג א נביא הייסן טון אן עבירה לפי שעה, און צו ברעכן זיין מדת האמת איז געווען יעקב'ס גרעסטע עבודה. דערנאך ערקלערט ער פארוואס דער אייבערשטער האט געוואלט אז יצחק זאל בענטשן יעקב'ן מיינענדיג אז ער איז עשו, און ער הייבט אן מיט די שאף פון דער וואכעדיגער סדרה." },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-07-03-vayetza-e", "startSeg": 119, "endSeg": 182,
+      "title": { "en": "The Dor HaMabul and Noach who should have been Moshe", "yi": "דור המבול, און נח וואס האט געדארפט זיין משה" },
+      "summary": { "en": "The Rav explains that the Dor HaMabul were choice neshamos whom Hashem wanted to give the Torah; since Torah is like water and they refused it, the water came instead, forty days like the forty days of Matan Torah. Through the Zohar he explains the Gemara that finds Moshe in the Torah in the words 'beshagam hu basar': Noach was meant to be Moshe, failed to daven for his generation, and was replanted as Moshe Rabbeinu.", "yi": "דער משגיח ערקלערט אז דער דור המבול זענען געווען אויסדערוויילטע נשמות וואס דער אייבערשטער האט זיי געוואלט געבן די תורה; ווייל די תורה איז געגליכן צו וואסער און זיי האבן זי נישט געוואלט, איז אנשטאט דעם געקומען דאס וואסער, פערציג טעג אזוי ווי די פערציג טעג פון מתן תורה. מיט דעם זוהר ערקלערט ער די גמרא וואס געפינט משה אין דער תורה אין די ווערטער \"בשגם הוא בשר\": נח האט געדארפט זיין משה, ער האט נישט מתפלל געווען פאר זיין דור, און ער איז איבערגעפלאנצט געווארן ווי משה רבינו." },
+      "kind": "tangent", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-07-03-vayetza-e", "startSeg": 183, "endSeg": 219,
+      "title": { "en": "Mei Noach, the Haflagah and Mitzrayim", "yi": "מי נח, דור הפלגה און מצרים" },
+      "summary": { "en": "The Rav explains why the Navi calls the flood 'the waters of Noach' and how Moshe's 'mecheini na' repaired Noach's failure. The same souls returned in the Dor HaHaflagah, were scattered instead of destroyed thanks to their unity, and came back again as the Jews in Mitzrayim, where they were purified.", "yi": "דער משגיח ערקלערט פארוואס דער נביא רופט דעם מבול \"מי נח\", און ווי אזוי משה'ס \"מחני נא\" האט מתקן געווען וואס נח האט קאליע געמאכט. די זעלבע נשמות זענען צוריקגעקומען אין דור הפלגה, זענען צעשפרייט געווארן אנשטאט פארטיליגט צוליב זייער אחדות, און זענען נאכאמאל געקומען ווי די אידן אין מצרים, וואו זיי זענען גערייניגט געווארן." },
+      "kind": "tangent", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-07-03-vayetza-e", "startSeg": 220, "endSeg": 253,
+      "title": { "en": "The souls as Lavan's sheep; the benefit of golus", "yi": "די נשמות ווי לבן'ס שאף; די מעלה פון גלות" },
+      "summary": { "en": "The Rav adds the stage he left out: between the Haflagah and Mitzrayim these souls were Lavan's sheep, which Yaakov domesticated, and the Midrash hints that he had 600,000 sheep, like the 600,000 who left Mitzrayim. Vayeitzei is a parsha of golus, and the Rav explains that Klal Yisrael accomplishes more in golus, as Torah reached its completion in Bavel.", "yi": "דער משגיח לייגט צו די מדרגה וואס ער האט אויסגעלאזט: צווישן דור הפלגה און מצרים זענען די נשמות געווען לבן'ס שאף, וואס יעקב האט זיי איינגעצאמט, און דער מדרש איז מרמז אז ער האט געהאט זעקס הונדערט טויזנט שאף, אזוי ווי די זעקס הונדערט טויזנט וואס זענען ארויס פון מצרים. ויצא איז א סדרה פון גלות, און דער משגיח ערקלערט אז כלל ישראל פועל'ט מער אין גלות, אזוי ווי די תורה איז געקומען צו איר שלימות אין בבל." },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-07-03-vayetza-e", "startSeg": 254, "endSeg": 289,
+      "title": { "en": "Gedolim from golus and the sheep remembered", "yi": "גדולים פון גלות, און די שאף וואס געדענקען" },
+      "summary": { "en": "The Rav lists Rabbanim of Yerushalayim and the Beis Yosef as products of golus, then returns to Yaakov extricating the sheep and bringing them to Eretz Yisrael and Mitzrayim. He describes the great souls sent down in the time of the Ba'al Shem Tov and tells of the Yismach Moshe, who remembered being Yaakov's sheep, and of a Rebbe who sang the niggun Yaakov played for his sheep.", "yi": "דער משגיח רעכנט אויס רבנים פון ירושלים און דעם בית יוסף וואס זענען אלע געקומען פון גלות, און דערנאך קומט ער צוריק צו יעקב וואס האט ארויסגענומען די שאף און זיי געברענגט קיין ארץ ישראל און קיין מצרים. ער שילדערט די גרויסע נשמות וואס זענען אראפגעשיקט געווארן אין די צייטן פונעם בעל שם טוב, און דערציילט פונעם ישמח משה וואס האט געדענקט ווי ער איז געווען א שעפעלע ביי יעקב אבינו, און פון א רבי וואס האט געזינגען דעם ניגון וואס יעקב האט געשפילט פאר זיינע שאף." },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-07-03-vayetza-e", "startSeg": 290, "endSeg": 368,
+      "title": { "en": "Yaakov's sticks were tefillin", "yi": "יעקב'ס שטעקנס זענען געווען תפילין" },
+      "summary": { "en": "The Rav brings Rashi that angels brought the sheep to Yaakov, and the Zohar's different account of the sticks. With the mashal of breakfast that works without our understanding it, he explains that mitzvos work even when we do not know how. The Avos made the same tikkunim before Matan Torah, and the Zohar says Yaakov's sticks were the mitzvah of tefillin, which recall Yetzias Mitzrayim, since he was redeeming these souls from Lavan.", "yi": "דער משגיח ברענגט רש\"י אז מלאכים האבן געברענגט די שאף צו יעקב'ן, און דעם זוהר וואס דערציילט גאר אנדערש וועגן די שטעקנס. מיט א משל פון פרישטיק, וואס ארבעט אן דעם וואס מ'פארשטייט ווי, ערקלערט ער אז מצוות ווירקן אפילו ווען מ'ווייסט נישט ווי אזוי. די אבות האבן געמאכט די זעלבע תיקונים פאר מתן תורה, און דער זוהר זאגט אז יעקב'ס שטעקנס זענען געווען די מצוה פון תפילין, וואס דערמאנען יציאת מצרים, ווייל ער האט אויסגעלייזט די נשמות פון לבן." },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-07-03-vayetza-e", "startSeg": 369, "endSeg": 404,
+      "title": { "en": "A hidden battle with the Satan", "yi": "א באהאלטענע מלחמה מיט דעם שטן" },
+      "summary": { "en": "The Rav stresses that Yaakov did not trick Lavan; it was a battle of kedushah against tumah, as the Zohar shows in explaining why Esav never pursued Yaakov to Charan. Such a battle must be fought in secret so the Satan does not catch on, which is why the Torah presents it as a trick. He then calls Vayeitzei a parsha of deep golus and gives Lavan's complaint that Yaakov takes everything.", "yi": "דער משגיח באטאנט אז יעקב האט לבן נישט אפגענארט; עס איז געווען א מלחמה פון קדושה קעגן טומאה, אזוי ווי דער זוהר ווייזט ווען ער ערקלערט פארוואס עשו איז קיינמאל נישט נאכגעלאפן יעקב'ן קיין חרן. אזא מלחמה מוז מען פירן בהסתר כדי דער שטן זאל זיך נישט כאפן, און דערפאר שטעלט די תורה עס אוועק ווי א שווינדל. דערנאך רופט ער ויצא א פרשה פון א טיפן גלות, און ברענגט לבן'ס טענה אז יעקב נעמט אוועק אלעס." },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-07-03-vayetza-e", "startSeg": 405, "endSeg": 480,
+      "title": { "en": "Yaakov's blessing to Lavan and the story of golus", "yi": "יעקב'ס ברכה פאר לבן, און די מעשה פון גלות" },
+      "summary": { "en": "The Rav explains that Yaakov took only what was his, yet Lavan claimed everything belonged to him, although Yaakov brought blessing to his house, as Lavan himself admitted. This, he says, is the story of golus: Jews brought prosperity to every land, as seen in Spain's decline after the expulsion and in America, while the nations accuse them of sucking their blood, as in Shakespeare's Shylock. He ends that Yaakov does leave Lavan and the world will yet acknowledge the truth.", "yi": "דער משגיח ערקלערט אז יעקב האט גענומען נאר וואס איז זיינס, און פונדעסטוועגן האט לבן געטענהט אז אלעס איז זיינס, הגם יעקב האט געבראכט ברכה אין זיין הויז, אזוי ווי לבן אליין האט מודה געווען. דאס, זאגט ער, איז די מעשה פון גלות: אידן האבן געבראכט עשירות אין יעדע מדינה, אזוי ווי מ'זעט ביי שפאניע נאך דעם גירוש און ביי אמעריקע, און די גוים באשולדיגן זיי אז זיי זויגן אויס זייער בלוט, אזוי ווי אין שעקספיר'ס שיילאק. ער ענדיגט אז יעקב גייט יא ארויס פון לבן, און די וועלט וועט נאך מודה זיין צום אמת." },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "Choose life", "work": "Devarim", "ref": "Devarim 30:19", "sefariaRef": "Deuteronomy 30:19", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [1, 2], "confidence": 0.85 } },
+    { "heardAs": "V'yekedos HaMachalas, Reschait Ez B'nai", "work": "Bereishis", "ref": "Bereishis 22:10", "sefariaRef": "Genesis 22:10", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [29], "confidence": 0.75 } },
+    { "heardAs": "V'yayma Yitzchakir L'Avram V'yayma Avi ... Inenu v'need", "work": "Bereishis", "ref": "Bereishis 22:7", "sefariaRef": "Genesis 22:7", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [34, 37], "confidence": 0.75 } },
+    { "heardAs": "Shekheh, feh, vashakheh, tirchah", "work": "Shemos", "ref": "Shemos 23:7", "sefariaRef": "Exodus 23:7", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [60, 61, 62], "confidence": 0.75 } },
+    { "heardAs": "Shma' Beka'inu", "work": "Bereishis", "ref": "Bereishis 27:8", "sefariaRef": null, "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [74, 76], "confidence": 0.7 } },
+    { "heardAs": "Chazaul said that Sarah was superior to Avraham Avinu in Midas HaNavuva", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [72, 73], "confidence": 0.8 } },
+    { "heardAs": "karbana anoychi anayze b'charecha", "work": "Bereishis", "ref": "Bereishis 27:19", "sefariaRef": "Genesis 27:19", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [79], "confidence": 0.7 } },
+    { "heardAs": "Nabi mayachecha kamaycha akim bekevacha ... Eilav teshma'om", "work": "Devarim", "ref": "Devarim 18:15", "sefariaRef": "Deuteronomy 18:15", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [83, 84, 85], "confidence": 0.75 } },
+    { "heardAs": "Ratsa brings it in the Chirmish", "work": "Rashi", "ref": "Rashi on Devarim 18", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [82, 85, 95], "confidence": 0.65 } },
+    { "heardAs": "Eilio Beharakama", "work": "Melachim I", "ref": "Melachim I 18", "sefariaRef": null, "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [86, 87, 89], "confidence": 0.75 } },
+    { "heardAs": "The Zaya says that the Abani Shoram loves the children of Avraham", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [103, 104, 105], "confidence": 0.65 } },
+    { "heardAs": "the Yariya Kaddish tells us that the Dayer HaMabol were very, very big people", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [126, 128], "confidence": 0.65 } },
+    { "heardAs": "Masech Te Cholem ... How do we know that Maish is from the Tayra", "work": "Gemara Chullin", "ref": "Chullin 139b", "sefariaRef": "Chullin 139b", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [141, 143, 150], "confidence": 0.8 } },
+    { "heardAs": "B'Shagam Hu Basah", "work": "Bereishis", "ref": "Bereishis 6:3", "sefariaRef": "Genesis 6:3", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [145, 147], "confidence": 0.8 } },
+    { "heardAs": "The Zayah says that Nayak was really supposed to be Maish", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [156, 157, 159], "confidence": 0.75 } },
+    { "heardAs": "Nevi says ... Just like I swore by Nayakh that I won't bring any more marble", "work": "Yeshayahu", "ref": "Yeshayahu 54:9", "sefariaRef": "Isaiah 54:9", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [181, 183, 186], "confidence": 0.7 } },
+    { "heardAs": "vim ayin ... the mecheinina mesifracha asher kitzavsta", "work": "Shemos", "ref": "Shemos 32:32", "sefariaRef": "Exodus 32:32", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [188, 189, 190], "confidence": 0.8 } },
+    { "heardAs": "Havn Nibbna lanu'ir", "work": "Bereishis", "ref": "Bereishis 11:4", "sefariaRef": "Genesis 11:4", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [202, 206], "confidence": 0.7 } },
+    { "heardAs": "the Madrash, Rabah, is Maramazet ... Yankov Avinu had 600,000 sheep", "work": "Midrash Rabbah", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [228, 229], "confidence": 0.75 } },
+    { "heardAs": "Ki Raben, Bnei Shein, Meimah, Bnei Ve'ulah", "work": "Yeshayahu", "ref": "Yeshayahu 54:1", "sefariaRef": "Isaiah 54:1", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [238], "confidence": 0.7 } },
+    { "heardAs": "Chavit Tzaddikim, Hamidu, Li, Begalusam, Yaisa, Bibi Eretz Yisroel", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "quoted", "evidence": { "segs": [237, 239], "confidence": 0.65 } },
+    { "heardAs": "Rasha says, and this week said that the Malachim went", "work": "Rashi", "ref": "Rashi on Bereishis 31:10", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [290, 291, 292, 369], "confidence": 0.75 } },
+    { "heardAs": "the Zaya says that when Yankiv Rabbeinu made those sticks", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [293, 355, 356, 358], "confidence": 0.8 } },
+    { "heardAs": "so the Zair explains, because Levin was such a big tumor", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [379, 380, 381], "confidence": 0.7 } },
+    { "heardAs": "HaYeitzei Anki Be'osheva V'yayla Charana", "work": "Bereishis", "ref": "Bereishis 28:10", "sefariaRef": "Genesis 28:10", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [397], "confidence": 0.8 } },
+    { "heardAs": "the Ba'eh ... a piya beya ... take the stone off together", "work": "Bereishis", "ref": "Bereishis 29:2-3", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [427, 428], "confidence": 0.7 } },
+    { "heardAs": "Nikhashti vayvarchayni Hashem bigloh lecher", "work": "Bereishis", "ref": "Bereishis 30:27", "sefariaRef": "Genesis 30:27", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [430, 431], "confidence": 0.85 } },
+    { "heardAs": "Everything belongs to Lavan", "work": "Bereishis", "ref": "Bereishis 31:43", "sefariaRef": "Genesis 31:43", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [418, 419, 422], "confidence": 0.7 } }
+  ],
+  "insights": [
+    {
+      "text": { "en": "The Akeidah was the hardest test because it required each of the Avos to act against his own midah: Avraham of chesed had to slaughter, and Yitzchak of din had to give himself up out of love.", "yi": "די עקידה איז געווען דער שווערסטער נסיון ווייל יעדער פון די אבות האט געמוזט טון קעגן זיין אייגענע מדה: אברהם, בעל החסד, האט געדארפט שעכטן, און יצחק, בעל הדין, האט געדארפט מוסר נפש זיין פון אהבה." },
+      "evidence": { "segs": [26, 28, 30, 32], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "Hashem arranged that Yitzchak bless Yaakov thinking he was Esav, to show that Jews are blessed even when they act like Esav, and that Hashem, not Yitzchak, chooses whom to bless.", "yi": "דער אייבערשטער האט אזוי איינגעפירט אז יצחק זאל בענטשן יעקב'ן מיינענדיג אז ער איז עשו, כדי צו ווייזן אז אידן ווערן געבענטשט אפילו ווען זיי פירן זיך ווי עשו, און אז דער אייבערשטער, נישט יצחק, קלייבט אויס וועמען צו בענטשן." },
+      "evidence": { "segs": [105, 106, 109, 110, 111], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "Since Torah is compared to water, the Dor HaMabul, who refused the Torah meant for them, received it as the waters of the flood, over forty days like the forty days of Matan Torah.", "yi": "ווייל די תורה איז געגליכן צו וואסער, האט דער דור המבול, וואס האט נישט געוואלט נעמען די תורה וואס איז געווען געמיינט פאר זיי, באקומען אנשטאט דעם די וואסערן פונעם מבול, פערציג טעג אזוי ווי די פערציג טעג פון מתן תורה." },
+      "evidence": { "segs": [132, 135, 136, 137, 138], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "The Gemara's derivation of Moshe from 'beshagam hu basar' is explained by the Zohar: Noach was meant to be Moshe, and Moshe's plea 'mecheini na' repaired Noach's failure to daven for his generation, which is why the flood is called 'mei Noach'.", "yi": "די גמרא וואס לערנט ארויס משה פון \"בשגם הוא בשר\" ווערט ערקלערט מיט דעם זוהר: נח האט געדארפט זיין משה, און משה'ס \"מחני נא\" האט מתקן געווען וואס נח האט נישט מתפלל געווען פאר זיין דור, און דערפאר הייסט דער מבול \"מי נח\"." },
+      "evidence": { "segs": [156, 157, 163, 185, 190, 193], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "Lavan's sheep were a stage in the cleansing of the souls of the Dor HaMabul and Dor HaHaflagah, between the Haflagah and Mitzrayim; the Yismach Moshe remembered being one of them.", "yi": "לבן'ס שאף זענען געווען א מדרגה אין דער רייניגונג פון די נשמות פון דור המבול און דור הפלגה, צווישן דור הפלגה און מצרים; דער ישמח משה האט געדענקט אז ער איז געווען איינער פון זיי." },
+      "evidence": { "segs": [221, 222, 224, 280], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "Yaakov's sticks were the mitzvah of tefillin, which recall Yetzias Mitzrayim, because extricating these souls from Lavan was itself a redemption like Yetzias Mitzrayim; it was concealed as a trick so that the Satan would not interfere.", "yi": "יעקב'ס שטעקנס זענען געווען די מצוה פון תפילין, וואס דערמאנען יציאת מצרים, ווייל ארויסרייסן די נשמות פון לבן איז אליין געווען א גאולה אזוי ווי יציאת מצרים; און עס איז געווען פארשטעלט ווי א שווינדל כדי דער שטן זאל זיך נישט אריינמישן." },
+      "evidence": { "segs": [358, 362, 363, 365, 389, 394], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "Lavan's claim that everything Yaakov had was his, though Yaakov had brought him blessing, is the pattern of all golus: the nations prosper through the Jews and then accuse them of draining them.", "yi": "לבן'ס טענה אז אלעס וואס יעקב האט איז זיינס, הגם יעקב האט אים געבראכט ברכה, איז דער סדר פון גאנץ גלות: די גוים ווערן רייך דורך די אידן און דערנאך באשולדיגן זיי אז זיי זויגן זיי אויס." },
+      "evidence": { "segs": [432, 434, 435, 436, 457], "confidence": 0.85 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Yismach Moshe's mark from Yaakov's stick", "yi": "דעם ישמח משה'ס סימן פון יעקב'ס שטעקן" },
+      "retelling": { "en": "The Rav tells that the Yismach Moshe, whom he identifies as an ancestor of the Satmar Rav, showed a mark on his shoulder. He said he remembered when he was a sheep with Yaakov Avinu, and Yaakov once gave him a small tap on the shoulder with a stick, and the mark remained.", "yi": "דער משגיח דערציילט אז דער ישמח משה, וואס ער באצייכנט ווי אן עלטער-זיידע פונעם סאטמאר רב, האט געוויזן א סימן אויף זיין אקסל. ער האט געזאגט אז ער געדענקט ווען ער איז געווען א שעפעלע ביי יעקב אבינו, און יעקב האט אים אמאל געגעבן א קליינעם קלאפ אויפן אקסל מיט א שטעקן, און דער סימן איז געבליבן." },
+      "people": ["the Yismach Moshe", "Yaakov Avinu"],
+      "evidence": { "segs": [278, 279, 280, 281], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "The niggun Yaakov played for his sheep", "yi": "דער ניגון וואס יעקב האט געשפילט פאר זיינע שאף" },
+      "retelling": { "en": "The Rav tells that a Rebbe sang a niggun for his chassidim and said that Yaakov Avinu had played this niggun on his flute for them when they were sheep with him. He remembered it, the Rav explains, because tzaddikim remember what happened to them before. The Rav adds that this niggun is known today and that he knows it.", "yi": "דער משגיח דערציילט אז א רבי האט געזינגען א ניגון פאר זיינע חסידים און געזאגט אז דעם ניגון האט יעקב אבינו פאר זיי געשפילט אויף זיין פייפל ווען זיי זענען געווען שאף ביי אים. ער האט עס געדענקט, ערקלערט דער משגיח, ווייל צדיקים געדענקען וואס איז מיט זיי פריער געשען. דער משגיח לייגט צו אז דער ניגון איז היינט באקאנט און ער קען אים." },
+      "people": ["Yaakov Avinu"],
+      "evidence": { "segs": [282, 283, 284, 285], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "How could Yaakov, whose midah was emes, say sheker to obtain the brachos?", "yi": "ווי אזוי האט יעקב, וועמענס מדה איז געווען אמת, געקענט זאגן א שקר כדי צו באקומען די ברכות?" },
+      "answer": { "en": "Rivka commanded it through prophecy, and a navi may command a one-time aveirah, as Eliyahu did at Har HaCarmel; breaking his own midah at Hashem's word was Yaakov's greatest avodah.", "yi": "רבקה האט עס געהייסן מיט נבואה, און א נביא מעג הייסן טון אן עבירה לפי שעה, אזוי ווי אליהו בהר הכרמל; צו ברעכן זיין אייגענע מדה אויפן אייבערשטנס ווארט איז געווען יעקב'ס גרעסטע עבודה." },
+      "questionSegs": [70, 75], "answerSegs": [76, 85, 94, 95, 100, 101], "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why did Hashem want Yitzchak to bless Yaakov while thinking he was blessing Esav?", "yi": "פארוואס האט דער אייבערשטער געוואלט אז יצחק זאל בענטשן יעקב'ן מיינענדיג אז ער בענטשט עשו'ן?" },
+      "answer": { "en": "To show that Jews receive the blessing even when they act like Esav, and that Hashem, not Yitzchak, chooses whom to bless.", "yi": "כדי צו ווייזן אז אידן באקומען די ברכה אפילו ווען זיי פירן זיך ווי עשו, און אז דער אייבערשטער, נישט יצחק, קלייבט אויס וועמען צו בענטשן." },
+      "questionSegs": [102], "answerSegs": [105, 106, 109, 110, 111, 112], "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why does the Gemara find an allusion to Moshe in the words 'beshagam hu basar' said about the Dor HaMabul?", "yi": "פארוואס געפינט די גמרא א רמז אויף משה אין די ווערטער \"בשגם הוא בשר\" וואס שטייען ביים דור המבול?" },
+      "answer": { "en": "Because, as the Zohar says, Noach was meant to be Moshe and give that generation the Torah; when he failed, he was replanted as Moshe Rabbeinu.", "yi": "ווייל, אזוי ווי דער זוהר זאגט, נח האט געדארפט זיין משה און געבן יענעם דור די תורה; ווען ער האט נישט מצליח געווען, איז ער איבערגעפלאנצט געווארן ווי משה רבינו." },
+      "questionSegs": [143, 155], "answerSegs": [156, 157, 159, 161], "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why is the flood called 'the waters of Noach'?", "yi": "פארוואס הייסט דער מבול \"מי נח\"?" },
+      "answer": { "en": "Because it was Noach's fault for not davening for his generation; Moshe's 'mecheini na' later repaired it.", "yi": "ווייל עס איז געווען נח'ס שולד, וואס ער האט נישט מתפלל געווען פאר זיין דור; משה'ס \"מחני נא\" האט עס שפעטער מתקן געווען." },
+      "questionSegs": [183, 184], "answerSegs": [185, 190, 191, 194], "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why did Esav not pursue Yaakov to Charan during his twenty-two years with Lavan?", "yi": "פארוואס איז עשו נישט נאכגעלאפן יעקב'ן קיין חרן די צוויי און צוואנציג יאר וואס ער איז געווען ביי לבן?" },
+      "answer": { "en": "According to the Zohar, Lavan was such great tumah, the Satan's headquarters, that Esav assumed Lavan would destroy Yaakov for him.", "yi": "לויט דעם זוהר איז לבן געווען אזא גרויסע טומאה, דער הויפט-קווארטיר פונעם שטן, אז עשו האט גערעכנט אז לבן וועט שוין פארטיליגן יעקב'ן פאר אים." },
+      "questionSegs": [378, 379], "answerSegs": [380, 381, 382], "confidence": 0.75
+    },
+    {
+      "question": { "en": "If Yaakov did not trick Lavan, why does the Torah describe it as a trick?", "yi": "אויב יעקב האט לבן נישט אפגענארט, פארוואס שרייבט די תורה עס ווי א שווינדל?" },
+      "answer": { "en": "A battle with the Satan must be fought in secret so he does not catch on, so Yaakov did it in a way that hid what he was accomplishing.", "yi": "א מלחמה מיט דעם שטן מוז מען פירן בהסתר כדי ער זאל זיך נישט כאפן, ממילא האט יעקב עס געטון אויף אן אופן וואס האט באהאלטן וואס ער האט אויפגעטון." },
+      "questionSegs": [386], "answerSegs": [388, 389, 390, 394, 395], "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Rav says that when someone demands to know how a mitzvah works, one should answer that he also does not know how his breakfast nourishes him; Hashem knows, and mitzvos work even without our understanding.", "yi": "דער משגיח זאגט אז ווען איינער וויל וויסן ווי אזוי א מצוה ארבעט, זאל מען אים ענטפערן אז ער ווייסט אויך נישט ווי אזוי זיין פרישטיק שפייזט אים; דער אייבערשטער ווייסט, און די מצוות ווירקן אפילו אן אונזער פארשטאנד." },
+      "evidence": { "segs": [299, 305, 307, 315, 320], "confidence": 0.85 }
+    }
+  ],
+  "candidateTopics": ["bechirah measured by nature", "midos of the Avos", "Yaakov and the midah of emes", "Dor HaMabul and gilgulim", "Noach and Moshe", "Yaakov and Lavan's sheep", "tefillin", "the benefit of golus", "Jews bringing blessing to the nations", "parshas Vayeitzei"],
+  "concepts": [
+    { "he": "בחירה", "heardAs": ["Bechirah", "Bechira"] },
+    { "he": "רבונו של עולם", "heardAs": ["Rabbani Shalom", "Rabbani Sholem", "Rabbi Neshwadam", "Rabban Yeshlelem", "Rebbein Yashleilam"] },
+    { "he": "שקר", "heardAs": ["shekel", "Sheka", "Shekheh"] },
+    { "he": "אמת", "heardAs": ["Emes", "Ameth"] },
+    { "he": "נסיון", "heardAs": ["Nusayim", "Nesayah", "Nesayin"] },
+    { "he": "עקידה", "heardAs": ["Aked"] },
+    { "he": "דור המבול", "heardAs": ["Dayer HaMabol", "Dayram Apple"] },
+    { "he": "דור הפלגה", "heardAs": ["Daya Haflurga", "Daire of Lager"] },
+    { "he": "מי נח", "heardAs": ["mei nayach", "waters of Mayach"] },
+    { "he": "גלות", "heardAs": ["Goddess", "Godus", "Golos", "Gullis", "Godless"] },
+    { "he": "תפילין", "heardAs": ["Tfilim", "Tfilin", "Tefillin"] },
+    { "he": "תיקונים", "heardAs": ["tikkunim"] },
+    { "he": "יציאת מצרים", "heardAs": ["Yetzias Mitzrayim", "Yetzirah Mitzvahim"] },
+    { "he": "טומאה", "heardAs": ["Tzuma", "tumor"] },
+    { "he": "שלימות", "heardAs": ["Shlemus", "shleimus"] }
+  ],
+  "people": [
+    { "name": "Avraham Avinu", "heardAs": ["Avraham Avinu", "Abraham Avin"] },
+    { "name": "Yitzchak Avinu", "heardAs": ["Yitzchak", "Yitzhak"] },
+    { "name": "Yaakov Avinu", "heardAs": ["Yank of Avinu", "Yankar Bavino", "Ya'inka", "Yankiv Avinu"] },
+    { "name": "Rivka", "heardAs": ["Rivka"] },
+    { "name": "Sarah", "heardAs": ["Sarah"] },
+    { "name": "Esav", "heardAs": ["Esau", "Aesop"] },
+    { "name": "Lavan", "heardAs": ["Lavan", "Levin", "Lovin", "love"] },
+    { "name": "Noach", "heardAs": ["Nayach", "Nayak", "Mayach"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["Maish", "Mayesha Rabbein", "Meish Rabbeinu"] },
+    { "name": "Eliyahu", "heardAs": ["Eilio"] },
+    { "name": "Rashi", "heardAs": ["Rasha", "Ratsa"] },
+    { "name": "the Beis Yosef", "heardAs": ["Bess Yosef"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["Ba'ashant of Al-Kaddish"] },
+    { "name": "the Yismach Moshe", "heardAs": ["Yismach Moshe", "Esmech Ma'eshe"] },
+    { "name": "the Satmar Rav", "heardAs": ["Satmar Arad"] },
+    { "name": "Rav Yehoshua Leib Diskin", "heardAs": ["Rabbi Yeshua Leib Dizkin"] },
+    { "name": "Rav Yosef Chaim Sonnenfeld", "heardAs": ["Rabbi Yosef Chaim Zanufel"] }
+  ],
+  "asrNotes": "English ASR fair for the Rav's English but Hebrew terms and quotations are heavily garbled (Ribono shel Olam appears in many forms; golus as 'Goddess'). The source attributed at seg 126 ('Yariya Kaddish', possibly the Arizal) and the Chazal at 237-239 could not be identified with confidence; the name of the Rebbe who sang Yaakov's niggun (seg 282, 'Abtar Rav') and the later Rabbanim of Yerushalayim (seg 255-260) are too garbled to rely on. Segments 140, 148-149 are repeat noise; stretches 182-183 and 205-206 skip about 40 and 17 seconds."
+}

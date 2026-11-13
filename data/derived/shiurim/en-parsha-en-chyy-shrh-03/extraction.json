@@ -1,0 +1,297 @@
+{
+  "shiurId": "en-parsha-en-chyy-shrh-03",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that a shidduch is made in Heaven as the reunion of one soul split in two, why kiddushin is learned from the purchase of the Me'aras HaMachpela, why the shadchan is paid, and how a shidduch is bound up with Shabbos.",
+      "yi": "דער משגיח ערקלערט אז א שידוך ווערט געמאכט אין הימל, ווי א צוריק-פאראייניגונג פון איין נשמה וואס איז צעטיילט געווארן, פארוואס מ'לערנט קידושין פון דעם קויפן די מערת המכפלה, פארוואס מ'צאלט דעם שדכן, און ווי אזוי א שידוך איז פארבונדן מיט שבת."
+    },
+    "abstract": {
+      "en": "The Rav opens with Eliezer, the father of all shadchanim, whose name is never mentioned in the parsha, to show that Hashem, not the shadchan, makes every shidduch. He then asks why kiddushin with money is learned from Avraham's purchase of a burial cave, which seems a poor omen, and answers that the Me'aras HaMachpela, where couples lie together, teaches that marriage is a reunion of one soul that existed before life and continues after it. He tells the Midrash of Cleopatra's failed matchmaking and asks why a shadchan is paid at all. The malach who announces each shidduch does not truly know, so rejected proposals are steps toward the real one, as hinted in the tenth maamar, 'it is not good... a helper opposite him.' Quoting the Tzemach Tzedek, he explains the shadchan is paid for the lie that silences the Satan. Finally he links the shidduch to Shabbos and Malchus, and urges kedushah.",
+      "yi": "דער משגיח עפנט מיט אליעזר, דער אבי השדכנים, וואס זיין נאמען ווערט נישט דערמאנט אין דער פרשה, כדי צו ווייזן אז דער אייבערשטער מאכט יעדן שידוך, נישט דער שדכן. דערנאך פרעגט ער פארוואס מ'לערנט קידושי כסף פון אברהם אבינו'ס קויפן א קבר, וואס זעט אויס ווי א שלעכטער סימן, און ער ענטפערט אז די מערת המכפלה, וואו די זוגות ליגן צוזאמען, לערנט אז א חתונה איז א צוריק-פאראייניגונג פון איין נשמה וואס איז געווען פאר'ן לעבן און בלייבט נאכן לעבן. ער דערציילט דעם מדרש פון קליאפטרא און פרעגט פארוואס מ'צאלט בכלל א שדכן. דער מלאך וואס רופט אויס דעם שידוך ווייסט נישט באמת, ממילא זענען די אפגעווארפענע הצעות טריט צום אמת'ן שידוך, ווי מ'זעט אין דעם צענטן מאמר, \"לא טוב... עזר כנגדו\". לויט'ן צמח צדק צאלט מען דעם שדכן פאר דעם שקר וואס שטילט איין דעם שטן. צום סוף פארבינדט ער דעם שידוך מיט שבת און מלכות, און ער מאנט קדושה."
+    },
+    "keyPoints": [
+      {
+        "text": { "en": "Every shidduch is decreed by Hashem before the couple is born; the shadchan does not make it, which is why Eliezer's name is not mentioned in the parsha.", "yi": "יעדער שידוך איז באשטימט פונעם אייבערשטן נאך איידער דאס פארפאלק ווערט געבוירן; דער שדכן מאכט עס נישט, און דערפאר ווערט אליעזר'ס נאמען נישט דערמאנט אין דער פרשה." },
+        "evidence": { "segs": [1, 3, 16, 17, 21, 33], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "Marriage is not a union but a reunion: each couple is one soul that Hashem splits into male and female and later brings back together.", "yi": "א חתונה איז נישט קיין פאראייניגונג נאר א צוריק-פאראייניגונג: יעדעס פארפאלק איז איין נשמה וואס דער אייבערשטער טיילט אויף אין א זכר און א נקבה און דערנאך ברענגט ער זיי צוריק צוזאמען." },
+        "evidence": { "segs": [118, 119, 120, 126, 130, 131], "confidence": 0.9 }
+      },
+      {
+        "text": { "en": "Learning kiddushin from the Me'aras HaMachpela shows that the bond of the souls exists before life and continues after it, even though halachically kiddushin ends at death.", "yi": "דאס וואס מ'לערנט קידושין פון דער מערת המכפלה ווייזט אז דער קשר פון די נשמות איז דא פאר'ן לעבן און גייט ווייטער נאכן לעבן, הגם אז על פי הלכה ענדיגט זיך קידושין מיט'ן טויט." },
+        "evidence": { "segs": [96, 99, 105, 110, 113, 136], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "The malach who announces a shidduch does not truly know it, so a person passes through proposals that are rejected before reaching the right one.", "yi": "דער מלאך וואס רופט אויס דעם שידוך ווייסט עס נישט באמת, ממילא גייט א מענטש דורך הצעות וואס ווערן אפגעווארפן ביז ער קומט צום ריכטיגן." },
+        "evidence": { "segs": [200, 205, 209, 235, 237, 259], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "Because a shidduch comes from so high a place the Satan prosecutes against it, and the shadchan is paid for the lie that is thrown to him, except by great tzaddikim against whom he has no hold.", "yi": "ווייל א שידוך קומט פון אזא הויכן ארט איז דער שטן מקטרג, און דער שדכן ווערט באצאלט פאר דעם שקר וואס מ'ווארפט אים צו, חוץ ביי גרויסע צדיקים וואו ער האט נישט קיין שליטה." },
+        "evidence": { "segs": [354, 356, 358, 361, 386, 391], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "A shidduch belongs to Shabbos and to Malchus, the tenth: the tenth maamar, about Chava, was really meant for Shabbos, and the kallah is like Shabbos.", "yi": "א שידוך געהערט צו שבת און צו מלכות, דער צענטער: דער צענטער מאמר, וועגן חוה, האט באמת געדארפט זיין אום שבת, און די כלה איז ווי שבת." },
+        "evidence": { "segs": [405, 470, 475, 479, 482, 505], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-parsha-bereshes-05-03-chaya-sura-e",
+      "startSeg": 0, "endSeg": 37,
+      "title": { "en": "Eliezer's name and the Heavenly shidduch", "yi": "אליעזר'ס נאמען און דער שידוך פון הימל" },
+      "summary": {
+        "en": "The Rav notes that Eliezer, the father of shadchanim, is never named in the parsha of the shidduch, to show that Hashem makes every match. He brings the Midrash that couples are destined together before birth, and that the parsha of shidduchim is introduced by the Me'aras HaMachpela, 'doubled' with couples.",
+        "yi": "דער משגיח מערקט אן אז אליעזר, דער אבי השדכנים, ווערט קיינמאל נישט דערמאנט ביים נאמען אין דער פרשה פונעם שידוך, כדי צו ווייזן אז דער אייבערשטער מאכט יעדן שידוך. ער ברענגט דעם מדרש אז א פארפאלק איז באשטימט צוזאמען נאך פאר זיי זענען געבוירן, און אז די פרשה פון שידוכים הייבט זיך אן מיט דער מערת המכפלה, וואס איז כפולה בזוגות."
+      },
+      "kind": "intro", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-05-03-chaya-sura-e",
+      "startSeg": 38, "endSeg": 91,
+      "title": { "en": "Good simanim and kiddushin from a burial cave", "yi": "גוטע סימנים און קידושין פון א מערה" },
+      "summary": {
+        "en": "The Rav describes how Jews seek good omens for a chuppah, such as marrying while the moon is waxing, since the chuppah is the Rosh Hashanah of married life. He asks why kiddushin with money, kesef that speaks of longing, is learned from Avraham's purchase of a burial cave, which seems a poor omen.",
+        "yi": "דער משגיח שילדערט ווי אידן זוכן גוטע סימנים ביי א חופה, למשל צו מאכן די חתונה ווען די לבנה וואקסט, ווייל די חופה איז דער ראש השנה פונעם חתונה-לעבן. ער פרעגט פארוואס מ'לערנט קידושי כסף, וואס דאס ווארט כסף מיינט א גלוסטעניש, פון אברהם אבינו'ס קויפן א מערה פאר קבורה, וואס זעט אויס ווי א שלעכטער סימן."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-05-03-chaya-sura-e",
+      "startSeg": 92, "endSeg": 153,
+      "title": { "en": "Marriage as a reunion of souls", "yi": "חתונה ווי א צוריק-פאראייניגונג פון נשמות" },
+      "summary": {
+        "en": "The Rav answers that the Me'aras HaMachpela is the best omen: halachically kiddushin ends at death, but the bond of the souls existed before life and remains after it. Like Adam and Chava, who were one body, each couple is one soul split in two, so marriage is a reunion, and kiddushin learned from the cave shows it is an everlasting bond.",
+        "yi": "דער משגיח ענטפערט אז די מערת המכפלה איז דער שענסטער סימן: על פי הלכה ענדיגט זיך קידושין מיט'ן טויט, אבער דער קשר פון די נשמות איז געווען פאר'ן לעבן און בלייבט נאכן לעבן. אזוי ווי אדם און חוה זענען געווען איין גוף, איז יעדעס פארפאלק איין נשמה וואס איז צעטיילט געווארן, ממילא איז א חתונה א צוריק-פאראייניגונג, און קידושין פון דער מערה ווייזט אז עס איז א בנין עדי עד."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-05-03-chaya-sura-e",
+      "startSeg": 154, "endSeg": 199,
+      "title": { "en": "Cleopatra's matches and why pay a shadchan", "yi": "קליאפטרא'ס שידוכים און פארוואס מ'צאלט א שדכן" },
+      "summary": {
+        "en": "The Rav tells the Midrash of Cleopatra, who mocked that she too could make matches, paired her slaves overnight and found them beaten the next morning. He then asks why the Shulchan Aruch has laws of shadchanus and why one must pay the shadchan if Hashem makes the match, bringing Rabbi Yaakov Emden's saying about the shadchan.",
+        "yi": "דער משגיח דערציילט דעם מדרש פון קליאפטרא, וואס האט געזאגט אז זי קען אויך מאכן שידוכים, האט צוזאמגעפארט אירע שקלאפן אין איין נאכט, און אינדערפרי זענען זיי געקומען צעשלאגן. דערנאך פרעגט ער פארוואס עס זענען דא דיני שדכנות אין שולחן ערוך און פארוואס מ'דארף צאלן דעם שדכן אויב דער אייבערשטער מאכט דעם שידוך, און ער ברענגט א ווארט פון ר' יעקב עמדן וועגן א שדכן."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-05-03-chaya-sura-e",
+      "startSeg": 200, "endSeg": 272,
+      "title": { "en": "The malach who does not know the shidduch", "yi": "דער מלאך וואס ווייסט נישט דעם שידוך" },
+      "summary": {
+        "en": "The Rav explains that the malach who announces a shidduch forty days before formation does not truly know it, as Shmuel HaNavi did not know which son of Yishai was to be king. So the malach guesses and Hashem rejects until the right one, which is why a tzaddik gave a token payment for every proposal, and he tells of a man who tried to exploit this.",
+        "yi": "דער משגיח ערקלערט אז דער מלאך וואס רופט אויס דעם שידוך פערציג טעג פאר יצירת הולד ווייסט עס נישט באמת, אזוי ווי שמואל הנביא האט נישט געוואוסט וועלכער פון ישי'ס זין וועט זיין דער מלך. ממילא טרעפט דער מלאך און דער אייבערשטער זאגט ניין ביז דער ריכטיגער, און דערפאר האט א צדיק געגעבן עפעס שדכנות פאר יעדע הצעה; ער דערציילט פון איינעם וואס האט דאס געוואלט אויסנוצן."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-05-03-chaya-sura-e",
+      "startSeg": 273, "endSeg": 321,
+      "title": { "en": "The tenth maamar: 'it is not good'", "yi": "דער צענטער מאמר: \"לא טוב\"" },
+      "summary": {
+        "en": "The Rav brings the Gemara and the Zohar on counting the ten maamaros; according to the Zohar the tenth is 'it is not good for man to be alone, I will make him a helper opposite him', which corresponds to the tenth commandment, not to covet. He explains that this maamar begins with 'not good' and ends with the true match, just as shidduchim pass through rejected options.",
+        "yi": "דער משגיח ברענגט די גמרא און דעם זוהר וועגן ציילן די עשרה מאמרות; לויט'ן זוהר איז דער צענטער \"לא טוב היות האדם לבדו אעשה לו עזר כנגדו\", וואס איז קעגן דעם צענטן דיבור, לא תחמוד. ער ערקלערט אז דער מאמר הייבט זיך אן מיט \"לא טוב\" און ענדיגט זיך מיט'ן אמת'ן זיווג, אזוי ווי שידוכים גייען דורך אפגעווארפענע הצעות."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-05-03-chaya-sura-e",
+      "startSeg": 322, "endSeg": 392,
+      "title": { "en": "The Satan's accusation and the shadchan's lie", "yi": "דעם שטן'ס קטרוג און דעם שדכן'ס שקר" },
+      "summary": {
+        "en": "The Rav explains that whenever something lofty comes down the Satan prosecutes and must be thrown something, as with the broken luchos, the glass broken at a chuppah and the goat to Azazel. He brings the Tzemach Tzedek that no shidduch goes through without a lie, so the shadchan is paid for the lie; but by great tzaddikim the Satan cannot prosecute, and Eliezer thanked Hashem that he needed no lie.",
+        "yi": "דער משגיח ערקלערט אז ווען עפעס א הויכע זאך קומט אראפ איז דער שטן מקטרג און מ'דארף אים עפעס צווארפן, ווי שבירת הלוחות, דאס ברעכן דאס גלאז ביי דער חופה און דער שעיר לעזאזל. ער ברענגט דעם צמח צדק אז קיין שידוך גייט נישט דורך אן א שקר, און מ'צאלט דעם שדכן פאר דעם שקר; אבער ביי גרויסע צדיקים קען דער שטן נישט מקטרג זיין, און אליעזר האט געדאנקט דעם אייבערשטן אז ער האט נישט געדארפט זאגן קיין שקר."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-05-03-chaya-sura-e",
+      "startSeg": 393, "endSeg": 470,
+      "title": { "en": "The tenth maamar and Shabbos", "yi": "דער צענטער מאמר און שבת" },
+      "summary": {
+        "en": "The Rav asks when the tenth maamar took place and brings Rashi that what belonged to Shabbos was done on Erev Shabbos, so a shidduch is really a matter of Shabbos, as Chassidim shout 'Shabbos' at a chasunah. He explains that the last three makkos were heavenly and that the seventh day is really the tenth, since Torah and teshuvah preceded creation.",
+        "yi": "דער משגיח פרעגט ווען דער צענטער מאמר איז געווען, און ער ברענגט רש\"י אז וואס האט געדארפט זיין אום שבת איז געמאכט געווארן ערב שבת, ממילא איז א שידוך באמת א ענין פון שבת, ווי חסידים שרייען \"שבת\" ביי א חתונה. ער ערקלערט אז די לעצטע דריי מכות זענען געווען מכות פון הימל, און אז דער זיבעטער טאג איז באמת דער צענטער, ווייל תורה און תשובה זענען געווען פאר בריאת העולם."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-05-03-chaya-sura-e",
+      "startSeg": 471, "endSeg": 549,
+      "title": { "en": "Kallah, Shabbos and Malchus; guarding the shidduch", "yi": "כלה, שבת און מלכות; היטן דעם שידוך" },
+      "summary": {
+        "en": "The Rav explains that Shabbos is Malchus and the kallah is Shabbos, so every chuppah is a Shabbos matter with great kedushah; menuchah, the kallah, was created on Shabbos, and the last maamar carries Hashem's name of chesed. He closes that a person can lose his shidduch by not conducting himself in kedushah, and blesses that the right shidduch come to fruition.",
+        "yi": "דער משגיח ערקלערט אז שבת איז מלכות און די כלה איז שבת, ממילא איז יעדע חופה א ענין פון שבת מיט א גרויסע קדושה; מנוחה, די כלה, איז באשאפן געווארן אום שבת, און דער לעצטער מאמר טראגט דעם שם פון חסד. ער ענדיגט אז א מענטש קען פארלירן זיין שידוך ווען ער פירט זיך נישט אין קדושה, און ער בענטשט אז דער ריכטיגער שידוך זאל קומען צו פועל."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "Heima may have aliyahad", "work": "Tehillim", "ref": "Tehillim 62:10", "sefariaRef": "Psalms 62:10", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [28, 30, 32], "confidence": 0.75 } },
+    { "heardAs": "The Medrash says", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [21, 22, 33], "confidence": 0.75 } },
+    { "heardAs": "Shekfula B'Zulgais", "work": "Gemara Eruvin", "ref": "Eruvin 53a", "sefariaRef": "Eruvin 53a", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [35, 36], "confidence": 0.75 } },
+    { "heardAs": "how do you know that Kinyam Kaset is a Kinyam", "work": "Gemara Kiddushin", "ref": "Kiddushin 2a", "sefariaRef": "Kiddushin 2a", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [39, 89, 136], "confidence": 0.8 } },
+    { "heardAs": "the Raman says that you shouldn't make any Chassanah after the 15th day", "work": "Rema", "ref": "Rema, Yoreh De'ah 179:2", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [55, 56, 57, 58], "confidence": 0.65 } },
+    { "heardAs": "according to the Mishnah Kiddushin is severed", "work": "Mishnah Kiddushin", "ref": "Mishnah Kiddushin 1:1", "sefariaRef": "Mishnah Kiddushin 1:1", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [93, 94, 95], "confidence": 0.75 } },
+    { "heardAs": "the Madrash tells us, the story of ... the Queen Cleopatra", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [154, 155, 159], "confidence": 0.85 } },
+    { "heardAs": "in Shurchan Aruch, in Chay Shemishchit, we have Dinim of Shatchanes", "work": "Shulchan Aruch Choshen Mishpat", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [175, 183, 186], "confidence": 0.8 } },
+    { "heardAs": "the seifer of Rabbi Yanko Venden ... Shadchan is Rasha Teves", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "quoted", "evidence": { "segs": [193, 194, 196], "confidence": 0.8 } },
+    { "heardAs": "40 days before the Yitzirah Savlat, there's a Malach that announces", "work": "Gemara Sotah", "ref": "Sotah 2a", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [200], "confidence": 0.75 } },
+    { "heardAs": "Shmuel HaNavi ... the house of Yishayi ... alay negad Hashem Mishichai", "work": "Shmuel I", "ref": "Shmuel I 16:6", "sefariaRef": "I Samuel 16:6", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [214, 215, 218, 220, 227], "confidence": 0.85 } },
+    { "heardAs": "Adam Rishna had to go through others before that like Rasha says", "work": "Rashi", "ref": "Rashi on Bereishis 2:23", "sefariaRef": null, "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [273, 274, 275], "confidence": 0.6 } },
+    { "heardAs": "the Gemara in Rosh Hashanah asks the Kashi, it's only nine", "work": "Gemara Rosh Hashanah", "ref": "Rosh Hashanah 32a", "sefariaRef": "Rosh Hashanah 32a", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [280, 281, 282], "confidence": 0.8 } },
+    { "heardAs": "But the Zaya says no", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [280, 283, 284, 286], "confidence": 0.75 } },
+    { "heardAs": "V'yayim R'ashem HaV'ekim ... Es'olei E'ezah K'negdai", "work": "Bereishis", "ref": "Bereishis 2:18", "sefariaRef": "Genesis 2:18", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [288, 289, 317, 320], "confidence": 0.85 } },
+    { "heardAs": "Lesach Mutash Yisrael", "work": "Shemos", "ref": "Shemos 20:14", "sefariaRef": "Exodus 20:14", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [290, 291, 298, 300], "confidence": 0.7 } },
+    { "heardAs": "the Ramban also says ... give him the Zayel al-Zazel", "work": "Ramban", "ref": "Ramban on Vayikra 16:8", "sefariaRef": null, "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [346, 348, 349], "confidence": 0.6 } },
+    { "heardAs": "tzamaht tzadik says it's impossible for a shidduch to go through unless you say a lie", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [355, 356, 357, 359], "confidence": 0.85 } },
+    { "heardAs": "Rashi says ... whatever was supposed to be on Shabbos ... made out of Shabbos", "work": "Rashi", "ref": "Rashi on Bereishis 2:2", "sefariaRef": "Rashi on Genesis 2:2", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [398, 401, 403, 480, 499, 500], "confidence": 0.75 } },
+    { "heardAs": "Netayi Yisiotcha ala Shemayim V'Yi Chayshech ala Ratz Mitzrayim", "work": "Shemos", "ref": "Shemos 10:21", "sefariaRef": "Exodus 10:21", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [422, 423, 424], "confidence": 0.8 } },
+    { "heardAs": "the Yomara says that Teireh was bashafen 2,000 years before Bria Sa'ayam", "work": "Gemara Pesachim", "ref": "Pesachim 54a", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [433, 437, 439, 440], "confidence": 0.7 } },
+    { "heardAs": "B'terem Haram Yoladu", "work": "Tehillim", "ref": "Tehillim 90:2", "sefariaRef": "Psalms 90:2", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [443, 444, 445], "confidence": 0.85 } },
+    { "heardAs": "Yismichu ve Malchus Hashem re Shabbos", "work": "Shabbos Mussaf prayer", "ref": "Shabbos Mussaf, Yismechu", "sefariaRef": null, "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [471, 472, 473], "confidence": 0.75 } },
+    { "heardAs": "Naimi told Rus ... he is the manayach and she is the menuch", "work": "Rus", "ref": "Rus 3:1", "sefariaRef": null, "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [501, 502, 503, 504], "confidence": 0.6 } }
+  ],
+  "insights": [
+    {
+      "text": { "en": "Eliezer's name is withheld precisely in the parsha where he makes the shidduch, because he is the father of all shadchanim and the Torah wants to show that the shadchan does not make the match.", "yi": "אליעזר'ס נאמען ווערט באהאלטן דווקא אין דער פרשה וואו ער מאכט דעם שידוך, ווייל ער איז דער אבי השדכנים, און די תורה וויל ווייזן אז דער שדכן מאכט נישט דעם שידוך." },
+      "evidence": { "segs": [1, 15, 16, 17, 19], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "Kiddushin learned from a burial cave is not a bad omen but the best one: the couples of the Me'aras HaMachpela show that the bond of the souls outlives the bodily kiddushin that ends at death.", "yi": "קידושין וואס מ'לערנט פון א מערה פאר קבורה איז נישט קיין שלעכטער סימן נאר דער בעסטער: די זוגות אין דער מערת המכפלה ווייזן אז דער קשר פון די נשמות לעבט איבער דעם גשמיות'דיגן קידושין וואס ענדיגט זיך מיט'ן טויט." },
+      "evidence": { "segs": [89, 91, 92, 105, 110, 113], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "A shidduch is like Malchus Beis David, which comes from so high a place that even Shmuel HaNavi did not recognize the king; so too the malach does not know the shidduch and must guess.", "yi": "א שידוך איז ווי מלכות בית דוד, וואס קומט פון אזא הויכן ארט אז אפילו שמואל הנביא האט נישט דערקענט דעם מלך; אזוי אויך ווייסט דער מלאך נישט דעם שידוך און ער מוז טרעפן." },
+      "evidence": { "segs": [211, 230, 232, 233, 234, 235], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "The tenth maamar opens with 'it is not good' and ends with 'a helper opposite him', mirroring how shidduchim begin with options that are not good before the right one; and it corresponds to 'do not covet', taking one's own and not another's.", "yi": "דער צענטער מאמר הייבט זיך אן מיט \"לא טוב\" און ענדיגט זיך מיט \"עזר כנגדו\", אזוי ווי שידוכים הייבן זיך אן מיט הצעות וואס זענען נישט גוט ביז דער ריכטיגער; און ער איז קעגן \"לא תחמוד\", נעמען דאס אייגענע און נישט פון א צווייטן." },
+      "evidence": { "segs": [289, 291, 313, 314, 318, 320], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The shadchan is paid not for arranging the match, which Hashem does, but for saying the lie that the Satan must be thrown, which explains Rabbi Yaakov Emden's saying that the shadchan takes money for his words.", "yi": "מ'צאלט דעם שדכן נישט פאר'ן מאכן דעם שידוך, וואס דאס טוט דער אייבערשטער, נאר פאר'ן זאגן דעם שקר וואס מ'מוז צווארפן דעם שטן, און דאס ערקלערט דאס ווארט פון ר' יעקב עמדן אז דער שדכן נעמט געלט פאר זיינע רייד." },
+      "evidence": { "segs": [358, 360, 361, 362, 363, 364], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "The seventh day is really the tenth, since three 'days' preceded creation, so Shabbos is Malchus, the tenth; the kallah is Shabbos, which is why the tenth maamar about Chava belonged to Shabbos.", "yi": "דער זיבעטער טאג איז באמת דער צענטער, ווייל דריי \"טעג\" זענען געווען פאר בריאת העולם, ממילא איז שבת מלכות, די צענטע; די כלה איז שבת, און דערפאר האט דער צענטער מאמר וועגן חוה געהערט צו שבת." },
+      "evidence": { "segs": [430, 465, 470, 475, 479, 482], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "Cleopatra tries her hand at matchmaking", "yi": "קליאפטרא פרובירט מאכן שידוכים" },
+      "retelling": {
+        "en": "Queen Cleopatra asked Rabbi Yehoshua ben Chananya what Hashem does now that He has made the world, since she did not believe He still guides it. He answered that Hashem makes shidduchim, and she said she could do that too. That evening she lined up five hundred of her male slaves opposite five hundred maidservants and told each to marry the one facing him. The next morning they came with a black eye, a bloody nose and complaints, and Rabbi Yehoshua said that this is not how shidduchim are made.",
+        "yi": "די מלכה קליאפטרא האט געפרעגט ר' יהושע בן חנניה וואס דער אייבערשטער טוט יעצט נאכדעם וואס ער האט באשאפן די וועלט, ווייל זי האט נישט געגלייבט אז ער פירט נאך די וועלט. ער האט געענטפערט אז דער אייבערשטער מאכט שידוכים, און זי האט געזאגט אז דאס קען זי אויך. יענעם אוונט האט זי אויסגעשטעלט פינף הונדערט שקלאפן קעגן פינף הונדערט שפחות און געהייסן יעדן חתונה האבן מיט די וואס שטייט אנטקעגן אים. אינדערפרי זענען זיי געקומען מיט א בלויע אויג, א בלוטיגע נאז און טענות, און ר' יהושע האט געזאגט אז אזוי מאכט מען נישט קיין שידוכים."
+      },
+      "people": ["Cleopatra", "Rabbi Yehoshua ben Chananya"],
+      "evidence": { "segs": [155, 158, 159, 160, 168, 172], "confidence": 0.85 }
+    },
+    {
+      "title": { "en": "The man who invented a proposal for the shadchanus", "yi": "דער וואס האט אויסגעטראכט א הצעה פאר שדכנות" },
+      "retelling": {
+        "en": "A tzaddik whose name is unclear in the recording used to give a small token of shadchanus to anyone who proposed a shidduch, even one that did not go through, since every proposal is a step toward the real one. One man who wanted money picked someone at random and proposed him for the tzaddik's daughter. The tzaddik said no, and when the man asked for payment he answered that this had not even been a real possibility.",
+        "yi": "א צדיק, וואס זיין נאמען הערט מען נישט קלאר, האט געגעבן א קליינע שדכנות פאר יעדן וואס האט פארגעלייגט א שידוך, אפילו ווען עס איז נישט דורכגעגאנגען, ווייל יעדע הצעה איז א טריט צום אמת'ן שידוך. איינער וואס האט געוואלט געלט האט אויסגעכאפט עמיצן אויף גראדעוואויל און אים פארגעלייגט פאר דעם צדיק'ס טאכטער. דער צדיק האט געזאגט ניין, און ווען יענער האט געבעטן צאלונג האט ער געענטפערט אז דאס איז אפילו נישט געווען קיין הוה אמינא."
+      },
+      "people": [],
+      "evidence": { "segs": [260, 261, 262, 263, 264, 266], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "Shmuel HaNavi in the house of Yishai", "yi": "שמואל הנביא אין ישי'ס הויז" },
+      "retelling": {
+        "en": "Hashem sent Shmuel HaNavi to the house of Yishai to anoint one of his sons as king. Shmuel saw a tall, handsome son and thought he was the one, but Hashem said no, and so with each of the six sons. The youngest was out tending the sheep; when he was called, Hashem said this is the one, and David was anointed. The Rav notes that even a navi did not know.",
+        "yi": "דער אייבערשטער האט געשיקט שמואל הנביא צו ישי'ס הויז צו זאלבן איינעם פון זיינע זין פאר א מלך. שמואל האט געזען א הויכן שיינעם זון און געמיינט אז ער איז עס, אבער דער אייבערשטער האט געזאגט ניין, און אזוי ביי אלע זעקס זין. דער יונגסטער איז געווען אין פעלד ביי די שאף; ווען מ'האט אים גערופן האט דער אייבערשטער געזאגט אז דאס איז ער, און דוד איז געזאלבט געווארן. דער משגיח מערקט אן אז אפילו א נביא האט נישט געוואוסט."
+      },
+      "people": ["Shmuel HaNavi", "Yishai", "Dovid HaMelech"],
+      "evidence": { "segs": [214, 216, 218, 220, 227, 231], "confidence": 0.85 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "Why is Eliezer's name not mentioned in the parsha of the shidduch, where he is the main actor?", "yi": "פארוואס ווערט אליעזר'ס נאמען נישט דערמאנט אין דער פרשה פונעם שידוך, וואו ער איז דער עיקר?" },
+      "answer": { "en": "To show that the shadchan does not make the shidduch; Hashem does.", "yi": "כדי צו ווייזן אז דער שדכן מאכט נישט דעם שידוך, נאר דער אייבערשטער." },
+      "questionSegs": [1, 2], "answerSegs": [16, 17, 19, 20], "confidence": 0.85
+    },
+    {
+      "question": { "en": "Since we seek good omens for a marriage, why is kiddushin with money learned from the purchase of a burial cave?", "yi": "אויב מ'זוכט גוטע סימנים פאר א חתונה, פארוואס לערנט מען קידושי כסף פון קויפן א מערה פאר קבורה?" },
+      "answer": { "en": "The Me'aras HaMachpela, where couples remain together, is the best omen: it shows that the bond of the souls continues beyond life.", "yi": "די מערת המכפלה, וואו די זוגות בלייבן צוזאמען, איז דער בעסטער סימן: עס ווייזט אז דער קשר פון די נשמות גייט ווייטער נאכן לעבן." },
+      "questionSegs": [89], "answerSegs": [92, 96, 113, 136, 138], "confidence": 0.85
+    },
+    {
+      "question": { "en": "If Hashem makes every shidduch, why must one pay the shadchan?", "yi": "אויב דער אייבערשטער מאכט יעדן שידוך, פארוואס מוז מען צאלן דעם שדכן?" },
+      "answer": { "en": "Following the Tzemach Tzedek, he is paid for the lie he must say to quiet the Satan, not for arranging the match.", "yi": "לויט'ן צמח צדק צאלט מען אים פאר דעם שקר וואס ער מוז זאגן כדי אנצושטילן דעם שטן, נישט פאר'ן מאכן דעם שידוך." },
+      "questionSegs": [189, 192], "answerSegs": [356, 360, 361, 364], "confidence": 0.85
+    },
+    {
+      "question": { "en": "Why did a tzaddik pay something to shadchanim even for proposals that did not go through?", "yi": "פארוואס האט א צדיק געצאלט עפעס פאר שדכנים אפילו פאר הצעות וואס זענען נישט דורכגעגאנגען?" },
+      "answer": { "en": "Because the malach does not know the shidduch and announces wrong ones, and every proposal must be passed through as a step to the real one.", "yi": "ווייל דער מלאך ווייסט נישט דעם שידוך און רופט אויס אומריכטיגע, און מ'מוז דורכגיין יעדע הצעה ווי א טריט צום אמת'ן שידוך." },
+      "questionSegs": [240, 241], "answerSegs": [243, 250, 253, 259], "confidence": 0.8
+    },
+    {
+      "question": { "en": "Does the tenth maamar, about creating Chava, belong to the sixth day or to Shabbos?", "yi": "געהערט דער צענטער מאמר, וועגן באשאפן חוה, צום זעקסטן טאג אדער צו שבת?" },
+      "answer": { "en": "It took place on the sixth day, but following Rashi whatever belonged to Shabbos was done on Erev Shabbos; in essence the marriage of Adam and Chava is a Shabbos matter.", "yi": "עס איז געווען אום זעקסטן טאג, אבער לויט רש\"י איז וואס האט געהערט צו שבת געמאכט געווארן ערב שבת; אין עצם איז די חתונה פון אדם און חוה א ענין פון שבת." },
+      "questionSegs": [396], "answerSegs": [397, 403, 479, 480, 482], "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Rav says one should pay the shadchan, and mentions that tzaddikim asked couples without shalom bayis whether they had paid him.", "yi": "דער משגיח זאגט אז מ'זאל צאלן דעם שדכן, און ער דערמאנט אז צדיקים האבן געפרעגט פארפאלקן אן שלום בית צי זיי האבן אים באצאלט." },
+      "evidence": { "segs": [176, 177, 178, 180], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "The Rav says a bochur must conduct himself in kedushah, which he calls an insurance policy for receiving his true shidduch and a peaceful life together.", "yi": "דער משגיח זאגט אז א בחור דארף זיך פירן אין קדושה, וואס ער רופט א פארזיכערונג צו באקומען זיין אמת'ן שידוך און א רואיג לעבן צוזאמען." },
+      "evidence": { "segs": [528, 531, 534, 537, 541], "confidence": 0.7 }
+    }
+  ],
+  "candidateTopics": ["shidduchim", "Eliezer as shadchan", "Me'aras HaMachpela", "kiddushin with money", "marriage as a reunion of souls", "paying the shadchan", "ten maamaros", "kitrug of the Satan", "Shabbos and Malchus", "kedushah before marriage"],
+  "concepts": [
+    { "he": "שידוך", "heardAs": ["Shidduch", "Shedrach", "Shaddach", "Sheddaq", "shiddhar"] },
+    { "he": "שדכן", "heardAs": ["Shatchan", "Shadchan", "shafin", "shatran"] },
+    { "he": "שדכנות", "heardAs": ["Shatchanes", "Shatchanis"] },
+    { "he": "מערת המכפלה", "heardAs": ["Maras HaMakhpela", "maras ha-machtayla", "Marasa Machpela"] },
+    { "he": "כפולה בזוגות", "heardAs": ["Shekfula B'Zulgais", "K'fura B'zurgas"] },
+    { "he": "קידושי כסף", "heardAs": ["Kedusha Kesef", "Kinyam Kaset", "Kedush HaKeser"] },
+    { "he": "רבונו של עולם", "heardAs": ["Rabbi Nishrei", "rabbinic shoram", "Rabbani Shaleelah", "Bani Shalom"] },
+    { "he": "קשר הנשמה", "heardAs": ["Kervas HaNeshama", "Neshama de Kekasha"] },
+    { "he": "עשרה מאמרות", "heardAs": ["Aserah Mamaris", "Yasser HaMamareis", "Maimah"] },
+    { "he": "עזר כנגדו", "heardAs": ["E'ezah K'negdai", "Eizak, and Ergdei"] },
+    { "he": "מקטרג", "heardAs": ["Mekathek", "mekatrik", "mekat cheg"] },
+    { "he": "שבירת הלוחות", "heardAs": ["shvira saluchas"] },
+    { "he": "שעיר לעזאזל", "heardAs": ["Zayel al-Zazel"] },
+    { "he": "סטרא אחרא", "heardAs": ["satracha", "sitrach"] },
+    { "he": "מלכות", "heardAs": ["Malchus"] },
+    { "he": "הוה אמינא", "heardAs": ["Hava Mina", "Havaminas"] },
+    { "he": "בנין עדי עד", "heardAs": ["binyan adai ad"] }
+  ],
+  "people": [
+    { "name": "Eliezer", "heardAs": ["Aliyazah", "Eli Ezach", "Elie Azad"] },
+    { "name": "Avraham Avinu", "heardAs": ["Avraham Avinu", "avram avinu"] },
+    { "name": "Sarah", "heardAs": ["Sarah", "Sada"] },
+    { "name": "Yitzchak", "heardAs": ["Yitzhak", "Yitzrat"] },
+    { "name": "Rivkah", "heardAs": ["Rivka"] },
+    { "name": "Yaakov", "heardAs": ["Yankov"] },
+    { "name": "Leah", "heardAs": ["Leia"] },
+    { "name": "Adam", "heardAs": ["Adam", "Odom", "Adam Rishna"] },
+    { "name": "Chava", "heardAs": ["Chava", "Chavah"] },
+    { "name": "Cleopatra", "heardAs": ["Cleopatra", "keliopatra"] },
+    { "name": "Rabbi Yehoshua ben Chananya", "heardAs": ["Rabbi Yishu ben Hananya", "rabbi yeshua ben chananya", "Rabbi Shuramah Nanya"] },
+    { "name": "Rabbi Chanina ben Dosa", "heardAs": ["Rabbi Hanina ben Doisa"] },
+    { "name": "Rabbi Yaakov Emden", "heardAs": ["Rabbi Yanko Venden", "Rabbi Yonke Vanden"] },
+    { "name": "Shmuel HaNavi", "heardAs": ["Shmuel HaNavi"] },
+    { "name": "Yishai", "heardAs": ["Yishayi"] },
+    { "name": "Dovid HaMelech", "heardAs": ["David"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["Maish Rabbeinu"] },
+    { "name": "the Tzemach Tzedek", "heardAs": ["tzamaht tzadik", "tzamech tzarek"] },
+    { "name": "Naomi", "heardAs": ["Naimi"] },
+    { "name": "Rus", "heardAs": ["Rus"] },
+    { "name": "Boaz", "heardAs": ["Bayez"] },
+    { "name": "Rashi", "heardAs": ["Rashi", "Rasha", "Sarashe"] }
+  ],
+  "asrNotes": "English ASR is fair for the Rav's English but Hebrew terms and quotations are heavily garbled. The name of the tzaddik who paid token shadchanus (heard 'the sons of Rav Zachanya Levrach', 'the sons of love') and of the tzaddik who welcomed an Elul chuppah (heard 'the son of Zahav') could not be recovered, nor the passuk the Rav and listeners searched for about Eliezer (segs 366-376) or the closing reference to Yeshayahu and the Rambam (segs 535-536). Flagged segments 79, 142, 306 and 409 contain some coherent speech amid repetition; no long noise stretch."
+}

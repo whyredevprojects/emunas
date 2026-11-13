@@ -1,0 +1,853 @@
+{
+  "shiurId": "yi-parshas-hashavua-chyy-shrh-05",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav shows that the bond of a Jewish zivug, rooted in the place of the mizbe'ach, is a mashal for the bond between Hashem and Klal Yisrael, and draws from Parshas Chayei Sarah how a shidduch is to be made.",
+      "yi": "דער משגיח ווייזט אז דער קשר פון א אידישן זיווג, וואס שטאמט פונעם מקום המזבח, איז א משל אויף דעם קשר צווישן הקב\"ה און כנסת ישראל, און ער לערנט ארויס פון פרשת חיי שרה ווי אזוי מ'טוט א שידוך."
+    },
+    "abstract": {
+      "en": "The Rav opens with the Midrash that Rivka's shidduch came from Har Moriah. He then asks why Maseches Gittin opens with a get brought from overseas and ends with the mizbe'ach shedding tears over a divorce. Through the Avnei Nezer he explains that the bond of husband and wife is a mashal for the bond of Hashem and Klal Yisrael, felt most keenly by shevet Levi. Adam and Chava were formed from the earth of the mizbe'ach, so the mizbe'ach is witness to every zivug; exile is a kind of divorce, and a Jew far from Eretz Yisrael is bound to it by his heart. He explains the measures of the mizbe'ach in the three Batei Mikdash, the story of Miriam bas Bilga, and why Rivka was born at the Akeida. The second half draws from the parsha how to make a shidduch: hishtadlus, tefillah, yiras shamayim and not lowering one's standards.",
+      "yi": "דער משגיח עפנט מיטן מדרש אז דער שידוך פון רבקה איז ארויסגעקומען פון הר המוריה. דערנאך פרעגט ער פארוואס מסכת גיטין הייבט זיך אן מיט א גט פון מדינת הים און ענדיגט זיך מיט דעם אז דער מזבח וויינט אויף א גירושין. לויט דעם אבני נזר ערקלערט ער אז דער קשר פון איש און אשה איז א משל אויף דעם קשר צווישן הקב\"ה און כנסת ישראל, וואס שבט לוי שפירט שטארקער פון אלעמען. אדם און חוה זענען באשאפן געווארן פונעם עפר פונעם מקום המזבח, ממילא איז דער מזבח אן עדות אויף יעדן זיווג; גלות איז ווי א גט, און א איד ווייט פון ארץ ישראל איז מיט איר פארבונדן מיטן הארץ. ער ערקלערט די מאסן פונעם מזבח אין די דריי בתי מקדשים, די מעשה פון מרים בת בילגה, און פארוואס רבקה איז געבוירן געווארן ביי דער עקידה. אין צווייטן חלק לערנט ער ארויס פון דער פרשה ווי אזוי מ'טוט א שידוך: השתדלות, תפילה, יראת שמים, און נישט ארונטערלאזן דעם שטאנדארט."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The bond between husband and wife is a mashal for the bond between Hashem and Klal Yisrael, a bond a Jew is meant to feel in his heart.",
+          "yi": "דער קשר צווישן מאן און ווייב איז א משל אויף דעם קשר צווישן הקב\"ה און כנסת ישראל, א קשר וואס א איד דארף שפירן אין הארצן."
+        },
+        "evidence": { "segs": [15, 16, 19], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Adam and Chava were formed from the earth of the place of the mizbe'ach, so the mizbe'ach is witness to every Jewish zivug and sheds tears when one is broken.",
+          "yi": "אדם און חוה זענען באשאפן געווארן פונעם עפר פונעם מקום המזבח, ממילא איז דער מזבח אן עדות אויף יעדן אידישן זיווג און וויינט ווען מ'רייסט אים איבער."
+        },
+        "evidence": { "segs": [31, 32, 35, 42, 43], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Exile from Eretz Yisrael is like a divorce, which is why Maseches Gittin opens with a get brought from overseas.",
+          "yi": "גלות פון ארץ ישראל איז ווי א גט, און דערפאר הייבט זיך מסכת גיטין אן מיט א גט וואס מ'ברענגט פון מדינת הים."
+        },
+        "evidence": { "segs": [47, 48, 56, 57], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Rivka was born at the time of the Akeida because the Akeida took place on the place of the mizbe'ach, the place from which zivugim come.",
+          "yi": "רבקה איז געבוירן געווארן ביי דער עקידה ווייל די עקידה איז געווען אויפן מקום המזבח, דער ארט פון וואנען זיווגים קומען."
+        },
+        "evidence": { "segs": [112, 117, 118], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Although a zivug is decreed from Heaven, a person has free choice and can spoil it, so he must make hishtadlus according to his level and daven.",
+          "yi": "הגם א זיווג איז באשטימט מן השמים, איז א מענטש א בעל בחירה און קען עס מקלקל זיין, דערפאר דארף ער זיך משתדל זיין לויט זיין מדריגה און מתפלל זיין."
+        },
+        "evidence": { "segs": [147, 149, 151, 159], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "The Rav says one must seek yiras shamayim in a shidduch and not lower one's standards, even if it means waiting.",
+          "yi": "דער משגיח זאגט אז מ'דארף זוכן יראת שמים אין א שידוך און נישט ארונטערלאזן דעם שטאנדארט, אפילו ווען מ'דארף ווארטן."
+        },
+        "evidence": { "segs": [150, 160, 167, 175], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-parsha-sefer-bereishes-05-05-chaya-sura",
+      "startSeg": 0,
+      "endSeg": 5,
+      "title": { "en": "Learning the parsha; Rivka's shidduch from Moriah", "yi": "לערנען די פרשה; רבקה'ס שידוך פון מוריה" },
+      "summary": {
+        "en": "The Rav says the parshiyos of Bereishis must be learned in depth because they build the heart as Gemara builds the mind. He brings the Midrash on 'me'Hashem yatza hadavar' that Rivka's shidduch came out of Har Moriah, and announces he will explain it.",
+        "yi": "דער משגיח זאגט אז די פרשיות פון ספר בראשית דארף מען לערנען בעיון, ווייל זיי מאכן הייליג דאס הארץ אזוי ווי גמרא מאכט הייליג דעם מוח. ער ברענגט דעם מדרש אויף \"מה' יצא הדבר\" אז דער שידוך פון רבקה איז ארויסגעקומען פון הר המוריה, און זאגט אז ער וועט עס מסביר זיין."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-05-05-chaya-sura",
+      "startSeg": 6,
+      "endSeg": 14,
+      "title": { "en": "Miriam bas Bilga and the questions on Gittin", "yi": "מרים בת בילגה און די קשיות אויף גיטין" },
+      "summary": {
+        "en": "The Rav recounts the Gemara at the end of Sukkah about Miriam bas Bilga kicking the mizbe'ach. He asks why Maseches Gittin opens with a get brought from overseas, and why at its end only the mizbe'ach sheds tears over a divorce, and brings the Avnei Nezer's question on a woman who remarried on the word of one witness.",
+        "yi": "דער משגיח דערציילט די גמרא אין סוף סוכה וועגן מרים בת בילגה וואס האט געקלאפט מיט די פיס אויפן מזבח. ער פרעגט פארוואס מסכת גיטין הייבט זיך אן מיט א גט פון מדינת הים, און פארוואס בלויז דער מזבח וויינט אויף א גירושין, און ער ברענגט די קשיא פונעם אבני נזר אויף אן אשה וואס האט חתונה געהאט על פי עד אחד."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-05-05-chaya-sura",
+      "startSeg": 15,
+      "endSeg": 25,
+      "title": { "en": "Feeling the bond: the Avnei Nezer and shevet Levi", "yi": "שפירן דעם קשר: דער אבני נזר און שבט לוי" },
+      "summary": {
+        "en": "Following the Avnei Nezer, the Rav explains that the bond between Hashem and Klal Yisrael is like husband and wife and is felt by the heart, which is why a woman may rely on her sense that her husband died. Shevet Levi, the most sensitive to this bond, did not serve the egel, so a bas Levi who erred shows she lacks that sensitivity and loses her right to maaser.",
+        "yi": "לויט דעם אבני נזר ערקלערט דער משגיח אז דער קשר צווישן הקב\"ה און כנסת ישראל איז ווי איש און אשה און מ'שפירט עס מיטן הארץ, דערפאר פארלאזט מען זיך אויף דעם אז די אשה שפירט אז איר מאן איז געשטארבן. שבט לוי, וואס שפירט דעם קשר שטערקער, האט נישט געדינט דעם עגל, ממילא ווייזט א בת לוי וואס האט זיך געטעות אז זי האט נישט די הרגשה און זי ווערט פסול פון מעשר."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-05-05-chaya-sura",
+      "startSeg": 26,
+      "endSeg": 35,
+      "title": { "en": "Adam and Chava from the place of the mizbe'ach", "yi": "אדם און חוה פונעם מקום המזבח" },
+      "summary": {
+        "en": "The Rav explains that the bond of husband and wife comes from Adam and Chava, who were once one body, and that Adam was formed from the earth of the place of the mizbe'ach. The mizbe'ach therefore stands for both the mashal and the nimshal, the peace between Hashem and Klal Yisrael and between husband and wife.",
+        "yi": "דער משגיח ערקלערט אז דער קשר פון איש און אשה קומט פון אדם און חוה, וואס זענען אמאל געווען איין גוף, און אז אדם איז באשאפן געווארן פונעם עפר פונעם מקום המזבח. ממילא ווייזט דער מזבח אויף ביידע, דעם משל און דעם נמשל, דעם שלום צווישן הקב\"ה און כנסת ישראל און צווישן מאן און ווייב."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-05-05-chaya-sura",
+      "startSeg": 36,
+      "endSeg": 43,
+      "title": { "en": "Zivug rishon and the weeping mizbe'ach", "yi": "זיווג ראשון און דער מזבח וואס וויינט" },
+      "summary": {
+        "en": "The Rav brings the Gemara in Sotah about a first and second zivug and explains the first zivug as the one fixed from the six days of creation. One who divorces such a wife breaks a union the mizbe'ach knows of, and therefore the mizbe'ach sheds tears.",
+        "yi": "דער משגיח ברענגט די גמרא אין סוטה וועגן א זיווג ראשון און א זיווג שני, און ערקלערט אז דער זיווג ראשון איז דער וואס איז באשטימט פון ששת ימי בראשית. ווער עס איז מגרש אזא אשה רייסט איבער א פאראייניגונג וואס דער מזבח ווייסט דערפון, און דערפאר וויינט דער מזבח."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-05-05-chaya-sura",
+      "startSeg": 44,
+      "endSeg": 59,
+      "title": { "en": "Exile as divorce: a get from overseas", "yi": "גלות ווי א גט: א גט פון מדינת הים" },
+      "summary": {
+        "en": "The Rav explains that all of Eretz Yisrael is an extension of the place of the mizbe'ach and every Jew has his root there, so being driven from it is called a divorce. Medinas hayam is the far sea of heresy and doubt; this is why Gittin opens with a get from overseas, teaching that a get is a cutting off from the root.",
+        "yi": "דער משגיח ערקלערט אז גאנץ ארץ ישראל איז א המשך פונעם מקום המזבח און יעדער איד האט דארט זיין שורש, דערפאר ווערט דאס פארטריבן ווערן פון דארט אנגערופן גירושין. מדינת הים איז דער ווייטער ים פון כפירה און ספיקות; דערפאר הייבט זיך גיטין אן מיט א גט פון מדינת הים, צו לערנען אז א גט איז אן אפשניידן פונעם שורש."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-05-05-chaya-sura",
+      "startSeg": 60,
+      "endSeg": 72,
+      "title": { "en": "The measures of the mizbe'ach: 28 and 32", "yi": "די מאסן פונעם מזבח: כ\"ח און ל\"ב" },
+      "summary": {
+        "en": "The Rav brings the Mishnah in Middos that the mizbe'ach was 32 amos, and the Gemara in Zevachim that Shlomo made it 28 and the larger measure was revealed only to the Anshei Knesses Hagedolah. He connects 28 to the 28 letters of the first passuk of Bereishis, 'the strength of His deeds', which fit the complete time of the first Beis Hamikdash.",
+        "yi": "דער משגיח ברענגט די משנה אין מדות אז דער מזבח איז געווען ל\"ב אמות, און די גמרא אין זבחים אז שלמה המלך האט אים געמאכט כ\"ח אמות און דאס גרעסערע מאס איז נתגלה געווארן ערשט צו די אנשי כנסת הגדולה. ער פארבינדט כ\"ח מיט די אכט און צוואנציג אותיות פונעם ערשטן פסוק אין בראשית, \"כח מעשיו\", וואס פאסט פאר דער שלימות פונעם ערשטן בית המקדש."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-05-05-chaya-sura",
+      "startSeg": 73,
+      "endSeg": 87,
+      "title": { "en": "Lamed-beis: the heart in exile and the third mizbe'ach", "yi": "ל\"ב: דאס הארץ אין גלות און דער דריטער מזבח" },
+      "summary": {
+        "en": "The Rav explains that in the second Beis Hamikdash most Jews were overseas but their heart was in Eretz Yisrael, hinted in 32, lamed-beis, the last and first letters of the Torah. He says the third Beis Hamikdash will have 60, combining both, matching the letters of Birkas Kohanim ending in shalom, and returns to the end of Sukkah where the mizbe'ach is praised.",
+        "yi": "דער משגיח ערקלערט אז אין צווייטן בית המקדש זענען רוב אידן געווען אין מדינת הים אבער זייער הארץ איז געווען אין ארץ ישראל, וואס איז מרומז אין ל\"ב, די לעצטע און ערשטע אות פון דער תורה. ער זאגט אז דער דריטער בית המקדש וועט האבן ששים, ביידע צוזאמען, אקעגן די אותיות פון ברכת כהנים וואס ענדיגט זיך מיט שלום, און ער קערט זיך אום צו סוף סוכה וואו מ'לויבט דעם מזבח."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-05-05-chaya-sura",
+      "startSeg": 88,
+      "endSeg": 103,
+      "title": { "en": "Why Miriam bas Bilga kicked the mizbe'ach", "yi": "פארוואס מרים בת בילגה האט געקלאפט דעם מזבח" },
+      "summary": {
+        "en": "The Rav explains that Miriam bas Bilga's betrayal of her husband was also a betrayal of Hashem, since a marriage is a mashal for that bond. Her guilty conscience could not bear the mizbe'ach, witness to her true zivug, so she kicked it. He adds that Yavan's decree on brides aimed to sever the bond of Hashem and Klal Yisrael, and the miracle came through shevet Levi.",
+        "yi": "דער משגיח ערקלערט אז מרים בת בילגה, וואס האט מועל געווען אין איר מאן, איז אויך מועל געווען אין רבונו של עולם, ווייל א זיווג איז א משל אויף יענעם קשר. איר געוויסן האט נישט געקענט אויסהאלטן דעם מזבח, דער עדות אויף איר אמת'ן זיווג, דערפאר האט זי אים געקלאפט. ער לייגט צו אז די גזירה פון יון אויף כלות איז געווען כדי אפצורייסן דעם קשר צווישן הקב\"ה און כנסת ישראל, און דער נס איז געקומען דורך שבט לוי."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-05-05-chaya-sura",
+      "startSeg": 104,
+      "endSeg": 111,
+      "title": { "en": "Rashi on 'vayugad': Rivka born at the Akeida", "yi": "רש\"י אויף \"ויוגד\": רבקה געבוירן ביי דער עקידה" },
+      "summary": {
+        "en": "The Rav brings Rashi that after the Akeida Avraham worried that had Yitzchak been sacrificed he would have died childless, and Hashem told him Rivka had been born. He explains, with the Arizal, that Yitzchak received a male soul at the Akeida, and only then could his zivug be born.",
+        "yi": "דער משגיח ברענגט רש\"י אז נאך דער עקידה האט אברהם זיך געזארגט אז ווען יצחק וואלט געווען מקריב געווארן וואלט ער געבליבן אן קינדער, און דער אויבערשטער האט אים געזאגט אז רבקה איז געבוירן געווארן. ער ערקלערט לויטן אריז\"ל אז יצחק האט ביי דער עקידה באקומען א נשמה פון א זכר, און ערשט דאן האט זיין זיווג געקענט געבוירן ווערן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-05-05-chaya-sura",
+      "startSeg": 112,
+      "endSeg": 118,
+      "title": { "en": "Har Moriah, the place zivugim come from", "yi": "הר המוריה, דער ארט פון וואנען זיווגים קומען" },
+      "summary": {
+        "en": "The Rav asks why the Akeida had to be on the place of the mizbe'ach when Avraham's other trials were not. He answers that the place itself causes, as with a zaken mamrei, and since zivugim come from the place of the mizbe'ach, Yitzchak's zivug was born there; this is the Midrash that the shidduch came from Moriah.",
+        "yi": "דער משגיח פרעגט פארוואס די עקידה האט געדארפט זיין אויפן מקום המזבח, ווען אברהם'ס אנדערע נסיונות זענען נישט געווען דארט. ער ענטפערט אז דער מקום איז גורם, אזוי ווי ביי א זקן ממרא, און ווייל זיווגים קומען פונעם מקום המזבח איז דארט געבוירן געווארן יצחק'ס זיווג; דאס איז דער מדרש אז דער שידוך איז ארויס פון מוריה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-05-05-chaya-sura",
+      "startSeg": 119,
+      "endSeg": 132,
+      "title": { "en": "A zivug decreed from Heaven, and tefillah", "yi": "א זיווג מן השמים, און תפילה" },
+      "summary": {
+        "en": "The Rav calls Chayei Sarah the parsha of zivugim and brings the Gemara in Moed Katan that a heavenly voice declares each match, and that praying for a particular woman may take her from her destined one only temporarily. He brings Sefer Chassidim on the story of Reuven and Shimon and a Midrash on Tehillim on how Hashem pairs couples.",
+        "yi": "דער משגיח רופט חיי שרה די פרשה פון זיווגים און ברענגט די גמרא אין מועד קטן אז א בת קול רופט אויס יעדן זיווג, און אז מתפלל זיין אויף א געוויסע אשה קען זי צונעמען נאר אויף א צייט. ער ברענגט דעם ספר חסידים וועגן ראובן און שמעון, און א מדרש אויף תהלים ווי אזוי דער אויבערשטער פארט צוזאם זיווגים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-05-05-chaya-sura",
+      "startSeg": 133,
+      "endSeg": 141,
+      "title": { "en": "Why the Torah tells the shidduch", "yi": "פארוואס די תורה דערציילט דעם שידוך" },
+      "summary": {
+        "en": "The Rav shows the parsha opens with the Me'aras Hamachpelah, itself a kind of zivug that belonged to Avraham and Sarah. He brings Rabbeinu Bachya on the custom of reading this parsha for a chasan, and explains that the Torah tells Yitzchak and Rivka's shidduch to teach parents and young people how to go about one.",
+        "yi": "דער משגיח ווייזט אז די פרשה הייבט זיך אן מיט מערת המכפלה, וואס איז אויך א סארט זיווג וואס האט געהערט צו אברהם און שרה. ער ברענגט רבינו בחיי וועגן דעם מנהג צו ליינען די פרשה פאר א חתן, און ערקלערט אז די תורה דערציילט דעם שידוך פון יצחק און רבקה כדי צו לערנען עלטערן און יונגע לייט ווי אזוי מ'גייט צו א שידוך."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-05-05-chaya-sura",
+      "startSeg": 142,
+      "endSeg": 149,
+      "title": { "en": "A true zivug and free choice", "yi": "א זיווג אמיתי און בחירה" },
+      "summary": {
+        "en": "The Rav says a true zivug is the greatest success in a Jew's life and is tied to his avodah, noting Yitzchak and Rivka's names hidden in a tefillah. Though the zivug is fixed from Heaven, a person has free choice and can spoil it, just as with parnassah one is decreed yet must act.",
+        "yi": "דער משגיח זאגט אז א זיווג אמיתי איז די גרעסטע הצלחה אין א אידנס לעבן און איז פארבונדן מיט זיין עבודה, און ווייזט אז די נעמען יצחק און רבקה זענען באהאלטן אין א תפילה. הגם דער זיווג איז באשטימט מן השמים, איז דער מענטש א בעל בחירה און קען עס מקלקל זיין, אזוי ווי ביי פרנסה וואס איז באשטימט און פונדעסטוועגן דארף מען טון."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-05-05-chaya-sura",
+      "startSeg": 150,
+      "endSeg": 167,
+      "title": { "en": "Hishtadlus, tefillah and Eliezer's mission", "yi": "השתדלות, תפילה און אליעזר'ס שליחות" },
+      "summary": {
+        "en": "The Rav says a shidduch is sought for yiras shamayim, not money, looks or lineage, with hishtadlus according to one's level and advice from a chacham. Avraham trusted Eliezer with all his wealth yet made him swear on the shidduch; Eliezer davened for chessed, one prays for a good shidduch without insisting on a specific one, and Eliezer spoke to Lavan in Hashem's name without lowering standards.",
+        "yi": "דער משגיח זאגט אז מ'זוכט א שידוך פאר יראת שמים, נישט געלט, שיינקייט אדער יחוס, מיט השתדלות לויט יעדנס מדריגה און מיט עצה פון א חכם. אברהם האט געטרויט אליעזר מיט זיין גאנצן עשירות, אבער אויפן שידוך האט ער אים געמאכט שווערן; אליעזר האט מתפלל געווען אויף חסד, מ'בעט אויף א גוטן שידוך אן צו פאדערן א געוויסן, און אליעזר האט גערעדט צו לבן אין נאמען פונעם אויבערשטן אן ארונטערלאזן דעם שטאנדארט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-05-05-chaya-sura",
+      "startSeg": 168,
+      "endSeg": 176,
+      "title": { "en": "The daughters of Tzelafchad waited", "yi": "די בנות צלפחד האבן געווארט" },
+      "summary": {
+        "en": "The Rav brings the Gemara that the daughters of Tzelafchad waited until forty for a fitting match, and retells how they insisted on a tzaddik despite being orphans whom others looked down on. He concludes one need not lower standards or be afraid, and that waiting for a zivug is one of the trials of tzaddikim.",
+        "yi": "דער משגיח ברענגט די גמרא אז די בנות צלפחד האבן געווארט ביז פערציג יאר אויף א פאסיגן שידוך, און ער דערציילט ווי זיי האבן געוואלט א צדיק הגם זיי זענען געווען יתומות וואס מ'האט אויף זיי אראפגעקוקט. ער ענדיגט אז מ'דארף נישט ארונטערלאזן דעם שטאנדארט און נישט מורא האבן, און אז ווארטן אויף א זיווג איז איינע פון די נסיונות פון צדיקים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-05-05-chaya-sura",
+      "startSeg": 177,
+      "endSeg": 188,
+      "title": { "en": "Waiting for the time; nobody can spoil it", "yi": "ווארטן אויף דער צייט; קיינער קען עס נישט קאליע מאכן" },
+      "summary": {
+        "en": "The Rav explains 'zos hapa'am' that even Adam had to wait until Chava came, and that Eliezer's gift of a beka hinted at the riches of the mizbe'ach and the luchos. On 'me'Hashem yatza hadavar' he says that when the time comes no one can spoil a shidduch, and closes that the parsha is a lesson for life, not history.",
+        "yi": "דער משגיח ערקלערט \"זאת הפעם\" אז אפילו אדם הראשון האט געמוזט ווארטן ביז חוה איז געקומען, און אז אליעזר'ס מתנה פון א בקע איז געווען א רמז אויף דעם עשירות פונעם מזבח און די לוחות. אויף \"מה' יצא הדבר\" זאגט ער אז ווען די צייט קומט קען קיינער נישט קאליע מאכן א שידוך, און ער ענדיגט אז די פרשה איז א לימוד פארן לעבן, נישט היסטאריע."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "מי השם יצא הדבר, לנחה דבר",
+      "work": "Bereishis",
+      "ref": "Bereishis 24:50",
+      "sefariaRef": "Genesis 24:50",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [4, 5, 184], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "איז אין מדרש שטעט ... רבי נחמיה זאגט ... מהא מרוא",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [5, 117], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די גמרא זאגט אין סוף סוכה ... מרים בת בילגא",
+      "work": "Gemara Sukkah",
+      "ref": "Sukkah 56b",
+      "sefariaRef": "Sukkah 56b",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [6, 7, 8, 88], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "די משנה אין אנפאנג גוטן ... במדינות הים",
+      "work": "Mishnah Gittin",
+      "ref": "Mishnah Gittin 1:1",
+      "sefariaRef": "Mishnah Gittin 1:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [9, 10, 56], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אפי' מזבח מורא דולב דמאות",
+      "work": "Gemara Gittin",
+      "ref": "Gittin 90b",
+      "sefariaRef": "Gittin 90b",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [12, 39, 54], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "דער אבני נעזל, פרעגט א כשר",
+      "work": "Avnei Nezer",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [12, 15, 26], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "עס שטייט אין די משנה, אז באלד אז א אישה איז חתונה געהאט על-פי-עד זכד",
+      "work": "Mishnah Yevamos",
+      "ref": "Mishnah Yevamos 10:1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [12, 13], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער גאנצער ספר שורי שיעורים",
+      "work": "Shir HaShirim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [16, 24], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "יאלא ואישו אלי",
+      "work": "Bereishis",
+      "ref": "Bereishis 29:34",
+      "sefariaRef": "Genesis 29:34",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [22, 58], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "כזה משה",
+      "work": "Shemos",
+      "ref": "Shemos 32:1",
+      "sefariaRef": "Exodus 32:1",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [20, 21], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "אזוי ווי דער גמרא דרשטנס, אז א מענטש איז באשאפן געווארן ווי מקום קאפאראסים",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [30, 31], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אזוי זאגט דער ראגעטשאווער",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [31], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "דער גמרא זאגט אין אנפאנג סוטה אז עס איז פארענען א זיווג ראשון און א זיווג שני",
+      "work": "Gemara Sotah",
+      "ref": "Sotah 2a",
+      "sefariaRef": "Sotah 2a",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [36, 38], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די גמרא אין סנהדרין אז ראוי יוסף באשעווארל איז דוד המלך",
+      "work": "Gemara Sanhedrin",
+      "ref": "Sanhedrin 107a",
+      "sefariaRef": "Sanhedrin 107a",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [40], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ויגורשת אדם",
+      "work": "Bereishis",
+      "ref": "Bereishis 3:24",
+      "sefariaRef": "Genesis 3:24",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [47], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "הענישא לחושת אשתה",
+      "work": "Yirmiyahu",
+      "ref": "Yirmiyahu 3:1",
+      "sefariaRef": "Jeremiah 3:1",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [48], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "עד היום האחרין ... אין סוף פון די זאתע ברכה",
+      "work": "Devarim",
+      "ref": "Devarim 34:2",
+      "sefariaRef": "Deuteronomy 34:2",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [50, 52], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אין די משנה אין מסכת המידות שטעט די אלע מידות פון די מזבח",
+      "work": "Mishnah Middos",
+      "ref": "Mishnah Middos 3:1",
+      "sefariaRef": "Mishnah Middot 3:1",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [60], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "די גמרא אין זבחים ד' סאמך א'",
+      "work": "Gemara Zevachim",
+      "ref": "Zevachim 62a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [61, 63, 64, 81], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אזוי ווי רשע זאגט אין אנפאנג בראשית ... כח מעשיו",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 1:1",
+      "sefariaRef": "Rashi on Genesis 1:1",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [68, 69, 71], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "בראשית זאגט דער גמרא ... באשאפן דעם שיטון",
+      "work": "Gemara Sukkah",
+      "ref": "Sukkah 49a",
+      "sefariaRef": "Sukkah 49a",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [72], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "שטעט אין זייער הקדוש",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [66, 68], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "די זאכציג עשיות פון ברכת כהנים וואס זענדיגען זיך מיט מיוסם לפאר שלום",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 6:24-26",
+      "sefariaRef": "Numbers 6:24-26",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [83, 85], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ביי יענקייט חברון אחלותי",
+      "work": "Koheles",
+      "ref": "Koheles 4:12",
+      "sefariaRef": "Ecclesiastes 4:12",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [84], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "ווייל מיט מחשבה איז מען דארט אזוי ווי ס'איז באקאנט פון בעל שם טוב",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [76], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די גמרא אין מעברי שטעט, אז זיי האבן געמאכט א גזירה",
+      "work": "Gemara Kesubos",
+      "ref": "Kesubos 3b",
+      "sefariaRef": "Ketubot 3b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [100, 101], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "רשע ... ויגבי אברהם ... זאגט רשע, ווייל אברהם אבינו האט געהאט הורי געווארן",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 22:20",
+      "sefariaRef": "Rashi on Genesis 22:20",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [104, 105, 106], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער ארי הקודש זאגט ... אזוי שטייט פון ארי הקרית",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [110, 111], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "מלכה לך הרי מוריה",
+      "work": "Bereishis",
+      "ref": "Bereishis 22:2",
+      "sefariaRef": "Genesis 22:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [112], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אזאקע מאמרי ... א מקום הרב מלמד שמוקם גורם",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [115, 116], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די גמרא זאגט במייד קטן ... בת פלוני לפלוני",
+      "work": "Gemara Moed Katan",
+      "ref": "Moed Katan 18b",
+      "sefariaRef": "Moed Katan 18b",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [119, 121, 122, 133], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דעם לשון צום ספר חסידים ... סדר פון חסידים",
+      "work": "Sefer Chassidim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [123, 124, 126], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אזוי זאגט דער חתם סופר",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [130], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "עס שטעט אין מדרש ... אויפן פסוק און תהילים, ועלקים משוב יחידים",
+      "work": "Tehillim",
+      "ref": "Tehillim 68:7",
+      "sefariaRef": "Psalms 68:7",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [131, 132], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "שטעט רבינו בחייה, דער מנהג פלעגט זיין ביי די ספרדים",
+      "work": "Rabbeinu Bachya",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [138, 139, 150], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "שטעט אין מדרש ... דעם מרת המכפילה",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [137], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "ויישר ברכת אברהם בכל",
+      "work": "Bereishis",
+      "ref": "Bereishis 24:1",
+      "sefariaRef": "Genesis 24:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [154], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "הכה נא לפני היום, ועשה חסד אים עדינו אברהם",
+      "work": "Bereishis",
+      "ref": "Bereishis 24:12",
+      "sefariaRef": "Genesis 24:12",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [157], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "בשם ברכת אברהם",
+      "work": "Bereishis",
+      "ref": "Bereishis 24:35",
+      "sefariaRef": "Genesis 24:35",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [165, 166], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "דער גמרא זאגט ... שהם תהערן עד הבועם שונא",
+      "work": "Gemara Bava Basra",
+      "ref": "Bava Basra 119b",
+      "sefariaRef": "Bava Batra 119b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [168, 169], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "זאת הפעם ... אזוי ווי רשע זאגט",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 2:23",
+      "sefariaRef": "Rashi on Genesis 2:23",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [177, 178, 179], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "א בעקע משכלה, עס שטעט אין מדרש",
+      "work": "Bereishis",
+      "ref": "Bereishis 24:22",
+      "sefariaRef": "Genesis 24:22",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [181, 182, 183], "confidence": 0.65 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Following the Avnei Nezer, a woman who remarried in error on one witness loses her right to maaser because she showed she lacks shevet Levi's sensitivity to a living bond.",
+        "yi": "לויט דעם אבני נזר ווערט אן אשה וואס האט חתונה געהאט בטעות על פי עד אחד פסול פון מעשר, ווייל זי האט געוויזן אז זי האט נישט די הרגשה פון שבט לוי צו א קשר וואס לעבט."
+      },
+      "evidence": { "segs": [22, 23, 24, 25], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Only the mizbe'ach sheds tears over a divorce because Adam and Chava were taken from its earth, so it is witness to every first zivug.",
+        "yi": "בלויז דער מזבח וויינט אויף א גירושין, ווייל אדם און חוה זענען גענומען געווארן פון זיין עפר, ממילא איז ער אן עדות אויף יעדן זיווג ראשון."
+      },
+      "evidence": { "segs": [32, 42, 43], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The end and beginning of Gittin are linked: a get brought 'from overseas' teaches that a get is a cutting off from the root, like a Jew exiled from Eretz Yisrael.",
+        "yi": "דער סוף און דער אנהייב פון גיטין זענען פארבונדן: א גט וואס מ'ברענגט פון מדינת הים לערנט אז א גט איז אן אפשניידן פונעם שורש, אזוי ווי א איד וואס איז פארטריבן פון ארץ ישראל."
+      },
+      "evidence": { "segs": [11, 56, 57], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The measures of the mizbe'ach match the eras: 28 for the first Beis Hamikdash, lamed-beis, the heart, for the second when Jews lived overseas, and 60 for the third.",
+        "yi": "די מאסן פונעם מזבח פאסן צו די תקופות: כ\"ח פארן ערשטן בית המקדש, ל\"ב, דאס הארץ, פארן צווייטן ווען אידן האבן געוואוינט אין מדינת הים, און ששים פארן דריטן."
+      },
+      "evidence": { "segs": [71, 77, 81, 85], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Miriam bas Bilga could bear the Menorah and the Kodesh Hakodashim but not the mizbe'ach, because it was witness to the zivug she had betrayed.",
+        "yi": "מרים בת בילגה האט געקענט אויסהאלטן די מנורה און דעם קודש הקדשים, אבער נישט דעם מזבח, ווייל ער איז געווען אן עדות אויפן זיווג וואס זי האט פארראטן."
+      },
+      "evidence": { "segs": [93, 95, 98], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Rivka was born at the Akeida because Yitzchak first received a male soul there, and the Akeida was on the place from which zivugim come.",
+        "yi": "רבקה איז געבוירן געווארן ביי דער עקידה ווייל דארט האט יצחק ערשט באקומען א נשמה פון א זכר, און די עקידה איז געווען אויפן ארט פון וואנען זיווגים קומען."
+      },
+      "evidence": { "segs": [111, 117, 118], "confidence": 0.7 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "Miriam bas Bilga at the mizbe'ach", "yi": "מרים בת בילגה ביים מזבח" },
+      "retelling": {
+        "en": "When the Greeks entered the Beis Hamikdash, Miriam bas Bilga, from a family of the kohanim, who had abandoned her faith and married a Greek officer, went in with them. She kicked the mizbe'ach with her feet and called it a wolf that consumes the money of Israel and does not stand by them in their distress.",
+        "yi": "ווען די יוונים זענען אריין אין בית המקדש, איז מרים בת בילגה, פון א משפחה פון כהנים, וואס האט זיך געשמדט און חתונה געהאט מיט א גענעראל פון יון, אריין מיט זיי. זי האט געקלאפט מיט די פיס אויפן מזבח און אים אנגערופן א וואלף וואס פרעסט דאס געלט פון אידן און שטייט נישט ביי זיי אין זייער צרה."
+      },
+      "people": ["Miriam bas Bilga"],
+      "evidence": { "segs": [6, 7, 8, 98], "confidence": 0.85 }
+    },
+    {
+      "title": { "en": "The daughters of Tzelafchad wait for a tzaddik", "yi": "די בנות צלפחד ווארטן אויף א צדיק" },
+      "retelling": {
+        "en": "The daughters of Tzelafchad were orphans with no inheritance, and people looked down on their family. They insisted they wanted only a tzaddik like themselves and refused to lower their standard, even as they grew older and neighbors urged them to settle. They waited until they were forty, trusting that Hashem would give them what they sought.",
+        "yi": "די בנות צלפחד זענען געווען יתומות אן א נחלה, און מ'האט אראפגעקוקט אויף זייער משפחה. זיי האבן געזאגט אז זיי ווילן נאר א צדיק ווי זיי, און נישט געוואלט ארונטערלאזן דעם שטאנדארט, אפילו ווען זיי זענען עלטער געווארן און די שכנים האבן זיי געהייסן נאכגעבן. זיי האבן געווארט ביז פערציג יאר, מיט בטחון אז דער אויבערשטער וועט זיי געבן וואס זיי ווילן."
+      },
+      "people": ["the daughters of Tzelafchad"],
+      "evidence": { "segs": [170, 171, 174, 175], "confidence": 0.7 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "Why does Maseches Gittin open with a get brought from overseas rather than with the basic laws of a get?", "yi": "פארוואס הייבט זיך מסכת גיטין אן מיט א גט פון מדינת הים און נישט מיט די עיקר דינים פון א גט?" },
+      "answer": { "en": "Because exile from Eretz Yisrael is itself a divorce, the Mishnah first teaches what a get is: a cutting off from the root.", "yi": "ווייל גלות פון ארץ ישראל איז אליין א גט, לערנט די משנה פריער וואס א גט איז: אן אפשניידן פונעם שורש." },
+      "questionSegs": [9, 10, 11],
+      "answerSegs": [56, 57],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why, at the end of Gittin, does specifically the mizbe'ach shed tears over one who divorces his first wife?", "yi": "פארוואס וויינט דווקא דער מזבח אויף איינעם וואס איז מגרש זיין ערשטע ווייב?" },
+      "answer": { "en": "Adam and Chava were formed from the earth of the mizbe'ach, so it is witness to every first zivug and feels its breaking.", "yi": "אדם און חוה זענען באשאפן געווארן פונעם עפר פונעם מזבח, ממילא איז ער אן עדות אויף יעדן זיווג ראשון און שפירט ווען מ'צעברעכט אים." },
+      "questionSegs": [12],
+      "answerSegs": [32, 42, 43],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why does a bas Levi who remarried on the word of one witness lose her right to maaser, when she did not sin deliberately?", "yi": "פארוואס ווערט א בת לוי וואס האט חתונה געהאט על פי עד אחד פסול פון מעשר, הגם זי האט נישט געזינדיגט במזיד?" },
+      "answer": { "en": "Because a wife is meant to feel whether the bond still lives; by not feeling it she showed she lacks shevet Levi's sensitivity.", "yi": "ווייל אן אשה דארף שפירן צי דער קשר לעבט נאך; מיט דעם וואס זי האט עס נישט געשפירט האט זי געוויזן אז זי האט נישט די הרגשה פון שבט לוי." },
+      "questionSegs": [13, 14],
+      "answerSegs": [18, 24, 25],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why did Shlomo make the mizbe'ach 28 amos, while 32 was revealed only to the Anshei Knesses Hagedolah?", "yi": "פארוואס האט שלמה המלך געמאכט דעם מזבח כ\"ח אמות, און ל\"ב איז נתגלה געווארן ערשט צו די אנשי כנסת הגדולה?" },
+      "answer": { "en": "Each was shown the measure fitting his time: 28 for the first Beis Hamikdash, and 32, the heart, for the second, when most Jews were overseas.", "yi": "יעדער איז נתגלה געווארן דאס מאס וואס פאסט פאר זיין צייט: כ\"ח פארן ערשטן בית המקדש, און ל\"ב, דאס הארץ, פארן צווייטן ווען רוב אידן זענען געווען אין מדינת הים." },
+      "questionSegs": [65, 66],
+      "answerSegs": [66, 71, 77, 81],
+      "confidence": 0.7
+    },
+    {
+      "question": { "en": "Why did the Akeida have to be on the place of the mizbe'ach, and why was Rivka born just then?", "yi": "פארוואס האט די עקידה געדארפט זיין אויפן מקום המזבח, און פארוואס איז רבקה געבוירן געווארן פונקט דאן?" },
+      "answer": { "en": "The place itself brings about its effect, and since zivugim come from the place of the mizbe'ach, Yitzchak's zivug was born there.", "yi": "דער מקום איז גורם, און ווייל זיווגים קומען פונעם מקום המזבח איז דארט געבוירן געווארן יצחק'ס זיווג." },
+      "questionSegs": [113],
+      "answerSegs": [115, 117, 118],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why did Miriam bas Bilga direct her anger specifically at the mizbe'ach?", "yi": "פארוואס האט מרים בת בילגה אויסגעלאזט איר כעס דווקא אויפן מזבח?" },
+      "answer": { "en": "Her guilty conscience could not bear the mizbe'ach, which testified to her true zivug fixed from the six days of creation.", "yi": "איר געוויסן האט נישט געקענט אויסהאלטן דעם מזבח, וואס איז געווען אן עדות אויף איר אמת'ן זיווג פון ששת ימי בראשית." },
+      "questionSegs": [92],
+      "answerSegs": [93, 95, 98],
+      "confidence": 0.7
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says one should seek yiras shamayim in a shidduch, not money, looks or a famous family.",
+        "yi": "דער משגיח זאגט אז מ'זאל זוכן יראת שמים אין א שידוך, נישט געלט, שיינקייט אדער א משפחה מיט א נאמען."
+      },
+      "evidence": { "segs": [150], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says each person must make hishtadlus for a shidduch according to his level, and should consult a chacham or tzaddik on how much.",
+        "yi": "דער משגיח זאגט אז יעדער דארף זיך משתדל זיין אויף א שידוך לויט זיין מדריגה, און זיך דורכרעדן מיט א חכם אדער צדיק ווי פיל."
+      },
+      "evidence": { "segs": [151, 153], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one should daven for a good shidduch without insisting on a particular person, since one does not know what is good for him.",
+        "yi": "דער משגיח זאגט אז מ'זאל מתפלל זיין אויף א גוטן שידוך אן צו פאדערן א געוויסע פערזאן, ווייל מ'ווייסט נישט וואס איז גוט פאר אים."
+      },
+      "evidence": { "segs": [159], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one must not lower one's standards in a shidduch and must not be afraid to wait.",
+        "yi": "דער משגיח זאגט אז מ'טאר נישט ארונטערלאזן דעם שטאנדארט אין א שידוך און מ'דארף נישט מורא האבן צו ווארטן."
+      },
+      "evidence": { "segs": [160, 167, 175], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says the parsha must be learned not as history but as a lesson for one's own life.",
+        "yi": "דער משגיח זאגט אז מ'דארף לערנען די פרשה נישט ווי היסטאריע, נאר ווי א לימוד פארן אייגענעם לעבן."
+      },
+      "evidence": { "segs": [187, 188], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "zivugim",
+    "shidduchim",
+    "the bond between Hashem and Klal Yisrael",
+    "the mizbe'ach",
+    "galus as divorce",
+    "shevet Levi",
+    "Akeidas Yitzchak and Rivka's birth",
+    "hishtadlus and tefillah",
+    "Parshas Chayei Sarah",
+    "Miriam bas Bilga"
+  ],
+  "concepts": [
+    { "he": "זיווג", "heardAs": ["זיווג", "זידוק", "זאג", "זבגים"] },
+    { "he": "מקום המזבח", "heardAs": ["מקום המזבח", "מזביח"] },
+    { "he": "כנסת ישראל", "heardAs": ["כנסת ישראל", "קנסת ישראל"] },
+    { "he": "הקדוש ברוך הוא", "heardAs": ["הקודש ברוך", "א גדוש ברכה", "א קדוש ברכה", "הגרוש ברכה"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבינו של עולם", "רבינו שלום", "רבונו שלא"] },
+    { "he": "קשר", "heardAs": ["כשר", "קרשע"] },
+    { "he": "מדינת הים", "heardAs": ["מדינת הים", "מדינות הים"] },
+    { "he": "עקידה", "heardAs": ["אקעדע", "עקדה", "יקדה"] },
+    { "he": "השתדלות", "heardAs": ["נשתדלות", "שתדלות"] },
+    { "he": "שיתין", "heardAs": ["שיט", "שיטון"] },
+    { "he": "אנשי כנסת הגדולה", "heardAs": ["היינטשע קנסת הגדולה", "יישר כנסת הגדולה", "איימע קנסת הגדולה"] }
+  ],
+  "people": [
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינו"] },
+    { "name": "Yitzchak", "heardAs": ["יצחק", "יצרק"] },
+    { "name": "Rivka", "heardAs": ["רבקה", "רודקי"] },
+    { "name": "Eliezer", "heardAs": ["אליעזר", "יעזל"] },
+    { "name": "Lavan", "heardAs": ["לאווען"] },
+    { "name": "Miriam bas Bilga", "heardAs": ["מרים בת בילגא"] },
+    { "name": "Adam and Chava", "heardAs": ["אדם און חבר", "אדם וחבר"] },
+    { "name": "Rabbi Nechemia", "heardAs": ["רבי נחמיה"] },
+    { "name": "the Avnei Nezer", "heardAs": ["אבני נעזל", "אבני נעזר", "רבנה נזל"] },
+    { "name": "the Rogatchover", "heardAs": ["ראגעטשאווער"] },
+    { "name": "Shlomo HaMelech", "heardAs": ["שלמה המלך", "שלמה מלך"] },
+    { "name": "David HaMelech", "heardAs": ["דוד המלך"] },
+    { "name": "the Arizal", "heardAs": ["ארי הקודש", "ארי הקרית"] },
+    { "name": "Rabbeinu Bachya", "heardAs": ["רבינו בחייה", "רבי יענער חי'"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["בעל שם טוב"] },
+    { "name": "the Chasam Sofer", "heardAs": ["חתם סופר"] },
+    { "name": "the daughters of Tzelafchad", "heardAs": ["בנות צלת חוץ", "בני סלאפהעד"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair to poor, with long segments that often cut off mid-sentence; most Hebrew quotations are garbled but recoverable from context. Several cited authorities could not be recovered with confidence (a source on zivug rishon around segs 36-37, a Rebbe cited on Rashi at segs 106 and 109, a story about the Strettiner and R' Meir Premishlaner at segs 145-146, and a Ramban/Rashi discussion at segs 161-162) and are left out. No long noise stretches."
+}

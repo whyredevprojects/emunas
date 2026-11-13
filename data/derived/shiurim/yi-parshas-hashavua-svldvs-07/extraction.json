@@ -1,0 +1,540 @@
+{
+  "shiurId": "yi-parshas-hashavua-svldvs-07",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that the strength of the doer enters what he makes, so that Yitzchak tasted kedushah in Rivka's food, and that Esav sold the bechorah because his idea of 'today' was the opposite of a Jew's.",
+      "yi": "דער משגיח ערקלערט אז דער כח פונעם עושה גייט אריין אין דאס וואס ער טוט, אזוי אז יצחק האט געשפירט קדושה אין רבקה'ס מאכלים, און אז עשו האט פארקויפט די בכורה ווייל זיין שיטה פון \"היום\" איז געווען פארקערט פון א אידנס."
+    },
+    "abstract": {
+      "en": "The Rav opens by calling Toldos a parsha of brachos: brachah means increase, and the letters of the word follow the step from one to two in units, tens and hundreds, which he ties to Chanukah's adding light. He notes that every aliyah of Toldos holds a brachah. Turning to Yitzchak's love of matamim, he shows through stories that tzaddikim take pleasure only in holiness. He asks why Yitzchak's blessing, which the Midrash reads as Torah, is phrased as grain and wine, and builds the principle that the doer's strength enters his work: the Ba'al Shem Tov, the Lubliner's bed, the Kuzmirer's cholent. Rivka prepared the food Esav brought, so Yitzchak tasted kedushah and took Esav for a hidden tzaddik. Food grown or prepared in holiness leads to Torah. He ends with the sale of the bechorah: a Jew's 'today' is for mitzvos, the rasha's for eating, so Esav had no use for it.",
+      "yi": "דער משגיח עפנט מיט דעם אז פרשת תולדות איז א פרשה פון ברכות: ברכה מיינט ריבוי, און די אותיות פונעם ווארט גייען נאך דעם שטאפל פון איינס צו צוויי אין די איינסער, צענער און הונדערטער, וואס ער פארבינדט מיט חנוכה וואס איז מוסיף והולך. ער ווייזט אן אז אין יעדע עליה פון תולדות איז דא א ברכה. דערנאך רעדט ער וועגן יצחק'ס מטעמים, און ווייזט מיט מעשיות אז צדיקים האבן הנאה נאר פון רוחניות. ער פרעגט פארוואס יצחק'ס ברכה, וואס דער מדרש טייטשט אויף תורה, איז אנגעזאגט מיט דגן און תירוש, און בויט אויף דעם כלל פון כח הפועל בנפעל: דער בעל שם טוב, דעם לובלינער'ס בעט, דעם קוזמירער'ס טשאלנט. רבקה האט צוגעגרייט דאס עסן וואס עשו האט געברענגט, ממילא האט יצחק געשפירט קדושה און געמיינט אז עשו איז א צדיק נסתר. עסן וואס וואקסט אדער ווערט צוגעגרייט אין קדושה ברענגט צו תורה. צום סוף ערקלערט ער די מכירת הבכורה: דער \"היום\" פון א איד איז פאר מצוות, דער היום פונעם רשע איז צו עסן, ממילא האט עשו נישט געדארפט די בכורה."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Brachah means increase, and Toldos is a parsha of brachah in which every aliyah carries a blessing.",
+          "yi": "ברכה מיינט ריבוי, און תולדות איז א פרשה פון ברכה וואו יעדע עליה האט אין זיך א ברכה."
+        },
+        "evidence": { "segs": [1, 2, 15, 16], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "The strength of the one who does a thing enters the thing he makes, so the thoughts of the maker can be felt in it.",
+          "yi": "דער כח פון דעם וואס טוט א זאך גייט אריין אין דער זאך וואס ער מאכט, אזוי אז מ'קען שפירן אין איר די מחשבות פונעם מאכער."
+        },
+        "evidence": { "segs": [33, 34, 35, 36], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Rivka, not Esav, prepared the food Esav brought his father, and Yitzchak tasted kedushah in it.",
+          "yi": "רבקה, נישט עשו, האט צוגעגרייט דאס עסן וואס עשו האט געברענגט דעם טאטן, און יצחק האט געשפירט קדושה דערין."
+        },
+        "evidence": { "segs": [57, 58, 59, 60], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Food prepared or grown in holiness, such as the produce of Eretz Yisrael, brings a person to Torah, and this is how Yitzchak's material blessing means Torah.",
+          "yi": "עסן וואס ווערט צוגעגרייט אדער וואקסט אין קדושה, ווי די פירות פון ארץ ישראל, ברענגט א מענטש צו תורה, און אזוי מיינט יצחק'ס גשמיות'דיגע ברכה תורה."
+        },
+        "evidence": { "segs": [67, 72, 75, 76], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "A Jew's 'today' is for doing mitzvos with the reward tomorrow, while the rasha's 'today' is for eating and drinking because tomorrow he dies; for that reason Esav sold the bechorah.",
+          "yi": "דער \"היום\" פון א איד איז צו טון מצוות און מארגן נעמט מען שכר, דער היום פונעם רשע איז צו עסן און טרינקען ווייל מארגן שטארבט מען; דערפאר האט עשו פארקויפט די בכורה."
+        },
+        "evidence": { "segs": [79, 80, 81, 82, 83], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-parsha-sefer-bereishes-06-07-toldos",
+      "startSeg": 0,
+      "endSeg": 16,
+      "title": { "en": "Toldos, a parsha of brachah", "yi": "תולדות, א פרשה פון ברכה" },
+      "summary": {
+        "en": "The Rav explains that brachah means increase and shows it in the letters of the word, as one becomes two in units, tens and hundreds. He links this to Chanukah, which keeps adding, against the Greeks who broke into what was not theirs, and notes the bond of brachah with the number six and that every aliyah of Toldos holds a blessing.",
+        "yi": "דער משגיח ערקלערט אז ברכה מיינט ריבוי, און ווייזט עס אין די אותיות פונעם ווארט, ווי איינס ווערט צוויי אין די איינסער, צענער און הונדערטער. ער פארבינדט עס מיט חנוכה וואס איז מוסיף והולך, קעגן די יוונים וואס האבן געוואלט אריינגיין אין א תחום וואס איז נישט זייערס, און ער ווייזט אן אז ברכה האט א שייכות מיט דער צאל זעקס און אז אין יעדע עליה פון תולדות איז דא א ברכה."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-06-07-toldos",
+      "startSeg": 17,
+      "endSeg": 31,
+      "title": { "en": "Tzaddikim and the pleasure of food", "yi": "צדיקים און די הנאה פון עסן" },
+      "summary": {
+        "en": "Starting from Yitzchak's love of matamim, the Rav says great tzaddikim are detached from this world and take pleasure only in Torah and mitzvos. He tells how the Levushei Srad, absorbed in learning, drank brandy without noticing, and how the Yismach Moshe ate from a pot of dishwater without noticing.",
+        "yi": "פון יצחק'ס מטעמים וואס ער האט ליב געהאט, זאגט דער משגיח אז גרויסע צדיקים זענען אינגאנצן אפגעשיידט פון עולם הזה און האבן הנאה נאר פון תורה און מצוות. ער דערציילט ווי דער לבושי שרד האט, פארטיפט אין לערנען, געטרונקען בראנפן אן צו מערקן, און ווי דער ישמח משה האט געגעסן פון א טאפ מיט שוואנקע-וואסער אן צו מערקן."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-06-07-toldos",
+      "startSeg": 32,
+      "endSeg": 45,
+      "title": { "en": "The doer's strength enters his work", "yi": "כח הפועל בנפעל" },
+      "summary": {
+        "en": "The Rav asks why Yitzchak's blessing, which the Midrash reads as mikra, mishnah, halachah and aggadah, is said in terms of dew, grain and wine. He sets out the principle that the doer's strength enters his work, with the Ba'al Shem Tov and the table, the Lubliner and the bed, the Kuzmirer's cholent made 'lekavod Shabbos kodesh', and food prepared by a G-d-fearing housewife.",
+        "yi": "דער משגיח פרעגט פארוואס יצחק'ס ברכה, וואס דער מדרש טייטשט אויף מקרא, משנה, הלכה און אגדה, איז געזאגט מיט טל, דגן און תירוש. ער שטעלט אוועק דעם כלל פון כח הפועל בנפעל, מיט דעם בעל שם טוב און דעם טיש, דעם לובלינער און דעם בעט, דעם קוזמירער'ס טשאלנט וואס מ'האט געמאכט לכבוד שבת קודש, און עסן וואס א ערליכע בעלת הבית גרייט צו."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-06-07-toldos",
+      "startSeg": 46,
+      "endSeg": 61,
+      "title": { "en": "Who prepared Esav's food", "yi": "ווער האט צוגעגרייט עשו'ס עסן" },
+      "summary": {
+        "en": "The Rav asks how Yitzchak could eat Esav's food when Esav's shechitah was invalid, and how he could take Esav for a tzaddik. He answers that Rivka, who knew the truth through prophecy, prepared the food herself so as not to pain Yitzchak, and Yitzchak, tasting kedushah in it, concluded that Esav was a hidden tzaddik.",
+        "yi": "דער משגיח פרעגט ווי אזוי יצחק האט געקענט עסן עשו'ס עסן ווען עשו'ס שחיטה איז געווען נבילה, און ווי אזוי ער האט געקענט האלטן עשו פאר א צדיק. ער ענטפערט אז רבקה, וואס האט געוואוסט דעם אמת דורך נבואה, האט אליין צוגעגרייט דאס עסן כדי נישט צו צער'ן יצחק'ן, און יצחק האט געשפירט קדושה דערין און געהאלטן אז עשו איז א צדיק נסתר."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-06-07-toldos",
+      "startSeg": 62,
+      "endSeg": 76,
+      "title": { "en": "Kedushah in food and the blessing of Torah", "yi": "קדושה אין עסן און די ברכה פון תורה" },
+      "summary": {
+        "en": "On the day of the blessings Rivka prepared for Yaakov instead, and Yitzchak tasted the holiness of Gan Eden. The Rav brings the Bach that the produce of Eretz Yisrael, which grows in holiness, brings kedushah into the one who eats it, and so answers his question: Yitzchak's blessing of grain and wine is a blessing for halachah and aggadah.",
+        "yi": "אין דעם טאג פון די ברכות האט רבקה צוגעגרייט פאר יעקב'ן, און יצחק האט געשפירט דעם טעם פון גן עדן. דער משגיח ברענגט דעם ב\"ח אז די פירות פון ארץ ישראל, וואס וואקסן אין קדושה, ברענגען קדושה אין דעם וואס עסט זיי, און דערמיט פארענטפערט ער זיין קשיא: יצחק'ס ברכה פון דגן און תירוש איז א ברכה צו הלכה און אגדה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-06-07-toldos",
+      "startSeg": 77,
+      "endSeg": 84,
+      "title": { "en": "'Sell me this day your birthright'", "yi": "\"מכרה כיום את בכורתך לי\"" },
+      "summary": {
+        "en": "The Rav explains Yaakov's words 'michra chayom': a Jew's 'today' is for Torah and mitzvos with the reward tomorrow, while the rasha's 'today' is to eat and drink because tomorrow he dies. By Esav's own view he had no use for the bechorah, and their whole exchange followed each one's outlook.",
+        "yi": "דער משגיח ערקלערט יעקב'ס ווערטער \"מכרה כיום\": דער היום פון א איד איז פאר תורה און מצוות און דער שכר קומט מארגן, דער היום פונעם רשע איז צו עסן און טרינקען ווייל מארגן שטארבט מען. לויט עשו'ס אייגענער שיטה האט ער נישט געדארפט די בכורה, און זייער גאנצער שמועס איז געגאנגען לויט יעדנ'ס שיטה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "עס שטעט א אינטערעסאנטע זאך פון מאראל",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "ווי די גמרא זאגט אין סוכה",
+      "work": "Gemara Sukkah",
+      "ref": "Sukkah 5a",
+      "sefariaRef": "Sukkah 5a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [9], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "כי את הערכת השם לנו אפארינו בארץ",
+      "work": "Bereishis",
+      "ref": "Bereishis 26:22",
+      "sefariaRef": "Genesis 26:22",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [15], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ויוטן לכאורה אלקים",
+      "work": "Bereishis",
+      "ref": "Bereishis 27:28",
+      "sefariaRef": "Genesis 27:28",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [16, 32, 74], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "מדרש מטלה שמים זאל מקרא ומשמנה הארץ זאל משנה",
+      "work": "Midrash",
+      "ref": "Midrash on Bereishis 27:28",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [32, 74, 76], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די לבשי שרד",
+      "work": "Levushei Srad",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [19], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "כח הפועל בנפל ... שטעט פון רמב״ן",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [33], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "אזוי ווי דער מסילת ישורים זאגט",
+      "work": "Mesillas Yesharim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [39, 40], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אזוי ווי דער גמרא האט דערציילט, אז יענער גוי האט געזאגט",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 119a",
+      "sefariaRef": "Shabbat 119a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [44], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "רשע ברענגט אז יצחק האט געזאגט צו עשה",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 27:3",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [48, 49], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "מביאי תקלה על ידים",
+      "work": "Gemara",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [50], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "יטלאנד קדושין ... דמה בנתיני",
+      "work": "Gemara Kiddushin",
+      "ref": "Kiddushin 31a",
+      "sefariaRef": "Kiddushin 31a",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [53], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ר' גמליהו האט געזאגט",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [52], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "שדה בטל לך לדרשת העלקים ... ורבי אבי צועל",
+      "work": "Bereishis",
+      "ref": "Bereishis 25:22-23",
+      "sefariaRef": "Genesis 25:22-23",
+      "resolution": "resolved",
+      "mention": "alluded",
+      "evidence": { "segs": [55], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "השם הכל כל יעקב ידים ידי יוסף",
+      "work": "Bereishis",
+      "ref": "Bereishis 27:22",
+      "sefariaRef": "Genesis 27:22",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [59], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אזוי ווי רשע ברענגט פון חז״ל ... א תם גנידן",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 27:27",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [63], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "איינס פאר פסח און איינס פאר חגוגה, ווי ראשי זאגט",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 27:9",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [64], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "כי ארסייד בפיב",
+      "work": "Bereishis",
+      "ref": "Bereishis 25:28",
+      "sefariaRef": "Genesis 25:28",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [68, 69], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ס'איז נישט דא קיין שום סאר ווי דער רמב״ן זאגט",
+      "work": "Ramban",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [70], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "דער באך ... ונאכאל מיפוריה, ונתבע מצבה",
+      "work": "Bach",
+      "ref": "Bach on Tur Orach Chaim 208",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [71, 72], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "נכא כי יום אז בחורותך לי",
+      "work": "Bereishis",
+      "ref": "Bereishis 25:31",
+      "sefariaRef": "Genesis 25:31",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [78], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "היומ'ל הסתם, ווארשי'ן די גמרא",
+      "work": "Gemara Eruvin",
+      "ref": "Eruvin 22a",
+      "sefariaRef": "Eruvin 22a",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [80], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "שתה היום כמחה ... מארגן וועט מען שטייבן",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 22:13",
+      "sefariaRef": "Isaiah 22:13",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [81], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "הנה איך אהלך למות",
+      "work": "Bereishis",
+      "ref": "Bereishis 25:32",
+      "sefariaRef": "Genesis 25:32",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [83], "confidence": 0.85 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav reads the word brachah as increase built into its letters: beis is one doubled, and the letters follow two, twenty and two hundred, the doubling in units, tens and hundreds.",
+        "yi": "דער משגיח טייטשט אז דאס ווארט ברכה טראגט אין זיך דעם ריבוי: ב' איז איינס געטאפלט, און די אותיות גייען צוויי, צוואנציג און צוויי הונדערט, דער טאפל אין איינסער, צענער און הונדערטער."
+      },
+      "evidence": { "segs": [2, 3, 4], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Chanukah, which keeps adding light into the domain of the other side, is the counter to Yavan, who broke into a domain that was not theirs; the Rav sees this hinted in the shape of the letters of the word Yavan.",
+        "yi": "חנוכה, וואס איז מוסיף ליכט אריין אין דעם תחום פון דער סטרא אחרא, איז דער היפוך פון יון וואס האט אריינגעבראכן אין א תחום וואס איז נישט זייערס; דער משגיח זעט עס מרומז אין די אותיות פונעם ווארט יון."
+      },
+      "evidence": { "segs": [6, 7, 9, 10], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Esav's food did not betray him because Rivka secretly prepared it; Yitzchak tasted kedushah and so concluded that his son was a hidden tzaddik, greater than a revealed one.",
+        "yi": "עשו'ס עסן האט אים נישט אויסגעזאגט ווייל רבקה האט עס בסוד צוגעגרייט; יצחק האט געשפירט קדושה און דערפון געהאלטן אז זיין זון איז א צדיק נסתר, גרעסער פון א נגלה'דיגן צדיק."
+      },
+      "evidence": { "segs": [58, 59, 60, 61], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Yitzchak's 'matamim' were not tastes of spices but the taste of kedushah, the strength of the one who prepared the food felt in it.",
+        "yi": "יצחק'ס מטעמים זענען נישט געווען דער טעם פון געווירצן, נאר דער טעם פון קדושה, דער כח פון דעם וואס האט צוגעגרייט דאס עסן וואס מ'שפירט דערין."
+      },
+      "evidence": { "segs": [61, 66, 67], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Midrash can read dew, grain and wine as mikra, halachah and aggadah because food that grows in kedushah, like the produce of Eretz Yisrael, brings the one who eats it to Torah.",
+        "yi": "דער מדרש קען טייטשן טל, דגן און תירוש אויף מקרא, הלכה און אגדה, ווייל עסן וואס וואקסט אין קדושה, ווי די פירות פון ארץ ישראל, ברענגט דעם וואס עסט עס צו תורה."
+      },
+      "evidence": { "segs": [72, 74, 75, 76], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Yaakov's word 'chayom' in 'michra chayom' points to the two outlooks on 'today', and the sale of the bechorah followed each brother's view of it.",
+        "yi": "יעקב'ס ווארט \"כיום\" אין \"מכרה כיום\" ווייזט אויף די צוויי שיטות אין \"היום\", און די מכירת הבכורה איז געגאנגען לויט יעדן ברודערס שיטה."
+      },
+      "evidence": { "segs": [78, 79, 82, 83], "confidence": 0.8 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Levushei Srad and the brandy", "yi": "דער לבושי שרד און דער בראנפן" },
+      "retelling": {
+        "en": "The Levushei Srad, who lived in Tzfas, would sit down right after havdalah on motzei Shabbos and learn for many hours. A Jew who wished to give him pleasure would bring him a glass of brandy. Once, deeply absorbed in a sugya, he did not notice the man come in, and poured and drank full glasses from the bottle left on the table without noticing what it was. Afterward, when he was given a small glass for 'a gute voch' and tasted it, he remarked that it was strong.",
+        "yi": "דער לבושי שרד, וואס האט געוואוינט אין צפת, פלעגט מוצאי שבת באלד נאך הבדלה זיך אוועקזעצן לערנען פיל שעות. א איד וואס האט אים געוואלט מהנה זיין פלעגט אים ברענגען א גלעזל בראנפן. איינמאל איז ער געווען שטארק פארטיפט אין א סוגיא, האט ער נישט באמערקט ווען דער איד איז אריינגעקומען, און האט אנגעגאסן און אויסגעטרונקען פולע גלעזער פון דער פלאש אויפן טיש אן צו וויסן וואס דאס איז. שפעטער, ווען מ'האט אים געגעבן א קליין גלעזל אויף א גוטע וואך און ער האט עס פארזוכט, האט ער געזאגט אז ס'איז שטארק."
+      },
+      "people": ["the Levushei Srad"],
+      "evidence": { "segs": [20, 21, 22, 24, 27], "confidence": 0.65 }
+    },
+    {
+      "title": { "en": "The Yismach Moshe's supper", "yi": "דעם ישמח משה'ס סעודה" },
+      "retelling": {
+        "en": "The Yismach Moshe's rebbetzin once had to go to a simcha and told him that his supper was in the pot on the stove. On the stove there was also a dirty pot with soapy dishwater, and he ate from that one. When she came home and saw that the food was untouched, she asked why he had not eaten, and he said he had eaten from the pot.",
+        "yi": "דעם ישמח משה'ס רביצין האט איינמאל געדארפט גיין צו א שמחה, און האט אים געזאגט אז זיין סעודה איז אין טאפ אויפן אויוון. אויפן אויוון איז אבער אויך געשטאנען א שמוציגער טאפ מיט זייף-וואסער, און פון יענעם האט ער געגעסן. ווען זי איז געקומען אהיים און געזען אז דאס עסן איז נישט אנגערירט, האט זי געפרעגט פארוואס ער האט נישט געגעסן, און ער האט געזאגט אז ער האט יא געגעסן פונעם טאפ."
+      },
+      "people": ["the Yismach Moshe"],
+      "evidence": { "segs": [28, 29, 31], "confidence": 0.7 }
+    },
+    {
+      "title": { "en": "The Lubliner's bed", "yi": "דעם לובלינער'ס בעט" },
+      "retelling": {
+        "en": "The Lubliner was particular that his utensils be made by honest Jews, and could not sleep in a bed made by just anyone. Before he came for a Shabbos to a disciple, his followers had a carpenter who was a tzaddik make him a bed, yet he could not sleep in it. When told that a great ehrliche Jew had made it, he said he had felt that too, but it had been made during the Nine Days and was full of thoughts of sadness.",
+        "yi": "דער לובלינער איז געווען זייער מקפיד אז זיינע כלים זאלן זיין געמאכט פון ערליכע אידן, און ער האט נישט געקענט שלאפן אין א בעט וואס סתם איינער האט געמאכט. ווען ער האט געדארפט קומען אויף א שבת צו א תלמיד, האבן די חסידים געהייסן א סטאליער וואס איז געווען א צדיק מאכן א בעט, און פונדעסטוועגן האט ער נישט געקענט שלאפן. ווען מ'האט אים געזאגט אז א גרויסער ערליכער איד האט עס געמאכט, האט ער געזאגט אז דאס האט ער אויך געשפירט, נאר מ'האט עס געמאכט אין די ניין טעג און דער בעט איז פול מיט מחשבות פון עצבות."
+      },
+      "people": ["the Chozeh of Lublin"],
+      "evidence": { "segs": [35, 36, 37, 38], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The Kuzmirer's cholent", "yi": "דעם קוזמירער'ס טשאלנט" },
+      "retelling": {
+        "en": "A rav came for Shabbos to Reb Yechezkel of Kuzmir with other chassidim, and the cholent was excellent. On motzei Shabbos he went to the rebbetzin and asked for the recipe for his own wife, but the cholent she made at home was not the same. He went back, and the rebbetzin told him she had told him everything except one thing: every erev Shabbos the Rebbe comes in, throws a handful of potatoes and beans into the pot and says 'lekavod Shabbos kodesh'. He answered that this ingredient he does not have at home.",
+        "yi": "א רב איז געקומען אויף שבת צו רבי יחזקאל'ע קוזמירער מיט אנדערע חסידים, און דער טשאלנט איז געווען זייער גוט. מוצאי שבת איז ער אריין צו דער רביצין און געבעטן דעם רעצעפט פאר זיין רביצין, אבער דער טשאלנט וואס זי האט געמאכט אין דער היים איז נישט געווען דאס. ער איז צוריקגעקומען, און די רביצין האט אים געזאגט אז זי האט אים אלעס געזאגט חוץ איין זאך: יעדן ערב שבת קומט אריין דער רבי, ווארפט אריין א הויפן בולבעס מיט בעבלעך אין טאפ און זאגט לכבוד שבת קודש. האט ער געענטפערט אז דעם צוגאב האט ער נישט ביי זיך אין דער היים."
+      },
+      "people": ["Reb Yechezkel of Kuzmir"],
+      "evidence": { "segs": [41, 42, 43], "confidence": 0.8 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "If the Midrash reads Yitzchak's blessing as mikra, mishnah, halachah and aggadah, why does the Torah phrase it as dew, the fat of the land, grain and wine?",
+        "yi": "אויב דער מדרש טייטשט יצחק'ס ברכה אויף מקרא, משנה, הלכה און אגדה, פארוואס שרייבט די תורה עס מיט טל, שמני הארץ, דגן און תירוש?"
+      },
+      "answer": {
+        "en": "Because food grown and prepared in kedushah, like the produce of Eretz Yisrael, brings the one who eats it to Torah, so a blessing of such grain and wine is a blessing of halachah and aggadah.",
+        "yi": "ווייל עסן וואס וואקסט און ווערט צוגעגרייט אין קדושה, ווי די פירות פון ארץ ישראל, ברענגט דעם וואס עסט עס צו תורה, ממילא איז א ברכה פון אזא דגן און תירוש א ברכה פון הלכה און אגדה."
+      },
+      "questionSegs": [32, 33],
+      "answerSegs": [72, 75, 76],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "How could Yitzchak eat food from Esav, whose shechitah was invalid, when Hashem does not let tzaddikim stumble through forbidden food?",
+        "yi": "ווי אזוי האט יצחק געקענט עסן עשו'ס עסן, ווען עשו'ס שחיטה איז געווען נבילה, און דער אייבערשטער לאזט נישט צדיקים נכשל ווערן אין מאכלות אסורות?"
+      },
+      "answer": {
+        "en": "Rivka slaughtered and prepared the food herself, and Esav only brought it in to his father.",
+        "yi": "רבקה האט אליין געשחט'ן און צוגעגרייט דאס עסן, און עשו האט עס נאר אריינגעברענגט צום טאטן."
+      },
+      "questionSegs": [46, 48, 50],
+      "answerSegs": [56, 57, 58],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "How could Yitzchak be misled into thinking Esav was a tzaddik?",
+        "yi": "ווי אזוי האט יצחק זיך געקענט טועה זיין צו האלטן עשו'ן פאר א צדיק?"
+      },
+      "answer": {
+        "en": "He saw Esav behaving like a gentile, yet tasted great kedushah in the food Esav brought, so he concluded Esav was a hidden tzaddik.",
+        "yi": "ער האט געזען אז עשו פירט זיך ווי א גוי, אבער ער האט געשפירט א גרויסע קדושה אין דעם עסן וואס עשו האט געברענגט, האט ער געהאלטן אז עשו איז א צדיק נסתר."
+      },
+      "questionSegs": [51],
+      "answerSegs": [58, 59, 60, 61],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "What does 'chayom', 'this day', mean in Yaakov's request to buy the bechorah?",
+        "yi": "וואס מיינט \"כיום\" אין יעקב'ס בקשה צו קויפן די בכורה?"
+      },
+      "answer": {
+        "en": "By the rasha's view of 'today' as the time to eat before one dies, the bechorah is worthless, so Esav should sell it, and he agreed.",
+        "yi": "לויט דעם רשע'ס שיטה אז היום איז די צייט צו עסן איידער מ'שטארבט, איז די בכורה גארנישט ווערט, דארף ער זי פארקויפן, און עשו האט מסכים געווען."
+      },
+      "questionSegs": [78],
+      "answerSegs": [82, 83],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav praises ehrliche women who say 'lekavod Shabbos kodesh' over everything they do while cooking for Shabbos.",
+        "yi": "דער משגיח לויבט ערליכע אידישע פרויען וואס זאגן \"לכבוד שבת קודש\" ביי יעדע זאך וואס זיי טוען ווען זיי קאכן לכבוד שבת."
+      },
+      "evidence": { "segs": [40], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that when a G-d-fearing housewife prepares food so that her husband and children can learn and keep mitzvos, kedushah enters the food, and her children learn better and have more yiras Shamayim.",
+        "yi": "דער משגיח זאגט אז ווען א ערליכע בעלת הבית גרייט צו עסן כדי איר מאן און קינדער זאלן קענען לערנען און מקיים זיין מצוות, גייט אריין קדושה אין דעם עסן, און די קינדער לערנען בעסער און האבן מער יראת שמים."
+      },
+      "evidence": { "segs": [45, 67, 68], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "parshas toldos",
+    "brachah as increase",
+    "the strength of the doer in his work",
+    "kedushah in food",
+    "Yitzchak's matamim",
+    "Rivka and the food of Esav",
+    "hidden tzaddik",
+    "produce of Eretz Yisrael",
+    "sale of the bechorah",
+    "today and tomorrow in avodas Hashem"
+  ],
+  "concepts": [
+    { "he": "כח הפועל בנפעל", "heardAs": ["כח הפועל בנפל", "כוח הפיל בנפל", "כח הפעל בנפל", "כח הפעל בעל הנפל"] },
+    { "he": "מטעמים", "heardAs": ["מטעמים", "מצטמים", "מתאמן"] },
+    { "he": "צדיק נסתר", "heardAs": ["צדיק מסתר", "נסתר"] },
+    { "he": "מוסיף והולך", "heardAs": ["מסוף והולך", "מוסד בהולך"] },
+    { "he": "לכבוד שבת קודש", "heardAs": ["לכבוד שבת קודש"] },
+    { "he": "מכרה כיום את בכורתך לי", "heardAs": ["נכא כי יום אז בחורותך לי"] },
+    { "he": "היום לעשותם ומחר לקבל שכרם", "heardAs": ["היומ'ל הסתם ומאכל לכביל סחרים", "היום לעת אתן ומאכל לקבל זכרון"] },
+    { "he": "נבילה", "heardAs": ["נעוועלע", "נעבעלה", "נבאלה"] },
+    { "he": "כיבוד אב", "heardAs": ["כיבוד אב", "כיבוד דוד"] },
+    { "he": "יוונים", "heardAs": ["יוונים", "יאוון"] }
+  ],
+  "people": [
+    { "name": "Yitzchak Avinu", "heardAs": ["יצחק", "היסחק"] },
+    { "name": "Rivka", "heardAs": ["רבקה"] },
+    { "name": "Yaakov", "heardAs": ["יעקב", "יענקי", "יענגיב"] },
+    { "name": "Esav", "heardAs": ["אסף", "עסב", "אסאב", "עשה", "יוסף"] },
+    { "name": "the Levushei Srad", "heardAs": ["לבשי שרד", "לבשה'ס ראד", "לבשר ישכר"] },
+    { "name": "the Yismach Moshe", "heardAs": ["ישמח משה"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["בעל שם טוב הק'"] },
+    { "name": "the Chozeh of Lublin", "heardAs": ["לובלינער", "חזרון פון לובלין"] },
+    { "name": "Reb Yechezkel of Kuzmir", "heardAs": ["רבי חזקאלע קאזמירא"] },
+    { "name": "Dama ben Nesina", "heardAs": ["דמה בנתיני"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair for narrative but very poor on quotations and names (Esav often heard as 'אסף' or even 'יוסף'). The details of the Levushei Srad story (segs 23-27) and the Yismach Moshe story are partly garbled, and segment 30 ends in a long repeat run. The Rav's remarks on Shulchan Aruch and Chanukah (seg 11), on the sixth aliyah (segs 12-14) and on Esav and the color red with mazal Ma'adim (segs 77-78) could not be fully recovered; the source the ASR attributes 'koach hapo'el banif'al' to (seg 33) is uncertain."
+}

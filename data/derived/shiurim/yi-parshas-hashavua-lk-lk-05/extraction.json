@@ -1,0 +1,607 @@
+{
+  "shiurId": "yi-parshas-hashavua-lk-lk-05",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "Opening from Lech Lecha, where the history of the Avos and of the Jewish people begins, the Rav explains why the great test of the generation before Moshiach is emunah and how a person should fight thoughts of doubt.",
+      "yi": "דער משגיח עפנט מיט פרשת לך לך, וואו עס הייבט זיך אן די געשיכטע פון די אבות און פונעם אידישן פאלק, און ערקלערט פארוואס דער גרעסטער נסיון פונעם דור פאר משיח איז אמונה, און ווי אזוי א איד זאל קעמפן קעגן מחשבות פון ספקות."
+    },
+    "abstract": {
+      "en": "The Rav opens with Rabbi Pinchas of Koretz: until Lech Lecha the world was a world of ruin, and with Lech Lecha, the promise of Eretz Yisrael, the bris bein habesarim and bris milah, the world of repair begins. From there he turns to the great test of today, emunah, which is the foundation of all mitzvos. Our generation is the 'heels' of the body of Klal Yisrael, yet all generations stand on it, and Hashem measures a person by his effort in his own generation, as the Arizal told Rabbi Chaim Vital. Jews today are thrown into a sea of heresy, and every bochur who stays guarded protects all of Klal Yisrael. Each generation has its own test, as the Divrei Chaim said of tzitzis. Doubts must not be debated but pushed out, like a fly that only sinks deeper into a spider's web. A person should accept mesiras nefesh, bind himself to Klal Yisrael and the Avos, know that Amalek is safek, never despair, and strengthen mind and heart with Torah and tefillah.",
+      "yi": "דער משגיח עפנט מיט א ווארט פון ר' פנחס קאריצער: ביז לך לך איז די וועלט געווען א וועלט פון קלקול, און מיט לך לך, מיט די הבטחה פון ארץ ישראל, ברית בין הבתרים און ברית מילה, הייבט זיך אן דער עולם התיקון. פון דארט גייט ער איבער צום גרעסטן נסיון פון היינט, אמונה, וואס איז דער יסוד פון אלע מצוות. אונזער דור איז די עקבים פונעם גוף פון כלל ישראל, אבער אלע דורות שטייען אויף אים, און דער אייבערשטער מעסט א מענטש לויט זיין ארבעט אין זיין דור, אזוי ווי דער אריז\"ל האט געזאגט פאר ר' חיים וויטאל. אידן זענען היינט אריינגעווארפן אין א ים פון אפיקורסות, און יעדער בחור וואס היט זיך אפ איז מגין אויף כלל ישראל. יעדער דור האט זיין נסיון, ווי דער דברי חיים האט געזאגט וועגן ציצית. מיט ספקות טאר מען זיך נישט אריינלאזן אין א ויכוח, נאר זיי ארויסשטופן, ווי א פליג וואס פארפלאנטערט זיך נאך מער אין א שפינוועב. מ'זאל מקבל זיין מסירת נפש, זיך משתתף זיין מיט כלל ישראל און די אבות, וויסן אז עמלק איז ספק, זיך קיינמאל נישט מייאש זיין, און מחזק זיין מוח און הארץ מיט תורה און תפילה."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "With Lech Lecha the world of ruin ends and the world of repair begins, and every Jew should then renew his covenant with the Ribono shel Olam.",
+          "yi": "מיט לך לך ענדיגט זיך דער עולם התוהו און עס הייבט זיך אן דער עולם התיקון, און יעדער איד דארף דעמאלט מאכן א נייעם ברית מיטן רבונו של עולם."
+        },
+        "evidence": { "segs": [0, 2, 3], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Emunah is the foundation of all the mitzvos, and the generation before Moshiach, the foundation of all generations, is tested above all in emunah.",
+          "yi": "אמונה איז דער יסוד פון אלע מצוות, און דער דור פאר משיח, וואס איז דער יסוד פון אלע דורות, ווערט בעיקר גע'נסה'ט אין אמונה."
+        },
+        "evidence": { "segs": [6, 24, 25, 36], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Our generation is the 'heels' of Klal Yisrael, yet the whole body stands on them, and the lowest generation is the one that will receive Moshiach.",
+          "yi": "אונזער דור איז די עקבים פון כלל ישראל, אבער דער גאנצער גוף שטייט אויף זיי, און דער נידעריגסטער דור איז דער וואס וועט מקבל זיין משיח."
+        },
+        "evidence": { "segs": [8, 9, 14], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Thoughts of doubt must not be answered or argued with; they must be pushed out of the mind and rejected outright.",
+          "yi": "מחשבות פון ספקות טאר מען נישט ענטפערן און נישט מתווכח זיין מיט זיי; מ'דארף זיי ארויסשטופן פונעם קאפ און זיי גלאט אפווארפן."
+        },
+        "evidence": { "segs": [39, 41, 43, 49], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Every Jew has a set time for his own redemption from these tests, and through prayer and accepting mesiras nefesh he can bring it sooner.",
+          "yi": "יעדער איד האט א באשטימטע צייט פאר זיין אייגענע גאולה פון די נסיונות, און מיט תפילה און קבלת מסירת נפש קען ער זי מקרב זיין."
+        },
+        "evidence": { "segs": [53, 55, 58, 59, 61], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "The battle against doubts in emunah is the war against Amalek, whose name equals 'safek' in gematria.",
+          "yi": "די מלחמה קעגן ספקות אין אמונה איז מלחמת עמלק, ווייל עמלק איז בגימטריא ספק."
+        },
+        "evidence": { "segs": [66, 67], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Torah cleanses the mind and tefillah strengthens the heart, and a person needs both.",
+          "yi": "תורה רייניגט אויס דעם מוח און תפילה שטארקט דאס הארץ, און מ'דארף האבן ביידע."
+        },
+        "evidence": { "segs": [83, 84, 85, 86], "confidence": 0.85 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-05-lech-lecha",
+      "startSeg": 0,
+      "endSeg": 6,
+      "title": {
+        "en": "Lech Lecha begins the world of repair",
+        "yi": "לך לך הייבט אן דעם עולם התיקון"
+      },
+      "summary": {
+        "en": "The Rav brings Rabbi Pinchas of Koretz that until Lech Lecha the world was one of ruin, and with Lech Lecha the good parshiyos begin. He turns to today's tests in emunah and the dispute between the Rambam and the Ramban whether emunah is a mitzvah or the foundation of all mitzvos.",
+        "yi": "דער משגיח ברענגט פון ר' פנחס קאריצער אז ביז לך לך איז די וועלט געווען א וועלט פון קלקול, און מיט לך לך הייבן זיך אן די גוטע פרשיות. ער גייט איבער צו די היינטיגע נסיונות אין אמונה און צו דער מחלוקת צווישן דעם רמב\"ם און דעם רמב\"ן צי אמונה איז א מצוה אדער דער יסוד פון אלע מצוות."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-05-lech-lecha",
+      "startSeg": 7,
+      "endSeg": 14,
+      "title": {
+        "en": "Our generation as the heels of Klal Yisrael",
+        "yi": "אונזער דור, די עקבים פון כלל ישראל"
+      },
+      "summary": {
+        "en": "Answering the complaint that ours are small generations, the Rav compares Klal Yisrael to a body that stands on its heels. He tells how the Arizal explained to Rabbi Chaim Vital that Hashem measures by the generation, and says Moshiach comes to the lowest generation, which then becomes the greatest.",
+        "yi": "אויף דער טענה אז מיר זענען קליינע דורות, גלייכט דער משגיח כלל ישראל צו א גוף וואס שטייט אויף די עקבים. ער דערציילט ווי דער אריז\"ל האט ערקלערט פאר ר' חיים וויטאל אז דער אייבערשטער מעסט לויטן דור, און זאגט אז משיח קומט צום נידעריגסטן דור, וואס ווערט דעמאלט דער גרעסטער."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-05-lech-lecha",
+      "startSeg": 15,
+      "endSeg": 26,
+      "title": {
+        "en": "Thrown into a sea of tests",
+        "yi": "אריינגעווארפן אין א ים פון נסיונות"
+      },
+      "summary": {
+        "en": "The Rav contrasts the separated life of Jews in the old shtetlach with today's exposure to a world without emunah or tznius, comparing it to a child thrown into the sea. He stresses how precious a guarded bochur is in Heaven, recalling the ten tzaddikim that could have saved each city of Sedom, and says emunah is acquired through learning, davening, chessed and guarding oneself.",
+        "yi": "דער משגיח שטעלט אוועק דאס אפגעזונדערטע לעבן פון אידן אין די אלטע שטעטלעך קעגן דעם היינטיגן אויסגעשטעלט זיין צו א וועלט אן אמונה און אן צניעות, און גלייכט עס צו א קינד וואס מ'ווארפט אריין אין ים. ער באטאנט ווי טייער א בחור וואס היט זיך אפ איז אין הימל, דערמאנענדיג די צען צדיקים וואס וואלטן געקענט ראטעווען יעדע שטאט פון סדום, און זאגט אז אמונה באקומט מען דורך לערנען, דאווענען, חסד און זיך אפהיטן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-05-lech-lecha",
+      "startSeg": 27,
+      "endSeg": 37,
+      "title": {
+        "en": "Two souls and each generation's test",
+        "yi": "צוויי נשמות און דער נסיון פון יעדן דור"
+      },
+      "summary": {
+        "en": "Bringing the Tanya, the Rav explains that bad thoughts come from the second soul, not from the G-dly soul, so a person should not be shaken by them but fight them. He then says each generation has its own test, telling how the Divrei Chaim named tzitzis as the test of his time and the machine-tzitzis factory later burned, and that today the test is emunah, fed by the newspapers and magazines of the nations.",
+        "yi": "דער משגיח ברענגט דעם תניא און ערקלערט אז שלעכטע מחשבות קומען פון דער צווייטער נפש און נישט פון דער נשמה, דעריבער זאל מען נישט דערשראקן ווערן נאר זיך שלאגן מיט זיי. דערנאך זאגט ער אז יעדער דור האט זיין נסיון, דערציילט ווי דער דברי חיים האט געזאגט אז דער נסיון פון זיין צייט איז ציצית און די פאבריק פון מאשין ציצית איז שפעטער פארברענט געווארן, און אז היינט איז דער נסיון אמונה, געשפייזט פון די צייטונגען און מאגאזינען פון די גוים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-05-lech-lecha",
+      "startSeg": 38,
+      "endSeg": 50,
+      "title": {
+        "en": "Do not debate the yetzer hara",
+        "yi": "נישט מתווכח זיין מיטן יצר הרע"
+      },
+      "summary": {
+        "en": "The Rav teaches that doubts must not be answered with proofs, comparing one who struggles with them to a fly trapped in a spider's web. Instead one should reject the yetzer hara outright, recalling that he comes from a people who gave their lives for Hashem, from Avraham in the fire to Chananya, Mishael and Azarya and the Jews of France. Like Avraham Avinu to the Satan, one should call him a liar, even if the thoughts persist for weeks or years.",
+        "yi": "דער משגיח לערנט אז ספקות טאר מען נישט ענטפערן מיט ראיות, און גלייכט דעם וואס ראנגלט זיך מיט זיי צו א פליג וואס איז געכאפט אין א שפינוועב. נאר מ'זאל דעם יצר הרע גלאט אפווארפן, און געדענקען אז מ'שטאמט פון א פאלק וואס האט זיך מוסר נפש געווען פארן רבונו של עולם, פון אברהם אין פייער ביז חנניה מישאל ועזריה און די אידן אין פראנקרייך. אזוי ווי אברהם אבינו צום שטן, זאל מען אים אנרופן א ליגנער, אפילו ווען די מחשבות האלטן אן וואכן אדער יארן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-05-lech-lecha",
+      "startSeg": 51,
+      "endSeg": 61,
+      "title": {
+        "en": "A private redemption from the tests",
+        "yi": "א פרטיותדיגע גאולה פון די נסיונות"
+      },
+      "summary": {
+        "en": "The Rav explains that such thoughts may come as a tikun for sins of this or a previous gilgul, and each person has a measured time after which his private redemption comes and emunah shines clearly. Like the redemption of Klal Yisrael, which comes early if they merit, a person can hasten his own through prayer and by accepting mesiras nefesh, especially at Shema.",
+        "yi": "דער משגיח ערקלערט אז אזעלכע מחשבות קענען קומען אלס תיקון פאר עבירות פון דעם אדער פון א פריערדיגן גלגול, און יעדער האט א אפגעמאסטענע צייט, נאך וואס קומט זיין פרטיותדיגע גאולה און די אמונה שיינט קלאר. אזוי ווי די גאולה פון כלל ישראל קומט פריער אויב מ'איז זוכה, קען א מענטש מקרב זיין זיין אייגענע גאולה מיט תפילה און מיט קבלת מסירת נפש, בפרט ביי קריאת שמע."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-05-lech-lecha",
+      "startSeg": 62,
+      "endSeg": 71,
+      "title": {
+        "en": "The war against Amalek, the war on doubt",
+        "yi": "מלחמת עמלק, די מלחמה קעגן ספק"
+      },
+      "summary": {
+        "en": "The Rav says one may offer to give up one's bechirah in emunah and should bind oneself to Klal Yisrael, the tzaddikim and the Avos, since the doubts are a spirit of folly. He explains that fighting them is the war against Amalek, whose gematria is 'safek', bringing 'hayesh Hashem bekirbenu' before Amalek came and the nachash's deception of Chava, and ends with emunah as the first of the Ten Commandments.",
+        "yi": "דער משגיח זאגט אז מ'קען מוותר זיין אויף דער בחירה אין אמונה, און מ'זאל זיך משתתף זיין מיט כלל ישראל, די צדיקים און די אבות, ווייל די ספקות זענען א רוח שטות. ער ערקלערט אז זיך שלאגן מיט זיי איז מלחמת עמלק, וואס איז בגימטריא ספק, ברענגט \"היש ה' בקרבנו\" פאר עמלק איז געקומען און ווי דער נחש האט פארפירט חוה, און ענדיגט מיט אמונה אלס דער ערשטער פון די עשרת הדברות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-05-lech-lecha",
+      "startSeg": 72,
+      "endSeg": 79,
+      "title": {
+        "en": "Doubts, decrees and starting again",
+        "yi": "ספקות, גזירות און נאכאמאל אנהייבן"
+      },
+      "summary": {
+        "en": "The Rav says doubts can come when a harsh decree hangs over a person, and pushing them away annuls the decree. One must never despair but always begin again, for Hashem wants to bring the wicked close and helps against the yetzer. He adds that tzaddikim foretold such thoughts before Moshiach and compares the bochurim to soldiers sent to war who must not fear.",
+        "yi": "דער משגיח זאגט אז ספקות קענען קומען ווען עס הענגט א גזירה אויף א מענטש, און ווען מ'שטופט זיי אוועק איז מען מבטל די גזירה. מ'טאר זיך קיינמאל נישט מייאש זיין נאר אלעמאל אנהייבן פון דאס ניי, ווייל דער אייבערשטער וויל מקרב זיין די רשעים און העלפט קעגן דעם יצר הרע. ער לייגט צו אז צדיקים האבן פאראויסגעזאגט אזעלכע מחשבות פאר משיח, און גלייכט די בחורים צו סאלדאטן וואס מ'שיקט אין מלחמה און וואס טארן נישט מורא האבן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-05-lech-lecha",
+      "startSeg": 80,
+      "endSeg": 88,
+      "title": {
+        "en": "The spark of love, Torah and tefillah",
+        "yi": "דער ניצוץ פון אהבה, תורה און תפילה"
+      },
+      "summary": {
+        "en": "The Rav says no flood can extinguish a Jew's love for Hashem; it can only be covered, and one must uncover the spark. Every test passed earns a medal, and learning with hasmadah cleans the mind like erev Pesach cleaning. He closes that Torah is the mind and tefillah the heart, both are needed, and the victory has been promised.",
+        "yi": "דער משגיח זאגט אז קיין מבול קען נישט אויסלעשן די אהבה פון א איד צום אייבערשטן; מ'קען זי נאר צודעקן, און מ'דארף אויפדעקן דעם ניצוץ. יעדער נסיון וואס מ'שטייט איין ברענגט א מעדאל, און לערנען מיט התמדה רייניגט אויס דעם מוח ווי דאס רייניגן ערב פסח. ער ענדיגט אז תורה איז דער מוח און תפילה דאס הארץ, מ'דארף ביידע, און דער נצחון איז צוגעזאגט."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "שוין פון ר' פינחס'ער קארצע",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [0], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער רמב״ם האלט אז אמונה איז די מצוה ... עניך ה' אלהי ככה",
+      "work": "Sefer HaMitzvos",
+      "ref": "Sefer HaMitzvos, positive commandment 1",
+      "sefariaRef": "Sefer HaMitzvot, Positive Commandments 1",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [5], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "און דער רמב״ן זאגט, עס איז נישט קיין מצוה",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [5, 6], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ראגלי משיח ... די עקווות פון די משיחים",
+      "work": "Gemara Sotah",
+      "ref": "Sotah 49b",
+      "sefariaRef": "Sotah 49b",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [9, 13], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "פינף זינדיגע שטעט. סטום, עבורה, אדמו'ל, צבי'ום און צוהר ... צען צדיקים",
+      "work": "Bereishis",
+      "ref": "Bereishis 18:24-32",
+      "sefariaRef": "Genesis 18:24-32",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [21, 22], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "להודיע לבני אדם גבורותיו",
+      "work": "Tehillim",
+      "ref": "Tehillim 145:12",
+      "sefariaRef": "Psalms 145:12",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [23], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "די תניא זאגט ... א נפש די קדושה און א נפש די סדכי אחת",
+      "work": "Tanya",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [27, 28, 30], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער דברי חיים האט געזאגט אז אין זיין דור איז דער נסיון ציצית",
+      "work": "Divrei Chaim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [32, 34, 35], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דא מנובל ... די תניא זאגט עס",
+      "work": "Tanya",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [42, 43], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "דניאל, נחנניאל און מישאל וואזאריע",
+      "work": "Daniel",
+      "ref": "Daniel 3",
+      "sefariaRef": "Daniel 3",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [48], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אזוי ווי דער גמרא זאגט, בעיטה אחי שם ... זכא אחושנה, לזכא את בעוטה",
+      "work": "Gemara Sanhedrin",
+      "ref": "Sanhedrin 98a",
+      "sefariaRef": "Sanhedrin 98a",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [55, 56, 57], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דניי הבעיה בכל נפשך",
+      "work": "Devarim",
+      "ref": "Devarim 6:5",
+      "sefariaRef": "Deuteronomy 6:5",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [60, 61], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "א מלוק איז בגימטריא ספק, שטעט אין ספרים",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [67], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "אזוי שטעט אין פרשת בשלח ... היש השם בקרבנא ומאין ... ויאבי המלך",
+      "work": "Shemos",
+      "ref": "Shemos 17:7-8",
+      "sefariaRef": "Exodus 17:7-8",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [66, 68], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "הנחש השיינו ואוכל",
+      "work": "Bereishis",
+      "ref": "Bereishis 3:13",
+      "sefariaRef": "Genesis 3:13",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [68, 69], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ונחי ה' לכך ... אשר את ישיח ומארץ מצרים",
+      "work": "Shemos",
+      "ref": "Shemos 20:2",
+      "sefariaRef": "Exodus 20:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [70, 71], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "טוב השם לכל, ורחמי וכל מיינסך",
+      "work": "Tehillim",
+      "ref": "Tehillim 145:9",
+      "sefariaRef": "Psalms 145:9",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [74], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "וממלא קדוש ברכה עוזרי עיני יאכלי",
+      "work": "Gemara Kiddushin",
+      "ref": "Kiddushin 30b",
+      "sefariaRef": "Kiddushin 30b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [75], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "מיים רבים, וליאכלה לכבות את האהבה, ונהרות לאישתפעה",
+      "work": "Shir HaShirim",
+      "ref": "Shir HaShirim 8:7",
+      "sefariaRef": "Song of Songs 8:7",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [79, 80], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "עמך וצמר איתך",
+      "work": "Tehillim",
+      "ref": "Tehillim 79:13",
+      "sefariaRef": "Psalms 79:13",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [81], "confidence": 0.7 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The lowly last generation is the heel on which the whole body of Klal Yisrael stands, and Moshiach comes specifically to it, making the lowest generation the greatest.",
+        "yi": "דער נידעריגער לעצטער דור איז די עקב וואס דער גאנצער גוף פון כלל ישראל שטייט אויף איר, און משיח קומט דוקא צו אים, אזוי אז דער נידעריגסטער דור ווערט דער גרעסטער."
+      },
+      "evidence": { "segs": [8, 14], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "Hashem measures a person by how hard he works in avodas Hashem within his own generation, which is why the Arizal could call Rabbi Chaim Vital greater than earlier giants.",
+        "yi": "דער אייבערשטער מעסט א מענטש לויט ווי שטארק ער ארבעט אין עבודת השם אין זיין אייגענעם דור, און דעריבער האט דער אריז\"ל געקענט זאגן אז ר' חיים וויטאל איז גרעסער פון די פריערדיגע גדולים."
+      },
+      "evidence": { "segs": [10, 11, 12], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The test of a generation falls on the mitzvah it was created to fulfill; since the last generation is the foundation of all generations, its test is emunah, the foundation of all mitzvos.",
+        "yi": "דער נסיון פון א דור פאלט אויף דער מצוה וואס דער דור איז באשאפן געווארן מקיים צו זיין; ווייל דער לעצטער דור איז דער יסוד פון אלע דורות, איז זיין נסיון אמונה, דער יסוד פון אלע מצוות."
+      },
+      "evidence": { "segs": [24, 32, 34, 36], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Struggling to disprove a doubt only entangles a person further, like a fly that sinks deeper into a spider's web the harder it pulls.",
+        "yi": "ווען מ'פרובירט אפצופרעגן א ספק מיט ראיות, פארפלאנטערט מען זיך נאך מער, ווי א פליג וואס ווערט אלץ מער צוגעקלעפט אין א שפינוועב וואס מער זי רייסט זיך."
+      },
+      "evidence": { "segs": [39, 40, 41], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "Doubts in emunah may signal a decree hanging over a person, and pushing them away annuls the decree.",
+        "yi": "ספקות אין אמונה קענען זיין א סימן אז עס הענגט א גזירה אויף א מענטש, און ווען מ'שטופט זיי אוועק איז מען מבטל די גזירה."
+      },
+      "evidence": { "segs": [72, 73], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Learning Torah with hasmadah cleans out the mind like erev Pesach cleaning, driving out bad thoughts.",
+        "yi": "לערנען מיט התמדה רייניגט אויס דעם מוח ווי דאס רייניגן ערב פסח, און טרייבט ארויס די שלעכטע מחשבות."
+      },
+      "evidence": { "segs": [83, 84], "confidence": 0.85 }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "The Arizal and Rabbi Chaim Vital",
+        "yi": "דער אריז\"ל און ר' חיים וויטאל"
+      },
+      "retelling": {
+        "en": "The Arizal used to tell his disciple Rabbi Chaim Vital how great he was, greater than earlier generations. Rabbi Chaim Vital asked how that could be, since the earlier generations were so great. The Arizal answered that Hashem measures by the generation: in these times one cannot have ruach hakodesh as before, but had he lived in the earlier generations he would have been greater than them.",
+        "yi": "דער אריז\"ל האט געפלעגט זאגן פאר זיין תלמיד ר' חיים וויטאל ווי גרויס ער איז, גרעסער ווי פריערדיגע דורות. ר' חיים וויטאל האט געפרעגט ווי אזוי קען דאס זיין, די פריערדיגע דורות זענען דאך געווען אזוי גרויס. האט דער אריז\"ל געענטפערט אז דער אייבערשטער מעסט לויטן דור: אין די היינטיגע צייטן קען מען נישט האבן רוח הקודש ווי פריער, אבער ווען ער וואלט געלעבט אין די פריערדיגע דורות וואלט ער געווען גרעסער פון זיי."
+      },
+      "people": ["the Arizal", "Rabbi Chaim Vital"],
+      "evidence": { "segs": [10, 11, 12], "confidence": 0.8 }
+    },
+    {
+      "title": {
+        "en": "The Divrei Chaim and the machine-tzitzis factory",
+        "yi": "דער דברי חיים און די פאבריק פון מאשין ציצית"
+      },
+      "retelling": {
+        "en": "The Divrei Chaim said that the test of his generation was tzitzis. At that time a large factory made tzitzis by machine, and since tzitzis must be made by hand lishmah, they were invalid, and the whole country was flooded with them. Asked about them, the Divrei Chaim ruled them invalid, and the one who printed his work noted that some time later the factory burned down with great loss.",
+        "yi": "דער דברי חיים האט געזאגט אז דער נסיון פון זיין דור איז ציצית. דעמאלט האט מען געמאכט א גרויסע פאבריק פון ציצית מיט א מאשין, און ווייל ציצית דארפן געמאכט ווערן לשמה מיט דער האנט זענען זיי געווען פסול, און מ'האט פארפלייצט די גאנצע מדינה מיט זיי. ווען מ'האט אים געפרעגט, האט דער דברי חיים זיי פסול'ט, און דער וואס האט אפגעדרוקט זיין ספר שרייבט צו אז אביסל שפעטער איז די פאבריק פארברענט געווארן מיט א גרויסן היזק."
+      },
+      "people": ["the Divrei Chaim"],
+      "evidence": { "segs": [32, 33, 34, 35], "confidence": 0.75 }
+    },
+    {
+      "title": {
+        "en": "The Jews of France who would not convert",
+        "yi": "די אידן אין פראנקרייך וואס האבן זיך נישט געשמדט"
+      },
+      "retelling": {
+        "en": "In France, the Rav relates, Jews were told that whoever would not convert would be thrown into the river, and thousands were thrown in rather than convert. Others were gathered into their shuls, which were set on fire, and the Jews let themselves be burned together with the shul.",
+        "yi": "אין פראנקרייך, דערציילט דער משגיח, האט מען געזאגט פאר אידן אז ווער עס שמדט זיך נישט, ווארפט מען אים אריין אין טייך, און טויזנטער אידן זענען אריינגעווארפן געווארן און האבן זיך נישט געשמדט. אנדערע האט מען צונויפגענומען אין זייערע בתי כנסיות און זיי אנגעצונדן, און די אידן האבן זיך געלאזט פארברענען צוזאמען מיטן בית הכנסת."
+      },
+      "people": [],
+      "evidence": { "segs": [46, 47], "confidence": 0.8 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "How can our small, low generations be of any worth compared to earlier ones?",
+        "yi": "וואס איז די חשיבות פון אונזערע קליינע נידעריגע דורות קעגן די פריערדיגע?"
+      },
+      "answer": {
+        "en": "They are the heels on which the whole body stands; all generations stand on them, and Moshiach comes to the lowest generation.",
+        "yi": "זיי זענען די עקבים וואס דער גאנצער גוף שטייט אויף זיי; אלע דורות שטייען אויף זיי, און משיח קומט צום נידעריגסטן דור."
+      },
+      "questionSegs": [7],
+      "answerSegs": [8, 9, 14],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "How could the Arizal say Rabbi Chaim Vital was greater than the great earlier generations?",
+        "yi": "ווי אזוי האט דער אריז\"ל געקענט זאגן אז ר' חיים וויטאל איז גרעסער ווי די גרויסע פריערדיגע דורות?"
+      },
+      "answer": {
+        "en": "Hashem measures by the generation and by how much one works; had he lived then he would have been greater.",
+        "yi": "דער אייבערשטער מעסט לויטן דור און לויט וויפיל מ'ארבעט; ווען ער וואלט געלעבט דעמאלט וואלט ער געווען גרעסער."
+      },
+      "questionSegs": [10],
+      "answerSegs": [11, 12],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why are the tests in emunah so great in our generation?",
+        "yi": "פארוואס זענען די נסיונות אין אמונה אזוי גרויס אין אונזער דור?"
+      },
+      "answer": {
+        "en": "Because emunah is the foundation of all mitzvos and our generation is the foundation of all generations.",
+        "yi": "ווייל אמונה איז דער יסוד פון אלע מצוות און אונזער דור איז דער יסוד פון אלע דורות."
+      },
+      "questionSegs": [24],
+      "answerSegs": [24, 25],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Should a person try to answer thoughts of doubt with proofs?",
+        "yi": "זאל מען פרובירן ענטפערן מחשבות פון ספקות מיט ראיות?"
+      },
+      "answer": {
+        "en": "No; the Satan can bring proofs from every source, so one must push the thoughts out and reject him without debate.",
+        "yi": "ניין; דער שטן קען ברענגען ראיות פון אלע ספרים, דעריבער דארף מען די מחשבות ארויסשטופן און אים אפווארפן אן א ויכוח."
+      },
+      "questionSegs": [39],
+      "answerSegs": [41, 42, 43],
+      "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says that when doubts come one should not argue with them but push them out of the mind and reject the yetzer hara outright.",
+        "yi": "דער משגיח זאגט אז ווען ספקות קומען זאל מען זיך נישט אריינלאזן מיט זיי אין א ויכוח, נאר זיי ארויסשטופן פונעם קאפ און דעם יצר הרע גלאט אפווארפן."
+      },
+      "evidence": { "segs": [41, 43, 49], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "He says one should accept mesiras nefesh every day, at the reading of Shema, and pray for the time of the tests to be shortened.",
+        "yi": "ער זאגט אז מ'זאל יעדן טאג מקבל זיין מסירת נפש ביי קריאת שמע, און בעטן אז די צייט פון די נסיונות זאל פארקירצט ווערן."
+      },
+      "evidence": { "segs": [59, 60, 61, 62], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He says one should include oneself in Klal Yisrael, the tzaddikim of the generation and the Avos.",
+        "yi": "ער זאגט אז מ'זאל זיך משתתף זיין מיט כלל ישראל, מיט די צדיקי הדור און מיט די אבות."
+      },
+      "evidence": { "segs": [64, 65], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He says one must never despair but always be ready to begin again.",
+        "yi": "ער זאגט אז מ'טאר זיך קיינמאל נישט מייאש זיין, נאר אלעמאל גרייט זיין אנצוהייבן פון דאס ניי."
+      },
+      "evidence": { "segs": [73, 74], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "He says to learn with hasmadah and daven with kavanah, strengthening the mind through Torah and the heart through tefillah.",
+        "yi": "ער זאגט אז מ'זאל לערנען מיט התמדה און דאווענען מיט כוונה, און מחזק זיין דעם מוח מיט תורה און דאס הארץ מיט תפילה."
+      },
+      "evidence": { "segs": [83, 84, 85, 86], "confidence": 0.85 }
+    }
+  ],
+  "candidateTopics": [
+    "parshas Lech Lecha",
+    "nisyonos in emunah",
+    "the generation of ikvesa d'meshicha",
+    "fighting thoughts of doubt",
+    "war against Amalek",
+    "mesiras nefesh",
+    "personal redemption",
+    "Torah and tefillah"
+  ],
+  "concepts": [
+    { "he": "עולם התוהו", "heardAs": ["עולם הטהא"] },
+    { "he": "עולם התיקון", "heardAs": ["עולם אטריקן"] },
+    { "he": "ברית בין הבתרים", "heardAs": ["ברית בן אבסרים"] },
+    { "he": "נסיונות באמונה", "heardAs": ["נסיונות און נאמנה", "נסיעונות און נאמנה"] },
+    { "he": "עקבתא דמשיחא", "heardAs": ["עקוואים", "עקווות פון די משיחים", "ראגלי משיח"] },
+    { "he": "נפש הבהמית", "heardAs": ["נפש די סדכי אחת"] },
+    { "he": "סטרא אחרא", "heardAs": ["סדכה אחת", "סטר רחל"] },
+    { "he": "מסירת נפש", "heardAs": ["מסירת נפש"] },
+    { "he": "קץ הגאולה", "heardAs": ["קיץ הגאול", "קצה גאולה"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבינו שלום", "רבי יושע לעולם", "רביה׳ן ישראלים"] },
+    { "he": "עמלק", "heardAs": ["המלעק", "מלוק"] },
+    { "he": "ספק", "heardAs": ["ספקת", "סופק"] },
+    { "he": "רוח שטות", "heardAs": ["רוח שטות"] }
+  ],
+  "people": [
+    { "name": "Rabbi Pinchas of Koretz", "heardAs": ["ר' פינחס'ער קארצע"] },
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינו"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "the Ramban", "heardAs": ["רמב״ן"] },
+    { "name": "the Arizal", "heardAs": ["ארי הק'", "ארי הקודש"] },
+    { "name": "Rabbi Chaim Vital", "heardAs": ["רבי חיים ויטל"] },
+    { "name": "the Divrei Chaim", "heardAs": ["דברי חיים"] },
+    { "name": "Daniel", "heardAs": ["דניאל"] },
+    { "name": "Chananya, Mishael and Azarya", "heardAs": ["נחנניאל און מישאל וואזאריע"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יעקב אבינו"] },
+    { "name": "Chava", "heardAs": ["חבר"] }
+  ],
+  "asrNotes": "Yiddish ASR fair to poor; pesukim and names are heavily garbled but mostly recoverable from context. Segment 5 is flagged long_sparse but holds coherent speech on the Rambam and Ramban. The tzaddik cited on giving up one's bechirah (seg 63), the opening 'Rav' who was asked about small generations (seg 7), and the closing pesukim (seg 87-88) could not be recovered."
+}

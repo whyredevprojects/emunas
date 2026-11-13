@@ -1,0 +1,454 @@
+{
+  "shiurId": "en-parsha-en-vyshb-02",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains why the halacha that one who raises a child is considered its parent was hidden even from Yaakov Avinu: only so could Yosef face the tests of Eshes Potiphar and become Yosef HaTzaddik, whose holiness protected Klal Yisrael and stands behind Chanukah.",
+      "yi": "דער משגיח ערקלערט פארוואס די הלכה אז ווער עס האדעוועט א קינד ווערט גערעכנט ווי דער טאטע אדער די מאמע איז געווען באהאלטן אפילו פון יעקב אבינו: נאר אזוי האט יוסף געקענט שטיין אין די נסיונות פון אשת פוטיפר און ווערן יוסף הצדיק, וועמענס קדושה האט באשיצט כלל ישראל און שטייט הינטער חנוכה."
+    },
+    "abstract": {
+      "en": "The Rav opens with Yosef's dream of the sheaves and Rashi's reading that Yaakov's words 'your mother' meant Bilhah, who raised Yosef, and asks why Yaakov did not know that whoever raises a child counts as its parent. He then asks why Eshes Potiphar, who meant to bring Moshiach ben Yosef and did not know whether it would come through her or her daughter, did not simply have Yosef marry her daughter. He lays three foundations: Yosef alone earned the title tzaddik by guarding the bris through tests; certain halachos are revealed only in their time; and Asnas was Dinah's daughter, adopted by Potiphar's wife. A long digression applies Torah to the Arab struggle over Eretz Yisrael. The answer: the halacha of adoption stayed hidden so that Yosef would be tested, become a tzaddik, and keep Klal Yisrael pure in Mitzrayim. He closes by linking Chanukah to the holiness of Yosef.",
+      "yi": "דער משגיח עפנט מיט יוסף'ס חלום פון די אלומות און מיט רש\"י אז יעקב'ס ווערטער \"דיין מאמע\" מיינען בלהה, וואס האט אויפגעהאדעוועט יוסף'ן, און ער פרעגט: האט דען יעקב נישט געוואוסט אז ווער עס האדעוועט א קינד איז ווי זיין עלטערן? דערנאך פרעגט ער פארוואס אשת פוטיפר, וואס האט געוואלט ברענגען משיח בן יוסף און נישט געוואוסט צי פון איר אדער פון איר טאכטער, האט נישט פשוט געמאכט אז יוסף זאל חתונה האבן מיט איר טאכטער. ער לייגט אוועק דריי הקדמות: נאר יוסף האט זוכה געווען צום טיטל צדיק דורך שמירת הברית אין נסיונות; געוויסע הלכות ווערן נתגלה נאר אין זייער צייט; און אסנת איז געווען דינה'ס טאכטער, אדאפטירט ביי פוטיפר'ס ווייב. א לאנגע שמועס ווענדט די תורה אן אויף דעם קאמף פון די אראבער אויף ארץ ישראל. דער תירוץ: די הלכה איז געבליבן באהאלטן כדי יוסף זאל האבן די נסיונות, ווערן א צדיק, און היטן כלל ישראל אין מצרים. צום סוף פארבינדט ער חנוכה מיט קדושת יוסף."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Following Rashi, Yaakov's 'your mother' referred to Bilhah who raised Yosef, which raises the question why Yaakov did not know that one who raises a child counts as the parent.",
+          "yi": "לויט רש\"י האט יעקב מיט \"דיין מאמע\" געמיינט בלהה וואס האט יוסף'ן אויפגעהאדעוועט, און דאס ברענגט די קשיא פארוואס יעקב האט נישט געוואוסט אז ווער עס האדעוועט א קינד ווערט גערעכנט ווי די עלטערן."
+        },
+        "evidence": { "segs": [20, 21, 26, 38], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The title tzaddik belongs specifically to Yosef, because he guarded the holiness of the bris through a year of daily tests in Potiphar's house.",
+          "yi": "דער טיטל צדיק געהערט ספעציעל צו יוסף, ווייל ער האט געהיטן די קדושת הברית דורך א גאנץ יאר פון טעגליכע נסיונות אין פוטיפר'ס הויז."
+        },
+        "evidence": { "segs": [109, 112, 140, 153], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Certain halachos given at Sinai remain hidden until their proper time, such as Moavi velo Moavis, revealed only through Boaz.",
+          "yi": "געוויסע הלכות פון סיני בלייבן באהאלטן ביז זייער צייט קומט, למשל מואבי ולא מואבית, וואס איז נתגלה געווארן ערשט דורך בועז."
+        },
+        "evidence": { "segs": [311, 316, 317, 338], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Asnas was not Eshes Potiphar's natural daughter but Dinah's daughter whom she adopted, so she did not know that Asnas counted as her own.",
+          "yi": "אסנת איז נישט געווען אשת פוטיפר'ס אייגענע טאכטער נאר דינה'ס טאכטער וואס זי האט אדאפטירט, און זי האט נישט געוואוסט אז אסנת ווערט גערעכנט ווי איר אייגענע."
+        },
+        "evidence": { "segs": [358, 403, 416, 419], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The whole matter of Chanukah is the victory of the holiness of Yosef, which is why his parshiyos are read in the week of Chanukah.",
+          "yi": "דער גאנצער ענין פון חנוכה איז דער נצחון פון קדושת יוסף, און דערפאר לייענט מען די פרשיות פון יוסף אין דער וואך פון חנוכה."
+        },
+        "evidence": { "segs": [484, 501, 502, 503], "confidence": 0.85 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-parsha-bereshes-09-02-vayeshev-e",
+      "startSeg": 0, "endSeg": 39,
+      "title": { "en": "Alumasi and Yaakov's 'your mother'", "yi": "אלומתי און יעקב'ס \"דיין מאמע\"" },
+      "summary": {
+        "en": "The Rav brings the reading that 'alumasi' in Yosef's dream alludes to Rachel keeping quiet, and asks why only her silence is mentioned. He then brings Rashi that Yaakov's 'your mother' meant Bilhah who raised Yosef, and asks why Yaakov did not know that one who raises a child counts as the parent.",
+        "yi": "דער משגיח ברענגט אז \"אלומתי\" אין יוסף'ס חלום איז א רמז אויף רחל'ס שווייגן, און פרעגט פארוואס מ'דערמאנט נאר איר שווייגן. דערנאך ברענגט ער רש\"י אז יעקב'ס \"דיין מאמע\" מיינט בלהה וואס האט יוסף'ן אויפגעהאדעוועט, און פרעגט פארוואס יעקב האט נישט געוואוסט אז ווער עס האדעוועט א קינד איז ווי די עלטערן."
+      },
+      "kind": "intro", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-09-02-vayeshev-e",
+      "startSeg": 40, "endSeg": 91,
+      "title": { "en": "Tamar, Eshes Potiphar and the kasha", "yi": "תמר, אשת פוטיפר און די קשיא" },
+      "summary": {
+        "en": "The Rav explains why the parsha of Yehuda and Tamar is placed next to Yosef and Eshes Potiphar: both meant it for the sake of Heaven, one for Moshiach ben David and one for Moshiach ben Yosef. He then asks why Eshes Potiphar, not knowing whether the offspring would come from her or her daughter, did not have Yosef marry her unmarried daughter instead of taking the risk herself.",
+        "yi": "דער משגיח ערקלערט פארוואס די פרשה פון יהודה און תמר איז סמוך צו יוסף און אשת פוטיפר: ביידע האבן געמיינט לשם שמים, איינע פאר משיח בן דוד און די אנדערע פאר משיח בן יוסף. דערנאך פרעגט ער פארוואס אשת פוטיפר, וואס האט נישט געוואוסט צי פון איר אדער פון איר טאכטער, האט נישט געמאכט אז יוסף זאל חתונה האבן מיט איר טאכטער אנשטאט זיך אליין אריינצולאזן אין א סכנה."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-09-02-vayeshev-e",
+      "startSeg": 92, "endSeg": 164,
+      "title": { "en": "Why Yosef alone is called HaTzaddik", "yi": "פארוואס נאר יוסף הייסט הצדיק" },
+      "summary": {
+        "en": "In the first of three foundations, the Rav explains that each of the seven shepherds has his own distinction, and Yosef's is tzaddik, the one who guards the holiness of the bris. He describes the seventeen-year-old Yosef's daily tests and threats from Eshes Potiphar, and explains that a title is earned only through tests, which is why the brothers, though holy, are not called tzaddik.",
+        "yi": "אין דער ערשטער פון דריי הקדמות ערקלערט דער משגיח אז יעדער פון די שבעה רועים האט זיין אייגענע מדה, און יוסף'ס מדה איז צדיק, דער וואס היט די קדושת הברית. ער שילדערט די טעגליכע נסיונות און סטראשונקעס וואס דער זיבעצן-יעריגער יוסף האט געהאט פון אשת פוטיפר, און ערקלערט אז מ'קומט צו א טיטל נאר דורך נסיונות, דערפאר הייסן די שבטים, כאטש זיי זענען געווען הייליג, נישט צדיק."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-09-02-vayeshev-e",
+      "startSeg": 165, "endSeg": 197,
+      "title": { "en": "The Torah as the blueprint of the world", "yi": "די תורה איז דער פלאן פון דער וועלט" },
+      "summary": {
+        "en": "Opening the second foundation, the Rav explains that Hashem looked into the Torah and created the world, like an architect with a blueprint, and brings the Kotzker that the world is the text and the Torah its commentary. He tells of a woman who asked him for his view of world events, and says he looks into the Torah to understand the world.",
+        "yi": "ביים עפענען די צווייטע הקדמה ערקלערט דער משגיח אז דער אייבערשטער האט געקוקט אין דער תורה און באשאפן די וועלט, אזוי ווי א בוי-מייסטער מיט א פלאן, און ער ברענגט דעם קאצקער אז די וועלט איז דער חיבור און די תורה איז דער פירוש. ער דערציילט פון א פרוי וואס האט געפרעגט זיין מיינונג אויף וואס עס טוט זיך אין דער וועלט, און זאגט אז ער קוקט אין דער תורה כדי צו פארשטיין די וועלט."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-09-02-vayeshev-e",
+      "startSeg": 198, "endSeg": 300,
+      "title": { "en": "Yishmael's empty milah and Eretz Yisrael", "yi": "ישמעאל'ס ליידיגע מילה און ארץ ישראל" },
+      "summary": {
+        "en": "The Rav brings that the angel of Yishmael claimed Eretz Yisrael because Yishmael also has milah, and Hashem answered that their milah is empty, not a bris, so they would hold the land only while it is empty. Now that a third of Klal Yisrael has returned, the Arabs sense their end and fight like a candle flaring before it goes out.",
+        "yi": "דער משגיח ברענגט אז דער שר פון ישמעאל האט געטענהט אויף ארץ ישראל ווייל ישמעאל האט אויך מילה, און דער אייבערשטער האט געענטפערט אז זייער מילה איז ליידיג, נישט קיין ברית, ממילא וועלן זיי האבן דאס לאנד נאר ווען עס איז ליידיג. יעצט וואס א דריטל פון כלל ישראל איז שוין דארט, שפירן די אראבער זייער סוף און קעמפן ווי א ליכט וואס פלאקערט אויף פאר עס גייט אויס."
+      },
+      "kind": "tangent", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-09-02-vayeshev-e",
+      "startSeg": 301, "endSeg": 342,
+      "title": { "en": "Halachos revealed in their time", "yi": "הלכות וואס ווערן נתגלה אין זייער צייט" },
+      "summary": {
+        "en": "Returning to his point, the Rav says the Avos could read the Torah out of the world, yet some matters of Torah are revealed only at their time, like the halacha of Moavi velo Moavis revealed through Boaz, Purim and Chanukah, and the prophecy of Yeshayahu. He then introduces the third foundation from Pirkei d'Rabbi Eliezer and Targum Yonasan.",
+        "yi": "צוריק צו זיין נקודה, זאגט דער משגיח אז די אבות האבן געקענט לייענען די תורה פון דער וועלט, אבער געוויסע ענינים אין דער תורה ווערן נתגלה נאר אין זייער צייט, ווי די הלכה פון מואבי ולא מואבית וואס איז נתגלה געווארן דורך בועז, פורים און חנוכה, און די נבואה פון ישעיה. דערנאך עפנט ער די דריטע הקדמה פון פרקי דרבי אליעזר און תרגום יונתן."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-09-02-vayeshev-e",
+      "startSeg": 343, "endSeg": 393,
+      "title": { "en": "Asnas, daughter of Dinah", "yi": "אסנת, דינה'ס טאכטער" },
+      "summary": {
+        "en": "The Rav tells how Yaakov saved Dinah's daughter from the angry brothers, hung a charm with his name around her neck, and how the angel Gavriel brought her to the childless house of Potiphar, who adopted her. When the girls threw jewelry at Yosef, Asnas threw her charm; Yosef recognized his father's writing and asked for her.",
+        "yi": "דער משגיח דערציילט ווי יעקב האט געראטעוועט דינה'ס טאכטער פון די אויפגערעגטע שבטים, ארומגעהאנגען א קמיע מיט זיין נאמען אויף איר האלדז, און ווי דער מלאך גבריאל האט זי געבראכט צום הויז פון פוטיפר, וואס האבן נישט געהאט קיין קינדער און זי אדאפטירט. ווען די מיידלעך האבן געווארפן צירונג אויף יוסף, האט אסנת געווארפן איר קמיע; יוסף האט דערקענט זיין טאטנס שריפט און געבעטן זי."
+      },
+      "kind": "story", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-09-02-vayeshev-e",
+      "startSeg": 394, "endSeg": 480,
+      "title": { "en": "The answer: a halacha hidden for Yosef's tests", "yi": "דער תירוץ: א הלכה באהאלטן פאר יוסף'ס נסיונות" },
+      "summary": {
+        "en": "The Rav answers: Asnas was only adopted, and Eshes Potiphar did not know that an adopted daughter counts as her own. Yosef did not tell her because he did not know, and he did not know because Yaakov did not know; the halacha was hidden so that Yosef would have his tests and become the tzaddik whose merit kept Klal Yisrael pure in Mitzrayim.",
+        "yi": "דער משגיח ענטפערט: אסנת איז נאר געווען אדאפטירט, און אשת פוטיפר האט נישט געוואוסט אז אן אדאפטירטע טאכטער ווערט גערעכנט ווי איר אייגענע. יוסף האט איר נישט געזאגט ווייל ער האט נישט געוואוסט, און ער האט נישט געוואוסט ווייל יעקב האט נישט געוואוסט; די הלכה איז געווען באהאלטן כדי יוסף זאל האבן די נסיונות און ווערן דער צדיק אין וועמענס זכות כלל ישראל איז געבליבן ריין אין מצרים."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-09-02-vayeshev-e",
+      "startSeg": 481, "endSeg": 523,
+      "title": { "en": "Chanukah and the holiness of Yosef", "yi": "חנוכה און קדושת יוסף" },
+      "summary": {
+        "en": "Briefly, the Rav says that Chanukah is the victory of the holiness of Yosef: Melech Yavan equals Yosef in gematria, and Yehudis annulled the decree against Jewish brides, which is why women are obligated in Chanukah lights and why dairy is eaten. The parshiyos of Yosef are read in Chanukah week, and he says a Jew should strengthen his own boundaries to connect with Kedushas Yosef.",
+        "yi": "בקיצור זאגט דער משגיח אז חנוכה איז דער נצחון פון קדושת יוסף: מלך יון איז בגימטריא יוסף, און יהודית האט מבטל געווען די גזירה אויף די אידישע כלות, דערפאר זענען נשים מחויב אין נר חנוכה און מ'עסט מילכיקס. די פרשיות פון יוסף לייענט מען אין דער וואך פון חנוכה, און ער זאגט אז א איד זאל מאכן גדרים ביי זיך כדי צו האבן א שייכות מיט קדושת יוסף."
+      },
+      "kind": "closing", "catalogTopicIdx": [0], "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "alomasi ... Kama Aru Masi", "work": "Bereishis", "ref": "Bereishis 37:7", "sefariaRef": "Genesis 37:7",
+      "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [2, 5], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the mother says alomasi comes from the word ... keeping quiet", "work": null, "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [2, 3, 6], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "Your mother is dead already", "work": "Bereishis", "ref": "Bereishis 37:10", "sefariaRef": "Genesis 37:10",
+      "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [16, 18], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "So the Rasha says ... it's referring to Bilhah", "work": "Rashi", "ref": "Rashi on Bereishis 37:10", "sefariaRef": null,
+      "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [19, 20, 21, 437], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "The Gemara in several places brings besokin, that whoever raises somebody is as if he's the parent", "work": "Gemara", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [28, 37, 413], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "passage says B'nai Ya'esaf", "work": "Tehillim", "ref": "Tehillim 77:16", "sefariaRef": null,
+      "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [31, 32], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "in the back by Esther Bita", "work": "Esther", "ref": "Esther 2:7", "sefariaRef": null,
+      "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [35], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "the Gemara says and Rashi brings it that both meant L'Shem Shemayim", "work": "Rashi", "ref": "Rashi on Bereishis 39:1", "sefariaRef": null,
+      "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [43, 46, 47, 55, 57], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "So hakim alano chayim sheva", "work": "Micha", "ref": "Micha 5:4", "sefariaRef": "Micah 5:4",
+      "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [94, 96, 97], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "Pachat Yitzchak", "work": "Bereishis", "ref": "Bereishis 31:42", "sefariaRef": "Genesis 31:42",
+      "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [93], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "Avram Oihavit", "work": "Yeshayahu", "ref": "Yeshayahu 41:8", "sefariaRef": "Isaiah 41:8",
+      "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [93, 155], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "V'hi kedabra'ayla v'yayn yayn", "work": "Bereishis", "ref": "Bereishis 39:10", "sefariaRef": "Genesis 39:10",
+      "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [133], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the madrash says that she told him I'm gonna pluck your eyes out", "work": "Midrash", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [134, 142, 144], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "is tackled by arayse ubara amma", "work": "Midrash", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "quoted", "evidence": { "segs": [170, 172, 173], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "the Kotzker says, the Mendel HaKotzker says", "work": null, "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [179, 180, 181], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the Isaiah tells us that the Sar of Yishmael came complaining", "work": "Zohar", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [201, 203, 205], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "the Rambam gives Tama Maltipashtus, that the time of Mitzvah's milah is to weaken the ta'iva", "work": "Moreh Nevuchim", "ref": "Moreh Nevuchim 3:49", "sefariaRef": null,
+      "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [222, 223], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "asara katn znus yodoli yodam tisha natflul Yishma'il ... the Gemara says kiddush, arabe", "work": "Gemara Kiddushin", "ref": "Kiddushin 49b", "sefariaRef": "Kiddushin 49b",
+      "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [225, 226, 227], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the taina of the B'nai Yankiftu Shchem", "work": "Bereishis", "ref": "Bereishis ch. 34", "sefariaRef": null,
+      "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [236, 239, 244], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "the naya gaya mina'aret, the eba shall shake them out", "work": "Iyov", "ref": "Iyov 38:13", "sefariaRef": "Job 38:13",
+      "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [284, 285], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "mayavi v'lay mayavis ... Bayaz was mechadeshed from the psurkin", "work": "Gemara Yevamos", "ref": "Yevamos 76b", "sefariaRef": null,
+      "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [314, 316, 317, 323], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "a pirk-i-t-chaviyaleza ... the Pirkei of Rabbi Eleazar", "work": "Pirkei d'Rabbi Eliezer", "ref": "Pirkei d'Rabbi Eliezer ch. 38", "sefariaRef": null,
+      "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [339, 372], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the ta'agam Yainasam Benazil ... the Targum Yonatan says", "work": "Targum Yonasan", "ref": "Targum Yonasan, Bereishis 41:45", "sefariaRef": null,
+      "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [340, 378, 381, 386], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "the daughters were stepping on the wall to see him", "work": "Bereishis", "ref": "Bereishis 49:22", "sefariaRef": "Genesis 49:22",
+      "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [360, 361], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "Ben Zikunim Hulai Kamashu'i Olamad M'shem V'yayva Masalai", "work": "Rashi", "ref": "Rashi on Bereishis 37:3", "sefariaRef": null,
+      "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [424, 425], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Medrash says that the Yidon in Mitzrayim remained Tzadikim because of the Gdush of Yisaf", "work": "Midrash", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [453, 454, 455], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Achas Haiso Pirsum Haakasav", "work": "Rashi", "ref": "Rashi on Vayikra 24:11", "sefariaRef": null,
+      "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [459, 460, 462, 463], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "The Shlaka says, Melech Yavan is Begmat Chiyayayisef, 156", "work": null, "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [485, 486], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "The Madrashim say that there was a Gzairah on the Nashim", "work": "Midrash", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [488, 490], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Ramah brings that, it's a Minik to eat Milchiks on Hanukkah", "work": "Rema", "ref": "Rema, Orach Chaim 670:2", "sefariaRef": "Shulchan Arukh, Orach Chayim 670:2",
+      "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [493, 494], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "anashim hachayiv aner chanukah, afei naisa biai cns", "work": "Gemara Shabbos", "ref": "Shabbos 23a", "sefariaRef": "Shabbat 23a",
+      "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [497, 498], "confidence": 0.8 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The halacha that a raiser counts as a parent was hidden even from Yaakov by design: had it been known, Eshes Potiphar would have sent Asnas to Yosef, and Yosef would never have had the tests that made him a tzaddik.",
+        "yi": "די הלכה אז דער וואס האדעוועט איז ווי א טאטע אדער מאמע איז געווען באהאלטן אפילו פון יעקב בכוונה: ווען מ'וואלט עס געוואוסט, וואלט אשת פוטיפר געשיקט אסנת צו יוסף'ן, און יוסף וואלט קיינמאל נישט געהאט די נסיונות וואס האבן אים געמאכט פאר א צדיק."
+      },
+      "evidence": { "segs": [442, 445, 447, 449], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "A title like tzaddik is earned only through tests; Yosef's brothers were also holy, but without tests they did not earn the name.",
+        "yi": "א טיטל ווי צדיק פארדינט מען נאר דורך נסיונות; יוסף'ס ברידער זענען אויך געווען הייליג, אבער אן נסיונות האבן זיי נישט זוכה געווען צום נאמען."
+      },
+      "evidence": { "segs": [154, 156, 159, 160], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "Eshes Potiphar sought Moshiach ben Yosef just as Tamar sought Moshiach ben David, which is a further reason the two parshiyos stand side by side.",
+        "yi": "אשת פוטיפר האט געזוכט משיח בן יוסף אזוי ווי תמר האט געזוכט משיח בן דוד, און דאס איז נאך א טעם פארוואס די צוויי פרשיות שטייען סמוך איינע צו די אנדערע."
+      },
+      "evidence": { "segs": [61, 64, 65, 66], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Yishmael's milah, being surgery rather than a bris, is empty, so they were given Eretz Yisrael only while it is empty; as the land fills with Jews they sense their end and resist like a candle flaring before it dies.",
+        "yi": "ישמעאל'ס מילה איז א אפעראציע און נישט קיין ברית, ממילא איז זי ליידיג, און דערפאר האבן זיי באקומען ארץ ישראל נאר ווען עס איז ליידיג; ווען דאס לאנד ווערט פול מיט אידן, שפירן זיי זייער סוף און קעמפן ווי א ליכט וואס פלאקערט אויף פאר עס גייט אויס."
+      },
+      "evidence": { "segs": [220, 251, 269, 282, 293, 295], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Avos could read the Torah from the world, as an architect can read the blueprint from a finished building.",
+        "yi": "די אבות האבן געקענט לייענען די תורה פון דער וועלט, אזוי ווי א בוי-מייסטער קען לייענען דעם פלאן פון א פארטיגן געביידע."
+      },
+      "evidence": { "segs": [304, 306, 307, 309], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Melech Yavan equals Yosef in gematria (156), showing that the war of Chanukah was a battle of the holiness of Yosef.",
+        "yi": "מלך יון איז בגימטריא יוסף (156), וואס ווייזט אז די מלחמה פון חנוכה איז געווען א מלחמה פון קדושת יוסף."
+      },
+      "evidence": { "segs": [485, 486, 487], "confidence": 0.7 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "Asnas and the charm", "yi": "אסנת און די קמיע" },
+      "retelling": {
+        "en": "Dinah had a baby girl fathered by Shechem, and the brothers were angry and wanted to harm her. Yaakov took the baby, hung a charm around her neck on which he wrote that she was from the family of Yaakov and signed his name, and set her down on a thorn bush. The angel Gavriel brought her to Mitzrayim to the childless house of Potiphar, who adopted her. Years later, when girls on the rooftops threw jewelry at Yosef to catch his eye, Asnas threw her charm; Yosef saw his father's handwriting, looked up, and asked Pharaoh for her.",
+        "yi": "דינה האט געהאט א מיידעלע פון שכם, און די שבטים זענען געווען אויפגערעגט און האבן איר געוואלט שאטן. יעקב האט גענומען דאס קינד, ארומגעהאנגען א קמיע אויף איר האלדז וואו ער האט געשריבן אז זי איז פון דער משפחה פון יעקב און אונטערגעשריבן זיין נאמען, און זי אוועקגעלייגט אויף א דארנבוש. דער מלאך גבריאל האט זי געבראכט קיין מצרים צום הויז פון פוטיפר, וואס האבן נישט געהאט קיין קינדער, און זיי האבן זי אדאפטירט. שפעטער, ווען מיידלעך אויף די דעכער האבן געווארפן צירונג אויף יוסף'ן, האט אסנת געווארפן איר קמיע; יוסף האט דערזען זיין טאטנס כתב-יד, ארויפגעקוקט, און געבעטן פון פרעה אז ער וויל זי."
+      },
+      "people": ["Dinah", "Shechem", "Yaakov", "Gavriel", "Potiphar", "Asnas", "Yosef"],
+      "evidence": { "segs": [344, 349, 355, 356, 358, 368], "confidence": 0.85 }
+    },
+    {
+      "title": { "en": "A woman asks the Rav about world events", "yi": "א פרוי פרעגט דעם משגיח אויף די געשעענישן אין דער וועלט" },
+      "retelling": {
+        "en": "The Rav relates that a woman who had asked him two years earlier for his explanation of the Twin Towers, and had printed it in a book that became a bestseller, called again that week. She wanted his explanation of why the Arabs were being roused to such terror now. He told her his explanation and left it to her whether to print it.",
+        "yi": "דער משגיח דערציילט אז א פרוי וואס האט אים מיט צוויי יאר צוריק געפרעגט זיין הסבר אויף די טווין טאווערס, און עס געדרוקט אין א בוך וואס איז געווארן זייער פארשפרייט, האט אים די וואך ווידער אנגערופן. זי האט געוואלט זיין הסבר פארוואס די אראבער ווערן יעצט אזוי אויפגעהיצט צו טעראר. ער האט איר געזאגט זיין הסבר און איבערגעלאזט צו איר צי זי וועט עס דרוקן."
+      },
+      "people": [],
+      "evidence": { "segs": [186, 187, 189, 191, 192, 194], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "Yehudis and the decree", "yi": "יהודית און די גזירה" },
+      "retelling": {
+        "en": "The Rav brings from the Midrashim that the Greeks decreed against Jewish brides before their weddings. Yehudis, daughter of Yochanan Kohen Gadol, fed the king dairy, put him to sleep, and cut off his head, and the decree was annulled.",
+        "yi": "דער משגיח ברענגט פון די מדרשים אז די יוונים האבן געמאכט א גזירה אויף די אידישע כלות פאר דער חתונה. יהודית, די טאכטער פון יוחנן כהן גדול, האט געגעבן דעם קעניג מילכיקס, אים איינגעשלעפט און אים אפגעהאקט דעם קאפ, און די גזירה איז בטל געווארן."
+      },
+      "people": ["Yehudis", "Yochanan Kohen Gadol"],
+      "evidence": { "segs": [488, 490, 491, 494, 495], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "Why did Yaakov say Yosef's mother was already dead, when he surely knew that one who raises a child is considered its parent and Bilhah raised Yosef?", "yi": "פארוואס האט יעקב געזאגט אז יוסף'ס מאמע איז שוין געשטארבן, ווען ער האט דאך געוואוסט אז ווער עס האדעוועט א קינד איז ווי די עלטערן, און בלהה האט יוסף'ן אויפגעהאדעוועט?" },
+      "answer": { "en": "That halacha was among those not revealed until their time; it stayed hidden so that Yosef would face his tests and become a tzaddik.", "yi": "די הלכה איז געווען פון די וואס ווערן נישט נתגלה ביז זייער צייט; זי איז געבליבן באהאלטן כדי יוסף זאל האבן זיינע נסיונות און ווערן א צדיק." },
+      "questionSegs": [24, 38, 39], "answerSegs": [441, 442, 449, 451], "confidence": 0.85
+    },
+    {
+      "question": { "en": "If Eshes Potiphar did not know whether the offspring would come from her or her daughter, why did she not have Yosef marry her unmarried daughter instead of risking herself?", "yi": "אויב אשת פוטיפר האט נישט געוואוסט צי פון איר אדער פון איר טאכטער, פארוואס האט זי נישט געמאכט אז יוסף זאל חתונה האבן מיט איר טאכטער, אנשטאט זיך אליין אריינצולאזן אין סכנה?" },
+      "answer": { "en": "Asnas was only adopted, and she did not know that an adopted daughter counts as her own before Heaven.", "yi": "אסנת איז נאר געווען אדאפטירט, און זי האט נישט געוואוסט אז אן אדאפטירטע טאכטער ווערט גערעכנט ביי שמים ווי איר אייגענע." },
+      "questionSegs": [68, 74, 79, 90], "answerSegs": [403, 416, 418, 419], "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why did Yosef, who learned everything from Yaakov, not tell her that Asnas counts as her daughter?", "yi": "פארוואס האט יוסף, וואס האט געלערנט אלעס פון יעקב'ן, איר נישט געזאגט אז אסנת ווערט גערעכנט ווי איר טאכטער?" },
+      "answer": { "en": "Yosef did not know it, because Yaakov did not know it.", "yi": "יוסף האט עס נישט געוואוסט, ווייל יעקב האט עס נישט געוואוסט." },
+      "questionSegs": [421, 422, 426, 427], "answerSegs": [430, 439, 474, 475], "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why is only Yosef called HaTzaddik, and not Avraham, Yitzchak, Yaakov or Moshe?", "yi": "פארוואס הייסט נאר יוסף הצדיק, און נישט אברהם, יצחק, יעקב אדער משה?" },
+      "answer": { "en": "Tzaddik is the title of one who guards the holiness of the bris through tests, which Yosef did in Potiphar's house.", "yi": "צדיק איז דער טיטל פון דעם וואס היט די קדושת הברית דורך נסיונות, וואס יוסף האט געטון אין פוטיפר'ס הויז." },
+      "questionSegs": [109, 110, 111], "answerSegs": [112, 153, 162, 163], "confidence": 0.85
+    },
+    {
+      "question": { "en": "If Yishmael also keeps milah, why should they not have a claim on Eretz Yisrael?", "yi": "אויב ישמעאל האלט אויך מילה, פארוואס זאלן זיי נישט האבן א טענה אויף ארץ ישראל?" },
+      "answer": { "en": "Their milah is surgery, not a bris with Hashem, so it is empty, and they were given the land only while it is empty.", "yi": "זייער מילה איז א אפעראציע, נישט קיין ברית מיטן אייבערשטן, ממילא איז זי ליידיג, און זיי האבן באקומען דאס לאנד נאר ווען עס איז ליידיג." },
+      "questionSegs": [205, 207, 208], "answerSegs": [212, 219, 220, 251], "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says that on Chanukah a Jew should make boundaries in himself so as to have more connection with the holiness of Yosef, and thereby merit the gifts from Heaven that Chanukah brings.",
+        "yi": "דער משגיח זאגט אז אום חנוכה זאל א איד מאכן גדרים ביי זיך כדי צו האבן מער שייכות מיט קדושת יוסף, און דורך דעם זוכה זיין צו די מתנות פון שמים וואס חנוכה ברענגט."
+      },
+      "evidence": { "segs": [522], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says every Jew has a share in the Torah, and he himself looks into the Torah to understand what happens in the world.",
+        "yi": "דער משגיח זאגט אז יעדער איד האט א חלק אין דער תורה, און ער אליין קוקט אין דער תורה כדי צו פארשטיין וואס עס טוט זיך אין דער וועלט."
+      },
+      "evidence": { "segs": [184, 195, 196], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "Yosef HaTzaddik",
+    "Eshes Potiphar",
+    "Asnas daughter of Dinah",
+    "adoption and parenthood in halacha",
+    "nisyonos and spiritual titles",
+    "halachos revealed in their time",
+    "Torah as the blueprint of the world",
+    "Yishmael and Eretz Yisrael",
+    "Chanukah and the holiness of Yosef",
+    "Moshiach ben Yosef"
+  ],
+  "concepts": [
+    { "he": "אלומתי", "heardAs": ["alomasi", "Kama Aru Masi"] },
+    { "he": "נסיונות", "heardAs": ["Nisiyanahs", "nesiyanis", "Nisyanas", "Nisiyaynas"] },
+    { "he": "יוסף הצדיק", "heardAs": ["Yaisef HaTzadik"] },
+    { "he": "שמירת הברית", "heardAs": ["shayimah ha-bris", "Kedusha Savris"] },
+    { "he": "משיח בן יוסף", "heardAs": ["Mashiach ben Yasef"] },
+    { "he": "משיח בן דוד", "heardAs": ["Nashiach ben David"] },
+    { "he": "לשם שמים", "heardAs": ["L'Shem Shemayim", "Veshem Shemayim"] },
+    { "he": "איצטגנינות", "heardAs": ["Aztagninus"] },
+    { "he": "שבעה רועים", "heardAs": ["sheva chayim", "chayim sheva"] },
+    { "he": "אושפיזין", "heardAs": ["ishpiza"] },
+    { "he": "פחד יצחק", "heardAs": ["Pachat Yitzchak"] },
+    { "he": "אסתכל באורייתא וברא עלמא", "heardAs": ["is tackled by arayse ubara amma"] },
+    { "he": "שר של ישמעאל", "heardAs": ["Sar of Yishmael"] },
+    { "he": "מואבי ולא מואבית", "heardAs": ["mayavi v'lay mayavis", "meyavi v'lay meyaviz"] },
+    { "he": "נתגלה", "heardAs": ["Nizgala", "mezgalah"] },
+    { "he": "הקדמה", "heardAs": ["haqdamas", "Hadamah", "haqdama"] },
+    { "he": "קדושת יוסף", "heardAs": ["Kedusham Ya'isef", "Gdush of Yisaf", "Kedush of Yosef"] },
+    { "he": "מלך יון", "heardAs": ["Melech Yavan"] },
+    { "he": "גדרים", "heardAs": ["Gedarim"] }
+  ],
+  "people": [
+    { "name": "Yosef", "heardAs": ["Yasef", "Yaisef", "Yaysayf", "Yaesif"] },
+    { "name": "Rachel", "heardAs": ["Rachel"] },
+    { "name": "Leah", "heardAs": ["Leah"] },
+    { "name": "Yaakov Avinu", "heardAs": ["Yankov", "Yankev", "Yankiv", "Yank Bevinu"] },
+    { "name": "Bilhah", "heardAs": ["Bilhah", "Bila"] },
+    { "name": "Yehuda", "heardAs": ["Yehuda"] },
+    { "name": "Tamar", "heardAs": ["Tamar", "Thomas"] },
+    { "name": "Eshes Potiphar", "heardAs": ["Ashes Petipha", "Eishas Petifa", "Ayesha Spatifa", "Aisha Spatifera"] },
+    { "name": "Asnas", "heardAs": ["Asnas", "Asnaz", "Osnas"] },
+    { "name": "Dinah", "heardAs": ["Dina", "Nina"] },
+    { "name": "Shechem ben Chamor", "heardAs": ["Shechem Ben-Chemayah"] },
+    { "name": "Avraham Avinu", "heardAs": ["Avram Avino", "Avraham Avinu"] },
+    { "name": "Yitzchak", "heardAs": ["Yitzchak", "Yitzhak"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["Masha", "Moesha", "Maishah Rabbeinu"] },
+    { "name": "Aharon", "heardAs": ["Arend"] },
+    { "name": "David HaMelech", "heardAs": ["David, HaMelech", "David el-Malach"] },
+    { "name": "Rebbe Menachem Mendel of Kotzk", "heardAs": ["the Kotzker", "the Mendel HaKotzker", "the Mandala Tazka"] },
+    { "name": "Yishmael", "heardAs": ["Yishmael", "Yishma'il"] },
+    { "name": "the Rambam", "heardAs": ["the Rambam"] },
+    { "name": "Boaz", "heardAs": ["Bayaz"] },
+    { "name": "Doeg", "heardAs": ["Dayak"] },
+    { "name": "Shaul", "heardAs": ["She'ul"] },
+    { "name": "Yeshayahu", "heardAs": ["Yeshaya"] },
+    { "name": "the angel Gavriel", "heardAs": ["the mama Gabriel"] },
+    { "name": "Rabbi Eliezer", "heardAs": ["Rabbi Eleazar"] },
+    { "name": "Rabbi Yonasan ben Uziel", "heardAs": ["Yairnesin Ben-Nazir", "Rabbi Yonatan Nazir"] },
+    { "name": "Shlomis bas Divri", "heardAs": ["Shleim Ez-Bazdilri"] },
+    { "name": "Yehudis", "heardAs": ["Yehudas", "Yehudis"] },
+    { "name": "Yochanan Kohen Gadol", "heardAs": ["Yahan"] },
+    { "name": "the Rema", "heardAs": ["the Ramah"] },
+    { "name": "Shem and Ever", "heardAs": ["Shambiyeva", "M'shem V'yayva"] }
+  ],
+  "asrNotes": "English ASR is fair for the English speech but Hebrew terms and quotations are heavily garbled. The explanation of 'alumasi' in the opening (segments 2-14) is only partly audible and its resolution is not clearly heard later. The source the Rav cites for the gematria Melech Yavan = Yosef (heard 'the Shlaka') and for the claim of the angel of Yishmael (heard 'the Isaiah') could not be identified with confidence. Segment 386 is a short flagged gap; segments 399-411 are fragmented."
+}

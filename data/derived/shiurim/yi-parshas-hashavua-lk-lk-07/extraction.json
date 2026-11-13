@@ -1,0 +1,644 @@
+{
+  "shiurId": "yi-parshas-hashavua-lk-lk-07",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that tefillah is the service of the heart, that the Avos and their emunah are the heart of the Jewish people, and that a Jew is essentially good because he comes from Avraham Avinu.",
+      "yi": "דער משגיח ערקלערט אז תפילה איז די עבודה שבלב, אז די אבות מיט זייער אמונה זענען דאס הארץ פונעם אידישן פאלק, און אז א איד איז בעצם גוט ווייל ער שטאמט פון אברהם אבינו."
+    },
+    "abstract": {
+      "en": "The Rav opens with the halachah that of all of Shemoneh Esrei only the first brachah, the brachah of the Avos, requires kavanah, and explains that tefillah, the service of the heart, is at root emunah, the emunah of Avraham. To show why the service of the heart is tefillah, he describes man as a small world: the whole creation is contained in him, and Yerushalayim, the place of the Beis Hamikdash and a house of prayer for all nations, is the heart of the world. He then turns to the parsha: the Avos must be learned closely and lived with. He asks why the Ramban finds a sin in Avraham at the very start of his story, and why the Torah does not describe Avraham's righteousness as it does Noach's. Using the Maharal on Moshe's birth, he explains that the Jewish people must exist, and that a Jew's sin is only incidental while his essence is good. He closes with a Midrash showing that Torah learning makes the learner present with the people he learns about.",
+      "yi": "דער משגיח עפנט מיט דער הלכה אז פון גאנץ שמונה עשרה דארף מען נאר מכוון זיין ביי דער ערשטער ברכה, ברכת אבות, און ער ערקלערט אז תפילה, די עבודה שבלב, איז אין איר שורש אמונה, די אמונה פון אברהם אבינו. כדי צו ווייזן פארוואס עבודה שבלב איז תפילה, איז ער מסביר אז דער מענטש איז א עולם קטן: די גאנצע בריאה איז אין אים אריינגענומען, און ירושלים, דער ארט פונעם בית המקדש און א בית תפילה פאר אלע פעלקער, איז דאס הארץ פון דער וועלט. דערנאך גייט ער איבער צו דער סדרה: די אבות דארף מען לערנען מיט עיון און מיטלעבן מיט זיי. ער פרעגט פארוואס דער רמב\"ן געפינט א חטא ביי אברהם אבינו גלייך ביים אנהייב פון זיין מעשה, און פארוואס די תורה דערציילט נישט זיין צדקות ווי ביי נח. מיט'ן מהר\"ל ביי דער געבורט פון משה רבינו ערקלערט ער אז דאס אידישע פאלק מוז זיין, און אז א אידס חטא איז נאר במקרה בשעת זיין עצם איז גוט. ער ענדיגט מיט א מדרש וואס ווייזט אז ווער עס לערנט תורה איז דארט מיט די וואס ער לערנט וועגן זיי."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The whole of tefillah is emunah, which is why the brachah of the Avos is the one brachah that must be said with kavanah.",
+          "yi": "די גאנצע תפילה איז אמונה, און דערפאר איז ברכת אבות די איינציגע ברכה וואס מען מוז זאגן מיט כוונה."
+        },
+        "evidence": { "segs": [7, 8, 9, 11, 12], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Man is a small world containing all of creation, and just as Yerushalayim, the place of tefillah, is the heart of the world, the service of a person's heart is tefillah.",
+          "yi": "דער מענטש איז א עולם קטן וואס פארנעמט די גאנצע בריאה, און אזוי ווי ירושלים, דער ארט פון תפילה, איז דאס הארץ פון דער וועלט, אזוי איז די עבודה פון דעם מענטשנס הארץ תפילה."
+        },
+        "evidence": { "segs": [18, 21, 24, 31, 36], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The parshiyos of the Avos must be learned in depth and lived with, since they are the foundation of Yiddishkeit and a model for every Jew.",
+          "yi": "די פרשיות פון די אבות דארף מען לערנען מיט עיון און מיטלעבן מיט זיי, ווייל זיי זענען דער יסוד פון אידישקייט און א דוגמא פאר יעדן איד."
+        },
+        "evidence": { "segs": [39, 40, 41, 42, 43], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The Torah does not record Avraham's righteousness because the existence of the Jewish people is a necessity that does not depend on merit.",
+          "yi": "די תורה שרייבט נישט אן אברהם אבינוס צדקות, ווייל דאס עקזיסטירן פונעם אידישן פאלק איז א מוז וואס הענגט נישט אין זכות."
+        },
+        "evidence": { "segs": [63, 64, 70, 72], "confidence": 0.7 }
+      },
+      {
+        "text": {
+          "en": "Every Jew is essentially a tzaddik; his sins are only incidental, while a gentile's sin is part of his essence.",
+          "yi": "יעדער איד איז בעצם א צדיק; זיינע עבירות זענען נאר במקרה, בשעת ביי א גוי איז די עבירה בעצם."
+        },
+        "evidence": { "segs": [73, 74, 78, 83], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Torah is a living Torah: one who learns about the Avos is together with them, as a part of Avraham Avinu.",
+          "yi": "די תורה איז א תורת חיים: ווער עס לערנט וועגן די אבות איז צוזאמען מיט זיי, אלס א חלק פון אברהם אבינו."
+        },
+        "evidence": { "segs": [99, 100, 101, 102], "confidence": 0.75 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-07-lech-lecha",
+      "startSeg": 0,
+      "endSeg": 13,
+      "title": { "en": "Kavanah only in the brachah of the Avos", "yi": "כוונה נאר ביי ברכת אבות" },
+      "summary": {
+        "en": "The Rav explains that tefillah is the service of the heart, and asks why the halachah requires kavanah only in the first brachah of Shemoneh Esrei. He answers that all of tefillah is emunah, and that emunah comes from the Avos, as the parsha says of Avraham that he believed in Hashem.",
+        "yi": "דער משגיח ערקלערט אז תפילה איז די עבודה שבלב, און פרעגט פארוואס די הלכה פארלאנגט כוונה נאר ביי דער ערשטער ברכה פון שמונה עשרה. ער ענטפערט אז די גאנצע תפילה איז אמונה, און די אמונה קומט פון די אבות, אזוי ווי די סדרה זאגט ביי אברהם אבינו \"והאמין בה'\"."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-07-lech-lecha",
+      "startSeg": 14,
+      "endSeg": 29,
+      "title": { "en": "Man as a small world; Yerushalayim the heart", "yi": "דער מענטש א עולם קטן; ירושלים דאס הארץ" },
+      "summary": {
+        "en": "The Rav asks how Chazal knew that the service of the heart means tefillah. He explains with the example of a fern that man is a miniature of the whole creation, created in the image of G-d with 248 limbs, and that the lands of the world correspond to limbs, with Yerushalayim as the heart of the world.",
+        "yi": "דער משגיח פרעגט פון וואנעט ווייסן חז\"ל אז עבודה שבלב מיינט תפילה. ער ערקלערט מיט'ן משל פון א פערן-געוויקס אז דער מענטש איז א קליינע בילד פון דער גאנצער בריאה, באשאפן בצלם אלקים מיט רמ\"ח אברים, און אז די לענדער פון דער וועלט זענען ווי אברים, מיט ירושלים אלס דאס הארץ פון דער וועלט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-07-lech-lecha",
+      "startSeg": 30,
+      "endSeg": 37,
+      "title": { "en": "Yerushalayim, a house of prayer", "yi": "ירושלים, א בית תפילה" },
+      "summary": {
+        "en": "The Rav explains that Yerushalayim is the place of the Beis Hamikdash, a house of prayer for all nations, as seen at the Kosel today; therefore the service of a person's heart, his own Yerushalayim, is tefillah, whose foundation is the brachah of the Avos.",
+        "yi": "דער משגיח ערקלערט אז ירושלים איז דער ארט פונעם בית המקדש, א בית תפילה פאר אלע פעלקער, אזוי ווי מען זעט היינט ביים כותל המערבי; ממילא איז די עבודה פון דעם מענטשנס הארץ, זיין אייגענע ירושלים, תפילה, וואס איר יסוד איז ברכת אבות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-07-lech-lecha",
+      "startSeg": 38,
+      "endSeg": 47,
+      "title": { "en": "Living with the Avos; the Ramban's criticism", "yi": "מיטלעבן מיט די אבות; דער רמב\"ן'ס טענה" },
+      "summary": {
+        "en": "The Rav says that the parshiyos of the Avos must not be read only for shnayim mikra but learned in depth, so that one asks when his deeds will reach theirs. He then brings the Ramban, who says that Avraham sinned by going down to Mitzrayim and by exposing Sarah to danger.",
+        "yi": "דער משגיח זאגט אז די פרשיות פון די אבות טאר מען נישט נאר זאגן שנים מקרא, נאר לערנען מיט עיון, אז מען זאל פרעגן ווען וועלן מיינע מעשים דערגרייכן זייערע. דערנאך ברענגט ער דעם רמב\"ן וואס זאגט אז אברהם אבינו האט געזינדיגט מיט'ן אראפגיין קיין מצרים און מיט'ן אריינשטעלן שרה אין א סכנה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-07-lech-lecha",
+      "startSeg": 48,
+      "endSeg": 54,
+      "title": { "en": "Why find fault with Avraham?", "yi": "פארוואס געפינען א חסרון ביי אברהם?" },
+      "summary": {
+        "en": "The Rav asks why the Ramban looks for a sin in Avraham, when Rabbeinu Yonah teaches that one must judge a tzaddik favorably even when he seems to do wrong, and when Hashem Himself praises Avraham throughout the Torah.",
+        "yi": "דער משגיח פרעגט פארוואס דער רמב\"ן זוכט א חטא ביי אברהם אבינו, ווען רבינו יונה לערנט אז א צדיק מוז מען דן זיין לכף זכות אפילו ווען עס זעט אויס אז ער טוט נישט גוט, און ווען דער אייבערשטער אליין לויבט אברהם אבינו איבעראל אין דער תורה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-07-lech-lecha",
+      "startSeg": 55,
+      "endSeg": 72,
+      "title": { "en": "The Jewish people must exist", "yi": "דאס אידישע פאלק מוז זיין" },
+      "summary": {
+        "en": "The Rav asks why the Torah tells Noach's righteousness but not Avraham's, nor his mesiras nefesh in the fire of Ur Kasdim. He brings the Maharal on why the Torah does not name Moshe's parents at his birth: the creation exists for the Jewish people, so their redemption had to come regardless of merit, and the same is true of Avraham.",
+        "yi": "דער משגיח פרעגט פארוואס די תורה דערציילט די צדקות פון נח אבער נישט די צדקות פון אברהם אבינו, אויך נישט זיין מסירות נפש אין פייער פון אור כשדים. ער ברענגט דעם מהר\"ל פארוואס די תורה נאמט נישט משה רבינוס עלטערן ביי זיין געבורט: די בריאה איז געשאפן געווארן פארן אידישן פאלק, ממילא האט זייער גאולה געמוזט קומען אן א חשבון פון זכות, און אזוי אויך ביי אברהם אבינו."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-07-lech-lecha",
+      "startSeg": 73,
+      "endSeg": 92,
+      "title": { "en": "A Jew is good in essence", "yi": "א איד איז גוט בעצם" },
+      "summary": {
+        "en": "The Rav explains that every Jew is a tzaddik in essence and his sin is only incidental, bringing the Rambam on coercing a person until he says he wants, and Avraham's question of how he would know he would inherit the land, answered with korbanos. This is why the Ramban shows a sin in Avraham's first chapter, and Hashem chose him regardless.",
+        "yi": "דער משגיח ערקלערט אז יעדער איד איז בעצם א צדיק און זיין חטא איז נאר במקרה, און ער ברענגט דעם רמב\"ם פון כופין אותו עד שיאמר רוצה אני, און אברהם אבינוס שאלה \"במה אדע\" וואס איז געענטפערט געווארן מיט קרבנות. דערפאר ווייזט דער רמב\"ן א חטא אין אברהם אבינוס ערשטן פרק, און פונדעסטוועגן האט דער אייבערשטער אים אויסגעקליבן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-07-lech-lecha",
+      "startSeg": 93,
+      "endSeg": 103,
+      "title": { "en": "A living Torah: being with the Avos", "yi": "א תורת חיים: זיין מיט די אבות" },
+      "summary": {
+        "en": "The Rav brings a Midrash about Rebbi, who cursed Nebuchadnezzar when learning the Megillah but not when learning Yirmiyahu, and explains that whoever learns Torah is present in the time he learns about. So too, one who learns about the Avos must live with them, as a part of Avraham Avinu.",
+        "yi": "דער משגיח ברענגט א מדרש וועגן רבי, וואס האט געשאלטן נבוכדנצר ווען ער האט געלערנט די מגילה אבער נישט ווען ער האט געלערנט ירמיה, און ערקלערט אז ווער עס לערנט תורה איז דארט אין יענער צייט. אזוי אויך ווער עס לערנט וועגן די אבות דארף מיטלעבן מיט זיי, אלס א חלק פון אברהם אבינו."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "בכל לבבכם",
+      "work": "Devarim",
+      "ref": "Devarim 11:13",
+      "sefariaRef": "Deuteronomy 11:13",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [4, 5, 36], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "עבודה שבלב, זייט תפילה",
+      "work": "Gemara Taanis",
+      "ref": "Taanis 2a",
+      "sefariaRef": "Taanit 2a",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [4, 13, 36], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "אין די גמורים און שולחן עולם שטעט זי הלכה",
+      "work": "Shulchan Aruch",
+      "ref": "Shulchan Aruch Orach Chaim 101:1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1, 9], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "זאגט א רמב״ם, אז דאס איז די מצוות עשה פון תפילה",
+      "work": "Mishneh Torah",
+      "ref": "Rambam, Hilchos Tefillah 1:1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [13], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "והמן בשם ויחשבוע לו צדקה",
+      "work": "Bereishis",
+      "ref": "Bereishis 15:6",
+      "sefariaRef": "Genesis 15:6",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [12], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "ניינסע אדם",
+      "work": "Bereishis",
+      "ref": "Bereishis 1:26",
+      "sefariaRef": "Genesis 1:26",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [17, 18], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "בצלם אלוקים",
+      "work": "Bereishis",
+      "ref": "Bereishis 1:27",
+      "sefariaRef": "Genesis 1:27",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [19], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ער וואסער ארץ",
+      "work": "Bereishis",
+      "ref": "Bereishis 42:9",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [23], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "דברו על לב ירושלים",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 40:2",
+      "sefariaRef": "Isaiah 40:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [24, 27], "confidence": 0.9 }
+    },
+    {
+      "heardAs": "דער רבי שטעט אין כוזרי",
+      "work": "Kuzari",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [24], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "בעתו בעת תפילה יקרא לכל העולם",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 56:7",
+      "sefariaRef": "Isaiah 56:7",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [30, 31, 35], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "ווען שלמה המלך האט עס אפגעבעטן בית המקדש, האט ער געזאגט די גרויסע תפילה",
+      "work": "Melachim I",
+      "ref": "Melachim I ch. 8",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [31, 32], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "חייב אדם למר, מעשה יגיעו מעשה למעשה עבותי למעשה אברהם יצחק יענקק",
+      "work": "Tanna Devei Eliyahu",
+      "ref": "Tanna Devei Eliyahu Rabbah 25",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [38, 40], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ווי דער שולחן עברך פסקות ... שניים מקוה ויפת תרגום",
+      "work": "Shulchan Aruch",
+      "ref": "Shulchan Aruch Orach Chaim 285",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [38, 39], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "שטעט אין רמב״ם חטקבל חטא אברהם",
+      "work": "Ramban on Torah",
+      "ref": "Ramban on Bereishis 12:10",
+      "sefariaRef": "Ramban on Genesis 12:10",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [45, 46, 87], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "והוא רוב בארץ",
+      "work": "Bereishis",
+      "ref": "Bereishis 12:10",
+      "sefariaRef": "Genesis 12:10",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [44], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די תלקח אישה בית פרי",
+      "work": "Bereishis",
+      "ref": "Bereishis 12:15",
+      "sefariaRef": "Genesis 12:15",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [47], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "רבינו יונא זאגט עס אין זיין ספר, אין שערי תשובה",
+      "work": "Shaarei Teshuvah",
+      "ref": "Shaarei Teshuvah 3:218",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [49, 50], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אברהם אוהבי",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 41:8",
+      "sefariaRef": "Isaiah 41:8",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [53], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "וישמע מושמעתי ... מצוותו תכסה ותורתה",
+      "work": "Bereishis",
+      "ref": "Bereishis 26:5",
+      "sefariaRef": "Genesis 26:5",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [54], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ויאמר השם על אברהם, לאכל לך לארצך",
+      "work": "Bereishis",
+      "ref": "Bereishis 12:1-2",
+      "sefariaRef": "Genesis 12:1-2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [56, 59], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "נייעך איז שט צדיק – תלמודי דורותיו",
+      "work": "Bereishis",
+      "ref": "Bereishis 6:9",
+      "sefariaRef": "Genesis 6:9",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [58, 71], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די גמרא זאגט אונז ... אז נמרד האט אים אריינגעווארפן אין פייער",
+      "work": "Gemara",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [55, 56], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ויאלע חשמי בת לוי ויקחת בת לוי",
+      "work": "Shemos",
+      "ref": "Shemos 2:1",
+      "sefariaRef": "Exodus 2:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [59, 60], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "פרשת בעירה ... די גאנצע יחוס פון משה",
+      "work": "Shemos",
+      "ref": "Shemos 6:14-20",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [60, 61], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ענטפערט דער מהר''ל",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [62, 63, 64], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "די רשעות בעל אלקים, די שפרעי ישרש נקרא רשעות",
+      "work": "Rashi on Torah",
+      "ref": "Rashi on Bereishis 1:1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [62], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "ויאמיך, כל האם צדיקים",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 60:21",
+      "sefariaRef": "Isaiah 60:21",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [74], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "ווען ער שטעט אין רמב״ם ... ענטפערט ביי רמב״ם",
+      "work": "Mishneh Torah",
+      "ref": "Rambam, Hilchos Gerushin 2:20",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [75, 77], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "במועד עיר השנה ... במועד את יראת שמע",
+      "work": "Bereishis",
+      "ref": "Bereishis 15:8-9",
+      "sefariaRef": "Genesis 15:8-9",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [79, 84], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "איש אדר אייבער ששון הבורא, אשר העגל מיר ... נבוכה בנצל",
+      "work": "Megillas Esther",
+      "ref": "Esther 2:5-6",
+      "sefariaRef": "Esther 2:5-6",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [95], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אין מדרש, שטייט אין מדרש, אז רבי הקבה",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [95, 96, 98], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav explains that the Chachamim required kavanah specifically in the brachah of the Avos because tefillah is emunah, and emunah is the heritage of Avraham, of whom the parsha says that he believed in Hashem.",
+        "yi": "דער משגיח ערקלערט אז די חכמים האבן פארלאנגט כוונה דווקא ביי ברכת אבות, ווייל תפילה איז אמונה, און אמונה איז די ירושה פון אברהם אבינו, וואס די סדרה זאגט אויף אים \"והאמין בה'\"."
+      },
+      "evidence": { "segs": [7, 11, 12], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Chazal derived that the service of the heart is tefillah from the parallel between man and the world: Yerushalayim, the heart of the world, is the house of prayer, so the heart of the small world, man, serves through prayer.",
+        "yi": "חז\"ל האבן ארויסגעלערנט אז עבודה שבלב איז תפילה פונעם ענליכקייט צווישן דעם מענטש און דער וועלט: ירושלים, דאס הארץ פון דער וועלט, איז דער בית תפילה, ממילא איז די עבודה פונעם הארץ פונעם עולם קטן, דעם מענטש, תפילה."
+      },
+      "evidence": { "segs": [14, 35, 36, 37], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Torah withholds Moshe's parents' righteousness, and Avraham's, to show that the Jewish people and its redemption are a necessity of creation that would have come even without their merit.",
+        "yi": "די תורה דערציילט נישט די צדקות פון משה רבינוס עלטערן און פון אברהם אבינו, כדי צו ווייזן אז דאס אידישע פאלק און זיין גאולה זענען א מוז פון דער בריאה, וואס וואלט געקומען אפילו אן זייער זכות."
+      },
+      "evidence": { "segs": [65, 66, 70, 72], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The Ramban's sharp words about Avraham are not a criticism but a tribute: placing a sin in the very chapter where Hashem chooses Avraham shows that a Jew's sin is only incidental and does not touch his essence.",
+        "yi": "דעם רמב\"נס שארפע ווערטער אויף אברהם אבינו זענען נישט קיין חסרון נאר א שבח: דאס וואס א חטא שטייט אין דעם זעלבן פרק וואו דער אייבערשטער קלייבט אויס אברהם אבינו, ווייזט אז א אידס חטא איז נאר במקרה און רירט נישט אן זיין עצם."
+      },
+      "evidence": { "segs": [87, 88, 89, 90], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Avraham's question of how he would know he would inherit the land was answered with korbanos, because a korban can atone only for one whose sin is incidental, a Jew, and not for one whose sin is essential.",
+        "yi": "אברהם אבינוס שאלה \"במה אדע\" איז געענטפערט געווארן מיט קרבנות, ווייל א קרבן קען נאר מכפר זיין פאר איינעם וועמענס חטא איז במקרה, א איד, און נישט פאר איינעם וועמענס חטא איז בעצם."
+      },
+      "evidence": { "segs": [79, 80, 84], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "From the Midrash about Rebbi and Nebuchadnezzar the Rav learns that Torah is not dead history: one who learns Yirmiyahu is with Yirmiyahu, and one who learns about the Avos stands with them.",
+        "yi": "פונעם מדרש וועגן רבי און נבוכדנצר לערנט דער משגיח ארויס אז תורה איז נישט קיין טויטע היסטאריע: ווער עס לערנט ירמיה איז מיט ירמיה, און ווער עס לערנט וועגן די אבות שטייט מיט זיי."
+      },
+      "evidence": { "segs": [98, 99, 100, 101], "confidence": 0.7 }
+    }
+  ],
+  "stories": [],
+  "questions": [
+    {
+      "question": {
+        "en": "Why did the Chachamim require kavanah only in the first brachah, the brachah of the Avos?",
+        "yi": "פארוואס האבן די חכמים פארלאנגט כוונה נאר ביי דער ערשטער ברכה, ברכת אבות?"
+      },
+      "answer": {
+        "en": "Because all of tefillah is emunah, and the emunah of the Jewish people comes from the Avos, as the parsha says of Avraham that he believed in Hashem.",
+        "yi": "ווייל די גאנצע תפילה איז אמונה, און די אמונה פונעם אידישן פאלק קומט פון די אבות, אזוי ווי די סדרה זאגט ביי אברהם אבינו \"והאמין בה'\"."
+      },
+      "questionSegs": [6, 7],
+      "answerSegs": [7, 11, 12],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "How did Chazal know that the service of the heart means tefillah?",
+        "yi": "פון וואנעט ווייסן חז\"ל אז עבודה שבלב מיינט תפילה?"
+      },
+      "answer": {
+        "en": "Man is a small world, and the heart of the world, Yerushalayim, is a house of prayer; so the service done with a person's heart is tefillah.",
+        "yi": "דער מענטש איז א עולם קטן, און דאס הארץ פון דער וועלט, ירושלים, איז א בית תפילה; ממילא איז די עבודה וואס מען טוט מיט'ן הארץ תפילה."
+      },
+      "questionSegs": [14],
+      "answerSegs": [35, 36, 37],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why does the Torah describe Noach as a tzaddik, but not tell of Avraham's righteousness or his mesiras nefesh in Ur Kasdim?",
+        "yi": "פארוואס שרייבט די תורה אז נח איז געווען א צדיק, אבער דערציילט נישט אברהם אבינוס צדקות און זיין מסירות נפש אין אור כשדים?"
+      },
+      "answer": {
+        "en": "Because the Jewish people must come into being regardless of merit, as the Maharal explains regarding Moshe's parents, and because a Jew is good in essence even when his deeds fall short.",
+        "yi": "ווייל דאס אידישע פאלק מוז אנטשטיין אן א חשבון פון זכות, אזוי ווי דער מהר\"ל ערקלערט ביי משה רבינוס עלטערן, און ווייל א איד איז בעצם גוט אפילו ווען זיינע מעשים זענען נישט ווי עס דארף צו זיין."
+      },
+      "questionSegs": [58, 59, 71],
+      "answerSegs": [64, 70, 72, 85],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "How can a person be forced until he says 'I want', when an act must be done willingly?",
+        "yi": "ווי אזוי קען מען צווינגען א מענטש ביז ער זאגט \"רוצה אני\", ווען די זאך מוז זיין ברצון?"
+      },
+      "answer": {
+        "en": "The Rambam answers that every Jew wants to do the will of Hashem and only the yetzer hara prevents him; the coercion breaks the yetzer hara and reveals his true will.",
+        "yi": "דער רמב\"ם ענטפערט אז יעדער איד וויל טון דעם רצון השם, נאר דער יצר הרע לאזט אים נישט; דאס צווינגען ברעכט דעם יצר הרע און ברענגט ארויס זיין אמת'ן רצון."
+      },
+      "questionSegs": [75, 76],
+      "answerSegs": [77, 78],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why does the Ramban find a sin in Avraham at the very start of his story?",
+        "yi": "פארוואס געפינט דער רמב\"ן א חטא ביי אברהם אבינו גלייך ביים אנהייב פון זיין מעשה?"
+      },
+      "answer": {
+        "en": "To show that Hashem chose Avraham despite the sin, since for him, as the father of the Jewish people, a sin is only incidental and not essential.",
+        "yi": "כדי צו ווייזן אז דער אייבערשטער האט אויסגעקליבן אברהם אבינו טראץ דעם חטא, ווייל ביי אים, אלס דער טאטע פונעם אידישן פאלק, איז א חטא נאר במקרה און נישט בעצם."
+      },
+      "questionSegs": [48, 87],
+      "answerSegs": [88, 89, 90],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says that when learning the parshiyos of the Avos one should not be satisfied with shnayim mikra, but learn them in depth with commentaries, like a Tosafos.",
+        "yi": "דער משגיח זאגט אז ווען מען לערנט די פרשיות פון די אבות זאל מען זיך נישט באגנוגענען מיט שנים מקרא, נאר לערנען מיט עיון מיט מפרשים, ווי א תוספות."
+      },
+      "evidence": { "segs": [39, 41, 42, 93], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one should place himself in the Avos' situation, go back in time and live with them, and learn from how they served Hashem with their whole heart.",
+        "yi": "דער משגיח זאגט אז מען זאל זיך אריינשטעלן אין די אבות'ס מצב, צוריקגיין אין דער צייט און מיטלעבן מיט זיי, און לערנען פון ווי אזוי זיי האבן געדינט דעם אייבערשטן מיט'ן גאנצן הארץ."
+      },
+      "evidence": { "segs": [40, 43, 102, 103], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that the first brachah of Shemoneh Esrei, the brachah of the Avos, must be said with kavanah.",
+        "yi": "דער משגיח זאגט אז די ערשטע ברכה פון שמונה עשרה, ברכת אבות, מוז מען זאגן מיט כוונה."
+      },
+      "evidence": { "segs": [9, 10], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "tefillah as service of the heart",
+    "kavanah in the brachah of the Avos",
+    "man as a microcosm",
+    "Yerushalayim as the heart of the world",
+    "learning the parshiyos of the Avos",
+    "Ramban on Avraham's descent to Egypt",
+    "judging favorably",
+    "the Jewish people as the purpose of creation",
+    "the Jew is good in essence",
+    "Torah as a living Torah"
+  ],
+  "concepts": [
+    { "he": "עבודה שבלב", "heardAs": ["עבודה שבלב", "עבודה שהיא באלעה"] },
+    { "he": "בכל לבבכם", "heardAs": ["בכל לבבכים", "ולכל לבבכן", "בכל לבאבכם"] },
+    { "he": "ברכת אבות", "heardAs": ["ברכה פון ארוז", "די ברכה פון עובד", "די צובראכע פון אבות"] },
+    { "he": "כוונה", "heardAs": ["מכוון", "מחוון"] },
+    { "he": "עולם קטן", "heardAs": ["עולם קודם", "מיקראקאזמס"] },
+    { "he": "צלם אלקים", "heardAs": ["בצלם אלוקים"] },
+    { "he": "רמ\"ח אברים", "heardAs": ["רמח עי ווארים", "רמח אברים"] },
+    { "he": "ערות הארץ", "heardAs": ["ער וואסער ארץ"] },
+    { "he": "בית תפילה", "heardAs": ["בעת תפילה", "בית תפילה"] },
+    { "he": "כותל המערבי", "heardAs": ["כתר מערבי", "כתר מראוו"] },
+    { "he": "שנים מקרא ואחד תרגום", "heardAs": ["שניים מקוה ויפת תרגום"] },
+    { "he": "דן לכף זכות", "heardAs": ["דאן זיין לקאפט זכות", "דען זיין לכבוד"] },
+    { "he": "אור כשדים", "heardAs": ["אהל קאסטום", "אור קסם"] },
+    { "he": "גואל ישראל", "heardAs": ["גאול ישראל", "גוי'ל"] },
+    { "he": "בעצם", "heardAs": ["בעצם", "ביצן", "בייצם"] },
+    { "he": "במקרה", "heardAs": ["במקרא", "במקשה", "במקוה", "במצאה"] },
+    { "he": "כופין אותו עד שיאמר רוצה אני", "heardAs": ["מקום את עטשי ימי רוצה"] },
+    { "he": "מגן אברהם", "heardAs": ["מגן הגרוין", "מגן אברהם"] },
+    { "he": "תורת חיים", "heardAs": ["תורה'ס חיים"] }
+  ],
+  "people": [
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינו", "אברהם לבינו", "אברהם מבינו"] },
+    { "name": "Sarah", "heardAs": ["שורה"] },
+    { "name": "Noach", "heardAs": ["נייעך", "נייעק"] },
+    { "name": "Nimrod", "heardAs": ["נמרד"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו", "משה"] },
+    { "name": "Amram", "heardAs": ["עמרון", "אמורם"] },
+    { "name": "Yocheved", "heardAs": ["יחבע", "יחריו"] },
+    { "name": "Shlomo HaMelech", "heardAs": ["שלמה המלך"] },
+    { "name": "Pharaoh", "heardAs": ["פרעה"] },
+    { "name": "the Ramban", "heardAs": ["רמב״ן", "רמב״ם", "מבן"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "Rabbeinu Yonah", "heardAs": ["רבינו יונא"] },
+    { "name": "the Maharal", "heardAs": ["מהר''ל"] },
+    { "name": "Rebbi (Rabbi Yehudah HaNasi)", "heardAs": ["רבי הקבה", "רבי יקודש"] },
+    { "name": "Nebuchadnezzar", "heardAs": ["נבוכה בנצל", "נבוכדנצה"] },
+    { "name": "Mordechai", "heardAs": ["מרדכי", "מרסי"] },
+    { "name": "Yirmiyahu", "heardAs": ["יומי הנביא", "ספר ימי"] }
+  ],
+  "asrNotes": "Yiddish ASR is poor, with English loanwords and heavily garbled Hebrew; many segments run about 30 seconds. The Ramban is often transcribed as the Rambam; in segments 45-47, 53 and 87-90 the context (Avraham's sin in going to Egypt) shows the Ramban is meant. The source of the closing Midrash about Rebbi and Nebuchadnezzar, the identity of the 'Rav' who said to learn Bereishis like Tosafos (seg 41), and the source for redemption without teshuvah (segs 67-68) could not be recovered. The catalog topic runs through the whole shiur rather than starting at one point."
+}

@@ -1,0 +1,293 @@
+{
+  "shiurId": "en-parsha-en-svldvs-02",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav shows that Parshas Toldos, the first sedra of Kislev, is full of bracha, and explains 'vayigdelu hane'arim' through the opposing philosophies of the tzaddik and the rasha and the power of a tzaddik's last day.",
+      "yi": "דער משגיח ווייזט אז פרשת תולדות, די ערשטע סדרה פון כסלו, איז פול מיט ברכה, און ער טייטשט \"ויגדלו הנערים\" דורך די צוויי קעגנזייטיגע שיטות פונעם צדיק און פונעם רשע, און דעם כח פונעם לעצטן טאג פון א צדיק."
+    },
+    "abstract": {
+      "en": "The Rav opens with Kislev, the month of bracha: Chanukah's candles are added night by night, and the letters of the word bracha each mean addition, one becoming two. Six is the number of bracha, so Toldos, the sixth sedra and the first Shabbos of Kislev, has every aliyah end in bracha and uses the word 32 times. He then explains Yaakov's 'michra kayom': the tzaddik sees today as the time to do mitzvos and the rasha sees it as the time to enjoy. Rashi says the boys grew up at thirteen, but by count they were fifteen, on the day Avraham died. Using Eliyahu's double portion to Elisha, he explains that on a person's last day all his days gather, and that every tzaddik has a matched opponent. Yaakov absorbed Avraham's kedusha while Esav absorbed Nimrod's tumah. Finally he explains Yitzchak's love of matamim and of Esav through the kedusha placed in food.",
+      "yi": "דער משגיח עפנט מיט חודש כסלו, דער חודש פון ברכה: די חנוכה ליכט לייגט מען צו יעדע נאכט, און יעדער אות פון דעם ווארט ברכה מיינט צולייגן, פון איינס ווערט צוויי. זעקס איז דער מספר פון ברכה, ממילא איז תולדות, די זעקסטע סדרה און דער ערשטער שבת פון כסלו, פול מיט ברכה: יעדע עליה ענדיגט זיך מיט ברכה, און דאס ווארט שטייט 32 מאל. דערנאך טייטשט ער \"מכרה כיום\": דער צדיק זעט היינט אלס די צייט צו טון מצוות, און דער רשע אלס די צייט צו הנאה האבן. רש\"י זאגט אז ביי \"ויגדלו הנערים\" זענען זיי געווען דרייצן, אבער לויטן חשבון זענען זיי געווען פופצן, דעם טאג וואס אברהם אבינו איז נפטר געווארן. פון אליהו וואס האט געגעבן פי שנים צו אלישע ערקלערט ער אז אויפן לעצטן טאג קומען צונויף אלע טעג פונעם מענטש, און אז יעדער צדיק האט א מתנגד אקעגן אים. יעקב האט אריינגעזאפט די קדושה פון אברהם, און עשו די טומאה פון נמרוד. צום סוף ערקלערט ער פארוואס יצחק האט ליב געהאט מטעמים און עשו, דורך דער קדושה וואס גייט אריין אין עסן."
+    },
+    "keyPoints": [
+      {
+        "text": { "en": "Kislev is the month of bracha, and the word bracha itself means addition: in units, tens and hundreds its letters each turn one into two.", "yi": "כסלו איז דער חודש פון ברכה, און דאס ווארט ברכה אליין מיינט צולייגן: ביי איינסער, צענער און הונדערטער מאכט יעדער אות פון איינס צוויי." },
+        "evidence": { "segs": [36, 39, 61, 69, 74, 76], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "Toldos, the sixth sedra, is the sedra of bracha: every aliyah ends with a bracha and the word appears 32 times.", "yi": "תולדות, די זעקסטע סדרה, איז די סדרה פון ברכה: יעדע עליה ענדיגט זיך מיט א ברכה, און דאס ווארט שטייט 32 מאל." },
+        "evidence": { "segs": [145, 147, 203, 205, 208], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "The tzaddik and the rasha hold opposing philosophies of 'today': for one it is the time to do mitzvos, for the other the time to enjoy before death.", "yi": "דער צדיק און דער רשע האלטן פון צוויי קעגנזייטיגע שיטות וועגן \"היום\": פאר איינעם איז עס די צייט צו טון מצוות, פארן אנדערן די צייט צו הנאה האבן פארן שטארבן." },
+        "evidence": { "segs": [238, 241, 278, 299, 331, 335], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "On the day a person leaves the world all his days gather to him, so one present at a tzaddik's passing can receive far more than usual.", "yi": "אויפן טאג וואס א מענטש גייט אוועק פון דער וועלט קומען צו אים אלע זיינע טעג, ממילא קען דער וואס איז ביי דער פטירה פון א צדיק באקומען פיל מער ווי געווענליך." },
+        "evidence": { "segs": [512, 515, 531, 546, 566, 567], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "'Vayigdelu hane'arim' means that at fifteen, on the day Avraham died and Nimrod was killed, Yaakov grew in kedusha and Esav grew in tumah.", "yi": "\"ויגדלו הנערים\" מיינט אז ביי פופצן יאר, אויפן טאג וואס אברהם איז נפטר געווארן און נמרוד איז געהרגעט געווארן, איז יעקב געוואקסן אין קדושה און עשו אין טומאה." },
+        "evidence": { "segs": [736, 737, 740, 744, 746, 749], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "Tzaddikim do not enjoy the physical taste of food, but they feel and enjoy the kedusha put into it by the one who prepares it.", "yi": "צדיקים האבן נישט קיין הנאה פונעם גשמיות'דיגן טעם פונעם עסן, אבער זיי שפירן און האבן הנאה פון דער קדושה וואס דער וואס גרייט עס צו לייגט אריין." },
+        "evidence": { "segs": [963, 976, 1052, 1054, 1074, 1078], "confidence": 0.85 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-parsha-bereshes-06-02-toldos-e", "startSeg": 0, "endSeg": 80,
+      "title": { "en": "Kislev, Chanukah and the word bracha", "yi": "כסלו, חנוכה און דאס ווארט ברכה" },
+      "summary": { "en": "The Rav opens with Kislev as a month whose whole character is Chanukah, a Yom Tov of bracha since its candles are added night by night. He explains that each letter of the word bracha means addition, one becoming two in units, tens and hundreds.", "yi": "דער משגיח עפנט מיט כסלו, א חודש וואס זיין גאנצער כח איז חנוכה, א יום טוב פון ברכה ווייל די ליכט לייגט מען צו נאכט נאך נאכט. ער ערקלערט אז יעדער אות פון דעם ווארט ברכה מיינט צולייגן: פון איינס ווערט צוויי, ביי איינסער, צענער און הונדערטער." },
+      "kind": "intro", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-06-02-toldos-e", "startSeg": 81, "endSeg": 213,
+      "title": { "en": "Six is bracha: the sixth sedra", "yi": "זעקס איז ברכה: די זעקסטע סדרה" },
+      "summary": { "en": "The Rav explains that six is the number of bracha: the vav means 'and', Yosef is the sixth of the Ushpizin, and Toldos is the sixth sedra. He shows that every aliyah of Toldos ends with a bracha, that shishi carries a double bracha, and that the word appears 32 times in the sedra.", "yi": "דער משגיח ערקלערט אז זעקס איז דער מספר פון ברכה: דער וא\"ו מיינט \"און\", יוסף איז דער זעקסטער פון די אושפיזין, און תולדות איז די זעקסטע סדרה. ער ווייזט אז יעדע עליה אין תולדות ענדיגט זיך מיט א ברכה, אז שישי האט א טאפלטע ברכה, און אז דאס ווארט שטייט 32 מאל אין דער סדרה." },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-06-02-toldos-e", "startSeg": 214, "endSeg": 296,
+      "title": { "en": "Being a vessel, and the tzaddik's 'today'", "yi": "זיין א כלי, און דעם צדיקס \"היום\"" },
+      "summary": { "en": "The Rav says that Shabbos is the source of bracha and a person must make himself a whole vessel to hold it. Turning to Yaakov's words 'michra kayom', he introduces two opposing philosophies and describes the tzaddik's: life passes fast, its purpose is Olam Haba, and today is for doing mitzvos.", "yi": "דער משגיח זאגט אז שבת איז דער מקור הברכה, און א מענטש דארף זיך מאכן א גאנצע כלי כדי צו מקבל זיין די ברכה. דערנאך ברענגט ער יעקבס ווערטער \"מכרה כיום\", און שטעלט אוועק צוויי קעגנזייטיגע שיטות; ער שילדערט די שיטה פונעם צדיק: דאס לעבן לויפט שנעל, דער תכלית איז עולם הבא, און היינט איז צו טון מצוות." },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-06-02-toldos-e", "startSeg": 297, "endSeg": 393,
+      "title": { "en": "The rasha's philosophy and the sale", "yi": "דעם רשעס שיטה און דער מכירה" },
+      "summary": { "en": "The Rav describes the rasha's philosophy, to eat and drink today because tomorrow one dies, and explains the sale of the bechorah through it: to Esav it was worth nothing, to Yaakov everything. He then brings 'vayigdelu hane'arim' with Rashi's thirteen years, and Rashi that on that day Avraham died and Yaakov prepared the mourner's meal.", "yi": "דער משגיח שילדערט די שיטה פונעם רשע, עסן און טרינקען היינט ווייל מארגן שטארבט מען, און ער טייטשט דערמיט די מכירת הבכורה: פאר עשו איז זי גארנישט ווערט, פאר יעקב אלעס. דערנאך ברענגט ער \"ויגדלו הנערים\" מיט רש\"י אז זיי זענען געווען דרייצן, און רש\"י אז אין יענעם טאג איז אברהם נפטר געווארן און יעקב האט צוגעגרייט די סעודת הבראה." },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-06-02-toldos-e", "startSeg": 394, "endSeg": 481,
+      "title": { "en": "Why fifteen, and Elisha's double portion", "yi": "פארוואס פופצן, און אלישעס פי שנים" },
+      "summary": { "en": "By a calculation of the years the Rav shows that on that day the twins turned fifteen, as Rabbeinu Bachya insists, and asks why the pasuk calls them grown at fifteen and not at thirteen. To answer he brings Eliyahu's ascent, Elisha's request for a double share of his spirit, and the Gemara showing Elisha did everything twice.", "yi": "דורך א חשבון פון די יארן ווייזט דער משגיח אז אין יענעם טאג זענען די צווילינג געווארן פופצן, אזוי ווי רבינו בחיי זאגט בתוקף, און ער פרעגט פארוואס דער פסוק רופט זיי גרויס ביי פופצן און נישט ביי דרייצן. כדי צו ענטפערן ברענגט ער אליהו הנביא'ס עליה, אלישעס בקשה פון פי שנים, און די גמרא וואס ווייזט אז אלישע האט אלעס געטון צוויי מאל." },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-06-02-toldos-e", "startSeg": 482, "endSeg": 567,
+      "title": { "en": "All one's days gather on the last day", "yi": "אלע טעג קומען צונויף אויפן לעצטן טאג" },
+      "summary": { "en": "The Rav asks how Eliyahu could give double what he had, and answers that each day a person is only what he accomplished that day, but on his last day all his days come to accompany him, as the mefarshim explain Moshe's 'I am 120 years today'. He adds the Chasam Sofer's lament that he was not at his rebbe Rav Nosson Adler's bedside.", "yi": "דער משגיח פרעגט ווי אזוי האט אליהו געקענט געבן טאפל וואס ער האט געהאט, און ענטפערט אז יעדן טאג איז א מענטש נאר וואס ער האט אויפגעטון יענעם טאג, אבער אויפן לעצטן טאג קומען אלע זיינע טעג אים באגלייטן, אזוי ווי די מפרשים טייטשן משה רבינוס \"בן מאה ועשרים שנה אנכי היום\". ער לייגט צו דעם חתם סופר'ס קלאגע אז ער איז נישט געווען ביים בעט פון זיין רבי'ן ר' נתן אדלער." },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-06-02-toldos-e", "startSeg": 568, "endSeg": 678,
+      "title": { "en": "Every tzaddik has his matched opponent", "yi": "יעדער צדיק האט זיין מתנגד אקעגן אים" },
+      "summary": { "en": "The Rav explains that every person comes down with an opposing force: Avraham had Nimrod, Yitzchak Yishmael, Yaakov Lavan and Esav. From Rabbi Yehoshua ben Chananya's answer to his talmidim he shows that the opponent is matched to the tzaddik and leaves with him: Nimrod died the day Avraham died, and Esav was killed at Yaakov's burial.", "yi": "דער משגיח ערקלערט אז יעדער מענטש קומט אראפ מיט א כח וואס שטייט אים אקעגן: אברהם האט געהאט נמרוד, יצחק ישמעאל, יעקב לבן און עשו. פון ר' יהושע בן חנניה'ס תשובה צו זיינע תלמידים ווייזט ער אז דער מתנגד איז גלייך צום צדיק און גייט אוועק מיט אים: נמרוד איז אומגעקומען דעם טאג וואס אברהם איז נפטר געווארן, און עשו איז געהרגעט געווארן ביי יעקבס קבורה." },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-06-02-toldos-e", "startSeg": 679, "endSeg": 775,
+      "title": { "en": "Vayigdelu: kedusha and tumah absorbed", "yi": "ויגדלו: קדושה און טומאה אריינגעזאפט" },
+      "summary": { "en": "The Rav explains that Yaakov stood at Avraham's bedside and absorbed the kedusha of his whole life, while that same day Esav killed Nimrod and absorbed all the tumah of Nimrod's life. This is 'vayigdelu hane'arim': both grew great at fifteen, one in kedusha and one in tumah. He then turns to Yitzchak's request for matamim before the brachos.", "yi": "דער משגיח ערקלערט אז יעקב איז געשטאנען ביים בעט פון אברהם און האט אריינגעזאפט די קדושה פון זיין גאנץ לעבן, און דעם זעלבן טאג האט עשו געהרגעט נמרוד און אריינגעזאפט די גאנצע טומאה פון נמרודס לעבן. דאס איז \"ויגדלו הנערים\": ביידע זענען גרויס געווארן ביי פופצן, איינער אין קדושה און איינער אין טומאה. דערנאך גייט ער איבער צו יצחקס בקשה פון מטעמים פאר די ברכות." },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-06-02-toldos-e", "startSeg": 776, "endSeg": 983,
+      "title": { "en": "Tzaddikim who do not taste their food", "yi": "צדיקים וואס שפירן נישט דעם טעם פון עסן" },
+      "summary": { "en": "Recalling that a tzaddik has no interest in what Olam Hazeh offers, the Rav tells how the Yismach Moshe ate dishwater as soup, and how the Levushei Serad drank glass after glass of whiskey thinking it was water. He mentions a Yid who for forty years did not know how food tastes, and asks why then Yitzchak wanted matamim.", "yi": "דער משגיח דערמאנט אז א צדיק האט נישט קיין אינטערעס אין וואס עולם הזה האט צו געבן, און ער דערציילט ווי דער ישמח משה האט געגעסן וואסער פון וואשן כלים אנשטאט זופ, און ווי דער לבושי שרד האט געטרונקען גלאז נאך גלאז בראנפן מיינענדיג אז ס'איז וואסער. ער דערמאנט א איד וואס האט פערציג יאר נישט געוואוסט ווי עסן שמעקט, און פרעגט פארוואס זשע האט יצחק געוואלט מטעמים." },
+      "kind": "story", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-06-02-toldos-e", "startSeg": 984, "endSeg": 1081,
+      "title": { "en": "The cholent's secret ingredient", "yi": "דער סוד פונעם טשאלנט" },
+      "summary": { "en": "The Rav tells of a rav who could not reproduce a rebbe's cholent at home until the rebbetzin revealed that the rebbe dropped in beans saying 'lekavod Shabbos kodesh'. From this he explains that food holds ruchniyus, that kedusha enters food prepared for learning, davening and Shabbos, and that tzaddikim enjoy that kedusha, a taste of Olam Haba, not the physical taste.", "yi": "דער משגיח דערציילט פון א רב וואס האט נישט געקענט נאכמאכן א רבי'ס טשאלנט אינדערהיים, ביז די רביצין האט אנטפלעקט אז דער רבי האט אריינגעווארפן בעבלעך און געזאגט \"לכבוד שבת קודש\". דערפון ערקלערט ער אז אין עסן איז דא רוחניות, אז קדושה גייט אריין אין עסן וואס ווערט צוגעגרייט פאר לערנען, דאווענען און שבת, און אז צדיקים האבן הנאה פון דער קדושה, א מעין עולם הבא, נישט פונעם גשמיות'דיגן טעם." },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bereshes-06-02-toldos-e", "startSeg": 1082, "endSeg": 1253,
+      "title": { "en": "Rivka's food, Yitzchak's love, and the application", "yi": "רבקהס עסן, יצחקס ליבשאפט, און די לימוד" },
+      "summary": { "en": "The Rav asks how Yitzchak could eat meat Esav, an apikores, had slaughtered, and answers that Rivka prepared it herself with kedusha, so Yitzchak felt kedusha and thought Esav a hidden tzaddik. When Esav finally brought his own meat Yitzchak felt Gehinom enter. He concludes that whoever makes something puts his neshama into it, applying this to food, restaurants and tefillin, and wishes a good Shabbos.", "yi": "דער משגיח פרעגט ווי אזוי האט יצחק געקענט עסן פלייש וואס עשו, אן אפיקורס, האט געשאכטן, און ענטפערט אז רבקה האט עס אליין צוגעגרייט מיט קדושה, ממילא האט יצחק געשפירט קדושה און געמיינט אז עשו איז א באהאלטענער צדיק. ווען עשו האט צום סוף געברענגט זיין אייגן פלייש, האט יצחק געשפירט ווי גיהנם קומט אריין. ער שליסט אז דער וואס מאכט עפעס לייגט אריין זיין נשמה, און ער ווענדט עס אן אויף עסן, רעסטאראנטן און תפילין, און ווינטשט א גוטן שבת." },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "It says in Zayar that there were 24 oisiyas", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [31, 32, 33], "confidence": 0.7 } },
+    { "heardAs": "the Meral explains", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [42, 43, 54], "confidence": 0.6 } },
+    { "heardAs": "Ya'sef Hashem aleichem, aleichem v'arbeneichem", "work": "Tehillim", "ref": "Tehillim 115:14", "sefariaRef": "Psalms 115:14", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [77, 135, 156, 157], "confidence": 0.8 } },
+    { "heardAs": "Yasef Hashem Li", "work": "Bereishis", "ref": "Bereishis 30:24", "sefariaRef": "Genesis 30:24", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [121, 122, 123, 124, 126], "confidence": 0.85 } },
+    { "heardAs": "vizbaruchu b'zarachah", "work": "Bereishis", "ref": "Bereishis 26:4", "sefariaRef": "Genesis 26:4", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [173, 175], "confidence": 0.7 } },
+    { "heardAs": "v'ayavachayu Hashem", "work": "Bereishis", "ref": "Bereishis 26:12", "sefariaRef": "Genesis 26:12", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [179, 180], "confidence": 0.7 } },
+    { "heardAs": "Ki Hi Mekaya HaBracha", "work": "Lecha Dodi", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "quoted", "evidence": { "segs": [217, 218, 219], "confidence": 0.8 } },
+    { "heardAs": "Mecha Kayayim", "work": "Bereishis", "ref": "Bereishis 25:31", "sefariaRef": "Genesis 25:31", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [232, 233, 236], "confidence": 0.8 } },
+    { "heardAs": "the matter says not like a shadow of a tree", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [250, 252, 253, 256], "confidence": 0.7 } },
+    { "heardAs": "we have a pasach on that", "work": "Devarim", "ref": "Devarim 7:11", "sefariaRef": "Deuteronomy 7:11", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [275, 276, 278, 280], "confidence": 0.65 } },
+    { "heardAs": "It's a Pasuk. Let's drink, eat and drink today, because tomorrow we're going to die.", "work": "Yeshayahu", "ref": "Yeshayahu 22:13", "sefariaRef": "Isaiah 22:13", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [298, 299], "confidence": 0.8 } },
+    { "heardAs": "the matter says that's one out of five of Averis he did that day", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [308, 309], "confidence": 0.7 } },
+    { "heardAs": "Pasuk says and the boys grew up", "work": "Bereishis", "ref": "Bereishis 25:27", "sefariaRef": "Genesis 25:27", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [358, 359, 360, 736], "confidence": 0.9 } },
+    { "heardAs": "so Rasha says there were 30 they became 13 years old", "work": "Rashi", "ref": "Rashi on Bereishis 25:27", "sefariaRef": "Rashi on Genesis 25:27", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [362, 364, 411], "confidence": 0.85 } },
+    { "heardAs": "and then rasha says that that day Abraham avinu was nefto", "work": "Rashi", "ref": "Rashi on Bereishis 25:30", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [373, 375, 377, 384], "confidence": 0.75 } },
+    { "heardAs": "Rabbeinu B'chayi says, no, they were 15 years old", "work": "Rabbeinu Bachya", "ref": "Rabbeinu Bachya on Bereishis 25:27", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [412, 416, 418], "confidence": 0.8 } },
+    { "heardAs": "in the Navi in the Saifah Malachim", "work": "Melachim II", "ref": "Melachim II 2:9-12", "sefariaRef": "II Kings 2:9-12", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [435, 437, 450, 451, 463, 468], "confidence": 0.85 } },
+    { "heardAs": "the Gemara goes through and shows that everything that Elie HaNavi did Elisha did twice", "work": "Gemara", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [469, 472, 474, 478, 479], "confidence": 0.75 } },
+    { "heardAs": "I'm 120 years old today so the Mufashim say", "work": "Devarim", "ref": "Devarim 31:2", "sefariaRef": "Deuteronomy 31:2", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [519, 521, 523, 524], "confidence": 0.8 } },
+    { "heardAs": "in the Drashe of the Drashe's Chassam Seifer where he makes a hespit on his Rebbe Reb Nassin Adler", "work": "Drashos Chasam Sofer", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [554, 555, 557, 558, 564, 566], "confidence": 0.8 } },
+    { "heardAs": "Nisa v'neleicha v'yerecha l'negdecha", "work": "Bereishis", "ref": "Bereishis 33:12", "sefariaRef": "Genesis 33:12", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [625, 629], "confidence": 0.7 } },
+    { "heardAs": "The Gemara tells us that Rabbi Yeshua ben Hanani had debates", "work": "Gemara", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [617, 618, 620, 621, 635], "confidence": 0.75 } },
+    { "heardAs": "why must I lose both of you in one day", "work": "Bereishis", "ref": "Bereishis 27:45", "sefariaRef": "Genesis 27:45", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [659, 661, 663], "confidence": 0.8 } },
+    { "heardAs": "Sir Asher says she said Nebuah", "work": "Rashi", "ref": "Rashi on Bereishis 27:45", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [664, 665, 666, 671], "confidence": 0.7 } },
+    { "heardAs": "vatas imay matamen", "work": "Bereishis", "ref": "Bereishis 27:14", "sefariaRef": "Genesis 27:14", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [767, 768, 769], "confidence": 0.8 } },
+    { "heardAs": "we have Yitzchak as Aesop ki tzayet b'fiv", "work": "Bereishis", "ref": "Bereishis 25:28", "sefariaRef": "Genesis 25:28", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1089, 1090], "confidence": 0.85 } },
+    { "heardAs": "like the Mezuch says, he couldn't find any stack to shoot, so he shot a dog", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1165], "confidence": 0.75 } },
+    { "heardAs": "Kirei Echzad HaShaber HaChai Hashem", "work": "Bereishis", "ref": "Bereishis 27:27", "sefariaRef": "Genesis 27:27", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [1175, 1176], "confidence": 0.7 } }
+  ],
+  "insights": [
+    {
+      "text": { "en": "The three letters of bracha each mean addition at a different level: beis is one becoming two, chaf is ten becoming twenty, reish is a hundred becoming two hundred.", "yi": "די דריי אותיות פון ברכה מיינען יעדער צולייגן אויף אן אנדער מדרגה: בי\"ת איז פון איינס צוויי, כ\"ף פון צען צוואנציג, רי\"ש פון הונדערט צוויי הונדערט." },
+      "evidence": { "segs": [59, 61, 65, 69, 71, 73], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "Six is bracha: Yosef, whose name means adding, is the sixth of the Ushpizin, and Toldos, the sixth sedra, is the sedra filled with bracha.", "yi": "זעקס איז ברכה: יוסף, וואס זיין נאמען מיינט צולייגן, איז דער זעקסטער פון די אושפיזין, און תולדות, די זעקסטע סדרה, איז די סדרה וואס איז פול מיט ברכה." },
+      "evidence": { "segs": [110, 111, 128, 145, 147], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "'Michra kayom' means 'sell according to today': by Esav's philosophy of today the bechorah is worthless, by Yaakov's it is worth everything, so the sale fits both views.", "yi": "\"מכרה כיום\" מיינט \"פארקויף לויט דעם היום\": לויט עשוס שיטה פון היינט איז די בכורה גארנישט ווערט, לויט יעקבס איז זי אלעס ווערט, און ממילא פאסט די מכירה פאר ביידע שיטות." },
+      "evidence": { "segs": [323, 331, 333, 337, 339, 344], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "Eliyahu could give Elisha double what he had because on his last day all his days gathered to him, making him far greater than on any single day.", "yi": "אליהו האט געקענט געבן אלישע טאפל פון וואס ער האט געהאט, ווייל אויף זיין לעצטן טאג זענען אלע זיינע טעג צונויפגעקומען, און ער איז געווען פיל גרעסער ווי אויף סיי וועלכן איינציגן טאג." },
+      "evidence": { "segs": [488, 543, 545, 546, 547, 552], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "A tzaddik and his opponent are a balanced match, so when the tzaddik leaves the world his opponent leaves too or loses his strength: Nimrod with Avraham, Esav with Yaakov.", "yi": "א צדיק און זיין מתנגד זענען גלייך אקעגן אנאנד, ממילא ווען דער צדיק גייט אוועק פון דער וועלט גייט דער מתנגד אויך אוועק אדער פארלירט זיין כח: נמרוד מיט אברהם, עשו מיט יעקב." },
+      "evidence": { "segs": [636, 638, 646, 649, 673, 675], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "Vayigdelu hane'arim refers to the fifteenth birthday, when Yaakov absorbed the kedusha at Avraham's passing and Esav the tumah at Nimrod's killing.", "yi": "\"ויגדלו הנערים\" גייט אויפן פופצנטן געבורטסטאג, ווען יעקב האט אריינגעזאפט די קדושה ביי אברהמס פטירה, און עשו די טומאה ביים הרג'ענען נמרוד." },
+      "evidence": { "segs": [698, 701, 713, 730, 737, 741], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "Yitzchak loved Esav more because the food Esav brought was secretly prepared by Rivka with kedusha, so Yitzchak felt kedusha in it and took Esav for a hidden tzaddik.", "yi": "יצחק האט מער ליב געהאט עשו ווייל דאס עסן וואס עשו האט געברענגט האט רבקה בסוד צוגעגרייט מיט קדושה; יצחק האט געשפירט די קדושה און געמיינט אז עשו איז א באהאלטענער צדיק." },
+      "evidence": { "segs": [1128, 1144, 1147, 1148, 1155, 1158], "confidence": 0.85 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Yismach Moshe's soup", "yi": "דעם ישמח משה'ס זופ" },
+      "retelling": { "en": "The Yismach Moshe, great-grandfather of the Satmar Rav, usually ate his one meal late at night, prepared by the rebbetzin. Once she went to a relative's chasuna and left him a pot of soup and a pot of meat on the oven. When she returned the soup was untouched, yet he said he had eaten it: he had taken from the pot of soapy water she had prepared for washing dishes, and did not know the difference.", "yi": "דער ישמח משה, דער עלטער-זיידע פונעם סאטמאר רב, האט געווענליך געגעסן זיין איין סעודה שפעט ביינאכט, וואס די רביצין האט צוגעגרייט. איינמאל איז זי געפארן אויף א חתונה ביי א קרוב און האט אים איבערגעלאזט אויפן אויוון א טאפ זופ און א טאפ פלייש. ווען זי איז צוריקגעקומען איז די זופ געווען אומבארירט, אבער ער האט געזאגט אז ער האט עס געגעסן: ער האט גענומען פונעם טאפ מיט זייף-וואסער וואס זי האט צוגעגרייט צו וואשן די כלים, און ער האט נישט געשפירט קיין חילוק." },
+      "people": ["the Yismach Moshe", "the Satmar Rav"],
+      "evidence": { "segs": [787, 794, 795, 801, 828, 833], "confidence": 0.85 }
+    },
+    {
+      "title": { "en": "The Levushei Serad and the whiskey", "yi": "דער לבושי שרד און דער בראנפן" },
+      "retelling": { "en": "The Levushei Serad, a great posek who lived in Tzfas, learned for hours every motzaei Shabbos, and a Yid who revered him would bring him a flask of whiskey and a small glass to warm him. Once, finding him absorbed in the Gemara, the Yid left the flask on the table. The Levushei Serad, his mouth dry, took it for water, filled a large glass, made a shehakol and drank it, then did so again. The Yid, refilling the flask and hiding to watch, saw what happened; later the rav touched a small glass of schnapps to his tongue and said it was strong. He did not know the difference.", "yi": "דער לבושי שרד, א גרויסער פוסק וואס האט געוואוינט אין צפת, האט יעדן מוצאי שבת געלערנט שעות לאנג, און א איד וואס האט אים זייער מכבד געווען פלעגט אים ברענגען א פלעשל בראנפן און א קליין גלעזל כדי אים צו דערווארעמען. איינמאל האט דער איד געזען אז ער איז פארטיפט אין דער גמרא, און האט אוועקגעשטעלט דאס פלעשל אויפן טיש. דער לבושי שרד, מיט א טרוקן מויל, האט געמיינט אז ס'איז וואסער, אנגעפילט א גרויס גלאז, געמאכט א שהכל און אויסגעטרונקען, און דערנאך נאכאמאל. דער איד האט נאכגעפילט און זיך באהאלטן, און געזען וואס ס'קומט פאר; שפעטער האט דער רב צוגערירט א קליין גלעזל משקה צו דער צונג און געזאגט אז ס'איז שטארק. ער האט נישט געשפירט קיין חילוק." },
+      "people": ["the Levushei Serad"],
+      "evidence": { "segs": [842, 848, 870, 899, 916, 960], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "The cholent made 'lekavod Shabbos kodesh'", "yi": "דער טשאלנט \"לכבוד שבת קודש\"" },
+      "retelling": { "en": "A rav who spent a Shabbos with a great rebbe tasted a cholent like none he had eaten before, and asked the rebbetzin for the recipe. At home his wife followed it, but it came out plain. The next time he asked for the secret ingredient, and the rebbetzin told him that every erev Shabbos the rebbe came into the kitchen, dropped a handful of beans into the pot and said 'lekavod Shabbos kodesh'. The rav said that ingredient he did not have at home.", "yi": "א רב וואס איז געווען א שבת ביי א גרויסן רבי'ן האט פארזוכט א טשאלנט אזוי ווי ער האט קיינמאל נישט געגעסן, און האט געבעטן ביי דער רביצין דעם רעצעפט. אינדערהיים האט זיין ווייב עס נאכגעמאכט, אבער ס'איז ארויס א פשוט'ער טשאלנט. דאס צווייטע מאל האט ער געבעטן דעם סוד, און די רביצין האט אים געזאגט אז יעדן ערב שבת קומט דער רבי אריין אין קיך, ווארפט אריין א האנטפול בעבלעך אין טאפ און זאגט \"לכבוד שבת קודש\". האט דער רב געזאגט אז אזא זאך האט ער נישט אינדערהיים." },
+      "people": [],
+      "evidence": { "segs": [990, 1003, 1012, 1026, 1031, 1035], "confidence": 0.85 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "What does Yaakov mean by 'michra kayom', sell it 'as today'?", "yi": "וואס מיינט יעקב מיט \"מכרה כיום\"?" },
+      "answer": { "en": "Each brother has a philosophy of today; by Esav's the bechorah is worthless and by Yaakov's priceless, so the sale suits both.", "yi": "יעדער ברודער האט א שיטה וועגן היינט; לויט עשוס איז די בכורה גארנישט ווערט און לויט יעקבס אלעס, און ממילא פאסט די מכירה פאר ביידע." },
+      "questionSegs": [233, 236], "answerSegs": [238, 331, 333, 337, 344], "confidence": 0.8
+    },
+    {
+      "question": { "en": "If the twins were fifteen, why does the pasuk say they grew up then and not at thirteen?", "yi": "אויב די צווילינג זענען געווען פופצן, פארוואס זאגט דער פסוק אז זיי זענען דעמאלט גרויס געווארן און נישט ביי דרייצן?" },
+      "answer": { "en": "That day Avraham died and Nimrod was killed; Yaakov absorbed kedusha and Esav tumah, so both became great.", "yi": "יענעם טאג איז אברהם נפטר געווארן און נמרוד געהרגעט געווארן; יעקב האט אריינגעזאפט קדושה און עשו טומאה, און ביידע זענען גרויס געווארן." },
+      "questionSegs": [419, 420, 421, 422], "answerSegs": [737, 739, 740, 741, 744, 748], "confidence": 0.85
+    },
+    {
+      "question": { "en": "How could Eliyahu give Elisha double his spirit, more than he had?", "yi": "ווי אזוי האט אליהו געקענט געבן אלישע טאפל פון זיין רוח, מער ווי ער האט געהאט?" },
+      "answer": { "en": "On a person's last day all his days come together, so Eliyahu was then far greater than on any single day.", "yi": "אויפן לעצטן טאג פון א מענטש קומען צונויף אלע זיינע טעג, ממילא איז אליהו דעמאלט געווען פיל גרעסער ווי אויף סיי וועלכן טאג." },
+      "questionSegs": [483, 488, 492], "answerSegs": [512, 514, 543, 546, 552], "confidence": 0.85
+    },
+    {
+      "question": { "en": "If tzaddikim do not care for food, why did Yitzchak want matamim?", "yi": "אויב צדיקים זענען נישט אינטערעסירט אין עסן, פארוואס האט יצחק געוואלט מטעמים?" },
+      "answer": { "en": "Food holds ruchniyus; tzaddikim do not enjoy its physical taste but feel and enjoy the kedusha in it.", "yi": "אין עסן איז דא רוחניות; צדיקים האבן נישט הנאה פונעם גשמיות'דיגן טעם, נאר זיי שפירן און האבן הנאה פון דער קדושה דערין." },
+      "questionSegs": [777, 783, 978, 979], "answerSegs": [1048, 1052, 1074, 1078, 1080], "confidence": 0.75
+    },
+    {
+      "question": { "en": "How could Yitzchak eat meat slaughtered by Esav, an apikores whose shechita is neveilah?", "yi": "ווי אזוי האט יצחק געקענט עסן פלייש וואס עשו, אן אפיקורס וועמענס שחיטה איז נבילה, האט געשאכטן?" },
+      "answer": { "en": "Rivka did not allow it; she told Esav to go out and herself slaughtered and cooked the food with kedusha, and Esav brought it in.", "yi": "רבקה האט עס נישט דערלאזט; זי האט געזאגט עשו'ן ער זאל גיין שפאצירן, און זי אליין האט געשאכטן און געקאכט מיט קדושה, און עשו האט עס אריינגעברענגט." },
+      "questionSegs": [1083, 1095, 1105, 1107], "answerSegs": [1112, 1117, 1126, 1129, 1132], "confidence": 0.85
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Rav says a person must make himself a whole vessel, without holes, to be able to receive bracha.", "yi": "דער משגיח זאגט אז א מענטש דארף זיך מאכן א גאנצע כלי, אן לעכער, כדי ער זאל קענען מקבל זיין ברכה." },
+      "evidence": { "segs": [221, 222, 224, 229, 230], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "The Rav says food cooked with the feeling of doing it for Shabbos adds kedusha to those who eat it, while food made by someone without that intent cannot be expected to give much.", "yi": "דער משגיח זאגט אז עסן וואס מ'קאכט מיטן געפיל אז מ'טוט עס לכבוד שבת לייגט צו קדושה צו די וואס עסן עס, און פון עסן וואס איינער מאכט אן דעם קען מען נישט ערווארטן פיל." },
+      "evidence": { "segs": [1189, 1190, 1191, 1199, 1200], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "The Rav advises buying tefillin, mezuzos and tzitzis from a proper sofer, paying more for the best, since the one who makes something puts his neshama into it.", "yi": "דער משגיח ראט צו קויפן תפילין, מזוזות און ציצית ביי א ריכטיגן סופר, און צאלן מער פארן בעסטן, ווייל דער וואס מאכט עפעס לייגט אריין זיין נשמה." },
+      "evidence": { "segs": [1234, 1236, 1238, 1241, 1246], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "Parshas Toldos",
+    "Kislev as the month of bracha",
+    "Chanukah",
+    "the meaning of the word bracha",
+    "the tzaddik and the rasha",
+    "sale of the bechorah",
+    "the day of a tzaddik's passing",
+    "Eliyahu and Elisha",
+    "kedusha in food",
+    "Yitzchak and Esav"
+  ],
+  "concepts": [
+    { "he": "ברכה", "heardAs": ["bracha", "baraych", "Brach", "brachah"] },
+    { "he": "כסלו", "heardAs": ["Kislev"] },
+    { "he": "חודש", "heardAs": ["Chayidosh", "Chaydish", "Chaydash"] },
+    { "he": "לשון הקודש", "heardAs": ["Lashem Ka'idosh", "Lashon Ka Yiddish"] },
+    { "he": "רבונו של עולם", "heardAs": ["Ravanya Shledam", "Rabbani Shalom", "Rabbi Yisrael", "Rabbani Sholeil"] },
+    { "he": "אושפיזין", "heardAs": ["Ashpizan", "Hushpizim"] },
+    { "he": "מקור הברכה", "heardAs": ["Mekaya HaBracha"] },
+    { "he": "כלי", "heardAs": ["Keili"] },
+    { "he": "עולם הזה", "heardAs": ["Olam Hazer", "Eilam ha-zeh", "Elam Hazer"] },
+    { "he": "עולם הבא", "heardAs": ["Eilam ha-ba", "Olam Haba"] },
+    { "he": "בכורה", "heardAs": ["B'chayir", "bchaire", "meyobchaire"] },
+    { "he": "סעודת הבראה", "heardAs": ["suda savga'a"] },
+    { "he": "פי שנים", "heardAs": ["Pishnayim", "Yipi Shnayim Beruchach"] },
+    { "he": "מתנגד", "heardAs": ["misnaget"] },
+    { "he": "פטירה", "heardAs": ["ptigha", "Petir", "Petzirah", "pagirah", "Pegirah"] },
+    { "he": "מטעמים", "heardAs": ["matamen", "Matamim"] },
+    { "he": "מעין עולם הבא", "heardAs": ["Mayen Olam Haba"] },
+    { "he": "ל\"ו צדיקים", "heardAs": ["Lamed Vav Tzadik"] },
+    { "he": "אפיקורס", "heardAs": ["apokyrus", "apicyrus"] },
+    { "he": "מומר", "heardAs": ["mummer"] },
+    { "he": "נבילה", "heardAs": ["novella"] },
+    { "he": "פיגול", "heardAs": ["piddle"] },
+    { "he": "סופר", "heardAs": ["seifer"] }
+  ],
+  "people": [
+    { "name": "Yosef", "heardAs": ["Yasef", "Yaisef"] },
+    { "name": "Rachel", "heardAs": ["Rachel"] },
+    { "name": "Avraham Avinu", "heardAs": ["Avram", "Abraham avinu", "Avraham Avinu"] },
+    { "name": "Yitzchak", "heardAs": ["Yitzchak", "Yitzhak"] },
+    { "name": "Yaakov", "heardAs": ["Yankov", "Yaankar", "Yankam", "Yank of Avinu", "Yaim Kav"] },
+    { "name": "Esav", "heardAs": ["Esav", "Asaf", "Asav", "Aesop", "Esau", "Yisif"] },
+    { "name": "Rivka", "heardAs": ["Rivka"] },
+    { "name": "Rashi", "heardAs": ["Rasha", "Rashi", "Sir Asher"] },
+    { "name": "Rabbeinu Bachya", "heardAs": ["Rabbeinu B'chayi"] },
+    { "name": "Eliyahu Hanavi", "heardAs": ["Elia Navi", "Eli and Navi", "Elie HaNavi", "Elio"] },
+    { "name": "Elisha Hanavi", "heardAs": ["Elisha Hanavi"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["Mesh Rabbeinu"] },
+    { "name": "the Chasam Sofer", "heardAs": ["Chassam Seifer"] },
+    { "name": "Rav Nosson Adler", "heardAs": ["Reb Nassin Adler"] },
+    { "name": "Nimrod", "heardAs": ["Nimrod", "Nimret"] },
+    { "name": "Yishmael", "heardAs": ["Yishmael"] },
+    { "name": "Lavan", "heardAs": ["Loven"] },
+    { "name": "Rabbi Yehoshua ben Chananya", "heardAs": ["Rabbi Yeshua ben Hanani", "Rabbi Shur ben Nachnanya"] },
+    { "name": "Chushim ben Dan", "heardAs": ["Chusham ben Dan"] },
+    { "name": "the Yismach Moshe", "heardAs": ["Yismach Meisha", "Yismach Maisha"] },
+    { "name": "the Satmar Rav", "heardAs": ["Satmar Rav"] },
+    { "name": "the Levushei Serad", "heardAs": ["Lerush Isra", "Levushi Shrad", "Lavush Yisroel", "Levush Yitzchad"] }
+  ],
+  "asrNotes": "English ASR is fair, split into very short segments; Hebrew terms and pesukim are badly garbled but mostly recoverable from context. The source 'the Meral explains' (segs 42, 54) is probably the Maharal but left unidentified; the Zohar on the 24 letters (seg 31) is garbled. The name of the rav in the cholent story (seg 987) and the opening of the Esav-and-Rivka stretch (seg 230) are not recoverable. No long noise stretches."
+}
