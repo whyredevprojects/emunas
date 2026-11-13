@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-11-13T12:37:48.381Z",
+  "generatedAt": "2026-11-13T14:58:07.707Z",
   "stats": {
     "bucket.audio": 1129,
-    "bucket.objects": 4187,
-    "bucket.transcripts": 1006,
+    "bucket.objects": 4211,
+    "bucket.transcripts": 1014,
     "recordings": 1129,
     "recordings.duplicateOf": 6,
     "recordings.partOf": 0,
-    "recordings.transcribed": 1006,
+    "recordings.transcribed": 1014,
     "series": 17,
     "shiurim": 1044,
     "shiurim.inScope": 993,
@@ -52,7 +52,7 @@
     "shiurim.outOfScope.series.tanya-en": 1,
     "shiurim.outOfScope.source.pocket-guide-2012": 5,
     "shiurim.outOfScope.source.uncatalogued-guide": 46,
-    "transcripts.attachedInScope": 1000,
+    "transcripts.attachedInScope": 1008,
     "transcripts.redundant": 6,
     "warnings.duplicate": 2,
     "warnings.grouped-tracks": 2,
@@ -70,7 +70,7 @@
     "warnings.single-file-two-sides": 4,
     "warnings.split-year-by-order": 10,
     "warnings.split-year-unknown": 1,
-    "warnings.transcribed-out-of-scope": 1,
+    "warnings.transcribed-out-of-scope": 9,
     "warnings.undeclared-duplicate": 4,
     "warnings.year-junk": 1
   },
@@ -40949,9 +40949,9 @@
     {
       "id": "purim-06-5740-1-purim-seudah-zeidins-cholem",
       "audioKey": "PURIM SEUDOS/06-5740-1 Purim Seudah Zeidins Cholem.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/PURIM SEUDOS/06-5740-1 Purim Seudah Zeidins Cholem",
+      "durationSec": 4779.51,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 19118557,
       "duplicateOf": null,
       "partOf": null
@@ -40959,9 +40959,9 @@
     {
       "id": "purim-06-5740-2-purim-seudah-zeidins-cholem",
       "audioKey": "PURIM SEUDOS/06-5740-2 Purim Seudah Zeidins Cholem.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/PURIM SEUDOS/06-5740-2 Purim Seudah Zeidins Cholem",
+      "durationSec": 3834.92,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 15340206,
       "duplicateOf": null,
       "partOf": null
@@ -40969,9 +40969,9 @@
     {
       "id": "purim-06-5743-1-purim-seudah",
       "audioKey": "PURIM SEUDOS/06-5743-1 Purim Seudah.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/PURIM SEUDOS/06-5743-1 Purim Seudah",
+      "durationSec": 3181.81,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 12727752,
       "duplicateOf": null,
       "partOf": null
@@ -40979,9 +40979,9 @@
     {
       "id": "purim-06-5743-2-purim-seudah",
       "audioKey": "PURIM SEUDOS/06-5743-2 Purim Seudah.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/PURIM SEUDOS/06-5743-2 Purim Seudah",
+      "durationSec": 3781.92,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 15128196,
       "duplicateOf": null,
       "partOf": null
@@ -40989,9 +40989,9 @@
     {
       "id": "purim-06-5744-1-purim-seudah-jamale",
       "audioKey": "PURIM SEUDOS/06-5744-1 Purim Seudah Jamale.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/PURIM SEUDOS/06-5744-1 Purim Seudah Jamale",
+      "durationSec": 4396,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 17584542,
       "duplicateOf": null,
       "partOf": null
@@ -40999,9 +40999,9 @@
     {
       "id": "purim-06-5744-2-purim-seudah-jamale",
       "audioKey": "PURIM SEUDOS/06-5744-2 Purim Seudah Jamale.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/PURIM SEUDOS/06-5744-2 Purim Seudah Jamale",
+      "durationSec": 2691.31,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 10765747,
       "duplicateOf": null,
       "partOf": null
@@ -41009,9 +41009,9 @@
     {
       "id": "purim-06-5745-1-purim-seudah",
       "audioKey": "PURIM SEUDOS/06-5745-1 Purim Seudah.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/PURIM SEUDOS/06-5745-1 Purim Seudah",
+      "durationSec": 5529.8,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 22119713,
       "duplicateOf": null,
       "partOf": null
@@ -41019,9 +41019,9 @@
     {
       "id": "purim-06-5745-2-purim-seudah",
       "audioKey": "PURIM SEUDOS/06-5745-2 Purim Seudah.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/PURIM SEUDOS/06-5745-2 Purim Seudah",
+      "durationSec": 3609.51,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 14438564,
       "duplicateOf": null,
       "partOf": null
@@ -43004,6 +43004,14 @@
     "[perek-blank] en-tanya-en-37: perek blank in catalog (n=37)",
     "[perek-blank] en-tanya-en-38: perek blank in catalog (n=38)",
     "[perek-blank] en-tanya-en-40: perek blank in catalog (n=40)",
-    "[transcribed-out-of-scope] purim-06-5739-purim-seudah is transcribed but its shiur yi-purim-seudos-5739 stays out of scope (Purim seudah (out of scope))"
+    "[transcribed-out-of-scope] purim-06-5739-purim-seudah is transcribed but its shiur yi-purim-seudos-5739 stays out of scope (Purim seudah (out of scope))",
+    "[transcribed-out-of-scope] purim-06-5740-1-purim-seudah-zeidins-cholem is transcribed but its shiur yi-purim-seudos-5740 stays out of scope (Purim seudah (out of scope))",
+    "[transcribed-out-of-scope] purim-06-5740-2-purim-seudah-zeidins-cholem is transcribed but its shiur yi-purim-seudos-5740 stays out of scope (Purim seudah (out of scope))",
+    "[transcribed-out-of-scope] purim-06-5743-1-purim-seudah is transcribed but its shiur yi-purim-seudos-5743 stays out of scope (Purim seudah (out of scope))",
+    "[transcribed-out-of-scope] purim-06-5743-2-purim-seudah is transcribed but its shiur yi-purim-seudos-5743 stays out of scope (Purim seudah (out of scope))",
+    "[transcribed-out-of-scope] purim-06-5744-1-purim-seudah-jamale is transcribed but its shiur yi-purim-seudos-5744 stays out of scope (Purim seudah (out of scope))",
+    "[transcribed-out-of-scope] purim-06-5744-2-purim-seudah-jamale is transcribed but its shiur yi-purim-seudos-5744 stays out of scope (Purim seudah (out of scope))",
+    "[transcribed-out-of-scope] purim-06-5745-1-purim-seudah is transcribed but its shiur yi-purim-seudos-5745 stays out of scope (Purim seudah (out of scope))",
+    "[transcribed-out-of-scope] purim-06-5745-2-purim-seudah is transcribed but its shiur yi-purim-seudos-5745 stays out of scope (Purim seudah (out of scope))"
   ]
 }
