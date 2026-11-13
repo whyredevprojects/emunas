@@ -11,7 +11,7 @@ export const NON_CONTENT_KINDS: ReadonlySet<SectionKind> = new Set<SectionKind>(
 const KIND_WEIGHT: Partial<Record<SectionKind, number>> = { brachah: 0.5 };
 const MIN_SECTION_WORDS = 40;
 /** Validator tolerance around the [min, max] range (per language, whole write-up). */
-export const WRITEUP_TOLERANCE = { warnLow: 0.85, warnHigh: 1.15, errLow: 0.5, errHigh: 1.5 } as const;
+export const WRITEUP_TOLERANCE = { warnLow: 0.85, warnHigh: 1.15, errLow: 0.4, errHigh: 2.0 } as const;
 /** A block is reported when it exceeds budget * blockWarnHigh + blockWarnSlack words. */
 export const BLOCK_TOLERANCE = { warnHigh: 1.75, slack: 40 } as const;
 

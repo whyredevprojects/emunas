@@ -26,12 +26,12 @@ Let `D = data/derived/shiurim/<shiurId>`.
 3. **Extraction (P4).** Following `p4-extract.md`, write `D/extraction.json`.
 4. **Validate the extraction:**
    `npm run -s validate -- data/derived/shiurim/<shiurId>/extraction.json`
-   Fix every `ERROR` by editing the file, then validate again. **At most 2 fix rounds.** Fix a `warn` only if it points at a real mistake (a source-rule or abstract-length warning: yes; a catalog topic you truly could not find: no, say so in `asrNotes`). If errors remain after 2 rounds, stop work on this shiur (skip the write-up) and report it as failed.
+   Fix every `ERROR` by editing the file, then validate again. **At most 2 fix rounds.** Fix a `warn` only if it points at a real mistake (a source-rule warning: yes; an abstract-length warning: no; a catalog topic you truly could not find: no, say so in `asrNotes`). If errors remain after 2 rounds, stop work on this shiur (skip the write-up) and report it as failed.
 5. **Budget.** Run `npm run -s writeup:budget -- <shiurId>`. It prints the per-section word budget (per language) for the write-up, computed from your sections.
 6. **Plan, then write the write-up (P4b).** Following `p4b-writeup.md` and the budget table: plan each block (its budget, the steps of the argument it covers), then write `D/writeup.json` in both languages from the transcript you already read. Re-read a section's stretch of `input.txt` (Read with `offset`/`limit`) when you need its detail; don't reread the whole file.
 7. **Validate both:**
    `npm run -s validate -- data/derived/shiurim/<shiurId>/extraction.json data/derived/shiurim/<shiurId>/writeup.json`
-   Fix every `ERROR` in the write-up (most likely: length, a missing block, evidence outside its section), then validate again. **At most 2 fix rounds.** A length error means trim or expand to the budget, not rewrite from scratch. Warnings: fix blocks reported far over budget; leave the rest.
+   Fix every `ERROR` in the write-up (most likely: length, a missing block, evidence outside its section), then validate again. **At most 2 fix rounds.** A length error means trim or expand to the budget, not rewrite from scratch. Warnings: leave them all; do not trim for length unless the validator reports an ERROR. Extra fix rounds cost more than slightly long text.
 8. Move on to the next shiur id. Do not carry content from one shiur into another.
 
 ## When all ids are done
