@@ -4,13 +4,16 @@ Instructions for a Claude session that wakes up on a schedule to process the nex
 
 **What a batch is.** Each in-scope shiur (959) has an entry in `data/derived/manifest.json` with a status: `pending`, `in_progress`, `done`, `failed` (2 failed attempts) or `needs_review` (flagged by an audit or by hand). One Opus agent per **group** reads the shiur's transcript once and writes both outputs, extraction (P4) and write-up (P4b), into `data/derived/shiurim/<shiurId>/`, following `prompts/run-shiur.md`. Shiurim under 15 minutes are grouped up to 3 per agent. Code prepares the inputs (with ASR noise marked `[NOISE?]`), validates the outputs and keeps the manifest. There is no cleanup pass.
 
-**Batch size.** Default **N = 36** shiurim per run (about 30 agents, two waves at 18 concurrent; roughly 250k subagent tokens per shiur, so ~9M per run). Use a different N only if the person who scheduled the session said so.
+**Batch size.** Default **N = 60** shiurim per run (about 55 agents, waves of up to 18 concurrent; measured ~155k subagent tokens per shiur, ~153k per audio hour, so ~7-8M per run, about 55-60% of a session window). Use a different N only if the person who scheduled the session said so.
 
 ## Steps
 
-### 1. Pull
+### 1. Branch and pull
+All work happens on branch `claude/vibrant-curie-ioreux`:
 ```
-git pull --ff-only
+git fetch origin claude/vibrant-curie-ioreux
+git checkout -B claude/vibrant-curie-ioreux origin/claude/vibrant-curie-ioreux
+npm ci --silent
 ```
 If it fails (conflict, diverged branch), **stop** and report the error. Don't resolve it yourself.
 
@@ -22,7 +25,7 @@ Shiurim left `in_progress` for more than 12 hours (a crashed session) go back to
 
 ### 3. Pick the batch
 ```
-npm run -s batch:next -- 36
+npm run -s batch:next -- 60
 ```
 It picks the next pending shiurim (fixed order, languages interleaved), writes their `input.txt` and `meta.json`, marks them `in_progress`, and prints:
 - `BATCH <batchId>: ...` and one `GROUP <n>: <ids>` line per agent;
@@ -100,9 +103,9 @@ This appends to `data/derived/usage.tsv` (date, batch, pass, group, shiurIds, mo
 npm run -s batch:status
 git add data/derived/manifest.json data/derived/usage.tsv data/derived/shiurim data/derived/audits
 git commit -m "Batch <batchId>: <done> done, <pending> retry, <failed> failed"
-git push -u origin HEAD
+git push -u origin claude/vibrant-curie-ioreux
 ```
-Push to the current branch. If the push is rejected because the remote moved, run `git pull --rebase` once and push again; if that fails, stop and report. Never force-push.
+Push to `claude/vibrant-curie-ioreux` only. If the push is rejected because the remote moved, run `git pull --rebase` once and push again; if that fails, stop and report. Never force-push.
 
 ### 8. Report
 One paragraph: batch id; shiurim done / back to pending / failed this run; overall status counts (done of 959, hours done); total tokens this run (sum of the usage rows) and tokens per audio hour; the audit result (shiur, severity, the worst note); anything that stopped the run.
