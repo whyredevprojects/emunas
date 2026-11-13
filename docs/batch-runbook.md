@@ -6,6 +6,8 @@ Instructions for a Claude session that wakes up on a schedule to process the nex
 
 **Batch size.** Default **N = 60** shiurim per run (about 55 agents, waves of up to 18 concurrent; measured ~155k subagent tokens per shiur, ~153k per audio hour, so ~7-8M per run, about 55-60% of a session window). Use a different N only if the person who scheduled the session said so.
 
+**Language hold (2026-11-13):** Yiddish is on hold until the person who scheduled this says the Yiddish re-transcription is finished. Always pass `--lang en`. When no English shiurim are pending, report that English is finished and stop; do not process Yiddish.
+
 ## Steps
 
 ### 1. Branch and pull
@@ -25,7 +27,7 @@ Shiurim left `in_progress` for more than 12 hours (a crashed session) go back to
 
 ### 3. Pick the batch
 ```
-npm run -s batch:next -- 60
+npm run -s batch:next -- 60 --lang en
 ```
 It picks the next pending shiurim (fixed order, languages interleaved), writes their `input.txt` and `meta.json`, marks them `in_progress`, and prints:
 - `BATCH <batchId>: ...` and one `GROUP <n>: <ids>` line per agent;

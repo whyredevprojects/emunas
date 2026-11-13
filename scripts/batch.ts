@@ -3,7 +3,7 @@
 // tracks state in data/derived/manifest.json and validates outputs.
 //
 //   npm run batch:init [-- --reset]        create/refresh the manifest from ingest (--reset: all pending)
-//   npm run batch:next -- <N>               pick the next N pending shiurim, prepare inputs, mark in_progress,
+//   npm run batch:next -- <N> [--lang en|yi]               pick the next N pending shiurim, prepare inputs, mark in_progress,
 //                                           print agent groups and their filled-in prompts
 //   npm run batch:finalize                  validate every in_progress shiur -> done | pending | failed
 //   npm run batch:status                    overall counts
@@ -140,7 +140,8 @@ function makeGroups(picked: ManifestEntry[]): Group[] {
   return groups;
 }
 
-function cmdNext(n: number, allowInProgress: boolean): void {
+function cmdNext(n: number, allowInProgress: boolean, lang?: string): void {
+  if (lang !== undefined && lang !== "en" && lang !== "yi") throw new Error("--lang must be en or yi");
   if (!Number.isInteger(n) || n < 1) throw new Error("usage: npm run batch:next -- <N>");
   checkPromptHeaders();
   const tpl = readTemplate();
@@ -155,7 +156,7 @@ function cmdNext(n: number, allowInProgress: boolean): void {
   }
   const ingest = loadIngest();
   const byId = new Map(ingest.shiurim.map((s) => [s.id, s]));
-  const picked = m.entries.filter((e) => e.status === "pending").slice(0, n);
+  const picked = m.entries.filter((e) => e.status === "pending" && (lang === undefined || e.lang === lang)).slice(0, n);
   if (!picked.length) {
     console.log("No pending shiurim. Nothing to do.");
     return;
@@ -386,12 +387,12 @@ function main(): void {
     const i = rest.indexOf(f);
     return i >= 0 ? rest[i + 1] : undefined;
   };
-  const positional = rest.filter((a, i) => !a.startsWith("--") && !(i > 0 && rest[i - 1] === "--hours"));
+  const positional = rest.filter((a, i) => !a.startsWith("--") && !(i > 0 && (rest[i - 1] === "--hours" || rest[i - 1] === "--lang")));
   switch (cmd) {
     case "init":
       return cmdInit(flag("--reset"));
     case "next":
-      return cmdNext(Number(positional[0]), flag("--allow-in-progress"));
+      return cmdNext(Number(positional[0]), flag("--allow-in-progress"), opt("--lang"));
     case "finalize":
       return cmdFinalize();
     case "status":
