@@ -3,7 +3,7 @@
 // tracks state in data/derived/manifest.json and validates outputs.
 //
 //   npm run batch:init [-- --reset]        create/refresh the manifest from ingest (--reset: all pending)
-//   npm run batch:next -- <N> [--lang en|yi]               pick the next N pending shiurim, prepare inputs, mark in_progress,
+//   npm run batch:next -- <N> [--lang en|yi]               (Yiddish: only re-transcribed shiurim) pick the next N pending shiurim, prepare inputs, mark in_progress,
 //                                           print agent groups and their filled-in prompts
 //   npm run batch:finalize                  validate every in_progress shiur -> done | pending | failed
 //   npm run batch:status                    overall counts
@@ -24,6 +24,7 @@ import {
   saveManifest,
   SHIURIM_DIR,
   STATUSES,
+  transcriptAsr,
   USAGE_PATH,
   type Manifest,
   type ManifestEntry,
@@ -84,10 +85,12 @@ function cmdInit(reset: boolean): void {
   const ordered = globalOrder(inScope);
   const old = !reset && existsSync(MANIFEST_PATH) ? loadManifest() : null;
   const oldById = new Map(old?.entries.map((e) => [e.shiurId, e]) ?? []);
+  const dupIds = new Set(ingest.recordings.filter((r) => r.duplicateOf || r.partOf).map((r) => r.id));
   const entries = ordered.map((s, order) => {
     const prev = oldById.get(s.id);
     const fresh = freshEntry(s, order, ingestDurationSec(s, ingest));
-    return prev ? { ...prev, order, lang: s.lang, durationSec: fresh.durationSec } : fresh;
+    const asr = transcriptAsr(s.recordingIds.filter((id) => !dupIds.has(id)));
+    return prev ? { ...prev, order, lang: s.lang, durationSec: fresh.durationSec, asr } : { ...fresh, asr };
   });
   const dropped = [...oldById.keys()].filter((id) => !inScope.some((s) => s.id === id));
   saveManifest({ version: 1, updatedAt: now(), entries });
@@ -156,9 +159,23 @@ function cmdNext(n: number, allowInProgress: boolean, lang?: string): void {
   }
   const ingest = loadIngest();
   const byId = new Map(ingest.shiurim.map((s) => [s.id, s]));
-  const picked = m.entries.filter((e) => e.status === "pending" && (lang === undefined || e.lang === lang)).slice(0, n);
+  // Yiddish hold: only shiurim whose transcripts were all re-done (mode "careful") may be picked.
+  // The transcript files are re-read here so a fresh transcripts:sync is honoured without batch:init.
+  const dupIds = new Set(ingest.recordings.filter((r) => r.duplicateOf || r.partOf).map((r) => r.id));
+  let skippedOld = 0;
+  const candidates = m.entries.filter((e) => e.status === "pending" && (lang === undefined || e.lang === lang));
+  const eligible = candidates.filter((e) => {
+    if (e.lang !== "yi") return true;
+    const s = byId.get(e.shiurId);
+    e.asr = transcriptAsr((s?.recordingIds ?? []).filter((id) => !dupIds.has(id)));
+    if (e.asr.redone) return true;
+    skippedOld++;
+    return false;
+  });
+  if (skippedOld) console.log(`Skipped ${skippedOld} pending Yiddish shiurim whose transcript is still on the old model (not yet re-transcribed).`);
+  const picked = eligible.slice(0, n);
   if (!picked.length) {
-    console.log("No pending shiurim. Nothing to do.");
+    console.log(`No pending shiurim${skippedOld ? " with a usable transcript" : ""}. Nothing to do.`);
     return;
   }
   const batchId = now().replace(/[:.]/g, "").slice(0, 17) + "Z";

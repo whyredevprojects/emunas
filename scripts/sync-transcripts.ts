@@ -1,6 +1,8 @@
 // Mirror R2 transcripts into the repo as compact JSON keyed by recording id:
 //   data/transcripts/<recordingId>.json
 // Reads the local cache at out/transcripts/ (filled by ingest) and downloads anything missing.
+//   --refresh            re-download every transcript from R2, overwriting the cache
+//   --refresh-lang yi    same, only for recordings of shiurim in that language (yi|en)
 // After this, nothing downstream needs R2 credentials.
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, unlinkSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -12,6 +14,10 @@ export interface CompactTranscript {
   key: string;
   duration: number;
   model: string;
+  /** Transcription mode ("careful" = re-transcription pass, same model name); null on the original pass. */
+  mode: string | null;
+  /** ISO time the transcript was made (re-transcribed files only); null otherwise. */
+  transcribedAt: string | null;
   language: string | null;
   /** [start, end, text] */
   segments: [number, number, string][];
@@ -21,6 +27,8 @@ interface RawTranscript {
   key: string;
   duration: number;
   model: string;
+  mode?: string;
+  transcribed_at?: string;
   language?: string;
   segments: { start: number; end: number; text: string }[];
 }
@@ -55,10 +63,10 @@ function s3(env: Record<string, string>): S3Client {
   return client;
 }
 
-async function loadRaw(transcriptKey: string, env: Record<string, string>): Promise<RawTranscript> {
+async function loadRaw(transcriptKey: string, env: Record<string, string>, refresh: boolean): Promise<RawTranscript> {
   const rel = transcriptKey.replace(/^transcripts\//, "") + ".json";
   const cachePath = join(CACHE_DIR, rel);
-  if (!existsSync(cachePath)) {
+  if (refresh || !existsSync(cachePath)) {
     const res = await s3(env).send(
       new GetObjectCommand({ Bucket: env.R2_BUCKET ?? "emunas", Key: transcriptKey + ".json" }),
     );
@@ -73,6 +81,14 @@ async function loadRaw(transcriptKey: string, env: Record<string, string>): Prom
 async function main(): Promise<void> {
   const ingest = JSON.parse(readFileSync(join(ROOT, "data/derived/ingest.json"), "utf8")) as IngestOutput;
   const env = loadEnv();
+  const args = process.argv.slice(2);
+  const refreshAll = args.includes("--refresh");
+  const li = args.indexOf("--refresh-lang");
+  const refreshLang = li >= 0 ? args[li + 1] : undefined;
+  if (li >= 0 && refreshLang !== "yi" && refreshLang !== "en") throw new Error("--refresh-lang must be yi or en");
+  const langOf = new Map<string, string>();
+  for (const s of ingest.shiurim) for (const id of s.recordingIds) langOf.set(id, s.lang);
+  const refreshes = (id: string): boolean => refreshAll || (refreshLang !== undefined && langOf.get(id) === refreshLang);
   mkdirSync(OUT_DIR, { recursive: true });
 
   const wanted = ingest.recordings.filter(
@@ -85,12 +101,14 @@ async function main(): Promise<void> {
   const queue = [...wanted];
   const worker = async (): Promise<void> => {
     for (let r = queue.shift(); r; r = queue.shift()) {
-      const raw = await loadRaw(r.transcriptKey, env);
+      const raw = await loadRaw(r.transcriptKey, env, refreshes(r.id));
       const compact: CompactTranscript = {
         recordingId: r.id,
         key: raw.key,
         duration: raw.duration,
         model: raw.model,
+        mode: raw.mode ?? null,
+        transcribedAt: raw.transcribed_at ?? null,
         language: raw.language ?? null,
         segments: raw.segments.map((s) => [s.start, s.end, s.text]),
       };

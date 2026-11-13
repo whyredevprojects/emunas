@@ -1,33 +1,34 @@
 {
-  "generatedAt": "2026-11-13T00:13:02.267Z",
+  "generatedAt": "2026-11-13T12:37:48.381Z",
   "stats": {
     "bucket.audio": 1129,
-    "bucket.objects": 4050,
-    "bucket.transcripts": 969,
+    "bucket.objects": 4187,
+    "bucket.transcripts": 1006,
     "recordings": 1129,
-    "recordings.duplicateOf": 4,
+    "recordings.duplicateOf": 6,
     "recordings.partOf": 0,
-    "recordings.transcribed": 969,
+    "recordings.transcribed": 1006,
     "series": 17,
-    "shiurim": 1046,
-    "shiurim.inScope": 959,
-    "shiurim.inScope.category.current": 43,
+    "shiurim": 1044,
+    "shiurim.inScope": 993,
+    "shiurim.inScope.category.current": 78,
     "shiurim.inScope.category.misc": 23,
     "shiurim.inScope.category.parsha": 199,
-    "shiurim.inScope.category.set": 268,
+    "shiurim.inScope.category.set": 266,
     "shiurim.inScope.category.shonos": 49,
     "shiurim.inScope.category.simcha": 72,
-    "shiurim.inScope.category.zman": 305,
-    "shiurim.inScope.hours": 758.48,
+    "shiurim.inScope.category.zman": 306,
+    "shiurim.inScope.hours": 769.91,
     "shiurim.inScope.lang.en": 267,
-    "shiurim.inScope.lang.yi": 692,
+    "shiurim.inScope.lang.yi": 726,
     "shiurim.inScope.series.current-bachurim-5771": 9,
-    "shiurim.inScope.series.current-bachurim-5773": 9,
+    "shiurim.inScope.series.current-bachurim-5773": 19,
     "shiurim.inScope.series.current-ey-bachurim-5769": 20,
     "shiurim.inScope.series.current-ey-bachurim-5770": 5,
+    "shiurim.inScope.series.current-kayitz-5771": 25,
     "shiurim.inScope.series.emunah-en": 28,
     "shiurim.inScope.series.emunah-yi": 27,
-    "shiurim.inScope.series.eretz-yisroel-yi": 14,
+    "shiurim.inScope.series.eretz-yisroel-yi": 12,
     "shiurim.inScope.series.kedushas-hashabbos-yi": 8,
     "shiurim.inScope.series.pirkei-avos-yi": 4,
     "shiurim.inScope.series.shir-hashirim-yi": 8,
@@ -36,27 +37,23 @@
     "shiurim.inScope.series.tanya-yi": 63,
     "shiurim.inScope.series.tefila-en": 17,
     "shiurim.inScope.series.tefila-yi": 41,
-    "shiurim.inScope.source.pocket-guide-2012": 785,
-    "shiurim.inScope.source.uncatalogued-guide": 174,
-    "shiurim.outOfScope.category.current": 35,
+    "shiurim.inScope.source.pocket-guide-2012": 786,
+    "shiurim.inScope.source.uncatalogued-guide": 207,
     "shiurim.outOfScope.category.purim": 40,
     "shiurim.outOfScope.category.set": 9,
-    "shiurim.outOfScope.category.zman": 3,
+    "shiurim.outOfScope.category.zman": 2,
     "shiurim.outOfScope.lang.en": 10,
-    "shiurim.outOfScope.lang.yi": 77,
+    "shiurim.outOfScope.lang.yi": 41,
     "shiurim.outOfScope.reason.audio-not-in-r2-bucket": 8,
     "shiurim.outOfScope.reason.gramen-purim-song-lyrics-printed-in-the-guide-not-a-shiur": 2,
     "shiurim.outOfScope.reason.not-on-disk-listed-in-the-2012-guide-no-audio": 3,
     "shiurim.outOfScope.reason.purim-seudah-out-of-scope": 38,
-    "shiurim.outOfScope.reason.untranscribed": 36,
-    "shiurim.outOfScope.series.current-bachurim-5773": 10,
-    "shiurim.outOfScope.series.current-kayitz-5771": 25,
     "shiurim.outOfScope.series.shabbos-tefilah-en": 8,
     "shiurim.outOfScope.series.tanya-en": 1,
-    "shiurim.outOfScope.source.pocket-guide-2012": 6,
-    "shiurim.outOfScope.source.uncatalogued-guide": 81,
-    "transcripts.attachedInScope": 965,
-    "transcripts.redundant": 4,
+    "shiurim.outOfScope.source.pocket-guide-2012": 5,
+    "shiurim.outOfScope.source.uncatalogued-guide": 46,
+    "transcripts.attachedInScope": 1000,
+    "transcripts.redundant": 6,
     "warnings.duplicate": 2,
     "warnings.grouped-tracks": 2,
     "warnings.junk-row": 3,
@@ -73,7 +70,8 @@
     "warnings.single-file-two-sides": 4,
     "warnings.split-year-by-order": 10,
     "warnings.split-year-unknown": 1,
-    "warnings.undeclared-duplicate": 2,
+    "warnings.transcribed-out-of-scope": 1,
+    "warnings.undeclared-duplicate": 4,
     "warnings.year-junk": 1
   },
   "shiurim": [
@@ -5083,8 +5081,8 @@
       "recordingIds": [
         "y-zemanim-elull-tishery-07-03-sh-atz"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -24246,67 +24244,11 @@
       "pathNotes": []
     },
     {
-      "id": "yi-eretz-yisroel-unc-12-1",
-      "lang": "yi",
-      "category": "set",
-      "seriesId": "eretz-yisroel-yi",
-      "seriesOrder": 12,
-      "catalog": {
-        "source": "uncatalogued-guide",
-        "sectionId": "eretz-yisroel",
-        "sectionTitle": "ארץ ישראל",
-        "n": "12",
-        "page": null,
-        "titleOriginal": "kever rochel",
-        "subTitle": null,
-        "derived": "filename",
-        "note": null
-      },
-      "parsha": null,
-      "zman": null,
-      "perek": null,
-      "hebrewYears": [],
-      "recordingIds": [
-        "y-sets-eretz-yisrael-12-01-kever-rochel"
-      ],
-      "inScope": true,
-      "outOfScopeReason": null,
-      "pathNotes": []
-    },
-    {
-      "id": "yi-eretz-yisroel-unc-12-2",
-      "lang": "yi",
-      "category": "set",
-      "seriesId": "eretz-yisroel-yi",
-      "seriesOrder": 13,
-      "catalog": {
-        "source": "uncatalogued-guide",
-        "sectionId": "eretz-yisroel",
-        "sectionTitle": "ארץ ישראל",
-        "n": "12",
-        "page": null,
-        "titleOriginal": "Shmuel Hanavi",
-        "subTitle": null,
-        "derived": "filename",
-        "note": null
-      },
-      "parsha": null,
-      "zman": null,
-      "perek": null,
-      "hebrewYears": [],
-      "recordingIds": [
-        "y-sets-eretz-yisrael-12-2-shmuel-hanavi"
-      ],
-      "inScope": true,
-      "outOfScopeReason": null,
-      "pathNotes": []
-    },
-    {
       "id": "yi-eretz-yisroel-unc-13",
       "lang": "yi",
       "category": "set",
       "seriesId": "eretz-yisroel-yi",
-      "seriesOrder": 14,
+      "seriesOrder": 12,
       "catalog": {
         "source": "uncatalogued-guide",
         "sectionId": "eretz-yisroel",
@@ -26871,8 +26813,8 @@
       "recordingIds": [
         "y-current-kayitz-5771-01-erev-shabbos-balak"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -26961,8 +26903,8 @@
       "recordingIds": [
         "y-current-kayitz-5771-02-erev-shabbos-pinchos"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -27081,8 +27023,8 @@
       "recordingIds": [
         "y-current-kayitz-5771-03-erev-shabbos-matos"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -27201,8 +27143,8 @@
       "recordingIds": [
         "y-current-kayitz-5771-04-erev-shabbos-masei"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -27321,8 +27263,8 @@
       "recordingIds": [
         "y-current-kayitz-5771-05-lechaim-kapishnitzer-rebbe"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -27411,8 +27353,8 @@
       "recordingIds": [
         "y-current-kayitz-5771-06-shimon-hatzadik"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -27531,8 +27473,8 @@
       "recordingIds": [
         "y-current-kayitz-5771-07-kever-rochel"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -27621,8 +27563,8 @@
       "recordingIds": [
         "y-current-kayitz-5771-08-shmuel-hanavi"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -27741,8 +27683,8 @@
       "recordingIds": [
         "y-current-kayitz-5771-09-lechaim-chavivus-ey"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -27831,8 +27773,8 @@
       "recordingIds": [
         "y-current-kayitz-5771-10-lechaim-torah-chadasha"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -27891,8 +27833,8 @@
       "recordingIds": [
         "y-current-bachurim-11-bachurim-5773-mishpatim"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -27921,8 +27863,8 @@
       "recordingIds": [
         "y-current-kayitz-5771-11-lechaim-yiras-shamayim"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -28011,8 +27953,8 @@
       "recordingIds": [
         "y-current-bachurim-12-bachurim-5773-ki-sisa"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -28041,8 +27983,8 @@
       "recordingIds": [
         "y-current-kayitz-5771-12-lechaim-belzer-rav"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -28101,8 +28043,8 @@
       "recordingIds": [
         "y-current-bachurim-13-bachurim-5773-vypekudei"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -28131,8 +28073,8 @@
       "recordingIds": [
         "y-current-kayitz-5771-13-lechaim-meoraos-hazman"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -28191,8 +28133,8 @@
       "recordingIds": [
         "y-current-bachurim-14-bachurim-5773-achmked"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -28221,8 +28163,8 @@
       "recordingIds": [
         "y-current-kayitz-5771-14-lechaim-sekulen"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -28311,8 +28253,8 @@
       "recordingIds": [
         "y-current-bachurim-15-bachurim-5773-emor"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -28341,8 +28283,8 @@
       "recordingIds": [
         "y-current-kayitz-5771-15-lechaim-rachamim"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -28401,8 +28343,8 @@
       "recordingIds": [
         "y-current-bachurim-16-bachurim-5773-bhb"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -28431,8 +28373,8 @@
       "recordingIds": [
         "y-current-kayitz-5771-16-lechaim-tikun-neshamos"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -28491,8 +28433,8 @@
       "recordingIds": [
         "y-current-bachurim-17-bachurim-5773-bamidbar"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -28521,8 +28463,8 @@
       "recordingIds": [
         "y-current-kayitz-5771-17-lechaim-libroach-lhashem"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -28581,8 +28523,8 @@
       "recordingIds": [
         "y-current-bachurim-18-bachurim-5773-behaloischa"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -28611,8 +28553,8 @@
       "recordingIds": [
         "y-current-kayitz-5771-18-lechaim-koritze-maggid"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -28641,8 +28583,8 @@
       "recordingIds": [
         "y-current-bachurim-19-bachurim-5773-chukas"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -28671,8 +28613,8 @@
       "recordingIds": [
         "y-current-kayitz-5771-19-lechaim-r-shraga-feivel"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -28701,8 +28643,8 @@
       "recordingIds": [
         "y-current-bachurim-20-bachurim-5773-balak"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -28731,8 +28673,8 @@
       "recordingIds": [
         "y-current-kayitz-5771-20-lechaim-al-tirah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -28761,8 +28703,8 @@
       "recordingIds": [
         "y-current-kayitz-5771-21-lechaim-tefila"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -28821,8 +28763,8 @@
       "recordingIds": [
         "y-current-kayitz-5771-22-elul-beyeshiva-kinyan-torah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -28881,8 +28823,8 @@
       "recordingIds": [
         "y-current-kayitz-5771-23-elul-bbeitar"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -28911,8 +28853,8 @@
       "recordingIds": [
         "y-current-kayitz-5771-24-bachurim-eretz-yisrael"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -28941,8 +28883,8 @@
       "recordingIds": [
         "y-current-kayitz-5771-25-negunim-mul-kodesh-kodoshim"
       ],
-      "inScope": false,
-      "outOfScopeReason": "untranscribed",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -33377,9 +33319,9 @@
     {
       "id": "y-zemanim-elull-tishery-07-03-sh-atz",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 01 Elull-Tishery/07-03 Sh. Atz.MP3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 01 Elull-Tishery/07-03 Sh. Atz",
+      "durationSec": 4756.47,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 75929736,
       "duplicateOf": null,
       "partOf": null
@@ -36761,7 +36703,7 @@
       "durationSec": 2263.68,
       "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 9055256,
-      "duplicateOf": null,
+      "duplicateOf": "y-current-kayitz-5771-07-kever-rochel",
       "partOf": null
     },
     {
@@ -36771,7 +36713,7 @@
       "durationSec": 2317.81,
       "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 9271801,
-      "duplicateOf": null,
+      "duplicateOf": "y-current-kayitz-5771-08-shmuel-hanavi",
       "partOf": null
     },
     {
@@ -37977,9 +37919,9 @@
     {
       "id": "y-current-bachurim-11-bachurim-5773-mishpatim",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/5773 Bachurim/11 bachurim 5773 mishpatim.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/5773 Bachurim/11 bachurim 5773 mishpatim",
+      "durationSec": 2133.4,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 10617567,
       "duplicateOf": null,
       "partOf": null
@@ -37987,9 +37929,9 @@
     {
       "id": "y-current-bachurim-12-bachurim-5773-ki-sisa",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/5773 Bachurim/12 bachurim 5773 ki sisa.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/5773 Bachurim/12 bachurim 5773 ki sisa",
+      "durationSec": 2174.96,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 10824405,
       "duplicateOf": null,
       "partOf": null
@@ -37997,9 +37939,9 @@
     {
       "id": "y-current-bachurim-13-bachurim-5773-vypekudei",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/5773 Bachurim/13 bachurim 5773 vypekudei.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/5773 Bachurim/13 bachurim 5773 vypekudei",
+      "durationSec": 2274.3,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 11318797,
       "duplicateOf": null,
       "partOf": null
@@ -38007,9 +37949,9 @@
     {
       "id": "y-current-bachurim-14-bachurim-5773-achmked",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/5773 Bachurim/14 bachurim 5773 achmked.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/5773 Bachurim/14 bachurim 5773 achmked",
+      "durationSec": 1479.97,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 7365755,
       "duplicateOf": null,
       "partOf": null
@@ -38017,9 +37959,9 @@
     {
       "id": "y-current-bachurim-15-bachurim-5773-emor",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/5773 Bachurim/15 bachurim 5773 emor.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/5773 Bachurim/15 bachurim 5773 emor",
+      "durationSec": 1840.83,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 9161572,
       "duplicateOf": null,
       "partOf": null
@@ -38027,9 +37969,9 @@
     {
       "id": "y-current-bachurim-16-bachurim-5773-bhb",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/5773 Bachurim/16 bachurim 5773 BHB.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/5773 Bachurim/16 bachurim 5773 BHB",
+      "durationSec": 2331.95,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 11605701,
       "duplicateOf": null,
       "partOf": null
@@ -38037,9 +37979,9 @@
     {
       "id": "y-current-bachurim-17-bachurim-5773-bamidbar",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/5773 Bachurim/17 bachurim 5773 bamidbar.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/5773 Bachurim/17 bachurim 5773 bamidbar",
+      "durationSec": 2200.3,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 10950506,
       "duplicateOf": null,
       "partOf": null
@@ -38047,9 +37989,9 @@
     {
       "id": "y-current-bachurim-18-bachurim-5773-behaloischa",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/5773 Bachurim/18 bachurim 5773 Behaloischa.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/5773 Bachurim/18 bachurim 5773 Behaloischa",
+      "durationSec": 2317.72,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 11534859,
       "duplicateOf": null,
       "partOf": null
@@ -38057,9 +37999,9 @@
     {
       "id": "y-current-bachurim-19-bachurim-5773-chukas",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/5773 Bachurim/19 bachurim 5773 chukas.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/5773 Bachurim/19 bachurim 5773 chukas",
+      "durationSec": 2098.71,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 10444934,
       "duplicateOf": null,
       "partOf": null
@@ -38067,9 +38009,9 @@
     {
       "id": "y-current-bachurim-20-bachurim-5773-balak",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/5773 Bachurim/20 bachurim 5773 balak.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/5773 Bachurim/20 bachurim 5773 balak",
+      "durationSec": 1966.37,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 9786353,
       "duplicateOf": null,
       "partOf": null
@@ -38077,9 +38019,9 @@
     {
       "id": "y-current-kayitz-5771-01-erev-shabbos-balak",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/01 Erev Shabbos Balak.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/01 Erev Shabbos Balak",
+      "durationSec": 733.27,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 4400158,
       "duplicateOf": null,
       "partOf": null
@@ -38087,9 +38029,9 @@
     {
       "id": "y-current-kayitz-5771-02-erev-shabbos-pinchos",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/02 Erev Shabbos Pinchos.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/02 Erev Shabbos Pinchos",
+      "durationSec": 1080.2,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 6481754,
       "duplicateOf": null,
       "partOf": null
@@ -38097,9 +38039,9 @@
     {
       "id": "y-current-kayitz-5771-03-erev-shabbos-matos",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/03 Erev Shabbos Matos.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/03 Erev Shabbos Matos",
+      "durationSec": 954.55,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 5727858,
       "duplicateOf": null,
       "partOf": null
@@ -38107,9 +38049,9 @@
     {
       "id": "y-current-kayitz-5771-04-erev-shabbos-masei",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/04 Erev Shabbos Masei.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/04 Erev Shabbos Masei",
+      "durationSec": 887.92,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 5328028,
       "duplicateOf": null,
       "partOf": null
@@ -38117,9 +38059,9 @@
     {
       "id": "y-current-kayitz-5771-05-lechaim-kapishnitzer-rebbe",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/05 Lechaim Kapishnitzer Rebbe.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/05 Lechaim Kapishnitzer Rebbe",
+      "durationSec": 191.86,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 1151683,
       "duplicateOf": null,
       "partOf": null
@@ -38127,9 +38069,9 @@
     {
       "id": "y-current-kayitz-5771-06-shimon-hatzadik",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/06 Shimon Hatzadik.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/06 Shimon Hatzadik",
+      "durationSec": 2341.26,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 9365563,
       "duplicateOf": null,
       "partOf": null
@@ -38137,9 +38079,9 @@
     {
       "id": "y-current-kayitz-5771-07-kever-rochel",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/07 kever rochel.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/07 kever rochel",
+      "durationSec": 2263.68,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 9055225,
       "duplicateOf": null,
       "partOf": null
@@ -38147,9 +38089,9 @@
     {
       "id": "y-current-kayitz-5771-08-shmuel-hanavi",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/08 Shmuel Hanavi.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/08 Shmuel Hanavi",
+      "durationSec": 2317.81,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 9271771,
       "duplicateOf": null,
       "partOf": null
@@ -38157,9 +38099,9 @@
     {
       "id": "y-current-kayitz-5771-09-lechaim-chavivus-ey",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/09 Lechaim chavivus EY.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/09 Lechaim chavivus EY",
+      "durationSec": 351,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 2106504,
       "duplicateOf": null,
       "partOf": null
@@ -38167,9 +38109,9 @@
     {
       "id": "y-current-kayitz-5771-10-lechaim-torah-chadasha",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/10 Lechaim Torah Chadasha.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/10 Lechaim Torah Chadasha",
+      "durationSec": 280.49,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 1683480,
       "duplicateOf": null,
       "partOf": null
@@ -38177,9 +38119,9 @@
     {
       "id": "y-current-kayitz-5771-11-lechaim-yiras-shamayim",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/11 Lechaim Yiras Shamayim.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/11 Lechaim Yiras Shamayim",
+      "durationSec": 264.53,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 1587715,
       "duplicateOf": null,
       "partOf": null
@@ -38187,9 +38129,9 @@
     {
       "id": "y-current-kayitz-5771-12-lechaim-belzer-rav",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/12 Lechaim Belzer Rav.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/12 Lechaim Belzer Rav",
+      "durationSec": 276.52,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 1659652,
       "duplicateOf": null,
       "partOf": null
@@ -38197,9 +38139,9 @@
     {
       "id": "y-current-kayitz-5771-13-lechaim-meoraos-hazman",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/13 Lechaim Meoraos Hazman.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/13 Lechaim Meoraos Hazman",
+      "durationSec": 565.54,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 3393769,
       "duplicateOf": null,
       "partOf": null
@@ -38207,9 +38149,9 @@
     {
       "id": "y-current-kayitz-5771-14-lechaim-sekulen",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/14 Lechaim Sekulen.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/14 Lechaim Sekulen",
+      "durationSec": 188.12,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 1129259,
       "duplicateOf": null,
       "partOf": null
@@ -38217,9 +38159,9 @@
     {
       "id": "y-current-kayitz-5771-15-lechaim-rachamim",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/15 Lechaim Rachamim.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/15 Lechaim Rachamim",
+      "durationSec": 313.2,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 1879706,
       "duplicateOf": null,
       "partOf": null
@@ -38227,9 +38169,9 @@
     {
       "id": "y-current-kayitz-5771-16-lechaim-tikun-neshamos",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/16 Lechaim tikun neshamos.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/16 Lechaim tikun neshamos",
+      "durationSec": 371.87,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 2231738,
       "duplicateOf": null,
       "partOf": null
@@ -38237,9 +38179,9 @@
     {
       "id": "y-current-kayitz-5771-17-lechaim-libroach-lhashem",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/17 Lechaim Libroach LHashem.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/17 Lechaim Libroach LHashem",
+      "durationSec": 135.9,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 815955,
       "duplicateOf": null,
       "partOf": null
@@ -38247,9 +38189,9 @@
     {
       "id": "y-current-kayitz-5771-18-lechaim-koritze-maggid",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/18 Lechaim Koritze Maggid.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/18 Lechaim Koritze Maggid",
+      "durationSec": 418.94,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 2514174,
       "duplicateOf": null,
       "partOf": null
@@ -38257,9 +38199,9 @@
     {
       "id": "y-current-kayitz-5771-19-lechaim-r-shraga-feivel",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/19 Lechaim R_ Shraga Feivel.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/19 Lechaim R_ Shraga Feivel",
+      "durationSec": 195.62,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 1174243,
       "duplicateOf": null,
       "partOf": null
@@ -38267,9 +38209,9 @@
     {
       "id": "y-current-kayitz-5771-20-lechaim-al-tirah",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/20 Lechaim Al Tirah.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/20 Lechaim Al Tirah",
+      "durationSec": 239.4,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 1436931,
       "duplicateOf": null,
       "partOf": null
@@ -38277,9 +38219,9 @@
     {
       "id": "y-current-kayitz-5771-21-lechaim-tefila",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/21 Lechaim tefila.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/21 Lechaim tefila",
+      "durationSec": 673.37,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 4040762,
       "duplicateOf": null,
       "partOf": null
@@ -38287,9 +38229,9 @@
     {
       "id": "y-current-kayitz-5771-22-elul-beyeshiva-kinyan-torah",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/22 Elul BeYeshiva Kinyan Torah.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/22 Elul BeYeshiva Kinyan Torah",
+      "durationSec": 2407.98,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 14448429,
       "duplicateOf": null,
       "partOf": null
@@ -38297,9 +38239,9 @@
     {
       "id": "y-current-kayitz-5771-23-elul-bbeitar",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/23 Elul BBeitar.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/23 Elul BBeitar",
+      "durationSec": 997.94,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 5988188,
       "duplicateOf": null,
       "partOf": null
@@ -38307,9 +38249,9 @@
     {
       "id": "y-current-kayitz-5771-24-bachurim-eretz-yisrael",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/24 Bachurim Eretz Yisrael.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/24 Bachurim Eretz Yisrael",
+      "durationSec": 537.3,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 3224339,
       "duplicateOf": null,
       "partOf": null
@@ -38317,9 +38259,9 @@
     {
       "id": "y-current-kayitz-5771-25-negunim-mul-kodesh-kodoshim",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/25 Negunim Mul Kodesh Kodoshim.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/25 Negunim Mul Kodesh Kodoshim",
+      "durationSec": 1148.77,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 6893189,
       "duplicateOf": null,
       "partOf": null
@@ -40997,9 +40939,9 @@
     {
       "id": "purim-06-5739-purim-seudah",
       "audioKey": "PURIM SEUDOS/06-5739 Purim Seudah.mp3",
-      "transcriptKey": null,
-      "durationSec": null,
-      "asrModel": null,
+      "transcriptKey": "transcripts/PURIM SEUDOS/06-5739 Purim Seudah",
+      "durationSec": 1590.11,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 6360978,
       "duplicateOf": null,
       "partOf": null
@@ -42430,8 +42372,6 @@
         "yi-eretz-yisroel-09",
         "yi-eretz-yisroel-10",
         "yi-eretz-yisroel-unc-11-1",
-        "yi-eretz-yisroel-unc-12-1",
-        "yi-eretz-yisroel-unc-12-2",
         "yi-eretz-yisroel-unc-13"
       ]
     },
@@ -42820,7 +42760,7 @@
     }
   ],
   "warnings": [
-    "[non-audio-object] ignored 14 non-audio objects in the bucket (.mrk sidecar files)",
+    "[non-audio-object] ignored 40 non-audio objects in the bucket (.mrk, .wav, .json sidecar files)",
     "[split-year-by-order] pocket-guide parshas-hashavua p.5 n=3: side צד א: -> 5736 (year assigned by order of the shana field)",
     "[split-year-by-order] pocket-guide parshas-hashavua p.5 n=3: side צד ב: -> 5749 (year assigned by order of the shana field)",
     "[multi-file-split] pocket-guide parshas-hashavua p.5 n=3: 2 files with side-labelled segments -> split into 2 shiurim",
@@ -43047,6 +42987,8 @@
     "[partly-missing] yi-purim-seudos-5775: 1 of 4 files not in R2",
     "[undeclared-duplicate] y-current-ey-bachurim-5769-20-tetzaveh-zachor has the same transcript text as y-zemanim-adar-purim-04-03-zachor; marked duplicateOf, shiur yi-current-unc-ey-bachurim-5769-20 dropped",
     "[undeclared-duplicate] y-zemanim-adar-purim-02-11-purim-katan has the same transcript text as y-zemanim-adar-purim-02-11-purim-katan-5779; marked duplicateOf, shiur yi-zmanim-unc-pvrym-ktn-11-02-11-purim-katan dropped",
+    "[undeclared-duplicate] y-sets-eretz-yisrael-12-01-kever-rochel has the same transcript text as y-current-kayitz-5771-07-kever-rochel; marked duplicateOf, shiur yi-eretz-yisroel-unc-12-1 dropped",
+    "[undeclared-duplicate] y-sets-eretz-yisrael-12-2-shmuel-hanavi has the same transcript text as y-current-kayitz-5771-08-shmuel-hanavi; marked duplicateOf, shiur yi-eretz-yisroel-unc-12-2 dropped",
     "[no-audio] en-shabbos-tefilah-en-unc-01-1: all 1 catalog files are absent from R2",
     "[no-audio] en-shabbos-tefilah-en-unc-01-2: all 1 catalog files are absent from R2",
     "[no-audio] en-shabbos-tefilah-en-unc-02-1: all 1 catalog files are absent from R2",
@@ -43061,6 +43003,7 @@
     "[perek-blank] en-tanya-en-30: perek blank in catalog (n=30)",
     "[perek-blank] en-tanya-en-37: perek blank in catalog (n=37)",
     "[perek-blank] en-tanya-en-38: perek blank in catalog (n=38)",
-    "[perek-blank] en-tanya-en-40: perek blank in catalog (n=40)"
+    "[perek-blank] en-tanya-en-40: perek blank in catalog (n=40)",
+    "[transcribed-out-of-scope] purim-06-5739-purim-seudah is transcribed but its shiur yi-purim-seudos-5739 stays out of scope (Purim seudah (out of scope))"
   ]
 }

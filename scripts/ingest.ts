@@ -863,7 +863,8 @@ async function main(): Promise<void> {
   const bucket = env.R2_BUCKET!;
 
   // 1. bucket
-  const objects = await listBucket(s3, bucket);
+  // transcripts/_manifest/ holds the re-transcription job's bookkeeping, not transcripts.
+  const objects = (await listBucket(s3, bucket)).filter((o) => !o.key.startsWith("transcripts/_manifest/"));
   const audioObjs = objects.filter((o) => !o.key.startsWith("transcripts/") && AUDIO_RE.test(o.key));
   const otherObjs = objects.filter((o) => !o.key.startsWith("transcripts/") && !AUDIO_RE.test(o.key));
   if (otherObjs.length) warn("non-audio-object", `ignored ${otherObjs.length} non-audio objects in the bucket (${[...new Set(otherObjs.map((o) => o.key.replace(/^.*\./, ".")))].join(", ")} sidecar files)`);
@@ -1132,7 +1133,9 @@ async function main(): Promise<void> {
       continue;
     }
     const s = shiurById.get(owner.get(r.id)!)!;
-    assert(s.inScope, `transcribed recording ${r.id} attached to out-of-scope shiur ${s.id} (${s.outOfScopeReason})`);
+    // A deliberately out-of-scope shiur (e.g. Purim seudah) may get a transcript later; keep it out of scope.
+    if (!s.inScope && /out of scope/.test(s.outOfScopeReason ?? "")) warn("transcribed-out-of-scope", `${r.id} is transcribed but its shiur ${s.id} stays out of scope (${s.outOfScopeReason})`);
+    else assert(s.inScope, `transcribed recording ${r.id} attached to out-of-scope shiur ${s.id} (${s.outOfScopeReason})`);
     attachedTranscripts++;
   }
   assert(attachedTranscripts + redundantTranscripts === transcriptJson.length, "every transcript accounted for");

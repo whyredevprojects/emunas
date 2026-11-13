@@ -6,7 +6,7 @@ Instructions for a Claude session that wakes up on a schedule to process the nex
 
 **Batch size.** Default **N = 60** shiurim per run (about 55 agents, waves of up to 18 concurrent; measured ~155k subagent tokens per shiur, ~153k per audio hour, so ~7-8M per run, about 55-60% of a session window). Use a different N only if the person who scheduled the session said so.
 
-**Language hold (2026-11-13):** Yiddish is on hold until the person who scheduled this says the Yiddish re-transcription is finished. Always pass `--lang en`. When no English shiurim are pending, report that English is finished and stop; do not process Yiddish.
+**Language hold (2026-11-13):** Yiddish is on hold until the person who scheduled this says the Yiddish re-transcription is finished. Always pass `--lang en`. When no English shiurim are pending, report that English is finished and stop; do not process Yiddish. (Safety net once the hold is lifted: `batch:next` only picks a Yiddish shiur when all its transcripts are re-transcriptions, i.e. `mode: "careful"` in `data/transcripts/<recordingId>.json`; the model name did not change. It prints how many pending Yiddish shiurim it skipped as still on the old transcript. After the re-transcription finishes, run `npm run transcripts:sync -- --refresh-lang yi`, `npm run ingest`, `npm run transcripts:sync` and `npm run batch:init` to pull the new transcripts; `batch:init` records each shiur's `asr` in the manifest.)
 
 ## Steps
 

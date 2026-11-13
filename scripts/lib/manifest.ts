@@ -40,6 +40,30 @@ export interface ManifestEntry {
   startedAt: string | null;
   updatedAt: string;
   note: string | null;
+  /** ASR provenance of the shiur's transcript(s), refreshed by batch:init and batch:next. */
+  asr?: AsrInfo;
+}
+
+export interface AsrInfo {
+  /** Distinct "model" or "model/mode" labels over the shiur's transcripts, e.g. "ivrit-ai/yi-whisper-large-v3-ct2/careful". */
+  models: string[];
+  /** True when every transcript of the shiur is a re-transcription (mode "careful"; the model name did not change). */
+  redone: boolean;
+}
+
+/** ASR provenance from the committed compact transcripts (data/transcripts/<recordingId>.json). */
+export function transcriptAsr(recordingIds: string[], dir = "data/transcripts"): AsrInfo {
+  const labels = new Set<string>();
+  let redone = recordingIds.length > 0;
+  for (const id of recordingIds) {
+    const p = `${dir}/${id}.json`;
+    if (!existsSync(p)) continue; // untranscribed part: ignore (ingest guarantees at least one transcript)
+    const t = JSON.parse(readFileSync(p, "utf8")) as { model?: string | null; mode?: string | null };
+    labels.add(`${t.model ?? "unknown"}${t.mode ? `/${t.mode}` : ""}`);
+    if (t.mode !== "careful") redone = false;
+  }
+  if (!labels.size) redone = false;
+  return { models: [...labels].sort(), redone };
 }
 
 export interface Manifest {
