@@ -1,0 +1,585 @@
+{
+  "shiurId": "yi-parshas-hashavua-vr-02",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav shows that the makkos were a blow to Egypt and a healing for Israel, and builds a long derush on why Yirmiyahu received his greatest prophecies of consolation while imprisoned in the chatzar hamatarah, ending with Rashi's last words on chezkas habatim.",
+      "yi": "דער משגיח ווייזט אז די מכות זענען געווען א נגף פאר מצרים און א רפואה פאר אידן, און בויט א לאנגן דרוש פארוואס ירמיהו האט באקומען זיינע גרעסטע נבואות פון נחמה דווקא ווען ער איז געזעסן אין חצר המטרה, ביז רש\"י'ס לעצטע ווערטער אויף חזקת הבתים."
+    },
+    "abstract": {
+      "en": "The Rav opens with Sefer Shemos as the book of redemption: whoever learns a parsha lives in its time, as Rebbi showed when he cursed Nevuchadnetzar only while reading Yirmiyahu. The makkos were a blow to Egypt and a healing for Israel, so learning them breaks the evil in a person. He brings the Chasam Sofer's question how one may mention the makkos, which are mazikim, and why Tehillim reorders them, and answers that for Jews they are pure healing; Tehillim reorders them only where they rebuke Israel or address the nations. Turning to Bava Basra 28, he asks why Rashi notes that Yirmiyahu's prophecy of the field came in the chatzar hamatarah. That was the room where Shlomo HaMelech planned the Beis HaMikdash; Tzidkiyahu placed Yirmiyahu there hoping for a prophecy of consolation, and indeed he received the greatest consolations, though not the annulment of the decree. Rashi, the soul of Shlomo and Yirmiyahu, ends his commentary with Hashem's chazakah on Eretz Yisrael.",
+      "yi": "דער משגיח עפנט אז ספר שמות איז דער ספר הגאולה: ווער עס לערנט א פרשה לעבט אין איר צייט, ווי מ'זעט פון רבי וואס האט געשאלטן נבוכדנצר נאר ווען ער האט געלערנט ירמיהו. די מכות זענען געווען נגף למצרים ורפוא לישראל, און דער לימוד פון די מכות צעברעכט דעם רע אין א מענטש. ער ברענגט דעם חתם סופר'ס קשיא וויאזוי מ'טאר דערמאנען די מכות וואס זענען מזיקים, און פארוואס תהלים טוישט זייער סדר, און ער ענטפערט אז פאר אידן זענען זיי לויטער רפואה; תהלים טוישט נאר וואו מ'שטראפט אידן אדער מ'רעדט צו די גוים. דערנאך פרעגט ער אויף דער גמרא אין בבא בתרא כ\"ח פארוואס רש\"י שרייבט אז די נבואה פונעם פעלד איז געזאגט געווארן אין חצר המטרה. דאס איז געווען דער ארט וואו שלמה המלך האט געפלאנט דעם בית המקדש; צדקיהו האט אהינגעזעצט ירמיהו כדי ער זאל באקומען א נבואה פון נחמה, און ער האט טאקע באקומען די גרעסטע נחמות, אבער נישט קיין ביטול הגזירה. רש\"י, די נשמה פון שלמה און ירמיהו, ענדיגט זיין פירוש מיט דעם אייבערשטנס חזקה אויף ארץ ישראל."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Learning a parsha means living in its time: Sefer Shemos is the book of redemption, so learning it places a person in geulah.",
+          "yi": "לערנען א פרשה מיינט לעבן אין איר צייט: ספר שמות איז דער ספר הגאולה, און ווער עס לערנט עס געפינט זיך אין גאולה."
+        },
+        "evidence": { "segs": [12, 36, 38, 41, 80], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Every makkah was a blow to Egypt and a healing for Israel, so learning the makkos is a power that breaks the evil within a person.",
+          "yi": "יעדע מכה איז געווען א נגף פאר מצרים און א רפואה פאר אידן, און דערפאר איז דער לימוד פון די מכות א כח צו צעברעכן דעם רע אין א מענטש."
+        },
+        "evidence": { "segs": [113, 114, 116, 127, 129], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "For Jews the makkos are not mazikim, so they may be told at any time; Tehillim changes their order only where Jews are rebuked or the nations are addressed.",
+          "yi": "פאר אידן זענען די מכות נישט קיין מזיקים, און מ'מעג זיי דערציילן אלעמאל; תהלים טוישט דעם סדר נאר וואו מ'שטראפט אידן אדער מ'רעדט צו די גוים."
+        },
+        "evidence": { "segs": [322, 323, 343, 344, 350], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The chatzar hamatarah was where Shlomo HaMelech planned the Beis HaMikdash, and Tzidkiyahu placed Yirmiyahu there so that in its merit he would receive a prophecy of consolation.",
+          "yi": "דער חצר המטרה איז געווען דער ארט וואו שלמה המלך האט געפלאנט דעם בית המקדש, און צדקיהו האט אהינגעזעצט ירמיהו כדי אין דעם זכות זאל ער באקומען א נבואה פון נחמה."
+        },
+        "evidence": { "segs": [874, 890, 902, 904, 935], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The chiddush of the field is that in the very hour of the siege Hashem was already preparing the redemption, a sign of His love and of His protest that the land remains His.",
+          "yi": "דער חידוש פונעם פעלד איז אז ממש אין דער צייט פון דער באלעגערונג האט דער אייבערשטער שוין געגרייט די גאולה, א סימן פון זיין אהבה און פון זיין מחאה אז דאס לאנד בלייבט זיינס."
+        },
+        "evidence": { "segs": [957, 959, 960, 967, 970], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Rashi, whose soul was that of Shlomo HaMelech and Yirmiyahu, ends his commentary with chezkas habatim: Hashem never forgoes His chazakah, and everything taken from the Jews will return.",
+          "yi": "רש\"י, וועמענס נשמה איז געווען די נשמה פון שלמה המלך און ירמיהו, ענדיגט זיין פירוש מיט חזקת הבתים: דער אייבערשטער לאזט קיינמאל נישט אפ זיין חזקה, און אלעס וואס מ'האט צוגענומען פון אידן וועט צוריקקומען."
+        },
+        "evidence": { "segs": [1093, 1094, 1113, 1116, 1120, 1162], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-parsha-sefer-shemois-02-02-vaera",
+      "startSeg": 0,
+      "endSeg": 86,
+      "title": { "en": "Sefer Shemos: living in the geulah", "yi": "ספר שמות: לעבן אין דער גאולה" },
+      "summary": {
+        "en": "The Rav explains that Sefer Shemos is the book of redemption and that whoever learns Torah lives in the time he learns about. He proves it from Rebbi, who cursed Nevuchadnetzar only while reading Yirmiyahu, and says that this Shabbos one lives through the makkos of Pharaoh.",
+        "yi": "דער משגיח ערקלערט אז ספר שמות איז דער ספר הגאולה, און ווער עס לערנט תורה לעבט אין דער צייט וואס ער לערנט. ער ברענגט א ראיה פון רבי וואס האט געשאלטן נבוכדנצר נאר ביים לערנען ירמיהו, און זאגט אז דעם שבת לעבט מען דורך די מכות פון פרעה."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-02-02-vaera",
+      "startSeg": 87,
+      "endSeg": 137,
+      "title": { "en": "A blow to Egypt, a healing for Israel", "yi": "נגוף למצרים ורפוא לישראל" },
+      "summary": {
+        "en": "The Rav ties the ten makkos to the ten maamaros and the ten dibros and brings the pasuk that the makkos were a blow to Egypt and a healing for Israel. Learning them, he says, breaks the evil in a person, like the extra time added to Shabbos that removes the part of the goy within.",
+        "yi": "דער משגיח פארבינדט די עשר מכות מיט די עשרה מאמרות און די עשרת הדברות, און ברענגט דעם פסוק אז די מכות זענען געווען נגוף למצרים ורפוא לישראל. דער לימוד פון די מכות, זאגט ער, צעברעכט דעם רע אין א מענטש, אזוי ווי תוספת שבת וואס נעמט אוועק דעם חלק פונעם גוי אין זיך."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-02-02-vaera",
+      "startSeg": 138,
+      "endSeg": 237,
+      "title": { "en": "The Chasam Sofer: may one mention the makkos?", "yi": "דער חתם סופר: מעג מען דערמאנען די מכות?" },
+      "summary": {
+        "en": "The Rav brings the Chasam Sofer's question: the makkos are mazikim, so how may they be mentioned outside the Seder, and why does Tehillim list them out of order? He tells how the Chasam Sofer rejected a student who stepped on sechach, and says he will try to answer without contradicting him.",
+        "yi": "דער משגיח ברענגט דעם חתם סופר'ס קשיא: די מכות זענען מזיקים, וויאזוי מעג מען זיי דערמאנען אויסער ביים סדר, און פארוואס ברענגט תהלים זיי נישט לויטן סדר? ער דערציילט וויאזוי דער חתם סופר האט נישט אנגענומען א בחור וואס האט געטרעטן אויפן סכך, און זאגט אז ער וועט פרובירן צו ענטפערן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-02-02-vaera",
+      "startSeg": 238,
+      "endSeg": 297,
+      "title": { "en": "Healing before the blow; the four cups", "yi": "די רפואה פאר דער מכה; די פיר כוסות" },
+      "summary": {
+        "en": "The Rav brings the Gemara in Megillah that for Jews Hashem sends the healing before the blow, and the pasuk that the diseases of Egypt will not come upon Israel. He shows the same at the Seder: the cup from which drops are spilled for the makkos is the cup over which Hallel is said.",
+        "yi": "דער משגיח ברענגט די גמרא אין מגילה אז ביי אידן שיקט דער אייבערשטער פריער די רפואה און דערנאך די מכה, און דעם פסוק כל המחלה אשר שמתי במצרים. ער ווייזט דאס ביים סדר: פונעם זעלבן כוס וואס מ'גיסט ארויס די מכות זאגט מען הלל."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-02-02-vaera",
+      "startSeg": 298,
+      "endSeg": 350,
+      "title": { "en": "Why Tehillim changes the order", "yi": "פארוואס תהלים טוישט דעם סדר" },
+      "summary": {
+        "en": "The Rav answers the question on Tehillim: chapter 78 rebukes Israel for forgetting Hashem's wonders, which could arouse a kitrug, and chapter 105 speaks to the nations, for whom the makkos remain mazikim. When Jews tell the makkos, as in this parsha, they draw down salvation.",
+        "yi": "דער משגיח ענטפערט די קשיא אויף תהלים: קאפיטל ע\"ח שטראפט אידן פארוואס זיי האבן נישט געדענקט די נפלאות, וואס קען מעורר זיין א קטרוג, און קאפיטל ק\"ה רעדט צו די גוים, פאר וועמען די מכות בלייבן מזיקים. ווען אידן דערציילן די מכות, ווי אין דער פרשה, זענען זיי ממשיך ישועות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-02-02-vaera",
+      "startSeg": 351,
+      "endSeg": 472,
+      "title": { "en": "Living the parsha; Hashem's protest", "yi": "לעבן מיט דער פרשה; דעם אייבערשטנס מחאה" },
+      "summary": {
+        "en": "The Rav calls on his listeners to live with the parsha: Pharaoh's hardened heart becomes for Jews a softened heart, and Va'eira also means 'I will appear', since the makkos will return before Moshiach. 'My firstborn son Israel' is Hashem's protest in galus that the nations hold no chazakah over the Jews, and what is learned below, such as chezkas habatim, is learned above.",
+        "yi": "דער משגיח רופט צו לעבן מיט דער פרשה: דער כבד לב פון פרעה ווערט ביי אידן א ווייך הארץ, און וארא מיינט אויך איך וועל זיך באווייזן, ווייל די מכות קומען צוריק פאר משיח. בני בכורי ישראל איז דעם אייבערשטנס מחאה אין גלות אז די גוים האבן נישט קיין חזקה אויף אידן, און וואס מ'לערנט אונטן, ווי חזקת הבתים, לערנט מען אויבן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-02-02-vaera",
+      "startSeg": 473,
+      "endSeg": 549,
+      "title": { "en": "Why Rashi mentions the chatzar hamatarah", "yi": "פארוואס רש\"י דערמאנט דעם חצר המטרה" },
+      "summary": {
+        "en": "The Rav brings the Gemara in Bava Basra that the three-year chazakah is learned from Yirmiyahu's purchase of the field, and asks why Rashi adds that the prophecy came in the chatzar hamatarah. He adds more questions: why Tzidkiyahu, a tzaddik, locked him up, why a prison was in the king's house, and why the Arizal pointed out this place in Yerushalayim.",
+        "yi": "דער משגיח ברענגט די גמרא אין בבא בתרא אז חזקה פון דריי יאר לערנט מען ארויס פון ירמיהו'ס קויפן דעם פעלד, און פרעגט פארוואס רש\"י לייגט צו אז די נבואה איז געווען אין חצר המטרה. ער פרעגט ווייטער פארוואס צדקיהו, א צדיק, האט אים איינגעשפארט, פארוואס א תפיסה איז געווען אינעם מלך'ס הויז, און פארוואס דער אריז\"ל האט אנגעוויזן דעם ארט אין ירושלים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-02-02-vaera",
+      "startSeg": 550,
+      "endSeg": 636,
+      "title": { "en": "The prophet of calamity and the field", "yi": "דער נביא פון פורעניות און דאס פעלד" },
+      "summary": {
+        "en": "The Rav contrasts Yeshayahu, the prophet of consolation, with Yirmiyahu, the prophet of calamity, and says that in the chatzar hamatarah the picture turned. He reads the account of Chanamel's field and Yirmiyahu's prayer, and Hashem's reply that the city had stirred His anger from the day it was built, the day Shlomo married Pharaoh's daughter.",
+        "yi": "דער משגיח שטעלט אוועק ישעיהו, דעם נביא פון נחמות, קעגן ירמיהו, דעם נביא פון פורעניות, און זאגט אז אין חצר המטרה האט זיך איבערגעדרייט דאס בילד. ער לערנט דורך די פרשה פון חנמאל'ס פעלד און ירמיהו'ס תפילה, און דעם אייבערשטנס ענטפער אז די שטאט איז געווען אויף זיין צארן פון דעם טאג וואס מ'האט זי געבויט, דעם טאג וואס שלמה האט חתונה געהאט מיט בת פרעה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-02-02-vaera",
+      "startSeg": 637,
+      "endSeg": 698,
+      "title": { "en": "Consolations greater than Yeshayahu's", "yi": "נחמות גרעסער ווי ביי ישעיהו" },
+      "summary": {
+        "en": "The Rav reads the prophecies Yirmiyahu received there: the ingathering, one heart, an everlasting covenant, the voice of joy and of chosson and kallah, and Yerushalayim called 'Hashem Tzidkeinu'. He calls them consolations Yeshayahu himself did not say, and asks why they came specifically there.",
+        "yi": "דער משגיח לערנט די נבואות וואס ירמיהו האט דארט באקומען: קיבוץ גליות, לב אחד, ברית עולם, קול ששון וקול שמחה קול חתן וקול כלה, און ירושלים וועט הייסן ה' צדקנו. ער זאגט אז אזעלכע נחמות האט אפילו ישעיהו נישט געזאגט, און פרעגט פארוואס זיי זענען געקומען דווקא דארט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-02-02-vaera",
+      "startSeg": 699,
+      "endSeg": 762,
+      "title": { "en": "What is new in the field? Two introductions", "yi": "וואס איז נייעס אינעם פעלד? צוויי הקדמות" },
+      "summary": {
+        "en": "The Rav asks what the sign of the field adds, when every child knows from the Chumash that the Jews will return. He lays two foundations: a person's last words hold the essence of his life, as with Rabbah bar Nachmani and the Sfas Emes, and each prophecy comes according to the prophet's root, as Yoshiyahu sent to Chuldah rather than Yirmiyahu.",
+        "yi": "דער משגיח פרעגט וואס דער סימן פונעם פעלד לייגט צו, ווען יעדעס קינד ווייסט פון חומש אז אידן וועלן צוריקקומען. ער לייגט צוויי יסודות: די לעצטע ווערטער פון א מענטש האלטן דעם גאנצן מהות פון זיין לעבן, ווי ביי רבה בר נחמני און דעם שפת אמת, און יעדע נבואה קומט לויטן שורש פונעם נביא, ווי יאשיהו האט געשיקט צו חולדה און נישט צו ירמיהו."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-02-02-vaera",
+      "startSeg": 763,
+      "endSeg": 863,
+      "title": { "en": "Yirmiyahu was Shlomo HaMelech", "yi": "ירמיהו איז געווען שלמה המלך" },
+      "summary": {
+        "en": "The Rav brings from the Arizal that Yirmiyahu was a reincarnation of Shlomo HaMelech, who had to see the destruction of the house he built. Shlomo was born under the best star and reached all he desired, which no other person ever did; his day is Shemini Atzeres, while Yirmiyahu's is Tisha B'Av.",
+        "yi": "דער משגיח ברענגט פונעם אריז\"ל אז ירמיהו איז געווען א גלגול פון שלמה המלך, וואס האט געדארפט זען דעם חורבן פונעם הויז וואס ער האט געבויט. שלמה איז געבוירן געווארן אונטערן בעסטן מזל און האט דערגרייכט אלעס וואס ער האט געוואלט, וואס קיין אנדער מענטש האט נישט; זיין טאג איז שמיני עצרת, און ירמיהו'ס טאג איז תשעה באב."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-02-02-vaera",
+      "startSeg": 864,
+      "endSeg": 941,
+      "title": { "en": "Tzidkiyahu's plan", "yi": "צדקיהו'ס פלאן" },
+      "summary": {
+        "en": "The Rav describes the chatzar hamatarah as a cool hall in Shlomo's palace where Shlomo planned the Beis HaMikdash. Tzidkiyahu, a tzaddik, put Yirmiyahu there so that in Shlomo's merit he would receive a good prophecy, which unlike a bad one cannot be retracted, as in the dispute with Chananiah; he compares it to the Yismach Moshe sensing the holiness of a place where Reb Elimelech had davened.",
+        "yi": "דער משגיח באשרייבט דעם חצר המטרה ווי א קילן זאל אין שלמה'ס פאלאץ וואו שלמה האט געפלאנט דעם בית המקדש. צדקיהו, א צדיק, האט דארט אריינגעזעצט ירמיהו כדי אין שלמה'ס זכות זאל ער באקומען א גוטע נבואה, וואס מ'קען נישט צוריקנעמען ווי א שלעכטע, ווי ביים וויכוח מיט חנניה; ער פארגלייכט עס צום ישמח משה וואס האט געשפירט די קדושה פון אן ארט וואו ר' אלימלך האט געדאווענט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-02-02-vaera",
+      "startSeg": 942,
+      "endSeg": 1012,
+      "title": { "en": "Redemption prepared in the hour of destruction", "yi": "די גאולה געגרייט אין דער שעה פונעם חורבן" },
+      "summary": {
+        "en": "The Rav says Tzidkiyahu was right: Yirmiyahu received unprecedented consolations. The chiddush is that while the siege and hunger were already on Yerushalayim, Hashem was preparing the redemption, a lasting protest that the Jews will return, guaranteed because the Shechinah is with them in galus; and 'matarah' is a name of the Shechinah who guards and waits.",
+        "yi": "דער משגיח זאגט אז צדקיהו איז געווען גערעכט: ירמיהו האט באקומען נחמות וואס קיינער האט פריער נישט באקומען. דער חידוש איז אז ווען די באלעגערונג און דער הונגער זענען שוין געווען אויף ירושלים, האט דער אייבערשטער שוין געגרייט די גאולה, אן אייביגע מחאה אז אידן וועלן צוריקקומען, באזיכערט ווייל די שכינה איז מיט זיי אין גלות; און מטרה איז א נאמען פון דער שכינה וואס היט און ווארט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-02-02-vaera",
+      "startSeg": 1013,
+      "endSeg": 1059,
+      "title": { "en": "Why the decree was not annulled", "yi": "פארוואס די גזירה איז נישט בטל געווארן" },
+      "summary": {
+        "en": "The Rav explains that Tzidkiyahu erred in hoping to annul the decree. Yirmiyahu, sensing a time of favor, prayed to cancel it entirely, but Hashem answered that this very place, where Shlomo planned the house on the day His anger began, is itself the accuser, and like the Kohen Gadol's gold garments an accuser cannot become a defender.",
+        "yi": "דער משגיח ערקלערט אז צדקיהו האט זיך טועה געווען וואס ער האט געהאפט מבטל צו זיין די גזירה. ירמיהו האט געשפירט אן עת רצון און מתפלל געווען מ'זאל זי אינגאנצן מבטל זיין, אבער דער אייבערשטער האט געענטפערט אז דער ארט אליין, וואו שלמה האט געפלאנט דאס הויז אין דעם טאג וואס דער צארן האט זיך אנגעהויבן, איז דער קטגור, און אזוי ווי ביי די בגדי זהב פונעם כהן גדול, אין קטיגור נעשה סניגור."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-02-02-vaera",
+      "startSeg": 1060,
+      "endSeg": 1111,
+      "title": { "en": "Rashi, the soul of Shlomo", "yi": "רש\"י, די נשמה פון שלמה" },
+      "summary": {
+        "en": "The Rav brings that Rashi was the soul of Shlomo HaMelech, hinted in the word Bereishis, and explains why Rashi became the teacher of all Israel, from the child learning Chumash to the scholar of Bava Basra. Rashi remembered being Shlomo and Yirmiyahu, and his last words on the Torah held the essence of his soul.",
+        "yi": "דער משגיח ברענגט אז רש\"י איז געווען די נשמה פון שלמה המלך, מרומז אינעם ווארט בראשית, און ערקלערט פארוואס רש\"י איז געווארן דער רבי פון גאנץ כלל ישראל, פונעם קינד וואס לערנט חומש ביזן למדן וואס לערנט בבא בתרא. רש\"י האט געדענקט ווען ער איז געווען שלמה און ירמיהו, און זיינע לעצטע ווערטער אין תורה האבן געהאלטן דעם מהות פון זיין נשמה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-02-02-vaera",
+      "startSeg": 1112,
+      "endSeg": 1214,
+      "title": { "en": "Rashi's last words: Hashem's chazakah", "yi": "רש\"י'ס לעצטע ווערטער: דעם אייבערשטנס חזקה" },
+      "summary": {
+        "en": "The Rav concludes that Rashi's commentary ends in chezkas habatim, on Yirmiyahu in the chatzar hamatarah, because Hashem never forgoes His chazakah: the Jews and everything taken from them will return. Rashi's first Torah, on Bereishis, answers the nations' charge of theft, and his last teaches that the land and the Beis HaMikdash belong to the Jews.",
+        "yi": "דער משגיח ענדיגט אז רש\"י'ס פירוש ענדיגט זיך אין חזקת הבתים, ביי ירמיהו אין חצר המטרה, ווייל דער אייבערשטער לאזט קיינמאל נישט אפ זיין חזקה: אידן און אלעס וואס מ'האט פון זיי צוגענומען וועט צוריקקומען. רש\"י'ס ערשטע תורה, אויף בראשית, ענטפערט די גוים וואס זאגן לסטים אתם, און זיין לעצטע לערנט אז דאס לאנד און דער בית המקדש געהערן צו אידן."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "מ'געפינט אין מדרש אז רבי הקדש", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [49, 55, 59, 64], "confidence": 0.7 } },
+    { "heardAs": "אזוי זאגט דער חדש יוחדין", "work": "Chiddushei HaRim", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [88, 90, 96, 97], "confidence": 0.65 } },
+    { "heardAs": "ונאר גיבא שמות מצרים נאר גיבא רפוא", "work": "Yeshayahu", "ref": "Yeshayahu 19:22", "sefariaRef": "Isaiah 19:22", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [115, 116], "confidence": 0.8 } },
+    { "heardAs": "אזוי שטעט אין זייערע קודש אויפ'ן פסוק", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [115], "confidence": 0.65 } },
+    { "heardAs": "דער רב רבונם האט געזאגט", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [119, 120, 123], "confidence": 0.65 } },
+    { "heardAs": "וואס שטעט פונעם פארדיגן ד' אכטמאר פון לאכאוויטשאוו", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [131, 134, 135], "confidence": 0.6 } },
+    { "heardAs": "אזוי זאגט די mention ספר אין די דרשות", "work": "Derashos Chasam Sofer", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [140, 153, 178, 187], "confidence": 0.75 } },
+    { "heardAs": "א שתום במצחים היתותו ומבסב ביז דציון, ויפוך לדם יאורעים", "work": "Tehillim", "ref": "Tehillim 78:43-51", "sefariaRef": "Psalms 78:43-51", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [163, 164, 165, 318, 319], "confidence": 0.8 } },
+    { "heardAs": "שלח חשך ויחשך, ופחת ממים לדם", "work": "Tehillim", "ref": "Tehillim 105:28-36", "sefariaRef": "Psalms 105:28-36", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [168, 169, 170, 171], "confidence": 0.75 } },
+    { "heardAs": "איז אין רמות שטעט אז ווען עס קומט שבת הגדול", "work": "Rema", "ref": "Rema, Orach Chaim 430:1", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [194, 195], "confidence": 0.65 } },
+    { "heardAs": "די גמרא אין מגילה נוצט דעם פסוק", "work": "Gemara Megillah", "ref": "Megillah 13b", "sefariaRef": "Megillah 13b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [238, 240, 242, 244], "confidence": 0.75 } },
+    { "heardAs": "כל המחלה שסמטו די מצריים, לא יעשה מלכה ... כי הנשם ופכה", "work": "Shemos", "ref": "Shemos 15:26", "sefariaRef": "Exodus 15:26", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [266, 267, 269], "confidence": 0.8 } },
+    { "heardAs": "סוף פרשת פיישב, וואס דארטן שטעט פיר מיל כתר", "work": "Bereishis", "ref": "Bereishis 40:11-13", "sefariaRef": "Genesis 40:11-13", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [272, 274], "confidence": 0.65 } },
+    { "heardAs": "ס'איז חז״ל זאגן קנעגער די פיר", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [273, 276, 279, 281], "confidence": 0.65 } },
+    { "heardAs": "די אבער לשונו של גאולה, בצאתי ובצלתי", "work": "Shemos", "ref": "Shemos 6:6-7", "sefariaRef": "Exodus 6:6-7", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [281], "confidence": 0.7 } },
+    { "heardAs": "הודעה לעשם, קראווה ושמאה, הודעה ואם ממלא לסוף", "work": "Tehillim", "ref": "Tehillim 105:1", "sefariaRef": "Psalms 105:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [330, 331, 332, 340], "confidence": 0.75 } },
+    { "heardAs": "ויאכפעד ה' לב פרעה, והכפדת ליבע", "work": "Shemos", "ref": "Shemos 10:1", "sefariaRef": "Exodus 10:1", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [363, 364, 365], "confidence": 0.7 } },
+    { "heardAs": "פון בעל התניא שטעט אין תורה עור, וערע צוויי טייטשן", "work": "Torah Or", "ref": "Torah Or, Va'eira", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [386, 387, 389, 390], "confidence": 0.7 } },
+    { "heardAs": "שטעט פון חידות, עס ברענגט פון איינעם פון די ראשיינער, רבי אפרים", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [399, 400, 401, 403], "confidence": 0.65 } },
+    { "heardAs": "בנו בחירה ישראל", "work": "Shemos", "ref": "Shemos 4:22", "sefariaRef": "Exodus 4:22", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [412, 416, 438], "confidence": 0.8 } },
+    { "heardAs": "ער האט געזעהן אין די סלאנימער כתבים", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [465, 467, 468], "confidence": 0.65 } },
+    { "heardAs": "אין די גמרא שטייט אז ... א חזקה איז ג' שנים", "work": "Gemara Bava Basra", "ref": "Bava Basra 28b", "sefariaRef": "Bava Batra 28b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [474, 476, 477, 478], "confidence": 0.75 } },
+    { "heardAs": "רש''י ברענגט צוריק אז די נבואה איז געזאגט געווארן צום יום יום וחצרה מתורה", "work": "Rashi on Bava Basra", "ref": "Rashi, Bava Basra 28b", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [494, 495, 496, 505], "confidence": 0.75 } },
+    { "heardAs": "הדבר שהיה על ימי' ... וימי הנביא היקולה וחצרה המצרה שהבית מלך יהודה", "work": "Yirmiyahu", "ref": "Yirmiyahu 32:1-2", "sefariaRef": "Jeremiah 32:1-2", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [481, 482, 483], "confidence": 0.8 } },
+    { "heardAs": "אשר כלל צדקי יואל מלך יהודה לאמער ... מה דא א תנובה", "work": "Yirmiyahu", "ref": "Yirmiyahu 32:3-5", "sefariaRef": "Jeremiah 32:3-5", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [507, 508, 511, 512], "confidence": 0.8 } },
+    { "heardAs": "די גמרא זאגט אז צדקי יואל איז געוועזן א צדיק", "work": "Gemara", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [515, 516, 896], "confidence": 0.75 } },
+    { "heardAs": "מיר ווייסן, עס שטעט אין חז״ל, אז אידן האבן געהאט צוויי נבואות", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [550, 551, 554, 564, 566], "confidence": 0.7 } },
+    { "heardAs": "די הפטורה פון בהל ... חנמ''ל וועט קומען", "work": "Yirmiyahu", "ref": "Yirmiyahu 32:6-15", "sefariaRef": "Jeremiah 32:6-15", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [580, 581, 588, 590], "confidence": 0.75 } },
+    { "heardAs": "און ער האט געזאגט א גאנצע גרויסע לאנגע תפילה דא ... הנה יסוללו", "work": "Yirmiyahu", "ref": "Yirmiyahu 32:16-25", "sefariaRef": "Jeremiah 32:16-25", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [596, 598, 603, 606], "confidence": 0.7 } },
+    { "heardAs": "כי על עפי ועל חמתי היתה לי אהרע זאת", "work": "Yirmiyahu", "ref": "Yirmiyahu 32:31", "sefariaRef": "Jeremiah 32:31", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [618, 619, 622], "confidence": 0.8 } },
+    { "heardAs": "און דער גמרא זאגט ... שלמה המלך ... בת פרי", "work": "Gemara", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [627, 628, 630, 631], "confidence": 0.7 } },
+    { "heardAs": "הנענו מקאפצים מכל הארצות ... ונתתי אליהם לב אחד", "work": "Yirmiyahu", "ref": "Yirmiyahu 32:37-44", "sefariaRef": "Jeremiah 32:37-44", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [638, 639, 646, 648, 659], "confidence": 0.75 } },
+    { "heardAs": "כל סתם, כל שמחה, כל חתונה, כל כלה", "work": "Yirmiyahu", "ref": "Yirmiyahu 33:10-11", "sefariaRef": "Jeremiah 33:10-11", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [679, 681, 682, 683], "confidence": 0.7 } },
+    { "heardAs": "וויאזוי שיקרא'לע השם צדקינו", "work": "Yirmiyahu", "ref": "Yirmiyahu 33:15-16", "sefariaRef": "Jeremiah 33:15-16", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [690, 692, 693], "confidence": 0.75 } },
+    { "heardAs": "בשבי ה' משפחה, אזוי שטעט אין פרשת נצבים", "work": "Devarim", "ref": "Devarim 30:3-4", "sefariaRef": "Deuteronomy 30:3-4", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [707, 708, 710], "confidence": 0.7 } },
+    { "heardAs": "אזוי שטעט אין פסוק נפשי יצר בדף", "work": "Shir HaShirim", "ref": "Shir HaShirim 5:6", "sefariaRef": "Song of Songs 5:6", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [723, 1110], "confidence": 0.75 } },
+    { "heardAs": "רבה ביהם נחמנו איז נפטר געווארן ... ויצאת נשמתך בטהור", "work": "Gemara Bava Metzia", "ref": "Bava Metzia 86a", "sefariaRef": "Bava Metzia 86a", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [726, 727, 731, 732], "confidence": 0.75 } },
+    { "heardAs": "אין די אקדמות פון שפת אמת שטעט", "work": "Sfas Emes", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [733, 734, 735, 737], "confidence": 0.7 } },
+    { "heardAs": "אז עובדי גמרא דערצעלט אז ישו הנביא ... חלילה הנביאה", "work": "Gemara Megillah", "ref": "Megillah 14b", "sefariaRef": "Megillah 14b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [745, 748, 750, 755], "confidence": 0.8 } },
+    { "heardAs": "דאס פארשטעט פון הרי הקדוש אין שעה הגלגלים", "work": "Shaar HaGilgulim", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [764, 766, 770], "confidence": 0.75 } },
+    { "heardAs": "דער ראסטראפטסטער רבי האט געזאגט ... רבינו גר שם מאור הגאולה", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [776, 777, 779, 783], "confidence": 0.65 } },
+    { "heardAs": "ער איז געוועזן די פופצעטער דור פון אברהם אבינו וואס דער גמרא זאגט", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [799, 800, 801], "confidence": 0.65 } },
+    { "heardAs": "יש טחת גת נביא, יש טחת תנאות עולה", "work": "Melachim", "ref": "Melachim I 5:5", "sefariaRef": "I Kings 5:5", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [806], "confidence": 0.7 } },
+    { "heardAs": "דער רעבעשטער האט אים געגעבן א נאמען ידידי", "work": "Shmuel", "ref": "Shmuel II 12:25", "sefariaRef": "II Samuel 12:25", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [809, 810, 811], "confidence": 0.7 } },
+    { "heardAs": "ביז כל חשק שלמה ... דער לעצטער פוסק פון דער החצורה", "work": "Melachim", "ref": "Melachim I 9:1", "sefariaRef": "I Kings 9:1", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [829, 849, 850, 851], "confidence": 0.75 } },
+    { "heardAs": "ישמח השם במינסטו", "work": "Tehillim", "ref": "Tehillim 104:31", "sefariaRef": "Psalms 104:31", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [842, 843, 846], "confidence": 0.75 } },
+    { "heardAs": "זאגט די גמרא אז ימי' הנביא זאגט צו חנניה", "work": "Gemara", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [913, 917, 918, 921], "confidence": 0.7 } },
+    { "heardAs": "אזוי ווי דער רמב״ם זאגט", "work": "Rambam, Mishneh Torah", "ref": "Hilchos Yesodei HaTorah 10:4", "sefariaRef": "Mishneh Torah, Foundations of the Torah 10:4", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [922, 923], "confidence": 0.7 } },
+    { "heardAs": "אזוי ווי זייער קודש ער זאגט אין אנפאנג שמועס", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [947, 948, 949, 951], "confidence": 0.65 } },
+    { "heardAs": "אזוי ווי דער רמב״ן זאגט אין ספר הזינה", "work": "Sefer HaGeulah", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [986], "confidence": 0.7 } },
+    { "heardAs": "מה אתם מחכה ... לכן יחק השם לכננכם", "work": "Yeshayahu", "ref": "Yeshayahu 30:18", "sefariaRef": "Isaiah 30:18", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [998, 999], "confidence": 0.7 } },
+    { "heardAs": "יום כיפור, ווען דער קיין גדול גייט אריין ... מיט ביגדי זאך קען ער דארט נישט אריינגיין", "work": "Gemara Rosh Hashanah", "ref": "Rosh Hashanah 26a", "sefariaRef": "Rosh Hashanah 26a", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [1038, 1039, 1040, 1053], "confidence": 0.65 } },
+    { "heardAs": "עס שטעט אין ספר גלגלים אז ראשי הקודש איז די נשמה פון שלמה המלך", "work": "Sefer HaGilgulim", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1060, 1061], "confidence": 0.75 } },
+    { "heardAs": "זאגט דער בני יששכר אז עס איז א ווייב נתראה טעם אויף דעם", "work": "Bnei Yissaschar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1064, 1065, 1080, 1081], "confidence": 0.65 } },
+    { "heardAs": "האדרא אייראב האדרא פירה", "work": "Rashi on Bava Basra", "ref": "Rashi, Bava Basra 29a", "sefariaRef": null, "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [1113, 1138, 1173, 1178], "confidence": 0.7 } },
+    { "heardAs": "דער מדרש שטייט שטאף – אשכא ישיבה, מנחה ישובה", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1122, 1123, 1127], "confidence": 0.6 } },
+    { "heardAs": "ביים רבי יצחק ... ווייל וואס פאנגט זיך אים מיט בראשות", "work": "Rashi on Bereishis", "ref": "Rashi, Bereishis 1:1", "sefariaRef": "Rashi on Genesis 1:1:1", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [1186, 1187, 1188, 1189], "confidence": 0.75 } },
+    { "heardAs": "דער ארי הקודש איז קיינמאל נישט געוועזן אין ירושלים", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [526, 527, 539, 541], "confidence": 0.7 } }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Torah is not a record of the past: Rebbi refrained from cursing Nevuchadnetzar in ordinary speech yet cursed him while reading Yirmiyahu, because whoever learns a sefer stands in its time, when the wicked king is alive.",
+        "yi": "תורה איז נישט קיין היסטאריע: רבי האט נישט געשאלטן נבוכדנצר אין א געווענליכן שמועס, אבער יא ביים לערנען ירמיהו, ווייל ווער עס לערנט א ספר שטייט אין זיין צייט, ווען דער רשע לעבט נאך."
+      },
+      "evidence": { "segs": [55, 59, 64, 68, 70], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Seder itself shows the makkos are healing for Israel: the very cup from which drops are spilled for the ten makkos is the cup over which Hallel and the geulah are said.",
+        "yi": "דער סדר אליין ווייזט אז די מכות זענען א רפואה פאר אידן: פונעם זעלבן כוס וואס מ'גיסט ארויס די עשר מכות זאגט מען הלל און די גאולה."
+      },
+      "evidence": { "segs": [286, 288, 292, 295, 297], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "'Bni bechori Yisrael' is Hashem's protest in the sense of chazakah law: as long as the true owner protests, the nations who hold the Jews in galus gain no ownership over them.",
+        "yi": "בני בכורי ישראל איז דעם אייבערשטנס מחאה לויט די דינים פון חזקה: כל זמן דער אמת'ער בעל הבית מאכט א מחאה, האבן די גוים וואס האלטן אידן אין גלות נישט קיין חזקה אויף זיי."
+      },
+      "evidence": { "segs": [429, 434, 436, 438, 439], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Tzidkiyahu imprisoned Yirmiyahu in the hall where Shlomo planned the Beis HaMikdash so that the prophet of calamity, Shlomo's own reincarnation, would receive a prophecy of consolation in Shlomo's merit.",
+        "yi": "צדקיהו האט איינגעשפארט ירמיהו אינעם זאל וואו שלמה האט געפלאנט דעם בית המקדש, כדי דער נביא פון פורעניות, שלמה'ס אייגענער גלגול, זאל באקומען א נבואה פון נחמה אין שלמה'ס זכות."
+      },
+      "evidence": { "segs": [899, 902, 904, 906, 908], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The same place could bring consolation but not annulment: the room where the Beis HaMikdash was planned, on the day Hashem's anger began, is itself the accuser, and an accuser cannot become a defender.",
+        "yi": "דער זעלבער ארט האט געקענט ברענגען נחמה אבער נישט קיין ביטול: דער ארט וואו מ'האט געפלאנט דעם בית המקדש, אין דעם טאג וואס דער צארן האט זיך אנגעהויבן, איז אליין דער קטגור, און אין קטיגור נעשה סניגור."
+      },
+      "evidence": { "segs": [1042, 1046, 1048, 1050, 1053], "confidence": 0.65 }
+    },
+    {
+      "text": {
+        "en": "Rashi's first and last Torah frame one message: his first answers the nations who call the Jews thieves of the land, and his last, on chezkas habatim, teaches that the land and the Beis HaMikdash remain the Jews' by Hashem's chazakah.",
+        "yi": "רש\"י'ס ערשטע און לעצטע תורה זאגן איין זאך: די ערשטע ענטפערט די גוים וואס רופן אידן לסטים, און די לעצטע, אויף חזקת הבתים, לערנט אז דאס לאנד און דער בית המקדש בלייבן ביי אידן דורך דעם אייבערשטנס חזקה."
+      },
+      "evidence": { "segs": [1189, 1191, 1194, 1200, 1212], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "Rebbi and Nevuchadnetzar", "yi": "רבי און נבוכדנצר" },
+      "retelling": {
+        "en": "Rebbi was asked about Nevuchadnetzar and would not curse him, since one may not curse a king. When he read the sefer and reached Nevuchadnetzar king of Bavel, he cursed him, and when asked he answered that in the sefer one may curse him. The Rav explains that one who reads Yirmiyahu lives in that time.",
+        "yi": "מ'האט רבי געפרעגט וועגן נבוכדנצר און ער האט אים נישט געוואלט שעלטן, ווייל מ'טאר נישט שעלטן קיין מלך. ווען ער האט געלערנט דעם ספר און איז אנגעקומען צו נבוכדנצר מלך בבל, האט ער אים געשאלטן, און ווען מ'האט אים געפרעגט האט ער געענטפערט אז אינעם ספר מעג מען. דער משגיח ערקלערט אז ווער עס לערנט ירמיהו לעבט אין יענער צייט."
+      },
+      "people": ["Rebbi", "Nevuchadnetzar"],
+      "evidence": { "segs": [49, 55, 59, 61, 64], "confidence": 0.7 }
+    },
+    {
+      "title": { "en": "The Chasam Sofer and the student on the sechach", "yi": "דער חתם סופר און דער בחור אויפן סכך" },
+      "retelling": {
+        "en": "Two students came to the Chasam Sofer after Sukkos to be accepted to his yeshivah and were told to return the next day. Meanwhile they helped take down the Rebbe's sukkah while he watched from the window. He accepted one and not the other, and later explained that one had been careful not to step on the sechach while the other stepped on it, and a bochur who treads on sechach on which the Shechinah rested cannot be accepted.",
+        "yi": "צוויי בחורים זענען געקומען צום חתם סופר נאך סוכות אנגענומען צו ווערן אין זיין ישיבה, און ער האט זיי געהייסן קומען מארגן. דערווייל האבן זיי געהאלפן צונעמען דעם רבי'נס סוכה, און ער האט צוגעקוקט פונעם פענסטער. ער האט אנגענומען איינעם און נישט דעם אנדערן, און שפעטער ערקלערט אז איינער האט אכטונג געגעבן נישט צו טרעטן אויפן סכך און דער אנדערער האט געטרעטן, און א בחור וואס טרעט אויף סכך וואו די שכינה איז געווען שורה קען מען נישט אננעמען."
+      },
+      "people": ["the Chasam Sofer"],
+      "evidence": { "segs": [203, 207, 214, 216, 223, 225], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The Yismach Moshe's prayer on the road", "yi": "דעם ישמח משה'ס תפילה אויפן וועג" },
+      "retelling": {
+        "en": "The Yismach Moshe once davened mincha at a place on a journey and felt a fire of hislahavus he had never felt before, and said a great tzaddik must have davened there. It was found that Rebbe Reb Elimelech had passed through and davened at that spot.",
+        "yi": "דער ישמח משה האט אמאל געדאווענט מנחה ערגעץ אויפן וועג און געשפירט אזא התלהבות ווי ער האט קיינמאל נישט געשפירט, און געזאגט אז דא האט געמוזט דאווענען א גרויסער צדיק. מ'האט געפונען אז דער רבי ר' אלימלך איז דארט דורכגעפארן און געדאווענט אויף דעם ארט."
+      },
+      "people": ["the Yismach Moshe", "Rebbe Reb Elimelech"],
+      "evidence": { "segs": [926, 927, 929, 930, 932, 933], "confidence": 0.7 }
+    },
+    {
+      "title": { "en": "The Rav's visit to the chatzar hamatarah", "yi": "דער משגיח'ס באזוך אין חצר המטרה" },
+      "retelling": {
+        "en": "The Rav relates that about ten years earlier he was in the chatzar hamatarah, a place hewn in stone and very cool even in the heat outside, where the Arabs stored their bananas so they would not spoil. From the pasuk he shows that it was part of the king's house that Shlomo built.",
+        "yi": "דער משגיח דערציילט אז בערך צען יאר פריער איז ער געווען אין חצר המטרה, אן ארט אויסגעהאקט אין שטיין און זייער קיל אפילו ווען דרויסן ברענט די היץ, וואו די אראבער האבן באהאלטן זייערע באנאנעס זיי זאלן נישט פארפוילט ווערן. פונעם פסוק ווייזט ער אז דאס איז געווען א טייל פונעם בית המלך וואס שלמה האט געבויט."
+      },
+      "people": [],
+      "evidence": { "segs": [865, 866, 867, 869, 871, 875], "confidence": 0.7 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "The Chasam Sofer asks: if speaking of mazikim draws them down, how may the makkos be mentioned outside the Seder night?",
+        "yi": "דער חתם סופר פרעגט: אויב רעדן וועגן מזיקים איז זיי ממשיך, וויאזוי מעג מען דערמאנען די מכות אויסער פסח ביינאכט?"
+      },
+      "answer": {
+        "en": "The Rav answers from the Gemara that for Jews the makkos were healing, not mazikim, so telling them draws down salvation.",
+        "yi": "דער משגיח ענטפערט פון דער גמרא אז פאר אידן זענען די מכות געווען א רפואה און נישט קיין מזיקים, און זיי דערציילן איז ממשיך ישועות."
+      },
+      "questionSegs": [140, 142, 153, 158],
+      "answerSegs": [242, 263, 270, 271],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "If every makkah is a healing, why did David HaMelech change their order in Tehillim?",
+        "yi": "אויב יעדע מכה איז א רפואה, פארוואס האט דוד המלך געטוישט דעם סדר אין תהלים?"
+      },
+      "answer": {
+        "en": "Chapter 78 rebukes Jews for forgetting the wonders, which could arouse a kitrug, and chapter 105 speaks to the nations, for whom the makkos remain harmful.",
+        "yi": "קאפיטל ע\"ח שטראפט אידן וואס האבן פארגעסן די נפלאות, וואס קען מעורר זיין א קטרוג, און קאפיטל ק\"ה רעדט צו די גוים, פאר וועמען די מכות בלייבן מזיקים."
+      },
+      "questionSegs": [299, 301, 302],
+      "answerSegs": [311, 323, 326, 330, 343, 344],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why does Rashi add that Yirmiyahu's prophecy of the field was said in the chatzar hamatarah?",
+        "yi": "פארוואס לייגט רש\"י צו אז ירמיהו'ס נבואה פונעם פעלד איז געזאגט געווארן אין חצר המטרה?"
+      },
+      "answer": {
+        "en": "Because the place shaped the prophecy: it was where Shlomo planned the Beis HaMikdash, and Rashi, who was Shlomo and Yirmiyahu, remembered it.",
+        "yi": "ווייל דער ארט האט באשטימט די נבואה: דארט האט שלמה געפלאנט דעם בית המקדש, און רש\"י, וואס איז געווען שלמה און ירמיהו, האט עס געדענקט."
+      },
+      "questionSegs": [494, 495, 505],
+      "answerSegs": [890, 902, 1105, 1164, 1166],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "Why would a righteous king like Tzidkiyahu imprison Yirmiyahu, and in his own palace?",
+        "yi": "פארוואס זאל א צדיק ווי צדקיהו איינשפארן ירמיהו, און נאך אין זיין אייגענעם פאלאץ?"
+      },
+      "answer": {
+        "en": "He placed him in Shlomo's planning hall hoping that there, in Shlomo's merit, Yirmiyahu would receive a prophecy of consolation that could not be retracted.",
+        "yi": "ער האט אים אריינגעזעצט אין שלמה'ס זאל מיט דער האפענונג אז דארט, אין שלמה'ס זכות, וועט ירמיהו באקומען א נבואה פון נחמה וואס מ'קען נישט צוריקנעמען."
+      },
+      "questionSegs": [515, 519, 522, 525],
+      "answerSegs": [899, 901, 902, 904, 935, 936],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "What did the sign of the field add, when the Torah already promises the return to the land?",
+        "yi": "וואס האט דער סימן פונעם פעלד צוגעלייגט, ווען די תורה זאגט שוין צו אז אידן וועלן צוריקקומען?"
+      },
+      "answer": {
+        "en": "That at the very hour of the siege and hunger Hashem was already preparing the redemption, showing His great love and His lasting protest.",
+        "yi": "אז ממש אין דער שעה פון דער באלעגערונג און דעם הונגער האט דער אייבערשטער שוין געגרייט די גאולה, א סימן פון זיין גרויסער אהבה און זיין אייביגער מחאה."
+      },
+      "questionSegs": [704, 705, 706, 711],
+      "answerSegs": [957, 959, 960, 963, 967],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "If it was a time of favor, why could Yirmiyahu not annul the decree altogether?",
+        "yi": "אויב ס'איז געווען אן עת רצון, פארוואס האט ירמיהו נישט געקענט מבטל זיין די גזירה אינגאנצן?"
+      },
+      "answer": {
+        "en": "Because the place itself, linked to the day Hashem's anger began, was the accuser, and an accuser cannot become a defender.",
+        "yi": "ווייל דער ארט אליין, וואס איז פארבונדן מיט דעם טאג וואס דער צארן האט זיך אנגעהויבן, איז געווען דער קטגור, און אין קטיגור נעשה סניגור."
+      },
+      "questionSegs": [1028, 1029, 1030, 1035],
+      "answerSegs": [1038, 1039, 1046, 1050, 1053],
+      "confidence": 0.65
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says one should learn the parsha well, live with it, and rejoice at each makkah as a salvation for Jews, and through this become better.",
+        "yi": "דער משגיח זאגט אז מ'זאל גוט לערנען די פרשה, לעבן דערמיט און זיך פרייען ביי יעדע מכה ווי א ישועה פאר אידן, און דורך דעם בעסער ווערן."
+      },
+      "evidence": { "segs": [121, 122, 123, 126], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "He calls learning the parsha the greatest oneg Shabbos, to rejoice in it and be enlivened by it.",
+        "yi": "ער רופט דאס לערנען די פרשה דער גרעסטער עונג שבת, צו קוועלן דערפון און זיך מחיה זיין דערמיט."
+      },
+      "evidence": { "segs": [354, 355, 356, 358], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Through learning how Hashem loves and will help the Jews, the Rav says one can build bitachon and soften the heart toward Hashem, the opposite of Pharaoh's hardened heart.",
+        "yi": "דורכן לערנען וויאזוי דער אייבערשטער האט ליב אידן און וועט זיי העלפן, זאגט דער משגיח, קען מען אויפבויען בטחון און ווייך מאכן דאס הארץ צום אייבערשטן, דאס היפך פון כבד לב פרעה."
+      },
+      "evidence": { "segs": [367, 368, 369, 373], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Since Hashem calls every Jew 'My firstborn son', the Rav says one must lift oneself out of lowliness and bad middos.",
+        "yi": "וויבאלד דער אייבערשטער רופט יעדן איד בני בכורי, זאגט דער משגיח אז מ'דארף זיך אויפהייבן פון דער שפלות און פון די שלעכטע מידות."
+      },
+      "evidence": { "segs": [415, 416, 417, 419], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "the ten makkos",
+    "makkos as healing for Israel",
+    "living the parsha",
+    "Yirmiyahu in the chatzar hamatarah",
+    "chezkas habatim",
+    "Shlomo HaMelech and Yirmiyahu",
+    "Rashi's last words",
+    "redemption hidden in destruction",
+    "Shechinah in galus",
+    "Parshas Va'eira"
+  ],
+  "concepts": [
+    { "he": "נגוף ורפוא", "heardAs": ["נאר גיבא רפוא", "נאגף למצרים ורפאה לישראל", "נגב למצרים און רוב אלי ישראל"] },
+    { "he": "מזיקים", "heardAs": ["מזיקים", "נזיקים", "ניזיג"] },
+    { "he": "חצר המטרה", "heardAs": ["חצרה המצרה", "חצר המצב", "חצר המצורי", "חצרה מתורה", "חוצרה מוצרה"] },
+    { "he": "חזקת הבתים", "heardAs": ["חסקי סבתים", "חזקת הבתים", "חסקי סאבאטים", "חזקת אב ואטים"] },
+    { "he": "מחאה", "heardAs": ["מחאה", "מכועה", "מחה"] },
+    { "he": "ספר הגאולה", "heardAs": ["ספר הגאולה"] },
+    { "he": "עשרה מאמרות", "heardAs": ["עשרה מהמורות", "עשרה ממורות"] },
+    { "he": "כבד לב פרעה", "heardAs": ["כבוד לב פרעה", "קאוועד לייב פאראי"] },
+    { "he": "פורעניות", "heardAs": ["פרנות", "פרענעיות", "פערונות", "פאראנעס"] },
+    { "he": "גלגול", "heardAs": ["גלגלים", "שעה הגלגלים"] },
+    { "he": "עת רצון", "heardAs": ["נס רצון", "נת רצון"] },
+    { "he": "אין קטיגור נעשה סניגור", "heardAs": ["די כתגה קען נישט ווערן כתנגה"] },
+    { "he": "שמיני עצרת", "heardAs": ["שמיני עצרת", "שמוני יצרות", "שמי הצרות"] },
+    { "he": "הדרא ארעא והדרא פירא", "heardAs": ["האדרא אייראב האדרא פירה", "הדרע ערע והדרע פירע"] },
+    { "he": "לסטים אתם", "heardAs": ["לוסטה מטהים", "ליצטע מעטים", "לוסטע מאטים"] }
+  ],
+  "people": [
+    { "name": "Rebbi", "heardAs": ["רבי הקדש", "רבי יקדש"] },
+    { "name": "Nevuchadnetzar", "heardAs": ["נבחר נצה", "נבוכדנצה"] },
+    { "name": "the Chiddushei HaRim", "heardAs": ["חדש יוחדין"] },
+    { "name": "Rebbe Reb Bunim", "heardAs": ["רב רבונם"] },
+    { "name": "the Chasam Sofer", "heardAs": ["סתם סופר", "חתם ספר", "חתם סופר"] },
+    { "name": "the Rema", "heardAs": ["רמה", "רמות"] },
+    { "name": "David HaMelech", "heardAs": ["דוד המלך"] },
+    { "name": "the Ba'al HaTanya", "heardAs": ["בעל התניא"] },
+    { "name": "the Chida", "heardAs": ["חידות"] },
+    { "name": "Rabbeinu Ephraim", "heardAs": ["רבי אפרים"] },
+    { "name": "Yirmiyahu", "heardAs": ["ימי", "ימים יואל", "יום יואל", "ירמיה", "ימי הנביא"] },
+    { "name": "Tzidkiyahu", "heardAs": ["צדקי יואל", "צדקי המלך"] },
+    { "name": "Chanamel", "heardAs": ["חנמיה", "חנמ''ל", "חנמות"] },
+    { "name": "Yeshayahu", "heardAs": ["ישעיה", "ישעי"] },
+    { "name": "Shlomo HaMelech", "heardAs": ["שלמה המלך", "שלמה המלכה"] },
+    { "name": "Gavriel", "heardAs": ["אבריאל"] },
+    { "name": "Rabbah bar Nachmani", "heardAs": ["רבה ביהם נחמנו", "רבה בן עכמ''ן"] },
+    { "name": "the Sfas Emes", "heardAs": ["שפת אמת"] },
+    { "name": "Yoshiyahu", "heardAs": ["ישו הנביא", "יהושע המלך", "ישו המלך"] },
+    { "name": "Chuldah", "heardAs": ["חלילה הנביאה", "חדה", "חול די הנביאה"] },
+    { "name": "the Arizal", "heardAs": ["ארי הקודש", "הרי הקדוש", "ר' יואל הקודש"] },
+    { "name": "Rabbeinu Gershom", "heardAs": ["רבינו גר שם"] },
+    { "name": "Chananiah", "heardAs": ["חנניה"] },
+    { "name": "the Yismach Moshe", "heardAs": ["יתמוך משה", "ישמח משה"] },
+    { "name": "Rebbe Reb Elimelech", "heardAs": ["רבי ר' מלך"] },
+    { "name": "Yechezkel", "heardAs": ["יחזקאל נביא"] },
+    { "name": "the Ramban", "heardAs": ["רמב״ן"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "Rashi", "heardAs": ["רש''י", "רשע הקודש", "ראשי הקודש", "רש''ה"] },
+    { "name": "the Bnei Yissaschar", "heardAs": ["בני יששכר"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו", "משה רבנה"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair for the Rav's own speech but pesukim from Tehillim and Yirmiyahu are heavily garbled; they were identified from context and the catalog's reference to Bava Basra 28. The name of the Lubavitch source on tosefes Shabbos (seg 131), the Rebbe quoted on Rabbeinu Gershom (seg 776), the person who remembered being Kohen Gadol (seg 1088) and parts of Yirmiyahu's prayer and Hashem's answer (segs 1023-1054, including the flagged seg 1033) could not be recovered with confidence."
+}

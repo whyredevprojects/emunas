@@ -1,0 +1,719 @@
+{
+  "shiurId": "en-zmanim-en-psch-05",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that the four ways of destroying chametz match the four elements, and that through them, as Avraham Avinu did with dust against the four kings, the Jews nullify the four kingdoms and the yetzer hara.",
+      "yi": "דער משגיח ערקלערט אז די פיר אופנים ווי מ'איז מבער חמץ זענען קעגן די פיר יסודות, און דורך זיי זענען אידן מבטל די ארבע מלכיות און דעם יצר הרע, אזוי ווי אברהם אבינו האט מיט עפר מנצח געווען די פיר מלכים."
+    },
+    "abstract": {
+      "en": "The Rav opens with a chaplain going to Jewish soldiers in Iraq and with Baghdad's place in Jewish history, from the yeshiva of Rav to the rivers of Bavel where the Levi'im wept. Turning to Rosh Chodesh Nisan, the Rosh Hashanah for kings, he explains that Nisan is a month of malchus and that Pesach is the Yom Tov of Avraham Avinu, whose victories, including the war against the four kings won with dust, came on Pesach. The four letters of Hashem's Name are the four elements; opposite them stand four klipos, the four kingdoms that captured Malchus Yisrael, which take many forms. Chametz is the yetzer hara, and the Mishnah's four ways of destroying it use wind, water, fire and, in bitul, earth. Ignoring the yetzer hara is Avraham's way. He links chametz and se'or to Edom and Yishmael, the four cups, and the twelve Nesi'im against Yishmael's twelve princes.",
+      "yi": "דער משגיח עפנט מיט א חיילים-רב וואס פארט צו די אידישע סאלדאטן אין איראק, און מיט דער אידישער היסטאריע פון באגדאד, פון רב'ס ישיבה ביז די טייכן פון בבל וואו די לויים האבן געוויינט. דערנאך רעדט ער וועגן ראש חודש ניסן, ראש השנה למלכים: ניסן איז א חודש פון מלכות, און פסח איז דער יום טוב פון אברהם אבינו, וועמענס הצלחות זענען אלע געווען אויף פסח, ביז די מלחמה מיט די פיר מלכים וואס ער האט געוואונען מיט עפר. די פיר אותיות פון שם הוי\"ה זענען די פיר יסודות, און קעגן זיי שטייען פיר קליפות, די ארבע מלכיות וואס האבן גענומען מלכות ישראל, און זיי טוישן פארמען. חמץ איז דער יצר הרע, און די פיר אופנים פון ביעור חמץ אין דער משנה זענען מיט רוח, מים, אש, און דורך ביטול מיט עפר. דער וועג פון אברהם איז צו איגנארירן דעם יצר הרע. ער פארבינדט חמץ און שאור מיט אדום און ישמעאל, די ארבע כוסות, און די צוועלף נשיאים קעגן די צוועלף נשיאים פון ישמעאל."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Nisan is the Rosh Hashanah for kings, a month of malchus, and Rosh Chodesh Nisan affects the whole year.",
+          "yi": "ניסן איז ראש השנה למלכים, א חודש פון מלכות, און ראש חודש ניסן ווירקט אויפן גאנצן יאר."
+        },
+        "evidence": { "segs": [130, 147, 177, 178], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Pesach is the Yom Tov of Avraham Avinu and the midah of chesed, and his successes, including the victory over the four kings, all came on Pesach.",
+          "yi": "פסח איז דער יום טוב פון אברהם אבינו און די מדת החסד, און אלע זיינע הצלחות, אויך דער נצחון איבער די פיר מלכים, זענען געווען אויף פסח."
+        },
+        "evidence": { "segs": [193, 196, 207, 215], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The four klipos opposite the four letters of Hashem's Name are the four kingdoms, which took the malchus of the Jewish people and must return it to Mashiach.",
+          "yi": "די פיר קליפות קעגן די פיר אותיות פון שם הוי\"ה זענען די ארבע מלכיות, וואס האבן צוגענומען די מלכות פון אידן און וועלן עס מוזן אומקערן צו משיח."
+        },
+        "evidence": { "segs": [243, 245, 284, 287], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Chametz is the yetzer hara, and the four ways of destroying it in the Mishnah correspond to wind, water, fire and earth.",
+          "yi": "חמץ איז דער יצר הרע, און די פיר אופנים פון ביעור חמץ אין דער משנה זענען קעגן רוח, מים, אש און עפר."
+        },
+        "evidence": { "segs": [344, 354, 357, 358, 362], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Bitul, declaring the chametz like the dust of the earth, is how Avraham Avinu defeated the four kings and how one should treat the yetzer hara: ignore it rather than argue with it.",
+          "yi": "ביטול, צו זאגן אז דער חמץ איז ווי דער שטויב פון דער ערד, איז ווי אברהם אבינו האט מנצח געווען די פיר מלכים, און אזוי באהאנדלט מען דעם יצר הרע: מ'איגנארירט אים און מ'טענה'ט זיך נישט מיט אים."
+        },
+        "evidence": { "segs": [362, 363, 372, 384, 402], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Chametz, which is fit to eat, corresponds to Edom, from whom converts came; se'or, which is not, corresponds to Yishmael.",
+          "yi": "חמץ, וואס איז ראוי לאכילה, איז קעגן אדום, פון וועלכן ס'זענען ארויסגעקומען גרים; שאור, וואס איז נישט ראוי לאכילה, איז קעגן ישמעאל."
+        },
+        "evidence": { "segs": [551, 554, 556, 557], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The twelve Nesi'im of Nisan stand against Yishmael's twelve princes, so the first twelve days of Nisan are a time to nullify Yishmael's power.",
+          "yi": "די צוועלף נשיאים פון ניסן שטייען קעגן די צוועלף נשיאים פון ישמעאל, און דערפאר זענען די ערשטע צוועלף טעג פון ניסן א צייט צו מבטל זיין דעם כח פון ישמעאל."
+        },
+        "evidence": { "segs": [632, 634, 658, 659, 662], "confidence": 0.75 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-zman-nissan-pesach-02-05-pesach-e",
+      "startSeg": 0,
+      "endSeg": 21,
+      "title": { "en": "A chaplain going to Jewish soldiers in Iraq", "yi": "א חיילים-רב פארט צו אידישע סאלדאטן אין איראק" },
+      "summary": {
+        "en": "The Rav tells of a phone call from a former talmid, now an army chaplain, who was flying to Iraq with matzos for over a thousand Jewish soldiers. He says this gives a new dimension to the events there and that one must daven for these soldiers.",
+        "yi": "דער משגיח דערציילט פון א טעלעפאן פון א געוועזענעם תלמיד, היינט א רב אין מיליטער, וואס איז געפארן קיין איראק מיט מצות פאר איבער טויזנט אידישע סאלדאטן. ער זאגט אז דאס גיט א נייעם בליק אויף די געשעענישן דארט, און מ'דארף מתפלל זיין פאר די סאלדאטן."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-05-pesach-e",
+      "startSeg": 22,
+      "endSeg": 48,
+      "title": { "en": "Baghdad, Bavel and the new Nebuchadnezzar", "yi": "באגדאד, בבל און דער נייער נבוכדנצר" },
+      "summary": {
+        "en": "The Rav describes Baghdad's Jewish past: Rav's yeshiva nearby, the cradle of the Talmud Bavli, and the graves of tzaddikim. He says the Iraqi ruler declared himself a new Nebuchadnezzar who would destroy Eretz Yisrael, and brings the promise that every weapon formed against the Jews will fail.",
+        "yi": "דער משגיח שילדערט די אידישע עבר פון באגדאד: רב'ס ישיבה דערנעבן, דער וויג פון תלמוד בבלי, און די קברים פון צדיקים. ער זאגט אז דער איראקער הערשער האט זיך אויסגערופן פאר א נייעם נבוכדנצר וואס וועט מחריב זיין ארץ ישראל, און ברענגט די הבטחה אז יעדער כלי וואס ווערט געמאכט קעגן אידן וועט נישט מצליח זיין."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-05-pesach-e",
+      "startSeg": 49,
+      "endSeg": 128,
+      "title": { "en": "By the rivers of Bavel", "yi": "על נהרות בבל" },
+      "summary": {
+        "en": "The Rav explains the kapitel of Tehillim about the rivers of Bavel, where the Levi'im refused to sing the song of Hashem for their captors and wept. He contrasts the outcry over Iraqi casualties at a checkpoint with Bavel's cruelty at the Churban, and reads the kapitel's ending as a decree that will be carried out by someone.",
+        "yi": "דער משגיח ערקלערט דעם קאפיטל תהלים וועגן די טייכן פון בבל, וואו די לויים האבן נישט געוואלט זינגען שיר ה' פאר זייערע שונאים און האבן געוויינט. ער שטעלט אוועק דעם געשריי איבער איראקער קרבנות ביי א קאנטראל-פונקט קעגן דער אכזריות פון בבל ביים חורבן, און לערנט דעם סוף פונעם קאפיטל אלס א גזירה וואס וועט זיך מקיים זיין דורך עמיצן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-05-pesach-e",
+      "startSeg": 129,
+      "endSeg": 183,
+      "title": { "en": "Rosh Chodesh Nisan, Rosh Hashanah for kings", "yi": "ראש חודש ניסן, ראש השנה למלכים" },
+      "summary": {
+        "en": "The Rav brings the Mishnah that the first of Nisan is the Rosh Hashanah for kings and explains that Nisan is a month of malchus. He tells of the Chozeh of Lublin's notebook for the year, ties Nisan to Yehuda and Nachshon ben Aminadav, reads 'Aviv' as father of twelve, and urges using the day for Torah, tefillah and bitachon.",
+        "yi": "דער משגיח ברענגט די משנה אז אחד בניסן איז ראש השנה למלכים, און ערקלערט אז ניסן איז א חודש פון מלכות. ער דערציילט פונעם חוזה פון לובלין'ס העפט פאר'ן יאר, פארבינדט ניסן מיט יהודה און נחשון בן עמינדב, טייטשט \"אביב\" אלס אב פון צוועלף, און מעורר אז מ'זאל נוצן דעם טאג מיט תורה, תפילה און בטחון."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-05-pesach-e",
+      "startSeg": 184,
+      "endSeg": 219,
+      "title": { "en": "Pesach, the Yom Tov of Avraham Avinu", "yi": "פסח, דער יום טוב פון אברהם אבינו" },
+      "summary": {
+        "en": "The Rav matches the three Yamim Tovim to the Avos and explains that Pesach belongs to Avraham Avinu and the midah of chesed, felt in the spring. He lists Avraham's events that came on Pesach, ending with his war against the four kings, whom he defeated by casting dust.",
+        "yi": "דער משגיח שטעלט די דריי ימים טובים קעגן די אבות, און ערקלערט אז פסח געהערט צו אברהם אבינו און די מדת החסד, וואס מ'שפירט אין פרילינג. ער רעכנט אויס אברהם'ס געשעענישן וואס זענען געווען אויף פסח, ביז זיין מלחמה מיט די פיר מלכים וואס ער האט מנצח געווען מיט עפר."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-05-pesach-e",
+      "startSeg": 220,
+      "endSeg": 311,
+      "title": { "en": "Four elements, four klipos, four kingdoms", "yi": "פיר יסודות, פיר קליפות, ארבע מלכיות" },
+      "summary": {
+        "en": "The Rav explains that the four letters of Hashem's Name are the source of the four elements, and opposite them are four klipos, the four kingdoms that captured the sparks of Malchus Yisrael and must return them to Mashiach. He brings the Maharal on why Yishmael is not counted, and the Ramban that Avraham's four kings correspond to the four kingdoms.",
+        "yi": "דער משגיח ערקלערט אז די פיר אותיות פון שם הוי\"ה זענען דער שורש פון די פיר יסודות, און קעגן זיי זענען פיר קליפות, די ארבע מלכיות וואס האבן גענומען די ניצוצות פון מלכות ישראל און וועלן זיי מוזן אומקערן צו משיח. ער ברענגט דעם מהר\"ל פארוואס ישמעאל ווערט נישט גערעכנט, און דעם רמב\"ן אז די פיר מלכים פון אברהם זענען קעגן די ארבע מלכיות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-05-pesach-e",
+      "startSeg": 312,
+      "endSeg": 345,
+      "title": { "en": "The klipos change form; chametz is the yetzer hara", "yi": "די קליפות טוישן פארמען; חמץ איז דער יצר הרע" },
+      "summary": {
+        "en": "The Rav shows the four klipos in other forms: the four layers removed at a bris, the four marks of tzara'as, the four years of orlah, with the fourth, Edom, holding kedushah to be raised. He then brings the question of Tosafos why chametz is so stringent, and the Radbaz's conclusion from the Zohar that chametz is the yetzer hara.",
+        "yi": "דער משגיח ווייזט די פיר קליפות אין אנדערע פארמען: די פיר הייטלעך ביי מילה, די ארבע מראות נגעים, די פיר יאר ערלה, וואו די פערטע, אדום, האט קדושה וואס מ'הייבט אויף. דערנאך ברענגט ער די קשיא פון תוספות פארוואס חמץ איז אזוי חמור, און דעם רדב\"ז וואס ענטפערט פונעם זוהר אז חמץ איז דער יצר הרע."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-05-pesach-e",
+      "startSeg": 346,
+      "endSeg": 467,
+      "title": { "en": "The four ways of destroying chametz", "yi": "די פיר אופנים פון ביעור חמץ" },
+      "summary": {
+        "en": "The Rav lays out the Mishnah's four ways of destroying chametz as wind, water, fire and, in bitul, earth, and explains that Avraham Avinu's dust was such bitul. He says one must not argue with the yetzer hara but ignore it, as Jews ignore the culture of the golus, and adds that the fourth klipah, Esav, holds good, since converts like Rabbi Akiva and Rabbi Meir came from it.",
+        "yi": "דער משגיח לייגט אוועק די פיר אופנים פון ביעור חמץ אין דער משנה: רוח, מים, אש, און דורך ביטול עפר, און ערקלערט אז אברהם אבינו'ס עפר איז געווען אזא ביטול. ער זאגט אז מ'טאר זיך נישט טענה'ן מיטן יצר הרע נאר אים איגנארירן, אזוי ווי אידן איגנארירן די גוי'אישע קולטור אין גלות, און לייגט צו אז די פערטע קליפה, עשו, האט גוטס, ווייל גרים ווי רבי עקיבא און רבי מאיר זענען פון איר ארויסגעקומען."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-05-pesach-e",
+      "startSeg": 468,
+      "endSeg": 547,
+      "title": { "en": "The four cups, Mitzrayim and Yishmael", "yi": "די ארבע כוסות, מצרים און ישמעאל" },
+      "summary": {
+        "en": "The Rav brings the two sources for the four cups, the cups in Parshas Vayeshev and the four expressions of geulah, and explains that each cup has a good part and a bad part: at the makkos the wine poured out is a cup of poison for Mitzrayim, and the refilled cups are the cups of geulah. Yishmael, who began the golus by buying Yosef, is Mitzrayim's partner, and he reads Rabbi Yehuda's simanim as reaching Yishmael too.",
+        "yi": "דער משגיח ברענגט די צוויי מקורות פאר די ארבע כוסות, די כוסות אין פרשת וישב און די ארבע לשונות של גאולה, און ערקלערט אז יעדער כוס האט א גוטן חלק און א שלעכטן חלק: ביי די מכות איז דער אויסגעגאסענער וויין א כוס התרעלה פאר מצרים, און די אנגעפילטע כוסות זענען כוסות פון גאולה. ישמעאל, וואס האט אנגעהויבן דעם גלות מיטן קויפן יוסף, איז מצרים'ס שותף, און ער לערנט אז רבי יהודה'ס סימנים צילן אויך אויף ישמעאל."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-05-pesach-e",
+      "startSeg": 548,
+      "endSeg": 617,
+      "title": { "en": "Chametz and se'or: Edom and Yishmael", "yi": "חמץ און שאור: אדום און ישמעאל" },
+      "summary": {
+        "en": "The Rav explains that chametz, fit to eat, is Edom, and se'or, unfit, is Yishmael, so clearing out chametz is a war against them, as Avraham baking matzos defeated the four kings, hinted in the Midrash on Og. He says every scrub of the Pesach cleaning strikes the enemies of Yisrael, compares burning chametz to confusing the Satan with the shofar, and tells of Rabbi Levi Yitzchak watching women scrub their utensils.",
+        "yi": "דער משגיח ערקלערט אז חמץ, וואס איז ראוי לאכילה, איז אדום, און שאור, וואס איז נישט, איז ישמעאל, ממילא איז ארויסשאפן חמץ א מלחמה קעגן זיי, אזוי ווי אברהם האט מיט באקן מצות מנצח געווען די פיר מלכים, ווי דער מדרש אויף עוג ווייזט. ער זאגט אז יעדעס רייבן ביים פסח-פוצן שלאגט די שונאי ישראל, גלייכט שריפת חמץ צו ערבב'ן דעם שטן מיטן שופר, און דערציילט פון רבי לוי יצחק וואס האט געזען ווייבער שייערן כלים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-05-pesach-e",
+      "startSeg": 618,
+      "endSeg": 698,
+      "title": { "en": "Twelve Nesi'im against Yishmael; Hashem's malchus", "yi": "צוועלף נשיאים קעגן ישמעאל; מלכות שמים" },
+      "summary": {
+        "en": "The Rav brings the Targum Yonasan that the twelve rams of the Nesi'im correspond to the twelve princes of Yishmael, who are to be lost, and urges using these twelve days with Torah, tefillah, tzedakah and helping prepare for Pesach. He closes with the Yismach Moshe's Rosh Hashanah drasha about Mashiach asking for his malchus, and with Nisan as the time of Hashem's malchus.",
+        "yi": "דער משגיח ברענגט דעם תרגום יונתן אז די צוועלף אילים פון די נשיאים זענען קעגן די צוועלף נשיאים פון ישמעאל, וואס זאלן פארלוירן ווערן, און מעורר צו נוצן די צוועלף טעג מיט תורה, תפילה, צדקה און העלפן גרייטן צו פסח. ער ענדיגט מיט דער דרשה פונעם ישמח משה אויף ראש השנה, ווי משיח בעט זיין מלכות, און אז ניסן איז די צייט פון מלכות שמים."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "capital Tehillim ... on Hariz Badal; by the rivers of Bado",
+      "work": "Tehillim",
+      "ref": "Tehillim 137:1-4",
+      "sefariaRef": "Psalms 137:1-4",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [22, 66, 67, 70, 77], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Ashrei sheyesha al-Malachez gemu lech shegemarot lanu",
+      "work": "Tehillim",
+      "ref": "Tehillim 137:8-9",
+      "sefariaRef": "Psalms 137:8-9",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [117, 119, 120, 121], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the Koli Yutzar Alayich",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 54:17",
+      "sefariaRef": "Isaiah 54:17",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [43, 44, 46], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the first Mishnah in Rosh Hashanah ... The first day in Nishnah is Rosh Hashanah for kings",
+      "work": "Mishnah Rosh Hashanah",
+      "ref": "Mishnah Rosh Hashanah 1:1",
+      "sefariaRef": "Mishnah Rosh Hashanah 1:1",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [129, 130, 131], "confidence": 0.9 }
+    },
+    {
+      "heardAs": "the Gemara in Geetan tells us what happened by the Chorban",
+      "work": "Gemara Gittin",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [99], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Bnei Soscha writes Edith in his Seifah",
+      "work": "Bnei Yissaschar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [152], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Anaychi Vulayi Yalacha Mepi HaGvura Shamanu, the Gemara says",
+      "work": "Gemara Makkos",
+      "ref": "Makkos 24a",
+      "sefariaRef": "Makkot 24a",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [187, 188], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Ramban brings are knegad the ava malchiyah",
+      "work": "Ramban",
+      "ref": "Ramban on Bereishis 14:1",
+      "sefariaRef": "Ramban on Genesis 14:1",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [297, 300, 301, 302], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Maral answers why Yishmael is not mentioned among the four Malchies",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [290, 293, 294, 295], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Tysus asks Akash in the very first Tysus in Pesachim",
+      "work": "Tosafos",
+      "ref": "Tosafos, Pesachim 2a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [336, 337, 339], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Radbash says; along comes the Ghadbaz",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [336, 340], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Rosh comes along and says",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [339, 340], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "we have to resort to the Zayah, the Zayah says that Hametz is Yetzirah",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [342, 343, 344], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "the Mishnah says Zayah the Ruach ... zar ke liyam ... Rabbi Yudas says we use esh",
+      "work": "Mishnah Pesachim",
+      "ref": "Mishnah Pesachim 2:1",
+      "sefariaRef": "Mishnah Pesachim 2:1",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [352, 354, 356, 358], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Ki Afcha Deyara",
+      "work": "Bittul Chametz declaration",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [359, 360, 362], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Archaim HaKadosh in B'raishis says there was never a geya from Yishmael",
+      "work": "Ohr HaChaim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [437, 438, 439], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Gemara says who's Acheirim ... Rabbi Meir",
+      "work": "Gemara Horayos",
+      "ref": "Horayos 13b",
+      "sefariaRef": "Horayot 13b",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [458, 459, 460, 463], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "Parshish Ve Yeshev, at the end ... the Kais Pari, four times you have the word Kais",
+      "work": "Bereishis",
+      "ref": "Bereishis 40:11-13",
+      "sefariaRef": "Genesis 40:11-13",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [468, 469], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "parashat v'eva, four v'sha'inas of ge'uvah, yitzalti, v'kachti ... v'vessi is the fifth one",
+      "work": "Shemos",
+      "ref": "Shemos 6:6-8",
+      "sefariaRef": "Exodus 6:6-8",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [470, 471, 472, 475], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the Zayah says that all the Makis of the Mitzchiyim ... there were also Brachas for the Yidin",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [484, 485, 487, 488], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "Tagim Yanison says it, Today the Gala's Mitzrayim is starting",
+      "work": "Targum Yonasan",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [511, 512, 513], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "L'chuvanim krenu le-yishma'elam",
+      "work": "Bereishis",
+      "ref": "Bereishis 37:27",
+      "sefariaRef": "Genesis 37:27",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [515, 516, 518], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Rashi says that why did Pinchas go to do Macham against Midian",
+      "work": "Rashi",
+      "ref": "Rashi on Bamidbar 31:6",
+      "sefariaRef": "Rashi on Numbers 31:6",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [524, 525, 528, 531], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Rabbi Yehuda says when we spill these 10 cases ... dumps for a day kina marav deva shkin",
+      "work": "Pesach Haggadah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [544, 545, 547], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "the Gemara says, why does it say Hametz and Siyayah",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [549, 551, 552], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Madrush says, by Yavi Apollot, he's Oig",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [566, 567, 568], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Yavi Apollot",
+      "work": "Bereishis",
+      "ref": "Bereishis 14:13",
+      "sefariaRef": "Genesis 14:13",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [566], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Gemara says, why do we belong Sharifah? because we're M'vato the Sartan",
+      "work": "Gemara Rosh Hashanah",
+      "ref": "Rosh Hashanah 16b",
+      "sefariaRef": "Rosh Hashanah 16b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [574, 575, 576], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Shnei Masa Nesim v'yomaisim",
+      "work": "Bereishis",
+      "ref": "Bereishis 17:20",
+      "sefariaRef": "Genesis 17:20",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [632, 633, 634, 635], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Kala Bakalayla Shnei Masa Parim, Eilem Shnei Masa, Pasuk Pei Zayim",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 7:87",
+      "sefariaRef": "Numbers 7:87",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [650, 654], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Tagmianus says in Seif Parshas ... So the Degim Yenisah says, Dechrem Tresa",
+      "work": "Targum Yonasan",
+      "ref": "Targum Yonasan on Bamidbar 7:87",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [647, 655, 656, 657, 658], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Yismach Ma'isha ... his drashas that he said on Rosh Hashanah",
+      "work": "Yismach Moshe",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [670, 671, 672, 673, 674], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Yismich Vashmayim Vashagya L'Earnas ... V'yayim Ravagayim Hashem Malach",
+      "work": "Divrei Hayamim",
+      "ref": "Divrei Hayamim I 16:31",
+      "sefariaRef": "I Chronicles 16:31",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [680, 682, 683, 685], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The four ways of destroying chametz mirror the four elements that come from the four letters of Hashem's Name: scattering to the wind, throwing into the sea, burning, and bitul, which makes it like the dust of the earth.",
+        "yi": "די פיר אופנים פון ביעור חמץ זענען קעגן די פיר יסודות וואס קומען פון די פיר אותיות פון שם הוי\"ה: צעשפרייטן אויפן ווינט, ווארפן אין ים, פארברענען, און ביטול, וואס מאכט עס ווי עפרא דארעא."
+      },
+      "evidence": { "segs": [230, 354, 357, 358, 362], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "Avraham Avinu's dust that became weapons against the four kings was itself bitul chametz, nullifying the four kingdoms, and he did it on Pesach.",
+        "yi": "דער עפר וואס אברהם אבינו האט געווארפן אויף די פיר מלכים איז געווען אליין ביטול חמץ, מבטל זיין די ארבע מלכיות, און דאס איז געווען אויף פסח."
+      },
+      "evidence": { "segs": [217, 362, 363, 365, 410], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The authority of the nations is captured malchus of the Jewish people, passed from Bavel to Madai, Yavan and Rome, and it must be returned to Mashiach; Yishmael is not counted because his rule is his own.",
+        "yi": "די מלכות פון די אומות איז גענומענע מלכות ישראל, וואס איז אריבער פון בבל צו מדי, יון און רומי, און מ'וועט עס מוזן אומקערן צו משיח; ישמעאל ווערט נישט גערעכנט ווייל זיין מלכות איז זיין אייגענע."
+      },
+      "evidence": { "segs": [254, 266, 280, 287, 293, 295], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The same four klipos appear as the four layers at a bris, the four marks of tzara'as and the four years of orlah; the fourth, Edom, is raised rather than cut off, since it holds kedushah.",
+        "yi": "די זעלבע פיר קליפות באווייזן זיך אלס די פיר הייטלעך ביי מילה, די ארבע מראות נגעים און די פיר יאר ערלה; די פערטע, אדום, הייבט מען אויף און מ'שניידט זי נישט אפ, ווייל זי האט קדושה."
+      },
+      "evidence": { "segs": [316, 317, 324, 327, 329, 331], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Chametz, fit to eat, is Edom, from whom converts came, while se'or, unfit to eat, is Yishmael, from whom no good came.",
+        "yi": "חמץ, וואס איז ראוי לאכילה, איז אדום, פון וועלכן ס'זענען געקומען גרים, און שאור, וואס איז נישט ראוי לאכילה, איז ישמעאל, פון וועלכן ס'איז נישט געקומען קיין גוטס."
+      },
+      "evidence": { "segs": [551, 554, 556, 557, 559], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Each of the four cups has two sides: the wine spilled at the makkos is a cup of poison for Mitzrayim, and the refilled cups are the Jews' cups of geulah.",
+        "yi": "יעדער פון די ארבע כוסות האט צוויי צדדים: דער וויין וואס מ'גיסט אויס ביי די מכות איז א כוס התרעלה פאר מצרים, און די אנגעפילטע כוסות זענען די כוסות פון גאולה פאר אידן."
+      },
+      "evidence": { "segs": [490, 492, 498, 500, 506], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Pinchas, who is Eliyahu, avenged the sale of Yosef only on Midian; the main sellers, the Yishmaelim, remain for him, which links the cup of Eliyahu to the reckoning with Yishmael.",
+        "yi": "פנחס, וואס איז אליהו, האט נוקם געווען פאר מכירת יוסף נאר אין מדין; די עיקר מוכרים, די ישמעאלים, בלייבן נאך פאר אים, און דאס פארבינדט דעם כוס של אליהו מיטן חשבון מיט ישמעאל."
+      },
+      "evidence": { "segs": [476, 532, 533, 534], "confidence": 0.7 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The chaplain's call before leaving for Iraq", "yi": "דער טעלעפאן פונעם רב פארן פארן קיין איראק" },
+      "retelling": {
+        "en": "A former talmid of the yeshiva, Rabbi Horowitz, now an army chaplain based in North Carolina, called the Rav before flying to Iraq to serve as chaplain. He told him that there were over a thousand Jewish soldiers in Iraq and that he was going to strengthen them, bringing matzos along. Soldiers fill out questionnaires to ask for a chaplain of their faith.",
+        "yi": "א געוועזענער תלמיד פון דער ישיבה, רבי האראוויץ, היינט א רב אין מיליטער אין צפון קאראליינע, האט אנגערופן דעם משגיח פאר'ן פליען קיין איראק צו דינען אלס רב פאר די סאלדאטן. ער האט אים דערציילט אז אין איראק זענען איבער טויזנט אידישע סאלדאטן, און ער פארט זיי מחזק זיין און נעמט מיט מצות. די סאלדאטן פילן אויס פראגע-בויגנס צו בעטן א רב פון זייער אמונה."
+      },
+      "people": ["Rabbi Horowitz"],
+      "evidence": { "segs": [0, 1, 3, 10, 11, 12], "confidence": 0.85 }
+    },
+    {
+      "title": { "en": "The Chozeh of Lublin's notebook", "yi": "דעם חוזה פון לובלין'ס העפט" },
+      "retelling": {
+        "en": "The Bnei Yissaschar, a talmid of the Chozeh of Lublin, testifies that his Rebbe kept a notebook. On the first day of Nisan he wrote down everything that would happen in Nisan, on the second day what would happen in Iyar, on the third what would happen in Sivan, and so on through the twelve days, each matching its month.",
+        "yi": "דער בני יששכר, א תלמיד פונעם חוזה פון לובלין, איז מעיד אז זיין רבי האט געהאלטן א העפט. אויף אחד בניסן האט ער אריינגעשריבן אלעס וואס וועט פאסירן אין ניסן, אויפן צווייטן טאג וואס וועט זיין אין אייר, אויפן דריטן וואס וועט זיין אין סיון, און אזוי ווייטער אלע צוועלף טעג, יעדער טאג קעגן זיין חודש."
+      },
+      "people": ["the Chozeh of Lublin", "the Bnei Yissaschar"],
+      "evidence": { "segs": [150, 152, 153, 154, 155], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "Rabbi Levi Yitzchak and the scrubbing women", "yi": "רבי לוי יצחק און די ווייבער וואס שייערן" },
+      "retelling": {
+        "en": "Rabbi Levi Yitzchak was once walking in the street before Pesach when the women had brought their chametz utensils outside and were scrubbing and kashering them. He began saying words of praise over it, and when asked why, he answered with the women's own Yiddish words for kashering, rubbing and scraping. The exact words of his saying are not clear in the recording.",
+        "yi": "רבי לוי יצחק איז אמאל געגאנגען אין גאס פאר פסח, ווען די ווייבער האבן ארויסגעטראגן זייערע חמץ'דיגע כלים און זיי געשייערט און געכשר'ט. ער האט אנגעהויבן זאגן ווערטער פון שבח דערויף, און ווען מ'האט אים געפרעגט פארוואס, האט ער געענטפערט מיט די ווייבערשע ווערטער: כשר'ן, רייבן, קראצן. די גענויע ווערטער פון זיין זאג זענען נישט קלאר צו הערן."
+      },
+      "people": ["Rabbi Levi Yitzchak of Berditchev"],
+      "evidence": { "segs": [591, 592, 594, 596, 601, 606], "confidence": 0.6 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "Why is Yishmael not counted among the four kingdoms, when he too oppresses the Jews?", "yi": "פארוואס ווערט ישמעאל נישט גערעכנט צווישן די ארבע מלכיות, ווען ער פייניגט אויך אידן?" },
+      "answer": { "en": "The Maharal answers that Yishmael's rule is his own, while the four kingdoms took their malchus from the Jews.", "yi": "דער מהר\"ל ענטפערט אז ישמעאל'ס מלכות איז זיין אייגענע, אבער די ארבע מלכיות האבן זייער מלכות גענומען פון אידן." },
+      "questionSegs": [290, 291, 292],
+      "answerSegs": [293, 294, 295, 296],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why is the Torah so much more stringent about chametz than about other forbidden foods?", "yi": "פארוואס איז די תורה אזוי פיל מער מחמיר ביי חמץ ווי ביי אנדערע איסורים?" },
+      "answer": { "en": "After rejecting the other answers, the Radbaz concludes from the Zohar that chametz is the yetzer hara.", "yi": "נאכן אפווארפן די אנדערע תירוצים, ענטפערט דער רדב\"ז פונעם זוהר אז חמץ איז דער יצר הרע." },
+      "questionSegs": [336, 337, 339],
+      "answerSegs": [340, 342, 343, 344],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why was Yaakov afraid that in confronting Esav he might kill 'others'?", "yi": "פארוואס האט יעקב מורא געהאט אז ביי עשו וועט ער הרג'ענען \"אחרים\"?" },
+      "answer": { "en": "'Others' is Rabbi Meir, who came from Esav; had Yaakov killed Esav, Rabbi Meir could not have come forth.", "yi": "\"אחרים\" איז רבי מאיר, וואס איז ארויסגעקומען פון עשו; ווען יעקב וואלט געהרג'עט עשו, וואלט רבי מאיר נישט געקענט ארויסקומען." },
+      "questionSegs": [451, 452, 453, 454],
+      "answerSegs": [459, 460, 462, 463, 464],
+      "confidence": 0.7
+    },
+    {
+      "question": { "en": "Why does the Torah mention se'or alongside chametz?", "yi": "פארוואס דערמאנט די תורה שאור צוזאמען מיט חמץ?" },
+      "answer": { "en": "They differ: chametz is fit to eat and corresponds to Edom, while se'or is not and corresponds to Yishmael.", "yi": "זיי זענען אנדערש: חמץ איז ראוי לאכילה און איז קעגן אדום, און שאור איז נישט ראוי לאכילה און איז קעגן ישמעאל." },
+      "questionSegs": [549],
+      "answerSegs": [550, 551, 552, 554, 557],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why is Og called 'the fugitive' who came to Avraham?", "yi": "פארוואס ווערט עוג גערופן \"הפליט\" וואס איז געקומען צו אברהם?" },
+      "answer": { "en": "The Midrash says he came while Avraham was baking matzos, and the name Og comes from 'ugos', the matzos with which Avraham nullified the four kingdoms.", "yi": "דער מדרש זאגט אז ער איז געקומען ווען אברהם האט געבאקן מצות, און דער נאמען עוג קומט פון \"עוגות\", די מצות מיט וועלכע אברהם איז מבטל געווען די ארבע מלכיות." },
+      "questionSegs": [566],
+      "answerSegs": [567, 568, 569],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Rav says one must daven for the Jewish soldiers in Iraq more fervently than before.", "yi": "דער משגיח זאגט אז מ'דארף מתפלל זיין פאר די אידישע סאלדאטן אין איראק מיט מער התלהבות ווי פריער." },
+      "evidence": { "segs": [19, 21], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "The Rav says Rosh Chodesh Nisan should be used for Torah, yiras Shamayim, tefillah and bitachon, asking Hashem for the geulah.", "yi": "דער משגיח זאגט אז מ'זאל נוצן ראש חודש ניסן פאר תורה, יראת שמים, תפילה און בטחון, און בעטן דעם רבונו של עולם אויף דער גאולה." },
+      "evidence": { "segs": [180, 181, 182], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "The Rav says not to argue with the yetzer hara, who is cleverer, but to ignore it as nothing.", "yi": "דער משגיח זאגט אז מ'זאל זיך נישט טענה'ן מיטן יצר הרע, וואס איז קליגער, נאר אים איגנארירן ווי ער איז גארנישט." },
+      "evidence": { "segs": [371, 373, 374, 402, 404], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "The Rav says a Jew in golus should ignore what the culture of the nations has to offer and keep to his mitzvos.", "yi": "דער משגיח זאגט אז א איד אין גלות זאל איגנארירן וואס די קולטור פון די אומות האט צו פארשלאגן, און האלטן ביי זיינע מצוות." },
+      "evidence": { "segs": [417, 418, 421, 423, 430], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Rav says to use the twelve days of the Nesi'im with Torah, tefillah, tzedakah, good middos and helping prepare for Pesach.", "yi": "דער משגיח זאגט אז מ'זאל נוצן די צוועלף טעג פון די נשיאים מיט תורה, תפילה, צדקה, גוטע מדות און העלפן גרייטן צו פסח." },
+      "evidence": { "segs": [663, 664, 665, 666, 667], "confidence": 0.85 }
+    }
+  ],
+  "candidateTopics": [
+    "four methods of destroying chametz",
+    "chametz as the yetzer hara",
+    "bittul chametz",
+    "four kingdoms",
+    "Avraham Avinu and the war of the four kings",
+    "Rosh Chodesh Nisan",
+    "four cups",
+    "Yishmael and Edom",
+    "twelve Nesi'im",
+    "Nisan as the month of malchus"
+  ],
+  "concepts": [
+    { "he": "ביעור חמץ", "heardAs": ["Mevatel Chomets", "mevat al chamesh", "Mavatu Lechamets"] },
+    { "he": "ביטול", "heardAs": ["bitl", "Mevatel"] },
+    { "he": "כעפרא דארעא", "heardAs": ["Ki Afcha Deyara", "Kiyaf Chdiyare"] },
+    { "he": "יצר הרע", "heardAs": ["Yetzirah", "Yitzhara"] },
+    { "he": "ארבע מלכיות", "heardAs": ["Abba Malchias", "ava malchiyah", "four Malchies", "Abba Malachim"] },
+    { "he": "ארבע קליפות טמאות", "heardAs": ["Abba Klippis Atmeyus", "four kichas of Ra"] },
+    { "he": "ארבע יסודות", "heardAs": ["four Icyas", "Yusayibas"] },
+    { "he": "שם הוי\"ה", "heardAs": ["Shem Havaya", "Shem Avaya", "Hashem Avaya"] },
+    { "he": "אש רוח מים עפר", "heardAs": ["Eish, Ruach, Mayim, Ocha", "Eish Ruach Mayim and Ava"] },
+    { "he": "מלכות ישראל", "heardAs": ["Malchus Yisrael", "Malchus by Yisrael"] },
+    { "he": "ניצוצות", "heardAs": ["Nitzitzis", "netzitz"] },
+    { "he": "ראש השנה למלכים", "heardAs": ["Rosh Hashanah L'malachim", "Rosh Hashanah Le Malachim"] },
+    { "he": "מדת החסד", "heardAs": ["Midas hacheset", "mitas a chesed", "Midas HaChesed"] },
+    { "he": "שאור", "heardAs": ["Siyayah", "Sa'ayr", "se'ayr"] },
+    { "he": "ארבע כוסות", "heardAs": ["Abba Kaises", "Abba Kaisis"] },
+    { "he": "ארבע לשונות של גאולה", "heardAs": ["four v'sha'inas of ge'uvah", "Ava L'Shaynes of Geula"] },
+    { "he": "כוס התרעלה", "heardAs": ["Kaisa Tareila", "Kais of Tareila"] },
+    { "he": "מראות נגעים", "heardAs": ["Abba Maris Negayim", "mares negayim"] },
+    { "he": "פריעה", "heardAs": ["Priya"] },
+    { "he": "נשיאים", "heardAs": ["Nesim", "Nisim", "Nasi"] },
+    { "he": "שריפת חמץ", "heardAs": ["T'chiyas Sharifah"] },
+    { "he": "על נהרות בבל", "heardAs": ["Nahariz Baval", "rivers of Badal", "Hariz Badal"] }
+  ],
+  "people": [
+    { "name": "Rabbi Horowitz", "heardAs": ["Rabbi Horowitz"] },
+    { "name": "Nebuchadnezzar", "heardAs": ["Nebuchadnezzar"] },
+    { "name": "Rav", "heardAs": ["Rav"] },
+    { "name": "Shmuel", "heardAs": ["Shmuel"] },
+    { "name": "David HaMelech", "heardAs": ["David Amalek", "David and Malachah", "David HaMelech"] },
+    { "name": "the Chozeh of Lublin", "heardAs": ["the Chayzah of Leblin", "the Lebelina"] },
+    { "name": "the Bnei Yissaschar", "heardAs": ["the Bnei Soscha"] },
+    { "name": "Nachshon ben Aminadav", "heardAs": ["Nachshem ben Aminadav", "Nachshan Ben-Amin Adav"] },
+    { "name": "Avraham Avinu", "heardAs": ["Avraham Avinu", "Avram Avinu"] },
+    { "name": "Yitzchak Avinu", "heardAs": ["Yitzchak"] },
+    { "name": "Yaakov Avinu", "heardAs": ["Yankev", "Yankiv", "Yank"] },
+    { "name": "Esav", "heardAs": ["Esav", "Esau", "Aesop"] },
+    { "name": "Yishmael", "heardAs": ["Yishmael", "Yishma'el"] },
+    { "name": "Belshatzar", "heardAs": ["Bo Shatzah"] },
+    { "name": "the Ramban", "heardAs": ["the Ramban"] },
+    { "name": "the Maharal", "heardAs": ["the Maral"] },
+    { "name": "the Radbaz", "heardAs": ["the Radbash", "the Ghadbaz"] },
+    { "name": "the Rosh", "heardAs": ["the Rosh"] },
+    { "name": "Tosafos", "heardAs": ["Tysus", "Taisa"] },
+    { "name": "Rabbi Yehuda", "heardAs": ["Rabbi Yudas", "Rabbi Yehuda", "rabbi jehuda"] },
+    { "name": "the Ohr HaChaim", "heardAs": ["the Archaim HaKadosh"] },
+    { "name": "Rabbi Akiva", "heardAs": ["Rabbi Akiva"] },
+    { "name": "Rabbi Meir", "heardAs": ["Rabbi Meir"] },
+    { "name": "Yosef", "heardAs": ["Yosef", "Yasef"] },
+    { "name": "Pinchas", "heardAs": ["Pinchas"] },
+    { "name": "Eliyahu HaNavi", "heardAs": ["eliyahu"] },
+    { "name": "Og", "heardAs": ["Oig"] },
+    { "name": "Rabbi Levi Yitzchak of Berditchev", "heardAs": ["Rabbi Leif Yitzhak", "Rabbi Leiv Yitzhak"] },
+    { "name": "the Yismach Moshe", "heardAs": ["the Yismach Ma'isha", "Yismach Mashiach"] },
+    { "name": "Rashi", "heardAs": ["Rashi"] }
+  ],
+  "asrNotes": "English ASR fair for the Rav's English but badly garbled on Hebrew and Aramaic quotations and on many terms. Segments 82-98 and 580-589 are fragments that cannot be followed, as are the tzara'as Midrash (325-326), the identity of the person secluding himself on Rosh Chodesh Nisan (133), and the exact words of Rabbi Levi Yitzchak's saying (594-606). The two [NOISE?] segments (132, 653) are short repeat/hallucination stretches absorbed into their sections."
+}

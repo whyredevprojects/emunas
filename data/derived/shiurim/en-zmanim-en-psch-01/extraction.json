@@ -1,0 +1,677 @@
+{
+  "shiurId": "en-zmanim-en-psch-01",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that matzah is a food of emunah and of geulah, and that through the mitzvos of Pesach, from burning the chametz to eating the matzah and spilling the wine, the Jewish people wage their real war against their enemies.",
+      "yi": "דער משגיח ערקלערט אז מצה איז א מאכל פון אמונה און פון גאולה, און אז דורך די מצוות פון פסח, פון ביעור חמץ ביז אכילת מצה און דאס אויסגיסן פונעם וויין, פירן אידן זייער אמת'ע מלחמה קעגן זייערע שונאים."
+    },
+    "abstract": {
+      "en": "The Rav opens by saying that this Pesach comes at a time of war against the Jewish people, and that Jews fight not with weapons but with Torah, tefillah, tzedakah and the mitzvos of Pesach. Pesach is the Yom Tov of Avraham Avinu, whose trait is emunah, and the Zohar calls matzah the food of emunah. Bread contains all ten utterances of creation, while matzah, by gematria three times the filled-out Name of Hashem and three times geulah, holds the Names of the redemption itself. Our matzah is the same matzah the Jews ate in Mitzrayim, and on the Seder night the root of the soul is in Yerushalayim. The Rav then speaks of Pesach as the beginning, of Nissan as a month of healing, of matzah as the key that opens the treasuries of blessing, of the four cups and the plagues, and of searching and burning the chametz, which this year falls on Shabbos, as the battle against Amalek and Yishmael.",
+      "yi": "דער משגיח עפנט מיט דעם אז דער יעצטיגער פסח קומט אין א צייט פון מלחמה קעגן אידן, און אז אידן קעמפן נישט מיט געווער נאר מיט תורה, תפילה, צדקה און מיט די מצוות פון פסח. פסח איז דער יום טוב פון אברהם אבינו, וועמענס מדה איז אמונה, און דער זוהר רופט מצה א מאכל פון אמונה. ברויט האט אין זיך אלע עשרה מאמרות, אבער מצה איז בגימטריא דריי מאל שם הוי' במילוי און דריי מאל גאולה, און זי טראגט די שמות פון דער גאולה אליין. אונזער מצה איז די זעלבע מצה וואס אידן האבן געגעסן אין מצרים, און ביים סדר איז דער שורש הנשמה אין ירושלים. דערנאך רעדט ער וועגן פסח אלס די התחלה, וועגן חודש ניסן אלס א חודש פון רפואה, וועגן מצה אלס דער שליסל וואס עפנט די אוצרות פון ברכה, וועגן די ארבע כוסות און די מכות, און וועגן בדיקת און ביעור חמץ, וואס פאלט היי יאר אויף שבת, אלס די מלחמה קעגן עמלק און ישמעאל."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The Rav says the Jewish people wage war not with weapons but with Torah, tefillah, tzedakah and by keeping Pesach; the front is not far away but right here.",
+          "yi": "דער משגיח זאגט אז אידן פירן מלחמה נישט מיט געווער נאר מיט תורה, תפילה, צדקה און מיט היטן פסח; דער פראנט איז נישט ווייט, נאר דא ביי אונז."
+        },
+        "evidence": { "segs": [53, 57, 59, 66, 71, 72], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Pesach is the Yom Tov of Avraham Avinu, whose trait is emunah, and matzah is called the food of emunah.",
+          "yi": "פסח איז דער יום טוב פון אברהם אבינו, וועמענס מדה איז אמונה, און מצה הייסט א מאכל פון אמונה."
+        },
+        "evidence": { "segs": [157, 189, 193, 201, 365, 366], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Lechem equals three times the Name Havaya (78), while matzah equals three times the filled-out Name (45), which is also the value of geulah, so matzah carries the Names of the redemption.",
+          "yi": "לחם איז בגימטריא דריי מאל שם הוי' (78), און מצה איז דריי מאל שם הוי' במילוי (45), וואס איז אויך דער גימטריא פון גאולה, ממילא טראגט מצה אין זיך די שמות פון גאולה."
+        },
+        "evidence": { "segs": [300, 304, 339, 359, 389, 392], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The matzah eaten today is the same matzah the Jews ate in Mitzrayim, and on the Seder night the root of the soul goes to Yerushalayim and eats it there.",
+          "yi": "די מצה וואס מ'עסט היינט איז די זעלבע מצה וואס אידן האבן געגעסן אין מצרים, און ביים סדר גייט דער שורש הנשמה קיין ירושלים און עסט זי דארט."
+        },
+        "evidence": { "segs": [428, 437, 502, 504, 525], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Matzah is the key that opens the treasuries of blessing on the Seder night.",
+          "yi": "מצה איז דער שליסל וואס עפנט די אוצרות פון ברכה ביים סדר."
+        },
+        "evidence": { "segs": [878, 882, 883, 895], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Searching and burning the chametz is the inner war against the yetzer hara and against the klipah of Amalek, Esav and Yishmael, and this year it is strengthened by the power of Shabbos.",
+          "yi": "בדיקת און ביעור חמץ איז די פנימיות'דיגע מלחמה קעגן דעם יצר הרע און קעגן דער קליפה פון עמלק, עשו און ישמעאל, און היי יאר ווערט עס געשטארקט מיטן כח פון שבת."
+        },
+        "evidence": { "segs": [1063, 1068, 1110, 1152, 1181, 1307], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-zman-nissan-pesach-02-01-pesach-e",
+      "startSeg": 0,
+      "endSeg": 135,
+      "title": { "en": "A Pesach of war", "yi": "א פסח פון מלחמה" },
+      "summary": {
+        "en": "The Rav says this Pesach comes while the Jews are in a state of war, and explains that Jews fight with Torah, tefillah, tzedakah, Hallel and the Haggadah, not with weapons. He brings the Targum on Eichah about the shouts of the nations on the Har HaBayis, which are countered with tefillah.",
+        "yi": "דער משגיח זאגט אז דער פסח קומט אין א צייט ווען אידן געפינען זיך אין א מצב פון מלחמה, און ער ערקלערט אז אידן קעמפן מיט תורה, תפילה, צדקה, הלל און די הגדה, נישט מיט געווער. ער ברענגט דעם תרגום אויף איכה וועגן דעם געשריי פון די גוים אויפן הר הבית, וואס מ'איז עס מבטל מיט תפילה."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-01-pesach-e",
+      "startSeg": 136,
+      "endSeg": 233,
+      "title": { "en": "Pesach, Avraham Avinu and emunah", "yi": "פסח, אברהם אבינו און אמונה" },
+      "summary": {
+        "en": "The Rav explains that the three Yamim Tovim correspond to the Avos and that Pesach belongs to Avraham Avinu, in whose life many events took place on Pesach. Avraham's trait is emunah, Pesach is the time to implant emunah in one's children and oneself, and matzah is a food that contains emunah.",
+        "yi": "דער משגיח ערקלערט אז די דריי ימים טובים זענען קעגן די אבות, און פסח געהערט צו אברהם אבינו, ביי וועמען אסאך זאכן זענען געשען אום פסח. אברהם'ס מדה איז אמונה, פסח איז די צייט אריינצופלאנצן אמונה אין די קינדער און אין זיך אליין, און מצה איז א מאכל וואס האט אין זיך אמונה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-01-pesach-e",
+      "startSeg": 234,
+      "endSeg": 392,
+      "title": { "en": "Bread, matzah and the Names of geulah", "yi": "לחם, מצה און די שמות פון גאולה" },
+      "summary": {
+        "en": "Like a scientist who sees what is inside a food, the Rav explains that bread contains all ten utterances of creation and equals three times the Name Havaya. Matzah equals three times the filled-out Name, 45, which is also the value of geulah, so it holds the Names with which Hashem redeemed the Jews from Mitzrayim, and the Zohar calls it a food of emunah and of healing.",
+        "yi": "ווי א דאקטער וואס זעט וואס ס'איז דא אין א מאכל, ערקלערט דער משגיח אז ברויט האט אין זיך אלע עשרה מאמרות און איז בגימטריא דריי מאל שם הוי'. מצה איז דריי מאל שם הוי' במילוי, 45, וואס איז אויך דער גימטריא פון גאולה, ממילא האט זי די שמות מיט וואס דער אייבערשטער האט אויסגעלייזט אידן פון מצרים, און דער זוהר רופט זי א מאכל פון אמונה און פון רפואה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-01-pesach-e",
+      "startSeg": 393,
+      "endSeg": 525,
+      "title": { "en": "The same matzah as in Mitzrayim", "yi": "די זעלבע מצה ווי אין מצרים" },
+      "summary": {
+        "en": "The Rav asks what a piece of the matzah baked in Mitzrayim would be worth if an archaeologist found it, and answers that our matzah is that very matzah, since its holy Names are the same. He brings the Targum Yonasan that the clouds of glory carried the Jews to Yerushalayim to eat the Korban Pesach, and says that on the Seder night the root of the soul goes to Yerushalayim.",
+        "yi": "דער משגיח פרעגט וויפיל א שטיקל מצה פון מצרים וואלט געווען ווערט ווען א ארכעאלאג וואלט עס געפונען, און ענטפערט אז אונזער מצה איז די זעלבע מצה, ווייל די שמות הקדושים אין איר זענען די זעלבע. ער ברענגט דעם תרגום יונתן אז די ענני הכבוד האבן געטראגן אידן קיין ירושלים צו עסן דעם קרבן פסח, און זאגט אז ביים סדר גייט דער שורש הנשמה קיין ירושלים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-01-pesach-e",
+      "startSeg": 526,
+      "endSeg": 621,
+      "title": { "en": "Believing is greater than seeing", "yi": "גלייבן איז גרעסער ווי זען" },
+      "summary": {
+        "en": "The Rav tells of a Galician tzaddik who boasted to the Kotzker that he sees the Ushpizin, and the Kotzker's answer that he believes they come, and believing is greater than seeing. So too, with emunah a Jew is in Yerushalayim at the Seder; matzah belongs to Avraham Avinu, and emunah, as the Rambam and Ramban discuss, is the foundation of all the mitzvos.",
+        "yi": "דער משגיח דערציילט פון א צדיק פון גאליציע וואס האט זיך באריימט פארן קאצקער אז ער זעט די אושפיזין, און דעם קאצקער'ס תשובה אז ער גלייבט אז זיי קומען, און גלייבן איז גרעסער ווי זען. אזוי אויך איז א איד מיט אמונה ביים סדר אין ירושלים; מצה געהערט צו אברהם אבינו, און אמונה, ווי דער רמב\"ם און דער רמב\"ן רעדן, איז דער יסוד פון אלע מצוות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-01-pesach-e",
+      "startSeg": 622,
+      "endSeg": 740,
+      "title": { "en": "Pesach as the beginning, and kareis", "yi": "פסח אלס די התחלה, און כרת" },
+      "summary": {
+        "en": "The Rav explains that in the order of levels Pesach is the smallest Yom Tov, which is why only half Hallel is said, but it is the beginning, like Avraham Avinu. He shows from the punishment of kareis for chametz, which has no parallel on Shavuos and Sukkos, and from the kareis for Pesach and milah, that Pesach binds a Jew to Hashem with emunah.",
+        "yi": "דער משגיח ערקלערט אז אין סדר המדרגות איז פסח דער קלענסטער יום טוב, דערפאר זאגט מען נאר האלב הלל, אבער ער איז די התחלה, ווי אברהם אבינו. ער ווייזט פונעם עונש כרת אויף חמץ, וואס איז נישטא אויף שבועות און סוכות, און פונעם כרת אויף פסח און מילה, אז פסח בינדט א איד צום אייבערשטן מיט אמונה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-01-pesach-e",
+      "startSeg": 741,
+      "endSeg": 816,
+      "title": { "en": "Nissan, healing and Yitzchak's blessing", "yi": "ניסן, רפואה און יצחק'ס ברכה" },
+      "summary": {
+        "en": "After a break, the Rav brings the sefarim that Nissan is a month of healing between Adar and Iyar, whose initials spell the verse about Hashem as healer, and adds that matzah makes Nissan a month of emunah and healing in its own right. He brings the Targum Yonasan that Yitzchak blessed on the night of Pesach, when the treasuries of dew open, and Rashi that Yaakov's two kids were a Pesach and a Chagigah.",
+        "yi": "נאך א הפסקה ברענגט דער משגיח די ספרים אז ניסן איז א חודש פון רפואה צווישן אדר און אייר, וואס זייערע ראשי תיבות זענען דער פסוק פון \"אני ה' רפאך\", און לייגט צו אז דורך מצה איז ניסן אליין א חודש פון אמונה און רפואה. ער ברענגט דעם תרגום יונתן אז יצחק האט געבענטשט אום פסח ביי נאכט, ווען די אוצרות פון טל עפענען זיך, און רש\"י אז יעקב'ס צוויי ציגעלעך זענען געווען א פסח און א חגיגה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-01-pesach-e",
+      "startSeg": 817,
+      "endSeg": 906,
+      "title": { "en": "Matzah, the key to the treasuries", "yi": "מצה, דער שליסל צו די אוצרות" },
+      "summary": {
+        "en": "The Rav explains that the treasuries of dew open on the Seder night, which is why Tal is said the next morning, and brings the Chasam Sofer's reading of grain, wine and oil as halachah, aggadah and the secrets of Torah. All these blessings open with the matzah, which the Targum calls by a word meaning opening, and this is why some have the custom of marking the challah with a key on the Shabbos after Pesach.",
+        "yi": "דער משגיח ערקלערט אז די אוצרות פון טל עפענען זיך ביים סדר, דערפאר זאגט מען טל צומארגנס, און ער ברענגט דעם חתם סופר'ס פשט אז דגנך, תירושך ויצהרך זענען הלכה, אגדה און סודות התורה. אלע די ברכות עפענען זיך מיט דער מצה, וואס דער תרגום רופט מיט א ווארט וואס מיינט עפענען, און דערפאר איז דא א מנהג ביי אידן צו מאכן א צייכן מיט א שליסל אין דער חלה אויף שבת נאך פסח."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-01-pesach-e",
+      "startSeg": 907,
+      "endSeg": 1029,
+      "title": { "en": "The four cups and the plagues", "yi": "די ארבע כוסות און די מכות" },
+      "summary": {
+        "en": "The Rav brings two reasons for the four cups, the four mentions of a cup in the butler's dream and the four expressions of geulah, and explains that each plague was a blow to Mitzrayim and a healing for the Jews. Wine is spilled at the plagues because that is the bad part, and the Haggadah keeps multiplying the plagues because saying them activates them, which is the Seder's war against the klipah.",
+        "yi": "דער משגיח ברענגט צוויי טעמים פאר די ארבע כוסות: די פיר מאל \"כוס\" ביים חלום פונעם שר המשקים, און די ארבע לשונות של גאולה, און ער ערקלערט אז יעדע מכה איז געווען א מכה פאר מצרים און א רפואה פאר אידן. ביי די מכות גיסט מען אויס פונעם כוס, ווייל דאס איז דער שלעכטער חלק, און די הגדה מערט אלץ מער מכות, ווייל ווען מ'זאגט זיי ברענגט מען זיי ארויס, און דאס איז די מלחמה פונעם סדר קעגן דער קליפה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-01-pesach-e",
+      "startSeg": 1030,
+      "endSeg": 1146,
+      "title": { "en": "Searching and burning the chametz", "yi": "בדיקת און ביעור חמץ" },
+      "summary": {
+        "en": "The Rav explains that the ten pieces of chametz in the search correspond to the ten utterances and the ten powers of the soul, and that the inner meaning of the search is to remove the yetzer hara from the heart. He tells of Rabbi Yisrael of Vizhnitz asking a chassid to search his heart for chametz, and says that burning the chametz is a call for Hashem to burn the chametz of the world, the ten nations and above all Amalek.",
+        "yi": "דער משגיח ערקלערט אז די צען שטיקלעך חמץ ביי דער בדיקה זענען קעגן די עשרה מאמרות און די צען כחות הנפש, און אז די פנימיות פון דער בדיקה איז ארויסצונעמען דעם יצר הרע פונעם הארץ. ער דערציילט אז רבי ישראל פון וויזשניץ האט געבעטן א חסיד ער זאל בודק זיין זיין הארץ פאר חמץ, און זאגט אז ביעור חמץ איז אן עורר זיין אז דער אייבערשטער זאל פארברענען דעם חמץ פון דער וועלט, די צען אומות און בפרט עמלק."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-01-pesach-e",
+      "startSeg": 1147,
+      "endSeg": 1366,
+      "title": { "en": "Biur chametz on Shabbos against Esav and Yishmael", "yi": "ביעור חמץ אויף שבת קעגן עשו און ישמעאל" },
+      "summary": {
+        "en": "The Rav explains that this year the chametz is nullified on Shabbos, and the power of Shabbos is great against Amalek, who works today through Yishmael. He shows that tashbisu equals Shema Yisrael and that Vaizasa, the last son of Haman, equals Moshiach ben David, brings the Gemara and the Bnei Yissaschar on the zarzir and the orev, tells a story of a simple Jew's tefillah that annulled a decree, and ends with a blessing to eat the Pesach offerings in Yerushalayim.",
+        "yi": "דער משגיח ערקלערט אז היי יאר איז ביטול חמץ אויף שבת, און דער כח פון שבת איז גרויס קעגן עמלק, וואס ארבעט היינט דורך ישמעאל. ער ווייזט אז \"תשביתו\" איז בגימטריא \"שמע ישראל\" און אז ויזתא, דער לעצטער זון פון המן, איז בגימטריא משיח בן דוד, ברענגט די גמרא און דעם בני יששכר וועגן דעם זרזיר און דעם עורב, דערציילט א מעשה פון א פשוט'ער איד וועמענס תפילה האט מבטל געווען א גזירה, און ענדיגט מיט א ברכה צו עסן די קרבנות פסח אין ירושלים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "HaKar L'Kar L'Yayn Kav HaYadayim Yaday Yasef",
+      "work": "Bereishis",
+      "ref": "Bereishis 27:22",
+      "sefariaRef": "Genesis 27:22",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [74, 75, 76, 77], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Merapsin Igre ... the ceiling split",
+      "work": "Gemara Pesachim",
+      "ref": "Pesachim 85b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [82, 83, 86, 88], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "the Ta'agam says in Eicha",
+      "work": "Targum Eichah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [92, 94, 98, 103], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "anaychi vula yilacha mipi a Gvura shamanu",
+      "work": "Gemara Makkos",
+      "ref": "Makkos 24a",
+      "sefariaRef": "Makkot 24a",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [152, 153], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "V'Hemen V'Hem by Yachshaveh Aleyi Tzedakah",
+      "work": "Bereishis",
+      "ref": "Bereishis 15:6",
+      "sefariaRef": "Genesis 15:6",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [166, 167], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "we are maminam b'nai maminam",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 97a",
+      "sefariaRef": "Shabbat 97a",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [194], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Ayah of Yisrael says, the Apotorov",
+      "work": "Ohev Yisrael",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [202, 203, 207, 210], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "Isaiah says ... a food of; it's meichadim heimnusa ... the Zayah says ... meichadiyasvasa",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [227, 229, 365, 367, 368, 369], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "it says in Shulchan Aruch that the bracha over bread has ten words",
+      "work": "Shulchan Aruch",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [273, 274, 275, 279, 283], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Ariya Kaddish says on Pesach we have the Shemavaya B'milu",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [341, 342, 343], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "Ha lach ma'anyad yachalo avasana b'yarad in Mitzrayim",
+      "work": "Haggadah",
+      "ref": "Haggadah, Ha Lachma Anya",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [434, 435], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Tagim Yainasan ... Rabbi Yainasan Ben-Azir",
+      "work": "Targum Yonasan",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [452, 459, 465, 467, 471], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Rambam says that a munah is the first mitzvah",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [595, 596], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Ramban says no, a Muna is not in the of the Tayag Mitzvah",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [599, 600, 601, 603], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "Roshitei Vesani Hashem Reifecha",
+      "work": "Shemos",
+      "ref": "Shemos 15:26",
+      "sefariaRef": "Exodus 15:26",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [761, 762, 764, 765], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "like the tag Yonison says, To Esav, tonight, it was Erev Pesach",
+      "work": "Targum Yonasan",
+      "ref": "Targum Yonasan on Bereishis 27:1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [790, 791, 792], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Sarashe says one was a Karban Pesach and one was a Karban Chagiga",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 27:9",
+      "sefariaRef": "Rashi on Genesis 27:9",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [800, 801, 802], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "The Chesam Saif ... Dagancha means halacha, Tereishcha means agada",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [832, 847, 848, 849, 851], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the tagum on matzah ... patiraya",
+      "work": "Targum Onkelos",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [887, 888, 890, 891], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Rosh Bam in the Perik Aave Psechim",
+      "work": "Rashbam",
+      "ref": "Rashbam, Pesachim 99b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [910, 911, 916, 921], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "another Chazal that says that the Abba Kaisis ... four Lashaynas of Geula",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [924, 925, 926], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Zayah says that these ten Makis were ten Rufuas",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [932, 933, 934, 935], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "either with our finger like the Ramah says",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [964, 965], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "Rabbi Akiva says every maki was five makis ... like Rabbi Eleazar",
+      "work": "Haggadah",
+      "ref": "Haggadah, Maggid, the plagues at the sea",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [992, 996, 999, 1001, 1004], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "mark him shey machnis in bay chametz en yitzar avadika",
+      "work": "Gemara Pesachim",
+      "ref": "Pesachim 2a",
+      "sefariaRef": "Pesachim 2a",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [1093, 1094, 1095], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Tashbisu which means destroy it",
+      "work": "Shemos",
+      "ref": "Shemos 12:15",
+      "sefariaRef": "Exodus 12:15",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [1229, 1233, 1236, 1238, 1239], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the last son of Haman is Vaisasa",
+      "work": "Esther",
+      "ref": "Esther 9:9",
+      "sefariaRef": "Esther 9:9",
+      "resolution": "resolved",
+      "mention": "alluded",
+      "evidence": { "segs": [1257, 1258, 1260], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "like the Gemara says that Asav is a zarzer ... Rabbi Yudah says it's a knife tummy",
+      "work": "Gemara Chullin",
+      "ref": "Chullin 65a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1288, 1291, 1292, 1294, 1297], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "the Bnei Soscha says",
+      "work": "Bnei Yissaschar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1305, 1306, 1307, 1308], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Matzah equals three times the filled-out Name of Hashem (45), and geulah also equals 45, so matzah is three times geulah and carries the very Names with which Hashem redeemed the Jews from Mitzrayim.",
+        "yi": "מצה איז בגימטריא דריי מאל שם הוי' במילוי (45), און גאולה איז אויך 45, ממילא איז מצה דריי מאל גאולה און זי טראגט די זעלבע שמות מיט וואס דער אייבערשטער האט אויסגעלייזט אידן פון מצרים."
+      },
+      "evidence": { "segs": [359, 361, 387, 389, 392, 400], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Since it was the holy Names and not the flour and water that took the Jews out of Mitzrayim, the matzah eaten today is the identical matzah, worth more than an ancient piece an archaeologist might dig up.",
+        "yi": "ווייל נישט דאס מעל און וואסער האט ארויסגענומען אידן פון מצרים נאר די שמות הקדושים, איז די מצה וואס מ'עסט היינט די זעלבע מצה, און זי איז מער ווערט ווי אן אלטע שטיקל וואס א ארכעאלאג וואלט אויסגעגראבן."
+      },
+      "evidence": { "segs": [414, 422, 428, 430, 432, 442], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "Yaakov taking the blessings on the night of Pesach, when the treasuries of dew open, may be a hint to the custom of 'stealing' the afikoman at the Seder.",
+        "yi": "דאס וואס יעקב האט גענומען די ברכות אום פסח ביי נאכט, ווען די אוצרות פון טל עפענען זיך, איז אפשר א רמז אויף דעם מנהג צו \"גנב'ענען\" דעם אפיקומן ביים סדר."
+      },
+      "evidence": { "segs": [807, 810, 811, 812, 815], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Haggadah keeps multiplying the count of the plagues because saying them activates them: the more plagues counted, the more blows to the enemy and the more healing for the Jews.",
+        "yi": "די הגדה מערט אלץ מער דעם חשבון פון די מכות, ווייל ווען מ'זאגט זיי ברענגט מען זיי ארויס: וואס מער מכות מ'רעכנט, אלץ מער מכות פארן שונא און אלץ מער רפואה פאר אידן."
+      },
+      "evidence": { "segs": [1007, 1008, 1011, 1013, 1016], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Tashbisu equals the gematria of Shema Yisrael, and Vaizasa, the tenth son of Haman, equals Moshiach ben David, so destroying all ten parts of the chametz prepares the way for Moshiach.",
+        "yi": "\"תשביתו\" איז בגימטריא \"שמע ישראל\", און ויזתא, דער צענטער זון פון המן, איז בגימטריא משיח בן דוד, ממילא ווען מ'פארניכטעט אלע צען חלקים פונעם חמץ גרייט מען צו דעם וועג פאר משיח."
+      },
+      "evidence": { "segs": [1233, 1236, 1239, 1258, 1260, 1263], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Kotzker and the Ushpizin", "yi": "דער קאצקער און די אושפיזין" },
+      "retelling": {
+        "en": "A great tzaddik from Galicia who disagreed with the Kotzker's path of avodah sent him a messenger asking how he dares to argue with him, since on Sukkos he sees the seven Ushpizin come into his sukkah. The Kotzker answered that on Sukkos he believes the Ushpizin come to him, and believing is greater than seeing.",
+        "yi": "א גרויסער צדיק פון גאליציע, וואס איז נישט מסכים געווען מיטן קאצקער'ס דרך העבודה, האט געשיקט א שליח צו פרעגן ווי אזוי ער וואגט זיך צו קריגן מיט אים, ווען ער זעט אום סוכות ווי די זיבן אושפיזין קומען אין זיין סוכה. דער קאצקער האט געענטפערט אז ער גלייבט אז די אושפיזין קומען צו אים, און גלייבן איז גרעסער ווי זען."
+      },
+      "people": ["the Kotzker Rebbe"],
+      "evidence": { "segs": [529, 540, 549, 555, 559, 561], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "Rabbi Yisrael of Vizhnitz and the chametz in the heart", "yi": "רבי ישראל פון וויזשניץ און דער חמץ אין הארץ" },
+      "retelling": {
+        "en": "Rabbi Yisrael of Vizhnitz was once searching for chametz with his candle, accompanied by one of his great chassidim, whose name the Rav says he forgot. The Rebbe called out to the chassid to look into his heart and search it for chametz. The chassid answered with the Gemara that a place into which chametz is not brought does not need to be searched.",
+        "yi": "רבי ישראל פון וויזשניץ איז אמאל געגאנגען בודק חמץ זיין מיט זיין ליכט, באגלייט פון איינעם פון זיינע גרויסע חסידים, וועמענס נאמען דער משגיח זאגט אז ער האט פארגעסן. דער רבי האט אויסגערופן צום חסיד ער זאל אריינקוקן אין זיין הארץ און עס בודק זיין פאר חמץ. דער חסיד האט געענטפערט מיט דער גמרא אז א מקום וואס מ'ברענגט נישט אריין חמץ דארף נישט קיין בדיקה."
+      },
+      "people": ["Rabbi Yisrael of Vizhnitz"],
+      "evidence": { "segs": [1077, 1079, 1083, 1086, 1092, 1094], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "The simple Jew whose tefillah annulled a decree", "yi": "דער פשוט'ער איד וועמענס תפילה האט מבטל געווען א גזירה" },
+      "retelling": {
+        "en": "When the Russians made a harsh decree, tzaddikim gathered and worked hard to annul it, and suddenly they began to smile. Asked why, one explained that they had been unable to annul the decree, but a simple Jew who did not even know Hebrew davened with kavanah, and his tefillah accomplished what they could not.",
+        "yi": "ווען די רוסן האבן געמאכט א שווערע גזירה, האבן זיך צדיקים צוזאמגעקומען און שווער געארבעט עס מבטל צו זיין, און מיט אמאל האבן זיי אנגעהויבן שמייכלען. ווען מ'האט געפרעגט פארוואס, האט איינער ערקלערט אז זיי האבן נישט געקענט מבטל זיין די גזירה, אבער א פשוט'ער איד וואס האט אפילו נישט געקענט לשון הקודש האט געדאוונט מיט כוונה, און זיין תפילה האט אויפגעטון וואס זיי האבן נישט געקענט."
+      },
+      "people": [],
+      "evidence": { "segs": [1326, 1329, 1334, 1342, 1344, 1351], "confidence": 0.65 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why is Pesach, the lowest of the Yamim Tovim, the one on which eating chametz carries kareis, while the worst sin on Shavuos or Sukkos is only doing melachah?",
+        "yi": "פארוואס איז דווקא אויף פסח, דער נידעריגסטער פון די ימים טובים, דא כרת פאר עסן חמץ, בשעת די ערגסטע עבירה אויף שבועות אדער סוכות איז נאר טון א מלאכה?"
+      },
+      "answer": {
+        "en": "Because Pesach, like Avraham Avinu, binds a Jew to Hashem with emunah, and the severity of the punishment shows how strongly the mitzvah binds him.",
+        "yi": "ווייל פסח, ווי אברהם אבינו, בינדט א איד צום אייבערשטן מיט אמונה, און די חומר פונעם עונש ווייזט ווי שטארק די מצוה בינדט אים."
+      },
+      "questionSegs": [663, 684, 688, 690, 692],
+      "answerSegs": [657, 661, 678, 681, 695],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why does the Haggadah keep counting more and more plagues while the children are hungry?",
+        "yi": "פארוואס רעכנט די הגדה אלץ מער מכות בשעת די קינדער זענען הונגעריג?"
+      },
+      "answer": {
+        "en": "Because saying the plagues activates them; the more plagues counted, the more blows to the enemy and the more healing for the Jews.",
+        "yi": "ווייל ווען מ'זאגט די מכות ברענגט מען זיי ארויס; וואס מער מכות מ'רעכנט, אלץ מער מכות פארן שונא און אלץ מער רפואה פאר אידן."
+      },
+      "questionSegs": [1005, 1006, 1007, 1008],
+      "answerSegs": [1009, 1011, 1013, 1016],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why is wine spilled from the cup when the plagues are mentioned?",
+        "yi": "פארוואס גיסט מען אויס פונעם כוס ווען מ'דערמאנט די מכות?"
+      },
+      "answer": {
+        "en": "Because the cup holds both the bitter plagues for Mitzrayim and the healing of geulah for the Jews; the bad part is spilled into a broken vessel, representing the sitra achra, and then the cup is refilled and drunk.",
+        "yi": "ווייל דער כוס האט אין זיך סיי די ביטערע מכות פאר מצרים סיי די רפואה פון גאולה פאר אידן; דעם שלעכטן חלק גיסט מען אויס אין א צובראכן כלי, וואס איז קעגן דער סטרא אחרא, און דערנאך פילט מען אן דעם כוס און מ'טרינקט."
+      },
+      "questionSegs": [952, 953, 954],
+      "answerSegs": [943, 949, 955, 969, 970, 981],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why is there a custom to mark the challah with a key on the Shabbos after Pesach?",
+        "yi": "פארוואס איז דא א מנהג צו מאכן א צייכן מיט א שליסל אין דער חלה אויף שבת נאך פסח?"
+      },
+      "answer": {
+        "en": "Because matzah is the key that opens the treasuries of blessing; once it is no longer matzah, another key is used.",
+        "yi": "ווייל מצה איז דער שליסל וואס עפנט די אוצרות פון ברכה; ווען ס'איז שוין נישט קיין מצה, נעמט מען אן אנדערן שליסל."
+      },
+      "questionSegs": [897, 898, 899, 900],
+      "answerSegs": [882, 883, 895, 901, 902],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says the war is fought by keeping Pesach: burning the chametz in one's kitchen and heart, eating the matzah, spilling the wine at the plagues and saying the Haggadah.",
+        "yi": "דער משגיח זאגט אז די מלחמה פירט מען דורך היטן פסח: פארברענען דעם חמץ אין קיך און אין הארץ, עסן די מצה, אויסגיסן דעם וויין ביי די מכות און זאגן די הגדה."
+      },
+      "evidence": { "segs": [1183, 1186, 1188, 1189, 1190, 1202], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that when eating the matzah at the Seder one should realize that one is going to Yerushalayim, even if one does not feel it.",
+        "yi": "דער משגיח זאגט אז ווען מ'עסט די מצה ביים סדר זאל מען וויסן אז מ'גייט קיין ירושלים, אפילו מ'שפירט עס נישט."
+      },
+      "evidence": { "segs": [507, 509, 510, 511], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says the inner side of searching for chametz is to search one's heart and get the yetzer hara and the bad traits out of it.",
+        "yi": "דער משגיח זאגט אז די פנימיות פון בדיקת חמץ איז בודק זיין דאס הארץ און ארויסנעמען דערפון דעם יצר הרע און די שלעכטע כחות."
+      },
+      "evidence": { "segs": [1063, 1067, 1068, 1069, 1071], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav tells his listeners to remember that they are soldiers in this war, since a small act of avodah done with truth and full emunah can accomplish more than the greatest tzaddik.",
+        "yi": "דער משגיח זאגט צו די צוהערער זיי זאלן געדענקען אז זיי זענען סאלדאטן אין דער מלחמה, ווייל א קליינע עבודה מיט אמת און מיט אמונה שלימה קען אויפטון מער ווי דער גרעסטער צדיק."
+      },
+      "evidence": { "segs": [1312, 1313, 1315, 1321, 1322, 1353], "confidence": 0.7 }
+    }
+  ],
+  "candidateTopics": [
+    "matzah as the food of emunah",
+    "matzah and geulah",
+    "Pesach and Avraham Avinu",
+    "gematria of matzah and the filled-out Name",
+    "four cups and the ten plagues",
+    "bedikas and biur chametz",
+    "spiritual war against Amalek and Yishmael",
+    "Nissan as a month of healing",
+    "emunah greater than seeing"
+  ],
+  "concepts": [
+    { "he": "רבונו של עולם", "heardAs": ["Rabban Yisroelam", "Rabbi Yishraim", "Rabbeinu Sholeilam", "Abba Nishleilam"] },
+    { "he": "מלחמה", "heardAs": ["Molchama", "Mulchama", "Melchama"] },
+    { "he": "מיכלא דמהימנותא", "heardAs": ["meichadim heimnusa"] },
+    { "he": "מיכלא דאסוותא", "heardAs": ["meichadiyasvasa"] },
+    { "he": "שם הוי' במילוי", "heardAs": ["Shemavaya B'milu", "Shei Mavaya Bemilu"] },
+    { "he": "עשרה מאמרות", "heardAs": ["asara mamaris", "aserah ma'mares", "Esar HaMamareis"] },
+    { "he": "גאולה", "heardAs": ["Geulah", "G'ulah", "Geula"] },
+    { "he": "שורש הנשמה", "heardAs": ["Sheyresh of our Nefesh", "Sheyresh Neshama"] },
+    { "he": "אושפיזין", "heardAs": ["Ishpizan"] },
+    { "he": "כרת", "heardAs": ["Kareis", "creases"] },
+    { "he": "אוצרות של טל", "heardAs": ["Eitsers of Tal", "Oitzchus of Tal"] },
+    { "he": "אפיקומן", "heardAs": ["Afrikaim"] },
+    { "he": "פטירא", "heardAs": ["patiraya"] },
+    { "he": "ארבע כוסות", "heardAs": ["Abba Kaisais", "Abba Kaisis", "Apocasis"] },
+    { "he": "בדיקת חמץ", "heardAs": ["Dikas chametz", "Bidik Tachamets", "B'dika's chametz"] },
+    { "he": "ביעור חמץ", "heardAs": ["Biyo Hamids", "Beor hermits", "Biyor Chometz"] },
+    { "he": "ביטול חמץ", "heardAs": ["Bittal hermits", "Bittor Chometz", "Bittul Hametz"] },
+    { "he": "כחות הנפש", "heardAs": ["Kajches HaNefesh", "kachas anefesh"] },
+    { "he": "תשביתו", "heardAs": ["Tashbisu"] },
+    { "he": "ויזתא", "heardAs": ["Vaisasa"] },
+    { "he": "זרזיר", "heardAs": ["zarzer", "Zahzer"] },
+    { "he": "עורב", "heardAs": ["Oirev", "Erev"] }
+  ],
+  "people": [
+    { "name": "Avraham Avinu", "heardAs": ["Avraham Avinu", "Avram Avinu"] },
+    { "name": "Yitzchak", "heardAs": ["Yitzchak"] },
+    { "name": "Yaakov", "heardAs": ["Yankev", "Yankov"] },
+    { "name": "Esav", "heardAs": ["Esav", "Asav", "Aesav"] },
+    { "name": "Yishmael", "heardAs": ["Yishmael"] },
+    { "name": "Lot", "heardAs": ["Light"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["Moshe Rabbeinu", "Amash Rabbeinu"] },
+    { "name": "the Kotzker Rebbe", "heardAs": ["Kotzka", "Kratzger"] },
+    { "name": "Rabbi Yisrael of Vizhnitz", "heardAs": ["Rabbi Yisrael Vizhnetzer"] },
+    { "name": "the Apter Rav", "heardAs": ["Apotorov", "Ayah of Yisrael"] },
+    { "name": "the Arizal", "heardAs": ["Ariya Kaddish"] },
+    { "name": "Rambam", "heardAs": ["Rambam"] },
+    { "name": "Ramban", "heardAs": ["Ramban"] },
+    { "name": "Rashi", "heardAs": ["Sarashe"] },
+    { "name": "Rashbam", "heardAs": ["Rosh Bam"] },
+    { "name": "Rema", "heardAs": ["Ramah"] },
+    { "name": "Yonasan ben Uziel", "heardAs": ["Rabbi Yainasan Ben-Azir", "Rabbi Yannis and Benazir"] },
+    { "name": "the Chasam Sofer", "heardAs": ["Chesam Saif", "Chassam Saifah"] },
+    { "name": "Rabbi Akiva", "heardAs": ["Rabbi Akiva"] },
+    { "name": "Rabbi Eliezer", "heardAs": ["Rabbi Eleazar"] },
+    { "name": "Haman", "heardAs": ["Haman"] }
+  ],
+  "asrNotes": "English ASR is fair in content but splits the speech into very short fragments, and Hebrew phrases are heavily garbled. Segments 19-52 (a recited passage) are unrecoverable, as are parts of segments 213-221, 823-831 and 855-859 (a midrash on the blessings) and the prayer recited after burning the chametz (1111-1131). The closing story (1323-1351) is fragmentary, so only its outline is recorded."
+}

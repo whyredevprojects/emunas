@@ -1,0 +1,571 @@
+{
+  "shiurId": "en-zmanim-en-psch-04",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that Pesach makes a Jew a servant of Hashem instead of Pharaoh, that Nisan is a month of renewal in which a person should become new with all of creation, and that matzah carries the hidden holiness of the geulah.",
+      "yi": "דער משגיח ערקלערט אז פסח מאכט א איד פאר א עבד השם אנשטאט א עבד פון פרעה, אז ניסן איז א חודש פון התחדשות וואו א מענטש דארף ווערן נייע מיט דער גאנצער בריאה, און אז די מצה טראגט אין זיך די באהאלטענע קדושה פון דער גאולה."
+    },
+    "abstract": {
+      "en": "The Rav opens with the aim of Pesach: to leave the servitude of Pharaoh and become servants of the Ribono shel Olam with love and joy. The days before Rosh Chodesh Nisan are like the kohanim's seven days of initiation, so they are days of simcha. He explains the special seudah of Rosh Chodesh and Melaveh Malkah as seudos of Dovid HaMelech, and Maariv and Tikkun Chatzos as higher tefillos. Nisan is the month of Yehudah, malchus and Mashiach; the Shelah says the whole month holds the holiness of Rosh Chodesh. The world was created in Nisan, and every spring creation renews itself and sings; a person should join it and become new. He then turns to matzah: bread equals three times the Name of Hashem, matzah three times its filled-out form, which equals adam. The matzah we eat is the same matzah of the geulah, and he closes with a tzaddik's joy after the Seder.",
+      "yi": "דער משגיח עפנט מיט דער תכלית פון פסח: ארויסגיין פון דער עבדות פון פרעה און ווערן עבדים פונעם רבונו של עולם מיט אהבה און שמחה. די טעג פאר ראש חודש ניסן זענען ווי די שבעת ימי המילואים פון די כהנים, דערפאר זענען עס טעג פון שמחה. ער ערקלערט די סעודת ראש חודש און מלוה מלכה אלס סעודות פון דוד המלך, און מעריב און תיקון חצות אלס העכערע תפילות. ניסן איז דער חודש פון יהודה, פון מלכות און פון משיח; דער של\"ה זאגט אז דער גאנצער חודש האט די קדושה פון ראש חודש. די וועלט איז באשאפן געווארן אין ניסן, און יעדן פרילינג באנייט זיך די בריאה און זינגט; א מענטש דארף זיך אנשליסן און ווערן נייע. דערנאך גייט ער איבער צו מצה: לחם איז בגימטריא דריי מאל שם הוי\"ה, מצה דריי מאל דעם שם מיט זיין מילוי, וואס איז בגימטריא אדם. די מצה וואס מיר עסן איז די זעלבע מצה פון דער גאולה, און ער ענדיגט מיט דער שמחה פון א צדיק נאך דעם סדר."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The aim of Pesach is to stop being servants of Pharaoh and become servants of the Ribono shel Olam with love and joy.",
+          "yi": "די תכלית פון פסח איז אויפהערן זיין עבדים פון פרעה און ווערן עבדים פונעם רבונו של עולם מיט אהבה און מיט שמחה."
+        },
+        "evidence": { "segs": [0, 2, 3, 9], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The seven days before Rosh Chodesh Nisan are like the kohanim's days of miluim, days of initiation and simcha, so Tachanun is not said.",
+          "yi": "די זיבן טעג פאר ראש חודש ניסן זענען ווי די ימי המילואים פון די כהנים, טעג פון איינפירונג און שמחה, דערפאר זאגט מען נישט קיין תחנון."
+        },
+        "evidence": { "segs": [11, 30, 32, 40, 41], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Nisan is the month of Yehudah, of malchus and of Mashiach, and according to the Shelah the whole month carries the holiness of Rosh Chodesh.",
+          "yi": "ניסן איז דער חודש פון יהודה, פון מלכות און פון משיח, און לויט דעם של\"ה האט דער גאנצער חודש די קדושה פון ראש חודש."
+        },
+        "evidence": { "segs": [182, 186, 209, 213, 218], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Since the world was created in Nisan, each year nature renews itself and sings, and a person should renew himself along with it.",
+          "yi": "ווייל די וועלט איז באשאפן געווארן אין ניסן, באנייט זיך יעדעס יאר די טבע און זינגט, און א מענטש דארף זיך באנייען צוזאמען מיט איר."
+        },
+        "evidence": { "segs": [249, 299, 316, 391, 398], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Lechem equals three times the Name Havayah, while matzah equals three times its filled-out form of 45, the number of adam.",
+          "yi": "לחם איז בגימטריא דריי מאל שם הוי\"ה, און מצה איז דריי מאל דעם שם מיט זיין מילוי פון מ\"ה, וואס איז בגימטריא אדם."
+        },
+        "evidence": { "segs": [601, 667, 677, 679, 687], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The matzah we eat is the same matzah our forefathers ate, because its inner content is the geulah and the physical matzah is only its envelope.",
+          "yi": "די מצה וואס מיר עסן איז די זעלבע מצה וואס די אבות האבן געגעסן, ווייל איר אינעווייניג איז די גאולה, און די גשמיות'דיגע מצה איז נאר א הילע."
+        },
+        "evidence": { "segs": [744, 749, 752, 757, 758], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-zman-nissan-pesach-02-04-pesach-e",
+      "startSeg": 0,
+      "endSeg": 41,
+      "title": {
+        "en": "Servants of Hashem, not of Pharaoh",
+        "yi": "עבדי השם און נישט עבדי פרעה"
+      },
+      "summary": {
+        "en": "The Rav opens with Shabbos HaChodesh and the aim of Pesach, to leave the servitude of Mitzrayim and become servants of the Ribono shel Olam with love and joy. He compares the days before Rosh Chodesh Nisan to the kohanim's seven days of miluim, which is why they are days of simcha without Tachanun.",
+        "yi": "דער משגיח עפנט מיט שבת החודש און מיט דער תכלית פון פסח, ארויסצוגיין פון דער עבדות פון מצרים און ווערן עבדים פונעם רבונו של עולם מיט אהבה און שמחה. ער גלייכט די טעג פאר ראש חודש ניסן צו די שבעת ימי המילואים פון די כהנים, דערפאר זענען עס טעג פון שמחה אן תחנון."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-04-pesach-e",
+      "startSeg": 42,
+      "endSeg": 170,
+      "title": {
+        "en": "Rosh Chodesh, Melaveh Malkah and Dovid HaMelech",
+        "yi": "ראש חודש, מלוה מלכה און דוד המלך"
+      },
+      "summary": {
+        "en": "The Rav brings the short siman in Shulchan Aruch that it is a mitzvah to add to the seudah on Rosh Chodesh, alongside Melaveh Malkah, and ties both to Dovid HaMelech and the renewal of the moon. He explains that Maariv was a reshus because it belongs to a higher level, and that Tikkun Chatzos is the tefillah of Dovid, matched by Melaveh Malkah as the fourth seudah.",
+        "yi": "דער משגיח ברענגט דעם קורצן סימן אין שולחן ערוך אז ס'איז א מצוה צו מרבה זיין אין דער סעודה פון ראש חודש, צוזאמען מיט מלוה מלכה, און ער בינדט ביידע צו דוד המלך און צו דער באנייונג פון דער לבנה. ער ערקלערט אז מעריב איז געווען א רשות ווייל עס געהערט צו א העכערער מדרגה, און אז תיקון חצות איז די תפילה פון דוד, וואס מלוה מלכה, די פערטע סעודה, איז קעגן איר."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-04-pesach-e",
+      "startSeg": 171,
+      "endSeg": 226,
+      "title": {
+        "en": "Nisan, the month of Yehudah and Mashiach",
+        "yi": "ניסן, דער חודש פון יהודה און משיח"
+      },
+      "summary": {
+        "en": "The Rav explains that each month belongs to a shevet according to the degalim, and Nisan belongs to Yehudah, the month of malchus and of Mashiach; this is why tzaddikim awaited Mashiach on Pesach and why the door is opened for Eliyahu. He brings the Shelah that all of Nisan holds the holiness of Rosh Chodesh, and the Avnei Nezer that an hour of avodah in Nisan equals a full day in another month.",
+        "yi": "דער משגיח ערקלערט אז יעדער חודש געהערט צו א שבט לויט די דגלים, און ניסן געהערט צו יהודה, דער חודש פון מלכות און פון משיח; דערפאר האבן צדיקים געווארט אויף משיח אום פסח, און דערפאר עפנט מען די טיר פאר אליהו הנביא. ער ברענגט דעם של\"ה אז דער גאנצער ניסן האט די קדושה פון ראש חודש, און דעם אבני נזר אז א שעה עבודה אין ניסן איז ווערט ווי א גאנצער טאג אין אן אנדער חודש."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-04-pesach-e",
+      "startSeg": 227,
+      "endSeg": 320,
+      "title": {
+        "en": "Creation in Nisan and the renewal of nature",
+        "yi": "די בריאה אין ניסן און די התחדשות פון דער טבע"
+      },
+      "summary": {
+        "en": "The Rav brings the machlokes whether the world was created in Tishrei or Nisan and explains that Na'aseh adam was said on Rosh Chodesh Nisan. What happened on a date is etched into it and recurs, so the renewal in Shamayim filters down into this world, and he describes the spring: trees budding, birds returning, streams flowing again.",
+        "yi": "דער משגיח ברענגט די מחלוקת צי די וועלט איז באשאפן געווארן אין תשרי אדער אין ניסן, און ערקלערט אז נעשה אדם איז געזאגט געווארן ראש חודש ניסן. וואס עס איז געשען אויף א טאג איז איינגעקריצט אין יענעם טאג און חזר'ט זיך איבער, דערפאר קומט די התחדשות אין הימל אראפ אין דער וועלט, און ער שילדערט דעם פרילינג: די ביימער בליען, די פייגל קומען צוריק, די טייכן פליסן ווידער."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-04-pesach-e",
+      "startSeg": 321,
+      "endSeg": 421,
+      "title": {
+        "en": "All of creation sings; a person should become new",
+        "yi": "די גאנצע בריאה זינגט; א מענטש דארף ווערן נייע"
+      },
+      "summary": {
+        "en": "The Rav connects Nisan to the haftarah of the dry bones coming back to life and to the brachah made on a friend not seen for twelve months. He explains why morning is called tzafra and night ramsha, after the birds and the insects that sing, and says a Jew sings by day and by night. Every person, he says, should join the song of creation, renew himself and be a new person.",
+        "yi": "דער משגיח בינדט ניסן צו דער הפטרה פון די טרוקענע ביינער וואס ווערן לעבעדיג, און צו דער ברכה וואס מ'מאכט אויף א חבר וואס מ'האט נישט געזען צוועלף חדשים. ער ערקלערט פארוואס דער פרימארגן הייסט צפרא און די נאכט רמשא, נאך די פייגל און די ווערעם וואס זינגען, און אז א איד זינגט ביי טאג און ביי נאכט. יעדער מענטש, זאגט ער, דארף זיך אנשליסן אין דעם געזאנג פון דער בריאה, זיך באנייען און ווערן א נייער מענטש."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-04-pesach-e",
+      "startSeg": 422,
+      "endSeg": 495,
+      "title": {
+        "en": "The piyutim of Mussaf and the Seder night",
+        "yi": "די פיוטים פון מוסף און ליל הסדר"
+      },
+      "summary": {
+        "en": "The Rav mentions that he had planned to learn the piyutim of Mussaf of Parshas HaChodesh, which describe the renewal of nature in Nisan, but they are difficult and time does not allow. He repeats that a person should become new, and that the mitzvos of Nisan, above all the Seder, are the way to do so; the tzaddikim said the Seder sets the program for the whole year.",
+        "yi": "דער משגיח דערמאנט אז ער האט געפלאנט צו לערנען די פיוטים פון מוסף פון פרשת החודש, וואס שילדערן די התחדשות פון דער טבע אין ניסן, נאר זיי זענען שווער און די צייט לאזט נישט. ער חזר'ט איבער אז א מענטש דארף ווערן נייע, און אז די מצוות פון ניסן, בפרט דער סדר, זענען דער וועג דערצו; די צדיקים האבן געזאגט אז דער סדר שטעלט אוועק דעם סדר פאר'ן גאנצן יאר."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-04-pesach-e",
+      "startSeg": 496,
+      "endSeg": 598,
+      "title": {
+        "en": "Ten utterances, white food and universal bread",
+        "yi": "עשרה מאמרות, ווייסע מאכלים און לחם פאר אלעמען"
+      },
+      "summary": {
+        "en": "Turning to matzah, the Rav explains that the ten utterances of creation reappear, in reverse order, in the ten makkos and again in the ten dibros. He then explains that people choose food by their middah, chesed preferring sweet and white foods like wheat, milk and the mann, and gevurah spiced foods and wine, while bread is the one food all peoples eat; the Shulchan Aruch notes the ten words of Hamotzi.",
+        "yi": "ווען ער גייט איבער צו מצה, ערקלערט דער משגיח אז די עשרה מאמרות פון דער בריאה קומען צוריק, פארקערט, אין די עשר מכות, און נאכאמאל אין די עשרת הדברות. דערנאך ערקלערט ער אז מענטשן קלייבן מאכלים לויט זייער מדה, חסד וויל זיסע און ווייסע מאכלים ווי ווייץ, מילך און דאס מן, און גבורה געווירצטע מאכלים און וויין, אבער ברויט עסן אלע פעלקער; דער שולחן ערוך ברענגט די צען ווערטער פון המוציא."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-nissan-pesach-02-04-pesach-e",
+      "startSeg": 599,
+      "endSeg": 775,
+      "title": {
+        "en": "Lechem, matzah and the geulah inside it",
+        "yi": "לחם, מצה און די גאולה אין איר"
+      },
+      "summary": {
+        "en": "The Rav explains that lechem equals three times the Name Havayah, which is the holiness that keeps the neshamah in the body, while matzah equals three times the filled-out Name of 45, the number of adam. He explains that the whole Seder is built on questions, and answers why one may say 'ha lachma anya': the inner geulah in the matzah is identical, and the flour and water are only an envelope. He closes with a tzaddik who wept for joy after the Seder over the holy names he had eaten.",
+        "yi": "דער משגיח ערקלערט אז לחם איז בגימטריא דריי מאל שם הוי\"ה, די קדושה וואס האלט די נשמה אינעם גוף, און מצה איז דריי מאל דעם שם מיט זיין מילוי פון מ\"ה, דער מספר פון אדם. ער ערקלערט אז דער גאנצער סדר איז געבויט אויף קשיות, און פארענטפערט ווי אזוי מ'קען זאגן \"הא לחמא עניא\": די אינעווייניגסטע גאולה אין דער מצה איז די זעלבע, און דאס מעל און וואסער איז נאר א הילע. ער ענדיגט מיט א צדיק וואס האט געוויינט פון שמחה נאך דעם סדר איבער די הייליגע שמות וואס ער האט געגעסן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "Ki avodai heim, asher itzaythi yotam mirat Mitzrayim",
+      "work": "Vayikra",
+      "ref": "Vayikra 25:42",
+      "sefariaRef": "Leviticus 25:42",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [3], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Tuf Yed Tesh, in Shulchan Aruch ... L'ha'abayz b'sauda b'Rosh Chodesh",
+      "work": "Shulchan Aruch",
+      "ref": "Shulchan Aruch Orach Chaim 419",
+      "sefariaRef": "Shulchan Arukh, Orach Chayim 419",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [57, 59, 60, 61], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "One simon is by Mata Shabbos. It's a mitzvah to eat Malav HaMalkeh",
+      "work": "Shulchan Aruch",
+      "ref": "Shulchan Aruch Orach Chaim 300",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [64, 65], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Meirev is a Roshus ... Medine de Gemara",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 27b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [114, 116, 117], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "The Paskim say that Bizmana there",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [135], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Abraham was Meshachin Chachis, Yitzchak Mincha, Yanket Meireb",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 26b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [158, 159, 160], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "according to the Degalim in Parshas Bamidvar",
+      "work": "Bamidbar",
+      "ref": "Bamidbar ch. 2",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [172, 180, 181], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "The Yishala HaKadosh says",
+      "work": "Shelah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [213, 217, 218, 219], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "The Avnei Meza of the Fakhet Shadr said",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [222], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "there's a machraikas in the Gemara Rabbi Eliezer says and Rabbi Yeshua says",
+      "work": "Gemara Rosh Hashanah",
+      "ref": "Rosh Hashanah 10b-11a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [229, 231, 233, 235, 249], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Nasa Udham / Nein Sa'adam. Let's make man",
+      "work": "Bereishis",
+      "ref": "Bereishis 1:26",
+      "sefariaRef": "Genesis 1:26",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [257, 261, 388, 389], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "that's how the Maral explains it",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [296, 297], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "we're going to read the Haftaira ... the dead dried out bones",
+      "work": "Yechezkel",
+      "ref": "Yechezkel 37",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [321, 322], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "you make a Mechaia Mason, that's what it says in the Gemara",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 58b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [324], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "the Mishra says, I am not like the Tziparim",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [359, 360, 362, 366], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "the B'riya of the Mursaf of Pasha Sachevish there's piyutim",
+      "work": "Piyutim of Mussaf of Parshas HaChodesh",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [430, 431, 432, 458], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "with Aserah Mamaris 10 times you have Vayayim",
+      "work": "Bereishis",
+      "ref": "Bereishis ch. 1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [498, 499, 500], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "that's how the Kaddish Yerim explains it",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [520], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "The monk is ra'agad lovin",
+      "work": "Shemos",
+      "ref": "Shemos 16:31",
+      "sefariaRef": "Exodus 16:31",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [554, 555], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Shechneruch makes it clear that way that there are ten words in Hamaitzi",
+      "work": "Shulchan Aruch",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [589, 590, 591, 592], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "this is the porpoise bread that we ate in Eretz Mitzrayim ... ho lach ma'am ya",
+      "work": "Haggadah",
+      "ref": "Haggadah, Ha Lachma Anya",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [727, 728, 733], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the rabbi ha-god has changed the nusach to keho lach ma'am ya",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [734, 735], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "we read HaChadosh",
+      "work": "Shemos",
+      "ref": "Shemos 12:1-20",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [0], "confidence": 0.65 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The days of preparation before Pesach are themselves days of joy, like the kohanim's seven days of miluim before they began the avodah in the Mishkan.",
+        "yi": "די טעג פון הכנה פאר פסח זענען אליין טעג פון שמחה, אזוי ווי די זיבן ימי המילואים פון די כהנים פאר זיי האבן אנגעהויבן די עבודה אינעם משכן."
+      },
+      "evidence": { "segs": [11, 28, 29, 30, 32, 35], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Maariv was only a reshus not because it is lesser, but because, as the tefillah of Yaakov, it belongs to a higher world that not everyone is ready for.",
+        "yi": "מעריב איז געווען נאר א רשות נישט ווייל עס איז נידעריגער, נאר ווייל, אלס די תפילה פון יעקב, געהערט עס צו א העכערער וועלט וואס נישט יעדער איז דערצו גרייט."
+      },
+      "evidence": { "segs": [118, 122, 128, 130, 134], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Tikkun Chatzos is the tefillah of Dovid HaMelech, and Melaveh Malkah, the fourth seudah, corresponds to it as the seudah of Dovid.",
+        "yi": "תיקון חצות איז די תפילה פון דוד המלך, און מלוה מלכה, די פערטע סעודה, איז קעגן איר אלס די סעודה פון דוד."
+      },
+      "evidence": { "segs": [151, 155, 161, 170], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Morning is called tzafra after the birds and night ramsha after the creeping creatures that sing then, while a Jew sings both by day and by night.",
+        "yi": "דער פרימארגן הייסט צפרא נאך די פייגל און די נאכט רמשא נאך די רמשים וואס זינגען דעמאלט, אבער א איד זינגט סיי ביי טאג און סיי ביי נאכט."
+      },
+      "evidence": { "segs": [353, 356, 360, 362, 366], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Matzah equals three times 45, the filled-out Name of Hashem that equals adam, so it holds a deeper holiness than ordinary bread, which is three times 26.",
+        "yi": "מצה איז דריי מאל מ\"ה, דער שם הוי\"ה מיט זיין מילוי וואס איז בגימטריא אדם, דערפאר האט זי א טיפערע קדושה ווי געווענליך ברויט, וואס איז דריי מאל כ\"ו."
+      },
+      "evidence": { "segs": [601, 667, 674, 682, 684, 687], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "'Ha lachma anya' is literally true: the geulah inside the matzah is identical to what our forefathers ate, and only the outer envelope of flour and water is different.",
+        "yi": "\"הא לחמא עניא\" איז ממש אמת: די גאולה אין דער מצה איז די זעלבע וואס די אבות האבן געגעסן, און נאר די הילע פון מעל און וואסער איז אנדערש."
+      },
+      "evidence": { "segs": [743, 744, 749, 752, 757, 758], "confidence": 0.8 }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "Tears of joy after the Seder",
+        "yi": "טרערן פון שמחה נאך דעם סדר"
+      },
+      "retelling": {
+        "en": "The Rav tells of a tzaddik who, after the Seder, began to weep from joy, the tears running down his cheeks. He held his hands over his belly and said how fortunate it was, for it now held the holy names of the matzah, the maror, the afikoman, the karpas and the other mitzvos of the night. Realizing this gave him great happiness.",
+        "yi": "דער משגיח דערציילט פון א צדיק וואס האט נאך דעם סדר אנגעהויבן וויינען פון שמחה, די טרערן זענען אים געלאפן איבער די באקן. ער האט געהאלטן די הענט אויפן בויך און געזאגט ווי גליקלעך ער איז, ווייל ער האלט יעצט אין זיך די שמות פון דער מצה, פונעם מרור, פונעם אפיקומן, פונעם כרפס און פון די אנדערע מצוות פון דער נאכט. דאס צו דערהערן האט אים געגעבן א גרויסע שמחה."
+      },
+      "people": [],
+      "evidence": { "segs": [767, 768, 769, 770, 771, 772], "confidence": 0.7 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "If Maariv is so precious, why was it only a reshus?",
+        "yi": "אויב מעריב איז אזוי חשוב, פארוואס איז עס געווען נאר א רשות?"
+      },
+      "answer": {
+        "en": "Because it is the tefillah of Yaakov and belongs to a higher world; not everyone is up to it.",
+        "yi": "ווייל עס איז די תפילה פון יעקב און געהערט צו א העכערער וועלט; נישט יעדער איז דערצו ראוי."
+      },
+      "questionSegs": [114, 118, 119],
+      "answerSegs": [122, 130, 131, 134],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why is the morning called tzafra and the night ramsha?",
+        "yi": "פארוואס הייסט דער פרימארגן צפרא און די נאכט רמשא?"
+      },
+      "answer": {
+        "en": "Because the birds sing in the morning and the creeping creatures sing at night.",
+        "yi": "ווייל די פייגל זינגען אינדערפרי און די רמשים זינגען ביי נאכט."
+      },
+      "questionSegs": [345, 346, 348],
+      "answerSegs": [353, 355, 356, 357],
+      "confidence": 0.85
+    },
+    {
+      "question": {
+        "en": "How can a piece of bread keep the neshamah in the body?",
+        "yi": "ווי אזוי קען א שטיקל ברויט האלטן די נשמה אינעם גוף?"
+      },
+      "answer": {
+        "en": "Bread holds kedushah, three times the Name Havayah, and that is the food of the neshamah.",
+        "yi": "אין ברויט איז דא קדושה, דריי מאל שם הוי\"ה, און דאס איז די שפייז פון דער נשמה."
+      },
+      "questionSegs": [614, 618],
+      "answerSegs": [619, 620, 621],
+      "confidence": 0.85
+    },
+    {
+      "question": {
+        "en": "How can we say 'this is the bread our forefathers ate' when that bread was eaten long ago?",
+        "yi": "ווי אזוי קען מען זאגן \"דאס איז דאס ברויט וואס די אבות האבן געגעסן\", אז יענץ ברויט איז שוין לאנג אויפגעגעסן?"
+      },
+      "answer": {
+        "en": "Because what they ate was not only the physical matzah but the geulah within it, and we eat that same matzah.",
+        "yi": "ווייל זיי האבן נישט געגעסן נאר די גשמיות'דיגע מצה, נאר די גאולה וואס אין איר, און די זעלבע מצה עסן מיר."
+      },
+      "questionSegs": [729, 732, 733],
+      "answerSegs": [744, 746, 749, 750, 757],
+      "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says a person should renew himself in Nisan and become a new person, in simcha, davening, kavanah and chesed, not the same as yesterday.",
+        "yi": "דער משגיח זאגט אז א מענטש דארף זיך באנייען אין ניסן און ווערן א נייער מענטש, אין שמחה, אין דאווענען, אין כוונה און אין חסד, נישט ווי נעכטן."
+      },
+      "evidence": { "segs": [395, 398, 400, 402, 403, 405], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He says a person should not be the exception while all of creation renews itself, but join the song of the briah.",
+        "yi": "ער זאגט אז א מענטש זאל נישט זיין דער אויסנאם בשעת די גאנצע בריאה באנייט זיך, נאר זיך אנשליסן אין דעם געזאנג פון דער בריאה."
+      },
+      "evidence": { "segs": [391, 392, 411, 469, 470], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "pesach as becoming servants of Hashem",
+    "chodesh Nisan",
+    "renewal in Nisan",
+    "Rosh Chodesh and Melaveh Malkah",
+    "malchus beis Dovid",
+    "maariv and Tikkun Chatzos",
+    "creation in Nisan",
+    "matzah and lechem in gematria",
+    "the Seder night",
+    "ha lachma anya"
+  ],
+  "concepts": [
+    { "he": "עבד השם", "heardAs": ["Ebed Hashem", "Neved", "avodam"] },
+    { "he": "רבונו של עולם", "heardAs": ["rabbani shaleelam", "Rabbeinu Shaleelam", "Ravai Neshelayim", "Rabbi Neshavira"] },
+    { "he": "ימי המילואים", "heardAs": ["Shiva Simei HaMiluim", "miluim"] },
+    { "he": "מלוה מלכה", "heardAs": ["Malav HaMalkeh", "Malava Malka"] },
+    { "he": "קידוש לבנה", "heardAs": ["Kiddush Levana", "Lavana", "Lovana"] },
+    { "he": "תיקון חצות", "heardAs": ["Check in the Chatsaïs", "tzikun of Chatzais"] },
+    { "he": "רשות", "heardAs": ["Roshus", "Rashiach"] },
+    { "he": "התחדשות", "heardAs": ["Shachas", "schachas", "Hizhachis", "nishadesh"] },
+    { "he": "נעשה אדם", "heardAs": ["Nasa Udham", "Nein Sa'adam", "naas ha'odam"] },
+    { "he": "צפרא", "heardAs": ["Tafra", "tzafran"] },
+    { "he": "רמשא", "heardAs": ["Ramshah", "ramsha", "Ramassan"] },
+    { "he": "עשרה מאמרות", "heardAs": ["Aserah Mamaris"] },
+    { "he": "עשרת הדברות", "heardAs": ["Aserah Sadebaris"] },
+    { "he": "שם הוי\"ה", "heardAs": ["Hashem Havayah", "Sheim Havaya", "Shem Avaya", "shame of vayah"] },
+    { "he": "מילוי", "heardAs": ["mili", "fill it out"] },
+    { "he": "גאולה", "heardAs": ["Geula", "ge'ula"] }
+  ],
+  "people": [
+    { "name": "Pharaoh", "heardAs": ["Paray"] },
+    { "name": "Dovid HaMelech", "heardAs": ["David", "David Malkan"] },
+    { "name": "Yaakov Avinu", "heardAs": ["Yankay", "Yanket"] },
+    { "name": "Avraham Avinu", "heardAs": ["Abraham"] },
+    { "name": "Yitzchak Avinu", "heardAs": ["Yitzchak"] },
+    { "name": "Yeravam", "heardAs": ["Yerazam"] },
+    { "name": "Eliyahu HaNavi", "heardAs": ["Eliyahu Hanavi"] },
+    { "name": "the Shelah HaKadosh", "heardAs": ["Yishala HaKadosh"] },
+    { "name": "the Avnei Nezer of Sochatchov", "heardAs": ["Avnei Meza of the Fakhet Shadr"] },
+    { "name": "Rabbi Eliezer", "heardAs": ["Rabbi Eliezer"] },
+    { "name": "Rabbi Yehoshua", "heardAs": ["Rabbi Yeshua", "Jesus"] }
+  ],
+  "asrNotes": "English ASR is fair for the English speech but Hebrew terms and quotations are heavily garbled. Several short stretches are fragmentary: the explanation of the moon and Malchus Beis Dovid (segs 73-81), the 'first lady' illustration (segs 449-456), the passuk at seg 622, and parts of the gematria count (segs 648-664). The authors heard as 'Maral', 'Kaddish Yerim' and 'rabbi ha-god', and the tzaddik in the closing story (seg 766), could not be identified with confidence. Seg 42 begins with a gap of about 20 seconds."
+}

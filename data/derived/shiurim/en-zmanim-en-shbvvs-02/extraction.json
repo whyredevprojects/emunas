@@ -1,0 +1,597 @@
+{
+  "shiurId": "en-zmanim-en-shbvvs-02",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that the count of the Jews before Shavuos is the adorning of the kallah, Klal Yisrael, whose 600,000 souls are the 600,000 letters of the Torah, each with his own name and shlichus.",
+      "yi": "דער משגיח ערקלערט אז דאס ציילן די אידן פאר שבועות איז דאס באצירן די כלה, כלל ישראל, וועמענס שש מאות אלף נשמות זענען די שש מאות אלף אותיות פון דער תורה, יעדער מיט זיין אייגענעם נאמען און שליחות."
+    },
+    "abstract": {
+      "en": "The Rav opens with a question: why did the census of Bamidbar need Moshe, Aharon and the nesi'im, when a modern census uses whoever has nothing else to do? He then builds the picture of Shavuos as a wedding: Pesach is erusin, Shavuos nisuin; Hashem is the chassan and Klal Yisrael the kallah, and in a second phase Klal Yisrael is the chassan and the Torah the kallah. The 24 ornaments of a kallah are the 24 sefarim of Tanach, read on Shavuos night. The 600,000 Jews are the 600,000 letters of the Torah, which can only be counted by knowing what each letter holds, as the aleph holds the Shem Havaya. The Shabbos before Shavuos is the aufruf, when the kallah is counted. Counting 'by names' means each Jew has his own shlichus, which only great tzaddikim can see. He ends with how to keep Shavuos itself: not to sleep through the davening, which is the chuppah.",
+      "yi": "דער משגיח עפנט מיט א קשיא: פארוואס האט מען געדארפט משה, אהרן און די נשיאים כדי צו ציילן די אידן אין פרשת במדבר, ווען ביי א היינטיגן צענזוס שיקט מען ארום מענטשן וואס האבן נישט וואס צו טון? דערנאך שטעלט ער אוועק שבועות אלס א חתונה: פסח איז אירוסין, שבועות איז נישואין; דער אייבערשטער איז דער חתן און כנסת ישראל די כלה, און אין א צווייטן שטאפל איז כנסת ישראל דער חתן און די תורה די כלה. די כ\"ד קישוטין פון א כלה זענען די כ\"ד ספרים פון תנ\"ך, וואס מ'זאגט שבועות ביינאכט. די שש מאות אלף אידן זענען די שש מאות אלף אותיות פון דער תורה, וואס מ'קען נאר ציילן ווען מ'ווייסט וואס יעדער אות האט אין זיך, אזוי ווי דער אל\"ף האט אין זיך דעם שם הוי\"ה. דער שבת פאר שבועות איז דער אויפרוף, ווען מ'ציילט די כלה. \"במספר שמות\" מיינט אז יעדער איד האט זיין אייגענע שליחות, וואס נאר גרויסע צדיקים קענען זען. צום סוף רעדט ער וויאזוי צו האלטן שבועות אליין: נישט צו פארשלאפן דאס דאווענען, וואס איז די חופה."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Shavuos is the wedding of Hashem and Klal Yisrael, and also of Klal Yisrael and the Torah; Pesach is the erusin and Shavuos the nisuin.",
+          "yi": "שבועות איז די חתונה פון דעם אייבערשטן מיט כנסת ישראל, און אויך פון כנסת ישראל מיט דער תורה; פסח איז די אירוסין און שבועות די נישואין."
+        },
+        "evidence": { "segs": [28, 37, 40, 46, 47, 49], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The 24 ornaments of the kallah are the 24 sefarim of Tanach, which is why Tanach is said on Shavuos night in the Tikkun Leil Shavuos.",
+          "yi": "די כ\"ד קישוטין פון דער כלה זענען די כ\"ד ספרים פון תנ\"ך, און דערפאר זאגט מען תנ\"ך שבועות ביינאכט אינעם תיקון ליל שבועות."
+        },
+        "evidence": { "segs": [72, 74, 75, 181, 184], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The 600,000 Jews correspond to the 600,000 letters of the Torah, and each letter is made of further letters, so counting them takes a special knowledge.",
+          "yi": "די שש מאות אלף אידן זענען קעגן די שש מאות אלף אותיות פון דער תורה, און יעדער אות באשטייט פון נאך אותיות, ממילא דארף מען א ספעציעלע ידיעה כדי זיי צו ציילן."
+        },
+        "evidence": { "segs": [221, 226, 233, 283, 294, 448], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "'By the number of names' means a collective made of individuals: each Jew has his own name, which is his own shlichus in the world.",
+          "yi": "\"במספר שמות\" מיינט א כלל וואס באשטייט פון יחידים: יעדער איד האט זיין אייגענעם נאמען, וואס איז זיין אייגענע שליחות אויף דער וועלט."
+        },
+        "evidence": { "segs": [574, 578, 585, 607, 626, 652], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The chuppah of Shavuos is the davening, especially the Kedushah of Musaf, so staying up at night and sleeping through the davening misses the purpose.",
+          "yi": "די חופה פון שבועות איז דאס דאווענען, בפרט די קדושה פון מוסף, ממילא אז מ'בלייבט אויף ביינאכט און מ'פארשלאפט דאס דאווענען, פארפעלט מען דעם תכלית."
+        },
+        "evidence": { "segs": [1143, 1145, 1150, 1198, 1199], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-zman-sefirah-shevuos-03-02-shevuos-e",
+      "startSeg": 0,
+      "endSeg": 93,
+      "title": { "en": "The census question and Shavuos as a wedding", "yi": "די קשיא פונעם ציילן און שבועות אלס א חתונה" },
+      "summary": {
+        "en": "The Rav asks why counting the Jews needed Moshe, Aharon and the nesi'im, when the United States census hires people who have nothing else to do. He then describes Shavuos as a wedding, Pesach as erusin and Shavuos as nisuin, with Hashem and Klal Yisrael, and then Klal Yisrael and the Torah, as chassan and kallah, and explains the Tikkun Leil Shavuos as preparing the kallah's 24 ornaments.",
+        "yi": "דער משגיח פרעגט פארוואס מ'האט געדארפט משה, אהרן און די נשיאים כדי צו ציילן די אידן, ווען דער אמעריקאנער צענזוס נעמט מענטשן וואס האבן נישט וואס צו טון. דערנאך שילדערט ער שבועות אלס א חתונה, פסח איז אירוסין און שבועות נישואין, מיט דעם אייבערשטן און כנסת ישראל, און דערנאך כנסת ישראל און די תורה, אלס חתן וכלה, און ער ערקלערט דעם תיקון ליל שבועות אלס צוגרייטן די כ\"ד קישוטין פון דער כלה."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-sefirah-shevuos-03-02-shevuos-e",
+      "startSeg": 94,
+      "endSeg": 215,
+      "title": { "en": "The kallah's ornaments and the Name of Adnus", "yi": "די קישוטין פון דער כלה און דער שם אדנות" },
+      "summary": {
+        "en": "The Rav explains that Hashem as He dwells on Klal Yisrael, the kallah, is the Name of Adnus, while the Shem Havaya is beyond us; amen joins the two (26 and 65 make 91). He brings the Midrash that Hashem adorned Chava with 24 ornaments and the teaching that a talmid chacham must know the 24 sefarim, and notes that in the Tikkun Leil Shavuos each sefer is followed by one of the 24 arrangements of the Name of Adnus.",
+        "yi": "דער משגיח ערקלערט אז דער אייבערשטער ווי ער רוט אויף כלל ישראל, די כלה, איז דער שם אדנות, בשעת דער שם הוי\"ה איז העכער פון אונז; אמן פארבינדט ביידע (כ\"ו און ס\"ה איז צ\"א). ער ברענגט דעם מדרש אז דער אייבערשטער האט באצירט חוה מיט כ\"ד קישוטין, און אז א תלמיד חכם דארף קענען די כ\"ד ספרים, און ער ווייזט אן אז אינעם תיקון ליל שבועות שטייט נאך יעדן ספר איינע פון די כ\"ד צירופים פונעם שם אדנות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-sefirah-shevuos-03-02-shevuos-e",
+      "startSeg": 216,
+      "endSeg": 334,
+      "title": { "en": "600,000 Jews and 600,000 letters", "yi": "שש מאות אלף אידן און שש מאות אלף אותיות" },
+      "summary": {
+        "en": "Recalling last week's shiur, the Rav says the 600,000 Jews are the 600,000 letters of the Torah. He brings the Gemara in Kiddushin that the early sages were called soferim because they counted the letters, and asks why a plain count finds far fewer; the answer is that each letter contains other letters, as the aleph is made of two yuds and a vav, the gematria of the Shem Havaya.",
+        "yi": "דער משגיח דערמאנט פונעם פריערדיגן שיעור אז די שש מאות אלף אידן זענען די שש מאות אלף אותיות פון דער תורה. ער ברענגט די גמרא אין קידושין אז די ראשונים האבן געהייסן סופרים ווייל זיי האבן געציילט די אותיות, און ער פרעגט פארוואס א פשוטע צאל געפינט ווייניגער; דער תירוץ איז אז יעדער אות האט אין זיך אנדערע אותיות, אזוי ווי דער אל\"ף באשטייט פון צוויי יודי\"ן און א וא\"ו, וואס איז בגימטריא דער שם הוי\"ה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-sefirah-shevuos-03-02-shevuos-e",
+      "startSeg": 335,
+      "endSeg": 431,
+      "title": { "en": "Tzelem Elokim on the human face", "yi": "דער צלם אלקים אויפן פנים פון א מענטש" },
+      "summary": {
+        "en": "The Rav explains tzelem Elokim as the human structure of 248 limbs matching the 248 positive mitzvos. On a Jew's face one sees the Shem Havaya as before the sin: the two eyes are the two yuds and the nose the vav, and the mouth beneath is a patach, chochmah, as in 'piha paschah bechochmah'; a sin takes this away.",
+        "yi": "דער משגיח ערקלערט צלם אלקים אלס דער בנין פון א מענטש מיט רמ\"ח איברים קעגן די רמ\"ח מצוות עשה. אויפן פנים פון א איד זעט מען דעם שם הוי\"ה ווי פאר דעם חטא: די צוויי אויגן זענען די צוויי יודי\"ן און די נאז דער וא\"ו, און דאס מויל אונטן איז א פתח, חכמה, ווי \"פיה פתחה בחכמה\"; א עבירה נעמט דאס אוועק."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-sefirah-shevuos-03-02-shevuos-e",
+      "startSeg": 432,
+      "endSeg": 527,
+      "title": { "en": "Aliyos, Atzeres and the aufruf", "yi": "עליות, עצרת און דער אויפרוף" },
+      "summary": {
+        "en": "The Rav says that counted properly there are 600,000 letters, and an aliyah is being called to the letters of the Sefer Torah. Shavuos and Shemini Atzeres are both called Atzeres and are both times of contact with the Torah. The Shabbos before Shavuos is the aufruf, when the Jews, the letters, are counted and the kallah is adorned.",
+        "yi": "דער משגיח זאגט אז ווען מ'ציילט ריכטיג זענען דא שש מאות אלף אותיות, און אן עליה מיינט אז מ'רופט דעם מענטש צו די אותיות פון ספר תורה. שבועות און שמיני עצרת הייסן ביידע עצרת און זענען ביידע צייטן פון א שייכות צו דער תורה. דער שבת פאר שבועות איז דער אויפרוף, ווען מ'ציילט די אידן, די אותיות, און מ'באצירט די כלה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-sefirah-shevuos-03-02-shevuos-e",
+      "startSeg": 528,
+      "endSeg": 652,
+      "title": { "en": "The kallah's eyes and counting by names", "yi": "די אויגן פון דער כלה און ציילן במספר שמות" },
+      "summary": {
+        "en": "The Rav brings the Gemara that a kallah whose eyes are beautiful needs no further checking, and explains the eyes as the Sanhedrin and nesi'im, so before the count Moshe, Aharon and the nesi'im are shown. He then explains 'bemispar shemos': mispar is a collective, shemos is individuality, and from Rashi in Vayishlach a person's name is his shlichus; people are not counted like a farmer's sheep.",
+        "yi": "דער משגיח ברענגט די גמרא אז א כלה וועמענס אויגן זענען שיין דארף מען ווייטער נישט בודק זיין, און ער טייטשט די אויגן אויף די סנהדרין און די נשיאים, ממילא ווייזט מען פאר דעם ציילן משה, אהרן און די נשיאים. דערנאך ערקלערט ער \"במספר שמות\": מספר איז א כלל, שמות איז יחידות, און פון רש\"י אין וישלח איז דער נאמען פון א מענטש זיין שליחות; מענטשן ציילט מען נישט ווי א פויער ציילט זיינע שאף."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-sefirah-shevuos-03-02-shevuos-e",
+      "startSeg": 653,
+      "endSeg": 836,
+      "title": { "en": "Each Jew's own shlichus, and who can count", "yi": "יעדן אידנס אייגענע שליחות, און ווער עס קען ציילן" },
+      "summary": {
+        "en": "The Rav contrasts the Nazis' numbering of Jews, meant to strip them of individuality, with Hashem's count: each Jew is a letter of the Torah with a shlichus no one else has, like the stars that Hashem calls each by name. Counting Jews this way takes great tzaddikim; he brings the Ramban that coming before Moshe to be counted brought a person merit, and explains the kvitel and the tzaddik who sees a person's purpose and earlier gilgulim, which answers the opening question.",
+        "yi": "דער משגיח שטעלט אנטקעגן די נאציס וואס האבן געגעבן די אידן נומערן כדי צו פארווישן זייער יחידות, מיט דעם ציילן פונעם אייבערשטן: יעדער איד איז אן אות אין דער תורה מיט א שליחות וואס קיינער אנדערש האט נישט, אזוי ווי די שטערן וואס דער אייבערשטער רופט יעדן ביים נאמען. אזוי צו ציילן אידן דארף מען גרויסע צדיקים; ער ברענגט דעם רמב\"ן אז קומען צו משה רבינו געציילט ווערן האט געבראכט א זכות, און ער ערקלערט דעם קוויטל און דעם צדיק וואס זעט דעם מענטשנס תכלית און זיינע פריערדיגע גלגולים, און דערמיט איז די ערשטע קשיא פארענטפערט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-sefirah-shevuos-03-02-shevuos-e",
+      "startSeg": 837,
+      "endSeg": 949,
+      "title": { "en": "Why Shevet Levi was not counted", "yi": "פארוואס שבט לוי איז נישט געציילט געווארן" },
+      "summary": {
+        "en": "The Rav places Shevet Levi in the middle of the camps, corresponding to Vayikra, the middle sefer, and asks how this fits with Levi not being counted. He explains that the extra soul of the bechor was given to the Levi'im, and that Levi is the root of Klal Yisrael, the 22 letters, which in completeness become 22,000; this reconciles the Gemara's 600,000 malachim at Matan Torah with the Midrash's 22,000.",
+        "yi": "דער משגיח שטעלט שבט לוי אין מיטן פון די מחנות, קעגן ספר ויקרא, דער מיטלסטער ספר, און ער פרעגט ווי אזוי דאס גייט צוזאמען מיט דעם וואס שבט לוי איז נישט געציילט געווארן. ער ערקלערט אז די נשמה יתירה פונעם בכור איז איבערגעגעבן געווארן צו די לוים, און אז שבט לוי איז דער שורש פון כלל ישראל, די כ\"ב אותיות, וואס אין שלימות ווערן כ\"ב אלף; דערמיט איז מיושב די גמרא פון שש מאות אלף מלאכים ביי מתן תורה מיטן מדרש פון כ\"ב אלף."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-sefirah-shevuos-03-02-shevuos-e",
+      "startSeg": 950,
+      "endSeg": 1056,
+      "title": { "en": "Rabbeinu Bechaye: the degalim and the malachim", "yi": "רבינו בחיי: די דגלים און די מלאכים" },
+      "summary": {
+        "en": "The Rav brings Rabbeinu Bechaye, who shows that the four degalim correspond to the malachim of the Merkavah that Yechezkel saw, the four chief malachim Michael, Gavriel, Rephael and Uriel. Each degel has three shevatim, and the name of the middle nasi ends with 'el' like the name of a malach; the camp of Israel below is aimed at the camp of the malachim above.",
+        "yi": "דער משגיח ברענגט דעם רבינו בחיי, וואס ווייזט אן אז די פיר דגלים זענען קעגן די מלאכים פון דער מרכבה וואס יחזקאל האט געזען, די פיר הויפט מלאכים מיכאל, גבריאל, רפאל און אוריאל. יעדער דגל האט דריי שבטים, און דער נאמען פונעם מיטלסטן נשיא ענדיגט זיך מיט \"אל\" אזוי ווי דער נאמען פון א מלאך; די מחנה ישראל דא אונטן איז מכוון קעגן די מחנה פון די מלאכים אויבן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-sefirah-shevuos-03-02-shevuos-e",
+      "startSeg": 1057,
+      "endSeg": 1147,
+      "title": { "en": "Shavuos night and the chuppah at Musaf", "yi": "שבועות ביינאכט און די חופה ביי מוסף" },
+      "summary": {
+        "en": "The Rav sums up: the Shabbos before Shavuos the kallah is counted and her beauty shown; on Shavuos night each sefer of Tanach completed forges another golden ornament. Each year there is a new Torah, and when it is read on Shavuos a person should feel he is receiving the whole year's Torah; the chuppah itself is at Musaf, especially the Kedushah of Keser.",
+        "yi": "דער משגיח פאסט צוזאמען: דעם שבת פאר שבועות ציילט מען די כלה און מ'ווייזט ארויס איר שיינקייט; שבועות ביינאכט, מיט יעדן ספר פון תנ\"ך וואס מ'ענדיגט, שמידט מען נאך א גאלדענעם קישוט. יעדעס יאר איז דא א נייע תורה, און ווען מ'ליינט שבועות זאל א מענטש פילן אז ער באקומט די גאנצע תורה פונעם יאר; די חופה אליין איז ביי מוסף, בפרט ביי דער קדושה פון כתר."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-sefirah-shevuos-03-02-shevuos-e",
+      "startSeg": 1148,
+      "endSeg": 1323,
+      "title": { "en": "Not sleeping through the chuppah", "yi": "נישט פארשלאפן די חופה" },
+      "summary": {
+        "en": "The Rav warns against staying up all night and then sleeping through the holy Shavuos davening, tells of a Rebbe whose Ahavah Rabbah took two hours, and recommends that weaker people sleep three or four hours and then daven properly. He compares it to a chassan who skips the ring, and ends with the exchange at Sinai, when the upper worlds came down and Moshe went up, so on Shavuos one walks in Shamayim.",
+        "yi": "דער משגיח ווארנט נישט צו בלייבן אויף א גאנצע נאכט און דערנאך פארשלאפן דאס הייליגע דאווענען פון שבועות, ער דערציילט פון א רבי וועמענס אהבה רבה האט געדויערט צוויי שעה, און ער רעקאמענדירט אז שוואכערע מענטשן זאלן שלאפן דריי פיר שעה און דערנאך דאווענען ווי עס דארף צו זיין. ער גלייכט עס צו א חתן וואס לאזט אויס דעם רינג, און ענדיגט מיטן אויסטויש ביי הר סיני, ווען די עליונים זענען אראפגעקומען און משה איז ארויף, ממילא גייט מען שבועות אין שמים."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "Suvifrash Kardaz Bnei Yisroel ... Ataviyahari, and yu anaren, and yitchem yiyu ishish vamat",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 1:2-4",
+      "sefariaRef": "Numbers 1:2-4",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [0, 1, 2], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "The Makaya is the Zayah. In the Zayah it says",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [70, 71, 72], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "The Gemara says that just like Kala has 24 ornaments",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [75, 79, 176, 179, 180], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the whole Shira Shirem is based on this",
+      "work": "Shir HaShirim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [96], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "it isn't Rasha ... it's a medrash",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [161, 163, 167, 172], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Chaya Vayiviyeha",
+      "work": "Bereishis",
+      "ref": "Bereishis 2:22",
+      "sefariaRef": "Genesis 2:22",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [168, 169], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the fikach nikrali reshainim seifrim it's a Gemara in Kedushin",
+      "work": "Gemara Kiddushin",
+      "ref": "Kiddushin 30a",
+      "sefariaRef": "Kiddushin 30a",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [237, 238, 239, 241], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "in the Zayad it says that before the ... the two were both on top",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [320, 325, 327, 329], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "b'sha from b'tzalem alaykim",
+      "work": "Bereishis",
+      "ref": "Bereishis 1:27",
+      "sefariaRef": "Genesis 1:27",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [337, 338], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "pi ha pascha b'chachma",
+      "work": "Mishlei",
+      "ref": "Mishlei 31:26",
+      "sefariaRef": "Proverbs 31:26",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [422, 429], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Kala she'eineha yafais en karguf atzricha vedika",
+      "work": "Gemara Taanis",
+      "ref": "Taanis 24a",
+      "sefariaRef": "Taanit 24a",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [528, 529, 530, 531], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Enei HaYafes Reiches B'Chashban it says in Shir Hashirim",
+      "work": "Shir HaShirim",
+      "ref": "Shir HaShirim 7:5",
+      "sefariaRef": "Song of Songs 7:5",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [554, 555], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Mizpah Shemais",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 1:2",
+      "sefariaRef": "Numbers 1:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [568, 571, 574], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "like Rasha says in Parshish Vayishlach when Yankav asked the Malach Lamazatish",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 32:30",
+      "sefariaRef": "Rashi on Genesis 32:30",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [611, 613, 617, 622, 624], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "so ha'mayitzi b'mispa tzva'am l'chulam b'shem yekhe",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 40:26",
+      "sefariaRef": "Isaiah 40:26",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [708, 709, 710, 722], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the Ramban says in the beginning of this week's Eidre",
+      "work": "Ramban",
+      "ref": "Ramban on Bamidbar 1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [759, 763, 764, 765, 767], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Albu Chveni brings on from the Kabbalist",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [811, 812, 813, 816, 818], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "in the Gemara it says that by Maden Teire the Rabban Yisraelim came down with 600,000 Malachim",
+      "work": "Gemara",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [930, 931, 933, 934], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "In the Madrash it says that he came down with 22,000 malachim, Alfe Shinnah",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [935], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "so Rabbeinu Bechaya points out",
+      "work": "Rabbeinu Bechaye",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [950, 955, 966, 967, 968], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the Merkava that Yechaskul saw",
+      "work": "Yechezkel",
+      "ref": "Yechezkel 1",
+      "sefariaRef": "Ezekiel 1",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [992, 994], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "HaShemayim Shemayim Rad Hashem V'yayalets Nasan Levinay Adam",
+      "work": "Tehillim",
+      "ref": "Tehillim 115:16",
+      "sefariaRef": "Psalms 115:16",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [1275, 1276, 1277], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "V'yayret HaShem HaHar Sinai",
+      "work": "Shemos",
+      "ref": "Shemos 19:20",
+      "sefariaRef": "Exodus 19:20",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [1288, 1291], "confidence": 0.8 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav reads the count of Bamidbar, on the Shabbos before Shavuos, as the aufruf of the kallah: counting the Jews is counting the letters of the Torah, and that is adorning the kallah before the wedding.",
+        "yi": "דער משגיח טייטשט דאס ציילן אין במדבר, דעם שבת פאר שבועות, אלס דער אויפרוף פון דער כלה: ציילן די אידן איז ציילן די אותיות פון דער תורה, און דאס איז באצירן די כלה פאר דער חתונה."
+      },
+      "evidence": { "segs": [505, 507, 512, 516, 517, 519], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Amen joins the written Name, Havaya (26), with the spoken Name, Adnus (65), making 91, because we perceive Hashem only through His Shechinah dwelling on Klal Yisrael, the kallah.",
+        "yi": "אמן פארבינדט דעם שם הוי\"ה וואס מ'שרייבט (כ\"ו) מיטן שם אדנות וואס מ'זאגט (ס\"ה), און צוזאמען איז צ\"א, ווייל מיר דערקענען דעם אייבערשטן נאר דורך זיין שכינה וואס רוט אויף כלל ישראל, די כלה."
+      },
+      "evidence": { "segs": [101, 104, 113, 124, 125], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "A Jew's face carries the aleph: the two eyes are its two yuds and the nose its vav, together the Shem Havaya, and the mouth below is the patach of chochmah.",
+        "yi": "דאס פנים פון א איד טראגט דעם אל\"ף: די צוויי אויגן זענען די צוויי יודי\"ן און די נאז דער וא\"ו, צוזאמען דער שם הוי\"ה, און דאס מויל אונטן איז דער פתח פון חכמה."
+      },
+      "evidence": { "segs": [379, 380, 386, 425, 428, 430], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "Numbers erase individuality: the Nazis tattooed numbers on Jews to make them like branded animals, while Hashem counts 'by names', each Jew a distinct shlichus with no duplicates.",
+        "yi": "נומערן מעקן אויס די יחידות: די נאציס האבן אויסגעטאטוירט נומערן אויף אידן כדי זיי צו מאכן ווי געצייכנטע בהמות, בשעת דער אייבערשטער ציילט \"במספר שמות\", יעדער איד א באזונדערע שליחות אן קיין דאפלטע."
+      },
+      "evidence": { "segs": [658, 660, 663, 664, 695, 697], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "Shevet Levi is the root of the 600,000 letters, the 22 letters of the alef-beis, which is why the Levi'im numbered 22,000, and this resolves 600,000 versus 22,000 malachim at Sinai.",
+        "yi": "שבט לוי איז דער שורש פון די שש מאות אלף אותיות, די כ\"ב אותיות פונעם אלף בית, דערפאר זענען די לוים געווען כ\"ב אלף, און דערמיט איז מיושב שש מאות אלף קעגן כ\"ב אלף מלאכים ביי הר סיני."
+      },
+      "evidence": { "segs": [896, 898, 904, 912, 916, 937], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Staying up Shavuos night and sleeping through the davening is like a chassan who pays for everything but skips the ring: without it there is no wedding.",
+        "yi": "בלייבן אויף שבועות ביינאכט און פארשלאפן דאס דאווענען איז ווי א חתן וואס באצאלט פאר אלעס אבער לאזט אויס דעם רינג: אן דעם איז נישטא קיין חתונה."
+      },
+      "evidence": { "segs": [1252, 1256, 1258, 1262, 1265, 1266], "confidence": 0.8 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "A two-hour Ahavah Rabbah", "yi": "אן אהבה רבה פון צוויי שעה" },
+      "retelling": {
+        "en": "The Rav tells of a chassid who came on an errand from his Rebbe and was asked how Shavuos had been by his Rebbe. He answered that the Rebbe said Ahavah Rabbah and it took two hours.",
+        "yi": "דער משגיח דערציילט פון א חסיד וואס איז געקומען אין א שליחות פון זיין רבי'ן, און מ'האט אים געפרעגט וויאזוי שבועות איז געווען ביי זיין רבי'ן. ער האט געענטפערט אז דער רבי האט געזאגט אהבה רבה און עס האט געדויערט צוויי שעה."
+      },
+      "people": [],
+      "evidence": { "segs": [1159, 1161, 1162, 1164, 1166, 1167], "confidence": 0.65 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why did counting the Jews need Moshe, Aharon and the nesi'im, when a census can be done by anyone?",
+        "yi": "פארוואס האט מען געדארפט משה, אהרן און די נשיאים כדי צו ציילן די אידן, ווען א צענזוס קען יעדער איינער מאכן?"
+      },
+      "answer": {
+        "en": "Because each Jew is a letter of the Torah with his own shlichus, and counting him means knowing his essence and place, which only great tzaddikim can do.",
+        "yi": "ווייל יעדער איד איז אן אות אין דער תורה מיט זיין אייגענער שליחות, און אים ציילן מיינט וויסן זיין מהות און זיין פלאץ, וואס נאר גרויסע צדיקים קענען."
+      },
+      "questionSegs": [15, 19, 22, 24, 27],
+      "answerSegs": [686, 688, 692, 729, 831, 834],
+      "confidence": 0.85
+    },
+    {
+      "question": {
+        "en": "How can the Torah have 600,000 letters, when counting them yields not even half?",
+        "yi": "וויאזוי קען די תורה האבן שש מאות אלף אותיות, ווען מ'ציילט זיי געפינט מען נישט אפילו א העלפט?"
+      },
+      "answer": {
+        "en": "Each letter is made of other letters, as the aleph is two yuds and a vav, so one must know how to count them.",
+        "yi": "יעדער אות באשטייט פון אנדערע אותיות, אזוי ווי דער אל\"ף איז צוויי יודי\"ן און א וא\"ו, ממילא דארף מען וויסן וויאזוי זיי צו ציילן."
+      },
+      "questionSegs": [271, 275, 276, 277],
+      "answerSegs": [283, 284, 303, 309, 444, 448],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "If Vayikra, the middle sefer, corresponds to Shevet Levi, how does that fit with Levi not being counted?",
+        "yi": "אויב ויקרא, דער מיטלסטער ספר, איז קעגן שבט לוי, ווי פאסט דאס מיט דעם וואס שבט לוי איז נישט געציילט געווארן?"
+      },
+      "answer": {
+        "en": "The bechor's extra soul was given to the Levi'im, and it is that extra soul which is counted in Vayikra.",
+        "yi": "די נשמה יתירה פונעם בכור איז איבערגעגעבן געווארן צו די לוים, און יענע נשמה יתירה איז וואס ווערט געציילט אין ויקרא."
+      },
+      "questionSegs": [853, 858, 859, 863],
+      "answerSegs": [869, 879, 881, 885, 887],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "Did Hashem descend at Matan Torah with 600,000 malachim, as the Gemara says, or with 22,000, as the Midrash says?",
+        "yi": "איז דער אייבערשטער אראפגעקומען ביי מתן תורה מיט שש מאות אלף מלאכים, ווי די גמרא זאגט, אדער מיט כ\"ב אלף, ווי דער מדרש זאגט?"
+      },
+      "answer": {
+        "en": "There is no contradiction: the 600,000 are the letters, and the 22,000 are Shevet Levi, the root of the letters.",
+        "yi": "ס'איז נישטא קיין סתירה: די שש מאות אלף זענען די אותיות, און די כ\"ב אלף זענען שבט לוי, דער שורש פון די אותיות."
+      },
+      "questionSegs": [933, 934, 935],
+      "answerSegs": [936, 937],
+      "confidence": 0.85
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav recommends that people who are not strong sleep three or four hours on Shavuos night and then daven properly, rather than stay up and rush or sleep through the davening.",
+        "yi": "דער משגיח רעקאמענדירט אז מענטשן וואס זענען נישט שטארק זאלן שבועות ביינאכט שלאפן דריי פיר שעה און דערנאך דאווענען ווי עס דארף צו זיין, אנשטאט בלייבן אויף און דורכיאגן אדער פארשלאפן דאס דאווענען."
+      },
+      "evidence": { "segs": [1200, 1202, 1206, 1207, 1213, 1217], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that when the Torah is read on Shavuos, a person should feel and believe that he is now receiving the whole Torah he will learn all year.",
+        "yi": "דער משגיח זאגט אז ווען מ'ליינט די תורה שבועות, זאל א מענטש פילן און גלייבן אז ער באקומט יעצט די גאנצע תורה וואס ער וועט לערנען דאס גאנצע יאר."
+      },
+      "evidence": { "segs": [1129, 1130, 1134, 1135, 1137], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that walking to the mikvah on Shavuos morning, one should know he is walking in Shamayim, which comes down into this world on Shavuos.",
+        "yi": "דער משגיח זאגט אז ווען מ'גייט שבועות אינדערפרי צו דער מקוה, זאל מען וויסן אז מ'גייט אין שמים, וואס קומט שבועות אראפ אויף דער וועלט."
+      },
+      "evidence": { "segs": [1298, 1299, 1300, 1302, 1304], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "Shavuos as a wedding",
+    "census of Bamidbar",
+    "600,000 letters of the Torah",
+    "24 ornaments of the kallah",
+    "Tikkun Leil Shavuos",
+    "individual shlichus of each Jew",
+    "Shevet Levi and the bechorim",
+    "degalim and the Merkavah",
+    "Shavuos davening",
+    "tzelem Elokim"
+  ],
+  "concepts": [
+    { "he": "כנסת ישראל", "heardAs": ["Knessus Yisrael", "Knesset Yisrael", "Klav Yisrael"] },
+    { "he": "אירוסין", "heardAs": ["Areson"] },
+    { "he": "נישואין", "heardAs": ["Nesuin"] },
+    { "he": "כ\"ד קישוטין", "heardAs": ["24 Kishutim", "Kishoten", "kashutim"] },
+    { "he": "תיקון ליל שבועות", "heardAs": ["Tikkun Leoshviris", "Tichen Le'er Shavuos", "Tikna Lea Shavuos"] },
+    { "he": "שם הוי\"ה", "heardAs": ["shame havaya", "Shem Avaya", "Yudkei Vavkei"] },
+    { "he": "שם אדנות", "heardAs": ["shame of Adonis", "Alev Dalet and Nun Yud", "Shein Adonus"] },
+    { "he": "קרי וכתיב", "heardAs": ["the Kri and the Ksiv"] },
+    { "he": "צלם אלקים", "heardAs": ["b'tzalem alaykim", "Tzala Malikim"] },
+    { "he": "רמ\"ח איברים", "heardAs": ["ramach e'varim"] },
+    { "he": "סופרים", "heardAs": ["seifrim"] },
+    { "he": "עצרת", "heardAs": ["Atzeres"] },
+    { "he": "אויפרוף", "heardAs": ["oif of Shabbos", "Eifr of Shabbos", "Eifroth"] },
+    { "he": "במספר שמות", "heardAs": ["Mizpah Shemais"] },
+    { "he": "שליחות", "heardAs": ["shlichas", "shlichus"] },
+    { "he": "קוויטל", "heardAs": ["kvirtle"] },
+    { "he": "גלגולים", "heardAs": ["gulgulim", "Gugulim"] },
+    { "he": "נשמה יתירה", "heardAs": ["Nesham Yaseve", "Nesham Yaseirah"] },
+    { "he": "בכור", "heardAs": ["Bechayah"] },
+    { "he": "דגלים", "heardAs": ["Degalim", "Deagel"] },
+    { "he": "מרכבה", "heardAs": ["Merkava"] },
+    { "he": "קדושת כתר", "heardAs": ["Kedusha's Kessel", "Kedusha of Mursaf of Kesel"] },
+    { "he": "אהבה רבה", "heardAs": ["Ava Rabba"] },
+    { "he": "רבונו של עולם", "heardAs": ["Rabbeinu Shaleelam", "Rabbi Nishraim", "Rabban Yisraelim"] }
+  ],
+  "people": [
+    { "name": "Moshe Rabbeinu", "heardAs": ["Meish, Rabbeinu", "Meish Rabbeinu", "Masha"] },
+    { "name": "Aharon", "heardAs": ["Aaron", "anaren"] },
+    { "name": "Adam", "heardAs": ["Adam"] },
+    { "name": "Chava", "heardAs": ["Chava"] },
+    { "name": "Yaakov", "heardAs": ["Yankav"] },
+    { "name": "Rashi", "heardAs": ["Rasha"] },
+    { "name": "Ramban", "heardAs": ["Ramban"] },
+    { "name": "Rabbeinu Bechaye", "heardAs": ["Rabbeinu Bechaya", "Rabbeinu B'chaya", "Rabbeinu V'chaya"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["Vashem Tev"] },
+    { "name": "Yechezkel", "heardAs": ["Yechaskul"] },
+    { "name": "Avraham", "heardAs": ["Ram"] },
+    { "name": "Yitzchak", "heardAs": ["Yitzhak"] },
+    { "name": "David", "heardAs": ["David"] },
+    { "name": "Michael", "heardAs": ["Michael"] },
+    { "name": "Gavriel", "heardAs": ["Gavriel"] },
+    { "name": "Rephael", "heardAs": ["Raphael"] },
+    { "name": "Uriel", "heardAs": ["Eriyel"] }
+  ],
+  "asrNotes": "English ASR with heavily mangled Hebrew terms (Ribono shel Olam appears as 'Rabbeinu Shaleelam', 'Rabban Yisraelim' and similar), but the line of thought is clear. Many short fragmentary segments; the names of the nesi'im in the degalim discussion (about 43:20-44:20), the source named at 35:27 ('Albu Chveni'), the name of the Rebbe in the Ahavah Rabbah story (48:25-48:41) and parts of the Ahavah Rabbah plea could not be recovered. Two flagged [NOISE?] segments (1192-1193) are repeated fragments and are ignored."
+}

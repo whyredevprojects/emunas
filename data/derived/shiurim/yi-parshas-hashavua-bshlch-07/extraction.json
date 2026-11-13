@@ -1,0 +1,632 @@
+{
+  "shiurId": "yi-parshas-hashavua-bshlch-07",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav calls Parshas Beshalach a mikveh of emunah that a Jew must immerse himself in, and traces emunah through the splitting of the sea, the mann, the jar of mann, Amalek and the Shirah.",
+      "yi": "דער משגיח רופט פרשת בשלח א מקוה פון אמונה וואס א איד דארף זיך טובל זיין אין איר, און ער גייט דורך די אמונה ביי קריאת ים סוף, ביים מן, ביי דער צנצנת המן, ביי עמלק און ביי דער שירה."
+    },
+    "abstract": {
+      "en": "The Rav opens by calling the parsha a mikveh of emunah in which one must immerse oneself. It begins with emunah: the Jews followed Moshe toward the sea without questioning, and the sea split only once they walked into the water. The mann taught them to trust Hashem day by day, the way people trust the sunrise only out of habit. From there he turns to thanking Hashem: Dovid HaMelech thanked Him for every breath, while we, lacking emunah, notice only large miracles. The jar of mann showed later generations that Hashem provides for those who learn Torah. Amalek is the power of doubt. A person with emunah sings, which is why this is the parsha of Shirah. After a story about dancing at Az Yashir, he lists the Sefer Charedim's six free segulos for atonement, calls Krias Yam Suf the root of all miracles, and closes with the mesiras nefesh of the Lubavitcher Rebbe whose yahrzeit falls that night.",
+      "yi": "דער משגיח עפנט אז די פרשה איז א מקוה פון אמונה, און מ'דארף זיך טובל זיין אין איר. זי הייבט זיך אן מיט אמונה: אידן זענען נאכגעגאנגען משה'ן צום ים אן קשיות, און דער ים האט זיך ערשט געשפאלטן ווען זיי זענען אריין אין וואסער. דער מן האט זיי געלערנט צו פארלאזן זיך אויפן אייבערשטן פון טאג צו טאג, ווי מענטשן פארלאזן זיך אז די זון וועט אויפגיין נאר פון געוואוינהייט. דערנאך רעדט ער וועגן דאנקען: דוד המלך האט געדאנקט פאר יעדן אטעם, און מיר, וואס פעלט אונז אמונה, באמערקן נאר גרויסע ניסים. די צנצנת המן האט געוויזן אז דער אייבערשטער גיט פרנסה פאר די וואס לערנען תורה. עמלק איז דער כח פון ספק. ווער ס'האט אמונה זינגט, דערפאר איז דאס פרשת שירה. נאך א מעשה פון טאנצן ביי אז ישיר, ברענגט ער די זעקס סגולות פונעם ספר חרדים וואס קאסטן נישט קיין געלט, זאגט אז קריאת ים סוף איז דער שורש פון אלע ניסים, און ענדיגט מיט דער מסירות נפש פונעם ליובאוויטשער רבי'ן וועמענס יארצייט איז יענע נאכט."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The parsha is a mikveh of emunah, and a Jew must immerse himself in it, learn it through and live with it until it becomes part of him.",
+          "yi": "די פרשה איז א מקוה פון אמונה, און א איד דארף זיך טובל זיין אין איר, זי דורכלערנען און לעבן מיט איר ביז זי ווערט א חלק פון אים."
+        },
+        "evidence": { "segs": [3, 4, 15, 57, 392, 394], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The mann trained the Jews to trust Hashem one day at a time, without worrying about tomorrow.",
+          "yi": "דער מן האט געלערנט די אידן צו פארלאזן זיך אויפן אייבערשטן יעדן טאג באזונדער, אן זארגן וועגן מארגן."
+        },
+        "evidence": { "segs": [72, 118, 121, 145, 149], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Dovid HaMelech thanked Hashem for every breath because he had emunah; people fail to thank because they notice only large miracles.",
+          "yi": "דוד המלך האט געדאנקט דעם אייבערשטן פאר יעדן אטעם ווייל ער האט געהאט אמונה; מענטשן דאנקען נישט ווייל זיי באמערקן נאר גרויסע ניסים."
+        },
+        "evidence": { "segs": [216, 253, 255, 257, 259], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Amalek is the power of doubt, the same doubt that underlay Chava's sin and the question at Masa whether Hashem is among us.",
+          "yi": "עמלק איז דער כח פון ספק, דער זעלבער ספק וואס איז געווען ביים חטא פון חוה און ביי דער שאלה אין מסה צי דער אייבערשטער איז צווישן אונז."
+        },
+        "evidence": { "segs": [322, 328, 332, 346, 351], "confidence": 0.7 }
+      },
+      {
+        "text": {
+          "en": "Beshalach is the parsha of Shirah because one who has emunah sings and is not depressed even in exile.",
+          "yi": "בשלח איז פרשת שירה ווייל דער וואס האט אמונה זינגט, און ער איז נישט צובראכן אפילו אין גלות."
+        },
+        "evidence": { "segs": [376, 378, 381, 385, 388], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Krias Yam Suf was the first miracle made specifically for the Jews, and all miracles in the world draw from it.",
+          "yi": "קריאת ים סוף איז געווען דער ערשטער נס וואס איז געווען ספעציעל פאר אידן, און אלע ניסים אין דער וועלט ציען פון איר."
+        },
+        "evidence": { "segs": [644, 645, 647, 661, 662], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-parsha-sefer-shemois-04-07-beshalach",
+      "startSeg": 0,
+      "endSeg": 62,
+      "title": { "en": "The parsha as a mikveh of emunah", "yi": "די פרשה איז א מקוה פון אמונה" },
+      "summary": {
+        "en": "The Rav says one must immerse oneself in the parsha as in a mikveh. He shows that it opens with emunah: the Jews followed Moshe toward the sea without asking, and the sea split only after they walked into the water.",
+        "yi": "דער משגיח זאגט אז מ'דארף זיך טובל זיין אין דער פרשה ווי אין א מקוה. ער ווייזט אז זי הייבט זיך אן מיט אמונה: אידן זענען נאכגעגאנגען משה'ן צום ים אן פרעגן, און דער ים האט זיך ערשט געשפאלטן נאכדעם וואס זיי זענען אריין אין וואסער."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-04-07-beshalach",
+      "startSeg": 63,
+      "endSeg": 150,
+      "title": { "en": "The mann: trust for one day at a time", "yi": "דער מן: בטחון פון טאג צו טאג" },
+      "summary": {
+        "en": "The Rav calls Beshalach the parsha of the mann. People trust that the sun will rise only from habit, but the mann was a new miracle, and still millions of Jews believed Moshe and left nothing over for the next day.",
+        "yi": "דער משגיח רופט בשלח די פרשה פונעם מן. מענטשן גלייבן אז די זון וועט אויפגיין נאר פון געוואוינהייט, אבער דער מן איז געווען א נייער נס, און פונדעסטוועגן האבן מיליאנען אידן געגלייבט משה'ן און נישט איבערגעלאזט אויף מארגן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-04-07-beshalach",
+      "startSeg": 151,
+      "endSeg": 264,
+      "title": { "en": "Thanking Hashem for every breath", "yi": "דאנקען דעם אייבערשטן פאר יעדן אטעם" },
+      "summary": {
+        "en": "Through the parable of a child and its caretaker, the Rav shows how much one owes Hashem for daily needs. He explains that the last passuk of Tehillim sums up the sefer as thanks for every breath, describes the workings of the lungs, and says we fail to thank because we lack emunah.",
+        "yi": "מיט א משל פון א קינד און דער וואס פאסט אים אפ, ווייזט דער משגיח וויפיל מ'דארף דאנקען דעם אייבערשטן פאר וואס מ'דארף יעדן טאג. ער ערקלערט אז דער לעצטער פסוק פון תהלים איז דער סך הכל פונעם ספר, א דאנק פאר יעדן אטעם, באשרייבט ווי די לונגען ארבעטן, און זאגט אז מ'דאנקט נישט ווייל ס'פעלט אמונה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-04-07-beshalach",
+      "startSeg": 265,
+      "endSeg": 361,
+      "title": { "en": "The jar of mann, and Amalek as doubt", "yi": "די צנצנת המן, און עמלק איז ספק" },
+      "summary": {
+        "en": "The Rav brings Rashi that Yirmiyahu showed the jar of mann to people worried about parnassah, and the Rambam at the end of Hilchos Shmitta v'Yovel on one who gives himself over to Torah. He then explains Amalek as doubt, linking the question at Masa to Chava's sin, and notes that Moshe's hands were emunah.",
+        "yi": "דער משגיח ברענגט רש\"י אז ירמיהו הנביא האט געוויזן די צנצנת המן פאר די וואס האבן זיך געזארגט וועגן פרנסה, און דעם רמב\"ם אין סוף הלכות שמיטה ויובל וועגן דעם וואס גיט זיך אוועק צו תורה. דערנאך ערקלערט ער אז עמלק איז ספק, און פארבינדט די שאלה ביי מסה מיטן חטא פון חוה, און אז משה'ס הענט זענען געווען אמונה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-04-07-beshalach",
+      "startSeg": 362,
+      "endSeg": 446,
+      "title": { "en": "Emunah brings song; daily tests", "yi": "אמונה ברענגט שירה; נסיונות יעדן טאג" },
+      "summary": {
+        "en": "The Rav says the parsha begins, runs through and ends with emunah, the foundation of all mitzvos, and that this is why it is the parsha of Shirah: a believer sings and is not depressed. Emunah is tested every day in small things, from rising in the morning to the fear of Heaven being like the fear of a person.",
+        "yi": "דער משגיח זאגט אז די פרשה הייבט זיך אן, גייט דורך און ענדיגט זיך מיט אמונה, דער יסוד פון אלע מצוות, און דערפאר איז זי פרשת שירה: ווער ס'גלייבט זינגט און איז נישט צובראכן. די אמונה ווערט געפרובירט יעדן טאג אין קליינע זאכן, פון אויפשטיין אינדערפרי ביז מורא שמים ווי מורא בשר ודם."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-04-07-beshalach",
+      "startSeg": 447,
+      "endSeg": 505,
+      "title": { "en": "Shiras HaYam and a dance at Az Yashir", "yi": "שירת הים און א טאנץ ביי אז ישיר" },
+      "summary": {
+        "en": "The Rav calls saying Shiras HaYam with fire and joy a diamond, and tells what he saw as a young man when Rebbe Chaim Meir of Vizhnitz was in America: a grandson of the Chortkover Rebbe danced at Az Yashir, unashamed, and the Vizhnitzer Rebbe watched him with delight. He adds that one who says it with joy has his sins forgiven.",
+        "yi": "דער משגיח רופט זאגן שירת הים מיט א ברען און מיט שמחה א דימענט, און דערציילט וואס ער האט געזען ווי א יונגערמאן ווען דער וויזשניצער רבי ר' חיים מאיר איז געווען אין אמעריקע: א אייניקל פונעם טשארטקאווער רבי'ן האט געטאנצט ביי אז ישיר אן זיך שעמען, און דער וויזשניצער רבי האט געקוקט אויף אים און געקוועלט. ער לייגט צו אז דער וואס זאגט עס מיט שמחה ווערן אים מוחל זיינע עבירות."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-04-07-beshalach",
+      "startSeg": 506,
+      "endSeg": 642,
+      "title": { "en": "Sefer Charedim's six free segulos", "yi": "די זעקס סגולות פונעם ספר חרדים" },
+      "summary": {
+        "en": "Comparing costly medicines to segulos that cost nothing, the Rav brings the Sefer Charedim's six segulos for atoning for sins: answering Amen yehei shmei rabba with all one's strength, keeping Shabbos properly, saying Shiras HaYam with joy, hisbodedus with Hashem, and listening to a talmid chacham's words of yiras Shamayim.",
+        "yi": "דער משגיח פארגלייכט טייערע רפואות מיט סגולות וואס קאסטן נישט קיין געלט, און ברענגט די זעקס סגולות פונעם ספר חרדים צו מתקן זיין עבירות: ענטפערן אמן יהא שמיה רבה בכל כחו, היטן שבת כהלכתו, זאגן שירת הים מיט שמחה, התבודדות מיטן רבונו של עולם, און זיך צוהערן צו א תלמיד חכם וואס רעדט יראת שמים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-04-07-beshalach",
+      "startSeg": 643,
+      "endSeg": 704,
+      "title": { "en": "Krias Yam Suf, root of all miracles", "yi": "קריאת ים סוף, דער שורש פון אלע ניסים" },
+      "summary": {
+        "en": "The Rav explains that the plagues were aimed at the Egyptians, while Krias Yam Suf was the first salvation specifically for the Jews; the sefarim say all miracles draw from it. He describes the daily miracles of the body and calls Shabbos Shirah the time to take this to heart.",
+        "yi": "דער משגיח ערקלערט אז די מכות זענען געווען פאר די מצריים, אבער קריאת ים סוף איז געווען די ערשטע ישועה ספעציעל פאר אידן; אין ספרים שטייט אז אלע ניסים ציען פון איר. ער באשרייבט די ניסים פונעם גוף יעדן טאג און זאגט אז שבת שירה איז די צייט דאס אריינצונעמען."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-04-07-beshalach",
+      "startSeg": 705,
+      "endSeg": 770,
+      "title": { "en": "The Lubavitcher Rebbe's mesiras nefesh", "yi": "די מסירות נפש פונעם ליובאוויטשער רבי'ן" },
+      "summary": {
+        "en": "Noting that the Lubavitcher Rebbe's yahrzeit is that night, the Rav describes his mesiras nefesh in Soviet Russia for yeshivos and underground chadarim, his arrest and release, and his answer to the interrogator who pointed a revolver at him. He ends with l'chaim.",
+        "yi": "דער משגיח דערמאנט אז יענע נאכט איז דער יארצייט פונעם ליובאוויטשער רבי'ן, און באשרייבט זיין מסירות נפש אין רוסלאנד פאר ישיבות און באהאלטענע חדרים, ווי ער איז ארעסטירט און באפרייט געווארן, און זיין ענטפער צום חוקר וואס האט אנגעצילט אויף אים א רעוואלווער. ער ענדיגט מיט לחיים."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "דברו בני ישראל וישראל, גייטס ריין אויף וואסער אריין",
+      "work": "Shemos",
+      "ref": "Shemos 14:15",
+      "sefariaRef": "Exodus 14:15",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [39], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "נאר וואס דען אין לנה עלי דברי בן עמרון",
+      "work": "Rashi",
+      "ref": "Rashi on Shemos 14:4",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [21, 22, 23], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ביי ימינו ביי די שם ובמשה אדם",
+      "work": "Shemos",
+      "ref": "Shemos 14:31",
+      "sefariaRef": "Exodus 14:31",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [41, 42], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אום תהלים כל מצוותך אמונה",
+      "work": "Tehillim",
+      "ref": "Tehillim 119:86",
+      "sefariaRef": "Psalms 119:86",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [51, 52], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "באמנה שלמה ... י' ג' עקחים פון עמנה",
+      "work": "Thirteen Principles of Faith",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [59, 60, 61, 62], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "הנהי' ממתו לך מלכים ונשמים, למען הנשנה",
+      "work": "Shemos",
+      "ref": "Shemos 16:4",
+      "sefariaRef": "Exodus 16:4",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [131, 132, 133], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "זאגט דער גמרא אז ... די לעצטע ליין פון דעם שטאל דארף זיין א סאמוערי",
+      "work": "Gemara",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [183], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "כולא נשמה תהלה וכך",
+      "work": "Tehillim",
+      "ref": "Tehillim 150:6",
+      "sefariaRef": "Psalms 150:6",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [187, 191, 192], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "דרשן די גמרא על כל נשומה אנשומה",
+      "work": "Gemara",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [193, 194, 195], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דם חסיד, כי ויעולם חסיד איך",
+      "work": "Tehillim",
+      "ref": "Tehillim 136",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [200, 201, 204], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "ביום וון די רבי'ס שטים גראטעוועט מייד כל אביו ומייד שאול",
+      "work": "Tehillim",
+      "ref": "Tehillim 18:1",
+      "sefariaRef": "Psalms 18:1",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [206, 210, 213], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "יקחתן צנת אחת ושם שמע מלאה אימא מן ומשמרת לדורותיכים",
+      "work": "Shemos",
+      "ref": "Shemos 16:33",
+      "sefariaRef": "Exodus 16:33",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [265], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אין די צייטן פון יום יאר הנביא ברענגט רשע",
+      "work": "Rashi",
+      "ref": "Rashi on Shemos 16:32",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [272, 281, 284], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דורצוקוקן דעם רמב״ם סופר על חוס שמועטא ויובל",
+      "work": "Rambam, Mishneh Torah",
+      "ref": "Hilchos Shmitta v'Yovel 13:13",
+      "sefariaRef": "Mishneh Torah, Sabbatical Year and the Jubilee 13:13",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [289, 290, 292], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "עס שטערט אין מערב השמש ... זאגט ער מראה שמיש",
+      "work": "Me'or VaShemesh",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [296, 297, 300, 301], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "איש ה' בכבנו אפמים",
+      "work": "Shemos",
+      "ref": "Shemos 17:7",
+      "sefariaRef": "Exodus 17:7",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [315, 346], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער ספרים שטעט אז א מולק איז ברמדכי הספק",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [322, 323], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "הנחש השישיני ואוכל",
+      "work": "Bereishis",
+      "ref": "Bereishis 3:13",
+      "sefariaRef": "Genesis 3:13",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [343], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ויהו ידך אמונה עד ביי השמש",
+      "work": "Shemos",
+      "ref": "Shemos 17:12",
+      "sefariaRef": "Exodus 17:12",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [360], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "סוף פון שולחן ערב, די שאחפער יגער לפני מיהו שחר",
+      "work": "Shulchan Aruch",
+      "ref": "Shulchan Aruch Orach Chaim 1:1",
+      "sefariaRef": "Shulchan Arukh, Orach Chayim 1:1",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [410, 411, 412], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "תהוא עיירת שמים מלכים, מורא שמים מלכים, כמורא בשר ודם",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 28b",
+      "sefariaRef": "Berakhot 28b",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [440, 441], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אזוי שטערט מזוהב",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [578, 579, 580], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "שטעט מספר חרדים",
+      "work": "Sefer Charedim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [506, 522, 566, 643], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אמן וישמר רבי בכל כחא",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 119b",
+      "sefariaRef": "Shabbat 119b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [572], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "צו אפהוטן שבת מיט דא להידרן. איז ממוחל כל הבני ישבות הגמרא",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 118b",
+      "sefariaRef": "Shabbat 118b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [572, 573], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ביושש ביום הרע את ישראל מיד מצרים",
+      "work": "Shemos",
+      "ref": "Shemos 14:30",
+      "sefariaRef": "Exodus 14:30",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [648], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "שטעט אין ספרים, אלע ניסים אין די וועלט זענען נחמדים פון שירת הימים",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [660, 661, 662], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "מיר האבן דאס געזאגט בפירוש אין דאווענען, ווייל מיר סכן שבחלי המימנה",
+      "work": "Siddur",
+      "ref": "Shemoneh Esrei, Modim",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [664, 665], "confidence": 0.7 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav calls the parsha itself a mikveh: just as one immerses in water, one must immerse oneself in the sea of emunah that the parsha holds.",
+        "yi": "דער משגיח רופט די פרשה אליין א מקוה: אזוי ווי מ'טובלט זיך אין וואסער, דארף מען זיך טובל זיין אין דעם ים פון אמונה וואס געפינט זיך אין דער פרשה."
+      },
+      "evidence": { "segs": [3, 4, 56, 57], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The sunrise is no less a miracle than the mann; people only take it for granted because they are used to it, while the mann had no habit behind it, so trusting it was pure emunah.",
+        "yi": "די זון וואס גייט אויף איז נישט ווייניגער א נס ווי דער מן; מ'נעמט עס נאר פאר פשוט ווייל מ'איז צוגעוואוינט, אבער צום מן איז מען נישט געווען צוגעוואוינט, ממילא איז דאס פארלאזן זיך אויף אים געווען לויטערע אמונה."
+      },
+      "evidence": { "segs": [85, 91, 94, 99, 101, 102], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Since the last line of a letter sums it up, the last passuk of Tehillim, read with Chazal as thanks for every breath, is the summary of the whole sefer.",
+        "yi": "ווייל די לעצטע שורה פון א בריוו איז דער סך הכל, איז דער לעצטער פסוק פון תהלים, וואס חז\"ל טייטשן אויף א דאנק פאר יעדן אטעם, דער סך הכל פונעם גאנצן ספר."
+      },
+      "evidence": { "segs": [183, 187, 188, 193, 195], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Amalek, the doubt at Masa and the serpent's seduction of Chava are one force: doubt that enters a Jew's mind and makes him question whether Hashem is among us.",
+        "yi": "עמלק, דער ספק ביי מסה און דער נחש וואס האט פארפירט חוה זענען איין כח: א ספק וואס גייט אריין אין א אידנס קאפ און מאכט אים פרעגן צי דער אייבערשטער איז צווישן אונז."
+      },
+      "evidence": { "segs": [322, 328, 332, 346, 351], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Not being ashamed while davening is not brazenness; it means being so absorbed that one does not know where one is or that people are watching.",
+        "yi": "זיך נישט שעמען ביים דאווענען איז נישט קיין עזות פנים; עס מיינט אז מ'איז אזוי פארטיפט אז מ'ווייסט נישט וואו מ'איז און אז מענטשן קוקן."
+      },
+      "evidence": { "segs": [487, 489, 491, 494], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "A segulah is like a free remedy whose workings no one can explain, yet it can achieve what costly medicines do; the Sefer Charedim's segulos atone for sin without the cost of fasts and afflictions.",
+        "yi": "א סגולה איז ווי א רפואה וואס קאסט נישט קיין געלט און קיינער קען נישט ערקלערן ווי זי ארבעט, און פונדעסטוועגן טוט זי וואס טייערע רפואות טוען; די סגולות פונעם ספר חרדים זענען מתקן עבירות אן די הוצאות פון תעניתים און סיגופים."
+      },
+      "evidence": { "segs": [519, 535, 542, 566, 568], "confidence": 0.7 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "Dancing at Az Yashir before the Vizhnitzer Rebbe", "yi": "געטאנצט ביי אז ישיר פארן וויזשניצער רבי'ן" },
+      "retelling": {
+        "en": "The Rav recalls that as a young man, when Rebbe Chaim Meir of Vizhnitz was in America, he saw a great Jew there, a grandson of the Chortkover Rebbe. At Az Yashir this man began to dance and clap his hands, without any shame. The Vizhnitzer Rebbe turned to look at him and took great delight in it.",
+        "yi": "דער משגיח דערמאנט זיך אז ווען ער איז געווען א יונגערמאן, ווען דער וויזשניצער רבי ר' חיים מאיר איז געווען אין אמעריקע, האט ער דארט געזען א גרויסן איד, אן אייניקל פונעם טשארטקאווער רבי'ן. ביי אז ישיר האט יענער גענומען טאנצן און פאטשן מיט די הענט, אן זיך שעמען. דער וויזשניצער רבי האט זיך אויסגעדרייט, געקוקט אויף אים און געקוועלט."
+      },
+      "people": ["Rebbe Chaim Meir of Vizhnitz", "the Chortkover Rebbe"],
+      "evidence": { "segs": [463, 464, 468, 478, 484, 496], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The Lubavitcher Rebbe and the revolver", "yi": "דער ליובאוויטשער רבי און דער רעוואלווער" },
+      "retelling": {
+        "en": "In Soviet Russia it was forbidden to learn Torah, run a yeshivah or keep Shabbos, and the Lubavitcher Rebbe ran yeshivos and underground chadarim with mesiras nefesh. He was imprisoned and sentenced to death, and American Chassidim asked the American government to intervene, so the Russians released him. During an interrogation, when he refused to name those who ran the yeshivah with him, the interrogator pointed a revolver at him and said this toy had made many people talk. He answered that the toy can frighten one who has many gods and one world, but he has one G-d and two worlds.",
+        "yi": "אין רוסלאנד האט מען נישט געטארט לערנען תורה, האלטן א ישיבה אדער היטן שבת, און דער ליובאוויטשער רבי האט מיט מסירות נפש געפירט ישיבות און באהאלטענע חדרים. מ'האט אים ארעסטירט און פאראורטיילט צום טויט, און די אמעריקאנער חסידים האבן געבעטן די אמעריקאנער רעגירונג זיך אריינצומישן, האבן די רוסן אים באפרייט. ביים חקירה, ווען ער האט נישט געוואלט אויסזאגן ווער עס האט מיט אים געפירט די ישיבה, האט דער חוקר אנגעצילט אויף אים א רעוואלווער און געזאגט אז די שפילכל האט שוין געמאכט רעדן אסאך מענטשן. ער האט אים געענטפערט אז זי קען שרעקן איינעם וואס האט אסאך געטער און איין וועלט, אבער ער האט איין גאט און צוויי וועלטן."
+      },
+      "people": ["the Lubavitcher Rebbe"],
+      "evidence": { "segs": [708, 712, 735, 741, 755, 763], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why do people not thank Hashem for every breath the way Dovid HaMelech did?",
+        "yi": "פארוואס דאנקען מענטשן נישט דעם אייבערשטן פאר יעדן אטעם ווי דוד המלך?"
+      },
+      "answer": {
+        "en": "Because they lack emunah: their emunah wakes only at a great event, while every breath is in truth a series of miracles.",
+        "yi": "ווייל ס'פעלט זיי אמונה: זייער אמונה וואכט זיך נאר אויף ביי א גרויסע זאך, כאטש יעדער אטעם איז באמת א רייע ניסים."
+      },
+      "questionSegs": [216, 217],
+      "answerSegs": [255, 257, 259, 261, 263],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why was the jar of mann kept for later generations?",
+        "yi": "פארוואס האט מען אוועקגעלייגט די צנצנת המן פאר שפעטערדיגע דורות?"
+      },
+      "answer": {
+        "en": "In Yirmiyahu's time, when people neglected learning because they needed parnassah, he took it out and showed them that the Hashem who fed their fathers in the desert can provide today as well for one who learns Torah.",
+        "yi": "אין ירמיהו'ס צייטן, ווען מ'האט נאכגעלאזט לערנען ווייל מ'דארף פרנסה, האט ער עס ארויסגענומען און געוויזן אז דער זעלבער אייבערשטער וואס האט געשפייזט די עלטערן אין מדבר קען היינט אויך געבן פאר דעם וואס לערנט תורה."
+      },
+      "questionSegs": [265, 271],
+      "answerSegs": [277, 279, 282, 284, 285, 288],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why is Parshas Beshalach the parsha of Shirah?",
+        "yi": "פארוואס איז פרשת בשלח פרשת שירה?"
+      },
+      "answer": {
+        "en": "Because it is the parsha of emunah, and one who believes sings; he is not gloomy or depressed even in exile.",
+        "yi": "ווייל זי איז די פרשה פון אמונה, און ווער ס'גלייבט זינגט; ער איז נישט פארחמורעט און נישט צובראכן אפילו אין גלות."
+      },
+      "questionSegs": [375, 377],
+      "answerSegs": [378, 381, 382, 388],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why is Krias Yam Suf the root of all miracles?",
+        "yi": "פארוואס איז קריאת ים סוף דער שורש פון אלע ניסים?"
+      },
+      "answer": {
+        "en": "Because the plagues were aimed at the Egyptians, while the splitting of the sea was the first salvation made specifically for the Jews.",
+        "yi": "ווייל די מכות זענען געווען קעגן די מצריים, אבער קריאת ים סוף איז געווען די ערשטע ישועה ספעציעל פאר אידן."
+      },
+      "questionSegs": [661, 662],
+      "answerSegs": [644, 645, 646, 647, 649],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says one must learn through the parsha and live with it until it becomes part of oneself.",
+        "yi": "דער משגיח זאגט אז מ'דארף דורכלערנען די פרשה און לעבן מיט איר ביז זי ווערט א חלק פון א מענטש."
+      },
+      "evidence": { "segs": [392, 393, 394], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "He says one must thank Hashem every day for what He provides, knowing that everything that happens to a Jew is by His hashgachah.",
+        "yi": "ער זאגט אז מ'דארף דאנקען דעם אייבערשטן יעדן טאג פאר וואס ער גיט, און וויסן אז אלעס וואס פאסירט מיט א איד איז מיט זיין השגחה."
+      },
+      "evidence": { "segs": [152, 153, 154, 166, 168], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He says one should get up in the morning for davening with freshness, fire and desire.",
+        "yi": "ער זאגט אז מ'דארף אויפשטיין אינדערפרי צום דאווענען מיט א פרישקייט, מיט א ברען, מיט א חשק."
+      },
+      "evidence": { "segs": [421], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He says every Jew should, from time to time and without making a big fuss of it, have a private session with Hashem to pour out his heart.",
+        "yi": "ער זאגט אז יעדער איד זאל פון צייט צו צייט, אן מאכן דערפון א גאנצן עסק, האבן א באזונדערע שמועס מיטן רבונו של עולם און אויסגיסן זיין הארץ."
+      },
+      "evidence": { "segs": [606, 608, 611, 612, 615], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He says one should say Shiras HaYam with joy and fire.",
+        "yi": "ער זאגט אז מ'דארף זאגן שירת הים מיט שמחה און מיט א ברען."
+      },
+      "evidence": { "segs": [456, 578], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "emunah",
+    "Parshas Beshalach",
+    "the mann and daily trust",
+    "thanking Hashem for every breath",
+    "the jar of mann",
+    "Amalek as doubt",
+    "Shiras HaYam",
+    "segulos for atonement",
+    "hisbodedus",
+    "mesiras nefesh in Soviet Russia"
+  ],
+  "concepts": [
+    { "he": "מקוה", "heardAs": ["מקוה"] },
+    { "he": "טובל זיין", "heardAs": ["קייבל זיין", "טייוול זיין"] },
+    { "he": "אמונה", "heardAs": ["אמנה", "עמנה"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבונו שלום", "רבינו שלום", "רבי יושע לעהלין", "רביהם שלעלים"] },
+    { "he": "הקב\"ה / דער אייבערשטער", "heardAs": ["טרייבערש", "טרעבוש", "דרייבערשטע", "רייבערשטע"] },
+    { "he": "מן", "heardAs": ["מאן", "מנהא", "מענע"] },
+    { "he": "צנצנת המן", "heardAs": ["צנת אחת", "צצענת אחת", "צמצמת המון", "צענת המאן"] },
+    { "he": "עמלק", "heardAs": ["מולק", "מלאק"] },
+    { "he": "ספק", "heardAs": ["סאפיק", "צפיקות"] },
+    { "he": "שירת הים", "heardAs": ["שירת איום", "שירת היום", "שירת הימים"] },
+    { "he": "אז ישיר", "heardAs": ["יעזי יושע", "עזי יישר"] },
+    { "he": "קריאת ים סוף", "heardAs": ["קריאת ים-סוף"] },
+    { "he": "התבודדות", "heardAs": ["מתביידעד", "בודדות"] },
+    { "he": "סגולה", "heardAs": ["סגלה", "תגלה", "גלה"] },
+    { "he": "מסירות נפש", "heardAs": ["מסירת נחש", "מוסד נפש", "מושב נפש"] },
+    { "he": "תחיית המתים", "heardAs": ["דחיית המתים"] },
+    { "he": "י\"ג עיקרים", "heardAs": ["י' ג' עקחים"] }
+  ],
+  "people": [
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה", "בן עמרון"] },
+    { "name": "Dovid HaMelech", "heardAs": ["דוד המלך", "דוד המלכה"] },
+    { "name": "Shaul", "heardAs": ["שאול"] },
+    { "name": "Yirmiyahu HaNavi", "heardAs": ["יום יאר הנביא"] },
+    { "name": "Chava", "heardAs": ["זי"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "Rashi", "heardAs": ["רשע", "רשעון"] },
+    { "name": "Rebbe Chaim Meir of Vizhnitz", "heardAs": ["רבי חיים מאיר אביזשניץ", "וויזשניץ רבי רבי חיים מאיר"] },
+    { "name": "the Chortkover Rebbe", "heardAs": ["טשומטער רוב"] },
+    { "name": "the Lubavitcher Rebbe", "heardAs": ["דער ליובאוויטשער רבי", "ראיאת"] }
+  ],
+  "asrNotes": "Yiddish ASR is poor throughout: Hebrew quotations are heavily garbled and the name of Hashem is rendered in many distorted forms. Segments 43-48 (something about Thursday night and Shabbos), 67, 155-159, 581-584 (the fourth segulah of the Sefer Charedim) and 597-603, 618-622 (a reference to a sefer about building modest homes) could not be recovered. The audience exchange at 466-475 about the name of the Chortkover grandson is unclear, and the closing segments 764-770 are mostly unintelligible apart from the l'chaim."
+}

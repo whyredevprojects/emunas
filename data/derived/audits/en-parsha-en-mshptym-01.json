@@ -1,0 +1,17 @@
+{
+  "shiurId": "en-parsha-en-mshptym-01",
+  "promptVersion": "audit-v1",
+  "auditedAt": "2026-11-13T12:00:00Z",
+  "counts": {
+    "claimsChecked": 24, "unsupported": 1, "hallucinated": 0,
+    "sourcesChecked": 12, "sourceErrors": 2, "sourcesMissed": 1,
+    "boundariesChecked": 4, "boundariesBad": 0, "noiseMishandled": 0,
+    "termsChecked": 15, "termErrors": 0, "termsCopiedGarbled": 0,
+    "yiddishSentencesChecked": 22, "yiddishBadSentences": 6, "yiddishTranslationese": 1,
+    "flowBreaks": 0, "paddingSentences": 0, "contradictsExtraction": 0,
+    "ruleViolations": 0
+  },
+  "severity": "minor",
+  "needsReview": false,
+  "notes": "writeup.en[12].paragraphs[0] / yi[12].paragraphs[0] and questions[4] state as fact that people blamed Yaakov Avinu for sending Yosef, but at segs 1734-1740 the Rav only conjectures ('I'm sure that there were people'); writeup.en[7].paragraphs[0] and yi[7].paragraphs[0] name the Zohar on Mishpatim with empty sourceIdx (should be [3]); 'area katech ... 400 years ago' (seg 127-128) is clearly the Arizal and 'the Amaral' (seg 693, seven as the point inside six sides) is recognizably the Maharal, both left unidentified (sources[9] unresolved); English word in Yiddish: 'פילאט-פייערל' in insights[3].yi and writeup.yi[5].paragraphs[1], 'סימבאל' in sections[6].summary.yi; Daytshmerish 'נישט-אכטזאמער/אכטזאמען דיין' in sections[7].summary.yi, stories[1].retelling.yi, writeup.yi[7].paragraphs[1]; translationese 'א מענטש'ס געשיכטע איז לענגער ווי זיינע יארן' in writeup.yi[1].paragraphs[0]"
+}
