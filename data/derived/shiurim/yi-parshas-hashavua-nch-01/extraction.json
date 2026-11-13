@@ -1,0 +1,336 @@
+{
+  "shiurId": "yi-parshas-hashavua-nch-01",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that the teiva protected Noach the way the sukkah protects a Jew, through its halachos rather than its wood, and that every Jew must now build a teiva of luminous words of Torah and tefillah.",
+      "yi": "דער משגיח ערקלערט אז די תיבה האט באשיצט נח אזוי ווי די סוכה באשיצט א איד, דורך אירע הלכות און נישט דורך די ברעטער, און אז יעדער איד דארף היינט בויען א תיבה פון ליכטיגע ווערטער פון תורה און תפילה."
+    },
+    "abstract": {
+      "en": "The Rav opens with the Gemara that at Matan Torah the nations feared a new flood, and with the Gemara that Moshe's root lies in the flood generation: Moshe was Noach returned to repair his failure to daven for his generation. Rain's inner content is Torah; Noach's generation, sunk in physicality, received only the outer shell, a destroying flood, while at Sinai the same downpour came as Torah, threefold and lasting. From Shemini Atzeres and the arba minim he moves to the sukkah: its protection comes from its halachos, like a mikveh, and it is an embassy of heaven where judgment cannot reach. So too Noach was saved by the halachos of the teiva, and learning Parshas Noach continues the sukkah's protection. He applies this to the war that broke out on Yom Kippur, the prophecy of Gog and Magog, and Moshe's teiva, and ends with the Ba'al Shem Tov's 'make light in the teiva': every Jew must build a teiva of Torah and tefillah big enough for all Jews.",
+      "yi": "דער משגיח עפנט מיט דער גמרא אז ביי מתן תורה האבן די אומות מורא געהאט פאר א נייעם מבול, און מיט דער גמרא אז משה'ס שורש איז אינעם דור המבול: משה איז געווען נח וואס איז צוריקגעקומען צו מתקן זיין וואס ער האט נישט מתפלל געווען אויף זיין דור. די פנימיות פון רעגן איז תורה; דער דור המבול, פארזונקען אין גשמיות, האט באקומען נאר דאס חיצוניות, א מבול פון חורבן, און ביי סיני איז די זעלבע השפעה געקומען אלס תורה, געדריטלט און א קיום. פון שמיני עצרת און די ארבע מינים גייט ער איבער צו דער סוכה: איר הגנה קומט פון אירע הלכות, אזוי ווי ביי א מקוה, און זי איז אן אמבאסאדע פון הימל וואו קיין מדת הדין קען נישט צוקומען. אזוי איז נח ניצול געווארן דורך די הלכות פון דער תיבה, און דאס לערנען פרשת נח איז א המשך פון דער הגנה פון סוכה. ער ברענגט עס צו צו דער מלחמה וואס האט אויסגעבראכן יום כיפור, צו דער נבואה פון גוג ומגוג און צו משה'ס תיבה, און ער ענדיגט מיטן בעל שם טוב'ס \"צהר תעשה לתיבה\": יעדער איד דארף בויען א תיבה פון תורה און תפילה גרויס גענוג פאר אלע אידן."
+    },
+    "keyPoints": [
+      {
+        "text": { "en": "The inner content of rain is Torah; the flood was the outer shell of the very influx that was meant to bring the Torah in Noach's time.", "yi": "די פנימיות פון רעגן איז תורה; דער מבול איז געווען דאס חיצוניות פון דער זעלבער השפעה וואס האט געדארפט ברענגען די תורה אין נח'ס צייטן." },
+        "evidence": { "segs": [77, 79, 132, 151], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "The sukkah protects not through its schach but through its halachos, just as a mikveh purifies through its halachos and not through the water.", "yi": "די סוכה באשיצט נישט מיט איר סכך נאר מיט אירע הלכות, אזוי ווי א מקוה מטהר איז דורך אירע הלכות און נישט דורך דאס וואסער." },
+        "evidence": { "segs": [321, 331, 332, 341], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "Noach was saved by the halachos of the teiva, not by the wooden box itself; the teiva was a sukkah.", "yi": "נח איז ניצול געווארן דורך די הלכות פון דער תיבה, נישט דורך דעם קאסטן אליין; די תיבה איז געווען א סוכה." },
+        "evidence": { "segs": [424, 434, 435, 440, 447], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "Learning Parshas Noach after Sukkos continues the sukkah's protection over the Jewish people.", "yi": "דאס לערנען פרשת נח נאך סוכות איז א המשך פון דער הגנה פון סוכה איבער כלל ישראל." },
+        "evidence": { "segs": [467, 468, 475, 489], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "Every word of Torah and tefillah is a teiva that rescues a Jew from the flood of this world, and it must be said with light and vitality.", "yi": "יעדעס ווארט פון תורה און תפילה איז א תיבה וואס ראטעוועט א איד פונעם מבול פון עולם הזה, און מ'דארף עס זאגן מיט ליכטיגקייט און חיות." },
+        "evidence": { "segs": [1004, 1010, 1044, 1049], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "Every Jew must build a teiva for all of Klal Yisroel, because every Jew is precious to Hashem.", "yi": "יעדער איד דארף בויען א תיבה פאר גאנץ כלל ישראל, ווייל יעדער איד איז טייער ביים רבונו של עולם." },
+        "evidence": { "segs": [1106, 1158, 1214, 1219], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-parsha-sefer-bereishes-02-01-noach", "startSeg": 0, "endSeg": 73,
+      "title": { "en": "A flood at Matan Torah; Moshe as Noach", "yi": "א מבול ביי מתן תורה; משה אלס נח" },
+      "summary": { "en": "The Rav opens with the Gemara that the nations, hearing the tumult of Matan Torah, asked Bilam whether a flood was coming. He then brings the Gemara that Moshe is hinted in 'b'shagam' of the flood, and explains that Moshe was Noach returned to repair his failure to daven for his generation.", "yi": "דער משגיח עפנט מיט דער גמרא אז ווען די אומות האבן געהערט דעם רעש פון מתן תורה, האבן זיי געפרעגט בלעם צי עס קומט א מבול. דערנאך ברענגט ער די גמרא אז משה איז מרומז אין \"בשגם\" ביים מבול, און ער ערקלערט אז משה איז געווען נח וואס איז צוריקגעקומען מתקן צו זיין וואס ער האט נישט מתפלל געווען אויף זיין דור." },
+      "kind": "intro", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-02-01-noach", "startSeg": 74, "endSeg": 187,
+      "title": { "en": "Rain's inner content is Torah", "yi": "די פנימיות פון רעגן איז תורה" },
+      "summary": { "en": "The Rav explains that rain carries an inner content, Torah, bringing the Chasam Sofer's reading of the Shema and the link of Shemini Atzeres to Simchas Torah. Noach's generation, sunk in physicality, received only the outer shell, a flood; at Sinai rain came with Torah, and Bilam told the nations it was a 'potion of life', not destruction.", "yi": "דער משגיח ערקלערט אז אין רעגן ליגט א פנימיות, תורה, און ער ברענגט דעם חתם סופר'ס פשט אין קריאת שמע און דעם קשר פון שמיני עצרת מיט שמחת תורה. דער דור המבול, פארזונקען אין גשמיות, האט באקומען נאר דאס חיצוניות, א מבול; ביי סיני איז געקומען רעגן מיט תורה, און בלעם האט געזאגט פאר די אומות אז דאס איז א סם חיים און נישט קיין חורבן." },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-02-01-noach", "startSeg": 188, "endSeg": 252,
+      "title": { "en": "Forty days, open heavens, threefold Torah", "yi": "פערציג טעג, אפענע הימלען, א געדריטלטע תורה" },
+      "summary": { "en": "The Rav draws parallels between the flood and Matan Torah: forty days each and the heavens opened. He brings the Gemara that the Torah is threefold and the Maharal that whatever endures is threefold, shows it in the shin of the tefillin, and explains that Bilam's 'shalom' meant an influx of permanence.", "yi": "דער משגיח ווייזט אן די גלייכקייט צווישן דעם מבול און מתן תורה: ביידע פערציג טעג, און ביי ביידע האבן זיך געעפנט די הימלען. ער ברענגט די גמרא אז די תורה איז געדריטלט, און דעם מהר\"ל אז יעדע זאך וואס איז א קיום איז געדריטלט, ווייזט עס אין דעם שין פון די תפילין, און ערקלערט אז בלעם'ס \"שלום\" מיינט א השפעה פון קיום." },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-02-01-noach", "startSeg": 253, "endSeg": 305,
+      "title": { "en": "Arba minim as weapons, sukkah as defense", "yi": "ארבע מינים אלס כלי זיין, סוכה אלס הגנה" },
+      "summary": { "en": "The Rav describes the longing when Shemini Atzeres and Simchas Torah pass. He brings the Midrash that the arba minim are weapons that drive away the forces of evil, while the sukkah is the defense, and describes how, in Rabbi Akiva's view, the Jews sat in real sukkos during the war against Og and were protected.", "yi": "דער משגיח שילדערט די בענקשאפט ווען שמיני עצרת און שמחת תורה גייען אוועק. ער ברענגט דעם מדרש אז די ארבע מינים זענען כלי זיין וואס טרייבן אוועק די כוחות הרע, און די סוכה איז די הגנה, און ער דערציילט ווי לויט רבי עקיבא זענען אידן געזעסן אין סוכות ממש אין דער מלחמה מיט עוג און זענען באשיצט געווארן." },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-02-01-noach", "startSeg": 306, "endSeg": 378,
+      "title": { "en": "The halachos of the sukkah protect", "yi": "די הלכות פון סוכה באשיצן" },
+      "summary": { "en": "The Rav asks where the protection of a flimsy sukkah lies and answers that it is the halachos of the sukkah, which bring down supernal lights, just as the halachos of a mikveh, not its water, purify. He shows it with Yaakov, who after fleeing Esav made sukkos for protection.", "yi": "דער משגיח פרעגט וואו עס ליגט די הגנה פון א שוואכע סוכה, און ענטפערט אז דאס זענען די הלכות פון סוכה וואס ברענגען אראפ אורות עליונים, אזוי ווי ביי א מקוה מטהר איז די הלכות און נישט דאס וואסער. ער ווייזט עס ביי יעקב אבינו, וואס האט נאכן אנטלויפן פון עשו געמאכט סוכות צו באשיצט ווערן." },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-02-01-noach", "startSeg": 379, "endSeg": 451,
+      "title": { "en": "Sukkah as heaven's embassy; the teiva's halachos", "yi": "די סוכה אלס אמבאסאדע פון הימל; די הלכות פון דער תיבה" },
+      "summary": { "en": "The Rav explains that the sukkah is like an embassy of heaven on earth, where judgment cannot reach. So Noach, who also deserved judgment, was told to build a teiva with exact halachos, like the Mishkan, sukkah and mikveh; the halachos of the teiva, not the wood, saved him.", "yi": "דער משגיח ערקלערט אז די סוכה איז ווי אן אמבאסאדע פון הימל אויף דער וועלט, וואו קיין מדת הדין קען נישט צוקומען. דערפאר האט נח, וואס האט אויך געהאט א חשבון, באקומען א באפעל צו בויען א תיבה מיט גענויע הלכות, אזוי ווי דער משכן, סוכה און מקוה; די הלכות פון דער תיבה, נישט דאס האלץ, האבן אים געראטעוועט." },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-02-01-noach", "startSeg": 452, "endSeg": 500,
+      "title": { "en": "Parshas Noach continues the sukkah", "yi": "פרשת נח איז א המשך פון סוכה" },
+      "summary": { "en": "The Rav describes the sweetness of sitting in the sukkah and the longing when it ends, and explains that Hashem gives an extra gift, Parshas Noach: learning about the teiva and its halachos draws the same protection onto the world.", "yi": "דער משגיח שילדערט די זיסקייט פון זיצן אין סוכה און די בענקשאפט ווען עס ענדיגט זיך, און ערקלערט אז דער אייבערשטער גיט א צוגאב, פרשת נח: דאס לערנען וועגן דער תיבה און אירע הלכות ציט אראפ די זעלבע הגנה אויף דער וועלט." },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-02-01-noach", "startSeg": 501, "endSeg": 559,
+      "title": { "en": "A war in a season of protection", "yi": "א מלחמה אין א צייט פון הגנה" },
+      "summary": { "en": "The Rav speaks of the present hard time, when much Jewish blood was spilled, and says that Hashem placed it in a season of protection: Yom Kippur, Sukkos and Parshas Noach. He says the fallen who were killed for being Jews are not to be pitied, but their widows and orphans are, and that no one knows how great the chevlei Mashiach had to be.", "yi": "דער משגיח רעדט וועגן דער שווערער צייט, ווען אסאך אידיש בלוט איז פארגאסן געווארן, און זאגט אז דער אייבערשטער האט עס אוועקגעשטעלט אין א צייט פון הגנה: יום כיפור, סוכות און פרשת נח. ער זאגט אז אויף די געפאלענע וואס זענען אומגעקומען ווייל זיי זענען אידן איז נישט קיין רחמנות, נאר אויף זייערע אלמנות און יתומים, און אז קיינער ווייסט נישט ווי גרויס די חבלי משיח האבן געדארפט זיין." },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-02-01-noach", "startSeg": 560, "endSeg": 636,
+      "title": { "en": "No one knows the end; Rav Elchonon on the state", "yi": "קיינער ווייסט נישט דעם קץ; ר' אלחנן וועגן דער מדינה" },
+      "summary": { "en": "The Rav brings the poskim that the war of Gog and Magog will be in Tishrei, and stresses that no one knows the end: even Yaakov, Daniel and the prophets did not. He brings the Rambam on Rabbi Akiva and Bar Koziva and Rav Elchonon Wasserman's statement that redemption cannot come through those who lead the people away from Torah, and says the political state is perhaps a test, while the finest part of Torah today is in Eretz Yisroel.", "yi": "דער משגיח ברענגט די פוסקים אז די מלחמה פון גוג ומגוג וועט זיין אין תשרי, און ער באטאנט אז קיינער ווייסט נישט דעם קץ: אפילו יעקב, דניאל און די נביאים האבן עס נישט געוואוסט. ער ברענגט דעם רמב\"ם וועגן רבי עקיבא און בן כוזיבא, און ר' אלחנן וואסערמאן'ס ווארט אז א גאולה קען נישט קומען דורך די וואס פירן דאס פאלק אוועק פון תורה, און ער זאגט אז די פאליטישע מדינה איז אפשר א נסיון, כאטש דער שענסטער חלק פון תורה איז היינט אין ארץ ישראל." },
+      "kind": "tangent", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-02-01-noach", "startSeg": 637, "endSeg": 784,
+      "title": { "en": "Yechezkel's prophecy of Gog and Magog", "yi": "יחזקאל'ס נבואה פון גוג ומגוג" },
+      "summary": { "en": "The Rav learns through Yechezkel's prophecy read on Sukkos, explaining 'Rosh' and 'Meshech' as Russia and Moscow and citing a tradition from the Vilna Gaon that Gog and Magog is Russia. He says the prophecy is like a mitzvah that history must fulfill, brings the Gemara on Chizkiyahu and Sanheriv, and reads the pesukim with Rashi on the land gathered from many nations.", "yi": "דער משגיח לערנט דורך די נבואה פון יחזקאל וואס מ'ליינט סוכות, און טייטשט \"ראש\" און \"משך\" אויף רוסלאנד און מאסקווע, און ברענגט א קבלה פונעם ווילנער גאון אז גוג ומגוג איז רוסלאנד. ער זאגט אז די נבואה איז ווי א מצוה וואס די היסטאריע מוז מקיים זיין, ברענגט די גמרא וועגן חזקיהו און סנחריב, און לערנט די פסוקים מיט רש\"י וועגן דעם לאנד וואס איז צוזאמענגעקליבן פון אסאך פעלקער." },
+      "kind": "tangent", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-02-01-noach", "startSeg": 785, "endSeg": 870,
+      "title": { "en": "Kiddush Hashem and the Sukkos disappointment", "yi": "קידוש השם און די אנטוישונג פון סוכות" },
+      "summary": { "en": "The Rav finishes the prophecy's end, a great kiddush Hashem, and says that after the chillul Hashem when the war broke out on Yom Kippur, the teshuvah must be a kiddush Hashem. He stresses that pesukim are understood only when they happen, bringing Rashi and the Ramban on 'v'noshantem', and speaks of the disappointment of those who hoped for salvation this Sukkos.", "yi": "דער משגיח ענדיגט דעם סוף פון דער נבואה, א גרויסער קידוש השם, און זאגט אז נאך דעם חילול השם ווען די מלחמה האט אויסגעבראכן יום כיפור, מוז די תשובה זיין א קידוש השם. ער באטאנט אז מ'פארשטייט די פסוקים ערשט ווען זיי טרעפן, ברענגט רש\"י און דעם רמב\"ן אויף \"ונושנתם\", און רעדט וועגן דער אנטוישונג פון די וואס האבן געהאפט אויף א ישועה דעם סוכות." },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-02-01-noach", "startSeg": 871, "endSeg": 943,
+      "title": { "en": "Moshe in the teiva: failure that was salvation", "yi": "משה אין דער תיבה: א מפלה וואס איז געווען א ישועה" },
+      "summary": { "en": "The Rav retells how Miriam prophesied the redeemer's birth, how Moshe was hidden three months and then placed in a teiva on the day that later became Shavuos, and how Miriam was asked where her prophecy was. Through the Maharal he shows that this apparent failure was the start of the redemption, and suggests that this Sukkos may also prove to have been a salvation.", "yi": "דער משגיח דערציילט ווי מרים האט געזאגט נביאות אויף דער געבורט פונעם גואל, ווי משה איז באהאלטן געווען דריי חדשים און דערנאך אריינגעלייגט געווארן אין א תיבה אויף דעם טאג וואס איז שפעטער געווארן שבועות, און ווי מ'האט מרים געפרעגט וואו איז איר נבואה. מיטן מהר\"ל ווייזט ער אז די אנגעזעענע מפלה איז געווען דער אנהייב פון דער גאולה, און ער זאגט אז אפשר וועט מען אויך זען אז דער סוכות איז געווען א ישועה." },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-02-01-noach", "startSeg": 944, "endSeg": 998,
+      "title": { "en": "Why the mazalos stopped during the flood", "yi": "פארוואס די מזלות האבן נישט געשמשט ביים מבול" },
+      "summary": { "en": "The Rav brings the Midrash that the mazalos did not function during the flood and asks why. He answers that a decree of destruction for a set time could be interrupted by bright days whose mazal brings kindness, so the mazalos had to stop; Hashem's kindness now was to place the din in the luminous days of Yom Kippur, Sukkos and Parshas Noach.", "yi": "דער משגיח ברענגט דעם מדרש אז די מזלות האבן נישט געשמשט ביים מבול, און פרעגט פארוואס. ער ענטפערט אז א גזירה פון חורבן אויף א באשטימטע צייט קען איבערגעהאקט ווערן דורך ליכטיגע טעג וועמענס מזל ברענגט חסד, דערפאר האבן די מזלות געמוזט אפשטעלן; דעם אייבערשטנס חסד יעצט איז געווען אז ער האט אוועקגעשטעלט דעם דין אין די ליכטיגע טעג פון יום כיפור, סוכות און פרשת נח." },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-02-01-noach", "startSeg": 999, "endSeg": 1099,
+      "title": { "en": "'Make light in the teiva': words of Torah and tefillah", "yi": "\"צהר תעשה לתיבה\": ווערטער פון תורה און תפילה" },
+      "summary": { "en": "The Rav brings the Ba'al Shem Tov that teiva means 'word': every word of Torah and tefillah must shine with vitality, and it is the teiva that saves a Jew from the flood of heresy and the yetzer hara of this world. A person who davens without his heart is thrown out of the teiva; with the present danger, he asks who will build the teiva if not the Jews who still learn and say Tehillim.", "yi": "דער משגיח ברענגט דעם בעל שם טוב אז תיבה מיינט \"ווארט\": יעדעס ווארט פון תורה און תפילה דארף לייכטן מיט חיות, און דאס איז די תיבה וואס ראטעוועט א איד פונעם מבול פון כפירה און יצר הרע פון עולם הזה. א מענטש וואס דאוונט אן א הארץ ווערט ארויסגעווארפן פון דער תיבה; מיט דער היינטיגער סכנה פרעגט ער ווער וועט בויען די תיבה אויב נישט די אידן וואס לערנען נאך און זאגן תהלים." },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-02-01-noach", "startSeg": 1100, "endSeg": 1172,
+      "title": { "en": "Every Jew must be a Noach", "yi": "יעדער איד דארף זיין א נח" },
+      "summary": { "en": "The Rav says the Torah is eternal: if there was once a Noach, a teiva and a flood, there are today, so every Jew must build a teiva with more learning and more kavanah, for time is short. He ties Moshe's teiva and the daughter of Pharaoh to the Zohar's 'bas malka' in every word of Torah and tefillah, and stresses that every Jew is precious and a hidden treasure.", "yi": "דער משגיח זאגט אז די תורה איז נצחי: אויב עס איז אמאל געווען א נח, א תיבה און א מבול, זענען זיי היינט אויך דא, ממילא דארף יעדער איד בויען א תיבה מיט מער לערנען און מער כוונה, ווייל די צייט איז קורץ. ער פארבינדט משה'ס תיבה און בת פרעה מיטן זוהר'ס \"ברתא דמלכא\" אין יעדעס ווארט פון תורה און תפילה, און באטאנט אז יעדער איד איז טייער און א באהאלטענער אוצר." },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-02-01-noach", "startSeg": 1173, "endSeg": 1245,
+      "title": { "en": "A teiva big enough for every Jew", "yi": "א תיבה גרויס גענוג פאר יעדן איד" },
+      "summary": { "en": "The Rav returns to Shemini Atzeres and Simchas Torah, when the dearness of every Jew is revealed, and says Hashem calls even a far-off Jew 'my son'. He concludes that every Jew must build a teiva big enough for all Jews, through Torah, tefillah and the Shabbos meals that save from Gog and Magog, since the nations make no distinction between Jews, and all will share the salvation.", "yi": "דער משגיח קומט צוריק צו שמיני עצרת און שמחת תורה, ווען די חביבות פון יעדן איד ווערט נתגלה, און זאגט אז דער אייבערשטער רופט אפילו א ווייטן איד \"מיין קינד\". ער ענדיגט אז יעדער איד דארף בויען א תיבה גרויס גענוג פאר אלע אידן, מיט תורה, תפילה און די סעודות פון שבת וואס ראטעווען פון גוג ומגוג, ווייל די גוים מאכן נישט קיין חילוק צווישן אידן, און אלע וועלן האבן א חלק אין דער ישועה." },
+      "kind": "closing", "catalogTopicIdx": [], "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "השם למבול יושב ... השם איז לימוד יוטן", "work": "Gemara Zevachim", "ref": "Zevachim 116a", "sefariaRef": "Zevachim 116a", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [5, 7, 13, 171, 172], "confidence": 0.85 } },
+    { "heardAs": "השם למבול יושב", "work": "Tehillim", "ref": "Tehillim 29:10", "sefariaRef": "Psalms 29:10", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [7, 172], "confidence": 0.85 } },
+    { "heardAs": "ה' יבאה חתם הבעשלים; השם יבחר שם ובשולים", "work": "Tehillim", "ref": "Tehillim 29:11", "sefariaRef": "Psalms 29:11", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [14, 17, 187, 250], "confidence": 0.85 } },
+    { "heardAs": "משה מן התורה מניים ... בשגם הבתה", "work": "Gemara Chullin", "ref": "Chullin 139b", "sefariaRef": "Chullin 139b", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [21, 22, 25, 28], "confidence": 0.85 } },
+    { "heardAs": "כי מעינייך זאת לי", "work": "Yeshayahu", "ref": "Yeshayahu 54:9", "sefariaRef": "Isaiah 54:9", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [53, 54], "confidence": 0.8 } },
+    { "heardAs": "מכנו נאר מסופככו", "work": "Shemos", "ref": "Shemos 32:32", "sefariaRef": "Exodus 32:32", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [50, 63], "confidence": 0.8 } },
+    { "heardAs": "דער חתם ספר האט געזאגט", "work": "Chasam Sofer", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [81, 95, 101], "confidence": 0.75 } },
+    { "heardAs": "ונתתי מיט הר ארצך ... יספר די גינעך, ואתרשך ויצריך", "work": "Devarim", "ref": "Devarim 11:14", "sefariaRef": "Deuteronomy 11:14", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [87, 89], "confidence": 0.8 } },
+    { "heardAs": "שטעט אין דיור הקודש אז שמיני יצרות קומען ארונט פון נבואה די חכמותא", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [104, 105], "confidence": 0.7 } },
+    { "heardAs": "וישב רחי יזרע מועם ... מגידו דבורה ולי יעקב", "work": "Tehillim", "ref": "Tehillim 147:18-19", "sefariaRef": "Psalms 147:18-19", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [116, 118, 119], "confidence": 0.75 } },
+    { "heardAs": "די נפילים הילפו ארץ", "work": "Bereishis", "ref": "Bereishis 6:4", "sefariaRef": "Genesis 6:4", "resolution": "resolved", "mention": "alluded", "evidence": { "segs": [141], "confidence": 0.75 } },
+    { "heardAs": "גשם נדבי תנף לכם", "work": "Tehillim", "ref": "Tehillim 68:10", "sefariaRef": "Psalms 68:10", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [152, 154, 155], "confidence": 0.8 } },
+    { "heardAs": "והיא מעבל הל' ארץ, אברהם יום", "work": "Bereishis", "ref": "Bereishis 7:17", "sefariaRef": "Genesis 7:17", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [193], "confidence": 0.75 } },
+    { "heardAs": "הפטירה פון שבעת ... נפתחי השמים וערים מראה סולקים", "work": "Yechezkel", "ref": "Yechezkel 1:1", "sefariaRef": "Ezekiel 1:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [196], "confidence": 0.8 } },
+    { "heardAs": "וערבות השמים נפתחות", "work": "Bereishis", "ref": "Bereishis 7:11", "sefariaRef": "Genesis 7:11", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [198], "confidence": 0.8 } },
+    { "heardAs": "די גמרא זאגט אין שבת ... אוריון תלתה", "work": "Gemara Shabbos", "ref": "Shabbos 88a", "sefariaRef": "Shabbat 88a", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [203, 205, 206, 209], "confidence": 0.85 } },
+    { "heardAs": "אזוי זאגט דער מראהל", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [214, 215, 218], "confidence": 0.75 } },
+    { "heardAs": "דער בעל הצרים זאגט", "work": "Baal HaTurim", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [220, 221], "confidence": 0.6 } },
+    { "heardAs": "מאני קרובע ... ווי עס שטעט אין מדרש", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [271, 277, 279, 285], "confidence": 0.75 } },
+    { "heardAs": "פרי סלענער סוכה שלומך", "work": "Siddur (Hashkiveinu)", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "quoted", "evidence": { "segs": [310, 313], "confidence": 0.75 } },
+    { "heardAs": "כנחמתי כי אסיסים ונח", "work": "Bereishis", "ref": "Bereishis 6:7", "sefariaRef": "Genesis 6:7", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [408, 413], "confidence": 0.8 } },
+    { "heardAs": "מוצאי חן ביוני השם", "work": "Bereishis", "ref": "Bereishis 6:8", "sefariaRef": "Genesis 6:8", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [411, 414], "confidence": 0.85 } },
+    { "heardAs": "בצילו חמדתי וישבתי", "work": "Shir HaShirim", "ref": "Shir HaShirim 2:3", "sefariaRef": "Song of Songs 2:3", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [481], "confidence": 0.85 } },
+    { "heardAs": "דער רמל זאגט אז מ'לענט די פרשה פון גג מרגק סטארקעס", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [560, 561], "confidence": 0.7 } },
+    { "heardAs": "עס שטעט נאר געמורען מגאולה ... ער האט געהאט א טעות אין דעם חשבון פון דעם קעץ", "work": "Gemara Megillah", "ref": "Megillah 12a", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [578, 579], "confidence": 0.65 } },
+    { "heardAs": "דער רמב״ם אין הילכות מלאכים", "work": "Rambam, Mishneh Torah", "ref": "Hilchos Melachim 11:3", "sefariaRef": "Mishneh Torah, Kings and Wars 11:3", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [597, 599, 601], "confidence": 0.8 } },
+    { "heardAs": "רבי חנן וואסערמאן האט אמאל געזאגט", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [605, 607, 613, 615], "confidence": 0.8 } },
+    { "heardAs": "סימפע נחל ג ג ארץ המגג ... ראש משח פון סעול וואלט", "work": "Yechezkel", "ref": "Yechezkel 38:2", "sefariaRef": "Ezekiel 38:2", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [639, 640, 649, 726], "confidence": 0.85 } },
+    { "heardAs": "די בני יפות ... מגה און מגה", "work": "Bereishis", "ref": "Bereishis 10:2", "sefariaRef": "Genesis 10:2", "resolution": "resolved", "mention": "alluded", "evidence": { "segs": [641], "confidence": 0.75 } },
+    { "heardAs": "עס איז פארהאן א קבלה פון ווילנא גורן", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [676], "confidence": 0.8 } },
+    { "heardAs": "דער גמרא זאגט אין חלק ... יחזקיהו המלך זאל זיין משיח", "work": "Gemara Sanhedrin", "ref": "Sanhedrin 94a", "sefariaRef": "Sanhedrin 94a", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [699, 700, 701], "confidence": 0.85 } },
+    { "heardAs": "פרת, כשר, פוט ... גומא וכו' הגפה", "work": "Yechezkel", "ref": "Yechezkel 38:5-6", "sefariaRef": "Ezekiel 38:5-6", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [736, 738, 739, 742], "confidence": 0.75 } },
+    { "heardAs": "וייסלאם למשמר ... אזוי זאגט רשע ... הלבת משובבת מחרב", "work": "Rashi", "ref": "Rashi on Yechezkel 38:7-8", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [746, 748, 763, 765], "confidence": 0.7 } },
+    { "heardAs": "עלרת משובבת מחרב ... מקבצת מיינים רבים", "work": "Yechezkel", "ref": "Yechezkel 38:8", "sefariaRef": "Ezekiel 38:8", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [759, 764, 766], "confidence": 0.8 } },
+    { "heardAs": "עה-לא-אל-ערץ פראזעות ... עושה מוקדון בקניון", "work": "Yechezkel", "ref": "Yechezkel 38:11-12", "sefariaRef": "Ezekiel 38:11-12", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [785, 786, 790], "confidence": 0.75 } },
+    { "heardAs": "דער רמב״ם זאגט דאך, אז בימית המשיח", "work": "Rambam", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [797, 798], "confidence": 0.7 } },
+    { "heardAs": "ונשפדתי איתי בדבר ובדם ... ובאבני אלגביש ... ותקדשתי", "work": "Yechezkel", "ref": "Yechezkel 38:22-23", "sefariaRef": "Ezekiel 38:22-23", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [801, 814], "confidence": 0.8 } },
+    { "heardAs": "רשע ברענגט זיך דעם חז״ל ... ונשנתים ... גימטריא", "work": "Rashi", "ref": "Rashi on Devarim 4:25", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [827, 829, 830], "confidence": 0.75 } },
+    { "heardAs": "ער זאגט אין רמב״ן אז די אידן האבן געהאט א קבלה", "work": "Ramban", "ref": "Ramban on Devarim 4:25", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [831, 834, 835], "confidence": 0.7 } },
+    { "heardAs": "מרים בתקח מרים הנביא אחת הרי' זאגט רשע", "work": "Rashi", "ref": "Rashi on Shemos 15:20", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [875, 876], "confidence": 0.75 } },
+    { "heardAs": "חזאל זאגן אונז ... מרים'ס קאפ ... יא היכע נבאותך", "work": "Gemara Sotah", "ref": "Sotah 12b-13a", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [914, 916, 917], "confidence": 0.7 } },
+    { "heardAs": "דער מראהל איז מסביר אין גבורת ה'", "work": "Gevuros Hashem", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [930, 932], "confidence": 0.8 } },
+    { "heardAs": "דער מדרש זאגט אז די גאנצע צייט פון דעם מעבל – לא שמשה המזלות", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [945, 946], "confidence": 0.85 } },
+    { "heardAs": "סוהר טעת על הציבה; סייע תעשה לטיבה", "work": "Bereishis", "ref": "Bereishis 6:16", "sefariaRef": "Genesis 6:16", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1002, 1023], "confidence": 0.85 } },
+    { "heardAs": "ס'איז דא א קלאסישע ווארט פון בעש''ט", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1000, 1022, 1029], "confidence": 0.85 } },
+    { "heardAs": "רש''ה ברענגט עס פון מדרש ... כושר א תיבה", "work": "Rashi", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1051, 1052], "confidence": 0.7 } },
+    { "heardAs": "דער זוה'ק ... בראטא דער מלכה", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1122, 1123, 1124], "confidence": 0.7 } },
+    { "heardAs": "אני חומה, זי תורה", "work": "Gemara Bava Basra", "ref": "Bava Basra 8a", "sefariaRef": "Bava Batra 8a", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [1154], "confidence": 0.7 } },
+    { "heardAs": "לאכאוויטשער ... על גינזי המלך", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1168, 1169, 1171], "confidence": 0.7 } },
+    { "heardAs": "דער גמרא זאגט אז אין דעם סחוז פון די דריי סדות פון שבת", "work": "Gemara Shabbos", "ref": "Shabbos 118a", "sefariaRef": "Shabbat 118a", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [1230, 1231], "confidence": 0.8 } }
+  ],
+  "insights": [
+    {
+      "text": { "en": "The flood and Matan Torah were the same downpour: the nations rightly sensed the signs of the flood at Sinai, but what came in Noach's time as the outer shell, destruction, came at Sinai as its inner content, Torah.", "yi": "דער מבול און מתן תורה זענען געווען די זעלבע השפעה: די אומות האבן ריכטיג דערשפירט ביי סיני די סימנים פונעם מבול, נאר וואס אין נח'ס צייטן איז געקומען אלס חיצוניות, חורבן, איז ביי סיני געקומען אלס איר פנימיות, תורה." },
+      "evidence": { "segs": [151, 157, 158, 165, 184], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "Moshe's 'erase me' on behalf of his generation repaired Noach's failure to daven for his; the flood is called 'the waters of Noach' because of that failure.", "yi": "משה'ס \"מחני נא\" פאר זיין דור האט מתקן געווען נח'ס פעלער וואס ער האט נישט מתפלל געווען פאר זיין דור; דער מבול הייסט \"מי נח\" צוליב דעם פעלער." },
+      "evidence": { "segs": [48, 57, 62, 66, 67], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The shin on the head tefillin, three-headed and four-headed and numbering 300, expresses the threefold quality of Torah that makes it lasting, the opposite of the flood.", "yi": "דער שין אויף די תפילין של ראש, מיט דריי און מיט פיר קעפלעך און מיט דער גימטריא דריי הונדערט, דריקט אויס די געדריטלטקייט פון תורה וואס מאכט זי פאר א קיום, דאס היפך פונעם מבול." },
+      "evidence": { "segs": [230, 233, 236, 243, 248], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "The sukkah is an embassy of heaven on earth: one who sits in it is legally 'not in this world', so judgment against the world cannot reach him, just as tumah cannot remain in a mikveh.", "yi": "די סוכה איז אן אמבאסאדע פון הימל אויף דער וועלט: ווער עס זיצט דארט געפינט זיך ווי נישט אויף דער וועלט, ממילא קען דער דין אויף דער וועלט אים נישט דערגרייכן, אזוי ווי טומאה קען נישט בלייבן אין א מקוה." },
+      "evidence": { "segs": [390, 391, 392, 399, 404], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "The mazalos stopped during the flood because a single bright day whose mazal brings kindness could have broken a decree of destruction for a fixed time.", "yi": "די מזלות האבן אפגעשטעלט ביים מבול, ווייל איין ליכטיגער טאג וועמענס מזל ברענגט חסד וואלט געקענט איבערהאקן א גזירה פון חורבן אויף א באשטימטע צייט." },
+      "evidence": { "segs": [952, 953, 976, 979, 981], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "Moshe's teiva and Noach's teiva are one theme: the first gilgul was saved from the flood by a teiva, the second by a teiva and the daughter of Pharaoh, who corresponds to the 'bas malka' present in every word of Torah and tefillah.", "yi": "משה'ס תיבה און נח'ס תיבה זענען איין ענין: דער ערשטער גלגול איז ניצול געווארן פונעם מבול דורך א תיבה, דער צווייטער דורך א תיבה און בת פרעה, וואס איז כנגד דעם \"ברתא דמלכא\" וואס געפינט זיך אין יעדעס ווארט פון תורה און תפילה." },
+      "evidence": { "segs": [1125, 1126, 1128, 1133, 1136], "confidence": 0.7 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "Moshe in the teiva on Shavuos", "yi": "משה אין דער תיבה אום שבועות" },
+      "retelling": { "en": "Miriam prophesied that her mother would give birth to the one who would redeem the Jews from Egypt. Moshe was hidden for three months, and when the Egyptians were expected to come searching, he was placed in a teiva and put into the water, on the day that would later be Shavuos. Chazal say Miriam was struck on the head and asked where her prophecy was; the day of hope seemed to become the greatest failure, yet it led to Moshe being raised in Pharaoh's house and to the redemption.", "yi": "מרים האט געזאגט נביאות אז איר מאמע וועט געבוירן דעם וואס וועט ארויסנעמען די אידן פון מצרים. משה איז באהאלטן געווען דריי חדשים, און ווען מ'האט געווארט אז די מצריים וועלן קומען זוכן, האט מען אים אריינגעלייגט אין א תיבה און אריינגעשטעלט אין וואסער, אויף דעם טאג וואס איז שפעטער געווארן שבועות. חז\"ל זאגן אז מ'האט מרים געקלאפט אויפן קאפ און געפרעגט וואו איז איר נבואה; דער טאג פון האפענונג האט אויסגעזען ווי די גרעסטע מפלה, און דאך האט עס געפירט אז משה איז אויפגעוואקסן אין פרעה'ס הויז און צו דער גאולה." },
+      "people": ["Moshe Rabbeinu", "Miriam", "Pharaoh"],
+      "evidence": { "segs": [876, 895, 911, 916, 929], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The Ba'al Shem Tov's 'shalom aleichem' after davening", "yi": "דעם בעל שם טוב'ס \"שלום עליכם\" נאכן דאווענען" },
+      "retelling": { "en": "The Ba'al Shem Tov once greeted a Jew with 'shalom aleichem' after davening, as one greets a person returning from a journey, because during the davening his mind had been in Danzig. The Rav uses this to explain that a person who davens without his heart is thrown out of the teiva of tefillah.", "yi": "דער בעל שם טוב האט אמאל געזאגט \"שלום עליכם\" צו א איד נאכן דאווענען, אזוי ווי מ'באגריסט איינעם וואס קומט צוריק פון א רייזע, ווייל ביים דאווענען איז ער געווען מיט די געדאנקען אין דאנציג. דער משגיח לערנט דערפון אז א מענטש וואס דאוונט אן א הארץ ווערט ארויסגעווארפן פון דער תיבה פון תפילה." },
+      "people": ["the Ba'al Shem Tov"],
+      "evidence": { "segs": [1058, 1059, 1067, 1068], "confidence": 0.65 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "Why did the nations think a flood was coming when the Torah was given?", "yi": "פארוואס האבן די אומות געמיינט אז עס קומט א מבול ווען די תורה איז געגעבן געווארן?" },
+      "answer": { "en": "The inner content of rain is Torah, and the flood was the outer shell of the influx meant to bring Torah; at Sinai the same signs appeared, so the astrologers saw what had happened in Noach's time.", "yi": "די פנימיות פון רעגן איז תורה, און דער מבול איז געווען דאס חיצוניות פון דער השפעה וואס האט געדארפט ברענגען תורה; ביי סיני זענען באוויזן געווארן די זעלבע סימנים, ממילא האבן די שטערן-קוקער געזען וואס עס איז געווען אין נח'ס צייטן." },
+      "questionSegs": [7, 10, 11], "answerSegs": [151, 164, 165, 168], "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why is Moshe's root hinted specifically in the flood?", "yi": "פארוואס איז משה'ס שורש מרומז דווקא ביים מבול?" },
+      "answer": { "en": "Moshe was Noach returned, coming to repair Noach's failure to daven for his generation by saying 'erase me' for his own.", "yi": "משה איז געווען נח וואס איז צוריקגעקומען מתקן צו זיין נח'ס פעלער וואס ער האט נישט מתפלל געווען פאר זיין דור, דורכן זאגן \"מחני נא\" פאר זיין דור." },
+      "questionSegs": [24, 34], "answerSegs": [42, 44, 66, 67], "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why is the Torah threefold?", "yi": "פארוואס איז די תורה געדריטלט?" },
+      "answer": { "en": "The Maharal explains that whatever endures has a beginning, middle and end, and the Torah is the permanence of the world.", "yi": "דער מהר\"ל איז מסביר אז יעדע זאך וואס איז א קיום האט א ראש, תוך און סוף, און די תורה איז דער קיום פון דער וועלט." },
+      "questionSegs": [208, 209], "answerSegs": [214, 215, 216, 217], "confidence": 0.8
+    },
+    {
+      "question": { "en": "How can a flimsy sukkah protect a Jew all year?", "yi": "וויאזוי קען א שוואכע סוכה באשיצן א איד א גאנץ יאר?" },
+      "answer": { "en": "Not its physical schach but its halachos protect, bringing down supernal lights, just as the halachos of a mikveh, not its water, purify.", "yi": "נישט דער גשמיות'דיגער סכך נאר אירע הלכות באשיצן, ווייל זיי ברענגען אראפ אורות עליונים, אזוי ווי ביי א מקוה מטהר איז די הלכות און נישט דאס וואסער." },
+      "questionSegs": [306, 307, 317], "answerSegs": [321, 331, 332, 341], "confidence": 0.85
+    },
+    {
+      "question": { "en": "Why was Noach told to build a teiva with exact halachos and not just any box?", "yi": "פארוואס האט נח באקומען א באפעל צו בויען א תיבה מיט גענויע הלכות און נישט סתם א קאסטן?" },
+      "answer": { "en": "Because the halachos of the teiva, like those of the Mishkan, sukkah and mikveh, are what drew down the protection; the wood alone could not have saved him.", "yi": "ווייל די הלכות פון דער תיבה, אזוי ווי די הלכות פון משכן, סוכה און מקוה, האבן אראפגעצויגן די הגנה; דאס האלץ אליין וואלט אים נישט געקענט ראטעווען." },
+      "questionSegs": [423, 425], "answerSegs": [429, 433, 435, 440], "confidence": 0.85
+    },
+    {
+      "question": { "en": "Why did the mazalos not function during the flood?", "yi": "פארוואס האבן די מזלות נישט געשמשט ביים מבול?" },
+      "answer": { "en": "A decree of destruction for a fixed time could be broken by bright days whose mazal brings kindness, so the mazalos had to stop for the decree to be fulfilled.", "yi": "א גזירה פון חורבן אויף א באשטימטע צייט קען איבערגעהאקט ווערן דורך ליכטיגע טעג וועמענס מזל ברענגט חסד, דערפאר האבן די מזלות געמוזט אפשטעלן כדי די גזירה זאל מקוים ווערן." },
+      "questionSegs": [947, 950], "answerSegs": [952, 976, 979, 982], "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Rav says learning Parshas Noach, including hearing it from the ba'al korei, draws protection over the Jewish people.", "yi": "דער משגיח זאגט אז דאס לערנען פרשת נח, אויך דאס הערן פונעם בעל קורא, ציט אראפ הגנה אויף כלל ישראל." },
+      "evidence": { "segs": [471, 474, 475, 489], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Rav says every word of tefillah and Torah should be said with light, vitality and enthusiasm, not coldly or sleepily.", "yi": "דער משגיח זאגט אז יעדעס ווארט פון תפילה און תורה זאל מען זאגן מיט ליכטיגקייט, חיות און התלהבות, נישט קאלט און נישט פארשלאפן." },
+      "evidence": { "segs": [1004, 1007, 1010, 1025, 1027], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "The Rav calls on every Jew to build a teiva now: to add hours of learning, more kavanah in davening and more tefillos.", "yi": "דער משגיח רופט יעדן איד צו בויען יעצט א תיבה: צוצולייגן שטונדן לערנען, מער כוונה ביים דאווענען און מער תפילות." },
+      "evidence": { "segs": [1106, 1110, 1112, 1113, 1115], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Rav says the teiva must be made big enough for every Jew, including those far from Torah, because every Jew is precious to Hashem.", "yi": "דער משגיח זאגט אז מ'דארף מאכן די תיבה גרויס גענוג פאר יעדן איד, אויך פאר די וואס זענען ווייט פון תורה, ווייל יעדער איד איז טייער ביים רבונו של עולם." },
+      "evidence": { "segs": [1210, 1212, 1214, 1215], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "parshas noach",
+    "the teiva and the sukkah as protection",
+    "halachos as the vessel for spiritual light",
+    "flood and matan torah",
+    "inner meaning of rain",
+    "shemini atzeres and simchas torah",
+    "gog and magog",
+    "chevlei mashiach",
+    "tzohar ta'aseh lateiva",
+    "love for every jew"
+  ],
+  "concepts": [
+    { "he": "תיבה", "heardAs": ["טבע", "תיבה", "טיבה"] },
+    { "he": "סוכה", "heardAs": ["סכר", "צוקער", "סוקער", "אסתרקה", "סתוקה"] },
+    { "he": "מבול", "heardAs": ["מעבל", "מערבל", "מביל"] },
+    { "he": "מתן תורה", "heardAs": ["נתנות התורה", "מעתים תורה", "מעטן צורה"] },
+    { "he": "פנימיות", "heardAs": ["פנימיות", "פנימות"] },
+    { "he": "חיצוניות", "heardAs": ["חצניות", "חצוניות"] },
+    { "he": "שמיני עצרת", "heardAs": ["שמיני יצרות", "שמונו יצרות", "שמוני הצרות"] },
+    { "he": "ארבע מינים", "heardAs": ["אבא מינים", "ארבע אמונים"] },
+    { "he": "כלי זיין", "heardAs": ["מאני קרובע", "כלים פון קרוב"] },
+    { "he": "מדת הדין", "heardAs": ["מידת-הדין", "מידעסטע דין"] },
+    { "he": "הגנה", "heardAs": ["הגנב", "הגנא", "אגונה"] },
+    { "he": "מקוה", "heardAs": ["מקוה"] },
+    { "he": "גוג ומגוג", "heardAs": ["גג מרגק", "גוגל מרגאג", "גרגעם-מרגעג"] },
+    { "he": "חבלי משיח", "heardAs": ["חבלי משיח", "חברלי משיח"] },
+    { "he": "מזלות", "heardAs": ["מזלות", "מזלים"] },
+    { "he": "צהר תעשה לתיבה", "heardAs": ["סוהר טעת על הציבה", "סייע תעשה לטיבה", "סייער תעשה לייט טבע"] },
+    { "he": "קידוש השם", "heardAs": ["קידוש השם"] },
+    { "he": "צילא דמהימנותא", "heardAs": ["צילה איבדי ממונתא"] }
+  ],
+  "people": [
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו", "משה הבן", "משה רביהונא"] },
+    { "name": "Noach", "heardAs": ["נח", "נייעך"] },
+    { "name": "Bilam", "heardAs": ["בורלים", "בולם", "יבולם"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יעקב אבינו"] },
+    { "name": "Esav", "heardAs": ["עוסף", "אסף", "אעסעף"] },
+    { "name": "Rabbi Akiva", "heardAs": ["רבי יקיבא", "ר' יקיבא"] },
+    { "name": "Bar Koziva", "heardAs": ["בן קאזיווע"] },
+    { "name": "Daniel", "heardAs": ["דניאל"] },
+    { "name": "Rav Elchonon Wasserman", "heardAs": ["רבי חנן וואסערמאן"] },
+    { "name": "the Vilna Gaon", "heardAs": ["ווילנא גורן"] },
+    { "name": "Chizkiyahu", "heardAs": ["יחזקיהו המלך", "חסקי"] },
+    { "name": "Sanheriv", "heardAs": ["סנחריו", "סאנכארעוו"] },
+    { "name": "Yechezkel", "heardAs": ["יחזקאל הנביא"] },
+    { "name": "Miriam", "heardAs": ["מרים"] },
+    { "name": "the Maharal", "heardAs": ["מראהל", "מהר''ל"] },
+    { "name": "the Chasam Sofer", "heardAs": ["חתם ספר", "חתם סופר"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["בעש''ט", "בעל שם טוב הקודש"] },
+    { "name": "the Lechovitcher", "heardAs": ["לאכאוויטשער"] },
+    { "name": "Rashi", "heardAs": ["רשע", "רש''ה"] }
+  ],
+  "asrNotes": "Yiddish ASR fair to poor; many key words are garbled (teiva as 'טבע', sukkah as 'סכר'/'צוקער', mabul as 'מעבל'), and Hebrew quotations are heavily mangled but mostly recoverable from context. The source the Rav cites for Noach being punished for not davening (segs 37, 61) and the attributions in segs 360, 1031 and 1223 could not be recovered. Segments 902-909 (around 61:12-61:36) are partly garbled. No stretches were flagged as noise."
+}

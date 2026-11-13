@@ -1,0 +1,483 @@
+{
+  "shiurId": "yi-parshas-hashavua-vytz-01",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains Parshas Vayetzei as the guide for a Jew who must leave a surrounding of kedushah for Charan, the land of worldly wisdom: Yaakov stayed bound to Be'er Sheva, worked for Hashem rather than for Lavan, and redeemed the Jewish souls there.",
+      "yi": "דער משגיח ערקלערט פרשת ויצא אלס דער וועגווייזער פאר א איד וואס מוז ארויסגיין פון א סביבה פון קדושה קיין חרן, דאס לאנד פון חכמה חיצונית: יעקב אבינו איז געבליבן צוגעבונדן צו באר שבע, ער האט געארבעט פארן רבונו של עולם און נישט פאר לבן, און ער האט אויסגעלייזט די אידישע נשמות פון דארט."
+    },
+    "abstract": {
+      "en": "The Rav opens by saying the parsha itself cries out its lesson: Vayetzei is the going out from a place of kedushah to Charan. Because Yaakov never broke his bond with his father's house, the whole sedra is written without a single break. Charan was the land of the Bnei Kedem, the center of worldly wisdom and progress, and Lavan was its great sage. A Jew's healthy state is to dwell apart, yet at times Hashem forces him out, as Yaakov was sent. Then he must leave tied by an oath, a rope, to Be'er Sheva, armed with bitachon. The Rav describes Yaakov's fourteen years for Rachel and Leah as service of Hashem, the sheep as Jewish souls he must redeem, and Rachel weeping for her children in exile. He closes with the trials of Beis Lavan, with going there only when compelled and after preparation, and with stories showing that Torah without yiras shamayim is not Torah.",
+      "yi": "דער משגיח הייבט אן אז די פרשה אליין שרייט אירע לימוד: ויצא איז דאס ארויסגיין פון א מקום פון קדושה קיין חרן. ווייל יעקב אבינו האט קיינמאל נישט איבערגעריסן זיין קשר מיט'ן טאטנס שטוב, איז די גאנצע סדרה געשריבן אן קיין איין הפסק. חרן איז געווען ארץ בני קדם, דער צענטער פון חכמה חיצונית און פון פראגרעס, און לבן איז געווען איר גרעסטער חכם. דער געזונטער מצב פון א איד איז צו וואוינען בדד, אבער אמאל צווינגט אים דער רבונו של עולם ארויסצוגיין, אזוי ווי יעקב איז געשיקט געווארן. דעמאלט דארף ער גיין צוגעבונדן מיט א שבועה, מיט א שטריק, צו באר שבע, און אנגעטון אין ביטחון. דער משגיח שילדערט די פערצן יאר פאר רחל און לאה אלס עבודת השם, די שעפסן אלס אידישע נשמות וואס יעקב דארף אויסלייזן, און רחל וואס וויינט אויף אירע קינדער אין גלות. צום סוף רעדט ער וועגן די נסיונות פון בית לבן, אז מ'גייט אהין נאר ווען מ'מוז און נאך א הכנה, און ער דערציילט מעשיות אז תורה אן יראת שמים איז נישט קיין תורה."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Vayetzei teaches how a Jew must conduct himself when he leaves his surrounding of kedushah and lives in Charan, the land of outside wisdom.",
+          "yi": "ויצא לערנט וויאזוי א איד דארף זיך פירן ווען ער גייט ארויס פון זיין סביבה פון קדושה און לעבט אין חרן, דאס לאנד פון חכמה חיצונית."
+        },
+        "evidence": { "segs": [39, 40, 44, 45, 46, 47], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The sedra has no break because Yaakov never interrupted his bond with his father's house during his twenty years away.",
+          "yi": "די סדרה האט נישט קיין הפסק, ווייל יעקב אבינו האט די גאנצע צוואנציק יאר קיינמאל נישט איבערגעריסן זיין קשר מיט'ן טאטנס שטוב."
+        },
+        "evidence": { "segs": [50, 51, 52, 64, 65], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "A Jew's healthy state is to dwell apart, but when Hashem forces him into the world he must remain inwardly separate, tied by an oath to Be'er Sheva like a rope tied above a pit.",
+          "yi": "דער געזונטער מצב פון א איד איז צו וואוינען אפגעזונדערט, אבער ווען דער רבונו של עולם צווינגט אים צו גיין צווישן דער וועלט, דארף ער בלייבן אינעווייניג אפגעזונדערט, צוגעבונדן מיט א שבועה צו באר שבע, אזוי ווי א שטריק וואס איז צוגעבונדן אויבן ביי א גרוב."
+        },
+        "evidence": { "segs": [180, 191, 207, 222, 229, 231], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Yaakov was not Lavan's employee but Hashem's; his fourteen years of work for Rachel and Leah were service of Hashem, like tefillin and tzitzis.",
+          "yi": "יעקב אבינו איז נישט געווען לבנס אנגעשטעלטער נאר דעם רבונו של עולמס; זיינע פערצן יאר ארבעט פאר רחל און לאה זענען געווען עבודת השם, אזוי ווי תפילין און ציצית."
+        },
+        "evidence": { "segs": [304, 305, 306, 549, 550, 551], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Yaakov's sheep were Jewish souls, and his task in exile is to shepherd and redeem them from under Lavan's rule.",
+          "yi": "די שעפסן פון יעקב זענען געווען אידישע נשמות, און זיין תפקיד אין גלות איז זיי צו פאשען און אויסצולייזן פון אונטער לבנס הערשאפט."
+        },
+        "evidence": { "segs": [322, 539, 540, 541, 542], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Beis Lavan is full of sudden trials; one may go there only when compelled, after asking a sheilas chacham and after years of preparation in kedushah.",
+          "yi": "בית לבן איז פול מיט פלוצלינגע נסיונות; מ'מעג אהינגיין נאר ווען מ'מוז, נאכ'ן פרעגן א שאלת חכם און נאך יארן הכנה אין קדושה."
+        },
+        "evidence": { "segs": [725, 727, 729, 730, 733, 784], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-parsha-sefer-bereishes-07-01-vayetzei",
+      "startSeg": 0,
+      "endSeg": 66,
+      "title": { "en": "A parsha with no break", "yi": "א סדרה אן קיין הפסק" },
+      "summary": {
+        "en": "The Rav says the parsha itself teaches yiras shamayim: Vayetzei is the going out from a surrounding of kedushah to Charan. He brings the Sfas Emes that the sedra has no break because Yaakov never interrupted his bond with his father's house.",
+        "yi": "דער משגיח זאגט אז די פרשה אליין לערנט יראת שמים: ויצא איז דאס ארויסגיין פון א סביבה פון קדושה קיין חרן. ער ברענגט דעם שפת אמת אז די סדרה האט נישט קיין הפסק, ווייל יעקב אבינו האט קיינמאל נישט איבערגעריסן זיין קשר מיט'ן טאטנס שטוב."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-07-01-vayetzei",
+      "startSeg": 67,
+      "endSeg": 112,
+      "title": { "en": "Yaakov's way in exile, then and now", "yi": "יעקבס הנהגה אין גלות, אמאל און היינט" },
+      "summary": {
+        "en": "The Rav explains the dream as a lower level fitting exile, and Yaakov as the one who instituted prayer in darkness and left his children a way of conduct for Vayetzei. He contrasts the Jews of the past, set apart in their own surroundings, with today, when Jews must go out into the progressive world.",
+        "yi": "דער משגיח ערקלערט דעם חלום אלס א נידעריגערע מדרגה וואס פאסט פאר גלות, און יעקב אבינו אלס דער וואס האט מתקן געווען תפילה אין דער פינסטער און איבערגעלאזט פאר זיינע קינדער א הנהגה פון ויצא. ער שטעלט אנטקעגן די אידן פון אמאל, וואס זענען געווען אפגעזונדערט, מיט היינט, ווען אידן מוזן ארויסגיין אין דער וועלט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-07-01-vayetzei",
+      "startSeg": 113,
+      "endSeg": 182,
+      "title": { "en": "Charan, the land of the Bnei Kedem", "yi": "חרן, ארץ בני קדם" },
+      "summary": {
+        "en": "The Rav describes Charan as the land of the Bnei Kedem, the center of worldly wisdom and progress, where Avraham sent the sons of the concubines, and Lavan, identified with Bilam, as its greatest sage. Yaakov's healthy state is isolation, as in 'vayishkon Yisrael betach badad' and Yeshaya's counsel to close the doors in exile.",
+        "yi": "דער משגיח שילדערט חרן אלס ארץ בני קדם, דער צענטער פון חכמה חיצונית און פראגרעס, וואו אברהם אבינו האט אוועקגעשיקט די בני הפילגשים, און לבן, וואס דער מדרש זאגט איז בלעם, אלס איר גרעסטער חכם. דער געזונטער מצב פון יעקב איז צו זיין אפגעזונדערט, אזוי ווי \"וישכן ישראל בטח בדד\" און ישעיהו הנביאס עצה צו פארמאכן די טירן אין גלות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-07-01-vayetzei",
+      "startSeg": 183,
+      "endSeg": 253,
+      "title": { "en": "Forced out, tied to Be'er Sheva", "yi": "ארויסגעצווינגען, צוגעבונדן צו באר שבע" },
+      "summary": {
+        "en": "The Rav explains that at times Hashem forces Jews to be exposed to the world, as Yaakov was sent to Charan. The counsel is to stay inwardly separate; Be'er Sheva is the oath, a rope tied above, with which Yaakov could descend into Charan, and before going he hid in the yeshiva of Shem and Ever.",
+        "yi": "דער משגיח ערקלערט אז אמאל צווינגט דער רבונו של עולם אידן צו ווערן אויסגעשטעלט צו דער וועלט, אזוי ווי יעקב איז געשיקט געווארן קיין חרן. די עצה איז צו בלייבן אינעווייניג אפגעזונדערט; באר שבע איז די שבועה, א שטריק צוגעבונדן אויבן, מיט וואס יעקב האט געקענט אראפגיין קיין חרן, און פאר'ן גיין האט ער זיך באהאלטן אין ישיבת שם ועבר."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-07-01-vayetzei",
+      "startSeg": 254,
+      "endSeg": 311,
+      "title": { "en": "Seven years for Rachel, seven for Leah", "yi": "זיבן יאר פאר רחל, זיבן פאר לאה" },
+      "summary": {
+        "en": "The Rav explains that Rachel and Leah correspond to two aspects of the Shechinah, as in Tikkun Rachel and Tikkun Leah of Tikkun Chatzos, so Yaakov had to prepare and toil for them. His seven years for each are like the counting of seven times seven, and through them he broke the wall between gashmiyus and ruchniyus; Vayetzei is the seventh sedra.",
+        "yi": "דער משגיח ערקלערט אז רחל און לאה זענען כנגד צוויי בחינות פון דער שכינה הקדושה, אזוי ווי תיקון רחל און תיקון לאה אין תיקון חצות, דערפאר האט יעקב זיך געדארפט צוגרייטן און הארעווען אויף זיי. די זיבן יאר פאר יעדע איינע זענען ווי ספירה, זיבן מאל זיבן, און דורך זיי האט ער צובראכן די וואנט צווישן גשמיות און רוחניות; ויצא איז די זיבעטע סדרה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-07-01-vayetzei",
+      "startSeg": 312,
+      "endSeg": 373,
+      "title": { "en": "Arriving with nothing but bitachon", "yi": "אנקומען מיט גארנישט נאר ביטחון" },
+      "summary": {
+        "en": "The Rav asks why Yaakov offered seven years, and explains that the sheep were Jewish souls he had to raise. Yaakov arrived penniless, and the Rav brings the Midrash on 'esa einai el heharim' that Yaakov placed his trust only in Hashem. He applies it to bochurim who say they need college for parnassah.",
+        "yi": "דער משגיח פרעגט פארוואס יעקב האט אנגעבאטן זיבן יאר, און ערקלערט אז די שעפסן זענען געווען אידישע נשמות וואס ער האט געדארפט מעלה זיין. יעקב איז אנגעקומען אן א פרוטה, און דער משגיח ברענגט דעם מדרש אויף \"אשא עיני אל ההרים\" אז יעקב האט זיך פארלאזט נאר אויפן רבונו של עולם. ער ווענדט עס אן אויף בחורים וואס זאגן אז זיי דארפן קאלעדזש פאר פרנסה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-07-01-vayetzei",
+      "startSeg": 374,
+      "endSeg": 461,
+      "title": { "en": "No answer about bread", "yi": "קיין ענטפער אויף ברויט" },
+      "summary": {
+        "en": "The Rav goes through Yaakov's requests in his vow and shows from the Midrash that Hashem answered each one except the request for bread and clothing. The silence means: rely on Me. Parnassah depends on the decree of Rosh Hashanah, not on going to Beis Lavan, and a person should worry about yiras shamayim while Hashem worries about parnassah.",
+        "yi": "דער משגיח גייט דורך יעקבס בקשות אין זיין נדר און ווייזט פון מדרש אז דער רבונו של עולם האט געענטפערט אויף יעדע בקשה חוץ פון \"לחם לאכול ובגד ללבוש\". דאס שווייגן מיינט: פארלאז דיך אויף מיר. פרנסה הענגט אין דער גזירה פון ראש השנה, נישט אין גיין קיין בית לבן, און א מענטש דארף זיך זארגן וועגן יראת שמים, און דער רבונו של עולם זארגט וועגן פרנסה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-07-01-vayetzei",
+      "startSeg": 462,
+      "endSeg": 538,
+      "title": { "en": "Yaakov's task: redeeming the souls", "yi": "יעקבס תפקיד: אויסלייזן די נשמות" },
+      "summary": {
+        "en": "The Rav contrasts Yitzchak, whose shidduch was brought to him, with Yaakov, who had to toil, and explains that Yaakov's task was to go into exile and redeem Rachel, Leah and the Jewish souls. He brings the Midrash that Yaakov came home with six hundred thousand sheep, the root souls of Klal Yisrael, and tells of the Apter Rav, who remembered being one of Yaakov's sheep.",
+        "yi": "דער משגיח שטעלט אנטקעגן יצחק אבינו, וועמען מ'האט געברענגט דעם שידוך, מיט יעקב אבינו, וואס האט געמוזט הארעווען, און ערקלערט אז יעקבס תפקיד איז געווען צו גיין אין גלות און אויסלייזן רחל, לאה און די אידישע נשמות. ער ברענגט דעם מדרש אז יעקב איז אהיימגעקומען מיט זעכציק ריבוא שעפסן, די שורש נשמות פון כלל ישראל, און דערציילט פונעם אפטער רב, וואס האט געדענקט אז ער איז געווען איינער פון יעקבס שעפסלעך."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-07-01-vayetzei",
+      "startSeg": 539,
+      "endSeg": 618,
+      "title": { "en": "Hashem's employee at the well", "yi": "דעם רבונו של עולמס אנגעשטעלטער ביים ברונעם" },
+      "summary": {
+        "en": "From Rashi that Yaakov worked the second seven years faithfully as well, the Rav explains that Yaakov was Hashem's employee, not Lavan's, and left every Jew a guidance for exile until he becomes our shepherd. At the well he saw Rachel as the Shechinah in exile, belonging to his mother's root, and saw the sheep as Jewish souls, so he watered them himself.",
+        "yi": "פון רש\"י אז יעקב האט אויך די צווייטע זיבן יאר געארבעט באמונה, ערקלערט דער משגיח אז יעקב איז געווען דעם רבונו של עולמס אנגעשטעלטער און נישט לבנס, און ער האט איבערגעלאזט פאר יעדן איד א הדרכה פאר'ן גלות ביז ער וועט ווערן אונזער רועה. ביים ברונעם האט ער געזען רחל אלס די שכינה אין גלות, וואס געהערט צו זיין מאמעס שורש, און די שעפסן אלס אידישע נשמות, און דערפאר האט ער זיי אליין געגעבן צו טרינקען."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-07-01-vayetzei",
+      "startSeg": 619,
+      "endSeg": 671,
+      "title": { "en": "Rachel on the way, weeping for her children", "yi": "רחל אויפן וועג, וויינט אויף אירע קינדער" },
+      "summary": {
+        "en": "The Rav brings an explanation he heard of the Midrash on the three flocks at the well: they are Jewish souls who cannot drink under gentile shepherds. With Rashi in Vayechi that Rachel was buried on the way to help her children going into exile, and the passuk of Rachel weeping for her children, he explains Yaakov's weeping. Yaakov used no tricks; the angels brought him the sheep.",
+        "yi": "דער משגיח ברענגט א פשט וואס ער האט געהערט אויפן מדרש וועגן די דריי עדרי צאן ביים ברונעם: דאס זענען אידישע נשמות וואס קענען נישט טרינקען אונטער גויאישע רועים. מיט רש\"י אין ויחי אז רחל איז באגראבן געווארן אויפן וועג כדי צו העלפן אירע קינדער וואס גייען אין גלות, און מיט'ן פסוק \"רחל מבכה על בניה\", ערקלערט ער פארוואס יעקב האט געוויינט. יעקב האט נישט געמאכט קיין שפיצלעך; די מלאכים האבן אים געברענגט די שעפסן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-07-01-vayetzei",
+      "startSeg": 672,
+      "endSeg": 733,
+      "title": { "en": "The Arizal, the Alshich and Lavan", "yi": "דער אריז\"ל, דער אלשיך און לבן" },
+      "summary": {
+        "en": "The Rav tells how the Arizal delighted in a derashah of the Alshich explaining how Lavan deceived Yaakov a hundred times, because Lavan himself came to listen and nodded at each true point. He brings the Kotzker on the wells the Pelishtim stopped up, then warns that Beis Lavan is a great danger: one may go only when compelled, after asking a sheilas chacham and preparing in kedushah.",
+        "yi": "דער משגיח דערציילט ווי דער אריז\"ל האט זיך מחיה געווען ביי א דרשה פונעם אלשיך וואס האט מסביר געווען ווי לבן האט אפגענארט יעקב הונדערט מאל, ווייל לבן אליין איז געקומען הערן און האט צוגעשאקלט ביי יעדן אמת'ן פשט. ער ברענגט דעם קאצקער אויף די בארות וואס די פלשתים האבן פארשטאפט, און דערנאך ווארנט ער אז בית לבן איז א גרויסע סכנה: מ'מעג אהינגיין נאר ווען מ'מוז, נאכ'ן פרעגן א שאלת חכם און זיך צוגרייטן אין קדושה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-07-01-vayetzei",
+      "startSeg": 734,
+      "endSeg": 803,
+      "title": { "en": "The trials of Beis Lavan", "yi": "די נסיונות פון בית לבן" },
+      "summary": {
+        "en": "The Rav brings the Midrash that Lavan took Yaakov for a fool for working fourteen years for two women, not knowing whom Yaakov served. He speaks of the many trials in Beis Lavan, of talmidim who withstood them, and of Yosef's trial bearing fruit years later, and says one must be bound to Be'er Sheva and ready for sudden trials, or one's Torah is worth little.",
+        "yi": "דער משגיח ברענגט דעם מדרש אז לבן האט געהאלטן יעקב פאר א נאר ווייל ער האט געארבעט פערצן יאר פאר צוויי ווייבער, און נישט געוואוסט פאר וועמען יעקב ארבעט. ער רעדט וועגן די אסאך נסיונות אין בית לבן, וועגן תלמידים וואס זענען זיי געשטאנען, און וועגן יוסף הצדיקס נסיון וואס איז צונוץ געקומען יארן שפעטער, און ער זאגט אז מ'דארף זיין צוגעבונדן צו באר שבע און גרייט אויף פלוצלינגע נסיונות, אנדערש איז די תורה ווייניג ווערט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-07-01-vayetzei",
+      "startSeg": 804,
+      "endSeg": 879,
+      "title": { "en": "Torah without yiras shamayim is not Torah", "yi": "תורה אן יראת שמים איז נישט קיין תורה" },
+      "summary": {
+        "en": "The Rav tells of a gadol who could tell from a piece of Torah alone, without seeing the author's name, whether a yarei shamayim had written it, and of a child prodigy who could recite only seforim written with yiras shamayim. He ends with the Baal Shem Tov's parable, brought by the Toldos Yaakov Yosef, of a simple worker who kept miscounting his wages.",
+        "yi": "דער משגיח דערציילט פון א גדול וואס האט געקענט דערקענען פון א שטיקל תורה אליין, אן צו זען דעם מחברס נאמען, צי א ירא שמים האט עס געשריבן, און פון א קינד וואס האט געקענט זאגן נאר ספרים וואס זענען געשריבן מיט יראת שמים. ער ענדיגט מיט'ן בעל שם טובס משל, וואס דער תולדות יעקב יוסף ברענגט, פון א פשוט'ן ארבעטער וואס האט אלעמאל פאלש גערעכנט זיין שכירות."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "שפת אמת זאגט", "work": "Sfas Emes", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [54, 55, 56, 63, 64], "confidence": 0.75 } },
+    { "heardAs": "ויאתר יעקב מבעל שבע ויבעל חרונה", "work": "Bereishis", "ref": "Bereishis 28:10", "sefariaRef": "Genesis 28:10", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [214, 215, 218], "confidence": 0.85 } },
+    { "heardAs": "ארץ פאר בני קדים", "work": "Bereishis", "ref": "Bereishis 29:1", "sefariaRef": "Genesis 29:1", "resolution": "resolved", "mention": "alluded", "evidence": { "segs": [117, 123, 124], "confidence": 0.75 } },
+    { "heardAs": "ולבני הפלגשים נתן אברהם עצנות וישלחם", "work": "Bereishis", "ref": "Bereishis 25:6", "sefariaRef": "Genesis 25:6", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [135, 136], "confidence": 0.85 } },
+    { "heardAs": "רשע ברענגט דארטן ... א שם פון תנא", "work": "Rashi", "ref": "Rashi on Bereishis 25:6", "sefariaRef": "Rashi on Genesis 25:6", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [139, 140, 141], "confidence": 0.75 } },
+    { "heardAs": "דער המדרש זאגט ... בלום דאס איז טאקע געוועזן לבן הארמי", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [150, 152], "confidence": 0.75 } },
+    { "heardAs": "יענכנו בעל עק מהרר קדם", "work": "Bamidbar", "ref": "Bamidbar 23:7", "sefariaRef": "Numbers 23:7", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [153, 154], "confidence": 0.7 } },
+    { "heardAs": "וישכן ישראל בטח באדאט", "work": "Devarim", "ref": "Devarim 33:28", "sefariaRef": "Deuteronomy 33:28", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [168, 169, 171], "confidence": 0.85 } },
+    { "heardAs": "לך עמי ... בוי באכע דורך ... חביר כמעט רגע", "work": "Yeshayahu", "ref": "Yeshayahu 26:20", "sefariaRef": "Isaiah 26:20", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [174, 176, 177, 178], "confidence": 0.85 } },
+    { "heardAs": "מיינעס האבות סימן לבנים", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [195, 197], "confidence": 0.8 } },
+    { "heardAs": "ר' שמשון רפאל האט שטייטשט אין נשמת כל פע לחצה שוועה", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [239, 240, 244, 247], "confidence": 0.7 } },
+    { "heardAs": "חנן צוקן חצות ... תיקון רחל ... תיקון עליה", "work": "Tikkun Chatzos", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [270, 271, 272, 273], "confidence": 0.8 } },
+    { "heardAs": "איך וואלט דא דינען זיבן יאר", "work": "Bereishis", "ref": "Bereishis 29:18", "sefariaRef": "Genesis 29:18", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [314, 315], "confidence": 0.75 } },
+    { "heardAs": "את עיני על העולם ... עזרי מיום ה' אתי שמים וארץ", "work": "Tehillim", "ref": "Tehillim 121:1-2", "sefariaRef": "Psalms 121:1-2", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [344, 357, 358], "confidence": 0.75 } },
+    { "heardAs": "אזוי זאגט דער מדרש ... העורים מיינט מיט די הורים", "work": "Bereishis Rabbah", "ref": "Bereishis Rabbah 68:2", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [341, 350, 353, 354, 355], "confidence": 0.7 } },
+    { "heardAs": "מיהי אלקימי מוזי ... ונפל לי לחם, לחם ובגדל הבש", "work": "Bereishis", "ref": "Bereishis 28:20-21", "sefariaRef": "Genesis 28:20-21", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [378, 383, 390, 394], "confidence": 0.8 } },
+    { "heardAs": "אזוי זאגן די רבנים, רבי איסי זאגט ... רבי מאיר", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [396, 397, 400, 403, 404], "confidence": 0.7 } },
+    { "heardAs": "רשמה הצייכה ... לא יעזבחא", "work": "Bereishis", "ref": "Bereishis 28:15", "sefariaRef": "Genesis 28:15", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [389, 418], "confidence": 0.7 } },
+    { "heardAs": "מי איוני מי יישר", "work": "Unesaneh Tokef", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "quoted", "evidence": { "segs": [441, 442, 444], "confidence": 0.75 } },
+    { "heardAs": "קודש כדושים, ווי דער רמב״ם זאגט", "work": "Mishneh Torah", "ref": "Rambam, Hilchos Shemittah v'Yovel 13:13", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [463], "confidence": 0.7 } },
+    { "heardAs": "ושבטי בבית ה' כל יומי חייו", "work": "Tehillim", "ref": "Tehillim 27:4", "sefariaRef": "Psalms 27:4", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [464], "confidence": 0.75 } },
+    { "heardAs": "עס שטעט אין מדרש רבה ... שושם רבי אדרים", "work": "Midrash Rabbah", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [519, 520, 527], "confidence": 0.75 } },
+    { "heardAs": "זאגט רשע מהו ישעונות באמנה", "work": "Rashi", "ref": "Rashi on Bereishis 29:30", "sefariaRef": "Rashi on Genesis 29:30", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [543, 544, 545], "confidence": 0.75 } },
+    { "heardAs": "ויצל ה' עס קם מקנאי הביכים וידנ'לי", "work": "Bereishis", "ref": "Bereishis 31:9", "sefariaRef": "Genesis 31:9", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [515, 573], "confidence": 0.75 } },
+    { "heardAs": "משום רואי אבן ישראל ... אזוי ווי רשע ברענגט אויפן נארט", "work": "Bereishis", "ref": "Bereishis 49:24", "sefariaRef": "Genesis 49:24", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [575], "confidence": 0.7 } },
+    { "heardAs": "א מלאך שלשה ימים", "work": "Bereishis", "ref": "Bereishis 30:36", "sefariaRef": "Genesis 30:36", "resolution": "resolved", "mention": "alluded", "evidence": { "segs": [579], "confidence": 0.7 } },
+    { "heardAs": "והוא כאשרו יעקב את רחל בתקל לבן החיומה ... והיגש יעקב וישקה", "work": "Bereishis", "ref": "Bereishis 29:10", "sefariaRef": "Genesis 29:10", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [582, 590, 602, 603], "confidence": 0.85 } },
+    { "heardAs": "ויוסף כולא ויעוקב", "work": "Bereishis", "ref": "Bereishis 29:11", "sefariaRef": "Genesis 29:11", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [610, 611, 612], "confidence": 0.65 } },
+    { "heardAs": "עס שטעט אין מדרש ... שלשע עדרי ציין", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [620, 622, 625, 628], "confidence": 0.7 } },
+    { "heardAs": "רשע זאגט ... פרשת ויחי ... פארוואס כ'האב נישט באערדיגט די רחל אין די מעשה מחפילה", "work": "Rashi", "ref": "Rashi on Bereishis 48:7", "sefariaRef": "Rashi on Genesis 48:7", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [639, 640, 645, 646], "confidence": 0.8 } },
+    { "heardAs": "כולא ברמה נשמה, רחל מבכה על בנועה", "work": "Yirmiyahu", "ref": "Yirmiyahu 31:14", "sefariaRef": "Jeremiah 31:14", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [653, 656, 657], "confidence": 0.8 } },
+    { "heardAs": "זאגט רשע, די מלאכים האבן געבראכט", "work": "Rashi", "ref": "Rashi on Bereishis 31:10", "sefariaRef": "Rashi on Genesis 31:10", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [667], "confidence": 0.75 } },
+    { "heardAs": "יחלת מתקלתי עשרת מונים, איז רשע זאגט ... א הונדערט מאל", "work": "Rashi", "ref": "Rashi on Bereishis 31:7", "sefariaRef": "Rashi on Genesis 31:7", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [686, 687, 693], "confidence": 0.8 } },
+    { "heardAs": "וכל הבירות אשר חתונה אב די ידב ... סתמים פלשתים", "work": "Bereishis", "ref": "Bereishis 26:15", "sefariaRef": "Genesis 26:15", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [711, 712, 713], "confidence": 0.8 } },
+    { "heardAs": "האט דער קארטסקא געזאגט", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [707, 714, 716], "confidence": 0.65 } },
+    { "heardAs": "נקפת חכם עולה ויתנו ... לוקפות תוכה עולי", "work": "Bereishis", "ref": "Bereishis 30:28", "sefariaRef": "Genesis 30:28", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [734, 751], "confidence": 0.75 } },
+    { "heardAs": "ברענגט א מדרש כאטמאן", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [734, 735, 738], "confidence": 0.7 } },
+    { "heardAs": "דער עודות יעקב יוסף ברענגט אין זיין ספר פון בעש''ט", "work": "Toldos Yaakov Yosef", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [859], "confidence": 0.8 } }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Vayetzei is the only sedra written as one continuous parsha with no break, because Yaakov never had a moment's interruption from the way of his father's house during twenty years in Charan.",
+        "yi": "ויצא איז די איינציגע סדרה וואס איז פון אנפאנג ביזן סוף איין פרשה אן קיין הפסק, ווייל יעקב אבינו האט די צוואנציק יאר אין חרן קיין איין רגע נישט געהאט קיין הפסק פון דער הנהגה פון טאטנס שטוב."
+      },
+      "evidence": { "segs": [51, 52, 63, 64, 65], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "Be'er Sheva is read as the oath (shevuah): like a man lowering himself into a deep pit tied by a strong rope to the top, Yaakov could enter Charan only because his oath bound him to Hashem.",
+        "yi": "באר שבע ווערט געטייטשט אלס די שבועה: אזוי ווי א מענטש וואס לאזט זיך אראפ אין א טיפן גרוב צוגעבונדן מיט א שטארקן שטריק צו אויבן, האט יעקב געקענט אריינגיין קיין חרן נאר ווייל זיין שבועה האט אים צוגעבונדן צום רבונו של עולם."
+      },
+      "evidence": { "segs": [220, 222, 228, 229, 233, 236], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Rachel and Leah correspond to the two aspects of the Shechinah mourned in Tikkun Rachel and Tikkun Leah, which is why Yaakov had to prepare seven years for each, like counting seven times seven.",
+        "yi": "רחל און לאה זענען כנגד די צוויי בחינות פון דער שכינה וואס מ'באוויינט אין תיקון רחל און תיקון לאה, דערפאר האט יעקב זיך געדארפט צוגרייטן זיבן יאר פאר יעדע איינע, אזוי ווי ספירה זיבן מאל זיבן."
+      },
+      "evidence": { "segs": [272, 274, 276, 288, 289], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Hashem answered every request in Yaakov's vow except bread and clothing; the silence itself is the answer: rely on Me, I have not forsaken you until now.",
+        "yi": "דער רבונו של עולם האט געענטפערט אויף יעדע בקשה אין יעקבס נדר חוץ פון לחם און בגד; דאס שווייגן אליין איז דער ענטפער: פארלאז דיך אויף מיר, איך האב דיך ביז יעצט נישט פארלאזט."
+      },
+      "evidence": { "segs": [396, 397, 400, 426, 427, 429], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Yaakov's sheep were Jewish souls he raised from the level of animal to the level of speech, and every Jew still carries a point from Yaakov Avinu's shepherding.",
+        "yi": "יעקבס שעפסן זענען געווען אידישע נשמות וואס ער האט אויפגעהויבן פון בחינת חי צו בחינת מדבר, און יעדער איד טראגט נאך אלץ א נקודה פון יעקב אבינוס פאשען."
+      },
+      "evidence": { "segs": [322, 325, 327, 560, 562, 564], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Rachel was buried on the road so she could help her children in exile who cannot drink under gentile shepherds; this is what Yaakov saw and wept over at the well.",
+        "yi": "רחל איז באגראבן געווארן אויפן וועג כדי זי זאל קענען העלפן אירע קינדער אין גלות וואס קענען נישט טרינקען אונטער די גויאישע רועים; דאס האט יעקב געזען ביים ברונעם און דערויף געוויינט."
+      },
+      "evidence": { "segs": [647, 651, 652, 654, 658], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The Arizal delighted in the Alshich's derashah not for its depth but because Lavan himself came to listen and nodded each time the Alshich exposed one of his deceptions.",
+        "yi": "דער אריז\"ל האט זיך מחיה געווען ביי דעם אלשיכס דרשה נישט צוליב איר טיפקייט, נאר ווייל לבן אליין איז געקומען הערן און האט צוגעשאקלט יעדעס מאל ווען דער אלשיך האט אנטפלעקט איינע פון זיינע שפיצלעך."
+      },
+      "evidence": { "segs": [684, 685, 697, 698, 699, 701], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Apter Rav remembers being Yaakov's sheep", "yi": "דער אפטער רב געדענקט אז ער איז געווען יעקבס שעפסל" },
+      "retelling": {
+        "en": "The Rav tells that the Apter Rav, the Ohev Yisrael, remembered what happened to him in earlier gilgulim and used to relate them: once a king of Israel, once a nasi, once a wealthy householder in Yerushalayim. He also said he remembered being one of Yaakov Avinu's sheep, and showed a mark on his forehead from a blow of Yaakov's staff. He sang for his chassidim a niggun that Yaakov Avinu had sung.",
+        "yi": "דער משגיח דערציילט אז דער אפטער רב, דער אוהב ישראל, האט געדענקט וואס איז מיט אים פארגעקומען אין פריערדיגע גלגולים און פלעגט עס דערציילן: אמאל א מלך ישראל, אמאל א נשיא, אמאל א רייכער בעל הבית אין ירושלים. ער האט אויך געזאגט אז ער געדענקט אז ער איז געווען איינער פון יעקב אבינוס שעפסלעך, און האט געוויזן א צייכן אויף זיין שטערן פון א קלאפ מיט יעקבס שטעקן. ער האט געזונגען פאר זיינע חסידים א ניגון וואס יעקב אבינו האט געזונגען."
+      },
+      "people": ["the Apter Rav", "Yaakov Avinu"],
+      "evidence": { "segs": [528, 531, 532, 534, 536, 537], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The Arizal at the Alshich's derashah", "yi": "דער אריז\"ל ביי דעם אלשיכס דרשה" },
+      "retelling": {
+        "en": "The Arizal once came to hear a derashah of the Alshich, a great darshan, and sat smiling and delighting in it, with his talmidim beside him. Afterwards they asked why he was so moved, since his own Torah was far higher. He answered that the Alshich had explained Rashi that Lavan deceived Yaakov a hundred times, showing from the pesukim exactly how, and that Lavan had come to hear the derashah; each time the Alshich hit the truth, Lavan nodded his head, admitting it.",
+        "yi": "דער אריז\"ל איז אמאל געקומען הערן א דרשה פונעם אלשיך, א גרויסער דרשן, און איז געזעסן שמייכלענדיג און זיך מחיה געווען, מיט זיינע תלמידים לעבן אים. נאכדעם האבן זיי אים געפרעגט פארוואס ער האט זיך אזוי מחיה געווען, ווען זיין אייגענע תורה איז אסאך העכער. ער האט געענטפערט אז דער אלשיך האט מסביר געווען רש\"י אז לבן האט אפגענארט יעקב הונדערט מאל, און געוויזן פון די פסוקים פונקט ווי, און לבן איז געקומען הערן די דרשה; יעדעס מאל ווען דער אלשיך האט געטראפן דעם אמת, האט לבן צוגעשאקלט מיט'ן קאפ און מודה געווען."
+      },
+      "people": ["the Arizal", "the Alshich", "Lavan"],
+      "evidence": { "segs": [672, 675, 679, 683, 697, 701], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "Recognizing Torah written with yiras shamayim", "yi": "דערקענען תורה וואס איז געשריבן מיט יראת שמים" },
+      "retelling": {
+        "en": "The Rav tells of a gadol who, as a young man, used to test himself: he would read a piece of Torah in a journal without looking at the author's name and judge whether it was real Torah and whether a yarei shamayim had written it, and only then look at the name. He was never mistaken. When asked about a candidate for a rabbinical post he knew only from such a piece, he could vouch for him as an upright Jew.",
+        "yi": "דער משגיח דערציילט פון א גדול וואס פלעגט זיך ווען ער איז געווען יונג אליין אויספרובירן: ער פלעגט לייענען א שטיקל תורה אין א זשורנאל אן צו קוקן אויפן מחברס נאמען, און אפשאצן צי דאס איז תורה און צי א ירא שמים האט עס געשריבן, און ערשט דערנאך געקוקט ווער דער מחבר איז. ער האט זיך קיינמאל נישט געטעות. ווען מ'האט אים געפרעגט וועגן א קאנדידאט פאר א רבנות, וועמען ער האט געקענט נאר פון אזא שטיקל תורה, האט ער געקענט זאגן אז ער איז אן ערליכער איד."
+      },
+      "people": [],
+      "evidence": { "segs": [807, 808, 810, 811, 815, 829], "confidence": 0.65 }
+    },
+    {
+      "title": { "en": "The Baal Shem Tov's parable of the simple worker", "yi": "דעם בעל שם טובס משל פונעם פשוט'ן ארבעטער" },
+      "retelling": {
+        "en": "From the Toldos Yaakov Yosef in the name of the Baal Shem Tov, the Rav tells of a very simple man who hired himself out to a householder for a year's work for room and board and wages. At the end of each year he asked how much was owed him, and the count came out wrong each time, such as ten and ten making nineteen, yet he kept working in his simplicity.",
+        "yi": "פון תולדות יעקב יוסף בשם דעם בעל שם טוב דערציילט דער משגיח פון א גאר פשוט'ן מענטש וואס האט זיך פארדינגען ביי א בעל הבית צו ארבעטן א יאר פאר עסן, שלאפן און שכירות. ביים סוף פון יעדן יאר האט ער געפרעגט וויפיל מ'איז אים שולדיג, און די רעכענונג איז יעדעס מאל ארויסגעקומען פאלש, אזוי ווי צען מיט צען איז ניינצן, און פונדעסטוועגן האט ער ווייטער געארבעט מיט תמימות."
+      },
+      "people": ["the Baal Shem Tov", "the Toldos Yaakov Yosef"],
+      "evidence": { "segs": [859, 860, 862, 871, 873, 875], "confidence": 0.65 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "Why is Vayetzei written as one parsha without any break?", "yi": "פארוואס איז ויצא געשריבן אלס איין פרשה אן קיין הפסק?" },
+      "answer": { "en": "Because a break is an interruption, and Yaakov never interrupted his bond with his father's house for a moment throughout the twenty years.", "yi": "ווייל א פרשה איז א הפסק, און יעקב אבינו האט די גאנצע צוואנציק יאר קיין רגע נישט איבערגעריסן זיין קשר מיט'ן טאטנס שטוב." },
+      "questionSegs": [50, 51, 52],
+      "answerSegs": [63, 64, 65],
+      "confidence": 0.85
+    },
+    {
+      "question": { "en": "Why did Yaakov offer seven full years instead of bargaining for a smaller price?", "yi": "פארוואס האט יעקב אנגעבאטן גאנצע זיבן יאר אנשטאט צו האנדלען אויף א קלענערן פרייז?" },
+      "answer": { "en": "Yaakov knew he had to tend the sheep, which were Jewish souls he had to raise to a higher level.", "yi": "יעקב האט געוואוסט אז ער דארף פאשען די שעפסן, וואס זענען געווען אידישע נשמות וואס ער האט געדארפט אויפהייבן צו א העכערן מצב." },
+      "questionSegs": [316, 317],
+      "answerSegs": [318, 322, 323, 324],
+      "confidence": 0.7
+    },
+    {
+      "question": { "en": "Why did Hashem not answer Yaakov's request for bread and clothing when He answered all the others?", "yi": "פארוואס האט דער רבונו של עולם נישט געענטפערט אויף יעקבס בקשה פון לחם און בגד, ווען ער האט געענטפערט אויף אלע אנדערע?" },
+      "answer": { "en": "So that he would rely on Hashem without being given an exact assurance; Hashem had not forsaken him until then.", "yi": "כדי ער זאל זיך פארלאזן אויפן רבונו של עולם אן א גענויער הבטחה; דער רבונו של עולם האט אים ביז יעצט נישט פארלאזט." },
+      "questionSegs": [396, 399, 400],
+      "answerSegs": [426, 427, 428, 429],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why did Yaakov have to toil for his marriage while Yitzchak's shidduch was brought to him?", "yi": "פארוואס האט יעקב געמוזט הארעווען פאר זיין שידוך, ווען יצחק האט מען דעם שידוך געברענגט?" },
+      "answer": { "en": "Yaakov was not lesser than Yitzchak; his task was different: to go into exile and redeem Rachel, Leah and the Jewish souls from Beis Lavan.", "yi": "יעקב איז נישט געווען קלענער פון יצחק; זיין תפקיד איז געווען אן אנדערער: צו גיין אין גלות און אויסלייזן רחל, לאה און די אידישע נשמות פון בית לבן." },
+      "questionSegs": [481, 497],
+      "answerSegs": [494, 500, 501, 502, 503],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "How could Yaakov work the second seven years faithfully after Lavan had deceived him?", "yi": "וויאזוי האט יעקב געקענט ארבעטן די צווייטע זיבן יאר באמונה נאכדעם וואס לבן האט אים אפגענארט?" },
+      "answer": { "en": "Yaakov was not Lavan's employee but Hashem's; his work was to redeem Rachel and Leah and the Jewish souls.", "yi": "יעקב איז נישט געווען לבנס אנגעשטעלטער נאר דעם רבונו של עולמס; זיין ארבעט איז געווען אויסצולייזן רחל און לאה און די אידישע נשמות." },
+      "questionSegs": [544],
+      "answerSegs": [545, 549, 550, 551],
+      "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says that even when Jews are in the midst of the world, they must stay inwardly separate so that the stream of gentile life does not enter their veins.",
+        "yi": "דער משגיח זאגט אז אפילו ווען אידן זענען אינמיטן דער וועלט, דארפן זיי בלייבן אינעווייניג אפגעזונדערט, אז דער שטראם פון גויאישן לעבן זאל נישט אריינרינען אין זייערע אדערן."
+      },
+      "evidence": { "segs": [206, 207, 208, 210], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says a person should worry about yiras shamayim and leave the worry about parnassah to Hashem.",
+        "yi": "דער משגיח זאגט אז א מענטש דארף זיך זארגן וועגן יראת שמים און לאזן די דאגה פון פרנסה פארן רבונו של עולם."
+      },
+      "evidence": { "segs": [453, 457, 460], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one may go to Beis Lavan only when compelled, after asking a sheilas chacham, and after enough years of learning and kedushah to withstand its trials.",
+        "yi": "דער משגיח זאגט אז מ'מעג גיין קיין בית לבן נאר ווען מ'ווערט געצווינגען, נאכ'ן פרעגן א שאלת חכם, און נאך גענוג יארן לערנען און קדושה כדי אויסצוהאלטן אירע נסיונות."
+      },
+      "evidence": { "segs": [725, 727, 729, 730, 732, 733], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says whoever is in Beis Lavan must know that trials can come suddenly, and must be ready and firm, bound to Be'er Sheva.",
+        "yi": "דער משגיח זאגט אז ווער עס איז אין בית לבן דארף וויסן אז נסיונות קענען קומען פלוצלינג, און ער דארף זיין גרייט און פעסט, צוגעבונדן צו באר שבע."
+      },
+      "evidence": { "segs": [784, 785, 792, 793, 794, 795], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "parshas vayetzei",
+    "leaving a surrounding of kedushah",
+    "chochmah chitzonis and secular education",
+    "Be'er Sheva as an oath binding to Hashem",
+    "Yaakov Avinu as shepherd of Jewish souls",
+    "Rachel and Leah and the Shechinah",
+    "bitachon and parnassah",
+    "trials of exile",
+    "Torah and yiras shamayim"
+  ],
+  "concepts": [
+    { "he": "ויצא", "heardAs": ["ויצי", "ויצר", "ביצה", "ווייצי"] },
+    { "he": "חכמה חיצונית", "heardAs": ["חכמת חצוני'ת"] },
+    { "he": "ארץ בני קדם", "heardAs": ["ארץ פאר בני קדים", "ארצה בני קדים", "עצה ונקדים"] },
+    { "he": "בית לבן", "heardAs": ["בבית לבים", "בבית לאוין", "בבית סלעווען", "בית חלבון"] },
+    { "he": "באר שבע", "heardAs": ["בער שבע", "בעל שבע", "באה השבע"] },
+    { "he": "שבועה", "heardAs": ["שוואה", "שבועי"] },
+    { "he": "פרשה סתומה", "heardAs": ["פרשת תמון"] },
+    { "he": "מעשה אבות סימן לבנים", "heardAs": ["מיינעס האבות סימן לבנים", "סימן מבנים"] },
+    { "he": "שכינה הקדושה", "heardAs": ["שכונה הקדושה", "שכונתה בגלותה"] },
+    { "he": "תיקון חצות", "heardAs": ["חנן צוקן חצות"] },
+    { "he": "תיקון רחל", "heardAs": ["תיקון רחל"] },
+    { "he": "תיקון לאה", "heardAs": ["תיקון עליה"] },
+    { "he": "ביטחון", "heardAs": ["בטחים", "באה בטחים"] },
+    { "he": "ישיבת שם ועבר", "heardAs": ["בית שם דער יבא", "בשם ועבר", "בעת שם ויעבע"] },
+    { "he": "שאלת חכם", "heardAs": ["שאלת חכם"] },
+    { "he": "נסיון", "heardAs": ["נסיונות", "נסיעות"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבינו שלום", "רבינו של עולם", "רבוש׳ן של עולם"] }
+  ],
+  "people": [
+    { "name": "Yaakov Avinu", "heardAs": ["יענקב אבינא", "יענקי", "יעקב אבינם", "יענקא ווינא"] },
+    { "name": "Yitzchak Avinu", "heardAs": ["יצחק"] },
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינא"] },
+    { "name": "Rivkah", "heardAs": ["רבקה"] },
+    { "name": "Rachel", "heardAs": ["רחל", "ראכל", "רוחל"] },
+    { "name": "Leah", "heardAs": ["לאה", "עליה", "לעה", "אליהו", "לייער"] },
+    { "name": "Lavan", "heardAs": ["לבן", "לאבון", "לובן", "לאווען"] },
+    { "name": "Bilam", "heardAs": ["בלום"] },
+    { "name": "Eliezer", "heardAs": ["אליעזר"] },
+    { "name": "Esav", "heardAs": ["אסף"] },
+    { "name": "Shem and Ever", "heardAs": ["שם ועוול", "שם דער יבא"] },
+    { "name": "Yeshayahu", "heardAs": ["ישעיה הנביא"] },
+    { "name": "Rabbi Samson Raphael Hirsch", "heardAs": ["ר' שמשון רפאל"] },
+    { "name": "Rashi", "heardAs": ["רשע"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "the Sfas Emes", "heardAs": ["שפת אמת"] },
+    { "name": "the Apter Rav", "heardAs": ["אייב ישראל, דער אפטאר רבי"] },
+    { "name": "the Arizal", "heardAs": ["ארי הקודש", "ראי הקודש", "ארשע החודש"] },
+    { "name": "the Alshich", "heardAs": ["אשח הקודש", "אשיך הקודש", "אשך הקודש"] },
+    { "name": "the Kotzker Rebbe", "heardAs": ["קארטסקעל", "קארטסקא"] },
+    { "name": "Yosef", "heardAs": ["יוסף הצייזיג", "יוסף אבינת"] },
+    { "name": "the Baal Shem Tov", "heardAs": ["בעש''ט"] },
+    { "name": "the Toldos Yaakov Yosef", "heardAs": ["עודות יעקב יוסף"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair for the Rav's narration but poor on pesukim, Midrashim and names; most quotations are recoverable from the parsha. Segments 337-348 are fragmentary, the Midrash attributed to Rabbi Isi and Rabbi Meir (403-410) and the 'Volozhiner' remark (450) are only partly intelligible, and 228 (who gave the rope parable) and 757-762 are unclear. The gadol in the closing story (heard as 'חזי נישט, רבי חיים') and the child prodigy (837-857) could not be identified with confidence, so they are left unnamed."
+}

@@ -1,0 +1,17 @@
+{
+  "shiurId": "en-parsha-en-chyy-shrh-01",
+  "promptVersion": "audit-v1",
+  "auditedAt": "2026-11-13T12:00:00Z",
+  "counts": {
+    "claimsChecked": 28, "unsupported": 0, "hallucinated": 0,
+    "sourcesChecked": 16, "sourceErrors": 0, "sourcesMissed": 1,
+    "boundariesChecked": 4, "boundariesBad": 0, "noiseMishandled": 0,
+    "termsChecked": 14, "termErrors": 0, "termsCopiedGarbled": 0,
+    "yiddishSentencesChecked": 24, "yiddishBadSentences": 6, "yiddishTranslationese": 3,
+    "flowBreaks": 0, "paddingSentences": 0, "contradictsExtraction": 0,
+    "ruleViolations": 0
+  },
+  "severity": "minor",
+  "needsReview": false,
+  "notes": "writeup.yi[5].paragraphs[0] and keyPoints[2].yi render G-d's 'account' of creation as 'חשבון' (translationese, segs 432-434); keyPoints[5].yi 'רוחניות'דיגער גוף' / 'נאטורליכע' (calque of 'spiritual organism', Daytshmerish); keyPoints[6].yi 'מענטשליכער שכל' (Daytshmerish); insights[3].yi 'עס פעלט נישט ווייל דער כלי' is a literal rendering of 'the failure is not'; sections[4].title.yi 'דעם זייגערמאכערס ספר' wrong case; Chazal's statement that Eliezer ruled over his yetzer (segs 69-73) is cited in writeup.en[1].paragraphs[0] but only the pasuk Bereishis 24:2 is in sources[]; English write-up ~1247 words, above the 942-1178 target; claims, sources, terms (Sfas Emes, Maharal, mesorah, ta'am dagan) and boundaries checked all hold up"
+}

@@ -1,0 +1,747 @@
+{
+  "shiurId": "yi-parshas-hashavua-svldvs-01",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains why Yitzchak needed tasty food to bless, why he loved Esav \"ki tzayid befiv\", and how the way of Yaakov, closing oneself to the pleasures of this world, differs from the way of Esav.",
+      "yi": "דער משגיח ערקלערט פארוואס יצחק האט געדארפט מטעמים כדי צו בענטשן, פארוואס ער האט ליב געהאט עשו \"כי ציד בפיו\", און וואס איז דער חילוק צווישן דעם דרך פון יעקב, וואס פארמאכט זיך פון די תענוגים פון עולם הזה, און דעם דרך פון עשו."
+    },
+    "abstract": {
+      "en": "The Rav opens with stories of tzaddikim who did not notice what they ate, and asks why Yitzchak needed tasty food before blessing. He explains that a person needs new heavenly influence at every moment, and food carries sparks of holiness; a tzaddik senses that holiness, as stories of the Slonimer's disciple and the Belzer Rav show. Rivka never told Yitzchak who Esav was; Yitzchak took Esav for a hidden tzaddik, because the food Esav brought was really prepared and slaughtered by Yaakov. This explains \"ki tzayid befiv\" and the extra hei in \"tzeidah\". The blessing, measure for measure, was food that brings Torah, and above all G-dliness. The Rav then contrasts Yaakov's way, closing the door to worldly pleasure to taste the World to Come, with Esav's \"eat and drink, for tomorrow we die\". He ends with stability, serving Hashem when the heart is closed, and the Yismach Moshe on Yaakov receiving the blessing in Esav's clothes.",
+      "yi": "דער משגיח עפנט מיט מעשיות פון צדיקים וואס האבן נישט באמערקט וואס זיי עסן, און פרעגט פארוואס יצחק האט געדארפט מטעמים פאר די ברכות. ער ערקלערט אז א מענטש דארף יעדע רגע נייע השפעות פון הימל, און אין דעם מאכל ליגן ניצוצות פון קדושה; א צדיק שפירט די קדושה, ווי מ'זעט פון א תלמיד פונעם סלאנימער און פונעם בעלזער רב. רבקה האט קיינמאל נישט דערציילט יצחקן ווער עשו איז; יצחק האט געהאלטן עשו פאר א צדיק נסתר, ווייל די מטעמים וואס עשו האט געברענגט האט באמת יעקב צוגעגרייט און געשחט'ן. דאס ערקלערט \"כי ציד בפיו\" און דעם איבעריגן ה' אין \"צידה\". די ברכה איז געווען מדה כנגד מדה: מאכלים וואס ברענגען צו תורה, און דער עיקר, אלקות. דערנאך שטעלט ער אנטקעגן דעם דרך פון יעקב, זיך פארמאכן פון תענוגי עולם הזה כדי צו שפירן א טעם אין עולם הבא, מיט עשו'ס \"אכול ושתו כי מחר נמות\". צום סוף רעדט ער פון יציבות, פון דינען השם יתברך ווען דאס הארץ איז פארמאכט, און פונעם ישמח משה אז יעקב האט באקומען די ברכה אין עשו'ס בגדים."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "A person needs a constant renewal of heavenly influence, and food carries sparks of G-dliness that the one who eats takes into himself.",
+          "yi": "א מענטש דארף זיך כסדר באנייען מיט נייע השפעות פון הימל, און אין מאכל ליגן ניצוצות פון אלקות וואס דער וואס עסט נעמט אריין אין זיך."
+        },
+        "evidence": { "segs": [157, 160, 179, 181, 197], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Yitzchak wanted tasty food in order to absorb more holiness before blessing, since a tzaddik senses the holiness or its absence in food.",
+          "yi": "יצחק האט געוואלט מטעמים כדי זיך אנצוזאפן מיט מער קדושה פאר די ברכה, ווייל א צדיק שפירט צי עס איז דא קדושה אין א מאכל אדער נישט."
+        },
+        "evidence": { "segs": [243, 246, 249, 293, 294], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Yitzchak loved Esav because he took him for a hidden tzaddik; the holiness he felt in the food came from Yaakov, who secretly prepared it.",
+          "yi": "יצחק האט ליב געהאט עשו ווייל ער האט אים געהאלטן פאר א צדיק נסתר; די קדושה וואס ער האט געשפירט אין די מטעמים איז געקומען פון יעקב, וואס האט זיי בסוד צוגעגרייט."
+        },
+        "evidence": { "segs": [300, 312, 330, 336, 343, 366], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Yaakov's portion is G-dliness and the World to Come; Esav's is the pleasures of this world, and the two cannot rise together.",
+          "yi": "דער חלק פון יעקב איז אלקות און עולם הבא; דער חלק פון עשו איז די תענוגים פון עולם הזה, און ביידע קענען נישט אויפשטיין צוזאמען."
+        },
+        "evidence": { "segs": [474, 475, 499, 575, 592], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Only one who closes himself to the pull of this world's pleasures can taste the sweetness of serving Hashem.",
+          "yi": "נאר דער וואס פארמאכט זיך פון די תענוגים פון עולם הזה קען שפירן א טעם אין עבודת השם."
+        },
+        "evidence": { "segs": [554, 557, 571, 623], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "A person's true level is measured in times of difficulty and closed-heartedness, by his deeds, not by moments of inspiration.",
+          "yi": "א מענטשנס אמת'ע מדריגה מעסט מען ווען עס איז אים שווער און דאס הארץ איז פארמאכט, לויט זיינע מעשים, נישט לויט די מינוטן פון התעוררות."
+        },
+        "evidence": { "segs": [768, 795, 798, 801, 846], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-parsha-sefer-bereishes-06-01-toldos",
+      "startSeg": 0,
+      "endSeg": 66,
+      "title": { "en": "Tzaddikim who did not notice their food", "yi": "צדיקים וואס האבן נישט באמערקט וואס זיי עסן" },
+      "summary": {
+        "en": "Starting from Rivka's plan to prepare tasty food for Yitzchak, the Rav tells how the Yismach Moshe once ate a pot of dishwater without noticing, and how a tzaddik in Tzfas, deep in learning, drank glasses of brandy thinking it was water. He concludes that such things meant nothing to tzaddikim.",
+        "yi": "אנגעהויבן פון רבקה'ס עצה צו מאכן מטעמים פאר יצחק, דערציילט דער משגיח ווי דער ישמח משה האט אמאל געגעסן פון א טאפ מיט שמוציג וואסער און גארנישט באמערקט, און ווי א צדיק אין צפת, פארטיפט אין לערנען, האט געטרונקען גלעזער בראנפן מיינענדיג אז ס'איז וואסער. ער שליסט אז אזעלכע זאכן האבן ביי צדיקים קיין ראלע נישט געשפילט."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-06-01-toldos",
+      "startSeg": 67,
+      "endSeg": 148,
+      "title": { "en": "Why Yitzchak needed tasty food", "yi": "פארוואס יצחק האט געדארפט מטעמים" },
+      "summary": {
+        "en": "The Rav asks why Yitzchak needed tasty food before blessing, and why a blessing the Midrash reads as Torah is phrased as plenty of grain and wine. He then asks about \"ki tzayid befiv\": Onkelos reads it as eating from Esav's hunt, which does not fit the words, and Rashi reads it as Esav deceiving his father; he also notes the extra hei in \"tzeidah\".",
+        "yi": "דער משגיח פרעגט פארוואס יצחק האט געדארפט מטעמים פאר די ברכות, און פארוואס א ברכה וואס דער מדרש טייטשט אויף תורה איז אנגעשריבן ווי א ברכה אויף תבואה און וויין. דערנאך פרעגט ער אויף \"כי ציד בפיו\": דער תרגום טייטשט אז יצחק האט געגעסן פון עשו'ס ציד, וואס פאסט נישט צו די ווערטער, און רש\"י טייטשט אז עשו האט אים אפגענארט; ער מערקט אויך אן דעם איבעריגן ה' אין \"צידה\"."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-06-01-toldos",
+      "startSeg": 149,
+      "endSeg": 232,
+      "title": { "en": "Eating to absorb new holiness", "yi": "עסן כדי אריינצונעמען נייע קדושה" },
+      "summary": {
+        "en": "The Rav explains that every moment brings a new heavenly influence, and a person renews himself through tefillah and through eating, since food holds sparks of G-dliness. He brings the Leviasan feast, matzah as the vessel of freedom, and Shabbos food, and stresses preparing and eating food with holiness.",
+        "yi": "דער משגיח ערקלערט אז יעדע רגע קומט א נייע השפעה פון הימל, און א מענטש באנייט זיך דורך תפילה און דורך עסן, ווייל אין מאכל ליגן ניצוצות פון אלקות. ער ברענגט די סעודה פון לויתן, די מצה וואס איז א כלי פאר חירות, און די מאכלים פון שבת, און ער לייגט אראפ ווי וויכטיג עס איז צוצוגרייטן און צו עסן מיט קדושה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-06-01-toldos",
+      "startSeg": 233,
+      "endSeg": 294,
+      "title": { "en": "Tzaddikim sense holiness in food", "yi": "צדיקים שפירן קדושה אין מאכל" },
+      "summary": {
+        "en": "The Rav explains that Yitzchak wanted tasty food to absorb holiness before blessing, since tzaddikim sense the holiness in food. He tells of a disciple of the Slonimer who could not taste meat slaughtered by a shochet who had not gone to the mikveh, and of the Belzer Rav who sensed that his dentist had not gone to the mikveh.",
+        "yi": "דער משגיח ערקלערט אז יצחק האט געוואלט מטעמים כדי אריינצונעמען קדושה פאר די ברכה, ווייל צדיקים שפירן די קדושה אין מאכל. ער דערציילט פון א תלמיד פונעם סלאנימער וואס האט נישט געקענט טועם זיין פלייש פון א שוחט וואס איז נישט געגאנגען אין מקוה, און פונעם בעלזער רב וואס האט געשפירט אז זיין דאקטער פאר די ציין איז נישט געווען אין מקוה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-06-01-toldos",
+      "startSeg": 295,
+      "endSeg": 367,
+      "title": { "en": "Esav as a hidden tzaddik", "yi": "עשו ווי א צדיק נסתר" },
+      "summary": {
+        "en": "The Rav asks how Yitzchak could enjoy food brought by Esav. Rivka never told Yitzchak who Esav was; Yitzchak thought him a hidden tzaddik, like Reb Shmuel of Karov, because the food was really prepared by Yaakov. This explains \"ki tzayid befiv\" on both its readings.",
+        "yi": "דער משגיח פרעגט ווי אזוי יצחק האט געקענט הנאה האבן פון מטעמים וואס עשו האט געברענגט. רבקה האט קיינמאל נישט דערציילט יצחקן ווער עשו איז; יצחק האט אים געהאלטן פאר א צדיק נסתר, אזוי ווי רבי שמואל פון קאראוו, ווייל די מטעמים האט באמת יעקב צוגעגרייט. דאס ערקלערט \"כי ציד בפיו\" לויט ביידע פשטים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-06-01-toldos",
+      "startSeg": 368,
+      "endSeg": 444,
+      "title": { "en": "The hidden hei and the night of the blessings", "yi": "דער באהאלטענער ה' און די נאכט פון די ברכות" },
+      "summary": {
+        "en": "The Rav explains the extra hei in \"tzeidah\" as a hint to the five laws of shechitah, showing that Yaakov did the slaughtering, written but not read so that Yitzchak would not hear. On the night of the blessings Esav brought dogs and Yitzchak sensed Gehinnom, and Yaakov's holy food earned a blessing measure for measure: food that brings Torah.",
+        "yi": "דער משגיח טייטשט דעם איבעריגן ה' אין \"צידה\" אויף די פינף הלכות שחיטה, א רמז אז יעקב האט געשחט'ן, אנגעשריבן און נישט געליינט כדי יצחק זאל נישט הערן. אין דער נאכט פון די ברכות האט עשו געברענגט הינט און יצחק האט געשפירט גיהנום, און יעקב'ס הייליגע מטעמים האבן געברענגט א ברכה מדה כנגד מדה: מאכלים וואס ברענגען צו תורה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-06-01-toldos",
+      "startSeg": 445,
+      "endSeg": 553,
+      "title": { "en": "The blessing of G-dliness", "yi": "די ברכה פון אלקות" },
+      "summary": {
+        "en": "Bringing the Midrash that \"veyiten lecha haElokim\" means G-dliness itself, the Rav explains that food eaten with holiness shows in one's learning and davening, that oneg Shabbos is Yaakov's portion, and that the heart of the blessing is that Hashem gives G-dliness to whoever opens himself to it. He brings the words to Chana, a passuk in Tehillim, and the Lechovitcher's story of the simple Jew's beard.",
+        "yi": "מיטן מדרש אז \"ויתן לך האלקים\" מיינט אלקות אליין, ערקלערט דער משגיח אז מאכלים וואס מ'עסט מיט קדושה זעט מען אין לערנען און אין דאווענען, אז עונג שבת איז דער חלק פון יעקב, און אז דער עיקר פון דער ברכה איז אז השם יתברך גיט אלקות יעדן וואס עפנט זיך דערצו. ער ברענגט די ווערטער צו חנה, א פסוק אין תהלים, און די מעשה פונעם לעכעוויטשער מיט דעם פשוט'ן אידנס בארד."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [1],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-06-01-toldos",
+      "startSeg": 554,
+      "endSeg": 627,
+      "title": { "en": "Close one door to open the other", "yi": "פארמאכן איין טיר כדי צו עפענען די אנדערע" },
+      "summary": {
+        "en": "The Rav teaches that one must close the door to this world's pleasures to open it to holiness, each according to his level. He explains the two forces of Yaakov and Esav through Rashi's \"when one rises the other falls\" and the Tzvi LaTzaddik on Yerushalayim and Tzor, and says that only to the extent one shuts out worldly pleasure does one taste Shabbos, learning and davening.",
+        "yi": "דער משגיח לערנט אז מ'מוז פארמאכן די טיר צו די תענוגים פון עולם הזה כדי זי צו עפענען צו קדושה, יעדער לויט זיין ערך. ער ערקלערט די צוויי כחות פון יעקב און עשו מיט רש\"י'ס \"כשזה קם זה נופל\" און מיטן צבי לצדיק אויף ירושלים און צור, און זאגט אז נאר אויף וויפיל מ'פארמאכט זיך פון תענוגי עולם הזה שפירט מען א טעם אין שבת, אין לערנען און אין דאווענען."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [1],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-06-01-toldos",
+      "startSeg": 628,
+      "endSeg": 679,
+      "title": { "en": "Two outlooks: today and tomorrow", "yi": "צוויי שיטות: היינט און מארגן" },
+      "summary": {
+        "en": "The Rav contrasts Yaakov's outlook, \"today to do them, tomorrow to receive their reward\", with Esav's \"eat and drink, for tomorrow we die\", and shows how Esav's outlook led him to sell the birthright. A tzaddik's share of this world is only a means, like the money one needs for mitzvos, as Reb Meir of Premishlan taught.",
+        "yi": "דער משגיח שטעלט אנטקעגן יעקב'ס שיטה, \"היום לעשותם ולמחר לקבל שכרם\", מיט עשו'ס \"אכול ושתו כי מחר נמות\", און ווייזט ווי עשו'ס שיטה האט אים געברענגט צו פארקויפן די בכורה. דער עולם הזה פון א צדיק איז נאר א מיטל, אזוי ווי דאס געלט וואס מ'דארף פאר מצוות, ווי רבי מאיר פרעמישלאנער האט געלערנט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [1],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-06-01-toldos",
+      "startSeg": 680,
+      "endSeg": 724,
+      "title": { "en": "Why Yitzchak left Rechovos", "yi": "פארוואס יצחק איז אוועק פון רחובות" },
+      "summary": {
+        "en": "The Rav notes that tzaddikim are troubled when things suddenly go too well. Yitzchak dug the wells Esek and Sitnah amid strife, and at Rechovos finally had peace, yet he left for Be'er Sheva, because he knew a person does not come to this world for comfort but to serve Hashem.",
+        "yi": "דער משגיח מערקט אן אז צדיקים ווערן באזארגט ווען עס גייט זיי פלוצלינג צו גוט. יצחק האט געגראבן די בארות עשק און שטנה מיט מחלוקת, און ביי רחובות האט ער ענדליך געהאט מנוחה, פונדעסטוועגן איז ער אוועק קיין באר שבע, ווייל ער האט געוואוסט אז א מענטש קומט נישט אויף דער וועלט פאר מנוחה נאר צו דינען השם יתברך."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [1],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-06-01-toldos",
+      "startSeg": 725,
+      "endSeg": 850,
+      "title": { "en": "Stability and the test of a closed heart", "yi": "יציבות און דער נסיון פון א פארמאכט הארץ" },
+      "summary": {
+        "en": "From Rivka's anguish over a child who seemed drawn both to the beis medrash and to idolatry, the Rav speaks of people who are good only in a good environment, and teaches that true fear of Heaven does not change with place or time. A person is measured in his low times, not his inspired ones; he brings the Yaaros Devash on \"simeini kachosam al libecha\": the heart is sometimes open and sometimes closed, but the hands, the deeds, are always visible.",
+        "yi": "פון רבקה'ס עגמת נפש איבער א קינד וואס האט אויסגעזען ווי עס ציט זיך סיי צום בית המדרש און סיי צו עבודה זרה, רעדט דער משגיח פון מענטשן וואס זענען גוט נאר אין א גוטער סביבה, און לערנט אז אמת'ע יראת שמים טוישט זיך נישט מיט א שינוי מקום אדער שינוי זמן. א מענטש מעסט מען אין זיינע שוואכע צייטן, נישט אין זיינע הויכע; ער ברענגט דעם יערות דבש אויף \"שימני כחותם על לבך\": דאס הארץ איז אמאל אפן און אמאל פארמאכט, אבער די הענט, די מעשים, זענען אלעמאל אנטפלעקט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [1],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-06-01-toldos",
+      "startSeg": 851,
+      "endSeg": 916,
+      "title": { "en": "The blessing in Esav's clothes", "yi": "די ברכה אין עשו'ס בגדים" },
+      "summary": {
+        "en": "The Rav brings the Yismach Moshe's dream: Yaakov and Esav were born together so that each would have free choice by rubbing against the other, and Yaakov had to receive the blessing dressed in Esav's clothes, showing that even in such a state a Jew is fit for blessing. He closes with Rabbi Meir's view that Jews are always called Hashem's children, and that every Jew should rejoice that he is a part of Yaakov.",
+        "yi": "דער משגיח ברענגט דעם חלום פונעם ישמח משה: יעקב און עשו זענען געבוירן געווארן צוזאמען כדי יעדער זאל האבן בחירה דורכן זיך רייבן אן דעם צווייטן, און יעקב האט געמוזט באקומען די ברכה אנגעטון אין עשו'ס בגדים, צו ווייזן אז אפילו אין אזא מצב איז א איד ראוי צו א ברכה. ער שליסט מיט רבי מאיר'ס שיטה אז אידן הייסן אלעמאל בנים למקום, און אז יעדער איד זאל זיך פרייען אז ער איז א חלק פון יעקב."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [1],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "ותעשאו מומת עמים כאשר עוף אביב",
+      "work": "Bereishis",
+      "ref": "Bereishis 27:4",
+      "sefariaRef": "Genesis 27:4",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [75], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ויאב יצחק את אסף כצדי בפיוו",
+      "work": "Bereishis",
+      "ref": "Bereishis 25:28",
+      "sefariaRef": "Genesis 25:28",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [129, 134, 345], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "תרגום אנקעלעס ... הרי מצי די האב ויאכל",
+      "work": "Targum Onkelos",
+      "ref": "Onkelos Bereishis 25:28",
+      "sefariaRef": "Onkelos Genesis 25:28",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [131, 132, 134, 353], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "צד היתו וימרי פיוו",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 25:28",
+      "sefariaRef": "Rashi on Genesis 25:28:1",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [138, 141, 142, 357], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "מיט הלשם איימן משמעני הארץ, ורב דגן וסטיר איש",
+      "work": "Bereishis",
+      "ref": "Bereishis 27:28",
+      "sefariaRef": "Genesis 27:28",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [109, 436, 446], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "אין מדרש ... ולחלקים בטלה שמים זאל מקחי",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [115, 116, 117, 118, 438], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "שעדו אצדלי צייט / צדאלי צייד",
+      "work": "Bereishis",
+      "ref": "Bereishis 27:3",
+      "sefariaRef": "Genesis 27:3",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [145, 147, 369, 384], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "בעל הצרים / בעל התוראים",
+      "work": "Baal HaTurim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [372, 374], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "קולי על הלחם לוודי יחיא האדם כי על כל מצה פי ה' יחיא האדם",
+      "work": "Devarim",
+      "ref": "Devarim 8:3",
+      "sefariaRef": "Deuteronomy 8:3",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [181], "confidence": 0.9 }
+    },
+    {
+      "heardAs": "כל הנשמה תהלה לכה",
+      "work": "Tehillim",
+      "ref": "Tehillim 150:6",
+      "sefariaRef": "Psalms 150:6",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [169, 170], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "רבי עננבי חי' / רבינו בחיים",
+      "work": "Rabbeinu Bachya",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [188, 189, 194], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "חז״ל זאגן אז דאמאלטס איז געוועזן פתח ביינאכט",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [247, 248, 416], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "עס שטעט אין מדרש אז ער האט נישט געפונען קיין צבי",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [410], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "מי אפי אזוי ווי דער חשבון ברענגט ... גאונים",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 27:33",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [413, 421, 422], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "וידן לך אלוקים ... וידן לך אלוקותו, אזוי שטעט אין מדרש",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [445, 446, 448, 449], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "וכציחה נחת יעקב עדוכה",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 58:14",
+      "sefariaRef": "Isaiah 58:14",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [482], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "וישראל תוצאה הבנים בקרבה ... נחל השני עולמית",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 25:22",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [472, 473, 725, 726], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ילקוטס ביי חנה ... הלונכי טוב לך מיתור הבנים",
+      "work": "Yalkut Shimoni",
+      "ref": "Yalkut Shimoni on I Shmuel 1:8",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [503, 506, 508, 512], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "נתת שמחה וליבו מיוסד הגנם בתרושם רבי'ל",
+      "work": "Tehillim",
+      "ref": "Tehillim 4:8",
+      "sefariaRef": "Psalms 4:8",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [526, 552], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די מושלי אז די איש איז זונה רופט אגפ מרומה כורות",
+      "work": "Mishlei",
+      "ref": "Mishlei 9:14",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [564, 565], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "אל יאר מילא אמי אמת ... זאגט רשע ... כשאזא קם אזא נפל",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 25:23",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [573, 582, 583, 584], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "בלאזשעוועל רב ... א צפון הצדיק / א צבי הצייט",
+      "work": "Tzvi LaTzaddik",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [593, 599], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "די גמרא היום לאתתים ולמחר וכבוד זכרים",
+      "work": "Gemara Eruvin",
+      "ref": "Eruvin 22a",
+      "sefariaRef": "Eruvin 22a",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [633, 644], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אכול ושתו ... היום קומט מאכן נמות / אחל וששתנו הים כמאכל נמת",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 22:13",
+      "sefariaRef": "Isaiah 22:13",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [635, 636, 645], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "רבי מאיר פרעמישל",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [667, 671, 672], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "ושם הבער רחובות, כי אהר צוהערחך ה' לאנה",
+      "work": "Bereishis",
+      "ref": "Bereishis 26:22",
+      "sefariaRef": "Genesis 26:22",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [701, 702, 704, 705], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "ויאל מיושם ויואשבע",
+      "work": "Bereishis",
+      "ref": "Bereishis 26:23",
+      "sefariaRef": "Genesis 26:23",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [707, 723], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ירא את השם צהרע מדרשת לארץ",
+      "work": "Tehillim",
+      "ref": "Tehillim 19:10",
+      "sefariaRef": "Psalms 19:10",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [748, 749], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "דער יראת דבשה זאגט א בירא פון דעם מדרש",
+      "work": "Yaaros Devash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [809, 823, 824], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "סימענו כחתם עלי בחור",
+      "work": "Shir HaShirim",
+      "ref": "Shir HaShirim 8:6",
+      "sefariaRef": "Song of Songs 8:6",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [810, 813, 814], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "הנה כל פיום חכם כסך / היינער כפיים חככככוסעך",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 49:16",
+      "sefariaRef": "Isaiah 49:16",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [820, 843], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די ישמח משה אין היינטיגע סדרה",
+      "work": "Yismach Moshe",
+      "ref": "Yismach Moshe, Parshas Toldos",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [851, 853, 863, 866], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אין חתם ספר שטעט עפעס אן ענליכע בחינה",
+      "work": "Chasam Sofer",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [888], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "הלכה איז אזוי ווי רבי מאיר, אז בן כך ובן כך קרים בונים",
+      "work": "Gemara Kiddushin",
+      "ref": "Kiddushin 36a",
+      "sefariaRef": "Kiddushin 36a",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [901, 902, 903], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Eating is not only for strength to serve Hashem: every moment brings a new heavenly influence, and food is one of the channels through which a person takes in that new holiness; this is why the righteous will eat the Leviasan feast before a new order begins.",
+        "yi": "עסן איז נישט נאר כדי צו האבן כח צו דינען השם יתברך: יעדע רגע קומט א נייע השפעה פון הימל, און דאס מאכל איז איינער פון די צינורות דורך וואס א מענטש נעמט אריין די נייע קדושה; דערפאר וועלן די צדיקים עסן די סעודה פון לויתן פאר עס הייבט זיך אן א נייע הנהגה."
+      },
+      "evidence": { "segs": [154, 157, 160, 191, 197, 199], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Yitzchak loved Esav for a real holiness he tasted, but it was Yaakov's: Yaakov secretly prepared the food Esav served, so Yitzchak concluded that Esav was a hidden tzaddik greater than Yaakov.",
+        "yi": "יצחק האט ליב געהאט עשו פאר א באמת'ע קדושה וואס ער האט געשפירט, נאר זי איז געווען פון יעקב: יעקב האט בסוד צוגעגרייט די מטעמים וואס עשו האט געברענגט, און דערפאר האט יצחק געהאלטן אז עשו איז א צדיק נסתר, נאך גרעסער ווי יעקב."
+      },
+      "evidence": { "segs": [313, 324, 330, 335, 338], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "\"Ki tzayid befiv\" is the Torah's way of recording what happened without writing a falsehood: it was Esav's hunt only in his mouth, by his claim, while the extra hei in \"tzeidah\", written but not read, hints that Yaakov did the slaughtering.",
+        "yi": "\"כי ציד בפיו\" איז דער אופן ווי די תורה שרייבט וואס איז געשען אן שרייבן א ליגן: עס איז געווען עשו'ס ציד נאר אין זיין מויל, ווייל ער האט אזוי געזאגט, און דער איבעריגער ה' אין \"צידה\", אנגעשריבן און נישט געליינט, איז א רמז אז יעקב האט געשחט'ן."
+      },
+      "evidence": { "segs": [350, 353, 355, 376, 380, 395], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The blessing of the dew of heaven and the fat of the land came measure for measure: because Yaakov's food was full of holiness, he was blessed with food whose inner side is holiness and which brings Torah.",
+        "yi": "די ברכה פון טל השמים און שמני הארץ איז געקומען מדה כנגד מדה: ווייל יעקב'ס מטעמים זענען געווען פול מיט קדושה, איז ער געבענטשט געווארן מיט מאכלים וואס זייער פנימיות איז קדושה און וואס ברענגען צו תורה."
+      },
+      "evidence": { "segs": [426, 428, 430, 435, 444], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Yitzchak left Rechovos precisely when he finally had peace, because comfort itself told him he was not in the place a person is sent to this world for.",
+        "yi": "יצחק איז אוועק פון רחובות פונקט ווען ער האט ענדליך געהאט מנוחה, ווייל די מנוחה אליין האט אים געזאגט אז א מענטש איז נישט אראפגעשיקט געווארן אויף דער וועלט פאר מנוחה."
+      },
+      "evidence": { "segs": [708, 710, 713, 716, 723], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Following the Yaaros Devash, the Rav explains that asking to be a seal on Hashem's heart was not proper, since a heart is sometimes open and sometimes closed; the hands, one's deeds, are always revealed, and that is where a Jew is measured.",
+        "yi": "לויטן יערות דבש ערקלערט דער משגיח אז צו בעטן צו זיין א חותם אויפן הארץ איז נישט געווען ווי עס דארף צו זיין, ווייל דאס הארץ איז אמאל אפן און אמאל פארמאכט; די הענט, די מעשים, זענען אלעמאל אנטפלעקט, און דארט מעסט מען א איד."
+      },
+      "evidence": { "segs": [811, 817, 818, 821, 846, 847], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "According to the Yismach Moshe, Yaakov and Esav were born together so that each would have free choice through contact with the other, and Yaakov received the blessing in Esav's clothes to show that even then a Jew merits blessing.",
+        "yi": "לויטן ישמח משה זענען יעקב און עשו געבוירן געווארן צוזאמען כדי יעדער זאל האבן בחירה דורך זיין נאנט מיטן צווייטן, און יעקב האט באקומען די ברכה אין עשו'ס בגדים צו ווייזן אז אפילו דעמאלט איז א איד זוכה צו א ברכה."
+      },
+      "evidence": { "segs": [862, 864, 866, 869, 894, 895], "confidence": 0.7 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Yismach Moshe and the pot on the stove", "yi": "דער ישמח משה און דער טאפ אויפן אויוון" },
+      "retelling": {
+        "en": "Once the Yismach Moshe's wife had to go away, and she told him to take his food himself from the stove where she had prepared it. On the stove there was also a pot of dirty dishwater that had been warmed for washing the dishes. Absorbed in his thoughts, he took that pot and ate from it. When she came back she understood what had happened, while he had noticed nothing.",
+        "yi": "אמאל האט די רביצין פונעם ישמח משה געדארפט אוועקפארן, און זי האט אים געזאגט ער זאל אליין נעמען דאס עסן פונעם אויוון וואו זי האט עס צוגעגרייט. אויפן אויוון איז אויך געשטאנען א טאפ מיט שמוציג וואסער וואס מ'האט אנגעווארעמט צו וואשן די כלים. פארטיפט אין זיינע מחשבות האט ער גענומען יענעם טאפ און דערפון געגעסן. ווען זי איז צוריקגעקומען האט זי פארשטאנען וואס דא איז פארגעקומען, און ער האט גארנישט געוואוסט."
+      },
+      "people": ["the Yismach Moshe"],
+      "evidence": { "segs": [13, 14, 17, 19, 21, 23], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The tzaddik in Tzfas and the bottle of brandy", "yi": "דער צדיק אין צפת און די פלאש בראנפן" },
+      "retelling": {
+        "en": "A tzaddik in Tzfas used to learn in depth every motzaei Shabbos at the home of a certain householder, who would bring out a bottle of brandy for a lechayim. One hot night, deep in the sugya and very thirsty, he noticed a bottle and a glass, poured himself a big glass thinking it was water, drank it and went on learning. The householder found the bottle empty and, puzzled, set out another and hid to watch; again the tzaddik poured a full glass and drank it without noticing. Only when he finished learning did he pour a small glass, taste it with the tip of his tongue, and remark that it was strong.",
+        "yi": "א צדיק אין צפת פלעגט יעדן מוצאי שבת לערנען בעיון ביי א געוויסן בעל הבית, וואס פלעגט ארויסברענגען א פלאש בראנפן אויף לחיים. אין א הייסע נאכט, פארטיפט אין דער סוגיא און זייער דורשטיג, האט ער באמערקט א פלאש מיט א גלאז, זיך אנגעגאסן א גרויסע גלאז מיינענדיג אז ס'איז וואסער, אויסגעטרונקען און ווייטער געלערנט. דער בעל הבית האט געזען אז די פלאש איז ליידיג, האט ער אוועקגעשטעלט נאך א פלאש און זיך באהאלטן צו קוקן; ווידער האט דער צדיק אנגעגאסן א פולע גלאז און געטרונקען אן באמערקן. ערשט ווען ער איז פארטיג געווארן מיטן לערנען, האט ער אנגעגאסן א קליין גלעזל, פארזוכט מיטן שפיץ צונג, און געזאגט אז דאס איז שטארק."
+      },
+      "people": [],
+      "evidence": { "segs": [31, 34, 45, 47, 52, 63], "confidence": 0.7 }
+    },
+    {
+      "title": { "en": "The Slonimer's disciple who could not taste the meat", "yi": "דעם סלאנימערס תלמיד וואס האט נישט געקענט טועם זיין דאס פלייש" },
+      "retelling": {
+        "en": "One of the great disciples of the Slonimer, a rav in a certain town and a very refined Jew, was once served meat and pushed it away, saying he could not taste it. Inquiry showed that the town had a chassidishe and a misnagdishe kehillah, and since the chassidishe shochet was away, the misnagdishe shochet had slaughtered. Asked why, since that shochet was an ehrlicher Jew, a talmid chacham and God-fearing, and his shechitah kosher, he answered that when a shochet does not go to the mikveh before slaughtering, the meat has a bad taste to him; it is kosher, but he cannot taste it. The Rav says he saw this in the Slonimer's writings.",
+        "yi": "איינער פון די גרויסע תלמידים פונעם סלאנימער, א רב אין א געוויסער שטאט און א זייער איידעלער איד, האט מען אמאל געגעבן פלייש, און ער האט עס אוועקגערוקט און געזאגט אז ער קען עס נישט טועם זיין. מ'האט נאכגעפרעגט און געפונען אז אין שטאט זענען געווען א חסידישע און א מתנגדישע קהילה, און ווייל דער חסידישער שוחט איז נישט געווען אין שטאט, האט דער מתנגדישער שוחט געשחט'ן. מ'האט אים געפרעגט פארוואס, דער שוחט איז דאך אן ערליכער איד, א תלמיד חכם און א ירא שמים, און זיין שחיטה איז כשר; האט ער געענטפערט אז ווען א שוחט גייט נישט אין מקוה פאר'ן שחט'ן, שפירט ער א שלעכטן טעם אין פלייש; עס איז כשר, נאר ער קען עס נישט טועם זיין. דער משגיח זאגט אז ער האט דאס געזען אין די כתבים פונעם סלאנימער."
+      },
+      "people": ["the Slonimer Rebbe"],
+      "evidence": { "segs": [251, 254, 257, 262, 263, 272], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The Belzer Rav and his dentist", "yi": "דער בעלזער רב און זיין דאקטער פאר די ציין" },
+      "retelling": {
+        "en": "That week someone from Eretz Yisrael told in the beis medrash that his father, a dentist, treated the Belzer Rav once a week. Understanding that one comes to a holy Jew only after the mikveh, he always went to the mikveh first. Once he could not go and still had to keep the appointment. After the treatment the Belzer Rav asked him why he had not been to the mikveh.",
+        "yi": "יענע וואך האט איינער פון ארץ ישראל דערציילט אין בית המדרש אז זיין טאטע, א דאקטער פאר די ציין, האט באהאנדלט דעם בעלזער רב איינמאל א וואך. ער האט פארשטאנען אז צו א הייליגן איד קומט מען נאר נאך מקוה, דערפאר איז ער אלעמאל פריער געגאנגען אין מקוה. איינמאל האט ער נישט געקענט גיין, און ער האט געמוזט האלטן די באשטימטע צייט. נאך דער באהאנדלונג האט אים דער בעלזער רב געפרעגט פארוואס ער איז נישט געווען אין מקוה."
+      },
+      "people": ["the Belzer Rav"],
+      "evidence": { "segs": [276, 277, 279, 283, 284, 287], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "Reb Shmuel of Karov, the hidden thief", "yi": "רבי שמואל פון קאראוו, דער באהאלטענער גנב" },
+      "retelling": {
+        "en": "Reb Shmuel of Karov, one of the great disciples of the Lubliner, said about himself that he was born to be a thief, and a thief he is: he can say Tikkun Chatzos in the middle of a fair without anyone knowing. The Rav explains that this is the art of hiding one's good deeds, and that this is what Yitzchak thought Esav was.",
+        "yi": "רבי שמואל פון קאראוו, איינער פון די גרויסע תלמידים פונעם לובלינער, האט געזאגט אויף זיך אז ער איז געבוירן געווארן צו זיין א גנב, און ער איז טאקע א גנב: ער קען אפריכטן חצות אינמיטן יריד און קיינער וועט נישט וויסן. דער משגיח ערקלערט אז דאס איז די קונסט פון באהאלטן די גוטע מעשים, און אזוי האט יצחק געמיינט אז עשו איז."
+      },
+      "people": ["Reb Shmuel of Karov", "the Lubliner (the Chozeh of Lublin)"],
+      "evidence": { "segs": [305, 307, 308, 310, 311, 312], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The simple Jew's luminous beard", "yi": "דעם פשוט'ן אידנס ליכטיגע בארד" },
+      "retelling": {
+        "en": "By the Lechovitcher there was a simple Jew who had not merited to learn great things, and the Lechovitcher said that a great light rests in his beard. The followers investigated and asked the man what this meant. He answered that he cannot learn and knows nothing, so when he wants to remember that he is a Jew he takes hold of his beard and says to Hashem that he does not shave it, and from that he draws life.",
+        "yi": "ביים לעכעוויטשער איז געווען א פשוט'ער איד וואס איז נישט זוכה געווען צו לערנען גרויסע זאכן, און דער לעכעוויטשער האט געזאגט אז אין זיין בארד ליגט א גרויסע ליכטיגקייט. די חסידים זענען געגאנגען חוקר זיין און האבן אים געפרעגט וואס דאס מיינט. האט ער געזאגט אז ער קען נישט לערנען און ער קען גארנישט, דערפאר ווען ער וויל זיך דערמאנען אז ער איז א איד, כאפט ער זיך אן ביי דער בארד און זאגט צום רבונו של עולם אז ער שערט זי נישט, און דערפון שעפט ער חיות."
+      },
+      "people": ["the Lechovitcher Rebbe"],
+      "evidence": { "segs": [540, 542, 544, 547, 548, 550], "confidence": 0.7 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "If food meant nothing to tzaddikim, why did Yitzchak need tasty food before blessing?", "yi": "אויב ביי צדיקים האט עסן קיין ראלע נישט געשפילט, פארוואס האט יצחק געדארפט מטעמים פאר די ברכות?" },
+      "answer": { "en": "A tzaddik senses the holiness in food; Yitzchak wanted to absorb more holiness so that the blessing would come in a better way.", "yi": "א צדיק שפירט די קדושה אין מאכל; יצחק האט געוואלט אריינצונעמען מער קדושה כדי די ברכה זאל זיין אויף א בעסערן אופן." },
+      "questionSegs": [65, 67, 69, 70],
+      "answerSegs": [243, 246, 249],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why does the passuk say \"ki tzayid befiv\" rather than that Yitzchak ate from Esav's hunt, as Onkelos translates?", "yi": "פארוואס שטייט \"כי ציד בפיו\" און נישט אז יצחק האט געגעסן פון עשו'ס ציד, אזוי ווי דער תרגום טייטשט?" },
+      "answer": { "en": "The Torah cannot write a falsehood: the hunt was Esav's only \"in his mouth\", by his claim, while the food was really Yaakov's.", "yi": "די תורה קען נישט שרייבן קיין ליגן: דער ציד איז געווען עשו'ס נאר \"בפיו\", ווייל ער האט אזוי געזאגט, און די מטעמים זענען באמת געווען פון יעקב." },
+      "questionSegs": [134, 135, 136],
+      "answerSegs": [349, 350, 353, 355],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "How could Yitzchak enjoy food brought by Esav?", "yi": "ווי אזוי האט יצחק געקענט הנאה האבן פון מטעמים וואס עשו האט געברענגט?" },
+      "answer": { "en": "Rivka never revealed Esav's nature, and Yaakov secretly prepared the food; Yitzchak felt its holiness and took Esav for a hidden tzaddik.", "yi": "רבקה האט קיינמאל נישט אנטפלעקט ווער עשו איז, און יעקב האט בסוד צוגעגרייט די מטעמים; יצחק האט געשפירט די קדושה און האט געהאלטן עשו פאר א צדיק נסתר." },
+      "questionSegs": [295, 296],
+      "answerSegs": [298, 324, 330, 336, 338],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why is \"tzeidah\" written with an extra hei that is not read?", "yi": "פארוואס איז \"צידה\" אנגעשריבן מיט אן איבעריגן ה' וואס מ'ליינט נישט?" },
+      "answer": { "en": "The hei hints at the five laws of shechitah, showing that until then Yaakov had slaughtered for Yitzchak; it is written but not read, so that Yitzchak would not hear.", "yi": "דער ה' איז א רמז אויף די פינף הלכות שחיטה, אז ביז דאן האט יעקב געשחט'ן פאר יצחק; עס איז אנגעשריבן און נישט געליינט כדי יצחק זאל נישט הערן." },
+      "questionSegs": [147, 370, 371],
+      "answerSegs": [376, 380, 382, 385, 395],
+      "confidence": 0.7
+    },
+    {
+      "question": { "en": "Why did Yitzchak leave Rechovos once he finally had peace there?", "yi": "פארוואס איז יצחק אוועק פון רחובות ווען ער האט ענדליך געהאט מנוחה?" },
+      "answer": { "en": "He knew that a person does not come to this world for comfort but to serve Hashem, so peace there was a reason to move on.", "yi": "ער האט געוואוסט אז א מענטש קומט נישט אויף דער וועלט פאר מנוחה נאר צו דינען השם יתברך, ממילא איז די מנוחה געווען א סיבה צו גיין ווייטער." },
+      "questionSegs": [707, 708, 710],
+      "answerSegs": [713, 716, 718, 723],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why was Knesses Yisrael's request \"simeini kachosam al libecha\" not proper?", "yi": "פארוואס איז די בקשה פון כנסת ישראל \"שימני כחותם על לבך\" נישט געווען ווי עס דארף צו זיין?" },
+      "answer": { "en": "A heart is sometimes open and sometimes closed; the hands, the deeds, are always revealed, so a Jew is measured by his deeds.", "yi": "דאס הארץ איז אמאל אפן און אמאל פארמאכט; די הענט, די מעשים, זענען אלעמאל אנטפלעקט, ממילא מעסט מען א איד לויט זיינע מעשים." },
+      "questionSegs": [810, 811, 813],
+      "answerSegs": [817, 818, 821, 846, 847],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Rav says a Jew should eat with the proper preparations: netilas yadayim, a brachah with kavanah and care for kashrus, and then the food brings holiness into his learning and davening.", "yi": "דער משגיח זאגט אז א איד דארף עסן מיט די ריכטיגע הכנות: נטילת ידים, א ברכה מיט כוונה און שמירה אויף כשרות, און דעמאלט ברענגט דאס מאכל קדושה אריין אין זיין לערנען און דאווענען." },
+      "evidence": { "segs": [210, 212, 214, 461, 462, 464], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Rav says one must close oneself to the pleasures of this world, each according to his own level, without imagining oneself like the great tzaddikim.", "yi": "דער משגיח זאגט אז מ'דארף זיך פארמאכן פון די תענוגים פון עולם הזה, יעדער לויט זיין מדריגה, אן זיך מדמה זיין צו די גרויסע צדיקים." },
+      "evidence": { "segs": [557, 558, 559, 560], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "The Rav says one must keep acting and toiling for Hashem even when the heart is closed and davening and learning are hard.", "yi": "דער משגיח זאגט אז מ'דארף טון און הארעווען פאר'ן רבונו של עולם אפילו ווען דאס הארץ איז פארמאכט און עס איז שווער צו דאווענען און צו לערנען." },
+      "evidence": { "segs": [840, 842, 848, 849], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "The Rav says a Jew should rejoice that he descends from Yaakov and know that in every situation he remains Hashem's child.", "yi": "דער משגיח זאגט אז א איד דארף זיך פרייען וואס ער שטאמט פון יעקב און וויסן אז אין יעדן מצב בלייבט ער א קינד פונעם רבונו של עולם." },
+      "evidence": { "segs": [905, 908, 909, 910, 913], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "parshas toldos",
+    "ki tzayid befiv",
+    "holiness in food",
+    "Yitzchak's love for Esav",
+    "hidden tzaddik",
+    "Yaakov and Esav: this world and the World to Come",
+    "oneg Shabbos",
+    "Yitzchak's wells",
+    "stability in avodas Hashem",
+    "blessing in Esav's clothes"
+  ],
+  "concepts": [
+    { "he": "מטעמים", "heardAs": ["מהציימים", "מתאיםים", "מחלמים", "מה תמימים"] },
+    { "he": "כי ציד בפיו", "heardAs": ["כצייד בפיוו", "כצד בפיוו", "סייד בפיוו"] },
+    { "he": "צדיק נסתר", "heardAs": ["צדק נסתר"] },
+    { "he": "השפעה", "heardAs": ["השפעות", "שפע"] },
+    { "he": "קרי וכתיב", "heardAs": ["א קריאה און א כתוב"] },
+    { "he": "הלכות שחיטה", "heardAs": ["ה' הלכות שחיטה", "פינף דינים פון שחיטה"] },
+    { "he": "עונג שבת", "heardAs": ["עונג שבת"] },
+    { "he": "נחלת יעקב", "heardAs": ["נחת יעקב", "נחלה פון יענקייט"] },
+    { "he": "נחלת שני עולמות", "heardAs": ["נחל השני עולמית", "נחלות שני עילמות"] },
+    { "he": "בכורה", "heardAs": ["בחורה"] },
+    { "he": "יציבות", "heardAs": ["יציבות"] },
+    { "he": "מוחין דגדלות", "heardAs": ["מחן דגדלות"] },
+    { "he": "מוחין דקטנות", "heardAs": ["מחן דקאטנות"] },
+    { "he": "בחירה", "heardAs": ["כחירה"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבינו שלום", "רבי של עולם", "רבינו שווארט"] }
+  ],
+  "people": [
+    { "name": "Yitzchak Avinu", "heardAs": ["יצחק אבינם", "יצטאג", "יתוק"] },
+    { "name": "Rivka", "heardAs": ["רבקה"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יענקאוו", "יענקי", "יענקוב"] },
+    { "name": "Esav", "heardAs": ["אסף", "עסף", "אסאב", "עסב", "יוסף"] },
+    { "name": "the Yismach Moshe", "heardAs": ["ישמח משה"] },
+    { "name": "Rashi", "heardAs": ["רשע", "רש''ה"] },
+    { "name": "Onkelos", "heardAs": ["תרגום אנקעלעס"] },
+    { "name": "Rabbeinu Bachya", "heardAs": ["רבי עננבי חי'", "רבינו בחיים"] },
+    { "name": "the Slonimer Rebbe", "heardAs": ["סלאנימער", "סלאנימעל"] },
+    { "name": "the Belzer Rav", "heardAs": ["בעלזא רב"] },
+    { "name": "Reb Shmuel of Karov", "heardAs": ["ר' שמואל קאראוועל"] },
+    { "name": "the Lubliner (the Chozeh of Lublin)", "heardAs": ["לובלינער"] },
+    { "name": "Chana", "heardAs": ["חנה"] },
+    { "name": "Dovid HaMelech", "heardAs": ["דוד המלך"] },
+    { "name": "the Lechovitcher Rebbe", "heardAs": ["מלאכאוויטש", "לאכעוויטש"] },
+    { "name": "the Bluzhever Rav", "heardAs": ["בלאזשעוועל רב"] },
+    { "name": "Reb Meir of Premishlan", "heardAs": ["רבי מאיר פרעמישל"] },
+    { "name": "the Yaaros Devash", "heardAs": ["יראת דבשה"] },
+    { "name": "the Chasam Sofer", "heardAs": ["חתם ספר"] },
+    { "name": "Rabbi Meir", "heardAs": ["רבי מאיר"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair for the Rav's own speech but badly garbled in pesukim and names (Esav often heard as אסף or even יוסף; matamim as מחלמים). The tzaddik in Tzfas in the opening brandy story is named only in garbled form (לבשי ספרד) and is left unnamed. The source attributed to Rabbeinu Bachya on the Leviasan feast, the Baal HaTurim on the extra hei (the Rav hedges on the attribution), Reb Meir of Premishlan's words on money (segs 667-676) and the Chasam Sofer reference (seg 888) are only partly recoverable. The closing segments (905-916) are fragmentary."
+}

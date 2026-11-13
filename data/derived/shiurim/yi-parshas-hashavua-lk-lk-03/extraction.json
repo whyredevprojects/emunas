@@ -1,0 +1,901 @@
+{
+  "shiurId": "yi-parshas-hashavua-lk-lk-03",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that Avraham Avinu was a new kind of creation, and that every Jew inherits from him not only a soul but a body that carries the good middos of the Avos.",
+      "yi": "דער משגיח ערקלערט אז אברהם אבינו איז געווען א נייע סארט בריאה, און אז יעדער איד ירשנט פון אים נישט נאר א נשמה, נאר אויך א גוף וואס טראגט די מדות טובות פון די אבות."
+    },
+    "abstract": {
+      "en": "The Rav opens with the first bracha of Shemoneh Esrei: tefillah rises through the Avos, and the greatest praise of Hashem is that Avraham, Yitzchak and Yaakov lived in His world. He urges deep study of their parshiyos, describes Avraham's trials, and brings the Midrash of the burning palace as a model for holding on to emunah in dark times. Through a mashal of a ruined building he shows how Bereishis and Noach were a chain of disappointments until Avraham came as a new species, the purpose of creation. A Jew differs from a gentile in body as well as soul: kindness, shame and mercy are middos of the body, inherited from the Avos, which is why the covenant of milah is in the flesh and why dayanim need yichus. With this he explains Avraham's fear and Eliezer's role, and closes that every Jew is Avraham's heir and should rejoice in that inheritance.",
+      "yi": "דער משגיח עפנט מיט דער ערשטער ברכה פון שמונה עשרה: די תפילה גייט ארויף דורך די אבות, און דער גרעסטער שבח פונעם רבונו של עולם איז אז אברהם, יצחק און יעקב האבן געלעבט אין זיין וועלט. ער מאנט מ'זאל לערנען זייערע פרשיות בעיון, שילדערט אברהם אבינו'ס נסיונות, און ברענגט דעם מדרש פון דער ברענענדיגער בירה ווי א וועג זיך צו האלטן ביי אמונה אין פינסטערע צייטן. מיט א משל פון א בנין וואס איז צעפאלן ווייזט ער ווי בראשית און נח זענען געווען א קייט פון אנטוישונגען ביז אברהם אבינו איז געקומען ווי א נייע מין, דער תכלית פון דער בריאה. א איד איז אנדערש פון א גוי סיי אין דער נשמה סיי אין גוף: רחמנות, בושה און חסד זענען מדות פונעם גוף, בירושה פון די אבות, און דערפאר איז ברית מילה אינעם בשר און דערפאר דארפן דיינים האבן יחוס. דערמיט איז ער מסביר אברהם אבינו'ס מורא און אליעזר'ס ראלע, און ער ענדיגט אז יעדער איד איז א יורש פון אברהם אבינו און דארף זיך פרייען מיט דער ירושה."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The first bracha of Shemoneh Esrei needs special kavanah because tefillos rise through the Avos, and emunah is an inheritance from them.",
+          "yi": "די ערשטע ברכה פון שמונה עשרה דארף א בעסונדערע כוונה, ווייל די תפילות גייען ארויף דורך די אבות, און די אמונה איז א ירושה פון זיי."
+        },
+        "evidence": { "segs": [16, 18, 27, 35, 44], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Bereishis and Noach record one disappointment after another; the world reached its purpose only with Avraham, a new species that believes in Hashem by nature.",
+          "yi": "בראשית און נח ווייזן איין אנטוישונג נאך די אנדערע; די וועלט איז געקומען צו איר תכלית ערשט מיט אברהם אבינו, א נייע מין וואס גלייבט אין השם יתברך פון נאטור."
+        },
+        "evidence": { "segs": [491, 524, 536, 585, 587, 599], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "A Jew's body is different from a gentile's: mercy, shame and kindness are middos of the body, inherited from Avraham, Yitzchak and Yaakov.",
+          "yi": "דער גוף פון א איד איז אנדערש ווי דער גוף פון א גוי: רחמנות, בושה און גמילות חסדים זענען מדות פונעם גוף, בירושה פון אברהם, יצחק און יעקב."
+        },
+        "evidence": { "segs": [616, 704, 705, 733, 735], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Hashem's covenant with Noach is in the heavens, while His covenant with Avraham is in the flesh, because a Jew serves Hashem with his body.",
+          "yi": "דער ברית מיט נח איז אין הימל, דער ברית מיט אברהם אבינו איז אינעם בשר, ווייל א איד דינט דעם אייבערשטן מיטן גוף."
+        },
+        "evidence": { "segs": [790, 799, 800, 804, 807], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Hashem's promise that Avraham's heir would come 'from his innards' means physical children, whose very bodies would be holy.",
+          "yi": "דער אייבערשטנס הבטחה אז דער יורש וועט זיין \"אשר יצא ממעיך\" מיינט גשמיות'דיגע קינדער, וואס זייער גוף אליין וועט זיין הייליג."
+        },
+        "evidence": { "segs": [954, 955, 958, 986, 987], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Every Jew carries a spark of Avraham Avinu and is his heir in body, and the Rav says one should rejoice in this inheritance.",
+          "yi": "יעדער איד טראגט א ניצוץ פון אברהם אבינו און איז זיין יורש בגוף, און דער משגיח זאגט אז מ'דארף זיך פרייען מיט דער ירושה."
+        },
+        "evidence": { "segs": [1081, 1085, 1092, 1170, 1188], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-03-lech-lecha",
+      "startSeg": 0,
+      "endSeg": 48,
+      "title": { "en": "Davening through the Avos", "yi": "דאווענען דורך די אבות" },
+      "summary": {
+        "en": "The Rav explains why the first bracha of Shemoneh Esrei needs special kavanah: tefillos rise through the Avos, and the greatest praise of Hashem is that men like Avraham, Yitzchak and Yaakov lived in His world. Emunah itself is an inheritance from them, above all from Avraham.",
+        "yi": "דער משגיח ערקלערט פארוואס די ערשטע ברכה פון שמונה עשרה דארף א בעסונדערע כוונה: די תפילות גייען ארויף דורך די אבות, און דער גרעסטער שבח פונעם רבונו של עולם איז אז אזעלכע מענטשן ווי אברהם, יצחק און יעקב האבן געלעבט אין זיין וועלט. די אמונה אליין איז א ירושה פון זיי, בפרט פון אברהם אבינו."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-03-lech-lecha",
+      "startSeg": 49,
+      "endSeg": 124,
+      "title": { "en": "Learning the parshiyos of the Avos; Avraham's trials", "yi": "לערנען די פרשיות פון די אבות; אברהם אבינו'ס נסיונות" },
+      "summary": {
+        "en": "The Rav says the parshiyos of the Avos hold the foundations of emunah and must be learned in depth. He describes Avraham's trials, among them a father who handed him over to Nimrod, asks how a father could do this, and answers with the Maharal that Avraham was a new creation with no real bond to Terach.",
+        "yi": "דער משגיח זאגט אז אין די פרשיות פון די אבות ליגט דער יסוד פון אמונה, און מ'דארף זיי לערנען בעיון. ער שילדערט אברהם אבינו'ס נסיונות, צווישן זיי א טאטע וואס האט אים איבערגעגעבן צו נמרוד, פרעגט ווי אזוי א טאטע קען דאס טון, און ענטפערט מיטן מהר\"ל אז אברהם אבינו איז געווען א בריאה חדשה אן קיין אמת'ן קשר צו תרח."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-03-lech-lecha",
+      "startSeg": 125,
+      "endSeg": 192,
+      "title": { "en": "Avraham in Mitzrayim; the middos of the Avos", "yi": "אברהם אבינו אין מצרים; די מדות פון די אבות" },
+      "summary": {
+        "en": "From Rashi on 'hinei na yadati' the Rav shows that Avraham's extraordinary guarding of his eyes weakened once he entered the atmosphere of Mitzrayim, and he draws how important it is to choose friends and surroundings. Along the way he explains that the first three brachos correspond to the Avos and that the three middos of the Jewish people come from them.",
+        "yi": "פון רש\"י אויף \"הנה נא ידעתי\" ווייזט דער משגיח אז אברהם אבינו'ס גרויסע שמירת עינים איז שוואכער געווארן ווען ער איז אריין אין דער אטמאספערע פון מצרים, און ער לערנט ארויס ווי וויכטיג עס איז צו קלייבן חברים און א סביבה. אונטערוועגנס ערקלערט ער אז די ערשטע דריי ברכות זענען קעגן די אבות, און אז די דריי מדות פון אידן קומען פון זיי."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-03-lech-lecha",
+      "startSeg": 193,
+      "endSeg": 277,
+      "title": { "en": "The burning palace", "yi": "די ברענענדיגע בירה" },
+      "summary": {
+        "en": "The Rav explains the Midrash of the man who saw a palace burning: Avraham looked at the corrupt world of Nimrod and asked whether it has no owner, until Hashem revealed Himself as the Owner. He applies it to every Jew's dark moments, saying one must hold fast to emunah until the light comes.",
+        "yi": "דער משגיח ערקלערט דעם מדרש פון דעם וואס האט געזען א בירה ברענען: אברהם אבינו האט געקוקט אויף דער פארדארבענער וועלט פון נמרוד און געפרעגט צי זי האט נישט קיין בעל הבית, ביז דער אייבערשטער האט זיך אנטפלעקט אז ער איז דער בעל הבירה. ער ווענדט עס אן אויף די פינסטערע מאמענטן פון יעדן איד, און זאגט אז מ'דארף זיך שטארק האלטן ביי אמונה ביז די ליכטיגקייט קומט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-03-lech-lecha",
+      "startSeg": 278,
+      "endSeg": 383,
+      "title": { "en": "Two 'lech lecha's, Avraham's fear, and Eliezer", "yi": "צוויי מאל לך לך, אברהם אבינו'ס מורא, און אליעזר" },
+      "summary": {
+        "en": "The Rav brings the Midrash on the two times Hashem said 'lech lecha' and the Midrash that the world was created for Avraham. He then raises the Ramban's question on 'what will You give me', and the difficulty from the Ramban's own rule that a prophecy accompanied by a symbolic act must be fulfilled, and asks why Eliezer, a student who drew Torah from Avraham, had to lead the yeshiva.",
+        "yi": "דער משגיח ברענגט דעם מדרש אויף די צוויי מאל וואס דער אייבערשטער האט געזאגט \"לך לך\", און דעם מדרש אז די וועלט איז באשאפן געווארן צוליב אברהם. דערנאך ברענגט ער דעם רמב\"ן אויף \"מה תתן לי\", און די קשיא פון רמב\"ן'ס אייגענעם כלל אז א נבואה מיט א פועל דמיוני מוז מקוים ווערן, און ער פרעגט פארוואס אליעזר, א תלמיד וואס האט געשעפט תורה פון אברהם אבינו, האט געדארפט פירן די ישיבה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-03-lech-lecha",
+      "startSeg": 384,
+      "endSeg": 446,
+      "title": { "en": "The mashal of the grand building", "yi": "דער משל פון דעם שיינעם בנין" },
+      "summary": {
+        "en": "The Rav tells a mashal of a magnificent new hall whose opening celebration falls apart: the air conditioner fails, the windows stick, water floods in and the roof collapses. He sets it against the creation of the world, which Hashem saw as good and celebrated with Shabbos.",
+        "yi": "דער משגיח דערציילט א משל פון א פרעכטיגן נייעם זאל וואו די חנוכת הבית ווערט צעשטערט: די לופט מאשין ארבעט נישט, די פענסטער לאזן זיך נישט עפענען, וואסער גיסט זיך אריין און דער דאך פאלט איין. דאס שטעלט ער אקעגן דער בריאת העולם, וואס דער אייבערשטער האט געזען אז זי איז גוט און האט עס געפייערט מיט שבת."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-03-lech-lecha",
+      "startSeg": 447,
+      "endSeg": 522,
+      "title": { "en": "The disappointments of Bereishis and Noach", "yi": "די אנטוישונגען פון בראשית און נח" },
+      "summary": {
+        "en": "The Rav goes through the first two parshiyos as a chain of disappointments: Adam's sin, Kayin's murder of Hevel, the generation of Enosh, Hashem's regret even over Noach, Chanoch taken away early, and after the flood Noach's drunkenness, Nimrod and the generation of the dispersion.",
+        "yi": "דער משגיח גייט דורך די ערשטע צוויי סדרות ווי א קייט פון אנטוישונגען: אדם הראשון'ס חטא, קין וואס הרג'עט הבל, דער דור פון אנוש, דער אייבערשטנס חרטה אפילו אויף נח, חנוך וואס ווערט פריצייטיג אוועקגענומען, און נאכן מבול נח'ס שכרות, נמרוד און דער דור הפלגה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-03-lech-lecha",
+      "startSeg": 523,
+      "endSeg": 606,
+      "title": { "en": "Avraham, a new creation", "yi": "אברהם אבינו, א נייע בריאה" },
+      "summary": {
+        "en": "With 'I will make you a great nation' the Rav explains that Hashem promised a new species, a person who believes in Hashem by instinct. From the pesukim said in davening ('You chose Avram... and found his heart faithful') and the Midrash 'behibaram - be'Avraham' he shows that creation was completed only with Avraham, its purpose.",
+        "yi": "מיט \"ואעשך לגוי גדול\" ערקלערט דער משגיח אז דער אייבערשטער האט צוגעזאגט א נייע מין, א מענטש וואס גלייבט אין השם יתברך פון אינסטינקט. פון די פסוקים וואס מ'זאגט אין דאווענען (\"אשר בחרת באברם... ומצאת את לבבו נאמן\") און פונעם מדרש \"בהבראם - באברהם\" ווייזט ער אז די בריאה איז פארענדיגט געווארן ערשט מיט אברהם אבינו, איר תכלית."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-03-lech-lecha",
+      "startSeg": 607,
+      "endSeg": 707,
+      "title": { "en": "The Jewish body is different", "yi": "דער אידישער גוף איז אנדערש" },
+      "summary": {
+        "en": "The Rav explains that Avraham's new species differs in the soul and also in the body, as the Tanya explains with kelipas nogah. He compares it to Shabbos, which looks the same yet is another world, says the purpose of creation is to refine the body, and shows that the good middos come from the body, so that even a Jew far from Torah keeps his rachmanus.",
+        "yi": "דער משגיח ערקלערט אז אברהם אבינו'ס נייע מין איז אנדערש אין דער נשמה און אויך אינעם גוף, ווי דער תניא איז מסביר מיט קליפת נוגה. ער גלייכט עס צו שבת, וואס זעט אויס די זעלבע און איז דאך אן אנדערע וועלט, זאגט אז דער תכלית פון דער בריאה איז צו מתקן זיין דעם גוף, און ווייזט אז די מדות טובות קומען פונעם גוף, אזוי אז אפילו א איד וואס איז ווייט פון תורה האלט נאך רחמנות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-03-lech-lecha",
+      "startSeg": 708,
+      "endSeg": 760,
+      "title": { "en": "Shame, and serving Hashem with the body", "yi": "בושה, און דינען דעם אייבערשטן מיטן גוף" },
+      "summary": {
+        "en": "From the Gemara on why one who admits part of a claim must swear (a man does not brazenly deny to his creditor's face) the Rav shows that a Jew, even a dishonest one, remains a bayshan by inheritance. He adds the Midrash that gentiles can bring only olos while Jews bring shelamim, because a Jew can serve Hashem with his body, even by eating.",
+        "yi": "פון דער גמרא פארוואס א מודה במקצת דארף שווערן (א מענטש איז נישט מעיז פנים קעגן זיין בעל חוב) ווייזט דער משגיח אז א איד, אפילו א שלעכטער, בלייבט א ביישן בירושה. ער לייגט צו דעם מדרש אז גוים קענען נאר ברענגען עולות און אידן ברענגען שלמים, ווייל א איד קען דינען דעם אייבערשטן מיטן גוף, אפילו מיט עסן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-03-lech-lecha",
+      "startSeg": 761,
+      "endSeg": 822,
+      "title": { "en": "Two covenants: Noach and Avraham", "yi": "צוויי בריתות: נח און אברהם" },
+      "summary": {
+        "en": "The Rav contrasts Hashem's covenant with Noach, the rainbow in the sky that asks mankind to look up and forget the body, with His covenant with Avraham in the flesh, where holiness is to shine in the body. He brings the Kotzker's reading of 'the heavens are Hashem's and the earth He gave to man': man is to make the earth into heaven, and only Jews can do this.",
+        "yi": "דער משגיח שטעלט אקעגן דעם ברית מיט נח, דער רעגנבויגן אין הימל וואס הייסט די מענטשהייט קוקן ארויף און פארגעסן פונעם גוף, מיטן ברית מיט אברהם אבינו אינעם בשר, וואו די קדושה דארף לייכטן אינעם גוף. ער ברענגט דעם קאצקער'ס טייטש אויף \"השמים שמים לה' והארץ נתן לבני אדם\": דער מענטש דארף מאכן פון דער ערד א הימל, און דאס קענען נאר אידן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-03-lech-lecha",
+      "startSeg": 823,
+      "endSeg": 889,
+      "title": { "en": "Yichus for dayanim; children in body and in soul", "yi": "יחוס פאר דיינים; קינדער בגוף און בנשמה" },
+      "summary": {
+        "en": "The Rav asks why dayanim of capital cases and the Great Sanhedrin need yichus, and suggests that rachmanus passes through the body, just as an old or childless man may not sit on the Sanhedrin. He then distinguishes inheritance in the body from inheritance in the soul, with the exchange between the Ba'al HaTanya and Reb Baruch of Mezhibuzh and the convert who says 'to our fathers' over bikkurim.",
+        "yi": "דער משגיח פרעגט פארוואס דיינים פון דיני נפשות און די סנהדרין גדולה דארפן יחוס, און זאגט אז רחמנות גייט איבער דורכן גוף, פונקט ווי א זקן אדער איינער אן קינדער טאר נישט זיצן אין סנהדרין. דערנאך מאכט ער א חילוק צווישן א ירושה בגוף און א ירושה בנשמה, מיטן ווערטל צווישן דעם בעל התניא און רבי ברוך'ל ממעזשיבוז, און מיטן גר וואס זאגט \"לאבותינו\" ביי ביכורים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-03-lech-lecha",
+      "startSeg": 890,
+      "endSeg": 947,
+      "title": { "en": "Why Avraham thought Eliezer would inherit", "yi": "פארוואס אברהם אבינו האט געמיינט אז אליעזר וועט ירשענען" },
+      "summary": {
+        "en": "The Rav answers the question on the Ramban: the first promise to Avraham's 'seed' could be read as children of the soul, his talmidim, and Eliezer, who drew Torah from him, already was one. He then explains why Eliezer led the yeshiva and court: as long as Avraham had no children he could not judge capital cases, so he appointed Eliezer, and an appointment once made remains, as with a kohen gadol who was replaced.",
+        "yi": "דער משגיח ענטפערט די קשיא אויפן רמב\"ן: די ערשטע הבטחה אויף \"זרעך\" האט מען געקענט טייטשן אויף קינדער בנשמה, זיינע תלמידים, און אליעזר, וואס האט געשעפט תורה פון אים, איז שוין געווען אזא קינד. דערנאך ערקלערט ער פארוואס אליעזר האט געפירט די ישיבה און דעם בית דין: כל זמן אברהם אבינו האט נישט געהאט קיין קינדער האט ער נישט געקענט דן זיין דיני נפשות, האט ער באשטימט אליעזר'ן, און א מינוי בלייבט, ווי ביי א כהן גדול וואס מ'האט געביטן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-03-lech-lecha",
+      "startSeg": 948,
+      "endSeg": 1048,
+      "title": { "en": "Children 'from your innards'", "yi": "קינדער \"אשר יצא ממעיך\"" },
+      "summary": {
+        "en": "Hashem answered that the heir would come from Avraham's innards, the lowest organs, and the Rav connects this to Asher Yatzar, said before the Kisei HaKavod, and to Rashi's 'lifted above the stars': Avraham's physical children would have bodies that shine above the stars. He returns to the two 'lech lecha's: Moriah is the source of hora'ah, where the Sanhedrin needs the greatest bodily rachmanus, so the second one is the more precious.",
+        "yi": "דער אייבערשטער האט געענטפערט אז דער יורש וועט קומען פון אברהם אבינו'ס מעיים, די נידריגסטע אברים, און דער משגיח פארבינדט עס מיט אשר יצר, וואס מ'זאגט פאר דעם כסא הכבוד, און מיט רש\"י'ס \"הגביהו למעלה מן הכוכבים\": אברהם אבינו'ס גשמיות'דיגע קינדער וועלן האבן א גוף וואס לייכט העכער פון די שטערן. ער קומט צוריק צו די צוויי לך לך: מוריה איז דער מקור פון הוראה, וואו די סנהדרין דארף די גרעסטע רחמנות פונעם גוף, און דערפאר איז דער צווייטער חשוב'ער."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-03-lech-lecha",
+      "startSeg": 1049,
+      "endSeg": 1107,
+      "title": { "en": "Noach's spark and every Jew's inheritance", "yi": "נח'ס ניצוץ און יעדן אידנס ירושה" },
+      "summary": {
+        "en": "The Rav explains that Noach found favor because Avraham's spark was within him, as sefarim explain that a person is drawn to the places and things that hold sparks he must raise, which is also the reason for galus. Every Jew was once part of Avraham and carries his spark, which, as the Chiddushei HaRim explains 'Magen Avraham', Hashem guards so that it is never lost.",
+        "yi": "דער משגיח ערקלערט אז נח האט געפונען חן ווייל אברהם אבינו'ס ניצוץ איז געווען אין אים, ווי ספרים זאגן אז א מענטש ווערט געצויגן צו די ערטער און זאכן וואו עס ליגן ניצוצות וואס ער דארף אויפהייבן, און דאס איז אויך דער טעם פון גלות. יעדער איד איז אמאל געווען א חלק פון אברהם אבינו און טראגט זיין ניצוץ, וואס דער אייבערשטער היט, ווי דער חידושי הרי\"ם טייטשט \"מגן אברהם\", אז ער זאל קיינמאל נישט פארלוירן ווערן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-03-03-lech-lecha",
+      "startSeg": 1108,
+      "endSeg": 1192,
+      "title": { "en": "Not to despair; rejoicing in the inheritance", "yi": "נישט מייאש ווערן; זיך פרייען מיט דער ירושה" },
+      "summary": {
+        "en": "The Rav concludes that the failures of Bereishis teach a person not to despair when his own fresh start after the Yamim Noraim falls apart, since the light began with 'lech lecha'. He brings the bracha said over an inheritance, explains that our body, its 248 limbs matching the gematria of Avraham, is our inheritance from Avraham, and calls to learn the parsha with joy in that inheritance.",
+        "yi": "דער משגיח ענדיגט אז די אנטוישונגען פון בראשית לערנען א מענטש נישט מייאש צו ווערן ווען זיין אייגענער נייער אנהייב נאך די ימים נוראים פאלט אוועק, ווייל די ליכטיגקייט האט זיך אנגעהויבן ערשט מיט \"לך לך\". ער ברענגט די ברכה וואס מ'מאכט אויף א ירושה, ערקלערט אז אונזער גוף, מיט די רמ\"ח אברים וואס איז בגימטריא אברהם, איז אונזער ירושה פון אברהם אבינו, און רופט צו לערנען די פרשה מיט שמחה אין דער ירושה."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "די ערשטע ברכה ... אלקי אברהם אלקי יצחק אלקי יענקא",
+      "work": "Shemoneh Esrei",
+      "ref": "Shemoneh Esrei, first bracha (Avos)",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [27, 28, 35, 171, 172], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "תפילת אבות תוקן",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 26b",
+      "sefariaRef": "Berakhot 26b",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [15, 26], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ומתי יגיד מיין סעלען מיין סעלען, הבתי אברהם",
+      "work": "Tanna Devei Eliyahu",
+      "ref": "Tanna Devei Eliyahu Rabbah ch. 25",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [63, 64, 125, 179], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער מראהל זאגט אין סוף פרשת נח",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [111, 112, 114], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ער האט אים איבערגעבן צו נמאי'ט",
+      "work": "Bereishis Rabbah",
+      "ref": "Bereishis Rabbah 38:13",
+      "sefariaRef": "Bereshit Rabbah 38:13",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [98, 108], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ער קומט געהאנדלען ביי זיין זון ... ער וועט נישט פון דין רודי",
+      "work": "Gemara Sanhedrin",
+      "ref": "Sanhedrin 72b",
+      "sefariaRef": "Sanhedrin 72b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [101, 104, 105, 106], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "כינענו ידעתי כי ישוי פאר שמערה את ... עס זאגט רשע",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 12:11",
+      "sefariaRef": "Rashi on Genesis 12:11",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [128, 129, 131], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "בריסקירעט יוליני ... אפילו בדידלע יסתכל",
+      "work": "Gemara Bava Basra",
+      "ref": "Bava Basra 16a",
+      "sefariaRef": "Bava Batra 16a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [137, 138, 139], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "רחמנים, ביישונים און גמלכי סודים ... זאל מיט אים נישט משדך זיין",
+      "work": "Gemara Yevamos",
+      "ref": "Yevamos 79a",
+      "sefariaRef": "Yevamot 79a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [163, 164, 165], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "די רמב״ם מאכט איינע פון די גרויסע עובדים דערפון צו וויינען",
+      "work": "Rambam, Mishneh Torah",
+      "ref": "Hilchos De'os 6:1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [190, 191], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "ומשהו צו ענאש הולך בדרך, ווירא הבירה דולך",
+      "work": "Bereishis Rabbah",
+      "ref": "Bereishis Rabbah 39:1",
+      "sefariaRef": "Bereshit Rabbah 39:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [193, 196, 197, 229, 261], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "דער מבנה לייגט אוועק א גרויסן קוואב ... סיועוי פונעם לבנון",
+      "work": "Ramban",
+      "ref": "Ramban on Bereishis 12:6",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [250, 251, 333, 334, 335], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אין מדרש שטעט ... צוויי מאל לחלוחה",
+      "work": "Bereishis Rabbah",
+      "ref": "Bereishis Rabbah 39:9",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [278, 280, 284, 1014, 1015], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "בהיבורים איז שביל אברהם",
+      "work": "Bereishis Rabbah",
+      "ref": "Bereishis Rabbah 12:9",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [298, 299, 302, 304, 564], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אייך הדברים ... אלצירה אברהם ... ינחי הולך עירי ... משק אליעזר",
+      "work": "Bereishis",
+      "ref": "Bereishis 15:1-3",
+      "sefariaRef": "Genesis 15:1-3",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [310, 315, 316, 317, 1083], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "איז דער רמב״ם פרייגט ... די מפרשים פרעגן אויף דעם רמב״ן",
+      "work": "Ramban",
+      "ref": "Ramban on Bereishis 15:2",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [318, 323, 325, 328], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "יגרם אחת אזא ווי דער גמרא זאגט",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 4a",
+      "sefariaRef": "Berakhot 4a",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [325, 326], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "דואלא המשקה ... תורה צרבה לכאירון ... זקן ביושב ביישוב",
+      "work": "Gemara Yoma",
+      "ref": "Yoma 28b",
+      "sefariaRef": "Yoma 28b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [351, 352, 353, 355, 357], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ובא ביאמען, ושם בער, ואת אברהם בכל ... ער האט געהאט א טאכטער",
+      "work": "Bereishis",
+      "ref": "Bereishis 24:1 with Bava Basra 16b",
+      "sefariaRef": "Genesis 24:1",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [375, 376, 378, 1012], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "לכחר חזן מפעלות אלוקים אפילו אשר שם שמות באראט",
+      "work": "Tehillim",
+      "ref": "Tehillim 46:9",
+      "sefariaRef": "Psalms 46:9",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [421, 422, 423], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "כנחמת כעשותים ונח מצכן בני ה'",
+      "work": "Bereishis",
+      "ref": "Bereishis 6:7-8",
+      "sefariaRef": "Genesis 6:7-8",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [485, 486, 490, 1051, 1052], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "וישאלו חנוכת אלוקים, ויאל מלכים, ולקחותי אלוקים",
+      "work": "Bereishis",
+      "ref": "Bereishis 5:24",
+      "sefariaRef": "Genesis 5:24",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [493, 495, 496, 499], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ויאל השם על אברהם ולאכלך ... ווי עס חולה גוי גוי דו",
+      "work": "Bereishis",
+      "ref": "Bereishis 12:1-2",
+      "sefariaRef": "Genesis 12:1-2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [523, 524], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אזוי שטעט מען דאווענען ... דברי הימים ... בחלק תבואי אברהם ... ומצילת לדבר וינ Aqua נחול",
+      "work": "Nechemiah",
+      "ref": "Nechemiah 9:6-8",
+      "sefariaRef": "Nehemiah 9:6-8",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [538, 539, 541, 548, 821], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "א חלק אין לכם ומאל ממש ... מקליפת נוגע ... ספר חניה",
+      "work": "Tanya",
+      "ref": "Tanya ch. 1-2",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [612, 614, 619], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "איינער גייט נאר מיטבוילן און ער פארגעסט ווען שבת איז",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 69b",
+      "sefariaRef": "Shabbat 69b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [633, 634, 635], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "מיר לארנען דאך יעצט די גמרא ... מחלוקת רשע און תוספות ... מכה בשוקחייזען",
+      "work": "Gemara Bava Metzia",
+      "ref": "Bava Metzia 3a",
+      "sefariaRef": "Bava Metzia 3a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [708, 711, 718, 725, 727], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "שטעטן מדרשו ... ארי צפון, ווי סימן",
+      "work": "Midrash",
+      "ref": "Midrash on Shir HaShirim 4:16",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [740, 741, 742, 744, 750], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "את כשתי נתתי בענין, והיה ליות ברית",
+      "work": "Bereishis",
+      "ref": "Bereishis 9:13",
+      "sefariaRef": "Genesis 9:13",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [768, 770, 771], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "תנוחות את ברית נתתי בפסלחם ... דווקא בפסלחם",
+      "work": "Bereishis",
+      "ref": "Bereishis 17:13",
+      "sefariaRef": "Genesis 17:13",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [802, 803, 804], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "השמים שמים על ה' ... ויואל עס נעשה לבני ידים",
+      "work": "Tehillim",
+      "ref": "Tehillim 115:16",
+      "sefariaRef": "Psalms 115:16",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [812, 813, 814, 815], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די גמרא'ן אזוי פאסטן זיך פון רמב״ם ... דער וואס קען נישט האבן פון קינדער אדער א זאקינג",
+      "work": "Gemara Sanhedrin",
+      "ref": "Sanhedrin 36b",
+      "sefariaRef": "Sanhedrin 36b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [841, 843, 844, 845, 848], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "כל המלמדות בנחם ווי צורק כאילו ילענע",
+      "work": "Gemara Sanhedrin",
+      "ref": "Sanhedrin 19b",
+      "sefariaRef": "Sanhedrin 19b",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [868, 871], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ושנתם ולבנך א ילוי תלמידים",
+      "work": "Sifrei",
+      "ref": "Sifrei Devarim 34",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [872], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "דער רמב״ם פסק'נס ... סגער קען ברענגען ביקורים און זאגן ... לאבותינו",
+      "work": "Rambam, Mishneh Torah",
+      "ref": "Hilchos Bikkurim 4:3",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [875, 876, 878, 879], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "דעמאלט האט זיך אנגעפאנגען די שני אלפים פון תורה",
+      "work": "Gemara Avodah Zarah",
+      "ref": "Avodah Zarah 9a",
+      "sefariaRef": "Avodah Zarah 9a",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [893, 930], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "דער רמב״ם פאסטן דאך אז סורות טאר נישט ... דינען נפשות",
+      "work": "Rambam, Mishneh Torah",
+      "ref": "Hilchos Sanhedrin 2:3",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [933, 1034], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "אזוי שטעט ... ביים קיין גדול ... די עבודה יום כיפור",
+      "work": "Gemara Yoma",
+      "ref": "Yoma 12b",
+      "sefariaRef": "Yoma 12b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [943, 944, 945, 946], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "הנה דבר שם מלב לא רשכתא ... כמעשה רשק יוצא מי מאכה",
+      "work": "Bereishis",
+      "ref": "Bereishis 15:4",
+      "sefariaRef": "Genesis 15:4",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [951, 953, 955, 986], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "די ברכה פון השייצע ... גלי ידעו לפנקס ... כיסא הקבד",
+      "work": "Gemara Berachos",
+      "ref": "Asher Yatzar blessing, Berachos 60b",
+      "sefariaRef": "Berakhot 60b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [960, 966, 978, 983], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "רשע זאגט אז ס'האט אים איבערגעהויבן איבער דעם הימער ... די כוכבים",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 15:5",
+      "sefariaRef": "Rashi on Genesis 15:5",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [994, 995, 996], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "פארוואס וועט עס איינגערופן מוריאה ... דבר ה' ירושלים",
+      "work": "Midrash",
+      "ref": "Bereishis Rabbah 55:7",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1022, 1023, 1024, 1042], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "דער חידושי ארום ... די פשט'ע ברכה פון מארגן אברהם",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1104], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "די הלכה איז ... אבער אויב מען האט גע'ארשענט, דארף מען מאכן א ברכה, א טוב ווי א מעטעס",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 59b",
+      "sefariaRef": "Berakhot 59b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1146, 1150, 1151], "confidence": 0.65 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Greater praise of Hashem than the creation of heaven and earth is that men like Avraham, Yitzchak and Yaakov came into His world; this is why the first bracha calls Him the G-d of the Avos.",
+        "yi": "א גרעסערער שבח פונעם רבונו של עולם ווי די בריאה פון הימל און ערד איז אז אזעלכע מענטשן ווי אברהם, יצחק און יעקב זענען געווען אין זיין וועלט; דערפאר רופט מען אים אין דער ערשטער ברכה אלקי אברהם אלקי יצחק ואלקי יעקב."
+      },
+      "evidence": { "segs": [29, 30, 33, 34, 35], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "Terach could hand Avraham over to be killed because, as the Maharal explains, Avraham was a new creation with no true bond to his father; a father's instinctive mercy did not apply.",
+        "yi": "תרח האט געקענט איבערגעבן אברהם אבינו צו הרג'ענען, ווייל, ווי דער מהר\"ל ערקלערט, אברהם אבינו איז געווען א בריאה חדשה אן קיין אמת'ן קשר מיטן טאטן; די נאטירליכע רחמנות פון א טאטן האט דא נישט געהערט."
+      },
+      "evidence": { "segs": [106, 111, 114, 117, 122], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The Jewish body itself is different from the gentile body, like Shabbos, which outwardly looks like any weekday yet is another world.",
+        "yi": "דער אידישער גוף אליין איז אנדערש ווי דער גוף פון א גוי, אזוי ווי שבת, וואס פון דרויסן זעט אויס ווי א וואכנטאג און איז דאך אן אנדערע וועלט."
+      },
+      "evidence": { "segs": [616, 629, 640, 650, 652], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Noach's covenant is a sign in the heavens, asking mankind to look up and forget the body; Avraham's is in the flesh, because the Jewish task is to make holiness shine in the body.",
+        "yi": "דער ברית פון נח איז א סימן אין הימל, וואס הייסט די מענטשהייט קוקן ארויף און פארגעסן פונעם גוף; דער ברית פון אברהם אבינו איז אינעם בשר, ווייל די עבודה פון א איד איז אז די קדושה זאל לייכטן אינעם גוף."
+      },
+      "evidence": { "segs": [790, 794, 796, 800, 804, 805], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Avraham feared because the first promise of 'seed' could mean disciples, children of the soul, which Eliezer already fulfilled; so Hashem specified children 'from your innards'.",
+        "yi": "אברהם אבינו האט מורא געהאט ווייל די ערשטע הבטחה אויף \"זרע\" האט געקענט מיינען תלמידים, קינדער בנשמה, און דאס איז שוין מקוים געווארן מיט אליעזר; דערפאר האט דער אייבערשטער אויסגעשפראכן קינדער \"אשר יצא ממעיך\"."
+      },
+      "evidence": { "segs": [892, 908, 912, 913, 986], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The Asher Yatzar bracha shows that the functioning of the lowest organs is spoken of before the Kisei HaKavod, so high is the Jewish body.",
+        "yi": "די ברכה פון אשר יצר ווייזט אז מ'רעדט פאר דעם כסא הכבוד וועגן דעם וואס די נידריגסטע אברים ארבעטן, אזוי הויך איז דער אידישער גוף."
+      },
+      "evidence": { "segs": [966, 975, 978, 979, 980], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The Sanhedrin needs dayanim of yichus and fathers of children because mercy in judgment is a bodily middah passed down from the Avos.",
+        "yi": "די סנהדרין דארף דיינים מיט יחוס און וואס האבן קינדער, ווייל רחמנות אין דין איז א מדה פונעם גוף וואס גייט איבער בירושה פון די אבות."
+      },
+      "evidence": { "segs": [845, 848, 850, 855, 1038], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "The Ba'al HaTanya and Reb Baruch of Mezhibuzh",
+        "yi": "דער בעל התניא און רבי ברוך'ל ממעזשיבוז"
+      },
+      "retelling": {
+        "en": "The Rav relates a dispute between the Ba'al HaTanya and Reb Baruch of Mezhibuzh, the Ba'al Shem Tov's grandson. Reb Baruch asked him whether he too wanted to be considered a grandson of the Ba'al Shem Tov. The Ba'al HaTanya answered that he was indeed one, since he was a talmid of the Maggid, who was a talmid of the Ba'al Shem Tov, and one who teaches another's son Torah is considered as if he fathered him.",
+        "yi": "דער משגיח דערציילט פון א מחלוקת צווישן דעם בעל התניא און רבי ברוך'ל ממעזשיבוז, דעם בעל שם טוב'ס אייניקל. רבי ברוך'ל האט אים געפרעגט צי ער וויל אויך זיין אן אייניקל פונעם בעל שם טוב. דער בעל התניא האט געענטפערט אז ער איז טאקע אן אייניקל, ווייל ער איז א תלמיד פונעם מגיד, און דער מגיד איז געווען א תלמיד פונעם בעל שם טוב, און דער וואס לערנט תורה מיט א צווייטנס קינד ווערט גערעכנט ווי ער האט אים געבוירן."
+      },
+      "people": ["the Ba'al HaTanya", "Reb Baruch of Mezhibuzh", "the Maggid of Mezritch", "the Ba'al Shem Tov"],
+      "evidence": { "segs": [861, 863, 864, 865, 866, 868], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "How could Terach hand his own son over to Nimrod, when a father instinctively will not kill his son?",
+        "yi": "ווי אזוי האט תרח געקענט איבערגעבן זיין אייגענעם זון צו נמרוד, ווען א טאטע וועט פון נאטור נישט הרג'ענען זיין זון?"
+      },
+      "answer": {
+        "en": "Avraham was a new creation, the start of the Jewish people, with no true bond to Terach.",
+        "yi": "אברהם אבינו איז געווען א בריאה חדשה, דער אנהייב פון כלל ישראל, אן קיין אמת'ן קשר מיט תרח."
+      },
+      "questionSegs": [98, 106, 108, 110],
+      "answerSegs": [112, 114, 117, 122, 123],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "How did Avraham, who never looked even at his own wife, come to lose that guarding in Mitzrayim?",
+        "yi": "ווי אזוי האט אברהם אבינו, וואס האט אפילו אויף זיין אייגענע ווייב נישט געקוקט, פארלוירן די שמירה אין מצרים?"
+      },
+      "answer": {
+        "en": "The atmosphere of the wicked in Mitzrayim affected even him, which shows how important one's surroundings are.",
+        "yi": "די אטמאספערע פון די רשעים אין מצרים האט אפילו אויף אים געווירקט, וואס ווייזט ווי וויכטיג די סביבה איז."
+      },
+      "questionSegs": [136, 139, 141],
+      "answerSegs": [142, 143, 145, 186, 188],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why did Avraham fear he would have no children, if a prophecy accompanied by a symbolic act must be fulfilled?",
+        "yi": "פארוואס האט אברהם אבינו מורא געהאט אז ער וועט נישט האבן קיין קינדער, ווען א נבואה מיט א פועל דמיוני מוז מקוים ווערן?"
+      },
+      "answer": {
+        "en": "The first promise of 'seed' could be read as children of the soul, his talmidim, already fulfilled through Eliezer, so Hashem had to say 'from your innards'.",
+        "yi": "די ערשטע הבטחה אויף \"זרעך\" האט מען געקענט טייטשן אויף קינדער בנשמה, זיינע תלמידים, וואס איז שוין מקוים געווארן מיט אליעזר, און דערפאר האט דער אייבערשטער געדארפט זאגן \"אשר יצא ממעיך\"."
+      },
+      "questionSegs": [328, 333, 336, 339],
+      "answerSegs": [892, 902, 908, 913, 986],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "Why did Eliezer need to head the yeshiva and the court when Avraham himself was there?",
+        "yi": "פארוואס האט אליעזר געדארפט פירן די ישיבה און דעם בית דין, ווען אברהם אבינו אליין איז דאך געווען דארט?"
+      },
+      "answer": {
+        "en": "While childless, Avraham could not judge capital cases, as a childless man lacks the needed mercy, so he appointed Eliezer.",
+        "yi": "כל זמן אברהם אבינו איז געווען אן קינדער האט ער נישט געקענט דן זיין דיני נפשות, ווייל איינער אן קינדער האט נישט די נויטיגע רחמנות, האט ער באשטימט אליעזר'ן."
+      },
+      "questionSegs": [359, 360, 362],
+      "answerSegs": [931, 933, 935, 938],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "Of the two times Hashem said 'lech lecha', why is the second more precious?",
+        "yi": "פון די צוויי מאל וואס דער אייבערשטער האט געזאגט \"לך לך\", פארוואס איז דער צווייטער חשוב'ער?"
+      },
+      "answer": {
+        "en": "Moriah is the source of hora'ah, where the Sanhedrin needs bodily mercy, and there Hashem confirmed the promise of children in body, not only in soul.",
+        "yi": "מוריה איז דער מקור פון הוראה, וואו די סנהדרין דארף רחמנות פונעם גוף, און דארט האט דער אייבערשטער באשטעטיגט די הבטחה אויף קינדער בגוף און נישט נאר בנשמה."
+      },
+      "questionSegs": [280, 284, 1019],
+      "answerSegs": [1027, 1030, 1037, 1041, 1045],
+      "confidence": 0.65
+    },
+    {
+      "question": {
+        "en": "Why must the dayanim of capital cases and the Great Sanhedrin have yichus, if even a mamzer can be a great scholar?",
+        "yi": "פארוואס מוזן די דיינים פון דיני נפשות און די סנהדרין גדולה האבן יחוס, ווען אפילו א ממזר קען זיין א גרויסער תלמיד חכם?"
+      },
+      "answer": {
+        "en": "Mercy in judgment passes through the body, just as an old or childless man is excluded from the Sanhedrin for lack of mercy.",
+        "yi": "רחמנות אין דין גייט איבער דורכן גוף, פונקט ווי א זקן אדער איינער אן קינדער ווערט פסול פאר סנהדרין ווייל ער האט נישט קיין רחמנות."
+      },
+      "questionSegs": [825, 828, 829],
+      "answerSegs": [844, 845, 850, 853, 855],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says one must learn the parshiyos of the Avos in depth, since they establish emunah and the Jewish outlook.",
+        "yi": "דער משגיח זאגט אז מ'דארף לערנען די פרשיות פון די אבות בעיון, ווייל זיי זענען קובע די אמונה און די אידישע השקפה."
+      },
+      "evidence": { "segs": [55, 58, 65, 68, 69], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one must choose good friends and good surroundings, since even Avraham was affected by the atmosphere of Mitzrayim.",
+        "yi": "דער משגיח זאגט אז מ'דארף קלייבן גוטע חברים און א גוטע סביבה, ווייל אפילו אברהם אבינו איז באווירקט געווארן פון דער אטמאספערע פון מצרים."
+      },
+      "evidence": { "segs": [186, 188, 189], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "In dark and difficult moments, the Rav says, a Jew must hold strong to emunah, as a child of Avraham Avinu.",
+        "yi": "אין פינסטערע און שווערע מאמענטן, זאגט דער משגיח, דארף א איד זיך שטארק האלטן ביי אמונה, ווי א קינד פון אברהם אבינו."
+      },
+      "evidence": { "segs": [257, 258, 259, 267], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says a person whose fresh start after the Yamim Noraim fell apart should not despair, since the world itself began with disappointments.",
+        "yi": "דער משגיח זאגט אז א מענטש וואס זיין נייער אנהייב נאך די ימים נוראים איז צעפאלן זאל נישט מייאש ווערן, ווייל די וועלט אליין האט זיך אנגעהויבן מיט אנטוישונגען."
+      },
+      "evidence": { "segs": [1120, 1122, 1131, 1137], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The Rav calls to learn the parsha with joy and to rejoice in the inheritance from Avraham Avinu.",
+        "yi": "דער משגיח רופט צו לערנען די פרשה מיט שמחה און זיך פרייען מיט דער ירושה פון אברהם אבינו."
+      },
+      "evidence": { "segs": [1186, 1188, 1189], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "Avraham Avinu as a new creation",
+    "inheritance from the Avos",
+    "middos of the Jewish body",
+    "rachmanim, bayshanim and gomlei chasadim",
+    "bris milah and the covenant with Noach",
+    "Eliezer and Avraham's fear of childlessness",
+    "Midrash of the burning palace",
+    "emunah in dark times",
+    "first bracha of Shemoneh Esrei",
+    "parshas Lech Lecha"
+  ],
+  "concepts": [
+    { "he": "רבונו של עולם", "heardAs": ["רבינו שלום", "רביה'ן של עולם", "רבי נושא עולם", "רבוש''ע"] },
+    { "he": "אבות הקדושים", "heardAs": ["די יובת", "יבש הקדש", "יוי'ס הקדשון", "יבי'ס הקדושים"] },
+    { "he": "מעשה אבות סימן לבנים", "heardAs": ["סיועוי פונעם לבנון", "סימן לבנים"] },
+    { "he": "בעל הבירה", "heardAs": ["בעלי בורא", "בעל הבירא", "בעל בת"] },
+    { "he": "פועל דמיוני", "heardAs": ["פעול דמיוני", "פיול דמיוני", "פעל דמיוני", "עפול דמיוני"] },
+    { "he": "רחמנים ביישנים וגומלי חסדים", "heardAs": ["רחמנים, ביישונים און גמלכי סודים", "רחמנים וישנים ומגמלו חסדים"] },
+    { "he": "קליפת נוגה", "heardAs": ["מקליפת נוגע", "פליפת נוגע"] },
+    { "he": "חלק אלוק ממעל ממש", "heardAs": ["חלק אין לכם ומאל ממש"] },
+    { "he": "ממעיך", "heardAs": ["מי מאכה", "מי מייחוד", "מיוחד"] },
+    { "he": "לשכת הגזית", "heardAs": ["לשקות הגזות", "לשכות הגוזות"] },
+    { "he": "ניצוץ", "heardAs": ["נצות", "ניציץ", "ניצות"] },
+    { "he": "רמ\"ח אברים", "heardAs": ["רמח אברהם"] },
+    { "he": "מודה במקצת", "heardAs": ["מבין מקצות", "מיידער במקצת"] }
+  ],
+  "people": [
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינא", "אברהם רבינא", "אברהם מבינו"] },
+    { "name": "Yitzchak", "heardAs": ["יצחק"] },
+    { "name": "Yaakov", "heardAs": ["ויענקא", "יענקייט", "איינקייט"] },
+    { "name": "Terach", "heardAs": ["צארך"] },
+    { "name": "Nimrod", "heardAs": ["נמרד", "נמאי'ט"] },
+    { "name": "Eliezer", "heardAs": ["משק אליעזר", "ערלויעזר", "אלוועזר"] },
+    { "name": "Adam HaRishon", "heardAs": ["אדם ראשון"] },
+    { "name": "Kayin", "heardAs": ["קייען", "קיין"] },
+    { "name": "Hevel", "heardAs": ["העוול"] },
+    { "name": "Noach", "heardAs": ["נח", "נייעך", "נייעס"] },
+    { "name": "Chanoch", "heardAs": ["חנוך"] },
+    { "name": "Rashi", "heardAs": ["רשע", "ראשי"] },
+    { "name": "Ramban", "heardAs": ["רמב״ן", "מבנה", "רמב״ם"] },
+    { "name": "Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "Maharal", "heardAs": ["מראהל"] },
+    { "name": "the Kotzker Rebbe", "heardAs": ["דער קארצער"] },
+    { "name": "the Ba'al HaTanya", "heardAs": ["בעל התניא"] },
+    { "name": "Reb Baruch of Mezhibuzh", "heardAs": ["רבי ר' בארכ'ל", "ר' רב רבי אהלכ'ער"] },
+    { "name": "the Maggid of Mezritch", "heardAs": ["מגיד"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["בעש''ט"] },
+    { "name": "the Chiddushei HaRim", "heardAs": ["חידושי ארום"] }
+  ],
+  "asrNotes": "Yiddish ASR is poor throughout; Hebrew quotations (pesukim, Midrashim, the Avos bracha) are badly garbled and recovered from context and the parsha. Unrecovered: a source on learning Chumash with Rashi and Ramban (seg 56, perhaps the Chasam Sofer), a Rav named at seg 66 and at seg 648, a Yerushalmi at seg 13, and the source of the halacha at segs 99-106 (identified only by its content). Segs 1060-1072 on sparks in places and galus are partly garbled and only their gist is used."
+}
