@@ -1,0 +1,546 @@
+{
+  "shiurId": "en-parsha-en-mvr-01",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that the megadef, the man who cursed Hashem's Name, denied that every Jew is a letter of the Sefer Torah and that Hashem's love for every shevet stays warm like the lechem hapanim, and that Lag BaOmer, the day of Rabbi Shimon bar Yochai, reveals this hidden worth of every Jew.",
+      "yi": "דער משגיח ערקלערט אז דער מגדף האט אפגעלייקנט אז יעדער איד איז אן אות אין ספר תורה און אז דעם אייבערשטנס אהבה צו יעדן שבט בלייבט ווארעם ווי דאס לחם הפנים, און אז ל\"ג בעומר, דער טאג פון רבי שמעון בר יוחאי, אנטפלעקט די באהאלטענע חשיבות פון יעדן איד."
+    },
+    "abstract": {
+      "en": "The Rav opens with the lechem hapanim, twelve loaves each kneaded separately, and the megadef who, Rashi says, quarreled over his place in the camp of Dan and mocked the lechem hapanim. He explains that every Jew's soul is rooted in a letter of the Sefer Torah, and the camps in the desert were arranged like a Sefer Torah, so an outsider is like an extra letter. The megadef, an apikores whom the Arizal identifies with a later figure, argued that Dan was a rejected tribe. The answer is that no Jew is rejected: each loaf, for each tribe, matches one of the twelve arrangements of Hashem's Name, and the loaves stayed warm, like Hashem's love. Yechezkel after the first Churban, and Rabbi Shimon bar Yochai after the second, revealed the hidden point in every Jew. This is the joy of Lag BaOmer, linked to Purim, a day of chizuk for even the lowest Jew.",
+      "yi": "דער משגיח עפנט מיט דעם לחם הפנים, צוועלף חלות וואס יעדע ווערט באזונדער געמאכט, און מיט דעם מגדף וואס האט זיך, לויט רש\"י, געקריגט איבער זיין פלאץ אין מחנה דן און האט חוזק געמאכט פון לחם הפנים. ער ערקלערט אז יעדע אידישע נשמה איז געווארצלט אין אן אות פון ספר תורה, און די מחנות אין מדבר זענען געווען אויסגעשטעלט ווי א ספר תורה, ממילא איז א פרעמדער ווי אן איבעריגער אות. דער מגדף, אן אפיקורס וואס דער אריז\"ל זאגט האט זיך שפעטער מגלגל געווען, האט טענה'ט אז שבט דן איז א פארווארפענער שבט. דער תירוץ איז אז קיין איד איז נישט פארווארפן: יעדע חלה, קעגן יעדן שבט, איז איינס פון די צוועלף צירופים פונעם שם הוי\"ה, און די חלות זענען געבליבן ווארעם, אזוי ווי דעם אייבערשטנס אהבה. יחזקאל נאכן ערשטן חורבן און רבי שמעון בר יוחאי נאכן צווייטן האבן אנטפלעקט די באהאלטענע נקודה אין יעדן איד. דאס איז די שמחה פון ל\"ג בעומר, וואס איז פארבונדן מיט פורים, א טאג פון חיזוק אפילו פארן נידעריגסטן איד."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Every Jew's soul is rooted in a letter of the Sefer Torah, and the camps in the desert were arranged so that the whole camp formed a Sefer Torah.",
+          "yi": "יעדע אידישע נשמה איז געווארצלט אין אן אות פון ספר תורה, און די מחנות אין מדבר זענען אזוי אויסגעשטעלט געווען אז די גאנצע מחנה איז געווען א ספר תורה."
+        },
+        "evidence": { "segs": [139, 140, 224, 231, 235], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The tribe of Dan refused the megadef a place because an extra person in the camp is like an extra letter, which spoils a Sefer Torah.",
+          "yi": "שבט דן האט נישט געלאזט דעם מגדף אריין ווייל אן איבעריגער מענטש אין דער מחנה איז ווי אן איבעריגער אות, וואס פסל'ט א ספר תורה."
+        },
+        "evidence": { "segs": [310, 312, 319, 320, 323], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Each of the twelve loaves of the lechem hapanim must be made separately because each corresponds to a tribe and to one of the twelve arrangements of Hashem's four-letter Name.",
+          "yi": "יעדע פון די צוועלף חלות פון לחם הפנים מוז באזונדער געמאכט ווערן ווייל יעדע איז קעגן א שבט און קעגן איינעם פון די צוועלף צירופים פונעם שם הוי\"ה."
+        },
+        "evidence": { "segs": [493, 494, 496, 528, 531, 539], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The lechem hapanim stayed warm for nine days to show that Hashem's warm love for every Jew, even the tribe of Dan, never cools.",
+          "yi": "דאס לחם הפנים איז געבליבן ווארעם ניין טעג כדי צו ווייזן אז דעם אייבערשטנס ווארעמע אהבה צו יעדן איד, אפילו צו שבט דן, ווערט קיינמאל נישט קאלט."
+        },
+        "evidence": { "segs": [656, 662, 664, 667, 668], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Rabbi Shimon bar Yochai, by revealing the secrets of the Torah, revealed the hidden worth of every Jew, and this is the joy of Lag BaOmer.",
+          "yi": "רבי שמעון בר יוחאי, מיט'ן מגלה זיין די סודות התורה, האט מגלה געווען די באהאלטענע חשיבות פון יעדן איד, און דאס איז די שמחה פון ל\"ג בעומר."
+        },
+        "evidence": { "segs": [944, 947, 951, 1005, 1088], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Every Jew, even the lowest, has a unique quality no other Jew has, and recognizing it leads one to honor every other Jew.",
+          "yi": "יעדער איד, אפילו דער נידעריגסטער, האט א מעלה וואס קיין אנדערער איד האט נישט, און ווער עס דערקענט דאס, וועט מכבד זיין יעדן אנדערן איד."
+        },
+        "evidence": { "segs": [909, 912, 915, 939], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-parsha-vayikra-07-01-emor-e",
+      "startSeg": 0,
+      "endSeg": 137,
+      "title": { "en": "The lechem hapanim and the megadef", "yi": "דאס לחם הפנים און דער מגדף" },
+      "summary": {
+        "en": "The Rav asks why each loaf of the lechem hapanim must be made separately, then brings Rashi that the megadef mocked the lechem hapanim and quarreled over his place in the camp of Dan. He describes the miracle that the loaves stayed warm for nine days and asks why the man cursed Hashem rather than the people who turned him away.",
+        "yi": "דער משגיח פרעגט פארוואס יעדע חלה פון לחם הפנים מוז באזונדער געמאכט ווערן, און ברענגט רש\"י אז דער מגדף האט חוזק געמאכט פון לחם הפנים און זיך געקריגט איבער זיין פלאץ אין מחנה דן. ער שילדערט דעם נס אז די חלות זענען געבליבן ווארעם ניין טעג, און פרעגט פארוואס ער האט געשאלטן דעם אייבערשטן און נישט די וואס האבן אים ארויסגעטריבן."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-vayikra-07-01-emor-e",
+      "startSeg": 138,
+      "endSeg": 288,
+      "title": { "en": "The camp of Israel as a Sefer Torah", "yi": "די מחנה פון כלל ישראל ווי א ספר תורה" },
+      "summary": {
+        "en": "The Rav explains that every Jew is rooted in a letter of the Sefer Torah, with Yisrael read as the initials of 600,000 letters, and that the camps and flags in the desert, with Levi in the middle like Vayikra among the five Chumashim, formed a Sefer Torah. He adds the four camps of the angels, the Midrash on 'shuvi shuvi', and why the counting had to be by names.",
+        "yi": "דער משגיח ערקלערט אז יעדער איד איז געווארצלט אין אן אות פון ספר תורה, ווי \"ישראל\" איז ראשי תיבות \"יש ששים ריבוא אותיות לתורה\", און אז די מחנות און דגלים אין מדבר, מיט שבט לוי אין מיטן ווי ספר ויקרא צווישן די חמשה חומשי תורה, האבן געשטעלט א ספר תורה. ער לייגט צו די פיר מחנות פון די מלאכים, דעם מדרש אויף \"שובי שובי\", און פארוואס מ'האט געמוזט ציילן \"במספר שמות\"."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-vayikra-07-01-emor-e",
+      "startSeg": 289,
+      "endSeg": 392,
+      "title": { "en": "An extra letter spoils the Torah", "yi": "אן איבעריגער אות פסל'ט די ספר תורה" },
+      "summary": {
+        "en": "The Rav explains that Dan refused the megadef because an extra letter, like a missing one, disqualifies a Sefer Torah. He brings the Arizal that the megadef was an apikores later reincarnated as Yeshu, and that he scoffed at the idea of the camps; they answered him with the twelve loaves that correspond to the twelve tribes.",
+        "yi": "דער משגיח ערקלערט אז שבט דן האט נישט אריינגעלאזט דעם מגדף ווייל אן איבעריגער אות, אזוי ווי א פעלנדיגער, פסל'ט א ספר תורה. ער ברענגט דעם אריז\"ל אז דער מגדף איז געווען אן אפיקורס וואס האט זיך שפעטער מגלגל געווען אין ישו, און אז ער האט חוזק געמאכט פון די מחנות; מ'האט אים געענטפערט מיט די צוועלף חלות וואס זענען קעגן די צוועלף שבטים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-vayikra-07-01-emor-e",
+      "startSeg": 393,
+      "endSeg": 549,
+      "title": { "en": "Dan, the lowest tribe, is not rejected", "yi": "שבט דן, דער נידעריגסטער שבט, איז נישט פארווארפן" },
+      "summary": {
+        "en": "The Rav brings Rashi that Dan is the lowest tribe, notes its idol worship and Shlomis bas Divri, and presents the megadef's claim that Dan is rejected anyway. The reply is that no Jew is rejected, and the proof is that each loaf is kneaded separately because each tribe is one of the twelve arrangements of Hashem's Name, as the siddur lists them for each month.",
+        "yi": "דער משגיח ברענגט רש\"י אז שבט דן איז דער נידעריגסטער שבט, דערמאנט זיין עבודה זרה און שלומית בת דברי, און ברענגט די טענה פונעם מגדף אז שבט דן איז סיי ווי פארווארפן. דער תירוץ איז אז קיין איד איז נישט פארווארפן, און די ראיה איז אז יעדע חלה ווערט באזונדער געקנאטן ווייל יעדער שבט איז איינער פון די צוועלף צירופים פונעם שם הוי\"ה, אזוי ווי די סידורים ברענגען פאר יעדן חודש."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-vayikra-07-01-emor-e",
+      "startSeg": 550,
+      "endSeg": 676,
+      "title": { "en": "The Arizal's zemer and the warm loaves", "yi": "דעם אריז\"לס זמר און די ווארעמע חלות" },
+      "summary": {
+        "en": "The Rav brings the Arizal's Shabbos zemer, which asks Hashem to reveal the secret of the twelve loaves, and explains that the secret is the depth of the Jewish soul. Hashem's warm love for every tribe is shown by the loaves staying warm, while the megadef insisted that the loaves were cold and stale.",
+        "yi": "דער משגיח ברענגט דעם אריז\"לס זמר פון שבת, וואו ער בעט דעם אייבערשטן ער זאל אנטפלעקן דעם טעם פון די צוועלף חלות, און ערקלערט אז דער סוד איז די טיפקייט פון דער אידישער נשמה. דעם אייבערשטנס ווארעמע אהבה צו יעדן שבט זעט מען אין דעם וואס די חלות בלייבן ווארעם, בשעת דער מגדף האט געטענה'ט אז זיי זענען קאלט און אלט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-vayikra-07-01-emor-e",
+      "startSeg": 677,
+      "endSeg": 779,
+      "title": { "en": "The claim that the love has cooled", "yi": "די טענה אז די אהבה איז קאלט געווארן" },
+      "summary": {
+        "en": "The Rav ties the megadef's two complaints into one: if the loaves are cold, the love for Dan has cooled, which he calls the whole teaching of Yeshu. Against this he says Hashem is warm to every Jew, who is a letter of the Torah, and that the Torah has four levels, Pardes; the Arizal says one who denies its secrets is like an animal.",
+        "yi": "דער משגיח פארבינדט די צוויי טענות פונעם מגדף: אויב די חלות זענען קאלט, איז די אהבה צו שבט דן קאלט געווארן, און דאס איז, זאגט ער, די גאנצע שיטה פון ישו. דערקעגן זאגט ער אז דער אייבערשטער איז ווארעם צו יעדן איד, וואס איז אן אות אין דער תורה, און אז די תורה האט פיר חלקים, פרד\"ס; דער אריז\"ל זאגט אז ווער עס לייקנט אין די סודות איז ווי א בהמה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-vayikra-07-01-emor-e",
+      "startSeg": 780,
+      "endSeg": 887,
+      "title": { "en": "Yechezkel and Rabbi Shimon in exile", "yi": "יחזקאל און רבי שמעון אין גלות" },
+      "summary": {
+        "en": "The Rav brings the Zohar that Yechezkel's vision of the Merkavah, read as the haftarah of Shavuos, came to encourage the exiles who thought Hashem had rejected them. After the second Churban, Rabbi Shimon bar Yochai did the same by revealing the secrets of the Torah: there is a hidden point in every Jew, even the greatest rasha, that never leaves Hashem.",
+        "yi": "דער משגיח ברענגט דעם זוהר אז יחזקאלס מראה פון דער מרכבה, וואס מ'לייענט אלס הפטרה פון שבועות, איז געקומען מחזק זיין די אידן אין גלות וואס האבן געמיינט אז דער אייבערשטער האט זיי פארווארפן. נאכן צווייטן חורבן האט רבי שמעון בר יוחאי געטון דאס זעלבע מיט'ן מגלה זיין די סודות התורה: ס'איז דא א באהאלטענע נקודה אין יעדן איד, אפילו אינעם גרעסטן רשע, וואס טרענט זיך קיינמאל נישט אפ פונעם אייבערשטן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-vayikra-07-01-emor-e",
+      "startSeg": 888,
+      "endSeg": 1005,
+      "title": { "en": "Honoring every Jew's hidden quality", "yi": "מכבד זיין די באהאלטענע מעלה פון יעדן איד" },
+      "summary": {
+        "en": "The Rav explains that Rabbi Akiva's students did not honor each other because they did not see that every Jew has a quality no other has, without which the Sefer Torah is incomplete. Rabbi Shimon bar Yochai taught this, and the Rav brings the sefer Beis Aharon that Rabbi Shimon is for everyone, even the lowest, and Rabbi Akiva's 'love your fellow as yourself'.",
+        "yi": "דער משגיח ערקלערט אז די תלמידים פון רבי עקיבא האבן נישט נוהג כבוד געווען איינער אינעם אנדערן ווייל זיי האבן נישט געזען אז יעדער איד האט א מעלה וואס קיין אנדערער האט נישט, און אן אים איז די ספר תורה נישט גאנץ. רבי שמעון בר יוחאי האט דאס געלערנט, און דער משגיח ברענגט דעם ספר בית אהרן אז רבי שמעון איז פאר אלעמען, אפילו פאר די פחותים, און רבי עקיבאס \"ואהבת לרעך כמוך\"."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-vayikra-07-01-emor-e",
+      "startSeg": 1006,
+      "endSeg": 1095,
+      "title": { "en": "The joy of Lag BaOmer", "yi": "די שמחה פון ל\"ג בעומר" },
+      "summary": {
+        "en": "The Rav explains that Lag BaOmer, which falls in hod, the trait of bending oneself to every Jew, ends the mourning of the sefirah. Every Jew, even the lowest, feels uplifted on that day, as seen in the great joy of all kinds of Jews in Meron, because the soul feels that Rabbi Shimon revealed its importance to Hashem.",
+        "yi": "דער משגיח ערקלערט אז ל\"ג בעומר, וואס פאלט אין הוד, די מדה פון זיך בוקן צו יעדן איד, ענדיגט די אבילות פון ספירה. יעדער איד, אפילו דער נידעריגסטער, שפירט זיך דערהויבן אין דעם טאג, ווי מ'זעט אין דער גרויסער שמחה פון אלע סארט אידן אין מירון, ווייל די נשמה שפירט אז רבי שמעון האט אנטפלעקט איר חשיבות ביים אייבערשטן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-vayikra-07-01-emor-e",
+      "startSeg": 1096,
+      "endSeg": 1187,
+      "title": { "en": "Lag BaOmer, Purim and chizuk", "yi": "ל\"ג בעומר, פורים און חיזוק" },
+      "summary": {
+        "en": "The Rav links Lag BaOmer to Purim through the calendar sign that Lag BaOmer falls on the weekday of Purim: both are for those who stumbled, the tribe of Dan whom Amalek attacked. He concludes that Parshas Emor with its twelve loaves comes before Lag BaOmer to teach that Hashem's love never cools, and that every Jew should take chizuk from Rabbi Shimon.",
+        "yi": "דער משגיח פארבינדט ל\"ג בעומר מיט פורים דורך דעם סימן אז ל\"ג בעומר פאלט אויפן זעלבן טאג אין דער וואך ווי פורים: ביידע זענען פאר די נכשלים, שבט דן וואס עמלק האט באפאלן. ער ענדיגט אז פרשת אמור מיט אירע צוועלף חלות קומט פאר ל\"ג בעומר צו לערנען אז דעם אייבערשטנס אהבה ווערט קיינמאל נישט קאלט, און אז יעדער איד דארף נעמען חיזוק פון רבי שמעון."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "tipa shevlechem apanem, lekachta soylas",
+      "work": "Vayikra",
+      "ref": "Vayikra 24:5",
+      "sefariaRef": "Leviticus 24:5",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [0, 1, 3], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Vayetzeh van Isha Yisraelis",
+      "work": "Vayikra",
+      "ref": "Vayikra 24:10",
+      "sefariaRef": "Leviticus 24:10",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [7, 8, 12, 13], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Sarasha brings from Chazal",
+      "work": "Rashi",
+      "ref": "Rashi on Vayikra 24:10",
+      "sefariaRef": "Rashi on Leviticus 24:10",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [21, 22, 25, 31, 33], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Pasuk in Shmuel which speaks about the lechem hapanim warm bread",
+      "work": "Shmuel",
+      "ref": "I Shmuel 21:7",
+      "sefariaRef": "I Samuel 21:7",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [73, 74, 76, 77, 78], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Svarim say that there are 600,000 Aisyas in the Sefer Torah",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [141, 165, 169, 170], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "each one on this dago according to the ice",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 2:2",
+      "sefariaRef": "Numbers 2:2",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [232, 234, 235, 236], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "it says in the Medrash shuvi shuvi ashulamis",
+      "work": "Midrash",
+      "ref": "Midrash on Shir HaShirim 7:1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [249, 250, 251, 254], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Bemispa Sheimais",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 1:2",
+      "sefariaRef": "Numbers 1:2",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [279, 280, 282, 286], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Yeriyah Kaddish tells us that this Benesh Mitzri was Megulgul later",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [338, 339, 340, 342], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Rasha says in Pasha's that B'tzalel ... Oholi Yav Ben Achisamach Lamata Adan",
+      "work": "Rashi",
+      "ref": "Rashi on Shemos 35:34",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [393, 395, 402, 404, 407, 409], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Gemara says it's her fault",
+      "work": "Gemara",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [423], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "the vilti yidach mimenu nidach",
+      "work": "Shmuel",
+      "ref": "II Shmuel 14:14",
+      "sefariaRef": "II Samuel 14:14",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [462, 463, 464], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "some of the sidurim by Mustafa of Rosh Chaydish",
+      "work": "Siddur",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [502, 503, 504, 509], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "Yigal-lel-an-tamey de-bisrei-sanamey ... De-inun oz bishmey",
+      "work": "Asader Liseudasa (zemer of the Arizal)",
+      "ref": "Asader Liseudasa, Shabbos morning zemer",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [565, 579, 580, 581, 582], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Ahav Tanu Hashem HaLakaynu",
+      "work": "Siddur",
+      "ref": "Ahavah Rabbah blessing before Shema",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [734, 735, 736], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "the Riyah Kaddish says that if anybody doesn't believe that there are soydas in the Torah",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [761, 762, 764, 770], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "the Zayah HaKadosh tells us",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [780, 803, 804, 809], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Haftaira that saw the Melkava ... it's the first day Shavu",
+      "work": "Yechezkel",
+      "ref": "Yechezkel ch. 1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [785, 786, 792, 795], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the tamidim of Rabbi Akiva ... they all died out",
+      "work": "Gemara Yevamos",
+      "ref": "Yevamos 62b",
+      "sefariaRef": "Yevamot 62b",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [892, 897, 899, 940], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "in the Sefer Bessaran from Rabban Kalino",
+      "work": "Beis Aharon",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [966, 967, 974, 979, 1092], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "the Recha kemecha. Zeh klal gadol batayra",
+      "work": "Vayikra",
+      "ref": "Vayikra 19:18",
+      "sefariaRef": "Leviticus 19:18",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [997, 999, 1000, 1002], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the seminum of Ad Bash ... Peleg is Pei Purim Lagvayma",
+      "work": "Shulchan Aruch",
+      "ref": "Shulchan Aruch Orach Chaim 428:3",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [1114, 1115, 1119, 1120, 1121], "confidence": 0.7 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The camp of Israel in the desert, seen from above with ruach hakodesh, was itself a Sefer Torah, with Levi in the middle like Vayikra among the five Chumashim.",
+        "yi": "די מחנה פון כלל ישראל אין מדבר, ווען מ'קוקט אויף איר פון אויבן מיט רוח הקודש, איז אליין געווען א ספר תורה, מיט שבט לוי אין מיטן ווי ספר ויקרא צווישן די חמשה חומשי תורה."
+      },
+      "evidence": { "segs": [202, 207, 211, 218, 224, 231], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The megadef's two complaints, about the camp and about the lechem hapanim, are one: if the loaves are cold, Hashem's love for Dan has cooled and Dan can take in an outsider.",
+        "yi": "די צוויי טענות פונעם מגדף, וועגן דער מחנה און וועגן לחם הפנים, זענען איין טענה: אויב די חלות זענען קאלט, איז דעם אייבערשטנס אהבה צו שבט דן אפגעקילט, און שבט דן קען אריינלאזן א פרעמדן."
+      },
+      "evidence": { "segs": [682, 685, 692, 693, 697], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The claim that Hashem's love for the Jews has cooled and passed to others is, according to the Rav, the whole teaching of Yeshu, the later incarnation of the megadef according to the Arizal.",
+        "yi": "די טענה אז דעם אייבערשטנס אהבה צו אידן איז אפגעקילט און איבערגעגאנגען צו אנדערע איז, לויט'ן משגיח, די גאנצע שיטה פון ישו, וואס איז לויט'ן אריז\"ל דער שפעטערדיגער גלגול פונעם מגדף."
+      },
+      "evidence": { "segs": [698, 702, 705, 707, 710], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The twelve loaves match the twelve distinct arrangements of Hashem's four-letter Name, since its two identical letters reduce twenty-four to twelve, so each tribe has its own unique holiness.",
+        "yi": "די צוועלף חלות זענען קעגן די צוועלף צירופים פונעם שם הוי\"ה, ווייל די צוויי ה'ס פארמינערן פון פיר און צוואנציג ביז צוועלף, ממילא האט יעדער שבט זיין אייגענע קדושה."
+      },
+      "evidence": { "segs": [517, 523, 526, 528, 531], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Arizal could not fathom the secret of the lechem hapanim because it is the depth of the Jewish soul, which is deeper than any mitzvah.",
+        "yi": "דער אריז\"ל האט נישט געקענט דערגרייכן דעם סוד פון לחם הפנים ווייל ער איז די טיפקייט פון דער אידישער נשמה, וואס איז טיפער פון יעדער מצוה."
+      },
+      "evidence": { "segs": [588, 589, 592, 593, 594], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Revealing the secrets of the Torah is revealing the hidden secret of every Jew, so Rabbi Shimon bar Yochai after the second Churban did what Yechezkel's Merkavah did after the first.",
+        "yi": "מגלה זיין די סודות התורה מיינט מגלה זיין דעם באהאלטענעם סוד פון יעדן איד, ממילא האט רבי שמעון בר יוחאי נאכן צווייטן חורבן געטון דאס וואס יחזקאלס מרכבה האט געטון נאכן ערשטן."
+      },
+      "evidence": { "segs": [846, 849, 853, 861, 944, 947], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Lag BaOmer and Purim fall on the same weekday because both are for those who stumbled, the tribe of Dan whom the clouds did not protect and Amalek attacked.",
+        "yi": "ל\"ג בעומר און פורים פאלן אויפן זעלבן טאג אין דער וואך ווייל ביידע זענען פאר די נכשלים, שבט דן וואס די ענני הכבוד האבן נישט באשיצט און עמלק האט באפאלן."
+      },
+      "evidence": { "segs": [1121, 1124, 1131, 1143, 1150], "confidence": 0.75 }
+    }
+  ],
+  "stories": [],
+  "questions": [
+    {
+      "question": { "en": "Why must each loaf of the lechem hapanim be prepared separately?", "yi": "פארוואס מוז יעדע חלה פון לחם הפנים באזונדער געמאכט ווערן?" },
+      "answer": { "en": "Because each loaf corresponds to a tribe and to one of the twelve arrangements of Hashem's Name, so the baker must have in mind each one's own secret.", "yi": "ווייל יעדע חלה איז קעגן א שבט און קעגן איינעם פון די צוועלף צירופים פונעם שם הוי\"ה, און דער באקער דארף האבן אין זינען דעם סוד פון יעדע איינע." },
+      "questionSegs": [4, 5],
+      "answerSegs": [494, 496, 531, 535, 539],
+      "confidence": 0.85
+    },
+    {
+      "question": { "en": "Why did the tribe of Dan not let the megadef set up his tent among them?", "yi": "פארוואס האט שבט דן נישט געלאזט דעם מגדף שטעלן זיין געצעלט ביי זיי?" },
+      "answer": { "en": "Because their camp was a Sefer Torah, and an extra person is like an extra letter that disqualifies it.", "yi": "ווייל זייער מחנה איז געווען א ספר תורה, און אן איבעריגער מענטש איז ווי אן איבעריגער אות וואס פסל'ט זי." },
+      "questionSegs": [289, 290, 291],
+      "answerSegs": [310, 312, 319, 320, 323],
+      "confidence": 0.85
+    },
+    {
+      "question": { "en": "Why did Moshe and Aharon have to count the people themselves, by names?", "yi": "פארוואס האבן משה און אהרן געמוזט אליין ציילן די אידן, \"במספר שמות\"?" },
+      "answer": { "en": "Because each Jew is a letter of the Sefer Torah and one of Hashem's names, so one must know which name each one is.", "yi": "ווייל יעדער איד איז אן אות אין ספר תורה און איינער פון דעם אייבערשטנס שמות, ממילא דארף מען וויסן וועלכער שם יעדער איז." },
+      "questionSegs": [276, 277, 278],
+      "answerSegs": [280, 283, 284, 288],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why did the Arizal find the secret of the lechem hapanim too deep?", "yi": "פארוואס איז דער סוד פון לחם הפנים געווען צו טיף אפילו פארן אריז\"ל?" },
+      "answer": { "en": "Because the twelve loaves are the dearness of each tribe, and the depth of a Jewish soul is deeper than any mitzvah.", "yi": "ווייל די צוועלף חלות זענען די חביבות פון יעדן שבט, און די טיפקייט פון א אידישער נשמה איז טיפער פון יעדער מצוה." },
+      "questionSegs": [588, 589, 590],
+      "answerSegs": [591, 592, 593, 594],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why are all kinds of Jews so joyous on Lag BaOmer?", "yi": "פארוואס פרייען זיך אזוי אלע סארט אידן אויף ל\"ג בעומר?" },
+      "answer": { "en": "Because their souls feel that Rabbi Shimon bar Yochai revealed that every Jew is important and loved by Hashem.", "yi": "ווייל זייערע נשמות שפירן אז רבי שמעון בר יוחאי האט אנטפלעקט אז יעדער איד איז חשוב און באליבט ביים אייבערשטן." },
+      "questionSegs": [1059, 1082],
+      "answerSegs": [1085, 1087, 1088, 1091],
+      "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says that one who knows his fellow has a quality he himself lacks would honor him, as Rabbi Akiva's students failed to do.",
+        "yi": "דער משגיח זאגט אז ווער עס ווייסט אז זיין חבר האט א מעלה וואס ער אליין האט נישט, וועט אים מכבד זיין, וואס די תלמידים פון רבי עקיבא האבן נישט געטון."
+      },
+      "evidence": { "segs": [938, 939, 940, 941], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that on Lag BaOmer every Jew should feel uplifted to know that Hashem loves him no matter what he is or did, and should take chizuk from Rabbi Shimon bar Yochai.",
+        "yi": "דער משגיח זאגט אז אויף ל\"ג בעומר דארף יעדער איד זיך שפירן דערהויבן צו וויסן אז דער אייבערשטער האט אים ליב, ווער ער זאל נישט זיין און וואס ער זאל נישט האבן געטון, און נעמען חיזוק פון רבי שמעון בר יוחאי."
+      },
+      "evidence": { "segs": [1158, 1160, 1162, 1182, 1183], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "lechem hapanim",
+    "the megadef",
+    "every Jew as a letter of the Sefer Torah",
+    "the camps of Israel in the desert",
+    "the tribe of Dan",
+    "Hashem's unceasing love for every Jew",
+    "Rabbi Shimon bar Yochai and the secrets of the Torah",
+    "Lag BaOmer",
+    "Lag BaOmer and Purim",
+    "Parshas Emor"
+  ],
+  "concepts": [
+    { "he": "לחם הפנים", "heardAs": ["lechem apanem", "Lechem Aponim", "Lechem Hapanim"] },
+    { "he": "מגדף", "heardAs": ["Benesh Mitzri", "Ben Ish Mitzri"] },
+    { "he": "מחנה", "heardAs": ["Machina", "Machne", "Makhna", "machin"] },
+    { "he": "אות", "heardAs": ["ois", "Aisyas", "Icyus", "Isis", "ice"] },
+    { "he": "ספר תורה", "heardAs": ["Sefer Teirah", "Seyf HaTayra", "seifatayra", "ciphertaire"] },
+    { "he": "דגל", "heardAs": ["dagal", "dago"] },
+    { "he": "שם הוי\"ה", "heardAs": ["Shem Havaya", "shay mavayah"] },
+    { "he": "צירוף", "heardAs": ["tzirif", "tzir"] },
+    { "he": "גלגול", "heardAs": ["Megulgul", "Magulgo"] },
+    { "he": "אפיקורס", "heardAs": ["apokairis", "Apikairis"] },
+    { "he": "לבלתי ידח ממנו נדח", "heardAs": ["the vilti yidach mimenu nidach"] },
+    { "he": "פרד\"ס", "heardAs": ["Pardes"] },
+    { "he": "מרכבה", "heardAs": ["Merkava", "Melkava", "Makava"] },
+    { "he": "ענני הכבוד", "heardAs": ["Anani Kavit", "Anani Covings", "Anani Kavid"] },
+    { "he": "ל\"ג בעומר", "heardAs": ["Lag Baayma", "Lag Ba'aymer", "Lagvayma", "Rakhbimer"] },
+    { "he": "הוד", "heardAs": ["haid"] },
+    { "he": "רבונו של עולם", "heardAs": ["Rabbani Shlodim", "Rabbi Yisraelim", "rabbi nishleil", "Rabbeinu Sholeilam"] }
+  ],
+  "people": [
+    { "name": "Moshe Rabbeinu", "heardAs": ["Maish Rabbeinu", "Ayish Rabbeinu"] },
+    { "name": "Aharon", "heardAs": ["Aaron", "Narein"] },
+    { "name": "Shlomis bas Divri", "heardAs": ["Shalimaz Bazdivri", "Shlaimis basdivri"] },
+    { "name": "Yaakov Avinu", "heardAs": ["Yankiv Avinu"] },
+    { "name": "Rashi", "heardAs": ["Rebbe Shah", "Sarasha", "Rasha"] },
+    { "name": "the Arizal", "heardAs": ["Yeriyah Kaddish", "Eriah Kaddish", "Yeri HaKadosh", "Riyah Kaddish"] },
+    { "name": "Yeshu", "heardAs": ["Yashke", "Yishai Han Yitzri", "Yosuke", "Yashka"] },
+    { "name": "Betzalel ben Uri ben Chur", "heardAs": ["B'tzalel Ben Nuri Ben Chor"] },
+    { "name": "Oholiav ben Achisamach", "heardAs": ["Oholi Yav Ben Achisamach"] },
+    { "name": "Yeravam ben Nevat", "heardAs": ["Yeravim Ben Nevat"] },
+    { "name": "Yechezkel", "heardAs": ["Yechasker An-Navi", "Yechesco"] },
+    { "name": "Rabbi Akiva", "heardAs": ["Rabbi Akiva"] },
+    { "name": "Rabbi Shimon bar Yochai", "heardAs": ["Rabbi Shimon ben Yechai", "Rabbi Shimon ben Yehoi", "Rabbi Shimei ben Yehoi"] },
+    { "name": "Rabbi Aharon of Karlin", "heardAs": ["Rabban Kalino"] },
+    { "name": "Michael, Gavriel, Uriel and Refael", "heardAs": ["Michael, Gabriel, Ariel and Raphael"] }
+  ],
+  "asrNotes": "English ASR fair, with Hebrew terms heavily garbled (Hashem's Name heard as 'Rabbani Shlodim', the Arizal as 'Yeriyah Kaddish', Lag BaOmer as 'Lagvayma'). Segment 346 (16:24-17:10) is a long flagged stretch with little usable text, and segment 347 (the verse about cursing the Name) is unrecoverable. The Beis Aharon passage at segs 972-974 was recited but not transcribed; only the Rav's explanation is usable. The midrash identifying the shown loaves as a sign of Hashem's love is mentioned without a named source."
+}

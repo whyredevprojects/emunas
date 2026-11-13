@@ -1,0 +1,480 @@
+{
+  "shiurId": "en-parsha-en-bhlvsk-02",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that the seven pazer notes of Behaaloscha point to the scattering of the golus and to the summer travels of Tammuz, and teaches that every Jew, wherever he travels, is a shaliach of Hashem who must not forget his mission.",
+      "yi": "דער משגיח ערקלערט אז די זיבן פזר'ס אין פרשת בהעלותך ווייזן אויף דעם צעשפרייטן גלות און אויף די זומער־רייזעס פון תמוז, און אז יעדער איד, וואו ער פארט, איז א שליח פון השם יתברך וואס טאר נישט פארגעסן זיין שליחות."
+    },
+    "abstract": {
+      "en": "The Rav opens with the seven pazer notes in Behaaloscha and explains the calendar: from Chamisha Asar b'Shvat to Shavuos the days rise in kedushah, and from Behaaloscha they turn downward, with the fast of the twentieth of Sivan, Tammuz and Av, and the reading of Shelach. Pazer means scattering, the golus among the seventy nations, but seven weeks of nechamah answer it, and the golus has its benefits: Jews were not driven out but sent. Every neshamah, which sang with the angels at the Kisei HaKavod, is sent down on an errand, as in the Chofetz Chaim's mashal of the man who traded diamonds for candles. He contrasts Moshe's failed spies with Yehoshua's successful ones, explains that a person's name is his shlichus, and brings the Ba'al Shem Tov: every journey is directed to raise particles of one's own neshamah. Summer travel to camp is such a shlichus; one must not shed tzitzis or fall as the spies fell.",
+      "yi": "דער משגיח עפנט מיט די זיבן פזר'ס אין פרשת בהעלותך און ערקלערט דעם סדר פונעם יאר: פון חמשה עשר בשבט ביז שבועות גייען די טעג ארויף אין קדושה, און פון בהעלותך הייבט מען אן אראפגיין, מיט דעם תענית פון כ' סיון, תמוז און אב, און פרשת שלח. פזר מיינט צעשפרייטן, דער גלות צווישן די שבעים אומות, אבער אקעגן דעם קומען די זיבן וואכן נחמה, און דער גלות האט זיינע מעלות: אידן זענען נישט פארטריבן געווארן נאר געשיקט. יעדע נשמה, וואס האט געזונגען מיט די מלאכים ביים כסא הכבוד, ווערט אראפגעשיקט אויף א שליחות, אזוי ווי אינעם משל פונעם חפץ חיים פון דעם וואס האט פארביטן דימענטן אויף ליכט. ער שטעלט אוועק די מרגלים פון משה רבינו וואס האבן נישט מצליח געווען קעגן די שלוחים פון יהושע, ערקלערט אז א מענטשנס נאמען איז זיין שליחות, און ברענגט דעם בעל שם טוב אז יעדע רייזע איז כדי אויפצוהייבן די ניצוצות פון זיין אייגענע נשמה. דאס פארן אין קעמפ איז אויך א שליחות; מ'טאר נישט אראפנעמען די ציצית און נישט פאלן אזוי ווי די מרגלים."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The seven pazer notes of Behaaloscha mark the turn of the year from the rising days that end with Shavuos to the descending days of Tammuz and Av.",
+          "yi": "די זיבן פזר'ס פון בהעלותך באצייכענען דעם איבערגאנג פון די ארויפגייענדיגע טעג וואס ענדיגן זיך מיט שבועות צו די אראפגייענדיגע טעג פון תמוז און אב."
+        },
+        "evidence": { "segs": [13, 16, 51, 54, 84], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Pazer means scattering: the Jews are scattered among the seventy nations, which branch out of the seven principal nations, and the seven weeks of nechamah after Tisha b'Av answer the seven pazers.",
+          "yi": "פזר מיינט צעשפרייטן: אידן זענען צעשפרייט צווישן די שבעים אומות, וואס צווייגן זיך אויס פון די שבעה אומות, און די זיבן וואכן נחמה נאך תשעה באב זענען דער ענטפער אויף די זיבן פזר'ס."
+        },
+        "evidence": { "segs": [130, 146, 150, 167, 173, 177], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The Jews were not driven out of Eretz Yisrael but sent out of it; every Jew is a shaliach of Hashem.",
+          "yi": "אידן זענען נישט ארויסגעטריבן געווארן פון ארץ ישראל נאר ארויסגעשיקט, און יעדער איד איז א שליח פון השם יתברך."
+        },
+        "evidence": { "segs": [205, 207, 209, 210], "confidence": 0.9 }
+      },
+      {
+        "text": {
+          "en": "A person's name, given with a measure of ruach hakodesh, is his shlichus in this world.",
+          "yi": "א מענטשנס נאמען, וואס ווערט געגעבן מיט א שטיקל רוח הקודש, איז זיין שליחות אויף דער וועלט."
+        },
+        "evidence": { "segs": [416, 419, 424, 429, 440], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Every journey is directed by Hashem so that a person can raise the sparks of his own neshamah found in that place.",
+          "yi": "יעדע רייזע ווערט געפירט פון השם יתברך כדי דער מענטש זאל אויפהייבן די ניצוצות פון זיין אייגענע נשמה וואס געפינען זיך אין יענעם ארט."
+        },
+        "evidence": { "segs": [535, 552, 557, 562, 620], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Summer travel coincides with Parshas Shelach and Tammuz so that Jews can repair the failed shlichus of the spies by remembering their own mission.",
+          "yi": "די זומער־רייזעס פאלן אויס מיט פרשת שלח און תמוז כדי אידן זאלן מתקן זיין די שליחות פון די מרגלים, דורך געדענקען זייער אייגענע שליחות."
+        },
+        "evidence": { "segs": [666, 668, 730, 733, 740], "confidence": 0.85 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-parsha-bamidbar-03-02-behaloischa-e",
+      "startSeg": 0,
+      "endSeg": 96,
+      "title": {
+        "en": "Seven pazers and the turn of the year",
+        "yi": "זיבן פזר'ס און די ווענדונג פונעם יאר"
+      },
+      "summary": {
+        "en": "After a Chelm joke about weeks without a pazer note, the Rav points out the seven pazers in Behaaloscha. He traces the rising days from Chamisha Asar b'Shvat to Shavuos and explains that with Behaaloscha the year turns downward, with the fast of the twentieth of Sivan and the hard months of Tammuz and Av.",
+        "yi": "נאך א וויץ פון די חכמי חלם וועגן וואכן אן א פזר, ווייזט דער משגיח אן אויף די זיבן פזר'ס אין בהעלותך. ער ציילט אויס די ארויפגייענדיגע טעג פון חמשה עשר בשבט ביז שבועות, און ערקלערט אז מיט בהעלותך הייבט דאס יאר אן אראפגיין, מיט דעם תענית פון כ' סיון און די שווערע חדשים תמוז און אב."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-03-02-behaloischa-e",
+      "startSeg": 97,
+      "endSeg": 209,
+      "title": {
+        "en": "Pazer as the scattering of golus",
+        "yi": "פזר: דער צעשפרייטער גלות"
+      },
+      "summary": {
+        "en": "The Rav ties the coming reading of Shelach to the spies who caused the golus, and explains that pazer means scattering among the seventy nations that branch out of the seven. Against the seven pazers stand seven weeks of nechamah; the golus brought more Torah and more tzaddikim, and the Jews were sent, not driven, out of Eretz Yisrael.",
+        "yi": "דער משגיח פארבינדט די קומענדיגע קריאה פון פרשת שלח מיט די מרגלים וואס האבן גורם געווען דעם גלות, און ערקלערט אז פזר מיינט צעשפרייטן צווישן די שבעים אומות וואס קומען ארויס פון די זיבן. אקעגן די זיבן פזר'ס שטייען די זיבן וואכן נחמה; דער גלות האט געברענגט מער תורה און מער צדיקים, און אידן זענען ארויסגעשיקט געווארן פון ארץ ישראל, נישט פארטריבן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-03-02-behaloischa-e",
+      "startSeg": 210,
+      "endSeg": 370,
+      "title": {
+        "en": "The Chofetz Chaim's diamonds and candles",
+        "yi": "דעם חפץ חיים'ס משל פון דימענטן און ליכט"
+      },
+      "summary": {
+        "en": "The Rav describes the neshamah at the Kisei HaKavod directing the song of the angels before Hashem sends it down on an errand. He retells the Chofetz Chaim's mashal of a poor man who went to the dark mountains for diamonds and came home with rotting candles, and applies it to people who forget that they were sent to collect Torah and mitzvos.",
+        "yi": "דער משגיח שילדערט ווי די נשמה איז געווען ביים כסא הכבוד און האט געפירט די שירה פון די מלאכים, ביז השם יתברך שיקט זי אראפ אויף א שליחות. ער דערציילט דעם חפץ חיים'ס משל פון אן ארעמאן וואס איז געפארן צו די הרי חושך נאך דימענטן און איז געקומען אהיים מיט פוילע ליכט, און ער איז דאס מסביר אויף מענטשן וואס פארגעסן אז זיי זענען געשיקט געווארן צו זאמלען תורה און מצוות."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-03-02-behaloischa-e",
+      "startSeg": 371,
+      "endSeg": 524,
+      "title": {
+        "en": "Two sets of shluchim and the shlichus in a name",
+        "yi": "צוויי סארטן שלוחים און די שליחות אין א נאמען"
+      },
+      "summary": {
+        "en": "The Rav contrasts Moshe's spies, who failed, with Yehoshua's two shluchim in the haftarah, who succeeded. He explains that a person's name is his shlichus, bringing the Arizal on naming and Rashi on the angel's name in Vayishlach, and that adding a name to a gravely sick person gives him a new shlichus. In Tammuz and Av, the children of the spies must repair their failure and so bring the geulah.",
+        "yi": "דער משגיח שטעלט אוועק די מרגלים פון משה רבינו, וואס האבן נישט מצליח געווען, קעגן די צוויי שלוחים פון יהושע אין דער הפטרה, וואס האבן יא מצליח געווען. ער ערקלערט אז א מענטשנס נאמען איז זיין שליחות, ברענגט דעם אריז\"ל וועגן געבן א נאמען און רש\"י אין פרשת וישלח וועגן דעם מלאך'ס נאמען, און זאגט אז צולייגן א נאמען פאר א שווער קראנקן גיט אים א נייע שליחות. אין תמוז און אב דארפן די קינדער פון די מרגלים פאררעכטן זייער פעלער, און דערמיט ברענגען די גאולה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-03-02-behaloischa-e",
+      "startSeg": 525,
+      "endSeg": 664,
+      "title": {
+        "en": "The Ba'al Shem Tov: every step is a shlichus",
+        "yi": "דער בעל שם טוב: יעדער טריט איז א שליחות"
+      },
+      "summary": {
+        "en": "The Rav brings the Ba'al Shem Tov on the passuk that a man's steps are set by Hashem: a merchant who goes to Australia for kangaroo furs is really sent to make a brachah over a certain brook, because sparks of his neshamah are there. He adds the apple, the loaf of bread and a tree near a camp, and describes how camp can bring a boy closer to Hashem through the beauty of creation.",
+        "yi": "דער משגיח ברענגט דעם בעל שם טוב אויפן פסוק אז די טריט פון א מענטש זענען באשטימט פון השם יתברך: א סוחר וואס פארט קיין אויסטראליע נאך פעלן איז באמת געשיקט צו מאכן א ברכה ביי א געוויסן טייכל, ווייל דארט זענען ניצוצות פון זיין נשמה. ער לייגט צו דעם עפל, דאס ברויט און א בוים לעבן א קעמפ, און שילדערט ווי דער קעמפ קען דערנענטערן א בחור צום רבונו של עולם דורך דער שיינקייט פון דער בריאה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-03-02-behaloischa-e",
+      "startSeg": 665,
+      "endSeg": 856,
+      "title": {
+        "en": "Summer travel as a shlichus",
+        "yi": "זומער־רייזעס אלס שליחות"
+      },
+      "summary": {
+        "en": "The Rav explains why everyone travels just when Shelach and Tammuz arrive: to repair the shlichus of the spies. He warns against boys in camp shedding their tzitzis, the reminder at the end of Shelach, says the summer is for recharging spiritual batteries, and reads the Nefilim the spies saw as a hint not to fall. He ends with the hidden treasures of these days, Moshiach's roots in them, and a wish for a successful vacation.",
+        "yi": "דער משגיח ערקלערט פארוואס יעדער פארט אוועק פונקט ווען פרשת שלח און תמוז קומען אן: כדי מתקן צו זיין די שליחות פון די מרגלים. ער ווארנט קעגן בחורים וואס נעמען אראפ די ציצית אין קעמפ, וואס זענען דער דערמאנונג אין סוף פרשת שלח, זאגט אז דער זומער איז כדי אויפצולאדן די רוחניות'דיגע באטעריעס, און טייטשט די נפילים וואס די מרגלים האבן געזען אלס א רמז נישט צו פאלן. ער ענדיגט מיט די באהאלטענע אוצרות פון די טעג, אז משיח האט דא זיין שורש, און מיט א ברכה פאר א געלונגענע וואקאציע."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "like the Gemara calls it, good days",
+      "work": "Gemara",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [16, 17], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "the Sfarim, the Achreinim and the Shachanarach ... talk about Chav Sevin",
+      "work": "Shulchan Aruch",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [63], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "Ba Mincha we already read Shalach, the Meraglim",
+      "work": "Bamidbar",
+      "ref": "Bamidbar ch. 13-14",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [103, 104, 105, 120, 123], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the Medrash says, Ki Rabbim B'nai Shai Meimah M'B'nai Ge'ula",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 54:1",
+      "sefariaRef": "Isaiah 54:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [195, 196, 197], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "classical Marshall of the Chafetz Chaim",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [238, 239, 332], "confidence": 0.9 }
+    },
+    {
+      "heardAs": "in the Aftayra ... those of Yahushua ... to spy on Yerichay",
+      "work": "Yehoshua",
+      "ref": "Yehoshua ch. 2",
+      "sefariaRef": "Joshua 2",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [402, 403, 405, 407], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "it says from the Eri HaKadosh",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [420, 421, 424, 426], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Pashas Vayishlach ... Agid on ha-Mashmecha",
+      "work": "Bereishis",
+      "ref": "Bereishis 32:30",
+      "sefariaRef": "Genesis 32:30",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [431, 432, 433, 435], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Sir Asher says ... Shmaseinu mishtanei slifi ha-Slichus",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 32:30",
+      "sefariaRef": "Rashi on Genesis 32:30",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [436, 437, 438], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "May Hashem Mitzadei Geva Kainanu V'darka Yechpatz",
+      "work": "Tehillim",
+      "ref": "Tehillim 37:23",
+      "sefariaRef": "Psalms 37:23",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [533, 534, 632, 633], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "The Bashan Teva Kaddish says that",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [530, 540, 632], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "like Rasha says in the end of Pasha's Flach ... the eight strings and the five nuts",
+      "work": "Rashi",
+      "ref": "Rashi on Bamidbar 15:39",
+      "sefariaRef": "Rashi on Numbers 15:39",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [707, 708, 713], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Meraglin fell, they saw the Nephilim",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 13:33",
+      "sefariaRef": "Numbers 13:33",
+      "resolution": "resolved",
+      "mention": "alluded",
+      "evidence": { "segs": [783, 784, 790, 791], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Medrash told us that every Tisha B'v somebody is born who could be Mashiach",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [825, 826, 827, 828], "confidence": 0.8 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The melodious pazer note means scattering: its sweet tune carries the bitter message of the golus, and its seven occurrences in Behaaloscha mirror the seven nations from which the seventy nations of the dispersion branch out.",
+        "yi": "דער זיסער ניגון פונעם פזר טראגט א ביטערע בשורה: פזר מיינט צעשפרייטן, און די זיבן פזר'ס אין בהעלותך זענען אקעגן די זיבן הויפט־אומות, וואס פון זיי צווייגן זיך אויס די שבעים אומות פונעם גלות."
+      },
+      "evidence": { "segs": [128, 129, 130, 146, 158, 163], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Seventy is seven multiplied by ten, ten being the number of completeness, so the seventy nations are the seven nations brought to completion.",
+        "yi": "שבעים איז זיבן מאל צען, און צען איז די שלימות פון יעדע זאך, ממילא זענען די שבעים אומות די זיבן אומות אין זייער שלימות."
+      },
+      "evidence": { "segs": [162, 163, 164, 165], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The seven weeks of nechamah after Tisha b'Av are the counterweight to the seven pazers, and the comfort is that the golus was good all along, as will become clear when Moshiach comes.",
+        "yi": "די זיבן וואכן נחמה נאך תשעה באב זענען דער אקעגנגעוויכט צו די זיבן פזר'ס, און די נחמה איז אז דער גלות איז אלעמאל געווען גוט, וואס מ'וועט זען ווען משיח וועט קומען."
+      },
+      "evidence": { "segs": [173, 177, 184, 185, 187], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Adding a name to a gravely sick person works when his illness comes because he has finished his shlichus: the new name is a new shlichus and an addition to his neshamah.",
+        "yi": "צולייגן א נאמען פאר א שווער קראנקן העלפט ווען די קרענק קומט ווייל ער האט שוין דורכגעפירט זיין שליחות: דער נייער נאמען איז א נייע שליחות און א הוספה אויף זיין נשמה."
+      },
+      "evidence": { "segs": [474, 476, 481, 488, 489, 494], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The summer vacation season falls in Tammuz, when the spies set out, so that the travels of Jews today can repair the spies' failed shlichus and bring the geulah.",
+        "yi": "די זומער־וואקאציע פאלט אויס אין תמוז, ווען די מרגלים זענען ארויסגעגאנגען, כדי די רייזעס פון אידן היינט זאלן מתקן זיין די שליחות פון די מרגלים און ברענגען די גאולה."
+      },
+      "evidence": { "segs": [506, 517, 520, 730, 734], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Nefilim whom the spies saw were angels who fell from their level, and their name was a hint to the spies not to fall; the spies missed it.",
+        "yi": "די נפילים וואס די מרגלים האבן געזען זענען געווען מלאכים וואס זענען געפאלן פון זייער מדרגה, און זייער נאמען איז געווען א רמז פאר די מרגלים נישט צו פאלן, וואס זיי האבן נישט פארשטאנען."
+      },
+      "evidence": { "segs": [786, 787, 790, 792], "confidence": 0.8 }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "The diamonds and the candles (the Chofetz Chaim's mashal)",
+        "yi": "די דימענטן און די ליכט (דעם חפץ חיים'ס משל)"
+      },
+      "retelling": {
+        "en": "A poor man who could not make a living was urged by his wife to travel to the far-off dark mountains, where diamonds lay in the streets like pebbles. There it was always dark, candles made of animal fat were precious, and everyone sought candles, until he forgot why he had come, emptied his cases of diamonds and filled them with candles. On the way home, in the warmth, the candles rotted and stank, and the customs officials had them dumped into the sea. His wife told him he had gone for diamonds, not candles; he found only three or four diamonds in his pockets. The Chofetz Chaim applies it to people sent down to this dark world to collect Torah and mitzvos, who fill their cases with money and pleasures that are not let into Heaven.",
+        "yi": "אן ארעמאן וואס האט נישט געקענט מאכן א פרנסה, האט זיין ווייב אים געדרייט ער זאל פארן צו די ווייטע הרי חושך, וואו דימענטן ליגן אין די גאסן ווי שטיינדלעך. דארט איז אלעמאל געווען פינצטער, ליכט פון בהמה־חלב זענען געווען טייער, און יעדער האט געזוכט ליכט, ביז ער האט פארגעסן פארוואס ער איז געקומען, אויסגעליידיגט די דימענטן און אנגעפילט די טשעמאדאנעס מיט ליכט. אויפן וועג אהיים, אין דער ווארעמקייט, זענען די ליכט פארפוילט געווארן און געשטונקען, און די באאמטע ביים מכס האבן זיי אריינגעווארפן אין ים. זיין ווייב האט אים געזאגט אז ער איז געפארן נאך דימענטן, נישט נאך ליכט, און ער האט געפונען אין קעשענע בלויז דריי פיר דימענטן. דער חפץ חיים איז דאס מסביר אויף מענטשן וואס זענען אראפגעשיקט אויף דער פינצטערער וועלט צו זאמלען תורה און מצוות, און פילן אן די טשעמאדאנעס מיט געלט און תאוות וואס מ'לאזט נישט אריין אין הימל."
+      },
+      "people": ["the Chofetz Chaim"],
+      "evidence": { "segs": [242, 254, 284, 293, 316, 333], "confidence": 0.9 }
+    },
+    {
+      "title": {
+        "en": "The merchant who went to Australia for kangaroo furs (the Ba'al Shem Tov's mashal)",
+        "yi": "דער סוחר וואס איז געפארן קיין אויסטראליע נאך פעלן (דעם בעל שם טוב'ס משל)"
+      },
+      "retelling": {
+        "en": "A merchant travels to Australia to buy kangaroo furs and bring them back to America for profit. The Rav explains, following the Ba'al Shem Tov, that this is only the merchant's reason: Hashem sends him there so that he will make a shehakol over the water of a certain brook, where sparks belonging to his neshamah are found.",
+        "yi": "א סוחר פארט קיין אויסטראליע צו קויפן פעלן און זיי ברענגען קיין אמעריקע מיט א פארדינסט. דער משגיח ערקלערט על פי דעם בעל שם טוב אז דאס איז נאר דעם סוחר'ס חשבון: השם יתברך שיקט אים אהין כדי ער זאל מאכן א שהכל אויף די וואסער פון א געוויסן טייכל, וואו ס'געפינען זיך ניצוצות פון זיין נשמה."
+      },
+      "people": ["the Ba'al Shem Tov"],
+      "evidence": { "segs": [542, 546, 552, 555, 616, 618], "confidence": 0.85 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why does Behaaloscha have seven pazer notes, more than any other sedra?",
+        "yi": "פארוואס האט בהעלותך זיבן פזר'ס, מער ווי יעדע אנדערע סדרה?"
+      },
+      "answer": {
+        "en": "Pazer means scattering, and the seven pazers stand for the scattering of the Jews among the seventy nations that branch out of the seven, as the year turns toward Tammuz and Av.",
+        "yi": "פזר מיינט צעשפרייטן, און די זיבן פזר'ס שטייען פאר דעם צעשפרייטן פון אידן צווישן די שבעים אומות וואס קומען ארויס פון די זיבן, ווען דאס יאר דרייט זיך צו תמוז און אב."
+      },
+      "questionSegs": [13, 15, 16],
+      "answerSegs": [130, 144, 146, 160],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why is a name added to a person who is gravely ill?",
+        "yi": "פארוואס לייגט מען צו א נאמען פאר א שווער קראנקן?"
+      },
+      "answer": {
+        "en": "If he is ill because he has completed his shlichus, a new name gives him a new shlichus and an addition to his neshamah, so he can go on living.",
+        "yi": "אויב ער איז קראנק ווייל ער האט שוין דורכגעפירט זיין שליחות, גיט אים א נייער נאמען א נייע שליחות און א הוספה אויף זיין נשמה, און ער קען ווייטער לעבן."
+      },
+      "questionSegs": [480, 481, 482],
+      "answerSegs": [487, 488, 489, 493],
+      "confidence": 0.85
+    },
+    {
+      "question": {
+        "en": "Why does everyone set out to travel just when Parshas Shelach and July come?",
+        "yi": "פארוואס פארט יעדער אוועק פונקט ווען פרשת שלח און יולי קומען אן?"
+      },
+      "answer": {
+        "en": "Because Hashem wants them to repair the shlichus of the spies, who traveled from Rosh Chodesh Tammuz, which coincides with July.",
+        "yi": "ווייל השם יתברך וויל אז זיי זאלן מתקן זיין די שליחות פון די מרגלים, וואס זענען געפארן פון ראש חודש תמוז, וואס פאלט אויס מיט יולי."
+      },
+      "questionSegs": [729, 730, 731],
+      "answerSegs": [733, 734, 735],
+      "confidence": 0.85
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav tells the boys to remember, wherever they travel, that they are shluchim of Hashem and to behave accordingly.",
+        "yi": "דער משגיח זאגט די בחורים אז וואו זיי פארן זאלן זיי געדענקען אז זיי זענען שלוחים פון השם יתברך, און זיך פירן דערנאך."
+      },
+      "evidence": { "segs": [380, 384, 689, 691, 692], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that in camp one can climb a mountain at sunset and praise Hashem for His world, and so come closer to Him.",
+        "yi": "דער משגיח זאגט אז אין קעמפ קען מען ארויפגיין אויף א בארג ביים זון־אונטערגאנג און לויבן השם יתברך פאר זיין וועלט, און דערמיט זיך דערנענטערן צו אים."
+      },
+      "evidence": { "segs": [652, 654, 655, 658, 662], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav warns boys not to take off their tzitzis in camp, since tzitzis are the reminder of the mitzvos.",
+        "yi": "דער משגיח ווארנט די בחורים נישט אראפצונעמען די ציצית אין קעמפ, ווייל די ציצית זענען די דערמאנונג פון די מצוות."
+      },
+      "evidence": { "segs": [701, 702, 703, 704, 756], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The Rav says the summer exercise and rest are good so as to be a healthier and happier servant of Hashem, but the summer is above all for recharging one's spiritual batteries.",
+        "yi": "דער משגיח זאגט אז די זומער־שפאצירן און רו זענען גוט כדי צו זיין א געזונטערער און פרייליכערער עבד השם, אבער דער זומער איז פאר אלעם כדי אויפצולאדן די רוחניות'דיגע באטעריעס."
+      },
+      "evidence": { "segs": [759, 761, 771, 799, 802], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The Rav says not to fall during the summer, and if one does fall, to get up and start over.",
+        "yi": "דער משגיח זאגט נישט צו פאלן אין זומער, און אויב מ'פאלט יא, זאל מען אויפשטיין און אנהייבן פון דאס ניי."
+      },
+      "evidence": { "segs": [794, 795, 796, 797], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "Parshas Behaaloscha",
+    "pazer cantillation note",
+    "golus and scattering",
+    "shlichus of every Jew",
+    "the spies (meraglim)",
+    "names and their mission",
+    "raising sparks (birurim)",
+    "hashgachah pratis in travel",
+    "summer vacation and camp",
+    "Tammuz and Av"
+  ],
+  "concepts": [
+    { "he": "פזר", "heardAs": ["Paseya", "poseo", "Posea", "Paseos", "Paseer"] },
+    { "he": "רבונו של עולם", "heardAs": ["Rabbi Neshelaylam", "Rabbani Shaleelam", "Rabbi Nishladim", "Rabban Yishraim"] },
+    { "he": "חמשה עשר בשבט", "heardAs": ["Chami Shasa B'Shvat", "Chami Sha'asa"] },
+    { "he": "כ' סיון", "heardAs": ["Chav Sevin", "Chav 7"] },
+    { "he": "גזירות ת\"ח ות\"ט", "heardAs": ["Gezeires of Tachvetat"] },
+    { "he": "מרגלים", "heardAs": ["Meraglim", "Meradalim", "Mragim", "Meraglin"] },
+    { "he": "שבע אומות", "heardAs": ["Shiva Umais"] },
+    { "he": "כסא הכבוד", "heardAs": ["Kisei HaKavit", "Kisiyah Kavit"] },
+    { "he": "שליחות", "heardAs": ["shlichus", "shalichus", "shlichas", "Shalicha"] },
+    { "he": "הרי חושך", "heardAs": ["Horei Chayshech", "Hari Cheshach"] },
+    { "he": "רוח הקודש", "heardAs": ["Ruach HaKadosh"] },
+    { "he": "השגחה פרטית", "heardAs": ["Ashgach HaPchatas", "b'ashgarh ha-pratis"] },
+    { "he": "ניצוצות", "heardAs": ["minor tzaitzis"] },
+    { "he": "שהכל נהיה בדברו", "heardAs": ["shahakoniyah bedwari"] },
+    { "he": "ציצית", "heardAs": ["tzitzes", "taliscot"] },
+    { "he": "נפילים", "heardAs": ["Nephilim"] },
+    { "he": "נחמה", "heardAs": ["Nechama", "Nechamuz"] }
+  ],
+  "people": [
+    { "name": "Moshe Rabbeinu", "heardAs": ["Mesh Rabbeinu", "Meisha Rabbeinu", "Meshach Rabbeinu"] },
+    { "name": "Yehoshua", "heardAs": ["Yahushua", "Yeshua", "Yeshua Benun"] },
+    { "name": "Kalev", "heardAs": ["Kalev", "Talev"] },
+    { "name": "Pinchas", "heardAs": ["Pinchas"] },
+    { "name": "Yeshayahu", "heardAs": ["Yeshaya"] },
+    { "name": "the Chofetz Chaim", "heardAs": ["Chafetz Chaim"] },
+    { "name": "the Arizal", "heardAs": ["Eri HaKadosh"] },
+    { "name": "Yaakov Avinu", "heardAs": ["Yankev Avinu"] },
+    { "name": "Rashi", "heardAs": ["Sir Asher", "Rasha"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["Bashan Teva Kaddish", "B'Shem Tov", "Ba'ashem Kippur"] },
+    { "name": "Rus", "heardAs": ["Rus"] },
+    { "name": "Boaz", "heardAs": ["Bayas"] }
+  ],
+  "asrNotes": "English ASR is fair; Hebrew terms are heavily garbled (Ribono shel Olam appears in many forms, pazer as 'Paseya/poseo'), but recoverable from context. The passuk 'Vayehi binso'a ha'aron' named in the catalog title is not clearly audible; the catalog theme of travels is carried by the pazer and shlichus discussion throughout. Segment 631 (30:03-30:53) is a long sparse segment with one coherent sentence; segment 832-839 (Moshiach and Tisha b'Av) is partly garbled."
+}

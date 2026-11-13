@@ -1,0 +1,466 @@
+{
+  "shiurId": "en-parsha-en-bhr-bchksy-01",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that the Jewish slave sold to an idolatrous temple, called 'eiker' (root) by the Torah, can never be uprooted from his place in the Jewish people, because Hashem protests and promises his redemption, and he links this return to Yovel and to Shavuos.",
+      "yi": "דער משגיח ערקלערט אז דער עבד עברי וואס איז פארקויפט געווארן צו עבודה זרה, וואס די תורה רופט \"עקר\", קען קיינמאל נישט אויסגעריסן ווערן פון זיין ארט אין כלל ישראל, ווייל דער אייבערשטער פראטעסטירט און זאגט צו אז ער וועט אויסגעלייזט ווערן, און ער פארבינדט די צוריקקער מיט יובל און מיט שבועות."
+    },
+    "abstract": {
+      "en": "The Rav opens with a parable: Torah is a field with ever deeper treasures, and the same Chumash and Gemara are learned from childhood to old age and by all the generations back to Moshe Rabbeinu. Turning to the parsha, he outlines Shemitah, Yovel and the Jewish slave, who sold himself after neglecting Shemitah and is degraded so far that he may live with a non-Jewish maidservant. Every Jew is a letter in the Sefer Torah, so slavery is an uprooting. The Torah calls idolatry 'eiker' only where a Jew is sold to it, because there Hashem protests: no Jew may reach the point of no return, and idolatry itself will be uprooted. Following the Baal HaTurim's nineteen redemptions, he matches the verses to blessings of Shemoneh Esrei. Finally he shows that Shavuos, the fiftieth day, is a Yovel of return, as seen in Rus returning to Beis Lechem Yehudah.",
+      "yi": "דער משגיח עפנט מיט א משל: די תורה איז א פעלד וואו מען געפינט אלס טיפערע אוצרות, און דער זעלבער חומש און די זעלבע גמרא ווערן געלערנט פון קינדווייז ביז דער עלטער, און פון אלע דורות ביז משה רבינו. דערנאך ברענגט ער די דינים פון שמיטה, יובל און עבד עברי, וואס האט זיך פארקויפט ווייל ער האט נישט געהיטן שמיטה, און איז אזוי נידעריג געפאלן אז ער מעג לעבן מיט א שפחה כנענית. יעדער איד איז אן אות אין ספר תורה, ממילא איז עבדות אן אויסרייסן פון די שורשים. די תורה רופט עבודה זרה \"עקר\" נאר דא וואו א איד ווערט פארקויפט צו איר, ווייל דא פראטעסטירט דער אייבערשטער: קיין איד טאר נישט אנקומען צום פונקט פון וואו מען קומט נישט צוריק, און די עבודה זרה אליין וועט אויסגעריסן ווערן. לויט דעם בעל הטורים וואס ציילט נייצן גאולות, פאסט ער צו די פסוקים צו ברכות פון שמונה עשרה. צום סוף ווייזט ער אז שבועות, דער פופציגסטער טאג, איז א יובל פון צוריקקערן, ווי מען זעט ביי רות וואס קערט זיך אום קיין בית לחם יהודה."
+    },
+    "keyPoints": [
+      {
+        "text": { "en": "Torah can be dug deeper and deeper without end, so the same Chumash and Gemara serve a child, an old man and every generation back to Sinai.", "yi": "אין תורה קען מען גראבן אלס טיפער אן א סוף, דערפאר דינט דער זעלבער חומש און די זעלבע גמרא א קינד, אן אלטן איד און אלע דורות ביז הר סיני." },
+        "evidence": { "segs": [157, 161, 165, 168, 190], "confidence": 0.9 }
+      },
+      {
+        "text": { "en": "A Jew who becomes a slave, through neglecting Shemitah or through theft, is cut off from his roots in the Jewish family, as shown by his permission to live with a non-Jewish maidservant.", "yi": "א איד וואס ווערט אן עבד, דורכדעם וואס ער האט נישט געהיטן שמיטה אדער ער האט גע'גנב'עט, ווערט אפגעשניטן פון זיינע שורשים אין דער אידישער משפחה, ווי מען זעט פון דעם וואס ער מעג לעבן מיט א שפחה כנענית." },
+        "evidence": { "segs": [376, 403, 412, 547, 605], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "Every Jew is a letter in the Sefer Torah, rooted in the Torah, and Yovel restores him to his family, his land and his home.", "yi": "יעדער איד איז אן אות אין ספר תורה און איז איינגעווארצלט אין דער תורה, און יובל ברענגט אים צוריק צו זיין משפחה, זיין לאנד און זיין שטוב." },
+        "evidence": { "segs": [553, 557, 571, 593], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "The word 'eiker' for idolatry is Hashem's protest: when a Jew is sold to idolatry, Hashem will uproot the idolatry rather than let the Jew be uprooted forever.", "yi": "דאס ווארט \"עקר\" פאר עבודה זרה איז דער פראטעסט פונעם אייבערשטן: ווען א איד ווערט פארקויפט צו עבודה זרה, וועט דער אייבערשטער אויסרייסן די עבודה זרה, און נישט לאזן דעם איד אויסגעריסן ווערן אויף אייביג." },
+        "evidence": { "segs": [780, 784, 816, 1143, 1144], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "Shavuos, the fiftieth day after seven weeks, is a Yovel: the day of freedom and return to one's roots.", "yi": "שבועות, דער פופציגסטער טאג נאך זיבן וואכן, איז א יובל: דער טאג פון חירות און פון צוריקקערן צו די שורשים." },
+        "evidence": { "segs": [1027, 1099, 1101, 1111], "confidence": 0.85 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-parsha-vayikra-08-01-behar-bechukoisei-e",
+      "startSeg": 0,
+      "endSeg": 223,
+      "title": { "en": "The endless depth of Torah", "yi": "די טיפקייט פון תורה אן א סוף" },
+      "summary": {
+        "en": "The Rav compares Torah to a field with silver, gold and diamonds ever deeper, and contrasts secular textbooks a student outgrows with the Chumash and Gemara a Jew learns his whole life, the same ones used back to Moshe Rabbeinu. He calls this a visible miracle in a time of hester panim and explains that he will try to go below the surface in these weekly sessions.",
+        "yi": "דער משגיח גלייכט די תורה צו א פעלד וואו מען געפינט זילבער, גאלד און דימענטן אלס טיפער, און שטעלט אנטקעגן די ספרים פון וועלטליכע לימודים וואס א תלמיד וואקסט אויס מיט דעם חומש און דער גמרא וואס א איד לערנט א גאנץ לעבן, די זעלבע ביז משה רבינו. ער רופט דאס א נס וואס מען זעט אפילו אין א צייט פון הסתר פנים, און זאגט אז אין די וועכנטליכע שיעורים וועט ער פרובירן צו גיין טיפער ווי דער אויבערפלאך."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-vayikra-08-01-behar-bechukoisei-e",
+      "startSeg": 224,
+      "endSeg": 361,
+      "title": { "en": "Shemitah, Yovel and the Jewish slave", "yi": "שמיטה, יובל און דער עבד עברי" },
+      "summary": {
+        "en": "The Rav outlines the sedra's laws of Shemitah and Yovel, then the Jewish slave: his comfortable conditions, his permission to live with a non-Jewish maidservant, and his release after six years or, if he chooses to stay, at Yovel.",
+        "yi": "דער משגיח ברענגט די דינים פון שמיטה און יובל אין דער סדרה, און דערנאך דעם עבד עברי: ווי גוט מען דארף אים האלטן, אז ער מעג לעבן מיט א שפחה כנענית, און אז ער גייט ארויס נאך זעקס יאר, אדער, אויב ער וויל בלייבן, ביי יובל."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-vayikra-08-01-behar-bechukoisei-e",
+      "startSeg": 362,
+      "endSeg": 454,
+      "title": { "en": "How a Jew falls into slavery", "yi": "ווי אזוי א איד פאלט אריין אין עבדות" },
+      "summary": {
+        "en": "The Rav brings the Talmud that a man sells himself because he did not keep Shemitah and lost field, house and belongings, or is sold for theft. Slavery degrades him from the holiness of the Jewish people, and Yovel frees him and returns his field so he can start life again.",
+        "yi": "דער משגיח ברענגט פון דער גמרא אז א מענטש פארקויפט זיך ווייל ער האט נישט געהיטן שמיטה און האט פארלוירן זיין פעלד, זיין הויז און זיין פארמעגן, אדער ער ווערט פארקויפט פאר גניבה. די עבדות נידערט אים אראפ פון דער קדושה פון כלל ישראל, און יובל באפרייט אים און גיט אים צוריק זיין פעלד, אז ער זאל קענען אנהייבן פון דאס ניי."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-vayikra-08-01-behar-bechukoisei-e",
+      "startSeg": 455,
+      "endSeg": 535,
+      "title": { "en": "Sold to a gentile and to idolatry", "yi": "פארקויפט צו א גוי און צו עבודה זרה" },
+      "summary": {
+        "en": "The Rav reads the verses of a Jew sold to a wealthy gentile and to 'eiker', which the Gemara in Kiddushin explains as idolatry itself. It is a mitzvah for a brother or relative to redeem him before he sinks in, and Hashem explains that the Jews are His servants whom He took out of Mitzrayim.",
+        "yi": "דער משגיח לערנט די פסוקים פון א איד וואס ווערט פארקויפט צו א רייכן גוי און צו \"עקר\", וואס די גמרא אין קידושין טייטשט עבודה זרה אליין. ס'איז א מצוה אז א ברודער אדער א קרוב זאל אים אויסלייזן איידער ער זינקט איין, און דער אייבערשטער זאגט אז די אידן זענען זיינע עבדים וואס ער האט ארויסגענומען פון מצרים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-vayikra-08-01-behar-bechukoisei-e",
+      "startSeg": 536,
+      "endSeg": 690,
+      "title": { "en": "Uprooted from his roots, and why 'eiker'", "yi": "אויסגעריסן פון זיינע שורשים, און פארוואס \"עקר\"" },
+      "summary": {
+        "en": "The Rav explains that every Jew is a letter in the Sefer Torah, so the slave's permission to marry a non-Jewish maidservant is a violent severance from his roots. He asks why the Torah calls idolatry 'eiker' only here, brings the Gemara that it will be uprooted, and the promise that no one will be cast away from the Jewish people forever.",
+        "yi": "דער משגיח ערקלערט אז יעדער איד איז אן אות אין ספר תורה, ממילא איז דער היתר פון עבד צו חתונה האבן מיט א שפחה כנענית א שטארקע אפשניידונג פון זיינע שורשים. ער פרעגט פארוואס די תורה רופט עבודה זרה \"עקר\" נאר דא, ברענגט די גמרא אז זי וועט אויסגעריסן ווערן, און די הבטחה אז קיינער וועט נישט פארשטויסן ווערן פון כלל ישראל אויף אייביג."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-vayikra-08-01-behar-bechukoisei-e",
+      "startSeg": 691,
+      "endSeg": 846,
+      "title": { "en": "No point of no return: Hashem's protest", "yi": "קיין פונקט פון נישט צוריקקומען: דער פראטעסט פונעם אייבערשטן" },
+      "summary": {
+        "en": "The Rav lays out the levels of descent: slavery, not leaving after six years, being sold to a gentile, and worst of all to idolatry. As in Mitzrayim, where Hashem took the Jews out at the forty-ninth gate of impurity, Hashem tolerates the lower levels but protests the last; 'eiker' is that protest, a promise that the Jew will be brought back.",
+        "yi": "דער משגיח שטעלט אויס די מדריגות פון אראפפאלן: עבדות, נישט ארויסגיין נאך זעקס יאר, פארקויפט ווערן צו א גוי, און דאס ערגסטע, צו עבודה זרה. אזוי ווי אין מצרים, וואו דער אייבערשטער האט ארויסגענומען די אידן ביים ניין און פערציגסטן שער הטומאה, לאזט דער אייבערשטער די נידעריגערע מדריגות, אבער פראטעסטירט קעגן די לעצטע; \"עקר\" איז דער פראטעסט, א הבטחה אז דער איד וועט צוריקגעברענגט ווערן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-vayikra-08-01-behar-bechukoisei-e",
+      "startSeg": 847,
+      "endSeg": 994,
+      "title": { "en": "Nineteen redemptions and Shemoneh Esrei", "yi": "נייצן גאולות און שמונה עשרה" },
+      "summary": {
+        "en": "The Rav brings the Baal HaTurim that the root 'geulah' appears nineteen times in the sedra, matching the nineteen blessings of Shemoneh Esrei, and matches the redemption from 'eiker' to Velamalshinim, 'one of his brothers shall redeem him' to Al HaTzaddikim, and 'dodo' to David, Mashiach ben David: a promise for the individual and for the whole people.",
+        "yi": "דער משגיח ברענגט דעם בעל הטורים אז דער שורש \"גאולה\" קומט פאר נייצן מאל אין דער סדרה, אקעגן די נייצן ברכות פון שמונה עשרה, און ער פאסט צו די גאולה פון \"עקר\" צו ולמלשינים, \"אחד מאחיו יגאלנו\" צו על הצדיקים, און \"דודו\" צו דוד, משיח בן דוד: א הבטחה פאר דעם יחיד און פאר דעם כלל."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-vayikra-08-01-behar-bechukoisei-e",
+      "startSeg": 995,
+      "endSeg": 1146,
+      "title": { "en": "Shavuos is Yovel", "yi": "שבועות איז יובל" },
+      "summary": {
+        "en": "The Rav parallels the seven Shemitos and Yovel with the seven weeks and Shavuos, when heaven came down to earth. Shabbos means return, yet many do not use it; on Shavuos heaven comes down to bring a person back, freedom as in 'charus-cheirus', and Hashem chooses to uproot idolatry rather than the Jew.",
+        "yi": "דער משגיח שטעלט צוזאמען די זיבן שמיטות און יובל מיט די זיבן וואכן און שבועות, ווען דער הימל איז אראפגעקומען אויף דער ערד. שבת מיינט צוריקקערן, און פילע נוצן עס נישט אויס; אום שבועות קומט דער הימל אראפ אים צוריקצוברענגען, חירות ווי \"חרות-חירות\", און דער אייבערשטער קלייבט אויסצורייסן די עבודה זרה און נישט דעם איד."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-vayikra-08-01-behar-bechukoisei-e",
+      "startSeg": 1147,
+      "endSeg": 1321,
+      "title": { "en": "Rus returns to Beis Lechem Yehudah", "yi": "רות קערט זיך אום קיין בית לחם יהודה" },
+      "summary": {
+        "en": "The Rav explains that a convert's soul must return to its roots, as Rus returned from the field of Moav to Beis Lechem Yehudah, whose initials spell Yovel. Eretz Yisrael is like a Sefer Torah, Rachel was promised there that her children will return, and he describes Shavuos as the day to leave the 'spiritual intermarriage' with gentile culture.",
+        "yi": "דער משגיח ערקלערט אז די נשמה פון א גר מוז זיך אומקערן צו אירע שורשים, אזוי ווי רות האט זיך אומגעקערט פון שדה מואב קיין בית לחם יהודה, וואס די ראשי תיבות זענען יובל. ארץ ישראל איז ווי א ספר תורה, דארט האט רחל באקומען די הבטחה אז אירע קינדער וועלן זיך אומקערן, און ער שילדערט שבועות אלס דער טאג צו פארלאזן די רוחניות'דיגע חתונה מיט דער גוי'אישער קולטור."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-vayikra-08-01-behar-bechukoisei-e",
+      "startSeg": 1322,
+      "endSeg": 1492,
+      "title": { "en": "Questions; Yovel as shofar and stream", "yi": "שאלות; יובל אלס שופר און שטראם" },
+      "summary": {
+        "en": "The Rav answers listeners' questions: about a woman who married a gentile he says both answers are true, she will be punished but eventually return; he explains why he said 'faces in heaven'. He adds that Yovel means both shofar and stream, linking it to the haftarah's tree planted by water, and closes with a remark on Yerushalayim.",
+        "yi": "דער משגיח ענטפערט אויף שאלות פון די צוהערער: וועגן א פרוי וואס האט חתונה געהאט מיט א גוי זאגט ער אז ביידע תשובות זענען אמת, זי וועט געשטראפט ווערן אבער סוף כל סוף צוריקקומען; און ער ערקלערט פארוואס ער האט געזאגט \"די פנים אין הימל\". ער לייגט צו אז יובל מיינט סיי שופר סיי א שטראם, און פארבינדט עס מיט דעם בוים וואס שטייט ביים וואסער אין דער הפטורה, און ענדיגט מיט א רמז אויף ירושלים."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "the land shall observe a Shabbos, a sabbatical to Hashem",
+      "work": "Vayikra",
+      "ref": "Vayikra 25:2",
+      "sefariaRef": "Leviticus 25:2",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [243, 244, 245], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the Talmud tells us why did he come to such a condition",
+      "work": "Talmud",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [369, 376, 381], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "La'ekel, to the church of the Mishpacha of the Gael ... Achrei Nimkar, Geulah Teyelah ... Echet Mayach of Yegelan",
+      "work": "Vayikra",
+      "ref": "Vayikra 25:47-49",
+      "sefariaRef": "Leviticus 25:47-49",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [460, 462, 464, 468], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the Bnei Yisrael are servants to me ... I took them out of Mitzchayim",
+      "work": "Vayikra",
+      "ref": "Vayikra 25:55",
+      "sefariaRef": "Leviticus 25:55",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [490, 493, 494], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Gemara in Kedushim ... Eike means the Avayda Zara",
+      "work": "Gemara Kiddushin",
+      "ref": "Kiddushin 20a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [505, 511, 514, 516], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Gemara says why is Yahweh the Zerah called Eike, the end of it will be uprooted",
+      "work": "Gemara",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [628, 629, 630, 631], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ki lo yidach mi manu nidach",
+      "work": "Shmuel II",
+      "ref": "Shmuel II 14:14",
+      "sefariaRef": "II Samuel 14:14",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [672, 673, 675], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "there are 50 gates of Tumor as the Zayah tells us",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [728, 731, 733], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "the Balaturim says ... 19 times the word Geula in the Sadr ... 19 brachas of Sheminesh",
+      "work": "Baal HaTurim",
+      "ref": "Baal HaTurim, Vayikra 25",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [853, 856, 857, 858], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "remove the Minim, remove Apichosis from the world ... it shall be uprooted",
+      "work": "Shemoneh Esrei",
+      "ref": "Shemoneh Esrei, blessing of Velamalshinim",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [891, 892, 894, 898], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "al-ha tzaddik ... simchal keino imahem",
+      "work": "Shemoneh Esrei",
+      "ref": "Shemoneh Esrei, blessing of Al HaTzaddikim",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [911, 914, 916, 917], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Daidai, Dalit, Dalit, Vav. Rearrange the Iseas, and Daidai is David",
+      "work": "Baal HaTurim",
+      "ref": "Baal HaTurim, Vayikra 25:49",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [964, 965, 967, 969], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "after the first day of Pesach count 7 weeks ... the 50th day, that's Shavuos",
+      "work": "Vayikra",
+      "ref": "Vayikra 23:15-16",
+      "sefariaRef": "Leviticus 23:15-16",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1015, 1023, 1025, 1028], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "it says in Pirkei Yavis ... don't read Chavuos, read Chavuos, Chavuos means freedom",
+      "work": "Pirkei Avos",
+      "ref": "Pirkei Avos 6:2",
+      "sefariaRef": "Pirkei Avot 6:2",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1093, 1094, 1096, 1097], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "v'shavu isha l'echuzas v'yesha l'mishpate",
+      "work": "Vayikra",
+      "ref": "Vayikra 25:10",
+      "sefariaRef": "Leviticus 25:10",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [1113, 1114, 1239, 1240], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Hrus happened to find herself astray in the field of Maiv ... returns to Beis Lechem Yehuda",
+      "work": "Rus",
+      "ref": "Rus ch. 1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [1149, 1176, 1186, 1188], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "in Yirmiyahu ... Rachl came out and cried ... your children will return to their territory",
+      "work": "Yirmiyahu",
+      "ref": "Yirmiyahu 31:14-16",
+      "sefariaRef": "Jeremiah 31:14-16",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1247, 1259, 1260, 1268], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "wherever you say shayfar the tagmas say yuvla",
+      "work": "Targum",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1429, 1430, 1431], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "in the Aftarah this week ... fortunate is the man who has faith ... like a tree planted near water ... at the stream cast out his roots",
+      "work": "Yirmiyahu",
+      "ref": "Yirmiyahu 17:7-8",
+      "sefariaRef": "Jeremiah 17:7-8",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1439, 1447, 1452, 1457], "confidence": 0.85 }
+    }
+  ],
+  "insights": [
+    {
+      "text": { "en": "The fact that the same Chumash and Gemara serve a child, a lifelong scholar and every generation back to Moshe Rabbeinu, unlike any secular textbook, is itself a visible miracle showing that Torah comes from heaven.", "yi": "דאס וואס דער זעלבער חומש און די זעלבע גמרא דינען א קינד, א למדן א גאנץ לעבן און אלע דורות ביז משה רבינו, נישט ווי קיין ספר פון וועלטליכע לימודים, איז אליין א נס וואס ווייזט אז די תורה איז מן השמים." },
+      "evidence": { "segs": [48, 52, 168, 178, 189], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "The Torah calls idolatry by the unusual name 'eiker' only where a Jew is sold to it, because there it voices Hashem's protest: the idolatry will be uprooted so that the Jew is not.", "yi": "די תורה רופט עבודה זרה מיטן אומגעווענליכן נאמען \"עקר\" נאר דארט וואו א איד ווערט צו איר פארקויפט, ווייל דארט דריקט עס אויס דעם פראטעסט פונעם אייבערשטן: די עבודה זרה וועט אויסגעריסן ווערן, כדי דער איד זאל נישט." },
+      "evidence": { "segs": [646, 780, 783, 816, 1143], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "The slave's descending levels mirror Mitzrayim: Hashem lets a person sink by his own choice, but cuts the time short before the point of no return, as He took the Jews out at the forty-ninth gate.", "yi": "די מדריגות פון אראפפאלן פונעם עבד זענען ווי מצרים: דער אייבערשטער לאזט א מענטש זינקען מיט זיין אייגענער בחירה, אבער ער קירצט אפ די צייט איידער מען קומט צום פונקט פון נישט צוריקקומען, אזוי ווי ער האט ארויסגענומען די אידן ביים ניין און פערציגסטן שער." },
+      "evidence": { "segs": [731, 733, 739, 765, 777], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The redemptions of the sold Jew follow the order of Shemoneh Esrei: first the uprooting of heresy, then redemption through attaching to a tzaddik, then Mashiach ben David hinted in 'dodo'.", "yi": "די גאולות פונעם פארקויפטן איד גייען לויטן סדר פון שמונה עשרה: ערשט ווערט אויסגעריסן די אפיקורסות, דערנאך די גאולה דורכן זיך אנשליסן צו א צדיק, און דערנאך משיח בן דוד וואס איז מרומז אין \"דודו\"." },
+      "evidence": { "segs": [886, 911, 950, 967, 969], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "Shavuos, the fiftieth day, is a Yovel of return: the word contains Shabbos, which means return, and on it heaven comes down to a person instead of his having to rise to it.", "yi": "שבועות, דער פופציגסטער טאג, איז א יובל פון צוריקקערן: אינעם ווארט ליגט שבת, וואס מיינט צוריקקערן, און אום שבועות קומט דער הימל אראפ צום מענטש אנשטאט ער זאל דארפן ארויפגיין." },
+      "evidence": { "segs": [1063, 1084, 1086, 1099, 1103], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "Rus returned from the field of Moav to Beis Lechem Yehudah, whose initial letters spell Yovel, which is why her story belongs to Shavuos.", "yi": "רות האט זיך אומגעקערט פון שדה מואב קיין בית לחם יהודה, וואס די ערשטע אותיות זענען יובל, און דערפאר געהערט איר מעשה צו שבועות." },
+      "evidence": { "segs": [1183, 1186, 1193, 1197], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "Yovel means both a shofar and a stream, and the two meanings meet: with the shofar of redemption a Jew's roots are replanted by the stream of Torah.", "yi": "יובל מיינט סיי א שופר סיי א שטראם, און די צוויי טייטשן קומען צוזאמען: מיטן שופר פון גאולה ווערן די שורשים פון א איד איבערגעפלאנצט ביים שטראם פון תורה." },
+      "evidence": { "segs": [1424, 1433, 1458, 1467, 1471], "confidence": 0.75 }
+    }
+  ],
+  "stories": [],
+  "questions": [
+    {
+      "question": { "en": "Why does a Jew come to sell himself as a slave?", "yi": "פארוואס קומט א איד צו פארקויפן זיך פאר אן עבד?" },
+      "answer": { "en": "The Talmud says it began with working his field in the Shemitah year; he was cursed, sold his field, house and belongings, and finally himself.", "yi": "די גמרא זאגט אז עס האט זיך אנגעהויבן דערמיט וואס ער האט געארבעט זיין פעלד אין שמיטה; ער איז געשטראפט געווארן, האט פארקויפט זיין פעלד, זיין הויז און זיין פארמעגן, און צום סוף זיך אליין." },
+      "questionSegs": [366, 370],
+      "answerSegs": [376, 377, 381, 383],
+      "confidence": 0.85
+    },
+    {
+      "question": { "en": "Why does the Torah call idolatry 'eiker' here, when elsewhere it calls it 'other gods'?", "yi": "פארוואס רופט די תורה דא עבודה זרה \"עקר\", ווען אנדערש וואו רופט זי עס \"אלהים אחרים\"?" },
+      "answer": { "en": "Because here a Jew is sold to it, and the word is Hashem's protest that idolatry will be uprooted so that no Jew is lost forever.", "yi": "ווייל דא ווערט א איד צו איר פארקויפט, און דאס ווארט איז דער פראטעסט פונעם אייבערשטן אז די עבודה זרה וועט אויסגעריסן ווערן, כדי קיין איד זאל נישט פארלוירן ווערן אויף אייביג." },
+      "questionSegs": [646, 647, 648],
+      "answerSegs": [780, 783, 816, 818],
+      "confidence": 0.85
+    },
+    {
+      "question": { "en": "Why were the Jews in Mitzrayim only 210 years instead of 400?", "yi": "פארוואס זענען די אידן געווען אין מצרים נאר ר\"י יאר אנשטאט ת' יאר?" },
+      "answer": { "en": "They had fallen to the forty-ninth gate of impurity, and had they reached the fiftieth they could never have come out, so Hashem cut the time short.", "yi": "זיי זענען אראפגעפאלן ביז דעם ניין און פערציגסטן שער הטומאה, און ווען זיי וואלטן אנגעקומען צום פופציגסטן וואלטן זיי קיינמאל נישט ארויסגעקומען, דערפאר האט דער אייבערשטער אפגעקירצט די צייט." },
+      "questionSegs": [725, 727],
+      "answerSegs": [728, 731, 733, 736],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Does a Jewish woman who married a gentile and has no regret lose her portion, or will she return?", "yi": "פארלירט א אידישע פרוי וואס האט חתונה געהאט מיט א גוי און האט נישט קיין חרטה איר חלק, אדער וועט זי זיך אומקערן?" },
+      "answer": { "en": "The Rav says both views are true on different levels: she will go to the opposite of Olam Haba, but eventually she will be redeemed, coming down again to relive a hard life.", "yi": "דער משגיח זאגט אז ביידע זענען אמת אויף פארשידענע מדריגות: זי וועט גיין צום היפך פון עולם הבא, אבער סוף כל סוף וועט זי אויסגעלייזט ווערן, און וועט מוזן אראפקומען נאכאמאל לעבן א שווער לעבן." },
+      "questionSegs": [1360, 1363],
+      "answerSegs": [1378, 1381, 1384, 1386],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why did the Rav say that 'the faces in heaven' grow red with anger?", "yi": "פארוואס האט דער משגיח געזאגט אז \"די פנים אין הימל\" ווערן רויט פון כעס?" },
+      "answer": { "en": "He was being careful with the honor of Hashem: he meant that Hashem is angry but did not want to say so directly.", "yi": "ער האט זיך געהיטן מיטן כבוד פונעם אייבערשטן: ער האט געמיינט אז דער אייבערשטער איז ברוגז, אבער האט נישט געוואלט עס זאגן גראד." },
+      "questionSegs": [1407, 1409],
+      "answerSegs": [1410, 1412, 1413, 1414],
+      "confidence": 0.85
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Rav says that if one pays attention, one can see miracles even today, among them the endless depth of Torah.", "yi": "דער משגיח זאגט אז אויב מען גיט אכטונג, קען מען זען נסים אפילו היינט, צווישן זיי די טיפקייט פון תורה אן א סוף." },
+      "evidence": { "segs": [40, 42, 52, 53], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Rav says Shabbos is meant as a return, and laments that many do not take advantage of it and stay attached to gentile culture.", "yi": "דער משגיח זאגט אז שבת איז געמיינט אלס א צוריקקערן, און באקלאגט זיך אז פילע נוצן עס נישט אויס און בלייבן צוגעבינדן צו דער גוי'אישער קולטור." },
+      "evidence": { "segs": [1063, 1071, 1072, 1078], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Rav says Shavuos should be used as a day of Yovel, to rid oneself of 'spiritual intermarriage', living, thinking and enjoying the way gentile culture does, and to return home.", "yi": "דער משגיח זאגט אז מען זאל אויסנוצן שבועות אלס א טאג פון יובל, זיך באפרייען פון דער רוחניות'דיגער חתונה, דאס לעבן, טראכטן און הנאה האבן ווי די גוי'אישע קולטור, און זיך אומקערן אהיים." },
+      "evidence": { "segs": [1281, 1290, 1313, 1318, 1321], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "eved ivri",
+    "shemitah and yovel",
+    "redemption of the Jewish slave",
+    "idolatry as eiker",
+    "no Jew is lost forever",
+    "nineteen redemptions and Shemoneh Esrei",
+    "Shavuos as Yovel",
+    "Rus and Beis Lechem Yehudah",
+    "depth of Torah",
+    "spiritual intermarriage"
+  ],
+  "concepts": [
+    { "he": "עבד עברי", "heardAs": ["a Jewish slave"] },
+    { "he": "שמיטה", "heardAs": ["Shemitah"] },
+    { "he": "יובל", "heardAs": ["Yaival", "Yaevo", "Yaivu", "Yavu", "Ya'evu", "Yeval", "idol", "yuvail", "Yuval"] },
+    { "he": "עקר", "heardAs": ["Eker", "Eike", "Eiker", "Ekel", "acre", "La'ekel"] },
+    { "he": "שפחה כנענית", "heardAs": ["gayesha slave maiden", "shivcha", "Shavchuk Nainas"] },
+    { "he": "הסתר פנים", "heardAs": ["Hestel Panem", "Hesed Al-Panam"] },
+    { "he": "גאולה", "heardAs": ["Geula", "Goyel", "Yegal", "Geulah Teyelah"] },
+    { "he": "כי לא ידח ממנו נדח", "heardAs": ["ki lo yidach mi manu nidach"] },
+    { "he": "נ' שערי טומאה", "heardAs": ["50 gates of Tumor"] },
+    { "he": "ולמלשינים", "heardAs": ["remove the Minim"] },
+    { "he": "על הצדיקים", "heardAs": ["al-ha tzaddik"] },
+    { "he": "דודו", "heardAs": ["Daidai"] },
+    { "he": "חירות", "heardAs": ["Chavuos"] },
+    { "he": "אפיקורס", "heardAs": ["Apocytus", "Apichosis"] }
+  ],
+  "people": [
+    { "name": "Rabbi Akiva", "heardAs": ["Rabbi Akiva"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["Moshe Rabbeinu", "Mesh Rabbeinu"] },
+    { "name": "the Chafetz Chaim", "heardAs": ["Chafetz Chaim"] },
+    { "name": "the Chasam Sofer", "heardAs": ["Chasam Soifer"] },
+    { "name": "the Rambam", "heardAs": ["Rambam"] },
+    { "name": "the Baal HaTurim", "heardAs": ["Balatulim", "Balaturim", "Balatubim", "Balaturan"] },
+    { "name": "Rus", "heardAs": ["Ghus", "Hrus", "Rus"] },
+    { "name": "Boaz", "heardAs": ["Bayaz", "Baez"] },
+    { "name": "Rachel", "heardAs": ["Rachl", "Rachel"] },
+    { "name": "Mashiach ben David", "heardAs": ["Mishih Bendavid"] }
+  ],
+  "asrNotes": "English ASR is mostly clear; Hebrew terms are heavily garbled (Yovel appears as 'Yaival', 'Yaivu', 'idol'; eiker as 'Eike', 'acre'). The source for the fifty gates of impurity ('the Zayah') could not be identified, and the haftarah and gematria references near segs 1247-1252 and 1476-1491 are only partly recoverable. The last six minutes are a question-and-answer period with audience questions mixed in."
+}

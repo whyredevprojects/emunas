@@ -1,0 +1,482 @@
+{
+  "shiurId": "en-zmanim-en-lvl-01",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that Elul, the sixth month, corresponds to Yosef HaTzaddik, the sixth of the ushpizin, who embodies Seder Taharos, so that Elul is the month of purity that prepares for the holiness of Rosh Hashanah.",
+      "yi": "דער משגיח ערקלערט אז אלול, דער זעקסטער חודש, איז כנגד יוסף הצדיק, דער זעקסטער פון די אושפיזין, וואס איז דער סדר טהרות, און דערפאר איז אלול א חודש פון טהרה וואס גרייט צו צו דער קדושה פון ראש השנה."
+    },
+    "abstract": {
+      "en": "The Rav opens with 'lachazos b'noam Hashem', said in Elul, and the bond of 'ani l'dodi v'dodi li'. Following the Arizal, the seven months from Nissan to Tishrei correspond to the seven ushpizin, so Elul is Yosef's month. He then asks why Yaakov taught Yosef only five orders of Mishnah, as the Baal HaTurim reads 'zekunim', and why Yaakov, unlike Avraham, needed teachers at all. He builds an answer from the stages of Klal Yisrael: the avos and the seven ro'im are single trunks, the shevatim are branches. Yosef was a ro'eh, not a shevet, and corresponds to Seder Taharos, which he knew by himself. Avraham, the first, contains all the days. Yosef's purity explains how Yaakov sensed him in the produce from Mitzrayim, his title 'tzaddik', and the special quality of Mishkan Shiloh. Elul, Yosef's taharah, prepares for Rosh Hashanah's kedusha, and the Rav urges using the forty days.",
+      "yi": "דער משגיח עפנט מיט \"לחזות בנעם ה'\" וואס מ'זאגט אין אלול, און מיט דעם קשר פון \"אני לדודי ודודי לי\". לויט דעם אריז\"ל זענען די זיבן חדשים פון ניסן ביז תשרי כנגד די זיבן אושפיזין, ממילא איז אלול דער חודש פון יוסף. דערנאך פרעגט ער פארוואס יעקב האט יוסף געלערנט נאר פינף סדרים משניות, ווי דער בעל הטורים טייטשט \"זקונים\", און פארוואס יעקב האט בכלל געדארפט האבן רבי'ס, נישט ווי אברהם. דער תירוץ קומט פון די שטאפלען פון כלל ישראל: די אבות און די זיבן רועים זענען איינצלנע שטאמען, די שבטים זענען צווייגן. יוסף איז געווען א רועה און נישט קיין שבט, און ער איז כנגד סדר טהרות, וואס ער האט געוואוסט פון זיך אליין. אברהם, דער ערשטער, נעמט ארום אלע טעג. די טהרה פון יוסף ערקלערט ווי אזוי יעקב האט אים דערשפירט אין די פירות פון מצרים, פארוואס מ'רופט אים \"צדיק\", און די מעלה פון משכן שילה. אלול, די טהרה פון יוסף, גרייט צו צו דער קדושה פון ראש השנה, און דער משגיח מוטשעט זיך מען זאל אויסנוצן די פערציג טעג."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Following the Arizal, the seven months from Nissan to Tishrei correspond to the seven ushpizin, so Elul, the sixth month, is the month of Yosef.",
+          "yi": "לויט דעם אריז\"ל זענען די זיבן חדשים פון ניסן ביז תשרי כנגד די זיבן אושפיזין, און אלול, דער זעקסטער חודש, איז דער חודש פון יוסף."
+        },
+        "evidence": { "segs": [46, 59, 71, 73, 75], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The avos and the seven ro'im are single units, trunks of the tree, while the twelve shevatim are branches; Yosef was not a shevet but one of the seven ro'im.",
+          "yi": "די אבות און די זיבן רועים זענען איינצלנע, דער שטאם פונעם בוים, און די צוועלף שבטים זענען צווייגן; יוסף איז נישט געווען קיין שבט נאר איינער פון די זיבן רועים."
+        },
+        "evidence": { "segs": [255, 280, 281, 490, 502, 503], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Each of the seven ro'im corresponds to a day of the week and an order of Mishnah, with Yosef, the sixth, corresponding to Seder Taharos.",
+          "yi": "יעדער פון די זיבן רועים איז כנגד א טאג פון דער וואך און א סדר משניות, און יוסף, דער זעקסטער, איז כנגד סדר טהרות."
+        },
+        "evidence": { "segs": [563, 564, 584, 714, 715], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Yaakov taught Yosef only five orders, as the word 'zekunim' hints, because Yosef knew Seder Taharos by himself.",
+          "yi": "יעקב האט יוסף געלערנט נאר פינף סדרים, ווי דאס ווארט \"זקונים\" ווייזט אן, ווייל סדר טהרות האט יוסף געוואוסט פון זיך אליין."
+        },
+        "evidence": { "segs": [128, 709, 710, 716, 719], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Yaakov sensed that Yosef was alive in Mitzrayim from the purity, the taste and fragrance, of the produce that Yosef personally handled.",
+          "yi": "יעקב האט דערשפירט אז יוסף לעבט אין מצרים פון דער טהרה, דעם טעם און דעם ריח, פון די פירות וואס יוסף האט אליין באהאנדלט."
+        },
+        "evidence": { "segs": [945, 946, 957, 961, 977], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Elul, Yosef's month of taharah, is the preparation for Rosh Hashanah, because purity must come before holiness.",
+          "yi": "אלול, דער חודש פון יוסף און פון טהרה, איז די הכנה צו ראש השנה, ווייל טהרה מוז קומען פאר קדושה."
+        },
+        "evidence": { "segs": [1192, 1245, 1248, 1249, 1251], "confidence": 0.85 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-zman-elul-tishrei-01-01-elul-e",
+      "startSeg": 0,
+      "endSeg": 75,
+      "title": { "en": "Elul, the sixth month, and Yosef", "yi": "אלול, דער זעקסטער חודש, און יוסף" },
+      "summary": {
+        "en": "The Rav reads 'lachazos b'noam Hashem' as a wish that Hashem have nachas from us, and describes Elul as the time of 'ani l'dodi v'dodi li'. He then states that Elul is the sixth month and, following the Arizal, corresponds to Yosef, the sixth of the ushpizin.",
+        "yi": "דער משגיח טייטשט \"לחזות בנעם ה'\" אז מ'וויל אז דער אויבערשטער זאל האבן נחת פון אונז, און ער שילדערט אלול אלס די צייט פון \"אני לדודי ודודי לי\". דערנאך זאגט ער אז אלול איז דער זעקסטער חודש, און לויט דעם אריז\"ל איז ער כנגד יוסף, דער זעקסטער פון די אושפיזין."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-elul-tishrei-01-01-elul-e",
+      "startSeg": 76,
+      "endSeg": 136,
+      "title": { "en": "Ben zekunim and the missing Taharos", "yi": "בן זקונים און דער פעלנדיגער סדר טהרות" },
+      "summary": {
+        "en": "The Rav brings Rashi's two explanations of 'ben zekunim', the second being that Yaakov passed on to Yosef all the Torah he had received. He then brings the Baal HaTurim's hint that 'zekunim' spells five orders of Mishnah, and asks where Seder Taharos is.",
+        "yi": "דער משגיח ברענגט די צוויי פשטים פון רש\"י אויף \"בן זקונים\", דער צווייטער אז יעקב האט איבערגעגעבן צו יוסף די גאנצע תורה וואס ער האט מקבל געווען. דערנאך ברענגט ער דעם רמז פונעם בעל הטורים אז \"זקונים\" איז ראשי תיבות פון פינף סדרים, און פרעגט וואו איז סדר טהרות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-elul-tishrei-01-01-elul-e",
+      "startSeg": 137,
+      "endSeg": 249,
+      "title": { "en": "Avraham knew Torah by instinct", "yi": "אברהם האט געוואוסט די תורה פון זיך אליין" },
+      "summary": {
+        "en": "The Rav explains Chazal's statement that Avraham's kidneys taught him Torah: he knew the whole Torah by instinct, as animals know what is in their nature. He asks why Yaakov, the choicest of the avos, needed teachers, and asks too why Yaakov sensed that Yosef was in Mitzrayim only at that point.",
+        "yi": "דער משגיח ערקלערט דעם מאמר חז\"ל אז אברהמ'ס כליות האבן אים געלערנט תורה: ער האט געוואוסט די גאנצע תורה פון זיין נאטור, אזוי ווי א באשעפעניש ווייסט וואס עס ליגט אין אים. ער פרעגט פארוואס יעקב, דער בחיר שבאבות, האט געדארפט האבן רבי'ס, און פרעגט אויך פארוואס יעקב האט ערשט דעמאלט דערשפירט אז יוסף איז אין מצרים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-elul-tishrei-01-01-elul-e",
+      "startSeg": 250,
+      "endSeg": 344,
+      "title": { "en": "Trunk and branches: avos, shevatim, seven shepherds", "yi": "שטאם און צווייגן: אבות, שבטים, זיבן רועים" },
+      "summary": {
+        "en": "The Rav describes the stages of Klal Yisrael: single avos, then twelve shevatim as branches of Yaakov's trunk, then seventy souls, then a nation. On the three regalim the shevatim return to their trunk, and the seven ro'im, the ushpizin, are units who sustain every Jew; he notes the two orders of the ushpizin.",
+        "yi": "דער משגיח שילדערט די שטאפלען פון כלל ישראל: איינצלנע אבות, דערנאך צוועלף שבטים ווי צווייגן פון יעקב'ס שטאם, דערנאך שבעים נפש, און דערנאך א פאלק. אויף די שלש רגלים קערן זיך די שבטים אום צו זייער שטאם, און די זיבן רועים, די אושפיזין, זענען איינצלנע וואס שפייזן יעדן איד; ער דערמאנט די צוויי סדרים פון די אושפיזין."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-elul-tishrei-01-01-elul-e",
+      "startSeg": 345,
+      "endSeg": 488,
+      "title": { "en": "Twelve paths and seven: the future elevation", "yi": "צוועלף וועגן און זיבן: די עליה לעתיד" },
+      "summary": {
+        "en": "The Rav contrasts the twelve paths of Krias Yam Suf with the seven streams of the future split in Yeshaya 11, when the shevatim will be raised to the level of the ro'im and the strife of Ephraim and Yehuda will end. He compares the twelve weekday requests of Shemoneh Esrei to Shabbos's single brachah, and Musaf of Rosh Chodesh to the unity of Yerushalayim.",
+        "yi": "דער משגיח שטעלט אוועק די צוועלף וועגן פון קריעת ים סוף קעגן די זיבן נחלים פון דער קריעה לעתיד אין ישעיה י\"א, ווען די שבטים וועלן אויפגעהויבן ווערן צו דער מדריגה פון די רועים און די קנאה פון אפרים און יהודה וועט אויפהערן. ער פארגלייכט די צוועלף בקשות פון שמונה עשרה וואכנטאג מיט דער איין ברכה פון שבת, און מוסף פון ראש חודש מיט דער אחדות פון ירושלים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-elul-tishrei-01-01-elul-e",
+      "startSeg": 489,
+      "endSeg": 596,
+      "title": { "en": "Yosef a ro'eh, not a shevet; Chok LeYisrael", "yi": "יוסף א רועה און נישט קיין שבט; חק לישראל" },
+      "summary": {
+        "en": "The Rav explains that Yosef was one of the seven ro'im, not a shevet, so Ephraim and Menashe took his place; the brothers mistook his higher conduct for arrogance, and Rashi's reading of 'even Yisrael' as father and son shows he had the quality of an av. He then describes the Chok LeYisrael order of the Arizal, matching each day to one of the ro'im and an order of Mishnah.",
+        "yi": "דער משגיח ערקלערט אז יוסף איז געווען איינער פון די זיבן רועים און נישט קיין שבט, דערפאר האבן אפרים און מנשה איבערגענומען זיין ארט; די ברידער האבן געמיינט אז זיין העכערע הנהגה איז גאוה, און רש\"י'ס פשט אז \"אבן ישראל\" איז אב און בן ווייזט אז ער האט געהאט די מדריגה פון אן אב. דערנאך שילדערט ער דעם סדר פון חק לישראל לויט דעם אריז\"ל, וואס פארבינדט יעדן טאג מיט א רועה און א סדר משניות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-elul-tishrei-01-01-elul-e",
+      "startSeg": 597,
+      "endSeg": 743,
+      "title": { "en": "The first contains all: why Taharos is missing", "yi": "דער ערשטער נעמט ארום אלעס: פארוואס טהרות פעלט" },
+      "summary": {
+        "en": "The Rav explains that Avraham, as the first, 'ba bayamim', comes with all the days, so he knew the whole Torah by himself, while Yitzchak knew only Seder Moed and the shevatim had to be taught everything. This answers the Baal HaTurim's question: Yaakov did not need to teach Yosef Taharos, and he loved him because he had to teach him less.",
+        "yi": "דער משגיח ערקלערט אז אברהם, ווייל ער איז דער ערשטער, \"בא בימים\", גייט מיט אלע טעג, דערפאר האט ער געוואוסט די גאנצע תורה פון זיך אליין, בשעת יצחק האט געוואוסט נאר סדר מועד און די שבטים האט מען געדארפט אלעס לערנען. דערמיט איז די קשיא אויפן בעל הטורים מתורץ: יעקב האט נישט געדארפט לערנען מיט יוסף טהרות, און ער האט אים ליב געהאט ווייל ער האט אים געדארפט ווייניגער לערנען."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-elul-tishrei-01-01-elul-e",
+      "startSeg": 744,
+      "endSeg": 869,
+      "title": { "en": "Each av and his order of Mishnah", "yi": "יעדער אב מיט זיין סדר משניות" },
+      "summary": {
+        "en": "The Rav goes through the correspondences: Avraham is Zeraim and emunah, which is why Zeraim opens with Brachos; Yitzchak is Moed; Yaakov is Nashim, as seen in his toil for his wives; Nezikin, which sharpens the mind, belongs to Moshe; and Kodashim to Aharon.",
+        "yi": "דער משגיח גייט דורך די שייכותן: אברהם איז זרעים און אמונה, דערפאר הייבט זרעים אן מיט ברכות; יצחק איז מועד; יעקב איז נשים, ווי מ'זעט ביי זיין מי פאר זיינע ווייבער; נזיקין, וואס שארפט דעם שכל, געהערט צו משה; און קדשים צו אהרן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-elul-tishrei-01-01-elul-e",
+      "startSeg": 870,
+      "endSeg": 1003,
+      "title": { "en": "Taharah gives taste and fragrance", "yi": "טהרה גיט טעם און ריח" },
+      "summary": {
+        "en": "The Rav explains that David is the hidden 'sod' of Shabbos, and brings the end of Sotah that when taharah was taken away, produce lost its taste and fragrance. Yosef is taharah: produce he handled in Mitzrayim carried a holy fragrance, and from it Yaakov knew that Yosef was alive, uniting Rashi's and Targum Yonasan's readings of 'vayar Yaakov'.",
+        "yi": "דער משגיח ערקלערט אז דוד איז דער באהאלטענער \"סוד\" פון שבת, און ברענגט דעם סוף פון סוטה אז ווען די טהרה איז אוועקגענומען געווארן האבן די פירות פארלוירן זייער טעם און ריח. יוסף איז טהרה: די פירות וואס ער האט באהאנדלט אין מצרים האבן געהאט א הייליגן ריח, און דערפון האט יעקב געוואוסט אז יוסף לעבט, און אזוי גייען צוזאמען דער פשט פון רש\"י און פונעם תרגום יונתן אויף \"וירא יעקב\"."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-elul-tishrei-01-01-elul-e",
+      "startSeg": 1004,
+      "endSeg": 1085,
+      "title": { "en": "Yosef the tzaddik and Potiphar's wife", "yi": "יוסף הצדיק און די ווייב פון פוטיפר" },
+      "summary": {
+        "en": "The Rav explains why only Yosef carries the title 'tzaddik': a seventeen-year-old torn from his father's home, he withstood Potiphar's wife for a whole year. He retells from Chazal her threats and his answers from pesukim, ending with 'Hashem ohev tzaddikim'.",
+        "yi": "דער משגיח ערקלערט פארוואס נאר יוסף טראגט דעם טיטל \"צדיק\": א בחור פון זיבעצן יאר, אוועקגעריסן פון זיין טאטנס הויז, האט ער זיך געהאלטן קעגן די ווייב פון פוטיפר א גאנץ יאר. ער דערציילט פון חז\"ל אירע סטראשונקעס און זיינע תשובות פון פסוקים, ביז \"ה' אהב צדיקים\"."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-elul-tishrei-01-01-elul-e",
+      "startSeg": 1086,
+      "endSeg": 1185,
+      "title": { "en": "Mishkan Shiloh, the Mishkan of Yosef", "yi": "משכן שילה, דער משכן פון יוסף" },
+      "summary": {
+        "en": "The Rav contrasts Mishkan Shiloh, in Yosef's territory, with the Beis HaMikdash in Yerushalayim: Shiloh was temporary, but kodashim could be eaten wherever it could be seen, a merit of Yosef's guarding his eyes. He returns to Elul as the sixth month corresponding to Yosef and Tishrei as the seventh, David and malchus.",
+        "yi": "דער משגיח שטעלט אוועק משכן שילה, וואס איז געווען אין יוסף'ס חלק, קעגן דעם בית המקדש אין ירושלים: שילה איז געווען צייטווייליג, אבער מ'האט געקענט עסן קדשים וואו נאר מ'האט עס געזען, א זכות פון יוסף'ס היטן די אויגן. ער קערט זיך אום צו אלול, דער זעקסטער חודש כנגד יוסף, און תשרי, דער זיבעטער, דוד און מלכות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-elul-tishrei-01-01-elul-e",
+      "startSeg": 1186,
+      "endSeg": 1296,
+      "title": { "en": "Elul prepares: taharah before kedusha", "yi": "אלול גרייט צו: טהרה פאר קדושה" },
+      "summary": {
+        "en": "As Friday prepares for Shabbos, Elul prepares for Rosh Hashanah; the Rav brings the Likutei Torah that in Elul the King is in the field and anyone may approach him. Taharah precedes kedusha, and he brings the Gemara on the dudaim, pure young men or baalei teshuvah, and the fragrance of the ketores that was smelled at Shiloh.",
+        "yi": "אזוי ווי ערב שבת גרייט צו צו שבת, אזוי גרייט אלול צו צו ראש השנה; דער משגיח ברענגט דעם לקוטי תורה אז אין אלול איז דער מלך אין פעלד און יעדער קען צוגיין צו אים. טהרה קומט פאר קדושה, און ער ברענגט די גמרא אויף די דודאים, ריינע בחורים אדער בעלי תשובה, און דעם ריח פון דער קטורת וואס מ'האט געשמעקט ביי שילה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-zman-elul-tishrei-01-01-elul-e",
+      "startSeg": 1297,
+      "endSeg": 1428,
+      "title": { "en": "The forty days and closing brachah", "yi": "די פערציג טעג און די ברכה צום סוף" },
+      "summary": {
+        "en": "The Rav explains that the forty days from Rosh Chodesh Elul to Yom Kippur absorbed the teshuvah of Moshe's last forty days on the mountain, and calls on listeners to use them. The thirty days of Elul are Shiloh and the ten days are Yerushalayim, with Rosh Hashanah as the Beis HaMikdash of time; he closes with a brachah for a good year.",
+        "yi": "דער משגיח ערקלערט אז די פערציג טעג פון ראש חודש אלול ביז יום כיפור האבן איינגעזאפט די תשובה פון משה'ס לעצטע פערציג טעג אויפן בארג, און ער רופט אויף זיי אויסצונוצן. די דרייסיג טעג פון אלול זענען שילה און די צען טעג זענען ירושלים, און ראש השנה איז דער בית המקדש פון דער צייט; ער ענדיגט מיט א ברכה אויף א גוט יאר."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "L'achazay b'noi am Hashem", "work": "Tehillim", "ref": "Tehillim 27:4", "sefariaRef": "Psalms 27:4", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [2, 7, 18], "confidence": 0.85 } },
+    { "heardAs": "Ani L'daydi V'daydi Li", "work": "Shir HaShirim", "ref": "Shir HaShirim 6:3", "sefariaRef": "Song of Songs 6:3", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [24, 30], "confidence": 0.85 } },
+    { "heardAs": "we say to Piyot, We are your beloved one", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [40, 41, 42], "confidence": 0.7 } },
+    { "heardAs": "as Yari HaKadosh teaches us", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [71, 73], "confidence": 0.85 } },
+    { "heardAs": "Yisrael favored Yisrael ... Ben Zikunim Hulay", "work": "Bereishis", "ref": "Bereishis 37:3", "sefariaRef": "Genesis 37:3", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [78, 79, 83], "confidence": 0.85 } },
+    { "heardAs": "Rasha tells us Tupshat. Benzikunim", "work": "Rashi", "ref": "Rashi on Bereishis 37:3", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [80, 81, 84, 90], "confidence": 0.85 } },
+    { "heardAs": "The Bala Turim tells us an interesting Remez", "work": "Baal HaTurim", "ref": "Baal HaTurim on Bereishis 37:3", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [102, 128, 129], "confidence": 0.85 } },
+    { "heardAs": "the Shtei Kali Yisav of Avraham Avinu", "work": "Bereishis Rabbah", "ref": "Bereishis Rabbah 61:1", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [142, 144, 145], "confidence": 0.75 } },
+    { "heardAs": "the Medrash says that HaKadosh Baruch Hu ... is Mechadosh Chedushim", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [188, 189, 190], "confidence": 0.75 } },
+    { "heardAs": "B'nei Yankov Bechirav", "work": "Tehillim", "ref": "Tehillim 105:6", "sefariaRef": "Psalms 105:6", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [202, 203, 204], "confidence": 0.8 } },
+    { "heardAs": "Vayay Yankov, ki yeshever be Mitzrayim", "work": "Bereishis", "ref": "Bereishis 42:1", "sefariaRef": "Genesis 42:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [211, 212], "confidence": 0.9 } },
+    { "heardAs": "the Tagim Yonason tells us", "work": "Targum Yonasan", "ref": "Targum Yonasan on Bereishis 42:1", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [222, 223, 224], "confidence": 0.8 } },
+    { "heardAs": "Rasha says another pshat", "work": "Rashi", "ref": "Rashi on Bereishis 42:1", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [226, 228, 229], "confidence": 0.85 } },
+    { "heardAs": "Beshivim, nefesh, yodo, avisenu, l'metrayim", "work": "Devarim", "ref": "Devarim 10:22", "sefariaRef": "Deuteronomy 10:22", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [267, 268], "confidence": 0.8 } },
+    { "heardAs": "like we say on Hanukkah bring us our seven shepherds", "work": "Maoz Tzur", "ref": "Maoz Tzur, last stanza", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [303, 304, 305], "confidence": 0.75 } },
+    { "heardAs": "Chazau tell us that Kriyas Yamsuf was divided into 12 paths", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [346, 347, 348], "confidence": 0.85 } },
+    { "heardAs": "V'yatsachayit HaMegaz HaYishayi ... That's in Yeshaya, I believe, Yud Aleph", "work": "Yeshaya", "ref": "Yeshaya 11:1", "sefariaRef": "Isaiah 11:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [359, 360, 361], "confidence": 0.85 } },
+    { "heardAs": "V'hika Hashem Es Nacho Metzchayim ... V'yikohu LeShiv HaNachalim", "work": "Yeshaya", "ref": "Yeshaya 11:15", "sefariaRef": "Isaiah 11:15", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [364, 365, 366], "confidence": 0.8 } },
+    { "heardAs": "Ephraim Oloyikanias Yehuda Yehuda Oloyotzeras Ephraim", "work": "Yeshaya", "ref": "Yeshaya 11:13", "sefariaRef": "Isaiah 11:13", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [385, 386, 390], "confidence": 0.85 } },
+    { "heardAs": "the Toshach and Erech tells us in Hilches has chaydesh", "work": "Shulchan Aruch", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [452, 453, 454], "confidence": 0.65 } },
+    { "heardAs": "in musaf we say we will erect a new ... sing the songs of David in your city", "work": "Siddur", "ref": "Musaf of Rosh Chodesh", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [463, 464, 465, 466], "confidence": 0.75 } },
+    { "heardAs": "Yasef ben Shva'es Cheshana ... HaYaraya", "work": "Bereishis", "ref": "Bereishis 37:2", "sefariaRef": "Genesis 37:2", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [505, 506, 508, 510], "confidence": 0.8 } },
+    { "heardAs": "Misham Raya Eben Yisrael", "work": "Bereishis", "ref": "Bereishis 49:24", "sefariaRef": "Genesis 49:24", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [529, 531, 543], "confidence": 0.85 } },
+    { "heardAs": "Chasha says Eben is a contraction of two words Av Ben", "work": "Rashi", "ref": "Rashi on Bereishis 49:24", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [532, 533, 535, 536], "confidence": 0.85 } },
+    { "heardAs": "called Chakli Yisrael", "work": "Chok LeYisrael", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [555, 560, 562], "confidence": 0.8 } },
+    { "heardAs": "Avraham Zarkin, Baba Yaman", "work": "Bereishis", "ref": "Bereishis 24:1", "sefariaRef": "Genesis 24:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [619, 620, 634], "confidence": 0.85 } },
+    { "heardAs": "And the Gemara picks Eruvitav Shilin", "work": "Gemara Yoma", "ref": "Yoma 28b", "sefariaRef": "Yoma 28b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [660, 661, 662], "confidence": 0.75 } },
+    { "heardAs": "like the Rambam says the reason for the hundred brachis", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [786, 787, 789], "confidence": 0.8 } },
+    { "heardAs": "in the Aftarah Vayay the Yahweh Yisrael worked for his wife", "work": "Hoshea", "ref": "Hoshea 12:13", "sefariaRef": "Hosea 12:13", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [812, 813, 814], "confidence": 0.75 } },
+    { "heardAs": "what the tzaddikim say at night when they get up to lament the destruction", "work": "Tikkun Chatzos", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [825, 826, 827], "confidence": 0.7 } },
+    { "heardAs": "in the end of Gemara Saita Mishan Nittla Tara Nittla Tam Vreiach", "work": "Gemara Sotah", "ref": "Sotah 48a", "sefariaRef": null, "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [905, 906, 907, 908], "confidence": 0.75 } },
+    { "heardAs": "the Gemara says ... the wife of Petifa ... Chazal tell us she changed her clothing", "work": "Gemara Yoma", "ref": "Yoma 35b", "sefariaRef": "Yoma 35b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [1034, 1042, 1050, 1051], "confidence": 0.7 } },
+    { "heardAs": "makes blind people see ... straightens out those who are bent over ... Hashem, I hate Tzadik", "work": "Tehillim", "ref": "Tehillim 146:7-8", "sefariaRef": "Psalms 146:7-8", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [1067, 1071, 1076, 1079], "confidence": 0.75 } },
+    { "heardAs": "One is called Menucha, and one is called Nachala", "work": "Devarim", "ref": "Devarim 12:9", "sefariaRef": null, "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [1096], "confidence": 0.75 } },
+    { "heardAs": "you can eat Kaddishim as long as you see the Mishkan ... Bechal Araya", "work": "Gemara Zevachim", "ref": "Zevachim 118b", "sefariaRef": "Zevachim 118b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [1125, 1126, 1140, 1141], "confidence": 0.75 } },
+    { "heardAs": "it says in the Likuta Taira from the Balatanya ... Melech B'Sada", "work": "Likutei Torah", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1196, 1199, 1200], "confidence": 0.85 } },
+    { "heardAs": "Vayabiyah Mashishi vekinos asher yaviyo", "work": "Shemos", "ref": "Shemos 16:5", "sefariaRef": "Exodus 16:5", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1237, 1238], "confidence": 0.8 } },
+    { "heardAs": "the Gemara says in Ereven HaDudai menasnu reyach", "work": "Gemara Eruvin", "ref": "Eruvin 21b", "sefariaRef": "Eruvin 21b", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [1260, 1261, 1271, 1273], "confidence": 0.8 } },
+    { "heardAs": "the Gemara says in Yom ... a person told me that he was in Shilai and he smelled the rayach of the k'tairis", "work": "Gemara Yoma", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1288, 1289, 1290], "confidence": 0.7 } }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Baal HaTurim's 'zekunim' leaves out Taharos not because Yaakov withheld it but because Yosef, the ro'eh corresponding to Seder Taharos, already knew it by himself; and that is why Yaakov loved him more, since he had less to teach him.",
+        "yi": "דער \"זקונים\" פונעם בעל הטורים לאזט אויס טהרות נישט ווייל יעקב האט עס פארהאלטן, נאר ווייל יוסף, דער רועה כנגד סדר טהרות, האט עס שוין געוואוסט פון זיך אליין; און דערפאר האט יעקב אים מער ליב געהאט, ווייל ער האט אים געדארפט ווייניגער לערנען."
+      },
+      "evidence": { "segs": [709, 710, 716, 739, 740, 743], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "Yosef was not one of the twelve shevatim but one of the seven ro'im, which is why his sons took his place among the shevatim and why the brothers misread his elevated conduct as arrogance.",
+        "yi": "יוסף איז נישט געווען פון די צוועלף שבטים נאר פון די זיבן רועים, דערפאר האבן זיינע קינדער איבערגענומען זיין ארט צווישן די שבטים, און דערפאר האבן די ברידער געמיינט אז זיין העכערע הנהגה איז גאוה."
+      },
+      "evidence": { "segs": [498, 502, 503, 513, 520, 524], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The future split of the sea into seven streams instead of twelve paths marks the elevation of the shevatim from separate branches to the level of the seven ro'im, a level touched already on Shabbos, when the twelve weekday requests give way to one brachah.",
+        "yi": "די קריעה לעתיד אויף זיבן נחלים אנשטאט צוועלף וועגן באצייכנט ווי די שבטים וועלן אויפגעהויבן ווערן פון אפגעטיילטע צווייגן צו דער מדריגה פון די זיבן רועים, א מדריגה וואס מ'רירט שוין אן אום שבת, ווען די צוועלף בקשות פון וואכנטאג ווערן איין ברכה."
+      },
+      "evidence": { "segs": [366, 367, 372, 375, 422, 425], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Because the first contains everything, Avraham, 'ba bayamim', comes with all seven days and knew the whole Torah by instinct, while each later av knew by himself only the order of Mishnah of his own day.",
+        "yi": "ווייל דער ערשטער נעמט ארום אלעס, גייט אברהם, \"בא בימים\", מיט אלע זיבן טעג און האט געוואוסט די גאנצע תורה פון זיך אליין, בשעת יעדער שפעטערדיגער אב האט פון זיך אליין געוואוסט נאר דעם סדר משניות פון זיין טאג."
+      },
+      "evidence": { "segs": [610, 614, 621, 656, 685, 686], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Taharah gives taste and fragrance: Yaakov recognized from the holy fragrance of the produce that came from impure Mitzrayim that Yosef, the embodiment of Seder Taharos, was handling it, which joins Rashi's and Targum Yonasan's readings into one.",
+        "yi": "טהרה גיט טעם און ריח: יעקב האט דערקענט פונעם הייליגן ריח פון די פירות וואס זענען געקומען פונעם טמא'ן מצרים, אז יוסף, דער סדר טהרות אליין, האט זיי באהאנדלט, און אזוי ווערן דער פשט פון רש\"י און פונעם תרגום יונתן איינס."
+      },
+      "evidence": { "segs": [910, 937, 946, 955, 977, 978], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Mishkan Shiloh, Yosef's sanctuary, had a quality Yerushalayim lacked: its holiness reached as far as it could be seen, a merit of Yosef's holy eyes; so Elul is Shiloh and the Ten Days are Yerushalayim.",
+        "yi": "משכן שילה, דער משכן פון יוסף, האט געהאט א מעלה וואס ירושלים האט נישט געהאט: זיין קדושה האט געלאנגט אזוי ווייט ווי מ'האט אים געזען, א זכות פון יוסף'ס הייליגע אויגן; ממילא איז אלול שילה און די עשרת ימי תשובה זענען ירושלים."
+      },
+      "evidence": { "segs": [1117, 1126, 1141, 1142, 1360, 1362], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Elul relates to Rosh Hashanah as Friday to Shabbos and as taharah to kedusha: without the purity of Elul one cannot reach 'HaMelech HaKadosh' of Rosh Hashanah.",
+        "yi": "אלול שטייט צו ראש השנה ווי ערב שבת צו שבת און ווי טהרה צו קדושה: אן דער טהרה פון אלול קען מען נישט צוקומען צו \"המלך הקדוש\" פון ראש השנה."
+      },
+      "evidence": { "segs": [1189, 1192, 1244, 1245, 1251], "confidence": 0.85 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "Yosef and Potiphar's wife", "yi": "יוסף און די ווייב פון פוטיפר" },
+      "retelling": {
+        "en": "The Rav relates from Chazal that Potiphar's wife pressed Yosef not once but for an entire year, changing her clothing several times a day. She threatened to starve him, and he refused. She threatened to blind him, to chain him bent over, and to throw him into prison, which she later did; to each threat he answered with a pasuk that Hashem gives sight to the blind, straightens the bent, and frees prisoners. The reason, the Rav concludes, is that Hashem loves tzaddikim.",
+        "yi": "דער משגיח דערציילט פון חז\"ל אז די ווייב פון פוטיפר האט געמוטשעט יוסף נישט איין מאל נאר א גאנץ יאר, און האט געטוישט אירע קליידער עטליכע מאל א טאג. זי האט געסטראשעט אז זי וועט אים נישט געבן צו עסן, און ער האט זיך נישט געלאזט. זי האט געסטראשעט אים צו בלענדן, אים צו קייטלען אנגעבויגן, און אים צו ווארפן אין תפיסה, וואס זי האט שפעטער טאקע געטון; אויף יעדע סטראשונקע האט ער געענטפערט מיט א פסוק אז דער אויבערשטער מאכט זעענדיג בלינדע, גלייכט אויס די אנגעבויגענע, און באפרייט ארעסטאנטן. דער טעם, ענדיגט דער משגיח, איז ווייל ה' האט ליב צדיקים."
+      },
+      "people": ["Yosef"],
+      "evidence": { "segs": [1042, 1051, 1059, 1065, 1073, 1081], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "If 'zekunim' hints that Yaakov taught Yosef the orders of Mishnah, why does it contain only five of them, leaving out Taharos?",
+        "yi": "אויב \"זקונים\" ווייזט אן אז יעקב האט יוסף געלערנט די סדרים משניות, פארוואס זענען דארט נאר פינף, אן טהרות?"
+      },
+      "answer": {
+        "en": "Yosef, the sixth ro'eh, corresponds to Seder Taharos and knew it by himself, so Yaakov did not need to teach it to him.",
+        "yi": "יוסף, דער זעקסטער רועה, איז כנגד סדר טהרות און האט עס געוואוסט פון זיך אליין, ממילא האט יעקב עס אים נישט געדארפט לערנען."
+      },
+      "questionSegs": [130, 131, 135, 136],
+      "answerSegs": [709, 710, 712, 716, 719],
+      "confidence": 0.85
+    },
+    {
+      "question": {
+        "en": "Avraham knew the whole Torah by instinct; why did Yaakov, the choicest of the avos, need to be taught?",
+        "yi": "אברהם האט געוואוסט די גאנצע תורה פון זיך אליין; פארוואס האט יעקב, דער בחיר שבאבות, געדארפט געלערנט ווערן?"
+      },
+      "answer": {
+        "en": "Avraham, as the first, contains all the days and all the orders; each later av knew by himself only the order of his own day and had to be taught the rest.",
+        "yi": "אברהם, ווייל ער איז דער ערשטער, נעמט ארום אלע טעג און אלע סדרים; יעדער שפעטערדיגער אב האט פון זיך אליין געוואוסט נאר דעם סדר פון זיין טאג, און דאס איבריגע האט מען אים געדארפט לערנען."
+      },
+      "questionSegs": [198, 200, 202, 208],
+      "answerSegs": [610, 614, 656, 685, 686, 689],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "If Yaakov had an intuition that Yosef was in Mitzrayim, why did he sense it only when the produce came?",
+        "yi": "אויב יעקב האט געהאט א הרגש אז יוסף איז אין מצרים, פארוואס האט ער עס דערשפירט ערשט ווען די פירות זענען אנגעקומען?"
+      },
+      "answer": {
+        "en": "The produce Yosef personally handled carried his taharah, a fragrance and taste that Yaakov, sensitive to purity, recognized as coming from Yosef.",
+        "yi": "די פירות וואס יוסף האט אליין באהאנדלט האבן געטראגן זיין טהרה, א ריח און א טעם וואס יעקב, וואס איז געווען שטארק אפגעהיט צו טהרה, האט דערקענט אז עס קומט פון יוסף."
+      },
+      "questionSegs": [242, 245, 246, 248],
+      "answerSegs": [945, 946, 957, 961, 977, 984],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why did Yaakov love Yosef more than all his other children?",
+        "yi": "פארוואס האט יעקב ליב געהאט יוסף מער פון אלע אנדערע קינדער?"
+      },
+      "answer": {
+        "en": "Because he needed to teach Yosef only five orders of Mishnah, whereas the other sons had to be taught everything.",
+        "yi": "ווייל יוסף האט ער געדארפט לערנען נאר פינף סדרים משניות, בשעת די אנדערע ברידער האט ער געדארפט אלעס לערנען."
+      },
+      "questionSegs": [78, 79],
+      "answerSegs": [735, 739, 740, 741, 743],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "What quality did Mishkan Shiloh have that the Beis HaMikdash in Yerushalayim lacked, and why?",
+        "yi": "וואספארא מעלה האט משכן שילה געהאט וואס דער בית המקדש אין ירושלים האט נישט געהאט, און פארוואס?"
+      },
+      "answer": {
+        "en": "At Shiloh kodashim could be eaten anywhere the Mishkan could be seen, while in Yerushalayim only within the walls; this was a merit of Yosef, in whose territory Shiloh stood, for guarding his eyes.",
+        "yi": "ביי שילה האט מען געקענט עסן קדשים וואו נאר מ'האט געזען דעם משכן, און אין ירושלים נאר אינעווייניג אין די מויערן; דאס איז א זכות פון יוסף, אין וועמענס חלק שילה איז געשטאנען, פארן היטן די אויגן."
+      },
+      "questionSegs": [1114, 1116, 1117],
+      "answerSegs": [1126, 1133, 1141, 1142, 1157],
+      "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says one should learn something each day that corresponds to that day's order, as arranged in Chok LeYisrael, not necessarily the whole day.",
+        "yi": "דער משגיח זאגט אז מ'זאל יעדן טאג לערנען עפעס וואס פאסט צום סדר פון יענעם טאג, ווי עס איז אויסגעשטעלט אין חק לישראל, נישט דווקא דעם גאנצן טאג."
+      },
+      "evidence": { "segs": [591, 594, 595, 596], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The Rav urges using Elul, when the King is in the field and anyone can approach Him to ask to be taken back in teshuvah.",
+        "yi": "דער משגיח מוטשעט זיך מען זאל אויסנוצן אלול, ווען דער מלך איז אין פעלד און יעדער קען צוגיין צו אים און בעטן אז ער זאל אים צוריקנעמען בתשובה."
+      },
+      "evidence": { "segs": [1218, 1221, 1226, 1229, 1230], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one who does teshuvah should resolve to be like Yosef, pure and dedicated.",
+        "yi": "דער משגיח זאגט אז ווער עס טוט תשובה זאל באשליסן צו זיין ווי יוסף, ריין און איבערגעגעבן."
+      },
+      "evidence": { "segs": [1282, 1283, 1284, 1285], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one should know the value of the forty days from Rosh Chodesh Elul to Yom Kippur and use them without losing a moment.",
+        "yi": "דער משגיח זאגט אז מ'זאל וויסן די מעלה פון די פערציג טעג פון ראש חודש אלול ביז יום כיפור און זיי אויסנוצן אן פארלירן קיין מינוט."
+      },
+      "evidence": { "segs": [1347, 1349, 1386, 1388, 1392], "confidence": 0.85 }
+    }
+  ],
+  "candidateTopics": [
+    "Elul",
+    "Yosef HaTzaddik",
+    "seven ushpizin",
+    "seven shepherds and the twelve tribes",
+    "six orders of Mishnah",
+    "Seder Taharos",
+    "purity before holiness",
+    "Mishkan Shiloh",
+    "king in the field",
+    "forty days of teshuvah"
+  ],
+  "concepts": [
+    { "he": "רבונו של עולם", "heardAs": ["Rabbi Neshleilam", "Rabbeinu Shleilam", "Rabban Yishraelim", "Rabbi Yisraelim"] },
+    { "he": "אושפיזין", "heardAs": ["yeshpizan", "ishpizim", "Ushpizim", "of Shpizim"] },
+    { "he": "שבעה רועים", "heardAs": ["shivarayim", "Shavarayim", "seven Rayim", "Hayim"] },
+    { "he": "שבטים", "heardAs": ["Shvotim", "Shvartim", "Shvetan", "shvatam"] },
+    { "he": "בן זקונים", "heardAs": ["Ben Zikunim Hulay", "Benzikunim", "Zikunim"] },
+    { "he": "ששה סדרי משנה", "heardAs": ["Shisha Sidrei Mishnah", "Shishasidre Mishnah"] },
+    { "he": "סדר טהרות", "heardAs": ["Taharais", "Tahris", "Tahariz", "Taha'is", "Seder Tahris"] },
+    { "he": "כליות", "heardAs": ["Shtei Kali Yisav", "kleyes"] },
+    { "he": "עירוב תבשילין", "heardAs": ["Erev Tavshilin", "Eruvitav Shilin"] },
+    { "he": "טהרה", "heardAs": ["Tara", "Tahara", "Tahrir"] },
+    { "he": "קדושה", "heardAs": ["Kedush", "Giddush", "Kedusha"] },
+    { "he": "משכן שילה", "heardAs": ["Mishkan Shilai", "Mishkan Shilei", "Shilai"] },
+    { "he": "מלך בשדה", "heardAs": ["Melech B'Sada", "Melech Besada"] },
+    { "he": "תשובה", "heardAs": ["tshurva", "tshuva"] },
+    { "he": "דודאים", "heardAs": ["HaDudai", "Dudaim"] },
+    { "he": "גאוה", "heardAs": ["Gaiva"] },
+    { "he": "אני לדודי ודודי לי", "heardAs": ["Ani L'daydi V'daydi Li"] },
+    { "he": "לחזות בנעם ה'", "heardAs": ["L'achazay b'noi am Hashem", "lachazais benayam Hashem"] }
+  ],
+  "people": [
+    { "name": "Yosef", "heardAs": ["Yaisaf", "Yasef", "Yisuf", "Yaisif", "Yaseif"] },
+    { "name": "Yaakov Avinu", "heardAs": ["Yankev", "Yankov", "Yankiv", "Yain Kav"] },
+    { "name": "Avraham Avinu", "heardAs": ["Avraham Avinu", "Avram Avinu"] },
+    { "name": "Yitzchak", "heardAs": ["Yitzchak", "Yitzhak"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["Mesh Rabbeinu", "Moshe"] },
+    { "name": "Aharon", "heardAs": ["Arein", "Arenda"] },
+    { "name": "David HaMelech", "heardAs": ["David the Melech"] },
+    { "name": "Ephraim", "heardAs": ["Ephraim"] },
+    { "name": "Menashe", "heardAs": ["Menashe"] },
+    { "name": "Shmuel HaNavi", "heardAs": ["Shmuel Hanavi"] },
+    { "name": "Rashi", "heardAs": ["Rasha", "Chasha"] },
+    { "name": "the Baal HaTurim", "heardAs": ["Bala Turim", "Baal HaTurim"] },
+    { "name": "the Arizal", "heardAs": ["Yari HaKadosh", "Riyah Kodesh", "Yiriyah Kaddish", "Viri HaKadosh"] },
+    { "name": "the Rambam", "heardAs": ["Rambam"] },
+    { "name": "the Baal HaTanya", "heardAs": ["Balatanya"] },
+    { "name": "the Baal Shem Tov", "heardAs": ["Bar-Shem Tev"] }
+  ],
+  "asrNotes": "English ASR is fair, but Hebrew terms and quotations are heavily garbled (Ribono shel Olam appears as 'Rabbi Neshleilam' and similar). Several stretches are fragmentary and were left out: the bechor comparison (segs 676-681), how Yitzchak is linked to Moed in Parshas Vayera (791-802), Yaakov's words to Esav (844-849), the Tikkun Chatzos explanation of Yaakov's wives (830-840), and parts of the Tishrei/Rosh Hashanah remarks (1178-1185, 1239-1243, 1376-1382). The Gemara source for smelling the ketores at Shiloh could not be pinned down."
+}

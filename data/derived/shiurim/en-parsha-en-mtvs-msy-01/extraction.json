@@ -1,0 +1,464 @@
+{
+  "shiurId": "en-parsha-en-mtvs-msy-01",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "Through the rare cantillation notes on 'alpayim ba'amah', the Rav shows that the churban of Av is rooted in the geulah of Nissan, and that the scattering of galus and the forgotten neshamos of the gid hanasheh are meant to be gathered back.",
+      "yi": "דורך די זעלטענע טעמים אויף \"אלפים באמה\" ווייזט דער משגיח אז דער חורבן פון אב איז געווארצלט אין דער גאולה פון ניסן, און אז דאס צעשפרייטן אין גלות און די פארגעסענע נשמות פונעם גיד הנשה זענען דא כדי מ'זאל זיי צוריק צונויפנעמען."
+    },
+    "abstract": {
+      "en": "The Rav opens with the calendar's cycle of rising and falling, in which Tammuz and Av belong to Esav. He then asks why the rare cantillation notes karnei parah and yerach ben yomo appear only on 'alpayim ba'amah' in Parshas Masei. Building on the Midrash that the first day of Pesach fixes the day of Tisha B'Av, he shows that churban is rooted in geulah. Av draws from Nissan as Shimon drew from Yehuda; karnei parah, the segmented cow's horn, stands for Av's division, and yerach ben yomo for Nissan, whose every day is as fresh as Rosh Chodesh. The shofar, symbol of ingathering, unites the two. He then explains Yaakov's gift to Esav, the gid hanasheh and Dina's daughter Osnas as lost neshamos that will return, and closes with the strength of Shabbos when Tisha B'Av falls on it.",
+      "yi": "דער משגיח עפנט מיט דעם סדר פון רצוא ושוב אין לוח, וואו תמוז און אב געהערן צו עשו. דערנאך פרעגט ער פארוואס די זעלטענע טעמים קרני פרה און ירח בן יומו קומען נאר אויף די ווערטער \"אלפים באמה\" אין פרשת מסעי. ער ברענגט דעם מדרש אז דער ערשטער טאג פסח באשטימט ווען תשעה באב פאלט, און לערנט ארויס אז דער חורבן איז געווארצלט אין דער גאולה. אב באקומט פון ניסן אזוי ווי שמעון האט באקומען פון יהודה; קרני פרה, דער צעטיילטער הארן פון א קו, איז דער פירוד פון אב, און ירח בן יומו איז ניסן, וואס יעדער טאג דערפון איז פריש ווי ראש חודש. דער שופר, דער סימן פון קיבוץ, פאראייניגט זיי. דערנאך ערקלערט ער די מנחה וואס יעקב האט געשיקט צו עשו, דעם גיד הנשה און אסנת די טאכטער פון דינה, אלס פארלוירענע נשמות וואס וועלן צוריקקומען, און ער שליסט מיט דעם כח פון שבת ווען תשעה באב פאלט אויף שבת."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Because the first day of Pesach determines the day of the week of Tisha B'Av, the Rav concludes that the churban is rooted in the geulah and exists for its sake.",
+          "yi": "ווייל דער ערשטער טאג פסח באשטימט אויף וועלכן טאג אין דער וואך תשעה באב פאלט, לערנט דער משגיח ארויס אז דער חורבן איז געווארצלט אין דער גאולה און איז דא צוליב איר."
+        },
+        "evidence": { "segs": [87, 88, 136, 138, 142], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The month of Av, the month of Shimon, receives its blessing from Nissan, the month of Yehuda, just as Shimon received his portion in Eretz Yisrael from within Yehuda's.",
+          "yi": "חודש אב, דער חודש פון שמעון, באקומט זיין ברכה פון ניסן, דער חודש פון יהודה, אזוי ווי שמעון האט באקומען זיין נחלה פון יהודה'ס חלק."
+        },
+        "evidence": { "segs": [172, 173, 178, 179, 180], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Karnei parah, named for the segmented horn of a cow, represents the division of Av, while yerach ben yomo represents Nissan, whose every day stays as fresh as Rosh Chodesh; the second serves the first and prepares it for the birth of Mashiach.",
+          "yi": "קרני פרה, אויפן נאמען פונעם צעטיילטן הארן פון א קו, איז דער פירוד פון אב, און ירח בן יומו איז ניסן, וואס יעדער טאג דערפון בלייבט פריש ווי ראש חודש; דער ירח בן יומו איז א משרת צום קרני פרה און גרייט אים צו צו דער לידה פון משיח."
+        },
+        "evidence": { "segs": [501, 505, 506, 529, 553, 557], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The scattering of galus, hinted in the note pazer, has the inner purpose of gathering the lost sparks and neshamos from among the nations.",
+          "yi": "דאס צעשפרייטן אין גלות, וואס איז מרומז אינעם טעם פזר, האט א פנימיות'דיגע תכלית: אויפצוקלייבן די פארלוירענע ניצוצות און נשמות פון צווישן די גוים."
+        },
+        "evidence": { "segs": [319, 323, 345, 346, 348, 1036], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The gid hanasheh that Yaakov lost to Esav's angel stands for forgotten Jewish neshamos under Esav's rule, and Tisha B'Av is the day that corresponds to it.",
+          "yi": "דער גיד הנשה וואס יעקב האט פארלוירן צום מלאך פון עשו איז די פארגעסענע אידישע נשמות אונטער עשו'ס שליטה, און תשעה באב איז דער טאג וואס איז קעגן אים."
+        },
+        "evidence": { "segs": [809, 816, 822, 847, 1053, 1054], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "When Tisha B'Av falls on Shabbos, Shabbos pushes it away and hints at the time when the gid hanasheh will be healed and the lost neshamos will return to Yaakov.",
+          "yi": "ווען תשעה באב פאלט אויף שבת, שטופט שבת אים אוועק, און דאס איז א רמז אויף דער צייט ווען דער גיד הנשה וועט ווערן אויסגעהיילט און די פארלוירענע נשמות וועלן זיך אומקערן צו יעקב."
+        },
+        "evidence": { "segs": [1243, 1246, 1249, 1266, 1268], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-parsha-bamidbar-09-01-matos-masei-e",
+      "startSeg": 0,
+      "endSeg": 81,
+      "title": { "en": "The calendar's descent and two rare notes", "yi": "די ירידה אין לוח און צוויי זעלטענע טעמים" },
+      "summary": {
+        "en": "The Rav describes the rise and fall of the calendar year, with Tammuz and Av belonging to Esav and the slide down after Sivan. He then notes that the words 'alpayim ba'amah' in Parshas Masei carry two notes found nowhere else in the Torah, karnei parah and yerach ben yomo, and asks why.",
+        "yi": "דער משגיח שילדערט ווי דאס יאר גייט ארויף און אראפ, מיט תמוז און אב וואס געהערן צו עשו און די ירידה נאך סיון. דערנאך ווייזט ער אן אז אויף \"אלפים באמה\" אין פרשת מסעי שטייען צוויי טעמים וואס געפינען זיך נישט ערגעץ אנדערש אין דער תורה, קרני פרה און ירח בן יומו, און ער פרעגט פארוואס."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-09-01-matos-masei-e",
+      "startSeg": 82,
+      "endSeg": 162,
+      "title": { "en": "Pesach fixes Tisha B'Av: churban rooted in geulah", "yi": "פסח באשטימט תשעה באב: דער חורבן געווארצלט אין גאולה" },
+      "summary": {
+        "en": "The Rav brings the Midrash on Eichah that the first day of Pesach and Tisha B'Av fall on the same weekday, by the order of at-bash, and the Pri Tzaddik that a Pesach on Shabbos is a sign of a good year. He concludes that the churban is rooted in the geulah, as Yocheved was born on the way into Mitzrayim and Mashiach is born on Tisha B'Av.",
+        "yi": "דער משגיח ברענגט דעם מדרש איכה אז דער ערשטער טאג פסח און תשעה באב פאלן אויפן זעלבן טאג אין דער וואך, לויטן סדר פון את\"ב\"ש, און דעם פרי צדיק אז פסח אויף שבת איז א סימן אויף א גוט יאר. ער לערנט ארויס אז דער חורבן איז געווארצלט אין דער גאולה, אזוי ווי יוכבד איז געבוירן געווארן ביים אריינגיין קיין מצרים און משיח ווערט געבוירן תשעה באב."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-09-01-matos-masei-e",
+      "startSeg": 163,
+      "endSeg": 259,
+      "title": { "en": "Av receives from Nissan; the lion and the lamb", "yi": "אב באקומט פון ניסן; דער אריה און דער טלה" },
+      "summary": {
+        "en": "Following the Bnei Yissaschar, the Rav matches the months to the tribes: Av is Shimon's month and Nissan is Yehuda's, and as Shimon's portion and blessing came through Yehuda, Av draws from Nissan. He adds that the mazal of Av, the lion, is rooted in chesed and in the mazal of Nissan, the lamb.",
+        "yi": "לויטן בני יששכר שטעלט דער משגיח צו די חדשים צו די שבטים: אב איז דער חודש פון שמעון און ניסן פון יהודה, און אזוי ווי שמעון'ס נחלה און ברכה איז געקומען דורך יהודה, באקומט אב פון ניסן. ער לייגט צו אז דער מזל פון אב, דער אריה, איז געווארצלט אין חסד און אינעם מזל פון ניסן, דער טלה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-09-01-matos-masei-e",
+      "startSeg": 260,
+      "endSeg": 375,
+      "title": { "en": "The seven pazers: scattering to gather", "yi": "די זיבן פזר'ס: צעשפרייטן כדי צונויפצונעמען" },
+      "summary": {
+        "en": "The Rav speaks of the great Shabbosos of the three weeks and of the seven pazer notes in Parshas Beha'aloscha, read as the year slides down. Pazer means scattering, galus among the nations, but with its milui it equals kibbutz galuyos: the scattering is meant to gather the sparks and lost Jews, and it is answered by the seven haftaros of consolation.",
+        "yi": "דער משגיח רעדט וועגן די גרויסע שבתים פון די דריי וואכן און וועגן די זיבן פזר'ס אין פרשת בהעלותך, וואס מ'ליינט ווען דאס יאר גייט אראפ. פזר מיינט צעשפרייטן, גלות צווישן די גוים, אבער מיטן מילוי איז עס בגימטריא קיבוץ גלויות: דאס צעשפרייטן איז כדי אויפצוקלייבן די ניצוצות און די פארלוירענע אידן, און עס ווערט מתוקן דורך די זיבן הפטרות פון נחמה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-09-01-matos-masei-e",
+      "startSeg": 376,
+      "endSeg": 440,
+      "title": { "en": "Why a cow's horn is no shofar", "yi": "פארוואס א הארן פון א פרה איז נישט קיין שופר" },
+      "summary": {
+        "en": "The Rav brings the Mishnah that every shofar is valid except a cow's, and Abaye's reason that a cow's horn grows in segments and looks like several shofros. He explains that the shofar symbolizes the gathering of all Jews, while the cow's horn is division, like pazer, and so it hints at Av, whose churban came through baseless hatred.",
+        "yi": "דער משגיח ברענגט די משנה אז אלע שופרות זענען כשר חוץ פון א פרה, און אביי'ס טעם אז א הארן פון א פרה וואקסט אין שטיקער און זעט אויס ווי עטליכע שופרות. ער ערקלערט אז דער שופר איז דער סימן פון צונויפקומען פון אלע אידן, און דער הארן פון א פרה איז פירוד, ווי פזר, און דערפאר איז ער מרמז אויף אב, וואס זיין חורבן איז געקומען דורך שנאת חנם."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-09-01-matos-masei-e",
+      "startSeg": 441,
+      "endSeg": 500,
+      "title": { "en": "Masei, the Shelah on Nissan, and 'ben yomo'", "yi": "מסעי, דער של\"ה אויף ניסן, און \"בן יומו\"" },
+      "summary": {
+        "en": "The Rav shows that the first letters of 'Eleh masei bnei Yisrael' hint at the four exiles. He brings the Shelah that every day of Nissan is Rosh Chodesh, and explains the halachic term ben yomo, a vessel that absorbed within the day and is still fresh, calling Nissan a month that never goes stale.",
+        "yi": "דער משגיח ווייזט אז די ראשי תיבות פון \"אלה מסעי בני ישראל\" זענען מרמז אויף די פיר גליות. ער ברענגט דעם של\"ה אז יעדער טאג פון ניסן איז ראש חודש, און ער ערקלערט דעם ענין פון בן יומו אין הלכה, א כלי וואס האט איינגעזאפט היינט און איז נאך פריש, און ער רופט ניסן א חודש וואס ווערט קיינמאל נישט אלט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-09-01-matos-masei-e",
+      "startSeg": 501,
+      "endSeg": 603,
+      "title": { "en": "Yerach ben yomo serves karnei parah", "yi": "ירח בן יומו איז א משרת צום קרני פרה" },
+      "summary": {
+        "en": "The Rav identifies yerach ben yomo with Nissan and karnei parah with Av, and explains that Nissan serves Av, bringing unity into the month of division and preparing it for the birth of Mashiach. The shofar with its milui equals both notes together, and karnei parah equals David Melech Yisrael; this is read on the first Shabbos of Av to strengthen Jews weary of galus.",
+        "yi": "דער משגיח זאגט אז ירח בן יומו איז ניסן און קרני פרה איז אב, און ער ערקלערט אז ניסן איז א משרת צו אב, ער ברענגט אחדות אריין אין דעם חודש פון פירוד און גרייט אים צו צו דער לידה פון משיח. דער שופר מיטן מילוי איז בגימטריא ביידע טעמים צוזאמען, און קרני פרה איז בגימטריא דוד מלך ישראל; דאס ליינט מען דעם ערשטן שבת פון אב כדי צו שטארקן אידן וואס זענען מיד פונעם גלות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-09-01-matos-masei-e",
+      "startSeg": 604,
+      "endSeg": 727,
+      "title": { "en": "The migrash, fresh love, and the vessels of Midian", "yi": "דער מגרש, די פרישע אהבה, און די כלים פון מדין" },
+      "summary": {
+        "en": "The Rav explains that a migrash of two thousand amos is the outskirts where one is driven out, yet it stays within the techum of the city, and that Nissan shows Hashem's love for Klal Yisrael never going stale. He then asks why the Torah required kashering Midian's vessels even when not ben yomo, and answers that Bilam tried to make that love lose its freshness, so Midian's forbidden taste never goes stale.",
+        "yi": "דער משגיח ערקלערט אז א מגרש פון אלפים אמה איז די אויסגעשטויסענע ארום דער שטאט, און פונדעסטוועגן בלייבט עס אינעם תחום פון דער שטאט, און אז ניסן ווייזט אז די אהבה פון הקב\"ה צו כלל ישראל ווערט קיינמאל נישט אלט. דערנאך פרעגט ער פארוואס די תורה האט באפוילן צו כשר'ן די כלים פון מדין אפילו ווען זיי זענען נישט בן יומו, און ער ענטפערט אז בלעם האט געוואלט אז די אהבה זאל פארלירן איר פרישקייט, דערפאר ווערט דער איסור פון מדין קיינמאל נישט אלט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-09-01-matos-masei-e",
+      "startSeg": 728,
+      "endSeg": 790,
+      "title": { "en": "Esav's share in time and Yaakov's gift", "yi": "עשו'ס חלק אין זמן און יעקב'ס מנחה" },
+      "summary": {
+        "en": "After a short interruption, the Rav explains that the journeys exist in time as well as place: the three weeks belong to Esav, and Tisha B'Av is Esav's portion, a day of mourning. He brings Yaakov's gift to Esav and the Midrash that Yaakov's flocks were Jewish neshamos, so the animals that went to Esav stand for neshamos that stray into Esav's domain.",
+        "yi": "נאך א קורצע אפשטעל ערקלערט דער משגיח אז די מסעות זענען סיי אין מקום און סיי אין זמן: די דריי וואכן געהערן צו עשו, און תשעה באב איז עשו'ס חלק, א טאג פון אבילות. ער ברענגט די מנחה וואס יעקב האט געשיקט צו עשו און דעם מדרש אז יעקב'ס שאף זענען געווען אידישע נשמות, ממילא זענען די בהמות וואס זענען אוועק צו עשו די נשמות וואס פארבלאנדזשען אין עשו'ס רשות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-09-01-matos-masei-e",
+      "startSeg": 791,
+      "endSeg": 880,
+      "title": { "en": "The gid hanasheh: forgotten neshamos", "yi": "דער גיד הנשה: פארגעסענע נשמות" },
+      "summary": {
+        "en": "The Rav explains that in the wrestle with Esav's angel Yaakov won but was injured in the thigh, which the seforim read as descendants lost to Esav. Nasheh means forgetting, so the gid hanasheh is the forgotten neshamos, of whom Tziyon says 'Hashem has forgotten me', and he gives a gematria linking those words to Menachem Av.",
+        "yi": "דער משגיח ערקלערט אז ביים ראנגלען זיך מיטן מלאך פון עשו האט יעקב געוואונען, אבער ער איז געשעדיגט געווארן אינעם כף ירך, וואס די ספרים טייטשן אויף קינדער וואס גייען פארלוירן צו עשו. נשה מיינט פארגעסן, ממילא איז דער גיד הנשה די פארגעסענע נשמות, וועגן וועמען ציון זאגט \"וה' שכחני\", און ער ברענגט א גימטריא וואס פארבינדט די ווערטער מיט מנחם אב."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-09-01-matos-masei-e",
+      "startSeg": 881,
+      "endSeg": 969,
+      "title": { "en": "Dina, Shechem and Osnas", "yi": "דינה, שכם און אסנת" },
+      "summary": {
+        "en": "The Rav shows that what happened symbolically with the angel happened in fact in Shechem: Dina was taken, yet Yaakov lost nothing. Dina's daughter Osnas, hidden in a thornbush and brought to Mitzrayim, became Yosef's wife and the mother of Mashiach ben Yosef, so a hidden spark of Mashiach was in Shechem.",
+        "yi": "דער משגיח ווייזט אז דאס וואס איז געשען ברמז מיטן מלאך איז געשען בפועל אין שכם: דינה איז צוגענומען געווארן, און פונדעסטוועגן האט יעקב גארנישט פארלוירן. אסנת, דינה'ס טאכטער, וואס מ'האט באהאלטן אין א סנה און וואס איז געבראכט געווארן קיין מצרים, איז געווארן די ווייב פון יוסף און די מוטער פון משיח בן יוסף, ממילא איז אין שכם געווען א באהאלטענער ניצוץ פון משיח."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-09-01-matos-masei-e",
+      "startSeg": 970,
+      "endSeg": 1112,
+      "title": { "en": "Seven consolations; Tisha B'Av as the gid hanasheh", "yi": "די זיבן נחמות; תשעה באב אלס דער גיד הנשה" },
+      "summary": {
+        "en": "The Rav explains that the seven haftaros of consolation answer the seven pazers and assure Knesses Yisrael it will not be forgotten, since the scattering was meant to add converts and gather the lost. He brings the Zohar that the 365 days match the 365 sinews and Tisha B'Av is the gid hanasheh, and a Midrash reading 'minchah yashivu' as the return of Yaakov's gift to Esav.",
+        "yi": "דער משגיח ערקלערט אז די זיבן הפטרות פון נחמה זענען קעגן די זיבן פזר'ס און זאגן צו כנסת ישראל אז זי וועט נישט ווערן פארגעסן, ווייל דאס צעשפרייטן איז געווען כדי צוצולייגן גרים און אויפצוקלייבן די פארלוירענע. ער ברענגט דעם זוהר אז די שס\"ה טעג זענען קעגן די שס\"ה גידים און תשעה באב איז דער גיד הנשה, און א מדרש וואס טייטשט \"מנחה ישיבו\" אז מ'וועט צוריקגעבן די מנחה וואס יעקב האט געשיקט צו עשו."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-09-01-matos-masei-e",
+      "startSeg": 1113,
+      "endSeg": 1212,
+      "title": { "en": "Shechem's hidden spark and Dina's destiny", "yi": "דער באהאלטענער ניצוץ אין שכם און דינה'ס שליחות" },
+      "summary": {
+        "en": "The Rav says that the Shechem episode had the purpose of pazer, to be scattered in order to bring back, and that Shechem ben Chamor equals in gematria 'haMelech haMashiach ben Yosef'. Dina was meant to be Yosef and was switched, so she was destined from birth to provide Yosef's match. Tisha B'Av, lost to Esav, will return as a festival, as Zechariah says.",
+        "yi": "דער משגיח זאגט אז די מעשה פון שכם האט געהאט די תכלית פון פזר, צעשפרייט ווערן כדי צוריקצוברענגען, און אז שכם בן חמור איז בגימטריא \"המלך המשיח בן יוסף\". דינה האט געדארפט זיין יוסף און מ'האט זיי איבערגעביטן, ממילא איז זי פון געבורט אן באשטימט געווען צו ברענגען דעם זיווג פון יוסף. תשעה באב, וואס איז פארלוירן געגאנגען צו עשו, וועט ווערן א מועד, ווי זכריה זאגט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-09-01-matos-masei-e",
+      "startSeg": 1213,
+      "endSeg": 1307,
+      "title": { "en": "Shabbos Tisha B'Av heals the gid hanasheh", "yi": "שבת תשעה באב היילט דעם גיד הנשה" },
+      "summary": {
+        "en": "The Rav notes that the Shabbos zemiros about Edom end with a passuk of geulah, and explains that eating on Tisha B'Av is like eating the gid hanasheh. When Tisha B'Av falls on Shabbos it hints at the time the gid hanasheh will be healed; so too Yaakov arrived 'shalem', healed, in Shechem, on Shabbos.",
+        "yi": "דער משגיח מערקט אן אז די זמירות פון שבת וועגן אדום ענדיגן זיך מיט א פסוק פון גאולה, און ער ערקלערט אז עסן תשעה באב איז ווי עסן דעם גיד הנשה. ווען תשעה באב פאלט אויף שבת איז דאס א רמז אויף דער צייט ווען דער גיד הנשה וועט ווערן אויסגעהיילט; אזוי אויך איז יעקב אנגעקומען קיין שכם \"שלם\", אויסגעהיילט, אום שבת."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-09-01-matos-masei-e",
+      "startSeg": 1308,
+      "endSeg": 1475,
+      "title": { "en": "We are the lost neshamos; the strength of Shabbos Chazon", "yi": "מיר זענען די פארלוירענע נשמות; דער כח פון שבת חזון" },
+      "summary": {
+        "en": "The Rav says that all of us, even those who keep Shabbos, are lost neshamos compared with earlier generations, and that these weeks are a time to return to Yaakov's flocks with bitachon and emunah. He closes with the moon on Tisha B'Av, the vision of the third Beis HaMikdash on Shabbos Chazon, and the Shabbos that pushes away Esav's angel, ending with the passuk of the consolation of Tziyon.",
+        "yi": "דער משגיח זאגט אז מיר אלע, אפילו די וואס היטן שבת, זענען פארלוירענע נשמות אין פארגלייך צו די פריערדיגע דורות, און אז די וואכן זענען א צייט זיך אומצוקערן צו יעקב'ס סטאדע מיט בטחון און אמונה. ער שליסט מיט דער לבנה אום תשעה באב, מיטן בית המקדש השלישי וואס מ'ווייזט שבת חזון, און מיט דעם שבת וואס שטופט אוועק דעם מלאך פון עשו, און ער ענדיגט מיטן פסוק פון נחמת ציון."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "the Ari HaLaviyyam ... Migrash ... of 2,000 Amas", "work": "Bamidbar", "ref": "Bamidbar 35:5", "sefariaRef": "Numbers 35:5", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [32, 33, 34, 36, 43], "confidence": 0.85 } },
+    { "heardAs": "Kizbiyani bamreirim hirvani la'anah", "work": "Eichah", "ref": "Eichah 3:15", "sefariaRef": "Lamentations 3:15", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [83], "confidence": 0.85 } },
+    { "heardAs": "In the Medrash in Eicha ... ze layel Pesach ... ze Tisha B'ev ... we go with the Atbash", "work": "Eichah Rabbah", "ref": "Eichah Rabbah 3:15", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [82, 84, 85, 96, 97], "confidence": 0.8 } },
+    { "heardAs": "the Pich Tzaddik says", "work": "Pri Tzaddik", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [113, 118, 120], "confidence": 0.75 } },
+    { "heardAs": "the Medrash tells us in the Psech HaTur Eicha is the birth of Mashiach", "work": "Eichah Rabbah", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [159, 160, 161], "confidence": 0.8 } },
+    { "heardAs": "the Bnei Sascha tells us ... Ibn Sassar explains", "work": "Bnei Yissaschar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [163, 165, 166, 178, 179], "confidence": 0.8 } },
+    { "heardAs": "Ki chevo b'nai Shemayim mi chevo b'nai Yehuda", "work": "Yehoshua", "ref": "Yehoshua 19:9", "sefariaRef": "Joshua 19:9", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [172, 173, 177], "confidence": 0.8 } },
+    { "heardAs": "Shema Hashem called Yehuda", "work": "Devarim", "ref": "Devarim 33:7", "sefariaRef": "Deuteronomy 33:7", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [186, 187, 188, 189], "confidence": 0.75 } },
+    { "heardAs": "Zerashah says Shema is on Shemayim", "work": "Rashi", "ref": "Rashi on Devarim 33:7", "sefariaRef": "Rashi on Deuteronomy 33:7", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [190, 191, 192, 193], "confidence": 0.75 } },
+    { "heardAs": "Isaiah HaKadish says, Tebeis and Shvert and Tammuz and Av, they're the Chedashim that belong to Esav", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [13, 293, 294], "confidence": 0.65 } },
+    { "heardAs": "in Parashat Ha'aloischa ... Seven Paseyas ... in one sentence", "work": "Bamidbar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [308, 309, 312], "confidence": 0.75 } },
+    { "heardAs": "that's the Lushan of the Medrash ruach al-ekim ha-ra-chetiz ruach melech ha-mashiach", "work": "Bereishis Rabbah", "ref": "Bereishis Rabbah 2:4", "sefariaRef": null, "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [357, 358, 359], "confidence": 0.75 } },
+    { "heardAs": "the Sedan of Teiris of Yeshaya HaNavi which come after Tishev", "work": "Yeshayahu", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [374, 375], "confidence": 0.7 } },
+    { "heardAs": "Kal Ashaif Chais K'Sheyedim Chut Misho Parah", "work": "Mishnah Rosh Hashanah", "ref": "Mishnah Rosh Hashanah 3:2", "sefariaRef": "Mishnah Rosh Hashanah 3:2", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [376, 377, 378], "confidence": 0.85 } },
+    { "heardAs": "a baya says because the Torah says shayfar ... shayfah echad amarachmana", "work": "Gemara Rosh Hashanah", "ref": "Rosh Hashanah 26a-b", "sefariaRef": null, "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [380, 382, 383, 389, 392], "confidence": 0.8 } },
+    { "heardAs": "if some Shvotam are missing ... you can't have the Yidin ... that's what the Gemara says", "work": "Gemara Arachin", "ref": "Arachin 32b", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [408, 409, 410, 411], "confidence": 0.65 } },
+    { "heardAs": "the Choban ... came because of Sinas Chinam and Machlekes ... like the Demar and Medrashin tell us", "work": "Gemara", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [437, 438], "confidence": 0.75 } },
+    { "heardAs": "El HaMasei Bnei Yisrael's", "work": "Bamidbar", "ref": "Bamidbar 33:1", "sefariaRef": "Numbers 33:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [446, 447, 449], "confidence": 0.75 } },
+    { "heardAs": "the Arba Marchies, the Yarkot Chavayim says", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [446, 448], "confidence": 0.6 } },
+    { "heardAs": "Achaydesh azalachem Reish Chadashi", "work": "Shemos", "ref": "Shemos 12:2", "sefariaRef": "Exodus 12:2", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [457, 467, 468], "confidence": 0.8 } },
+    { "heardAs": "the Shra'a Kaddish says ... the whole Chaydesh Nisim is Reish Chaydesh", "work": "Shelah", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [455, 458, 460, 462, 465], "confidence": 0.8 } },
+    { "heardAs": "like the Ramban says that from the Siman and Mubhat of Mashiach", "work": "Mishneh Torah", "ref": "Rambam, Hilchos Melachim 11:4", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [577, 578, 579, 581], "confidence": 0.65 } },
+    { "heardAs": "in Midyam the Torah says when they came back ... you should kashare keiren", "work": "Bamidbar", "ref": "Bamidbar 31:21-23", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [664, 666, 667, 668], "confidence": 0.75 } },
+    { "heardAs": "Gemara says no you can't learn it out because Giyu Le Midian is a Chiddush", "work": "Gemara", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [672, 675, 676, 677], "confidence": 0.8 } },
+    { "heardAs": "Esheva mizbeiches arachti", "work": "Bamidbar", "ref": "Bamidbar 23:4", "sefariaRef": "Numbers 23:4", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [709, 710], "confidence": 0.8 } },
+    { "heardAs": "even in the Rasha Parshish Berlach", "work": "Rashi", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [704, 705, 706], "confidence": 0.6 } },
+    { "heardAs": "P'yikich menababiyah ben minchali Esav achi", "work": "Bereishis", "ref": "Bereishis 32:14", "sefariaRef": "Genesis 32:14", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [761, 772], "confidence": 0.8 } },
+    { "heardAs": "there were 600,000 sheep by Yankiv Revinu the Medrash tells us", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [766, 768, 769], "confidence": 0.75 } },
+    { "heardAs": "take a tough Yerach Yankov he became limp", "work": "Bereishis", "ref": "Bereishis 32:26", "sefariaRef": "Genesis 32:26", "resolution": "resolved", "mention": "alluded", "evidence": { "segs": [802, 803, 804], "confidence": 0.75 } },
+    { "heardAs": "Alken L'yeichlu B'nei Yisrael Is Gid Hanashe", "work": "Bereishis", "ref": "Bereishis 32:33", "sefariaRef": "Genesis 32:33", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [833, 834], "confidence": 0.8 } },
+    { "heardAs": "nashem means shikha ... ki nashani alaykin", "work": "Bereishis", "ref": "Bereishis 41:51", "sefariaRef": "Genesis 41:51", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [816, 817, 820], "confidence": 0.75 } },
+    { "heardAs": "vatoi matziyan azavani yashem Vashem Shcheichan", "work": "Yeshayahu", "ref": "Yeshayahu 49:14", "sefariaRef": "Isaiah 49:14", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [823, 824, 825, 856], "confidence": 0.85 } },
+    { "heardAs": "the Medrash says it", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [930], "confidence": 0.75 } },
+    { "heardAs": "the Tagim Yonason says it", "work": "Targum Yonasan", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [931], "confidence": 0.75 } },
+    { "heardAs": "the Pirkei Rabbi Alozer says it", "work": "Pirkei d'Rabbi Eliezer", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [932], "confidence": 0.8 } },
+    { "heardAs": "the Gemara said that Eden didn't go among the Geirim only to be Megaya Geirim", "work": "Gemara Pesachim", "ref": "Pesachim 87b", "sefariaRef": "Pesachim 87b", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [1024, 1025, 1026, 1027], "confidence": 0.75 } },
+    { "heardAs": "Tzitkas Pazayim ... The Tzitka of his Pazayim Yisrael", "work": "Shoftim", "ref": "Shoftim 5:11", "sefariaRef": "Judges 5:11", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1030, 1032, 1033], "confidence": 0.7 } },
+    { "heardAs": "in the Zeir HaKadosh it says ... 365 Gidim ... one day which is the Gid Av Noshe that's Tisha Bav", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1047, 1049, 1050, 1053, 1054], "confidence": 0.8 } },
+    { "heardAs": "Mincha Yeshiv ... it doesn't say Mincha Yitznu but Mincha Yeshivu", "work": "Tehillim", "ref": "Tehillim 72:10", "sefariaRef": "Psalms 72:10", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1092, 1095, 1096], "confidence": 0.75 } },
+    { "heardAs": "the Medrash says that a certain Amaretz", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1083, 1084, 1085, 1102], "confidence": 0.7 } },
+    { "heardAs": "the Gemara lands it out from the passage he was supposed to be Yosef", "work": "Gemara Berachos", "ref": "Berachos 60a", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [1160, 1163, 1164], "confidence": 0.65 } },
+    { "heardAs": "the Tagimanias says he was switched", "work": "Targum Yonasan", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1165, 1166, 1167], "confidence": 0.7 } },
+    { "heardAs": "the Nevi Zechariah says Tzai Maravi and Tzai Machamishi ... L'Sasenu L'Simcha L'Mayadam Tadam", "work": "Zechariah", "ref": "Zechariah 8:19", "sefariaRef": "Zechariah 8:19", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1202, 1203, 1204, 1207, 1208], "confidence": 0.85 } },
+    { "heardAs": "Rasha says he was healed from the damage", "work": "Rashi", "ref": "Rashi on Bereishis 33:18", "sefariaRef": "Rashi on Genesis 33:18", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [1273, 1275, 1276, 1277], "confidence": 0.8 } },
+    { "heardAs": "the Gemara says ... he already went to the mitve ... it was Shabbos by him", "work": "Gemara Shabbos", "ref": "Shabbos 33b", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [1280, 1282, 1284], "confidence": 0.65 } },
+    { "heardAs": "like the Tanya says in the Siddur", "work": "Siddur of the Ba'al HaTanya", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1358, 1359, 1360], "confidence": 0.6 } },
+    { "heardAs": "Aviyanoich Eloi Yishkachev", "work": "Yeshayahu", "ref": "Yeshayahu 49:15", "sefariaRef": null, "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [1368, 1369], "confidence": 0.6 } },
+    { "heardAs": "the Balatanya says over from the", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1420, 1421, 1424, 1426], "confidence": 0.7 } },
+    { "heardAs": "K'niichem HaShem Tsi-Yayniichem ... Ch'yemot Z'yivah T'ayda V'ka'yol Zemrach", "work": "Yeshayahu", "ref": "Yeshayahu 51:3", "sefariaRef": "Isaiah 51:3", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1470, 1471, 1473, 1475], "confidence": 0.8 } },
+    { "heardAs": "Bein HaChemez Yechavid was born", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [151, 152, 153], "confidence": 0.75 } }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav reads the rule that the first day of Pesach falls on the weekday of Tisha B'Av as proof that a Jewish churban is never without geulah: it is planted by the geulah and exists to produce it.",
+        "yi": "דער משגיח לערנט פון דעם כלל אז דער ערשטער טאג פסח פאלט אויפן זעלבן טאג אין דער וואך ווי תשעה באב, אז א אידישער חורבן איז קיינמאל נישט אן גאולה: ער איז געפלאנצט דורך דער גאולה און איז דא כדי זי ארויסצוברענגען."
+      },
+      "evidence": { "segs": [136, 138, 141, 143, 144], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "He applies the halachic idea of ben yomo to the calendar: Nissan, every day of which is Rosh Chodesh according to the Shelah, is a 'yerach ben yomo', a month whose freshness never goes stale, mirroring Hashem's love for Klal Yisrael.",
+        "yi": "ער ניצט דעם הלכה'דיגן ענין פון בן יומו אויפן לוח: ניסן, וואס לויטן של\"ה איז יעדער טאג דערפון ראש חודש, איז א \"ירח בן יומו\", א חודש וואס ווערט קיינמאל נישט אלט, אזוי ווי די אהבה פון הקב\"ה צו כלל ישראל."
+      },
+      "evidence": { "segs": [485, 486, 493, 653, 654], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The shofar, the symbol of ingathering, equals with its milui the two notes karnei parah and yerach ben yomo together, showing that it unites the month of division with the month of geulah.",
+        "yi": "דער שופר, דער סימן פון קיבוץ, איז מיטן מילוי בגימטריא ביידע טעמים קרני פרה און ירח בן יומו צוזאמען, א סימן אז ער פאראייניגט דעם חודש פון פירוד מיטן חודש פון גאולה."
+      },
+      "evidence": { "segs": [569, 570, 571, 573], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "He explains that the Torah required kashering the vessels of Midian even when not ben yomo measure for measure: Bilam tried to make Hashem's love for Klal Yisrael lose its freshness, so Midian's forbidden taste never loses its own.",
+        "yi": "ער ערקלערט אז די תורה האט באפוילן צו כשר'ן די כלים פון מדין אפילו ווען זיי זענען נישט בן יומו מדה כנגד מדה: בלעם האט געוואלט אז די אהבה פון הקב\"ה צו כלל ישראל זאל פארלירן איר פרישקייט, דערפאר פארלירט דער איסור פון מדין קיינמאל נישט זיין טעם."
+      },
+      "evidence": { "segs": [710, 712, 713, 714, 722], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Reading nasheh as forgetting, the Rav makes the gid hanasheh the forgotten neshamos that Yaakov lost to Esav, and Tisha B'Av, the gid hanasheh among the days of the year, the day of those souls.",
+        "yi": "דער משגיח טייטשט נשה אויף פארגעסן, און ממילא איז דער גיד הנשה די פארגעסענע נשמות וואס יעקב האט פארלוירן צו עשו, און תשעה באב, דער גיד הנשה צווישן די טעג פון יאר, איז דער טאג פון יענע נשמות."
+      },
+      "evidence": { "segs": [816, 822, 831, 850, 1053, 1054], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Dina was destined from birth to bear Osnas, the wife of Yosef and mother of Mashiach ben Yosef, so that Shechem, which looks like Yaakov's loss, held a hidden spark of Mashiach; Shechem ben Chamor equals 'haMelech haMashiach ben Yosef' in gematria.",
+        "yi": "דינה איז פון געבורט אן באשטימט געווען צו געבוירן אסנת, די ווייב פון יוסף און די מוטער פון משיח בן יוסף, ממילא האט שכם, וואס זעט אויס ווי א שאדן פאר יעקב, באהאלטן א ניצוץ פון משיח; שכם בן חמור איז בגימטריא \"המלך המשיח בן יוסף\"."
+      },
+      "evidence": { "segs": [950, 951, 957, 1122, 1180, 1186], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "When Tisha B'Av falls on Shabbos and is pushed off, eating on that day is like eating the gid hanasheh in holiness, a sign of the time when Yaakov will no longer limp and the lost neshamos return.",
+        "yi": "ווען תשעה באב פאלט אויף שבת און ווערט נדחה, איז דאס עסן אויף יענעם טאג ווי מ'וואלט געגעסן דעם גיד הנשה אין קדושה, א סימן אויף דער צייט ווען יעקב וועט מער נישט הינקען און די פארלוירענע נשמות וועלן זיך אומקערן."
+      },
+      "evidence": { "segs": [1249, 1250, 1263, 1264, 1268], "confidence": 0.75 }
+    }
+  ],
+  "stories": [],
+  "questions": [
+    {
+      "question": { "en": "Why do the notes karnei parah and yerach ben yomo appear only on the words 'alpayim ba'amah'?", "yi": "פארוואס קומען די טעמים קרני פרה און ירח בן יומו נאר אויף די ווערטער \"אלפים באמה\"?" },
+      "answer": { "en": "Karnei parah stands for Av and its division, and yerach ben yomo for Nissan, which serves Av and prepares it for geulah; the passage is read on the first Shabbos of Av to strengthen Jews weary of galus.", "yi": "קרני פרה איז אב מיט זיין פירוד, און ירח בן יומו איז ניסן, וואס איז א משרת צו אב און גרייט אים צו צו דער גאולה; מ'ליינט עס דעם ערשטן שבת פון אב כדי צו שטארקן אידן וואס זענען מיד פונעם גלות." },
+      "questionSegs": [45, 50, 78, 81],
+      "answerSegs": [505, 519, 529, 593, 598],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why is a cow's horn unfit for a shofar?", "yi": "פארוואס איז א הארן פון א פרה פסול פאר א שופר?" },
+      "answer": { "en": "Its segments look like several shofros, while the shofar symbolizes the gathering of all Jews into one; a cow's horn is division.", "yi": "זיינע שטיקער זעען אויס ווי עטליכע שופרות, און דער שופר איז דער סימן פון צונויפקומען פון אלע אידן; א הארן פון א פרה איז פירוד." },
+      "questionSegs": [377, 394],
+      "answerSegs": [385, 387, 401, 403, 417],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why did the Torah require kashering the vessels of Midian even though they were no longer ben yomo?", "yi": "פארוואס האט די תורה באפוילן צו כשר'ן די כלים פון מדין, הגם זיי זענען שוין נישט געווען בן יומו?" },
+      "answer": { "en": "Measure for measure: Bilam tried to make Hashem's love for Klal Yisrael stale, so Midian's forbidden taste never goes stale.", "yi": "מדה כנגד מדה: בלעם האט געוואלט מאכן די אהבה פון הקב\"ה צו כלל ישראל אלט, דערפאר ווערט דער איסור פון מדין קיינמאל נישט אלט." },
+      "questionSegs": [678, 683, 694],
+      "answerSegs": [710, 712, 713, 722],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "Did Yaakov lose anything through what happened to Dina in Shechem?", "yi": "האט יעקב עפעס פארלוירן דורך דעם וואס איז געשען מיט דינה אין שכם?" },
+      "answer": { "en": "No; Dina bore Osnas, who became Yosef's wife and the mother of Mashiach ben Yosef, an antidote to Esav.", "yi": "ניין; דינה האט געבוירן אסנת, וואס איז געווארן די ווייב פון יוסף און די מוטער פון משיח בן יוסף, א רפואה קעגן עשו." },
+      "questionSegs": [902, 903],
+      "answerSegs": [904, 905, 918, 935, 951],
+      "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says these weeks are a time to recover the lost neshamos and to bring ourselves back to Yaakov, as Jews with bitachon and emunah.",
+        "yi": "דער משגיח זאגט אז די וואכן זענען א צייט צוריקצוגעווינען די פארלוירענע נשמות און זיך אליין צוריקצוברענגען צו יעקב, אלס אידן מיט בטחון און אמונה."
+      },
+      "evidence": { "segs": [1342, 1343, 1347, 1351, 1355], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He urges those who know what Shabbos is to use this Shabbos on which Tisha B'Av falls, since it has the power to push away Esav's angel.",
+        "yi": "ער רופט אויף די וואס ווייסן וואס שבת איז, אויסצונוצן דעם שבת אויף וועלכן תשעה באב פאלט, ווייל ער האט די כח אוועקצושטופן דעם מלאך פון עשו."
+      },
+      "evidence": { "segs": [1436, 1438, 1459, 1460, 1466], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "cantillation notes karnei parah and yerach ben yomo",
+    "churban rooted in geulah",
+    "Tisha B'Av on Shabbos",
+    "Nissan and Av",
+    "scattering and ingathering of exiles",
+    "gid hanasheh and forgotten souls",
+    "Dina, Shechem and Mashiach ben Yosef",
+    "shofar and unity",
+    "Parshas Matos-Masei",
+    "the three weeks"
+  ],
+  "concepts": [
+    { "he": "רצוא ושוב", "heardAs": ["Ratsai Vashayid", "Ratsai V'shaiv"] },
+    { "he": "קרני פרה", "heardAs": ["ka'ani p'orah", "Ka'an-e-Para", "Kaanai Parah", "karni param", "Karnei Parah"] },
+    { "he": "ירח בן יומו", "heardAs": ["Yerach Ben Yonman", "Yerach ben Yoymai", "Yavah Ben Yayma", "Yerach ben Yaime"] },
+    { "he": "אלפים באמה", "heardAs": ["Alpayim Ba'amah", "al-tayim", "opayim ba'amah"] },
+    { "he": "פזר", "heardAs": ["Pazir", "Paseya", "Pazaya", "Pazayim"] },
+    { "he": "מילוי", "heardAs": ["Milui", "milu"] },
+    { "he": "קיבוץ גלויות", "heardAs": ["Kibut Golius", "Kibbut"] },
+    { "he": "את\"ב\"ש", "heardAs": ["Atbash", "Adbash"] },
+    { "he": "בן יומו", "heardAs": ["benyayme", "banyanme", "Banyaymei", "ben yaimei"] },
+    { "he": "מגרש", "heardAs": ["Migrash", "migrash"] },
+    { "he": "תחום שבת", "heardAs": ["Tchum Shabbos"] },
+    { "he": "גיד הנשה", "heardAs": ["Gid Hanashe", "gid ha-noshe", "Gid Anoshe", "Gid HaMership"] },
+    { "he": "כף ירך יעקב", "heardAs": ["Kaf Yerach Yankay", "kakaf yerech yankah"] },
+    { "he": "ניצוץ", "heardAs": ["Nitzit", "nitzitz", "Netzoitzis"] },
+    { "he": "משיח בן יוסף", "heardAs": ["Mishiyar ben Yasef", "Mashiach ben Yosef"] },
+    { "he": "שבת חזון", "heardAs": ["Shabbos Chazayim", "Shabbos Chazayin"] },
+    { "he": "חודש מנחם אב", "heardAs": ["Chiyachay Dish Menachem El"] },
+    { "he": "חורבן", "heardAs": ["Chorben", "Chorban", "Choban"] },
+    { "he": "שנאת חנם", "heardAs": ["Sinas Chinam"] },
+    { "he": "פירוד", "heardAs": ["Pirud", "Pirod", "Perut"] }
+  ],
+  "people": [
+    { "name": "Yocheved", "heardAs": ["Yechavid"] },
+    { "name": "Yehuda", "heardAs": ["Yehuda"] },
+    { "name": "Shimon", "heardAs": ["Shemayim", "Shemayi", "Shemim"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["Moshe Rabbeinu"] },
+    { "name": "Rashi", "heardAs": ["Zerashah", "Rasha"] },
+    { "name": "Abaye", "heardAs": ["a baya", "Abayah"] },
+    { "name": "the Shelah", "heardAs": ["the Shra'a Kaddish", "the Shloss"] },
+    { "name": "David HaMelech", "heardAs": ["David HaMelech", "Chiyadavid Malach Yisrael"] },
+    { "name": "Bilam", "heardAs": ["Bilem", "Bilam"] },
+    { "name": "Yaakov Avinu", "heardAs": ["Ya'ankah Bevinu", "Yankiv Revinu", "Yenkev Avinu"] },
+    { "name": "Esav", "heardAs": ["Esav", "Esau", "Asav", "Yisav"] },
+    { "name": "Lavan", "heardAs": ["Lavan"] },
+    { "name": "Dina", "heardAs": ["Dina"] },
+    { "name": "Shechem ben Chamor", "heardAs": ["Shchem ben Chemaya", "Shem ben Hamaya", "Shechem ben Hamayor"] },
+    { "name": "Osnas", "heardAs": ["Osnas", "Asnas"] },
+    { "name": "Yosef", "heardAs": ["Yasef", "Yosef"] },
+    { "name": "the angel Gavriel", "heardAs": ["the Malach Gabriel"] },
+    { "name": "Lot", "heardAs": ["Lloyd"] },
+    { "name": "Zechariah", "heardAs": ["the Nevi Zechariah"] },
+    { "name": "the Ba'al HaTanya", "heardAs": ["the Balatanya"] }
+  ],
+  "asrNotes": "English ASR is fair for the Rav's English but Hebrew terms and quotations are heavily garbled; most were recovered from context (e.g. 'Ka'an-e-Para' = karnei parah, 'Yerach Ben Yonman' = yerach ben yomo). Several gematriyos (segs 199-212 on Tisha B'Av, 324 and 564-570 on the milui) are only partly audible, and the source the Rav cites for the greatness of the three weeks' Shabbosos (segs 259-266) could not be identified. Segs 728-733 contain an interruption; segs 1371-1381 and 1392-1419 (on the 21 days and the moon) are too fragmentary to reconstruct in detail. The single catalog topic is the whole shiur's theme and is assigned to the sections that state it."
+}

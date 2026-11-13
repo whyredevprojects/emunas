@@ -1,0 +1,806 @@
+{
+  "shiurId": "en-parsha-en-msy-03",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that every Jew, like every shidduch, is drawn back to his origin in Eretz Yisrael, and that the Bnei Machir and the daughters of Tzelafchad, the family that held Gilad, carry the law of return that Eliyahu will announce at the final redemption.",
+      "yi": "דער משגיח ערקלערט אז יעדער איד, אזוי ווי יעדער שידוך, ציט זיך צוריק צו זיין שורש אין ארץ ישראל, און אז די בני מכיר און בנות צלפחד, די משפחה וואס האט באקומען דעם גלעד, טראגן אין זיך דעם כח פון יובל, פון צוריקקערן, וואס אליהו הנביא וועט מבשר זיין ביי דער גאולה."
+    },
+    "abstract": {
+      "en": "The Rav asks why Moshe, in Sefer Devarim, retells that he gave Gilad to Machir, something the people saw only months before. He links three episodes about the family of Machir: their conquest of Gilad, the daughters of Tzelafchad's request for a nachalah, and the complaint of the Bnei Machir that ends Bamidbar. The daughters waited forty years for a fitting match and are praised, while Nadav and Avihu are criticized for the same; the Rav explains through the principle that everything is drawn to its origin: the isha to the ish, Adam to the earth of the mizbeach and Eretz Yisrael. Once the daughters received a nachalah they were joined to their root and found their shidduch at once. Gilad, the land of Eliyahu HaGiladi, is the place of Yovel, the law of return, which only Rachel's children could conquer. He ends that Shabbos Chazon is a Shabbos of hope and a great eis ratzon.",
+      "yi": "דער משגיח פרעגט פארוואס משה רבינו דערציילט אין ספר דברים אז ער האט געגעבן דעם גלעד צו מכיר, א זאך וואס דאס פאלק האט געזען ערשט מיט עטליכע חדשים פריער. ער פארבינדט דריי מעשיות פון דער משפחה פון מכיר: זייער כיבוש פונעם גלעד, די בקשה פון די בנות צלפחד אויף א נחלה, און די טענה פון די בני מכיר אין סוף ספר במדבר. די בנות צלפחד האבן געווארט פערציג יאר אויף א פאסיגן שידוך און חז\"ל לויבן זיי, כאטש נדב ואביהוא ווערן דערויף קריטיקירט. דער משגיח איז מסביר מיטן כלל אז יעדע זאך ציט זיך צו איר שורש: די אשה צום איש, דער אדם צו דער אדמה פונעם מקום המזבח און ארץ ישראל. ווי באלד די בנות צלפחד האבן באקומען א נחלה, זענען זיי מחובר געווארן צו זייער שורש און תיכף געפונען זייער שידוך. דער גלעד, דאס ארט פון אליהו הגלעדי, איז דאס ארט פון יובל, פון צוריקקערן, און נאר די קינדער פון רחל האבן אים געקענט איינעמען. צום סוף זאגט ער אז שבת חזון איז א שבת פון האפענונג און א גרויסע עת רצון."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Everything is drawn back to its origin: the isha to the ish she came from, and Adam to the earth of the mizbeach from which he was formed.",
+          "yi": "יעדע זאך ציט זיך צוריק צו איר שורש: די אשה צום איש פון וועמען זי איז גענומען געווארן, און דער אדם צו דער אדמה פונעם מזבח פון וואו ער איז באשאפן געווארן."
+        },
+        "evidence": { "segs": [153, 178, 179, 207, 216], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The Rav explains that a person with a pure heart can rely on the inclination of his heart in choosing a shidduch, because it draws him to his true match.",
+          "yi": "דער משגיח ערקלערט אז א מענטש מיט א ריין הארץ קען זיך פארלאזן אויף זיין נטיית הלב ביים אויסקלייבן א שידוך, ווייל דאס ציט אים צו זיין אמת'ן זיווג."
+        },
+        "evidence": { "segs": [143, 146, 240, 241, 243], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The daughters of Tzelafchad found their shidduch only after they received a nachalah, because that joined them to Eretz Yisrael, the root of their root.",
+          "yi": "די בנות צלפחד האבן געפונען זייער שידוך ערשט נאכדעם וואס זיי האבן באקומען א נחלה, ווייל דאס האט זיי מחבר געווען צו ארץ ישראל, דער שורש פון זייער שורש."
+        },
+        "evidence": { "segs": [296, 298, 310, 311, 315], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Yovel is the law of return, and Eliyahu HaNavi, who lived in Gilad, is the one who will announce the great return of Klal Yisrael.",
+          "yi": "יובל איז דער כלל פון צוריקקערן, און אליהו הנביא, וואס האט געוואוינט אין גלעד, וועט מבשר זיין די גרויסע תשובה און צוריקקער פון כלל ישראל."
+        },
+        "evidence": { "segs": [555, 569, 570, 584, 589], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Gilad, the land of return, could be conquered only by Rachel's children, which is why Moshe left it for the Bnei Machir of Menashe.",
+          "yi": "דער גלעד, דאס לאנד פון צוריקקערן, האבן נאר די קינדער פון רחל געקענט איינעמען, דערפאר האט משה רבינו עס איבערגעלאזט פאר די בני מכיר פון שבט מנשה."
+        },
+        "evidence": { "segs": [683, 684, 687, 692, 697], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Shabbos Chazon is not only a Shabbos of sorrow; the Rav calls it a Shabbos of hope, when the heart can see the third Beis HaMikdash, and a great eis ratzon.",
+          "yi": "שבת חזון איז נישט נאר א שבת פון טרויער; דער משגיח רופט עס א שבת פון האפענונג, ווען דאס הארץ קען זען דעם בית השלישי, און א גרויסע עת רצון."
+        },
+        "evidence": { "segs": [722, 743, 758, 765, 929], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-parsha-bamidbar-09-03-masei-e",
+      "startSeg": 0,
+      "endSeg": 26,
+      "title": { "en": "Why Moshe retells recent events", "yi": "פארוואס משה רבינו דערציילט פריש געשעענישן" },
+      "summary": {
+        "en": "The Rav opens with Moshe's recounting to the new generation at the start of Sefer Devarim, and asks what purpose there is in telling them about the war with Sichon and Og and the giving of Gilad, events that happened only five or six months earlier.",
+        "yi": "דער משגיח עפנט מיט משה רבינו'ס דערציילונג צום נייעם דור אינעם אנהייב ספר דברים, און ער פרעגט וואס איז דער תכלית צו דערציילן פון דער מלחמה מיט סיחון ועוג און פונעם געבן דעם גלעד, זאכן וואס זענען געשען ערשט מיט פינף זעקס חדשים פריער."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-09-03-masei-e",
+      "startSeg": 27,
+      "endSeg": 58,
+      "title": { "en": "The complaint of the Bnei Machir", "yi": "די טענה פון די בני מכיר" },
+      "summary": {
+        "en": "The Rav describes the complaint at the end of Bamidbar: the family of Machir feared that the daughters of Tzelafchad would marry into another shevet and their nachalah would pass out of Menashe, and Moshe tells them they are right. He notes this is the third episode involving this family, after Gilad and the daughters' own request for a nachalah.",
+        "yi": "דער משגיח שילדערט די טענה אין סוף ספר במדבר: די משפחה פון מכיר האט מורא געהאט אז די בנות צלפחד וועלן חתונה האבן אין אן אנדער שבט און זייער נחלה וועט ארויסגיין פון שבט מנשה, און משה רבינו זאגט אז זיי זענען גערעכט. ער מערקט אן אז דאס איז שוין די דריטע מעשה מיט דער משפחה, נאכן גלעד און נאך די בקשה פון די בנות צלפחד."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-09-03-masei-e",
+      "startSeg": 59,
+      "endSeg": 105,
+      "title": { "en": "Waiting forty years: praised or criticized?", "yi": "פערציג יאר ווארטן: א שבח אדער א חסרון?" },
+      "summary": {
+        "en": "The Rav ties the three episodes together and brings the Midrash that the daughters of Tzelafchad waited forty years for a fitting match and are praised for it. He contrasts this with Chazal's criticism of Nadav and Avihu for not marrying because no one was good enough, and asks how the two fit together.",
+        "yi": "דער משגיח בינדט צוזאם די דריי מעשיות און ברענגט דעם מדרש אז די בנות צלפחד האבן געווארט פערציג יאר אויף א פאסיגן שידוך און ווערן דערויף געלויבט. דאקעגן ברענגט ער אז חז\"ל קריטיקירן נדב ואביהוא וואס האבן נישט חתונה געהאט ווייל קיינער איז נישט געווען גוט גענוג פאר זיי, און ער פרעגט ווי אזוי דאס גייט צוזאמען."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-09-03-masei-e",
+      "startSeg": 106,
+      "endSeg": 150,
+      "title": { "en": "The match under their nose; the heart decides", "yi": "דער שידוך פאר די אויגן; דאס הארץ באשטימט" },
+      "summary": {
+        "en": "The Rav points out that the daughters finally married their own cousins, who lived nearby all along, and insists nothing happens by chance. He brings a letter answering someone torn between two shidduchim: no one today can decide for him, but Hashem guides through the inclination of the heart.",
+        "yi": "דער משגיח ווייזט אן אז די בנות צלפחד האבן צום סוף חתונה געהאט מיט זייערע אייגענע שוועסטערקינדער, וואס האבן די גאנצע צייט געוואוינט נעבן זיי, און ער שטעלט אוועק אז גארנישט געשעט נישט צופעליג. ער ברענגט א בריוו צו איינעם וואס האט געהאט צוויי שידוכים: היינט קען קיינער נישט באשליסן פאר אים, נאר דער אויבערשטער פירט דורך נטיית הלב."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-09-03-masei-e",
+      "startSeg": 151,
+      "endSeg": 244,
+      "title": { "en": "Everything is drawn to its origin", "yi": "יעדע זאך ציט זיך צו איר שורש" },
+      "summary": {
+        "en": "The Rav asks why the heart should decide a shidduch and answers with the law that everything is drawn to its origin, contrasting the Torah's view with Newton's gravity. The isha comes from the ish, and Adam from the earth of the mizbeach, so a match is a reunion; this explains the Gemara that the mizbeach weeps over one who divorces his first wife, and why one should follow a pure heart.",
+        "yi": "דער משגיח פרעגט פארוואס דאס הארץ זאל באשטימען א שידוך, און ענטפערט מיטן כלל אז יעדע זאך ציט זיך צו איר שורש, נישט ווי ניוטאן'ס גראוויטאציע. די אשה קומט פונעם איש און דער אדם פון דער אדמה פונעם מזבח, ממילא איז א שידוך א צוריקפאראייניגונג; דערמיט איז ער מסביר די גמרא אז דער מזבח וויינט אויף איינעם וואס גט'ט זיין ערשטע ווייב, און פארוואס מ'קען גיין נאך א ריין הארץ."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-09-03-masei-e",
+      "startSeg": 245,
+      "endSeg": 354,
+      "title": { "en": "Eretz Yisrael, the root of the root", "yi": "ארץ ישראל, דער שורש פונעם שורש" },
+      "summary": {
+        "en": "The Rav explains that every Jew belongs to Eretz Yisrael and must return there, and that one cut off from his wife is cut off from Eretz Yisrael too, as hinted in the first Mishnah of Gittin. The daughters of Tzelafchad, as tzidkaniyos, relied on their heart, which drew them to no one until their nachalah tied them to Eretz Yisrael; then their shidduch appeared. The parsha read before Chodesh Av repairs the sin of the meraglim, who did not long for the eretz chemdah.",
+        "yi": "דער משגיח ערקלערט אז יעדער איד געהערט צו ארץ ישראל און מוז דארטן צוריקקומען, און אז ווער עס איז אפגעשניטן פון זיין ווייב איז אויך אפגעשניטן פון ארץ ישראל, ווי די ערשטע משנה אין גיטין ווייזט. די בנות צלפחד, וואס זענען געווען צדקניות, האבן זיך פארלאזט אויף זייער הארץ, און עס האט זיי צו קיינעם נישט געצויגן ביז זייער נחלה האט זיי פארבינדן מיט ארץ ישראל; דעמאלט האט זיך באוויזן זייער שידוך. די פרשה וואס מ'לייענט פאר ראש חודש אב איז א תיקון פאר דעם חטא המרגלים, וואס האבן נישט געבענקט נאך דער ארץ חמדה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-09-03-masei-e",
+      "startSeg": 355,
+      "endSeg": 419,
+      "title": { "en": "Why Moshe did not take Gilad", "yi": "פארוואס משה רבינו האט נישט איינגענומען דעם גלעד" },
+      "summary": {
+        "en": "The Rav returns to the Bnei Machir, who went to Gilad and drove out the Emori there. He explains that Amon and Moav were off-limits, and Moshe could take their former land only because Sichon had conquered it, and asks why Moshe stopped short of Gilad and left it for the Bnei Machir.",
+        "yi": "דער משגיח קומט צוריק צו די בני מכיר, וואס זענען געגאנגען צום גלעד און פארטריבן דעם אמורי וואס איז דארט געווען. ער ערקלערט אז מ'האט נישט געטארט מלחמה האלטן מיט עמון און מואב, און משה רבינו האט געקענט נעמען זייער געוועזענע לאנד נאר ווייל סיחון האט עס איינגענומען, און ער פרעגט פארוואס משה רבינו האט זיך אפגעשטעלט פארן גלעד און עס איבערגעלאזט פאר די בני מכיר."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-09-03-masei-e",
+      "startSeg": 420,
+      "endSeg": 476,
+      "title": { "en": "Kiryas Sefer and the forgotten halachos", "yi": "קרית ספר און די פארגעסענע הלכות" },
+      "summary": {
+        "en": "The Rav brings Kalev's promise to whoever would conquer Kiryas Sefer, and the Gemara in Temurah that Osniel ben Kenaz restored the three thousand halachos forgotten in the days of mourning for Moshe. He cites an explanation that the Torah is written into the land of Eretz Yisrael, so that conquering a piece of land gave Osniel a connection to the halachos hidden in it.",
+        "yi": "דער משגיח ברענגט כלב'ס הבטחה צו דעם וואס וועט איינעמען קרית ספר, און די גמרא אין תמורה אז עתניאל בן קנז האט צוריקגעבראכט די דריי טויזנט הלכות וואס זענען פארגעסן געווארן אין די ימי אבלו של משה. ער ברענגט א פשט אז די תורה איז איינגעשריבן אין דער ערד פון ארץ ישראל, און דורכן כיבוש פון א שטיק לאנד האט עתניאל באקומען א שייכות צו די הלכות וואס זענען דארט באהאלטן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-09-03-masei-e",
+      "startSeg": 477,
+      "endSeg": 563,
+      "title": { "en": "Gilad and Yovel, the law of return", "yi": "דער גלעד און יובל, דער כלל פון צוריקקערן" },
+      "summary": {
+        "en": "The Rav proposes that Gilad is connected to the parsha of Yovel, the law of return. Land in Eretz Yisrael that is bought returns to its owner, because it belongs to his neshamah; the eved who took a shifchah that is not his goes free at Yovel. Every Jew, wherever he is, will return to Yerushalayim and the place of the mizbeach, and he cites the Arizal that even very sinful souls will eventually return.",
+        "yi": "דער משגיח לייגט פאר אז דער גלעד איז פארבונדן מיט דער פרשה פון יובל, דער כלל פון צוריקקערן. א פעלד אין ארץ ישראל וואס מ'קויפט גייט צוריק צום בעל הבית, ווייל עס געהערט צו זיין נשמה; דער עבד וואס האט גענומען א שפחה וואס איז נישט זיינע גייט ארויס אין יובל. יעדער איד, וואו ער זאל נישט זיין, וועט צוריקקומען קיין ירושלים צום מקום המזבח, און ער ברענגט פונעם אריז\"ל אז אפילו זייער זינדיגע נשמות וועלן צום סוף צוריקקערן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-09-03-masei-e",
+      "startSeg": 564,
+      "endSeg": 611,
+      "title": { "en": "Eliyahu HaGiladi, herald of the return", "yi": "אליהו הגלעדי, דער מבשר פון צוריקקער" },
+      "summary": {
+        "en": "The Rav explains that Eliyahu HaNavi is the herald of Yovel who will return children to parents and Klal Yisrael to Hashem and to Eretz Yisrael, and that Yovel and teshuvah are one. Eliyahu chose to live in Gilad, the land of Yovel, and brought the people back to Hashem at Har HaCarmel. He then asks why Moshe did not fight Amalek himself.",
+        "yi": "דער משגיח ערקלערט אז אליהו הנביא איז דער מבשר פון יובל, וואס וועט צוריקברענגען קינדער צו עלטערן און כלל ישראל צום אויבערשטן און קיין ארץ ישראל, און אז יובל און תשובה איז איין זאך. אליהו האט אויסגעקליבן צו וואוינען אין גלעד, דאס לאנד פון יובל, און ער האט צוריקגעברענגט די אידן צום אויבערשטן ביים הר הכרמל. דערנאך פרעגט ער פארוואס משה רבינו האט אליין נישט מלחמה געהאלטן מיט עמלק."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-09-03-masei-e",
+      "startSeg": 612,
+      "endSeg": 720,
+      "title": { "en": "Rachel's children, Amalek and Gilad", "yi": "די קינדער פון רחל, עמלק און דער גלעד" },
+      "summary": {
+        "en": "The Rav brings the Arizal that only Rachel's children can overcome Amalek, so Moshe, from Levi, sent Yehoshua. Purim will not be nullified because Amalek was never fully erased; that will come with Mashiach. Rachel is the neshamah of return, as the navi promises her that her children will return, and therefore only her children, Menashe's family of Machir, could conquer Gilad, the land of return that Moshe left over.",
+        "yi": "דער משגיח ברענגט פונעם אריז\"ל אז נאר די קינדער פון רחל קענען באזיגן עמלק, דערפאר האט משה רבינו, פון שבט לוי, געשיקט יהושע. פורים וועט נישט בטל ווערן ווייל מ'האט נאך קיינמאל נישט אינגאנצן אויסגעמעקט עמלק; דאס וועט זיין ביי משיח. רחל איז די נשמה פון צוריקקערן, ווי דער נביא זאגט איר צו אז אירע קינדער וועלן צוריקקומען, ממילא האבן נאר אירע קינדער, די משפחה פון מכיר פון שבט מנשה, געקענט איינעמען דעם גלעד, דאס לאנד פון צוריקקערן וואס משה רבינו האט איבערגעלאזט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-09-03-masei-e",
+      "startSeg": 721,
+      "endSeg": 773,
+      "title": { "en": "Shabbos Chazon: a Shabbos of hope", "yi": "שבת חזון: א שבת פון האפענונג" },
+      "summary": {
+        "en": "The Rav teaches that Shabbos Chazon is not what it seems on the surface: beyond the sorrow, it is the Shabbos before what Tisha B'Av is meant to become, the greatest moed. He brings that on Shabbos Chazon Hashem shows each Jew the third Beis HaMikdash, each according to how much he felt the mourning for Yerushalayim, and that the heart can see.",
+        "yi": "דער משגיח לערנט אז שבת חזון איז נישט וואס עס זעט אויס פון אויבן: אויסער דעם טרויער איז עס דער שבת פאר דעם וואס תשעה באב דארף ווערן, דער גרעסטער מועד. ער ברענגט אז אום שבת חזון ווייזט דער אויבערשטער יעדן איד דעם בית השלישי, יעדער לויט ווי שטארק ער האט געפילט דעם אבילות פון ירושלים, און אז דאס הארץ קען זען."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-09-03-masei-e",
+      "startSeg": 774,
+      "endSeg": 852,
+      "title": { "en": "Sefer Devarim: Torah for the seventy exiles", "yi": "ספר דברים: תורה פאר די זיבעציג גלותן" },
+      "summary": {
+        "en": "The Rav explains that Sefer Devarim, begun on this Shabbos, is a book of return rather than separation. He asks why Moshe explained the Torah in seventy languages a month before his passing, and, through the wagons Yosef sent, connects the number seventy to galus. Moshe prepared the people for the seventieth, lowest level of galus by bringing the Torah down into every language, so that it would go down with them as a comfort.",
+        "yi": "דער משגיח ערקלערט אז ספר דברים, וואס מ'הייבט אן אום דעם שבת, איז א ספר פון צוריקקערן און נישט פון אפטיילונג. ער פרעגט פארוואס משה רבינו האט מבאר געווען די תורה אין זיבעציג לשונות א חודש פאר זיין פטירה, און דורך די עגלות וואס יוסף האט געשיקט פארבינדט ער דעם צאל זיבעציג מיט גלות. משה רבינו האט צוגעגרייט דאס פאלק פאר דער זיבעציגסטער, נידריגסטער מדרגה פון גלות דורכן אראפברענגען די תורה אין יעדע לשון, כדי זי זאל מיט זיי אראפגיין ווי א נחמה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-09-03-masei-e",
+      "startSeg": 853,
+      "endSeg": 903,
+      "title": { "en": "Machir and Gilad: the answer", "yi": "מכיר און גלעד: דער תירוץ" },
+      "summary": {
+        "en": "The Rav answers his opening question: Moshe retold that he gave Gilad to Machir as a comfort, because Machir and Gilad stand for return and redemption at the end of galus, where Eliyahu HaGiladi will emerge. This is why only the Bnei Machir complained that a nachalah must not leave its shevet, and why the daughters of Tzelafchad married into Machir and received Gilad.",
+        "yi": "דער משגיח ענטפערט זיין ערשטע קשיא: משה רבינו האט איבערגעחזר'ט אז ער האט געגעבן דעם גלעד צו מכיר אלס א נחמה, ווייל מכיר און גלעד באדייטן צוריקקערן און גאולה אין סוף פונעם גלות, וואו אליהו הגלעדי וועט ארויסקומען. דערפאר האבן נאר די בני מכיר טענה'ט אז א נחלה טאר נישט ארויסגיין פון איר שבט, און דערפאר האבן די בנות צלפחד חתונה געהאט אין משפחת מכיר און באקומען דעם גלעד."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-09-03-masei-e",
+      "startSeg": 904,
+      "endSeg": 954,
+      "title": { "en": "The great eis ratzon of Shabbos Chazon", "yi": "די גרויסע עת רצון פון שבת חזון" },
+      "summary": {
+        "en": "The Rav explains why Shabbos afternoon is a great eis ratzon even though the afternoon is otherwise a time of din, and says that Shabbos Chazon, amid the days of din, is entirely one great eis ratzon. He urges using every moment of it and closes with a brachah that Tisha B'Av turn to joy.",
+        "yi": "דער משגיח ערקלערט פארוואס שבת נאכמיטאג איז א גרויסע עת רצון כאטש נאכמיטאג איז אנדערש א צייט פון דין, און זאגט אז שבת חזון, אינמיטן די טעג פון דין, איז אינגאנצן איין גרויסע עת רצון. ער מאנט מ'זאל אויסנוצן יעדן מאמענט דערפון, און ענדיגט מיט א ברכה אז תשעה באב זאל ווערן א שמחה."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "Udo Merchir Nesati Yessay Gilad",
+      "work": "Devarim",
+      "ref": "Devarim 3:15",
+      "sefariaRef": "Deuteronomy 3:15",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [63, 64, 857], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Nakhla Le'Vnei Yisrael Mimata El-Mata",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 36:7",
+      "sefariaRef": "Numbers 36:7",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [40, 41, 68], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Kain ben Naish Tzalat Khad Daibas",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 27:7",
+      "sefariaRef": "Numbers 27:7",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [50, 53, 54], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "batiyana machna siyata v'chagla nilke v'noya levnei d'dayim l'noshin",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 36:11",
+      "sefariaRef": "Numbers 36:11",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [73, 74, 323, 325], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the Madrush ... they waited 40 years",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [76, 77, 82], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "there's another Gemara by Nata Benadihu",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [89, 93, 98], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "we have a letter, a reply to somebody who asked",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [139, 141, 143], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "Be Yitzher Hashem HaBekim Es HaOdom Offa Min Ho Adama",
+      "work": "Bereishis",
+      "ref": "Bereishis 2:7",
+      "sefariaRef": "Genesis 2:7",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [187, 212], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "why is the Aisha called the Aisha because she comes from the Aisha",
+      "work": "Bereishis",
+      "ref": "Bereishis 2:23",
+      "sefariaRef": "Genesis 2:23",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [182, 183, 186], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "as the Pasek says in Gaelas that everything goes back",
+      "work": "Koheles",
+      "ref": "Koheles 12:7",
+      "sefariaRef": "Ecclesiastes 12:7",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [176, 177], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "In the Makayim HaMuzbeit, like Chazal tells us, Rashi brings it in Breshes",
+      "work": "Rashi on Bereishis",
+      "ref": "Rashi, Bereishis 2:7",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [211, 213, 216], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Mizvach Adama Tassali",
+      "work": "Shemos",
+      "ref": "Shemos 20:21",
+      "sefariaRef": "Exodus 20:21",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [215, 269], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Whoever is buried, whoever is ligbar, that is Yisrael, k'ilu nik v'al tachas ha-Mizbaych",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [223, 224], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "a piece of grammar at the end of Gita ... the Mizbeach beeps",
+      "work": "Gemara Gittin",
+      "ref": "Gittin 90b",
+      "sefariaRef": "Gittin 90b",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [226, 227, 228, 234], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the first Mishnah of Geetan, Hameyli Ged me Medina Sayyam",
+      "work": "Mishnah Gittin",
+      "ref": "Mishnah Gittin 1:1",
+      "sefariaRef": "Mishnah Gittin 1:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [264, 265, 266], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Malamed, the Gemara says, Malamed tzaddik tzaddkaniyyes",
+      "work": "Gemara Bava Basra",
+      "ref": "Bava Basra 119b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [278, 279], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "El HaMitzvah HaMishpat MaShetir HaShem",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 36:13",
+      "sefariaRef": "Numbers 36:13",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [339, 340], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Atatzer Asmaev ... and you can't touch Amayin",
+      "work": "Devarim",
+      "ref": "Devarim 2:9, 2:19",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [377, 378, 382], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "B'yayruchu B'nei G'adah, B'nei M'achir, B'nei Menashe Gil'adah, B'yayruch Asher Ramayim",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 32:39",
+      "sefariaRef": "Numbers 32:39",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [398, 702], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "The Gospel of Yeshua tells us ... Kir Yaseifah",
+      "work": "Yehoshua",
+      "ref": "Yehoshua 15:15-17",
+      "sefariaRef": "Joshua 15:15-17",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [420, 426, 428], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the G'meerah tells us in Tmura",
+      "work": "Gemara Temurah",
+      "ref": "Temurah 16a",
+      "sefariaRef": "Temurah 16a",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [429, 430, 434, 435], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Levush Yisrael, the Avi Nachal explained it this way",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [446, 447, 474], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "The Ariya Kaddish said",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [557, 558, 559], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "children will return to the parents, parents to the children",
+      "work": "Malachi",
+      "ref": "Malachi 3:24",
+      "sefariaRef": "Malachi 3:24",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [569, 571], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "Ishaqtem Isha'la Chuzasa / Yish al-Mishpah",
+      "work": "Vayikra",
+      "ref": "Vayikra 25:10",
+      "sefariaRef": "Leviticus 25:10",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [585, 586, 591, 700], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Elia HaGivadi. He lived in Gilem.",
+      "work": "Melachim",
+      "ref": "Melachim I 17:1",
+      "sefariaRef": "I Kings 17:1",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [588, 589], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Hashem Hu HaAleikim ... At the heart of Kalmel",
+      "work": "Melachim",
+      "ref": "Melachim I 18:39",
+      "sefariaRef": "I Kings 18:39",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [597, 598, 599], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "So the Riyah Kaddish answer is ... that's what the Eriah Kaddik says",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [612, 615, 619], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Rambam brings a disciple of his Purim ... all the entitlements will become Batim",
+      "work": "Rambam",
+      "ref": "Rambam, Hilchos Megillah 2:18",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [620, 621, 624, 627], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "Bishavu Banim L'gvurah",
+      "work": "Yirmiyahu",
+      "ref": "Yirmiyahu 31:14-16",
+      "sefariaRef": "Jeremiah 31:14-16",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [669, 672, 674], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Chazayin Yishayiru",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 1:1",
+      "sefariaRef": "Isaiah 1:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [728, 729], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Shabbosim of the three weeks are the biggest Shabbosim in the year",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [748, 749, 751], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "the Yitzhak Batit Shavah says that on every Shabbos Chalzayim",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [757, 758, 759], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "Li Baira Yisrael, Li Bira Ha Bichat",
+      "work": "Koheles",
+      "ref": "Koheles 1:16",
+      "sefariaRef": "Ecclesiastes 1:16",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [768, 769, 770], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "Ha'yo Maishya Be'yeirah ... Sarashya said Be'yeirah means B'Shibim Lashim",
+      "work": "Rashi on Devarim",
+      "ref": "Rashi, Devarim 1:5",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [789, 790, 791, 792], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "a very interesting Psalter ... in Parashas Vayigash ... the Sam Saifah says",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [795, 797, 798], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "the Zayah says, the Hagiyah Kurdish explains",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [914, 915, 918], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "Sayyam HaRaviv, Sayyam HaMishih, Iyil HaBais Yehudah for sasana wa simcha",
+      "work": "Zechariah",
+      "ref": "Zechariah 8:19",
+      "sefariaRef": "Zechariah 8:19",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [952, 953, 954], "confidence": 0.8 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav reads the law of gravity as the Torah's principle that everything returns to its origin: earth falls to the earth, fire rises to its source, and the neshamah rises to where it came from.",
+        "yi": "דער משגיח טייטשט אפ דעם כח המשיכה ווי דעם כלל אין תורה אז יעדע זאך גייט צוריק צו איר שורש: עפר פאלט צו דער ערד, פייער הייבט זיך צו זיין מקור, און די נשמה גייט ארויף צו פון וואו זי איז געקומען."
+      },
+      "evidence": { "segs": [161, 172, 173, 174, 178], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "A shidduch has two origins: the isha's origin in the ish, and the origin of that origin, Adam's in the earth of the mizbeach. Therefore one cut off from his wife is cut off from Eretz Yisrael, which the Rav sees in the first Mishnah of Gittin speaking of a get from outside the land.",
+        "yi": "א שידוך האט צוויי שורשים: דער שורש פון דער אשה אינעם איש, און דער שורש פונעם שורש, דער אדם אין דער אדמה פונעם מזבח. ממילא, ווער עס איז אפגעשניטן פון זיין ווייב איז אפגעשניטן פון ארץ ישראל, און דאס זעט דער משגיח אין דער ערשטער משנה אין גיטין וואס רעדט פון א גט פון מדינת הים."
+      },
+      "evidence": { "segs": [187, 263, 265, 267, 268], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The difference between the daughters of Tzelafchad and Nadav and Avihu: the daughters were tzidkaniyos whose heart was a true magnet; it drew them to no one because their match was tied to a nachalah not yet given, and the moment it was given they married their nearby cousins without being choosy.",
+        "yi": "דער חילוק צווישן די בנות צלפחד און נדב ואביהוא: די בנות צלפחד זענען געווען צדקניות און זייער הארץ איז געווען אן אמת'ער מאגנעט; עס האט זיי צו קיינעם נישט געצויגן ווייל זייער זיווג איז געווען פארבונדן מיט א נחלה וואס איז נאך נישט געגעבן געווארן, און ווי באלד זי איז געגעבן געווארן האבן זיי חתונה געהאט מיט די נאענטע שוועסטערקינדער אן קיין אויסקלייבן."
+      },
+      "evidence": { "segs": [279, 281, 288, 296, 311], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Land in Eretz Yisrael returns at Yovel because a field is bound to its owner's neshamah and his portion of Torah; what was bought belongs to someone else's neshamah and must go back to its origin.",
+        "yi": "א פעלד אין ארץ ישראל גייט צוריק אין יובל ווייל עס איז פארבונדן מיט דער נשמה פונעם בעל הבית און מיט זיין חלק אין תורה; וואס מ'האט געקויפט געהערט צו א צווייטנס נשמה און מוז צוריקגיין צו זיין שורש."
+      },
+      "evidence": { "segs": [492, 494, 507, 509, 512], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Gilad is the land of return: Eliyahu, herald of the final Yovel, chose to live there, and like Amalek it could be conquered only by Rachel's children, the neshamah of return, which is why Moshe left it for Machir.",
+        "yi": "דער גלעד איז דאס לאנד פון צוריקקערן: אליהו, דער מבשר פונעם לעצטן יובל, האט דארט אויסגעקליבן צו וואוינען, און אזוי ווי עמלק האבן אים נאר געקענט איינעמען די קינדער פון רחל, די נשמה פון צוריקקערן, דערפאר האט משה רבינו אים איבערגעלאזט פאר מכיר."
+      },
+      "evidence": { "segs": [589, 590, 665, 683, 697], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Moshe's explaining the Torah in seventy languages prepared the people for the seventy levels of galus, so that the Torah would reach down with them into the lowest one.",
+        "yi": "וואס משה רבינו האט מבאר געווען די תורה אין זיבעציג לשונות האט צוגעגרייט דאס פאלק פאר די זיבעציג מדרגות פון גלות, אז די תורה זאל מיט זיי אראפגיין ביז דער נידריגסטער."
+      },
+      "evidence": { "segs": [811, 816, 842, 843, 850], "confidence": 0.75 }
+    }
+  ],
+  "stories": [],
+  "questions": [
+    {
+      "question": {
+        "en": "Why does Moshe in Devarim retell that he gave Gilad to Machir, something the people knew from only months earlier?",
+        "yi": "פארוואס דערציילט משה רבינו אין ספר דברים אז ער האט געגעבן דעם גלעד צו מכיר, א זאך וואס דאס פאלק האט געוואוסט פון ערשט מיט עטליכע חדשים פריער?"
+      },
+      "answer": {
+        "en": "Because Machir and Gilad stand for the return at the end of galus; Moshe retold it as a comfort for the depths of galus, where Eliyahu HaGiladi will emerge.",
+        "yi": "ווייל מכיר און גלעד באדייטן דעם צוריקקער אין סוף פונעם גלות; משה רבינו האט עס איבערגעזאגט אלס א נחמה פאר די טיפענישן פונעם גלות, וואו אליהו הגלעדי וועט ארויסקומען."
+      },
+      "questionSegs": [14, 19, 25],
+      "answerSegs": [855, 857, 860, 867],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why are the daughters of Tzelafchad praised for waiting for a fitting match, while Nadav and Avihu are criticized for the same?",
+        "yi": "פארוואס ווערן די בנות צלפחד געלויבט וואס זיי האבן געווארט אויף א פאסיגן שידוך, און נדב ואביהוא ווערן קריטיקירט פאר דער זעלבער זאך?"
+      },
+      "answer": {
+        "en": "The daughters were tzidkaniyos who could rely on the inclination of their heart, and it did not draw them to anyone until their nachalah joined them to their root.",
+        "yi": "די בנות צלפחד זענען געווען צדקניות וואס האבן זיך געקענט פארלאזן אויף זייער נטיית הלב, און עס האט זיי צו קיינעם נישט געצויגן ביז זייער נחלה האט זיי מחבר געווען צו זייער שורש."
+      },
+      "questionSegs": [99, 100, 101],
+      "answerSegs": [278, 280, 281, 286],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why, after forty years, did the daughters suddenly find their match in their own cousins?",
+        "yi": "פארוואס האבן די בנות צלפחד נאך פערציג יאר פלוצלינג געפונען זייער שידוך ביי זייערע אייגענע שוועסטערקינדער?"
+      },
+      "answer": {
+        "en": "Once Moshe said they would receive a nachalah, they were joined to Eretz Yisrael, the root of their root, and so they were joined to their chassanim.",
+        "yi": "ווי באלד משה רבינו האט געזאגט אז זיי באקומען א נחלה, זענען זיי מחובר געווארן צו ארץ ישראל, דער שורש פון זייער שורש, און ממילא זענען זיי מחובר געווארן צו זייערע חתנים."
+      },
+      "questionSegs": [122, 123, 134],
+      "answerSegs": [302, 307, 310, 311, 316],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why should the heart be the deciding factor in a shidduch?",
+        "yi": "פארוואס זאל דאס הארץ זיין דער באשטימער ביי א שידוך?"
+      },
+      "answer": {
+        "en": "Because everything is drawn to its origin, and a pure heart draws a person to the match that was once one with him.",
+        "yi": "ווייל יעדע זאך ציט זיך צו איר שורש, און א ריין הארץ ציט דעם מענטש צו דעם זיווג וואס איז אמאל געווען איינס מיט אים."
+      },
+      "questionSegs": [151],
+      "answerSegs": [153, 194, 241, 243],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why did Moshe not conquer Gilad himself but leave it to the Bnei Machir?",
+        "yi": "פארוואס האט משה רבינו נישט אליין איינגענומען דעם גלעד, נאר עס איבערגעלאזט פאר די בני מכיר?"
+      },
+      "answer": {
+        "en": "Gilad is the place of Yovel, which belongs to Rachel's children; like Amalek, only they could conquer it, and Machir of Menashe descends from Rachel.",
+        "yi": "דער גלעד איז דאס ארט פון יובל, וואס געהערט צו די קינדער פון רחל; אזוי ווי ביי עמלק האבן נאר זיי אים געקענט איינעמען, און מכיר פון שבט מנשה שטאמט פון רחל."
+      },
+      "questionSegs": [407, 410, 416],
+      "answerSegs": [683, 687, 691, 692, 696],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why were only the Bnei Machir the ones to complain that a nachalah must not pass to another shevet?",
+        "yi": "פארוואס זענען דווקא די בני מכיר געקומען טענה'ן אז א נחלה טאר נישט אריבערגיין צו אן אנדער שבט?"
+      },
+      "answer": {
+        "en": "They were neshamos of Yovel, of return, and could not bear that a nachalah be cut off from its origin.",
+        "yi": "זיי זענען געווען נשמות פון יובל, פון צוריקקערן, און זיי האבן נישט געקענט צוזען אז א נחלה זאל אפגעשניטן ווערן פון איר שורש."
+      },
+      "questionSegs": [879, 880],
+      "answerSegs": [881, 882, 883, 884],
+      "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says that a person choosing between two shidduchim should not toss a coin but follow the inclination of a pure heart.",
+        "yi": "דער משגיח זאגט אז א מענטש וואס דארף אויסקלייבן צווישן צוויי שידוכים זאל נישט ווארפן א גורל, נאר גיין נאך דער נטיית הלב פון א ריין הארץ."
+      },
+      "evidence": { "segs": [239, 240, 241, 242], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one should approach Shabbos Chazon with hope, not only as the Shabbos before a day of sorrow.",
+        "yi": "דער משגיח זאגט אז מ'זאל צוגיין צו שבת חזון מיט האפענונג, נישט נאר ווי דער שבת פאר א טאג פון טרויער."
+      },
+      "evidence": { "segs": [741, 743, 745], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav urges using every moment of Shabbos Chazon as the most precious Shabbos of the year and not letting any of it go to waste.",
+        "yi": "דער משגיח מאנט אז מ'זאל אויסנוצן יעדן מאמענט פון שבת חזון ווי דעם טייערסטן שבת פונעם יאר, און נישט לאזן אז עפעס דערפון זאל פארלוירן גיין."
+      },
+      "evidence": { "segs": [942, 943, 944, 945], "confidence": 0.85 }
+    }
+  ],
+  "candidateTopics": [
+    "bnos tzelafchad",
+    "bnei machir and gilad",
+    "shidduchim and the inclination of the heart",
+    "everything returns to its origin",
+    "connection to eretz yisrael",
+    "yovel as the law of return",
+    "eliyahu hanavi",
+    "rachel and amalek",
+    "shabbos chazon",
+    "sefer devarim and galus"
+  ],
+  "concepts": [
+    { "he": "נטיית הלב", "heardAs": ["Nityat Halim", "Netiyah Saleh", "Messias Halei", "letiyah sallay", "Netia Salei"] },
+    { "he": "שורש", "heardAs": ["shayrush", "shayrish", "Dishayrash", "shairachan"] },
+    { "he": "מקום המזבח", "heardAs": ["Makayim HaMuzbeit", "Makim HaMezbeyech", "Maqam HaMizbe'yach"] },
+    { "he": "נחלה", "heardAs": ["nachelah", "Nakhla", "nachlet", "Nachle"] },
+    { "he": "יובל", "heardAs": ["Yairu", "Yaveru", "Yaebul", "Ya'ivel", "Yaival", "Yomel", "Ya'evot"] },
+    { "he": "שידוך", "heardAs": ["Shiddah", "shiddakh", "Shiddurfs", "shitha"] },
+    { "he": "ארץ חמדה", "heardAs": ["Yeretz Chemda", "Eretz Chemda"] },
+    { "he": "שבת חזון", "heardAs": ["Shabbos Chazayim", "Shabbos Chazayin", "Shabbat Chazayim", "Shabbos Chalzayim"] },
+    { "he": "בית השלישי", "heardAs": ["Bayit Shalishi", "Bayis Shlish", "Abayis HaShlishi"] },
+    { "he": "עת רצון", "heardAs": ["Eseretim", "aissorateng", "Eisrat"] },
+    { "he": "מחיית עמלק", "heardAs": ["Mechiyah Samolech", "Michiyah HaMolek", "Mechiyah Samalim"] },
+    { "he": "צדקניות", "heardAs": ["tzaddik tzadkaniyyes", "tzaddkaniyyes"] },
+    { "he": "עבד עברי", "heardAs": ["Edward", "Ebed"] },
+    { "he": "שפחה כנענית", "heardAs": ["shifter", "shifta"] },
+    { "he": "קנין", "heardAs": ["Kenyan"] },
+    { "he": "אחוזה", "heardAs": ["Achuzah", "Chuzasa"] }
+  ],
+  "people": [
+    { "name": "Moshe Rabbeinu", "heardAs": ["Maisha Abel", "Meshwabana", "Maish Rabbeinu", "Mesh Rabbeinu", "B'yash Rabbeinu"] },
+    { "name": "Machir", "heardAs": ["Machia", "Mafia", "Merchir", "Macha", "Machal"] },
+    { "name": "Tzelafchad", "heardAs": ["Salafchad", "Tzalat Khad", "Slovchid", "Tzalaftah", "Selector"] },
+    { "name": "Machlah, Noa, Choglah, Milkah and Tirtzah", "heardAs": ["machna siyata v'chagla nilke v'noya"] },
+    { "name": "Menashe", "heardAs": ["Menashe", "Menah"] },
+    { "name": "Nadav and Avihu", "heardAs": ["Nata Benadihu", "Nadab and Avil", "Nadav and Aviyyuh"] },
+    { "name": "Adam HaRishon", "heardAs": ["Adam Elisha", "Adam A'isham", "Aldamrishan", "Odom HaRishon"] },
+    { "name": "Chava", "heardAs": ["Chava", "Chavah"] },
+    { "name": "Newton", "heardAs": ["Newton"] },
+    { "name": "Rashi", "heardAs": ["Rashi", "Sarashya"] },
+    { "name": "Sichon", "heardAs": ["Sihayin", "Sichek", "Sichel Melech Amayri", "Siphon"] },
+    { "name": "Og", "heardAs": ["Ra'i", "Ayk", "Naik"] },
+    { "name": "Kalev", "heardAs": ["Kalev"] },
+    { "name": "Osniel ben Kenaz", "heardAs": ["Niyo Ben Knaz", "Neel Ben Knaz", "Asnil Ben Knaz"] },
+    { "name": "Yehoshua", "heardAs": ["Yehshua", "Yahshua", "Yeshua"] },
+    { "name": "Eliyahu HaNavi", "heardAs": ["Elie Ha'anavi", "Eliel An-Nabi", "Elia HaGivadi", "Eliyahu HaGeladi", "Nehri HaNavi"] },
+    { "name": "Achav", "heardAs": ["Achav"] },
+    { "name": "the Arizal", "heardAs": ["Ariya Kaddish", "Riyah Kaddish", "Eriah Kaddik"] },
+    { "name": "the Rambam", "heardAs": ["Rambam"] },
+    { "name": "Rachel", "heardAs": ["Rachel", "Raqqa", "Rahayah", "Rache"] },
+    { "name": "Shaul", "heardAs": ["Sha'um"] },
+    { "name": "Mordechai", "heardAs": ["Moabachai", "Marthei"] },
+    { "name": "Yosef", "heardAs": ["Yosef"] },
+    { "name": "Yaakov Avinu", "heardAs": ["Yankam Avinu"] }
+  ],
+  "asrNotes": "English ASR is fair in the Rav's English but Hebrew terms, names and quotations are heavily garbled (Machir as 'Mafia', Yovel as 'Yairu', Tzelafchad as 'Selector', Moshe as 'Maisha Abel'). The author of the shidduch letter (seg 139-141), the sefer cited for the Kiryas Sefer explanation ('Avi Nachal', seg 446), the source for the Shabbosim of the three weeks (seg 748-751), the source on the wagons in Vayigash (seg 795-798) and the gematrios at seg 703-708 and 903 could not be recovered. The opening lines (seg 0-2, 10-12) are garbled; only short [NOISE?] fragments occur (seg 259, 737, 756, 873-877)."
+}

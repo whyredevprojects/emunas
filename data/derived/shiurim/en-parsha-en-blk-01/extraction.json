@@ -1,0 +1,878 @@
+{
+  "shiurId": "en-parsha-en-blk-01",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav shows how Parshas Balak, read before Shiva Asar B'Tammuz, carries the seed of Mashiach, and how the month of Tammuz, which lost its place like Reuven, will be transformed from bitterness to the highest joy.",
+      "yi": "דער משגיח ווייזט אן אז פרשת בלק, וואס מ'לייענט פאר שבעה עשר בתמוז, טראגט אין זיך דעם זריעה פון משיח, און אז חודש תמוז, וואס האט פארלוירן זיין ארט אזוי ווי ראובן, וועט זיך איבערדרייען פון ביטערקייט צו די גרעסטע שמחה."
+    },
+    "abstract": {
+      "en": "The Rav reads the Rambam's uncensored halachos of Mashiach, stressing that one must not only believe in Mashiach but long for him, and that Bilaam's prophecy in Balak foretells him. Since Shabbos holds the blessings of the coming week, Shabbos Balak carries the potential for the three weeks from Shiva Asar B'Tammuz to become days of joy. He explains why Tammuz is a month of strict judgment, linking it to Korach's machlokes. Following the Arizal, Korach meant well: he sought the world of tikkun, where the Leviim will be Kohanim. Dasan and Aviram, from Reuven, sought the return of the firstborn's priesthood. Tammuz corresponds to Reuven, who fell from first to fourth, so Tammuz fell too. Against the Ohr HaChaim, the Rema MiPano gives Dasan and Aviram a tikkun, which means Tammuz will be rectified. Balak himself held the seed of Mashiach, and Yiftach, the rejected 'Tammuz soul', holds the keys to the redemption.",
+      "yi": "דער משגיח לערנט דעם רמב\"ם אין הלכות מלכים (די נישט-צענזורירטע נוסחא) וועגן משיח, און באטאנט אז מ'דארף נישט נאר גלייבן אין משיח נאר אויך ווארטן און בענקען אויף אים, און אז די נבואה פון בלעם אין פרשת בלק רעדט פון משיח. ווייל שבת האלט אין זיך די ברכות פון דער גאנצער וואך, האט שבת פרשת בלק דעם כח אז די דריי וואכן פון שבעה עשר בתמוז זאלן ווערן טעג פון שמחה. ער ערקלערט פארוואס תמוז איז א חודש פון מדת הדין, און פארבינדט עס מיט דער מחלוקת פון קרח. לויט דעם אריז\"ל האט קרח געמיינט לשם שמים: ער האט געוואלט ברענגען דעם עולם התיקון, וואו די לוים וועלן זיין כהנים. דתן ואבירם, פון שבט ראובן, האבן געוואלט צוריקברענגען די כהונה פון די בכורים. תמוז איז קעגן ראובן, וואס איז אראפגעפאלן פון ערשטן צום פערטן, און אזוי איז תמוז אויך געפאלן. קעגן דעם אור החיים ברענגט ער דעם רמ\"ע מפאנו אז דתן ואבירם האבן א תיקון, און דאס מיינט אז תמוז וועט האבן א תיקון. בלק אליין האט געטראגן דעם זריעה פון משיח, און יפתח, די פארשטויסענע נשמה פון תמוז, האלט די שליסלען צו דער גאולה."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "According to the Rambam as the Rav reads him, belief in Mashiach includes longing for his coming; one who is not eager for it does not truly believe.",
+          "yi": "לויט דעם רמב\"ם, אזוי ווי דער משגיח לערנט אים, געהערט צו אמונה אין משיח אויך דאס ווארטן אויף זיין קומען; ווער עס בענקט נישט, גלייבט נישט באמת."
+        },
+        "evidence": { "segs": [55, 56, 69, 71, 85, 86], "confidence": 0.9 }
+      },
+      {
+        "text": {
+          "en": "Shabbos Balak holds the blessing of the week of Shiva Asar B'Tammuz: the potential for the three weeks to become days of Mashiach's coming.",
+          "yi": "שבת פרשת בלק האלט אין זיך די ברכה פון דער וואך פון שבעה עשר בתמוז: דעם כח אז די דריי וואכן זאלן ווערן טעג פון ביאת המשיח."
+        },
+        "evidence": { "segs": [205, 210, 232, 241, 246, 250], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Korach, and in part Dasan and Aviram, argued in order to bring the world of tikkun at once, where the Leviim and the firstborn will again be the Kohanim.",
+          "yi": "קרח, און אין א געוויסער מאס אויך דתן ואבירם, האבן זיך געקריגט כדי צו ברענגען גלייך דעם עולם התיקון, וואו די לוים און די בכורים וועלן ווידער זיין די כהנים."
+        },
+        "evidence": { "segs": [581, 591, 604, 631, 742, 762], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Tammuz corresponds to Reuven: as Reuven fell from first to fourth through his sin, Tammuz fell from first to a month of destruction, and it will be restored to the top.",
+          "yi": "תמוז איז קעגן ראובן: אזוי ווי ראובן איז דורך זיין חטא אראפגעפאלן פון ערשטן צום פערטן, אזוי איז תמוז געפאלן צו א חודש פון חורבן, און ער וועט צוריקקומען אויבנאן."
+        },
+        "evidence": { "segs": [883, 887, 901, 902, 911, 914], "confidence": 0.9 }
+      },
+      {
+        "text": {
+          "en": "The blessings of Parshas Balak are blessings transformed from curses, and from Balak himself came Ruth and the seed of Mashiach.",
+          "yi": "די ברכות פון פרשת בלק זענען ברכות וואס זענען איבערגעדרייט געווארן פון קללות, און פון בלק אליין איז ארויסגעקומען רות און דער זריעה פון משיח."
+        },
+        "evidence": { "segs": [1255, 1258, 1272, 1285, 1286, 1288], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Yiftach, rejected and driven out, represents the 'Tammuz souls' who hold the keys to reopen the gates of the redemption.",
+          "yi": "יפתח, וואס מ'האט פארשטויסן און פארטריבן, שטעלט מיט די נשמות פון תמוז וואס האלטן די שליסלען צו עפענען די טויערן פון דער גאולה."
+        },
+        "evidence": { "segs": [1531, 1546, 1549, 1551, 1579], "confidence": 0.85 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-parsha-bamidbar-07-01-balak-e",
+      "startSeg": 0,
+      "endSeg": 58,
+      "title": { "en": "Yerushalayim and the Rambam on Mashiach", "yi": "ירושלים און דער רמב\"ם וועגן משיח" },
+      "summary": {
+        "en": "The Rav speaks of the special merit of learning and davening in Yerushalayim, then opens an uncensored Rambam and translates the beginning of the last chapter of Hilchos Melachim: Mashiach will restore the kingdom of David, and whoever does not await him denies the Torah itself.",
+        "yi": "דער משגיח רעדט פון דער גרויסער זכות צו לערנען און דאווענען אין ירושלים, דערנאך עפנט ער א נישט-צענזורירטן רמב\"ם און טייטשט דעם אנהייב פונעם לעצטן פרק פון הלכות מלכים: משיח וועט צוריקשטעלן די מלכות בית דוד, און ווער עס ווארט נישט אויף אים איז כופר אין דער תורה אליין."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-07-01-balak-e",
+      "startSeg": 59,
+      "endSeg": 153,
+      "title": { "en": "Believing in Mashiach and longing for him", "yi": "גלייבן אין משיח און ווארטן אויף אים" },
+      "summary": {
+        "en": "The Rav asks how one can be commanded to long for Mashiach, and answers that there is no reason not to: Mashiach brings even material good, so one who is not eager simply does not believe. He shows that the Torah itself, in Nitzavim, promises the ingathering.",
+        "yi": "דער משגיח פרעגט ווי אזוי קען מען באפעלן א מענטש צו בענקען נאך משיח, און ענטפערט אז ס'איז נישטא קיין סיבה נישט צו בענקען: משיח ברענגט אפילו גשמיות'דיגע גוטס, ממילא ווער עס ווארט נישט גלייבט נישט. ער ווייזט אז די תורה אליין, אין פרשת נצבים, זאגט צו דעם קיבוץ גליות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-07-01-balak-e",
+      "startSeg": 154,
+      "endSeg": 299,
+      "title": { "en": "Bilaam's prophecy and the bitter month of Tammuz", "yi": "די נבואה פון בלעם און דער ביטערער חודש תמוז" },
+      "summary": {
+        "en": "The Rav reads Bilaam's prophecy of the two Meshichim, David and the final Mashiach. Since Shabbos holds the blessings of the week, Shabbos Balak carries the potential for the three weeks to become days of Mashiach's birth; he then explains why Tammuz is a month of complete strict judgment.",
+        "yi": "דער משגיח לערנט די נבואה פון בלעם וועגן די צוויי משיחים, דוד המלך און דער לעצטער משיח. ווייל שבת האלט די ברכות פון דער וואך, טראגט שבת פרשת בלק דעם כח אז די דריי וואכן זאלן ווערן טעג פון דער געבורט פון משיח; דערנאך ערקלערט ער פארוואס תמוז איז א חודש פון גאנץ מדת הדין."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-07-01-balak-e",
+      "startSeg": 300,
+      "endSeg": 421,
+      "title": { "en": "Korach, machlokes and the Churban", "yi": "קרח, מחלוקת און דער חורבן" },
+      "summary": {
+        "en": "Parshas Korach, read at the start of Tammuz, is about machlokes, which destroyed the second Beis HaMikdash through Kamtza and Bar Kamtza. The Rav brings the Midrash that Korach rose again from Gehinnom and the Arizal that he was a tzaddik who argued with good intentions, though he should not have.",
+        "yi": "פרשת קרח, וואס מ'לייענט ביים אנהייב תמוז, רעדט פון מחלוקת, וואס האט חרוב געמאכט דעם בית שני דורך דער מעשה פון קמצא ובר קמצא. דער משגיח ברענגט דעם מדרש אז קרח איז ארויפגעקומען פון גיהנום, און דעם אריז\"ל אז ער איז געווען א צדיק וואס האט זיך געקריגט מיט גוטע כוונות, הגם ער האט עס נישט געטארט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-07-01-balak-e",
+      "startSeg": 422,
+      "endSeg": 484,
+      "title": { "en": "A world that needs tikkun", "yi": "א וועלט וואס דארף א תיקון" },
+      "summary": {
+        "en": "The Rav explains that Adam HaRishon's sin spoiled creation, that every mitzvah repairs and every aveirah spoils, and that the physical pollution of the world mirrors its spiritual state, as in the generation of Noach.",
+        "yi": "דער משגיח ערקלערט אז דער חטא פון אדם הראשון האט קאליע געמאכט די בריאה, אז יעדע מצוה פארריכט און יעדע עבירה פארדארבט, און אז די גשמיות'דיגע פארשמוצונג פון דער וועלט שפיגלט אפ איר רוחניות'דיגן מצב, אזוי ווי ביים דור המבול."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-07-01-balak-e",
+      "startSeg": 485,
+      "endSeg": 621,
+      "title": { "en": "Why Moshe was not a Kohen; what Korach sought", "yi": "פארוואס משה רבינו איז נישט געווען קיין כהן; וואס קרח האט געזוכט" },
+      "summary": {
+        "en": "The Rav asks why Moshe Rabbeinu was not a Kohen and brings the Gemara that he lost the Kehunah by refusing to go to Mitzrayim. In the world of tikkun the Leviim will be the Kohanim, as Yechezkel hints, and following the Arizal this is what Korach wanted to bring, not honor for himself.",
+        "yi": "דער משגיח פרעגט פארוואס משה רבינו איז נישט געווען קיין כהן, און ברענגט די גמרא אז ער האט פארלוירן די כהונה ווייל ער האט זיך געווייגערט צו גיין קיין מצרים. אין עולם התיקון וועלן די לוים זיין די כהנים, אזוי ווי יחזקאל איז מרמז, און לויט דעם אריז\"ל איז דאס וואס קרח האט געוואלט ברענגען, נישט קיין כבוד פאר זיך."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-07-01-balak-e",
+      "startSeg": 622,
+      "endSeg": 768,
+      "title": { "en": "Dasan and Aviram and the birthright", "yi": "דתן ואבירם און די בכורה" },
+      "summary": {
+        "en": "The Rav asks why Dasan and Aviram of Reuven joined Korach. The avodah originally belonged to the firstborn, the birthright Yaakov and Esav struggled over; the firstborn lost it through the eigel, and Reuven lost his birthright through his sin. Dasan and Aviram wanted the order of the world of tikkun, when the firstborn will serve again.",
+        "yi": "דער משגיח פרעגט פארוואס דתן ואבירם פון שבט ראובן האבן זיך אנגעשלאסן אין קרח. די עבודה האט אמאל געהערט צו די בכורים, די בכורה איבער וועלכער יעקב און עשו האבן זיך געראנגלט; די בכורים האבן זי פארלוירן דורכן חטא העגל, און ראובן האט פארלוירן זיין בכורה דורך זיין חטא. דתן ואבירם האבן געוואלט דעם סדר פון עולם התיקון, ווען די בכורים וועלן ווידער טון די עבודה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-07-01-balak-e",
+      "startSeg": 769,
+      "endSeg": 942,
+      "title": { "en": "Twelve months, twelve shevatim: Tammuz is Reuven", "yi": "צוועלף חדשים, צוועלף שבטים: תמוז איז ראובן" },
+      "summary": {
+        "en": "From Sefer Yetzirah the Rav explains that each month corresponds to a shevet, and that there are two orders of the shevatim: by birth, on the Choshen, with Reuven first, and by the degalim, with Yehudah first. Tammuz is Reuven's month; as Reuven fell from first to fourth, Tammuz became a month of destruction, and it will be restored to the top.",
+        "yi": "פון ספר יצירה ערקלערט דער משגיח אז יעדער חודש איז קעגן א שבט, און אז ס'זענען דא צוויי סדרים פון די שבטים: לויט די געבורט, אויפן חושן, וואו ראובן איז ערשטער, און לויט די דגלים, וואו יהודה איז ערשטער. תמוז איז דער חודש פון ראובן; אזוי ווי ראובן איז געפאלן פון ערשטן צום פערטן, איז תמוז געווארן א חודש פון חורבן, און ער וועט צוריקקומען אויבנאן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-07-01-balak-e",
+      "startSeg": 943,
+      "endSeg": 1091,
+      "title": { "en": "Dasan and Aviram: is there no tikkun for them?", "yi": "דתן ואבירם: איז נישטא פאר זיי קיין תיקון?" },
+      "summary": {
+        "en": "Dasan and Aviram are behind every quarrel against Moshe Rabbeinu in the Midbar. The Rav brings the Ohr HaChaim that the pasuk of rising from Sheol does not include them, and is troubled: can a Jew be lost forever? He cites the Arizal that even the founder of Christianity has a tikkun, and the Gemara of Onkelos with the Maharal's explanation.",
+        "yi": "דתן ואבירם שטייען הינטער יעדער מחלוקת קעגן משה רבינו אין מדבר. דער משגיח ברענגט דעם אור החיים אז דער פסוק פון ארויפקומען פון שאול גייט נישט אויף זיי, און ס'טוט אים וויי: קען א איד פארלוירן ווערן אויף אייביג? ער ברענגט דעם אריז\"ל אז אפילו דער גרינדער פון דער קריסטליכער רעליגיע האט א תיקון, און די גמרא פון אונקלוס מיטן פשט פונעם מהר\"ל."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-07-01-balak-e",
+      "startSeg": 1092,
+      "endSeg": 1236,
+      "title": { "en": "The Rema MiPano: Dasan and Aviram's tikkun", "yi": "דער רמ\"ע מפאנו: דער תיקון פון דתן ואבירם" },
+      "summary": {
+        "en": "The Rav brings the Rema MiPano's Gilgulei Neshamos that Dasan and Aviram were reincarnated as the two oxen of Eliyahu on Har HaKarmel, a tikkun for refusing to listen to a navi. He gives gematrios linking them to the pasuk of rising from Sheol and to 'HaChodesh Tammuz', so their tikkun means Tammuz will be transformed, as Zechariah says.",
+        "yi": "דער משגיח ברענגט פונעם רמ\"ע מפאנו אין ספר גלגולי נשמות אז דתן ואבירם זענען מגולגל געווארן אין די צוויי פארן פון אליהו הנביא אויפן הר הכרמל, א תיקון דערפאר וואס זיי האבן נישט געפאלגט דעם נביא. ער ברענגט גימטריאות וואס פארבינדן זיי מיטן פסוק פון ארויפקומען פון שאול און מיט \"החודש תמוז\", ממילא מיינט זייער תיקון אז תמוז וועט זיך איבערדרייען, אזוי ווי זכריה זאגט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-07-01-balak-e",
+      "startSeg": 1237,
+      "endSeg": 1311,
+      "title": { "en": "Balak holds the seed of Mashiach", "yi": "בלק טראגט דעם זריעה פון משיח" },
+      "summary": {
+        "en": "Returning to the opening, the Rav shows that Balak, who wanted to drive out Klal Yisrael, carried Mashiach within him through Eglon and Ruth. The blessings of Balak are curses transformed into blessings out of Hashem's love, and Tammuz, he says, has the gematria of Melech HaMashiach.",
+        "yi": "צוריק צום אנהייב ווייזט דער משגיח אז בלק, וואס האט געוואלט פארטרייבן כלל ישראל, האט געטראגן משיח אין זיך דורך עגלון און רות. די ברכות פון בלק זענען קללות וואס זענען איבערגעדרייט געווארן צו ברכות פון אהבת השם, און תמוז, זאגט ער, איז בגימטריא מלך המשיח."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-07-01-balak-e",
+      "startSeg": 1312,
+      "endSeg": 1428,
+      "title": { "en": "Sichon and Og, the locks of Eretz Yisrael", "yi": "סיחון ועוג, די שלעסער פון ארץ ישראל" },
+      "summary": {
+        "en": "In Tammuz Parshas Chukas tells of Moshe's victory over Sichon and Og, whom the Megaleh Amukos calls the locks of Eretz Yisrael. The Rav explains the request for passage as a request to open the locks, and brings Rashi that 'Yisrael sent' and 'Moshe sent' are the same, since the leader is the generation.",
+        "yi": "אין תמוז לייענט מען פרשת חקת, וואו משה רבינו געווינט סיחון ועוג, וועמען דער מגלה עמוקות רופט די שלעסער פון ארץ ישראל. דער משגיח ערקלערט אז די בקשה צו דורכגיין איז געווען א בקשה צו עפענען די שלעסער, און ברענגט רש\"י אז \"וישלח ישראל\" און \"משה שיקט\" איז איינס, ווייל דער נשיא הדור איז דער דור."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-07-01-balak-e",
+      "startSeg": 1429,
+      "endSeg": 1496,
+      "title": { "en": "Yiftach reopens the locks", "yi": "יפתח עפנט ווידער די שלעסער" },
+      "summary": {
+        "en": "In the haftarah, the king of Ammon later denied that the locks were broken and claimed the land; Yiftach, whose name means 'he will open', defeated him. The Rav then tells Yiftach's background: son of a woman of lower standing, driven out by his brothers to Eretz Tov outside Eretz Yisrael.",
+        "yi": "אין דער הפטרה האט דער מלך עמון שפעטער געלייקנט אז די שלעסער זענען צעבראכן געווארן און געטענהט אז די ארץ געהערט צו אים; יפתח, וואס זיין נאמען מיינט \"ער וועט עפענען\", האט אים באזיגט. דערנאך דערציילט דער משגיח יפתח'ס יחוס: א זון פון א פרוי פון נידעריגן מעמד, וואס זיינע ברידער האבן פארטריבן קיין ארץ טוב, אויסער ארץ ישראל."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-07-01-balak-e",
+      "startSeg": 1497,
+      "endSeg": 1619,
+      "title": { "en": "Tammuz souls hold the keys of the Geulah", "yi": "די נשמות פון תמוז האלטן די שליסלען פון דער גאולה" },
+      "summary": {
+        "en": "Tammuz is the month of exile, yet in it we learn that the gates will be reopened. The Rav explains that rejected souls like Yiftach, not born into the right families, are the 'Tammuz souls' who hold the keys of the Geulah, and that Yiftach's demand to be on top was not ambition but a sign that Tammuz belongs on top.",
+        "yi": "תמוז איז דער חודש פון גלות, און פונדעסטוועגן לערנט מען אין אים אז די טויערן וועלן ווידער געעפנט ווערן. דער משגיח ערקלערט אז פארשטויסענע נשמות ווי יפתח, וואס זענען נישט געבוירן אין די ריכטיגע משפחות, זענען די נשמות פון תמוז וואס האלטן די שליסלען פון דער גאולה, און אז יפתח'ס פאדערונג צו זיין אויבנאן איז נישט געווען קיין גאווה נאר א סימן אז תמוז געהערט אויבנאן."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "the last peric of rambam In Hulchis Malachim ... Halacha Aleph",
+      "work": "Rambam, Mishneh Torah",
+      "ref": "Hilchos Melachim 11:1",
+      "sefariaRef": "Mishneh Torah, Kings and Wars 11:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [24, 25, 27, 28, 55, 57], "confidence": 0.9 }
+    },
+    {
+      "heardAs": "the Yud Gimel Ikkim the 13 articles of faith",
+      "work": "Rambam's Thirteen Principles of Faith",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [59, 60, 61, 63], "confidence": 0.9 }
+    },
+    {
+      "heardAs": "as it's clearly stated in the Sedra Nitzavim",
+      "work": "Devarim",
+      "ref": "Devarim 30:3-4",
+      "sefariaRef": "Deuteronomy 30:3-4",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [144, 146, 148, 149, 152], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Derech koechav miyayn koev ... Vekam shevet mi Yisrael ... Umachat spasey mayav",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 24:17",
+      "sefariaRef": "Numbers 24:17",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [179, 182, 185, 188, 191, 192], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the Chazal tell us or the Brachas above and below are all in the seventh day",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [212, 213, 214], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Tichsam Saifel makes a chashbin",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [253, 254, 256, 260], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "the Medrash says that Mashiach is born on Tisha Bav",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [262, 263, 264], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the sfarim do tell us ... Sheim Havaya ... completely backwards",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [291, 293, 295, 297], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "as the Gemara tells us that the second ... it was destroyed because there was hatred",
+      "work": "Gemara Yoma",
+      "ref": "Yoma 9b",
+      "sefariaRef": "Yoma 9b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [312, 313, 315, 317], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the episode of Kamtsa or Bar Kamtsa",
+      "work": "Gemara Gittin",
+      "ref": "Gittin 55b-56a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [322, 323, 324, 329, 332], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Vula yiyah ke Kairach vecha adosai",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 17:5",
+      "sefariaRef": "Numbers 17:5",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [346, 347, 348], "confidence": 0.9 }
+    },
+    {
+      "heardAs": "the Madrash tells us that Kairach came up again",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [375, 376, 377, 378], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Mairet She'ayal Va'ya'al",
+      "work": "Shmuel I",
+      "ref": "Shmuel I 2:6",
+      "sefariaRef": "I Samuel 2:6",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [379, 380, 381, 383], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the Erya Kaddish says ... the Ariya Kaddish explains",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [384, 415, 554, 1035], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Tzaddik Katama Yifrach",
+      "work": "Tehillim",
+      "ref": "Tehillim 92:13",
+      "sefariaRef": "Psalms 92:13",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [384, 385, 387, 603], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "like Rashi explains in the beginning of an Noyach",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 6:12",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [472, 475, 477, 478], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "HaLei Aaron Hachicha HaLevi Aaron your brother",
+      "work": "Shemos",
+      "ref": "Shemos 4:14",
+      "sefariaRef": "Exodus 4:14",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [519, 520, 521, 534], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the Gemara tells us that actually Moshe Rabbeinu was supposed to be the Kayin",
+      "work": "Gemara Zevachim",
+      "ref": "Zevachim 102a",
+      "sefariaRef": "Zevachim 102a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [522, 523, 524, 526, 530], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "HaKayanim HaLaviyim B'nai Tzaddik",
+      "work": "Yechezkel",
+      "ref": "Yechezkel 44:15",
+      "sefariaRef": "Ezekiel 44:15",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [565, 568, 569, 571, 575], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "there is a Chazal ... the B'chayrim the first born will also do the Avaid",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [636, 638, 640, 642], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "if you remember that Rashi and Esav came out first",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 25:26",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [666, 669, 670, 671], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "B'ni B'chayri Yisrael",
+      "work": "Shemos",
+      "ref": "Shemos 4:22",
+      "sefariaRef": "Exodus 4:22",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [677, 678, 679, 680], "confidence": 0.9 }
+    },
+    {
+      "heardAs": "you're my first born you should have kingdom but because you sinned",
+      "work": "Bereishis",
+      "ref": "Bereishis 49:3-4",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [722, 723, 725, 726, 730], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "our Svarim tell us the Sefer Yetzirah says so",
+      "work": "Sefer Yetzirah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [771, 772, 777, 778], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the Chishon Mishpat in the Pashist Tzavah",
+      "work": "Shemos",
+      "ref": "Shemos ch. 28 (the Choshen Mishpat)",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [815, 816, 819, 821, 825], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Seder in which they brought ... Hanukkah and Mizbeach in Parshish Nasai",
+      "work": "Bamidbar",
+      "ref": "Bamidbar ch. 7",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [837, 838, 839, 841], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "As Asfarim tells us Will be the most joyous Months of the year",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [907, 908, 909, 910], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Arachayim Akadosh ... Arachayim HaKadosh says",
+      "work": "Ohr HaChaim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [996, 1001, 1004, 1013, 1020], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "In the Gemara which you are going to learn on Tisha Bav ... Unkelos",
+      "work": "Gemara Gittin",
+      "ref": "Gittin 56b-57a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1044, 1046, 1049, 1051, 1060], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Magal in Netzach Yisrael says",
+      "work": "Netzach Yisrael",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1061, 1062, 1066, 1069], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "from the Ramami Pano it's called Gilguli Neshamis",
+      "work": "Gilgulei Neshamos",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1099, 1100, 1105, 1109, 1111], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Hashem huho aleikim Hashem huho aleikim",
+      "work": "Melachim I",
+      "ref": "Melachim I 18:39",
+      "sefariaRef": "I Kings 18:39",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [1114, 1131, 1133, 1134], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the Nevi Zechariah says the fast of the fourth month ... Yehofech lebeis Yehuda l'soseno l'simcha",
+      "work": "Zechariah",
+      "ref": "Zechariah 8:19",
+      "sefariaRef": "Zechariah 8:19",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [1228, 1229, 1306], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Oyn ben Peles v'dasn v'aviram b'nei Reuven",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 16:1",
+      "sefariaRef": "Numbers 16:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [1233, 1234, 1235], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "like the Gemara tells us that because of the 42 Gabonis",
+      "work": "Gemara Sotah",
+      "ref": "Sotah 47a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1263, 1264, 1266, 1268, 1269], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Megala Amul case calls them the lacks of Eretz Yisrael",
+      "work": "Megaleh Amukos",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1325, 1326, 1328, 1354], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "V'yishach Yisrael malachim O'sichin melech ha'mairi la'imair",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 21:21",
+      "sefariaRef": "Numbers 21:21",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [1355, 1356, 1357, 1358], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Sarash has an interesting language ... Maishrach is Yisrael and Yisrael is Maishrach",
+      "work": "Rashi",
+      "ref": "Rashi on Bamidbar 21:21",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1389, 1397, 1413, 1415, 1416, 1418], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "in Dvarim it says I Maisha send the messengers",
+      "work": "Devarim",
+      "ref": "Devarim 2:26",
+      "sefariaRef": "Deuteronomy 2:26",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1402, 1403, 1405], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Yiftach as Yeftairah tells us argued with Amin",
+      "work": "Shoftim",
+      "ref": "Shoftim 11:12-28",
+      "sefariaRef": "Judges 11:12-28",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1432, 1433, 1435, 1436, 1439, 1445], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "in the very first pasach of the he was a man of valor he was the son of a woman",
+      "work": "Shoftim",
+      "ref": "Shoftim 11:1-3",
+      "sefariaRef": "Judges 11:1-3",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1465, 1466, 1468, 1474, 1477, 1481], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Yerushalmi says that was outside of Eretz Yisrael",
+      "work": "Yerushalmi",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1481, 1482, 1483], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "if you want me to lead the armies ... I want to be your leader",
+      "work": "Shoftim",
+      "ref": "Shoftim 11:9",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1582, 1584, 1585, 1587], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Hoping for Mashiach is a test of belief: since Mashiach brings even material good that everyone wants, one who is not eager for him shows that he does not really believe he is coming.",
+        "yi": "ווארטן אויף משיח איז א פראבע פון אמונה: ווייל משיח ברענגט אפילו גשמיות'דיגע גוטס וואס יעדער וויל, ווייזט דער וואס בענקט נישט אז ער גלייבט נישט באמת אז משיח קומט."
+      },
+      "evidence": { "segs": [95, 97, 102, 113, 122, 123], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "Korach's and Dasan and Aviram's quarrel was a premature attempt to bring the order of the world of tikkun, in which the Leviim and the firstborn would serve as Kohanim, as they were originally meant to.",
+        "yi": "די מחלוקת פון קרח און פון דתן ואבירם איז געווען א פרואוו צו ברענגען פאר דער צייט דעם סדר פון עולם התיקון, וואו די לוים און די בכורים וועלן זיין כהנים, אזוי ווי ס'איז געווען בעצם באשטימט."
+      },
+      "evidence": { "segs": [580, 581, 593, 604, 744, 762], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The two orders of the shevatim reflect two worlds: Yehudah first in the present flawed world, Reuven first in the world of tikkun; so Tammuz, Reuven's month, is now fourth and bitter but will become the highest.",
+        "yi": "די צוויי סדרים פון די שבטים שפיגלען אפ צוויי וועלטן: יהודה ערשטער אין דער איצטיגער נישט-פארריכטער וועלט, ראובן ערשטער אין עולם התיקון; ממילא איז תמוז, דער חודש פון ראובן, איצט דער פערטער און ביטער, אבער ער וועט ווערן דער העכסטער."
+      },
+      "evidence": { "segs": [845, 849, 854, 870, 877, 914], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "Because Dasan and Aviram represent the month of Tammuz, the Rema MiPano's view that they have a tikkun is also the promise that Tammuz will be transformed from grief to joy.",
+        "yi": "ווייל דתן ואבירם שטעלן מיט דעם חודש תמוז, איז דער רמ\"ע מפאנו'ס שיטה אז זיי האבן א תיקון אויך די הבטחה אז תמוז וועט זיך איבערדרייען פון טרויער צו שמחה."
+      },
+      "evidence": { "segs": [1218, 1220, 1221, 1222, 1227], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "Balak, who sought to curse Klal Yisrael, carried within himself the seed of Mashiach through Ruth, so the parsha read in Tammuz holds blessings born out of curses.",
+        "yi": "בלק, וואס האט געוואלט שעלטן כלל ישראל, האט געטראגן אין זיך דעם זריעה פון משיח דורך רות, ממילא האלט די פרשה וואס מ'לייענט אין תמוז ברכות וואס זענען געבוירן געווארן פון קללות."
+      },
+      "evidence": { "segs": [1253, 1254, 1262, 1272, 1286, 1300], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "Yiftach's demand to be leader was not ambition: as a 'Tammuz soul' he knew that Tammuz and the rejected souls like him belong on top, and that they hold the keys to the Geulah.",
+        "yi": "יפתח'ס פאדערונג צו זיין דער ראש איז נישט געווען קיין גאווה: אלס א נשמה פון תמוז האט ער געוואוסט אז תמוז און די פארשטויסענע נשמות ווי ער געהערן אויבנאן, און אז זיי האלטן די שליסלען צו דער גאולה."
+      },
+      "evidence": { "segs": [1591, 1600, 1601, 1602, 1613, 1615], "confidence": 0.8 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "Kamtza and Bar Kamtza", "yi": "קמצא ובר קמצא" },
+      "retelling": {
+        "en": "A man had an enemy named Bar Kamtza, who was invited to his party by mistake. The host had him thrown out. Bar Kamtza went to the Roman king and spoke lashon hara, and the king sent his armies, who destroyed Yerushalayim. The Rav brings it as the event that symbolizes the destruction through sinas chinam.",
+        "yi": "א מענטש האט געהאט א שונא מיטן נאמען בר קמצא, וואס מ'האט אים בטעות פארבעטן צו זיין סעודה. דער בעל הבית האט אים ארויסגעווארפן. בר קמצא איז געגאנגען צום רוימישן קייסער און גערעדט לשון הרע, און דער קייסער האט געשיקט זיינע חיילות וואס האבן חרוב געמאכט ירושלים. דער משגיח ברענגט עס אלס דער סימן פונעם חורבן דורך שנאת חנם."
+      },
+      "people": ["Bar Kamtza"],
+      "evidence": { "segs": [322, 323, 324, 325, 329, 332], "confidence": 0.85 }
+    },
+    {
+      "title": { "en": "Onkelos consults the souls of the wicked", "yi": "אונקלוס פרעגט די נשמות פון די רשעים" },
+      "retelling": {
+        "en": "When Onkelos wanted to convert, he spoke with the souls of the wicked, among them Titus, and asked whether to become a Jew. They told him no and to make trouble for the Jews. The founder of Christianity told him to become a Jew and to do good for the Jews. The Rav brings the Maharal that he could say this because, as a Jew, he has a connection to Olam Haba.",
+        "yi": "ווען אונקלוס האט געוואלט ווערן א גר, האט ער גערעדט מיט די נשמות פון די רשעים, צווישן זיי טיטוס, און געפרעגט צי ער זאל ווערן א איד. זיי האבן געזאגט ניין, און אז ער זאל מאכן צרות פאר אידן. דער גרינדער פון דער קריסטליכער רעליגיע האט אים געזאגט ער זאל ווערן א איד און טון גוטס פאר אידן. דער משגיח ברענגט דעם מהר\"ל אז ער האט דאס געקענט זאגן ווייל אלס א איד האט ער א שייכות צו עולם הבא."
+      },
+      "people": ["Onkelos", "Titus"],
+      "evidence": { "segs": [1046, 1049, 1051, 1053, 1060, 1062], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "Dasan and Aviram as Eliyahu's oxen", "yi": "דתן ואבירם אלס די פארן פון אליהו" },
+      "retelling": {
+        "en": "In the days of Achav and Izevel, when the people served avodah zarah, Eliyahu HaNavi brought two oxen on Har HaKarmel to show who is the true G-d: one for the avodah zarah and one for the mizbeach of Hashem he built there. Fire came down on his offering and everyone proclaimed that Hashem is G-d. According to the Rema MiPano, those two oxen were Dasan and Aviram, and this was their tikkun.",
+        "yi": "אין די צייטן פון אחאב און איזבל, ווען די אידן האבן געדינט עבודה זרה, האט אליהו הנביא געברענגט צוויי פארן אויפן הר הכרמל צו ווייזן ווער איז דער אמת'ער גאט: איינער פאר דער עבודה זרה און איינער פארן מזבח פון השם וואס ער האט דארט אויפגעבויט. א פייער איז אראפגעקומען אויף זיין קרבן, און אלע האבן אויסגערופן אז השם איז דער אלקים. לויטן רמ\"ע מפאנו זענען די צוויי פארן געווען דתן ואבירם, און דאס איז געווען זייער תיקון."
+      },
+      "people": ["Eliyahu HaNavi", "Achav", "Izevel", "Dasan", "Aviram"],
+      "evidence": { "segs": [1109, 1111, 1113, 1119, 1127, 1136], "confidence": 0.85 }
+    },
+    {
+      "title": { "en": "Yiftach driven out", "yi": "יפתח ווערט פארטריבן" },
+      "retelling": {
+        "en": "Yiftach was a man of valor, son of Gilad and of a woman of lower standing. His father's sons from another wife grew up and drove him away, telling him he had no share with them. He went to Eretz Tov, which the Yerushalmi says was outside Eretz Yisrael, and empty men gathered around him and became his army, with which he later fought the king of Ammon.",
+        "yi": "יפתח איז געווען א גבור חיל, א זון פון גלעד און פון א פרוי פון נידעריגן מעמד. זיין טאטנ'ס זין פון אן אנדער ווייב זענען אויפגעוואקסן און האבן אים פארטריבן, און געזאגט אז ער האט נישט קיין חלק מיט זיי. ער איז אוועק קיין ארץ טוב, וואס דער ירושלמי זאגט איז געווען אויסער ארץ ישראל, און ליידיגע מענטשן האבן זיך ארומגעזאמלט ארום אים און געווארן זיין חיל, מיט וועמען ער האט שפעטער מלחמה געהאלטן קעגן מלך עמון."
+      },
+      "people": ["Yiftach", "Gilad"],
+      "evidence": { "segs": [1466, 1468, 1474, 1477, 1481, 1494], "confidence": 0.8 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "One can be told to believe in Mashiach, but how can one be commanded to long for him eagerly?",
+        "yi": "מ'קען באפעלן א מענטש צו גלייבן אין משיח, אבער ווי אזוי קען מען אים באפעלן צו בענקען נאך אים?"
+      },
+      "answer": {
+        "en": "There is no reason not to long for him: Mashiach brings peace, plenty and every good even in material life, so one who is not eager for that does not truly believe.",
+        "yi": "ס'איז נישטא קיין סיבה נישט צו בענקען: משיח ברענגט שלום, שפע און אלע גוטס אפילו אין גשמיות, ממילא ווער עס בענקט נישט דערנאך גלייבט נישט באמת."
+      },
+      "questionSegs": [74, 75, 77, 78],
+      "answerSegs": [95, 97, 101, 113, 122, 123],
+      "confidence": 0.85
+    },
+    {
+      "question": {
+        "en": "Why was Moshe Rabbeinu, the greatest of the Leviim, not a Kohen?",
+        "yi": "פארוואס איז משה רבינו, דער גרעסטער פון די לוים, נישט געווען קיין כהן?"
+      },
+      "answer": {
+        "en": "He was meant to be the Kohen, but because he refused for seven days to go to Mitzrayim, even out of humility, he lost the Kehunah to Aharon; in the world of tikkun it will return.",
+        "yi": "ער האט געדארפט זיין דער כהן, נאר ווייל ער האט זיך זיבן טעג געווייגערט צו גיין קיין מצרים, אפילו פון ענוה, האט ער פארלוירן די כהונה צו אהרן; אין עולם התיקון וועט עס צוריקקומען."
+      },
+      "questionSegs": [499, 500, 501, 502],
+      "answerSegs": [510, 514, 516, 524, 526, 551],
+      "confidence": 0.85
+    },
+    {
+      "question": {
+        "en": "Korach was a Levi, but why did Dasan and Aviram of Reuven join a dispute over the Kehunah?",
+        "yi": "קרח איז געווען א לוי, אבער פארוואס האבן דתן ואבירם פון שבט ראובן זיך אריינגעמישט אין א מחלוקת וועגן כהונה?"
+      },
+      "answer": {
+        "en": "The avodah originally belonged to the firstborn, and Reuven was the firstborn who lost his birthright through his sin; they wanted the world of tikkun, when the firstborn will serve again.",
+        "yi": "די עבודה האט בעצם געהערט צו די בכורים, און ראובן איז געווען דער בכור וואס האט פארלוירן זיין בכורה דורך זיין חטא; זיי האבן געוואלט דעם עולם התיקון, ווען די בכורים וועלן ווידער טון די עבודה."
+      },
+      "questionSegs": [612, 615, 618, 620],
+      "answerSegs": [640, 642, 712, 739, 742, 762],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "If even the founder of Christianity will have a tikkun, why does the Ohr HaChaim say Dasan and Aviram never will; is there no hope for them?",
+        "yi": "אויב אפילו דער גרינדער פון דער קריסטליכער רעליגיע וועט האבן א תיקון, פארוואס זאגט דער אור החיים אז דתן ואבירם וועלן קיינמאל נישט האבן; איז נישטא פאר זיי קיין האפענונג?"
+      },
+      "answer": {
+        "en": "The Rema MiPano in Gilgulei Neshamos says they do have a tikkun: they became Eliyahu's oxen on Har HaKarmel, and are on the way to their tikkun.",
+        "yi": "דער רמ\"ע מפאנו אין גלגולי נשמות זאגט אז זיי האבן יא א תיקון: זיי זענען געווארן די פארן פון אליהו אויפן הר הכרמל, און זיי גייען צו צו זייער תיקון."
+      },
+      "questionSegs": [1080, 1081, 1083, 1089, 1090],
+      "answerSegs": [1099, 1100, 1106, 1109, 1138],
+      "confidence": 0.85
+    },
+    {
+      "question": {
+        "en": "Yiftach was a tzaddik; why did he demand to be on top as a condition for fighting Ammon?",
+        "yi": "יפתח איז געווען א צדיק; פארוואס האט ער געפאדערט צו זיין אויבנאן אלס תנאי צו מלחמה האלטן מיט עמון?"
+      },
+      "answer": {
+        "en": "He knew he was a soul of Tammuz, and Tammuz belongs on top; his appointment signified that the rejected souls who identify with him will rise when the Geulah comes.",
+        "yi": "ער האט געוואוסט אז ער איז א נשמה פון תמוז, און תמוז געהערט אויבנאן; זיין ווערן דער ראש איז געווען א סימן אז די פארשטויסענע נשמות וואס זענען ענלעך צו אים וועלן ארויפגיין ווען די גאולה קומט."
+      },
+      "questionSegs": [1589, 1590, 1591, 1598],
+      "answerSegs": [1600, 1601, 1602, 1612, 1615],
+      "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says one must not only believe in Mashiach but also hope and long for his coming.",
+        "yi": "דער משגיח זאגט אז מ'דארף נישט נאר גלייבן אין משיח, נאר אויך ווארטן און בענקען אויף זיין קומען."
+      },
+      "evidence": { "segs": [69, 71, 124, 125, 126], "confidence": 0.9 }
+    },
+    {
+      "text": {
+        "en": "The Rav stresses that even with good intentions one must not make machlokes, and certainly not argue against one's Rebbe.",
+        "yi": "דער משגיח באטאנט אז אפילו מיט גוטע כוונות טאר מען נישט מאכן קיין מחלוקת, און אוודאי נישט קריגן זיך מיט זיין רבי'ן."
+      },
+      "evidence": { "segs": [395, 396, 398, 404, 986], "confidence": 0.85 }
+    }
+  ],
+  "candidateTopics": [
+    "Parshas Balak",
+    "the three weeks and Shiva Asar B'Tammuz",
+    "belief in and longing for Mashiach",
+    "Korach and machlokes",
+    "Kohanim, Leviim and the firstborn in the world of tikkun",
+    "the months and the twelve shevatim",
+    "Dasan and Aviram",
+    "transformation of curse into blessing",
+    "Yiftach and the keys of the Geulah",
+    "gilgul and tikkun of souls"
+  ],
+  "concepts": [
+    { "he": "משיח", "heardAs": ["Mashiach", "Nashiach", "Moshiach"] },
+    { "he": "מלך המשיח", "heardAs": ["Zemelech HaMashiach", "Melech HaMoshiach"] },
+    { "he": "רבונו של עולם", "heardAs": ["Rabbani Sholeil", "Rabbi Nishaladim", "Rabbeinu Shalayim", "Rabbani Shalaylam", "rabbinic lighten"] },
+    { "he": "ימי המצרים", "heardAs": ["Yemei HaMitzarim"] },
+    { "he": "שבעה עשר בתמוז", "heardAs": ["Shiva Asa of the Tammuz", "Shivas of the Tammuz", "Shiva Asar B'tamus"] },
+    { "he": "מדת הדין", "heardAs": ["Midas Hadin", "midas ha-din", "Midas Adin"] },
+    { "he": "שם הוי'ה", "heardAs": ["Sheim Havaya", "Sheim Yudke Vavke"] },
+    { "he": "מחלוקת", "heardAs": ["mechleikas", "Machleikes", "machleikis", "Makhlaikis"] },
+    { "he": "שנאת חנם", "heardAs": ["Sinas Chinam"] },
+    { "he": "עולם התיקון", "heardAs": ["Olam HaTikkun", "Oilem HaTekin", "Eile Matiken", "Ayolam HaTikun"] },
+    { "he": "תיקון", "heardAs": ["tikhon", "ticken", "taken", "tiken", "chicken"] },
+    { "he": "בכורה", "heardAs": ["Bechayra", "p'chayah", "Pchaer", "Bechairah", "pcheir"] },
+    { "he": "בכורים", "heardAs": ["B'chayrim", "P'chayrim", "Pachayim"] },
+    { "he": "כהנים", "heardAs": ["Kayanim", "Kayinim", "Kairanim", "Kayanin"] },
+    { "he": "כהן גדול", "heardAs": ["Kayin God", "Kayin Godal", "Kayin Gadol"] },
+    { "he": "חושן משפט", "heardAs": ["Chishon Mishpat", "Chayshin"] },
+    { "he": "אבני שהם", "heardAs": ["Avani Shaiham"] },
+    { "he": "דגלים", "heardAs": ["Dgalim", "Degallim", "Degalim"] },
+    { "he": "גלגול", "heardAs": ["magulgal"] },
+    { "he": "גלגולי נשמות", "heardAs": ["Gilguli Neshamis"] },
+    { "he": "גימטריא", "heardAs": ["bigamatriyam", "b'gmatriya", "big matria"] },
+    { "he": "יובלות", "heardAs": ["Yaivalis", "Yaevols"] },
+    { "he": "קללות", "heardAs": ["klalas", "klalais", "klala"] },
+    { "he": "ארץ טוב", "heardAs": ["the land of Tev", "Eretz Toiv", "eretz tov"] },
+    { "he": "בן אשה זונה", "heardAs": ["ben Isha Zayna"] },
+    { "he": "גאולה", "heardAs": ["Geula", "geula"] }
+  ],
+  "people": [
+    { "name": "the Rambam", "heardAs": ["Rambam", "rambam"] },
+    { "name": "Bilaam", "heardAs": ["Bilaam"] },
+    { "name": "Balak", "heardAs": ["Balak", "Barak", "Balaq"] },
+    { "name": "David HaMelech", "heardAs": ["David HaMelech", "David and Merlech"] },
+    { "name": "Boaz", "heardAs": ["Bayaz"] },
+    { "name": "Ruth", "heardAs": ["Rus"] },
+    { "name": "Eglon, king of Moav", "heardAs": ["Eglin Melech Maiev", "Egelein Melech Meyav"] },
+    { "name": "Korach", "heardAs": ["Kairach", "Kaira", "Kayrach"] },
+    { "name": "Dasan", "heardAs": ["Dasan", "Dosen", "Dawson", "Das"] },
+    { "name": "Aviram", "heardAs": ["Aviram", "Naviram", "Anaviram"] },
+    { "name": "On ben Peles", "heardAs": ["Oyn ben Peles"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["Moshe Rabbeinu", "Meish Rabbeinu", "Meishah Rabbeinu", "Mesh Rabbinu", "Maisha"] },
+    { "name": "Aharon", "heardAs": ["Aharein", "Aaron"] },
+    { "name": "Adam HaRishon", "heardAs": ["Adam Elishen", "Adam Erechein"] },
+    { "name": "Noach", "heardAs": ["Noyach"] },
+    { "name": "Yaakov", "heardAs": ["Yankov", "Yankiv"] },
+    { "name": "Esav", "heardAs": ["Esav"] },
+    { "name": "Reuven", "heardAs": ["Ruvain", "Reuving", "Ruven", "reuvin"] },
+    { "name": "Yehudah", "heardAs": ["Yehuda"] },
+    { "name": "Bar Kamtza", "heardAs": ["Bar Kamtsa", "Bar Kamsa"] },
+    { "name": "the Arizal", "heardAs": ["Erya Kaddish", "Ariya Kaddish", "Riyah Kaddish", "Yiriyah Kaddish"] },
+    { "name": "the Ohr HaChaim", "heardAs": ["Arachayim Akadosh", "Arachayim HaKadosh"] },
+    { "name": "Onkelos", "heardAs": ["Unkelos", "Unculus"] },
+    { "name": "Titus", "heardAs": ["Titus"] },
+    { "name": "the Maharal", "heardAs": ["Magal", "Marau"] },
+    { "name": "the Rema MiPano", "heardAs": ["Ramami Pano", "Ramah Mepanu", "Ramah Mipanu", "Ramamipanu"] },
+    { "name": "Eliyahu HaNavi", "heardAs": ["Elio and Navi", "Eliyad Nevi", "Elia and Navi", "elia wanovi"] },
+    { "name": "Achav", "heardAs": ["Ahab"] },
+    { "name": "Izevel", "heardAs": ["Izebel"] },
+    { "name": "Zechariah", "heardAs": ["Nevi Zechariah", "Navi Zacharias"] },
+    { "name": "Sichon", "heardAs": ["Tzich", "Sichin", "Seichin", "Sikheim", "Sichen"] },
+    { "name": "Og", "heardAs": ["Oig"] },
+    { "name": "the Megaleh Amukos", "heardAs": ["Megala Amul case", "Megala Amukai"] },
+    { "name": "Rashi", "heardAs": ["Rashi", "Sarash", "Sarashi", "Rasha"] },
+    { "name": "Yiftach", "heardAs": ["Yiftach", "Yeftah"] },
+    { "name": "Gilad", "heardAs": ["Gilad"] },
+    { "name": "Yechezkel", "heardAs": ["Yecheskel", "Yechasko"] }
+  ],
+  "asrNotes": "English ASR is fair throughout, with Hebrew terms heavily mangled but recoverable (e.g. 'Arachayim Akadosh' = Ohr HaChaim, 'Ramami Pano' = Rema MiPano, 'chicken/taken' = tikkun). The sefer cited for Boaz and Ruth marrying on Shiva Asar B'Tammuz ('Tichsam Saifel', seg 253) could not be identified. The Rav's exact quote from the Ohr HaChaim and several short phrases (e.g. segs 748-753 on Dasan and Aviram's platform) are fragmentary. The gematria claims are reported as the Rav states them and were not verified."
+}

@@ -1,0 +1,292 @@
+{
+  "shiurId": "en-parsha-en-nsh-01",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that Naso, Tehillim 119 and Bava Basra each have 176 units, eight times the twenty-two letters, because Torah belongs to the number eight, above nature, and he links this to the Nazir, Shimshon and Mashiach.",
+      "yi": "דער משגיח ערקלערט אז פרשת נשא, קאפיטל קי\"ט אין תהלים און מסכת בבא בתרא האבן יעדע קע\"ו, אכט מאל די כ\"ב אותיות, ווייל די תורה געהערט צו דעם מספר אכט וואס איז העכער פון טבע, און ער פארבינדט דאס מיט דעם נזיר, מיט שמשון און מיט משיח."
+    },
+    "abstract": {
+      "en": "The Rav opens with the observation that Naso, the longest parsha, Tehillim 119, the longest psalm, and Bava Basra, the longest tractate, all have 176. He explains that seven is the number of nature and eight the number of what is above nature: the days of Mashiach, the eighth week after the Omer that extends Shavuos, Chanukah and its oil, the Kohen Gadol, and milah on the eighth day. The Torah, given at the start of the eighth week, belongs to eight, so Tehillim 119 repeats the alphabet eight times and Tehillim 19 turns to Torah in its eighth verse. Since the Torah has twenty-two letters, eight times twenty-two gives 176. He shows that Torah and Shavuos stand above space and time, then makes the Nazir the main theme of the parsha: Shimshon, a Nazir from birth, carried the potential of Mashiach, who will bring back the Jews who are cut off like hair. He closes with the hope that this year, 5748, Mashiach will come.",
+      "yi": "דער משגיח עפנט מיט דעם וואס מ'האט שוין אנגעמערקט: פרשת נשא, די לענגסטע פרשה, קאפיטל קי\"ט אין תהלים, דער לענגסטער קאפיטל, און מסכת בבא בתרא, די לענגסטע מסכתא, האבן אלע קע\"ו. ער ערקלערט אז זיבן איז דער מספר פון טבע, און אכט איז דער מספר פון למעלה מן הטבע: ימות המשיח, די אכטע וואך נאך ספירה וואס איז א המשך פון שבועות, חנוכה מיט שמן, דער כהן גדול, און מילה אויפן אכטן טאג. די תורה, וואס איז געגעבן געווארן אין אנהייב פון דער אכטער וואך, געהערט צו אכט; דערפאר גייט קאפיטל קי\"ט אכט מאל דורך די אלף בית, און קאפיטל י\"ט הייבט אן רעדן פון תורה ביים אכטן פסוק. אכט מאל די כ\"ב אותיות פון דער תורה איז קע\"ו. ער ווייזט אז די תורה און שבועות זענען העכער פון ארט און צייט, און דערנאך מאכט ער דעם נזיר פאר דעם עיקר פון דער סדרה: שמשון, א נזיר פון געבורט, האט געהאט דעם כח פון משיח, וואס וועט צוריקברענגען די אידן וואס זענען אפגעשניטן ווי האר. ער שליסט מיט דער האפענונג אז היינטיגס יאר, תשמ\"ח, זאל משיח קומען."
+    },
+    "keyPoints": [
+      {
+        "text": { "en": "Seven is the number of nature and of the created world; eight is the number of what stands above nature.", "yi": "זיבן איז דער מספר פון טבע און פון דער באשאפענער וועלט; אכט איז דער מספר פון דעם וואס שטייט העכער פון טבע." },
+        "evidence": { "segs": [7, 8, 11, 13], "confidence": 0.9 }
+      },
+      {
+        "text": { "en": "The week after Shavuos is an eighth week, still an extension of Shavuos, in which one can still bring the festival offering and complete what was missed.", "yi": "די וואך נאך שבועות איז אן אכטע וואך, וואס איז נאך א המשך פון שבועות, ווען מ'קען נאך ברענגען דעם קרבן פונעם יום טוב און נאכמאכן וואס מ'האט פארפעלט." },
+        "evidence": { "segs": [55, 57, 62, 104], "confidence": 0.9 }
+      },
+      {
+        "text": { "en": "The Torah belongs to the number eight, so it was given at the start of the eighth week, and the parsha read in that week has eight times the twenty-two letters, 176 pesukim.", "yi": "די תורה געהערט צום מספר אכט; דערפאר איז זי געגעבן געווארן אין אנהייב פון דער אכטער וואך, און די סדרה וואס מ'לייענט אין יענער וואך האט אכט מאל כ\"ב, קע\"ו פסוקים." },
+        "evidence": { "segs": [188, 234, 235, 239], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "The Nazir, who separates himself from wine and the pleasures of this world, is the main theme of Naso, as the haftarah about Shimshon shows.", "yi": "דער נזיר, וואס שיידט זיך אפ פון יין און פון די תאוות פון דער וועלט, איז דער עיקר פון פרשת נשא, ווי די הפטרה וועגן שמשון ווייזט." },
+        "evidence": { "segs": [341, 381, 382, 730], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "Shimshon, a Nazir from birth, had the makings of Mashiach, and Yaakov Avinu saw in him Mashiach; the generation did not merit it.", "yi": "שמשון, א נזיר פון געבורט, האט געהאט די כלים פון משיח, און יעקב אבינו האט אין אים געזען משיח; נאר דער דור איז נישט זוכה געווען." },
+        "evidence": { "segs": [456, 624, 662, 664], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "Mashiach will bring back the Jews who are cut off like hair and make them the crown of the whole structure of Klal Yisrael.", "yi": "משיח וועט צוריקברענגען די אידן וואס זענען אפגעשניטן ווי האר, און זיי מאכן פאר א קרוין פונעם גאנצן געביי פון כלל ישראל." },
+        "evidence": { "segs": [565, 573, 716, 719], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-parsha-bamidbar-02-01-nasoi-e", "startSeg": 0, "endSeg": 29,
+      "title": { "en": "Why 176, and the meaning of eight", "yi": "פארוואס קע\"ו, און דער טייטש פון אכט" },
+      "summary": {
+        "en": "The Rav notes that Naso, Tehillim 119 and Bava Basra, each the longest of its kind, all have 176, and asks why. He explains that seven is the number of nature and eight what is above it, and that the eighth year, after Shemitah, is fit for Mashiach.",
+        "yi": "דער משגיח מערקט אן אז נשא, קאפיטל קי\"ט און בבא בתרא, יעדע די לענגסטע פון איר סארט, האבן אלע קע\"ו, און פרעגט פארוואס. ער ערקלערט אז זיבן איז דער מספר פון טבע און אכט איז העכער פון טבע, און אז דאס אכטע יאר נאך שמיטה איז מסוגל פאר משיח."
+      },
+      "kind": "intro", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-02-01-nasoi-e", "startSeg": 30, "endSeg": 109,
+      "title": { "en": "The eighth week extends Shavuos", "yi": "די אכטע וואך איז א המשך פון שבועות" },
+      "summary": {
+        "en": "The Rav explains from the Gemara that after counting seven weeks the following eighth week is an extension of the one-day Yom Tov of Shavuos, when the festival offering can still be brought. A person who did not use Shavuos for his na'aseh venishma can still do so in this week.",
+        "yi": "דער משגיח ערקלערט פון דער גמרא אז נאך די זיבן וואכן ספירה איז די אכטע וואך א המשך פונעם איין-טאגיגן יום טוב שבועות, ווען מ'קען נאך ברענגען דעם קרבן. ווער עס האט נישט אויסגענוצט שבועות פאר זיין נעשה ונשמע, קען עס נאך טון אין דער וואך."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-02-01-nasoi-e", "startSeg": 110, "endSeg": 151,
+      "title": { "en": "Wine for Shabbos, oil for Chanukah", "yi": "יין פאר שבת, שמן פאר חנוכה" },
+      "summary": {
+        "en": "The Rav contrasts wine, yayin, whose gematria is seventy and with which Shabbos, the seventh day, is sanctified, with olive oil, shemen, which shares its letters with shemonah, eight, and sanctifies the eight days of Chanukah. Following the Maharal, Chanukah's days are borrowed from the days of Mashiach, its miracle came through the Kohen Gadol, and he wears eight garments.",
+        "yi": "דער משגיח שטעלט אוועק יין, וואס איז בגימטריא שבעים און מיט וועלכן מ'איז מקדש שבת, דעם זיבעטן טאג, קעגן שמן זית, וואס איז פון דעם לשון שמונה, אכט, און מיט וועלכן מ'איז מקדש די אכט טעג חנוכה. לויט דעם מהר\"ל זענען די טעג פון חנוכה געבארגט פון ימות המשיח, דער נס איז געקומען דורך דעם כהן גדול, און ער טראגט אכט בגדים."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-02-01-nasoi-e", "startSeg": 152, "endSeg": 193,
+      "title": { "en": "Milah, the seventy nations, and Torah", "yi": "מילה, די שבעים אומות, און תורה" },
+      "summary": {
+        "en": "The Rav explains with the Maharal that milah is on the eighth day because removing the orlah defies nature. The seventy nations belong to seven, Klal Yisrael to eight, and the Torah, which separates Jews from the nations, was given at the start of the eighth week.",
+        "yi": "דער משגיח ערקלערט מיט דעם מהר\"ל אז מילה איז אויפן אכטן טאג ווייל ארונטערנעמען די ערלה גייט קעגן דער טבע. די שבעים אומות געהערן צו זיבן, כלל ישראל צו אכט, און די תורה, וואס שיידט אפ די אידן פון די אומות, איז געגעבן געווארן אין אנהייב פון דער אכטער וואך."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-02-01-nasoi-e", "startSeg": 194, "endSeg": 232,
+      "title": { "en": "Tehillim 119 and Tehillim 19", "yi": "קאפיטל קי\"ט און קאפיטל י\"ט" },
+      "summary": {
+        "en": "The Rav shows that Tehillim 119, a prayer about Torah, goes through the alef-beis eight times, as the Maharal explains, because Torah belongs to eight. Likewise Tehillim 19 speaks of nature for seven verses and turns to Torah in the eighth; he then returns to Naso, read in the eighth week.",
+        "yi": "דער משגיח ווייזט אז קאפיטל קי\"ט, א תפילה אויף תורה, גייט אכט מאל דורך די אלף בית, ווי דער מהר\"ל ערקלערט, ווייל תורה געהערט צו אכט. אזוי אויך רעדט קאפיטל י\"ט זיבן פסוקים פון טבע און ביים אכטן הייבט ער אן פון תורה; דערנאך קערט ער זיך אום צו נשא, וואס מ'לייענט אין דער אכטער וואך."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-02-01-nasoi-e", "startSeg": 233, "endSeg": 270,
+      "title": { "en": "Eight times twenty-two is 176", "yi": "אכט מאל כ\"ב איז קע\"ו" },
+      "summary": {
+        "en": "The Rav explains that the Torah's letters come from twenty-two roots, so Naso, belonging to Shavuos and the eighth week, has eight times twenty-two pesukim, and Bava Basra has 176 daf counting the unwritten first daf. He adds that the last 89 pesukim of Naso are the Chanukah reading, and 89 is the gematria of Chanukah.",
+        "yi": "דער משגיח ערקלערט אז די אותיות פון דער תורה קומען פון כ\"ב שרשים, ממילא האט נשא, וואס געהערט צו שבועות און צו דער אכטער וואך, אכט מאל כ\"ב פסוקים, און בבא בתרא האט קע\"ו דפים מיטן ערשטן דף וואס איז נישטא. ער לייגט צו אז די לעצטע פ\"ט פסוקים פון נשא זענען די קריאה פון חנוכה, און פ\"ט איז בגימטריא חנוכה."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-02-01-nasoi-e", "startSeg": 271, "endSeg": 330,
+      "title": { "en": "Above space and above time", "yi": "העכער פון ארט און פון צייט" },
+      "summary": {
+        "en": "The Rav brings the Gemara that the Aron in the Kodesh HaKodashim took up no space, because Torah is above the laws of nature. Shavuos, defined by the count rather than a date, and Zos Chanukah are likewise not fixed to the calendar, and both fall in the third month of their half of the year.",
+        "yi": "דער משגיח ברענגט די גמרא אז דער ארון אין קודש הקדשים האט נישט פארנומען קיין ארט, ווייל די תורה איז העכער פון די געזעצן פון טבע. שבועות, וואס איז באשטימט דורך דער ספירה און נישט דורך א דאטום, און זאת חנוכה זענען אויך נישט צוגעבינדן צום לוח, און ביידע זענען אין דעם דריטן חודש פון זייער העלפט יאר."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-02-01-nasoi-e", "startSeg": 331, "endSeg": 394,
+      "title": { "en": "The Nazir, the main theme of Naso", "yi": "דער נזיר, דער עיקר פון נשא" },
+      "summary": {
+        "en": "The Rav lists the three laws of the Nazir: no wine, no cutting the hair, no contact with the dead. From the haftarah about Shimshon he shows that the Nazir is the parsha's main theme, and explains that wine stands for the intoxication of a world chasing pleasure, while the Nazir is sober and wears a crown, nezer.",
+        "yi": "דער משגיח רעכנט אויס די דריי דינים פון א נזיר: קיין יין, נישט שערן די האר, און נישט מטמא ווערן צו א מת. פון דער הפטרה וועגן שמשון ווייזט ער אז דער נזיר איז דער עיקר פון דער סדרה, און ער ערקלערט אז יין מיינט די שכרות פון א וועלט וואס לויפט נאך תאוות, און דער נזיר איז ניכטער און טראגט א נזר, א קרוין."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-02-01-nasoi-e", "startSeg": 395, "endSeg": 470,
+      "title": { "en": "Shimshon, head of all Nezirim", "yi": "שמשון, דער ראש פון אלע נזירים" },
+      "summary": {
+        "en": "The Rav explains that each virtue has a tzaddik at its head: Moshe Rabbeinu for those who toil in Torah, Dovid HaMelech for those who daven, and Shimshon for every Nazir. Unlike an ordinary Nazir, who takes a vow for thirty days, Shimshon was a Nazir from birth, as the angel told his mother.",
+        "yi": "דער משגיח ערקלערט אז יעדע מעלה האט א צדיק אין שפיץ: משה רבינו פאר די וואס מוטשען זיך אין תורה, דוד המלך פאר די וואס דאווענען, און שמשון פאר יעדן נזיר. נישט ווי א געווענליכער נזיר וואס נעמט אויף זיך נזירות אויף דרייסיג טעג, איז שמשון געווען א נזיר פון געבורט, ווי דער מלאך האט געזאגט זיין מאמע."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-02-01-nasoi-e", "startSeg": 471, "endSeg": 575,
+      "title": { "en": "Klal Yisrael as one body, and its hair", "yi": "כלל ישראל ווי איין גוף, און די האר" },
+      "summary": {
+        "en": "After briefly recalling Shimshon's strength and his end, the Rav explains that all of Klal Yisrael is one structure, like Adam HaRishon whose limbs held different souls: the wise are the head, givers of tzedakah the hands, those who daven the heart. Hair, which lives on even after death, stands for Jews who are cut off and lifeless, whom Mashiach, who belongs to the world of eight, will restore.",
+        "yi": "נאכן קורץ דערמאנען שמשונ'ס כח און זיין סוף, ערקלערט דער משגיח אז גאנץ כלל ישראל איז איין געביי, ווי אדם הראשון וואס אין זיינע אברים זענען געהאנגען אנדערע נשמות: די חכמים זענען דער קאפ, די וואס געבן צדקה די הענט, די וואס דאווענען דאס הארץ. די האר, וואס וואקסט אפילו נאכן טויט, זענען די אידן וואס זענען אפגעשניטן און אן לעבן, און משיח, וואס געהערט צו דער וועלט פון אכט, וועט זיי פאררעכטן."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-02-01-nasoi-e", "startSeg": 576, "endSeg": 666,
+      "title": { "en": "Yaakov saw Shimshon as Mashiach", "yi": "יעקב האט געזען שמשון אלס משיח" },
+      "summary": {
+        "en": "The Rav explains that the Nazir's holiness lies in his hair and that Shimshon is an aspect of Mashiach. He brings the Midrash on Yaakov's blessing to Dan: Yaakov saw Shimshon's strength and thought he was Mashiach, then saw him killed and said 'I hope for Your salvation'. Yaakov was not mistaken; Shimshon could have been Mashiach had the generation merited it.",
+        "yi": "דער משגיח ערקלערט אז די קדושה פונעם נזיר איז אין זיינע האר, און אז שמשון איז א בחינה פון משיח. ער ברענגט דעם מדרש אויף יעקב'ס ברכה פאר דן: יעקב האט געזען שמשונ'ס כח און געמיינט אז ער איז משיח, דערנאך געזען ווי מ'הרגעט אים און געזאגט \"לישועתך קויתי\". יעקב האט זיך נישט גע'טעות'ט; שמשון האט געקענט זיין משיח ווען דער דור וואלט זוכה געווען."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-02-01-nasoi-e", "startSeg": 667, "endSeg": 748,
+      "title": { "en": "The year 5748, and the crown of the Nazir", "yi": "שנת תשמ\"ח, און די קרוין פונעם נזיר" },
+      "summary": {
+        "en": "The Rav says tzaddikim taught that this year, 5748, has great potential for Mashiach, and hints at it through the Sotah's 'amen amen' in the parsha. He explains that when Mashiach comes the cut-off hair will be restored as the crown of the structure, the ba'alei teshuvah, and that Shimshon came from the tribe of Dan, itself cut off from the clouds of glory, to restore it.",
+        "yi": "דער משגיח זאגט אז צדיקים האבן געזאגט אז היינטיגס יאר, תשמ\"ח, האט א גרויסן כח פאר משיח, און ער ווייזט א רמז דערויף פון דעם \"אמן אמן\" פון דער סוטה אין דער סדרה. ער ערקלערט אז ווען משיח וועט קומען וועלן די אפגעשניטענע האר צוריקקומען ווי א קרוין אויפן געביי, די בעלי תשובה, און אז שמשון איז געקומען פון שבט דן, וואס איז אליין געווען אפגעשניטן פון די ענני הכבוד, כדי אים צוריקצושטעלן."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-bamidbar-02-01-nasoi-e", "startSeg": 749, "endSeg": 832,
+      "title": { "en": "The lion, the gates of Azah, and the call to act", "yi": "דער לייב, די טויערן פון עזה, און דער רוף צו טון" },
+      "summary": {
+        "en": "The Rav explains that Shimshon tore apart a lion, the mazal of Av, the month of the Churban, and tore out the city gates that held him, showing what Mashiach will do to the barriers before every Jew. He closes that this year has great potential, that one still believes even if Mashiach tarries, and that in this eighth week each person should contribute what he can to become a good Jew.",
+        "yi": "דער משגיח ערקלערט אז שמשון האט צעריסן א לייב, דער מזל פון חודש אב, דער חודש פונעם חורבן, און ארויסגעריסן די טויערן פון דער שטאט וואס האבן אים איינגעשלאסן, וואס ווייזט וואס משיח וועט טון מיט די מחיצות פאר יעדן איד. ער שליסט אז דאס יאר האט א גרויסן כח, אז מ'גלייבט ווייטער אפילו אויב משיח זאמט זיך, און אז אין דער אכטער וואך זאל יעדער ביישטייערן וואס ער קען כדי צו ווערן א גוטער איד."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "In Tehillim, Kuf Yuk Tesh is the longest chapter", "work": "Tehillim", "ref": "Tehillim 119", "sefariaRef": "Psalms 119", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [2, 195, 196, 206], "confidence": 0.9 } },
+    { "heardAs": "Gemara Baba Basra, which is the longest msechta", "work": "Gemara Bava Basra", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [3, 240, 250], "confidence": 0.9 } },
+    { "heardAs": "the Gemara tells us that in an eighth year", "work": "Gemara Sanhedrin", "ref": "Sanhedrin 97a", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [14], "confidence": 0.7 } },
+    { "heardAs": "Shavu Shavu Vais Tespalach", "work": "Devarim", "ref": "Devarim 16:9", "sefariaRef": "Deuteronomy 16:9", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [30], "confidence": 0.75 } },
+    { "heardAs": "so the Gemara tells us ... the Gemara derives from here", "work": "Gemara Chagigah", "ref": "Chagigah 17a", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [50, 54, 56, 57], "confidence": 0.8 } },
+    { "heardAs": "the Maghal explains; Saif El Maral", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [139, 152, 206, 225], "confidence": 0.85 } },
+    { "heardAs": "where the Urbani Shveram chose us from among all nations", "work": "Birchos HaTorah", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [185, 186], "confidence": 0.75 } },
+    { "heardAs": "the heavens they proclaim the glory of God ... the Torah of Hashem is perfect", "work": "Tehillim", "ref": "Tehillim 19:8", "sefariaRef": "Psalms 19:8", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [215, 216, 221, 222], "confidence": 0.85 } },
+    { "heardAs": "the Kriya of Chanukah we find in this week's Saturday", "work": "Bamidbar", "ref": "Bamidbar 7", "sefariaRef": "Numbers 7", "resolution": "resolved", "mention": "alluded", "evidence": { "segs": [258, 259, 267], "confidence": 0.8 } },
+    { "heardAs": "Gmarah tells us of miracles in the kitesh a gedashim", "work": "Gemara Yoma", "ref": "Yoma 21a", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [281, 282, 291, 292], "confidence": 0.75 } },
+    { "heardAs": "kol ye mei nedon ... ta le yavra ... kol ye mei azira la shem ... Lea Leinu, Lea Voleimai", "work": "Bamidbar", "ref": "Bamidbar 6:3-7", "sefariaRef": "Numbers 6:3-7", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [356, 361, 367, 375], "confidence": 0.8 } },
+    { "heardAs": "The Nevi tells us a story of Shemshem ... the Malach told the mother of Shimshon", "work": "Shoftim", "ref": "Shoftim 13", "sefariaRef": "Judges 13", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [381, 382, 458, 460], "confidence": 0.85 } },
+    { "heardAs": "i think the evanesha says this nausea comes to the word nazai crown", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [390], "confidence": 0.6 } },
+    { "heardAs": "Amit Chacham is called Meisha, Meisha Shabotam", "work": "Gemara", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [418, 421, 422], "confidence": 0.7 } },
+    { "heardAs": "a neat feeler, David said, I am prayer", "work": "Tehillim", "ref": "Tehillim 109:4", "sefariaRef": "Psalms 109:4", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [431, 432], "confidence": 0.75 } },
+    { "heardAs": "were hanging in Adam Elishan's head, the madrash tells us", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [507, 508, 509], "confidence": 0.85 } },
+    { "heardAs": "Paseyach Tiftach", "work": "Devarim", "ref": "Devarim 15:8", "sefariaRef": "Deuteronomy 15:8", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [533, 534], "confidence": 0.8 } },
+    { "heardAs": "dan yaden amai kach atshifti yisrael ... yiddan nachash alej derech ... Elishu", "work": "Bereishis", "ref": "Bereishis 49:16-18", "sefariaRef": "Genesis 49:16-18", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [594, 595, 600, 656, 658], "confidence": 0.85 } },
+    { "heardAs": "and the medrash taozas also brings it", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [584, 604, 618, 624], "confidence": 0.8 } },
+    { "heardAs": "Viam Risha Amin Amin", "work": "Bamidbar", "ref": "Bamidbar 5:22", "sefariaRef": "Numbers 5:22", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [684, 685], "confidence": 0.8 } },
+    { "heardAs": "a pasach in Kapitol Petas in Tehillim ... Olav Yatzitz Mizra", "work": "Tehillim", "ref": "Tehillim 132:18", "sefariaRef": null, "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [726, 727], "confidence": 0.7 } },
+    { "heardAs": "he encountered a line ... tore him apart", "work": "Shoftim", "ref": "Shoftim 14:5-6", "sefariaRef": "Judges 14:5-6", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [749, 751, 756], "confidence": 0.85 } },
+    { "heardAs": "they closed the gates of the city on him ... ripped them out", "work": "Shoftim", "ref": "Shoftim 16:3", "sefariaRef": "Judges 16:3", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [775, 787, 788, 789], "confidence": 0.85 } }
+  ],
+  "insights": [
+    {
+      "text": { "en": "The three longest units in Torah, Naso, Tehillim 119 and Bava Basra, share 176 because 176 is eight times the twenty-two letters, the number of Torah raised to the number above nature.", "yi": "די דריי לענגסטע חלקים אין תורה, נשא, קאפיטל קי\"ט און בבא בתרא, האבן אלע קע\"ו, ווייל קע\"ו איז אכט מאל די כ\"ב אותיות, דער מספר פון תורה געמערט מיטן מספר וואס איז העכער פון טבע." },
+      "evidence": { "segs": [5, 235, 239, 241], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "Wine, yayin, equals seventy and sanctifies Shabbos, the seventh day; oil, shemen, is related to shemonah and sanctifies Chanukah, whose eight days are borrowed from the days of Mashiach.", "yi": "יין איז בגימטריא שבעים און הייליגט שבת, דעם זיבעטן טאג; שמן איז פון לשון שמונה און הייליגט חנוכה, וואס אירע אכט טעג זענען געבארגט פון ימות המשיח." },
+      "evidence": { "segs": [123, 125, 137, 141], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "Bava Basra counts 176 daf only together with the missing first daf, because at the very source of Torah one does not try to understand and begins with faith.", "yi": "בבא בתרא האט קע\"ו דפים נאר מיטן ערשטן דף וואס פעלט, ווייל ביים מקור פון דער תורה פרובירט מען נישט צו פארשטיין, נאר מ'הייבט אן מיט אמונה." },
+      "evidence": { "segs": [244, 245, 248, 249], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "Shavuos and Chanukah are 'cousins' through the number eight: both are free of a fixed date, both fall in the third month of their half-year, and both are read in Naso.", "yi": "שבועות און חנוכה זענען \"שוועסטער-קינדער\" דורך דעם מספר אכט: ביידע זענען נישט צוגעבינדן צו א דאטום, ביידע זענען אינעם דריטן חודש פון זייער העלפט יאר, און ביידע ליינט מען אין נשא." },
+      "evidence": { "segs": [270, 305, 316, 327], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "Cut-off Jews are like hair, which grows even on the dead; the Nazir, who may not cut his hair, holds them, and Mashiach will replant them as the crown on the head of Adam HaRishon.", "yi": "אפגעשניטענע אידן זענען ווי האר, וואס וואקסט אפילו ביי א מת; דער נזיר, וואס טאר נישט שערן זיינע האר, האלט זיי, און משיח וועט זיי צוריקפלאנצן ווי א קרוין אויפן קאפ פון אדם הראשון." },
+      "evidence": { "segs": [556, 560, 575, 576, 725], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "Yaakov Avinu was not mistaken in seeing Mashiach in Shimshon; Shimshon truly could have been Mashiach, but the generation did not merit it.", "yi": "יעקב אבינו האט זיך נישט גע'טעות'ט ווען ער האט געזען משיח אין שמשון; שמשון האט טאקע געקענט זיין משיח, נאר דער דור איז נישט זוכה געווען." },
+      "evidence": { "segs": [662, 663, 664], "confidence": 0.9 }
+    },
+    {
+      "text": { "en": "The lion Shimshon tore apart alludes to the lion that destroyed the Beis HaMikdash, the mazal of Av, showing that Shimshon had the makings of Mashiach.", "yi": "דער לייב וואס שמשון האט צעריסן איז א רמז אויפן לייב וואס האט חרוב געמאכט דעם בית המקדש, דער מזל פון חודש אב, און דאס ווייזט אז שמשון האט געהאט די כלים פון משיח." },
+      "evidence": { "segs": [762, 768, 770, 771], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "Yaakov's vision of Shimshon", "yi": "יעקב'ס ראיה פון שמשון" },
+      "retelling": {
+        "en": "As Yaakov Avinu blessed his sons, he looked through the future generations. Reaching the tribe of Dan, he saw Shimshon's strength protecting the Jews and thought he was Mashiach. Then he saw Shimshon killed by the Pelishtim, realized he was not yet Mashiach, and said 'I hope for Your salvation'.",
+        "yi": "ווען יעקב אבינו האט געבענטשט זיינע קינדער, האט ער געקוקט אויף אלע קומענדיגע דורות. ביים שבט דן האט ער געזען שמשונ'ס כח וואס באשיצט די אידן, און געמיינט אז ער איז משיח. דערנאך האט ער געזען ווי די פלשתים הרגענען אים, פארשטאנען אז ער איז נאך נישט משיח, און געזאגט \"לישועתך קויתי\"."
+      },
+      "people": ["Yaakov Avinu", "Shimshon"],
+      "evidence": { "segs": [609, 618, 624, 653, 655, 658], "confidence": 0.85 }
+    },
+    {
+      "title": { "en": "Shimshon and the gates of the city", "yi": "שמשון און די טויערן פון דער שטאט" },
+      "retelling": {
+        "en": "The Pelishtim surrounded Shimshon and locked the heavy city gates on him, afraid to face him at night and planning to deal with him in the morning. Shimshon walked over to the gates, ripped them out with their foundations, put them on his shoulder and carried them up the mountain.",
+        "yi": "די פלשתים האבן ארומגערינגלט שמשון און פארשלאסן אויף אים די שווערע טויערן פון דער שטאט; זיי האבן מורא געהאט צו קעמפן מיט אים ביינאכט און געוואלט אים כאפן אינדערפרי. שמשון איז צוגעגאנגען צו די טויערן, זיי ארויסגעריסן מיטן יסוד, ארויפגעלייגט אויף זיין אקסל, און זיי ארויפגעטראגן אויפן בארג."
+      },
+      "people": ["Shimshon"],
+      "evidence": { "segs": [775, 777, 787, 788, 789], "confidence": 0.85 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "Why do Naso, Tehillim 119 and Bava Basra, each the longest of its kind, all have 176?", "yi": "פארוואס האבן נשא, קאפיטל קי\"ט און בבא בתרא, יעדע די לענגסטע פון איר סארט, אלע קע\"ו?" },
+      "answer": { "en": "Because Torah belongs to the number eight, and its twenty-two letters multiplied by eight give 176.", "yi": "ווייל די תורה געהערט צום מספר אכט, און אירע כ\"ב אותיות מאל אכט איז קע\"ו." },
+      "questionSegs": [4, 5], "answerSegs": [234, 235, 239], "confidence": 0.85
+    },
+    {
+      "question": { "en": "How could the Aron stand in a room twenty amos wide with ten amos on each side?", "yi": "ווי אזוי האט דער ארון געקענט שטיין אין א צימער פון צוואנציג אמות מיט צען אמות אויף יעדער זייט?" },
+      "answer": { "en": "The Kodesh HaKodashim, the home of Torah, comes from eight and is not subject to the laws of nature and measure.", "yi": "דער קודש הקדשים, דער ארט פון תורה, קומט פון אכט און איז נישט אונטער די געזעצן פון טבע און מאס." },
+      "questionSegs": [283, 289, 290], "answerSegs": [292, 294, 296], "confidence": 0.8
+    },
+    {
+      "question": { "en": "Was Yaakov Avinu mistaken when he thought Shimshon was Mashiach?", "yi": "האט זיך יעקב אבינו גע'טעות'ט ווען ער האט געמיינט אז שמשון איז משיח?" },
+      "answer": { "en": "No; Shimshon could have been Mashiach, but the generation did not merit it.", "yi": "ניין; שמשון האט געקענט זיין משיח, נאר דער דור איז נישט זוכה געווען." },
+      "questionSegs": [662], "answerSegs": [663, 664], "confidence": 0.85
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Rav says that whoever did not use Shavuos for his resolution of na'aseh venishma can still do so in the eighth week, which is still part of Shavuos.", "yi": "דער משגיח זאגט אז ווער עס האט נישט אויסגענוצט שבועות פאר זיין קבלה פון נעשה ונשמע, קען עס נאך טון אין דער אכטער וואך, וואס איז נאך א טייל פון שבועות." },
+      "evidence": { "segs": [90, 92, 95, 99], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "The Rav says everyone should feel his duty to contribute all he can to become a good Jew, as his share in bringing Mashiach, so as not to be a cause of his delay.", "yi": "דער משגיח זאגט אז יעדער זאל פילן זיין חוב צו ביישטייערן אלעס וואס ער קען כדי צו ווערן א גוטער איד, אלס זיין חלק אין ברענגען משיח, כדי ער זאל נישט זיין א סיבה פון זיין פארזאמען." },
+      "evidence": { "segs": [827, 828, 829], "confidence": 0.85 }
+    }
+  ],
+  "candidateTopics": ["the number eight", "nature and above nature", "parshas Naso", "176 pesukim", "Shavuos and the eighth week", "Chanukah", "nazir", "Shimshon", "Mashiach", "Klal Yisrael as one body"],
+  "concepts": [
+    { "he": "פסוקים", "heardAs": ["Psyrki", "psalch", "Pseh", "sikhi", "psalchim"] },
+    { "he": "למעלה מן הטבע", "heardAs": ["Lamala Manatella"] },
+    { "he": "ספירה", "heardAs": ["Sphere", "Sphir"] },
+    { "he": "תשלומין", "heardAs": ["Tashlumen"] },
+    { "he": "נעשה ונשמע", "heardAs": ["9th of Anishma"] },
+    { "he": "כהן גדול", "heardAs": ["Kayin Godayal"] },
+    { "he": "קודש הקדשים", "heardAs": ["Kedesh HaKedashim", "kitesh a gedashim", "Kaidu Shagadoshim"] },
+    { "he": "ערלה", "heardAs": ["Orla", "alba", "Allah"] },
+    { "he": "תמניא אפי", "heardAs": ["Taman Ya'api"] },
+    { "he": "זאת חנוכה", "heardAs": ["Zeiss Chanukah"] },
+    { "he": "נזיר", "heardAs": ["nausea", "Nazim", "nozir", "Nazion", "Nazar"] },
+    { "he": "נזר", "heardAs": ["nazai"] },
+    { "he": "תשמ\"ח", "heardAs": ["Tismach Tavshin Menches", "Tav Shem Memches Tismach"] },
+    { "he": "ענני הכבוד", "heardAs": ["Anani Kavit"] },
+    { "he": "בעלי תשובה", "heardAs": ["Balei Tshuva"] }
+  ],
+  "people": [
+    { "name": "the Maharal", "heardAs": ["Maghal", "Maghav", "Magal", "Maral", "Seder Amaral"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["Meisha Rabbeinu"] },
+    { "name": "Dovid HaMelech", "heardAs": ["David"] },
+    { "name": "Shimshon", "heardAs": ["Shemshem", "Shemshin", "Shimshim", "Shem"] },
+    { "name": "Delilah", "heardAs": ["Dalila"] },
+    { "name": "Adam HaRishon", "heardAs": ["Adam Elishan", "Adam HaRishan", "Adam Arishan"] },
+    { "name": "Yaakov Avinu", "heardAs": ["Yankov Avinu", "Yankiv", "Yakech"] },
+    { "name": "Matisyahu ben Yochanan", "heardAs": ["Maymatis Yol Ben Yechanan"] }
+  ],
+  "asrNotes": "English ASR is fair; Hebrew terms are heavily garbled (Maharal as 'Maghal', nazir as 'nausea', Shimshon as 'Shemshem') but recoverable from context. The source the Rav cites for nazir from nezer (segment 390) and the Gemara about a talmid chacham called Moshe (segments 421-422) could not be identified with confidence. Segments 144-149 on the Kohen Gadol are partly garbled. No long noise stretches."
+}

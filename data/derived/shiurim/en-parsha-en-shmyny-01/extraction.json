@@ -1,0 +1,272 @@
+{
+  "shiurId": "en-parsha-en-shmyny-01",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav shows how Parshas Shemini, read right after Pesach, is bound up with the days of Mashiach: the four non-kosher animals are the four exiles that will be overcome, the chazir will return to kashrus, and the middle of the Torah, 'darosh darash Moshe', stands over the se'ir of Rosh Chodesh Nissan that could have brought the final tikkun.",
+      "yi": "דער משגיח ווייזט ווי אזוי פרשת שמיני, וואס מ'לייענט גלייך נאך פסח, איז פארבונדן מיט ימות המשיח: די פיר טמא'נע בהמות זענען די פיר גליות וואס וועלן באזיגט ווערן, דער חזיר וועט צוריקקערן צו זיין כשרות, און דער אמצע פון דער תורה, \"דרש דרש משה\", שטייט ביים שעיר פון ראש חודש ניסן וואס האט געקענט ברענגען דעם לעצטן תיקון."
+    },
+    "abstract": {
+      "en": "The Rav opens with Acharon shel Pesach as the Pesach of the days of Mashiach, when the yetzer hara, represented by chametz, will be gone, and tells how the Sanzer Rav ate from everyone's knedlach on that day. He explains that the sedra is named Shemini because eight belongs to Mashiach. Matzah gives emunah, and the first Shabbos after Pesach the Torah warns not to damage it with forbidden foods, which clog the heart; he stresses how hard kashrus is today. The four animals with one sign are the four kingdoms; the chazir, Edom, will return to kashrus, symbolized by Ovadiah, a ger from Edom whose name matches the 91 pesukim of the sedra. With the Chasam Sofer he explains that the day of the Mishkan's inauguration could have been the tikkun, but Nadav and Avihu spoiled it and the se'ir of Rosh Chodesh was burnt. That se'ir stands at the middle of the Torah, 'darosh darash', just as Yerushalayim is the center of the world.",
+      "yi": "דער משגיח עפנט מיט אחרון של פסח, וואס איז דער פסח פון ימות המשיח, ווען דער יצר הרע, וואס חמץ שטעלט אים פאר, וועט זיין אוועק, און ער דערציילט ווי דער צאנזער רב האט אחרון של פסח געגעסן פון אלעמענס קניידלעך. ער ערקלערט אז די סדרה הייסט שמיני ווייל אכט געהערט צו משיח. מצה גיט אמונה, און דעם ערשטן שבת נאך פסח ווארנט די תורה נישט צו קאליע מאכן די אמונה מיט מאכלות אסורות, וואס פארשטאפן דאס הארץ; ער לייגט צו ווי שווער כשרות איז היינט. די פיר בהמות מיט איין סימן זענען די ארבע מלכיות; דער חזיר, אדום, וועט צוריקקומען צו כשרות, און דער סימן דערפון איז עובדיה, א גר פון אדום, וואס זיין נאמען איז בגימטריא די צא פסוקים פון דער סדרה. מיט'ן חתם סופר ערקלערט ער אז דער טאג פון חנוכת המשכן האט געקענט זיין דער תיקון, נאר נדב ואביהוא האבן עס קאליע געמאכט און דער שעיר פון ראש חודש איז פארברענט געווארן. יענער שעיר שטייט אינמיטן דער תורה, \"דרש דרש\", פונקט ווי ירושלים איז דער מיטלפונקט פון דער וועלט."
+    },
+    "keyPoints": [
+      {
+        "text": { "en": "Acharon shel Pesach is the Pesach of the days of Mashiach, when the yetzer hara, which chametz represents, will no longer exist.", "yi": "אחרון של פסח איז דער פסח פון ימות המשיח, ווען דער יצר הרע, וואס חמץ שטעלט אים פאר, וועט מער נישט זיין." },
+        "evidence": { "segs": [99, 101, 106, 107, 118], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "The mitzvah of emunah is to preserve the emunah every Jew already has, and forbidden foods clog the heart and damage it.", "yi": "די מצוה פון אמונה איז אפצוהיטן די אמונה וואס יעדער איד האט שוין, און מאכלות אסורות פארשטאפן דאס הארץ און מאכן זי קאליע." },
+        "evidence": { "segs": [278, 280, 281, 284, 301, 320], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "The four animals with only one sign of kashrus are the four kingdoms of exile, which change form like a cloud.", "yi": "די פיר בהמות מיט נאר איין סימן כשרות זענען די ארבע מלכיות פון גלות, וואס טוישן זייער פארעם ווי א וואלקן." },
+        "evidence": { "segs": [430, 434, 439, 442, 460], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "The chazir, which stands for Esav and Edom, is so called because it will return to kashrus when Mashiach comes, as the good part of Esav does teshuvah.", "yi": "דער חזיר, וואס שטעלט פאר עשו און אדום, הייסט אזוי ווייל ער וועט צוריקקערן צו כשרות ווען משיח קומט, ווען דער גוטער חלק פון עשו וועט טון תשובה." },
+        "evidence": { "segs": [497, 498, 501, 522, 537, 574], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "The day the Mishkan was inaugurated, Rosh Chodesh Nissan, could have been the tikkun of Adam HaRishon, but Nadav and Avihu spoiled it.", "yi": "דער טאג פון חנוכת המשכן, ראש חודש ניסן, האט געקענט זיין דער תיקון פון אדם הראשון, נאר נדב ואביהוא האבן עס קאליע געמאכט." },
+        "evidence": { "segs": [750, 757, 773, 774, 776], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "The middle of the Torah, 'darosh darash Moshe', is where the burnt se'ir of Rosh Chodesh is told, because just as Yerushalayim is the center of the world, that day was the center of time.", "yi": "דער אמצע פון דער תורה, \"דרש דרש משה\", איז וואו מ'דערציילט פונעם פארברענטן שעיר פון ראש חודש, ווייל פונקט ווי ירושלים איז דער מיטלפונקט פון דער וועלט, איז יענער טאג געווען דער מיטלפונקט פון זמן." },
+        "evidence": { "segs": [1134, 1136, 1137, 1145, 1153], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-parsha-vayikra-03-01-shemini-e", "startSeg": 0, "endSeg": 119,
+      "title": { "en": "Acharon shel Pesach and the end of chametz", "yi": "אחרון של פסח און דער סוף פון חמץ" },
+      "summary": { "en": "The Rav speaks of the peace of the days of Mashiach, explains that chametz is the yetzer hara and that a person's nefesh extends into his possessions, as with Rabbi Pinchas ben Yair's donkey, and says that Acharon shel Pesach is the Pesach of the future.", "yi": "דער משגיח רעדט פון דעם שלום פון ימות המשיח, ערקלערט אז חמץ איז דער יצר הרע און אז א מענטשנס נפש גייט אריין אין זיין רכוש, ווי ביי דעם אייזל פון רבי פנחס בן יאיר, און זאגט אז אחרון של פסח איז דער פסח לעתיד." },
+      "kind": "intro", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-vayikra-03-01-shemini-e", "startSeg": 120, "endSeg": 224,
+      "title": { "en": "The Sanzer Rav's knedlach and fourteen days of Pesach", "yi": "דעם צאנזער רבס קניידלעך און פערצן טעג פסח" },
+      "summary": { "en": "The Rav tells how the Sanzer Rav ate from the knedlach of the whole town on Acharon shel Pesach, explains that in the future there will be a second set of seven days of Pesach which begins with Acharon shel Pesach, and mentions the harp of eight strings of the days of Mashiach.", "yi": "דער משגיח דערציילט ווי דער צאנזער רב האט אחרון של פסח געגעסן פון די קניידלעך פון דער גאנצער שטאט, ערקלערט אז לעתיד וועלן זיין נאך זיבן טעג פסח וואס הייבן זיך אן מיט אחרון של פסח, און דערמאנט דעם כינור פון אכט סטרונעס פון ימות המשיח." },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-vayikra-03-01-shemini-e", "startSeg": 225, "endSeg": 330,
+      "title": { "en": "The name Shemini, matzah and emunah", "yi": "דער נאמען שמיני, מצה און אמונה" },
+      "summary": { "en": "The Rav explains that a name has meaning, so the name Shemini ties the sedra to Mashiach. Matzah is the food of emunah, and the mitzvah of emunah is to guard it from damage; forbidden foods clog the heart like cholesterol clogs the arteries.", "yi": "דער משגיח ערקלערט אז א נאמען האט א באדייט, און דער נאמען שמיני בינדט די סדרה צו משיח. מצה איז דאס מאכל פון אמונה, און די מצוה פון אמונה איז זי אפצוהיטן; מאכלות אסורות פארשטאפן דאס הארץ ווי כאלעסטעראל פארשטאפט די אדערן." },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-vayikra-03-01-shemini-e", "startSeg": 331, "endSeg": 422,
+      "title": { "en": "Kashrus today and the Shabbos after Pesach", "yi": "כשרות היינט און דער שבת נאך פסח" },
+      "summary": { "en": "The Rav describes how hard it is today to know what is kosher, with ingredients coming from endless companies, and says that on the first Shabbos after Pesach the Torah gives the laws of forbidden foods so as not to damage the emunah gained from the matzah.", "yi": "דער משגיח שילדערט ווי שווער ס'איז היינט צו וויסן וואס איז כשר, ווען די אינגרעדיענטן קומען פון אן עק פירמעס, און זאגט אז אויפן ערשטן שבת נאך פסח גיט די תורה די דינים פון מאכלות אסורות, כדי נישט קאליע צו מאכן די אמונה וואס מ'האט באקומען פון דער מצה." },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-vayikra-03-01-shemini-e", "startSeg": 423, "endSeg": 565,
+      "title": { "en": "The four animals and the four kingdoms", "yi": "די פיר בהמות און די ארבע מלכיות" },
+      "summary": { "en": "The Rav brings the Midrash that the four animals with one sign are the four kingdoms, which appear as the four kings in Avraham's time and as the four kinds of nega'im next week. The chazir is Esav, who will return to kashrus, just as chametz becomes kosher by Shavuos.", "yi": "דער משגיח ברענגט דעם מדרש אז די פיר בהמות מיט איין סימן זענען די ארבע מלכיות, וואס האבן זיך באוויזן אלס די פיר מלכים ביי אברהם אבינו און וועלן זיך באווייזן אלס די פיר מיני נגעים די קומענדיגע וואך. דער חזיר איז עשו, וואס וועט צוריקקערן צו כשרות, אזוי ווי חמץ ווערט כשר ביז שבועות." },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-vayikra-03-01-shemini-e", "startSeg": 566, "endSeg": 716,
+      "title": { "en": "Ovadiah, the ger from Edom", "yi": "עובדיה, דער גר פון אדום" },
+      "summary": { "en": "The Rav explains that Ovadiah, a ger from Edom who became a navi, symbolizes the chazir returning to kashrus; his prophecy on the fall of Edom is like a forest cut down with axes whose handles came from it, and the Masorah's sign for the 91 pesukim of Shemini is the name Ovadiah.", "yi": "דער משגיח ערקלערט אז עובדיה, א גר צדק פון אדום וואס איז געווארן א נביא, איז דער סימן אז דער חזיר וועט צוריקקערן צו כשרות; זיין נבואה אויף דעם מפלה פון אדום איז ווי א וואלד וואס ווערט אפגעהאקט מיט העק וועמענס הענטלעך קומען פון דעם וואלד אליין, און דער סימן פון דער מסורה פאר די צא פסוקים פון שמיני איז דער נאמען עובדיה." },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-vayikra-03-01-shemini-e", "startSeg": 717, "endSeg": 806,
+      "title": { "en": "The Chasam Sofer: the chazir after Nadav and Avihu", "yi": "דער חתם סופר: דער חזיר נאך נדב ואביהוא" },
+      "summary": { "en": "The Rav brings the Chasam Sofer's explanation of why the parsha of the non-kosher animals follows Nadav and Avihu: the eighth day could have been the tikkun of Adam HaRishon, and only after it was spoiled did the Torah say the chazir is treif.", "yi": "דער משגיח ברענגט דעם חתם סופר'ס ערקלערונג פארוואס די פרשה פון די טמא'נע בהמות קומט נאך נדב ואביהוא: דער יום השמיני האט געקענט זיין דער תיקון פון אדם הראשון, און ערשט נאכדעם וואס ער איז קאליע געווארן האט די תורה געזאגט אז דער חזיר איז טריף." },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-vayikra-03-01-shemini-e", "startSeg": 807, "endSeg": 969,
+      "title": { "en": "The burnt se'ir of Rosh Chodesh Nissan", "yi": "דער פארברענטער שעיר פון ראש חודש ניסן" },
+      "summary": { "en": "The Rav explains that the se'ir of Rosh Chodesh is the atonement for the diminishing of the moon; the very first one, on Rosh Chodesh Nissan, was burnt instead of eaten, so its atonement was not completed. Since the world was created in Nissan according to Rabbi Yehoshua, that day was the beginning of all beginnings and was meant to be the day of Mashiach.", "yi": "דער משגיח ערקלערט אז דער שעיר פון ראש חודש איז די כפרה פאר דעם מיעוט הירח; דער גאר ערשטער, אויף ראש חודש ניסן, איז פארברענט געווארן אנשטאט געגעסן, און ממילא איז די כפרה נישט דורכגעפירט געווארן. ווייל לויט רבי יהושע איז די וועלט באשאפן געווארן אין ניסן, איז יענער טאג געווען די ראשית פון אלע ראשית'ן און האט געדארפט זיין דער טאג פון משיח." },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-vayikra-03-01-shemini-e", "startSeg": 970, "endSeg": 1109,
+      "title": { "en": "The center in place, time and soul", "yi": "דער מיטלפונקט אין מקום, זמן און נפש" },
+      "summary": { "en": "The Rav explains that Hashem created the world by looking into the Torah, and that creation began from Yerushalayim, the center of the world, like an embryo; in time the center is Rosh Chodesh Nissan, and in soul it is Adam HaRishon, whose soul is that of Mashiach. In the Mishkan in the desert all three came together, so that day could have been Mashiach.", "yi": "דער משגיח ערקלערט אז דער אייבערשטער האט באשאפן די וועלט דורך קוקן אין דער תורה, און אז די בריאה האט זיך אנגעהויבן פון ירושלים, דער מיטלפונקט פון דער וועלט, ווי אן עמבריא; אין זמן איז דער מיטלפונקט ראש חודש ניסן, און אין נפש איז עס אדם הראשון, וועמענס נשמה איז די נשמה פון משיח. אינעם משכן אין מדבר זענען אלע דריי צוזאמענגעקומען, און ממילא האט יענער טאג געקענט זיין משיח." },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-vayikra-03-01-shemini-e", "startSeg": 1110, "endSeg": 1343,
+      "title": { "en": "Darosh darash: the middle of the Torah", "yi": "דרש דרש: דער אמצע פון דער תורה" },
+      "summary": { "en": "The Rav shows that the middle words of the Torah, 'darosh darash Moshe', stand over the se'ir of Rosh Chodesh, so all of the Torah's drashos flow from this center as Torah goes out from Tziyon. He contrasts Rabbi Eliezer's view that Bereishis is the center, points to the large vav of 'gachon' as the middle letter and the nachash's future tikkun, and closes with the need for a great yeshuah in the coming month of Iyar.", "yi": "דער משגיח ווייזט אז די מיטלסטע ווערטער פון דער תורה, \"דרש דרש משה\", שטייען ביים שעיר פון ראש חודש, און ממילא שטראמען אלע דרשות פון דער תורה פון דעם מיטלפונקט, אזוי ווי תורה גייט ארויס פון ציון. ער שטעלט עס אקעגן רבי אליעזרס שיטה אז בראשית איז דער מיטלפונקט, ווייזט אויפן גרויסן וי\"ו פון \"גחון\" אלס דער מיטלסטער אות און אויפן תיקון פון נחש לעתיד, און ער ענדיגט מיט דעם אז אידן דארפן א גרויסע ישועה אין דעם קומענדיגן חודש אייר." },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "Rabbi Pinchas Ben-Yoyah ... chamayah didn't want to eat demay", "work": "Gemara Chullin", "ref": "Chullin 7a-b", "sefariaRef": "Chullin 7a", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [34, 37, 43, 51, 57], "confidence": 0.8 } },
+    { "heardAs": "the ratbaaz says ... the Radbaz", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [60, 75, 81], "confidence": 0.7 } },
+    { "heardAs": "the Rosh says it's his own Tered", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [71, 73], "confidence": 0.65 } },
+    { "heardAs": "the Gemara says the harp of in Beis HaMikdash had 7 strings", "work": "Gemara Arachin", "ref": "Arachin 13b", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [217, 218, 219, 222], "confidence": 0.7 } },
+    { "heardAs": "Nehemiah said he gave himself some credit", "work": "Gemara Sanhedrin", "ref": "Sanhedrin 93b", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [231, 233, 237, 239], "confidence": 0.75 } },
+    { "heardAs": "Desireh calls Matzah, a food of Amunah", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [258, 259], "confidence": 0.65 } },
+    { "heardAs": "tim tim aleiv the Gemara says ... it says without an Aleph", "work": "Gemara Yoma", "ref": "Yoma 39a", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [285, 289, 292, 332, 333], "confidence": 0.7 } },
+    { "heardAs": "so the mother says these four animals they are the Abba Malchiyas", "work": "Vayikra Rabbah", "ref": "Vayikra Rabbah 13:5", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [438, 439, 440], "confidence": 0.75 } },
+    { "heardAs": "the Archaim HaKadosh brings on this Medrash why is a Chazor called Chazor Sheyachzo lekashru", "work": "Ohr HaChaim", "ref": "Ohr HaChaim on Vayikra 11:7", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [495, 496, 497, 498], "confidence": 0.75 } },
+    { "heardAs": "Like Rasha says in Parshish Torah days ... Esav was Ben Abam Shana", "work": "Rashi", "ref": "Rashi on Bereishis 26:34", "sefariaRef": "Rashi on Genesis 26:34", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [523, 525, 526, 527, 529], "confidence": 0.75 } },
+    { "heardAs": "Chazayna Avadiyah ... Chazay Nevadia Kaya Marashem Alekim L'Eden", "work": "Ovadiah", "ref": "Ovadiah 1:1", "sefariaRef": "Obadiah 1:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [624, 647, 648, 649], "confidence": 0.85 } },
+    { "heardAs": "the Gemara says somebody wants to chop down a forest", "work": "Gemara Sanhedrin", "ref": "Sanhedrin 39b", "sefariaRef": "Sanhedrin 39b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [632, 633, 639, 644, 645], "confidence": 0.8 } },
+    { "heardAs": "the Messeure at the end of the Sedra tells us that there are 91 Pseukim", "work": "Masorah", "ref": "Masorah at the end of Parshas Shemini", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [682, 684, 694, 695, 698], "confidence": 0.85 } },
+    { "heardAs": "the chasam sifar says a remarkable verse", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [717, 734, 782, 806], "confidence": 0.85 } },
+    { "heardAs": "like Rasha says in Parshish Pinchas", "work": "Rashi", "ref": "Rashi on Bamidbar 28:15", "sefariaRef": "Rashi on Numbers 28:15", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [815, 817, 819, 820], "confidence": 0.7 } },
+    { "heardAs": "like the Gemara says Baalim Kayinim Eichlim Baalim Miskapchem", "work": "Gemara Pesachim", "ref": "Pesachim 59b", "sefariaRef": "Pesachim 59b", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [877, 879, 880, 881], "confidence": 0.8 } },
+    { "heardAs": "Rabbi Eleazar says and Rabbi Yeshua says ... benissin nevra eilam", "work": "Gemara Rosh Hashanah", "ref": "Rosh Hashanah 10b-11a", "sefariaRef": "Rosh Hashanah 10b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [893, 894, 896, 897], "confidence": 0.8 } },
+    { "heardAs": "Sathos asks why do we say an Rosh Hashanah", "work": "Tosafos", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [898, 899, 901, 902], "confidence": 0.7 } },
+    { "heardAs": "the Madrish says the Rabbani Shalom looked into the Torah and he created the world", "work": "Bereishis Rabbah", "ref": "Bereishis Rabbah 1:1", "sefariaRef": "Bereshit Rabbah 1:1", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [971, 973, 974, 975], "confidence": 0.85 } },
+    { "heardAs": "the Gemara calls it the stone, the rock from where the world began", "work": "Gemara Yoma", "ref": "Yoma 54b", "sefariaRef": "Yoma 54b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [982, 984, 989, 990, 992], "confidence": 0.75 } },
+    { "heardAs": "the Ramban brings that very often", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [1005], "confidence": 0.75 } },
+    { "heardAs": "like the Meqbalim say that Adam is Rashi Tev is Adam, David, Mashiach", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1055, 1056, 1057, 1058], "confidence": 0.8 } },
+    { "heardAs": "the Yariah Kodesh asks the Kasher how are you able to be marked with Karbonus in the Midbar", "work": "Ohr HaChaim", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1068, 1070, 1074, 1076], "confidence": 0.65 } },
+    { "heardAs": "veseir achatas doresh doresh moshah v'hinei seiraf", "work": "Vayikra", "ref": "Vayikra 10:16", "sefariaRef": "Leviticus 10:16", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1136, 1137, 1138, 1141], "confidence": 0.9 } },
+    { "heardAs": "Ki mitzi in taitzei Torah Udvar Hashem Yerushalayim", "work": "Yeshayahu", "ref": "Yeshayahu 2:3", "sefariaRef": "Isaiah 2:3", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1166, 1167], "confidence": 0.85 } },
+    { "heardAs": "go on your Gachen on his belly", "work": "Bereishis", "ref": "Bereishis 3:14", "sefariaRef": "Genesis 3:14", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [1246, 1247, 1248, 1249], "confidence": 0.75 } },
+    { "heardAs": "is a big vav ... the middle of the", "work": "Vayikra", "ref": "Vayikra 11:42", "sefariaRef": "Leviticus 11:42", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [1269, 1272, 1277, 1278], "confidence": 0.7 } },
+    { "heardAs": "the Chidah says that Darash is Roshetavus", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1282, 1284, 1285], "confidence": 0.65 } }
+  ],
+  "insights": [
+    {
+      "text": { "en": "A person's nefesh extends into his property, which is why chametz, the yetzer hara, must not even be in one's possession on Pesach; Rabbi Pinchas ben Yair's donkey would not eat untithed grain because it was part of its owner's nefesh.", "yi": "א מענטשנס נפש גייט אריין אין זיין רכוש, דערפאר טאר חמץ, דער יצר הרע, פסח אפילו נישט זיין אין זיין רשות; דעם רבי פנחס בן יאירס אייזל האט נישט געוואלט עסן דמאי ווייל ער איז געווען א חלק פון זיין בעל הביתס נפש." },
+      "evidence": { "segs": [22, 23, 26, 28, 53, 58], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "Emunah is instinctive in every Jew; the mitzvah is not to acquire it but to keep it from being damaged, just as a healthy heart must be protected from clogged arteries.", "yi": "אמונה איז אינסטינקטיוו ביי יעדן איד; די מצוה איז נישט זי צו קריגן נאר זי צו היטן אז זי זאל נישט קאליע ווערן, אזוי ווי מ'דארף היטן א געזונט הארץ פון פארשטאפטע אדערן." },
+      "evidence": { "segs": [279, 280, 281, 301, 313, 315], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "The four kingdoms are like a cloud that keeps changing shape: in Avraham's day they were the four kings, in Shemini they are the four impure animals, and in Tazria they are the four kinds of nega'im.", "yi": "די ארבע מלכיות זענען ווי א וואלקן וואס טוישט כסדר זיין פארעם: ביי אברהם אבינו זענען זיי געווען די פיר מלכים, אין שמיני זענען זיי די פיר טמא'נע בהמות, און אין תזריע זענען זיי די פיר מיני נגעים." },
+      "evidence": { "segs": [442, 445, 447, 458, 460, 469], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Masorah's sign for the 91 pesukim of Shemini, the name Ovadiah, is itself a hint that the chazir will return to kashrus, since Ovadiah was the first of Esav to become a ger and a navi.", "yi": "דער סימן פון דער מסורה פאר די צא פסוקים פון שמיני, דער נאמען עובדיה, איז אליין א רמז אז דער חזיר וועט צוריקקערן צו כשרות, ווייל עובדיה איז געווען דער ערשטער פון עשו וואס איז געווארן א גר און א נביא." },
+      "evidence": { "segs": [695, 698, 702, 706, 708, 712], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "The middle of the Torah falls at the burnt se'ir of Rosh Chodesh Nissan because the Torah is the blueprint of creation, and its center must correspond to Yerushalayim, the center of the world, and to that day, the center of time.", "yi": "דער אמצע פון דער תורה פאלט אויפן פארברענטן שעיר פון ראש חודש ניסן ווייל די תורה איז דער פלאן פון דער בריאה, און איר מיטלפונקט מוז שטימען מיט ירושלים, דער מיטלפונקט פון דער וועלט, און מיט יענעם טאג, דער מיטלפונקט פון זמן." },
+      "evidence": { "segs": [1110, 1111, 1119, 1126, 1136, 1148], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "Shemini, which holds the middle of the Torah according to Rabbi Yehoshua, is read on the first Shabbos after Pesach, while Bereishis, the center according to Rabbi Eliezer, is read on the first Shabbos after Sukkos.", "yi": "שמיני, וואס האט אין זיך דעם אמצע פון דער תורה לויט רבי יהושע, לייענט מען דעם ערשטן שבת נאך פסח, און בראשית, דער מיטלפונקט לויט רבי אליעזר, לייענט מען דעם ערשטן שבת נאך סוכות." },
+      "evidence": { "segs": [1178, 1179, 1189, 1207, 1214, 1215], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "The large vav of 'gachon', the middle letter of the Torah, hints that the nachash, who now crawls on its belly, will stand upright again when Mashiach comes.", "yi": "דער גרויסער וי\"ו פון \"גחון\", דער מיטלסטער אות פון דער תורה, איז א רמז אז דער נחש, וואס קריכט היינט אויפן בויך, וועט ווידער שטיין גלייך ווען משיח קומט." },
+      "evidence": { "segs": [1257, 1258, 1269, 1277, 1278, 1279], "confidence": 0.7 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "Rabbi Pinchas ben Yair's donkey", "yi": "דער אייזל פון רבי פנחס בן יאיר" },
+      "retelling": { "en": "Rabbi Pinchas ben Yair came to an inn and his donkey would not eat. When asked why, he suggested the grain had not been tithed. They separated the tithe and the donkey ate. The Rav explains that the donkey was part of the tzaddik's property, and his nefesh extended into it.", "yi": "רבי פנחס בן יאיר איז אנגעקומען אין א קרעטשמע און זיין אייזל האט נישט געוואלט עסן. ווען מ'האט געפרעגט פארוואס, האט ער געזאגט אז אפשר איז די תבואה נישט פארמעשרט. מ'האט אפגעשיידט מעשר און דער אייזל האט געגעסן. דער משגיח ערקלערט אז דער אייזל איז געווען דעם צדיקס רכוש, און זיין נפש איז אריינגעגאנגען אין אים." },
+      "people": ["Rabbi Pinchas ben Yair"],
+      "evidence": { "segs": [34, 36, 39, 45, 46, 53], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "The Sanzer Rav's pot of knedlach", "yi": "דעם צאנזער רבס טאפ קניידלעך" },
+      "retelling": { "en": "Chassidim keep the old custom of eating on Pesach only what is prepared in one's own home, and avoid gebrokts. Yet on Acharon shel Pesach, the people of the town would bring knedlach to the Sanzer Rav and put them into one big pot. The Rav mixed them together, ate, and gave out shirayim, although during the year he would not have eaten from such homes, despite the concern of chametz.", "yi": "חסידים היטן דעם אלטן מנהג אז פסח עסט מען נאר וואס איז צוגעגרייט אין דער אייגענער היים, און מ'עסט נישט געבראקטס. פונדעסטוועגן אחרון של פסח פלעגן די אידן פון שטאט ברענגען קניידלעך צום צאנזער רב און זיי אריינלייגן אין איין גרויסן טאפ. דער רב האט עס צוזאמענגעמישט, געגעסן און געגעבן שיריים, הגם א גאנץ יאר וואלט ער נישט געגעסן פון אזעלכע הייזער, און טראץ דעם חשש חמץ." },
+      "people": ["the Sanzer Rav"],
+      "evidence": { "segs": [133, 146, 152, 153, 156, 160], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "Why is the sedra named Shemini, and what does its name signify?", "yi": "פארוואס הייסט די סדרה שמיני, און וואס באדייט דער נאמען?" },
+      "answer": { "en": "A name is significant, and the name Shemini, eight, ties the sedra to the days of Mashiach, when the harp will have eight strings instead of seven.", "yi": "א נאמען איז א חשוב'ע זאך, און דער נאמען שמיני, אכט, בינדט די סדרה צו ימות המשיח, ווען דער כינור וועט האבן אכט סטרונעס אנשטאט זיבן." },
+      "questionSegs": [227, 228, 255], "answerSegs": [216, 218, 257], "confidence": 0.7
+    },
+    {
+      "question": { "en": "How can the chazir ever become kosher, if the Torah declares it treif?", "yi": "ווי אזוי קען דער חזיר אמאל ווערן כשר, אז די תורה זאגט אז ער איז טריף?" },
+      "answer": { "en": "The chazir represents Esav and Edom, who show their split hooves as if kosher; the good part of Esav will do teshuvah and return to the service of Hashem.", "yi": "דער חזיר שטעלט פאר עשו און אדום, וואס ווייזן זייערע געשפאלטענע קלויען ווי זיי וואלטן כשר; דער גוטער חלק פון עשו וועט טון תשובה און צוריקקערן צו עבודת השם." },
+      "questionSegs": [506, 507], "answerSegs": [522, 529, 537, 574, 575], "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why does the parsha of the non-kosher animals come right after the death of Nadav and Avihu?", "yi": "פארוואס קומט די פרשה פון די טמא'נע בהמות גלייך נאך דעם טויט פון נדב ואביהוא?" },
+      "answer": { "en": "According to the Chasam Sofer, the eighth day could have brought the world to its tikkun, in which case the chazir would be kosher; once Nadav and Avihu spoiled it, the Torah said the chazir is treif.", "yi": "לויטן חתם סופר האט דער יום השמיני געקענט ברענגען די וועלט צו איר תיקון, און דעמאלט וואלט דער חזיר געווען כשר; נאכדעם וואס נדב ואביהוא האבן עס קאליע געמאכט, האט די תורה געזאגט אז דער חזיר איז טריף." },
+      "questionSegs": [734, 735], "answerSegs": [789, 793, 798, 800, 805], "confidence": 0.85
+    },
+    {
+      "question": { "en": "How could korbanos be brought in the desert, when they require the holiness of Yerushalayim?", "yi": "ווי אזוי האט מען געקענט מקריב זיין קרבנות אין מדבר, אז מ'דארף קדושת ירושלים?" },
+      "answer": { "en": "The Ohr HaChaim answers that Yerushalayim came to the desert; the Mishkan was Yerushalayim.", "yi": "דער אור החיים ענטפערט אז ירושלים איז געקומען צום מדבר; דער משכן איז געווען ירושלים." },
+      "questionSegs": [1068, 1069, 1073], "answerSegs": [1076, 1080, 1082, 1083], "confidence": 0.7
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Rav says one must not spoil the emunah gained on Pesach, and must guard it from forbidden foods.", "yi": "דער משגיח זאגט אז מ'טאר נישט קאליע מאכן די אמונה וואס מ'האט באקומען פסח, און מ'דארף זי היטן פון מאכלות אסורות." },
+      "evidence": { "segs": [274, 276, 283, 415, 416], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "The Rav says one must be very careful to buy food only with a hechsher known to be reputable.", "yi": "דער משגיח זאגט אז מ'דארף זיין זייער פארזיכטיג צו קויפן עסן נאר מיט א הכשר וואס מ'ווייסט אז ער איז נאמן." },
+      "evidence": { "segs": [400, 401, 402, 403], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "The Rav asks that Shabbos be used for learning, without wasting time on talk.", "yi": "דער משגיח בעט אז מ'זאל אויסנוצן שבת צו לערנען, און נישט פארלירן צייט מיט שמועסן." },
+      "evidence": { "segs": [1333, 1334, 1335], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "Parshas Shemini",
+    "Acharon shel Pesach and the days of Mashiach",
+    "matzah and emunah",
+    "kashrus and forbidden foods",
+    "the four kingdoms of exile",
+    "the chazir returning to kashrus",
+    "Ovadiah the ger from Edom",
+    "Nadav and Avihu and the eighth day",
+    "the middle of the Torah",
+    "Yerushalayim as the center of the world"
+  ],
+  "concepts": [
+    { "he": "אחרון של פסח", "heardAs": ["Anach and Shel Pesach", "Achrein Shel Pesach", "Achish of Pesach", "Achren Shor Pesach"] },
+    { "he": "ימות המשיח", "heardAs": ["Yemaisa Mashiach", "Yemais HaMashiach", "Yemes HaMeshiach"] },
+    { "he": "יצר הרע", "heardAs": ["Yetzharim", "Yetzhara"] },
+    { "he": "דמאי", "heardAs": ["d'may", "demay"] },
+    { "he": "מאכלות אסורות", "heardAs": ["makhali sasuris", "machalei sasurais"] },
+    { "he": "טמטום הלב", "heardAs": ["tim tim aleiv"] },
+    { "he": "ארבע מלכיות", "heardAs": ["Abba Malchiyas", "Abba Malchies", "Melchias"] },
+    { "he": "שחוזר לכשרותו", "heardAs": ["Sheyachzo lekashru", "Yarza Lekashru", "Tzchayzer Lekashrusay"] },
+    { "he": "גר צדק", "heardAs": ["Geya Tzedek", "ge'at tzedek"] },
+    { "he": "מסורה", "heardAs": ["Messeure"] },
+    { "he": "אש זרה", "heardAs": ["Eish Zara", "esh zara"] },
+    { "he": "שעיר חטאת", "heardAs": ["Sire of Rosh Chaydish", "Soyer Shoresh Chodesh", "veseir achatas"] },
+    { "he": "אונן", "heardAs": ["noinon", "aynan"] },
+    { "he": "אבן שתיה", "heardAs": ["average seer"] },
+    { "he": "אמצע התורה", "heardAs": ["emza ha-teire", "Emtza HaTayre", "Em Tzah Teirah"] },
+    { "he": "דרש דרש משה", "heardAs": ["doresh doresh moshah", "Darash Darash", "Darash, Darash, Meishah"] },
+    { "he": "גחון", "heardAs": ["Gachen"] },
+    { "he": "ברכת החמה", "heardAs": ["the brach over the sun"] }
+  ],
+  "people": [
+    { "name": "Rabbi Pinchas ben Yair", "heardAs": ["Rabbi Pinchas Ben-Yoyah"] },
+    { "name": "the Radbaz", "heardAs": ["ratbaaz", "Radbaz"] },
+    { "name": "the Rosh", "heardAs": ["Rosh"] },
+    { "name": "the Sanzer Rav", "heardAs": ["sons of Rav"] },
+    { "name": "the Maggid", "heardAs": ["Magid"] },
+    { "name": "Nechemiah", "heardAs": ["Nehemiah"] },
+    { "name": "Ezra", "heardAs": ["Ezra"] },
+    { "name": "Avraham Avinu", "heardAs": ["Avraham Avinu", "Abraham Avinu"] },
+    { "name": "Amrafel", "heardAs": ["Amrethel"] },
+    { "name": "Kedarlaomer", "heardAs": ["Kedala Eimer"] },
+    { "name": "David HaMelech", "heardAs": ["David HaMelech"] },
+    { "name": "the Ohr HaChaim", "heardAs": ["Archaim HaKadosh", "Yariah Kodesh"] },
+    { "name": "Esav", "heardAs": ["Esav", "Asav", "Aeser"] },
+    { "name": "Ovadiah", "heardAs": ["Evadia", "Avadiyah", "Ayvadia", "Ivadia"] },
+    { "name": "the Chasam Sofer", "heardAs": ["chasam sifar", "Samsoyfer", "Chassam Saifah"] },
+    { "name": "Nadav and Avihu", "heardAs": ["Nadav and Avihu", "Nadav and Aviyu", "Nadav and Avil"] },
+    { "name": "Aharon", "heardAs": ["Aaron"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["Moshe Rabbeinu", "maisha"] },
+    { "name": "Rabbi Eliezer", "heardAs": ["Rabbi Eleazar", "Rabbi Yelezeh"] },
+    { "name": "Rabbi Yehoshua", "heardAs": ["Rabbi Yeshua", "Rabbi Yehoshua"] },
+    { "name": "Adam HaRishon", "heardAs": ["Adam Rishim", "Adam Rishon", "Adam Elishan"] },
+    { "name": "the Ramban", "heardAs": ["Ramban"] },
+    { "name": "the Chida", "heardAs": ["Chidah"] }
+  ],
+  "asrNotes": "English ASR fair, with Hebrew terms heavily garbled and many fragments. Several stretches could not be recovered: the source the Rav calls 'the Zion' for the stringency of chametz (segs 87-95), the source for fourteen days of Pesach (segs 171-189), the meaning of Rashi in Pinchas (segs 821-833), and the Gemara cut off at segs 1301-1306. The closing about the Chida's reading of 'darash' and the large vav are only partly audible."
+}
