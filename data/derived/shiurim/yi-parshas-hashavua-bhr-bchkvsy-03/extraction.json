@@ -1,0 +1,528 @@
+{
+  "shiurId": "yi-parshas-hashavua-bhr-bchkvsy-03",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that the four laws Moshe Rabbeinu had to ask about after Sinai (the blasphemer, the wood-gatherer, Pesach Sheni and the daughters of Tzelafchad) are all rooted in yovel, the hidden fiftieth level that lies beyond intellectual grasp.",
+      "yi": "דער משגיח ערקלערט אז די פיר פרשיות וואס משה רבינו האט געדארפט נאכפרעגן נאך מתן תורה (דער מגדף, דער מקושש, פסח שני און די בנות צלפחד) זענען אלע געווארצלט אין יובל, די באהאלטענע מדריגה פון חמישים וואס מ'קען נישט כאפן מיטן שכל."
+    },
+    "abstract": {
+      "en": "The Rav opens with the dispute of Rabbi Akiva and Rabbi Yishmael whether the details of the Torah were given at Sinai, and asks why, according to Rabbi Akiva, Moshe did not know four laws. He explains yovel as the fiftieth gate, rooted in the first two letters of Hashem's Name, the hidden level called Atika, where everything returns to its root. Each of the four belongs to that level: the daughters of Tzelafchad and those impure for Pesach grasped with feeling what cold intellect could not; the wood-gatherer's judgment touched Hashem's hidden guidance of souls; and the blasphemer, son of Shlomis bas Divri, mocked the lechem hapanim, which stands for the holiness of Israel and the order of the camps. Shmita stands next to Har Sinai to show that all of this was given at Sinai, hidden within the revealed. He closes with the tochachah and the days of sefirah.",
+      "yi": "דער משגיח עפנט מיט דער מחלוקת פון רבי עקיבא און רבי ישמעאל צי די פרטים פון דער תורה זענען געגעבן געווארן בהר סיני, און פרעגט פארוואס, לויט רבי עקיבא, האט משה רבינו נישט געוואוסט פיר דינים. ער ערקלערט אז יובל איז דער שער החמישים, געווארצלט אין די ערשטע צוויי אותיות פונעם שם הוי\"ה, די באהאלטענע מדריגה וואס הייסט עתיקא, וואו אלעס קערט זיך אום צו זיין שורש. אלע פיר געהערן צו דער מדריגה: די בנות צלפחד און די טמאים פון פסח האבן מרגיש געווען מיט הרגש וואס דער קאלטער שכל האט נישט געכאפט; דער דין פונעם מקושש האט אנגערירט די באהאלטענע הנהגה פונעם אייבערשטן מיט די נשמות; און דער מגדף, דער זון פון שלומית בת דברי, האט חוזק געמאכט פונעם לחם הפנים, וואס ווייזט אויף קדושת ישראל און אויף די סדר פון די מחנות. שמיטה שטייט ביי הר סיני צו ווייזן אז אלעס איז געגעבן געווארן בסיני, באהאלטן אינעם נגלה. ער ענדיגט מיט דער תוכחה און די ימי הספירה."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The four laws Moshe had to ask about are all connected to yovel, which is above his grasp; therefore, though given at Sinai, they became hidden from him.",
+          "yi": "די פיר דינים וואס משה רבינו האט געדארפט פרעגן האבן אלע א שייכות מיט יובל, וואס איז העכער פון זיין השגה, און דערפאר, כאטש זיי זענען געגעבן געווארן בסיני, זענען זיי נעלם געווארן פון אים."
+        },
+        "evidence": { "segs": [49, 50, 147, 158, 159], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Yovel is the fiftieth gate and is rooted in the first two letters of the Shem Havaya, called Atika, of which there is no grasp; at yovel everything returns to its root and goes free.",
+          "yi": "יובל איז דער שער החמישים, און איז געווארצלט אין די ערשטע צוויי אותיות פונעם שם הוי\"ה, וואס הייסן עתיקא, וואו מ'האט נישט קיין השגה; ביי יובל קערט זיך אלעס אום צו זיין שורש און גייט ארויס פריי."
+        },
+        "evidence": { "segs": [34, 38, 40, 41, 44], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The daughters of Tzelafchad and those impure for Pesach grasped through hergesh, an inner feeling like that of wine, what Moshe's cold legal reasoning could not reach.",
+          "yi": "די בנות צלפחד און די טמאים פון פסח האבן מרגיש געווען מיט הרגש, אזוי ווי די מדריגה פון יין, וואס משה רבינו'ס קאלטער שכל פון דין האט נישט דערגרייכט."
+        },
+        "evidence": { "segs": [66, 69, 70, 71, 82], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "The lechem hapanim stands for the holiness of Israel arranged in the camps; the blasphemer, whose mother Shlomis bas Divri had blemished that holiness, had no share in it and mocked it.",
+          "yi": "דער לחם הפנים ווייזט אויף קדושת ישראל ווי זי איז אויסגעשטעלט אין די מחנות; דער מגדף, וועמענס מאמע שלומית בת דברי איז פוגם געווען אין דער קדושה, האט נישט געהאט קיין חלק דערין און האט דערפון חוזק געמאכט."
+        },
+        "evidence": { "segs": [84, 100, 101, 137, 141], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Shmita is tied to Har Sinai to teach that even the laws of yovel were given at Sinai with all their details; the hidden lies within the revealed.",
+          "yi": "שמיטה שטייט ביי הר סיני צו לערנען אז אפילו די דינים פון יובל זענען געגעבן געווארן בסיני מיט אלע פרטים; דאס באהאלטענע ליגט אינעם נגלה."
+        },
+        "evidence": { "segs": [165, 167, 168, 169], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "In the days of sefirah one works to turn the forty-nine curses of the tochachah and the bad traits into blessing, preparing for the fiftieth day.",
+          "yi": "אין די ימי הספירה ארבעט מען צו איבערדרייען די נ\"ט קללות פון דער תוכחה און די שלעכטע מידות אויף ברכה, און מ'גרייט זיך צום יום החמישים."
+        },
+        "evidence": { "segs": [170, 171, 175, 185], "confidence": 0.7 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-parsha-vayikra-06-03-behar-bechukoisei",
+      "startSeg": 0,
+      "endSeg": 8,
+      "title": {
+        "en": "Why Moshe did not know four laws",
+        "yi": "פארוואס משה רבינו האט נישט געוואוסט פיר דינים"
+      },
+      "summary": {
+        "en": "The Rav brings the dispute of Rabbi Akiva and Rabbi Yishmael whether the details of the Torah were given at Sinai, and asks why, if everything was given there, Moshe had to ask about four laws. He rejects the forced answers and adds Rashi's question of what shmita has to do with Har Sinai.",
+        "yi": "דער משגיח ברענגט די מחלוקת פון רבי עקיבא און רבי ישמעאל צי די פרטים פון דער תורה זענען געגעבן געווארן בסיני, און פרעגט פארוואס, אויב אלעס איז דארט געגעבן געווארן, האט משה רבינו געדארפט פרעגן פיר דינים. ער שטויסט אפ די דוחק'דיגע תירוצים און ברענגט רש\"י'ס קשיא, מה ענין שמיטה אצל הר סיני."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-vayikra-06-03-behar-bechukoisei",
+      "startSeg": 9,
+      "endSeg": 19,
+      "title": {
+        "en": "The blasphemer and the lechem hapanim",
+        "yi": "דער מגדף און דער לחם הפנים"
+      },
+      "summary": {
+        "en": "The Rav turns to the blasphemer at the end of Emor, the first of the four, and to Rashi's two readings of where he 'went out' from: from his world, and from the parsha of the lechem hapanim, which he mocked as nine-day-old bread. He asks how such a mockery can be understood.",
+        "yi": "דער משגיח גייט צו צום מגדף אין סוף פרשת אמור, דער ערשטער פון די פיר, און צו רש\"י'ס צוויי פשטים פון וואנעט ער איז ארויסגעגאנגען: פון זיין עולם, און פון דער פרשה פון לחם הפנים, וואס ער האט חוזק געמאכט אז ס'איז ניין טעג אלט ברויט. ער פרעגט ווי אזוי מ'קען פארשטיין אזא חוזק."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-vayikra-06-03-behar-bechukoisei",
+      "startSeg": 20,
+      "endSeg": 32,
+      "title": {
+        "en": "The camp of Israel as a living Sefer Torah",
+        "yi": "די מחנה ישראל ווי א לעבעדיגע ספר תורה"
+      },
+      "summary": {
+        "en": "The Rav asks how a man who saw all the miracles could mock over bread, and why he was not allowed to pitch his tent in the camp of Dan. He explains that the camps mirror the Merkavah and that the 600,000 Jews are the letters of a living Sefer Torah, and that the blasphemer did not believe the miracle that the lechem hapanim stayed warm.",
+        "yi": "דער משגיח פרעגט ווי אזוי א מענטש וואס האט געזען אלע נסים האט געקענט חוזק מאכן פון ברויט, און פארוואס מ'האט אים נישט געלאזט שטעלן זיין געצעלט אין מחנה דן. ער ערקלערט אז די מחנות זענען אזוי ווי די מרכבה, און אז די זעכס הונדערט טויזנט אידן זענען די אותיות פון א לעבעדיגע ספר תורה, און אז דער מגדף האט נישט געגלייבט אינעם נס אז דער לחם הפנים איז געבליבן ווארעם."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-vayikra-06-03-behar-bechukoisei",
+      "startSeg": 33,
+      "endSeg": 48,
+      "title": {
+        "en": "Yovel, the fiftieth gate and the hidden Name",
+        "yi": "יובל, דער שער החמישים און דער באהאלטענער שם"
+      },
+      "summary": {
+        "en": "Bringing the Ramban on shmita, the Rav explains yovel as the fiftieth gate that Moshe did not attain, rooted in the first two letters of the Shem Havaya, called Atika, beyond all grasp. At yovel everyone returns to his root and goes free, even one whom Shabbos and shmita could not free, and so too the uncounted fiftieth day of the omer.",
+        "yi": "מיט'ן רמב\"ן אויף שמיטה ערקלערט דער משגיח אז יובל איז דער שער החמישים וואס משה רבינו האט נישט משיג געווען, געווארצלט אין די ערשטע צוויי אותיות פונעם שם הוי\"ה, וואס הייסן עתיקא, העכער פון יעדער השגה. ביי יובל קערט זיך יעדער אום צו זיין שורש און גייט ארויס פריי, אפילו דער וואס שבת און שמיטה האבן אים נישט באפרייט, און אזוי אויך דער פופציגסטער טאג פון ספירה וואס מ'ציילט נישט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-vayikra-06-03-behar-bechukoisei",
+      "startSeg": 49,
+      "endSeg": 56,
+      "title": {
+        "en": "The four laws belong to yovel",
+        "yi": "די פיר דינים געהערן צו יובל"
+      },
+      "summary": {
+        "en": "The Rav states his thesis: the four laws listed by Targum Yonasan are all connected to yovel and so were above Moshe's grasp. He brings Rabbeinu Bachya that the large nun in the daughters of Tzelafchad's parsha alludes to the fiftieth gate, and asks how they knew what Moshe did not.",
+        "yi": "דער משגיח שטעלט אוועק זיין יסוד: די פיר דינים וואס דער תרגום יונתן רעכנט אויס האבן אלע א שייכות מיט יובל, און דערפאר זענען זיי געווען העכער פון משה רבינו'ס השגה. ער ברענגט רבינו בחיי אז דער גרויסער נו\"ן ביי די בנות צלפחד איז מרמז אויפן שער החמישים, און פרעגט ווי אזוי זיי האבן געוואוסט וואס משה רבינו האט נישט געוואוסט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-vayikra-06-03-behar-bechukoisei",
+      "startSeg": 57,
+      "endSeg": 71,
+      "title": {
+        "en": "Intellect and hergesh: the daughters of Tzelafchad",
+        "yi": "שכל און הרגש: די בנות צלפחד"
+      },
+      "summary": {
+        "en": "The Rav contrasts the matzos, which stand for intellect, with the cups of wine, which stand for hergesh, inner feeling, and explains that a beis din must rule with cold logic. A share in Eretz Yisrael is a share in the Torah and in yovel, and the daughters of Tzelafchad sensed with feeling that no Jew can be lost, which Moshe's legal reasoning could not reach.",
+        "yi": "דער משגיח שטעלט אקעגן די מצות, וואס זענען כנגד שכל, מיט די כוסות יין, וואס זענען כנגד הרגש, און ערקלערט אז א בית דין מוז פסקנען מיט א קאלטן שכל. א חלק אין ארץ ישראל איז א חלק אין דער תורה און אין יובל, און די בנות צלפחד האבן מרגיש געווען מיט הרגש אז קיין איד קען נישט פארלוירן גיין, וואס משה רבינו'ס שכל פון דין האט נישט דערגרייכט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-vayikra-06-03-behar-bechukoisei",
+      "startSeg": 72,
+      "endSeg": 82,
+      "title": {
+        "en": "The wood-gatherer and Pesach Sheni",
+        "yi": "דער מקושש און פסח שני"
+      },
+      "summary": {
+        "en": "The Rav explains that the wood-gatherer acted for the sake of Heaven and by the depth of the law was not liable, yet Moshe's beis din could judge only by witnesses, not ruach hakodesh; this touches Hashem's hidden guidance of souls, the level of yovel. He adds the second question about Tzelafchad's inheritance at yovel, and Pesach Sheni, a mitzvah that binds a Jew to his root, where those impure were right by feeling.",
+        "yi": "דער משגיח ערקלערט אז דער מקושש האט געטון לשם שמים און לויט עומק הדין איז ער נישט געווען חייב, אבער משה רבינו'ס בית דין האט געקענט משפטן נאר לויט עדות און התראה, נישט מיט רוח הקודש; דאס רירט אן די באהאלטענע הנהגה פונעם אייבערשטן מיט די נשמות, די מדריגה פון יובל. ער לייגט צו די צווייטע שאלה פון די נחלה פון צלפחד ביים יובל, און פסח שני, א מצוה וואס איז מקשר א איד צו זיין שורש, וואו די טמאים זענען געווען גערעכט מיט הרגש."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-vayikra-06-03-behar-bechukoisei",
+      "startSeg": 83,
+      "endSeg": 97,
+      "title": {
+        "en": "Lechem hapanim and the holiness of Israel",
+        "yi": "לחם הפנים און קדושת ישראל"
+      },
+      "summary": {
+        "en": "For the fourth law the Rav explains that the lechem hapanim, twelve loaves in two rows of six, alludes to the holiness of Israel arranged in the camps, mirroring the twelve angels around the Throne. It stayed warm because what holds the holiness of yesod never decays, and Israel's holiness, 'kedoshim tihyu', depends on the first two letters of the Name, which testify that only one blemish was found.",
+        "yi": "ביים פערטן דין ערקלערט דער משגיח אז דער לחם הפנים, צוועלף חלות אין צוויי מערכות פון זעקס, איז מרמז אויף קדושת ישראל ווי זי איז אויסגעשטעלט אין די מחנות, כנגד די צוועלף מלאכים ארום דעם כסא הכבוד. ער איז געבליבן ווארעם ווייל וואס עס האט אין זיך קדושת היסוד ווערט קיינמאל נישט פארדארבן, און קדושת ישראל, \"קדושים תהיו\", הענגט אין די ערשטע צוויי אותיות פונעם שם, וואס זאגן עדות אז נאר איין פגם איז געפונען געווארן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-vayikra-06-03-behar-bechukoisei",
+      "startSeg": 98,
+      "endSeg": 112,
+      "title": {
+        "en": "Shlomis bas Divri and the name Shulamis",
+        "yi": "שלומית בת דברי און דער נאמען שולמית"
+      },
+      "summary": {
+        "en": "The Rav explains that Shlomis bas Divri was the single blemish: she greeted and chatted with everyone instead of conducting herself with tznius, and so her son had no connection to the Name, to yovel, to the camp or to the lechem hapanim. He asks why Knesses Yisrael is called Shulamis, brings the Chasam Sofer's answer and a story of the Chiddushei HaRim about naming a child.",
+        "yi": "דער משגיח ערקלערט אז שלומית בת דברי איז געווען דער איינציגער פגם: זי האט געזאגט שלום און גערעדט מיט יעדן, אנשטאט זיך צו פירן בצניעות, און דערפאר האט איר זון נישט געהאט קיין שייכות מיטן שם, מיט יובל, מיט דער מחנה און מיטן לחם הפנים. ער פרעגט פארוואס כנסת ישראל הייסט שולמית, ברענגט דעם חתם סופר'ס תירוץ און א מעשה מיטן חידושי הרי\"ם וועגן געבן א נאמען צו א קינד."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-vayikra-06-03-behar-bechukoisei",
+      "startSeg": 113,
+      "endSeg": 124,
+      "title": {
+        "en": "Shuvi Shuvi HaShulamis: refusing to mix",
+        "yi": "שובי שובי השולמית: נישט זיך מישן"
+      },
+      "summary": {
+        "en": "Through the Midrash on 'Shuvi shuvi haShulamis', the Rav describes the nations inviting Israel to mix with them, with talk of dialogue and brotherhood, and Israel answering that they cannot give it the dancing of the camps. He explains the form 'Shulamis' as one who receives peace without giving greetings, unlike Shlomis, whose greetings cost her son his place in the camp.",
+        "yi": "דורך דעם מדרש אויף \"שובי שובי השולמית\" שילדערט דער משגיח ווי די גוים רופן די אידן זיך צו מישן מיט זיי, מיט דיבורים פון שלום און ברודערשאפט, און כנסת ישראל ענטפערט אז זיי קענען איר נישט געבן די מחולת המחנים. ער טייטשט אז \"שולמית\" איז א לשון פון איינער וואס באקומט שלום און גיט נישט קיין שלום, נישט אזוי ווי שלומית, וועמענס שלום האט איר זון געקאסט זיין פלאץ אין דער מחנה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-vayikra-06-03-behar-bechukoisei",
+      "startSeg": 125,
+      "endSeg": 133,
+      "title": {
+        "en": "The Shabbos day meal and Atika Kadisha",
+        "yi": "די סעודה פון שבת בייטאג און עתיקא קדישא"
+      },
+      "summary": {
+        "en": "The Rav connects the Shabbos day meal to Atika Kadisha, the level of yovel, explaining why kiddush is made on wine then and why what stems from Atika is done standing. He mentions the twelve loaves in the Shabbos song, then returns to Rashi's first reading: the blasphemer went out from 'his world', the olam of yovel.",
+        "yi": "דער משגיח פארבינדט די סעודה פון שבת בייטאג מיט עתיקא קדישא, די מדריגה פון יובל, און ערקלערט פארוואס מ'מאכט דעמאלט קידוש אויף יין און פארוואס וואס עס קומט פון עתיקא טוט מען שטייענדיג. ער דערמאנט די צוועלף חלות אינעם זמר פון שבת, און קערט זיך אום צו רש\"י'ס ערשטן פשט: דער מגדף איז ארויסגעגאנגען פון \"זיין עולם\", דער עולם פון יובל."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-vayikra-06-03-behar-bechukoisei",
+      "startSeg": 134,
+      "endSeg": 149,
+      "title": {
+        "en": "The blasphemer's claim that all are equal",
+        "yi": "דעם מגדף'ס טענה אז אלע זענען גלייך"
+      },
+      "summary": {
+        "en": "The Rav explains the blasphemer's mockery: by calling the lechem hapanim stale, he meant that the camp of Israel is mixed and has no special holiness, so he too belongs in it. Since the lechem hapanim shows Israel's holiness from the hidden level of yovel, he had no share in it, and this is why all four laws were hidden from Moshe, who, as the Ramban says, had no grasp of yovel.",
+        "yi": "דער משגיח ערקלערט דעם מגדף'ס חוזק: מיט'ן זאגן אז דער לחם הפנים איז אלט און פארשימלט האט ער געמיינט אז די מחנה ישראל איז אויסגעמישט און האט נישט קיין באזונדערע קדושה, און ממילא געהערט ער אויך אהין. וויבאלד דער לחם הפנים ווייזט אויף קדושת ישראל פון דער באהאלטענער מדריגה פון יובל, האט ער נישט געהאט קיין חלק דערין, און דערפאר זענען אלע פיר דינים נעלם געווארן פון משה רבינו, וואס, ווי דער רמב\"ן זאגט, האט נישט געהאט קיין השגה אין יובל."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-vayikra-06-03-behar-bechukoisei",
+      "startSeg": 150,
+      "endSeg": 169,
+      "title": {
+        "en": "Everything was given at Sinai",
+        "yi": "אלעס איז געגעבן געווארן בסיני"
+      },
+      "summary": {
+        "en": "The Rav brings the Maharal that 'Moshe received the Torah from Sinai' stresses a Torah brought down into the world, and asks whether the matters of yovel were then not given at Sinai. He answers that Moshe received everything at Sinai, but what is above grasp was afterwards hidden from him, and that one must believe the hidden lies within the revealed. This is why shmita stands next to Har Sinai, right after the parsha of the blasphemer.",
+        "yi": "דער משגיח ברענגט דעם מהר\"ל אז \"משה קיבל תורה מסיני\" ווייזט אויף א תורה וואס איז אראפגעקומען אויף דער וועלט, און פרעגט צי די ענינים פון יובל זענען דען נישט געגעבן געווארן בסיני. ער ענטפערט אז משה רבינו האט אלעס באקומען בסיני, נאר וואס איז העכער פון השגה איז נאכדעם נעלם געווארן פון אים, און אז מ'דארף גלייבן אז אינעם נגלה ליגט דער נסתר. דערפאר שטייט שמיטה ביי הר סיני, גלייך נאך דער פרשה פונעם מגדף."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-vayikra-06-03-behar-bechukoisei",
+      "startSeg": 170,
+      "endSeg": 182,
+      "title": {
+        "en": "The tochachah and the days of sefirah",
+        "yi": "די תוכחה און די ימי הספירה"
+      },
+      "summary": {
+        "en": "The Rav links the tochachah in Bechukosai to the work of the sefirah days, turning bad traits and curses into blessing through the holiness of yesod, and tells of the Mitteler Rebbe who fainted at the curses and of Reb Hershele of Zidichov. He speaks of counting the omer with simple emunah, knowing these days are holy.",
+        "yi": "דער משגיח פארבינדט די תוכחה אין פרשת בחוקותי מיט דער עבודה פון די ימי הספירה, איבערצודרייען שלעכטע מידות און קללות אויף ברכה דורך קדושת היסוד, און דערציילט פונעם מיטעלער רבי וואס איז חלש געווארן ביי די קללות און פון רבי הערשעלע זידיטשובער. ער רעדט וועגן ציילן ספירה מיט אמונה פשוטה, מיט'ן וויסן אז די טעג זענען הייליג."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-vayikra-06-03-behar-bechukoisei",
+      "startSeg": 183,
+      "endSeg": 192,
+      "title": {
+        "en": "From Sinai to Sinai: preparing for Shavuos",
+        "yi": "פון סיני ביז סיני: זיך גרייטן צו שבועות"
+      },
+      "summary": {
+        "en": "The Rav notes that the parsha of shmita and yovel opens and closes with Har Sinai, and that the tochachah is 'in the hand of Moshe', so every Jew can turn it to blessing. He closes by tying Shavuos to yovel and returning to the root, and wishes that all prepare with holiness for the fiftieth day.",
+        "yi": "דער משגיח מערקט אן אז די פרשה פון שמיטה און יובל הייבט זיך אן און ענדיגט זיך מיט הר סיני, און אז די תוכחה איז \"ביד משה\", אזוי אז יעדער איד קען זי איבערדרייען אויף ברכה. ער ענדיגט מיט'ן פארבינדן שבועות מיט יובל און מיט'ן זיך אומקערן צום שורש, און ווינטשט אז אלע זאלן זיך גרייטן מיט קדושה צום יום החמישים."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "רבי יקיבא און רבי ישמעאל אין חגיגא", "work": "Gemara Chagigah", "ref": "Chagigah 6a-b", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [0, 1], "confidence": 0.8 } },
+    { "heardAs": "מענין שמועתי אצל הסיני", "work": "Rashi", "ref": "Rashi on Vayikra 25:1", "sefariaRef": "Rashi on Leviticus 25:1:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [0, 7, 165], "confidence": 0.85 } },
+    { "heardAs": "במשמר לפרש להם על פי השם", "work": "Vayikra", "ref": "Vayikra 24:12", "sefariaRef": "Leviticus 24:12", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [9], "confidence": 0.8 } },
+    { "heardAs": "מיואלומי יצא ... רבי ברכה יואל אימל, מי פרשת שלומיילא", "work": "Rashi", "ref": "Rashi on Vayikra 24:10", "sefariaRef": "Rashi on Leviticus 24:10:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [11, 13, 132, 134], "confidence": 0.8 } },
+    { "heardAs": "רבינו ובחי' וועטו ברענגען דעם חזאל מיואלום היוצא", "work": "Rabbeinu Bachya", "ref": "Rabbeinu Bachya on Vayikra 24:10", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [12, 133], "confidence": 0.7 } },
+    { "heardAs": "מיישר ה' חג עולם", "work": "Vayikra", "ref": "Vayikra 24:9", "sefariaRef": "Leviticus 24:9", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [12, 13, 133], "confidence": 0.75 } },
+    { "heardAs": "ויומי שבת יחנא", "work": "Vayikra", "ref": "Vayikra 24:8", "sefariaRef": "Leviticus 24:8", "resolution": "resolved", "mention": "alluded", "evidence": { "segs": [14], "confidence": 0.65 } },
+    { "heardAs": "מבזונו שמשה יצא, מחייב", "work": "Rashi", "ref": "Rashi on Vayikra 24:10", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [23, 24], "confidence": 0.7 } },
+    { "heardAs": "לחם חם ביום יולגכי", "work": "Shmuel I", "ref": "Shmuel I 21:7", "sefariaRef": "I Samuel 21:7", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [31, 90, 135], "confidence": 0.8 } },
+    { "heardAs": "שבו שבו השלמות ... כמחילת המחנים", "work": "Shir HaShirim", "ref": "Shir HaShirim 7:1", "sefariaRef": "Song of Songs 7:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [27, 113, 123], "confidence": 0.8 } },
+    { "heardAs": "תשנ״ט המדרש און שיר השיעורים", "work": "Shir HaShirim Rabbah", "ref": "Shir HaShirim Rabbah 7:1", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [27, 113, 116], "confidence": 0.7 } },
+    { "heardAs": "דער רמב״ם זאגט ... דער רמב״ן זאגט אין אנטערן פרשת פהר", "work": "Ramban", "ref": "Ramban on Vayikra 25:2", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [33, 50, 148], "confidence": 0.7 } },
+    { "heardAs": "ושבתו משה עלך הזאתה", "work": "Vayikra", "ref": "Vayikra 25:10", "sefariaRef": "Leviticus 25:10", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [40, 44, 45], "confidence": 0.75 } },
+    { "heardAs": "האבטו את הדוני את השתיו ואת בונו", "work": "Shemos", "ref": "Shemos 21:5", "sefariaRef": "Exodus 21:5", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [42], "confidence": 0.7 } },
+    { "heardAs": "תספר חמישים יום", "work": "Vayikra", "ref": "Vayikra 23:16", "sefariaRef": "Leviticus 23:16", "resolution": "resolved", "mention": "alluded", "evidence": { "segs": [48, 155], "confidence": 0.7 } },
+    { "heardAs": "דער תרגום יונתן רעדט", "work": "Targum Yonasan", "ref": "Targum Yonasan on Vayikra 24:12", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [49, 169], "confidence": 0.75 } },
+    { "heardAs": "ויעקב משה איז משפטים לפני ה'", "work": "Bamidbar", "ref": "Bamidbar 27:5", "sefariaRef": "Numbers 27:5", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [51, 53, 55], "confidence": 0.85 } },
+    { "heardAs": "רבי נרבחיה זאגט ... אזוי שטעט רבינו בחיים", "work": "Rabbeinu Bachya", "ref": "Rabbeinu Bachya on Bamidbar 27:5", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [51, 53], "confidence": 0.75 } },
+    { "heardAs": "כך כתבה פרשה זאל לפני במים", "work": "Rashi", "ref": "Rashi on Bamidbar 27:7", "sefariaRef": "Rashi on Numbers 27:7:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [55, 70], "confidence": 0.75 } },
+    { "heardAs": "כאילו אידעך ממיני נידעך", "work": "Shmuel II", "ref": "Shmuel II 14:14", "sefariaRef": "II Samuel 14:14", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [67, 69], "confidence": 0.75 } },
+    { "heardAs": "דער יריא הקודש זאגט ... א זשק פון ארי הקדש", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [68, 125, 126], "confidence": 0.65 } },
+    { "heardAs": "לאמיר יאר גורם ה' אבינו", "work": "Bamidbar", "ref": "Bamidbar 27:4", "sefariaRef": "Numbers 27:4", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [63, 72], "confidence": 0.75 } },
+    { "heardAs": "כולי פירש", "work": "Bamidbar", "ref": "Bamidbar 15:34", "sefariaRef": "Numbers 15:34", "resolution": "resolved", "mention": "alluded", "evidence": { "segs": [72, 78], "confidence": 0.7 } },
+    { "heardAs": "וויאזוי ער שטעט אין מדרש, און וויאזוי די תרגומיונות", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [73, 74], "confidence": 0.7 } },
+    { "heardAs": "וכי איהו א יובל", "work": "Bamidbar", "ref": "Bamidbar 36:4", "sefariaRef": "Numbers 36:4", "resolution": "resolved", "mention": "alluded", "evidence": { "segs": [79], "confidence": 0.65 } },
+    { "heardAs": "לאמיר נהי' גורם, לבילתי הקרוב את קרבן ה' במועדו", "work": "Bamidbar", "ref": "Bamidbar 9:7", "sefariaRef": "Numbers 9:7", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [82], "confidence": 0.75 } },
+    { "heardAs": "עס שטייט אין רבינו בחי' פארוואס דער לחם הפנים האט געווייזן צוועלף חלות", "work": "Rabbeinu Bachya", "ref": "Rabbeinu Bachya on Vayikra 24:5", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [86, 88], "confidence": 0.65 } },
+    { "heardAs": "ששע מהרחס", "work": "Vayikra", "ref": "Vayikra 24:6", "sefariaRef": "Leviticus 24:6", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [89, 90, 137], "confidence": 0.8 } },
+    { "heardAs": "קדושים צייל ... כי קדוש אני ה'", "work": "Vayikra", "ref": "Vayikra 19:2", "sefariaRef": "Leviticus 19:2", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [94, 95, 96], "confidence": 0.8 } },
+    { "heardAs": "שבטי כלל ישראל עדות", "work": "Tehillim", "ref": "Tehillim 122:4", "sefariaRef": "Psalms 122:4", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [97, 99, 100], "confidence": 0.8 } },
+    { "heardAs": "ווי רשע ברענגט דארטן ביי משפחת החנוכה און משפחת הפלאה", "work": "Rashi", "ref": "Rashi on Bamidbar 26:5", "sefariaRef": "Rashi on Numbers 26:5:1", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [99], "confidence": 0.75 } },
+    { "heardAs": "אחת היתר פרסם הכתר ... פארוואס הייסט זי שלימס בת דברי? זאגט רשע", "work": "Rashi", "ref": "Rashi on Vayikra 24:11", "sefariaRef": "Rashi on Leviticus 24:11:1", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [97, 102], "confidence": 0.8 } },
+    { "heardAs": "כל כבוד ובשמלך פנימה", "work": "Tehillim", "ref": "Tehillim 45:14", "sefariaRef": "Psalms 45:14", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [103, 104], "confidence": 0.8 } },
+    { "heardAs": "אזוי ווי שטעט אין פרקי יבאי, ס'איז א טייל בשיחה", "work": "Pirkei Avos", "ref": "Avos 1:5", "sefariaRef": "Pirkei Avot 1:5", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [104], "confidence": 0.65 } },
+    { "heardAs": "אזוי ענטפערט דורך סמסופר ... ווי דער חתם סופר זאגט", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [106, 107, 110], "confidence": 0.75 } },
+    { "heardAs": "אזוי ווי שטעט אין אקדמות", "work": "Akdamus", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [113], "confidence": 0.65 } },
+    { "heardAs": "אין דעם זעלבן פיוט", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [129, 130], "confidence": 0.6 } },
+    { "heardAs": "וואס עס שטעט ביי דער עבוד וואס גייט ארויס ... ועדה לעולם", "work": "Shemos", "ref": "Shemos 21:6", "sefariaRef": "Exodus 21:6", "resolution": "resolved", "mention": "alluded", "evidence": { "segs": [133], "confidence": 0.65 } },
+    { "heardAs": "משה קיבל תורה מסיני", "work": "Pirkei Avos", "ref": "Avos 1:1", "sefariaRef": "Pirkei Avot 1:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [150, 153], "confidence": 0.85 } },
+    { "heardAs": "דער מהר''ל זאגט", "work": "Derech Chaim", "ref": "Derech Chaim on Avos 1:1", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [150, 153], "confidence": 0.7 } },
+    { "heardAs": "אין ענא בקח ... תא עלומות", "work": "Ana Bekoach", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [154], "confidence": 0.7 } },
+    { "heardAs": "ער שטעט אין זייער קודש, פארוואס עסט מצוה א מצוה", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [156, 157], "confidence": 0.65 } },
+    { "heardAs": "דברים שלא נתגל למושן, נתגל לרבי קיבר ... אזוי ווי דער גמרא זאגט מנחת", "work": "Gemara Menachos", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [159], "confidence": 0.7 } },
+    { "heardAs": "דער רמב״ם זאגט אזא בן הקדושה פון חול המועד", "work": "Ramban", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [179, 181], "confidence": 0.65 } },
+    { "heardAs": "עס פאנגט זיך אן מיט הר סיני, און עס ענדיגט זיך מיט הר סיני", "work": "Vayikra", "ref": "Vayikra 25:1", "sefariaRef": "Leviticus 25:1", "resolution": "resolved", "mention": "alluded", "evidence": { "segs": [183], "confidence": 0.75 } },
+    { "heardAs": "בהן סיני ... ביד משה", "work": "Vayikra", "ref": "Vayikra 26:46", "sefariaRef": "Leviticus 26:46", "resolution": "resolved", "mention": "alluded", "evidence": { "segs": [184, 185], "confidence": 0.7 } },
+    { "heardAs": "וימה רבי יקיבא ... מקוה ישראל ה'", "work": "Mishnah Yoma", "ref": "Yoma 8:9", "sefariaRef": "Mishnah Yoma 8:9", "resolution": "resolved", "mention": "alluded", "evidence": { "segs": [189], "confidence": 0.65 } }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The camp of Israel in the desert was a living Sefer Torah: 600,000 Jews as its 600,000 letters, the four camps with Levi in the middle like the five books with Vayikra at the center; a stranger in the camp is like a tear in the scroll.",
+        "yi": "די מחנה ישראל אין מדבר איז געווען א לעבעדיגע ספר תורה: זעכס הונדערט טויזנט אידן כנגד די זעכס הונדערט טויזנט אותיות, די פיר מחנות מיט שבט לוי אינמיטן אזוי ווי די פינף ספרים מיט ויקרא אינמיטן; א פרעמדער אין דער מחנה איז ווי א ריס אין דער ספר תורה."
+      },
+      "evidence": { "segs": [29, 30], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "'Before Hashem' in the daughters of Tzelafchad's parsha means before the Name itself, the tip of the yud, the hidden level Moshe did not grasp, matching the large nun of the fiftieth gate.",
+        "yi": "\"לפני ה'\" ביי די בנות צלפחד מיינט פאר דעם שם אליין, דער קוצו של יו\"ד, די באהאלטענע מדריגה וואס משה רבינו האט נישט משיג געווען, צוזאמען מיטן גרויסן נו\"ן פונעם שער החמישים."
+      },
+      "evidence": { "segs": [51, 52, 53], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The wood-gatherer was by the deepest law not liable, yet Moshe's beis din could not rule by ruach hakodesh; the true judgment belongs to Hashem's guidance of souls to their tikkun, which is the level of yovel.",
+        "yi": "לויט עומק הדין איז דער מקושש נישט געווען חייב מיתה, אבער משה רבינו'ס בית דין האט נישט געטארט פסקנען מיט רוח הקודש; דער אמת'ער משפט געהערט צו דער הנהגה פונעם אייבערשטן ווי ער פירט די נשמות צו זייער תיקון, די מדריגה פון יובל."
+      },
+      "evidence": { "segs": [75, 76, 77], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The lechem hapanim stayed fresh until the ninth day because it carries the holiness of yesod, the ninth sefirah from chochmah down, and whatever holds the holiness of yesod never decays.",
+        "yi": "דער לחם הפנים איז געבליבן פריש ביז דעם ניינטן טאג ווייל ער טראגט אין זיך קדושת היסוד, די ניינטע ספירה פון חכמה אראפ, און וואס עס האט אין זיך קדושת היסוד ווערט קיינמאל נישט פארדארבן."
+      },
+      "evidence": { "segs": [90, 93], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Knesses Yisrael is called Shulamis, a passive form, because she receives peace but does not go about greeting and mixing, the opposite of Shlomis bas Divri.",
+        "yi": "כנסת ישראל הייסט שולמית, א לשון פון א מקבל, ווייל זי באקומט שלום אבער גייט נישט ארום זאגן שלום און זיך מישן, דאס היפך פון שלומית בת דברי."
+      },
+      "evidence": { "segs": [119, 120, 121, 123], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "By calling the nine-day-old lechem hapanim stale, the blasphemer was really saying that the Jewish camp is mixed and stale, denying the holiness of Israel so that he too would belong.",
+        "yi": "מיט'ן רופן דעם ניין טעג אלטן לחם הפנים פארשימלט, האט דער מגדף באמת געטענה'ט אז די אידישע מחנה איז אויסגעמישט און פארשימלט, און ער האט אפגעלייקנט קדושת ישראל כדי ער זאל אויך געהערן אהין."
+      },
+      "evidence": { "segs": [139, 141, 143], "confidence": 0.7 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Mitteler Rebbe faints at the tochachah", "yi": "דער מיטעלער רבי ווערט חלש ביי דער תוכחה" },
+      "retelling": {
+        "en": "Once, on Parshas Bechukosai, the Mitteler Rebbe, son of the Ba'al HaTanya, was away from home when the curses were read, and he fainted. They poured water on him and revived him, and he explained that hearing the curses had made him ill at heart. He was asked why he never fainted when his father read them.",
+        "yi": "איינמאל אין פרשת בחוקותי איז דער מיטעלער רבי, דעם בעל התניא'ס זון, געווען ערגעץ אנדערש ווען מ'האט געליינט די קללות, און ער איז חלש געווארן. מ'האט אויף אים געגאסן וואסער און אים אויפגעמונטערט, און ער האט ערקלערט אז פון הערן די קללות איז אים שלעכט געווארן אויפן הארצן. מ'האט אים געפרעגט פארוואס ער ווערט נישט חלש ווען זיין טאטע ליינט."
+      },
+      "people": ["the Mitteler Rebbe", "the Ba'al HaTanya"],
+      "evidence": { "segs": [173, 174], "confidence": 0.7 }
+    },
+    {
+      "title": { "en": "The Chiddushei HaRim on naming a child", "yi": "דער חידושי הרי\"ם וועגן געבן א נאמען" },
+      "retelling": {
+        "en": "Someone once asked the Chiddushei HaRim what name to give his child. He did not want to decide, and answered that every father who names his child does so with a touch of ruach hakodesh, so why should he give up the one chance he has to receive it.",
+        "yi": "איינער האט אמאל געפרעגט דעם חידושי הרי\"ם וואס פאר א נאמען ער זאל געבן זיין קינד. ער האט נישט געוואלט באשטימען, און האט געענטפערט אז יעדער טאטע וואס גיט א נאמען זיין קינד גיט עס מיט רוח הקודש, און פארוואס זאל ער אוועקגעבן די געלעגנהייט צו באקומען רוח הקודש."
+      },
+      "people": ["the Chiddushei HaRim"],
+      "evidence": { "segs": [108, 109], "confidence": 0.7 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "If, according to Rabbi Akiva, everything was given at Sinai, why did Moshe not know four laws and have to ask?", "yi": "אויב לויט רבי עקיבא איז אלעס געגעבן געווארן בסיני, פארוואס האט משה רבינו נישט געוואוסט פיר דינים און האט געדארפט פרעגן?" },
+      "answer": { "en": "All four are connected to yovel, which is above Moshe's grasp; they were given at Sinai, but afterwards became hidden from him.", "yi": "אלע פיר האבן א שייכות מיט יובל, וואס איז העכער פון משה רבינו'ס השגה; זיי זענען געגעבן געווארן בסיני, נאר נאכדעם זענען זיי נעלם געווארן פון אים." },
+      "questionSegs": [3, 5, 6],
+      "answerSegs": [50, 158, 159],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why was the blasphemer not allowed to pitch his tent in the camp of Dan, when the desert was so vast?", "yi": "פארוואס האט מען דעם מגדף נישט געלאזט שטעלן זיין געצעלט אין מחנה דן, אז דער מדבר איז אזוי גרויס?" },
+      "answer": { "en": "A place in the camp meant a share in Eretz Yisrael, and the camp was a living Sefer Torah of 600,000 letters; a stranger in it would tear it.", "yi": "א פלאץ אין דער מחנה האט געמיינט א חלק אין ארץ ישראל, און די מחנה איז געווען א לעבעדיגע ספר תורה פון זעכס הונדערט טויזנט אותיות; א פרעמדער דערין וואלט זי צעריסן." },
+      "questionSegs": [25],
+      "answerSegs": [26, 29, 30],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "How could a man who saw all the miracles of the Exodus and Sinai blaspheme over old bread?", "yi": "ווי אזוי האט א מענטש וואס האט געזען אלע נסים פון יציאת מצרים און מתן תורה געקענט מגדף זיין צוליב אלט ברויט?" },
+      "answer": { "en": "He did not believe the miracle that the bread stayed warm, and more deeply he denied the holiness of Israel that the lechem hapanim represents.", "yi": "ער האט נישט געגלייבט אינעם נס אז דאס ברויט איז געבליבן ווארעם, און טיפער האט ער אפגעלייקנט קדושת ישראל וואס דער לחם הפנים ווייזט אויף." },
+      "questionSegs": [19, 22, 23],
+      "answerSegs": [32, 139, 141],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "How did the daughters of Tzelafchad know what Moshe did not?", "yi": "ווי אזוי האבן די בנות צלפחד געוואוסט וואס משה רבינו האט נישט געוואוסט?" },
+      "answer": { "en": "They grasped it through hergesh, feeling rather than intellect, which reaches the level of yovel that cold reasoning cannot.", "yi": "זיי האבן עס מרגיש געווען מיט הרגש, נישט מיט שכל, וואס דערגרייכט די מדריגה פון יובל וואס דער קאלטער שכל דערגרייכט נישט." },
+      "questionSegs": [54, 55],
+      "answerSegs": [66, 70, 71],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why is Knesses Yisrael called Shulamis?", "yi": "פארוואס הייסט כנסת ישראל שולמית?" },
+      "answer": { "en": "According to the Chasam Sofer the name was altered so as not to carry the name of a wicked woman; the Rav adds that Shulamis means one who receives peace and does not mix with everyone.", "yi": "לויטן חתם סופר האט מען דעם נאמען געטוישט כדי נישט צו רופן מיטן נאמען פון א רשעה; דער משגיח לייגט צו אז שולמית מיינט איינער וואס באקומט שלום און מישט זיך נישט מיט יעדן." },
+      "questionSegs": [106, 113],
+      "answerSegs": [107, 110, 120, 121],
+      "confidence": 0.7
+    },
+    {
+      "question": { "en": "What does shmita have to do with Har Sinai?", "yi": "מה ענין שמיטה אצל הר סיני?" },
+      "answer": { "en": "Placed right after the blasphemer, it shows that even the laws of yovel, with all their details, were given at Sinai.", "yi": "גלייך נאך דער פרשה פונעם מגדף ווייזט זי אז אפילו די דינים פון יובל, מיט אלע פרטים, זענען געגעבן געווארן בסיני." },
+      "questionSegs": [7, 165],
+      "answerSegs": [167, 168, 169],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Rav says one must believe that within the plain meaning of the Torah being learned lie its hidden secrets, even when one does not understand them.", "yi": "דער משגיח זאגט אז מ'דארף גלייבן אז אינעם פשט פון דער תורה וואס מ'לערנט ליגן באהאלטן אירע סודות, אפילו ווען מ'פארשטייט זיי נישט." },
+      "evidence": { "segs": [160, 161], "confidence": 0.7 }
+    },
+    {
+      "text": { "en": "The Rav says the work of the forty-nine days is to turn bad traits into good ones and the curses into blessings.", "yi": "דער משגיח זאגט אז די עבודה פון די מ\"ט טעג איז איבערצודרייען די שלעכטע מידות אויף גוטע מידות און די קללות אויף ברכות." },
+      "evidence": { "segs": [175, 185], "confidence": 0.7 }
+    },
+    {
+      "text": { "en": "The Rav says one should count the omer with simple emunah, keeping in mind that these are holy days.", "yi": "דער משגיח זאגט אז מ'זאל ציילן ספירה מיט אמונה פשוטה, מיט'ן אין זינען האבן אז דאס זענען הייליגע טעג." },
+      "evidence": { "segs": [178, 179], "confidence": 0.65 }
+    },
+    {
+      "text": { "en": "The Rav says that by using the sefirah days for kedushah, Torah and tefillah one may hope to merit the fiftieth day.", "yi": "דער משגיח זאגט אז אז מ'נוצט אויס די ימי הספירה מיט קדושה, תורה און תפילה, קען מען האפן צו זוכה זיין צום יום החמישים." },
+      "evidence": { "segs": [190], "confidence": 0.7 }
+    }
+  ],
+  "candidateTopics": [
+    "yovel and the fiftieth gate",
+    "four laws Moshe had to ask",
+    "the blasphemer (megadef)",
+    "lechem hapanim",
+    "daughters of Tzelafchad",
+    "intellect and feeling (sechel and hergesh)",
+    "holiness of Israel",
+    "shmita and Har Sinai",
+    "letters of the Shem Havaya",
+    "sefiras haomer and the tochachah"
+  ],
+  "concepts": [
+    { "he": "יובל", "heardAs": ["יואל", "יובא", "יבל", "יעבל"] },
+    { "he": "שמיטה", "heardAs": ["שמועתא", "שמועטע", "שמועט"] },
+    { "he": "מגדף", "heardAs": ["מגדב", "מגיטב", "מגדף", "מגנב"] },
+    { "he": "לחם הפנים", "heardAs": ["לחם אפנים", "מלחם אפונים", "לחם א פנים"] },
+    { "he": "שער החמישים", "heardAs": ["שער הנהן", "שעה החמישים", "נון שער רבינה"] },
+    { "he": "עתיקא", "heardAs": ["א תיקה", "עתיקה", "עצוקה קדושה"] },
+    { "he": "שם הוי\"ה", "heardAs": ["שם הבעיה", "שם הויה"] },
+    { "he": "הרגש", "heardAs": ["הערגש", "העלגוש", "הערגעש"] },
+    { "he": "מחולת המחנים", "heardAs": ["מחילת המחנים", "מוחלת המחנים", "מחלות המחנאים"] },
+    { "he": "שש המערכת", "heardAs": ["ששע מהרחס", "ששע מהרחץ"] },
+    { "he": "מקושש", "heardAs": ["מקושש", "מקשש"] },
+    { "he": "קדושת ישראל", "heardAs": ["קדשת ישראל", "גדושת יסוד"] },
+    { "he": "ספירת העומר", "heardAs": ["ספירת סימן", "ספירה"] }
+  ],
+  "people": [
+    { "name": "Rabbi Akiva", "heardAs": ["רבי יקיבא", "רבי קיבר"] },
+    { "name": "Rabbi Yishmael", "heardAs": ["רבי ישמעאל"] },
+    { "name": "Rashi", "heardAs": ["רשע", "רש''ה"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו", "משה הבנה"] },
+    { "name": "Aharon HaKohen", "heardAs": ["אהרן הקיין", "אהרן עכינע"] },
+    { "name": "Rabbeinu Bachya", "heardAs": ["רבינו ובחי'", "רבי נרבחיה", "רבינו בחיים"] },
+    { "name": "Ramban", "heardAs": ["רמב״ן", "רמב״ם"] },
+    { "name": "Shlomis bas Divri", "heardAs": ["שלמה בת דברי", "שלימות בת דברי", "שלומות בת דברי"] },
+    { "name": "the daughters of Tzelafchad", "heardAs": ["בנות לבחד", "בנות צלחהד", "בני סלאפרד"] },
+    { "name": "David HaMelech", "heardAs": ["דוד המלך"] },
+    { "name": "Achimelech", "heardAs": ["אחי מלך"] },
+    { "name": "the Chasam Sofer", "heardAs": ["חתם סופר", "דורך סמסופר"] },
+    { "name": "the Chiddushei HaRim", "heardAs": ["חדשי ארום", "מחידשי ארום"] },
+    { "name": "the Ba'al HaTanya", "heardAs": ["בעל התניא", "טניא"] },
+    { "name": "the Mitteler Rebbe", "heardAs": ["דער טניא'ס זון, דער רבי, רבי דוד בעל"] },
+    { "name": "Reb Hershele of Zidichov", "heardAs": ["ר' הערשלע זידיטשאוו"] },
+    { "name": "the Arizal", "heardAs": ["יריא הקודש", "ארי הקדש"] },
+    { "name": "the Maharal", "heardAs": ["מהר''ל"] },
+    { "name": "Rabbi Tzadok HaKohen", "heardAs": ["רבי צדק"] },
+    { "name": "Rus", "heardAs": ["רוס"] },
+    { "name": "Naomi", "heardAs": ["נעמי"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair for the Rav's own speech but badly garbles quotations and names (yovel appears as 'יואל', shmita as 'שמועתא', the blasphemer as 'מגדב'). Segment 2 is a flagged long sparse segment and segment 151 is a hallucinated run of repeated letters; both are short and ignored. Several Kabbalistic passages (the Shabbos day piyut, the Zohar on mitzvah and the Name, a Gemara about the Boethusians and the arrangement of the loaves) and the end of the Reb Hershele of Zidichov story could not be recovered with confidence."
+}

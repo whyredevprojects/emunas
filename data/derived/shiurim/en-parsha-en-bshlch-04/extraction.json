@@ -1,0 +1,686 @@
+{
+  "shiurId": "en-parsha-en-bshlch-04",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that the sea split into twelve paths because the redemption from Mitzrayim was only a half, mixing weeping and song like the seven white and five black notes of music, while the future splitting into seven will be pure song.",
+      "yi": "דער משגיח ערקלערט אז דער ים האט זיך געשפאלטן אויף צוועלף וועגן ווייל די גאולה פון מצרים איז נאר געווען א האלב, בכי מיט שירה, אזוי ווי די זיבן ווייסע און פינף שווארצע נאטן אין ניגון, און לעתיד לבוא וועט ער זיך שפאלטן אויף זיבן, לויטער שירה."
+    },
+    "abstract": {
+      "en": "The Rav opens with the Midrash that had Klal Yisrael said 'Hashem Melech' instead of 'Yimloch', there would have been no further golus, and asks why the sea split into twelve paths while in the future it will split into seven. He brings the Midrash that the sea refused to split until it saw the coffin of Yosef, and explains with the Rama MiPano and the Chida that the redemption from Mitzrayim came early and is only half of the geulah, like Yachatz; Yosef's name hinted that Hashem will redeem a second time, so the sea agreed. On Shabbos Shirah he turns to the inner meaning of music: seven notes, harmony as a shidduch made in Heaven, the sevens of creation, the Shabbos, and David HaMelech. The five black keys are broken notes of sadness, so twelve paths meant weeping and song together, while Mashiach brings seven paths and an eighth string. He closes with Tu B'Shvat as a time of chesed and new Torah.",
+      "yi": "דער משגיח עפנט מיט דעם מדרש אז ווען אידן וואלטן געזאגט \"ה' מלך\" אנשטאט \"ימלוך\" וואלט מער נישט געווען קיין גלות, און פרעגט פארוואס דער ים האט זיך געשפאלטן אויף צוועלף וועגן, און לעתיד לבוא וועט ער זיך שפאלטן אויף זיבן. ער ברענגט דעם מדרש אז דער ים האט נישט געוואלט שפאלטן ביז ער האט געזען דעם ארון פון יוסף, און ערקלערט מיט דעם רמ\"ע מפאנו און דעם חיד\"א אז די גאולה פון מצרים איז געקומען פאר דער צייט און איז נאר א האלבע גאולה, ווי יחץ; יוסף'ס נאמען האט אנגעוויזן אויף \"יוסיף ה' שנית ידו\", און דער ים האט זיך געשפאלטן. לכבוד שבת שירה רעדט ער וועגן דעם פנימיות פון ניגון: זיבן נאטן, הארמאניע ווי א שידוך פון הימל, די זיבנס פון דער בריאה, שבת און דוד המלך. די פינף שווארצע קלאווישן זענען צעבראכענע נאטן פון עצבות, ממילא זענען צוועלף וועגן געווען בכי און שירה צוזאמען, און משיח וועט ברענגען זיבן וועגן און א אכטע סטרונע. ער ענדיגט מיט ט\"ו בשבט אלס א צייט פון חסד און נייע חידושי תורה."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Klal Yisrael said 'Yimloch' rather than 'Melech' at the sea because they felt that the time of the full geulah had not yet come.",
+          "yi": "אידן האבן ביים ים געזאגט \"ימלוך\" און נישט \"מלך\" ווייל זיי האבן געפילט אז די צייט פון דער גאנצער גאולה איז נאך נישט געקומען."
+        },
+        "evidence": { "segs": [1, 12, 15, 16, 903, 905], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The redemption from Mitzrayim came after 210 instead of 400 years and is only the first half of the geulah, as the Chida explains the breaking of the matzah at Yachatz.",
+          "yi": "די גאולה פון מצרים איז געקומען נאך צוויי הונדערט און צען יאר אנשטאט פיר הונדערט, און זי איז נאר די ערשטע העלפט פון דער גאולה, ווי דער חיד\"א טייטשט דאס צעברעכן די מצה ביי יחץ."
+        },
+        "evidence": { "segs": [137, 149, 182, 187, 189, 197], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The sea refused to split because the true time had not come, and agreed only when Yosef's coffin reminded it that Hashem will redeem a second time.",
+          "yi": "דער ים האט נישט געוואלט שפאלטן ווייל די ריכטיגע צייט איז נאך נישט געקומען, און ער האט זיך ערשט געשפאלטן ווען דער ארון פון יוסף האט אים דערמאנט אז דער אויבערשטער וועט אויסלייזן א צווייטן מאל."
+        },
+        "evidence": { "segs": [216, 239, 245, 249, 255, 264], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Music is a shidduch: notes that belong together give pleasure, while sounds that do not fit are noise, and creation itself is harmonious like music.",
+          "yi": "ניגון איז א שידוך: נאטן וואס פאסן צוזאמען געבן הנאה, און קולות וואס פאסן נישט זענען א טומל, און די גאנצע בריאה איז הארמאניש ווי א ניגון."
+        },
+        "evidence": { "segs": [377, 379, 637, 639, 647, 649], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The seven notes correspond to the seven days of creation and the other sevens Hashem made, each culminating in the seventh: Shabbos, Eretz Yisrael, the Kinneres and David HaMelech.",
+          "yi": "די זיבן נאטן זענען כנגד די זיבן טעג פון בריאת העולם און די אנדערע זיבנס וואס דער אויבערשטער האט באשאפן, און ביי יעדע איז דער זיבעטער דער עיקר: שבת, ארץ ישראל, דער כנרת און דוד המלך."
+        },
+        "evidence": { "segs": [466, 488, 491, 495, 508, 514], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The seven white keys are complete notes of joy and the five black keys are broken half-notes of sadness, so the twelve paths of the sea were weeping and song together.",
+          "yi": "די זיבן ווייסע קלאווישן זענען גאנצע נאטן פון שמחה און די פינף שווארצע זענען צעבראכענע האלבע נאטן פון עצבות, ממילא זענען די צוועלף וועגן אין ים געווען בכי און שירה צוזאמען."
+        },
+        "evidence": { "segs": [702, 707, 734, 736, 811, 814], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "When Mashiach comes there will be only joy, the sea will split into seven, and the harp will have an eighth string, a new song the world has never heard.",
+          "yi": "ווען משיח וועט קומען וועט זיין נאר שמחה, דער ים וועט זיך שפאלטן אויף זיבן, און דער כינור וועט האבן אן אכטע סטרונע, א נייע שירה וואס די וועלט האט נאך קיינמאל נישט געהערט."
+        },
+        "evidence": { "segs": [823, 827, 845, 858, 874, 895], "confidence": 0.85 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-parsha-shemois-04-04-beshalach-e",
+      "startSeg": 0,
+      "endSeg": 51,
+      "title": { "en": "Twelve paths now, seven in the future", "yi": "צוועלף וועגן היינט, זיבן לעתיד לבוא" },
+      "summary": {
+        "en": "The Rav opens with the Midrash on 'Hashem Yimloch' and the twelve paths in the sea, notes that in the future the sea will split again into seven channels, and asks why. He brings the Midrash that the names of the Shvatim allude to the geulah, with Yosef standing for 'Yosif Hashem shenis yado'.",
+        "yi": "דער משגיח עפנט מיט דעם מדרש אויף \"ה' ימלוך\" און די צוועלף וועגן אין ים, דערמאנט אז לעתיד לבוא וועט זיך דער ים ווידער שפאלטן אויף זיבן טייכן, און פרעגט פארוואס. ער ברענגט דעם מדרש אז די נעמען פון די שבטים ווייזן אן אויף דער גאולה, און יוסף שטייט פאר \"יוסיף ה' שנית ידו\"."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-shemois-04-04-beshalach-e",
+      "startSeg": 52,
+      "endSeg": 131,
+      "title": { "en": "The sea's condition and its refusal", "yi": "דער תנאי פונעם ים און זיין סירוב" },
+      "summary": {
+        "en": "The Rav brings the Midrash that the sea refused to split until it saw Yosef's coffin, because Yosef fled from Potiphar's wife. He asks why it refused if Hashem had made a condition with it at creation, and asks why Rashi's mention of the condition comes only after the sea returned to its place.",
+        "yi": "דער משגיח ברענגט דעם מדרש אז דער ים האט נישט געוואלט שפאלטן ביז ער האט געזען דעם ארון פון יוסף, ווייל יוסף איז אנטלאפן פון דעם ווייב פון פוטיפר. ער פרעגט פארוואס ער האט זיך געוויגערט אז דער אויבערשטער האט מיט אים געמאכט א תנאי ביי בריאת העולם, און פארוואס רש\"י ברענגט דעם תנאי ערשט נאכדעם וואס דער ים איז צוריקגעקומען צו זיין פלאץ."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-shemois-04-04-beshalach-e",
+      "startSeg": 132,
+      "endSeg": 265,
+      "title": { "en": "A half geulah, like Yachatz", "yi": "א האלבע גאולה, ווי יחץ" },
+      "summary": {
+        "en": "The Rav brings the Rama MiPano that Klal Yisrael left Mitzrayim after 210 years instead of 400, and the Chida that this is why the matzah is broken at Yachatz. He answers that the sea refused because the time of full joy had not come, and split only when Yosef's coffin showed it there would be a second splitting.",
+        "yi": "דער משגיח ברענגט דעם רמ\"ע מפאנו אז אידן זענען ארויס פון מצרים נאך צוויי הונדערט און צען יאר אנשטאט פיר הונדערט, און דעם חיד\"א אז דערפאר צעברעכט מען די מצה ביי יחץ. ער ענטפערט אז דער ים האט זיך געוויגערט ווייל די צייט פון דער גאנצער שמחה איז נאך נישט געקומען, און ער האט זיך געשפאלטן ערשט ווען דער ארון פון יוסף האט אים געוויזן אז ס'וועט זיין א צווייטע קריעת ים סוף."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-shemois-04-04-beshalach-e",
+      "startSeg": 266,
+      "endSeg": 388,
+      "title": { "en": "Shabbos Shirah: the inner side of music", "yi": "שבת שירה: דער פנימיות פון ניגון" },
+      "summary": {
+        "en": "For Shabbos Shirah the Rav turns to music: Moshe Rabbeinu was taught it and taught the Leviim, and musicians know its science but not its inner meaning. He explains the seven notes and the octave, and that harmony is pleasant like a good shidduch while clashing sounds irritate.",
+        "yi": "לכבוד שבת שירה רעדט דער משגיח וועגן ניגון: משה רבינו האט עס געלערנט פונעם אויבערשטן און עס איבערגעגעבן די לויים, און די מוזיקאנטן קענען די חכמה דערפון אבער נישט דעם פנימיות. ער ערקלערט די זיבן נאטן און דעם אקטאוו, און אז הארמאניע איז אנגענעם ווי א גוטער שידוך, און קולות וואס פאסן נישט רייצן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [1],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-shemois-04-04-beshalach-e",
+      "startSeg": 389,
+      "endSeg": 462,
+      "title": { "en": "Music as a key to Torah", "yi": "ניגון אלס א שליסל צו תורה" },
+      "summary": {
+        "en": "The Rav brings the Gra, through the Pe'as HaShulchan, that the secrets of Torah require the wisdom of music, and the Tikkunei Zohar that some heavenly chambers open only through niggun, which is why piano keys are called keys. He tells the Chabad tradition that the Ba'al HaTanya answered the scholars of Shklov with a niggun.",
+        "yi": "דער משגיח ברענגט דעם גר\"א דורך דעם פאת השלחן אז די סודות פון דער תורה פארלאנגען חכמת המוזיקה, און דעם תיקוני זוהר אז געוויסע היכלות אין הימל עפענען זיך נאר מיט א ניגון, און דערפאר הייסן די קלאווישן \"שליסלען\". ער דערציילט די חב\"ד'ישע מסורה אז דער בעל התניא האט געענטפערט די למדנים פון שקלאוו מיט א ניגון."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [1],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-shemois-04-04-beshalach-e",
+      "startSeg": 463,
+      "endSeg": 579,
+      "title": { "en": "The sevens of creation and Shabbos", "yi": "די זיבנס פון בריאה און שבת" },
+      "summary": {
+        "en": "The Rav explains that Hashem created seven days with seven middos, and brings Pirkei d'Rabbi Eliezer that of every seven the seventh is chosen. The seven notes correspond to all these sevens; only with the seventh is the harp complete, which is Shabbos, and David, the seventh of the Ushpizin, ends Tehillim with ten instruments and gave the seven voices of Mizmor l'David.",
+        "yi": "דער משגיח ערקלערט אז דער אויבערשטער האט באשאפן זיבן טעג מיט זיבן מדות, און ברענגט פרקי דרבי אליעזר אז פון יעדע זיבן איז דער זיבעטער אויסגעקליבן. די זיבן נאטן זענען כנגד אלע די זיבנס; ערשט מיטן זיבעטן איז דער כינור גאנץ, דאס איז שבת, און דוד, דער זיבעטער פון די אושפיזין, ענדיגט תהלים מיט צען כלי זמר און האט געגעבן די זיבן קולות פון מזמור לדוד."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [1],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-shemois-04-04-beshalach-e",
+      "startSeg": 580,
+      "endSeg": 692,
+      "title": { "en": "Seven is unity; music is a shidduch", "yi": "זיבן איז אחדות; ניגון איז א שידוך" },
+      "summary": {
+        "en": "The Rav contrasts the seven Ushpizin, who are unity and culminate in David, with the twelve Nesi'im, who are division. Creation is harmonious and beautiful like music, a shidduch made in Heaven, while today's music is noise without harmony that stirs up lust.",
+        "yi": "דער משגיח שטעלט אוועק די זיבן אושפיזין, וואס זענען אחדות און ענדיגן זיך מיט דוד, קעגן די צוועלף נשיאים, וואס זענען פירוד. די בריאה איז הארמאניש און שיין ווי א ניגון, א שידוך מן השמים, און די היינטיגע מוזיק איז א טומל אן הארמאניע וואס רייצט צו תאוות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [1],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-shemois-04-04-beshalach-e",
+      "startSeg": 693,
+      "endSeg": 818,
+      "title": { "en": "Black keys, white keys and the twelve paths", "yi": "שווארצע און ווייסע קלאווישן און די צוועלף וועגן" },
+      "summary": {
+        "en": "The Rav explains the five black keys as broken half-notes, like the shevarim of the shofar: white keys alone make a joyful niggun and black keys alone a sad one. With the passuk 'bakosharos' read as weeping and song, he answers that the sea split into twelve, seven white and five black, because the geulah from Mitzrayim was joy mixed with weeping.",
+        "yi": "דער משגיח ערקלערט די פינף שווארצע קלאווישן אלס צעבראכענע האלבע נאטן, ווי די שברים פונעם שופר: מיט נאר ווייסע קומט ארויס א פריילעכער ניגון, און מיט נאר שווארצע א טרויעריגער. מיטן פסוק \"בכושרות\", געטייטשט בכי און שירה, ענטפערט ער אז דער ים האט זיך געשפאלטן אויף צוועלף, זיבן ווייסע און פינף שווארצע, ווייל די גאולה פון מצרים איז געווען שמחה געמישט מיט בכי."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0, 1],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-shemois-04-04-beshalach-e",
+      "startSeg": 819,
+      "endSeg": 918,
+      "title": { "en": "Seven paths and an eighth string", "yi": "זיבן וועגן און אן אכטע סטרונע" },
+      "summary": {
+        "en": "The Rav explains that when Mashiach comes there will be only joy, so the sea will split into seven; to the question how music can exist without the black notes he brings the Gemara that the harp will then have eight strings. This also explains why they said 'Yimloch', and why the sea's condition is mentioned after it returned: it still owes the second splitting.",
+        "yi": "דער משגיח ערקלערט אז ווען משיח וועט קומען וועט זיין נאר שמחה, ממילא וועט זיך דער ים שפאלטן אויף זיבן; אויף דער קשיא ווי אזוי קען זיין א ניגון אן די שווארצע נאטן ברענגט ער די גמרא אז דער כינור וועט דאן האבן אכט סטרונעס. דערמיט איז מתורץ פארוואס מ'האט געזאגט \"ימלוך\", און פארוואס דער תנאי פונעם ים שטייט נאכדעם וואס ער איז צוריקגעקומען: ער איז נאך שולדיג די צווייטע קריעה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0, 1],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-shemois-04-04-beshalach-e",
+      "startSeg": 919,
+      "endSeg": 1048,
+      "title": { "en": "Tu B'Shvat: the union called Ilan", "yi": "ט\"ו בשבט: דער יחוד וואס הייסט אילן" },
+      "summary": {
+        "en": "After reporting that day's news of bombs in Meah She'arim with one person lightly hurt, the Rav explains Tu B'Shvat as the day of the Ilan: Hashem's written name joined with the name as it is read is the union of Hashem and Knesses Yisrael, equal in gematria to 'ilan'. He brings the Bnei Yissaschar and the Chiddushei HaRim that new Torah comes down from this day.",
+        "yi": "נאכן דערציילן די נייעס פון יענעם טאג, באמבעס אין מאה שערים וואו נאר איין מענטש איז א ביסל פארוואונדעט געווארן, ערקלערט דער משגיח ט\"ו בשבט אלס דער טאג פונעם אילן: דער שם הוי\"ה ווי ער ווערט געשריבן צוזאמען מיטן שם ווי מ'לייענט אים איז דער יחוד פון הקב\"ה מיט כנסת ישראל, און עס איז בגימטריא \"אילן\". ער ברענגט דעם בני יששכר און דעם חידושי הרי\"ם אז פון דעם טאג קומען אראפ נייע חידושי תורה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [1],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-shemois-04-04-beshalach-e",
+      "startSeg": 1049,
+      "endSeg": 1201,
+      "title": { "en": "A flow of chesed: use the keys", "yi": "א פלוס פון חסד: נוצט די שליסלען" },
+      "summary": {
+        "en": "The Rav brings the Sanzer Rav that from Tu B'Shvat until Shavuos every two weeks brings a special day, a continuous flow of chesed, and urges learning, davening, tzedakah and good middos now. He brings the Zohar on saying Shiras HaYam daily, the passuk 'Adam bikar', and closes with the trees' awakening and the tenth, future song of eight notes.",
+        "yi": "דער משגיח ברענגט דעם צאנזער רב אז פון ט\"ו בשבט ביז שבועות קומט יעדע צוויי וואכן א באזונדערער טאג, א שטענדיגער פלוס פון מדת החסד, און ער מוטיגט צו לערנען, דאווענען, געבן צדקה און ארבעטן אויף מדות. ער ברענגט דעם זוהר אויף זאגן שירת הים יעדן טאג, דעם פסוק \"אדם ביקר\", און ענדיגט מיטן אויפוואכן פון די ביימער און מיט דער צענטער שירה לעתיד לבוא, פון אכט נאטן."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [1],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "Hashem Yimlaich L'Yaylam Va'ed",
+      "work": "Shemos",
+      "ref": "Shemos 15:18",
+      "sefariaRef": "Exodus 15:18",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [0], "confidence": 0.9 }
+    },
+    {
+      "heardAs": "the Madrash says, that if the Yidin would have said, Hashem Melech",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1, 8, 10], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the Tagim Yayneson says that the water split, there were 12 pathways",
+      "work": "Targum Yonasan",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [17, 18], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Yasef Hashem / Yosef Hashem Sheinus Yodem",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 11:11",
+      "sefariaRef": "Isaiah 11:11",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [22, 49, 249, 262], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the Yavtai Rav Achrein Shal Pesach ... split the Yam of Mitzrayim into seven channels",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 11:15 (haftarah of the last day of Pesach)",
+      "sefariaRef": "Isaiah 11:15",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [19, 29, 30, 31, 32], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "In the beginning of Shemais, the Madrash tells us ... the names of the Shvatim",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [41, 42, 47, 48, 49], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "The Madrash tells us that by Kriyas Yam Tsef the Yam refused to split",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [52, 53, 57], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "by Yonos Yosef, Yosef fled from the wife of Petipha",
+      "work": "Bereishis",
+      "ref": "Bereishis 39:12",
+      "sefariaRef": "Genesis 39:12",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [61, 63, 64], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Madrash says that the Yam had a Tanai",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [78, 80, 82, 83], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Yekavu ha-mayim bitachas ha-shamayim ha-makim echad",
+      "work": "Bereishis",
+      "ref": "Bereishis 1:9",
+      "sefariaRef": "Genesis 1:9",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [85, 86, 87], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Rasha brings ... V'yoshavayam li'eisanoi, V'tena'oi HaRisha",
+      "work": "Rashi",
+      "ref": "Rashi on Shemos 14:27",
+      "sefariaRef": "Rashi on Exodus 14:27:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [97, 99, 100, 101, 102], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Rabbi Menachem Azariyam Ipanu",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [133, 137, 145, 149], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "400 years ... Like Avraham Avinu was told",
+      "work": "Bereishis",
+      "ref": "Bereishis 15:13",
+      "sefariaRef": "Genesis 15:13",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [137, 139], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the chidah says that's the purpose of Yachas",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [178, 180, 182, 204], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the Maisha Rabbeinu, the Madrash says, was taught music",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [268, 269, 270, 271], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Marsha of Lubavitch once said",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [286, 288, 290], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "the pastor Shulchan ... the Hagdamit to that sefer ... the grace said",
+      "work": "Pe'as HaShulchan",
+      "ref": "Pe'as HaShulchan, introduction",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [389, 392, 395, 397, 402], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "in the Tikkuni Zaya it says that there are Heicholes by Shemayim",
+      "work": "Tikkunei Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [404, 406, 408], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Rashi brings it to Chumash, that Tuval Kayim is the first one who played Miyuzik",
+      "work": "Rashi",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [429], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "Pirkit Rabbi Elezo says",
+      "work": "Pirkei d'Rabbi Eliezer",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [485, 488, 490, 494, 495], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the last capitol in Tehillel ... 10 instruments",
+      "work": "Tehillim",
+      "ref": "Tehillim 150",
+      "sefariaRef": "Psalms 150",
+      "resolution": "resolved",
+      "mention": "alluded",
+      "evidence": { "segs": [553, 554, 555, 557], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Mismar of David, Kail Hashem ... 7 times Kail",
+      "work": "Tehillim",
+      "ref": "Tehillim 29",
+      "sefariaRef": "Psalms 29",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [566, 568, 571, 572, 576], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the Gemara says by the shvarim and truah, the broken notes, it's a sigh",
+      "work": "Gemara",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [755, 756, 757, 758], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Kapitel Samach Heson in Tehillim ... two Yechidim ... Bakishoreis",
+      "work": "Tehillim",
+      "ref": "Tehillim 68:7",
+      "sefariaRef": "Psalms 68:7",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [770, 773, 779, 788], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Gemara says that the harp had seven strings ... it will have eight strings",
+      "work": "Gemara Arachin",
+      "ref": "Arachin 13b",
+      "sefariaRef": "Arakhin 13b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [839, 841, 842, 845], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "The Urbani Shreven will wipe off the tears of every face",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 25:8",
+      "sefariaRef": "Isaiah 25:8",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [892, 893, 894], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Bnei Sassar explains",
+      "work": "Bnei Yissaschar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1011, 1015, 1035], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Chidusha Yirim explains",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1038, 1039, 1041, 1043], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Dei Rechaim, the Sons of Rav said",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1057, 1058, 1062, 1063], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Zaya says that you should say Shiras Hayam every day",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1116, 1118, 1119, 1120], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Adam biyikar v'lai yavni nimsharka b'hemis nidmu",
+      "work": "Tehillim",
+      "ref": "Tehillim 49:21",
+      "sefariaRef": "Psalms 49:21",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [1136, 1137, 1140, 1142], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "says that there were there are ten shirim in the world",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1176, 1178, 1186, 1190], "confidence": 0.7 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The sea's refusal to split was not defiance of its condition: it sensed that this was not yet the time of universal joy, and Yosef's coffin, recalling 'Yosif Hashem shenis', told it that this splitting was only the first of two.",
+        "yi": "דער ים האט נישט געבראכן זיין תנאי: ער האט געפילט אז ס'איז נאך נישט די צייט פון דער גאנצער שמחה, און דער ארון פון יוסף, וואס דערמאנט \"יוסיף ה' שנית\", האט אים געזאגט אז די קריעה איז נאר די ערשטע פון צוויי."
+      },
+      "evidence": { "segs": [233, 236, 239, 246, 255, 264], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The twelve paths of the sea match the twelve notes of the octave, seven white and five black, because the splitting held both song for leaving Mitzrayim and weeping for the golus still ahead; the future seven paths match the seven pure notes.",
+        "yi": "די צוועלף וועגן אין ים זענען כנגד די צוועלף נאטן, זיבן ווייסע און פינף שווארצע, ווייל די קריעה האט אין זיך געהאט שירה אויף יציאת מצרים און בכי אויפן גלות וואס קומט נאך; די זיבן וועגן לעתיד לבוא זענען כנגד די זיבן לויטערע נאטן."
+      },
+      "evidence": { "segs": [805, 807, 811, 814, 824, 827], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "Piano keys are called 'keys' because, as the Tikkunei Zohar teaches, niggun is what opens certain heavenly chambers.",
+        "yi": "די קלאווישן פון א פיאנא הייסן \"שליסלען\" ווייל, ווי דער תיקוני זוהר לערנט, א ניגון עפנט געוויסע היכלות אין הימל."
+      },
+      "evidence": { "segs": [408, 423, 424, 425, 426], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Musical harmony is a shidduch made in Heaven: notes that belong together give pleasure as a good match does, and today's noisy music is the opposite of a shidduch, an expression of promiscuity.",
+        "yi": "הארמאניע אין ניגון איז א שידוך מן השמים: נאטן וואס געהערן צוזאמען געבן הנאה ווי א גוטער שידוך, און די היינטיגע טומלדיגע מוזיק איז דער היפוך פון א שידוך, אן אויסדרוק פון זנות."
+      },
+      "evidence": { "segs": [377, 637, 649, 651, 687, 689], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The white keys are chesed and the black keys are din; the black notes are broken like the shevarim of the shofar, and only they can produce a sad niggun.",
+        "yi": "די ווייסע קלאווישן זענען חסד און די שווארצע זענען דין; די שווארצע נאטן זענען צעבראכן ווי די שברים פונעם שופר, און נאר מיט זיי קען מען מאכן א טרויעריגן ניגון."
+      },
+      "evidence": { "segs": [725, 726, 753, 754, 760], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "An eighth string on the future harp is not a small addition: as adding a digit multiplies the possible numbers, one more note will multiply music many times over into a song never yet heard.",
+        "yi": "אן אכטע סטרונע אויפן כינור לעתיד לבוא איז נישט קיין קליינע זאך: אזוי ווי צולייגן א ציפער פארמערט אסאך מאל די צאל קאמבינאציעס, וועט איין נאטע מער פארמערן דעם ניגון אסאך מאל, א שירה וואס מ'האט נאך קיינמאל נישט געהערט."
+      },
+      "evidence": { "segs": [858, 859, 860, 864, 866, 876], "confidence": 0.8 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Ba'al HaTanya answers with a niggun", "yi": "דער בעל התניא ענטפערט מיט א ניגון" },
+      "retelling": {
+        "en": "The Rav relates a tradition of the Chabad chassidim that the Ba'al HaTanya once came to Shklov, where there were great scholars. They asked him to come because they had many questions in Torah for him to answer. They gathered and he told each one to ask his question; when they had all finished, instead of answering he sang a niggun.",
+        "yi": "דער משגיח דערציילט א מסורה פון די חב\"ד חסידים אז דער בעל התניא איז אמאל געקומען קיין שקלאוו, וואו ס'זענען געווען גרויסע למדנים. זיי האבן אים געבעטן ער זאל קומען, ווייל זיי האבן אסאך קשיות אין תורה וואס ער זאל פארענטפערן. זיי האבן זיך פארזאמלט און ער האט יעדן געהייסן פרעגן זיין קשיא; ווען אלע האבן געענדיגט, האט ער אנשטאט צו ענטפערן געזונגען א ניגון."
+      },
+      "people": ["the Ba'al HaTanya"],
+      "evidence": { "segs": [439, 441, 448, 452, 456, 457], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "Bombs in Meah She'arim", "yi": "באמבעס אין מאה שערים" },
+      "retelling": {
+        "en": "The Rav reports that shortly before the shiur he heard news that was both bad and good. About two hours earlier two pipe bombs set by Arabs had exploded in a street of Meah She'arim, and only one person was slightly wounded. He calls it open miracles, like in the Gulf War, and says Klal Yisrael needs much mercy.",
+        "yi": "דער משגיח דערציילט אז קורץ פארן שיעור האט ער געהערט א נייעס וואס איז געווען סיי שלעכט סיי גוט. בערך צוויי שעה פריער זענען אויפגעריסן געווארן צוויי באמבעס פון די אראבער אין א גאס אין מאה שערים, און נאר איין מענטש איז א ביסל פארוואונדעט געווארן. ער רופט עס נסים גלויים, ווי אין דער גאלף מלחמה, און זאגט אז מ'דארף אסאך רחמים."
+      },
+      "people": [],
+      "evidence": { "segs": [920, 922, 927, 929, 931, 937], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "Why did the sea split into twelve paths at the Exodus, while in the future it will split into seven?", "yi": "פארוואס האט זיך דער ים געשפאלטן אויף צוועלף וועגן ביי יציאת מצרים, און לעתיד לבוא וועט ער זיך שפאלטן אויף זיבן?" },
+      "answer": { "en": "Twelve are the seven white and five black notes: the first geulah was song mixed with weeping, while the future one will be only joy, the seven pure notes.", "yi": "צוועלף זענען די זיבן ווייסע און פינף שווארצע נאטן: די ערשטע גאולה איז געווען שירה געמישט מיט בכי, און די צוקונפטיגע וועט זיין נאר שמחה, די זיבן לויטערע נאטן." },
+      "questionSegs": [36, 37, 38, 39],
+      "answerSegs": [811, 813, 814, 823, 827],
+      "confidence": 0.85
+    },
+    {
+      "question": { "en": "If Hashem made a condition with the sea at creation that it would split for Klal Yisrael, why did it refuse?", "yi": "אויב דער אויבערשטער האט געמאכט א תנאי מיטן ים ביי בריאת העולם אז ער זאל זיך שפאלטן פאר אידן, פארוואס האט ער זיך געוויגערט?" },
+      "answer": { "en": "It sensed that the time of complete joy had not come, since the 400 years were not complete, until Yosef's coffin showed it that this was only the first of two splittings.", "yi": "ער האט געפילט אז די צייט פון דער גאנצער שמחה איז נאך נישט געקומען, ווייל די פיר הונדערט יאר זענען נאך נישט געווען פול, ביז דער ארון פון יוסף האט אים געוויזן אז דאס איז נאר די ערשטע פון צוויי קריעות." },
+      "questionSegs": [90, 91, 207, 211],
+      "answerSegs": [216, 233, 239, 255, 264],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why does Rashi mention the sea keeping its condition only after it returned to its normal state, which is not the condition?", "yi": "פארוואס ברענגט רש\"י אז דער ים האט מקיים געווען זיין תנאי ערשט נאכדעם וואס ער איז צוריקגעקומען צו זיין געווענליכן מצב, וואס דאס איז דאך נישט דער תנאי?" },
+      "answer": { "en": "Because the sea had not yet fulfilled its condition; it still owes Klal Yisrael the second, future splitting.", "yi": "ווייל דער ים האט נאך נישט מקיים געווען זיין תנאי; ער איז נאך שולדיג די צווייטע קריעה לעתיד לבוא." },
+      "questionSegs": [110, 112, 120, 129],
+      "answerSegs": [913, 914, 915],
+      "confidence": 0.7
+    },
+    {
+      "question": { "en": "Why did Klal Yisrael say 'Hashem Yimloch' rather than 'Hashem Melech'?", "yi": "פארוואס האבן אידן געזאגט \"ה' ימלוך\" און נישט \"ה' מלך\"?" },
+      "answer": { "en": "They felt that the splitting was only part one, a temporary geulah with golus still to come.", "yi": "זיי האבן געפילט אז די קריעה איז נאר דער ערשטער חלק, א צייטווייליגע גאולה, און ס'וועט נאך זיין גלות." },
+      "questionSegs": [1, 12],
+      "answerSegs": [15, 16, 903, 905, 906, 907],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why are the bars of a piano called keys?", "yi": "פארוואס הייסן די קלאווישן פון א פיאנא \"שליסלען\"?" },
+      "answer": { "en": "Because, according to the Tikkunei Zohar, niggun opens heavenly chambers; they are keys that open.", "yi": "ווייל לויטן תיקוני זוהר עפנט א ניגון היכלות אין הימל; זיי זענען שליסלען וואס עפענען." },
+      "questionSegs": [421, 423],
+      "answerSegs": [424, 425, 426],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why are the full notes white and the half notes black?", "yi": "פארוואס זענען די גאנצע נאטן ווייס און די האלבע שווארץ?" },
+      "answer": { "en": "White is chesed and black is din; the black notes are broken, sighing notes.", "yi": "ווייס איז חסד און שווארץ איז דין; די שווארצע נאטן זענען צעבראכענע, קרעכצנדיגע נאטן." },
+      "questionSegs": [745, 746, 747],
+      "answerSegs": [753, 754, 758],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav urges using the period beginning with Tu B'Shvat, a flow of chesed, to learn, daven, give tzedakah and work on good middos and love of Klal Yisrael, Torah and Hashem.",
+        "yi": "דער משגיח מוטיגט אויסצונוצן די צייט וואס הייבט זיך אן מיט ט\"ו בשבט, א פלוס פון חסד, צו לערנען, דאווענען, געבן צדקה און ארבעטן אויף גוטע מדות און אהבת ישראל, אהבת התורה און אהבת השם."
+      },
+      "evidence": { "segs": [1089, 1093, 1094, 1095, 1098, 1099], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Citing the Zohar, the Rav says one should say Shiras HaYam every day with kavanah, for which the Zohar promises great yeshuos.",
+        "yi": "מיטן זוהר זאגט דער משגיח אז מ'זאל זאגן שירת הים יעדן טאג מיט כוונה, און דער זוהר זאגט צו גרויסע ישועות."
+      },
+      "evidence": { "segs": [1116, 1118, 1119, 1120, 1121], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that on Shabbos Shirah the keys are in one's hands, and one should sing shirah to Hashem together with all of creation.",
+        "yi": "דער משגיח זאגט אז אום שבת שירה האט מען די שליסלען אין די הענט, און מ'זאל זינגען שירה צום אויבערשטן צוזאמען מיט דער גאנצער בריאה."
+      },
+      "evidence": { "segs": [1149, 1151, 1152, 1153], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "kriyas yam suf",
+    "the twelve paths in the sea",
+    "the future splitting of the sea",
+    "Yachatz and the two-part geulah",
+    "the inner meaning of music",
+    "seven notes and the seven days of creation",
+    "Shabbos Shirah",
+    "joy and weeping in the geulah",
+    "the eight-stringed harp of Mashiach",
+    "Tu B'Shvat"
+  ],
+  "concepts": [
+    { "he": "קריעת ים סוף", "heardAs": ["Kriyas Yam Tsev", "Kriya Siyam Suf", "Chiyas Yamsif", "kiyas yamsuf"] },
+    { "he": "יוסיף ה' שנית ידו", "heardAs": ["Yosef Hashem Sheinus Yodem", "Yasef Hashem", "yaysayf Hashem shenes yaday"] },
+    { "he": "תנאי", "heardAs": ["Tanai", "T'nai", "tenay", "Tenayat"] },
+    { "he": "יחץ", "heardAs": ["Yachas", "yachatz"] },
+    { "he": "אפיקומן", "heardAs": ["Afik Haiman"] },
+    { "he": "רבונו של עולם", "heardAs": ["Rabbani Shalelam", "Rabbi Yishalom", "Rabbani Sholeilam", "Ravai Nishleidim"] },
+    { "he": "נ' שערי טומאה", "heardAs": ["Nun Shari Tema"] },
+    { "he": "ארון של יוסף", "heardAs": ["Yareyneish or Yosef", "Oren of Yosef"] },
+    { "he": "פנימיות", "heardAs": ["panemius", "Pneumius"] },
+    { "he": "מפתחות", "heardAs": ["Maftai Chais", "maftei chaisar", "mafteiches"] },
+    { "he": "היכלות", "heardAs": ["Heicholes", "Eichalas"] },
+    { "he": "אושפיזין", "heardAs": ["shpiz", "Ashpizim"] },
+    { "he": "רועים", "heardAs": ["shiv arayim", "Shiva Rayim"] },
+    { "he": "זיווג מן השמים", "heardAs": ["zivig menashamayim", "shidduch manashamayim"] },
+    { "he": "בכושרות", "heardAs": ["Bakishoreis", "bakay shoreis", "bakasharis"] },
+    { "he": "שברים", "heardAs": ["shvarim"] },
+    { "he": "כנרת", "heardAs": ["Kineris"] },
+    { "he": "אילן", "heardAs": ["Ilan", "ilan"] },
+    { "he": "קרי וכתיב", "heardAs": ["Kri and the Ksiv", "Teir Shebik Sav"] },
+    { "he": "תחיית המתים", "heardAs": ["T'chiyas HaMaisam"] }
+  ],
+  "people": [
+    { "name": "Yosef", "heardAs": ["Yosef", "Yasef"] },
+    { "name": "Potiphar", "heardAs": ["Petipha"] },
+    { "name": "Avraham Avinu", "heardAs": ["Avraham Avinu"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["Maisha Rabbeinu"] },
+    { "name": "Rabbi Menachem Azariah of Fano", "heardAs": ["Rabbi Menachem Azariyam Ipanu"] },
+    { "name": "the Chida", "heardAs": ["chidah", "Chedah"] },
+    { "name": "the Rebbe Maharash of Lubavitch", "heardAs": ["Marsha of Lubavitch"] },
+    { "name": "the Vilna Gaon", "heardAs": ["Grah", "grace"] },
+    { "name": "Rabbi Yisrael of Shklov", "heardAs": ["Rabbi Yisrael Shkaleva"] },
+    { "name": "the Ba'al HaTanya", "heardAs": ["Father Tanya", "Balatanya"] },
+    { "name": "Tuval Kayin", "heardAs": ["Tuval Kayim"] },
+    { "name": "Dovid HaMelech", "heardAs": ["david", "David HaMelech"] },
+    { "name": "Shlomo HaMelech", "heardAs": ["Shalim HaMelech"] },
+    { "name": "the Chiddushei HaRim", "heardAs": ["Chidusha Yirim"] },
+    { "name": "the Sanzer Rav (Divrei Chaim)", "heardAs": ["Dei Rechaim", "Sons of Rav"] },
+    { "name": "the Bnei Yissaschar", "heardAs": ["Bnei Sassar"] }
+  ],
+  "asrNotes": "English ASR is fair; Hebrew terms are heavily mangled (e.g. 'Rabbani Shalelam' for Ribono shel Olam, 'Yareyneish or Yosef' for Yosef's coffin) but recoverable from context. Several stretches are fragmentary: the ending of the Ba'al HaTanya story (segs 458-462), the sevens around segs 501 and 608-610, the Tehillim 68 passage (segs 773-777), segs 886-891, the Bnei Yissaschar's reasoning about Rosh Hashanah (segs 1016-1032), the Rashi on techiyas hameisim (segs 1162-1168) and the list of ten songs (segs 1180-1186); these were left out. The three [NOISE?] segments are short repeats and were ignored."
+}

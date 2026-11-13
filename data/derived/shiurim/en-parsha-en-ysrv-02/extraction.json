@@ -1,0 +1,563 @@
+{
+  "shiurId": "en-parsha-en-ysrv-02",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that Shabbos Yisro is a renewed Matan Torah for those who came late, and that one who truly gives himself over to Torah stands, like the Kodesh HaKodashim, above all calculation.",
+      "yi": "דער משגיח ערקלערט אז שבת יתרו איז א נייע מתן תורה פאר די וואס זענען פארשפעטיגט, און אז דער וואס גיט זיך אינגאנצן אוועק פאר תורה שטייט, אזוי ווי דער קודש הקדשים, העכער פון אלע חשבונות."
+    },
+    "abstract": {
+      "en": "The Rav opens with Rashi's question of what Yisro heard, and says every Shabbos is unique, so that Shabbos Yisro is a rerun of the acceptance of the Torah, driven by Shabbos itself. Yisro lacked the preparation of the Exodus, Sefirah and the war with Amalek; what gave him courage? The Rav brings the Midrash that Dasan and Aviram, who stayed in Egypt, came late to the sea and Hashem split it again for them, and Rashi's account of the Bnei Dan, left outside the clouds of glory and attacked by Amalek, for whom Hashem still wages war. Hearing that Hashem does not reject latecomers, Yisro came. The Rav then reads the Rambam that any person who devotes himself to Torah becomes like shevet Levi. He asks why the Masorah counts 72 pesukim in Yisro when he counted 75, rejects one answer, and concludes that, like the Aron in the Kodesh HaKodashim, Torah is beyond arithmetic; so too the sincere ben Torah's parnassah, though this is not for everyone.",
+      "yi": "דער משגיח עפנט מיט רש\"י'ס קשיא וואס יתרו האט געהערט, און זאגט אז יעדער שבת איז אנדערש, אזוי אז שבת יתרו איז א איבערחזרונג פון קבלת התורה, צוליב דעם שבת אליין. יתרו האט נישט געהאט די הכנה פון יציאת מצרים, ספירה און דער מלחמה מיט עמלק; פון וואו האט ער גענומען דעם מוט? דער משגיח ברענגט דעם מדרש אז דתן ואבירם, וואס זענען געבליבן אין מצרים, זענען שפעטער געקומען צום ים, און דער אייבערשטער האט פאר זיי נאכאמאל געשפאלטן דעם ים; און רש\"י'ס ווערטער אז די פון שבט דן זענען געבליבן אינדרויסן פון די ענני הכבוד און עמלק האט זיי אטאקירט, און דער אייבערשטער פירט נאך היינט מלחמה פאר זיי. ווען יתרו האט געהערט אז דער אייבערשטער שטויסט נישט אפ די פארשפעטיגטע, איז ער געקומען. דערנאך לערנט ער דעם רמב\"ם אז יעדער מענטש וואס גיט זיך אוועק פאר תורה ווערט ווי שבט לוי. ער פרעגט פארוואס די מסורה ציילט 72 פסוקים אין יתרו ווען ער האט געציילט 75, ער שטויסט אפ איין תירוץ, און ער שליסט אז אזוי ווי דער ארון אין קודש הקדשים איז תורה העכער פון חשבון; אזוי אויך די פרנסה פון א ערליכן בן תורה, הגם דאס איז נישט פאר יעדן איינעם."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Every Shabbos is unique, and Shabbos Yisro is a renewal of the acceptance of the Torah, read because of the Shabbos itself.",
+          "yi": "יעדער שבת איז אנדערש, און שבת יתרו איז א באנייאונג פון קבלת התורה, וואס מ'לייענט צוליב דעם שבת אליין."
+        },
+        "evidence": { "segs": [41, 55, 82, 88, 98], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Yisro lacked the preparation the rest of Klal Yisrael had for Matan Torah, and his courage came from hearing that Hashem does not reject those who come late.",
+          "yi": "יתרו האט נישט געהאט די הכנה וואס כלל ישראל האט געהאט צו מתן תורה, און זיין מוט איז געקומען פון הערן אז דער אייבערשטער שטויסט נישט אפ די וואס קומען שפעט."
+        },
+        "evidence": { "segs": [139, 141, 148, 389, 409, 411], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Dasan and Aviram, who came late to the sea, and the Bnei Dan, who fell behind the clouds of glory, are two cases where Hashem stood by latecomers because they are His children.",
+          "yi": "דתן ואבירם, וואס זענען שפעט געקומען צום ים, און די פון שבט דן, וואס זענען געבליבן הינטער די ענני הכבוד, זענען צוויי ביישפילן ווי דער אייבערשטער האט זיך אנגענומען פאר פארשפעטיגטע, ווייל זיי זענען זיינע קינדער."
+        },
+        "evidence": { "segs": [219, 221, 352, 355, 378], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Parshas Yisro is a second chance at Matan Torah for those who were not ready on Shavuos.",
+          "yi": "פרשת יתרו איז א צווייטע געלעגנהייט צו מתן תורה פאר די וואס זענען נישט געווען גרייט אום שבועות."
+        },
+        "evidence": { "segs": [416, 421, 422, 424], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Just as the Aron in the Kodesh HaKodashim took up no space, Torah is not bound by arithmetic, which answers why the Masorah counts 72 pesukim where the Rav counted 75.",
+          "yi": "אזוי ווי דער ארון אין קודש הקדשים האט נישט פארנומען קיין פלאץ, איז די תורה נישט געבונדן אין חשבון, און דאס ענטפערט פארוואס די מסורה ציילט 72 פסוקים ווען דער משגיח האט געציילט 75."
+        },
+        "evidence": { "segs": [709, 718, 724, 733, 735, 736], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "According to the Rambam, anyone who sincerely devotes himself to Torah becomes holy of holies and is provided for, but the Rav stresses this is only for genuine, G-d-fearing people.",
+          "yi": "לויט דעם רמב\"ם ווערט יעדער וואס גיט זיך באמת אוועק פאר תורה קודש קדשים און מ'זארגט פאר אים, אבער דער משגיח באטאנט אז דאס איז נאר פאר ערליכע יראי שמים."
+        },
+        "evidence": { "segs": [780, 785, 790, 792, 793, 855], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-parsha-shemois-05-02-yisro-e",
+      "startSeg": 0,
+      "endSeg": 80,
+      "title": { "en": "Each parsha and each Shabbos is unique", "yi": "יעדע פרשה און יעדער שבת איז באזונדער" },
+      "summary": {
+        "en": "The Rav opens with Rashi's question of what Yisro heard, then says the parsha is a cloth woven of its pesukim in which everything that happens can be found, that parshiyos may not be mixed, and, citing the Lechovitcher, that every Shabbos is unique and each Jew has his own Shabbos.",
+        "yi": "דער משגיח עפנט מיט רש\"י'ס קשיא וואס יתרו האט געהערט, דערנאך זאגט ער אז די פרשה איז ווי א שטיק געוועב פון אירע פסוקים, וואו מ'געפינט אלעס וואס טוט זיך, אז מ'טאר נישט אויסמישן פרשיות, און ער ברענגט פונעם לעכאוויטשער אז יעדער שבת איז אנדערש און יעדער איד האט זיין אייגענעם שבת."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-shemois-05-02-yisro-e",
+      "startSeg": 81,
+      "endSeg": 160,
+      "title": { "en": "Shabbos Yisro and Yisro's missing preparation", "yi": "שבת יתרו און יתרו'ס פעלנדיגע הכנה" },
+      "summary": {
+        "en": "The Rav says Shabbos Yisro is a rerun of the acceptance of the Torah, perhaps stronger than Shavuos, then asks how Yisro could come to accept the Torah without the Exodus, Sefirah and the war against Amalek that prepared everyone else.",
+        "yi": "דער משגיח זאגט אז שבת יתרו איז א איבערחזרונג פון קבלת התורה, אפשר נאך שטארקער ווי שבועות, און ער פרעגט ווי אזוי יתרו האט געקענט קומען מקבל זיין די תורה אן יציאת מצרים, ספירה און דער מלחמה קעגן עמלק, וואס האבן אלע אנדערע צוגעגרייט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-shemois-05-02-yisro-e",
+      "startSeg": 161,
+      "endSeg": 266,
+      "title": { "en": "The sea split again for Dasan and Aviram", "yi": "דער ים האט זיך נאכאמאל געשפאלטן פאר דתן ואבירם" },
+      "summary": {
+        "en": "On the passuk that Pharaoh would say of the Jews that they are confused, the Rav brings Rashi and the Targum that Dasan and Aviram stayed in Egypt, and a Midrash cited by the Be'er Mayim Chaim that they came late and Hashem split the sea for them alone, which explains why Tehillim says Hashem rebuked the sea.",
+        "yi": "אויפן פסוק אז פרעה וועט זאגן אויף די אידן אז זיי זענען פארבלאנדזשעט, ברענגט דער משגיח רש\"י און דעם תרגום אז דתן ואבירם זענען געבליבן אין מצרים, און א מדרש וואס דער באר מים חיים ברענגט, אז זיי זענען שפעט געקומען און דער אייבערשטער האט נאר פאר זיי געשפאלטן דעם ים; דערמיט איז מובן פארוואס אין תהלים שטייט אז דער אייבערשטער האט אנגעשריגן דעם ים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-shemois-05-02-yisro-e",
+      "startSeg": 267,
+      "endSeg": 378,
+      "title": { "en": "Amalek and the Bnei Dan left behind", "yi": "עמלק און די פון שבט דן וואס זענען געבליבן הינטן" },
+      "summary": {
+        "en": "On the passuk that Amalek struck the stragglers, the Rav explains with Rashi that some of the tribe of Dan fell outside the clouds of glory and were attacked, that Hashem never evicts a child, and that His war against Amalek still burns because Amalek attacked His children who were late.",
+        "yi": "אויפן פסוק אז עמלק האט געשלאגן די נחשלים, ערקלערט דער משגיח מיט רש\"י אז טייל פון שבט דן זענען געבליבן אינדרויסן פון די ענני הכבוד און עמלק האט זיי אטאקירט, אז דער אייבערשטער שטויסט קיינמאל נישט ארויס א קינד, און אז זיין מלחמה קעגן עמלק ברענט נאך היינט ווייל עמלק האט אטאקירט זיינע קינדער וואס זענען פארשפעטיגט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-shemois-05-02-yisro-e",
+      "startSeg": 379,
+      "endSeg": 460,
+      "title": { "en": "Never too late: Matan Torah again", "yi": "עס איז קיינמאל נישט צו שפעט: נאכאמאל מתן תורה" },
+      "summary": {
+        "en": "The Rav concludes that these two stories gave Yisro the courage to come though late, and that Parshas Yisro is Matan Torah for those not ready on Shavuos; he then begins the Rambam at the end of Hilchos Shemitah v'Yovel about shevet Levi.",
+        "yi": "דער משגיח שליסט אז די צוויי מעשיות האבן געגעבן יתרו דעם מוט צו קומען הגם ער איז פארשפעטיגט, און אז פרשת יתרו איז מתן תורה פאר די וואס זענען נישט געווען גרייט אום שבועות; דערנאך הייבט ער אן דעם רמב\"ם אין סוף הלכות שמיטה ויובל וועגן שבט לוי."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-shemois-05-02-yisro-e",
+      "startSeg": 461,
+      "endSeg": 535,
+      "title": { "en": "Not only shevet Levi: the Rambam", "yi": "נישט נאר שבט לוי: דער רמב\"ם" },
+      "summary": {
+        "en": "After noting how many seforim and roshei yeshiva come from Kohanim and Leviim, the Rav reads the Rambam that not only shevet Levi but any person whose spirit moves him to stand before Hashem is sanctified and provided for, and brings Dovid HaMelech's passuk as proof.",
+        "yi": "נאכן אנמערקן וויפיל ספרים און ראשי ישיבות שטאמען פון כהנים און לויים, לערנט דער משגיח דעם רמב\"ם אז נישט נאר שבט לוי, נאר יעדער מענטש וואס זיין רוח טרייבט אים צו שטיין פארן אייבערשטן ווערט געהייליגט און מ'זארגט פאר אים, און ער ברענגט א ראיה פון דוד המלך'ס פסוק."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-shemois-05-02-yisro-e",
+      "startSeg": 536,
+      "endSeg": 666,
+      "title": { "en": "The Masorah's 72 pesukim and the count of 75", "yi": "די מסורה'ס 72 פסוקים און דער חשבון פון 75" },
+      "summary": {
+        "en": "The Rav notes that the Masorah at the end of Yisro gives 72 pesukim with the sign Yanadav, yet he counted 75; he suggests the Aseres HaDibros are counted by the ta'am elyon as ten dibros, then rejects it, since a pasuk or an aliyah cannot be that short.",
+        "yi": "דער משגיח מערקט אן אז די מסורה אין סוף יתרו גיט 72 פסוקים מיטן סימן \"יונדב\", אבער ער האט געציילט 75; ער לייגט פאר אז די עשרת הדברות ווערן געציילט לויט דעם טעם עליון אלס צען דברות, און ער שטויסט עס אפ, ווייל א פסוק אדער אן עליה קען נישט זיין אזוי קורץ."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-shemois-05-02-yisro-e",
+      "startSeg": 667,
+      "endSeg": 765,
+      "title": { "en": "Above arithmetic like the Kodesh HaKodashim", "yi": "העכער פון חשבון ווי דער קודש הקדשים" },
+      "summary": {
+        "en": "The Rav brings the Gemara that the place of the Aron took up no space, and says that in the realm of Torah arithmetic does not apply, so 72 against 75 is no question, just as the Torah given on the fifty-first day counts as fifty; he adds the Bnei Yissaschar's demonstration that people spend more than they earn.",
+        "yi": "דער משגיח ברענגט די גמרא אז דער ארון האט נישט פארנומען קיין פלאץ, און זאגט אז ביי תורה גייט נישט קיין חשבון, ממילא איז 72 קעגן 75 קיין קשיא נישט, אזוי ווי די תורה וואס איז געגעבן געווארן אויפן איין און פופציגסטן טאג ווערט גערעכנט ווי פופציג; ער לייגט צו ווי דער בני יששכר האט געוויזן מענטשן אז זיי גיבן אויס מער ווי זיי פארדינען."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-shemois-05-02-yisro-e",
+      "startSeg": 766,
+      "endSeg": 885,
+      "title": { "en": "Yanadav: the volunteer above calculation", "yi": "יונדב: דער נדבן וואס איז העכער פון חשבון" },
+      "summary": {
+        "en": "Returning to the Rambam, the Rav links the sign Yanadav to the one whose spirit volunteers and who casts off the yoke of calculations, becoming holy of holies with his parnassah assured; he warns, with the dispute of Rabbi Shimon bar Yochai and Rabbi Yishmael and the Ba'al Shem Tov, that this is only for the sincere, not for those following peer pressure.",
+        "yi": "צוריק צום רמב\"ם, פארבינדט דער משגיח דעם סימן \"יונדב\" מיט דעם וואס זיין רוח איז מתנדב און ער ווארפט אראפ דעם עול פון חשבונות, און ער ווערט קודש קדשים מיט א פארזיכערטע פרנסה; ער ווארנט, מיט דער מחלוקת פון רבי שמעון בר יוחאי און רבי ישמעאל און מיטן בעל שם טוב, אז דאס איז נאר פאר די ערליכע, נישט פאר די וואס גייען נאך וואס אנדערע טוען."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "so Rashi says, what did he hear, Kriyas Yamsif, and Mohen Asamalek",
+      "work": "Rashi on Shemos",
+      "ref": "Rashi on Shemos 18:1",
+      "sefariaRef": "Rashi on Exodus 18:1",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [0, 134, 135], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the Lerchevitcher said",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [42, 43, 47, 51], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Yom Ha'pari Levine Yisrael ... Nebuchamayim",
+      "work": "Shemos",
+      "ref": "Shemos 14:3",
+      "sefariaRef": "Exodus 14:3",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [171, 184, 190], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "So Rasha says Levine Yisrael It means about the Bnei Yisroel",
+      "work": "Rashi on Shemos",
+      "ref": "Rashi on Shemos 14:3",
+      "sefariaRef": "Rashi on Exodus 14:3",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [180, 181, 182, 183], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "The Ta'ag Yom Ha'parei Le'Vnei Yisrael; Tzahagim Yannesim",
+      "work": "Targum Yonasan",
+      "ref": "Targum Yonasan on Shemos 14:3",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [196, 197, 198, 206], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Seyed Varmayim Chaim brings on this medrash",
+      "work": "Be'er Mayim Chaim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [200, 203, 205, 213, 220], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "V'yega B'yamsuf V'yacharat",
+      "work": "Tehillim",
+      "ref": "Tehillim 106:9",
+      "sefariaRef": "Psalms 106:9",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [224, 232, 237, 238], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Gemara says if Evesha made a T'nai with the Yamsuf",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [246, 247, 248], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "vayazanei b'cha kal ha-nechsholem acharecha",
+      "work": "Devarim",
+      "ref": "Devarim 25:18",
+      "sefariaRef": "Deuteronomy 25:18",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [269, 271, 272], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the tagim says they were late; the Ta'agamunculus said",
+      "work": "Targum",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [275, 276, 353], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "and Rasha brings with whom did Amalek start up with the B'nai Dun",
+      "work": "Rashi",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [293, 294, 296, 302, 303], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "M'lchamalat Hashem Ba'amalek Middaya Daya",
+      "work": "Shemos",
+      "ref": "Shemos 17:16",
+      "sefariaRef": "Exodus 17:16",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [367, 368], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the Rambam says ... in the end of Hilchus Shemitah",
+      "work": "Mishneh Torah",
+      "ref": "Rambam, Hilchos Shemitah v'Yovel 13:12-13",
+      "sefariaRef": "Mishneh Torah, Sabbatical Year and the Jubilee 13:13",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [446, 448, 500, 501, 504, 771], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "HaShem menascha uki v'cha'isi atataymech yorali",
+      "work": "Tehillim",
+      "ref": "Tehillim 16:5",
+      "sefariaRef": "Psalms 16:5",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [525, 526, 527], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "at the end of Parashat Yisrael ... There are 72 Psikim ... Yayna Dov, Simen",
+      "work": "Masorah",
+      "ref": "Masorah note at the end of Parshas Yisro",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [553, 554, 556, 558], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "In Hilcha Yishevues, in Tav Tzadik Dalet",
+      "work": "Shulchan Aruch",
+      "ref": "Shulchan Aruch Orach Chaim 494",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [644, 645, 646], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "like the Chassam Saifur says in one of his Tudas",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [667, 668], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "Purim is coming, and the Gemara says ... the Yaren HaKadosh ... is not Al-Piyamidah",
+      "work": "Gemara Megillah",
+      "ref": "Megillah 10b",
+      "sefariaRef": "Megillah 10b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [674, 675, 704, 709, 712], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "The Bnei Yisaka used to take people and make with them a chashbin",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [753, 754, 755, 756], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "There's a machraikas in the Gemara, between Rabbi Shimon Beyerchei and Rabbi Yishmael",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 35b",
+      "sefariaRef": "Berakhot 35b",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [808, 809, 822, 823, 824, 825], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Ba'ashem Tev HaKadosh said; Borshamtus says",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [819, 828, 830, 831], "confidence": 0.7 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "On Shavuos the Aseres HaDibros are read because it is the fiftieth day of Sefirah, but on Shabbos Yisro they are read because of the Shabbos, so that Shabbos Yisro may be an even more powerful acceptance of the Torah than Shavuos.",
+        "yi": "אום שבועות לייענט מען די עשרת הדברות ווייל ס'איז דער פופציגסטער טאג פון ספירה, אבער שבת יתרו לייענט מען זיי צוליב דעם שבת, ממילא קען שבת יתרו זיין א נאך שטארקערע קבלת התורה ווי שבועות."
+      },
+      "evidence": { "segs": [88, 89, 94, 95, 97, 99], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Rashi's question of what Yisro heard is answered by two stories of latecomers, Dasan and Aviram at the sea and the Bnei Dan outside the clouds, from which Yisro learned that he too, though late, would be welcomed.",
+        "yi": "רש\"י'ס קשיא וואס יתרו האט געהערט ווערט פארענטפערט מיט צוויי מעשיות פון פארשפעטיגטע, דתן ואבירם ביים ים און שבט דן אינדרויסן פון די ענני הכבוד; פון זיי האט יתרו געלערנט אז מ'וועט אים אויך מקבל זיין, הגם ער איז פארשפעטיגט."
+      },
+      "evidence": { "segs": [387, 389, 398, 400, 405, 409], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "Hashem had to rebuke the sea because its original condition from creation had already been fulfilled; splitting a second time for Dasan and Aviram was outside that condition.",
+        "yi": "דער אייבערשטער האט געדארפט אנשרייען דעם ים, ווייל דער תנאי פון בריאת העולם איז שוין געווען מקוים; זיך שפאלטן נאכאמאל פאר דתן ואבירם איז נישט געווען אין יענעם תנאי."
+      },
+      "evidence": { "segs": [245, 247, 249, 250, 253, 254], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Hashem's war against Amalek in every generation stems from Amalek's attack on His children who were late and outside the clouds; nearly four thousand years later His anger still burns over it.",
+        "yi": "דעם אייבערשטנס מלחמה מיט עמלק פון דור צו דור קומט פון דעם וואס עמלק האט אטאקירט זיינע קינדער וואס זענען פארשפעטיגט און אינדרויסן פון די ענני הכבוד; כמעט פיר טויזנט יאר שפעטער ברענט נאך זיין כעס דערויף."
+      },
+      "evidence": { "segs": [362, 366, 369, 371, 375, 377], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Masorah's sign for the count of Yisro, Yanadav, alludes to the Rambam's one whose spirit volunteers, and the discrepancy between 72 and 75 itself shows that Torah, like the Kodesh HaKodashim, stands above arithmetic.",
+        "yi": "די מסורה'ס סימן פאר דעם חשבון פון יתרו, \"יונדב\", ווייזט אויף דעם רמב\"ם'ס מענטש וואס זיין רוח איז מתנדב, און דער חילוק צווישן 72 און 75 אליין ווייזט אז די תורה, אזוי ווי דער קודש הקדשים, איז העכער פון חשבון."
+      },
+      "evidence": { "segs": [733, 735, 737, 775, 776, 782], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Just as the Torah given on the fifty-first day is still counted as the fiftieth, a person who takes on the yoke of Torah is not subject to the calculations of income and expenses.",
+        "yi": "אזוי ווי די תורה וואס איז געגעבן געווארן אויפן איין און פופציגסטן טאג ווערט גערעכנט ווי דער פופציגסטער, אזוי איז א מענטש וואס נעמט אויף זיך דעם עול תורה נישט אונטערגעווארפן צו די חשבונות פון הכנסה און הוצאה."
+      },
+      "evidence": { "segs": [746, 747, 749, 759, 760], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Bnei Yissaschar's accounting", "yi": "דעם בני יששכר'ס חשבון" },
+      "retelling": {
+        "en": "The Rav tells that the Bnei Yissaschar used to sit with people and have them reckon how much they spent in a year and how much they earned. He showed them that they had spent more than they earned. The Rav uses this to show that a Jew's parnassah does not follow calculation.",
+        "yi": "דער משגיח דערציילט אז דער בני יששכר פלעגט זיצן מיט מענטשן און זיי לאזן אויסרעכענען וויפיל זיי האבן אויסגעגעבן א יאר און וויפיל זיי האבן פארדינט. ער האט זיי געוויזן אז זיי האבן אויסגעגעבן מער ווי זיי האבן פארדינט. דערמיט ווייזט דער משגיח אז א אידס פרנסה גייט נישט לויטן חשבון."
+      },
+      "people": ["the Bnei Yissaschar"],
+      "evidence": { "segs": [753, 754, 755, 756, 758], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Without the preparation of the Exodus, Sefirah and the war with Amalek, how did Yisro find the courage to come and accept the Torah?",
+        "yi": "אן דער הכנה פון יציאת מצרים, ספירה און דער מלחמה מיט עמלק, פון וואו האט יתרו גענומען דעם מוט צו קומען מקבל זיין די תורה?"
+      },
+      "answer": {
+        "en": "He heard that Hashem split the sea for the latecomers Dasan and Aviram and waged war against Amalek for the stragglers of Dan, and understood that he too would be welcomed though late.",
+        "yi": "ער האט געהערט אז דער אייבערשטער האט געשפאלטן דעם ים פאר די פארשפעטיגטע דתן ואבירם און געפירט מלחמה קעגן עמלק פאר די נחשלים פון דן, און ער האט פארשטאנען אז מ'וועט אים אויך מקבל זיין הגם ער איז פארשפעטיגט."
+      },
+      "questionSegs": [139, 141, 148, 150, 153],
+      "answerSegs": [387, 389, 398, 403, 409, 411],
+      "confidence": 0.85
+    },
+    {
+      "question": {
+        "en": "Why does the passuk say Pharaoh will speak 'to' the Bnei Yisrael when they had already left Egypt?",
+        "yi": "פארוואס שטייט אין פסוק אז פרעה וועט זאגן \"צו\" די בני ישראל, ווען זיי זענען שוין ארויס פון מצרים?"
+      },
+      "answer": {
+        "en": "Rashi reads it as 'about' the Bnei Yisrael; the Targum says Pharaoh spoke to Dasan and Aviram, who had stayed behind in Egypt.",
+        "yi": "רש\"י טייטשט עס \"וועגן\" די בני ישראל; דער תרגום זאגט אז פרעה האט גערעדט צו דתן ואבירם, וואס זענען געבליבן אין מצרים."
+      },
+      "questionSegs": [174, 177, 179, 193],
+      "answerSegs": [180, 182, 196, 197, 198],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why did Hashem need to rebuke the sea to split it?",
+        "yi": "פארוואס האט דער אייבערשטער געדארפט אנשרייען דעם ים כדי ער זאל זיך שפאלטן?"
+      },
+      "answer": {
+        "en": "The sea's condition from creation was already fulfilled at the first splitting, so it did not want to split again for Dasan and Aviram, and Hashem commanded it.",
+        "yi": "דעם ים'ס תנאי פון בריאת העולם איז שוין געווען מקוים ביי דער ערשטער קריעה, ממילא האט ער נישט געוואלט זיך נאכאמאל שפאלטן פאר דתן ואבירם, און דער אייבערשטער האט אים באפוילן."
+      },
+      "questionSegs": [242, 243, 245],
+      "answerSegs": [246, 249, 250, 251, 253, 254],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "How can the Masorah say Parshas Yisro has 72 pesukim when the Rav counted 75?",
+        "yi": "ווי אזוי קען די מסורה זאגן אז פרשת יתרו האט 72 פסוקים ווען דער משגיח האט געציילט 75?"
+      },
+      "answer": {
+        "en": "After rejecting an answer from the ta'am elyon, the Rav answers that in Torah, as in the Kodesh HaKodashim, arithmetic does not apply, so the discrepancy is no question.",
+        "yi": "נאכן אפשטויסן א תירוץ פונעם טעם עליון, ענטפערט דער משגיח אז ביי תורה, אזוי ווי אינעם קודש הקדשים, גייט נישט קיין חשבון, ממילא איז דער חילוק קיין קשיא נישט."
+      },
+      "questionSegs": [561, 562, 563],
+      "answerSegs": [728, 733, 735, 736, 737],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "How could there be ten amos from each side of the Aron to the wall in a Kodesh HaKodashim of twenty amos?",
+        "yi": "ווי אזוי קען זיין צען אמות פון יעדער זייט פונעם ארון ביז דער וואנט אין א קודש הקדשים פון צוואנציג אמות?"
+      },
+      "answer": {
+        "en": "The Gemara answers that the Aron miraculously took up no space, because the Kodesh HaKodashim is not subject to the laws of mathematics.",
+        "yi": "די גמרא ענטפערט אז דער ארון האט על פי נס נישט פארנומען קיין פלאץ, ווייל דער קודש הקדשים איז נישט אונטערגעווארפן צו די כללים פון חשבון."
+      },
+      "questionSegs": [683, 688, 690, 702],
+      "answerSegs": [707, 708, 709, 718],
+      "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "Citing the Lechovitcher, the Rav says a Jew should welcome Shabbos with the excitement that there never was and never will be another Shabbos like it.",
+        "yi": "דער משגיח ברענגט פונעם לעכאוויטשער אז א איד זאל מקבל זיין שבת מיט דער התלהבות אז ס'איז קיינמאל נישט געווען און ס'וועט קיינמאל נישט זיין נאך אזא שבת."
+      },
+      "evidence": { "segs": [42, 43, 46, 47, 48], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says it is never too late: through Parshas Yisro one can start over and accept the Torah anew.",
+        "yi": "דער משגיח זאגט אז עס איז קיינמאל נישט צו שפעט: דורך פרשת יתרו קען מען אנהייבן פון דאס ניי און מקבל זיין די תורה."
+      },
+      "evidence": { "segs": [416, 417, 419, 424], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says giving oneself entirely to Torah without worrying about parnassah is only for genuine, G-d-fearing people; one who merely imitates others should go to work.",
+        "yi": "דער משגיח זאגט אז זיך אינגאנצן אוועקגעבן פאר תורה אן זארגן וועגן פרנסה איז נאר פאר ערליכע יראי שמים; דער וואס מאכט נאר נאך אנדערע זאל גיין ארבעטן."
+      },
+      "evidence": { "segs": [792, 793, 841, 855, 856, 857], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "Parshas Yisro",
+    "kabbalas haTorah",
+    "uniqueness of every Shabbos",
+    "Dasan and Aviram at the Yam Suf",
+    "Amalek and the stragglers of Dan",
+    "Hashem never rejects latecomers",
+    "Masorah count of pesukim",
+    "Torah above arithmetic",
+    "Rambam on shevet Levi and devotion to Torah",
+    "bitachon in parnassah"
+  ],
+  "concepts": [
+    { "he": "קבלת התורה", "heardAs": ["Kabbalah Tzatayah", "Kabbalah Satayra", "Mikavud Tzatayah"] },
+    { "he": "מתן תורה", "heardAs": ["Mati Torah", "Matan Teirah", "Maten Teireh", "Amat and Torah"] },
+    { "he": "קריעת ים סוף", "heardAs": ["Kriyas Yamsif", "Kiyos Yamsav", "Kriyas Yamsuf"] },
+    { "he": "מלחמת עמלק", "heardAs": ["Mohen Asamalek", "Mohamed Samalek", "Murchemes HaMalek"] },
+    { "he": "ענני הכבוד", "heardAs": ["Anani Kavit", "Anani Kovic", "Anani Kareit"] },
+    { "he": "עשרת הדברות", "heardAs": ["Aserah Sadebos", "Aserah Sadiris", "Eshera Sedebris", "Aseris HaDivris"] },
+    { "he": "טעם עליון", "heardAs": ["Tamer Elyang", "tamah olayin"] },
+    { "he": "מסורה", "heardAs": ["Messiah", "Balaam Messiah"] },
+    { "he": "קודש הקדשים", "heardAs": ["Kedush HaKadoshim", "Kedeshagadoshim", "Kaddish Kaddashim"] },
+    { "he": "מקום ארון אינו מן המדה", "heardAs": ["is not Al-Piyamidah"] },
+    { "he": "ספירה", "heardAs": ["Sfira", "Sfirah", "Zfirah"] },
+    { "he": "נחשלים", "heardAs": ["ha-nechsholem", "Nechshavah"] },
+    { "he": "נדבה רוחו", "heardAs": ["Asha nadvaruche", "Anadvarulchay"] },
+    { "he": "חשבונות", "heardAs": ["chashbin", "chashbainis", "chishbainas", "Hizbanas"] },
+    { "he": "פרנסה", "heardAs": ["Panasah", "panasa"] },
+    { "he": "רבונו של עולם", "heardAs": ["Rabbi Yisraelim", "Rabbani Shalom", "Rabbeinu Shiladim", "Rabban Yesheleim"] }
+  ],
+  "people": [
+    { "name": "Yisro", "heardAs": ["Yisra", "Yisrael", "Yisrach"] },
+    { "name": "Rashi", "heardAs": ["Rasha", "Rashi HaKadosh", "Sir Asher"] },
+    { "name": "the Lechovitcher Rebbe", "heardAs": ["the Lerchevitcher"] },
+    { "name": "Pharaoh", "heardAs": ["Paray", "Pari", "P'arei"] },
+    { "name": "Dasan and Aviram", "heardAs": ["Dasan and Aviram", "Dasna Vaviram", "Dustin Valdirem", "Tadasa and Aviram"] },
+    { "name": "the Be'er Mayim Chaim", "heardAs": ["Seyed Varmayim Chaim", "Barmahim Chaim"] },
+    { "name": "Asaf", "heardAs": ["Asaf"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["Mesh Rabbeinu", "Maish Rabbeinu", "Meishe Rabbeinu"] },
+    { "name": "Dovid HaMelech", "heardAs": ["Harej David", "David"] },
+    { "name": "the Rambam", "heardAs": ["Rambam", "Ramdams"] },
+    { "name": "the Chasam Sofer", "heardAs": ["Chassam Saifur"] },
+    { "name": "the Bnei Yissaschar", "heardAs": ["Bnei Yisaka"] },
+    { "name": "Rabbi Shimon bar Yochai", "heardAs": ["Rabbi Shimon Beyerchei", "Shimon BaYechai", "Rabbi Shimon Ba-Yehoi"] },
+    { "name": "Rabbi Yishmael", "heardAs": ["Rabbi Yishmael", "Bishmah"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["Ba'ashem Tev HaKadosh", "Borshamtus"] }
+  ],
+  "asrNotes": "English ASR with Hebrew and Yiddish terms heavily garbled (Ribono shel Olam appears in many forms) but mostly recoverable. A source cited around segs 29-30 ('Zayar Katech', 'Magna Brahma') and the content of the Chasam Sofer at segs 667-670 could not be recovered; the Rambam's text at segs 460-461 and 504-519 is partly lost. Segs 461-488 are a digression naming Kohanim and Leviim among roshei yeshiva, with names too garbled to record. Short flagged stretches at segs 551, 608-613, 653-654 and 837-838 are repetition noise and were ignored."
+}

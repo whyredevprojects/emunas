@@ -1,0 +1,536 @@
+{
+  "shiurId": "yi-parshas-hashavua-shmvs-01",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav shows that the darkness thickens just before every redemption, as with Yaakov and the shevatim and with Moshe in Egypt, and that the same pattern explains the disappointments of his own generation, which must keep hoping only for a redemption from Hashem Himself.",
+      "yi": "דער משגיח ווייזט אז פאר יעדע גאולה ווערט דער הסתר שטארקער, אזוי ווי ביי יעקב און די שבטים און ביי משה רבינו אין מצרים, און אז דאס זעלבע ערקלערט די אנטוישונגען פון זיין דור, וואס דארף ווייטער האפן נאר אויף א גאולה פונעם רבונו של עולם אליין."
+    },
+    "abstract": {
+      "en": "The Rav opens with the end of Sefer Bereishis: after twenty-two years of Yosef's hiddenness, just when Yaakov sensed hope in Egypt, things grew worse, until 'Ani Yosef' revealed that everything had been for the good. As redemption nears, a kitrug (heavenly accusation) intensifies. Sefer Shemos, the book of redemption, opens with the toil of Egypt as a tikkun for souls of the generation of the dispersion, a toil that Torah study can lighten. He ties the parsha to the hard weeks of Teves and to current events, and argues that the same pattern recurs in Moshe's time and in his own: hopes after the World Wars, the Balfour Declaration and the land of Israel, followed by disappointment. A geulah by human hands is not eternal; Klal Yisrael waits for Hashem alone. He closes with Yaakov's call to hold fast, the mitzvah of awaiting Moshiach, tzaddikim who waited, and past dates of the ketz.",
+      "yi": "דער משגיח הייבט אן מיטן סוף פון ספר בראשית: נאך צוויי און צוואנציג יאר הסתר פון יוסף, פונקט ווען יעקב האט געשפירט א האפענונג אין מצרים, איז עס ערגער געווארן, ביז \"אני יוסף\" האט אנגעוויזן אז אלץ איז געווען לטובה. ווען די ישועה דערנענטערט זיך, ווערט דער קטרוג שטארקער. ספר שמות, דער ספר הגאולה, הייבט אן מיט דער יגיעה פון מצרים, א תיקון פאר נשמות פונעם דור הפלגה, וואס מ'קען גרינגער מאכן מיט לימוד התורה. ער פארבינדט די פרשה מיט די שווערע וואכן פון טבת און מיט די היינטיגע געשעענישן, און ער ווייזט אז דער זעלבער סדר חזר'ט זיך איבער ביי משה רבינו און אין זיין צייט: האפענונגען נאך די וועלט מלחמות און ארום ארץ ישראל, און דערנאך אנטוישונג. א גאולה דורך מענטשליכע הענט איז נישט נצחי; כלל ישראל ווארט נאר אויפן רבונו של עולם. ער ענדיגט מיט יעקב אבינו'ס עצה, דער מצוה צו ווארטן אויף משיח, צדיקים וואס האבן געווארט, און די קיצים וואס זענען שוין פארביי."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "At the end of every exile the hiddenness grows stronger just before the revelation, as with Yaakov and the shevatim before 'Ani Yosef'.",
+          "yi": "צום סוף פון יעדן גלות ווערט דער הסתר שטארקער פונקט פאר דער התגלות, אזוי ווי ביי יעקב און די שבטים פאר \"אני יוסף\"."
+        },
+        "evidence": { "segs": [3, 9, 13], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "When the redemption approaches, the forces of the other side raise a kitrug, and things become harder.",
+          "yi": "ווען די ישועה דערנענטערט זיך, מאכן די כוחות פון דער סטרא אחרא א קטרוג, און עס ווערט שווערער."
+        },
+        "evidence": { "segs": [18, 19, 130], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "The labor of Egypt in mortar and bricks was a tikkun for the souls of the generation of the dispersion, and it can be fulfilled more easily through toil in Torah.",
+          "yi": "די ארבעט אין מצרים מיט חומר און לבנים איז געווען א תיקון פאר די נשמות פונעם דור הפלגה, און מ'קען עס גרינגער מקיים זיין מיט יגיעה אין תורה."
+        },
+        "evidence": { "segs": [26, 27, 29, 32], "confidence": 0.7 }
+      },
+      {
+        "text": {
+          "en": "A redemption brought by human hands is not eternal; the true geulah will come from Hashem Himself.",
+          "yi": "א גאולה וואס קומט דורך מענטשליכע הענט איז נישט נצחי; די אמת'ע גאולה וועט קומען פונעם רבונו של עולם אליין."
+        },
+        "evidence": { "segs": [62, 65, 70, 71], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The Rav's generation lives the same pattern: hopes of redemption followed by disappointment, and leaders who speak well while the faithful are a minority.",
+          "yi": "דער דור פונעם משגיח לעבט דורך דעם זעלבן סדר: האפענונגען אויף ישועה און דערנאך אנטוישונג, און פירער וואס קענען גוט רעדן, בשעת די מאמינים זענען א מינדערהייט."
+        },
+        "evidence": { "segs": [77, 85, 88], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Hoping, thinking and speaking about Moshiach is a mitzvah that connects a Jew to the source of all salvations.",
+          "yi": "צו האפן, טראכטן און רעדן וועגן משיח איז א מצוה וואס פארבינדט א איד מיטן שורש פון אלע ישועות."
+        },
+        "evidence": { "segs": [109, 110, 111], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "No one can know the true ketz; past dates brought disappointment, so Jews must do teshuvah and daven that no kitrug arise.",
+          "yi": "קיינער קען נישט וויסן דעם אמת'ן קץ; די פריערדיגע צייטן האבן געבראכט אנטוישונג, דערפאר דארפן אידן טון תשובה און מתפלל זיין אז עס זאל נישט זיין קיין קטרוג."
+        },
+        "evidence": { "segs": [128, 148, 151], "confidence": 0.75 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-parsha-sefer-shemois-01-01-shemos",
+      "startSeg": 0,
+      "endSeg": 19,
+      "title": {
+        "en": "The darkness before 'Ani Yosef'",
+        "yi": "דער חושך פאר \"אני יוסף\""
+      },
+      "summary": {
+        "en": "The Rav describes the end of Sefer Bereishis: after twenty-two years Yaakov sensed hope in Egypt, but instead Shimon and Binyamin were taken too, until Yosef revealed himself and everything proved to have been for the good. He explains that as redemption nears a kitrug grows stronger.",
+        "yi": "דער משגיח שילדערט דעם סוף פון ספר בראשית: נאך צוויי און צוואנציג יאר האט יעקב געשפירט א האפענונג אין מצרים, אבער אנשטאט דעם זענען אויך שמעון און בנימין צוגענומען געווארן, ביז יוסף האט זיך מגלה געווען און עס האט זיך ארויסגעוויזן אז אלץ איז געווען לטובה. ער ערקלערט אז ווען די ישועה דערנענטערט זיך, ווערט דער קטרוג שטארקער."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-01-01-shemos",
+      "startSeg": 20,
+      "endSeg": 33,
+      "title": {
+        "en": "Egypt's toil as a tikkun",
+        "yi": "די יגיעה פון מצרים אלס תיקון"
+      },
+      "summary": {
+        "en": "Sefer Shemos, which the Ramban calls the book of redemption, opens with the labor of Egypt. The Rav explains it as a tikkun for souls of the generation of the dispersion who sinned with bricks, and says that through kal vachomer and clarifying halachah in Torah study the same tikkun can be reached more easily.",
+        "yi": "ספר שמות, וואס דער רמב\"ן רופט אן ספר הגאולה, הייבט אן מיט דער ארבעט פון מצרים. דער משגיח ערקלערט אז דאס איז געווען א תיקון פאר נשמות פונעם דור הפלגה וואס האבן געזינדיגט מיט לבנים, און אז דורך קל וחומר און ליבון הלכה אין לערנען קען מען צוקומען צו דעם זעלבן תיקון אויף א גרינגערן אופן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-01-01-shemos",
+      "startSeg": 34,
+      "endSeg": 46,
+      "title": {
+        "en": "The weeks of Teves and current events",
+        "yi": "די וואכן פון טבת און די היינטיגע געשעענישן"
+      },
+      "summary": {
+        "en": "The Rav says these parshiyos of tikkun are read in the dark season of Teves, a time when the attribute of judgment prevails. He points to illnesses and disasters in the world in that period and tells of a flood of the Mississippi that was taken as a sign, concluding that one must look at events in the world and take them to heart.",
+        "yi": "דער משגיח זאגט אז די פרשיות פון תיקון ליינט מען אין דער פינסטערער צייט פון טבת, ווען די מדת הדין איז מתגבר. ער ווייזט אן אויף קרענק און אומגליקן אויף דער וועלט אין יענער צייט, און דערציילט פון א מבול פונעם מיסיסיפי וואס מ'האט גענומען אלס א סימן, און ער ענדיגט אז מ'דארף קוקן אויף וואס עס קומט פאר אויף דער וועלט און עס נעמען צום הארצן."
+      },
+      "kind": "tangent",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-01-01-shemos",
+      "startSeg": 47,
+      "endSeg": 58,
+      "title": {
+        "en": "The pattern repeats with Moshe and today",
+        "yi": "דער סדר חזר'ט זיך איבער ביי משה און היינט"
+      },
+      "summary": {
+        "en": "Just as the Torah is the blueprint of the world, events in the world can be read like Torah. The Rav shows that with Moshe too redemption was revealed and then hidden and things grew worse, and that in his own era tzaddikim felt the winds of redemption around the World Wars and the land of Israel, which then faded.",
+        "yi": "אזוי ווי די תורה איז דער מוסטער פון דער וועלט, קען מען לערנען די געשעענישן אויף דער וועלט ווי תורה. דער משגיח ווייזט אז אויך ביי משה רבינו איז די גאולה נתגלה געווארן און דערנאך פארדעקט, און עס איז ערגער געווארן, און אז אין זיין צייט האבן צדיקים געשפירט ווינטן פון גאולה ארום די וועלט מלחמות און ארץ ישראל, וואס זענען דערנאך פארשוואונדן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-01-01-shemos",
+      "startSeg": 59,
+      "endSeg": 70,
+      "title": {
+        "en": "Only a geulah from Hashem is eternal",
+        "yi": "נאר א גאולה פונעם רבונו של עולם איז נצחי"
+      },
+      "summary": {
+        "en": "The Rav explains that the first two Batei Mikdash were not eternal because human hands were involved. He brings the Chasam Sofer that the gedolim of earlier generations refused a redemption granted by the nations, like Moshe who refused to be led by an angel, whereas Yehoshua's conquest through an angel did not last.",
+        "yi": "דער משגיח ערקלערט אז די ערשטע צוויי בתי מקדש זענען נישט געווען נצחי ווייל מענטשליכע הענט האבן זיך אריינגעמישט. ער ברענגט דעם חתם סופר אז די גדולים פון די פריערדיגע דורות האבן נישט געוואלט א גאולה וואס די גוים גיבן, אזוי ווי משה רבינו האט נישט געוואלט אז א מלאך זאל פירן, בשעת דער כיבוש פון יהושע דורך א מלאך איז נישט געבליבן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-01-01-shemos",
+      "startSeg": 71,
+      "endSeg": 77,
+      "title": {
+        "en": "Sacrifices as preparation, and a third outcry",
+        "yi": "קרבנות אלס הכנה, און א דריטער געשריי"
+      },
+      "summary": {
+        "en": "A salvation given by soldiers or by the powers is no salvation, but the tzaddikim saw in it a hint from Heaven. The Rav explains that great suffering prepared earlier elevations, that the sacrifices of his generation must also be a preparation, and that after the war things only grew darker, so that Klal Yisrael cries out a third time, 'What has G-d done to us?'",
+        "yi": "א ישועה וואס מיליטער אדער די מלכות גיבן איז נישט קיין ישועה, אבער די צדיקים האבן דערין געזען א רמז מן השמים. דער משגיח ערקלערט אז גרויסע צרות האבן אמאל צוגעגרייט גרויסע עליות, אז די קרבנות פון זיין דור מוזן אויך זיין א הכנה, און אז נאך דער מלחמה איז עס נאר פינסטערער געווארן, אזוי אז כלל ישראל שרייט צום דריטן מאל \"מה זאת עשה אלקים לנו\"."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-01-01-shemos",
+      "startSeg": 78,
+      "endSeg": 88,
+      "title": {
+        "en": "Dasan and Aviram, then and now",
+        "yi": "דתן ואבירם, דעמאלט און היינט"
+      },
+      "summary": {
+        "en": "In Moshe's time most of the people did not wait for his salvation; Dasan and Aviram were eloquent leaders while Moshe was 'heavy of speech', and the people turned from him. The Rav says today's reality is the same, and that as then a faithful minority holds to the Torah.",
+        "yi": "אין משה רבינו'ס צייט האט דער רוב פונעם פאלק נישט געווארט אויף זיין ישועה; דתן ואבירם זענען געווען פירער וואס האבן גוט גערעדט, בשעת משה רבינו איז געווען \"כבד פה\", און דאס פאלק האט זיך אפגעקערט פון אים. דער משגיח זאגט אז די היינטיגע מציאות איז די זעלבע, און אז אזוי ווי דעמאלט האלט זיך א מינדערהייט פון מאמינים ביי דער תורה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-01-01-shemos",
+      "startSeg": 89,
+      "endSeg": 101,
+      "title": {
+        "en": "Not despairing: Yaakov looked at us",
+        "yi": "נישט מייאש ווערן: יעקב האט געקוקט אויף אונז"
+      },
+      "summary": {
+        "en": "Through the Midrash on 'watchers for the morning', the Rav says that when a dawn of hope fades Jews do not despair but wait again. The great leaders have died, as Yosef and his brothers died, but Hashem lives; when Yaakov gathered his sons to tell of the end of days, he was looking with compassion at this generation, which still says Shema Yisrael.",
+        "yi": "דורכן מדרש אויף \"שומרים לבקר\" זאגט דער משגיח אז ווען א פרימארגן פון האפענונג ווערט פינסטער, ווערן אידן נישט מייאש נאר ווארטן ווייטער. די גרויסע פירער זענען געשטארבן, אזוי ווי יוסף און זיינע ברידער, אבער דער רבונו של עולם לעבט; ווען יעקב אבינו האט צונויפגערופן די קינדער צו דערציילן וועגן אחרית הימים, האט ער מיט רחמנות געקוקט אויף דעם דור, וואס זאגט נאך אלץ שמע ישראל."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-01-01-shemos",
+      "startSeg": 102,
+      "endSeg": 116,
+      "title": {
+        "en": "Yaakov's counsel and the mitzvah to await Moshiach",
+        "yi": "יעקב אבינו'ס עצה און די מצוה צו ווארטן אויף משיח"
+      },
+      "summary": {
+        "en": "In Egypt the Jews revived themselves by gathering with scrolls that spoke of redemption. With the Sforno, the Rav reads Yaakov's 'listen to Yisrael your father' as a charge to keep his way of life. Where a person's thoughts are, there he is; thinking of Moshiach binds him to the heichal of Moshiach, and he brings pesukim that praise waiting for Hashem.",
+        "yi": "אין מצרים האבן זיך אידן מחיה געווען דורך זיך צונויפקומען מיט מגילות וואס האבן גערעדט פון גאולה. מיטן ספורנו טייטשט דער משגיח יעקב'ס \"ושמעו אל ישראל אביכם\" אלס א צוואה צו האלטן זיין דרך החיים. וואו א מענטשנס מחשבה איז, דארט איז ער; ווער עס טראכט פון משיח איז מקושר מיטן היכל פון משיח, און ער ברענגט פסוקים וואס לויבן דאס ווארטן אויפן רבונו של עולם."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-01-01-shemos",
+      "startSeg": 117,
+      "endSeg": 123,
+      "title": {
+        "en": "Tzaddikim who waited for Moshiach",
+        "yi": "צדיקים וואס האבן געווארט אויף משיח"
+      },
+      "summary": {
+        "en": "The Rav tells how the Yismach Moshe waited for Moshiach: a peg at his door for Moshiach's donkey, instructions to his gabbai to wake him at night, running from the mikvah at a rumor. He explains that the joy of 'This is Hashem for whom we hoped' will match each person's measure of hope.",
+        "yi": "דער משגיח דערציילט ווי דער ישמח משה האט געווארט אויף משיח: א פלאק ביי זיין טיר פאר משיח'ס אייזל, א הוראה צום גבאי אים צו וועקן ביינאכט, און ער איז ארויסגעלאפן פון מקוה ביי א קלאנג. ער ערקלערט אז די שמחה פון \"זה ה' קוינו לו\" וועט זיין לויט ווי שטארק יעדער האט געהאפט."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-01-01-shemos",
+      "startSeg": 124,
+      "endSeg": 137,
+      "title": {
+        "en": "Dates of the ketz that passed",
+        "yi": "קיצים וואס זענען פארביי"
+      },
+      "summary": {
+        "en": "The Rav goes through dates of redemption found in the sefarim: the Zohar's year 5408, which brought the Chmielnicki massacres, and 5600, when 'the gates of wisdom' opened and an explosion of worldly wisdom followed. He explains that when the time of redemption comes a kitrug arises, as with Yosef and Moshe, and mentions a calculation pointing to 1914.",
+        "yi": "דער משגיח גייט דורך קיצים פון גאולה וואס שטייען אין ספרים: דער זוהר'ס שנת ת\"ח, וואס האט געבראכט די גזירות פון חמעלניצקי, און שנת ת\"ר, ווען די \"שערי חכמה\" האבן זיך געעפנט און עס איז געקומען אן אויסברוך פון וועלטליכע חכמה. ער ערקלערט אז ווען די צייט פון גאולה קומט, וואקסט א קטרוג, אזוי ווי ביי יוסף און ביי משה, און ער דערמאנט א חשבון וואס האט געוויזן אויף 1914."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-01-01-shemos",
+      "startSeg": 138,
+      "endSeg": 152,
+      "title": {
+        "en": "War, 5701, 5728, and the hidden ketz",
+        "yi": "מלחמה, תש\"א, תשכ\"ח, און דער באהאלטענער קץ"
+      },
+      "summary": {
+        "en": "The Rav describes the destruction of the First World War, the hint in the Toldos Yaakov Yosef about 5701 that came instead with the Holocaust, and the hopes around 5728 after the Six Day War. He concludes that only Hashem knows the true ketz, as no one knows Moshe's burial place, and that Jews must do teshuvah and daven that no kitrug arise.",
+        "yi": "דער משגיח שילדערט דעם חורבן פון דער ערשטער וועלט מלחמה, דעם רמז אין תולדות יעקב יוסף וועגן תש\"א, וואס איז אנשטאט דעם געקומען מיט די קדושים פון דער מלחמה, און די האפענונגען ארום תשכ\"ח נאך דער זעקס טאג מלחמה. ער ענדיגט אז נאר דער רבונו של עולם ווייסט דעם אמת'ן קץ, אזוי ווי קיינער ווייסט נישט משה רבינו'ס קבורה, און אז אידן דארפן טון תשובה און מתפלל זיין אז עס זאל נישט זיין קיין קטרוג."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "דער רמב״ן רופט אן דעם ספר הגאולה", "work": "Ramban", "ref": "Ramban, introduction to Shemos", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [0, 20], "confidence": 0.8 } },
+    { "heardAs": "וירא יעקב כי יששבא ומצרים", "work": "Bereishis", "ref": "Bereishis 42:1", "sefariaRef": "Genesis 42:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [6, 7], "confidence": 0.85 } },
+    { "heardAs": "חז״ל זארגן שברות פון לשון סבר", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [6], "confidence": 0.7 } },
+    { "heardAs": "אתי שקאלתם, יוסף אינענעל, ושמים אינענענעל, ואת בנימין תקחה", "work": "Bereishis", "ref": "Bereishis 42:36", "sefariaRef": "Genesis 42:36", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [9], "confidence": 0.85 } },
+    { "heardAs": "למהרהיתמ'לי", "work": "Bereishis", "ref": "Bereishis 43:6", "sefariaRef": "Genesis 43:6", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [10, 51], "confidence": 0.8 } },
+    { "heardAs": "מה זאת את אלהים", "work": "Bereishis", "ref": "Bereishis 42:28", "sefariaRef": "Genesis 42:28", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [11, 51, 77], "confidence": 0.85 } },
+    { "heardAs": "אני יוסף", "work": "Bereishis", "ref": "Bereishis 45:3", "sefariaRef": "Genesis 45:3", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [2, 13], "confidence": 0.9 } },
+    { "heardAs": "למחיע שלך אני אלקים לפניכם", "work": "Bereishis", "ref": "Bereishis 45:5", "sefariaRef": "Genesis 45:5", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [13], "confidence": 0.8 } },
+    { "heardAs": "וירוצה מן הבעור", "work": "Bereishis", "ref": "Bereishis 41:14", "sefariaRef": "Genesis 41:14", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [15, 16], "confidence": 0.8 } },
+    { "heardAs": "שטעט אין זייער קודש, וירוצה ... מרצה געווען", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [15, 16], "confidence": 0.7 } },
+    { "heardAs": "וימער רעות חיום וחומר ולבנים", "work": "Shemos", "ref": "Shemos 1:14", "sefariaRef": "Exodus 1:14", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [26, 30], "confidence": 0.8 } },
+    { "heardAs": "הבא נבנה ... מלבנה", "work": "Bereishis", "ref": "Bereishis 11:3", "sefariaRef": "Genesis 11:3", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [26], "confidence": 0.7 } },
+    { "heardAs": "שטעט אין זייער קדוש וחומר ... ביי לבנים, דא ליבן הלכה", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [26, 28], "confidence": 0.7 } },
+    { "heardAs": "רבינו יונא זאגט אין שערי תשובה", "work": "Shaarei Teshuvah", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [28], "confidence": 0.7 } },
+    { "heardAs": "ושלה הקדוש רעדט וועגן דם", "work": "Shelah", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [37], "confidence": 0.65 } },
+    { "heardAs": "די אסתטל בירשה בארא עלמע", "work": "Zohar", "ref": "Zohar, Terumah 161b", "sefariaRef": null, "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [47], "confidence": 0.7 } },
+    { "heardAs": "פארדעקט געווארן אזוי ווי עס שטעט אין מדרש", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [49], "confidence": 0.75 } },
+    { "heardAs": "למערה יוסי לעם הזה ... ועצה לא יצאלת", "work": "Shemos", "ref": "Shemos 5:22-23", "sefariaRef": "Exodus 5:22-23", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [52, 97], "confidence": 0.8 } },
+    { "heardAs": "דער רמב״ם זאגט אין הלכות מלכים", "work": "Rambam, Mishneh Torah", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [57, 76], "confidence": 0.7 } },
+    { "heardAs": "דער חתם ספר ... זאגט דער חתם סופר", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [63, 64, 65], "confidence": 0.8 } },
+    { "heardAs": "הנה הנכן שלך מלך לפנך", "work": "Shemos", "ref": "Shemos 23:20", "sefariaRef": "Exodus 23:20", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [66], "confidence": 0.7 } },
+    { "heardAs": "ישוע אטה בתי ... איז געקומען דער מלך צו ישוע", "work": "Yehoshua", "ref": "Yehoshua 5:13-14", "sefariaRef": null, "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [66, 67], "confidence": 0.65 } },
+    { "heardAs": "שמות בני ישראל ביי מצרים זאגט אזוי הקדוש", "work": "Shemos", "ref": "Shemos 1:1", "sefariaRef": "Exodus 1:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [68], "confidence": 0.8 } },
+    { "heardAs": "זאגט אזוי הקדוש, ... די שכינה הקדושה איז מיטגעקומען", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [68], "confidence": 0.65 } },
+    { "heardAs": "המלך פנף ... ויאבאסיא וכמלתיה הגיולם", "work": "Yeshayahu", "ref": "Yeshayahu 63:9", "sefariaRef": "Isaiah 63:9", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [70], "confidence": 0.75 } },
+    { "heardAs": "וואכל משום הרב ... ערב רב", "work": "Shemos", "ref": "Shemos 12:38", "sefariaRef": "Exodus 12:38", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [78], "confidence": 0.65 } },
+    { "heardAs": "כקוואט פער וכוואט לשון אני", "work": "Shemos", "ref": "Shemos 4:10", "sefariaRef": "Exodus 4:10", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [81], "confidence": 0.85 } },
+    { "heardAs": "חמשים וואס זענען עולה בני ישראל מילת מצרים", "work": "Shemos", "ref": "Shemos 13:18", "sefariaRef": "Exodus 13:18", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [88], "confidence": 0.8 } },
+    { "heardAs": "גלותו שכח מפי זרע", "work": "Devarim", "ref": "Devarim 31:21", "sefariaRef": "Deuteronomy 31:21", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [88], "confidence": 0.7 } },
+    { "heardAs": "שטעט אין מדרש אויפ'ן פסוק נפשי ל'ד' שם מ'שמר'ם לבוקא", "work": "Tehillim", "ref": "Tehillim 130:6", "sefariaRef": "Psalms 130:6", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [89, 90], "confidence": 0.75 } },
+    { "heardAs": "והיום איז יוסף וכו' הדור הרע", "work": "Shemos", "ref": "Shemos 1:6", "sefariaRef": "Exodus 1:6", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [92, 94], "confidence": 0.7 } },
+    { "heardAs": "הייתפל, ויאגד עליכם, משה יקחסכם ביחס הימים", "work": "Bereishis", "ref": "Bereishis 49:1", "sefariaRef": "Genesis 49:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [95, 98], "confidence": 0.8 } },
+    { "heardAs": "די שבטים געזאגט שמיות תרועל ה' אלהי' יחד", "work": "Gemara Pesachim", "ref": "Pesachim 56a", "sefariaRef": "Pesachim 56a", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [99], "confidence": 0.75 } },
+    { "heardAs": "שטעט אין מדרש אז זיי האבן זיך ... מיט יענע מגילות", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [102, 103], "confidence": 0.7 } },
+    { "heardAs": "היכצת ושומר בני יענקוב ושומר על ישראל אביכם", "work": "Bereishis", "ref": "Bereishis 49:2", "sefariaRef": "Genesis 49:2", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [103, 104], "confidence": 0.8 } },
+    { "heardAs": "דער סיפורנוי איז איינער פון די ראשונים", "work": "Sforno", "ref": "Sforno on Bereishis 49:2", "sefariaRef": "Sforno on Genesis 49:2", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [103, 104, 105], "confidence": 0.75 } },
+    { "heardAs": "תלמידי הבאהשמטא, דער הבאהשמטא וואס האט עס געזאגט", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [107, 108], "confidence": 0.75 } },
+    { "heardAs": "דער רמב״ם זאגט אז דאס איז פון די יסודות פון אמנה צו האפן אויף משיח", "work": "Rambam", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [110], "confidence": 0.8 } },
+    { "heardAs": "וכו' תהילה דשם המעשה פניו מפס יענקי", "work": "Yeshayahu", "ref": "Yeshayahu 8:17", "sefariaRef": "Isaiah 8:17", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [112, 113], "confidence": 0.75 } },
+    { "heardAs": "ענדיגט זיך דער ספר דניאל, אשחי המחקר", "work": "Daniel", "ref": "Daniel 12:12", "sefariaRef": "Daniel 12:12", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [113], "confidence": 0.75 } },
+    { "heardAs": "די מגילה פון איכר ... טוב אדער שם לכבוד ... לנפש תדחשנו", "work": "Eichah", "ref": "Eichah 3:25", "sefariaRef": "Lamentations 3:25", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [114, 115], "confidence": 0.8 } },
+    { "heardAs": "ויאלקי נקבל לכה דשם", "work": "Aleinu", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "quoted", "evidence": { "segs": [117], "confidence": 0.65 } },
+    { "heardAs": "הנה אלוקינו זה כבונו לו ... נגילה ונתמך וישורותא", "work": "Yeshayahu", "ref": "Yeshayahu 25:9", "sefariaRef": "Isaiah 25:9", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [122, 123], "confidence": 0.8 } },
+    { "heardAs": "שטעט אין זייער קודש ... שנת ת' און שנת ת'ס וועט זיין די גאולה", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [124, 125], "confidence": 0.7 } },
+    { "heardAs": "מיר ליבע לפאמא לגלי", "work": "Gemara Sanhedrin", "ref": "Sanhedrin 99a", "sefariaRef": "Sanhedrin 99a", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [128, 146], "confidence": 0.75 } },
+    { "heardAs": "זייער הקודש שטעט ... שנת תק ר' ... נפתחי השמים", "work": "Zohar", "ref": "Zohar I 117a", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [131, 132], "confidence": 0.7 } },
+    { "heardAs": "רוח החכמה אבינה, רוח עצה גבוה", "work": "Yeshayahu", "ref": "Yeshayahu 11:2", "sefariaRef": "Isaiah 11:2", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [133], "confidence": 0.75 } },
+    { "heardAs": "דער מערב באמאכט א חשבון פון משיח", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [136], "confidence": 0.6 } },
+    { "heardAs": "תולדות יעקב יוסף, שטעט אז אין יאר תש' א' ... כי תיסא את ראש", "work": "Toldos Yaakov Yosef", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [140], "confidence": 0.7 } },
+    { "heardAs": "ליקוטי צורה פון חיים ויטל", "work": "Likutei Torah", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [147], "confidence": 0.6 } },
+    { "heardAs": "ולא יודע איש עס כבר עשה", "work": "Devarim", "ref": "Devarim 34:6", "sefariaRef": "Deuteronomy 34:6", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [150], "confidence": 0.8 } }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The darkest point comes precisely when redemption is near: Yaakov's hope at the end of twenty-two years was followed by the loss of Shimon and Binyamin, and only then came 'Ani Yosef'.",
+        "yi": "די טונקלסטע צייט קומט פונקט ווען די גאולה איז נאנט: נאך יעקב'ס האפענונג צום סוף פון די צוויי און צוואנציג יאר זענען אויך שמעון און בנימין אוועק, און ערשט דערנאך איז געקומען \"אני יוסף\"."
+      },
+      "evidence": { "segs": [8, 9, 13], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav reads 'vayeritzuhu min habor' as Hashem appeasing Yosef for the pit, and says Hashem will likewise appease Klal Yisrael when the redemption comes.",
+        "yi": "דער משגיח טייטשט \"ויריצהו מן הבור\" אז דער רבונו של עולם האט זיך איבערגעבעטן מיט יוסף פארן בור, און אזוי וועט ער זיך איבערבעטן מיט כלל ישראל ווען די ישועה וועט קומען."
+      },
+      "evidence": { "segs": [15, 16], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The bondage in mortar and bricks was a tikkun for the souls of the generation of the dispersion, and the same tikkun can be reached through kal vachomer and clarifying halachah in Torah study.",
+        "yi": "דער שעבוד מיט חומר און לבנים איז געווען א תיקון פאר די נשמות פונעם דור הפלגה, און דעם זעלבן תיקון קען מען דערגרייכן דורך קל וחומר און ליבון הלכה אין לימוד התורה."
+      },
+      "evidence": { "segs": [26, 27, 28, 32], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "A redemption that comes through human hands or through an angel cannot be eternal; that is why Moshe refused an angel, and why the gedolim refused a geulah handed over by the nations.",
+        "yi": "א גאולה וואס קומט דורך מענטשליכע הענט אדער דורך א מלאך קען נישט זיין נצחי; דערפאר האט משה רבינו נישט געוואלט קיין מלאך, און די גדולים האבן נישט געוואלט א גאולה וואס די גוים גיבן איבער."
+      },
+      "evidence": { "segs": [65, 66, 67, 70], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "When Yaakov gathered his sons to reveal the end of days, he was looking at the small, leaderless Jews of the last generation, and their saying Shema Yisrael answered his worry.",
+        "yi": "ווען יעקב אבינו האט צונויפגערופן די קינדער צו מגלה זיין אחרית הימים, האט ער געקוקט אויף די קליינע אידן אן פירער פונעם לעצטן דור, און זייער \"שמע ישראל\" איז געווען דער ענטפער אויף זיין זארג."
+      },
+      "evidence": { "segs": [96, 98, 99, 101], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Since a person is where his thoughts are, one who thinks about Moshiach is bound to the heichal of Moshiach, the source of all salvations.",
+        "yi": "ווייל א מענטש איז דארט וואו זיין מחשבה איז, איז דער וואס טראכט פון משיח מקושר מיטן היכל פון משיח, דער מקור פון אלע ישועות."
+      },
+      "evidence": { "segs": [107, 108, 109, 110], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The joy of 'This is Hashem for whom we hoped' will be in proportion to how strongly each person hoped.",
+        "yi": "די שמחה פון \"זה ה' קוינו לו\" וועט זיין לויט ווי שטארק יעדער איינער האט געהאפט."
+      },
+      "evidence": { "segs": [121, 122, 123], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "The Yismach Moshe waits for Moshiach",
+        "yi": "דער ישמח משה ווארט אויף משיח"
+      },
+      "retelling": {
+        "en": "The Rav tells, as a received tradition, that the Yismach Moshe had a piece of wood fixed at his door so that if Moshiach came riding a donkey he could tie it there. He once instructed his gabbai to wake him in the middle of the night if Moshiach came. Once, on hearing a rumor, he jumped out of the mikvah, dressed hurriedly and ran into the house.",
+        "yi": "דער משגיח דערציילט, ווי מ'האט מקובל, אז דער ישמח משה האט געהאט ביי זיין טיר אריינגעקלאפט א שטיק האלץ, אז אויב משיח וועט קומען מיט אן אייזל זאל ער עס דארט קענען צובינדן. ער האט אמאל אנגעזאגט דעם גבאי אים צו וועקן אינמיטן דער נאכט אויב משיח קומט. אמאל, ווען ער האט געהערט א קלאנג, איז ער ארויסגעשפרונגען פון מקוה, זיך געשווינד אנגעטון און געלאפן אין הויז אריין."
+      },
+      "people": ["the Yismach Moshe"],
+      "evidence": { "segs": [118, 119, 120], "confidence": 0.7 }
+    },
+    {
+      "title": {
+        "en": "The Mississippi flood as a sign",
+        "yi": "דער מבול פונעם מיסיסיפי אלס א סימן"
+      },
+      "retelling": {
+        "en": "The Rav says he heard from people who were present that many years earlier, when the Mississippi River flooded, someone exclaimed that the attribute of judgment was coming upon the world. The townspeople may not have known there was a Mississippi, yet it was taken as a sign that one must be roused to teshuvah.",
+        "yi": "דער משגיח זאגט אז ער האט געהערט פון מענטשן וואס זענען געווען דערביי, אז מיט יארן צוריק, ווען דער מיסיסיפי טייך האט איבערגעפלייצט, האט איינער אויסגעשריגן אז א מדת הדין קומט אויף דער וועלט. די מענטשן אין שטעטל האבן אפשר נישט געוואוסט אז עס איז דא א מיסיסיפי, פונדעסטוועגן האט מען דאס גענומען אלס א סימן אז מ'דארף זיך אויפוועקן צו תשובה."
+      },
+      "people": [],
+      "evidence": { "segs": [42, 43, 45], "confidence": 0.6 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why did things grow worse just when Yaakov felt the redemption had come?",
+        "yi": "פארוואס איז עס ערגער געווארן פונקט ווען יעקב האט געשפירט אז די ישועה איז געקומען?"
+      },
+      "answer": {
+        "en": "Because when redemption approaches the forces of the other side do not let go and raise a kitrug, so the hiddenness intensifies before the revelation.",
+        "yi": "ווייל ווען די גאולה דערנענטערט זיך, לאזן די כוחות פון דער סטרא אחרא נישט און מאכן א קטרוג, און ממילא ווערט דער הסתר שטארקער פאר דער התגלות."
+      },
+      "questionSegs": [9, 17],
+      "answerSegs": [18, 19],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why was the labor in Egypt specifically with mortar and bricks?",
+        "yi": "פארוואס איז די ארבעט אין מצרים געווען דוקא מיט חומר און לבנים?"
+      },
+      "answer": {
+        "en": "Because the souls there were those of the generation of the dispersion who sinned with bricks, and they had to be refined through that very toil.",
+        "yi": "ווייל די נשמות דארט זענען געווען פונעם דור הפלגה, וואס האבן געזינדיגט מיט לבנים, און זיי האבן געדארפט אויסגעלייטערט ווערן דורך דער זעלבער יגיעה."
+      },
+      "questionSegs": [26],
+      "answerSegs": [26, 27],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "Why did the gedolim of earlier generations refuse a redemption granted by the nations?",
+        "yi": "פארוואס האבן די גדולים פון די פריערדיגע דורות נישט געוואלט א גאולה וואס די גוים גיבן?"
+      },
+      "answer": {
+        "en": "Because a redemption through human hands cannot be eternal; only one that comes from Hashem Himself lasts.",
+        "yi": "ווייל א גאולה דורך מענטשליכע הענט קען נישט זיין נצחי; נאר א גאולה פונעם רבונו של עולם אליין בלייבט."
+      },
+      "questionSegs": [64, 65],
+      "answerSegs": [65, 67],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "What does Yaakov add by saying 'listen to Yisrael your father', when his sons were anyway listening?",
+        "yi": "וואס לייגט יעקב צו מיט \"ושמעו אל ישראל אביכם\", אז די קינדער האבן סיי ווי צוגעהערט?"
+      },
+      "answer": {
+        "en": "Following the Sforno, it is a charge to accept the way of life he taught them all his days; then they will remain Bnei Yisrael.",
+        "yi": "לויטן ספורנו איז דאס א צוואה מקבל צו זיין דעם דרך החיים וואס ער האט זיי געלערנט אלע זיינע טעג; דעמאלט וועלן זיי בלייבן בני ישראל."
+      },
+      "questionSegs": [104],
+      "answerSegs": [104, 105, 107],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why did the hoped-for dates of the ketz pass without Moshiach?",
+        "yi": "פארוואס זענען די קיצים פארביי אן משיח?"
+      },
+      "answer": {
+        "en": "They were times when redemption was possible, but a kitrug arose; the true ketz is known to Hashem alone, as the Gemara says the heart did not reveal it to the mouth.",
+        "yi": "דאס זענען געווען צייטן ווען א גאולה איז געווען מעגליך, אבער עס איז געווארן א קטרוג; דעם אמת'ן קץ ווייסט נאר דער רבונו של עולם, אזוי ווי די גמרא זאגט \"לבא לפומא לא גליא\"."
+      },
+      "questionSegs": [127],
+      "answerSegs": [128, 130, 146],
+      "confidence": 0.7
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says one must look at what happens in the world and learn from it, as from the Torah.",
+        "yi": "דער משגיח זאגט אז מ'דארף קוקן אויף וואס עס פאסירט אויף דער וועלט און דערפון לערנען, אזוי ווי פון דער תורה."
+      },
+      "evidence": { "segs": [46, 47], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He says that when a hope fades Jews must not despair but keep waiting for the redemption.",
+        "yi": "ער זאגט אז ווען א האפענונג ווערט פארלאשן, טארן אידן נישט מייאש ווערן, נאר ווייטער ווארטן אויף דער גאולה."
+      },
+      "evidence": { "segs": [89, 90], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He urges thinking and speaking about Moshiach and learning these parshiyos of redemption in the weeks of Teves.",
+        "yi": "ער מוטיגט אז מ'זאל טראכטן און רעדן וועגן משיח און לערנען די פרשיות פון גאולה אין די וואכן פון טבת."
+      },
+      "evidence": { "segs": [109, 110, 111], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "He says one must do teshuvah and daven to Hashem that no kitrug come upon Klal Yisrael.",
+        "yi": "ער זאגט אז מ'דארף טון תשובה און מתפלל זיין צום רבונו של עולם אז עס זאל נישט קומען קיין קטרוג אויף כלל ישראל."
+      },
+      "evidence": { "segs": [148], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "hiddenness before redemption",
+    "Yosef and his brothers",
+    "galus Mitzrayim",
+    "Moshe Rabbeinu and Dasan and Aviram",
+    "redemption only from Hashem",
+    "awaiting Moshiach",
+    "kitrug before the geulah",
+    "dates of the ketz",
+    "Shovavim and the weeks of Teves",
+    "parshas Shemos"
+  ],
+  "concepts": [
+    { "he": "הסתר", "heardAs": ["הוסטער", "בהסתר"] },
+    { "he": "קטרוג", "heardAs": ["קוטחוג", "קוטערוג", "קצחוגים", "קודחוג"] },
+    { "he": "ספר הגאולה", "heardAs": ["ספר הישוע", "ספר הגאולה"] },
+    { "he": "דור הפלגה", "heardAs": ["דור הפלאגע", "ראפלאגע"] },
+    { "he": "ליבון הלכה", "heardAs": ["ליבן הלכה"] },
+    { "he": "תקופת טבת", "heardAs": ["תקפת תיבות", "תקפת טבעות", "לבי טבעת"] },
+    { "he": "מדת הדין", "heardAs": ["מידות הדין", "מידה סאווי"] },
+    { "he": "ערב רב", "heardAs": ["ערב ראווניקערס", "ערב רב"] },
+    { "he": "אחרית הימים", "heardAs": ["אחת הינים", "אחרת הימים", "ביחס הימים"] },
+    { "he": "היכל משיח", "heardAs": ["היכל של משיח", "היכל פון קיין סיפור"] },
+    { "he": "קץ", "heardAs": ["קעץ", "קיץ", "קעצה"] },
+    { "he": "שערי חכמה", "heardAs": ["שרי חכמה", "שער החכמה"] },
+    { "he": "נצחי", "heardAs": ["נצחית", "כנצחית"] }
+  ],
+  "people": [
+    { "name": "Yaakov Avinu", "heardAs": ["יענקי רבינו", "יענקא ווינא", "יעקב אבינא"] },
+    { "name": "Yosef", "heardAs": ["יוסף", "יוסי"] },
+    { "name": "Binyamin", "heardAs": ["בנימין"] },
+    { "name": "Shimon", "heardAs": ["שמעון"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינאוויזן", "משה רבינו", "ר' משה"] },
+    { "name": "Ramban", "heardAs": ["רמב״ן"] },
+    { "name": "Rabbeinu Yonah", "heardAs": ["רבינו יונא"] },
+    { "name": "Chasam Sofer", "heardAs": ["חתם ספר", "אכתם סופר"] },
+    { "name": "Yehoshua", "heardAs": ["ישוע", "יהושע"] },
+    { "name": "Dasan and Aviram", "heardAs": ["דאסן וואבורם", "דאסטן ראביראמס"] },
+    { "name": "Sforno", "heardAs": ["סיפורנוי"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["הבאהשמטא", "באשעמטוב"] },
+    { "name": "Rambam", "heardAs": ["רמב״ם", "רמב״ש"] },
+    { "name": "the Yismach Moshe", "heardAs": ["ישמח משה", "יוסף משה"] },
+    { "name": "Chmielnicki", "heardAs": ["נחמיה אלניצקי"] },
+    { "name": "Toldos Yaakov Yosef", "heardAs": ["תולדות יעקב יוסף"] },
+    { "name": "Rabbi Chaim Vital", "heardAs": ["חיים ויטל"] },
+    { "name": "the Chofetz Chaim", "heardAs": ["חפץ חיים"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair for the Rav's narration but Hebrew quotations are heavily garbled; most pesukim were recovered from context. The stretch on illnesses and world events (segs 40-43) and the dates and calculations near the end (segs 135-136, 144-147) are partly unclear, so years beyond those clearly stated were left out. Segment 120 is flagged [NOISE?] but its first half is coherent story text; its repeated tail was ignored."
+}

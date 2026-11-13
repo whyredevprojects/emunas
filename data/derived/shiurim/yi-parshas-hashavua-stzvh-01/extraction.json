@@ -1,0 +1,424 @@
+{
+  "shiurId": "yi-parshas-hashavua-stzvh-01",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that Moshe Rabbeinu's name is missing from Parshas Tetzaveh not as a punishment but because his mesirus nefesh in saying 'mecheini na' bound him to the hidden light of the 'eighth world', which is hidden in this eighth parsha and breaks out on Purim.",
+      "yi": "דער משגיח ערקלערט אז משה רבינו'ס נאמען פעלט אין פרשת תצוה נישט אלס עונש, נאר ווייל זיין מסירת נפש מיט \"מחני נא\" האט אים צוגעבונדן צום אור הגנוז פונעם עולם השמיני, וואס איז באהאלטן אין דער אכטער פרשה און ברעכט ארויס אום פורים."
+    },
+    "abstract": {
+      "en": "The Rav opens with the two levels of Mishkan: ideally each Jew is himself a sanctuary, as Tetzaveh's Kohen in his garments shows, while after the sin a Mishkan of wood and stones was needed, as in Terumah; with the Shelah he ties the two parshiyos to two levels of teshuvah. He then asks why the command of the oil appears in Tetzaveh, why its Midrash opens with milah on the eighth day, and why Moshe's name is absent. His key: the ten utterances divide into seven of nature and the higher 'eighth world', the hidden light that appears in the oil of the menorah, Chanukah, milah and the bris of Eliyahu, all drawn down through mesirus nefesh. Moshe, hidden from birth, said 'mecheini na' and so became hidden in the eighth parsha, as the Chozeh of Lublin story and the lowly talmid chacham illustrate. Tetzaveh prepares for Purim, when this light shines into darkness; he closes urging bochurim to celebrate Purim together.",
+      "yi": "דער משגיח עפנט מיט די צוויי מדריגות פון משכן: לכתחילה זאל יעדער איד אליין זיין א מקדש, אזוי ווי דער כהן מיט זיינע בגדים אין פרשת תצוה, אבער נאכן חטא האט מען געדארפט א משכן פון עצים ואבנים, אזוי ווי אין פרשת תרומה; מיטן של\"ה בינדט ער די צוויי פרשיות צו צוויי מדריגות פון תשובה. דערנאך פרעגט ער פארוואס דער ציווי פון שמן שטייט אין תצוה, פארוואס דער מדרש דארט הייבט אן מיט מילה בשמיני, און פארוואס משה רבינו'ס נאמען פעלט. דער שליסל איז אז פון די עשרה מאמרות זענען די זיבן פון טבע, און דער עולם השמיני איז דער אור הגנוז, וואס באווייזט זיך אין שמן המנורה, חנוכה, מילה און אליהו'ס ברית, און מ'ציט עס אראפ דורך מסירת נפש. משה רבינו, וואס איז פון זיין געבורט באהאלטן געווען, האט געזאגט \"מחני נא\" און איז דערפאר באהאלטן אין דער אכטער פרשה, אזוי ווי די מעשה מיטן לובלינער און דער אונטערגעדריקטער תלמיד חכם ווייזן. תצוה איז א הקדמה צו פורים, ווען דער אור לייכט אין דער פינסטערניש, און ער ענדיגט מיט א בקשה אז די בחורים זאלן פראווען פורים צוזאמען."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Parshas Terumah describes a Mishkan of wood and stones for a lower state, while Tetzaveh describes the Kohen, the person himself as the sanctuary, which was the original ideal before the sin.",
+          "yi": "פרשת תרומה רעדט פון א משכן פון עצים ואבנים פאר א נידעריגערן מצב, און פרשת תצוה רעדט פונעם כהן, דער מענטש אליין אלס מקדש, וואס דאס איז געווען די כוונה פארן חטא."
+        },
+        "evidence": { "segs": [2, 8, 9], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Of the ten utterances of creation, the last seven make up the natural world, while the 'eighth' level is above nature; it is the hidden light, kept back now and revealed with Moshiach.",
+          "yi": "פון די עשרה מאמרות זענען די לעצטע זיבן די וועלט פון טבע, און די מדריגה פון שמיני איז למעלה מן הטבע; דאס איז דער אור הגנוז, וואס איז היינט באהאלטן און וועט נתגלה ווערן ביי משיח."
+        },
+        "evidence": { "segs": [24, 25, 26, 28], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Oil, the menorah, Chanukah's eight days and milah on the eighth day all belong to this level above nature.",
+          "yi": "שמן, די מנורה, די אכט טעג חנוכה און מילה בשמיני געהערן אלע צו דער מדריגה למעלה מן הטבע."
+        },
+        "evidence": { "segs": [31, 32, 34, 45], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Mesirus nefesh, going against the natural drive to preserve oneself, is what draws down the light of the eighth world; therefore Eliyahu, who earned his place through Pinchas's zealotry, comes to every bris.",
+          "yi": "מסירת נפש, וואס גייט קעגן דעם טבע פון זיך האלטן ביים לעבן, ציט אראפ דעם אור פונעם עולם השמיני; דערפאר קומט אליהו הנביא, וואס האט עס פארדינט דורך פינחס'עס מסירת נפש, צו יעדן ברית."
+        },
+        "evidence": { "segs": [52, 53, 54, 56], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Moshe's name is missing from Tetzaveh not as a punishment for 'mecheini na' but because that mesirus nefesh joined him to the hidden light, so he is hidden in the eighth parsha.",
+          "yi": "משה רבינו'ס נאמען פעלט אין תצוה נישט אלס עונש פאר \"מחני נא\", נאר ווייל די מסירת נפש האט אים מדבק געווען מיטן אור הגנוז, דערפאר איז ער באהאלטן אין דער אכטער פרשה."
+        },
+        "evidence": { "segs": [89, 90, 96, 97], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Tetzaveh is always read before Purim and is an introduction to it: on Purim, in the dark month of Adar, Hashem sends a flash of the hidden light into the darkness of exile.",
+          "yi": "תצוה ליינט מען אלעמאל פאר פורים און זי איז א הקדמה צו פורים: אום פורים, אין דעם פינסטערן חודש אדר, שיקט דער אויבערשטער אראפ א בליץ פונעם אור הגנוז אין דער פינסטערניש פונעם גלות."
+        },
+        "evidence": { "segs": [95, 116, 117, 118], "confidence": 0.75 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-parsha-sefer-shemois-08-01-tetzaveh",
+      "startSeg": 0,
+      "endSeg": 11,
+      "title": { "en": "Two levels of Mishkan: Terumah and Tetzaveh", "yi": "צוויי מדריגות משכן: תרומה און תצוה" },
+      "summary": {
+        "en": "The Rav brings the dispute between the Midrash and the Zohar on whether the Mishkan was commanded before or after the golden calf, and explains that ideally each Jew is himself the sanctuary, while after the sin a Mishkan of wood and stones was needed. Terumah wraps the Mishkan, Tetzaveh wraps the Kohen in his garments, and with the Shelah he links them to a lower and a higher teshuvah.",
+        "yi": "דער משגיח ברענגט די מחלוקת צווישן מדרש און זוהר צי דער ציווי פונעם משכן איז געווען פאר אדער נאך חטא העגל, און ערקלערט אז לכתחילה זאל יעדער איד אליין זיין דער מקדש, נאר נאכן חטא האט מען געדארפט א משכן פון עצים ואבנים. תרומה רעדט פונעם משכן, תצוה פונעם כהן מיט זיינע בגדים, און מיטן של\"ה בינדט ער זיי צו תשובה תתאה און תשובה עילאה."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-08-01-tetzaveh",
+      "startSeg": 12,
+      "endSeg": 23,
+      "title": { "en": "Three questions on the parsha's opening", "yi": "דריי קשיות אויפן אנהייב פון דער פרשה" },
+      "summary": {
+        "en": "The Rav asks why the command of the oil for the menorah stands here when its proper place is in Emor, why the Midrash Tanchuma opens the parsha with a halacha about milah on the eighth day, and why, as the Ba'al HaTurim says, Moshe's name is missing from Tetzaveh because of 'mecheini na'. Rabbeinu Bachya's answer that the oil hints to Chanukah leads into his own explanation.",
+        "yi": "דער משגיח פרעגט פארוואס דער ציווי פון שמן למאור שטייט דא, ווען זיין ארט איז אין פרשת אמור, פארוואס דער מדרש תנחומא הייבט אן די פרשה מיט א הלכה פון מילה בשמיני, און פארוואס, ווי דער בעל הטורים זאגט, פעלט משה רבינו'ס נאמען אין תצוה צוליב \"מחני נא\". רבינו בחיי'ס תירוץ אז דער שמן איז א רמז אויף חנוכה פירט אריין אין זיין אייגענעם ביאור."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-08-01-tetzaveh",
+      "startSeg": 24,
+      "endSeg": 34,
+      "title": { "en": "Seven of nature, the eighth above it", "yi": "זיבן פון טבע, דער אכטער העכער פון טבע" },
+      "summary": {
+        "en": "The Rav explains that of the ten utterances, the last seven created the lower, natural world, and anything beyond seven, the 'eighth world', is above nature and hidden, to be revealed with Moshiach. Citing Sha'arei Orah and the Maharal, he shows it breaking through at Pesach, Chanukah and Shavuos, and in milah on the eighth day, which cuts against nature.",
+        "yi": "דער משגיח ערקלערט אז פון די עשרה מאמרות האבן די לעצטע זיבן באשאפן די נידעריגע וועלט פון טבע, און וואס איז העכער פון זיבן, דער עולם השמיני, איז למעלה מן הטבע און באהאלטן ביז משיח. מיטן ספר שערי אורה און מיטן מהר\"ל ווייזט ער ווי עס ברעכט דורך פסח, חנוכה און שבועות, און ביי מילה בשמיני, וואס גייט קעגן דעם טבע."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-08-01-tetzaveh",
+      "startSeg": 35,
+      "endSeg": 48,
+      "title": { "en": "The hidden light in Shabbos lights, menorah and oil", "yi": "דער אור הגנוז אין שבת ליכט, מנורה און שמן" },
+      "summary": {
+        "en": "The Rav shows the hidden light glimpsed on Shabbos, in the Shabbos candles, the menorah and the Chanukah lights, citing the menorah that burned all year in Shimon HaTzaddik's time and the Gemara's lamp over an unborn child's head. With the Bnei Yissaschar on the hidden jar of oil, he explains why oil, which always rises to the top, is the vessel for the 'eighth' light.",
+        "yi": "דער משגיח ווייזט ווי מ'כאפט א טעם פונעם אור הגנוז אום שבת, אין די שבת ליכט, אין דער מנורה און אין די חנוכה ליכט, מיט דעם וואס די מנורה האט געברענט א גאנץ יאר אין די צייטן פון שמעון הצדיק, און מיט דער גמרא פונעם נר אויפן קאפ פון א קינד אין מוטערס לייב. מיטן בני יששכר אויפן באהאלטענעם פך שמן ערקלערט ער פארוואס שמן, וואס הייבט זיך אלעמאל אויף אויבן, איז דער כלי פאר דעם אור פון שמיני."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-08-01-tetzaveh",
+      "startSeg": 49,
+      "endSeg": 56,
+      "title": { "en": "Mesirus nefesh, Eliyahu and the bris", "yi": "מסירת נפש, אליהו הנביא און דער ברית" },
+      "summary": {
+        "en": "The Rav connects Moshe's receiving the Torah to the hidden light and explains that milah on the eighth day lifts a person above nature. Eliyahu comes to every bris because, as Pinchas, he had mesirus nefesh, which overrides the instinct of self-preservation found in every creature; the father's joy in the Midrash of Rabbi Shimon bar Yochai shows the same.",
+        "yi": "דער משגיח בינדט משה רבינו'ס מקבל זיין די תורה מיטן אור הגנוז, און ערקלערט אז מילה בשמיני הייבט א מענטש אויף העכער פון טבע. אליהו הנביא קומט צו יעדן ברית ווייל ער האט, אלס פינחס, געהאט מסירת נפש, וואס איז מבטל דעם טבע פון יעדן באשעפעניש זיך צו האלטן; די שמחה פונעם טאטן אינעם מדרש פון רבי שמעון בר יוחאי ווייזט דאס זעלבע."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-08-01-tetzaveh",
+      "startSeg": 57,
+      "endSeg": 63,
+      "title": { "en": "The convert's dangerous bris and the stranger at the river", "yi": "דער געפערלעכער ברית פונעם גר און דער איד ביים טייך" },
+      "summary": {
+        "en": "The Rav tells of a convert who became dangerously ill after his milah, endangering the whole town; the rav of Pressburg told them to go with mesirus nefesh, and at the river a stranger appeared and healed him. The Pressburg rav explained that only Eliyahu, the angel of the bris, could help, and he is drawn down only through mesirus nefesh.",
+        "yi": "דער משגיח דערציילט פון א גר וואס איז געפערלעך קראנק געווארן נאך זיין מילה, וואס האט געשטעלט דאס גאנצע שטעטל אין סכנה; דער רב פון פרעשבורג האט זיי געהייסן גיין מיט מסירת נפש, און ביים טייך איז אנגעקומען א פרעמדער איד און אים אויסגעהיילט. דער פרעשבורגער רב האט ערקלערט אז נאר אליהו הנביא, דער מלאך הברית, האט געקענט העלפן, און אים ציט מען אראפ נאר מיט מסירת נפש."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-08-01-tetzaveh",
+      "startSeg": 64,
+      "endSeg": 77,
+      "title": { "en": "Milah on the eighth day and Yitzchak", "yi": "מילה בשמיני און יצחק אבינו" },
+      "summary": {
+        "en": "With the Bnei Yissaschar, the Rav says that a salvation beyond nature is drawn by doing a mitzvah beyond the ordinary. He explains that Yitzchak, whose birth was beyond nature, was the first circumcised on the eighth day, and that Rabbi Shimon bar Yochai's reason for the eighth day is that milah is above nature. He asks about a child born on Yom Kippur or Pesach, and concludes that this Midrash fits Tetzaveh because the oil hints to Chanukah.",
+        "yi": "מיטן בני יששכר זאגט דער משגיח אז א ישועה למעלה מן הטבע ציט מען אראפ מיט א מצוה למעלה מן הטבע. ער ערקלערט אז יצחק, וואס זיין געבורט איז געווען למעלה מן הטבע, איז דער ערשטער געווען נימול בשמיני, און אז רבי שמעון בר יוחאי'ס טעם פאר שמיני איז ווייל מילה איז למעלה מן הטבע. ער פרעגט וועגן א קינד וואס איז געבוירן אום יום כיפור אדער פסח, און ענדיגט אז דער מדרש פאסט צו תצוה ווייל דער שמן איז א רמז אויף חנוכה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-08-01-tetzaveh",
+      "startSeg": 78,
+      "endSeg": 87,
+      "title": { "en": "Moshe's soul, hidden from birth", "yi": "משה רבינו'ס נשמה, באהאלטן פון געבורט" },
+      "summary": {
+        "en": "The Rav explains that Tetzaveh is the eighth parsha of the extended Shovavim, and that everything above nature is hidden, like the sealed jar of oil. Purim's miracle also came from a hidden place, and Moshe's soul is of the hidden light: hidden three months, in Pharaoh's house and in Midian, and born already circumcised.",
+        "yi": "דער משגיח ערקלערט אז תצוה איז די אכטע פרשה פון שובבים ת\"ת, און אז אלץ וואס איז למעלה מן הטבע איז באהאלטן, אזוי ווי דער פך שמן מיטן חותם. אויך דער נס פון פורים איז געקומען פון א באהאלטן ארט, און משה רבינו'ס נשמה איז פונעם אור הגנוז: באהאלטן דריי חדשים, אין פרעה'ס הויז און אין מדין, און געבוירן געווארן נימול."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-08-01-tetzaveh",
+      "startSeg": 88,
+      "endSeg": 98,
+      "title": { "en": "Why Moshe's name is hidden in Tetzaveh", "yi": "פארוואס משה רבינו'ס נאמען איז באהאלטן אין תצוה" },
+      "summary": {
+        "en": "The Rav explains that with 'mecheini na' Moshe nullified his own self-preservation for Klal Yisroel, cleaving to the eighth world, and so he became hidden in Tetzaveh, the eighth parsha, which opens with the oil and continues with the Kohen Gadol's eight garments. The Ba'al HaTurim's reading is pshat for children; in truth his absence is his beauty.",
+        "yi": "דער משגיח ערקלערט אז מיט \"מחני נא\" איז משה רבינו מבטל געווען זיין זיך האלטן פאר כלל ישראל און זיך מדבק געווען מיטן עולם השמיני, און דערפאר איז ער נגנז געווארן אין תצוה, די אכטע פרשה, וואס הייבט אן מיט שמן און גייט ווייטער מיט די שמונה בגדים פונעם כהן גדול. דער בעל הטורים איז א פשט פאר קינדער; באמת איז זיין פעלן זיין שיינקייט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-08-01-tetzaveh",
+      "startSeg": 99,
+      "endSeg": 115,
+      "title": { "en": "The Chozeh's spilled soup and the hidden talmid chacham", "yi": "דעם לובלינער'ס אויסגעגאסענע זופ און דער באהאלטענער תלמיד חכם" },
+      "summary": {
+        "en": "The Rav tells how the Chozeh of Lublin spilled a plate of soup at his tish, frightening Reb Mendel of Rimanov, and later revealed that at that moment a poritz spilled ink over his evil decree. Like those at the table who could not see, one who looks with worldly eyes thinks the self-sacrificing talmid chacham, lowly before Moshiach, has been erased; in truth his light is too great for the world and is stored with the hidden light until it can shine.",
+        "yi": "דער משגיח דערציילט ווי דער לובלינער חוזה האט אויסגעגאסן א טעלער זופ ביים טיש, און ר' מענדל פון רימאנוב האט זיך דערשראקן, און שפעטער האט ער אנטפלעקט אז דעמאלט האט א פריץ אויסגעגאסן טינט אויף זיין שלעכטע גזירה. אזוי ווי די ביים טיש האבן נישט געזען, מיינט דער וואס קוקט מיט וועלטלעכע אויגן אז דער תלמיד חכם מיט מסירת נפש, וואס איז נידעריג פאר משיח, איז אפגעמעקט; באמת איז זיין ליכט צו גרויס פאר דער וועלט און ווערט אויפגעהאלטן מיטן אור הגנוז ביז עס קען לייכטן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-08-01-tetzaveh",
+      "startSeg": 116,
+      "endSeg": 126,
+      "title": { "en": "Purim: a flash of light in the dark", "yi": "פורים: א בליץ ליכט אין דער פינסטערניש" },
+      "summary": {
+        "en": "The Rav explains that Tetzaveh is an introduction to Purim, when, in dark Adar, Hashem sends a flash of the hidden light like lightning in a black night. He then discusses Purim Katan: the Mishnah, the verse 'days of feasting and joy', the Rema's closing words 'tov lev mishteh tamid', and Reb Tzadok's point that the heart must drink; Purim Katan's light is hidden even without the mitzvos.",
+        "yi": "דער משגיח ערקלערט אז תצוה איז א הקדמה צו פורים, ווען דער אויבערשטער שיקט, אין פינסטערן אדר, א בליץ פונעם אור הגנוז, ווי א בליץ אין א פינסטערער נאכט. דערנאך רעדט ער וועגן פורים קטן: די משנה, דער פסוק \"ימי משתה ושמחה\", דעם רמ\"א'ס סוף \"טוב לב משתה תמיד\", און ר' צדוק'ס ווארט אז דאס הארץ דארף טרינקען; פורים קטן'ס ליכט איז באהאלטן אפילו אן די מצוות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-08-01-tetzaveh",
+      "startSeg": 127,
+      "endSeg": 143,
+      "title": { "en": "Noach, Shes and Moshe: from the outer court inward", "yi": "נח, שת און משה: פון דער חצר אריין אינעווייניג" },
+      "summary": {
+        "en": "The Rav brings the hint that Terumah's last word 'nechoshes' spells Noach, Shes and Moshe, gilgulim of one soul; Noach did not pray for his generation and Moshe repaired it with 'mecheini na'. Tzaddikim like Noach and Shes, survivors when others were wiped out, belong to the outer court of the seven, while Moshe's mesirus nefesh opens the eighth, inner order of Tetzaveh, whose light breaks out on Purim through Mordechai.",
+        "yi": "דער משגיח ברענגט דעם רמז אז דאס לעצטע ווארט פון תרומה, \"נחשת\", איז נח, שת און משה, גלגולים פון איין נשמה; נח האט נישט מתפלל געווען פאר זיין דור, און משה האט עס מתקן געווען מיט \"מחני נא\". צדיקים ווי נח און שת, וואס זענען געבליבן ווען די אנדערע זענען אפגעמעקט געווארן, געהערן צו דער חצר פון די זיבן, און משה'ס מסירת נפש עפנט דעם אכטן, אינעווייניגסטן סדר פון תצוה, וואס זיין ליכט ברעכט ארויס אום פורים דורך מרדכי."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-08-01-tetzaveh",
+      "startSeg": 144,
+      "endSeg": 152,
+      "title": { "en": "Salvation from the hidden place; celebrating Purim together", "yi": "ישועה פון באהאלטענעם ארט; פורים פראווען צוזאמען" },
+      "summary": {
+        "en": "The Rav notes that, as with Moshe in Pharaoh's palace, the salvation emerges from the hidden place. He then asks the bochurim to celebrate Purim together in the beis medrash as one family, since being together at a seudah creates love and friendship that even learning together does not.",
+        "yi": "דער משגיח מערקט אן אז, אזוי ווי ביי משה רבינו אין פרעה'ס פאלאץ, קומט די ישועה פון דעם באהאלטענעם ארט. דערנאך בעט ער אז די בחורים זאלן פראווען פורים צוזאמען אין בית המדרש ווי איין משפחה, ווייל זיין צוזאמען ביי א סעודה שאפט אהבה ורעות וואס אפילו לערנען צוזאמען גיט נישט."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "אין מדרש שטעט אז די מלאכות המשכן ... איז געוועזן נאך אין מעשה יגן", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [0], "confidence": 0.8 } },
+    { "heardAs": "זייער שטעט אז די ציבה פון מלאכות המשכן איז געוועזן פאר די מעשה יגן", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [0, 6], "confidence": 0.75 } },
+    { "heardAs": "רשע ברענגט אן פי די שיטה", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [0], "confidence": 0.7 } },
+    { "heardAs": "ויאתהלי משכן, ובאתהלי מקדש, ושכנתי בסכם", "work": "Shemos", "ref": "Shemos 25:8", "sefariaRef": "Exodus 25:8", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1], "confidence": 0.85 } },
+    { "heardAs": "ברענגט דאך די שלה ... שבבים", "work": "Shelah", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [10], "confidence": 0.7 } },
+    { "heardAs": "ביאתי תוצאה / יקחא הילכה שם אין זייער זאך", "work": "Shemos", "ref": "Shemos 27:20", "sefariaRef": "Exodus 27:20", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [11, 77], "confidence": 0.85 } },
+    { "heardAs": "אין פרשת אמור וועט נאכאמאל דאס איבערגעפאזלט", "work": "Vayikra", "ref": "Vayikra 24:2", "sefariaRef": "Leviticus 24:2", "resolution": "resolved", "mention": "alluded", "evidence": { "segs": [12], "confidence": 0.8 } },
+    { "heardAs": "רשע ברענגט דארטן", "work": "Rashi", "ref": "Rashi on Vayikra 24:2", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [12, 13], "confidence": 0.7 } },
+    { "heardAs": "דער מדרש הנחמה אין היינטיגע סדרה פאנגט זיך אין ... מיט א הלכה", "work": "Midrash Tanchuma", "ref": "Midrash Tanchuma, Tetzaveh 1", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [14, 15, 17], "confidence": 0.8 } },
+    { "heardAs": "וימאל אברהם איז יצחק בני בן שמעון את ימים", "work": "Bereishis", "ref": "Bereishis 21:4", "sefariaRef": "Genesis 21:4", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [16], "confidence": 0.85 } },
+    { "heardAs": "דער בעל הצרים אין אנפאנג פון היינטיגער פרשה", "work": "Ba'al HaTurim", "ref": "Ba'al HaTurim on Shemos 27:20", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [18, 19, 95], "confidence": 0.85 } },
+    { "heardAs": "ומיין מחנונה מספרך אשר כתבת", "work": "Shemos", "ref": "Shemos 32:32", "sefariaRef": "Exodus 32:32", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [20, 88], "confidence": 0.85 } },
+    { "heardAs": "אזוי זאגט רבינו בחייה ... א רמז אויף חנוכה", "work": "Rabbeinu Bachya", "ref": "Rabbeinu Bachya on Shemos 27:20", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [23, 77], "confidence": 0.8 } },
+    { "heardAs": "ספר שערי אורו / שערי יורא", "work": "Sha'arei Orah", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [28, 32, 34], "confidence": 0.75 } },
+    { "heardAs": "דער מהר''ל ... רעדט ... ער ברענגט אסאך ראיות", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [32], "confidence": 0.75 } },
+    { "heardAs": "געפינט מען אין מדרש תמכמה ... א גאנץ יאר האט אמאל געברענט א מנורה", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [38], "confidence": 0.7 } },
+    { "heardAs": "דער ג'מל זאגט ... נעה דלקת הראשי ... מלמדים כל התורה כלה", "work": "Gemara Niddah", "ref": "Niddah 30b", "sefariaRef": "Niddah 30b", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [39, 40], "confidence": 0.75 } },
+    { "heardAs": "דער בני יששכר רעדט ... די אויל פון אייראגאנעס", "work": "Bnei Yissaschar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [42, 78], "confidence": 0.75 } },
+    { "heardAs": "זאגט אין מדרש אז די אידן זענען ממשל בשמעון", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [44, 45], "confidence": 0.7 } },
+    { "heardAs": "די פרקה פון בני יששכר ... חוץ לטבע", "work": "Bnei Yissaschar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [64], "confidence": 0.8 } },
+    { "heardAs": "ותהר עסקו טוב ... עס איז מולד מוהל", "work": "Shemos", "ref": "Shemos 2:2", "sefariaRef": "Exodus 2:2", "resolution": "resolved", "mention": "alluded", "evidence": { "segs": [87], "confidence": 0.65 } },
+    { "heardAs": "די משנה און די גמרא, אין בין אדר ישן לאדר שיני, אלא מקרוב מגלה", "work": "Mishnah Megillah", "ref": "Megillah 1:4", "sefariaRef": "Mishnah Megillah 1:4", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [120], "confidence": 0.8 } },
+    { "heardAs": "עס שטעט אין פסוק ימי משתה ושמחה", "work": "Esther", "ref": "Esther 9:22", "sefariaRef": "Esther 9:22", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [121], "confidence": 0.8 } },
+    { "heardAs": "דער רמא, סוף הלכות מגילה ... טוב לב משתה תמיד", "work": "Rema", "ref": "Rema, Orach Chaim 697:1 (end of Hilchos Megillah)", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [122], "confidence": 0.8 } },
+    { "heardAs": "ר' צדיק פרעגט / אזוי זאגט חטא צדק", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [120, 124], "confidence": 0.65 } },
+    { "heardAs": "פרשת תרומה ענדיגט זיך וחייזת החסד נחשת", "work": "Shemos", "ref": "Shemos 27:19", "sefariaRef": "Exodus 27:19", "resolution": "resolved", "mention": "alluded", "evidence": { "segs": [127, 137], "confidence": 0.8 } },
+    { "heardAs": "ער ברענגט עס פאר מגלה המלכות זאגט ער א רמז", "work": "Megaleh Amukos", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [127, 128], "confidence": 0.65 } },
+    { "heardAs": "אין זייער קידוש שטעט אז משה רבינו איז געוועזן דער נשמה פון נייעך", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [128], "confidence": 0.7 } },
+    { "heardAs": "כי מער נייעך זאת לי", "work": "Yeshayahu", "ref": "Yeshayahu 54:9", "sefariaRef": "Isaiah 54:9", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [128, 129], "confidence": 0.75 } }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Terumah and Tetzaveh are two levels of Mishkan: the building of wood and stones for a fallen state, and the Kohen wrapped in his garments, the person himself as sanctuary; the Rav ties them to the seventh and eighth weeks of Shovavim, a lower and a higher teshuvah.",
+        "yi": "תרומה און תצוה זענען צוויי מדריגות פון משכן: דער בנין פון עצים ואבנים פאר א געפאלענעם מצב, און דער כהן אנגעטון אין זיינע בגדים, דער מענטש אליין אלס מקדש; דער משגיח בינדט זיי צו דער זיבעטער און אכטער וואך פון שובבים, תשובה תתאה און תשובה עילאה."
+      },
+      "evidence": { "segs": [8, 9, 10, 11], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Oil is the vessel for the light of the eighth world because, unlike every other thing that falls downward, it always rises to the top; the Rav links the word 'shemen' to 'shemini'.",
+        "yi": "שמן איז דער כלי פאר דעם אור פונעם עולם השמיני, ווייל אנדערש ווי יעדע זאך וואס פאלט אראפ, הייבט ער זיך אלעמאל אויף אויבן; דער משגיח בינדט דאס ווארט \"שמן\" מיט \"שמיני\"."
+      },
+      "evidence": { "segs": [45, 46, 47], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Mesirus nefesh is itself above nature, since every creature's nature is to preserve itself; that is why Eliyahu, whose soul Pinchas earned through zealotry, is the angel of the bris, which is on the eighth day.",
+        "yi": "מסירת נפש איז אליין למעלה מן הטבע, ווייל דער טבע פון יעדן באשעפעניש איז זיך צו האלטן; דערפאר איז אליהו הנביא, וואס פינחס האט פארדינט זיין נשמה דורך זיין קנאות, דער מלאך הברית, וואס איז בשמיני."
+      },
+      "evidence": { "segs": [52, 53, 54, 55], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Moshe's absence from Tetzaveh is not a punishment but his greatest beauty: his self-erasure for Klal Yisroel joined him to the hidden light, and a Jew who reads the parsha knows it is Moshe even without his name.",
+        "yi": "משה רבינו'ס פעלן אין תצוה איז נישט קיין עונש נאר זיין גרעסטע שיינקייט: זיין זיך אפמעקן פאר כלל ישראל האט אים מדבק געווען מיטן אור הגנוז, און א איד וואס לערנט די פרשה ווייסט אז דאס איז משה רבינו אפילו אן זיין נאמען."
+      },
+      "evidence": { "segs": [96, 97, 115], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The talmid chacham who gives himself for Torah and seems pushed out of the world is not lost: his light is too great for the world and is packed into Hashem's storehouse with the hidden light, to shine when the world is ready.",
+        "yi": "דער תלמיד חכם וואס גיט זיך אוועק פאר תורה און זעט אויס ווי ארויסגעשטופט פון דער וועלט איז נישט פארלוירן: זיין ליכט איז צו גרויס פאר דער וועלט און ווערט אריינגעלייגט אין דעם אויבערשטנס אוצר מיטן אור הגנוז, כדי צו לייכטן ווען די וועלט וועט זיין ראוי."
+      },
+      "evidence": { "segs": [111, 112, 113, 114], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Nechoshes, the last word of Terumah, hints to Noach, Shes and Moshe: tzaddikim who survive while others are erased belong to the outer court, while Moshe's mesirus nefesh for his generation opens the inner, eighth order that begins with Tetzaveh.",
+        "yi": "\"נחשת\", דאס לעצטע ווארט פון תרומה, איז א רמז אויף נח, שת און משה: צדיקים וואס בלייבן ווען אנדערע ווערן אפגעמעקט געהערן צו דער חצר פון דרויסן, און משה'ס מסירת נפש פאר זיין דור עפנט דעם אינעווייניגסטן, אכטן סדר וואס הייבט זיך אן מיט תצוה."
+      },
+      "evidence": { "segs": [127, 133, 136, 138], "confidence": 0.7 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The convert, the river and Eliyahu", "yi": "דער גר, דער טייך און אליהו הנביא" },
+      "retelling": {
+        "en": "In a small town a convert was circumcised and became seriously ill with an infection, and the town feared that if he died the gentiles would accuse the Jews. The town's rav traveled to the rav of Pressburg, who told them to go with the mohel and the convert toward the river with mesirus nefesh, ready to be lost there so that it would look like an accident. At the river a Jew suddenly appeared, took out a flask and treated the convert, and they returned to Pressburg with him healthy. The Pressburg rav explained that only Eliyahu, the angel of the bris, could heal this, and he is drawn down only through mesirus nefesh.",
+        "yi": "אין א קליין שטעטל האט מען מל געווען א גר, און ער איז שווער קראנק געווארן מיט אן אנצינדונג, און מ'האט מורא געהאט אז אויב ער וועט שטארבן וועלן די גוים בשולדיגן די אידן. דער רב פונעם שטעטל איז געפארן צום רב פון פרעשבורג, און ער האט זיי געהייסן פארן מיטן מוהל און מיטן גר צום טייך מיט מסירת נפש, גרייט אומצוקומען דארט, אז עס זאל אויסזען ווי אן אומגליק. ביים טייך איז פלוצלינג אנגעקומען א איד, ארויסגענומען א פלעשל און באהאנדלט דעם גר, און זיי זענען צוריקגעפארן קיין פרעשבורג מיט אים געזונט. דער פרעשבורגער רב האט ערקלערט אז נאר אליהו הנביא, דער מלאך הברית, האט דאס געקענט היילן, און אים ציט מען אראפ נאר דורך מסירת נפש."
+      },
+      "people": ["the rav of Pressburg", "Eliyahu HaNavi"],
+      "evidence": { "segs": [57, 58, 59, 61, 63], "confidence": 0.65 }
+    },
+    {
+      "title": { "en": "The Chozeh of Lublin spills the soup", "yi": "דער לובלינער חוזה גיסט אויס די זופ" },
+      "retelling": {
+        "en": "At the Shabbos table the Chozeh of Lublin spilled a plate of soup, and Reb Mendel of Rimanov cried out in fear that they would all be taken to prison. The Chozeh told him not to be afraid. Later he told that a poritz had written an evil decree against the Jews; the first time something went wrong with it, and when he wrote it again and went to dry the ink with sand, at the moment the Chozeh spilled the soup the poritz mistakenly took the inkwell and poured it over the decree.",
+        "yi": "ביים שבת טיש האט דער לובלינער חוזה אויסגעגאסן א טעלער זופ, און ר' מענדל פון רימאנוב האט אויסגעשריגן פון שרעק אז מ'וועט זיי אלע נעמען אין תפיסה. דער לובלינער האט אים געזאגט ער זאל זיך נישט שרעקן. שפעטער האט ער דערציילט אז א פריץ האט געשריבן א שלעכטע גזירה אויף אידן; דאס ערשטע מאל איז עפעס קאליע געווארן, און ווען ער האט עס איבערגעשריבן און געוואלט טריקענען די טינט מיט זאמד, האט ער, אין דעם מאמענט וואס דער לובלינער האט אויסגעגאסן די זופ, בטעות גענומען דאס טינטערל און עס אויסגעגאסן אויף דער גזירה."
+      },
+      "people": ["the Chozeh of Lublin", "Reb Menachem Mendel of Rimanov"],
+      "evidence": { "segs": [99, 100, 101, 102, 103], "confidence": 0.7 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "Why is the command to bring oil for the menorah placed in Tetzaveh, when its main place is in Parshas Emor?", "yi": "פארוואס שטייט דער ציווי פון שמן למאור אין תצוה, ווען זיין עיקר ארט איז אין פרשת אמור?" },
+      "answer": { "en": "Rabbeinu Bachya says it hints to Chanukah; the Rav explains that oil carries the light of the eighth world above nature.", "yi": "רבינו בחיי זאגט אז דאס איז א רמז אויף חנוכה; דער משגיח ערקלערט אז שמן טראגט דעם אור פונעם עולם השמיני, למעלה מן הטבע." },
+      "questionSegs": [12, 13],
+      "answerSegs": [23, 45, 77],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why does the Midrash Tanchuma open Parshas Tetzaveh with a halacha about milah on the eighth day?", "yi": "פארוואס הייבט דער מדרש תנחומא אן פרשת תצוה מיט א הלכה פון מילה בשמיני?" },
+      "answer": { "en": "Milah on the eighth day is above nature, like the oil and Chanukah, so the Midrash belongs to this parsha.", "yi": "מילה בשמיני איז למעלה מן הטבע, אזוי ווי דער שמן און חנוכה, דערפאר געהערט דער מדרש צו דער פרשה." },
+      "questionSegs": [15, 16],
+      "answerSegs": [69, 77],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why is Moshe Rabbeinu's name not mentioned in Parshas Tetzaveh?", "yi": "פארוואס ווערט משה רבינו'ס נאמען נישט דערמאנט אין פרשת תצוה?" },
+      "answer": { "en": "The Ba'al HaTurim says it is because he said 'mecheini na'; the Rav explains that this mesirus nefesh joined him to the hidden light, so he is hidden in the eighth parsha, which is his beauty, not his punishment.", "yi": "דער בעל הטורים זאגט ווייל ער האט געזאגט \"מחני נא\"; דער משגיח ערקלערט אז די מסירת נפש האט אים מדבק געווען מיטן אור הגנוז, דערפאר איז ער באהאלטן אין דער אכטער פרשה, און דאס איז זיין שיינקייט, נישט קיין עונש." },
+      "questionSegs": [19, 20],
+      "answerSegs": [89, 90, 96],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "If a child is born on a day that already carries the 'eighth' quality, like Yom Kippur or the first day of Pesach, why must one still wait eight days for his milah?", "yi": "אז א קינד ווערט געבוירן אויף א טאג וואס האט שוין די מעלה פון שמיני, ווי יום כיפור אדער ערשטן טאג פסח, פארוואס דארף מען נאך אלץ ווארטן אכט טעג מיט דער מילה?" },
+      "answer": { "en": "Yitzchak was born on the first day of Pesach and still was circumcised only on the eighth day, a sign that milah needs the eighth day itself; this is the Midrash of Rabbi Shimon bar Yochai that milah is above nature.", "yi": "יצחק איז געבוירן געווארן ערשטן טאג פסח, און פונדעסטוועגן איז ער נימול געווארן ערשט אויפן אכטן טאג, א סימן אז מילה דארף דעם אכטן טאג אליין; דאס איז דער מדרש פון רבי שמעון בר יוחאי אז מילה איז למעלה מן הטבע." },
+      "questionSegs": [72, 75],
+      "answerSegs": [73, 76],
+      "confidence": 0.65
+    },
+    {
+      "question": { "en": "If the Purim obligation of feasting and joy comes from the verse 'days of feasting and joy', how can it be debated on Purim Katan?", "yi": "אז דער חיוב פון משתה ושמחה פורים קומט פונעם פסוק \"ימי משתה ושמחה\", ווי אזוי קען מען זיך קריגן דערויף ביי פורים קטן?" },
+      "answer": { "en": "The Rema ends 'tov lev mishteh tamid', and Reb Tzadok explains that what must drink is the heart; Purim Katan has the hidden light even without its mitzvos.", "yi": "דער רמ\"א ענדיגט \"טוב לב משתה תמיד\", און ר' צדוק ערקלערט אז דאס הארץ דארף טרינקען; פורים קטן האט דעם אור הגנוז אפילו אן די מצוות." },
+      "questionSegs": [120, 121],
+      "answerSegs": [122, 124, 126],
+      "confidence": 0.65
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "Citing the Bnei Yissaschar, the Rav says that when a person needs a salvation beyond nature, he should do a mitzvah beyond the ordinary, with extra effort, to draw it down.",
+        "yi": "מיטן בני יששכר זאגט דער משגיח אז ווען א איד דארף א ישועה למעלה מן הטבע, זאל ער טאן א מצוה העכער פונעם געווענליכן, מיט מער אנשטרענגונג, כדי עס אראפצוציען."
+      },
+      "evidence": { "segs": [64], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav asks the bochurim to celebrate Purim together in the beis medrash, since eating and sitting together creates love and friendship that even learning together does not.",
+        "yi": "דער משגיח בעט אז די בחורים זאלן פראווען פורים צוזאמען אין בית המדרש, ווייל עסן און זיצן צוזאמען שאפט אהבה ורעות וואס אפילו לערנען צוזאמען גיט נישט."
+      },
+      "evidence": { "segs": [148, 150, 151], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "Parshas Tetzaveh",
+    "Moshe Rabbeinu's name missing from Tetzaveh",
+    "the hidden light (ohr haganuz)",
+    "seven and eight: nature and above nature",
+    "milah on the eighth day",
+    "mesirus nefesh",
+    "Chanukah and the oil of the menorah",
+    "Purim and Purim Katan",
+    "Shovavim",
+    "Eliyahu HaNavi and the bris"
+  ],
+  "concepts": [
+    { "he": "אור הגנוז", "heardAs": ["אור הגנות", "עור הגנות", "אייר הגנות", "עור הגנב", "אוהל הגנות", "מורי הגנות"] },
+    { "he": "עולם השמיני", "heardAs": ["עולם השמיני", "עולם פון שמיני", "מולם השמיני"] },
+    { "he": "מסירת נפש", "heardAs": ["מסורת נפש", "מתירת נפש", "סירות נפש"] },
+    { "he": "מחני נא", "heardAs": ["מחנונה", "מחנן המסיפחה", "מכינינו", "מכנו"] },
+    { "he": "שובבים", "heardAs": ["שבבים", "שובעים"] },
+    { "he": "תשובה תתאה", "heardAs": ["תשובה תצור", "תשובה תצוה"] },
+    { "he": "תשובה עילאה", "heardAs": ["תשובה אילא"] },
+    { "he": "עשרה מאמרות", "heardAs": ["בשרים המורות"] },
+    { "he": "למעלה מן הטבע", "heardAs": ["למעלה מן הצבר", "למעלה מהצבא", "חוצה לצבא"] },
+    { "he": "מלאך הברית", "heardAs": ["מלאך הברית", "מלך הברית"] },
+    { "he": "פורים קטן", "heardAs": ["פרום קטן", "פרום קראטען"] },
+    { "he": "שמן", "heardAs": ["שמעון", "שמען"] },
+    { "he": "שמונה בגדים", "heardAs": ["שמיני בגדים", "שמיני בגדול"] },
+    { "he": "טוב לב משתה תמיד", "heardAs": ["טוב לב משתה תמיד", "טוב לב משתתם"] }
+  ],
+  "people": [
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו", "משה רבינא", "משה הבן", "משך הבן"] },
+    { "name": "Rabbi Shimon bar Yochai", "heardAs": ["רבי שמעון בן יוחאי", "רבי שמעון בן יחוי", "רבי יהושע בן יחוי"] },
+    { "name": "Avraham Avinu", "heardAs": ["אברהם", "אברהם אבינו"] },
+    { "name": "Yitzchak Avinu", "heardAs": ["יצחק", "יצחק אבינו"] },
+    { "name": "Shimon HaTzaddik", "heardAs": ["שמעון הצדיק"] },
+    { "name": "Eliyahu HaNavi", "heardAs": ["אליהו הנביא"] },
+    { "name": "Pinchas", "heardAs": ["פינחס"] },
+    { "name": "the Chozeh of Lublin", "heardAs": ["לובלינער", "רובלינער", "לובלינע"] },
+    { "name": "Reb Menachem Mendel of Rimanov", "heardAs": ["ר' מענדלער", "דער רומנאווער"] },
+    { "name": "Mordechai", "heardAs": ["מרדכי", "מארדכי"] },
+    { "name": "Noach", "heardAs": ["נח", "נייעך", "נייח"] },
+    { "name": "Shes", "heardAs": ["שס", "שעת", "שעות"] },
+    { "name": "Hevel", "heardAs": ["העוול"] },
+    { "name": "Kayin", "heardAs": ["קיין"] }
+  ],
+  "asrNotes": "Yiddish ASR is poor; Hebrew quotations and names are heavily garbled (oil 'shemen' and 'shemini' both come out as 'שמעון'; ohr haganuz as 'אור הגנות', 'עור הגנב'). Segment 49 is mostly unintelligible; the Pressburg story (57-63) is only partly recoverable, and the rav of Pressburg is not named clearly. Some source mentions (a Gemara on the eight-stringed harp of Moshiach in seg 43, Tosafos in seg 120, Moshe's soul in Mordechai in seg 84) were too garbled to list. The two [NOISE?] segments (48, 145) are short and absorbed into their sections."
+}

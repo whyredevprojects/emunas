@@ -1,0 +1,359 @@
+{
+  "shiurId": "en-parsha-en-vr-04",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains the four expressions of redemption as the four exiles, shows how the ten makkos undo the ten utterances of creation in reverse, and finds in the makkah of barad, the 'Shabbos' of the makkos, a rain of yiras Shamayim that bears on the war against emunah before Mashiach.",
+      "yi": "דער משגיח ערקלערט די ד' לשונות של גאולה אלס די ד' גליות, ווייזט ווי די עשר מכות דרייען צוריק די עשרה מאמרות פון בריאת העולם, און זעט אין מכת ברד, דער \"שבת\" פון די מכות, א רעגן פון יראת שמים וואס שייכט זיך צו דער מלחמה קעגן אמונה פאר משיח'ס צייטן."
+    },
+    "abstract": {
+      "en": "The Rav opens with the four expressions of redemption and the four cups, noting that each makkah struck Mitzrayim and healed the Jews, which he links to spilling wine at the Seder. The four expressions match the four exiles; just as the chazir, symbol of Edom, stands in its own passuk, the fourth expression stands alone, and Hallel over the fourth cup speaks of the final redemption. He then shows that yetzias Mitzrayim repeated creation: the ten makkos mirror the ten utterances in reverse, so makkas bechoros answers 'Bereishis' and choshech answers 'yehi or'. Matching the sefiros to the seder plate and to the days of the week, he places barad as the seventh, Shabbos. Barad rained yiras Shamayim, which explains the 'yarei dvar Hashem' and why they later pursued the Jews. The rest of the barad will fall at the war of Gog uMagog, a war against emunah; shalosh seudos protects from it. He closes with Rosh Chodesh Shvat.",
+      "yi": "דער משגיח עפנט מיט די ד' לשונות של גאולה און די ד' כוסות, און זאגט אז יעדע מכה איז געווען א מכה פאר מצרים און א רפואה פאר אידן, וואס דערפון קומט דאס אויסגיסן וויין ביים סדר. די ד' לשונות זענען קעגן די ד' גליות; אזוי ווי דער חזיר, דער סימן פון אדום, שטייט אין א באזונדער פסוק, אזוי שטייט די פערטע לשון אליין, און דער הלל ביים פערטן כוס רעדט פון דער לעצטער גאולה. דערנאך ווייזט ער אז יציאת מצרים איז געווען א איבערחזרן פון בריאת העולם: די עשר מכות זענען קעגן די עשרה מאמרות פון הינטן, מכת בכורות קעגן \"בראשית\" און חושך קעגן \"יהי אור\". ער שטעלט צו די ספירות צו דער קערה און צו די טעג פון דער וואך, און ברד קומט אויס דער זיבעטער, שבת. דער ברד האט געשאטן יראת שמים, און דאס ערקלערט די \"ירא את דבר ה'\" און פארוואס זיי זענען שפעטער נאכגעיאגט די אידן. דער איבעריגער ברד וועט אראפפאלן ביי מלחמת גוג ומגוג, א מלחמה קעגן אמונה, און שלש סעודות היט דערפון. ער שליסט מיט ראש חודש שבט."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Every makkah was at once a blow to Mitzrayim and a salvation for the Jews; the Rav connects this to spilling wine from the cup at the Seder and then refilling it.",
+          "yi": "יעדע מכה איז געווען סיי א מכה פאר מצרים און סיי א ישועה פאר אידן, און דער משגיח פארבינדט דאס מיט דעם וואס מ'גיסט אויס פונעם כוס ביים סדר און מ'פילט אים דערנאך ווידער אן."
+        },
+        "evidence": { "segs": [15, 18, 19, 39, 48, 53], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The four expressions of redemption correspond to the four exiles; the fourth stands in a passuk of its own because the redemption from Edom, the hardest exile, equals all the others.",
+          "yi": "די ד' לשונות של גאולה זענען קעגן די ד' גליות; די פערטע שטייט אין אן אייגענעם פסוק ווייל די גאולה פון גלות אדום, דער שווערסטער גלות, איז שקול קעגן אלע."
+        },
+        "evidence": { "segs": [143, 211, 215, 219, 221, 222], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "At yetzias Mitzrayim Hashem showed the Jews a copy of creation: the ten makkos correspond to the ten utterances of creation, in reverse order.",
+          "yi": "ביי יציאת מצרים האט דער רבונו של עולם געוויזן די אידן א קאפיע פון בריאת העולם: די עשר מכות זענען קעגן די עשרה מאמרות, פון הינטן צו פארנט."
+        },
+        "evidence": { "segs": [316, 319, 323, 328, 423, 425], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Barad, the seventh makkah, corresponds to Shabbos, malchus and yiras Shamayim; it rained down yiras Shamayim so that even Egyptians became 'yarei dvar Hashem'.",
+          "yi": "ברד, די זיבעטע מכה, איז קעגן שבת, מלכות און יראת שמים; ער האט אראפגעשאטן יראת שמים, אזוי אז אפילו מצריים זענען געווארן \"ירא את דבר ה'\"."
+        },
+        "evidence": { "segs": [731, 732, 932, 933, 951, 956], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The hail that Moshe Rabbeinu halted in mid-air will fall before Mashiach in the war of Gog uMagog, which the sefarim explain is a war against emunah.",
+          "yi": "דער ברד וואס משה רבינו האט אפגעשטעלט אין דער לופטן וועט אראפפאלן פאר משיח ביי מלחמת גוג ומגוג, וואס די ספרים ערקלערן אז דאס איז א מלחמה קעגן אמונה."
+        },
+        "evidence": { "segs": [866, 869, 875, 908, 915, 931], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Shalosh seudos, eaten in the dark, expresses emunah without seeing and protects from the war of Gog uMagog.",
+          "yi": "שלש סעודות, וואס מ'עסט אין דער פינצטער, איז אמונה אן זען, און עס היט פון מלחמת גוג ומגוג."
+        },
+        "evidence": { "segs": [1077, 1079, 1092, 1097, 1119, 1122], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-parsha-shemois-02-04-vaera-e",
+      "startSeg": 0,
+      "endSeg": 86,
+      "title": { "en": "Four cups, and makkos that were also healing", "yi": "ד' כוסות, און מכות וואס זענען געווען רפואה" },
+      "summary": {
+        "en": "The Rav introduces the four expressions of redemption in this week's parsha and the four cups, and explains that every makkah struck Mitzrayim while bringing salvation to the Jews. From this he explains spilling wine from the cup at the Seder, the spilled wine standing for the makkah and the refilled cup for the salvation.",
+        "yi": "דער משגיח ברענגט די ד' לשונות של גאולה פון דער סדרה און די ד' כוסות, און ערקלערט אז יעדע מכה האט געשלאגן מצרים און געבראכט א ישועה פאר אידן. דערמיט ערקלערט ער דאס אויסגיסן פונעם כוס ביים סדר: דער אויסגעגאסענער וויין איז די מכה, און דער אנגעפילטער כוס איז די ישועה."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-shemois-02-04-vaera-e",
+      "startSeg": 87,
+      "endSeg": 254,
+      "title": { "en": "Four exiles and the fourth expression", "yi": "ד' גליות און די פערטע לשון" },
+      "summary": {
+        "en": "The Rav lists the four kingdoms, Bavel, Madai, Yavan and Edom, and describes Edom as the longest and hardest exile. Like the chazir, which stands in a passuk of its own, the fourth expression of redemption stands alone because the redemption from Edom equals all the others, and Hallel over the fourth cup speaks of that final redemption.",
+        "yi": "דער משגיח רעכנט אויס די ד' מלכיות, בבל, מדי, יון און אדום, און זאגט אז גלות אדום איז דער לענגסטער און שווערסטער. אזוי ווי דער חזיר שטייט אין אן אייגענעם פסוק, שטייט די פערטע לשון של גאולה אליין, ווייל די גאולה פון אדום איז שקול קעגן אלע, און דער הלל ביים פערטן כוס רעדט פון יענער גאולה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-shemois-02-04-vaera-e",
+      "startSeg": 255,
+      "endSeg": 426,
+      "title": { "en": "Ten utterances and the ten makkos", "yi": "עשרה מאמרות און די עשר מכות" },
+      "summary": {
+        "en": "The Rav explains that 'Bereishis' counts as the first of the ten utterances, and asks why the first of the Ten Commandments names Hashem as the One who took us out of Mitzrayim rather than as Creator. He answers that we did not see creation, but at yetzias Mitzrayim Hashem repeated it: the ten makkos mirror the ten utterances, in reverse. He frames the sefiros simply as the ten utterances and the seven middos.",
+        "yi": "דער משגיח ערקלערט אז \"בראשית\" ווערט גערעכנט פאר דעם ערשטן פון די עשרה מאמרות, און פרעגט פארוואס \"אנכי\" זאגט \"אשר הוצאתיך מארץ מצרים\" און נישט אז ער האט באשאפן די וועלט. ער ענטפערט אז בריאת העולם האבן מיר נישט געזען, אבער ביי יציאת מצרים האט דער אייבערשטער עס איבערגעחזרט: די עשר מכות זענען קעגן די עשרה מאמרות, פון הינטן. די ספירות שטעלט ער פשוט צו צו די עשרה מאמרות און די זיבן מידות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-shemois-02-04-vaera-e",
+      "startSeg": 427,
+      "endSeg": 596,
+      "title": { "en": "Bechoros answers Bereishis, choshech answers light", "yi": "בכורות קעגן בראשית, חושך קעגן אור" },
+      "summary": {
+        "en": "Going backwards, the Rav matches makkas bechoros, the smiting of the 'reishis', to the utterance 'Bereishis', and explains that Mitzrayim worshipped the lamb, the mazal of Nisan, first of the months; at the same time 'my firstborn Yisrael' came to light. Choshech matches 'yehi or', while the Jews had light. Hashem undid each utterance for the Egyptians, while the Jews received its benefit in greater measure.",
+        "yi": "פון הינטן צו פארנט שטעלט דער משגיח צו מכת בכורות, דאס שלאגן די \"ראשית\", צום מאמר \"בראשית\", און ערקלערט אז מצרים האט געדינט דעם טלה, דער מזל פון ניסן, דער ערשטער פון די חדשים; אין דער זעלבער צייט איז ארויס \"בני בכורי ישראל\". חושך איז קעגן \"יהי אור\", בשעת די אידן האבן געהאט ליכט. דער אייבערשטער האט יעדן מאמר צוריקגענומען פון די מצריים, און די אידן האבן דערפון באקומען נאך מער."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-shemois-02-04-vaera-e",
+      "startSeg": 597,
+      "endSeg": 733,
+      "title": { "en": "The seder plate, the seven days and barad as Shabbos", "yi": "די קערה, די זיבן טעג, און ברד אלס שבת" },
+      "summary": {
+        "en": "The Rav shows the ten sefiros on the seder plate, with the plate itself as malchus, and matches the seven middos to the seven days of creation, Shabbos being malchus. Using the seven 'kol Hashem' of Mizmor l'Dovid he places dam as chesed, water, and barad, the seventh makkah, as the Shabbos of the makkos, which struck the malchus of Mitzrayim.",
+        "yi": "דער משגיח ווייזט די צען ספירות אויף דער קערה, און די קערה אליין איז מלכות, און ער שטעלט צו די זיבן מידות צו די זיבן טעג פון בריאה, ווען שבת איז מלכות. מיט די זיבן \"קול ה'\" פון מזמור לדוד שטעלט ער דם קעגן חסד, וואסער, און ברד, די זיבעטע מכה, אלס דער שבת פון די מכות, וואס האט געשלאגן די מלכות פון מצרים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-shemois-02-04-vaera-e",
+      "startSeg": 734,
+      "endSeg": 931,
+      "title": { "en": "The yarei dvar Hashem and the suspended hail", "yi": "דער ירא את דבר ה' און דער ברד וואס איז געבליבן הענגען" },
+      "summary": {
+        "en": "The Rav asks why the Torah mentions those who feared the word of Hashem only by barad, and how these same Egyptians later chased the Jews with horses at the Yam Suf; what became of their fear of Heaven? He brings the Midrash that the hail Moshe Rabbeinu halted stayed suspended, part falling in Yehoshua's time and the rest before Mashiach, which the sefarim explain as the war against emunah.",
+        "yi": "דער משגיח פרעגט פארוואס די תורה דערמאנט \"הירא את דבר ה'\" נאר ביי ברד, און ווי אזוי די זעלבע מצריים זענען שפעטער נאכגעיאגט די אידן מיט פערד ביי קריעת ים סוף; וואו איז אהינגעקומען זייער יראת שמים? ער ברענגט דעם מדרש אז דער ברד וואס משה רבינו האט אפגעשטעלט איז געבליבן הענגען, א טייל איז אראפגעפאלן ביי יהושע און דער רעשט וועט פאלן פאר משיח, וואס די ספרים ערקלערן אלס די מלחמה קעגן אמונה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-shemois-02-04-vaera-e",
+      "startSeg": 932,
+      "endSeg": 1037,
+      "title": { "en": "Barad rained yiras Shamayim", "yi": "דער ברד האט געשאטן יראת שמים" },
+      "summary": {
+        "en": "The Rav explains that barad, corresponding to Shabbos, rained down yiras Shamayim, citing Rabbeinu Bachya that it began on Rosh Chodesh Shvat, a name that echoes Shabbos. This answers his questions: the Egyptians were called 'yarei dvar Hashem' from the hail, not from within, and lost it when it stopped. Had Moshe Rabbeinu not been obliged to stop it at Pharaoh's request, it would have brought the world to Mashiach.",
+        "yi": "דער משגיח ערקלערט אז ברד, וואס איז קעגן שבת, האט אראפגעשאטן יראת שמים, און ברענגט פון רבינו בחיי אז ער האט אנגעהויבן ראש חודש שבט, א נאמען וואס קלינגט ווי שבת. דערמיט זענען זיינע קשיות מתורץ: די מצריים האבן געהייסן \"ירא את דבר ה'\" צוליב דעם ברד, נישט פון זיך אליין, און ווען ער האט אויפגעהערט האבן זיי עס פארלוירן. ווען משה רבינו וואלט נישט געמוזט אפשטעלן דעם ברד אויף פרעה'ס בקשה, וואלט ער געברענגט די וועלט צו משיח."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-shemois-02-04-vaera-e",
+      "startSeg": 1038,
+      "endSeg": 1220,
+      "title": { "en": "Shalosh seudos and the war against emunah", "yi": "שלש סעודות און די מלחמה קעגן אמונה" },
+      "summary": {
+        "en": "The Rav brings the Gemara that keeping the three Shabbos meals saves from three judgments, and the sefarim who match shalosh seudos to the war of Gog uMagog, a war against emunah. Shalosh seudos eaten in the dark, like covering the eyes at Shema, is emunah without seeing. He describes today's war against emunah: missionaries, a world of apikorsus, and its entry into Jewish homes through the media.",
+        "yi": "דער משגיח ברענגט די גמרא אז ווער עס היט די דריי סעודות פון שבת ווערט ניצול פון דריי דינים, און די ספרים וואס שטעלן צו שלש סעודות קעגן מלחמת גוג ומגוג, א מלחמה קעגן אמונה. שלש סעודות אין דער פינצטער, אזוי ווי מ'פארדעקט די אויגן ביי קריאת שמע, איז אמונה אן זען. ער שילדערט די היינטיגע מלחמה קעגן אמונה: מיסיאנערן, א וועלט פון אפיקורסות, און ווי עס איז אריין אין אידישע הייזער דורך די מעדיא."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-parsha-shemois-02-04-vaera-e",
+      "startSeg": 1221,
+      "endSeg": 1314,
+      "title": { "en": "Rosh Chodesh Shvat and this special Shabbos", "yi": "ראש חודש שבט און דער ספעציעלער שבת" },
+      "summary": {
+        "en": "The Rav says that the parsha's seven makkos end with barad, and that one should draw emunah and chizuk from learning the parsha with Rashi and Ramban. He notes that Rosh Chodesh Shvat is Rosh Hashanah for trees according to Beis Shammai, and that Moshe Rabbeinu began Sefer Devarim then. He closes that this Shabbos is a time to accept malchus Shamayim and receive the rain of emunah.",
+        "yi": "דער משגיח זאגט אז די זיבן מכות פון דער סדרה ענדיגן זיך מיט ברד, און אז מ'דארף שעפן אמונה און חיזוק פון לערנען די פרשה מיט רש\"י און רמב\"ן. ער מערקט אן אז ראש חודש שבט איז ראש השנה לאילן לויט בית שמאי, און אז משה רבינו האט דעמאלט אנגעהויבן ספר דברים. ער שליסט אז דער שבת איז א צייט צו מקבל זיין עול מלכות שמים און באקומען דעם רעגן פון אמונה."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "V'caauti ... vi tzauti, vi ga'auti", "work": "Shemos", "ref": "Shemos 6:6-7", "sefariaRef": "Exodus 6:6-7", "resolution": "resolved", "mention": "alluded", "evidence": { "segs": [4, 211, 214, 215, 216], "confidence": 0.75 } },
+    { "heardAs": "by the Chalem of the Saramashkim ... four times the word Kais", "work": "Bereishis", "ref": "Bereishis 40:11-13", "sefariaRef": "Genesis 40:11-13", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [5], "confidence": 0.8 } },
+    { "heardAs": "the Zaira Kaddish says", "work": "Zera Kodesh", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [13, 15, 18, 19], "confidence": 0.65 } },
+    { "heardAs": "the Gamal, the Shofen, the Aneves, and the Chazar", "work": "Vayikra", "ref": "Vayikra 11:4-7", "sefariaRef": "Leviticus 11:4-7", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [147, 149, 150, 151, 152], "confidence": 0.8 } },
+    { "heardAs": "the Chazar, that's Esav, like Rasha says in Pasha Sre'ei", "work": "Rashi", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [153, 154, 155], "confidence": 0.7 } },
+    { "heardAs": "so the madrash asks ... the Madrach says Esachazir has a distinction", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [173, 187, 189, 190], "confidence": 0.75 } },
+    { "heardAs": "the Gemara Asakash it says nine times ... Breishis nami maymahu", "work": "Gemara Rosh Hashanah", "ref": "Rosh Hashanah 32a", "sefariaRef": "Rosh Hashanah 32a", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [276, 277, 279, 280], "confidence": 0.75 } },
+    { "heardAs": "Aserah Sadibris ... Why doesn't it say Anoichi Hashem", "work": "Shemos", "ref": "Shemos 20:2", "sefariaRef": "Exodus 20:2", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [292, 296, 297, 305, 307], "confidence": 0.75 } },
+    { "heardAs": "like David the Melech puts it in Tehillim", "work": "Tehillim", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [447, 450, 451], "confidence": 0.65 } },
+    { "heardAs": "B'ni B'chayri Yisroel", "work": "Shemos", "ref": "Shemos 4:22", "sefariaRef": "Exodus 4:22", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [504, 507, 508, 516], "confidence": 0.8 } },
+    { "heardAs": "Vayoyimah Vakim Yihi Oyer", "work": "Bereishis", "ref": "Bereishis 1:3", "sefariaRef": "Genesis 1:3", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [524, 525, 528], "confidence": 0.85 } },
+    { "heardAs": "Uchol B'nai Yisrael", "work": "Shemos", "ref": "Shemos 10:23", "sefariaRef": "Exodus 10:23", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [539, 540, 541], "confidence": 0.7 } },
+    { "heardAs": "V'ayel Ma'ayres B'Kiah Shemayim", "work": "Bereishis", "ref": "Bereishis 1:15", "sefariaRef": "Genesis 1:15", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [551, 553, 555], "confidence": 0.75 } },
+    { "heardAs": "kailasham alamayim ... kailasham bakayach ... kailasham bahadol", "work": "Tehillim", "ref": "Tehillim 29:3-4", "sefariaRef": "Psalms 29:3-4", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [702, 705, 710, 713], "confidence": 0.8 } },
+    { "heardAs": "the one who was a ... he brought his livestock and brought them into the house", "work": "Shemos", "ref": "Shemos 9:20", "sefariaRef": "Exodus 9:20", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [746, 748, 749, 750], "confidence": 0.75 } },
+    { "heardAs": "the devil there was also the same thing Rasha says", "work": "Rashi", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [753, 754, 755, 758], "confidence": 0.7 } },
+    { "heardAs": "It says in the Madrash ... the best one of the Mitzrayim", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [768, 771, 778, 779, 784], "confidence": 0.75 } },
+    { "heardAs": "Arashah brings it from the Yod of Arashim", "work": "Rashi", "ref": "Rashi on Shemos 14:7", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [790, 791, 792], "confidence": 0.65 } },
+    { "heardAs": "HaTosi HaPoam HaShem HaTzadik HaTir Lo HaShem", "work": "Shemos", "ref": "Shemos 9:27-28", "sefariaRef": "Exodus 9:27-28", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [844, 846, 847, 848], "confidence": 0.75 } },
+    { "heardAs": "the Pasuk says the mortar did not reach the ground", "work": "Shemos", "ref": "Shemos 9:33", "sefariaRef": "Exodus 9:33", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [862, 863, 864], "confidence": 0.8 } },
+    { "heardAs": "so the Medrash says that some of that Barad came down", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [870, 871, 872, 875], "confidence": 0.75 } },
+    { "heardAs": "the Svarim explain that the Ikel is not going to be the physical", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [908, 909, 911, 915], "confidence": 0.7 } },
+    { "heardAs": "David the Melech made capital ... in Tehillim; like it says in the second capitol in Tehillim", "work": "Tehillim", "ref": "Tehillim 2:1-2", "sefariaRef": "Psalms 2:1-2", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [917, 918, 919, 1082, 1083], "confidence": 0.65 } },
+    { "heardAs": "V'zorcha l'achem Yirei Shmi", "work": "Malachi", "ref": "Malachi 3:20", "sefariaRef": "Malachi 3:20", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [934, 935, 936], "confidence": 0.75 } },
+    { "heardAs": "L'fanav Navad B'Yirav HaFach", "work": "Magen Avos (Friday night prayer)", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "quoted", "evidence": { "segs": [942, 944, 945], "confidence": 0.7 } },
+    { "heardAs": "Deziah says, the word Bereshis ... you have Yorei Shabbos", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [947, 948], "confidence": 0.65 } },
+    { "heardAs": "the Rabbeinu B'chaya ... has a chaydesh", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [965, 967, 969, 971], "confidence": 0.75 } },
+    { "heardAs": "and the Ramban talk about it", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [966, 968], "confidence": 0.7 } },
+    { "heardAs": "whoever keeps the free sudas of Shabbos ... Hebrei Mashiach Dina Shal Gehenim and Mechema's Gei Gomageg", "work": "Gemara Shabbos", "ref": "Shabbos 118a", "sefariaRef": "Shabbat 118a", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [1059, 1061, 1063, 1065, 1066, 1067], "confidence": 0.8 } },
+    { "heardAs": "so the Seferim explained the Gemara that Friday night the Sudha of Shabbos saves us", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1068, 1069, 1071, 1074, 1077], "confidence": 0.75 } },
+    { "heardAs": "according to B'Shamay it's Chashashana Le'ilam", "work": "Mishnah Rosh Hashanah", "ref": "Mishnah Rosh Hashanah 1:1", "sefariaRef": "Mishnah Rosh Hashanah 1:1", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [1238, 1239, 1241, 1293], "confidence": 0.8 } },
+    { "heardAs": "the Gemara says that Adam is like an eitz", "work": "Gemara", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1251, 1252, 1253], "confidence": 0.7 } },
+    { "heardAs": "in the Seif Advarim in the 40th year in the 11th", "work": "Devarim", "ref": "Devarim 1:3", "sefariaRef": "Deuteronomy 1:3", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [1270, 1271, 1272, 1274], "confidence": 0.75 } }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The spilled wine at the Seder is the makkah of Mitzrayim and the refilled cup over which the Haggadah is said is the Jews' healing, so the very same act of the makkos is reenacted in two directions.",
+        "yi": "דער אויסגעגאסענער וויין ביים סדר איז די מכה פון מצרים, און דער ווידער-אנגעפילטער כוס וואס מ'זאגט אויף אים די הגדה איז די רפואה פון אידן, אזוי אז די זעלבע מכה ווערט איבערגעשפילט אויף צוויי זייטן."
+      },
+      "evidence": { "segs": [39, 46, 49, 51, 53], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The fourth expression of redemption is set in a separate passuk for the same reason the chazir is: Edom, the fourth exile, outweighs all the others, and so does its redemption.",
+        "yi": "די פערטע לשון של גאולה שטייט אין א באזונדער פסוק פון דעם זעלבן טעם ווי דער חזיר: אדום, דער פערטער גלות, איז שווערער פון אלע אנדערע, און אזוי איז אויך זיין גאולה."
+      },
+      "evidence": { "segs": [189, 192, 215, 219, 222], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The ten makkos run backwards against the ten utterances: the last makkah, bechoros, undoes 'Bereishis', and the ninth, choshech, undoes 'yehi or'.",
+        "yi": "די עשר מכות גייען פון הינטן קעגן די עשרה מאמרות: די לעצטע מכה, בכורות, נעמט צוריק \"בראשית\", און די ניינטע, חושך, נעמט צוריק \"יהי אור\"."
+      },
+      "evidence": { "segs": [438, 442, 445, 528, 532], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Barad is the Shabbos among the makkos, and since Shabbos is yiras Shamayim, the hail literally rained yiras Shamayim; the Egyptians' fear came from the hail and vanished when it stopped, which is why they later pursued the Jews.",
+        "yi": "ברד איז דער שבת צווישן די מכות, און ווייל שבת איז יראת שמים, האט דער ברד ממש געשאטן יראת שמים; די יראה פון די מצריים איז געקומען פונעם ברד און איז פארשוואונדן ווען ער האט אויפגעהערט, דערפאר זענען זיי שפעטער נאכגעיאגט די אידן."
+      },
+      "evidence": { "segs": [932, 951, 956, 989, 991, 993], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Had Moshe Rabbeinu not been obliged to stop the barad at Pharaoh's plea, the yiras Shamayim it brought down would have restored the world to its state before Adam's sin and brought Mashiach.",
+        "yi": "ווען משה רבינו וואלט נישט געמוזט אפשטעלן דעם ברד אויף פרעה'ס בקשה, וואלט די יראת שמים וואס ער האט אראפגעברענגט צוריקגעשטעלט די וועלט ווי פאר דעם חטא פון אדם הראשון און געברענגט משיח."
+      },
+      "evidence": { "segs": [997, 999, 1003, 1013, 1022, 1027], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The hail still suspended from Mitzrayim is what will fall in the war of Gog uMagog, a war against emunah, and shalosh seudos in the dark, emunah without seeing, protects from it.",
+        "yi": "דער ברד וואס הענגט נאך פון מצרים איז דאס וואס וועט פאלן ביי מלחמת גוג ומגוג, א מלחמה קעגן אמונה, און שלש סעודות אין דער פינצטער, אמונה אן זען, היט דערפון."
+      },
+      "evidence": { "segs": [894, 898, 1048, 1054, 1094, 1122], "confidence": 0.75 }
+    }
+  ],
+  "stories": [],
+  "questions": [
+    {
+      "question": { "en": "Why are the first three expressions of redemption in one passuk and the fourth in a passuk of its own?", "yi": "פארוואס שטייען די ערשטע דריי לשונות של גאולה אין איין פסוק, און די פערטע אין אן אייגענעם פסוק?" },
+      "answer": { "en": "The fourth corresponds to the redemption from Edom, the hardest exile, which equals all the others, just as the chazir stands in its own passuk.", "yi": "די פערטע איז קעגן דער גאולה פון אדום, דער שווערסטער גלות, וואס איז שקול קעגן אלע, אזוי ווי דער חזיר שטייט אין אן אייגענעם פסוק." },
+      "questionSegs": [215, 216],
+      "answerSegs": [219, 220, 221, 222],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why does the first commandment present Hashem as the One who took us out of Mitzrayim and not as the Creator of heaven and earth?", "yi": "פארוואס שטעלט זיך דער אייבערשטער פאר אין \"אנכי\" אלס דער וואס האט ארויסגענומען פון מצרים, און נישט אלס דער בורא שמים וארץ?" },
+      "answer": { "en": "We did not see creation, but we saw yetzias Mitzrayim, where Hashem made a copy of creation through the ten makkos.", "yi": "בריאת העולם האבן מיר נישט געזען, אבער יציאת מצרים האבן מיר יא געזען, און דארט האט דער אייבערשטער געמאכט א קאפיע פון בריאת העולם דורך די עשר מכות." },
+      "questionSegs": [296, 297, 305, 307],
+      "answerSegs": [314, 316, 319, 323, 328],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Where did the Egyptians get horses to pursue the Jews at the Yam Suf, if the animals were destroyed by the makkos?", "yi": "פון וואו האבן די מצריים געהאט פערד צו יאגן די אידן ביי ים סוף, אז די בהמות זענען אומגעקומען אין די מכות?" },
+      "answer": { "en": "The Midrash says they came from the 'yarei dvar Hashem', who had brought their animals inside during the barad.", "yi": "דער מדרש זאגט אז זיי זענען געקומען פון די \"ירא את דבר ה'\", וואס האבן אריינגענומען זייערע בהמות ביים ברד." },
+      "questionSegs": [775, 776, 777],
+      "answerSegs": [778, 779, 781, 783, 784],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "If the Torah itself called them 'yarei dvar Hashem', what happened to their fear of Heaven when they chased the Jews to the Yam Suf?", "yi": "אז די תורה אליין האט זיי אנגערופן \"ירא את דבר ה'\", וואו איז אהינגעקומען זייער יראת שמים ווען זיי זענען נאכגעיאגט די אידן ביי ים סוף?" },
+      "answer": { "en": "Their fear came from the barad, which rained yiras Shamayim; it was not intrinsic, and when the barad stopped they lost it.", "yi": "זייער יראה איז געקומען פונעם ברד, וואס האט געשאטן יראת שמים; עס איז נישט געווען פון זיך אליין, און ווען דער ברד האט אויפגעהערט האבן זיי עס פארלוירן." },
+      "questionSegs": [799, 801, 802, 834, 835],
+      "answerSegs": [984, 987, 989, 991, 993],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why does the Torah speak of the 'yarei dvar Hashem' only by barad, not by dever, where Rashi says the same happened?", "yi": "פארוואס רעדט די תורה פון \"הירא את דבר ה'\" נאר ביי ברד און נישט ביי דבר, וואו רש\"י זאגט אז עס איז געווען די זעלבע זאך?" },
+      "answer": { "en": "Barad corresponds to Shabbos and yiras Shamayim, and it rained down yiras Shamayim, so only there did they gain the title of fearing Hashem.", "yi": "ברד איז קעגן שבת און יראת שמים, און ער האט אראפגעשאטן יראת שמים, דערפאר נאר דארט האבן זיי באקומען דעם נאמען ירא את דבר ה'." },
+      "questionSegs": [761, 762, 763, 765],
+      "answerSegs": [932, 951, 981, 983, 984],
+      "confidence": 0.7
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Rav says one should hold on to emunah even when one does not see, as expressed by covering the eyes at Shema and by shalosh seudos in the dark.", "yi": "דער משגיח זאגט אז מ'דארף זיך האלטן אן אמונה אפילו ווען מ'זעט נישט, אזוי ווי מ'פארדעקט די אויגן ביי קריאת שמע און מ'עסט שלש סעודות אין דער פינצטער." },
+      "evidence": { "segs": [1100, 1103, 1117, 1119, 1166, 1168], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Rav says one should draw emunah and chizuk from learning the parsha with Rashi, Ramban and the commentaries.", "yi": "דער משגיח זאגט אז מ'דארף שעפן אמונה און חיזוק פון לערנען די פרשה מיט רש\"י, רמב\"ן און מפרשים." },
+      "evidence": { "segs": [1227, 1228, 1229, 1231, 1236], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Rav calls Rosh Chodesh Shvat a time to make a new start in learning, since Moshe Rabbeinu began teaching Sefer Devarim then.", "yi": "דער משגיח רופט ראש חודש שבט א צייט צו מאכן א נייעם אנהייב אין לערנען, ווייל משה רבינו האט דעמאלט אנגעהויבן לערנען ספר דברים." },
+      "evidence": { "segs": [1257, 1258, 1276, 1278, 1279], "confidence": 0.7 }
+    },
+    {
+      "text": { "en": "The Rav says this Shabbos is a time to accept malchus Shamayim, to be a 'yarei dvar Hashem', and to receive the rain of emunah by learning the sedra and hearing the leining.", "yi": "דער משגיח זאגט אז דער שבת איז א צייט צו מקבל זיין עול מלכות שמים, צו זיין א \"ירא את דבר ה'\", און צו באקומען דעם רעגן פון אמונה דורך לערנען די סדרה און הערן קריאת התורה." },
+      "evidence": { "segs": [1301, 1302, 1303, 1305, 1310, 1311], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "four expressions of redemption",
+    "four cups",
+    "four exiles",
+    "ten utterances of creation and the ten makkos",
+    "makkas barad",
+    "yiras Shamayim",
+    "Shabbos as malchus",
+    "war of Gog uMagog",
+    "shalosh seudos",
+    "Rosh Chodesh Shvat"
+  ],
+  "concepts": [
+    { "he": "ד' לשונות של גאולה", "heardAs": ["Tifu V'ashaynei Sav Geulah", "Tifur L'shanas of Geul"] },
+    { "he": "ד' כוסות", "heardAs": ["Abba Kaisus", "the Abba Kaisis", "four cases"] },
+    { "he": "עשר מכות", "heardAs": ["Esau Makas", "Aserah Makis", "Asara Makah"] },
+    { "he": "עשרה מאמרות", "heardAs": ["asara mamaris", "Aserah Mamaris", "Asaram Amaris", "Asara Mamareis"] },
+    { "he": "גלות אדום", "heardAs": ["God's Edim", "Golas Edwin", "the goddess"] },
+    { "he": "ארבע מלכיות", "heardAs": ["three malchiyas"] },
+    { "he": "ספירות", "heardAs": ["Esos Fires", "Esa Sfiris", "Sfirahs"] },
+    { "he": "מכת בכורות", "heardAs": ["Makah B'chayres", "Makas B'chayra"] },
+    { "he": "ראשית", "heardAs": ["Reishas", "Breishas"] },
+    { "he": "קערה", "heardAs": ["Kaira", "Kairah", "kaiva"] },
+    { "he": "ברד", "heardAs": ["Barad", "Barat", "Borod", "Bred", "beret"] },
+    { "he": "ירא את דבר ה'", "heardAs": ["Yari Dvar Hashem", "Yorid Vah Hashem", "Yori Yisdvar Hashem"] },
+    { "he": "יראת שמים", "heardAs": ["Yir HaShemayim", "Yiraz Shemayim", "Yerashemayim", "Yeroshamayim"] },
+    { "he": "מלחמת גוג ומגוג", "heardAs": ["Mechema's Gei Gomageg", "Mechem Ezgei Gol Margeig", "Mecham is Geig or Mergeig"] },
+    { "he": "חבלי משיח", "heardAs": ["Hebrei Mashiach", "Chavalei Mashiach"] },
+    { "he": "שלש סעודות", "heardAs": ["Shavashudas", "Shalashudas", "Shavishudas"] },
+    { "he": "ראש השנה לאילן", "heardAs": ["Chashashana Le'ilam", "Rosh Hashanah Le'Iran"] },
+    { "he": "רבונו של עולם", "heardAs": ["Rabbi Yishalei", "Rabbani Sholeilam", "Rabban Yisrael", "Rabbi Nishleil"] }
+  ],
+  "people": [
+    { "name": "Moshe Rabbeinu", "heardAs": ["Mesh Rabbeinu", "Maish Rabbeinu", "Meshach Rabbeinu"] },
+    { "name": "Pharaoh", "heardAs": ["Pari", "Paru"] },
+    { "name": "Dovid HaMelech", "heardAs": ["David HaMelech", "David the Melech"] },
+    { "name": "Rashi", "heardAs": ["Rasha", "Arashah"] },
+    { "name": "Rabbeinu Bachya", "heardAs": ["Rabbeinu B'chaya"] },
+    { "name": "Ramban", "heardAs": ["Ramban"] },
+    { "name": "Beis Shammai", "heardAs": ["B'Shamay", "B'Sham"] },
+    { "name": "Beis Hillel", "heardAs": ["B'Shalil"] },
+    { "name": "Esav", "heardAs": ["Esav"] },
+    { "name": "Yehoshua", "heardAs": ["Yeshua"] }
+  ],
+  "asrNotes": "English ASR with very heavily garbled Hebrew terms (e.g. 'Abba Kaisus' for the four cups, 'Rabbi Yishalei' for Ribono shel Olam, 'goddess' for golus, 'Mechema's Gei Gomageg' for milchemes Gog uMagog). Many short segments are cut off mid-phrase, so several steps (the eighth makkah and its utterance, segs 565-573; the sources on the 'broken dish' at segs 61-77; the Tehillim and year-2000 remarks around segs 917-930 and 1031) could only be partly recovered. The three [NOISE?] segments are short repeats of 'V'cauti' near segs 3 and 212-213."
+}

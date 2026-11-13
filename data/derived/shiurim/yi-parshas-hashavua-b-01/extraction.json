@@ -1,0 +1,884 @@
+{
+  "shiurId": "yi-parshas-hashavua-b-01",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that Klal Yisrael, like the renewed moon and the tree that revives on Tu Bishvat, carries a small point that is never lost, and that the Torah's path from Bereishis to 'Hachodesh hazeh lachem' shows why control of the world and Eretz Yisrael was handed to the people called 'reishis'.",
+      "yi": "דער משגיח ערקלערט אז כלל ישראל, אזוי ווי די לבנה וואס ווערט מתחדש און דער אילן וואס לעבט אויף ט\"ו בשבט, טראגט אין זיך א קליינע נקודה וואס גייט קיינמאל נישט פארלוירן, און אז דער סדר פון דער תורה פון בראשית ביז \"החודש הזה לכם\" ווייזט פארוואס די הנהגה פון דער וועלט און ארץ ישראל זענען איבערגעגעבן געווארן צום פאלק וואס הייסט \"ראשית\"."
+    },
+    "abstract": {
+      "en": "The Rav opens with the Chiddushei HaRim's teaching that from Rosh Chodesh Shevat new insights in Torah come forth, as Moshe began to explain the Torah then. Shevat is a time of renewal: the tree that seemed dead all winter revives, and the moon, which mirrors the history of the Jewish kingdom, is renewed from a tiny point. Klal Yisrael and every Jew identify with both; the small point inside a Jew is never lost. He explains the dispute of Beis Shammai and Beis Hillel on the new year for trees, the trees' prayer on Tu Bishvat, and why the Mishnah records Beis Shammai's view. Turning to Rashi's question why the Torah begins with Bereishis and not with 'Hachodesh hazeh lachem', he divides the Torah into the Torah of creation, the Torah of man and the Torah of Yisrael, and shows how control of nature passed from Adam to Avraham's children and why Eretz Yisrael belongs to them alone.",
+      "yi": "דער משגיח עפנט מיט דעם חידושי הרי\"ם, אז פון ראש חודש שבט קוועלן ארויס נייע חידושים אין תורה, ווייל דעמאלט האט משה רבינו אנגעהויבן מבאר זיין די תורה. שבט איז א צייט פון התחדשות: דער בוים וואס האט אויסגעזען טויט א גאנצן ווינטער לעבט אויף, און די לבנה, וואס איז א משל אויף מלכות ישראל, ווערט מתחדש פון א קליינע נקודה. כלל ישראל און יעדער איד אידענטיפיצירט זיך מיט ביידע, און די נקודה אין א איד גייט קיינמאל נישט פארלוירן. ער ערקלערט די מחלוקת פון בית שמאי און בית הלל וועגן ראש השנה לאילנות, די תפילה פון די אילנות אויף ט\"ו בשבט, און פארוואס די משנה ברענגט דעם שיטה פון בית שמאי. דערנאך נעמט ער די קשיא פון רש\"י פארוואס די תורה הייבט נישט אן מיט \"החודש הזה לכם\", טיילט די תורה אויף תורת הבריאה, תורת האדם און תורת ישראל, און ווייזט ווי אזוי די הנהגה פון דער טבע איז אריבער פון אדם הראשון צו די קינדער פון אברהם, און פארוואס ארץ ישראל געהערט נאר צו זיי."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Rosh Chodesh Shevat and Tu Bishvat are a time of renewal, when the tree that seemed dead revives and the Torah begins to well up anew.",
+          "yi": "ראש חודש שבט און ט\"ו בשבט זענען א צייט פון התחדשות, ווען דער בוים וואס האט אויסגעזען טויט לעבט אויף און די תורה הייבט אן נאכאמאל צו קוועלן."
+        },
+        "evidence": { "segs": [0, 1, 5, 7], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Klal Yisrael identifies with the moon and the tree: even when the nations think it has died, its renewal begins from a small point that is never lost.",
+          "yi": "כלל ישראל אידענטיפיצירט זיך מיט דער לבנה און מיטן אילן: אפילו ווען די אומות העולם מיינען אז ס'איז שוין אויס, הייבט זיך אן די התחדשות פון א קליינע נקודה וואס גייט קיינמאל נישט פארלוירן."
+        },
+        "evidence": { "segs": [10, 11, 12, 21], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Every mitzvah is a tree in Hashem's garden, and every Jew holds a point from which spiritual fruit and new Torah insights can grow.",
+          "yi": "יעדע מצוה איז א בוים אין דעם גן פון רבונו של עולם, און יעדער איד טראגט א נקודה פון וואנעט עס קענען וואקסן רוחניות'דיגע פירות און נייע חידושים אין תורה."
+        },
+        "evidence": { "segs": [26, 28, 50], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "The Torah has three parts: the Torah of creation that governs nature, the Torah of man with the seven Noachide mitzvos, and the Torah of Yisrael that begins with 'Hachodesh hazeh lachem'.",
+          "yi": "די תורה האט דריי חלקים: תורת הבריאה וואס פירט די טבע, תורת האדם מיט די שבע מצוות בני נח, און תורת ישראל וואס הייבט זיך אן מיט \"החודש הזה לכם\"."
+        },
+        "evidence": { "segs": [86, 87, 107, 108], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Man's free choice reaches into nature: with mitzvos he improves it and with aveiros he corrupts it, though Hashem built a control system that keeps the world from being destroyed.",
+          "yi": "די בחירה פון אדם גייט אריין אין דער טבע: מיט מצוות איז ער משביח די טבע און מיט עבירות איז ער זי מקלקל, נאר דער אייבערשטער האט אריינגעשטעלט א קאנטראל וואס לאזט נישט אז די וועלט זאל חרוב ווערן."
+        },
+        "evidence": { "segs": [110, 111, 125, 129], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "After the generations of the Flood and the Dispersion, control of the world was taken from mankind and given to Avraham's children, and Eretz Yisrael, the root of the world, can belong only to the people that is 'reishis'.",
+          "yi": "נאך דור המבול און דור הפלגה איז די הנהגה פון דער וועלט צוגענומען געווארן פון אלע מענטשן און איבערגעגעבן געווארן צו די קינדער פון אברהם, און ארץ ישראל, דער שורש פון דער וועלט, קען נאר געהערן צום פאלק וואס איז \"ראשית\"."
+        },
+        "evidence": { "segs": [143, 144, 152, 178], "confidence": 0.75 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-parsha-sefer-shemois-03-01-bo",
+      "startSeg": 0,
+      "endSeg": 7,
+      "title": { "en": "Rosh Chodesh Shevat, a time of renewal", "yi": "ראש חודש שבט, א צייט פון התחדשות" },
+      "summary": {
+        "en": "The Rav brings the Chiddushei HaRim that from Rosh Chodesh Shevat new insights in Torah come forth, since Moshe began to explain the Torah then. He describes the tree that seems dead all winter and suddenly revives.",
+        "yi": "דער משגיח ברענגט דעם חידושי הרי\"ם אז פון ראש חודש שבט ווערן מתחדש נייע חידושים אין תורה, ווייל דעמאלט האט משה רבינו אנגעהויבן מבאר זיין די תורה. ער שילדערט דעם בוים וואס זעט אויס טויט א גאנצן ווינטער און לעבט פלוצלונג אויף."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-03-01-bo",
+      "startSeg": 8,
+      "endSeg": 15,
+      "title": { "en": "The moon and the kingdom of Yisrael", "yi": "די לבנה און מלכות ישראל" },
+      "summary": {
+        "en": "The Rav brings the Midrash that the kingdom of Yisrael followed the moon, full in Shlomo's generation and dark by Tzidkiyahu. Klal Yisrael identifies with the new moon, whose renewal begins from a tiny point seen when the sky is darkest.",
+        "yi": "דער משגיח ברענגט דעם מדרש אז מלכות ישראל איז געגאנגען לויט דער לבנה, פול ביי שלמה המלך און פינסטער ביז צדקיהו. כלל ישראל אידענטיפיצירט זיך מיט דער נייער לבנה, וואס איר התחדשות הייבט זיך אן פון א קליינע נקודה ווען דער הימל איז אם פינסטערסטן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-03-01-bo",
+      "startSeg": 16,
+      "endSeg": 24,
+      "title": { "en": "Beis Shammai sense the renewal first", "yi": "בית שמאי שפירן פריער די התחדשות" },
+      "summary": {
+        "en": "The Rav explains that Beis Shammai, whose souls belong to the world of tikkun, feel the renewal already on Rosh Chodesh Shevat. He says every Jew has a small point that can never be extinguished, from which his whole salvation can grow.",
+        "yi": "דער משגיח ערקלערט אז בית שמאי, וואס זייערע נשמות זענען פון עולם התיקון, שפירן די התחדשות שוין אויף ראש חודש שבט. ער זאגט אז יעדער איד האט א קליינע נקודה וואס קען קיינמאל נישט בטל ווערן, און פון איר קען וואקסן זיין גאנצע ישועה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-03-01-bo",
+      "startSeg": 25,
+      "endSeg": 38,
+      "title": { "en": "Man as a tree; the day of judgment for trees", "yi": "דער מענטש איז א בוים; דער יום הדין פון די אילנות" },
+      "summary": {
+        "en": "The Rav tells of the 613 trees in Gan Eden, the 613 mitzvos, and explains why a Jew identifies with a tree. He says trees daven together with a person, that Tu Bishvat is their day of judgment, and that when Moshiach comes even barren trees will bear fruit.",
+        "yi": "דער משגיח דערציילט פון די תרי\"ג ביימער אין גן עדן, די תרי\"ג מצוות, און ערקלערט פארוואס א איד אידענטיפיצירט זיך מיט א בוים. ער זאגט אז די ביימער דאווענען מיט מיטן מענטש, אז ט\"ו בשבט איז זייער יום הדין, און אז ווען משיח וועט קומען וועלן אפילו אילנות סרק טראגן פירות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-03-01-bo",
+      "startSeg": 39,
+      "endSeg": 47,
+      "title": { "en": "Davening with the trees on Tu Bishvat", "yi": "דאווענען צוזאמען מיט די אילנות אויף ט\"ו בשבט" },
+      "summary": {
+        "en": "The Rav says Tu Bishvat is a time to daven for the geulah and that the trees should bear fruit. A Jew who feels like a frozen, barren tree can join the prayer of all the trees that he too should bear fruit.",
+        "yi": "דער משגיח זאגט אז ט\"ו בשבט איז א צייט צו מתפלל זיין אויף דער גאולה און אז די אילנות זאלן ארויסגעבן פירות. א איד וואס שפירט אז ער איז א פארפרוירענער בוים אן פירות קען זיך מצטרף זיין צו דער תפילה פון אלע אילנות אז ער זאל אויך מוציא פירות זיין."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-03-01-bo",
+      "startSeg": 48,
+      "endSeg": 61,
+      "title": { "en": "Spiritual fruit and Klal Yisrael as 'reishis'", "yi": "רוחניות'דיגע פירות, און כלל ישראל איז \"ראשית\"" },
+      "summary": {
+        "en": "The Rav speaks of spiritual fruit, bringing the Ohr HaChaim who put his strength into his chiddushim, and says each Jew has a point from which new Torah can grow and a spark of Moshiach. He then explains that Klal Yisrael is the 'reishis' of the world, which Pharaoh refused to recognize.",
+        "yi": "דער משגיח רעדט פון רוחניות'דיגע פירות, ברענגט דעם אור החיים וואס האט אריינגעלייגט זיין כח אין זיינע חידושים, און זאגט אז יעדער איד האט א נקודה פון וואנעט עס קען וואקסן נייע תורה, און א בחינה פון משיח. דערנאך ערקלערט ער אז כלל ישראל איז דער \"ראשית\" פון דער וועלט, וואס פרעה האט נישט געוואלט מודה זיין."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-03-01-bo",
+      "startSeg": 62,
+      "endSeg": 72,
+      "title": { "en": "Why the Mishnah records Beis Shammai", "yi": "פארוואס די משנה ברענגט בית שמאי" },
+      "summary": {
+        "en": "The Rav asks why the Mishnah on the new year for trees states Beis Shammai's view in an unusual way. He answers that one must know Beis Shammai's view here, since when Moshiach comes the halachah may follow them retroactively for fruits that budded before or after Rosh Chodesh Shevat.",
+        "yi": "דער משגיח פרעגט פארוואס די משנה וועגן ראש השנה לאילן ברענגט די שיטה פון בית שמאי אויף אן אנדער לשון. ער ענטפערט אז דא דארף מען וויסן בית שמאי'ס שיטה, ווייל ווען משיח קומט קען די הלכה זיין למפרע ווי זיי, לגבי פירות וואס זענען געוואקסן פאר אדער נאך ראש חודש שבט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-03-01-bo",
+      "startSeg": 73,
+      "endSeg": 85,
+      "title": { "en": "Rashi's question and the first mitzvah", "yi": "די קשיא פון רש\"י און די ערשטע מצוה" },
+      "summary": {
+        "en": "The Rav brings Rashi's question why the Torah does not begin with 'Hachodesh hazeh lachem', the first mitzvah, and asks how it is first when milah came earlier. Through the Rambam he explains that our faith rests on Sinai, and we keep even milah only because Moshe commanded it.",
+        "yi": "דער משגיח ברענגט די קשיא פון רש\"י פארוואס די תורה הייבט נישט אן מיט \"החודש הזה לכם\", די ערשטע מצוה, און פרעגט ווי אזוי דאס איז די ערשטע אז מילה איז געווען פריער. מיטן רמב\"ם ערקלערט ער אז אונזער אמונה שטייט אויף מעמד הר סיני, און מילה האלטן מיר אויך נאר ווייל משה רבינו האט עס אנגעזאגט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-03-01-bo",
+      "startSeg": 86,
+      "endSeg": 92,
+      "title": { "en": "The Torah of creation", "yi": "תורת הבריאה" },
+      "summary": {
+        "en": "The Rav divides the Torah into three parts and explains the first, the Torah of creation: grass grows because the Torah commands it, with the same command as a Jew's mitzvos. This is why tzaddikim and Hashem Himself avoid miracles.",
+        "yi": "דער משגיח טיילט די תורה אויף דריי חלקים און ערקלערט דעם ערשטן, תורת הבריאה: גראז וואקסט ווייל די תורה הייסט עס, מיט דעם זעלבן ציווי ווי א איד'ס מצוות. דערפאר האבן צדיקים, און דער אייבערשטער אליין, זיך נישט געוואלט נוהג זיין מיט ניסים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-03-01-bo",
+      "startSeg": 93,
+      "endSeg": 105,
+      "title": { "en": "Nature follows the Torah's rules", "yi": "די טבע גייט לויט די כללים פון דער תורה" },
+      "summary": {
+        "en": "The Rav tells how R' Chaim Ozer advised a sick man to settle in Eretz Yisrael, where the Beis Yosef's ruling on his lung condition is followed, and explains R' Chanina ben Dosa's miracles: a miracle too must follow the Torah's rules. The account of creation ends with the rivers, and from it the wise knew all wisdom.",
+        "yi": "דער משגיח דערציילט ווי אזוי רבי חיים עוזר האט געראטן א קראנקן אז ער זאל זיך באזעצן אין ארץ ישראל, וואו מ'פירט זיך לויט דעם בית יוסף לגבי זיין לונג, און ערקלערט די ניסים פון רבי חנינא בן דוסא: א נס מוז אויך גיין לויט די כללים פון דער תורה. די פרשה פון דער בריאה ענדיגט זיך מיט די נהרות, און פון איר האבן די חכמים געוואוסט אלע חכמות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-03-01-bo",
+      "startSeg": 106,
+      "endSeg": 123,
+      "title": { "en": "The Torah of man and his power over nature", "yi": "תורת האדם און זיין כח איבער דער טבע" },
+      "summary": {
+        "en": "The Rav explains that the Torah of man, the seven Noachide mitzvos, differs from the Torah of creation in having free choice, and that man's choice reaches into nature. He shows this from the giant fruit of the meraglim and from the generation of the Flood, who dragged all of nature into their sin.",
+        "yi": "דער משגיח ערקלערט אז תורת האדם, די שבע מצוות בני נח, איז אנדערש פון תורת הבריאה ווייל דער מענטש האט בחירה, און זיין בחירה גייט אריין אין דער טבע. ער ווייזט עס פון די גרויסע פירות פון די מרגלים און פון דור המבול, וואס האבן מיטגעשלעפט די גאנצע טבע אין זייער חטא."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-03-01-bo",
+      "startSeg": 124,
+      "endSeg": 141,
+      "title": { "en": "The world's built-in control system", "yi": "דער קאנטראל וואס איז אריינגעשטעלט אין דער וועלט" },
+      "summary": {
+        "en": "The Rav compares the world to man, a small world, whose body stops a person from destroying himself and fights illness with fever and loss of appetite. So too the world has a control system; man builds it with positive mitzvos and guards it with prohibitions, and Adam's damage lasts only until Moshiach.",
+        "yi": "דער משגיח פארגלייכט די וועלט צום מענטש, א עולם קטן, וועמענס גוף לאזט אים נישט זיך אינגאנצן חרוב מאכן און קעמפט קעגן א קרענק מיט פיבער און מיט פארלירן דעם אפעטיט. אזוי האט די וועלט א קאנטראל; דער מענטש בויט זי מיט מצוות עשה און היט זי מיט מצוות לא תעשה, און דער קלקול פון אדם הראשון איז נאר ביז משיח."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-03-01-bo",
+      "startSeg": 142,
+      "endSeg": 149,
+      "title": { "en": "Control of the world passes to Avraham", "yi": "די הנהגה פון דער וועלט גייט אריבער צו אברהם" },
+      "summary": {
+        "en": "The Rav explains that after the Flood and the Dispersion, Hashem took control of the world from mankind and gave it to Avraham and his children, so a gentile's sin no longer affects nature. At the giving of the Torah the nations were offered it again and refused.",
+        "yi": "דער משגיח ערקלערט אז נאך דור המבול און דור הפלגה האט דער אייבערשטער צוגענומען די הנהגה פון דער וועלט פון אלע מענטשן און זי געגעבן צו אברהם און זיינע קינדער, ממילא רירט א גוי'ס עבירה מער נישט אן די טבע. ביי מתן תורה האט מען די תורה נאכאמאל אנגעבאטן די אומות, און זיי האבן נישט געוואלט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-03-01-bo",
+      "startSeg": 150,
+      "endSeg": 165,
+      "title": { "en": "Eretz Yisrael, the root of the world", "yi": "ארץ ישראל, דער שורש פון דער וועלט" },
+      "summary": {
+        "en": "Using the principle of world, year and soul, the Rav explains that Eretz Yisrael is the 'reishis' of the world, untouched by the Flood like Noach. He asks what the nations' claim 'you are thieves' means when all history is conquest, and answers that driving nations out of Eretz Yisrael, the root of the world, is like driving them off the planet.",
+        "yi": "לויטן כלל פון עולם, שנה, נפש ערקלערט דער משגיח אז ארץ ישראל איז דער \"ראשית\" פון דער וועלט, וואס דער מבול האט נישט אנגערירט, אזוי ווי נח. ער פרעגט וואס איז די טענה פון די אומות \"לסטים אתם\", אז די גאנצע היסטאריע איז כיבוש מלחמה, און ענטפערט אז ארויסטרייבן די אומות פון ארץ ישראל, דער שורש פון דער וועלט, איז גלייך ווי ארויסטרייבן זיי פון דער וועלט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-03-01-bo",
+      "startSeg": 166,
+      "endSeg": 178,
+      "title": { "en": "Rashi's answer to the nations", "yi": "רש\"י'ס תשובה צו די אומות" },
+      "summary": {
+        "en": "The Rav presents Rashi as answering the nations: the Torah from creation onward tells how control of the world passed from Adam to the chosen people, perfected only in Yaakov. Eretz Yisrael, where mitzvos and aveiros have far greater effect, can be entrusted only to that people.",
+        "yi": "דער משגיח שטעלט פאר רש\"י ווי ער ענטפערט די אומות: די תורה פון דער בריאה און ווייטער דערציילט ווי אזוי די הנהגה פון דער וועלט איז אריבער פון אדם הראשון צום עם הנבחר, וואס איז שלם געווארן ערשט ביי יעקב. ארץ ישראל, וואו מצוות און עבירות פועל'ן אסאך מער, קען מען נאר אנטרויען צו דעם פאלק."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-03-01-bo",
+      "startSeg": 179,
+      "endSeg": 188,
+      "title": { "en": "The whole Torah leads to 'Hachodesh'", "yi": "די גאנצע תורה פירט צו \"החודש\"" },
+      "summary": {
+        "en": "The Rav concludes that everything from Bereishis to 'Hachodesh hazeh lachem' is an introduction answering the nations, and connects it to 'Arami oved avi', to bikkurim as 'reishis', and to 'my firstborn son Yisrael'. He returns to Rosh Chodesh Shevat, when the small point in every Jew begins to sprout.",
+        "yi": "דער משגיח ענדיגט אז אלץ פון בראשית ביז \"החודש הזה לכם\" איז א הקדמה וואס ענטפערט די אומות, און ער פארבינדט עס מיט \"ארמי אובד אבי\", מיט ביכורים וואס זענען \"ראשית\", און מיט \"בני בכורי ישראל\". ער קומט צוריק צו ראש חודש שבט, ווען די קליינע נקודה אין יעדן איד הייבט אן צו שפראצן."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "עס שטייט פונעם חידושי ארום",
+      "work": "Chiddushei HaRim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [0], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "הועל משה, בעל את התורה",
+      "work": "Devarim",
+      "ref": "Devarim 1:5",
+      "sefariaRef": "Deuteronomy 1:5",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [1], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "די משנה ... ביי שמח וביי סילח, ראש השנה ליולנעס",
+      "work": "Mishnah Rosh Hashanah",
+      "ref": "Mishnah Rosh Hashanah 1:1",
+      "sefariaRef": "Mishnah Rosh Hashanah 1:1",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [3, 4, 16, 62, 63], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "דער גמרא זאך נבודה זרה",
+      "work": "Gemara Avodah Zarah",
+      "ref": "Avodah Zarah 8a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [6], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אזוי ווי שטעט אין מדרש ... פופצן דורות פון אברהם ונגל ביז שלמה",
+      "work": "Shemos Rabbah",
+      "ref": "Shemos Rabbah 15:26",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [8, 9], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "פון די בעלי הקבלה ... בשמי זיי זענען פון עולם הצוקן",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [17], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "אחד דא אברהם",
+      "work": "Yechezkel",
+      "ref": "Yechezkel 33:24",
+      "sefariaRef": "Ezekiel 33:24",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [23], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "כי אדם עץ השדה",
+      "work": "Devarim",
+      "ref": "Devarim 20:19",
+      "sefariaRef": "Deuteronomy 20:19",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [27], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "כי ימי האת ימי עמי",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 65:22",
+      "sefariaRef": "Isaiah 65:22",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [27], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "א בין הייסט שיח, וכו'שיח'ת סודות ארום יצמך",
+      "work": "Bereishis",
+      "ref": "Bereishis 2:5",
+      "sefariaRef": "Genesis 2:5",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [30], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אין די צפון פון די תלמידי בעש''ט",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [31, 32], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "רשע ברענגט ... ויצא השדה ... ליולניץ סרק",
+      "work": "Rashi",
+      "ref": "Rashi on Vayikra 26:4",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [34, 35], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "בני יששכר ברענגט אים א דרום פון חמישי אסאך בשווד",
+      "work": "Bnei Yissaschar",
+      "ref": "Bnei Yissaschar, Ma'amarei Chodesh Shevat",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [37, 53], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער מגן אברהם זאגט אז עס איז א מנהג",
+      "work": "Magen Avraham",
+      "ref": "Magen Avraham, Orach Chaim 131:16",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [42], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "צורה צו ולרנען משה מראשי ... קהילת יעקב",
+      "work": "Devarim",
+      "ref": "Devarim 33:4",
+      "sefariaRef": "Deuteronomy 33:4",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [49, 50], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אמר רבי יצחק ... א חידוש איז עליכם ... לזטה מטה",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 1:1",
+      "sefariaRef": "Rashi on Genesis 1:1:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [73, 74, 85], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "א חידוש איז עליכם",
+      "work": "Shemos",
+      "ref": "Shemos 12:2",
+      "sefariaRef": "Exodus 12:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [62, 73, 85], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "אזוי שטייט אין יחס יסודי התורה",
+      "work": "Rambam, Mishneh Torah",
+      "ref": "Rambam, Hilchos Yesodei HaTorah ch. 8",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [75, 77, 80], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "לעובדי רמב״ם ... מצוות סמילה",
+      "work": "Rambam, Commentary on the Mishnah",
+      "ref": "Rambam, Commentary on the Mishnah, Chullin 7:6",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [83, 84], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "תצו יראת דשא עשר",
+      "work": "Bereishis",
+      "ref": "Bereishis 1:11",
+      "sefariaRef": "Genesis 1:11",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [87, 88], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ויאמר דשם ממש למה ... להם ציצית",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 15:37-38",
+      "sefariaRef": "Numbers 15:37-38",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [88], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ויפי אפי פאלע ארץ",
+      "work": "Bereishis",
+      "ref": "Bereishis 1:20",
+      "sefariaRef": "Genesis 1:20",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [90, 108], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "מקשאטים וליית על ידך",
+      "work": "Devarim",
+      "ref": "Devarim 6:8",
+      "sefariaRef": "Deuteronomy 6:8",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [90], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "לויטן רב מרד ... לויט'ן בית יוסף",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [93, 94], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "רבי יוחננה בן דייסער ... אייבער פילאזטו ישגרה",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 34b",
+      "sefariaRef": "Berakhot 34b",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [96, 97, 98], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ורפה ירפה",
+      "work": "Shemos",
+      "ref": "Shemos 21:19",
+      "sefariaRef": "Exodus 21:19",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [99], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ונר יצר מידן ... וענורא ויהיו נהר פרט",
+      "work": "Bereishis",
+      "ref": "Bereishis 2:10-14",
+      "sefariaRef": "Genesis 2:10-14",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [103, 104], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "דער רמב״ן זאגט זיין אקדמות רחמות",
+      "work": "Ramban",
+      "ref": "Ramban, Introduction to the Torah",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [105], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די גמרא פון סנהדרין לערנט ... שבע מצוות בני נח",
+      "work": "Gemara Sanhedrin",
+      "ref": "Sanhedrin 56b",
+      "sefariaRef": "Sanhedrin 56b",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [106, 107], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דעם זוהל פון די מרגלים ... אכץ גיבורים",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 13:23",
+      "sefariaRef": "Numbers 13:23",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [111, 112], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "העברעאיש האט דאך געזאגט ביי די מורות",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 8:22",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [119, 120], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "ניינסע זעהט ווי דער רמב״ן זאגט עס לשון רבים",
+      "work": "Ramban",
+      "ref": "Ramban on Bereishis 1:26",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [122], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער מזרח זאגט ... ליובגא במצוות עשה, ולי שאמרא במצוות לא תעשה",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [136, 137], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "דאס שטעט אין דרך השם",
+      "work": "Derech Hashem",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [150], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער כלל בשטח אין ספר יצירה",
+      "work": "Sefer Yetzirah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [150], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "לגשמי ביום זם",
+      "work": "Yechezkel",
+      "ref": "Yechezkel 22:24",
+      "sefariaRef": "Ezekiel 22:24",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [153], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "הארץ נושא לבני עולם ... די ארץ נתן לבון הידם",
+      "work": "Tehillim",
+      "ref": "Tehillim 115:16",
+      "sefariaRef": "Psalms 115:16",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [158, 161], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די מדרש אז פון קיין און הבעל האבן זיך איינגעציילט די וועלט",
+      "work": "Bereishis Rabbah",
+      "ref": "Bereishis Rabbah 22:7",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [160], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "נתעלעמיה פי ימי הפרן",
+      "work": "Devarim",
+      "ref": "Devarim 33:2",
+      "sefariaRef": "Deuteronomy 33:2",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [148], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "לימי מלכות קנים וגוי קודש",
+      "work": "Shemos",
+      "ref": "Shemos 19:6",
+      "sefariaRef": "Exodus 19:6",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [176], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "מסכה פון גענות הרמי עובד אבי",
+      "work": "Mishnah Pesachim",
+      "ref": "Mishnah Pesachim 10:4",
+      "sefariaRef": "Mishnah Pesachim 10:4",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [183, 184], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ויד ההונה הבתי את רשת פרי האט זמר",
+      "work": "Devarim",
+      "ref": "Devarim 26:10",
+      "sefariaRef": "Deuteronomy 26:10",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [185], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "בני בחורי ישראל",
+      "work": "Shemos",
+      "ref": "Shemos 4:22",
+      "sefariaRef": "Exodus 4:22",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [186], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "וראשון לציון, הנה הנה",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 41:27",
+      "sefariaRef": "Isaiah 41:27",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [188], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The renewed moon and the reviving tree are two witnesses that Klal Yisrael will rise again even after the nations have declared it finished.",
+        "yi": "די נייע לבנה און דער אילן וואס לעבט אויף זענען צוויי עדים אז כלל ישראל וועט ווידער אויפשטיין, אפילו נאכדעם וואס די אומות העולם האבן שוין באשלאסן אז ס'איז אויס."
+      },
+      "evidence": { "segs": [11, 12], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Beis Shammai, rooted in the world of tikkun connected to Moshiach, are more sensitive and feel the renewal on Rosh Chodesh Shevat, before the sap has visibly risen.",
+        "yi": "בית שמאי, וואס זענען פון עולם התיקון וואס האט א שייכות מיט משיח, זענען מער מרגיש און שפירן די התחדשות שוין אויף ראש חודש שבט, נאך איידער דער זאפט איז ארויף אין בוים."
+      },
+      "evidence": { "segs": [17, 18, 19], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The Mishnah needs Beis Shammai's view on the new year for trees because when Moshiach comes the halachah may be revealed retroactively as following them, so the fruits must be distinguished already now.",
+        "yi": "די משנה דארף ברענגען בית שמאי'ס שיטה ביי ראש השנה לאילן, ווייל ווען משיח קומט קען זיך מגלה זיין למפרע אז די הלכה איז ווי זיי, ממילא דארף מען שוין היינט אונטערשיידן די פירות."
+      },
+      "evidence": { "segs": [65, 66, 70, 71], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Grass grows and birds fly by the very same kind of command that obligates a Jew in tzitzis and tefillin, so even a miracle must be done within the Torah's own rules.",
+        "yi": "גראז וואקסט און פייגל פליען מיט דעם זעלבן סארט ציווי וואס מחייב א איד אין ציצית און תפילין, ממילא מוז אפילו א נס געטאן ווערן לויט די כללים פון דער תורה אליין."
+      },
+      "evidence": { "segs": [88, 89, 90, 98], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Man is a small world: the body's way of fighting illness, with fever and loss of appetite, mirrors the control system Hashem built into the world and into history.",
+        "yi": "דער מענטש איז א עולם קטן: ווי דער גוף קעמפט קעגן א קרענק מיט פיבער און מיט פארלירן דעם אפעטיט, אזוי האט דער אייבערשטער אריינגעשטעלט א קאנטראל אין דער וועלט און אין דער היסטאריע."
+      },
+      "evidence": { "segs": [124, 130, 131, 133], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The whole Torah from Bereishis to 'Hachodesh hazeh lachem' is an introduction that answers the nations' claim on Eretz Yisrael: control of the world, centered in Eretz Yisrael, could be entrusted only to the people that is 'reishis'.",
+        "yi": "די גאנצע תורה פון בראשית ביז \"החודש הזה לכם\" איז א הקדמה וואס ענטפערט די טענה פון די אומות אויף ארץ ישראל: די הנהגה פון דער וועלט, וואס איר צענטער איז ארץ ישראל, האט מען געקענט אנטרויען נאר צום פאלק וואס איז \"ראשית\"."
+      },
+      "evidence": { "segs": [169, 178, 179, 182], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The 613 trees in Gan Eden", "yi": "די תרי\"ג ביימער אין גן עדן" },
+      "retelling": {
+        "en": "The Rav relates a conversation of the Chiddushei HaRim with his son R' Avraham Mordechai about how many trees were planted in Gan Eden. The answer given was 613 trees. The Rav explains that the trees Hashem planted are the 613 mitzvos.",
+        "yi": "דער משגיח דערציילט א שמועס פונעם חידושי הרי\"ם מיט זיין זון רבי אברהם מרדכי, וויפיל ביימער זענען איינגעפלאנצט אין גן עדן. דער תירוץ איז געווען תרי\"ג ביימער. דער משגיח ערקלערט אז די נטיעות פון רבונו של עולם זענען די תרי\"ג מצוות."
+      },
+      "people": ["the Chiddushei HaRim", "R' Avraham Mordechai of Ger"],
+      "evidence": { "segs": [25, 26], "confidence": 0.65 }
+    },
+    {
+      "title": { "en": "R' Chaim Ozer's advice to a sick man", "yi": "רבי חיים עוזר'ס עצה פאר א קראנקן" },
+      "retelling": {
+        "en": "A man was ill in his lungs and the doctors had given up on him. He came to R' Chaim Ozer, who advised him to settle in Eretz Yisrael. His condition made him a treifah according to one ruling but not according to the Beis Yosef, and in Eretz Yisrael the Beis Yosef's rulings are followed, so nature there would follow that ruling.",
+        "yi": "א מענטש איז געווען קראנק אויף די לונגען און די דאקטוירים האבן אים אפגעזאגט. ער איז געקומען צו רבי חיים עוזר, און ער האט אים געראטן אז ער זאל זיך באזעצן אין ארץ ישראל. לויט איין שיטה איז זיין מחלה א טריפה, אבער לויטן בית יוסף נישט, און אין ארץ ישראל פירט מען זיך לויטן בית יוסף, ממילא וועט די טבע דארט גיין לויט דעם."
+      },
+      "people": ["R' Chaim Ozer"],
+      "evidence": { "segs": [93, 94], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "R' Chanina ben Dosa's sign in prayer", "yi": "דער סימן פון רבי חנינא בן דוסא אין תפילה" },
+      "retelling": {
+        "en": "R' Chanina ben Dosa davened for the sick and could tell whether they would recover: if his prayer flowed fluently, it was a sign the sick person would live. He davened, the sick person recovered, and people spoke of the great miracle. The Rav notes that he could not show a miracle every time.",
+        "yi": "רבי חנינא בן דוסא האט מתפלל געווען אויף קראנקע און האט געקענט וויסן צי זיי וועלן געזונט ווערן: אויב זיין תפילה איז שגורה אין זיין מויל, איז דאס א סימן אז דער חולה וועט געזונט ווערן. ער האט מתפלל געווען, דער חולה איז געזונט געווארן, און מ'האט גערעדט וועגן דעם גרויסן נס. דער משגיח מערקט אן אז נישט אלעמאל האט ער געקענט ווייזן א נס."
+      },
+      "people": ["R' Chanina ben Dosa"],
+      "evidence": { "segs": [96, 97, 98], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why does the Mishnah on the new year for trees present Beis Shammai's view in a different form from usual?",
+        "yi": "פארוואס ברענגט די משנה ביי ראש השנה לאילן די שיטה פון בית שמאי אויף אן אנדער אופן ווי געווענליך?"
+      },
+      "answer": {
+        "en": "Usually Beis Shammai's view has no practical bearing, but here one must know it: when Moshiach comes the halachah may follow Beis Shammai retroactively, so the fruits that budded before and after Rosh Chodesh Shevat must already be distinguished.",
+        "yi": "געווענליך האט בית שמאי'ס שיטה נישט קיין נפקא מינה, אבער דא מוז מען זי וויסן: ווען משיח קומט קען די הלכה זיין למפרע ווי בית שמאי, ממילא דארף מען שוין יעצט אונטערשיידן די פירות פון פאר און נאך ראש חודש שבט."
+      },
+      "questionSegs": [63],
+      "answerSegs": [64, 65, 66, 70, 71],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "How can 'Hachodesh hazeh lachem' be the first mitzvah when milah and gid hanasheh were commanded earlier?",
+        "yi": "ווי אזוי קען \"החודש הזה לכם\" זיין די ערשטע מצוה, אז מילה און גיד הנשה זענען אנגעזאגט געווארן פריער?"
+      },
+      "answer": {
+        "en": "According to the Rambam, our faith rests on what all of Yisrael saw at Sinai, and we keep even milah only because Moshe Rabbeinu commanded it; so the first mitzvah given through Moshe is 'Hachodesh hazeh lachem'.",
+        "yi": "לויטן רמב\"ם שטייט אונזער אמונה אויף דעם וואס גאנץ כלל ישראל האט געזען ביי הר סיני, און מילה האלטן מיר אויך נאר ווייל משה רבינו האט עס אנגעזאגט; ממילא איז די ערשטע מצוה דורך משה \"החודש הזה לכם\"."
+      },
+      "questionSegs": [74],
+      "answerSegs": [75, 83, 84, 85],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why could a tzaddik like R' Chanina ben Dosa not always perform a miracle?",
+        "yi": "פארוואס האט א צדיק ווי רבי חנינא בן דוסא נישט אלעמאל געקענט ווייזן א נס?"
+      },
+      "answer": {
+        "en": "Because nature is itself a command of the Torah, a miracle changes a mitzvah; it can be done only within the Torah's own rules, which the tzaddikim knew.",
+        "yi": "ווייל די טבע איז אליין א ציווי פון דער תורה, און א נס טוישט א מצוה; מ'קען עס נאר טאן לויט די כללים פון דער תורה אליין, וואס די צדיקים האבן געוואוסט."
+      },
+      "questionSegs": [95, 98],
+      "answerSegs": [98, 101, 102],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "What is the nations' claim 'you are thieves' when every people's history is one of conquest?",
+        "yi": "וואס איז די טענה פון די אומות \"לסטים אתם\", אז די היסטאריע פון יעדן פאלק איז כיבוש מלחמה?"
+      },
+      "answer": {
+        "en": "Conquest has a limit, since Hashem gave the whole earth to mankind; Eretz Yisrael is the root of the world in which every nation has a share, so driving the seven nations out of it is like driving them off the planet.",
+        "yi": "כיבוש מלחמה האט א גבול, ווייל דער אייבערשטער האט די גאנצע ערד געגעבן פאר די מענטשן; ארץ ישראל איז דער שורש פון דער וועלט וואו יעדע אומה האט א חלק, ממילא איז ארויסטרייבן די שבעה אומות פון דארט גלייך ווי ארויסטרייבן זיי פון דער וועלט."
+      },
+      "questionSegs": [155, 157],
+      "answerSegs": [158, 161, 163, 165],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "Why can Eretz Yisrael not be internationalized but belong only to Klal Yisrael?",
+        "yi": "פארוואס קען ארץ ישראל נישט זיין אינטערנאציאנאל, נאר עס געהערט נאר צו כלל ישראל?"
+      },
+      "answer": {
+        "en": "Eretz Yisrael is the control center of the world, where a mitzvah or an aveirah has far greater effect, so it can be entrusted only to the people that is 'reishis', to whom control of the world was given.",
+        "yi": "ארץ ישראל איז דער צענטער פון דער הנהגה פון דער וועלט, וואו א מצוה אדער אן עבירה פועל'ט אסאך מער, ממילא קען מען עס נאר אנטרויען צום פאלק וואס איז \"ראשית\", וואס צו אים איז איבערגעגעבן געווארן די הנהגה פון דער וועלט."
+      },
+      "questionSegs": [162, 163],
+      "answerSegs": [172, 173, 178, 182],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says that when Rosh Chodesh Shevat and Tu Bishvat come, every Jew should identify with the tree and the moon and know that a Jew never falls completely.",
+        "yi": "דער משגיח זאגט אז ווען עס קומט ראש חודש שבט און ט\"ו בשבט, זאל יעדער איד זיך אידענטיפיצירן מיטן אילן און מיט דער לבנה, און וויסן אז א איד פאלט קיינמאל נישט אינגאנצן אראפ."
+      },
+      "evidence": { "segs": [20, 21], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that one who sees darkness should draw hope and comfort from the small point of light, which will spread until the full salvation.",
+        "yi": "דער משגיח זאגט אז ווער עס זעט פינסטערניש זאל שעפן האפענונג און נחמה פון דער קליינער נקודה פון ליכט, וואס וועט זיך פארשפרייטן ביז דער גאנצער ישועה."
+      },
+      "evidence": { "segs": [23, 24], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that on Tu Bishvat a Jew who feels like a barren tree can join the prayer of all the trees and daven that he and they should bear fruit.",
+        "yi": "דער משגיח זאגט אז אויף ט\"ו בשבט קען א איד וואס שפירט ווי א בוים אן פירות זיך מצטרף זיין צו דער תפילה פון אלע אילנות, און מתפלל זיין אז ער און זיי זאלן ארויסגעבן פירות."
+      },
+      "evidence": { "segs": [41, 44, 46], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "Rosh Chodesh Shevat",
+    "Tu Bishvat and the new year for trees",
+    "renewal of the moon and Klal Yisrael",
+    "the small point in every Jew",
+    "Hachodesh hazeh lachem",
+    "Rashi's first comment on the Torah",
+    "nature as Torah",
+    "man's free choice and nature",
+    "Eretz Yisrael as the root of the world",
+    "Klal Yisrael as reishis"
+  ],
+  "concepts": [
+    { "he": "ראש השנה לאילן", "heardAs": ["ראש השנה ליולנעס", "רשע שונא ליולניץ", "ראש השנה ליאלענע"] },
+    { "he": "התחדשות", "heardAs": ["התחדשות", "מתחדש"] },
+    { "he": "ראש חודש שבט", "heardAs": ["ראש חדר שבט", "ראש חודש שווארץ", "חודש ווארט"] },
+    { "he": "ט\"ו בשבט", "heardAs": ["חמישי אסלה בשבט", "חמישי אסאך בשווד", "חמישה עושה בשבט"] },
+    { "he": "החודש הזה לכם", "heardAs": ["א חידוש איז עליכם", "א חודש אזא לחם", "החדש הזלחם"] },
+    { "he": "נקודה", "heardAs": ["נקודה", "פונטעלע"] },
+    { "he": "אילנות סרק", "heardAs": ["ליולניץ סרק", "לא נסרק"] },
+    { "he": "ראשית", "heardAs": ["רשות", "רשעות", "רשת"] },
+    { "he": "תורת הבריאה", "heardAs": ["תורת הבריאה", "תירת הבריאה"] },
+    { "he": "שבע מצוות בני נח", "heardAs": ["שבע מצוות בני נח", "שבעה ומצוות בני נחך"] },
+    { "he": "בחירה", "heardAs": ["בחירה"] },
+    { "he": "לסטים אתם", "heardAs": ["ליסטע מאטים", "לוסטע מטים", "ולוסטא מדים"] },
+    { "he": "עולם התיקון", "heardAs": ["עולם הצוקן"] },
+    { "he": "בכור", "heardAs": ["בחור", "בכור"] }
+  ],
+  "people": [
+    { "name": "the Chiddushei HaRim", "heardAs": ["חידושי ארום", "חדשים'ער"] },
+    { "name": "R' Avraham Mordechai of Ger", "heardAs": ["רבי אברהם מרדכי"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו", "משה"] },
+    { "name": "Beis Shammai", "heardAs": ["ביי שמח", "בית שמע", "בשמי", "בית שמש"] },
+    { "name": "Beis Hillel", "heardAs": ["ביי סילח", "בית הילל", "בסילו"] },
+    { "name": "Shlomo HaMelech", "heardAs": ["שלמה המלך"] },
+    { "name": "Tzidkiyahu", "heardAs": ["צדקי יואל"] },
+    { "name": "Avraham Avinu", "heardAs": ["אברהם", "אברהם אבינער"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יענקי רבינא", "יעקב אבינו", "יענקוב"] },
+    { "name": "Eisav", "heardAs": ["עסב", "אסף"] },
+    { "name": "Pharaoh", "heardAs": ["פרעה"] },
+    { "name": "the Ohr HaChaim", "heardAs": ["נאר החיים הקדוש"] },
+    { "name": "Rashi", "heardAs": ["רשע", "ראשי הקדוש", "העברעאיש"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "the Ramban", "heardAs": ["רמב״ן"] },
+    { "name": "R' Chaim Ozer", "heardAs": ["רבי חיים עזר"] },
+    { "name": "the Beis Yosef", "heardAs": ["בית יוסף"] },
+    { "name": "R' Chanina ben Dosa", "heardAs": ["רבי יוחננה בן דייסער", "רבי חנונה בן דושא"] },
+    { "name": "Adam HaRishon", "heardAs": ["אדם הראשון", "אדא מרושן"] },
+    { "name": "Noach", "heardAs": ["נח"] },
+    { "name": "Kayin", "heardAs": ["קיין"] },
+    { "name": "Hevel", "heardAs": ["הבעל"] }
+  ],
+  "asrNotes": "Yiddish ASR is heavily garbled, especially Hebrew quotations; 'reishis' is variously heard as 'רשות', 'רשעות' and 'רשת'. The identity of the 'Kabbalists' source for Beis Shammai (seg 17), the authority opposed to the Beis Yosef in the R' Chaim Ozer story (seg 93), and the historical examples around segs 133-135 could not be recovered. The midrash on 'le'ovdah uleshomrah' (seg 137) is left unidentified."
+}

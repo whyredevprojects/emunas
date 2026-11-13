@@ -1,0 +1,752 @@
+{
+  "shiurId": "yi-parshas-hashavua-shmvs-02",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that Sefer Shemos, the book of redemption, teaches how the Jewish people survive the darkness of exile: through bitachon in Hashem, through knowing that every generation has its mission, and by not choosing to mingle with the ways of the nations.",
+      "yi": "דער משגיח ערקלערט אז ספר שמות, דער ספר הגאולה, לערנט ווי אזוי אידן האלטן זיך אין דעם חושך פון גלות: מיט בטחון אין השם יתברך, מיט וויסן אז יעדער דור האט זיין שליחות, און דורך נישט אליין אריינגיין אין די וועגן פון די גוים."
+    },
+    "abstract": {
+      "en": "The Rav opens with the Ramban that Sefer Shemos is the book of redemption, and explains why it is read in the dark weeks of Teves: whoever binds himself to it rises above the darkness. The tribes' names hint at redemption, and even while the Jews groaned in Egypt, Hashem was already preparing the redemption at the burning bush. He then takes up the questions asked against Hashem in Egypt and today: Amram and Aharon taught that Bereishis foreshadows all later history, that this world cannot hold the joy of Moshiach, and that the generation of Egypt had to repair the sins of earlier generations. From the Gemara's 'shamos, read shemos' he teaches that every generation and every Jew has a mission. Finally he contrasts Yosef, who was forced into Pharaoh's court and stayed a tzaddik, with Dasan and Aviram, whose lack of bitachon drove them to join Egyptian society, and he tells a story about bitachon.",
+      "yi": "דער משגיח עפנט מיטן רמב\"ן אז ספר שמות איז דער ספר הגאולה, און ערקלערט פארוואס מ'לערנט אים אין די פינצטערע וואכן פון טבת: ווער עס בינדט זיך צו צו אים, הייבט זיך אויף העכער פונעם חושך. די נעמען פון די שבטים זענען מרמז אויף גאולה, און אפילו ווען אידן האבן געקרעכצט אין מצרים, האט דער אייבערשטער שוין צוגעגרייט די גאולה ביים סנה. דערנאך נעמט ער זיך צו די קשיות וואס מ'פרעגט אויפן רבונו של עולם, אין מצרים און היינט: עמרם און אהרן האבן געלערנט אז ספר בראשית איז א סימן אויף דער גאנצער שפעטערדיגער היסטאריע, אז עולם הזה קען נישט אריינכאפן די שמחה פון ימות המשיח, און אז דער דור פון מצרים האט געדארפט פארריכטן די חטאים פון פריערדיגע דורות. פון דער גמרא \"אל תקרי שמות אלא שמות\" לערנט ער אז יעדער דור און יעדער איד האט א שליחות. צום סוף שטעלט ער אוועק יוסף, וואס איז געווען געצוואונגען צו זיין ביי פרעה און איז געבליבן א צדיק, קעגן דתן ואבירם, וועמענס חסרון אין בטחון האט זיי געטריבן צו ווערן א טייל פון דער מצרישער געזעלשאפט, און ער דערציילט א מעשה וועגן בטחון."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Sefer Shemos is the book of redemption, and learning it in the dark weeks of Teves lifts a Jew above the darkness of that time.",
+          "yi": "ספר שמות איז דער ספר הגאולה, און דאס לערנען אים אין די פינצטערע וואכן פון טבת הייבט א איד אויף העכער פונעם חושך פון יענער צייט."
+        },
+        "evidence": { "segs": [2, 6, 13, 14], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Even while the Jews suffer, Hashem is already preparing the redemption, as He appeared to Moshe at the burning bush at the height of the bondage.",
+          "yi": "אפילו ווען אידן ליידן, גרייט דער אייבערשטער שוין צו די גאולה, אזוי ווי ער האט זיך באוויזן צו משה ביים סנה אין דער ערגסטער צייט פון שיעבוד."
+        },
+        "evidence": { "segs": [19, 20, 22, 23], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Although the great tzaddikim have passed away, the G-d of Yaakov and Yosef did not die, and He still leads the Jewish people beyond nature.",
+          "yi": "הגם די גרויסע צדיקים זענען אוועק, איז דער גאט פון יעקב און יוסף נישט געשטארבן, און ער פירט נאך אלץ כלל ישראל העכער פון טבע."
+        },
+        "evidence": { "segs": [33, 34, 35, 36], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Every generation and every Jew is sent into the world with a mission, hinted in his name, and even a generation of suffering is fulfilling its mission.",
+          "yi": "יעדער דור און יעדער איד ווערט געשיקט אויף דער וועלט מיט א שליחות, וואס איז מרומז אין זיין נאמען, און אפילו א דור פון יסורים פירט אויס זיין שליחות."
+        },
+        "evidence": { "segs": [85, 86, 103, 104, 116], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The root of Dasan and Aviram's evil was a lack of bitachon, which Rashi shows by identifying them as those who left over the man.",
+          "yi": "דער שורש פון דתן ואבירם'ס רשעות איז געווען א חסרון אין בטחון, וואס רש\"י ווייזט אן דורך זאגן אז זיי זענען די וואס האבן איבערגעלאזט פונעם מן."
+        },
+        "evidence": { "segs": [174, 175, 176, 177], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "What a Jew is forced into in exile carries special protection, as with Yosef; what he chooses on his own, out of worry for a career, does not.",
+          "yi": "וואס א איד איז געצוואונגען צו טון אין גלות האט א באזונדערע שמירה, אזוי ווי ביי יוסף; וואס ער קלייבט אליין, פון דאגה פאר א קאריערע, האט נישט די שמירה."
+        },
+        "evidence": { "segs": [187, 189, 191, 192, 196], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-parsha-sefer-shemois-01-02-shemos",
+      "startSeg": 0,
+      "endSeg": 14,
+      "title": { "en": "Sefer Shemos, the book of redemption, in Teves", "yi": "ספר שמות, דער ספר הגאולה, אין טבת" },
+      "summary": {
+        "en": "The Rav brings the Ramban that Bereishis holds the roots of all later events and that Shemos is the book of redemption. He describes the weeks of Teves as a time when darkness and harsh decrees prevail, and explains that learning Sefer Shemos then binds a Jew to the redemption, above the rule of this world.",
+        "yi": "דער משגיח ברענגט דעם רמב\"ן אז אין ספר בראשית ליגן די שרשים פון אלעס וואס קומט שפעטער פאר, און אז ספר שמות איז דער ספר הגאולה. ער שילדערט די וואכן פון טבת ווי א צייט ווען דער חושך און שווערע גזירות שטארקן זיך, און ערקלערט אז דאס לערנען ספר שמות דעמאלט בינדט צו א איד צו דער גאולה, העכער פון דער שליטה פון עולם הזה."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-01-02-shemos",
+      "startSeg": 15,
+      "endSeg": 25,
+      "title": { "en": "The cure before the blow: names of redemption", "yi": "די רפואה פאר דער מכה: נעמען פון גאולה" },
+      "summary": {
+        "en": "The Rav explains that the Torah opens the exile with the tribes' names, which the Midrash reads as hints of redemption, and that the Shechinah went down with Yaakov. While the Jews groaned under the labor, Hashem was already preparing the redemption at the burning bush; with the Ba'al Shem Tov's teaching that a person is where his thoughts are, he urges binding one's mind to the parsha of redemption.",
+        "yi": "דער משגיח ערקלערט אז די תורה הייבט אן דעם גלות מיט די נעמען פון די שבטים, וואס דער מדרש טייטשט אלס רמזים אויף גאולה, און אז די שכינה איז אראפגעגאנגען מיט יעקב. ווען אידן האבן געקרעכצט פון דער עבודה, האט דער אייבערשטער שוין צוגעגרייט די גאולה ביים סנה; מיטן בעל שם טוב'ס ווארט אז א מענטש איז דארט וואו זיין מחשבה איז, רופט ער צו צו בינדן די מחשבה מיט דער פרשה פון גאולה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-01-02-shemos",
+      "startSeg": 26,
+      "endSeg": 49,
+      "title": { "en": "Questions on Hashem, then and now", "yi": "קשיות אויפן רבונו של עולם, דעמאלט און היינט" },
+      "summary": {
+        "en": "The Rav says the parsha speaks to our own time: the questions asked in Egypt, why Jews suffer more than other nations, are asked today about Germany and Russia. Yosef and his generation of tzaddikim died, yet, as the Midrash says, their G-d did not die; Amram and Aharon still taught and comforted, while assimilated and educated Jews, and writers, mocked the faithful and asked why Jewish children are thrown into the river.",
+        "yi": "דער משגיח זאגט אז די פרשה רעדט צו אונזער צייט: די קשיות וואס מ'האט געפרעגט אין מצרים, פארוואס אידן ליידן מער ווי אנדערע פעלקער, פרעגט מען היינט אויף דייטשלאנד און רוסלאנד. יוסף און זיין דור צדיקים זענען געשטארבן, אבער ווי דער מדרש זאגט, איז זייער גאט נישט געשטארבן; עמרם און אהרן האבן נאך געדרשנט און געטרייסט, בשעת פארשידענע אידן, משכילים און שרייבער האבן אויסגעלאכט די ערליכע און געפרעגט פארוואס מ'ווארפט אידישע קינדער אין טייך."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-01-02-shemos",
+      "startSeg": 50,
+      "endSeg": 66,
+      "title": { "en": "Bereishis as a preview of history", "yi": "ספר בראשית אלס א פארבליק אויף דער היסטאריע" },
+      "summary": {
+        "en": "Following the Ramban's rule that the deeds of the fathers are a sign for the children, the Rav reads Bereishis as a preview of Jewish history, from Avraham's descent to Egypt to the two Batei Mikdash, the long exile and Gog uMagog. Yaakov then expected tranquility, but Yosef's troubles came; Hashem's answer, that tzaddikim do not get peace in this world, shows that this world cannot hold the joy of Moshiach, which Amram likely taught the Jews in Egypt.",
+        "yi": "לויטן כלל פונעם רמב\"ן אז מעשה אבות סימן לבנים, לערנט דער משגיח ספר בראשית אלס א פארבליק אויף דער אידישער היסטאריע, פון אברהם'ס אראפגיין קיין מצרים ביז די צוויי בתי מקדש, דעם לאנגן גלות און מלחמת גוג ומגוג. דערנאך האט יעקב געוואלט זיצן בשלוה, אבער עס איז געקומען דער רוגז פון יוסף; דעם אייבערשטנס תשובה, אז צדיקים באקומען נישט קיין שלוה אויף דער וועלט, ווייזט אז עולם הזה קען נישט אריינכאפן די שמחה פון ימות המשיח, און דאס האט עמרם מסתמא געלערנט די אידן אין מצרים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-01-02-shemos",
+      "startSeg": 67,
+      "endSeg": 77,
+      "title": { "en": "Old debts: the souls of earlier generations", "yi": "אלטע חובות: די נשמות פון פריערדיגע דורות" },
+      "summary": {
+        "en": "The Rav describes how the simple faithful accepted Amram's words while the 'enlightened' mocked. To a smaller circle Amram revealed what is in the Zohar: the generation of Egypt were the souls of the generation of the Dispersion and of the Flood, who had to be cleansed through bricks and through the river before the redemption; in the same way, the Chasam Sofer brings, the victims of the 1648-49 massacres were the souls of the generation of the Churban.",
+        "yi": "דער משגיח שילדערט ווי די תמימות'דיגע אידן האבן אנגענומען עמרם'ס ווערטער, בשעת די אויפגעקלערטע האבן געלאכט. פאר א קלענערן עולם האט עמרם מגלה געווען וואס עס שטייט אין זוהר: דער דור פון מצרים זענען געווען די נשמות פונעם דור הפלגה און פונעם דור המבול, וואס האבן געדארפט ריין ווערן דורך חומר ולבנים און דורכן טייך פאר דער גאולה; אזוי אויך, ברענגט דער חתם סופר, זענען די קדושים פון גזירות ת\"ח ות\"ט געווען די נשמות פונעם דור החורבן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-01-02-shemos",
+      "startSeg": 78,
+      "endSeg": 92,
+      "title": { "en": "A name carries a mission", "yi": "א נאמען טראגט א שליחות" },
+      "summary": {
+        "en": "The Rav brings the Gemara that names determine destiny, learned from 'asher sam shamos ba'aretz', read as 'shemos'. Every person is sent with a mission hinted in his name, as Rashi says that the angels' names change with their mission; the Jews in Egypt kept their names, and calling a Jew by his Jewish name draws down blessing and awakens him to serve Hashem.",
+        "yi": "דער משגיח ברענגט די גמרא אז דער שם גורם, וואס מ'לערנט ארויס פון \"אשר שם שמות בארץ\", געלייענט \"שמות\". יעדער מענטש ווערט געשיקט מיט א שליחות וואס איז מרומז אין זיין נאמען, אזוי ווי רש\"י זאגט אז די מלאכים'ס נעמען טוישן זיך לויט דער שליחות; אידן אין מצרים האבן נישט געטוישט זייערע נעמען, און רופן א איד מיט זיין אידישן נאמען איז ממשיך השפעות און וועקט אים צו עבודת השם."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-01-02-shemos",
+      "startSeg": 93,
+      "endSeg": 107,
+      "title": { "en": "Pharaoh's new names and every generation's task", "yi": "פרעה'ס נייע נעמען און דער תפקיד פון יעדן דור" },
+      "summary": {
+        "en": "The Rav explains that the king of Egypt gave the midwives Egyptian names so as to bring them under his power and make them kill Jewish children. He compares the scoffers who claim Hashem has abandoned His people, and teaches that in the darkest hour before dawn a Jew must know that every Jew and every generation has a task, sometimes to suffer in order to prepare a later redemption.",
+        "yi": "דער משגיח ערקלערט אז דער מלך מצרים האט געגעבן די מילדות מצרישע נעמען כדי זיי צו ברענגען אונטער זיין כח, אז זיי זאלן הרג'ענען אידישע קינדער. ער פארגלייכט די לצים וואס טענה'ן אז דער אייבערשטער האט פארלאזט זיין פאלק, און לערנט אז אין דער פינצטערסטער שעה פארן טאג דארף א איד וויסן אז יעדער איד און יעדער דור האט א תפקיד, אמאל צו ליידן כדי צוצוגרייטן א שפעטערדיגע ישועה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-01-02-shemos",
+      "startSeg": 108,
+      "endSeg": 120,
+      "title": { "en": "Shamos: a destruction that amazes", "yi": "שמות: א חורבן וואס מ'וואונדערט זיך" },
+      "summary": {
+        "en": "Returning to the chapter of Tehillim about the wars before Moshiach, the Rav explains that 'shamos' is not ordinary destruction but desolation that leaves one wondering, from the same root as 'shamayim', what is beyond understanding. The Gemara's 'do not read shamos but shemos' teaches that every such wonder is a mission, and the questions will be answered when Moshiach comes.",
+        "yi": "צוריק צום קאפיטל תהלים וואס רעדט וועגן די מלחמות פאר משיח, ערקלערט דער משגיח אז \"שמות\" איז נישט סתם א חורבן, נאר א שממה וואס מ'וואונדערט זיך אויף איר, פון דעם זעלבן שורש ווי \"שמים\", א זאך וואס מ'פארשטייט נישט. דער \"אל תקרי שמות אלא שמות\" לערנט אז יעדער אזא וואונדער איז א שליחות, און די קשיות וועלן פארענטפערט ווערן ווען משיח וועט קומען."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-01-02-shemos",
+      "startSeg": 121,
+      "endSeg": 132,
+      "title": { "en": "Yosef in Egypt, Dasan and Aviram, and bitachon", "yi": "יוסף אין מצרים, דתן ואבירם, און בטחון" },
+      "summary": {
+        "en": "The Rav asks why the book of redemption mentions that Yosef was in Egypt and stayed a tzaddik, and why Rashi identifies the two quarreling Jews as Dasan and Aviram, who left over the man. He calls bitachon the key word of the exile and brings 'trust in Hashem forever': the One who created heaven and earth can surely give bread for tomorrow.",
+        "yi": "דער משגיח פרעגט פארוואס דער ספר הגאולה דערמאנט אז יוסף איז געווען אין מצרים און איז געבליבן א צדיק, און פארוואס רש\"י זאגט אז די צוויי אידן וואס האבן זיך געקריגט זענען דתן ואבירם, וואס האבן איבערגעלאזט פונעם מן. ער רופט בטחון דאס שליסל-ווארט פונעם גלות און ברענגט \"בטחו בה' עדי עד\": דער וואס האט באשאפן הימל און ערד קען זיכער געבן ברויט אויף מארגן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-01-02-shemos",
+      "startSeg": 133,
+      "endSeg": 145,
+      "title": { "en": "Bitachon in every step of avodas Hashem", "yi": "בטחון אין יעדן טריט פון עבודת השם" },
+      "summary": {
+        "en": "The Rav explains that the One who cared for a person in his mother's womb will keep helping him. He brings a reading of the midwives' answer about dependence on human help, says bitachon is needed for every step of serving Hashem, especially in the weeks connected with Tammuz and the spies, and brings the Midrash that one who trusts in Hashem is surrounded by kindness even without merits.",
+        "yi": "דער משגיח ערקלערט אז דער וואס האט זיך געזארגט פאר א מענטש אין מוטערס בויך וועט אים ווייטער העלפן. ער ברענגט א פשט אין דעם תירוץ פון די מילדות וועגן אנקומען צו מענטשן'ס הילף, זאגט אז מ'דארף בטחון אויף יעדן טריט פון עבודת השם, בפרט אין די וואכן וואס זענען פארבונדן מיט תמוז און די מרגלים, און ברענגט דעם מדרש אז דער וואס פארזיכערט זיך אויפן אייבערשטן, ווערט ארומגערינגלט מיט חסד אפילו אן זכותים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-01-02-shemos",
+      "startSeg": 146,
+      "endSeg": 152,
+      "title": { "en": "The Jew who took Hashem as a partner", "yi": "דער איד וואס האט גענומען דעם אייבערשטן פאר א שותף" },
+      "summary": {
+        "en": "The Rav tells of a simple Jew who sold brandy to gentiles and whose blessings were all fulfilled. Asked by a Rav where this power came from, he related that when his business failed he refused a human partner and took Hashem as his partner, setting aside Hashem's share for tzedakah, and since then he prospered; the Rav concludes that this is the power of bitachon.",
+        "yi": "דער משגיח דערציילט פון א פשוט'ן איד וואס האט פארקויפט בראנפן צו גוים, און אלע זיינע ברכות זענען מקוים געווארן. ווען א רב האט אים געפרעגט פון וואנען ער האט דעם כח, האט ער דערציילט אז ווען זיין געשעפט איז נישט געגאנגען, האט ער נישט געוואלט קיין שותף פון פלייש און בלוט, נאר ער האט גענומען דעם אייבערשטן פאר א שותף און אוועקגעגעבן דעם אייבערשטנס חלק פאר צדקה, און זינט דעמאלט האט ער מצליח געווען; דאס, זאגט דער משגיח, איז דער כח פון בטחון."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-01-02-shemos",
+      "startSeg": 153,
+      "endSeg": 163,
+      "title": { "en": "The ghetto of Goshen and those who left it", "yi": "די געטא פון גושן און די וואס זענען ארויס" },
+      "summary": {
+        "en": "Bringing the Chovos HaLevavos, the Rav says that every person has ups and downs and in dark times must hope for redemption. He describes the Jews of Goshen who kept Yaakov's tradition of living apart, with the Chiddushei HaRim that Yosef showed Pharaoh the weakest brothers so they would not be appointed to office, and contrasts the Jews who wanted to break out, study and climb the social ladder, among them the wealthy Dasan and Aviram.",
+        "yi": "מיטן חובות הלבבות זאגט דער משגיח אז יעדער מענטש האט עליות און ירידות, און אין פינצטערע צייטן דארף ער האפן אויף דער גאולה. ער שילדערט די אידן פון גושן וואס האבן געהאלטן יעקב'ס מסורה צו לעבן אפגעזונדערט, מיטן חידושי הרי\"ם אז יוסף האט געוויזן פרעה די שוואכסטע ברידער כדי מ'זאל זיי נישט מאכן פאר שרים, און שטעלט זיי קעגן די אידן וואס האבן געוואלט ארויסברעכן, שטודירן און ארויפקריכן אויף דער געזעלשאפטלעכער לייטער, צווישן זיי די רייכע דתן ואבירם."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-01-02-shemos",
+      "startSeg": 164,
+      "endSeg": 176,
+      "title": { "en": "Lowliness as a blessing; the root of Dasan and Aviram", "yi": "שפלות אלס ברכה; דער שורש פון דתן ואבירם" },
+      "summary": {
+        "en": "The Rav brings the Gemara that being 'lowly and despised' among the nations is a blessing, since it keeps Jews from high office, and says history, in Spain and Germany, shows that isolation is the secret of Jewish survival in exile. Amram, Aharon and Nachshon fought against studying among the Egyptians, while Dasan and Aviram attacked them in their own publications; Rashi reveals the root of their fall: they left over the man, lacking bitachon.",
+        "yi": "דער משגיח ברענגט די גמרא אז \"נבזים ושפלים\" צו זיין ביי די גוים איז א ברכה, ווייל עס האלט אפ אידן פון ווערן שרים, און זאגט אז די היסטאריע, אין שפאניע און אין דייטשלאנד, ווייזט אז זיין אפגעזונדערט איז דער סוד פון אידישן קיום אין גלות. עמרם, אהרן און נחשון האבן געקעמפט קעגן שטודירן ביי די מצריים, בשעת דתן ואבירם האבן זיי אטאקירט אין זייערע אייגענע בלעטער; רש\"י ווייזט אן דעם שורש פון זייער פאל: זיי האבן איבערגעלאזט פונעם מן, ווייל זיי האבן נישט געהאט קיין בטחון."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-01-02-shemos",
+      "startSeg": 177,
+      "endSeg": 186,
+      "title": { "en": "Chutzpah, Yosef as precedent, and being sent", "yi": "חוצפה, יוסף אלס ראיה, און געשיקט ווערן" },
+      "summary": {
+        "en": "The Rav explains that without bitachon Dasan and Aviram felt they must secure a career at any risk, and went to places that teach chutzpah, which is itself one of the signs before the redemption. They cited Yosef as proof that one can rise in Egypt and remain a Jew; the Rav answers that exile is not good for Jews, but Hashem sent us there against our will, and that is our mission.",
+        "yi": "דער משגיח ערקלערט אז אן בטחון האבן דתן ואבירם געהאלטן אז זיי מוזן זיך צוגרייטן א קאריערע אויף יעדן ריזיקע, און זענען געגאנגען צו ערטער וואו מ'לערנט חוצפה, וואס איז אליין איינס פון די סימנים פאר דער גאולה. זיי האבן געברענגט א ראיה פון יוסף אז מ'קען ארויפקומען אין מצרים און בלייבן א איד; דער משגיח ענטפערט אז גלות איז נישט גוט פאר אידן, נאר דער אייבערשטער האט אונז אהין געשיקט אן אונזער ווילן, און דאס איז אונזער שליחות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-01-02-shemos",
+      "startSeg": 187,
+      "endSeg": 199,
+      "title": { "en": "Forced versus chosen; closing on the book of redemption", "yi": "געצוואונגען אדער אליין געקליבן; סיום מיטן ספר הגאולה" },
+      "summary": {
+        "en": "The Rav explains that one who is forced, like Yosef, has special protection, and brings a report that R. Berel, a fierce opponent of secular studies, said that what the government compels does not harm. He contrasts those in America who were forced to work on Shabbos with one who said he would rather eat bread from a garbage can, and concludes that a Jew may not choose spiritual danger out of a lack of bitachon, ending with the call to bind oneself to the book of redemption and one's mission.",
+        "yi": "דער משגיח ערקלערט אז דער וואס איז געצוואונגען, ווי יוסף, האט א באזונדערע שמירה, און ברענגט א מעשה אז ר' בערל, א גרויסער קנאי קעגן לערנען חכמות חיצוניות, האט געזאגט אז וואס די מלכות צווינגט שאדט נישט. ער שטעלט אוועק די אידן אין אמעריקע וואס זענען געצוואונגען געווארן צו ארבעטן שבת, קעגן איינעם וואס האט געזאגט אז ער וועט ליבער עסן ברויט פון א מיסט-קאסטן, און ענדיגט אז א איד טאר נישט אליין אריינגיין אין א סכנה פאר דער נשמה פון חסרון בטחון, מיטן רוף זיך צו בינדן צום ספר הגאולה און צו זיין שליחות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "דער רמב״ן ... דעם ספר הגאולה",
+      "work": "Ramban",
+      "ref": "Ramban, introduction to Shemos",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [2, 5], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "יבא סימן לבנון; מיטן כלל פון רמב״ן",
+      "work": "Ramban",
+      "ref": "Ramban, Bereishis 12:6",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1, 50], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער ספר חסידים ברענגט",
+      "work": "Sefer Chassidim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [9], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "כחמן בני יששכר",
+      "work": "Bnei Yissaschar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [12], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די נעמען זאגט דער מדרש זענען מרמז סוף גאולה",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [15, 17], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "בשעת פאר ינח בני ישראל מן העבודה",
+      "work": "Shemos",
+      "ref": "Shemos 2:23",
+      "sefariaRef": "Exodus 2:23",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [20, 21], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "לחבר שלחך על פרעה, והוציא את עמי בני ישראל",
+      "work": "Shemos",
+      "ref": "Shemos 3:10",
+      "sefariaRef": "Exodus 3:10",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [22], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער בעש''ט זאגט אין גרויסן כלל",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [24], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "וימות יוסף וכו' ... ר' ונתך פרעה",
+      "work": "Shemos",
+      "ref": "Shemos 1:6-8",
+      "sefariaRef": "Exodus 1:6-8",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [33], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "דער מדרש זאגט אויף דעם וימות יוסף ... אלוקים לא מ",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [33, 34, 35], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "בקשר וישב יעקב ... לשב בשלווה כף הצלב רגזי של יוסף",
+      "work": "Rashi",
+      "ref": "Rashi, Bereishis 37:2",
+      "sefariaRef": "Rashi on Genesis 37:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [50, 61, 63], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "וואס שטעט אין זוהן",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [69, 74], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער חתם סופר ברענגט עס",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [75, 76, 77], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אמר רבי יוחנן ... רוס ... מנין ששמגא גורם ... אשר סתם שמת בארץ, אלצוקה שמת אלא שמות",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 7b",
+      "sefariaRef": "Berakhot 7b",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [78, 79, 80], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "למנצח ובני קרח, על עלמות שום ... לכה חזר מפלה את ה' ... אשר שם שמת בארץ",
+      "work": "Tehillim",
+      "ref": "Tehillim 46",
+      "sefariaRef": "Psalms 46",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [80, 82, 109, 110], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "זאגט ראשי, שמותינו משתנות לפי השליחות",
+      "work": "Rashi",
+      "ref": "Rashi, Bereishis 32:30",
+      "sefariaRef": "Rashi on Genesis 32:30",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [87, 88], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "זאגט דער מדרש ... ראוון שמעון ... זיי האבן נישט געביטן זייער נאמען",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [89], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ויומא מלך מצחים ולמיאדי ספריות ... שפרע ... פעה",
+      "work": "Shemos",
+      "ref": "Shemos 1:15-16",
+      "sefariaRef": "Exodus 1:15-16",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [97, 98], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ויוסף היה במצרים ... צדקתו של יוסף",
+      "work": "Rashi",
+      "ref": "Rashi, Shemos 1:5",
+      "sefariaRef": "Rashi on Exodus 1:5",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [121, 122], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די שני אנשים אברים ניצה ... זאגט רשע ... דאס איז די עבורים",
+      "work": "Rashi",
+      "ref": "Rashi, Shemos 2:13",
+      "sefariaRef": "Rashi on Exodus 2:13",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [124], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "איש היוסם ממנו ... ויסורי אנשים ... ויקצף עלי משה; זאגט רשע דאס איז וואלט ווירום",
+      "work": "Rashi",
+      "ref": "Rashi, Shemos 16:20",
+      "sefariaRef": "Rashi on Exodus 16:20",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [124, 125, 174], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "בטחה ועדה השם עדה יעדכי",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 26:4",
+      "sefariaRef": "Isaiah 26:4",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [129, 130], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "כי יצא גייך מי בטן ... עצקי יצא גייך מיר באטן, מפתיחי עלשדי אימי",
+      "work": "Tehillim",
+      "ref": "Tehillim 22:10",
+      "sefariaRef": "Psalms 22:10",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [133, 152], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "כי חיות הנה ... המילדות",
+      "work": "Shemos",
+      "ref": "Shemos 1:19",
+      "sefariaRef": "Exodus 1:19",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [135, 137], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "רבי שמשון האסטרופאוו",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [139, 140], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "שטעט דער מדרש ... ובתייך ביי די שם חסד יוסף ונו",
+      "work": "Tehillim",
+      "ref": "Tehillim 32:10",
+      "sefariaRef": "Psalms 32:10",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [144, 145], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער חברת הלבבות",
+      "work": "Chovos HaLevavos",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [153], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די חידושי ארום זאגט ... מקוצח ולא כחמישע אנושם",
+      "work": "Chiddushei HaRim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [160], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "נתתי יצחק נבזה מושפלים ... זאגט אויף דעם דער גמרא לברכה",
+      "work": "Gemara",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [165, 166], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "חוצפה יעזגוי; חוץ פי אזגו",
+      "work": "Gemara Sotah",
+      "ref": "Sotah 49b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [180, 181], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "ישראל שיב חוצה לא סייבט די עבודה זורע בטערה, זאגט די גמרא",
+      "work": "Gemara Avodah Zarah",
+      "ref": "Avodah Zarah 8a",
+      "sefariaRef": "Avodah Zarah 8a",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [184], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav ties the reading of Sefer Shemos in Teves to the darkest time of the year: binding oneself to the book of redemption lifts a Jew above the rule that the 'other side' holds over this world in those weeks.",
+        "yi": "דער משגיח בינדט צו דאס לערנען ספר שמות אין טבת מיט דער פינצטערסטער צייט פונעם יאר: ווער עס בינדט זיך צו צום ספר הגאולה, הייבט זיך אויף העכער פון דער שליטה וואס די סטרא אחרא האט אויף עולם הזה אין יענע וואכן."
+      },
+      "evidence": { "segs": [7, 8, 13, 14], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Reading Bereishis as a preview of history, the Rav explains Yaakov's lost tranquility: by the order of the preview, the days of Moshiach should have come next, but this world cannot hold that joy, so the picture breaks off and the exile begins.",
+        "yi": "מיט ספר בראשית אלס א פארבליק אויף דער היסטאריע, ערקלערט דער משגיח פארוואס יעקב האט נישט באקומען קיין שלוה: לויטן סדר וואלטן יעצט געדארפט קומען ימות המשיח, אבער עולם הזה קען נישט אריינכאפן אזא שמחה, און דערפאר ווערט דאס בילד איבערגעהאקט און דער גלות הייבט זיך אן."
+      },
+      "evidence": { "segs": [59, 60, 63, 64, 65], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav distinguishes 'shamos' from ordinary destruction: it is a desolation that leaves one wondering, related to 'shamayim', what is beyond our grasp; reading it as 'shemos' turns each wonder into a mission.",
+        "yi": "דער משגיח מאכט א חילוק צווישן \"שמות\" און א געווענליכן חורבן: עס איז א שממה וואס מ'וואונדערט זיך אויף איר, פארבונדן מיט \"שמים\", א זאך וואס מ'כאפט נישט; ווען מ'לייענט עס \"שמות\" ווערט יעדער וואונדער א שליחות."
+      },
+      "evidence": { "segs": [111, 112, 113, 116], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Rashi identifies Dasan and Aviram, at their first appearance, by their leaving over the man, because that lack of bitachon was the root of all their later sins, including their drive to rise in Egyptian society.",
+        "yi": "רש\"י באצייכנט דתן ואבירם, ביים ערשטן מאל וואס זיי קומען פאר, מיט דעם וואס זיי האבן איבערגעלאזט פונעם מן, ווייל דער חסרון אין בטחון איז געווען דער שורש פון אלע זייערע שפעטערדיגע עבירות, אויך זייער שטרעבן ארויפצוקומען אין דער מצרישער געזעלשאפט."
+      },
+      "evidence": { "segs": [174, 175, 176, 177], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Torah mentions Yosef in Egypt at the start of the book of redemption to set him against Dasan and Aviram: Yosef rose in Pharaoh's court because he was forced, and so he was protected and stayed a tzaddik; they chose it.",
+        "yi": "די תורה דערמאנט יוסף אין מצרים אין אנהייב פונעם ספר הגאולה כדי אים אוועקצושטעלן קעגן דתן ואבירם: יוסף איז ארויפגעקומען ביי פרעה ווייל ער איז געווען געצוואונגען, דערפאר איז ער געווען באשיצט און געבליבן א צדיק; זיי האבן עס אליין געקליבן."
+      },
+      "evidence": { "segs": [183, 189, 191, 192], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says chutzpah is itself one of the preconditions of the redemption, so the brazenness of Dasan and Aviram had a place in Hashem's plan even though they bear the blame for it.",
+        "yi": "דער משגיח זאגט אז חוצפה איז אליין איינס פון די תנאים פאר דער גאולה, ממילא האט דתן ואבירם'ס חוצפה געהאט אן ארט אין דעם אייבערשטנס פלאן, הגם זיי טראגן די שולד דערפאר."
+      },
+      "evidence": { "segs": [180, 181, 182], "confidence": 0.65 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The brandy seller and his divine partner", "yi": "דער בראנפן-הענדלער און זיין שותף" },
+      "retelling": {
+        "en": "A simple Jew who sold brandy to gentiles became known because all his blessings were fulfilled. A Rav who wondered at this looked at him and saw no special level, yet saw that his power came from holiness, so he asked him. The man told that once his business was failing and his wife pressed him to find a partner with capital; he did not want a human partner and took Hashem as his partner instead. He made two boxes, one for himself and one for Hashem, and gave Hashem's share to tzedakah, and since then he had great plenty. The Rav concludes that Hashem must listen to such a partner: that is the power of bitachon.",
+        "yi": "א פשוט'ער איד וואס האט פארקויפט בראנפן צו גוים איז באקאנט געווארן ווייל אלע זיינע ברכות זענען מקוים געווארן. א רב וואס האט זיך געוואונדערט דערויף, האט אויף אים געקוקט און נישט געזען קיין באזונדערע מדרגות, אבער ער האט געזען אז זיין כח קומט פון קדושה, האט ער אים געפרעגט. דער איד האט דערציילט אז אמאל איז זיין געשעפט נישט געגאנגען, און זיין ווייב האט אים געמוטשעט ער זאל זוכן א שותף מיט קאפיטאל; ער האט נישט געוואלט קיין מענטשליכן שותף, און האט אנשטאט דעם גענומען דעם אייבערשטן פאר א שותף. ער האט געמאכט צוויי קעסטלעך, איינס פאר זיך און איינס פאר דעם אייבערשטן, און דעם אייבערשטנס חלק האט ער אוועקגעגעבן פאר צדקה, און זינט דעמאלט האט ער געהאט א גרויסע שפע. דער משגיח זאגט אז דער אייבערשטער מוז פאלגן אזא שותף: דאס איז דער כח פון בטחון."
+      },
+      "people": [],
+      "evidence": { "segs": [146, 147, 149, 150, 151, 152], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "R. Berel and the compulsory school hours", "yi": "ר' בערל און די געצוואונגענע שול-שעהן" },
+      "retelling": {
+        "en": "The Rav relates, as told by a grandson, that R. Berel was a great zealot against learning secular wisdom. When the government decreed that Jewish children must attend school for about two hours a day, he was asked what would become of the children. He answered that what is forced does not harm.",
+        "yi": "דער משגיח דערציילט, ווי מ'האט געהערט פון אן אייניקל, אז ר' בערל איז געווען א גרויסער קנאי קעגן לערנען חכמות חיצוניות. ווען די מלכות האט ארויסגעגעבן א גזירה אז אידישע קינדער מוזן גיין אין שול עפעס צוויי שעה א טאג, האט מען אים געפרעגט וואס וועט זיין מיט די קינדער. ער האט געענטפערט אז וואס מ'איז געצוואונגען שאדט נישט."
+      },
+      "people": ["R. Berel"],
+      "evidence": { "segs": [188, 189], "confidence": 0.65 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why should the Jewish people suffer subjugation and persecution more than other nations, in Egypt and in our time?",
+        "yi": "פארוואס זאלן אידן ליידן שיעבוד און רדיפות מער ווי אנדערע פעלקער, אין מצרים און אין אונזער צייט?"
+      },
+      "answer": {
+        "en": "As Amram revealed from the Zohar, the souls of earlier generations must repair old sins before the redemption; every generation has a mission, and the full answer will come with Moshiach.",
+        "yi": "ווי עמרם האט מגלה געווען פונעם זוהר, דארפן די נשמות פון פריערדיגע דורות פארריכטן אלטע חטאים פאר דער גאולה; יעדער דור האט א שליחות, און דער גאנצער תירוץ וועט קומען מיט משיח."
+      },
+      "questionSegs": [27, 28, 29],
+      "answerSegs": [69, 70, 116, 117],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why was Yaakov, at the end of Bereishis, denied the tranquility he sought?",
+        "yi": "פארוואס האט יעקב, צום סוף פון ספר בראשית, נישט באקומען די שלוה וואס ער האט געזוכט?"
+      },
+      "answer": {
+        "en": "Because this world is not equipped to show the joy of the days of Moshiach; the preview had to be cut off and the exile begin.",
+        "yi": "ווייל עולם הזה איז נישט אויסגעשטאט צו ווייזן די שמחה פון ימות המשיח; דאס בילד האט געמוזט איבערגעהאקט ווערן און דער גלות זיך אנהייבן."
+      },
+      "questionSegs": [60, 62],
+      "answerSegs": [63, 64, 65],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why does the pasuk say 'shamos' rather than a plain word for destruction?",
+        "yi": "פארוואס שטייט אין פסוק \"שמות\" און נישט סתם א ווארט פאר חורבן?"
+      },
+      "answer": {
+        "en": "Because 'shamos' is a destruction that leaves one wondering, beyond understanding like 'shamayim'.",
+        "yi": "ווייל \"שמות\" איז א חורבן וואס מ'וואונדערט זיך אויף אים, העכער פון פארשטאנד ווי \"שמים\"."
+      },
+      "questionSegs": [111],
+      "answerSegs": [111, 112, 113],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why does the book of redemption, which speaks of the nation, mention that Yosef was in Egypt and stayed a tzaddik?",
+        "yi": "פארוואס דערמאנט דער ספר הגאולה, וואס רעדט וועגן כלל ישראל, אז יוסף איז געווען אין מצרים און געבליבן א צדיק?"
+      },
+      "answer": {
+        "en": "To distinguish Yosef, who was forced into Pharaoh's court and protected, from Dasan and Aviram, who chose that path.",
+        "yi": "כדי צו מאכן א חילוק צווישן יוסף, וואס איז געווען געצוואונגען צו זיין ביי פרעה און איז געווען באשיצט, און דתן ואבירם, וואס האבן דעם וועג אליין געקליבן."
+      },
+      "questionSegs": [121, 122, 123],
+      "answerSegs": [189, 191],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why does Rashi introduce Dasan and Aviram as those who left over the man, rather than by their worse sins?",
+        "yi": "פארוואס באצייכנט רש\"י דתן ואבירם אלס די וואס האבן איבערגעלאזט פונעם מן, און נישט מיט זייערע ערגערע עבירות?"
+      },
+      "answer": {
+        "en": "Because lack of bitachon was the root of all their wickedness.",
+        "yi": "ווייל דער חסרון אין בטחון איז געווען דער שורש פון זייער גאנצער רשעות."
+      },
+      "questionSegs": [126, 127],
+      "answerSegs": [174, 176],
+      "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says that in the dark weeks of Teves a Jew should bind his thoughts to Sefer Shemos, the book of redemption.",
+        "yi": "דער משגיח זאגט אז אין די פינצטערע וואכן פון טבת זאל א איד בינדן זיינע מחשבות צום ספר שמות, דעם ספר הגאולה."
+      },
+      "evidence": { "segs": [14, 19, 24], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says a Jew should be called by his Jewish name, which awakens him to his mission and to serving Hashem.",
+        "yi": "דער משגיח זאגט אז א איד זאל זיך רופן מיט זיין אידישן נאמען, וואס וועקט אים צו זיין שליחות און צו עבודת השם."
+      },
+      "evidence": { "segs": [91], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one needs bitachon for every step of serving Hashem, trusting that Hashem will help against the yetzer hara's warnings.",
+        "yi": "דער משגיח זאגט אז מ'דארף בטחון אויף יעדן טריט פון עבודת השם, און זיך פארלאזן אז דער אייבערשטער וועט העלפן קעגן דעם יצר הרע'ס שרעקן."
+      },
+      "evidence": { "segs": [138, 142, 143], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says a Jew may not put his soul in danger by choice, out of worry for a career, where he is not forced.",
+        "yi": "דער משגיח זאגט אז א איד טאר נישט אליין אריינשטעלן זיין נשמה אין א סכנה פון דאגה פאר א קאריערע, ווען ער איז נישט געצוואונגען."
+      },
+      "evidence": { "segs": [196, 197], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "parshas Shemos",
+    "Sefer Shemos as the book of redemption",
+    "bitachon",
+    "exile and redemption",
+    "the weeks of Teves",
+    "maaseh avos siman labanim",
+    "a name as a person's mission",
+    "Dasan and Aviram",
+    "separation from the ways of the nations",
+    "questions on Divine justice"
+  ],
+  "concepts": [
+    { "he": "ספר הגאולה", "heardAs": ["ספר הגאולה", "ספר הגהלה"] },
+    { "he": "מעשה אבות סימן לבנים", "heardAs": ["יבא סימן לבנון", "ס'יאוי סימן לבנון"] },
+    { "he": "טבת", "heardAs": ["טבעות", "טובת", "תיבות"] },
+    { "he": "לילי טבת הארוכים", "heardAs": ["לילי טבעות הארוחים", "לילי תיבות הארחים", "לולי תיבות הערכים"] },
+    { "he": "סטרא אחרא", "heardAs": ["סדכי אחרא", "נסיד אחרא"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבינו של עולם", "רבינו שלום", "רביה של עולם", "רבשה'לע"] },
+    { "he": "דור הפלגה", "heardAs": ["דול הפלוגה", "דור הפלאגה", "דור אפלאגע"] },
+    { "he": "שם גורם", "heardAs": ["ששמגא גורם"] },
+    { "he": "שמות", "heardAs": ["שמת", "שמועס"] },
+    { "he": "בטחון", "heardAs": ["בטחן", "פצחה'ן", "בצייכן", "בטחים", "פארצויכונג"] },
+    { "he": "דתן ואבירם", "heardAs": ["דאסן וואבורים", "דאסן וואבירום", "דאסן ווירום", "דאס איז באווירים"] },
+    { "he": "אנוס", "heardAs": ["מכרח", "מחרח", "מוכח"] },
+    { "he": "נבזים ושפלים", "heardAs": ["נבזה מושפלים", "נפזה משפלים"] },
+    { "he": "גזירות ת\"ח ות\"ט", "heardAs": ["גזירות תך פון תט", "תך ותץ"] },
+    { "he": "חוצפה", "heardAs": ["חוצפה", "חוץ פי"] }
+  ],
+  "people": [
+    { "name": "the Ramban", "heardAs": ["רמב״ם", "רמב״ן"] },
+    { "name": "Rashi", "heardAs": ["ראשי", "רשע", "רש''ה"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יענגוב", "יענקאוו", "יעקב אבינא"] },
+    { "name": "Yosef", "heardAs": ["יוסף"] },
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינו"] },
+    { "name": "Sarah", "heardAs": ["שרה"] },
+    { "name": "Amram", "heardAs": ["עמרים", "עמרם", "אמר'ם"] },
+    { "name": "Aharon", "heardAs": ["אהרן", "אהרן הכהן"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה", "משה רבינו"] },
+    { "name": "Pharaoh", "heardAs": ["פרעה", "פרי"] },
+    { "name": "Dasan and Aviram", "heardAs": ["דאסן וואבורים", "דאסן ווירום"] },
+    { "name": "Shifra and Puah", "heardAs": ["שפרע", "פעה"] },
+    { "name": "Nachshon ben Aminadav", "heardAs": ["נחשון בן עמינדב"] },
+    { "name": "David HaMelech", "heardAs": ["דוד המלך"] },
+    { "name": "R. Yochanan ben Zakkai", "heardAs": ["רבי יוחנן בן זאקיי"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["בעש''ט"] },
+    { "name": "the Chasam Sofer", "heardAs": ["חתם סופר"] },
+    { "name": "the Chiddushei HaRim", "heardAs": ["חידושי ארום"] },
+    { "name": "R. Shimshon of Ostropoli", "heardAs": ["רבי שמשון האסטרופאוו"] },
+    { "name": "the Chofetz Chaim", "heardAs": ["חופץ חיים"] },
+    { "name": "Hitler", "heardAs": ["היטלער"] }
+  ],
+  "asrNotes": "Yiddish ASR fair to poor; Hebrew quotations heavily garbled (Dasan and Aviram as 'דאסן וואבורים', bitachon as 'פצחה'ן'), but most are recoverable from context. Segment 95 is a repeated-word hallucination and was ignored. Unrecovered: the author of the reading of the midwives' answer (seg 135, heard as 'רבי חצי'לע קוזמארל'), the sefer cited at seg 142, the Rav in the brandy-seller story (heard as 'אבטר רב, דער רבי ישראל'), and the identity of R. Berel's grandson (seg 188). Several segments are cut off mid-sentence, so some steps of the argument are incomplete."
+}

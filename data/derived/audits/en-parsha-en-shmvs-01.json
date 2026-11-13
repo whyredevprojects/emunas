@@ -1,0 +1,17 @@
+{
+  "shiurId": "en-parsha-en-shmvs-01",
+  "promptVersion": "audit-v1",
+  "auditedAt": "2026-11-13T02:49:15Z",
+  "counts": {
+    "claimsChecked": 24, "unsupported": 1, "hallucinated": 0,
+    "sourcesChecked": 12, "sourceErrors": 0, "sourcesMissed": 2,
+    "boundariesChecked": 4, "boundariesBad": 0, "noiseMishandled": 0,
+    "termsChecked": 13, "termErrors": 1, "termsCopiedGarbled": 0,
+    "yiddishSentencesChecked": 24, "yiddishBadSentences": 8, "yiddishTranslationese": 1,
+    "flowBreaks": 0, "paddingSentences": 0, "contradictsExtraction": 0,
+    "ruleViolations": 0
+  },
+  "severity": "minor",
+  "needsReview": false,
+  "notes": "Naming story (segs 9-27): 'chadosh yerem' / 'Hadash Yirem' is almost certainly the Chiddushei HaRim, not the Chozeh of Lublin; the misidentification appears in summary.abstract, sections[0].summary, stories[0], people[0], writeup.en[0].paragraphs[0] and writeup.yi[0].paragraphs[0]; nikud (שַמות / שֵמות) used against the Yiddish style in sections[2].summary.yi, insights[1].yi, questions[1].question.yi, writeup.yi[2].paragraphs[0] (2 sentences), yi[3].paragraphs[0] and yi[9].paragraphs[1]; writeup.yi[2].paragraphs[0] Daytshmerish 'ווירקט'; sections[1].summary.yi 'נישט געפאלגט קיינעם פון ביידע' is unnatural; sources missed: 'haster astir panai' (Devarim 31:18, heard 'Has Torah spun', segs 801-819) and 'min hametzar karasi Kah' (Tehillim 118:5, segs 1816-1817); writeup.en[1].paragraphs[0] opens with segs 88-95 (two names, kedushah/tumah) that belong to section 0, harmless"
+}

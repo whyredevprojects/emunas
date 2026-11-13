@@ -1,0 +1,462 @@
+{
+  "shiurId": "yi-parshas-hashavua-ky-ssh-01",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that Shabbos is the 'kallah' and partner of the Jewish people, a mikdash greater than the Mishkan itself, and that this is why building the Mishkan does not override Shabbos.",
+      "yi": "דער משגיח ערקלערט אז שבת איז די כלה און דער בן זוג פון כלל ישראל, א מקדש וואס איז גרעסער ווי דער משכן אליין, און דערפאר איז בנין המשכן נישט דוחה שבת."
+    },
+    "abstract": {
+      "en": "The Rav opens with Rashi's reading that the word 'ach' excludes Shabbos from the work of the Mishkan, and the Ramban's question that a limiting word at Shabbos should limit Shabbos. Through the Satmar Rav's answer he shows that physical labor, and a Mishkan built by man, came only because of sin. He then raises questions on the pesukim: the reason given for the death penalty, and the Torah given to Moshe 'kechaloso', like a bride. A kallah is what comes from one's own source: the Torah, the Mikdash, and above all Shabbos, the partner of Knesses Yisrael, through the neshamah yeseirah. On Shabbos every Jew and every Jewish home becomes a mishkan. Since Shabbos, the holiness of time, is greater than the Mikdash, the holiness of place, the smaller gives way to the greater; this also explains why Dovid did not build the Beis Hamikdash. He closes with the levels of Shabbos, its oneg, its song and its love.",
+      "yi": "דער משגיח עפנט מיט רש\"י אז דאס ווארט \"אך\" איז ממעט שבת פון מלאכת המשכן, און מיט דער קשיא פונעם רמב\"ן אז א מיעוט ביי שבת דארף ממעט זיין שבת. דורך דעם תירוץ פונעם סאטמארער רב ווייזט ער אז מלאכה, און א משכן וואס מענטשן בויען, איז געקומען נאר צוליב דעם חטא. דערנאך פרעגט ער אויף די פסוקים: דער טעם פון מחלליה מות יומת, און וואס די תורה איז געגעבן געווארן צו משה \"ככלותו\", ווי א כלה. א כלה איז דאס וואס קומט פון דעם זעלבן שורש: די תורה, דער מקדש, און מער פון אלעם שבת, דער בן זוג פון כנסת ישראל, דורך דער נשמה יתירה. שבת ווערט יעדער איד און יעדע אידישע שטוב א משכן. ווייל שבת, די קדושה פון זמן, איז גרעסער ווי דער מקדש, די קדושה פון מקום, ווערט דאס קלענערע נדחה פאר דעם גרעסערן; דערמיט איז אויך מובן פארוואס דוד המלך האט נישט געבויט דעם בית המקדש. ער ענדיגט מיט די מדריגות פון שבת, דעם עונג, דאס געזאנג און די אהבה פון שבת."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Physical labor, and a Mishkan that had to be built by human hands, came about only because of sin; a positive commandment that arises from a failing does not override a prohibition, so building the Mishkan does not override Shabbos.",
+          "yi": "מלאכה, און א משכן וואס מ'האט געדארפט בויען מיט מענטשליכע הענט, איז געקומען נאר צוליב דעם חטא; א מצות עשה וואס קומט דורך א פשיעה איז נישט דוחה קיין לא תעשה, ממילא איז מלאכת המשכן נישט דוחה שבת."
+        },
+        "evidence": { "segs": [10, 13, 14, 15], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "A kallah is something that comes from one's own source, like Chava from Adam: the Torah for a talmid chacham, the Mikdash, and above all Shabbos are each called a kallah.",
+          "yi": "א כלה איז א זאך וואס קומט פון דעם זעלבן שורש, אזוי ווי חוה פון אדם: די תורה ביי א תלמיד חכם, דער מקדש, און מער פון אלעם שבת ווערן אנגערופן כלה."
+        },
+        "evidence": { "segs": [31, 33, 37, 47], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Shabbos is the partner of Knesses Yisrael; on Shabbos a Jew receives back, through the neshamah yeseirah, the part of his soul that is missing.",
+          "yi": "שבת איז דער בן זוג פון כנסת ישראל; שבת באקומט א איד צוריק, דורך דער נשמה יתירה, דעם חלק נשמה וואס פעלט אים."
+        },
+        "evidence": { "segs": [44, 45, 46], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "On Shabbos every Jew and every Jewish home becomes a mishkan: the candles are the menorah and the challos are the lechem hapanim.",
+          "yi": "שבת ווערט יעדער איד און יעדע אידישע שטוב א משכן: די ליכט זענען די מנורה, און די חלות זענען דער לחם הפנים."
+        },
+        "evidence": { "segs": [60, 61, 72, 73], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Shabbos, the holiness of time, is greater than the Mikdash, the holiness of place, so the smaller gives way to the greater; this answers the Ramban's question.",
+          "yi": "שבת, די קדושה פון זמן, איז גרעסער ווי דער מקדש, די קדושה פון מקום, ממילא ווערט דאס קלענערע נדחה פאר דעם גרעסערן; דערמיט איז מתורץ די קשיא פונעם רמב\"ן."
+        },
+        "evidence": { "segs": [84, 85, 87, 108], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The holiness of Shabbos rises through the day, which is why the morning kiddush has no brachah and shalosh seudos has no kiddush at all: the eating itself sanctifies the Shabbos.",
+          "yi": "די קדושה פון שבת וואקסט דורכאויס דעם טאג, דערפאר האט קידוש אינדערפרי נישט קיין ברכה, און שלש סעודות האט בכלל נישט קיין קידוש: דאס עסן אליין איז מקדש דעם שבת."
+        },
+        "evidence": { "segs": [145, 146, 148, 149], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "The Rav says a Jew must strive to feel the oneg and closeness of Shabbos, the day of love between Hashem and Klal Yisrael.",
+          "yi": "דער משגיח זאגט אז א איד דארף זיך אנשטרענגען צו שפירן דעם עונג און די דביקות פון שבת, דעם טאג פון אהבה צווישן דעם רבונו של עולם און כלל ישראל."
+        },
+        "evidence": { "segs": [152, 153, 156, 160], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-parsha-sefer-shemois-09-01-ki-sisa",
+      "startSeg": 0,
+      "endSeg": 16,
+      "title": { "en": "Why the Mishkan's work does not override Shabbos", "yi": "פארוואס מלאכת המשכן איז נישט דוחה שבת" },
+      "summary": {
+        "en": "The Rav brings Rashi that 'ach' excludes Shabbos from the work of the Mishkan, and the Ramban's question on it. He asks why building does not override Shabbos when korbanos do, and brings the Satmar Rav's answer: labor and a man-built Mishkan came only through sin, and such a mitzvah does not override a prohibition.",
+        "yi": "דער משגיח ברענגט רש\"י אז \"אך\" איז ממעט שבת פון מלאכת המשכן, און די קשיא פונעם רמב\"ן. ער פרעגט פארוואס בנין איז נישט דוחה שבת ווען קרבנות זענען יא דוחה, און ברענגט דעם תירוץ פונעם סאטמארער רב: מלאכה און א משכן פון מענטשן זענען געקומען נאר דורך דעם חטא, און אזא מצוה איז נישט דוחה קיין לאו."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-09-01-ki-sisa",
+      "startSeg": 17,
+      "endSeg": 29,
+      "title": { "en": "Shabbos is more than resting from work", "yi": "שבת איז מער ווי נישט טון קיין מלאכה" },
+      "summary": {
+        "en": "From the Gemara that two Shabbosos kept properly would bring the redemption, the Rav asks how Shabbos will be recognized in a future without labor, and answers that Shabbos is a day of dveikus and a private sign between Hashem and the Jews. He then raises questions on the pesukim: the reason for the death penalty, and Moshe receiving the Torah 'kechaloso'.",
+        "yi": "פון דער גמרא אז צוויי שבתות ווי עס דארף צו זיין וואלטן געבראכט די גאולה, פרעגט דער משגיח מיט וואס מ'וועט דערקענען שבת ווען ס'וועט נישט זיין קיין מלאכה, און ענטפערט אז שבת איז א טאג פון דביקות און א פריוואטער אות צווישן דעם רבונו של עולם און אידן. דערנאך פרעגט ער אויף די פסוקים: דער טעם פון מות יומת, און וואס משה האט באקומען די תורה \"ככלותו\"."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-09-01-ki-sisa",
+      "startSeg": 30,
+      "endSeg": 42,
+      "title": { "en": "Torah and the Mikdash as a kallah", "yi": "די תורה און דער מקדש ווי א כלה" },
+      "summary": {
+        "en": "The Rav explains that a kallah is one who comes from the same source, as Chava was built from Adam. The Torah is a kallah to a talmid chacham because Torah and the Jewish soul share one root; the Mikdash is a kallah because Adam was formed from its place, and he shows this from the Mishkan as a modest bride and from the sotah's water.",
+        "yi": "דער משגיח ערקלערט אז א כלה איז די וואס קומט פון דעם זעלבן שורש, אזוי ווי חוה איז געבויט געווארן פון אדם. די תורה איז א כלה פאר א תלמיד חכם ווייל די תורה און די אידישע נשמה האבן איין שורש; דער מקדש איז א כלה ווייל אדם איז באשאפן געווארן פון זיין ארט, און ער ווייזט עס פון דעם משכן ווי א כלה צנועה און פון די מים המאררים פון א סוטה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-09-01-ki-sisa",
+      "startSeg": 43,
+      "endSeg": 54,
+      "title": { "en": "Shabbos, the partner of Knesses Yisrael", "yi": "שבת, דער בן זוג פון כנסת ישראל" },
+      "summary": {
+        "en": "The Rav brings the Midrash that Shabbos was given Knesses Yisrael as its partner, and explains that Shabbos is the neshamah yeseirah, the missing part of the Jew's own soul. Shabbos, like Yerushalayim and talmidei chachamim, is a source of blessing, and it is the highest bond; a Jew remains a Jew without the Mikdash, but not without Shabbos.",
+        "yi": "דער משגיח ברענגט דעם מדרש אז שבת האט באקומען כנסת ישראל פאר א בן זוג, און ערקלערט אז שבת איז די נשמה יתירה, דער חלק וואס פעלט פון דעם אידנס אייגענער נשמה. שבת, אזוי ווי ירושלים און תלמידי חכמים, איז א מקור פון ברכה, און עס איז דער העכסטער קשר; א איד בלייבט א איד אן א מקדש, אבער נישט אן שבת."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-09-01-ki-sisa",
+      "startSeg": 55,
+      "endSeg": 66,
+      "title": { "en": "Shabbos itself is a mishkan", "yi": "שבת אליין איז א משכן" },
+      "summary": {
+        "en": "The Rav shows that the pesukim of Shabbos use the language of the Mikdash, so Shabbos itself is kodesh and a mishkan. A talmid chacham is in the state of Shabbos all week, but on Shabbos every Jew becomes a mishkan for the Shechinah, and the Zohar reads 'ledorosam' as 'ledirosam', a dwelling.",
+        "yi": "דער משגיח ווייזט אז די פסוקים פון שבת ניצן דעם לשון פון מקדש, ממילא איז שבת אליין קודש און א משכן. א תלמיד חכם איז א גאנצע וואך בבחינת שבת, אבער שבת ווערט יעדער איד א משכן פאר דער שכינה, און דער זוהר טייטשט \"לדורותם\" ווי \"לדירותם\", א דירה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-09-01-ki-sisa",
+      "startSeg": 67,
+      "endSeg": 74,
+      "title": { "en": "Kares, and the Jewish home as a mishkan", "yi": "כרת, און די אידישע שטוב ווי א משכן" },
+      "summary": {
+        "en": "The Rav explains that one who does melacha on Shabbos cuts himself off from the dveikus that comes through the neshamah yeseirah, which is why the penalty is tied to kares. On Shabbos the Jewish home becomes a mishkan: the candles are the menorah and the two challos are the lechem hapanim.",
+        "yi": "דער משגיח ערקלערט אז דער וואס טוט א מלאכה שבת שנייט זיך אפ פון דער דביקות וואס קומט דורך דער נשמה יתירה, דערפאר איז דער עונש פארבונדן מיט כרת. שבת ווערט די אידישע שטוב א משכן: די ליכט זענען די מנורה און די צוויי חלות זענען דער לחם הפנים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-09-01-ki-sisa",
+      "startSeg": 75,
+      "endSeg": 87,
+      "title": { "en": "Shabbos is greater than the Mikdash", "yi": "שבת איז גרעסער ווי דער מקדש" },
+      "summary": {
+        "en": "The Rav explains that the Mikdash could be destroyed and Jews remained Jews, but Shabbos is an eternal sign. With this he answers the Ramban: the parsha of Shabbos placed after the Mishkan teaches that Shabbos is the greater mishkan, so the smaller sanctuary gives way to the greater one.",
+        "yi": "דער משגיח ערקלערט אז דער מקדש האט געקענט חרוב ווערן און אידן זענען געבליבן אידן, אבער שבת איז אן אות לעולם. דערמיט ענטפערט ער דעם רמב\"ן: די פרשה פון שבת נאך דעם משכן לערנט אז שבת איז דער גרעסערער משכן, ממילא ווערט דער קלענערער נדחה פאר דעם גרעסערן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-09-01-ki-sisa",
+      "startSeg": 88,
+      "endSeg": 106,
+      "title": { "en": "The rosh yeshiva, the cook, and the Shabbos table", "yi": "דער ראש ישיבה, דער קאך און דער שבת'דיגער טיש" },
+      "summary": {
+        "en": "The Rav tells of a rosh yeshiva who had little nachas from his children while the yeshiva's chassidishe cook had fine children, and who attributed it to the cook's Shabbos table. He describes how children absorb the feeling of Shabbos, tells of a boy who strayed and was brought back by the memory of the Shabbos cholent, and explains that a Shabbos-filled home is the guarantee for the generations.",
+        "yi": "דער משגיח דערציילט פון א ראש ישיבה וואס האט נישט געהאט קיין נחת פון זיינע קינדער, בשעת דער חסידישער קאך פון דער ישיבה האט געהאט פיינע קינדער, און ער האט עס צוגעשריבן צו דעם קאכס שבת'דיגן טיש. ער שילדערט ווי קינדער ווערן אנגעזאפט מיט א געפיל פון שבת, דערציילט פון א בחור וואס איז אראפ פון וועג און איז צוריקגעקומען דורך דעם זכרון פונעם שבת'דיגן טשאלנט, און ערקלערט אז א שטוב פול מיט שבת איז די הבטחה פאר די דורות."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-09-01-ki-sisa",
+      "startSeg": 107,
+      "endSeg": 117,
+      "title": { "en": "Time above place; Dovid as the seventh", "yi": "זמן איבער מקום; דוד המלך דער זיבעטער" },
+      "summary": {
+        "en": "The Rav explains that the Mikdash is the 'seventh' of place while Shabbos is the seventh of time, and time is greater, as shown from piggul. Among the seven shepherds Dovid is the seventh, the Shabbos, and therefore the sweet singer of Israel; Shabbos is made of song, and the Shabbos table must be guarded in speech. He then asks why Dovid did not build the Beis Hamikdash.",
+        "yi": "דער משגיח ערקלערט אז דער מקדש איז דער \"שביעי\" פון מקום, און שבת איז דער שביעי פון זמן, און זמן איז גרעסער, ווי מ'זעט פון פיגול. צווישן די זיבן רועים איז דוד דער זיבעטער, דער שבת, און דערפאר נעים זמירות ישראל; שבת באשטייט פון שירה, און ביים שבת'דיגן טיש דארף מען אפהיטן יעדעס ווארט. דערנאך פרעגט ער פארוואס דוד האט נישט געבויט דעם בית המקדש."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-09-01-ki-sisa",
+      "startSeg": 118,
+      "endSeg": 128,
+      "title": { "en": "Dovid's heart, and Shabbos before the Golden Calf", "yi": "דוד'ס הארץ, און שבת פאר דעם עגל" },
+      "summary": {
+        "en": "From the pesukim in Melachim the Rav explains that Dovid already made his heart a dwelling for Shabbos, so he did not need to build a Mikdash of place. He then explains the order of the parshiyos: Mikdash, then Shabbos, then the Golden Calf, which destroyed the Mikdash but could not undo Shabbos.",
+        "yi": "פון די פסוקים אין ספר מלכים ערקלערט דער משגיח אז דוד האט שוין געמאכט זיין הארץ פאר א דירה פאר שבת, ממילא האט ער נישט געדארפט בויען א מקדש פון מקום. דערנאך ערקלערט ער דעם סדר פון די פרשיות: מקדש, דערנאך שבת, דערנאך דער עגל, וואס האט מבטל געווען דעם מקדש אבער נישט געקענט מבטל זיין שבת."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-09-01-ki-sisa",
+      "startSeg": 129,
+      "endSeg": 138,
+      "title": { "en": "Shabbos, Hashem's hidden diamond", "yi": "שבת, דער באהאלטענער דימענט פונעם אייבערשטן" },
+      "summary": {
+        "en": "On 'to know that I am Hashem who sanctifies you', the Rav brings the Gemara that Shabbos is a good gift from Hashem's treasury, compares it to a diamond that keeps a bride awake all night, and says the tzaddikim could not sleep on Shabbos for joy. He brings Yosef who honored Shabbos and found a treasure in a fish.",
+        "yi": "אויף \"לדעת כי אני ה' מקדשכם\" ברענגט דער משגיח די גמרא אז שבת איז א מתנה טובה פון דעם רבונו של עולמ'ס בית גנזיו, גלייכט עס צו א דימענט וואס א כלה קען נישט שלאפן א גאנצע נאכט דערפון, און זאגט אז צדיקים האבן נישט געקענט שלאפן שבת פאר שמחה. ער ברענגט יוסף מוקיר שבת וואס האט געפונען אן אוצר אין א פיש."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-09-01-ki-sisa",
+      "startSeg": 139,
+      "endSeg": 151,
+      "title": { "en": "The rising levels of kiddush and the seudos", "yi": "די וואקסנדיגע מדריגות פון קידוש און די סעודות" },
+      "summary": {
+        "en": "The Rav explains that kiddush must be where the meal is because the meal itself sanctifies Shabbos. Like the Kohen Gadol who immerses before putting on the lesser garments, Shabbos keeps rising: Friday night kiddush has a brachah, the morning kiddush does not, and shalosh seudos has no kiddush, since the eating alone proclaims Shabbos.",
+        "yi": "דער משגיח ערקלערט אז קידוש מוז זיין במקום סעודה ווייל די סעודה אליין איז מקדש דעם שבת. אזוי ווי דער כהן גדול וואס טובלט זיך איידער ער טוט אן די קלענערע בגדים, וואקסט שבת אלעמאל: פרייטאג צונאכטס האט קידוש א ברכה, אינדערפרי נישט, און שלש סעודות האט נישט קיין קידוש, ווייל דאס עסן אליין שרייט ארויס שבת."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-09-01-ki-sisa",
+      "startSeg": 152,
+      "endSeg": 169,
+      "title": { "en": "Feeling the oneg and love of Shabbos", "yi": "שפירן דעם עונג און די אהבה פון שבת" },
+      "summary": {
+        "en": "The Rav says one must strive to feel oneg and closeness on Shabbos, reading 'vekarasa laShabbos oneg' as the Shabbos having pleasure from the Jew. Shabbos is the day of love, needing no sin offering, and the day of song; one who does not yet feel it should at least believe it. He tells of a tzaddik who compared a poritz's summer sled ride on sugar to his own pleasure in saying Nishmas on Shabbos, and closes with a call to prepare for Shabbos.",
+        "yi": "דער משגיח זאגט אז מ'דארף זיך אנשטרענגען צו שפירן עונג און דביקות שבת, און טייטשט \"וקראת לשבת עונג\" אז דער שבת זאל האבן עונג פון דעם איד. שבת איז דער טאג פון אהבה, וואס דארף נישט קיין שעיר חטאת, און דער טאג פון שירה; ווער עס שפירט נאך נישט, זאל כאטש גלייבן. ער דערציילט פון א צדיק וואס האט צוגעגלייכט א פריצ'ס זומער שליטן־פאר אויף צוקער צו זיין תענוג ביי נשמת שבת אינדערפרי, און ענדיגט מיט א רוף זיך צוצוגרייטן צו שבת."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "זאגט רשע אחת שבתיתו תשמירה", "work": "Rashi", "ref": "Rashi on Shemos 31:13", "sefariaRef": "Rashi on Exodus 31:13", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [0, 1], "confidence": 0.8 } },
+    { "heardAs": "רמב״ן פרעגט א קשר אויף דעם", "work": "Ramban", "ref": "Ramban on Shemos 31:13", "sefariaRef": "Ramban on Exodus 31:13", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [1, 2, 23], "confidence": 0.8 } },
+    { "heardAs": "דער סאטמאר ראטזעך איינער לברכה", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [4], "confidence": 0.8 } },
+    { "heardAs": "רבי יחנן במזעקי ... האט מתקן געווען", "work": "Gemara Sukkah", "ref": "Sukkah 41a", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [4, 5, 7, 8], "confidence": 0.7 } },
+    { "heardAs": "מקדש ה' כננא ידך", "work": "Shemos", "ref": "Shemos 15:17", "sefariaRef": "Exodus 15:17", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [8], "confidence": 0.85 } },
+    { "heardAs": "א סעודה ארץ ישראל שטייט יגעלת כולל כלי מילות", "work": "Gemara Shabbos", "ref": "Shabbos 30b", "sefariaRef": "Shabbat 30b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [12], "confidence": 0.7 } },
+    { "heardAs": "אין מולי שומרי יששכר, שנה שבתות מייד נגלים", "work": "Gemara Shabbos", "ref": "Shabbos 118b", "sefariaRef": "Shabbat 118b", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [17, 18], "confidence": 0.8 } },
+    { "heardAs": "אחת שבתיתו תשמירה ... כי אותי בנו ונכם לדורותכם", "work": "Shemos", "ref": "Shemos 31:13", "sefariaRef": "Exodus 31:13", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [0, 20, 65, 77], "confidence": 0.9 } },
+    { "heardAs": "ומחללה מועס ימות ... כי כל העותה במלאכה ונחתה", "work": "Shemos", "ref": "Shemos 31:14", "sefariaRef": "Exodus 31:14", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [25, 26, 67, 70], "confidence": 0.85 } },
+    { "heardAs": "ויוטן על משה כחלותא ... ניתן עלי תורה כקלה", "work": "Rashi", "ref": "Rashi on Shemos 31:18", "sefariaRef": "Rashi on Exodus 31:18", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [27, 28, 57], "confidence": 0.8 } },
+    { "heardAs": "הקדוש ברכה וישראל וירשך חדהו", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "quoted", "evidence": { "segs": [35, 37], "confidence": 0.75 } },
+    { "heardAs": "היפה נוף מסוס כל הארץ", "work": "Tehillim", "ref": "Tehillim 48:3", "sefariaRef": "Psalms 48:3", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [38], "confidence": 0.8 } },
+    { "heardAs": "נוף מיינט הקלה, שכן בקראקע הים קרן לקלה נינפי", "work": "Gemara Rosh Hashanah", "ref": "Rosh Hashanah 26a", "sefariaRef": "Rosh Hashanah 26a", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [38], "confidence": 0.75 } },
+    { "heardAs": "תרכיב יונתן", "work": "Targum Yonasan", "ref": "Targum Yonasan on Bereishis 2:7", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [39, 40], "confidence": 0.65 } },
+    { "heardAs": "רשע זאגט אין תרומה ... דומה לכלה צנעה", "work": "Rashi", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [41], "confidence": 0.7 } },
+    { "heardAs": "בקקא המשכן, יקח הכה ונתן אויף תוך המים", "work": "Bamidbar", "ref": "Bamidbar 5:17", "sefariaRef": "Numbers 5:17", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [41, 42], "confidence": 0.75 } },
+    { "heardAs": "לכולם נתת בן זאג און אותי לא נתת בן זאג", "work": "Bereishis Rabbah", "ref": "Bereishis Rabbah 11:8", "sefariaRef": "Bereshit Rabbah 11:8", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [43, 44], "confidence": 0.85 } },
+    { "heardAs": "אזוי שטעט אין רבינו בחייה", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [45], "confidence": 0.75 } },
+    { "heardAs": "וימש ושבת וינפש", "work": "Shemos", "ref": "Shemos 31:17", "sefariaRef": "Exodus 31:17", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [45, 57], "confidence": 0.8 } },
+    { "heardAs": "לכא דוד ילקחת כלה", "work": "Lecha Dodi", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "quoted", "evidence": { "segs": [47], "confidence": 0.85 } },
+    { "heardAs": "דער חרדים האט געשריבן ... ותוך ליבו משקם אבנר", "work": "Sefer Charedim", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "quoted", "evidence": { "segs": [62], "confidence": 0.7 } },
+    { "heardAs": "ווען אין זייער הקודש שטעט, לידירותם", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [63, 64, 103], "confidence": 0.75 } },
+    { "heardAs": "אין זיירה הקדושה ... תיאג עצן", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [68], "confidence": 0.7 } },
+    { "heardAs": "פני כבש אלוקים לטוב", "work": "Tehillim", "ref": "Tehillim 73:28", "sefariaRef": "Psalms 73:28", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [67], "confidence": 0.7 } },
+    { "heardAs": "אין דעם זמר אז זאמער בשבחים", "work": "Azamer Bishvachin", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "quoted", "evidence": { "segs": [72], "confidence": 0.8 } },
+    { "heardAs": "שבטים פירקט רבי אלעזר; פרקי'ת רבי אליעזר", "work": "Pirkei d'Rabbi Eliezer", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [88, 107, 158], "confidence": 0.7 } },
+    { "heardAs": "דער בני יששכר זאגט דאך אז אין תשלם'ס דארט ליגט דער מאן", "work": "Bnei Yissaschar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [101], "confidence": 0.8 } },
+    { "heardAs": "מחשבת פיגל פון חוצה לזמנו ... חוצה למקומו", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [108], "confidence": 0.8 } },
+    { "heardAs": "מן היום השי' הוצאת את עמי את ישראל ממוצחים ... יענע שהיה אים לבבחן לבנות בית לשמוע", "work": "Melachim I", "ref": "Melachim I 8:16-18", "sefariaRef": "I Kings 8:16-18", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [118, 119, 120, 121], "confidence": 0.8 } },
+    { "heardAs": "אפילו עובד אבודי זרע כעניש ... מוחל און לויב", "work": "Gemara Shabbos", "ref": "Shabbos 118b", "sefariaRef": "Shabbat 118b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [127], "confidence": 0.7 } },
+    { "heardAs": "מה תנאה טובה ישלי בבית גנזי, ושבת שמה, לך והודעים", "work": "Gemara Shabbos", "ref": "Shabbos 10b", "sefariaRef": "Shabbat 10b", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [129], "confidence": 0.85 } },
+    { "heardAs": "אשת חייל וואס איז רוחק מפנינו ממוחה", "work": "Mishlei", "ref": "Mishlei 31:10", "sefariaRef": "Proverbs 31:10", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [130], "confidence": 0.8 } },
+    { "heardAs": "ויכול טייטשן ספרים הקדושים", "work": "Bereishis", "ref": "Bereishis 2:2", "sefariaRef": "Genesis 2:2", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [135], "confidence": 0.6 } },
+    { "heardAs": "יוסף חוצה דגה מוצאה מלגלות בפסרי", "work": "Gemara Shabbos", "ref": "Shabbos 119a", "sefariaRef": "Shabbat 119a", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [137, 138], "confidence": 0.75 } },
+    { "heardAs": "די קידוש דארף זיין במקום סעדה", "work": "Gemara Pesachim", "ref": "Pesachim 101a", "sefariaRef": "Pesachim 101a", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [139, 151], "confidence": 0.75 } },
+    { "heardAs": "במה ברכה, במה פנף של אדם, במה ברכה בנרעס", "work": "Bereishis Rabbah", "ref": "Bereishis Rabbah 11:2", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [141], "confidence": 0.65 } },
+    { "heardAs": "דער מספר פרעגט ... ביג דעי לאוון ... ביג דעי זאב", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [142, 143], "confidence": 0.7 } },
+    { "heardAs": "וקראס על השבת סינוג ... במקום עונג שם תקרא", "work": "Yeshayahu", "ref": "Yeshayahu 58:13", "sefariaRef": "Isaiah 58:13", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [150, 153, 154], "confidence": 0.85 } },
+    { "heardAs": "רבי שלמה קאלינא האט געזאגט", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [151, 152], "confidence": 0.65 } },
+    { "heardAs": "דער רמב״ן זאגט ... סוער לחטא", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [155], "confidence": 0.65 } },
+    { "heardAs": "על כל פשעים תכסה אהבה", "work": "Mishlei", "ref": "Mishlei 10:12", "sefariaRef": "Proverbs 10:12", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [156], "confidence": 0.85 } },
+    { "heardAs": "כי לבתים מתת על המנוחה ועל הנחלה", "work": "Devarim", "ref": "Devarim 12:9", "sefariaRef": "Deuteronomy 12:9", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [160, 161], "confidence": 0.7 } }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav applies the rule that a positive commandment arising from a failing does not override a prohibition to the Mishkan: had there been no sin, Hashem Himself would have built it, so the human labor of building it cannot override Shabbos.",
+        "yi": "דער משגיח לערנט דעם כלל אז אן עשה וואס קומט דורך א פשיעה איז נישט דוחה קיין לאו אויף דעם משכן: אן דעם חטא וואלט דער רבונו של עולם אליין עס געבויט, ממילא קען די מענטשליכע מלאכה פון בויען נישט דוחה זיין שבת."
+      },
+      "evidence": { "segs": [10, 13, 14, 15], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Torah, the Mikdash and Shabbos are each a 'kallah' because each comes from the same root as the Jewish soul, as Chava was taken from Adam; a bride is one's own missing part.",
+        "yi": "די תורה, דער מקדש און שבת ווערן יעדעס אנגערופן \"כלה\" ווייל יעדעס קומט פון דעם זעלבן שורש ווי די אידישע נשמה, אזוי ווי חוה איז גענומען געווארן פון אדם; א כלה איז דער אייגענער חלק וואס פעלט."
+      },
+      "evidence": { "segs": [33, 34, 36, 40], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav reads the Ramban's question away: 'ach' does limit Shabbos, but the Shabbos of place, the Mikdash, which gives way to the greater Shabbos of time.",
+        "yi": "דער משגיח פארענטפערט דעם רמב\"ן: \"אך\" איז טאקע ממעט שבת, אבער דעם שבת פון מקום, דעם מקדש, וואס ווערט נדחה פאר דעם גרעסערן שבת פון זמן."
+      },
+      "evidence": { "segs": [85, 86, 87], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Dovid did not build the Beis Hamikdash because he was himself the 'seventh', the Shabbos among the seven shepherds; having made his heart a dwelling for Shabbos, he did not need a Mikdash of place.",
+        "yi": "דוד המלך האט נישט געבויט דעם בית המקדש ווייל ער אליין איז געווען דער \"זיבעטער\", דער שבת צווישן די זיבן רועים; ווייל ער האט געמאכט זיין הארץ פאר א דירה פאר שבת, האט ער נישט געדארפט קיין מקדש פון מקום."
+      },
+      "evidence": { "segs": [109, 116, 117, 121, 122], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The parsha of Shabbos stands between the Mishkan and the Golden Calf to show that the sin which cost the Jews the Mikdash could not touch Shabbos.",
+        "yi": "די פרשה פון שבת שטייט צווישן דעם משכן און דעם עגל כדי צו ווייזן אז דער חטא וואס האט אוועקגענומען דעם מקדש האט נישט געקענט אנרירן שבת."
+      },
+      "evidence": { "segs": [125, 126, 127], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The decreasing formality of kiddush through Shabbos, from kiddush with a brachah to no kiddush at shalosh seudos, reflects rising holiness: by the end, the eating alone proclaims the Shabbos.",
+        "yi": "וואס קידוש ווערט אלץ קלענער דורכאויס שבת, פון קידוש מיט א ברכה ביז קיין קידוש ביי שלש סעודות, ווייזט אויף א וואקסנדיגע קדושה: צום סוף שרייט דאס עסן אליין ארויס דעם שבת."
+      },
+      "evidence": { "segs": [145, 146, 148, 149], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "'Vekarasa laShabbos oneg' is read not only as the Jew's pleasure in Shabbos, but as Shabbos having pleasure from the Jew.",
+        "yi": "\"וקראת לשבת עונג\" מיינט נישט נאר אז דער איד האט עונג פון שבת, נאר אז דער שבת זאל האבן עונג פון דעם איד."
+      },
+      "evidence": { "segs": [153, 154], "confidence": 0.7 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The rosh yeshiva and the cook", "yi": "דער ראש ישיבה און דער קאך" },
+      "retelling": {
+        "en": "A great rosh yeshiva, whom the Rav does not name, had little nachas from his children; one became a professor with a yarmulke. The cook of his yeshiva was a chassidishe Jew whose sons were among the best bochurim in the yeshiva. The rosh yeshiva admitted the truth and asked how he differed from the cook, and concluded that the cook merited it because he sang zemiros at his Shabbos table.",
+        "yi": "א גרויסער ראש ישיבה, וועמען דער משגיח הייסט נישט, האט נישט געהאט קיין נחת פון זיינע קינדער; איינער איז אויסגעוואקסן א פראפעסאר מיט א יארמולקע. דער קאך אין זיין ישיבה איז געווען א חסידישער איד, און זיינע קינדער זענען געווען פון די בעסערע בחורים אין ישיבה. דער ראש ישיבה איז מודה געווען על האמת און געפרעגט מיט וואס ער איז אנדערש ווי דער קאך, און אויסגעפירט אז דער קאך איז זוכה געווען ווייל ער זינגט זמירות ביים שבת'דיגן טיש."
+      },
+      "people": [],
+      "evidence": { "segs": [88, 89, 90], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "The poor man's challah and fish", "yi": "דער ארימאנ'ס חלה און פיש" },
+      "retelling": {
+        "en": "A very poor chassidishe Jew could barely scrape together a few groshen to buy a little challah and fish for Shabbos. Sitting down to eat, he said to Hashem: You gave me challah for Shabbos, I ask You, give me Shabbos in the challah; and likewise over the fish.",
+        "yi": "א זייער ארימער חסידישער איד האט קוים געקענט צונויפקראצן עטליכע גראשן אויף א שטיקל חלה מיט פיש אויף שבת. ווען ער האט זיך געזעצט עסן, האט ער געזאגט צום רבונו של עולם: דו האסט מיר געגעבן חלה אויף שבת, איך בעט דיך, גיב מיר שבת אין דער חלה; און דאס זעלבע ביי דעם פיש."
+      },
+      "people": [],
+      "evidence": { "segs": [92, 93, 94], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The boy who remembered the cholent", "yi": "דער בחור וואס האט זיך דערמאנט דעם טשאלנט" },
+      "retelling": {
+        "en": "The Rav's mechutan in the Bronx made a kiddush every Shabbos in his small shul and served cholent in honor of Shabbos. A boy who came there later went into the army, fell very low and committed grave sins. Suddenly one Shabbos he remembered that cholent, and the memory stirred him so much that he came back.",
+        "yi": "דעם משגיח'ס מחותן אין דער בראנקס פלעגט יעדן שבת מאכן א קידוש אין זיין קליינער שול און געבן טשאלנט לכבוד שבת. א בחור וואס איז דארט געווען איז שפעטער אריין אין דער ארמיי, איז געפאלן דחי אחר דחי און געטון די ערגסטע עבירות. פלוצלינג איין שבת האט ער זיך דערמאנט אין יענעם טשאלנט, און דער זכרון האט אים אזוי אויפגערודערט אז ער איז צוריקגעקומען."
+      },
+      "people": [],
+      "evidence": { "segs": [101, 102, 103], "confidence": 0.65 }
+    },
+    {
+      "title": { "en": "The poritz's summer sleigh ride", "yi": "דעם פריצ'ס שליטן־פאר אין זומער" },
+      "retelling": {
+        "en": "A wild poritz living near a tzaddik, apparently the Beis Aharon, wanted to go sledding in the middle of summer, so he had thousands of sacks of sugar spread over a field to look like snow and rode over it with two white horses, when sugar was very expensive in Russia. People ran to tell the tzaddik of this pleasure, and he answered: what is that pleasure compared to mine on Shabbos morning when I say Nishmas.",
+        "yi": "א משוגענער פריץ וואס האט געוואוינט נעבן א צדיק, ווי עס זעט אויס דער בית אהרן, האט געוואלט פארן מיט א שליטן אינמיטן זומער, האט ער געהייסן אויסשיטן טויזנטער זעק צוקער איבער א פעלד ווי שניי, און איז געפארן דערויף מיט צוויי ווייסע פערד, ווען צוקער איז געווען זייער טייער אין רוסלאנד. מ'איז געלאפן דערציילן דעם צדיק פון דעם תענוג, און ער האט געענטפערט: וואס איז דער תענוג קעגן מיין תענוג שבת אינדערפרי ווען איך זאג נשמת."
+      },
+      "people": ["the Beis Aharon"],
+      "evidence": { "segs": [163, 164, 165], "confidence": 0.7 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "Why should building the Mishkan not override Shabbos, when the korbanos it serves do override Shabbos?", "yi": "פארוואס זאל בנין המשכן נישט דוחה זיין שבת, ווען די קרבנות וואס מ'ברענגט דארט זענען יא דוחה שבת?" },
+      "answer": { "en": "Labor and a man-built Mishkan exist only because of the sin; a commandment that arises from a failing does not override a prohibition.", "yi": "מלאכה און א משכן פון מענטשן זענען דא נאר צוליב דעם חטא; א מצוה וואס קומט דורך א פשיעה איז נישט דוחה קיין לאו." },
+      "questionSegs": [3, 4], "answerSegs": [10, 13, 14, 15], "confidence": 0.75
+    },
+    {
+      "question": { "en": "In a future world without labor, how will Shabbos be recognized?", "yi": "ווען ס'וועט נישט זיין קיין מלאכה אויף דער וועלט, מיט וואס וועט מען דערקענען שבת?" },
+      "answer": { "en": "Shabbos is far more than refraining from labor; it is a day of dveikus and a private sign between Hashem and the Jewish people.", "yi": "שבת איז אסאך מער ווי נישט טון קיין מלאכה; עס איז א טאג פון דביקות און א פריוואטער אות צווישן דעם רבונו של עולם און כלל ישראל." },
+      "questionSegs": [20], "answerSegs": [21, 22], "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why does the pasuk give kares as the reason for the death penalty for desecrating Shabbos?", "yi": "פארוואס גיט דער פסוק כרת פאר א טעם אויף מחלליה מות יומת?" },
+      "answer": { "en": "One who does melacha on Shabbos cuts himself off from the dveikus with Hashem that comes through the neshamah yeseirah.", "yi": "דער וואס טוט מלאכה שבת שנייט זיך אפ פון דער דביקות מיטן רבונו של עולם וואס קומט דורך דער נשמה יתירה." },
+      "questionSegs": [25, 26], "answerSegs": [67, 70, 71], "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why does 'ach', written at Shabbos, limit the Mishkan rather than Shabbos (the Ramban's question)?", "yi": "פארוואס איז \"אך\" וואס שטייט ביי שבת ממעט דעם משכן און נישט שבת (די קשיא פונעם רמב\"ן)?" },
+      "answer": { "en": "Shabbos is itself the greater mishkan; 'ach' limits the smaller Shabbos of place, the Mikdash, which gives way to the Shabbos of time.", "yi": "שבת אליין איז דער גרעסערער משכן; \"אך\" איז ממעט דעם קלענערן שבת פון מקום, דעם מקדש, וואס ווערט נדחה פאר דעם שבת פון זמן." },
+      "questionSegs": [1, 2, 82, 83], "answerSegs": [84, 85, 86], "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why did Dovid Hamelech not build the Beis Hamikdash?", "yi": "פארוואס האט דוד המלך נישט געבויט דעם בית המקדש?" },
+      "answer": { "en": "Dovid was the Shabbos among the seven shepherds and had made his heart a dwelling for Shabbos, so a Mikdash of place was not fitting for him.", "yi": "דוד איז געווען דער שבת צווישן די זיבן רועים און האט געמאכט זיין הארץ פאר א דירה פאר שבת, ממילא האט נישט געפאסט פאר אים א מקדש פון מקום." },
+      "questionSegs": [116, 117], "answerSegs": [121, 122], "confidence": 0.7
+    },
+    {
+      "question": { "en": "Why does the morning kiddush have no brachah, and shalosh seudos no kiddush at all?", "yi": "פארוואס האט קידוש אינדערפרי נישט קיין ברכה, און שלש סעודות בכלל נישט קיין קידוש?" },
+      "answer": { "en": "Shabbos keeps rising in holiness, so by the end the eating itself is the kiddush and proclaims the Shabbos.", "yi": "שבת וואקסט אלעמאל אין קדושה, ממילא צום סוף איז דאס עסן אליין דער קידוש און שרייט ארויס דעם שבת." },
+      "questionSegs": [146, 147], "answerSegs": [148, 149], "confidence": 0.7
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Rav says a Shabbos table with zemiros and a Shabbos-filled home is what instills the feeling of Shabbos in children and safeguards the generations.", "yi": "דער משגיח זאגט אז א שבת'דיגער טיש מיט זמירות און א שטוב פול מיט שבת איז דאס וואס זאפט איין דעם געפיל פון שבת אין די קינדער און היט אפ די דורות." },
+      "evidence": { "segs": [98, 99, 105, 106], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "He says that at the Shabbos table one should not talk about current events, and every word should be guarded.", "yi": "ער זאגט אז ביים שבת'דיגן טיש זאל מען נישט רעדן וועגן די נייעס פון דער וועלט, און מ'זאל אפהיטן יעדעס ווארט." },
+      "evidence": { "segs": [113, 114], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "He says one must strive to feel oneg and closeness to Hashem on Shabbos, and one who does not yet feel it should at least believe that Shabbos is good until he comes to feel it.", "yi": "ער זאגט אז מ'דארף זיך אנשטרענגען צו שפירן עונג און דביקות צום רבונו של עולם שבת, און ווער עס שפירט נאך נישט זאל כאטש גלייבן אז שבת איז גוט ביז ער וועט אנהייבן שפירן." },
+      "evidence": { "segs": [152, 160], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "He calls for preparing for Shabbos during the week and asking Hashem to merit feeling it.", "yi": "ער רופט זיך צוצוגרייטן צו שבת אין דער וואך און בעטן דעם רבונו של עולם מ'זאל זוכה זיין עס צו שפירן." },
+      "evidence": { "segs": [167, 169], "confidence": 0.7 }
+    }
+  ],
+  "candidateTopics": [
+    "Shabbos as kallah",
+    "Shabbos and the Mishkan",
+    "neshamah yeseirah",
+    "holiness of time and place",
+    "Ramban's question on 'ach es Shabsosai'",
+    "Jewish home as a mishkan",
+    "zemiros and the Shabbos table",
+    "oneg Shabbos",
+    "Dovid Hamelech and the Beis Hamikdash",
+    "parshas Ki Sisa"
+  ],
+  "concepts": [
+    { "he": "נשמה יתירה", "heardAs": ["נשמה יסירה", "שמע יסירה"] },
+    { "he": "בן זוג", "heardAs": ["בן זאג", "בנזוג", "בעס זאג"] },
+    { "he": "כלה", "heardAs": ["קלה", "כלה"] },
+    { "he": "ככלותו", "heardAs": ["כחלותא", "כחלותי", "כחלתו"] },
+    { "he": "מלאכת המשכן", "heardAs": ["מלכות המשכן", "מלאכות המשכן"] },
+    { "he": "דביקות", "heardAs": ["דבעקות", "דביקת", "דבגות"] },
+    { "he": "עונג שבת", "heardAs": ["נונוג", "ענק", "אונג"] },
+    { "he": "כרת", "heardAs": ["קרות", "קריסת"] },
+    { "he": "לחם הפנים", "heardAs": ["לחם הפנים", "שולחן אפנים"] },
+    { "he": "שלש סעודות", "heardAs": ["שאלה שעדות"] },
+    { "he": "עשה דוחה לא תעשה", "heardAs": ["אן עתה איז נישט דורך א לעתה"] }
+  ],
+  "people": [
+    { "name": "Rashi", "heardAs": ["רשע", "רש''ה"] },
+    { "name": "the Ramban", "heardAs": ["רמב״ן"] },
+    { "name": "the Satmar Rav", "heardAs": ["סאטמאר ראטזעך"] },
+    { "name": "Rabban Yochanan ben Zakkai", "heardAs": ["רבי יחנן במזעקי", "רבי יוחנן בן זאקאי"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו"] },
+    { "name": "Adam", "heardAs": ["אדם"] },
+    { "name": "Chava", "heardAs": ["חבר"] },
+    { "name": "Rabbeinu Bachya", "heardAs": ["רבינו בחייה"] },
+    { "name": "Dovid Hamelech", "heardAs": ["דוד המלך"] },
+    { "name": "Shlomo Hamelech", "heardAs": ["שלמה המלך"] },
+    { "name": "Yosef Mokir Shabbos", "heardAs": ["יוסף חוצה"] },
+    { "name": "Rabbi Shlomo of Karlin", "heardAs": ["רבי שלמה קאלינא"] },
+    { "name": "the Beis Aharon", "heardAs": ["בית ארם", "בית ארון"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair for the Rav's own speech but Hebrew quotations are heavily garbled; most were recoverable from Parshas Ki Sisa context. The name of the tzaddik in the sugar-sleigh story (heard as 'בית ארם'/'בית ארון') and the author cited on guarding speech at the Shabbos table (seg 113) are uncertain; the source on the Kohen Gadol's immersion (segs 142-144) and the Ramban on the absent se'ir chatas (seg 155) could not be pinned down. There is no long silent or hallucinated stretch."
+}
