@@ -1,0 +1,466 @@
+{
+  "shiurId": "yi-parshas-hashavua-mshptym-03",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that Hashem judges each person by his level, and that the six weeks of Shovavim, ending with Mishpatim, are the tikkun of the souls of Egypt, which is the key to the suffering of the last generations and to how a Jew holds on in exile.",
+      "yi": "דער משגיח ערקלערט אז דער אייבערשטער משפט'ט יעדן מענטש לויט זיין מדריגה, און אז די זעקס וואכן שובבי\"ם, וואס ענדיגן זיך מיט משפטים, זענען דער תיקון פון די נשמות פון מצרים; דאס איז דער שליסל צו די יסורים פון די לעצטע דורות און וויאזוי א איד האלט זיך אין גלות."
+    },
+    "abstract": {
+      "en": "The Rav opens by showing that the same act is judged differently by a person's level: the Zohar's severity about walking without washing the hands, the laws of yichus, Reuven and David, and the sensitivities of tzaddikim. Rabbah bar bar Chanah's porters show that for a great man the higher standard is the din itself, and the Rav reads 'do not go up by steps on My altar' as a warning that for one who has risen, pride is like arayos. He then turns to the end of Shovavim: following the Arizal, the souls of Egypt were those of the generations of the flood, the dispersion and Sedom, and their tikkun is now done through toil in Torah. The Zohar on Mishpatim as the judgment of gilgulim, with a Ba'al Shem Tov story, explains suffering that seems unjust, including the churban of Europe and the complaints against the tzaddikim, as against Moshe and Mordechai. He ends with Esther in the beis hatzelamim, Yaakov's 'lagur', and the joy of Adar and Purim.",
+      "yi": "דער משגיח עפנט מיט ווייזן אז די זעלבע זאך ווערט געמשפט'ט לויט דער מדריגה פונעם מענטש: דער זוהר וועגן גיין אן נעגל וואסער, די דינים פון יחוס, ראובן און דוד המלך, און די הרגשים פון צדיקים. די מעשה פון רבה בר בר חנה מיט די טרעגער ווייזט אז ביי א גרויסן מענטש איז די העכערע מדה דער דין אליין, און דעם פסוק \"ולא תעלה במעלות על מזבחי\" טייטשט ער אז ביי איינעם וואס איז ארויפגעגאנגען איז גאוה אזוי ווי עריות. דערנאך גייט ער איבער צום סוף פון שובבי\"ם: לויט דעם אריז\"ל זענען די נשמות אין מצרים געווען פון דור המבול, דור הפלגה און סדום, און היינט איז זייער תיקון דורך יגיעה אין תורה. דער זוהר אויף משפטים, אז דאס זענען דינים פון גלגולים, מיט א מעשה פונעם בעל שם טוב, ערקלערט יסורים וואס זעען אויס אומגערעכט, אויך דעם חורבן אין אייראפע און די טענות אויף די צדיקים, אזוי ווי אויף משה רבינו און מרדכי. ער ענדיגט מיט אסתר אין בית הצלמים, מיט יעקב אבינו'ס \"לגור\", און מיט דער שמחה פון אדר און פורים."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The Rav teaches that the same act carries different weight according to a person's level; even halacha shows this, giving more laws to those who stand higher.",
+          "yi": "דער משגיח לערנט אז די זעלבע זאך האט אן אנדער וואג לויט די מדריגה פונעם מענטש; אפילו די הלכה ווייזט עס, ווייל ווער עס שטייט העכער באקומט מער דינים."
+        },
+        "evidence": { "segs": [55, 57, 70, 71, 72], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "For a great person the higher standard is not beyond the letter of the law but the din itself, as Rav told Rabbah bar bar Chanah.",
+          "yi": "ביי א גרויסן מענטש איז די העכערע מדה נישט לפנים משורת הדין, נאר דער דין אליין, אזוי ווי רב האט געזאגט פאר רבה בר בר חנה."
+        },
+        "evidence": { "segs": [220, 222, 226, 230], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The six weeks of Shovavim, from galus Mitzrayim to 'naaseh v'nishma' at the end of Mishpatim, are a time of tikkun, and the main tikkun today is toil in Torah.",
+          "yi": "די זעקס וואכן שובבי\"ם, פון גלות מצרים ביז \"נעשה ונשמע\" אין סוף משפטים, זענען א צייט פון תיקון, און דער עיקר תיקון היינט איז יגיעה אין תורה."
+        },
+        "evidence": { "segs": [271, 275, 281, 405, 408], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The Jews of Egypt were the souls of the generations of the flood, the dispersion and Sedom, who came back to be cleansed through the suffering of the exile.",
+          "yi": "די אידן אין מצרים זענען געווען די נשמות פון דור המבול, דור הפלגה און סדום, וואס זענען צוריקגעקומען כדי צו ווערן גערייניגט דורך די יסורים פונעם גלות."
+        },
+        "evidence": { "segs": [297, 299, 304, 312, 342], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "'V'eileh hamishpatim' are, per the Zohar, the judgments of gilgulim: suffering that looks unjust is part of an accounting from earlier lives that no one sees whole.",
+          "yi": "\"ואלה המשפטים\" זענען, לויטן זוהר, די דינים פון גלגולים: יסורים וואס זעען אויס אומגערעכט זענען א טייל פון א חשבון פון פריערדיגע גלגולים וואס קיינער זעט נישט אינגאנצן."
+        },
+        "evidence": { "segs": [604, 606, 690, 694, 707], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The Rav defends the tzaddikim of Europe against those who blamed them for the churban: like Moshe and Mordechai, they were blamed for the hardship at the end of an exile, while their concern was that Jews remain Jews.",
+          "yi": "דער משגיח שטעלט זיך אפ פאר די צדיקים פון אייראפע קעגן די וואס האבן זיי באשולדיגט אין דעם חורבן: אזוי ווי משה רבינו און מרדכי, האט מען זיי באשולדיגט אין דער שווערקייט פונעם סוף גלות, כאטש זייער זארג איז געווען אז אידן זאלן בלייבן אידן."
+        },
+        "evidence": { "segs": [845, 899, 974, 1018, 1019], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Like Yaakov's sons before Pharaoh, a Jew who must live among the nations has to keep feeling that he does not belong there; the danger begins when he grows comfortable.",
+          "yi": "אזוי ווי די שבטים פאר פרעה, דארף א איד וואס מוז וואוינען צווישן די אומות אלעמאל פילן אז ער געהערט נישט דארט; די סכנה הייבט זיך אן ווען ער ווערט באקוועם."
+        },
+        "evidence": { "segs": [1239, 1245, 1247, 1266, 1268], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-parsha-sefer-shemois-06-03-mishpatim", "startSeg": 0, "endSeg": 90,
+      "title": { "en": "Judged by one's level: washing the hands", "yi": "געמשפט'ט לויט דער מדריגה: נעגל וואסער" },
+      "summary": {
+        "en": "After a story of Rebbe Reb Bunim distancing a young man touched by Haskalah, who later mocked the Zohar that walking four amos without washing the hands carries a death penalty, the Rav explains that the Zohar speaks to a higher level. Halacha itself, in the laws of yichus and of Kohanim, gives more laws the higher a person stands.",
+        "yi": "נאך א מעשה מיטן רבי ר' בונם, וואס האט אוועקגעשטופט א יונגערמאן מיט השכלה וואס האט שפעטער געשפעט פונעם זוהר אז ווער עס גייט ארבע אמות אן נעגל וואסער איז חייב מיתה, ערקלערט דער משגיח אז דער זוהר רעדט צו א העכערע מדריגה. די הלכה אליין, אין די דינים פון יחוס און פון כהנים, גיט מער דינים וואס העכער א מענטש שטייט."
+      },
+      "kind": "intro", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-06-03-mishpatim", "startSeg": 91, "endSeg": 143,
+      "title": { "en": "Reuven, David and Rebbe Reb Elimelech's tashlich", "yi": "ראובן, דוד המלך און דעם רבי ר' אלימלך'ס תשליך" },
+      "summary": {
+        "en": "The Rav explains that Chazal say Reuven and David did not sin, yet the pesukim speak of them as if they had, by the measure of their level. He tells how Rebbe Reb Elimelech said at tashlich that what is a mitzvah for a small man is an aveirah for a great one, and asks how anyone who knows what Mashiach is could think David sinned.",
+        "yi": "דער משגיח ערקלערט אז חז\"ל זאגן אז ראובן און דוד המלך האבן נישט געזינדיגט, און פונדעסטוועגן רעדן די פסוקים ווי זיי וואלטן, לויט זייער מדריגה. ער דערציילט אז דער רבי ר' אלימלך האט געזאגט ביי תשליך אז וואס ביי א קליינעם מענטש איז א מצוה איז ביי א גרויסן אן עבירה, און ער פרעגט ווי אזוי קען איינער וואס ווייסט וואס משיח איז מיינען אז דוד האט געזינדיגט."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-06-03-mishpatim", "startSeg": 144, "endSeg": 198,
+      "title": { "en": "The fine senses of tzaddikim", "yi": "די פיינע הרגשים פון צדיקים" },
+      "summary": {
+        "en": "The Rav tells stories of tzaddikim who sensed a problem in food that was halachically permitted: a chicken with a shaila, and the Belzer Rav R' Aharon, who would not eat fruit that had lain on a dairy plate. What is permitted for ordinary people is, for great ones, a real issue.",
+        "yi": "דער משגיח דערציילט מעשיות פון צדיקים וואס האבן געפילט א פראבלעם אין עסן וואס איז על פי הלכה מותר: א הינדל מיט א שאלה, און דער בעלזער רב ר' אהרן, וואס האט נישט געוואלט עסן פירות וואס זענען געלעגן אויף א מילכיגן טעלער. וואס ביי פשוטע מענטשן איז מותר, איז ביי גרויסע א ממשות'דיגע זאך."
+      },
+      "kind": "story", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-06-03-mishpatim", "startSeg": 199, "endSeg": 263,
+      "title": { "en": "The porters' barrel and 'do not go up by steps'", "yi": "די טרעגער'ס פאס און \"ולא תעלה במעלות\"" },
+      "summary": {
+        "en": "The Rav brings the Gemara of Rabbah bar bar Chanah's porters, where Rav ruled that he must pay them, and shows that for a man of his level this was the din, not beyond it. With the Gemara in Sotah that pride is like arayos, he explains 'do not go up by steps on My altar' as a warning to one who has risen, placed beside 'v'eileh hamishpatim' to show it is din.",
+        "yi": "דער משגיח ברענגט די גמרא פון רבה בר בר חנה מיט די טרעגער, וואו רב האט גע'פסק'נט אז ער מוז זיי באצאלן, און ווייזט אז ביי איינעם פון זיין מדריגה איז דאס געווען דער דין, נישט לפנים משורת הדין. מיט דער גמרא אין סוטה אז גאוה איז ווי עריות טייטשט ער \"ולא תעלה במעלות על מזבחי\" אלס א ווארענונג פאר איינעם וואס איז ארויפגעגאנגען, און עס איז סמוך צו \"ואלה המשפטים\" צו ווייזן אז עס איז דין."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-06-03-mishpatim", "startSeg": 264, "endSeg": 348,
+      "title": { "en": "Shovavim and the souls of Egypt", "yi": "שובבי\"ם און די נשמות פון מצרים" },
+      "summary": {
+        "en": "The Rav introduces the end of Shovavim, which the Arizal revealed as a time for teshuvah. In these weeks we read from galus Mitzrayim to 'naaseh v'nishma', and the Jews of Egypt were the souls of the generations of the flood, the dispersion and Sedom, who had to be cleansed before receiving the Torah.",
+        "yi": "דער משגיח עפנט דעם ענין פונעם סוף פון שובבי\"ם, וואס דער אריז\"ל האט מגלה געווען אלס א צייט פון תשובה. אין די וואכן ליינט מען פון גלות מצרים ביז \"נעשה ונשמע\", און די אידן אין מצרים זענען געווען די נשמות פון דור המבול, דור הפלגה און סדום, וואס האבן געדארפט ווערן גערייניגט איידער זיי האבן מקבל געווען די תורה."
+      },
+      "kind": "main", "catalogTopicIdx": [1], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-06-03-mishpatim", "startSeg": 349, "endSeg": 427,
+      "title": { "en": "Six weeks of tikkun and the toil of Torah", "yi": "זעקס וואכן תיקון און די יגיעה פון תורה" },
+      "summary": {
+        "en": "The Rav explains that the melachos of Egypt stand against the six weekdays, and the six weeks of Shovavim against them, with Mishpatim as the Shabbos, like the eved who serves six years and goes free. Bringing the Zohar's reading of 'avodah kashah, chomer, levenim' as kushya, kal vachomer and clarifying the halacha, he says today's tikkun is toil in Torah.",
+        "yi": "דער משגיח ערקלערט אז די מלאכות פון מצרים זענען קעגן די זעקס וואכנטעג, און די זעקס וואכן שובבי\"ם קעגן זיי, מיט משפטים אלס שבת, אזוי ווי דער עבד וואס ארבעט זעקס יאר און גייט ארויס פריי. ער ברענגט דעם זוהר וואס טייטשט \"עבודה קשה, חומר, לבנים\" אויף קושיא, קל וחומר און ליבון הלכתא, און זאגט אז דער תיקון היינט איז יגיעה אין תורה."
+      },
+      "kind": "main", "catalogTopicIdx": [1], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-06-03-mishpatim", "startSeg": 428, "endSeg": 489,
+      "title": { "en": "Adar, freedom and the kitrug", "yi": "אדר, פרייהייט און דער קטרוג" },
+      "summary": {
+        "en": "The Rav explains that counting months from Tishrei, Adar is the sixth, the main time of tikkun, a month of freedom and of 'kiymu v'kiblu'. At such a time the Ba'al Davar raises a kitrug, and in Adar learning weakens in the yeshivos, which is exactly when one must strengthen it.",
+        "yi": "דער משגיח ערקלערט אז ווען מ'ציילט די חדשים פון תשרי איז אדר דער זעקסטער, דער עיקר צייט פון תיקון, א חודש פון פרייהייט און פון \"קימו וקבלו\". אין אזא צייט מאכט דער בעל דבר א קטרוג, און אין אדר ווערט שוואך דאס לערנען אין די ישיבות, און דווקא דעמאלט דארף מען זיך שטארקן."
+      },
+      "kind": "main", "catalogTopicIdx": [1], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-06-03-mishpatim", "startSeg": 490, "endSeg": 601,
+      "title": { "en": "Naaseh v'nishma, Purim learning and pride", "yi": "נעשה ונשמע, לערנען פורים און גאוה" },
+      "summary": {
+        "en": "The Rav ties 'naaseh v'nishma' at the end of Mishpatim to 'kiymu v'kiblu' and tells the Kotzker's words on the father of the Avnei Nezer, who learned on Purim, adding that each time has its own avodah. He asks the bochurim to come to seder on time, and warns that one who has finished the tikkun of Shovavim must guard against pride, the 'steps on the altar'.",
+        "yi": "דער משגיח בינדט \"נעשה ונשמע\" אין סוף משפטים מיט \"קימו וקבלו\", און דערציילט דעם קאצקער'ס ווערטער אויפן טאטן פונעם אבני נזר, וואס האט געלערנט פורים, און לייגט צו אז יעדע צייט האט איר עבודה. ער בעט מען זאל קומען אין צייט צום סדר, און ווארנט אז ווער עס האט געענדיגט דעם תיקון פון שובבי\"ם מוז זיך היטן פון גאוה, די \"מעלות על מזבחי\"."
+      },
+      "kind": "main", "catalogTopicIdx": [1, 0], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-06-03-mishpatim", "startSeg": 602, "endSeg": 656,
+      "title": { "en": "The Ba'al Shem Tov's lesson at the spring", "yi": "דעם בעל שם טוב'ס לימוד ביים קוואל" },
+      "summary": {
+        "en": "The Rav brings the Zohar that 'v'eileh hamishpatim' are the judgments of gilgulim and tells how the Ba'al Shem Tov sent the Maggid to hide by a spring: a rich man forgot his wallet, a second man took it, and a poor man who came next was beaten by the rich man for it.",
+        "yi": "דער משגיח ברענגט דעם זוהר אז \"ואלה המשפטים\" זענען די דינים פון גלגולים, און דערציילט ווי דער בעל שם טוב האט געשיקט דעם מגיד זיך באהאלטן ביי א קוואל: א רייכער האט פארגעסן זיין בייטל, א צווייטער האט עס גענומען, און אן ארעמאן וואס איז געקומען נאכדעם איז דערפאר געשלאגן געווארן פונעם רייכן."
+      },
+      "kind": "story", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-06-03-mishpatim", "startSeg": 657, "endSeg": 725,
+      "title": { "en": "Judgments of gilgulim", "yi": "דינים פון גלגולים" },
+      "summary": {
+        "en": "The Ba'al Shem Tov explains that the three were a litigant who had taken money wrongly, the man he wronged, and the careless dayan, now paying for his ruling. The Rav concludes that a person who feels wronged by a din, or sees a tzaddik suffer, should know it is an accounting from earlier gilgulim; this answers Yirmiyahu's question and explains the suffering of Egypt.",
+        "yi": "דער בעל שם טוב ערקלערט אז די דריי זענען געווען א בעל דין וואס האט אומגערעכט גענומען געלט, דער וואס מ'האט אים געשעדיגט, און דער דיין וואס איז נישט געווען מתון און באצאלט יעצט פאר זיין פסק. דער משגיח לערנט ארויס אז ווער עס פילט זיך געשעדיגט פון א דין, אדער זעט א צדיק ליידן, זאל וויסן אז ס'איז א חשבון פון פריערדיגע גלגולים; דאס פארענטפערט ירמיהו'ס קשיא און ערקלערט די יסורים פון מצרים."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-06-03-mishpatim", "startSeg": 726, "endSeg": 808,
+      "title": { "en": "Erev Shabbos of history", "yi": "ערב שבת פון דער היסטאריע" },
+      "summary": {
+        "en": "The Rav compares the end of a tikkun to a kitchen on Erev Shabbos: hectic and rushed. We are in the sixth millennium, the Erev Shabbos before Mashiach; he brings the Zohar on the six hundredth year opening the gates of wisdom and explains the rush of modern inventions as the speed the final tikkunim require.",
+        "yi": "דער משגיח גלייכט דעם סוף פון א תיקון צו א קיך ערב שבת: אלעס איז אין א יאגעניש. מיר זענען אינעם אלף השישי, דער ערב שבת פאר משיח; ער ברענגט דעם זוהר אז אין שנת שש מאות עפענען זיך די שערי חכמה, און ערקלערט די יאגעניש פון די נייע אויפטואונגען אלס די שנעלקייט וואס די לעצטע תיקונים פאדערן."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-06-03-mishpatim", "startSeg": 809, "endSeg": 899,
+      "title": { "en": "Blaming the tzaddikim, blaming Moshe", "yi": "מ'באשולדיגט די צדיקים, מ'באשולדיגט משה רבינו" },
+      "summary": {
+        "en": "The Rav recalls that during the war people blamed the tzaddikim of Europe for not letting Jews go to America or Eretz Yisrael, an idea fed by the Yiddish press. He calls the apikorsim the guilty ones and shows it is nothing new: when the end of Egypt grew hardest, Dasan and Aviram blamed Moshe Rabbeinu.",
+        "yi": "דער משגיח דערמאנט אז אין דער צייט פון דער מלחמה האט מען באשולדיגט די צדיקים פון אייראפע וואס זיי האבן נישט געלאזט אידן פארן קיין אמעריקע אדער ארץ ישראל, א געדאנק וואס די אידישע צייטונגען האבן אריינגעפיטערט. ער רופט די אפיקורסים די שולדיגע, און ווייזט אז ס'איז נישט קיין נייעס: ווען דער סוף פון מצרים איז געווארן דאס שווערסטע, האבן דתן ואבירם באשולדיגט משה רבינו."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-06-03-mishpatim", "startSeg": 900, "endSeg": 1013,
+      "title": { "en": "The complaint against Mordechai", "yi": "די טענה אויף מרדכי" },
+      "summary": {
+        "en": "The Rav brings the Gemara on 'Ish Yehudi… Ish Yemini': Klal Yisrael complained that David did not kill Shimi, from whom Mordechai came, and Shaul did not kill Agag, from whom Haman came. He shows that Mordechai was blamed for the decree although the Gemara gives another cause and Mordechai acted with mesirus nefesh, and that he went into exile with the Jews by choice.",
+        "yi": "דער משגיח ברענגט די גמרא אויף \"איש יהודי... איש ימיני\": כלל ישראל האט זיך באקלאגט אז דוד המלך האט נישט גע'הרג'עט שמעי, פון וועמען מרדכי איז ארויסגעקומען, און שאול האט נישט גע'הרג'עט אגג, פון וועמען המן איז ארויסגעקומען. ער ווייזט אז מען האט באשולדיגט מרדכי אין דער גזירה, כאטש די גמרא גיט אן אנדער סיבה און מרדכי האט געטאן מיט מסירות נפש, און אז ער איז מיט וויסן געגאנגען מיט אידן אין גלות."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-06-03-mishpatim", "startSeg": 1014, "endSeg": 1112,
+      "title": { "en": "That Jews remain Jews", "yi": "אז אידן זאלן בלייבן אידן" },
+      "summary": {
+        "en": "The Rav explains that the true tzaddikim lead by a mesorah whose first rule is that Jews remain Jews, and they knew that in America of that time they would not; he speaks of the assimilation he saw. The churban, he says, was the gathering of the tikkunim of all generations, like Yaakov's sending Yosef, which only seemed to cause the exile of Egypt.",
+        "yi": "דער משגיח ערקלערט אז די צדיקי אמת פירן לויט א מסורה וואס איר ערשטער כלל איז אז אידן זאלן בלייבן אידן, און זיי האבן געוואוסט אז אין דעמאלטדיגן אמעריקע וועלן זיי נישט בלייבן; ער רעדט פון דער אסימילאציע וואס ער האט געזען. דער חורבן, זאגט ער, איז געווען דאס צוזאמנעמען די תיקונים פון אלע דורות, אזוי ווי יעקב אבינו'ס שיקן יוסף'ן, וואס האט נאר אויסגעזען ווי די סיבה פון גלות מצרים."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-06-03-mishpatim", "startSeg": 1113, "endSeg": 1197,
+      "title": { "en": "Esther in the beis hatzelamim", "yi": "אסתר אין בית הצלמים" },
+      "summary": {
+        "en": "The Rav says every generation has its Mordechai. Esther, forced into the house of Achashverosh, felt the Shechinah leave her in the beis hatzelamim and cried 'Keli Keli lamah azavtani'; today's exile is one great beis hatzelamim. One who is forced to be in such places must know the danger, daven as Esther did and prepare himself, as Mordechai did.",
+        "yi": "דער משגיח זאגט אז יעדער דור האט זיין מרדכי. אסתר, וואס האט געמוזט זיין אין הויז פון אחשורוש, האט געפילט אז די שכינה גייט אוועק פון איר אין בית הצלמים און האט געשריגן \"אלי אלי למה עזבתני\"; דער היינטיגער גלות איז איין גרויסער בית הצלמים. ווער עס מוז זיין אין אזעלכע ערטער דארף וויסן די סכנה, מתפלל זיין אזוי ווי אסתר, און זיך צוגרייטן, אזוי ווי מרדכי."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-06-03-mishpatim", "startSeg": 1198, "endSeg": 1277,
+      "title": { "en": "'Lagur ba'aretz banu': Yaakov's formula", "yi": "\"לגור בארץ באנו\": יעקב אבינו'ס פארמל" },
+      "summary": {
+        "en": "The Rav asks why the Haggadah proves 'vayagar sham' from 'lagur ba'aretz banu', and answers that the proof is from the end of the passuk: before Pharaoh the brothers did not praise Egypt but said they came for their flocks. Yaakov taught his children to feel as strangers there, and so they did not assimilate.",
+        "yi": "דער משגיח פרעגט פארוואס די הגדה ברענגט א ראיה אויף \"ויגר שם\" פון \"לגור בארץ באנו\", און ענטפערט אז די ראיה איז פונעם סוף פסוק: פאר פרעה האבן די שבטים נישט געלויבט מצרים, נאר געזאגט אז זיי זענען געקומען צוליב זייערע בהמות. יעקב אבינו האט אויסגעלערנט זיינע קינדער זיך צו פילן ווי פרעמדע דארט, און דערפאר האבן זיי זיך נישט אסימילירט."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-shemois-06-03-mishpatim", "startSeg": 1278, "endSeg": 1342,
+      "title": { "en": "Adar, Purim and erasing Amalek", "yi": "אדר, פורים און מחיית עמלק" },
+      "summary": {
+        "en": "The Rav closes with Adar as a month of joy and Torah. The Megillah is not history, Purim can achieve what Yom Kippur cannot, and he tells of a Purim seudah of the Stoliner Rebbe that was tied to Stalin's death. The greatest yeshuah is erasing the Haman in each heart; he ends with wishes for a good Chodesh Adar.",
+        "yi": "דער משגיח שליסט מיט אדר אלס א חודש פון שמחה און תורה. די מגילה איז נישט קיין היסטאריע, פורים קען מען אויפטאן וואס יום כיפור קען מען נישט, און ער דערציילט פון א סעודת פורים ביים סטאלינער רבי'ן וואס מען האט פארבונדן מיט סטאלין'ס טויט. די גרעסטע ישועה איז אויסמעקן דעם המן וואס יעדער האט אין הארץ; ער ענדיגט מיט ברכות אויף א גוטן חודש אדר."
+      },
+      "kind": "closing", "catalogTopicIdx": [], "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "כל המסגור כאילו עובד הבית זרע ... כאילו בעל כל הערויות", "work": "Gemara Sotah", "ref": "Sotah 4b", "sefariaRef": "Sotah 4b", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [3, 4, 5, 233, 234, 235], "confidence": 0.75 } },
+    { "heardAs": "מ'ברענגט אויפן זוה'ר הקודש אז דער וואס גייט ארבע אמות אנהי' דאס ידים", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [40, 41, 42], "confidence": 0.85 } },
+    { "heardAs": "עשרה יחסים", "work": "Mishnah Kiddushin", "ref": "Mishnah Kiddushin 4:1", "sefariaRef": "Mishnah Kiddushin 4:1", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [59, 60], "confidence": 0.65 } },
+    { "heardAs": "חז״ל זאגן אז ער האט דאס נישט", "work": "Gemara Shabbos", "ref": "Shabbos 55b", "sefariaRef": "Shabbat 55b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [92, 94, 96], "confidence": 0.65 } },
+    { "heardAs": "כל היצר למלחמות ביז דוד געהאט קריצות; יענער איינער וואס זאגט דוד חטא", "work": "Gemara Shabbos", "ref": "Shabbos 56a", "sefariaRef": "Shabbat 56a", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [103, 119, 122], "confidence": 0.75 } },
+    { "heardAs": "רבי אברהם אחניה האט אנגעשטעלט פייערלען", "work": "Gemara Bava Metzia", "ref": "Bava Metzia 83a", "sefariaRef": "Bava Metzia 83a", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [200, 203, 205, 211, 214], "confidence": 0.8 } },
+    { "heardAs": "אין ילמין תלך בדרך טובים", "work": "Mishlei", "ref": "Mishlei 2:20", "sefariaRef": "Proverbs 2:20", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [224], "confidence": 0.8 } },
+    { "heardAs": "כי תאיבת ה' כל גבי לב", "work": "Mishlei", "ref": "Mishlei 16:5", "sefariaRef": "Proverbs 16:5", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [237], "confidence": 0.85 } },
+    { "heardAs": "לתלה במילות על מזבחו", "work": "Shemos", "ref": "Shemos 20:23", "sefariaRef": "Exodus 20:23", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [242, 246, 254, 580], "confidence": 0.85 } },
+    { "heardAs": "ויערע המשפט משה תשמ'לפניהם", "work": "Shemos", "ref": "Shemos 21:1", "sefariaRef": "Exodus 21:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [252, 586, 603], "confidence": 0.85 } },
+    { "heardAs": "דער ראי הקדוש איז מגלה געוועזן", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [270, 271, 273], "confidence": 0.8 } },
+    { "heardAs": "ביממוהו את חייהם בחומר ובלבנים", "work": "Shemos", "ref": "Shemos 1:14", "sefariaRef": "Exodus 1:14", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [303, 305, 398], "confidence": 0.85 } },
+    { "heardAs": "הבא נבנה לאנער ... מזוין נימן לבנים", "work": "Bereishis", "ref": "Bereishis 11:3-4", "sefariaRef": "Genesis 11:3-4", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [307, 308, 314], "confidence": 0.8 } },
+    { "heardAs": "איך פאר דיך פרעגן משפטים הדבר בח ... לאמיר דרך רשעים צליחה", "work": "Yirmiyahu", "ref": "Yirmiyahu 12:1", "sefariaRef": "Jeremiah 12:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [324, 327, 719, 720], "confidence": 0.8 } },
+    { "heardAs": "תוספות זאגט מצחים ... פארוואס אז שבת איז אזעל יציאת מצרים", "work": "Tosafos", "ref": "Tosafos Pesachim 117b", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [364, 365, 366, 372], "confidence": 0.7 } },
+    { "heardAs": "ששע נעמי ארבעט ... אויף השבועות יצי אלא חבשי", "work": "Shemos", "ref": "Shemos 21:2", "sefariaRef": "Exodus 21:2", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [385, 386, 414], "confidence": 0.8 } },
+    { "heardAs": "וימורא את חייהם בבידי כשר ... אזוי שטעט אין זייער", "work": "Zohar", "ref": "Zohar I:27a", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [398, 399, 400, 402, 404], "confidence": 0.7 } },
+    { "heardAs": "די גמרא זאגט ... פאר דרוי'ה, מפני שדור", "work": "Gemara Rosh Hashanah", "ref": "Rosh Hashanah 9b", "sefariaRef": "Rosh Hashanah 9b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [420, 421], "confidence": 0.65 } },
+    { "heardAs": "כימה בקיבל היהדים", "work": "Esther", "ref": "Esther 9:27", "sefariaRef": "Esther 9:27", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [452, 494, 495], "confidence": 0.8 } },
+    { "heardAs": "לב על הידים היתא אורא ושמחה", "work": "Esther", "ref": "Esther 8:16", "sefariaRef": "Esther 8:16", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [455], "confidence": 0.75 } },
+    { "heardAs": "יארת דבש", "work": "Yaaros Devash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [468, 470, 472], "confidence": 0.7 } },
+    { "heardAs": "ניינס אבער נשמע; ניינסע ווי נשמע", "work": "Shemos", "ref": "Shemos 24:7", "sefariaRef": "Exodus 24:7", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [277, 493, 495], "confidence": 0.8 } },
+    { "heardAs": "פיאלי המשפטים אשר תוספים לפניים בטעהלגים איר לענג דינעי", "work": "Zohar", "ref": "Zohar II:94a (Mishpatim)", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [603, 604, 606, 713, 715], "confidence": 0.75 } },
+    { "heardAs": "זייער קודש ... בשנת שש מעש שנה לחיי נח", "work": "Zohar", "ref": "Zohar I:117a (Vayera)", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [753, 755, 756, 757], "confidence": 0.75 } },
+    { "heardAs": "עס שטייט פון ראי הקודש אז די איינציגע גלות איז די גאנצע השלמה", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [802, 805], "confidence": 0.65 } },
+    { "heardAs": "פארוואס איז טאקע הערע ועהם הזה", "work": "Shemos", "ref": "Shemos 5:22", "sefariaRef": "Exodus 5:22", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [900], "confidence": 0.75 } },
+    { "heardAs": "אש יהודי היו בששון הברירה ושמי מרדכי", "work": "Esther", "ref": "Esther 2:5", "sefariaRef": "Esther 2:5", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [908, 909, 910], "confidence": 0.85 } },
+    { "heardAs": "זאגט די גמרא אין בגילה ... מה אסר ליהודי ומה אשולם לימין", "work": "Gemara Megillah", "ref": "Megillah 12b-13a", "sefariaRef": "Megillah 12b-13a", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [907, 912, 929, 930, 945], "confidence": 0.8 } },
+    { "heardAs": "ויבאז ביונו ולשלח את בן מרדכי לבדו", "work": "Esther", "ref": "Esther 3:6", "sefariaRef": "Esther 3:6", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [951], "confidence": 0.75 } },
+    { "heardAs": "דער גמרא שטעיט אנדערש ... משתכף געוואסן צום צאלום אדער ... סעודים פון חשבורש", "work": "Gemara Megillah", "ref": "Megillah 12a", "sefariaRef": "Megillah 12a", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [957, 958, 959], "confidence": 0.75 } },
+    { "heardAs": "אש ידו היבער ששון הבורא א שהגלה מירושלים", "work": "Esther", "ref": "Esther 2:6", "sefariaRef": "Esther 2:6", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [989, 990, 991], "confidence": 0.75 } },
+    { "heardAs": "יום ויום מרדכי מסלח לפני חצה בית הנושא ודעתת שלום אסתר", "work": "Esther", "ref": "Esther 2:11", "sefariaRef": "Esther 2:11", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1123, 1165, 1166], "confidence": 0.8 } },
+    { "heardAs": "עס שטעט אין מדרש אז פון אסתר איז ער קומען אריינגעגאנגען אין בית הצלמים", "work": "Gemara Megillah", "ref": "Megillah 15b", "sefariaRef": "Megillah 15b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [1127, 1128, 1133], "confidence": 0.7 } },
+    { "heardAs": "כלי כלי למאה זכתן", "work": "Tehillim", "ref": "Tehillim 22:2", "sefariaRef": "Psalms 22:2", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1131, 1134], "confidence": 0.85 } },
+    { "heardAs": "עס שטעט אין די הגדה ויאג השם מלמד שלא ירד יעקב", "work": "Haggadah", "ref": "Haggadah shel Pesach, Maggid (Arami oved avi)", "sefariaRef": null, "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [1198, 1199, 1201], "confidence": 0.85 } },
+    { "heardAs": "ויאמרה לא בארץ בנה כי מערא לצעונה", "work": "Bereishis", "ref": "Bereishis 47:4", "sefariaRef": "Genesis 47:4", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1235, 1239], "confidence": 0.8 } },
+    { "heardAs": "הכרת המגילה למפחיה ... דער וואס לערנט די מגילה למפראל", "work": "Gemara Megillah", "ref": "Megillah 17a", "sefariaRef": "Megillah 17a", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [1284, 1285, 1286], "confidence": 0.7 } },
+    { "heardAs": "די שיון קי פרים ... ים הקי פרים", "work": "Tikkunei Zohar", "ref": "Tikkunei Zohar 57b", "sefariaRef": null, "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [1293, 1294, 1295], "confidence": 0.65 } }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav reads 'do not go up by steps on My altar' as addressed to one who has already risen: for him pride is like arayos, since both are called to'evah, and its placement before 'v'eileh hamishpatim' shows that this is strict din, not piety.",
+        "yi": "דער משגיח טייטשט \"ולא תעלה במעלות על מזבחי\" אויף איינעם וואס איז שוין ארויפגעגאנגען: ביי אים איז גאוה ווי עריות, ווייל ביידע הייסן תועבה, און דאס וואס עס שטייט פאר \"ואלה המשפטים\" ווייזט אז ס'איז דין, נישט קיין מדת חסידות."
+      },
+      "evidence": { "segs": [236, 239, 242, 244, 249, 252], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The six weeks of Shovavim stand against the six weekdays and the melachos of Egypt, and Mishpatim is their Shabbos; like the Hebrew servant who works six years and goes free in the seventh, a Jew goes free after the tikkun.",
+        "yi": "די זעקס וואכן שובבי\"ם זענען קעגן די זעקס וואכנטעג און די מלאכות פון מצרים, און משפטים איז זייער שבת; אזוי ווי דער עבד עברי וואס ארבעט זעקס יאר און גייט ארויס פריי אין זיבעטן, גייט א איד ארויס פריי נאכן תיקון."
+      },
+      "evidence": { "segs": [377, 380, 383, 385, 386], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The flood generation, whose punishment was not yet complete, came back as the children thrown into the river, and the generation of the dispersion, who said 'let us make bricks', came back to labor with mortar and bricks in Egypt.",
+        "yi": "דור המבול, וואס זייער עונש איז נאך נישט געווען פארטיג, איז צוריקגעקומען אלס די קינדער וואס מ'האט געווארפן אין טייך, און דור הפלגה, וואס האט געזאגט \"הבה נלבנה לבנים\", איז צוריקגעקומען צו ארבעטן בחומר ובלבנים אין מצרים."
+      },
+      "evidence": { "segs": [298, 299, 301, 304, 307, 310], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The rush of modern inventions is the hurry of Erev Shabbos before Mashiach: every person is sent to repair things in distant places, and the tikkunim must now be done fast.",
+        "yi": "די יאגעניש פון די נייע אויפטואונגען איז די יאגעניש פון ערב שבת פאר משיח: יעדער מענטש ווערט געשיקט צו מתקן זיין זאכן אין ווייטע ערטער, און די תיקונים מוזן יעצט געשען שנעל."
+      },
+      "evidence": { "segs": [776, 777, 780, 784, 794], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The proof in the Haggadah is from the end of the passuk: before Pharaoh the brothers did not praise Egypt, or even say they were hungry, but said they came for their flocks; that is what it means to stay a stranger.",
+        "yi": "די ראיה אין דער הגדה איז פונעם סוף פסוק: פאר פרעה האבן די שבטים נישט געלויבט מצרים, אפילו נישט געזאגט אז זיי זענען הונגעריג, נאר אז זיי זענען געקומען צוליב די בהמות; דאס הייסט בלייבן א גר."
+      },
+      "evidence": { "segs": [1206, 1211, 1236, 1239, 1244], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Mordechai was blamed for Haman's decree as the tzaddikim of Europe were blamed for the churban, though Mordechai refused to bow in order to be a kaparah for Klal Yisrael's sin with the image.",
+        "yi": "מען האט באשולדיגט מרדכי אין המן'ס גזירה אזוי ווי מ'האט באשולדיגט די צדיקים פון אייראפע אין דעם חורבן, כאטש מרדכי האט זיך נישט געבוקט כדי צו זיין א כפרה פאר כלל ישראל'ס חטא מיטן צלם."
+      },
+      "evidence": { "segs": [962, 964, 968, 974, 976], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "Rebbe Reb Bunim and the maskil", "yi": "דער רבי ר' בונם און דער משכיל" },
+      "retelling": {
+        "en": "A young man in Rebbe Reb Bunim's circle was a fine scholar but carried Haskalah ideas, which were then spreading in Poland. Rebbe Reb Bunim was glad that he had managed to draw him away from his chassidim. The young man later wrote a mocking piece on the Zohar's statement about walking four amos without washing the hands, and became a heretic.",
+        "yi": "ביים רבי ר' בונם האט זיך אומגעדרייט א יונגערמאן, א גוטער למדן, אבער מיט השכלה אין קאפ, וואס האט זיך דעמאלט פארשפרייט אין פוילן. דער רבי ר' בונם האט זיך געפרייט וואס ער האט אים אוועקגעצויגן פון זיינע חסידים. דער יונגערמאן האט שפעטער געשריבן א שפעט אויפן זוהר וועגן גיין ארבע אמות אן נעגל וואסער, און איז געווארן אן אפיקורס."
+      },
+      "people": ["Rebbe Reb Bunim"],
+      "evidence": { "segs": [21, 25, 31, 35, 40, 45], "confidence": 0.6 }
+    },
+    {
+      "title": { "en": "Rebbe Reb Elimelech's tashlich", "yi": "דעם רבי ר' אלימלך'ס תשליך" },
+      "retelling": {
+        "en": "Rebbe Reb Elimelech did not let people accompany him to tashlich, but the Lubliner went along secretly to see how he did it. Rebbe Reb Elimelech said that he was casting off his aveiros, and that what would be a mitzvah for a smaller man is an aveirah for a great one.",
+        "yi": "דער רבי ר' אלימלך האט נישט געלאזט מען זאל מיטגיין מיט אים צו תשליך, אבער דער לובלינער איז בהחבא מיטגעגאנגען צו זען ווי ער טוט עס. דער רבי ר' אלימלך האט געזאגט אז ער שאקלט אפ זיינע עבירות, און אז וואס ביי א קלענערן מענטש וואלט געווען א מצוה איז ביי א גרויסן אן עבירה."
+      },
+      "people": ["Rebbe Reb Elimelech", "the Chozeh of Lublin"],
+      "evidence": { "segs": [111, 112, 115, 116], "confidence": 0.65 }
+    },
+    {
+      "title": { "en": "The Belzer Rav and the fruit", "yi": "דער בעלזער רב און די פירות" },
+      "retelling": {
+        "en": "When the Belzer Rav, R' Aharon, was served an apple and a pear, he would not eat them. Asked why, he said perhaps they had lain on a dairy plate; he had eaten meat less than six hours before. By halacha there was no problem, but he sensed one.",
+        "yi": "ווען מ'האט דערלאנגט דעם בעלזער רב ר' אהרן אן עפל און א באר, האט ער נישט געוואלט עסן. ווען מ'האט אים געפרעגט פארוואס, האט ער געזאגט אפשר זענען זיי געלעגן אויף א מילכיגן טעלער; ער האט געגעסן פליישיגס ווייניגער ווי זעקס שעה פריער. על פי הלכה איז דאס גארנישט, אבער ער האט עס געפילט."
+      },
+      "people": ["R' Aharon of Belz"],
+      "evidence": { "segs": [178, 180, 184, 188, 190, 192], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The Maggid at the spring", "yi": "דער מגיד ביים קוואל" },
+      "retelling": {
+        "en": "The Ba'al Shem Tov sent the Maggid to sit hidden in a crevice by a spring until midday. A rich man rode up, rested, drank, put down his wallet and rode off without it; a second man drank and took the wallet; then a poor, exhausted man sat down to eat dry bread dipped in the water. The rich man returned, accused the poor man and beat him badly. The Ba'al Shem Tov explained that in an earlier life a dayan who was not careful had wrongly made one man pay another; the rich man had received that money, the finder was the one wronged, and the beaten poor man was the dayan.",
+        "yi": "דער בעל שם טוב האט געשיקט דעם מגיד זיך באהאלטן אין א שפאלט ביי א קוואל ביז חצות. א רייכער איז צוגעריטן, זיך אפגערוט, געטרונקען, אוועקגעלייגט זיין בייטל און איז אוועקגעפארן אן אים; א צווייטער האט געטרונקען און גענומען דעם בייטל; דערנאך האט זיך אן אויסגעמוטשעטער ארעמאן אוועקגעזעצט עסן א טרוקן שטיקל ברויט איינגעטונקען אין וואסער. דער רייכער איז צוריקגעקומען, באשולדיגט דעם ארעמאן און אים שטארק געשלאגן. דער בעל שם טוב האט ערקלערט אז אין א פריערדיגן גלגול האט א דיין וואס איז נישט געווען מתון אומגערעכט מחייב געווען איינעם צו באצאלן; דער רייכער האט באקומען יענע געלט, דער געפינער איז געווען דער געשעדיגטער, און דער געשלאגענער ארעמאן איז געווען דער דיין."
+      },
+      "people": ["the Ba'al Shem Tov", "the Maggid"],
+      "evidence": { "segs": [614, 625, 634, 652, 659, 676], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "The Kotzker on the father of the Avnei Nezer", "yi": "דער קאצקער אויפן טאטן פונעם אבני נזר" },
+      "retelling": {
+        "en": "A great gaon in Poland some generations ago merited a son who lit up the world with Torah, the Avnei Nezer. The Kotzker said he merited it because on Purim, when no one was learning, he sat and learned Gemara. The Rav adds that he does not recommend this, since each time has its own avodah.",
+        "yi": "א גרויסער גאון אין פוילן מיט עטליכע דורות צוריק האט זוכה געווען צו א זון וואס האט באלויכטן די וועלט מיט תורה, דער אבני נזר. דער קאצקער האט געזאגט אז ער האט דערצו זוכה געווען ווייל פורים, ווען קיינער האט נישט געלערנט, איז ער געזעסן און געלערנט גמרא. דער משגיח לייגט צו אז ער רעקאמענדירט דאס נישט, ווייל יעדע צייט האט איר עבודה."
+      },
+      "people": ["the Kotzker Rebbe", "the Avnei Nezer"],
+      "evidence": { "segs": [505, 510, 512, 513, 514, 521], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The Stoliner Rebbe's Purim seudah", "yi": "דעם סטאלינער רבי'נס סעודת פורים" },
+      "retelling": {
+        "en": "Years ago in America, at a Purim seudah of the Stoliner Rebbe, R' Yochanan, something was done concerning Stalin, who was then persecuting Jews. Soon after, the newspapers reported Stalin's death, and it was said that this had been brought about at the Purim seudah.",
+        "yi": "מיט יארן צוריק אין אמעריקע, ביי א סעודת פורים פונעם סטאלינער רבי'ן ר' יוחנן, האט מען עפעס אפגעטאן קעגן סטאלין, וואס האט דעמאלט גערודפט אידן. באלד דערנאך האבן די צייטונגען געמעלדעט אז סטאלין איז געשטארבן, און מען האט געזאגט אז דאס איז געפועלט געווארן ביי דער סעודת פורים."
+      },
+      "people": ["R' Yochanan of Stolin"],
+      "evidence": { "segs": [1310, 1312, 1314, 1316, 1319], "confidence": 0.6 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "If the Zohar says walking four amos without washing the hands carries a death penalty, why does the Shulchan Aruch allow walking to the sink?", "yi": "אז דער זוהר זאגט אז ווער עס גייט ארבע אמות אן נעגל וואסער איז חייב מיתה, פארוואס מעג מען על פי שולחן ערוך גיין צום סינק?" },
+      "answer": { "en": "Each thing is by a person's level: the halacha speaks to everyone, while the Zohar's severity is for those who have worked themselves higher.", "yi": "יעדע זאך איז לויט די מדריגה פונעם מענטש: די הלכה רעדט צו יעדן, און דער זוהר'ס חומרא איז פאר די וואס האבן זיך אויסגעארבעט העכער." },
+      "questionSegs": [52, 53, 54], "answerSegs": [55, 82, 84, 90], "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why did Rav tell Rabbah bar bar Chanah that he must pay the porters who broke his barrel, when ordinary law makes them liable?", "yi": "פארוואס האט רב געזאגט פאר רבה בר בר חנה אז ער מוז באצאלן די טרעגער וואס האבן צובראכן זיין פאס, ווען על פי דין זענען זיי חייב?" },
+      "answer": { "en": "For a man of his level the higher standard is the din itself; it is not beyond the letter of the law.", "yi": "ביי איינעם פון זיין מדריגה איז די העכערע מדה דער דין אליין; ס'איז נישט לפנים משורת הדין." },
+      "questionSegs": [214, 219], "answerSegs": [220, 222, 226, 230], "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why did the Jews of Egypt, children of Avraham, Yitzchak and Yaakov, have to suffer so much?", "yi": "פארוואס האבן די אידן אין מצרים, די קינדער פון אברהם יצחק און יעקב, געמוזט אזוי פיל ליידן?" },
+      "answer": { "en": "They were the souls of the flood, the dispersion and Sedom, who had to be cleansed before receiving the Torah.", "yi": "זיי זענען געווען די נשמות פון דור המבול, דור הפלגה און סדום, וואס האבן געדארפט ווערן גערייניגט איידער זיי האבן מקבל געווען די תורה." },
+      "questionSegs": [330, 331], "answerSegs": [337, 339, 342, 348], "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why does the Haggadah prove 'vayagar sham' from 'lagur ba'aretz banu', when 'vayagar' already says the same?", "yi": "פארוואס ברענגט די הגדה א ראיה אויף \"ויגר שם\" פון \"לגור בארץ באנו\", ווען \"ויגר\" זאגט דאך שוין דאס זעלבע?" },
+      "answer": { "en": "The proof is from the end of the passuk: the brothers told Pharaoh they came only for their flocks, which shows they saw themselves as strangers.", "yi": "די ראיה איז פונעם סוף פסוק: די שבטים האבן געזאגט פאר פרעה אז זיי זענען נאר געקומען צוליב די בהמות, וואס ווייזט אז זיי האבן זיך געהאלטן פאר פרעמדע." },
+      "questionSegs": [1199, 1205, 1206], "answerSegs": [1211, 1236, 1239], "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why did Moshe ask 'why have You done evil to this people' when the bondage grew worse after he came?", "yi": "פארוואס האט משה רבינו געפרעגט \"למה הרעותה לעם הזה\" ווען דער שעבוד איז ערגער געווארן נאכדעם וואס ער איז געקומען?" },
+      "answer": { "en": "It was the end of the exile, and the end is always hardest, like the rush of Erev Shabbos.", "yi": "ס'איז געווען דער סוף פונעם גלות, און דער סוף איז אלעמאל דאס שווערסטע, אזוי ווי די יאגעניש פון ערב שבת." },
+      "questionSegs": [900], "answerSegs": [901, 902, 903], "confidence": 0.7
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Rav says that in Adar, when the Ba'al Davar weakens learning, one must strengthen oneself in Torah most of all.", "yi": "דער משגיח זאגט אז אין אדר, ווען דער בעל דבר מאכט שוואך דאס לערנען, דארף מען זיך מערסטנס שטארקן אין תורה." },
+      "evidence": { "segs": [488, 491], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "He asks the listeners to come to seder on time, since one who comes late weakens others as well.", "yi": "ער בעט די צוהערער צו קומען אין צייט צום סדר, ווייל ווער עס קומט שפעט שוואכט אויך אפ אנדערע." },
+      "evidence": { "segs": [539, 541, 544, 551], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "He says one who is forced to be in places of danger must daven as Esther did and remember each day how great the danger is.", "yi": "ער זאגט אז ווער עס מוז זיין אין ערטער פון סכנה דארף מתפלל זיין אזוי ווי אסתר און יעדן טאג געדענקען ווי גרויס די סכנה איז." },
+      "evidence": { "segs": [1170, 1171, 1172, 1184], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "He says a Jew in exile must always feel that he does not belong there, and beware of growing comfortable.", "yi": "ער זאגט אז א איד אין גלות דארף אלעמאל פילן אז ער געהערט נישט דארט, און זיך היטן פון ווערן באקוועם." },
+      "evidence": { "segs": [1264, 1265, 1266, 1272], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "judgment according to one's level",
+    "Shovavim",
+    "tikkun of the souls of Egypt",
+    "gilgulim and divine justice",
+    "pride and its danger",
+    "Chodesh Adar and Purim",
+    "the Holocaust and the tzaddikim",
+    "staying apart in exile",
+    "Mordechai and Esther",
+    "the sixth millennium and Mashiach"
+  ],
+  "concepts": [
+    { "he": "שובבי\"ם", "heardAs": ["שובבים", "שבבים", "שובדים"] },
+    { "he": "תיקון", "heardAs": ["צוקן", "צוקון", "צוקום", "צוקונט"] },
+    { "he": "גלגול", "heardAs": ["גלגולה", "גבלה", "גלילה", "גלדל"] },
+    { "he": "מדריגה", "heardAs": ["מדריג", "מדרוגה"] },
+    { "he": "גאוה", "heardAs": ["גבעה", "גייבה", "גבע"] },
+    { "he": "לפנים משורת הדין", "heardAs": ["לפני משורת א דין", "לפני משרת אדין"] },
+    { "he": "נטילת ידים", "heardAs": ["נעגל וואסער", "נטילת ידים"] },
+    { "he": "קימו וקבלו", "heardAs": ["כימה וכיבל", "כימה בקיבל", "כימה וקברה"] },
+    { "he": "נעשה ונשמע", "heardAs": ["ניינס אבער נשמע", "ניינסע ונשמע"] },
+    { "he": "ל\"ט מלאכות", "heardAs": ["הלמדת מלכות", "לעמת מלאכות", "אלעמעטעס מלאכות"] },
+    { "he": "דרור", "heardAs": ["דרואה", "דרוי'ה"] },
+    { "he": "בית הצלמים", "heardAs": ["בית הצלם", "בית הצלמים", "פסח צלמים"] },
+    { "he": "אלף השישי", "heardAs": ["אלף השישה", "אלף השישי"] },
+    { "he": "עמלק", "heardAs": ["המלוק", "המלכ", "המלוג"] },
+    { "he": "קטרוג", "heardAs": ["קטחגון", "קטחוק"] },
+    { "he": "עקבתא דמשיחא", "heardAs": ["נקפת'ן און משיח", "עקזפותא דער משיח"] }
+  ],
+  "people": [
+    { "name": "Rebbe Reb Bunim", "heardAs": ["רבי'ן רבונים", "רבי רבי רבונים"] },
+    { "name": "Rebbe Reb Elimelech", "heardAs": ["רבי ר' מלך"] },
+    { "name": "the Chozeh of Lublin", "heardAs": ["דער רובלין"] },
+    { "name": "David HaMelech", "heardAs": ["דוד דער מלאך", "דוד המלך"] },
+    { "name": "Reuven", "heardAs": ["רביהם"] },
+    { "name": "R' Yehoshua Leib Diskin", "heardAs": ["ר' ישעי'לע דיסקין"] },
+    { "name": "R' Aharon of Belz", "heardAs": ["בעלזער רב ר' אהרל'ע"] },
+    { "name": "Rabbah bar bar Chanah", "heardAs": ["רבי אברהם אחניה", "רבי אברהם חנה", "רבא בבא חנה"] },
+    { "name": "the Arizal", "heardAs": ["ראי הקדוש", "ארי הקדש"] },
+    { "name": "Yirmiyahu", "heardAs": ["יא מי יא"] },
+    { "name": "the Kotzker Rebbe", "heardAs": ["קאצקער"] },
+    { "name": "the Avnei Nezer", "heardAs": ["אבני נעזיך"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["בעש''ט", "בעל שם"] },
+    { "name": "the Maggid", "heardAs": ["מגיד"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו"] },
+    { "name": "Dasan and Aviram", "heardAs": ["דאסן", "אבירים"] },
+    { "name": "Mordechai", "heardAs": ["מרדכי", "מאטרע"] },
+    { "name": "Esther", "heardAs": ["אסתר"] },
+    { "name": "Haman", "heardAs": ["האמאן", "האמען"] },
+    { "name": "Shimi ben Gera", "heardAs": ["שימי בן גוריו", "שמי בן גורי'"] },
+    { "name": "Shaul HaMelech", "heardAs": ["שאול המלך"] },
+    { "name": "Agag", "heardAs": ["אגג", "הגג", "גאג"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יעקב אבינו", "יענק אבינו"] },
+    { "name": "Yosef", "heardAs": ["יוסף"] },
+    { "name": "the Chafetz Chaim", "heardAs": ["חפץ חיים"] },
+    { "name": "R' Yochanan of Stolin", "heardAs": ["סטאלענער רבי, רבי יוחנן"] }
+  ],
+  "asrNotes": "Yiddish ASR fair for the Rav's own Yiddish; Hebrew quotations are heavily garbled but mostly recoverable from context (Shovavim, Mishpatim, Megillas Esther). The opening starts mid-sentence, and the identity of the speaker in the R' Yehoshua Leib Diskin chicken story (segs 151-161), the Chafetz Chaim exchange (1079-1086), the source at 552-556 and the Haman etymology (1329-1333) could not be recovered and are left out. Only two short segments are flagged as noise (795, 914)."
+}

@@ -1,0 +1,835 @@
+{
+  "shiurId": "yi-parshas-hashavua-bmdbr-01",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that the counting of the Jews in Parshas Bamidbar prepares for Shavuos, because every Jew is a letter in Hashem's Sefer Torah and is counted by name, at his root.",
+      "yi": "דער משגיח ערקלערט אז דאס ציילן די אידן אין פרשת במדבר איז די הכנה צו שבועות, ווייל יעדער איד איז אן אות אין דעם רבונו של עולם'ס ספר תורה, און ער ווערט געציילט מיט זיין נאמען, ביי זיין שורש."
+    },
+    "abstract": {
+      "en": "The Rav explains why Parshas Bamidbar is read as the preparation for Shavuos. Every Shavuos is a new kabbalas haTorah, received according to each Jew's preparation, emunah and mesiras nefesh. He asks why Moshe Rabbeinu himself had to count the Jews, and answers with the Ramban that each Jew who came before Moshe and Aharon by name was seen to his root and blessed; this counting recurs on the Shabbos before Shavuos. The 600,000 souls correspond to the 600,000 letters of the Torah, so every Jew is a letter in Hashem's Sefer Torah, counted by name and not by number. The Levi'im, the camp of the Shechinah, are above number like the fiftieth day, so only the firstborn's holiness within them is counted. He ends with preparing one's letter during sefirah and davening for Torah on Shavuos.",
+      "yi": "דער משגיח ערקלערט פארוואס מ'ליינט פרשת במדבר אלס הכנה צו שבועות. יעדן שבועות איז א נייע קבלת התורה, און יעדער איד באקומט לויט זיין הכנה, זיין אמונה און זיין מסירות נפש. ער פרעגט פארוואס משה רבינו אליין האט געדארפט ציילן די אידן, און ענטפערט מיטן רמב\"ן אז יעדער איד וואס איז געקומען פאר משה און אהרן מיט זיין נאמען איז דורכגעקוקט געווארן ביז זיין שורש און באקומען א ברכה; דאס ציילן קומט ווידער פאר יעדן שבת פאר שבועות. די זעקס הונדערט טויזנט נשמות זענען כנגד די זעקס הונדערט טויזנט אותיות פון דער תורה, ממילא איז יעדער איד אן אות אין דעם רבונו של עולם'ס ספר תורה, געציילט מיט א נאמען און נישט מיט א נומער. די לוים, די מחנה שכינה, זענען למעלה מן המספר אזוי ווי דער פופציגסטער טאג, דערפאר ציילט מען נאר דעם חלק פון די בכורים וואס אין זיי. צום סוף רעדט ער וועגן צוגרייטן דעם אות אין די ימי הספירה און בעטן אויף תורה שבועות."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Parshas Bamidbar is the preparation for Shavuos, and every Shavuos Moshe Rabbeinu speaks anew with each Jew according to his preparation.",
+          "yi": "פרשת במדבר איז די הכנה צו שבועות, און יעדן שבועות רעדט משה רבינו פון דאס נייע מיט יעדן איד לויט זיין הכנה."
+        },
+        "evidence": { "segs": [10, 16, 18, 35, 38], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Receiving the Torah requires mesiras nefesh, giving over one's will, and emunah that one truly stands now at Har Sinai.",
+          "yi": "מקבל זיין די תורה פאדערט מסירות נפש, אוועקגעבן דעם רצון, און אמונה אז מ'שטייט יעצט טאקע ביים הר סיני."
+        },
+        "evidence": { "segs": [171, 172, 186, 201, 203], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Moshe's counting meant that each Jew came before him by name, was seen to his root and blessed, and this is renewed on the Shabbos before Shavuos.",
+          "yi": "משה רבינו'ס ציילן האט געמיינט אז יעדער איד איז געקומען פאר אים מיט זיין נאמען, איז דורכגעקוקט געווארן ביז זיין שורש און באקומען א ברכה, און דאס באנייט זיך דעם שבת פאר שבועות."
+        },
+        "evidence": { "segs": [236, 258, 268, 269, 288], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The 600,000 Jews correspond to the 600,000 letters of the Torah; each Jew is a letter, and if one letter is missing or invalid the whole Sefer Torah is invalid.",
+          "yi": "די זעקס הונדערט טויזנט אידן זענען כנגד די זעקס הונדערט טויזנט אותיות פון דער תורה; יעדער איד איז אן אות, און אויב איין אות פעלט אדער איז פסול, איז די גאנצע ספר תורה פסול."
+        },
+        "evidence": { "segs": [302, 303, 306, 318, 319], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Jews are counted by names, not numbers, because a person's name is the root of his soul.",
+          "yi": "אידן ווערן געציילט מיט נעמען און נישט מיט נומערן, ווייל דער נאמען פון א מענטש איז דער שורש פון זיין נשמה."
+        },
+        "evidence": { "segs": [520, 522, 524, 541], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The Levi'im, the camp of the Shechinah, are above number like the fiftieth day of the omer; what is counted in them is only the holiness they took over from the firstborn.",
+          "yi": "די לוים, די מחנה שכינה, זענען למעלה מן המספר אזוי ווי דער פופציגסטער טאג פון ספירה; וואס מ'ציילט ביי זיי איז נאר די קדושה וואס זיי האבן איבערגענומען פון די בכורים."
+        },
+        "evidence": { "segs": [718, 725, 824, 833, 843], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "During sefirah each Jew prepares the parchment of his body so that his letter can be written beautifully, and on Shavuos he must daven for Torah.",
+          "yi": "אין די ימי הספירה גרייט יעדער איד צו דעם קלף פון זיין גוף, אז זיין אות זאל געשריבן ווערן שיין, און שבועות דארף מען בעטן אויף תורה."
+        },
+        "evidence": { "segs": [950, 956, 957, 1014, 1097], "confidence": 0.75 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-parsha-bamidbar-01-01-bamidbar",
+      "startSeg": 0,
+      "endSeg": 67,
+      "title": { "en": "Bamidbar and a new Matan Torah each year", "yi": "במדבר און א נייע מתן תורה יעדעס יאר" },
+      "summary": {
+        "en": "The Rav opens: Bamidbar is always read before Shavuos as its preparation. From 'Moshe yedaber' in the future tense he explains that every Shavuos Moshe speaks with each Jew, who receives the Torah anew according to his preparation, his emunah in his own holy soul, and the fire he brings.",
+        "yi": "דער משגיח עפנט אז במדבר ליינט מען אלעמאל פאר שבועות אלס הכנה. פון \"משה ידבר\" אין לשון עתיד ערקלערט ער אז יעדן שבועות רעדט משה מיט יעדן איד, און יעדער איז מקבל די תורה פון דאס נייע לויט זיין הכנה, זיין אמונה אין זיין הייליגע נשמה און דאס פייער וואס ער ברענגט."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-bamidbar-01-01-bamidbar",
+      "startSeg": 68,
+      "endSeg": 152,
+      "title": { "en": "The Shabbos before Shavuos and the night's preparations", "yi": "דער שבת פאר שבועות און די הכנות פון דער נאכט" },
+      "summary": {
+        "en": "The Rav explains that the Shabbos before Shavuos is the preparation for the Yom Tov, then describes the preparations of the night: staying awake with the Torah, the mikvah on the fiftieth day, the longing in Ahavah Rabbah, and the need for still more preparation right before the reading of the Torah.",
+        "yi": "דער משגיח ערקלערט אז דער שבת פאר שבועות איז די הכנה צום יום טוב, און דערנאך באשרייבט ער די הכנות פון דער נאכט: אויפבלייבן מיט תורה, די מקוה אויפן פופציגסטן טאג, די בענקשאפט ביי אהבה רבה, און אז גלייך פאר קריאת התורה דארף מען נאך א הכנה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-bamidbar-01-01-bamidbar",
+      "startSeg": 153,
+      "endSeg": 221,
+      "title": { "en": "Akdamus, mesiras nefesh and standing at Sinai", "yi": "אקדמות, מסירות נפש און שטיין ביים הר סיני" },
+      "summary": {
+        "en": "Akdamus recalls the mesiras nefesh of Klal Yisrael so that each person takes it on himself; the Rav explains mesiras nefesh as giving over one's will. He tells of the Sanzer Rav's son who saw the lightning of Matan Torah in Belz, and teaches that one must believe one stands at Sinai and accept the Torah even for hard times.",
+        "yi": "אקדמות דערמאנט די מסירות נפש פון כלל ישראל כדי יעדער זאל עס נעמען אויף זיך; דער משגיח ערקלערט אז מסירות נפש מיינט אוועקגעבן דעם רצון. ער דערציילט פונעם זון פונעם צאנזער רב וואס האט געזען די קולות וברקים אין בעלזא, און לערנט אז מ'דארף גלייבן אז מ'שטייט ביים הר סיני און מקבל זיין די תורה אויך אויף שווערע צייטן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-bamidbar-01-01-bamidbar",
+      "startSeg": 222,
+      "endSeg": 270,
+      "title": { "en": "Why Moshe himself counted the Jews", "yi": "פארוואס משה רבינו אליין האט געציילט די אידן" },
+      "summary": {
+        "en": "The Rav asks why counting the Jews is the preparation for Matan Torah, and why Moshe Rabbeinu had to do it. He answers with the Ramban: each Jew came before Moshe and Aharon by name, and like a tzaddik reading a kvittel Moshe saw his root and future and blessed him.",
+        "yi": "דער משגיח פרעגט פארוואס דאס ציילן די אידן איז די הכנה צו מתן תורה, און פארוואס משה רבינו האט עס געדארפט טון. ער ענטפערט מיטן רמב\"ן: יעדער איד איז געקומען פאר משה און אהרן מיט זיין נאמען, און אזוי ווי א צדיק וואס קוקט אין א קוויטל האט משה געזען זיין שורש און זיין צוקונפט און אים געבענטשט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-bamidbar-01-01-bamidbar",
+      "startSeg": 271,
+      "endSeg": 325,
+      "title": { "en": "Every Jew is a letter in the Sefer Torah", "yi": "יעדער איד איז אן אות אין ספר תורה" },
+      "summary": {
+        "en": "The Rav brings that Shavuos is a greater day of judgment than Rosh Hashanah, for spiritual matters, so the Shabbos before it, when Moshe counts the Jews, decides the year. The count of 600,000 corresponds to the 600,000 letters of the Torah: each Jew is a letter, and one missing or invalid letter invalidates the whole Sefer Torah.",
+        "yi": "דער משגיח ברענגט אז שבועות איז א גרעסערער יום הדין ווי ראש השנה, אויף רוחניות, ממילא באשטימט דער שבת פאר שבועות, ווען משה ציילט די אידן, דאס גאנצע יאר. די זעקס הונדערט טויזנט זענען כנגד די זעקס הונדערט טויזנט אותיות פון דער תורה: יעדער איד איז אן אות, און איין אות וואס פעלט אדער איז פסול מאכט פסול די גאנצע ספר תורה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-bamidbar-01-01-bamidbar",
+      "startSeg": 326,
+      "endSeg": 397,
+      "title": { "en": "The degalim and the camps of the Shechinah", "yi": "די דגלים און די מחנות פון דער שכינה" },
+      "summary": {
+        "en": "The Rav brings the Midrash on 'Shuvi shuvi haShulamis': the nations invite Israel to join them, and Israel answers that nothing compares to the 'dance of the camps', the degalim of this parsha. The degalim mirror the four camps of angels around the Kisei HaKavod that came down at Sinai, and the Midrash teaches that the High came down to the low.",
+        "yi": "דער משגיח ברענגט דעם מדרש אויף \"שובי שובי השולמית\": די אומות רופן די אידן זיך צו מישן מיט זיי, און כנסת ישראל ענטפערט אז גארנישט איז גלייך צו \"מחולת המחנים\", די דגלים פון דער פרשה. די דגלים זענען כנגד די פיר מחנות מלאכים ארום דעם כסא הכבוד וואס זענען אראפגעקומען ביי מתן תורה, און דער מדרש לערנט אז דער הויכער איז אראפגעקומען צום נידעריגן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-bamidbar-01-01-bamidbar",
+      "startSeg": 398,
+      "endSeg": 441,
+      "title": { "en": "Rabbeinu Bachya on the names of the nesi'im", "yi": "רבינו בחיי אויף די נעמען פון די נשיאים" },
+      "summary": {
+        "en": "Two groups of angels came down at Sinai, corresponding to the 600,000 of Israel and the 22,000 Levi'im counted in the parsha. The Rav brings Rabbeinu Bachya: the four nesi'im whose names end in 'El' stand second, fifth, eighth and eleventh, together alluding to Hashem's Name, the camp of the Shechinah.",
+        "yi": "ביי מתן תורה זענען אראפגעקומען צוויי גרופעס מלאכים, כנגד די זעקס הונדערט טויזנט פון ישראל און די צוויי און צוואנציג טויזנט לוים וואס ווערן געציילט אין דער פרשה. דער משגיח ברענגט רבינו בחיי: די פיר נשיאים וועמענס נעמען ענדיגן זיך מיט \"אל\" שטייען אויפן צווייטן, פינפטן, אכטן און עלפטן ארט, און צוזאמען ווייזן זיי אויפן שם הוי\"ה, די מחנה שכינה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-bamidbar-01-01-bamidbar",
+      "startSeg": 442,
+      "endSeg": 501,
+      "title": { "en": "Why the Levi'im passage interrupts the count", "yi": "פארוואס די פרשה פון די לוים איז מפסיק אינמיטן ציילן" },
+      "summary": {
+        "en": "The Levi'im are not counted with Israel, and between the two counts the Torah inserts 'I have taken the Levi'im in place of every firstborn'. The Rav asks why this is needed here and why 'Ani Hashem'; he brings the Yismach Moshe that in the future the firstborn will return to the avodah while the Levi'im remain.",
+        "yi": "די לוים ווערן נישט געציילט מיט אלע אידן, און צווישן די צוויי ציילונגען שטעלט די תורה \"ואני הנה לקחתי את הלוים תחת כל בכור\". דער משגיח פרעגט פארוואס דאס דארף דא שטיין און פארוואס \"אני ה'\"; ער ברענגט דעם ישמח משה אז לעתיד לבוא וועלן די בכורים צוריקנעמען די עבודה און די לוים וועלן בלייבן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-bamidbar-01-01-bamidbar",
+      "startSeg": 502,
+      "endSeg": 612,
+      "title": { "en": "Counted by names, not numbers", "yi": "געציילט מיט נעמען, נישט מיט נומערן" },
+      "summary": {
+        "en": "The Rav brings the Gemara that the early sages were called soferim because they counted the letters of the Torah, and explains its worth: Moshe counted 'b'mispar shemos', by names, not as a census of numbers, since a name is the root of a soul and each soul is a letter. From here he explains looking at the letters at hagbah, the worth of an aliyah, and calling a person up by his and his father's name.",
+        "yi": "דער משגיח ברענגט די גמרא אז די ראשונים האבן געהייסן סופרים ווייל זיי האבן געציילט די אותיות פון דער תורה, און ערקלערט די חשיבות: משה האט געציילט \"במספר שמות\", מיט נעמען און נישט ווי א צענזוס פון נומערן, ווייל א נאמען איז דער שורש פון א נשמה, און יעדע נשמה איז אן אות. פון דעם ערקלערט ער דאס קוקן אויף די אותיות ביי הגבהה, די חשיבות פון אן עליה, און פארוואס מ'רופט אויף מיטן נאמען און מיטן טאטנ'ס נאמען."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-bamidbar-01-01-bamidbar",
+      "startSeg": 613,
+      "endSeg": 672,
+      "title": { "en": "The four camps and the five books", "yi": "די פיר מחנות און די פינף חומשים" },
+      "summary": {
+        "en": "The Rav suggests that the four camps correspond to four books of the Chumash, with Vayikra, Toras Kohanim, in the middle as the camp of the Levi'im and the Shechinah. The Jewish camp is a Sefer Torah, so no one may move to another degel. On Shemini Atzeres everyone gets an aliyah; on Shavuos this is done through Moshe's counting in Bamidbar.",
+        "yi": "דער משגיח זאגט אז די פיר מחנות זענען כנגד פיר ספרים פון חומש, און ספר ויקרא, תורת כהנים, איז אינמיטן כנגד די מחנה פון די לוים און די שכינה. די אידישע מחנה איז א ספר תורה, ממילא טאר קיינער נישט אריבערגיין צו אן אנדער דגל. שמיני עצרת האט יעדער איד אן עליה; שבועות ווערט דאס אויפגעטון דורך משה'ס ציילן אין במדבר."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-bamidbar-01-01-bamidbar",
+      "startSeg": 673,
+      "endSeg": 751,
+      "title": { "en": "The root above number and time", "yi": "דער שורש וואס איז למעלה מן המספר און מן הזמן" },
+      "summary": {
+        "en": "The 600,000 letters are rooted in the 22 letters of the aleph-beis, which correspond to the 22,000 Levi'im, the camp of the Shechinah. A root is above number and time and only Hashem counts it: so the fiftieth day is not counted and Shavuos has no fixed date, and so the Levi'im, the Aron, and Yerushalayim are beyond measure. The Rav then raises a difficulty from Sefer Vayikra.",
+        "yi": "די זעקס הונדערט טויזנט אותיות האבן זייער שורש אין די צוויי און צוואנציג אותיות פון אלף בית, כנגד די צוויי און צוואנציג טויזנט לוים, די מחנה שכינה. א שורש איז למעלה מן המספר און למעלה מן הזמן און נאר דער רבונו של עולם ציילט עס: דערפאר ציילט מען נישט דעם פופציגסטן טאג און שבועות האט נישט קיין באשטימטן טאג, און דערפאר זענען די לוים, דער ארון און ירושלים העכער פון א מאס. דערנאך פרעגט דער משגיח א קשיא פון ספר ויקרא."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-bamidbar-01-01-bamidbar",
+      "startSeg": 752,
+      "endSeg": 874,
+      "title": { "en": "Two holinesses in the Levi: his own and the firstborn's", "yi": "צוויי קדושות אין לוי: זיין אייגענע און די פונעם בכור" },
+      "summary": {
+        "en": "The Rav answers that the Levi'im took over the holiness of the firstborn, as a kohen does at pidyon haben, and with the Yismach Moshe he explains that a Levi holds two holinesses: his own, earned at the Golden Calf, which cannot be counted, and the firstborn's, which can. This explains why the Levi'im were counted from one month and why the passage of taking the Levi'im stands between the two counts.",
+        "yi": "דער משגיח ענטפערט אז די לוים האבן איבערגענומען די קדושה פון די בכורים, אזוי ווי א כהן ביי פדיון הבן, און מיטן ישמח משה ערקלערט ער אז א לוי האט צוויי קדושות: זיין אייגענע, וואס ער האט פארדינט ביים עגל, וואס מ'קען נישט ציילן, און די פונעם בכור, וואס מ'קען יא ציילן. דערמיט איז מתורץ פארוואס מ'האט געציילט די לוים פון א חודש און פארוואס די פרשה פון לקיחת הלוים שטייט צווישן די צוויי ציילונגען."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-bamidbar-01-01-bamidbar",
+      "startSeg": 875,
+      "endSeg": 947,
+      "title": { "en": "Why the Torah counts again and again", "yi": "פארוואס די תורה ציילט נאכאמאל און נאכאמאל" },
+      "summary": {
+        "en": "The Rav asks why the Torah counts each tribe, each degel and the total, when simple arithmetic would do. He answers that it is a count of names, and that a gathering of Jews is a new reality, as with three for zimun and ten for a minyan. Hashem learns the Sefer Torah of Klal Yisrael, and every Jew is counted with his mission.",
+        "yi": "דער משגיח פרעגט פארוואס די תורה ציילט יעדן שבט, יעדן דגל און דעם סך הכל, ווען א פשוטער חשבון וואלט גענוג געווען. ער ענטפערט אז דאס איז א ציילן פון שמות, און אז ווען אידן קומען זיך צוזאמען ווערט א נייע מציאות, אזוי ווי דריי צו זימון און צען צו א מנין. דער רבונו של עולם לערנט די ספר תורה פון כלל ישראל, און יעדער איד ווערט געציילט מיט זיין שליחות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-bamidbar-01-01-bamidbar",
+      "startSeg": 948,
+      "endSeg": 1027,
+      "title": { "en": "Sefirah prepares the parchment", "yi": "ספירה גרייט צו דעם קלף" },
+      "summary": {
+        "en": "The Rav explains that sefirah prepares each Jew's body like the parchment on which his letter is written. Even in galus the Shechinah travels with the camps. With 'the day of His wedding', which the Mishnah reads as Matan Torah, he describes Hashem's affection for Klal Yisrael and the adorning of the Torah, and says each Jew must make his letter beautiful, for his small letter can make the whole Torah pasul.",
+        "yi": "דער משגיח ערקלערט אז ספירה גרייט צו יעדן אידנס גוף אזוי ווי דעם קלף וואס אויף אים ווערט געשריבן זיין אות. אפילו אין גלות גייט די שכינה מיט די מחנות. מיט \"ביום חתונתו\", וואס די משנה טייטשט אויף מתן תורה, באשרייבט ער דעם רבונו של עולם'ס חיבה צו כלל ישראל און דאס באצירן די תורה, און זאגט אז יעדער איד דארף מאכן זיין אות שיין, ווייל זיין קליין אות קען פסול מאכן די גאנצע תורה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-bamidbar-01-01-bamidbar",
+      "startSeg": 1028,
+      "endSeg": 1098,
+      "title": { "en": "Renewal on Shavuos and davening for Torah", "yi": "באנייאונג שבועות און בעטן אויף תורה" },
+      "summary": {
+        "en": "The Rav brings the Kedushas Levi that the eagle sheds its old feathers and grows new ones, and so on Shavuos, the day of first fruits, a Jew casts off the old and renews himself; each Jew is the 'new offering' to Hashem. He stresses that one must also beg Hashem to merit Torah and its depth.",
+        "yi": "דער משגיח ברענגט דעם קדושת לוי אז דער נשר ווארפט אראפ די אלטע פעדערן און באקומט נייע, און אזוי שבועות, יום הבכורים, ווארפט א איד אראפ דאס אלטע און באנייט זיך; יעדער איד איז די \"מנחה חדשה\" פארן רבונו של עולם. ער לייגט צו אז מ'דארף אויך בעטן דעם רבונו של עולם מ'זאל זוכה זיין צו תורה און צו איר עמקות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-bamidbar-01-01-bamidbar",
+      "startSeg": 1099,
+      "endSeg": 1194,
+      "title": { "en": "Why the Jews overslept, and the oath of Shavuos", "yi": "פארוואס די אידן האבן פארשלאפן, און די שבועה פון שבועות" },
+      "summary": {
+        "en": "The Rav brings the Midrash that the Jews overslept on the morning of Matan Torah, and explains they wanted to rest so as to daven with a clear mind, yet one cannot rely on one's own preparation. One must prepare all of sefirah and still rely on Hashem. Shavuos is an oath binding Israel and Hashem; he closes with saying Tehillim and davening for Torah.",
+        "yi": "דער משגיח ברענגט דעם מדרש אז די אידן האבן פארשלאפן אינדערפרי פון מתן תורה, און ערקלערט אז זיי האבן געוואלט רוען כדי צו קענען דאווענען מיט א קלארן מוח, און פונדעסטוועגן קען מען זיך נישט פארלאזן אויף די אייגענע הכנה. מ'דארף זיך צוגרייטן די גאנצע ספירה און זיך פארט פארלאזן אויפן רבונו של עולם. שבועות איז א שבועה צווישן כלל ישראל און דעם רבונו של עולם; ער שליסט מיט זאגן תהלים און בעטן אויף תורה."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "משה ידבר ... בלשון עתיד",
+      "work": "Shemos",
+      "ref": "Shemos 19:19",
+      "sefariaRef": "Exodus 19:19",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [14, 16, 23], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "יורד השם עולה באש",
+      "work": "Shemos",
+      "ref": "Shemos 19:18",
+      "sefariaRef": "Exodus 19:18",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [56, 62, 64], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ספרים פון די קדמיינען פון די תלמידי בעל שם טוב",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [122, 123, 126], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "עס שטעט אין מדרש ... ליינען די קריעה פון בחודש השלישי",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [129, 130, 131], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "שלשת ימי הגבלה",
+      "work": "Shemos",
+      "ref": "Shemos 19:10-12",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [139, 140], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אקדמת סמילים",
+      "work": "Akdamus",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [153, 162, 182], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דהום ישו איז נפשיכים",
+      "work": "Bereishis",
+      "ref": "Bereishis 23:8",
+      "sefariaRef": "Genesis 23:8",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [174, 175], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "כוזרי",
+      "work": "Kuzari",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [181], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "דער רמב״ם זאגט אז דאס איז די מצוה פון אמנה ... אנחי ה' אלהי ככה",
+      "work": "Sefer HaMitzvos",
+      "ref": "Sefer HaMitzvos, positive commandment 1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [199, 200, 201], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער רמב״ן זאגט ... מ'איז געקומען יעדער איינער פאר משה און אהרן",
+      "work": "Ramban on Torah",
+      "ref": "Ramban on Bamidbar 1:45",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [236, 238, 260, 267, 543, 582], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "מי לערנט נפקד כי היום הזה",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [249, 251], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "תורה סודות פון די סלאנימע רבי'ס ... מודאלאכאוויטשער",
+      "work": "Toras Avos",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [273, 274, 276], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "תיאה אקציות ... אזוי שטעט אין זייער קודש",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [281, 282, 283], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "ישראל איז ראשי טובות צו ישוב שושם רבי עשיות לתורה",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [301, 302, 514], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "שבו שבו השלמות ... מה תערזא בשל למת",
+      "work": "Shir HaShirim",
+      "ref": "Shir HaShirim 7:1",
+      "sefariaRef": "Song of Songs 7:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [327, 328, 338, 342], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אזוי שטעט אין מדרש",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [326, 344, 345], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "די גמרא זעטן אין שבת ... זעקס האנדערט טויזנט",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 88a",
+      "sefariaRef": "Shabbat 88a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [361, 362, 364], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "רבשים אלפי שינים",
+      "work": "Tehillim",
+      "ref": "Tehillim 68:18",
+      "sefariaRef": "Psalms 68:18",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [367, 370, 371], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "עס שטעט אין מדרש אז מי מרדכי ... דער גבעה איז געקומען צום דעם נמוך",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [388, 389, 391, 392], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "עס שטעט אין בית אהרן",
+      "work": "Beis Aharon",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [394, 395, 397], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "בן אלבאחיה שטייט א ניני נפלא",
+      "work": "Rabbeinu Bachya",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [404, 405, 427, 438], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "לויים לא האסט פאקטא בתוכם",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 1:47",
+      "sefariaRef": "Numbers 1:47",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [445, 446, 719], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "ונהינו לקחת את הלוי ... תחת כל בחור ... לי יא אנו ה'",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 3:12-13",
+      "sefariaRef": "Numbers 3:12-13",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [449, 450, 451, 453], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "די ישמח משה ברענגט",
+      "work": "Yismach Moshe",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [481, 501, 771, 803], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די גמל זאגט אין קדושים בפיקח נקרא ראשונים סופרים",
+      "work": "Gemara Kiddushin",
+      "ref": "Kiddushin 30a",
+      "sefariaRef": "Kiddushin 30a",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [502, 503, 505], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ומות פשמות ... למשפחותים וללבית הביתים",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 1:2",
+      "sefariaRef": "Numbers 1:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [520, 588, 598], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "עס שטעט אין ספרים ... עולם הדמיון",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [605, 606, 609, 610], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די גמרא ... מרקן הארן אינעם אין א מנין",
+      "work": "Gemara Yoma",
+      "ref": "Yoma 21a",
+      "sefariaRef": "Yoma 21a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [729, 730, 731], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "עשור הניסים ... צלי המקום שלום בירושלים",
+      "work": "Pirkei Avos",
+      "ref": "Avos 5:5",
+      "sefariaRef": "Pirkei Avot 5:5",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [742, 743], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "כל בנייך למדי השם",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 54:13",
+      "sefariaRef": "Isaiah 54:13",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [917, 920], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "שטעט אין ספרים אויף פרשת מעשה ... אלא מעשה בני ישראל",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 33:1",
+      "sefariaRef": "Numbers 33:1",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [965, 969, 970], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "צנא הורלא בנות ציון בן מלך שלמה ... ביום חסל נשא",
+      "work": "Shir HaShirim",
+      "ref": "Shir HaShirim 3:11",
+      "sefariaRef": "Song of Songs 3:11",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [978, 980], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער משנה זאגט אז בעומך את הנושא ז'מד און צורע",
+      "work": "Mishnah Taanis",
+      "ref": "Taanis 4:8",
+      "sefariaRef": "Mishnah Taanit 4:8",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [981, 982], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "לזאת מחבבא בטשע קורא בתי ... אמה",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [983, 985, 987], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אזוי שטעט אין קידושת חלבי",
+      "work": "Kedushas Levi",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1043, 1046, 1053], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "די כתב פון די מנחה חדשה עלי' השם ... ביום הביקרים",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 28:26",
+      "sefariaRef": "Numbers 28:26",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [1054, 1057, 1070], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "שטעט אין יתמוך ישראל אז ... זיינען זיי אלע פארשלאפן",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1100, 1101, 1103], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "From 'Moshe yedaber' in the future tense the Rav learns that Moshe speaks with each Jew every Shavuos, not only at the original Matan Torah.",
+        "yi": "פון \"משה ידבר\" אין לשון עתיד לערנט דער משגיח אז משה רעדט מיט יעדן איד יעדן שבועות, נישט נאר ביי דעם ערשטן מתן תורה."
+      },
+      "evidence": { "segs": [16, 17, 18, 29], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Mesiras nefesh means giving over one's will, since 'nefesh' means will, as in 'im yesh es nafshechem'.",
+        "yi": "מסירות נפש מיינט אוועקגעבן דעם רצון, ווייל \"נפש\" איז טייטש רצון, אזוי ווי \"אם יש את נפשכם\"."
+      },
+      "evidence": { "segs": [172, 173, 174, 175], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Shavuos is a greater day of judgment than Rosh Hashanah, because Rosh Hashanah judges material matters while Shavuos decides the spiritual life of the coming year.",
+        "yi": "שבועות איז א גרעסערער יום הדין ווי ראש השנה, ווייל ראש השנה ווערט מען געמשפט אויף גשמיות און שבועות באשטימט די רוחניות פון דעם קומענדיגן יאר."
+      },
+      "evidence": { "segs": [274, 275, 276, 288], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Calling a person to the Torah by his name and his father's name mirrors Moshe's counting 'by their families and fathers' houses', binding him to his root letter.",
+        "yi": "וואס מ'רופט אויף א מענטש צו דער תורה מיט זיין נאמען און זיין טאטנ'ס נאמען איז כנגד משה'ס ציילן \"למשפחותם לבית אבותם\", און עס בינדט אים צו דעם אות פון זיין שורש."
+      },
+      "evidence": { "segs": [585, 586, 594, 597, 598], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The fiftieth day is not counted and Shavuos has no fixed calendar date because it is the root, above time and number, just as the Levi'im, the camp of the Shechinah, are not counted.",
+        "yi": "דעם פופציגסטן טאג ציילט מען נישט און שבועות האט נישט קיין באשטימטן דאטום, ווייל ער איז דער שורש, למעלה מן הזמן און מן המספר, אזוי ווי מ'ציילט נישט די לוים, די מחנה שכינה."
+      },
+      "evidence": { "segs": [697, 701, 707, 718, 725], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The four camps correspond to four books of the Chumash, with Vayikra, the book of the Kohanim and Levi'im, in the middle like the camp of the Shechinah.",
+        "yi": "די פיר מחנות זענען כנגד פיר ספרים פון חומש, און ספר ויקרא, דער ספר פון כהנים און לוים, איז אינמיטן אזוי ווי די מחנה שכינה."
+      },
+      "evidence": { "segs": [633, 637, 639, 640, 641], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The days of sefirah prepare the body as parchment, rubbing and smoothing it so that Hashem's Sefer Torah can be written on each Jew.",
+        "yi": "די ימי הספירה גרייטן צו דעם גוף ווי א קלף, מ'רייבט און מ'פאלירט אים, כדי דעם רבונו של עולם'ס ספר תורה זאל קענען געשריבן ווערן אויף יעדן איד."
+      },
+      "evidence": { "segs": [949, 950, 954, 956, 957], "confidence": 0.8 }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "The Sanzer Rav's son and the lightning in Belz",
+        "yi": "דער זון פונעם צאנזער רב און די ברקים אין בעלזא"
+      },
+      "retelling": {
+        "en": "The Rav tells that a son of the Sanzer Rav traveled to Belz for Shavuos and saw there, as it were, the lightning of Matan Torah. The next Shavuos he again wanted to travel, and explained that in Belz he saw the lightning. He was told that here too one can see it. The Rav adds that it is a gift given to some, and better still is to believe that the lightning is present.",
+        "yi": "דער משגיח דערציילט אז א זון פונעם צאנזער רב איז געפארן קיין בעלזא אויף שבועות און האט דארט ממש געזען די ברקים פון מתן תורה. דעם קומענדיגן שבועות האט ער ווידער געוואלט פארן, און ער האט געזאגט אז אין בעלזא זעט ער די ברקים. מ'האט אים געענטפערט אז דא קען מען עס אויך זען. דער משגיח לייגט צו אז דאס איז א מתנה וואס מ'גיט איינעם, און נאך בעסער איז צו גלייבן אז די ברקים זענען דא."
+      },
+      "people": ["the Sanzer Rav"],
+      "evidence": { "segs": [189, 193, 195, 196, 198], "confidence": 0.6 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why is counting the Jews the preparation for Matan Torah, and why did Moshe Rabbeinu himself have to count?",
+        "yi": "פארוואס איז ציילן די אידן די הכנה צו מתן תורה, און פארוואס האט משה רבינו אליין געדארפט ציילן?"
+      },
+      "answer": {
+        "en": "Following the Ramban, each Jew came before Moshe and Aharon by name; Moshe saw his root and all that would happen to him, and blessed him with strength for his trials.",
+        "yi": "לויטן רמב\"ן איז יעדער איד געקומען פאר משה און אהרן מיט זיין נאמען; משה האט געזען זיין שורש און אלעס וואס וועט פאסירן מיט אים, און אים געבענטשט מיט כח פאר זיינע נסיונות."
+      },
+      "questionSegs": [229, 233, 234],
+      "answerSegs": [236, 261, 268, 270],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "What is the greatness in the early sages counting all the letters of the Torah?",
+        "yi": "וואס איז די גדולה וואס די ראשונים האבן געציילט אלע אותיות פון דער תורה?"
+      },
+      "answer": {
+        "en": "Each letter is the root of a Jewish soul, so counting the letters is counting souls by name, as Moshe did.",
+        "yi": "יעדער אות איז דער שורש פון אן אידישע נשמה, ממילא איז ציילן די אותיות ציילן נשמות מיט נעמען, אזוי ווי משה האט געטון."
+      },
+      "questionSegs": [505, 511],
+      "answerSegs": [514, 546, 548, 549],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why does the Torah add 'Ani Hashem' after taking the Levi'im in place of the firstborn?",
+        "yi": "פארוואס לייגט די תורה צו \"אני ה'\" נאכדעם וואס זי נעמט די לוים אנשטאט די בכורים?"
+      },
+      "answer": {
+        "en": "The Yismach Moshe explains that in the future the firstborn will return to the avodah, yet the Levi'im will not lose their holiness; both will serve, for Hashem is eternal.",
+        "yi": "דער ישמח משה ערקלערט אז לעתיד לבוא וועלן די בכורים צוריקנעמען די עבודה, און די לוים וועלן פארט נישט פארלירן זייער קדושה; ביידע וועלן דינען, ווייל דער אייבערשטער איז נצחי."
+      },
+      "questionSegs": [476, 479],
+      "answerSegs": [484, 491, 495, 499],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "Why does the passage of taking the Levi'im interrupt between the count of Israel and the count of the Levi'im?",
+        "yi": "פארוואס איז די פרשה פון לקיחת הלוים מפסיק צווישן דעם מנין פון ישראל און דעם מנין פון די לוים?"
+      },
+      "answer": {
+        "en": "The Levi'im are above number and cannot be counted; only the firstborn's holiness they took over can be, so the Torah first states that they took it over, and then counts them from one month, as with a firstborn.",
+        "yi": "די לוים זענען למעלה מן המספר און מ'קען זיי נישט ציילן; נאר די קדושה פון די בכורים וואס זיי האבן איבערגענומען קען מען ציילן, דערפאר זאגט די תורה פריער אז זיי האבן עס איבערגענומען, און דערנאך ציילט מען זיי פון א חודש, אזוי ווי א בכור."
+      },
+      "questionSegs": [464, 466, 467, 475],
+      "answerSegs": [833, 835, 837, 854, 858],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why does the Torah count each tribe, each degel and the total, when arithmetic would suffice?",
+        "yi": "פארוואס ציילט די תורה יעדן שבט, יעדן דגל און דעם סך הכל, ווען א חשבון וואלט גענוג געווען?"
+      },
+      "answer": {
+        "en": "It is a count of names, not arithmetic: when Jews come together a new kind of holiness arises, as with three for zimun and ten for a minyan, so each grouping is its own reality.",
+        "yi": "דאס איז א ציילן פון שמות, נישט קיין חשבון: ווען אידן קומען זיך צוזאמען ווערט א נייע סארט קדושה, אזוי ווי דריי צו זימון און צען צו א מנין, ממילא איז יעדע גרופע אן אנדער מציאות."
+      },
+      "questionSegs": [876, 878, 879],
+      "answerSegs": [891, 892, 900, 911, 914],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why did the Jews oversleep on the morning of Matan Torah after all their preparation?",
+        "yi": "פארוואס האבן די אידן פארשלאפן אינדערפרי פון מתן תורה נאך אזויפיל הכנות?"
+      },
+      "answer": {
+        "en": "They wanted to rest a little so as to daven and receive the Torah with a clear mind, and fell asleep; this shows one cannot rely on one's own preparation and must rely on Hashem.",
+        "yi": "זיי האבן געוואלט אביסל רוען כדי צו קענען דאווענען און מקבל זיין די תורה מיט א קלארן מוח, און זענען איינגעשלאפן; פון דעם זעט מען אז מ'קען זיך נישט פארלאזן אויף די אייגענע הכנה און מ'דארף זיך פארלאזן אויפן רבונו של עולם."
+      },
+      "questionSegs": [1105],
+      "answerSegs": [1106, 1112, 1117, 1152],
+      "confidence": 0.7
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says that even after all the preparations, right before the reading of the Torah on Shavuos one should make yet another preparation rather than rush to begin.",
+        "yi": "דער משגיח זאגט אז אפילו נאך אלע הכנות דארף מען גלייך פאר קריאת התורה שבועות מאכן נאך א הכנה, און נישט כאפן אנהייבן."
+      },
+      "evidence": { "segs": [144, 148, 152], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that at kabbalas haTorah each person should accept mesiras nefesh, to serve Hashem even when he feels no taste in Yiddishkeit, Torah or davening.",
+        "yi": "דער משגיח זאגט אז ביי קבלת התורה זאל יעדער מקבל זיין מסירות נפש, צו דינען דעם רבונו של עולם אפילו ווען ער שפירט נישט קיין טעם אין אידישקייט, אין תורה און אין דאווענען."
+      },
+      "evidence": { "segs": [207, 209, 212, 215], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says every Jew must know that he must prepare himself for Shavuos so that his own letter in the Sefer Torah is whole and beautiful.",
+        "yi": "דער משגיח זאגט אז יעדער איד דארף וויסן אז ער דארף זיך צוגרייטן צו שבועות אז זיין אייגענער אות אין ספר תורה זאל זיין גאנץ און שיין."
+      },
+      "evidence": { "segs": [323, 324, 1011, 1014], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one must daven and beg Hashem on Shavuos to merit Torah and to feel its sweetness and depth.",
+        "yi": "דער משגיח זאגט אז מ'דארף שבועות בעטן דעם רבונו של עולם מ'זאל זוכה זיין צו תורה און שפירן איר זיסקייט און עמקות."
+      },
+      "evidence": { "segs": [1086, 1093, 1097, 1177], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "every Jew a letter in the Sefer Torah",
+    "Parshas Bamidbar",
+    "preparation for Shavuos",
+    "counting the Jewish people",
+    "mesiras nefesh",
+    "the Levi'im and the firstborn",
+    "the degalim and the camps",
+    "names versus numbers",
+    "kabbalas haTorah",
+    "Shabbos before Shavuos"
+  ],
+  "concepts": [
+    { "he": "אות בספר תורה", "heardAs": ["עות", "עשיות", "אותן דער ספר תורה", "יוסי'עס"] },
+    { "he": "במספר שמות", "heardAs": ["ומות פשמות", "מוספה שמות", "מוז פאר שמות"] },
+    { "he": "מסירות נפש", "heardAs": ["מסורת נפש", "מסירת נפש"] },
+    { "he": "קבלת התורה", "heardAs": ["קבלת הצורות", "קבלת הציירה", "קבלת הצורה"] },
+    { "he": "מתן תורה", "heardAs": ["מתן צורים", "מטן תורה", "מתן-צורה"] },
+    { "he": "שבועות", "heardAs": ["שוואות", "שבעות", "שבות", "שוואת"] },
+    { "he": "דגלים", "heardAs": ["דבל", "דגלים", "דבי"] },
+    { "he": "מחנה שכינה", "heardAs": ["מחנך שכינה", "מחנך שכונה", "מאכנות השכונה"] },
+    { "he": "כסא הכבוד", "heardAs": ["כותב הכבוד", "כיסא הכבוד", "כיסאי הכבוד"] },
+    { "he": "בכורים", "heardAs": ["בחורים", "פחורים", "פחוע"] },
+    { "he": "לוים", "heardAs": ["לבים", "לודים", "לויים", "לבואים"] },
+    { "he": "קולות וברקים", "heardAs": ["קברת הברקים", "קראת צוברקים", "כיבוד צום ברוקים"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבינו שלום", "רבנה של עולם", "רבי נשאלאלעם", "רבונו שלום"] },
+    { "he": "למעלה מן הזמן", "heardAs": ["למעלה מן א זמן", "למעלה מן הזמן"] },
+    { "he": "מחולת המחנים", "heardAs": ["מחילת המחנה", "מתחילת המחנויים", "מחולת המחנאים"] }
+  ],
+  "people": [
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו", "משך רבינו", "במשך רבינו"] },
+    { "name": "Aharon", "heardAs": ["אהרן", "וירון"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "the Ramban", "heardAs": ["רמב״ן", "רמב''ן"] },
+    { "name": "the Sanzer Rav", "heardAs": ["סאנזא רב"] },
+    { "name": "Rebbe Mordechai of Lechovitch", "heardAs": ["מודאלאכאוויטשער"] },
+    { "name": "Rabbeinu Bachya", "heardAs": ["בן אלבאחיה"] },
+    { "name": "the Yismach Moshe", "heardAs": ["ישמח משה", "יצחק משה", "אתמך משה"] },
+    { "name": "the Kedushas Levi", "heardAs": ["קידושת חלבי", "קדושת לוי"] },
+    { "name": "Nachshon ben Aminadav", "heardAs": ["נחשון בן עמינדב"] },
+    { "name": "Nesanel ben Tzuar", "heardAs": ["נתנאל בן שאול", "נתנאל בן-צר עם"] },
+    { "name": "Shlumiel ben Tzurishaddai", "heardAs": ["אלשמואל בן-שרי שדר", "שלה מיאה בן שבו שלה"] },
+    { "name": "Gamliel ben Pedahtzur", "heardAs": ["גמליאל בן-פידוצאיל", "גמליהו בן פדצה"] },
+    { "name": "Pagiel ben Ochran", "heardAs": ["פאגיאל בן-אכרים", "הגיאל בן נחרון"] },
+    { "name": "Rus", "heardAs": ["רות"] },
+    { "name": "Dovid HaMelech", "heardAs": ["דוד המלה"] }
+  ],
+  "asrNotes": "Yiddish ASR fair to poor; most pesukim and Chazal quotations are badly garbled but recoverable from the parsha. The story about the Sanzer Rav's son in Belz (segs 189-198) is only partly intelligible. The digression on firstborn and 'reishis ono' (segs 774-801) and the Tehillim chapter named near the end (segs 1178-1181) could not be recovered and are left out. Only one short [NOISE?] segment (1096)."
+}

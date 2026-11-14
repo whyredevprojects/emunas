@@ -1,0 +1,510 @@
+{
+  "shiurId": "yi-parshas-hashavua-szry-mtzvr-02",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "Speaking to children after Pesach, the Rav teaches that guarding the mouth, both what enters it and what leaves it, keeps the healing of the matzah and lets every Jewish child help finish the Beis HaMikdash through small, hidden acts.",
+      "yi": "דער משגיח רעדט צו קינדער נאך פסח און לערנט אז מ'דארף אפהיטן דאס מויל, סיי וואס עס גייט אריין און סיי וואס עס גייט ארויס, און אז מיט קליינע באהאלטענע מעשים קען יעדעס אידיש קינד מיטבויען דעם בית המקדש."
+    },
+    "abstract": {
+      "en": "The Rav opens with matzah as the medicine of emunah: after Pesach the cure must be kept by not eating 'poison'. Parshas Shemini teaches care for what enters the mouth, Tazria-Metzora for what leaves it, for the mouth is a two-way street. A clean mouth makes tefillah accepted; the Jewish mouth is a mizbeach, so one must be strict with hechsherim. One who does what he can is protected from what he cannot, as stories of the Beis HaLevi and the Yeshuos Yaakov show. In Iyar Shlomo began building the Beis HaMikdash; every perfect mitzvah adds a piece to the heavenly Beis HaMikdash, and the Divrei Chaim's paroches story shows that sins tear it down. The great tzaddikim built the big parts; what is left are small touches, like refusing doubtful candy, holding back a shaming joke and guarding the eyes, and Moshiach will point to the child who finished them.",
+      "yi": "דער משגיח עפנט מיט דעם אז מצה איז א רפואה פון אמונה, און נאך פסח דארף מען היטן די רפואה און נישט עסן קיין סם. פרשת שמיני לערנט אכטונג געבן וואס עס גייט אריין אין מויל, און תזריע מצורע וואס עס גייט ארויס, ווייל דאס מויל איז א וועג אין ביידע זייטן. א ריין מויל מאכט אז די תפילה ווערט אנגענומען; דאס אידישע מויל איז א מזבח, דערפאר דארף מען זיין גענוי מיט הכשרים. ווער עס טוט וואס ער קען, דעם היט דער אייבערשטער אפ, ווי מ'זעט אין די מעשיות פונעם בית הלוי מיט ר' יהושע לייב דיסקין און פונעם ישועות יעקב. אין אייר האט שלמה המלך אנגעהויבן בויען דעם בית המקדש; יעדע שלימות'דיגע מצוה בויט א שטיקל פונעם בית המקדש אין הימל, און די מעשה פונעם דברי חיים מיט דעם פרוכת ווייזט אז עבירות צעברעכן עס. די גרויסע צדיקים האבן שוין געבויט די גרויסע חלקים; עס פעלן נאר קליינע זאכן: נישט עסן א צווייפלהאפטע קענדי, איינהאלטן א וויץ וואס פארשעמט, שווייגן ביי חזרת הש\"ץ און היטן די אויגן. משיח וועט אנווייזן אויף דעם אינגל וואס האט עס פארענדיקט."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Matzah is a medicine of emunah, and after Pesach the healing must be kept by guarding what one eats.",
+          "yi": "מצה איז א רפואה פון אמונה, און נאך פסח דארף מען די רפואה היטן מיט אכטונג געבן וואס מ'עסט."
+        },
+        "evidence": { "segs": [29, 30, 38, 42, 61], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The mouth is a two-way street: Shemini teaches care for what goes in, Tazria-Metzora for what comes out.",
+          "yi": "דאס מויל איז א וועג אין ביידע זייטן: שמיני לערנט אכטונג געבן וואס עס גייט אריין, און תזריע מצורע וואס עס גייט ארויס."
+        },
+        "evidence": { "segs": [77, 79, 83, 84, 85, 87], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Tefillah depends on the mouth: Hashem accepts the tefillah of a mouth that is kept holy, since the Jewish mouth is a mizbeach.",
+          "yi": "די תפילה הענגט אין מויל: דער אייבערשטער נעמט אן די תפילה פון א הייליג מויל, ווייל דאס אידישע מויל איז א מזבח."
+        },
+        "evidence": { "segs": [105, 106, 107, 169, 170], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Whoever guards himself as far as he can is protected by Hashem from what he cannot control.",
+          "yi": "ווער עס היט זיך אפ וויפיל ער קען, דעם היט דער אייבערשטער אפ פון דעם וואס ער קען נישט."
+        },
+        "evidence": { "segs": [212, 214, 369, 370, 372], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Every complete mitzvah goes up to heaven and becomes a piece of the Beis HaMikdash, while sins tear it down.",
+          "yi": "יעדע גאנצע מצוה גייט ארויף אין הימל און ווערט א שטיקל בית המקדש, און עבירות צעברעכן עס."
+        },
+        "evidence": { "segs": [452, 456, 461, 489, 491], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The great parts of the Beis HaMikdash are already built; what remains are small touches that even small people of this generation can do.",
+          "yi": "די גרויסע חלקים פונעם בית המקדש זענען שוין געבויט; עס פעלן נאר קליינע זאכן וואס אפילו קליינע מענטשן פון אונזער דור קענען טאן."
+        },
+        "evidence": { "segs": [524, 526, 534, 555, 557], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "One becomes an ehrlicher Yid not through the big mitzvos everyone does, but through a hundred small, hidden acts of self-restraint.",
+          "yi": "מ'ווערט אן ערליכער איד נישט מיט די גרויסע מצוות וואס יעדער טוט, נאר מיט הונדערט קליינע באהאלטענע זאכן וואס מ'האלט זיך איין."
+        },
+        "evidence": { "segs": [721, 722, 723, 727, 728], "confidence": 0.9 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-parsha-vayikra-04-02-tazria-metzorah",
+      "startSeg": 0,
+      "endSeg": 88,
+      "title": { "en": "Matzah's cure and the two-way mouth", "yi": "די רפואה פון מצה און דאס מויל אין ביידע זייטן" },
+      "summary": {
+        "en": "The Rav calls matzah a medicine of emunah and says that after Pesach the cure must be kept by not eating forbidden food. He links Parshas Shemini to what enters the mouth and Tazria-Metzora, where the metzora is a motzi shem ra, to what leaves it.",
+        "yi": "דער משגיח רופט מצה א רפואה פון אמונה און זאגט אז נאך פסח דארף מען היטן די רפואה און נישט עסן קיין איסור. ער פארבינדט פרשת שמיני מיט דעם וואס גייט אריין אין מויל, און תזריע מצורע, וואו דער מצורע איז א מוציא שם רע, מיט דעם וואס גייט ארויס."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-vayikra-04-02-tazria-metzorah",
+      "startSeg": 89,
+      "endSeg": 181,
+      "title": { "en": "A holy mouth, an accepted tefillah", "yi": "א הייליג מויל, אן אנגענומענע תפילה" },
+      "summary": {
+        "en": "Every child needs yeshuos, and the Rav explains that tefillah comes through the mouth, so Hashem accepts it from a mouth kept holy. He urges care with hechsherim and doubtful ingredients, asking the rebbi and parents, because the Jewish mouth is a mizbeach.",
+        "yi": "יעדעס קינד דארף ישועות, און דער משגיח ערקלערט אז די תפילה קומט דורכן מויל, דערפאר נעמט דער אייבערשטער זי אן פון א הייליג מויל. ער זאגט אז מ'דארף אכטונג געבן אויף הכשרים און צווייפלהאפטע אינגרידיענטן, פרעגן דעם רבי און די עלטערן, ווייל דאס אידישע מויל איז א מזבח."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-vayikra-04-02-tazria-metzorah",
+      "startSeg": 182,
+      "endSeg": 270,
+      "title": { "en": "Raglei chasidav yishmor: the Beis HaLevi's chicken", "yi": "רגלי חסידיו ישמור: דעם בית הלוי'ס הינדל" },
+      "summary": {
+        "en": "The Rav asks how one can guard against a mistake one cannot help, and answers with the passuk that Hashem guards the feet of His pious ones. He tells how the Beis HaLevi, given chicken for the road by Rabbi Yehoshua Leib Diskin's household, left it uneaten when it turned out to have a shailah.",
+        "yi": "דער משגיח פרעגט וויאזוי מ'קען זיך אפהיטן פון א טעות וואס מ'קען נישט העלפן, און ענטפערט מיטן פסוק אז דער אייבערשטער היט אפ די פיס פון זיינע חסידים. ער דערציילט ווי דער בית הלוי האט באקומען הינדל אויפן וועג פון ר' יהושע לייב דיסקין'ס שטוב, און האט עס נישט געגעסן ווען ס'האט זיך ארויסגעשטעלט אז עס איז געווען א שאלה."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-vayikra-04-02-tazria-metzorah",
+      "startSeg": 271,
+      "endSeg": 373,
+      "title": { "en": "The guarding malach and the Yeshuos Yaakov", "yi": "דער מלאך וואס היט און דער ישועות יעקב" },
+      "summary": {
+        "en": "Each time a child says 'I don't eat that', a holy malach is created that goes with him and saves him from mistakes. The Rav tells how the Yeshuos Yaakov, a guest at a local Rav, got caught up in a Rambam and never ate the pancake that had been fried in a fleishig pan.",
+        "yi": "יעדעס מאל וואס א קינד זאגט \"דאס עס איך נישט\" ווערט באשאפן א מלאך קדוש וואס גייט מיט אים און ראטעוועט אים פון טעותים. דער משגיח דערציילט ווי דער ישועות יעקב, וואס איז געווען צוגאסט ביי א רב, האט זיך פארטיפט אין א רמב\"ם און האט נישט געגעסן דעם פיינקאך וואס איז געבראטן געווארן אין א פליישיגע פאן."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-vayikra-04-02-tazria-metzorah",
+      "startSeg": 374,
+      "endSeg": 439,
+      "title": { "en": "Iyar: preparing for Shavuos, building the Mikdash", "yi": "אייר: זיך גרייטן צו שבועות און בויען דעם מקדש" },
+      "summary": {
+        "en": "In Iyar Shlomo HaMelech began building the Beis HaMikdash, and the Rav explains that what the Torah dates returns every year. As at Sinai, the heavens come down each Shavuos, and how one prepares in sefirah, with a holy mouth for Torah, decides what Shavuos one has; Iyar is the time to build the Beis HaMikdash.",
+        "yi": "אין אייר האט שלמה המלך אנגעהויבן בויען דעם בית המקדש, און דער משגיח ערקלערט אז וואס די תורה גיט א דאטום, חזר'ט זיך איבער יעדעס יאר. אזוי ווי ביי הר סיני קומט דער הימל אראפ יעדן שבועות, און לויט ווי מ'גרייט זיך אין ספירה, מיט א הייליג מויל פאר תורה, אזא שבועות האט מען; אייר איז די צייט צו בויען דעם בית המקדש."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-vayikra-04-02-tazria-metzorah",
+      "startSeg": 440,
+      "endSeg": 491,
+      "title": { "en": "Mitzvos build, sins tear: the Divrei Chaim's paroches", "yi": "מצוות בויען, עבירות צעברעכן: דעם דברי חיים'ס פרוכת" },
+      "summary": {
+        "en": "The Rav explains that the third Beis HaMikdash will come down built from above, and every perfect mitzvah becomes material for it in heaven. He tells that the Divrei Chaim said only the paroches was missing, and that he had made it but a great rasha tore it; tzaddikim build and reshaim destroy.",
+        "yi": "דער משגיח ערקלערט אז דער דריטער בית המקדש וועט אראפקומען פון אויבן, און יעדע שלימות'דיגע מצוה ווערט א מאטעריאל דערפאר אין הימל. ער דערציילט אז דער דברי חיים האט געזאגט אז עס פעלט נאר דער פרוכת, און אז ער האט אים געמאכט נאר א גרויסער רשע האט אים צעריסן; צדיקים בויען און רשעים צעשטערן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-vayikra-04-02-tazria-metzorah",
+      "startSeg": 492,
+      "endSeg": 580,
+      "title": { "en": "Only the small touches are missing", "yi": "עס פעלן נאר די קליינע זאכן" },
+      "summary": {
+        "en": "The builders will win the race, and when the Beis HaMikdash is complete Moshiach will come. The Rav says earlier tzaddikim already made the big parts; unlike a simple man moving into an unfinished house, the King of Glory needs it perfect, so a handle must be polished and a window cleaned. Refusing a doubtful candy at a cousin's, trivial for great tzaddikim, is a real test for a child and builds the Mikdash.",
+        "yi": "די בויער וועלן געווינען די געיעג, און ווען דער בית המקדש וועט זיין פארטיג וועט משיח קומען. דער משגיח זאגט אז די פריערדיגע צדיקים האבן שוין געמאכט די גרויסע חלקים; נישט ווי א פשוט'ער מענטש וואס ציט אריין אין אן אומפארטיגע הויז, דארף דער מלך הכבוד עס האבן שלימות'דיג, דערפאר דארף מען פאלירן א קלאמקע און וואשן א פענסטער. נישט עסן א צווייפלהאפטע קענדי ביי א קוזין, וואס ביי גרויסע צדיקים איז עס גארנישט, איז פאר א קינד א נסיון און בויט דעם מקדש."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-vayikra-04-02-tazria-metzorah",
+      "startSeg": 581,
+      "endSeg": 689,
+      "title": { "en": "The held-back joke and silence in shul", "yi": "דער איינגעהאלטענער וויץ און שווייגן אין שול" },
+      "summary": {
+        "en": "The Rav describes a boy who holds back a clever joke that would shame a friend, avoids idle talk with his chavrusa, and refuses to answer a friend during chazaras hashatz. Such hidden restraint polishes the Beis HaMikdash; he ties it to the metzora who must keep his mouth covered and to the beis knesses as a place of kedushah.",
+        "yi": "דער משגיח שילדערט אן אינגל וואס האלט זיך איין פון א שארפן וויץ וואס וואלט פארשעמט א חבר, רעדט נישט קיין דברים בטלים ביים לערנען, און ענטפערט נישט א חבר אינמיטן חזרת הש\"ץ. אזא באהאלטענע איינהאלטונג פאלירט דעם בית המקדש; ער פארבינדט עס מיטן מצורע וואס דארף האלטן דאס מויל פארדעקט, און מיט דעם אז א בית הכנסת איז א מקום קדוש."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-vayikra-04-02-tazria-metzorah",
+      "startSeg": 690,
+      "endSeg": 785,
+      "title": { "en": "Small things make an ehrlicher Yid; Moshiach points to the boy", "yi": "קליינע זאכן מאכן אן ערליכן איד; משיח ווייזט אויפן אינגל" },
+      "summary": {
+        "en": "The Rav says one need not do great feats like the tzaddikim; big mitzvos like shofar, megillah and tefillin everyone does, while a hundred small things, like guarding the eyes in the street, make an ehrlicher Yid. He closes picturing Moshiach at the great seudah pointing to the boy whose shemiras hapeh and shemiras einayim finished the Beis HaMikdash, with a brachah.",
+        "yi": "דער משגיח זאגט אז מ'דארף נישט טאן גרויסע זאכן ווי די צדיקים; גרויסע מצוות ווי שופר, מגילה און תפילין טוט יעדער, און הונדערט קליינע זאכן, ווי היטן די אויגן אין גאס, מאכן אן ערליכן איד. ער ענדיגט מיט א בילד ווי משיח ביי דער גרויסער סעודה ווייזט אויף דעם אינגל וועמענס שמירת הפה און שמירת עינים האט פארענדיקט דעם בית המקדש, מיט א ברכה."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "בעל שבועותי ה' לנגדו סונא",
+      "work": "Tehillim",
+      "ref": "Tehillim 16:8",
+      "sefariaRef": "Psalms 16:8",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [22, 23, 24], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אזוי ווי שטעט אין ספרים הקדושים מצות, מיכלות, און האמנותא",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [6, 7, 8, 30], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "זאגען אונז חז״ל, מצורי מאכט מוציאה",
+      "work": "Gemara Arachin",
+      "ref": "Arachin 15b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [67, 68, 69, 70], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "רגלי חסידי וישמע",
+      "work": "Shmuel I",
+      "ref": "Shmuel I 2:9",
+      "sefariaRef": "I Samuel 2:9",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [202, 269, 368], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "שמים מער נפשות חסידים ... מיד רשעים מייצעים",
+      "work": "Tehillim",
+      "ref": "Tehillim 97:10",
+      "sefariaRef": "Psalms 97:10",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [215, 217, 224], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער חודש אייל שטעט צום צנחים ... חודש זוף",
+      "work": "Melachim I",
+      "ref": "Melachim I 6:1",
+      "sefariaRef": "I Kings 6:1",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [374, 375, 377, 393], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "וירד השם על העל סיני",
+      "work": "Shemos",
+      "ref": "Shemos 19:20",
+      "sefariaRef": "Exodus 19:20",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [400, 401], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "זאגט דער חז״ל, דער רבנה שוואלים האט ארונטערגעבויגן דעם הימל",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [403, 404], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "נאכאן יייאהל בית השם, ראי' ביחרית היומ'",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 2:2",
+      "sefariaRef": "Isaiah 2:2",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [442, 443, 445], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "מקדש השם קונן איהר דארפן",
+      "work": "Shemos",
+      "ref": "Shemos 15:17",
+      "sefariaRef": "Exodus 15:17",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [447, 448], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אחכה רוב בכל ימים שאין יום",
+      "work": "Ani Maamin",
+      "ref": "Ani Maamin, principle 12",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [508, 509], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ומוצאו א שבו הנגע",
+      "work": "Vayikra",
+      "ref": "Vayikra 13:45",
+      "sefariaRef": "Leviticus 13:45",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [663, 664, 672], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "הארץ כל בשל לתנאי ה' ... ה' בהכהל חדשים",
+      "work": "Chavakuk",
+      "ref": "Chavakuk 2:20",
+      "sefariaRef": "Habakkuk 2:20",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [681, 683, 685, 686], "confidence": 0.65 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav reads the order of the parshiyos as a lesson: Shemini, right after Pesach, guards what enters the mouth, and Tazria-Metzora then guards what leaves it.",
+        "yi": "דער משגיח לערנט ארויס פון דעם סדר פון די פרשיות: שמיני, גלייך נאך פסח, היט וואס עס גייט אריין אין מויל, און דערנאך קומט תזריע מצורע צו היטן וואס עס גייט ארויס."
+      },
+      "evidence": { "segs": [46, 53, 63, 64, 79, 83], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Since today the tefillos stand in place of the korbanos, the mouth is the mizbeach, and food that is not truly kosher defiles the altar on which the tefillah is offered.",
+        "yi": "היינט וואס די תפילות שטייען אנשטאט די קרבנות, איז דאס מויל דער מזבח, און עסן וואס איז נישט ריכטיג כשר מאכט אומריין דעם מזבח אויף וואס מ'ברענגט די תפילה."
+      },
+      "evidence": { "segs": [166, 168, 170, 171, 174], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The great tzaddikim of earlier generations already built the large parts of the heavenly Beis HaMikdash; the generation's task is only the finishing touches, and the King of Glory will not enter until they are done.",
+        "yi": "די גרויסע צדיקים פון די פריערדיגע דורות האבן שוין געבויט די גרויסע חלקים פונעם בית המקדש אין הימל; אונזער דור'ס תפקיד איז נאר די לעצטע קליינע זאכן, און דער מלך הכבוד גייט נישט אריין ביז דאס איז פארטיג."
+      },
+      "evidence": { "segs": [524, 526, 534, 540, 541], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "A test is measured by the person: refusing a doubtful candy or holding back a joke would be laughable as a test for the Chofetz Chaim, yet for a child it is a real nisayon, and so it counts in building the Beis HaMikdash.",
+        "yi": "א נסיון ווערט געמאסטן לויטן מענטש: נישט עסן א צווייפלהאפטע קענדי אדער איינהאלטן א וויץ וואלט ביים חפץ חיים געווען א געלעכטער, אבער פאר א קינד איז עס א באמת'ער נסיון, און דערפאר בויט עס דעם בית המקדש."
+      },
+      "evidence": { "segs": [576, 577, 578, 611, 613, 617], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The metzora's covered mouth is the fitting response to a mouth that was not bound when he was healthy; a Jew's mouth is not hefker.",
+        "yi": "דעם מצורע'ס פארדעקט מויל איז דער פאסיגער ענטפער פאר א מויל וואס איז נישט געווען פארבונדן ווען ער איז געווען געזונט; א אידיש מויל איז נישט הפקר."
+      },
+      "evidence": { "segs": [666, 668, 672, 673, 677], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Restraint known to no one but Hashem is exactly what goes up to heaven and polishes the Beis HaMikdash.",
+        "yi": "א איינהאלטונג וואס קיינער ווייסט נישט דערפון חוץ דעם רבונו של עולם, דאס גייט ארויף אין הימל און פאלירט דעם בית המקדש."
+      },
+      "evidence": { "segs": [607, 608, 620, 638, 640, 641], "confidence": 0.8 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Beis HaLevi and the chicken for the road", "yi": "דער בית הלוי און דאס הינדל אויפן וועג" },
+      "retelling": {
+        "en": "The Beis HaLevi of Brisk visited Rabbi Yehoshua Leib Diskin while both still lived in Lita, and for the long trip home he was given a piece of chicken. After he left, the rebbetzin ran in alarmed: a shailah had been found on the other part of that chicken. Rabbi Yehoshua Leib smiled and told her not to worry, the Brisker Rav would not stumble. When the Beis HaLevi later passed through again, he told the rebbetzin he had wanted to eat it but it smelled bad, as if spoiled, so he left it. Rabbi Yehoshua Leib then explained to her: raglei chasidav yishmor.",
+        "yi": "דער בית הלוי פון בריסק איז געקומען צוגאסט צו ר' יהושע לייב דיסקין ווען זיי האבן נאך געוואוינט אין ליטע, און אויף דער לאנגער רייזע אהיים האט מען אים מיטגעגעבן א שטיקל הינדל. נאכדעם וואס ער איז אוועק, איז די רביצין אריינגעלאפן דערשראקן: מ'האט געטראפן א שאלה אויף דעם אנדערן חלק פון דעם הינדל. ר' יהושע לייב האט געשמייכלט און געזאגט זי זאל זיך נישט זארגן, דער בריסקער רב איז נישט נכשל געווארן. ווען דער בית הלוי איז שפעטער נאכאמאל דורכגעפארן, האט ער דערציילט אז ער האט געוואלט עסן, נאר עס האט שלעכט געשמעקט, ווי פארפוילט, און ער האט עס איבערגעלאזט. האט ר' יהושע לייב איר געזאגט: רגלי חסידיו ישמור."
+      },
+      "people": ["the Beis HaLevi", "Rabbi Yehoshua Leib Diskin"],
+      "evidence": { "segs": [228, 239, 248, 253, 264, 269], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The Yeshuos Yaakov and the cold pancake", "yi": "דער ישועות יעקב און דער קאלטער פיינקאך" },
+      "retelling": {
+        "en": "The Yeshuos Yaakov, Rav of Lemberg, stopped on a journey at the Rav of a town, and the rebbetzin served two plates of pancakes made of eggs. When the host invited him to eat, he took the fork and began to cut, then said he now had an answer to a difficult Rambam, and his pilpul lasted half an hour until the pancake was cold. The rebbetzin then ran in, thankful he had not eaten: by mistake it had been fried in a fleishig pan. Asked whether he had known by ruach hakodesh, he said it was no ruach hakodesh; when he cut into it, it splashed at his face, and he understood it as a sign. The Rav adds that ehrliche Yidden receive signs from Hashem.",
+        "yi": "דער ישועות יעקב, דער לעמבערגער רב, האט זיך אויף א רייזע אפגעשטעלט ביים רב פון א שטעטל, און די רביצין האט סערווירט צוויי טעלער פיינקאכן געמאכט פון אייער. ווען דער בעל הבית האט אים געבעטן עסן, האט ער גענומען דעם גאפל און אנגעהויבן שניידן, און דאן געזאגט אז ער האט יעצט א פשט אויף א שווערן רמב\"ם, און דער פלפול האט געדויערט א האלבע שעה ביז דער פיינקאך איז קאלט געווארן. דערנאך איז די רביצין אריינגעלאפן און געדאנקט דעם אייבערשטן אז ער האט נישט געגעסן: זי האט בטעות עס געבראטן אין א פליישיגע פאן. מ'האט אים געפרעגט צי ער האט געוואוסט מיט רוח הקודש, האט ער געזאגט אז ס'איז קיין רוח הקודש נישט; ווען ער האט אריינגעשניטן האט עס אים געשפריצט אין פנים, און ער האט עס פארשטאנען ווי א סימן. דער משגיח לייגט צו אז ערליכע אידן באקומען סימנים פונעם רבונו של עולם."
+      },
+      "people": ["the Yeshuos Yaakov"],
+      "evidence": { "segs": [319, 324, 330, 336, 355, 364], "confidence": 0.65 }
+    },
+    {
+      "title": { "en": "The Divrei Chaim and the torn paroches", "yi": "דער דברי חיים און דער צעריסענער פרוכת" },
+      "retelling": {
+        "en": "The Divrei Chaim once sat at his tish and said that the Beis HaMikdash in heaven was complete except for the paroches. One of the rabbanim at the table asked why the Rebbe, surely the tzaddik of the generation, did not make it. The Divrei Chaim answered that he had made the paroches, but a certain great rasha of the generation came and tore it.",
+        "yi": "דער דברי חיים איז אמאל געזעסן ביים טיש מיט זיינע תלמידים און געזאגט אז דער בית המקדש אין הימל איז שוין אינגאנצן פארטיג, עס פעלט נאר דער פרוכת. איינער פון די רבנים ביים טיש האט געפרעגט פארוואס דער רבי, וואס איז זיכער דער צדיק הדור, מאכט נישט דעם פרוכת. האט דער צאנזער רב געענטפערט אז ער האט יא געמאכט דעם פרוכת, נאר א געוויסער גרויסער רשע פון דור איז געקומען און האט אים צעריסן."
+      },
+      "people": ["the Divrei Chaim"],
+      "evidence": { "segs": [469, 472, 475, 481, 485, 486], "confidence": 0.8 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "How can a person be careful about forbidden food he cannot know about, since people make mistakes?",
+        "yi": "וויאזוי קען מען זיך אפהיטן פון א איסור וואס מ'קען נישט וויסן דערפון, ווייל א מענטש איז דאך א מענטש?"
+      },
+      "answer": {
+        "en": "Raglei chasidav yishmor: whoever is careful as far as he can is protected by Hashem from the rest.",
+        "yi": "רגלי חסידיו ישמור: ווער עס היט זיך אפ וויפיל ער קען, דעם היט דער אייבערשטער אפ פון די איבעריגע."
+      },
+      "questionSegs": [193, 199, 200, 201],
+      "answerSegs": [202, 204, 212, 214],
+      "confidence": 0.85
+    },
+    {
+      "question": {
+        "en": "What does it mean to build the Beis HaMikdash today, almost two thousand years after it was destroyed?",
+        "yi": "וואס הייסט בויען דעם בית המקדש היינט, כמעט צוויי טויזנט יאר נאכן חורבן?"
+      },
+      "answer": {
+        "en": "Every complete mitzvah done for Hashem goes up to heaven and becomes a piece of the Beis HaMikdash that will come down.",
+        "yi": "יעדע גאנצע מצוה וואס מ'טוט לשם שמים גייט ארויף אין הימל און ווערט א שטיקל פונעם בית המקדש וואס וועט אראפקומען."
+      },
+      "questionSegs": [438, 439, 449, 450],
+      "answerSegs": [452, 456, 461, 467],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "If the Beis HaMikdash is already complete through the great tzaddikim, why has Moshiach not come?",
+        "yi": "אויב דער בית המקדש איז שוין פארטיג דורך די גרויסע צדיקים, פארוואס קומט משיח נישט?"
+      },
+      "answer": {
+        "en": "Small things are still missing, like a window or a door handle, and the King of Glory enters only a perfect house; these small things are this generation's to finish.",
+        "yi": "עס פעלן נאך קליינע זאכן, ווי א פענסטער אדער א קלאמקע, און דער מלך הכבוד גייט אריין נאר אין א שלימות'דיגע הויז; די קליינע זאכן דארף אונזער דור פארענדיקן."
+      },
+      "questionSegs": [526, 528],
+      "answerSegs": [530, 535, 540, 541],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Does being an ehrlicher boy require great feats like those of the tzaddikim?",
+        "yi": "דארף מען טאן גרויסע זאכן ווי די צדיקים כדי צו זיין אן ערליכער בחור?"
+      },
+      "answer": {
+        "en": "No; big mitzvos everyone does, and one becomes an ehrlicher Yid through a hundred small things.",
+        "yi": "ניין; גרויסע מצוות טוט יעדער, און מ'ווערט אן ערליכער איד מיט הונדערט קליינע זאכן."
+      },
+      "questionSegs": [691, 692, 693],
+      "answerSegs": [708, 721, 723, 728],
+      "confidence": 0.85
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav tells the children not to rely on every hechsher but to ask their rebbi and parents whether a food may be eaten.",
+        "yi": "דער משגיח זאגט די קינדער אז מ'זאל זיך נישט פארלאזן אויף יעדן הכשר, נאר פרעגן דעם רבי און די עלטערן צי מ'מעג עס עסן."
+      },
+      "evidence": { "segs": [134, 135, 139, 146, 149], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "He says a child offered doubtful food, even by a relative, should have the courage to say 'I don't eat that'.",
+        "yi": "ער זאגט אז ווען מ'גיט א קינד צווייפלהאפטיג עסן, אפילו ביי א קרוב, זאל ער זיך שטארקן און זאגן \"דאס עס איך נישט\"."
+      },
+      "evidence": { "segs": [569, 570, 571, 289], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He tells the boys to hold back a joke that would shame a friend.",
+        "yi": "ער זאגט די אינגלעך אז מ'זאל איינהאלטן א וויץ וואס וואלט פארשעמט א חבר."
+      },
+      "evidence": { "segs": [601, 604, 605, 606], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "He says one must not talk during davening and chazaras hashatz, even to answer a friend.",
+        "yi": "ער זאגט אז מ'טאר נישט רעדן אינמיטן דאווענען און חזרת הש\"ץ, אפילו נישט צו ענטפערן א חבר."
+      },
+      "evidence": { "segs": [649, 650, 658, 678], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "He tells the boys to guard their eyes in the street and close them before what a Jewish boy may not look at.",
+        "yi": "ער זאגט די אינגלעך אז זיי זאלן היטן די אויגן אין גאס און פארמאכן די אויגן פאר זאכן וואס א אידיש אינגל טאר נישט קוקן."
+      },
+      "evidence": { "segs": [733, 736, 740, 746], "confidence": 0.85 }
+    }
+  ],
+  "candidateTopics": [
+    "shemiras hapeh",
+    "kashrus and hechsherim",
+    "matzah as food of emunah",
+    "tefillah and the holy mouth",
+    "building the heavenly Beis HaMikdash",
+    "chodesh Iyar and preparing for Shavuos",
+    "small deeds and hidden restraint",
+    "guarding the eyes",
+    "talking during davening",
+    "Tazria-Metzora"
+  ],
+  "concepts": [
+    { "he": "מיכלא דמהימנותא", "heardAs": ["מיכלות, און האמנותא", "מחה דהמהימנותא"] },
+    { "he": "מוציא שם רע", "heardAs": ["מצורי מאכט מוציאה", "מוציא רע", "המוציא רע"] },
+    { "he": "שמירת הפה", "heardAs": ["שמירת הפון", "שמירת הפה"] },
+    { "he": "מאכלות אסורות", "heardAs": ["מרחבות השומרות", "גורם האסרים"] },
+    { "he": "הכשר", "heardAs": ["העכשער", "הכשל"] },
+    { "he": "בטל בששים", "heardAs": ["באטל בשושם"] },
+    { "he": "מזבח", "heardAs": ["מזבח"] },
+    { "he": "רגלי חסידיו ישמור", "heardAs": ["רגלי חסידי וישמע", "רגעלי חסידיו ישמעאל", "ראגלי חסידי וישמע"] },
+    { "he": "בית המקדש", "heardAs": ["בית המוח", "בית הופת"] },
+    { "he": "פרוכת", "heardAs": ["פרחות", "פרוחות", "תלוכה"] },
+    { "he": "חזרת הש\"ץ", "heardAs": ["חזרת השם", "כדורת השם"] },
+    { "he": "מצורע", "heardAs": ["מצורה", "מציירה"] },
+    { "he": "שמירת עינים", "heardAs": ["שמירת עינים"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבינו שלעה", "רבינו שלום", "רבוש׳ן לעולם", "רבנה שוואלים"] }
+  ],
+  "people": [
+    { "name": "the Beis HaLevi", "heardAs": ["ר' יושע בערע בריסקען", "דער בית הלוי", "ר' יושע בעל בריסקע", "דער בריסקער רב"] },
+    { "name": "Rabbi Yehoshua Leib Diskin", "heardAs": ["רבי ישעי'לע לעבדיסקען", "ר' ישראל דיסקין", "רבי ישעי' ליב דריסקין"] },
+    { "name": "the Yeshuos Yaakov", "heardAs": ["ישעת יעקב", "ישועות יעקב", "לעמבערגער רב", "ישעות יעקב"] },
+    { "name": "the Divrei Chaim", "heardAs": ["דער דברי חיים", "סנזרא", "צאנזל רב", "סאנזערע"] },
+    { "name": "Shlomo HaMelech", "heardAs": ["שלמה המלך"] },
+    { "name": "Rabbi Akiva", "heardAs": ["רבי יקיבא", "ר' יקיבא"] },
+    { "name": "the Chofetz Chaim", "heardAs": ["חפץ חיים"] },
+    { "name": "the Chazon Ish", "heardAs": ["מ'חזן איש"] },
+    { "name": "the Belzer Rav", "heardAs": ["די בעלזער רב"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם", "רמב״ה"] }
+  ],
+  "asrNotes": "Fair Yiddish ASR for a talk to children; pesukim are badly garbled and were recovered from context only where the words fit a known verse. The detail of how the Yeshuos Yaakov knew the pancake was not kosher (segs 360-365) is only partly intelligible, and the source around segs 679-687 (apparently Chavakuk 2:20 with a further sefer named, possibly Bnei Yissaschar) could not be fully recovered. The name of the rasha in the Divrei Chaim story (seg 486) and the reference in seg 694 to a feat of the Belzer Rav are unclear. The two flagged segments (770-771) are a short repeated phrase."
+}

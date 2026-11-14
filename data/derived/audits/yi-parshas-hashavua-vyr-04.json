@@ -1,0 +1,17 @@
+{
+  "shiurId": "yi-parshas-hashavua-vyr-04",
+  "promptVersion": "audit-v1",
+  "auditedAt": "2026-11-14T12:00:00Z",
+  "counts": {
+    "claimsChecked": 27, "unsupported": 1, "hallucinated": 0,
+    "sourcesChecked": 12, "sourceErrors": 0, "sourcesMissed": 1,
+    "boundariesChecked": 4, "boundariesBad": 0, "noiseMishandled": 0,
+    "termsChecked": 12, "termErrors": 1, "termsCopiedGarbled": 0,
+    "yiddishSentencesChecked": 18, "yiddishBadSentences": 4, "yiddishTranslationese": 1,
+    "flowBreaks": 1, "paddingSentences": 0, "contradictsExtraction": 0,
+    "ruleViolations": 0
+  },
+  "severity": "minor",
+  "needsReview": false,
+  "notes": "summary.abstract credits the Rogatchover with showing how Tzoar finished its judgment at Korach, but Tzoar/Bela comes from the Targum Yonasan and the Rav's own reading (segs 324-358); the Rogatchover covers only Admah and Tzevoim (segs 370-416); concepts: 'יונשי'ס דום' (anshei Sedom, segs 259-262) wrongly listed as heardAs for עדת קרח; source missed: the Ramban in parshas Vayeishev hinting at gilgul (seg 308, 'פרשת פאר ישוב'); writeup.en/yi[8].paragraphs[1] gives the Or HaChaim (Beis HaMikdash could not have been destroyed) without the Rav's link that the wrath would then have fallen on Klal Yisrael (segs 709-713, 763-771), so the tie to the water through a messenger is missing; takeaways[2].yi 'מוטשעט' (torments) used for 'urges'; summary.abstract.yi 'אין גאנצן פרשה' (gender); writeup.yi[3].paragraphs[1] Daytshmerish 'שפאלטונג'; writeup.yi[11].paragraphs[0] 'רופן עס א צווייטער ראש השנה' (case) and the English-shaped 'ביידע טעג'ס קריאה'"
+}

@@ -1,0 +1,396 @@
+{
+  "shiurId": "yi-parshas-hashavua-chks-01",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that the parah adumah is a chok because it rests on Hashem's love for Klal Yisrael, which is beyond reason, and that Moshe Rabbeinu's humility was itself a chok, which leads into the sin at Mei Merivah and the lesson of believing in oneself.",
+      "yi": "דער משגיח ערקלערט אז פרה אדומה איז א חוק ווייל זי שטייט אויף דער אהבה פון הקב\"ה צו כלל ישראל וואס איז העכער פון שכל, און אז די ענוה פון משה רבינו איז אליין געווען א חוק, און פון דעם קומט ער צום חטא פון מי מריבה און צו דער לימוד פון גלייבן אין זיך אליין."
+    },
+    "abstract": {
+      "en": "The Rav opens with the Midrash that Hashem revealed the reason of the parah adumah to Moshe alone, so that all who perform it do so on Moshe's intention. He asks how the parah can atone for the golden calf and answers that a will has no reason: just as a mother's love for her child is beyond logic, Hashem's love for Klal Yisrael comes from the souls being a part of G-d. Moshe, who became one with the Torah, could sense this; Shlomo HaMelech sought it and found it far from him. The parah is also teshuvah through humbling oneself. Moshe's root was in anavah, and he explained his own greatness as a chok. Distinguishing leadership by gevurah from leadership by malchus, the Rav explains why Moshe hit the rock in Miriam's merit but was told to speak to it in his own merit, which clashed with his humility. He concludes that Chukas teaches belief in oneself, and applies it to the bochurim's task of instilling Yiddishkeit.",
+      "yi": "דער משגיח עפנט מיטן מדרש אז דער אייבערשטער האט מגלה געווען דעם טעם פון פרה אדומה נאר צו משה רבינו, כדי אלע וואס טוען די מצוה זאלן עס טון על דעת משה. ער פרעגט ווי אזוי קען די פרה מכפר זיין אויפן חטא העגל, און ענטפערט אז אין טעם לרצון: אזוי ווי די ליבשאפט פון א מאמע צו איר קינד איז העכער פון שכל, אזוי קומט די אהבה פון הקב\"ה צו כלל ישראל דערפון וואס די נשמות זענען א חלק אלוק ממעל. משה רבינו, וואס איז געווארן איינס מיט דער תורה, האט דאס געקענט פארשטיין; שלמה המלך האט עס געזוכט און עס איז געווען רחוקה ממני. פרה אדומה איז אויך תשובה דורך זיך משפיל זיין. משה רבינו'ס שורש איז געווען אין ענוה, און זיין אייגענע גדלות האט ער אנגענומען ווי א חוק. דורכן חילוק צווישן הנהגה פון גבורה און הנהגה פון מלכות ערקלערט ער פארוואס משה האט געשלאגן דעם שטיין אין זכות פון מרים, אבער איז געהייסן געווארן רעדן צום שטיין אין זיין אייגענעם זכות, וואס איז געווען אין סתירה צו זיין ענוה. צום סוף לערנט ער פון פרשת חוקת צו גלייבן אין זיך אליין, און ווענדט עס צום תפקיד פון די בחורים אריינצוברענגען אידישקייט."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Hashem revealed the reason of the parah adumah only to Moshe, so that whoever performs it does so on Moshe's intention.",
+          "yi": "דער אייבערשטער האט מגלה געווען דעם טעם פון פרה אדומה נאר צו משה רבינו, כדי ווער עס טוט די מצוה זאל עס טון על דעת משה."
+        },
+        "evidence": { "segs": [41, 43, 63, 64, 65], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The parah is a chok because it rests on Hashem's will and love for Klal Yisrael, and a will has no reason, like a mother's love for her child.",
+          "yi": "פרה אדומה איז א חוק ווייל זי שטייט אויפן רצון און די אהבה פון הקב\"ה צו כלל ישראל, און אין טעם לרצון, אזוי ווי די ליבשאפט פון א מאמע צו איר קינד."
+        },
+        "evidence": { "segs": [118, 120, 153, 161, 164, 165], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Moshe Rabbeinu, who became one with the Torah itself, could sense the reason of the parah.",
+          "yi": "משה רבינו, וואס איז געווארן איינס מיט עצם התורה, האט געקענט מרגיש זיין דעם טעם פון פרה אדומה."
+        },
+        "evidence": { "segs": [183, 188, 213, 214, 221], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Moshe's root was in the mitzvah of humility, and he explained to himself his own greatness as a chok he could not understand.",
+          "yi": "משה רבינו'ס שורש איז געווען אין דער מצוה פון ענוה, און זיין אייגענע גדלות האט ער אנגענומען ווי א חוק וואס ער פארשטייט נישט."
+        },
+        "evidence": { "segs": [342, 367, 379, 384, 702], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Hitting the rock was leadership as the king's messenger in Miriam's merit; speaking to it was malchus in Moshe's own merit, which clashed with his humility.",
+          "yi": "דאס שלאגן דעם שטיין איז געווען א הנהגה ווי א שליח פונעם מלך אין זכות פון מרים; דאס רעדן צום שטיין איז געווען מלכות אין משה'ס אייגענעם זכות, וואס איז געווען אין סתירה צו זיין ענוה."
+        },
+        "evidence": { "segs": [581, 583, 597, 599, 625, 628], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Parshas Chukas teaches a person to believe in himself and in the hidden powers of his soul when he is placed in a position to do something for kedushah.",
+          "yi": "פרשת חוקת לערנט א מענטש צו גלייבן אין זיך אליין און אין די באהאלטענע כוחות פון זיין נשמה, ווען ער איז אריינגעשטעלט אין א מצב וואו ער קען טון פאר קדושה."
+        },
+        "evidence": { "segs": [679, 680, 684, 731, 800, 802], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-parsha-bamidbar-06-01-chukas",
+      "startSeg": 0,
+      "endSeg": 77,
+      "title": { "en": "Moshe alone was told the reason of the parah", "yi": "לך אני מגלה טעם פרה" },
+      "summary": {
+        "en": "The Rav surveys the parsha and links the weeks of Tammuz to strengthening emunah. He brings the Midrash that Hashem revealed the reason of the parah adumah to Moshe alone, and explains that this way everyone who performs it does so on the intention of the tzaddik who understood it.",
+        "yi": "דער משגיח גייט דורך די ענינים פון דער פרשה און זאגט אז אין די וואכן פון תמוז דארף מען זיך מחזק זיין אין אמונה. ער ברענגט דעם מדרש אז דער אייבערשטער האט מגלה געווען דעם טעם פון פרה נאר צו משה רבינו, און ערקלערט אז אזוי טוט יעדער איד די מצוה על דעת פונעם צדיק וואס האט עס פארשטאנען."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-bamidbar-06-01-chukas",
+      "startSeg": 78,
+      "endSeg": 171,
+      "title": { "en": "A will has no reason: Hashem's love", "yi": "אין טעם לרצון: די אהבה פון הקב\"ה" },
+      "summary": {
+        "en": "The Rav brings Rashi's mashal that the parah atones for the golden calf and asks how any offering can wipe away a sin entirely. He answers with the principle that a will has no reason, illustrated by a mother's love for her child, and explains that Hashem's love for Klal Yisrael is of this kind because every Jewish soul is a part of G-d.",
+        "yi": "דער משגיח ברענגט דעם משל פון רש\"י אז די פרה איז מכפר אויפן עגל, און פרעגט ווי אזוי קען א קרבן אינגאנצן אפווישן אן עבירה. ער ענטפערט מיטן כלל אז אין טעם לרצון, מיטן משל פון א מאמע'ס ליבשאפט צו איר קינד, און ערקלערט אז אזוי איז די אהבה פון הקב\"ה צו כלל ישראל, ווייל יעדע אידישע נשמה איז א חלק אלוק ממעל."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-bamidbar-06-01-chukas",
+      "startSeg": 172,
+      "endSeg": 260,
+      "title": { "en": "Moshe became Torah; every Jew a palace", "yi": "משה רבינו איז געווארן תורה; יעדער איד א פלטין של מלך" },
+      "summary": {
+        "en": "The Rav explains that the root of the will is in heaven, and only Moshe, who became one with the Torah, could sense it; Shlomo HaMelech wished to become wisdom itself and found it far from him, while Doeg's Torah stayed outside him. He then explains Rashi's mashal: every Jew is the King's palace, a sin defiles it, and teshuvah through humbling oneself cleans it.",
+        "yi": "דער משגיח ערקלערט אז דער שורש פונעם רצון איז אין הימל, און נאר משה רבינו, וואס איז געווארן עצם התורה, האט עס געקענט מרגיש זיין; שלמה המלך האט געוואלט ווערן חכמה ממש און עס איז געווען רחוקה ממני, און דואג'ס תורה איז געבליבן מן השפה ולחוץ. דערנאך טייטשט ער דעם משל פון רש\"י: יעדער איד איז א פלטין של מלך, אן עבירה פארשמוצט אים, און תשובה מיט הכנעה רייניגט אים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-bamidbar-06-01-chukas",
+      "startSeg": 261,
+      "endSeg": 343,
+      "title": { "en": "A chok demands humility; Moshe's greatness", "yi": "א חוק פארלאנגט הכנעה; משה רבינו'ס גדלות" },
+      "summary": {
+        "en": "The Rav adds that a chok is understood only by doing it, bringing Rav Samson Raphael Hirsch on 'sechel tov l'chol oseihem', and that the parah demands humbling oneself, the opposite of the root of the golden calf. He asks how Moshe, the greatest man, could see himself as the lowest, and answers that Moshe treated his own greatness as a chok.",
+        "yi": "דער משגיח לייגט צו אז א חוק פארשטייט מען נאר דורכן מקיים זיין, און ברענגט ר' שמשון רפאל הירש אויף \"שכל טוב לכל עושיהם\"; פרה אדומה פארלאנגט זיך משפיל זיין, דאס היפך פונעם שורש פונעם עגל. ער פרעגט ווי אזוי האט משה רבינו, דער גרעסטער מענטש, זיך געהאלטן פארן קלענסטן, און ענטפערט אז זיין אייגענע גדלות האט ער אנגענומען ווי א חוק."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-bamidbar-06-01-chukas",
+      "startSeg": 344,
+      "endSeg": 409,
+      "title": { "en": "Moshe's root in the mitzvah of humility", "yi": "משה רבינו'ס שורש אין דער מצוה פון ענוה" },
+      "summary": {
+        "en": "The Rav explains that every Jew has a root in a particular mitzvah, and that Moshe's root was in humility, which is bound up with the parah adumah. He then turns to Moshe's sin at Mei Merivah, noting that the meforshim, Rashi and the Ramban among them, struggle to define it, since Moshe was too great for us to grasp his sin.",
+        "yi": "דער משגיח ערקלערט אז יעדער איד האט א שורש אין א געוויסער מצוה, און משה רבינו'ס שורש איז געווען אין ענוה, וואס איז פארבונדן מיט פרה אדומה. דערנאך גייט ער איבער צום חטא פון מי מריבה, און מערקט אן אז די מפרשים, רש\"י און דער רמב\"ן, מוטשען זיך צו געפינען וואס דער חטא איז געווען, ווייל משה רבינו איז געווען צו גרויס פאר אונז."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-bamidbar-06-01-chukas",
+      "startSeg": 410,
+      "endSeg": 521,
+      "title": { "en": "Gevurah and malchus: two kinds of leadership", "yi": "גבורה און מלכות: צוויי סארטן הנהגה" },
+      "summary": {
+        "en": "The Rav asks why Moshe was told to hit the rock in Beshalach but to speak to it here, and how a chillul Hashem became a kiddush Hashem. He distinguishes leadership by gevurah, through strength and fear, from malchus, where people follow out of attachment, brings the Bnei Yissaschar on the Girgashi and malchus, and tells how a word of the Gerrer Rebbe was followed by many bochurim. A king's messenger carries the king's power.",
+        "yi": "דער משגיח פרעגט פארוואס אין בשלח האט משה געדארפט שלאגן דעם שטיין און דא רעדן צו אים, און ווי אזוי איז פון א חילול השם ארויסגעקומען א קידוש השם. ער מאכט א חילוק צווישן הנהגה פון גבורה, מיט כח און מורא, און מלכות, וואו מ'פאלגט ווייל מ'ציט זיך צו אים; ער ברענגט דעם בני יששכר וועגן דעם גרגשי און מלכות, און דערציילט ווי א ווארט פונעם גערער רבי'ן איז נאכגעפאלגט געווארן דורך אסאך בחורים. א שליח פונעם מלך האט דעם כח פונעם מלך."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-bamidbar-06-01-chukas",
+      "startSeg": 522,
+      "endSeg": 600,
+      "title": { "en": "The well in Miriam's merit; Moshe as a staff", "yi": "דער באר אין זכות פון מרים; משה רבינו ווי א שטעקן" },
+      "summary": {
+        "en": "The Rav explains that the well came in Miriam's merit, so Moshe hit the rock as a messenger, like a policeman acting in the king's name. He asks why Moshe needed a staff for his miracles and answers by way of remez that Moshe saw himself as nothing more than a staff in Hashem's hand. After Miriam's death the water had to come in Moshe's own merit.",
+        "yi": "דער משגיח ערקלערט אז דער באר איז געקומען אין זכות פון מרים, ממילא האט משה רבינו געשלאגן דעם שטיין ווי א שליח, אזוי ווי א פאליציאנט וואס טוט אין נאמען פונעם קעניג. ער פרעגט פארוואס האט משה געדארפט א שטעקן פאר זיינע ניסים, און ענטפערט על דרך רמז אז משה רבינו האט זיך געהאלטן פאר נישט מער ווי א שטעקן אין דער האנט פונעם אייבערשטן. נאך מרים'ס פטירה האט דאס וואסער געדארפט קומען אין משה'ס אייגענעם זכות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-bamidbar-06-01-chukas",
+      "startSeg": 601,
+      "endSeg": 665,
+      "title": { "en": "Speaking to the rock: a test beyond Moshe", "yi": "רעדן צום שטיין: א נסיון העכער פון משה'ס כוחות" },
+      "summary": {
+        "en": "The Rav explains that malchus works through speech, as Moshiach will act through the breath of his lips, and that Hashem told Moshe to speak to the rock because the water now came in his own merit. This contradicted Moshe's humility, which saw no merit in himself, so it was a test beyond his powers, and the Rav says it was Hashem's plan that Moshe remain with his generation in the desert.",
+        "yi": "דער משגיח ערקלערט אז מלכות ארבעט דורכן מויל, אזוי ווי משיח וועט פירן מיטן רוח שפתיו, און דער אייבערשטער האט געהייסן משה רעדן צום שטיין ווייל יעצט קומט דאס וואסער אין זיין אייגענעם זכות. דאס איז געווען אין סתירה צו משה'ס ענוה, וואס האט אין זיך קיין זכות נישט געזען, ממילא איז עס געווען א נסיון העכער פון זיינע כוחות, און ער זאגט אז ס'איז געווען דער רצון השם אז משה זאל בלייבן מיט זיין דור אין מדבר."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-bamidbar-06-01-chukas",
+      "startSeg": 666,
+      "endSeg": 729,
+      "title": { "en": "Believing in oneself; the parsha's flow to shirah", "yi": "גלייבן אין זיך אליין; דער המשך פון דער פרשה ביז שירה" },
+      "summary": {
+        "en": "The Rav shows a sequence of emunah: Shlach teaches emunah in Hashem, Korach emunah in the tzaddik, and Chukas emunah in oneself, including in one's own chiddushei Torah. He traces the parsha's order, from the chok of the parah through Miriam's death, Mei Merivah and the messengers to Edom, to the shirah, explaining that emunah leads to shirah, as at the Yam Suf and before the coming geulah.",
+        "yi": "דער משגיח ווייזט א סדר אין אמונה: פרשת שלח לערנט אמונה אין השם, קרח אמונה אינעם צדיק, און חוקת אמונה אין זיך אליין, אויך אין די אייגענע חידושי תורה. ער גייט דורך דעם סדר פון דער פרשה, פונעם חוק פון פרה דורך מרים'ס פטירה, מי מריבה און וישלח משה מלאכים, ביז דער שירה, און ערקלערט אז אמונה ברענגט צו שירה, אזוי ווי ביי קריעת ים סוף און פאר דער קומענדיגער גאולה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-bamidbar-06-01-chukas",
+      "startSeg": 730,
+      "endSeg": 825,
+      "title": { "en": "The bochurim's task: engraving Torah in hearts", "yi": "דער תפקיד פון די בחורים: איינקריצן תורה אין הערצער" },
+      "summary": {
+        "en": "The Rav applies the lesson to the bochurim of the beis medrash: like Yiftach, each must fulfill the role Hashem gave him and not say he is too small. Their task is to bring Yiddishkeit and warmth to children exposed to many influences, to be a living example, and to engrave Torah into Jewish hearts, as the word 'chukas' implies; he closes with a tefillah for kiddush Hashem.",
+        "yi": "דער משגיח ווענדט דעם לימוד צו די בחורים פונעם בית המדרש: אזוי ווי יפתח, דארף יעדער איינער דורכפירן דעם תפקיד וואס דער אייבערשטער האט אים געגעבן און נישט זאגן אז ער איז צו קליין. זייער תפקיד איז אריינצוברענגען אידישקייט און ווארעמקייט אין קינדער וואס זענען אויסגעשטעלט צו פארשידענע איינפלוסן, צו זיין א מוסטער, און איינצוקריצן תורה אין אידישע הערצער, אזוי ווי דאס ווארט \"חוקת\" מיינט; ער ענדיגט מיט א תפילה אויף קידוש השם."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "פארה אדמה תמימה ... זייס חוקות התורה", "work": "Bamidbar", "ref": "Bamidbar 19:2", "sefariaRef": "Numbers 19:2", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [40, 698, 806], "confidence": 0.8 } },
+    { "heardAs": "לכנו מגלה טעם פארה ... א חרם חכם", "work": "Bamidbar Rabbah", "ref": "Bamidbar Rabbah 19:6", "sefariaRef": null, "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [41, 43, 66, 699], "confidence": 0.8 } },
+    { "heardAs": "ער ברענגט דעם תנוב פון רבי משה דרשן", "work": "Rashi", "ref": "Rashi on Bamidbar 19:22", "sefariaRef": "Rashi on Numbers 19:22", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [79, 80, 82, 231, 232], "confidence": 0.8 } },
+    { "heardAs": "איין טעם על הרצאים", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "quoted", "evidence": { "segs": [118, 119, 120, 153], "confidence": 0.8 } },
+    { "heardAs": "פעלקער לכל מימעל", "work": "Tanya", "ref": "Tanya ch. 2", "sefariaRef": null, "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [165], "confidence": 0.7 } },
+    { "heardAs": "אמער תהי' כנבינו ורחקם אומנו", "work": "Koheles", "ref": "Koheles 7:23", "sefariaRef": "Ecclesiastes 7:23", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [190, 191, 192], "confidence": 0.8 } },
+    { "heardAs": "דער גמרא זאגט וועגן דייק ... אין הספר לחוץ", "work": "Gemara Sanhedrin", "ref": "Sanhedrin 106b", "sefariaRef": "Sanhedrin 106b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [206, 208, 209], "confidence": 0.7 } },
+    { "heardAs": "שכנתי בסכם", "work": "Shemos", "ref": "Shemos 25:8", "sefariaRef": "Exodus 25:8", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [241], "confidence": 0.75 } },
+    { "heardAs": "ר' שמשון רופאל הירש", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [277, 278, 279], "confidence": 0.8 } },
+    { "heardAs": "שכל טוב לכל אותים", "work": "Tehillim", "ref": "Tehillim 111:10", "sefariaRef": "Psalms 111:10", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [277, 281], "confidence": 0.85 } },
+    { "heardAs": "דער עניו מידן כולל אדם השר על תנאי האדמה", "work": "Bamidbar", "ref": "Bamidbar 12:3", "sefariaRef": "Numbers 12:3", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [328, 364], "confidence": 0.8 } },
+    { "heardAs": "דהנוך אופה בעפע", "work": "Bereishis", "ref": "Bereishis 18:27", "sefariaRef": "Genesis 18:27", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [387], "confidence": 0.65 } },
+    { "heardAs": "דהנוך איצלעס לפלי יש", "work": "Tehillim", "ref": "Tehillim 22:7", "sefariaRef": "Psalms 22:7", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [387], "confidence": 0.65 } },
+    { "heardAs": "רשע זאגט א פשט", "work": "Rashi", "ref": "Rashi on Bamidbar 20:12", "sefariaRef": null, "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [394, 395], "confidence": 0.65 } },
+    { "heardAs": "דער רמב״ן קווקט זיך אויף רשע", "work": "Ramban", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [396, 397], "confidence": 0.7 } },
+    { "heardAs": "דער יוסף משה זאגט", "work": "Yismach Moshe", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [402, 403, 405], "confidence": 0.6 } },
+    { "heardAs": "יקותא בצעה ... פרשת בשלח", "work": "Shemos", "ref": "Shemos 17:6", "sefariaRef": "Exodus 17:6", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [410, 411, 412], "confidence": 0.75 } },
+    { "heardAs": "זאלסט טרעדן צו דעם שטען", "work": "Bamidbar", "ref": "Bamidbar 20:8", "sefariaRef": "Numbers 20:8", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [413, 418, 625], "confidence": 0.8 } },
+    { "heardAs": "יען ה' אשר לא העמאנתם ביר אגדושנו", "work": "Bamidbar", "ref": "Bamidbar 20:12", "sefariaRef": "Numbers 20:12", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [424, 428, 433], "confidence": 0.8 } },
+    { "heardAs": "הימא מימי רובת קדש ... והיה קדש ב", "work": "Bamidbar", "ref": "Bamidbar 20:13", "sefariaRef": "Numbers 20:13", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [427, 429, 430, 431], "confidence": 0.75 } },
+    { "heardAs": "דער בני יששכר זאגט", "work": "Bnei Yissaschar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [464, 465, 469], "confidence": 0.75 } },
+    { "heardAs": "די מאן ... די עניני כבוד ... דער באר איז אין דעם זכות פון מרים", "work": "Gemara Taanis", "ref": "Taanis 9a", "sefariaRef": "Taanit 9a", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [522, 525, 526], "confidence": 0.75 } },
+    { "heardAs": "הבעורך תב ימות רשע ... דער רוח תיב יום התפשע", "work": "Yeshayahu", "ref": "Yeshayahu 11:4", "sefariaRef": "Isaiah 11:4", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [603, 613], "confidence": 0.75 } },
+    { "heardAs": "לויט די שיטה פון דעם סמארק", "work": "Sefer Mitzvos Katan", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [631, 632], "confidence": 0.65 } },
+    { "heardAs": "וצדקותי ... מ'טאל נישט זאגן צדקותי", "work": "Devarim", "ref": "Devarim 9:4", "sefariaRef": "Deuteronomy 9:4", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [633], "confidence": 0.65 } },
+    { "heardAs": "להימונה בדברו וירבנו בעל היום", "work": "Tehillim", "ref": "Tehillim 106:24", "sefariaRef": "Psalms 106:24", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [671, 672, 673], "confidence": 0.75 } },
+    { "heardAs": "קורח איז די ווי משה עבדה ... גלייבן רבינו של עולם ולמשה עבדו", "work": "Shemos", "ref": "Shemos 14:31", "sefariaRef": "Exodus 14:31", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [676, 801], "confidence": 0.7 } },
+    { "heardAs": "תשרי מראש אמונה", "work": "Shir HaShirim", "ref": "Shir HaShirim 4:8", "sefariaRef": "Song of Songs 4:8", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [29, 32, 719], "confidence": 0.75 } },
+    { "heardAs": "עס שטעט אויף דעם במדרש ... אמונה ברענגט צום שירה אזוי ווי די מדרשים זאגן", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [32, 33, 719, 720], "confidence": 0.75 } },
+    { "heardAs": "וישוח מלאכים", "work": "Bamidbar", "ref": "Bamidbar 20:14", "sefariaRef": "Numbers 20:14", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [708, 711, 712], "confidence": 0.75 } },
+    { "heardAs": "עוז ישוע ... עוז יישר ישוע", "work": "Shemos", "ref": "Shemos 15:1", "sefariaRef": "Exodus 15:1", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [718, 721, 724], "confidence": 0.7 } },
+    { "heardAs": "דער חתם סופר האט געזאגט", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [750, 751, 753], "confidence": 0.7 } },
+    { "heardAs": "ליבו לחקקי ישראל", "work": "Shoftim", "ref": "Shoftim 5:9", "sefariaRef": "Judges 5:9", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [818], "confidence": 0.8 } }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The parah adumah is a chok because it rests on Hashem's will, and Hashem's love for Klal Yisrael is likewise a will without reason, flowing from the souls being part of Him, as a mother's love flows from the child coming from her.",
+        "yi": "פרה אדומה איז א חוק ווייל זי שטייט אויפן רצון השם, און די אהבה פון הקב\"ה צו כלל ישראל איז אויך א רצון אן א טעם, וואס קומט דערפון וואס די נשמות זענען א חלק פון אים, אזוי ווי א מאמע'ס ליבשאפט קומט דערפון וואס דאס קינד שטאמט פון איר."
+      },
+      "evidence": { "segs": [153, 161, 163, 164, 165], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Shlomo HaMelech's 'and it is far from me' means that he wanted to become wisdom itself, as Moshe had become Torah itself, and this remained apart from him.",
+        "yi": "שלמה המלך'ס \"והיא רחוקה ממני\" מיינט אז ער האט געוואלט ווערן חכמה ממש, אזוי ווי משה רבינו איז געווארן עצם התורה, און דאס איז געבליבן אפגעטיילט פון אים."
+      },
+      "evidence": { "segs": [192, 194, 195, 199, 200, 201], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Moshe's humility was itself a chok: he did not try to understand why Hashem made him great, and so his root lay in the mitzvah of the parah adumah.",
+        "yi": "משה רבינו'ס ענוה איז אליין געווען א חוק: ער האט נישט געפרואווט פארשטיין פארוואס דער אייבערשטער האט אים גרויס געמאכט, און דערפאר איז זיין שורש געווען אין דער מצוה פון פרה אדומה."
+      },
+      "evidence": { "segs": [342, 379, 380, 384, 702], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The staff with which Moshe performed his miracles hints that he saw himself as nothing more than a staff in Hashem's hand.",
+        "yi": "דער שטעקן מיט וועמען משה רבינו האט געטון זיינע ניסים איז א רמז אז ער האט זיך געהאלטן פאר נישט מער ווי א שטעקן אין דער האנט פונעם אייבערשטן."
+      },
+      "evidence": { "segs": [555, 562, 564, 574], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Hitting the rock is leadership as the king's messenger, in another's merit; speaking to it is malchus, ruling through speech in one's own merit, like Moshiach who will act through the breath of his lips.",
+        "yi": "שלאגן דעם שטיין איז א הנהגה ווי א שליח פונעם קעניג, אין א צווייטנס זכות; רעדן צום שטיין איז מלכות, פירן דורכן מויל אין זיין אייגענעם זכות, אזוי ווי משיח וועט פירן מיטן רוח שפתיו."
+      },
+      "evidence": { "segs": [583, 604, 615, 620, 625], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Three consecutive parshiyos teach three levels of emunah: Shlach in Hashem, Korach in the tzaddik, and Chukas in oneself.",
+        "yi": "דריי פרשיות נאכאנאנד לערנען דריי מדריגות אין אמונה: שלח אין השם, קרח אינעם צדיק, און חוקת אין זיך אליין."
+      },
+      "evidence": { "segs": [674, 676, 677, 679], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The parsha moves from the chok of the parah to the shirah because the lessons of emunah lead to shirah, preparing for the geulah as at the Yam Suf.",
+        "yi": "די פרשה גייט פונעם חוק פון פרה ביז דער שירה ווייל די לימודים פון אמונה ברענגען צו שירה, און דאס איז א הכנה צו דער גאולה אזוי ווי ביי קריעת ים סוף."
+      },
+      "evidence": { "segs": [714, 717, 719, 724, 725], "confidence": 0.7 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Gerrer Rebbe and the peyos", "yi": "דער גערער רבי און די פאות" },
+      "retelling": {
+        "en": "The Rav tells that the earlier Gerrer Rebbe was a calm person who did not go around stirring things up. In Poland it was customary to tuck the peyos away, a practice going back to an old decree from the Russian period. When Poland was independent, the Rebbe remarked to a bochur that it would be fitting for the peyos to be worn openly and long. The bochur went out and told the others, and within a short time a great many bochurim were going with their peyos showing. The Rav brings this to illustrate midas hamalchus: people follow such a word not out of fear, but because they are drawn to the one who said it.",
+        "yi": "דער משגיח דערציילט אז דער פריערדיגער גערער רבי איז געווען א געלאסענער איד וואס איז נישט ארומגעגאנגען מאכן טומל. אין פוילן האט מען געפלעגט פארבאהאלטן די פאות, א מנהג וואס איז געבליבן פון אן אלטע גזירה פון די רוסן. ווען פוילן איז געווען זעלבסטשטענדיג האט דער רבי געזאגט צו א בחור אז ס'וואלט געווען גלייך אז די פאות זאלן זיין אינדרויסן און הענגען לאנג. דער בחור איז ארויסגעגאנגען און עס דערציילט פאר די אנדערע בחורים, און אין א קורצע צייט זענען אסאך בחורים געגאנגען מיט די פאות אינדרויסן. דער משגיח ברענגט דאס אויף מידת המלכות: מען פאלגט נישט פון מורא, נאר ווייל מען ציט זיך צו אים."
+      },
+      "people": ["the Gerrer Rebbe"],
+      "evidence": { "segs": [489, 491, 497, 500, 503, 505], "confidence": 0.7 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "How can the parah adumah, or any offering, wipe away the sin of the golden calf entirely?", "yi": "ווי אזוי קען די פרה אדומה, אדער סיי וועלכער קרבן, אינגאנצן אפווישן דעם חטא העגל?" },
+      "answer": { "en": "A will has no reason: Hashem's love for Klal Yisrael is beyond logic, like a mother's love for her child, because Jewish souls are part of G-d.", "yi": "אין טעם לרצון: די אהבה פון הקב\"ה צו כלל ישראל איז העכער פון שכל, אזוי ווי א מאמע'ס ליבשאפט צו איר קינד, ווייל אידישע נשמות זענען א חלק אלוק ממעל." },
+      "questionSegs": [111, 112, 113, 114],
+      "answerSegs": [118, 120, 153, 161, 164, 165],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why does Shlomo HaMelech say the wisdom of the parah was 'far from me' instead of simply that he did not know it?", "yi": "פארוואס זאגט שלמה המלך \"והיא רחוקה ממני\" און נישט פשוט אז ער ווייסט עס נישט?" },
+      "answer": { "en": "He hoped to become wisdom itself, as Moshe became Torah itself, and this stayed apart from him.", "yi": "ער האט געמיינט צו ווערן חכמה ממש, אזוי ווי משה רבינו איז געווארן עצם התורה, און דאס איז געבליבן אפגעטיילט פון אים." },
+      "questionSegs": [192, 193],
+      "answerSegs": [194, 195, 199, 200, 201],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "How could Moshe, the greatest man in the world, consider himself the lowest of all?", "yi": "ווי אזוי האט משה רבינו, דער גרעסטער מענטש אויף דער וועלט, זיך געקענט האלטן פארן קלענסטן?" },
+      "answer": { "en": "He treated his own greatness as a chok: he did not understand why Hashem made him great and did not try to.", "yi": "ער האט זיין אייגענע גדלות אנגענומען ווי א חוק: ער האט נישט פארשטאנען פארוואס דער אייבערשטער האט אים גרויס געמאכט, און האט עס נישט געזוכט צו פארשטיין." },
+      "questionSegs": [338, 341],
+      "answerSegs": [342, 702],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why did Moshe need a staff to perform his miracles?", "yi": "פארוואס האט משה רבינו געדארפט א שטעקן צו טון זיינע ניסים?" },
+      "answer": { "en": "By way of remez, Moshe saw himself as no more than a staff, and Hashem let him act with that feeling.", "yi": "על דרך רמז: משה רבינו האט זיך געהאלטן פאר נישט מער ווי א שטעקן, און דער אייבערשטער האט אים געלאזט טון מיט דעם געפיל." },
+      "questionSegs": [538, 539, 543],
+      "answerSegs": [555, 562, 564, 569],
+      "confidence": 0.7
+    },
+    {
+      "question": { "en": "Why was Moshe told to hit the rock in Beshalach but to speak to it in Chukas?", "yi": "פארוואס האט מען משה געהייסן אין בשלח שלאגן דעם שטיין, און אין חוקת רעדן צום שטיין?" },
+      "answer": { "en": "The first time the water came in Miriam's merit and Moshe acted as a messenger; after her death it had to come in his own merit, through malchus, which works by speech.", "yi": "דאס ערשטע מאל איז דאס וואסער געקומען אין זכות פון מרים און משה איז געווען א שליח; נאך איר פטירה האט עס געדארפט קומען אין זיין אייגענעם זכות, דורך מלכות, וואס ארבעט דורכן מויל." },
+      "questionSegs": [419, 420, 422, 423],
+      "answerSegs": [581, 583, 597, 599, 625],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "How could Moshe Rabbeinu have failed in such a matter?", "yi": "ווי אזוי האט משה רבינו געקענט נכשל ווערן אין אזא זאך?" },
+      "answer": { "en": "Speaking to the rock in his own merit contradicted his humility; it was a test beyond his powers, and it was Hashem's plan.", "yi": "רעדן צום שטיין אין זיין אייגענעם זכות איז געווען אין סתירה צו זיין ענוה; ס'איז געווען א נסיון העכער פון זיינע כוחות, און ס'איז געווען דער רצון השם." },
+      "questionSegs": [627, 635],
+      "answerSegs": [628, 637, 651, 654, 657],
+      "confidence": 0.7
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Rav says that in the weeks from Rosh Chodesh Tammuz one must strengthen oneself in emunah.", "yi": "דער משגיח זאגט אז אין די וואכן פון ראש חודש תמוז דארף מען זיך מחזק זיין אין אמונה." },
+      "evidence": { "segs": [22, 25, 667], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Rav says that when a person finds himself placed where he can do something for kedushah, he must believe in himself, including in his own chiddushei Torah.", "yi": "דער משגיח זאגט אז ווען א מענטש זעט אז ער איז אריינגעשטעלט אין א מצב וואו ער קען טון פאר קדושה, דארף ער גלייבן אין זיך אליין, אויך אין זיינע אייגענע חידושי תורה." },
+      "evidence": { "segs": [680, 681, 684, 689, 690], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "The Rav tells the bochurim that their task is to be a living example for the children, in learning, davening and conduct, so the children will want to be like them.", "yi": "דער משגיח זאגט די בחורים אז זייער תפקיד איז צו זיין א מוסטער פאר די קינדער, אין לערנען, דאווענען און הנהגה, אז די קינדער זאלן וועלן זיין אזוי ווי זיי." },
+      "evidence": { "segs": [773, 775, 776, 780, 784], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Rav says it is not enough to hold Torah within oneself; one must engrave it into Jewish hearts.", "yi": "דער משגיח זאגט אז ס'איז נישט גענוג צו האבן תורה אין זיך; מען דארף זי איינקריצן אין אידישע הערצער." },
+      "evidence": { "segs": [810, 811, 815, 816], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "parah adumah",
+    "chok and the limits of reason",
+    "Hashem's love for Klal Yisrael",
+    "humility of Moshe Rabbeinu",
+    "Mei Merivah",
+    "gevurah and malchus in leadership",
+    "believing in oneself",
+    "emunah and shirah",
+    "chinuch of children"
+  ],
+  "concepts": [
+    { "he": "פרה אדומה", "heardAs": ["פארה אדמה", "פראדרמה", "פרעה אדמה", "פורי אדמה", "פאר אדמה"] },
+    { "he": "חוקה", "heardAs": ["חכם", "אחאקע", "רחקה", "חלקה", "חכה"] },
+    { "he": "אין טעם לרצון", "heardAs": ["איין טעם על הרצאים", "עין תמיד לרצון", "איין טעם מ'לארוצן"] },
+    { "he": "חלק אלוק ממעל", "heardAs": ["פעלקער לכל מימעל"] },
+    { "he": "עצם התורה", "heardAs": ["עצם הצורה", "עצם התורה"] },
+    { "he": "פלטין של מלך", "heardAs": ["פלטון של מלך", "פלטים'שער מלך", "פאלטן של מלך"] },
+    { "he": "ענוה", "heardAs": ["עניוות", "עניבערס", "אנווות", "עניבעס"] },
+    { "he": "מי מריבה", "heardAs": ["מימער ריבה", "מימער רבה", "מי מריבא"] },
+    { "he": "מדת המלכות", "heardAs": ["מידת המלכות", "מלכות"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבינו שלום", "רבי'נישן עולם", "רבינו שלעם"] },
+    { "he": "חטא העגל", "heardAs": ["אבינו עגל", "די זינד פונעם עגל"] }
+  ],
+  "people": [
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו", "משה רביה'נען", "משה הבינו", "משה הבנה"] },
+    { "name": "Aharon", "heardAs": ["אהרן הכהן", "ארים"] },
+    { "name": "Miriam", "heardAs": ["מרים"] },
+    { "name": "Shlomo HaMelech", "heardAs": ["שלמה המלך", "שלמה מלוה"] },
+    { "name": "Doeg", "heardAs": ["דייק", "דעהיג"] },
+    { "name": "Rashi", "heardAs": ["רשע", "רשע הקודש"] },
+    { "name": "Rabbi Moshe HaDarshan", "heardAs": ["רבי משה דרשן"] },
+    { "name": "Ramban", "heardAs": ["רמב״ן"] },
+    { "name": "Rav Samson Raphael Hirsch", "heardAs": ["ר' שמשון רופאל הירש"] },
+    { "name": "Avraham Avinu", "heardAs": ["אברהם"] },
+    { "name": "Dovid HaMelech", "heardAs": ["דוד המלכה"] },
+    { "name": "the Bnei Yissaschar", "heardAs": ["דער בני יששכר"] },
+    { "name": "the Gerrer Rebbe", "heardAs": ["דער גארער רבי", "דער גער רבי", "דער גערער רבי"] },
+    { "name": "Rabbi Moshe of Kobrin", "heardAs": ["ר' משה קאברינא", "קרובינא"] },
+    { "name": "Rabbi Mordechai of Lechovitch", "heardAs": ["ר' מרדכי לאכאוויטש"] },
+    { "name": "Korach", "heardAs": ["קורח"] },
+    { "name": "Yiftach", "heardAs": ["יפטח", "יפצה"] },
+    { "name": "the Chasam Sofer", "heardAs": ["חתם סופר"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair to poor; Hebrew quotations are heavily garbled and were recovered only where the context of Parshas Chukas made them clear. Segment 600 is a 30-second repeated-word hallucination. The tzaddik associated with the mitzvah of sukkah (348-351), the saying of R' Moshe of Kobrin (642-646), the reference about Yosef (511-514) and the long garbled segment 343 could not be fully recovered and were left out or kept general."
+}
