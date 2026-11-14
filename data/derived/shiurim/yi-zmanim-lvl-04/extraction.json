@@ -1,0 +1,500 @@
+{
+  "shiurId": "yi-zmanim-lvl-04",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that just as a Jew brought bikkurim, the first fruits, up to the Beis HaMikdash, in Elul he travels toward Rosh Hashanah, the Beis HaMikdash in time, where he must arrive with joy in Hashem's kingship and with the freshness of a new beginning.",
+      "yi": "דער משגיח ערקלערט אז אזוי ווי א איד האט ארויפגעברענגט ביכורים צום בית המקדש, אזוי גייט ער אין אלול צו ראש השנה, דער בית המקדש פון זמן, וואו ער דארף אנקומען מיט שמחה אין דער מלכות פון רבונו של עולם און מיט דער פרישקייט פון א נייעם אנהייב."
+    },
+    "abstract": {
+      "en": "The Rav opens with Nechemiah telling the weeping people on Rosh Hashanah to rejoice, and the Chasam Sofer's parable of a prisoner freed for rejoicing on the king's coronation day. He then asks why bikkurim, which began only after the land was settled, are called the merit for entering it, why the farmer recites Arami oved avi, and why the bikkurim procession was so festive. Yetzias Mitzrayim, he explains, draws Jews out even from the fiftieth gate, and the fiftieth mention of it in the Torah is in the bikkurim declaration. Bikkurim, the seven species standing for seven kinds of Jews, were a prophetic act foreshadowing the return to Yerushalayim. Rosh Hashanah is reishis, the Beis HaMikdash in time, which no churban could touch, and the Mikdash comes to every prepared Jew. He ends with Moshe's prayer, the freshness of the Mikdash, and a call to zrizus.",
+      "yi": "דער משגיח עפנט מיט נחמיה וואס האט געהייסן די וויינענדע אידן זיך פרייען ראש השנה, און מיט דעם חתם סופר'ס משל פון א געפאנגענעם וואס איז באפרייט געווארן ווייל ער האט זיך געפרייט ביי דעם מלך'ס הכתרה. דערנאך פרעגט ער פארוואס ביכורים, וואס האבן זיך אנגעהויבן ערשט נאך ירושה וישיבה, ווערן אנגערופן דער זכות צו קומען אין לאנד, פארוואס מ'זאגט ארמי אובד אבי, און פארוואס מ'האט געמאכט אזא שמחה ביי ביכורים. ער ערקלערט אז יציאת מצרים ציט ארויס אפילו פונעם נ' שער, און דאס פופציגסטע מאל וואס יציאת מצרים ווערט דערמאנט איז אין מקרא ביכורים. ביכורים, די שבעת המינים וואס זענען זיבן סארטן אידן, זענען א פועל דמיוני אויף דער צוקונפטיגער גאולה. ראש השנה איז ראשית, דער בית המקדש פון זמן, וואו קיין חורבן האט נישט געהערשט, און דער מקדש קומט צו יעדן איד וואס גרייט זיך צו. צום סוף רעדט ער וועגן משה רבינו'ס תפילה, די פרישקייט פונעם מקדש, און זריזות."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "According to the Rav, rejoicing in Hashem's kingship on Rosh Hashanah, more than worry over one's own judgment, is itself the merit in judgment.",
+          "yi": "לויט דעם משגיח איז די שמחה מיט דער מלכות פון רבונו של עולם ראש השנה, מער ווי די זארג פון דעם אייגענעם דין, אליין דער זכות אין משפט."
+        },
+        "evidence": { "segs": [70, 77, 78, 81, 82], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The fiftieth mention of yetzias Mitzrayim in the Torah, the one in praise of Israel, is the Arami oved avi declaration over bikkurim, and the future geulah lies hidden in it.",
+          "yi": "דאס פופציגסטע מאל וואס יציאת מצרים ווערט דערמאנט אין דער תורה לשבח, איז די פרשה פון ארמי אובד אבי ביי ביכורים, און דארט ליגט באהאלטן די גאולה העתידה."
+        },
+        "evidence": { "segs": [294, 297, 306, 341, 348], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Bringing bikkurim from the seven species to Yerushalayim is a prophetic act (poel dimyoni) showing that Hashem will bring every kind of Jew back to Tziyon after the churban.",
+          "yi": "דאס ברענגען ביכורים פון די שבעת המינים קיין ירושלים איז א פועל דמיוני, א סימן אז נאכן חורבן וועט דער רבונו של עולם צוריקברענגען אלע סארטן אידן קיין ציון."
+        },
+        "evidence": { "segs": [443, 447, 459, 462, 466], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Rosh Hashanah is the reishis of time just as the Beis HaMikdash is the reishis of place; it is the Beis HaMikdash in time.",
+          "yi": "ראש השנה איז דער ראשית פון זמן אזוי ווי דער בית המקדש איז דער ראשית פון מקום; ער איז דער בית המקדש פון זמן."
+        },
+        "evidence": { "segs": [601, 603, 611, 613, 614], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "On Rosh Hashanah and Yom Kippur there is no aliyah l'regel because the Mikdash comes to every Jew wherever he is, provided he has prepared in Elul.",
+          "yi": "ראש השנה און יום כיפור איז נישטא קיין מצוה פון עליה לרגל, ווייל דער מקדש קומט צו יעדן איד וואו ער געפינט זיך, בתנאי אז ער האט זיך צוגעגרייט אין אלול."
+        },
+        "evidence": { "segs": [892, 896, 897, 924, 925], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Time is above place, so the churban ruled only over the Mikdash of place, never over the Mikdash of time.",
+          "yi": "זמן איז העכער ווי מקום, דערפאר האט דער חורבן נאר געהערשט אויפן מקדש פון מקום און קיינמאל נישט אויפן מקדש פון זמן."
+        },
+        "evidence": { "segs": [981, 982, 983, 986, 987], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The Mikdash is the place of reishis and freshness where nothing grows old, and on Rosh Hashanah a Jew asks to keep that freshness in avodas Hashem all year.",
+          "yi": "דער מקדש איז דער ארט פון ראשית און פרישקייט וואו גארנישט ווערט אלט, און ראש השנה בעט א איד אז ער זאל בלייבן מיט יענער פרישקייט אין עבודת השם דאס גאנצע יאר."
+        },
+        "evidence": { "segs": [1325, 1327, 1398, 1429, 1432], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-zemanim-elull-tishery-01-04-elul", "startSeg": 0, "endSeg": 105,
+      "title": { "en": "Nechemiah and the king's coronation day", "yi": "נחמיה און דעם מלך'ס טאג פון הכתרה" },
+      "summary": {
+        "en": "The Rav opens with Nechemiah telling the weeping people on Rosh Hashanah to eat, drink and rejoice, and brings the Chasam Sofer's parable of a prisoner who danced on the king's coronation day and was pardoned. Rejoicing in Hashem's kingship, he explains, is a Jew's strength in judgment.",
+        "yi": "דער משגיח עפנט מיט נחמיה וואס האט געזאגט פאר די וויינענדע אידן ראש השנה זיי זאלן עסן, טרינקען און זיך פרייען, און ברענגט דעם חתם סופר'ס משל פון א געפאנגענעם וואס האט געטאנצט ביי דעם מלך'ס הכתרה און איז באגנאדיגט געווארן. די שמחה מיט דער מלכות פון רבונו של עולם, ערקלערט ער, איז דער כח פון א איד אין משפט."
+      },
+      "kind": "intro", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-01-04-elul", "startSeg": 106, "endSeg": 185,
+      "title": { "en": "Questions on the parsha of bikkurim", "yi": "קשיות אויף דער פרשה פון ביכורים" },
+      "summary": {
+        "en": "The Rav mentions the Chassidic custom of dancing on Rosh Hashanah and turns to the parsha of bikkurim. He asks how bikkurim can be the merit for entering the land when they began only after it was settled, why the farmer recounts yetzias Mitzrayim, and why the bikkurim procession was so festive; he also notes that the curses are read before Rosh Hashanah.",
+        "yi": "דער משגיח דערמאנט דעם חסידישן מנהג צו טאנצן ראש השנה און גייט איבער צו דער פרשה פון ביכורים. ער פרעגט ווי אזוי ביכורים קענען זיין דער זכות צו קומען אין לאנד אז זיי האבן זיך אנגעהויבן ערשט נאך ירושה וישיבה, פארוואס מ'דערציילט יציאת מצרים, און פארוואס מ'האט געמאכט אזא שמחה ביים ברענגען ביכורים; ער מערקט אויך אן אז מ'ליינט די קללות פאר ראש השנה."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-01-04-elul", "startSeg": 186, "endSeg": 250,
+      "title": { "en": "Arami oved avi and the fiftieth gate", "yi": "ארמי אובד אבי און דער נ' שער" },
+      "summary": {
+        "en": "The Rav asks why Chazal fixed the mitzvah of telling yetzias Mitzrayim on the verses of Arami oved avi rather than on the fuller account in Shemos. He brings the Ohr HaChaim that Israel was taken out before falling into the fiftieth gate of impurity, while with the power of Torah one can come out even from there.",
+        "yi": "דער משגיח פרעגט פארוואס חז\"ל האבן קובע געווען די מצוה פון סיפור יציאת מצרים אויף די פסוקים פון ארמי אובד אבי, און נישט אויף די פרשיות אין חומש שמות וואו עס שטייט אסאך מער בפרטיות. ער ברענגט דעם אור החיים אז אידן זענען ארויסגענומען געווארן איידער זיי זענען אריינגעפאלן אינעם נ' שער הטומאה, און מיטן כח פון תורה קען מען ארויסגיין אפילו פון דארט."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-01-04-elul", "startSeg": 251, "endSeg": 288,
+      "title": { "en": "The Haggadah and the power of Torah", "yi": "די הגדה און דער כח פון תורה" },
+      "summary": {
+        "en": "The Rav connects this to the Haggadah: the blessing over the giving of the Torah is placed before the four sons, because the Torah can pull out even the rasha who has fallen into the fiftieth gate. He adds that yetzias Mitzrayim comes from the fifty gates of understanding and is mentioned fifty times in the Torah.",
+        "yi": "דער משגיח פארבינדט דאס מיט דער הגדה: די ברכה אויף נתינת התורה שטייט פאר די ארבעה בנים, ווייל די תורה קען ארויסשלעפן אפילו דעם רשע וואס איז אריינגעפאלן אינעם נ' שער. ער לייגט צו אז יציאת מצרים קומט פון די נ' שערי בינה און ווערט דערמאנט פופציג מאל אין דער תורה."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-01-04-elul", "startSeg": 289, "endSeg": 349,
+      "title": { "en": "The fiftieth mention of yetzias Mitzrayim", "yi": "דאס פופציגסטע מאל יציאת מצרים" },
+      "summary": {
+        "en": "The Rav brings the question that yetzias Mitzrayim appears more than fifty times, and the answer that only fifty mentions are in praise of Israel. Counting back from the end of the Torah, he sets aside verses that do not count, and concludes that the fiftieth is the Arami oved avi declaration over bikkurim, where the key to the final geulah lies.",
+        "yi": "דער משגיח ברענגט די קשיא אז יציאת מצרים שטייט מער ווי פופציג מאל, און דעם תירוץ אז נאר פופציג מאל ווערט עס דערמאנט לשבח פאר כלל ישראל. ער רעכנט צוריק פונעם סוף התורה, לאזט אויס די פסוקים וואס רעכענען זיך נישט, און קומט ארויס אז דאס פופציגסטע איז ארמי אובד אבי ביי ביכורים, וואו עס ליגט דער שליסל פון דער גאולה העתידה."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-01-04-elul", "startSeg": 350, "endSeg": 441,
+      "title": { "en": "The seven species and the prophetic act", "yi": "די שבעת המינים און דער פועל דמיוני" },
+      "summary": {
+        "en": "The Rav explains the land of the seven species as the seven kinds of Jews, from wheat down to the pomegranate, the empty ones who are still full of mitzvos. He then introduces the poel dimyoni, an act that strengthens a prophecy, from the Ramban on Yaakov's bow and from Yirmiyahu buying a field before the churban.",
+        "yi": "דער משגיח טייטשט די ארץ פון די שבעת המינים אויף זיבן סארטן אידן, פון חטה ביז רמון, די ריקנים וואס זענען פונדעסטוועגן פול מיט מצוות. דערנאך ברענגט ער דעם ענין פון פועל דמיוני, א מעשה וואס פארשטארקט א נבואה, פונעם רמב\"ן ביי יעקב'ס קשת און פון ירמיה וואס האט געקויפט א פעלד פארן חורבן."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-01-04-elul", "startSeg": 442, "endSeg": 546,
+      "title": { "en": "Bikkurim as a sign of the return to Tziyon", "yi": "ביכורים אלס א סימן אויף דעם צוריקקערן קיין ציון" },
+      "summary": {
+        "en": "The Rav explains that bringing bikkurim of the seven species to the Mikdash is a poel dimyoni for the ingathering after the churban; this is why the procession had music and gilded horns, as the haftarah describes the geulah. Therefore the parsha of the fiftieth mention is read before Rosh Hashanah, whose tefillos ask above all for the geulah.",
+        "yi": "דער משגיח ערקלערט אז דאס ברענגען ביכורים פון די שבעת המינים צום מקדש איז א פועל דמיוני אויף קיבוץ גליות נאכן חורבן; דערפאר איז געווען כלי זמר און פארגילטע הערנער, אזוי ווי די הפטרה באשרייבט די גאולה. דערפאר ליינט מען די פרשה פונעם פופציגסטן מאל פאר ראש השנה, וואס אירע תפילות בעטן מערסטנס אויף דער גאולה."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-01-04-elul", "startSeg": 547, "endSeg": 669,
+      "title": { "en": "Rosh Hashanah, the Beis HaMikdash in time", "yi": "ראש השנה, דער בית המקדש פון זמן" },
+      "summary": {
+        "en": "From the verse 'from the beginning of the year' said of Eretz Yisroel, the Rav explains that Eretz Yisroel, Yerushalayim and the Mikdash are the point of reishis in place, and Rosh Hashanah is the same point in time. Bikkurim are the reishis of the produce, so on Rosh Hashanah a Jew brings himself like bikkurim to the Mikdash, which he reaches through the days until Ne'ilah.",
+        "yi": "פונעם פסוק \"מראשית השנה\" וואס רעדט וועגן ארץ ישראל ערקלערט דער משגיח אז ארץ ישראל, ירושלים און דער בית המקדש זענען די נקודה פון ראשית אין מקום, און ראש השנה איז די זעלבע נקודה אין זמן. ביכורים זענען דער ראשית פון דער תבואה, ממילא ברענגט זיך א איד ראש השנה ווי ביכורים צום מקדש, וואו ער קומט אן ביז נעילה."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-01-04-elul", "startSeg": 670, "endSeg": 777,
+      "title": { "en": "Elul's preparation and the joyful shofar", "yi": "די הכנה פון אלול און דער פריילעכער שופר" },
+      "summary": {
+        "en": "The Rav says not everyone arrives at Tziyon when Rosh Hashanah comes; one must prepare in Elul with regret and correcting one's middos. The word vehaya means joy and the future, and one who prepared weeps on Rosh Hashanah like a child returning to his father, while the shofar becomes a song of Hashem's coronation and the Mikdash comes to him.",
+        "yi": "דער משגיח זאגט אז נישט יעדער קומט אן קיין ציון ווען ראש השנה קומט; מ'דארף זיך צוגרייטן אין אלול מיט חרטה און תיקון המדות. דאס ווארט \"והיה\" איז א לשון שמחה און א לשון עתיד, און ווער עס האט זיך צוגעגרייט וויינט ראש השנה ווי א קינד וואס קומט צוריק צום טאטן, דער שופר ווערט א געזאנג פון דער מלכות פון רבונו של עולם, און דער מקדש קומט צו אים."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-01-04-elul", "startSeg": 778, "endSeg": 871,
+      "title": { "en": "Repeated passage in the recording", "yi": "א חלק פונעם שיעור וואס ווערט איבערגעחזרט" },
+      "summary": {
+        "en": "The recording replays the passage from the call to prepare for Tziyon through the Mikdash coming to every Jew almost word for word; it adds nothing to the preceding section.",
+        "yi": "די אויפנאמע שפילט כמעט ווארט ביי ווארט איבער דעם חלק פון דער הכנה צו קומען קיין ציון ביז דער מקדש קומט צו יעדן איד; עס לייגט גארנישט צו צום פריערדיגן חלק."
+      },
+      "kind": "noise", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-01-04-elul", "startSeg": 872, "endSeg": 1006,
+      "title": { "en": "No aliyah l'regel: time above place", "yi": "קיין עליה לרגל: זמן איז העכער ווי מקום" },
+      "summary": {
+        "en": "The Rav explains why Rosh Hashanah and Yom Kippur have no aliyah l'regel yet have bowing as in the Mikdash: the Mikdash comes to every Jew through time. He finds this in the custom of the chazzan beginning Hamelech from his place, and proves from pigul and from the creation that time is above place, so no enemy could destroy the Mikdash of time.",
+        "yi": "דער משגיח ערקלערט פארוואס ראש השנה און יום כיפור איז נישטא קיין עליה לרגל און פונדעסטוועגן פאלט מען כורעים ווי אינעם מקדש: דער מקדש קומט צו יעדן איד דורך זמן. ער זעט דאס אין דעם מנהג אז דער בעל תפילה הייבט אן \"המלך\" פון זיין ארט, און ברענגט ראיות פון פיגול און פון בראשית אז זמן איז העכער ווי מקום, ממילא האט קיין שונא נישט געקענט חרוב מאכן דעם מקדש פון זמן."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-01-04-elul", "startSeg": 1007, "endSeg": 1062,
+      "title": { "en": "The sweet tefillos of Rosh Hashanah", "yi": "די זיסע תפילות פון ראש השנה" },
+      "summary": {
+        "en": "The Rav brings a hint from the Imrei Noam that Rosh Hashanah equals Beis HaMikdash in gematria, so a Jew should know he stands in the Mikdash and pray for Hashem's kingship over all. The challah dipped in honey hints that the tefillos of Rosh Hashanah are sweet, asking almost nothing for oneself.",
+        "yi": "דער משגיח ברענגט א רמז פונעם אמרי נועם אז ראש השנה איז בגימטריא בית המקדש, ממילא זאל א איד וויסן אז ער שטייט אינעם מקדש און בעטן אויף דער מלכות פון רבונו של עולם איבער אלעם. די חלה וואס מ'טונקט אין האניג איז א רמז אז די תפילות פון ראש השנה זענען זיס, און מ'בעט כמעט גארנישט פאר זיך."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-01-04-elul", "startSeg": 1063, "endSeg": 1257,
+      "title": { "en": "Moshe's prayer and the holiness of Eretz Yisroel", "yi": "משה רבינו'ס תפילה און די קדושה פון ארץ ישראל" },
+      "summary": {
+        "en": "The Rav brings the Midrash on Moshe's words 'heaven and the heaven of heavens and the earth' and asks about their order and why Moshe instituted a prayer before prayer only at the end of forty years. With the Chasam Sofer he answers that only on entering Eretz Yisroel did Moshe feel a holiness greater than heaven, and with the Rambam-Ramban dispute he explains why the forty Aseres Yemei Teshuvah in the desert did not bring it earlier.",
+        "yi": "דער משגיח ברענגט דעם מדרש אויף משה רבינו'ס ווערטער \"השמים ושמי השמים הארץ\", און פרעגט אויפן סדר און פארוואס משה רבינו האט מתקן געווען א תפילה פאר דער תפילה ערשט צום סוף פון די פערציג יאר. מיטן חתם סופר ענטפערט ער אז ערשט ביים אריינקומען אין ארץ ישראל האט משה געשפירט א קדושה העכער ווי דער הימל, און מיט דער מחלוקת רמב\"ם און רמב\"ן ערקלערט ער פארוואס די פערציג עשרת ימי תשובה אין מדבר האבן דאס נישט געברענגט פריער."
+      },
+      "kind": "main", "catalogTopicIdx": [],
+      "subsections": [
+        {
+          "recordingId": "y-zemanim-elull-tishery-01-04-elul", "startSeg": 1063, "endSeg": 1120,
+          "title": { "en": "The Midrash and two questions", "yi": "דער מדרש און צוויי קשיות" },
+          "summary": {
+            "en": "The Rav brings the Midrash in which Moshe answers 'with the same hen' and asks why the verse lists heaven, the heaven of heavens and the earth in no clear order, and why Moshe waited forty years to ask help in davening.",
+            "yi": "דער משגיח ברענגט דעם מדרש וואו משה רבינו טענה'ט מיטן זעלבן \"הן\", און פרעגט פארוואס דער פסוק רעכנט אויס שמים, שמי השמים און הארץ אן א קלארן סדר, און פארוואס משה האט געווארט פערציג יאר מיטן בעטן הילף צו דאווענען."
+          }
+        },
+        {
+          "recordingId": "y-zemanim-elull-tishery-01-04-elul", "startSeg": 1121, "endSeg": 1172,
+          "title": { "en": "A holiness above heaven", "yi": "א קדושה העכער ווי דער הימל" },
+          "summary": {
+            "en": "With the Chasam Sofer the Rav answers that the air of Eretz Yisroel is holier than the heaven over chutz la'aretz, so Moshe felt the need only when he entered it; the 'heaven of heavens' in the verse is Eretz Yisroel, and the Midrash's exchange follows.",
+            "yi": "מיטן חתם סופר ענטפערט דער משגיח אז ארץ ישראל איז הייליגער ווי דער הימל איבער חוץ לארץ, דערפאר האט משה דאס געשפירט ערשט ווען ער איז אריין; \"שמי השמים\" אין פסוק איז ארץ ישראל, און דערמיט איז מובן דער מדרש."
+          }
+        },
+        {
+          "recordingId": "y-zemanim-elull-tishery-01-04-elul", "startSeg": 1173, "endSeg": 1257,
+          "title": { "en": "Forty Aseres Yemei Teshuvah in the desert", "yi": "פערציג עשרת ימי תשובה אין מדבר" },
+          "summary": {
+            "en": "The Rav asks why Moshe did not feel this in the forty Aseres Yemei Teshuvah in the desert, the Mikdash in time, and answers with the Ramban, followed by the Yalkut, that the mitzvah of tefillah is only in a time of trouble; Moshe felt inscribed among the tzaddikim already on Rosh Hashanah and had no trouble to daven over.",
+            "yi": "דער משגיח פרעגט פארוואס משה האט דאס נישט געשפירט אין די פערציג עשרת ימי תשובה אין מדבר, דער מקדש פון זמן, און ענטפערט מיטן רמב\"ן, וואס דער ילקוט האלט ווי אים, אז די מצוה פון תפילה איז נאר בעת צרה; משה האט שוין ראש השנה געשפירט אז ער איז פארשריבן ביי די צדיקים, און האט נישט געהאט קיין צרה צו דאווענען אויף דעם."
+          }
+        }
+      ]
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-01-04-elul", "startSeg": 1258, "endSeg": 1311,
+      "title": { "en": "Adam's sin: life as freshness", "yi": "דער חטא פון אדם הראשון: חיים איז פרישקייט" },
+      "summary": {
+        "en": "Returning to why bikkurim must be brought to the Mikdash, the Rav notes that Adam was created and sinned on Rosh Hashanah, bringing death into the world. Life means freshness and death means aging, so on Rosh Hashanah a Jew must repair this and serve Hashem with renewal.",
+        "yi": "צוריק צו דער קשיא פארוואס ביכורים דארף מען ברענגען צום מקדש, מערקט דער משגיח אן אז אדם הראשון איז באשאפן געווארן און האט געזינדיגט ראש השנה, און האט געברענגט מיתה אויף דער וועלט. חיים מיינט פרישקייט און מיתה מיינט עלטערקייט, ממילא דארף א איד ראש השנה דאס מתקן זיין און דינען דעם רבונו של עולם מיט התחדשות."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-01-04-elul", "startSeg": 1312, "endSeg": 1444,
+      "title": { "en": "The Mikdash, where nothing grows old", "yi": "דער מקדש, וואו גארנישט ווערט אלט" },
+      "summary": {
+        "en": "The Rav explains that the Mikdash is the place of reishis where old age does not rule: the lechem hapanim stayed fresh, David never slept, Yaakov would not have slept in such a place, and a Levi who slept on watch was punished. Rosh Hashanah is the same, so one does not sleep then and asks not to be cast off to old age but to keep freshness all year.",
+        "yi": "דער משגיח ערקלערט אז דער מקדש איז דער ארט פון ראשית וואו זקנה האט נישט קיין שליטה: דער לחם הפנים איז געבליבן פריש, דוד המלך האט נישט געשלאפן, יעקב אבינו וואלט נישט געשלאפן אין אזא ארט, און א לוי וואס איז אנטשלאפן געווארן אויף זיין משמר האט מען באשטראפט. אזוי איז אויך ראש השנה, דערפאר שלאפט מען נישט, און מ'בעט אז מ'זאל נישט ווערן אוועקגעווארפן לעת זקנה נאר בלייבן פריש דאס גאנצע יאר."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-01-04-elul", "startSeg": 1445, "endSeg": 1519,
+      "title": { "en": "The Slonimer Rebbe and the million dollars", "yi": "דער סלאנימער רבי און דער מיליאן דאלאר" },
+      "summary": {
+        "en": "The Rav tells of the Beis Avraham of Slonim, whose young wife complained that he danced for an hour on Friday night, and the elder chassid who asked what she would do if he won a million dollars. He compares the crowd at a ballgame and says one should daven and learn with that freshness, as if each Shabbos were the first and last.",
+        "yi": "דער משגיח דערציילט פונעם בית אברהם פון סלאנים, וואס זיין יונגע ווייב האט זיך באקלאגט אז ער טאנצט א שטונדע פרייטאג צונאכטס, און דעם אלטן חסיד וואס האט געפרעגט וואס זי וואלט געטון ווען ער וואלט געוואונען א מיליאן דאלאר. ער פארגלייכט דאס מיטן עולם ביי א שפיל, און זאגט אז אזוי דארף מען דאווענען און לערנען, מיט א פרישקייט ווי יעדער שבת וואלט געווען דער ערשטער און דער לעצטער."
+      },
+      "kind": "story", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-01-04-elul", "startSeg": 1520, "endSeg": 1590,
+      "title": { "en": "Souls in fruit and the first fig", "yi": "נשמות אין פירות און די ערשטע פייג" },
+      "summary": {
+        "en": "The Rav brings that souls enter fruit and are elevated when a Jew eats with a brachah, and explains that the fig which ripened first holds a soul of zrizus that belongs to the Mikdash, the place of reishis. Bikkurim are thus a tikkun for Adam's sin, and the fruit goes to the kohen, who eats it as the owner's emissary.",
+        "yi": "דער משגיח ברענגט אז נשמות גייען אריין אין פירות און ווערן אויפגעהויבן ווען א איד עסט מיט א ברכה, און ערקלערט אז די פייג וואס איז ערשט צייטיג געווארן האט א נשמה פון זריזות וואס געהערט צום מקדש, דעם ארט פון ראשית. ביכורים זענען דערפאר א תיקון פאר דעם חטא פון אדם הראשון, און די פרוכט גייט צום כהן, וואס עסט עס ווי דער שליח פונעם בעל הבית."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-01-04-elul", "startSeg": 1591, "endSeg": 1639,
+      "title": { "en": "Zrizus and wishes for the new year", "yi": "זריזות און ברכות אויף א נייעם יאר" },
+      "summary": {
+        "en": "The Rav sums up that the parsha of bikkurim urges zrizus and freshness, entering the point of reishis and carrying it through the year, which hastens the geulah of 'I will hasten it in its time'. He closes with wishes for the great shofar of geulah and a kesivah vachasimah tovah.",
+        "yi": "דער משגיח פאסט צוזאמען אז די פרשה פון ביכורים מאנט זריזות און פרישקייט, אריינקומען אין דער נקודה פון ראשית און עס מיטנעמען דאס גאנצע יאר, און דאס איילט די גאולה פון \"בעתה אחישנה\". ער ענדיגט מיט א ברכה אויף שופר גדול פון גאולה און א כתיבה וחתימה טובה."
+      },
+      "kind": "closing", "catalogTopicIdx": [0], "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "כי קדוש הימל אדיננו ולא תעצפה כחדשת ה' הומה עסקים", "work": "Nechemiah", "ref": "Nechemiah 8:9-10", "sefariaRef": "Nehemiah 8:9-10", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [8, 12, 13, 16, 97, 101], "confidence": 0.8 } },
+    { "heardAs": "איז דאך סאם סופר און די דרשות", "work": "Derashos Chasam Sofer", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [17, 18, 19, 67], "confidence": 0.75 } },
+    { "heardAs": "בשמחה יגילים כל היום", "work": "Tehillim", "ref": "Tehillim 89:17", "sefariaRef": "Psalms 89:17", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [118, 119, 120], "confidence": 0.8 } },
+    { "heardAs": "והיה כתבי על הארץ", "work": "Devarim", "ref": "Devarim 26:1", "sefariaRef": "Deuteronomy 26:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [123, 125], "confidence": 0.8 } },
+    { "heardAs": "חז״ל זאגן דאך אליין רשע ברענגט עס", "work": "Rashi", "ref": "Rashi, Devarim 26:1", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [125, 127, 128, 132], "confidence": 0.7 } },
+    { "heardAs": "ארם ויבא ובא ביי יבד מצרים", "work": "Devarim", "ref": "Devarim 26:5", "sefariaRef": "Deuteronomy 26:5", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [143, 145, 194], "confidence": 0.8 } },
+    { "heardAs": "די משנה פון ביכורים ... כמה ונעלו ציון", "work": "Mishnah Bikkurim", "ref": "Mishnah Bikkurim 3:2-3", "sefariaRef": "Mishnah Bikkurim 3:2-3", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [150, 156, 157, 162, 167], "confidence": 0.8 } },
+    { "heardAs": "תקילה לשנה וקהלה לשנה", "work": "Gemara Megillah", "ref": "Megillah 31b", "sefariaRef": "Megillah 31b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [176, 177, 178], "confidence": 0.7 } },
+    { "heardAs": "די הגדה פון פסח ביינאכט", "work": "Haggadah shel Pesach", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [191, 192, 197, 201, 257], "confidence": 0.8 } },
+    { "heardAs": "דער אור החיים הק' אין פרשת שמש אויפ'ן פסוק פאר ארד להצילה מייד מצרים", "work": "Ohr HaChaim", "ref": "Ohr HaChaim, Shemos 3:8", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [219, 220, 225, 228, 231], "confidence": 0.75 } },
+    { "heardAs": "דאס שטעט אין זייער הקודש פאר חמשים מולה", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [280, 282, 283], "confidence": 0.65 } },
+    { "heardAs": "דער רממה פעניל פרעגט א קשיב", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [289, 290, 292, 294], "confidence": 0.65 } },
+    { "heardAs": "דאך תם ספר און די תשובות איז מחולק מיטן מגן אברהם", "work": "Shu\"t Chasam Sofer", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [316, 317], "confidence": 0.75 } },
+    { "heardAs": "מגן אברהם", "work": "Magen Avraham", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [316, 317], "confidence": 0.75 } },
+    { "heardAs": "יונגעזאל כל הגוים ועל מעשי השם כחה ... יוסם מארץ מצוים", "work": "Devarim", "ref": "Devarim 29:23-24", "sefariaRef": "Deuteronomy 29:23-24", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [327, 328, 329, 331], "confidence": 0.7 } },
+    { "heardAs": "קידוש ישראל ה' ראשת צפה עשה", "work": "Yirmiyahu", "ref": "Yirmiyahu 2:3", "sefariaRef": "Jeremiah 2:3", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [358], "confidence": 0.7 } },
+    { "heardAs": "כפלחה רומים רקותיו", "work": "Shir HaShirim", "ref": "Shir HaShirim 4:3", "sefariaRef": "Song of Songs 4:3", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [370, 395], "confidence": 0.7 } },
+    { "heardAs": "רימען שפילה רקנים שבחמלי המצוות כרימען", "work": "Gemara Berachos", "ref": "Berachos 57a", "sefariaRef": "Berakhot 57a", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [396, 397, 399], "confidence": 0.7 } },
+    { "heardAs": "די גמרא זאגט מען ברכות ביז די רימען", "work": "Gemara Berachos", "ref": "Berachos 41a", "sefariaRef": "Berakhot 41a", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [386, 387, 388], "confidence": 0.6 } },
+    { "heardAs": "רמב״נ'ס ... השבקחתי מידו על מורי בחביא בקשתי", "work": "Ramban", "ref": "Ramban, Bereishis 48:22", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [406, 408, 409, 410, 413], "confidence": 0.75 } },
+    { "heardAs": "עוד כי אמר השם עוד יקנה בתים ותדות וחרמים בארץ הזאת", "work": "Yirmiyahu", "ref": "Yirmiyahu 32:15", "sefariaRef": "Jeremiah 32:15", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [420, 425, 428, 429, 436], "confidence": 0.8 } },
+    { "heardAs": "להבי בנייך מרחק זאבים וכככן היתם", "work": "Yeshayahu", "ref": "Yeshayahu 60:9", "sefariaRef": "Isaiah 60:9", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [503, 504, 505, 506], "confidence": 0.7 } },
+    { "heardAs": "נטע מצאי מיינס הידיע לתפועה", "work": "Yeshayahu", "ref": "Yeshayahu 60:21", "sefariaRef": "Isaiah 60:21", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [511, 512, 513], "confidence": 0.65 } },
+    { "heardAs": "מראשת השנה הדרכת השנה", "work": "Devarim", "ref": "Devarim 11:12", "sefariaRef": "Deuteronomy 11:12", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [548, 549, 553, 554], "confidence": 0.8 } },
+    { "heardAs": "דרשן די גמרא ... הבדן ראש השנה מראשת השנה", "work": "Gemara Rosh Hashanah", "ref": "Rosh Hashanah 8a", "sefariaRef": "Rosh Hashanah 8a", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [562, 563, 565], "confidence": 0.6 } },
+    { "heardAs": "שטענקען ספר יצירה", "work": "Sefer Yetzirah", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [588, 589], "confidence": 0.65 } },
+    { "heardAs": "לא יארבעט ועוד שם אורל וטראמער", "work": "Yeshayahu", "ref": "Yeshayahu 52:1", "sefariaRef": "Isaiah 52:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [690, 691], "confidence": 0.7 } },
+    { "heardAs": "דער חדר בני יששכר", "work": "Bnei Yissaschar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [694, 695], "confidence": 0.65 } },
+    { "heardAs": "זאך תסביע ושמוע ובתאומה ירח ימים", "work": "Devarim", "ref": "Devarim 21:13", "sefariaRef": "Deuteronomy 21:13", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [709, 710, 711], "confidence": 0.7 } },
+    { "heardAs": "אזוי ווי שטעטן זיירה קודש", "work": "Zera Kodesh", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [708, 712], "confidence": 0.65 } },
+    { "heardAs": "הלללה בשקר שפע", "work": "Tehillim", "ref": "Tehillim 150:3", "sefariaRef": "Psalms 150:3", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [745, 746], "confidence": 0.65 } },
+    { "heardAs": "די אשר את ה' בהימצא", "work": "Yeshayahu", "ref": "Yeshayahu 55:6", "sefariaRef": "Isaiah 55:6", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [752, 753], "confidence": 0.75 } },
+    { "heardAs": "דאזשענען חז״ל ... אלא אתר הינים שבן ראש השנה ליום הכיפור", "work": "Gemara Rosh Hashanah", "ref": "Rosh Hashanah 18a", "sefariaRef": "Rosh Hashanah 18a", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [752, 754, 755], "confidence": 0.75 } },
+    { "heardAs": "לשכנע סוד ראשי", "work": "Devarim", "ref": "Devarim 12:5", "sefariaRef": "Deuteronomy 12:5", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [876, 879, 883], "confidence": 0.7 } },
+    { "heardAs": "אלא מועד דער ה' נקראי קודש", "work": "Vayikra", "ref": "Vayikra 23:4", "sefariaRef": "Leviticus 23:4", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [994, 995, 996], "confidence": 0.7 } },
+    { "heardAs": "ספר אמרי ניים פון זשיקאוועל", "work": "Imrei Noam", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1007, 1009, 1010], "confidence": 0.8 } },
+    { "heardAs": "ענגל השם עלי כחא השמים ושמי השמים הארות וכל אשר עליהו", "work": "Devarim", "ref": "Devarim 10:14", "sefariaRef": "Deuteronomy 10:14", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1066, 1067, 1068, 1076], "confidence": 0.8 } },
+    { "heardAs": "שטעט אין מדרש", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1070, 1071, 1078, 1081], "confidence": 0.75 } },
+    { "heardAs": "העין טובה ימחא למת", "work": "Devarim", "ref": "Devarim 31:14", "sefariaRef": "Deuteronomy 31:14", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1071, 1079], "confidence": 0.7 } },
+    { "heardAs": "וואס חנא'ל על ה' בעת אהי", "work": "Devarim", "ref": "Devarim 3:23", "sefariaRef": "Deuteronomy 3:23", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1113, 1118, 1208], "confidence": 0.75 } },
+    { "heardAs": "ענטפערט דער חתם סופר אזוי", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1121, 1136, 1147], "confidence": 0.8 } },
+    { "heardAs": "רמב״ם", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1188, 1197, 1199], "confidence": 0.8 } },
+    { "heardAs": "רמב״ן", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1188, 1201, 1213], "confidence": 0.8 } },
+    { "heardAs": "וליאב די בכל לבבכם", "work": "Devarim", "ref": "Devarim 11:13", "sefariaRef": "Deuteronomy 11:13", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1190, 1192], "confidence": 0.75 } },
+    { "heardAs": "א ילקוט, א מדרש ילקוט", "work": "Yalkut Shimoni", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1206, 1207, 1208, 1257], "confidence": 0.7 } },
+    { "heardAs": "ויפק פיפק נשמת חיים", "work": "Bereishis", "ref": "Bereishis 2:7", "sefariaRef": "Genesis 2:7", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1285, 1289], "confidence": 0.75 } },
+    { "heardAs": "שסרים בבית ה' ... ינאוון בסבר דשנים ועננים יהי'", "work": "Tehillim", "ref": "Tehillim 92:14-15", "sefariaRef": "Psalms 92:14-15", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1321, 1322], "confidence": 0.7 } },
+    { "heardAs": "שום מזמן לבני קורך ... היינו נהגינו על מוס", "work": "Tehillim", "ref": "Tehillim 48", "sefariaRef": "Psalms 48", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1332, 1333, 1336, 1343], "confidence": 0.7 } },
+    { "heardAs": "זאגט הרשע, ילה ידעתי, ולא ישנתי במוקום קודש כזה", "work": "Rashi", "ref": "Rashi, Bereishis 28:16", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [1388, 1390], "confidence": 0.75 } },
+    { "heardAs": "זאגט דער ירושלמ'ער ... דמוך מזלה", "work": "Talmud Yerushalmi", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1395, 1396], "confidence": 0.7 } },
+    { "heardAs": "זאגט די משנה ... לזכות כתותו צו פארברענען", "work": "Mishnah Middos", "ref": "Mishnah Middos 1:2", "sefariaRef": "Mishnah Middot 1:2", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [1400, 1401, 1402, 1404], "confidence": 0.75 } },
+    { "heardAs": "עלטא שלחנא, לישן זקנה", "work": "Tehillim", "ref": "Tehillim 71:9", "sefariaRef": "Psalms 71:9", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1415, 1427], "confidence": 0.7 } },
+    { "heardAs": "זאגט פרשה, בכל יום יא ביונך, כאילו היום נשנה לך", "work": "Rashi", "ref": "Rashi, Devarim 6:6", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [1437, 1440, 1441], "confidence": 0.7 } },
+    { "heardAs": "ולא אמאס כי עכיא", "work": "Tehillim", "ref": "Tehillim 118:17", "sefariaRef": "Psalms 118:17", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1510, 1513, 1514], "confidence": 0.75 } },
+    { "heardAs": "שטעט אין די גמרא'ן ברכות ... ונשקים ונמצא יחר לבבנה", "work": "Gemara Berachos", "ref": "Berachos 16b-17a", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [1515, 1516, 1517], "confidence": 0.7 } },
+    { "heardAs": "אזוי ווי דער בעש''ט טייטשט ער", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1586, 1587, 1588], "confidence": 0.65 } },
+    { "heardAs": "רבי'ן גם שמעים, נפשים בן תוסטות", "work": "Tehillim", "ref": "Tehillim 107:5", "sefariaRef": "Psalms 107:5", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1587, 1598], "confidence": 0.65 } },
+    { "heardAs": "אני ה' בעיטה אחי שמה", "work": "Yeshayahu", "ref": "Yeshayahu 60:22", "sefariaRef": "Isaiah 60:22", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1629, 1632], "confidence": 0.75 } },
+    { "heardAs": "וועט הימה הרע, יצחק ושופר גדול ... ושתפל השם בהר הקדוש פירושלים", "work": "Yeshayahu", "ref": "Yeshayahu 27:13", "sefariaRef": "Isaiah 27:13", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1638], "confidence": 0.7 } }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav reads bikkurim as a poel dimyoni: each of the seven species stands for a kind of Jew, so carrying them with music to the Mikdash enacts in advance the return of all Jews to Tziyon after the churban.",
+        "yi": "דער משגיח טייטשט ביכורים אלס א פועל דמיוני: יעדער פון די שבעת המינים איז א סארט איד, ממילא איז דאס טראגן זיי מיט כלי זמר צום מקדש א פאראויסגעשפילטער קיבוץ גליות נאכן חורבן."
+      },
+      "evidence": { "segs": [447, 450, 459, 466, 474], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He counts back from the end of the Torah to show that the fiftieth praiseworthy mention of yetzias Mitzrayim is the bikkurim declaration, so the future geulah is tied to bikkurim and to the reading before Rosh Hashanah.",
+        "yi": "ער רעכנט צוריק פונעם סוף התורה כדי צו ווייזן אז דאס פופציגסטע מאל יציאת מצרים לשבח איז מקרא ביכורים, ממילא איז די גאולה העתידה פארבונדן מיט ביכורים און מיטן ליינען פאר ראש השנה."
+      },
+      "evidence": { "segs": [313, 327, 336, 341, 348], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Since time is higher than place, Rosh Hashanah and Yom Kippur, the Mikdash of time, rise above the regalim of place, and no enemy, Bavel or Rome, could ever destroy them.",
+        "yi": "וויבאלד זמן איז העכער ווי מקום, שטייען ראש השנה און יום כיפור, דער מקדש פון זמן, העכער ווי די רגלים פון מקום, און קיין שונא, נישט בבל און נישט רומי, האט זיי נישט געקענט חרוב מאכן."
+      },
+      "evidence": { "segs": [978, 980, 981, 985, 987], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He explains the custom that the chazzan begins Hamelech from his place before reaching the amud: on Rosh Hashanah the King comes to each Jew, and he need not walk to the mizbeach.",
+        "yi": "ער ערקלערט דעם מנהג אז דער בעל תפילה הייבט אן \"המלך\" פון זיין ארט איידער ער גייט צום עמוד: ראש השנה קומט דער מלך צו יעדן איד, און מ'דארף נישט גיין צום מזבח."
+      },
+      "evidence": { "segs": [933, 936, 940, 941, 947], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Moshe instituted a prayer before prayer only on entering Eretz Yisroel, because only there did he feel a holiness greater than the heaven over chutz la'aretz; 'the heaven of heavens' in his praise is Eretz Yisroel.",
+        "yi": "משה רבינו האט מתקן געווען א תפילה פאר דער תפילה ערשט ביים אריינקומען אין ארץ ישראל, ווייל ערשט דארט האט ער געשפירט א קדושה גרעסער ווי דער הימל איבער חוץ לארץ; \"שמי השמים\" אין זיין שבח איז ארץ ישראל."
+      },
+      "evidence": { "segs": [1122, 1127, 1132, 1138, 1161], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The Rav defines life as freshness and death as aging; Adam's sin on Rosh Hashanah brought aging, and the Mikdash, where bread stayed warm and no one slept, is the place where that sin has no rule.",
+        "yi": "דער משגיח טייטשט חיים אלס פרישקייט און מיתה אלס עלטערקייט; דער חטא פון אדם הראשון ראש השנה האט געברענגט עלטערקייט, און דער מקדש, וואו דאס ברויט איז געבליבן ווארעם און מ'האט נישט געשלאפן, איז דער ארט וואו יענער חטא האט נישט קיין שליטה."
+      },
+      "evidence": { "segs": [1294, 1299, 1318, 1356, 1386], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The fig that ripened before all others holds a soul of zrizus, so it belongs to the Mikdash, the place of reishis; this is why bikkurim, the first-ripened fruit, are brought there.",
+        "yi": "די פייג וואס איז צייטיג געווארן פאר אלע אנדערע האט א נשמה פון זריזות, ממילא געהערט זי צום מקדש, דעם ארט פון ראשית; דערפאר ברענגט מען אהין ביכורים, די ערשט-צייטיגע פרוכט."
+      },
+      "evidence": { "segs": [622, 624, 626, 1551, 1560], "confidence": 0.7 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The prisoner who danced on coronation day", "yi": "דער געפאנגענער וואס האט געטאנצט ביי דער הכתרה" },
+      "retelling": {
+        "en": "In the Chasam Sofer's parable, one of the king's ministers sat in prison awaiting judgment on the day the king celebrated his coronation, when prisoners were judged. Instead of worrying, he sang and danced, and when asked why, he said that his own fate was overshadowed by his joy in the king's celebration. When the king heard this, he said such a servant would go free and be raised up.",
+        "yi": "אין דעם חתם סופר'ס משל איז איינער פון די שרי המלך געזעסן אין תפיסה און געווארט אויף זיין משפט, אין דעם טאג וואס דער מלך האט געפייערט זיין הכתרה און מ'האט גע'משפט די געפאנגענע. אנשטאט זיך צו זארגן האט ער געזונגען און געטאנצט, און ווען מ'האט אים געפרעגט פארוואס, האט ער געזאגט אז זיין אייגענע זאך פארשווינדט אינעם שאטן פון זיין שמחה מיטן מלך. ווען דער מלך האט דאס געהערט, האט ער געזאגט אז אזא עבד וועט ארויסגיין פריי און ווערן דערהויבן."
+      },
+      "people": [],
+      "evidence": { "segs": [21, 38, 44, 48, 58, 63], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "The Beis Avraham's dancing and the million dollars", "yi": "דעם בית אברהם'ס טאנצן און דער מיליאן דאלאר" },
+      "retelling": {
+        "en": "When the Beis Avraham of Slonim married as a young man, his wife was unhappy that he came home from davening on Friday night, tired as she was from preparing Shabbos, and danced for an hour. His father-in-law sent an elder chassid, a talmid chacham, to answer her. The chassid asked what she would do if her husband came home having won a million dollars in a raffle and danced; she would gladly dance with him. For this young man, he told her, Shabbos is a million dollars.",
+        "yi": "ווען דער בית אברהם פון סלאנים האט חתונה געהאט אלס יונגערמאן, איז זיין ווייב נישט צופרידן געווען וואס ער קומט אהיים פון דאווענען פרייטאג צונאכטס, ווען זי איז פארמאטערט פון די הכנות לשבת, און טאנצט א שטונדע. מ'האט געשיקט א אלטן חסיד, א תלמיד חכם, צו ענטפערן איר. דער חסיד האט געפרעגט וואס זי וואלט געטון ווען איר מאן וואלט אהיימגעקומען נאכן געווינען א מיליאן דאלאר אין א לאטעריע און געטאנצט; זי וואלט מיטגעטאנצט. ביי דעם יונגערמאן, האט ער איר געזאגט, איז שבת א מיליאן דאלאר."
+      },
+      "people": ["the Beis Avraham of Slonim"],
+      "evidence": { "segs": [1446, 1448, 1455, 1460, 1467, 1473], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The Baal HaTanya's blessing of long years", "yi": "דעם בעל התניא'ס ברכה אויף אריכות ימים" },
+      "retelling": {
+        "en": "The Baal HaTanya once blessed one of his chassidim with long years. The chassid answered that he did not want old years, growing old and broken and unable to serve Hashem with freshness and desire, but fresh years.",
+        "yi": "דער בעל התניא האט אמאל געבענטשט איינעם פון זיינע חסידים מיט אריכות ימים. דער חסיד האט געענטפערט אז ער וויל נישט קיין אלטע יארן, אלט ווערן און צעבראכן ווערן און נישט קענען דינען דעם רבונו של עולם מיט א פרישקייט און א חשק, נאר פרישע יארן."
+      },
+      "people": ["the Baal HaTanya"],
+      "evidence": { "segs": [1419, 1421, 1423, 1424, 1425], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "How can bikkurim be the merit for entering the land, when they were brought only after it was conquered and settled?", "yi": "ווי אזוי קענען ביכורים זיין דער זכות צו קומען אין לאנד, אז מ'האט זיי געברענגט ערשט נאך ירושה וישיבה?" },
+      "answer": { "en": "Bikkurim are a poel dimyoni for the future: through them Hashem will bring the exiled Jews back to Yerushalayim after the churban.", "yi": "ביכורים זענען א פועל דמיוני אויף דער צוקונפט: דורך זיי וועט דער רבונו של עולם צוריקברענגען די פארטריבענע אידן קיין ירושלים נאכן חורבן." },
+      "questionSegs": [131, 134, 136, 137], "answerSegs": [479, 480, 483, 484], "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why did Chazal fix the mitzvah of telling yetzias Mitzrayim on the few verses of Arami oved avi?", "yi": "פארוואס האבן חז\"ל קובע געווען די מצוה פון סיפור יציאת מצרים אויף די עטליכע פסוקים פון ארמי אובד אבי?" },
+      "answer": { "en": "Because it is the fiftieth praiseworthy mention of yetzias Mitzrayim, in which the key to the final geulah lies.", "yi": "ווייל דאס איז דאס פופציגסטע מאל יציאת מצרים לשבח, וואו עס ליגט דער שליסל פון דער גאולה העתידה." },
+      "questionSegs": [204, 205, 215], "answerSegs": [341, 347, 348, 353], "confidence": 0.7
+    },
+    {
+      "question": { "en": "Why is there no aliyah l'regel on Rosh Hashanah and Yom Kippur?", "yi": "פארוואס איז נישטא קיין מצוה פון עליה לרגל ראש השנה און יום כיפור?" },
+      "answer": { "en": "Because on those days one need not go to the Mikdash; the Mikdash comes to every Jew through time.", "yi": "ווייל אין די טעג דארף מען נישט גיין צום מקדש; דער מקדש קומט צו יעדן איד דורך זמן." },
+      "questionSegs": [892, 893, 895], "answerSegs": [896, 897, 898], "confidence": 0.85
+    },
+    {
+      "question": { "en": "Why did Moshe wait until the end of the forty years to institute a prayer asking help in davening?", "yi": "פארוואס האט משה רבינו געווארט ביזן סוף פון די פערציג יאר מיטן מתקן זיין א תפילה אז מ'זאל אים העלפן דאווענען?" },
+      "answer": { "en": "Only on entering Eretz Yisroel did he feel a holiness greater than the heaven over chutz la'aretz, and a greater tefillah needs a greater preparation.", "yi": "ערשט ביים אריינקומען אין ארץ ישראל האט ער געשפירט א קדושה גרעסער ווי דער הימל איבער חוץ לארץ, און א חשובערע תפילה דארף א גרעסערע הכנה." },
+      "questionSegs": [1118, 1119, 1120], "answerSegs": [1122, 1123, 1131, 1138], "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why did Moshe not feel this holiness in the forty Aseres Yemei Teshuvah in the desert, the Mikdash in time?", "yi": "פארוואס האט משה דאס נישט געשפירט אין די פערציג עשרת ימי תשובה אין מדבר, דער מקדש פון זמן?" },
+      "answer": { "en": "Following the Ramban, as the Yalkut holds, the mitzvah of tefillah is only in a time of trouble, and Moshe already felt inscribed among the tzaddikim on Rosh Hashanah, so he did not daven then.", "yi": "לויטן רמב\"ן, אזוי ווי דער ילקוט האלט, איז די מצוה פון תפילה נאר בעת צרה, און משה האט שוין ראש השנה געשפירט אז ער איז פארשריבן ביי די צדיקים, דערפאר האט ער דעמאלט נישט געדאווענט." },
+      "questionSegs": [1179, 1181, 1185], "answerSegs": [1213, 1216, 1228, 1234], "confidence": 0.65
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Rav says a Jew should come to Rosh Hashanah rejoicing in Hashem's kingship rather than worrying only about his own judgment.", "yi": "דער משגיח זאגט אז א איד זאל קומען צו ראש השנה מיט שמחה מיט דער מלכות פון רבונו של עולם, און נישט נאר זיך זארגן וועגן זיין אייגענעם דין." },
+      "evidence": { "segs": [77, 78, 102, 117], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "He says one must prepare in Elul with regret over sins and correcting one's middos, in order to arrive at Tziyon on Rosh Hashanah.", "yi": "ער זאגט אז מ'דארף זיך צוגרייטן אין אלול מיט חרטה אויף די עבירות און מתקן זיין די מדות, כדי אנצוקומען קיין ציון ראש השנה." },
+      "evidence": { "segs": [688, 693, 713, 715, 716], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "He says that on Rosh Hashanah a Jew should bring himself like bikkurim, as a new creation, and pray mainly for Hashem's kingship over all.", "yi": "ער זאגט אז ראש השנה זאל א איד זיך ברענגען ווי ביכורים, ווי א נייע בריאה, און בעטן בעיקר אויף דער מלכות פון רבונו של עולם איבער אלעם." },
+      "evidence": { "segs": [639, 645, 1019, 1023], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "He says one should daven, learn and keep Shabbos with freshness every day, as if it had never been before.", "yi": "ער זאגט אז מ'זאל דאווענען, לערנען און האלטן שבת מיט א פרישקייט יעדן טאג, ווי עס וואלט נאך קיינמאל נישט געווען." },
+      "evidence": { "segs": [1432, 1433, 1491, 1492], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "He says that in the days of Selichos one can make do with less sleep, and should serve Hashem with zrizus.", "yi": "ער זאגט אז אין די טעג פון סליחות קען מען זיך באגיין מיט ווייניגער שלאף, און מ'זאל דינען דעם רבונו של עולם מיט זריזות." },
+      "evidence": { "segs": [1520, 1522, 1621, 1622], "confidence": 0.7 }
+    }
+  ],
+  "candidateTopics": [
+    "Rosh Hashanah as the Beis HaMikdash in time",
+    "bikkurim",
+    "Elul preparation",
+    "joy in Hashem's kingship",
+    "fifty mentions of yetzias Mitzrayim",
+    "poel dimyoni",
+    "time above place",
+    "freshness in avodas Hashem",
+    "Moshe Rabbeinu's prayer",
+    "zrizus"
+  ],
+  "concepts": [
+    { "he": "ביכורים", "heardAs": ["ביקורים", "ביקרים", "בי-קרים", "ביכרים"] },
+    { "he": "חתם סופר", "heardAs": ["סאם סופר", "סתם סופר", "סם סופר", "תם ספר"] },
+    { "he": "חדות ה' היא מעזכם", "heardAs": ["כחדשת ה' הומה עסקים", "כי חדוות ה' הומאותכן"] },
+    { "he": "ארמי אובד אבי", "heardAs": ["ארם יוגי דבי", "הרמי יובא דבי", "ארמי עובד אבי"] },
+    { "he": "נ' שערי טומאה", "heardAs": ["נאנט שערי תלמיד", "ממת שערי תלמיד", "שער הנום"] },
+    { "he": "פועל דמיוני", "heardAs": ["פעל דמיוני", "פייל דמיוני", "פיל זמיני", "פועל במיון"] },
+    { "he": "שבעת המינים", "heardAs": ["שבעת אמונים", "שבעה סמינים", "שבעת תמונים"] },
+    { "he": "ראשית", "heardAs": ["רשעות", "רשעת", "רשות"] },
+    { "he": "מקום המקדש", "heardAs": ["מוקם המקדש", "מקום העמוקדש"] },
+    { "he": "עליה לרגל", "heardAs": ["עלי' לרגל", "עליה לרדל"] },
+    { "he": "פיגול", "heardAs": ["מפגל בקדשים", "פגן"] },
+    { "he": "עשרת ימי תשובה", "heardAs": ["סירת ימי תשובה", "ספרות ימי תשובה"] },
+    { "he": "ויפח באפיו נשמת חיים", "heardAs": ["ויפק פיפק נשמת חיים"] },
+    { "he": "דשנים ורעננים", "heardAs": ["שעונות ורננם", "שיינע ברננים"] },
+    { "he": "זריזות", "heardAs": ["זרועזעס", "דריזות"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבינו שלום", "רבושׂער עולם", "רבוש׳ן לעולם"] }
+  ],
+  "people": [
+    { "name": "Nechemiah", "heardAs": ["נחמיה"] },
+    { "name": "Ezra", "heardAs": ["עזרא"] },
+    { "name": "the Chasam Sofer", "heardAs": ["סאם סופר", "סתם סופר", "חתם סופר"] },
+    { "name": "the Ohr HaChaim", "heardAs": ["אור החיים הק'", "רחאים"] },
+    { "name": "the Rema MiPano", "heardAs": ["רממה פעניל", "רממי פנא"] },
+    { "name": "the Magen Avraham", "heardAs": ["מגן אברהם", "מבין אברהם"] },
+    { "name": "the Ramban", "heardAs": ["רמב״נ'ס", "רמב״ן"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יעקב אבינא", "יעקב אבינער"] },
+    { "name": "Yirmiyahu", "heardAs": ["ימים יאר הנביא", "ימים יו"] },
+    { "name": "Nevuchadnetzar", "heardAs": ["נבוכדנצה"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו", "משה ר' ענל", "משה ר' בענגעל"] },
+    { "name": "Adam HaRishon", "heardAs": ["אדא מרושן", "נאדם הראשון"] },
+    { "name": "David HaMelech", "heardAs": ["דוד המלך"] },
+    { "name": "the Imrei Noam of Dzikov", "heardAs": ["אמרי ניים פון זשיקאוועל"] },
+    { "name": "the Bnei Yissaschar", "heardAs": ["בני יששכר"] },
+    { "name": "the Baal HaTanya", "heardAs": ["בעל התניא"] },
+    { "name": "the Beis Avraham of Slonim", "heardAs": ["מבעת אברהם", "סלאנימער רבי"] },
+    { "name": "the Lubavitcher Rebbe", "heardAs": ["לאכעוויטשער"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["בעש''ט"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair for the Rav's own speech but badly garbled in pesukim and names (Chasam Sofer heard as 'סאם סופר', Rema MiPano as 'רממה פעניל'). Segments 778-871 (58:20-63:30) replay segments ~690-777 almost word for word, apparently a duplicated stretch of the recording, and are marked as a noise section. Several stretches stay unrecoverable, e.g. the Bnei Yissaschar's letters of Tishrei (696-699), the Arizal remark at 255, the Ari kavanah at 1057-1061 and the work cited at 1526; they are left out. The catalog links the shiur to parshas Shoftim, but in the transcript the Rav calls the parsha of bikkurim (Ki Savo) 'today's parsha'."
+}

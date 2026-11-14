@@ -1,0 +1,303 @@
+{
+  "shiurId": "yi-zmanim-hvshn-rbh-02-a",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "On Hoshana Rabbah, the day of the war of Gog and Magog and of the aravah, the Rav teaches that the true battlefield is the shul, and that the 'double-edged sword' of the Jewish people is tefillah, the power of Dovid HaMelech.",
+      "yi": "אום הושענא רבה, דער טאג פון דער מלחמת גוג ומגוג און פון דער ערבה, לערנט דער משגיח אז דאס אמת'ע שלאכטפעלד איז אין בית הכנסת, און אז דער \"חרב פיפיות\" פון אידן איז די תפילה, דער כח פון דוד המלך."
+    },
+    "abstract": {
+      "en": "The Rav opens with the seventy bullocks of Sukkos, which correspond to the seventy nations, and explains that on Hoshana Rabbah all seventy are finished; Jews hold that this is the day of the war of Gog and Magog. It is the day of Dovid HaMelech and of malchus, whose power is tefillah, and the day of the aravah, which stands for the present generation that has neither taste nor smell, yet whose prayers Hashem does not despise. Turning to the war then raging in Eretz Yisrael, he says the real battlefield is the shul: the prayers of Jews are the 'double-edged sword', pesukei dezimra cut down the klipos, and the hakafos bring down the walls as at Yericho. From the na'arah who is blamed for not crying out, he teaches that Hashem will ask why we did not cry 'Hoshana'. He closes by calling every Jew a soldier and praying for the kingship of Hashem.",
+      "yi": "דער משגיח עפנט מיט די שבעים פרים פון סוכות, וואס זענען קעגן די שבעים אומות, און ערקלערט אז אום הושענא רבה ווערט מען פארטיג מיט אלע זיבעציג; ביי אידן איז מקובל אז דאס איז דער טאג פון דער מלחמת גוג ומגוג. ס'איז דער טאג פון דוד המלך און פון מלכות, וועמענס כח איז תפילה, און דער טאג פון דער ערבה, וואס איז דער היינטיגער דור אן טעם און אן ריח, און פונדעסטוועגן איז השם יתברך נישט בוזה זייער תפילה. אנקומענדיג צו דער מלחמה וואס גייט דעמאלט אין ארץ ישראל, זאגט ער אז דאס אמת'ע שלאכטפעלד איז דער בית הכנסת: די תפילות פון אידן זענען דער \"חרב פיפיות\", פסוקי דזמרה שניידן אפ די קליפות, און די הקפות ווארפן אראפ די מויערן ווי ביי יריחו. פון דער נערה המאורסה וואס איז חייב ווייל זי האט נישט געשריגן, לערנט ער אז מען וועט פרעגן פארוואס מ'האט נישט געשריגן הושענא. צום סוף רופט ער אז יעדער איד איז א סאלדאט, און בעט אויף מלכות שמים."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The seventy bullocks of Sukkos subdue the seventy nations day by day, and on Hoshana Rabbah all seventy are completed; this is the war of Gog and Magog.",
+          "yi": "די שבעים פרים פון סוכות זענען מכניע די שבעים אומות טאג נאך טאג, און אום הושענא רבה ווערט מען פארטיג מיט אלע זיבעציג; דאס איז די מלחמת גוג ומגוג."
+        },
+        "evidence": { "segs": [3, 4, 18, 19, 23], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Hoshana Rabbah is the day of Dovid HaMelech and of malchus, and the power of Dovid is tefillah.",
+          "yi": "הושענא רבה איז דער טאג פון דוד המלך און פון מלכות, און דער כח פון דוד איז תפילה."
+        },
+        "evidence": { "segs": [27, 30, 35, 41], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "The aravah, without taste or smell, is the present generation, yet Hashem does not despise its prayers.",
+          "yi": "די ערבה, אן טעם און אן ריח, איז דער היינטיגער דור, און פונדעסטוועגן איז השם יתברך נישט בוזה זיין תפילה."
+        },
+        "evidence": { "segs": [51, 52, 53, 57], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The real battlefield of the war in Eretz Yisrael is the shul, and what the news reports is only a reflection of what was fought there.",
+          "yi": "דאס אמת'ע שלאכטפעלד פון דער מלחמה אין ארץ ישראל איז דער בית הכנסת, און וואס די צייטונגען מעלדן איז נאר אן אפשפיגלונג פון דעם וואס מ'האט דארט געקעמפט."
+        },
+        "evidence": { "segs": [75, 76, 173, 179, 180], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Tefillah is the 'double-edged sword' of the Jewish people, and the Rav says it must be taken along for the whole year.",
+          "yi": "תפילה איז דער \"חרב פיפיות\" פון אידן, און דער משגיח זאגט אז מ'דארף עס מיטנעמען אויף א גאנץ יאר."
+        },
+        "evidence": { "segs": [87, 135, 139, 143, 144], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Like the na'arah who is blamed for not crying out, a Jew will be asked why he did not cry 'Hoshana'.",
+          "yi": "אזוי ווי די נערה וואס איז חייב ווייל זי האט נישט געשריגן, וועט מען א איד פרעגן פארוואס ער האט נישט געשריגן הושענא."
+        },
+        "evidence": { "segs": [146, 148, 152, 162, 165], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-zemanim-elull-tishery-06-02-1-h-rabba",
+      "startSeg": 0,
+      "endSeg": 61,
+      "title": { "en": "Seventy nations, Dovid and the aravah", "yi": "שבעים אומות, דוד המלך און די ערבה" },
+      "summary": {
+        "en": "The Rav explains that the seventy bullocks of Sukkos subdue the seventy nations and are completed on Hoshana Rabbah, the day of the war of Gog and Magog and of Dovid's kingship. Dovid's power is tefillah, and the aravah, without taste or smell, is today's generation, whose prayer Hashem does not despise.",
+        "yi": "דער משגיח ערקלערט אז די שבעים פרים פון סוכות זענען מכניע די שבעים אומות און ווערן פארטיג אום הושענא רבה, דער טאג פון מלחמת גוג ומגוג און פון מלכות בית דוד. דער כח פון דוד איז תפילה, און די ערבה אן טעם און ריח איז דער היינטיגער דור, וועמענס תפילה השם יתברך איז נישט בוזה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-06-02-1-h-rabba",
+      "startSeg": 62,
+      "endSeg": 146,
+      "title": { "en": "The shul is the battlefield", "yi": "דער בית הכנסת איז דאס שלאכטפעלד" },
+      "summary": {
+        "en": "Speaking of the war in Eretz Yisrael, the Rav says the true battlefield is the shul, where prayer, the power of Dovid, is the 'double-edged sword'. Pesukei dezimra cut down the klipos, the na'anuim and hakafos are weapons, and this tefillah must be taken along for the whole year.",
+        "yi": "רעדנדיג וועגן דער מלחמה אין ארץ ישראל, זאגט דער משגיח אז דאס אמת'ע שלאכטפעלד איז דער בית הכנסת, וואו די תפילה, דער כח פון דוד, איז דער \"חרב פיפיות\". פסוקי דזמרה שניידן אפ די קליפות, די נענועים און הקפות זענען כלי זיין, און די תפילה דארף מען מיטנעמען אויף א גאנץ יאר."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-06-02-1-h-rabba",
+      "startSeg": 147,
+      "endSeg": 223,
+      "title": { "en": "Why did you not cry out?", "yi": "פארוואס האסטו נישט געשריגן?" },
+      "summary": {
+        "en": "From the na'arah who is liable because she did not cry out, the Rav teaches that Hoshana Rabbah is the day of crying out, and that every Jew can at least cry 'Hoshana'. When Jews say Dovid's songs with intent, Dovid davens with them; he ends with a plea of mercy for Yerushalayim and Eretz Yisrael.",
+        "yi": "פון דער נערה המאורסה וואס איז חייב ווייל זי האט נישט געשריגן, לערנט דער משגיח אז הושענא רבה איז דער טאג פון שרייען, און יעדער איד קען כאטש שרייען הושענא. ווען אידן זאגן דוד'ס שירות מיט כוונה, דאווענט דוד מיט זיי; ער ענדיגט מיט א בקשה פון רחמנות אויף ירושלים און ארץ ישראל."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-06-02-1-h-rabba",
+      "startSeg": 224,
+      "endSeg": 280,
+      "title": { "en": "Every Jew a soldier; the day of malchus", "yi": "יעדער איד א סאלדאט; דער טאג פון מלכות" },
+      "summary": {
+        "en": "Bringing Devorah's words about those who did not come to help Hashem, the Rav says every Jew is a soldier who can say Tehillim and cry 'Hoshana'. Hoshana Rabbah is the day of malchus; he brings the Yismach Moshe on Dovid asking when he will be king, and closes with tefillah as the service of the heart.",
+        "yi": "מיט די ווערטער פון דבורה וועגן די וואס זענען נישט געקומען צו הילף, זאגט דער משגיח אז יעדער איד איז א סאלדאט וואס קען זאגן תהלים און שרייען הושענא. הושענא רבה איז דער טאג פון מלכות; ער ברענגט דעם ישמח משה אז דוד בעט ווען וועט ער שוין זיין מלך, און ענדיגט מיט תפילה אלס עבודה שבלב."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "די שבע פארדים פון סוכות זענען צום מחניה זיין די שבע אמות",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [0, 3, 4, 5], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "פנא תפילת אר אר ... ולא בוזעת תפילתם",
+      "work": "Tehillim",
+      "ref": "Tehillim 102:18",
+      "sefariaRef": "Psalms 102:18",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [54, 57, 61], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "דער כוסף זאת לדור אחרים",
+      "work": "Tehillim",
+      "ref": "Tehillim 102:19",
+      "sefariaRef": "Psalms 102:19",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [59, 60], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "רומא מיט כל בגרונים, וחרב תפיעות בידים",
+      "work": "Tehillim",
+      "ref": "Tehillim 149:6",
+      "sefariaRef": "Psalms 149:6",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [83, 86, 87, 142, 144], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "א דבר אשר לצעקה באהיר",
+      "work": "Devarim",
+      "ref": "Devarim 22:24",
+      "sefariaRef": "Deuteronomy 22:24",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [146, 148, 165], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "סתתיו דובבות ... ווי חז''ל זאגן",
+      "work": "Gemara Yevamos",
+      "ref": "Yevamos 97a",
+      "sefariaRef": "Yevamot 97a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [186, 187, 190], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ליעזרות ה' בגיבורים ... דבורה האט געזאגט",
+      "work": "Shoftim",
+      "ref": "Shoftim 5:23",
+      "sefariaRef": "Judges 5:23",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [231, 233, 234, 235], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "יואל משיח און בהרציאון ... ועשה לדשם במלכה",
+      "work": "Ovadiah",
+      "ref": "Ovadiah 1:21",
+      "sefariaRef": "Obadiah 1:21",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [242, 243, 256, 258], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "די יתמוך משה'ס ... אין זיינע דרשות",
+      "work": "Yismach Moshe",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [248, 249, 252, 255], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ליובא וכל לבבכם",
+      "work": "Devarim",
+      "ref": "Devarim 11:13",
+      "sefariaRef": "Deuteronomy 11:13",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [271, 274], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The aravah, which has neither taste nor smell, is the present generation, and Tehillim's 'He turned to the prayer of the destitute' was written for that last generation.",
+        "yi": "די ערבה, וואס האט נישט קיין טעם און נישט קיין ריח, איז דער היינטיגער דור, און דער פסוק \"פנה אל תפלת הערער\" איז געשריבן געווארן פאר יענעם לעצטן דור."
+      },
+      "evidence": { "segs": [51, 52, 55, 59, 60], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Dovid is the esrog, the most beautiful of the species, yet on Hoshana Rabbah he lowers himself to the aravah, the lowest, to accept the prayer of the destitute.",
+        "yi": "דוד המלך איז דער אתרוג, דער שענסטער פון די מינים, און פונדעסטוועגן לאזט ער זיך אום הושענא רבה אראפ צו דער ערבה, דער נידעריגסטער, צו מקבל זיין די תפלת הערער."
+      },
+      "evidence": { "segs": [100, 101, 102, 105, 107], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The events reported in the news from the war are only a reflection of the battle fought in the shul.",
+        "yi": "די געשעענישן פון דער מלחמה וואס די צייטונגען מעלדן זענען נאר אן אפשפיגלונג פון דער מלחמה וואס ווערט געקעמפט אין בית הכנסת."
+      },
+      "evidence": { "segs": [177, 178, 179, 180], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "Pesukei dezimra are a weapon because they cut down the klipos, and the seven hakafos on the seventh day bring down the walls as at Yericho.",
+        "yi": "פסוקי דזמרה זענען א כלי זיין ווייל זיי שניידן אפ די קליפות, און די זיבן הקפות אום זיבעטן טאג ווארפן אראפ די מויערן ווי ביי יריחו."
+      },
+      "evidence": { "segs": [112, 113, 118, 127], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "When Jews say Dovid's songs with intent and outpouring of the soul, they arouse Dovid himself to daven together with them.",
+        "yi": "ווען אידן זאגן דוד'ס שירות מיט כוונה און שפיכת הנפש, וועקן זיי אויף דוד המלך אליין אז ער זאל מיטדאווענען מיט זיי."
+      },
+      "evidence": { "segs": [186, 190, 193, 194, 195], "confidence": 0.75 }
+    }
+  ],
+  "stories": [],
+  "questions": [
+    {
+      "question": {
+        "en": "Why is the na'arah who was attacked in the city held liable?",
+        "yi": "פארוואס איז די נערה המאורסה אין שטאט חייב?"
+      },
+      "answer": {
+        "en": "Because she could still have cried out and did not; so too Hashem asks a Jew why he did not cry 'Hoshana'.",
+        "yi": "ווייל זי האט נאך געקענט שרייען און האט נישט געשריגן; אזוי אויך פרעגט מען א איד פארוואס ער האט נישט געשריגן הושענא."
+      },
+      "questionSegs": [146, 147, 148],
+      "answerSegs": [149, 152, 157, 165],
+      "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says one must take from Hoshana Rabbah, for the whole year, the weapon of tefillah: pesukei dezimra and the rest of davening.",
+        "yi": "דער משגיח זאגט אז מ'דארף מיטנעמען פון הושענא רבה אויף א גאנץ יאר דעם כלי זיין פון תפילה: פסוקי דזמרה און די איבריגע תפילה."
+      },
+      "evidence": { "segs": [135, 136, 138, 139, 143], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says every Jew is a soldier and can say chapters of Tehillim, shake the na'anuim, daven and cry 'Hoshana'.",
+        "yi": "דער משגיח זאגט אז יעדער איד איז א סאלדאט און קען זאגן קאפיטלעך תהלים, מאכן די נענועים, דאווענען און שרייען הושענא."
+      },
+      "evidence": { "segs": [236, 237, 238, 240], "confidence": 0.85 }
+    }
+  ],
+  "candidateTopics": [
+    "Hoshana Rabbah",
+    "war of Gog and Magog",
+    "seventy bullocks and seventy nations",
+    "tefillah as a weapon",
+    "Dovid HaMelech and malchus",
+    "the aravah and the present generation",
+    "crying out to Hashem",
+    "the shul as battlefield"
+  ],
+  "concepts": [
+    { "he": "הושענא רבה", "heardAs": ["השיין אראבער", "הושענע רב", "שיינען רבה", "ישענע רבי"] },
+    { "he": "שבעים אומות", "heardAs": ["שבע אמות", "שבעים אמות"] },
+    { "he": "גוג ומגוג", "heardAs": ["גוג המגד", "גוגל מרגק", "גוגל מגן", "גוגל מוגג"] },
+    { "he": "ערבה", "heardAs": ["ערובע", "ארובע", "אורבה"] },
+    { "he": "פסוקי דזמרה", "heardAs": ["פסקי די זמרא", "פסקות די זמרן"] },
+    { "he": "קליפות", "heardAs": ["קליפער", "קלענפער"] },
+    { "he": "נענועים", "heardAs": ["ננעים", "ננוים", "נענעים"] },
+    { "he": "הקפות", "heardAs": ["אוקפות", "הכפות"] },
+    { "he": "מלכות בית דוד", "heardAs": ["מלכות בית דוד"] },
+    { "he": "נערה המאורסה", "heardAs": ["נער המעורסק"] }
+  ],
+  "people": [
+    { "name": "Dovid HaMelech", "heardAs": ["דוד המלך", "דוד המלאך"] },
+    { "name": "Devorah", "heardAs": ["דבורה"] },
+    { "name": "the Yismach Moshe", "heardAs": ["יתמוך משה'ס"] }
+  ],
+  "asrNotes": "Yiddish ASR fair to poor; most pesukim are garbled but recoverable. The opening source for the seventy bullocks is attributed to a word heard as 'מזרשי' and was left unidentified; a Zohar reference near segs 43-47, a Ramban near seg 97, and a stretch about nine days near segs 209-214 could not be recovered. The recording seems to begin mid-sentence."
+}

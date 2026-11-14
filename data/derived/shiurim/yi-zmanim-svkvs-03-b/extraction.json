@@ -1,0 +1,934 @@
+{
+  "shiurId": "yi-zmanim-svkvs-03-b",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that the sukkah, the shade of emunah after the days of judgment, is a living surrounding protection built on bitachon, and that the simcha of Sukkos is the vessel for drawing ruach hakodesh, which is the power to speak true words of Torah and tefillah.",
+      "yi": "דער משגיח ערקלערט אז די סוכה, דער צילא דמהימנותא נאך די ימי הדין, איז א לעבעדיגער מקיף פון בטחון, און אז די שמחה פון סוכות איז דער כלי צו שעפן רוח הקודש, וואס דאס איז דער כח צו רעדן אמת'ע דברי תורה און דברי תפילה."
+    },
+    "abstract": {
+      "en": "The Rav opens with bitachon: one who trusts Hashem has no fear, knowing all that is decreed is for his good. After the days of judgment comes Sukkos, the shade of emunah, where Hashem Himself surrounds His people like the mountains around Yerushalayim, a protection that is never destroyed. Shem, who covered his father with zeal, earned living surrounding garments, while Yefes earned only the burial of Gog. After a niggun, the Rav brings the Gemara that one should pray for one thing only and explains that all of Shemoneh Esrei is one request: to serve Hashem with a settled mind. He then explains, from the Sfas Emes, that simcha is the vessel for drawing ruach hakodesh at the simchas beis hashoevah, why no one slept those seven days, and that this ruach hakodesh is the power to speak true words of Torah and tefillah, from which simcha comes.",
+      "yi": "דער משגיח הייבט אן מיט בטחון: דער וואס פארלאזט זיך אויפן אייבערשטן האט נישט קיין מורא, ווייל ער ווייסט אז אלעס וואס מ'האט באשלאסן אויף אים איז לטובתו. נאך די ימי הדין קומט סוכות, דער צילא דמהימנותא, וואו דער אייבערשטער אליין רינגלט ארום זיין פאלק ווי די בערג ארום ירושלים, א שוץ וואס ווערט קיינמאל נישט חרוב. שם, וואס האט מיט זריזות צוגעדעקט זיין פאטער, האט זוכה געווען צו לעבעדיגע מקיפים, און יפת נאר צו דער קבורה פון גוג. נאך א ניגון ברענגט ער די גמרא אז מ'זאל מתפלל זיין נאר אויף איין זאך, און ער איז מסביר אז די גאנצע שמונה עשרה איז איין בקשה: צו קענען דינען דעם אייבערשטן מיט א ישוב הדעת. דערנאך ערקלערט ער לויט'ן שפת אמת אז שמחה איז דער כלי צו שעפן רוח הקודש ביי שמחת בית השואבה, פארוואס מ'האט נישט געשלאפן די זיבן טעג, און אז דער רוח הקודש איז דער כח צו רעדן אמת'ע דברי תורה און תפילה, פון וואס עס קומט שמחה."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Sukkos, the shade of emunah after the days of judgment, is sitting under the protection of bitachon, so one can rejoice even while judgment is not yet finished.",
+          "yi": "סוכות, דער צילא דמהימנותא נאך די ימי הדין, איז זיצן אונטער דעם שוץ פון בטחון, און דערפאר קען מען זיך פרייען אפילו ווען דער דין איז נאך נישט פארטיג."
+        },
+        "evidence": {
+          "segs": [
+            10,
+            11,
+            13,
+            35,
+            37
+          ],
+          "confidence": 0.75
+        }
+      },
+      {
+        "text": {
+          "en": "Physical protection like the mountains around Yerushalayim can be breached, but the surrounding protection of Hashem around His people in the sukkah is never destroyed.",
+          "yi": "א גשמיות'דיגער שוץ ווי די בערג ארום ירושלים קען מען דורכברעכן, אבער דער מקיף פון דעם אייבערשטן ארום זיין פאלק אין דער סוכה ווערט קיינמאל נישט חרוב."
+        },
+        "evidence": {
+          "segs": [
+            25,
+            26,
+            27,
+            30
+          ],
+          "confidence": 0.7
+        }
+      },
+      {
+        "text": {
+          "en": "Shem earned living mekifim, the surrounding mitzvos of tallis and sukkah, while Yefes, who lagged behind, earned only the burial of Gog.",
+          "yi": "שם האט זוכה געווען צו לעבעדיגע מקיפים, ווי טלית און סוכה, און יפת, וואס האט זיך נאכגעשלעפט, נאר צו דער קבורה פון גוג."
+        },
+        "evidence": {
+          "segs": [
+            50,
+            58,
+            61,
+            66,
+            76,
+            80
+          ],
+          "confidence": 0.7
+        }
+      },
+      {
+        "text": {
+          "en": "All the requests of Shemoneh Esrei are really one: to have a settled mind so as to be able to serve Hashem.",
+          "yi": "אלע בקשות פון שמונה עשרה זענען באמת איין זאך: צו האבן א ישוב הדעת כדי צו קענען דינען דעם אייבערשטן."
+        },
+        "evidence": {
+          "segs": [
+            113,
+            117,
+            123,
+            129,
+            130
+          ],
+          "confidence": 0.75
+        }
+      },
+      {
+        "text": {
+          "en": "Simcha is the vessel with which ruach hakodesh is drawn at the simchas beis hashoevah, and one receives it according to one's simcha in those seven days.",
+          "yi": "שמחה איז דער כלי מיט וואס מ'שעפט רוח הקודש ביי שמחת בית השואבה, און מ'באקומט עס לויט די שמחה אין די זיבן טעג."
+        },
+        "evidence": {
+          "segs": [
+            145,
+            146,
+            147,
+            193,
+            195
+          ],
+          "confidence": 0.8
+        }
+      },
+      {
+        "text": {
+          "en": "The ruach hakodesh of Sukkos is the power of speech: Hashem teaches the newly born Jew after Yom Kippur to speak words of Torah, which culminates in Simchas Torah.",
+          "yi": "דער רוח הקודש פון סוכות איז דער כח הדיבור: דער אייבערשטער לערנט דעם איד, וואס איז נאך יום כיפור ווי ניי געבוירן, צו רעדן דברי תורה, און דאס ענדיגט זיך מיט שמחת תורה."
+        },
+        "evidence": {
+          "segs": [
+            210,
+            221,
+            224,
+            225,
+            228,
+            230
+          ],
+          "confidence": 0.75
+        }
+      },
+      {
+        "text": {
+          "en": "True speech in Torah and tefillah brings simcha, as Shlomo HaMelech says that a man has joy in the answer of his mouth.",
+          "yi": "אמת'ע דיבורים אין תורה און תפילה ברענגען שמחה, ווי שלמה המלך זאגט אז א מענטש האט שמחה פון זיין מויל'ס ענטפער."
+        },
+        "evidence": {
+          "segs": [
+            264,
+            265,
+            267,
+            274,
+            277
+          ],
+          "confidence": 0.8
+        }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-zemanim-elull-tishery-05-03-02-succos",
+      "startSeg": 0,
+      "endSeg": 96,
+      "title": {
+        "en": "Bitachon and the living mekif of the sukkah",
+        "yi": "בטחון און דער לעבעדיגער מקיף פון סוכה"
+      },
+      "summary": {
+        "en": "The Rav explains that after the days of judgment the sukkah is sitting in the shade of bitachon, where Hashem surrounds His people as the mountains surround Yerushalayim. He brings Rashi on Shem and Yefes covering their father: Shem, who acted with zeal, earned living mekifim, while Yefes earned only the burial of Gog, and he closes by calling for working hard on simcha with a niggun.",
+        "yi": "דער משגיח ערקלערט אז נאך די ימי הדין איז די סוכה זיצן אינעם שאטן פון בטחון, וואו דער אייבערשטער רינגלט ארום זיין פאלק ווי די בערג ארום ירושלים. ער ברענגט רש\"י אויף שם און יפת וואס האבן צוגעדעקט זייער פאטער: שם, וואס האט עס געטון מיט זריזות, האט זוכה געווען צו לעבעדיגע מקיפים, און יפת נאר צו דער קבורה פון גוג; צום סוף רופט ער זיך צו הארעווען אויף שמחה מיט א ניגון."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [
+        0
+      ],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-05-03-02-succos",
+      "startSeg": 97,
+      "endSeg": 97,
+      "title": {
+        "en": "Niggunim",
+        "yi": "ניגונים"
+      },
+      "summary": {
+        "en": "A long stretch of singing that the transcript does not capture.",
+        "yi": "א לאנגע שטיק זינגען וואס דער טראנסקריפט כאפט נישט."
+      },
+      "kind": "singing",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-05-03-02-succos",
+      "startSeg": 98,
+      "endSeg": 131,
+      "title": {
+        "en": "Praying for one thing only",
+        "yi": "מתפלל זיין נאר אויף איין זאך"
+      },
+      "summary": {
+        "en": "The Rav brings the Gemara in Taanis that one should pray for one thing only, with its case of famine and plague, and asks how Shemoneh Esrei then holds so many requests. He answers that they are all one request, to serve Hashem with a settled mind, as Dovid HaMelech says 'one thing I asked'.",
+        "yi": "דער משגיח ברענגט די גמרא אין תענית אז מ'זאל מתפלל זיין נאר אויף איין זאך, מיטן מעשה פון הונגער און מגיפה, און פרעגט ווי אזוי שמונה עשרה האט דען אזויפיל בקשות. ער ענטפערט אז אלעס איז איין בקשה, צו קענען דינען דעם אייבערשטן מיט א ישוב הדעת, ווי דוד המלך זאגט \"אחת שאלתי\"."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-05-03-02-succos",
+      "startSeg": 132,
+      "endSeg": 196,
+      "title": {
+        "en": "Simcha as the vessel for ruach hakodesh",
+        "yi": "שמחה אלס כלי צו רוח הקודש"
+      },
+      "summary": {
+        "en": "From the Yerushalmi and the Sfas Emes the Rav explains that at the simchas beis hashoevah ruach hakodesh was drawn with the vessel of simcha, the water coming from beneath the Kodesh HaKodashim. He compares it to the breath of life Hashem blew into man, explains why no one slept those seven days by comparing it to Moshe Rabbeinu's forty days, and says the whole year depends on them.",
+        "yi": "פונעם ירושלמי און פונעם שפת אמת ערקלערט דער משגיח אז ביי שמחת בית השואבה האט מען געשעפט רוח הקודש מיטן כלי פון שמחה, און די וואסער איז געקומען פון אונטער דעם קודש הקדשים. ער גלייכט עס צו דער נשמת חיים וואס דער אייבערשטער האט אריינגעבלאזן אין מענטש, ערקלערט פארוואס מ'האט נישט געשלאפן די זיבן טעג לויט די פערציג טעג פון משה רבינו, און זאגט אז דאס גאנצע יאר איז תלוי אין זיי."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-05-03-02-succos",
+      "startSeg": 197,
+      "endSeg": 278,
+      "title": {
+        "en": "Ruach hakodesh as the power of true speech",
+        "yi": "רוח הקודש: דער כח פון אמת'ע דיבורים"
+      },
+      "summary": {
+        "en": "The Rav explains that the breath of life is the power of speech, and that after Yom Kippur Hashem teaches the newborn Jew to speak words of Torah, culminating in Simchas Torah. Ruach hakodesh, he says, is not foretelling but speaking true words of Torah and tefillah, each by his level, and from this comes simcha.",
+        "yi": "דער משגיח ערקלערט אז די נשמת חיים איז דער כח הדיבור, און אז נאך יום כיפור לערנט דער אייבערשטער דעם ניי געבוירענעם איד רעדן דברי תורה, ביז שמחת תורה. רוח הקודש, זאגט ער, איז נישט זאגן עתידות נאר רעדן אמת'ע דברי תורה און תפילה, יעדער לויט זיין מדריגה, און דערפון קומט שמחה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "חיינו המסרים בידך",
+      "work": "Shemoneh Esrei",
+      "ref": "Shemoneh Esrei, Modim blessing",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          6,
+          7
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "heardAs": "צילה די מנותא",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": {
+        "segs": [
+          11,
+          34
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "א בייטחן ביי די שם ... כהר ציון, לא ימית. ליעולם ישב",
+      "work": "Tehillim",
+      "ref": "Tehillim 125:1",
+      "sefariaRef": "Psalms 125:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          15,
+          16,
+          17,
+          18
+        ],
+        "confidence": 0.85
+      }
+    },
+    {
+      "heardAs": "ירושלים הארעם און סדר ולא ... השם סובא ולי ימי",
+      "work": "Tehillim",
+      "ref": "Tehillim 125:2",
+      "sefariaRef": "Psalms 125:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          24,
+          30
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "heardAs": "ויקח שם ויפת את השמלה",
+      "work": "Bereishis",
+      "ref": "Bereishis 9:23",
+      "sefariaRef": "Genesis 9:23",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          45,
+          46
+        ],
+        "confidence": 0.85
+      }
+    },
+    {
+      "heardAs": "רשע ברענגט דארט ווי יקח שם ויפות",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 9:23",
+      "sefariaRef": "Rashi on Genesis 9:23",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          56,
+          57,
+          58,
+          61,
+          62
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "heardAs": "באגריבן די הרגים פון גוג",
+      "work": "Yechezkel",
+      "ref": "Yechezkel 39",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": {
+        "segs": [
+          53,
+          54,
+          85
+        ],
+        "confidence": 0.65
+      }
+    },
+    {
+      "heardAs": "דער גמרא זאגט אין תהי'",
+      "work": "Gemara Taanis",
+      "ref": "Taanis 14b",
+      "sefariaRef": "Taanit 14b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          98,
+          100,
+          104,
+          109,
+          111
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "אייך א שבתי מיוסף שם ... שבטי בבית ה' כל יום",
+      "work": "Tehillim",
+      "ref": "Tehillim 27:4",
+      "sefariaRef": "Psalms 27:4",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          124,
+          125,
+          126
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "heardAs": "ירושלמי שטערט ... שמשם שואב ונורא חוקבש",
+      "work": "Talmud Yerushalmi",
+      "ref": "Yerushalmi Sukkah 5:1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          132,
+          137
+        ],
+        "confidence": 0.65
+      }
+    },
+    {
+      "heardAs": "שטיקל שפת אמת",
+      "work": "Sfas Emes",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          135,
+          138,
+          148,
+          149
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "heardAs": "יפח פי אפף נשמות חיים",
+      "work": "Bereishis",
+      "ref": "Bereishis 2:7",
+      "sefariaRef": "Genesis 2:7",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          157,
+          161,
+          207,
+          211
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "heardAs": "לא ראינו שיינע ביינענעם",
+      "work": "Gemara Sukkah",
+      "ref": "Sukkah 53a",
+      "sefariaRef": "Sukkah 53a",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          169,
+          170
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "heardAs": "במדרש המשך רבינו עליו השלום",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          173,
+          174,
+          175,
+          176
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "heardAs": "שבעת ימים בשנה",
+      "work": "Vayikra",
+      "ref": "Vayikra 23:41",
+      "sefariaRef": "Leviticus 23:41",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          185,
+          186,
+          187
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "וצג המילא רחמי מלמה",
+      "work": "Targum Onkelos",
+      "ref": "Onkelos on Bereishis 2:7",
+      "sefariaRef": "Onkelos Genesis 2:7",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          207,
+          210,
+          211
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "heardAs": "תינוק משכר לדבר אבר מלמדו תורה",
+      "work": "Gemara Sukkah",
+      "ref": "Sukkah 42a",
+      "sefariaRef": "Sukkah 42a",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          216,
+          220
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "אני א יומי לדתוכה",
+      "work": "Tehillim",
+      "ref": "Tehillim 2:7",
+      "sefariaRef": "Psalms 2:7",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          225
+        ],
+        "confidence": 0.65
+      }
+    },
+    {
+      "heardAs": "שמחה דא איש במיני פיוו",
+      "work": "Mishlei",
+      "ref": "Mishlei 15:23",
+      "sefariaRef": "Proverbs 15:23",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          265,
+          266,
+          275
+        ],
+        "confidence": 0.85
+      }
+    },
+    {
+      "heardAs": "אביתם והקדשי ושמחתם בבית תפילתו",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 56:7",
+      "sefariaRef": "Isaiah 56:7",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          273,
+          274
+        ],
+        "confidence": 0.75
+      }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The sukkah is the 'Hashem around His people' of Tehillim: a Yerushalayim whose surrounding wall is Hashem Himself, which no enemy can breach, unlike the physical mountains around the city.",
+        "yi": "די סוכה איז דער \"וה' סביב לעמו\" פון תהלים: א ירושלים וואס איר מקיף איז דער אייבערשטער אליין, וואס קיין שונא קען נישט דורכברעכן, נישט ווי די גשמיות'דיגע בערג ארום דער שטאט."
+      },
+      "evidence": {
+        "segs": [
+          25,
+          26,
+          29,
+          30,
+          34
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "text": {
+        "en": "Shem's reward for covering his father with zeal was living mekifim like the sukkah, the mitzvah of life, while Yefes, who only followed along, received 'dead' mekifim, the burial of Gog read about in the Sukkos haftarah.",
+        "yi": "שם'ס שכר פארן צודעקן זיין פאטער מיט זריזות איז געווען לעבעדיגע מקיפים ווי די סוכה, די מצוה פון חיים, און יפת, וואס האט זיך נאר נאכגעשלעפט, האט באקומען \"טויטע\" מקיפים, די קבורה פון גוג וואס מ'ליינט אין דער הפטרה פון סוכות."
+      },
+      "evidence": {
+        "segs": [
+          61,
+          66,
+          73,
+          76,
+          80,
+          85
+        ],
+        "confidence": 0.65
+      }
+    },
+    {
+      "text": {
+        "en": "The many requests of Shemoneh Esrei do not contradict the rule to pray for one thing, since every lack, of mind, health or peace, is a lack in the one request to serve Hashem with a settled mind.",
+        "yi": "די אסאך בקשות פון שמונה עשרה שטייען נישט קעגן דעם כלל צו בעטן נאר אויף איין זאך, ווייל יעדער חסרון, אין שכל, אין געזונט אדער אין רואיגקייט, איז א חסרון אין דער איינציגער בקשה צו דינען דעם אייבערשטן מיט א ישוב הדעת."
+      },
+      "evidence": {
+        "segs": [
+          113,
+          116,
+          117,
+          123,
+          129
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "text": {
+        "en": "The water of the simchas beis hashoevah is only a physical envelope for ruach hakodesh; the celebration is named after the drawing because simcha is the bucket that draws it.",
+        "yi": "די וואסער פון שמחת בית השואבה איז נאר א גשמיות'דיגע הילע פאר רוח הקודש; די שמחה הייסט נאכן שעפן, ווייל שמחה איז דער כלי וואס שעפט עס."
+      },
+      "evidence": {
+        "segs": [
+          141,
+          143,
+          145,
+          147,
+          150,
+          152
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "text": {
+        "en": "Only Sukkos is called 'seven days in the year', because what is drawn in these seven days enters the whole year; sleeping through them would mean sleeping away a whole year, as Moshe could not sleep on the mountain knowing what each minute held.",
+        "yi": "נאר ביי סוכות שטייט \"שבעת ימים בשנה\", ווייל דאס וואס מ'שעפט אין די זיבן טעג גייט אריין אינעם גאנצן יאר; פארשלאפן זיי הייסט פארשלאפן א גאנץ יאר, אזוי ווי משה רבינו האט נישט געקענט שלאפן אויפן בארג ווייל ער האט געוואוסט וואס יעדע מינוט טראגט."
+      },
+      "evidence": {
+        "segs": [
+          175,
+          176,
+          186,
+          188,
+          190,
+          191
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "text": {
+        "en": "The ruach hakodesh of Sukkos is the 'speaking spirit' of Onkelos: after Yom Kippur a Jew is like a newborn, and just as a father teaches Torah to a child who begins to talk, Hashem teaches him to speak, culminating in Simchas Torah.",
+        "yi": "דער רוח הקודש פון סוכות איז דער \"רוח ממללא\" פון אונקלוס: נאך יום כיפור איז א איד ווי א ניי געבוירן קינד, און אזוי ווי א טאטע לערנט תורה מיט א קינד וואס הייבט אן רעדן, לערנט אים דער אייבערשטער רעדן, ביז שמחת תורה."
+      },
+      "evidence": {
+        "segs": [
+          210,
+          220,
+          221,
+          224,
+          225,
+          230
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "text": {
+        "en": "Ruach hakodesh does not mean knowing which number will win a sweepstakes; it means speaking true words of Torah and tefillah, a level open to every Jew according to his level.",
+        "yi": "רוח הקודש מיינט נישט צו וויסן וועלכער נומער וועט געווינען אין א לאטעריע; עס מיינט רעדן אמת'ע דברי תורה און תפילה, א מדריגה וואס איז אפן פאר יעדן איד לויט זיין מדריגה."
+      },
+      "evidence": {
+        "segs": [
+          247,
+          248,
+          249,
+          251,
+          262
+        ],
+        "confidence": 0.8
+      }
+    }
+  ],
+  "stories": [],
+  "questions": [
+    {
+      "question": {
+        "en": "Why does the passuk say 'and he took' in the singular when both Shem and Yefes took the garment?",
+        "yi": "פארוואס שטייט \"ויקח\" אין לשון יחיד, ווען ביידע, שם און יפת, האבן גענומען דאס קלייד?"
+      },
+      "answer": {
+        "en": "Following Rashi, Shem took it with zeal and Yefes only dragged along after him.",
+        "yi": "לויט רש\"י האט שם עס גענומען מיט זריזות, און יפת האט זיך נאר נאכגעשלעפט."
+      },
+      "questionSegs": [
+        56,
+        57
+      ],
+      "answerSegs": [
+        58,
+        59,
+        61,
+        62
+      ],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "If one should pray for only one thing, how does Shemoneh Esrei contain so many different requests?",
+        "yi": "אויב מ'זאל מתפלל זיין נאר אויף איין זאך, ווי אזוי האט שמונה עשרה אזויפיל באזונדערע בקשות?"
+      },
+      "answer": {
+        "en": "They are all one request: to serve Hashem, which is impossible without understanding, health and peace of mind.",
+        "yi": "אלע זענען איין בקשה: צו דינען דעם אייבערשטן, וואס מ'קען נישט אן שכל, אן געזונט און אן ישוב הדעת."
+      },
+      "questionSegs": [
+        113,
+        115
+      ],
+      "answerSegs": [
+        117,
+        118,
+        123,
+        129
+      ],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why did no one sleep during the seven days of simchas beis hashoevah, when there were other services in the Beis HaMikdash too?",
+        "yi": "פארוואס האט מען נישט געשלאפן די זיבן טעג פון שמחת בית השואבה, ווען עס זענען געווען אנדערע עבודות אין בית המקדש אויך?"
+      },
+      "answer": {
+        "en": "Like Moshe Rabbeinu, who could not sleep knowing how much each minute could bring, they could not sleep through the precious drawing of ruach hakodesh, on which the whole year depends.",
+        "yi": "ווי משה רבינו, וואס האט נישט געקענט שלאפן ווייל ער האט געוואוסט וויפיל יעדע מינוט קען ברענגען, האט מען נישט געקענט פארשלאפן דאס טייערע שעפן פון רוח הקודש, וואס דאס גאנצע יאר איז תלוי אין דעם."
+      },
+      "questionSegs": [
+        171,
+        172
+      ],
+      "answerSegs": [
+        175,
+        176,
+        178,
+        183,
+        190
+      ],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Who needs the ruach hakodesh that was drawn at the simchas beis hashoevah?",
+        "yi": "ווער דארף דעם רוח הקודש וואס מ'האט געשעפט ביי שמחת בית השואבה?"
+      },
+      "answer": {
+        "en": "Every Jew: ruach hakodesh is the power to speak true words of Torah and tefillah, the breath of life Hashem blew into man.",
+        "yi": "יעדער איד: רוח הקודש איז דער כח צו רעדן אמת'ע דברי תורה און תפילה, די נשמת חיים וואס דער אייבערשטער האט אריינגעבלאזן אין מענטש."
+      },
+      "questionSegs": [
+        198,
+        199
+      ],
+      "answerSegs": [
+        208,
+        210,
+        218,
+        251,
+        253
+      ],
+      "confidence": 0.7
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says one must work very hard on simcha, and calls on everyone to sing a niggun together.",
+        "yi": "דער משגיח זאגט אז מ'דארף שטארק הארעווען אויף שמחה, און רופט אלע צו זינגען א ניגון צוזאמען."
+      },
+      "evidence": {
+        "segs": [
+          89,
+          90,
+          91
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "text": {
+        "en": "The Rav says a person should stop for a moment and think that his life is the breath of the Ribono shel Olam.",
+        "yi": "דער משגיח זאגט אז א מענטש דארף זיך פארטראכטן אויף א מאמענט אז זיין לעבן איז דעם רבונו של עולם'ס אטעם."
+      },
+      "evidence": {
+        "segs": [
+          162,
+          163,
+          164
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "text": {
+        "en": "According to the Rav, one prays for one thing: to have a settled mind so as to serve Hashem with calm and joy.",
+        "yi": "לויט'ן משגיח בעט מען אויף איין זאך: צו האבן א ישוב הדעת כדי צו דינען דעם אייבערשטן מיט מנוחה און שמחה."
+      },
+      "evidence": {
+        "segs": [
+          129,
+          130
+        ],
+        "confidence": 0.75
+      }
+    }
+  ],
+  "candidateTopics": [
+    "bitachon",
+    "sukkah as the shade of emunah",
+    "the sukkah as a surrounding protection",
+    "Shem and Yefes",
+    "praying for one thing",
+    "simchas beis hashoevah",
+    "simcha as a vessel for ruach hakodesh",
+    "ruach hakodesh as the power of speech",
+    "Simchas Torah",
+    "joy from true words of Torah and tefillah"
+  ],
+  "concepts": [
+    {
+      "he": "בטחון",
+      "heardAs": [
+        "בתחום",
+        "בטחן",
+        "בייטחן",
+        "בתוכן",
+        "ביתום"
+      ]
+    },
+    {
+      "he": "צילא דמהימנותא",
+      "heardAs": [
+        "צילה די מנותא",
+        "אצילה די מנותא"
+      ]
+    },
+    {
+      "he": "אור מקיף",
+      "heardAs": [
+        "עור מקוה",
+        "אור מקוה"
+      ]
+    },
+    {
+      "he": "מקיפים",
+      "heardAs": [
+        "מקופים",
+        "מקוקים"
+      ]
+    },
+    {
+      "he": "טלית של ציצית",
+      "heardAs": [
+        "התלות שצרצות"
+      ]
+    },
+    {
+      "he": "ישוב הדעת",
+      "heardAs": [
+        "ישוב הדת"
+      ]
+    },
+    {
+      "he": "שמחת בית השואבה",
+      "heardAs": [
+        "שמחת בית השואבות",
+        "שמחת בית השיין"
+      ]
+    },
+    {
+      "he": "רוח הקודש",
+      "heardAs": [
+        "רוח הקדוש",
+        "רעה חקדש",
+        "רחקדש",
+        "רעך הקדוש"
+      ]
+    },
+    {
+      "he": "נשמת חיים",
+      "heardAs": [
+        "נשמות חיים",
+        "נשמת החיים"
+      ]
+    },
+    {
+      "he": "נבואה",
+      "heardAs": [
+        "נבאה",
+        "בנבואה"
+      ]
+    },
+    {
+      "he": "יום הדין",
+      "heardAs": [
+        "יום הדין",
+        "ימי דין"
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Shem",
+      "heardAs": [
+        "שם",
+        "שמעון"
+      ]
+    },
+    {
+      "name": "Yefes",
+      "heardAs": [
+        "יפת",
+        "יפות"
+      ]
+    },
+    {
+      "name": "Gog",
+      "heardAs": [
+        "גוג",
+        "גורג"
+      ]
+    },
+    {
+      "name": "Rashi",
+      "heardAs": [
+        "רשע"
+      ]
+    },
+    {
+      "name": "Dovid HaMelech",
+      "heardAs": [
+        "דוד המלך"
+      ]
+    },
+    {
+      "name": "Moshe Rabbeinu",
+      "heardAs": [
+        "משה'ס רבנה",
+        "רבינו עליו השלום"
+      ]
+    },
+    {
+      "name": "Shlomo HaMelech",
+      "heardAs": [
+        "שלמה המלך"
+      ]
+    },
+    {
+      "name": "the Sfas Emes",
+      "heardAs": [
+        "שפת אמת"
+      ]
+    }
+  ],
+  "asrNotes": "Yiddish ASR poor, with Hebrew quotations heavily garbled but mostly recoverable from context. The recording opens mid-sentence (side B). Segment 97 (about 11 minutes, flagged) is an untranscribed niggun; segment 131 (about 2:40, flagged) is mostly untranscribed; the final segment 278 holds one sentence and the recording then runs on about 8:45 with no transcribed speech, likely further niggunim. Several lines in 69-75 (on Sukkos as chaim and the lulav and hadas) and 223 could not be recovered."
+}

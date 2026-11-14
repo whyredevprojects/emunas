@@ -1,0 +1,509 @@
+{
+  "shiurId": "yi-zmanim-shmyny-tzrs-02",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that from Tisha B'Av until Shemini Atzeres Hashem builds the 'kallah' (Knesses Yisroel, the Torah and Yerushalayim), and that the last, lowliest generation, like the tribe of Dan, is her beauty and is joined to Yehudah on Simchas Torah.",
+      "yi": "דער משגיח ערקלערט אז פון תשעה באב ביז שמיני עצרת בויט דער אייבערשטער אויף די כלה, כנסת ישראל, די תורה און ירושלים, און אז דער לעצטער נידעריגער דור, אזוי ווי שבט דן, איז איר שיינקייט און ווערט שמחת תורה פארבונדן מיט יהודה."
+    },
+    "abstract": {
+      "en": "The Rav opens with the verse 'vayiven Hashem Elokim es hatzela', which the seforim read as the building of malchus, the kallah, from Rosh Hashanah to Shemini Atzeres. The kallah is Knesses Yisroel, and also the Torah, Shabbos, Yerushalayim and the esrog. The preparation starts on Tisha B'Av: mourning for Yerushalayim begins its rebuilding, and Sefer Devarim, the seventh book and the kallah, is read from then until Simchas Torah. Like the esrog and like Chavah, Devarim stands apart, and the joy of a wedding is the reuniting of what was separated. Shir Hashirim praises the kallah from the feet upward: the last generation, the 'heel' before Moshiach, is her beauty. Amalek attacks these stragglers, the tribe of Dan, because he envies their future. Shimshon of Dan, whose strength was his hair, prayed 'chazkeini na' for our generation, and on Simchas Torah the end of the Torah is joined to Bereishis, Dan to Yehudah.",
+      "yi": "דער משגיח עפנט מיטן פסוק \"ויבן ה' אלקים את הצלע\", וואס די ספרים לערנען אז דאס איז דער בנין קומת המלכות, די כלה, פון ראש השנה ביז שמיני עצרת. די כלה איז כנסת ישראל, און אויך די תורה, שבת, ירושלים און דער אתרוג. די הכנה הייבט זיך אן תשעה באב: די אבילות אויף ירושלים איז דער אנהייב פון איר בנין, און ספר דברים, דער זיבעטער ספר און די כלה, ליינט מען פון דעמאלט ביז שמחת תורה. אזוי ווי דער אתרוג און אזוי ווי חוה איז דברים אפגעטיילט, און די שמחה פון א חתונה איז ווען די אפגעטיילטע חלקים קומען זיך צוזאם. שיר השירים לויבט די כלה פון די פיס ארויף: דער לעצטער דור, דער עקב פאר משיח, איז איר שיינקייט. עמלק פאלט אן אויף די נחשלים, שבט דן, ווייל ער איז מקנא זייער אחרית. שמשון פון שבט דן, וועמענס כח איז געווען אין זיינע האר, האט מתפלל געווען \"חזקני נא\" פאר אונזער דור, און שמחת תורה ווערט דער סוף פון דער תורה פארבונדן מיט בראשית, דן מיט יהודה."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The building of the kallah, Knesses Yisroel, which is also Yerushalayim, runs from Rosh Hashanah to Shemini Atzeres, and its preparation begins on Tisha B'Av.",
+          "yi": "דער בנין פון דער כלה, כנסת ישראל, וואס איז אויך ירושלים, גייט פון ראש השנה ביז שמיני עצרת, און די הכנה דערצו הייבט זיך אן תשעה באב."
+        },
+        "evidence": { "segs": [118, 120, 126, 149, 157], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Sefer Devarim, the seventh book of the Torah, is the kallah; it is begun on Shabbos Chazon and finished on Simchas Torah, and reading it builds Yerushalayim.",
+          "yi": "ספר דברים, דער זיבעטער ספר פון דער תורה, איז די כלה; מען הייבט אים אן שבת חזון און מען ענדיגט אים שמחת תורה, און מיטן ליינען אים בויט זיך ירושלים."
+        },
+        "evidence": { "segs": [212, 217, 244, 247, 257, 437], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The joy of Shemini Atzeres and Simchas Torah is the joy of a wedding: the reuniting of the kallah, who was separated like the rib from Adam, with the chassan.",
+          "yi": "די שמחה פון שמיני עצרת און שמחת תורה איז די שמחה פון א חתונה: ווען די כלה, וואס איז אפגעטיילט געווארן אזוי ווי די צלע פון אדם, קומט זיך צוזאם מיטן חתן."
+        },
+        "evidence": { "segs": [344, 345, 353, 360, 364], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Shir Hashirim praises the kallah from the feet upward, because the beauty of Knesses Yisroel is its last, lowliest generation, the heel before Moshiach.",
+          "yi": "שיר השירים לויבט די כלה פון די פיס ארויף, ווייל די שיינקייט פון כנסת ישראל איז דער לעצטער נידעריגער דור, דער עקב פאר משיח."
+        },
+        "evidence": { "segs": [720, 742, 754, 755, 849], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Amalek always attacks the last and weakest, the tribe of Dan, because he envies the future that even the lowest Jew has.",
+          "yi": "עמלק פאלט אלעמאל אן אויף די לעצטע און שוואכסטע, שבט דן, ווייל ער איז מקנא דעם אחרית וואס אפילו דער נידעריגסטער איד האט."
+        },
+        "evidence": { "segs": [871, 895, 911, 916, 948], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Every Jew of this generation carries a spark of Shimshon, whose task is not to let his 'hair' be shorn, and Shimshon's prayer 'chazkeini na' was composed for us.",
+          "yi": "יעדער איד פון אונזער דור האט א ניצוץ פון שמשון, וועמענס עבודה איז נישט צו לאזן אפשערן זיינע האר, און שמשון'ס תפילה \"חזקני נא\" איז געמאכט געווארן פאר אונז."
+        },
+        "evidence": { "segs": [1146, 1148, 1213, 1216, 1224], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "On Simchas Torah the end of the Torah, with its forgotten halachos, is joined to Bereishis, and the kallah joins Dan with Yehudah; it is above all the joy of the simple Jew.",
+          "yi": "שמחת תורה ווערט דער סוף פון דער תורה, מיט די פארגעסענע הלכות, פארבונדן מיט בראשית, און די כלה פארבינדט דן מיט יהודה; דאס איז בעיקר די שמחה פונעם פשוט'ן איד."
+        },
+        "evidence": { "segs": [1290, 1303, 1318, 1320, 1363], "confidence": 0.75 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-zemanim-elull-tishery-07-02-sh-atz",
+      "startSeg": 0,
+      "endSeg": 72,
+      "title": { "en": "Building malchus from Rosh Hashanah to Shemini Atzeres", "yi": "דער בנין קומת המלכות פון ראש השנה ביז שמיני עצרת" },
+      "summary": {
+        "en": "The Rav opens with 'vayiven Hashem Elokim es hatzela' and explains that beneath its plain meaning lies the building of malchus, the kallah Knesses Yisroel, renewed each year from Rosh Hashanah to Shemini Atzeres. Shemini Atzeres is the center around which all the festivals turn.",
+        "yi": "דער משגיח עפנט מיט \"ויבן ה' אלקים את הצלע\" און ערקלערט אז אונטערן פשט ליגט דער בנין קומת המלכות, די כלה כנסת ישראל, וואס באנייט זיך יעדעס יאר פון ראש השנה ביז שמיני עצרת. שמיני עצרת איז די נקודה וואס אלע ימים טובים דרייען זיך ארום איר."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-07-02-sh-atz",
+      "startSeg": 73,
+      "endSeg": 149,
+      "title": { "en": "What is called a kallah", "yi": "וואס ווערט אנגערופן א כלה" },
+      "summary": {
+        "en": "The Rav lists the things called a kallah, all bound to the attribute of malchus: the Torah, Shabbos, Yerushalayim, the Mishkan and Beis Hamikdash, and the esrog. On Shemini Atzeres 'od evneich venivneis' is fulfilled, and since a wedding needs preparation, that preparation starts on Tisha B'Av.",
+        "yi": "דער משגיח רעכנט אויס די זאכן וואס ווערן אנגערופן כלה, אלע פארבונדן מיט מידת המלכות: די תורה, שבת, ירושלים, דער משכן און בית המקדש, און דער אתרוג. שמיני עצרת ווערט מקוים \"עוד אבנך ונבנית\", און וויבאלד א חתונה פאדערט הכנות, הייבט זיך די הכנה אן תשעה באב."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-07-02-sh-atz",
+      "startSeg": 150,
+      "endSeg": 216,
+      "title": { "en": "Mourning on Tisha B'Av builds Yerushalayim", "yi": "די אבילות פון תשעה באב בויט ירושלים" },
+      "summary": {
+        "en": "In the name of Rabbi Mordechai of Lechovitch, the Rav says Tisha B'Av, Elul and the Yamim Noraim prepare for Simchas Torah, and the mourning itself begins the building of Yerushalayim, illustrated by the story of Napoleon. He then brings the Gemara that the Torah has seven books, making Devarim the seventh, the kallah.",
+        "yi": "בשם רבי מרדכי פון לעכוויטש זאגט דער משגיח אז תשעה באב, אלול און די ימים נוראים זענען א הכנה צו שמחת תורה, און די אבילות אליין איז דער אנהייב פונעם בנין ירושלים, וואס ער ווייזט מיט א מעשה פון נאפאלעאן. דערנאך ברענגט ער די גמרא אז די תורה האט זיבן ספרים, און ממילא איז דברים דער זיבעטער, די כלה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-07-02-sh-atz",
+      "startSeg": 217,
+      "endSeg": 310,
+      "title": { "en": "Sefer Devarim as the kallah and the esrog", "yi": "ספר דברים אלס די כלה און דער אתרוג" },
+      "summary": {
+        "en": "The Rav explains that Devarim stands between the Written and the Oral Torah, and that after the seven nechamos the kallah goes to the chuppah on Rosh Hashanah. Devarim is begun on Shabbos Chazon and finished on Simchas Torah; like the esrog, the seventh of the species, it is set apart, which Rabbeinu Bachya sees in its not beginning with a vav.",
+        "yi": "דער משגיח ערקלערט אז דברים שטייט צווישן תורה שבכתב און תורה שבעל פה, און אז נאך די זיבן נחמות גייט די כלה ראש השנה צו דער חופה. דברים הייבט מען אן שבת חזון און ענדיגט שמחת תורה; אזוי ווי דער אתרוג, דער זיבעטער פון די מינים, איז עס אפגעטיילט, וואס רבינו בחיי זעט אין דעם וואס עס הייבט זיך נישט אן מיט א וו."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-07-02-sh-atz",
+      "startSeg": 311,
+      "endSeg": 417,
+      "title": { "en": "Separation and reunion: the joy of a wedding", "yi": "אפטיילונג און צוזאמקום: די שמחה פון א חתונה" },
+      "summary": {
+        "en": "The Rav asks why the esrog and Devarim must be set apart, and answers from Chavah taken from Adam's side: the Chiddushei HaRim says the joy of a wedding is the reunion of parts that were separated. The avodah of Sukkos is to bring the esrog close to the lulav, Knesses Yisroel to Hashem, which is also the idea of teshuvah.",
+        "yi": "דער משגיח פרעגט פארוואס דער אתרוג און דברים דארפן זיין אפגעטיילט, און ענטפערט פון חוה וואס איז גענומען געווארן פון אדם'ס צלע: דער חידושי הרי\"ם זאגט אז די שמחה פון א חתונה איז ווען צוויי אפגעטיילטע חלקים קומען זיך צוזאם. די עבודה פון סוכות איז מקרב זיין דעם אתרוג צום לולב, כנסת ישראל צום רבונו של עולם, און דאס איז אויך דער ענין פון תשובה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-07-02-sh-atz",
+      "startSeg": 418,
+      "endSeg": 519,
+      "title": { "en": "Yerushalayim, Devarim and the completed moon", "yi": "ירושלים, דברים און די פולע לבנה" },
+      "summary": {
+        "en": "From the Ba'al HaTanya's words on mourning at chatzos, the Rav explains that weeping over Yerushalayim, the heart of Knesses Yisroel, builds it, and that learning Devarim is a sefer of teshuvah. He then compares the kallah to the moon, covered by clouds that the shofar scatters on Rosh Hashanah, and made whole on Shemini Atzeres.",
+        "yi": "פון דעם בעל התניא'ס ווערטער וועגן דער אבילות פון חצות ערקלערט דער משגיח אז דאס וויינען אויף ירושלים, דאס הארץ פון כנסת ישראל, בויט עס, און אז ספר דברים איז א ספר פון תשובה. דערנאך גלייכט ער די כלה צו דער לבנה, וואס איז פארדעקט מיט וואלקנס וואס דער שופר צעבלאזט ראש השנה, און ווערט גאנץ שמיני עצרת."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-07-02-sh-atz",
+      "startSeg": 520,
+      "endSeg": 600,
+      "title": { "en": "Why Simchas Torah continues with Bereishis", "yi": "פארוואס מען הייבט שמחת תורה אן בראשית" },
+      "summary": {
+        "en": "The Rav says the building of the kallah ends on Shemini Atzeres, when one embraces the Torah as a kallah. Yet the reading continues into Bereishis until 'vayechulu', because the world lacked menuchah: Shabbos, the kallah, was the completing creation, and the tenth maamar, according to Rabbi Tzadok HaKohen, is the creation of woman.",
+        "yi": "דער משגיח זאגט אז דער בנין פון דער כלה ענדיגט זיך שמיני עצרת, ווען מען כאפט ארום די תורה אזוי ווי א כלה. פונדעסטוועגן ליינט מען ווייטער בראשית ביז \"ויכלו\", ווייל די וועלט האט געפעלט מנוחה: שבת, די כלה, איז געווען די לעצטע בריאה, און דער צענטער מאמר, לויט רבי צדוק הכהן, איז די בריאה פון דער אשה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-07-02-sh-atz",
+      "startSeg": 601,
+      "endSeg": 676,
+      "title": { "en": "Devarim, the esrog and Shlomo's wedding", "yi": "דברים, דער אתרוג און שלמה המלך'ס חתונה" },
+      "summary": {
+        "en": "The Rav brings Rabbeinu Bachya that Devarim corresponds to the esrog and the last hei of Hashem's name, and the Chasam Sofer on why the brachah is made on the lulav. He cites Rebbe Reb Bunim and Rabbi Pinchas of Koretz that Shemini Atzeres is the wedding of Shlomo HaMelech, and reads the hei of 'liShlomo' with Rashi on 'ohalo'.",
+        "yi": "דער משגיח ברענגט רבינו בחיי אז דברים איז קעגן דעם אתרוג און דעם לעצטן ה' פונעם שם הוי'ה, און דעם חתם סופר פארוואס מען מאכט די ברכה אויפן לולב. ער ברענגט פון רבי בונם און פון רבי פנחס קוריצער אז שמיני עצרת איז די חתונה פון שלמה המלך, און לערנט דעם ה' פון \"לשלמה\" מיט רש\"י אויף \"אהלה\"."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-07-02-sh-atz",
+      "startSeg": 677,
+      "endSeg": 744,
+      "title": { "en": "Praising the kallah from the feet up", "yi": "די כלה לויבט מען פון די פיס ארויף" },
+      "summary": {
+        "en": "The Rav notes that in Shir Hashirim the chassan is praised from head to feet, while the kallah is praised from the feet upward, beginning 'ma yafu fe'amayich'. He explains that Knesses Yisroel has a head, heart, hands and feet, both within each generation and across the generations, from the generation of the desert down to the heel before Moshiach.",
+        "yi": "דער משגיח מערקט אן אז אין שיר השירים לויבט מען דעם חתן פונעם קאפ ביז די פיס, און די כלה פון די פיס ארויף, אנגעהויבן מיט \"מה יפו פעמיך\". ער ערקלערט אז כנסת ישראל האט א ראש, א לב, הענט און פיס, אין יעדן דור און אויך אין סדר הדורות, פונעם דור המדבר ביז צום עקב פאר משיח."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-07-02-sh-atz",
+      "startSeg": 745,
+      "endSeg": 873,
+      "title": { "en": "The trials of the last generation", "yi": "די נסיונות פונעם לעצטן דור" },
+      "summary": {
+        "en": "The Rav describes the present generation as the heel: once Jews were kept apart in the ghettos, today the walls are broken and the Satan, fighting for his existence, brings daily new inventions such as cellphones, computers and the internet, and many have fallen. Yet those who hold on are climbing smooth walls, and that is why Shlomo begins the kallah's praise from the feet.",
+        "yi": "דער משגיח שילדערט דעם היינטיגן דור אלס דעם עקב: אמאל זענען אידן געווען אפגעזונדערט אין די געטאס, היינט זענען די מחיצות צעבראכן, און דער שטן, וואס קעמפט פאר זיין קיום, ברענגט יעדן טאג נייע ערפינדונגען, סעלפאונס, קאמפיוטערס און אינטערנעט, און אסאך זענען געפאלן. אבער די וואס האלטן זיך קריכן אויף גלייכע ווענט, און דערפאר הייבט שלמה המלך אן דאס לויב פון דער כלה פון די פיס."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-07-02-sh-atz",
+      "startSeg": 874,
+      "endSeg": 1041,
+      "title": { "en": "Amalek, the tribe of Dan and Shimshon", "yi": "עמלק, שבט דן און שמשון" },
+      "summary": {
+        "en": "The Rav explains that Amalek attacked the stragglers, the tribe of Dan who were left outside the clouds of glory, because he envies the acharis of the Jew, as with Haman at the end of the Babylonian exile. He shows that Dan is where faults appear, yet Hashem always pairs Dan with Yehudah: Shimshon, whose mother was from Yehudah, Betzalel and Oholiav, Shlomo and Chiram; Yehudah is fire and alacrity, Dan is dust and sluggishness.",
+        "yi": "דער משגיח ערקלערט אז עמלק איז אנגעפאלן אויף די נחשלים, שבט דן וואס זענען געבליבן אינדרויסן פון די ענני הכבוד, ווייל ער איז מקנא דעם אחרית פון א איד, אזוי ווי המן ביים סוף פון גלות בבל. ער ווייזט אז ביי דן געפינט מען די חסרונות, אבער דער אייבערשטער פארבינדט אלעמאל דן מיט יהודה: שמשון וועמענס מאמע איז געווען פון יהודה, בצלאל און אהליאב, שלמה און חירם; יהודה איז אש און זריזות, דן איז עפר און עצלות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-07-02-sh-atz",
+      "startSeg": 1042,
+      "endSeg": 1153,
+      "title": { "en": "Bikkurim, Shimshon's hair and our generation", "yi": "ביכורים, שמשון'ס האר און אונזער דור" },
+      "summary": {
+        "en": "The Rav contrasts the early fig of bikkurim, alacrity brought to Yerushalayim, with the late one, Dan. He explains why Shimshon's strength lay in his hair: hair is the last thing formed in a person, the aspect of Dan and of the last generation. The task of this generation, he says, is not to let its hair be shorn, not to be drawn after the internet and cellphones.",
+        "yi": "דער משגיח שטעלט אנטקעגן די פרי-צייטיגע פייג פון ביכורים, זריזות וואס מען ברענגט קיין ירושלים, מיט דעם וואס פארשפעטיגט זיך, דן. ער ערקלערט פארוואס שמשון'ס כח איז געווען אין זיינע האר: די האר איז דאס לעצטע וואס ווערט באשאפן ביי א מענטש, די בחינה פון דן און פונעם לעצטן דור. די עבודה פון אונזער דור, זאגט ער, איז זיך נישט לאזן אפשערן, נישט נמשך ווערן נאכן אינטערנעט און סעלפאון."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-07-02-sh-atz",
+      "startSeg": 1154,
+      "endSeg": 1230,
+      "title": { "en": "Shimshon's prayer for our generation", "yi": "שמשון'ס תפילה פאר אונזער דור" },
+      "summary": {
+        "en": "The Rav explains the name Delilah from the Gemara in Sotah, and says this generation's beauty is that it fights Amalek tooth and nail. Shimshon, who knew his soul would return in the sparks of our generation, prayed 'zochreini na vechazkeini na ach hapa'am' for us, and the Rav says a Jew should say this prayer at every trial.",
+        "yi": "דער משגיח ערקלערט דעם נאמען דלילה פון דער גמרא אין סוטה, און זאגט אז די שיינקייט פון אונזער דור איז וואס מען שלאגט זיך מיט ציין און נעגל קעגן עמלק. שמשון, וואס האט געוואוסט אז זיין נשמה וועט צוריקקומען אין די ניצוצות פון אונזער דור, האט מתפלל געווען \"זכרני נא וחזקני נא אך הפעם\" פאר אונז, און דער משגיח זאגט אז א איד זאל זאגן די תפילה ביי יעדן נסיון."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-07-02-sh-atz",
+      "startSeg": 1231,
+      "endSeg": 1290,
+      "title": { "en": "The sukkah as a shield in a time of fear", "yi": "די סוכה אלס א הגנה אין א צייט פון פחד" },
+      "summary": {
+        "en": "The Rav brings the Zohar that a generation strengthened in the mitzvah of sukkah is shielded by it, at a time when the world fears Iran, which he identifies with Paras. He cites the Midrash on the year Moshiach is revealed and the king of Paras provokes the world, when Hashem tells Israel not to fear, and says that sitting in the sukkah with joy shields all of Klal Yisroel.",
+        "yi": "דער משגיח ברענגט דעם זוהר אז א דור וואס האט זיך מחזק געווען אין דער מצוה פון סוכה, וועט די סוכה אים באשיצן, אין א צייט ווען די וועלט ציטערט פאר איראן, וואס איז פרס. ער ברענגט דעם מדרש וועגן דעם יאר ווען משיח ווערט נתגלה און דער מלך פרס רייצט די וועלט, ווען דער אייבערשטער זאגט צו אידן נישט מורא צו האבן, און זאגט אז זיצן אין סוכה מיט שמחה איז א הגנה פאר גאנץ כלל ישראל."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-07-02-sh-atz",
+      "startSeg": 1291,
+      "endSeg": 1391,
+      "title": { "en": "Simchas Torah: the joy of the simple Jew", "yi": "שמחת תורה: די שמחה פונעם פשוט'ן איד" },
+      "summary": {
+        "en": "The Rav explains that the last generations are the end of the Torah, where Moshe's passing brought forgetting of halachos, yet on Simchas Torah one rejoices there because it is joined at once to Bereishis: every Jew will have a tikkun. He brings the Ba'al HaTanya's siddur that Simchas Beis Hashoeva is the joy of talmidei chachamim while Simchas Torah is the joy of the simple Jew, and closes with brachos for the year.",
+        "yi": "דער משגיח ערקלערט אז די לעצטע דורות זענען דער סוף פון דער תורה, וואו משה'ס פטירה האט געברענגט שכחת התורה, און פונדעסטוועגן פרייט מען זיך דארט שמחת תורה, ווייל מען פארבינדט עס גלייך מיט בראשית: יעדער איד וועט האבן א תיקון. ער ברענגט פונעם סידור פונעם בעל התניא אז שמחת בית השואבה איז די שמחה פון תלמידי חכמים און שמחת תורה איז די שמחה פונעם פשוט'ן איד, און ער ענדיגט מיט ברכות אויפן יאר."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "ויבן השם אלוקים וסצלה השלקח מן האדם", "work": "Bereishis", "ref": "Bereishis 2:22", "sefariaRef": "Genesis 2:22", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [3, 37, 51], "confidence": 0.9 } },
+    { "heardAs": "הביאניה מלך חדריו", "work": "Shir Hashirim", "ref": "Shir Hashirim 1:4", "sefariaRef": "Song of Songs 1:4", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [10, 11], "confidence": 0.85 } },
+    { "heardAs": "גל עיני ויבאביטה נפלות מיט תורה סוחה", "work": "Tehillim", "ref": "Tehillim 119:18", "sefariaRef": "Psalms 119:18", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [14, 19], "confidence": 0.85 } },
+    { "heardAs": "כמעט ס'איז חתן על כלה, יוסף עלייך על הכייך", "work": "Yeshayahu", "ref": "Yeshayahu 62:5", "sefariaRef": "Isaiah 62:5", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [44, 45, 236], "confidence": 0.8 } },
+    { "heardAs": "די מלשון פון חתם ספר", "work": "Chasam Sofer", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [67, 70], "confidence": 0.7 } },
+    { "heardAs": "רשע זאגט שוין ניתן עלוקה כלה", "work": "Rashi", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [85, 86], "confidence": 0.7 } },
+    { "heardAs": "אין די גמרא שטעט אז דאס דער קאפיטל אשת חייל גייט אויף די תורה", "work": "Gemara", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [89, 90], "confidence": 0.75 } },
+    { "heardAs": "די גמרא זאגט בבקמה ... בוי שבת קהלה מלכותא", "work": "Gemara Bava Kamma", "ref": "Bava Kamma 32b", "sefariaRef": "Bava Kamma 32b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [93, 94, 95], "confidence": 0.75 } },
+    { "heardAs": "יפו נוף מסוס כל הארץ", "work": "Tehillim", "ref": "Tehillim 48:3", "sefariaRef": "Psalms 48:3", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [100, 103], "confidence": 0.8 } },
+    { "heardAs": "דער רשע ברענגט אין תרומה ... אזוי ווי א קלה צענעה", "work": "Rashi", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [106], "confidence": 0.65 } },
+    { "heardAs": "עוד אבנך ונבנך בשלת ישראל", "work": "Yirmeyahu", "ref": "Yirmeyahu 31:3", "sefariaRef": "Jeremiah 31:3", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [130], "confidence": 0.85 } },
+    { "heardAs": "ביהנ'א ביהנ'א ירושלים", "work": "Yeshayahu", "ref": "Yeshayahu 40:2", "sefariaRef": "Isaiah 40:2", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [133, 134, 136], "confidence": 0.7 } },
+    { "heardAs": "אין בשם פון רבי מרדכי לאכאוויטשעל", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [150, 151, 155], "confidence": 0.8 } },
+    { "heardAs": "כהמתי בעל על ירושלים זכר ורועה בביניני", "work": "Gemara Taanis", "ref": "Taanis 30b", "sefariaRef": "Taanit 30b", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [162, 163], "confidence": 0.75 } },
+    { "heardAs": "זיבן חומשים, און אזוי זאגט ער געמארן שבת, תק״ה", "work": "Gemara Shabbos", "ref": "Shabbos 116a", "sefariaRef": "Shabbat 116a", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [198, 199, 207, 208], "confidence": 0.8 } },
+    { "heardAs": "דער חדשי הרי' דרכתא בשם פון רבי רבנים", "work": "Chiddushei HaRim", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [219, 220], "confidence": 0.75 } },
+    { "heardAs": "רביה'ן בחיי און אנפאנגן דברים", "work": "Rabbeinu Bachya", "ref": "Rabbeinu Bachya, introduction to Devarim", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [286, 309, 602], "confidence": 0.75 } },
+    { "heardAs": "ויקחחת מצלותיו", "work": "Bereishis", "ref": "Bereishis 2:21", "sefariaRef": "Genesis 2:21", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [318, 341], "confidence": 0.85 } },
+    { "heardAs": "שייט פון חדשים ארום ... זאגט דער חדשי ארום", "work": "Chiddushei HaRim", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [325, 346, 352], "confidence": 0.75 } },
+    { "heardAs": "דער מגן אברהם ברענגט דאס ארונטער", "work": "Magen Avraham", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [366, 367], "confidence": 0.75 } },
+    { "heardAs": "דער תניא רעדט כסדר וועגן דעם תשובה", "work": "Tanya", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [403, 405], "confidence": 0.65 } },
+    { "heardAs": "דעם בעל התניא סעודה ... באי חצות", "work": "Siddur of the Ba'al HaTanya", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [420, 421, 422], "confidence": 0.7 } },
+    { "heardAs": "די לבנה איז מחסר, ווי דער גמרא זאגט", "work": "Gemara Chullin", "ref": "Chullin 60b", "sefariaRef": "Chullin 60b", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [482, 489], "confidence": 0.7 } },
+    { "heardAs": "תיקף בחדר שופר, בכתר ... ליום חגינו", "work": "Tehillim", "ref": "Tehillim 81:4", "sefariaRef": "Psalms 81:4", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [489, 500, 501], "confidence": 0.8 } },
+    { "heardAs": "שמשי מגן השם", "work": "Tehillim", "ref": "Tehillim 84:12", "sefariaRef": "Psalms 84:12", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [491, 511], "confidence": 0.75 } },
+    { "heardAs": "ויכולה השמים וארץ ... ביום השבועי", "work": "Bereishis", "ref": "Bereishis 2:1-2", "sefariaRef": "Genesis 2:1-2", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [555, 556], "confidence": 0.85 } },
+    { "heardAs": "פרעגט רשע ... מה היה עולם חסד מנחה", "work": "Rashi", "ref": "Rashi on Bereishis 2:2", "sefariaRef": null, "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [557, 561, 562], "confidence": 0.8 } },
+    { "heardAs": "אין די גמרא שטעט אז ברשת איז די רעשת המימן", "work": "Gemara Rosh Hashanah", "ref": "Rosh Hashanah 32a", "sefariaRef": "Rosh Hashanah 32a", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [570, 571, 572], "confidence": 0.7 } },
+    { "heardAs": "ר' צדקה כהן ברענגט", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [578, 579], "confidence": 0.75 } },
+    { "heardAs": "ויאמר ה' אלקים ... את אלו עזר כנגדי", "work": "Bereishis", "ref": "Bereishis 2:18", "sefariaRef": "Genesis 2:18", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [579, 580], "confidence": 0.75 } },
+    { "heardAs": "מוצאי אישי מוצאי טוב, ויפק רצה מ'השם", "work": "Mishlei", "ref": "Mishlei 18:22", "sefariaRef": "Proverbs 18:22", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [595, 596], "confidence": 0.8 } },
+    { "heardAs": "גדול השם מוהלו מיוד", "work": "Tehillim", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "quoted", "evidence": { "segs": [621, 637], "confidence": 0.7 } },
+    { "heardAs": "דער גמרא פרעגט פארוואס מען מאכט נישט קיין ברכה פון אתחוק", "work": "Gemara Sukkah", "ref": "Sukkah 37b", "sefariaRef": "Sukkah 37b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [627, 629, 631], "confidence": 0.7 } },
+    { "heardAs": "ווי דער חתם ספר זאגט אין חדשים, אויף מסכת סכה", "work": "Chiddushei Chasam Sofer", "ref": "Chiddushei Chasam Sofer on Sukkah", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [623, 624, 632], "confidence": 0.7 } },
+    { "heardAs": "די חידושי ארומברענגט עס פון רבי רבונים", "work": "Chiddushei HaRim", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [642, 643], "confidence": 0.8 } },
+    { "heardAs": "פון רבי פנחס הקארצער", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [644], "confidence": 0.8 } },
+    { "heardAs": "שיר השורים אשור לשלימה", "work": "Shir Hashirim", "ref": "Shir Hashirim 1:1", "sefariaRef": "Song of Songs 1:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [652, 653, 654], "confidence": 0.85 } },
+    { "heardAs": "נאר רשע זאגט אין פרשת לחלוחא, ויצא אהלו", "work": "Rashi", "ref": "Rashi on Bereishis 12:8", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [659, 662, 663], "confidence": 0.7 } },
+    { "heardAs": "מה דארט דאך מי דארט היפה פאר נשים", "work": "Shir Hashirim", "ref": "Shir Hashirim 5:9", "sefariaRef": "Song of Songs 5:9", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [687, 691], "confidence": 0.75 } },
+    { "heardAs": "ראשי קתם פאז", "work": "Shir Hashirim", "ref": "Shir Hashirim 5:11", "sefariaRef": "Song of Songs 5:11", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [694, 699], "confidence": 0.8 } },
+    { "heardAs": "מה יפה פאר מהייך בן העולם", "work": "Shir Hashirim", "ref": "Shir Hashirim 7:2", "sefariaRef": "Song of Songs 7:2", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [707, 849, 1366], "confidence": 0.8 } },
+    { "heardAs": "ואתה צפונו יאכה כמו עליכם", "work": "Yoel", "ref": "Yoel 2:20", "sefariaRef": "Joel 2:20", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [785], "confidence": 0.65 } },
+    { "heardAs": "די אידיאלע שבעה שמות פונעם יצר הרע", "work": "Gemara Sukkah", "ref": "Sukkah 52a", "sefariaRef": "Sukkah 52a", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [805, 806], "confidence": 0.7 } },
+    { "heardAs": "ויזנט בכך הכבה נחשלים אחריך", "work": "Devarim", "ref": "Devarim 25:18", "sefariaRef": "Deuteronomy 25:18", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [875, 999], "confidence": 0.8 } },
+    { "heardAs": "ווי דער תרגום יונתן ברענגט, מיט די שבט דון", "work": "Targum Yonasan", "ref": "Targum Yonasan on Devarim 25:18", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [896, 897, 999], "confidence": 0.75 } },
+    { "heardAs": "ונשא דגא מחנה דון לא אחרונה ישא", "work": "Bamidbar", "ref": "Bamidbar 10:25", "sefariaRef": "Numbers 10:25", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [900, 1228], "confidence": 0.8 } },
+    { "heardAs": "ווי אחרית ידעי עובד", "work": "Bamidbar", "ref": "Bamidbar 24:20", "sefariaRef": "Numbers 24:20", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [915, 916], "confidence": 0.75 } },
+    { "heardAs": "שלמה'ס בת דברי למטה דן", "work": "Vayikra", "ref": "Vayikra 24:11", "sefariaRef": "Leviticus 24:11", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [946], "confidence": 0.8 } },
+    { "heardAs": "יו דן נחש עלי דרך ... לשהותך קבוצה השם", "work": "Bereishis", "ref": "Bereishis 49:17-18", "sefariaRef": "Genesis 49:17-18", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [957, 963], "confidence": 0.8 } },
+    { "heardAs": "זאגט דער תרגום יונתן", "work": "Targum Yonasan", "ref": "Targum Yonasan on Bereishis 49:18", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [964, 965, 966], "confidence": 0.75 } },
+    { "heardAs": "יעשה שבט מיהודה ... ועד כי יבא ישולע", "work": "Bereishis", "ref": "Bereishis 49:10", "sefariaRef": "Genesis 49:10", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [968, 969], "confidence": 0.8 } },
+    { "heardAs": "אין מדרש שטעט אז די מאמע פון שמשון איז געוועזן פון שבט יהודה", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [970, 971, 973], "confidence": 0.85 } },
+    { "heardAs": "די תסוות אין אנפאנג סנהדרם", "work": "Tosafos", "ref": "Tosafos, Sanhedrin 5a", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [974, 975, 976], "confidence": 0.7 } },
+    { "heardAs": "די תניא איז די מבער אין אנפאנג תניא", "work": "Tanya", "ref": "Tanya ch. 1", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [1008, 1009, 1010], "confidence": 0.75 } },
+    { "heardAs": "ווי יעדער פון מ'האט דון, זאגט רשע", "work": "Rashi", "ref": "Rashi on Bereishis 14:14", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [1026, 1027, 1029], "confidence": 0.7 } },
+    { "heardAs": "וואס איז רשת ביקורים ... זאגט רשע", "work": "Rashi", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1043, 1044], "confidence": 0.65 } },
+    { "heardAs": "מורא לעיאלע הראשי", "work": "Shoftim", "ref": "Shoftim 13:5", "sefariaRef": "Judges 13:5", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1079, 1138, 1139], "confidence": 0.8 } },
+    { "heardAs": "שבע מחלף את חושה", "work": "Shoftim", "ref": "Shoftim 16:19", "sefariaRef": "Judges 16:19", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1085, 1151], "confidence": 0.75 } },
+    { "heardAs": "עס שטעט אין די גמרא אין שולחן ערוך ווערט דאס געבראכט", "work": "Gemara", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1096, 1097, 1098], "confidence": 0.7 } },
+    { "heardAs": "זאגט דער גמרא אין סוטה, שדולדעלע את כוחו", "work": "Gemara Sotah", "ref": "Sotah 9b", "sefariaRef": "Sotah 9b", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [1157, 1158], "confidence": 0.75 } },
+    { "heardAs": "השם אלוקים זכרינו נא, וחזקנו נא אחתם", "work": "Shoftim", "ref": "Shoftim 16:28", "sefariaRef": "Judges 16:28", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1208, 1209, 1217], "confidence": 0.85 } },
+    { "heardAs": "עס שטעט אין זוה'ר קודש", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1236, 1237, 1238], "confidence": 0.75 } },
+    { "heardAs": "די הפטורה פון גוגל", "work": "Yechezkel", "ref": "Yechezkel 38", "sefariaRef": null, "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [1258], "confidence": 0.7 } },
+    { "heardAs": "עס שטעט אין די פסוק פון פטירה רבותי ... אמר רבי יצחק, בשנה של מלך המשיח נגלה", "work": "Pesikta Rabbasi", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "quoted", "evidence": { "segs": [1259, 1261, 1262, 1264], "confidence": 0.7 } },
+    { "heardAs": "וואס דער גמרא זאגט אז ס'איז פארגעסן געווארן שלשת הלכות", "work": "Gemara Temurah", "ref": "Temurah 16a", "sefariaRef": "Temurah 16a", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [1297, 1302], "confidence": 0.7 } },
+    { "heardAs": "ליענע כל ישראל ... ברשת בור אלקים", "work": "Devarim", "ref": "Devarim 34:12", "sefariaRef": "Deuteronomy 34:12", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1300, 1317, 1318], "confidence": 0.8 } },
+    { "heardAs": "ותחר רוח ה' לפעם מבמך נדן", "work": "Shoftim", "ref": "Shoftim 13:25", "sefariaRef": "Judges 13:25", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1344, 1345], "confidence": 0.75 } },
+    { "heardAs": "עס שטעט אינעם סידור פון בעל התניא", "work": "Siddur of the Ba'al HaTanya", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1351, 1353, 1362, 1363], "confidence": 0.8 } },
+    { "heardAs": "אזוי ווי עס שטעט אין די גמרא, אז די אלע שיינע אידן, זיי טאנצן דארט", "work": "Gemara Sukkah", "ref": "Sukkah 51a", "sefariaRef": "Sukkah 51a", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [1354, 1355, 1357], "confidence": 0.7 } }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Mourning for Yerushalayim is not only a sign of loss but the first step of its rebuilding, which is why the building of the kallah begins on Tisha B'Av.",
+        "yi": "די אבילות אויף ירושלים איז נישט נאר א סימן פון א חורבן, נאר דער ערשטער טריט פון איר בנין, און דערפאר הייבט זיך דער בנין פון דער כלה אן תשעה באב."
+      },
+      "evidence": { "segs": [160, 161, 163, 193], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The reading cycle of Devarim, from Shabbos Chazon to Simchas Torah, matches the building of the kallah from Tisha B'Av to Shemini Atzeres, since Devarim is the seventh book and the kallah.",
+        "yi": "דער סדר פון ליינען דברים, פון שבת חזון ביז שמחת תורה, גייט גלייך מיטן בנין פון דער כלה פון תשעה באב ביז שמיני עצרת, ווייל דברים איז דער זיבעטער ספר און די כלה."
+      },
+      "evidence": { "segs": [241, 244, 254, 257], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The esrog is held apart from the bound lulav, and Devarim alone does not begin with a vav, because the kallah must first be separate, like Chavah from Adam, so that their reunion brings joy.",
+        "yi": "דער אתרוג איז אפגעטיילט פונעם געבונדענעם לולב, און דברים אליין הייבט זיך נישט אן מיט א וו, ווייל די כלה מוז ערשט זיין אפגעטיילט, אזוי ווי חוה פון אדם, כדי דאס צוזאמקומען זאל ברענגען שמחה."
+      },
+      "evidence": { "segs": [307, 309, 319, 321, 344], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Shir Hashirim praises the kallah from the feet up because the lowest generations are the most precious to Hashem, and the last generation is the true beauty of Knesses Yisroel.",
+        "yi": "שיר השירים לויבט די כלה פון די פיס ארויף, ווייל וואס נידעריגער די דורות זענען, אלץ חשובער זענען זיי ביים רבונו של עולם, און דער לעצטער דור איז די אמת'ע שיינקייט פון כנסת ישראל."
+      },
+      "evidence": { "segs": [720, 754, 846, 847, 849], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Shimshon's strength lay in his hair because hair is the last thing formed in a person, the aspect of Dan and of acharis, and the last generation must likewise not let itself be shorn.",
+        "yi": "שמשון'ס כח איז געווען אין זיינע האר, ווייל די האר איז דאס לעצטע וואס ווערט באשאפן ביי א מענטש, די בחינה פון דן און פון אחרית, און אזוי מוז דער לעצטער דור זיך נישט לאזן אפשערן."
+      },
+      "evidence": { "segs": [1088, 1101, 1112, 1142, 1146], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "On Simchas Torah one rejoices at the end of the Torah, the place of forgotten halachos and of the forgotten Jews of the last generations, because it is joined at once to Bereishis, so every Jew will have a tikkun.",
+        "yi": "שמחת תורה פרייט מען זיך ביים סוף פון דער תורה, דאס ארט פון די פארגעסענע הלכות און פון די פארגעסענע אידן פון די לעצטע דורות, ווייל מען פארבינדט עס גלייך מיט בראשית, און ממילא וועט יעדער איד האבן א תיקון."
+      },
+      "evidence": { "segs": [1303, 1314, 1318, 1320, 1321], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "Napoleon in the shul on Tisha B'Av", "yi": "נאפאלעאן אין א שול תשעה באב" },
+      "retelling": {
+        "en": "The Rav tells, from history books, that Napoleon once passed a shul, went in and saw fathers and children sitting on the ground and weeping. He was told it was Tisha B'Av and they were mourning the destruction of the Beis Hamikdash some 1700 years earlier. Napoleon said that a people that can still weep over its Beis Hamikdash after so long will surely get it back.",
+        "yi": "דער משגיח דערציילט פון ספרי קורות אז נאפאלעאן איז אמאל דורכגעגאנגען א שול, איז ער אריין און האט געזען טאטעס מיט קינדער זיצן אויף דער ערד און וויינען. מען האט אים ערקלערט אז עס איז תשעה באב און מען וויינט אויפן חורבן בית המקדש פון ארום 1700 יאר צוריק. האט נאפאלעאן געזאגט אז א פאלק וואס קען נאך אזויפיל צייט וויינען אויף איר בית המקדש וועט עס זיכער צוריקבאקומען."
+      },
+      "people": ["Napoleon"],
+      "evidence": { "segs": [173, 176, 180, 185, 190], "confidence": 0.85 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "Why must the esrog, and likewise Sefer Devarim, be set apart from the rest?", "yi": "פארוואס מוז דער אתרוג, און אזוי אויך ספר דברים, זיין אפגעטיילט פון די אנדערע?" },
+      "answer": { "en": "Because the kallah was taken from Adam's side and separated, and the joy of a wedding comes from separated parts being reunited.", "yi": "ווייל די כלה איז גענומען געווארן פון אדם'ס צלע און אפגעטיילט, און די שמחה פון א חתונה קומט פון דעם וואס אפגעטיילטע חלקים קומען זיך צוזאם." },
+      "questionSegs": [311, 312],
+      "answerSegs": [319, 321, 344, 345],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "If Simchas Torah completes Devarim, the kallah, why does one continue to read Bereishis until 'vayechulu'?", "yi": "אויב שמחת תורה ענדיגט מען דברים, די כלה, פארוואס ליינט מען ווייטער בראשית ביז \"ויכלו\"?" },
+      "answer": { "en": "Because Shabbos, the kallah, was the completing creation that the world lacked, so the building is finished only with the creation of Shabbos.", "yi": "ווייל שבת, די כלה, איז געווען די לעצטע בריאה וואס די וועלט האט געפעלט, און ממילא ווערט דער בנין פארטיג ערשט מיט דער בריאה פון שבת." },
+      "questionSegs": [549, 551, 552],
+      "answerSegs": [560, 563, 564, 589],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why does Shir Hashirim praise the chassan from the head down but the kallah from the feet up?", "yi": "פארוואס לויבט שיר השירים דעם חתן פונעם קאפ אראפ און די כלה פון די פיס ארויף?" },
+      "answer": { "en": "Because the beauty of Knesses Yisroel is its last, lowliest generation, the heel before Moshiach, which is most precious to Hashem.", "yi": "ווייל די שיינקייט פון כנסת ישראל איז דער לעצטער נידעריגער דור, דער עקב פאר משיח, וואס איז דער חשובסטער ביים רבונו של עולם." },
+      "questionSegs": [717, 720, 722],
+      "answerSegs": [742, 754, 755, 847],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why does Amalek always attack the last and weakest?", "yi": "פארוואס פאלט עמלק אלעמאל אן אויף די לעצטע און שוואכסטע?" },
+      "answer": { "en": "Because even the lowest Jew has a future and a hope, while Amalek has none, so he envies the acharis of the Jew.", "yi": "ווייל אפילו דער נידעריגסטער איד האט אן אחרית און א תקוה, און עמלק האט נישט, דערפאר איז ער מקנא דעם אחרית פון א איד." },
+      "questionSegs": [908],
+      "answerSegs": [911, 913, 914, 916],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "How could Yaakov think Shimshon, from the tribe of Dan, was Moshiach, when kingship comes from Yehudah?", "yi": "ווי אזוי האט יעקב געקענט מיינען אז שמשון פון שבט דן איז משיח, ווען מלכות קומט פון יהודה?" },
+      "answer": { "en": "The Midrash says Shimshon's mother was from Yehudah, and Tosafos show that leadership could come from Yehudah through the mother.", "yi": "דער מדרש זאגט אז שמשון'ס מאמע איז געווען פון שבט יהודה, און תוספות ווייזן אז נשיאות קען קומען פון יהודה דורך דער מאמע." },
+      "questionSegs": [967, 969],
+      "answerSegs": [971, 973, 975, 977],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why was Shimshon's strength specifically in his hair?", "yi": "פארוואס איז שמשון'ס כח געווען דווקא אין זיינע האר?" },
+      "answer": { "en": "Because hair is the last thing formed in a person, the aspect of Dan; Shimshon, as Dan's leader, had to rectify it by not letting it be shorn.", "yi": "ווייל די האר איז דאס לעצטע וואס ווערט באשאפן ביי א מענטש, די בחינה פון דן; שמשון, אלס דער נשיא פון דן, האט עס געדארפט מתקן זיין דורך נישט לאזן עס אפשערן." },
+      "questionSegs": [1088],
+      "answerSegs": [1101, 1112, 1113, 1115],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says this generation must not let itself be 'shorn': not to be drawn after the internet and cellphones, and to hold on to Yiddishkeit.",
+        "yi": "דער משגיח זאגט אז אונזער דור טאר זיך נישט לאזן אפשערן: נישט נמשך ווערן נאכן אינטערנעט און סעלפאון, און זיך האלטן ביי אידישקייט."
+      },
+      "evidence": { "segs": [1127, 1129, 1130, 1131], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "He calls on his listeners to fight the trials with all their strength: to hold to emunah, learn Torah, do mitzvos and stay attached to chachamim and tzaddikim.",
+        "yi": "ער רופט אויף צו קעמפן קעגן די נסיונות מיטן גאנצן כח: זיך האלטן ביי אמונה, לערנען תורה, טון מצוות און זיך האלטן צו חכמים און צדיקים."
+      },
+      "evidence": { "segs": [1176, 1179, 1180, 1181, 1182], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that at every trial a Jew should say Shimshon's prayer, 'chazkeini na ach hapa'am', asking Hashem for strength.",
+        "yi": "דער משגיח זאגט אז ביי יעדן נסיון זאל א איד זאגן שמשון'ס תפילה \"חזקני נא אך הפעם\", און בעטן דעם רבונו של עולם אויף חיזוק."
+      },
+      "evidence": { "segs": [1223, 1224, 1226], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "He says to sit in the sukkah with joy even when it is cold or uncomfortable, since this shields all of Klal Yisroel.",
+        "yi": "ער זאגט צו זיצן אין סוכה מיט שמחה אפילו ווען עס איז קאלט אדער נישט באקוועם, ווייל דאס שטעלט א הגנה פאר גאנץ כלל ישראל."
+      },
+      "evidence": { "segs": [1277, 1279, 1280, 1281], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "Shemini Atzeres and Simchas Torah",
+    "building of the kallah (binyan komas hamalchus)",
+    "Knesses Yisroel as kallah",
+    "Tisha B'Av and the rebuilding of Yerushalayim",
+    "Sefer Devarim",
+    "esrog and lulav",
+    "ikvesa demeshicha generation",
+    "Amalek and the tribe of Dan",
+    "Shimshon",
+    "trials of technology"
+  ],
+  "concepts": [
+    { "he": "בנין קומת המלכות", "heardAs": ["בנין קומת המלכות", "די בנין כמות ומלכות"] },
+    { "he": "שמיני עצרת", "heardAs": ["שמוני הצרות", "שמוני יצרות", "שמינו הצרות"] },
+    { "he": "כנסת ישראל", "heardAs": ["קנסת ישראל", "כנסת ישראל"] },
+    { "he": "יחוד השלם", "heardAs": ["יחד השלים", "יחוד השלים", "יחד השלום"] },
+    { "he": "אתרוג", "heardAs": ["אתחוק", "עשר'ג", "אסרוג", "עסקיג"] },
+    { "he": "לולב", "heardAs": ["ללב", "מלולב", "מלוה לב"] },
+    { "he": "עקבתא דמשיחא", "heardAs": ["נקפת'א דמשיח'א", "יקפת'א דמשיח'א"] },
+    { "he": "עמלק", "heardAs": ["א מלאק", "א מלוק", "מולק"] },
+    { "he": "נחשלים", "heardAs": ["נחשלים"] },
+    { "he": "מיעוט הלבנה", "heardAs": ["מיוט הלבנה", "צרות הלבנה"] },
+    { "he": "אחרית", "heardAs": ["אחרות", "אחרוס"] },
+    { "he": "שערות", "heardAs": ["שיירות", "סעירות", "סירות"] }
+  ],
+  "people": [
+    { "name": "Rabbi Mordechai of Lechovitch", "heardAs": ["רבי מרדכי לאכאוויטשעל"] },
+    { "name": "Napoleon", "heardAs": ["נאפאלעאן"] },
+    { "name": "the Chiddushei HaRim", "heardAs": ["חדשי הרי'", "חדשי ארום", "חדשים ארום"] },
+    { "name": "Rebbe Reb Bunim of Peshischa", "heardAs": ["רבי רבנים", "רבי רבונים"] },
+    { "name": "Rabbeinu Bachya", "heardAs": ["רביה'ן בחיי", "רבי עניל בחי'", "רבי ענר בחי'"] },
+    { "name": "the Chasam Sofer", "heardAs": ["חתם ספר", "חתם סופר"] },
+    { "name": "Rabbi Tzadok HaKohen", "heardAs": ["ר' צדקה כהן"] },
+    { "name": "Rabbi Pinchas of Koretz", "heardAs": ["רבי פנחס הקארצער"] },
+    { "name": "the Ba'al HaTanya", "heardAs": ["בעל התניא", "בעל דתניה"] },
+    { "name": "Shlomo HaMelech", "heardAs": ["שלמה המלך", "שלמה מלך"] },
+    { "name": "Shimshon", "heardAs": ["שמשון"] },
+    { "name": "Delilah", "heardAs": ["דליל", "לילה"] },
+    { "name": "Haman", "heardAs": ["האמאן בן עמדוס"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יעקב"] },
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינו"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה", "שמשה"] }
+  ],
+  "asrNotes": "Yiddish ASR fair; quotations and gematrios are heavily garbled, and most gematria equations (e.g. segs 447-449, 466-473, 534, 1036) could not be recovered and were left out. Segs 386-390, 726-727 and 1105-1106 are largely unintelligible. 'Amalek' is consistently heard as 'מלאק/מלוק', and the esrog as 'אתחוק/עשר'ג'."
+}

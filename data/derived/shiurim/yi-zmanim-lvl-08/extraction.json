@@ -1,0 +1,456 @@
+{
+  "shiurId": "yi-zmanim-lvl-08",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that just as the place of the Beis HaMikdash is the hidden starting point of creation in space and must be sought out, Rosh Hashanah is that point in time, and the forty days from Rosh Chodesh Elul are the climb up the mountain to reach it.",
+      "yi": "דער משגיח ערקלערט אז אזוי ווי דער מקום המקדש איז דער באהאלטענער אנפאנג פון דער בריאה אין מקום און מ'דארף אים זוכן, אזוי איז ראש השנה די נקודה אין זמן, און די פערציג טעג פון ראש חודש אלול זענען דאס ארויפקלעטערן אויפן בארג."
+    },
+    "abstract": {
+      "en": "The Rav opens with the parsha of the zaken mamre and asks why the Torah, which marks the location of Gerizim and Eival so precisely, never says where the Beis HaMikdash is, only 'seek out His dwelling'. He explains that the even shesiyah is the point from which the world was founded, the top of the globe and the root of creation. Following Sefer Yetzirah's world, year and soul, Rosh Hashanah is that point in time and Adam HaRishon, then Dovid HaMelech, in the soul; the forty days from Rosh Chodesh Elul are the formation of the year. The middle verse of Sefer Devarim is the verse about the Sanhedrin's place. Because the root is hidden, it must be searched for, as Dovid and Shmuel searched and erred before finding the place and the king. Elul is the climb up the mountain without sleeping, toward the kingship of Rosh Hashanah.",
+      "yi": "דער משגיח עפנט מיט דער פרשה פון זקן ממרא און פרעגט פארוואס די תורה, וואס באצייכנט אזוי גענוי וואו הר גריזים און הר עיבל געפינען זיך, זאגט קיינמאל נישט וואו דער בית המקדש איז, נאר \"לשכנו תדרשו\". ער ערקלערט אז די אבן שתיה איז די נקודה פון וואו די וועלט איז געגרינדעט געווארן, דער שפיץ פון דער קיילעכדיגער וועלט און דער שורש פון דער בריאה. לויט ספר יצירה, עולם שנה נפש, איז ראש השנה די נקודה אין זמן, און אדם הראשון און דערנאך דוד המלך אין נפש; די פערציג טעג פון ראש חודש אלול זענען די יצירה פונעם יאר. דער מיטעלסטער פסוק פון ספר דברים איז דער פסוק וועגן דעם מקום פון סנהדרין. ווייל דער שורש איז באהאלטן, דארף מען אים זוכן, אזוי ווי דוד און שמואל האבן געזוכט און זיך טועה געווען ביז זיי האבן געפונען דעם מקום און דעם מלך. אלול איז דאס ארויפקלעטערן אויפן בארג אן שלאפן, צו דער מלכות פון ראש השנה."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The Torah describes the location of Gerizim and Eival precisely but does not say where the Beis HaMikdash is, because that place must be sought out ('l'shichno sidreshu').",
+          "yi": "די תורה באשרייבט גענוי וואו הר גריזים און הר עיבל זענען, אבער זאגט נישט וואו דער בית המקדש איז, ווייל דעם מקום דארף מען זוכן, \"לשכנו תדרשו\"."
+        },
+        "evidence": { "segs": [43, 46, 58, 63, 65], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The even shesiyah is the point from which creation began and spread outward, and therefore it is the highest place, the top of the globe.",
+          "yi": "די אבן שתיה איז די נקודה פון וואו די בריאה האט זיך אנגעהויבן און זיך פארשפרייט, און דערפאר איז זי דער העכסטער ארט, דער שפיץ פון דער קיילעכדיגער וועלט."
+        },
+        "evidence": { "segs": [94, 99, 100, 155, 158], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Following world, year and soul, Rosh Hashanah is the Beis HaMikdash of time, and the forty days from Rosh Chodesh Elul to Yom Kippur are the formation of the year.",
+          "yi": "לויט עולם שנה נפש איז ראש השנה דער בית המקדש פון זמן, און די פערציג טעג פון ראש חודש אלול ביז יום כיפור זענען די יצירה פונעם יאר."
+        },
+        "evidence": { "segs": [193, 218, 220, 222, 236], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The Sanhedrin, the root of the Torah's authority, sits in the place of the root of the world, and the middle verse of Sefer Devarim is the verse about that place.",
+          "yi": "די סנהדרין, דער שורש פון דער תורה, זיצט אינעם מקום פונעם שורש העולם, און דער מיטעלסטער פסוק פון ספר דברים איז דער פסוק וועגן יענעם מקום."
+        },
+        "evidence": { "segs": [640, 641, 642, 672], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Because the root point is hidden, Rosh Hashanah, like the place of the Mikdash and like Dovid himself, must be searched for with effort, and Elul is the time of that search.",
+          "yi": "ווייל די נקודה פונעם שורש איז באהאלטן, דארף מען ראש השנה, אזוי ווי דעם מקום המקדש און אזוי ווי דוד אליין, זוכן מיט מי, און אלול איז די צייט פון דעם זוכן."
+        },
+        "evidence": { "segs": [679, 687, 689, 711, 796], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Rosh Hashanah is the day of kingship, and the Yamim Nora'im are days of the Beis HaMikdash, as in 'how awesome is this place'.",
+          "yi": "ראש השנה איז דער טאג פון מלכות, און די ימים נוראים זענען בית המקדש טעג, אזוי ווי \"מה נורא המקום הזה\"."
+        },
+        "evidence": { "segs": [886, 888, 889, 893], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-zemanim-elull-tishery-01-08-elul-5769-urgan",
+      "startSeg": 0,
+      "endSeg": 90,
+      "title": { "en": "Why the Torah hides the Mikdash's place", "yi": "פארוואס די תורה באהאלט דעם מקום המקדש" },
+      "summary": {
+        "en": "The Rav opens with the zaken mamre and the authority of the Sanhedrin, and asks why the Torah describes the location of Gerizim and Eival exactly but never says where the Beis HaMikdash is. He brings 'l'shichno sidreshu', Dovid HaMelech's oath not to sleep until he found the place, and the Ramban.",
+        "yi": "דער משגיח עפנט מיט זקן ממרא און דער כח פון סנהדרין, און פרעגט פארוואס די תורה באשרייבט גענוי וואו הר גריזים און הר עיבל זענען, אבער זאגט קיינמאל נישט וואו דער בית המקדש איז. ער ברענגט \"לשכנו תדרשו\", דוד המלך'ס שבועה נישט צו שלאפן ביז ער וועט געפינען דעם מקום, און דעם רמב\"ן."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-01-08-elul-5769-urgan",
+      "startSeg": 91,
+      "endSeg": 188,
+      "title": { "en": "The even shesiyah, root and peak of the world", "yi": "די אבן שתיה, שורש און שפיץ פון דער וועלט" },
+      "summary": {
+        "en": "The Rav explains that the world was founded from the even shesiyah and grew outward into Yerushalayim, Eretz Yisrael and the other lands. He answers how Yerushalayim can be the highest place with the image of a globe whose top is the point where it was formed, and suggests that 'har' is linked to 'herayon', conception.",
+        "yi": "דער משגיח ערקלערט אז די וועלט איז געגרינדעט געווארן פון דער אבן שתיה און האט זיך ארויסגעוואקסן אין ירושלים, ארץ ישראל און די אנדערע לענדער. ער ענטפערט ווי אזוי ירושלים איז גבוה מכל המקומות מיטן משל פון א קיילעכדיגע וועלט וואס איר שפיץ איז די נקודה וואו זי האט זיך אנגעהויבן, און לייגט צו אז \"הר\" איז פארבונדן מיט \"הריון\"."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-01-08-elul-5769-urgan",
+      "startSeg": 189,
+      "endSeg": 246,
+      "title": { "en": "World, year and soul: forty days of Elul", "yi": "עולם שנה נפש: די פערציג טעג פון אלול" },
+      "summary": {
+        "en": "Bringing Sefer Yetzirah's world, year and soul, the Rav says each mirrors the others. As a child is formed in forty days, the year is formed in the forty days from Rosh Chodesh Elul to Yom Kippur, and he cites that Rosh Hashanah equals Beis HaMikdash in gematria.",
+        "yi": "דער משגיח ברענגט פון ספר יצירה עולם שנה נפש, און זאגט אז יעדעס איז א קאפיע פונעם אנדערן. אזוי ווי דער ולד ווערט געשאפן אין פערציג טעג, ווערט דאס יאר געשאפן אין די פערציג טעג פון ראש חודש אלול ביז יום כיפור, און ער ברענגט אז ראש השנה איז בגימטריא בית המקדש."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-01-08-elul-5769-urgan",
+      "startSeg": 247,
+      "endSeg": 348,
+      "title": { "en": "Rosh Hashanah, the even shesiyah of time", "yi": "ראש השנה, די אבן שתיה פון זמן" },
+      "summary": {
+        "en": "The Rav explains that Hashem is 'found' in the days from Rosh Hashanah to Yom Kippur because He is then creating the year, and moving away from that point, like galus from Yerushalayim, is distance. Rosh Hashanah includes the whole year as the head includes the body, and the forty days are the time when tefillah can still shape the year.",
+        "yi": "דער משגיח ערקלערט אז דער אייבערשטער איז \"בהמצאו\" אין די טעג פון ראש השנה ביז יום כיפור ווייל דעמאלט שאפט ער דאס יאר, און ווייטער גיין פון יענער נקודה, אזוי ווי גלות פון ירושלים, איז א דערווייטערונג. ראש השנה איז כולל דאס גאנצע יאר אזוי ווי דער ראש איז כולל דעם גוף, און די פערציג טעג זענען די צייט וואס תפילה קען נאך שאפן דאס יאר."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-01-08-elul-5769-urgan",
+      "startSeg": 349,
+      "endSeg": 410,
+      "title": { "en": "From Rosh Chodesh Elul: climbing the mountain", "yi": "פון ראש חודש אלול: ארויפקלעטערן אויפן בארג" },
+      "summary": {
+        "en": "The Rav says that as Moshe Rabbeinu went up the mountain on Rosh Chodesh Elul, every Jew must start climbing the mountain of Hashem in time, since the place is in ruins but time is not. Tzaddikim reach the top in thirty days, others in forty, and 'who shall ascend the mountain of Hashem' is answered by 'the generation of those who seek Him'.",
+        "yi": "דער משגיח זאגט אז אזוי ווי משה רבינו איז ארויפגעגאנגען אויפן בארג ראש חודש אלול, דארף יעדער איד אנהייבן קלעטערן אויפן הר ה' אין זמן, ווייל דער מקום איז חרוב אבער דער זמן נישט. צדיקים קומען ארויף אין דרייסיג טעג, אנדערע אין פערציג, און אויף \"מי יעלה בהר ה'\" איז דער ענטפער \"זה דור דורשיו\"."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-01-08-elul-5769-urgan",
+      "startSeg": 411,
+      "endSeg": 490,
+      "title": { "en": "Adam HaRishon and the seed that holds the tree", "yi": "אדם הראשון און דער קערנדל וואס איז כולל דעם בוים" },
+      "summary": {
+        "en": "In the soul, the Rav says, Adam HaRishon includes all souls and is the even shesiyah of the soul, created on Rosh Hashanah. With the image of an apple seed that holds a whole tree, he explains 'the little holding the much' and why at the Mikdash, the meeting point of Creator and creation, the rules of time and space did not apply.",
+        "yi": "אין נפש, זאגט דער משגיח, איז אדם הראשון כולל אלע נשמות און איז די אבן שתיה פון נפש, באשאפן ראש השנה. מיטן משל פון א קערנדל פון אן עפל וואס איז כולל א גאנצן בוים, ערקלערט ער \"מועט המחזיק את המרובה\", און פארוואס ביים מקום המקדש, דער נקודה פון בורא מיט נברא, האבן די כללים פון זמן און מקום נישט געהערשט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-01-08-elul-5769-urgan",
+      "startSeg": 491,
+      "endSeg": 546,
+      "title": { "en": "The Avos as the mountains; Torah as the blueprint", "yi": "די אבות ווי די הרים; די תורה ווי דער פלאן" },
+      "summary": {
+        "en": "The Rav explains that the Avos are the 'mountains', the root of Klal Yisrael that includes the whole people, and therefore they were born in Tishrei, a time that includes all time. He then brings that Hashem looked into the Torah and created the world, like an architect with a blueprint, so everything in world, year and soul is found in the Torah.",
+        "yi": "דער משגיח ערקלערט אז די אבות זענען די \"הרים\", דער שורש פון כלל ישראל וואס איז כולל דאס גאנצע פאלק, און דערפאר זענען זיי געבוירן געווארן אין תשרי, א זמן וואס איז כולל דעם גאנצן זמן. דערנאך ברענגט ער אז דער אייבערשטער האט אריינגעקוקט אין דער תורה און באשאפן די וועלט, אזוי ווי אן ארכיטעקט מיט א פלאן, ממילא געפינט זיך אלעס פון עולם שנה נפש אין דער תורה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-01-08-elul-5769-urgan",
+      "startSeg": 547,
+      "endSeg": 658,
+      "title": { "en": "The middle of Sefer Devarim and the Sanhedrin", "yi": "דער מיטן פון ספר דברים און די סנהדרין" },
+      "summary": {
+        "en": "The Rav explains that Sefer Devarim, a repetition of the whole Torah, also contains the whole world, so its middle should correspond to the root place. After the dispute whether the world was created in Tishrei or Nissan and the two ways to find the Torah's middle, he says the middle of Devarim is the zaken mamre parsha: the Sanhedrin, root of the Torah, sits in the root of the world, and 'the place causes'.",
+        "yi": "דער משגיח ערקלערט אז ספר דברים, וואס איז אן איבערחזרונג פון דער גאנצער תורה, איז אויך כולל די גאנצע וועלט, ממילא דארף זיין מיטן צופאסן צום מקום פונעם שורש. נאכן מחלוקת צי די וועלט איז באשאפן געווארן אין תשרי אדער אין ניסן, און די צוויי וועגן צו געפינען דעם מיטן פון דער תורה, זאגט ער אז דער מיטן פון דברים איז די פרשה פון זקן ממרא: די סנהדרין, דער שורש פון דער תורה, זיצט אינעם שורש העולם, און \"המקום גורם\"."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-01-08-elul-5769-urgan",
+      "startSeg": 659,
+      "endSeg": 744,
+      "title": { "en": "A hidden place, a hidden day: Elul's search", "yi": "א באהאלטענער מקום, א באהאלטענער טאג: דאס זוכן פון אלול" },
+      "summary": {
+        "en": "Citing the Masorah that 'min hamakom hahu' is the middle verse of Devarim, the Rav explains that the Mikdash is not a place of nature and is hidden, so it must be sought. Rosh Hashanah is also hidden ('bakeseh') and cannot be entered suddenly; Elul is the search, a time of not sleeping, as reflected in the custom of rising early for Selichos, and one must come clean of hands and pure of heart.",
+        "yi": "דער משגיח ברענגט פון דער מסורה אז \"מן המקום ההוא\" איז דער מיטעלסטער פסוק פון דברים, און ערקלערט אז דער מקום המקדש איז נישט קיין מקום פון טבע און איז באהאלטן, ממילא דארף מען אים זוכן. ראש השנה איז אויך באהאלטן, \"בכסה\", און מ'קען נישט אריינפאלן דערין; אלול איז דאס זוכן, א צייט פון נישט שלאפן, אזוי ווי דער מנהג פון אויפשטיין פאר סליחות, און מ'דארף קומען מיט נקי כפים ובר לבב."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-01-08-elul-5769-urgan",
+      "startSeg": 745,
+      "endSeg": 830,
+      "title": { "en": "Dovid and Shmuel searching and erring", "yi": "דוד און שמואל זוכן און טועה זיין" },
+      "summary": {
+        "en": "The Rav brings that Adam HaRishon's soul came into Dovid HaMelech, who is the Rosh Hashanah of the soul. Dovid erred in thinking the Mikdash belonged on high Eitam until the Torah showed Har HaMoriah, and Shmuel HaNavi erred among Yishai's sons until the hidden Dovid was chosen; one must search and wander until finding the truth. The king, like Rosh Hashanah, is the source of blessing for the whole year.",
+        "yi": "דער משגיח ברענגט אז די נשמה פון אדם הראשון איז געקומען אין דוד המלך, וואס איז דער ראש השנה פון נפש. דוד האט זיך טועה געווען אז דער מקום המקדש איז אויפן הויכן עיטם ביז די תורה האט געוויזן הר המוריה, און שמואל הנביא האט זיך טועה געווען ביי די קינדער פון ישי ביז דער באהאלטענער דוד איז אויסגעקליבן געווארן; מ'דארף זוכן און בלאנדזשען ביז מ'געפינט דעם אמת. דער מלך, אזוי ווי ראש השנה, איז דער משפיע פארן גאנצן יאר."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-01-08-elul-5769-urgan",
+      "startSeg": 831,
+      "endSeg": 916,
+      "title": { "en": "Doeg's envy and finding the King", "yi": "דואג'ס קנאה און געפינען דעם מלך" },
+      "summary": {
+        "en": "The Rav asks why Doeg envied Dovid for finding the place of the Mikdash, since anyone can be mechadesh in Torah. He answers that each person's chiddush follows his root, and Dovid, whose root is the Mikdash, found it, which showed that he and not Shaul was the king. The place of the Mikdash is where Hashem's kingship is revealed, and so Rosh Hashanah is the day of kingship and the Yamim Nora'im are days of 'how awesome is this place'.",
+        "yi": "דער משגיח פרעגט פארוואס דואג האט מקנא געווען דוד וואס ער האט געפונען דעם מקום המקדש, אז יעדער איינער קען מחדש זיין אין דער תורה. ער ענטפערט אז יעדער איז מחדש לויט זיין שורש הנפש, און דוד, וואס זיין שורש איז דער בית המקדש, האט אים געפונען, און דאס האט געוויזן אז ער, און נישט שאול, איז דער מלך. דער מקום המקדש איז דער ארט וואו מלכות שמים ווערט נתגלה, און דערפאר איז ראש השנה דער טאג פון מלכות און די ימים נוראים זענען טעג פון \"מה נורא המקום הזה\"."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-elull-tishery-01-08-elul-5769-urgan",
+      "startSeg": 917,
+      "endSeg": 1009,
+      "title": { "en": "At the foot of the mountain: stay awake", "yi": "ביים פוס פונעם בארג: בלייבן וואך" },
+      "summary": {
+        "en": "The Rav says that standing at Rosh Chodesh Elul one is at the foot of the mountain and must ask both to reach Rosh Hashanah and to stay there all year. The Mikdash is a place of wakefulness, as Yaakov said 'and I did not know', so one does not sleep on Rosh Hashanah; he brings the Rambam's call of the shofar to wake the sleepers, and closes with a brachah for a year of geulah.",
+        "yi": "דער משגיח זאגט אז ביי ראש חודש אלול שטייט מען ביים פוס פונעם בארג און מ'דארף בעטן צוויי זאכן: צוקומען צו ראש השנה און בלייבן דארט דאס גאנצע יאר. דער מקום המקדש איז א מקום פון וואכזיין, אזוי ווי יעקב האט געזאגט \"ואנכי לא ידעתי\", דערפאר שלאפט מען נישט ראש השנה; ער ברענגט דעם רמב\"ם אז דער שופר רופט \"עורו ישנים\", און ענדיגט מיט א ברכה אויף א שנת גאולה."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "כי אפילו מחא תבא למשפט", "work": "Devarim", "ref": "Devarim 17:8", "sefariaRef": "Deuteronomy 17:8", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [5, 620, 621, 622], "confidence": 0.8 } },
+    { "heardAs": "ויסעתא פי הדבר אשר ירחם אין המקום הרע", "work": "Devarim", "ref": "Devarim 17:10", "sefariaRef": "Deuteronomy 17:10", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [645, 667, 671], "confidence": 0.8 } },
+    { "heardAs": "נתתת הברכה על הגרוזים", "work": "Devarim", "ref": "Devarim 11:29-30", "sefariaRef": "Deuteronomy 11:29-30", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [40, 43, 48, 49, 50], "confidence": 0.8 } },
+    { "heardAs": "לשכנע צדרשה", "work": "Devarim", "ref": "Devarim 12:5", "sefariaRef": "Deuteronomy 12:5", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [61, 63, 400, 728, 729], "confidence": 0.85 } },
+    { "heardAs": "זכר השם לדוד ואת כל הנושא", "work": "Tehillim", "ref": "Tehillim 132:1-5", "sefariaRef": "Psalms 132:1-5", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [74, 75, 76, 78, 81], "confidence": 0.85 } },
+    { "heardAs": "דער רמב״ן זאגט לשכנע סדר של", "work": "Ramban", "ref": "Ramban on Devarim 12:5", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [83, 84, 87], "confidence": 0.65 } },
+    { "heardAs": "ציון ישעלה, דרך היינע פניהם", "work": "Yirmiyahu", "ref": "Yirmiyahu 50:5", "sefariaRef": "Jeremiah 50:5", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [88, 89], "confidence": 0.75 } },
+    { "heardAs": "אבנש ציון ... שם שם השתת העולם", "work": "Gemara Yoma", "ref": "Yoma 54b", "sefariaRef": "Yoma 54b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [91, 92, 94], "confidence": 0.8 } },
+    { "heardAs": "באת ישראל נברא תחילה", "work": "Gemara Ta'anis", "ref": "Ta'anis 10a", "sefariaRef": "Taanit 10a", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [102, 103], "confidence": 0.75 } },
+    { "heardAs": "וברך השם מיט ציון, אותה שמים וארץ", "work": "Tehillim", "ref": "Tehillim 134:3", "sefariaRef": "Psalms 134:3", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [125, 126], "confidence": 0.75 } },
+    { "heardAs": "ארץ ישראל גבוהים מכל הערצות", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "quoted", "evidence": { "segs": [130, 131, 133], "confidence": 0.8 } },
+    { "heardAs": "דהר בית ה' בראש ההורים", "work": "Yeshayahu", "ref": "Yeshayahu 2:2", "sefariaRef": "Isaiah 2:2", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [186, 502], "confidence": 0.85 } },
+    { "heardAs": "ואבי אתם על הר קדשי", "work": "Yeshayahu", "ref": "Yeshayahu 56:7", "sefariaRef": "Isaiah 56:7", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [164], "confidence": 0.7 } },
+    { "heardAs": "ספר יצירה ... עולם שונה מיט נפש", "work": "Sefer Yetzirah", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [192, 193, 202], "confidence": 0.85 } },
+    { "heardAs": "ווי דער משנה זאגט ... תפילת שוו", "work": "Gemara Berachos", "ref": "Berachos 60a", "sefariaRef": "Berakhot 60a", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [207, 317, 318], "confidence": 0.7 } },
+    { "heardAs": "אינעם רינויים פון דזשיקאווער", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [226, 227], "confidence": 0.75 } },
+    { "heardAs": "א פסוק אין יחזקאל, בראש השנה", "work": "Yechezkel", "ref": "Yechezkel 40:1", "sefariaRef": "Ezekiel 40:1", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [239, 240], "confidence": 0.8 } },
+    { "heardAs": "דשבי ה' בהמצא", "work": "Yeshayahu", "ref": "Yeshayahu 55:6", "sefariaRef": "Isaiah 55:6", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [251, 253], "confidence": 0.8 } },
+    { "heardAs": "אלא אתר הימים שבין ראש השנה ליום הכיפורים", "work": "Gemara Rosh Hashanah", "ref": "Rosh Hashanah 18a", "sefariaRef": "Rosh Hashanah 18a", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [252], "confidence": 0.8 } },
+    { "heardAs": "מפני חטאינו גלונו מייצענו", "work": "Yom Tov Musaf prayer", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "quoted", "evidence": { "segs": [266, 268, 269], "confidence": 0.75 } },
+    { "heardAs": "ווי שטעט אין זוה'ה קודש ... היום", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [291, 296, 298, 301], "confidence": 0.7 } },
+    { "heardAs": "צדיקים תיקף און נחתמים ונחתמים ליאלטע אין ספר החיים", "work": "Gemara Rosh Hashanah", "ref": "Rosh Hashanah 16b", "sefariaRef": "Rosh Hashanah 16b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [373, 374], "confidence": 0.75 } },
+    { "heardAs": "מי יאלא בהר השם ומי יקום במקום קדוש", "work": "Tehillim", "ref": "Tehillim 24:3", "sefariaRef": "Psalms 24:3", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [383, 393, 401, 727, 734], "confidence": 0.9 } },
+    { "heardAs": "זייער דור דורשב ... מבקשי פון נחת יעקב סאלא", "work": "Tehillim", "ref": "Tehillim 24:6", "sefariaRef": "Psalms 24:6", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [397, 398, 402], "confidence": 0.75 } },
+    { "heardAs": "ניקיחו פיי מבעלי וואב", "work": "Tehillim", "ref": "Tehillim 24:4", "sefariaRef": "Psalms 24:4", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [733, 736], "confidence": 0.7 } },
+    { "heardAs": "דער גמרא זאגט ארץ צבי", "work": "Gemara Gittin", "ref": "Gittin 57a", "sefariaRef": "Gittin 57a", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [459], "confidence": 0.65 } },
+    { "heardAs": "אלע עולי רגלים האבן געהאט א פלאץ ... דארט אין די אזורות זיימט דעם צפון", "work": "Pirkei Avos", "ref": "Avos 5:5", "sefariaRef": "Pirkei Avot 5:5", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [465, 466, 468], "confidence": 0.65 } },
+    { "heardAs": "מכה מאורע נענעמען א מידה", "work": "Gemara Yoma", "ref": "Yoma 21a", "sefariaRef": "Yoma 21a", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [471, 472], "confidence": 0.65 } },
+    { "heardAs": "עשה עיני על החורים", "work": "Tehillim", "ref": "Tehillim 121:1", "sefariaRef": "Psalms 121:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [506, 507], "confidence": 0.7 } },
+    { "heardAs": "בצור שכו' נולדו אבות", "work": "Gemara Rosh Hashanah", "ref": "Rosh Hashanah 11a", "sefariaRef": "Rosh Hashanah 11a", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [518], "confidence": 0.75 } },
+    { "heardAs": "אזוי ווי שטעט אין מדרש ... טרעביש האט אריינגעקוקט אין דער תורה", "work": "Bereishis Rabbah", "ref": "Bereishis Rabbah 1:1", "sefariaRef": "Bereshit Rabbah 1:1", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [520, 522, 524, 533], "confidence": 0.8 } },
+    { "heardAs": "אזוי ווי תוספות זאגט אין דער אנפאנג", "work": "Tosafos", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [551, 552], "confidence": 0.7 } },
+    { "heardAs": "אזוי ווייסט זיי פון די גמרא אז ארץ ישראל איז דער אמצער עולם", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [574, 575], "confidence": 0.75 } },
+    { "heardAs": "רבי יואל אלעזר אז בתשרי נברא העולם ... רבי ישעי'ס בניסן", "work": "Gemara Rosh Hashanah", "ref": "Rosh Hashanah 10b-11a", "sefariaRef": "Rosh Hashanah 10b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [594, 599, 602, 603], "confidence": 0.8 } },
+    { "heardAs": "שטעט דארט אין די נסורה ... דארט וועט מען זיין אין די מסורה", "work": "Masorah", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [661, 665, 672], "confidence": 0.7 } },
+    { "heardAs": "וואס די גמרא דרשט ... מכן שאמקום גורם", "work": "Gemara Sanhedrin", "ref": "Sanhedrin 14b", "sefariaRef": "Sanhedrin 14b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [644, 646, 668], "confidence": 0.75 } },
+    { "heardAs": "דעריבער שטעט אין השכן ערוך, אז פון התקומן חודש שבל", "work": "Shulchan Aruch", "ref": "Shulchan Aruch Orach Chaim 581:1", "sefariaRef": "Shulchan Arukh, Orach Chayim 581:1", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [715, 716, 717, 719], "confidence": 0.7 } },
+    { "heardAs": "אזוי ווי עס שטעט אין ספרים הקדושים, אז אדם ... אדם דוד משיח", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [745, 748, 749], "confidence": 0.75 } },
+    { "heardAs": "אה נגד השם ישיחי", "work": "Shmuel I", "ref": "Shmuel I 16:6", "sefariaRef": "I Samuel 16:6", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [779, 780], "confidence": 0.7 } },
+    { "heardAs": "דיין פיינטקייט האט געמיינט אז עס איז א עתם ... נאר דער הרי מריא", "work": "Gemara Zevachim", "ref": "Zevachim 54b", "sefariaRef": "Zevachim 54b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [760, 763, 764, 831], "confidence": 0.65 } },
+    { "heardAs": "כקונה את בעסך החלסנו", "work": "Tehillim", "ref": "Tehillim 69:10", "sefariaRef": "Psalms 69:10", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [845, 846, 848], "confidence": 0.75 } },
+    { "heardAs": "סיום תת מלכה מלך", "work": "Devarim", "ref": "Devarim 17:15", "sefariaRef": "Deuteronomy 17:15", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [873, 876, 895], "confidence": 0.8 } },
+    { "heardAs": "מנורה המקום הזה", "work": "Bereishis", "ref": "Bereishis 28:17", "sefariaRef": "Genesis 28:17", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [887, 889, 890], "confidence": 0.85 } },
+    { "heardAs": "ויאנוכע לא ידעתי", "work": "Bereishis", "ref": "Bereishis 28:16", "sefariaRef": "Genesis 28:16", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [948, 950], "confidence": 0.8 } },
+    { "heardAs": "אזוי ווי די פסקים ברענגען פון ירושלמי", "work": "Talmud Yerushalmi", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [943, 944, 945], "confidence": 0.75 } },
+    { "heardAs": "ארוי שינים משינתכם ... ווי דער רמב״ם ברענגט", "work": "Mishneh Torah", "ref": "Rambam, Hilchos Teshuvah 3:4", "sefariaRef": "Mishneh Torah, Repentance 3:4", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [979, 980], "confidence": 0.85 } },
+    { "heardAs": "ויצא חיטם בגזר אישי", "work": "Yeshayahu", "ref": "Yeshayahu 11:1", "sefariaRef": "Isaiah 11:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1001, 1003], "confidence": 0.75 } }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The place of the Mikdash is not stated in the Torah because it is not a place of nature: as the root point of creation it is hidden and can only be reached by seeking it.",
+        "yi": "דער מקום המקדש שטייט נישט אין דער תורה ווייל ער איז נישט קיין מקום פון טבע: אלס די נקודה פונעם שורש פון דער בריאה איז ער באהאלטן, און מ'קומט צו אים נאר דורך זוכן."
+      },
+      "evidence": { "segs": [676, 677, 679, 681, 683], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Yerushalayim is the highest place not in elevation but because on a globe the 'top' is the point where its formation began.",
+        "yi": "ירושלים איז גבוה מכל המקומות נישט מיט הייך, נאר ווייל ביי א קיילעכדיגע וועלט איז דער \"שפיץ\" די נקודה וואו איר פארמירונג האט זיך אנגעהויבן."
+      },
+      "evidence": { "segs": [134, 139, 142, 146, 158], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The forty days from Rosh Chodesh Elul to Yom Kippur parallel the forty days in which a child is formed, so the year's formation is given into a person's hands through tefillah during them.",
+        "yi": "די פערציג טעג פון ראש חודש אלול ביז יום כיפור זענען אנטקעגן די פערציג טעג פון יצירת הולד, און דערפאר איז די שאפונג פונעם יאר איבערגעגעבן אין די הענט פון א מענטש דורך תפילה."
+      },
+      "evidence": { "segs": [215, 220, 321, 324, 325], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The middle verse of Sefer Devarim, about the Sanhedrin's ruling 'from that place', corresponds to the middle of the world, because the root of the Torah must sit in the root of creation.",
+        "yi": "דער מיטעלסטער פסוק פון ספר דברים, וועגן דעם פסק פון סנהדרין \"מן המקום ההוא\", איז אנטקעגן דעם מיטן פון דער וועלט, ווייל דער שורש פון דער תורה דארף זיצן אינעם שורש פון דער בריאה."
+      },
+      "evidence": { "segs": [640, 641, 667, 672, 675], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Doeg's envy was not over a mere chiddush: by finding the place of the Mikdash, which is his own root, Dovid showed that he was the true king and not Shaul.",
+        "yi": "דואג'ס קנאה איז נישט געווען אויף א געווענליכן חידוש: מיטן געפינען דעם מקום המקדש, וואס איז זיין אייגענער שורש, האט דוד געוויזן אז ער איז דער אמת'ער מלך און נישט שאול."
+      },
+      "evidence": { "segs": [852, 855, 857, 860, 862], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Yamim Nora'im are named for the Beis HaMikdash, 'how awesome is this place', because they are the Mikdash in time.",
+        "yi": "די ימים נוראים הייסן אזוי נאך דעם בית המקדש, \"מה נורא המקום הזה\", ווייל זיי זענען דער בית המקדש אין זמן."
+      },
+      "evidence": { "segs": [886, 888, 889], "confidence": 0.8 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "Dovid and Shmuel search for the Mikdash", "yi": "דוד און שמואל זוכן דעם מקום המקדש" },
+      "retelling": {
+        "en": "The Rav tells that Dovid HaMelech, together with Shmuel HaNavi, searched for the place of the Beis HaMikdash. They thought it belonged at Eitam, a very high place, until they found through the Torah that it was Har HaMoriah, a little lower than Eitam. Dovid wandered and erred until he found the place.",
+        "yi": "דער משגיח דערציילט אז דוד המלך, צוזאמען מיט שמואל הנביא, האט געזוכט דעם מקום פונעם בית המקדש. זיי האבן געמיינט אז עס געהערט אויף עיטם, א גאר הויכן ארט, ביז זיי האבן געפונען דורך דער תורה אז עס איז הר המוריה, אביסל נידריגער ווי עיטם. דוד האט געבלאנדזשעט און זיך טועה געווען ביז ער האט געפונען דעם מקום."
+      },
+      "people": ["Dovid HaMelech", "Shmuel HaNavi"],
+      "evidence": { "segs": [756, 760, 762, 764, 765, 770], "confidence": 0.7 }
+    },
+    {
+      "title": { "en": "Shmuel chooses among Yishai's sons", "yi": "שמואל קלייבט אויס צווישן די קינדער פון ישי" },
+      "retelling": {
+        "en": "When Hashem sent Shmuel HaNavi to anoint a king from Yishai's sons, he first took the eldest, a tall and handsome son, and thought he was the anointed one, and Hashem told him he was mistaken. He went on to the second, the third, up to the sixth son and kept erring, until the one nobody expected, the hidden Dovid who was out in the field with the sheep, was the one Hashem chose.",
+        "yi": "ווען דער אייבערשטער האט געשיקט שמואל הנביא צו זאלבן א מלך פון די קינדער פון ישי, האט ער צום ערשט גענומען דעם עלטסטן, א שיינעם הויכן זון, און געמיינט אז ער איז דער משיח ה', און דער אייבערשטער האט אים געזאגט אז ער איז זיך טועה. ער איז געגאנגען צום צווייטן, צום דריטן, ביזן זעקסטן זון און זיך אלץ טועה געווען, ביז דער וועמען מ'האט זיך נישט געריכט, דער באהאלטענער דוד וואס איז געווען אין פעלד מיט די שאף, איז געווען דער וואס דער אייבערשטער האט אויסגעקליבן."
+      },
+      "people": ["Shmuel HaNavi", "Yishai", "Dovid HaMelech"],
+      "evidence": { "segs": [776, 779, 783, 786, 788, 791], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why does the Torah, which describes the location of Gerizim and Eival so precisely, not say where the Beis HaMikdash is?",
+        "yi": "פארוואס זאגט די תורה, וואס באשרייבט אזוי גענוי וואו הר גריזים און הר עיבל זענען, נישט וואו דער בית המקדש איז?"
+      },
+      "answer": {
+        "en": "Because the place of the Mikdash is not a place of nature; it is hidden and requires seeking, 'l'shichno sidreshu'.",
+        "yi": "ווייל דער מקום המקדש איז נישט קיין מקום פון טבע; ער איז באהאלטן און פאדערט דרישה, \"לשכנו תדרשו\"."
+      },
+      "questionSegs": [43, 57, 58, 65],
+      "answerSegs": [677, 679, 681, 684],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "How can Yerushalayim be higher than all places when there are mountains much higher than it?",
+        "yi": "ווי אזוי קען ירושלים זיין גבוה מכל המקומות, ווען עס זענען פאראן בערג וואס זענען אסאך העכער?"
+      },
+      "answer": {
+        "en": "The world is a globe, and on a globe the 'top' is the point from which it was formed; that point is the place of the Mikdash.",
+        "yi": "די וועלט איז קיילעכדיג, און ביי א קיילעכדיגע זאך איז דער \"שפיץ\" די נקודה פון וואו זי איז פארמירט געווארן; די נקודה איז דער מקום המקדש."
+      },
+      "questionSegs": [133, 134, 136],
+      "answerSegs": [139, 146, 148, 155, 158],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why did Doeg envy Dovid for finding the place of the Mikdash, when anyone, even a small person, can be mechadesh in Torah?",
+        "yi": "פארוואס האט דואג מקנא געווען דוד וואס ער האט געפונען דעם מקום המקדש, ווען יעדער איינער, אפילו א קליינער מענטש, קען מחדש זיין א חידוש אין דער תורה?"
+      },
+      "answer": {
+        "en": "Each person is mechadesh according to the root of his soul; Dovid's root is the Mikdash, so finding it showed that he, not Shaul, was the king.",
+        "yi": "יעדער איינער איז מחדש לויט זיין שורש הנפש; דוד'ס שורש איז דער בית המקדש, און דאס וואס ער האט אים געפונען האט געוויזן אז ער, און נישט שאול, איז דער מלך."
+      },
+      "questionSegs": [837, 839, 841, 844],
+      "answerSegs": [851, 852, 855, 857, 860],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says that from Rosh Chodesh Elul every Jew must begin climbing the mountain of Hashem, searching with seriousness for the King and preparing for the day of kingship.",
+        "yi": "דער משגיח זאגט אז פון ראש חודש אלול דארף יעדער איד אנהייבן ארויפקלעטערן אויפן הר ה', זוכן מיט ערנסטקייט דעם מלך און זיך צוגרייטן צום טאג פון מלכות."
+      },
+      "evidence": { "segs": [358, 359, 904, 905, 906, 908], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "According to the Rav, Elul is a time of not sleeping, of searching, reflected in rising early for Selichos.",
+        "yi": "לויט דעם משגיח איז אלול א צייט פון נישט שלאפן, פון זוכן, אזוי ווי מ'שטייט אויף פרי צו סליחות."
+      },
+      "evidence": { "segs": [711, 714, 718, 723, 724], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one cannot enter Rosh Hashanah unprepared; one must come purified through the avodah and searching of Elul.",
+        "yi": "דער משגיח זאגט אז מ'קען נישט אריינגיין אין ראש השנה אן הכנה; מ'דארף קומען גערייניגט דורך דער עבודה און דעם זוכן פון אלול."
+      },
+      "evidence": { "segs": [688, 689, 738, 741, 742], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "He says one must ask for two things: to reach Rosh Hashanah and to remain there the whole year, not to become serious after Rosh Hashanah and forget once Tishrei passes.",
+        "yi": "ער זאגט אז מ'דארף בעטן צוויי זאכן: צוקומען צו ראש השנה און בלייבן דארט דאס גאנצע יאר, נישט ערנסט ווערן נאך ראש השנה און פארגעסן ווען תשרי גייט אוועק."
+      },
+      "evidence": { "segs": [926, 927, 928, 931, 932, 934], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The Rav warns that a person can tear the pages of his calendar to Rosh Hashanah while remaining at the bottom, and says Elul must be used to climb and stay awake.",
+        "yi": "דער משגיח ווארנט אז א מענטש קען אפרייסן די בלעטער פון זיין קאלענדאר ביז ראש השנה און נאך אלץ בלייבן אונטן, און זאגט אז מ'דארף אויסנוצן דעם אלול ארויפצוקלעטערן און זיין וואך."
+      },
+      "evidence": { "segs": [962, 968, 970, 975, 977], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "Elul and Tishrei",
+    "even shesiyah",
+    "place of the Beis HaMikdash",
+    "world, year and soul",
+    "Rosh Hashanah as the head of the year",
+    "seeking Hashem in Elul",
+    "zaken mamre and the Sanhedrin",
+    "Dovid HaMelech and the Mikdash",
+    "kingship on Rosh Hashanah",
+    "Sefer Devarim"
+  ],
+  "concepts": [
+    { "he": "אבן שתיה", "heardAs": ["אבנש ציון", "אבנש סייער", "עבנש סייע"] },
+    { "he": "לשכנו תדרשו", "heardAs": ["לשכנע צדרשה", "לשכנא סדר של", "לשכנע סדרישא", "ושכלי סדרשה"] },
+    { "he": "הר המוריה", "heardAs": ["מהר המעריאה", "הרי מריא"] },
+    { "he": "זקן ממרא", "heardAs": ["זקן ממראי", "זאגן ממרא"] },
+    { "he": "לשכת הגזית", "heardAs": ["לושכת הגזות", "לישכית הגזות", "לושכות הגוזות"] },
+    { "he": "עולם שנה נפש", "heardAs": ["עולם שונה מיט נפש"] },
+    { "he": "הריון", "heardAs": ["הרעיון", "הוריון", "היראעין"] },
+    { "he": "מועט המחזיק את המרובה", "heardAs": ["מהד המערזקת המרבה", "מעט המערזקת המערבה", "מעט איז מחזקת אמרבה"] },
+    { "he": "דרשו ה' בהמצאו", "heardAs": ["דשבי ה' בהמצא", "דשאוות ה' בהמצא"] },
+    { "he": "תפילת שוא", "heardAs": ["תפילת שוו", "תפילה שויף"] },
+    { "he": "אלול", "heardAs": ["עולה", "שולל", "שלא", "אלא", "הלב", "שבל"] },
+    { "he": "יצירת הולד", "heardAs": ["יצירת סבלד", "יצירה פון דעם וולד"] },
+    { "he": "מה נורא המקום הזה", "heardAs": ["מנורה המקום הזה"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבינו של עולם", "רבי'שטער", "טרעבאש", "רביה׳ן שלבים"] },
+    { "he": "עיטם", "heardAs": ["עתם", "יתם"] },
+    { "he": "שום תשים עליך מלך", "heardAs": ["סיום תת מלכה מלך"] }
+  ],
+  "people": [
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו"] },
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינו"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יענקי מבינא"] },
+    { "name": "Dovid HaMelech", "heardAs": ["דוד המלך", "דוד המלכה"] },
+    { "name": "Shmuel HaNavi", "heardAs": ["שמואל הנביא"] },
+    { "name": "Yishai", "heardAs": ["ישי"] },
+    { "name": "Shaul", "heardAs": ["שאול"] },
+    { "name": "Doeg HaAdomi", "heardAs": ["דייגע אדומי", "דאוג"] },
+    { "name": "Adam HaRishon", "heardAs": ["אדם הראשון"] },
+    { "name": "Rabbi Eliezer", "heardAs": ["רבי יואל אלעזר"] },
+    { "name": "Rabbi Yehoshua", "heardAs": ["רבי ישעי'ס"] },
+    { "name": "the Ramban", "heardAs": ["רמב״ן"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "the Zhikover Rebbe", "heardAs": ["דזשיקאווער"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair for the Rav's own sentences but pesukim and Chazal are heavily garbled; Elul appears in many distorted forms. The source in the Ba'al Shem Tov reference (seg 542), the 'Rambam' mention at seg 584, the sentence at segs 120-121 and the gematria at seg 731 could not be recovered and are left out. The Zhikover sefer for the Rosh Hashanah = Beis HaMikdash gematria could not be identified by name. Segs 913-916 (about a single person's teshuvah bringing the geulah) are too garbled to use."
+}

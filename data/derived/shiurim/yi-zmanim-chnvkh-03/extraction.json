@@ -1,0 +1,579 @@
+{
+  "shiurId": "yi-zmanim-chnvkh-03",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that Chanukah comes from the 'eighth', the world above nature and the light of Moshiach, so its oil can reach and free even the Jews whom Shabbos cannot lift.",
+      "yi": "דער משגיח ערקלערט אז חנוכה קומט פונעם \"שמיני\", דער עולם וואס איז העכער פון טבע און דער אור פון משיח, דערפאר קען דער שמן פון חנוכה דערגרייכן און באפרייען אפילו די אידן וואס שבת קען נישט אויפהייבן."
+    },
+    "abstract": {
+      "en": "The Rav opens with a teaching of early Chassidic sefarim: oils that may not be lit on Shabbos may be lit on Chanukah, and so too there are Jews whom Shabbos cannot kindle but Chanukah can. Shabbos demands that a person rise to it, while on Chanukah the Shechinah comes down to the lowly, like a great man visiting the sick. Through the Maharal he explains that Chanukah comes from the Kodesh HaKodashim and from the number eight, which stands above the seven of nature, like milah, the Torah and the days of Moshiach. He contrasts shemitah, which frees an ordinary slave, with yovel, which frees even the slave who chose to stay, and wine of Shabbos kiddush with the oil of Chanukah. He then shows how parshas Vayeshev, with Yehuda and Yosef, carries the light of Moshiach, links Yevamos, Eruvin and Nidah to Moshiach, and closes by urging every Jew to take on Torah and teshuvah this Chanukah.",
+      "yi": "דער משגיח עפנט מיט א ווארט פון די ערשטע חסידישע ספרים: פסולי שמנים וואס מ'טאר נישט אנצינדן שבת מעג מען אנצינדן חנוכה, און אזוי אויך זענען דא אידן וואס שבת קען זיי נישט אנצינדן און חנוכה יא. צו שבת דארף מען זיך אויפהייבן, אבער חנוכה קומט די שכינה אראפ צו די נידריגע, אזוי ווי א גרויסער קומט מבקר חולה זיין א קליינעם. לויט דעם מהר\"ל ערקלערט ער אז חנוכה קומט פונעם קודש הקדשים און פונעם צאל אכט, וואס איז העכער פון די זיבן פון טבע, אזוי ווי מילה, תורה און ימות המשיח. ער שטעלט אנטקעגן שמיטה, וואס באפרייט א געווענליכן עבד, מיט יובל, וואס באפרייט אפילו א נרצע, און דעם יין פון קידוש מיטן שמן פון חנוכה. דערנאך ווייזט ער ווי פרשת וישב מיט יהודה און יוסף טראגט דעם אור פון משיח, פארבינדט יבמות, עירובין און נדה מיט משיח, און ענדיגט מיט א רוף אז יעדער איד זאל חנוכה אויף זיך נעמען תורה און תשובה."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Oils unfit for Shabbos may be lit on Chanukah; likewise Jews whom Shabbos cannot kindle can be kindled by Chanukah.",
+          "yi": "שמנים וואס זענען פסול פאר שבת מעג מען אנצינדן חנוכה; אזוי אויך קען חנוכה אנצינדן אידן וואס שבת קען זיי נישט אנצינדן."
+        },
+        "evidence": { "segs": [11, 13, 21, 22, 74], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Shabbos requires a Jew to raise himself to it, while on Chanukah the Shechinah comes down below ten tefachim to the Jew in exile.",
+          "yi": "צו שבת דארף זיך א איד אויפהייבן, אבער חנוכה קומט די שכינה אראפ למטה מעשרה צום איד אין גלות."
+        },
+        "evidence": { "segs": [50, 51, 53, 69], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Seven is the order of nature and eight is above it; Chanukah, from the Kodesh HaKodashim, belongs to the eighth.",
+          "yi": "זיבן איז די הנהגה פון טבע און אכט איז העכער פון טבע; חנוכה, וואס קומט פונעם קודש הקדשים, געהערט צום שמיני."
+        },
+        "evidence": { "segs": [87, 141, 144, 145], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Shemitah frees an ordinary slave, but only yovel, the 'eighth', frees the slave who chose to remain; Chanukah is of yovel.",
+          "yi": "שמיטה באפרייט א געווענליכן עבד, אבער נאר יובל, דער \"שמיני\", באפרייט דעם עבד וואס האט געוואלט בלייבן; חנוכה איז פון יובל."
+        },
+        "evidence": { "segs": [357, 358, 381, 391], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Lighting the Chanukah candles reveals the light of Moshiach, as the Bnei Yissaschar writes.",
+          "yi": "ביים אנצינדן די חנוכה ליכט ווערט נתגלה דער אור פון משיח, אזוי ווי דער בני יששכר שרייבט."
+        },
+        "evidence": { "segs": [295, 303, 439, 440], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Parshas Vayeshev is a Chanukah and Moshiach parsha: from Yehuda's descent comes Moshiach ben Dovid, and from Yosef's righteousness Moshiach ben Yosef.",
+          "yi": "פרשת וישב איז א חנוכה סדרה און א משיח סדרה: פון יהודה'ס ירידה קומט משיח בן דוד, און פון יוסף'ס צדקות משיח בן יוסף."
+        },
+        "evidence": { "segs": [486, 487, 621, 623], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The Rav says a Jew's whole life must be devoted to bringing Moshiach.",
+          "yi": "דער משגיח זאגט אז דאס גאנצע לעבן פון א איד דארף זיין געווידמעט צו ברענגען משיח."
+        },
+        "evidence": { "segs": [841, 842], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-zemanim-kislev-and-choref-01-03-chanukah",
+      "startSeg": 0,
+      "endSeg": 76,
+      "title": {
+        "en": "Oils unfit for Shabbos, kindled on Chanukah",
+        "yi": "שמנים וואס זענען פסול פאר שבת, ברענען חנוכה"
+      },
+      "summary": {
+        "en": "The Rav brings the early Chassidic sefarim: as oils unfit for Shabbos may be lit on Chanukah, Chanukah can kindle Jews whom Shabbos cannot. Shabbos demands rising up, while on Chanukah the Shechinah comes down, like a great man visiting the sick; he asks what in Chanukah makes this possible.",
+        "yi": "דער משגיח ברענגט פון די ערשטע חסידישע ספרים: אזוי ווי שמנים וואס זענען פסול פאר שבת מעג מען אנצינדן חנוכה, קען חנוכה אנצינדן אידן וואס שבת קען נישט. צו שבת דארף מען זיך אויפהייבן, אבער חנוכה קומט די שכינה אראפ, אזוי ווי א גרויסער וואס קומט מבקר חולה זיין; ער פרעגט וואס איז דא אין חנוכה וואס מאכט עס מעגליך."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-kislev-and-choref-01-03-chanukah",
+      "startSeg": 77,
+      "endSeg": 182,
+      "title": {
+        "en": "The Maharal: Chanukah from the Kodesh HaKodashim",
+        "yi": "דער מהר\"ל: חנוכה פונעם קודש הקדשים"
+      },
+      "summary": {
+        "en": "The Rav brings the Maharal: the miracle lasted eight days because it came from the Kodesh HaKodashim, where the Greeks had no rule. Seven is nature and eight is above it, as seen in milah on the eighth day, the Torah given after seven weeks, and the eightfold psalm of Torah.",
+        "yi": "דער משגיח ברענגט דעם מהר\"ל: דער נס האט געדויערט אכט טעג ווייל ער איז געקומען פונעם קודש הקדשים, וואו די יוונים האבן נישט געהערשט. זיבן איז טבע און אכט איז העכער פון טבע, אזוי ווי מ'זעט ביי מילה אויפן אכטן טאג, ביי דער תורה וואס איז געגעבן געווארן נאך זיבן וואכן, און ביים קאפיטל תהלים פון תורה מיט אכט פסוקים אויף יעדן אות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-kislev-and-choref-01-03-chanukah",
+      "startSeg": 183,
+      "endSeg": 305,
+      "title": {
+        "en": "The eighth: Moshiach, motzaei shevi'is and yovel",
+        "yi": "דער שמיני: משיח, מוצאי שביעית און יובל"
+      },
+      "summary": {
+        "en": "The Rav shows that the eighth belongs to Moshiach: the harp of eight strings, Moshiach coming after the shemitah year, the melaveh malkah of Dovid HaMelech and the songs of Eliyahu on motzaei Shabbos. He tells how the Bnei Yissaschar learned the source of his soul from the Chozeh of Lublin, and brings his teaching that the Chanukah lights reveal the light of Moshiach.",
+        "yi": "דער משגיח ווייזט אז דער שמיני געהערט צו משיח: דער כינור פון אכט סטרונעס, משיח וואס קומט מוצאי שביעית, די מלוה מלכה פון דוד המלך און די זמירות פון אליהו הנביא מוצאי שבת. ער דערציילט ווי דער בני יששכר האט געהערט פונעם חוזה פון לובלין פון וואו זיין נשמה שטאמט, און ברענגט זיין ווארט אז די חנוכה ליכט מאכן נתגלה דעם אור פון משיח."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-kislev-and-choref-01-03-chanukah",
+      "startSeg": 306,
+      "endSeg": 450,
+      "title": {
+        "en": "Shemitah and yovel; wine and oil",
+        "yi": "שמיטה און יובל; יין און שמן"
+      },
+      "summary": {
+        "en": "The Rav distinguishes the Shabbos of seven, shemitah, which frees an ordinary slave, from the great Shabbos of eight, yovel, which frees even the slave who stayed attached to his master. Shabbos is sanctified with wine, of the world of seven, while Chanukah is sanctified with oil, of the eighth; Chanukah is a cable of yovel let down into the weekday exile.",
+        "yi": "דער משגיח מאכט א חילוק צווישן דעם שבת פון זיבן, שמיטה, וואס באפרייט א געווענליכן עבד, און דעם גרויסן שבת פון אכט, יובל, וואס באפרייט אפילו דעם עבד וואס איז געבליבן צוגעבינדן צו זיין האר. שבת איז מען מקדש מיט יין, פונעם עולם פון זיבן, און חנוכה מיט שמן, פונעם שמיני; חנוכה איז א קאבל פון יובל וואס ווערט אראפגעלאזט אינעם וואכעדיגן גלות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-kislev-and-choref-01-03-chanukah",
+      "startSeg": 451,
+      "endSeg": 564,
+      "title": {
+        "en": "Oil rises; Vayeshev and the parsha of Yehuda",
+        "yi": "שמן הייבט זיך אויף; וישב און די פרשה פון יהודה"
+      },
+      "summary": {
+        "en": "The Rav explains that oil always rises to the top, like fire, because it belongs to a higher world, the eighth. Vayeshev, read on the Shabbos of Chanukah, is a Moshiach parsha with two descents; the first, Yehuda's, is a parsha of sin, yet from it come Peretz and Moshiach ben Dovid.",
+        "yi": "דער משגיח ערקלערט אז שמן הייבט זיך אלעמאל אויף אויבן, אזוי ווי פייער, ווייל ער געהערט צו א העכערער וועלט, צום שמיני. וישב, וואס מ'לייענט שבת חנוכה, איז א משיח סדרה מיט צוויי ירידות; די ערשטע, פון יהודה, איז א פרשה פון עבירות, און פון איר קומט פרץ און משיח בן דוד."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-kislev-and-choref-01-03-chanukah",
+      "startSeg": 565,
+      "endSeg": 637,
+      "title": {
+        "en": "Yosef's trials and Moshiach ben Yosef",
+        "yi": "יוסף'ס נסיונות און משיח בן יוסף"
+      },
+      "summary": {
+        "en": "The Rav describes Yosef, a seventeen-year-old alone in Egypt, standing a year of the hardest trials in kedushas habris until the image of his father saved him. The two parshiyos are opposites, yet both bring Moshiach, ben Dovid and ben Yosef, as the Midrash says that while all were busy, Hashem was creating the light of Moshiach.",
+        "yi": "דער משגיח שילדערט יוסף, א בחור פון זיבעצן יאר אליין אין מצרים, וואס האט א גאנץ יאר אויסגעהאלטן די שווערסטע נסיונות אין קדושת הברית ביז די דמות דיוקנו פון זיין טאטן האט אים געראטעוועט. די צוויי פרשיות זענען פארקערט איינע פון די אנדערע, און דאך ברענגען ביידע משיח, בן דוד און בן יוסף, אזוי ווי דער מדרש זאגט אז ווען אלע זענען געווען פארנומען איז דער אייבערשטער געווען עוסק אין בורא זיין דעם אור פון משיח."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-kislev-and-choref-01-03-chanukah",
+      "startSeg": 638,
+      "endSeg": 760,
+      "title": {
+        "en": "Eruvin, Nidah, Yevamos: the hardest masechtos",
+        "yi": "עירובין, נדה, יבמות: די שווערסטע מסכתות"
+      },
+      "summary": {
+        "en": "The Rav explains why Eruvin, Nidah and Yevamos are the hardest masechtos: all three deal with the coming of Moshiach. Yevamos is the tikkun of souls, and yibum is found only in the family of malchus Beis Dovid; Eruvin turns a public domain into a private one, as the world will become a reshus hayachid; Nidah corresponds to exile. The Chanukah light set at the door brings this light into the public domain.",
+        "yi": "דער משגיח ערקלערט פארוואס עירובין, נדה און יבמות זענען די שווערסטע מסכתות: אלע דריי זענען עוסק אין ביאת המשיח. יבמות איז תיקון הנפשות, און יבום געפינט מען נאר ביי דער משפחה פון מלכות בית דוד; עירובין מאכט פון א רשות הרבים א רשות היחיד, אזוי ווי די וועלט וועט ווערן א רשות היחיד; נדה איז קעגן גלות. דאס חנוכה ליכט ביי דער טיר ברענגט דעם אור אריין אין רשות הרבים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-kislev-and-choref-01-03-chanukah",
+      "startSeg": 761,
+      "endSeg": 835,
+      "title": {
+        "en": "Thirty-six lights; Tamar; a year of ches",
+        "yi": "זעקס און דרייסיג ליכט; תמר; א יאר פון ח'"
+      },
+      "summary": {
+        "en": "The Rav brings the Bnei Yissaschar that the thirty-six Chanukah lights correspond to the thirty-six masechtos, the last being Nidah. He ties Tamar, daughter of a kohen gadol, to the Kodesh HaKodashim, and says tzaddikim considered a year ending in ches especially auspicious for Moshiach. He rejects the idea that the founding of the state was a geulah, citing the Rambam.",
+        "yi": "דער משגיח ברענגט דעם בני יששכר אז די זעקס און דרייסיג חנוכה ליכט זענען קעגן די זעקס און דרייסיג מסכתות, און די לעצטע איז נדה. ער פארבינדט תמר, די טאכטער פון א כהן גדול, מיטן קודש הקדשים, און זאגט אז צדיקים האבן געהאלטן א יאר וואס ענדיגט זיך מיט א ח' פאר ספעציעל מסוגל צו משיח. ער ווארפט אפ דעם געדאנק אז די מדינה איז געווען א גאולה, און ברענגט דעם רמב\"ם."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-kislev-and-choref-01-03-chanukah",
+      "startSeg": 836,
+      "endSeg": 897,
+      "title": {
+        "en": "Taking on Torah and teshuvah this Chanukah",
+        "yi": "אויפנעמען תורה און תשובה דעם חנוכה"
+      },
+      "summary": {
+        "en": "The Rav says every Jew must have a share in bringing Moshiach, and that Chanukah is a final chance for those who have not completed their teshuvah since Tishrei. He calls on each Jew to take on, with joy and resolve, Torah, the thirty-six masechtos and teshuvah, as preparation for Shabbos Vayeshev and Chanukah.",
+        "yi": "דער משגיח זאגט אז יעדער איד דארף האבן א חלק אין ברענגען משיח, און אז חנוכה איז א לעצטע געלעגנהייט פאר די וואס האבן נאך נישט פארענדיגט זייער תשובה זינט תשרי. ער רופט יעדן איד אויפצונעמען מיט שמחה און מיט א החלטה תורה, די זעקס און דרייסיג מסכתות און תשובה, אלס הכנה צו שבת וישב און חנוכה."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "מהרעיניים / דער מוריניים גיט א טעם",
+      "work": "Me'or Einayim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [15, 49], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "סוכה: ליורם ליורת שכונה למטה מי השורה",
+      "work": "Gemara Sukkah",
+      "ref": "Sukkah 5a",
+      "sefariaRef": "Sukkah 5a",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [68], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "די פשארה ביי חסד יואל מיט ישעיה הנביא",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 10a",
+      "sefariaRef": "Berakhot 10a",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [71, 72], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "חידושי הגדות אויף מסכת שבת ... מהר'ל",
+      "work": "Maharal, Chiddushei Aggados",
+      "ref": "Chiddushei Aggados on Shabbos 21b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [78, 79, 81, 126], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "קאפיטל כ' יטס און תהלים",
+      "work": "Tehillim",
+      "ref": "Tehillim 119",
+      "sefariaRef": "Psalms 119",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [171, 172], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "די גמרא אין עיר אחים ... תקנא של שבע נינים",
+      "work": "Gemara Arachin",
+      "ref": "Arachin 13b",
+      "sefariaRef": "Arakhin 13b",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [185, 186, 188], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "משיח קומט מצוה שבועות, אזוי זאגט די גמרא אין חלק",
+      "work": "Gemara Sanhedrin",
+      "ref": "Sanhedrin 97a",
+      "sefariaRef": "Sanhedrin 97a",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [214, 217, 221], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער בני יששכר רב סדר אז פון מצונות חנוכה'ליך ווערט נתגלה אורא של מלאך המשיח",
+      "work": "Bnei Yissaschar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [295, 303, 440], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "וידן תהילים המלכות קיינים וגוי קדש",
+      "work": "Shemos",
+      "ref": "Shemos 19:6",
+      "sefariaRef": "Exodus 19:6",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [300], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "דער בעל הצרים זאגט",
+      "work": "Ba'al HaTurim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [301], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "ועובדים לעולם ... רופטו שוין לעולם",
+      "work": "Shemos",
+      "ref": "Shemos 21:6",
+      "sefariaRef": "Exodus 21:6",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [368, 370], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "יום השישי ויכולו השמים",
+      "work": "Bereishis",
+      "ref": "Bereishis 2:1-3",
+      "sefariaRef": "Genesis 2:1-3",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [407, 408, 409], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ויפה את ההוא וירד יהודה מיתך",
+      "work": "Bereishis",
+      "ref": "Bereishis 38:1",
+      "sefariaRef": "Genesis 38:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [492, 517], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "די יוסף הרעט מצרימה",
+      "work": "Bereishis",
+      "ref": "Bereishis 39:1",
+      "sefariaRef": "Genesis 39:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [495], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "שולחן נרח און אבן עזר ... אין אבנז אדאך",
+      "work": "Shulchan Aruch Even HaEzer",
+      "ref": "Shulchan Aruch Even HaEzer 23",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [526, 527, 531], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "שטעט אין מדרש ... די שבטים זענען געוועזן עסק",
+      "work": "Bereishis Rabbah",
+      "ref": "Bereishis Rabbah 85:1",
+      "sefariaRef": "Bereshit Rabbah 85:1",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [628, 631, 632, 633], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ח' חטא ירושלים, אלקינגען לנידע היתה",
+      "work": "Eichah",
+      "ref": "Eichah 1:8",
+      "sefariaRef": "Lamentations 1:8",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [746], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער בני יששכר ברענגט אז די לעמד וואבן ערש פון חנוכה ... קנגע דער לעמד וואבן מסכת",
+      "work": "Bnei Yissaschar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [762, 763, 765], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "מען קוקט אין רמב״ם, זעהט מען אז משיח איז דער וואס וועט צווינגען",
+      "work": "Rambam, Mishneh Torah",
+      "ref": "Hilchos Melachim 11:4",
+      "sefariaRef": "Mishneh Torah, Kings and Wars 11:4",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [818], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Just as oils that will not burn well enough for Shabbos may be lit on Chanukah, there are Jews whom Shabbos cannot kindle but Chanukah can, because on Chanukah the Shechinah comes down to them rather than asking them to rise.",
+        "yi": "אזוי ווי שמנים וואס ברענען נישט גוט גענוג פאר שבת מעג מען אנצינדן חנוכה, אזוי זענען דא אידן וואס שבת קען זיי נישט אנצינדן און חנוכה יא, ווייל חנוכה קומט די שכינה אראפ צו זיי אנשטאט צו פאדערן אז זיי זאלן זיך אויפהייבן."
+      },
+      "evidence": { "segs": [21, 22, 52, 53, 74], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The slave who chose to stay is freed only by yovel, the 'eighth'; so too Chanukah, which is of yovel, can free a Jew whom the 'seven' of Shabbos cannot.",
+        "yi": "דער עבד וואס האט געוואלט בלייבן ווערט באפרייט נאר דורך יובל, דעם \"שמיני\"; אזוי אויך קען חנוכה, וואס איז פון יובל, באפרייען א איד וואס דער \"זיבן\" פון שבת קען נישט."
+      },
+      "evidence": { "segs": [358, 381, 389, 390, 391], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Shabbos is sanctified with wine, of the world of seven, while Chanukah is sanctified with oil; shemen shares its root with shemoneh, eight.",
+        "yi": "שבת איז מען מקדש מיט יין, פונעם עולם פון זיבן, און חנוכה מיט שמן; שמן איז פון דעם זעלבן שורש ווי שמונה."
+      },
+      "evidence": { "segs": [399, 419, 420, 421, 423], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Oil rises above every other liquid, like fire that always rises, because it belongs to the higher world of the eighth and strives back to its source.",
+        "yi": "שמן הייבט זיך אויף איבער אלע אנדערע משקאות, אזוי ווי פייער וואס גייט אלעמאל ארויף, ווייל ער געהערט צום העכערן עולם פונעם שמיני און ציט זיך צוריק צו זיין שורש."
+      },
+      "evidence": { "segs": [463, 467, 475, 478, 480], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Yevamos, Eruvin and Nidah are the hardest masechtos because all three deal with the coming of Moshiach: the tikkun of souls, turning the world into a reshus hayachid, and ending the exile likened to nidah.",
+        "yi": "יבמות, עירובין און נדה זענען די שווערסטע מסכתות ווייל אלע דריי זענען עוסק אין ביאת המשיח: תיקון הנפשות, מאכן די וועלט פאר א רשות היחיד, און מבטל זיין דעם גלות וואס איז געגליכן צו נדה."
+      },
+      "evidence": { "segs": [645, 649, 674, 736, 744], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Chanukah light set at the door, in the public domain, brings the light of Moshiach into the reshus harabim and so makes it a reshus hayachid.",
+        "yi": "דאס חנוכה ליכט וואס מ'שטעלט ביי דער טיר, אין רשות הרבים, ברענגט אריין דעם אור פון משיח אין רשות הרבים און מאכט דערפון א רשות היחיד."
+      },
+      "evidence": { "segs": [758, 759, 760], "confidence": 0.7 }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "The Bnei Yissaschar asks the Chozeh of Lublin about his soul",
+        "yi": "דער בני יששכר פרעגט דעם חוזה פון לובלין וועגן זיין נשמה"
+      },
+      "retelling": {
+        "en": "The Bnei Yissaschar felt a great awakening when Chanukah came, and nearly a quarter of his sefer is about Chanukah. He thought his soul came from the Chashmona'im and went to ask his rebbe, the Chozeh of Lublin. The Chozeh told him no: his soul came from the Sanhedrin of the tribe of Yissaschar in the time of Chanukah, and for this reason he named his sefer Bnei Yissaschar.",
+        "yi": "דער בני יששכר האט געפילט א גרויסע התעוררות ווען חנוכה איז געקומען, און כמעט א פערטל פון זיין ספר איז וועגן חנוכה. ער האט געמיינט אז זיין נשמה קומט פון די חשמונאים, און איז געגאנגען פרעגן זיין רבי'ן, דעם חוזה פון לובלין. דער חוזה האט אים געזאגט ניין: זיין נשמה קומט פונעם סנהדרין פון שבט יששכר אין דער צייט פון חנוכה, און דערפאר האט ער אנגערופן זיין ספר בני יששכר."
+      },
+      "people": ["the Bnei Yissaschar", "the Chozeh of Lublin"],
+      "evidence": { "segs": [286, 288, 290, 291, 293, 294], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "What is it in Chanukah that can kindle what Shabbos cannot?",
+        "yi": "וואס איז דא אין חנוכה וואס קען אנצינדן וואס שבת קען נישט?"
+      },
+      "answer": {
+        "en": "Chanukah comes from the Kodesh HaKodashim and from the eighth, above nature, so its light reaches down even to those who cannot rise.",
+        "yi": "חנוכה קומט פונעם קודש הקדשים און פונעם שמיני, וואס איז העכער פון טבע, דערפאר דערגרייכט זיין ליכט אפילו די וואס קענען זיך נישט אויפהייבן."
+      },
+      "questionSegs": [76],
+      "answerSegs": [87, 126, 144],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why is Dovid HaMelech's meal on motzaei Shabbos and not on Shabbos itself, when he is greater than the Avos?",
+        "yi": "פארוואס איז די סעודה פון דוד המלך מוצאי שבת און נישט שבת אליין, ווען ער איז דאך גרעסער פון די אבות?"
+      },
+      "answer": {
+        "en": "When Moshiach comes, Sunday will no longer begin a new seven but will be the eighth day, a day that is wholly Shabbos.",
+        "yi": "ווען משיח וועט קומען וועט זונטאג נישט אנהייבן א נייע זיבן, נאר זיין דער אכטער טאג, א יום שכולו שבת."
+      },
+      "questionSegs": [235, 239, 240],
+      "answerSegs": [246, 247, 249],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "Why does oil always rise to the top?",
+        "yi": "פארוואס הייבט זיך שמן אלעמאל אויף אויבן?"
+      },
+      "answer": {
+        "en": "Because it belongs to the world of the eighth, above the seven, and everything strives to its root.",
+        "yi": "ווייל ער געהערט צום עולם פונעם שמיני, העכער פון זיבן, און יעדע זאך ציט זיך צו איר שורש."
+      },
+      "questionSegs": [464, 470],
+      "answerSegs": [466, 467, 472, 475],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why are Eruvin, Nidah and Yevamos the hardest masechtos?",
+        "yi": "פארוואס זענען עירובין, נדה און יבמות די שווערסטע מסכתות?"
+      },
+      "answer": {
+        "en": "Because more than all other masechtos they deal with the coming of Moshiach.",
+        "yi": "ווייל מער ווי אלע אנדערע מסכתות זענען זיי עוסק אין ביאת המשיח."
+      },
+      "questionSegs": [646],
+      "answerSegs": [648, 649],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Was the founding of the state a geulah?",
+        "yi": "איז די גרינדונג פון דער מדינה געווען א גאולה?"
+      },
+      "answer": {
+        "en": "No; the Rambam describes Moshiach as one who will compel Jews to keep the Torah, while the state has done the opposite.",
+        "yi": "ניין; דער רמב\"ם שרייבט אז משיח וועט צווינגען אידן צו האלטן די תורה, און די מדינה האט געטאן פונקט פארקערט."
+      },
+      "questionSegs": [809, 817],
+      "answerSegs": [815, 818, 819],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says a Jew's entire life must be devoted to bringing Moshiach.",
+        "yi": "דער משגיח זאגט אז דאס גאנצע לעבן פון א איד דארף זיין געווידמעט צו ברענגען משיח."
+      },
+      "evidence": { "segs": [841, 842, 843], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He urges each Jew to take on this Chanukah the yoke of Torah, the learning of the thirty-six masechtos, and teshuvah.",
+        "yi": "ער רופט יעדן איד אויפצונעמען דעם חנוכה דעם עול פון תורה, לערנען די זעקס און דרייסיג מסכתות, און תשובה."
+      },
+      "evidence": { "segs": [876, 877, 878], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "He asks that these resolutions be taken on with joy and firm decision, as preparation for Shabbos Vayeshev and Chanukah.",
+        "yi": "ער בעט אז מ'זאל די קבלות אויפנעמען מיט שמחה און מיט א פעסטע החלטה, אלס הכנה צו שבת וישב און חנוכה."
+      },
+      "evidence": { "segs": [885, 892, 893, 895], "confidence": 0.7 }
+    }
+  ],
+  "candidateTopics": [
+    "Chanukah",
+    "the number eight and the world above nature",
+    "Shabbos and Chanukah compared",
+    "shemitah and yovel",
+    "light of Moshiach",
+    "parshas Vayeshev",
+    "Yehuda and Tamar",
+    "Yosef and kedushas habris",
+    "Yevamos, Eruvin and Nidah",
+    "teshuvah on Chanukah"
+  ],
+  "concepts": [
+    { "he": "פסולי שמנים", "heardAs": ["פילע השמנות", "פעולות השמנים", "פשולת השמנים"] },
+    { "he": "קודש הקדשים", "heardAs": ["קודש הקדושין", "קידוש הגדשים", "קדוש הגדשים"] },
+    { "he": "למטה מעשרה", "heardAs": ["למטה מי השורה", "למעשה מי השרה", "מטה מאה שרה"] },
+    { "he": "שמיני", "heardAs": ["שמעונה", "שמיני", "שמי מי"] },
+    { "he": "מוצאי שביעית", "heardAs": ["מצוה שבועות", "מצוי שבועות"] },
+    { "he": "יובל", "heardAs": ["יואל", "יובעל"] },
+    { "he": "שמיטה", "heardAs": ["שמועתא", "שמועטע", "שניטה"] },
+    { "he": "יום שכולו שבת", "heardAs": ["יום שיכולי שבת", "יום שכולי שבת"] },
+    { "he": "אורו של מלך המשיח", "heardAs": ["אורש מלך המשיח", "עורש המלאך המשיח"] },
+    { "he": "רשות היחיד", "heardAs": ["רשות היוחד", "ראשית היוחד"] },
+    { "he": "יבום", "heardAs": ["ייבום", "יבן"] },
+    { "he": "השחתת זרע", "heardAs": ["אשכס אב זרע", "השכות הזרע"] }
+  ],
+  "people": [
+    { "name": "the Maharal", "heardAs": ["מהר'ל", "מראה"] },
+    { "name": "the Bnei Yissaschar", "heardAs": ["בני יששכר", "מני יששכר"] },
+    { "name": "the Chozeh of Lublin", "heardAs": ["חוזר מלובלין"] },
+    { "name": "Chizkiyahu", "heardAs": ["חסד יואל"] },
+    { "name": "Yeshayahu HaNavi", "heardAs": ["ישעיה הנביא"] },
+    { "name": "Dovid HaMelech", "heardAs": ["דוד המלך"] },
+    { "name": "Eliyahu HaNavi", "heardAs": ["אליהו הנביא", "החליל הנביא"] },
+    { "name": "Yehuda", "heardAs": ["יהודה"] },
+    { "name": "Tamar", "heardAs": ["תמר", "תאמן"] },
+    { "name": "Er and Onan", "heardAs": ["עהרן אונעם", "עהר'ן איינעם"] },
+    { "name": "Peretz", "heardAs": ["פרץ"] },
+    { "name": "Yosef", "heardAs": ["יוסף"] },
+    { "name": "Ruth", "heardAs": ["רות"] },
+    { "name": "Boaz", "heardAs": ["בועת", "ביאז"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יעקב אבינא", "יענקב אבינא"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair to poor; Hebrew quotations (the Maharal, the Midrash, pesukim) are heavily garbled but mostly recoverable from context. The catalog topic (tumah as the Greeks' weapon against emunah and taharah) could not be located in the transcript; the shiur as transcribed is about the eighth, Moshiach and Vayeshev. Segments 797-831 (Yaakov, Rachel and a year calculation) and much of the closing, 844-875 and 880-888, are too garbled to recover and are left out."
+}

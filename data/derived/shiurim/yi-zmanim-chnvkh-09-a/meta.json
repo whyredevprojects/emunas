@@ -1,0 +1,102 @@
+{
+ "shiurId": "yi-zmanim-chnvkh-09-a",
+ "generatedAt": "2026-11-14T10:27:22.142Z",
+ "shiur": {
+  "id": "yi-zmanim-chnvkh-09-a",
+  "lang": "yi",
+  "category": "zman",
+  "seriesId": null,
+  "seriesOrder": null,
+  "catalog": {
+   "source": "pocket-guide-2012",
+   "sectionId": "zmanim",
+   "sectionTitle": "זמנים",
+   "n": "9",
+   "page": 19,
+   "titleOriginal": "א) יו\"ט למעלה מן הגבולות של עוה\"ז",
+   "subTitle": null,
+   "derived": "catalog",
+   "note": "side/segment א) of a 2-file catalog row"
+  },
+  "parsha": null,
+  "zman": "חנוכה",
+  "perek": null,
+  "hebrewYears": [5740],
+  "recordingIds": [
+   "y-zemanim-kislev-and-choref-01-09-1-chanukah"
+  ],
+  "inScope": true,
+  "outOfScopeReason": null,
+  "pathNotes": []
+ },
+ "series": null,
+ "catalogTopics": [
+  "א) יו\"ט למעלה מן הגבולות של עוה\"ז"
+ ],
+ "totalDurationSec": 2409.8623125,
+ "recordings": [
+  {
+   "recording": {
+    "id": "y-zemanim-kislev-and-choref-01-09-1-chanukah",
+    "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-09-1 Chanukah.mp3",
+    "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-09-1 Chanukah",
+    "durationSec": 2409.86,
+    "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+    "sizeBytes": 9639968,
+    "duplicateOf": null,
+    "partOf": null
+   },
+   "order": 0,
+   "transcriptLanguage": "yi",
+   "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+   "durationSec": 2409.8623125,
+   "segmentCount": 33,
+   "starts": [0.78,19.84,22.98,27.26,29.28,31.5,34.56,37.06,162.58,760.41,763.49,765.71,769.17,804.63,824.82,826.44,865.38,866.94,1117.31,1119.71,1147.24,1174.87,1179.91,1972.51,2128.79,2219.89,2222.33,2224.53,2227.13,2228.95,2325.9,2378.49,2384.16],
+   "ends": [17.76,21.14,26.3,28.56,30.78,34.44,36.2,40.82,759.49,763.11,765.39,768.75,804.27,824.22,825.84,864.58,866.4,1116.91,1119.71,1146.9,1174.31,1179.53,1358.01,1973.23,2155.68,2221.75,2224.19,2226.83,2228.49,2325.38,2378.07,2384.16,2409.29],
+   "noise": [
+    {
+     "idx": 8,
+     "types": [
+      "long_sparse"
+     ]
+    },
+    {
+     "idx": 12,
+     "types": [
+      "long_sparse"
+     ]
+    },
+    {
+     "idx": 15,
+     "types": [
+      "long_sparse"
+     ]
+    },
+    {
+     "idx": 17,
+     "types": [
+      "long_sparse"
+     ]
+    },
+    {
+     "idx": 22,
+     "types": [
+      "long_sparse"
+     ]
+    },
+    {
+     "idx": 29,
+     "types": [
+      "long_sparse"
+     ]
+    },
+    {
+     "idx": 30,
+     "types": [
+      "long_sparse"
+     ]
+    }
+   ]
+  }
+ ]
+}

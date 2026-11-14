@@ -1,0 +1,87 @@
+{
+  "shiurId": "yi-zmanim-chnvkh-09-a",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4b-v2",
+  "extractionVariant": "extraction",
+  "en": [
+    {
+      "sectionIndex": 0,
+      "heading": "Chanukah, a cherished mitzvah",
+      "paragraphs": [
+        {
+          "text": "The Rav opens with the Rambam's statement in Hilchos Megillah va-Chanukah 4:12 that the mitzvah of Chanukah is a mitzvah chaviva, a very cherished mitzvah. He draws attention to the wording: this expression, that a mitzvah is chaviva, is not found in the Rambam by the other mitzvos.",
+          "sourceIdx": [0],
+          "evidence": { "segs": [0, 1, 2, 3, 4], "confidence": 0.75 }
+        },
+        {
+          "text": "By Chanukah, he continues, something is found that sets it apart from the other mitzvos. What he goes on to say about this is not preserved: nearly ten minutes after the opening are lost in the transcript.",
+          "sourceIdx": [],
+          "evidence": { "segs": [4, 7], "confidence": 0.65 }
+        }
+      ]
+    },
+    {
+      "sectionIndex": 1,
+      "heading": "Holy matters for Hashem's sake",
+      "paragraphs": [
+        {
+          "text": "This stretch survives only in scattered phrases. The Rav speaks of something that can be entirely empty, and of engaging in divrei kedushah, holy matters, not for oneself but for the sake of Hashem. He also mentions a count that reaches thirty-six, and the Torah, but the line of thought cannot be followed.",
+          "sourceIdx": [],
+          "evidence": { "segs": [9, 10, 13, 14, 19], "confidence": 0.6 }
+        }
+      ]
+    },
+    {
+      "sectionIndex": 3,
+      "heading": "Chanukah, the time of adding",
+      "paragraphs": [
+        {
+          "text": "Toward the end the Rav describes Chanukah as the time of mosif v'holech, the adding from night to night of the Gemara in Shabbos 21b. He applies this to kedushah: on Chanukah one adds in holiness and enters further into it. The closing minutes are too garbled to follow.",
+          "sourceIdx": [1],
+          "evidence": { "segs": [25, 26, 27], "confidence": 0.7 }
+        }
+      ]
+    }
+  ],
+  "yi": [
+    {
+      "sectionIndex": 0,
+      "heading": "חנוכה, א מצוה חביבה",
+      "paragraphs": [
+        {
+          "text": "דער משגיח עפנט מיט דעם וואס דער רמב\"ם שרייבט אין הלכות מגילה וחנוכה פרק ד הלכה יב, אז די מצוה פון חנוכה איז א מצוה חביבה, א זייער באליבטע מצוה. ער מאכט אויפמערקזאם אויפן לשון: ביי די אנדערע מצוות געפינט מען נישט אין רמב\"ם אז ער זאל זאגן אויף א מצוה אז זי איז חביבה.",
+          "sourceIdx": [0],
+          "evidence": { "segs": [0, 1, 2, 3, 4], "confidence": 0.75 }
+        },
+        {
+          "text": "ביי חנוכה, זאגט ער ווייטער, געפינט מען עפעס וואס שיידט עס אפ פון די אנדערע מצוות. וואס ער זאגט דערויף איז נישט פארבליבן: כמעט צען מינוט נאכן אנהייב זענען פארלוירן אין דעם טראנסקריפט.",
+          "sourceIdx": [],
+          "evidence": { "segs": [4, 7], "confidence": 0.65 }
+        }
+      ]
+    },
+    {
+      "sectionIndex": 1,
+      "heading": "דברי קדושה לשם השם",
+      "paragraphs": [
+        {
+          "text": "פון דעם חלק זענען געבליבן נאר צעשטרייטע ווערטער. דער משגיח רעדט וועגן א זאך וואס קען זיין אינגאנצן ליידיג, און וועגן זיך פארנעמען מיט דברי קדושה נישט פאר זיך נאר לשם השם. ער דערמאנט אויך א חשבון וואס קומט אן ביז זעקס און דרייסיג, און די תורה, אבער מ'קען נישט נאכגיין דעם גאנג פון זיין רעיון.",
+          "sourceIdx": [],
+          "evidence": { "segs": [9, 10, 13, 14, 19], "confidence": 0.6 }
+        }
+      ]
+    },
+    {
+      "sectionIndex": 3,
+      "heading": "חנוכה, די צייט פון מוסיף והולך",
+      "paragraphs": [
+        {
+          "text": "צום סוף רופט דער משגיח חנוכה די צייט פון מוסיף והולך, דאס צולייגן פון נאכט צו נאכט וואס שטייט אין גמרא שבת כא עמוד ב. דאס טראגט ער אריבער אויף קדושה: חנוכה איז מען מוסיף אין קדושה און מ'גייט נאך טיפער אריין אין איר. די לעצטע מינוטן זענען צו צעמישט צו פארשטיין.",
+          "sourceIdx": [1],
+          "evidence": { "segs": [25, 26, 27], "confidence": 0.7 }
+        }
+      ]
+    }
+  ]
+}
