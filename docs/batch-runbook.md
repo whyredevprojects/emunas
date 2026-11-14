@@ -69,7 +69,7 @@ It validates every `in_progress` shiur (both files, current prompt versions, mod
 ```
 npm run -s batch:pick-audit
 ```
-prints one random `done` shiur without an audit (if none, skip). Launch **one** background Opus agent (`model: "opus"`, `run_in_background: true`, `description: "audit <shiurId>"`) with this prompt, `<shiurId>` and `<REPO>` filled in:
+prints one random `done` shiur without an audit (if none, skip). Launch **one** Opus agent in the **foreground** (`model: "opus"`, `run_in_background: false`, `description: "audit <shiurId>"`), so its result and usage come back directly with this prompt, `<shiurId>` and `<REPO>` filled in:
 
 ```text
 Audit one finished shiur of the emunas data pipeline: <shiurId>.
@@ -87,7 +87,7 @@ When it finishes, read `data/derived/audits/<shiurId>.json`. If `severity` is `"
 ```
 npm run -s batch:mark -- <shiurId> needs_review "audit: <first note, short>"
 ```
-The audit agent may run while step 6 is done for the run agents; it must finish before step 7.
+Never wait on a task notification for more than 15 minutes, for the audit or any run agent: worker restarts can drop them. If one hasn't arrived, check the agent's output file on disk (the audit JSON, or the shiur's extraction.json/writeup.json); if the work is there, log its usage as `0 0 0` with result `no-usage` and continue to step 7. Committing what's done always beats waiting.
 
 ### 6. Log token usage
 Each finished agent's result ends with its usage (total tokens, tool uses, duration). For every run agent, as it finishes:
