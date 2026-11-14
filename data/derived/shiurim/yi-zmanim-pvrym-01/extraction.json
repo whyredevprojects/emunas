@@ -1,0 +1,980 @@
+{
+  "shiurId": "yi-zmanim-pvrym-01",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that the Purim miracle came from so high and hidden a source that it had to stay concealed, and from this he draws a call to tznius and to the halachos of distancing from arayos.",
+      "yi": "דער משגיח ערקלערט אז דער נס פון פורים איז געקומען פון אזא הויכן און באהאלטענעם מקום אז ער האט געמוזט בלייבן פארדעקט, און דערפון ברענגט ער א התעוררות צו צניעות און צו די הלכות פון הרחקה פון עריות."
+    },
+    "abstract": {
+      "en": "The Rav opens with the garments Hashem made for Adam and Chava, explaining them as a reward for Adam covering Chava's shame, and as 'garments of light' that bring a surrounding light (or makif) like sukkah, tallis and tzitzis. He brings the Maharal: the Megillah has no open miracle because its root was too high to be revealed, which is why the redemption came through Esther, whose name speaks of hiddenness and who was a tzenuah, and through Mordechai, connected to the hidden ketores. Haman, rooted in the nachash, attacks through pritzus, as at Achashverosh's feast. The Rav then reviews the halachos of distancing from arayos, links the Megillah's opening to a loss of Shabbos and of modest dress, and explains that clothing exists to cover a person's great inner light. He closes with Moshe Rabbeinu's hidden name in Tetzaveh and with preparing for Purim's hidden light through tznius and Torah.",
+      "yi": "דער משגיח עפנט מיט די בגדים וואס דער אייבערשטער האט געמאכט פאר אדם און חוה, און ערקלערט אז זיי זענען געווען א שכר פארן אדם וואס האט פארדעקט חוה'ס שאנד, און אז זיי זענען \"כתנות אור\" וואס ברענגען אן אור מקיף, אזוי ווי סוכה, טלית און ציצית. ער ברענגט דעם מהר\"ל אז אין דער מגילה איז נישטא קיין נס נגלה ווייל דער שורש פונעם נס איז געווען צו הויך זיך צו באווייזן; דערפאר איז די ישועה געקומען דורך אסתר, א צנועה וואס איר נאמען מיינט הסתר, און דורך מרדכי וואס איז פארבונדן מיט דער באהאלטענער קטורת. המן, וואס זיין שורש איז דער נחש, גרייפט אן דורך פריצות, אזוי ווי ביי דער סעודה פון אחשורוש. דערנאך לערנט ער די הלכות פון הרחקה פון עריות, ער ברענגט אז דער אנהייב פון דער מגילה איז פארבונדן מיט א פארלוסט פון שבת און פון צניעות'דיגע מלבושים, און ער ערקלערט אז א מלבוש איז דא כדי צו פארדעקן דעם גרויסן אור פון א מענטש. ער ענדיגט מיט משה רבינו'ס באהאלטענעם נאמען אין פרשת תצוה און מיט זיך צוגרייטן צום באהאלטענעם אור פון פורים דורך צניעות און תורה."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Hashem made 'garments of light' for Adam and Chava as a reward for Adam covering Chava's shame instead of blaming her.",
+          "yi": "דער אייבערשטער האט געמאכט \"כתנות אור\" פאר אדם און חוה אלס שכר דערפאר וואס אדם האט פארדעקט חוה'ס שאנד אנשטאט איר צו באשולדיקן."
+        },
+        "evidence": { "segs": [99, 135, 137, 145], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Some mitzvos bring an inner light that a person can contain, while the highest ones, like sukkah, the tallis and tzitzis, bring a surrounding light from above.",
+          "yi": "געוויסע מצוות ברענגען אן אור פנימי וואס דער מענטש קען אנהאלטן, און די העכסטע, אזוי ווי סוכה, טלית און ציצית, ברענגען אן אור מקיף פון אויבן."
+        },
+        "evidence": { "segs": [169, 175, 183, 190, 200], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Following the Maharal, the Purim miracle was not open because its root was so high that it could not be revealed.",
+          "yi": "לויטן מהר\"ל איז דער נס פון פורים נישט געווען קיין נס נגלה ווייל זיין שורש איז געווען אזוי הויך אז ער האט זיך נישט געקענט באווייזן."
+        },
+        "evidence": { "segs": [249, 268, 269, 289], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The redemption came through Esther and Mordechai, whose whole way was tznius and hiddenness.",
+          "yi": "די ישועה איז געקומען דורך אסתר און מרדכי, וואס זייער גאנצער וועג איז געווען צניעות און הסתר."
+        },
+        "evidence": { "segs": [290, 292, 295, 386, 411], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The halachos of distancing from arayos are clear and apply to everyone, not only as a middas chassidus.",
+          "yi": "די הלכות פון הרחקה פון עריות זענען קלאר און זענען פאר יעדן מענטש, נישט נאר א מדת חסידות."
+        },
+        "evidence": { "segs": [497, 499, 537, 559, 646], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The purpose of clothing is to cover a person's great inner light, so styles made to attract defeat the purpose of a garment.",
+          "yi": "דער תכלית פון א מלבוש איז צו פארדעקן דעם גרויסן אור פון א מענטש, ממילא זענען סטיילס וואס זענען געמאכט צו צוציען קיין אמת'ע מלבושים נישט."
+        },
+        "evidence": { "segs": [1007, 1009, 1027, 1042, 1045], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Purim is a concealed festival whose light is too great to be seen openly, like the hidden name of Moshe Rabbeinu in Parshas Tetzaveh.",
+          "yi": "פורים איז א פארשטעלטער יום טוב וואס זיין אור איז צו גרויס צו זען אפן, אזוי ווי משה רבינו'ס באהאלטענער נאמען אין פרשת תצוה."
+        },
+        "evidence": { "segs": [775, 790, 797, 800, 802], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-zemanim-adar-purim-05-01-purim",
+      "startSeg": 0,
+      "endSeg": 69,
+      "title": {
+        "en": "Why Hashem made garments for Adam",
+        "yi": "פארוואס דער אייבערשטער האט געמאכט בגדים פאר אדם"
+      },
+      "summary": {
+        "en": "Starting from the priestly garments and the tzitz, the Rav turns to the end of the Gan Eden story and asks why the naming of Chava interrupts, and why Hashem had to make garments for Adam and Chava when they had already made their own. He cites the Targumim that these were special garments of honor.",
+        "yi": "פון די בגדי כהונה און דעם ציץ גייט דער משגיח איבער צום סוף פון דער פרשה פון גן עדן, און פרעגט פארוואס דער פסוק פון חוה'ס נאמען שטייט אינמיטן, און פארוואס דער אייבערשטער האט געדארפט מאכן בגדים ווען זיי האבן זיך שוין אליין געמאכט. ער ברענגט די תרגומים אז דאס זענען געווען באזונדערע בגדי כבוד."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-05-01-purim",
+      "startSeg": 70,
+      "endSeg": 145,
+      "title": {
+        "en": "Adam calls Chava 'mother of all life'",
+        "yi": "אדם רופט חוה \"אם כל חי\""
+      },
+      "summary": {
+        "en": "The Rav describes how Adam, instead of blaming Chava for the destruction the sin brought, praised her as the mother of all life, and connects the name Chavah to 'chavos Ya'ir'. Because Adam covered her shame, Hashem in turn clothed them, measure for measure.",
+        "yi": "דער משגיח שילדערט ווי אדם, אנשטאט צו באשולדיקן חוה פאר דעם חורבן וואס דער חטא האט געבראכט, האט איר געגעבן א שבח אז זי איז אם כל חי, און ער פארבינדט דעם נאמען חוה מיט \"חוות יאיר\". וויבאלד אדם האט פארדעקט איר שאנד, האט דער אייבערשטער זיי מדה כנגד מדה באקליידט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-05-01-purim",
+      "startSeg": 146,
+      "endSeg": 243,
+      "title": {
+        "en": "Garments of light: or pnimi and or makif",
+        "yi": "כתנות אור: אור פנימי און אור מקיף"
+      },
+      "summary": {
+        "en": "The Rav brings the Midrash that in Rabbi Meir's Torah it was written 'kosnos or' with an aleph, and explains the difference between mitzvos that bring an inner light and those that bring a surrounding light: sukkah, the sleeveless tallis, shemini and the eight threads of tzitzis with techeiles.",
+        "yi": "דער משגיח ברענגט דעם מדרש אז אין רבי מאיר'ס תורה איז געשטאנען \"כתנות אור\" מיט אן אל\"ף, און ערקלערט דעם חילוק צווישן מצוות וואס ברענגען אן אור פנימי און מצוות וואס ברענגען אן אור מקיף: סוכה, דער טלית אן ארבל, שמיני, און די אכט פעדעם פון ציצית מיט תכלת."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-05-01-purim",
+      "startSeg": 244,
+      "endSeg": 355,
+      "title": {
+        "en": "The Maharal: why the miracle was hidden",
+        "yi": "דער מהר\"ל: פארוואס דער נס איז געווען באהאלטן"
+      },
+      "summary": {
+        "en": "The Rav reads the Maharal's question why the Megillah has no open miracle, and his answer that the miracle came from so high a place that it could not be revealed. Therefore it came through Esther, a tzenuah, and Mordechai; Hashem's name is absent; and the greatness of Haman's klipah, in a time of galus within galus, required so high a salvation.",
+        "yi": "דער משגיח לערנט דעם מהר\"ל'ס קשיא פארוואס אין דער מגילה איז נישטא קיין נס נגלה, און זיין תירוץ אז דער נס איז געקומען פון אזא הויכן מקום אז ער האט זיך נישט געקענט באווייזן. דערפאר איז ער געקומען דורך אסתר, א צנועה, און דורך מרדכי; דער שם השם שטייט נישט; און די גרויסקייט פון המן'ס קליפה, אין א צייט פון גלות אינמיטן גלות, האט פארלאנגט אזא הויכע ישועה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-05-01-purim",
+      "startSeg": 356,
+      "endSeg": 420,
+      "title": {
+        "en": "Above time; Esther, Mordechai and the ketores",
+        "yi": "למעלה מן הזמן; אסתר, מרדכי און די קטורת"
+      },
+      "summary": {
+        "en": "The Rav ties Purim to the makif mitzvos and to matzah, which is made without time, showing the Megillah's rush at its climax. He explains Esther's tznius as inherited from Rachel, and Mordechai's hint in 'mor dror' and the ketores, a hidden avodah done in the Kodesh HaKodashim, making them a fitting pair.",
+        "yi": "דער משגיח פארבינדט פורים מיט די מצוות וואס זענען מקיף און מיט מצה וואס ווערט געמאכט אן זמן, און ווייזט ווי די מגילה איילט זיך ביים עיקר פונעם נס. ער ערקלערט אסתר'ס צניעות וואס קומט פון רחל, און מרדכי'ס רמז אין \"מר דרור\" און אין דער קטורת, א באהאלטענע עבודה אין קודש הקדשים, אזוי אז זיי זענען געווען א פאסיגער זיווג."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-05-01-purim",
+      "startSeg": 421,
+      "endSeg": 488,
+      "title": {
+        "en": "Haman and the nachash; success through tznius",
+        "yi": "המן און דער נחש; הצלחה דורך צניעות"
+      },
+      "summary": {
+        "en": "The Rav brings that Haman is hinted at in the tree of knowledge and that he stems from the nachash, who desired Chava. He shows that the Megillah opens with a feast of pritzus where Achashverosh lost Vashti, and teaches that every success of a person, including his destined match, depends on his guarding of tznius.",
+        "yi": "דער משגיח ברענגט אז המן איז מרומז ביים עץ הדעת און אז ער שטאמט פונעם נחש, וואס האט געגלוסט נאך חוה. ער ווייזט אז די מגילה הייבט אן מיט א סעודה פון פריצות וואו אחשורוש האט פארלוירן ושתי, און לערנט אז יעדע הצלחה פון א מענטש, אויך זיין זיווג, הענגט אין זיין שמירה פון צניעות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-05-01-purim",
+      "startSeg": 489,
+      "endSeg": 529,
+      "title": {
+        "en": "The sin of Achashverosh's feast",
+        "yi": "דער חטא פון דער סעודה פון אחשורוש"
+      },
+      "summary": {
+        "en": "The Rav asks why the Jews were punished for enjoying Achashverosh's feast when the food was kosher, as each was served according to his wish. He answers that the feast's whole aim was pritzus, compares it to resorts of today, and brings another view that their sin was being present and taking it in; this leads into the halachos of distancing from arayos.",
+        "yi": "דער משגיח פרעגט פארוואס אידן זענען באשטראפט געווארן פאר הנאה האבן פון דער סעודה פון אחשורוש, ווען דאס עסן איז געווען כשר, \"כרצון איש ואיש\". ער ענטפערט אז דער גאנצער תכלית פון דער סעודה איז געווען פריצות, גלייכט עס צו היינטיגע ריזארטס, און ברענגט א צווייטן מהלך אז זייער חטא איז געווען וואס זיי זענען דארט געווען און האבן עס אריינגענומען; פון דעם גייט ער איבער צו די הלכות פון הרחקה פון עריות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-05-01-purim",
+      "startSeg": 530,
+      "endSeg": 601,
+      "title": {
+        "en": "Halachos: distancing from arayos",
+        "yi": "הלכות: הרחקה פון עריות"
+      },
+      "summary": {
+        "en": "The Rav reads the Rambam's and the Shulchan Aruch's words that one must distance himself from women 'very, very much', explains the prohibition of any closeness to arayos, and stresses that nowadays every unmarried woman has the status of a niddah. He brings the Gemara on 'otzem einav meros bera' about not looking at women washing clothes at the river.",
+        "yi": "דער משגיח לערנט דעם רמב\"ם'ס און שולחן ערוך'ס לשון אז מ'דארף זיך מרחיק זיין פון נשים \"מאד מאד\", ער ערקלערט דעם איסור פון יעדן קירוב צו עריות, און ער שטרייכט אונטער אז היינט איז יעדע פנויה א נדה. ער ברענגט די גמרא אויף \"עוצם עיניו מראות ברע\" וועגן נישט קוקן אויף נשים וואס וואשן וועש ביים טייך."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-05-01-purim",
+      "startSeg": 602,
+      "endSeg": 671,
+      "title": {
+        "en": "Touch, looking, and yehareg v'al ya'avor",
+        "yi": "נגיעה, הסתכלות, און יהרג ואל יעבור"
+      },
+      "summary": {
+        "en": "The Rav discusses touch derech chibah and the dispute between the Beis Yosef and the Shach, explains why medical care differs from shaking hands, and warns against looking even at a woman's clothes or walking behind her. He brings the Gemara of the lovesick man whom the Sages forbade even to speak with the woman, because the offshoots of giluy arayos are also yehareg v'al ya'avor.",
+        "yi": "דער משגיח רעדט וועגן נגיעה דרך חיבה און די מחלוקת צווישן דעם בית יוסף און דעם ש\"ך, ער ערקלערט פארוואס א דאקטער איז אנדערש ווי געבן די האנט, און ער ווארנט נישט צו קוקן אפילו אויף בגדים פון א אשה אדער גיין הינטער איר. ער ברענגט די גמרא פונעם מענטש וואס איז קראנק געווארן פון תאוה, און די חכמים האבן אים אפילו נישט ערלויבט צו רעדן מיט איר, ווייל די אביזרייהו פון גילוי עריות זענען אויך יהרג ואל יעבור."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-05-01-purim",
+      "startSeg": 672,
+      "endSeg": 753,
+      "title": {
+        "en": "Knesses Yisrael fallen; Achashverosh's stolen Shabbos",
+        "yi": "כנסת ישראל איז געפאלן; אחשורוש'ס צוגענומענער שבת"
+      },
+      "summary": {
+        "en": "The Rav brings the Zohar on 'nafla lo sosif kum besulas Yisrael': in this galus only Hashem Himself will raise Knesses Yisrael. He brings the Midrash that Achashverosh could feast while the Beis HaMikdash lay in ruins because the Jews did not honor the oneg of Shabbos, so its gift passed to him, and asks who knows whether laxity in tznius delays Knesses Yisrael's rising.",
+        "yi": "דער משגיח ברענגט דעם זוהר אויף \"נפלה לא תוסיף קום בתולת ישראל\", אז אין דעם גלות וועט נאר דער אייבערשטער אליין אויפהייבן כנסת ישראל. ער ברענגט דעם מדרש אז אחשורוש האט געקענט מאכן סעודות בשעת דער בית המקדש איז חרוב ווייל אידן האבן נישט מכבד געווען דעם עונג שבת, און די מתנה איז איבערגעגאנגען צו אים; און ער פרעגט ווער ווייסט צי די חלישות אין צניעות פארהאלט נישט דאס אויפשטיין פון כנסת ישראל."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-05-01-purim",
+      "startSeg": 754,
+      "endSeg": 834,
+      "title": {
+        "en": "Moshe's hidden name and the masked Yom Tov",
+        "yi": "משה'ס באהאלטענער נאמען און דער פארשטעלטער יום טוב"
+      },
+      "summary": {
+        "en": "The Rav explains that Moshe Rabbeinu's name is absent from Tetzaveh because of 'mecheini na', and that through this he was united with a hidden light. Purim too comes masked because its light is too great; he compares drinking to an anesthetic before surgery, connects Mordechai as a spark of Moshe, and Yom Kippurim to Purim.",
+        "yi": "דער משגיח ערקלערט אז משה רבינו'ס נאמען שטייט נישט אין פרשת תצוה צוליב \"מחני נא\", און דורך דעם איז ער פאראייניגט געווארן מיט אן אור הנעלם. פורים קומט אויך פארשטעלט ווייל זיין אור איז צו גרויס; ער גלייכט דאס טרינקען צו א שלאף-מיטל פאר אן אפעראציע, און פארבינדט מרדכי אלס א ניצוץ פון משה, און יום הכפורים מיט פורים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-05-01-purim",
+      "startSeg": 835,
+      "endSeg": 942,
+      "title": {
+        "en": "Tetzaveh: oil, eight garments, and Haman",
+        "yi": "תצוה: שמן, אכט בגדים, און המן"
+      },
+      "summary": {
+        "en": "The Rav connects Tetzaveh to Purim: it opens with pure olive oil, a hint to the hidden part of the Torah that makes no sound, linked to the number eight, the eight priestly garments and the eight threads of tzitzis. He explains Haman as a hidden klipah, the fifty-amah gallows, and the Maharal on 'Haman min haTorah', and brings the Midrash that Adam's garments of light were the garments of the Kohen Gadol, which cover and protect.",
+        "yi": "דער משגיח פארבינדט פרשת תצוה מיט פורים: זי הייבט אן מיט שמן זית זך, א רמז אויף דעם באהאלטענעם חלק פון דער תורה וואס מאכט נישט קיין קול, פארבונדן מיטן ציפער אכט, מיט די אכט בגדי כהונה און מיט די אכט פעדעם פון ציצית. ער ערקלערט המן אלס א קליפה נעלמה, דעם עץ פון פופציג אמה, און דעם מהר\"ל אויף \"המן מן התורה\", און ער ברענגט דעם מדרש אז אדם'ס כתנות אור זענען געווען בגדי כהונה גדולה, וואס פארדעקן און היטן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-05-01-purim",
+      "startSeg": 943,
+      "endSeg": 1004,
+      "title": {
+        "en": "Mordechai's royal garments and more covering",
+        "yi": "מרדכי'ס לבוש מלכות און מער פארדעקונג"
+      },
+      "summary": {
+        "en": "The Rav brings that Mordechai went out in royal garments of techeiles, and the Gemara that Yosef's gift of five changes of clothes to Binyamin hinted at Mordechai. He explains that each garment brings a surrounding light, brings Rabbi Pinchas of Koritz that Jews add garments when they daven, and explains why women need more covering than men.",
+        "yi": "דער משגיח ברענגט אז מרדכי איז ארויסגעגאנגען אין לבוש מלכות תכלת, און די גמרא אז יוסף'ס מתנה פון פינף חליפות שמלות צו בנימין איז געווען א רמז אויף מרדכי. ער ערקלערט אז יעדער מלבוש ברענגט אן אור מקיף, ברענגט פון רבי פנחס קאריצער אז אידן לייגן צו מלבושים ווען זיי דאווענען, און ערקלערט פארוואס נשים דארפן מער פארדעקונג ווי אנשים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-05-01-purim",
+      "startSeg": 1005,
+      "endSeg": 1063,
+      "title": {
+        "en": "The purpose of clothing is to cover",
+        "yi": "דער תכלית פון א מלבוש איז צו פארדעקן"
+      },
+      "summary": {
+        "en": "The Rav explains that a person, made in the tzelem Elokim, holds great lights that must be hidden in garments, and the holier a place the more it must be covered. A garment's purpose is to cover, so styles made to attract are not garments; he brings the passuk in Yeshayahu about the haughty daughters of Tziyon and the Gemara's explanation of their conduct.",
+        "yi": "דער משגיח ערקלערט אז א מענטש, וואס איז א צלם אלקים, האט אין זיך גרויסע אורות וואס מ'מוז באהאלטן אין מלבושים, און וואס הייליגער א מקום איז, אלץ מער דארף ער זיין פארדעקט. דער תכלית פון א מלבוש איז צו פארדעקן, ממילא זענען סטיילס וואס זענען געמאכט צו צוציען נישט קיין מלבושים; ער ברענגט דעם פסוק אין ישעיה וועגן די בנות ציון וואס האבן זיך געגרויסט, און די גמרא'ס פשט אין זייער הנהגה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-05-01-purim",
+      "startSeg": 1064,
+      "endSeg": 1152,
+      "title": {
+        "en": "The seventh day: Vashti's fashions and lost zemiros",
+        "yi": "ביום השביעי: ושתי'ס סטיילס און די פארלוירענע זמירות"
+      },
+      "summary": {
+        "en": "On 'bayom hashevi'i k'tov lev hamelech bayayin' the Rav brings that it was Shabbos, when Jews made kiddush and sang zemiros. He brings the Chasam Sofer that Vashti set immodest fashions which Jewish women followed, so they went to the party and the zemiros at home stopped, and he explains the decree that every man should rule his home in this light.",
+        "yi": "אויף \"ביום השביעי כטוב לב המלך ביין\" ברענגט דער משגיח אז דאס איז געווען שבת, ווען אידן האבן געמאכט קידוש און געזונגען זמירות. ער ברענגט דעם חתם סופר אז ושתי האט אויפגעשטעלט פריצות'דיגע סטיילס וואס אידישע ווייבער זענען נאכגעגאנגען, ממילא זענען זיי געגאנגען צו דער פארטי און די זמירות אינדערהיים האבן אויפגעהערט, און אויף דעם וועג ערקלערט ער די גזירה אז יעדער מאן זאל זיין שורר בביתו."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-05-01-purim",
+      "startSeg": 1153,
+      "endSeg": 1227,
+      "title": {
+        "en": "Preparing for Purim's hidden light",
+        "yi": "זיך צוגרייטן צום באהאלטענעם אור פון פורים"
+      },
+      "summary": {
+        "en": "The Rav closes: on Purim a great hidden light fills the air, the light of Mordechai and Esther, likened to the neshamah yeseirah of Shabbos. To receive it one must take on tznius, keep away from the 'feast of Achashverosh' of the surrounding culture, and accept the Torah anew as the Jews did in 'kiymu v'kiblu'.",
+        "yi": "דער משגיח ענדיגט: פורים קומט אראפ א גרויס באהאלטן ליכט וואס פילט אן די לופט, דער אור פון מרדכי און אסתר, געגליכן צו דער נשמה יתירה פון שבת. כדי עס צו מקבל זיין דארף מען אויף זיך נעמען צניעות, זיך אפהאלטן פון דער \"סעודה פון אחשורוש\" פון דער אומגעגנט'ס קולטור, און מקבל זיין די תורה פון ניי, אזוי ווי אידן האבן געטון ביי \"קיימו וקבלו\"."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "ויאזשע הי' כימל ידים ולחבר קאסטנעת",
+      "work": "Bereishis",
+      "ref": "Bereishis 3:21",
+      "sefariaRef": "Genesis 3:21",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [50, 142, 145], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ויקרא אדם ושם משנה חוה",
+      "work": "Bereishis",
+      "ref": "Bereishis 3:20",
+      "sefariaRef": "Genesis 3:20",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [38, 39, 99, 136], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "תרגום מוקלות",
+      "work": "Targum Onkelos",
+      "ref": "Targum Onkelos, Bereishis 3:21",
+      "sefariaRef": "Onkelos Genesis 3:21",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [56, 57, 60, 61], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "תגום יענע סנאך",
+      "work": "Targum Yonasan",
+      "ref": "Targum Yonasan, Bereishis 3:21",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [62, 63], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "חבות יואל ... סוף מטות",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 32:41",
+      "sefariaRef": "Numbers 32:41",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [104, 105, 107], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער אבנזר זאגט",
+      "work": "Ibn Ezra",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [109, 113], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "בתורתו של רבי מאיר כסף כותנות אויער",
+      "work": "Bereishis Rabbah",
+      "ref": "Bereishis Rabbah 20:12",
+      "sefariaRef": "Bereshit Rabbah 20:12",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [149, 151, 157, 164], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ברענגט ער בני יששכר",
+      "work": "Bnei Yissaschar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [201, 202], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "מהר''ל ... אין זיין ספר אייר חדש",
+      "work": "Or Chadash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [244, 246, 248, 264, 268], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אין אסתר מרגדת",
+      "work": "Esther",
+      "ref": "Esther 2:20",
+      "sefariaRef": "Esther 2:20",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [293, 379], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "די גמרא דרשנט אז זי איז געוועזן א צנעה ... פון רחל",
+      "work": "Gemara Megillah",
+      "ref": "Megillah 13b",
+      "sefariaRef": "Megillah 13b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [293, 379], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "כל מקום שנעמען במגילה מלך ... הן מלך הקדוש ברכה",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [319, 320, 321], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "נחלה מרדכי מן התורה מניין ... מרד רע",
+      "work": "Gemara Chullin",
+      "ref": "Chullin 139b",
+      "sefariaRef": "Chullin 139b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [395, 396, 397], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "כתירות איז מחפחה פון לשון הרע ... דבשה בחשוי",
+      "work": "Gemara Yoma",
+      "ref": "Yoma 44a",
+      "sefariaRef": "Yoma 44a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [413, 414], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "המון העץ",
+      "work": "Gemara Chullin",
+      "ref": "Chullin 139b",
+      "sefariaRef": "Chullin 139b",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [423, 424, 425, 871], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אין הברכה מצייה אלא בדבר השמים מן העין",
+      "work": "Gemara Taanis",
+      "ref": "Taanis 8b",
+      "sefariaRef": "Taanit 8b",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [476, 478, 479], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "בעת פלוני לפלוני",
+      "work": "Gemara Sotah",
+      "ref": "Sotah 2a",
+      "sefariaRef": "Sotah 2a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [480, 481, 487], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "מפני שנהנו מסעודתו של אותו רשע",
+      "work": "Gemara Megillah",
+      "ref": "Megillah 12a",
+      "sefariaRef": "Megillah 12a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [491, 496, 511], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "לאזו את כיצא נישט פאר איש",
+      "work": "Esther",
+      "ref": "Esther 1:8",
+      "sefariaRef": "Esther 1:8",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [501, 504], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "סימן ח' א ... יחרדער מן הנשים מעוד מעוד",
+      "work": "Shulchan Aruch Even HaEzer",
+      "ref": "Shulchan Aruch Even HaEzer 21:1",
+      "sefariaRef": "Shulchan Arukh, Even HaEzer 21:1",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [528, 536, 537, 541, 544, 631], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "שיטה פון רמב״ם ... שחיבוק ונושק ונהנה בקירוב בשר",
+      "work": "Rambam, Mishneh Torah",
+      "ref": "Rambam, Hilchos Issurei Biah 21:1",
+      "sefariaRef": "Mishneh Torah, Forbidden Intercourse 21:1",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [551, 552, 557], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "עצם ענב מרוב ברע",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 33:15",
+      "sefariaRef": "Isaiah 33:15",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [592, 593, 594], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער גמרא זאגט ... די נשים ווען זיי שטען על הקבוצה",
+      "work": "Gemara Bava Basra",
+      "ref": "Bava Basra 57b",
+      "sefariaRef": "Bava Batra 57b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [591, 595, 596], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "מחלוקת צווישן בית יוסף און דעם שייך",
+      "work": "Beis Yosef",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [608, 609, 610], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ימות חידודי ברימא מיאחרע יגדה",
+      "work": "Gemara Sanhedrin",
+      "ref": "Sanhedrin 75a",
+      "sefariaRef": "Sanhedrin 75a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [651, 652, 655, 659, 660], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "נאך לבלי סוסף, קום בשלת ישראל",
+      "work": "Amos",
+      "ref": "Amos 5:2",
+      "sefariaRef": "Amos 5:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [674, 675, 695], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "עס שטעט אין זוה'הקודש",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [677, 678, 694, 695], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ביי ימים ההום כשבת המלכה חשבור",
+      "work": "Esther",
+      "ref": "Esther 1:2",
+      "sefariaRef": "Esther 1:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [702, 707], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "שטייט אין מדרש אז די מלאכי השרת ... תנא ימים כנגד ימים",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [705, 709, 712, 739], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "וכסל השבת עונג",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 58:13",
+      "sefariaRef": "Isaiah 58:13",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [730, 736], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "מחנונה מהסופךך אשר כסופתא",
+      "work": "Shemos",
+      "ref": "Shemos 32:32",
+      "sefariaRef": "Exodus 32:32",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [765, 766, 774], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ולא יודע אישו איז כבר",
+      "work": "Devarim",
+      "ref": "Devarim 34:6",
+      "sefariaRef": "Deuteronomy 34:6",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [816], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "אין מדרש שטעט טאקע אז אלץ וואס איז פאסירט צום משה, איז פאסירט צום מרדכי",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [818], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "כמעט וכיבל היהדים",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 88a",
+      "sefariaRef": "Shabbat 88a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [837, 1210, 1215], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ביקור עלך ה' זית זאך",
+      "work": "Shemos",
+      "ref": "Shemos 27:20",
+      "sefariaRef": "Exodus 27:20",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [845, 852], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "דער חותם סופר זאגט",
+      "work": "Chasam Sofer",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [847, 849, 850, 852], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "עס שטעט אין מדרש ... שמן מאכט נישט קיין כול",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [855, 856, 857], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "חמישה מאמע ... גבי החמישים",
+      "work": "Esther",
+      "ref": "Esther 5:14",
+      "sefariaRef": "Esther 5:14",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [868, 869, 870], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "די מהר''ל זאגט ... האמען מן הצורה מן עין",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [871, 873, 878], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אין מדרש אז ויאת ה' אלקים ... שמינה בגדי כהנה גדולה",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [886, 887, 888], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "בבוש מלכות תחלת חילול",
+      "work": "Esther",
+      "ref": "Esther 8:15",
+      "sefariaRef": "Esther 8:15",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [945, 949, 952], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער גמרא זאגט אז ... יוסף האט געגעבן פאר בנימן די חמקומיות חליפות",
+      "work": "Gemara Megillah",
+      "ref": "Megillah 16b",
+      "sefariaRef": "Megillah 16b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [953, 956, 957], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "מדרש פינחס פון רבי פינחס קארצע",
+      "work": "Midrash Pinchas",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [981, 982, 984], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "עס שטעט אין ישעי' ... יענק גבוה",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 3:16",
+      "sefariaRef": "Isaiah 3:16",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [1048, 1049, 1050], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "דער גמל זאגט אין שבת",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 62b",
+      "sefariaRef": "Shabbat 62b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1062], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ביי יום השבוע כתובה לב המלך בן יואל",
+      "work": "Esther",
+      "ref": "Esther 1:10",
+      "sefariaRef": "Esther 1:10",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [1064, 1066, 1067], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "זאגט ער שום סופר",
+      "work": "Chasam Sofer",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1080, 1081, 1083], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "ליאתא איש שירה בביתו",
+      "work": "Esther",
+      "ref": "Esther 1:22",
+      "sefariaRef": "Esther 1:22",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [1147, 1151], "confidence": 0.7 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The garments Hashem made for Adam were a measure-for-measure reward: because Adam covered Chava's shame with praise rather than blaming her, Heaven covered them with garments of honor.",
+        "yi": "די בגדים וואס דער אייבערשטער האט געמאכט פאר אדם זענען געווען מדה כנגד מדה: וויבאלד אדם האט פארדעקט חוה'ס שאנד מיט א שבח אנשטאט איר צו באשולדיקן, האט מען זיי פון הימל פארדעקט מיט בגדי כבוד."
+      },
+      "evidence": { "segs": [130, 135, 137, 144, 145], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Rabbi Meir's 'kosnos or' with an aleph is read as the inner insight of a person who sees through the Torah's narratives: clothing itself carries a light.",
+        "yi": "רבי מאיר'ס \"כתנות אור\" מיט אן אל\"ף מיינט דעם פנימיות'דיגן בליק פון איינעם וואס זעט דורך די מעשיות פון דער תורה: דער מלבוש אליין טראגט אין זיך אן אור."
+      },
+      "evidence": { "segs": [160, 161, 164, 897], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The hiddenness of the Purim miracle is not a sign of its smallness but of its greatness: its source was too high to be revealed to physical eyes.",
+        "yi": "דאס וואס דער נס פון פורים איז באהאלטן איז נישט א סימן אז ער איז קליין, נאר אז ער איז גרויס: זיין מקור איז געווען צו הויך זיך צו באווייזן פאר גשמיות'דיגע אויגן."
+      },
+      "evidence": { "segs": [263, 268, 269, 270], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "Achashverosh's months of feasting were the gift of oneg Shabbos, taken from the Jews when they did not honor Shabbos and handed to him.",
+        "yi": "אחשורוש'ס חדשים לאנגע סעודות זענען געווען די מתנה פון עונג שבת, וואס איז צוגענומען געווארן פון אידן ווען זיי האבן נישט מכבד געווען דעם שבת, און איבערגעגעבן צו אים."
+      },
+      "evidence": { "segs": [715, 718, 732, 734, 736], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Purim comes in a masquerade because its light is too great to face directly, and drinking is like the anesthetic given before surgery so that one does not feel what is being done.",
+        "yi": "פורים קומט פארשטעלט ווייל זיין אור איז צו גרויס צו זען פנים אל פנים, און דאס טרינקען איז ווי א שלאף-מיטל פאר אן אפעראציע, כדי מ'זאל נישט שפירן וואס מ'טוט."
+      },
+      "evidence": { "segs": [798, 800, 804, 806, 807], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The holier a part of a person is, the more it must be covered, so the dignity of a human being is precisely in his being covered.",
+        "yi": "וואס הייליגער א חלק פון א מענטש איז, אלץ מער מוז ער זיין פארדעקט; ממילא איז דער כבוד פון א מענטש דווקא וואס ער איז פארדעקט."
+      },
+      "evidence": { "segs": [1024, 1025, 1034, 1037], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Vashti's fashions drew the Jewish women to the party, ending the Shabbos zemiros at home; the Rav reads the Megillah's opening as a loss of tznius that cost the Jews their Shabbos song.",
+        "yi": "ושתי'ס סטיילס האבן צוגעצויגן די אידישע ווייבער צו דער פארטי, און דערמיט האבן אויפגעהערט די זמירות פון שבת אינדערהיים; דער משגיח לערנט דעם אנהייב פון דער מגילה אלס א פארלוסט פון צניעות וואס האט געקאסט אידן זייער שבת'דיגן געזאנג."
+      },
+      "evidence": { "segs": [1083, 1090, 1138, 1139], "confidence": 0.65 }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "The lovesick man in the Gemara",
+        "yi": "דער מענטש וואס איז קראנק געווארן פון תאוה"
+      },
+      "retelling": {
+        "en": "The Rav retells the Gemara about a man whose heart was taken with a certain woman until he fell ill. The doctors said he could not live unless his desire was satisfied, and then suggested that he at least speak with her from behind a fence. The Sages answered that he should rather die, because even these are offshoots of giluy arayos.",
+        "yi": "דער משגיח דערציילט די גמרא וועגן א מענטש וואס זיין הארץ האט זיך פארליבט אין א געוויסע אשה ביז ער איז קראנק געווארן. די דאקטוירים האבן געזאגט אז ער קען נישט לעבן סיידן מ'וועט אים מאכן גוט, און דערנאך אז ער זאל כאטש רעדן מיט איר פון הינטער א גדר. די חכמים האבן געענטפערט אז בעסער זאל ער שטארבן, ווייל אפילו דאס איז אן אביזרייהו פון גילוי עריות."
+      },
+      "people": [],
+      "evidence": { "segs": [649, 651, 652, 655, 659, 662], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why did Hashem have to make garments for Adam and Chava when they had already made their own?",
+        "yi": "פארוואס האט דער אייבערשטער געדארפט מאכן בגדים פאר אדם און חוה ווען זיי האבן זיך שוין אליין געמאכט?"
+      },
+      "answer": {
+        "en": "These were special garments of honor, given measure for measure because Adam covered Chava's shame.",
+        "yi": "דאס זענען געווען באזונדערע בגדי כבוד, געגעבן מדה כנגד מדה ווייל אדם האט פארדעקט חוה'ס שאנד."
+      },
+      "questionSegs": [51, 53, 54],
+      "answerSegs": [60, 63, 64, 145],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why does the passuk of Chava's naming interrupt between the curses and the making of the garments?",
+        "yi": "פארוואס שטייט דער פסוק פון חוה'ס נאמען צווישן די קללות און די בגדים?"
+      },
+      "answer": {
+        "en": "Because Adam's praising her instead of blaming her is what earned them the garments.",
+        "yi": "ווייל דאס וואס אדם האט איר געגעבן א שבח אנשטאט איר צו באשולדיקן, האט זיי פארדינט די בגדים."
+      },
+      "questionSegs": [45, 48, 49],
+      "answerSegs": [99, 135, 142, 145],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "If the Purim miracle was so great, why does the Megillah show no open miracle?",
+        "yi": "אויב דער נס פון פורים איז געווען אזוי גרויס, פארוואס איז אין דער מגילה נישטא קיין נס נגלה?"
+      },
+      "answer": {
+        "en": "Its root was so high and hidden that it could not be revealed; that is why it came through Esther and Mordechai and without Hashem's name.",
+        "yi": "זיין שורש איז געווען אזוי הויך און באהאלטן אז ער האט זיך נישט געקענט באווייזן; דערפאר איז ער געקומען דורך אסתר און מרדכי און אן דעם שם השם."
+      },
+      "questionSegs": [249, 250, 251, 252],
+      "answerSegs": [268, 269, 281, 289],
+      "confidence": 0.85
+    },
+    {
+      "question": {
+        "en": "If the food at Achashverosh's feast was kosher, why were the Jews punished for enjoying it?",
+        "yi": "אויב דאס עסן ביי דער סעודה פון אחשורוש איז געווען כשר, פארוואס זענען אידן באשטראפט געווארן פאר הנאה האבן דערפון?"
+      },
+      "answer": {
+        "en": "The whole purpose of the feast was pritzus; another view is that they were present and took in its display.",
+        "yi": "דער גאנצער תכלית פון דער סעודה איז געווען פריצות; א צווייטער מהלך איז אז זיי זענען דארט געווען און האבן אריינגענומען דעם גאנצן פראכט."
+      },
+      "questionSegs": [509, 510, 511],
+      "answerSegs": [513, 515, 520, 522],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "How could Achashverosh sit and feast at ease while the Beis HaMikdash lay in ruins?",
+        "yi": "ווי אזוי האט אחשורוש געקענט זיצן און מאכן סעודות בשעת דער בית המקדש איז חרוב?"
+      },
+      "answer": {
+        "en": "Because the Jews did not honor the oneg of Shabbos, its gift was taken from them and given to him.",
+        "yi": "ווייל אידן האבן נישט מכבד געווען דעם עונג שבת, איז די מתנה צוגענומען געווארן פון זיי און געגעבן צו אים."
+      },
+      "questionSegs": [705, 707, 708],
+      "answerSegs": [712, 732, 733, 736],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why is Moshe Rabbeinu's name absent from Parshas Tetzaveh?",
+        "yi": "פארוואס שטייט משה רבינו'ס נאמען נישט אין פרשת תצוה?"
+      },
+      "answer": {
+        "en": "Because he said 'mecheini na' for Knesses Yisrael, he was raised to a hidden light, and his presence in the parshah is concealed.",
+        "yi": "ווייל ער האט געזאגט \"מחני נא\" פאר כנסת ישראל, איז ער דערהויבן געווארן צו אן אור הנעלם, און ער איז אין דער פרשה באהאלטן."
+      },
+      "questionSegs": [759, 761, 762],
+      "answerSegs": [771, 775, 780, 783],
+      "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says the halachos of distancing from arayos are binding on everyone and must be known and kept, not treated as a middas chassidus.",
+        "yi": "דער משגיח זאגט אז די הלכות פון הרחקה פון עריות זענען פאר יעדן מענטש און מ'דארף זיי קענען און היטן, נישט באטראכטן ווי א מדת חסידות."
+      },
+      "evidence": { "segs": [497, 499, 531, 646], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He says one must keep away from the 'feast of Achashverosh', the surrounding culture that draws Jews in, even where the food is kosher.",
+        "yi": "ער זאגט אז מ'דארף זיך אפהאלטן פון דער \"סעודה פון אחשורוש\", די קולטור פון דער אומגעגנט וואס ציט אריין אידן, אפילו ווען דאס עסן איז כשר."
+      },
+      "evidence": { "segs": [524, 525, 1169], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "He says clothing should serve its purpose of covering, and styles designed to attract are not proper garments.",
+        "yi": "ער זאגט אז מלבושים דארפן טון זייער תכלית צו פארדעקן, און סטיילס וואס זענען געמאכט צו צוציען זענען נישט קיין ריכטיגע מלבושים."
+      },
+      "evidence": { "segs": [1042, 1043, 1045, 1046], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "He says one should prepare for Purim's light by taking on tznius, by Torah, and by binding oneself to Moshe Rabbeinu and Mordechai.",
+        "yi": "ער זאגט אז מ'זאל זיך צוגרייטן צום אור פון פורים דורך אויפנעמען צניעות, דורך תורה, און דורך זיך מקשר זיין מיט משה רבינו און מרדכי."
+      },
+      "evidence": { "segs": [830, 832, 1162, 1168, 1209], "confidence": 0.7 }
+    }
+  ],
+  "candidateTopics": [
+    "Purim as a hidden miracle",
+    "tznius",
+    "halachos of distancing from arayos",
+    "the purpose of clothing",
+    "or pnimi and or makif",
+    "Esther and Mordechai",
+    "Achashverosh's feast",
+    "Parshas Tetzaveh and the hidden name of Moshe",
+    "Adam and Chava's garments of light"
+  ],
+  "concepts": [
+    { "he": "כתנות אור", "heardAs": ["כותנות אויער", "כוסנות אויער", "קאסטנעת"] },
+    { "he": "אור פנימי", "heardAs": ["אור פנימי", "אייר פנימי"] },
+    { "he": "אור מקיף", "heardAs": ["אור מקום", "אור מקוב", "אור מקריב"] },
+    { "he": "תכלת", "heardAs": ["תחילת", "תחלת", "תלת"] },
+    { "he": "נס נגלה", "heardAs": ["נעסט נגלה", "נס נוגלה"] },
+    { "he": "צניעות", "heardAs": ["צנעות", "צנועות", "צניעס"] },
+    { "he": "קטורת", "heardAs": ["קטורת", "קטירות", "כתירות"] },
+    { "he": "עריות", "heardAs": ["הרעיות", "הריות", "הוריות"] },
+    { "he": "יהרג ואל יעבור", "heardAs": ["יהורק ויאבר", "יהורק ביי יעבור"] },
+    { "he": "כנסת ישראל", "heardAs": ["פסח'לעס ישראל", "פסולת ישראל", "בשלת ישראל"] },
+    { "he": "עונג שבת", "heardAs": ["וכסל השבת עונג"] },
+    { "he": "למעלה מן הזמן", "heardAs": ["למעלה מן זמן", "אלעמעלים און הזמן"] },
+    { "he": "נשמה יתירה", "heardAs": ["נשמה יסירה"] },
+    { "he": "קיימו וקבלו", "heardAs": ["כמעט וכיבל היהדים", "כימה וכיפה"] }
+  ],
+  "people": [
+    { "name": "Adam HaRishon", "heardAs": ["ידים ראשי", "אדם ראשון"] },
+    { "name": "Chava", "heardAs": ["חבר", "חוה", "חי'"] },
+    { "name": "Rabbi Meir", "heardAs": ["רבי מאיר"] },
+    { "name": "the Maharal", "heardAs": ["מהר''ל", "מאראל", "אמרא"] },
+    { "name": "Esther", "heardAs": ["אסתר'ל", "עסטא"] },
+    { "name": "Mordechai", "heardAs": ["מרדכי", "מורדכיין", "מארד"] },
+    { "name": "Haman", "heardAs": ["האמען", "המון", "האמאן"] },
+    { "name": "Achashverosh", "heardAs": ["א חשבורש", "חשבור'ש"] },
+    { "name": "Vashti", "heardAs": ["וואשתו", "ווארשתי", "וואשטי"] },
+    { "name": "Rachel", "heardAs": ["רחל", "ברכה"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו", "משה רבינא"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "the Chasam Sofer", "heardAs": ["חותם סופר", "שום סופר"] },
+    { "name": "Rabbi Pinchas of Koritz", "heardAs": ["רבי פינחס קארצע"] },
+    { "name": "Binyamin", "heardAs": ["בנימן"] },
+    { "name": "Yosef", "heardAs": ["יוסף"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair for the Rav's own speech but badly garbled in the Hebrew quotations (pesukim, Maharal's Or Chadash, Megillah verses) and in parts of the last third, where some foreign tokens appear. Several stretches could not be recovered and were left out: the passage about the order of putting on clothes (segs ~966-980), the reference around seg 996, and the brief account of a Rebbe connected to the Ba'al Shem Tov's family (segs ~1194-1201). Some source identifications (Targum Yonasan, Esther 5:14) are reconstructed from context."
+}

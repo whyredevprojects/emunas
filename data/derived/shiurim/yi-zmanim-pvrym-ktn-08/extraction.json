@@ -1,0 +1,522 @@
+{
+  "shiurId": "yi-zmanim-pvrym-ktn-08",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains the Rema's closing words on Purim Katan, why he tells us to eat a little more at a meal though the custom does not follow the Ran, and how 'vetov lev mishteh tamid' lets one satisfy the stringent view without breaking the minhag.",
+      "yi": "דער משגיח ערקלערט די לעצטע ווערטער פונעם רמ\"א וועגן פורים קטן: פארוואס ער הייסט מרבה זיין א ביסל אין סעודה כאטש דער מנהג גייט נישט ווי דער ר\"ן, און ווי אזוי \"וטוב לב משתה תמיד\" לאזט יוצא זיין די מחמירים אן גיין קעגן דעם מנהג."
+    },
+    "abstract": {
+      "en": "The Rav reads the last siman of Shulchan Aruch Orach Chaim, where the Rema brings the Ran's view that Purim Katan requires feasting, notes that the custom follows Tosfos, yet says to eat a little more 'to satisfy the stringent', closing with 'vetov lev mishteh tamid'. Since the Rema guards every minhag, why add this? The Rav brings the Magen Avraham that one who experienced a miracle should make that day a yom tov, which the Chasam Sofer derives from the Gemara's kal vachomer about Hallel, and the Magen Avraham that a yahrzeit is kept in both Adars. Purim's own mishteh is a special din tied to wine, because the miracle came through wine. So even Tosfos agrees one should rejoice on Purim Katan; the dispute is only about wine. The Rema's answer is that Jews always say l'chaim. The Rav closes with Rav Shmuel bar Shilas, a descendant of Haman.",
+      "yi": "דער משגיח לערנט דעם לעצטן סימן פון שולחן ערוך אורח חיים, וואו דער רמ\"א ברענגט דעם ר\"ן אז פורים קטן איז מען מחויב אין משתה ושמחה, זאגט אז דער מנהג איז ווי תוספות, און פונדעסטוועגן הייסט ער מרבה זיין קצת בסעודה \"לצאת ידי המחמירים\", און ענדיגט מיט \"וטוב לב משתה תמיד\". דער רמ\"א איז דאך זייער שטרענג אויף מנהגים, פארוואס פירט ער דא איין א נייעם מנהג? דער משגיח ברענגט דעם מגן אברהם אז ווער עס האט געהאט א נס דארף מאכן יענעם טאג א יום טוב, וואס דער חתם סופר לערנט ארויס פון דעם קל וחומר פון הלל אין גמרא, און דעם מגן אברהם אז א יארצייט האלט מען ביידע אדר'ס. די משתה פון פורים איז אבער א באזונדער דין מיט יין, ווייל דער נס איז געקומען דורך יין. ממילא איז אפילו תוספות מודה אז מ'דארף זיך פרייען פורים קטן, נאר נישט מיט יין. דער תירוץ פונעם רמ\"א איז אז אידן זאגן אלעמאל לחיים. צום סוף ברענגט ער רב שמואל בר שילת, א אייניקל פון המן."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The Rav says the Rema guards every minhag, so his instruction to eat a little more on Purim Katan, against the custom he himself records, needs an explanation.",
+          "yi": "דער משגיח זאגט אז דער רמ\"א היט אפ יעדן מנהג, ממילא דארף מען פארשטיין פארוואס ער הייסט מרבה זיין קצת בסעודה פורים קטן, כאטש ער זאגט אליין אז דער מנהג איז נישט אזוי."
+        },
+        "evidence": { "segs": [64, 65, 66, 108, 111], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "According to the Magen Avraham, anyone who experiences a miracle should make that day a yom tov, as with Purim Krakow, and the Chasam Sofer calls this a mitzvah learned by kal vachomer from Pesach.",
+          "yi": "לויט'ן מגן אברהם דארף יעדער וואס האט געהאט א נס מאכן יענעם טאג א יום טוב, אזוי ווי פורים קראקא, און דער חתם סופר רופט עס א מצוה וואס מ'לערנט ארויס מיט א קל וחומר פון פסח."
+        },
+        "evidence": { "segs": [118, 121, 134, 147, 151, 153], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The mishteh of Purim is not the general din of celebrating a miracle but a special halachah requiring wine, because the Purim miracle came about through wine.",
+          "yi": "די משתה פון פורים איז נישט דער אלגעמיינער דין פון פראווען א נס, נאר א באזונדערע הלכה אז ס'דארף זיין מיט יין, ווייל דער נס פון פורים איז געקומען דורך יין."
+        },
+        "evidence": { "segs": [228, 229, 233, 239, 240, 254], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Even Tosfos agrees one should rejoice on Purim Katan by the Magen Avraham's din; the difference is that only by the Ran's view must one drink wine.",
+          "yi": "אפילו תוספות איז מודה אז מ'דארף זיך פרייען פורים קטן לויט'ן דין פונעם מגן אברהם; דער חילוק איז נאר אז לויט'ן ר\"ן דארף מען טרינקען יין."
+        },
+        "evidence": { "segs": [322, 325, 334, 350, 353], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "The Rema's closing words 'vetov lev mishteh tamid' show how to satisfy the stringent view: Jews always say l'chaim at a gathering, so drinking a little wine does not look like going against the minhag.",
+          "yi": "די ווערטער \"וטוב לב משתה תמיד\" ווייזן ווי אזוי מ'איז יוצא די מחמירים: אידן זאגן אלעמאל לחיים ביי א צוזאמענקום, ממילא זעט עס נישט אויס ווי מ'גייט קעגן דעם מנהג ווען מ'טרינקט א ביסל יין."
+        },
+        "evidence": { "segs": [407, 408, 409, 413, 414], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Rav Shmuel bar Shilas, a descendant of Haman whose family became Jews through the Purim miracle, had special reason for joy, which is why his son taught 'mishenichnas Adar marbin besimcha'.",
+          "yi": "רב שמואל בר שילת, א אייניקל פון המן וועמענס משפחה איז געווארן אידן דורך דעם נס פון פורים, האט געהאט א באזונדערע שמחה, און דערפאר האט זיין זון געזאגט \"משנכנס אדר מרבין בשמחה\"."
+        },
+        "evidence": { "segs": [483, 504, 519, 523, 527, 533], "confidence": 0.7 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-zemanim-adar-purim-02-08-purim-katan",
+      "startSeg": 0,
+      "endSeg": 49,
+      "title": { "en": "The last siman of Orach Chaim", "yi": "דער לעצטער סימן פון אורח חיים" },
+      "summary": {
+        "en": "The Rav reads the last siman of Shulchan Aruch Orach Chaim on the 14th and 15th of Adar Rishon, the Mishnah that the two Adars differ only in Megillah and gifts to the poor, and the Rema's gloss ending with 'vetov lev mishteh tamid'. He says every word of the Rema is ruach hakodesh and deserves closer thought.",
+        "yi": "דער משגיח לערנט דעם לעצטן סימן פון שולחן ערוך אורח חיים וועגן י\"ד און ט\"ו אדר ראשון, די משנה אז צווישן ביידע אדר'ס איז נאר א חילוק אין מגילה און מתנות לאביונים, און דעם רמ\"א וואס ענדיגט מיט \"וטוב לב משתה תמיד\". ער זאגט אז יעדעס ווארט פונעם רמ\"א איז רוח הקודש און מ'דארף זיך דערין מתבונן זיין."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-02-08-purim-katan",
+      "startSeg": 50,
+      "endSeg": 111,
+      "title": { "en": "The Rema's strictness about minhag", "yi": "דער רמ\"א'ס שטרענגקייט אין מנהגים" },
+      "summary": {
+        "en": "The Rav lays out the dispute between the Ran, who requires feasting on Purim Katan, and Tosfos, whom the custom follows. He shows the Rema's zeal for minhag with the example of shevarim-teruah blown in two breaths, and asks why the Rema then tells us to eat a little more at a meal.",
+        "yi": "דער משגיח שטעלט אוועק די מחלוקת צווישן דעם ר\"ן, וואס האלט אז פורים קטן איז א חיוב פון משתה ושמחה, און תוספות, וואס דער מנהג גייט ווי זיי. ער ווייזט ווי שטרענג דער רמ\"א איז אויף מנהגים מיט דעם משל פון שברים תרועה אין צוויי נשימות, און פרעגט פארוואס דער רמ\"א הייסט דאן מרבה זיין קצת בסעודה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-02-08-purim-katan",
+      "startSeg": 112,
+      "endSeg": 187,
+      "title": { "en": "A private Purim and a yahrzeit in Adar", "yi": "א פריוואטער פורים און א יארצייט אין אדר" },
+      "summary": {
+        "en": "The Rav brings the Magen Avraham that a community or individual who experienced a miracle should make that day a yom tov, like Purim Krakow, and the Chasam Sofer who derives this mitzvah from the Gemara's kal vachomer about Hallel. He then brings the Magen Avraham that a yahrzeit is kept in both Adars, since only the Megillah is limited to the second Adar by the word 'hasheinis'.",
+        "yi": "דער משגיח ברענגט דעם מגן אברהם אז א שטאט אדער א יחיד וואס האט געהאט א נס זאל מאכן יענעם טאג א יום טוב, אזוי ווי פורים קראקא, און דעם חתם סופר וואס לערנט די מצוה ארויס פון דעם קל וחומר פון הלל אין גמרא. דערנאך ברענגט ער דעם מגן אברהם אז א יארצייט האלט מען ביידע אדר'ס, ווייל נאר די מגילה איז באגרעניצט צום צווייטן אדר צוליב דעם ווארט \"השנית\"."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-02-08-purim-katan",
+      "startSeg": 188,
+      "endSeg": 267,
+      "title": { "en": "Why Purim's feast needs wine", "yi": "פארוואס די סעודה פון פורים דארף יין" },
+      "summary": {
+        "en": "The Rav explains the Ran's view that Purim Katan requires a feast, and asks why Chanukah has no din of mishteh vesimcha despite the kal vachomer. He answers that the mishteh of Purim is a special din, a remembrance of a miracle that came through wine, so by the Ran one must drink wine on Purim Katan too.",
+        "yi": "דער משגיח ערקלערט דעם ר\"ן'ס שיטה אז פורים קטן איז א חיוב סעודה, און פרעגט פארוואס חנוכה האט נישט קיין דין פון משתה ושמחה טראץ דעם קל וחומר. ער ענטפערט אז די משתה פון פורים איז א באזונדערער דין, א זכר לנס וואס איז געקומען דורך יין, ממילא דארף מען לויט'ן ר\"ן טרינקען יין אויך פורים קטן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-02-08-purim-katan",
+      "startSeg": 268,
+      "endSeg": 358,
+      "title": { "en": "Even Tosfos agrees to rejoice", "yi": "אפילו תוספות איז מודה צו פרייען" },
+      "summary": {
+        "en": "The Rav asks why Tosfos does not require rejoicing on Purim Katan by the Magen Avraham's din, and answers that Tosfos too would agree to that. The difference is that a self-made yom tov like Purim Krakow can be celebrated in any way, even a parade, while Purim Gadol has halachos from Chazal that require wine.",
+        "yi": "דער משגיח פרעגט פארוואס תוספות האלט נישט אז מ'דארף זיך פרייען פורים קטן לויט'ן דין פונעם מגן אברהם, און ענטפערט אז תוספות איז טאקע מודה. דער נפקא מינה איז אז א יום טוב וואס מ'מאכט אליין, ווי פורים קראקא, קען מען פראווען ווי מ'וויל, אפילו מיט א פאראד, אבער פורים גדול האט הלכות פון חז\"ל אז מ'מוז טרינקען יין."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-02-08-purim-katan",
+      "startSeg": 359,
+      "endSeg": 420,
+      "title": { "en": "Rereading the Rema: a l'chaim", "yi": "דער רמ\"א נאכאמאל: א לחיים" },
+      "summary": {
+        "en": "The Rav rereads the Rema phrase by phrase and points to the change of wording from 'mishteh vesimcha' to 'yarbeh ketzas biseudah'. He asks how a meal without wine satisfies the stringent view, and answers from 'vetov lev mishteh tamid': Jews always say l'chaim with a little wine, so one fulfills the Ran's view without visibly going against the minhag.",
+        "yi": "דער משגיח לערנט איבער דעם רמ\"א ווארט ביי ווארט און ווייזט אן דעם חילוק אין לשון פון \"משתה ושמחה\" צו \"ירבה קצת בסעודה\". ער פרעגט ווי אזוי א סעודה אן יין איז יוצא די מחמירים, און ענטפערט פון \"וטוב לב משתה תמיד\": אידן זאגן אלעמאל לחיים מיט א ביסל יין, ממילא איז מען יוצא דעם ר\"ן אן גיין בפירוש קעגן דעם מנהג."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-02-08-purim-katan",
+      "startSeg": 421,
+      "endSeg": 472,
+      "title": { "en": "Wine or any strong drink?", "yi": "יין אדער יעדע משקה?" },
+      "summary": {
+        "en": "The Rav wonders whether the Purim drinking must be wine or any intoxicating drink, since the custom is to drink bronfen. He notes that wine is named at Vashti's feast while Esther's feasts mention only 'mishteh', contrasts kiddush where wine is required, mentions Rabbi Avraham of Tshechanov drinking a revi'is of wine on Purim, and remarks that bronfen is a newer drink.",
+        "yi": "דער משגיח טראכט צו מ'מוז טרינקען פורים דווקא יין אדער יעדע משקה המשכר, ווייל דער מנהג איז צו טרינקען בראנפן. ער ווייזט אן אז ביי דער סעודה מיט ושתי שטייט יין, און ביי אסתר'ס סעודות שטייט נאר \"משתה\", ער שטעלט עס אקעגן קידוש וואו מ'דארף יין, דערציילט פון ר' אברהם טשעכאנאווער וואס פלעגט טרינקען א רביעית יין פורים, און זאגט אז בראנפן איז א נייע זאך."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-02-08-purim-katan",
+      "startSeg": 473,
+      "endSeg": 548,
+      "title": { "en": "Haman's descendant and the joy of Adar", "yi": "המן'ס אייניקל און די שמחה פון אדר" },
+      "summary": {
+        "en": "Short of time, the Rav brings the Gemara that 'mishenichnas Adar marbin besimcha' was said by Rav Yehuda the son of Rav Shmuel bar Shilas. From the Gemara that Haman's descendants taught Torah in Bnei Brak, he identifies Rav Shmuel bar Shilas as a descendant of Haman who would not have been a Jew without the Purim miracle, and so had special joy in Adar; he closes with blessings.",
+        "yi": "ווייל ס'איז שוין שפעט, ברענגט דער משגיח קורץ די גמרא אז \"משנכנס אדר מרבין בשמחה\" האט געזאגט רב יהודה בריה דרב שמואל בר שילת. פון דער גמרא אז מבני בניו של המן האבן געלערנט תורה אין בני ברק, ווייזט ער אז רב שמואל בר שילת איז געווען א אייניקל פון המן, וואס וואלט נישט געווען קיין איד אן דעם נס פון פורים, און דערפאר האט ער געהאט א באזונדערע שמחה אין אדר. ער ענדיגט מיט ברכות."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "דער לעצטער סימן פון שולחן ערוך הרחים",
+      "work": "Shulchan Aruch Orach Chaim",
+      "ref": "Shulchan Aruch Orach Chaim 697:1",
+      "sefariaRef": "Shulchan Arukh, Orach Chayim 697:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [0, 16, 17, 18, 22], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "זאגט דער אמא, יש אמרים שחיובם להבית במשתה ושמחה",
+      "work": "Rema",
+      "ref": "Rema, Shulchan Aruch Orach Chaim 697:1",
+      "sefariaRef": "Shulchan Arukh, Orach Chayim 697:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [26, 27, 31, 39, 42], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "עין בין אדר ראשון, ולי אדר שני, אלא מקוה, מגלה, ומתנות לב יענעם",
+      "work": "Mishnah Megillah",
+      "ref": "Mishnah Megillah 1:4",
+      "sefariaRef": "Mishnah Megillah 1:4",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [9, 10, 11], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "א פסוק אין מישלי – בטוב לב משתתמיד",
+      "work": "Mishlei",
+      "ref": "Mishlei 15:15",
+      "sefariaRef": "Proverbs 15:15",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [42, 43, 46], "confidence": 0.9 }
+    },
+    {
+      "heardAs": "דער יש אומרים איז דער רב",
+      "work": "Ran",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [34, 51, 56], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "תוספות קריגט זיך אויף דעם",
+      "work": "Tosfos",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [53, 57], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "תומגון אברהם און סימן טייל פי טויב",
+      "work": "Magen Avraham",
+      "ref": "Magen Avraham, Orach Chaim 686",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [115, 116, 118, 121, 122], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "דער חתם סופר ברענגט עס ארונטער אין די תשובה",
+      "work": "Shu\"t Chasam Sofer",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [134, 138, 139], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די גמרא מי מווה ומי שבד לגאולה זאגט מען הלל",
+      "work": "Gemara Megillah",
+      "ref": "Megillah 14a",
+      "sefariaRef": "Megillah 14a",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [139, 140, 141, 142, 145], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער עמרגען אברהם ער זאגט אז מען זאל פארכערן אין בעדה",
+      "work": "Magen Avraham",
+      "ref": "Magen Avraham, Orach Chaim 568",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [157, 160, 161, 162, 168], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "לקיימת יגרת הפרום הזאת השנות",
+      "work": "Esther",
+      "ref": "Esther 9:29",
+      "sefariaRef": "Esther 9:29",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [172, 173, 193], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "עס שטעט אין די גמרא אז מען ליינט נישט ... אדר ש'",
+      "work": "Gemara Megillah",
+      "ref": "Megillah 6b-7a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [169, 172, 174, 183], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אזוי ווי די ראשונים זאגן",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [230, 231, 233], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "זה ה'מתה ה' נגילה ונשמה חוה",
+      "work": "Tehillim",
+      "ref": "Tehillim 118:24",
+      "sefariaRef": "Psalms 118:24",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [307, 326], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "טוב לב המלך בן יואל",
+      "work": "Esther",
+      "ref": "Esther 1:10",
+      "sefariaRef": "Esther 1:10",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [431, 432, 433], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "יבא המלך האמן על המשטא",
+      "work": "Esther",
+      "ref": "Esther 5:5",
+      "sefariaRef": "Esther 5:5",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [435, 436, 437], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "זכות ימי שבת לקדשו",
+      "work": "Shemos",
+      "ref": "Shemos 20:8",
+      "sefariaRef": "Exodus 20:8",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [452, 453, 454], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "עמה רב יהודה ... כחת כשנכנות אדור מאבן בשמחה",
+      "work": "Gemara Taanis",
+      "ref": "Taanis 29a",
+      "sefariaRef": "Taanit 29a",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [482, 483, 484, 485], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "איין גמרא איז דאן ביי בן באספאר",
+      "work": "Gemara Bava Basra",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [487, 488, 490], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "א נאכן גמרא איז דא אין חלק ... בבני בני אפשר האמן, למדה תורה בבני ברק",
+      "work": "Gemara Sanhedrin",
+      "ref": "Sanhedrin 96b",
+      "sefariaRef": "Sanhedrin 96b",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [493, 494, 495], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "עס איז דא א געות'ע יעקב",
+      "work": "Ein Yaakov",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [498, 499], "confidence": 0.7 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav reads the Rema's switch from 'mishteh vesimcha' to 'yarbeh ketzas biseudah' as deliberate: the Rema is not adopting the Ran's obligation but the feast every view agrees to.",
+        "yi": "דער משגיח לערנט אז דער רמ\"א טוישט בכוונה דעם לשון פון \"משתה ושמחה\" צו \"ירבה קצת בסעודה\": ער נעמט נישט אן דעם חיוב פונעם ר\"ן, נאר א סעודה וואס אלע זענען מודה."
+      },
+      "evidence": { "segs": [378, 379, 380, 381, 416, 417], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav distinguishes two dinim of joy: the Magen Avraham's general yom tov for a miracle, which can be kept in any way, and Purim's own mishteh, a remembrance of a miracle that came through wine, which requires wine.",
+        "yi": "דער משגיח מאכט א חילוק צווישן צוויי דינים פון שמחה: דעם מגן אברהם'ס אלגעמיינעם יום טוב פאר א נס, וואס מ'קען האלטן ווי מ'וויל, און די אייגענע משתה פון פורים, א זכר לנס וואס איז געקומען דורך יין, וואס דארף דווקא יין."
+      },
+      "evidence": { "segs": [251, 252, 253, 311, 313, 317], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Chanukah has no din of mishteh vesimcha despite the kal vachomer of Hallel, which shows that Purim's feasting is not derived from that kal vachomer.",
+        "yi": "חנוכה האט נישט קיין דין פון משתה ושמחה טראץ דעם קל וחומר פון הלל, א סימן אז די משתה פון פורים קומט נישט פון יענעם קל וחומר."
+      },
+      "evidence": { "segs": [216, 219, 221, 223, 225], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The Rema's rule not to go against a minhag applies where one visibly opposes it; since Jews always drink l'chaim, a little wine at the meal does not visibly break the custom.",
+        "yi": "דער כלל פונעם רמ\"א נישט צו גיין קעגן א מנהג איז נאר וואו מ'גייט בפירוש קעגן דעם מנהג; וויבאלד אידן טרינקען אלעמאל לחיים, איז א ביסל יין ביי דער סעודה נישט קיין סתירה צום מנהג."
+      },
+      "evidence": { "segs": [409, 413, 414, 420], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The joy of Adar was taught by the son of Rav Shmuel bar Shilas because his family, descended from Haman, became Jews only through the Purim miracle.",
+        "yi": "די שמחה פון אדר האט געלערנט דער זון פון רב שמואל בר שילת, ווייל זיין משפחה, אייניקלעך פון המן, איז געווארן אידן נאר דורך דעם נס פון פורים."
+      },
+      "evidence": { "segs": [504, 519, 523, 527, 535], "confidence": 0.7 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "Purim Krakow", "yi": "פורים קראקא" },
+      "retelling": {
+        "en": "The Rav mentions that many towns in Europe, and especially Sephardic communities, had their own Purim for a miracle that happened to them. In Krakow there was a great miracle when the Jews were saved from a priest who was an enemy of the Jews. The day of his downfall was called Purim Krakow, and they used to rejoice and make a seudah on it.",
+        "yi": "דער משגיח דערציילט אז אסאך שטעט אין אייראפע, און בפרט די ספרדים, האבן געהאט זייער אייגענעם פורים פאר א נס וואס איז געשען ביי זיי. אין קראקא איז געווען א גרויסער נס, מ'איז געראטעוועט געווארן פון א גלח וואס איז געווען א שונא ישראל. דעם טאג פון זיין מפלה האט מען גערופן פורים קראקא, און מ'פלעגט זיך דעמאלט פרייען און מאכן א סעודה."
+      },
+      "people": [],
+      "evidence": { "segs": [123, 125, 128, 129, 130, 131], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "Rabbi Avraham of Tshechanov's revi'is", "yi": "ר' אברהם טשעכאנאווער'ס רביעית" },
+      "retelling": {
+        "en": "The Rav relates that Rabbi Avraham of Tshechanov was careful on Purim to pour a revi'is of wine and drink it, and with that he fulfilled the obligation. The Rav adds that the Polish revi'is cups were very small.",
+        "yi": "דער משגיח דערציילט אז ר' אברהם טשעכאנאווער פלעגט זיך פורים מקפיד זיין צו אנגיסן א רביעית יין און עס אויסטרינקען, און דערמיט איז ער יוצא געווען. ער לייגט צו אז די פוילישע רביעית'לעך זענען געווען זייער קליין."
+      },
+      "people": ["Rabbi Avraham of Tshechanov"],
+      "evidence": { "segs": [457, 458, 459, 460], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "The Rema is so strict about minhag and himself records that the custom is not like the Ran; why does he introduce eating a little more at a meal on Purim Katan?",
+        "yi": "דער רמ\"א איז אזוי שטרענג אויף מנהגים און זאגט אליין אז דער מנהג איז נישט ווי דער ר\"ן; פארוואס פירט ער איין מרבה זיין קצת בסעודה פורים קטן?"
+      },
+      "answer": {
+        "en": "Even by Tosfos, the Magen Avraham's din of celebrating a day of miracle applies to Purim Katan as to a yahrzeit in both Adars, so some feast is fitting.",
+        "yi": "אפילו לויט תוספות גייט אן דער דין פונעם מגן אברהם צו פראווען א טאג פון א נס, אזוי ווי א יארצייט אין ביידע אדר'ס, ממילא פאסט א שטיקל סעודה."
+      },
+      "questionSegs": [108, 109, 110, 111],
+      "answerSegs": [371, 372, 374, 375],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "If one must make a yom tov for a miracle by kal vachomer, why is there no din of mishteh vesimcha on Chanukah?",
+        "yi": "אויב מ'דארף מאכן א יום טוב פאר א נס מיט א קל וחומר, פארוואס איז נישטא קיין דין פון משתה ושמחה חנוכה?"
+      },
+      "answer": {
+        "en": "Purim's mishteh is not from that din; it is a special remembrance of a miracle that came through wine.",
+        "yi": "די משתה פון פורים קומט נישט פון יענעם דין; ס'איז א באזונדערער זכר לנס וואס איז געקומען דורך יין."
+      },
+      "questionSegs": [209, 211, 219, 221],
+      "answerSegs": [224, 228, 229, 239, 240],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why does Tosfos not require rejoicing on Purim Katan, given the Magen Avraham's din and his ruling that both Adars are alike?",
+        "yi": "פארוואס האלט תוספות נישט אז מ'דארף זיך פרייען פורים קטן, לויט'ן מגן אברהם'ס דין און זיין פסק אז ביידע אדר'ס זענען גלייך?"
+      },
+      "answer": {
+        "en": "Tosfos would agree to rejoice; they only hold there is no obligation of wine, which belongs to the halachos of Purim Gadol.",
+        "yi": "תוספות איז מודה אז מ'דארף זיך פרייען; זיי האלטן נאר אז ס'איז נישטא קיין חיוב פון יין, וואס געהערט צו די הלכות פון פורים גדול."
+      },
+      "questionSegs": [268, 270, 272, 281],
+      "answerSegs": [288, 289, 333, 334, 350],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "How does 'yarbeh ketzas biseudah' satisfy the stringent view, which requires wine, if the minhag does not follow it?",
+        "yi": "ווי אזוי איז מען מיט \"ירבה קצת בסעודה\" יוצא די מחמירים, וואס דארפן יין, אז דער מנהג איז נישט אזוי?"
+      },
+      "answer": {
+        "en": "'Vetov lev mishteh tamid': at every gathering Jews drink a little wine to say l'chaim, so they fulfill the Ran without going against the minhag.",
+        "yi": "\"וטוב לב משתה תמיד\": ביי יעדן צוזאמענקום טרינקען אידן א ביסל יין צו זאגן לחיים, ממילא איז מען יוצא דעם ר\"ן אן גיין קעגן דעם מנהג."
+      },
+      "questionSegs": [388, 389, 390, 391],
+      "answerSegs": [406, 407, 408, 409, 420],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why was it Rav Yehuda the son of Rav Shmuel bar Shilas who said 'mishenichnas Adar marbin besimcha'?",
+        "yi": "פארוואס האט דווקא רב יהודה בריה דרב שמואל בר שילת געזאגט \"משנכנס אדר מרבין בשמחה\"?"
+      },
+      "answer": {
+        "en": "Rav Shmuel bar Shilas was a descendant of Haman and would not have been a Jew without the Purim miracle, so his family had special joy in Adar.",
+        "yi": "רב שמואל בר שילת איז געווען אן אייניקל פון המן און וואלט נישט געווען קיין איד אן דעם נס פון פורים, דערפאר האט זיין משפחה געהאט א באזונדערע שמחה אין אדר."
+      },
+      "questionSegs": [483, 485, 527],
+      "answerSegs": [504, 519, 524, 526, 531],
+      "confidence": 0.7
+    }
+  ],
+  "takeaways": [],
+  "candidateTopics": [
+    "Purim Katan",
+    "Rema's closing words on Orach Chaim",
+    "mishteh vesimcha and wine on Purim",
+    "the authority of minhag",
+    "making a yom tov for a personal miracle",
+    "yahrzeit in a leap year",
+    "the Ran and Tosfos on Purim Katan",
+    "Haman's descendants who learned Torah",
+    "mishenichnas Adar marbin besimcha"
+  ],
+  "concepts": [
+    { "he": "פורים קטן", "heardAs": ["פרום קטן", "פרום כתן", "פורים קוטען", "פרום קארטן"] },
+    { "he": "משתה ושמחה", "heardAs": ["משתה ותמחה", "משתוו שמחה", "משתפה שמחה"] },
+    { "he": "ירבה קצת בסעודה", "heardAs": ["יבא בקצת בשעדה", "יא בקצת פסדה", "יעבע כצת פסודו"] },
+    { "he": "לצאת ידי המחמירים", "heardAs": ["לעצט איש ידיעה מאכמורים", "ידיעה מחמירים"] },
+    { "he": "וטוב לב משתה תמיד", "heardAs": ["בטוב לב משתתמיד", "הטוב לב מושטא תמיד", "טוב ולב מושא צמד"] },
+    { "he": "זכר לנס", "heardAs": ["זכר'לע נס", "זכר לנס"] },
+    { "he": "קל וחומר", "heardAs": ["קבל חומר", "קל וחומה", "קל וחינם"] },
+    { "he": "מבני בניו של המן", "heardAs": ["בבני בני אפשר האמן"] },
+    { "he": "שברים תרועה בנשימה אחת", "heardAs": ["שווארים טרעה איז בנשימה אחת", "שטענע שומת"] },
+    { "he": "רביעית", "heardAs": ["רבי'ת"] }
+  ],
+  "people": [
+    { "name": "the Rema", "heardAs": ["רמה", "רמא", "רמב״ה", "המה", "רמז"] },
+    { "name": "the Mechaber", "heardAs": ["מחבר"] },
+    { "name": "the Ran", "heardAs": ["דער רב", "רוף", "אריף"] },
+    { "name": "Tosfos", "heardAs": ["תוספות", "תספות"] },
+    { "name": "the Magen Avraham", "heardAs": ["תומגון אברהם", "מרגן אברהם", "מגין אברהם", "עמרגען אברהם"] },
+    { "name": "the Chasam Sofer", "heardAs": ["חתם סופר"] },
+    { "name": "Rebbe Elimelech", "heardAs": ["רבי רבי מלך"] },
+    { "name": "Achashverosh", "heardAs": ["א חשבראש"] },
+    { "name": "Esther", "heardAs": ["אסתר"] },
+    { "name": "Haman", "heardAs": ["האמן", "העומן"] },
+    { "name": "Vashti", "heardAs": ["וואשתי"] },
+    { "name": "Rabbi Avraham of Tshechanov", "heardAs": ["רבי אברהם טשעכענאווער"] },
+    { "name": "Rav Yehuda the son of Rav Shmuel bar Shilas", "heardAs": ["רב יהודה, עמה רב שמעה, בעשילת"] },
+    { "name": "Rav Shmuel bar Shilas", "heardAs": ["רבי שמעון באשולעס", "רבי ישמר'ער באשולע'ס", "ר' ישמר'לב ביי שולעס"] }
+  ],
+  "asrNotes": "Yiddish ASR fair for the Rav's own speech but the Rema, Mishnah and Gemara quotations are heavily garbled; 'the Ran' is mostly heard as 'דער רב'. The passage about seventy sons of Haman who became charity collectors (segs 507-512) and the closing blessings (segs 541-548) are too garbled to use. Segment 505 is a flagged repeat of 504."
+}

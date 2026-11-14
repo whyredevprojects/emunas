@@ -1,0 +1,672 @@
+{
+  "shiurId": "yi-zmanim-zs-chnvkh-13",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "Through the Chiddushei HaRim, the Rav explains that the light of Chanukah is Aharon's own light still burning, that it demands more than a person's strength, that Hallel and songs of praise make Chanukah a Yom Tov, and that this light must reach those who are far away.",
+      "yi": "דער משגיח ערקלערט על פי דעם חידושי הרי\"ם אז די ליכט פון חנוכה איז אהרן הכהנס ליכט וואס ברענט נאך היינט, אז זי פאדערט מער ווי א מענטשנס כח, אז הלל און שירות ותשבחות מאכן חנוכה פאר א יום טוב, און אז די ליכט דארף דערגרייכן די וואס זענען ווייט."
+    },
+    "abstract": {
+      "en": "The Rav repeats teachings of the Chiddushei HaRim on Chanukah. Rashi says Aharon was consoled for missing the dedication of the Mishkan with the lighting of the menorah, and the Ramban, puzzled, links it to the Chanukah of the Chashmonaim. The Chiddushei HaRim explains that Aharon's ner hama'aravi was never extinguished and still burns in its hiding place, and the Chanukah lights come from it; this is 'Zos Chanukah'. The mitzvah of Chanukah also demands more than a person's strength, beyond 'with all your means', since the miracle came through mesirus nefesh. The poskim say singing praises turns the Chanukah meal into a seudas mitzvah: the Gemara says the days were fixed as Yom Tov with Hallel and thanksgiving, so the praise itself makes the day a Yom Tov. Finally, Chanukah light must reach those far away, and the Rav calls for supporting kiruv as an opportunity Hashem sends today.",
+      "yi": "דער משגיח זאגט איבער עטליכע ווערטער פונעם חידושי הרי\"ם אויף חנוכה. רש\"י זאגט אז אהרן איז געטרייסט געווארן אויף דעם וואס ער האט נישט געהאט קיין חלק אין חנוכת הנשיאים מיט דער הדלקת הנרות, און דער רמב\"ן, וואס וואונדערט זיך, לערנט עס אויף די חנוכה פון די חשמונאים. דער חידושי הרי\"ם ערקלערט אז אהרנס נר המערבי איז קיינמאל נישט אויסגעלאשן געווארן און ברענט נאך היינט אין דער גניזה, און פון איר נעמען זיך די חנוכה ליכט; דאס איז \"זאת חנוכה\". די מצוה פון חנוכה פאדערט אויך מער ווי א מענטשנס כח, מער ווי \"בכל מאדך\", ווייל דער נס איז געקומען דורך מסירות נפש. די פוסקים זאגן אז שירות ותשבחות מאכן די סעודה פון חנוכה פאר א סעודת מצוה: די גמרא זאגט אז מ'האט די טעג קובע געווען פאר יום טוב בהלל והודאה, ממילא מאכט דער הלל אליין דעם טאג פאר א יום טוב. צום סוף זאגט ער אז די ליכט פון חנוכה דארף דערגרייכן די וואס זענען ווייט, און ער רופט צו שטיצן קירוב, א מעגליכקייט וואס דער אייבערשטער שיקט אין אונזער דור."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The Chanukah lights draw from Aharon's ner hama'aravi, which was never extinguished and still burns where it was hidden.",
+          "yi": "די חנוכה ליכט נעמען זיך פון אהרנס נר המערבי, וואס איז קיינמאל נישט אויסגעלאשן געווארן און ברענט נאך וואו ער איז באהאלטן."
+        },
+        "evidence": {
+          "segs": [
+            26,
+            29,
+            31,
+            36
+          ],
+          "confidence": 0.8
+        }
+      },
+      {
+        "text": {
+          "en": "Other Yamim Tovim bring down the lights of their miracles, but on Chanukah the very same miracle still burns, even physically.",
+          "yi": "ביי אנדערע ימים טובים קומען אראפ די אורות פון די ניסים, אבער חנוכה ברענט נאך דער זעלבער נס, אפילו אין גשמיות."
+        },
+        "evidence": {
+          "segs": [
+            41,
+            43,
+            45,
+            59
+          ],
+          "confidence": 0.8
+        }
+      },
+      {
+        "text": {
+          "en": "The mitzvah of Chanukah demands more than a person's strength, beyond 'with all your means', since the miracle came through mesirus nefesh.",
+          "yi": "די מצוה פון חנוכה פאדערט מער ווי א מענטשנס כח, מער ווי \"בכל מאדך\", ווייל דער נס איז געקומען דורך מסירות נפש."
+        },
+        "evidence": {
+          "segs": [
+            76,
+            79,
+            88,
+            89
+          ],
+          "confidence": 0.75
+        }
+      },
+      {
+        "text": {
+          "en": "Saying Hallel and singing praises is what turns Chanukah into a Yom Tov, and so it makes the meal a seudas mitzvah.",
+          "yi": "הלל זאגן און זינגען שירות ותשבחות מאכט חנוכה פאר א יום טוב, און ממילא ווערט די סעודה א סעודת מצוה."
+        },
+        "evidence": {
+          "segs": [
+            148,
+            153,
+            173,
+            176
+          ],
+          "confidence": 0.85
+        }
+      },
+      {
+        "text": {
+          "en": "The Chanukah light must be brought to those who are 'below ten tefachim', the ones far from Torah.",
+          "yi": "די ליכט פון חנוכה דארף מען אריינברענגען צו די וואס זענען \"למטה מעשרה טפחים\", די וואס זענען ווייט."
+        },
+        "evidence": {
+          "segs": [
+            178,
+            180,
+            197
+          ],
+          "confidence": 0.7
+        }
+      },
+      {
+        "text": {
+          "en": "The unprecedented opportunity for kiruv in this generation is a sign that Hashem is sending the merit of the mitzvah before the ingathering of the exiles.",
+          "yi": "די מעגליכקייט פון קירוב וואס איז נאך קיינמאל נישט געווען, איז א סימן אז דער אייבערשטער שיקט די מצוה פאר קיבוץ גליות."
+        },
+        "evidence": {
+          "segs": [
+            201,
+            211,
+            232,
+            233
+          ],
+          "confidence": 0.75
+        }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-zemanim-kislev-and-choref-02-13-z-ch",
+      "startSeg": 0,
+      "endSeg": 61,
+      "title": {
+        "en": "Aharon's light still burns",
+        "yi": "אהרנס ליכט ברענט נאך"
+      },
+      "summary": {
+        "en": "The Rav brings Rashi and the Ramban on Aharon being consoled with the lighting of the menorah, and the Chiddushei HaRim's explanation that Aharon's ner hama'aravi still burns and the Chanukah lights come from it. This, he says, is why the last day is called 'Zos Chanukah'.",
+        "yi": "דער משגיח ברענגט רש\"י און דעם רמב\"ן אז אהרן איז געטרייסט געווארן מיט דער הדלקת הנרות, און דעם חידושי הרי\"ם אז אהרנס נר המערבי ברענט נאך און פון אים נעמען זיך די חנוכה ליכט. דערפאר, זאגט ער, הייסט דער לעצטער טאג \"זאת חנוכה\"."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-kislev-and-choref-02-13-z-ch",
+      "startSeg": 62,
+      "endSeg": 113,
+      "title": {
+        "en": "A mitzvah beyond one's strength",
+        "yi": "א מצוה העכער פון כח"
+      },
+      "summary": {
+        "en": "The Rav contrasts the usual limit on spending for a mitzvah with Chanukah, where even a poor man must borrow or sell his garment, and explains that a mitzvah above nature demands more than one's strength. He adds the Chiddushei HaRim that the Chanukah light, placed outside, reaches even the one who is outside, and that its rise comes with Hallel the next morning.",
+        "yi": "דער משגיח שטעלט אוועק דעם געווענליכן שיעור וויפיל מ'דארף אוועקגעבן פאר א מצוה קעגן חנוכה, וואו אפילו אן ארימאן מוז בארגן אדער פארקויפן זיין מלבוש, און ערקלערט אז א מצוה העכער פון טבע פאדערט מער ווי דעם כח. ער לייגט צו דעם חידושי הרי\"ם אז די חנוכה ליכט, וואס מ'שטעלט מבחוץ, דערגרייכט אפילו דעם וואס איז אינדרויסן, און איר עליה קומט מיטן הלל אויף צומארגנס."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-kislev-and-choref-02-13-z-ch",
+      "startSeg": 114,
+      "endSeg": 176,
+      "title": {
+        "en": "Songs of praise make the seudah a mitzvah",
+        "yi": "שירות ותשבחות מאכן א סעודת מצוה"
+      },
+      "summary": {
+        "en": "The Rav asks why the poskim's advice to sing songs of praise turns the Chanukah meal, otherwise optional, into a seudas mitzvah. He answers with the Chiddushei HaRim: the Gemara says the days were fixed as Yom Tov with Hallel and thanksgiving, so the praise creates the Yom Tov, and a Yom Tov calls for a seudah.",
+        "yi": "דער משגיח פרעגט פארוואס די עצה פון די פוסקים צו זינגען שירות ותשבחות מאכט די סעודה פון חנוכה, וואס איז סתם א רשות, פאר א סעודת מצוה. ער ענטפערט מיטן חידושי הרי\"ם: די גמרא זאגט אז מ'האט די טעג קובע געווען יום טוב בהלל והודאה, ממילא שאפט דער הלל דעם יום טוב, און א יום טוב פאדערט א סעודה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [
+        0
+      ],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-kislev-and-choref-02-13-z-ch",
+      "startSeg": 177,
+      "endSeg": 255,
+      "title": {
+        "en": "Bringing the light to those far away",
+        "yi": "אריינברענגען די ליכט צו די ווייטע"
+      },
+      "summary": {
+        "en": "The Rav says the Chanukah light must reach those 'below ten tefachim' and calls on the gathering to support Torah Umesorah's work with baalei teshuvah. He explains that the unprecedented chance for kiruv today is a mitzvah Hashem sends, as He sent the angels to Lot, before the ingathering of the exiles, and ties it to Yosef leaving prison in parshas Mikeitz.",
+        "yi": "דער משגיח זאגט אז די חנוכה ליכט דארף דערגרייכן די וואס זענען \"למטה מעשרה טפחים\", און רופט צו שטיצן תורה ומסורה וואס ארבעט מיט בעלי תשובה. ער ערקלערט אז די מעגליכקייט פון קירוב היינט איז א מצוה וואס דער אייבערשטער שיקט, אזוי ווי ער האט געשיקט די מלאכים צו לוט, פאר קיבוץ גליות, און ער פארבינדט עס מיט יוסף וואס גייט ארויס פון בית האסורים אין פרשת מקץ."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "אזוי זאגט רשע",
+      "work": "Rashi",
+      "ref": "Rashi on Bamidbar 8:2",
+      "sefariaRef": "Rashi on Numbers 8:2",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "confidence": 0.85
+      }
+    },
+    {
+      "heardAs": "דער רמבײן ווינדערט זיך",
+      "work": "Ramban",
+      "ref": "Ramban on Bamidbar 8:2",
+      "sefariaRef": "Ramban on Numbers 8:2",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          9,
+          11,
+          13,
+          14
+        ],
+        "confidence": 0.85
+      }
+    },
+    {
+      "heardAs": "דער רמבײן לערנט פשט מיט דעם מדרש",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": {
+        "segs": [
+          13
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "דער חידוש ירום זאגט",
+      "work": "Chiddushei HaRim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          3,
+          20,
+          62,
+          131
+        ],
+        "confidence": 0.85
+      }
+    },
+    {
+      "heardAs": "ובכל מידך",
+      "work": "Devarim",
+      "ref": "Devarim 6:5",
+      "sefariaRef": "Deuteronomy 6:5",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          65,
+          79,
+          90
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "עס שטייט אין די פוסקים א נצה מען זאל זינגען שירות, וואס איז שבחות",
+      "work": "Shulchan Aruch",
+      "ref": "Rema, Orach Chaim 670:2",
+      "sefariaRef": "Shulchan Arukh, Orach Chayim 670:2",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          114,
+          117,
+          119,
+          120
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "heardAs": "כבאים ועשוים יום טוב והלל והודעה",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 21b",
+      "sefariaRef": "Shabbat 21b",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          132,
+          133,
+          134,
+          135
+        ],
+        "confidence": 0.85
+      }
+    },
+    {
+      "heardAs": "חתם ספר דעת הדרשה",
+      "work": "Derashos Chasam Sofer",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          169,
+          170
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "אזוי ווי עס שטעט אין זייער הקודש",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          205,
+          207,
+          209,
+          210
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "heardAs": "במיור נדרכיך בקצה השמים ... משם יקבדך",
+      "work": "Devarim",
+      "ref": "Devarim 30:4",
+      "sefariaRef": "Deuteronomy 30:4",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          216,
+          217
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "ומלו השם לככך, ולבבך ולבבת לבב זרעכה",
+      "work": "Devarim",
+      "ref": "Devarim 30:6",
+      "sefariaRef": "Deuteronomy 30:6",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          219,
+          220
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "יצה יוסף מבעשה אסרים",
+      "work": "Bereishis",
+      "ref": "Bereishis 41:14 (parshas Mikeitz)",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": {
+        "segs": [
+          247,
+          248,
+          249
+        ],
+        "confidence": 0.7
+      }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Aharon's consolation was not only the lighting in his own day: his ner hama'aravi never went out, and the Chanukah lights of every generation draw from it.",
+        "yi": "אהרנס טרייסט איז נישט געווען נאר די הדלקה אין זיין צייט: זיין נר המערבי איז קיינמאל נישט אויסגעגאנגען, און די חנוכה ליכט פון יעדן דור נעמען זיך פון אים."
+      },
+      "evidence": {
+        "segs": [
+          21,
+          26,
+          31,
+          36
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "text": {
+        "en": "'Zos Chanukah' refers to Aharon's own dedication, which had no day of its own among the princes and continues to this day.",
+        "yi": "\"זאת חנוכה\" גייט אויף אהרנס אייגענע חנוכה, וואס האט נישט געהאט קיין טאג ביי די נשיאים און ציט זיך נאך ביז היינט."
+      },
+      "evidence": {
+        "segs": [
+          48,
+          52,
+          54,
+          57,
+          58
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "text": {
+        "en": "Because the Chanukah miracle came from mesirus nefesh above nature, its mitzvah too asks for more than a person's means, and through that effort one comes to feel the light of the mitzvah.",
+        "yi": "ווייל דער נס פון חנוכה איז געקומען פון מסירות נפש העכער פון טבע, פאדערט אויך די מצוה מער ווי א מענטשנס כח, און דורך דער מי שפירט מען די ליכטיגקייט פון דער מצוה."
+      },
+      "evidence": {
+        "segs": [
+          89,
+          94,
+          97,
+          98,
+          99
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "text": {
+        "en": "The Yom Tov of Chanukah is placed inside the Hallel itself: it is the praise that makes the day a Yom Tov, which is why songs of praise turn the meal into a seudas mitzvah.",
+        "yi": "דער יום טוב פון חנוכה איז אריינגעלייגט אינעם הלל אליין: דאס לויב מאכט דעם טאג פאר א יום טוב, און דערפאר מאכן שירות ותשבחות די סעודה פאר א סעודת מצוה."
+      },
+      "evidence": {
+        "segs": [
+          138,
+          140,
+          153,
+          166,
+          176
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "text": {
+        "en": "As Hashem sent Lot the angels so he would have the merit of hospitality, the new chance for kiruv is a mitzvah sent from Heaven to give Klal Yisrael merit before the ingathering of the exiles.",
+        "yi": "אזוי ווי דער אייבערשטער האט געשיקט לוט די מלאכים כדי ער זאל האבן א זכות פון הכנסת אורחים, איז די נייע מעגליכקייט פון קירוב א מצוה וואס מען שיקט פון הימל כדי צו געבן כלל ישראל א זכות פאר קיבוץ גליות."
+      },
+      "evidence": {
+        "segs": [
+          204,
+          209,
+          211,
+          232,
+          233
+        ],
+        "confidence": 0.75
+      }
+    }
+  ],
+  "stories": [],
+  "questions": [
+    {
+      "question": {
+        "en": "How was Aharon consoled by the lighting of the menorah, which is not a dedication, and how does the Chanukah of the Chashmonaim relate to the dedication of the Mishkan?",
+        "yi": "ווי אזוי איז אהרן געטרייסט געווארן מיט דער הדלקה, וואס איז נישט קיין חנוכה, און וואס האט די חנוכה פון די חשמונאים צו טון מיט חנוכת המשכן?"
+      },
+      "answer": {
+        "en": "The Chiddushei HaRim says Aharon's ner hama'aravi never went out and still burns in hiding, and the Chanukah lights draw from it.",
+        "yi": "דער חידושי הרי\"ם זאגט אז אהרנס נר המערבי איז קיינמאל נישט אויסגעגאנגען און ברענט נאך אין דער גניזה, און די חנוכה ליכט נעמען זיך פון אים."
+      },
+      "questionSegs": [
+        9,
+        11,
+        12,
+        18
+      ],
+      "answerSegs": [
+        20,
+        26,
+        31,
+        36
+      ],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why do songs of praise turn an optional Chanukah meal into a seudas mitzvah, when singing them at a meal in the middle of the year would not?",
+        "yi": "פארוואס מאכן שירות ותשבחות א סעודה פון חנוכה, וואס איז א רשות, פאר א סעודת מצוה, ווען אין מיטן יאר מאכט עס נישט קיין סעודת מצוה?"
+      },
+      "answer": {
+        "en": "Chanukah was fixed as a Yom Tov through Hallel and thanksgiving, so the praise makes it a Yom Tov, and a Yom Tov requires a seudah.",
+        "yi": "חנוכה איז קובע געווארן פאר א יום טוב בהלל והודאה, ממילא מאכט דאס לויב עס פאר א יום טוב, און א יום טוב פאדערט א סעודה."
+      },
+      "questionSegs": [
+        118,
+        121,
+        126,
+        129
+      ],
+      "answerSegs": [
+        148,
+        153,
+        173,
+        176
+      ],
+      "confidence": 0.85
+    },
+    {
+      "question": {
+        "en": "Why does this generation have an opportunity for kiruv that earlier generations did not?",
+        "yi": "פארוואס האט אונזער דור א מעגליכקייט פון קירוב וואס די פריערדיגע דורות האבן נישט געהאט?"
+      },
+      "answer": {
+        "en": "It is a sign that Hashem sends the mitzvah now, as a merit before the ingathering of the exiles.",
+        "yi": "ס'איז א סימן אז דער אייבערשטער שיקט יעצט די מצוה, אלס א זכות פאר קיבוץ גליות."
+      },
+      "questionSegs": [
+        230,
+        231
+      ],
+      "answerSegs": [
+        232,
+        233,
+        234
+      ],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav calls on those present to give for kiruv with all their strength and beyond it, since Chanukah is beyond one's strength.",
+        "yi": "דער משגיח רופט אז יעדער זאל געבן פאר קירוב מיט זיינע כוחות און מער ווי זיינע כוחות, ווייל חנוכה איז העכער פון די כוחות."
+      },
+      "evidence": {
+        "segs": [
+          250,
+          252,
+          253,
+          254
+        ],
+        "confidence": 0.75
+      }
+    }
+  ],
+  "candidateTopics": [
+    "Chanukah",
+    "Zos Chanukah",
+    "ner hama'aravi",
+    "Aharon and the dedication of the Mishkan",
+    "Hallel and thanksgiving",
+    "seudas mitzvah on Chanukah",
+    "mesirus nefesh beyond one's strength",
+    "kiruv rechokim",
+    "ingathering of the exiles",
+    "Chiddushei HaRim"
+  ],
+  "concepts": [
+    {
+      "he": "נר המערבי",
+      "heardAs": [
+        "נעלם הרבי"
+      ]
+    },
+    {
+      "he": "זאת חנוכה",
+      "heardAs": [
+        "זייס חנוכה"
+      ]
+    },
+    {
+      "he": "חנוכת המשכן",
+      "heardAs": [
+        "חינוך המשכן",
+        "חנוכת המשכן"
+      ]
+    },
+    {
+      "he": "הלל והודאה",
+      "heardAs": [
+        "הלל והודעה",
+        "הלב ועדה"
+      ]
+    },
+    {
+      "he": "שירות ותשבחות",
+      "heardAs": [
+        "שירת פון שבחות",
+        "שירות פון תשב''ח"
+      ]
+    },
+    {
+      "he": "סעודת מצוה",
+      "heardAs": [
+        "שרדת מצוה",
+        "סעוד עשה מצוה"
+      ]
+    },
+    {
+      "he": "מסירות נפש",
+      "heardAs": [
+        "מוצאי נפש"
+      ]
+    },
+    {
+      "he": "תינוקות שנשבו",
+      "heardAs": [
+        "תינוקות של נשבעל"
+      ]
+    },
+    {
+      "he": "למטה מעשרה טפחים",
+      "heardAs": [
+        "למטה מאה שרה",
+        "למטה מאה שורה"
+      ]
+    },
+    {
+      "he": "מקרב זיין",
+      "heardAs": [
+        "מקריב זיין"
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Aharon HaKohen",
+      "heardAs": [
+        "אהרן הקיהו",
+        "אלענא הקיין",
+        "אהרען הכהן"
+      ]
+    },
+    {
+      "name": "Rashi",
+      "heardAs": [
+        "רשע"
+      ]
+    },
+    {
+      "name": "Ramban",
+      "heardAs": [
+        "רמבײן"
+      ]
+    },
+    {
+      "name": "the Chiddushei HaRim",
+      "heardAs": [
+        "חידושי ארום",
+        "חדשי ירום",
+        "חדש ארום"
+      ]
+    },
+    {
+      "name": "the Chashmonaim",
+      "heardAs": [
+        "חשמונאי",
+        "חשמונים"
+      ]
+    },
+    {
+      "name": "the Chasam Sofer",
+      "heardAs": [
+        "חתם ספר"
+      ]
+    },
+    {
+      "name": "Lot",
+      "heardAs": [
+        "לויט"
+      ]
+    },
+    {
+      "name": "Yosef",
+      "heardAs": [
+        "יוסף"
+      ]
+    }
+  ],
+  "asrNotes": "Yiddish ASR fair for the speech, poor on quotations. The last segment (255) spans 16:09 to the end of the recording (about 36 minutes) with a single garbled line, so nothing from that stretch can be recovered; it is absorbed into the last section, which is too short to stand alone in the timing the validator measures. Segments 101-102 (a sefer saying Chanukah is for the downtrodden), 235-236 (a roshei teivos from the Arizal's writings) and 240-242 are too garbled to recover and are left out."
+}

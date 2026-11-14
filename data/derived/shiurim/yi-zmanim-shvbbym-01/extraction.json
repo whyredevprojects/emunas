@@ -1,0 +1,679 @@
+{
+  "shiurId": "yi-zmanim-shvbbym-01",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that Yosef stood above the Shevatim as one of the seven 'shepherds', that his sphere was taharah, and that his purity gave the grain he sold in Egypt a taste and smell of kedushah, from which Yaakov knew he was alive.",
+      "yi": "דער משגיח ערקלערט אז יוסף איז געשטאנען העכער פון די שבטים אלס איינער פון די שבעה רועים, אז זיין חלק איז טהרה, און אז זיין טהרה האט געגעבן א טעם און א ריח פון קדושה אין די תבואה וואס ער האט פארקויפט אין מצרים, און דערפון האט יעקב געוואוסט אז ער לעבט."
+    },
+    "abstract": {
+      "en": "The Rav opens Shovavim, the six weeks after Sefer Bereishis ends with Yosef's passing, as the time to draw down Yosef's kedushah. He asks why Yaakov loved Yosef for teaching him the Torah of Shem and Ever, and why Yaakov needed a teacher when Avraham grasped the whole Torah alone. He answers with the seven 'shepherds' (the ushpizin), each tied to a day, a middah and a seder of Mishnah: Avraham, the first, includes all, so he needed no teacher; each other shepherd grasped his own seder. Yosef, sixth, is Taharos, so Yaakov taught him only five sedarim, which showed he stood above the Shevatim. Through 'the power of the maker is in the made', Yosef's taharah gave the grain he sold a good taste and smell, from which Yaakov sensed he lived. The Rav turns to today's severe trials, calls for purity, Torah and tefillah, and closes with Hashem's love for those who withstand them.",
+      "yi": "דער משגיח עפנט די זעקס וואכן פון שובבי\"ם, וואס הייבן זיך אן ווען ספר בראשית ענדיגט זיך מיט דער פטירה פון יוסף, אלס די צייט צו ממשיך זיין די קדושה פון יוסף. ער פרעגט פארוואס יעקב האט ליב געהאט יוסף ווייל ער האט אים איבערגעגעבן די תורה פון שם ועבר, און פארוואס יעקב האט געדארפט מקבל זיין פון א רבי'ן ווען אברהם אבינו האט אליין משיג געווען די גאנצע תורה. ער ענטפערט מיט די שבעה רועים, די אושפיזין: יעדער איז שייך צו א טאג, א מידה און א סדר משניות. אברהם, דער ערשטער, איז כולל אלעס, דערפאר האט ער נישט געדארפט קיין רבי'ן; יעדער אנדערער רועה האט משיג געווען זיין אייגענעם סדר. יוסף, דער זעקסטער, איז סדר טהרות, האט יעקב מיט אים געלערנט נאר פינף סדרים, און דאס האט געוויזן אז ער איז העכער פון די שבטים. דורך כח הפועל בנפעל האט די טהרה פון יוסף געגעבן א גוטן טעם און ריח אין די תבואה וואס ער האט פארקויפט, און דערפון האט יעקב געשפירט אז ער לעבט. דערנאך רעדט דער משגיח וועגן די שווערע נסיונות פון היינט, רופט צו טהרה, תורה און תפילה, און שליסט מיט דער ליבשאפט פונעם רבונו של עולם צו די וואס שטייען איין."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Shovavim follows the end of Sefer Bereishis with Yosef's passing, and its six weeks are meant to draw down Yosef's kedushah of taharah.",
+          "yi": "שובבי\"ם קומט נאכן סוף פון ספר בראשית מיט דער פטירה פון יוסף, און די זעקס וואכן זענען צו ממשיך זיין די קדושה פון יוסף, די טהרה."
+        },
+        "evidence": { "segs": [19, 20, 35, 594, 597, 600], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Each of the seven shepherds corresponds to a day of the week, a middah and a seder of Mishnah, and grasped his own seder of the Torah without a teacher.",
+          "yi": "יעדער פון די שבעה רועים איז קעגן א טאג פון דער וואך, א מידה און א סדר משניות, און האט משיג געווען זיין סדר אין דער תורה אן א רבי'ן."
+        },
+        "evidence": { "segs": [211, 215, 247, 255, 266, 269], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Avraham, the first of the shepherds, includes all of them, which is why he grasped the entire Torah himself and needed no teacher.",
+          "yi": "אברהם אבינו, דער ערשטער פון די רועים, איז כולל אלע, דערפאר האט ער אליין משיג געווען די גאנצע תורה און האט נישט געדארפט קיין רבי'ן."
+        },
+        "evidence": { "segs": [292, 305, 316, 322], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Yosef is a shepherd and not one of the Shevatim; his seder is Taharos, so Yaakov had to teach him only five sedarim, and this is why he loved him most.",
+          "yi": "יוסף איז א רועה און נישט פון די שבטים; זיין סדר איז טהרות, דערפאר האט יעקב מיט אים געדארפט לערנען נאר פינף סדרים, און דערפאר האט ער אים ליב געהאט מער פון אלע."
+        },
+        "evidence": { "segs": [189, 190, 340, 345, 351, 362], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Because the power of the maker enters what he makes, Yosef's purity put a good taste and smell into the grain he sold, and Yaakov sensed from it that Yosef was alive.",
+          "yi": "ווייל דער כח פונעם פועל גייט אריין אין דעם נפעל, האט די טהרה פון יוסף אריינגעלייגט א גוטן טעם און ריח אין די תבואה וואס ער האט פארקויפט, און יעקב האט דערפון געשפירט אז יוסף לעבט."
+        },
+        "evidence": { "segs": [466, 469, 473, 490, 492, 495], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The Rav says today's world is one great Mitzrayim with unprecedented trials, and a Jew must know he is Hashem's emissary to stand firm in it.",
+          "yi": "דער משגיח זאגט אז די היינטיגע וועלט איז איין גרויס מצרים מיט נסיונות וואס זענען נישט געווען פריער, און א איד דארף וויסן אז ער איז א שליח פונעם רבונו של עולם צו איינשטיין."
+        },
+        "evidence": { "segs": [748, 751, 764, 768, 771], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-zemanim-kislev-and-choref-03-01-shovevim",
+      "startSeg": 0,
+      "endSeg": 47,
+      "title": { "en": "Shovavim and the kedushah of Yosef", "yi": "שובבי\"ם און די קדושה פון יוסף" },
+      "summary": {
+        "en": "After thanking the Rosh Yeshivah, the Rav notes that Sefer Bereishis contains two beginnings, the world and Avraham, and that Shovavim follows its end to rectify the point of Avraham's bris. He describes how Yosef brought kedushah into the depraved land of Egypt so that the Jews there stayed holy.",
+        "yi": "נאכן פארדאנקען דעם ראש ישיבה זאגט דער משגיח אז ספר בראשית האט צוויי ראשית'ן, די וועלט און אברהם אבינו, און אז שובבי\"ם קומט נאך זיין סוף צו מתקן זיין די נקודה פון דער ברית פון אברהם. ער שילדערט ווי יוסף האט אריינגעבראכט קדושה אין דעם ערוות הארץ מצרים, אז די אידן דארט זאלן בלייבן הייליג."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-kislev-and-choref-03-01-shovevim",
+      "startSeg": 48,
+      "endSeg": 112,
+      "title": { "en": "Two readings of Rashi and 'ben zekunim'", "yi": "צוויי פשטים אין רש\"י און \"בן זקונים\"" },
+      "summary": {
+        "en": "The Rav brings Rashi's two readings of 'Yaakov saw that there was grain in Egypt' and says they must be connected. He then brings 'ben zekunim': Yaakov loved Yosef because he passed to him the Torah of Shem and Ever, and the Baal HaTurim reads the word as initials of the sedarim of Mishnah, and asks what then of the other sons, noting that Avraham grasped the whole Torah alone.",
+        "yi": "דער משגיח ברענגט די צוויי פשטים פון רש\"י אויף \"וירא יעקב כי יש שבר במצרים\" און זאגט אז זיי מוזן זיין פארבונדן. דערנאך ברענגט ער \"בן זקונים\": יעקב האט ליב געהאט יוסף ווייל ער האט אים איבערגעגעבן די תורה פון שם ועבר, און דער בעל הטורים לערנט אז דאס ווארט איז ראשי תיבות פון די סדרי משנה; ער פרעגט וואס איז מיט די אנדערע שבטים, און ברענגט אז אברהם אבינו האט אליין משיג געווען די גאנצע תורה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-kislev-and-choref-03-01-shovevim",
+      "startSeg": 113,
+      "endSeg": 194,
+      "title": { "en": "The seven shepherds above the Shevatim", "yi": "די שבעה רועים העכער פון די שבטים" },
+      "summary": {
+        "en": "The Rav asks why Yaakov, the choicest of the Avos, needed to receive the Torah while Avraham did not. He sets out the three levels of Avos, seven shepherds and Shevatim, each shepherd giving all of Klal Yisrael a path in serving Hashem, and shows from Rashi on 'even Yisrael' that Yosef, a son with the level of a father, stood above the Shevatim.",
+        "yi": "דער משגיח פרעגט פארוואס יעקב, דער בחיר שבאבות, האט געדארפט מקבל זיין די תורה ווען אברהם האט נישט געדארפט. ער שטעלט אוועק דריי מדריגות, אבות, שבעה רועים און שבטים, וואו יעדער רועה גיט גאנץ כלל ישראל א דרך אין עבודת השם, און ווייזט פון רש\"י אויף \"אבן ישראל\" אז יוסף, א בן מיט דער מדריגה פון אן אב, איז געשטאנען העכער פון די שבטים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-kislev-and-choref-03-01-shovevim",
+      "startSeg": 195,
+      "endSeg": 264,
+      "title": { "en": "Days, middos and the sedarim of Mishnah", "yi": "טעג, מידות און די סדרי משנה" },
+      "summary": {
+        "en": "The Rav explains the order of Chok LeYisrael, which ties each day of the week to a middah and a seder of Mishnah and Gemara. From this he concludes that each shepherd, aligned with one seder, grasped that seder himself without a teacher, as all will in the days of Moshiach.",
+        "yi": "דער משגיח ערקלערט דעם סדר פון חק לישראל, וואס פארבינדט יעדן טאג פון דער וואך מיט א מידה און א סדר משנה און גמרא. דערפון לערנט ער אויס אז יעדער רועה, וואס איז מכוון צו איין סדר, האט דעם סדר אליין משיג געווען אן א רבי'ן, אזוי ווי אלע וועלן לערנען לעתיד לבוא."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-kislev-and-choref-03-01-shovevim",
+      "startSeg": 265,
+      "endSeg": 364,
+      "title": { "en": "Avraham includes all; Yosef is Taharos", "yi": "אברהם איז כולל אלעס; יוסף איז טהרות" },
+      "summary": {
+        "en": "From the Zohar on the ushpizin and the rule that a first letter includes the whole word, the Rav explains that Avraham, the first shepherd, includes all seven and so needed no teacher, while Yaakov had to receive the other sedarim. Yosef, the sixth, is Taharos, so Yaakov taught him only five sedarim; this explains the Baal HaTurim and why Yaakov loved him above his brothers.",
+        "yi": "פונעם זוהר אויף די אושפיזין און דעם כלל אז דער ערשטער אות איז כולל דאס גאנצע ווארט, ערקלערט דער משגיח אז אברהם, דער ערשטער רועה, איז כולל אלע זיבן און האט דערפאר נישט געדארפט קיין רבי'ן, בשעת יעקב האט געדארפט מקבל זיין די אנדערע סדרים. יוסף, דער זעקסטער, איז טהרות, האט יעקב מיט אים געלערנט נאר פינף סדרים; דאס איז דער פשט אינעם בעל הטורים און פארוואס יעקב האט אים ליב געהאט מער פון זיינע ברידער."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-kislev-and-choref-03-01-shovevim",
+      "startSeg": 365,
+      "endSeg": 419,
+      "title": { "en": "Emunah, taharah and the taste of fruit", "yi": "אמונה, טהרה און דער טעם פון פירות" },
+      "summary": {
+        "en": "The Rav brings the Gemara that the six sedarim are hinted in a passuk beginning with 'emunah', and says Avraham's emunah includes the whole Torah. He then explains that taharah, Yosef's quality and the preparation for Shabbos, was a great level in Bayis times, and that since taharah ceased the taste and smell of fruit departed.",
+        "yi": "דער משגיח ברענגט די גמרא אז די זעקס סדרים זענען מרומז אין א פסוק וואס הייבט זיך אן מיט \"אמונת\", און זאגט אז די אמונה פון אברהם איז כולל די גאנצע תורה. דערנאך ערקלערט ער אז טהרה, די בחינה פון יוסף און די הקדמה צו שבת, איז געווען א גרויסע מדריגה בזמן הבית, און אז זינט די טהרה איז בטל געווארן איז אוועק דער טעם און דער ריח פון די פירות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-kislev-and-choref-03-01-shovevim",
+      "startSeg": 420,
+      "endSeg": 523,
+      "title": { "en": "Why Yosef himself sold the grain", "yi": "פארוואס יוסף אליין האט פארקויפט די תבואה" },
+      "summary": {
+        "en": "The Rav asks why the ruler of Egypt personally sold grain, like a president working in a fruit store. Beyond the simple answer that he wanted to meet his brothers, he explains through 'the power of the maker is in the made' that Yosef's taharah entered the grain, and that Yaakov, tasting and smelling kedushah in it, knew Yosef was alive, which ties Rashi's two readings together.",
+        "yi": "דער משגיח פרעגט פארוואס דער שליט פון מצרים האט אליין פארקויפט תבואה, ווי א פרעזידענט וואס שטייט אין א פרוכט געשעפט. אויסער דעם פשוטן פשט אז ער האט געוואלט טרעפן זיינע ברידער, ערקלערט ער דורך כח הפועל בנפעל אז די טהרה פון יוסף איז אריין אין די תבואה, און יעקב, וואס האט געשפירט א טעם און ריח פון קדושה אין איר, האט געוואוסט אז יוסף לעבט; אזוי זענען די צוויי פשטים אין רש\"י פארבונדן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-kislev-and-choref-03-01-shovevim",
+      "startSeg": 524,
+      "endSeg": 606,
+      "title": { "en": "The Yishmaelim's spices and Yosef's fragrance", "yi": "די בשמים פון די ישמעאלים און דער ריח פון יוסף" },
+      "summary": {
+        "en": "The Rav brings the Gemara that Arabia took most of the world's immorality and Rashi's chiddush that the Yishmaelim who carried Yosef bore fragrant spices instead of foul-smelling goods. Following Rav Tzadok, he explains that nations clothe a bad trait in an outer show, but Yosef's taharah brought a good smell, and he brings the Gemara that bachurim who never tasted sin will give off a fragrance like Levanon. He concludes that Shovavim is for taking taharah from Yosef.",
+        "yi": "דער משגיח ברענגט די גמרא אז ערביא האט גענומען רוב פון דער זנות אויף דער וועלט, און דעם חידוש פון רש\"י אז די ישמעאלים וואס האבן געפירט יוסף האבן געטראגן בשמים אנשטאט סחורה מיט א שלעכטן ריח. לויט ר' צדוק ערקלערט ער אז די אומות קליידן א שלעכטע מידה אין א דרויסנדיגן לבוש, אבער די טהרה פון יוסף האט געבראכט א גוטן ריח, און ער ברענגט די גמרא אז בחורי ישראל וואס האבן נישט געטועמט קיין חטא וועלן געבן א ריח טוב כלבנון. ער שליסט אז שובבי\"ם איז צו נעמען טהרה פון יוסף."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-kislev-and-choref-03-01-shovevim",
+      "startSeg": 607,
+      "endSeg": 670,
+      "title": { "en": "Shovavim of old; purity and the taste of Shabbos", "yi": "שובבי\"ם פון אמאל; טהרה און דער טעם פון שבת" },
+      "summary": {
+        "en": "The Rav recalls the Satmar Rav speaking during Shovavim in Williamsburg over sixty years ago, with the beis medrash packed and no dry eye. He says that in our situation every young man must know this time is set aside for taharah, and that only one who is pure can feel kedushah and taste in Shabbos, tefillah and Torah, in contrast to bachurim who complain that Shabbos bores them.",
+        "yi": "דער משגיח דערמאנט ווי דער סאטמאר רב האט גערעדט אין שובבי\"ם אין וויליאמסבורג מער ווי זעכציג יאר צוריק, ווען דער בית המדרש איז געווען געפאקט און קיין אויג איז נישט געבליבן טרוקן. ער זאגט אז לויט אונזער מצב דארף יעדער יונגערמאן וויסן אז די צייט איז מיוחד אויף טהרה, און אז נאר א ריינער שפירט קדושה און א געשמאק אין שבת, תפילה און תורה, נישט ווי בחורים וואס קלאגן אז שבת איז זיי לאנגווייליג."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-kislev-and-choref-03-01-shovevim",
+      "startSeg": 671,
+      "endSeg": 779,
+      "title": { "en": "Today's trials and our mission", "yi": "די נסיונות פון היינט און אונזער שליחות" },
+      "summary": {
+        "en": "The Rav contrasts the moral world of earlier years with today's open street and the new devices that bring the yetzer hara into Jewish homes. He says these are the trials of ikvesa d'Meshicha described at the end of Sotah, that Hashem sends no trial one cannot pass, and that in this world, one great Mitzrayim, a Jew is Hashem's emissary to stay strong in Torah, tefillah and kedushah.",
+        "yi": "דער משגיח פארגלייכט די מאראלישע וועלט פון אמאל מיט דער אפענער גאס פון היינט און די נייע מכשירים וואס ברענגען דעם יצר הרע אריין אין אידישע הייזער. ער זאגט אז דאס זענען די נסיונות פון עקבתא דמשיחא וואס ווערן באשריבן אין סוף סוטה, אז דער אייבערשטער שיקט נישט קיין נסיון וואס מ'קען נישט דורכמאכן, און אז אין דער וועלט, איין גרויס מצרים, איז א איד א שליח פונעם רבונו של עולם צו בלייבן שטארק אין תורה, תפילה און קדושה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-kislev-and-choref-03-01-shovevim",
+      "startSeg": 780,
+      "endSeg": 875,
+      "title": { "en": "Precious to Hashem: 'Yaakov, Yaakov'", "yi": "טייער ביים אייבערשטן: \"יעקב יעקב\"" },
+      "summary": {
+        "en": "The Rav brings Rav Chaim Vital's account that the Arizal told him a person of this late generation is very great, and says every act of holding back is precious to Hashem. From 'Yaakov, Yaakov', a term of love said as Yaakov went down to Egypt, he says Hashem loves the bachur who keeps himself pure there; Sefer Bereishis ends with Yosef's passing, one must strengthen oneself, and the tikkun is immersing in learning. He closes with a brachah for the geulah.",
+        "yi": "דער משגיח ברענגט ווי ר' חיים וויטאל דערציילט אז דער אריז\"ל האט אים געזאגט אז א מענטש פון דעם לעצטן דור איז זייער גרויס, און זאגט אז יעדע איינהאלטונג איז טייער ביים רבונו של עולם. פון \"יעקב יעקב\", א לשון חיבה ווען יעקב איז אראפ קיין מצרים, זאגט ער אז דער אייבערשטער האט ליב דעם בחור וואס היט זיך דארט; ספר בראשית ענדיגט זיך מיט דער פטירה פון יוסף, מ'דארף זיך מחזק זיין, און דער תיקון איז זיך אריינטון אין לערנען. ער שליסט מיט א ברכה אויף דער גאולה."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "בן פרת יוסף, בן פרת עלי עיון",
+      "work": "Bereishis",
+      "ref": "Bereishis 49:22",
+      "sefariaRef": "Genesis 49:22",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [26, 28], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער מדרש זאגט אז עס איז אלץ צוליב די קדושה פון יוסף",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [41, 42], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "קיישט שבעה במצריםרשע זאגט צוויי פשטים",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 42:1",
+      "sefariaRef": "Rashi on Genesis 42:1",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [50, 51, 52, 54, 58], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "וישראל אהבת יוסף שמואל כל אחיו... איז פון זקנים",
+      "work": "Bereishis",
+      "ref": "Bereishis 37:3",
+      "sefariaRef": "Genesis 37:3",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [65, 66, 357], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "רשע זאגט מען שם ויעבע, אין מדרש שטעט",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 37:3",
+      "sefariaRef": "Rashi on Genesis 37:3",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [68, 69, 70, 71], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "לבעלה תלום זאגט אז זקנים איז די ראשי טבת",
+      "work": "Baal HaTurim",
+      "ref": "Baal HaTurim on Bereishis 37:3",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [72, 73, 74, 349, 350], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "חתם סופר על התורה אין פרשת וישב",
+      "work": "Chasam Sofer al HaTorah",
+      "ref": "Chasam Sofer al HaTorah, Vayeshev",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [91, 92], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די שטעקת לויות פון אברהם אבינו זענען געוועזן נובעס חכמה",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [104, 105, 111], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "יעקב אבינא איז געוועזן דער בכיר שבועבות",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [114, 115], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "משום ראי' אבן ישרע'ל ... אבו בן, זאגט רשע",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 49:24",
+      "sefariaRef": "Rashi on Genesis 49:24",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [181, 184, 185], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "חוק לישראל ... דער אחי הקדוש האט מסדר געוועזן",
+      "work": "Chok LeYisrael",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [196, 208, 225], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "כששת ימים אשר השמת השניים",
+      "work": "Shemos",
+      "ref": "Shemos 31:17",
+      "sefariaRef": "Exodus 31:17",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [212, 213, 214], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "שטעט אין זוהעים בתוקת תשו' שבעת ימים",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [273, 274, 276, 280], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "גמרא ברענגט נייטראי'גען ראשי תיבה",
+      "work": "Gemara",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [295, 297, 298], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "שטעט אויך אין זור הקודש, ווי אברהם זאגט אים בבא ימים",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [306, 307, 308], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די גמרא זאגט איז מסוג מרים שבת ... אמנות יצחק חתם ישעות חכמת ודאות",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 31a",
+      "sefariaRef": "Shabbat 31a",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [367, 368, 369, 371], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "וצדיק בנמנות היפהי",
+      "work": "Chavakuk",
+      "ref": "Chavakuk 2:4",
+      "sefariaRef": "Habakkuk 2:4",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [380, 381], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "אז ווען ס'איז דארט געווארן טהרה ... איז אוועק געגאנגען די טעם און די מראה פון די פילות",
+      "work": "Mishnah Sotah",
+      "ref": "Mishnah Sotah 9:12",
+      "sefariaRef": "Mishnah Sotah 9:12",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [405, 406, 407], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ויוסף היה א שאלה, הוא המשביע וכל המאורד",
+      "work": "Bereishis",
+      "ref": "Bereishis 42:6",
+      "sefariaRef": "Genesis 42:6",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [421, 422, 423], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "תייך הפיל בנפל שטייט פון בני יששכר",
+      "work": "Bnei Yissaschar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [445, 446, 455], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "שטעט אין תגום יונתן, ויהי יעקב כי ישבע במצרים",
+      "work": "Targum Yonasan",
+      "ref": "Targum Yonasan on Bereishis 42:1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [475, 476, 478, 479], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די גמרא זאגט ... תשרי נטלה הרבים",
+      "work": "Gemara Kiddushin",
+      "ref": "Kiddushin 49b",
+      "sefariaRef": "Kiddushin 49b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [524, 526, 527], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די רשע ברענגט א מערסטעווערדיגע זאך א חידוש",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 37:25",
+      "sefariaRef": "Rashi on Genesis 37:25",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [533, 535, 538, 539, 540], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער ר' צדיק'ס ... ר' צדיק הקיין",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [546, 547, 548, 549], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "גמרא זייט אין ברכה, א סיון בחורי ישראל שלא חכם ... ורייך לא כל לבנים",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 43b",
+      "sefariaRef": "Berakhot 43b",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [581, 582, 583, 585], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אזוי ווי די ברייתא זאגט דארט, אין סוף שותף",
+      "work": "Mishnah Sotah",
+      "ref": "Mishnah Sotah 9:15",
+      "sefariaRef": "Mishnah Sotah 9:15",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [739, 740, 741], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער רבי חיים בן ביטאל ברענגט, אז דער עריע קדוש האט אים געזאגט",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [783, 784, 786, 788], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "יענקב יענקב ... דער ראש איז יענקוב יענקוב לשון חיבה",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 46:2",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [811, 812, 818], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ויאמר אברהם אברהם",
+      "work": "Bereishis",
+      "ref": "Bereishis 22:11",
+      "sefariaRef": "Genesis 22:11",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [813, 814], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ויאמת יוסף ויוסף בארעם במצרים",
+      "work": "Bereishis",
+      "ref": "Bereishis 50:26",
+      "sefariaRef": "Genesis 50:26",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [840, 841], "confidence": 0.8 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Yaakov loved Yosef for 'ben zekunim' not simply because he learned with him, but because Yosef needed only five of the six sedarim: grasping Taharos on his own showed he was a shepherd above the Shevatim.",
+        "yi": "יעקב האט ליב געהאט יוסף צוליב \"בן זקונים\" נישט פשוט ווייל ער האט מיט אים געלערנט, נאר ווייל יוסף האט געדארפט נאר פינף פון די זעקס סדרים: דאס וואס ער האט אליין משיג געווען טהרות האט געוויזן אז ער איז א רועה העכער פון די שבטים."
+      },
+      "evidence": { "segs": [351, 353, 354, 362, 363, 364], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Avraham needed no teacher because, as the first, he includes all seven shepherds, just as the first letter of a word includes the whole word and Rosh Hashanah includes the year.",
+        "yi": "אברהם אבינו האט נישט געדארפט קיין רבי'ן ווייל אלס דער ערשטער איז ער כולל אלע זיבן רועים, אזוי ווי דער ערשטער אות פון א ווארט איז כולל דאס גאנצע ווארט און ראש השנה איז כולל דאס גאנצע יאר."
+      },
+      "evidence": { "segs": [298, 302, 305, 316, 322], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Yosef personally sold the grain so that his taharah would enter it; the good taste and smell of that grain is how Yaakov knew Yosef was alive, uniting Rashi's two readings of 'yesh shever'.",
+        "yi": "יוסף האט אליין פארקויפט די תבואה כדי זיין טהרה זאל אריינגיין אין איר; דורך דעם גוטן טעם און ריח פון דער תבואה האט יעקב געוואוסט אז יוסף לעבט, און אזוי ווערן די צוויי פשטים פון רש\"י אויף \"יש שבר\" פארבונדן."
+      },
+      "evidence": { "segs": [466, 488, 490, 492, 503, 511], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The spices the Yishmaelim carried were in Yosef's honor: his taharah, which also took the taste and smell from fruit when it ceased, brings a good fragrance even into the goods of his captors.",
+        "yi": "די בשמים וואס די ישמעאלים האבן געטראגן זענען געווען לכבוד יוסף: זיין טהרה, וואס ווען זי איז בטל געווארן איז אוועק דער טעם און ריח פון די פירות, ברענגט א גוטן ריח אפילו אין דער סחורה פון זיינע פארקויפער."
+      },
+      "evidence": { "segs": [565, 567, 568, 569, 570], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Following Rav Tzadok, the nations clothe a bad trait in a kosher-looking exterior, like the pig showing its split hooves, whereas with Yosef the purity is real and is sensed as fragrance.",
+        "yi": "לויט ר' צדוק קליידן די אומות א שלעכטע מידה אין א כשר'ן דרויסנדיגן לבוש, ווי דער חזיר וואס ווייזט זיינע געשפאלטענע פיס, בשעת ביי יוסף איז די טהרה אמת און מ'שפירט זי ווי א ריח."
+      },
+      "evidence": { "segs": [548, 549, 550, 554, 565], "confidence": 0.65 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Satmar Rav's Shovavim talk in Williamsburg", "yi": "דעם סאטמאר רב'ס דרשה אין שובבי\"ם אין וויליאמסבורג" },
+      "retelling": {
+        "en": "The Rav recalls that over sixty years earlier, when he lived in Williamsburg, people went to the Satmar Rav during the six weeks of Shovavim. When the Satmar Rav spoke then, the beis medrash was packed with perhaps thousands of people standing, and there was not a dry eye. He aroused the crowd to teshuvah, since it is a time of teshuvah.",
+        "yi": "דער משגיח דערמאנט אז מער ווי זעכציג יאר צוריק, ווען ער האט געוואוינט אין וויליאמסבורג, איז מען געגאנגען צום סאטמאר רב אין די זעקס וואכן פון שובבי\"ם. ווען דער סאטמאר רב האט דעמאלט גערעדט איז דער בית המדרש געווען געפאקט, אפשר טויזנטער אידן זענען געשטאנען, און קיין אויג איז נישט געבליבן טרוקן. ער האט מעורר געווען דעם עולם צו תשובה, ווייל ס'איז א צייט פון תשובה."
+      },
+      "people": ["the Satmar Rav"],
+      "evidence": { "segs": [608, 609, 610, 612, 613, 617], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The Arizal and Rav Chaim Vital on the last generation", "yi": "דער אריז\"ל און ר' חיים וויטאל וועגן דעם לעצטן דור" },
+      "retelling": {
+        "en": "Rav Chaim Vital relates that the Arizal told him how great he was, even more than earlier great ones. Rav Chaim Vital protested that compared with the level of the Tannaim and Amoraim he was nothing at all. The Arizal answered that it is because he lives in such a late generation, and the Rav adds that today this is all the more so.",
+        "yi": "ר' חיים וויטאל דערציילט אז דער אריז\"ל האט אים געזאגט ווי גרויס ער איז, נאך מער ווי פריערדיגע גדולים. ר' חיים וויטאל האט געטענה'ט אז קעגן דער מדריגה פון תנאים און אמוראים איז ער ממש גארנישט. האט דער אריז\"ל געענטפערט אז דאס איז ווייל ער לעבט אין אזא שפעטן דור, און דער משגיח לייגט צו אז היינט איז דאס נאך מער אזוי."
+      },
+      "people": ["Rav Chaim Vital", "the Arizal"],
+      "evidence": { "segs": [783, 784, 786, 787, 788, 792], "confidence": 0.65 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "If Yaakov loved Yosef because he taught him the Torah of Shem and Ever, what of the other sons? Did he not learn with them too?",
+        "yi": "אויב יעקב האט ליב געהאט יוסף ווייל ער האט אים איבערגעגעבן די תורה פון שם ועבר, וואס איז מיט די אנדערע שבטים? האט ער דען נישט געלערנט מיט זיי?"
+      },
+      "answer": {
+        "en": "With the other sons he had to learn all six sedarim, but Yosef, a shepherd whose seder is Taharos, grasped it himself and needed only five, which showed he was greater than his brothers.",
+        "yi": "מיט די אנדערע שבטים האט ער געדארפט לערנען אלע זעקס סדרים, אבער יוסף, א רועה וואס זיין סדר איז טהרות, האט עס אליין משיג געווען און האט געדארפט נאר פינף, און דאס האט געוויזן אז ער איז גרעסער פון זיינע ברידער."
+      },
+      "questionSegs": [98, 99],
+      "answerSegs": [340, 345, 351, 353, 362],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Yaakov is the choicest of the Avos; why did he have to receive the Torah from Avraham, Yitzchak and Shem and Ever, while Avraham grasped it all himself?",
+        "yi": "יעקב איז דער בחיר שבאבות; פארוואס האט ער געדארפט מקבל זיין די תורה פון אברהם, יצחק און שם ועבר, בשעת אברהם האט עס אליין משיג געווען?"
+      },
+      "answer": {
+        "en": "Each shepherd grasped only his own seder by himself; Avraham, the first, includes all the shepherds and so grasped the whole Torah, while Yaakov grasped Nashim and had to receive the rest.",
+        "yi": "יעדער רועה האט אליין משיג געווען נאר זיין אייגענעם סדר; אברהם, דער ערשטער, איז כולל אלע רועים און האט דערפאר משיג געווען די גאנצע תורה, בשעת יעקב האט משיג געווען נשים און האט געדארפט מקבל זיין די איבעריגע."
+      },
+      "questionSegs": [114, 117, 120, 122],
+      "answerSegs": [305, 316, 322, 329, 330],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why would Yosef, the ruler of Egypt, personally sell grain, like a president working in a fruit store?",
+        "yi": "פארוואס זאל יוסף, דער שליט פון מצרים, אליין פארקויפן תבואה, ווי א פרעזידענט וואס שטייט אין א פרוכט געשעפט?"
+      },
+      "answer": {
+        "en": "Simply, so his brothers would come to buy from him and he could meet them; more deeply, so that his taharah would enter the grain through 'the power of the maker is in the made'.",
+        "yi": "על פי פשט, כדי זיינע ברידער זאלן קומען קויפן ביי אים און ער זאל זיי טרעפן; טיפער, כדי זיין טהרה זאל אריינגיין אין דער תבואה דורך כח הפועל בנפעל."
+      },
+      "questionSegs": [424, 427, 433, 436],
+      "answerSegs": [439, 442, 446, 466, 469],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "According to the Targum Yonasan Yaakov learned there was grain in Egypt from the merchants' grain; why mention this, if anyone could know it?",
+        "yi": "לויטן תרגום יונתן האט יעקב געוואוסט אז ס'איז דא תבואה אין מצרים פון דער תבואה וואס די סוחרים האבן געבראכט; פארוואס דארף מען דאס זאגן, ווען יעדער האט עס געקענט וויסן?"
+      },
+      "answer": {
+        "en": "Yaakov sensed in that grain an extraordinary taste and smell of kedushah, impossible from Egypt by itself, and knew it could come only from Yosef, so he had hope that Yosef was alive.",
+        "yi": "יעקב האט געשפירט אין דער תבואה א מורא'דיגן טעם און ריח פון קדושה, וואס פון מצרים אליין קען עס נישט קומען, און ער האט געוואוסט אז עס קען נאר קומען פון יוסף, האט ער געהאט א האפענונג אז יוסף לעבט."
+      },
+      "questionSegs": [477, 481, 484, 485],
+      "answerSegs": [490, 495, 498, 511, 513],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why did the Yishmaelim who took Yosef carry spices, when they usually carry foul-smelling goods?",
+        "yi": "פארוואס האבן די ישמעאלים וואס האבן גענומען יוסף געטראגן בשמים, ווען זיי טראגן געווענליך סחורה מיט א שלעכטן ריח?"
+      },
+      "answer": {
+        "en": "In honor of Yosef, whose taharah brings a good smell; this is the same quality Yaakov later sensed in the grain.",
+        "yi": "לכבוד יוסף, וועמענס טהרה ברענגט א גוטן ריח; דאס איז די זעלבע זאך וואס יעקב האט שפעטער געשפירט אין דער תבואה."
+      },
+      "questionSegs": [535, 538, 541],
+      "answerSegs": [565, 567, 568, 569],
+      "confidence": 0.7
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says every young man must know that the weeks of Shovavim are set aside for taharah and for not spoiling what is pure.",
+        "yi": "דער משגיח זאגט אז יעדער יונגערמאן דארף וויסן אז די וואכן פון שובבי\"ם זענען מיוחד אויף טהרה און נישט צו מקלקל זיין."
+      },
+      "evidence": { "segs": [619, 622, 623, 624, 625], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one feels kedushah and sweetness in Shabbos, tefillah and Torah only when one is pure and guarded.",
+        "yi": "דער משגיח זאגט אז מ'שפירט קדושה און א געשמאק אין שבת, תפילה און תורה נאר ווען מ'איז ריין און אפגעהיטן."
+      },
+      "evidence": { "segs": [657, 658, 659, 669, 670], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says a Jew must know he is Hashem's emissary in today's world and must strengthen himself in Torah, tefillah and kedushah with all his strength.",
+        "yi": "דער משגיח זאגט אז א איד דארף וויסן אז ער איז א שליח פונעם רבונו של עולם אין דער היינטיגער וועלט, און ער דארף זיך שטארקן אין תורה, תפילה און קדושה מיט אלע כוחות."
+      },
+      "evidence": { "segs": [767, 768, 771, 774, 777], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that each time a person holds himself back from looking, or from a forbidden thought, and turns to learning and davening properly, he is very precious to Hashem.",
+        "yi": "דער משגיח זאגט אז יעדעס מאל וואס א מענטש האלט זיך איין פון קוקן אדער פון א פארבאטענער מחשבה, און נעמט זיך צו לערנען און דאווענען ווי מ'דארף, איז ער זייער טייער ביים רבונו של עולם."
+      },
+      "evidence": { "segs": [797, 798, 799, 806, 807, 809], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says the counsel and the tikkun is to immerse one's head in learning.",
+        "yi": "דער משגיח זאגט אז די עצה און דער תיקון איז זיך אריינטון מיטן קאפ אין לערנען."
+      },
+      "evidence": { "segs": [846, 847, 849], "confidence": 0.7 }
+    }
+  ],
+  "candidateTopics": [
+    "Shovavim",
+    "Yosef haTzaddik and taharah",
+    "seven shepherds and the ushpizin",
+    "six sedarim of Mishnah",
+    "ben zekunim",
+    "Avraham grasping the Torah himself",
+    "power of the maker in the made",
+    "taste and smell of kedushah",
+    "trials of ikvesa d'Meshicha",
+    "guarding purity in a modern world"
+  ],
+  "concepts": [
+    { "he": "שובבי\"ם", "heardAs": ["שבבים", "שבורים", "יישר יקוזאים"] },
+    { "he": "שבעה רועים", "heardAs": ["שיבה רעים", "רוים", "רעים", "זוהעים"] },
+    { "he": "אושפיזין", "heardAs": ["שפיזן", "השפיזן", "השפועים", "ישפידל"] },
+    { "he": "טהרות", "heardAs": ["טערות", "טהרת", "טרת", "צהרות"] },
+    { "he": "בן זקונים", "heardAs": ["זקנים", "די קנים"] },
+    { "he": "כח הפועל בנפעל", "heardAs": ["כח הפועל בנפל", "תייך הפיל בנפל", "כח התול בנפל"] },
+    { "he": "שבר", "heardAs": ["שבעה", "תבאה", "צבאה", "צוואה", "צפה"] },
+    { "he": "משיג", "heardAs": ["מעסיג", "מעסער"] },
+    { "he": "ראשי תיבות", "heardAs": ["ראשי טבת", "ראשי טובת"] },
+    { "he": "עקבתא דמשיחא", "heardAs": ["עקבות אדער משיחה"] },
+    { "he": "לשון חיבה", "heardAs": ["ראש נחיבה", "לשון חופה"] },
+    { "he": "קדושת הברית", "heardAs": ["קדושת הברית", "תיקון הבריבט"] }
+  ],
+  "people": [
+    { "name": "Yosef haTzaddik", "heardAs": ["יוסף הצדיק", "יוסף הצדיקט", "יסף הצדיק"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יעקב אבינא", "יענקב", "יענקיב"] },
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינו", "אברהם אבינר"] },
+    { "name": "Yitzchak Avinu", "heardAs": ["ידפק", "יחק", "יצחק"] },
+    { "name": "Shem and Ever", "heardAs": ["שם ויעבע", "שיין בן יואל", "שיין ויאזש"] },
+    { "name": "Rashi", "heardAs": ["רשע", "רשע הקדוש"] },
+    { "name": "the Baal HaTurim", "heardAs": ["לבעלה תלום", "בעל הצרים"] },
+    { "name": "the Chasam Sofer", "heardAs": ["חתם סופר"] },
+    { "name": "the Arizal", "heardAs": ["אחי הקדוש", "אדורי הקדוש", "ארי הקדוש", "עריע קדוש"] },
+    { "name": "Rav Tzadok HaKohen", "heardAs": ["ר' צדיק", "ר' צדיק הקיין"] },
+    { "name": "the Satmar Rav", "heardAs": ["סאטמאר רב"] },
+    { "name": "Rav Chaim Vital", "heardAs": ["רבי חיים בן ביטאל"] }
+  ],
+  "asrNotes": "Yiddish ASR fair to poor; quotations and key words are heavily garbled ('שבר' appears as שבעה/צבאה/צוואה, the ushpizin as שפיזן/רוים, Taharos as טערות/צהרות) but recoverable from context. The listing of shepherds per day and seder (segs 216-237, 371-373) and parts of the Rav Tzadok passage (550-562) are only partly recoverable, and segs 379-384 are mostly unintelligible. The closing segments 863-875 are garbled."
+}

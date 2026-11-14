@@ -1,0 +1,633 @@
+{
+  "shiurId": "yi-zmanim-svds-shvshn-pvrym-06",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains how Mordechai, by refusing to bow to Haman, repaired on the level of drush a flaw left by the sin of Adam and by Yaakov's bowing to Esav, bringing a tikun of the future world that makes the Megillah and Purim eternal.",
+      "yi": "דער משגיח ערקלערט ווי אזוי מרדכי, מיט דעם וואס ער האט זיך נישט געבוקט צו המן, האט מתקן געווען אין עולם הדרוש א קלקול פון חטא אדם הראשון און פון יעקב'ס השתחוואה צו עשו, און אראפגעברענגט א תיקון פון לעתיד לבוא וואס מאכט די מגילה און פורים אייביג."
+    },
+    "abstract": {
+      "en": "The Rav opens with the Manos HaLevi: Mordechai's refusal to bow repaired Yaakov's bowing to Esav. The Midrash criticizes that bowing while the Zohar praises it; the Chiddushei HaRim resolves this through the four worlds matching sod, drush, remez and pshat, which Adam's sin set out of line. Yaakov chose a great tikun in the world of sod at the cost of a flaw in the world of drush. The Gemara's criticism of Devorah and Chulda shows a similar flaw: a time when men had to submit to women and din ruled over chesed. Adar is a reversed month, and the Purim miracle began with 'let every man rule in his house', the turn from din to chesed. Mordechai, from the world of tikun, repaired the drush flaw, which is why the Megillah becomes an iggeres on Purim, will never be nullified, and is expounded by the Gemara from beginning to end.",
+      "yi": "דער משגיח עפנט מיטן מנות הלוי, אז מרדכי'ס \"לא יכרע ולא ישתחוה\" האט מתקן געווען וואס יעקב אבינו האט זיך געבוקט צו עשו. דער מדרש קריטיקירט די השתחוואה און דער זוהר לויבט זי; דער חידושי הרי\"ם פארענטפערט אז די פיר עולמות זענען קעגן סוד, דרוש, רמז און פשט, און דורך חטא אדם הראשון זענען זיי אויף געוויסע ערטער נישט אויסגעהאלטן. יעקב האט אויסגעקליבן א גרויסן תיקון אין עולם הסוד אויף חשבון פון א קלקול אין עולם הדרוש. די גמרא'ס טענה אויף דבורה און חולדה ווייזט אויף אן ענליכן קלקול: א צייט ווען א איש האט זיך געדארפט מכניע זיין צו א נקבה און מידת הדין האט געהערשט איבער מידת החסד. אדר איז א פארקערטער חודש, און דער נס הייבט זיך אן מיט \"להיות כל איש שורר בביתו\", דאס איבערדרייען פון דין צו חסד. מרדכי, פון עולם התיקון, האט מתקן געווען דעם קלקול אין עולם הדרוש, דערפאר ווערט די מגילה פורים אן אגרת, וועט קיינמאל נישט בטל ווערן, און די גמרא איז דורש זי פון אנהייב ביזן סוף."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Mordechai, a spark of Yaakov's soul, repaired by refusing to bow to Haman what Yaakov did in bowing to Esav.",
+          "yi": "מרדכי, א ניצוץ פון יעקב'ס נשמה, האט מיט זיין נישט בוקן זיך צו המן מתקן געווען וואס יעקב האט זיך געבוקט צו עשו."
+        },
+        "evidence": { "segs": [1, 3, 4, 6], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The four levels of Torah, pshat, remez, drush and sod, correspond to four worlds, and because of Adam's sin they do not always fit one another, so the Midrash and the Zohar can disagree.",
+          "yi": "די פיר חלקים פון תורה, פשט, רמז, דרוש און סוד, זענען קעגן פיר עולמות, און צוליב חטא אדם הראשון פאסן זיי נישט אלעמאל איינס צום אנדערן, ממילא קען זיין א סתירה צווישן מדרש און זוהר."
+        },
+        "evidence": { "segs": [41, 44, 47, 51, 53], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "A situation in which a man must submit to a woman, leadership through the attribute of din, is itself a flaw in creation; this, not the women's conduct, is the target of the Gemara's criticism of Devorah and Chulda.",
+          "yi": "א מצב וואו א איש דארף זיך מכניע זיין צו א נקבה, אז די הנהגה גייט דורך מידת הדין, איז אליין א קלקול אין דער בריאה; אויף דעם, און נישט אויף די נשים, איז די טענה פון דער גמרא אויף דבורה און חולדה."
+        },
+        "evidence": { "segs": [168, 169, 170, 171, 172, 173], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The Purim miracle began with the first letters, 'let every man rule in his house', which set up a new order turning din into chesed, 'v'nahafoch hu'.",
+          "yi": "דער נס פון פורים הייבט זיך אן מיט די אגרות הראשונות, \"להיות כל איש שורר בביתו\", וואס האבן אוועקגעשטעלט א נייע הנהגה און איבערגעדרייט דין צו חסד, \"ונהפוך הוא\"."
+        },
+        "evidence": { "segs": [222, 227, 235, 236, 238], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Mordechai came from the world of tikun and brought down a tikun of the future that did not exist even at Matan Torah, which is why Purim will remain when all else is nullified.",
+          "yi": "מרדכי איז געווען פון עולם התיקון און האט אראפגעברענגט א תיקון פון לעתיד לבוא וואס איז נישט געווען אפילו ביי מתן תורה, דערפאר וועט פורים בלייבן ווען אלעס וועט בטל ווערן."
+        },
+        "evidence": { "segs": [248, 256, 257, 258], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "On Purim the Megillah is no longer one of the books of Kesuvim but an iggeres bound up with the world of tikun, and therefore it may not be written together with the other Kesuvim and will never be nullified.",
+          "yi": "פורים איז די מגילה שוין נישט איינס פון די כתבי הקודש נאר אן אגרת וואס איז פארבונדן מיטן עולם התיקון, דערפאר טאר מען זי נישט שרייבן צוזאמען מיט די אנדערע כתבי הקודש, און זי וועט קיינמאל נישט בטל ווערן."
+        },
+        "evidence": { "segs": [299, 304, 307, 308, 318, 319], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Because Mordechai repaired the world of drush, the Gemara expounds the Megillah from beginning to end, which it does for no other book of Tanach.",
+          "yi": "ווייל מרדכי האט מתקן געווען דעם עולם הדרוש, איז די גמרא דורש די מגילה פון אנהייב ביזן סוף, וואס זי טוט נישט ביי קיין אנדער ספר פון תנ\"ך."
+        },
+        "evidence": { "segs": [344, 347, 352, 353, 355], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-zemanim-adar-purim-07-06-sh",
+      "startSeg": 0,
+      "endSeg": 82,
+      "title": {
+        "en": "Yaakov's bowing to Esav: Midrash and Zohar",
+        "yi": "יעקב'ס השתחוואה צו עשו: מדרש און זוהר"
+      },
+      "summary": {
+        "en": "The Rav brings the Manos HaLevi that Mordechai repaired Yaakov's bowing to Esav, then contrasts the Midrash, which criticizes that bowing, with the Zohar, which praises it. He resolves the contradiction with the Chiddushei HaRim: the four worlds match sod, drush, remez and pshat, Adam's sin set them out of line, and Yaakov chose a tikun in the world of sod at the cost of a flaw in the world of drush.",
+        "yi": "דער משגיח ברענגט דעם מנות הלוי אז מרדכי האט מתקן געווען וואס יעקב האט זיך געבוקט צו עשו, און שטעלט אקעגן דעם מדרש וואס קריטיקירט די השתחוואה מיטן זוהר וואס לויבט זי. ער פארענטפערט די סתירה מיטן חידושי הרי\"ם: די פיר עולמות זענען קעגן סוד, דרוש, רמז און פשט, חטא אדם הראשון האט זיי צעשטערט, און יעקב האט אויסגעקליבן א תיקון אין עולם הסוד אויף חשבון פון א קלקול אין עולם הדרוש."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-07-06-sh",
+      "startSeg": 83,
+      "endSeg": 134,
+      "title": {
+        "en": "Devorah, Chulda and the order of honor",
+        "yi": "דבורה, חולדה און דער סדר פון כבוד"
+      },
+      "summary": {
+        "en": "The Rav brings the Gemara in Megillah that haughtiness does not befit women, shown by the unflattering names of Devorah and Chulda, and asks why only women, and what they did wrong at all. He lays out the order of honor between navi, kohen gadol and king, and how a king must stand before the kohen gadol who brings the word of Hashem through the Urim v'Tumim.",
+        "yi": "דער משגיח ברענגט די גמרא אין מגילה אז יהירותא פאסט נישט פאר נשים, וואס מ'זעט פון די נישט שיינע נעמען פון דבורה און חולדה, און פרעגט פארוואס דווקא נשים, און וואס האבן זיי בכלל געטון שלעכט. ער שטעלט אוועק דעם סדר פון כבוד צווישן נביא, כהן גדול און מלך, און אז א מלך דארף שטיין פארן כהן גדול ווען יענער ברענגט דעם דבר השם דורך די אורים ותומים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-07-06-sh",
+      "startSeg": 135,
+      "endSeg": 201,
+      "title": {
+        "en": "The flaw is the situation, not the women",
+        "yi": "דער קלקול איז דער מצב, נישט די נשים"
+      },
+      "summary": {
+        "en": "The Rav shows that Chulda and Devorah acted correctly, since a prophecy and a judge appointed by Hashem's word demand that the man submit, as Tosafos explains. Following the Chiddushei HaRim he answers that the complaint is against the situation itself: leadership through din, a man submitting to a woman, is a flaw in creation, while chesed must be joined over din, as many halachos that give the right side precedence show.",
+        "yi": "דער משגיח ווייזט אז חולדה און דבורה האבן גוט געטון, ווייל א נבואה און א שופטת על פי הדיבור פאדערן אז דער איש זאל זיך מכניע זיין, ווי תוספות ערקלערט. לויטן חידושי הרי\"ם ענטפערט ער אז די טענה איז אויפן מצב אליין: א הנהגה דורך מידת הדין, אז א איש דארף זיך מכניע זיין צו א נקבה, איז א קלקול אין דער בריאה, און מ'דארף מחבר זיין מידת החסד איבער מידת הדין, ווי אסאך הלכות וואס געבן פארצוג פאר דער רעכטער זייט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-07-06-sh",
+      "startSeg": 202,
+      "endSeg": 262,
+      "title": {
+        "en": "Adar reversed and the first letters",
+        "yi": "דער פארקערטער חודש אדר און די אגרות הראשונות"
+      },
+      "summary": {
+        "en": "The Rav calls Adar a reversed month, citing the Bnei Yissaschar and the Arizal on its letter combination, in which din precedes chesed. The miracle begins with the first letters, 'let every man rule in his house': against Rashi's reading, which the Chasam Sofer calls forced, the Rav explains them as the start of a new order turning din to chesed. Mordechai, of the world of tikun, brought a tikun never seen before, not even at Matan Torah.",
+        "yi": "דער משגיח רופט אדר א פארקערטער חודש, און ברענגט דעם בני יששכר און דעם אריז\"ל אויפן צירוף פון חודש אדר, וואו דין קומט פאר חסד. דער נס הייבט זיך אן מיט די אגרות הראשונות, \"להיות כל איש שורר בביתו\": אנשטאט רש\"י'ס פשט, וואס דער חתם סופר רופט א דוחק, ערקלערט ער אז דאס איז געווען דער אנהייב פון א נייע הנהגה פון דין צו חסד. מרדכי, פון עולם התיקון, האט געברענגט א תיקון וואס איז נאך קיינמאל נישט געווען, אפילו נישט ביי מתן תורה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-07-06-sh",
+      "startSeg": 263,
+      "endSeg": 336,
+      "title": {
+        "en": "Mordechai's tikun and the Megillah as an iggeres",
+        "yi": "מרדכי'ס תיקון און די מגילה אלס אגרת"
+      },
+      "summary": {
+        "en": "The Rav returns to Yaakov: he knowingly left a flaw in the world of drush for a greater tikun in the world of sod, and Mordechai repaired that flaw, preparing the days of Moshiach. From the Rambam's ruling that a Megillah written with the other Kesuvim is invalid, he explains that on Purim the Megillah is an iggeres of the world of tikun, which is why it alone will never be nullified.",
+        "yi": "דער משגיח קומט צוריק צו יעקב: ער האט וויסנדיג איבערגעלאזט א קלקול אין עולם הדרוש פאר א גרעסערן תיקון אין עולם הסוד, און מרדכי האט דעם קלקול מתקן געווען און צוגעגרייט ימות המשיח. פונעם רמב\"ם, אז א מגילה וואס איז געשריבן צוזאמען מיט די אנדערע כתבי הקודש איז מען נישט יוצא, ערקלערט ער אז פורים איז די מגילה אן אגרת פון עולם התיקון, און דערפאר וועט זי אליין קיינמאל נישט בטל ווערן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-07-06-sh",
+      "startSeg": 337,
+      "endSeg": 387,
+      "title": {
+        "en": "Doresh tov l'amo and Shushan Purim",
+        "yi": "דורש טוב לעמו און שושן פורים"
+      },
+      "summary": {
+        "en": "The Rav explains that the Gemara expounds the whole Megillah, unlike any other book, because Mordechai repaired the world of drush, as its closing words 'doresh tov l'amo' hint. Shushan Purim is the Purim of Yerushalayim, written in the Megillah in its complete form, and Mordechai was beyond the grasp of others. He closes with a tefilah for the coming of Moshiach and the rebuilding of Yerushalayim.",
+        "yi": "דער משגיח ערקלערט אז די גמרא איז דורש די גאנצע מגילה, נישט ווי ביי קיין אנדער ספר, ווייל מרדכי האט מתקן געווען דעם עולם הדרוש, ווי די לעצטע ווערטער \"דורש טוב לעמו\" ווייזן אן. שושן פורים איז דער פורים פון ירושלים, וואס איז אין דער מגילה געשריבן בשלימות, און מרדכי איז געווען העכער ווי די השגה פון אנדערע. ער ענדיגט מיט א תפילה אויף ביאת המשיח און בנין ירושלים."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-07-06-sh",
+      "startSeg": 388,
+      "endSeg": 388,
+      "title": {
+        "en": "Untranscribed gap",
+        "yi": "אן אומגעשריבענע הפסקה"
+      },
+      "summary": {
+        "en": "A long stretch of about twelve minutes with almost no transcribed speech, likely singing or noise at the seudah.",
+        "yi": "א לאנגע הפסקה פון בערך צוועלף מינוט כמעט אן געשריבענע רייד, משמעות געזאנג אדער רעש ביי דער סעודה."
+      },
+      "kind": "noise",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-07-06-sh",
+      "startSeg": 389,
+      "endSeg": 445,
+      "title": {
+        "en": "Purim remarks on Haman and Amalek",
+        "yi": "פורים רייד וועגן המן און עמלק"
+      },
+      "summary": {
+        "en": "A speaker, apparently not the Rav, makes light Purim remarks about saying Haman's name three times and how Amalek spoils the mitzvos of Purim, then introduces a rhymed song.",
+        "yi": "א רעדנער, משמעות נישט דער משגיח, זאגט לייכטע פורים ווערטער וועגן זאגן המן'ס נאמען דריי מאל און ווי עמלק צעשטערט די מצוות פון פורים, און דערנאך שטעלט ער פאר א געגראמט ליד."
+      },
+      "kind": "other_speaker",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-07-06-sh",
+      "startSeg": 446,
+      "endSeg": 635,
+      "title": {
+        "en": "Rhymed Purim song on serving Hashem with joy",
+        "yi": "געגראמט פורים ליד אויף עבודת השם בשמחה"
+      },
+      "summary": {
+        "en": "A long rhymed recitation, apparently by another speaker, with a recurring refrain about taking joy from Purim, through vignettes of a Jew who keeps his good cheer through the trials of the year.",
+        "yi": "א לאנגע געגראמטע דערציילונג, משמעות פון אן אנדער רעדנער, מיט א חוזר'דיגן רעפרען וועגן מיטנעמען שמחה פון פורים, דורך בילדער פון א איד וואס היט זיין שמחה דורך די נסיונות פונעם יאר."
+      },
+      "kind": "other_speaker",
+      "catalogTopicIdx": [],
+      "subsections": [
+        {
+          "recordingId": "y-zemanim-adar-purim-07-06-sh",
+          "startSeg": 446,
+          "endSeg": 508,
+          "title": { "en": "Modeh Ani and the daily routine", "yi": "מודה אני און דער טאג-טעגליכער סדר" },
+          "summary": { "en": "The song opens with thanking Hashem each morning and a vignette of a Jew at davening.", "yi": "דאס ליד עפנט מיט דאנקען דעם באשעפער יעדן אינדערפרי און א בילד פון א איד ביים דאווענען." }
+        },
+        {
+          "recordingId": "y-zemanim-adar-purim-07-06-sh",
+          "startSeg": 509,
+          "endSeg": 572,
+          "title": { "en": "Rosh Hashanah and Yom Kippur vignettes", "yi": "בילדער פון ראש השנה און יום כיפור" },
+          "summary": { "en": "Vignettes of mishaps on Rosh Hashanah and before Yom Kippur, met with good cheer.", "yi": "בילדער פון שוועריקייטן ראש השנה און ערב יום כיפור, וואס ווערן אויפגענומען מיט א שמייכל." }
+        },
+        {
+          "recordingId": "y-zemanim-adar-purim-07-06-sh",
+          "startSeg": 573,
+          "endSeg": 635,
+          "title": { "en": "A canceled trip and the esrog", "yi": "א בטל'טע רייזע און דער אתרוג" },
+          "summary": { "en": "Vignettes of a canceled trip to Eretz Yisroel and the search for an esrog before Sukkos.", "yi": "בילדער פון א בטל'טע רייזע קיין ארץ ישראל און פונעם זוכן אן אתרוג פאר סוכות." }
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "כי מרדכי היהודי משנה למלך חשבורא וגדול ליהודים ברצה לרבכה ודורש טוב לימו",
+      "work": "Esther",
+      "ref": "Esther 10:3",
+      "sefariaRef": "Esther 10:3",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [0, 353, 365, 374], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "מנהיגת הלוי / מנת הלוי",
+      "work": "Manos HaLevi",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1, 15], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ומרדכי לא יכרע ולא ישכר",
+      "work": "Esther",
+      "ref": "Esther 3:2",
+      "sefariaRef": "Esther 3:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [6, 263], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "אין מדרש ... גרויסע טענות צו יעקב אבינא",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [19, 20, 26], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אין זוה'ק איז א מפלי זייער שטארק",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [28, 29, 35], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער חדש ירום פארענטפערט / חידושי ארום",
+      "work": "Chiddushei HaRim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [38, 162], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער גמרא זאגט אין מגילה, לא יהיה הרסל הנשיא",
+      "work": "Gemara Megillah",
+      "ref": "Megillah 14b",
+      "sefariaRef": "Megillah 14b",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [83, 84, 88, 95, 103], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "ותשלח ותקחה לבד בן אבינו אים",
+      "work": "Shoftim",
+      "ref": "Shoftim 4:6",
+      "sefariaRef": "Judges 4:6",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [92, 151], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אמרא לאיש",
+      "work": "Melachim II",
+      "ref": "Melachim II 22:15",
+      "sefariaRef": "II Kings 22:15",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [100, 101, 144], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אזוי ברענגט ער אנטאר דער רמב״ן",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [112, 113, 114, 115], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "ולפניה לא זיך כהן ימיו ושרלה לב ומשפט הארים",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 27:21",
+      "sefariaRef": "Numbers 27:21",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [126, 132], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "פרעגט תוספות הקשיא ... ענטפערט תוספות על פי הדיבל",
+      "work": "Tosafos",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [153, 154, 155], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אזוי ווי דער גמרא זאגט אין שבת, מען דארף וואשן די רעכטע האנט פריער",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 61a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [195, 196, 197], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אין בני יששכר ברענגט ער ארומט א דעם צירוף פון דעם חודש אדר",
+      "work": "Bnei Yissaschar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [206, 207], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ארי הקודש שטעט אנדערש ... א צירוף פון חודש אדר",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [210, 211], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ליות כבוד שורה בבתי / ליאת כל איש צוריק בבעשה",
+      "work": "Esther",
+      "ref": "Esther 1:22",
+      "sefariaRef": "Esther 1:22",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [223, 227, 237], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "און ראשי זאגט, ווייל מ'האט געהאלטן אים פאר א שוטה",
+      "work": "Rashi",
+      "ref": "Rashi on Esther 1:22",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [229, 230], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער חתם סופר אליין זאגט אויף דעם פשט אז עס איז א דוחק",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [231], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אריה הקודש זאגט אז די סעודה פון מרדכי",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [250], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "וחרב'לו וסבא ביצחים ושבטו חי' רא מן הארץ",
+      "work": "Vayikra",
+      "ref": "Vayikra 26:6",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [253, 255], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "מ'זעהט אינעם רמב״ם ... א מגילה ... צוזאמען מיט די כתבי הקודש איז א נישט יוצא",
+      "work": "Rambam",
+      "ref": "Rambam, Hilchos Megillah ch. 2",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [292, 293, 296, 297], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "די מגילה וועט בלייבן ווי ס'טעט אין מדרש",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [318, 319], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער רמב״ם ברענגט עס ארונטער ... אין סוף הלכות מגילה",
+      "work": "Rambam",
+      "ref": "Rambam, Hilchos Megillah 2:18",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [320, 321, 322], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "זכרום ליוסף מוזרם",
+      "work": "Esther",
+      "ref": "Esther 9:28",
+      "sefariaRef": "Esther 9:28",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [322], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער מסכתא מגילה ... אנפאנג פון א ספר ביזן סוף פון ספר, און נעמען דרשענען",
+      "work": "Gemara Megillah",
+      "ref": "Megillah 10b-17a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [344, 347, 348, 352], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ובמאי החשבורש",
+      "work": "Esther",
+      "ref": "Esther 1:1",
+      "sefariaRef": "Esther 1:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [352], "confidence": 0.7 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Midrash and the Zohar on Yaakov's bowing are both true: each speaks from its own world, and Yaakov, who knew both, chose to accept a flaw in the world of drush for a far greater tikun in the world of sod.",
+        "yi": "דער מדרש און דער זוהר אויף יעקב'ס השתחוואה זענען ביידע אמת: יעדער רעדט פון זיין עולם, און יעקב, וואס האט געוואוסט ביידע, האט אויסגעקליבן צו נעמען א קלקול אין עולם הדרוש פאר א סך גרעסערן תיקון אין עולם הסוד."
+      },
+      "evidence": { "segs": [64, 67, 71, 72, 74, 81], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Gemara's unflattering names for Devorah and Chulda do not fault them personally; they mark a time when the world was out of order, with din ruling over chesed.",
+        "yi": "די נישט שיינע נעמען וואס די גמרא גיט דבורה און חולדה זענען נישט קיין טענה אויף זיי פערזענליך; זיי ווייזן אויף א צייט ווען די וועלט איז נישט געווען אין ארדענונג, און דין האט געהערשט איבער חסד."
+      },
+      "evidence": { "segs": [172, 173, 177, 179, 181], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The first letters, 'let every man rule in his house', were not a foolish decree but the very beginning of the miracle, reversing the order of din over chesed.",
+        "yi": "די אגרות הראשונות, \"להיות כל איש שורר בביתו\", זענען נישט געווען קיין נארישע גזירה, נאר דער אנהייב פונעם נס, וואס האט איבערגעדרייט דעם סדר פון דין איבער חסד."
+      },
+      "evidence": { "segs": [232, 233, 235, 236, 238], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The Megillah has two statuses: all year it is one of the books of Kesuvim, but on Purim it becomes an iggeres of the world of tikun, so that being written together with the other books is a disgrace to it.",
+        "yi": "די מגילה האט צוויי דינים: א גאנץ יאר איז זי איינס פון די כתבי הקודש, אבער פורים ווערט זי אן אגרת פון עולם התיקון, אזוי אז עס איז א בזיון פאר איר צו זיין צוזאמען מיט די אנדערע ספרים."
+      },
+      "evidence": { "segs": [299, 300, 307, 308, 314, 315], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The word iggeres, spelled out in full, equals in gematria 'yom shekulo Shabbos', the day that is entirely Shabbos, for Mordechai belonged to that future world.",
+        "yi": "דאס ווארט אגרת, מיטן מילוי פון די אותיות, איז בגימטריא \"יום שכולו שבת\", ווייל מרדכי האט שוין געהערט צו יענער עולם פון לעתיד לבוא."
+      },
+      "evidence": { "segs": [336, 338, 339], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Because Mordechai repaired the world of drush, the Gemara expounds the Megillah verse by verse from beginning to end, and the Megillah itself ends with 'doresh tov l'amo'.",
+        "yi": "ווייל מרדכי האט מתקן געווען דעם עולם הדרוש, איז די גמרא דורש די מגילה פסוק נאך פסוק פון אנהייב ביזן סוף, און די מגילה אליין ענדיגט זיך מיט \"דורש טוב לעמו\"."
+      },
+      "evidence": { "segs": [344, 347, 353, 355, 374], "confidence": 0.8 }
+    }
+  ],
+  "stories": [],
+  "questions": [
+    {
+      "question": {
+        "en": "How can the Midrash criticize Yaakov for bowing to Esav while the Zohar praises his wisdom in doing so?",
+        "yi": "ווי אזוי קען דער מדרש קריטיקירן יעקב פאר זיין בוקן זיך צו עשו, ווען דער זוהר לויבט זיין חכמה דערמיט?"
+      },
+      "answer": {
+        "en": "Each speaks from a different world: in the world of drush the bowing was a flaw, while in the world of sod it was a great tikun, and Adam's sin left these worlds not fully aligned.",
+        "yi": "יעדער רעדט פון אן אנדער עולם: אין עולם הדרוש איז די השתחוואה געווען א קלקול, און אין עולם הסוד א גרויסער תיקון, און חטא אדם הראשון האט געלאזט די עולמות נישט אינגאנצן אויסגעהאלטן."
+      },
+      "questionSegs": [36, 37],
+      "answerSegs": [38, 53, 64, 67, 81],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why does the Gemara single out women for haughtiness, and what did Devorah and Chulda do wrong, when a judge and a prophetess speaking Hashem's word were right to have the man come to them?",
+        "yi": "פארוואס זאגט די גמרא אז יהירותא פאסט נישט דווקא פאר נשים, און וואס האבן דבורה און חולדה געטון שלעכט, ווען א שופטת און א נביאה וואס זאגט דעם דבר השם האבן גערעכט געהאט אז דער איש זאל קומען צו זיי?"
+      },
+      "answer": {
+        "en": "The criticism is not of them but of the situation: a time when a man must submit to a woman and din rules is itself a flaw in creation.",
+        "yi": "די טענה איז נישט אויף זיי נאר אויפן מצב: א צייט ווען א איש דארף זיך מכניע זיין צו א נקבה און דין הערשט, איז אליין א קלקול אין דער בריאה."
+      },
+      "questionSegs": [105, 108, 157, 160],
+      "answerSegs": [168, 169, 171, 172, 173],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why did the first letters, 'let every man rule in his house', matter, when Rashi's explanation that the king was thought a fool is forced, as the Chasam Sofer says?",
+        "yi": "וואס איז געווען די נקודה פון די אגרות הראשונות, \"להיות כל איש שורר בביתו\", ווען רש\"י'ס פשט אז מ'האט געהאלטן דעם מלך פאר א שוטה איז א דוחק, ווי דער חתם סופר זאגט?"
+      },
+      "answer": {
+        "en": "They were the beginning of the miracle: a new order in which the month turns from din to chesed.",
+        "yi": "זיי זענען געווען דער אנהייב פונעם נס: א נייע הנהגה וואו דער חודש דרייט זיך איבער פון דין צו חסד."
+      },
+      "questionSegs": [229, 230, 231],
+      "answerSegs": [233, 235, 236],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "Why is a Megillah written together with the other books of Kesuvim invalid?",
+        "yi": "פארוואס איז מען נישט יוצא מיט א מגילה וואס איז געשריבן צוזאמען מיט די אנדערע כתבי הקודש?"
+      },
+      "answer": {
+        "en": "On Purim the Megillah is an iggeres belonging to the world of tikun and has no connection to the other books, which will one day be nullified while it remains.",
+        "yi": "פורים איז די מגילה אן אגרת פון עולם התיקון און האט נישט קיין שייכות מיט די אנדערע ספרים, וואס וועלן אמאל בטל ווערן בשעת זי וועט בלייבן."
+      },
+      "questionSegs": [293, 294, 297],
+      "answerSegs": [299, 307, 308, 314, 318],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why does the Gemara expound the entire Megillah, which it does not do for the account of the Exodus or of Matan Torah?",
+        "yi": "פארוואס איז די גמרא דורש די גאנצע מגילה, וואס זי טוט נישט ביי יציאת מצרים אדער ביי מתן תורה?"
+      },
+      "answer": {
+        "en": "Because Mordechai repaired the world of drush.",
+        "yi": "ווייל מרדכי האט מתקן געווען דעם עולם הדרוש."
+      },
+      "questionSegs": [344, 349, 350],
+      "answerSegs": [354, 355],
+      "confidence": 0.8
+    }
+  ],
+  "takeaways": [],
+  "candidateTopics": [
+    "Mordechai and the sin of Adam",
+    "Yaakov bowing to Esav",
+    "pshat, remez, drush and sod and the four worlds",
+    "Devorah and Chulda",
+    "chesed over din",
+    "Adar as a reversed month",
+    "Megillah as an iggeres",
+    "Purim in the future world",
+    "Shushan Purim and Yerushalayim"
+  ],
+  "concepts": [
+    { "he": "עולם הסוד", "heardAs": ["עולם הסוד"] },
+    { "he": "עולם הדרוש", "heardAs": ["עולם הדרוש", "עולם א דרוש"] },
+    { "he": "עולם הבריאה", "heardAs": ["עולם הבריאה"] },
+    { "he": "עולם היצירה", "heardAs": ["עולם היצירה"] },
+    { "he": "עולם העשיה", "heardAs": ["עולם העשיאה"] },
+    { "he": "פשט, רמז, דרש וסוד", "heardAs": ["פשט, רמז, דרש, און סוד"] },
+    { "he": "קלקול", "heardAs": ["קולקול", "קוקל", "קולקל", "קלקל"] },
+    { "he": "תיקון", "heardAs": ["צוקן", "טוקן", "צוקונג"] },
+    { "he": "עולם התיקון", "heardAs": ["עולם התיקון", "עולם הצוקן", "עולם התוקן"] },
+    { "he": "יהירותא", "heardAs": ["הרסל", "יהורות", "הירתו", "יאהרה"] },
+    { "he": "אורים ותומים", "heardAs": ["ארים וצלמים", "ארים וצרמים"] },
+    { "he": "מידת החסד", "heardAs": ["מידות החסד", "מיטאז החסד", "מידת החתן"] },
+    { "he": "מידת הדין", "heardAs": ["מידות הדין"] },
+    { "he": "ונהפוך הוא", "heardAs": ["ונהאפעך", "ונהפוך"] },
+    { "he": "צירוף", "heardAs": ["צירוף", "צירוב"] },
+    { "he": "שם הוי\"ה", "heardAs": ["שם הויה"] },
+    { "he": "אגרת", "heardAs": ["ניגרת", "יגרת"] },
+    { "he": "יום שכולו שבת", "heardAs": ["יום שכולי שבת", "יום שקלה שבת"] },
+    { "he": "לעתיד לבוא", "heardAs": ["לעשע דלוי", "לשה דלבי", "לשה דלוים"] },
+    { "he": "ניצוץ נשמה", "heardAs": ["ניצות נשמה"] }
+  ],
+  "people": [
+    { "name": "Mordechai", "heardAs": ["מרדכי", "מארדכי"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יעקב אבינא", "יענקע"] },
+    { "name": "Esav", "heardAs": ["אסף", "אסאב", "רסף"] },
+    { "name": "Adam HaRishon", "heardAs": ["אדם הראשון"] },
+    { "name": "Devorah", "heardAs": ["דבורה"] },
+    { "name": "Chulda", "heardAs": ["חולדה", "חרד", "חדה"] },
+    { "name": "Barak", "heardAs": ["ברק", "בערג", "ברוג"] },
+    { "name": "Rashi", "heardAs": ["ראשי"] },
+    { "name": "the Chasam Sofer", "heardAs": ["חתם סופר"] },
+    { "name": "the Chiddushei HaRim", "heardAs": ["חדש ירום", "חידושי ארום"] },
+    { "name": "the Arizal", "heardAs": ["ארי הקודש", "אריה הקודש"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "the Ramban", "heardAs": ["רמב״ן"] }
+  ],
+  "asrNotes": "Yiddish ASR fair in the Rav's teaching (segs 0-381) but quotations heavily garbled (Esav heard as 'אסף', yehirusa as 'הרסל'). Segment 388 is a flagged stretch of about 12 minutes with almost no transcription, made a noise section. Segs 389-635 (Purim remarks about Haman and a long rhymed song with an English-flavored refrain) appear to be another speaker, a Purim performer, and are marked other_speaker; this attribution is uncertain. Unrecovered: the source on gilgulim in seg 5, the 'Tosafos on Daniel' about a husband speaking his wife's language (seg 216), and the sefer the Rav cites in seg 370."
+}

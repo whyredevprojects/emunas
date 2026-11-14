@@ -1,0 +1,17 @@
+{
+  "shiurId": "yi-zmanim-svds-shvshn-pvrym-04-a",
+  "promptVersion": "audit-v1",
+  "auditedAt": "2026-11-14T12:00:00Z",
+  "counts": {
+    "claimsChecked": 25, "unsupported": 1, "hallucinated": 0,
+    "sourcesChecked": 12, "sourceErrors": 0, "sourcesMissed": 1,
+    "boundariesChecked": 4, "boundariesBad": 0, "noiseMishandled": 0,
+    "termsChecked": 14, "termErrors": 0, "termsCopiedGarbled": 0,
+    "yiddishSentencesChecked": 16, "yiddishBadSentences": 2, "yiddishTranslationese": 1,
+    "flowBreaks": 0, "paddingSentences": 0, "contradictsExtraction": 0,
+    "ruleViolations": 0
+  },
+  "severity": "minor",
+  "needsReview": false,
+  "notes": "writeup.en[0].paragraphs[1] / yi[0].paragraphs[1]: says one drinks so as NOT to bless Haman, yet thereby brings life to his spark; segs 50-53 say the drunk unintentionally says 'baruch' on Haman, which is what enlivens the spark (self-contradictory reading); takeaways[1].yi uses 'מוטשיגט' (torments) for 'urges', and 'בעסערע' where segs 622 say 'extra' siyata dishmaya; writeup.yi[3].paragraphs[2] Daytshmerish 'פונדעסטוועגן'; writeup.yi[7].paragraphs[0] 'נידעריגסטן פונקט פון דער היסטאריע' reads as a rendering of the English; Gemara on Shlomo ruling over shedim (segs 309-315) not in sources[]; writeup.en[4].paragraphs[0] presents the seven-maids proof as the Rav's own, though segs 353-358 credit it to a sefer; gematrios checked (targum=tardemah, yekar=ketzeh ha'am, pisgam=chodesh Adar, yegar sahadusa=malchuso bakol mashalah) all correct"
+}
