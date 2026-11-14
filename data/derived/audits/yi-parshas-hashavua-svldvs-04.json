@@ -1,0 +1,29 @@
+{
+  "shiurId": "yi-parshas-hashavua-svldvs-04",
+  "promptVersion": "audit-v1",
+  "auditedAt": "2026-11-14T20:56:34Z",
+  "counts": {
+    "claimsChecked": 26,
+    "unsupported": 2,
+    "hallucinated": 0,
+    "sourcesChecked": 12,
+    "sourceErrors": 0,
+    "sourcesMissed": 2,
+    "boundariesChecked": 4,
+    "boundariesBad": 0,
+    "noiseMishandled": 0,
+    "termsChecked": 12,
+    "termErrors": 0,
+    "termsCopiedGarbled": 0,
+    "yiddishSentencesChecked": 20,
+    "yiddishBadSentences": 2,
+    "yiddishTranslationese": 3,
+    "flowBreaks": 1,
+    "paddingSentences": 0,
+    "contradictsExtraction": 0,
+    "ruleViolations": 0
+  },
+  "severity": "minor",
+  "needsReview": false,
+  "notes": "writeup.en[7].paragraphs[0]/yi[7].paragraphs[0]: 'from the day Eisav sold the birthright' is filled in; segs 538-543 say only 'probably' from the day he was kofer b'ikar/committed the five sins; writeup.en[0].paragraphs[0]: 'Rabbi Pinchas ben Yair's donkey' adds the donkey, which seg 28 does not mention; writeup.en[8].paragraphs[1]: 'the kedushah had always come through Yaakov' (following segs 651/666, likely ASR confusion) clashes with en[7] (Rivkah cooked, Eisav served) and is left unexplained; sources missed: Gemara Megillah 'milchamah atchalta d'geulah' (segs 853-854) and the 'koach hapoel banifal' rule credited to the Rambam (seg 521); Yiddish: yi[12] heading 'מאכט פאלן ישמעאל' unnatural, yi[13].paragraphs[0] 'א ליידיגער כלי', calques 'אזא צייט פאדערט עפעס טון' (yi[10].paragraphs[1]), 'מאכן די ידיעות' (yi[12].paragraphs[1]), passive 'צוגעגרייט געווארן דורך רבקה' (summary.oneLiner.yi); write-up runs over budget (en 1507, yi 1614 words vs 1162-1452)"
+}

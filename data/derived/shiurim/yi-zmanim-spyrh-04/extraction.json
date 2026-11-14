@@ -1,0 +1,647 @@
+{
+  "shiurId": "yi-zmanim-spyrh-04",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "Starting from the tumah of a yoledes in parshas Tazria, the Rav shows how the days of Sefirah are counted days of purifying and refining one's midos, so as to be let into Yerushalayim and Har Sinai on Shavuos.",
+      "yi": "פון דער טומאה פון א יולדת אין פרשת תזריע ווייזט דער משגיח אז די ימי הספירה זענען געציילטע טעג פון טהרה און פון מתקן זיין די מידות, כדי מ'זאל אריינגעלאזט ווערן קיין ירושלים און צום הר סיני אום שבועות."
+    },
+    "abstract": {
+      "en": "The Rav opens with the parsha of the yoledes and asks why a mother who brought a Jewish child into the world becomes tamei. Following the Ohr HaChaim's explanation of why a Jewish corpse defiles in an ohel, he explains that the holiness she carried has emptied out, and asks why a boy then brings less tumah than a girl. The answer is the bris: Eliyahu, who never ate from the Etz HaDaas, comes, and the tumah is cut short; this is why the verse of milah interrupts the passage. From there he turns to Sefirah as preparation for the fiftieth day, explains the Zohar that the redemption will come 'on Shavuos', and shows that the Sefirah parshiyos hold Rambam's Sefer Taharah and Sefer Kedushah. The counted days are too precious to be nullified. He closes with Pirkei Avos and derech eretz before Torah, Rabbi Akiva's students, and lashon hara, which drives a person out of Yerushalayim.",
+      "yi": "דער משגיח עפנט מיט דער פרשה פון יולדת און פרעגט פארוואס א מאמע וואס האט געבראכט א אידיש קינד אויף דער וועלט ווערט טמא. לויט דעם אור החיים, וואס ערקלערט פארוואס א מת פון א איד איז מטמא באהל, איז ער מסביר אז די קדושה וואס זי האט געטראגן איז אויסגעליידיגט געווארן, און ער פרעגט פארוואס דען איז די טומאה ביי א זכר קלענער ווי ביי א נקבה. דער תירוץ איז די ברית: אליהו הנביא, וואס האט קיינמאל נישט געגעסן פון עץ הדעת, קומט, און די טומאה ווערט אפגעשניטן; דערפאר שטייט דער פסוק פון מילה אינמיטן. דערנאך גייט ער איבער צו די ימי הספירה ווי א הכנה צום פופציגסטן טאג, ער איז מסביר דעם זוהר \"בשבועות יפקון מגלותא\", און ווייזט אז אין די סדרות פון ספירה געפינט זיך דער ספר טהרה און דער ספר קדושה פונעם רמב\"ם. די געציילטע טעג זענען צו חשוב כדי בטל צו ווערן. צום סוף רעדט ער וועגן פרקי אבות און דרך ארץ קדמה לתורה, די תלמידים פון רבי עקיבא, און לשון הרע וואס טרייבט א מענטש ארויס פון ירושלים."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "A yoledes becomes tamei because the great holiness she carried, a child learning the whole Torah with an angel, has emptied out of her.",
+          "yi": "א יולדת ווערט טמא ווייל די גרויסע קדושה וואס זי האט געטראגן, א קינד וואס לערנט די גאנצע תורה מיט א מלאך, איז ארויס פון איר."
+        },
+        "evidence": { "segs": [62, 64, 139, 143], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "At a bris, Eliyahu HaNavi comes and the tumah is cut short, which is why the verse of milah on the eighth day interrupts the laws of the yoledes.",
+          "yi": "ביי א ברית קומט אליהו הנביא און די טומאה ווערט אפגעשניטן, און דערפאר שטייט דער פסוק פון מילה ביום השמיני אינמיטן די דינים פון יולדת."
+        },
+        "evidence": { "segs": [290, 295, 299, 300], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The days of Sefirah prepare for the fiftieth day, a day of yovel, return and redemption; this is how the Rav reads the Zohar that the redemption will come on Shavuos.",
+          "yi": "די ימי הספירה זענען א הכנה צום פופציגסטן טאג, א טאג פון יובל, תשובה און גאולה; אזוי טייטשט דער משגיח דעם זוהר אז די גאולה וועט קומען אום שבועות."
+        },
+        "evidence": { "segs": [341, 345, 351, 401, 403], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "The parshiyos read during Sefirah contain nearly all of Rambam's Sefer Taharah and Sefer Kedushah, because these are the weeks of becoming pure and holy.",
+          "yi": "די סדרות וואס מ'לערנט אין ספירה-צייט אנטהאלטן כמעט דעם גאנצן ספר טהרה און ספר קדושה פונעם רמב\"ם, ווייל דאס זענען די וואכן פון טהרה און קדושה."
+        },
+        "evidence": { "segs": [480, 483, 491, 541, 543], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The days of Sefirah are counted, a davar shebeminyan, and like any counted thing they are too precious ever to be nullified.",
+          "yi": "די טעג פון ספירה זענען געציילטע טעג, א דבר שבמנין, און אזוי ווי יעדע זאך וואס מ'ציילט זענען זיי צו חשוב כדי בטל צו ווערן."
+        },
+        "evidence": { "segs": [576, 580, 585, 590, 591], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Good midos are a prerequisite for receiving the Torah, so in the weeks before Shavuos one learns Pirkei Avos and refines one's midos.",
+          "yi": "גוטע מידות זענען א תנאי פאר קבלת התורה, און דערפאר לערנט מען פרקי אבות און מ'איז מתקן די מידות אין די וואכן פאר שבועות."
+        },
+        "evidence": { "segs": [690, 694, 717, 733, 748], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Lashon hara drove the Jews out of Yerushalayim, and today it keeps a person from reaching Yerushalayim in his tefillah and from the light of a blatt Gemara.",
+          "yi": "לשון הרע האט פארטריבן די אידן פון ירושלים, און היינט לאזט עס נישט א מענטש צוקומען קיין ירושלים אין זיין תפילה און צו דער ליכטיקייט פון א בלאט גמרא."
+        },
+        "evidence": { "segs": [828, 832, 900, 902, 907], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-01-04-sefirah",
+      "startSeg": 0,
+      "endSeg": 91,
+      "title": { "en": "Why does a yoledes become tamei?", "yi": "פארוואס ווערט א יולדת טמא?" },
+      "summary": {
+        "en": "The Rav reads the opening verses of Tazria and asks why a mother who brought a life into the world, and carried a child learning Torah with an angel, should become tamei. He also asks why the verse of milah on the eighth day appears in the middle of the laws of tumah.",
+        "yi": "דער משגיח לערנט די ערשטע פסוקים פון תזריע און פרעגט פארוואס א מאמע וואס האט געבראכט א נפש אויף דער וועלט, און האט געטראגן א קינד וואס לערנט תורה מיט א מלאך, זאל ווערן טמא. ער פרעגט אויך פארוואס דער פסוק פון מילה ביום השמיני שטייט אינמיטן די דינים פון טומאה."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-01-04-sefirah",
+      "startSeg": 92,
+      "endSeg": 172,
+      "title": { "en": "The Ohr HaChaim: holiness that has emptied out", "yi": "דער אור החיים: קדושה וואס איז אויסגעליידיגט געווארן" },
+      "summary": {
+        "en": "The Rav brings the Ohr HaChaim's parable of flies drawn to an emptied barrel of honey to explain why a Jewish corpse defiles in an ohel and a gentile's does not, and applies it to the yoledes. He then asks why a boy, whose holiness is greater, brings only seven days of tumah and a girl fourteen.",
+        "yi": "דער משגיח ברענגט דעם משל פונעם אור החיים פון פליגן וואס קומען צו אן אויסגעליידיגטע פאס האניק, כדי צו ערקלערן פארוואס א מת פון א איד איז מטמא באהל און פון א גוי נישט, און ער לייגט עס צו צו דער יולדת. דערנאך פרעגט ער פארוואס ביי א זכר, וואס זיין קדושה איז גרעסער, איז נאר זיבן טעג טומאה און ביי א נקבה פערצן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-01-04-sefirah",
+      "startSeg": 173,
+      "endSeg": 254,
+      "title": { "en": "Closeness of family between souls", "yi": "קירוב משפחה צווישן נשמות" },
+      "summary": {
+        "en": "The Rav explains that close family ties reflect a closeness between souls and create halachos, as with aveilus. He asks why the mother may wear Shabbos clothes at a bris on Tisha B'Av though she has no obligation in the milah, and answers that her closeness to the child brings her into its simcha.",
+        "yi": "דער משגיח ערקלערט אז קירוב משפחה איז א קירוב צווישן די נשמות, און דאס שאפט הלכות, אזוי ווי ביי אבילות. ער פרעגט פארוואס די מאמע מעג זיך אנטון בגדי שבת ביי א ברית אום תשעה באב כאטש זי איז נישט מחויב אין דער מילה, און ענטפערט אז איר קירוב צום קינד ברענגט איר אריין אין זיין שמחה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-01-04-sefirah",
+      "startSeg": 255,
+      "endSeg": 334,
+      "title": { "en": "Eliyahu at the bris cuts off tumah", "yi": "אליהו הנביא ביי דער ברית מאכט בטל די טומאה" },
+      "summary": {
+        "en": "The Rav explains that Eliyahu never ate from the Etz HaDaas, so at a bris, a moment of the days of Moshiach, tumah is nullified. This answers why a boy brings less tumah and why the verse of milah interrupts the passage, and through the rule of lo plug it applies even when the milah is delayed.",
+        "yi": "דער משגיח ערקלערט אז אליהו הנביא האט קיינמאל נישט געגעסן פון עץ הדעת, און דערפאר ווערט ביי א ברית, א רגע פון ימות המשיח, די טומאה בטל. דאס ענטפערט פארוואס ביי א זכר איז די טומאה קלענער און פארוואס דער פסוק פון מילה שטייט אינמיטן, און צוליב דעם כלל פון לא פלוג גילט עס אפילו ווען די מילה ווערט אפגעלייגט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-01-04-sefirah",
+      "startSeg": 335,
+      "endSeg": 411,
+      "title": { "en": "The Zohar: redemption on Shavuos", "yi": "דער זוהר: בשבועות יפקון מגלותא" },
+      "summary": {
+        "en": "The Rav describes the days of Sefirah as preparation for the fiftieth day, the day of yovel. He brings the Zohar that the redemption will come on Shavuos, contrasts it with the Gemara's Nissan or Tishrei, and explains it through the distinction between 'b'itah' and 'achishena': Shavuos is a time especially suited for Moshiach.",
+        "yi": "דער משגיח שילדערט די ימי הספירה ווי א הכנה צום פופציגסטן טאג, דעם טאג פון יובל. ער ברענגט דעם זוהר \"בשבועות יפקון מגלותא\", שטעלט עס אקעגן דער גמרא פון ניסן אדער תשרי, און איז עס מסביר דורך דעם חילוק צווישן \"בעתה\" און \"אחישנה\": שבועות איז א בחינה וואס איז מסוגל אויף ביאת המשיח."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-01-04-sefirah",
+      "startSeg": 412,
+      "endSeg": 493,
+      "title": { "en": "Shavuos as the eighth day; Rambam's two books", "yi": "שבועות ווי דער אכטער טאג; צוויי ספרים פונעם רמב\"ם" },
+      "summary": {
+        "en": "The Rav explains that Shavuos, the fiftieth day and the first of the eighth week, is like the eighth day on which a tamei person may immerse, and that the day itself is a mikveh. He then explains the name Yad HaChazakah and shows that two of its fourteen books, Sefer Taharah and Sefer Kedushah, are found in the Sefirah parshiyos.",
+        "yi": "דער משגיח ערקלערט אז שבועות, דער פופציגסטער טאג און דער ערשטער פון דער אכטער וואך, איז ווי דער אכטער טאג וואס א טמא מעג זיך טובל זיין, און אז דער טאג אליין איז א מקוה. דערנאך טייטשט ער דעם נאמען יד החזקה, און ווייזט אז צוויי פון אירע פערצן ספרים, ספר טהרה און ספר קדושה, געפינען זיך אין די סדרות פון ספירה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [1],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-01-04-sefirah",
+      "startSeg": 494,
+      "endSeg": 610,
+      "title": { "en": "Counted days of taharah and kedushah", "yi": "געציילטע טעג פון טהרה און קדושה" },
+      "summary": {
+        "en": "The Rav goes through the parshiyos from Shemini to Emor and shows the laws of tumah and taharah and of kedushah in each. He brings the Gerrer Rebbe that these are counted days, and explains through the halacha of davar shebeminyan that counted days are too precious to be nullified; in them a person can be entirely renewed.",
+        "yi": "דער משגיח גייט דורך די סדרות פון שמיני ביז אמור און ווייזט אין יעדע איינע די דינים פון טומאה און טהרה און פון קדושה. ער ברענגט דעם גערער רבי'ן אז דאס זענען געציילטע טעג, און ערקלערט דורך דער הלכה פון דבר שבמנין אז געציילטע טעג זענען צו חשוב כדי בטל צו ווערן; אין זיי קען א מענטש זיך אינגאנצן באנייען."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [1],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-01-04-sefirah",
+      "startSeg": 611,
+      "endSeg": 673,
+      "title": { "en": "Iyar, the month of ziv", "yi": "אייר, דער חודש זיו" },
+      "summary": {
+        "en": "The Rav explains why Iyar is called the month of ziv: the fields blossom then because above, too, there is a radiance, the month the Beis HaMikdash was completed. A person is like a tree of the field, and through the mitzvah of Sefirah, which fills all of Iyar, he should blossom by purifying his seven midos.",
+        "yi": "דער משגיח ערקלערט פארוואס אייר הייסט חודש זיו: די פעלדער בליען דעמאלט ווייל אויך אין הימל איז דא א זיו, דער חודש וואס דער בית המקדש איז פארטיג געווארן. א מענטש איז ווי אן עץ השדה, און דורך דער מצוה פון ספירה, וואס פילט אן דעם גאנצן אייר, דארף ער בליען דורכן רייניגן זיינע זיבן מידות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-01-04-sefirah",
+      "startSeg": 674,
+      "endSeg": 776,
+      "title": { "en": "Pirkei Avos: derech eretz before Torah", "yi": "פרקי אבות: דרך ארץ קדמה לתורה" },
+      "summary": {
+        "en": "The Rav explains that the original custom is to learn Pirkei Avos between Pesach and Shavuos because it deals with refining midos, derech eretz that precedes Torah. He brings Rabbi Chaim Vital that the Torah hardly speaks of midos because they are a prerequisite for learning it, and explains that Rabbi Akiva's students died in these weeks because midos are demanded more then.",
+        "yi": "דער משגיח ערקלערט אז דער עיקר מנהג איז צו לערנען פרקי אבות צווישן פסח און שבועות, ווייל עס רעדט וועגן תיקון המידות, דרך ארץ וואס קומט פאר דער תורה. ער ברענגט רבי חיים וויטאל אז די תורה רעדט כמעט נישט וועגן מידות ווייל זיי זענען א תנאי פאר לערנען, און ערקלערט אז די תלמידים פון רבי עקיבא זענען געשטארבן אין די וואכן ווייל דעמאלט איז מען מקפיד מער אויף מידות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [2],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-01-04-sefirah",
+      "startSeg": 777,
+      "endSeg": 932,
+      "title": { "en": "Lashon hara and exile from Yerushalayim", "yi": "לשון הרע און פארטריבן ווערן פון ירושלים" },
+      "summary": {
+        "en": "The Rav explains that tzaraas comes from lashon hara and that the metzora is sent out of all of Yerushalayim, and that the whole galus, symbolized by Kamtza and bar Kamtza, came from sins between man and his fellow. Today such a person is barred from Yerushalayim in his Shemoneh Esrei and from the light of the Gemara; he closes that Sefirah must be counted with the aim of refining one's midos.",
+        "yi": "דער משגיח ערקלערט אז צרעת קומט פון לשון הרע און אז א מצורע ווערט ארויסגעשיקט פון גאנץ ירושלים, און אז דער גאנצער גלות, מיט קמצא ובר קמצא אלס סימבאל, איז געקומען צוליב בין אדם לחבירו. היינט ווערט אזא מענטש פארטריבן פון ירושלים אין זיין שמונה עשרה און פון דער ליכטיקייט פון דער גמרא; צום סוף זאגט ער אז מ'דארף ציילן ספירה מיטן כוונה צו רייניגן די מידות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "דבר בן ישראל, לאמר איש כיתה זרוע, ויאלו דזכר, ותמר שבעת ימים",
+      "work": "Vayikra",
+      "ref": "Vayikra 12:2-4",
+      "sefariaRef": "Leviticus 12:2-4",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [2, 3, 5, 22], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "מידה טובה מרבה מלמודת פרנות דער גמרא זאגט",
+      "work": "Gemara",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [41, 46, 47], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "עותי חסד לאלפים ... שאלשון ולרבי׳ן",
+      "work": "Shemos",
+      "ref": "Shemos 20:5-6",
+      "sefariaRef": "Exodus 20:5-6",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [42, 45], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "שטעט אין געמורא נידע ... עס קומט א מלאך",
+      "work": "Gemara Niddah",
+      "ref": "Niddah 30b",
+      "sefariaRef": "Niddah 30b",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [53, 56, 58, 60, 61], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "פרעגט דער אייך א אומא קודש ... ענטפערט דער אייך חיים הקדוש",
+      "work": "Ohr HaChaim",
+      "ref": "Ohr HaChaim, parshas Chukas",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [92, 93, 97, 134], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "די יארשטע 3 צעק ... 7 צעק ... 30 צעק ... ווי דער גמרא זאגט",
+      "work": "Gemara Moed Katan",
+      "ref": "Moed Katan 27b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [191, 193, 194, 196], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ידעותקט אין די הפטירה פון אחמאש'ער פסח וואס רחץ תמוה אהר ומנה ארץ",
+      "work": "Zechariah",
+      "ref": "Zechariah 13:2",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [278, 279, 280], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "אין זייע בשוות יפכן מגלותא",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [351, 355, 401], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "דער גמרא זאגט דאך ניסן און תשרי, ומחלקת רבי אלעזר – רבי יהושע",
+      "work": "Gemara Rosh Hashanah",
+      "ref": "Rosh Hashanah 11a",
+      "sefariaRef": "Rosh Hashanah 11a",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [354, 386], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אני ה' בעיטה אחי שם",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 60:22",
+      "sefariaRef": "Isaiah 60:22",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [371, 372], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "זאגט איר גמרא זכר אחי שם לא זכר בעיטה",
+      "work": "Gemara Sanhedrin",
+      "ref": "Sanhedrin 98a",
+      "sefariaRef": "Sanhedrin 98a",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [373, 374, 375, 376], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער רמב״ן זאגט עס בחירוש אינעם לעצטן פסוק פון שירת הזינה",
+      "work": "Ramban",
+      "ref": "Ramban on Devarim 32:43",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [380, 381, 382, 383], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער רמב״ם האט געשריבן א ספר, יד החזקה ... ספר הטהרה ... ספר הגדושה",
+      "work": "Mishneh Torah",
+      "ref": "Mishneh Torah, Sefer Taharah and Sefer Kedushah",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [450, 459, 475, 477], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "אליב שמחה, דער גורל רבי זצ״ל",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [546, 547, 548], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "וואס מושלם המלך האט געבויט אין חודש זיוו ... נביא אין ספר מלאכים",
+      "work": "Melachim",
+      "ref": "Melachim I 6:1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [644, 645, 647], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "כי האדם עצה סדר",
+      "work": "Devarim",
+      "ref": "Devarim 20:19",
+      "sefariaRef": "Deuteronomy 20:19",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [651], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אזוי שרייבט דער בהמיתניה בפירוש אין זיין סעודה אין די אקדאמע פון פיקר יעבוס",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [686], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "דרך ארץ קדמה לתורה",
+      "work": "Vayikra Rabbah",
+      "ref": "Vayikra Rabbah 9:3",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [694], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער ספר הגדושה פון רבי חיים די טאהל",
+      "work": "Shaarei Kedushah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [701, 713, 738], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די תלמידים פון רבי יקיבא",
+      "work": "Gemara Yevamos",
+      "ref": "Yevamos 62b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [749, 765], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אזוי ווי די גמרא זאגט, און אזוי ווי דער רשע ברענגט, אז צורעת קומט וועגן לאשן הארע",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [784, 785], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "וישאל חמנא מחנה כל צורה וכל זאב וכל טמא לנפש",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 5:2",
+      "sefariaRef": "Numbers 5:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [792], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "קאמצע מיט בארג קאמצע",
+      "work": "Gemara Gittin",
+      "ref": "Gittin 55b-56a",
+      "sefariaRef": "Gittin 55b",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [836, 845, 847, 853], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער רמב״ם זאגט אז צורת איז געוועזן אין שוועי אפי דורך א טבע",
+      "work": "Rambam",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [875, 877], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "שטעט אין די משנה און די גמרא",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 30a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [890, 891, 892], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "דאס האט געזאגט דער בעל שם טוב",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [895, 896, 898], "confidence": 0.85 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav applies the Ohr HaChaim's parable of flies on an emptied barrel of honey to the yoledes: her tumah is not a defect but the residue of the great holiness of carrying a child who learned Torah with an angel.",
+        "yi": "דער משגיח לייגט צו דעם משל פונעם אור החיים פון פליגן ביי אן אויסגעליידיגטע פאס האניק צו דער יולדת: איר טומאה איז נישט קיין חסרון, נאר דאס וואס בלייבט איבער פון דער גרויסער קדושה פון טראגן א קינד וואס האט געלערנט תורה מיט א מלאך."
+      },
+      "evidence": { "segs": [133, 137, 139, 143], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Because a bris borrows a few moments of the days of Moshiach, when Eliyahu, who never ate from the Etz HaDaas, is present, the tumah that came from the sin of Adam is cut short; this is why the yoledes of a boy is tamei for less time.",
+        "yi": "ווייל ביי א ברית בארגט מען אויס עטליכע רגעים פון ימות המשיח, ווען אליהו הנביא, וואס האט קיינמאל נישט געגעסן פון עץ הדעת, איז דארט, ווערט די טומאה וואס קומט פונעם חטא פון אדם הראשון אפגעשניטן; דערפאר איז די יולדת פון א זכר טמא א קורצערע צייט."
+      },
+      "evidence": { "segs": [238, 240, 258, 270, 299], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The verse of milah on the eighth day interrupts the laws of the yoledes to answer the question the reader is about to ask, why a boy brings less tumah than a girl.",
+        "yi": "דער פסוק פון מילה ביום השמיני שטייט אינמיטן די דינים פון יולדת כדי צו ענטפערן די קשיא וואס דער לערנער וועט באלד פרעגן, פארוואס ביי א זכר איז די טומאה קלענער ווי ביי א נקבה."
+      },
+      "evidence": { "segs": [287, 289, 290, 291], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Shavuos is both the fiftieth day and the first day of the eighth week, like the eighth day on which a tamei person immerses; the day of Shavuos is itself the mikveh.",
+        "yi": "שבועות איז סיי דער פופציגסטער טאג און סיי דער ערשטער טאג פון דער אכטער וואך, ווי דער אכטער טאג וואס א טמא טובלט זיך; דער טאג פון שבועות אליין איז די מקוה."
+      },
+      "evidence": { "segs": [421, 427, 429, 439, 440], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The days of Sefirah are a davar shebeminyan: like counted, important items that are never nullified even in a thousand, the counted days are too precious to be lost.",
+        "yi": "די טעג פון ספירה זענען א דבר שבמנין: אזוי ווי א חשוב'ע זאך וואס מ'ציילט ווערט קיינמאל נישט בטל אפילו אין טויזנט, אזוי זענען די געציילטע טעג צו חשוב כדי פארלוירן צו ווערן."
+      },
+      "evidence": { "segs": [576, 580, 581, 590, 591], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Rabbi Akiva's students died specifically between Pesach and Shavuos because in these weeks of preparing for Matan Torah, lacking midos is judged more strictly than during the rest of the year.",
+        "yi": "די תלמידים פון רבי עקיבא זענען געשטארבן דווקא צווישן פסח און שבועות, ווייל אין די וואכן פון הכנה צו מתן תורה איז מען מער מקפיד אויף מידות ווי דורכן גאנצן יאר."
+      },
+      "evidence": { "segs": [750, 754, 762, 764, 769], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Since a person is where his thoughts are, one who speaks lashon hara is not allowed to direct his Shemoneh Esrei toward Yerushalayim, and so is exiled from Yerushalayim even today.",
+        "yi": "ווייל א מענטש איז דארט וואו זיין מחשבה איז, לאזט מען נישט א בעל לשון הרע מכוון זיין זיין שמונה עשרה צו ירושלים, און ממילא איז ער פארטריבן פון ירושלים אפילו היינט."
+      },
+      "evidence": { "segs": [895, 899, 900, 901, 907], "confidence": 0.8 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "Kamtza and bar Kamtza", "yi": "קמצא ובר קמצא" },
+      "retelling": {
+        "en": "The Rav recalls the incident that brought the destruction of Yerushalayim. A man was not allowed to come to a party, and because of this he went and spoke lashon hara to the Roman ruler. The Rav explains that the episode is a symbol: Yerushalayim was destroyed because of sins between man and his fellow, hatred and lashon hara.",
+        "yi": "דער משגיח דערמאנט דעם מאורע וואס האט געברענגט דעם חורבן פון ירושלים. מ'האט א מענטש נישט געלאזט קומען צו א סעודה, און דערפאר איז ער געגאנגען רעדן לשון הרע צום רוימישן קיסר. דער משגיח ערקלערט אז די מעשה איז א סימבאל: ירושלים איז חרוב געווארן צוליב בין אדם לחבירו, שנאת חנם און לשון הרע."
+      },
+      "people": ["Kamtza", "bar Kamtza"],
+      "evidence": { "segs": [836, 839, 846, 847, 849], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why should a woman who gave birth, bringing a life into the world, become tamei?",
+        "yi": "פארוואס זאל א פרוי וואס האט געבוירן, און געבראכט א נפש אויף דער וועלט, ווערן טמא?"
+      },
+      "answer": {
+        "en": "Because the great holiness of the child learning Torah within her has left her, and tumah clings to emptied holiness, as the Ohr HaChaim explains.",
+        "yi": "ווייל די גרויסע קדושה פונעם קינד וואס האט געלערנט תורה אין איר איז ארויס, און טומאה קומט צו אויסגעליידיגטע קדושה, אזוי ווי דער אור החיים ערקלערט."
+      },
+      "questionSegs": [27, 29, 52, 68],
+      "answerSegs": [137, 139, 142, 143],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why does a Jewish corpse make tumah in an ohel while a gentile's does not?",
+        "yi": "פארוואס איז א מת פון א איד מטמא באהל און פון א גוי נישט?"
+      },
+      "answer": {
+        "en": "Like flies drawn to an emptied barrel of honey rather than of refuse, the forces of tumah are drawn to the body from which a holy soul has departed.",
+        "yi": "אזוי ווי פליגן קומען מער צו אן אויסגעליידיגטע פאס האניק ווי צו א פאס מיסט, קומען די כוחות הטומאה צום גוף פון וועלכן א הייליגע נשמה איז ארויס."
+      },
+      "questionSegs": [93, 94, 96],
+      "answerSegs": [99, 105, 113, 131],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "If tumah comes from departed holiness, why is a boy's birth, with greater holiness, only seven days of tumah while a girl's is fourteen?",
+        "yi": "אויב טומאה קומט פון אויסגעליידיגטע קדושה, פארוואס איז ביי א זכר, וואס זיין קדושה איז גרעסער, נאר זיבן טעג טומאה און ביי א נקבה פערצן?"
+      },
+      "answer": {
+        "en": "Because of the bris: Eliyahu comes, and his holiness cuts the tumah short.",
+        "yi": "צוליב דער ברית: אליהו הנביא קומט, און זיין קדושה שניידט אפ די טומאה."
+      },
+      "questionSegs": [146, 149, 163, 172],
+      "answerSegs": [295, 297, 299, 300],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why does the verse of milah on the eighth day appear in the middle of the laws of tumah?",
+        "yi": "פארוואס שטייט דער פסוק פון מילה ביום השמיני אינמיטן די דינים פון טומאה?"
+      },
+      "answer": {
+        "en": "The verse interrupts to answer the question of why a boy brings less tumah: the bris on the eighth day ends it.",
+        "yi": "דער פסוק שטעלט זיך אפ אינמיטן כדי צו ענטפערן די קשיא פארוואס ביי א זכר איז די טומאה קלענער: די ברית אום אכטן טאג ענדיגט זי."
+      },
+      "questionSegs": [73, 74, 82],
+      "answerSegs": [290, 291, 295, 304],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why may the mother wear Shabbos clothes at a bris on Tisha B'Av, if she has no obligation in the milah?",
+        "yi": "פארוואס מעג די מאמע זיך אנטון בגדי שבת ביי א ברית אום תשעה באב, אויב זי איז נישט מחויב אין דער מילה?"
+      },
+      "answer": {
+        "en": "Not because of the mitzvah but because of her family closeness to the child: just as she would mourn for him, she shares in his simcha.",
+        "yi": "נישט צוליב דער מצוה נאר צוליב איר קירוב משפחה צום קינד: אזוי ווי זי וואלט געווען אן אבל אויף אים, אזוי האט זי א חלק אין זיין שמחה."
+      },
+      "questionSegs": [224, 225, 229],
+      "answerSegs": [231, 232, 249, 254],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why does the Torah say so little about midos?",
+        "yi": "פארוואס רעדט די תורה אזוי ווייניק וועגן מידות?"
+      },
+      "answer": {
+        "en": "Rabbi Chaim Vital answers that good midos are a prerequisite: only one who already has them is admitted to the Torah.",
+        "yi": "רבי חיים וויטאל ענטפערט אז גוטע מידות זענען א תנאי: נאר דער וואס האט זיי שוין ווערט צוגעלאזט צו דער תורה."
+      },
+      "questionSegs": [702, 703, 712],
+      "answerSegs": [713, 717, 721, 734],
+      "confidence": 0.85
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says that in the weeks of Sefirah one must work on the midos that drove us out of Yerushalayim: begrudging others and finding faults in them.",
+        "yi": "דער משגיח זאגט אז אין די וואכן פון ספירה דארף מען ארבעטן אויף די מידות וואס האבן אונז פארטריבן פון ירושלים: נישט פארגינען און געפינען חסרונות אין יענעם."
+      },
+      "evidence": { "segs": [855, 856, 857, 858, 861], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "He says Sefirah should not be counted mechanically; before counting one should think of refining one's midos and ask the Ribono shel Olam to help him become a better person.",
+        "yi": "ער זאגט אז מ'זאל נישט ציילן ספירה ווי א געוווינהייט; פאר דער ספירה זאל מען טראכטן פון רייניגן די מידות און בעטן דעם רבונו של עולם אז מ'זאל ווערן א בעסערער מענטש."
+      },
+      "evidence": { "segs": [918, 920, 921, 922], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He says that in these weeks one must strive to become a fine, refined person with good midos, as preparation for receiving the Torah.",
+        "yi": "ער זאגט אז אין די וואכן דארף מען זיך מיה געבן צו ווערן א פיינער מענטש מיט גוטע מידות, אלס הכנה צו קבלת התורה."
+      },
+      "evidence": { "segs": [747, 748, 769, 772, 773], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "sefirah as preparation for Shavuos",
+    "tumah of a yoledes",
+    "bris milah and Eliyahu HaNavi",
+    "redemption on Shavuos",
+    "taharah and kedushah",
+    "counted days of sefirah",
+    "Pirkei Avos and derech eretz",
+    "refining the midos",
+    "lashon hara and the churban",
+    "parshas Tazria"
+  ],
+  "concepts": [
+    { "he": "יולדת", "heardAs": ["לידע", "תמוז לידע"] },
+    { "he": "טומאת אהל", "heardAs": ["תמוז אהל", "תמיד אוהל"] },
+    { "he": "מדה טובה מרובה", "heardAs": ["מידה טובה מרבה", "מיטה טובה ומרבה"] },
+    { "he": "קירוב משפחה", "heardAs": ["קירוב משפחה", "יקירה פון משפחה"] },
+    { "he": "אבילות", "heardAs": ["עוולת", "עוועלת"] },
+    { "he": "עץ הדעת", "heardAs": ["אצעדעת", "עץ הדת"] },
+    { "he": "לא פלוג", "heardAs": ["לא פלוג"] },
+    { "he": "בשבועות יפקון מגלותא", "heardAs": ["בשוות יפכן מגלותא", "בשבעות יפכה מגילתא"] },
+    { "he": "בעתה אחישנה", "heardAs": ["בעיטה אחי שם", "בעיטע אדער צאך ישנה"] },
+    { "he": "יד החזקה", "heardAs": ["יד החזקה", "יד החזקים"] },
+    { "he": "דבר שבמנין", "heardAs": ["דבר שבמונגען", "דבשה במינון", "דברים שבמינען"] },
+    { "he": "חודש זיו", "heardAs": ["חידוש זיוו", "חודש זאב"] },
+    { "he": "דרך ארץ קדמה לתורה", "heardAs": ["דרך ארץ קדמה לתורה"] },
+    { "he": "צרעת", "heardAs": ["צורעת", "צורת"] },
+    { "he": "לשון הרע", "heardAs": ["לאשן הארע", "לשון הרע"] },
+    { "he": "לטהרנו ולקדשנו", "heardAs": ["לטעורינו לכדושינו", "לתארענא כדושין"] }
+  ],
+  "people": [
+    { "name": "Rabbi Shimon bar Yochai", "heardAs": ["רבי שמעון בן יוחאי"] },
+    { "name": "the Ohr HaChaim", "heardAs": ["אייך א אומא קודש", "אייך חיים הקדוש", "אהר חיים'ער"] },
+    { "name": "Eliyahu HaNavi", "heardAs": ["עלי הנביא", "אריה נביא", "אליהאנבי"] },
+    { "name": "Adam HaRishon", "heardAs": ["אדם אבושי", "נאדים ראשון"] },
+    { "name": "Rabbi Eliezer", "heardAs": ["רבי אלעזר"] },
+    { "name": "Rabbi Yehoshua", "heardAs": ["רבי יהושע"] },
+    { "name": "the Ramban", "heardAs": ["רמב״ן"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "the Lev Simcha of Ger", "heardAs": ["אליב שמחה, דער גורל רבי"] },
+    { "name": "Shlomo HaMelech", "heardAs": ["מושלם המלך"] },
+    { "name": "Rabbi Chaim Vital", "heardAs": ["רבי חיים די טאהל", "ר' חיים וויטאל"] },
+    { "name": "Rabbi Akiva", "heardAs": ["רבי יקיבא"] },
+    { "name": "Kamtza and bar Kamtza", "heardAs": ["קאמצע מיט בארג קאמצע", "קמצא, בארג קמצא"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["בעל שם טוב"] }
+  ],
+  "asrNotes": "Yiddish ASR fair for the Rav's own speech; pesukim (Vayikra 12, Bamidbar 5:2) and Hebrew phrases are heavily garbled but recoverable. The source of the Pirkei Avos custom (seg 677, 686) could not be identified, and the closing Midrash about Har Sinai (segs 925-927) is unintelligible. Catalog topic 1 (laws of taharah and kedushah in the Sefirah parshiyos) is placed where the Rav discusses Rambam's two books and the parshiyos; the transitions at 47:13 skip about 20 seconds of audio."
+}

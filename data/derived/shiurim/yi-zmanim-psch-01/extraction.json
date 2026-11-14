@@ -1,0 +1,466 @@
+{
+  "shiurId": "yi-zmanim-psch-01",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that Nissan, whose letter-combination of Hashem's Name comes from \"Yismechu hashamayim vesagel ha'aretz\", is a month of chesed and renewal in which Hashem's kingship is revealed, and that the mitzvos of Pesach night, above all eating matzah and saying the Haggadah, plant emunah and draw down salvation.",
+      "yi": "דער משגיח ערקלערט אז חודש ניסן, וואס זיין צירוף פונעם שם הוי' קומט פון \"ישמחו השמים ותגל הארץ\", איז א חודש פון חסד און התחדשות ווען די מלכות פונעם אייבערשטן ווערט נתגלה, און אז די מצוות פון פסח ביינאכט, בפרט עסן מצה און זאגן די הגדה, פלאנצן איין אמונה און זענען ממשיך ישועות."
+    },
+    "abstract": {
+      "en": "The Rav opens with the renewal of Nissan: nature sprouts and sings because Hashem knocks on every Jew's heart, as in \"pischi li\" of Shir HaShirim. Through Vayikra's small aleph and the calendar he shows that Nissan reveals the love hidden in Adar. Pesach means opening, and matzah is the key that opens the heart. Nissan's letter-combination comes from \"Yismechu hashamayim vesagel ha'aretz\", followed by \"Hashem malach\": Nissan completed creation with the birth of Klal Yisrael and is the time of Hashem's kingship and of a judgment in chesed. The two central mitzvos are removing chametz, which is the yetzer hara and Amalek's doubt, and eating matzah, the food of emunah. Emunah brings true freedom and joy. Saying the Haggadah draws down the salvations of the Exodus, and the shiur ends with the final redemption hinted in the last day of Pesach.",
+      "yi": "דער משגיח עפנט מיט דער התחדשות פון ניסן: די טבע שפראצט און זינגט, ווייל דער אייבערשטער קלאפט ביי יעדן אידן, ווי \"פתחי לי\" אין שיר השירים. פונעם קליינעם אל\"ף פון ויקרא און פונעם לוח ווייזט ער אז ניסן אנטפלעקט די חיבה וואס איז געווען באהאלטן אין אדר. פסח איז א לשון פון עפענען, און די מצה איז דער שליסל וואס עפנט דאס הארץ. דער צירוף פון ניסן קומט פון \"ישמחו השמים ותגל הארץ\", און דערנאך \"ה' מלך\": אין ניסן איז די בריאה פארענדיגט געווארן מיט דעם וואס כלל ישראל איז געבוירן געווארן, און ס'איז א צייט פון מלכות שמים און פון א משפט מיט חסד. די צוויי עיקר מצוות זענען ביעור חמץ, וואס איז דער יצר הרע און דער ספק פון עמלק, און עסן מצה, דאס מאכל פון אמונה. אמונה ברענגט אמת'ע חירות און שמחה. מיט'ן זאגן די הגדה איז מען ממשיך די ישועות פון יציאת מצרים, און דער שיעור ענדיגט מיט דער לעצטער גאולה וואס איז מרומז אין אחרון של פסח."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Nissan brings renewal to the world: the sprouting and singing of nature reflect Hashem's love and kindness toward Klal Yisrael at this time.",
+          "yi": "ניסן ברענגט א התחדשות אויף דער וועלט: דאס שפראצן און זינגען פון דער טבע איז אן אפשפיגלונג פון דער חיבה און דעם חסד פונעם אייבערשטן צו כלל ישראל אין דער צייט."
+        },
+        "evidence": { "segs": [4, 5, 16, 21, 31], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The letter-combination of Hashem's Name for Nissan comes from \"Yismechu hashamayim vesagel ha'aretz\": the joy above is revealed on earth, leading to \"Hashem malach\".",
+          "yi": "דער צירוף פונעם שם הוי' פון חודש ניסן קומט פון \"ישמחו השמים ותגל הארץ\": די שמחה אויבן ווערט נתגלה אויף דער ערד, און דאס פירט צו \"ה' מלך\"."
+        },
+        "evidence": { "segs": [195, 198, 216, 231, 233], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Nissan is a time of kingship and of judgment in chesed, judged by Hashem Himself, in contrast to the judgment with din in Tishrei.",
+          "yi": "ניסן איז א צייט פון מלכות און פון א משפט מיט חסד, וואס דער אייבערשטער אליין משפט, אנדערש ווי דער משפט מיט דין אין תשרי."
+        },
+        "evidence": { "segs": [282, 328, 332, 333, 338], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "The two central mitzvos of Nissan are removing chametz, which stands for the yetzer hara and the doubts of Amalek, and eating matzah, which is emunah.",
+          "yi": "די צוויי עיקר מצוות פון ניסן זענען ביעור חמץ, וואס איז דער יצר הרע און די ספיקות פון עמלק, און עסן מצה, וואס איז אמונה."
+        },
+        "evidence": { "segs": [399, 413, 415, 427, 457], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Emunah brings true freedom and joy: one who relies on Hashem depends on nothing else.",
+          "yi": "אמונה ברענגט אמת'ע חירות און שמחה: ווער עס שפארט זיך אן אויפן אייבערשטן איז נישט אנגעוויזן אויף גארנישט אנדערש."
+        },
+        "evidence": { "segs": [612, 613, 663, 668], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Saying the Haggadah is not only a remembrance: it draws down the salvations of the Exodus again for Klal Yisrael.",
+          "yi": "זאגן די הגדה איז נישט נאר א זכר: מ'איז דערמיט ממשיך נאכאמאל די ישועות פון יציאת מצרים פאר כלל ישראל."
+        },
+        "evidence": { "segs": [892, 907, 981, 986, 1002], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-zemanim-nissan-pesach-04-01-pesach", "startSeg": 0, "endSeg": 63,
+      "title": { "en": "Nissan's renewal and Hashem's knock", "yi": "די התחדשות פון ניסן און דאס קלאפן פונעם אייבערשטן" },
+      "summary": {
+        "en": "The Rav opens with Shabbos HaChodesh and the renewal of Nissan, when nature sprouts and sings. He brings \"kol dodi dofek\" and \"pischi li\" from Shir HaShirim: Hashem knocks on every Jew, His head full of the dew of blessing, and asks him to open up.",
+        "yi": "דער משגיח עפנט מיט פרשת החודש און מיט דער התחדשות פון ניסן, ווען די טבע שפראצט און זינגט. ער ברענגט \"קול דודי דופק\" און \"פתחי לי\" פון שיר השירים: דער אייבערשטער קלאפט ביי יעדן אידן, זיין קאפ איז פול מיט טל פון השפעות, און ער בעט אז מ'זאל אים עפענען."
+      },
+      "kind": "intro", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-nissan-pesach-04-01-pesach", "startSeg": 64, "endSeg": 136,
+      "title": { "en": "Vayikra's small aleph: Nissan reveals Adar", "yi": "דער קליינער אל\"ף פון ויקרא: ניסן אנטפלעקט אדר" },
+      "summary": {
+        "en": "The Rav explains that Vayikra, read in Nissan, is a word of love, written with a small aleph. Adar is a month of hiddenness when the aleph seems missing; through the calendar sign at-bash he shows that Nissan reveals what was hidden in Adar, that it was a call of love all along.",
+        "yi": "דער משגיח ערקלערט אז ויקרא, וואס מ'ליינט אין ניסן, איז א לשון חיבה, געשריבן מיט א קליינעם אל\"ף. אדר איז א חודש פון הסתר ווען מ'זעט נישט דעם אל\"ף; מיט'ן סימן א\"ת ב\"ש ווייזט ער אז ניסן אנטפלעקט וואס איז געווען באהאלטן אין אדר, אז ס'איז אלעמאל געווען א רוף פון חיבה."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-nissan-pesach-04-01-pesach", "startSeg": 137, "endSeg": 192,
+      "title": { "en": "Pesach as opening; matzah as the key", "yi": "פסח איז עפענען; די מצה איז דער שליסל" },
+      "summary": {
+        "en": "The Rav explains that Pesach is a time of opening, and that the Targum's word for matzah means opening; matzah is the key that opens the heart. Like two pianos tuned to the same key, Jews connect to Nissan's chesed by doing chesed, which is why Pesach begins with giving to the poor.",
+        "yi": "דער משגיח ערקלערט אז פסח איז א צייט פון עפענען, און אז דער תרגום פון מצה איז א לשון פון עפענען; די מצה איז דער שליסל וואס עפנט דאס הארץ. אזוי ווי צוויי פיאנאס וואס זענען געשטימט אויפן זעלבן טאן, ווערט מען מקושר מיט'ן חסד פון ניסן דורך טאן חסד, דערפאר הייבט זיך פסח אן מיט געבן מעות חטים."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-nissan-pesach-04-01-pesach", "startSeg": 193, "endSeg": 247,
+      "title": { "en": "The letter-combination \"Yismechu hashamayim\"", "yi": "דער צירוף \"ישמחו השמים ותגל הארץ\"" },
+      "summary": {
+        "en": "The Rav brings the Zohar that Nissan's combination of Hashem's Name is the first letters of \"Yismechu hashamayim vesagel ha'aretz\": the angels' joy above is revealed below in nature and in Jews' song. The verse continues \"Hashem malach\", and he introduces the dispute whether the world was created in Nissan or Tishrei.",
+        "yi": "דער משגיח ברענגט דעם זוהר אז דער צירוף פונעם שם הוי' פון ניסן איז די ראשי תיבות פון \"ישמחו השמים ותגל הארץ\": די שמחה פון די מלאכים אויבן ווערט נתגלה אונטן אין דער טבע און אין דער שירה פון אידן. דער פסוק גייט ווייטער \"ה' מלך\", און ער ברענגט די מחלוקת צי די וועלט איז באשאפן געווארן אין ניסן אדער אין תשרי."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-nissan-pesach-04-01-pesach", "startSeg": 248, "endSeg": 292,
+      "title": { "en": "Nissan completes creation; Hashem's kingship", "yi": "ניסן ענדיגט די בריאה; מלכות שמים" },
+      "summary": {
+        "en": "The Rav explains that the world was created in Tishrei in deed but in Nissan in thought, since Klal Yisrael, the purpose of creation, became a nation at the Exodus; this is why the first of the Ten Commandments mentions the Exodus. Nissan, the new year for kings, is when Hashem's kingship is revealed, while the nations were given Tishrei.",
+        "yi": "דער משגיח ערקלערט אז די וועלט איז באשאפן געווארן אין תשרי במעשה, אבער אין ניסן במחשבה, ווייל כלל ישראל, דער תכלית פון דער בריאה, איז געווארן א פאלק ביי יציאת מצרים; דערפאר שטייט ביי אנכי \"אשר הוצאתיך\". אין ניסן, ראש השנה למלכים, ווערט נתגלה די מלכות פונעם אייבערשטן, און די אומות העולם האבן באקומען תשרי."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-nissan-pesach-04-01-pesach", "startSeg": 293, "endSeg": 360,
+      "title": { "en": "Kingship and a judgment of chesed", "yi": "מלכות און א משפט מיט חסד" },
+      "summary": {
+        "en": "The Rav describes Nissan as the time when kingship is decided above and below, and when Hashem Himself will take over the kingship, which is why the redemption is tied to Nissan. He explains that the judgment of Nissan is greater than that of Tishrei but comes through chesed, as the straight order of the letters in \"aviv\" hints, in contrast to the reversed letters of Tishrei.",
+        "yi": "דער משגיח שילדערט ניסן אלס די צייט ווען מ'באשטימט די מלכות אויבן און אונטן, און ווען דער אייבערשטער וועט אליין איבערנעמען די מלוכה, דערפאר איז די גאולה פארבונדן מיט ניסן. ער ערקלערט אז דער משפט פון ניסן איז גרעסער ווי דער פון תשרי, נאר ער קומט דורך חסד, ווי די גלייכע סדר פון די אותיות פון \"אביב\" ווייזט, אנדערש ווי די פארקערטע אותיות פון תשרי."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-nissan-pesach-04-01-pesach", "startSeg": 361, "endSeg": 405,
+      "title": { "en": "The Chozeh's notes and the two mitzvos", "yi": "דעם חוזה'ס שריפטן און די צוויי מצוות" },
+      "summary": {
+        "en": "The Rav tells, from the Bnei Yissaschar, how the Chozeh of Lublin wrote down in the first days of Nissan all that would happen in the year, and connects it to the verse about setting up the Mishkan on the first of the first month. He then explains that every mitzvah is a symbolic act that arouses above, and that all of Nissan revolves around two mitzvos.",
+        "yi": "דער משגיח דערציילט, פונעם בני יששכר, ווי אזוי דער חוזה פון לובלין האט אין די ערשטע טעג פון ניסן פארשריבן אלץ וואס וועט פארקומען אין יאר, און פארבינדט דאס מיט'ן פסוק פון אויפשטעלן דעם משכן אין ערשטן טאג פונעם ערשטן חודש. דערנאך ערקלערט ער אז יעדע מצוה איז א פועל דמיוני וואס איז מעורר אויבן, און אז גאנץ ניסן דרייט זיך ארום צוויי מצוות."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-nissan-pesach-04-01-pesach", "startSeg": 406, "endSeg": 502,
+      "title": { "en": "Chametz, Amalek and the war against doubt", "yi": "חמץ, עמלק און די מלחמה קעגן ספק" },
+      "summary": {
+        "en": "The Rav asks why chametz has stringencies no other prohibition has, and answers from the Zohar that chametz is the yetzer hara. The main war with Amalek is on Erev Pesach; Amalek is doubt in emunah, rooted in bad middos such as pride, and today it spreads as heresy. Chametz must be removed before emunah can enter, a war that runs from Purim to Pesach.",
+        "yi": "דער משגיח פרעגט פארוואס חמץ האט חומרות וואס קיין אנדער איסור האט נישט, און ענטפערט פונעם זוהר אז חמץ איז דער יצר הרע. די עיקר מלחמה מיט עמלק איז ערב פסח; עמלק איז ספק אין אמונה, וואס וואקסט פון שלעכטע מידות ווי גאוה, און היינט פארשפרייט עס זיך אלס מינות. מ'דארף ערשט מבער זיין דעם חמץ איידער אמונה קען אריינקומען, א מלחמה וואס גייט פון פורים ביז פסח."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-nissan-pesach-04-01-pesach", "startSeg": 503, "endSeg": 549,
+      "title": { "en": "Searching the heart; matzah is emunah", "yi": "בודק זיין דאס הארץ; מצה איז אמונה" },
+      "summary": {
+        "en": "The Rav tells how the Lechovitcher sent a messenger to tell his chassidim to search the holes and cracks, and they davened Maariv for hours with great cries. He explains that one searches the heart as far as one can, then nullifies the rest and asks Hashem to remove it, and that matzah, the food of emunah, does this.",
+        "yi": "דער משגיח דערציילט ווי אזוי דער לעכאוויטשער האט געשיקט א שליח צו זאגן די חסידים אז מ'דארף בודק זיין אין די חורין און סדקין, און זיי האבן געדאווענט מעריב שעהן לאנג מיט גרויסע געשרייען. ער ערקלערט אז מ'זוכט אין הארץ וויפיל מ'קען, דערנאך איז מען מבטל די רעשט און מ'בעט דעם אייבערשטן ער זאל עס אוועקנעמען, און די מצה, דאס מאכל פון אמונה, טוט דאס."
+      },
+      "kind": "story", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-nissan-pesach-04-01-pesach", "startSeg": 550, "endSeg": 626,
+      "title": { "en": "Matzah as a capsule; the freedom of emunah", "yi": "די מצה אלס קאפסל; די חירות פון אמונה" },
+      "summary": {
+        "en": "The Rav compares matzah to a capsule that lets the body swallow emunah, and explains why the preparations for Pesach are so great. He brings the Satmar Rav that this whole night is matzah, and the Arizal that matzah equals three times Hashem's Name with its filling. Pesach night's freedom, he says, is the freedom of one who relies on his Father in heaven.",
+        "yi": "דער משגיח פארגלייכט די מצה צו א קאפסל וואס לאזט דעם גוף איינשלינגען די אמונה, און ערקלערט פארוואס די הכנות פאר פסח זענען אזוי גרויס. ער ברענגט פונעם סאטמארער רב אז די גאנצע נאכט איז מצה, און פונעם אריז\"ל אז מצה איז דריי מאל דער שם הוי' במילואו. די חירות פון פסח ביינאכט, זאגט ער, איז די חירות פון איינעם וואס שפארט זיך אן אויף זיין טאטן אין הימל."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-nissan-pesach-04-01-pesach", "startSeg": 627, "endSeg": 738,
+      "title": { "en": "Leaning on Hashem: joy versus sadness", "yi": "זיך אנשפארן אויפן אייבערשטן: שמחה קעגן עצבות" },
+      "summary": {
+        "en": "From the Midrash on \"vayasev\" the Rav explains reclining as leaning on Hashem. Simcha comes from being able to lean, while atzvus is the feeling of being abandoned, and idols are called atzabim. Avraham, the first believer, has his day on Pesach, and the emunah of Pesach grows from the first day to the last, which hints at techiyas hameisim.",
+        "yi": "פונעם מדרש אויף \"ויסב\" ערקלערט דער משגיח דאס הסבה אלס זיך אנשפארן אויפן אייבערשטן. שמחה קומט פון דעם וואס מ'קען זיך אנשפארן, און עצבות איז דאס געפיל פון פארלאזט זיין, און עבודה זרה הייסט עצבים. אברהם אבינו, דער ראש המאמינים, האט זיין יום טוב פסח, און די אמונה פון פסח וואקסט פונעם ערשטן טאג ביזן לעצטן, וואס איז מרמז אויף תחיית המתים."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-nissan-pesach-04-01-pesach", "startSeg": 739, "endSeg": 816,
+      "title": { "en": "Karpas, the Chasam Sofer and living with a question", "yi": "כרפס, דער חתם סופר און לעבן מיט א קשיא" },
+      "summary": {
+        "en": "The Rav explains that karpas is done so the child asks, and tells how the Chasam Sofer let his son walk around with a question on emunah for days before answering, to teach that one can live with a question and still believe. In Egypt Jews nearly fell into the fiftieth gate of impurity; today that gate is heresy, and the main test before Moshiach is emunah.",
+        "yi": "דער משגיח ערקלערט אז מ'טוט כרפס כדי דאס קינד זאל פרעגן, און דערציילט ווי אזוי דער חתם סופר האט געלאזט זיין זון ארומגיין טעג לאנג מיט א קשיא אין אמונה איידער ער האט געענטפערט, כדי צו לערנען אז מ'קען לעבן מיט א קשיא און גלייבן. אין מצרים זענען אידן כמעט אריינגעפאלן אין דעם נ' שער הטומאה; היינט איז דער שער מינות, און דער עיקר נסיון פאר משיח איז אמונה."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-nissan-pesach-04-01-pesach", "startSeg": 817, "endSeg": 872,
+      "title": { "en": "The rasha, and the Haggadah as drawing emunah", "yi": "דער רשע, און די הגדה אלס ממשיך זיין אמונה" },
+      "summary": {
+        "en": "The Rav explains that the rasha denies the principles of emunah, yet today, since we have the Torah, even he can be rescued. The purpose of the Haggadah is to draw down emunah by speaking about it, and Pesach night is the time a father can plant emunah in his child. He brings the Targum Yonasan that on Pesach night the angels sing and the storehouses of dew open.",
+        "yi": "דער משגיח ערקלערט אז דער רשע לייקנט אין די עיקרים פון אמונה, און דאך קען ער היינט, ווייל מיר האבן די תורה, אויך געראטעוועט ווערן. דער תכלית פון דער הגדה איז ממשיך זיין אמונה דורך רעדן דערפון, און פסח ביינאכט איז די צייט ווען א טאטע קען איינפלאנצן אמונה אין זיין קינד. ער ברענגט דעם תרגום יונתן אז פסח ביינאכט זינגען די מלאכים שירה און די אוצרות פון טל עפענען זיך."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-nissan-pesach-04-01-pesach", "startSeg": 873, "endSeg": 979,
+      "title": { "en": "Haggadah from \"gid\"; the night that is day", "yi": "הגדה פון \"גיד\"; די נאכט וואס איז טאג" },
+      "summary": {
+        "en": "The Rav explains that Haggadah comes from the word for a vein, which carries life, and from the word for mazal that flows down: saying it draws down. The night of the Exodus shone like a summer day, and the sages in Bnei Brak drew that light down until they did not know it was morning. From this he explains why Pesach night cannot be the source for mentioning the Exodus at night.",
+        "yi": "דער משגיח ערקלערט אז הגדה קומט פון גיד, וואס ברענגט חיות, און פונעם לשון גד, מזל וואס פליסט אראפ: מ'איז ממשיך מיט'ן זאגן. די נאכט פון יציאת מצרים איז געווען ליכטיג ווי א טאג פון תקופת תמוז, און די חכמים אין בני ברק האבן דאס ליכט ממשיך געווען ביז זיי האבן נישט געוואוסט אז ס'איז שוין טאג. דערפון ערקלערט ער פארוואס פסח ביינאכט קען נישט זיין דער מקור פאר מזכיר זיין יציאת מצרים בלילות."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-nissan-pesach-04-01-pesach", "startSeg": 980, "endSeg": 1053,
+      "title": { "en": "Drawing salvation: matzos, the Ropshitzer and the plagues", "yi": "ממשיך זיין ישועות: מצות, דער ראפשיצער און די מכות" },
+      "summary": {
+        "en": "The Rav explains that the Haggadah draws down the miracles of the Exodus again. He tells how the Ropshitzer, during the war between Napoleon and Russia, threw matzos into the oven on Erev Pesach to affect the war, and that Avraham prepared for his war by baking matzos. Each plague recalled draws salvation for Jews, and later generations expounded more plagues because more salvation is needed.",
+        "yi": "דער משגיח ערקלערט אז די הגדה איז ממשיך נאכאמאל די ניסים פון יציאת מצרים. ער דערציילט ווי אזוי דער ראפשיצער האט אין דער מלחמה צווישן נאפאלעאן און רוסלאנד ערב פסח געווארפן מצות אין אויוון כדי צו ווירקן אויף דער מלחמה, און אז אברהם אבינו האט זיך געגרייט צו זיין מלחמה מיט באקן מצות. יעדע מכה וואס מ'דערמאנט איז ממשיך א ישועה פאר אידן, און שפעטערע דורות האבן געדרשנט מער מכות ווייל מ'דארף מער ישועות."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-nissan-pesach-04-01-pesach", "startSeg": 1054, "endSeg": 1103,
+      "title": { "en": "Rabbi Eliezer's four and Rabbi Akiva's five", "yi": "רבי אליעזר'ס פיר און רבי עקיבא'ס פינף" },
+      "summary": {
+        "en": "The Rav asks why Rabbi Eliezer counted four plagues in each plague and Rabbi Akiva five. Through the Gemara in Menachos about Moshe watching Rabbi Akiva expound the crowns of the letters, he explains that Rabbi Eliezer, linked to Moshe's soul, drew from the four letters of Hashem's Name, while Rabbi Akiva drew from the crown above them.",
+        "yi": "דער משגיח פרעגט פארוואס רבי אליעזר האט גערעכנט פיר מכות אין יעדע מכה און רבי עקיבא פינף. מיט דער גמרא אין מנחות ווי משה רבינו האט געזען ווי רבי עקיבא דרשנט די תגין פון די אותיות, ערקלערט ער אז רבי אליעזר, וואס איז פארבונדן מיט דער נשמה פון משה רבינו, האט ממשיך געווען פון די פיר אותיות פונעם שם הוי', און רבי עקיבא פונעם כתר איבער זיי."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-nissan-pesach-04-01-pesach", "startSeg": 1104, "endSeg": 1190,
+      "title": { "en": "The last day of Pesach and the final song", "yi": "אחרון של פסח און די לעצטע שירה" },
+      "summary": {
+        "en": "The Rav contrasts the haftarah of Beshalach, Devorah's song after a salvation that lasted forty years, with the haftarah of Pesach, David's song that ends with the eternal salvation of Moshiach. A new feminine song gives birth to further salvations, while the final one is masculine. He ends with the last day of Pesach, Moshiach's light and the hope that this be the last Pesach in exile.",
+        "yi": "דער משגיח שטעלט אנטקעגן די הפטרה פון בשלח, די שירה פון דבורה נאך א ישועה וואס האט געדויערט פערציג יאר, מיט דער הפטרה פון פסח, די שירה פון דוד המלך וואס ענדיגט זיך מיט דער אייביגער ישועה פון משיח. א שירה חדשה בלשון נקבה געבוירט נאך ישועות, און די לעצטע איז בלשון זכר. ער ענדיגט מיט אחרון של פסח, דעם ליכט פון משיח און דער האפענונג אז דאס זאל זיין דער לעצטער פסח אין גלות."
+      },
+      "kind": "closing", "catalogTopicIdx": [], "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "דא זאגט א מהר''ל", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [19], "confidence": 0.75 } },
+    { "heardAs": "כל ודאי די דפק ... פסחי לי אחאתי ראיתי ... שראשי נמלא צאל", "work": "Shir HaShirim", "ref": "Shir HaShirim 5:2", "sefariaRef": "Song of Songs 5:2", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [37, 42, 58, 60, 134], "confidence": 0.85 } },
+    { "heardAs": "די עצמות ויבעשת", "work": "Yechezkel", "ref": "Yechezkel ch. 37", "sefariaRef": null, "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [48, 50], "confidence": 0.7 } },
+    { "heardAs": "בייקחא, זאגט חשא, איז לשון חיבה", "work": "Rashi on Vayikra", "ref": "Rashi on Vayikra 1:1", "sefariaRef": "Rashi on Leviticus 1:1:1", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [72, 73, 77, 85], "confidence": 0.85 } },
+    { "heardAs": "פֿאטהיראָ", "work": "Targum Onkelos", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [154, 155, 156], "confidence": 0.65 } },
+    { "heardAs": "זוהר הקודש אז דאס איז דער ראש הטבע'ס", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [195], "confidence": 0.7 } },
+    { "heardAs": "יתמיכל א שמים ותגיל הארץ ... ויום רב הגוים השם מלך", "work": "Divrei HaYamim I", "ref": "Divrei HaYamim I 16:31", "sefariaRef": "I Chronicles 16:31", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [198, 226, 228, 233, 268], "confidence": 0.8 } },
+    { "heardAs": "דער הלל פון פסח ביינאכט איז מראבסן עגרא", "work": "Gemara Pesachim", "ref": "Pesachim 85b", "sefariaRef": "Pesachim 85b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [211], "confidence": 0.65 } },
+    { "heardAs": "רבי יהושע את בניסן, נברא עולם ... אין ניסן און אין צרישה", "work": "Gemara Rosh Hashanah", "ref": "Rosh Hashanah 10b-11a", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [234, 236, 240], "confidence": 0.75 } },
+    { "heardAs": "ווי אזוי תספות דארט", "work": "Tosafos", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [252, 253], "confidence": 0.7 } },
+    { "heardAs": "אייך ה' אלהי' אשר את התוכן מיוסף חיים", "work": "Shemos", "ref": "Shemos 20:2", "sefariaRef": "Exodus 20:2", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [254, 255], "confidence": 0.75 } },
+    { "heardAs": "עמדה יצטילה צהילתו את הפרל", "work": "Yeshayahu", "ref": "Yeshayahu 43:21", "sefariaRef": "Isaiah 43:21", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [265], "confidence": 0.65 } },
+    { "heardAs": "אזון עולם השם מלך, בטרם כל יצר הנברא", "work": "Adon Olam", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "quoted", "evidence": { "segs": [269, 270], "confidence": 0.75 } },
+    { "heardAs": "די ערשטע משנה ראש השנה ביחד בניסן ראש השנה למלכים", "work": "Mishnah Rosh Hashanah", "ref": "Mishnah Rosh Hashanah 1:1", "sefariaRef": "Mishnah Rosh Hashanah 1:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [283], "confidence": 0.85 } },
+    { "heardAs": "צו בני יששכר ברענגט", "work": "Bnei Yissaschar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [362, 379], "confidence": 0.8 } },
+    { "heardAs": "והוא ביום החדש הראשון ויחד לחדש חכם המשכן", "work": "Shemos", "ref": "Shemos 40:2", "sefariaRef": "Exodus 40:2", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [380, 384], "confidence": 0.8 } },
+    { "heardAs": "אזוי ווי דער רמב״ן ברענגט", "work": "Ramban on the Torah", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [390, 392], "confidence": 0.65 } },
+    { "heardAs": "ובקשרי הצד געשתן כנגד המורי", "work": "Bereishis", "ref": "Bereishis 48:22", "sefariaRef": "Genesis 48:22", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [393], "confidence": 0.65 } },
+    { "heardAs": "זיינע תשובות ... די ראטעוואזע", "work": "Responsa of the Radbaz", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [418, 423, 424], "confidence": 0.65 } },
+    { "heardAs": "מזורע הקבוש, אז חמץ דאס איז די יצה הרע", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [426, 427], "confidence": 0.75 } },
+    { "heardAs": "די עיקר מלחמת המלוק לעצה דלבי וועט זיין ערב פסח", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [436], "confidence": 0.7 } },
+    { "heardAs": "דער גמרא'נער ראש השנה ... רבי יוחנן בן זאקאי", "work": "Gemara Rosh Hashanah", "ref": "Rosh Hashanah 30a", "sefariaRef": "Rosh Hashanah 30a", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [437, 439], "confidence": 0.65 } },
+    { "heardAs": "דער גמרא האט סוף סועד ... מלכות המינות מתפשטרת", "work": "Gemara Sotah", "ref": "Sotah 49b", "sefariaRef": "Sotah 49b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [445, 446], "confidence": 0.75 } },
+    { "heardAs": "המלאג שטעט אין סלום הקדושים איז בגימטריא סופק", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [458], "confidence": 0.75 } },
+    { "heardAs": "לא תשריך את החמץ, דם זבחי", "work": "Shemos", "ref": "Shemos 23:18", "sefariaRef": "Exodus 23:18", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [486, 487], "confidence": 0.7 } },
+    { "heardAs": "די מצה וועט אנגערעכנט פון מיכל דעם האמנותא", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [541], "confidence": 0.75 } },
+    { "heardAs": "דער סאטמארער רב ... האט פארטייטשט", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [572, 574, 600], "confidence": 0.7 } },
+    { "heardAs": "עס שטעט פון ארי הקדוש, אז מצה בטרעפט דריי מאל דער שם הויא", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [586, 591, 592], "confidence": 0.75 } },
+    { "heardAs": "ויסף אלקומתם דרך עמוד ביאמצע", "work": "Midrash", "ref": "Midrash on Shemos 13:18", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [628, 629, 647], "confidence": 0.65 } },
+    { "heardAs": "עטאבים כסף וזרעב", "work": "Tehillim", "ref": "Tehillim 115:4", "sefariaRef": "Psalms 115:4", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [678, 688], "confidence": 0.7 } },
+    { "heardAs": "מגדל אות שם השם, בו יארץ צדיק ונזקיו", "work": "Mishlei", "ref": "Mishlei 18:10", "sefariaRef": "Proverbs 18:10", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [697, 698], "confidence": 0.8 } },
+    { "heardAs": "והעמין ביי די שמע יחשובע לו צדקה", "work": "Bereishis", "ref": "Bereishis 15:6", "sefariaRef": "Genesis 15:6", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [722, 723], "confidence": 0.8 } },
+    { "heardAs": "אזוי זאגט דער ארי הקדוש ... מעמדת שערי תלמוד", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [773, 774, 775], "confidence": 0.7 } },
+    { "heardAs": "דער אור החיים הקודש זאגט אז דער שער הנאהן", "work": "Ohr HaChaim", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [779, 781], "confidence": 0.7 } },
+    { "heardAs": "וגדלת לבינך ביום הרלימעל", "work": "Shemos", "ref": "Shemos 13:8", "sefariaRef": "Exodus 13:8", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [851, 910], "confidence": 0.75 } },
+    { "heardAs": "תרגום יענעס און פרשת תורדות", "work": "Targum Yonasan", "ref": "Targum Yonasan on Bereishis 27:1", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [857, 860, 862], "confidence": 0.7 } },
+    { "heardAs": "יונתן ויתחית צאלן", "work": "Bereishis", "ref": "Bereishis 27:28", "sefariaRef": "Genesis 27:28", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [866, 868], "confidence": 0.6 } },
+    { "heardAs": "שטייבט מזוהר הקודש אז די נאכט פון יציאת מצרים", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [916, 918], "confidence": 0.75 } },
+    { "heardAs": "וועזן המעשה ברבי אלעזר, ברבי יהושע און די אלע זקנים", "work": "Haggadah", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [933, 937, 939], "confidence": 0.8 } },
+    { "heardAs": "די מחלוקת איז אין די גמרא אין ברכת", "work": "Gemara Berachos", "ref": "Berachos 12b", "sefariaRef": "Berakhot 12b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [950, 962], "confidence": 0.65 } },
+    { "heardAs": "פארוואס הייסט ער רייגער מלאך הבשן, ס'איז א זייער שווערע מדרש", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1006, 1007, 1010], "confidence": 0.7 } },
+    { "heardAs": "ישאלה בום חורי נפה, ועברי, וזם, וצור, משלחת מלאך ר'", "work": "Tehillim", "ref": "Tehillim 78:49", "sefariaRef": "Psalms 78:49", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1056, 1057, 1058], "confidence": 0.75 } },
+    { "heardAs": "די גמרא'נע מנחות", "work": "Gemara Menachos", "ref": "Menachos 29b", "sefariaRef": "Menachot 29b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [1063, 1064, 1068], "confidence": 0.75 } },
+    { "heardAs": "דער מדרש זאגט שם אחד אליעזר", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1088, 1089], "confidence": 0.65 } },
+    { "heardAs": "ויות החופה מגזי ישי ונצה משרשב יבחה", "work": "Yeshayahu", "ref": "Yeshayahu 11:1", "sefariaRef": "Isaiah 11:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1178], "confidence": 0.8 } }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "By the at-bash sign, the sixth day of Pesach falls on the weekday of the Purim before it; the Rav reads this as Nissan revealing what was hidden in Adar, just as Vayikra's small aleph shows that the call was always one of love.",
+        "yi": "לויט דעם סימן א\"ת ב\"ש פאלט דער זעקסטער טאג פסח אויפן זעלבן טאג אין דער וואך ווי פורים פריער; דער משגיח טייטשט אז ניסן אנטפלעקט וואס איז געווען באהאלטן אין אדר, אזוי ווי דער קליינער אל\"ף פון ויקרא ווייזט אז דער רוף איז אלעמאל געווען מיט חיבה."
+      },
+      "evidence": { "segs": [99, 108, 111, 129, 130], "confidence": 0.65 }
+    },
+    {
+      "text": {
+        "en": "Since the Targum renders matzah with a word meaning opening, the Rav calls matzah the key that opens a Jew's heart to Hashem on Pesach, the festival of opening.",
+        "yi": "ווייל דער תרגום טייטשט מצה מיט א לשון פון עפענען, רופט דער משגיח די מצה דער שליסל וואס עפנט דאס הארץ פון א אידן צום אייבערשטן אום פסח, דעם יום טוב פון עפענען."
+      },
+      "evidence": { "segs": [139, 156, 161, 162], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The world was created in Tishrei in deed but in Nissan in thought, because the Exodus, when Klal Yisrael became a nation, completed creation; this is why the first commandment speaks of the Exodus rather than of creation.",
+        "yi": "די וועלט איז באשאפן געווארן אין תשרי במעשה און אין ניסן במחשבה, ווייל יציאת מצרים, ווען כלל ישראל איז געווארן א פאלק, האט פארענדיגט די בריאה; דערפאר רעדט אנכי פון יציאת מצרים און נישט פון בריאת העולם."
+      },
+      "evidence": { "segs": [252, 253, 255, 260, 261], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Chametz has stringencies no other prohibition has because it is the yetzer hara; Amalek, whose numerical value equals safek (doubt), is fought on Erev Pesach, and so the Beis HaMikdash, which follows the war on Amalek, is linked to Pesach.",
+        "yi": "חמץ האט חומרות וואס קיין אנדער איסור האט נישט ווייל ער איז דער יצר הרע; עמלק, בגימטריא ספק, באקעמפט מען ערב פסח, און דערפאר איז בנין בית המקדש, וואס קומט נאך מחיית עמלק, פארבונדן מיט פסח."
+      },
+      "evidence": { "segs": [419, 427, 436, 441, 458], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Emunah is spiritual and does not cling to the body, so Hashem gave it in a capsule: matzah is ordinary flour and water that carries emunah inside it.",
+        "yi": "אמונה איז רוחניות וואס קלעפט זיך נישט צום גוף, דערפאר האט דער אייבערשטער עס געגעבן אין א קאפסל: די מצה איז פשוט מעל מיט וואסער וואס טראגט אין זיך די אמונה."
+      },
+      "evidence": { "segs": [548, 551, 553, 555], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Simcha is tied to leaning (samach): joy is the feeling of having someone to lean on, while atzvus is the feeling of being abandoned, which is why idols, which cannot be leaned on, are called atzabim.",
+        "yi": "שמחה איז פארבונדן מיט סמיכה: שמחה איז דאס געפיל אז מ'האט זיך אויף וועמען אנצושפארן, און עצבות איז דאס געפיל פון פארלאזט זיין, דערפאר הייסט עבודה זרה, וואס מ'קען זיך נישט אנשפארן דערויף, עצבים."
+      },
+      "evidence": { "segs": [661, 663, 668, 669, 678], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Haggadah comes from gid, a vein that carries life to the limbs, and from gad, mazal that flows down from its root: the Haggadah channels emunah and salvation from above.",
+        "yi": "הגדה קומט פון גיד, וואס ברענגט חיות צו די אברים, און פון גד, מזל וואס פליסט אראפ פון זיין שורש: די הגדה איז ממשיך אמונה און ישועות פון אויבן."
+      },
+      "evidence": { "segs": [896, 897, 899, 903, 906], "confidence": 0.7 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Chozeh of Lublin's notes for the year", "yi": "דעם חוזה פון לובלין'ס שריפטן אויפן יאר" },
+      "retelling": {
+        "en": "The Bnei Yissaschar writes that he saw his Rebbe, the Chozeh of Lublin, write down at the start of Nissan, day by day, all that would happen in the year, and keep it sealed. At the end of the year the students looked and saw that everything had happened exactly. In the year he passed away he wrote only the first days and stopped; when he passed away in Av, the students understood why he had not wanted to write what would happen that month.",
+        "yi": "דער בני יששכר שרייבט אז ער האט געזען ווי זיין רבי, דער חוזה פון לובלין, האט אין אנהייב ניסן, טאג ביי טאג, פארשריבן אלץ וואס וועט פארקומען אין יאר, און האט עס געהאלטן פארמאכט. אויפן סוף יאר האבן די תלמידים אריינגעקוקט און געזען אז אלץ איז פונקטליך געשען. אין דעם יאר וואס ער איז נפטר געווארן האט ער נאר געשריבן די ערשטע טעג און אויפגעהערט; ווען ער איז נפטר געווארן אין אב, האבן די תלמידים פארשטאנען פארוואס ער האט נישט געוואלט שרייבן וואס וועט זיין אין יענעם חודש."
+      },
+      "people": ["the Chozeh of Lublin", "the Bnei Yissaschar"],
+      "evidence": { "segs": [362, 363, 368, 370, 373, 376], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The Lechovitcher's message on the night of bedikah", "yi": "דעם לעכאוויטשער'ס בשורה אין דער נאכט פון בדיקת חמץ" },
+      "retelling": {
+        "en": "The Lechovitcher Rebbe once sent a messenger to a town where he had a shtiebel, telling him to go in and say that one must search in the holes and cracks. The messenger arrived on the night of bedikas chametz and delivered the words. The chassidim then davened Maariv with great strength and shouting for several hours, until the town said they had gone mad. The Rav explains that the Lechovitcher's words entered the heart with fire, and they understood the message to search their own hearts for chametz.",
+        "yi": "דער לעכאוויטשער רבי האט איינמאל געשיקט א שליח אין א שטאט וואו ער האט געהאט א שטיבל, און האט אים געהייסן אריינגיין און זאגן אז מ'דארף בודק זיין אין די חורין און סדקין. דער שליח איז אנגעקומען פונקט די נאכט פון בדיקת חמץ און האט איבערגעגעבן די ווערטער. די חסידים האבן דערנאך געדאווענט מעריב מיט גרויסע כוחות און געשרייען אפאר שעה, ביז די שטאט האט געזאגט אז די חסידים זענען משוגע געווארן. דער משגיח ערקלערט אז דעם לעכאוויטשער'ס ווערטער זענען אריין אין הארץ מיט פייער, און זיי האבן פארשטאנען אז מ'דארף זוכן חמץ אין אייגענעם הארץ."
+      },
+      "people": ["the Lechovitcher Rebbe"],
+      "evidence": { "segs": [503, 505, 507, 512, 515, 520], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The Chasam Sofer and his son's question", "yi": "דער חתם סופר און זיין זון'ס קשיא" },
+      "retelling": {
+        "en": "The son of the Chasam Sofer once asked his father a question touching on the principles of emunah, and the Chasam Sofer gave no answer. The son went around with the question while his father did not respond. Later the Chasam Sofer told him a wonderful explanation, and said that he had waited so that his son would know that one can go around for days with a question and still believe in Hashem.",
+        "yi": "דעם חתם סופר'ס זון האט אמאל געפרעגט זיין טאטן א קשיא אין די עיקרים פון אמונה, און דער חתם סופר האט גארנישט געענטפערט. דער זון איז ארומגעגאנגען מיט דער קשיא און דער טאטע האט אים נישט געענטפערט. שפעטער האט דער חתם סופר אים געזאגט א וואונדערליכן הסבר, און האט געזאגט אז ער האט געווארט כדי דער זון זאל וויסן אז מ'קען ארומגיין טעג לאנג מיט א קשיא און פונדעסטוועגן גלייבן אין דעם אייבערשטן."
+      },
+      "people": ["the Chasam Sofer"],
+      "evidence": { "segs": [750, 752, 756, 759, 760], "confidence": 0.7 }
+    },
+    {
+      "title": { "en": "The Ropshitzer's matzos and Napoleon's war", "yi": "דעם ראפשיצער'ס מצות און נאפאלעאנ'ס מלחמה" },
+      "retelling": {
+        "en": "During the war between Napoleon and the Russians, the tzaddikim disagreed about who should win: the Rimanover held that Napoleon should win, and his talmid the Ropshitzer held that the Russians should. On Erev Pesach the Ropshitzer stood by the oven as matzos were baked, throwing them in and saying with each one a number of soldiers. The Rav brings this to show that what Jews do on Pesach is not only a remembrance but truly draws things down.",
+        "yi": "אין דער מלחמה צווישן נאפאלעאן און די רוסן האבן די צדיקים זיך נישט איינגעשטימט ווער עס דארף געווינען: דער רימאנאווער האט געהאלטן אז נאפאלעאן דארף געווינען, און זיין תלמיד דער ראפשיצער האט געהאלטן אז די רוסן. ערב פסח איז דער ראפשיצער געשטאנען ביים אויוון ביים באקן מצות, האט זיי אריינגעווארפן און ביי יעדער מצה געזאגט א צאל סאלדאטן. דער משגיח ברענגט דאס צו ווייזן אז וואס אידן טוען אום פסח איז נישט נאר א זכר, נאר מ'איז עס ממש ממשיך."
+      },
+      "people": ["the Ropshitzer", "the Rimanover", "Napoleon"],
+      "evidence": { "segs": [992, 994, 995, 997, 1002], "confidence": 0.6 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "Why does chametz carry so many stringencies (searching, burning, nullifying, the smallest amount) that no other prohibition has?", "yi": "פארוואס האט חמץ אזויפיל חומרות, בדיקה, ביעור, ביטול און במשהו, וואס מ'געפינט נישט ביי קיין אנדער איסור?" },
+      "answer": { "en": "Because chametz is the yetzer hara, as the Zohar says, and the yetzer hara must be searched out and removed completely.", "yi": "ווייל חמץ איז דער יצר הרע, ווי דער זוהר זאגט, און דעם יצר הרע דארף מען אויסזוכן און אינגאנצן מבער זיין." },
+      "questionSegs": [419, 420], "answerSegs": [426, 427, 428], "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why does the first commandment say \"Who took you out of Egypt\" and not \"Who created the world\"?", "yi": "פארוואס שטייט ביי אנכי \"אשר הוצאתיך מארץ מצרים\" און נישט \"וואס האט באשאפן די וועלט\"?" },
+      "answer": { "en": "Because the Exodus, when Klal Yisrael became a nation, was the completion and purpose of creation itself.", "yi": "ווייל יציאת מצרים, ווען כלל ישראל איז געווארן א פאלק, איז געווען די גמר און דער תכלית פון דער בריאה אליין." },
+      "questionSegs": [254, 255], "answerSegs": [259, 260, 261], "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why is karpas eaten at the Seder?", "yi": "פארוואס עסט מען כרפס ביים סדר?" },
+      "answer": { "en": "To make the child ask; and since not every question gets an answer, the child learns, as the Chasam Sofer taught his son, to live with a question and keep his emunah.", "yi": "כדי דאס קינד זאל פרעגן; און ווייל נישט אויף יעדע קשיא איז דא א תירוץ, לערנט זיך דאס קינד, ווי דער חתם סופר האט געלערנט זיין זון, צו לעבן מיט א קשיא און האלטן די אמונה." },
+      "questionSegs": [743, 746], "answerSegs": [749, 761, 770], "confidence": 0.7
+    },
+    {
+      "question": { "en": "Why is a derivation needed to mention the Exodus at night, when the Torah's main telling of the Exodus is on Pesach night?", "yi": "פארוואס דארף מען א דרשה צו מזכיר זיין יציאת מצרים בלילות, אז דער עיקר סיפור יציאת מצרים איז דאך פסח ביינאכט?" },
+      "answer": { "en": "Because Pesach night is not really night: its light is like day, as the sages in Bnei Brak showed, so it cannot teach about other nights.", "yi": "ווייל פסח ביינאכט איז נישט קיין אמת'ע נאכט: זיין ליכט איז ווי טאג, ווי די חכמים אין בני ברק האבן געוויזן, ממילא קען מען דערפון נישט לערנען אויף אנדערע נעכט." },
+      "questionSegs": [958, 959, 962], "answerSegs": [968, 970, 977], "confidence": 0.6
+    },
+    {
+      "question": { "en": "Why did Rabbi Eliezer find four plagues in each plague, while Rabbi Akiva found five?", "yi": "פארוואס האט רבי אליעזר געפונען פיר מכות אין יעדע מכה, און רבי עקיבא פינף?" },
+      "answer": { "en": "Rabbi Eliezer, bound to Moshe's soul, drew from the four letters of Hashem's Name; Rabbi Akiva, who expounded the crowns of the letters, drew also from the crown above them.", "yi": "רבי אליעזר, וואס איז פארבונדן מיט דער נשמה פון משה רבינו, איז ממשיך געווען פון די פיר אותיות פונעם שם הוי'; רבי עקיבא, וואס האט געדרשנט די תגין פון די אותיות, איז ממשיך געווען אויך פונעם כתר איבער זיי." },
+      "questionSegs": [1058, 1059, 1060], "answerSegs": [1083, 1085, 1088, 1090], "confidence": 0.6
+    },
+    {
+      "question": { "en": "Why is the haftarah of Beshalach Devorah's song, while Pesach has David's song?", "yi": "פארוואס איז די הפטרה פון בשלח די שירה פון דבורה, און פסח די שירה פון דוד המלך?" },
+      "answer": { "en": "Devorah's song followed a salvation that lasted forty years and needed another; David's song ends with the eternal salvation of Moshiach, which Pesach draws down.", "yi": "די שירה פון דבורה איז געווען נאך א ישועה וואס האט געדויערט פערציג יאר און מ'האט נאכדעם געדארפט א נייע; די שירה פון דוד ענדיגט זיך מיט דער אייביגער ישועה פון משיח, וואס פסח איז ממשיך." },
+      "questionSegs": [1105, 1106], "answerSegs": [1128, 1132, 1133, 1134], "confidence": 0.6
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Rav says that to connect with the chesed of Nissan Jews should involve themselves in chesed, beginning with giving maos chitim before Pesach.", "yi": "דער משגיח זאגט אז כדי זיך צו פארבינדן מיט'ן חסד פון ניסן זאלן אידן זיך עוסק זיין אין חסד, אנגעהויבן פון געבן מעות חטים פאר פסח." },
+      "evidence": { "segs": [180, 182, 185], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "The Rav says one should search one's heart for chametz as far as one can reach, and for what remains, nullify it and tell Hashem that one has done what one could.", "yi": "דער משגיח זאגט אז מ'דארף זוכן חמץ אין הארץ וויפיל מ'קען דערגרייכן, און אויף דעם וואס בלייבט איבער מבטל זיין און זאגן צום אייבערשטן אז מ'האט געטון וואס מ'קען." },
+      "evidence": { "segs": [530, 533, 534, 536], "confidence": 0.7 }
+    },
+    {
+      "text": { "en": "The Rav says one should be meticulous in baking and eating kosher matzah, with as much guarding as possible.", "yi": "דער משגיח זאגט אז מ'דארף מהדר זיין אין באקן און עסן כשר'ע מצה, מיט וויפיל שמירה ס'איז מעגליך." },
+      "evidence": { "segs": [557, 558, 559, 561], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Rav says one must hold on to emunah even when one has a question one cannot answer.", "yi": "דער משגיח זאגט אז מ'דארף זיך האלטן ביי דער אמונה אפילו ווען מ'האט א קשיא וואס מ'קען נישט פארענטפערן." },
+      "evidence": { "segs": [761, 770, 815, 816], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Rav says one should constantly review and speak about emunah, especially on Pesach night, when a father can plant emunah in his child.", "yi": "דער משגיח זאגט אז מ'זאל כסדר איבערחזרן און רעדן וועגן אמונה, בפרט פסח ביינאכט, ווען א טאטע קען איינפלאנצן אמונה אין זיין קינד." },
+      "evidence": { "segs": [845, 846, 849, 852], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "month of Nissan",
+    "letter-combinations of Hashem's Name",
+    "chesed and renewal",
+    "kingship of Hashem",
+    "biur chametz and the yetzer hara",
+    "matzah as the food of emunah",
+    "emunah and freedom",
+    "the Haggadah as drawing down salvation",
+    "Amalek and doubt",
+    "the final redemption"
+  ],
+  "concepts": [
+    { "he": "צירוף", "heardAs": ["צירוף", "סירה"] },
+    { "he": "התחדשות", "heardAs": ["התחדשות", "סכדשות"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבינו שלום", "רבוש׳ן של עולם", "רבינו שלאביםס"] },
+    { "he": "ישמחו השמים ותגל הארץ", "heardAs": ["יתמיכל א שמים ותגיל הארץ", "ייסן חשמי הים", "יתום חשמי ותוגל הארץ"] },
+    { "he": "ויאמרו בגוים ה' מלך", "heardAs": ["ויום רב הגוים השם מלך", "ויאמרי וגאים"] },
+    { "he": "ויקרא", "heardAs": ["ביוקחי", "בייקחא", "וייקחה"] },
+    { "he": "פתחי לי אחותי רעיתי", "heardAs": ["פסחי לי אחאתי ראיתי", "פתחי לי אחאתי רעייתי"] },
+    { "he": "טל", "heardAs": ["תול", "צאל", "צויל"] },
+    { "he": "ביעור חמץ", "heardAs": ["ביעה חמץ", "ביוחמץ"] },
+    { "he": "עמלק", "heardAs": ["המלוק", "המלאג", "מולק"] },
+    { "he": "מיכלא דמהימנותא", "heardAs": ["מיכל דעם האמנותא", "מיכלא דעם המנסה"] },
+    { "he": "פועל דמיוני", "heardAs": ["פועל דמיון", "פעל דמיינו", "פייל דמיינו"] },
+    { "he": "מינות", "heardAs": ["מינוס", "מינעס"] },
+    { "he": "שער הנו\"ן", "heardAs": ["שער הנהן", "שער הנאהן", "שאל הנון"] },
+    { "he": "המשכה", "heardAs": ["המשחה", "המשחת", "משוחר"] },
+    { "he": "עצבות", "heardAs": ["עצות", "עצהות"] }
+  ],
+  "people": [
+    { "name": "the Maharal", "heardAs": ["מהר''ל"] },
+    { "name": "Shlomo HaMelech", "heardAs": ["שלמה המלך"] },
+    { "name": "Rashi", "heardAs": ["חשא", "רשע"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו"] },
+    { "name": "Rabbi Eliezer", "heardAs": ["רבי אלעזר", "ר' יואל אליעזר", "רבי יואליעזר"] },
+    { "name": "Rabbi Yehoshua", "heardAs": ["רבי יהושע"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["בעל שם טוב הקדש", "בעש''ט"] },
+    { "name": "the Bnei Yissaschar", "heardAs": ["בני יששכר"] },
+    { "name": "the Chozeh of Lublin", "heardAs": ["חדר מלובלין", "חוזה מלובלין"] },
+    { "name": "the Ramban", "heardAs": ["רמב״ן"] },
+    { "name": "the Radbaz", "heardAs": ["ראטעוואזע"] },
+    { "name": "Rabban Yochanan ben Zakkai", "heardAs": ["רבי יוחנן בן זאקאי"] },
+    { "name": "the Lechovitcher Rebbe", "heardAs": ["אלעכאוויטש", "אלאכאוויטש"] },
+    { "name": "the Kotzker Rebbe", "heardAs": ["קארצקער"] },
+    { "name": "the Satmar Rav", "heardAs": ["סאטמארער רב"] },
+    { "name": "the Arizal", "heardAs": ["ארי הקדוש", "הרה הקדש", "אהריא קדוש"] },
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינו"] },
+    { "name": "the Chasam Sofer", "heardAs": ["אכסאם סופר"] },
+    { "name": "the Ohr HaChaim", "heardAs": ["אור החיים הקודש"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יעקב אבינו"] },
+    { "name": "Esav", "heardAs": ["אסאב"] },
+    { "name": "the Ropshitzer", "heardAs": ["ראפשיצער"] },
+    { "name": "the Rimanover", "heardAs": ["רימאנאוו"] },
+    { "name": "Napoleon", "heardAs": ["נאפאלעאן", "נאפאלעא"] },
+    { "name": "Og", "heardAs": ["אויג מלך הבשן"] },
+    { "name": "Rabbi Akiva", "heardAs": ["ר' יקיבא", "רבי יקיבא"] },
+    { "name": "Devorah", "heardAs": ["דבורה"] },
+    { "name": "Dovid HaMelech", "heardAs": ["דוד המל"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair to poor; most Hebrew quotations are badly garbled but recoverable from context (Shir HaShirim 5:2, Divrei HaYamim I 16:31, Tehillim 78:49). The Baal Shem Tov passage (segs 296-304), the Afikoman passage (segs 631-645), segs 1101-1103 and the end (segs 1180-1190) could not be reliably recovered, and the Ropshitzer story's details are partly garbled. Seg 1023 is a short repeated-letter hallucination."
+}

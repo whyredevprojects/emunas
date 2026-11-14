@@ -1,0 +1,782 @@
+{
+  "shiurId": "yi-zmanim-svds-lg-bvmr-06",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "On Lag BaOmer, the Rema's yahrzeit, the Rav suggests that the Rema is the revealed side of Rabbi Shimon bar Yochai: Rabbi Shimon used the dove and revealed the hidden good in every Jew and even in the tochacha, while the Rema used the raven to uncover what is not in order.",
+      "yi": "ל\"ג בעומר, דעם רמ\"א'ס יארצייט, זאגט דער משגיח אז דער רמ\"א איז דער חלק הנגלה פון רבי שמעון בר יוחאי: רשב\"י האט זיך באנוצט מיט דער יונה און אנטפלעקט דאס פארבארגענע גוטס אין יעדן איד און אפילו אין דער תוכחה, און דער רמ\"א האט זיך באנוצט מיטן עורב כדי ארויסצוברענגען וואס איז נישט אין ארדענונג."
+    },
+    "abstract": {
+      "en": "The Rav opens with a feeling that the Rema, whose yahrzeit is Lag BaOmer and who is the Rebbe of Ashkenazi Jewry, is the revealed part of Rabbi Shimon bar Yochai. He tells how the Maggid of Mezritch smelled chametz at his seder because the Baal HaTanya had kashered a glass cup against the Rema's view, and the Rema came to complain. He then tells how the Rema, as a new rav, exposed a seller of non-kosher fat by seeing ravens over his wagon. Rabbi Shimon, by contrast, answered his students by a dove that everything in the tochacha is blessing. The Rav explains that every Jew is a letter of the Torah holding a secret, that the tochacha hides the secret of the geulah, and that on Lag BaOmer every Jew can find himself in Rabbi Shimon. He closes with Rabbi Shimon's promise that the Torah will not be forgotten.",
+      "yi": "דער משגיח עפנט מיט א הרגשה אז דער רמ\"א, וועמענס יארצייט איז ל\"ג בעומר און וואס איז דער רבי פון די אשכנז'ישע אידן, איז דער חלק הנגלה פון רבי שמעון בר יוחאי. ער דערציילט ווי דער מגיד האט געשמעקט חמץ ביים סדר, ווייל דער בעל התניא האט גע'כשר'ט א גלעזערנעם כוס קעגן דעם רמ\"א'ס שיטה, און דער רמ\"א איז געקומען טענה'ן. נאכן זינגען דערציילט ער ווי דער רמ\"א, אלס נייער רב, האט אנטדעקט א הענדלער מיט טריפה שמאלץ דורכדעם וואס ער האט געזען עורבים איבער זיין וואגן. רשב\"י, לאידך גיסא, האט געענטפערט זיינע תלמידים דורך א יונה אז אלעס אין דער תוכחה איז ברכות. דער משגיח ערקלערט אז יעדער איד איז אן אות אין דער תורה מיט א סוד, אז אין דער תוכחה ליגט דער סוד פון דער גאולה, און אז ל\"ג בעומר קען יעדער איד זיך געפינען ביי רשב\"י. ער שליסט מיט רשב\"י'ס הבטחה אז די תורה וועט נישט פארגעסן ווערן."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The Rav suggests, as a feeling of his own, that the Rema is the revealed (nigleh) part of Rabbi Shimon bar Yochai, and that both share Lag BaOmer.",
+          "yi": "דער משגיח זאגט, אלס א הרגשה, אז דער רמ\"א איז דער חלק הנגלה פון רבי שמעון בר יוחאי, און ביידע האבן ל\"ג בעומר."
+        },
+        "evidence": {
+          "segs": [
+            9,
+            10,
+            12,
+            18,
+            113
+          ],
+          "confidence": 0.7
+        }
+      },
+      {
+        "text": {
+          "en": "Rabbi Shimon worked with the dove, which brings good tidings, while the Rema worked with the raven, which reveals what is wrong.",
+          "yi": "רשב\"י האט זיך באנוצט מיט דער יונה וואס ברענגט גוטע בשורות, און דער רמ\"א מיטן עורב וואס ווייזט אן וואס איז נישט אין ארדענונג."
+        },
+        "evidence": {
+          "segs": [
+            132,
+            133,
+            134,
+            136,
+            138
+          ],
+          "confidence": 0.7
+        }
+      },
+      {
+        "text": {
+          "en": "Every Jew corresponds to a letter of the Sefer Torah and adds something no other Jew can add, so even the simplest Jew holds a hidden secret.",
+          "yi": "יעדער איד איז כנגד אן אות אין ספר תורה און גיט צו עפעס וואס קיין אנדער איד קען נישט צוגעבן, ממילא האט אפילו דער פשוטסטער איד א פארבארגענעם סוד."
+        },
+        "evidence": {
+          "segs": [
+            143,
+            146,
+            164,
+            165,
+            168
+          ],
+          "confidence": 0.8
+        }
+      },
+      {
+        "text": {
+          "en": "The tochacha hides the secret of the geulah, and its letters too are Jewish souls.",
+          "yi": "אין דער תוכחה ליגט באהאלטן דער סוד פון דער גאולה, און אירע אותיות זענען אויך אידישע נשמות."
+        },
+        "evidence": {
+          "segs": [
+            189,
+            190,
+            195,
+            200
+          ],
+          "confidence": 0.7
+        }
+      },
+      {
+        "text": {
+          "en": "On Lag BaOmer, even at its lowest level, every Jew can find himself in Rabbi Shimon bar Yochai.",
+          "yi": "ל\"ג בעומר, אפילו אויף דער נידעריגסטער מדריגה, קען יעדער איד זיך געפינען ביי רבי שמעון בר יוחאי."
+        },
+        "evidence": {
+          "segs": [
+            241,
+            242,
+            243,
+            244
+          ],
+          "confidence": 0.65
+        }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-03-06-l-beomer",
+      "startSeg": 0,
+      "endSeg": 71,
+      "title": {
+        "en": "The Rema's yahrzeit and the Maggid's seder",
+        "yi": "דעם רמ\"א'ס יארצייט און דעם מגיד'ס סדר"
+      },
+      "summary": {
+        "en": "The Rav suggests that the Rema, the Rebbe of Ashkenazi Jewry whose yahrzeit is today, is the revealed part of Rabbi Shimon bar Yochai. He then tells how the Maggid smelled chametz at his seder because the Baal HaTanya had kashered a glass cup against the Rema's view, and the Rema came to complain.",
+        "yi": "דער משגיח זאגט אז דער רמ\"א, דער רבי פון די אשכנז'ישע אידן וואס האט היינט יארצייט, איז דער חלק הנגלה פון רשב\"י. דערנאך דערציילט ער ווי דער מגיד האט געשמעקט חמץ ביים סדר, ווייל דער בעל התניא האט גע'כשר'ט א גלעזערנעם כוס קעגן דעם רמ\"א'ס שיטה, און דער רמ\"א איז געקומען טענה'ן."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [
+        0
+      ],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-03-06-l-beomer",
+      "startSeg": 72,
+      "endSeg": 83,
+      "title": {
+        "en": "Singing Bar Yochai",
+        "yi": "זינגען בר יוחאי"
+      },
+      "summary": {
+        "en": "A long stretch of singing in honor of Rabbi Shimon bar Yochai; the transcript is mostly garbled song text.",
+        "yi": "א לאנגע צייט זינגט מען לכבוד רבי שמעון בר יוחאי; די אויפשריפט איז מערסטנס צעמישטע ווערטער פון ליד."
+      },
+      "kind": "singing",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-03-06-l-beomer",
+      "startSeg": 84,
+      "endSeg": 140,
+      "title": {
+        "en": "The raven and the dove",
+        "yi": "דער עורב און די יונה"
+      },
+      "summary": {
+        "en": "The Rav tells how the Rema, as a new rav, exposed a seller of non-kosher fat because he saw ravens over his wagon. He contrasts Rabbi Shimon in the cave, whose students sent him a dove with a question on the tochacha and who answered that it is all blessing: Rabbi Shimon used the dove, and the Rema, his revealed side, the raven.",
+        "yi": "דער משגיח דערציילט ווי דער רמ\"א, אלס נייער רב, האט אנטדעקט א הענדלער מיט טריפה שמאלץ ווייל ער האט געזען עורבים איבער זיין וואגן. אקעגן דעם ברענגט ער ווי רשב\"י אין דער מערה האט באקומען פון די תלמידים א יונה מיט א קשיא אויף דער תוכחה און געענטפערט אז אלעס איז ברכות: רשב\"י האט זיך באנוצט מיט דער יונה, און דער רמ\"א, זיין חלק הנגלה, מיטן עורב."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [
+        0
+      ],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-03-06-l-beomer",
+      "startSeg": 141,
+      "endSeg": 195,
+      "title": {
+        "en": "Every Jew is a letter of the Torah",
+        "yi": "יעדער איד איז אן אות אין דער תורה"
+      },
+      "summary": {
+        "en": "The Rav explains that Rabbi Shimon revealed the secrets of the Torah, and since every letter corresponds to a Jew, every Jew holds a secret. He brings Rabbi Akiva's words to his new students and the missing letter that invalidates a Sefer Torah, then shows from the Zohar Chadash and a passuk in the tochacha that the tochacha hides the secret of the geulah.",
+        "yi": "דער משגיח ערקלערט אז רשב\"י האט מגלה געווען די סודות התורה, און ווייל יעדער אות איז כנגד א איד, האט יעדער איד א סוד. ער ברענגט רבי עקיבא'ס ווערטער צו די נייע תלמידים און אז אן אות וואס פעלט מאכט פסול א ספר תורה, און ווייזט פונעם זוהר חדש און פון א פסוק אין דער תוכחה אז אין דער תוכחה ליגט דער סוד פון דער גאולה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [
+        0
+      ],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-03-06-l-beomer",
+      "startSeg": 196,
+      "endSeg": 245,
+      "title": {
+        "en": "Shabbos, the moadim and Lag BaOmer",
+        "yi": "שבת, די מועדים און ל\"ג בעומר"
+      },
+      "summary": {
+        "en": "The Rav explains that the letters of the tochacha are also Jewish souls. He asks why the parsha of the moadim opens with Shabbos, answers that the Shabbos before a Yom Tov holds all its power, ties Shabbos to the soul that includes all souls, and concludes that on Lag BaOmer every Jew can find himself in Rabbi Shimon.",
+        "yi": "דער משגיח ערקלערט אז די אותיות פון דער תוכחה זענען אויך אידישע נשמות. ער פרעגט פארוואס די פרשה פון די מועדים הייבט זיך אן מיט שבת, ענטפערט אז דער שבת פאר א יום טוב האלט דעם גאנצן כח פונעם יום טוב, פארבינדט שבת מיט דער נשמה וואס איז כולל אלע נשמות, און שליסט אז ל\"ג בעומר קען יעדער איד זיך געפינען ביי רשב\"י."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [
+        0
+      ],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-03-06-l-beomer",
+      "startSeg": 246,
+      "endSeg": 283,
+      "title": {
+        "en": "Singing",
+        "yi": "זינגען"
+      },
+      "summary": {
+        "en": "Singing of Bar Yochai and other songs; the transcript is garbled song text.",
+        "yi": "מ'זינגט בר יוחאי און אנדערע לידער; די אויפשריפט איז צעמישטע ווערטער פון ליד."
+      },
+      "kind": "singing",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-03-06-l-beomer",
+      "startSeg": 284,
+      "endSeg": 284,
+      "title": {
+        "en": "Untranscribed stretch",
+        "yi": "אן אומאויפגעשריבענער שטח"
+      },
+      "summary": {
+        "en": "About twelve minutes in which the transcript holds a single sentence; the rest is not transcribed.",
+        "yi": "בערך צוועלף מינוט וואו די אויפשריפט האט נאר איין זאץ; דער רעשט איז נישט אויפגעשריבן."
+      },
+      "kind": "noise",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-03-06-l-beomer",
+      "startSeg": 285,
+      "endSeg": 330,
+      "title": {
+        "en": "The Torah will not be forgotten",
+        "yi": "די תורה וועט נישט פארגעסן ווערן"
+      },
+      "summary": {
+        "en": "The Rav mentions a Jew from Yerushalayim, an oved Hashem who writes on Likutei Moharan, a sefer connected to Rabbi Shimon. He brings the Gemara where Rabbi Shimon says the Torah will not be forgotten, reading 'mipi zaro' as a hint to Bar Yochai, through whose teaching Klal Yisrael will leave galus. The recording ends with table talk.",
+        "yi": "דער משגיח דערמאנט א איד פון ירושלים, אן עובד השם וואס שרייבט אויף ליקוטי מוהר\"ן, א ספר וואס איז פארבונדן מיט רשב\"י. ער ברענגט די גמרא וואו רשב\"י זאגט אז די תורה וועט נישט פארגעסן ווערן, און ער לערנט אז \"מפי זרעו\" איז א רמז אויף בר יוחאי, וואס דורך זיין לימוד וועלן אידן ארויסגיין פון גלות. דער סוף איז שמועס ביים טיש."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "וואס דער מחבר זאגט אז באלד מען פילטערט א ... כוס דריי טעג",
+      "work": "Shulchan Aruch",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          31,
+          32,
+          34,
+          56
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "heardAs": "דער רמא איז געקומען ... אז מען קען נישט כשר'ן א גלי",
+      "work": "Rema (glosses on Shulchan Aruch)",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          65,
+          66
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "heardAs": "עס שטעט אין זיין אז די תלמיד, ווען רבי שמעון בן יוחאי איז געוועזן אין די מעירה",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          114,
+          115,
+          121,
+          124,
+          132
+        ],
+        "confidence": 0.65
+      }
+    },
+    {
+      "heardAs": "עס שטעט אין מדרש, אז נאכדעם ווי אלע 24,000 תלמידים",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          153,
+          154,
+          156,
+          157
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "זיי ווארפט א רייכע כמוך, זיי כלל גדול בתורה",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          161,
+          162
+        ],
+        "confidence": 0.65
+      }
+    },
+    {
+      "heardAs": "ווי דער זייער שטעט טאקע דארטן אין זייער חדש אין פרשת כתבי",
+      "work": "Zohar Chadash",
+      "ref": "Zohar Chadash, Parshas Ki Savo",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          188,
+          189,
+          190
+        ],
+        "confidence": 0.65
+      }
+    },
+    {
+      "heardAs": "ובזכתי עליהם בראשי שנים",
+      "work": "Vayikra",
+      "ref": "Vayikra 26:45",
+      "sefariaRef": "Leviticus 26:45",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          191,
+          192,
+          193
+        ],
+        "confidence": 0.65
+      }
+    },
+    {
+      "heardAs": "אלא מיידי ה' מקרואי קדש",
+      "work": "Vayikra",
+      "ref": "Vayikra 23:2-3",
+      "sefariaRef": "Leviticus 23:2-3",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          209,
+          210,
+          219
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "אזוי ווי עס שטעט אין ספרים",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          215,
+          216,
+          217
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "כשנוך זאג אבל סינא בקרן ויבנה ... כהו לא תשכף ופוי זרע",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 138b",
+      "sefariaRef": "Shabbat 138b",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          299,
+          300,
+          301,
+          302
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "heardAs": "כהו לא תשכף ופוי זרע",
+      "work": "Devarim",
+      "ref": "Devarim 31:21",
+      "sefariaRef": "Deuteronomy 31:21",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          301,
+          302
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "heardAs": "קטן רבי נחמן ... אז עס איז א קדמה מיט זיין ספר",
+      "work": "Likutei Moharan",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": {
+        "segs": [
+          307,
+          308,
+          309
+        ],
+        "confidence": 0.65
+      }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rema is the revealed side of Rabbi Shimon bar Yochai, which is why the Rema's yahrzeit falls on Rabbi Shimon's day.",
+        "yi": "דער רמ\"א איז דער חלק הנגלה פון רבי שמעון בר יוחאי, און דערפאר פאלט דעם רמ\"א'ס יארצייט אויף רשב\"י'ס טאג."
+      },
+      "evidence": {
+        "segs": [
+          10,
+          12,
+          18,
+          113
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "text": {
+        "en": "Rabbi Shimon's way was the dove, which finds the hidden good even in the tochacha; the Rema's way, as the revealed Torah, was the raven, which exposes what is not in order.",
+        "yi": "רשב\"י'ס וועג איז געווען די יונה, וואס געפינט דאס פארבארגענע גוטס אפילו אין דער תוכחה; דעם רמ\"א'ס וועג, אלס תורת הנגלה, איז געווען דער עורב, וואס ווייזט אן וואס איז נישט אין ארדענונג."
+      },
+      "evidence": {
+        "segs": [
+          125,
+          133,
+          136,
+          138,
+          139
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "text": {
+        "en": "Because Rabbi Shimon expounded the secret of each letter, and each letter is a Jew, he expounded the hidden tzaddik in every Jew, even in the lowliest.",
+        "yi": "ווייל רשב\"י האט געדרשנט דעם סוד פון יעדן אות, און יעדער אות איז א איד, האט ער געדרשנט דעם פארבארגענעם צדיק אין יעדן איד, אפילו אין דעם פשוטסטן."
+      },
+      "evidence": {
+        "segs": [
+          143,
+          146,
+          148,
+          150,
+          170
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "text": {
+        "en": "The 'lightest of the light', the souls found in the tochacha, also carry a hidden secret; the passuk there that is the fiftieth mention of the Exodus holds the fiftieth gate and the secret of the geulah.",
+        "yi": "די קלים שבקלים, די נשמות וואס געפינען זיך אין דער תוכחה, האבן אויך א פארבארגענעם סוד; דער פסוק דארט וואס איז דאס פופציגסטע מאל יציאת מצרים האלט דעם שער החמישים און דעם סוד פון דער גאולה."
+      },
+      "evidence": {
+        "segs": [
+          177,
+          178,
+          184,
+          193,
+          195
+        ],
+        "confidence": 0.65
+      }
+    },
+    {
+      "text": {
+        "en": "The Rav reads 'mipi zaro' in Rabbi Shimon's proof as a hint to his own name, Bar Yochai, through whom the Torah will not be forgotten.",
+        "yi": "דער משגיח לערנט אז \"מפי זרעו\" אין רשב\"י'ס ראיה איז א רמז אויף זיין אייגענעם נאמען, בר יוחאי, וואס דורך אים וועט די תורה נישט פארגעסן ווערן."
+      },
+      "evidence": {
+        "segs": [
+          303,
+          304,
+          305
+        ],
+        "confidence": 0.6
+      }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "The Baal HaTanya's cup at the Maggid's seder",
+        "yi": "דעם בעל התניא'ס כוס ביים מגיד'ס סדר"
+      },
+      "retelling": {
+        "en": "At the Maggid's seder each student had to bring his own cup, and the Baal HaTanya, who was poor, had none. Rather than ask for charity to buy a glass cup, he relied on the Mechaber that a glass cup soaked in water three days in a row is kashered, since it was a time of need. The Maggid came in and said it smelled of chametz; Reb Mendel of Vitebsk went among the students and smelled nothing. The Baal HaTanya realized it was about him, the Maggid had the cup thrown out and gave him his own cup, and later the Maggid said the Rema had come to complain that his ruling that glass cannot be kashered was not followed.",
+        "yi": "ביים מגיד'ס סדר האט יעדער תלמיד געדארפט ברענגען זיין אייגענעם כוס, און דער בעל התניא, וואס איז געווען אן עני, האט נישט געהאט קיין כוס. אנשטאט בעטן צדקה אויף א גלעזערנעם כוס האט ער זיך סומך געווען אויפן מחבר, אז א גלעזערנער כוס וואס מ'פילט מיט וואסער דריי טעג נאכאנאנד איז גע'כשר'ט, ווייל ס'איז געווען א שעת הדחק. דער מגיד איז אריינגעקומען און געזאגט אז ס'שמעקט חמץ; רבי מענדל פון וויטעבסק איז ארומגעגאנגען צווישן די תלמידים און גארנישט געשמעקט. דער בעל התניא האט פארשטאנען אז ס'גייט אויף אים, דער מגיד האט געהייסן ארויסווארפן דעם כוס און אים געגעבן זיין אייגענעם כוס, און שפעטער האט דער מגיד געזאגט אז דער רמ\"א איז געקומען טענה'ן אז מ'פירט זיך נישט לויט זיין פסק אז גלאז קען מען נישט כשר'ן."
+      },
+      "people": [
+        "the Maggid of Mezritch",
+        "the Baal HaTanya",
+        "Reb Mendel of Vitebsk",
+        "the Rema"
+      ],
+      "evidence": {
+        "segs": [
+          23,
+          29,
+          43,
+          48,
+          53,
+          65
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "title": {
+        "en": "The ravens over the fat-seller's wagon",
+        "yi": "די עורבים איבערן שמאלץ־הענדלער'ס וואגן"
+      },
+      "retelling": {
+        "en": "Fat sellers came through the town, and the new rav, the Rema, had one of them summoned and asked him where he had taken the fat. When the rav cried out at him, the seller broke down and admitted that what he sold was not kosher. The townspeople were amazed and took it for ruach hakodesh, but the rav said it was not: passing the market he had seen ravens circling only over that man's wagon, and since a raven brings bad tidings he understood the fat was treif.",
+        "yi": "שמאלץ־הענדלער זענען דורכגעפארן די שטאט, און דער נייער רב, דער רמ\"א, האט געהייסן רופן איינעם פון זיי און אים געפרעגט פון וואנעט ער האט גענומען דאס שמאלץ. ווען דער רב האט אויף אים א געשריי געטון, איז דער הענדלער צובראכן געווארן און מודה געווען אז וואס ער פארקויפט איז נישט כשר. די שטאט־לייט זענען נתפעל געווארן און גע'האלטן אז ס'איז רוח הקודש, אבער דער רב האט געזאגט אז ניין: דורכגייענדיג דעם מארק האט ער געזען עורבים פליען נאר איבער יענעמ'ס וואגן, און ווייל אן עורב ברענגט שלעכטע בשורות האט ער פארשטאנען אז דאס שמאלץ איז טריפה."
+      },
+      "people": [
+        "the Rema"
+      ],
+      "evidence": {
+        "segs": [
+          84,
+          91,
+          99,
+          101,
+          103,
+          106
+        ],
+        "confidence": 0.65
+      }
+    },
+    {
+      "title": {
+        "en": "Rabbi Shimon's dove from the cave",
+        "yi": "רשב\"י'ס יונה פון דער מערה"
+      },
+      "retelling": {
+        "en": "While Rabbi Shimon bar Yochai was in the cave, his students were troubled by the harsh things in the tochacha. They sent him a dove with a note asking their question, and he tied a note back onto the dove saying that everything written in the tochacha is blessing. They were greatly gladdened, for the dove brings good tidings.",
+        "yi": "ווען רבי שמעון בר יוחאי איז געווען אין דער מערה, זענען די תלמידים געווען פארביטערט פון די שווערע זאכן אין דער תוכחה. זיי האבן אים געשיקט א יונה מיט א צעטעלע מיט זייער קשיא, און ער האט צוריקגעבונדן א צעטעלע צו דער יונה, אז אלעס וואס שטייט אין דער תוכחה איז ברכות. זיי האבן זיך שטארק דערפרייט, ווייל די יונה ברענגט גוטע בשורות."
+      },
+      "people": [
+        "Rabbi Shimon bar Yochai"
+      ],
+      "evidence": {
+        "segs": [
+          115,
+          117,
+          121,
+          123,
+          125,
+          131
+        ],
+        "confidence": 0.7
+      }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why does the parsha of the moadim open with Shabbos, which is not one of the festivals?",
+        "yi": "פארוואס הייבט זיך אן די פרשה פון די מועדים מיט שבת, ווען שבת איז דאך נישט פון די מועדים?"
+      },
+      "answer": {
+        "en": "As the sefarim say, the Shabbos before a Yom Tov holds the whole power of that Yom Tov.",
+        "yi": "ווי ס'שטייט אין ספרים, האלט דער שבת פאר א יום טוב דעם גאנצן כח פונעם יום טוב."
+      },
+      "questionSegs": [
+        209,
+        212,
+        213
+      ],
+      "answerSegs": [
+        214,
+        216,
+        217
+      ],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says that on Lag BaOmer, especially toward its end, every Jew can find himself a place with Rabbi Shimon bar Yochai.",
+        "yi": "דער משגיח זאגט אז ל\"ג בעומר, בפרט צום סוף פון ל\"ג בעומר, קען יעדער איד זיך געפינען א חלק ביי רבי שמעון בר יוחאי."
+      },
+      "evidence": {
+        "segs": [
+          241,
+          242,
+          243,
+          244
+        ],
+        "confidence": 0.65
+      }
+    }
+  ],
+  "candidateTopics": [
+    "Lag BaOmer",
+    "the Rema's yahrzeit",
+    "Rabbi Shimon bar Yochai",
+    "revealed and hidden Torah",
+    "the dove and the raven",
+    "every Jew as a letter of the Torah",
+    "the tochacha and the geulah",
+    "Shabbos before Yom Tov",
+    "the Maggid of Mezritch and the Baal HaTanya"
+  ],
+  "concepts": [
+    {
+      "he": "חלק הנגלה",
+      "heardAs": [
+        "די חלק הדבר",
+        "הניגולה",
+        "חלק א נגלה"
+      ]
+    },
+    {
+      "he": "הילולא",
+      "heardAs": [
+        "היללה",
+        "יללה"
+      ]
+    },
+    {
+      "he": "תוכחה",
+      "heardAs": [
+        "תוכחות",
+        "תככה",
+        "תוכחים"
+      ]
+    },
+    {
+      "he": "יונה",
+      "heardAs": [
+        "יונה",
+        "יונא"
+      ]
+    },
+    {
+      "he": "עורב",
+      "heardAs": [
+        "עורבים",
+        "עירוב"
+      ]
+    },
+    {
+      "he": "שער החמישים",
+      "heardAs": [
+        "שער החמישים"
+      ]
+    },
+    {
+      "he": "מועדים",
+      "heardAs": [
+        "מיידים",
+        "מיידי"
+      ]
+    },
+    {
+      "he": "קלים שבקלים",
+      "heardAs": [
+        "קהלים שבו קהלים",
+        "קלים שבקלים"
+      ]
+    },
+    {
+      "he": "שעת הדחק",
+      "heardAs": [
+        "שעת התחג",
+        "שעה סעד חג"
+      ]
+    },
+    {
+      "he": "בשורות טובות",
+      "heardAs": [
+        "פשרות טובת"
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "the Rema",
+      "heardAs": [
+        "רמא",
+        "רמת",
+        "ראמאן",
+        "רמה"
+      ]
+    },
+    {
+      "name": "Rabbi Shimon bar Yochai",
+      "heardAs": [
+        "בן יחוי",
+        "רבי שמעון בן יוחאי",
+        "רבי יהושע בן יוחאי",
+        "רבי שמעון בן יחוי"
+      ]
+    },
+    {
+      "name": "the Maggid of Mezritch",
+      "heardAs": [
+        "מגיד"
+      ]
+    },
+    {
+      "name": "the Baal HaTanya",
+      "heardAs": [
+        "בעל התניא",
+        "בעל הצניע",
+        "בעל לתניא"
+      ]
+    },
+    {
+      "name": "Reb Mendel of Vitebsk",
+      "heardAs": [
+        "רבי'ער מענדלע בטעפסקא"
+      ]
+    },
+    {
+      "name": "the Mechaber",
+      "heardAs": [
+        "מחבר",
+        "מחבל"
+      ]
+    },
+    {
+      "name": "Rabbi Akiva",
+      "heardAs": [
+        "ר' יקיבא",
+        "ר' יקובע"
+      ]
+    },
+    {
+      "name": "Adam HaRishon",
+      "heardAs": [
+        "אדם און ראשון"
+      ]
+    },
+    {
+      "name": "Rabbi Nachman of Breslov",
+      "heardAs": [
+        "קטן רבי נחמן"
+      ]
+    },
+    {
+      "name": "Rabbi Pinchas ben Yair",
+      "heardAs": [
+        "רבי פינחס בן יואל"
+      ]
+    }
+  ],
+  "asrNotes": "Yiddish ASR is poor; quotations are heavily garbled and several names in the stories (the rav of the fat-seller story is heard as ראמאן/ר' מארק/ר' אהר') were recovered from context. Two long singing stretches (11:17-26:19, 36:51-40:05) are garbled song text, and segment 284 covers about twelve minutes with one sentence. The closing stretch (segments 285-330) is fragmentary: the person from Yerushalayim and the sefer he writes could not be fully recovered, and the last segment runs nearly seven minutes with only table talk."
+}

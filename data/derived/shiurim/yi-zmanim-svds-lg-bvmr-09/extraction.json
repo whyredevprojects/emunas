@@ -1,0 +1,996 @@
+{
+  "shiurId": "yi-zmanim-svds-lg-bvmr-09",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that the flaw of the moon, born of its jealousy, is repaired by a good eye: through the leap year's thirteenth month, through Esther becoming queen, and through Rabbi Shimon bar Yochai's thirteenth year in the cave and his teaching of love between friends.",
+      "yi": "דער משגיח ערקלערט אז פגימת הלבנה, וואס איז געקומען פון קנאה, ווערט פארריכט דורך טובת עין: דורך דעם דרייצנטן חודש פון א שנה מעוברת, דורך דעם וואס אסתר איז געווארן מלכה, און דורך רבי שמעון בר יוחאי'ס דרייצנטן יאר אין דער מערה און זיין לימוד פון אהבת חברים."
+    },
+    "abstract": {
+      "en": "The Rav starts from the seven 'ro'ei pnei hamelech' in the Megillah. Following the Gemara and the Chasam Sofer, their names allude to korbanos, so the angels above with the same names pleaded for the Jews. Rashi reads them as the heavenly angels busy with the leap year so that Esther would become queen. Why would angels deal with a leap year? Because the leap year repairs the flaw of the moon, which was diminished for envying the sun. Esther is the moon, and her kingship is the moon's repair. The repair is a good eye: the students of Rabbi Akiva lacked it, and Rabbi Shimon bar Yochai, a gilgul of Shimon who led the sale of Yosef, fixed it with his thirteenth year in the cave and his teaching of 'hinei mah tov'. Lag BaOmer and Purim, which fall on the same weekday, share this tikkun.",
+      "yi": "דער משגיח הייבט אן מיט די זיבן \"ראי פני המלך\" אין דער מגילה. לויט דער גמרא און דעם חתם סופר זענען זייערע נעמען א רמז אויף קרבנות, און ממילא האבן די מלאכים אויבן מיט די זעלבע נעמען מליץ יושר געווען פאר אידן. רש\"י לערנט אז די \"ידעי העתים\" מיינט די הייליגע מלאכים וואס האבן זיך עוסק געווען אין עיבור השנה כדי אסתר זאל ווערן מלכה. פארוואס זשע מלאכים מיט עיבור השנה? ווייל עיבור השנה איז א תיקון פאר פגימת הלבנה, וואס איז געקומען ווייל די לבנה האט מקנא געווען די חמה; פון דארט האט זיך די קנאה געצויגן ביז מכירת יוסף. אסתר איז די לבנה, און איר מלוכה איז דער תיקון. דער תיקון איז טובת עין: די תלמידים פון רבי עקיבא האבן עס נישט געהאט, און רבי שמעון בר יוחאי, א גלגול פון שמעון וואס איז געווען דער עיקר אין מכירת יוסף, האט עס פארריכט מיט זיין דרייצנטן יאר אין דער מערה און מיט \"הנה מה טוב\". ל\"ג בעומר און פורים, וואס פאלן אויף דעם זעלבן טאג אין דער וואך, האבן דעם זעלבן תיקון."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The seven ministers' names allude to korbanos, so the seven angels above with the same names pleaded for the Jews, as the Chasam Sofer explains.",
+          "yi": "די נעמען פון די זיבן שרים זענען א רמז אויף קרבנות, און ממילא האבן די זיבן מלאכים אויבן מיט די זעלבע נעמען גערעדט א זכות פאר אידן, ווי דער חתם סופר איז מסביר."
+        },
+        "evidence": {
+          "segs": [
+            26,
+            27,
+            40,
+            47,
+            48
+          ],
+          "confidence": 0.75
+        }
+      },
+      {
+        "text": {
+          "en": "According to Rashi, the 'knowers of the times' were the heavenly angels, who busied themselves with the leap year so that Esther would become queen and the Jews would be saved.",
+          "yi": "לויט רש\"י זענען די \"ידעי העתים\" געווען די הייליגע מלאכים, וואס האבן זיך עוסק געווען אין עיבור השנה כדי אסתר זאל ווערן מלכה און אידן זאלן האבן א ישועה."
+        },
+        "evidence": {
+          "segs": [
+            120,
+            125,
+            126,
+            129
+          ],
+          "confidence": 0.7
+        }
+      },
+      {
+        "text": {
+          "en": "The leap year is a repair of the moon's flaw: the thirteenth month makes up the days by which the moon falls behind the sun.",
+          "yi": "עיבור השנה איז א תיקון פאר פגימת הלבנה: דער דרייצנטער חודש פילט אויס די טעג וואס די לבנה בלייבט הינטער דער זון."
+        },
+        "evidence": {
+          "segs": [
+            141,
+            242,
+            255,
+            260,
+            273
+          ],
+          "confidence": 0.8
+        }
+      },
+      {
+        "text": {
+          "en": "The moon was diminished because it lacked a good eye toward the sun, and this jealousy runs through history, from the sin of the Tree of Knowledge to the sale of Yosef.",
+          "yi": "די לבנה איז מוקטן געווארן ווייל זי האט נישט געהאט קיין טובת עין אויף דער חמה, און די קנאה ציט זיך דורך די גאנצע היסטאריע, פונעם חטא פון עץ הדעת ביז מכירת יוסף."
+        },
+        "evidence": {
+          "segs": [
+            142,
+            143,
+            146,
+            154,
+            163,
+            167
+          ],
+          "confidence": 0.75
+        }
+      },
+      {
+        "text": {
+          "en": "Esther is the moon, and her becoming queen is the repair of the moon's flaw.",
+          "yi": "אסתר איז די לבנה, און דאס וואס זי ווערט מלכה איז דער תיקון פון פגימת הלבנה."
+        },
+        "evidence": {
+          "segs": [
+            178,
+            182,
+            189,
+            235,
+            237
+          ],
+          "confidence": 0.8
+        }
+      },
+      {
+        "text": {
+          "en": "Rabbi Shimon bar Yochai, a gilgul of Shimon who led the sale of Yosef, repaired it with a good eye and with love between friends.",
+          "yi": "רבי שמעון בר יוחאי, א גלגול פון שמעון וואס איז געווען דער הויפט אין מכירת יוסף, האט עס מתקן געווען מיט טובת עין און מיט אהבת חברים."
+        },
+        "evidence": {
+          "segs": [
+            309,
+            319,
+            322,
+            323,
+            333,
+            334
+          ],
+          "confidence": 0.7
+        }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-03-09-l-beomer",
+      "startSeg": 0,
+      "endSeg": 0,
+      "title": {
+        "en": "Opening, mostly untranscribed",
+        "yi": "אנהייב, מערסטנס נישט איבערגעשריבן"
+      },
+      "summary": {
+        "en": "The first minutes of the recording are almost entirely missing from the transcript; only a fragment about numbers in the pesukim survives.",
+        "yi": "די ערשטע מינוטן פונעם שיעור זענען כמעט אינגאנצן נישט איבערגעשריבן; עס בלייבט נאר א שטיקל וועגן צאלן אין די פסוקים."
+      },
+      "kind": "noise",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-03-09-l-beomer",
+      "startSeg": 1,
+      "endSeg": 52,
+      "title": {
+        "en": "The seven ministers and the seven angels",
+        "yi": "די זיבן שרים און די זיבן מלאכים"
+      },
+      "summary": {
+        "en": "The Rav brings the seven 'ro'ei pnei hamelech' of the Megillah, whose names the Gemara connects to korbanos. The Chasam Sofer explains that what happens below happens above, so seven angels with the same names sat in judgment and pleaded for the Jews.",
+        "yi": "דער משגיח ברענגט די זיבן \"ראי פני המלך\" פון דער מגילה, וואס די גמרא איז מקשר זייערע נעמען מיט קרבנות. דער חתם סופר איז מסביר אז וואס עס טוט זיך אונטן טוט זיך אויבן, און ממילא זענען זיבן מלאכים מיט די זעלבע נעמען געזעסן און גערעדט א זכות פאר אידן."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-03-09-l-beomer",
+      "startSeg": 53,
+      "endSeg": 140,
+      "title": {
+        "en": "The 'knowers of the times' and the leap year",
+        "yi": "די \"ידעי העתים\" און עיבור השנה"
+      },
+      "summary": {
+        "en": "On the plain level the king's advisers were experts in calculating the calendar, and a calculation about the day Vashti's father was killed is brought. Rashi reads them as the holy angels who busied themselves with the leap year so that Esther would become queen, and the Rav asks what angels have to do with a leap year.",
+        "yi": "על פי פשט זענען די יועצים פונעם מלך געווען בקיאים אין חשבון פון עיבור השנה, און עס ווערט געברענגט א חשבון וועגן דעם טאג וואס ושתי'ס טאטע איז געהרגעט געווארן. רש\"י לערנט אז דאס מיינט די הייליגע מלאכים וואס האבן זיך עוסק געווען אין עיבור השנה כדי אסתר זאל ווערן מלכה, און דער משגיח פרעגט וואס האבן מלאכים צו טון מיט עיבור השנה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-03-09-l-beomer",
+      "startSeg": 141,
+      "endSeg": 204,
+      "title": {
+        "en": "The moon's flaw and Esther as the moon",
+        "yi": "פגימת הלבנה, און אסתר איז די לבנה"
+      },
+      "summary": {
+        "en": "The Rav explains that the leap year repairs the moon, which was diminished for lacking a good eye toward the sun. This jealousy is part of creation and runs through the sin of the Tree of Knowledge, Kayin and the sale of Yosef; Esther is the moon, and her becoming queen is a repair of its flaw.",
+        "yi": "דער משגיח ערקלערט אז עיבור השנה איז א תיקון פאר דער לבנה, וואס איז מוקטן געווארן ווייל זי האט נישט געהאט קיין טובת עין אויף דער חמה. די קנאה איז א חלק פון דער בריאה און ציט זיך דורכן חטא פון עץ הדעת, קין און מכירת יוסף; אסתר איז די לבנה, און איר ווערן מלכה איז א תיקון פאר דער פגימה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [
+        0
+      ],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-03-09-l-beomer",
+      "startSeg": 205,
+      "endSeg": 281,
+      "title": {
+        "en": "The leap year of the miracle",
+        "yi": "דער שנה מעוברת פונעם נס"
+      },
+      "summary": {
+        "en": "The Rav brings the Chasam Sofer that the Sages made the year of the miracle a leap year, so the angels' concern with the leap year was the moon's repair through Esther. He explains that the thirteenth month makes up the days the moon loses against the sun each year, repairing a flaw that came from jealousy and a narrow eye.",
+        "yi": "דער משגיח ברענגט דעם חתם סופר אז די חכמים האבן געמאכט דאס יאר פונעם נס פאר א שנה מעוברת, און ממילא איז דער עסק פון די מלאכים מיט עיבור השנה געווען דער תיקון פון דער לבנה דורך אסתר. ער ערקלערט אז דער דרייצנטער חודש פילט אויס די טעג וואס די לבנה פארלירט יעדעס יאר קעגן דער זון, און פארריכט א פגם וואס איז געקומען פון קנאה און צרות עין."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [
+        0
+      ],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-03-09-l-beomer",
+      "startSeg": 282,
+      "endSeg": 354,
+      "title": {
+        "en": "Rabbi Shimon bar Yochai repairs with a good eye",
+        "yi": "רבי שמעון בר יוחאי פארריכט מיט טובת עין"
+      },
+      "summary": {
+        "en": "The Rav contrasts the students of Rabbi Akiva, who did not honor one another, with the thirteenth middah of Tomer Devorah, seeing another's good. Rabbi Shimon bar Yochai, a gilgul of Shimon who led the sale of Yosef, repaired it with a good eye and love of friends, and like Yosef's twelve years plus one, his twelve years in the cave became thirteen.",
+        "yi": "דער משגיח שטעלט אנקעגן די תלמידים פון רבי עקיבא, וואס האבן נישט נוהג געווען כבוד איינער אין דעם אנדערן, מיט דער דרייצנטער מדה פון תומר דבורה, צו זען דאס גוטס פון א צווייטן. רבי שמעון בר יוחאי, א גלגול פון שמעון וואס איז געווען דער הויפט אין מכירת יוסף, האט עס פארריכט מיט טובת עין און אהבת חברים, און אזוי ווי יוסף'ס צוועלף יאר מיט איינס מער, זענען זיינע צוועלף יאר אין דער מערה געווארן דרייצן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [
+        0
+      ],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-03-09-l-beomer",
+      "startSeg": 355,
+      "endSeg": 425,
+      "title": {
+        "en": "Lag BaOmer and Purim, and the task of the generation",
+        "yi": "ל\"ג בעומר און פורים, און דער תפקיד פונעם דור"
+      },
+      "summary": {
+        "en": "The Rav notes that Lag BaOmer always falls on the weekday of Purim and explains that they are a pair: Purim's gathering of all the Jews and Rabbi Shimon's 'sheves achim gam yachad' both repair the sale of Yosef and the moon. He closes that the task of this generation is the middah of Rabbi Shimon bar Yochai, love and peace between friends.",
+        "yi": "דער משגיח מערקט אן אז ל\"ג בעומר פאלט אלעמאל אויף דעם טאג פון דער וואך וואס פורים, און ערקלערט אז זיי זענען א זיווג: \"לך כנוס את כל היהודים\" פון פורים און \"שבת אחים גם יחד\" פון רבי שמעון זענען ביידע א תיקון פאר מכירת יוסף און פאר דער לבנה. ער ענדיגט אז דער תפקיד פון אונזער דור איז די מדה פון רבי שמעון בר יוחאי, אהבה און שלום צווישן חברים."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [
+        0
+      ],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "ככה דבר מלך לפני כל יודי דת ודין ... ראי פני המלך היושבים ראשונים במלכות",
+      "work": "Esther",
+      "ref": "Esther 1:13-14",
+      "sefariaRef": "Esther 1:13-14",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          9,
+          10,
+          11,
+          55
+        ],
+        "confidence": 0.85
+      }
+    },
+    {
+      "heardAs": "כאשר נאר קרבנה שנה שתר שתי תורים",
+      "work": "Gemara Megillah",
+      "ref": "Megillah 12b",
+      "sefariaRef": "Megillah 12b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          27,
+          28,
+          29
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "דער חתם סופר איז מסביר",
+      "work": "Chasam Sofer",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          26,
+          30,
+          31
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "heardAs": "די גמרא דרשנט ידע העיטים אז זיי ווייסן ווער זיי צו מצמארבע זיין שנים",
+      "work": "Gemara Megillah",
+      "ref": "Megillah 12b",
+      "sefariaRef": "Megillah 12b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          56,
+          57
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "דער יארת דבש פשט",
+      "work": "Yaaros Devash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          104,
+          105
+        ],
+        "confidence": 0.65
+      }
+    },
+    {
+      "heardAs": "רשע ברענגט א דאונדערבארעמען פשט",
+      "work": "Rashi",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          107,
+          120,
+          134
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "דענשנו מלאכים ומשמשים בקסם רחץ",
+      "work": "Gemara Chullin",
+      "ref": "Chullin 60b",
+      "sefariaRef": "Chullin 60b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          142,
+          143,
+          144,
+          145,
+          146
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "ובאי אור הבנה כי רחמה",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 30:26",
+      "sefariaRef": "Isaiah 30:26",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          151,
+          396
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "אזוי זאגט דער גמרא, אז מען האט גערופן אסתר השם אוסטהאל וועגן דער לבנה",
+      "work": "Gemara Megillah",
+      "ref": "Megillah 13a",
+      "sefariaRef": "Megillah 13a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          179,
+          180,
+          181,
+          182
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "heardAs": "שטעט דאך אין די גמרא, מען טאר נישט קוקן אויף די לבנה",
+      "work": "Gemara",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          198,
+          199
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "heardAs": "אזוי דער חתם ספר זאגט אז ווען ס'איז געוועזן דאן האט דער גזירה פון האמאן",
+      "work": "Chasam Sofer",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          214,
+          217,
+          220
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "heardAs": "די תלמידים פון רבי יקיבא האבן נישט נוהג געוועזן כבוד זיין וויסע",
+      "work": "Gemara Yevamos",
+      "ref": "Yevamos 62b",
+      "sefariaRef": "Yevamot 62b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          284
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "heardAs": "אין ראמאק און אין אין אין תימא דבר ... די דרייצענטע מידה",
+      "work": "Tomer Devorah",
+      "ref": "Tomer Devorah ch. 1, the thirteenth middah",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          290,
+          291,
+          295,
+          296
+        ],
+        "confidence": 0.65
+      }
+    },
+    {
+      "heardAs": "ספר הזכות",
+      "work": "Sefer HaZechus",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": {
+        "segs": [
+          304,
+          305,
+          306
+        ],
+        "confidence": 0.6
+      }
+    },
+    {
+      "heardAs": "אזוי ווי רשע ברענגט",
+      "work": "Rashi",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": {
+        "segs": [
+          312,
+          313,
+          314
+        ],
+        "confidence": 0.6
+      }
+    },
+    {
+      "heardAs": "הנהי' מהטובים ... שבעה סאכים גמי יחד",
+      "work": "Tehillim",
+      "ref": "Tehillim 133:1",
+      "sefariaRef": "Psalms 133:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          328,
+          329,
+          330
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "heardAs": "עס שטעט אין זייער אז פון רבי שמעון בן יחוי ... די חברי'",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          328,
+          332,
+          333
+        ],
+        "confidence": 0.65
+      }
+    },
+    {
+      "heardAs": "רבי שמעון האט געדארפט זיין אין די מיירע צוועלף יארן, און העלי הנביא איז געקומען",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 33b",
+      "sefariaRef": "Shabbat 33b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          338,
+          339,
+          341,
+          342,
+          346
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "heardAs": "ווי דער נשנה זאגט, וראש השנה",
+      "work": "Mishnah Rosh Hashanah",
+      "ref": "Rosh Hashanah 1:1",
+      "sefariaRef": "Mishnah Rosh Hashanah 1:1",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          357,
+          358,
+          360,
+          361
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "heardAs": "דער צב ברענגט דעם סימן פלג פרום",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": {
+        "segs": [
+          367,
+          368
+        ],
+        "confidence": 0.6
+      }
+    },
+    {
+      "heardAs": "ויח קנסת כל היהודים",
+      "work": "Esther",
+      "ref": "Esther 4:16",
+      "sefariaRef": "Esther 4:16",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          377,
+          378
+        ],
+        "confidence": 0.7
+      }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The seven ministers of Achashverosh had names that alluded to korbanos, so that their heavenly counterparts, the seven angels with the same names, could plead for the Jews in Vashti's judgment.",
+        "yi": "די זיבן שרים פון אחשורוש האבן געהאט נעמען וואס זענען א רמז אויף קרבנות, כדי די זיבן מלאכים אויבן מיט די זעלבע נעמען זאלן קענען רעדן א זכות פאר אידן ביים משפט פון ושתי."
+      },
+      "evidence": {
+        "segs": [
+          40,
+          46,
+          47,
+          48,
+          52
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "text": {
+        "en": "The angels' concern with the leap year was, at root, the moon's repair: Esther is the moon, and her kingship restores the moon's rule.",
+        "yi": "דער עסק פון די מלאכים מיט עיבור השנה איז אין עיקר געווען דער תיקון פון דער לבנה: אסתר איז די לבנה, און איר מלוכה ברענגט צוריק די ממשלה פון דער לבנה."
+      },
+      "evidence": {
+        "segs": [
+          205,
+          207,
+          208,
+          235,
+          237
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "text": {
+        "en": "The moon's jealousy of the sun is the root of the narrow eye in the world, which leads through the sin of the Tree of Knowledge and Kayin to the sale of Yosef and the exile.",
+        "yi": "די קנאה פון דער לבנה אויף דער חמה איז דער שורש פון צרות עין אין דער וועלט, וואס פירט דורכן חטא פון עץ הדעת און קין ביז מכירת יוסף און דעם גלות."
+      },
+      "evidence": {
+        "segs": [
+          154,
+          155,
+          163,
+          165,
+          167,
+          168
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "text": {
+        "en": "The number thirteen ties the repairs together: the thirteenth month, the thirteenth middah of seeing another's good, and the thirteenth year of Yosef in prison and of Rabbi Shimon in the cave.",
+        "yi": "די צאל דרייצן בינדט צוזאמען די תיקונים: דער דרייצנטער חודש, די דרייצנטע מדה פון זען דאס גוטס פון א צווייטן, און דאס דרייצנטע יאר פון יוסף אין תפיסה און פון רבי שמעון אין דער מערה."
+      },
+      "evidence": {
+        "segs": [
+          297,
+          298,
+          337,
+          350,
+          351,
+          352
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "text": {
+        "en": "Lag BaOmer and Purim are a pair: 'sheves achim gam yachad' of Rabbi Shimon and the gathering of all the Jews on Purim are one repair of the sale of Yosef.",
+        "yi": "ל\"ג בעומר און פורים זענען א זיווג: \"שבת אחים גם יחד\" פון רבי שמעון און \"לך כנוס את כל היהודים\" פון פורים זענען איין תיקון פאר מכירת יוסף."
+      },
+      "evidence": {
+        "segs": [
+          374,
+          377,
+          378,
+          380,
+          381
+        ],
+        "confidence": 0.7
+      }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "Rabbi Shimon's thirteenth year in the cave",
+        "yi": "רבי שמעון'ס דרייצנטע יאר אין דער מערה"
+      },
+      "retelling": {
+        "en": "Rabbi Shimon bar Yochai was to stay in the cave twelve years. At the end of the twelfth year Eliyahu Hanavi came to tell him that the decree was annulled and he could come out. When he came out he looked at the world with an unfavorable eye and could not bear that there were sins in the world. A heavenly voice told him to return to his cave, and so his twelve years became thirteen.",
+        "yi": "רבי שמעון בר יוחאי האט געדארפט זיין אין דער מערה צוועלף יאר. ביים סוף פונעם צוועלפטן יאר איז אליהו הנביא געקומען זאגן אז די גזירה איז בטל געווארן און ער מעג ארויסגיין. ווען ער איז ארויסגעגאנגען האט ער געקוקט אויף דער וועלט מיט א נישט גוטן אויג, און ער האט נישט געקענט סובל זיין אז עס זאלן זיין עבירות אויף דער וועלט. א בת קול האט אים געהייסן צוריקגיין אין זיין מערה, און אזוי זענען די צוועלף יאר געווארן דרייצן."
+      },
+      "people": [
+        "Rabbi Shimon bar Yochai",
+        "Eliyahu Hanavi"
+      ],
+      "evidence": {
+        "segs": [
+          338,
+          339,
+          342,
+          344,
+          346,
+          350
+        ],
+        "confidence": 0.8
+      }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "What does it mean that the holy angels busied themselves with the leap year?",
+        "yi": "וואס הייסט עס אז די הייליגע מלאכים האבן זיך עוסק געווען מיט עיבור השנה?"
+      },
+      "answer": {
+        "en": "The leap year repairs the moon's flaw, and Esther, who is the moon, becoming queen was that repair, which brought the salvation.",
+        "yi": "עיבור השנה איז א תיקון פאר פגימת הלבנה, און דאס וואס אסתר, וואס איז די לבנה, איז געווארן מלכה, איז געווען דער תיקון וואס האט געברענגט די ישועה."
+      },
+      "questionSegs": [
+        137,
+        138
+      ],
+      "answerSegs": [
+        141,
+        178,
+        205,
+        208,
+        237
+      ],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why did Rabbi Shimon's twelve years in the cave become thirteen?",
+        "yi": "פארוואס זענען רבי שמעון'ס צוועלף יאר אין דער מערה געווארן דרייצן?"
+      },
+      "answer": {
+        "en": "Because he came out looking at the world without a good eye; the thirteenth year, like the thirteenth month, is the repair of the moon's flaw.",
+        "yi": "ווייל ער איז ארויסגעגאנגען און געקוקט אויף דער וועלט אן א טובת עין; דאס דרייצנטע יאר, אזוי ווי דער דרייצנטער חודש, איז דער תיקון פון פגימת הלבנה."
+      },
+      "questionSegs": [
+        338,
+        349
+      ],
+      "answerSegs": [
+        342,
+        347,
+        351,
+        352
+      ],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "What connection is there between Purim and Lag BaOmer, which fall on the same weekday?",
+        "yi": "וואס פאר א שייכות איז דא צווישן פורים און ל\"ג בעומר, וואס פאלן אויף דעם זעלבן טאג פון דער וואך?"
+      },
+      "answer": {
+        "en": "They are a pair: Purim's gathering of all the Jews and Rabbi Shimon's 'sheves achim gam yachad' are the same repair of the sale of Yosef.",
+        "yi": "זיי זענען א זיווג: \"לך כנוס את כל היהודים\" פון פורים און \"שבת אחים גם יחד\" פון רבי שמעון זענען דער זעלבער תיקון פאר מכירת יוסף."
+      },
+      "questionSegs": [
+        372,
+        373
+      ],
+      "answerSegs": [
+        374,
+        377,
+        378,
+        380,
+        381
+      ],
+      "confidence": 0.7
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says one must look at another's virtues, even an earlier merit, and not only at his faults.",
+        "yi": "דער משגיח זאגט אז מ'דארף קוקן אויף די מעלות פון א צווייטן, אפילו א פריערדיגע מעלה, און נישט נאר אויף זיינע חסרונות."
+      },
+      "evidence": {
+        "segs": [
+          287,
+          288,
+          296
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "text": {
+        "en": "The Rav says the task of this generation is to bring back the middah of Rabbi Shimon bar Yochai: love between friends and peace.",
+        "yi": "דער משגיח זאגט אז דער תפקיד פון אונזער דור איז צוריקצוברענגען די מדה פון רבי שמעון בר יוחאי: אהבת חברים און שלום."
+      },
+      "evidence": {
+        "segs": [
+          410,
+          411,
+          412,
+          414,
+          415
+        ],
+        "confidence": 0.7
+      }
+    }
+  ],
+  "candidateTopics": [
+    "the flaw of the moon",
+    "good eye and jealousy",
+    "leap year and the thirteenth month",
+    "Esther and the moon",
+    "seven ministers of Achashverosh",
+    "Rabbi Shimon bar Yochai in the cave",
+    "students of Rabbi Akiva",
+    "sale of Yosef",
+    "Lag BaOmer and Purim",
+    "love between friends"
+  ],
+  "concepts": [
+    {
+      "he": "פגימת הלבנה",
+      "heardAs": [
+        "בגם הלבנה",
+        "פגומת הלבנה",
+        "בגימת הלבנה",
+        "פיקומת הלבנה"
+      ]
+    },
+    {
+      "he": "תיקון הלבנה",
+      "heardAs": [
+        "צוקן הלבנה",
+        "צוקון הלבנה",
+        "תצוקן הלבנה"
+      ]
+    },
+    {
+      "he": "טובת עין",
+      "heardAs": [
+        "טובת עיון",
+        "טבת עין",
+        "תובת עין",
+        "טובת איין"
+      ]
+    },
+    {
+      "he": "צרות עין",
+      "heardAs": [
+        "הצרת עין",
+        "צורת עין",
+        "צרות עיון"
+      ]
+    },
+    {
+      "he": "קנאה",
+      "heardAs": [
+        "כינע",
+        "כינע פון די מנחש"
+      ]
+    },
+    {
+      "he": "עיבור השנה",
+      "heardAs": [
+        "איבער א שונא",
+        "איבער השנה",
+        "שנת העיבול",
+        "איבער-אשונים"
+      ]
+    },
+    {
+      "he": "שנה מעוברת",
+      "heardAs": [
+        "שונא מיואל בערעס",
+        "שנע מיל בערעס",
+        "שם המאור בערעס"
+      ]
+    },
+    {
+      "he": "ראי פני המלך",
+      "heardAs": [
+        "רואיע פני המלך",
+        "רויע פני המלך",
+        "רעיון פני המלך"
+      ]
+    },
+    {
+      "he": "ידעי העתים",
+      "heardAs": [
+        "ידע העיטים",
+        "יודא אידים",
+        "ידעי איוטים"
+      ]
+    },
+    {
+      "he": "שרים של מעלה",
+      "heardAs": [
+        "סורים העליאנים"
+      ]
+    },
+    {
+      "he": "מכירת יוסף",
+      "heardAs": [
+        "מחירת יוסף"
+      ]
+    },
+    {
+      "he": "ל\"ג בעומר",
+      "heardAs": [
+        "לאקבאמער",
+        "לגביימל",
+        "לאגביימער"
+      ]
+    },
+    {
+      "he": "אהבת חברים",
+      "heardAs": [
+        "אהבה, אהבת חברים"
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Esther",
+      "heardAs": [
+        "אסתר"
+      ]
+    },
+    {
+      "name": "Vashti",
+      "heardAs": [
+        "וואשתי",
+        "וואשטא",
+        "ווארשי"
+      ]
+    },
+    {
+      "name": "Achashverosh",
+      "heardAs": [
+        "חשבורש",
+        "א שברש",
+        "חשבור'ש"
+      ]
+    },
+    {
+      "name": "Belshazzar",
+      "heardAs": [
+        "בעש''צ"
+      ]
+    },
+    {
+      "name": "Haman",
+      "heardAs": [
+        "האמאן",
+        "האמען"
+      ]
+    },
+    {
+      "name": "the Chasam Sofer",
+      "heardAs": [
+        "חתם סופר",
+        "חתם ספר"
+      ]
+    },
+    {
+      "name": "Rashi",
+      "heardAs": [
+        "רשע"
+      ]
+    },
+    {
+      "name": "Rabbi Akiva",
+      "heardAs": [
+        "רבי יקיבא"
+      ]
+    },
+    {
+      "name": "Rabbi Shimon bar Yochai",
+      "heardAs": [
+        "רבי שמעון בן יחוד",
+        "רבי שמעון בן יחוי",
+        "ויקנא בן יוכב"
+      ]
+    },
+    {
+      "name": "Shimon ben Yaakov",
+      "heardAs": [
+        "שמעון בן יענקאוו",
+        "שמעון בן יענקייב",
+        "שמעון בן יואלג"
+      ]
+    },
+    {
+      "name": "Yosef",
+      "heardAs": [
+        "יוסף"
+      ]
+    },
+    {
+      "name": "Eliyahu Hanavi",
+      "heardAs": [
+        "העלי הנביא"
+      ]
+    },
+    {
+      "name": "the Ramak",
+      "heardAs": [
+        "ראמאק"
+      ]
+    },
+    {
+      "name": "Dovid Hamelech",
+      "heardAs": [
+        "דוד מלכה"
+      ]
+    }
+  ],
+  "asrNotes": "Yiddish ASR is poor and the Megillah, Gemara and Zohar quotations are heavily garbled. Segment 0 spans the first 5:44 with only a fragment transcribed, segment 0 is treated as a noise section; the last few segments (421-425) are a request for a niggun and are absorbed into the closing section. The calculation about the day Vashti's father was killed (segs 71-103), the Tosafos cited around segs 16-22, the Gemara in Avodah Zarah (segs 87-92), Sefer HaZechus (segs 304-307) and a gematria in segs 383-384 could not be recovered with confidence and are left out or kept vague."
+}

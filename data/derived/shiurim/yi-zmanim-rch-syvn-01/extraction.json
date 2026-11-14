@@ -1,0 +1,531 @@
+{
+  "shiurId": "yi-zmanim-rch-syvn-01",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "On Rosh Chodesh Sivan the Rav teaches that the Torah is given anew every year, and that the arrival at Sinai, made in unity and teshuvah, is a time to take on new resolutions whose acceptance itself sustains the world.",
+      "yi": "דער משגיח לערנט אויף ראש חודש סיון אז די תורה ווערט יעדעס יאר פון ניי געגעבן, און אז דאס אנקומען קיין סיני, מיט אחדות און מיט תשובה, איז א צייט צו נעמען אויף זיך נייע קבלות, וואס די קבלה אליין האלט אויף די וועלט."
+    },
+    "abstract": {
+      "en": "The Rav opens by explaining why the people gather in the days before Shavuos: sitting together as one man with one heart is a goal in itself, and the Gemara shows that avodah needs a stir of many people. Following the Avodas Yisroel, he studies the verses of Bachodesh hashlishi day by day. Rashi's words 'that the words of Torah be new to you as if given today' answer the Magen Avraham's question about 'the day of the giving of our Torah': it is given anew each year. Rosh Chodesh is the renewal of the moon, a time to take on new kabbalos, and from the Simchas HaRegel and the Gemara in Shabbos he shows how precious acceptance itself is. Leaving Rephidim means shaking off weakness in Torah with teshuvah. He speaks of unity, facing the 'east', the dangers facing Jews and the apathy of the world, and ends that each Jew's added acceptance can tip the whole world.",
+      "yi": "דער משגיח עפנט מיט ערקלערן פארוואס מען קומט זיך צוזאמען אין די טעג פאר שבועות: צוזאמענזיצן כאיש אחד בלב אחד איז א תכלית פאר זיך, און די גמרא ווייזט אז די עבודה דארף א רגש פון א סך אידן. לויט דעם עבודת ישראל לערנט ער יעדן טאג די פסוקים פון בחודש השלישי. רש\"י'ס ווערטער \"שיהיו דברי תורה חדשים עליך כאילו היום ניתנה\" פארענטפערן די קשיא פונעם מגן אברהם אויף \"יום מתן תורתנו\": די תורה ווערט יעדעס יאר פון ניי געגעבן. ראש חודש איז די התחדשות פון דער לבנה, א צייט צו נעמען נייע קבלות, און פונעם שמחת הרגל און פון דער גמרא אין שבת ווייזט ער ווי טייער די קבלה אליין איז. ארויסגיין פון רפידים מיינט אפשאקלען דעם רפיון ידים פון תורה מיט תשובה. ער רעדט וועגן אחדות, וועגן קוקן צום \"מזרח\", וועגן די סכנות פאר אידן און דעם גלייכגילט פון דער וועלט, און ענדיגט אז יעדן אידס קבלה קען מכריע זיין די גאנצע וועלט."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Sitting together as one man with one heart before Shavuos is a goal in itself, and it is also the setting for words of chizuk.",
+          "yi": "צוזאמענזיצן כאיש אחד בלב אחד פאר שבועות איז א תכלית פאר זיך, און עס איז אויך דער ארט צו רעדן דברי התעוררות."
+        },
+        "evidence": { "segs": [17, 18, 19, 21], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The Torah is given anew every Shavuos, so the words of Torah must feel new each day, as if given today.",
+          "yi": "די תורה ווערט פון ניי געגעבן יעדן שבועות, ממילא דארפן די דברי תורה זיין ניי יעדן טאג, כאילו היום ניתנה."
+        },
+        "evidence": { "segs": [75, 77, 86, 87], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Rosh Chodesh, the renewal of the moon, renews the spiritual growth in a Jew's soul and is a time to take on new kabbalos.",
+          "yi": "ראש חודש, די התחדשות פון דער לבנה, באנייט די רוחניות'דיקע תבואות אין א אידס נשמה, און איז א צייט צו נעמען אויף זיך נייע קבלות."
+        },
+        "evidence": { "segs": [101, 109, 114, 115], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Accepting the mitzvos is itself precious to Hashem; the world waited not for the giving of the Torah but for the Jews' acceptance of it.",
+          "yi": "דאס מקבל זיין די מצוות אליין איז טייער ביים רבונו של עולם; די וועלט האט געווארט נישט אויף מתן תורה נאר אויף דעם וואס אידן וועלן מקבל זיין די תורה."
+        },
+        "evidence": { "segs": [160, 174, 175, 184, 185], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Leaving Rephidim, read as weakness in Torah, means shaking off that weakness with teshuvah and strengthening oneself in Torah.",
+          "yi": "ארויסגיין פון רפידים, וואס מיינט רפיון ידים מדברי תורה, הייסט אפשאקלען די שוואכקייט מיט תשובה און זיך נעמען מיט א התחזקות אין תורה."
+        },
+        "evidence": { "segs": [197, 204, 212, 234], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "A Jew should face 'east', toward the one point of glorifying Hashem and toward the future, not back at lost days.",
+          "yi": "א איד דארף זיין פנים למזרח, געווענדט צו דער איינער נקודה פון מהולל שם ה' און צום עתיד, און נישט קוקן צוריק אויף פארלוירענע טעג."
+        },
+        "evidence": { "segs": [263, 270, 297, 301, 305], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Since the world's existence hangs on accepting the Torah, each Jew's added acceptance before Shavuos can tip the whole world to merit.",
+          "yi": "ווייל די וועלט'ס קיום הענגט אין קבלת התורה, קען יעדן אידס צוגעלייגטע קבלה פאר שבועות מכריע זיין די גאנצע וועלט לכף זכות."
+        },
+        "evidence": { "segs": [439, 444, 458, 460, 465], "confidence": 0.75 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-04-01-rch-sivan",
+      "startSeg": 0,
+      "endSeg": 53,
+      "title": { "en": "Why gather before Shavuos", "yi": "פארוואס מען קומט זיך צוזאמען פאר שבועות" },
+      "summary": {
+        "en": "The Rav explains that sitting together as one man with one heart is a goal in itself, brings the Avodas Yisroel's custom of learning the verses of Bachodesh hashlishi each day from Rosh Chodesh, and cites the Gemara that the Temple service was arranged with several lotteries so there would be a stir of people.",
+        "yi": "דער משגיח ערקלערט אז צוזאמענזיצן כאיש אחד בלב אחד איז א תכלית פאר זיך, ברענגט דעם עבודת ישראל אז מען זאל פון ראש חודש יעדן טאג לערנען די פסוקים פון בחודש השלישי, און ברענגט די גמרא אז מען האט געמאכט עטליכע פייסות אין בית המקדש כדי עס זאל זיין א רגש."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-04-01-rch-sivan",
+      "startSeg": 54,
+      "endSeg": 126,
+      "title": { "en": "Torah new each day; Rosh Chodesh renewal", "yi": "די תורה ניי יעדן טאג; התחדשות פון ראש חודש" },
+      "summary": {
+        "en": "The Rav answers the Magen Avraham's question on 'the day of the giving of our Torah' by explaining that the Torah is given anew every year, reads Rashi's 'that the words of Torah be new to you', and explains that the Jews arrived at Sinai on Rosh Chodesh because the renewal of the moon renews a Jew's soul and is the time for new kabbalos, even though all beginnings are hard.",
+        "yi": "דער משגיח פארענטפערט די קשיא פונעם מגן אברהם אויף \"יום מתן תורתנו\" אז די תורה ווערט יעדעס יאר פון ניי געגעבן, לערנט רש\"י \"שיהיו דברי תורה חדשים עליך\", און ערקלערט אז אידן זענען אנגעקומען קיין סיני ראש חודש ווייל די התחדשות פון דער לבנה באנייט א אידס נשמה און איז די צייט פאר נייע קבלות, הגם כל ההתחלות קשות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-04-01-rch-sivan",
+      "startSeg": 127,
+      "endSeg": 186,
+      "title": { "en": "The power of kabbalah", "yi": "די כח פון קבלה" },
+      "summary": {
+        "en": "From the Simchas HaRegel, citing Rabbi Gedalia Chayun on a Midrash, the Rav explains that every mitzvah a convert does is compounded by the mitzvah of her acceptance; the Gemara's 'you captured My heart with one of your eyes' shows that acceptance alone is dear to Hashem, and the world waited for the Jews' acceptance of the Torah.",
+        "yi": "פונעם שמחת הרגל, וואס ברענגט פון רבי גדליה חיון אויף א מדרש, ערקלערט דער משגיח אז יעדע מצוה וואס א גיורת טוט ווערט פארשטארקט מיט דער מצוה פון איר קבלה; די גמרא \"לבבתני באחת מעיניך\" ווייזט אז די קבלה אליין איז טייער ביים רבונו של עולם, און די וועלט האט געווארט אויף אידנס קבלת התורה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-04-01-rch-sivan",
+      "startSeg": 187,
+      "endSeg": 241,
+      "title": { "en": "Leaving Rephidim with teshuvah", "yi": "ארויסגיין פון רפידים מיט תשובה" },
+      "summary": {
+        "en": "The Rav says Rosh Chodesh is when the Jews accepted upon themselves with teshuvah, urges taking on one middah to work on, reads Rephidim as weakness in Torah, and brings Rashi that their arrival at Sinai and their departure from Rephidim were both with teshuvah.",
+        "yi": "דער משגיח זאגט אז ראש חודש האבן אידן מקבל געווען אויף זיך מיט תשובה, רעדט וועגן נעמען איין מידה אויסצוארבעטן, טייטשט רפידים אלס רפיון ידים מדברי תורה, און ברענגט רש\"י אז סיי די ביאה קיין מדבר סיני און סיי די נסיעה פון רפידים זענען געווען בתשובה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [1],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-04-01-rch-sivan",
+      "startSeg": 242,
+      "endSeg": 326,
+      "title": { "en": "One heart, facing east", "yi": "בלב אחד, פנים למזרח" },
+      "summary": {
+        "en": "The Rav contrasts Sinai's unity with the strife elsewhere, ties Sivan's sign of twins to unity, and explains Rashi's 'wherever it says neged, it means facing east' as being turned toward the one point of glorifying Hashem and toward the future; he ends with the Gemara that the earth feared until the Jews accepted the Torah.",
+        "yi": "דער משגיח שטעלט אנטקעגן די אחדות ביי סיני מיט די מחלוקות, פארבינדט דעם מזל תאומים פון סיון מיט אחדות, און ערקלערט רש\"י \"כל מקום שאתה מוצא נגד פנים למזרח\" אז מען דארף זיין געווענדט צו דער איינער נקודה פון מהולל שם ה' און צום עתיד; ער ענדיגט מיט דער גמרא אז די ארץ האט מורא געהאט ביז אידן האבן מקבל געווען די תורה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-04-01-rch-sivan",
+      "startSeg": 327,
+      "endSeg": 438,
+      "title": { "en": "The danger and the world's apathy", "yi": "די סכנה און דער גלייכגילט פון דער וועלט" },
+      "summary": {
+        "en": "The Rav describes the danger facing Jews in Eretz Yisroel and the growing hatred elsewhere, says the world suffers from apathy and distraction, and tells how his father-in-law once rebuked a Vienna community meeting busy with honor while Hitler grew strong; the only counsel is accepting Torah and mitzvos and davening for Klal Yisroel.",
+        "yi": "דער משגיח שילדערט די סכנה פאר אידן אין ארץ ישראל און די וואקסנדיגע שנאה אין אנדערע לענדער, זאגט אז די וועלט ליידט פון גלייכגילטיגקייט און פיזור הנפש, און דערציילט ווי זיין שווער האט אמאל מוסר געזאגט ביי א פארזאמלונג פון דער קהלה אין ווין וואס איז געווען פארנומען מיט כבוד בשעת היטלער איז געווארן שטארק; די איינציגע עצה איז מקבל זיין עול תורה ומצוות און בעטן פאר כלל ישראל."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-04-01-rch-sivan",
+      "startSeg": 439,
+      "endSeg": 501,
+      "title": { "en": "Each Jew can tip the world", "yi": "יעדער איד קען מכריע זיין די וועלט" },
+      "summary": {
+        "en": "The Rav says the world's existence hung on the acceptance of the Torah, brings the Gemara that one person can tip the whole world to merit, asks each one to take on a little more learning and coming earlier to davening, and closes with Rashi that Moshe's ascents were early in the morning, a blessing and a l'chaim.",
+        "yi": "דער משגיח זאגט אז די וועלט'ס קיום איז געהאנגען אין קבלת התורה, ברענגט די גמרא אז איין מענטש קען מכריע זיין די גאנצע וועלט לכף זכות, בעט אז יעדער זאל נעמען אויף זיך אביסל מער לערנען און פריער קומען דאווענען, און ענדיגט מיט רש\"י אז משה רבינו'ס עליות זענען געווען בהשכמה, מיט א ברכה און א לחיים."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "עס שטעט אין עבידת ישראל",
+      "work": "Avodas Yisroel",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [24, 25, 28], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אין די בר חודש השלישי לצעות בני ישראל מילת מצרים, ביי אים הזה בויען מדבר סיני",
+      "work": "Shemos",
+      "ref": "Shemos 19:1",
+      "sefariaRef": "Exodus 19:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [31, 32, 79], "confidence": 0.9 }
+    },
+    {
+      "heardAs": "אין די גמרא אין ירמי אז מען האט געמאכט א פייס",
+      "work": "Gemara Yoma",
+      "ref": "Yoma 24b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [36, 37, 42, 49], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די גמרא שטעט בבית אלה estava קומען אהלך ברגש",
+      "work": "Tehillim",
+      "ref": "Tehillim 55:15",
+      "sefariaRef": "Psalms 55:15",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [49, 50], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "וואס דער מגן אברהם פרעגט",
+      "work": "Magen Avraham",
+      "ref": "Magen Avraham, Orach Chaim 494",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [68, 69, 72, 73], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "שיהיו די דברי צרה חדשים עלך, וכאילו היום נצנה",
+      "work": "Rashi",
+      "ref": "Rashi on Shemos 19:1",
+      "sefariaRef": "Rashi on Exodus 19:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [79, 82, 86, 98], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "אם אטא תקבלה עליכם, יערב לכם ... שכולו את חלו'ס קושיות",
+      "work": "Rashi",
+      "ref": "Rashi on Shemos 19:5",
+      "sefariaRef": "Rashi on Exodus 19:5",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [117, 118, 119], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער שמחת הרגל פון חידור ברענגט ארונטער א פשט פון רבי גדוליה חייוון",
+      "work": "Simchas HaRegel",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [127, 129], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "עס שטעט אין מדרש ... אמר רבי",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [131, 134], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "לבבטינו אחס יקלה לבבטינו ביחס מיניך",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 88b",
+      "sefariaRef": "Shabbat 88b",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [161, 163, 169, 170], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דאס וואלט זאגט די גמרא אז די וועלט האט געוויילט אויף שישי בסיון",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 88a",
+      "sefariaRef": "Shabbat 88a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [178, 179, 180], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "א חזן זאגן מרפידים מיינט רופל ידים מדברי תורה",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [197, 204], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "מה ביוסן למדבר סיני בטשאווה, הפן את היתם הרפידים בטשאווה",
+      "work": "Rashi",
+      "ref": "Rashi on Shemos 19:2",
+      "sefariaRef": "Rashi on Exodus 19:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [222, 223, 224, 234], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "עס שטעט פאר איך און שם ישראל, זאגט רשע כי איר שחרד ולבחרד",
+      "work": "Rashi",
+      "ref": "Rashi on Shemos 19:2",
+      "sefariaRef": "Rashi on Exodus 19:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [242, 243], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "נגד ההל, סכרשה למזרחי, וכל מקום שאתה מצו, נגד הנים למזרח",
+      "work": "Rashi",
+      "ref": "Rashi on Shemos 19:2",
+      "sefariaRef": "Rashi on Exodus 19:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [253, 254, 255, 279], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "ממוזרח שמש עד מבואו מהלל שם השם",
+      "work": "Tehillim",
+      "ref": "Tehillim 113:3",
+      "sefariaRef": "Psalms 113:3",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [266, 267], "confidence": 0.9 }
+    },
+    {
+      "heardAs": "דער גמרא זאגט, ארץ יורב איז שקטא",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 88a",
+      "sefariaRef": "Shabbat 88a",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [314, 315, 320, 324], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אפילו איין מענטש זאגט איר גמרא ... חץ יחי וחץ יזכי",
+      "work": "Gemara Kiddushin",
+      "ref": "Kiddushin 40b",
+      "sefariaRef": "Kiddushin 40b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [446, 447, 456], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ומשה עולה, זאגט רשע, ביום השני, וכל עלי יוסף בהשקר",
+      "work": "Rashi",
+      "ref": "Rashi on Shemos 19:3",
+      "sefariaRef": "Rashi on Exodus 19:3",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [484, 485, 486, 487], "confidence": 0.85 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Magen Avraham's question how the sixth of Sivan can be called 'the day of the giving of our Torah' is answered simply: the Torah is given anew each Shavuos, so this year's Shavuos is truly that day.",
+        "yi": "די קשיא פונעם מגן אברהם ווי אזוי מ'קען רופן ו' סיון \"יום מתן תורתנו\" איז פשוט פארענטפערט: די תורה ווערט יעדן שבועות פון ניי געגעבן, ממילא איז היינטיגער שבועות טאקע יענער טאג."
+      },
+      "evidence": { "segs": [69, 72, 74, 75, 77], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Jews reached Sinai on Rosh Chodesh because the moon's renewal renews the 'crops' of every Jew's soul, which grow from the moon, making it the time for new kabbalos.",
+        "yi": "אידן זענען אנגעקומען קיין סיני ראש חודש ווייל די התחדשות פון דער לבנה באנייט די תבואות פון יעדן אידס נשמה, וואס וואקסן פון דער לבנה, און דערפאר איז דאס די צייט פאר נייע קבלות."
+      },
+      "evidence": { "segs": [99, 101, 109, 114, 115], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Through Rabbi Gedalia Chayun, a convert's every later mitzvah is 'compounded' with the mitzvah of her conversion, because without that acceptance she would never have done it.",
+        "yi": "לויט רבי גדליה חיון ווערט יעדע שפעטערדיגע מצוה פון א גיורת צונויפגעשטעלט מיט דער מצוה פון איר גירות, ווייל אן יענער קבלה וואלט זי עס קיינמאל נישט געטאן."
+      },
+      "evidence": { "segs": [141, 147, 148, 151, 153], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The world did not wait for the giving of the Torah but for the Jews' acceptance of it, as the Gemara's 'one of your eyes' refers to the moment of acceptance before fulfillment.",
+        "yi": "די וועלט האט נישט געווארט אויף מתן תורה נאר אויף אידנס קבלה, אזוי ווי די גמרא \"באחת מעיניך\" גייט אויף דעם מאמענט פון קבלה פאר'ן מקיים זיין."
+      },
+      "evidence": { "segs": [169, 171, 184, 185, 186], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Rashi's 'wherever it says neged, it means facing east' becomes a call to keep all of life turned toward one point, the glorification of Hashem, rising like the dawn, without being scattered by obstacles or by looking back.",
+        "yi": "רש\"י'ס \"כל מקום שאתה מוצא נגד פנים למזרח\" ווערט א רוף צו האלטן דאס גאנצע לעבן געווענדט צו איין נקודה, מהולל שם ה', וואס הייבט זיך אן ווי דער פרימארגן, אן זיך לאזן צעשפרייטן פון שטערונגען אדער פון קוקן צוריק."
+      },
+      "evidence": { "segs": [270, 271, 283, 287, 297, 301], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The world's apathy in the face of danger is described as a disease, a failure to notice what is happening.",
+        "yi": "די גלייכגילטיגקייט פון דער וועלט אקעגן די סכנה ווערט באשריבן ווי א מחלה, וואס מען מאכט זיך נישט וויסנדיג."
+      },
+      "evidence": { "segs": [390, 391, 392, 393], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "The Rav's father-in-law rebukes the Vienna community",
+        "yi": "דעם משגיח'ס שווער מוסר'ט די קהלה אין ווין"
+      },
+      "retelling": {
+        "en": "The Rav's father-in-law, a respected member of the Jewish community leadership in Vienna, told him how the community members would meet and talk about politics, positions, honor and other foolishness. Once he stood up and gave them a drashah: did they not see that Hitler in Germany was growing strong? Why were they busy with seeking honor and seats instead of doing something to save the Jews of Austria? The Rav adds that business went on as usual.",
+        "yi": "דעם משגיח'ס שווער, א חשוב'ער מיטגליד פון דער קהלה אין ווין, האט אים דערציילט ווי די מיטגלידער פלעגן זיך צוזאמענקומען און רעדן וועגן פאליטיק, שטעלעס, כבוד און אנדערע נארישקייטן. איינמאל איז ער אויפגעשטאנען און געהאלטן א דרשה פאר זיי: זעט איר נישט אז היטלער אין דייטשלאנד ווערט שטארק? פארוואס זענט איר פארנומען מיט כבוד און בענקלעך, אנשטאט טון עפעס אז די עסטרייכישע אידן זאלן געראטעוועט ווערן? דער משגיח לייגט צו אז אלעס איז ווייטער געגאנגען ווי געווענליך."
+      },
+      "people": ["Hitler"],
+      "evidence": { "segs": [395, 397, 402, 405, 408, 411], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why did the Kohanim disperse and gather again for several lotteries instead of one?",
+        "yi": "פארוואס האבן די כהנים זיך צעגאנגען און זיך נאכאמאל צוזאמענגעקומען צו עטליכע פייסות, און נישט איין פייס?"
+      },
+      "answer": {
+        "en": "Because the Temple service needs a stir of many people, as the verse says 'in the house of G-d we walk with a throng'.",
+        "yi": "ווייל די עבודה אין בית המקדש דארף א רגש פון א סך מענטשן, אזוי ווי דער פסוק זאגט \"בבית אלקים נהלך ברגש\"."
+      },
+      "questionSegs": [43, 46, 48],
+      "answerSegs": [49, 50, 53],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "How can the sixth of Sivan be called 'the day of the giving of our Torah' if, per Rabbi Yossi, it was given on the seventh?",
+        "yi": "ווי אזוי קען מען זאגן אויף ו' סיון \"יום מתן תורתנו\" אויב לויט רבי יוסי איז די תורה געגעבן געווארן ז' סיון?"
+      },
+      "answer": {
+        "en": "The sefarim say simply that the Torah is given anew each Shavuos, so today is the day of its giving.",
+        "yi": "די ספרים זאגן פשוט אז די תורה ווערט יעדן שבועות פון ניי געגעבן, ממילא איז היינט דער טאג פון מתן תורה."
+      },
+      "questionSegs": [69, 70, 72],
+      "answerSegs": [74, 75, 77],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "What novelty does the Midrash teach about the mitzvos of a convert?",
+        "yi": "וואס איז דער חידוש פונעם מדרש וועגן די מצוות פון א גיורת?"
+      },
+      "answer": {
+        "en": "Each mitzvah she does is joined by the mitzvah of her conversion, since without that acceptance she would not have done it.",
+        "yi": "צו יעדער מצוה וואס זי טוט ווערט מצטרף די מצוה פון איר גירות, ווייל אן יענער קבלה וואלט זי עס נישט געטאן."
+      },
+      "questionSegs": [135, 137],
+      "answerSegs": [141, 147, 148, 151],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Which of the seven middos should one take on to work on?",
+        "yi": "וועלכע מידה פון די זיבן מידות זאל מען נעמען אויסצוארבעטן?"
+      },
+      "answer": {
+        "en": "One middah suffices, since one middah draws the others with it; one cannot concentrate on everything at once.",
+        "yi": "איין מידה איז גענוג, ווייל איין מידה שלעפט מיט די אנדערע מידות; מען קען זיך נישט פארלייגן אויף אלעס אויף איינמאל."
+      },
+      "questionSegs": [191, 192],
+      "answerSegs": [193, 194, 195],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "Why do people not flee from such great danger?",
+        "yi": "פארוואס אנטלויפן מענטשן נישט פון אזא גרויסע סכנה?"
+      },
+      "answer": {
+        "en": "They suffer from a disease the whole world suffers from: apathy, distraction, not knowing what is happening.",
+        "yi": "זיי ליידן פון א מחלה וואס די גאנצע וועלט ליידט: גלייכגילטיגקייט, פיזור הנפש, מען ווייסט נישט וואס עס טוט זיך."
+      },
+      "questionSegs": [386, 388],
+      "answerSegs": [389, 390, 391, 393],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says Rosh Chodesh is a time to take on new kabbalos: to learn better, daven better, give tzedakah better, or work on one middah.",
+        "yi": "דער משגיח זאגט אז ראש חודש איז א צייט צו נעמען אויף זיך נייע קבלות: בעסער לערנען, בעסער דאווענען, בעסער געבן צדקה, אדער ארבעטן אויף איין מידה."
+      },
+      "evidence": { "segs": [115, 188, 189, 190], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says this is the time to shake off weakness in Torah and take on new resolutions with teshuvah.",
+        "yi": "דער משגיח זאגט אז יעצט איז די צייט אפצושאקלען דעם רפיון ידים און נעמען אויף זיך נייע החלטות מיט תשובה."
+      },
+      "evidence": { "segs": [205, 212, 240, 241], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says not to look back at lost days but toward the 'east' and the new day, taking on a new kabbalah.",
+        "yi": "דער משגיח זאגט מען זאל נישט קוקן צוריק אויף פארלוירענע טעג נאר צום מזרח און צום נייעם טאג, און נעמען אויף זיך א נייע קבלה."
+      },
+      "evidence": { "segs": [301, 304, 305, 306], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one must daven to Hashem for the rescue of Klal Yisroel and add one's merits to theirs.",
+        "yi": "דער משגיח זאגט אז מען דארף בעטן ביים רבונו של עולם אז כלל ישראל זאל געראטעוועט ווערן, און צולייגן די אייגענע זכותים."
+      },
+      "evidence": { "segs": [432, 433, 435, 437], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav asks each person to take on a little more learning and to come earlier to davening before Shavuos.",
+        "yi": "דער משגיח בעט אז יעדער זאל נעמען אויף זיך אביסל מער לערנען און פריער קומען דאווענען פאר שבועות."
+      },
+      "evidence": { "segs": [465, 467, 471, 473], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "Rosh Chodesh Sivan",
+    "preparation for Shavuos",
+    "renewal in Torah",
+    "kabbalah and accepting mitzvos",
+    "teshuvah before Matan Torah",
+    "unity of Klal Yisroel",
+    "Rephidim and weakness in Torah",
+    "facing east",
+    "apathy in times of danger",
+    "one person tipping the world"
+  ],
+  "concepts": [
+    { "he": "התחדשות", "heardAs": ["סחדשות", "התחדשים", "אין סחדש"] },
+    { "he": "קבלה", "heardAs": ["קאבאלע", "קבלה", "קארבאלא"] },
+    { "he": "רפיון ידים", "heardAs": ["רופל ידים", "רפי'ן ידים", "רפא ידים"] },
+    { "he": "כאיש אחד בלב אחד", "heardAs": ["כאיש אחד בלב אחד", "כישוף וללב אחר"] },
+    { "he": "פיזור הנפש", "heardAs": ["פיזור הנפש", "פיזל", "פיזערע נפש"] },
+    { "he": "פנים למזרח", "heardAs": ["נגד הנים למזרח", "פנים למזרח"] },
+    { "he": "תאומים", "heardAs": ["תאומים", "צאומים", "צו אומים"] },
+    { "he": "פייס", "heardAs": ["פייס", "פייסן"] },
+    { "he": "רגש", "heardAs": ["ברגש", "ברגז"] },
+    { "he": "תשובה", "heardAs": ["בטשאווה", "תשעה'טען"] },
+    { "he": "השכמה", "heardAs": ["בהשקר", "בהשכמה"] },
+    { "he": "יום מתן תורתנו", "heardAs": ["יו מתן תורותינו", "יום מתן תורתנו"] }
+  ],
+  "people": [
+    { "name": "Rashi", "heardAs": ["רשע", "רש''ה", "רש״י"] },
+    { "name": "Magen Avraham", "heardAs": ["מגן אברהם", "מגנב רמז"] },
+    { "name": "Rabbi Yossi", "heardAs": ["רבי יוסי"] },
+    { "name": "the Chida", "heardAs": ["חידור"] },
+    { "name": "Rabbi Gedalia Chayun", "heardAs": ["רבי גדוליה חייוון"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה", "משה רבינו"] },
+    { "name": "Hitler", "heardAs": ["היטלער"] }
+  ],
+  "asrNotes": "Yiddish ASR fair for the Rav's own speech but heavy on garbled quotations (pesukim and Rashi on Shemos 19 recoverable from context). The Midrash in the Simchas HaRegel passage (segs 131-137) could not be identified, and the Rashi on naaseh venishma (segs 181-183) is too garbled to cite. The name of a guest speaker at the opening (seg 7) and the father-in-law's surname (seg 395) are uncertain and left out. No long noise stretches."
+}

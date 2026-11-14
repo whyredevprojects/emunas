@@ -1,0 +1,434 @@
+{
+  "shiurId": "yi-zmanim-spyrh-09",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "In the days of sefirah, when the midos are to be refined, the Rav explains the ten sefiros in simple terms as the ten utterances of creation and the seven midos every person carries.",
+      "yi": "אין די ימי הספירה, ווען מ'דארף מתקן זיין די מידות, ערקלערט דער משגיח די עשר ספירות על פי פשט, אלס די עשרה מאמרות פון בריאת העולם און די זיבן מידות וואס יעדער מענטש האט אין זיך."
+    },
+    "abstract": {
+      "en": "The Rav opens by noting that the days of sefirah are the time to refine one's midos, and that the Tanya, unlike seforim on the parsha, explains matters step by step. He identifies the ten utterances with which the world was created with the ten sefiros, a key to much in Chassidic seforim. He divides them into the upper three and the seven lower ones, and explains that time itself is a creation, so the Torah's preceding the world by two thousand years means two levels above chesed. He then explains each midah: chesed as giving, gevurah as withdrawal, tiferes as a beautiful blend like a picture of many colors, netzach and hod as winning and yielding, yesod as guarding the bris, and malchus as accepting Heaven's rule. He ties the weeks of sefirah to the midos, explains chochmah and binah, and closes with the Ba'al Shem Tov on misused chesed.",
+      "yi": "דער משגיח עפנט אז די ימי הספירה זענען די צייט צו מתקן זיין די מידות, און אז דער ספר תניא, נישט אזוי ווי ספרים אויף דער סדרה, איז מבאר די ענינים איינס נאכן אנדערן. ער זאגט אז די עשרה מאמרות מיט וואס דער אייבערשטער האט באשאפן די וועלט ווערן גערופן עשר ספירות, און דאס איז א שליסל צו אסאך זאכן אין ספרי חסידות. ער טיילט זיי אין די ג' ראשונות און די שבע תחתונות, און ערקלערט אז די צייט אליין איז א בריאה, ממילא מיינט \"צוויי טויזנט יאר\" פאר בריאת העולם צוויי מדרגות העכער פון חסד. דערנאך איז ער מסביר יעדע מידה: חסד איז געבן, גבורה איז זיך צוריקהאלטן, תפארת איז א שיינע מישונג אזוי ווי א בילד מיט אסאך פארבן, נצח און הוד זענען געווינען און זיך בויגן, יסוד איז שמירת הברית, און מלכות איז קבלת עול מלכות שמים. ער פארבינדט די וואכן פון ספירה מיט די מידות, ערקלערט חכמה און בינה, און ענדיגט מיט דעם בעל שם טוב איבער א חסד וואס מ'נוצט שלעכט."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The Rav says the days of sefirah are the time to refine the midos, and the Tanya explains them in an orderly way, from the easy matters upward.",
+          "yi": "דער משגיח זאגט אז די ימי הספירה זענען די צייט צו מתקן זיין די מידות, און דער תניא איז זיי מבאר מיט א סדר, פון די גרינגע ענינים העכער און העכער."
+        },
+        "evidence": { "segs": [7, 10, 11, 30, 31], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "The ten utterances of creation are the ten sefiros: three upper ones above the world, and seven lower ones that are the midos a person has.",
+          "yi": "די עשרה מאמרות פון בריאת העולם זענען די עשר ספירות: דריי אויבערשטע וואס זענען העכער פון דער וועלט, און זיבן נידעריגע וואס זענען די מידות וואס א מענטש האט."
+        },
+        "evidence": { "segs": [62, 64, 73, 76, 90, 131], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Chesed is giving out of oneself, gevurah is pulling back into oneself, and tiferes is the blend of the two, as in Avraham, Yitzchak and Yaakov.",
+          "yi": "חסד איז ארויסגיין פון זיך און געבן, גבורה איז זיך איינהאלטן אין זיך, און תפארת איז די מישונג פון ביידע, אזוי ווי ביי אברהם, יצחק און יעקב."
+        },
+        "evidence": { "segs": [141, 159, 167, 181, 195, 197], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Netzach and hod give a person a firm existence, one by winning and the other by yielding; yesod is guarding the bris, and malchus is accepting the rule of Heaven.",
+          "yi": "נצח און הוד געבן א מענטש א קיום, איינס דורך געווינען און דאס אנדערע דורך זיך בויגן; יסוד איז שמירת הברית, און מלכות איז קבלת עול מלכות שמים."
+        },
+        "evidence": { "segs": [233, 254, 266, 279, 280, 298], "confidence": 0.65 }
+      },
+      {
+        "text": {
+          "en": "Each week of sefirah refines one midah, and since every midah contains all the others, each day is a different combination.",
+          "yi": "יעדע וואך פון ספירה איז מען מתקן איין מידה, און ווייל יעדע מידה האט אין זיך אלע אנדערע, איז יעדער טאג אן אנדער צוזאמשטעל."
+        },
+        "evidence": { "segs": [342, 353, 416, 417, 419], "confidence": 0.7 }
+      },
+      {
+        "text": {
+          "en": "Above the seven midos are the mochin: chochmah is acquiring knowledge, and binah is building one idea on another to reach a new understanding.",
+          "yi": "איבער די זיבן מידות זענען די מוחין: חכמה איז קריגן ידיעות, און בינה איז בויען איין זאך אויף די אנדערע און מחדש זיין א נייע הבנה."
+        },
+        "evidence": { "segs": [440, 441, 448, 456, 464, 468], "confidence": 0.7 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-01-09-sefirah",
+      "startSeg": 0,
+      "endSeg": 68,
+      "title": {
+        "en": "Sefirah, the Tanya, and the ten utterances",
+        "yi": "ספירה, דער תניא, און די עשרה מאמרות"
+      },
+      "summary": {
+        "en": "The Rav says the days of sefirah are for refining the midos and explains why he learns Tanya: its advice in avodas Hashem, and its orderly explanation of matters rather than drush on the parsha. He then states that the ten utterances of creation are called the ten sefiros, a key to much in Chassidic seforim.",
+        "yi": "דער משגיח זאגט אז די ימי הספירה זענען צו מתקן זיין די מידות, און ערקלערט פארוואס ער לערנט תניא: צוליב אירע עצות אין עבודת השם, און ווייל ער איז מבאר די ענינים מיט א סדר און נישט קיין דרשות אויף דער סדרה. דערנאך זאגט ער אז די עשרה מאמרות פון בריאת העולם ווערן גערופן עשר ספירות, א שליסל צו אסאך זאכן אין ספרי חסידות."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-01-09-sefirah",
+      "startSeg": 69,
+      "endSeg": 137,
+      "title": {
+        "en": "Three upper sefiros, seven midos, and time",
+        "yi": "די ג' ראשונות, די זיבן מידות, און די צייט"
+      },
+      "summary": {
+        "en": "The Rav divides the sefiros into the upper three and the seven lower ones that parallel the seven days of creation, and names them all. He asks how the Torah could precede the world by two thousand years when there was no time before creation, and answers that time itself was created, so the 'years' are levels above chesed.",
+        "yi": "דער משגיח טיילט די ספירות אין די ערשטע דריי און די זיבן נידעריגע וואס זענען קעגן די זיבן ימי בראשית, און רעכנט זיי אלע אויס. ער פרעגט ווי אזוי קען די תורה זיין צוויי טויזנט יאר פאר בריאת העולם ווען פאר דער בריאה איז נישט געווען קיין צייט, און ענטפערט אז די צייט אליין איז באשאפן, ממילא זענען די \"יארן\" מדרגות העכער פון חסד."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-01-09-sefirah",
+      "startSeg": 138,
+      "endSeg": 228,
+      "title": {
+        "en": "Chesed, gevurah and tiferes",
+        "yi": "חסד, גבורה און תפארת"
+      },
+      "summary": {
+        "en": "The Rav explains chesed as giving out of oneself, gevurah as its opposite, holding back into oneself, and tiferes as a blend of the two, matching Avraham, Yitzchak and Yaakov. He illustrates tiferes with the colors of the midos, white and red making pink, and a picture whose beauty comes from the harmony of many colors.",
+        "yi": "דער משגיח ערקלערט חסד אלס ארויסגיין פון זיך און געבן, גבורה אלס דער היפוך, זיך איינהאלטן אין זיך, און תפארת אלס א מישונג פון ביידע, קעגן אברהם, יצחק און יעקב. ער מאלט אפ תפארת מיט די פארבן פון די מידות, ווייס און רויט וואס ווערט ראזע, און מיט א בילד וואס איז שיין ווייל עס איז א הארמאניע פון אסאך פארבן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-01-09-sefirah",
+      "startSeg": 229,
+      "endSeg": 284,
+      "title": {
+        "en": "Netzach, hod and yesod",
+        "yi": "נצח, הוד און יסוד"
+      },
+      "summary": {
+        "en": "The Rav explains netzach as winning over another, with a mashal of a man with a stick who overcomes a dog, and hod as bowing and yielding; both give a person a lasting existence. He then explains that yesod is connected to the bris kodesh and is called foundation because guarding it is the foundation of Yiddishkeit.",
+        "yi": "דער משגיח ערקלערט נצח אלס געווינען איבער דעם אנדערן, מיט א משל פון א מענטש מיט א שטעקן וואס איז מנצח א הונט, און הוד אלס זיך בויגן און נאכגעבן; ביידע געבן א מענטש א קיום. דערנאך ערקלערט ער אז יסוד איז דער ענין פון ברית קודש, און עס הייסט יסוד ווייל שמירת הברית איז דער יסוד פון אידישקייט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-01-09-sefirah",
+      "startSeg": 285,
+      "endSeg": 341,
+      "title": {
+        "en": "Malchus, and midos before Torah",
+        "yi": "מלכות, און מידות פאר דער תורה"
+      },
+      "summary": {
+        "en": "The Rav describes malchus as awe and accepting the yoke of Heaven, and speaks of serving Hashem with love and with fear, and of tzaddikim who served with netzach or with yesod. He explains that after leaving Mitzrayim one must refine the midos in order to merit receiving the Torah.",
+        "yi": "דער משגיח באשרייבט מלכות אלס יראה און קבלת עול מלכות שמים, און רעדט פון דינען דעם אייבערשטן מיט אהבה און מיט יראה, און פון צדיקים וואס האבן געדינט מיט נצח אדער מיט יסוד. ער ערקלערט אז נאך יציאת מצרים דארף מען מתקן זיין די מידות כדי מ'זאל זוכה זיין צו מקבל זיין די תורה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-01-09-sefirah",
+      "startSeg": 342,
+      "endSeg": 432,
+      "title": {
+        "en": "The weeks of sefirah and their midos",
+        "yi": "די וואכן פון ספירה און זייערע מידות"
+      },
+      "summary": {
+        "en": "The Rav goes through the weeks of sefirah: the first week repairs chesed, love that has been turned to bad things; the second repairs gevurah, whose holy form is fear of Hashem; and so on to malchus. He explains that each midah contains all the others, chesed shebechesed, gevurah shebechesed and so on, and applies it to the days of the current week.",
+        "yi": "דער משגיח גייט דורך די וואכן פון ספירה: די ערשטע וואך איז מען מתקן די מידת החסד, אהבה וואס מ'האט געווענדט צו שלעכטע זאכן; די צווייטע די גבורה, וואס איר אמת'ע קדושה איז יראת שמים; און אזוי ווייטער ביז מלכות. ער ערקלערט אז יעדע מידה האט אין זיך אלע אנדערע, חסד שבחסד, גבורה שבחסד א.א.וו., און ווענדט עס אן אויף די טעג פון דער היינטיגער וואך."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-sefirah-shevuous-01-09-sefirah",
+      "startSeg": 433,
+      "endSeg": 545,
+      "title": {
+        "en": "The mochin, and chesed misused",
+        "yi": "די מוחין, און א חסד וואס מ'נוצט שלעכט"
+      },
+      "summary": {
+        "en": "The Rav links the seven midos to the limbs of the body and to Avraham, Yitzchak, Yaakov, Moshe, Aharon, Yosef and Dovid, then explains the mochin above them: chochmah as learning knowledge, binah as building on it to make a chiddush, and da'as. He closes with the passuk in Kedoshim calling a forbidden relationship 'chesed' and the Ba'al Shem Tov's explanation, concluding that the midos must be refined.",
+        "yi": "דער משגיח פארבינדט די זיבן מידות מיט די אברים פונעם גוף און מיט אברהם, יצחק, יעקב, משה, אהרן, יוסף און דוד, און ערקלערט דערנאך די מוחין העכער פון זיי: חכמה איז לערנען ידיעות, בינה איז בויען דערויף און מחדש זיין א חידוש, און דעת. ער ענדיגט מיטן פסוק אין קדושים וואס רופט אן אן איסור \"חסד\", און דעם בעל שם טוב'ס פשט, אז דערפאר דארף מען מתקן זיין די מידות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "די העליגע ספר תניא",
+      "work": "Tanya",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [18, 22, 26, 39], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "די תורה אורן",
+      "work": "Torah Or",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [37, 38], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "פרק היבת, פאסאלא מאראס נברא עולם",
+      "work": "Pirkei Avos",
+      "ref": "Avos 5:1",
+      "sefariaRef": "Pirkei Avot 5:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [49, 50], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "תשובה קדמה ליואלים",
+      "work": "Gemara Pesachim",
+      "ref": "Pesachim 54a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [91, 93], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "בטרם הארמי הילדה",
+      "work": "Tehillim",
+      "ref": "Tehillim 90:2",
+      "sefariaRef": "Psalms 90:2",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [92], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "תורה ... קדמה ... צוויי טויזנט יאר פאר בריאות העולם",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [94, 95, 96], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ברש און ברמבון",
+      "work": "Rashi and Ramban on Bereishis",
+      "ref": "Bereishis 1:1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [99, 100, 101], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "ותתן לנו השם אלוקינו ... תורת חיים ואהבת חסד",
+      "work": "Siddur",
+      "ref": "Shemoneh Esrei, blessing of Sim Shalom",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [149, 150], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "כחום היום",
+      "work": "Bereishis",
+      "ref": "Bereishis 18:1",
+      "sefariaRef": "Genesis 18:1",
+      "resolution": "resolved",
+      "mention": "alluded",
+      "evidence": { "segs": [188, 189], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "פחד יצרק ... סוף פרשת",
+      "work": "Bereishis",
+      "ref": "Bereishis 31:42",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [193, 194], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "איש אשל ... יקחת אחותי חסדתא",
+      "work": "Vayikra",
+      "ref": "Vayikra 20:17",
+      "sefariaRef": "Leviticus 20:17",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [524, 527, 528], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער בעל שם",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [529, 530, 531], "confidence": 0.65 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav identifies the ten utterances of creation with the ten sefiros and calls understanding this a key to much of what is written in Chassidic seforim.",
+        "yi": "דער משגיח זאגט אז די עשרה מאמרות פון בריאת העולם זענען די עשר ספירות, און אז ווער עס פארשטייט דאס האט א שליסל צו אסאך זאכן וואס שטייען אין ספרי חסידות."
+      },
+      "evidence": { "segs": [62, 64, 67, 68], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Since time itself is a creation, the Torah's preceding the world by 'two thousand years' cannot mean years; it means the Torah is two levels above chesed, where creation begins.",
+        "yi": "ווייל די צייט אליין איז א בריאה, קען \"צוויי טויזנט יאר\" וואס די תורה איז געווען פאר דער וועלט נישט מיינען יארן; עס מיינט אז די תורה איז צוויי מדרגות העכער פון חסד, וואו די בריאה הייבט זיך אן."
+      },
+      "evidence": { "segs": [97, 98, 104, 105, 110, 111], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Tiferes means beauty because beauty is harmony: a picture painted in one color is not beautiful, while a blend of many colors is, just as Yaakov blends Avraham's chesed with Yitzchak's gevurah.",
+        "yi": "תפארת מיינט שיינקייט ווייל שיינקייט איז הארמאניע: א בילד מיט נאר איין פארב איז נישט שיין, און א מישונג פון אסאך פארבן איז יא, אזוי ווי יעקב מישט צוזאם דעם חסד פון אברהם מיט דער גבורה פון יצחק."
+      },
+      "evidence": { "segs": [218, 219, 221, 223, 225, 227], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Netzach and hod are two opposite ways of holding one's ground: one by overcoming, as a man with a stick defeats a dog, and one by bowing and yielding.",
+        "yi": "נצח און הוד זענען צוויי פארקערטע וועגן ווי אזוי זיך צו האלטן: איינס דורך מנצח זיין, אזוי ווי א מענטש מיט א שטעקן באזיגט א הונט, און דאס אנדערע דורך זיך בויגן און נאכגעבן."
+      },
+      "evidence": { "segs": [243, 254, 263, 266, 267, 268], "confidence": 0.6 }
+    },
+    {
+      "text": {
+        "en": "Every midah contains all the others, so the work of sefirah is not only on the main midah of each week but on each combination, such as chesed shebechesed and gevurah shebechesed.",
+        "yi": "יעדע מידה האט אין זיך אלע אנדערע, ממילא איז די עבודה פון ספירה נישט נאר אויף דער הויפט מידה פון יעדער וואך נאר אויף יעדן צוזאמשטעל, אזוי ווי חסד שבחסד און גבורה שבחסד."
+      },
+      "evidence": { "segs": [415, 416, 417, 419, 420], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Binah is understood as building: taking what was learned and building one thing upon another until a new chiddush emerges.",
+        "yi": "בינה ווערט פארשטאנען אלס בנין: מ'נעמט וואס מ'האט געלערנט און מ'בויט איין זאך אויף די אנדערע ביז עס קומט ארויס א נייער חידוש."
+      },
+      "evidence": { "segs": [456, 457, 464, 468, 469], "confidence": 0.65 }
+    }
+  ],
+  "stories": [],
+  "questions": [
+    {
+      "question": {
+        "en": "How could the Torah exist two thousand years before the world was created, if before creation there were no years?",
+        "yi": "ווי אזוי קען די תורה זיין צוויי טויזנט יאר פאר בריאת העולם, אז פאר דער בריאה איז נישט געווען קיין יארן?"
+      },
+      "answer": {
+        "en": "Time itself, day, week, month and year, is a creation; the 'two thousand years' are two levels above chesed, the beginning of creation.",
+        "yi": "די צייט אליין, טאג, וואך, חודש און יאר, איז א בריאה; די \"צוויי טויזנט יאר\" זענען צוויי מדרגות העכער פון חסד, דער אנהייב פון דער בריאה."
+      },
+      "questionSegs": [97, 98],
+      "answerSegs": [101, 103, 104, 110, 111],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "Why is a picture of many colors beautiful?",
+        "yi": "פארוואס איז א בילד מיט אסאך פארבן שיין?"
+      },
+      "answer": {
+        "en": "Because it is a blend and harmony of all the colors, which is tiferes; a picture in red alone would not be beautiful.",
+        "yi": "ווייל עס איז א מישונג און הארמאניע פון אלע פארבן, דאס איז תפארת; א בילד נאר מיט רויט וואלט נישט געווען שיין."
+      },
+      "questionSegs": [218],
+      "answerSegs": [219, 221, 222, 225],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why is the sefirah connected to the bris called yesod, foundation?",
+        "yi": "פארוואס הייסט די ספירה וואס איז פארבונדן מיטן ברית \"יסוד\"?"
+      },
+      "answer": {
+        "en": "Among several reasons, because guarding the holiness of the bris is the foundation of Yiddishkeit.",
+        "yi": "צווישן עטליכע טעמים, ווייל היטן די קדושה פונעם ברית איז דער יסוד פון אידישקייט."
+      },
+      "questionSegs": [276],
+      "answerSegs": [277, 278, 279, 280],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says that in the days of sefirah one must refine one's midos.",
+        "yi": "דער משגיח זאגט אז אין די ימי הספירה דארף מען מתקן זיין די מידות."
+      },
+      "evidence": { "segs": [7, 9, 10], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "He says that to merit receiving the Torah after leaving Mitzrayim, one must first refine the midos.",
+        "yi": "ער זאגט אז כדי זוכה צו זיין צו קבלת התורה נאך יציאת מצרים, דארף מען פריער מתקן זיין די מידות."
+      },
+      "evidence": { "segs": [334, 337, 338], "confidence": 0.65 }
+    },
+    {
+      "text": {
+        "en": "In the first week of sefirah, he says, one repairs chesed, turning love away from bad things and toward Hashem and His Torah.",
+        "yi": "אין דער ערשטער וואך פון ספירה, זאגט ער, איז מען מתקן די מידת החסד, אז די אהבה זאל זיך אוועקדרייען פון שלעכטע זאכן צום אייבערשטן און זיין תורה."
+      },
+      "evidence": { "segs": [342, 348, 349, 352], "confidence": 0.65 }
+    }
+  ],
+  "candidateTopics": [
+    "ten sefiros",
+    "sefiras ha'omer and refining the midos",
+    "ten utterances of creation",
+    "chesed, gevurah and tiferes",
+    "netzach, hod, yesod and malchus",
+    "time as a creation",
+    "the avos and the sefiros",
+    "chochmah and binah",
+    "Tanya"
+  ],
+  "concepts": [
+    { "he": "עשר ספירות", "heardAs": ["סן ספירות", "צען ספירות"] },
+    { "he": "עשרה מאמרות", "heardAs": ["סאמא מאראס", "עשר מאמערות"] },
+    { "he": "ימי הספירה", "heardAs": ["ימי הספירה"] },
+    { "he": "תיקון המידות", "heardAs": ["מתקן זיין די מידות"] },
+    { "he": "ג' ראשונות", "heardAs": ["ג' ראשונות"] },
+    { "he": "שבע תחתונות", "heardAs": ["שבע תחתונות"] },
+    { "he": "כתר", "heardAs": ["כתל", "כתר"] },
+    { "he": "בינה", "heardAs": ["בינא", "בימאל", "ביבער", "בימא"] },
+    { "he": "גבורה", "heardAs": ["גברא", "גבוה", "געווארע"] },
+    { "he": "תפארת", "heardAs": ["ציפערעס", "תופרת", "צפרת"] },
+    { "he": "נצח", "heardAs": ["נצחק", "נצחון"] },
+    { "he": "הוד", "heardAs": ["היוט", "לויט", "היינט"] },
+    { "he": "יסוד", "heardAs": ["יסודים", "יסיד"] },
+    { "he": "ברית קודש", "heardAs": ["ברית קביש", "ברית קדוש"] },
+    { "he": "קבלת עול מלכות שמים", "heardAs": ["מקבל אויף כל מלכות שמים"] },
+    { "he": "פחד יצחק", "heardAs": ["פחד יצרק"] },
+    { "he": "מוחין", "heardAs": ["מוחן"] },
+    { "he": "בריאת העולם", "heardAs": ["בריאות העולם"] }
+  ],
+  "people": [
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינו"] },
+    { "name": "Yitzchak", "heardAs": ["יצחק", "יצרק"] },
+    { "name": "Yaakov", "heardAs": ["יעקב"] },
+    { "name": "Moshe", "heardAs": ["משה"] },
+    { "name": "Aharon", "heardAs": ["אהרן"] },
+    { "name": "Dovid", "heardAs": ["דוד"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["דער בעל שם"] }
+  ],
+  "asrNotes": "Yiddish ASR is poor throughout; the names of the sefiros are heavily garbled (hod comes out as 'היינט'/'לויט', tiferes as 'ציפערעס') but recoverable from context. Segments 236-245 are long and sparse, and the stretches around 289-311, 359-404 and 477-516 are largely unrecoverable, including what seems to be a short story about a tzaddik and the sefirah count (around 509-514), which was left out. The details of the netzach/hod mashal and of the day-by-day count of the current week are only partly audible."
+}

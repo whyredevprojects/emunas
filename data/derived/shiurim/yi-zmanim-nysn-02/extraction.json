@@ -1,0 +1,472 @@
+{
+  "shiurId": "yi-zmanim-nysn-02",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains Nissan as the month of renewal and chesed, and matzah as the key that opens a Jew to emunah and to a bond with Hashem beyond time and place.",
+      "yi": "דער משגיח ערקלערט אז ניסן איז דער חודש פון התחדשות און חסד, און אז די מצה איז דער שליסל וואס עפנט אויף א איד צו אמונה און צו א קשר מיטן רבונו של עולם וואס איז העכער פון זמן און מקום."
+    },
+    "abstract": {
+      "en": "Following Rabbi Yehoshua that the world was created in Nissan, the Rav traces three Nissans of creation: the world itself, spoiled by Adam's sin; Klal Yisrael at the Exodus, spoiled by the Golden Calf; and the Mishkan, a smaller world of holiness. The final Nissan will be the redemption. Hashem did not tire of renewing, and a Jew should not either. Nissan is the month of chesed, the right side, against Tishrei's din. Spring, described in Shir haShirim, calls on the Jew to renew himself along with creation. Matzah is the key: the Targum calls it 'petira', opening, and Pesach is about opening doors and the heart. Pesach is Avraham's festival and the foundation of emunah, the time to plant faith in children. Matzah is heavenly food beyond time and place, holding the Divine names. The Rav closes with the Radbaz that chametz is the yetzer hara, two stories, and a call to pray for a kosher Pesach.",
+      "yi": "לויט רבי יהושע אז בניסן נברא העולם, ציילט דער משגיח אויס דריי ניסנס פון בריאה: די וועלט אליין, וואס איז נפגם געווארן דורכן חטא פון אדם הראשון; כלל ישראל ביי יציאת מצרים, נפגם דורכן חטא העגל; און דער משכן, א קלענערע וועלט פון קדושה. דער לעצטער ניסן וועט זיין די גאולה. דער רבונו של עולם איז נישט מיד געווארן מחדש צו זיין, און א איד טאר אויך נישט מיד ווערן. ניסן איז דער חודש פון חסד, די רעכטע זייט, קעגן תשרי וואס איז דין. דער פרילינג, ווי שיר השירים באשרייבט אים, רופט א איד ער זאל זיך מחדש זיין מיט דער בריאה. די מצה איז דער שליסל: דער תרגום רופט זי \"פטירא\", אויפעפענען, און פסח איז אויפעפענען די טירן און דאס הארץ. פסח איז אברהם אבינו'ס יום טוב און דער יסוד פון אמונה, די צייט איינצופלאנצן אמונה אין די קינדער. מצה איז א הימלישע שפייז העכער פון זמן און מקום, מיט די שמות הקדושים. צום סוף ברענגט ער דעם רדב\"ז אז חמץ איז דער יצר הרע, צוויי מעשיות, און א רוף צו בעטן אויף א כשר'ן פסח."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Nissan is the month of creation, renewed three times: the world, Klal Yisrael at the Exodus, and the Mishkan; the final renewal will be the redemption.",
+          "yi": "ניסן איז דער חודש פון בריאה, וואס איז באנייט געווארן דריי מאל: די וועלט, כלל ישראל ביי יציאת מצרים, און דער משכן; די לעצטע התחדשות וועט זיין די גאולה."
+        },
+        "evidence": { "segs": [15, 32, 61, 73, 76, 81], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Nissan is the month of chesed, the right side, while Tishrei is the month of din.",
+          "yi": "ניסן איז דער חודש פון חסד, די רעכטע זייט, און תשרי איז דער חודש פון דין."
+        },
+        "evidence": { "segs": [127, 131, 178, 184], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Matzah is the key to Nissan: the Targum calls it 'petira', opening, and all of Pesach is about opening up.",
+          "yi": "די מצה איז דער שליסל צו ניסן: דער תרגום רופט זי \"פטירא\", אויפעפענען, און דער גאנצער ענין פון פסח איז אויפעפענען."
+        },
+        "evidence": { "segs": [273, 296, 302, 331], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Pesach is the festival of Avraham Avinu, the first of the believers, and so it is the foundation of emunah.",
+          "yi": "פסח איז דער יום טוב פון אברהם אבינו, דער ראש למאמינים, און דערפאר איז ער דער יסוד פון אמונה."
+        },
+        "evidence": { "segs": [430, 435, 498, 515], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Matzah is a heavenly food above time and place, unlike chametz, which time acts on and which spreads in space.",
+          "yi": "מצה איז א הימלישע שפייז העכער פון זמן און מקום, נישט אזוי ווי חמץ, וואס דער זמן איז שולט אויף אים און ער נעמט איין מקום."
+        },
+        "evidence": { "segs": [620, 626, 634, 657, 658], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Bread lives through the 'word of Hashem' within it; matzah carries the full Divine name three times, and the one who eats it absorbs emunah.",
+          "yi": "דאס ברויט לעבט פון דעם \"מוצא פי ה'\" וואס ליגט אין אים; אין מצה ליגט דריי מאל דער שם הוי' מיטן מילוי, און ווער עס עסט עס, עסט אריין אמונה אין זיך."
+        },
+        "evidence": { "segs": [702, 707, 781, 782, 812], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Pesach is the lowest of the festivals but their foundation, the bond of a Jew with Hashem, and one must pray for a kosher Pesach.",
+          "yi": "פסח איז די נידעריגסטע מדריגה צווישן די ימים טובים, אבער ער איז דער יסוד, דער קשר פון א איד מיטן רבונו של עולם, און מען דארף בעטן אויף א כשר'ן פסח."
+        },
+        "evidence": { "segs": [831, 836, 852, 865, 967], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-zemanim-nissan-pesach-02-02-nissan",
+      "startSeg": 0,
+      "endSeg": 126,
+      "title": { "en": "The three Nissans of creation", "yi": "די דריי ניסנס פון בריאה" },
+      "summary": {
+        "en": "Following Rabbi Yehoshua that the world was created in Nissan, the Rav shows how the world, then Klal Yisrael at the Exodus, then the Mishkan were each created in Nissan, the first two spoiled by sin, with the final Nissan of the redemption still to come. From Hashem renewing again and again, and from the Mishkan set up seven times, he learns not to give up after a failure.",
+        "yi": "לויט רבי יהושע אז בניסן נברא העולם, ווייזט דער משגיח ווי די וועלט, דערנאך כלל ישראל ביי יציאת מצרים, און דערנאך דער משכן זענען יעדעס מאל באשאפן געווארן אין ניסן, די ערשטע צוויי נפגם געווארן דורך א חטא, און דער לעצטער ניסן פון דער גאולה דארף נאך קומען. פון דעם וואס דער רבונו של עולם באנייט אלעמאל נאכאמאל, און פונעם משכן וואס מ'האט אויפגעשטעלט זיבן מאל, לערנט ער אפ אז מען טאר נישט מיד ווערן."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-nissan-pesach-02-02-nissan",
+      "startSeg": 127,
+      "endSeg": 203,
+      "title": { "en": "Nissan, the month of chesed", "yi": "ניסן, דער חודש פון חסד" },
+      "summary": {
+        "en": "The Rav explains that the world was built with chesed and that Nissan is the month of chesed, the right side, which Jews strengthen in many customs. He contrasts Rabbi Yehoshua and Beis Hillel (chesed, Nissan) with Rabbi Eliezer and Beis Shammai (din, Tishrei).",
+        "yi": "דער משגיח ערקלערט אז די וועלט איז געבויט מיט חסד און אז ניסן איז דער חודש פון חסד, די רעכטע זייט, וואס אידן שטארקן אין אסאך מנהגים. ער שטעלט אוועק רבי יהושע און בית הלל (חסד, ניסן) קעגן רבי אליעזר און בית שמאי (דין, תשרי)."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-nissan-pesach-02-02-nissan",
+      "startSeg": 204,
+      "endSeg": 270,
+      "title": { "en": "Spring calls the Jew to renew himself", "yi": "דער פרילינג רופט א איד זיך מחדש צו זיין" },
+      "summary": {
+        "en": "Pesach opens with chesed, and in Nissan the whole world renews itself, as Shir haShirim describes the spring. The Rav asks the Jew why he alone should stay old when all of creation rises anew, and ties this to the haftarah of the dry bones.",
+        "yi": "פסח הייבט זיך אן מיט חסד, און אין ניסן באנייט זיך די גאנצע וועלט, אזוי ווי שיר השירים באשרייבט דעם פרילינג. דער משגיח פרעגט דעם איד פארוואס ער אליין זאל בלייבן אלט ווען די גאנצע בריאה שטייט אויף פריש, און ער ברענגט די הפטרה פון די עצמות היבשות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-nissan-pesach-02-02-nissan",
+      "startSeg": 271,
+      "endSeg": 394,
+      "title": { "en": "Matzah, the key that opens", "yi": "די מצה, דער שליסל וואס עפנט אויף" },
+      "summary": {
+        "en": "The Rav calls matzah the key to Nissan: leaving the narrowness of Mitzrayim, the Targum's 'petira' meaning opening, opening the door at the seder, and the storehouses of dew opened on Pesach night. Pesach calls on a Jew to open his heart, and the Maharal explains that spring renews nature because Klal Yisrael is renewed.",
+        "yi": "דער משגיח רופט די מצה דער שליסל צו ניסן: ארויסגיין פון די ענגשאפט פון מצרים, דער תרגום \"פטירא\" וואס מיינט אויפעפענען, אויפעפענען די טיר ביים סדר, און די אוצרות פון טל וואס עפענען זיך פסח ביינאכט. פסח רופט א איד ער זאל אויפעפענען זיין הארץ, און דער מהר\"ל ערקלערט אז דער פרילינג באנייט די טבע ווייל כלל ישראל ווערט באנייט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-nissan-pesach-02-02-nissan",
+      "startSeg": 395,
+      "endSeg": 519,
+      "title": { "en": "Pesach, Avraham's festival of love and emunah", "yi": "פסח, אברהם אבינו'ס יום טוב פון אהבה און אמונה" },
+      "summary": {
+        "en": "On Pesach everything is renewed, house, clothes and dishes, and a Jew should ask Hashem to renew him. The Rav shows that Pesach is Avraham's festival: his bris, the angels' visit and his war with the four kings were all on Pesach, and as the root of love and of emunah he makes Pesach the foundation of emunah.",
+        "yi": "פסח ווערט אלץ באנייט, די הויז, די קליידער און די כלים, און א איד דארף בעטן דעם רבונו של עולם ער זאל אים באנייען. דער משגיח ווייזט אז פסח איז אברהם אבינו'ס יום טוב: זיין ברית, די מלאכים וואס זענען געקומען און זיין מלחמה מיט די פיר מלכים זענען אלע געווען פסח, און אלס דער שורש פון אהבה און פון אמונה מאכט ער פסח פארן יסוד פון אמונה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-nissan-pesach-02-02-nissan",
+      "startSeg": 520,
+      "endSeg": 591,
+      "title": { "en": "Planting emunah in the children; eating emunah", "yi": "איינפלאנצן אמונה אין די קינדער; עסן אמונה" },
+      "summary": {
+        "en": "Pesach is the festival of the children and the time to plant emunah in them, simply and in their language. Talking about emunah is not enough; one must eat it, and matzah, the 'food of faith', becomes part of the person's flesh and blood.",
+        "yi": "פסח איז דער יום טוב פון די קינדער און די צייט איינצופלאנצן אין זיי אמונה, פשוט און אין זייער שפראך. ס'איז נישט גענוג צו רעדן וועגן אמונה; מען דארף זי עסן, און די מצה, דער \"מיכלא דמהימנותא\", ווערט א חלק פון דעם מענטש'ס פלייש און בלוט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-nissan-pesach-02-02-nissan",
+      "startSeg": 592,
+      "endSeg": 666,
+      "title": { "en": "Matzah above time and place", "yi": "מצה העכער פון זמן און מקום" },
+      "summary": {
+        "en": "Everything in this world exists in time and place, as the laws of witnesses show. Matzah is heavenly bread that time does not rule; once eighteen minutes of time act on dough it becomes chametz and spreads in space. Emunah likewise means believing in what is beyond grasp.",
+        "yi": "יעדע זאך אין עולם הזה געפינט זיך אין זמן און מקום, ווי מ'זעט ביי די דינים פון עדים. מצה איז א הימלישע ברויט וואס דער זמן איז נישט שולט אויף איר; ווען אכצן מינוט זמן איז שולט אויפן טייג ווערט עס חמץ און נעמט איין מקום. אזוי אויך מיינט אמונה צו גלייבן אין דעם וואס מ'קען נישט באגרייפן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-nissan-pesach-02-02-nissan",
+      "startSeg": 667,
+      "endSeg": 750,
+      "title": { "en": "The soul within bread", "yi": "די נשמה אינעם ברויט" },
+      "summary": {
+        "en": "The Rav asks how physical bread can give life, and answers from the passuk that a person lives by the 'word of Hashem' in the bread, its soul. Bread holds three times the name Havayah, and a Jew who washes and makes hamotzi for the sake of Heaven eats that holiness into himself.",
+        "yi": "דער משגיח פרעגט וויאזוי א גשמיות'דיג ברויט קען געבן חיים, און ענטפערט פונעם פסוק אז א מענטש לעבט פון דעם \"מוצא פי ה'\" אינעם ברויט, זיין נשמה. אין לחם ליגט דריי מאל דער שם הוי', און א איד וואס וואשט זיך און מאכט המוציא לשם שמים עסט די קדושה אריין אין זיך."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-nissan-pesach-02-02-nissan",
+      "startSeg": 751,
+      "endSeg": 829,
+      "title": { "en": "Matzah, the full Divine name, and 'Mah'", "yi": "מצה, דער שם הוי' במילוי, און \"מה\"" },
+      "summary": {
+        "en": "Matzah equals three times the name Havayah spelled out in full (45), the miraculous source of the Exodus beyond understanding. The seder is full of the word 'mah', the question with no answer, which is emunah. The Rav tells how the Divrei Chaim, after the seder, felt the holy names absorbed into his body.",
+        "yi": "מצה איז אין גימטריא דריי מאל דער שם הוי' במילוי (מ\"ה), דער שורש פון יציאת מצרים וואס איז העכער פון פארשטאנד. דער סדר איז פול מיטן ווארט \"מה\", א פראגע אן א תשובה, און דאס איז אמונה. דער משגיח דערציילט ווי דער דברי חיים האט נאכן סדר געפילט ווי די שמות הקדושים זענען איינגעזאפט געווארן אין זיין גוף."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-nissan-pesach-02-02-nissan",
+      "startSeg": 830,
+      "endSeg": 918,
+      "title": { "en": "Pesach the foundation; chametz is the yetzer hara", "yi": "פסח דער יסוד; חמץ איז דער יצר הרע" },
+      "summary": {
+        "en": "Pesach is the lowest of the festivals but their foundation, the bond with Hashem, which is why its prohibition carries kares. The Rav brings the Radbaz that chametz is the yetzer hara, to be uprooted entirely, and tells of Baron Rothschild's 'Pesach house' and the Divrei Chaim's answer that Hashem wants the chametz removed and matzah brought into the same place.",
+        "yi": "פסח איז די נידעריגסטע מדריגה צווישן די ימים טובים אבער זייער יסוד, דער קשר מיטן רבונו של עולם, און דערפאר איז חמץ בכרת. דער משגיח ברענגט דעם רדב\"ז אז חמץ איז דער יצר הרע, וואס מען דארף אויסרייסן מיטן שורש, און דערציילט פון באראן ראטשילד'ס \"פסח הויז\" און דעם דברי חיים'ס תשובה, אז דער רבונו של עולם וויל מען זאל ארויסנעמען דעם חמץ און אריינברענגען די מצה אין דעם זעלבן ארט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-nissan-pesach-02-02-nissan",
+      "startSeg": 919,
+      "endSeg": 993,
+      "title": { "en": "Praying for a kosher Pesach", "yi": "בעטן אויף א כשר'ן פסח" },
+      "summary": {
+        "en": "Pesach cleaning is uprooting the yetzer hara, and one must pray for a kosher Pesach. The Rav tells of a tzaddik who found a wheat kernel in his soup at the seder and learned from Heaven that he had not prayed to be saved from chametz, then explains the two eatings of matzah as the past and future redemption and closes with a blessing.",
+        "yi": "דאס רייניגן פאר פסח איז אויסרייסן דעם יצר הרע, און מען דארף בעטן אויף א כשר'ן פסח. דער משגיח דערציילט פון א צדיק וואס האט ביים סדר געפונען א ווייץ קערנדל אין דער זופ, און האט פון הימל געהערט אז ער האט נישט מתפלל געווען ניצול צו ווערן פון חמץ. דערנאך ערקלערט ער די צוויי מאל מצה עסן אלס די גאולה פון מצרים און די גאולה העתידה, און ענדיגט מיט א ברכה."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "רבי יהושע וואס זיי זאגט בניסן אין נברא העולם", "work": "Gemara Rosh Hashanah", "ref": "Rosh Hashanah 10b-11a", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [4, 6, 8], "confidence": 0.85 } },
+    { "heardAs": "אין תוספות און ראש השנה איז מחריעט אז במחשבה איז די וועלט באשאפן געווארן אין תשרי", "work": "Tosafos", "ref": "Tosafos Rosh Hashanah 27a", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [9, 10, 11], "confidence": 0.8 } },
+    { "heardAs": "עניא מלתי אלהים אתם אבני אליהם כולכם", "work": "Tehillim", "ref": "Tehillim 82:6-7", "sefariaRef": "Psalms 82:6-7", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [51, 53], "confidence": 0.8 } },
+    { "heardAs": "אבער דורכן חטא פון דעם עגל, זאגט איר גמרא", "work": "Gemara", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [50, 52], "confidence": 0.7 } },
+    { "heardAs": "שבעה אהי' צדיק וקום", "work": "Mishlei", "ref": "Mishlei 24:16", "sefariaRef": "Proverbs 24:16", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [105, 113], "confidence": 0.85 } },
+    { "heardAs": "עולם חסד יבונה", "work": "Tehillim", "ref": "Tehillim 89:3", "sefariaRef": "Psalms 89:3", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [128, 197, 201], "confidence": 0.9 } },
+    { "heardAs": "עשרה קבין זנות יד על העולם תשעה נטלה ישמעאלים", "work": "Gemara Kiddushin", "ref": "Kiddushin 49b", "sefariaRef": null, "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [159, 160], "confidence": 0.75 } },
+    { "heardAs": "אזוי שטעט אין זייער הקודש", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [172, 173, 174, 175], "confidence": 0.7 } },
+    { "heardAs": "די ערשטע רשע פון שני און בראשית עס איז מתחילה עלה במחשבה, לבראתה במידת הדין", "work": "Rashi", "ref": "Rashi on Bereishis 1:1", "sefariaRef": "Rashi on Genesis 1:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [181, 182], "confidence": 0.85 } },
+    { "heardAs": "שור השורים ... א ניצן און מנהיגה בארץ ... דמרס הניצנים נראה בארץ", "work": "Shir haShirim", "ref": "Shir haShirim 2:11-13", "sefariaRef": "Song of Songs 2:11-13", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [221, 223, 235, 240], "confidence": 0.8 } },
+    { "heardAs": "בשבת חול המועד, דערלערנט מען די הפטורה פון ... די עצמות היבשות", "work": "Yechezkel", "ref": "Yechezkel 37:1-14", "sefariaRef": "Ezekiel 37:1-14", "resolution": "resolved", "mention": "alluded", "evidence": { "segs": [267], "confidence": 0.8 } },
+    { "heardAs": "די תלגים זאגט אויף מצה ... א תלגים פטירייה", "work": "Targum Onkelos", "ref": "Targum Onkelos on Shemos 12:8", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [296, 297, 302], "confidence": 0.75 } },
+    { "heardAs": "קדוש לי כל פחול, פטר כל רפען", "work": "Shemos", "ref": "Shemos 13:2", "sefariaRef": "Exodus 13:2", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [299], "confidence": 0.8 } },
+    { "heardAs": "זאגט רשע פטר מיינט אויף עפענען, שפתח את הרפען", "work": "Rashi", "ref": "Rashi on Shemos 13:2", "sefariaRef": "Rashi on Exodus 13:2", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [300, 301], "confidence": 0.8 } },
+    { "heardAs": "כזית מצה ויפתה מראפסן עגרא", "work": "Gemara Pesachim", "ref": "Pesachim 85b", "sefariaRef": null, "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [322, 324, 326], "confidence": 0.75 } },
+    { "heardAs": "אין מדרש אין תלגים יונתן ... פרשת תולדות ... היינט ביינאכט איז פסח", "work": "Targum Yonasan", "ref": "Targum Yonasan on Bereishis 27:1", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [340, 343, 344], "confidence": 0.75 } },
+    { "heardAs": "וידנו לך אלהים מיט טייל", "work": "Bereishis", "ref": "Bereishis 27:28", "sefariaRef": "Genesis 27:28", "resolution": "resolved", "mention": "alluded", "evidence": { "segs": [347], "confidence": 0.7 } },
+    { "heardAs": "פתחו לי אחאתי רעייתו", "work": "Shir haShirim", "ref": "Shir haShirim 5:2", "sefariaRef": "Song of Songs 5:2", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [371, 378], "confidence": 0.85 } },
+    { "heardAs": "עס שטעט אין מהר'ל", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [381, 386], "confidence": 0.85 } },
+    { "heardAs": "פאר אחד דעי אברהם", "work": "Yechezkel", "ref": "Yechezkel 33:24", "sefariaRef": "Ezekiel 33:24", "resolution": "resolved", "mention": "alluded", "evidence": { "segs": [432], "confidence": 0.7 } },
+    { "heardAs": "די ארבע מלאכים זענען די ארבע גליות, אזוי שטעט אין מדרש", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [459, 461, 462], "confidence": 0.8 } },
+    { "heardAs": "אויג מלך הבשן ... געבאכן מצה את אגות מצה ... אזוי שטעט אין מדרש", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [475, 477], "confidence": 0.75 } },
+    { "heardAs": "אנחי ה' אלהי כח שאלץ יצחק מאהרץ מצרים", "work": "Shemos", "ref": "Shemos 20:2", "sefariaRef": "Exodus 20:2", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [494, 582], "confidence": 0.85 } },
+    { "heardAs": "דער רמב״ם זאגט אז דער פסוק איז דער מצוה פון אמונה", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [495, 497], "confidence": 0.85 } },
+    { "heardAs": "ביי אברהם אבינו שטעט דער ערשטער אמונה אין די תורה, והם ובשם", "work": "Bereishis", "ref": "Bereishis 15:6", "sefariaRef": "Genesis 15:6", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [500, 501, 502], "confidence": 0.8 } },
+    { "heardAs": "אזוי שטעט אין אייב ישראל פון אב תרוב זכונה לברכה", "work": "Ohev Yisrael", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [541, 542], "confidence": 0.7 } },
+    { "heardAs": "אזמן שיש מצה ומורים ונחים לכנחה", "work": "Haggadah", "ref": "Haggadah, Maggid (the son who does not know how to ask)", "sefariaRef": null, "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [544, 547], "confidence": 0.75 } },
+    { "heardAs": "שכן ארץ א ראי אמונה", "work": "Tehillim", "ref": "Tehillim 37:3", "sefariaRef": "Psalms 37:3", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [561, 562, 563], "confidence": 0.85 } },
+    { "heardAs": "באקאנטער אויסדרוק די מצה איז מיכלא דמהימנותא", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "quoted", "evidence": { "segs": [567, 569], "confidence": 0.8 } },
+    { "heardAs": "לחם שאונן עליו דברים הבא", "work": "Gemara Pesachim", "ref": "Pesachim 115b", "sefariaRef": "Pesachim 115b", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [577, 578], "confidence": 0.8 } },
+    { "heardAs": "ועשיתם על הקשיא זמן", "work": "Devarim", "ref": "Devarim 19:19", "sefariaRef": "Deuteronomy 19:19", "resolution": "resolved", "mention": "alluded", "evidence": { "segs": [613], "confidence": 0.7 } },
+    { "heardAs": "די אמוראל איז מסביר אז מצה איז א לחום שמאימי", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [623], "confidence": 0.65 } },
+    { "heardAs": "כולא אלא לחם לוודא יחיא האדם, כאל כל מוצאי פי ה' יחיא האדם", "work": "Devarim", "ref": "Devarim 8:3", "sefariaRef": "Deuteronomy 8:3", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [668, 669, 692, 702], "confidence": 0.9 } },
+    { "heardAs": "דער רמז זאגט, ווען דאס איז מסביר די ברכה פון רופח הבשר ... מפלי", "work": "Shulchan Aruch (Rema)", "ref": "Shulchan Aruch Orach Chaim 6:1 (Rema)", "sefariaRef": "Shulchan Arukh, Orach Chayim 6:1", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [682, 683, 684], "confidence": 0.75 } },
+    { "heardAs": "ויפך פי עפיו נשמת חיים", "work": "Bereishis", "ref": "Bereishis 2:7", "sefariaRef": "Genesis 2:7", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [697], "confidence": 0.8 } },
+    { "heardAs": "אזוי ווי די פסקים זאגן אז משנה ברורה ברענגט עס, נצילה מיינט אויפהויבן", "work": "Mishnah Berurah", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [738, 739], "confidence": 0.75 } },
+    { "heardAs": "וויונתם וויונתלים כל ימים יולם", "work": "Yeshayahu", "ref": "Yeshayahu 63:9", "sefariaRef": "Isaiah 63:9", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [740], "confidence": 0.7 } },
+    { "heardAs": "העוגה איז השם ביותי יוסף ... הוגס השם ביותי יוסף", "work": "Mishnah Sanhedrin", "ref": "Mishnah Sanhedrin 10:1", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [766, 767, 772], "confidence": 0.7 } },
+    { "heardAs": "די ערשטע ווארט פון דעם סדר איז מה נשתנה", "work": "Haggadah", "ref": "Haggadah, Mah Nishtanah", "sefariaRef": null, "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [798, 802], "confidence": 0.8 } },
+    { "heardAs": "תוספות דער ירשטער תוספות פון פסחים", "work": "Tosafos", "ref": "Tosafos Pesachim 2a", "sefariaRef": null, "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [876, 878], "confidence": 0.7 } },
+    { "heardAs": "אזוי זאגט דער ראדבאז ... אין תשובות הראדבאז שטעט", "work": "Responsa of the Radbaz", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [875, 881, 884], "confidence": 0.85 } },
+    { "heardAs": "איינער פון די ראשונים מרים מקורב האט געשריבן א גאנצן ספר שאלות ותובתים אין השמים", "work": "Shu\"t min haShamayim", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [949], "confidence": 0.7 } }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Each failed Nissan creation was followed by a smaller, more concentrated one: from the whole world, to Klal Yisrael, to a corner of holiness in the Mishkan where the intended ideal world would exist.",
+        "yi": "נאך יעדער ניסן'דיגע בריאה וואס איז נישט געראטן, איז געקומען א קלענערע, מער קאנצענטרירטע: פון דער גאנצער וועלט, צו כלל ישראל, צו א ווינקעלע קדושה אינעם משכן וואו די אידיאלע וועלט זאל זיין."
+      },
+      "evidence": { "segs": [33, 34, 64, 66, 70], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Hashem Himself 'did not tire' of renewing the world after failures, so a Jew who falls is taught to begin anew rather than despair.",
+        "yi": "דער רבונו של עולם אליין איז נישט מיד געווארן מחדש צו זיין די וועלט נאך א דורכפאל, און דערפון לערנט א איד וואס פאלט ער זאל אנהייבן פון ניי און נישט מייאש ווערן."
+      },
+      "evidence": { "segs": [107, 109, 110, 111, 120], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Targum's word for matzah, 'petira', means opening, linking matzah to opening the door at the seder, the opened heavens and the call 'open to Me' in Shir haShirim.",
+        "yi": "דער תרגום פון מצה, \"פטירא\", מיינט אויפעפענען, און דאס פארבינדט די מצה מיטן אויפעפענען די טיר ביים סדר, די אפענע אוצרות פון הימל, און דעם רוף \"פתחי לי\" אין שיר השירים."
+      },
+      "evidence": { "segs": [296, 302, 329, 331, 371], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Chametz is dough that time has ruled over, eighteen minutes being the measure of time, and so it swells and takes up space; matzah is free of both time and place, like emunah.",
+        "yi": "חמץ איז טייג וואס דער זמן איז געווען שולט אויף אים, אכצן מינוט איז דער שיעור פון זמן, און דערפאר וואקסט עס און נעמט איין מקום; מצה איז פריי פון זמן און מקום, אזוי ווי אמונה."
+      },
+      "evidence": { "segs": [626, 634, 641, 651, 658, 660], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Lechem equals three times the name Havayah, one for each of nefesh, ruach and neshamah, while matzah equals three times the name spelled out in full (45), a higher holiness.",
+        "yi": "לחם איז אין גימטריא דריי מאל דער שם הוי', קעגן נפש רוח און נשמה, און מצה איז דריי מאל דער שם הוי' במילוי (מ\"ה), א העכערע קדושה."
+      },
+      "evidence": { "segs": [715, 718, 719, 778, 782], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The many times the word 'mah' appears in the Haggadah express emunah: one can only ask 'what', never fully know.",
+        "yi": "דאס ווארט \"מה\" וואס קומט אזוי אסאך מאל פאר אין דער הגדה איז אמונה: מען קען נאר פרעגן \"מה\", אבער נישט וויסן."
+      },
+      "evidence": { "segs": [802, 805, 808, 809], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Hashem does not want a separate 'Pesach house' that chametz never touched; He wants the chametz removed and matzah brought into the very same place, as with the yetzer hara.",
+        "yi": "דער רבונו של עולם וויל נישט קיין באזונדער \"פסח הויז\" וואס חמץ האט קיינמאל נישט באריהרט; ער וויל אז דארט וואו דער חמץ איז געווען זאל מען אים ארויסנעמען און אריינברענגען די מצה, אזוי ווי ביים יצר הרע."
+      },
+      "evidence": { "segs": [911, 913, 914, 916], "confidence": 0.8 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Divrei Chaim after the seder", "yi": "דער דברי חיים נאכן סדר" },
+      "retelling": {
+        "en": "The Rav relates that the Divrei Chaim once sat down after the seder and stroked his stomach, with tears flowing from his eyes. He said that his innards were full of holy names: of the matzah, the four cups, the maror, korech and the afikoman. The Rav explains that the seder had become part of him, absorbed into his physical being.",
+        "yi": "דער משגיח דערציילט אז דער דברי חיים האט זיך אמאל נאכן סדר אוועקגעזעצט און געגלעט זיין בויך, און פון זיינע אויגן האבן געראנען טרערן. ער האט געזאגט אז זיינע געדערים זענען פול מיט שמות הקדושים: פון מצה, פון ארבע כוסות, פון מרור, פון כורך און פון אפיקומן. דער משגיח ערקלערט אז דער סדר איז געווארן א חלק פון אים, איינגעזאפט אין זיין גשמיות."
+      },
+      "people": ["the Divrei Chaim of Sanz"],
+      "evidence": { "segs": [820, 821, 822, 823, 828], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "Baron Rothschild's Pesach house", "yi": "באראן ראטשילד'ס פסח הויז" },
+      "retelling": {
+        "en": "Baron Rothschild, a wealthy Jew who did much for Klal Yisrael, once visited the Divrei Chaim of Sanz, who received him warmly. When talk turned to Pesach, the Baron boasted that he had a special Pesach house that no one entered all year and that chametz never touched, so he knew his Pesach was kosher. The Divrei Chaim answered that his holy Rebbes gave their lives for every mitzvah, yet had no Pesach house, because Hashem wants the chametz removed from where it was and the matzah brought into that place.",
+        "yi": "באראן ראטשילד, א רייכער איד וואס האט געטון גרויסע זאכן פאר כלל ישראל, איז אמאל געקומען באזוכן דעם דברי חיים פון צאנז, וואס האט אים שיין אויפגענומען. ווען מ'האט גערעדט וועגן פסח, האט דער באראן זיך באריהמט אז ער האט א באזונדער פסח הויז וואו קיינער גייט נישט אריין א גאנץ יאר און חמץ קומט נישט אריין, און דערפאר ווייסט ער אז ער האט א כשר'ן פסח. דער דברי חיים האט געענטפערט אז זיינע הייליגע רבי'ס האבן מוסר נפש געווען פאר יעדע מצוה, און פונדעסטוועגן נישט געהאט קיין פסח הויז, ווייל דער רבונו של עולם וויל אז וואו דער חמץ איז געווען זאל מען אים ארויסנעמען און דארט אריינברענגען די מצה."
+      },
+      "people": ["Baron Rothschild", "the Divrei Chaim of Sanz"],
+      "evidence": { "segs": [893, 894, 899, 900, 911, 914], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "The wheat kernel in the tzaddik's soup", "yi": "דער ווייץ קערנדל אין דעם צדיק'ס זופ" },
+      "retelling": {
+        "en": "A tzaddik worked hard to make a truly kosher Pesach and cleaned his whole house, certain there was no chametz. At the seder, after the matzah, a soup was served and a wheat kernel was floating in it. Distraught, he asked a question in Heaven, as great tzaddikim could, why this happened to him and how. He was answered that the pot stood under the chimney and a bird dropped the kernel into it, and that it happened because he had not prayed to Hashem to be saved from chametz.",
+        "yi": "א צדיק האט שווער געארבעט צו האבן א באמת כשר'ן פסח און האט אויסגערייניגט זיין גאנצע הויז, זיכער אז ס'איז נישטא קיין חמץ. ביים סדר, נאך דער מצה, האט מען דערלאנגט א זופ, און אין דער זופ האט געשווימען א ווייץ קערנדל. ער איז געווען צעבראכן, און האט געפרעגט א שאלה אין הימל, ווי גרויסע צדיקים האבן געקענט, פארוואס ס'איז אים געקומען און וויאזוי ס'איז געשען. מ'האט אים געענטפערט אז דער טאפ איז געשטאנען אונטערן קוימען און א פייגעלע האט אריינגעלאזט דאס קערנדל, און אז ס'איז געקומען ווייל ער האט נישט געבעטן דעם רבונו של עולם ער זאל ניצול ווערן פון חמץ."
+      },
+      "people": [],
+      "evidence": { "segs": [933, 934, 943, 948, 959, 964], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "What does the Targum's name for matzah, 'petira', mean?", "yi": "וואס מיינט דער תרגום'ס נאמען פאר מצה, \"פטירא\"?" },
+      "answer": { "en": "Opening, as Rashi explains 'peter rechem'; matzah opens, and all of Pesach is about opening up.", "yi": "אויפעפענען, ווי רש\"י ערקלערט \"פטר רחם\"; די מצה עפנט אויף, און דער גאנצער ענין פון פסח איז אויפעפענען." },
+      "questionSegs": [296, 297],
+      "answerSegs": [298, 300, 302, 304],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why does nature renew itself in spring?", "yi": "פארוואס באנייט זיך די טבע אין פרילינג?" },
+      "answer": { "en": "The Maharal says it is because Klal Yisrael is renewed then, and the renewal in Heaven is so great that it overflows into nature.", "yi": "דער מהר\"ל זאגט ווייל דעמאלט ווערט כלל ישראל באנייט, און די התחדשות אין הימל איז אזוי גרויס אז זי גיסט זיך אריבער אין דער טבע." },
+      "questionSegs": [381, 382],
+      "answerSegs": [386, 388, 390, 393],
+      "confidence": 0.85
+    },
+    {
+      "question": { "en": "How can physical bread give a person life?", "yi": "וויאזוי קען א גשמיות'דיג ברויט געבן א מענטש חיים?" },
+      "answer": { "en": "Life comes not from the bread itself but from the 'word of Hashem' within it, the bread's soul.", "yi": "די חיים קומען נישט פונעם ברויט אליין, נאר פונעם \"מוצא פי ה'\" וואס ליגט אין אים, די נשמה פונעם ברויט." },
+      "questionSegs": [688, 689],
+      "answerSegs": [692, 694, 702, 707],
+      "confidence": 0.85
+    },
+    {
+      "question": { "en": "Why is chametz stricter than all other prohibitions?", "yi": "פארוואס איז חמץ חמור'דיגער ווי אלע איסורים?" },
+      "answer": { "en": "The Radbaz answers that chametz is the yetzer hara, which must be uprooted completely.", "yi": "דער רדב\"ז ענטפערט אז חמץ איז דער יצר הרע, וואס מען דארף אויסרייסן אינגאנצן." },
+      "questionSegs": [878],
+      "answerSegs": [881, 884, 889, 890],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why did the holy Rebbes not have a separate Pesach house?", "yi": "פארוואס האבן די הייליגע רבי'ס נישט געהאט קיין באזונדער פסח הויז?" },
+      "answer": { "en": "Because Hashem wants the chametz removed from its place and the matzah brought in there.", "yi": "ווייל דער רבונו של עולם וויל אז מען זאל ארויסנעמען דעם חמץ פון זיין ארט און דארט אריינברענגען די מצה." },
+      "questionSegs": [909, 911],
+      "answerSegs": [913, 914],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why did chametz come into the careful tzaddik's soup?", "yi": "פארוואס איז חמץ אריינגעקומען אין דעם געהיטענעם צדיק'ס זופ?" },
+      "answer": { "en": "Because he had not prayed to Hashem to be saved from chametz.", "yi": "ווייל ער האט נישט געבעטן דעם רבונו של עולם ער זאל ניצול ווערן פון חמץ." },
+      "questionSegs": [951, 954],
+      "answerSegs": [964, 966],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says that when something fails, one should not tire but start again, as Hashem renewed the world again and again.",
+        "yi": "דער משגיח זאגט אז ווען עפעס איז נישט געראטן, טאר מען נישט מיד ווערן נאר אנהייבן נאכאמאל, אזוי ווי דער רבונו של עולם האט באנייט די וועלט נאכאמאל און נאכאמאל."
+      },
+      "evidence": { "segs": [87, 91, 108, 119, 120], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that on Pesach a Jew should ask Hashem to renew him.",
+        "yi": "דער משגיח זאגט אז פסח דארף א איד בעטן דעם רבונו של עולם ער זאל אים באנייען."
+      },
+      "evidence": { "segs": [422, 423, 424, 427], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says Pesach is the time to plant emunah in the children, speaking to them simply at the seder in a language they understand.",
+        "yi": "דער משגיח זאגט אז פסח איז די צייט איינצופלאנצן אמונה אין די קינדער, און ביים סדר רעדן צו זיי פשוט אין א שפראך וואס זיי פארשטייען."
+      },
+      "evidence": { "segs": [524, 527, 533, 536, 551], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says Pesach cleaning is uprooting the yetzer hara, removing the chametz and burning it, and only then eating matzah.",
+        "yi": "דער משגיח זאגט אז דאס רייניגן פאר פסח איז אויסרייסן דעם יצר הרע, ארויסנעמען דעם חמץ און אים פארברענען, און ערשט דערנאך עסן מצה."
+      },
+      "evidence": { "segs": [920, 925, 926, 927, 928], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one must pray to Hashem for a kosher Pesach.",
+        "yi": "דער משגיח זאגט אז מען דארף בעטן דעם רבונו של עולם אויף א כשר'ן פסח."
+      },
+      "evidence": { "segs": [930, 967, 969, 970], "confidence": 0.85 }
+    }
+  ],
+  "candidateTopics": [
+    "Nissan as the month of creation",
+    "renewal (hischadshus)",
+    "chesed and the right side",
+    "matzah as the key and opening",
+    "Pesach and Avraham Avinu",
+    "emunah and educating children",
+    "matzah above time and place",
+    "gematria of lechem and matzah",
+    "chametz as the yetzer hara",
+    "praying for a kosher Pesach"
+  ],
+  "concepts": [
+    { "he": "התחדשות", "heardAs": ["התחדשות", "מסחדשות"] },
+    { "he": "חסד", "heardAs": ["חסד", "מידות החסד"] },
+    { "he": "מידת הדין", "heardAs": ["מידת הדין", "במיטת הדין"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבי ירושלים", "רבוש''ל", "רבינו שלום", "רבונו שלמה", "רבי שלום"] },
+    { "he": "חטא העגל", "heardAs": ["חטא עגל"] },
+    { "he": "הקמת המשכן", "heardAs": ["כמות המשכן", "הכמות המשכן"] },
+    { "he": "פטירא", "heardAs": ["פטירייה", "פטירי", "פטריה"] },
+    { "he": "פטר רחם", "heardAs": ["פטר כל רפען"] },
+    { "he": "אוצרות טל", "heardAs": ["אוצרות טל", "אוצרות צוללים"] },
+    { "he": "ראש למאמינים", "heardAs": ["ראש למאמונים", "ראש למא מינים"] },
+    { "he": "מיכלא דמהימנותא", "heardAs": ["מיכלא דמהימנותא"] },
+    { "he": "עדים זוממין", "heardAs": ["עדים זומערן"] },
+    { "he": "מוצא פי ה'", "heardAs": ["מוצאי פי ה'"] },
+    { "he": "שם הוי'", "heardAs": ["שם הויה", "שם הויא"] },
+    { "he": "מילוי", "heardAs": ["מילוי"] },
+    { "he": "נטילת ידים", "heardAs": ["נסתיות ידי", "נצילת ידים"] },
+    { "he": "יצר הרע", "heardAs": ["יצה״ר", "יצה״ה"] },
+    { "he": "שלישי למילה", "heardAs": ["שלישי למילא"] },
+    { "he": "אפיקומן", "heardAs": ["עתוקומן"] }
+  ],
+  "people": [
+    { "name": "Rabbi Yehoshua", "heardAs": ["רבי יהושע", "תרבי ישוע", "רבי ישעי'"] },
+    { "name": "Rabbi Eliezer", "heardAs": ["רבי אליעזר"] },
+    { "name": "Adam HaRishon", "heardAs": ["אדם הראשון", "אדם ראשון"] },
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינא", "אברהם אבינו"] },
+    { "name": "Yitzchak", "heardAs": ["יצחק"] },
+    { "name": "Yaakov", "heardAs": ["יעקב"] },
+    { "name": "Esav", "heardAs": ["אסף", "עסק"] },
+    { "name": "Yishmael", "heardAs": ["ישמעאל"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבנו"] },
+    { "name": "Og, king of Bashan", "heardAs": ["אויג מלך הבשן"] },
+    { "name": "Shlomo HaMelech", "heardAs": ["שלמה המלך"] },
+    { "name": "Dovid HaMelech", "heardAs": ["דוד המלך"] },
+    { "name": "Rashi", "heardAs": ["רשע", "רש''ה"] },
+    { "name": "the Maharal", "heardAs": ["מהר'ל"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "the Radbaz", "heardAs": ["ראדבאז"] },
+    { "name": "the Ohev Yisrael of Apta", "heardAs": ["אייב ישראל פון אב תרוב"] },
+    { "name": "the Divrei Chaim of Sanz", "heardAs": ["דברי חיים", "דעם סאנזערעוו"] },
+    { "name": "Baron Rothschild", "heardAs": ["באראן ראטשילד", "ראטשילד", "בעהם ראטשויל"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair for the Rav's own speech but Hebrew quotations are heavily garbled (e.g. Tehillim 82, Shir haShirim 2, Devarim 8:3) and were recovered from context. Segment 289 is a repeat-run hallucination; segments 520-522 (a remark about a brachah) and 745 (a statement about bread in our times) are too garbled to use. Several sources are cited without a recoverable location (the Zohar on Hillel and Shammai, the Maharal, the Midrashim on Avraham, the Radbaz); the Rambam's location and some lines naming the tzaddikim in stories (537-541, 931) are not recoverable."
+}
