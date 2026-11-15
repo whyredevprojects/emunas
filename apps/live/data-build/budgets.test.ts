@@ -144,7 +144,6 @@ describe("checkLiveBudgets", () => {
       "story/u.json",
       "glossary/a.json",
       "stories-index.json",
-      "redirects.json",
       "explore/entities.json",
     ];
     // Today + 2 topics + 1 thread + 2 stories, per UI language.

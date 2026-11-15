@@ -91,11 +91,8 @@ export function topicKeywords(topicIds: readonly string[], layer: SearchLayer): 
 const keep = (set: ReadonlySet<string> | undefined, ids: Iterable<string | null | undefined>): string[] =>
   sortedUniq([...ids].filter((x) => typeof x === "string" && set !== undefined && set.has(x)));
 
-/**
- * Build one SearchDoc. Keys besides `shiur` and `layer` (older callers still pass the retired
- * extraction topic list until C1.7) are accepted and ignored.
- */
-export function buildSearchDoc(input: SearchInput & { readonly [legacy: string]: unknown }): SearchDoc {
+/** Build one SearchDoc. */
+export function buildSearchDoc(input: SearchInput): SearchDoc {
   const s = input.shiur;
   const layer = input.layer ?? null;
   const n = s.status === "full" ? s.notes : undefined;

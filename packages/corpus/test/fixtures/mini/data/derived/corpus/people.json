@@ -133,6 +133,17 @@
   ]
  },
  {
+  "id": "aviram",
+  "nameHe": "אבירם",
+  "nameEn": "Aviram",
+  "nameYi": "אבירם",
+  "type": "tanach",
+  "aliases": [],
+  "shiurIds": [
+   "en-miscellaneous-en-01"
+  ]
+ },
+ {
   "id": "avnei-nezer",
   "nameHe": "רבי אברהם בורנשטיין מסאכאטשוב",
   "nameEn": "the Avnei Nezer of Sochatchov",
@@ -278,7 +289,7 @@
  {
   "id": "beis-aharon",
   "nameHe": "רבי אהרן מקארלין, בעל בית אהרן",
-  "nameEn": "the Beis Aharon (Rabbi Aharon of Karlin-Stolin)",
+  "nameEn": "the Beis Aharon (Rabbi Aharon II of Karlin-Stolin)",
   "nameYi": "דער בית אהרן",
   "type": "chassidic_rebbe",
   "aliases": [
@@ -286,6 +297,10 @@
    "the Beis Aharon of Karlin",
    "the Beis Aharon of Stolin"
   ],
+  "description": {
+   "en": "Rabbi Aharon of Karlin-Stolin, author of the Beis Aharon, son of Rabbi Asher of Stolin and grandson of Rabbi Aharon HaGadol of Karlin, who is a separate person.",
+   "yi": "רבי אהרן פון קארלין-סטאלין, דער בעל בית אהרן, דער זון פון רבי אשר פון סטאלין און דער אייניקל פון רבי אהרן הגדול פון קארלין."
+  },
   "shiurIds": [
    "yi-zmanim-shbs-chzvn-01"
   ]
@@ -297,7 +312,9 @@
   "nameYi": "דער בית אברהם פון סלאנים",
   "type": "chassidic_rebbe",
   "aliases": [],
-  "shiurIds": []
+  "shiurIds": [
+   "en-miscellaneous-en-01"
+  ]
  },
  {
   "id": "beis-halevi",
@@ -327,12 +344,16 @@
  {
   "id": "belzer-rav",
   "nameHe": "האדמו\"ר מבעלזא",
-  "nameEn": "the Belzer Rav",
+  "nameEn": "the Belzer Rav (unspecified)",
   "nameYi": "דער בעלזער רב",
   "type": "chassidic_rebbe",
   "aliases": [
    "the Rebbe of Belz"
   ],
+  "description": {
+   "en": "Stands for \"the Belzer Rav\" or \"the Rebbe of Belz\" where a shiur does not say which Rebbe of Belz is meant. Where a story can be tied to one of them (Rabbi Shalom, Rabbi Yehoshua, Rabbi Yissachar Dov or Rabbi Aharon of Belz), it is listed under that Rebbe instead.",
+   "yi": "ווען אין א שיעור שטייט \"דער בעלזער רב\" אן א נאמען, און ס'איז נישט קלאר וואסערער פון די בעלזער רביים מ'מיינט. ווען א מעשה לאזט זיך צושטעלן צו איינעם פון זיי (רבי שלום, רבי יהושע, רבי יששכר דוב אדער רבי אהרן פון בעלזא), שטייט זי ביי יענעם רבי."
+  },
   "shiurIds": [
    "en-miscellaneous-en-01"
   ]
@@ -397,19 +418,6 @@
   "shiurIds": [
    "en-parsha-en-vyshlch-01"
   ]
- },
- {
-  "id": "brisker-rav",
-  "nameHe": "רבי יצחק זאב סאלאווייטשיק",
-  "nameEn": "the Brisker Rav (Rabbi Yitzchak Zev Soloveitchik)",
-  "nameYi": "דער בריסקער רב",
-  "type": "acharon",
-  "aliases": [
-   "Reb Velvel of Brisk",
-   "the Rav of Brisk",
-   "the Brisker Rav, Reb Velvel"
-  ],
-  "shiurIds": []
  },
  {
   "id": "cham",
@@ -610,10 +618,10 @@
   ]
  },
  {
-  "id": "dasan-and-aviram",
-  "nameHe": "דתן ואבירם",
-  "nameEn": "Dasan and Aviram",
-  "nameYi": "דתן און אבירם",
+  "id": "dasan",
+  "nameHe": "דתן",
+  "nameEn": "Dasan",
+  "nameYi": "דתן",
   "type": "tanach",
   "aliases": [],
   "shiurIds": [
@@ -751,7 +759,7 @@
   "nameHe": "ר' אליהו שלום",
   "nameEn": "Reb Eliyahu Shalom (the Rav's father)",
   "nameYi": "ר' אליהו שלום, דעם משגיח'ס טאטע",
-  "type": "other",
+  "type": "individual",
   "aliases": [
    "Eliyahu Shalom",
    "the Rav's father"
@@ -850,7 +858,7 @@
   "nameHe": "נאצר",
   "nameEn": "Nasser",
   "nameYi": "נאסער",
-  "type": "other",
+  "type": "ruler",
   "aliases": [],
   "shiurIds": [
    "yi-parshas-hashavua-hzynv-01"
@@ -1044,7 +1052,7 @@
   "nameHe": "גבריאל המלאך",
   "nameEn": "the angel Gavriel",
   "nameYi": "דער מלאך גבריאל",
-  "type": "other",
+  "type": "malach",
   "aliases": [
    "Gavriel"
   ],
@@ -1057,7 +1065,7 @@
   "nameHe": "מיכאל המלאך",
   "nameEn": "the angel Michael",
   "nameYi": "דער מלאך מיכאל",
-  "type": "other",
+  "type": "malach",
   "aliases": [
    "Michael",
    "Michael the angel",
@@ -1220,31 +1228,6 @@
   ]
  },
  {
-  "id": "moshiach",
-  "nameHe": "משיח",
-  "nameEn": "Moshiach",
-  "nameYi": "משיח",
-  "type": "other",
-  "aliases": [
-   "Moshiach",
-   "Moshiach ben David",
-   "Moshiach ben David",
-   "Moshiach ben Dovid"
-  ],
-  "shiurIds": []
- },
- {
-  "id": "moshiach-ben-yosef",
-  "nameHe": "משיח בן יוסף",
-  "nameEn": "Moshiach ben Yosef",
-  "nameYi": "משיח בן יוסף",
-  "type": "other",
-  "aliases": [
-   "Moshiach ben Yosef"
-  ],
-  "shiurIds": []
- },
- {
   "id": "nadav",
   "nameHe": "נדב",
   "nameEn": "Nadav",
@@ -1297,6 +1280,18 @@
    "yi-zmanim-pvrym-07",
    "yi-zmanim-svkvs-08"
   ]
+ },
+ {
+  "id": "og",
+  "nameHe": "עוג מלך הבשן",
+  "nameEn": "Og, king of Bashan",
+  "nameYi": "עוג מלך הבשן",
+  "type": "tanach",
+  "aliases": [
+   "Og",
+   "Og Melech HaBashan"
+  ],
+  "shiurIds": []
  },
  {
   "id": "ohev-yisrael",
@@ -2207,7 +2202,7 @@
   "nameHe": "ר' לייב אסאפסקי",
   "nameEn": "Reb Leib Osofsky",
   "nameYi": "ר' לייב אסאפסקי",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": []
  },
@@ -2570,7 +2565,7 @@
   "nameHe": "טיטוס",
   "nameEn": "Titus",
   "nameYi": "טיטוס הרשע",
-  "type": "other",
+  "type": "ruler",
   "aliases": [],
   "shiurIds": [
    "en-zmanim-en-chvdsh-tbs-02"
@@ -2628,7 +2623,7 @@
   "nameHe": "ינאי המלך",
   "nameEn": "Yannai HaMelech",
   "nameYi": "ינאי המלך",
-  "type": "other",
+  "type": "ruler",
   "aliases": [
    "King Yannai",
    "Yanai",
@@ -2830,12 +2825,16 @@
  {
   "id": "zevulun",
   "nameHe": "זבולון",
-  "nameEn": "Zevulun",
+  "nameEn": "Zvulun (a Yerushalmi chassid)",
   "nameYi": "זבולון",
-  "type": "tanach",
+  "type": "individual",
   "aliases": [
    "Zvulun"
   ],
+  "description": {
+   "en": "A learned Slonimer chassid in Yerushalayim in the story of the Beis Avraham and the unimmersed plates; not Zevulun the son of Yaakov.",
+   "yi": "א למדן'ישער סלאנימער חסיד אין ירושלים אין דער מעשה פונעם בית אברהם מיט די נישט-געטובלטע טעלער."
+  },
   "shiurIds": []
  },
  {
@@ -2872,6 +2871,23 @@
   "aliases": [],
   "shiurIds": [
    "en-miscellaneous-en-02"
+  ]
+ },
+ {
+  "id": "syn-individual",
+  "nameHe": "פלוני הגבאי",
+  "nameEn": "Syn Gabbai",
+  "nameYi": "פלוני דער גבאי",
+  "type": "individual",
+  "description": {
+   "en": "A gabbai in one story.",
+   "yi": "א גבאי אין איין מעשה."
+  },
+  "aliases": [],
+  "shiurIds": [
+   "en-parsha-en-ky-sb-01",
+   "en-parsha-en-nch-01",
+   "en-parsha-en-svldvs-01"
   ]
  }
 ]

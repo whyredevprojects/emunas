@@ -4,8 +4,9 @@
  * filtered to the visible set, in catalog order; an entity with no visible shiur is left out.
  * Page and listing flags follow the corpus policy (D2, D5, D10).
  */
-import { foldBasic, lookupWork, type Work as TableWork, compareWorks } from "@emunas/normalize";
+import { WORK_GROUPS, foldBasic, lookupWork, type Work as TableWork } from "@emunas/normalize";
 import { momentId } from "../public/moment-id.ts";
+import { LAYER_PERSON_GROUPS, PERSON_GROUP_OF } from "../public/corpus-layer.ts";
 import type {
   LayerConcept,
   LayerConceptsFile,
@@ -18,7 +19,7 @@ import type {
   LayerWorksFile,
 } from "../public/corpus-layer.ts";
 import { cmpStr, type LayerContext } from "./context.ts";
-import { PERSON_TYPES, type PersonIn, type WorkIn } from "./input/schemas.ts";
+import type { PersonIn, WorkIn } from "./input/schemas.ts";
 import { familyRegExp } from "./policy.ts";
 
 /** Explicit same-subject links from `topics[].sameAs`, resolved to live ids. */
@@ -33,14 +34,16 @@ export function sameAsLinks(ctx: LayerContext): SameAsLinks {
   const links: SameAsLinks = { conceptTopic: new Map(), personTopic: new Map(), workTopic: new Map() };
   for (const t of ctx.input.topics) {
     if (!ctx.isLive("topics", t.id) || !t.sameAs) continue;
-    const add = (m: Map<string, string>, kind: "concepts" | "people" | "works", raw: string | undefined) => {
+    // A sameAs id that moved to another kind (a person now a concept) links as that kind.
+    const add = (kind: "concepts" | "people" | "works", raw: string | undefined) => {
       if (raw === undefined) return;
-      const id = ctx.resolve(kind, raw);
-      if (id !== null && !m.has(id)) m.set(id, t.id);
+      const r = ctx.resolveRef(kind, raw);
+      const m = r?.kind === "concepts" ? links.conceptTopic : r?.kind === "people" ? links.personTopic : r?.kind === "works" ? links.workTopic : null;
+      if (r !== null && m !== null && !m.has(r.id)) m.set(r.id, t.id);
     };
-    add(links.conceptTopic, "concepts", t.sameAs.conceptId);
-    add(links.personTopic, "people", t.sameAs.personId);
-    add(links.workTopic, "works", t.sameAs.workId);
+    add("concepts", t.sameAs.conceptId);
+    add("people", t.sameAs.personId);
+    add("works", t.sameAs.workId);
   }
   return links;
 }
@@ -137,23 +140,64 @@ export function tableWorkOf(w: Pick<WorkIn, "titleEn" | "titleHe" | "aliases" | 
   return null;
 }
 
-const GENERIC_KINDS = new Set(["generic", "genre"]);
+/** Kinds whose `order` is a shelf position on its own (Tanach 1-39, tractates 100+). */
+const DATA_ORDERED_KINDS: ReadonlySet<WorkIn["kind"]> = new Set(["tanach-book", "talmud-tractate", "mishnah-tractate"]);
+
+/**
+ * Shelf group from the data where it says enough (Tanach books by `order`, tractates by kind and
+ * root collection, liturgy), else the ordering table's group for works the data does not place.
+ */
+export function shelfGroupOf(w: Pick<WorkIn, "kind" | "order">, root: string, table: TableWork | null): string | null {
+  switch (w.kind) {
+    case "tanach-book":
+      if (w.order === null) return table?.group ?? null;
+      return w.order <= 5 ? "torah" : w.order <= 26 ? "neviim" : "kesuvim";
+    case "mishnah-tractate":
+      return "mishnah";
+    case "talmud-tractate":
+      return root === "talmud-yerushalmi" ? "yerushalmi" : "bavli";
+    case "liturgy":
+      return "tefillah";
+    default:
+      return table?.group ?? null;
+  }
+}
 
 export function buildWorks(ctx: LayerContext, people: Map<string, PersonBase>, links: SameAsLinks): LayerWorksFile {
   const pol = ctx.policy.thresholds;
-  const rows: { w: LayerWork; table: TableWork | null }[] = [];
-  for (const w of ctx.input.works) {
-    if (!ctx.isLive("works", w.id)) continue;
+  const recs = new Map(ctx.input.works.filter((w) => ctx.isLive("works", w.id)).map((w) => [w.id, w]));
+  /** The live parent of a work (a retired parent id is followed), else null. */
+  const parentOf = (w: WorkIn): string | null => {
+    if (w.parentWorkId === null) return null;
+    const p = ctx.resolve("works", w.parentWorkId);
+    return p !== null && p !== w.id && recs.has(p) ? p : null;
+  };
+  /** Ancestors, nearest first; a parent chain that loops counts as none (the work is shelved on its own). */
+  const ancestors = (w: WorkIn): string[] => {
+    const out: string[] = [];
+    for (let p = parentOf(w); p !== null; p = parentOf(recs.get(p)!)) {
+      if (p === w.id || out.includes(p)) {
+        ctx.warnings.push(`works: parentWorkId of ${w.id} loops (shelved without a parent)`);
+        return [];
+      }
+      out.push(p);
+    }
+    return out;
+  };
+  const rows: { w: LayerWork; table: TableWork | null; anc: string[] }[] = [];
+  for (const w of recs.values()) {
     const shiurIds = visibleShiurs(ctx, w.shiurIds);
     if (shiurIds.length === 0) continue;
     const table = tableWorkOf(w);
-    const generic = w.kind !== undefined ? GENERIC_KINDS.has(w.kind.toLowerCase()) : (table?.genre ?? false);
+    const anc = ancestors(w);
+    const generic = w.kind === "genre";
     const author = w.authorPersonId === null ? null : ctx.resolve("people", w.authorPersonId);
     const authorOk = author !== null && people.has(author) && people.get(author)!.excluded === null;
     const samePerson = people.get(w.id);
     const count = shiurIds.length;
     rows.push({
       table,
+      anc,
       w: {
         id: w.id,
         titleHe: w.titleHe,
@@ -161,9 +205,11 @@ export function buildWorks(ctx: LayerContext, people: Map<string, PersonBase>, l
         aliases: [...w.aliases],
         authorPersonId: authorOk ? author : null,
         sefariaIndexTitle: w.sefariaIndexTitle,
+        kind: w.kind,
         generic,
-        orderGroup: table?.group ?? null,
-        order: table?.order ?? null,
+        orderGroup: shelfGroupOf(w, anc.at(-1) ?? w.id, table),
+        order: w.order,
+        parentWorkId: null,
         shiurIds,
         count,
         sameIdPerson: samePerson && samePerson.excluded === null ? w.id : null,
@@ -173,20 +219,46 @@ export function buildWorks(ctx: LayerContext, people: Map<string, PersonBase>, l
       },
     });
   }
-  rows.sort((a, b) => {
-    if (a.table && b.table) return compareWorks(a.table, b.table) || cmpStr(foldBasic(a.w.titleEn), foldBasic(b.w.titleEn)) || cmpStr(a.w.id, b.w.id);
-    if (a.table) return -1;
-    if (b.table) return 1;
-    return cmpStr(foldBasic(a.w.titleEn), foldBasic(b.w.titleEn)) || cmpStr(a.w.id, b.w.id);
-  });
-  return { works: rows.map((r) => r.w) };
+  // Nesting: the nearest ancestor that is in the file (a parent without visible shiurim is skipped).
+  const present = new Set(rows.map((r) => r.w.id));
+  for (const r of rows) r.w.parentWorkId = r.anc.find((a) => present.has(a)) ?? null;
+
+  const byTitle = (a: LayerWork, b: LayerWork) => cmpStr(foldBasic(a.titleEn), foldBasic(b.titleEn)) || cmpStr(a.id, b.id);
+  const groupIdx = (r: (typeof rows)[number]) => {
+    const i = r.w.orderGroup === null ? -1 : (WORK_GROUPS as readonly string[]).indexOf(r.w.orderGroup);
+    return i < 0 ? WORK_GROUPS.length : i;
+  };
+  const shelfPos = (r: (typeof rows)[number]) =>
+    (DATA_ORDERED_KINDS.has(r.w.kind) ? r.w.order : r.table?.order) ?? Number.POSITIVE_INFINITY;
+  const top = (a: (typeof rows)[number], b: (typeof rows)[number]) =>
+    groupIdx(a) - groupIdx(b) || shelfPos(a) - shelfPos(b) || byTitle(a.w, b.w);
+  const child = (a: (typeof rows)[number], b: (typeof rows)[number]) =>
+    (a.w.order ?? Number.POSITIVE_INFINITY) - (b.w.order ?? Number.POSITIVE_INFINITY) || byTitle(a.w, b.w);
+  const kids = new Map<string, (typeof rows)[number][]>();
+  for (const r of rows) {
+    if (r.w.parentWorkId === null) continue;
+    const l = kids.get(r.w.parentWorkId) ?? [];
+    l.push(r);
+    kids.set(r.w.parentWorkId, l);
+  }
+  const out: LayerWork[] = [];
+  const visit = (r: (typeof rows)[number]) => {
+    out.push(r.w);
+    for (const k of (kids.get(r.w.id) ?? []).sort(child)) visit(k);
+  };
+  for (const r of rows.filter((x) => x.w.parentWorkId === null).sort(top)) visit(r);
+  return { works: out };
 }
 
 /** How a story's `people[]` entry is shown: linked id, or plain text (unresolved, excluded or invisible). */
 export function storyPersonOf(ctx: LayerContext, people: Map<string, PersonBase>): (raw: string) => LayerStoryPerson {
   const allById = new Map(ctx.input.people.map((p) => [p.id, p]));
+  const conceptsById = new Map(ctx.input.concepts.map((c) => [c.id, c]));
   return (raw) => {
-    const id = ctx.resolve("people", raw);
+    const r = ctx.resolveRef("people", raw);
+    // A "person" that is now a concept (Moshiach, the Kohen Gadol): its label, as plain text.
+    if (r?.kind === "concepts") return { name: conceptsById.get(r.id)?.label.en ?? raw, linked: false };
+    const id = r?.kind === "people" ? r.id : null;
     const base = id === null ? undefined : people.get(id);
     if (id !== null && base && base.excluded === null) return { id };
     const rec = id === null ? undefined : allById.get(id);
@@ -227,7 +299,9 @@ export function buildPeople(
     const p = b.rec;
     const count = b.shiurIds.length;
     const excluded = b.excluded;
-    const isOther = p.type === "other";
+    const group = PERSON_GROUP_OF[p.type];
+    // D2: the `other` group (type other, and private individuals) gets index lines only.
+    const isOther = group === "other";
     const quietPage = excluded === null && (isOther ? pol.people.other.pages : true) && count >= pol.thresholds.quiet.personPageMin;
     const livePage = excluded === null && (isOther ? pol.people.other.pages : true) && count >= pol.thresholds.live.personPageMin;
     const quietListed = excluded === null && (isOther ? count >= pol.people.other.quietLineMinShiurim : true);
@@ -239,7 +313,9 @@ export function buildPeople(
       nameYi: p.nameYi,
       aliases: [...p.aliases],
       type: p.type,
-      typeOrder: PERSON_TYPES.indexOf(p.type),
+      group,
+      groupOrder: LAYER_PERSON_GROUPS.indexOf(group),
+      description: p.description === null ? null : { en: p.description.en, yi: p.description.yi },
       shiurIds: b.shiurIds,
       count,
       storyIds: excluded === null ? [...(storiesOf.get(id) ?? [])].sort(cmpStr) : [],

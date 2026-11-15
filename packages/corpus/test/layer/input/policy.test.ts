@@ -36,13 +36,15 @@ describe("corpus policy", () => {
     expect(p.people.other).toEqual({ pages: false, quietLineMinShiurim: 3, liveListed: false });
     expect(p.people.excludeIds).toEqual([]);
     expect(p.threads).toEqual({ pageMinShiurim: 3, twoMember: "inline-line", timelineMinDated: 3 });
-    expect(p.legacyEntityPages).toBe("redirect");
     expect(p.visibility.followCategoryVisibility).toBe(true);
     expect(p.featured).toEqual({ maxOtherSpeakerShare: 0.5, excludeTopicIds: [] });
     expect(p.live.threadPagesIndexable).toBe(false);
     expect(p.unknownVersion).toBe("warn");
     expect(p.occasionTopic.minShare).toBe(0.5);
-    expect(p.quiet.redirects.maxRules).toBe(1900);
+    // No backwards compatibility: no legacy-page or redirect switches.
+    expect(Object.keys(p).sort()).toEqual(
+      ["featured", "live", "occasionTopic", "people", "policyVersion", "search", "thresholds", "threads", "unknownVersion", "visibility"].sort(),
+    );
   });
 
   it("a missing file means the defaults (a fresh copy each time)", () => {
@@ -72,7 +74,8 @@ describe("corpus policy", () => {
     ["share out of range", { policyVersion: 1, occasionTopic: { minShare: 2 } }],
     ["bad id in excludeIds", { policyVersion: 1, people: { excludeIds: ["Not An Id"] } }],
     ["bad regex", { policyVersion: 1, people: { familyPattern: "(" } }],
-    ["too many redirect rules", { policyVersion: 1, quiet: { redirects: { maxRules: 5000 } } }],
+    ["the retired redirect switch", { policyVersion: 1, quiet: { redirects: { maxRules: 100 } } }],
+    ["the retired legacy-pages switch", { policyVersion: 1, legacyEntityPages: "redirect" }],
     ["unknown version mode", { policyVersion: 1, unknownVersion: "ignore" }],
   ];
   it.each(invalid)("an invalid file is fatal: %s", (_name, content) => {

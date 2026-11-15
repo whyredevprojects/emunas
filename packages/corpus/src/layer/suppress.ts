@@ -12,6 +12,7 @@
  * | `thread`  | threads.json       | `label`, `summary`                                  |
  * | `topic`   | topics.json detail | `description`                                       |
  * | `concept` | concepts.json      | `label`, `definition`                               |
+ * | `person`  | people.json        | `description`                                       |
  * | `series`  | series/<id>.json   | `title`, `overview`, `keyThemes.<i>`, `arc.<shiurId>` (its `oneLiner`) |
  *
  * Ids come from `site-policy/publish-policy.json` `suppress[]` and the guard's suppress file; ids
@@ -23,6 +24,7 @@ import { loadPublishPolicy, loadSuppressFile } from "../build/policy.ts";
 import { LAYER_FILES } from "../public/corpus-layer.ts";
 import type {
   LayerConceptsFile,
+  LayerPeopleFile,
   LayerSeries,
   LayerStoriesFile,
   LayerThreadsFile,
@@ -32,7 +34,7 @@ import type { L } from "../public/types.ts";
 
 export const CORPUS_ITEM_PREFIX = "corpus:";
 
-export const CORPUS_ITEM_KINDS = ["story", "thread", "topic", "concept", "series"] as const;
+export const CORPUS_ITEM_KINDS = ["story", "thread", "topic", "concept", "person", "series"] as const;
 export type CorpusItemKind = (typeof CORPUS_ITEM_KINDS)[number];
 
 export interface CorpusItemRef {
@@ -43,7 +45,7 @@ export interface CorpusItemRef {
   lang: string;
 }
 
-const ITEM_RE = /^corpus:(story|thread|topic|concept|series):([^#\s]+)#([A-Za-z]+(?:\.[^.#\s]+)?)\.([a-z]{2})$/;
+const ITEM_RE = /^corpus:(story|thread|topic|concept|person|series):([^#\s]+)#([A-Za-z]+(?:\.[^.#\s]+)?)\.([a-z]{2})$/;
 
 export function isCorpusItemId(id: string): boolean {
   return id.startsWith(CORPUS_ITEM_PREFIX);
@@ -104,6 +106,7 @@ export function applyCorpusSuppress(files: Record<string, unknown>, ids: readonl
   const threads = files[LAYER_FILES.threads] as LayerThreadsFile | undefined;
   const topics = files[LAYER_FILES.topics] as LayerTopicsFile | undefined;
   const concepts = files[LAYER_FILES.concepts] as LayerConceptsFile | undefined;
+  const people = files[LAYER_FILES.people] as LayerPeopleFile | undefined;
   const byId = <T extends { id: string }>(xs: readonly T[] | undefined, id: string) =>
     xs?.find((x) => x.id === id) as unknown as Record<string, unknown> | undefined;
 
@@ -123,6 +126,9 @@ export function applyCorpusSuppress(files: Record<string, unknown>, ids: readonl
           break;
         case "concept":
           ok = blankEntityField(byId(concepts?.concepts, ref.entityId), ref, ["label", "definition"]);
+          break;
+        case "person":
+          ok = blankEntityField(byId(people?.people, ref.entityId), ref, ["description"]);
           break;
         case "series": {
           const s = files[`${LAYER_FILES.seriesDir}/${ref.entityId}.json`] as LayerSeries | undefined;

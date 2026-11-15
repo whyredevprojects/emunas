@@ -58,7 +58,6 @@ export const dataPaths = {
   story: (id: string) => `${DATA_ROOT}/story/${segment("story id", id)}.json`,
   storiesIndex: () => `${DATA_ROOT}/stories-index.json`,
   glossary: (shard: string) => `${DATA_ROOT}/glossary/${segment("glossary shard", shard)}.json`,
-  redirects: () => `${DATA_ROOT}/redirects.json`,
   exploreEntities: () => `${DATA_ROOT}/explore/entities.json`,
 } as const satisfies Record<DataKind, (...args: never[]) => string>;
 

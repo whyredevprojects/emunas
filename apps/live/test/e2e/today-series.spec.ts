@@ -4,8 +4,8 @@
  *   of the day is the same on every load of one date, and the corpus counter matches `corpus.json`;
  * - the Israel toggle is a pressed/unpressed button that survives a reload;
  * - every series in `facets.json` is on the series index; every series page lists its parts in
- *   `order`, a series with perakim (Tanya) groups them by perek, and the other-language sibling link
- *   resolves;
+ *   `order`, and a series with perakim (Tanya) groups them by perek; nothing pairs a series with its
+ *   other-language set;
  * - axe is clean on Today, the series index and series pages in en and yi.
  *
  * `@data`: expectations come from the served `/data/*`, so this also runs on a real-data build.
@@ -32,7 +32,6 @@ interface SeriesFile {
   id: string;
   title: { en: string; yi: string };
   lang: "en" | "yi";
-  sibling: string | null;
   parts: { shiurId: string; order: number | null; perek: string | null }[];
 }
 
@@ -109,7 +108,7 @@ test.describe("@data series", () => {
     }
   });
 
-  test("every series page lists its parts in order; perakim group Tanya; sibling links resolve", async ({ page, request }) => {
+  test("every series page lists its parts in order; perakim group Tanya; no other-language link", async ({ page, request }) => {
     const facets = await dataJson<{ series: Record<string, unknown> }>(request, "facets.json");
     let checked = 0;
     for (const id of Object.keys(facets.series)) {
@@ -130,9 +129,7 @@ test.describe("@data series", () => {
       expect(new Set(shown), id).toEqual(new Set(file.parts.map((p) => p.shiurId)));
 
       if (file.parts.some((p) => p.perek !== null)) {
-        // One group per perek across the series and its sibling (when that file exists).
-        const sibRes = file.sibling ? await request.get(`/data/series/${encodeURIComponent(file.sibling)}.json`) : null;
-        const sibParts = sibRes?.status() === 200 ? ((await sibRes.json()) as SeriesFile).parts : [];
+        // One group per perek of this series.
         await page.goto(`/en/series/${encodeURIComponent(id)}?view=perek`);
         await settled(page);
         // Groups run in perek order (a range like א-ב sits in each of its perakim); unplaced parts last.
@@ -143,15 +140,13 @@ test.describe("@data series", () => {
         expect(new Set(nums).size, `${id}: one group per perek`).toBe(nums.length);
         if (keys.includes("other")) expect(keys.at(-1)).toBe("other");
         const inGroups = await page.locator("main section[data-perek] a[data-shiur]").evaluateAll((as) => as.map((a) => a.getAttribute("data-shiur")!));
-        expect(new Set(inGroups), id).toEqual(new Set([...file.parts, ...sibParts].map((p) => p.shiurId)));
+        expect(new Set(inGroups), id).toEqual(new Set(file.parts.map((p) => p.shiurId)));
       }
-      if (file.sibling) {
-        const sib = await request.get(`/data/series/${encodeURIComponent(file.sibling)}.json`);
-        if (sib.status() === 200) {
-          await page.goto(`/en/series/${encodeURIComponent(id)}`);
-          await settled(page);
-          await expect(page.locator(`main a[href="/en/series/${file.sibling}"]`).first()).toBeVisible();
-        }
+      const other = id.replace(/-(yi|en)$/u, (_m, l: string) => (l === "yi" ? "-en" : "-yi"));
+      if (other !== id) {
+        await page.goto(`/en/series/${encodeURIComponent(id)}`);
+        await settled(page);
+        await expect(page.locator(`main a[href="/en/series/${other}"]`)).toHaveCount(0);
       }
     }
     expect(checked).toBeGreaterThan(0);

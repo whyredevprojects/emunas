@@ -3,12 +3,12 @@
  * chapter lookup by time, and corpus id resolution through the retired-id redirects. Pure.
  */
 import type { CorpusIndex, PublicChapter, PublicShiur } from "../public/types.ts";
-import type { LayerMomentRef, LayerRedirectKind } from "../public/corpus-layer.ts";
+import type { LayerMomentRef } from "../public/corpus-layer.ts";
 import type { CorpusInput } from "./input/load.ts";
 import type { ShiurTagsIn } from "./input/schemas.ts";
 import type { VisibleSet } from "./input/visible.ts";
 import type { CorpusPolicy } from "./policy.ts";
-import { resolveCorpusRedirects, type ResolvedRedirects } from "./redirects.ts";
+import { resolveCorpusRedirects, type EntityRef, type LayerIdKind, type ResolvedRedirects } from "./redirects.ts";
 
 export const cmpStr = (a: string, b: string): number => (a < b ? -1 : a > b ? 1 : 0);
 
@@ -32,7 +32,7 @@ export class LayerContext {
   private readonly byId: Map<string, PublicShiur>;
   private readonly pos: Map<string, number>;
   /** Live (not retired) ids per kind. */
-  private readonly live: Record<LayerRedirectKind, ReadonlySet<string>>;
+  private readonly live: Record<LayerIdKind, ReadonlySet<string>>;
 
   constructor(x: LayerContextInput) {
     this.input = x.input;
@@ -44,7 +44,7 @@ export class LayerContext {
     this.visibleIds = [...x.visible.ids].sort(this.cmpCatalog);
     const i = x.input;
     this.redirects = resolveCorpusRedirects(i);
-    const liveOf = (kind: LayerRedirectKind, ids: readonly string[]) =>
+    const liveOf = (kind: LayerIdKind, ids: readonly string[]) =>
       new Set(ids.filter((id) => this.redirects.map[kind][id] === undefined));
     this.live = {
       topics: liveOf("topics", i.topics.map((r) => r.id)),
@@ -83,15 +83,24 @@ export class LayerContext {
   };
 
   /** Is `id` a live (not retired) record of `kind`? */
-  isLive(kind: LayerRedirectKind, id: string): boolean {
+  isLive(kind: LayerIdKind, id: string): boolean {
     return this.live[kind].has(id);
   }
 
-  /** A live id for `id`: itself, or where it was merged into; null when unknown. */
-  resolve(kind: LayerRedirectKind, id: string): string | null {
-    if (this.live[kind].has(id)) return id;
+  /**
+   * The live entity a reference of `kind` stands for: itself, or the entity it was merged into
+   * (possibly of another kind); null when unknown.
+   */
+  resolveRef(kind: LayerIdKind, id: string): EntityRef | null {
+    if (this.live[kind].has(id)) return { kind, id };
     const to = this.redirects.map[kind][id];
-    return to !== undefined && this.live[kind].has(to) ? to : null;
+    return to !== undefined && this.live[to.kind].has(to.id) ? to : null;
+  }
+
+  /** A live id of the same kind for `id`: itself, or where it was merged into; null when unknown or moved to another kind. */
+  resolve(kind: LayerIdKind, id: string): string | null {
+    const r = this.resolveRef(kind, id);
+    return r !== null && r.kind === kind ? r.id : null;
   }
 
   chapter(shiurId: string, idx: number): PublicChapter | undefined {

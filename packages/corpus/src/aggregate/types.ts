@@ -67,8 +67,6 @@ export interface SeriesEntry {
   lang: Ed;
   catalogSectionIds: string[];
   count: number;
-  /** The same set in the other language (`tanya-yi` ↔ `tanya-en`); a link, not a merge. */
-  sibling: string | null;
   /** Ordered. */
   parts: SeriesPart[];
   /**
@@ -171,11 +169,9 @@ export interface WorkEntry {
   key: string;
   /**
    * The merged corpus work (`.corpus/layer/works.json` id) most of this entry's mentions resolve
-   * to through `shiur-tags.sourceWorkIds`; null when none does or the corpus layer is off. Always
-   * written by corpus:build; optional so readers of an older `.corpus/` and hand-made test entries
-   * still type.
+   * to through `shiur-tags.sourceWorkIds`; null when none does or the corpus layer is off.
    */
-  workId?: string | null;
+  workId: string | null;
   /** false: not in the works table (key is a slug of the name, listed in build-report). */
   mapped: boolean;
   group: string | null;

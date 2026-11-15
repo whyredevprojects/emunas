@@ -68,7 +68,7 @@ describe("aggregates on real data", () => {
 
   it("groups Tanya by perek", () => {
     const tanya = f.series.series.find((s) => s.id === "tanya-yi")!;
-    expect(tanya.sibling).toBe("tanya-en");
+    expect(tanya).not.toHaveProperty("sibling");
     expect(tanya.groups!.length).toBeGreaterThan(10);
     expect(tanya.groups!.slice(0, 2).map((g) => g.perek)).toEqual(["הקדמה", "א"]);
     // groups keep series order and never split one perek in two (quote-mark variants merged)

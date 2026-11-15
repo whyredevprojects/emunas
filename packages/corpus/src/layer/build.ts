@@ -2,25 +2,17 @@
  * The corpus-layer projection (corpus-wave-plan §3.3, C1.2): `.corpus/layer/` from the allow-listed
  * corpus input (C1.1), the projected shiurim and the corpus policy. Pure apart from `loadLayerInput`.
  *
- * Two steps, because the aggregate's works.json needs the resolved source works and the legacy
- * redirects need the aggregate:
+ * Two steps, because the aggregate's works.json needs the resolved source works:
  *
  *   prepareLayer  → context, tag index, works, source-work index   (feeds `aggregate`)
- *   finishLayer   → every layer file, given the aggregates
+ *   finishLayer   → every layer file
  *
  * Every file is assembled field by field from the loose-schema records; nothing is spread from an
  * input record. Counts and flags come from the visible set only.
  */
-import type { Aggregates } from "../aggregate/types.ts";
 import { createDataReader } from "../build/read.ts";
 import { LAYER_FILES, LAYER_SCHEMA_VERSION } from "../public/corpus-layer.ts";
-import type {
-  LayerCounts,
-  LayerInfo,
-  LayerRedirectsFile,
-  LayerSiteCounts,
-  LayerWorksFile,
-} from "../public/corpus-layer.ts";
+import type { LayerCounts, LayerInfo, LayerSiteCounts, LayerWorksFile } from "../public/corpus-layer.ts";
 import type { CorpusIndex, PublicShiur } from "../public/types.ts";
 import { LayerContext } from "./context.ts";
 import {
@@ -35,10 +27,9 @@ import {
 } from "./entities.ts";
 import { readCorpusInput, type CorpusInputResult } from "./input/load.ts";
 import { buildVisibleSet, loadCategoryVisibility, type CategoryVisibility } from "./input/visible.ts";
-import { buildLegacyRedirects } from "./legacy.ts";
 import { buildOccasionTopics, occasionsByTopic } from "./occasion-topics.ts";
 import { corpusPolicyHash, loadCorpusPolicy, type CorpusPolicy } from "./policy.ts";
-import { LAYER_REDIRECT_KINDS } from "./redirects.ts";
+import { LAYER_ID_KINDS } from "./redirects.ts";
 import { buildSeries } from "./series.ts";
 import { buildShiurRefs, sourceWorkIndex } from "./shiur-refs.ts";
 import { buildStories, buildThreads } from "./stories.ts";
@@ -113,13 +104,14 @@ function baseInfo(p: PreparedLayer): LayerInfo {
     series: 0,
     shiurRefs: 0,
     synonyms: 0,
-    redirects: { corpus: 0, legacy: 0, legacyUnmatched: 0 },
+    retiredIds: 0,
     pages: { quiet: zeroSite(), live: zeroSite() },
   };
   const warnings = [...r.warnings];
   for (const d of r.disabled) warnings.push(`${d.file} not used (${d.reason})`);
   if (r.untagged.length > 0) warnings.push(`${r.untagged.length} corpus shiurim without usable shiur-tags`);
   if (r.coercedPersonTypes.length > 0) warnings.push(`${r.coercedPersonTypes.length} people with an unknown type read as other`);
+  if (r.coercedWorkKinds.length > 0) warnings.push(`${r.coercedWorkKinds.length} works with an unknown kind read as sefer`);
   if (r.notReadDenied > 0) warnings.push(`${r.notReadDenied} index.json files entries on the deny list (not read)`);
   return {
     layerSchemaVersion: LAYER_SCHEMA_VERSION,
@@ -152,7 +144,7 @@ function baseInfo(p: PreparedLayer): LayerInfo {
   };
 }
 
-export function finishLayer(p: PreparedLayer, aggregates: Aggregates): LayerOutput {
+export function finishLayer(p: PreparedLayer): LayerOutput {
   const info = baseInfo(p);
   if (p.state === null) return { files: { [LAYER_FILES.layer]: info }, info };
   const { ctx, tags, links, people: base, works } = p.state;
@@ -174,9 +166,6 @@ export function finishLayer(p: PreparedLayer, aggregates: Aggregates): LayerOutp
   const series = buildSeries(ctx);
   const refs = buildShiurRefs(ctx, { tags, concepts, people, works, stories: stories.file, threads: threads.file }, p.sourceWorkIds);
   const synonyms = buildSynonyms(ctx, { topics: topics.file, concepts, people, works });
-  const legacy = buildLegacyRedirects(ctx, { aggregates, topics: topics.file, concepts, people, works });
-  const corpus = Object.fromEntries(LAYER_REDIRECT_KINDS.map((k) => [k, { ...ctx.redirects.map[k] }])) as LayerRedirectsFile["corpus"];
-  const redirects: LayerRedirectsFile = { corpus, legacy };
 
   // ---- layer.json
   const w = info.warnings;
@@ -198,11 +187,7 @@ export function finishLayer(p: PreparedLayer, aggregates: Aggregates): LayerOutp
   c.series = series.size;
   c.shiurRefs = refs.size;
   c.synonyms = synonyms.synonyms.length;
-  c.redirects = {
-    corpus: LAYER_REDIRECT_KINDS.reduce((a, k) => a + Object.keys(corpus[k]).length, 0),
-    legacy: legacy.length,
-    legacyUnmatched: legacy.filter((l) => l.target === null).length,
-  };
+  c.retiredIds = LAYER_ID_KINDS.reduce((a, k) => a + Object.keys(ctx.redirects.map[k]).length, 0);
   for (const site of ["quiet", "live"] as const) {
     const s = c.pages[site];
     s.topics = topics.file.tree.filter((t) => t.pages[site]).length;
@@ -222,7 +207,6 @@ export function finishLayer(p: PreparedLayer, aggregates: Aggregates): LayerOutp
     [LAYER_FILES.stories]: stories.file,
     [LAYER_FILES.threads]: threads.file,
     [LAYER_FILES.synonyms]: synonyms,
-    [LAYER_FILES.redirects]: redirects,
     [LAYER_FILES.occasionTopics]: occasionTopics,
   };
   for (const [id, s] of series) files[`${LAYER_FILES.seriesDir}/${id}.json`] = s;
@@ -230,11 +214,7 @@ export function finishLayer(p: PreparedLayer, aggregates: Aggregates): LayerOutp
   return { files, info };
 }
 
-/** prepare + finish in one go, for callers that already hold the aggregates. */
-export function buildLayer(
-  sources: LayerSources,
-  projected: { shiurim: readonly PublicShiur[]; index: CorpusIndex },
-  aggregates: Aggregates,
-): LayerOutput {
-  return finishLayer(prepareLayer(sources, projected), aggregates);
+/** prepare + finish in one go. */
+export function buildLayer(sources: LayerSources, projected: { shiurim: readonly PublicShiur[]; index: CorpusIndex }): LayerOutput {
+  return finishLayer(prepareLayer(sources, projected));
 }

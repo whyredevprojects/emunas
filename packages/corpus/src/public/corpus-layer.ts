@@ -15,7 +15,7 @@
 import type { Ed, L } from "./types.ts";
 
 /** Bump when the shape of anything in `.corpus/layer/` changes. Separate from SCHEMA_VERSION. */
-export const LAYER_SCHEMA_VERSION = 1;
+export const LAYER_SCHEMA_VERSION = 2;
 
 /** The layer folder inside `.corpus/`. */
 export const LAYER_DIR = "layer";
@@ -30,7 +30,6 @@ export const LAYER_FILES = {
   stories: "stories.json",
   threads: "threads.json",
   synonyms: "synonyms.json",
-  redirects: "redirects.json",
   occasionTopics: "occasion-topics.json",
   /** `series/<seriesId>.json` */
   seriesDir: "series",
@@ -67,6 +66,7 @@ export interface LayerInputs {
   works: boolean;
   stories: boolean;
   teachingClusters: boolean;
+  /** `redirects.json` read (retired ids are resolved internally; nothing about them is published). */
   redirects: boolean;
   /** Series syntheses read / shiur-tags files read. */
   series: number;
@@ -94,7 +94,8 @@ export interface LayerCounts {
   series: number;
   shiurRefs: number;
   synonyms: number;
-  redirects: { corpus: number; legacy: number; legacyUnmatched: number };
+  /** Retired corpus ids resolved to a surviving entity (internal step; not published). */
+  retiredIds: number;
   pages: { quiet: LayerSiteCounts; live: LayerSiteCounts };
 }
 
@@ -217,7 +218,37 @@ export interface LayerConceptsFile {
 
 // ---------------------------------------------------------------- people.json
 
-export type LayerPersonType = "tanach" | "chazal" | "rishon" | "acharon" | "chassidic_rebbe" | "other";
+/** The contract's person types (`src/corpus-types.ts` `PersonType`). */
+export type LayerPersonType =
+  | "tanach"
+  | "chazal"
+  | "rishon"
+  | "acharon"
+  | "chassidic_rebbe"
+  | "malach"
+  | "ruler"
+  | "individual"
+  | "other";
+
+/**
+ * Index-of-names groups, in the order a sefer arranges them (Quiet C4.3, Live C.5): Tanach, then
+ * malachim beside the avos and neviim, Chazal, Rishonim, Acharonim, chassidic Rebbes, rulers, then
+ * everyone else. `individual` (private persons known from stories) sits in `other` and follows the
+ * `people.other` policy (D2).
+ */
+export type LayerPersonGroup = "tanach" | "malach" | "chazal" | "rishon" | "acharon" | "chassidic_rebbe" | "ruler" | "other";
+export const LAYER_PERSON_GROUPS: readonly LayerPersonGroup[] = ["tanach", "malach", "chazal", "rishon", "acharon", "chassidic_rebbe", "ruler", "other"];
+export const PERSON_GROUP_OF: Readonly<Record<LayerPersonType, LayerPersonGroup>> = {
+  tanach: "tanach",
+  malach: "malach",
+  chazal: "chazal",
+  rishon: "rishon",
+  acharon: "acharon",
+  chassidic_rebbe: "chassidic_rebbe",
+  ruler: "ruler",
+  individual: "other",
+  other: "other",
+};
 
 /** Why a person is left out of every index (D5). */
 export type LayerExcludedReason = "family" | "private" | "owner";
@@ -229,8 +260,12 @@ export interface LayerPerson {
   nameYi: string;
   aliases: string[];
   type: LayerPersonType;
-  /** Position of `type` in the index of names (tanach first, other last). */
-  typeOrder: number;
+  /** Index-of-names group of `type`. */
+  group: LayerPersonGroup;
+  /** Position of `group` in `LAYER_PERSON_GROUPS` (tanach first, other last). */
+  groupOrder: number;
+  /** Generated disambiguation note (who this is, as against similarly named persons); null when none. */
+  description: L | null;
   shiurIds: string[];
   count: number;
   /** Stories (with a visible telling) that name this person. */
@@ -263,11 +298,19 @@ export interface LayerWork {
   /** Only when that person is in people.json. */
   authorPersonId: string | null;
   sefariaIndexTitle: string | null;
-  /** A generic label ("Midrash", "Talmud Bavli"): listed, never a page. */
+  kind: LayerWorkKind;
+  /** A collection or an author's writings cited by name (`kind` `genre`): listed, never a page. */
   generic: boolean;
-  /** Shelf group from the site's ordering table (null: not in the table, sorted last). */
+  /**
+   * Shelf group: from the data for Tanach books (torah / neviim / kesuvim by `order`), tractates
+   * (mishnah / bavli / yerushalmi) and liturgy (tefillah); for other works the ordering table's
+   * group (null: not in the table, shelved last).
+   */
   orderGroup: string | null;
+  /** The data's canonical sort key (`Work.order`); compare only within one kind or one parent. */
   order: number | null;
+  /** The nearest larger work this belongs to that is in this file (`Work.parentWorkId`, followed up), else null. */
+  parentWorkId: string | null;
   shiurIds: string[];
   count: number;
   /** A person with the same id. */
@@ -277,8 +320,14 @@ export interface LayerWork {
   pages: LayerPageFlags;
 }
 
+export type LayerWorkKind = "sefer" | "genre" | "tanach-book" | "talmud-tractate" | "mishnah-tractate" | "liturgy" | "document";
+
 export interface LayerWorksFile {
-  /** Table works in shelf order, then the rest by English title. */
+  /**
+   * Shelf order: top-level works by shelf group, then position in the group (the data's `order` for
+   * Tanach books and tractates, else the ordering table's), then English title; each work is
+   * followed by its children (by `order`, then title), depth first.
+   */
   works: LayerWork[];
 }
 
@@ -294,6 +343,8 @@ export interface LayerStory {
   /** Generated merged retelling. */
   retelling: L;
   people: LayerStoryPerson[];
+  /** The tellings credit the story to different people (the retelling says so); `people` lists all of them. */
+  attributionVaries: boolean;
   /** Visible tellings by year (undated last), then catalog order. */
   tellings: LayerMomentRef[];
   shiurCount: number;
@@ -402,29 +453,6 @@ export interface LayerSynonyms {
 
 export interface LayerSynonymsFile {
   synonyms: LayerSynonyms[];
-}
-
-// ---------------------------------------------------------------- redirects.json
-
-export type LayerRedirectKind = "topics" | "concepts" | "people" | "works" | "stories" | "threads";
-export type LegacyKind = "person" | "work" | "concept";
-export type LayerTargetKind = "topic" | "concept" | "person" | "work";
-
-export interface LegacyRedirect {
-  kind: LegacyKind;
-  /** The old site key (normalize-keyed entity). */
-  oldKey: string;
-  hadPage: LayerPageFlags;
-  /** null: nothing matched (the site sends it to the index page). */
-  target: { kind: LayerTargetKind; id: string } | null;
-  /** How it matched. */
-  via: "name" | "slug" | "overlap" | "sources" | null;
-}
-
-export interface LayerRedirectsFile {
-  /** Retired corpus id → live id, per kind; chains resolved, cycles and dangling targets dropped. */
-  corpus: Record<LayerRedirectKind, Record<string, string>>;
-  legacy: LegacyRedirect[];
 }
 
 // ---------------------------------------------------------------- occasion-topics.json

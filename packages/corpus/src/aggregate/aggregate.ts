@@ -166,14 +166,11 @@ function neighbours(c: Ctx, sec: SectionsFile, series: SeriesFile): NeighboursFi
 
 function seriesFile(c: Ctx): SeriesFile {
   const all = c.input.index.series;
-  const ids = new Set(all.map((x) => x.id));
   const out: SeriesEntry[] = all.map((x) => {
     const parts = x.shiurIds
       .map((id) => c.byId.get(id))
       .filter((s): s is PublicShiur => s !== undefined)
       .map((s) => ({ id: s.id, order: s.series?.order ?? null, perek: s.perek, lang: s.lang, status: s.status }));
-    const m = /^(.*)-(yi|en)$/.exec(x.id);
-    const siblingId = m ? `${m[1]}-${m[2] === "yi" ? "en" : "yi"}` : null;
     let groups: SeriesEntry["groups"] = null;
     if (parts.some((p) => p.perek !== null)) {
       // Consecutive runs of the same perek (quote marks folded), so the groups keep series order.
@@ -191,7 +188,6 @@ function seriesFile(c: Ctx): SeriesFile {
       lang: x.lang,
       catalogSectionIds: [...x.catalogSectionIds],
       count: parts.length,
-      sibling: siblingId !== null && ids.has(siblingId) ? siblingId : null,
       parts,
       groups,
     };

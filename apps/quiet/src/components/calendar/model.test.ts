@@ -76,6 +76,7 @@ const index: CorpusIndex = {
   ],
   series: [],
   shiurim: rows,
+  gaps: [],
 };
 
 const ref = (id: string, years: number[], raw: string, audience: "children" | "bachurim" | null = null) => ({

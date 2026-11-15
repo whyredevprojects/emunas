@@ -237,13 +237,11 @@ describe("search outputs on the corpus layer (mini corpus)", () => {
     expect(out.moments).toEqual([]);
   });
 
-  it("the old call shape (no layer, a legacy extra key) still builds, ignoring the extra key", () => {
+  it("without a layer a doc has no keywords and never carries extraction topic candidates", () => {
     const s = shiurim.find((x) => x.id === PLANTED_IN)!;
-    const legacy = { shiur: s, ["candidate" + "Topics"]: [SENTINEL] };
-    const d = buildSearchDoc(legacy);
+    const d = buildSearchDoc({ shiur: s });
     expect(d.keywords).toEqual([]);
     expect(allStrings(d).some((x) => x.value.includes(SENTINEL))).toBe(false);
-    expect(d.hash).toBe(buildSearchDoc({ shiur: s }).hash);
   });
 
   it("indexes the catalog, labels and notes text it should", () => {

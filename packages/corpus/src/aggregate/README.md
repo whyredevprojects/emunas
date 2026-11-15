@@ -6,7 +6,7 @@
 |---|---|
 | `sections.json` | Each catalog section (index.json order) with its shiur ids in catalog order. Every in-scope shiur is in exactly one section. |
 | `neighbours.json` | `shiurId → { section, series, sameOccasion }`. `section` and `series` give the position, count and prev/next. `sameOccasion` holds the other shiurim with the same parsha/zman key, in both languages and sorted by year. |
-| `series.json` | Ordered parts. A series whose parts carry a `perek` (Tanya) also gets `groups`, which are consecutive runs of the same perek in series order. `sibling` links `x-yi` to `x-en`. |
+| `series.json` | Ordered parts. A series whose parts carry a `perek` (Tanya) also gets `groups`, which are consecutive runs of the same perek in series order. |
 | `occasions.json` | Every parsha (Torah order) and occasion (from Elul) in the normalize tables, with Yiddish and English shiurim together, sorted by year. Seudah and lechaim entries sit under `subs`. One-off and unmapped values go to `other`. Uncatalogued rows with a parsha/zman guessed from a file name are left out and counted in `excluded`. |
 | `years.json` | Shiur ids per year, in approximate calendar order (`calendar-order.ts`). `unknown` holds the shiurim without `hebrewYears`. |
 | `works.json` | Works in table order (group, then order), with unmapped works after them by key. Each work has `refs`, which are the resolved and inferred mentions with a parseable Sefaria ref in the work's own order, each with its mentions (shiur, moment id, t). Everything else is in `unlocated`. A generic label ("Gemara", "Midrash") that has a parseable ref is filed under the ref's work. |

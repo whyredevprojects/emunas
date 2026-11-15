@@ -66,12 +66,24 @@ describe("mini fixture read", () => {
 
   it("reads the optional fields when present", () => {
     expect(input!.topics.filter((t) => t.sameAs).length).toBeGreaterThan(0);
-    expect(input!.works.find((w) => w.id === picks.kindWorkId)?.kind).toBe("generic");
+    expect(input!.works.find((w) => w.id === picks.unknownKindWorkId)?.kind).toBe("sefer");
+    expect(report.coercedWorkKinds).toEqual([{ id: picks.unknownKindWorkId, kind: "future-kind" }]);
+    expect(input!.works.find((w) => w.id === picks.childWorkId)?.parentWorkId).toEqual(expect.any(String));
+    expect(input!.works.filter((w) => w.order !== null).length).toBeGreaterThan(0);
+    expect(input!.stories!.find((s) => s.id === picks.attributionVariesStoryId)?.attributionVaries).toBe(true);
+    expect(input!.people.find((p) => p.id === S.individualId)).toMatchObject({ type: "individual", description: { en: expect.any(String) } });
+    expect(input!.topics.some((t) => t.parsha.length > 0) && input!.topics.some((t) => t.zman.length > 0)).toBe(true);
     expect(input!.people.find((p) => p.id === S.mergedPersonId)?.mergedInto).toBe(picks.mergedIntoPersonId);
     expect(input!.people.find((p) => p.id === S.otherOneShiurId)).toMatchObject({ type: "other", shiurIds: [expect.any(String)] });
     expect(input!.people.find((p) => p.id === S.familyPersonId)?.nameEn).toMatch(/the Rav's father/);
-    expect(input!.redirects?.concepts).toEqual({ "syn-chain-a": "syn-chain-b", "syn-chain-b": picks.chainTargetConceptId });
-    expect(input!.redirects?.people).toEqual({ "syn-cycle-x": "syn-cycle-y", "syn-cycle-y": "syn-cycle-x" });
+    const c = (id: string) => ({ kind: "concepts", id });
+    expect(input!.redirects?.concepts).toEqual({ "syn-chain-a": c("syn-chain-b"), "syn-chain-b": c(picks.chainTargetConceptId) });
+    expect(input!.redirects?.people).toMatchObject({
+      "syn-cycle-x": { kind: "people", id: "syn-cycle-y" },
+      "syn-cycle-y": { kind: "people", id: "syn-cycle-x" },
+      [S.crossKindPersonId]: c(picks.chainTargetConceptId),
+      moshiach: c("mashiach"),
+    });
     expect(input!.redirects?.stories).toBeDefined();
     for (const t of input!.shiurTags.values()) expect(typeof t.otherSpeakerShare).toBe("number");
   });
@@ -180,24 +192,36 @@ describe("failure policy", () => {
     expect(r.report.droppedRecords).toEqual([{ file: "works.json", ref: "Not A Slug", reason: expect.stringMatching(/^id:/) }]);
   });
 
-  it("an unknown person type is read as other and reported", () => {
+  it("an unknown person type is read as other and reported; the version-2 types are known", () => {
     const d = miniCopy();
     let id = "";
     editJson<Json[]>(corpusFile(d, "people.json"), (xs) => {
       id = String(xs[0]!["id"]);
-      xs[0]!["type"] = "malach";
+      xs[0]!["type"] = "angel";
+      xs[1]!["type"] = "malach";
+      xs[2]!["type"] = "ruler";
+      xs[3]!["type"] = "individual";
     });
     const r = read(d);
     expect(r.input!.people.find((p) => p.id === id)?.type).toBe("other");
-    expect(r.report.coercedPersonTypes).toEqual([{ id, type: "malach" }]);
+    expect(r.input!.people.slice(1, 4).map((p) => p.type)).toEqual(["malach", "ruler", "individual"]);
+    expect(r.report.coercedPersonTypes).toEqual([{ id, type: "angel" }]);
   });
 
-  it("reads optional upstream fields defensively (parsha/zman, person flags, reviewStatus)", () => {
+  it("knows index.json version 2 only", () => {
+    expect(KNOWN_CORPUS_VERSIONS).toEqual([2]);
+    const d = miniCopy();
+    editJson<Json>(corpusFile(d, "index.json"), (x) => void (x["version"] = 1));
+    expect(read(d).report.knownVersion).toBe(false);
+  });
+
+  it("reads optional upstream fields (parsha/zman, person flags, reviewStatus)", () => {
     const d = miniCopy();
     editJson<Json[]>(corpusFile(d, "topics.json"), (xs) => {
-      xs[0]!["parsha"] = "noach";
-      xs[1]!["zman"] = ["pesach", "shavuos"];
-      xs[2]!["parsha"] = null;
+      xs[0]!["parsha"] = ["נח"];
+      xs[1]!["zman"] = ["פסח", "שבועות"];
+      delete xs[2]!["parsha"];
+      delete xs[4]!["parsha"];
       xs[3]!["reviewStatus"] = "reviewed";
     });
     editJson<Json[]>(corpusFile(d, "people.json"), (xs) => {
@@ -206,11 +230,11 @@ describe("failure policy", () => {
       xs[1]!["family"] = true;
     });
     const { input } = read(d);
-    expect(input!.topics[0]!.parsha).toEqual(["noach"]);
-    expect(input!.topics[1]!.zman).toEqual(["pesach", "shavuos"]);
+    expect(input!.topics[0]!.parsha).toEqual(["נח"]);
+    expect(input!.topics[1]!.zman).toEqual(["פסח", "שבועות"]);
     expect(input!.topics[2]!.parsha).toEqual([]);
     expect(input!.topics[3]!.reviewStatus).toBe("reviewed");
-    expect(input!.topics[4]!.parsha).toBeUndefined();
+    expect(input!.topics[4]!.parsha).toEqual([]);
     expect(input!.people[0]).toMatchObject({ private: true, contemporary: true });
     expect(input!.people[1]!.family).toBe(true);
   });
@@ -252,16 +276,23 @@ describe("failure policy", () => {
     expect(input!.series.has(f.slice("series/".length, -".json".length))).toBe(false);
   });
 
-  it("redirects: unknown kinds, self-redirects and non-slug ids are dropped", () => {
+  it("redirects: unknown kinds, self-redirects, non-slug ids and unknown target kinds are dropped; cross-kind targets are kept", () => {
     const d = miniCopy();
     editJson<Json>(corpusFile(d, "redirects.json"), (x) => {
       x["widgets"] = { a: "b" };
-      x["works"] = { "same-id": "same-id", "Bad Id": "tanya", "old-work": "tanya" };
+      x["works"] = {
+        "same-id": "same-id",
+        "Bad Id": "tanya",
+        "old-work": "tanya",
+        "to-concept": { kind: "concepts", id: "emunah" },
+        "to-gadget": { kind: "gadgets", id: "x" },
+        "no-id": { kind: "concepts" },
+      };
     });
     const { input, report } = read(d);
-    expect(input!.redirects!.works).toEqual({ "old-work": "tanya" });
+    expect(input!.redirects!.works).toEqual({ "old-work": { kind: "works", id: "tanya" }, "to-concept": { kind: "concepts", id: "emunah" } });
     expect(input!.redirects).not.toHaveProperty("widgets");
-    expect(report.droppedRecords.map((r) => r.ref)).toEqual(["widgets", "works:same-id", "works:#invalid"]);
+    expect(report.droppedRecords.map((r) => r.ref)).toEqual(["works:same-id", "works:#invalid", "works:to-gadget", "works:no-id", "widgets"]);
     expect(JSON.stringify(report)).not.toContain("Bad Id");
   });
 

@@ -3,10 +3,10 @@
 import { corpusLabel, formatClock, isUiLang, type UiLang } from "@emunas/i18n";
 import { livePaths } from "@emunas/links";
 import { useEffect, useState, type JSX } from "react";
-import { Link, useNavigate, useParams } from "react-router";
+import { Link, useParams } from "react-router";
 import { CorpusLabel } from "../components/CorpusLabel.tsx";
 import { Text } from "../components/Text.tsx";
-import { DataError, findRedirect, loadTopic, type TopicFile } from "../data/index.ts";
+import { loadTopic, type TopicFile } from "../data/index.ts";
 import { tFor } from "../i18n/index.ts";
 import { clip } from "../seo/head.ts";
 import { seoPageFor, TITLE_SEPARATOR, type SeoMetaArgs } from "../seo/meta.ts";
@@ -25,26 +25,17 @@ type State = { status: "loading" } | { status: "missing" } | { status: "ok"; fil
 export default function Topic(): JSX.Element {
   const { ui: rawUi, topicId = "" } = useParams();
   const ui: UiLang = isUiLang(rawUi) ? rawUi : "en";
-  const navigate = useNavigate();
   const [state, setState] = useState<State>({ status: "loading" });
   useEffect(() => {
     let live = true;
     setState({ status: "loading" });
     loadTopic(topicId)
       .then((file) => live && setState({ status: "ok", file }))
-      .catch(async (e: unknown) => {
-        if (!(e instanceof DataError && e.status === 404)) return live && setState({ status: "missing" });
-        // A retired topic id goes where redirects.json says, in one hop (plan §5).
-        const r = await findRedirect("t", topicId).catch(() => null);
-        if (!live) return;
-        if (r?.kind === "page" && r.route === "t") navigate(paths.topic(ui, r.id), { replace: true });
-        else if (r?.kind === "index") navigate(paths.explore(ui), { replace: true });
-        else setState({ status: "missing" });
-      });
+      .catch(() => live && setState({ status: "missing" }));
     return () => {
       live = false;
     };
-  }, [topicId, ui, navigate]);
+  }, [topicId]);
 
   const f = state.status === "ok" ? state.file : null;
   return (

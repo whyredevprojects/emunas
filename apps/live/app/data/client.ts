@@ -8,7 +8,7 @@
  * ```
  *
  * - One in-flight request per path; small shared files (`build`, `corpus`, `facets`, `today`, `works`,
- *   `stories`, `topics`, `stories-index`, glossary shards, `redirects`, `explore/entities`) are
+ *   `stories`, `topics`, `stories-index`, glossary shards, `explore/entities`) are
  *   memoized for the session, per-item files are not (the HTTP cache handles those:
  *   `/data/*` is `max-age=300, stale-while-revalidate`).
  * - A 404 becomes a `DataError` with `status: 404`; `notFoundToNull` turns it into `null` for pages that
@@ -26,7 +26,6 @@ import {
   type EntityKind,
   type ExploreEntitiesFile,
   type GlossaryShardFile,
-  type RedirectsFile,
   type StoriesIndexFile,
   type StoryFile,
   type ThreadFile,
@@ -176,8 +175,6 @@ export const loadStory = (id: string, o: LoadOptions = {}) => fetchData<StoryFil
 export const loadStoriesIndex = (o: LoadOptions = {}) => memoized<StoriesIndexFile>(dataPaths.storiesIndex(), o);
 export const loadGlossaryShard = (shard: string, o: LoadOptions = {}) =>
   memoized<GlossaryShardFile>(dataPaths.glossary(shard), o);
-/** Lazy: only after an entity file 404s (plan §5). */
-export const loadRedirects = (o: LoadOptions = {}) => memoized<RedirectsFile>(dataPaths.redirects(), o);
 export const loadExploreEntities = (o: LoadOptions = {}) =>
   memoized<ExploreEntitiesFile>(dataPaths.exploreEntities(), o);
 

@@ -50,7 +50,6 @@ function expectedFiles(s: PublicShiur, occasionKeys: string[], input: CorpusInpu
     `writeup/${s.id}.yi.json`,
     "topics.json",
     "stories-index.json",
-    "redirects.json",
     "explore/entities.json",
   ]);
   if (s.series) set.add(`series/${s.series.id}.json`);

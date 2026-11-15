@@ -48,14 +48,21 @@ export function buildShiurRefs(ctx: LayerContext, x: ShiurRefsInput, sourceWork:
   const concepts = new Set(x.concepts.concepts.map((c) => c.id));
   const people = new Set(x.people.people.filter((p) => p.excluded === null).map((p) => p.id));
   const works = new Set(x.works.works.map((w) => w.id));
-  const pick = (kind: "concepts" | "people" | "works", raws: readonly string[], keep: Set<string>) => {
-    const out = new Set<string>();
-    for (const r of raws) {
-      const id = ctx.resolve(kind, r);
-      if (id !== null && keep.has(id)) out.add(id);
+  // Every tag id is followed to its surviving entity, which may be of another kind (a person now a concept).
+  const keep = { concepts, people, works } as const;
+  const pickAll = (tags: { conceptIds: readonly string[]; personIds: readonly string[]; workIds: readonly string[] } | undefined) => {
+    const out = { concepts: new Set<string>(), people: new Set<string>(), works: new Set<string>() };
+    if (tags === undefined) return out;
+    for (const [kind, raws] of [["concepts", tags.conceptIds], ["people", tags.personIds], ["works", tags.workIds]] as const) {
+      for (const raw of raws) {
+        const r = ctx.resolveRef(kind, raw);
+        if (r === null || !(r.kind === "concepts" || r.kind === "people" || r.kind === "works")) continue;
+        if (keep[r.kind].has(r.id)) out[r.kind].add(r.id);
+      }
     }
-    return [...out].sort(cmpStr);
+    return out;
   };
+  const sorted = (xs: Set<string>) => [...xs].sort(cmpStr);
 
   const storyRefs = new Map<string, LayerShiurStoryRef[]>();
   for (const s of x.stories.stories) {
@@ -91,14 +98,15 @@ export function buildShiurRefs(ctx: LayerContext, x: ShiurRefsInput, sourceWork:
     const tags = ctx.tags(shiurId);
     const secs = x.tags.sectionsOf.get(shiurId);
     const notes = ctx.shiur(shiurId)?.notes;
+    const picked = pickAll(tags);
     out.set(shiurId, {
       shiurId,
       otherSpeakerShare: tags?.otherSpeakerShare ?? null,
       topics: (x.tags.topicsOf.get(shiurId) ?? []).map((t) => ({ ...t })),
       chapters: secs ? [...secs.entries()].sort((a, b) => a[0] - b[0]).map(([idx, topicIds]) => ({ idx, topicIds: [...topicIds] })) : [],
-      conceptIds: pick("concepts", tags?.conceptIds ?? [], concepts),
-      personIds: pick("people", tags?.personIds ?? [], people),
-      workIds: pick("works", tags?.workIds ?? [], works),
+      conceptIds: sorted(picked.concepts),
+      personIds: sorted(picked.people),
+      workIds: sorted(picked.works),
       sources: (notes?.sources ?? []).flatMap((s) => {
         const workId = sourceWork.get(s.id);
         return workId === undefined ? [] : [{ momentId: s.id, workId }];

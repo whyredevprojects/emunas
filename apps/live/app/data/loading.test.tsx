@@ -3,11 +3,11 @@
  * Loading rules (corpus-wave-plan §4, concept-live-corpus G, C1.7), through the real route tree over
  * the committed fixtures with a fetch spy:
  * - Today renders from `today.json` alone: no `corpus.json`, `facets.json`, topic tree, stories
- *   index, glossary shard, redirects or Explore file is requested (also with progress in the store);
+ *   index, glossary shard or Explore file is requested (also with progress in the store);
  * - the listening room renders from its shiur file alone, and its Related tab has no "counterpart in
  *   the other language" item (F.1);
- * - the corpus-entry route stubs load one file each, carry the AI label once, and an old story id
- *   goes where `redirects.json` says in one hop (the only time that file is requested).
+ * - the corpus-entry route stubs load one file each and carry the AI label once; an unknown id is
+ *   "not found" after that one request (no redirect lookup: the site has never been published).
  */
 import { act, cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { RouterProvider } from "react-router";
@@ -30,7 +30,6 @@ const NOT_ON_FIRST_PAINT = [
   /^\/data\/topics\.json$/u,
   /^\/data\/stories-index\.json$/u,
   /^\/data\/glossary\//u,
-  /^\/data\/redirects\.json$/u,
   /^\/data\/explore\//u,
   /^\/data\/stories\.json$/u,
 ];
@@ -163,18 +162,19 @@ describe("corpus-entry route stubs", () => {
     expect(requested).toEqual([`/data/story/${story.id}.json`]);
   });
 
-  it("an old story id goes where redirects.json says, in one hop", async () => {
-    const { router } = await renderAt("/en/maasios/the-sanzer-rav-and-the-business-competitor");
-    await waitFor(() => expect(router.state.location.pathname).toBe("/en/maasios"));
-    // The story file 404s, then redirects.json is read once; then the Maasios index loads its own files.
-    expect(requested.slice(0, 2)).toEqual(["/data/story/the-sanzer-rav-and-the-business-competitor.json", "/data/redirects.json"]);
-    expect(requested.filter((p) => p === "/data/redirects.json")).toHaveLength(1);
+  it("a story id that has no file says not found, after that one request", async () => {
+    const { router, container } = await renderAt("/en/maasios/the-sanzer-rav-and-the-business-competitor");
+    await waitFor(() => expect(container.querySelector("article[aria-busy=false]")).not.toBeNull());
+    expect(router.state.location.pathname).toBe("/en/maasios/the-sanzer-rav-and-the-business-competitor");
+    expect(requested).toEqual(["/data/story/the-sanzer-rav-and-the-business-competitor.json"]);
+    expect(container.querySelector("[data-corpus-label]")).toBeNull();
   });
 
-  it("a thread without a page says not found (the redirect table does not list it)", async () => {
+  it("a thread without a page says not found", async () => {
     const { container } = await renderAt("/en/th/no-such-thread");
     await waitFor(() => expect(container.querySelector("article[aria-busy=false]")).not.toBeNull());
     expect(container.querySelectorAll("main h1")).toHaveLength(1);
     expect(container.querySelector("[data-corpus-label]")).toBeNull();
+    expect(requested).toEqual(["/data/thread/no-such-thread.json"]);
   });
 });

@@ -9,7 +9,6 @@ export type {
   MomentKind,
   MomentRef,
   EntityKind,
-  LegacyKind,
   CorpusKind,
   OccasionKind,
   IndexName,
@@ -37,14 +36,8 @@ export { formatLive, parseLive, LIVE_ENTRY_SEG } from "./live.ts";
 export {
   pageLookupFromLayer,
   hrefFor,
-  legacyPaths,
-  legacyRedirects,
-  corpusRedirects,
   type LayerPagesInput,
   type LayerLinkData,
-  type LegacyPath,
-  type LegacyRedirectInput,
-  type RedirectPair,
 } from "./corpus.ts";
 export {
   sectionSlug,

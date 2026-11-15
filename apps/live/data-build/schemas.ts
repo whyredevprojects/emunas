@@ -17,7 +17,6 @@ import {
   type ExploreEntitiesFile,
   type FacetsFile,
   type GlossaryShardFile,
-  type RedirectsFile,
   type StoriesIndexFile,
   type StoryFile,
   type ThreadFile,
@@ -470,6 +469,7 @@ export const StorySchema = v.strictObject({
   retelling: L,
   reviewed: v.boolean(),
   people: v.array(v.union([chip, v.strictObject({ name: str })])),
+  attributionVaries: v.boolean(),
   tellings: v.array(v.strictObject(memberEntries)),
 });
 
@@ -505,19 +505,6 @@ export const GlossarySchema = v.strictObject({
   ),
 });
 
-const routeKind = v.picklist(["t", "c", "p", "seforim", "maasios", "th"]);
-const redirectMap = v.record(str, v.nullable(v.strictObject({ kind: routeKind, id: str })));
-export const RedirectsSchema = v.strictObject({
-  schemaVersion: version,
-  routes: v.strictObject({
-    t: redirectMap,
-    c: redirectMap,
-    p: redirectMap,
-    seforim: redirectMap,
-    maasios: redirectMap,
-    th: redirectMap,
-  }),
-});
 
 export const ExploreEntitiesSchema = v.strictObject({
   schemaVersion: version,
@@ -548,7 +535,6 @@ export const DATA_SCHEMAS = {
   story: StorySchema,
   storiesIndex: StoriesIndexSchema,
   glossary: GlossarySchema,
-  redirects: RedirectsSchema,
   exploreEntities: ExploreEntitiesSchema,
 } as const satisfies Record<DataKind, v.GenericSchema>;
 
@@ -579,7 +565,6 @@ export const _typeChecks: {
   story: Same<Out<"story">, StoryFile>;
   storiesIndex: Same<Out<"storiesIndex">, StoriesIndexFile>;
   glossary: Same<Out<"glossary">, GlossaryShardFile>;
-  redirects: Same<Out<"redirects">, RedirectsFile>;
   exploreEntities: Same<Out<"exploreEntities">, ExploreEntitiesFile>;
 } = {
   build: true,
@@ -602,7 +587,6 @@ export const _typeChecks: {
   story: true,
   storiesIndex: true,
   glossary: true,
-  redirects: true,
   exploreEntities: true,
 };
 export type _AllKinds = Same<keyof typeof _typeChecks, keyof DataFiles>;
@@ -620,7 +604,6 @@ export function kindOfFile(file: string): DataKind | null {
   if (file === "stories.json") return "stories";
   if (file === "topics.json") return "topics";
   if (file === "stories-index.json") return "storiesIndex";
-  if (file === "redirects.json") return "redirects";
   if (file === "explore/entities.json") return "exploreEntities";
   if (/^topic\/[^/]+\.moments-[1-9]\d*\.json$/.test(file)) return "topicMoments";
   if (/^topic\/[^/]+\.json$/.test(file)) return "topic";

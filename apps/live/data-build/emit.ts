@@ -74,8 +74,12 @@ export const EMIT_LIMITS = {
   relatedMax: 12,
   /** "A moment for today" candidates per occasion in today.json (from the row's shiurim). */
   todayPoolPerOccasion: 4,
-  /** Sections of the occasion mix in today.json. */
-  todayMixFirst: 3,
+  /**
+   * Sections of the occasion mix in today.json (enough to start playing; the rest come from the
+   * topic's moment pages). Two since corpus v2: its topic parsha/zman keys link about 90 occasions
+   * to a topic, and three per mix took today.json past its 30 KiB budget.
+   */
+  todayMixFirst: 2,
   /** Entries in today.json `newlySummarized` (Today shows 8 after the language filter). */
   newlySummarized: 12,
 } as const;

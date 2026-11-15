@@ -1,6 +1,5 @@
 /**
- * `site-policy/corpus-policy.json`: the owner's decisions for the corpus layer (corpus-wave-plan §2,
- * D1–D12). Defaults live here; the shipped file repeats them. A missing file means the defaults; an
+ * `site-policy/corpus-policy.json`: the owner's decisions for the corpus layer (corpus-wave-plan §2). Defaults live here; the shipped file repeats them. A missing file means the defaults; an
  * invalid file is fatal, since it is a reviewed, human-edited file. Every key is optional (a missing
  * key takes its default) but an unknown key is an error, so a misspelt switch cannot be silently
  * ignored. Flipping a decision is a one-line edit plus a rebuild.
@@ -26,8 +25,6 @@ export interface CorpusPolicy {
   };
   /** D3. */
   threads: { pageMinShiurim: number; twoMember: "inline-line" | "none"; timelineMinDated: number };
-  /** D4. */
-  legacyEntityPages: "redirect";
   /** D6. */
   visibility: { followCategoryVisibility: boolean };
   /** D7. */
@@ -57,8 +54,6 @@ export interface CorpusPolicy {
   };
   /** D11. */
   occasionTopic: { minShare: number; minSalience: number };
-  /** D12. */
-  quiet: { redirects: { maxRules: number } };
 }
 
 export const DEFAULT_CORPUS_POLICY: CorpusPolicy = {
@@ -71,7 +66,6 @@ export const DEFAULT_CORPUS_POLICY: CorpusPolicy = {
     excludeIds: [],
   },
   threads: { pageMinShiurim: 3, twoMember: "inline-line", timelineMinDated: 3 },
-  legacyEntityPages: "redirect",
   visibility: { followCategoryVisibility: true },
   featured: { maxOtherSpeakerShare: 0.5, excludeTopicIds: [] },
   live: { threadPagesIndexable: false },
@@ -95,7 +89,6 @@ export const DEFAULT_CORPUS_POLICY: CorpusPolicy = {
     },
   },
   occasionTopic: { minShare: 0.5, minSalience: 0.6 },
-  quiet: { redirects: { maxRules: 1900 } },
 };
 
 const count = v.pipe(v.number(), v.integer(), v.minValue(0));
@@ -129,7 +122,6 @@ const PolicySchema = v.strictObject({
       timelineMinDated: opt(count),
     }),
   ),
-  legacyEntityPages: opt(v.literal("redirect")),
   visibility: opt(v.strictObject({ followCategoryVisibility: opt(v.boolean()) })),
   featured: opt(v.strictObject({ maxOtherSpeakerShare: opt(share), excludeTopicIds: opt(v.array(slug)) })),
   live: opt(v.strictObject({ threadPagesIndexable: opt(v.boolean()) })),
@@ -159,7 +151,6 @@ const PolicySchema = v.strictObject({
     }),
   ),
   occasionTopic: opt(v.strictObject({ minShare: opt(share), minSalience: opt(share) })),
-  quiet: opt(v.strictObject({ redirects: opt(v.strictObject({ maxRules: opt(v.pipe(count, v.maxValue(2000))) })) })),
 });
 
 type Obj = Record<string, unknown>;

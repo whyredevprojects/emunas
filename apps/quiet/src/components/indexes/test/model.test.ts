@@ -48,6 +48,7 @@ function row(id: string, lang: "yi" | "en", parsha: string | null, n: string | n
 const ROWS = [row("yi-a-01", "yi", "בראשית", "1", [5736]), row("yi-a-02", "yi", "נח", "5", [5743]), row("en-a-01", "en", null, null, [])];
 
 const work = (w: Partial<WorkEntry> & Pick<WorkEntry, "key" | "en">): WorkEntry => ({
+  workId: null,
   mapped: true,
   group: "torah",
   order: 1,

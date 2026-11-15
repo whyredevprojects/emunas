@@ -65,7 +65,7 @@ Display fields: topic `label.{en,yi,he}`, `aliases` · concept `canonicalHe`, `l
 `transliterations` · person `nameHe`, `nameEn`, `nameYi`, `aliases` · work `titleHe`, `titleEn`,
 `sefariaIndexTitle`, `aliases`.
 
-Exemption until C3.1: the site-derived legacy aggregates at the top of `.corpus/`
+Exemption while current pages still read them (the C2 page wave removes them): the site-derived aggregates at the top of `.corpus/`
 (`people.json`, `concepts.json`, `works.json`, `stories.json`, `entities.json`) carry extraction
 spellings in `names`, which are not corpus-entity aliases; their entity-less positions are counted
 (`aliasTermsLegacy`) but not checked. Remove the exemption with the files.
@@ -98,6 +98,7 @@ Corpus-layer text units (`src/layer.ts`), shared with `corpus:build --suppress`
 | `threads.json` | `thread` | `label`, `summary` | `members[].shiurId` |
 | `topics.json` (`detail[]`) | `topic` | `description` | `hubs[]` + every graded shiur (`main`, `discussed`, `touched`) |
 | `concepts.json` | `concept` | `label`, `definition` | `shiurIds[]` + `exampleRefs[].shiurId` |
+| `people.json` | `person` | `description` | `shiurIds[]` |
 | `series/<id>.json` | `series` | `title`, `overview`, `keyThemes.<i>`, `arc.<shiurId>` (its `oneLiner`) | `arc[].shiurId` |
 
 `<lang>` is `en` or `yi`. Example: `corpus:story:the-divrei-chaim-and-the-man-who-shamed#retelling.en`.

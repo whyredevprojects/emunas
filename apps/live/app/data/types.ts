@@ -628,6 +628,8 @@ export interface StoryFile {
   retelling: L;
   reviewed: boolean;
   people: StoryPerson[];
+  /** The tellings credit the story to different people; the page says so (the retelling does too). */
+  attributionVaries: boolean;
   tellings: CorpusMember[];
 }
 
@@ -671,19 +673,6 @@ export interface GlossaryShardFile {
   concepts: GlossaryCard[];
 }
 
-/** Live route kinds that can redirect: topic, concept, person, sefer, story, thread. */
-export type RedirectRouteKind = "t" | "c" | "p" | "seforim" | "maasios" | "th";
-export const REDIRECT_ROUTE_KINDS: readonly RedirectRouteKind[] = ["t", "c", "p", "seforim", "maasios", "th"];
-
-/**
- * /data/redirects.json (lazy: only after an entity file 404s). Per route kind, an old id or legacy
- * key → the page to go to in one hop, or null for the index page.
- */
-export interface RedirectsFile {
-  schemaVersion: typeof LIVE_DATA_SCHEMA_VERSION;
-  routes: Record<RedirectRouteKind, Record<string, { kind: RedirectRouteKind; id: string } | null>>;
-}
-
 /** /data/explore/entities.json: entity id arrays per summarized shiur, for Explore's facets. */
 export interface ExploreEntitiesFile {
   schemaVersion: typeof LIVE_DATA_SCHEMA_VERSION;
@@ -714,7 +703,6 @@ export interface DataFiles {
   story: StoryFile;
   storiesIndex: StoriesIndexFile;
   glossary: GlossaryShardFile;
-  redirects: RedirectsFile;
   exploreEntities: ExploreEntitiesFile;
 }
 

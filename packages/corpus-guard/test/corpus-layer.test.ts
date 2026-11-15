@@ -89,7 +89,8 @@ function writeLayer(layer: string, o: { retellingEn?: string; synonyms?: { kind:
       exampleRefs: [{ shiurId: OTHER_SHIUR, sectionIndex: 0, momentId: `${OTHER_SHIUR}~s0`, t: 0 }], passim: false, liveFacetDrop: false, mergedIntoTopic: null, reviewed: false, pages: { quiet: true, live: true } }],
   }));
   writeFile(join(layer, "people.json"), JSON.stringify({
-    people: [{ id: "baal-shem-tov", nameHe: "בעל שם טוב", nameEn: "Baal Shem Tov", nameYi: "בעל שם טוב", aliases: [DISPLAY_ALIAS], type: "chassidic_rebbe", typeOrder: 4,
+    people: [{ id: "baal-shem-tov", nameHe: "בעל שם טוב", nameEn: "Baal Shem Tov", nameYi: "בעל שם טוב", aliases: [DISPLAY_ALIAS], type: "chassidic_rebbe", group: "chassidic_rebbe", groupOrder: 5,
+      description: L("The founder of Chassidus.", "דער בעל שם טוב."),
       shiurIds: [SHIUR], count: 1, storyIds: [STORY], worksAuthored: [], sameIdWork: null, sameAsTopic: null, excluded: null, listed: { quiet: true, live: true }, pages: { quiet: false, live: false }, quietAllList: false, reviewed: false }],
   }));
   writeFile(join(layer, "synonyms.json"), JSON.stringify({
@@ -141,7 +142,7 @@ describe("corpus-layer text units", () => {
     expect(parseCorpusItemId(`${SHIUR}~kp0`)).toBeNull();
     fx = makeLayerFixture();
     const { units, files, unreadable } = readLayerUnits(fx.corpus);
-    expect(files).toBe(5);
+    expect(files).toBe(6);
     expect(unreadable).toEqual([]);
     const ids = units.map((u) => u.id);
     expect(ids).toContain(`corpus:story:${STORY}#retelling.en`);
@@ -151,8 +152,14 @@ describe("corpus-layer text units", () => {
     expect(ids).toContain(`corpus:series:${SERIES}#keyThemes.1.en`);
     expect(ids).toContain(`corpus:series:${SERIES}#arc.${OTHER_SHIUR}.yi`);
     expect(ids).toContain(`corpus:series:${SERIES}#overview.yi`);
-    // Names, aliases and synonyms are not corpus prose.
-    expect(units.every((u) => ["stories.json", "threads.json", "topics.json", "concepts.json", `series/${SERIES}.json`].includes(u.file))).toBe(true);
+    expect(ids).toContain("corpus:person:baal-shem-tov#description.en");
+    expect(units.find((u) => u.id === "corpus:person:baal-shem-tov#description.yi")).toMatchObject({
+      path: ["people", 0, "description", "yi"],
+      members: [SHIUR],
+    });
+    // Names, aliases and synonyms are not corpus prose: from people.json only the description is a unit.
+    expect(units.filter((u) => u.file === "people.json").map((u) => u.field)).toEqual(["description", "description"]);
+    expect(units.every((u) => ["stories.json", "threads.json", "topics.json", "concepts.json", "people.json", `series/${SERIES}.json`].includes(u.file))).toBe(true);
     const topic = units.find((u) => u.id === `corpus:topic:${TOPIC}#description.en`)!;
     expect(topic.members.sort()).toEqual([OTHER_SHIUR, SHIUR].sort());
     expect(topic.path).toEqual(["detail", 0, "description", "en"]);
@@ -164,6 +171,8 @@ describe("corpus-layer text units", () => {
     expect(layerFileUnits("stories.json", { stories: [{ id: 3 }, null, { id: "s", title: "x", retelling: { en: "", yi: 7 } }] })).toEqual([]);
     expect(layerFileUnits("people.json", { people: [] })).toEqual([]);
     expect(layerFileOf("/x/.corpus/layer/stories.json")).toBe("stories.json");
+    expect(layerFileOf("/x/.corpus/layer/people.json")).toBe("people.json");
+    expect(layerFileUnits("people.json", { people: [{ id: "p", description: null }, { id: "q" }] })).toEqual([]);
     expect(layerFileOf("/x/.corpus/layer/series/a.json")).toBe("series/a.json");
     expect(layerFileOf("/x/.corpus/layer/shiur/a.json")).toBeNull();
     expect(layerFileOf("/x/.corpus/stories.json")).toBeNull();

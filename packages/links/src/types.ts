@@ -24,9 +24,6 @@ export interface MomentRef {
  */
 export type EntityKind = "work" | "person" | "concept";
 
-/** Old site keys that `legacyPaths` knows (the layer's `LegacyKind`). */
-export type LegacyKind = EntityKind;
-
 /**
  * Corpus-wide entities (corpus-wave-plan §3.5), addressed by their corpus id, which the data
  * contract promises is stable. Every one is AI-generated and unreviewed unless its layer record

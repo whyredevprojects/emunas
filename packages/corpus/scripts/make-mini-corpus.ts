@@ -142,6 +142,13 @@ export const MINI_CORPUS_SYNTHETIC = {
   mergedPersonId: "syn-merged-person",
   /** A type-`other` person with exactly one shiur. */
   otherOneShiurId: "syn-other-one-shiur",
+  /** A type-`individual` person (private person from a story) with one shiur: `other` group (D2). */
+  individualId: "syn-individual",
+  /**
+   * A retired person redirected to a concept (`{kind: "concepts", id}`, like `moshiach`): one mini
+   * shiur's tags and one story still name it, so the layer must follow it across kinds.
+   */
+  crossKindPersonId: "syn-cross-person",
   /** The real person whose nameEn is "the Rav's father" (family rule, D5). */
   familyPersonId: "eliyahu-shalom-wolfson",
   /** An index.json `files` entry no reader knows. */
@@ -166,8 +173,17 @@ export interface MiniCorpusPicks {
   lowConfidenceMember: { clusterId: string; shiurId: string; insightIndex: number };
   /** Cluster member whose insight index is past the end of the extraction (never projected). */
   outOfRangeMember: { clusterId: string; shiurId: string; insightIndex: number };
-  /** The work that got `kind`. */
-  kindWorkId: string;
+  /** The work whose `kind` is one the site does not know (read as `sefer`). */
+  unknownKindWorkId: string;
+  /** The shiur whose tags and the story whose people name the cross-kind retired person. */
+  crossKindShiurId: string;
+  crossKindStoryId: string;
+  /** Concept the cross-kind person redirects to. */
+  crossKindConceptId: string;
+  /** A story with `attributionVaries: true`. */
+  attributionVariesStoryId: string;
+  /** A work with a parent in the fixture (parentWorkId set). */
+  childWorkId: string;
   /** Real concept at the end of the redirect chain. */
   chainTargetConceptId: string;
   /** Real person the merged record points at. */
@@ -209,15 +225,24 @@ function makeMiniCorpus(): void {
   const sameWork = sameAs("workId");
 
   const stories0 = rd<Rec[]>(real, "derived/corpus/stories.json");
-  const redirects0 = rd<Record<string, Record<string, string>>>(real, "derived/corpus/redirects.json");
-  const storyTargets = new Set(Object.values(redirects0["stories"] ?? {}));
+  const redirects0 = rd<Record<string, Record<string, string | { kind: string; id: string }>>>(real, "derived/corpus/redirects.json");
+  const storyTargets = new Set(Object.values(redirects0["stories"] ?? {}).filter((x): x is string => typeof x === "string"));
   const stories = stories0
-    .map((s) => ({ ...s, tellings: (s["tellings"] as { shiurId: string }[]).filter((t) => inMini.has(t.shiurId)) }))
+    .map((s): Rec & { tellings: { shiurId: string }[] } => ({ ...s, tellings: (s["tellings"] as { shiurId: string }[]).filter((t) => inMini.has(t.shiurId)) }))
     .filter((s) => s.tellings.length > 0 || storyTargets.has(s.id));
 
-  const works = rd<Rec[]>(real, "derived/corpus/works.json")
-    .map((w) => ({ ...w, aliases: (w["aliases"] as string[]).slice(0, 4), shiurIds: keepIds(w["shiurIds"]) }))
-    .filter((w) => w.shiurIds.length > 0 || sameWork.has(w.id));
+  const allWorks = rd<Rec[]>(real, "derived/corpus/works.json").map((w): Rec & { aliases: string[]; shiurIds: string[] } => ({
+    ...w,
+    aliases: (w["aliases"] as string[]).slice(0, 4),
+    shiurIds: keepIds(w["shiurIds"]),
+  }));
+  const workById = new Map(allWorks.map((w) => [w.id, w]));
+  const keptWorks = new Set(allWorks.filter((w) => w.shiurIds.length > 0 || sameWork.has(w.id)).map((w) => w.id));
+  // Parents of kept works stay too (the contract: parentWorkId is always an existing work).
+  for (const id of [...keptWorks]) {
+    for (let p = workById.get(id)?.["parentWorkId"]; typeof p === "string" && !keptWorks.has(p); p = workById.get(p)?.["parentWorkId"]) keptWorks.add(p);
+  }
+  const works = allWorks.filter((w) => keptWorks.has(w.id));
 
   const storyPeople = new Set(stories.flatMap((s) => (s as Json)["people"] as string[]));
   const authors = new Set(works.map((w) => (w as Json)["authorPersonId"]).filter((x): x is string => typeof x === "string"));
@@ -275,8 +300,15 @@ function makeMiniCorpus(): void {
     { shiurId: lowPick.shiurId, insightIndex: lowPick.count + 5 },
   ];
 
-  const kindWork = works.find((w) => w.id === "midrash") ?? works[0]!;
-  (kindWork as Json)["kind"] = "generic";
+  const kindWork = works.find((w) => w["kind"] === "sefer" && w.shiurIds.length > 0)!;
+  (kindWork as Json)["kind"] = "future-kind";
+  const childWork = works.find((w) => typeof w["parentWorkId"] === "string" && w.shiurIds.length > 0);
+  if (!childWork) throw new Error("no work with a parent in the mini corpus");
+  let variesStory = stories.find((s) => s["attributionVaries"] === true && s.tellings.length > 0);
+  if (!variesStory) {
+    variesStory = stories.find((s) => s.tellings.length > 0 && s.id !== tellStory.id)!;
+    (variesStory as Json)["attributionVaries"] = true;
+  }
   (works[S.heardAsWorkIndex] as Json)["heardAsSamples"] = [POISON_CANARY];
   (concepts[S.asrConceptIndex] as Json)["asrVariants"] = [POISON_CANARY, `${POISON_CANARY}-2`];
   (topics[S.unknownFieldTopicIndex] as Json)[S.unknownField] = { note: "a field the pipeline may add later" };
@@ -286,11 +318,30 @@ function makeMiniCorpus(): void {
   people.push(
     { id: S.mergedPersonId, nameHe: "פלוני", nameEn: "Syn Merged", nameYi: "פלוני", type: "acharon", aliases: [], shiurIds: [shiurIds[0]!], mergedInto },
     { id: S.otherOneShiurId, nameHe: "אלמוני", nameEn: "Syn Other", nameYi: "אלמוני", type: "other", aliases: [], shiurIds: [shiurIds[1]!] },
+    {
+      id: S.individualId,
+      nameHe: "פלוני הגבאי",
+      nameEn: "Syn Gabbai",
+      nameYi: "פלוני דער גבאי",
+      type: "individual",
+      description: { en: "A gabbai in one story.", yi: "א גבאי אין איין מעשה." },
+      aliases: [],
+      shiurIds: [shiurIds[2]!, shiurIds[3]!, shiurIds[4]!],
+    },
   );
+  // Cross-kind: a retired person now a concept, still named by one shiur's tags and one story.
+  const crossKindShiurId = shiurIds[2]!;
+  const crossKindStory = stories.find((s) => s.tellings.length > 0 && s.id !== tellStory.id && s.id !== variesStory!.id)!;
+  (crossKindStory as Json)["people"] = [...((crossKindStory as Json)["people"] as string[]), S.crossKindPersonId];
   const redirects = {
     ...redirects0,
     [S.redirectChain.kind]: { [S.redirectChain.ids[0]]: S.redirectChain.ids[1], [S.redirectChain.ids[1]]: chainTarget },
-    [S.redirectCycle.kind]: { [S.redirectCycle.ids[0]]: S.redirectCycle.ids[1], [S.redirectCycle.ids[1]]: S.redirectCycle.ids[0] },
+    [S.redirectCycle.kind]: {
+      ...redirects0[S.redirectCycle.kind],
+      [S.redirectCycle.ids[0]]: S.redirectCycle.ids[1],
+      [S.redirectCycle.ids[1]]: S.redirectCycle.ids[0],
+      [S.crossKindPersonId]: { kind: "concepts", id: chainTarget },
+    },
   };
 
   // ---- write ----
@@ -305,7 +356,11 @@ function makeMiniCorpus(): void {
   put("teaching-clusters.json", clusters);
   put("redirects.json", redirects);
   for (const s of series) put(`series/${String(s["seriesId"])}.json`, s);
-  for (const id of shiurIds) put(`shiur-tags/${id}.json`, rd<Json>(real, `derived/corpus/shiur-tags/${id}.json`));
+  for (const id of shiurIds) {
+    const tags = rd<Json>(real, `derived/corpus/shiur-tags/${id}.json`);
+    if (id === crossKindShiurId) tags["personIds"] = [...(tags["personIds"] as string[]), S.crossKindPersonId];
+    put(`shiur-tags/${id}.json`, tags);
+  }
 
   // Poison: files the reader must never open. Canary strings only.
   const poison = { canary: POISON_CANARY };
@@ -356,7 +411,12 @@ function makeMiniCorpus(): void {
     notDoneMemberClusterId: notDoneCluster.id,
     lowConfidenceMember: { clusterId: memberCluster.id, shiurId: lowPick.shiurId, insightIndex: lowPick.insightIndex },
     outOfRangeMember: { clusterId: memberCluster.id, shiurId: lowPick.shiurId, insightIndex: lowPick.count + 5 },
-    kindWorkId: kindWork.id,
+    unknownKindWorkId: kindWork.id,
+    crossKindShiurId,
+    crossKindStoryId: crossKindStory.id,
+    crossKindConceptId: chainTarget,
+    attributionVariesStoryId: variesStory.id,
+    childWorkId: childWork.id,
     chainTargetConceptId: chainTarget,
     mergedIntoPersonId: mergedInto,
   };

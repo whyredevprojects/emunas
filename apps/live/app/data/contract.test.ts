@@ -17,7 +17,6 @@ import {
   loadExploreEntities,
   loadFacets,
   loadGlossaryShard,
-  loadRedirects,
   loadStoriesIndex,
   loadStory,
   loadThread,
@@ -96,10 +95,9 @@ const REQUIRED: { [K in keyof DataFiles]: readonly (keyof DataFiles[K])[] } = {
   topic: ["schemaVersion", "id", "label", "description", "reviewed", "hubs", "moments", "momentPages"],
   topicMoments: ["schemaVersion", "topicId", "page", "moments"],
   thread: ["schemaVersion", "id", "label", "summary", "reviewed", "members"],
-  story: ["schemaVersion", "id", "title", "retelling", "reviewed", "tellings"],
+  story: ["schemaVersion", "id", "title", "retelling", "reviewed", "attributionVaries", "tellings"],
   storiesIndex: ["schemaVersion", "stories"],
   glossary: ["schemaVersion", "shard", "concepts"],
-  redirects: ["schemaVersion", "routes"],
   exploreEntities: ["schemaVersion", "shiurim"],
 };
 
@@ -112,7 +110,6 @@ function kindOf(file: string): keyof DataFiles {
   if (file === "stories.json") return "stories";
   if (file === "topics.json") return "topics";
   if (file === "stories-index.json") return "storiesIndex";
-  if (file === "redirects.json") return "redirects";
   if (file === "explore/entities.json") return "exploreEntities";
   if (file.startsWith("quick-index.")) return "quickIndex";
   if (/^topic\/[^/]+\.moments-\d+\.json$/.test(file)) return "topicMoments";
@@ -228,7 +225,6 @@ describe("data contract", () => {
     await expect(loadThread("no-such-thread")).rejects.toMatchObject({ status: 404 });
     const shard = glossaryShardFor(concept, build.glossaryShards)!;
     expect((await loadGlossaryShard(shard)).concepts.map((c) => c.id)).toContain(concept);
-    expect(Object.keys((await loadRedirects()).routes).sort()).toEqual(["c", "maasios", "p", "seforim", "t", "th"]);
     expect(Object.keys((await loadExploreEntities()).shiurim).length).toBeGreaterThan(0);
 
     expect((await loadStories()).stories.length).toBeGreaterThan(0);

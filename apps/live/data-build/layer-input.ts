@@ -16,7 +16,6 @@ import {
   type LayerInfo,
   type LayerOccasionTopic,
   type LayerPerson,
-  type LayerRedirectsFile,
   type LayerSeries,
   type LayerShiurRefs,
   type LayerStory,
@@ -37,7 +36,6 @@ export interface LayerInput {
   stories: LayerStory[] | null;
   /** Null when the layer has no threads file. */
   threads: LayerThread[] | null;
-  redirects: LayerRedirectsFile | null;
   occasionTopics: LayerOccasionTopic[];
   /** Series syntheses by series id (only series with a visible part). */
   series: Map<string, LayerSeries>;
@@ -70,7 +68,6 @@ export function readLayerInput(corpusDir: string, shiurIds: Iterable<string>): L
   const topicsFile = opt<{ tree?: unknown; detail?: unknown }>(LAYER_FILES.topics);
   const storiesFile = opt<{ stories?: unknown }>(LAYER_FILES.stories);
   const threadsFile = opt<{ threads?: unknown }>(LAYER_FILES.threads);
-  const redirectsFile = opt<Partial<LayerRedirectsFile>>(LAYER_FILES.redirects);
   const series = new Map<string, LayerSeries>();
   const seriesDir = join(dir, LAYER_FILES.seriesDir);
   if (existsSync(seriesDir)) {
@@ -95,13 +92,6 @@ export function readLayerInput(corpusDir: string, shiurIds: Iterable<string>): L
     works: withId<LayerWork>(opt<{ works?: unknown }>(LAYER_FILES.works)?.works),
     stories: storiesFile === null ? null : withId<LayerStory>(storiesFile.stories),
     threads: threadsFile === null ? null : withId<LayerThread>(threadsFile.threads),
-    redirects:
-      redirectsFile === null
-        ? null
-        : {
-            corpus: (isObj(redirectsFile.corpus) ? redirectsFile.corpus : {}) as LayerRedirectsFile["corpus"],
-            legacy: arr(redirectsFile.legacy),
-          },
     occasionTopics: arr<LayerOccasionTopic>(opt<{ occasions?: unknown }>(LAYER_FILES.occasionTopics)?.occasions).filter(
       (o) => isObj(o) && typeof o.key === "string" && typeof o.topicId === "string",
     ),

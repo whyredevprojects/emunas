@@ -9,7 +9,6 @@ import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { buildCorpusWithAggregates, projectAndAggregate } from "../../src/aggregate/build.ts";
 import type { CorpusInput } from "../../src/layer/input/load.ts";
-import { nameForms } from "../../src/layer/legacy.ts";
 import { resolveCorpusRedirects } from "../../src/layer/redirects.ts";
 import { statedShiurCounts } from "../../src/layer/stories.ts";
 import { foldTerms } from "../../src/layer/synonyms.ts";
@@ -61,15 +60,59 @@ describe("series synthesis", () => {
 
 describe("occasion topics", () => {
   it("a topic's own parsha key wins and shows on the topic", () => {
+    const occ = (base.layer.files["occasion-topics.json"] as LayerOccasionTopicsFile).occasions;
+    expect(occ).toContainEqual({ key: "noach", kind: "parsha", topicId: "noach-mabul", source: "data", share: null });
+    const t = base.layer.files["topics.json"] as LayerTopicsFile;
+    expect(t.detail.find((x) => x.id === "noach-mabul")!.occasions).toEqual(["noach"]);
+  });
+
+  it("the data beats the derived rule; the most specific topic wins a key several topics list", () => {
     const d = miniCopy();
-    editJson<{ id: string; parsha?: string }[]>(join(d, CORPUS, "topics.json"), (ts) => {
-      ts.find((t) => t.id === "noach-mabul")!.parsha = "Noach";
+    editJson<{ id: string; level: number; parsha?: string[]; zman?: string[] }[]>(join(d, CORPUS, "topics.json"), (ts) => {
+      for (const t of ts) {
+        delete t.parsha;
+        delete t.zman;
+      }
+      const l2 = ts.filter((t) => t.level === 2);
+      const l3 = ts.filter((t) => t.level === 3);
+      l2[0]!.parsha = ["נח", "לך לך"];
+      l3[0]!.parsha = ["נח", "לך לך"];
+      l3[1]!.parsha = ["נח"];
+      l2[1]!.zman = ["פסח", "a spelling no table knows"];
     });
+    const topics = readJson<{ id: string; level: number }[]>(join(d, CORPUS, "topics.json"));
+    const l2 = topics.filter((t) => t.level === 2);
+    const l3 = topics.filter((t) => t.level === 3);
     const f = layerOf(d).layer.files;
     const occ = (f["occasion-topics.json"] as LayerOccasionTopicsFile).occasions;
-    expect(occ).toContainEqual({ key: "noach", kind: "parsha", topicId: "noach-mabul", source: "data", share: null });
-    const t = f["topics.json"] as LayerTopicsFile;
-    expect(t.detail.find((x) => x.id === "noach-mabul")!.occasions).toEqual(["noach"]);
+    // Deeper level, then fewer keys.
+    expect(occ.find((o) => o.key === "noach")).toMatchObject({ topicId: l3[1]!.id, source: "data" });
+    expect(occ.find((o) => o.key === "lech-lecha")).toMatchObject({ topicId: l3[0]!.id, source: "data" });
+    expect(occ.find((o) => o.key === "pesach")).toMatchObject({ topicId: l2[1]!.id, source: "data" });
+    expect((f["layer.json"] as LayerInfo).warnings).toContain("occasion-topics: 1 topic parsha/zman values not in the occasion tables (not linked)");
+  });
+
+  it("a sefer-like container (a topic whose descendants list parshiyos) links no parsha of its own; its zman keys still link", () => {
+    const d = miniCopy();
+    let parentId = "";
+    let childId = "";
+    editJson<{ id: string; level: number; parentId: string | null; parsha?: string[]; zman?: string[] }[]>(join(d, CORPUS, "topics.json"), (ts) => {
+      for (const t of ts) {
+        delete t.parsha;
+        delete t.zman;
+      }
+      const child = ts.find((t) => t.level === 3 && t.parentId !== null)!;
+      const parent = ts.find((t) => t.id === child.parentId)!;
+      [parentId, childId] = [parent.id, child.id];
+      parent.parsha = ["נח", "לך לך"];
+      parent.zman = ["פסח"];
+      child.parsha = ["נח"];
+    });
+    const occ = (layerOf(d).layer.files["occasion-topics.json"] as LayerOccasionTopicsFile).occasions;
+    expect(occ.find((o) => o.key === "noach")).toMatchObject({ topicId: childId, source: "data" });
+    expect(occ.find((o) => o.key === "lech-lecha" && o.source === "data")).toBeUndefined();
+    expect(occ.some((o) => o.topicId === parentId && o.kind === "parsha")).toBe(false);
+    expect(occ.find((o) => o.key === "pesach")).toMatchObject({ topicId: parentId, source: "data" });
   });
 });
 
@@ -158,14 +201,19 @@ describe("policy switches", () => {
 });
 
 describe("corpus redirects (unit)", () => {
-  const input = (redirects: Record<string, Record<string, string>>, people: { id: string; mergedInto?: string }[]): CorpusInput =>
-    ({ topics: [], concepts: [], people, works: [], stories: [], teachingClusters: [], redirects }) as unknown as CorpusInput;
+  type T = { kind: "topics" | "concepts" | "people" | "works" | "stories"; id: string };
+  const p = (id: string): T => ({ kind: "people", id });
+  const input = (
+    redirects: Partial<Record<T["kind"], Record<string, T>>>,
+    people: { id: string; mergedInto?: string }[],
+    concepts: { id: string; mergedInto?: string }[] = [],
+  ): CorpusInput => ({ topics: [], concepts, people, works: [], stories: [], teachingClusters: [], redirects }) as unknown as CorpusInput;
 
   it("resolves chains through mergedInto and the data file; drops cycles and dangling targets", () => {
     const r = resolveCorpusRedirects(
-      input({ people: { a: "b", x: "y", y: "x", gone: "nowhere" } }, [{ id: "b", mergedInto: "c" }, { id: "c" }, { id: "y" }]),
+      input({ people: { a: p("b"), x: p("y"), y: p("x"), gone: p("nowhere") } }, [{ id: "b", mergedInto: "c" }, { id: "c" }, { id: "y" }]),
     );
-    expect(r.map.people).toEqual({ a: "c", b: "c" });
+    expect(r.map.people).toEqual({ a: p("c"), b: p("c") });
     expect(r.dropped).toEqual([
       { kind: "people", from: "gone", reason: "dangling" },
       { kind: "people", from: "x", reason: "cycle" },
@@ -174,9 +222,31 @@ describe("corpus redirects (unit)", () => {
   });
 
   it("the data file wins over a conflicting mergedInto, and the conflict is reported", () => {
-    const r = resolveCorpusRedirects(input({ people: { a: "c" } }, [{ id: "a", mergedInto: "b" }, { id: "b" }, { id: "c" }]));
-    expect(r.map.people).toEqual({ a: "c" });
+    const r = resolveCorpusRedirects(input({ people: { a: p("c") } }, [{ id: "a", mergedInto: "b" }, { id: "b" }, { id: "c" }]));
+    expect(r.map.people).toEqual({ a: p("c") });
     expect(r.dropped).toEqual([{ kind: "people", from: "a", reason: "conflict" }]);
+  });
+
+  it("follows a target of another kind, and a chain that continues in that kind", () => {
+    const r = resolveCorpusRedirects(
+      input(
+        { people: { moshiach: { kind: "concepts", id: "mashiach-old" }, lost: { kind: "concepts", id: "nowhere" } } },
+        [],
+        [{ id: "mashiach-old", mergedInto: "mashiach" }, { id: "mashiach" }],
+      ),
+    );
+    expect(r.map.people).toEqual({ moshiach: { kind: "concepts", id: "mashiach" } });
+    expect(r.map.concepts).toEqual({ "mashiach-old": { kind: "concepts", id: "mashiach" } });
+    expect(r.dropped).toEqual([{ kind: "people", from: "lost", reason: "dangling" }]);
+  });
+
+  it("a cycle across kinds is dropped", () => {
+    const r = resolveCorpusRedirects(
+      input({ people: { a: { kind: "concepts", id: "b" } }, concepts: { b: p("a") } }, [{ id: "a" }], [{ id: "b" }]),
+    );
+    expect(r.map.people).toEqual({});
+    expect(r.map.concepts).toEqual({});
+    expect(r.dropped.map((d) => d.reason)).toEqual(["cycle", "cycle"]);
   });
 });
 
@@ -185,13 +255,6 @@ describe("small helpers (unit)", () => {
     expect(statedShiurCounts("Taught in five shiurim over the years.")).toEqual([5]);
     expect(statedShiurCounts("in 3 talks; two other shiurim add")).toEqual([3, 3]);
     expect(statedShiurCounts("The Rav teaches two ideas.")).toEqual([]);
-  });
-
-  it("nameForms splits parentheses and titles", () => {
-    expect(nameForms("the Rashab (Rabbi Sholom DovBer of Lubavitch)")).toEqual(
-      expect.arrayContaining(["rashab", "sholom dovber of lubavitch", "rabbi sholom dovber of lubavitch"]),
-    );
-    expect(nameForms("Rebbe Levi Yitzchak of Berditchev")).toContain("levi yitzchak of berditchev");
   });
 
   it("foldTerms folds, drops empties and deduplicates", () => {

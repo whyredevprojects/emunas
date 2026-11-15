@@ -159,17 +159,13 @@ export function buildTopics(ctx: LayerContext, x: TopicsInput): TopicsResult {
 
     const sameAs: NonNullable<LayerTopicNode["sameAs"]> = {};
     const sa = t.sameAs;
-    if (sa?.conceptId !== undefined) {
-      const id = ctx.resolve("concepts", sa.conceptId);
-      if (id !== null && x.conceptIds.has(id)) sameAs.conceptId = id;
-    }
-    if (sa?.personId !== undefined) {
-      const id = ctx.resolve("people", sa.personId);
-      if (id !== null && x.personIds.has(id)) sameAs.personId = id;
-    }
-    if (sa?.workId !== undefined) {
-      const id = ctx.resolve("works", sa.workId);
-      if (id !== null && x.workIds.has(id)) sameAs.workId = id;
+    // Each id is followed to its surviving entity, which may be of another kind (a person now a concept).
+    for (const [kind, raw] of [["concepts", sa?.conceptId], ["people", sa?.personId], ["works", sa?.workId]] as const) {
+      if (raw === undefined) continue;
+      const r = ctx.resolveRef(kind, raw);
+      if (r?.kind === "concepts" && x.conceptIds.has(r.id)) sameAs.conceptId ??= r.id;
+      else if (r?.kind === "people" && x.personIds.has(r.id)) sameAs.personId ??= r.id;
+      else if (r?.kind === "works" && x.workIds.has(r.id)) sameAs.workId ??= r.id;
     }
 
     const count = members.length;

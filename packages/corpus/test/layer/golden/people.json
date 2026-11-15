@@ -7,7 +7,9 @@
    "nameYi": "דער אבודרהם",
    "aliases": [],
    "type": "rishon",
-   "typeOrder": 2,
+   "group": "rishon",
+   "groupOrder": 3,
+   "description": null,
    "shiurIds": [
     "en-zmanim-en-chvdsh-tbs-02"
    ],
@@ -37,7 +39,9 @@
    "nameYi": "עכן",
    "aliases": [],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-brshys-01"
    ],
@@ -67,7 +71,9 @@
     "Achashveirosh"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-svds-shvshn-pvrym-01",
     "en-zmanim-en-tv-bshbt-01",
@@ -99,7 +105,9 @@
     "Adam"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-brshys-01",
     "yi-parshas-hashavua-brshys-03",
@@ -143,7 +151,9 @@
    "nameYi": "אגג",
    "aliases": [],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-svds-shvshn-pvrym-01"
    ],
@@ -174,7 +184,9 @@
     "Aaron"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-mvr-01",
     "yi-parshas-hashavua-vschnn-01",
@@ -210,7 +222,9 @@
     "Rabbi Yitzchak Luria"
    ],
    "type": "acharon",
-   "typeOrder": 3,
+   "group": "acharon",
+   "groupOrder": 4,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-vschnn-01",
     "yi-zmanim-lvl-02",
@@ -244,9 +258,41 @@
    "nameYi": "אביהוא",
    "aliases": [],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-spyrh-01"
+   ],
+   "count": 1,
+   "storyIds": [],
+   "worksAuthored": [],
+   "sameIdWork": null,
+   "sameAsTopic": null,
+   "excluded": null,
+   "listed": {
+    "quiet": true,
+    "live": false
+   },
+   "pages": {
+    "quiet": false,
+    "live": false
+   },
+   "quietAllList": false,
+   "reviewed": false
+  },
+  {
+   "id": "aviram",
+   "nameHe": "אבירם",
+   "nameEn": "Aviram",
+   "nameYi": "אבירם",
+   "aliases": [],
+   "type": "tanach",
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
+   "shiurIds": [
+    "en-miscellaneous-en-01"
    ],
    "count": 1,
    "storyIds": [],
@@ -276,7 +322,9 @@
     "the Avnei Nezer"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "en-zmanim-en-psch-06"
    ],
@@ -306,7 +354,9 @@
    "nameYi": "אבנר",
    "aliases": [],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-hzynv-01"
    ],
@@ -339,7 +389,9 @@
     "Abraham"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-brshys-03",
     "yi-parshas-hashavua-mvr-01",
@@ -382,7 +434,9 @@
     "Rabbi Shneur Zalman of Liadi"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-shvptym-01",
     "yi-zmanim-svds-zs-chnvkh-04",
@@ -421,7 +475,9 @@
     "Rabbeinu Yaakov ben Asher"
    ],
    "type": "rishon",
-   "typeOrder": 2,
+   "group": "rishon",
+   "groupOrder": 3,
+   "description": null,
    "shiurIds": [
     "en-parsha-en-ky-sb-01"
    ],
@@ -454,7 +510,9 @@
     "Rabbi Yisrael Baal Shem Tov"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-lvl-01",
     "yi-zmanim-pvrym-07",
@@ -495,7 +553,9 @@
     "Rabbi Yoel Sirkis"
    ],
    "type": "acharon",
-   "typeOrder": 3,
+   "group": "acharon",
+   "groupOrder": 4,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-svkvs-08",
     "yi-zmanim-chnvkh-11"
@@ -522,7 +582,7 @@
   {
    "id": "beis-aharon",
    "nameHe": "רבי אהרן מקארלין, בעל בית אהרן",
-   "nameEn": "the Beis Aharon (Rabbi Aharon of Karlin-Stolin)",
+   "nameEn": "the Beis Aharon (Rabbi Aharon II of Karlin-Stolin)",
    "nameYi": "דער בית אהרן",
    "aliases": [
     "the Bais Aharon",
@@ -530,7 +590,12 @@
     "the Beis Aharon of Stolin"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": {
+    "en": "Rabbi Aharon of Karlin-Stolin, author of the Beis Aharon, son of Rabbi Asher of Stolin and grandson of Rabbi Aharon HaGadol of Karlin, who is a separate person.",
+    "yi": "רבי אהרן פון קארלין-סטאלין, דער בעל בית אהרן, דער זון פון רבי אשר פון סטאלין און דער אייניקל פון רבי אהרן הגדול פון קארלין."
+   },
    "shiurIds": [
     "yi-zmanim-shbs-chzvn-01"
    ],
@@ -556,6 +621,38 @@
    "reviewed": false
   },
   {
+   "id": "beis-avraham-slonim",
+   "nameHe": "רבי אברהם מסלונים, בעל בית אברהם",
+   "nameEn": "the Beis Avraham of Slonim",
+   "nameYi": "דער בית אברהם פון סלאנים",
+   "aliases": [],
+   "type": "chassidic_rebbe",
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
+   "shiurIds": [
+    "en-miscellaneous-en-01"
+   ],
+   "count": 1,
+   "storyIds": [
+    "the-slonimer-rebbe-and-the-unimmersed-plates"
+   ],
+   "worksAuthored": [],
+   "sameIdWork": null,
+   "sameAsTopic": null,
+   "excluded": null,
+   "listed": {
+    "quiet": true,
+    "live": false
+   },
+   "pages": {
+    "quiet": false,
+    "live": false
+   },
+   "quietAllList": false,
+   "reviewed": false
+  },
+  {
    "id": "beis-halevi",
    "nameHe": "בית הלוי",
    "nameEn": "the Beis HaLevi (Rabbi Yosef Dov Soloveitchik of Brisk)",
@@ -564,7 +661,9 @@
     "Rav Yosef Dov of Brisk"
    ],
    "type": "acharon",
-   "typeOrder": 3,
+   "group": "acharon",
+   "groupOrder": 4,
+   "description": null,
    "shiurIds": [
     "en-miscellaneous-en-01"
    ],
@@ -590,20 +689,23 @@
   {
    "id": "belzer-rav",
    "nameHe": "האדמו\"ר מבעלזא",
-   "nameEn": "the Belzer Rav",
+   "nameEn": "the Belzer Rav (unspecified)",
    "nameYi": "דער בעלזער רב",
    "aliases": [
     "the Rebbe of Belz"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": {
+    "en": "Stands for \"the Belzer Rav\" or \"the Rebbe of Belz\" where a shiur does not say which Rebbe of Belz is meant. Where a story can be tied to one of them (Rabbi Shalom, Rabbi Yehoshua, Rabbi Yissachar Dov or Rabbi Aharon of Belz), it is listed under that Rebbe instead.",
+    "yi": "ווען אין א שיעור שטייט \"דער בעלזער רב\" אן א נאמען, און ס'איז נישט קלאר וואסערער פון די בעלזער רביים מ'מיינט. ווען א מעשה לאזט זיך צושטעלן צו איינעם פון זיי (רבי שלום, רבי יהושע, רבי יששכר דוב אדער רבי אהרן פון בעלזא), שטייט זי ביי יענעם רבי."
+   },
    "shiurIds": [
     "en-miscellaneous-en-01"
    ],
    "count": 1,
-   "storyIds": [
-    "the-belzer-rav-and-the-frozen-river"
-   ],
+   "storyIds": [],
    "worksAuthored": [],
    "sameIdWork": null,
    "sameAsTopic": null,
@@ -626,7 +728,9 @@
    "nameYi": "בן זומא",
    "aliases": [],
    "type": "chazal",
-   "typeOrder": 1,
+   "group": "chazal",
+   "groupOrder": 2,
+   "description": null,
    "shiurIds": [
     "en-miscellaneous-en-01"
    ],
@@ -656,7 +760,9 @@
     "Bilam"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "en-zmanim-en-chvdsh-tbs-02"
    ],
@@ -686,7 +792,9 @@
    "nameYi": "בלהה",
    "aliases": [],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "en-zmanim-en-tv-bshbt-01"
    ],
@@ -714,7 +822,9 @@
    "nameYi": "דער בני יששכר",
    "aliases": [],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-vyshb-08",
     "yi-parshas-hashavua-shvptym-01",
@@ -749,7 +859,9 @@
    "nameYi": "בועז",
    "aliases": [],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "en-parsha-en-vyshlch-01"
    ],
@@ -779,7 +891,9 @@
     "Ham"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "en-parsha-en-nch-01"
    ],
@@ -809,7 +923,9 @@
     "Hannah"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "en-zmanim-en-chvdsh-tbs-02"
    ],
@@ -839,7 +955,9 @@
     "Enoch"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-spyrh-01"
    ],
@@ -869,7 +987,9 @@
     "Rabbi Moshe Sofer"
    ],
    "type": "acharon",
-   "typeOrder": 3,
+   "group": "acharon",
+   "groupOrder": 4,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-brshys-01",
     "yi-zmanim-lvl-02",
@@ -916,7 +1036,9 @@
    "nameYi": "די חשמונאים",
    "aliases": [],
    "type": "other",
-   "typeOrder": 5,
+   "group": "other",
+   "groupOrder": 7,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-vyshb-08"
    ],
@@ -946,7 +1068,9 @@
     "Eve"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-brshys-01",
     "en-parsha-en-nch-01"
@@ -977,7 +1101,9 @@
     "Rabbi Avraham Yeshaya Karelitz"
    ],
    "type": "acharon",
-   "typeOrder": 3,
+   "group": "acharon",
+   "groupOrder": 4,
+   "description": null,
    "shiurIds": [
     "en-parsha-en-nch-01"
    ],
@@ -1007,7 +1133,9 @@
     "the Chidushei HaRim"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-tv-bb-04",
     "en-miscellaneous-en-01",
@@ -1045,7 +1173,9 @@
     "King Chizkiyahu"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-brshys-03",
     "yi-zmanim-svkvs-08"
@@ -1079,7 +1209,9 @@
     "the Chafetz Chaim"
    ],
    "type": "acharon",
-   "typeOrder": 3,
+   "group": "acharon",
+   "groupOrder": 4,
+   "description": null,
    "shiurIds": [
     "en-zmanim-en-chvdsh-tbs-02"
    ],
@@ -1113,7 +1245,9 @@
     "the Seer of Lublin"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-mvr-01"
    ],
@@ -1145,7 +1279,9 @@
     "Chushim"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "en-parsha-en-svldvs-01"
    ],
@@ -1175,7 +1311,9 @@
     "Bnei Dan"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "en-zmanim-en-chvdsh-tbs-02"
    ],
@@ -1203,7 +1341,9 @@
    "nameYi": "דניאל",
    "aliases": [],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-svds-pvrym-ktn-03"
    ],
@@ -1225,13 +1365,15 @@
    "reviewed": false
   },
   {
-   "id": "dasan-and-aviram",
-   "nameHe": "דתן ואבירם",
-   "nameEn": "Dasan and Aviram",
-   "nameYi": "דתן און אבירם",
+   "id": "dasan",
+   "nameHe": "דתן",
+   "nameEn": "Dasan",
+   "nameYi": "דתן",
    "aliases": [],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "en-miscellaneous-en-01"
    ],
@@ -1259,7 +1401,9 @@
    "nameYi": "דינה",
    "aliases": [],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-vyshb-08",
     "en-parsha-en-vyshlch-01"
@@ -1294,7 +1438,9 @@
     "Rav Chaim of Sanz"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-svkvs-08",
     "en-zmanim-en-tv-bshbt-01"
@@ -1331,7 +1477,9 @@
     "David"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-brshys-03",
     "yi-parshas-hashavua-vschnn-01",
@@ -1371,7 +1519,9 @@
     "Eli"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "en-zmanim-en-chvdsh-tbs-02"
    ],
@@ -1401,7 +1551,9 @@
     "Eliav"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "en-miscellaneous-en-01"
    ],
@@ -1431,7 +1583,9 @@
     "Eliezer"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-brshys-03"
    ],
@@ -1461,7 +1615,9 @@
     "Elisha"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-chnvkh-11",
     "en-parsha-en-svldvs-01"
@@ -1493,7 +1649,9 @@
     "Elijah"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-nysn-05",
     "yi-zmanim-spyrh-01",
@@ -1531,8 +1689,10 @@
     "Eliyahu Shalom",
     "the Rav's father"
    ],
-   "type": "other",
-   "typeOrder": 5,
+   "type": "individual",
+   "group": "other",
+   "groupOrder": 7,
+   "description": null,
    "shiurIds": [
     "en-miscellaneous-en-01"
    ],
@@ -1560,7 +1720,9 @@
    "nameYi": "אליצפן",
    "aliases": [],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-spyrh-01"
    ],
@@ -1590,7 +1752,9 @@
     "Efraim"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-vyshb-08",
     "en-parsha-en-vyshlch-01"
@@ -1621,7 +1785,9 @@
    "nameYi": "ער",
    "aliases": [],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-shonos-31"
    ],
@@ -1652,7 +1818,9 @@
     "Esau"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-brshys-03",
     "yi-zmanim-svkvs-08",
@@ -1688,7 +1856,9 @@
     "Esther"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-svds-pvrym-ktn-03",
     "yi-zmanim-pvrym-07",
@@ -1718,8 +1888,10 @@
    "nameEn": "Nasser",
    "nameYi": "נאסער",
    "aliases": [],
-   "type": "other",
-   "typeOrder": 5,
+   "type": "ruler",
+   "group": "ruler",
+   "groupOrder": 6,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-hzynv-01"
    ],
@@ -1730,7 +1902,7 @@
    "sameAsTopic": null,
    "excluded": null,
    "listed": {
-    "quiet": false,
+    "quiet": true,
     "live": false
    },
    "pages": {
@@ -1747,7 +1919,9 @@
    "nameYi": "המן",
    "aliases": [],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-svds-pvrym-ktn-03",
     "yi-zmanim-svds-shvshn-pvrym-01",
@@ -1782,7 +1956,9 @@
     "Abel"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-brshys-03"
    ],
@@ -1813,7 +1989,9 @@
     "Abraham ibn Ezra"
    ],
    "type": "rishon",
-   "typeOrder": 2,
+   "group": "rishon",
+   "groupOrder": 3,
+   "description": null,
    "shiurIds": [
     "en-parsha-en-nch-01"
    ],
@@ -1845,7 +2023,9 @@
     "Cain"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-hzynv-01"
    ],
@@ -1875,7 +2055,9 @@
     "the Klausenberger Rebbe"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-svds-pvrym-ktn-03"
    ],
@@ -1903,7 +2085,9 @@
    "nameYi": "קרח",
    "aliases": [],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-vschnn-01",
     "yi-zmanim-nysn-05"
@@ -1936,7 +2120,9 @@
     "Cozbi bas Tzur"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "en-miscellaneous-en-01"
    ],
@@ -1966,7 +2152,9 @@
     "Laban"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-brshys-03",
     "en-parsha-en-vyshlch-01"
@@ -1997,7 +2185,9 @@
     "Leah"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "en-parsha-en-vyshlch-01"
    ],
@@ -2025,7 +2215,9 @@
    "nameYi": "לוט",
    "aliases": [],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-shonos-31"
    ],
@@ -2055,7 +2247,9 @@
    "nameYi": "דער ליובאוויטשער רבי",
    "aliases": [],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "yi-shonos-10"
    ],
@@ -2088,7 +2282,9 @@
     "the Maggid of Mezeritch"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "en-miscellaneous-en-01"
    ],
@@ -2118,7 +2314,9 @@
     "the Maharal"
    ],
    "type": "acharon",
-   "typeOrder": 3,
+   "group": "acharon",
+   "groupOrder": 4,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-mvr-01",
     "yi-zmanim-nysn-05",
@@ -2149,8 +2347,10 @@
    "aliases": [
     "Gavriel"
    ],
-   "type": "other",
-   "typeOrder": 5,
+   "type": "malach",
+   "group": "malach",
+   "groupOrder": 1,
+   "description": null,
    "shiurIds": [
     "en-parsha-en-vyshlch-01"
    ],
@@ -2163,7 +2363,7 @@
    "sameAsTopic": null,
    "excluded": null,
    "listed": {
-    "quiet": false,
+    "quiet": true,
     "live": false
    },
    "pages": {
@@ -2183,8 +2383,10 @@
     "Michael the angel",
     "the malach Michael"
    ],
-   "type": "other",
-   "typeOrder": 5,
+   "type": "malach",
+   "group": "malach",
+   "groupOrder": 1,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-vyshb-08",
     "yi-parshas-hashavua-mvr-01"
@@ -2198,7 +2400,7 @@
    "sameAsTopic": null,
    "excluded": null,
    "listed": {
-    "quiet": false,
+    "quiet": true,
     "live": false
    },
    "pages": {
@@ -2215,7 +2417,9 @@
    "nameYi": "דער מלבי\"ם",
    "aliases": [],
    "type": "acharon",
-   "typeOrder": 3,
+   "group": "acharon",
+   "groupOrder": 4,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-lvl-02",
     "en-zmanim-en-psch-06"
@@ -2247,7 +2451,9 @@
    "nameYi": "מלכי צדק",
    "aliases": [],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-shvptym-01"
    ],
@@ -2280,7 +2486,9 @@
     "Rav Nachum of Tchernobyl"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "en-parsha-en-nch-01",
     "en-miscellaneous-en-01"
@@ -2313,7 +2521,9 @@
     "Manasseh"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "en-parsha-en-vyshlch-01"
    ],
@@ -2345,7 +2555,9 @@
     "Puah"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-nysn-05",
     "en-parsha-en-nch-01"
@@ -2374,7 +2586,9 @@
    "nameYi": "מישאל",
    "aliases": [],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-spyrh-01"
    ],
@@ -2402,7 +2616,9 @@
    "nameYi": "דער משנה למלך",
    "aliases": [],
    "type": "acharon",
-   "typeOrder": 3,
+   "group": "acharon",
+   "groupOrder": 4,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-shvptym-01"
    ],
@@ -2434,7 +2650,9 @@
     "Mordechai"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-pvrym-07",
     "yi-zmanim-svds-shvshn-pvrym-01",
@@ -2469,7 +2687,9 @@
     "Moses"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-brshys-03",
     "yi-parshas-hashavua-vschnn-01",
@@ -2510,7 +2730,9 @@
    "nameYi": "נדב",
    "aliases": [],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-spyrh-01"
    ],
@@ -2540,7 +2762,9 @@
     "Naphtali"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "en-parsha-en-svldvs-01",
     "en-zmanim-en-chvdsh-tbs-02"
@@ -2571,7 +2795,9 @@
     "Amrafel"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "en-parsha-en-svldvs-01"
    ],
@@ -2601,7 +2827,9 @@
     "Noah"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-svkvs-08",
     "yi-zmanim-pvrym-07",
@@ -2637,7 +2865,9 @@
     "the Ohev Yisroel"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-hzynv-01"
    ],
@@ -2665,7 +2895,9 @@
    "nameYi": "אונן",
    "aliases": [],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-shonos-31"
    ],
@@ -2695,7 +2927,9 @@
     "Onkelos HaGer"
    ],
    "type": "chazal",
-   "typeOrder": 1,
+   "group": "chazal",
+   "groupOrder": 2,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-svkvs-08",
     "en-zmanim-en-chvdsh-tbs-02"
@@ -2730,7 +2964,9 @@
     "Rabbi Chaim ben Attar"
    ],
    "type": "acharon",
-   "typeOrder": 3,
+   "group": "acharon",
+   "groupOrder": 4,
+   "description": null,
    "shiurIds": [
     "en-parsha-en-vyshlch-01",
     "en-zmanim-en-tv-bshbt-01"
@@ -2766,7 +3002,9 @@
     "Asenath"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-vyshb-08",
     "en-parsha-en-vyshlch-01"
@@ -2799,7 +3037,9 @@
     "Asniel ben Kenaz"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-shbs-chzvn-01"
    ],
@@ -2829,7 +3069,9 @@
     "the Ostrovtzer"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-nysn-05"
    ],
@@ -2857,7 +3099,9 @@
    "nameYi": "פרץ",
    "aliases": [],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-brshys-01",
     "yi-parshas-hashavua-vyshb-08",
@@ -2889,7 +3133,9 @@
     "Paroh"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-lvl-01",
     "yi-shonos-10",
@@ -2922,7 +3168,9 @@
     "Pinchas ben Elazar"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-spyrh-01",
     "en-miscellaneous-en-01"
@@ -2951,7 +3199,9 @@
    "nameYi": "רבה בר אבוה",
    "aliases": [],
    "type": "chazal",
-   "typeOrder": 1,
+   "group": "chazal",
+   "groupOrder": 2,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-shbs-chzvn-01"
    ],
@@ -2983,7 +3233,9 @@
     "Rabbi Yochanan ben Zakai"
    ],
    "type": "chazal",
-   "typeOrder": 1,
+   "group": "chazal",
+   "groupOrder": 2,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-lvl-02",
     "yi-zmanim-svkvs-08",
@@ -3015,7 +3267,9 @@
     "Rabbeinu Bechaye"
    ],
    "type": "rishon",
-   "typeOrder": 2,
+   "group": "rishon",
+   "groupOrder": 3,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-vyshb-08",
     "yi-zmanim-svds-zs-chnvkh-04",
@@ -3048,7 +3302,9 @@
    "nameYi": "רבינו יונה",
    "aliases": [],
    "type": "rishon",
-   "typeOrder": 2,
+   "group": "rishon",
+   "groupOrder": 3,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-spyrh-01"
    ],
@@ -3078,7 +3334,9 @@
    "nameYi": "רבי עקיבא",
    "aliases": [],
    "type": "chazal",
-   "typeOrder": 1,
+   "group": "chazal",
+   "groupOrder": 2,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-mvr-01",
     "yi-zmanim-lvl-02",
@@ -3114,7 +3372,9 @@
     "Reb Avraham of Tchechanov"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-pvrym-07"
    ],
@@ -3142,7 +3402,9 @@
    "nameYi": "רבי חיים ויטאל",
    "aliases": [],
    "type": "acharon",
-   "typeOrder": 3,
+   "group": "acharon",
+   "groupOrder": 4,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-spyrh-01",
     "yi-zmanim-tv-bb-04",
@@ -3176,7 +3438,9 @@
     "Rabbi Chanina ben Tradyon"
    ],
    "type": "chazal",
-   "typeOrder": 1,
+   "group": "chazal",
+   "groupOrder": 2,
+   "description": null,
    "shiurIds": [
     "en-parsha-en-vyshlch-01"
    ],
@@ -3204,7 +3468,9 @@
    "nameYi": "רבי אלעזר בן עזריה",
    "aliases": [],
    "type": "chazal",
-   "typeOrder": 1,
+   "group": "chazal",
+   "groupOrder": 2,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-lvl-02"
    ],
@@ -3234,7 +3500,9 @@
     "Rabbi Elchanan Wasserman"
    ],
    "type": "acharon",
-   "typeOrder": 3,
+   "group": "acharon",
+   "groupOrder": 4,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-hzynv-01",
     "yi-shonos-10"
@@ -3266,7 +3534,9 @@
     "Rabbi Eliezer HaGadol"
    ],
    "type": "chazal",
-   "typeOrder": 1,
+   "group": "chazal",
+   "groupOrder": 2,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-svkvs-08",
     "yi-zmanim-nysn-05",
@@ -3301,7 +3571,9 @@
     "Rabbi Eliezer the son of Rabbi Yosi"
    ],
    "type": "chazal",
-   "typeOrder": 1,
+   "group": "chazal",
+   "groupOrder": 2,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-svds-pvrym-ktn-03"
    ],
@@ -3329,7 +3601,9 @@
    "nameYi": "רבי הושעיא",
    "aliases": [],
    "type": "chazal",
-   "typeOrder": 1,
+   "group": "chazal",
+   "groupOrder": 2,
+   "description": null,
    "shiurIds": [
     "en-parsha-en-vyshlch-01"
    ],
@@ -3364,7 +3638,9 @@
     "Rebbe Levi Yitzchok of Berditchev"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-shbs-chzvn-01",
     "en-miscellaneous-en-01"
@@ -3399,7 +3675,9 @@
     "Rabbi Meir Baal HaNes"
    ],
    "type": "chazal",
-   "typeOrder": 1,
+   "group": "chazal",
+   "groupOrder": 2,
+   "description": null,
    "shiurIds": [
     "en-miscellaneous-en-01",
     "en-miscellaneous-en-02"
@@ -3431,7 +3709,9 @@
     "R' Mendel Vitebsker"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "en-miscellaneous-en-01"
    ],
@@ -3464,7 +3744,9 @@
     "Reb Mottele of Chernobyl"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "yi-shonos-10"
    ],
@@ -3498,7 +3780,9 @@
     "the Lechovicher tzaddik"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-hzynv-01",
     "en-parsha-en-nch-01"
@@ -3534,7 +3818,9 @@
     "Reb Moshe of Sassov"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-vschnn-01"
    ],
@@ -3564,7 +3850,9 @@
    "nameYi": "ר' נפתלי אמסטערדאם",
    "aliases": [],
    "type": "acharon",
-   "typeOrder": 3,
+   "group": "acharon",
+   "groupOrder": 4,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-shvptym-01"
    ],
@@ -3599,7 +3887,9 @@
     "the Ropshitzer Rebbe, Reb Naftali Tzvi"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-svkvs-08"
    ],
@@ -3629,7 +3919,9 @@
    "nameYi": "רבי נתן אדלער",
    "aliases": [],
    "type": "acharon",
-   "typeOrder": 3,
+   "group": "acharon",
+   "groupOrder": 4,
+   "description": null,
    "shiurIds": [
     "en-parsha-en-svldvs-01"
    ],
@@ -3659,7 +3951,9 @@
     "Pinchas ben Yair"
    ],
    "type": "chazal",
-   "typeOrder": 1,
+   "group": "chazal",
+   "groupOrder": 2,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-vschnn-01",
     "en-parsha-en-vyshlch-01"
@@ -3694,7 +3988,9 @@
     "Rabbi Pinchas of Koritz"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-lvl-02",
     "yi-zmanim-svkvs-08",
@@ -3727,7 +4023,9 @@
     "Rabbi Shimon"
    ],
    "type": "chazal",
-   "typeOrder": 1,
+   "group": "chazal",
+   "groupOrder": 2,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-shbs-chzvn-01",
     "en-parsha-en-vyshlch-01"
@@ -3761,7 +4059,9 @@
    "nameYi": "רבי שמעון סופר",
    "aliases": [],
    "type": "acharon",
-   "typeOrder": 3,
+   "group": "acharon",
+   "groupOrder": 4,
+   "description": null,
    "shiurIds": [
     "en-miscellaneous-en-02"
    ],
@@ -3795,7 +4095,9 @@
     "Rav Tzadok"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-lvl-01",
     "yi-zmanim-pvrym-07",
@@ -3830,7 +4132,9 @@
     "Rabbi Yehoshua"
    ],
    "type": "chazal",
-   "typeOrder": 1,
+   "group": "chazal",
+   "groupOrder": 2,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-svkvs-08",
     "yi-zmanim-nysn-05",
@@ -3862,7 +4166,9 @@
    "nameYi": "רבי יהושע בן לוי",
    "aliases": [],
    "type": "chazal",
-   "typeOrder": 1,
+   "group": "chazal",
+   "groupOrder": 2,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-chnvkh-11"
    ],
@@ -3890,7 +4196,9 @@
    "nameYi": "רבי יהושע לייב דיסקין",
    "aliases": [],
    "type": "acharon",
-   "typeOrder": 3,
+   "group": "acharon",
+   "groupOrder": 4,
+   "description": null,
    "shiurIds": [
     "en-miscellaneous-en-01"
    ],
@@ -3923,7 +4231,9 @@
     "Rabbeinu HaKadosh"
    ],
    "type": "chazal",
-   "typeOrder": 1,
+   "group": "chazal",
+   "groupOrder": 2,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-hzynv-01",
     "en-miscellaneous-en-02"
@@ -3957,7 +4267,9 @@
     "Rabbi Yishmael Kohen Gadol"
    ],
    "type": "chazal",
-   "typeOrder": 1,
+   "group": "chazal",
+   "groupOrder": 2,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-shbs-chzvn-01"
    ],
@@ -3987,7 +4299,9 @@
     "Rabbi Yisroel Salanter"
    ],
    "type": "acharon",
-   "typeOrder": 3,
+   "group": "acharon",
+   "groupOrder": 4,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-lvl-02"
    ],
@@ -4017,7 +4331,9 @@
    "nameYi": "רבי יצחק",
    "aliases": [],
    "type": "chazal",
-   "typeOrder": 1,
+   "group": "chazal",
+   "groupOrder": 2,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-brshys-03"
    ],
@@ -4045,7 +4361,9 @@
    "nameYi": "רבי יוחנן",
    "aliases": [],
    "type": "chazal",
-   "typeOrder": 1,
+   "group": "chazal",
+   "groupOrder": 2,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-mvr-01",
     "yi-zmanim-chnvkh-11"
@@ -4077,7 +4395,9 @@
     "Rochel"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "en-parsha-en-vyshlch-01",
     "en-zmanim-en-tv-bshbt-01"
@@ -4106,7 +4426,9 @@
    "nameYi": "דער ראדזינער רבי",
    "aliases": [],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "en-miscellaneous-en-01"
    ],
@@ -4137,7 +4459,9 @@
     "Maimonides"
    ],
    "type": "rishon",
-   "typeOrder": 2,
+   "group": "rishon",
+   "groupOrder": 3,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-brshys-01",
     "yi-parshas-hashavua-brshys-03",
@@ -4156,10 +4480,10 @@
    "storyIds": [],
    "worksAuthored": [
     "rambam",
+    "igros-harambam",
     "mishneh-torah",
     "peirush-hamishnayos",
-    "shloshah-asar-ikkarim",
-    "igros-harambam"
+    "shloshah-asar-ikkarim"
    ],
    "sameIdWork": "rambam",
    "sameAsTopic": null,
@@ -4185,7 +4509,9 @@
     "Nachmanides"
    ],
    "type": "rishon",
-   "typeOrder": 2,
+   "group": "rishon",
+   "groupOrder": 3,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-brshys-01",
     "yi-parshas-hashavua-hzynv-01",
@@ -4227,7 +4553,9 @@
     "Rabbi Moshe Chaim Luzzatto"
    ],
    "type": "acharon",
-   "typeOrder": 3,
+   "group": "acharon",
+   "groupOrder": 4,
+   "description": null,
    "shiurIds": [
     "en-miscellaneous-en-01"
    ],
@@ -4260,7 +4588,9 @@
     "Rabbi Shlomo Yitzchaki"
    ],
    "type": "rishon",
-   "typeOrder": 2,
+   "group": "rishon",
+   "groupOrder": 3,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-brshys-01",
     "yi-parshas-hashavua-brshys-03",
@@ -4283,10 +4613,10 @@
    "storyIds": [],
    "worksAuthored": [
     "rashi",
-    "rashi-on-bereishis",
-    "rashi-on-rosh-hashanah",
     "rashi-on-tehillim",
+    "rashi-on-rosh-hashanah",
     "rashi-on-the-torah",
+    "rashi-on-bereishis",
     "rashi-on-vayikra"
    ],
    "sameIdWork": "rashi",
@@ -4313,7 +4643,9 @@
     "Rav Adda"
    ],
    "type": "chazal",
-   "typeOrder": 1,
+   "group": "chazal",
+   "groupOrder": 2,
+   "description": null,
    "shiurIds": [
     "en-zmanim-en-chvdsh-tbs-02"
    ],
@@ -4341,7 +4673,9 @@
    "nameYi": "ר' אהרן קאטלער",
    "aliases": [],
    "type": "acharon",
-   "typeOrder": 3,
+   "group": "acharon",
+   "groupOrder": 4,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-hzynv-01"
    ],
@@ -4369,7 +4703,9 @@
    "nameYi": "ר' מרדכי גיפטער",
    "aliases": [],
    "type": "acharon",
-   "typeOrder": 3,
+   "group": "acharon",
+   "groupOrder": 4,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-nysn-05"
    ],
@@ -4399,7 +4735,9 @@
    "nameYi": "רב הונא",
    "aliases": [],
    "type": "chazal",
-   "typeOrder": 1,
+   "group": "chazal",
+   "groupOrder": 2,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-mvr-01"
    ],
@@ -4427,7 +4765,9 @@
    "nameYi": "רב נחמן בר יצחק",
    "aliases": [],
    "type": "chazal",
-   "typeOrder": 1,
+   "group": "chazal",
+   "groupOrder": 2,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-mvr-01"
    ],
@@ -4455,7 +4795,9 @@
    "nameYi": "ר' נתן וואכטפויגל",
    "aliases": [],
    "type": "acharon",
-   "typeOrder": 3,
+   "group": "acharon",
+   "groupOrder": 4,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-hzynv-01"
    ],
@@ -4485,7 +4827,9 @@
    "nameYi": "רב פפי",
    "aliases": [],
    "type": "chazal",
-   "typeOrder": 1,
+   "group": "chazal",
+   "groupOrder": 2,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-chnvkh-11"
    ],
@@ -4513,7 +4857,9 @@
    "nameYi": "רבא",
    "aliases": [],
    "type": "chazal",
-   "typeOrder": 1,
+   "group": "chazal",
+   "groupOrder": 2,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-chnvkh-11"
    ],
@@ -4543,7 +4889,9 @@
     "Reb Duvid'l of Skver"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "yi-shonos-10"
    ],
@@ -4578,7 +4926,9 @@
     "the Rebbe Reb Elimelech of Lizhensk"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-vschnn-01"
    ],
@@ -4611,7 +4961,9 @@
    "nameYi": "רבי נחמן בראסלאווער",
    "aliases": [],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "en-zmanim-en-tv-bshbt-01"
    ],
@@ -4642,7 +4994,9 @@
     "R' Simcha Bunim of Peshischa"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-tv-bb-04",
     "en-zmanim-en-rsh-hshnh-03"
@@ -4673,7 +5027,9 @@
     "Rechavam ben Shlomo"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-spyrh-01"
    ],
@@ -4704,7 +5060,9 @@
     "the Rama"
    ],
    "type": "acharon",
-   "typeOrder": 3,
+   "group": "acharon",
+   "groupOrder": 4,
+   "description": null,
    "shiurIds": [
     "en-zmanim-en-psch-06"
    ],
@@ -4737,7 +5095,9 @@
     "Rebecca"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "en-parsha-en-svldvs-01"
    ],
@@ -4767,7 +5127,9 @@
     "Rabbi Elazar of Worms"
    ],
    "type": "rishon",
-   "typeOrder": 2,
+   "group": "rishon",
+   "groupOrder": 3,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-svkvs-08"
    ],
@@ -4799,7 +5161,9 @@
     "Ruth"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "en-parsha-en-vyshlch-01"
    ],
@@ -4832,7 +5196,9 @@
     "Reb Yisroel of Ruzhin"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-hzynv-01"
    ],
@@ -4865,7 +5231,9 @@
     "Rav Shamshon Rafael Hirsch"
    ],
    "type": "acharon",
-   "typeOrder": 3,
+   "group": "acharon",
+   "groupOrder": 4,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-nysn-05"
    ],
@@ -4898,7 +5266,9 @@
     "Sanheriv"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-brshys-03",
     "yi-zmanim-svkvs-08"
@@ -4932,7 +5302,9 @@
     "Rabbi Sholom of Belz"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-vyshb-08",
     "yi-zmanim-svkvs-08"
@@ -4967,7 +5339,9 @@
     "Reb Yoel of Satmar"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-pvrym-07",
     "yi-zmanim-svds-shvshn-pvrym-01"
@@ -5003,7 +5377,9 @@
     "the Sefas Emes"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-hzynv-01"
    ],
@@ -5036,7 +5412,9 @@
     "Saul"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-svds-shvshn-pvrym-01"
    ],
@@ -5066,7 +5444,9 @@
     "Shechem"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "en-parsha-en-vyshlch-01"
    ],
@@ -5098,7 +5478,9 @@
     "Rabbi Yeshaya Horowitz"
    ],
    "type": "acharon",
-   "typeOrder": 3,
+   "group": "acharon",
+   "groupOrder": 4,
+   "description": null,
    "shiurIds": [
     "en-zmanim-en-rsh-hshnh-03"
    ],
@@ -5131,7 +5513,9 @@
     "Shem son of Noach"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-shvptym-01"
    ],
@@ -5161,7 +5545,9 @@
     "Rabbi Shimon ben Shetach"
    ],
    "type": "chazal",
-   "typeOrder": 1,
+   "group": "chazal",
+   "groupOrder": 2,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-shvptym-01"
    ],
@@ -5194,7 +5580,9 @@
     "King Solomon"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-shvptym-01",
     "yi-zmanim-nysn-05",
@@ -5224,7 +5612,9 @@
    "nameYi": "שמואל",
    "aliases": [],
    "type": "chazal",
-   "typeOrder": 1,
+   "group": "chazal",
+   "groupOrder": 2,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-svds-shvshn-pvrym-01"
    ],
@@ -5256,7 +5646,9 @@
     "Shmuel the Navi"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-shvptym-01",
     "yi-zmanim-pvrym-07"
@@ -5289,7 +5681,9 @@
     "Rabbi Ahrele Roth"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-pvrym-07",
     "yi-zmanim-nysn-05"
@@ -5325,14 +5719,49 @@
     "the Slonimer Rebbes"
    ],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "en-parsha-en-svldvs-01"
    ],
    "count": 1,
-   "storyIds": [
-    "the-slonimer-rebbe-and-the-unimmersed-plates"
+   "storyIds": [],
+   "worksAuthored": [],
+   "sameIdWork": null,
+   "sameAsTopic": null,
+   "excluded": null,
+   "listed": {
+    "quiet": true,
+    "live": false
+   },
+   "pages": {
+    "quiet": false,
+    "live": false
+   },
+   "quietAllList": false,
+   "reviewed": false
+  },
+  {
+   "id": "syn-individual",
+   "nameHe": "פלוני הגבאי",
+   "nameEn": "Syn Gabbai",
+   "nameYi": "פלוני דער גבאי",
+   "aliases": [],
+   "type": "individual",
+   "group": "other",
+   "groupOrder": 7,
+   "description": {
+    "en": "A gabbai in one story.",
+    "yi": "א גבאי אין איין מעשה."
+   },
+   "shiurIds": [
+    "en-parsha-en-nch-01",
+    "en-parsha-en-svldvs-01",
+    "en-parsha-en-ky-sb-01"
    ],
+   "count": 3,
+   "storyIds": [],
    "worksAuthored": [],
    "sameIdWork": null,
    "sameAsTopic": null,
@@ -5355,7 +5784,9 @@
    "nameYi": "אלמוני",
    "aliases": [],
    "type": "other",
-   "typeOrder": 5,
+   "group": "other",
+   "groupOrder": 7,
+   "description": null,
    "shiurIds": [
     "en-miscellaneous-en-02"
    ],
@@ -5383,7 +5814,9 @@
    "nameYi": "תמר",
    "aliases": [],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-brshys-01",
     "yi-parshas-hashavua-vyshb-08",
@@ -5412,8 +5845,10 @@
    "nameEn": "Titus",
    "nameYi": "טיטוס הרשע",
    "aliases": [],
-   "type": "other",
-   "typeOrder": 5,
+   "type": "ruler",
+   "group": "ruler",
+   "groupOrder": 6,
+   "description": null,
    "shiurIds": [
     "en-zmanim-en-chvdsh-tbs-02"
    ],
@@ -5426,7 +5861,7 @@
    "sameAsTopic": null,
    "excluded": null,
    "listed": {
-    "quiet": false,
+    "quiet": true,
     "live": false
    },
    "pages": {
@@ -5443,7 +5878,9 @@
    "nameYi": "דער טריסקער מגיד",
    "aliases": [],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "yi-shonos-10"
    ],
@@ -5473,7 +5910,9 @@
    "nameYi": "ושתי",
    "aliases": [],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "en-zmanim-en-tv-bshbt-01",
     "en-miscellaneous-en-01"
@@ -5505,7 +5944,9 @@
     "Jacob"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-brshys-03",
     "yi-parshas-hashavua-vyshb-08",
@@ -5550,8 +5991,10 @@
     "Yanai",
     "Yanai HaMelech"
    ],
-   "type": "other",
-   "typeOrder": 5,
+   "type": "ruler",
+   "group": "ruler",
+   "groupOrder": 6,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-shvptym-01"
    ],
@@ -5564,7 +6007,7 @@
    "sameAsTopic": null,
    "excluded": null,
    "listed": {
-    "quiet": false,
+    "quiet": true,
     "live": false
    },
    "pages": {
@@ -5584,7 +6027,9 @@
     "Joshua"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-hzynv-01",
     "yi-zmanim-pvrym-07",
@@ -5618,7 +6063,9 @@
     "Yehuda son of Yaakov Avinu"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-brshys-01",
     "yi-parshas-hashavua-vyshb-08",
@@ -5651,7 +6098,9 @@
     "Yeravam"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-spyrh-01"
    ],
@@ -5684,7 +6133,9 @@
     "Yeshaya HaNavi"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-svkvs-08",
     "yi-zmanim-shbs-chzvn-01",
@@ -5717,7 +6168,9 @@
    "nameYi": "דער ישועות יעקב",
    "aliases": [],
    "type": "acharon",
-   "typeOrder": 3,
+   "group": "acharon",
+   "groupOrder": 4,
+   "description": null,
    "shiurIds": [
     "en-miscellaneous-en-01"
    ],
@@ -5749,7 +6202,9 @@
     "Ishmael"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-brshys-03"
    ],
@@ -5777,7 +6232,9 @@
    "nameYi": "דער ישמח משה",
    "aliases": [],
    "type": "chassidic_rebbe",
-   "typeOrder": 4,
+   "group": "chassidic_rebbe",
+   "groupOrder": 5,
+   "description": null,
    "shiurIds": [
     "en-parsha-en-svldvs-01"
    ],
@@ -5812,7 +6269,9 @@
     "Isaac"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-brshys-03",
     "en-parsha-en-svldvs-01"
@@ -5843,7 +6302,9 @@
     "Rabbi Yonasan ben Uziel"
    ],
    "type": "chazal",
-   "typeOrder": 1,
+   "group": "chazal",
+   "groupOrder": 2,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-svds-shvshn-pvrym-01"
    ],
@@ -5878,7 +6339,9 @@
     "Rabbi Yehonasan Eybeschutz"
    ],
    "type": "acharon",
-   "typeOrder": 3,
+   "group": "acharon",
+   "groupOrder": 4,
+   "description": null,
    "shiurIds": [
     "en-zmanim-en-chvdsh-tbs-02"
    ],
@@ -5910,7 +6373,9 @@
     "Yosef"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-vyshb-08",
     "yi-zmanim-lvl-01",
@@ -5949,7 +6414,9 @@
     "Zechariah the Navi"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-zmanim-svds-zs-chnvkh-04"
    ],
@@ -5977,7 +6444,9 @@
    "nameYi": "זרח",
    "aliases": [],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "yi-parshas-hashavua-brshys-01"
    ],
@@ -6007,7 +6476,9 @@
     "Zimri"
    ],
    "type": "tanach",
-   "typeOrder": 0,
+   "group": "tanach",
+   "groupOrder": 0,
+   "description": null,
    "shiurIds": [
     "en-miscellaneous-en-01"
    ],

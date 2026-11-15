@@ -144,7 +144,7 @@ export function facetsFile(rows: CorpusRow[]): FacetsFile {
     series: Object.fromEntries(
       [...tally(rows.flatMap((r) => (r.series ? [r.series.id] : [])))].map(([k, count]) => [
         k,
-        { label: { en: `Series ${k}`, yi: `סעריע ${k}` }, count, lang: "yi" as const, sibling: null },
+        { label: { en: `Series ${k}`, yi: `סעריע ${k}` }, count, lang: "yi" as const },
       ]),
     ),
     work: facetRecord(tally(rows.flatMap((r) => r.entities.works)), (k) => ({ en: `Work ${k}`, yi: `ספר ${k}` })),

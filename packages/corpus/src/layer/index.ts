@@ -5,10 +5,9 @@
 export { buildLayer, finishLayer, loadLayerInput, prepareLayer } from "./build.ts";
 export type { LayerOutput, LayerSources, PreparedLayer } from "./build.ts";
 export { LayerContext } from "./context.ts";
-export { LAYER_REDIRECT_KINDS, resolveCorpusRedirects } from "./redirects.ts";
-export type { DroppedRedirect, ResolvedRedirects } from "./redirects.ts";
+export { LAYER_ID_KINDS, resolveCorpusRedirects } from "./redirects.ts";
+export type { DroppedRedirect, EntityRef, LayerIdKind, ResolvedRedirects } from "./redirects.ts";
 export { statedShiurCounts } from "./stories.ts";
 export { foldTerms } from "./synonyms.ts";
 export { HUB_SIZE, MAIN_SALIENCE } from "./topics.ts";
 export { OCCASION_MIN_SHIURIM } from "./occasion-topics.ts";
-export { LEGACY_PERSON_OVERLAP } from "./legacy.ts";

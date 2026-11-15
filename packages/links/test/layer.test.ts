@@ -10,12 +10,10 @@ import { describe, expect, it } from "vitest";
 import type {
   LayerConceptsFile,
   LayerPeopleFile,
-  LayerRedirectsFile,
   LayerStoriesFile,
   LayerThreadsFile,
   LayerTopicsFile,
   LayerWorksFile,
-  LegacyRedirect,
 } from "../../corpus/src/public/corpus-layer.ts";
 import {
   EDS,
@@ -23,11 +21,8 @@ import {
   hasPageOn,
   pageLookupFromLayer,
   parseLive,
-  parseQuiet,
   type LayerPagesInput,
-  type LegacyRedirectInput,
   type LinkData,
-  type Site,
 } from "../src/index.ts";
 import { HOSTS } from "./fixtures.ts";
 
@@ -45,7 +40,6 @@ interface Layer {
 
 // Compile-time: the real layer types fit the structural inputs.
 const asInput = (layer: Layer): LayerPagesInput => layer;
-const asLegacy = (row: LegacyRedirect): LegacyRedirectInput => row;
 
 const layer: Layer = {
   topics: read("topics.json"),
@@ -55,16 +49,13 @@ const layer: Layer = {
   stories: read("stories.json"),
   threads: read("threads.json"),
 };
-const redirects = read<LayerRedirectsFile>("redirects.json");
 const data: LinkData = pageLookupFromLayer(asInput(layer));
 const links = createLinks({ hosts: HOSTS, data });
-const SITES: readonly Site[] = ["quiet", "live"];
 
 describe("links over the mini-corpus layer", () => {
   it("has data to test", () => {
     expect(layer.topics.tree.length).toBeGreaterThan(50);
     expect(layer.concepts.concepts.some((c) => c.mergedIntoTopic)).toBe(true);
-    expect(redirects.legacy.length).toBeGreaterThan(100);
   });
 
   it("every topic, concept, story and person with pages on both sites round-trips across sites", () => {
@@ -118,43 +109,5 @@ describe("links over the mini-corpus layer", () => {
       expect(links.canonicalFor(url)).toBeNull();
       expect(links.noindexFor(url)).toBe(true);
     }
-  });
-
-  it("every legacy row redirects each old address to a parseable page or index of the same site", () => {
-    let pairs = 0;
-    for (const row of redirects.legacy.map(asLegacy)) {
-      for (const site of SITES) {
-        for (const p of links.legacyRedirects(site, row)) {
-          pairs++;
-          expect(p.from).not.toBe(p.to);
-          const parse = site === "quiet" ? parseQuiet : (u: string) => parseLive(u, data);
-          expect(parse(p.from), p.from).not.toBeNull();
-          const to = parse(p.to);
-          expect(to, p.to).not.toBeNull();
-          if (to!.kind === "entry" && site === "live") expect(hasPageOn("live", to!.entry, to!.id, data), p.to).toBe(true);
-          if (to!.kind === "entry" && site === "quiet" && !p.to.includes("#")) {
-            expect(hasPageOn("quiet", to!.entry, to!.id, data), p.to).toBe(true);
-          }
-        }
-      }
-    }
-    expect(pairs).toBeGreaterThan(100);
-  });
-
-  it("every retired corpus id redirects to the live id's address", () => {
-    const kinds = { topics: "topic", concepts: "concept", people: "person", works: "work", stories: "story", threads: "thread" } as const;
-    let n = 0;
-    for (const [plural, map] of Object.entries(redirects.corpus)) {
-      const kind = kinds[plural as keyof typeof kinds];
-      for (const [from, to] of Object.entries(map)) {
-        for (const site of SITES) {
-          for (const p of links.corpusRedirects(site, kind, from, to)) {
-            n++;
-            expect(p.to).not.toContain(encodeURIComponent(from));
-          }
-        }
-      }
-    }
-    expect(n).toBeGreaterThan(0);
   });
 });

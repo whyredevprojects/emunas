@@ -15,7 +15,8 @@ import type {
   LayerConceptsFile,
   LayerInfo,
   LayerOccasionTopicsFile,
-  LayerRedirectsFile,
+  LayerPeopleFile,
+  LayerStoriesFile,
   LayerTopicsFile,
 } from "../../src/public/corpus-layer.ts";
 import { REAL_DATA, REAL_POLICY, readJson, tmp } from "../helpers.ts";
@@ -51,9 +52,9 @@ describe("corpus layer on real data", () => {
     }
   });
 
-  it("(3) every sameAs topic resolves (78 today) and no concept merged into a topic has a page", () => {
+  it("(3) every sameAs topic resolves (75 today) and no concept merged into a topic has a page", () => {
     const withSameAs = dataTopics.filter((t) => t["sameAs"] !== undefined);
-    expect(withSameAs.length).toBeGreaterThanOrEqual(78);
+    expect(withSameAs.length).toBeGreaterThanOrEqual(75);
     const tree = (files["topics.json"] as LayerTopicsFile).tree;
     const resolved = tree.filter((t) => t.sameAs !== null);
     expect(resolved.map((t) => t.id).sort()).toEqual(withSameAs.map((t) => String(t["id"])).sort());
@@ -67,9 +68,15 @@ describe("corpus layer on real data", () => {
     expect(concepts.filter((c) => c.mergedIntoTopic !== null && (c.pages.quiet || c.pages.live))).toEqual([]);
   });
 
-  it("(4) the stories redirect is resolved", () => {
-    const r = files["redirects.json"] as LayerRedirectsFile;
-    expect(r.corpus.stories["the-sanzer-rav-and-the-business-competitor"]).toBe("the-divrei-chaim-and-the-man-who-shamed");
+  it("(4) retired ids are resolved internally: the merged story and the people moved to concepts are gone, their survivors stay", () => {
+    const stories = (files["stories.json"] as LayerStoriesFile).stories.map((s) => s.id);
+    expect(stories).not.toContain("the-sanzer-rav-and-the-business-competitor");
+    expect(stories).toContain("the-divrei-chaim-and-the-man-who-shamed");
+    const people = (files["people.json"] as LayerPeopleFile).people.map((x) => x.id);
+    for (const id of ["moshiach", "kohen-gadol", "kamtza-and-bar-kamtza", "chaggai-zechariah-malachi"]) expect(people).not.toContain(id);
+    expect((files["concepts.json"] as LayerConceptsFile).concepts.map((c) => c.id)).toContain("mashiach");
+    expect(Object.keys(files)).not.toContain("redirects.json");
+    expect((files["layer.json"] as LayerInfo).counts.retiredIds).toBeGreaterThanOrEqual(29);
   });
 
   it("(5) every published alias and synonym is in its entity's display-field set", () => {
@@ -89,7 +96,7 @@ describe("corpus layer on real data", () => {
   it("(8) the layer adds under 10 s to corpus:build", () => {
     const t0 = performance.now();
     const prepared = prepareLayer(loadLayerInput({ dataDir: REAL_DATA, policyDir: REAL_POLICY }), p);
-    finishLayer(prepared, p.aggregates.files);
+    finishLayer(prepared);
     expect(performance.now() - t0).toBeLessThan(10_000);
   });
 
@@ -143,9 +150,13 @@ describe("corpus layer on real data", () => {
     expect(works.find((w) => w.key === "tanya")?.workId).toBe("tanya");
   });
 
-  it("derives the occasion link for a parsha (noach → noach-mabul)", () => {
+  it("links occasions from the topics' own parsha/zman keys first (D11), the most specific topic winning", () => {
     const occ = (files["occasion-topics.json"] as LayerOccasionTopicsFile).occasions;
-    expect(occ.find((o) => o.kind === "parsha" && o.key === "noach")).toMatchObject({ topicId: "noach-mabul", source: "derived" });
+    expect(occ.find((o) => o.kind === "parsha" && o.key === "noach")).toMatchObject({ topicId: "noach-mabul", source: "data" });
+    expect(occ.filter((o) => o.source === "data").length).toBeGreaterThan(40);
+    // A parsha only a sefer topic lists goes to the sefer, not to the level-1 parsha topic.
+    const tree = (files["topics.json"] as LayerTopicsFile).tree;
+    for (const o of occ.filter((x) => x.source === "data")) expect(tree.find((t) => t.id === o.topicId)?.level).toBeGreaterThan(1);
     for (const o of occ) if (o.source === "derived") expect(o.share!).toBeGreaterThanOrEqual(0.5);
   });
 
@@ -158,7 +169,7 @@ describe("corpus layer on real data", () => {
   });
 
   it("is deterministic", () => {
-    const again = finishLayer(prepareLayer(loadLayerInput({ dataDir: REAL_DATA, policyDir: REAL_POLICY }), p), p.aggregates.files);
+    const again = finishLayer(prepareLayer(loadLayerInput({ dataDir: REAL_DATA, policyDir: REAL_POLICY }), p));
     expect(toJson(again.files)).toBe(toJson(files));
   });
 });

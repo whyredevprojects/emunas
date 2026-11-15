@@ -1,7 +1,7 @@
 /**
  * Text units of `.corpus/layer/` (corpus-wave-plan §3.3, §3.4): the generated corpus-wide prose the
  * sites print (story title and retelling, thread label and summary, topic description, concept
- * label and definition, series title, overview, key themes and arc one-liners), each with its item
+ * label and definition, person description, series title, overview, key themes and arc one-liners), each with its item
  * id and the shiurim it was written from.
  *
  * Item ids: `corpus:<kind>:<entityId>#<field>.<lang>`
@@ -12,6 +12,7 @@
  * | `threads.json`        | `thread`  | `label`, `summary`                                  | `members[].shiurId`                    |
  * | `topics.json` detail  | `topic`   | `description`                                       | `hubs[]` + every graded shiur          |
  * | `concepts.json`       | `concept` | `label`, `definition`                               | `shiurIds[]` + `exampleRefs[].shiurId` |
+ * | `people.json`         | `person`  | `description`                                       | `shiurIds[]`                           |
  * | `series/<id>.json`    | `series`  | `title`, `overview`, `keyThemes.<i>`, `arc.<shiurId>` | `arc[].shiurId`                      |
  *
  * `<lang>` is the key of the bilingual object (`en`, `yi`). The same ids are what
@@ -24,7 +25,7 @@ import { join } from "node:path";
 
 export const CORPUS_ITEM_PREFIX = "corpus:";
 
-export const CORPUS_UNIT_KINDS = ["story", "thread", "topic", "concept", "series"] as const;
+export const CORPUS_UNIT_KINDS = ["story", "thread", "topic", "concept", "person", "series"] as const;
 export type CorpusUnitKind = (typeof CORPUS_UNIT_KINDS)[number];
 
 export interface CorpusUnit {
@@ -52,13 +53,16 @@ export function isCorpusItemId(id: string): boolean {
   return id.startsWith(CORPUS_ITEM_PREFIX);
 }
 
-const ITEM_RE = /^corpus:(story|thread|topic|concept|series):([^#\s]+)#([A-Za-z]+(?:\.[^.#\s]+)?)\.([a-z]{2})$/;
+const ITEM_RE = /^corpus:(story|thread|topic|concept|person|series):([^#\s]+)#([A-Za-z]+(?:\.[^.#\s]+)?)\.([a-z]{2})$/;
 
 export function parseCorpusItemId(id: string): { kind: CorpusUnitKind; entityId: string; field: string; lang: string } | null {
   const m = ITEM_RE.exec(id);
   if (!m) return null;
   return { kind: m[1] as CorpusUnitKind, entityId: m[2]!, field: m[3]!, lang: m[4]! };
 }
+
+/** Layer files that carry generated text (besides `series/<id>.json`). */
+const LAYER_TEXT_FILES: readonly string[] = ["stories.json", "threads.json", "topics.json", "concepts.json", "people.json"];
 
 type J = Record<string, unknown>;
 
@@ -132,6 +136,10 @@ export function layerFileUnits(file: string, value: unknown): CorpusUnit[] {
       add("concept", c.id, "label", c.label, ["concepts", i, "label"], m);
       add("concept", c.id, "definition", c.definition, ["concepts", i, "definition"], m);
     }
+  } else if (file === "people.json") {
+    for (const [i, p] of records(value.people)) {
+      add("person", p.id, "description", p.description, ["people", i, "description"], strings(p.shiurIds));
+    }
   } else if (/^series\/[^/]+\.json$/.test(file)) {
     const id = value.seriesId;
     const arc = records(value.arc);
@@ -152,7 +160,7 @@ export function layerFileOf(path: string): string | null {
   for (let i = parts.length - 2; i >= 0; i--) {
     if (parts[i] !== "layer") continue;
     const rel = parts.slice(i + 1).join("/");
-    if (["stories.json", "threads.json", "topics.json", "concepts.json"].includes(rel) || /^series\/[^/]+\.json$/.test(rel)) return rel;
+    if (LAYER_TEXT_FILES.includes(rel) || /^series\/[^/]+\.json$/.test(rel)) return rel;
     return null;
   }
   return null;
@@ -165,7 +173,7 @@ export function readLayerUnits(corpusDir: string): { units: CorpusUnit[]; files:
   const unreadable: string[] = [];
   let files = 0;
   if (!existsSync(dir)) return { units, files, unreadable };
-  const names = ["stories.json", "threads.json", "topics.json", "concepts.json"].filter((f) => existsSync(join(dir, f)));
+  const names = LAYER_TEXT_FILES.filter((f) => existsSync(join(dir, f)));
   const seriesDir = join(dir, "series");
   if (existsSync(seriesDir)) {
     for (const f of readdirSync(seriesDir).sort()) if (f.endsWith(".json")) names.push(`series/${f}`);

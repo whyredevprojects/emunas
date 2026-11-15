@@ -30,6 +30,7 @@ import {
   PERSON_TYPES,
   PersonSchema,
   REDIRECT_KINDS,
+  RedirectTargetSchema,
   RedirectsSchema,
   SHIUR_ID_RE,
   SeriesSynthesisSchema,
@@ -37,12 +38,14 @@ import {
   StorySchema,
   TeachingClusterSchema,
   TopicSchema,
+  WORK_KINDS,
   WorkSchema,
   type ConceptIn,
   type CorpusIndexIn,
   type PersonIn,
   type PersonTypeIn,
   type RedirectKind,
+  type RedirectTargetIn,
   type RedirectsIn,
   type SeriesSynthesisIn,
   type ShiurTagsIn,
@@ -50,10 +53,11 @@ import {
   type TeachingClusterIn,
   type TopicIn,
   type WorkIn,
+  type WorkKindIn,
 } from "./schemas.ts";
 
 /** `index.json` versions whose shapes this reader was written against. */
-export const KNOWN_CORPUS_VERSIONS: readonly number[] = [1];
+export const KNOWN_CORPUS_VERSIONS: readonly number[] = [2];
 
 export const CORPUS_DIR = "derived/corpus";
 export const CORE_FILES = ["topics.json", "concepts.json", "people.json", "works.json"] as const;
@@ -91,6 +95,8 @@ export interface CorpusInputReport {
   untagged: { shiurId: string; reason: string }[];
   /** Persons whose `type` is unknown to the site, read as `other`. */
   coercedPersonTypes: { id: string; type: string }[];
+  /** Works whose `kind` is unknown to the site, read as `sefer`. */
+  coercedWorkKinds: { id: string; kind: string }[];
   /** `index.files` entries the reader does not know, by name. */
   notRead: string[];
   /** `index.files` entries on the deny list (never named in the report). */
@@ -140,6 +146,7 @@ function emptyReport(): CorpusInputReport {
     droppedKeys: {},
     untagged: [],
     coercedPersonTypes: [],
+    coercedWorkKinds: [],
     notRead: [],
     notReadDenied: 0,
   };
@@ -291,14 +298,19 @@ function loadRedirects(reader: DataReader, report: CorpusInputReport): Redirects
       report.droppedRecords.push({ file, ref: kind, reason: "unknown redirect kind (ignored)" });
       continue;
     }
-    const clean: Record<string, string> = {};
-    for (const [from, to] of Object.entries(map)) {
-      if (!CORPUS_ID_RE.test(from) || !CORPUS_ID_RE.test(to)) {
-        report.droppedRecords.push({ file, ref: `${kind}:${CORPUS_ID_RE.test(from) ? from : "#invalid"}`, reason: "not a corpus id" });
-      } else if (from === to) {
-        report.droppedRecords.push({ file, ref: `${kind}:${from}`, reason: "redirects to itself" });
+    const clean: Record<string, RedirectTargetIn> = {};
+    for (const [from, raw] of Object.entries(map)) {
+      const ref = `${kind}:${CORPUS_ID_RE.test(from) ? from : "#invalid"}`;
+      const t = v.safeParse(RedirectTargetSchema, raw);
+      const to: { kind: string; id: string } | null = !t.success ? null : typeof t.output === "string" ? { kind, id: t.output } : t.output;
+      if (to === null || !CORPUS_ID_RE.test(from) || !CORPUS_ID_RE.test(to.id)) {
+        report.droppedRecords.push({ file, ref, reason: "not a corpus id" });
+      } else if (!(REDIRECT_KINDS as readonly string[]).includes(to.kind)) {
+        report.droppedRecords.push({ file, ref, reason: `unknown target kind ${JSON.stringify(to.kind)}` });
+      } else if (to.kind === kind && from === to.id) {
+        report.droppedRecords.push({ file, ref, reason: "redirects to itself" });
       } else {
-        clean[from] = to;
+        clean[from] = { kind: to.kind as RedirectKind, id: to.id };
       }
     }
     out[kind as RedirectKind] = clean;
@@ -364,7 +376,11 @@ export function readCorpusInput(reader: DataReader, opts: ReadCorpusInputOptions
     report.coercedPersonTypes.push({ id: p.id, type: p.type });
     return { ...p, type: "other" };
   });
-  const works = loadCore(reader, "works.json", WorkSchema, report);
+  const works = loadCore(reader, "works.json", WorkSchema, report).map((w): WorkIn => {
+    if ((WORK_KINDS as readonly string[]).includes(w.kind)) return { ...w, kind: w.kind as WorkKindIn };
+    report.coercedWorkKinds.push({ id: w.id, kind: w.kind });
+    return { ...w, kind: "sefer" };
+  });
   const stories = loadOptionalList(reader, "stories.json", StorySchema, report);
   const teachingClusters = loadOptionalList(reader, "teaching-clusters.json", TeachingClusterSchema, report);
   const redirects = loadRedirects(reader, report);

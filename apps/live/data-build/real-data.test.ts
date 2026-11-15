@@ -51,7 +51,7 @@ describe.runIf(haveRealData)("Live data emit on real data", () => {
     expect(b.findings.map(describeFinding)).toEqual([]);
     expect(b.projectedFiles).toBeLessThanOrEqual(18_000);
     // The corpus layer is on: its files exist (plan §4 budgets are in BR_TARGETS, checked above).
-    for (const kind of ["topics", "topic", "thread", "story", "storiesIndex", "glossary", "redirects", "exploreEntities"] as const) {
+    for (const kind of ["topics", "topic", "thread", "story", "storiesIndex", "glossary", "exploreEntities"] as const) {
       expect(b.byKind[kind]?.files ?? 0, kind).toBeGreaterThan(0);
     }
 

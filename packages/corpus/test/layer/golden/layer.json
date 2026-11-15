@@ -1,9 +1,9 @@
 {
- "layerSchemaVersion": 1,
+ "layerSchemaVersion": 2,
  "enabled": true,
- "corpusVersion": 1,
+ "corpusVersion": 2,
  "knownCorpusVersion": true,
- "generatedAt": "2026-11-15T16:20:32.487Z",
+ "generatedAt": "2026-11-15T16:59:42.611Z",
  "inputs": {
   "topics": true,
   "concepts": true,
@@ -15,29 +15,25 @@
   "series": 12,
   "shiurTags": 31
  },
- "policyHash": "1e6bedacd430",
+ "policyHash": "f96f71697e66",
  "counts": {
   "visibleShiurim": 31,
-  "topics": 207,
+  "topics": 206,
   "concepts": 225,
-  "people": 186,
+  "people": 189,
   "works": 154,
   "stories": 56,
   "threads": 5,
   "series": 0,
   "shiurRefs": 31,
-  "synonyms": 733,
-  "redirects": {
-   "corpus": 4,
-   "legacy": 731,
-   "legacyUnmatched": 375
-  },
+  "synonyms": 741,
+  "retiredIds": 20,
   "pages": {
    "quiet": {
     "topics": 176,
     "concepts": 3,
     "people": 39,
-    "works": 71,
+    "works": 68,
     "stories": 2,
     "threads": 0
    },
@@ -45,18 +41,33 @@
     "topics": 176,
     "concepts": 12,
     "people": 39,
-    "works": 50,
+    "works": 47,
     "stories": 2,
     "threads": 0
    }
   }
  },
  "warnings": [
+  "1 works with an unknown kind read as sefer",
   "1 index.json files entries on the deny list (not read)",
-  "1 stories with no visible telling (left out)",
+  "3 stories with no visible telling (left out)",
   "45 teaching clusters with fewer than two visible shiurim (dropped)",
+  "redirect people:abaye-and-rava dropped (dangling)",
+  "redirect people:beis-shammai-and-beis-hillel dropped (dangling)",
+  "redirect people:chaggai-zechariah-malachi dropped (dangling)",
+  "redirect people:chananya-mishael-azarya dropped (dangling)",
+  "redirect people:chofni-and-pinchas dropped (dangling)",
+  "redirect people:hillel-and-shammai dropped (dangling)",
+  "redirect people:kamtza-and-bar-kamtza dropped (dangling)",
+  "redirect people:machlon-and-kilyon dropped (dangling)",
+  "redirect people:moshiach dropped (dangling)",
+  "redirect people:ravina-and-rav-ashi dropped (dangling)",
+  "redirect people:shemaya-and-avtalyon dropped (dangling)",
+  "redirect people:shifra-and-puah dropped (dangling)",
+  "redirect people:shimon-and-levi dropped (dangling)",
   "redirect people:syn-cycle-x dropped (cycle)",
-  "redirect people:syn-cycle-y dropped (cycle)"
+  "redirect people:syn-cycle-y dropped (cycle)",
+  "occasion-topics: 2 topic parsha/zman values not in the occasion tables (not linked)"
  ],
  "notRead": [
   "future-insights.json"

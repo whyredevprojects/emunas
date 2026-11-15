@@ -1,8 +1,9 @@
 /**
  * C1.2 on the mini corpus: golden files for every layer file, determinism, the visible set, the
  * transcript rules (no forbidden keys, no poison canary, aliases from display fields only) and the
- * synthetic cases of the fixture (redirect chain and cycle, mergedInto, family and `other` people,
- * a telling and a member in a not-done shiur, a low-confidence member, a work `kind`).
+ * synthetic cases of the fixture (redirect chain and cycle, a cross-kind redirect, mergedInto, family,
+ * `other` and `individual` people, a telling and a member in a not-done shiur, a low-confidence
+ * member, an unknown work `kind`, work nesting, attributionVaries).
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -12,11 +13,12 @@ import { projectAndAggregate } from "../../src/aggregate/build.ts";
 import { toJson } from "../../src/build/build.ts";
 import {
   LAYER_FILES,
+  LAYER_PERSON_GROUPS,
   LAYER_SCHEMA_VERSION,
+  PERSON_GROUP_OF,
   type LayerConceptsFile,
   type LayerInfo,
   type LayerPeopleFile,
-  type LayerRedirectsFile,
   type LayerShiurRefs,
   type LayerStoriesFile,
   type LayerSynonymsFile,
@@ -41,7 +43,6 @@ const works = files[LAYER_FILES.works] as LayerWorksFile;
 const stories = files[LAYER_FILES.stories] as LayerStoriesFile;
 const threads = files[LAYER_FILES.threads] as LayerThreadsFile;
 const synonyms = files[LAYER_FILES.synonyms] as LayerSynonymsFile;
-const redirects = files[LAYER_FILES.redirects] as LayerRedirectsFile;
 const refs = Object.entries(files).filter(([k]) => k.startsWith("shiur/")).map(([, v]) => v as LayerShiurRefs);
 
 const TOP = [
@@ -53,7 +54,6 @@ const TOP = [
   LAYER_FILES.stories,
   LAYER_FILES.threads,
   LAYER_FILES.synonyms,
-  LAYER_FILES.redirects,
   LAYER_FILES.occasionTopics,
 ];
 
@@ -73,6 +73,8 @@ describe("corpus layer on the mini corpus", () => {
     for (const n of TOP) expect(names).toContain(n);
     for (const n of names) expect(TOP.includes(n as (typeof TOP)[number]) || /^(shiur|series)\/[a-z0-9-]+\.json$/.test(n), n).toBe(true);
     expect(refs.map((r) => r.shiurId).sort()).toEqual([...visible].sort());
+    // Retired ids are resolved internally; nothing about them is published.
+    expect(names).not.toContain("redirects.json");
   });
 
   it("is deterministic", () => {
@@ -108,13 +110,40 @@ describe("corpus layer on the mini corpus", () => {
     expect(synonyms.synonyms.length).toBeGreaterThan(0);
   });
 
-  it("resolves corpus redirect chains and drops cycles", () => {
-    expect(redirects.corpus.concepts).toEqual({ "syn-chain-a": picks.chainTargetConceptId, "syn-chain-b": picks.chainTargetConceptId });
-    expect(redirects.corpus.people).toEqual({ [S.mergedPersonId]: picks.mergedIntoPersonId });
-    expect(redirects.corpus.stories).toEqual({ "the-sanzer-rav-and-the-business-competitor": "the-divrei-chaim-and-the-man-who-shamed" });
+  it("resolves retired ids internally (chains, cycles dropped) and publishes none of them", () => {
+    expect(info.counts.retiredIds).toBeGreaterThanOrEqual(4);
     expect(info.warnings).toContain("redirect people:syn-cycle-x dropped (cycle)");
+    const text = toJson(files);
+    for (const id of ["syn-chain-a", "syn-chain-b", S.mergedPersonId, S.crossKindPersonId, "the-sanzer-rav-and-the-business-competitor"]) {
+      expect(text).not.toContain(`"${id}"`);
+    }
     // A retired record leaves the entity files.
     expect(people.people.some((p) => p.id === S.mergedPersonId)).toBe(false);
+    expect(stories.stories.some((s) => s.id === "the-sanzer-rav-and-the-business-competitor")).toBe(false);
+  });
+
+  it("follows a person redirected to a concept across kinds (shiur tags and story people)", () => {
+    const concept = concepts.concepts.find((c) => c.id === picks.crossKindConceptId)!;
+    expect(concept).toBeDefined();
+    const r = refs.find((x) => x.shiurId === picks.crossKindShiurId)!;
+    expect(r.personIds).not.toContain(S.crossKindPersonId);
+    expect(r.conceptIds).toContain(concept.id);
+    const st = stories.stories.find((x) => x.id === picks.crossKindStoryId)!;
+    expect(st.people).toContainEqual({ name: concept.label.en, linked: false });
+  });
+
+  it("groups people by type in sefer order, with descriptions, and keeps `individual` in the other group (D2)", () => {
+    for (const p of people.people) {
+      expect(p.group).toBe(PERSON_GROUP_OF[p.type]);
+      expect(p.groupOrder).toBe(LAYER_PERSON_GROUPS.indexOf(p.group));
+    }
+    expect(LAYER_PERSON_GROUPS[0]).toBe("tanach");
+    expect(LAYER_PERSON_GROUPS[1]).toBe("malach");
+    expect(LAYER_PERSON_GROUPS.at(-1)).toBe("other");
+    const ind = people.people.find((p) => p.id === S.individualId)!;
+    expect(ind).toMatchObject({ type: "individual", group: "other", pages: { quiet: false, live: false }, listed: { quiet: true, live: false } });
+    expect(ind.description).toEqual({ en: "A gabbai in one story.", yi: "א גבאי אין איין מעשה." });
+    expect(people.people.filter((p) => p.description === null).length).toBeGreaterThan(0);
   });
 
   it("excludes the Rav's family by rule and keeps `other` people with one shiur out of every index", () => {
@@ -160,16 +189,40 @@ describe("corpus layer on the mini corpus", () => {
     }
   });
 
-  it("flags the work with a generic kind and gives it no page", () => {
-    const w = works.works.find((x) => x.id === picks.kindWorkId)!;
-    expect(w.generic).toBe(true);
-    expect(w.pages).toEqual({ quiet: false, live: false });
+  it("takes generic from the data's kind: genre works are listed, never a page; an unknown kind reads as sefer", () => {
+    const genre = works.works.filter((w) => w.kind === "genre");
+    expect(genre.length).toBeGreaterThan(0);
+    for (const w of works.works) expect(w.generic).toBe(w.kind === "genre");
+    for (const w of genre) expect(w.pages).toEqual({ quiet: false, live: false });
+    const unknown = works.works.find((x) => x.id === picks.unknownKindWorkId)!;
+    expect(unknown).toMatchObject({ kind: "sefer", generic: false });
   });
 
-  it("orders works by the shelf table, unknown works last", () => {
-    const firstUnknown = works.works.findIndex((w) => w.orderGroup === null);
-    expect(firstUnknown).toBeGreaterThan(0);
-    expect(works.works.slice(firstUnknown).every((w) => w.orderGroup === null)).toBe(true);
+  it("nests works under their parent and orders the shelf by group, then position", () => {
+    const pos = new Map(works.works.map((w, i) => [w.id, i]));
+    const child = works.works.find((w) => w.id === picks.childWorkId)!;
+    expect(child.parentWorkId).not.toBeNull();
+    for (const w of works.works) {
+      if (w.parentWorkId === null) continue;
+      expect(pos.has(w.parentWorkId), w.id).toBe(true);
+      expect(pos.get(w.parentWorkId)!, w.id).toBeLessThan(pos.get(w.id)!);
+    }
+    // Top level: shelf groups never interleave; works without a group come last.
+    const groups = works.works.filter((w) => w.parentWorkId === null).map((w) => w.orderGroup);
+    const seen: (string | null)[] = [];
+    for (const g of groups) if (seen.at(-1) !== g) seen.push(g);
+    expect(new Set(seen).size).toBe(seen.length);
+    expect(seen.at(-1)).toBeNull();
+    // Tanach books by their order inside each Tanach group.
+    const tanach = works.works.filter((w) => w.kind === "tanach-book" && w.parentWorkId === null);
+    for (let i = 1; i < tanach.length; i++) {
+      if (tanach[i]!.orderGroup === tanach[i - 1]!.orderGroup) expect(tanach[i]!.order!).toBeGreaterThanOrEqual(tanach[i - 1]!.order!);
+    }
+  });
+
+  it("carries attributionVaries on stories", () => {
+    expect(stories.stories.find((s) => s.id === picks.attributionVariesStoryId)?.attributionVaries).toBe(true);
+    expect(stories.stories.some((s) => s.attributionVaries === false)).toBe(true);
   });
 
   it("two-shiur threads become inline pointers on both members, never pages", () => {
@@ -207,27 +260,6 @@ describe("corpus layer on the mini corpus", () => {
     const all = refs.flatMap((r) => r.sources);
     expect(all.length).toBeGreaterThan(0);
     for (const s of all) expect(ids.has(s.workId)).toBe(true);
-  });
-
-  it("maps legacy keys to merged entities", () => {
-    expect(redirects.legacy.length).toBeGreaterThan(0);
-    const keys = redirects.legacy.map((l) => `${l.kind}:${l.oldKey}`);
-    expect(new Set(keys).size).toBe(keys.length);
-    const ids = {
-      person: new Set(people.people.map((p) => p.id)),
-      work: new Set(works.works.map((w) => w.id)),
-      concept: new Set(concepts.concepts.map((c) => c.id)),
-      topic: new Set(topics.tree.map((t) => t.id)),
-    };
-    for (const l of redirects.legacy) {
-      if (l.target === null) expect(l.via).toBeNull();
-      else expect(ids[l.target.kind].has(l.target.id), `${l.kind}:${l.oldKey}`).toBe(true);
-    }
-    // A concept merged into a topic redirects to the topic.
-    for (const l of redirects.legacy.filter((x) => x.target?.kind === "concept")) {
-      expect(concepts.concepts.find((c) => c.id === l.target!.id)!.mergedIntoTopic).toBeNull();
-    }
-    expect(redirects.legacy.filter((l) => l.via === "name").length).toBeGreaterThan(50);
   });
 
   it("never reads the poisoned files (canary absent from the whole output, including aggregates)", () => {

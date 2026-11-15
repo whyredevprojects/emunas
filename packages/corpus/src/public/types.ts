@@ -259,11 +259,8 @@ export interface CorpusIndex {
   sections: IndexSection[];
   series: PublicSeries[];
   shiurim: IndexRow[];
-  /**
-   * Guide rows without audio, in catalog order (not part of `shiurim`). Always written by
-   * corpus:build; optional so readers of an older `.corpus/` and hand-made test indexes still type.
-   */
-  gaps?: CatalogGap[];
+  /** Guide rows without audio, in catalog order (not part of `shiurim`). */
+  gaps: CatalogGap[];
 }
 
 export interface BuildCounts {

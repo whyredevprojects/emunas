@@ -195,7 +195,7 @@
     "yi": "פרשת השבוע",
     "he": "פרשת השבוע"
    },
-   "count": 27,
+   "count": 25,
    "sameAs": null,
    "reviewed": false,
    "pages": {
@@ -681,24 +681,6 @@
    "pages": {
     "quiet": true,
     "live": true
-   },
-   "gateway": false
-  },
-  {
-   "id": "kisei-eliyahu",
-   "parentId": "simchos",
-   "level": 2,
-   "label": {
-    "en": "Eliyahu HaNavi at the Bris",
-    "yi": "אליהו הנביא ביי דער ברית",
-    "he": "כסא של אליהו"
-   },
-   "count": 0,
-   "sameAs": null,
-   "reviewed": false,
-   "pages": {
-    "quiet": false,
-    "live": false
    },
    "gateway": false
   },
@@ -1311,24 +1293,6 @@
    "gateway": false
   },
   {
-   "id": "pidyon-haben",
-   "parentId": "simchos",
-   "level": 2,
-   "label": {
-    "en": "Pidyon HaBen",
-    "yi": "פדיון הבן",
-    "he": "פדיון הבן"
-   },
-   "count": 0,
-   "sameAs": null,
-   "reviewed": false,
-   "pages": {
-    "quiet": false,
-    "live": false
-   },
-   "gateway": false
-  },
-  {
    "id": "pirkei-avos",
    "parentId": "torah",
    "level": 2,
@@ -1503,7 +1467,7 @@
     "yi": "ספר דברים",
     "he": "ספר דברים"
    },
-   "count": 5,
+   "count": 2,
    "sameAs": null,
    "reviewed": false,
    "pages": {
@@ -1575,7 +1539,7 @@
    "label": {
     "en": "Sefiras HaOmer and Lag BaOmer",
     "yi": "ספירת העומר און ל\"ג בעומר",
-    "he": "ספירת העומר"
+    "he": "ספירת העומר ול\"ג בעומר"
    },
    "count": 5,
    "sameAs": null,
@@ -1813,7 +1777,7 @@
    "label": {
     "en": "Shovavim, Teves and Shevat",
     "yi": "שובבי\"ם, טבת און שבט",
-    "he": "שובבי\"ם"
+    "he": "שובבי\"ם, טבת ושבט"
    },
    "count": 3,
    "sameAs": null,
@@ -2032,8 +1996,8 @@
    "level": 2,
    "label": {
     "en": "The Churban of Europe and Persecutions",
-    "yi": "חורבן אייראפע און גזירות",
-    "he": "חורבן אירופה"
+    "yi": "חורבן אירופה און גזירות",
+    "he": "חורבן אירופה וגזירות"
    },
    "count": 1,
    "sameAs": null,
@@ -2941,6 +2905,24 @@
    "pages": {
     "quiet": true,
     "live": true
+   },
+   "gateway": false
+  },
+  {
+   "id": "kisei-eliyahu",
+   "parentId": "bris-milah",
+   "level": 3,
+   "label": {
+    "en": "Eliyahu HaNavi at the Bris",
+    "yi": "אליהו הנביא ביי דער ברית",
+    "he": "כסא של אליהו"
+   },
+   "count": 0,
+   "sameAs": null,
+   "reviewed": false,
+   "pages": {
+    "quiet": false,
+    "live": false
    },
    "gateway": false
   },
@@ -4028,8 +4010,8 @@
   {
    "id": "simchos",
    "description": {
-    "en": "At a bris, a bar mitzvah or in a shiur on shidduchim, the Rav draws out the inner meaning of the occasion. He explains a shidduch as the reunion of one soul split in two and a place where hashgacha pratis can be glimpsed, a bar mitzvah as a chuppah of the soul and a new birth, and milah as the foundation of kedushah and the gateway to Torah.",
-    "yi": "ביי א ברית, א בר מצוה, אדער אין א שיעור וועגן שידוכים, ברענגט דער משגיח ארויס דעם פנימיות'דיגן טייטש פון דער שמחה. ער איז מסביר אז א שידוך איז ווען איין נשמה וואס איז צעטיילט געווארן קומט זיך צוריק צוזאמען, און דארט קען מען זען השגחה פרטית. א בר מצוה איז א חופה פון דער נשמה און א נייע געבורט, און מילה איז דער יסוד פון קדושה און דער טויער צו דער תורה."
+    "en": "At a bris, a pidyon haben, a bar mitzvah or in a shiur on shidduchim, the Rav draws out the inner meaning of the occasion. He explains a shidduch as the reunion of one soul split in two and a place where hashgacha pratis can be glimpsed, a bar mitzvah as a chuppah of the soul and a new birth, and milah as the foundation of kedushah and the gateway to Torah. At a pidyon haben seudah he teaches that the holiness of Klal Yisroel is 'reishis', a holiness of the body that cannot be exchanged.",
+    "yi": "ביי א ברית, א פדיון הבן, א בר מצוה, אדער אין א שיעור וועגן שידוכים, ברענגט דער משגיח ארויס דעם פנימיות'דיגן טייטש פון דער שמחה. ער איז מסביר אז א שידוך איז ווען איין נשמה וואס איז צעטיילט געווארן קומט זיך צוריק צוזאמען, און דארט קען מען זען השגחה פרטית. א בר מצוה איז א חופה פון דער נשמה און א נייע געבורט, און מילה איז דער יסוד פון קדושה און דער טויער צו דער תורה. ביי א סעודת פדיון הבן לערנט ער אז די קדושה פון כלל ישראל איז \"ראשית\", א קדושת הגוף וואס מ'קען נישט אויסטוישן."
    },
    "hubs": [
     "en-miscellaneous-en-02",
@@ -4112,9 +4094,7 @@
    "children": [
     "bar-mitzvah",
     "bris-milah",
-    "kisei-eliyahu",
     "kriyas-shem",
-    "pidyon-haben",
     "shidduchim-chasunah",
     "bayis-neeman"
    ],
@@ -5065,12 +5045,12 @@
     "en-parsha-en-svldvs-01",
     "en-parsha-en-vyshlch-01",
     "yi-parshas-hashavua-brshys-01",
-    "en-parsha-en-ky-sb-01",
     "yi-parshas-hashavua-brshys-03",
     "yi-parshas-hashavua-vyshb-08",
     "yi-shonos-10",
     "yi-parshas-hashavua-vschnn-01",
-    "yi-zmanim-spyrh-01"
+    "yi-zmanim-spyrh-01",
+    "yi-zmanim-shbs-chzvn-01"
    ],
    "grades": {
     "main": [
@@ -5117,17 +5097,9 @@
      {
       "shiurId": "en-parsha-en-vyshlch-01",
       "salience": 1
-     },
-     {
-      "shiurId": "en-parsha-en-ky-sb-01",
-      "salience": 0.9
      }
     ],
     "discussed": [
-     {
-      "shiurId": "yi-parshas-hashavua-hzynv-01",
-      "salience": 0.5
-     },
      {
       "shiurId": "yi-zmanim-lvl-01",
       "salience": 0.5
@@ -5263,7 +5235,6 @@
    "coTopics": [],
    "threadIds": [],
    "storyIds": [
-    "a-listener-counts-the-pesukim-of-ki-savo",
     "asnas-and-the-charm",
     "eliyahus-two-oxen",
     "onkelos-consults-the-dead",
@@ -5271,11 +5242,9 @@
     "rebbi-i-dont-like-fish",
     "the-author-of-unesaneh-tokef-asks-for-three-days",
     "the-baal-hatanya-and-the-minister-where-are-you",
-    "the-chassan-waiting-for-the-mechutan",
     "the-chiddushei-harim-declines-to-name-a-child",
     "the-cholent-of-reb-yechezkel-of-kuzmir",
-    "the-girl-of-sedom-who-fed-a-poor-man",
-    "the-ramban-and-his-student-avner"
+    "the-girl-of-sedom-who-fed-a-poor-man"
    ],
    "occasions": []
   },
@@ -6581,7 +6550,9 @@
      }
     ]
    },
-   "children": [],
+   "children": [
+    "kisei-eliyahu"
+   ],
    "coTopics": [],
    "threadIds": [],
    "storyIds": [],
@@ -6689,7 +6660,10 @@
    "storyIds": [
     "adam-harishon-and-the-shortening-days"
    ],
-   "occasions": []
+   "occasions": [
+    "chanukah",
+    "shabbos-chanukah"
+   ]
   },
   {
    "id": "gedolei-yisroel",
@@ -7112,24 +7086,6 @@
     "eliyahu-in-the-non-jewish-cemetery",
     "eliyahus-two-oxen"
    ],
-   "occasions": []
-  },
-  {
-   "id": "kisei-eliyahu",
-   "description": {
-    "en": "At many brisos the Rav speaks of Eliyahu HaNavi as the angel of the bris. He explains how Eliyahu's coming on the eighth day cuts short the mother's tumah, finds Eliyahu in the Megillah as Charvona at Haman's downfall, and says that while Eliyahu's emissaries come to every bris, at a special bris Eliyahu comes himself.",
-    "yi": "ביי אסאך בריתים רעדט דער משגיח וועגן אליהו הנביא ווי דער מלאך הברית. ער איז מסביר ווי אליהו'ס קומען אויפן אכטן טאג מאכט קירצער די טומאה פון דער מאמע, ער געפינט אליהו אין דער מגילה ווי חרבונה ביי המן'ס מפלה, און ער זאגט אז די שלוחים פון אליהו קומען צו יעדן ברית, אבער צו א ספעציעלן ברית קומט אליהו אליין."
-   },
-   "hubs": [],
-   "grades": {
-    "main": [],
-    "discussed": [],
-    "touched": []
-   },
-   "children": [],
-   "coTopics": [],
-   "threadIds": [],
-   "storyIds": [],
    "occasions": []
   },
   {
@@ -7780,8 +7736,8 @@
   {
    "id": "kedushah-vekelipah",
    "description": {
-    "en": "Mainly in his Tanya shiurim, the Rav explains that holiness rests only on what is batel to Hashem, while tumah imitates kedushah like a monkey imitates a man and lives only from a spark drawn from 'behind'. He explains klipas nogah, whose permitted pleasures can be raised back to kedushah, and reads the war against Midian and today's struggles as a war of holiness against impurity.",
-    "yi": "מערסטנס אין זיינע שיעורים אין תניא איז דער משגיח מסביר אז קדושה רוט נאר אויף דעם וואס איז בטל צו השם, און טומאה מאכט נאך קדושה ווי א מאלפע מאכט נאך א מענטש, און לעבט נאר פון א ניצוץ וואס קומט \"פון הינטן\". ער איז מסביר קליפת נוגה, וואס אירע היתר'דיגע הנאות קען מען צוריק אויפהייבן צו קדושה, און ער טייטשט די מלחמה מיט מדין און די היינטיגע מלחמות ווי א מלחמה פון קדושה קעגן טומאה."
+    "en": "Mainly in his Tanya shiurim, the Rav explains that holiness rests only on what is batel to Hashem, while the sitra achra imitates kedushah like a monkey imitates a man and lives only from a spark drawn from 'behind'. He explains klipas nogah, whose permitted pleasures can be raised back to kedushah, and reads the war against Midian and today's struggles as a war of kedushah against kelipah.",
+    "yi": "מערסטנס אין זיינע שיעורים אין תניא איז דער משגיח מסביר אז קדושה רוט נאר אויף דעם וואס איז בטל צו השם, און די סטרא אחרא מאכט נאך קדושה ווי א מאלפע מאכט נאך א מענטש, און לעבט נאר פון א ניצוץ וואס קומט \"פון הינטן\". ער איז מסביר קליפת נוגה, וואס אירע היתר'דיגע הנאות קען מען צוריק אויפהייבן צו קדושה, און ער טייטשט די מלחמה מיט מדין און די היינטיגע מלחמות ווי א מלחמה פון קדושה קעגן קליפה."
    },
    "hubs": [
     "en-zmanim-en-tv-bshbt-01",
@@ -8656,25 +8612,11 @@
    "storyIds": [
     "rav-gifter-takes-out-the-garbage"
    ],
-   "occasions": []
-  },
-  {
-   "id": "pidyon-haben",
-   "description": {
-    "en": "At pidyon haben seudos, the Rav explains that the holiness of Klal Yisroel is 'reishis', a holiness of the body that cannot be exchanged, and that the seudah honors the firstborn in contrast to Esav's meal over despising the bechorah. He also teaches that holiness hidden in parents is revealed in their children, and from the mitzvah of the firstborn donkey speaks of simplicity and a good eye.",
-    "yi": "ביי פדיון הבן סעודות איז דער משגיח מסביר אז די קדושה פון כלל ישראל איז \"ראשית\", א קדושת הגוף וואס מ'קען נישט אויסטוישן, און אז די סעודה איז מכבד דעם בכור, אנטקעגן עשו'ס סעודה ווען ער האט מבזה געווען די בכורה. ער לערנט אויך אז קדושה וואס איז באהאלטן אין עלטערן ווערט אנטפלעקט אין די קינדער, און פון דער מצוה פון פטר חמור רעדט ער וועגן פשטות און א גוטן אויג."
-   },
-   "hubs": [],
-   "grades": {
-    "main": [],
-    "discussed": [],
-    "touched": []
-   },
-   "children": [],
-   "coTopics": [],
-   "threadIds": [],
-   "storyIds": [],
-   "occasions": []
+   "occasions": [
+    "chol-hamoed-pesach",
+    "pesach",
+    "shevii-shel-pesach"
+   ]
   },
   {
    "id": "pirkei-avos",
@@ -9196,32 +9138,16 @@
     "yi": "לויט דער מסורה פונעם ווילנער גאון אז די פרשיות פון ספר דברים זענען קעגן די יארהונדערטער פונעם זעקסטן אלף, טייטשט דער משגיח דעם הסתר פנים פונעם חורבן אייראפע אין וילך, און די קומענדיגע תשובה און גאולה אין נצבים. ער געפינט רמזים אויף די תקופות פון משפט אין די סדרות פון די ימי התשובה, און פון ביכורים רופט ער צו פרי אויפשטיין אין אלול."
    },
    "hubs": [
-    "en-parsha-en-ky-sb-01",
-    "yi-zmanim-shbs-chzvn-01",
-    "yi-parshas-hashavua-hzynv-01",
-    "yi-parshas-hashavua-vschnn-01"
+    "yi-zmanim-shbs-chzvn-01"
    ],
    "grades": {
     "main": [
      {
       "shiurId": "yi-zmanim-shbs-chzvn-01",
       "salience": 0.6
-     },
-     {
-      "shiurId": "en-parsha-en-ky-sb-01",
-      "salience": 0.9
      }
     ],
-    "discussed": [
-     {
-      "shiurId": "yi-parshas-hashavua-vschnn-01",
-      "salience": 0.3
-     },
-     {
-      "shiurId": "yi-parshas-hashavua-hzynv-01",
-      "salience": 0.5
-     }
-    ],
+    "discussed": [],
     "touched": [
      {
       "shiurId": "yi-zmanim-tv-bb-04",
@@ -9235,19 +9161,18 @@
     ]
    },
    "children": [],
-   "coTopics": [
-    {
-     "id": "teshuvah",
-     "sections": 3
-    }
-   ],
+   "coTopics": [],
    "threadIds": [],
-   "storyIds": [
-    "a-listener-counts-the-pesukim-of-ki-savo",
-    "the-chassan-waiting-for-the-mechutan",
-    "the-ramban-and-his-student-avner"
-   ],
-   "occasions": []
+   "storyIds": [],
+   "occasions": [
+    "devarim",
+    "haazinu",
+    "ki-savo",
+    "nitzavim",
+    "nitzavim-vayeilech",
+    "shoftim",
+    "vaeschanan"
+   ]
   },
   {
    "id": "tanya",
@@ -9440,7 +9365,19 @@
    ],
    "threadIds": [],
    "storyIds": [],
-   "occasions": []
+   "occasions": [
+    "acharei-mos-kedoshim",
+    "bechukosai",
+    "behar",
+    "behar-bechukosai",
+    "emor",
+    "kedoshim",
+    "shemini",
+    "tazria",
+    "tazria-metzora",
+    "tzav",
+    "vayikra"
+   ]
   },
   {
    "id": "sefirah-lag-baomer",
@@ -9587,8 +9524,8 @@
   {
    "id": "simcha",
    "description": {
-    "en": "The Rav teaches that simcha in avodas Hashem grows out of clear emunah and bitachon, the very thing Amalek attacks with doubt. From Tanya chapter 26 he explains that the yetzer hara is defeated only through zerizus that comes from simcha, and that sadness over sins belongs only at set times. He finds the simcha of Adar in learning with clarity, davening well and giving tzedakah gladly.",
-    "yi": "דער משגיח לערנט אז שמחה אין עבודת השם וואקסט ארויס פון קלארער אמונה און בטחון, פונקט דאס וואס עמלק באפאלט מיט ספיקות. פון תניא פרק כ\"ו איז ער מסביר אז מ'קען בייקומען דעם יצר הרע נאר מיט זריזות וואס קומט פון שמחה, און אז עצבות איבער עבירות געהערט נאר אין באשטימטע צייטן. די שמחה פון אדר געפינט ער אין לערנען מיט קלארקייט, גוט דאווענען, און געבן צדקה מיט פרייד."
+    "en": "The Rav teaches that simcha in avodas Hashem grows out of clear emunah and bitachon, the very thing Amalek attacks with doubt. He teaches that a Jew should draw his pleasure from Torah, tefillah and avodas Hashem, and that one who sees every event as coming from Hashem for his good will serve Him with simcha. He finds the simcha of Adar in learning with clarity, davening well and giving tzedakah gladly.",
+    "yi": "דער משגיח לערנט אז שמחה אין עבודת השם וואקסט ארויס פון קלארער אמונה און בטחון, פונקט דאס וואס עמלק באפאלט מיט ספיקות. ער לערנט אז א איד זאל שעפן זיין הנאה פון תורה, תפילה און עבודת השם, און אז ווער עס זעט אז יעדע זאך קומט פון השם לטובה, דינט אים בשמחה. די שמחה פון אדר געפינט ער אין לערנען מיט קלארקייט, גוט דאווענען, און געבן צדקה מיט פרייד."
    },
    "hubs": [
     "yi-zmanim-svkvs-08"
@@ -9722,7 +9659,11 @@
    "coTopics": [],
    "threadIds": [],
    "storyIds": [],
-   "occasions": []
+   "occasions": [
+    "rosh-chodesh-sivan",
+    "shavuos",
+    "sivan"
+   ]
   },
   {
    "id": "shemitah-yovel",
@@ -10277,8 +10218,8 @@
   {
    "id": "tehillim",
    "description": {
-    "en": "The Rav learned many chapters of Tehillim with his listeners, especially the Shir HaMaalos as steps of ascent out of galus and Mizmor Shir L'Yom HaShabbos as the song in which all of history becomes one harmony. In times of danger he teaches from chapter 20 that a Jew sings and thanks Hashem even before the salvation, and he warns to guard the mouth from every trace of falsehood.",
-    "yi": "דער משגיח האט געלערנט אסאך קאפיטלעך תהלים מיט זיינע צוהערער, בפרט די שיר המעלות ווי טרעפ פון ארויפגיין פון גלות, און מזמור שיר ליום השבת ווי די שירה וואו די גאנצע היסטאריע ווערט איין הרמוניע. אין צייטן פון סכנה לערנט ער פון קאפיטל כ' אז א איד זינגט און דאנקט השם נאך פאר דער ישועה, און ער ווארנט צו היטן דאס מויל פון יעדן שפור פון שקר."
+    "en": "The Rav learned many chapters of Tehillim with his listeners as words of tefilah, especially the Shir HaMaalos as steps of ascent out of galus and Mizmor Shir L'Yom HaShabbos as the song in which all of history becomes one harmony. In times of danger he teaches from chapter 20 that a Jew sings and thanks Hashem even before the salvation, and he warns to guard the mouth from every trace of falsehood.",
+    "yi": "דער משגיח האט געלערנט אסאך קאפיטלעך תהלים מיט זיינע צוהערער ווי ווערטער פון תפילה, בפרט די שיר המעלות ווי טרעפ פון ארויפגיין פון גלות, און מזמור שיר ליום השבת ווי די שירה וואו די גאנצע היסטאריע ווערט איין הרמוניע. אין צייטן פון סכנה לערנט ער פון קאפיטל כ' אז א איד זינגט און דאנקט השם נאך פאר דער ישועה, און ער ווארנט צו היטן דאס מויל פון יעדן שפור פון שקר."
    },
    "hubs": [
     "yi-zmanim-lvl-02"
@@ -10362,10 +10303,6 @@
    "coTopics": [
     {
      "id": "middos",
-     "sections": 3
-    },
-    {
-     "id": "sefer-devarim",
      "sections": 3
     },
     {
@@ -10556,8 +10493,8 @@
   {
    "id": "churban-europa",
    "description": {
-    "en": "The Rav reads the hester panim of the Holocaust in Parshas Vayelech, following the Vilna Gaon's tradition on the sedros of Devarim, and recalls Rosh Hashanah 1939, when the war broke out. He tells how Hashem saved the Satmar Rav to rebuild Yiddishkeit in America, and speaks of the rebirth after the war as Jews recognizing Hashem's hand.",
-    "yi": "דער משגיח טייטשט דעם הסתר פנים פונעם חורבן אייראפע אין פרשת וילך, לויט דער מסורה פונעם ווילנער גאון אויף די סדרות פון דברים, און ער דערמאנט ראש השנה ת\"ש, ווען די מלחמה האט אויסגעבראכן. ער דערציילט ווי השם האט געראטעוועט דעם סאטמאר רב כדי אויפצובויען אידישקייט אין אמעריקע, און ער רעדט וועגן דעם אויפבוי נאך דער מלחמה, ווען אידן האבן דערקענט דעם אייבערשטנס האנט."
+    "en": "The Rav reads the hester panim of the Holocaust in Parshas Vayelech, following the Vilna Gaon's tradition on the sedros of Devarim, and recalls Rosh Hashanah 1939, when the war broke out. He tells how Hashem saved the Satmar Rav to rebuild Yiddishkeit in America, and speaks of the rebirth after the war as Jews recognizing Hashem's hand. He also speaks of earlier decrees, the expulsion from Spain on Tisha B'Av, the massacres of Tach v'Tat and the Ten Martyrs, and of how the Jewish people outlived every one of them.",
+    "yi": "דער משגיח טייטשט דעם הסתר פנים פונעם חורבן אייראפע אין פרשת וילך, לויט דער מסורה פונעם ווילנער גאון אויף די סדרות פון דברים, און ער דערמאנט ראש השנה ת\"ש, ווען די מלחמה האט אויסגעבראכן. ער דערציילט ווי השם האט געראטעוועט דעם סאטמאר רב כדי אויפצובויען אידישקייט אין אמעריקע, און ער רעדט וועגן דעם אויפבוי נאך דער מלחמה, ווען אידן האבן דערקענט דעם אייבערשטנס האנט. ער רעדט אויך וועגן די פריערדיגע גזירות, גירוש ספרד אין תשעה באב, גזירות ת\"ח ות\"ט און די עשרה הרוגי מלכות, און ווי כלל ישראל האט זיי אלע איבערגעלעבט."
    },
    "hubs": [
     "yi-parshas-hashavua-hzynv-01"
@@ -11358,7 +11295,11 @@
    "storyIds": [
     "the-father-and-the-third-garment"
    ],
-   "occasions": []
+   "occasions": [
+    "bein-hametzarim",
+    "nine-days",
+    "shabbos-chazon"
+   ]
   },
   {
    "id": "ketz-hageulah",
@@ -11984,7 +11925,9 @@
    "storyIds": [
     "the-chiddushei-harim-declines-to-name-a-child"
    ],
-   "occasions": []
+   "occasions": [
+    "bereishis"
+   ]
   },
   {
    "id": "tanya-ahavah-mesuteres",
@@ -12014,7 +11957,9 @@
    "coTopics": [],
    "threadIds": [],
    "storyIds": [],
-   "occasions": []
+   "occasions": [
+    "vayeira"
+   ]
   },
   {
    "id": "aseres-yemei-teshuvah",
@@ -12067,7 +12012,10 @@
    "storyIds": [
     "the-ramban-and-his-student-avner"
    ],
-   "occasions": []
+   "occasions": [
+    "aseres-yemei-teshuvah",
+    "shabbos-shuvah"
+   ]
   },
   {
    "id": "avodas-dor-haacharon",
@@ -12159,7 +12107,9 @@
    ],
    "threadIds": [],
    "storyIds": [],
-   "occasions": []
+   "occasions": [
+    "lech-lecha"
+   ]
   },
   {
    "id": "balak-pinchas",
@@ -12184,7 +12134,10 @@
    "coTopics": [],
    "threadIds": [],
    "storyIds": [],
-   "occasions": []
+   "occasions": [
+    "balak",
+    "pinchas"
+   ]
   },
   {
    "id": "chametz",
@@ -12214,7 +12167,9 @@
    "storyIds": [
     "rav-gifter-takes-out-the-garbage"
    ],
-   "occasions": []
+   "occasions": [
+    "erev-pesach"
+   ]
   },
   {
    "id": "chayei-sarah",
@@ -12229,7 +12184,9 @@
    "coTopics": [],
    "threadIds": [],
    "storyIds": [],
-   "occasions": []
+   "occasions": [
+    "chayei-sarah"
+   ]
   },
   {
    "id": "tammuz-av",
@@ -12270,7 +12227,9 @@
    "coTopics": [],
    "threadIds": [],
    "storyIds": [],
-   "occasions": []
+   "occasions": [
+    "tamuz"
+   ]
   },
   {
    "id": "chodesh-adar",
@@ -12302,7 +12261,9 @@
    "coTopics": [],
    "threadIds": [],
    "storyIds": [],
-   "occasions": []
+   "occasions": [
+    "adar"
+   ]
   },
   {
    "id": "elul",
@@ -12365,7 +12326,9 @@
    "storyIds": [
     "yaakov-wakes-at-the-place-of-the-beis-hamikdash"
    ],
-   "occasions": []
+   "occasions": [
+    "elul"
+   ]
   },
   {
    "id": "chodesh-kislev",
@@ -12380,7 +12343,10 @@
    "coTopics": [],
    "threadIds": [],
    "storyIds": [],
-   "occasions": []
+   "occasions": [
+    "kislev",
+    "yud-tes-kislev"
+   ]
   },
   {
    "id": "chodesh-nissan",
@@ -12441,7 +12407,10 @@
    ],
    "threadIds": [],
    "storyIds": [],
-   "occasions": []
+   "occasions": [
+    "nisan",
+    "rosh-chodesh-nisan"
+   ]
   },
   {
    "id": "chodesh-teves",
@@ -12485,6 +12454,26 @@
     "adam-harishon-and-the-shortening-days",
     "rabbi-yonasan-eybeshutz-answers-the-priests"
    ],
+   "occasions": [
+    "teves"
+   ]
+  },
+  {
+   "id": "kisei-eliyahu",
+   "description": {
+    "en": "At many brisos the Rav speaks of Eliyahu HaNavi as the angel of the bris. He explains how Eliyahu's coming on the eighth day cuts short the mother's tumah, finds Eliyahu in the Megillah as Charvona at Haman's downfall, and says that while Eliyahu's emissaries come to every bris, at a special bris Eliyahu comes himself.",
+    "yi": "ביי אסאך בריתים רעדט דער משגיח וועגן אליהו הנביא ווי דער מלאך הברית. ער איז מסביר ווי אליהו'ס קומען אויפן אכטן טאג מאכט קירצער די טומאה פון דער מאמע, ער געפינט אליהו אין דער מגילה ווי חרבונה ביי המן'ס מפלה, און ער זאגט אז די שלוחים פון אליהו קומען צו יעדן ברית, אבער צו א ספעציעלן ברית קומט אליהו אליין."
+   },
+   "hubs": [],
+   "grades": {
+    "main": [],
+    "discussed": [],
+    "touched": []
+   },
+   "children": [],
+   "coTopics": [],
+   "threadIds": [],
+   "storyIds": [],
    "occasions": []
   },
   {
@@ -12536,7 +12525,11 @@
     "rebbi-i-dont-like-fish",
     "the-baal-hatanya-and-the-minister-where-are-you"
    ],
-   "occasions": []
+   "occasions": [
+    "bo",
+    "shemos",
+    "vaeira"
+   ]
   },
   {
    "id": "gilgulim",
@@ -12583,7 +12576,9 @@
    "coTopics": [],
    "threadIds": [],
    "storyIds": [],
-   "occasions": []
+   "occasions": [
+    "hoshana-rabbah"
+   ]
   },
   {
    "id": "korach",
@@ -12598,7 +12593,9 @@
    "coTopics": [],
    "threadIds": [],
    "storyIds": [],
-   "occasions": []
+   "occasions": [
+    "korach"
+   ]
   },
   {
    "id": "krias-shema",
@@ -12638,7 +12635,10 @@
    "coTopics": [],
    "threadIds": [],
    "storyIds": [],
-   "occasions": []
+   "occasions": [
+    "beshalach",
+    "shabbos-shirah"
+   ]
   },
   {
    "id": "lag-baomer",
@@ -12663,7 +12663,9 @@
    "coTopics": [],
    "threadIds": [],
    "storyIds": [],
-   "occasions": []
+   "occasions": [
+    "lag-baomer"
+   ]
   },
   {
    "id": "madreigos-haneshamah",
@@ -12856,7 +12858,9 @@
    "coTopics": [],
    "threadIds": [],
    "storyIds": [],
-   "occasions": []
+   "occasions": [
+    "mishpatim"
+   ]
   },
   {
    "id": "noach-mabul",
@@ -12912,7 +12916,9 @@
    "storyIds": [
     "rav-nachum-of-chernobyl-and-his-little-bread"
    ],
-   "occasions": []
+   "occasions": [
+    "noach"
+   ]
   },
   {
    "id": "pesach-sheni",
@@ -13024,7 +13030,10 @@
    "storyIds": [
     "the-satmar-rav-on-purim"
    ],
-   "occasions": []
+   "occasions": [
+    "purim",
+    "purim-meshulash"
+   ]
   },
   {
    "id": "purim-katan",
@@ -13046,7 +13055,9 @@
    "coTopics": [],
    "threadIds": [],
    "storyIds": [],
-   "occasions": []
+   "occasions": [
+    "purim-katan"
+   ]
   },
   {
    "id": "rosh-hashanah",
@@ -13108,7 +13119,9 @@
     "the-lechovitcher-chassid-who-heard-hamelech",
     "yaakov-wakes-at-the-place-of-the-beis-hamikdash"
    ],
-   "occasions": []
+   "occasions": [
+    "rosh-hashanah"
+   ]
   },
   {
    "id": "sefiras-haomer",
@@ -13172,7 +13185,10 @@
    ],
    "threadIds": [],
    "storyIds": [],
-   "occasions": []
+   "occasions": [
+    "iyar",
+    "sefirah"
+   ]
   },
   {
    "id": "shemini-atzeres",
@@ -13200,7 +13216,9 @@
    "coTopics": [],
    "threadIds": [],
    "storyIds": [],
-   "occasions": []
+   "occasions": [
+    "shemini-atzeres"
+   ]
   },
   {
    "id": "shemoneh-esrei",
@@ -13256,7 +13274,9 @@
    ],
    "threadIds": [],
    "storyIds": [],
-   "occasions": []
+   "occasions": [
+    "shovavim"
+   ]
   },
   {
    "id": "shushan-purim",
@@ -13287,7 +13307,9 @@
    ],
    "threadIds": [],
    "storyIds": [],
-   "occasions": []
+   "occasions": [
+    "shushan-purim"
+   ]
   },
   {
    "id": "simanei-ikvesa",
@@ -13313,7 +13335,10 @@
   },
   {
    "id": "tanya-simcha",
-   "description": null,
+   "description": {
+    "en": "The Rav's Tanya shiurim on chapters 26-34: why sadness and laziness lose the battle against the yetzer hara, why broken-heartedness over sins belongs only at a set time, like Tikkun Chatzos, and leads to a greater joy, the difference between atzvus and merirus, and what to do when the heart feels like stone (timtum halev).",
+    "yi": "די שיעורים פונעם משגיח אין תניא פרקים כ\"ו-ל\"ד: פארוואס עצבות און עצלות פארלירן די מלחמה קעגן דעם יצר הרע, פארוואס א צובראכנקייט איבער עבירות געהערט נאר צו א באשטימטע צייט, ווי תיקון חצות, און פירט צו א גרעסערע שמחה, דער חילוק צווישן עצבות און מרירות, און וואס מ'טוט ווען דאס הארץ איז ווי א שטיין (טמטום הלב)."
+   },
    "hubs": [],
    "grades": {
     "main": [],
@@ -13369,7 +13394,9 @@
    "storyIds": [
     "chizkiyahu-sleeps-during-sanherivs-siege"
    ],
-   "occasions": []
+   "occasions": [
+    "sukkos"
+   ]
   },
   {
    "id": "neros-chanukah",
@@ -13433,7 +13460,12 @@
    "coTopics": [],
    "threadIds": [],
    "storyIds": [],
-   "occasions": []
+   "occasions": [
+    "parshas-hachodesh",
+    "parshas-parah",
+    "parshas-shekalim",
+    "parshas-zachor"
+   ]
   },
   {
    "id": "cheit-haegel",
@@ -13460,7 +13492,9 @@
    ],
    "threadIds": [],
    "storyIds": [],
-   "occasions": []
+   "occasions": [
+    "ki-sisa"
+   ]
   },
   {
    "id": "meraglim",
@@ -13475,7 +13509,9 @@
    "coTopics": [],
    "threadIds": [],
    "storyIds": [],
-   "occasions": []
+   "occasions": [
+    "shelach"
+   ]
   },
   {
    "id": "nes-chanukah",
@@ -13579,7 +13615,11 @@
    ],
    "threadIds": [],
    "storyIds": [],
-   "occasions": []
+   "occasions": [
+    "pekudei",
+    "tetzaveh",
+    "vayakhel-pekudei"
+   ]
   },
   {
    "id": "leil-haseder",
@@ -13684,7 +13724,9 @@
    "storyIds": [
     "the-father-and-the-third-garment"
    ],
-   "occasions": []
+   "occasions": [
+    "tishah-beav"
+   ]
   },
   {
    "id": "tu-bav-nechamah",
@@ -13706,7 +13748,10 @@
    "coTopics": [],
    "threadIds": [],
    "storyIds": [],
-   "occasions": []
+   "occasions": [
+    "shabbos-nachamu",
+    "tu-beav"
+   ]
   },
   {
    "id": "tu-bishvat",
@@ -13728,7 +13773,9 @@
    "coTopics": [],
    "threadIds": [],
    "storyIds": [],
-   "occasions": []
+   "occasions": [
+    "tu-bishvat"
+   ]
   },
   {
    "id": "tanya-tzaddik-beinoni-rasha",
@@ -13787,7 +13834,9 @@
    ],
    "threadIds": [],
    "storyIds": [],
-   "occasions": []
+   "occasions": [
+    "vayechi"
+   ]
   },
   {
    "id": "yaakov-velavan",
@@ -13802,7 +13851,9 @@
    "coTopics": [],
    "threadIds": [],
    "storyIds": [],
-   "occasions": []
+   "occasions": [
+    "vayeitzei"
+   ]
   },
   {
    "id": "yehuda-vetamar",
@@ -13847,7 +13898,9 @@
     "the-author-of-unesaneh-tokef-asks-for-three-days",
     "the-girl-of-sedom-who-fed-a-poor-man"
    ],
-   "occasions": []
+   "occasions": [
+    "vayeishev"
+   ]
   },
   {
    "id": "yaakov-veesav",
@@ -13899,7 +13952,10 @@
     "eliyahus-two-oxen",
     "the-cholent-of-reb-yechezkel-of-kuzmir"
    ],
-   "occasions": []
+   "occasions": [
+    "toldos",
+    "vayishlach"
+   ]
   },
   {
    "id": "yom-kippur",
@@ -13938,7 +13994,9 @@
    "storyIds": [
     "the-man-from-biala-who-chose-right-after-yom-kippur"
    ],
-   "occasions": []
+   "occasions": [
+    "yom-kippur"
+   ]
   },
   {
    "id": "yosef-veechav",
@@ -13973,7 +14031,9 @@
    "storyIds": [
     "onkelos-consults-the-dead"
    ],
-   "occasions": []
+   "occasions": [
+    "vayigash"
+   ]
   },
   {
    "id": "zos-chanukah",
@@ -14005,7 +14065,9 @@
    "coTopics": [],
    "threadIds": [],
    "storyIds": [],
-   "occasions": []
+   "occasions": [
+    "zos-chanukah"
+   ]
   }
  ]
 }

@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
-    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build && tsx scripts/build-search.ts && tsx scripts/redirects.ts",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build && tsx scripts/build-search.ts",
     "preview": "astro preview",
     "typecheck": "node ../../node_modules/typescript/bin/tsc --noEmit -p tsconfig.json && ASTRO_TELEMETRY_DISABLED=1 astro check",
     "test": "vitest run",

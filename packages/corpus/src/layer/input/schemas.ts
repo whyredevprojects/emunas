@@ -16,6 +16,9 @@ import type {
   Concept,
   CorpusIndex,
   Person,
+  PersonType,
+  RedirectKind as ContractRedirectKind,
+  RedirectTarget,
   Redirects,
   SeriesSynthesis,
   ShiurTags,
@@ -23,6 +26,7 @@ import type {
   TeachingCluster,
   Topic,
   Work,
+  WorkKind,
 } from "../../../../../src/corpus-types.ts";
 
 /** Corpus ids (topic, concept, person, work, story, cluster) and series ids. */
@@ -42,15 +46,8 @@ export const BilingualSchema = v.object({ en: str, yi: str });
 const ReviewStatusSchema = v.exactOptional(v.picklist(["unreviewed", "reviewed"]));
 /** A retired record pointing at the record it was merged into (read when present). */
 const mergedInto = v.exactOptional(corpusId);
-/** Free-form classifier the pipeline may add (work: generic / commentary …; story: kind of maaseh). */
-const kind = v.exactOptional(v.pipe(str, v.minLength(1)));
-/** Topic `parsha` / `zman` keys (D11), one key or several. */
-const occasionKeys = v.exactOptional(
-  v.pipe(
-    v.union([str, v.array(str), v.null()]),
-    v.transform((x) => (x === null ? [] : typeof x === "string" ? [x] : x)),
-  ),
-);
+/** Topic `parsha` / `zman` keys (D11): catalog spellings, copied exactly. Absent = none. */
+const occasionKeys = v.optional(v.array(str), () => []);
 const flag = v.exactOptional(v.boolean());
 
 export const CorpusIndexSchema = v.object({
@@ -92,8 +89,23 @@ export const ConceptSchema = v.object({
   mergedInto,
 });
 
-export const PERSON_TYPES = ["tanach", "chazal", "rishon", "acharon", "chassidic_rebbe", "other"] as const;
+/** The contract's person types (src/corpus-types.ts `PersonType`, index.json version 2). */
+export const PERSON_TYPES = [
+  "tanach",
+  "chazal",
+  "rishon",
+  "acharon",
+  "chassidic_rebbe",
+  "malach",
+  "ruler",
+  "individual",
+  "other",
+] as const;
 export type PersonTypeIn = (typeof PERSON_TYPES)[number];
+
+/** The contract's work kinds (src/corpus-types.ts `WorkKind`). */
+export const WORK_KINDS = ["sefer", "genre", "tanach-book", "talmud-tractate", "mishnah-tractate", "liturgy", "document"] as const;
+export type WorkKindIn = (typeof WORK_KINDS)[number];
 
 export const PersonSchema = v.object({
   id: corpusId,
@@ -102,6 +114,8 @@ export const PersonSchema = v.object({
   nameYi: str,
   /** A type the site does not know yet is read as `other` (the loader reports it). */
   type: str,
+  /** Generated disambiguation note (public file, shown under the AI label). */
+  description: v.optional(v.nullable(BilingualSchema), null),
   aliases: strList,
   shiurIds: v.array(str),
   private: flag,
@@ -119,7 +133,11 @@ export const WorkSchema = v.object({
   authorPersonId: v.optional(v.nullable(corpusId), null),
   sefariaIndexTitle: v.optional(v.nullable(str), null),
   shiurIds: v.array(str),
-  kind,
+  /** A kind the site does not know yet is read as `sefer` (the loader reports it). */
+  kind: str,
+  /** Canonical sort key; compare only within one kind or one parent. */
+  order: v.optional(v.nullable(v.pipe(v.number(), v.finite())), null),
+  parentWorkId: v.optional(v.nullable(corpusId), null),
   reviewStatus: ReviewStatusSchema,
   mergedInto,
 });
@@ -131,7 +149,8 @@ export const StorySchema = v.object({
   /** Person ids where resolved, else the raw name (rendered unlinked). */
   people: strList,
   tellings: v.array(v.object({ shiurId: str, storyIndex: nonNegInt })),
-  kind,
+  /** The tellings credit the story to different people (absent = they agree). */
+  attributionVaries: v.optional(v.boolean(), false),
   reviewStatus: ReviewStatusSchema,
   mergedInto,
 });
@@ -167,23 +186,28 @@ export const ShiurTagsSchema = v.object({
   sourceWorkIds: v.optional(v.array(v.nullable(corpusId)), () => []),
 });
 
-/** Redirect kinds the sites know; any other top-level key is reported and ignored. */
-export const REDIRECT_KINDS = ["topics", "concepts", "people", "works", "stories", "teachingClusters"] as const;
+/** Redirect kinds of the contract; any other top-level key is reported and ignored. */
+export const REDIRECT_KINDS = ["topics", "concepts", "people", "works", "stories"] as const;
 export type RedirectKind = (typeof REDIRECT_KINDS)[number];
 
+/** A redirect target: an id of the same kind, or `{kind, id}` of another kind. */
+export const RedirectTargetSchema = v.union([str, v.object({ kind: str, id: str })]);
+export type RedirectTargetIn = { kind: RedirectKind; id: string };
+
 /** Top level only; entries are checked one by one by the loader. */
-export const RedirectsSchema = v.record(str, v.record(str, str));
+export const RedirectsSchema = v.record(str, v.record(str, v.unknown()));
 
 export type CorpusIndexIn = v.InferOutput<typeof CorpusIndexSchema>;
 export type TopicIn = v.InferOutput<typeof TopicSchema>;
 export type ConceptIn = v.InferOutput<typeof ConceptSchema>;
 export type PersonIn = Omit<v.InferOutput<typeof PersonSchema>, "type"> & { type: PersonTypeIn };
-export type WorkIn = v.InferOutput<typeof WorkSchema>;
+export type WorkIn = Omit<v.InferOutput<typeof WorkSchema>, "kind"> & { kind: WorkKindIn };
 export type StoryIn = v.InferOutput<typeof StorySchema>;
 export type TeachingClusterIn = v.InferOutput<typeof TeachingClusterSchema>;
 export type SeriesSynthesisIn = v.InferOutput<typeof SeriesSynthesisSchema>;
 export type ShiurTagsIn = v.InferOutput<typeof ShiurTagsSchema>;
-export type RedirectsIn = Partial<Record<RedirectKind, Readonly<Record<string, string>>>>;
+/** Retired id → target, per kind; targets normalised to `{kind, id}`. */
+export type RedirectsIn = Partial<Record<RedirectKind, Readonly<Record<string, RedirectTargetIn>>>>;
 
 // ---------- compile-time checks against the pipeline types (read-only) ----------
 type Accepts<S extends v.GenericSchema, T> = T extends v.InferInput<S> ? true : false;
@@ -199,4 +223,8 @@ export const _schemaChecks = [
   assertTrue<Accepts<typeof SeriesSynthesisSchema, SeriesSynthesis>>(),
   assertTrue<Accepts<typeof ShiurTagsSchema, ShiurTags>>(),
   assertTrue<Accepts<typeof RedirectsSchema, Required<Redirects>>>(),
+  assertTrue<Accepts<typeof RedirectTargetSchema, RedirectTarget>>(),
+  assertTrue<PersonType extends PersonTypeIn ? (PersonTypeIn extends PersonType ? true : false) : false>(),
+  assertTrue<WorkKind extends WorkKindIn ? (WorkKindIn extends WorkKind ? true : false) : false>(),
+  assertTrue<RedirectKind extends ContractRedirectKind ? (ContractRedirectKind extends RedirectKind ? true : false) : false>(),
 ] as const;

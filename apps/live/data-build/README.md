@@ -61,10 +61,9 @@ corpus refs with labels). Neither requests `corpus.json`, `facets.json` or any c
 | `topics.json` | the topic tree as rows `[id, parentId, en, yi, he, count]`, parents first (`topicNodes()` expands them) |
 | `topic/<id>.json`, `topic/<id>.moments-<n>.json` | description, term, hubs as cards, children, co-topics, threads and stories (with page flags), the first 30 mix sections with titles; further sections 300 per page, ids and times only |
 | `thread/<id>.json` | threads with a page (≥3 shiurim): label, summary, topics, members by year with the per-shiur insight |
-| `story/<id>.json` | stories with a page (≥2 tellings): title, retelling, people (linked or plain names), tellings with the chapter each sits in |
+| `story/<id>.json` | stories with a page (≥2 tellings): title, retelling, people (linked or plain names), `attributionVaries` (the tellings credit it to different people), tellings with the chapter each sits in |
 | `stories-index.json` | every merged story without retellings: title, Live-listed people ids, telling count, languages, page flag, first telling |
 | `glossary/<prefix>.json` | glossary cards by id prefix (`build.json` `glossaryShards`; `glossaryShardFor`), split until each fits 6 KiB br |
-| `redirects.json` | per Live route kind (`t c p seforim maasios th`): retired corpus ids, merged concepts (→ topic) and legacy keys → `{kind, id}` or null (the index); lazy |
 | `explore/entities.json` | per summarized shiur: topic, person, concept, work ids (Explore's facets; `corpus.json` keeps the last three until C3.1) |
 
 Every file is validated against a valibot schema before anything is written (`schemas.ts`). The
@@ -168,7 +167,7 @@ stories 54 KiB, quick index 255 KiB per language.
   keys and wrong types, the committed fixtures validating.
 - `emit-corpus.test.ts`: the corpus-layer files: strict schemas, page flag ⇔ file, every link
   target with a page flag has a file, no layer prose in corpus/facets/today/shiur files, glossary
-  shards, redirects, Explore ids, no alias/ASR/pairing key, the featured mix and its D7 filters.
+  shards, Explore ids, no alias/ASR/pairing key, the featured mix and its D7 filters.
 - `icons.test.ts`: the committed PNG icons (sizes, opaque full-bleed variants, transparent corners on
   `any`), the manifest's icon list, the mark inside the maskable safe zone.
 - `incremental.test.ts`: a shiur flips from pending to done; only the expected files change and all

@@ -46,14 +46,10 @@ wording is in `@emunas/i18n`, `CORPUS_LABELS`).
 - **Merged concept**: a concept with `mergedIntoTopic` formats as its topic on both sites.
 - **Canonical**: a Live entry page points at its Quiet page when Quiet has one; otherwise
   `canonicalFor` is null and `noindexFor` is true. Threads always: null and noindex.
-- **Old addresses**: `legacyPaths(site, kind, oldKey)` lists every address a normalize-keyed person,
-  work or concept had (Quiet `/people/`, `/sources/`, `/inyanim/{conceptKey}/`; Live `/p/`, `/c/`,
-  `/seforim/` + chapter). An old `/inyanim/{key}/` whose key is a topic id with a page *is* that
-  topic page and gets no redirect. `legacyRedirects(site, row)` turns a layer `redirects.json`
-  legacy row into from → to pairs (unmatched → the index); `corpusRedirects(site, kind, from, to)`
-  does the same for retired corpus ids.
+- **No old addresses**: the sites have never been published, so there are no redirects, legacy
+  paths or retired-id mappings here.
 
-**Legacy, until C1.8/C2 move the pages (C3.1 removes it):** the `{ kind: "entity" }` route and
+**Still used by current pages, until the C2 page wave replaces them:** the `{ kind: "entity" }` route and
 `quietPaths().concept()` still format the normalize-keyed addresses (Quiet concepts at
 `/{ed}/inyanim/{key}/`, index `"concepts"` at `/{ed}/inyanim/`) so the pages that are not on
 the layer yet keep their links. No parser returns them any more.

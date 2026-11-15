@@ -2,7 +2,7 @@
  * The corpus-layer part of the Live emit (C1.7) on the @emunas/corpus mini corpus: every new file
  * validates strictly, a page file exists exactly when its Live page flag is set, every link target
  * with a page flag has its file, generated layer text stays out of the first-load files, the
- * glossary shards and redirects resolve, nothing pairs shiurim across languages, and the featured
+ * glossary shards resolve, nothing pairs shiurim across languages, and the featured
  * mix follows the owner policy (D7).
  */
 import { describe, expect, it } from "vitest";
@@ -13,7 +13,6 @@ import type {
   DataKind,
   FacetsFile,
   GlossaryShardFile,
-  RedirectsFile,
   ShiurFile,
   StoriesIndexFile,
   StoryFile,
@@ -53,7 +52,7 @@ function withLayer(edit: (l: NonNullable<CorpusInput["layer"]>) => void): Corpus
 describe("corpus-layer files on the mini corpus", () => {
   it("the layer is on and every new file kind is emitted and validates", () => {
     const kinds = new Set([...files.keys()].map((f) => kindOfFile(f)));
-    for (const k of ["topics", "topic", "story", "storiesIndex", "glossary", "redirects", "exploreEntities"] as DataKind[]) {
+    for (const k of ["topics", "topic", "story", "storiesIndex", "glossary", "exploreEntities"] as DataKind[]) {
       expect(kinds.has(k), k).toBe(true);
     }
     for (const [f, body] of files) expect(validateFile(f, body), f).toBeNull();
@@ -68,7 +67,6 @@ describe("corpus-layer files on the mini corpus", () => {
       [under("story/")[0]!, null],
       ["stories-index.json", null],
       [under("glossary/")[0]!, null],
-      ["redirects.json", null],
       ["explore/entities.json", null],
       ["today.json", null],
       ["build.json", null],
@@ -109,7 +107,7 @@ describe("corpus-layer files on the mini corpus", () => {
     }
   });
 
-  it("every link target with a page flag has its file (shiur refs, topics, stories, glossary, redirects)", () => {
+  it("every link target with a page flag has its file (shiur refs, topics, stories, glossary)", () => {
     const has = (f: string) => files.has(f);
     for (const f of under("shiur/")) {
       const c = get<ShiurFile>(f).corpus;
@@ -144,14 +142,6 @@ describe("corpus-layer files on the mini corpus", () => {
         expect(has(`entity/c/${c.id}.json`), c.id).toBe(c.page);
         if (c.topicId) expect(has(`topic/${c.topicId}.json`)).toBe(true);
         expect(`glossary/${glossaryShardFor(c.id, build.glossaryShards)}.json`).toBe(f);
-      }
-    }
-    const dir = { t: "topic", c: "entity/c", p: "entity/p", seforim: "work", maasios: "story", th: "thread" } as const;
-    for (const [route, m] of Object.entries(get<RedirectsFile>("redirects.json").routes)) {
-      for (const [from, to] of Object.entries(m)) {
-        // The old address is not itself a page; the target is.
-        expect(has(`${dir[route as keyof typeof dir]}/${from}.json`), `${route}/${from}`).toBe(false);
-        if (to) expect(has(`${dir[to.kind]}/${to.id}.json`), `${route}/${from} → ${to.kind}/${to.id}`).toBe(true);
       }
     }
   });
@@ -244,21 +234,21 @@ describe("corpus-layer files on the mini corpus", () => {
     }
   });
 
-  it("redirects: retired corpus ids, merged concepts and legacy keys, in one hop", () => {
-    const r = get<RedirectsFile>("redirects.json").routes;
-    // The pipeline's story redirect (plan C1.2 acceptance 4).
-    expect(r.maasios["the-sanzer-rav-and-the-business-competitor"]).toEqual(
-      files.has("story/the-divrei-chaim-and-the-man-who-shamed.json")
-        ? { kind: "maasios", id: "the-divrei-chaim-and-the-man-who-shamed" }
-        : null,
-    );
-    // A concept merged into a topic: /c/<id> goes to the topic page.
-    const merged = layer.concepts.find((c) => c.mergedIntoTopic && files.has(`topic/${c.mergedIntoTopic}.json`))!;
-    expect(r.c[merged.id]).toEqual({ kind: "t", id: merged.mergedIntoTopic });
-    // Legacy keys go to a page or (null) to the index; never to themselves.
-    expect(Object.keys(r.p).length + Object.keys(r.c).length + Object.keys(r.seforim).length).toBeGreaterThan(10);
-    for (const m of Object.values(r)) for (const [from, to] of Object.entries(m)) if (to) expect(to.id === from && to.kind === "p").toBe(false);
-    expect(Object.values(r.p).some((x) => x === null)).toBe(true);
+  it("emits no redirects file, and story files carry attributionVaries from the layer", () => {
+    expect(files.has("redirects.json")).toBe(false);
+    expect(kindOfFile("redirects.json")).toBeNull();
+    const stories = new Map((layer.stories ?? []).map((st) => [st.id, st]));
+    const out = under("story/").map((f) => get<StoryFile>(f));
+    expect(out.length).toBeGreaterThan(0);
+    for (const st of out) expect(st.attributionVaries).toBe(stories.get(st.id)!.attributionVaries);
+    // A layer story with attributionVaries keeps it on its page file.
+    const flipped = withLayer((l) => {
+      const s = l.stories!.find((x) => x.pages.live)!;
+      s.attributionVaries = true;
+    });
+    const again = emitLiveData(flipped, { generatedAt: GENERATED_AT });
+    const id = flipped.layer!.stories!.find((x) => x.attributionVaries && x.pages.live)!.id;
+    expect(get<StoryFile>(`story/${id}.json`, again).attributionVaries).toBe(true);
   });
 
   it("explore/entities.json holds corpus-id arrays per summarized shiur; corpus.json keeps them until C3.1", () => {

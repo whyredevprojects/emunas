@@ -3,7 +3,7 @@ import { createRequire } from "node:module";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, expectTypeOf, it } from "vitest";
-import type { LayerPersonType } from "../../corpus/src/public/corpus-layer.ts";
+import { LAYER_PERSON_GROUPS, type LayerPersonGroup } from "../../corpus/src/public/corpus-layer.ts";
 import {
   CORPUS_LABELS,
   CORPUS_LABEL_STATUS,
@@ -111,18 +111,35 @@ describe("corpus labels", () => {
 });
 
 describe("person groups and topic grades", () => {
-  it("mirror the layer's person types, in sefer order", () => {
-    expectTypeOf<PersonGroup>().toEqualTypeOf<LayerPersonType>();
-    expect(PERSON_GROUP_ORDER).toEqual(["tanach", "chazal", "rishon", "acharon", "chassidic_rebbe", "other"]);
+  it("mirror the layer's person groups, in sefer order", () => {
+    expectTypeOf<PersonGroup>().toEqualTypeOf<LayerPersonGroup>();
+    expect(PERSON_GROUP_ORDER).toEqual(LAYER_PERSON_GROUPS);
+    expect(PERSON_GROUP_ORDER).toEqual(["tanach", "malach", "chazal", "rishon", "acharon", "chassidic_rebbe", "ruler", "other"]);
     expect(PERSON_GROUP_ORDER.map((g) => personGroupLabel(g, "yi"))).toEqual([
       "תנ\"ך",
+      "מלאכים",
       "חז\"ל",
       "ראשונים",
       "אחרונים",
       "צדיקי החסידות",
+      "מלכים און הערשער",
       "אנדערע",
     ]);
-    expect(personGroupLabel("chassidic_rebbe", "en")).toBe("Chassidic Rebbes");
+    expect(PERSON_GROUP_ORDER.map((g) => personGroupLabel(g, "en"))).toEqual([
+      "Tanach",
+      "Malachim",
+      "Chazal",
+      "Rishonim",
+      "Acharonim",
+      "Chassidic Rebbes",
+      "Kings and rulers",
+      "Others",
+    ]);
+  });
+
+  it("has a line for stories whose tellings differ on the attribution", () => {
+    expect(corpusLabel("story.attributionVaries", "en")).toBe("The tellings differ on whom this happened with.");
+    expect(corpusLabel("story.attributionVaries", "yi")).toMatch(/פארשידענע/);
   });
 
   it("shows a type the data adds later as itself", () => {

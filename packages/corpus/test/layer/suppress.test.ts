@@ -17,6 +17,7 @@ import {
   LAYER_FILES,
   type LayerConceptsFile,
   type LayerInfo,
+  type LayerPeopleFile,
   type LayerSeries,
   type LayerStoriesFile,
   type LayerThreadsFile,
@@ -32,6 +33,7 @@ const story = (base[LAYER_FILES.stories] as LayerStoriesFile).stories.find((s) =
 const thread = (base[LAYER_FILES.threads] as LayerThreadsFile).threads[0];
 const topic = (base[LAYER_FILES.topics] as LayerTopicsFile).detail.find((d) => d.description !== null);
 const concept = (base[LAYER_FILES.concepts] as LayerConceptsFile).concepts[0];
+const person = (base[LAYER_FILES.people] as LayerPeopleFile).people.find((p) => p.description !== null);
 /** The mini corpus has no series with a visible part, so the series case uses a synthetic file of the layer's shape. */
 const SERIES: LayerSeries = {
   seriesId: "synthetic-series",
@@ -67,7 +69,8 @@ describe("corpus item ids", () => {
     expect(parseCorpusItemId("corpus:story:a-b#retelling.en")).toEqual({ kind: "story", entityId: "a-b", field: "retelling", lang: "en" });
     expect(parseCorpusItemId("corpus:series:s#keyThemes.3.en")).toMatchObject({ field: "keyThemes.3", lang: "en" });
     expect(parseCorpusItemId("yi-tanya-1-01~st3")).toBeNull();
-    expect(parseCorpusItemId("corpus:person:x#aliases.en")).toBeNull();
+    expect(parseCorpusItemId("corpus:person:x#description.en")).toEqual({ kind: "person", entityId: "x", field: "description", lang: "en" });
+    expect(parseCorpusItemId("corpus:work:x#title.en")).toBeNull();
     expect(parseCorpusItemId("corpus:story:x#retelling")).toBeNull();
     expect(isCorpusItemId("corpus:story:x#retelling.en")).toBe(true);
     expect(isCorpusItemId("yi-tanya-1-01~st3")).toBe(false);
@@ -80,6 +83,7 @@ describe("applyCorpusSuppress", () => {
     expect(thread).toBeDefined();
     expect(topic).toBeDefined();
     expect(concept).toBeDefined();
+    expect(person).toBeDefined();
     expect(Object.keys(base).some((k) => k.startsWith(`${LAYER_FILES.seriesDir}/`))).toBe(false);
   });
 
@@ -101,6 +105,17 @@ describe("applyCorpusSuppress", () => {
     expect(warnings.filter((w) => w.includes(id))).toHaveLength(1);
     // The base (unsuppressed) build is untouched.
     expect((base[LAYER_FILES.stories] as LayerStoriesFile).stories.find((s) => s.id === story.id)!.retelling.en).not.toBe("");
+  });
+
+  it("blanks a person description, and never another person field", () => {
+    const files = clone();
+    const ok = `corpus:person:${person!.id}#description.yi`;
+    const bad = `corpus:person:${person!.id}#aliases.en`;
+    const r = applyCorpusSuppress(files, [ok, bad]);
+    expect(r).toEqual({ applied: [ok], unmatched: [bad] });
+    const after = (files[LAYER_FILES.people] as LayerPeopleFile).people.find((p) => p.id === person!.id)!;
+    expect(after.description).toEqual({ en: person!.description!.en, yi: "" });
+    expect(after.aliases).toEqual(person!.aliases);
   });
 
   it("blanks thread, topic, concept and series fields by id", () => {

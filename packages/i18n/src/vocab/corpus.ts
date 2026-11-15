@@ -31,6 +31,8 @@ export const corpusLabelsEn = {
     one: "Retold here from {count} telling. Hear it in the shiur.",
     other: "Retold here from {count} tellings; details differ from one to another. Hear it in the shiur.",
   },
+  /** A story whose tellings credit it to different people (`attributionVaries`). */
+  "story.attributionVaries": "The tellings differ on whom this happened with.",
   // ---- AI labels (Live E.3, C.1, C.5)
   "label.grouped": "Grouped and named by AI across all the shiurim. Not reviewed by a person.",
   "label.grouped.reviewed": "Reviewed",
@@ -55,10 +57,12 @@ export const corpusLabelsEn = {
 
   // ---- person type groups, sefer order (Quiet C4.3, Live C.5)
   "personGroup.tanach": "Tanach",
+  "personGroup.malach": "Malachim",
   "personGroup.chazal": "Chazal",
   "personGroup.rishon": "Rishonim",
   "personGroup.acharon": "Acharonim",
   "personGroup.chassidic_rebbe": "Chassidic Rebbes",
+  "personGroup.ruler": "Kings and rulers",
   "personGroup.other": "Others",
 
   // ---- topic grades (Quiet C4.1 part 4)
@@ -104,6 +108,7 @@ export const corpusLabelsYi: MessageTable<CorpusLabelKey> = {
     one: "דא איבערדערציילט פון {count} מאל וואס דער משגיח דערציילט עס. הערט עס אין שיעור.",
     other: "דא איבערדערציילט פון {count} מאל וואס דער משגיח דערציילט עס; די פרטים זענען נישט גלייך פון איין מאל צום אנדערן. הערט עס אין שיעור.",
   },
+  "story.attributionVaries": "אין די פארשידענע מאל ווערט די מעשה צוגעשריבן צו פארשידענע מענטשן.",
   "label.grouped": "צוזאמגעגרופירט און אנגערופן דורך AI איבער אלע שיעורים. נישט איבערגעקוקט דורך א מענטש.",
   "label.grouped.reviewed": "איבערגעקוקט",
   "thread.heading": "א לימוד צו וועלכן דער משגיח קומט צוריק",
@@ -124,10 +129,12 @@ export const corpusLabelsYi: MessageTable<CorpusLabelKey> = {
   "kind.thread": "לימוד",
 
   "personGroup.tanach": "תנ\"ך",
+  "personGroup.malach": "מלאכים",
   "personGroup.chazal": "חז\"ל",
   "personGroup.rishon": "ראשונים",
   "personGroup.acharon": "אחרונים",
   "personGroup.chassidic_rebbe": "צדיקי החסידות",
+  "personGroup.ruler": "מלכים און הערשער",
   "personGroup.other": "אנדערע",
 
   "grade.main": "דער שיעור איז וועגן דעם",
@@ -175,11 +182,14 @@ export function corpusEntryLabel(site: "quiet" | "live", reviewed: boolean, lang
   return corpusLabel(reviewed ? "label.grouped.reviewed" : "label.grouped", lang);
 }
 
-/** Mirrors `LayerPersonType` (`@emunas/corpus/public`), in sefer order. */
-export type PersonGroup = "tanach" | "chazal" | "rishon" | "acharon" | "chassidic_rebbe" | "other";
-export const PERSON_GROUP_ORDER: readonly PersonGroup[] = ["tanach", "chazal", "rishon", "acharon", "chassidic_rebbe", "other"];
+/**
+ * Mirrors `LayerPersonGroup` (`@emunas/corpus/public`), in sefer order: malachim beside Tanach,
+ * rulers before the others. The layer maps each person type to a group (`individual` → `other`).
+ */
+export type PersonGroup = "tanach" | "malach" | "chazal" | "rishon" | "acharon" | "chassidic_rebbe" | "ruler" | "other";
+export const PERSON_GROUP_ORDER: readonly PersonGroup[] = ["tanach", "malach", "chazal", "rishon", "acharon", "chassidic_rebbe", "ruler", "other"];
 
-/** Group heading for a person type; a type the data adds later shows as itself. */
+/** Group heading for a person group; a group the data adds later shows as itself. */
 export function personGroupLabel(type: string, lang: UiLang): string {
   const key = `personGroup.${type}`;
   return translators[lang].has(key) ? translators[lang](key) : type;

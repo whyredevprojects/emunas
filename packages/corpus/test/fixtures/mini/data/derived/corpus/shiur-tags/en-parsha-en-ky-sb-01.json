@@ -3,10 +3,6 @@
  "otherSpeakerShare": 0,
  "topics": [
   {
-   "id": "sefer-devarim",
-   "salience": 0.9
-  },
-  {
    "id": "teshuvah",
    "salience": 0.8
   },
@@ -39,7 +35,6 @@
   {
    "index": 0,
    "topicIds": [
-    "sefer-devarim",
     "avodah-begashmiyus"
    ]
   },
@@ -54,8 +49,7 @@
   {
    "index": 2,
    "topicIds": [
-    "tzedakah-chesed",
-    "sefer-devarim"
+    "tzedakah-chesed"
    ]
   },
   {
@@ -93,14 +87,12 @@
   {
    "index": 7,
    "topicIds": [
-    "teshuvah",
-    "sefer-devarim"
+    "teshuvah"
    ]
   },
   {
    "index": 8,
    "topicIds": [
-    "sefer-devarim",
     "teshuvah",
     "nisyonos-hador"
    ]
@@ -135,7 +127,8 @@
   "moshe-rabbeinu",
   "rambam",
   "rashi",
-  "yaakov-avinu"
+  "yaakov-avinu",
+  "syn-cross-person"
  ],
  "workIds": [
   "baal-haturim",

@@ -1,5 +1,5 @@
 /**
- * Writes `real-series.json`: the shape of the real series (ids, languages, siblings, and per part the
+ * Writes `real-series.json`: the shape of the real series (ids, languages, and per part the
  * shiur id, catalog `seriesOrder` and perek), taken from `.corpus/series.json` (catalog data only; no
  * notes, no titles). The series tests run against it so "all 17 series ordered by seriesOrder" is
  * checked on the real catalog without the app reading `data/`.
@@ -15,7 +15,6 @@ interface CorpusSeriesFile {
   series: {
     id: string;
     lang: "yi" | "en";
-    sibling: string | null;
     parts: { id: string; order: number | null; perek: string | null }[];
   }[];
 }
@@ -26,7 +25,6 @@ const src = JSON.parse(readFileSync(join(root, ".corpus/series.json"), "utf8")) 
 const out = src.series.map((s) => ({
   id: s.id,
   lang: s.lang,
-  sibling: s.sibling,
   parts: s.parts.map((p) => ({ shiurId: p.id, order: p.order, perek: p.perek })),
 }));
 writeFileSync(join(here, "real-series.json"), `${JSON.stringify({ series: out }, null, 1)}\n`);

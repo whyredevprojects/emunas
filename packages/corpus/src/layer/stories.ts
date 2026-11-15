@@ -66,6 +66,7 @@ export function buildStories(ctx: LayerContext, personOf: (raw: string) => Layer
       title: { en: s.title.en, yi: s.title.yi },
       retelling: { en: s.retelling.en, yi: s.retelling.yi },
       people,
+      attributionVaries: s.attributionVaries,
       tellings,
       shiurCount: new Set(tellings.map((t) => t.shiurId)).size,
       reviewed: s.reviewStatus === "reviewed",

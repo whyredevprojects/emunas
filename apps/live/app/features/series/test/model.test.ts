@@ -13,7 +13,6 @@ import real from "./real-series.json" with { type: "json" };
 interface RealSeries {
   id: string;
   lang: "yi" | "en";
-  sibling: string | null;
   parts: { shiurId: string; order: number | null; perek: string | null }[];
 }
 const REAL = (real as { series: RealSeries[] }).series;

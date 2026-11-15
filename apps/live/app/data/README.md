@@ -24,7 +24,6 @@ contract in `@emunas/corpus/public` (integration-plan §5.2). W3.6 emits files t
 | `/data/story/<id>.json` | `StoryFile` (stories told at least twice) | `loadStory(id)` |
 | `/data/stories-index.json` | `StoriesIndexFile` (no retellings) | `loadStoriesIndex()` (memoized) |
 | `/data/glossary/<prefix>.json` | `GlossaryShardFile` (`glossaryShardFor(id, build.glossaryShards)`) | `loadGlossaryShard(prefix)` (memoized) |
-| `/data/redirects.json` | `RedirectsFile` (lazy: only after a 404; `findRedirect`) | `loadRedirects()` (memoized) |
 | `/data/explore/entities.json` | `ExploreEntitiesFile` (corpus ids per shiur, for Explore) | `loadExploreEntities()` (memoized) |
 
 **Loading rules (corpus-wave-plan §4, C1.7).** Today renders from `today.json` alone and the

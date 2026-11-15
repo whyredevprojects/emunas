@@ -2,20 +2,12 @@
  * Cross-site links, canonical and hreflang (integration-plan §2.2, §2.3).
  */
 import { livePaths, quietPaths, type LivePaths, type QuietPaths } from "./builders.ts";
-import {
-  corpusRedirects,
-  hrefFor,
-  legacyPaths,
-  legacyRedirects,
-  type LegacyPath,
-  type LegacyRedirectInput,
-  type RedirectPair,
-} from "./corpus.ts";
+import { hrefFor } from "./corpus.ts";
 import { validateHosts, type Hosts } from "./hosts.ts";
 import { formatLive, parseLive } from "./live.ts";
 import { hasPageOn, resolveEntry } from "./pages.ts";
 import { formatQuiet, parseQuiet } from "./quiet.ts";
-import { EDS, isEd, type CorpusKind, type Ed, type LegacyKind, type LinkData, type Route, type Site } from "./types.ts";
+import { EDS, isEd, type Ed, type LinkData, type Route, type Site } from "./types.ts";
 import { pathSegments, splitUrl } from "./url.ts";
 
 export interface HreflangLink {
@@ -67,12 +59,6 @@ export interface Links {
   noindexFor(url: string, from?: Site): boolean;
   /** Absolute link to `route` on `site`, or null when it is a corpus entry without a Live page. */
   hrefFor(site: Site, route: Route): string | null;
-  /** Old addresses of a legacy site key (root-relative), see `legacyPaths`. */
-  legacyPaths(site: Site, kind: LegacyKind, oldKey: string): LegacyPath[];
-  /** Root-relative redirects for one layer legacy row, see `legacyRedirects`. */
-  legacyRedirects(site: Site, row: LegacyRedirectInput): RedirectPair[];
-  /** Root-relative redirects for a retired corpus id, see `corpusRedirects`. */
-  corpusRedirects(site: Site, kind: CorpusKind, fromId: string, toId: string): RedirectPair[];
   /**
    * `<link rel="alternate" hreflang>` set for a page: both editions plus `x-default`
    * (the site root). Empty for paths that are not pages.
@@ -171,9 +157,6 @@ export function createLinks(options: { readonly hosts: Hosts; readonly data?: Li
       const href = hrefFor(site, route, data);
       return href === null ? null : origin(site) + href;
     },
-    legacyPaths: (site, kind, oldKey) => legacyPaths(site, kind, oldKey, data),
-    legacyRedirects: (site, row) => legacyRedirects(site, row, data),
-    corpusRedirects: (site, kind, fromId, toId) => corpusRedirects(site, kind, fromId, toId, data),
     hreflangPair(path, site = "quiet") {
       const route = parse(path, site)?.route;
       if (!route) return [];

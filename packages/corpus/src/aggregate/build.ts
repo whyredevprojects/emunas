@@ -68,7 +68,7 @@ export function buildCorpusWithAggregates(opts: AggregatedBuildOptions = {}): Ag
       const a = aggregate({ shiurim: corpus.shiurim, index: corpus.index, sourceWorkIds: prepared.sourceWorkIds });
       corpus.report.warnings.push(...a.warnings);
       const t1 = performance.now();
-      layer = finishLayer(prepared, a.files);
+      layer = finishLayer(prepared);
       if (prepared.state !== null) suppress = applyCorpusSuppress(layer.files, suppressIds);
       layerMs += performance.now() - t1;
       const out = aggregateOutputs(a.files);
@@ -94,8 +94,8 @@ export function buildCorpusWithAggregates(opts: AggregatedBuildOptions = {}): Ag
   opts.log?.(
     done.info.enabled
       ? `corpus layer: ${c.visibleShiurim} visible shiurim, ${c.topics} topics, ${c.concepts} concepts, ${c.people} people, ` +
-          `${c.works} works, ${c.stories} stories, ${c.threads} threads, ${c.series} series, ${c.redirects.corpus} corpus + ` +
-          `${c.redirects.legacy} legacy redirects (${c.redirects.legacyUnmatched} unmatched); ${done.info.warnings.length} warnings ` +
+          `${c.works} works, ${c.stories} stories, ${c.threads} threads, ${c.series} series, ${c.retiredIds} retired ids resolved; ` +
+          `${done.info.warnings.length} warnings ` +
           `in ${Math.round(layerMs)} ms`
       : `corpus layer off: ${done.info.warnings.join("; ")}`,
   );
@@ -112,7 +112,7 @@ export function projectAndAggregate(
     p,
   );
   const aggregates = aggregate({ shiurim: p.shiurim, index: p.index, sourceWorkIds: prepared.sourceWorkIds });
-  const layer = finishLayer(prepared, aggregates.files);
+  const layer = finishLayer(prepared);
   if (prepared.state !== null) {
     applyCorpusSuppress(layer.files, loadCorpusSuppressIds({ policyDir: opts.policyDir ?? defaultPolicyDir(), suppressFile: opts.suppressFile }));
   }

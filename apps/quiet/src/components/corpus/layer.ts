@@ -23,8 +23,6 @@ import {
   type LayerInfo,
   type LayerOccasionTopic,
   type LayerPerson,
-  type LayerRedirectKind,
-  type LayerRedirectsFile,
   type LayerSeries,
   type LayerShiurRefs,
   type LayerStory,
@@ -33,7 +31,6 @@ import {
   type LayerTopicDetail,
   type LayerTopicNode,
   type LayerWork,
-  type LegacyRedirect,
 } from "@emunas/corpus/public";
 import { pageLookupFromLayer, type CorpusKind, type LayerLinkData } from "@emunas/links";
 import { findCorpusDir } from "../indexes/corpus.ts";
@@ -67,7 +64,6 @@ export interface QuietLayer {
   readonly stories: readonly LayerStory[];
   readonly threads: readonly LayerThread[];
   readonly synonyms: readonly LayerSynonyms[];
-  readonly redirects: LayerRedirectsFile;
   readonly occasionTopics: readonly LayerOccasionTopic[];
   topic(id: string): LayerTopicNode | undefined;
   topicDetail(id: string): LayerTopicDetail | undefined;
@@ -88,13 +84,6 @@ export interface QuietLayer {
   /** What the reader skipped or could not find (printed once per build). */
   readonly warnings: readonly string[];
 }
-
-const EMPTY_REDIRECTS: LayerRedirectsFile = {
-  corpus: { topics: {}, concepts: {}, people: {}, works: {}, stories: {}, threads: {} },
-  legacy: [],
-};
-
-const REDIRECT_KINDS: readonly LayerRedirectKind[] = ["topics", "concepts", "people", "works", "stories", "threads"];
 
 /** Ids that may name a file: no path separators, no dot segments. */
 const SAFE_ID = /^[A-Za-z0-9][A-Za-z0-9._~-]*$/;
@@ -133,37 +122,6 @@ function records<T>(file: unknown, key: string, name: string, warnings: string[]
   return kept as T[];
 }
 
-function readRedirects(file: unknown, warnings: string[]): LayerRedirectsFile {
-  if (file === null) {
-    warnings.push(`${LAYER_FILES.redirects} missing`);
-    return EMPTY_REDIRECTS;
-  }
-  if (!isRecord(file)) {
-    warnings.push(`${LAYER_FILES.redirects}: not an object`);
-    return EMPTY_REDIRECTS;
-  }
-  const corpusIn = isRecord(file["corpus"]) ? file["corpus"] : {};
-  const corpus = { ...EMPTY_REDIRECTS.corpus };
-  for (const kind of REDIRECT_KINDS) {
-    const map = corpusIn[kind];
-    const out: Record<string, string> = {};
-    if (isRecord(map)) for (const [from, to] of Object.entries(map)) if (typeof to === "string" && to !== "") out[from] = to;
-    corpus[kind] = out;
-  }
-  const legacyIn = Array.isArray(file["legacy"]) ? (file["legacy"] as unknown[]) : [];
-  const legacy = legacyIn.filter(
-    (r): r is LegacyRedirect =>
-      isRecord(r) &&
-      (r["kind"] === "person" || r["kind"] === "work" || r["kind"] === "concept") &&
-      typeof r["oldKey"] === "string" &&
-      r["oldKey"] !== "" &&
-      !r["oldKey"].includes("/") &&
-      (r["target"] === null || (isRecord(r["target"]) && typeof r["target"]["kind"] === "string" && typeof r["target"]["id"] === "string")),
-  );
-  if (legacy.length < legacyIn.length) warnings.push(`${LAYER_FILES.redirects}: ${legacyIn.length - legacy.length} legacy rows skipped`);
-  return { corpus, legacy };
-}
-
 function byId<T extends { id: string }>(list: readonly T[]): Map<string, T> {
   return new Map(list.map((r) => [r.id, r]));
 }
@@ -198,7 +156,6 @@ export function loadQuietLayer(dir: string | null): QuietLayer {
   const synonyms = synonymsIn.filter(
     (s): s is LayerSynonyms => isRecord(s) && typeof s["kind"] === "string" && typeof s["id"] === "string" && Array.isArray(s["terms"]),
   );
-  const redirects = enabled ? readRedirects(read(LAYER_FILES.redirects), w) : EMPTY_REDIRECTS;
   const occasionFile = read(LAYER_FILES.occasionTopics);
   const occasionsIn = isRecord(occasionFile) && Array.isArray(occasionFile["occasions"]) ? (occasionFile["occasions"] as unknown[]) : [];
   const occasionTopics = occasionsIn.filter(
@@ -244,7 +201,6 @@ export function loadQuietLayer(dir: string | null): QuietLayer {
     stories,
     threads,
     synonyms,
-    redirects,
     occasionTopics,
     topic: (id) => topicMap.get(id),
     topicDetail: (id) => detailMap.get(id),

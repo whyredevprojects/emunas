@@ -38,7 +38,6 @@ import {
 } from "../app/data/live-pages.ts";
 import {
   LIVE_DATA_SCHEMA_VERSION,
-  REDIRECT_ROUTE_KINDS,
   TOPIC_FIRST_MOMENTS,
   TOPIC_MOMENTS_PAGE_SIZE,
   type CorpusMember,
@@ -48,8 +47,6 @@ import {
   type FacetLabel,
   type GlossaryCard,
   type MixItem,
-  type RedirectRouteKind,
-  type RedirectsFile,
   type SeriesSynthesis,
   type ShiurCard,
   type ShiurCorpus,
@@ -512,6 +509,7 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
       retelling: lcopy(st.retelling),
       reviewed: st.reviewed === true,
       people: arr(st.people).flatMap((p) => storyPerson(p) ?? []),
+      attributionVaries: st.attributionVaries === true,
       tellings: tellings.map(member),
     };
     put<"story">(dataPaths.story(st.id), file);
@@ -537,85 +535,7 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
   const glossaryShards = shardByPrefix(cards, (xs) => brSize(xs) <= CORPUS_LIMITS.glossaryShardBr);
   for (const [shard, xs] of glossaryShards) put<"glossary">(dataPaths.glossary(shard), { schemaVersion: V, shard, concepts: xs });
 
-  // ------------------------------------------------------------------ redirects.json
-  const routes = Object.fromEntries(REDIRECT_ROUTE_KINDS.map((k) => [k, new Map<string, { kind: RedirectRouteKind; id: string } | null>()])) as Record<
-    RedirectRouteKind,
-    Map<string, { kind: RedirectRouteKind; id: string } | null>
-  >;
-  const conceptTarget = (id: string): { kind: RedirectRouteKind; id: string } | null => {
-    const c = view.allConcepts.get(id);
-    if (c?.mergedIntoTopic && view.topics.has(c.mergedIntoTopic)) return { kind: "t", id: c.mergedIntoTopic };
-    return view.concepts.has(id) ? { kind: "c", id } : null;
-  };
   const threadPage = (id: string) => liveThreadPage(threadById.get(id) ?? {});
-  const targetOf = (kind: "topic" | "concept" | "person" | "work" | "story" | "thread", id: string): { kind: RedirectRouteKind; id: string } | null => {
-    switch (kind) {
-      case "topic":
-        return view.topics.has(id) ? { kind: "t", id } : null;
-      case "concept":
-        return conceptTarget(id);
-      case "person":
-        return view.people.has(id) ? { kind: "p", id } : null;
-      case "work":
-        return view.works.has(id) ? { kind: "seforim", id } : null;
-      case "story":
-        return liveStoryPage(storyById.get(id) ?? {}) ? { kind: "maasios", id } : null;
-      case "thread":
-        return threadPage(id) ? { kind: "th", id } : null;
-    }
-  };
-  /** True when `/<route>/<id>` is itself a page (no redirect needed). */
-  const isPage = (route: RedirectRouteKind, id: string): boolean => {
-    switch (route) {
-      case "t":
-        return view.topics.has(id);
-      case "c":
-        return view.concepts.has(id);
-      case "p":
-        return view.people.has(id);
-      case "seforim":
-        return view.works.has(id);
-      case "maasios":
-        return liveStoryPage(storyById.get(id) ?? {});
-      case "th":
-        return threadPage(id);
-    }
-  };
-  const add = (route: RedirectRouteKind, from: string, to: { kind: RedirectRouteKind; id: string } | null) => {
-    if (isPage(route, from) || routes[route].has(from)) return;
-    if (to && to.kind === route && to.id === from) return;
-    routes[route].set(from, to);
-  };
-  const corpusRedirects = layer?.redirects?.corpus;
-  const CORPUS_ROUTES = [
-    ["topics", "topic", "t"],
-    ["concepts", "concept", "c"],
-    ["people", "person", "p"],
-    ["works", "work", "seforim"],
-    ["stories", "story", "maasios"],
-    ["threads", "thread", "th"],
-  ] as const;
-  for (const [file, kind, route] of CORPUS_ROUTES) {
-    const m = corpusRedirects?.[file];
-    if (!m || typeof m !== "object") continue;
-    for (const [from, to] of Object.entries(m).sort(([a], [b]) => cmp(a, b))) if (typeof to === "string") add(route, from, targetOf(kind, to));
-  }
-  // `/c/<concept>` of a concept merged into a topic: the topic page is the entry (concept-live C.2).
-  for (const c of [...view.allConcepts.values()].sort((a, b) => cmp(a.id, b.id))) {
-    const t = conceptTarget(c.id);
-    if (t?.kind === "t") add("c", c.id, t);
-  }
-  const LEGACY_ROUTE = { person: "p", work: "seforim", concept: "c" } as const;
-  for (const row of arr(layer?.redirects?.legacy)) {
-    const route = LEGACY_ROUTE[row.kind];
-    if (!route || typeof row.oldKey !== "string" || row.oldKey === "") continue;
-    add(route, row.oldKey, row.target ? targetOf(row.target.kind, row.target.id) : null);
-  }
-  const redirects: RedirectsFile = {
-    schemaVersion: V,
-    routes: Object.fromEntries(REDIRECT_ROUTE_KINDS.map((k) => [k, sortedRecord(routes[k])])) as RedirectsFile["routes"],
-  };
-  put<"redirects">(dataPaths.redirects(), redirects);
 
   // ------------------------------------------------------------------ explore/entities.json
   const explore: ExploreEntitiesFile = { schemaVersion: V, shiurim: {} };

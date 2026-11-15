@@ -1,17 +1,13 @@
 /**
  * Corpus entries (corpus-wave-plan §3.5, C1.4 acceptance): round trips for every new route in
- * both editions, cross-site equivalents with page flags, merged concepts, canonical/noindex,
- * and the old addresses.
+ * both editions, cross-site equivalents with page flags, merged concepts, canonical/noindex.
  */
 import { describe, expect, it } from "vitest";
 import {
   EDS,
-  corpusRedirects,
   formatLive,
   formatQuiet,
   hrefFor,
-  legacyPaths,
-  legacyRedirects,
   livePaths,
   pageLookupFromLayer,
   parseLive,
@@ -284,115 +280,9 @@ describe("pageLookupFromLayer", () => {
   });
 });
 
-describe("legacyPaths covers every old route shape", () => {
-  it("Quiet /people/, /sources/, /inyanim/{conceptKey}/ in both editions", () => {
-    expect(legacyPaths("quiet", "person", "dovid-hamelech").map((p) => p.path)).toEqual([
-      "/yi/people/dovid-hamelech/",
-      "/en/people/dovid-hamelech/",
-    ]);
-    expect(legacyPaths("quiet", "work", "likutei-amarim").map((p) => p.path)).toEqual([
-      "/yi/sources/likutei-amarim/",
-      "/en/sources/likutei-amarim/",
-    ]);
-    expect(legacyPaths("quiet", "concept", "אור-הגנוז").map((p) => p.path)).toEqual([
-      `/yi/inyanim/${encodeURIComponent("אור-הגנוז")}/`,
-      `/en/inyanim/${encodeURIComponent("אור-הגנוז")}/`,
-    ]);
-  });
-
-  it("Live /p/, /c/, /seforim/ (+ chapter) in both UI languages", () => {
-    expect(legacyPaths("live", "person", "dovid-hamelech")).toEqual([
-      { site: "live", ed: "yi", path: "/yi/p/dovid-hamelech" },
-      { site: "live", ed: "en", path: "/en/p/dovid-hamelech" },
-    ]);
-    expect(legacyPaths("live", "concept", "emunah").map((p) => p.path)).toEqual(["/yi/c/emunah", "/en/c/emunah"]);
-    expect(legacyPaths("live", "work", "tanya")).toEqual([
-      { site: "live", ed: "yi", path: "/yi/seforim/tanya", chapters: true },
-      { site: "live", ed: "en", path: "/en/seforim/tanya", chapters: true },
-    ]);
-  });
-
-  it("an old /inyanim/{key}/ whose key is a topic id IS that topic page: no redirect", () => {
-    expect(legacyPaths("quiet", "concept", "hester-panim", CORPUS_DATA)).toEqual([]);
-    expect(legacyPaths("live", "concept", "hester-panim", CORPUS_DATA)).toHaveLength(2);
+describe("topic addresses", () => {
+  it("/{ed}/inyanim/{topicId}/ is the topic page", () => {
     expect(parseQuiet("/en/inyanim/hester-panim/")).toEqual({ kind: "entry", ed: "en", entry: "topic", id: "hester-panim" });
   });
-
-  it("every old path still parses on its site (old addresses stay addresses)", () => {
-    for (const kind of ["person", "work", "concept"] as const) {
-      for (const p of legacyPaths("quiet", kind, "k-1")) expect(parseQuiet(p.path), p.path).not.toBeNull();
-      for (const p of legacyPaths("live", kind, "k-1")) {
-        expect(parseLive(p.path), p.path).not.toBeNull();
-        if (p.chapters) expect(parseLive(`${p.path}/12`), p.path).toEqual(parseLive(p.path));
-      }
-    }
-  });
-
-  it("rejects bad keys", () => {
-    expect(() => legacyPaths("quiet", "person", "")).toThrow(TypeError);
-    expect(() => legacyPaths("live", "work", "a/b")).toThrow(TypeError);
-  });
 });
 
-describe("legacyRedirects", () => {
-  it("send an old key to the merged entity", () => {
-    expect(
-      legacyRedirects("quiet", { kind: "person", oldKey: "sanzer-rav", target: { kind: "person", id: "divrei-chaim" } }, CORPUS_DATA),
-    ).toEqual([
-      { site: "quiet", ed: "yi", from: "/yi/people/sanzer-rav/", to: "/yi/people/divrei-chaim/" },
-      { site: "quiet", ed: "en", from: "/en/people/sanzer-rav/", to: "/en/people/divrei-chaim/" },
-    ]);
-    expect(
-      legacyRedirects("live", { kind: "work", oldKey: "likutei-amarim", target: { kind: "work", id: "ramban" } }, CORPUS_DATA)[1],
-    ).toEqual({ site: "live", ed: "en", from: "/en/seforim/likutei-amarim", to: "/en/seforim/ramban", chapters: true });
-  });
-
-  it("an old concept merged into a topic goes to the topic; unmatched keys go to the index", () => {
-    const row = { kind: "concept", oldKey: "הסתר-פנים", target: { kind: "concept", id: "hester-panim-term" } } as const;
-    expect(legacyRedirects("quiet", row, CORPUS_DATA)[0]?.to).toBe("/yi/inyanim/hester-panim/");
-    expect(legacyRedirects("live", row, CORPUS_DATA)[0]?.to).toBe("/yi/t/hester-panim");
-    const none = (kind: "person" | "work" | "concept") => ({ kind, oldKey: "lost", target: null });
-    expect(legacyRedirects("quiet", none("person"), CORPUS_DATA).map((p) => p.to)).toEqual(["/yi/people/", "/en/people/"]);
-    expect(legacyRedirects("quiet", none("work"), CORPUS_DATA)[1]?.to).toBe("/en/sources/");
-    expect(legacyRedirects("quiet", none("concept"), CORPUS_DATA)[1]?.to).toBe("/en/erachim/");
-    expect(legacyRedirects("live", none("work"), CORPUS_DATA)[1]?.to).toBe("/en/seforim");
-    expect(legacyRedirects("live", none("person"), CORPUS_DATA)[1]?.to).toBe("/en/");
-  });
-
-  it("a target without a Live page goes to the Live listing; Quiet uses the anchor", () => {
-    const row = { kind: "person", oldKey: "adolf", target: { kind: "person", id: "hitler" } } as const;
-    expect(legacyRedirects("live", row, CORPUS_DATA)[0]?.to).toBe("/yi/");
-    expect(legacyRedirects("quiet", row, CORPUS_DATA)[0]?.to).toBe("/yi/people/#hitler");
-  });
-
-  it("drops pairs that do not move, and Quiet keys that never had a page", () => {
-    const same = { kind: "person", oldKey: "divrei-chaim", target: { kind: "person", id: "divrei-chaim" } } as const;
-    expect(legacyRedirects("quiet", same, CORPUS_DATA)).toEqual([]);
-    expect(legacyRedirects("live", same, CORPUS_DATA)).toEqual([]);
-    const anchorOnly = { ...same, oldKey: "chaim", hadPage: { quiet: false, live: false } };
-    expect(legacyRedirects("quiet", anchorOnly, CORPUS_DATA)).toEqual([]);
-    expect(legacyRedirects("live", anchorOnly, CORPUS_DATA)).toHaveLength(2);
-  });
-});
-
-describe("corpusRedirects (retired corpus ids)", () => {
-  it("map the retired address to the live one on each site", () => {
-    expect(corpusRedirects("quiet", "story", "the-sanzer-rav-old", "the-sugar-sled", CORPUS_DATA)).toEqual([
-      { site: "quiet", ed: "yi", from: "/yi/stories/the-sanzer-rav-old/", to: "/yi/stories/the-sugar-sled/" },
-      { site: "quiet", ed: "en", from: "/en/stories/the-sanzer-rav-old/", to: "/en/stories/the-sugar-sled/" },
-    ]);
-    expect(corpusRedirects("live", "thread", "a", "lechem-matzah-45", CORPUS_DATA)[1]).toEqual({
-      site: "live",
-      ed: "en",
-      from: "/en/th/a",
-      to: "/en/th/lechem-matzah-45",
-    });
-    expect(corpusRedirects("live", "concept", "old-term", "hester-panim-term", CORPUS_DATA)[0]?.to).toBe("/yi/t/hester-panim");
-  });
-
-  it("give nothing for Quiet threads, and the listing when the target has no Live page", () => {
-    expect(corpusRedirects("quiet", "thread", "a", "b", CORPUS_DATA)).toEqual([]);
-    expect(corpusRedirects("live", "story", "x", "told-once", CORPUS_DATA)[0]?.to).toBe("/yi/maasios");
-    expect(links.corpusRedirects("live", "topic", "x", "emunah")[0]).toEqual({ site: "live", ed: "yi", from: "/yi/t/x", to: "/yi/t/emunah" });
-  });
-});

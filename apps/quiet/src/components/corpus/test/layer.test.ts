@@ -114,11 +114,11 @@ describe("quiet layer reader on the mini corpus", () => {
     expect(layer.series("no-such-series")).toBeNull();
   });
 
-  it("reads redirects (corpus chains and legacy rows) and the occasion map", () => {
-    expect(layer.redirects.corpus.stories["the-sanzer-rav-and-the-business-competitor"]).toBe("the-divrei-chaim-and-the-man-who-shamed");
-    expect(layer.redirects.legacy.length).toBeGreaterThan(0);
-    for (const r of layer.redirects.legacy) expect(["person", "work", "concept"]).toContain(r.kind);
+  it("reads the occasion map, and nothing about retired ids", () => {
+    expect(layer.occasionTopics.length).toBeGreaterThan(0);
     for (const o of layer.occasionTopics) expect(layer.topic(o.topicId)).toBeDefined();
+    expect(layer).not.toHaveProperty("redirects");
+    expect(layer.story("the-sanzer-rav-and-the-business-competitor")).toBeUndefined();
   });
 });
 
@@ -133,7 +133,6 @@ describe("quiet layer reader without a layer, or with odd records", () => {
     expect(empty.visibleShiurim).toBe(0);
     expect(empty.hasPage("topic", "emunah")).toBe(false);
     expect(empty.shiurRefs("x")).toBeNull();
-    expect(empty.redirects.legacy).toEqual([]);
     expect(empty.warnings).toHaveLength(1);
   });
 
@@ -155,7 +154,6 @@ describe("quiet layer reader without a layer, or with odd records", () => {
       JSON.stringify({ tree: [{ id: "emunah", pages: { quiet: true }, extra: "x" }, { label: "no id" }, null], detail: [] }),
     );
     writeFileSync(join(dir, "people.json"), JSON.stringify({ persons: [] }));
-    writeFileSync(join(dir, "redirects.json"), JSON.stringify({ corpus: { people: { a: "b", c: 3 } }, legacy: [{ kind: "person", oldKey: "x/y", target: null }] }));
     const odd = loadQuietLayer(dir);
     expect(odd.enabled).toBe(true);
     expect(odd.visibleShiurim).toBe(3);
@@ -163,8 +161,6 @@ describe("quiet layer reader without a layer, or with odd records", () => {
     expect(odd.hasPage("topic", "emunah")).toBe(true);
     expect(odd.people).toEqual([]);
     expect(odd.concepts).toEqual([]);
-    expect(odd.redirects.corpus.people).toEqual({ a: "b" });
-    expect(odd.redirects.legacy).toEqual([]);
     expect(odd.warnings.join("\n")).toMatch(/concepts\.json missing/);
     expect(odd.warnings.join("\n")).toMatch(/people\.json: no "people" list/);
     expect(odd.warnings.join("\n")).toMatch(/2 records without an id/);

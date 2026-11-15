@@ -174,7 +174,7 @@ export function entityKindOfFile(path: string): EntityKind | null {
  * The site-derived legacy aggregates at the top of `.corpus/` (people, concepts, works, stories,
  * entities). Their `names` are extraction spellings the sites have shipped since wave 2, not corpus
  * entity aliases, so their positions name no corpus entity and the raw ban does not apply to them.
- * C3.1 retires these files; drop this exemption with them.
+ * They go when the C2 page wave replaces the pages that still read them; drop this exemption with them.
  */
 export const LEGACY_AGGREGATE_FILES = ["people.json", "concepts.json", "works.json", "stories.json", "entities.json"] as const;
 

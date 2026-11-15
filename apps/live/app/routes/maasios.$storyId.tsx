@@ -3,10 +3,10 @@
 import { corpusLabel, formatHebrewYear, isUiLang, languageName, type UiLang } from "@emunas/i18n";
 import { livePaths } from "@emunas/links";
 import { useEffect, useState, type JSX } from "react";
-import { Link, useNavigate, useParams } from "react-router";
+import { Link, useParams } from "react-router";
 import { CorpusLabel } from "../components/CorpusLabel.tsx";
 import { Text } from "../components/Text.tsx";
-import { DataError, findRedirect, loadStory, type StoryFile } from "../data/index.ts";
+import { loadStory, type StoryFile } from "../data/index.ts";
 import { tFor } from "../i18n/index.ts";
 import { clip } from "../seo/head.ts";
 import { seoPageFor, TITLE_SEPARATOR, type SeoMetaArgs } from "../seo/meta.ts";
@@ -25,26 +25,17 @@ type State = { status: "loading" } | { status: "missing" } | { status: "ok"; fil
 export default function Story(): JSX.Element {
   const { ui: rawUi, storyId = "" } = useParams();
   const ui: UiLang = isUiLang(rawUi) ? rawUi : "en";
-  const navigate = useNavigate();
   const [state, setState] = useState<State>({ status: "loading" });
   useEffect(() => {
     let live = true;
     setState({ status: "loading" });
     loadStory(storyId)
       .then((file) => live && setState({ status: "ok", file }))
-      .catch(async (e: unknown) => {
-        if (!(e instanceof DataError && e.status === 404)) return live && setState({ status: "missing" });
-        // A merged-away story goes to the story it was merged into, in one hop (plan §5).
-        const r = await findRedirect("maasios", storyId).catch(() => null);
-        if (!live) return;
-        if (r?.kind === "page" && r.route === "maasios") navigate(paths.story(ui, r.id), { replace: true });
-        else if (r?.kind === "index") navigate(paths.stories(ui), { replace: true });
-        else setState({ status: "missing" });
-      });
+      .catch(() => live && setState({ status: "missing" }));
     return () => {
       live = false;
     };
-  }, [storyId, ui, navigate]);
+  }, [storyId]);
 
   const f = state.status === "ok" ? state.file : null;
   return (
@@ -70,6 +61,7 @@ export default function Story(): JSX.Element {
               ))}
             </p>
           ) : null}
+          {f.attributionVaries ? <p data-testid="story-attribution-varies">{corpusLabel("story.attributionVaries", ui)}</p> : null}
           <Text as="p" value={f.retelling} lang={ui} />
           <p>{corpusLabel("count.retoldFrom", ui, { count: f.tellings.length })}</p>
           <ol data-testid="story-tellings">

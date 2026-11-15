@@ -98,12 +98,10 @@ describe("aggregates on the mini corpus", () => {
     }
   });
 
-  it("groups Tanya by perek and links the yi/en siblings", () => {
+  it("groups Tanya by perek and never pairs a series with its other-language set", () => {
     const tanya = files.series.series.find((s) => s.id === "tanya-yi")!;
-    expect(tanya.sibling).toBe("tanya-en");
     expect(tanya.groups!.map((g) => g.perek)).toEqual(["א", "ב", 'י"ב', 'י"ח']);
-    expect(files.series.series.find((s) => s.id === "tanya-en")!.sibling).toBe("tanya-yi");
-    expect(files.series.series.find((s) => s.id === "eretz-yisroel-yi")!.sibling).toBeNull();
+    for (const s of files.series.series) expect(s).not.toHaveProperty("sibling");
     expect(files.series.series.find((s) => s.id === "emunah-yi")!.groups).toBeNull();
     const nav = files.neighbours["yi-tanya-1-10"]!.series!;
     expect(nav).toEqual({ of: "tanya-yi", pos: 2, count: 4, prev: "yi-tanya-1-01", next: "yi-tanya-1-29" });
