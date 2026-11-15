@@ -50,3 +50,40 @@ added by `npm run transcode:wma --workspace=@emunas/audio` after a verified uplo
 (`docs/sites/ops-runbook.md` §10). The corpus build links the `.mp3` for listed keys only; every
 other non-mp3 recording stays unplayable. An `.mp3` key, a key without an extension or a key that
 may not become a URL is fatal.
+
+## corpus-policy.json
+
+The owner's decisions for the corpus-wide layer (`docs/sites/corpus-wave-plan.md` §2, D1–D12),
+read by `@emunas/corpus` (`packages/corpus/src/layer/policy.ts`). It ships with the conservative
+defaults, which are also the defaults in code: a missing file means exactly these values. Every key
+is optional (a missing key takes its default), but an unknown key, a wrong type or an invalid
+pattern is fatal, since this is a reviewed file. Flipping a decision is a one-line edit plus a
+rebuild.
+
+| Field | Default | Meaning |
+|---|---|---|
+| `policyVersion` | `1` | Schema version of this file. Required. |
+| `search.asrVariants` | `false` | D1. ASR variants are never read or indexed. `true` fails the build (it needs the evaluated server-side boost, Live I.13). |
+| `people.other.pages` | `false` | D2. People of type `other` get no page on either site. |
+| `people.other.quietLineMinShiurim` | `3` | D2. Quiet lists a type-`other` person as an index line from this many visible shiurim. |
+| `people.other.liveListed` | `false` | D2. Live gives type-`other` people no index entry and no suggestion. |
+| `people.excludeFamily` | `true` | D5. The Rav's family is not listed, has no page and no suggestion. |
+| `people.familyPattern` | `\bthe Rav'?s\b` | D5. Matched case-insensitively against the person's own `nameEn` and `aliases` (or future `family`/`private` flags). A rule, never a list. |
+| `people.excludeIds` | `[]` | D5. Person ids the owner excludes by hand. Ships empty. |
+| `threads.pageMinShiurim` | `3` | D3. A teaching cluster needs this many distinct visible shiurim for a page. |
+| `threads.twoMember` | `"inline-line"` | D3. Two-member clusters only produce an inline line at the insight (`"none"`: nothing). |
+| `threads.timelineMinDated` | `3` | D3. Dated members needed for a thread's timeline. |
+| `legacyEntityPages` | `"redirect"` | D4. Old site-derived entity pages are retired and redirected. |
+| `visibility.followCategoryVisibility` | `true` | D6. Story tellings and cluster members from categories with `generalBrowse: false` in `publish-policy.json` do not count. |
+| `featured.maxOtherSpeakerShare` | `0.5` | D7. Shiurim at or above this share of another speaker are not featured (hubs, Today). |
+| `featured.excludeTopicIds` | `[]` | D7. Topics the owner keeps out of featured slots. Ships empty. |
+| `live.threadPagesIndexable` | `false` | D8. Live thread pages are `noindex` with no canonical. |
+| `unknownVersion` | `"warn"` | D9. An unknown corpus `index.json` version warns and is validated by shape (`"fail"`: the build fails). |
+| `thresholds.quiet.*` | see file | D10. Quiet: topic gateway layout above 150 shiurim; concept page from 5, "throughout" above one shiur in 7 (`conceptPassimOneIn`); person page from 3, full list on `all/` from 100; work page from 2; story page from 2 tellings. |
+| `thresholds.live.*` | see file | D10. Live: person page from 3; concept page from 3, facet dropped above one shiur in 4 (`conceptFacetDropOneIn`); work page from 3; story page from 2 tellings. Thread pages use `threads.pageMinShiurim`. |
+| `occasionTopic.minShare` | `0.5` | D11. Derived occasion → topic link: the level-2/3 topic must hold at least this share of the occasion's shiurim. |
+| `occasionTopic.minSalience` | `0.6` | D11. Salience at which a shiur counts toward that share. |
+| `quiet.redirects.maxRules` | `1900` | D12. Quiet `_redirects` rules before static stub pages take over (at most 2000). |
+
+All counts above are recomputed from the visible set (shiurim that are `full` in `.corpus` and in
+the corpus `index.json`), never read from `shiurCount` or `shiurIds.length`.

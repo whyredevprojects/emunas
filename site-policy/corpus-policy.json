@@ -1,0 +1,60 @@
+{
+  "policyVersion": 1,
+  "search": {
+    "asrVariants": false
+  },
+  "people": {
+    "other": {
+      "pages": false,
+      "quietLineMinShiurim": 3,
+      "liveListed": false
+    },
+    "excludeFamily": true,
+    "familyPattern": "\\bthe Rav'?s\\b",
+    "excludeIds": []
+  },
+  "threads": {
+    "pageMinShiurim": 3,
+    "twoMember": "inline-line",
+    "timelineMinDated": 3
+  },
+  "legacyEntityPages": "redirect",
+  "visibility": {
+    "followCategoryVisibility": true
+  },
+  "featured": {
+    "maxOtherSpeakerShare": 0.5,
+    "excludeTopicIds": []
+  },
+  "live": {
+    "threadPagesIndexable": false
+  },
+  "unknownVersion": "warn",
+  "thresholds": {
+    "quiet": {
+      "topicGatewayAbove": 150,
+      "conceptPageMin": 5,
+      "conceptPassimOneIn": 7,
+      "personPageMin": 3,
+      "personAllListMin": 100,
+      "workPageMin": 2,
+      "storyPageMinTellings": 2
+    },
+    "live": {
+      "personPageMin": 3,
+      "conceptPageMin": 3,
+      "conceptFacetDropOneIn": 4,
+      "workPageMin": 3,
+      "storyPageMinTellings": 2
+    }
+  },
+  "occasionTopic": {
+    "minShare": 0.5,
+    "minSalience": 0.6
+  },
+  "quiet": {
+    "redirects": {
+      "maxRules": 1900
+    }
+  }
+}
