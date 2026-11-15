@@ -16,6 +16,7 @@ with `createT`.
 | `langFor(text, shiurLang)` | `{ lang, dir, script }` for a catalog/data string: Latin → `en`; Hebrew script → `yi` in a Yiddish shiur, `he` in an English one; mixed → by first strong character. Render the result isolated (`<bdi>` or its own element). |
 | `isolate(text, dir?)`, `stripBidiControls` | FSI/LRI/RLI…PDI for plain-text contexts (`<title>`, `aria-label`, Media Session). |
 | Vocabulary | `categoryLabel`, `sectionKindLabel`, `languageName`, `audioLanguageLabel`, `notice("aiNotes" \| "aiNotesShort" \| "notesPending" \| "uncatalogued" \| "listedInGuide")`, `coverageNotice(518, 997, lang)`, `formatSourceRef` / `sourceRefParts` (resolved: plain; inferred: "apparently …" / "לכאורה …"; unresolved with a work: "Zohar (place not identified)"; nothing displayable → `null`). Unknown values show as themselves. |
+| Corpus vocabulary (`vocab/corpus.ts`) | `corpusLabel(key, lang, params)` over `CORPUS_LABELS` (en/yi, one key union): the corpus AI labels (Quiet C6 index/entry/story, Live E.3 and their reviewed variants via `corpusEntryLabel(site, reviewed, lang)`), index and kind names, `personGroupLabel` in sefer order (`PERSON_GROUP_ORDER`), `topicGradeLabel`, "told in N other shiurim", "also taught in", "throughout", "notes not prepared yet", report wording. Status `CORPUS_LABEL_STATUS = "proposed"`. |
 
 The `Category`, `SectionKind` and `Resolution` unions mirror `src/types.ts`; `test/vocabulary.test.ts`
 imports the pipeline types (read-only) and fails if they drift.

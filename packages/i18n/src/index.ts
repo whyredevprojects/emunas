@@ -56,3 +56,18 @@ export {
   type SourceRefParts,
 } from "./vocabulary.ts";
 export { AI_LABEL, AI_LABEL_STATUS } from "./vocab/ai-label.ts";
+export {
+  CORPUS_LABELS,
+  CORPUS_LABEL_STATUS,
+  PERSON_GROUP_ORDER,
+  TOPIC_GRADES,
+  corpusEntryLabel,
+  corpusLabel,
+  corpusLabelsEn,
+  corpusLabelsYi,
+  personGroupLabel,
+  topicGradeLabel,
+  type CorpusLabelKey,
+  type PersonGroup,
+  type TopicGrade,
+} from "./vocab/corpus.ts";
