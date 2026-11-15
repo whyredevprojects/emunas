@@ -22,7 +22,8 @@
     "batch:mark": "tsx scripts/batch.ts mark",
     "batch:pick-audit": "tsx scripts/batch.ts pick-audit",
     "batch:usage": "tsx scripts/batch.ts usage",
-    "batch:reset-changed": "tsx scripts/reset-changed.ts"
+    "batch:reset-changed": "tsx scripts/reset-changed.ts",
+    "corpus:aggregate": "tsx scripts/corpus/aggregate.ts"
   },
   "devDependencies": {
     "@types/node": "^26.6.6",
