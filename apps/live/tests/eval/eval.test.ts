@@ -4,7 +4,7 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { afterAll, describe, expect, it } from "vitest";
 import { buildCorpusWithAggregates as buildCorpus } from "@emunas/corpus/build/aggregate";
-import { buildSearchOutputs, readCorpusShiurim } from "@emunas/search-core/build";
+import { buildSearchOutputs, readCorpusShiurim, readSearchLayerInput } from "@emunas/search-core/build";
 import type { MomentRow } from "@emunas/search-core";
 import { HashingEmbedder, MemoryBlobStore } from "../../../../workers/api/sync/src/local.ts";
 import { chooseModel, evaluateModel, regressions, resolveExpected, type EvalQuery, type ModelResult, type QueriesFile } from "./eval.ts";
@@ -23,7 +23,9 @@ function corpusRows(dataDir: string, policyDir: string): MomentRow[] {
   const out = mkdtempSync(join(tmpdir(), "eval-test-"));
   dirs.push(out);
   buildCorpus({ dataDir, outDir: out, policyDir, dataSha: null });
-  return buildSearchOutputs(readCorpusShiurim(out)).moments;
+  const shiurim = readCorpusShiurim(out);
+  // Moment entities are corpus ids from the corpus layer (search-core C1.5).
+  return buildSearchOutputs(shiurim, readSearchLayerInput(out, shiurim)).moments;
 }
 
 describe("metrics", () => {

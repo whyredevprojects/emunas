@@ -22,7 +22,7 @@
  *
  * Exit codes: 0 ok, 1 error or guard finding, 2 usage.
  */
-import { existsSync, readFileSync, rmSync, statSync } from "node:fs";
+import { existsSync, readFileSync, rmSync, statSync, utimesSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { parseArgs } from "node:util";
@@ -117,7 +117,12 @@ export function ensureDocs(corpusDir: string, dataDir: string | null): { file: s
   const indexFile = join(corpusDir, "index.json");
   if (!existsSync(indexFile)) throw new Error(`${indexFile} not found: run corpus:build first`);
   const stale = !existsSync(file) || statSync(file).mtimeMs < statSync(indexFile).mtimeMs;
-  if (stale) writeSearchOutputs({ corpusDir, dataDir });
+  if (stale) {
+    writeSearchOutputs({ corpusDir, dataDir });
+    // search-core leaves a file alone when its content is unchanged: mark it current anyway.
+    const now = new Date();
+    utimesSync(file, now, now);
+  }
   return { file, rebuilt: stale };
 }
 
