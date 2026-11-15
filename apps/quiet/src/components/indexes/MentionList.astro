@@ -1,0 +1,24 @@
+---
+/**
+ * The mentions of one reference on a work page, run on: each a citation to the shiur at its time,
+ * preceded by "apparently" when the notes only inferred the place (concept-quiet §5.7; grading in
+ * words, never colour). Lines under "other references" also show the reference as the notes give it.
+ */
+import type { Ed } from "../../lib/edition.ts";
+import CiteLink from "./CiteLink.astro";
+import type { MentionLine, Run } from "./model.ts";
+
+interface Props {
+  ed: Ed;
+  mentions: readonly (MentionLine & { text?: Run })[];
+}
+
+const { ed, mentions } = Astro.props;
+---
+{mentions.length > 0 && (
+  <ul class="cites" role="list">
+    {mentions.map((m) => (
+      <li>{m.text && <><bdi class="ref-text" lang={m.text.lang} dir={m.text.dir}>{m.text.text}</bdi>{": "}</>}{m.qualifier && <><span class="qualifier">{m.qualifier}</span>{" "}</>}<CiteLink ed={ed} cite={m.cite} /></li>
+    ))}
+  </ul>
+)}

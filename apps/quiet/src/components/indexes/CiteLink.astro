@@ -1,0 +1,26 @@
+---
+/**
+ * One pointer into a shiur on an index page: the catalog's own words for it (parsha or zman as
+ * printed, else the section), the catalog number, the Hebrew year, the shiur's language when it
+ * differs from the edition, and the time. One link, to the shiur page at that moment
+ * (`#t=` global seconds or `#s{idx}`); the citation is catalog text, so each part is an isolate.
+ */
+import { formatHebrewYears, languageName } from "@emunas/i18n";
+import { clock } from "../../lib/bidi.ts";
+import type { Ed } from "../../lib/edition.ts";
+import { useT } from "../../i18n/index.ts";
+import type { Cite } from "./model.ts";
+
+interface Props {
+  ed: Ed;
+  cite: Cite;
+}
+
+const { ed, cite } = Astro.props;
+const t = useT(ed);
+const years = cite.years.length > 0 ? formatHebrewYears(cite.years, ed, { civil: false }) : null;
+const number = cite.n !== null ? t("citation.number", { n: "⁨" + cite.n + "⁩" }) : null;
+const lang = cite.lang !== ed ? languageName(cite.lang, ed) : null;
+const time = cite.t !== null ? clock(cite.t) : null;
+---
+<a class="cite" href={cite.href}><bdi lang={cite.occasion.lang} dir={cite.occasion.dir}>{cite.occasion.text}</bdi>{number && <> {number}</>}{years && <> <bdi lang="he" dir="rtl">{years}</bdi></>}{lang && <> <span class="cite-lang">({lang})</span></>}{time && <> <span class="time"><bdi dir="ltr">{time}</bdi></span></>}</a>

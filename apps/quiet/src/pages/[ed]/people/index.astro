@@ -1,0 +1,50 @@
+---
+/**
+ * People index, שמות (concept-quiet §5.9; tech-quiet §2 `/{ed}/people/`): every name in the notes,
+ * alphabetical in the edition's script, with a jump list by letter. A person in ≥2 shiurim gets a
+ * count and a link to their page (no 300-line lists here); anyone else's line links straight to
+ * the shiur (at the story, when the person is in one). Every line has an anchor (`#key`), which is
+ * where @emunas/links sends a person below the page threshold.
+ */
+import type { GetStaticPaths } from "astro";
+import Base from "../../../layouts/Base.astro";
+import CiteList from "../../../components/indexes/CiteList.astro";
+import IndexHead from "../../../components/indexes/IndexHead.astro";
+import JumpList from "../../../components/indexes/JumpList.astro";
+import { indexesData } from "../../../components/indexes/corpus.ts";
+import { indexCrumbs, indexTitle } from "../../../components/indexes/crumbs.ts";
+import { peopleIndex, run } from "../../../components/indexes/model.ts";
+import { useIndexesT } from "../../../components/indexes/strings.ts";
+import { EDS, type Ed } from "../../../lib/edition.ts";
+
+export const getStaticPaths = (() => (indexesData() ? EDS.map((ed) => ({ params: { ed } })) : [])) satisfies GetStaticPaths;
+
+const ed = Astro.params.ed as Ed;
+const data = indexesData()!;
+const t = useIndexesT(ed);
+const title = indexTitle(ed, "people");
+const letters = peopleIndex(data, ed);
+---
+<Base ed={ed} title={title} crumbs={indexCrumbs(ed, "people")}>
+  <IndexHead ed={ed} title={run(title, ed)} intro={t("people.intro")} counts={data.build.counts} />
+  <JumpList ed={ed} items={letters.map((b) => ({ id: b.id, label: b.letter }))} />
+  {letters.map((b) => (
+    <section class="index-block" id={b.id} aria-labelledby={`${b.id}-h`}>
+      <h2 id={`${b.id}-h`}><bdi>{b.letter}</bdi></h2>
+      <ul class="entries" role="list">
+        {b.items.map((p) => (
+          <li id={p.key}>
+            {p.href ? (
+              <a class="entry-name" href={p.href}><bdi lang={p.name.lang} dir={p.name.dir}>{p.name.text}</bdi></a>
+            ) : (
+              <span class="entry-name"><bdi lang={p.name.lang} dir={p.name.dir}>{p.name.text}</bdi></span>
+            )}
+            {p.alt && <> <span class="alt-name"><bdi lang={p.alt.lang} dir={p.alt.dir}>{p.alt.text}</bdi></span></>}
+            <span class="entry-count">{t("count.shiurim", { count: p.shiurCount })}</span>
+            <CiteList ed={ed} cites={p.cites} />
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</Base>
