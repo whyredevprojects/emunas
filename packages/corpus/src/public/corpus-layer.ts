@@ -337,7 +337,11 @@ export interface LayerWorksFile {
 
 // ---------------------------------------------------------------- stories.json
 
-/** A person on a story: a person id, or a name printed as plain text. */
+/**
+ * A person on a story: a person id, or the display name of a corpus entity the sites do not link (a
+ * person who is not listed, or a "person" that is now a concept) as plain text. A name that is no
+ * corpus entity's is never here (C3.1): raw extraction spellings are not published.
+ */
 export type LayerStoryPerson = { id: string } | { name: string; linked: false };
 
 export interface LayerStory {

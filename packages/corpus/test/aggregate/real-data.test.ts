@@ -96,7 +96,7 @@ describe("aggregates on real data", () => {
     }
     console.log(
       `aggregates: ${works.length} works (${report.unmapped.work.length} unmapped strings), ` +
-        `${report.unmapped.person.length} unmapped people, ${f.concepts.concepts.length} listed concepts, ${f.stories.stories.length} stories`,
+        `${report.unmapped.person.length} unmapped people`,
     );
   });
 });

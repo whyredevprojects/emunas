@@ -1,7 +1,6 @@
 import fc from "fast-check";
 import { describe, expect, expectTypeOf, it } from "vitest";
 import {
-  ENTITY_THRESHOLDS,
   momentId,
   offsetsFor,
   parseMomentId,
@@ -135,12 +134,5 @@ describe("moment ids", () => {
         },
       ),
     );
-  });
-});
-
-describe("constants", () => {
-  it("entity thresholds", () => {
-    expect(ENTITY_THRESHOLDS.quiet).toEqual({ work: 2, person: 2, concept: 3 });
-    expect(ENTITY_THRESHOLDS.live.prerender).toBe(3);
   });
 });

@@ -20,7 +20,7 @@ expected to correct.
 | `lookupParsha(raw)`, `lookupZman(raw)` | Catalog `Shiur.parsha` / `Shiur.zman` → `{ key, status, sub, audience, parsha, occasion }`. `status` is `mapped`, `other` (a deliberate one-off) or `unmapped`. `סעודת X` → X with `sub: "seudah"`; `For Children` / `קינדער` → `audience`. |
 | `lookupWork(raw)` | `SourceMention.work` → `{ key, status, work }` (group, order, he/yi/en, Sefaria titles, ordering scheme, `genre`). |
 | `lookupPerson(raw)` | Person name → `{ key, status, person }`. |
-| `lookupConcept(raw)` | `concepts[].he` → `{ key, he, merged, stop }`. |
+| `lookupConcept(raw)` | `concepts[].he` → `{ key, he, merged }`. |
 | `parseSefariaRef(ref)` | `{ ok: true, corpus, book, section, commentator, workKey, baseWorkKey, he, en, start, end, sortKey }` or `{ ok: false, reason }`. Never throws. `compareRefs`, `compareSortKeys`, `refLabel`, `sefariaUrl` alongside. |
 | `parshaKey`, `zmanKey`, `workKey`, `personKey`, `conceptKey` | The key alone. |
 | `createKeyer()` | A Keyer for `@emunas/corpus` (W2.1 wires it) that also records unmapped values with counts, for `build-report.json`. |

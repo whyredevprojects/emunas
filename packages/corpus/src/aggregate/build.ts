@@ -1,6 +1,6 @@
 /**
  * corpus:build with the W2.1 wiring: @emunas/normalize as the Keyer and the aggregate files
- * (sections, neighbours, series, occasions, years, works, people, concepts, stories, entities)
+ * (sections, neighbours, series, occasions, years, works)
  * written next to the W1.2 outputs, plus the corpus layer (`.corpus/layer/`, C1.2). Node-only
  * (`@emunas/corpus/build/aggregate`).
  *

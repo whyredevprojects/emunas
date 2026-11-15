@@ -132,6 +132,25 @@ describe("corpus layer on the mini corpus", () => {
     expect(st.people).toContainEqual({ name: concept.label.en, linked: false });
   });
 
+  it("publishes no raw story names: only linked people and display names of corpus entities (C3.1)", () => {
+    const raw = JSON.parse(readFileSync(join(MINI_DATA, "derived/corpus/stories.json"), "utf8")) as { id: string; people: string[] }[];
+    const rawPeople = JSON.parse(readFileSync(join(MINI_DATA, "derived/corpus/people.json"), "utf8")) as { id: string; nameEn: string }[];
+    const rawConcepts = JSON.parse(readFileSync(join(MINI_DATA, "derived/corpus/concepts.json"), "utf8")) as { label: { en: string } }[];
+    const ids = new Set(rawPeople.map((p) => p.id));
+    const unresolved = raw.flatMap((s) => s.people.filter((p) => !ids.has(p) && !p.startsWith("syn-")).map((name) => ({ story: s.id, name })));
+    expect(unresolved.length).toBeGreaterThanOrEqual(3);
+    const display = new Set([...rawPeople.map((p) => p.nameEn), ...rawConcepts.map((c) => c.label.en)]);
+    for (const s of stories.stories) {
+      for (const p of s.people) if ("name" in p) expect(display.has(p.name), `${s.id}: ${p.name}`).toBe(true);
+    }
+    const text = toJson(stories);
+    for (const u of unresolved) {
+      expect(text, u.story).not.toContain(JSON.stringify(u.name));
+      const st = stories.stories.find((x) => x.id === u.story);
+      if (st) expect(st.people.every((p) => "id" in p || display.has(p.name))).toBe(true);
+    }
+  });
+
   it("groups people by type in sefer order, with descriptions, and keeps `individual` in the other group (D2)", () => {
     for (const p of people.people) {
       expect(p.group).toBe(PERSON_GROUP_OF[p.type]);

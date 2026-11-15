@@ -52,7 +52,7 @@ switch (what) {
   case "concepts": {
     for (const v of load("concepts.json").filter((x) => x.shiurim >= 10)) {
       const m = lookupConcept(v.value);
-      console.log(`${m.stop ? "STOP" : "    "} ${m.merged ? "M" : " "} ${m.key.padEnd(30)}\t${v.value}`);
+      console.log(`${m.merged ? "M" : " "} ${m.key.padEnd(30)}\t${v.value}`);
     }
     break;
   }
