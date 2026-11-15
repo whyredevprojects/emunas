@@ -1,0 +1,48 @@
+---
+/**
+ * Inyanim index, ענינים (concept-quiet §5.10; tech-quiet §2 `/{ed}/inyanim/`): concepts by their
+ * Hebrew term (the headword in both editions), for terms in at least CONCEPT_MIN_SHIURIM shiurim
+ * and not on the stop-list. No topic hierarchy: candidateTopics are search keywords only (C9).
+ * Says in one line that it is partial and unreviewed.
+ */
+import type { GetStaticPaths } from "astro";
+import Base from "../../../layouts/Base.astro";
+import CiteList from "../../../components/indexes/CiteList.astro";
+import IndexHead from "../../../components/indexes/IndexHead.astro";
+import JumpList from "../../../components/indexes/JumpList.astro";
+import { indexesData } from "../../../components/indexes/corpus.ts";
+import { indexCrumbs, indexTitle } from "../../../components/indexes/crumbs.ts";
+import { conceptsIndex, run } from "../../../components/indexes/model.ts";
+import { useIndexesT } from "../../../components/indexes/strings.ts";
+import { EDS, type Ed } from "../../../lib/edition.ts";
+
+export const getStaticPaths = (() => (indexesData() ? EDS.map((ed) => ({ params: { ed } })) : [])) satisfies GetStaticPaths;
+
+const ed = Astro.params.ed as Ed;
+const data = indexesData()!;
+const t = useIndexesT(ed);
+const title = indexTitle(ed, "inyanim");
+const letters = conceptsIndex(data, ed);
+---
+<Base ed={ed} title={title} crumbs={indexCrumbs(ed, "inyanim")}>
+  <IndexHead ed={ed} title={run(title, ed)} intro={t("inyanim.intro", { min: data.concepts.minShiurim })} counts={data.build.counts} />
+  <JumpList ed={ed} items={letters.map((b) => ({ id: b.id, label: b.letter, lang: "he", dir: "rtl" as const }))} />
+  {letters.map((b) => (
+    <section class="index-block" id={b.id} aria-labelledby={`${b.id}-h`}>
+      <h2 id={`${b.id}-h`}><bdi lang="he" dir="rtl">{b.letter}</bdi></h2>
+      <ul class="entries" role="list">
+        {b.items.map((c) => (
+          <li id={c.key}>
+            {c.href ? (
+              <a class="entry-name" href={c.href}><bdi lang={c.he.lang} dir={c.he.dir}>{c.he.text}</bdi></a>
+            ) : (
+              <span class="entry-name"><bdi lang={c.he.lang} dir={c.he.dir}>{c.he.text}</bdi></span>
+            )}
+            <span class="entry-count">{t("count.shiurim", { count: c.shiurCount })}</span>
+            <CiteList ed={ed} cites={c.cites} />
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</Base>

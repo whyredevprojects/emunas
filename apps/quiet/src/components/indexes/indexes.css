@@ -1,0 +1,136 @@
+/*
+ * The AI indexes (sources, stories, people, inyanim): the mafteichos at the back of a sefer.
+ * Alphabetised lists with hairlines and run-on citations; no cards, no icons, no colour coding
+ * (grading is in words). Logical properties only.
+ */
+@layer components {
+  .index-head > * + * {
+    margin-block-start: var(--space-xs);
+  }
+
+  .index-head .alt-name,
+  .index-meta,
+  .index-intro,
+  .index-partial {
+    color: var(--color-ink-muted);
+  }
+
+  .index-head .alt-name {
+    font-weight: var(--weight-regular);
+  }
+
+  .index-meta,
+  .index-intro,
+  .index-partial {
+    font-size: var(--step-0);
+  }
+
+  .jump ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs) var(--space-s);
+    margin-block-start: var(--space-3xs);
+  }
+
+  /* Single letters still get a 24 px target (WCAG 2.2 target size). */
+  .jump a {
+    display: inline-block;
+    min-inline-size: 1.5rem;
+    min-block-size: 1.5rem;
+    text-align: center;
+  }
+
+  .index-block {
+    border-block-start: var(--rule-hairline) solid var(--color-rule);
+    padding-block-start: var(--space-s);
+  }
+
+  .index-block > h2,
+  .index-block > h3 {
+    margin-block-end: var(--space-xs);
+  }
+
+  .story-group + .story-group {
+    margin-block-start: var(--space-m);
+  }
+
+  .story-group > h3 {
+    font-size: var(--step-1);
+    margin-block-end: var(--space-3xs);
+  }
+
+  .index-block-note {
+    font-size: var(--step-0);
+    color: var(--color-ink-muted);
+    margin-block-end: var(--space-xs);
+  }
+
+  .entries > li {
+    padding-block: var(--space-3xs);
+  }
+
+  .entries > li + li {
+    border-block-start: var(--rule-hairline) solid var(--color-rule);
+  }
+
+  .entry-count {
+    font-size: var(--step-0);
+    color: var(--color-ink-muted);
+  }
+
+  .entry-count::before {
+    content: " · ";
+  }
+
+  .cites {
+    display: inline;
+    font-size: var(--step-0);
+  }
+
+  .cites > li {
+    display: inline;
+  }
+
+  .cites > li + li::before {
+    content: "; ";
+  }
+
+  .entry-name + .cites::before,
+  .entry-count + .cites::before,
+  .qualifier + .cites::before {
+    content: " ";
+  }
+
+  .cite .time,
+  .cite-lang {
+    color: var(--color-ink-muted);
+  }
+
+  .qualifier {
+    font-style: italic;
+    color: var(--color-ink-muted);
+  }
+
+  :lang(yi) .qualifier,
+  .qualifier:lang(yi) {
+    font-style: normal;
+  }
+
+  .ref-label {
+    font-weight: var(--weight-semibold);
+  }
+
+  .external {
+    font-size: var(--step-0);
+  }
+
+  .mentions,
+  .sub-entries {
+    padding-inline-start: var(--space-m);
+  }
+
+  .entity-names {
+    font-size: var(--step-0);
+    color: var(--color-ink-muted);
+  }
+}

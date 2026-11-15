@@ -1,0 +1,55 @@
+---
+/**
+ * A person's page (concept-quiet §5.9; tech-quiet §2 `/{ed}/people/{personKey}/`): the shiurim
+ * that mention them, in catalog order, each with the titles of its stories about them at their
+ * times. The retellings stay on the shiur page. Built only for people in ≥2 shiurim
+ * (`entities.json` quietPage).
+ */
+import type { GetStaticPaths } from "astro";
+import Base from "../../../layouts/Base.astro";
+import CiteLink from "../../../components/indexes/CiteLink.astro";
+import IndexHead from "../../../components/indexes/IndexHead.astro";
+import StoryLink from "../../../components/indexes/StoryLink.astro";
+import { indexesData } from "../../../components/indexes/corpus.ts";
+import { indexCrumbs } from "../../../components/indexes/crumbs.ts";
+import { pageKeys, personPage } from "../../../components/indexes/model.ts";
+import { useIndexesT } from "../../../components/indexes/strings.ts";
+import { EDS, type Ed } from "../../../lib/edition.ts";
+
+export const getStaticPaths = (() => {
+  const data = indexesData();
+  if (!data) return [];
+  const keys = pageKeys(data, "person");
+  const people = data.people.people.filter((p) => keys.has(p.key));
+  return EDS.flatMap((ed) => people.map((p) => ({ params: { ed, person: p.key } })));
+}) satisfies GetStaticPaths;
+
+const ed = Astro.params.ed as Ed;
+const data = indexesData()!;
+const person = data.people.people.find((p) => p.key === Astro.params.person)!;
+const t = useIndexesT(ed);
+const page = personPage(data, ed, person);
+---
+<Base ed={ed} title={page.name.text} crumbs={indexCrumbs(ed, "people", page.name)}>
+  <IndexHead ed={ed} title={page.name} alt={page.alt} meta={t("count.shiurim", { count: page.shiurCount })} counts={data.build.counts} />
+  {page.names.length > 0 && (
+    <p class="entity-names">{t("names.label")}{" "}{page.names.map((n, i) => <>{i > 0 && ", "}<bdi lang={n.lang} dir={n.dir}>{n.text}</bdi></>)}</p>
+  )}
+  <section class="index-block" aria-labelledby="shiurim-h">
+    <h2 id="shiurim-h" class="label">{t("people.mentioned")}</h2>
+    <ul class="entries" role="list">
+      {page.shiurim.map((s) => (
+        <li>
+          <CiteLink ed={ed} cite={s.cite} />
+          {s.stories.length > 0 && (
+            <ul class="sub-entries" role="list" aria-label={t("people.storiesHeading")}>
+              {s.stories.map((st) => (
+                <li><StoryLink ed={ed} story={st} /></li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>

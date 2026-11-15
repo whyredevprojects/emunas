@@ -1,0 +1,23 @@
+---
+/** A jump list of the blocks of an index page (letters, groups of seforim). */
+import type { Ed } from "../../lib/edition.ts";
+import { useIndexesT } from "./strings.ts";
+
+interface Props {
+  ed: Ed;
+  items: readonly { id: string; label: string; lang?: string; dir?: "rtl" | "ltr" }[];
+  /** Unique per page when there is more than one jump list. */
+  labelId?: string;
+}
+
+const { ed, items, labelId = "jump" } = Astro.props;
+const t = useIndexesT(ed);
+---
+{items.length > 1 && (
+  <nav class="jump" aria-labelledby={labelId}>
+    <h2 class="label" id={labelId}>{t("index.jump")}</h2>
+    <ul role="list">
+      {items.map((item) => <li><a href={`#${item.id}`}><bdi lang={item.lang} dir={item.dir}>{item.label}</bdi></a></li>)}
+    </ul>
+  </nav>
+)}

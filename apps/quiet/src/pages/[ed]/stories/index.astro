@@ -1,0 +1,63 @@
+---
+/**
+ * Stories index, מעשיות (concept-quiet §5.8; tech-quiet §2 `/{ed}/stories/`): one page, story
+ * titles grouped by the main person they are about (the story's first person), alphabetical, with
+ * a jump list by letter; stories without a named person last. Each title points to its shiur at
+ * the story's time. There is no page per story and no retelling here. Each telling is listed, so
+ * repeats sit next to each other under their person.
+ */
+import type { GetStaticPaths } from "astro";
+import Base from "../../../layouts/Base.astro";
+import IndexHead from "../../../components/indexes/IndexHead.astro";
+import JumpList from "../../../components/indexes/JumpList.astro";
+import StoryLink from "../../../components/indexes/StoryLink.astro";
+import { indexesData } from "../../../components/indexes/corpus.ts";
+import { indexCrumbs, indexTitle } from "../../../components/indexes/crumbs.ts";
+import { run, storiesIndex } from "../../../components/indexes/model.ts";
+import { useIndexesT } from "../../../components/indexes/strings.ts";
+import { EDS, type Ed } from "../../../lib/edition.ts";
+
+export const getStaticPaths = (() => (indexesData() ? EDS.map((ed) => ({ params: { ed } })) : [])) satisfies GetStaticPaths;
+
+const ed = Astro.params.ed as Ed;
+const data = indexesData()!;
+const t = useIndexesT(ed);
+const title = indexTitle(ed, "stories");
+const { letters, rest } = storiesIndex(data, ed);
+const jump = [
+  ...letters.map((b) => ({ id: b.id, label: b.letter })),
+  ...(rest ? [{ id: rest.id, label: rest.name.text }] : []),
+];
+---
+<Base ed={ed} title={title} crumbs={indexCrumbs(ed, "stories")}>
+  <IndexHead ed={ed} title={run(title, ed)} intro={t("stories.intro")} counts={data.build.counts} />
+  <JumpList ed={ed} items={jump} />
+  {letters.map((b) => (
+    <section class="index-block" id={b.id} aria-labelledby={`${b.id}-h`}>
+      <h2 id={`${b.id}-h`}><bdi>{b.letter}</bdi></h2>
+      {b.items.map((g) => (
+        <section class="story-group" id={g.id} aria-labelledby={`${g.id}-h`}>
+          <h3 id={`${g.id}-h`}>
+            {g.personHref ? (
+              <a href={g.personHref}><bdi lang={g.name.lang} dir={g.name.dir}>{g.name.text}</bdi></a>
+            ) : (
+              <bdi lang={g.name.lang} dir={g.name.dir}>{g.name.text}</bdi>
+            )}
+            <span class="entry-count">{t("count.stories", { count: g.stories.length })}</span>
+          </h3>
+          <ul class="entries" role="list">
+            {g.stories.map((s) => <li><StoryLink ed={ed} story={s} cite /></li>)}
+          </ul>
+        </section>
+      ))}
+    </section>
+  ))}
+  {rest && (
+    <section class="index-block" id={rest.id} aria-labelledby={`${rest.id}-h`}>
+      <h2 id={`${rest.id}-h`}>{rest.name.text}<span class="entry-count">{t("count.stories", { count: rest.stories.length })}</span></h2>
+      <ul class="entries" role="list">
+        {rest.stories.map((s) => <li><StoryLink ed={ed} story={s} cite /></li>)}
+      </ul>
+    </section>
+  )}
+</Base>

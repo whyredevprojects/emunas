@@ -1,0 +1,50 @@
+---
+/**
+ * Sources index, מראי מקומות (concept-quiet §5.7; tech-quiet §2 `/{ed}/sources/`): every work the
+ * notes cite, in the traditional order of a mafteach. A work in ≥2 shiurim links to its page; any
+ * other work's line links straight to its shiurim, each at the moment. Generic labels ("Midrash")
+ * are listed last, never shelved.
+ */
+import type { GetStaticPaths } from "astro";
+import Base from "../../../layouts/Base.astro";
+import CiteList from "../../../components/indexes/CiteList.astro";
+import IndexHead from "../../../components/indexes/IndexHead.astro";
+import JumpList from "../../../components/indexes/JumpList.astro";
+import { indexesData } from "../../../components/indexes/corpus.ts";
+import { indexCrumbs, indexTitle } from "../../../components/indexes/crumbs.ts";
+import { run, sourcesIndex } from "../../../components/indexes/model.ts";
+import { useIndexesT } from "../../../components/indexes/strings.ts";
+import { EDS, type Ed } from "../../../lib/edition.ts";
+
+export const getStaticPaths = (() => (indexesData() ? EDS.map((ed) => ({ params: { ed } })) : [])) satisfies GetStaticPaths;
+
+const ed = Astro.params.ed as Ed;
+const data = indexesData()!;
+const t = useIndexesT(ed);
+const title = indexTitle(ed, "sources");
+const groups = sourcesIndex(data, ed);
+---
+<Base ed={ed} title={title} crumbs={indexCrumbs(ed, "sources")}>
+  <IndexHead ed={ed} title={run(title, ed)} intro={t("sources.intro")} counts={data.build.counts} />
+  <JumpList ed={ed} items={groups.map((g) => ({ id: g.id, label: g.label }))} />
+  {groups.map((g) => (
+    <section class="index-block" id={g.id} aria-labelledby={`${g.id}-h`}>
+      <h2 id={`${g.id}-h`}>{g.label}</h2>
+      {g.note && <p class="index-block-note">{g.note}</p>}
+      <ul class="entries" role="list">
+        {g.works.map((w) => (
+          <li id={w.key}>
+            {w.href ? (
+              <a class="entry-name" href={w.href}><bdi lang={w.name.lang} dir={w.name.dir}>{w.name.text}</bdi></a>
+            ) : (
+              <span class="entry-name"><bdi lang={w.name.lang} dir={w.name.dir}>{w.name.text}</bdi></span>
+            )}
+            {w.alt && <> <span class="alt-name"><bdi lang={w.alt.lang} dir={w.alt.dir}>{w.alt.text}</bdi></span></>}
+            <span class="entry-count">{t("count.shiurim", { count: w.shiurCount })}</span>
+            <CiteList ed={ed} cites={w.cites} />
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</Base>

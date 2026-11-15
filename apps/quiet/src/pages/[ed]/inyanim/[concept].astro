@@ -1,0 +1,54 @@
+---
+/**
+ * A concept's page (concept-quiet §5.10; tech-quiet §2 `/{ed}/inyanim/{conceptKey}/`): the shiurim
+ * whose notes name the term, in catalog order, and under each the sections whose title carries it,
+ * each linking to the section. Built only for concepts in ≥3 shiurim (`entities.json` quietPage).
+ */
+import type { GetStaticPaths } from "astro";
+import Base from "../../../layouts/Base.astro";
+import CiteLink from "../../../components/indexes/CiteLink.astro";
+import IndexHead from "../../../components/indexes/IndexHead.astro";
+import { indexesData } from "../../../components/indexes/corpus.ts";
+import { indexCrumbs } from "../../../components/indexes/crumbs.ts";
+import { conceptPage, pageKeys } from "../../../components/indexes/model.ts";
+import { useIndexesT } from "../../../components/indexes/strings.ts";
+import { clock } from "../../../lib/bidi.ts";
+import { EDS, type Ed } from "../../../lib/edition.ts";
+
+export const getStaticPaths = (() => {
+  const data = indexesData();
+  if (!data) return [];
+  const keys = pageKeys(data, "concept");
+  const concepts = data.concepts.concepts.filter((c) => keys.has(c.key));
+  return EDS.flatMap((ed) => concepts.map((c) => ({ params: { ed, concept: c.key } })));
+}) satisfies GetStaticPaths;
+
+const ed = Astro.params.ed as Ed;
+const data = indexesData()!;
+const concept = data.concepts.concepts.find((c) => c.key === Astro.params.concept)!;
+const t = useIndexesT(ed);
+const page = conceptPage(data, ed, concept);
+---
+<Base ed={ed} title={page.he.text} crumbs={indexCrumbs(ed, "inyanim", page.he)}>
+  <IndexHead ed={ed} title={page.he} meta={t("count.shiurim", { count: page.shiurCount })} counts={data.build.counts} />
+  {page.variants.length > 0 && (
+    <p class="entity-names">{t("inyanim.variants")}{" "}{page.variants.map((v, i) => <>{i > 0 && ", "}<bdi lang={v.lang} dir={v.dir}>{v.text}</bdi></>)}</p>
+  )}
+  <section class="index-block" aria-labelledby="shiurim-h">
+    <h2 id="shiurim-h" class="visually-hidden">{t("count.shiurim", { count: page.shiurCount })}</h2>
+    <ul class="entries" role="list">
+      {page.shiurim.map((s) => (
+        <li>
+          <CiteLink ed={ed} cite={s.cite} />
+          {s.sections.length > 0 && (
+            <ul class="sub-entries" role="list" aria-label={t("inyanim.sections")}>
+              {s.sections.map((sec) => (
+                <li><a href={sec.href} lang={ed}>{sec.title} <span class="time"><bdi dir="ltr">{clock(sec.t)}</bdi></span></a></li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>
