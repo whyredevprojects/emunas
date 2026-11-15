@@ -1,0 +1,94 @@
+/*
+ * Live global styles (tech-live §1 styling): one cascade-layer order for the whole app, the shared
+ * tokens and fonts from @emunas/tokens, then a small base layer. Components use CSS Modules in the
+ * `components` layer. Logical properties only (stylelint enforces it), so `dir="rtl"` mirrors the
+ * whole app.
+ */
+@layer tokens, base, components, utilities;
+
+@import "@emunas/tokens/fonts.css" layer(tokens);
+@import "@emunas/tokens/tokens.css";
+
+@layer tokens {
+  :root {
+    /* App-shell dimensions. The dock's height is always reserved (CLS ≤ 0.05). */
+    --dock-height: 4.5rem;
+    --rail-inline-size: 12rem;
+    --rail-bar-height: 3.75rem;
+    --header-height: 3.25rem;
+    --tap-min: 2.75rem; /* 44 px touch targets */
+  }
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-ui);
+    font-size: var(--step-0);
+    line-height: var(--leading-body);
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: var(--leading-tight);
+    font-weight: var(--weight-semibold);
+  }
+
+  a {
+    color: var(--color-accent);
+    text-underline-offset: 0.15em;
+  }
+
+  a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  :focus-visible {
+    outline: var(--rule-focus) solid var(--color-focus);
+    outline-offset: 2px;
+  }
+
+  /* Headings focused programmatically after navigation show no ring for mouse users. */
+  h1[tabindex="-1"]:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  bdi {
+    unicode-bidi: isolate;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .visually-hidden {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}

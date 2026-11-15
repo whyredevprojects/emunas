@@ -1,0 +1,85 @@
+import type { MessageTable } from "@emunas/i18n";
+import type { UiKey } from "./en.ts";
+
+/**
+ * Yiddish UI strings for the Live site. Typed against the English key union, so a missing key fails
+ * `tsc`. Wording is unreviewed until the Yiddish UI review (W5.3).
+ */
+export const yi: MessageTable<UiKey> = {
+  "site.name": "אמונת — הערן",
+  "site.short": "אמונת",
+  "site.tagline": 'שיעורים פון הרב משה וואלפסאן זצ"ל',
+
+  "shell.skip": "שפרינג צום אינהאלט",
+  "shell.rail": "הויפט",
+  "shell.dock": "שפילער",
+  "shell.dockIdle": "גארנישט שפילט נישט",
+
+  "nav.today": "היינט",
+  "nav.explore": "דורכזוכן",
+  "nav.seforim": "ספרים",
+  "nav.maasios": "מעשיות",
+  "nav.series": "סדרות",
+  "nav.shelf": "מיין פאליצע",
+  "nav.search": "זוכן",
+
+  "lang.button": "שפראך",
+  "lang.dialog": "שפראך איינשטעלונגען",
+  "lang.ui": "שפראך פון דעם זייטל",
+  "lang.uiSwitch": "English",
+  "lang.audio": "וועלכע שיעורים צו הערן",
+  "lang.audio.both": "אידיש און ענגליש",
+  "lang.audio.yi": "נאר אידיש",
+  "lang.audio.en": "נאר ענגליש",
+  "lang.read": "שפראך פון די נאטיצן",
+  "lang.read.en": "ענגליש",
+  "lang.read.yi": "אידיש",
+  "lang.summary": "זייטל: {ui}. שיעורים: {audio}. נאטיצן: {read}.",
+
+  "home.title": "קלייבט אויס א שפראך",
+  "home.redirecting": "מען עפנט דעם זייטל אין אייער שפראך…",
+  "home.en": "English",
+  "home.yi": "ייִדיש",
+
+  "stub.note": "דער בלאט ווערט נאך געבויט.",
+  "page.today": "היינט",
+  "page.today.lead": "די פרשה און זמנים פון דער וואך, וואס איר האט געהערט, און א נקודה פאר היינט.",
+  "page.shiur": "שיעור",
+  "page.shiur.lead": "דער הער־צימער פאר שיעור {id}.",
+  "page.explore": "דורכזוכן",
+  "page.explore.lead": "אלע שיעורים און נקודות לויט זמן, יאר, ספר, פערזאן און ענין.",
+  "page.seforim": "ספרים",
+  "page.seforim.lead": "די ספרים וואס ווערן געברענגט אין די שיעורים, לויט זייער סדר.",
+  "page.work": "ספר",
+  "page.work.lead": "וואו {work} ווערט געברענגט אין די שיעורים.",
+  "page.workChapter": "ספר, לויט פרקים",
+  "page.workChapter.lead": "{work}, {chapter}.",
+  "page.maasios": "מעשיות",
+  "page.maasios.lead": "מעשיות וואס ווערן דערציילט אין די שיעורים.",
+  "page.series": "סדרות",
+  "page.series.lead": "שיעורים וואס זענען געזאגט געווארן לויט א סדר, ווי תניא און אמונה.",
+  "page.seriesOne": "סדרה",
+  "page.seriesOne.lead": "די שיעורים פון סדרה {id}, לויט דער ריי.",
+  "page.person": "פערזאן",
+  "page.person.lead": "שיעורים און מעשיות וועגן {id}.",
+  "page.concept": "ענין",
+  "page.concept.lead": "וואו דער ענין {id} ווערט גערעדט.",
+  "page.occasion": "זמן",
+  "page.occasion.lead": "שיעורים פאר {id}.",
+  "page.search": "זוכן",
+  "page.search.lead": "זוכט אין די שיעורים לויט די נאטיצן און די קאטאלאג טיטלען.",
+  "page.searchQuery": "רעזולטאטן פאר {q}",
+  "page.shelf": "מיין פאליצע",
+  "page.shelf.lead":
+    "וואס איר הערט, אייער ריי, ליסטעס, אפגעהיטענע נקודות און אראפגעלאדענע שיעורים. נאר אויף דעם מכשיר.",
+  "page.shelfSection": "מיין פאליצע",
+  "page.shelfSection.lead": "טייל: {section}.",
+  "page.playlist": "א צוגעשיקטע ליסטע",
+  "page.playlist.lead": "א ליסטע פון נקודות וואס איינער האט אייך צוגעשיקט.",
+  "page.notFound": "דער בלאט איז נישט געפונען",
+  "page.notFound.lead": "ביי דער אדרעס איז נישטא קיין בלאט.",
+  "page.notFound.home": "גייט צו היינט",
+  "page.error": "עפעס איז נישט געגאנגען",
+
+  "count.shiurim": { one: "{count} שיעור", other: "{count} שיעורים" },
+};
