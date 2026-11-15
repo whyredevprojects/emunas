@@ -55,6 +55,9 @@ jobs:
       # wrangler.jsonc: top level = production, env.staging = staging.
       WRANGLER_ENV: ${{ (inputs.target || 'production') == 'staging' && 'staging' || '' }}
       EMUNAS_MEDIA_ORIGIN: ${{ vars.EMUNAS_MEDIA_ORIGIN }}
+      # With CI=true (set by Actions) this makes corpus:build fail instead of warn when the media
+      # origin would be the dev placeholder https://media.example.invalid.
+      EMUNAS_DEPLOY: "1"
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
     steps:
@@ -74,6 +77,25 @@ jobs:
           cache: npm
       - name: Install
         run: npm ci
+      - name: Check emunas-api resources are provisioned
+        # wrangler.jsonc ships placeholder D1 ids (00000000-0000-4000-8000-…) until the resources
+        # are created (ops-runbook); deploying with them would fail half-way, after the site builds.
+        run: |
+          node --input-type=module <<'JS'
+          import { readFileSync } from "node:fs";
+          const text = readFileSync("workers/api/wrangler.jsonc", "utf8");
+          // Drop // and /* */ comments outside strings, then trailing commas: enough for this file.
+          const json = text
+            .replace(/"(?:[^"\\]|\\.)*"|\/\/[^\n]*|\/\*[\s\S]*?\*\//g, (m) => (m.startsWith('"') ? m : ""))
+            .replace(/,(\s*[}\]])/g, "$1");
+          const cfg = JSON.parse(json);
+          const env = process.env.WRANGLER_ENV;
+          const dbs = (env ? cfg.env?.[env]?.d1_databases : cfg.d1_databases) ?? [];
+          const bad = dbs.filter((d) => /^00000000-0000-4000-8000-/.test(d.database_id ?? ""));
+          for (const d of bad) console.log(`::error::workers/api/wrangler.jsonc: ${d.binding} (${d.database_name}) still has the placeholder database_id`);
+          if (dbs.length === 0) console.log(`::error::workers/api/wrangler.jsonc has no d1_databases for ${env || "production"}`);
+          process.exit(bad.length || dbs.length === 0 ? 1 : 0);
+          JS
 
       - name: Restore corpus fingerprints and Astro cache
         uses: actions/cache@v4
@@ -110,9 +132,7 @@ jobs:
         run: |
           (cd apps/quiet && npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --env="${WRANGLER_ENV}")
           (cd apps/live && npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --env="${WRANGLER_ENV}" --outdir ../../.wrangler/bundles/live)
-          if [ -f workers/api/wrangler.jsonc ]; then
-            npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --config workers/api/wrangler.jsonc --env="${WRANGLER_ENV}" --outdir .wrangler/bundles/api
-          fi
+          npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --config workers/api/wrangler.jsonc --env="${WRANGLER_ENV}" --outdir .wrangler/bundles/api
 
       - name: Plant a leak fixture (dispatch test only)
         if: inputs.plant_leak_fixture
@@ -125,27 +145,17 @@ jobs:
       - name: Budgets
         run: npm run guard --workspace=@emunas/corpus-guard -- budgets apps/quiet/dist apps/live/build/client
 
-      # Search infrastructure (W2.6 / W3.10). Each step is a no-op until its package provides it.
+      # Search infrastructure (W2.6 / W3.10).
       - name: D1 migrations
+        # Both bindings exist in production and env.staging (workers/api/wrangler.jsonc);
+        # wrangler resolves each binding's database and migrations_dir for the target env.
         run: |
-          if [ ! -f workers/api/wrangler.jsonc ]; then
-            echo "::notice::workers/api/wrangler.jsonc does not exist yet; skipping D1 migrations."
-            exit 0
-          fi
-          # Every D1 binding of the target environment whose migrations folder exists.
-          node --input-type=module > "$RUNNER_TEMP/d1-bindings.txt" <<'JS'
-          import { existsSync, readFileSync } from "node:fs";
-          const text = readFileSync("workers/api/wrangler.jsonc", "utf8").split("\n").filter((l) => !l.trimStart().startsWith("//")).join("\n");
-          const cfg = JSON.parse(text);
-          const env = process.env.WRANGLER_ENV;
-          const dbs = (env ? cfg.env?.[env]?.d1_databases : cfg.d1_databases) ?? [];
-          for (const db of dbs) if (existsSync(`workers/api/${db.migrations_dir ?? "migrations"}`)) console.log(db.binding);
-          JS
-          while read -r binding; do
+          for binding in DB_SEARCH DB_FEEDBACK; do
             npx --yes "wrangler@${WRANGLER_VERSION}" d1 migrations apply "${binding}" --remote \
               --config workers/api/wrangler.jsonc --env="${WRANGLER_ENV}"
-          done < "$RUNNER_TEMP/d1-bindings.txt"
+          done
       - name: D1 and Vectorize incremental sync
+        # No-op until W3.10 adds the search:sync script to @emunas/api.
         run: |
           if node -e 'process.exit(require("./workers/api/package.json").scripts?.["search:sync"] ? 0 : 1)'; then
             npm run search:sync --workspace=@emunas/api -- --env "${TARGET}"
@@ -154,13 +164,10 @@ jobs:
           fi
 
       - name: Deploy emunas-api
-        run: |
-          if [ -f workers/api/wrangler.jsonc ]; then
-            npx --yes "wrangler@${WRANGLER_VERSION}" deploy --config workers/api/wrangler.jsonc --env="${WRANGLER_ENV}" \
-              --message "deploy ${GITHUB_SHA:0:12}"
-          else
-            echo "::warning::workers/api/wrangler.jsonc does not exist yet; emunas-api not deployed."
-          fi
+        # Before emunas-live: the Live Worker's service binding API points at it.
+        run: >-
+          npx --yes "wrangler@${WRANGLER_VERSION}" deploy --config workers/api/wrangler.jsonc --env="${WRANGLER_ENV}"
+          --message "deploy ${GITHUB_SHA:0:12}"
       - name: Deploy emunas-quiet
         working-directory: apps/quiet
         run: npx --yes "wrangler@${WRANGLER_VERSION}" deploy --env="${WRANGLER_ENV}" --message "deploy ${GITHUB_SHA:0:12}"

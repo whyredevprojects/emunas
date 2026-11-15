@@ -81,12 +81,6 @@ function rows(ed: Ed): Row[] {
       live: `/${ed}/search?q=lag%20baomer`,
       built: { quiet: Q.search(ed, "lag baomer"), live: L.search(ed, "lag baomer") },
     },
-    {
-      name: "audio",
-      quiet: "/audio/yi-zmanim-tv-bb-04-r2.mp3",
-      live: "/audio/yi-zmanim-tv-bb-04-r2.mp3",
-      built: { quiet: Q.audio("yi-zmanim-tv-bb-04-r2"), live: L.audio("yi-zmanim-tv-bb-04-r2") },
-    },
   ];
 }
 
@@ -124,6 +118,25 @@ describe("absolute builders", () => {
   it("cross-site links carry the other host", () => {
     expect(links.live.shiur("en", ID, { t: 754.4 })).toBe(`${HOSTS.live}/en/s/${ID}?t=754`);
     expect(links.quiet.shiur("yi", ID, { section: 3 })).toBe(`${HOSTS.quiet}/yi/shiur/${ID}/#s3`);
-    expect(links.audio("rec-1", { download: true })).toBe("/audio/rec-1.mp3?download=1");
+  });
+});
+
+describe("no audio builders (Amendment A1: audio lives on the media host)", () => {
+  it("exposes no audio builder on paths or links", () => {
+    expect("audio" in quietPaths()).toBe(false);
+    expect("audio" in livePaths()).toBe(false);
+    expect("audio" in links).toBe(false);
+    expect("audio" in links.quiet).toBe(false);
+    expect("audio" in links.live).toBe(false);
+  });
+
+  it("does not export audioPath", async () => {
+    const mod: Record<string, unknown> = await import("../src/index.ts");
+    expect(mod["audioPath"]).toBeUndefined();
+  });
+
+  it("/audio/*.mp3 is not a page on either site", () => {
+    expect(parseQuiet("/audio/r1.mp3")).toBeNull();
+    expect(parseLive("/audio/r1.mp3?download=1", DATA)).toBeNull();
   });
 });

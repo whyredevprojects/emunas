@@ -48,7 +48,7 @@ export function shiurJson(
     lang: "yi",
     category: "parsha",
     catalog: { titleOriginal: "בראשית", sectionTitle: "Parsha", topics: [] },
-    recordings: [{ id: rec, order: 0, offset: 0, duration: 100, audio: `/audio/${rec}.mp3`, transcript: { eligible: false } }],
+    recordings: [{ id: rec, order: 0, offset: 0, duration: 100, audioUrl: `https://media.emunas.example/shiurim/${rec}.mp3`, playable: true, transcript: { eligible: false } }],
     status: "full",
     notes: {
       summary: {

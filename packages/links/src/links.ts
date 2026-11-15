@@ -26,8 +26,6 @@ export interface Links {
   readonly quiet: Absolute<QuietPaths>;
   /** Absolute Live URLs. */
   readonly live: Absolute<LivePaths>;
-  /** Root-relative `/audio/{recordingId}.mp3`, valid on both hosts. */
-  readonly audio: (recordingId: string, opts?: { readonly download?: boolean }) => string;
   /** Which site an absolute URL belongs to (by origin), or null. */
   siteOf(url: string): Site | null;
   /**
@@ -49,7 +47,7 @@ export interface Links {
   canonicalFor(url: string): string;
   /**
    * `<link rel="alternate" hreflang>` set for a page: both editions plus `x-default`
-   * (the site root). Empty for audio and for paths that are not pages.
+   * (the site root). Empty for paths that are not pages.
    */
   hreflangPair(path: string, site?: Site): HreflangLink[];
   /** The same page in the other edition / UI language, keeping time and section where possible. */
@@ -113,7 +111,6 @@ export function createLinks(options: { readonly hosts: Hosts; readonly data?: Li
     hosts,
     quiet: absolutize(hosts.quiet, quietPaths(data)),
     live: absolutize(hosts.live, livePaths(data)),
-    audio: (recordingId, opts = {}) => quietPaths(data).audio(recordingId, opts),
     siteOf,
     parse,
     equivalent(url, from) {
@@ -126,13 +123,11 @@ export function createLinks(options: { readonly hosts: Hosts; readonly data?: Li
     canonicalFor(url) {
       const site = resolveSite(url, "live") ?? "live";
       const route = parse(url, site)?.route ?? fallbackRoute(url);
-      // An audio file has no page; its canonical is the Quiet root.
-      const r: Route = route.kind === "audio" ? { kind: "root" } : route;
-      return hosts.quiet + stripHash(formatQuiet(r, data, { bare: true }));
+      return hosts.quiet + stripHash(formatQuiet(route, data, { bare: true }));
     },
     hreflangPair(path, site = "quiet") {
       const route = parse(path, site)?.route;
-      if (!route || route.kind === "audio") return [];
+      if (!route) return [];
       const out: HreflangLink[] = EDS.map((e) => ({
         hreflang: e,
         href: origin(site) + stripHash(format(site, route.kind === "root" ? { kind: "home", ed: e } : { ...route, ed: e }, true)),
@@ -144,7 +139,6 @@ export function createLinks(options: { readonly hosts: Hosts; readonly data?: Li
       const site = resolveSite(url, from);
       if (!site || !isEd(e)) return null;
       const route = parse(url, site)?.route ?? fallbackRoute(url);
-      if (route.kind === "audio") return origin(site) + format(site, route);
       const next: Route = route.kind === "root" ? { kind: "home", ed: e } : { ...route, ed: e };
       return origin(site) + format(site, next);
     },
