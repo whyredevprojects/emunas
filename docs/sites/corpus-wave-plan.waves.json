@@ -1,0 +1,400 @@
+{
+ "waves": [
+  {
+   "wave": "C1",
+   "lead": [
+    {
+     "id": "C1.1",
+     "title": "Corpus-layer input: allow-listed reader, loose schemas, corpus-policy config, visible set",
+     "paths": [
+      "packages/corpus/src/build/read.ts",
+      "packages/corpus/src/layer/input/**",
+      "packages/corpus/src/layer/policy.ts",
+      "packages/corpus/test/layer/input/**",
+      "packages/corpus/test/fixtures/mini/data/derived/corpus/**",
+      "packages/corpus/scripts/make-mini-corpus.ts",
+      "site-policy/corpus-policy.json",
+      "site-policy/README.md"
+     ],
+     "dependsOn": [],
+     "brief": "Read first: docs/sites/corpus-wave-plan.md §1 (rules), §2 (defaults), §3.1 (input rules); docs/corpus-data.md in full, especially 'Publishing rules'; src/corpus-types.ts (import relatively, read-only); docs/sites/concept-quiet-corpus.md C6 'No transcript' table and C8.1/C8.4; docs/sites/concept-live-corpus.md F.2, F.3, E.1 first paragraph. Deliverables: (1) extend DATA_ALLOW_LIST with exact patterns for data/derived/corpus/{index,topics,concepts,people,works,stories,teaching-clusters,redirects}.json, series/<id>.json and shiur-tags/<shiurId>.json ONLY. Add a deny rule checked before the allow-list so that anything under derived/corpus/raw/, any *alias-map*, *asr*, *heard* or *variant* name, topic-tags/, teaching-clusters/ (the directory), and search/sections.jsonl throws ForbiddenPathError even if a later pattern would match. (2) Loose valibot schemas for each file. Required fields are the ones the sites render. Unknown fields are ignored and never copied. Read optionally: reviewStatus, sameAs, otherSpeakerShare, mergedInto, kind (work/story), parsha/zman (topic), private/family/contemporary flags (person). A key named asrVariants or heardAs* is dropped on read and counted in the report, so a future reversal upstream cannot leak it. (3) Failure policy: corpus dir absent → layer off, warning, sites build without the corpus indexes. index.json version not in KNOWN_CORPUS_VERSIONS → warning (policy unknownVersion: 'warn' | 'fail'). A core file (topics/concepts/people/works) present but failing required shape → fatal, like invalid ingest. An optional file (stories, teaching-clusters, series/*, redirects, a shiur-tags file) missing or invalid → that feature off or that shiur untagged, with a report entry. A single invalid record → dropped and reported. index.json `files` entries that the reader does not know are listed in the report as 'not read' (names only). (4) site-policy/corpus-policy.json: schema, loader and defaults in code (missing file = defaults; invalid = fatal). The file ships with the defaults from plan §2. Add it to POLICY_ALLOW_LIST and document it in site-policy/README.md. (5) Visible-set model (plan §3.2): V = .corpus status 'full' ∩ corpus index.shiurIds. Member visibility = shiur in V, plus the referenced extraction item survived projection (the moment id exists in PublicShiur), plus, for stories and threads when policy.visibility.followCategoryVisibility is set, the shiur's category has generalBrowse true in publish-policy. (6) Mini fixture: make-mini-corpus.ts slices the real corpus layer down to the mini corpus's done shiurim. Add synthetic cases: a topics[].sameAs, a redirects.json chain (a→b→c) and a cycle, a mergedInto on a record, a work `kind`, a story telling and a cluster member in a not-done shiur, a cluster member whose insight is below the confidence threshold, an `other` person with 1 shiur, a person named \"the Rav's father\", an index.json with an unknown file name, and a poisoned raw/ directory and *-alias-map.json, which the reader must never open.",
+     "acceptance": "A test proves the reader throws for every path under data/derived/corpus/raw/, for each alias-map name, for asr-variants.json and for search/sections.jsonl. A test proves a full layer read of the real data/ opens only allow-listed files (reader spy). Schema tests: unknown fields are ignored, asrVariants is dropped and counted, an unknown version warns, a missing stories.json disables stories only, a broken topics.json is fatal. The policy loader round-trips the default file. The visible-set unit tests cover needs_review, downgraded, simcha/current and confidence-dropped members. Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
+    },
+    {
+     "id": "C1.2",
+     "title": "Corpus-layer projection: .corpus/layer/ entity files, per-shiur refs, recounts, page flags, redirects, synonyms",
+     "paths": [
+      "packages/corpus/src/layer/** (except input/, policy.ts)",
+      "packages/corpus/src/public/corpus-layer.ts",
+      "packages/corpus/src/public/index.ts",
+      "packages/corpus/src/aggregate/** (additive: workId on works, occasion→topic map; keep legacy files)",
+      "packages/corpus/src/aggregate/build.ts",
+      "packages/corpus/src/cli.ts",
+      "packages/corpus/package.json",
+      "packages/corpus/README.md",
+      "packages/corpus/test/layer/** (except input/)"
+     ],
+     "dependsOn": [
+      "C1.1"
+     ],
+     "brief": "Read first: docs/sites/corpus-wave-plan.md §3 (contract), §2 (defaults); docs/sites/concept-quiet-corpus.md C3, C4.1–C4.8, C6 'Who gets a page' and 'Filters'; docs/sites/concept-live-corpus.md B, C.1–C.6, E.1, E.2, E.5, G (every page file is self-contained). Deliverables: buildCorpusWithAggregates also writes .corpus/layer/ (plan §3.3). The files are layer.json, topics.json (tree + per-topic detail), concepts.json, people.json, works.json, stories.json, threads.json, series/<id>.json, shiur/<shiurId>.json (per-shiur refs), synonyms.json, redirects.json, occasion-topics.json. Every file is built by copying allow-listed fields one by one; there is no spread of raw records. Counts and page flags are recomputed from the visible set (never shiurCount or shiurIds.length). The two sites' thresholds come from corpus-policy (Quiet C6 table, Live E.1 table). Every entity carries reviewed: boolean. Topics: three grades per topic (salience ≥0.6 / lower / section-only, with section idx). Section tags on other_speaker chapters are dropped. Hubs are re-filtered to V, exclude otherSpeakerShare ≥ policy.featured.maxOtherSpeakerShare and are refilled by salience. Also: children, co-tagged topics (section co-tagging), threads whose topicIds include the topic, and stories with a telling inside a tagged section (timestamp join). sameAs is read from topics[].sameAs (no slug matching): concept sameAs → concept marked mergedIntoTopic; person and work sameAs → cross-link only. Concepts: passim flag above policy fraction (Quiet 1/7) and the Live facet-drop flag (>1/4). exampleRefs are filtered to visible chapters. People: type groups; listing and page flags per site follow policy (type other: no page; Quiet line only from 3 shiurim; Live none). Family exclusion is derived from the entity's own fields, never a hand list: nameEn/aliases matching policy.people.familyPattern (default \\bthe Rav'?s\\b), or optional private/family flags, or policy.people.excludeIds (empty by default). Works: generic flag from optional Work.kind, falling back to the @emunas/normalize works-table genre flag matched through the work's own display names. Order group from that table, unknown works last. Stories: visible tellings with the chapter each telling sits in. Unresolved raw names stay plain strings with linked:false. Threads (teaching clusters): visible members with year and lang. Clusters left with <2 shiurim are dropped. Pages need ≥3 distinct shiurim. Two-member clusters only produce an inline pointer in each member's shiur refs. Series: synthesis only for series with ≥1 visible part; arc filtered to V, plus the list of non-visible parts. Per-shiur refs: topics with salience, chapter topicIds, concept/person/work ids, sourceWorkIds keyed by source moment id, story ids per story moment (with visible-telling count and page flag), thread id per insight moment (count, year span, page flag, or the inline pointer). synonyms.json: per entity, only its own display fields (aliases, transliterations, canonicalHe, labels, names, titles, topic aliases), folded and deduplicated. redirects.json: (a) corpus redirects from data redirects.json plus record-level mergedInto, chains resolved, cycles and dangling targets reported and dropped. (b) legacy keys: the old normalize-keyed person/work/concept entities (still computed by the current aggregate) mapped to new ids. Matching is folded spelling vs the new entity's display names, then the same slug, then (people only) ≥80% shiur overlap; a match finally follows (a). Unmatched → null (the site sends it to the index page). occasion-topics.json: an optional topic parsha/zman field when present, else derived. The derived rule takes the level-2/3 topic with the highest share of the occasion's catalog shiurim at salience ≥0.6, if the share is ≥ policy.occasionTopic.minShare (default 0.5); otherwise none. Aggregate works.json gains workId per entry (the reference-order layout stays). Legacy people/concepts/stories/entities files and SeriesEntry.sibling are kept unchanged in this wave; C3.1 removes them. A report-only lint lists cluster summaries whose prose states a number of shiurim that disagrees with the visible count (pending upstream fix, Quiet C8.3). Public types for every layer file go in @emunas/corpus/public (corpus-layer.ts). Bump a separate LAYER_SCHEMA_VERSION, not SCHEMA_VERSION, so shiur fingerprints do not churn.",
+     "acceptance": "Golden tests on the mini fixture for every layer file. On real data: (1) no topic/entity count exceeds the visible recount, and none references a shiur outside V; (2) the needs_review shiurim appear in no layer file; (3) 78 sameAs topics resolve, and no concept page exists for a concept merged into a topic; (4) the stories redirect the-sanzer-rav-and-the-business-competitor → the-divrei-chaim-and-the-man-who-shamed is resolved; (5) a property test: every alias/synonym published in synonyms.json and in every layer file is a member of its entity's display-field set read from data/derived/corpus/*.json; (6) no layer file contains the keys asrVariants, heardAs*, startSeg, endSeg; (7) shabbos-tefilah-en has no series synthesis output; (8) layer build adds < 10 s to corpus:build; (9) a rerun with unchanged input rewrites no file; (10) the existing .corpus outputs other than works.json are byte-identical to before the change. Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
+    },
+    {
+     "id": "C1.3",
+     "title": "Leak guard for the corpus layer: forbidden keys, raw/ ban, alias-key assertion, verbatim scan of corpus text, corpus suppress ids",
+     "paths": [
+      "packages/corpus-guard/**",
+      "packages/corpus/src/layer/suppress.ts",
+      "packages/corpus/test/layer/suppress.test.ts",
+      "packages/config/eslint.config.js (restricted-literal list only)",
+      "packages/config/test/** (lint rule test only)"
+     ],
+     "dependsOn": [
+      "C1.2"
+     ],
+     "brief": "Read first: docs/sites/corpus-wave-plan.md §1 rules 1–3, §3.4; docs/sites/integration-plan.md §0, §5.3; docs/corpus-data.md 'Publishing rules'; docs/sites/concept-quiet-corpus.md C6 'No transcript'; docs/sites/concept-live-corpus.md F.2; packages/corpus-guard/README.md. Deliverables: (1) FORBIDDEN_KEYS += asrVariants, heardAsSamples, sampleTitles, resolutionTotals, nullWork, fromStories, fromPeople (raw-only keys). DISTINCTIVE_KEYS += asrVariants, heardAsSamples. FORBIDDEN_SUBSTRINGS += 'corpus/raw/', 'alias-map', 'asr-variants'. (2) Raw-ban check: only this package may read data/derived/corpus/raw/asr-variants.json (add the literal to the ESLint restricted list with the same exemption as data/transcripts). Post-pass: every string in an alias-bearing position (JSON keys aliases, synonyms, transliterations, names, terms; .corpus/layer/synonyms.json; search EntityDoc synonym fields; Pagefind entity-record synonym meta; the Live quick index alias field) that folds equal to an ASR variant and is not also a display name of that entity is a finding. (3) Alias-key assertion: for every (kind, id, term) published in synonyms.json, entity docs and layer files, the term must be in the entity's display-field set, read independently from data/derived/corpus/{topics,concepts,people,works}.json (not from .corpus). Otherwise it is a finding. (4) Verbatim: new unit reader for .corpus/layer/ text units, with item ids corpus:<kind>:<id>#<field>.<lang>. Fields: story title+retelling, thread label+summary, topic description, concept label+definition, series title/overview/keyThemes/arc oneLiners. Pre-pass compares each unit with the transcripts of all its member shiurim (tellings, members, arc, hubs, exampleRefs + shiurIds); post-pass uses member attribution in JSON and the whole-corpus shingle index for HTML. Thresholds stay 12/20. suppress.json gains corpus item ids. packages/corpus/src/layer/suppress.ts applies them on corpus:build --suppress: blank that field (entity kept, page shows the label without the text) and report it. verbatim-allow.json accepts corpus item ids. (5) Reports keep holding ids, field paths and counts only. (6) README: new checks and item-id table.",
+     "acceptance": "Fixture tests: a planted asrVariants key fails post; a planted string from the fixture's raw/asr-variants.json inside a synonyms list fails post; a synonym that is not a display field fails post; a synthetic transcript with a 20-token run planted in a fixture story retelling lands in suppress.json as corpus:story:<id>#retelling.en, and the rebuild with --suppress blanks only that field; an 11-token run passes; the report greps clean of the synthetic sentence; an ESLint test proves an apps/ file containing 'corpus/raw' fails lint. Real data: the pre-pass over .corpus including layer units runs in < 3 min and prints counts. Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
+    },
+    {
+     "id": "C1.4",
+     "title": "URL scheme and shared vocabulary: @emunas/links routes for topics, glossary, stories, threads; legacy paths; i18n corpus labels",
+     "paths": [
+      "packages/links/**",
+      "packages/i18n/src/vocab/**",
+      "packages/i18n/test/**"
+     ],
+     "dependsOn": [
+      "C1.2"
+     ],
+     "brief": "Read first: docs/sites/corpus-wave-plan.md §3.5 (URL table), §2 (defaults: thread pages noindex); docs/sites/integration-plan.md §2.2–2.3; docs/sites/concept-quiet-corpus.md C5 (addresses, ענינים→ערכים rename, redirects), C6 'The label'; docs/sites/concept-live-corpus.md E.3, F.3, B 'Answer to the replace question'. Deliverables: (1) Route kinds topic, glossary entry (concept), story, thread; index names topics, glossary. Quiet: /{ed}/inyanim/ and /{ed}/inyanim/{topicId}/ (+ all/ continuation), /{ed}/erachim/ and /{ed}/erachim/{conceptId}/, /{ed}/stories/{storyId}/, people/sources unchanged in shape, /{ed}/people/{id}/all/. Live: /{ui}/t/{topicId}, /{ui}/th/{threadId}, /{ui}/maasios/{storyId}, /{ui}/c/{conceptId}, /{ui}/p, /{ui}/seforim unchanged. (2) equivalent(): topic↔topic, concept↔concept (Live concept merged into a topic → topic), story↔story, thread → Quiet edition home #indexes (no Quiet page in this cut). LinkData gains hasPage(site, kind, id) read from layer page flags. Below-threshold entities resolve to the index anchor on Quiet and to null (no link) on Live. canonicalFor: Live topic/story/person/work/concept → Quiet page when hasPage('quiet'), else no canonical and the page marked noindex (helper noindexFor). Thread pages are always noindex in this cut. (3) legacyPaths(site, kind, oldKey) for the old Quiet /people/, /sources/, /inyanim/{conceptKey}/ and Live /p/, /c/, /seforim/ (+ chapter) addresses. Note: an old Quiet /inyanim/{conceptKey}/ whose key equals a topic id now IS that topic page (one inyan, one entry: Quiet C4.1.6) and needs no redirect. (4) i18n vocab (en/yi), shared by both sites: the corpus AI-label sentences (Quiet C6 'The label' wording, Live E.3 wording, and the reviewed variants), person type group names in sefer order, topic grade names, 'retold from N tellings', 'told in N other shiurim', 'also taught in', 'throughout', 'notes not prepared yet', the report-entry wording. Yiddish uses 'דער משגיח' for the Rav.",
+     "acceptance": "Round-trip tests for every new route in both editions; equivalent(quiet→live→quiet) is identity for topic/concept/story; a merged concept maps to its topic; canonicalFor never returns a listen.* URL and returns null for threads; legacyPaths covers every old route shape; purity test still passes (no Node/DOM); i18n type test: every new key exists in en and yi. Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
+    },
+    {
+     "id": "C1.5",
+     "title": "@emunas/search-core on the corpus layer: topic keywords, corpus-id facets, EntityDoc, clean synonyms in normalizeQuery",
+     "paths": [
+      "packages/search-core/**"
+     ],
+     "dependsOn": [
+      "C1.2",
+      "C1.3"
+     ],
+     "brief": "Read first: docs/sites/corpus-wave-plan.md §1 rule 1, §3.6; docs/sites/concept-quiet-corpus.md C3 (candidateTopics replaced), C5 'Search'; docs/sites/concept-live-corpus.md D 'Search and the command bar', F.2 'ASR variants for search'; packages/search-core/README.md. Deliverables: (1) SearchDoc.keywords = the shiur's visible topic labels (en/yi/he) + topic aliases from .corpus/layer (low weight, never displayed). loadCandidateTopics and every read of extraction candidateTopics are removed (C9 retired). (2) DocFacets/MomentRow entities switch to corpus ids from .corpus/layer/shiur/<id>.json and add topics (section rows: the chapter's topicIds; other rows: shiur topics with salience ≥0.6). Add 'topics' to the allow-lists and to the type assertions. (3) EntityDoc (.corpus/search/entities.ndjson): kind topic|concept|person|work, id, labels, synonyms (from layer synonyms.json only), visible count, page flags. Only entities listed on at least one site, never type-other people. Story and thread docs are second cut, so leave them out. (4) normalizeQuery accepts an optional synonym table (built from synonyms.json) and expands to entity ids and canonical forms; the existing normalize tables keep working. No ASR variant can enter: there is no input path for one, and policy.search.asrVariants must be false (assert). (5) Hash scheme bump (SEARCH_SCHEMA_VERSION). (6) The leak test runs the C1.3 guard, including the alias-key assertion, over docs/moments/entities NDJSON. Keep buildSearchDoc's existing call signature working (new inputs optional), so the Live emitter compiles unchanged until C1.7 adopts it.",
+     "acceptance": "Tests: emitted field sets equal the allow-lists exactly at every level; no candidateTopics anywhere (type + grep); keywords contain topic labels only; a fixture synonym that is not a display field is rejected at build; 'hester' expands to topic hester-panim and concept hester-panim; 'Hashem Tov' does NOT expand to baal-shem-tov (a known ASR variant); hashes stable across runs; guard post-pass over the NDJSON clean on mini and real data. Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
+    }
+   ],
+   "packages": [
+    {
+     "id": "C1.6",
+     "title": "emunas-api and sync: topic entity type, corpus-id entities",
+     "paths": [
+      "workers/api/**"
+     ],
+     "dependsOn": [
+      "C1.5"
+     ],
+     "brief": "Read first: docs/sites/corpus-wave-plan.md §3.6; workers/api/README.md, workers/api/sync/README.md; docs/sites/concept-live-corpus.md D 'Search' (section hits filterable by topic, later UI). Precondition: the concurrent real-data drift fix in workers/api/src has landed. Rebase on it, do not redo it. Deliverables: ENTITY_TYPES += 'topic'; sync rows accept MomentRow.entities.topics (exactKeys) and write moment_entities rows of type topic. If the D1 type column is constrained, add a migration. The search API accepts topic filters like the other entity filters. Ids are now corpus ids (no API change beyond the new type). Hash-diff sync re-writes changed rows only.",
+     "acceptance": "Unit tests for rows validation with topics; routes test filtering by topic; local sync (search:sync:local --dry-run) over the real search:build output reports the expected counts; the sync leak gate (corpus-guard) is clean. Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
+    },
+    {
+     "id": "C1.7",
+     "title": "Live data on the corpus layer: contract, emitter, loading rules (Today and room off corpus.json), redirects data, route stubs, prerender, budgets, pairing removal",
+     "paths": [
+      "apps/live/data-build/**",
+      "apps/live/app/data/**",
+      "apps/live/app/routes.ts",
+      "apps/live/app/routes/t.$topicId.tsx",
+      "apps/live/app/routes/th.$threadId.tsx",
+      "apps/live/app/routes/maasios.$storyId.tsx",
+      "apps/live/app/seo/**",
+      "apps/live/app/components/CorpusLabel.tsx",
+      "apps/live/app/features/today/** (data loading only)",
+      "apps/live/app/features/listening-room/{use-room-data.ts,ListeningRoom.tsx,tabs.tsx,context.ts,strings.ts} (data loading + counterpart removal only)",
+      "apps/live/app/features/series/** (side-by-side removal only)",
+      "apps/live/react-router.config.ts"
+     ],
+     "dependsOn": [
+      "C1.2",
+      "C1.4",
+      "C1.5"
+     ],
+     "brief": "Read first: docs/sites/corpus-wave-plan.md §3, §4 (Live loading table and budgets), §2; docs/sites/concept-live-corpus.md G (whole section, including the what-loads-when table), F.1, E.1, E.3, C.1–C.6 (data each view needs), F.3; apps/live/data-build/README.md, apps/live/app/data/README.md. Deliverables: (1) Contract types and strict schemas for new /data files: topics.json (tree: ids, labels, parents, counts only; a few KB), topic/<id>.json (description, hubs as inline cards, sub-topics, co-topics, threads, stories, first 30 moments) + topic/<id>.moments-<n>.json pages, thread/<id>.json, story/<id>.json, stories-index.json (no retellings: title, people ids, telling count, languages), glossary/<shard>.json (concept cards by id prefix), series/<id>.json gains synthesis (overview, keyThemes, arc oneLiners; absent for series with no synthesis), redirects.json (legacy + corpus, per route kind; lazy), explore/entities.json (entity id arrays per shiur for Explore, out of corpus.json; corpus.json keeps them until C3.1). (2) Entity id spaces switch to corpus ids: corpus.json entities, facets.json people/concepts/works (labels from layer; type-other people and below-threshold entities omitted), entity/p and entity/c files keyed by corpus id (people ≥3 not other, concepts ≥3 not merged), works/work files keyed by corpus work id, quick-index entity names from EntityDoc. Keep legacy stories.json and the shapes the current pages read until C2/C3 rebuild them. (3) Self-contained shiur file (G.1): series title, related titles, section topic chips (id + label), story counts and page flags, thread marks or the two-member inline pointer, term labels, sources' workId. Growth ≤ 2 KiB br per shiur at the median. (4) Loading rules: Today renders from today.json alone. today.json carries inline cards for every listed shiur and, per occasion, the occasion-mix first items (moment ids, t, titles) from the occasion→topic map. The listening room renders from the shiur file alone. TodayPage and use-room-data stop loading corpus.json and facets.json; corpus.json is loaded only by Explore, search and shelf. (5) Pairing removal (F.1): drop the room's 'counterpart in the other language' (siblingSeries) item and the series 'both'/side-by-side view and 'also in' link; the series emitter stops emitting sibling. (6) Route stubs + routes.ts entries for t/:topicId, th/:threadId, maasios/:storyId (C2/C3 packages replace the stubs). Prerender paths: topics (all), threads (page flag), stories (page flag) per UI language. Canonical/noindex via links helpers. (7) Budgets in budgets.ts + tests (plan §4): topic tree ≤ 8 KiB br, topic file ≤ 24 KiB br, thread/story file ≤ 6 KiB br, stories-index ≤ 120 KiB br, glossary shard ≤ 8 KiB br, today ≤ 30 KiB br, file count ≤ 18,000. (8) Regenerate app/data/fixtures from the emitter over the mini corpus (+ layer fixture). Precondition: the concurrent drift fix in budgets.ts has landed.",
+     "acceptance": "Schema tests for every new file (strict; unknown key fails); emit tests on the mini corpus: every link target id has a file when its page flag is set and none otherwise; no layer text in corpus.json/facets.json/today.json/shiur files except labels and the today mix titles; unit test with a fetch spy: TodayPage and the listening room request no corpus.json, facets.json, topics.json, stories-index.json or glossary file; series page renders no 'both' view; room Related has no counterpart item; budgets test fires for each new budget; real-data emit validates and budgets pass; fixtures test green; guard post over the emitted tree clean. Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
+    },
+    {
+     "id": "C1.8",
+     "title": "Quiet corpus-layer reader, shared entry components (label, report link, grades), Indexes block, legacy redirects, pairing removal",
+     "paths": [
+      "apps/quiet/src/components/corpus/**",
+      "apps/quiet/src/lib/nav.ts",
+      "apps/quiet/src/pages/[ed]/index.astro",
+      "apps/quiet/scripts/redirects.ts",
+      "apps/quiet/package.json (build script line only)",
+      "apps/quiet/worker/**",
+      "apps/quiet/public/_headers",
+      "apps/quiet/test/redirects.test.ts",
+      "apps/quiet/src/components/catalog/strings.ts",
+      "apps/quiet/src/pages/[ed]/series/[series].astro (sibling line removal only)",
+      "apps/quiet/src/components/catalog/model.ts (sibling removal only)"
+     ],
+     "dependsOn": [
+      "C1.2",
+      "C1.4"
+     ],
+     "brief": "Read first: docs/sites/corpus-wave-plan.md §3, §5 (Quiet redirects), §2; docs/sites/concept-quiet-corpus.md C5 (navigation table and addresses), C6 'The label' and 'Reporting', C3; apps/quiet/src/components/indexes/corpus.ts (pattern to follow); docs/sites/ops-runbook.md (static assets). Deliverables: (1) components/corpus/layer.ts: build-time reader of .corpus/layer/ with typed accessors and hasPage lookups. It reads only .corpus; a missing layer gives empty indexes plus a warning. (2) Shared Astro components: EntityLabel (generated-index heading note and the page-foot note; the reviewed variant drops 'not reviewed'), ReportEntry (a mail link pre-filled with kind, id and the three options in Quiet C6), GradeList (three-grade shiur rows: principal/plain/one-line section time link), EntryHead (headword, Hebrew beside English, 'ראה גם' line). Each has its own strings.ts. (3) Title page 'indexes' block and nav section matcher in the order of Quiet C5 (ענינים · ערכים · שמות · מראי מקומות · מעשיות · לוח · שנים), with counts from the layer; inyanim now means topics, erachim the glossary. (4) Legacy redirects (plan §5): scripts/redirects.ts runs after astro build. It turns layer redirects.json (legacy + corpus) into paths via links.legacyPaths/formatQuiet. Old paths whose page still exists in dist are skipped. Up to policy.quiet.redirects.maxRules (default 1,900; the platform allows 2,000 static rules) are written as 301 lines in dist/_redirects, most-cited first. The rest become static stub pages at the old path: meta refresh 0, rel=canonical to the target, robots noindex, a visible link. Unmatched old keys go to the index page. Add `_redirects` handling to the headers/worker config tests if needed. (5) Pairing removal: the series page's 'also in <language>' sibling line goes (Quiet C4.1: nothing pairs them; Live F.1).",
+     "acceptance": "Unit tests: the reader on the mini layer; component render tests (label variants, report mailto contains kind+id, grade rendering); redirects.test.ts: on the mini corpus every legacy path resolves to exactly one target that exists in dist or is an index page, _redirects passes the platform limits (≤2,000 static rules, line length), and stubs are noindex with canonical; a real-data run prints rule and stub counts; the series page has no sibling link. Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
+    }
+   ]
+  },
+  {
+   "wave": "C2",
+   "lead": [],
+   "packages": [
+    {
+     "id": "C2.1",
+     "title": "Quiet names, works and the glossary (שמות, מראי מקומות, ערכים) on merged entities",
+     "paths": [
+      "apps/quiet/src/components/indexes/**",
+      "apps/quiet/src/components/names/**",
+      "apps/quiet/src/components/glossary/**",
+      "apps/quiet/src/pages/[ed]/people/**",
+      "apps/quiet/src/pages/[ed]/sources/**",
+      "apps/quiet/src/pages/[ed]/erachim/**"
+     ],
+     "dependsOn": [
+      "C1.8"
+     ],
+     "brief": "Read first: docs/sites/concept-quiet-corpus.md C4.2 (glossary), C4.3 (names), C4.4 (works), C6 (who gets a page, filters, label), C3 (works ordering table kept); docs/sites/corpus-wave-plan.md §2, §3. Deliverables: people index by type group in sefer order (תנ\"ך, חז\"ל, ראשונים, אחרונים, צדיקי החסידות, others), alphabetical by nameHe/nameYi/nameEn per edition, aliases as 'also:' and 'ראה' lines; type-other lines only from 3 shiurim, no other-type pages, family excluded (layer flags). Person page: names, his seforim (authorPersonId), stories about him (merged stories, from the layer), then shiurim. Passim people (≥100 shiurim, policy) put the list on /all/. Works: headword titleHe, author link, Sefaria via sefariaIndexTitle, the reference-order layout from aggregate works keyed by workId, a one-line pointer to the person with the same subject (authorPersonId or sameAs, no slug match), page from 2 shiurim, never generic. Glossary at /erachim/: one long aleph–tav page (definition, gloss, count, 'throughout' for passim). An entry page from 5 shiurim (policy) with exampleRefs as section time links. Concepts merged into a topic (sameAs) point to the topic. Labels and report links via C1.8 components. Do not delete legacy modules other pages may still import (C3.1 cleans up).",
+     "acceptance": "Model tests on the mini layer for each index and page type; real-data build test: page counts equal the layer page flags; no page for an other-type person or a concept below 5; no link to a needs_review shiur; every page has exactly one AI label and one report link; a merged-into-topic concept has no glossary page and its line links to the topic. Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
+    },
+    {
+     "id": "C2.2",
+     "title": "Quiet topic index (מפתח הענינים): tree page, topic pages with three grades, gateway pages, calendar cross-line",
+     "paths": [
+      "apps/quiet/src/pages/[ed]/inyanim/**",
+      "apps/quiet/src/components/topics/**",
+      "apps/quiet/src/components/calendar/**",
+      "apps/quiet/src/pages/[ed]/calendar/**"
+     ],
+     "dependsOn": [
+      "C1.8"
+     ],
+     "brief": "Read first: docs/sites/concept-quiet-corpus.md C4.1 (all of it, including 'Topics and the calendar'), C6, C7 item 2; docs/sites/corpus-wave-plan.md §3.3 occasion-topics. Deliverables: the tree page (17 gates, level-2 entries with counts, level-3 run in after a dash; Hebrew headword, English beside it in the en edition and sorted by it). Topic page parts 1–4 and 6 of C4.1 (part 5, recurring teachings, is second cut): breadcrumb + ראה גם, description as notes (absent when null), begin here (≤10, layer hubs), three grades in catalog order with language and year on each row, and the concept definition under the headword when sameAs.conceptId. Gateway layout for level 1 and topics above policy.quiet.gatewayAbove (150), with the full list on /all/. The one-line rule on topic and calendar pages. The calendar parsha/zman page gains 'X is also spoken about in N shiurim said at other times → ענינים: X' from occasion-topics.json. The topic page marks rows that the catalog places on that occasion. The old /inyanim/[concept] route is replaced by /inyanim/[topic].",
+     "acceptance": "Model tests (grades, gateway split, ordering) on the mini layer; real-data build: 207 topic pages per edition (or the layer count), grade counts sum to the visible recount, no other_speaker section appears, calendar cross-line counts match occasion-topics; axe clean on a tree and a topic page. Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
+    },
+    {
+     "id": "C2.3",
+     "title": "Quiet stories (מעשיות) on merged stories, and series introductions",
+     "paths": [
+      "apps/quiet/src/pages/[ed]/stories/**",
+      "apps/quiet/src/components/stories/**",
+      "apps/quiet/src/pages/[ed]/series/**",
+      "apps/quiet/src/components/catalog/**"
+     ],
+     "dependsOn": [
+      "C1.8"
+     ],
+     "brief": "Read first: docs/sites/concept-quiet-corpus.md C4.5 (stories), C4.7 (series), C6; docs/sites/concept-live-corpus.md F.1 (no pairing). Deliverables: story pages for stories with ≥2 visible tellings: title, people (unresolved names plain text), the merged retelling under 'Retold here from N tellings; details differ from one to another. Hear it in the shiur.', then where he tells it, ordered by year (undated last), each with shiur, occasion, language and telling time. Stories index in three parts: most retold (≥4 tellings), by person in the שמות groups, without a name (alphabetical). Single-telling stories are listed with a link to the moment in the shiur. Series page: the catalog name stays the title, the generated title becomes a subtitle in the notes area, then the overview, key themes, and arc one-liners as each part's line. A non-visible part keeps its row with 'notes not prepared yet'. A series with no synthesis or no visible parts shows no synthesis UI.",
+     "acceptance": "Model tests; real-data build: story page count = layer page flags (≈312 today), the merged-story redirect target has a page, retelling text appears only under the label, shabbos-tefilah-en has no synthesis block, tanya-yi shows the missing-part row; no sibling/pairing anywhere. Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
+    },
+    {
+     "id": "C2.4",
+     "title": "Quiet shiur page additions: ענינים line, entity links by id, 'told in N other shiurim', sources by work id, labels",
+     "paths": [
+      "apps/quiet/src/components/shiur/**",
+      "apps/quiet/src/pages/[ed]/shiur/**"
+     ],
+     "dependsOn": [
+      "C1.8"
+     ],
+     "brief": "Read first: docs/sites/concept-quiet-corpus.md C4.8 (all), C4.5 last line, C4.2 'On the shiur page'; docs/sites/corpus-wave-plan.md §3.3 per-shiur refs. Deliverables: under the abstract, one line of up to five topics with salience ≥0.6 as links (no section-level topics in the outline); 'mentioned in this shiur' linked by entity id with labels from the layer (merged names land on one page; no-page entities link the index anchor or stay plain); sources link to the work entry by workId; each story with ≥2 visible tellings gets 'told in N other shiurim →'; the catalog-place block stays catalog-only. No teaching-cluster lines in this cut (Quiet C7 item 6 is second cut).",
+     "acceptance": "Shiur-view model tests on mini fixtures; real-data build: no topic line on a catalog-only shiur, no link to a non-page entity path, story counts match the layer, the page order is unchanged otherwise; existing shiur-page tests pass. Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
+    },
+    {
+     "id": "C2.5",
+     "title": "Live topics: topic map in Explore, topic pages, topic facet, merged facets, topic mix",
+     "paths": [
+      "apps/live/app/features/explore/**",
+      "apps/live/app/features/topics/**",
+      "apps/live/app/features/mix/**",
+      "apps/live/app/routes/t.$topicId.tsx",
+      "apps/live/app/routes/explore.tsx"
+     ],
+     "dependsOn": [
+      "C1.7"
+     ],
+     "brief": "Read first: docs/sites/concept-live-corpus.md C.2 (map, topic page items 1–6 and 8; item 7 'over the years' is second cut), C.3 'Topic mix', D 'Explore', E.1, E.2, E.3, G; docs/sites/corpus-wave-plan.md §4. Deliverables: Explore opens on the 17 level-1 tiles with counts, which open in place to level 2. The facet column, lenses and results stay one tap behind and unchanged. The Topic facet (three-level picker) runs on explore/entities.json, loaded when Explore opens. Person/concept/sefer facets switch to merged ids; concepts above 1/4 of shiurim are dropped by rule. Topic page from topic/<id>.json: label, Hebrew name, breadcrumb, description, AI label, Play this topic, start here, threads in this topic (≥3 → link; two-member → a line, no link), stories told here, all shiurim by salience then year with 'touched on in' rows linking to the section, sub-topics and often-together. A topic with a concept sameAs shows its definition as 'the term'. Topic mix (features/mix/model.ts, pure): sections tagged with the topic from the moments pages, main/story kinds only, the listener's language filter, high-salience shiurim first, one per shiur until the pool runs out, 12 items. The header states sections/shiurim/duration and the auto-assembled label. Plays through the existing moment queue; save/share as an ordinary playlist link.",
+     "acceptance": "Component tests with fixture fetch: tiles render counts, topic page renders all parts, a null description is absent; mix model unit tests (ordering, language filter, one-per-shiur, deterministic, no other_speaker kind); a fetch-spy test proves opening a topic page loads only topic/<id>.json (+ the tree when Explore is open); the facet test proves no type-other person appears. Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
+    },
+    {
+     "id": "C2.6",
+     "title": "Live entity pages on merged people, works and concepts, with router redirects",
+     "paths": [
+      "apps/live/app/features/entities/**",
+      "apps/live/app/features/seforim/**",
+      "apps/live/app/routes/p.$personId.tsx",
+      "apps/live/app/routes/c.$conceptId.tsx",
+      "apps/live/app/routes/seforim.tsx",
+      "apps/live/app/routes/seforim.$workId.tsx",
+      "apps/live/app/routes/seforim.$workId.$chapter.tsx"
+     ],
+     "dependsOn": [
+      "C1.7"
+     ],
+     "brief": "Read first: docs/sites/concept-live-corpus.md C.5 (people page groups and 'his sefer'; the typed People index is second cut), B 'Answer to the replace question', E.1, E.3, J.1; docs/sites/corpus-wave-plan.md §5 (Live redirects). Deliverables: person page on the merged id (names as given, aliases under 'also called', the three groups, the stories tab listing merged stories, 'his sefer' via authorPersonId). A 1–2-shiur person chip opens a small list, with no page. Concept page: definition with exampleRefs as play buttons, then shiurim. Seforim shelf on merged works via sourceWorkIds: the Sefaria link only with sefariaIndexTitle, works below 3 shiurim in a collapsed row, generic works not shelved; pasuk/kapitel views unchanged. Router redirects: on entity-file 404 the clientLoader loads /data/redirects.json (lazy) and `throw redirect()` to the new id. A concept merged into a topic redirects to /t/<topicId>. An unknown id gives the not-found page. The AI label sentence sits once under the title (reviewed variant when reviewed).",
+     "acceptance": "Route tests: a legacy person key, a legacy concept key, a corpus-retired id (chain) and a merged concept each redirect in one hop to the right URL; an unknown id is 404; first navigation to a valid entity does not fetch redirects.json; component tests for the label and the shelf collapse; no type-other person page reachable. Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
+    },
+    {
+     "id": "C2.7",
+     "title": "Live maasios on merged stories with the telling switcher",
+     "paths": [
+      "apps/live/app/features/maasios/**",
+      "apps/live/app/routes/maasios.tsx",
+      "apps/live/app/routes/maasios.$storyId.tsx"
+     ],
+     "dependsOn": [
+      "C1.7"
+     ],
+     "brief": "Read first: docs/sites/concept-live-corpus.md C.4 (all), E.1 story row, E.2 (no site-side merging; the 'possibly the same story' row is optional and capped), F.1 last paragraph. Deliverables: library from stories-index.json (no retellings) with facets by merged person and 'told more than once'; topic facet via the section join from the layer. Story card: title, people (raw names plain text, never links or facets), 'told N times', play one telling (language filter, then catalogued, then confidence). Story page (≥2 tellings): merged retelling once at the top under the label, every telling with year, language, shiur title and the title of the section it sits in, plus each telling's own retelling collapsed (from that shiur's file, loaded on expand). Single-telling stories expand in place and link to the moment. Stories-only mode skips stories heard this session and never plays two tellings of one story back to back.",
+     "acceptance": "Component tests on fixtures (card, switcher, collapse); queue unit test for stories-only mode; fetch-spy test: the Maasios library never fetches a retelling; the redirected story id resolves via the route. Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
+    }
+   ]
+  },
+  {
+   "wave": "C3",
+   "lead": [
+    {
+     "id": "C3.1",
+     "title": "Retire the site-derived entity layer and legacy fields",
+     "paths": [
+      "packages/corpus/src/aggregate/**",
+      "packages/corpus/src/layer/legacy.ts",
+      "packages/corpus/test/aggregate/**",
+      "packages/normalize/src/tables/{people,concepts}.ts (stop-list/alias tables only if unused)",
+      "apps/live/data-build/**",
+      "apps/live/app/data/**",
+      "apps/quiet/src/components/indexes/** (dead code only)",
+      "apps/quiet/src/pages/[ed]/inyanim/** (dead files only)",
+      "packages/search-core/** (dead code only)",
+      "docs/sites/integration-plan.md (§5.1 file list and §2.2 table rows only)"
+     ],
+     "dependsOn": [
+      "C2.1",
+      "C2.2",
+      "C2.3",
+      "C2.4",
+      "C2.5",
+      "C2.6",
+      "C2.7"
+     ],
+     "brief": "Read first: docs/sites/concept-quiet-corpus.md C3 'Replaced'; docs/sites/concept-live-corpus.md A, B 'Answer to the replace question'; docs/sites/corpus-wave-plan.md §3.7. Deliverables: remove the legacy aggregate people.json, concepts.json, stories.json, entities.json and SeriesEntry.sibling from .corpus. Keep a redirect-only legacy keyer (layer/legacy.ts) so layer redirects.json keeps covering old addresses. Remove Live legacy stories.json, entity arrays in corpus.json (moved to explore/entities.json in C1.7) and any facet built from raw strings. Remove dead Quiet index modules and search-core leftovers. Remove the concept stop-list/threshold path if nothing uses it. Update integration-plan §5.1 and §2.2 to the new files and URLs. A repo test greps app and package sources for imports of the removed files and types.",
+     "acceptance": "The grep test passes; all goldens updated with a reviewed diff; corpus.json br size drops (reported); site:build of both apps succeeds on real data; legacy redirects still resolve (C1.8 and C2.6 tests green). Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
+    }
+   ],
+   "packages": [
+    {
+     "id": "C3.2",
+     "title": "Live listening room on the corpus layer: topic chips, thread marks, story counts, merged sources, Related rebuilt",
+     "paths": [
+      "apps/live/app/features/listening-room/**",
+      "apps/live/app/routes/s.$shiurId.tsx"
+     ],
+     "dependsOn": [
+      "C3.1"
+     ],
+     "brief": "Read first: docs/sites/concept-live-corpus.md D 'Listening room' (all bullets), C.1 'Thresholds' (two-member inline line), E.2 last bullet, F.1, G (the room renders from the shiur file only). Deliverables: header line of the top three topics (salience ≥0.5); chapter topic chips that open the topic page in a side pane (desktop) or sheet (phone) while audio continues, reusing features/topics. Insight thread mark 'taught in N other shiurim, Y1 to Y2' opens the thread. A two-member cluster is the inline line 'also taught in <shiur>, <year>' with a play button, never a headline. Stories tab 'told in N other shiurim' opens the story page; Sources grouped by merged work. Related, in order: threads through this shiur, main topics 'more on this', other years of the same parsha/zman, embedding neighbours labelled 'similar, suggested automatically'; no counterpart item. End of shiur: next part in series, else 'continue a thread' or 'more on <top topic>'; no auto-play across shiurim.",
+     "acceptance": "Room tests on fixtures for every bullet; a fetch-spy test shows first render needs only shiur/<id>.json (the side pane fetches topic/<id>.json on tap); no counterpart string in the room; axe clean. Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
+    },
+    {
+     "id": "C3.3",
+     "title": "Live thread pages ('A teaching the Rav returns to')",
+     "paths": [
+      "apps/live/app/features/threads/**",
+      "apps/live/app/routes/th.$threadId.tsx"
+     ],
+     "dependsOn": [
+      "C3.1"
+     ],
+     "brief": "Read first: docs/sites/concept-live-corpus.md C.1 (all: page, thresholds, language, wording), E.3, F.1, K (no browsable list of all threads). Deliverables: page for clusters with ≥3 visible shiurim: label, summary, heading 'A teaching the Rav returns to' + AI label. Members on a vertical line by Hebrew year when ≥3 dated members, else a plain list, with an undated group last. Each row: year, audio-language mark, catalog title, section title, per-shiur insight text; tap plays the insight moment. 'Play the thread' queues members in year order honouring the shiur-language filter, with a note on left-out members ('3 more in Yiddish'). No claim that wording is the same; no counterpart language. noindex (plan §2).",
+     "acceptance": "Component tests (timeline vs list switch, language note, ordering, undated group); queue test; a page for a two-member cluster is a 404; the route is noindex. Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
+    },
+    {
+     "id": "C3.4",
+     "title": "Live Today: occasion mix",
+     "paths": [
+      "apps/live/app/features/today/**",
+      "apps/live/app/routes/_ui.index.tsx",
+      "apps/live/app/features/mix/occasion.ts",
+      "apps/live/app/features/mix/occasion.test.ts"
+     ],
+     "dependsOn": [
+      "C3.1"
+     ],
+     "brief": "Read first: docs/sites/concept-live-corpus.md C.3 'Occasion mix', D 'Today' (only the mix button is first cut; 'also spoken about' and the thread-based moment are second cut), E.5, G first row. Deliverables: 'This week' gains one button that plays the occasion mix. The first items come inline from today.json, so the button plays without another fetch; the rest come from the occasion's topic moments page on demand. The pool is drawn from both catalog shiurim of the occasion and the topic's section tags. Featured eligibility per policy: no shiur with otherSpeakerShare ≥0.5, no topic in policy.featured.excludeTopicIds (empty by default). The mix is labelled as auto-assembled from AI tags.",
+     "acceptance": "Unit tests for occasion.ts (pool, eligibility, determinism); a Today test with fetch spy: first paint requests only today.json (and shell); pressing play fetches at most one topic moments page; no corpus.json request. Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
+    },
+    {
+     "id": "C3.5",
+     "title": "Live series overview and arc",
+     "paths": [
+      "apps/live/app/features/series/**",
+      "apps/live/app/routes/series.tsx",
+      "apps/live/app/routes/series.$seriesId.tsx"
+     ],
+     "dependsOn": [
+      "C3.1"
+     ],
+     "brief": "Read first: docs/sites/concept-live-corpus.md C.6 (overview, keyThemes as plain text, arc one-liners; 'position in the dock' and 'Tanya by section' are second cut), F.1. Deliverables: the series page opens with the generated title and overview under the AI label, keyThemes as a short unlinked list, and the ordered path using arc oneLiner in place of the per-shiur oneLiner. A non-visible part shows its row without a line. A series without synthesis renders as today with no empty synthesis UI. No side-by-side and no 'also in' link (removed in C1.7; keep it removed).",
+     "acceptance": "Component tests: synthesis present/absent, missing part row, keyThemes not links; real-fixture snapshot of tanya-yi; no pairing UI. Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
+    },
+    {
+     "id": "C3.6",
+     "title": "Live command bar and search page on merged entities",
+     "paths": [
+      "apps/live/app/features/command-bar/**",
+      "apps/live/app/routes/search.tsx"
+     ],
+     "dependsOn": [
+      "C3.1"
+     ],
+     "brief": "Read first: docs/sites/concept-live-corpus.md D 'Search and the command bar' (first cut: merged ids only; grouped topic-first suggestions and thread/story documents are second cut, I.10), E.1 (no suggestion for below-threshold or type-other people), F.2. Deliverables: entity suggestions and result labels come from the quick index's EntityDoc-based entries (topics, concepts, people, works with a Live page), linking to the new routes. Old string-keyed entity suggestions are removed. The search page's entity filters use corpus ids. A topic filter chip is optional and only if trivial. Query expansion uses normalizeQuery with the clean synonym table.",
+     "acceptance": "Tests: 'hester' suggests the topic; 'Hashem Tov' suggests nothing from an ASR mapping; no type-other person suggested; the search page loads corpus.json only on the search route. Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
+    },
+    {
+     "id": "C3.7",
+     "title": "Quiet search: synonyms and headword results",
+     "paths": [
+      "apps/quiet/scripts/build-search.ts",
+      "apps/quiet/src/scripts/search.ts",
+      "apps/quiet/src/pages/[ed]/search/**",
+      "apps/quiet/test/search.test.ts"
+     ],
+     "dependsOn": [
+      "C3.1"
+     ],
+     "brief": "Read first: docs/sites/concept-quiet-corpus.md C5 'Search'; docs/sites/corpus-wave-plan.md §3.6; apps/quiet/scripts/build-search.ts header. Deliverables: Pagefind records gain topic keywords (from SearchDoc.keywords) and entity records from entities.ndjson. Each entity record's content is its labels + clean synonyms, its url is its Quiet page or index anchor, and it carries a kind filter. The client puts a matching headword record first ('ענין: השגחה פרטית · 120 shiurim'), then shiurim. Query variants come from normalizeQuery with the synonym table. Every record still passes the corpus-guard Pagefind checker, which now includes the alias-key and raw-ban checks. Without script, the search page points to the indexes.",
+     "acceptance": "search.test.ts: 'Chidushei HaRim' and 'Chiddushei HaRim' find the same person record; 'Sanzer Rav' finds the Divrei Chaim; a headword query returns the entry first; a planted ASR synonym fails the checker; no candidateTopics in any record. Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
+    },
+    {
+     "id": "C3.8",
+     "title": "End-to-end, first-load and redirect gates, and the real-data chain",
+     "paths": [
+      "apps/quiet/test/e2e/**",
+      "apps/live/test/e2e/**",
+      "tests/cross-site/**",
+      "tests/chain/**",
+      ".github/workflows/ci.yml",
+      ".github/workflows/deploy.yml",
+      "package.json (one site:chain script only)"
+     ],
+     "dependsOn": [
+      "C3.1"
+     ],
+     "brief": "Read first: docs/sites/corpus-wave-plan.md §4, §6; docs/sites/integration-plan.md §4; docs/sites/concept-live-corpus.md G; docs/sites/concept-quiet-corpus.md C5 addresses. Deliverables: (1) Playwright: Quiet tree/topic/glossary/person/work/story/series pages in both editions with JS off; Live topic map, topic page, mix playback start, thread page, story switcher, entity redirect. (2) First-load gate (Live): cold loads of Today and /s/<id> record network requests. None of corpus.json, facets.json, topics.json, topic/*, thread/*, story/*, stories-index.json, glossary/*, explore/* may appear before first paint, and Lighthouse budgets stay as W5.1. (3) Redirect gate: every legacy path in the layer redirects.json (both sites) lands on a 200 page in one hop (Quiet: _redirects or stub; Live: router). (4) Cross-site: equivalent links for topic/concept/story land on matching content. (5) tests/chain/site-chain.ts + `npm run site:chain`: corpus:build → guard pre → corpus:build --suppress → search:build → live data:build → quiet build → live build → guard post → budgets. Exits non-zero on any step and prints the guard counts. deploy.yml/ci.yml use the same order (already close; add the layer-aware guard flags).",
+     "acceptance": "All new e2e specs pass locally on real data; the chain script runs green end to end with guard post 0 findings; a planted asrVariants key in a layer file and a planted ASR synonym each make the chain fail at guard post. Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
+    }
+   ]
+  }
+ ]
+}
