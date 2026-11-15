@@ -1,0 +1,26 @@
+{
+  "name": "@emunas/normalize",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Text folding, alias tables (parsha, occasions, works, people, concepts), stable keys, Sefaria ref parser and Hebrew-year gematria. Pure and browser-safe.",
+  "sideEffects": false,
+  "exports": {
+    ".": "./src/index.ts",
+    "./fold": "./src/fold.ts",
+    "./gematria": "./src/gematria.ts",
+    "./sefaria": "./src/sefaria.ts",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.node.json",
+    "test": "vitest run",
+    "seed": "tsx scripts/seed.ts",
+    "inspect": "tsx scripts/inspect.ts"
+  },
+  "devDependencies": {
+    "@emunas/config": "0.0.0",
+    "@types/node": "26.6.6",
+    "vitest": "5.0.5"
+  }
+}
