@@ -24,6 +24,7 @@
   "aliases": [],
   "shiurIds": [
    "en-parsha-en-mtvs-msy-01",
+   "en-zmanim-en-lg-bvmr-01",
    "en-zmanim-en-t-bb-04",
    "yi-current-unc-bachurim-11",
    "yi-current-unc-ey-bachurim-5769-05",
@@ -32,22 +33,11 @@
   ]
  },
  {
-  "id": "abaye-and-rava",
-  "nameHe": "אביי ורבא",
-  "nameEn": "Abaye and Rava",
-  "nameYi": "אביי און רבא",
-  "type": "chazal",
-  "aliases": [],
-  "shiurIds": [
-   "en-zmanim-en-lg-bvmr-01"
-  ]
- },
- {
   "id": "abba-sikra",
   "nameHe": "אבא סקרא",
   "nameEn": "Abba Sikra",
   "nameYi": "אבא סקרא",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "yi-parshas-hashavua-lk-lk-06"
@@ -229,20 +219,6 @@
   ]
  },
  {
-  "id": "adam-and-chava",
-  "nameHe": "אדם וחוה",
-  "nameEn": "Adam and Chava",
-  "nameYi": "אדם און חוה",
-  "type": "tanach",
-  "aliases": [],
-  "shiurIds": [
-   "en-miscellaneous-en-09",
-   "en-parsha-en-bshlch-01",
-   "en-zmanim-en-prh-02",
-   "en-zmanim-en-shklym-01"
-  ]
- },
- {
   "id": "adam-harishon",
   "nameHe": "אדם הראשון",
   "nameEn": "Adam HaRishon",
@@ -257,6 +233,7 @@
    "en-miscellaneous-en-01",
    "en-miscellaneous-en-02",
    "en-miscellaneous-en-03",
+   "en-miscellaneous-en-09",
    "en-miscellaneous-en-12",
    "en-miscellaneous-en-13",
    "en-miscellaneous-en-17",
@@ -264,6 +241,7 @@
    "en-parsha-en-bhlvsk-03",
    "en-parsha-en-bhlvsk-04",
    "en-parsha-en-blk-01",
+   "en-parsha-en-bshlch-01",
    "en-parsha-en-bshlch-03",
    "en-parsha-en-chyy-shrh-03",
    "en-parsha-en-dbrym-01",
@@ -310,12 +288,14 @@
    "en-zmanim-en-nysn-03",
    "en-zmanim-en-nysn-04",
    "en-zmanim-en-prh-01",
+   "en-zmanim-en-prh-02",
    "en-zmanim-en-psch-06",
    "en-zmanim-en-pvrym-14",
    "en-zmanim-en-rsh-hshnh-02",
    "en-zmanim-en-rsh-hshnh-03",
    "en-zmanim-en-shbvvs-02",
    "en-zmanim-en-shbvvs-children-06",
+   "en-zmanim-en-shklym-01",
    "en-zmanim-en-smvz-01",
    "en-zmanim-en-spyrh-02",
    "en-zmanim-en-tv-bshbt-01",
@@ -633,7 +613,7 @@
   "nameHe": "אל גור",
   "nameEn": "Al Gore",
   "nameYi": "על גאר",
-  "type": "other",
+  "type": "ruler",
   "aliases": [],
   "shiurIds": [
    "en-miscellaneous-en-07"
@@ -683,7 +663,7 @@
   "nameHe": "אלכסנדר מוקדון",
   "nameEn": "Alexander the Great",
   "nameYi": "אלכסנדר מוקדון",
-  "type": "other",
+  "type": "ruler",
   "aliases": [
    "Alexander"
   ],
@@ -819,7 +799,7 @@
   "nameHe": "אנטונינוס",
   "nameEn": "Antoninus",
   "nameYi": "אנטונינוס",
-  "type": "other",
+  "type": "ruler",
   "aliases": [],
   "shiurIds": [
    "yi-parshas-hashavua-vychy-01",
@@ -842,7 +822,7 @@
   "nameHe": "אריאל שרון",
   "nameEn": "Ariel Sharon",
   "nameYi": "אריאל שרון",
-  "type": "other",
+  "type": "ruler",
   "aliases": [],
   "shiurIds": [
    "en-zmanim-en-pvrym-12"
@@ -1213,7 +1193,7 @@
   "nameHe": "אשמדאי",
   "nameEn": "Ashmedai",
   "nameYi": "אשמדאי",
-  "type": "other",
+  "type": "malach",
   "aliases": [],
   "shiurIds": [
    "en-emunah-en-23",
@@ -1268,6 +1248,17 @@
   "type": "tanach",
   "aliases": [],
   "shiurIds": [
+   "en-parsha-en-msy-03",
+   "en-parsha-en-shmyny-01",
+   "en-parsha-en-shmyny-02",
+   "en-tanya-en-39",
+   "en-zmanim-en-nysn-03",
+   "yi-parshas-hashavua-pnchs-01",
+   "yi-parshas-hashavua-pnchs-02",
+   "yi-parshas-hashavua-shmyny-01",
+   "yi-parshas-hashavua-unc-szry-mtzvr-01",
+   "yi-tanya-1-20",
+   "yi-zmanim-chnvkh-02",
    "yi-zmanim-spyrh-01"
   ]
  },
@@ -1310,9 +1301,20 @@
   "type": "tanach",
   "aliases": [],
   "shiurIds": [
+   "en-miscellaneous-en-01",
    "en-miscellaneous-en-18",
    "en-parsha-en-blk-01",
+   "en-parsha-en-bshlch-01",
+   "en-parsha-en-bshlch-02",
+   "en-parsha-en-bshlch-03",
    "en-parsha-en-ysrv-01",
+   "en-parsha-en-ysrv-02",
+   "en-zmanim-en-byn-hmtzrym-02",
+   "yi-parshas-hashavua-bshlch-04",
+   "yi-parshas-hashavua-mshptym-03",
+   "yi-parshas-hashavua-shmvs-01",
+   "yi-parshas-hashavua-shmvs-02",
+   "yi-parshas-hashavua-ysrv-02",
    "yi-zmanim-mhrl-gbvrs-h-03",
    "yi-zmanim-shbyy-shl-psch-02"
   ]
@@ -1917,7 +1919,10 @@
    "Azariah"
   ],
   "shiurIds": [
+   "yi-parshas-hashavua-lk-lk-05",
    "yi-parshas-hashavua-nch-08",
+   "yi-parshas-hashavua-ysrv-01",
+   "yi-shonos-29",
    "yi-zmanim-chnvkh-15-b"
   ]
  },
@@ -2591,7 +2596,7 @@
   "nameHe": "בר דרומא",
   "nameEn": "Bar Daroma",
   "nameYi": "בר דרומא",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "yi-parshas-hashavua-nch-08",
@@ -2603,11 +2608,17 @@
   "nameHe": "בר קמצא",
   "nameEn": "Bar Kamtza",
   "nameYi": "בר קמצא",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "en-parsha-en-blk-01",
+   "en-zmanim-en-lg-bvmr-05",
+   "en-zmanim-en-spyrh-02",
+   "yi-current-unc-bachurim-5771-14",
    "yi-parshas-hashavua-lk-lk-06",
+   "yi-parshas-hashavua-mtvs-msy-01",
+   "yi-parshas-hashavua-pnchs-02",
+   "yi-zmanim-byn-hmtzrym-03",
    "yi-zmanim-spyrh-04",
    "yi-zmanim-spyrh-07"
   ]
@@ -2617,7 +2628,7 @@
   "nameHe": "בר כוכבא",
   "nameEn": "Bar Kochba (Ben Koziva)",
   "nameYi": "בר כוכבא",
-  "type": "other",
+  "type": "ruler",
   "aliases": [
    "Ben Koziva",
    "Bar Koziva",
@@ -2765,7 +2776,7 @@
  {
   "id": "beis-aharon",
   "nameHe": "רבי אהרן מקארלין, בעל בית אהרן",
-  "nameEn": "the Beis Aharon (Rabbi Aharon of Karlin-Stolin)",
+  "nameEn": "the Beis Aharon (Rabbi Aharon II of Karlin-Stolin)",
   "nameYi": "דער בית אהרן",
   "type": "chassidic_rebbe",
   "aliases": [
@@ -2773,23 +2784,32 @@
    "the Beis Aharon of Karlin",
    "the Beis Aharon of Stolin"
   ],
+  "description": {
+   "en": "Rabbi Aharon of Karlin-Stolin, author of the Beis Aharon, son of Rabbi Asher of Stolin and grandson of Rabbi Aharon HaGadol of Karlin, who is a separate person.",
+   "yi": "רבי אהרן פון קארלין-סטאלין, דער בעל בית אהרן, דער זון פון רבי אשר פון סטאלין און דער אייניקל פון רבי אהרן הגדול פון קארלין."
+  },
   "shiurIds": [
-   "yi-kedushas-hashabbos-unc-02",
    "yi-parshas-hashavua-nch-09",
+   "yi-zmanim-svds-zs-chnvkh-03",
+   "yi-zmanim-pvrym-05",
+   "yi-zmanim-pvrym-10",
+   "yi-zmanim-nysn-08",
+   "yi-zmanim-lg-bvmr-01",
+   "yi-zmanim-lg-bvmr-04",
+   "yi-zmanim-svds-lg-bvmr-10",
+   "yi-zmanim-shbs-chzvn-01",
    "yi-shonos-09",
+   "yi-shonos-11",
+   "yi-tanya-1-03",
    "yi-tanya-1-20",
+   "en-miscellaneous-en-04",
    "yi-tanya-1-25",
+   "en-miscellaneous-en-09",
    "yi-tanya-1-46",
    "yi-tefila-heb-11",
    "yi-tefila-heb-16",
-   "yi-zmanim-lg-bvmr-01",
-   "yi-zmanim-lg-bvmr-04",
-   "yi-zmanim-nysn-08",
-   "yi-zmanim-pvrym-05",
-   "yi-zmanim-pvrym-10",
-   "yi-zmanim-shbs-chzvn-01",
-   "yi-zmanim-svds-lg-bvmr-10",
-   "yi-zmanim-svds-zs-chnvkh-03"
+   "yi-kedushas-hashabbos-unc-02",
+   "yi-current-unc-bachurim-5771-06"
   ]
  },
  {
@@ -2800,9 +2820,11 @@
   "type": "chassidic_rebbe",
   "aliases": [],
   "shiurIds": [
+   "en-miscellaneous-en-01",
    "yi-emunah-1-20",
    "yi-shonos-unc-47",
-   "yi-zmanim-lvl-04"
+   "yi-zmanim-lvl-04",
+   "yi-zmanim-psch-02"
   ]
  },
  {
@@ -2815,10 +2837,11 @@
    "Rav Yosef Dov of Brisk"
   ],
   "shiurIds": [
-   "en-miscellaneous-en-01",
-   "yi-current-unc-bachurim-5771-13",
+   "yi-parshas-hashavua-szry-mtzvr-02",
    "yi-emunah-1-07",
-   "yi-parshas-hashavua-szry-mtzvr-02"
+   "en-miscellaneous-en-01",
+   "en-emunah-en-09",
+   "yi-current-unc-bachurim-5771-13"
   ]
  },
  {
@@ -2841,6 +2864,7 @@
    "yi-parshas-hashavua-bshlch-02",
    "yi-parshas-hashavua-vr-04",
    "yi-parshas-hashavua-vyshb-04",
+   "yi-shiurim-labachurim-15",
    "yi-tanya-2-03",
    "yi-zmanim-chnvkh-12",
    "yi-zmanim-rsh-hshnh-04",
@@ -2870,22 +2894,12 @@
    "yi-parshas-hashavua-b-02",
    "yi-parshas-hashavua-bshlch-02",
    "yi-parshas-hashavua-vr-04",
+   "yi-shiurim-labachurim-15",
    "yi-shonos-01",
    "yi-tanya-2-03",
    "yi-zmanim-chnvkh-12",
    "yi-zmanim-rsh-hshnh-04",
    "yi-zmanim-svds-zs-chnvkh-05"
-  ]
- },
- {
-  "id": "beis-shammai-and-beis-hillel",
-  "nameHe": "בית שמאי ובית הלל",
-  "nameEn": "Beis Shammai and Beis Hillel",
-  "nameYi": "בית שמאי און בית הלל",
-  "type": "chazal",
-  "aliases": [],
-  "shiurIds": [
-   "yi-shiurim-labachurim-15"
   ]
  },
  {
@@ -2978,35 +2992,38 @@
  {
   "id": "belzer-rav",
   "nameHe": "האדמו\"ר מבעלזא",
-  "nameEn": "the Belzer Rav",
+  "nameEn": "the Belzer Rav (unspecified)",
   "nameYi": "דער בעלזער רב",
   "type": "chassidic_rebbe",
   "aliases": [
    "the Rebbe of Belz"
   ],
+  "description": {
+   "en": "Stands for \"the Belzer Rav\" or \"the Rebbe of Belz\" where a shiur does not say which Rebbe of Belz is meant. Where a story can be tied to one of them (Rabbi Shalom, Rabbi Yehoshua, Rabbi Yissachar Dov or Rabbi Aharon of Belz), it is listed under that Rebbe instead.",
+   "yi": "ווען אין א שיעור שטייט \"דער בעלזער רב\" אן א נאמען, און ס'איז נישט קלאר וואסערער פון די בעלזער רביים מ'מיינט. ווען א מעשה לאזט זיך צושטעלן צו איינעם פון זיי (רבי שלום, רבי יהושע, רבי יששכר דוב אדער רבי אהרן פון בעלזא), שטייט זי ביי יענעם רבי."
+  },
   "shiurIds": [
-   "en-emunah-en-14",
-   "en-miscellaneous-en-01",
-   "en-miscellaneous-en-06",
-   "en-miscellaneous-en-15",
    "en-parsha-en-vyr-02",
    "en-parsha-en-vyr-04",
+   "yi-parshas-hashavua-svldvs-01",
+   "yi-parshas-hashavua-shmvs-02",
+   "yi-parshas-hashavua-szry-mtzvr-02",
+   "yi-zmanim-chnvkh-07",
    "en-zmanim-en-pvrym-04",
    "en-zmanim-en-pvrym-09",
-   "yi-current-unc-bachurim-03",
-   "yi-current-unc-kayitz-5771-12",
-   "yi-parshas-hashavua-shmvs-02",
-   "yi-parshas-hashavua-svldvs-01",
-   "yi-parshas-hashavua-szry-mtzvr-02",
-   "yi-shiurim-labachurim-14",
-   "yi-shiurim-labachurim-15",
+   "yi-zmanim-shbvvs-06",
+   "yi-zmanim-shbvvs-09",
    "yi-shonos-15",
    "yi-shonos-22",
    "yi-shonos-35",
-   "yi-zmanim-chnvkh-07",
-   "yi-zmanim-shbvvs-06",
-   "yi-zmanim-shbvvs-09",
-   "yi-zmanim-shbvvs-10"
+   "en-miscellaneous-en-01",
+   "en-miscellaneous-en-06",
+   "en-miscellaneous-en-15",
+   "en-emunah-en-14",
+   "yi-shiurim-labachurim-14",
+   "yi-shiurim-labachurim-15",
+   "yi-current-unc-bachurim-03",
+   "yi-current-unc-kayitz-5771-12"
   ]
  },
  {
@@ -3287,19 +3304,20 @@
    "the Blazhever Rav"
   ],
   "shiurIds": [
+   "yi-parshas-hashavua-vyr-01",
+   "yi-parshas-hashavua-svldvs-01",
+   "yi-parshas-hashavua-dbrym-02",
    "en-parsha-en-bhlvsk-04",
+   "yi-zmanim-psch-08-a",
+   "yi-zmanim-spyrh-06",
+   "yi-zmanim-shbvvs-10",
    "en-zmanim-en-shbvvs-01",
    "en-zmanim-en-shbvvs-04",
-   "yi-current-unc-ey-bachurim-5769-31",
-   "yi-kedushas-hashabbos-unc-06",
-   "yi-parshas-hashavua-dbrym-02",
-   "yi-parshas-hashavua-svldvs-01",
-   "yi-parshas-hashavua-unc-szry-mtzvr-01",
-   "yi-parshas-hashavua-vyr-01",
    "yi-tefila-heb-40",
    "yi-tefila-heb-41",
-   "yi-zmanim-psch-08-a",
-   "yi-zmanim-spyrh-06"
+   "yi-parshas-hashavua-unc-szry-mtzvr-01",
+   "yi-kedushas-hashabbos-unc-06",
+   "yi-current-unc-ey-bachurim-5769-31"
   ]
  },
  {
@@ -3546,14 +3564,13 @@
    "the Brisker Rav, Reb Velvel"
   ],
   "shiurIds": [
-   "en-emunah-en-09",
-   "en-miscellaneous-en-15",
-   "en-parsha-en-bhr-bchksy-03",
    "en-parsha-en-chyy-shrh-02",
-   "yi-kedushas-hashabbos-unc-04",
    "yi-parshas-hashavua-svldvs-06",
+   "en-parsha-en-bhr-bchksy-03",
+   "en-miscellaneous-en-15",
+   "yi-tefila-heb-30",
    "yi-shiurim-labachurim-03",
-   "yi-tefila-heb-30"
+   "yi-kedushas-hashabbos-unc-04"
   ]
  },
  {
@@ -3561,7 +3578,7 @@
   "nameHe": "ג'יימס ביוקנן",
   "nameEn": "James Buchanan",
   "nameYi": "דזשעימס ביוקענען",
-  "type": "other",
+  "type": "ruler",
   "aliases": [
    "Buchanan"
   ],
@@ -3615,22 +3632,9 @@
   "aliases": [],
   "shiurIds": [
    "yi-current-unc-bachurim-5771-10",
-   "yi-zmanim-unc-hvshn-rbh-04-2"
-  ]
- },
- {
-  "id": "chaggai-zechariah-malachi",
-  "nameHe": "חגי זכריה ומלאכי",
-  "nameEn": "Chaggai, Zechariah and Malachi",
-  "nameYi": "חגי זכריה און מלאכי",
-  "type": "tanach",
-  "aliases": [
-   "Chaggai, Zechariah, Malachi and Mordechai",
-   "Chaggai, Zecharyah and Malachi"
-  ],
-  "shiurIds": [
    "yi-shiurim-labachurim-18",
-   "yi-shonos-02"
+   "yi-shonos-02",
+   "yi-zmanim-unc-hvshn-rbh-04-2"
   ]
  },
  {
@@ -3664,7 +3668,7 @@
   "nameHe": "צ'מברליין",
   "nameEn": "Chamberlain",
   "nameYi": "טשעמבערלעין",
-  "type": "other",
+  "type": "ruler",
   "aliases": [],
   "shiurIds": [
    "en-emunah-en-15"
@@ -3731,20 +3735,6 @@
   ]
  },
  {
-  "id": "chananya-mishael-azarya",
-  "nameHe": "חנניה מישאל ועזריה",
-  "nameEn": "Chananya, Mishael and Azarya",
-  "nameYi": "חנניה מישאל און עזריה",
-  "type": "tanach",
-  "aliases": [],
-  "shiurIds": [
-   "yi-parshas-hashavua-lk-lk-05",
-   "yi-parshas-hashavua-nch-08",
-   "yi-parshas-hashavua-ysrv-01",
-   "yi-shonos-29"
-  ]
- },
- {
   "id": "chananyah",
   "nameHe": "חנניה",
   "nameEn": "Chananyah",
@@ -3754,8 +3744,11 @@
    "Chananiah"
   ],
   "shiurIds": [
+   "yi-parshas-hashavua-lk-lk-05",
    "yi-parshas-hashavua-nch-08",
    "yi-parshas-hashavua-vr-02",
+   "yi-parshas-hashavua-ysrv-01",
+   "yi-shonos-29",
    "yi-zmanim-chnvkh-15-b"
   ]
  },
@@ -3781,7 +3774,7 @@
   "nameHe": "שארל דה גול",
   "nameEn": "Charles de Gaulle",
   "nameYi": "שארל דע גאל",
-  "type": "other",
+  "type": "ruler",
   "aliases": [],
   "shiurIds": [
    "en-parsha-en-vytz-02"
@@ -4157,8 +4150,10 @@
   ],
   "shiurIds": [
    "en-miscellaneous-en-03",
+   "en-miscellaneous-en-09",
    "en-miscellaneous-en-17",
    "en-parsha-en-bhlvsk-03",
+   "en-parsha-en-bshlch-01",
    "en-parsha-en-bshlch-02",
    "en-parsha-en-bshlch-03",
    "en-parsha-en-chyy-shrh-03",
@@ -4175,7 +4170,9 @@
    "en-tefila-en-07",
    "en-zmanim-en-nysn-01",
    "en-zmanim-en-prh-01",
+   "en-zmanim-en-prh-02",
    "en-zmanim-en-shbvvs-02",
+   "en-zmanim-en-shklym-01",
    "en-zmanim-en-smvz-01",
    "en-zmanim-en-spyrh-02",
    "en-zmanim-en-yvk-02",
@@ -4485,7 +4482,7 @@
   "nameHe": "חמעלניצקי ימ\"ש",
   "nameEn": "Chmielnicki",
   "nameYi": "כמעלניצקי ימ\"ש",
-  "type": "other",
+  "type": "ruler",
   "aliases": [],
   "shiurIds": [
    "en-parsha-en-shmvs-01",
@@ -4621,18 +4618,8 @@
   "type": "tanach",
   "aliases": [],
   "shiurIds": [
+   "yi-current-unc-kayitz-5771-08",
    "yi-eretz-yisroel-unc-12-2"
-  ]
- },
- {
-  "id": "chofni-and-pinchas",
-  "nameHe": "חפני ופינחס",
-  "nameEn": "Chofni and Pinchas",
-  "nameYi": "חפני און פינחס",
-  "type": "tanach",
-  "aliases": [],
-  "shiurIds": [
-   "yi-current-unc-kayitz-5771-08"
   ]
  },
  {
@@ -4784,7 +4771,7 @@
   "nameHe": "קלאופטרה",
   "nameEn": "Cleopatra",
   "nameYi": "קלעאפאטרא",
-  "type": "other",
+  "type": "ruler",
   "aliases": [],
   "shiurIds": [
    "en-miscellaneous-en-13",
@@ -4809,7 +4796,7 @@
   "nameHe": "הצאר ניקולאי",
   "nameEn": "Czar Nicholas",
   "nameYi": "דער צאר ניקאלאי",
-  "type": "other",
+  "type": "ruler",
   "aliases": [
    "Czar Nikolai"
   ],
@@ -4835,7 +4822,7 @@
   "nameHe": "דמא בן נתינה",
   "nameEn": "Dama ben Nesina",
   "nameYi": "דמא בן נתינה",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "en-zmanim-en-byn-hmtzrym-02",
@@ -4912,32 +4899,22 @@
   "type": "tanach",
   "aliases": [],
   "shiurIds": [
+   "en-miscellaneous-en-01",
    "en-miscellaneous-en-18",
    "en-parsha-en-blk-01",
-   "en-parsha-en-ysrv-01",
-   "yi-zmanim-mhrl-gbvrs-h-03",
-   "yi-zmanim-shbyy-shl-psch-02"
-  ]
- },
- {
-  "id": "dasan-and-aviram",
-  "nameHe": "דתן ואבירם",
-  "nameEn": "Dasan and Aviram",
-  "nameYi": "דתן און אבירם",
-  "type": "tanach",
-  "aliases": [],
-  "shiurIds": [
-   "en-miscellaneous-en-01",
    "en-parsha-en-bshlch-01",
    "en-parsha-en-bshlch-02",
    "en-parsha-en-bshlch-03",
+   "en-parsha-en-ysrv-01",
    "en-parsha-en-ysrv-02",
    "en-zmanim-en-byn-hmtzrym-02",
    "yi-parshas-hashavua-bshlch-04",
    "yi-parshas-hashavua-mshptym-03",
    "yi-parshas-hashavua-shmvs-01",
    "yi-parshas-hashavua-shmvs-02",
-   "yi-parshas-hashavua-ysrv-02"
+   "yi-parshas-hashavua-ysrv-02",
+   "yi-zmanim-mhrl-gbvrs-h-03",
+   "yi-zmanim-shbyy-shl-psch-02"
   ]
  },
  {
@@ -4945,7 +4922,7 @@
   "nameHe": "דוד בן גוריון",
   "nameEn": "David Ben-Gurion",
   "nameYi": "דוד בן גוריון",
-  "type": "other",
+  "type": "ruler",
   "aliases": [],
   "shiurIds": [
    "en-miscellaneous-en-08",
@@ -5658,7 +5635,7 @@
   "nameHe": "אהוד ברק",
   "nameEn": "Ehud Barak",
   "nameYi": "אהוד ברק",
-  "type": "other",
+  "type": "ruler",
   "aliases": [],
   "shiurIds": [
    "en-zmanim-en-spyrh-01"
@@ -5669,7 +5646,7 @@
   "nameHe": "אהוד אולמרט",
   "nameEn": "Ehud Olmert",
   "nameYi": "אהוד אלמערט",
-  "type": "other",
+  "type": "ruler",
   "aliases": [],
   "shiurIds": [
    "en-zmanim-en-pvrym-11"
@@ -6045,7 +6022,7 @@
   "nameHe": "ר' אליהו שלום",
   "nameEn": "Reb Eliyahu Shalom (the Rav's father)",
   "nameYi": "ר' אליהו שלום, דעם משגיח'ס טאטע",
-  "type": "other",
+  "type": "individual",
   "aliases": [
    "Eliyahu Shalom",
    "the Rav's father"
@@ -6105,6 +6082,8 @@
    "en-zmanim-en-lg-bvmr-03",
    "en-zmanim-en-lvl-01",
    "en-zmanim-en-shvbbym-01",
+   "yi-parshas-hashavua-bshlch-02",
+   "yi-parshas-hashavua-vychy-02",
    "yi-parshas-hashavua-vygsh-01",
    "yi-parshas-hashavua-vyshb-08",
    "yi-shonos-unc-47",
@@ -6115,23 +6094,11 @@
   ]
  },
  {
-  "id": "ephraim-and-menashe",
-  "nameHe": "אפרים ומנשה",
-  "nameEn": "Ephraim and Menashe",
-  "nameYi": "אפרים און מנשה",
-  "type": "tanach",
-  "aliases": [],
-  "shiurIds": [
-   "yi-parshas-hashavua-bshlch-02",
-   "yi-parshas-hashavua-vychy-02"
-  ]
- },
- {
   "id": "ephraim-tenenbaum",
   "nameHe": "אפרים טננבוים",
   "nameEn": "Ephraim Tenenbaum",
   "nameYi": "אפרים טענענבוים",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "yi-shiurim-labachurim-19"
@@ -6145,23 +6112,13 @@
   "type": "tanach",
   "aliases": [],
   "shiurIds": [
+   "en-zmanim-en-shbvvs-05",
    "yi-shonos-31",
    "yi-simchos-unc-bris-pidyon-haben-43",
-   "yi-zmanim-chnvkh-07",
-   "yi-zmanim-chnvkh-14"
-  ]
- },
- {
-  "id": "er-and-onan",
-  "nameHe": "ער ואונן",
-  "nameEn": "Er and Onan",
-  "nameYi": "ער און אונן",
-  "type": "tanach",
-  "aliases": [],
-  "shiurIds": [
-   "en-zmanim-en-shbvvs-05",
    "yi-tanya-1-21",
    "yi-zmanim-chnvkh-03",
+   "yi-zmanim-chnvkh-07",
+   "yi-zmanim-chnvkh-14",
    "yi-zmanim-shbvvs-01",
    "yi-zmanim-shbvvs-04"
   ]
@@ -6409,6 +6366,8 @@
    "yi-current-unc-ey-bachurim-5769-20",
    "yi-emunah-1-14",
    "yi-emunah-2-02",
+   "yi-eretz-yisroel-02",
+   "yi-eretz-yisroel-07",
    "yi-eretz-yisroel-10",
    "yi-parshas-hashavua-chyy-shrh-02",
    "yi-parshas-hashavua-chyy-shrh-06",
@@ -6465,6 +6424,7 @@
    "yi-zmanim-svds-shvshn-pvrym-07-b",
    "yi-zmanim-svds-shvshn-pvrym-08",
    "yi-zmanim-svds-shvshn-pvrym-09",
+   "yi-zmanim-tv-bshbt-01",
    "yi-zmanim-unc-svds-shvshn-pvrym-11",
    "yi-zmanim-zkvr-01",
    "yi-zmanim-zkvr-02",
@@ -6481,7 +6441,20 @@
    "Eber"
   ],
   "shiurIds": [
-   "yi-parshas-hashavua-vyshb-07"
+   "en-parsha-en-vychy-03",
+   "en-parsha-en-vyshb-02",
+   "en-parsha-en-vytz-01",
+   "en-zmanim-en-shvbbym-01",
+   "yi-parshas-hashavua-svldvs-02",
+   "yi-parshas-hashavua-svldvs-04",
+   "yi-parshas-hashavua-vyshb-06",
+   "yi-parshas-hashavua-vyshb-07",
+   "yi-parshas-hashavua-vyshlch-05",
+   "yi-parshas-hashavua-vytz-01",
+   "yi-parshas-hashavua-vytz-03",
+   "yi-zmanim-lvl-07",
+   "yi-zmanim-shvbbym-01",
+   "yi-zmanim-svkvs-02"
   ]
  },
  {
@@ -6531,17 +6504,6 @@
   ]
  },
  {
-  "id": "four-malachim",
-  "nameHe": "מיכאל גבריאל אוריאל ורפאל",
-  "nameEn": "Michael, Gavriel, Uriel and Refael",
-  "nameYi": "מיכאל, גבריאל, אוריאל און רפאל",
-  "type": "other",
-  "aliases": [],
-  "shiurIds": [
-   "en-parsha-en-mvr-01"
-  ]
- },
- {
   "id": "gad",
   "nameHe": "גד",
   "nameEn": "Gad",
@@ -6558,7 +6520,7 @@
   "nameHe": "נאצר",
   "nameEn": "Nasser",
   "nameYi": "נאסער",
-  "type": "other",
+  "type": "ruler",
   "aliases": [],
   "shiurIds": [
    "yi-parshas-hashavua-hzynv-01"
@@ -6602,7 +6564,7 @@
   "nameHe": "ג'ורג' בוש",
   "nameEn": "George W. Bush",
   "nameYi": "דזשארדזש בוש",
-  "type": "other",
+  "type": "ruler",
   "aliases": [],
   "shiurIds": [
    "en-miscellaneous-en-07"
@@ -6613,7 +6575,7 @@
   "nameHe": "ג'ורג' וושינגטון",
   "nameEn": "George Washington",
   "nameYi": "דזשארדזש וואשינגטאן",
-  "type": "other",
+  "type": "ruler",
   "aliases": [],
   "shiurIds": [
    "en-emunah-en-01-5771",
@@ -6699,7 +6661,7 @@
   "nameHe": "גולדה מאיר",
   "nameEn": "Golda Meir",
   "nameYi": "גאלדא מאיר",
-  "type": "other",
+  "type": "ruler",
   "aliases": [],
   "shiurIds": [
    "en-parsha-en-b-01",
@@ -7009,17 +6971,6 @@
   ]
  },
  {
-  "id": "hillel-and-shammai",
-  "nameHe": "הלל ושמאי",
-  "nameEn": "Hillel and Shammai",
-  "nameYi": "הלל און שמאי",
-  "type": "chazal",
-  "aliases": [],
-  "shiurIds": [
-   "yi-emunah-1-21"
-  ]
- },
- {
   "id": "hillel-hanasi",
   "nameHe": "הלל הנשיא",
   "nameEn": "Hillel HaNasi (author of the calendar)",
@@ -7045,6 +6996,7 @@
   "shiurIds": [
    "en-parsha-en-vyshb-01",
    "en-zmanim-en-chvdsh-tbs-01",
+   "yi-emunah-1-21",
    "yi-parshas-hashavua-chyy-shrh-02",
    "yi-parshas-hashavua-unc-vyshb-09",
    "yi-shir-hashirim-unc-06",
@@ -7061,7 +7013,7 @@
   "nameHe": "רבי הלל זקס",
   "nameEn": "Rabbi Hillel Zaks",
   "nameYi": "ר' הלל זאקס",
-  "type": "other",
+  "type": "individual",
   "aliases": [
    "Hillel Zaks"
   ],
@@ -7074,7 +7026,7 @@
   "nameHe": "היטלר ימ\"ש",
   "nameEn": "Hitler",
   "nameYi": "היטלער ימ\"ש",
-  "type": "other",
+  "type": "ruler",
   "aliases": [],
   "shiurIds": [
    "en-emunah-en-03-5771",
@@ -7115,7 +7067,7 @@
   "nameHe": "מובארק",
   "nameEn": "Mubarak",
   "nameYi": "מובארעק",
-  "type": "other",
+  "type": "ruler",
   "aliases": [],
   "shiurIds": [
    "yi-current-unc-kayitz-5771-13"
@@ -7326,7 +7278,7 @@
   "nameHe": "ג'ימי קרטר",
   "nameEn": "Jimmy Carter",
   "nameYi": "דזשימי קארטער",
-  "type": "other",
+  "type": "ruler",
   "aliases": [
    "Carter"
   ],
@@ -7339,7 +7291,7 @@
   "nameHe": "ג'ון אדמס",
   "nameEn": "John Adams",
   "nameYi": "דזשאן אדאמס",
-  "type": "other",
+  "type": "ruler",
   "aliases": [
    "President John Adams"
   ],
@@ -7353,7 +7305,7 @@
   "nameHe": "היידר",
   "nameEn": "Haider",
   "nameYi": "היידער",
-  "type": "other",
+  "type": "ruler",
   "aliases": [],
   "shiurIds": [
    "en-emunah-en-15"
@@ -7375,7 +7327,7 @@
   "nameHe": "יוליוס קיסר",
   "nameEn": "Julius Caesar",
   "nameYi": "דזשוליוס סעזער",
-  "type": "other",
+  "type": "ruler",
   "aliases": [],
   "shiurIds": [
    "en-emunah-en-01-5771",
@@ -7444,22 +7396,8 @@
   "nameHe": "קמצא",
   "nameEn": "Kamtza",
   "nameYi": "קמצא",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
-  "shiurIds": [
-   "yi-zmanim-spyrh-04",
-   "yi-zmanim-spyrh-07"
-  ]
- },
- {
-  "id": "kamtza-and-bar-kamtza",
-  "nameHe": "קמצא ובר קמצא",
-  "nameEn": "Kamtza and Bar Kamtza",
-  "nameYi": "קמצא און בר קמצא",
-  "type": "other",
-  "aliases": [
-   "Kamtza bar Kamtza"
-  ],
   "shiurIds": [
    "en-zmanim-en-lg-bvmr-05",
    "en-zmanim-en-spyrh-02",
@@ -7467,7 +7405,8 @@
    "yi-parshas-hashavua-mtvs-msy-01",
    "yi-parshas-hashavua-pnchs-02",
    "yi-zmanim-byn-hmtzrym-03",
-   "yi-zmanim-spyrh-04"
+   "yi-zmanim-spyrh-04",
+   "yi-zmanim-spyrh-07"
   ]
  },
  {
@@ -7578,7 +7517,7 @@
   "nameHe": "כידור",
   "nameEn": "Kidor",
   "nameYi": "כידור",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "en-parsha-en-shmvs-01"
@@ -7603,6 +7542,9 @@
   "type": "tanach",
   "aliases": [],
   "shiurIds": [
+   "en-zmanim-en-shbvvs-05",
+   "yi-parshas-hashavua-vyshb-04",
+   "yi-zmanim-shbvvs-01",
    "yi-zmanim-shbvvs-04"
   ]
  },
@@ -7622,7 +7564,7 @@
   "nameHe": "פרדיננד מלך ספרד",
   "nameEn": "King Ferdinand of Spain",
   "nameYi": "קעניג פערדינאנד",
-  "type": "other",
+  "type": "ruler",
   "aliases": [
    "Ferdinand",
    "King Ferdinand"
@@ -7693,17 +7635,6 @@
   ]
  },
  {
-  "id": "kohen-gadol",
-  "nameHe": "הכהן הגדול",
-  "nameEn": "the Kohen Gadol",
-  "nameYi": "דער כהן גדול",
-  "type": "other",
-  "aliases": [],
-  "shiurIds": [
-   "en-zmanim-en-unc-shrs-ymy-sshvbh-07"
-  ]
- },
- {
   "id": "komarna-rebbe",
   "nameHe": "רבי יצחק אייזיק ספרין מקאמארנא",
   "nameEn": "Rabbi Yitzchak Eizik of Komarna (the Heichal HaBrachah)",
@@ -7716,6 +7647,7 @@
   ],
   "shiurIds": [
    "en-parsha-en-bshlch-03",
+   "yi-tanya-1-46",
    "yi-tanya-2-10",
    "yi-tefila-heb-06",
    "yi-zmanim-lvl-05",
@@ -8089,6 +8021,7 @@
    "en-tefila-en-17",
    "en-zmanim-en-chnvkh-10",
    "en-zmanim-en-psch-02",
+   "yi-parshas-hashavua-vychy-02",
    "yi-parshas-hashavua-vyr-04",
    "yi-parshas-hashavua-vyshlch-02",
    "yi-shonos-14",
@@ -8103,7 +8036,7 @@
   "nameHe": "לוי אשכול",
   "nameEn": "Levi Eshkol",
   "nameYi": "לוי אשכול",
-  "type": "other",
+  "type": "ruler",
   "aliases": [
    "Eshkol"
   ],
@@ -8229,21 +8162,11 @@
   "type": "tanach",
   "aliases": [],
   "shiurIds": [
-   "yi-simchos-unc-bris-pidyon-haben-43",
-   "yi-zmanim-shbvvs-04"
-  ]
- },
- {
-  "id": "machlon-and-kilyon",
-  "nameHe": "מחלון וכליון",
-  "nameEn": "Machlon and Kilyon",
-  "nameYi": "מחלון און כליון",
-  "type": "tanach",
-  "aliases": [],
-  "shiurIds": [
    "en-zmanim-en-shbvvs-05",
    "yi-parshas-hashavua-vyshb-04",
-   "yi-zmanim-shbvvs-01"
+   "yi-simchos-unc-bris-pidyon-haben-43",
+   "yi-zmanim-shbvvs-01",
+   "yi-zmanim-shbvvs-04"
   ]
  },
  {
@@ -8553,12 +8476,13 @@
   "nameHe": "גבריאל המלאך",
   "nameEn": "the angel Gavriel",
   "nameYi": "דער מלאך גבריאל",
-  "type": "other",
+  "type": "malach",
   "aliases": [
    "Gavriel"
   ],
   "shiurIds": [
    "en-parsha-en-mtvs-msy-01",
+   "en-parsha-en-mvr-01",
    "en-parsha-en-vyshb-02",
    "en-parsha-en-vyshlch-01",
    "en-zmanim-en-shbvvs-02",
@@ -8579,13 +8503,14 @@
   "nameHe": "מיכאל המלאך",
   "nameEn": "the angel Michael",
   "nameYi": "דער מלאך מיכאל",
-  "type": "other",
+  "type": "malach",
   "aliases": [
    "Michael",
    "Michael the angel",
    "the malach Michael"
   ],
   "shiurIds": [
+   "en-parsha-en-mvr-01",
    "en-tanya-en-33",
    "en-zmanim-en-chnvkh-06",
    "en-zmanim-en-pvrym-01",
@@ -8611,7 +8536,7 @@
   "nameHe": "רפאל המלאך",
   "nameEn": "the angel Refael",
   "nameYi": "דער מלאך רפאל",
-  "type": "other",
+  "type": "malach",
   "aliases": [
    "Refael",
    "Raphael",
@@ -8619,6 +8544,7 @@
    "Rephael"
   ],
   "shiurIds": [
+   "en-parsha-en-mvr-01",
    "en-parsha-en-vyr-03",
    "en-zmanim-en-shbvvs-02",
    "yi-parshas-hashavua-chyy-shrh-01",
@@ -8632,11 +8558,12 @@
   "nameHe": "אוריאל המלאך",
   "nameEn": "the angel Uriel",
   "nameYi": "דער מלאך אוריאל",
-  "type": "other",
+  "type": "malach",
   "aliases": [
    "Uriel"
   ],
   "shiurIds": [
+   "en-parsha-en-mvr-01",
    "en-zmanim-en-shbvvs-02"
   ]
  },
@@ -8666,6 +8593,8 @@
    "yi-parshas-hashavua-vyr-06",
    "yi-parshas-hashavua-ysrv-01",
    "yi-shiurim-labachurim-13",
+   "yi-shiurim-labachurim-18",
+   "yi-shonos-02",
    "yi-shonos-22",
    "yi-shonos-32",
    "yi-simchos-unc-bris-pidyon-haben-29",
@@ -8785,7 +8714,7 @@
   "nameHe": "מתתיהו בן יוחנן כהן גדול",
   "nameEn": "Matisyahu ben Yochanan Kohen Gadol",
   "nameYi": "מתתיהו בן יוחנן כהן גדול",
-  "type": "other",
+  "type": "chazal",
   "aliases": [
    "Matisyahu",
    "Matisyahu Kohen Gadol",
@@ -8951,6 +8880,8 @@
    "en-zmanim-en-shbvvs-05",
    "en-zmanim-en-shvbbym-01",
    "yi-eretz-yisroel-04",
+   "yi-parshas-hashavua-bshlch-02",
+   "yi-parshas-hashavua-vychy-02",
    "yi-tefila-heb-10",
    "yi-zmanim-byn-hmtzrym-01",
    "yi-zmanim-lvl-07",
@@ -9062,6 +8993,7 @@
    "yi-parshas-hashavua-chks-01",
    "yi-parshas-hashavua-chks-02",
    "yi-parshas-hashavua-nch-01",
+   "yi-parshas-hashavua-shmvs-02",
    "yi-parshas-hashavua-shmvs-03",
    "yi-parshas-hashavua-vygsh-01",
    "yi-shonos-29",
@@ -9093,7 +9025,10 @@
   "type": "tanach",
   "aliases": [],
   "shiurIds": [
+   "yi-parshas-hashavua-lk-lk-05",
    "yi-parshas-hashavua-nch-08",
+   "yi-parshas-hashavua-ysrv-01",
+   "yi-shonos-29",
    "yi-zmanim-chnvkh-15-b",
    "yi-zmanim-spyrh-01"
   ]
@@ -9130,6 +9065,7 @@
   "type": "chassidic_rebbe",
   "aliases": [],
   "shiurIds": [
+   "yi-parshas-hashavua-bhr-bchkvsy-03",
    "yi-parshas-hashavua-pnchs-02",
    "yi-tanya-1-33"
   ]
@@ -9179,7 +9115,7 @@
   "nameHe": "מונטגומרי",
   "nameEn": "Montgomery",
   "nameYi": "מאנטגאמערי",
-  "type": "other",
+  "type": "ruler",
   "aliases": [],
   "shiurIds": [
    "en-zmanim-en-smvz-01",
@@ -9233,6 +9169,8 @@
    "yi-current-unc-kayitz-5771-22",
    "yi-emunah-1-14",
    "yi-emunah-1-18",
+   "yi-eretz-yisroel-02",
+   "yi-eretz-yisroel-07",
    "yi-eretz-yisroel-10",
    "yi-parshas-hashavua-hzynv-02",
    "yi-parshas-hashavua-lk-lk-07",
@@ -9247,6 +9185,7 @@
    "yi-parshas-hashavua-vyr-01",
    "yi-parshas-hashavua-vyshlch-01",
    "yi-parshas-hashavua-ysrv-01",
+   "yi-shiurim-labachurim-18",
    "yi-shonos-31",
    "yi-simchos-unc-bar-mitzvah-02",
    "yi-simchos-unc-bris-pidyon-haben-27",
@@ -9312,23 +9251,11 @@
    "yi-zmanim-svds-shvshn-pvrym-08",
    "yi-zmanim-svds-shvshn-pvrym-09",
    "yi-zmanim-svds-zs-chnvkh-06",
+   "yi-zmanim-tv-bshbt-01",
    "yi-zmanim-unc-svds-shvshn-pvrym-10",
    "yi-zmanim-unc-svds-shvshn-pvrym-11",
    "yi-zmanim-zkvr-01",
    "yi-zmanim-zkvr-02"
-  ]
- },
- {
-  "id": "mordechai-and-esther",
-  "nameHe": "מרדכי ואסתר",
-  "nameEn": "Mordechai and Esther",
-  "nameYi": "מרדכי און אסתר",
-  "type": "tanach",
-  "aliases": [],
-  "shiurIds": [
-   "yi-eretz-yisroel-02",
-   "yi-eretz-yisroel-07",
-   "yi-zmanim-tv-bshbt-01"
   ]
  },
  {
@@ -9857,55 +9784,6 @@
   ]
  },
  {
-  "id": "moshiach",
-  "nameHe": "משיח",
-  "nameEn": "Moshiach",
-  "nameYi": "משיח",
-  "type": "other",
-  "aliases": [
-   "Moshiach",
-   "Moshiach ben David",
-   "Moshiach ben David",
-   "Moshiach ben Dovid"
-  ],
-  "shiurIds": [
-   "en-parsha-en-bhr-bchksy-01",
-   "en-tanya-en-14",
-   "en-zmanim-en-rsh-hshnh-01",
-   "en-zmanim-en-shbvvs-children-06",
-   "en-zmanim-en-yvk-06",
-   "yi-current-unc-bachurim-5771-14",
-   "yi-parshas-hashavua-chyy-shrh-03-b",
-   "yi-simchos-unc-bar-mitzvah-06",
-   "yi-simchos-unc-bris-pidyon-haben-22",
-   "yi-tefila-heb-27",
-   "yi-tefila-heb-39",
-   "yi-zmanim-chvl-hmvd-psch-01",
-   "yi-zmanim-hvshn-rbh-01-b",
-   "yi-zmanim-hvshn-rbh-03",
-   "yi-zmanim-msybs-lchyym-bkmp-01-b",
-   "yi-zmanim-psch-05",
-   "yi-zmanim-svds-tv-bb-05"
-  ]
- },
- {
-  "id": "moshiach-ben-yosef",
-  "nameHe": "משיח בן יוסף",
-  "nameEn": "Moshiach ben Yosef",
-  "nameYi": "משיח בן יוסף",
-  "type": "other",
-  "aliases": [
-   "Moshiach ben Yosef"
-  ],
-  "shiurIds": [
-   "en-tanya-en-09",
-   "en-zmanim-en-chnvkh-02",
-   "en-zmanim-en-pvrym-04",
-   "yi-tefila-heb-39",
-   "yi-zmanim-pvrym-14"
-  ]
- },
- {
   "id": "munkatcher-rav",
   "nameHe": "האדמו\"ר ממונקאטש",
   "nameEn": "the Munkatcher Rav",
@@ -9928,7 +9806,8 @@
   "type": "tanach",
   "aliases": [],
   "shiurIds": [
-   "en-parsha-en-blk-02"
+   "en-parsha-en-blk-02",
+   "yi-zmanim-byn-hmtzrym-02"
   ]
  },
  {
@@ -9991,17 +9870,6 @@
   "type": "tanach",
   "aliases": [],
   "shiurIds": [
-   "yi-zmanim-spyrh-01"
-  ]
- },
- {
-  "id": "nadav-and-avihu",
-  "nameHe": "נדב ואביהוא",
-  "nameEn": "Nadav and Avihu",
-  "nameYi": "נדב און אביהוא",
-  "type": "tanach",
-  "aliases": [],
-  "shiurIds": [
    "en-parsha-en-msy-03",
    "en-parsha-en-shmyny-01",
    "en-parsha-en-shmyny-02",
@@ -10012,7 +9880,8 @@
    "yi-parshas-hashavua-shmyny-01",
    "yi-parshas-hashavua-unc-szry-mtzvr-01",
    "yi-tanya-1-20",
-   "yi-zmanim-chnvkh-02"
+   "yi-zmanim-chnvkh-02",
+   "yi-zmanim-spyrh-01"
   ]
  },
  {
@@ -10080,7 +9949,7 @@
   "nameHe": "נפוליון",
   "nameEn": "Napoleon",
   "nameYi": "נאפאלעאן",
-  "type": "other",
+  "type": "ruler",
   "aliases": [
    "Napoleon Bonaparte"
   ],
@@ -10557,9 +10426,14 @@
   "type": "tanach",
   "aliases": [],
   "shiurIds": [
+   "en-zmanim-en-shbvvs-05",
    "yi-shonos-31",
+   "yi-tanya-1-21",
+   "yi-zmanim-chnvkh-03",
    "yi-zmanim-chnvkh-07",
-   "yi-zmanim-chnvkh-14"
+   "yi-zmanim-chnvkh-14",
+   "yi-zmanim-shbvvs-01",
+   "yi-zmanim-shbvvs-04"
   ]
  },
  {
@@ -11043,6 +10917,7 @@
   "type": "tanach",
   "aliases": [],
   "shiurIds": [
+   "yi-current-unc-kayitz-5771-08",
    "yi-eretz-yisroel-unc-12-2"
   ]
  },
@@ -11205,7 +11080,7 @@
   "nameHe": "תלמי המלך",
   "nameEn": "Ptolemy (Talmai HaMelech of Egypt)",
   "nameYi": "תלמי המלך",
-  "type": "other",
+  "type": "ruler",
   "aliases": [],
   "shiurIds": [
    "en-emunah-en-02-5771"
@@ -11216,7 +11091,7 @@
   "nameHe": "איזבלה מלכת ספרד",
   "nameEn": "Queen Isabella of Spain",
   "nameYi": "קעניגין איזאבעלא",
-  "type": "other",
+  "type": "ruler",
   "aliases": [
    "Isabella",
    "Queen Isabella"
@@ -11233,7 +11108,7 @@
   "nameHe": "ר' לאנגער",
   "nameEn": "R' Langer",
   "nameYi": "ר' לאנגער",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "yi-shonos-unc-45-45-mamed-technology-03-r-langer"
@@ -11244,7 +11119,7 @@
   "nameHe": "ר' לייבוש",
   "nameEn": "R' Leibush",
   "nameYi": "ר' לייבוש",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "yi-current-unc-bachurim-5771-10"
@@ -11646,41 +11521,40 @@
   "aliases": [
    "Rabbi Aharon HaGadol"
   ],
+  "description": {
+   "en": "Rabbi Aharon HaGadol of Karlin, disciple of the Maggid of Mezritch. His grandson, Rabbi Aharon of Karlin-Stolin, author of the Beis Aharon, is a separate person (the Beis Aharon). A plain \"Rabbi Aharon of Karlin\" is listed here unless the telling or the story identifies the Beis Aharon.",
+   "yi": "רבי אהרן הגדול פון קארלין, א תלמיד פונעם מגיד פון מעזריטש. זיין אייניקל, רבי אהרן פון קארלין-סטאלין, דער בעל בית אהרן, איז אן אנדער פערזאן."
+  },
   "shiurIds": [
-   "en-miscellaneous-en-04",
-   "en-miscellaneous-en-09",
-   "en-parsha-en-mvr-01",
-   "yi-current-unc-bachurim-18",
-   "yi-current-unc-bachurim-5771-06",
-   "yi-current-unc-ey-bachurim-5770-03",
-   "yi-current-unc-ey-bachurim-5770-04",
-   "yi-kedushas-hashabbos-unc-02",
-   "yi-parshas-hashavua-bhr-bchkvsy-06",
-   "yi-parshas-hashavua-chyy-shrh-01",
-   "yi-parshas-hashavua-lk-lk-02",
    "yi-parshas-hashavua-nch-05",
+   "yi-parshas-hashavua-lk-lk-02",
+   "yi-parshas-hashavua-chyy-shrh-01",
+   "yi-parshas-hashavua-bhr-bchkvsy-06",
    "yi-parshas-hashavua-pnchs-02",
-   "yi-shir-hashirim-unc-04",
-   "yi-shir-hashirim-unc-07",
+   "en-parsha-en-mvr-01",
+   "yi-zmanim-rsh-hshnh-05",
+   "yi-zmanim-mhrl-gbvrs-h-04",
+   "yi-zmanim-psch-06",
+   "yi-zmanim-shbvvs-06",
+   "yi-shonos-07",
+   "yi-shonos-24",
+   "yi-shonos-29",
+   "yi-tanya-1-04",
+   "yi-tanya-1-05",
+   "yi-tanya-1-36",
    "yi-shiurim-labachurim-08",
    "yi-shiurim-labachurim-11",
    "yi-shiurim-labachurim-16",
    "yi-shiurim-labachurim-19",
-   "yi-shonos-07",
-   "yi-shonos-11",
-   "yi-shonos-24",
-   "yi-shonos-29",
    "yi-shonos-unc-39",
    "yi-shonos-unc-40",
    "yi-shonos-unc-42",
-   "yi-tanya-1-03",
-   "yi-tanya-1-04",
-   "yi-tanya-1-05",
-   "yi-tanya-1-36",
-   "yi-zmanim-mhrl-gbvrs-h-04",
-   "yi-zmanim-psch-06",
-   "yi-zmanim-rsh-hshnh-05",
-   "yi-zmanim-shbvvs-06"
+   "yi-shir-hashirim-unc-04",
+   "yi-shir-hashirim-unc-07",
+   "yi-kedushas-hashabbos-unc-02",
+   "yi-current-unc-ey-bachurim-5770-03",
+   "yi-current-unc-ey-bachurim-5770-04",
+   "yi-current-unc-bachurim-18"
   ]
  },
  {
@@ -11688,7 +11562,7 @@
   "nameHe": "רבי אהרן פאלאק",
   "nameEn": "Rabbi Aharon Pollak",
   "nameYi": "ר' אהרן פאלאק",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "yi-zmanim-shbvvs-08"
@@ -11901,7 +11775,7 @@
   "nameHe": "רבי אביגדור הלברשטאם",
   "nameEn": "Rabbi Avigdor Halberstam",
   "nameYi": "ר' אביגדור האלבערשטאם",
-  "type": "other",
+  "type": "acharon",
   "aliases": [],
   "shiurIds": [
    "yi-current-unc-bachurim-06",
@@ -11992,7 +11866,7 @@
   "nameHe": "רבי אברהם זיסקינד",
   "nameEn": "Rabbi Avraham Ziskind",
   "nameYi": "ר' אברהם זיסקינד",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "yi-tefila-heb-08"
@@ -12025,7 +11899,7 @@
   "nameHe": "רבי ברוך הלברשטאם",
   "nameEn": "Rabbi Boruch Halberstam",
   "nameYi": "ר' ברוך האלבערשטאם",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "yi-zmanim-svds-pvrym-ktn-05"
@@ -12036,7 +11910,7 @@
   "nameHe": "רבי חיים כהן",
   "nameEn": "Rabbi Chaim Kohen",
   "nameYi": "ר' חיים כהן",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "yi-shonos-14"
@@ -12114,7 +11988,7 @@
   "nameHe": "רבי חיים שמואל",
   "nameEn": "Rabbi Chaim Shmuel",
   "nameYi": "ר' חיים שמואל",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "yi-current-unc-ey-bachurim-5769-23"
@@ -12427,7 +12301,7 @@
   "nameHe": "רבי אלעזר בריזעל",
   "nameEn": "Rabbi Elazar Brizel",
   "nameYi": "ר' אלעזר בריזעל",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "yi-shiurim-labachurim-06"
@@ -12465,7 +12339,7 @@
   "nameHe": "רבי אלעזר ניסן",
   "nameEn": "Rabbi Elazar Nisan",
   "nameYi": "ר' אלעזר ניסן",
-  "type": "other",
+  "type": "acharon",
   "aliases": [],
   "shiurIds": [
    "yi-tefila-heb-38"
@@ -12520,7 +12394,7 @@
   "nameHe": "רבי אליאס",
   "nameEn": "Rabbi Elias",
   "nameYi": "ר' עליאס",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "en-zmanim-en-shbvvs-children-06"
@@ -12647,7 +12521,7 @@
   "nameHe": "רבי אליהו שטיינברג",
   "nameEn": "Rabbi Eliyahu Steinberg",
   "nameYi": "ר' אליהו שטיינבערג",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "yi-shonos-11"
@@ -12692,10 +12566,22 @@
   "nameHe": "רבי הירש לווינסון",
   "nameEn": "Rabbi Hirsch Levinson",
   "nameYi": "ר' הירש לעווינסאן",
-  "type": "other",
+  "type": "acharon",
   "aliases": [],
   "shiurIds": [
    "yi-current-unc-bachurim-06"
+  ]
+ },
+ {
+  "id": "rabbi-horowitz-chaplain",
+  "nameHe": "הרב הורוביץ",
+  "nameEn": "Rabbi Horowitz (army chaplain)",
+  "nameYi": "רבי האראוויץ",
+  "type": "individual",
+  "aliases": [],
+  "shiurIds": [
+   "en-zmanim-en-nysn-02",
+   "en-zmanim-en-psch-05"
   ]
  },
  {
@@ -12998,7 +12884,7 @@
   "nameHe": "רבי מרדכי פינקלמן",
   "nameEn": "Rabbi Mordechai Finkelman",
   "nameYi": "ר' מרדכי פינקעלמאן",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "yi-shonos-28"
@@ -13130,7 +13016,7 @@
   "nameHe": "רבי משה הלברשטאם",
   "nameEn": "Rabbi Moshe Halberstam",
   "nameYi": "ר' משה האלבערשטאם",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "yi-shonos-11"
@@ -13322,7 +13208,7 @@
   "nameHe": "ר' ניסן ב\"ק",
   "nameEn": "Rabbi Nissan Bak",
   "nameYi": "ר' ניסן באק",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "yi-zmanim-lchyym-ytz-vhch-02"
@@ -13389,7 +13275,7 @@
   "nameHe": "רבי פינחס פרידמן",
   "nameEn": "Rabbi Pinchas Friedman",
   "nameYi": "ר' פינחס פרידמאן",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "yi-zmanim-hvshn-rbh-03"
@@ -13630,7 +13516,7 @@
   "nameHe": "רבי שמעון פינקלמן",
   "nameEn": "Rabbi Shimon Finkelman",
   "nameYi": "ר' שמעון פינקעלמאן",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "yi-zmanim-unc-zs-chnvkh-21"
@@ -13980,7 +13866,7 @@
   "nameHe": "רבי יעקב גרינוואלד",
   "nameEn": "Rabbi Yaakov Greenwald",
   "nameYi": "ר' יעקב גרינוואלד",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "yi-shonos-11"
@@ -13991,7 +13877,7 @@
   "nameHe": "רבי יעקב וייסבורג",
   "nameEn": "Rabbi Yaakov Weisburg",
   "nameYi": "ר' יעקב ווייסבורג",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "yi-emunah-1-17"
@@ -14002,7 +13888,7 @@
   "nameHe": "ר' יעקב יוסף הערמאן",
   "nameEn": "Rabbi Yaakov Yosef Herman",
   "nameYi": "ר' יעקב יוסף הערמאן",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "yi-zmanim-rsh-hshnh-04"
@@ -14272,6 +14158,17 @@
   ]
  },
  {
+  "id": "rabbi-yeshaya-disciple-of-rabbi-chanina",
+  "nameHe": "רבי ישעיה תלמידו של רבי חנינא בן דוסא",
+  "nameEn": "Rabbi Yeshaya (disciple of Rabbi Chanina ben Dosa)",
+  "nameYi": "רבי ישעיה",
+  "type": "chazal",
+  "aliases": [],
+  "shiurIds": [
+   "yi-parshas-hashavua-vr-03"
+  ]
+ },
+ {
   "id": "rabbi-yeshaya-of-belz",
   "nameHe": "רבי ישעיה מבעלזא",
   "nameEn": "Rabbi Yeshayah of Belz",
@@ -14466,7 +14363,7 @@
   "nameHe": "רבי יצחק חיות",
   "nameEn": "Rabbi Yitzchak Chayes",
   "nameYi": "ר' יצחק חיות",
-  "type": "other",
+  "type": "acharon",
   "aliases": [],
   "shiurIds": [
    "en-tanya-en-10",
@@ -14620,7 +14517,7 @@
   "nameHe": "רבי יוסף אשכנזי",
   "nameEn": "Rabbi Yosef Ashkenazi",
   "nameYi": "ר' יוסף אשכנזי",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "yi-zmanim-spyrh-08"
@@ -16128,10 +16025,14 @@
  {
   "id": "rav",
   "nameHe": "רב",
-  "nameEn": "Rav",
+  "nameEn": "Rav (the Amora)",
   "nameYi": "רב",
   "type": "chazal",
   "aliases": [],
+  "description": {
+   "en": "The Amora Rav, quoted from the Gemara (for example his ruling for Rabbah bar bar Chanah and the porters). Not to be confused with \"the Rav\", the speaker of these shiurim.",
+   "yi": "דער אמורא רב, ווי ער ווערט געברענגט אין דער גמרא (למשל זיין פסק ביי רבה בר בר חנה מיט די טרעגער)."
+  },
   "shiurIds": [
    "en-parsha-en-mshptym-02",
    "en-zmanim-en-psch-05",
@@ -16197,6 +16098,7 @@
    "en-miscellaneous-en-unc-21",
    "en-tefila-en-13",
    "en-zmanim-en-shbvvs-05",
+   "yi-emunah-1-08",
    "yi-zmanim-shbvvs-04",
    "yi-zmanim-yvm-hmyvchs-01"
   ]
@@ -16391,7 +16293,7 @@
   "nameHe": "ר' הילמאן",
   "nameEn": "Rav Hillman",
   "nameYi": "ר' הילמאן",
-  "type": "other",
+  "type": "acharon",
   "aliases": [],
   "shiurIds": [
    "yi-emunah-1-17"
@@ -16463,7 +16365,7 @@
   "nameHe": "ר' מתי פינקלמן",
   "nameEn": "Rav Mati Finkelman",
   "nameYi": "ר' מאטי פינקעלמאן",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "en-zmanim-en-shbvvs-07"
@@ -16485,7 +16387,7 @@
   "nameHe": "רבי מרדכי סילבער",
   "nameEn": "Rav Mordechai Silver",
   "nameYi": "ר' מרדכי סילווער",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "en-zmanim-en-lvl-04"
@@ -16628,7 +16530,7 @@
   "nameHe": "ר' סאוויצקי",
   "nameEn": "Rav Savitsky",
   "nameYi": "ר' סאוויצקי",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "en-parsha-en-vygsh-01"
@@ -16888,6 +16790,7 @@
   "aliases": [],
   "shiurIds": [
    "en-tanya-en-16",
+   "en-zmanim-en-lg-bvmr-01",
    "yi-kedushas-hashabbos-unc-03",
    "yi-shonos-unc-41",
    "yi-tefila-heb-12",
@@ -16907,18 +16810,8 @@
    "en-miscellaneous-en-unc-21",
    "en-parsha-en-shmyny-02",
    "en-tefila-en-13",
+   "yi-emunah-1-08",
    "yi-shonos-25"
-  ]
- },
- {
-  "id": "ravina-and-rav-ashi",
-  "nameHe": "רבינא ורב אשי",
-  "nameEn": "Ravina and Rav Ashi",
-  "nameYi": "רבינא און רב אשי",
-  "type": "chazal",
-  "aliases": [],
-  "shiurIds": [
-   "yi-emunah-1-08"
   ]
  },
  {
@@ -16926,7 +16819,7 @@
   "nameHe": "ר' אברהם זוסקין",
   "nameEn": "Reb Avraham Zuskin",
   "nameYi": "ר' אברהם זוסקין",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "yi-zmanim-unc-yt-kslv-17-01-17-19-kislev-5775-12-r-moshe-wolfson"
@@ -16984,7 +16877,7 @@
   "nameHe": "ר' דניאל פראסטיץ",
   "nameEn": "Reb Daniel Prostitz",
   "nameYi": "ר' דניאל פראסטיץ",
-  "type": "other",
+  "type": "acharon",
   "aliases": [],
   "shiurIds": [
    "yi-tefila-heb-04"
@@ -17015,6 +16908,7 @@
   ],
   "shiurIds": [
    "yi-emunah-1-07",
+   "yi-emunah-1-18",
    "yi-shonos-03"
   ]
  },
@@ -17033,6 +16927,7 @@
    "yi-current-unc-bachurim-04",
    "yi-kedushas-hashabbos-unc-08",
    "yi-tefila-heb-15",
+   "yi-zmanim-svds-zs-chnvkh-06",
    "yi-zmanim-yvm-hkypvrym-03"
   ]
  },
@@ -17054,7 +16949,7 @@
   "nameHe": "רבי הלל מפאריטש",
   "nameEn": "Reb Hillel Paritcher",
   "nameYi": "ר' הלל פאריטשער",
-  "type": "other",
+  "type": "acharon",
   "aliases": [],
   "shiurIds": [
    "yi-parshas-hashavua-shvptym-03"
@@ -17076,7 +16971,7 @@
   "nameHe": "ר' לייב אסאפסקי",
   "nameEn": "Reb Leib Osofsky",
   "nameYi": "ר' לייב אסאפסקי",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "en-miscellaneous-en-11"
@@ -17120,7 +17015,7 @@
   "nameHe": "ר' ניסן פילטשיק",
   "nameEn": "Reb Nissan Pilchik",
   "nameYi": "ר' ניסן פילטשיק",
-  "type": "other",
+  "type": "individual",
   "aliases": [
    "Reb Nissen"
   ],
@@ -17145,7 +17040,7 @@
   "nameHe": "ר' פרץ חיים",
   "nameEn": "Reb Peretz Chaim",
   "nameYi": "ר' פרץ חיים",
-  "type": "other",
+  "type": "acharon",
   "aliases": [],
   "shiurIds": [
    "yi-tanya-2-09"
@@ -17176,7 +17071,7 @@
   "nameHe": "ר' שמואל גוראריה",
   "nameEn": "Reb Shmuel Gurary",
   "nameYi": "ר' שמואל גורארי'",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "yi-tanya-2-09"
@@ -17187,7 +17082,7 @@
   "nameHe": "ר' שמואל מונקעס",
   "nameEn": "Reb Shmuel Munkes",
   "nameYi": "ר' שמואל מונקעס",
-  "type": "other",
+  "type": "individual",
   "aliases": [],
   "shiurIds": [
    "en-tanya-en-42"
@@ -17246,7 +17141,7 @@
   "nameHe": "ר' יצחק המבורגר",
   "nameEn": "Reb Yitzchak Hamburger",
   "nameYi": "ר' יצחק האמבורגער",
-  "type": "other",
+  "type": "acharon",
   "aliases": [],
   "shiurIds": [
    "yi-tefila-heb-20"
@@ -17628,7 +17523,7 @@
   "nameHe": "ריצ'רד ניקסון",
   "nameEn": "Richard Nixon",
   "nameYi": "ריטשארד ניקסאן",
-  "type": "other",
+  "type": "ruler",
   "aliases": [
    "Nixon"
   ],
@@ -17769,7 +17664,7 @@
   "nameHe": "רומל",
   "nameEn": "Rommel",
   "nameYi": "ראמעל",
-  "type": "other",
+  "type": "ruler",
   "aliases": [],
   "shiurIds": [
    "en-tefila-en-15",
@@ -17948,7 +17843,7 @@
   "nameHe": "סדאם חוסיין",
   "nameEn": "Saddam Hussein",
   "nameYi": "סאדאם חוסיין",
-  "type": "other",
+  "type": "ruler",
   "aliases": [
    "Saddam"
   ],
@@ -17975,7 +17870,7 @@
   "nameHe": "סמאל",
   "nameEn": "Samael",
   "nameYi": "סמאל",
-  "type": "other",
+  "type": "malach",
   "aliases": [],
   "shiurIds": [
    "yi-zmanim-svkvs-06"
@@ -18443,7 +18338,7 @@
   "nameHe": "שמחזאי ועזאל",
   "nameEn": "Shamchazai and Uza",
   "nameYi": "שמחזאי און עזאל",
-  "type": "other",
+  "type": "malach",
   "aliases": [],
   "shiurIds": [
    "en-zmanim-en-byn-hmtzrym-01"
@@ -18460,6 +18355,7 @@
   ],
   "shiurIds": [
    "en-parsha-en-vyshb-01",
+   "yi-emunah-1-21",
    "yi-kedushas-hashabbos-unc-03",
    "yi-kedushas-hashabbos-unc-05",
    "yi-parshas-hashavua-chyy-shrh-02",
@@ -18642,46 +18538,26 @@
   "shiurIds": [
    "en-parsha-en-chyy-shrh-01",
    "en-parsha-en-nch-02",
-   "yi-parshas-hashavua-shvptym-01",
-   "yi-parshas-hashavua-vyshb-07",
-   "yi-tefila-heb-30",
-   "yi-zmanim-chnvkh-07",
-   "yi-zmanim-mhrl-gbvrs-h-04",
-   "yi-zmanim-svkvs-03-b"
-  ]
- },
- {
-  "id": "shem-and-ever",
-  "nameHe": "שם ועבר",
-  "nameEn": "Shem and Ever",
-  "nameYi": "שם און עבר",
-  "type": "tanach",
-  "aliases": [],
-  "shiurIds": [
    "en-parsha-en-vychy-03",
    "en-parsha-en-vyshb-02",
    "en-parsha-en-vytz-01",
    "en-zmanim-en-shvbbym-01",
+   "yi-parshas-hashavua-nch-07",
+   "yi-parshas-hashavua-shvptym-01",
    "yi-parshas-hashavua-svldvs-02",
    "yi-parshas-hashavua-svldvs-04",
    "yi-parshas-hashavua-vyshb-06",
+   "yi-parshas-hashavua-vyshb-07",
    "yi-parshas-hashavua-vyshlch-05",
    "yi-parshas-hashavua-vytz-01",
    "yi-parshas-hashavua-vytz-03",
+   "yi-tefila-heb-30",
+   "yi-zmanim-chnvkh-07",
    "yi-zmanim-lvl-07",
+   "yi-zmanim-mhrl-gbvrs-h-04",
    "yi-zmanim-shvbbym-01",
-   "yi-zmanim-svkvs-02"
-  ]
- },
- {
-  "id": "shem-and-yefes",
-  "nameHe": "שם ויפת",
-  "nameEn": "Shem and Yefes",
-  "nameYi": "שם און יפת",
-  "type": "tanach",
-  "aliases": [],
-  "shiurIds": [
-   "yi-parshas-hashavua-nch-07"
+   "yi-zmanim-svkvs-02",
+   "yi-zmanim-svkvs-03-b"
   ]
  },
  {
@@ -18714,17 +18590,6 @@
   ],
   "shiurIds": [
    "yi-parshas-hashavua-vyshb-01",
-   "yi-zmanim-psch-04"
-  ]
- },
- {
-  "id": "shemaya-and-avtalyon",
-  "nameHe": "שמעיה ואבטליון",
-  "nameEn": "Shemaya and Avtalyon",
-  "nameYi": "שמעיה און אבטליון",
-  "type": "chazal",
-  "aliases": [],
-  "shiurIds": [
    "yi-zmanim-psch-04"
   ]
  },
@@ -18768,17 +18633,6 @@
   ]
  },
  {
-  "id": "shifra-and-puah",
-  "nameHe": "שפרה ופועה",
-  "nameEn": "Shifra and Puah",
-  "nameYi": "שפרה און פועה",
-  "type": "tanach",
-  "aliases": [],
-  "shiurIds": [
-   "yi-parshas-hashavua-shmvs-02"
-  ]
- },
- {
   "id": "shimi-ben-gera",
   "nameHe": "שמעי בן גרא",
   "nameEn": "Shimi ben Gera",
@@ -18799,17 +18653,6 @@
    "yi-zmanim-chnvkh-15-b",
    "yi-zmanim-mhrl-gbvrs-h-01-b",
    "yi-zmanim-svds-pvrym-ktn-01"
-  ]
- },
- {
-  "id": "shimon-and-levi",
-  "nameHe": "שמעון ולוי",
-  "nameEn": "Shimon and Levi",
-  "nameYi": "שמעון און לוי",
-  "type": "tanach",
-  "aliases": [],
-  "shiurIds": [
-   "yi-parshas-hashavua-vychy-02"
   ]
  },
  {
@@ -18847,6 +18690,7 @@
    "en-zmanim-en-unc-chnvkh-11",
    "yi-current-unc-bachurim-5771-14",
    "yi-parshas-hashavua-shmvs-01",
+   "yi-parshas-hashavua-vychy-02",
    "yi-parshas-hashavua-vyshlch-02",
    "yi-shonos-04",
    "yi-simchos-unc-bar-mitzvah-08",
@@ -19310,7 +19154,7 @@
   "nameHe": "סטלין",
   "nameEn": "Stalin",
   "nameYi": "סטאלין",
-  "type": "other",
+  "type": "ruler",
   "aliases": [],
   "shiurIds": [
    "yi-zmanim-svds-shvshn-pvrym-03"
@@ -19498,7 +19342,7 @@
   "nameHe": "טיבריוס",
   "nameEn": "Tiberius",
   "nameYi": "טיבעריוס",
-  "type": "other",
+  "type": "ruler",
   "aliases": [],
   "shiurIds": [
    "yi-tefila-heb-30"
@@ -19554,7 +19398,7 @@
   "nameHe": "טיטוס",
   "nameEn": "Titus",
   "nameYi": "טיטוס הרשע",
-  "type": "other",
+  "type": "ruler",
   "aliases": [],
   "shiurIds": [
    "en-parsha-en-blk-01",
@@ -19631,7 +19475,7 @@
   "nameHe": "טרוצקי",
   "nameEn": "Trotsky",
   "nameYi": "טראצקי",
-  "type": "other",
+  "type": "ruler",
   "aliases": [],
   "shiurIds": [
    "en-zmanim-en-chnvkh-04-a"
@@ -19653,7 +19497,7 @@
   "nameHe": "טורנוסרופוס",
   "nameEn": "Turnus Rufus",
   "nameYi": "טורנוסרופוס",
-  "type": "other",
+  "type": "ruler",
   "aliases": [],
   "shiurIds": [
    "en-parsha-en-pnchs-01",
@@ -19966,7 +19810,7 @@
   "nameHe": "ולדימיר פוטין",
   "nameEn": "Vladimir Putin",
   "nameYi": "וולאדימיר פוטין",
-  "type": "other",
+  "type": "ruler",
   "aliases": [],
   "shiurIds": [
    "en-zmanim-en-pvrym-11"
@@ -20428,7 +20272,7 @@
   "nameHe": "ינאי המלך",
   "nameEn": "Yannai HaMelech",
   "nameYi": "ינאי המלך",
-  "type": "other",
+  "type": "ruler",
   "aliases": [
    "King Yannai",
    "Yanai",
@@ -20445,7 +20289,7 @@
   "nameHe": "יאסר ערפאת",
   "nameEn": "Yasser Arafat",
   "nameYi": "יאסער אראפאט",
-  "type": "other",
+  "type": "ruler",
   "aliases": [
    "Arafat"
   ],
@@ -20521,6 +20365,7 @@
   ],
   "shiurIds": [
    "yi-current-unc-ey-bachurim-5769-03",
+   "yi-parshas-hashavua-nch-07",
    "yi-zmanim-svkvs-03-b"
   ]
  },
@@ -20822,7 +20667,7 @@
   "nameHe": "יהודית",
   "nameEn": "Yehudis",
   "nameYi": "יהודית",
-  "type": "other",
+  "type": "individual",
   "aliases": [
    "Judith"
   ],
@@ -20979,8 +20824,10 @@
   "shiurIds": [
    "yi-current-unc-bachurim-5771-06",
    "yi-parshas-hashavua-b-02",
+   "yi-parshas-hashavua-bshlch-09",
    "yi-parshas-hashavua-vygsh-03",
    "yi-parshas-hashavua-vygsh-04",
+   "yi-shiurim-labachurim-01",
    "yi-tefila-heb-21"
   ]
  },
@@ -21586,6 +21433,7 @@
    "yi-parshas-hashavua-lk-lk-04",
    "yi-parshas-hashavua-lk-lk-07",
    "yi-parshas-hashavua-lk-lk-08",
+   "yi-parshas-hashavua-shmvs-02",
    "yi-parshas-hashavua-shmvs-03",
    "yi-parshas-hashavua-vygsh-04",
    "yi-simchos-unc-bris-pidyon-haben-55",
@@ -21979,6 +21827,8 @@
    "yi-current-unc-kayitz-5771-02",
    "yi-current-unc-kayitz-5771-03",
    "yi-parshas-hashavua-vyshlch-04",
+   "yi-shiurim-labachurim-18",
+   "yi-shonos-02",
    "yi-shonos-04",
    "yi-simchos-unc-bris-pidyon-haben-47",
    "yi-simchos-unc-bris-pidyon-haben-48",
@@ -22025,12 +21875,16 @@
  {
   "id": "zevulun",
   "nameHe": "זבולון",
-  "nameEn": "Zevulun",
+  "nameEn": "Zvulun (a Yerushalmi chassid)",
   "nameYi": "זבולון",
-  "type": "tanach",
+  "type": "individual",
   "aliases": [
    "Zvulun"
   ],
+  "description": {
+   "en": "A learned Slonimer chassid in Yerushalayim in the story of the Beis Avraham and the unimmersed plates; not Zevulun the son of Yaakov.",
+   "yi": "א למדן'ישער סלאנימער חסיד אין ירושלים אין דער מעשה פונעם בית אברהם מיט די נישט-געטובלטע טעלער."
+  },
   "shiurIds": [
    "yi-emunah-1-20"
   ]

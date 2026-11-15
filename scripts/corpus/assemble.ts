@@ -21,7 +21,9 @@ import type {
   Concept,
   CorpusIndex,
   Person,
+  RedirectKind,
   Redirects,
+  RedirectTarget,
   SearchSectionDoc,
   SeriesSynthesis,
   ShiurTags,
@@ -35,7 +37,7 @@ import { MANIFEST_PATH, SHIURIM_DIR, type ManifestEntry } from "../lib/manifest.
 
 const CORPUS = "data/derived/corpus";
 const INGEST_PATH = "data/derived/ingest.json";
-const CORPUS_VERSION = 1;
+const CORPUS_VERSION = 2;
 const HUB_SIZE = 10;
 /** Salience given to a topic that a shiur carries only at section level (shiur-level tags are >= 0.1). */
 const SECTION_ONLY_SALIENCE = 0.05;
@@ -106,15 +108,18 @@ const seriesFiles = jsonFiles(join(CORPUS, "series"));
 const series = seriesFiles.map((f) => ({ file: f, data: readJson<SeriesSynthesis>(join(CORPUS, "series", f)) }));
 
 // Story people: resolve raw names to person ids through people-alias-map (same normalization as
-// aggregate/link). Unresolved names stay as written. Rewrites stories.json in place (idempotent).
+// aggregate/link; a value may list several persons for a compound key such as "Nadav and Avihu").
+// Entries that are already person ids are kept as they are, so per-story corrections in stories.json
+// (raw/story-people-fix.json) are never undone. Unresolved names stay as written. Rewrites stories.json
+// in place (idempotent).
 {
   const aliasPath = join(CORPUS, "raw", "people-alias-map.json");
-  const alias = existsSync(aliasPath) ? readJson<Record<string, string>>(aliasPath) : {};
+  const alias = existsSync(aliasPath) ? readJson<Record<string, string | string[]>>(aliasPath) : {};
   const norm = (x: string): string => x.normalize("NFC").replace(/\s+/g, " ").trim();
   const known = new Set(people.map((p) => p.id));
   let changed = false;
   for (const st of stories) {
-    const next = [...new Set(st.people.map((n) => (known.has(n) ? n : alias[norm(n)] ?? n)))];
+    const next = [...new Set(st.people.flatMap((n) => (known.has(n) ? [n] : [alias[norm(n)] ?? n].flat())))];
     if (next.join("\u0000") !== st.people.join("\u0000")) {
       st.people = next;
       changed = true;
@@ -267,21 +272,29 @@ mkdirSync(tagsDir, { recursive: true });
 for (const [id, t] of shiurTags) writeJson(join(tagsDir, `${id}.json`), t);
 
 // ---------- redirects ----------
-// Hand-kept map of retired ids -> the id they were merged into, per kind. Checked here: the target
-// must exist and the old id must not be live again.
+// Hand-kept map of retired ids -> the entity they were merged into, per kind. A string target is an
+// id of the same kind; {kind, id} points at another kind (a retired person -> a concept). Checked here:
+// the target must exist and the old id must not be live again.
 const redirectsPath = join(CORPUS, "redirects.json");
 const redirects: Redirects = existsSync(redirectsPath) ? readJson<Redirects>(redirectsPath) : {};
-const liveIds: Record<keyof Redirects, Set<string>> = {
+const liveIds: Record<RedirectKind, Set<string>> = {
   topics: topicIds,
   concepts: conceptIds,
   people: personIds,
   works: workIds,
   stories: storyIds,
 };
-for (const [kind, map] of Object.entries(redirects) as [keyof Redirects, Record<string, string>][]) {
+for (const [kind, map] of Object.entries(redirects) as [string, Record<string, RedirectTarget>][]) {
+  if (!(kind in liveIds)) {
+    issue("redirects: unknown kind", kind);
+    continue;
+  }
+  const k = kind as RedirectKind;
   for (const [from, to] of Object.entries(map)) {
-    if (liveIds[kind].has(from)) issue("redirects: retired id is live", `${kind}: ${from}`);
-    if (!liveIds[kind].has(to)) issue("redirects: target missing", `${kind}: ${from} -> ${to}`);
+    if (liveIds[k].has(from)) issue("redirects: retired id is live", `${k}: ${from}`);
+    const tKind: string = typeof to === "string" ? k : to.kind;
+    const tId = typeof to === "string" ? to : to.id;
+    if (!(tKind in liveIds) || !liveIds[tKind as RedirectKind].has(tId)) issue("redirects: target missing", `${k}: ${from} -> ${tKind}:${tId}`);
   }
 }
 
@@ -453,11 +466,34 @@ for (const c of concepts) {
       issue("concepts: exampleRef does not resolve", `${c.id}: ${r.shiurId}#${r.sectionIndex}`);
   }
 }
-for (const p of people) checkShiurIds("people", p.id, p.shiurIds);
+for (const p of people) {
+  checkShiurIds("people", p.id, p.shiurIds);
+  if (!p.shiurIds.length) issue("people: no shiurIds", p.id);
+}
+const WORK_KINDS = new Set(["sefer", "genre", "tanach-book", "talmud-tractate", "mishnah-tractate", "liturgy", "document"]);
+const workById = new Map(works.map((w) => [w.id, w]));
 for (const w of works) {
   checkShiurIds("works", w.id, w.shiurIds);
   if (w.authorPersonId !== null && !personIds.has(w.authorPersonId)) issue("works: authorPersonId unresolved", `${w.id}: ${w.authorPersonId}`);
+  if (!WORK_KINDS.has(w.kind)) issue("works: unknown kind", `${w.id}: ${w.kind}`);
+  if (w.order !== null && !Number.isInteger(w.order)) issue("works: order not an integer", `${w.id}: ${w.order}`);
+  // parentWorkId must exist, and the chain must end within 2 levels (no cycles).
+  let cur = w;
+  for (let depth = 0; cur.parentWorkId !== null; depth++) {
+    const parent = workById.get(cur.parentWorkId);
+    if (!parent) {
+      issue("works: parentWorkId unresolved", `${cur.id}: ${cur.parentWorkId}`);
+      break;
+    }
+    if (depth >= 2) {
+      issue("works: parent chain deeper than 2 or cyclic", w.id);
+      break;
+    }
+    cur = parent;
+  }
 }
+const PERSON_TYPES = new Set(["tanach", "chazal", "rishon", "acharon", "chassidic_rebbe", "malach", "ruler", "individual", "other"]);
+for (const p of people) if (!PERSON_TYPES.has(p.type)) issue("people: unknown type", `${p.id}: ${p.type}`);
 const tellingSeen = new Map<string, string>();
 let storyPeopleResolved = 0;
 let storyPeopleRaw = 0;

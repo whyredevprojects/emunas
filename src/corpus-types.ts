@@ -32,6 +32,20 @@ export interface Topic {
   aliases: string[];
   /** Short description of what the topic covers; null when the label speaks for itself. */
   description: Bilingual | null;
+  /**
+   * Calendar join key: catalog parsha spellings, exactly as in ingest.json shiurim[].parsha (including the catalog's
+   * own variants, e.g. "פנחס"/"פינחס", "בהר-בחקתי"/"בהר בחקותי", and mixed values such as "שלח קינדער").
+   * A sefer topic (sefer-bereishis ... sefer-devarim) lists every parsha of that sefer that occurs in the catalog;
+   * a narrative topic under a sefer lists the parshiyos it is read in (noach-mabul -> ["נח"]).
+   * Absent when the topic does not follow the parsha cycle.
+   */
+  parsha?: string[];
+  /**
+   * Calendar join key: catalog zman spellings, exactly as in ingest.json shiurim[].zman
+   * (e.g. ["ל\"ג בעומר", "ל”ג בעומר", "סעודת ל\"ג בעומר"]). A parent topic's list includes its descendants' keys.
+   * Absent when the topic is not a yom tov, month or zman.
+   */
+  zman?: string[];
   /** Number of shiurim tagged with this topic or any descendant. */
   shiurCount: number;
   /** Representative shiurim for the topic page (highest salience first), subset of tagged shiurim. */
@@ -59,9 +73,32 @@ export interface Concept {
   reviewStatus?: ReviewStatus;
 }
 
-export type PersonType = "tanach" | "chazal" | "rishon" | "acharon" | "chassidic_rebbe" | "other";
+/**
+ * tanach: figures of Tanach (incl. Midrash about them).
+ * chazal: Tannaim, Amoraim and Second-Temple/Talmudic-era figures such as Matisyahu Kohen Gadol.
+ * rishon / acharon: Torah authorities of those eras (acharon also covers later rabbanim and well-known chassidim who were not rebbes).
+ * chassidic_rebbe: chassidic rebbes.
+ * malach: malachim and other non-human spiritual beings (e.g. Samael, Ashmedai).
+ * ruler: kings, emperors, heads of state, political and military leaders outside Tanach (e.g. Titus, Napoleon, Yannai HaMelech).
+ * individual: private persons known from stories or the Rav's own life (Kamtza, Dama ben Nesina, chassidim, acquaintances, gabbaim).
+ * other: everyone else (thinkers, writers, scientists, public figures, founders of other religions, named groups).
+ */
+export type PersonType =
+  | "tanach"
+  | "chazal"
+  | "rishon"
+  | "acharon"
+  | "chassidic_rebbe"
+  | "malach"
+  | "ruler"
+  | "individual"
+  | "other";
 
-/** A person mentioned in the shiurim (from extraction.people[] and stories[].people). */
+/**
+ * A person mentioned in the shiurim (from extraction.people[] and stories[].people). One entry is one person:
+ * pairs and lists ("Kamtza and Bar Kamtza") resolve to the individuals, and roles (Moshiach, the Kohen Gadol)
+ * are concepts. Exception: inseparable pairs with no individual entries (bigsan-and-teresh, shamchazai-and-uza).
+ */
 export interface Person {
   /** Stable ASCII kebab slug, e.g. "baal-shem-tov", "rambam", "avraham-avinu". */
   id: string;
@@ -70,11 +107,29 @@ export interface Person {
   /** Yiddish (Chassidish orthography) form of the name as readers would say it. */
   nameYi: string;
   type: PersonType;
+  /**
+   * Disambiguation note: who this entry is and how it differs from similarly named persons
+   * (e.g. the Amora Rav vs "the Rav"; the unspecified Belzer Rav; the Beis Aharon vs Rabbi Aharon HaGadol of Karlin).
+   */
+  description?: Bilingual;
   /** Other names/titles, e.g. "the Besht", "Reb Yisroel Baal Shem Tov". */
   aliases: string[];
   shiurIds: string[];
   reviewStatus?: ReviewStatus;
 }
+
+/**
+ * What sort of text a Work is.
+ * - "genre": a collection (midrash, talmud-bavli, mishnah, midrash-rabbah, targum, ...), or an author's writings cited by
+ *   name (rashi, ramban, rambam, tosafos, chasam-sofer, ...) that have specific sub-works listed under them.
+ * - "tanach-book": a book of Tanach, incl. the combined books (sefer-shmuel, sefer-melachim, divrei-hayamim).
+ * - "talmud-tractate": a Bavli or Yerushalmi tractate (parentWorkId tells which).
+ * - "mishnah-tractate": a Mishnah tractate, incl. Pirkei Avos.
+ * - "liturgy": siddur/machzor texts, tefillos, piyutim, zemiros, the Haggadah, Perek Shirah.
+ * - "document": a single document, letter or essay (kesubah, tzava'ah).
+ * - "sefer": any other book.
+ */
+export type WorkKind = "sefer" | "genre" | "tanach-book" | "talmud-tractate" | "mishnah-tractate" | "liturgy" | "document";
 
 /** A sefer / text cited in the shiurim (from extraction.sources[].work). */
 export interface Work {
@@ -82,6 +137,22 @@ export interface Work {
   id: string;
   titleHe: string;
   titleEn: string;
+  kind: WorkKind;
+  /**
+   * Canonical sort key, or null when the work has no natural position. One global scale: Tanach books 1-39 in Tanach
+   * order (a combined book such as sefer-shmuel shares its first part's number); tractates 100 + Mishnah-order number
+   * (Berachos 101 ... Avos 139 ... Uktzin 163), shared by Bavli, Yerushalmi and Mishnah; a work on exactly one Tanach
+   * book or tractate (Rashi on Bereishis, Tosafos on Pesachim, Shemos Rabbah) takes its base text's number;
+   * Shulchan Aruch sections 1-4 (OC, YD, EH, CM). Compare only among works of the same kind or the same parentWorkId.
+   */
+  order: number | null;
+  /**
+   * The larger work or collection this is part of, else null: a tractate -> talmud-bavli / talmud-yerushalmi / mishnah;
+   * rashi-on-bereishis -> rashi-on-the-torah -> rashi; tosafos-* -> tosafos; Midrash Rabbah books -> midrash-rabbah;
+   * Shulchan Aruch sections -> shulchan-aruch; shmuel-i -> sefer-shmuel. Always an existing work id; at most 2 levels deep.
+   * A parent's shiurIds cover only sources that cite it generically; they are not a roll-up of its children.
+   */
+  parentWorkId: string | null;
   /** Other spellings of the work name found in extractions (e.g. "Likutei Amarim"). */
   aliases: string[];
   /** Person id of the author when known (a Person entry must exist), else null. */
@@ -115,6 +186,11 @@ export interface Story {
   retelling: Bilingual;
   /** Person ids where resolved, otherwise the name as it appears in the extraction. */
   people: string[];
+  /**
+   * True when the tellings credit the story to different people (or differ on details that matter); the merged
+   * retelling then says so in reported speech, and `people` lists every person named. Absent = the tellings agree.
+   */
+  attributionVaries?: boolean;
   /** Each telling: index into that shiur's extraction.stories[]. */
   tellings: { shiurId: string; storyIndex: number }[];
   reviewStatus?: ReviewStatus;
@@ -177,6 +253,7 @@ export interface SearchSectionDoc {
 
 /** data/derived/corpus/index.json */
 export interface CorpusIndex {
+  /** Bumped whenever any shape changes. 2: Work kind/order/parentWorkId, Person description and new types, Topic parsha/zman, Story attributionVaries, cross-kind redirects. */
   version: number;
   generatedAt: string;
   /** Shiurim with manifest status "done" that the corpus covers. */
@@ -200,11 +277,17 @@ export interface CorpusIndex {
   pendingDescriptions: string[];
 }
 
-/** redirects.json: retired id -> the id it was merged into, per entity kind. For redirecting old addresses. */
-export interface Redirects {
-  topics?: Record<string, string>;
-  concepts?: Record<string, string>;
-  people?: Record<string, string>;
-  works?: Record<string, string>;
-  stories?: Record<string, string>;
-}
+/** The entity kinds that redirects.json is keyed by. */
+export type RedirectKind = "topics" | "concepts" | "people" | "works" | "stories";
+
+/**
+ * A redirect target. A plain string is an id of the same kind as the retired id. The object form points at an
+ * entity of another kind, e.g. the retired person `moshiach` -> `{ kind: "concepts", id: "mashiach" }`.
+ */
+export type RedirectTarget = string | { kind: RedirectKind; id: string };
+
+/**
+ * redirects.json: retired id -> the entity it was merged into, per entity kind. For redirecting old addresses.
+ * Every target exists (checked by corpus:assemble) and no retired id is live again.
+ */
+export type Redirects = { [K in RedirectKind]?: Record<string, RedirectTarget> };
