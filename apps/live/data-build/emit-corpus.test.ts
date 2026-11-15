@@ -251,6 +251,46 @@ describe("corpus-layer files on the mini corpus", () => {
     expect(get<StoryFile>(`story/${id}.json`, again).attributionVaries).toBe(true);
   });
 
+  it("stories-index.json (C2.7): labelled people, plain names, the topic join and one telling to play per language", () => {
+    const idx = get<StoriesIndexFile>("stories-index.json");
+    const stories = new Map((layer.stories ?? []).map((st) => [st.id, st]));
+    const topicFiles = new Map(under("topic/").filter((f) => !f.includes(".moments-")).map((f) => [f, get<TopicFile>(f)]));
+    for (const row of idx.stories) {
+      const st = stories.get(row.id)!;
+      // Every linked person has a label; a raw name or an unlisted person is a plain name, never an id.
+      for (const id of row.people) expect(idx.people[id], id).toBeDefined();
+      for (const n of row.names) expect(idx.people[n]).toBeUndefined();
+      const rawNames = st.people.flatMap((p) => ("name" in p ? [p.name] : []));
+      for (const n of rawNames) expect(row.names).toContain(n);
+      // Topics come from the layer's section join and each has a Live topic file.
+      for (const t of row.topics) {
+        expect(files.has(`topic/${t}.json`)).toBe(true);
+        expect(layer.topicDetail.get(t)!.storyIds).toContain(row.id);
+      }
+      // One play per language, from the story's own tellings, with the story moment's end.
+      expect(row.plays.map((p) => p.lang).sort()).toEqual([...row.langs].sort());
+      for (const p of row.plays) {
+        expect(st.tellings.some((t) => t.momentId === p.momentId && t.lang === p.lang)).toBe(true);
+        if (p.end !== null && p.t !== null) expect(p.end).toBeGreaterThan(p.t);
+      }
+    }
+    expect(Object.keys(idx.people).sort()).toEqual([...new Set(idx.stories.flatMap((s) => s.people))].sort());
+    expect(idx.stories.some((s) => s.names.length > 0)).toBe(true);
+    expect(idx.stories.some((s) => s.topics.length > 0)).toBe(true);
+    expect(topicFiles.size).toBeGreaterThan(0);
+
+    // Catalogued shiurim come before uncatalogued ones when picking the telling to play.
+    const flipped = clone(input);
+    const st = flipped.layer!.stories!.find((x) => x.tellings.length > 1)!;
+    const [a, b] = st.tellings;
+    b!.lang = a!.lang;
+    const shiurA = flipped.shiurim.find((s) => s.id === a!.shiurId)!;
+    shiurA.catalog = { ...shiurA.catalog, derived: "filename" };
+    const out = emitLiveData(flipped, { generatedAt: GENERATED_AT });
+    const row = get<StoriesIndexFile>("stories-index.json", out).stories.find((r) => r.id === st.id)!;
+    expect(row.plays.find((p) => p.lang === a!.lang)!.momentId).toBe(b!.momentId);
+  });
+
   it("explore/entities.json holds corpus-id arrays per summarized shiur; corpus.json keeps them until C3.1", () => {
     const ex = get<{ shiurim: Record<string, { topics: string[]; people: string[]; concepts: string[]; works: string[] }> }>("explore/entities.json");
     const facets = get<FacetsFile>("facets.json");

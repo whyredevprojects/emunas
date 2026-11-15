@@ -482,10 +482,14 @@ export const StoriesIndexSchema = v.strictObject({
       people: v.array(str),
       tellings: int,
       langs: v.array(ed),
+      names: v.array(str),
+      topics: v.array(str),
       page: v.boolean(),
       first: v.strictObject({ shiurId: str, momentId: str, t: nnum }),
+      plays: v.array(v.strictObject({ lang: ed, shiurId: str, momentId: str, t: nnum, end: nnum })),
     }),
   ),
+  people: v.record(str, facetLabel),
 });
 
 export const GlossarySchema = v.strictObject({
