@@ -1,0 +1,42 @@
+---
+/**
+ * The complete list of a gateway topic (concept-quiet-corpus C4.1 "Gate pages";
+ * `/{ed}/inyanim/{topicId}/all/`): every shiur of the topic and its descendants, in the three
+ * grades, in catalog order. Built for gateway topics only (level 1, or above the policy's gateway
+ * count); their entry page carries the description, children and "begin here".
+ */
+import type { GetStaticPaths } from "astro";
+import Base from "../../../../../layouts/Base.astro";
+import EntityLabel from "../../../../../components/corpus/EntityLabel.astro";
+import ReportEntry from "../../../../../components/corpus/ReportEntry.astro";
+import TopicGrades from "../../../../../components/topics/TopicGrades.astro";
+import TopicHead from "../../../../../components/topics/TopicHead.astro";
+import { topicCrumbs } from "../../../../../components/topics/crumbs.ts";
+import { topicsSource } from "../../../../../components/topics/data.ts";
+import { topicGrades, topicHref, topicPage, topicPageIds } from "../../../../../components/topics/model.ts";
+import { useTopicsT } from "../../../../../components/topics/strings.ts";
+import { EDS, type Ed } from "../../../../../lib/edition.ts";
+
+export const getStaticPaths = (() => {
+  const src = topicsSource();
+  if (!src) return [];
+  const { all } = topicPageIds(src);
+  return EDS.flatMap((ed) => all.map((topic) => ({ params: { ed, topic } })));
+}) satisfies GetStaticPaths;
+
+const ed = Astro.params.ed as Ed;
+const id = Astro.params.topic as string;
+const src = topicsSource()!;
+const page = topicPage(ed, src, id);
+if (!page) throw new Error(`inyanim: unknown topic ${id}`);
+const t = useTopicsT(ed);
+const grades = topicGrades(ed, src, src.topicDetail(id));
+---
+<Base ed={ed} title={`${page.name.title.text} · ${t("topic.allTitle")}`} crumbs={topicCrumbs(ed, page, t("topic.allTitle"))}>
+  <TopicHead ed={ed} page={page} meta={t("topic.allTitle")} notes={false} />
+  <p class="topic-back"><a href={topicHref(ed, id)}>{t("topic.backToEntry")}</a></p>
+  <TopicGrades ed={ed} grades={grades} />
+  <EntityLabel ed={ed} variant="entry" reviewed={page.reviewed}>
+    <ReportEntry ed={ed} kind="topic" id={id} />
+  </EntityLabel>
+</Base>

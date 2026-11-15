@@ -1,0 +1,39 @@
+---
+/**
+ * The calendar's cross-line to the topic index (concept-quiet-corpus C4.1 "Topics and the
+ * calendar"): on a parsha or zman page whose occasion is linked to a topic (occasion-topics.json),
+ * one line, "Chanukah is also spoken about in 74 shiurim said at other times → Topics: חנוכה",
+ * and the rule that keeps the two from competing. Nothing when the occasion has no topic, the topic
+ * has no page, or all its shiurim were said on its own days.
+ */
+import { corpusLabel } from "@emunas/i18n";
+import type { Ed } from "../../lib/edition.ts";
+import CalendarRule from "../topics/CalendarRule.astro";
+import TopicName from "../topics/TopicName.astro";
+import { topicsSource } from "../topics/data.ts";
+import { calendarCrossLine } from "../topics/model.ts";
+import { useCalendarT } from "./strings.ts";
+
+interface Props {
+  ed: Ed;
+  kind: "parsha" | "zman";
+  occasionKey: string;
+  /** The occasion's name in the edition's language. */
+  name: string;
+}
+
+const { ed, kind, occasionKey, name } = Astro.props;
+const src = topicsSource();
+const line = src ? calendarCrossLine(ed, src, kind, occasionKey) : null;
+const t = useCalendarT(ed);
+---
+{line && (
+  <div class="cal-topic" data-topic-line={line.topicId} data-count={line.count}>
+    <p class="cal-topic-line">
+      {t("cal.topicLine", { occasion: name, count: line.count })}{" "}
+      <span aria-hidden="true">{ed === "yi" ? "←" : "→"}</span>{" "}
+      <a href={line.href}>{corpusLabel("index.topics", ed)}: <TopicName name={line.topic} /></a>
+    </p>
+    <CalendarRule ed={ed} />
+  </div>
+)}

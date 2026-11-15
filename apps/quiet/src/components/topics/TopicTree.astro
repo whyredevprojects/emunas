@@ -1,0 +1,54 @@
+---
+/**
+ * The tree page's body (concept-quiet-corpus C4.1 "The tree page"): every gate as a heading with
+ * its count, the topics under it as one run of entries separated by a middle dot, and deeper topics
+ * run in after a dash, separated by commas. Each entry is the Hebrew term (English beside it in the
+ * English edition) with the number of shiurim beside it, as an index gives page numbers. Lists are
+ * real lists, laid out inline.
+ */
+import type { Ed } from "../../lib/edition.ts";
+import TopicName from "./TopicName.astro";
+import type { TreeGate } from "./model.ts";
+import "./topics.css";
+
+interface Props {
+  ed: Ed;
+  gates: readonly TreeGate[];
+}
+
+const { gates } = Astro.props;
+const n = (count: number) => count.toLocaleString("en");
+---
+<div class="topic-tree">
+  {gates.map((g) => (
+    <section class="topic-gate" id={`g-${g.id}`} aria-labelledby={`g-${g.id}-h`} data-topic={g.id}>
+      <h2 id={`g-${g.id}-h`}>
+        {g.href ? <a href={g.href}><TopicName name={g.name} /></a> : <TopicName name={g.name} />}
+        <span class="sep" aria-hidden="true"> · </span><span class="tree-count"><bdi dir="ltr">{n(g.count)}</bdi></span>
+      </h2>
+      {g.topics.length > 0 && (
+        <ul role="list" class="tree-run">
+          {g.topics.map((e) => (
+            <li data-topic={e.id}>
+              {e.href ? <a href={e.href}><TopicName name={e.name} /></a> : <TopicName name={e.name} />}{" "}
+              <span class="tree-count"><bdi dir="ltr">{n(e.count)}</bdi></span>
+              {e.sub.length > 0 && (
+                <>
+                  <span class="dash" aria-hidden="true"> — </span>
+                  <ul role="list" class="tree-sub">
+                    {e.sub.map((s) => (
+                      <li data-topic={s.id}>
+                        {s.href ? <a href={s.href}><TopicName name={s.name} /></a> : <TopicName name={s.name} />}{" "}
+                        <span class="tree-count"><bdi dir="ltr">{n(s.count)}</bdi></span>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
+  ))}
+</div>

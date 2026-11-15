@@ -1,7 +1,9 @@
 ---
 /**
  * One parsha (concept-quiet §5.5): every shiur on it, Yiddish and English together, by year, with
- * section, language and one-liner. One page per parsha key in `.corpus/occasions.json`.
+ * section, language and one-liner. Where the occasion is linked to a topic, one line sends the
+ * reader to the topic index for the shiurim on it said at other times (concept-quiet-corpus C4.1).
+ * One page per parsha key in `.corpus/occasions.json`.
  */
 import type { GetStaticPaths } from "astro";
 import Base from "../../../../../layouts/Base.astro";
@@ -9,6 +11,7 @@ import CalendarViews from "../../../../../components/calendar/CalendarViews.astr
 import NotesKey from "../../../../../components/calendar/NotesKey.astro";
 import OccasionName from "../../../../../components/calendar/OccasionName.astro";
 import ShiurList from "../../../../../components/calendar/ShiurList.astro";
+import TopicLine from "../../../../../components/calendar/TopicLine.astro";
 import { loadCalendarData } from "../../../../../components/calendar/data.ts";
 import { calendarHref, occasionPage, parshaKeys } from "../../../../../components/calendar/model.ts";
 import { useCalendarT } from "../../../../../components/calendar/strings.ts";
@@ -41,6 +44,7 @@ const title = ed === "yi" ? page.name : `${page.name} ${page.he ?? ""}`.trim();
 >
   <h1><OccasionName ed={ed} name={page} /></h1>
   <CalendarViews ed={ed} current="parsha" />
+  <TopicLine ed={ed} kind="parsha" occasionKey={key} name={page.name} />
   {page.count > 0 ? (
     <>
       <p class="cal-intro">{t("cal.parsha.pageIntro")} <span class="count">{t("cal.count", { count: page.count })}</span></p>

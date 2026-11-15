@@ -21,7 +21,7 @@ import { tmpdir } from "node:os";
 import { dirname, join, relative, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { gzipSync } from "node:zlib";
-import type { ConceptsFile, PeopleFile, StoriesFile, WorksFile } from "@emunas/corpus/aggregate";
+import type { PeopleFile, StoriesFile, WorksFile } from "@emunas/corpus/aggregate";
 import { ENTITY_THRESHOLDS, type CorpusIndex, type PublicShiur } from "@emunas/corpus/public";
 import { coverageNotice } from "@emunas/i18n";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
@@ -68,7 +68,8 @@ afterAll(() => {
 });
 
 const EDS = ["yi", "en"] as const;
-const DIRS = ["sources", "stories", "people", "inyanim"] as const;
+// /inyanim/ is the topic index now (C2.2); its pages are tested in components/topics/test/.
+const DIRS = ["sources", "stories", "people"] as const;
 
 function walk(dir: string): string[] {
   if (!existsSync(dir)) return [];
@@ -135,7 +136,7 @@ function entryItems(html: string): { hasLink: boolean }[] {
 const hrefsOf = (html: string): string[] => [...html.matchAll(/\shref="([^"]*)"/g)].map((m) => m[1]!.replace(/&amp;/g, "&"));
 
 describe("W3.4 on the real corpus", () => {
-  it("builds the four indexes in both editions", () => {
+  it("builds the three indexes in both editions", () => {
     const pages = indexPages();
     for (const ed of EDS) for (const d of DIRS) expect(pages.has(`/${ed}/${d}/`), `/${ed}/${d}/`).toBe(true);
   });
@@ -143,24 +144,20 @@ describe("W3.4 on the real corpus", () => {
   it("entity page set equals the threshold rule", () => {
     const works = readJson<WorksFile>(join(corpus, "works.json")).works;
     const people = readJson<PeopleFile>(join(corpus, "people.json")).people;
-    const concepts = readJson<ConceptsFile>(join(corpus, "concepts.json")).concepts;
     const q = ENTITY_THRESHOLDS.quiet;
     const want = {
       sources: works.filter((w) => !w.genre && w.shiurCount >= q.work).map((w) => w.key).sort(),
       people: people.filter((p) => p.shiurCount >= q.person).map((p) => p.key).sort(),
-      inyanim: concepts.filter((c) => c.shiurCount >= q.concept).map((c) => c.key).sort(),
     };
     expect(want.sources.length).toBeGreaterThan(100);
     expect(want.people.length).toBeGreaterThan(100);
-    expect(want.inyanim.length).toBeGreaterThan(100);
     for (const ed of EDS) {
       expect(entityDirs(ed, "sources")).toEqual(want.sources);
       expect(entityDirs(ed, "people")).toEqual(want.people);
-      expect(entityDirs(ed, "inyanim")).toEqual(want.inyanim);
       expect(entityDirs(ed, "stories")).toEqual([]);
     }
     // keys are URL-safe as they are, so ids, paths and @emunas/links anchors agree
-    for (const k of [...want.sources, ...want.people, ...want.inyanim]) expect(k).toMatch(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
+    for (const k of [...want.sources, ...want.people]) expect(k).toMatch(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
   });
 
   it("every link in every index page resolves (link crawler)", () => {

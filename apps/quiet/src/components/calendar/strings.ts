@@ -39,6 +39,11 @@ export const calendarEn = {
   "cal.audience.bachurim": "for bachurim",
   "cal.yearUnknown": "year not recorded",
 
+  "cal.topicLine": {
+    one: "{occasion} is also spoken about in {count} shiur said at other times",
+    other: "{occasion} is also spoken about in {count} shiurim said at other times",
+  },
+
   "cal.other.title": "Other occasions",
   "cal.other.intro": "Shiurim the guide lists under an occasion that has no place of its own above.",
 
@@ -88,6 +93,11 @@ export const calendarYi: MessageTable<CalendarKey> = {
   "cal.audience.children": "פאר קינדער",
   "cal.audience.bachurim": "פאר בחורים",
   "cal.yearUnknown": "יאר נישט פארצייכנט",
+
+  "cal.topicLine": {
+    one: "פון {occasion} רעדט מען אויך אין {count} שיעור וואס איז געזאגט געווארן אין אן אנדער צייט",
+    other: "פון {occasion} רעדט מען אויך אין {count} שיעורים וואס זענען געזאגט געווארן אין אנדערע צייטן",
+  },
 
   "cal.other.title": "אנדערע געלעגנהייטן",
   "cal.other.intro": "שיעורים וואס דער גייד שטעלט אונטער א געלעגנהייט וואס האט נישט קיין אייגן ארט אויבן.",

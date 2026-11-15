@@ -1,0 +1,18 @@
+---
+/**
+ * The one line that keeps the topic index and the calendar from competing (C4.1 "Topics and the
+ * calendar"): "The calendar lists what was said on a day; the index of topics lists where it is
+ * spoken about." Printed on topic pages linked to an occasion and on calendar pages that carry a
+ * cross-line, once per page.
+ */
+import type { Ed } from "../../lib/edition.ts";
+import { useTopicsT } from "./strings.ts";
+import "./topics.css";
+
+interface Props {
+  ed: Ed;
+}
+
+const { ed } = Astro.props;
+---
+<p class="calendar-rule">{useTopicsT(ed)("rule.calendar")}</p>
