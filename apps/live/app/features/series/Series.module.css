@@ -1,0 +1,162 @@
+/*
+ * Series index and series pages (concept-live §5.6). Logical properties only; the side-by-side
+ * columns follow the inline direction, so they mirror with `dir`.
+ */
+@layer components {
+  .page {
+    max-inline-size: var(--measure-wide);
+    padding: var(--space-l) var(--space-m) var(--space-2xl);
+    display: grid;
+    gap: var(--space-l);
+  }
+
+  .title {
+    font-size: var(--step-4);
+    margin: 0;
+  }
+
+  .lead {
+    margin: 0;
+    max-inline-size: var(--measure-text);
+    color: var(--color-ink-muted);
+  }
+
+  .index {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-s);
+  }
+
+  .indexRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-s);
+    padding: var(--space-s) var(--space-m);
+    border: var(--rule-hairline) solid var(--color-rule);
+    border-radius: var(--radius-m);
+    background: var(--color-surface);
+  }
+
+  .indexEntry {
+    display: grid;
+    gap: var(--space-3xs);
+    flex: 1 1 14rem;
+    min-block-size: var(--tap-min);
+    align-content: center;
+  }
+
+  .indexLink {
+    font-size: var(--step-1);
+    font-weight: var(--weight-semibold);
+  }
+
+  .meta {
+    font-size: var(--step--1);
+    color: var(--color-ink-muted);
+  }
+
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    align-items: center;
+  }
+
+  .viewLink {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: var(--tap-min);
+    padding-inline: var(--space-s);
+    border: var(--rule-hairline) solid var(--color-rule-strong);
+    border-radius: var(--radius-pill);
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+
+  .viewLink[aria-current="true"] {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+
+  .progress {
+    display: grid;
+    gap: var(--space-2xs);
+  }
+
+  .bar {
+    inline-size: 100%;
+    max-inline-size: 24rem;
+    block-size: 0.5rem;
+    accent-color: var(--color-accent);
+  }
+
+  .continue {
+    justify-self: start;
+    display: inline-flex;
+    align-items: center;
+    min-block-size: var(--tap-min);
+    padding-inline: var(--space-m);
+    border-radius: var(--radius-pill);
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    font-weight: var(--weight-semibold);
+    text-decoration: none;
+  }
+
+  .parts {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-xs);
+  }
+
+  .columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: var(--space-m);
+    align-items: start;
+  }
+
+  .column {
+    display: grid;
+    gap: var(--space-s);
+  }
+
+  .columnTitle {
+    font-size: var(--step-1);
+    margin: 0;
+  }
+
+  .group {
+    display: grid;
+    gap: var(--space-xs);
+  }
+
+  .groupTitle {
+    font-size: var(--step-1);
+    margin: 0;
+    padding-block-end: var(--space-3xs);
+    border-block-end: var(--rule-hairline) solid var(--color-rule);
+  }
+
+  .state {
+    font-size: var(--step--1);
+    font-weight: var(--weight-semibold);
+    color: var(--color-success);
+  }
+
+  .muted {
+    margin: 0;
+    color: var(--color-ink-muted);
+  }
+
+  .aiNote {
+    margin: 0;
+    font-size: var(--step--2);
+    color: var(--color-ink-muted);
+  }
+}

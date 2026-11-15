@@ -1,9 +1,10 @@
-// Stub (W2.4). Replaced by W3.8.
+// Today (W3.8): this week's parsha and occasions, continue, a moment for today, newly summarized.
 import type { JSX } from "react";
-import { PageStub, stubMeta } from "../shell/PageStub.tsx";
+import { TodayPage } from "../features/today/TodayPage.tsx";
+import { stubMeta } from "../shell/PageStub.tsx";
 
 export const meta = stubMeta("page.today");
 
 export default function Today(): JSX.Element {
-  return <PageStub title="page.today" lead="page.today.lead" />;
+  return <TodayPage />;
 }

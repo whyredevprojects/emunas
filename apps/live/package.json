@@ -11,9 +11,11 @@
     "test:e2e": "react-router build && playwright test"
   },
   "dependencies": {
+    "@emunas/calendar": "0.0.0",
     "@emunas/corpus": "0.0.0",
     "@emunas/i18n": "0.0.0",
     "@emunas/links": "0.0.0",
+    "@emunas/normalize": "0.0.0",
     "@emunas/tokens": "0.0.0",
     "@react-router/node": "7.18.5",
     "isbot": "5.2.2",

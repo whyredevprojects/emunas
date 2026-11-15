@@ -1,0 +1,208 @@
+/*
+ * Today and the shiur cards shared with the series pages (concept-live §5.1). Logical properties only;
+ * rows scroll in the inline direction, so they mirror with `dir`.
+ */
+@layer components {
+  .page {
+    max-inline-size: var(--measure-wide);
+    padding: var(--space-l) var(--space-m) var(--space-2xl);
+    display: grid;
+    gap: var(--space-xl);
+  }
+
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-s) var(--space-m);
+  }
+
+  .title {
+    font-size: var(--step-4);
+    margin: 0;
+  }
+
+  .date {
+    margin: 0;
+    color: var(--color-ink-muted);
+  }
+
+  .toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2xs);
+    min-block-size: var(--tap-min);
+    padding-inline: var(--space-s);
+    border: var(--rule-hairline) solid var(--color-rule-strong);
+    border-radius: var(--radius-pill);
+    background: var(--color-surface);
+    color: var(--color-ink);
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .toggle[aria-pressed="true"] {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+
+  .section {
+    display: grid;
+    gap: var(--space-s);
+  }
+
+  .sectionTitle {
+    font-size: var(--step-2);
+    margin: 0;
+  }
+
+  .sectionLead {
+    margin: 0;
+    color: var(--color-ink-muted);
+  }
+
+  .occasionTitle {
+    font-size: var(--step-1);
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--space-xs);
+  }
+
+  .badge {
+    font-size: var(--step--1);
+    font-weight: var(--weight-medium);
+    padding: var(--space-3xs) var(--space-xs);
+    border-radius: var(--radius-pill);
+    background: var(--color-paper-sunk);
+    color: var(--color-ink-muted);
+  }
+
+  .row {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 var(--space-xs);
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(15rem, 18rem);
+    gap: var(--space-s);
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline proximity;
+  }
+
+  .row > li {
+    scroll-snap-align: start;
+    display: flex;
+  }
+
+  .card {
+    display: grid;
+    align-content: start;
+    gap: var(--space-2xs);
+    inline-size: 100%;
+    padding: var(--space-s);
+    border: var(--rule-hairline) solid var(--color-rule);
+    border-radius: var(--radius-m);
+    background: var(--color-surface);
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+
+  .card:hover {
+    border-color: var(--color-rule-strong);
+  }
+
+  .card:focus-visible {
+    outline: var(--rule-focus) solid var(--color-focus);
+    outline-offset: 2px;
+  }
+
+  .cardTitle {
+    font-weight: var(--weight-semibold);
+    line-height: var(--leading-snug);
+  }
+
+  .cardMeta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3xs) var(--space-xs);
+    font-size: var(--step--1);
+    color: var(--color-ink-muted);
+  }
+
+  .oneLiner {
+    margin: 0;
+    font-size: var(--step--1);
+    line-height: var(--leading-body);
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .pending {
+    font-size: var(--step--1);
+    color: var(--color-ink-muted);
+  }
+
+  .aiNote {
+    margin: 0;
+    font-size: var(--step--2);
+    color: var(--color-ink-muted);
+  }
+
+  .moment {
+    display: grid;
+    gap: var(--space-xs);
+    padding: var(--space-m);
+    border-radius: var(--radius-l);
+    background: var(--color-paper-sunk);
+    border-inline-start: var(--rule-thick) solid var(--color-accent);
+  }
+
+  .momentKind {
+    font-size: var(--step--1);
+    font-weight: var(--weight-semibold);
+    color: var(--color-ink-muted);
+    margin: 0;
+  }
+
+  .momentText {
+    margin: 0;
+    font-size: var(--step-1);
+    line-height: var(--leading-text);
+  }
+
+  .play {
+    justify-self: start;
+    display: inline-flex;
+    align-items: center;
+    min-block-size: var(--tap-min);
+    padding-inline: var(--space-m);
+    border-radius: var(--radius-pill);
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    font-weight: var(--weight-semibold);
+    text-decoration: none;
+  }
+
+  .play:hover {
+    background: var(--color-accent-hover);
+    color: var(--color-on-accent);
+  }
+
+  .muted {
+    margin: 0;
+    color: var(--color-ink-muted);
+  }
+
+  .counter {
+    margin: 0;
+    font-size: var(--step--1);
+    color: var(--color-ink-muted);
+  }
+}
