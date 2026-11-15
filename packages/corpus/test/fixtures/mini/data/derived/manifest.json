@@ -1,0 +1,1897 @@
+{
+ "version": 1,
+ "updatedAt": "2026-11-15T04:42:08.483Z",
+ "entries": [
+  {
+   "shiurId": "yi-parshas-hashavua-brshys-01",
+   "lang": "yi",
+   "durationSec": 4597,
+   "order": 0,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 1
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 2
+    },
+    "firstErrors": [],
+    "sections": 12,
+    "sources": 21,
+    "budget": 1140,
+    "wordsEn": 1352,
+    "wordsYi": 1384
+   },
+   "batch": "2026-11-13T153228Z",
+   "group": 1,
+   "startedAt": "2026-11-13T15:32:29.267Z",
+   "updatedAt": "2026-11-13T16:02:32.414Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "en-parsha-en-nch-01",
+   "lang": "en",
+   "durationSec": 4232,
+   "order": 1,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 0
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 0
+    },
+    "firstErrors": [],
+    "sections": 13,
+    "sources": 34,
+    "budget": 1070,
+    "wordsEn": 1130,
+    "wordsYi": 1180
+   },
+   "batch": "2026-11-13T002820Z",
+   "group": 2,
+   "startedAt": "2026-11-13T00:28:20.416Z",
+   "updatedAt": "2026-11-13T00:37:04.980Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "@cf/openai/whisper-large-v3-turbo"
+    ],
+    "redone": false
+   }
+  },
+  {
+   "shiurId": "yi-parshas-hashavua-brshys-03",
+   "lang": "yi",
+   "durationSec": 2832,
+   "order": 3,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 2
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 1
+    },
+    "firstErrors": [],
+    "sections": 9,
+    "sources": 39,
+    "budget": 710,
+    "wordsEn": 868,
+    "wordsYi": 920
+   },
+   "batch": "2026-11-13T153228Z",
+   "group": 3,
+   "startedAt": "2026-11-13T15:32:29.267Z",
+   "updatedAt": "2026-11-13T16:02:32.428Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "en-parsha-en-svldvs-01",
+   "lang": "en",
+   "durationSec": 4065,
+   "order": 42,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 0
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 0
+    },
+    "firstErrors": [],
+    "sections": 11,
+    "sources": 26,
+    "budget": 1000,
+    "wordsEn": 1126,
+    "wordsYi": 1219
+   },
+   "batch": "2026-11-13T012708Z",
+   "group": 22,
+   "startedAt": "2026-11-13T01:27:08.770Z",
+   "updatedAt": "2026-11-13T01:52:37.698Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "@cf/openai/whisper-large-v3-turbo"
+    ],
+    "redone": false
+   }
+  },
+  {
+   "shiurId": "en-parsha-en-vyshlch-01",
+   "lang": "en",
+   "durationSec": 4346,
+   "order": 69,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 0
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 0
+    },
+    "firstErrors": [],
+    "sections": 14,
+    "sources": 24,
+    "budget": 1070,
+    "wordsEn": 1026,
+    "wordsYi": 1161
+   },
+   "batch": "2026-11-13T012708Z",
+   "group": 47,
+   "startedAt": "2026-11-13T01:27:08.770Z",
+   "updatedAt": "2026-11-13T01:52:37.798Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "@cf/openai/whisper-large-v3-turbo"
+    ],
+    "redone": false
+   }
+  },
+  {
+   "shiurId": "yi-parshas-hashavua-vyshb-08",
+   "lang": "yi",
+   "durationSec": 2498,
+   "order": 75,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 1
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 1
+    },
+    "firstErrors": [],
+    "sections": 9,
+    "sources": 27,
+    "budget": 620,
+    "wordsEn": 749,
+    "wordsYi": 827
+   },
+   "batch": "2026-11-13T153228Z",
+   "group": 56,
+   "startedAt": "2026-11-13T15:32:29.267Z",
+   "updatedAt": "2026-11-13T16:02:32.697Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "yi-parshas-hashavua-mvr-01",
+   "lang": "yi",
+   "durationSec": 4420,
+   "order": 131,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 1
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 2
+    },
+    "firstErrors": [],
+    "sections": 13,
+    "sources": 24,
+    "budget": 1110,
+    "wordsEn": 1268,
+    "wordsYi": 1368
+   },
+   "batch": "2026-11-14T002648Z",
+   "group": 13,
+   "startedAt": "2026-11-14T00:26:49.549Z",
+   "updatedAt": "2026-11-14T05:27:17.727Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "yi-parshas-hashavua-vschnn-01",
+   "lang": "yi",
+   "durationSec": 4709,
+   "order": 160,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 1
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 0
+    },
+    "firstErrors": [],
+    "sections": 14,
+    "sources": 17,
+    "budget": 1160,
+    "wordsEn": 1378,
+    "wordsYi": 1456
+   },
+   "batch": "2026-11-14T002648Z",
+   "group": 34,
+   "startedAt": "2026-11-14T00:26:49.549Z",
+   "updatedAt": "2026-11-14T05:27:17.869Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "yi-parshas-hashavua-shvptym-01",
+   "lang": "yi",
+   "durationSec": 5185,
+   "order": 161,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 1
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 0
+    },
+    "firstErrors": [],
+    "sections": 15,
+    "sources": 46,
+    "budget": 1290,
+    "wordsEn": 1319,
+    "wordsYi": 1434
+   },
+   "batch": "2026-11-14T002648Z",
+   "group": 35,
+   "startedAt": "2026-11-14T00:26:49.549Z",
+   "updatedAt": "2026-11-14T05:27:17.876Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "yi-parshas-hashavua-hzynv-01",
+   "lang": "yi",
+   "durationSec": 4049,
+   "order": 172,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 0
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 2
+    },
+    "firstErrors": [],
+    "sections": 14,
+    "sources": 28,
+    "budget": 1020,
+    "wordsEn": 1311,
+    "wordsYi": 1378
+   },
+   "batch": "2026-11-14T002648Z",
+   "group": 40,
+   "startedAt": "2026-11-14T00:26:49.549Z",
+   "updatedAt": "2026-11-14T05:27:17.916Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "yi-zmanim-lvl-01",
+   "lang": "yi",
+   "durationSec": 3440,
+   "order": 175,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 2
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 0
+    },
+    "firstErrors": [],
+    "sections": 9,
+    "sources": 24,
+    "budget": 870,
+    "wordsEn": 918,
+    "wordsYi": 986
+   },
+   "batch": "2026-11-14T102721Z",
+   "group": 5,
+   "startedAt": "2026-11-14T10:27:22.200Z",
+   "updatedAt": "2026-11-14T10:50:31.898Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "yi-zmanim-lvl-02",
+   "lang": "yi",
+   "durationSec": 2974,
+   "order": 176,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 1
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 0
+    },
+    "firstErrors": [],
+    "sections": 10,
+    "sources": 26,
+    "budget": 750,
+    "wordsEn": 900,
+    "wordsYi": 950
+   },
+   "batch": "2026-11-14T002648Z",
+   "group": 41,
+   "startedAt": "2026-11-14T00:26:49.549Z",
+   "updatedAt": "2026-11-14T05:27:17.922Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "yi-zmanim-svkvs-08",
+   "lang": "yi",
+   "durationSec": 4407,
+   "order": 213,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 0
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 0
+    },
+    "firstErrors": [],
+    "sections": 14,
+    "sources": 60,
+    "budget": 1090,
+    "wordsEn": 1081,
+    "wordsYi": 1163
+   },
+   "batch": "2026-11-14T102721Z",
+   "group": 30,
+   "startedAt": "2026-11-14T10:27:22.200Z",
+   "updatedAt": "2026-11-14T10:50:32.016Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "yi-zmanim-chnvkh-11",
+   "lang": "yi",
+   "durationSec": 2743,
+   "order": 243,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 1
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 2
+    },
+    "firstErrors": [],
+    "sections": 7,
+    "sources": 27,
+    "budget": 690,
+    "wordsEn": 888,
+    "wordsYi": 940
+   },
+   "batch": "2026-11-14T102721Z",
+   "group": 51,
+   "startedAt": "2026-11-14T10:27:22.200Z",
+   "updatedAt": "2026-11-14T10:50:32.086Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "en-parsha-en-ky-sb-01",
+   "lang": "en",
+   "durationSec": 3535,
+   "order": 248,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 1
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 2
+    },
+    "firstErrors": [],
+    "sections": 10,
+    "sources": 28,
+    "budget": 870,
+    "wordsEn": 1115,
+    "wordsYi": 1170
+   },
+   "batch": "2026-11-13T052637Z",
+   "group": 28,
+   "startedAt": "2026-11-13T05:26:37.531Z",
+   "updatedAt": "2026-11-13T10:53:01.728Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "@cf/openai/whisper-large-v3-turbo"
+    ],
+    "redone": false
+   }
+  },
+  {
+   "shiurId": "yi-zmanim-svds-zs-chnvkh-04",
+   "lang": "yi",
+   "durationSec": 2093,
+   "order": 258,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 1
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 0
+    },
+    "firstErrors": [],
+    "sections": 6,
+    "sources": 21,
+    "budget": 510,
+    "wordsEn": 534,
+    "wordsYi": 559
+   },
+   "batch": "2026-11-14T144745Z",
+   "group": 3,
+   "startedAt": "2026-11-14T14:47:46.294Z",
+   "updatedAt": "2026-11-14T15:48:01.689Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "en-zmanim-en-rsh-hshnh-03",
+   "lang": "en",
+   "durationSec": 1983,
+   "order": 274,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 0
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 1
+    },
+    "firstErrors": [],
+    "sections": 6,
+    "sources": 18,
+    "budget": 500,
+    "wordsEn": 630,
+    "wordsYi": 687
+   },
+   "batch": "2026-11-13T052637Z",
+   "group": 35,
+   "startedAt": "2026-11-13T05:26:37.531Z",
+   "updatedAt": "2026-11-13T10:53:01.759Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "@cf/openai/whisper-large-v3-turbo"
+    ],
+    "redone": false
+   }
+  },
+  {
+   "shiurId": "yi-zmanim-svds-pvrym-ktn-03",
+   "lang": "yi",
+   "durationSec": 2112,
+   "order": 284,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 1
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 0
+    },
+    "firstErrors": [],
+    "sections": 7,
+    "sources": 15,
+    "budget": 520,
+    "wordsEn": 579,
+    "wordsYi": 593
+   },
+   "batch": "2026-11-14T144745Z",
+   "group": 22,
+   "startedAt": "2026-11-14T14:47:46.294Z",
+   "updatedAt": "2026-11-14T15:48:01.814Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "yi-zmanim-pvrym-07",
+   "lang": "yi",
+   "durationSec": 2312,
+   "order": 312,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 0
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 0
+    },
+    "firstErrors": [],
+    "sections": 8,
+    "sources": 18,
+    "budget": 580,
+    "wordsEn": 696,
+    "wordsYi": 722
+   },
+   "batch": "2026-11-14T144745Z",
+   "group": 42,
+   "startedAt": "2026-11-14T14:47:46.294Z",
+   "updatedAt": "2026-11-14T15:48:01.963Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "yi-zmanim-svds-shvshn-pvrym-01",
+   "lang": "yi",
+   "durationSec": 5515,
+   "order": 324,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 1
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 1
+    },
+    "firstErrors": [],
+    "sections": 16,
+    "sources": 38,
+    "budget": 1380,
+    "wordsEn": 1711,
+    "wordsYi": 1820
+   },
+   "batch": "2026-11-14T144745Z",
+   "group": 51,
+   "startedAt": "2026-11-14T14:47:46.294Z",
+   "updatedAt": "2026-11-14T15:48:02.043Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "en-zmanim-en-chvdsh-tbs-02",
+   "lang": "en",
+   "durationSec": 3247,
+   "order": 345,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 1
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 2
+    },
+    "firstErrors": [],
+    "sections": 9,
+    "sources": 29,
+    "budget": 820,
+    "wordsEn": 1120,
+    "wordsYi": 1166
+   },
+   "batch": "2026-11-13T052637Z",
+   "group": 54,
+   "startedAt": "2026-11-13T05:26:37.531Z",
+   "updatedAt": "2026-11-13T10:53:01.819Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "@cf/openai/whisper-large-v3-turbo"
+    ],
+    "redone": false
+   }
+  },
+  {
+   "shiurId": "yi-zmanim-nysn-05",
+   "lang": "yi",
+   "durationSec": 2891,
+   "order": 346,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 1
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 2
+    },
+    "firstErrors": [],
+    "sections": 10,
+    "sources": 33,
+    "budget": 720,
+    "wordsEn": 973,
+    "wordsYi": 1051
+   },
+   "batch": "2026-11-14T202728Z",
+   "group": 7,
+   "startedAt": "2026-11-14T20:27:29.633Z",
+   "updatedAt": "2026-11-14T20:54:05.310Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "en-zmanim-en-tv-bshbt-01",
+   "lang": "en",
+   "durationSec": 3138,
+   "order": 352,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 1
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 1
+    },
+    "firstErrors": [],
+    "sections": 11,
+    "sources": 20,
+    "budget": 780,
+    "wordsEn": 991,
+    "wordsYi": 1042
+   },
+   "batch": "2026-11-13T052637Z",
+   "group": 56,
+   "startedAt": "2026-11-13T05:26:37.531Z",
+   "updatedAt": "2026-11-13T10:53:01.826Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "@cf/openai/whisper-large-v3-turbo"
+    ],
+    "redone": false
+   }
+  },
+  {
+   "shiurId": "yi-zmanim-spyrh-01",
+   "lang": "yi",
+   "durationSec": 5201,
+   "order": 380,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 1
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 1
+    },
+    "firstErrors": [],
+    "sections": 15,
+    "sources": 46,
+    "budget": 1310,
+    "wordsEn": 1674,
+    "wordsYi": 1713
+   },
+   "batch": "2026-11-14T202728Z",
+   "group": 31,
+   "startedAt": "2026-11-14T20:27:29.633Z",
+   "updatedAt": "2026-11-14T20:54:05.449Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "yi-zmanim-shbs-chzvn-01",
+   "lang": "yi",
+   "durationSec": 5126,
+   "order": 432,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 2
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 1
+    },
+    "firstErrors": [],
+    "sections": 15,
+    "sources": 60,
+    "budget": 1280,
+    "wordsEn": 1620,
+    "wordsYi": 1717
+   },
+   "batch": "2026-11-15T002707Z",
+   "group": 10,
+   "startedAt": "2026-11-15T00:27:07.626Z",
+   "updatedAt": "2026-11-15T04:40:14.479Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "yi-zmanim-msybs-lchyym-bkmp-01-c",
+   "lang": "yi",
+   "durationSec": 227,
+   "order": 436,
+   "status": "pending",
+   "attempts": 1,
+   "promptVersion": {
+    "p4": null,
+    "p4b": null
+   },
+   "model": null,
+   "validator": {
+    "extraction": {
+     "errors": 1,
+     "warnings": 0
+    },
+    "writeup": null,
+    "firstErrors": [
+     "extraction: sections[0] \"Holy words from Bilaam's impure mouth\" [00:02–01:51]: 109s < 180s minimum",
+     "writeup.json missing"
+    ]
+   },
+   "batch": "2026-11-15T002707Z",
+   "group": 13,
+   "startedAt": "2026-11-15T00:27:07.626Z",
+   "updatedAt": "2026-11-15T04:40:14.489Z",
+   "note": "extraction: sections[0] \"Holy words from Bilaam's impure mouth\" [00:02–01:51]: 109s < 180s minimum",
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "yi-zmanim-tv-bb-04",
+   "lang": "yi",
+   "durationSec": 3028,
+   "order": 450,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 2
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 2
+    },
+    "firstErrors": [],
+    "sections": 10,
+    "sources": 26,
+    "budget": 700,
+    "wordsEn": 939,
+    "wordsYi": 944
+   },
+   "batch": "2026-11-15T002707Z",
+   "group": 23,
+   "startedAt": "2026-11-15T00:27:07.626Z",
+   "updatedAt": "2026-11-15T04:40:14.564Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "en-zmanim-en-psch-06",
+   "lang": "en",
+   "durationSec": 2930,
+   "order": 464,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 1
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 1
+    },
+    "firstErrors": [],
+    "sections": 9,
+    "sources": 25,
+    "budget": 730,
+    "wordsEn": 888,
+    "wordsYi": 938
+   },
+   "batch": "2026-11-13T202757Z",
+   "group": 50,
+   "startedAt": "2026-11-13T20:27:57.563Z",
+   "updatedAt": "2026-11-13T21:00:38.504Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "@cf/openai/whisper-large-v3-turbo"
+    ],
+    "redone": false
+   }
+  },
+  {
+   "shiurId": "yi-shonos-10",
+   "lang": "yi",
+   "durationSec": 2322,
+   "order": 465,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 0
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 0
+    },
+    "firstErrors": [],
+    "sections": 8,
+    "sources": 14,
+    "budget": 580,
+    "wordsEn": 654,
+    "wordsYi": 701
+   },
+   "batch": "2026-11-15T002707Z",
+   "group": 34,
+   "startedAt": "2026-11-15T00:27:07.626Z",
+   "updatedAt": "2026-11-15T04:40:14.645Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "yi-shonos-31",
+   "lang": "yi",
+   "durationSec": 2093,
+   "order": 493,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 0
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 0
+    },
+    "firstErrors": [],
+    "sections": 6,
+    "sources": 14,
+    "budget": 510,
+    "wordsEn": 594,
+    "wordsYi": 634
+   },
+   "batch": "2026-11-15T002707Z",
+   "group": 55,
+   "startedAt": "2026-11-15T00:27:07.626Z",
+   "updatedAt": "2026-11-15T04:40:14.798Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "yi-emunah-1-16",
+   "lang": "yi",
+   "durationSec": 1621,
+   "order": 525,
+   "status": "pending",
+   "attempts": 0,
+   "promptVersion": null,
+   "model": null,
+   "validator": null,
+   "batch": null,
+   "group": null,
+   "startedAt": null,
+   "updatedAt": "2026-11-13T00:27:45.392Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "yi-tanya-1-01",
+   "lang": "yi",
+   "durationSec": 2675,
+   "order": 541,
+   "status": "pending",
+   "attempts": 0,
+   "promptVersion": null,
+   "model": null,
+   "validator": null,
+   "batch": null,
+   "group": null,
+   "startedAt": null,
+   "updatedAt": "2026-11-13T00:27:45.393Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "yi-tanya-1-10",
+   "lang": "yi",
+   "durationSec": 2607,
+   "order": 553,
+   "status": "pending",
+   "attempts": 0,
+   "promptVersion": null,
+   "model": null,
+   "validator": null,
+   "batch": null,
+   "group": null,
+   "startedAt": null,
+   "updatedAt": "2026-11-13T00:27:45.394Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "en-miscellaneous-en-01",
+   "lang": "en",
+   "durationSec": 5334,
+   "order": 558,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 2
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 0
+    },
+    "firstErrors": [],
+    "sections": 16,
+    "sources": 26,
+    "budget": 1340,
+    "wordsEn": 1489,
+    "wordsYi": 1635
+   },
+   "batch": "2026-11-14T002648Z",
+   "group": 58,
+   "startedAt": "2026-11-14T00:26:49.549Z",
+   "updatedAt": "2026-11-14T05:27:18.026Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "@cf/openai/whisper-large-v3-turbo"
+    ],
+    "redone": false
+   }
+  },
+  {
+   "shiurId": "en-miscellaneous-en-02",
+   "lang": "en",
+   "durationSec": 2177,
+   "order": 561,
+   "status": "done",
+   "attempts": 0,
+   "promptVersion": {
+    "p4": "p4-v3",
+    "p4b": "p4b-v2"
+   },
+   "model": "opus",
+   "validator": {
+    "extraction": {
+     "errors": 0,
+     "warnings": 2
+    },
+    "writeup": {
+     "errors": 0,
+     "warnings": 1
+    },
+    "firstErrors": [],
+    "sections": 8,
+    "sources": 13,
+    "budget": 550,
+    "wordsEn": 697,
+    "wordsYi": 758
+   },
+   "batch": "2026-11-14T002648Z",
+   "group": 59,
+   "startedAt": "2026-11-14T00:26:49.549Z",
+   "updatedAt": "2026-11-14T05:27:18.030Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "@cf/openai/whisper-large-v3-turbo"
+    ],
+    "redone": false
+   }
+  },
+  {
+   "shiurId": "yi-tanya-1-29",
+   "lang": "yi",
+   "durationSec": 2346,
+   "order": 579,
+   "status": "pending",
+   "attempts": 0,
+   "promptVersion": null,
+   "model": null,
+   "validator": null,
+   "batch": null,
+   "group": null,
+   "startedAt": null,
+   "updatedAt": "2026-11-13T00:27:45.396Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "yi-tanya-2-02",
+   "lang": "yi",
+   "durationSec": 2620,
+   "order": 605,
+   "status": "pending",
+   "attempts": 0,
+   "promptVersion": null,
+   "model": null,
+   "validator": null,
+   "batch": null,
+   "group": null,
+   "startedAt": null,
+   "updatedAt": "2026-11-13T00:27:45.398Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "en-miscellaneous-en-14",
+   "lang": "en",
+   "durationSec": 2452,
+   "order": 606,
+   "status": "pending",
+   "attempts": 0,
+   "promptVersion": null,
+   "model": null,
+   "validator": null,
+   "batch": null,
+   "group": null,
+   "startedAt": null,
+   "updatedAt": "2026-11-13T00:27:45.396Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "@cf/openai/whisper-large-v3-turbo"
+    ],
+    "redone": false
+   }
+  },
+  {
+   "shiurId": "yi-tefila-heb-04",
+   "lang": "yi",
+   "durationSec": 2708,
+   "order": 631,
+   "status": "pending",
+   "attempts": 0,
+   "promptVersion": null,
+   "model": null,
+   "validator": null,
+   "batch": null,
+   "group": null,
+   "startedAt": null,
+   "updatedAt": "2026-11-13T00:27:45.400Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "en-emunah-en-01",
+   "lang": "en",
+   "durationSec": 1581,
+   "order": 636,
+   "status": "pending",
+   "attempts": 0,
+   "promptVersion": null,
+   "model": null,
+   "validator": null,
+   "batch": null,
+   "group": null,
+   "startedAt": null,
+   "updatedAt": "2026-11-13T00:27:45.398Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "@cf/openai/whisper-large-v3-turbo"
+    ],
+    "redone": false
+   }
+  },
+  {
+   "shiurId": "yi-tefila-heb-23",
+   "lang": "yi",
+   "durationSec": 2537,
+   "order": 657,
+   "status": "pending",
+   "attempts": 0,
+   "promptVersion": null,
+   "model": null,
+   "validator": null,
+   "batch": null,
+   "group": null,
+   "startedAt": null,
+   "updatedAt": "2026-11-13T00:27:45.401Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "en-emunah-en-16",
+   "lang": "en",
+   "durationSec": 1367,
+   "order": 692,
+   "status": "pending",
+   "attempts": 0,
+   "promptVersion": null,
+   "model": null,
+   "validator": null,
+   "batch": null,
+   "group": null,
+   "startedAt": null,
+   "updatedAt": "2026-11-13T00:27:45.401Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "@cf/openai/whisper-large-v3-turbo"
+    ],
+    "redone": false
+   }
+  },
+  {
+   "shiurId": "yi-eretz-yisroel-08",
+   "lang": "yi",
+   "durationSec": 4091,
+   "order": 693,
+   "status": "pending",
+   "attempts": 0,
+   "promptVersion": null,
+   "model": null,
+   "validator": null,
+   "batch": null,
+   "group": null,
+   "startedAt": null,
+   "updatedAt": "2026-11-13T00:27:45.403Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "yi-shiurim-labachurim-13",
+   "lang": "yi",
+   "durationSec": 2121,
+   "order": 713,
+   "status": "pending",
+   "attempts": 0,
+   "promptVersion": null,
+   "model": null,
+   "validator": null,
+   "batch": null,
+   "group": null,
+   "startedAt": null,
+   "updatedAt": "2026-11-13T00:27:45.405Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "yi-zmanim-unc-chnvkh-16",
+   "lang": "yi",
+   "durationSec": 2818,
+   "order": 743,
+   "status": "pending",
+   "attempts": 0,
+   "promptVersion": null,
+   "model": null,
+   "validator": null,
+   "batch": null,
+   "group": null,
+   "startedAt": null,
+   "updatedAt": "2026-11-13T00:27:45.406Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "en-tanya-en-05",
+   "lang": "en",
+   "durationSec": 3082,
+   "order": 756,
+   "status": "pending",
+   "attempts": 0,
+   "promptVersion": null,
+   "model": null,
+   "validator": null,
+   "batch": null,
+   "group": null,
+   "startedAt": null,
+   "updatedAt": "2026-11-13T00:27:45.405Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "@cf/openai/whisper-large-v3-turbo"
+    ],
+    "redone": false
+   }
+  },
+  {
+   "shiurId": "yi-shonos-unc-46",
+   "lang": "yi",
+   "durationSec": 4715,
+   "order": 766,
+   "status": "pending",
+   "attempts": 0,
+   "promptVersion": null,
+   "model": null,
+   "validator": null,
+   "batch": null,
+   "group": null,
+   "startedAt": null,
+   "updatedAt": "2026-11-13T00:27:45.408Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "yi-shir-hashirim-unc-02",
+   "lang": "yi",
+   "durationSec": 2498,
+   "order": 776,
+   "status": "pending",
+   "attempts": 0,
+   "promptVersion": null,
+   "model": null,
+   "validator": null,
+   "batch": null,
+   "group": null,
+   "startedAt": null,
+   "updatedAt": "2026-11-13T00:27:45.408Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "yi-simchos-unc-bris-pidyon-haben-10",
+   "lang": "yi",
+   "durationSec": 763,
+   "order": 820,
+   "status": "pending",
+   "attempts": 0,
+   "promptVersion": null,
+   "model": null,
+   "validator": null,
+   "batch": null,
+   "group": null,
+   "startedAt": null,
+   "updatedAt": "2026-11-13T00:27:45.411Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "en-tanya-en-24",
+   "lang": "en",
+   "durationSec": 2858,
+   "order": 827,
+   "status": "pending",
+   "attempts": 0,
+   "promptVersion": null,
+   "model": null,
+   "validator": null,
+   "batch": null,
+   "group": null,
+   "startedAt": null,
+   "updatedAt": "2026-11-13T00:27:45.409Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "@cf/openai/whisper-large-v3-turbo"
+    ],
+    "redone": false
+   }
+  },
+  {
+   "shiurId": "yi-simchos-unc-bris-pidyon-haben-25",
+   "lang": "yi",
+   "durationSec": 759,
+   "order": 839,
+   "status": "pending",
+   "attempts": 0,
+   "promptVersion": null,
+   "model": null,
+   "validator": null,
+   "batch": null,
+   "group": null,
+   "startedAt": null,
+   "updatedAt": "2026-11-13T00:27:45.412Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "yi-simchos-unc-bris-pidyon-haben-31",
+   "lang": "yi",
+   "durationSec": 433,
+   "order": 847,
+   "status": "pending",
+   "attempts": 0,
+   "promptVersion": null,
+   "model": null,
+   "validator": null,
+   "batch": null,
+   "group": null,
+   "startedAt": null,
+   "updatedAt": "2026-11-13T00:27:45.413Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "yi-simchos-unc-bris-pidyon-haben-51",
+   "lang": "yi",
+   "durationSec": 725,
+   "order": 873,
+   "status": "pending",
+   "attempts": 0,
+   "promptVersion": null,
+   "model": null,
+   "validator": null,
+   "batch": null,
+   "group": null,
+   "startedAt": null,
+   "updatedAt": "2026-11-13T00:27:45.414Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "yi-simchos-unc-bris-pidyon-haben-57",
+   "lang": "yi",
+   "durationSec": 642,
+   "order": 881,
+   "status": "pending",
+   "attempts": 0,
+   "promptVersion": null,
+   "model": null,
+   "validator": null,
+   "batch": null,
+   "group": null,
+   "startedAt": null,
+   "updatedAt": "2026-11-13T00:27:45.415Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "en-tefila-en-01",
+   "lang": "en",
+   "durationSec": 1670,
+   "order": 894,
+   "status": "pending",
+   "attempts": 0,
+   "promptVersion": null,
+   "model": null,
+   "validator": null,
+   "batch": null,
+   "group": null,
+   "startedAt": null,
+   "updatedAt": "2026-11-13T00:27:45.413Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "@cf/openai/whisper-large-v3-turbo"
+    ],
+    "redone": false
+   }
+  },
+  {
+   "shiurId": "yi-current-unc-kayitz-5771-03",
+   "lang": "yi",
+   "durationSec": 955,
+   "order": 903,
+   "status": "pending",
+   "attempts": 0,
+   "promptVersion": null,
+   "model": null,
+   "validator": null,
+   "batch": null,
+   "group": null,
+   "startedAt": null,
+   "updatedAt": "2026-11-13T12:37:59.351Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "yi-current-unc-ey-bachurim-5769-15",
+   "lang": "yi",
+   "durationSec": 2660,
+   "order": 958,
+   "status": "pending",
+   "attempts": 0,
+   "promptVersion": null,
+   "model": null,
+   "validator": null,
+   "batch": null,
+   "group": null,
+   "startedAt": null,
+   "updatedAt": "2026-11-13T00:27:45.418Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "en-zmanim-en-unc-shrs-ymy-sshvbh-07",
+   "lang": "en",
+   "durationSec": 2356,
+   "order": 965,
+   "status": "pending",
+   "attempts": 0,
+   "promptVersion": null,
+   "model": null,
+   "validator": null,
+   "batch": null,
+   "group": null,
+   "startedAt": null,
+   "updatedAt": "2026-11-13T00:27:45.417Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "@cf/openai/whisper-large-v3-turbo"
+    ],
+    "redone": false
+   }
+  },
+  {
+   "shiurId": "yi-current-unc-bachurim-20",
+   "lang": "yi",
+   "durationSec": 1966,
+   "order": 978,
+   "status": "pending",
+   "attempts": 0,
+   "promptVersion": null,
+   "model": null,
+   "validator": null,
+   "batch": null,
+   "group": null,
+   "startedAt": null,
+   "updatedAt": "2026-11-13T12:37:59.357Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2/careful"
+    ],
+    "redone": true
+   }
+  },
+  {
+   "shiurId": "yi-current-unc-kayitz-5771-22",
+   "lang": "yi",
+   "durationSec": 2408,
+   "order": 984,
+   "status": "pending",
+   "attempts": 0,
+   "promptVersion": null,
+   "model": null,
+   "validator": null,
+   "batch": null,
+   "group": null,
+   "startedAt": null,
+   "updatedAt": "2026-11-13T12:37:59.358Z",
+   "note": null,
+   "asr": {
+    "models": [
+     "ivrit-ai/yi-whisper-large-v3-ct2"
+    ],
+    "redone": false
+   }
+  }
+ ]
+}
