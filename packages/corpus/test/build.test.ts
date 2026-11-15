@@ -35,7 +35,10 @@ describe("buildCorpus → .corpus/", () => {
       expect(e.size).toBeGreaterThan(0);
       expect(typeof e.canonicalId).toBe("string");
       expect(id).toMatch(/^[a-z0-9-]+$/);
+      expect(e.playable).toBe(true);
+      expect(e.url?.startsWith(`${info.mediaOrigin}/`)).toBe(true);
     }
+    expect(readFileSync(join(out, "audio-table.json"), "utf8")).not.toContain("audioKey");
     const shiur = readJson<PublicShiur>(join(out, "shiurim/yi-zmanim-tv-bb-04.json"));
     expect(shiur.rev).toBe(tv.rev);
   });

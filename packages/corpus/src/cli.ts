@@ -1,12 +1,13 @@
 /**
- * corpus:build [--data-dir <dir>] [--out <dir>] [--suppress <file>] [--policy-dir <dir>] [--force]
+ * corpus:build [--data-dir <dir>] [--out <dir>] [--suppress <file>] [--policy-dir <dir>] [--media-origin <url>] [--force]
  *
  * From the repo root: `npm run corpus:build -- --suppress .corpus/suppress.json`.
  * Relative paths resolve against the directory npm was started from (INIT_CWD), so the command
  * behaves the same from the root or from packages/corpus. Defaults: data dir `EMUNAS_DATA_DIR` or
- * `<repo>/data`, out `<repo>/.corpus`, policy `<repo>/site-policy`.
+ * `<repo>/data`, out `<repo>/.corpus`, policy `<repo>/site-policy`, media origin `EMUNAS_MEDIA_ORIGIN` or
+ * the dev placeholder `https://media.example.invalid` (Amendment A1).
  *
- * Exit codes: 0 ok, 1 fatal data error (invalid ingest/manifest/policy), 2 usage.
+ * Exit codes: 0 ok, 1 fatal error (invalid ingest/manifest/policy or media origin), 2 usage.
  */
 import { resolve } from "node:path";
 import { parseArgs } from "node:util";
@@ -22,6 +23,7 @@ function main(argv: string[]): number {
         out: { type: "string" },
         suppress: { type: "string" },
         "policy-dir": { type: "string" },
+        "media-origin": { type: "string" },
         force: { type: "boolean", default: false },
         help: { type: "boolean", short: "h", default: false },
       },
@@ -34,7 +36,9 @@ function main(argv: string[]): number {
   }
   const v = args.values;
   if (v.help) {
-    console.log("corpus:build [--data-dir <dir>] [--out <dir>] [--suppress <file>] [--policy-dir <dir>] [--force]");
+    console.log(
+      "corpus:build [--data-dir <dir>] [--out <dir>] [--suppress <file>] [--policy-dir <dir>] [--media-origin <url>] [--force]",
+    );
     return 0;
   }
   const base = process.env["INIT_CWD"] ?? process.cwd();
@@ -49,8 +53,10 @@ function main(argv: string[]): number {
     if (outDir) opts.outDir = outDir;
     if (suppressFile) opts.suppressFile = suppressFile;
     if (policyDir) opts.policyDir = policyDir;
+    if (v["media-origin"] !== undefined) opts.mediaOrigin = v["media-origin"];
     const r = buildCorpus(opts);
     const rep = r.report;
+    console.log(`audio: media origin ${r.info.mediaOrigin}`);
     console.log(
       `report: ${rep.downgraded.length} downgraded, ${rep.notDoneWithFiles.length} mid-flight, ` +
         `${rep.dropped.lowConfidence} low-confidence dropped, ${rep.dropped.unresolvedSourcesWithoutWork} unresolved sources dropped, ` +

@@ -1,11 +1,12 @@
 /**
  * Allow-list projection (§5.2, C6–C9): builds `PublicShiur` field by field from typed inputs. It
  * copies allowed fields and never spreads a raw object, so unknown or forbidden fields (heardAs,
- * asrNotes, segs, audioKey, …) cannot reach the output.
+ * asrNotes, segs, audioKey, …) cannot reach the output. Audio URLs come from the audio table
+ * (`@emunas/audio`), which reads the bucket key and emits only the encoded media URL.
  */
+import { lookupAudio, type AudioTable } from "@emunas/audio";
 import type { Extraction, Localized, Recording, Shiur, Writeup } from "../../../../src/types.ts";
 import { momentId, type MomentKind } from "../public/moment-id.ts";
-import { audioPath } from "../public/index.ts";
 import { offsetsFor, round3 } from "../public/timeline.ts";
 import type {
   Ed,
@@ -30,7 +31,7 @@ import type { Meta } from "./schemas.ts";
 import { TimeModel, mergeRanges, type RecTime, type SpanResult } from "./time.ts";
 
 /** Bump when the projection output changes for the same input (feeds every fingerprint). */
-export const PROJECTOR_VERSION = "1";
+export const PROJECTOR_VERSION = "2";
 
 export interface ProjectContext {
   keyer: Keyer;
@@ -41,6 +42,8 @@ export interface ProjectContext {
   recordingsById: ReadonlyMap<string, Recording>;
   /** Series id → number of in-scope shiurim in it. */
   seriesCount: ReadonlyMap<string, number>;
+  /** recordingId → media URL / playability (Amendment A1). A recording missing from it is unplayable. */
+  audio: AudioTable;
 }
 
 export function L2(x: Localized): L {
@@ -84,16 +87,16 @@ function catalogOf(s: Shiur, topics: string[]): PublicCatalog {
   return out;
 }
 
-function recordingsOf(ids: readonly string[], durations: readonly number[]): PublicRecording[] {
+function recordingsOf(ids: readonly string[], durations: readonly number[], audio: AudioTable): PublicRecording[] {
   const offsets = offsetsFor(durations);
-  return ids.map((id, i) => ({
-    id,
-    order: i,
-    offset: offsets[i]!,
-    duration: durations[i]!,
-    audio: audioPath(id),
-    transcript: { eligible: false as const },
-  }));
+  return ids.map((id, i): PublicRecording => {
+    const base = { id, order: i, offset: offsets[i]!, duration: durations[i]! };
+    const transcript = { eligible: false as const };
+    const a = lookupAudio(audio, id);
+    return a?.playable
+      ? { ...base, audioUrl: a.url, playable: true, transcript }
+      : { ...base, audioUrl: null, playable: false, transcript };
+  });
 }
 
 /** Durations from ingest (catalog-only shiurim); unknown → 0. */
@@ -137,13 +140,13 @@ export function projectShiur(input: ProjectInput, ctx: ProjectContext): ProjectR
     };
   };
 
-  const catalogOnly = () => base(splitCatalogTopics(s.catalog.titleOriginal), recordingsOf(s.recordingIds, ingestDurations(s, ctx)));
+  const catalogOnly = () => base(splitCatalogTopics(s.catalog.titleOriginal), recordingsOf(s.recordingIds, ingestDurations(s, ctx), ctx.audio));
   if (!input.full) return { shiur: catalogOnly(), notesError: null };
 
   const { meta, extraction, writeup } = input.full;
   const metaById = new Map(meta.recordings.map((r) => [r.recording.id, r]));
   const durations = s.recordingIds.map((id) => round3(Math.max(0, metaById.get(id)?.durationSec ?? 0)));
-  const recordings = recordingsOf(s.recordingIds, durations);
+  const recordings = recordingsOf(s.recordingIds, durations, ctx.audio);
   const recTimes: RecTime[] = recordings.map((r) => {
     const m = metaById.get(r.id)!;
     return { id: r.id, order: r.order, offset: r.offset, duration: r.duration, starts: m.starts, ends: m.ends };

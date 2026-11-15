@@ -8,9 +8,12 @@
  * Never present (type test + guard): heardAs, asrNotes, segs, startSeg, endSeg, questionSegs,
  * answerSegs, segments, transcriptKey, audioKey, asrModel, model, variant, noise types.
  */
+import type { AudioTable, AudioTableEntry, MediaUrl } from "@emunas/audio";
 import type { CatalogSource, DerivedFrom, SectionKind, Shiur } from "../../../../src/types.ts";
 
 export type { CatalogSource, DerivedFrom, SectionKind };
+/** `.corpus/audio-table.json`: recordingId → { url, canonicalId, playable, size } (built by `@emunas/audio`). */
+export type { AudioTable, AudioTableEntry, MediaUrl };
 export type Ed = "yi" | "en";
 export type Category = Shiur["category"];
 
@@ -22,7 +25,7 @@ export interface L {
 
 export type ShiurStatus = "full" | "catalog-only";
 
-export interface PublicRecording {
+interface PublicRecordingBase {
   id: string;
   /** Position in playback order (0-based). */
   order: number;
@@ -30,10 +33,18 @@ export interface PublicRecording {
   offset: number;
   /** Seconds. */
   duration: number;
-  audio: `/audio/${string}.mp3`;
   /** Literal `false` today; turning the transcript view on is a deliberate type change (§0.3, C17). */
   transcript: { eligible: false };
 }
+
+/**
+ * A recording. Audio is served from the media host (Amendment A1): `audioUrl` is
+ * `${EMUNAS_MEDIA_ORIGIN}/<per-segment-encoded bucket key>` (a duplicate gets its canonical's URL).
+ * Recordings whose object is not an mp3 (3 `.WMA` today) are `playable: false` with `audioUrl: null`
+ * and are shown as unavailable. The bucket key itself is never published.
+ */
+export type PublicRecording = PublicRecordingBase &
+  ({ audioUrl: MediaUrl; playable: true } | { audioUrl: null; playable: false });
 
 /**
  * A timed item. `t`/`end` are global seconds. They are `null` only when the item's evidence could
@@ -234,11 +245,7 @@ export interface BuildInfo {
   buildId: string;
   dataSha: string | null;
   schemaVersion: number;
+  /** Origin every `audioUrl` starts with (for CSP `media-src`); `EMUNAS_MEDIA_ORIGIN` or the dev placeholder. */
+  mediaOrigin: string;
   counts: BuildCounts;
 }
-
-export interface AudioTableEntry {
-  size: number;
-  canonicalId: string;
-}
-export type AudioTable = Record<string, AudioTableEntry>;

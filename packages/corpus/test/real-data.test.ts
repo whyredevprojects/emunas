@@ -70,6 +70,35 @@ describe("real data", () => {
     for (const k of FORBIDDEN_KEYS) expect(keys.has(k), k).toBe(false);
   });
 
+  it("audio (Amendment A1): audioUrl for every playable recording, .WMA unplayable, no bucket key field", () => {
+    const keyOf = new Map(ingest.recordings.map((r) => [r.id, r.audioKey]));
+    const origin = p.mediaOrigin;
+    let playable = 0;
+    const unplayable: string[] = [];
+    for (const s of p.shiurim) {
+      for (const r of s.recordings) {
+        const key = keyOf.get(r.id)!;
+        if (/\.mp3$/i.test(key)) {
+          expect(r.playable, r.id).toBe(true);
+          expect(r.audioUrl).toBe(`${origin}/${key.split("/").map(encodeURIComponent).join("/")}`);
+          playable++;
+        } else {
+          expect(r).toMatchObject({ playable: false, audioUrl: null });
+          unplayable.push(r.id);
+        }
+      }
+    }
+    expect(unplayable.every((id) => /\.wma$/i.test(keyOf.get(id)!))).toBe(true);
+    expect(unplayable).toHaveLength(3);
+    const tableIds = Object.keys(p.audioTable);
+    expect(tableIds).toHaveLength(new Set(inScope.flatMap((s) => s.recordingIds)).size);
+    expect(Object.values(p.audioTable).filter((e) => e.playable)).toHaveLength(tableIds.length - 3);
+    const text = JSON.stringify([p.shiurim, p.index, p.audioTable]);
+    expect(text).not.toContain('"audioKey"');
+    expect(text).not.toContain("transcripts/");
+    console.log(`real data: ${playable} playable recording slots, ${unplayable.length} unplayable (${unplayable.join(", ")})`);
+  });
+
   it("full build < 30 s; an unchanged rerun rewrites 0 shiur files", () => {
     const out = join(tmp(), ".corpus");
     const t0 = performance.now();
