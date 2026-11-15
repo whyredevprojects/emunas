@@ -1,0 +1,101 @@
+---
+/**
+ * The apparatus that follows the text (concept-quiet §5.4 part 7), each a short titled list with
+ * a time link per item, each omitted entirely when empty: key points, questions and answers (the
+ * kushya, then the teretz, set as a pair), stories (title, retelling, the people named), insights,
+ * takeaways (headed as things the Rav said, not the site's advice). Nothing renders when all five
+ * are empty.
+ */
+import type { PublicNotes, PublicRecording } from "@emunas/corpus/public";
+import Time from "./Time.astro";
+import type { Ed } from "../../lib/edition.ts";
+import { useShiurT } from "./strings.ts";
+import { hasApparatus } from "./view.ts";
+
+interface Props {
+  ed: Ed;
+  notes: PublicNotes;
+  recordings: readonly PublicRecording[];
+  /** Display name of a person in this edition. */
+  personName?: (key: string, ed: Ed, fallback: string) => string;
+}
+
+const { ed, notes, recordings, personName = (_k: string, _e: Ed, name: string) => name } = Astro.props;
+const t = useShiurT(ed);
+const moments = [
+  { id: "key-points", heading: t("keyPoints.heading"), items: notes.summary.keyPoints },
+  { id: "insights", heading: t("insights.heading"), items: notes.insights },
+  { id: "takeaways", heading: t("takeaways.heading"), items: notes.takeaways },
+] as const;
+const [keyPoints, insights, takeaways] = moments;
+---
+{hasApparatus(notes) && (
+  <div class="apparatus" id="apparatus">
+    {[keyPoints].filter((m) => m.items.length > 0).map((m) => (
+      <section class="apparatus-part" id={m.id} aria-labelledby={`${m.id}-heading`}>
+        <h2 id={`${m.id}-heading`}>{m.heading}</h2>
+        <ol role="list" class="moment-list">
+          {m.items.map((item) => (
+            <li>{item.t !== null && <><Time ed={ed} recordings={recordings} t={item.t} />{" "}</>}{item.text[ed]}</li>
+          ))}
+        </ol>
+      </section>
+    ))}
+    {notes.questions.length > 0 && (
+      <section class="apparatus-part" id="questions" aria-labelledby="questions-heading">
+        <h2 id="questions-heading">{t("questions.heading")}</h2>
+        <ol role="list" class="qa-list">
+          {notes.questions.map((q) => (
+            <li class="qa">
+              <p class="qa-q">
+                <span class="qa-label">{t("questions.q")}:</span>{" "}
+                {q.tq !== null && <><Time ed={ed} recordings={recordings} t={q.tq} />{" "}</>}
+                {q.q[ed]}
+              </p>
+              <p class="qa-a">
+                <span class="qa-label">{t("questions.a")}:</span>{" "}
+                {q.ta !== null && <><Time ed={ed} recordings={recordings} t={q.ta} />{" "}</>}
+                {q.a[ed]}
+              </p>
+            </li>
+          ))}
+        </ol>
+      </section>
+    )}
+    {notes.stories.length > 0 && (
+      <section class="apparatus-part" id="stories" aria-labelledby="stories-heading">
+        <h2 id="stories-heading">{t("stories.heading")}</h2>
+        <ol role="list" class="story-list">
+          {notes.stories.map((s) => (
+            <li class="story">
+              <h3 class="story-title">
+                {s.t !== null && <><Time ed={ed} recordings={recordings} t={s.t} />{" "}</>}
+                {s.title[ed]}
+              </h3>
+              {s.retelling[ed] !== "" && <p>{s.retelling[ed]}</p>}
+              {s.people.length > 0 && (
+                <p class="story-people">
+                  {t("stories.people")}{" "}
+                  {s.people.map((name, i) => {
+                    const key = s.peopleKeys[i];
+                    return <>{i > 0 && ", "}{key ? personName(key, ed, name) : name}</>;
+                  })}
+                </p>
+              )}
+            </li>
+          ))}
+        </ol>
+      </section>
+    )}
+    {[insights, takeaways].filter((m) => m.items.length > 0).map((m) => (
+      <section class="apparatus-part" id={m.id} aria-labelledby={`${m.id}-heading`}>
+        <h2 id={`${m.id}-heading`}>{m.heading}</h2>
+        <ol role="list" class="moment-list">
+          {m.items.map((item) => (
+            <li>{item.t !== null && <><Time ed={ed} recordings={recordings} t={item.t} />{" "}</>}{item.text[ed]}</li>
+          ))}
+        </ol>
+      </section>
+    ))}
+  </div>
+)}

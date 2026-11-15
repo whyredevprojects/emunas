@@ -1,0 +1,19 @@
+---
+/**
+ * The reserved "Follow the text" slot (concept-quiet §5.4, §9; integration-plan §0.3, C17).
+ *
+ * Designed but switched off: a recording's text could appear here only when the recording is
+ * eligible in `site-policy/transcript-eligibility.json` AND the build flag is on, and the public
+ * contract types `transcript.eligible` as the literal `false` today. Turning it on is a deliberate
+ * type change plus a component that does not exist yet (W5.2). Until then this renders nothing,
+ * and nothing on the page mentions the slot.
+ */
+import type { PublicRecording } from "@emunas/corpus/public";
+
+interface Props {
+  recordings: readonly PublicRecording[];
+}
+
+// `eligible` is the literal type `false`: there is no recording to show, and no markup.
+void Astro.props.recordings;
+---

@@ -1,0 +1,113 @@
+---
+/**
+ * The shiur page (concept-quiet §5.4; tech-quiet §4, §7), the page the site exists for.
+ *
+ * Full page (status "full"): catalog header · jump list · listen · notes area under the rule and
+ * the single standing label (about this shiur, order of the shiur, [reserved transcript slot:
+ * renders nothing], the write-up with margin times and source letters, graded sources, the
+ * apparatus, mentioned) · place in the catalog · report an error.
+ *
+ * Catalog-only page: catalog header, listen, one sentence ("Notes for this shiur have not been
+ * prepared yet."), place in the catalog. No skeletons, no placeholders.
+ *
+ * Works without script: every time is a link to `audioUrl#t=<local seconds>`. With script
+ * (`scripts/player.ts`, ≤ 6 KB br) the times seek a docked player instead and the item being heard
+ * gets a quiet margin mark.
+ *
+ * Input is the public contract only (`PublicShiur`; integration-plan §5.2): no transcript field
+ * exists to render.
+ */
+import { notice } from "@emunas/i18n";
+import type { PublicShiur } from "@emunas/corpus/public";
+import Base from "../../layouts/Base.astro";
+import CatalogHeader from "../CatalogHeader.astro";
+import Listen from "../Listen.astro";
+import NotesLabel from "../NotesLabel.astro";
+import { formatQuiet } from "@emunas/links";
+import type { Crumb } from "../../lib/nav.ts";
+import type { Ed } from "../../lib/edition.ts";
+import { useT } from "../../i18n/index.ts";
+import Apparatus from "./Apparatus.astro";
+import CatalogPlace from "./CatalogPlace.astro";
+import JumpList from "./JumpList.astro";
+import Mentioned from "./Mentioned.astro";
+import Outline from "./Outline.astro";
+import SourceList from "./SourceList.astro";
+import TranscriptSlot from "./TranscriptSlot.astro";
+import Writeup from "./Writeup.astro";
+import { useShiurT } from "./strings.ts";
+import { buildSources, hasWriteup, pageParts, sectionHref, type CatalogPlaceView, type EntityCounts } from "./view.ts";
+import "./shiur.css";
+
+interface Props {
+  ed: Ed;
+  shiur: PublicShiur;
+  place: CatalogPlaceView;
+  /** Shiur counts per entity (`.corpus/entities.json`), for index links. */
+  counts?: EntityCounts;
+  /** Display name of a person in this edition (`.corpus/people.json`). */
+  personName?: (key: string, ed: Ed, fallback: string) => string;
+  /** Absolute URL of the same shiur in the listening app (`@emunas/links`), or null when hosts are not configured. */
+  liveHref?: string | null;
+  /** `mailto:` link that pre-fills the shiur id, or null when no address is configured. */
+  reportHref?: string | null;
+}
+
+const { ed, shiur, place, counts, personName, liveHref = null, reportHref = null } = Astro.props;
+const t = useShiurT(ed);
+const ui = useT(ed);
+const c = shiur.catalog;
+const notes = shiur.status === "full" ? shiur.notes : undefined;
+const sources = notes ? buildSources(notes, ed, counts) : undefined;
+const parts = pageParts(shiur, ed, sources);
+const section = sectionHref(ed, c.sectionId);
+const crumbs: Crumb[] = [
+  { label: ui("nav.contents"), href: formatQuiet({ kind: "index", ed, index: "contents" }) },
+  { label: c.sectionTitle, href: section, ...(/[א-ת]/.test(c.sectionTitle) ? { lang: shiur.lang === "en" ? "he" : "yi", dir: "rtl" as const } : { lang: "en", dir: "ltr" as const }) },
+  c.n ? { label: ui("citation.number", { n: "⁨" + c.n + "⁩" }) } : { label: c.titleOriginal, dir: /[א-ת]/.test(c.titleOriginal) ? "rtl" : "ltr" },
+];
+const description = notes?.summary.oneLiner[ed] || undefined;
+const path = formatQuiet({ kind: "shiur", ed, id: shiur.id }, {}, { bare: true });
+---
+<Base ed={ed} title={c.titleOriginal} path={path} crumbs={crumbs} {...(description ? { description } : {})}>
+  <article
+    class="shiur"
+    data-shiur={shiur.id}
+    data-player-title={c.titleOriginal}
+    data-player-artist={ui("site.name")}
+    data-player-album={c.sectionTitle}
+  >
+    <CatalogHeader ed={ed} shiur={shiur} sectionHref={section} />
+    <JumpList ed={ed} parts={parts} />
+    <Listen ed={ed} recordings={shiur.recordings} />
+    {liveHref && (
+      <p class="open-live" data-print="hide"><a href={liveHref} hreflang={ed}>{t("live.open")}</a></p>
+    )}
+    {notes && sources ? (
+      <div class="voice-notes" lang={ed}>
+        <NotesLabel ed={ed} />
+        <section class="about-shiur" id="about" aria-labelledby="about-heading">
+          <h2 id="about-heading">{t("about.heading")}</h2>
+          {notes.summary.oneLiner[ed] !== "" && <p class="one-liner">{notes.summary.oneLiner[ed]}</p>}
+          {notes.summary.abstract[ed] !== "" && <p class="abstract">{notes.summary.abstract[ed]}</p>}
+        </section>
+        {notes.chapters.length > 0 && <Outline ed={ed} chapters={notes.chapters} recordings={shiur.recordings} />}
+        <TranscriptSlot recordings={shiur.recordings} />
+        {hasWriteup(notes, ed) && <Writeup ed={ed} blocks={notes.writeup[ed]} recordings={shiur.recordings} sources={sources} />}
+        {sources.count > 0 && <SourceList ed={ed} sources={sources} recordings={shiur.recordings} />}
+        <Apparatus ed={ed} notes={notes} recordings={shiur.recordings} {...(personName ? { personName } : {})} />
+        <Mentioned ed={ed} notes={notes} {...(counts ? { counts } : {})} {...(personName ? { personName } : {})} />
+      </div>
+    ) : (
+      <p class="notes-pending" lang={ed}>{notice("notesPending", ed)}</p>
+    )}
+    <CatalogPlace ed={ed} place={place} shiurLang={shiur.lang} />
+    {reportHref && (
+      <p class="report-error" data-print="hide"><a href={reportHref}>{t("report.link")}</a></p>
+    )}
+  </article>
+  <script>
+    import { initPlayer } from "../../scripts/player.ts";
+    initPlayer(document, window);
+  </script>
+</Base>
