@@ -1,0 +1,25 @@
+{
+  "name": "@emunas/calendar",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Hebrew calendar for both sites: a build-time generator over @hebcal/core writes a committed table; the runtime thisWeek()/nearestOccasion() read only that table.",
+  "exports": {
+    ".": "./src/index.ts",
+    "./table": "./table/5787-5800.json",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "typecheck": "node ../../node_modules/typescript/bin/tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "generate": "tsx scripts/generate.ts"
+  },
+  "devDependencies": {
+    "@emunas/config": "0.0.0",
+    "@hebcal/core": "6.14.7",
+    "@types/node": "26.6.6",
+    "esbuild": "0.28.2",
+    "tsx": "4.23.15",
+    "vitest": "5.0.5"
+  }
+}
