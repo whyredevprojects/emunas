@@ -18,13 +18,11 @@ export type { Ed, L, SkipKind, SkipRange };
 
 /**
  * A recording as the engine needs it. Amendment A1: the corpus build emits `audioUrl` (absolute URL
- * on the media host, CORS enabled), `null` for a recording that is not playable (non-mp3). Before
- * A1 lands in `@emunas/corpus/public` the contract still carries `audio` (a same-origin path); the
- * engine accepts either, preferring `audioUrl` whenever the field is present.
+ * on the media host, CORS enabled), `null` for a recording that is not playable (non-mp3). There is
+ * no same-origin `/audio/` fallback: a recording without a URL is unavailable.
  */
 export interface PlayerRecording extends Pick<PublicRecording, "id" | "offset" | "duration"> {
-  audioUrl?: string | null;
-  audio?: string;
+  audioUrl: string | null;
 }
 
 export type PlayerChapter = Pick<PublicChapter, "t" | "end" | "title"> & Partial<Pick<PublicChapter, "idx" | "id">>;

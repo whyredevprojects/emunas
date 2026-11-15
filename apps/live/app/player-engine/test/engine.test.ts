@@ -5,7 +5,14 @@ import type { PublicShiur } from "@emunas/corpus/public";
 import { describe, expect, it } from "vitest";
 import golden from "../../../../../packages/corpus/test/fixtures/golden/yi-zmanim-tv-bb-04.json" with { type: "json" };
 import { createPlayerEngine } from "../engine.ts";
-import type { MediaElementLike, MediaSessionLike, PlayerEngineOptions, PlayerEvents, PlayerShiur } from "../types.ts";
+import type {
+  MediaElementLike,
+  MediaSessionLike,
+  PlayerEngineOptions,
+  PlayerEvents,
+  PlayerRecording,
+  PlayerShiur,
+} from "../types.ts";
 import { FakeAudio, FakeClock, FakeLifecycle, fakeMediaSession } from "./fakes.ts";
 
 const A = "https://media.example.org/shiurim/a.mp3";
@@ -454,16 +461,17 @@ describe("speed, sleep, availability", () => {
     expect(events.ended).toHaveLength(1);
   });
 
-  it("falls back to the pre-A1 audio path when audioUrl is absent", () => {
-    const shiur = twoRecordings({
-      recordings: [
-        { id: "a", offset: 0, duration: 100, audio: "/audio/a.mp3" },
-        { id: "b", offset: 100, duration: 60, audio: "/audio/b.mp3" },
-      ],
-    });
+  it("never falls back to a legacy same-origin audio path", () => {
+    // Pre-A1 data: no `audioUrl`, only the old same-origin `audio` path (no longer in the type).
+    const legacy = [
+      { id: "a", offset: 0, duration: 100, audio: "/audio/a.mp3" },
+      { id: "b", offset: 100, duration: 60, audio: "/audio/b.mp3" },
+    ] as unknown as PlayerRecording[];
+    const shiur = twoRecordings({ recordings: legacy });
     const { audio, engine } = setup(shiur);
     engine.load(shiur);
-    expect(audio.src).toBe("/audio/a.mp3");
+    expect(engine.getState().status).toBe("unavailable");
+    expect(audio.srcHistory).toEqual([]);
   });
 
   it("reports a media error", () => {

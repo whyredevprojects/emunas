@@ -25,13 +25,9 @@ export function clampRate(rate: number): number {
   return Math.min(MAX_RATE, Math.max(MIN_RATE, rate));
 }
 
-/**
- * The playable URL of a recording (Amendment A1): `audioUrl` when the field is present (null = not
- * playable), otherwise the pre-A1 same-origin `audio` path.
- */
+/** The playable URL of a recording (Amendment A1): `audioUrl` on the media host; null (or empty) = unavailable. */
 export function recordingAudioUrl(rec: PlayerRecording): string | null {
-  if (rec.audioUrl !== undefined) return rec.audioUrl ? rec.audioUrl : null;
-  return rec.audio ? rec.audio : null;
+  return rec.audioUrl ? rec.audioUrl : null;
 }
 
 /** Global seconds → index of the recording and seconds into it. */
