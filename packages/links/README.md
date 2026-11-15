@@ -19,6 +19,7 @@ the other". Time is global seconds (C5), written as whole seconds.
 | Shiur | `/{ed}/shiur/{id}/` | `/{ui}/s/{id}` |
 | Section i | `/{ed}/shiur/{id}/#s{i}` | `/{ui}/s/{id}?t={sectionStart}&m={id}~s{i}` |
 | Time t | `/{ed}/shiur/{id}/#t={t}` | `/{ui}/s/{id}?t={t}` |
+| Catalog section | `/{ed}/section/{slug}/` (`quietPaths().section(ed, {source, id})`; slug = id for the Pocket Guide, `unc-` + id otherwise) | none: maps to the UI home |
 | Series | `/{ed}/series/{id}/` | `/{ui}/series/{id}` |
 | Parsha / Zman | `/{ed}/calendar/{parsha,zman}/{key}/` | `/{ui}/o/{key}` |
 | Work / Person / Concept | `/{ed}/{sources,people,inyanim}/{key}/` (index anchor `/{ed}/people/#{key}` below threshold) | `/{ui}/{seforim,p,c}/{key}` |

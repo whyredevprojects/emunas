@@ -5,6 +5,7 @@
 import { parseMomentId } from "./moment.ts";
 import { formatLive } from "./live.ts";
 import { formatQuiet } from "./quiet.ts";
+import { quietSectionPath, type SectionRef } from "./section.ts";
 import { isEd, type Ed, type EntityKind, type LinkData, type MomentRef, type Route } from "./types.ts";
 
 function ed(value: Ed): Ed {
@@ -77,6 +78,8 @@ export function quietPaths(data: LinkData = {}) {
           opts.section === undefined ? undefined : { kind: "s", index: sectionIndex(opts.section) },
         ),
       ),
+    /** Section page `/{ed}/section/{slug}/` (Quiet only; slug rule in section.ts). */
+    section: (e: Ed, section: SectionRef) => quietSectionPath(ed(e), section),
     series: (e: Ed, id: string) => f({ kind: "series", ed: ed(e), id: key("series id", id) }),
     parsha: (e: Ed, k: string) => f({ kind: "occasion", ed: ed(e), key: key("parsha key", k), occasion: "parsha" }),
     zman: (e: Ed, k: string) => f({ kind: "occasion", ed: ed(e), key: key("zman key", k), occasion: "zman" }),
