@@ -49,6 +49,7 @@ import { loadCatalogs, loadIngest, loadManifest, loadShiurFiles, type Catalogs, 
 import { loadPublishPolicy, loadSuppressFile, type PublishPolicy } from "./policy.ts";
 import { PROJECTOR_VERSION, projectShiur, type ProjectContext } from "./project.ts";
 import { createDataReader, defaultDataDir, defaultPolicyDir, REPO_ROOT } from "./read.ts";
+import { emitEligibleTranscripts } from "../transcript-gate.ts";
 import { ReportCollector, type BuildReport } from "./report.ts";
 
 export interface BuildOptions {
@@ -73,6 +74,8 @@ export interface BuildOptions {
    * written to `<out>/<name>` as JSON (only when its content changed).
    */
   extraOutputs?: (corpus: ProjectedCorpus) => Record<string, unknown>;
+  /** Environment for the transcript gate (EMUNAS_TRANSCRIPT_VIEW); default `process.env`. */
+  env?: Readonly<Record<string, string | undefined>>;
   log?: (line: string) => void;
 }
 
@@ -433,6 +436,21 @@ export function buildCorpus(opts: BuildOptions = {}): BuildResult {
       writeIfChanged(path, toJson(value));
     }
   }
+  // Transcript view (W5.2): `.corpus/transcript/<recordingId>.json` only for gate-approved recordings;
+  // with EMUNAS_TRANSCRIPT_VIEW off (the default) the folder is removed and nothing is read.
+  const tv = emitEligibleTranscripts({
+    outDir,
+    recordingIds: p.shiurim.flatMap((s) => s.recordings.map((r) => r.id)),
+    dataDir,
+    policyDir: opts.policyDir ?? defaultPolicyDir(),
+    env: opts.env ?? process.env,
+  });
+  log(
+    tv.enabled
+      ? `transcript view ON: ${tv.emitted.length} file(s) [${tv.emitted.join(", ")}], ` +
+          `${tv.skipped.length} eligible id(s) skipped${tv.skipped.length ? ` [${tv.skipped.map((s) => `${s.recordingId}: ${s.reason}`).join(", ")}]` : ""}`
+      : "transcript view off",
+  );
   // Finished after the extra outputs so aggregates can add unmapped values and warnings.
   const report = p.report.finish({ ...p.counts, notDone: p.notDone }, SCHEMA_VERSION, p.suppressIds);
   writeIfChanged(join(outDir, "build-report.json"), toJson(report));
