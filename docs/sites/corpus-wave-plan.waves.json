@@ -196,7 +196,7 @@
       "C1.8"
      ],
      "brief": "Read first: docs/sites/concept-quiet-corpus.md C4.5 (stories), C4.7 (series), C6; docs/sites/concept-live-corpus.md F.1 (no pairing). Deliverables: story pages for stories with ≥2 visible tellings: title, people (unresolved names plain text), the merged retelling under 'Retold here from N tellings; details differ from one to another. Hear it in the shiur.', then where he tells it, ordered by year (undated last), each with shiur, occasion, language and telling time. Stories index in three parts: most retold (≥4 tellings), by person in the שמות groups, without a name (alphabetical). Single-telling stories are listed with a link to the moment in the shiur. Series page: the catalog name stays the title, the generated title becomes a subtitle in the notes area, then the overview, key themes, and arc one-liners as each part's line. A non-visible part keeps its row with 'notes not prepared yet'. A series with no synthesis or no visible parts shows no synthesis UI.",
-     "acceptance": "Model tests; real-data build: story page count = layer page flags (≈312 today), the merged-story redirect target has a page, retelling text appears only under the label, shabbos-tefilah-en has no synthesis block, tanya-yi shows the missing-part row; no sibling/pairing anywhere. Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
+     "acceptance": "Model tests; real-data build: story page count = layer page flags (≈312 today), the surviving story of a merge has a page and the retired id has none, retelling text appears only under the label, shabbos-tefilah-en has no synthesis block, tanya-yi shows the missing-part row; no sibling/pairing anywhere. Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
     },
     {
      "id": "C2.4",
@@ -229,7 +229,7 @@
     },
     {
      "id": "C2.6",
-     "title": "Live entity pages on merged people, works and concepts, with router redirects",
+     "title": "Live entity pages on merged people, works and concepts",
      "paths": [
       "apps/live/app/features/entities/**",
       "apps/live/app/features/seforim/**",
@@ -242,8 +242,8 @@
      "dependsOn": [
       "C1.7"
      ],
-     "brief": "Read first: docs/sites/concept-live-corpus.md C.5 (people page groups and 'his sefer'; the typed People index is second cut), B 'Answer to the replace question', E.1, E.3, J.1; docs/sites/corpus-wave-plan.md §5 (Live redirects). Deliverables: person page on the merged id (names as given, aliases under 'also called', the three groups, the stories tab listing merged stories, 'his sefer' via authorPersonId). A 1–2-shiur person chip opens a small list, with no page. Concept page: definition with exampleRefs as play buttons, then shiurim. Seforim shelf on merged works via sourceWorkIds: the Sefaria link only with sefariaIndexTitle, works below 3 shiurim in a collapsed row, generic works not shelved; pasuk/kapitel views unchanged. Router redirects: on entity-file 404 the clientLoader loads /data/redirects.json (lazy) and `throw redirect()` to the new id. A concept merged into a topic redirects to /t/<topicId>. An unknown id gives the not-found page. The AI label sentence sits once under the title (reviewed variant when reviewed).",
-     "acceptance": "Route tests: a legacy person key, a legacy concept key, a corpus-retired id (chain) and a merged concept each redirect in one hop to the right URL; an unknown id is 404; first navigation to a valid entity does not fetch redirects.json; component tests for the label and the shelf collapse; no type-other person page reachable. Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
+     "brief": "Read first: docs/sites/concept-live-corpus.md C.5 (people page groups and 'his sefer'; the typed People index is second cut), B 'Answer to the replace question', E.1, E.3, J.1; docs/sites/corpus-wave-plan.md §5 (no redirects). Deliverables: person page on the merged id (names as given, aliases under 'also called', the three groups, the stories tab listing merged stories, 'his sefer' via authorPersonId). A 1–2-shiur person chip opens a small list, with no page. Concept page: definition with exampleRefs as play buttons, then shiurim. Seforim shelf on merged works via sourceWorkIds: the Sefaria link only with sefariaIndexTitle, works below 3 shiurim in a collapsed row, generic works not shelved; pasuk/kapitel views unchanged. A concept merged into a topic is linked as /t/<topicId>. An unknown or retired id gives the not-found page (no redirect lookup). The AI label sentence sits once under the title (reviewed variant when reviewed).",
+     "acceptance": "Route tests: an unknown or retired id is 404 after one request; links to a merged concept go to its topic; component tests for the label and the shelf collapse; no type-other person page reachable. Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
     },
     {
      "id": "C2.7",
@@ -257,7 +257,7 @@
       "C1.7"
      ],
      "brief": "Read first: docs/sites/concept-live-corpus.md C.4 (all), E.1 story row, E.2 (no site-side merging; the 'possibly the same story' row is optional and capped), F.1 last paragraph. Deliverables: library from stories-index.json (no retellings) with facets by merged person and 'told more than once'; topic facet via the section join from the layer. Story card: title, people (raw names plain text, never links or facets), 'told N times', play one telling (language filter, then catalogued, then confidence). Story page (≥2 tellings): merged retelling once at the top under the label, every telling with year, language, shiur title and the title of the section it sits in, plus each telling's own retelling collapsed (from that shiur's file, loaded on expand). Single-telling stories expand in place and link to the moment. Stories-only mode skips stories heard this session and never plays two tellings of one story back to back.",
-     "acceptance": "Component tests on fixtures (card, switcher, collapse); queue unit test for stories-only mode; fetch-spy test: the Maasios library never fetches a retelling; the redirected story id resolves via the route. Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
+     "acceptance": "Component tests on fixtures (card, switcher, collapse); queue unit test for stories-only mode; fetch-spy test: the Maasios library never fetches a retelling; a retired story id is a 404. Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
     }
    ]
   },
@@ -266,10 +266,9 @@
    "lead": [
     {
      "id": "C3.1",
-     "title": "Retire the site-derived entity layer and legacy fields",
+     "title": "Retire the site-derived entity layer",
      "paths": [
       "packages/corpus/src/aggregate/**",
-      "packages/corpus/src/layer/legacy.ts",
       "packages/corpus/test/aggregate/**",
       "packages/normalize/src/tables/{people,concepts}.ts (stop-list/alias tables only if unused)",
       "apps/live/data-build/**",
@@ -288,8 +287,8 @@
       "C2.6",
       "C2.7"
      ],
-     "brief": "Read first: docs/sites/concept-quiet-corpus.md C3 'Replaced'; docs/sites/concept-live-corpus.md A, B 'Answer to the replace question'; docs/sites/corpus-wave-plan.md §3.7. Deliverables: remove the legacy aggregate people.json, concepts.json, stories.json, entities.json and SeriesEntry.sibling from .corpus. Keep a redirect-only legacy keyer (layer/legacy.ts) so layer redirects.json keeps covering old addresses. Remove Live legacy stories.json, entity arrays in corpus.json (moved to explore/entities.json in C1.7) and any facet built from raw strings. Remove dead Quiet index modules and search-core leftovers. Remove the concept stop-list/threshold path if nothing uses it. Update integration-plan §5.1 and §2.2 to the new files and URLs. A repo test greps app and package sources for imports of the removed files and types.",
-     "acceptance": "The grep test passes; all goldens updated with a reviewed diff; corpus.json br size drops (reported); site:build of both apps succeeds on real data; legacy redirects still resolve (C1.8 and C2.6 tests green). Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
+     "brief": "Read first: docs/sites/concept-quiet-corpus.md C3 'Replaced'; docs/sites/concept-live-corpus.md A, B 'Answer to the replace question'; docs/sites/corpus-wave-plan.md §3.7. Deliverables: remove the site-derived aggregate people.json, concepts.json, stories.json and entities.json from .corpus, with the C2-replaced consumers listed in the plan (§9, site-derived aggregates still read by current pages), the `{kind: \"entity\"}` route and `entityCount` in @emunas/links, and the corpus-guard exemption for aggregate `names` (aliasTermsLegacy). Remove Live legacy stories.json, entity arrays in corpus.json (moved to explore/entities.json in C1.7) and any facet built from raw strings. Remove dead Quiet index modules and search-core leftovers. Remove the concept stop-list/threshold path if nothing uses it. Update integration-plan §5.1 and §2.2 to the new files and URLs. A repo test greps app and package sources for imports of the removed files and types.",
+     "acceptance": "The grep test passes; all goldens updated with a reviewed diff; corpus.json br size drops (reported); site:build of both apps succeeds on real data. Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
     }
    ],
    "packages": [
@@ -378,7 +377,7 @@
     },
     {
      "id": "C3.8",
-     "title": "End-to-end, first-load and redirect gates, and the real-data chain",
+     "title": "End-to-end and first-load gates, and the real-data chain",
      "paths": [
       "apps/quiet/test/e2e/**",
       "apps/live/test/e2e/**",
@@ -391,7 +390,7 @@
      "dependsOn": [
       "C3.1"
      ],
-     "brief": "Read first: docs/sites/corpus-wave-plan.md §4, §6; docs/sites/integration-plan.md §4; docs/sites/concept-live-corpus.md G; docs/sites/concept-quiet-corpus.md C5 addresses. Deliverables: (1) Playwright: Quiet tree/topic/glossary/person/work/story/series pages in both editions with JS off; Live topic map, topic page, mix playback start, thread page, story switcher, entity redirect. (2) First-load gate (Live): cold loads of Today and /s/<id> record network requests. None of corpus.json, facets.json, topics.json, topic/*, thread/*, story/*, stories-index.json, glossary/*, explore/* may appear before first paint, and Lighthouse budgets stay as W5.1. (3) Redirect gate: every legacy path in the layer redirects.json (both sites) lands on a 200 page in one hop (Quiet: _redirects or stub; Live: router). (4) Cross-site: equivalent links for topic/concept/story land on matching content. (5) tests/chain/site-chain.ts + `npm run site:chain`: corpus:build → guard pre → corpus:build --suppress → search:build → live data:build → quiet build → live build → guard post → budgets. Exits non-zero on any step and prints the guard counts. deploy.yml/ci.yml use the same order (already close; add the layer-aware guard flags).",
+     "brief": "Read first: docs/sites/corpus-wave-plan.md §4, §6; docs/sites/integration-plan.md §4; docs/sites/concept-live-corpus.md G; docs/sites/concept-quiet-corpus.md C5 addresses. Deliverables: (1) Playwright: Quiet tree/topic/glossary/person/work/story/series pages in both editions with JS off; Live topic map, topic page, mix playback start, thread page, story switcher, an unknown entity id is not found. (2) First-load gate (Live): cold loads of Today and /s/<id> record network requests. None of corpus.json, facets.json, topics.json, topic/*, thread/*, story/*, stories-index.json, glossary/*, explore/* may appear before first paint, and Lighthouse budgets stay as W5.1. (3) Cross-site: equivalent links for topic/concept/story land on matching content. (4) tests/chain/site-chain.ts + `npm run site:chain`: corpus:build → guard pre → corpus:build --suppress → search:build → live data:build → quiet build → live build → guard post → budgets. Exits non-zero on any step and prints the guard counts. deploy.yml/ci.yml use the same order (already close; add the layer-aware guard flags).",
      "acceptance": "All new e2e specs pass locally on real data; the chain script runs green end to end with guard post 0 findings; a planted asrVariants key in a layer file and a planted ASR synonym each make the chain fail at guard post. Unit tests for everything listed are added under the package's own paths; `npm run site:typecheck`, `npm run site:lint` and `npm run site:test` pass in the worktree; `git diff` shows no change under data/, scripts/, src/, config/ or prompts/; no package-lock.json change (new deps listed in the workspace's own package.json only)."
     }
    ]
