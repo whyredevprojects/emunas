@@ -7,6 +7,8 @@ out/transcripts/
 .corpus/
 dist/
 build/
+# source directories named build/ are not output
+!packages/*/src/build/
 .wrangler/
 .astro/
 .react-router/
