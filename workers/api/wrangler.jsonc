@@ -1,0 +1,68 @@
+// emunas-api: search (D1 FTS5 + Vectorize + Workers AI) and feedback (D1 + Turnstile).
+// Reached only through the Live site Worker's service binding `API` (integration-plan §3.1):
+// no workers.dev URL, no preview URLs, no routes.
+//
+// Secrets (wrangler secret put, per environment): TURNSTILE_SECRET, FEEDBACK_HASH_SALT.
+// The database_id values are placeholders until the resources are provisioned
+// (docs/sites/ops-runbook.md, W2.7); replace them with the ids `wrangler d1 create` prints.
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "emunas-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": false,
+  "preview_urls": false,
+  "observability": { "enabled": true },
+  "d1_databases": [
+    {
+      "binding": "DB_SEARCH",
+      "database_name": "emunas-search",
+      "database_id": "00000000-0000-4000-8000-000000000001",
+      "migrations_dir": "migrations/search"
+    },
+    {
+      "binding": "DB_FEEDBACK",
+      "database_name": "emunas-feedback",
+      "database_id": "00000000-0000-4000-8000-000000000002",
+      "migrations_dir": "migrations/feedback"
+    }
+  ],
+  "vectorize": [{ "binding": "VEC", "index_name": "emunas-moments" }],
+  "ai": { "binding": "AI" },
+  "ratelimits": [{ "name": "RATE", "namespace_id": "1001", "simple": { "limit": 30, "period": 10 } }],
+  "vars": {
+    "EMBED_MODEL": "@cf/baai/bge-m3",
+    // Cloudflare Access application on listen.<domain>/admin/* (set once Access is configured).
+    "ACCESS_TEAM_DOMAIN": "",
+    "ACCESS_AUD": ""
+  },
+  "env": {
+    "staging": {
+      "name": "emunas-api-staging",
+      "workers_dev": false,
+      "preview_urls": false,
+      "d1_databases": [
+        {
+          "binding": "DB_SEARCH",
+          "database_name": "emunas-search-staging",
+          "database_id": "00000000-0000-4000-8000-000000000011",
+          "migrations_dir": "migrations/search"
+        },
+        {
+          "binding": "DB_FEEDBACK",
+          "database_name": "emunas-feedback-staging",
+          "database_id": "00000000-0000-4000-8000-000000000012",
+          "migrations_dir": "migrations/feedback"
+        }
+      ],
+      "vectorize": [{ "binding": "VEC", "index_name": "emunas-moments-staging" }],
+      "ai": { "binding": "AI" },
+      "ratelimits": [{ "name": "RATE", "namespace_id": "1002", "simple": { "limit": 30, "period": 10 } }],
+      "vars": {
+        "EMBED_MODEL": "@cf/baai/bge-m3",
+        "ACCESS_TEAM_DOMAIN": "",
+        "ACCESS_AUD": ""
+      }
+    }
+  }
+}
