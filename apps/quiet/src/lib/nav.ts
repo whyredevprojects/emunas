@@ -20,7 +20,8 @@ export const INDEXES_ANCHOR = "indexes";
 export function navItems(ed: Ed): NavItem[] {
   return [
     { id: "contents", key: "nav.contents", href: formatQuiet({ kind: "index", ed, index: "contents" }) },
-    { id: "calendar", key: "nav.calendar", href: formatQuiet({ kind: "index", ed, index: "calendar-parsha" }) },
+    // `/{ed}/calendar/` (the three ways in); @emunas/links has no index kind for that page.
+    { id: "calendar", key: "nav.calendar", href: `${formatQuiet({ kind: "home", ed })}calendar/` },
     { id: "indexes", key: "nav.indexes", href: `${formatQuiet({ kind: "home", ed })}#${INDEXES_ANCHOR}` },
     { id: "search", key: "nav.search", href: formatQuiet({ kind: "search", ed }) },
     { id: "about", key: "nav.about", href: formatQuiet({ kind: "index", ed, index: "about" }) },

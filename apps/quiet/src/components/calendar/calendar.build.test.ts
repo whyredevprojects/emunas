@@ -197,6 +197,21 @@ describe("all calendar and year pages", () => {
     }
   });
 
+  it("nav and breadcrumbs lead to /{ed}/calendar/ (W5.5)", () => {
+    for (const ed of ["yi", "en"] as const) {
+      const home = `/${ed}/calendar/`;
+      const nav = (html: string): string => html.match(/<nav[^>]*class="site-nav[^"]*"[\s\S]*?<\/nav>/)?.[0] ?? "";
+      const crumbs = (html: string): string => html.match(/<nav[^>]*class="breadcrumb[^"]*"[\s\S]*?<\/nav>/)?.[0] ?? "";
+      for (const p of [`${ed}/calendar/parsha`, `${ed}/calendar/zman`, `${ed}/years`]) {
+        const html = page(p);
+        expect(hrefsIn(nav(html)), p).toContain(home);
+        expect(hrefsIn(crumbs(html)), p).toContain(home);
+        expect(hrefsIn(nav(html)), p).not.toContain(`/${ed}/calendar/parsha/`);
+      }
+      expect(hrefsIn(nav(page(`${ed}/calendar`)))).toContain(home);
+    }
+  });
+
   it("carry no transcript material", () => {
     for (const p of calendarPages()) {
       const html = page(p);

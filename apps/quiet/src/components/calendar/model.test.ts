@@ -133,7 +133,8 @@ const data: CalendarData = { index, occasions, years };
 
 describe("paths", () => {
   it("uses the @emunas/links routes", () => {
-    expect(calendarHref("yi")).toBe("/yi/calendar/parsha/");
+    expect(calendarHref("yi")).toBe("/yi/calendar/");
+    expect(calendarHref("en")).toBe("/en/calendar/");
     expect(yearHref("en", 5743)).toBe("/en/years/5743/");
     expect(yearHref("yi", "unknown")).toBe("/yi/years/unknown/");
   });
