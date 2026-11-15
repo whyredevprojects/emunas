@@ -1,0 +1,21 @@
+{
+  "name": "@emunas/links",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "URL builders for both sites, cross-site equivalents, canonical and hreflang helpers, host config. Pure and browser-safe.",
+  "exports": {
+    ".": "./src/index.ts",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@emunas/config": "0.0.0",
+    "@types/node": "26.6.6",
+    "vitest": "5.0.5"
+  }
+}
