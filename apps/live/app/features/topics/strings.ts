@@ -53,14 +53,14 @@ export const topicsYi: MessageTable<TopicsKey> = {
   "topic.shiurim.lead": "לויט ווי שטארק דער שיעור איז וועגן דעם ענין, און דערנאך לויטן יאר.",
   "topic.touched": "דערמאנט אין",
   "topic.touched.at": "ביי {time}: ",
-  "topic.touched.more": { one: "און נאך {count} טייל", other: "און נאך {count} טיילן" },
+  "topic.touched.more": { one: "און נאך {count} חלק", other: "און נאך {count} חלקים" },
   "topic.shiurim.more": "ווייזט נאך שיעורים",
   "topic.shiurim.loading": "מ'לאדט נאך…",
   "topic.shiurim.error": "מ'האט נישט געקענט לאדן נאך שיעורים.",
   "topic.undated": "אן א יאר",
   "topic.children": "אונטער-ענינים",
   "topic.coTopics": "אפט צוזאמען מיט",
-  "topic.coTopics.sections": { one: "{count} טייל", other: "{count} טיילן" },
+  "topic.coTopics.sections": { one: "{count} חלק", other: "{count} חלקים" },
 };
 
 export type TopicsT = TFunction<TopicsKey>;

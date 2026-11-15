@@ -1,7 +1,9 @@
 /**
  * Seeded synthetic data for Explore tests: `corpus.json` rows shaped like the real corpus (997
  * shiurim, 730 yi / 267 en, ~62% dated 5724–5780, ~28% parsha / ~35% zman, a dozen series, Zipf-ish
- * entity frequencies), and the files derived from them (facets, build, moment shards, entity files).
+ * entity frequencies), and the files derived from them (facets, build, moment shards, entity files,
+ * the topic tree and Explore's entity file). Rows carry Explore's entity ids, topics with their
+ * ancestors.
  */
 import { OCCASIONS, PARSHIYOS } from "@emunas/normalize";
 import {
@@ -10,6 +12,9 @@ import {
   type BuildFile,
   type CorpusFile,
   type CorpusRow,
+  type ExploreEntitiesFile,
+  type TopicsFile,
+  type TopicRow,
   type EntityFile,
   type EntityKind,
   type FacetsFile,
@@ -18,7 +23,26 @@ import {
   type MomentRow,
   type MomentShardFile,
 } from "../live-data.ts";
+import type { ExploreRow } from "../entities.ts";
 import { CATEGORIES } from "../url.ts";
+
+/** A synthetic three-level tree: `t0`…`t4`, each with three children `tI-J`, each with two `tI-J-K`. */
+export function syntheticTree(): { id: string; parentId: string | null }[] {
+  const out: { id: string; parentId: string | null }[] = [];
+  for (let i = 0; i < 5; i++) out.push({ id: `t${i}`, parentId: null });
+  for (let i = 0; i < 5; i++) for (let j = 0; j < 3; j++) out.push({ id: `t${i}-${j}`, parentId: `t${i}` });
+  for (let i = 0; i < 5; i++) for (let j = 0; j < 3; j++) for (let k = 0; k < 2; k++) out.push({ id: `t${i}-${j}-${k}`, parentId: `t${i}-${j}` });
+  return out;
+}
+
+const TREE = syntheticTree();
+const PARENT = new Map(TREE.map((n) => [n.id, n.parentId]));
+
+function withAncestors(ids: Iterable<string>): string[] {
+  const out = new Set<string>();
+  for (const id of ids) for (let cur: string | null = id; cur !== null; cur = PARENT.get(cur) ?? null) out.add(cur);
+  return [...out].sort();
+}
 
 /** mulberry32 */
 export function rng(seed: number): () => number {
@@ -63,9 +87,10 @@ export interface SyntheticOptions {
   works?: number;
 }
 
-export function syntheticRows({ n = 997, seed = 1, people = 1285, concepts = 1100, works = 750 }: SyntheticOptions = {}): CorpusRow[] {
+export function syntheticRows({ n = 997, seed = 1, people = 1285, concepts = 1100, works = 750 }: SyntheticOptions = {}): ExploreRow[] {
   const R = rand(seed);
-  const rows: CorpusRow[] = [];
+  const T = rand(seed + 7919);
+  const rows: ExploreRow[] = [];
   const series = Array.from({ length: 16 }, (_, i) => `series-${i}`);
   for (let i = 0; i < n; i++) {
     const lang = R.chance(730 / 997) ? "yi" : "en";
@@ -96,9 +121,14 @@ export function syntheticRows({ n = 997, seed = 1, people = 1285, concepts = 110
       series: inSeries ? { id: R.pick(series), order: i } : null,
       duration: 600 + R.int(7200),
       oneLiner: full ? { en: `About shiur ${i}`, yi: `וועגן שיעור ${i}` } : null,
-      entities: { works: ent(works, 30, "w"), people: ent(people, 16, "p"), concepts: ent(concepts, 15, "c") },
+      entities: {
+        works: ent(works, 30, "w"),
+        people: ent(people, 16, "p"),
+        concepts: ent(concepts, 15, "c"),
+        topics: full ? withAncestors(Array.from({ length: T.int(4) }, () => T.pick(TREE).id)) : [],
+      },
       counts: { chapters: full ? 10 : 0, stories: full ? R.int(4) : 0, questions: full ? R.int(5) : 0, insights: full ? R.int(8) : 0 },
-    } as CorpusRow);
+    } as ExploreRow);
   }
   return rows;
 }
@@ -112,14 +142,39 @@ const tally = (values: Iterable<string>) => {
 const facetRecord = (m: Map<string, number>, label: (k: string) => FacetValue["label"]) =>
   Object.fromEntries([...m].sort().map(([k, count]) => [k, { label: label(k), count }]));
 
-export function corpusFile(rows: CorpusRow[]): CorpusFile {
+/** corpus.json: the rows with the corpus.json entity copy (no topics; Explore reads its own file). */
+export function corpusFile(rows: readonly CorpusRow[]): CorpusFile {
   const full = rows.filter((r) => r.status === "full").length;
   return {
     schemaVersion: LIVE_DATA_SCHEMA_VERSION,
     buildId: "test",
     counts: { total: rows.length, full, catalogOnly: rows.length - full, downgraded: 0 },
-    shiurim: rows,
+    shiurim: rows.map((r) => ({ ...r, entities: { works: r.entities.works, people: r.entities.people, concepts: r.entities.concepts } })),
   };
+}
+
+/** explore/entities.json: each summarized shiur's ids; topics as tagged (the leaves the row lists). */
+export function exploreEntitiesFile(rows: readonly ExploreRow[]): ExploreEntitiesFile {
+  const shiurim: ExploreEntitiesFile["shiurim"] = {};
+  for (const r of rows) {
+    const e = r.entities;
+    if (r.status !== "full" || e.topics.length + e.people.length + e.concepts.length + e.works.length === 0) continue;
+    // Only the deepest tagged topics: the page adds the ancestors itself.
+    const topics = e.topics.filter((id) => !e.topics.some((o) => PARENT.get(o) === id));
+    shiurim[r.id] = { topics, people: [...e.people], concepts: [...e.concepts], works: [...e.works] };
+  }
+  return { schemaVersion: LIVE_DATA_SCHEMA_VERSION, shiurim };
+}
+
+/** topics.json for the synthetic tree, with counts over the rows (descendants included). */
+export function topicsFile(rows: readonly ExploreRow[]): TopicsFile {
+  const count = new Map<string, number>();
+  for (const r of rows) for (const t of r.entities.topics) count.set(t, (count.get(t) ?? 0) + 1);
+  const level = (id: string): number => (PARENT.get(id) ? level(PARENT.get(id)!) + 1 : 1);
+  const topics: TopicRow[] = [...TREE]
+    .sort((a, b) => level(a.id) - level(b.id))
+    .map((n) => [n.id, n.parentId, `Topic ${n.id}`, `ענין ${n.id}`, n.parentId === null ? `נושא ${n.id}` : null, count.get(n.id) ?? 0]);
+  return { schemaVersion: LIVE_DATA_SCHEMA_VERSION, topics };
 }
 
 export function facetsFile(rows: CorpusRow[]): FacetsFile {

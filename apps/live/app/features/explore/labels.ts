@@ -5,7 +5,7 @@
  */
 import { categoryLabel, formatHebrewYear, languageName, type Category, type UiLang } from "@emunas/i18n";
 import { occasionLabel } from "../today/format.ts";
-import type { FacetsFile } from "./live-data.ts";
+import type { FacetsFile, TopicNode } from "./live-data.ts";
 import { UNDATED, type FacetKey } from "./model.ts";
 import { exploreT, type ExploreKey } from "./strings.ts";
 
@@ -19,7 +19,13 @@ export function yearText(year: number, ui: UiLang): string {
   return formatHebrewYear(year, ui);
 }
 
-export function valueLabel(facet: FacetKey, value: string, facets: FacetsFile | null, ui: UiLang): ValueLabel {
+export function valueLabel(
+  facet: FacetKey,
+  value: string,
+  facets: FacetsFile | null,
+  ui: UiLang,
+  topics: ReadonlyMap<string, TopicNode> | null = null,
+): ValueLabel {
   const et = exploreT(ui);
   const ui_ = (text: string): ValueLabel => ({ text, data: false });
   const data = (text: string | undefined): ValueLabel => ({ text: text ?? value, data: true });
@@ -32,6 +38,8 @@ export function valueLabel(facet: FacetKey, value: string, facets: FacetsFile | 
       return data(occasionLabel(value, facets, ui));
     case "series":
       return data(facets?.series[value]?.label[ui]);
+    case "topic":
+      return data(topics?.get(value)?.label[ui]);
     case "work":
       return data(facets?.work[value]?.label[ui]);
     case "person":

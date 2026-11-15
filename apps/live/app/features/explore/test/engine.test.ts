@@ -6,7 +6,7 @@
 import { describe, expect, it } from "vitest";
 import { count, countAnd, emptySet, fullSet, hasBit, indices, popcount32, setBit } from "../bitset.ts";
 import { FacetEngine } from "../engine.ts";
-import type { CorpusRow } from "../live-data.ts";
+import type { ExploreRow as CorpusRow } from "../entities.ts";
 import { FACET_KEYS, rowValues, SET_FACETS, UNDATED, yearMatches, type ExploreFilters, type FacetKey, type SetFacet } from "../model.ts";
 import { FacetHost } from "../protocol.ts";
 import { createFacetService } from "../facet-client.ts";

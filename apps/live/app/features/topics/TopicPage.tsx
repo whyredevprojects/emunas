@@ -28,7 +28,6 @@ import {
   DataError,
   loadTopic,
   loadTopicShiurim,
-  type FacetLabel,
   type TopicFile,
   type TopicShiurRow,
   type TopicShiurimFile,
@@ -37,17 +36,11 @@ import { tFor } from "../../i18n/index.ts";
 import { readingLang, useSettings } from "../../shell/settings.ts";
 import { TopicMix } from "../mix/index.ts";
 import { ShiurCard } from "../today/ShiurCard.tsx";
+import { hebrewName } from "./labels.ts";
 import { topicsT } from "./strings.ts";
 import { topicsStyles as s } from "./styles.ts";
 
 const paths = livePaths();
-
-/** The loshon-hakodesh name beside a label: `he`, else the Yiddish form (the tree omits `he` when equal). */
-export function hebrewName(label: FacetLabel, ui: UiLang): string | null {
-  if (ui === "yi") return label.he && label.he !== label.yi ? label.he : null;
-  const he = label.he ?? label.yi;
-  return he && he !== label.en ? he : null;
-}
 
 type State = { status: "loading" } | { status: "missing" } | { status: "error" } | { status: "ok"; file: TopicFile };
 

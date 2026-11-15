@@ -10,6 +10,7 @@ import {
   exploreToQuery,
   LENSES,
   MOMENT_KINDS,
+  needsBrowse,
   parseExploreQuery,
   parseYear,
   SORTS,
@@ -26,6 +27,7 @@ const VOCAB: Record<SetFacet, readonly string[]> = {
   series: ["tanya-yi", "emunah-en"],
   work: ["bereishis", "gemara-berachos", "rashi"],
   person: ["avraham-avinu", "dovid-hamelech", "x&y=z"],
+  topic: ["emunah", "hester-panim", "bitachon"],
   concept: ["ab-hrchmn-b1ecc8", "אמונה", "with space"],
   duration: DURATION_BUCKETS,
   stories: ["yes", "no"],
@@ -48,7 +50,7 @@ function randomState(R: Rand): ExploreState {
     yr < 0.5 ? null : yr < 0.65 ? { kind: "undated" } : { kind: "range", from: 5724 + R.int(20), to: 5744 + R.int(36) };
   const kinds = MOMENT_KINDS.filter(() => R.chance(0.4));
   const center = R.chance(0.3) ? { kind: R.pick(["p", "c", "o"] as const), key: R.pick(["noach", "אמונה", "a:b", "x y"]) } : null;
-  return {
+  const rest = {
     filters: { sets, year },
     lens: R.pick(LENSES),
     unit: R.pick(UNITS),
@@ -56,6 +58,7 @@ function randomState(R: Rand): ExploreState {
     kinds: kinds.length === MOMENT_KINDS.length ? [] : kinds,
     center,
   };
+  return { view: needsBrowse(rest) || R.chance(0.5) ? "browse" : "map", ...rest };
 }
 
 describe("Explore URL state", () => {
@@ -74,6 +77,19 @@ describe("Explore URL state", () => {
     expect(exploreToQuery(DEFAULT_STATE).toString()).toBe("");
     expect(parseExploreQuery("")).toEqual(DEFAULT_STATE);
     expect(exploreHref("en")).toBe("/en/explore");
+  });
+
+  it("opens on the topic map; a filter, a lens or view=browse opens the facet view", () => {
+    expect(parseExploreQuery("").view).toBe("map");
+    expect(parseExploreQuery("audio=yi").view).toBe("map");
+    expect(parseExploreQuery("view=browse").view).toBe("browse");
+    expect(parseExploreQuery("topic=emunah").view).toBe("browse");
+    expect(parseExploreQuery("lens=luach").view).toBe("browse");
+    expect(exploreToQuery({ ...DEFAULT_STATE, view: "browse" }).toString()).toBe("view=browse");
+    // a filter already implies the browse view, so the parameter is not repeated
+    expect(exploreToQuery({ ...DEFAULT_STATE, view: "browse", filters: { sets: { topic: ["emunah"] }, year: null } }).toString()).toBe("topic=emunah");
+    expect(exploreHref("en", { view: "browse" })).toBe("/en/explore?view=browse");
+    expect(connectionsHref("en", "p", "x")).not.toContain("view=");
   });
 
   it("canonicalizes: sorted, de-duplicated, unknown values dropped", () => {

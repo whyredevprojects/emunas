@@ -21,6 +21,8 @@ export const exploreEn = {
   "explore.facet.year": "Year",
   "explore.facet.work": "Sefer cited",
   "explore.facet.person": "Person",
+  "explore.facet.topic": "Topic",
+  "explore.topic.expand": "Show the topics under {name}",
   "explore.facet.concept": "Concept",
   "explore.facet.duration": "Length",
   "explore.facet.stories": "Stories",
@@ -108,6 +110,13 @@ export const exploreEn = {
   "explore.connections.recentre": "Centre on {name}",
   "explore.connections.page": "Page for {name}",
   "explore.connections.list": "The connections as a list",
+  "explore.map.title": "Topics",
+  "explore.map.lead": "The shiurim by topic. Open a topic to see the topics under it.",
+  "explore.map.browse": "Filter all shiurim",
+  "explore.map.back": "Back to the topics",
+  "explore.map.page": "All of {name}",
+  "explore.map.filter": "Filter the shiurim by {name}",
+  "explore.map.error": "The topics could not be loaded. Check your connection and reload.",
 } as const;
 
 export type ExploreKey = keyof typeof exploreEn;
@@ -128,6 +137,8 @@ export const exploreYi: MessageTable<ExploreKey> = {
   "explore.facet.year": "יאר",
   "explore.facet.work": "ספר וואס ווערט געברענגט",
   "explore.facet.person": "פערזאן",
+  "explore.facet.topic": "ענין",
+  "explore.topic.expand": "ווייזט די ענינים אונטער {name}",
   "explore.facet.concept": "ענין",
   "explore.facet.duration": "לענג",
   "explore.facet.stories": "מעשיות",
@@ -215,6 +226,13 @@ export const exploreYi: MessageTable<ExploreKey> = {
   "explore.connections.recentre": "צענטרירן אויף {name}",
   "explore.connections.page": "בלאט פאר {name}",
   "explore.connections.list": "די פארבינדונגען ווי א ליסטע",
+  "explore.map.title": "ענינים",
+  "explore.map.lead": "די שיעורים לויט ענינים. עפנט א ענין צו זען די ענינים אונטער אים.",
+  "explore.map.browse": "פילטערט אלע שיעורים",
+  "explore.map.back": "צוריק צו די ענינים",
+  "explore.map.page": "אלעס וועגן {name}",
+  "explore.map.filter": "פילטערט די שיעורים לויט {name}",
+  "explore.map.error": "די ענינים האבן זיך נישט געלאדן. קוקט אויף דער פארבינדונג און לאדט איבער.",
 };
 
 export type ExploreT = TFunction<ExploreKey>;

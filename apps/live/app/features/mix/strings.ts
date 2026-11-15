@@ -28,11 +28,11 @@ export type MixKey = keyof typeof mixEn;
 
 export const mixYi: MessageTable<MixKey> = {
   "mix.title": "שפילט דעם ענין",
-  "mix.sections": { one: "{count} טייל", other: "{count} טיילן" },
+  "mix.sections": { one: "{count} חלק", other: "{count} חלקים" },
   "mix.shiurim": { one: "{count} שיעור", other: "{count} שיעורים" },
   "mix.header": "{sections} פון {shiurim}.",
   "mix.playing": { one: "מ'שפילט {count}, בערך {minutes} מינוט.", other: "מ'שפילט {count}, בערך {minutes} מינוט." },
-  "mix.auto": "אויטאמאטיש צוזאמגעשטעלט פון AI צייכנס. יעדער טייל שפילט ביזן סוף.",
+  "mix.auto": "אויטאמאטיש צוזאמגעשטעלט פון AI צייכנס. יעדער חלק שפילט ביזן סוף.",
   "mix.play": "שפילט די מיקס",
   "mix.preparing": "מ'גרייט צו די מיקס…",
   "mix.save": "היט אפ ווי א שפיל-ליסטע",
@@ -41,7 +41,7 @@ export const mixYi: MessageTable<MixKey> = {
   "mix.copied": "דער לינק איז קאפירט.",
   "mix.linkLabel": "לינק צו דער ליסטע",
   "mix.playlistName": "{label} (מיקס)",
-  "mix.empty": "נאך נישטא קיין טיילן אין דער שפראך.",
+  "mix.empty": "נאך נישטא קיין חלקים אין דער שפראך.",
   "mix.error": "די מיקס האט זיך נישט געלאדן. קוקט אויף דער פארבינדונג און פרובירט נאכאמאל.",
   "mix.items": "אין דער מיקס",
 };
