@@ -260,7 +260,7 @@ describe("worker and page agree", () => {
       origin: ORIGIN,
       version: "t",
       precache: [],
-      fallback: "/__spa-fallback.html",
+      fallback: "/__spa-fallback",
     });
     await worker.activate();
     const url = CATALOG_ONLY.recordings[0]!.audioUrl as string;

@@ -20,8 +20,8 @@ tech-live §4.5 and integration-plan §8 W4.8, as amended by A1 (audio lives on 
 
 | Request | Strategy | Cache |
 |---|---|---|
-| navigation | network; offline → precached page for the path, else `/__spa-fallback.html` | `shell-<hash>` |
-| shell files (`/assets/*`, icons, manifest, `/`, `/en/`, `/yi/`, SPA fallback) | precached, cache first | `shell-<hash>` |
+| navigation | network; offline → precached page for the path, else the SPA fallback (`/__spa-fallback`, a build-time copy of `index.html`) | `shell-<hash>` |
+| shell files (`/assets/*`, icons, manifest, `/en/`, `/yi/`, SPA fallback) | precached, cache first | `shell-<hash>` |
 | `/data/*` | stale-while-revalidate, capped at 300 entries (oldest out); pinned copy as last resort | `data-v1`, `pinned-v1` |
 | media-host audio, not downloaded | **not intercepted** (no `respondWith`): network-only, CDN Range as usual | — |
 | media-host audio, downloaded | from cache; `Range` → `206`, none → `200`, out of range → `416` | `audio-v1` |

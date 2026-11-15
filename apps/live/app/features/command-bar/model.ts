@@ -6,6 +6,7 @@ import type { Ed } from "@emunas/corpus/public";
 import { livePaths, parseMomentId } from "@emunas/links";
 import type { ApiResponse, ApiResult } from "./api.ts";
 import type { Suggestion } from "./engine.ts";
+import { exploreHref } from "../explore/url.ts";
 
 const paths = livePaths();
 
@@ -62,7 +63,7 @@ export function searchHref(ui: Ed, q: string): string {
 
 /** Explore filtered to one Hebrew year (Explore's URL state, W4.1). */
 export function yearHref(ui: Ed, year: number): string {
-  return `/${ui}/explore?year=${year}`;
+  return exploreHref(ui, { filters: { sets: {}, year: { kind: "range", from: year, to: year } } });
 }
 
 export function suggestionHref(ui: Ed, s: Suggestion): string {

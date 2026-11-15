@@ -1,8 +1,8 @@
 // @ts-check
 /**
  * Minimal static server for the Live e2e tests: serves `build/client` the way the site Worker's
- * static assets do (`not_found_handling: "single-page-application"` → `__spa-fallback.html` for
- * page paths).
+ * static assets do: `x.html` at `/x`, `x/index.html` at `/x/`, and the SPA fallback
+ * (`not_found_handling: "single-page-application"` → `index.html`) for other page paths.
  *
  * `/data/*` is always answered from the committed contract fixtures (`app/data/fixtures/data`), never
  * from `build/client/data`: a local `npm run data:build` writes the real corpus into
@@ -52,7 +52,8 @@ const server = createServer((req, res) => {
   const isData = path.startsWith("/data/");
   let file = isData
     ? fileIn(dataDir, path.slice("/data/".length))
-    : (fileIn(clientDir, path) ?? (path.endsWith("/") ? fileIn(clientDir, join(path, "index.html")) : null));
+    : (fileIn(clientDir, path) ??
+      (path.endsWith("/") ? fileIn(clientDir, join(path, "index.html")) : fileIn(clientDir, `${path}.html`)));
   if (!file && !isData && extname(path) === "") {
     file = fileIn(clientDir, "__spa-fallback.html") ?? fileIn(clientDir, "index.html");
   }

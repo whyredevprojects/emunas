@@ -76,7 +76,7 @@ describe("links", () => {
     expect(suggestionHref("en", { type: "series-part", seriesKey: "tanya-yi", label, how: "perek", n: 12, shiurId: "yi-tanya-1-03" })).toBe(
       "/en/s/yi-tanya-1-03",
     );
-    expect(suggestionHref("yi", { type: "year", year: 5736, count: 1 })).toBe("/yi/explore?year=5736");
+    expect(suggestionHref("yi", { type: "year", year: 5736, count: 1 })).toBe("/yi/explore?y=5736");
   });
 });
 

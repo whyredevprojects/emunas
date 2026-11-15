@@ -7,7 +7,7 @@ const ORIGIN = "https://listen.example.org";
 const MEDIA = "https://media.example.org";
 const AUDIO_URL = `${MEDIA}/Shiurim/a%20b.mp3`;
 
-const PRECACHE = ["/__spa-fallback.html", "/index.html", "/en/index.html", "/assets/root-1.js", "/manifest.webmanifest"];
+const PRECACHE = ["/__spa-fallback", "/en/", "/yi/", "/assets/root-1.js", "/manifest.webmanifest"];
 
 /** A scripted network: path → body; `online = false` makes every fetch fail like a dropped line. */
 class Net {
@@ -53,7 +53,7 @@ beforeEach(async () => {
     origin: ORIGIN,
     version: "v1",
     precache: PRECACHE,
-    fallback: "/__spa-fallback.html",
+    fallback: "/__spa-fallback",
   });
   background = [];
   await worker.install();
@@ -75,7 +75,7 @@ describe("install / activate", () => {
       origin: ORIGIN,
       version: "v2",
       precache: PRECACHE,
-      fallback: "/__spa-fallback.html",
+      fallback: "/__spa-fallback",
     });
     await expect(w2.install()).rejects.toThrow();
   });
@@ -99,15 +99,17 @@ describe("navigation", () => {
 
   it("offline: serves the precached page for the path", async () => {
     net.online = false;
-    expect(await text(worker.route(req(`${ORIGIN}/en/`, { navigate: true }), waitUntil))).toBe("shell:/en/index.html");
-    expect(await text(worker.route(req(`${ORIGIN}/en`, { navigate: true }), waitUntil))).toBe("shell:/en/index.html");
-    expect(await text(worker.route(req(`${ORIGIN}/?x=1`, { navigate: true }), waitUntil))).toBe("shell:/index.html");
+    expect(await text(worker.route(req(`${ORIGIN}/en/`, { navigate: true }), waitUntil))).toBe("shell:/en/");
+    expect(await text(worker.route(req(`${ORIGIN}/en`, { navigate: true }), waitUntil))).toBe("shell:/en/");
+    expect(await text(worker.route(req(`${ORIGIN}/yi/?x=1`, { navigate: true }), waitUntil))).toBe("shell:/yi/");
+    // `/` is the site Worker's language redirect, never precached: offline it gets the SPA fallback.
+    expect(await text(worker.route(req(`${ORIGIN}/?x=1`, { navigate: true }), waitUntil))).toBe("shell:/__spa-fallback");
   });
 
   it("offline: any other page gets the SPA fallback", async () => {
     net.online = false;
     expect(await text(worker.route(req(`${ORIGIN}/yi/s/abc?t=754`, { navigate: true }), waitUntil))).toBe(
-      "shell:/__spa-fallback.html",
+      "shell:/__spa-fallback",
     );
   });
 });
@@ -241,7 +243,7 @@ describe("media host audio (Amendment A1)", () => {
       origin: ORIGIN,
       version: "v1",
       precache: PRECACHE,
-      fallback: "/__spa-fallback.html",
+      fallback: "/__spa-fallback",
     });
     expect(fresh.downloaded()).toBeNull();
     net.online = false;

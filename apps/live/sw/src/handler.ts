@@ -116,7 +116,7 @@ export function createLiveWorker(deps: WorkerDeps): LiveWorker {
     } catch (err) {
       const shell = await caches.open(shellCache);
       const path = url.pathname;
-      const candidates = path.endsWith("/") ? [`${path}index.html`] : [path, `${path}/index.html`, `${path}.html`];
+      const candidates = path.endsWith("/") ? [path] : [path, `${path}/`];
       for (const c of candidates) {
         if (!precached.has(c)) continue;
         const hit = await shell.match(abs(c));

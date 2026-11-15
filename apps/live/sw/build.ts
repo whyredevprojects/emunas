@@ -8,14 +8,17 @@
  *    deploy that changes the shell installs a new worker and drops the old shell cache.
  * 3. Bundles `src/sw.ts` with Vite into one classic script with the list and version inlined.
  *
+ * Before 1, copies React Router's SPA fallback (`index.html`) to `__spa-fallback.html`, so the host
+ * serves it at `/__spa-fallback` without a redirect (see `SPA_FALLBACK` in `src/precache.ts`).
+ *
  * Fails when the client build is missing or has no SPA fallback page (the offline navigation target).
  */
 import { createHash } from "node:crypto";
-import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
+import { copyFileSync, existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join, relative, resolve, sep } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { build } from "vite";
-import { SPA_FALLBACK, selectPrecache } from "./src/precache.ts";
+import { SPA_FALLBACK, SPA_FALLBACK_FILE, SPA_FALLBACK_SOURCE, precacheFile, selectPrecache } from "./src/precache.ts";
 
 const swDir = fileURLToPath(new URL(".", import.meta.url));
 
@@ -50,13 +53,20 @@ export function shellManifest(clientDir: string): ShellManifest {
   for (const p of precache) {
     hash.update(p);
     hash.update("\0");
-    hash.update(readFileSync(join(clientDir, decodeURIComponent(p.slice(1)))));
+    hash.update(readFileSync(join(clientDir, precacheFile(p))));
     hash.update("\0");
   }
   return { version: hash.digest("hex").slice(0, 16), precache };
 }
 
+/** Copies React Router's SPA fallback to the file the host serves at `SPA_FALLBACK` (see precache.ts). */
+export function writeSpaFallback(clientDir: string): void {
+  const source = join(clientDir, SPA_FALLBACK_SOURCE);
+  if (existsSync(source)) copyFileSync(source, join(clientDir, SPA_FALLBACK_FILE));
+}
+
 export async function buildServiceWorker(clientDir: string): Promise<ShellManifest> {
+  if (existsSync(clientDir)) writeSpaFallback(clientDir);
   const manifest = shellManifest(clientDir);
   await build({
     configFile: false,

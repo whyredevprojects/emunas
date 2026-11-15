@@ -1,6 +1,5 @@
 import { describe, expect, it } from "vitest";
 import { compareSortKeys } from "@emunas/normalize";
-// eslint-disable-next-line no-restricted-imports -- app/data/fixtures is the Live contract's fixture tree
 import bereishisFixture from "../../../data/fixtures/data/work/bereishis.json" with { type: "json" };
 import { LIVE_DATA_SCHEMA_VERSION, type WorkCitation, type WorkFile, type WorkSummary } from "../../entities/live-data.ts";
 import { chapterLabel, isGenreWork, layoutWork, matchesWork, placeLabel, shelfGroups, shiurimIn, wantsChapterIndex, INLINE_PLACES_MAX } from "../model.ts";

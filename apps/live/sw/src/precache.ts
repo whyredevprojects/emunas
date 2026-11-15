@@ -3,14 +3,32 @@
  *
  * The shell is everything needed to start the app on any route without the network: the hashed
  * JS/CSS/font chunks (`assets/`, all route chunks included, so every page can open offline), icons,
- * the web manifest, the SPA fallback page and the top-level prerendered pages (`/`, `/en/`, `/yi/`).
+ * the web manifest, the SPA fallback page and the UI home pages (`/en/`, `/yi/`).
  * Not precached: `/data/*` (runtime, stale-while-revalidate), the thousands of other prerendered
  * pages (the SPA fallback renders them offline), source maps, `_headers` and the worker itself.
  */
 
-export const SPA_FALLBACK = "/__spa-fallback.html";
+/**
+ * The SPA fallback page as it is precached and served offline. React Router writes the fallback
+ * as `index.html` (W4.5 does not prerender `/`, which the site Worker redirects), and `/` and
+ * `/index.html` never reach that file on Cloudflare (Worker redirect; trailing-slash redirect). So
+ * `sw/build.ts` copies it to `SPA_FALLBACK_FILE`, which the host serves at this path with a plain 200.
+ */
+export const SPA_FALLBACK = "/__spa-fallback";
+/** The file in `build/client` that `SPA_FALLBACK` is served from. */
+export const SPA_FALLBACK_FILE = "__spa-fallback.html";
+/** The file React Router writes the SPA fallback to (copied to `SPA_FALLBACK_FILE` at build). */
+export const SPA_FALLBACK_SOURCE = "index.html";
 
-const TOP_PAGES = new Set(["index.html", "en/index.html", "yi/index.html", "__spa-fallback.html"]);
+/**
+ * Prerendered pages precached by the URL the host serves them at without a redirect (Cloudflare's
+ * default `auto-trailing-slash`: `en/index.html` → `/en/`, `x.html` → `/x`).
+ */
+const TOP_PAGES: ReadonlyMap<string, string> = new Map([
+  ["en/index.html", "/en/"],
+  ["yi/index.html", "/yi/"],
+  [SPA_FALLBACK_FILE, SPA_FALLBACK],
+]);
 
 /**
  * Picks the precache paths from the files of `build/client` (paths relative to it, `/`-separated).
@@ -21,8 +39,10 @@ export function selectPrecache(files: readonly string[]): string[] {
   for (const raw of files) {
     const f = raw.replace(/^\.?\/+/u, "");
     if (f.endsWith(".map")) continue;
-    if (
-      TOP_PAGES.has(f) ||
+    const page = TOP_PAGES.get(f);
+    if (page !== undefined) {
+      out.push(page);
+    } else if (
       f === "manifest.webmanifest" ||
       (f.startsWith("assets/") && !f.endsWith(".html")) ||
       f.startsWith("icons/")
@@ -31,4 +51,10 @@ export function selectPrecache(files: readonly string[]): string[] {
     }
   }
   return out.sort();
+}
+
+/** The `build/client` file (relative path) behind a precache URL path from `selectPrecache`. */
+export function precacheFile(urlPath: string): string {
+  for (const [file, url] of TOP_PAGES) if (url === urlPath) return file;
+  return decodeURIComponent(urlPath.slice(1));
 }
