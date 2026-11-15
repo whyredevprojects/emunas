@@ -54,6 +54,10 @@ export const dataPaths = {
     if (!Number.isInteger(page) || page < 1) throw new DataPathError(`invalid page: ${page}`);
     return `${DATA_ROOT}/topic/${segment("topic id", id)}.moments-${page}.json`;
   },
+  topicShiurim: (id: string, page: number) => {
+    if (!Number.isInteger(page) || page < 1) throw new DataPathError(`invalid page: ${page}`);
+    return `${DATA_ROOT}/topic-shiurim/${segment("topic id", id)}.${page}.json`;
+  },
   thread: (id: string) => `${DATA_ROOT}/thread/${segment("thread id", id)}.json`,
   story: (id: string) => `${DATA_ROOT}/story/${segment("story id", id)}.json`,
   storiesIndex: () => `${DATA_ROOT}/stories-index.json`,

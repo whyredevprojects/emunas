@@ -24,6 +24,14 @@ export const UNITS = ["shiurim", "moments"] as const;
 export type Unit = (typeof UNITS)[number];
 
 export const SORTS = ["catalog", "year"] as const;
+
+/**
+ * Explore opens on the topic map (concept-live-corpus C.2 "The map"); the facet column, lenses and
+ * results are one tap behind it (`view=browse`). Any filter, lens or list setting in the URL means
+ * the browse view, so links from other pages (Connections, a facet value) open it directly.
+ */
+export const VIEWS = ["map", "browse"] as const;
+export type View = (typeof VIEWS)[number];
 export type Sort = (typeof SORTS)[number];
 
 /** Moment kinds in display order. */
@@ -37,6 +45,8 @@ export interface ConnectionsCenter {
 }
 
 export interface ExploreState {
+  /** The topic map or the facet view (see `VIEWS`). */
+  view: View;
   filters: ExploreFilters;
   lens: Lens;
   unit: Unit;
@@ -48,6 +58,7 @@ export interface ExploreState {
 }
 
 export const DEFAULT_STATE: ExploreState = {
+  view: "map",
   filters: { sets: {}, year: null },
   lens: "list",
   unit: "shiurim",
@@ -60,6 +71,7 @@ export const DEFAULT_STATE: ExploreState = {
 export const FACET_PARAM: Readonly<Record<SetFacet, string>> = {
   lang: "audio",
   category: "kind",
+  topic: "topic",
   occasion: "o",
   series: "series",
   work: "w",
@@ -81,7 +93,24 @@ const VOCAB: Partial<Record<SetFacet, readonly string[]>> = {
   catalogued: ["catalogued", "uncatalogued"],
 };
 
-const EXPLORE_PARAMS = [...Object.values(FACET_PARAM), "y", "lens", "unit", "sort", "mk", "center"];
+const EXPLORE_PARAMS = [...Object.values(FACET_PARAM), "y", "lens", "unit", "sort", "mk", "center", "view"];
+
+/**
+ * True when the state needs the browse view: a facet other than the shell's audio language, a year,
+ * or a lens/unit/sort/kind/centre other than the default.
+ */
+export function needsBrowse(state: Omit<ExploreState, "view">): boolean {
+  const f = state.filters;
+  return (
+    f.year !== null ||
+    SET_FACETS.some((k) => k !== "lang" && (f.sets[k]?.length ?? 0) > 0) ||
+    state.lens !== "list" ||
+    state.unit !== "shiurim" ||
+    state.sort !== "catalog" ||
+    state.kinds.length > 0 ||
+    state.center !== null
+  );
+}
 
 function oneOf<T extends string>(list: readonly T[], v: string | null, fallback: T): T {
   return v !== null && (list as readonly string[]).includes(v) ? (v as T) : fallback;
@@ -141,7 +170,7 @@ export function parseExploreQuery(search: string | URLSearchParams): ExploreStat
     if (v.length > 0) sets[facet] = v;
   }
   const kinds = sortedKinds(q.getAll("mk").filter((k): k is MomentKind => (MOMENT_KINDS as readonly string[]).includes(k)));
-  return {
+  const rest: Omit<ExploreState, "view"> = {
     filters: { sets, year: parseYear(q.get("y")) },
     lens: oneOf(LENSES, q.get("lens"), "list"),
     unit: oneOf(UNITS, q.get("unit"), "shiurim"),
@@ -150,6 +179,7 @@ export function parseExploreQuery(search: string | URLSearchParams): ExploreStat
     kinds: kinds.length === MOMENT_KINDS.length ? [] : kinds,
     center: parseCenter(q.get("center")),
   };
+  return { view: needsBrowse(rest) || q.get("view") === "browse" ? "browse" : "map", ...rest };
 }
 
 function sortedKinds(kinds: Iterable<MomentKind>): MomentKind[] {
@@ -180,6 +210,7 @@ export function exploreToQuery(state: ExploreState, base: URLSearchParams = new 
   const kinds = sortedKinds(state.kinds);
   if (kinds.length > 0 && kinds.length < MOMENT_KINDS.length) for (const k of kinds) add("mk", k);
   if (state.center) add("center", `${state.center.kind}:${state.center.key}`);
+  if (state.view === "browse" && !needsBrowse(state)) add("view", "browse");
   return q;
 }
 

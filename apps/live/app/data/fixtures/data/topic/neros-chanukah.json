@@ -160,5 +160,52 @@
  ],
  "momentTotal": 5,
  "momentShiurim": 3,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 1,
+   "shiurim": 1
+  },
+  "yi": {
+   "sections": 4,
+   "shiurim": 2
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-zmanim-svds-zs-chnvkh-04",
+   "lang": "yi",
+   "title": "סעודה של המחכים לבנין ביהמ\"ק; חנוכה - להודות ולהלל - יו\"ט של הוד",
+   "year": 5751,
+   "grade": "main",
+   "salience": 0.7
+  },
+  {
+   "id": "yi-parshas-hashavua-vyshb-08",
+   "lang": "yi",
+   "title": "בפרשה זו נטמן משיח בן יוסף ומשיח בן דוד. שייכות לחנוכה",
+   "year": 5751,
+   "grade": "discussed",
+   "salience": 0.4
+  },
+  {
+   "id": "en-zmanim-en-chvdsh-tbs-02",
+   "lang": "en",
+   "title": "An Explanation of ניטל and the Month of טבת",
+   "year": 5764,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-zmanim-en-chvdsh-tbs-02~s2",
+    "t": 797.84,
+    "title": {
+     "en": "The tekufah of Teves and the origin of Nittel",
+     "yi": "תקופת טבת און דער שורש פון ניטל"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 3,
+ "shiurPages": 0
 }

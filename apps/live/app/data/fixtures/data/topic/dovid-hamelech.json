@@ -170,5 +170,44 @@
  ],
  "momentTotal": 6,
  "momentShiurim": 2,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 0,
+   "shiurim": 0
+  },
+  "yi": {
+   "sections": 6,
+   "shiurim": 2
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-parshas-hashavua-shvptym-01",
+   "lang": "yi",
+   "title": "שופטים ושוטרים - עשה לך רב כדי שתהיה בטל להקב\"ה (שייכות לימים נוראים)",
+   "year": 5740,
+   "grade": "main",
+   "salience": 0.6
+  },
+  {
+   "id": "yi-parshas-hashavua-vschnn-01",
+   "lang": "yi",
+   "title": "משה רבינו מלמד איך להתפלל. נחיצות וחשיבות פסוקי דזמרה",
+   "year": 5734,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-parshas-hashavua-vschnn-01~s1",
+    "t": 303.76,
+    "title": {
+     "en": "Three stages of davening: cutting a path",
+     "yi": "דריי חלקים פון דאווענען: א וועג דורכשניידן"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 2,
+ "shiurPages": 0
 }

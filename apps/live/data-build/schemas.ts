@@ -22,6 +22,7 @@ import {
   type ThreadFile,
   type TopicFile,
   type TopicMomentsFile,
+  type TopicShiurimFile,
   type TopicsFile,
   type MomentShardFile,
   type QuickIndexFile,
@@ -405,6 +406,18 @@ export const TopicsSchema = v.strictObject({
 
 const labelled = v.strictObject({ id: str, label: facetLabel });
 
+const topicShiurRow = v.strictObject({
+  id: str,
+  lang: ed,
+  title: str,
+  year: v.nullable(int),
+  grade: v.picklist(["main", "discussed", "touched"]),
+  salience: num,
+  section: v.exactOptional(v.strictObject({ id: str, t: num, title: L, count: int })),
+});
+
+const langTally = v.strictObject({ sections: int, shiurim: int });
+
 export const TopicSchema = v.strictObject({
   schemaVersion: version,
   id: str,
@@ -429,6 +442,17 @@ export const TopicSchema = v.strictObject({
   momentTotal: int,
   momentShiurim: int,
   momentPages: int,
+  momentLangs: v.strictObject({ en: langTally, yi: langTally }),
+  shiurim: v.array(topicShiurRow),
+  shiurTotal: int,
+  shiurPages: int,
+});
+
+export const TopicShiurimSchema = v.strictObject({
+  schemaVersion: version,
+  topicId: str,
+  page: int,
+  shiurim: v.array(topicShiurRow),
 });
 
 export const TopicMomentsSchema = v.strictObject({
@@ -531,6 +555,7 @@ export const DATA_SCHEMAS = {
   topics: TopicsSchema,
   topic: TopicSchema,
   topicMoments: TopicMomentsSchema,
+  topicShiurim: TopicShiurimSchema,
   thread: ThreadSchema,
   story: StorySchema,
   storiesIndex: StoriesIndexSchema,
@@ -561,6 +586,7 @@ export const _typeChecks: {
   topics: Same<Out<"topics">, TopicsFile>;
   topic: Same<Out<"topic">, TopicFile>;
   topicMoments: Same<Out<"topicMoments">, TopicMomentsFile>;
+  topicShiurim: Same<Out<"topicShiurim">, TopicShiurimFile>;
   thread: Same<Out<"thread">, ThreadFile>;
   story: Same<Out<"story">, StoryFile>;
   storiesIndex: Same<Out<"storiesIndex">, StoriesIndexFile>;
@@ -583,6 +609,7 @@ export const _typeChecks: {
   topics: true,
   topic: true,
   topicMoments: true,
+  topicShiurim: true,
   thread: true,
   story: true,
   storiesIndex: true,
@@ -607,6 +634,7 @@ export function kindOfFile(file: string): DataKind | null {
   if (file === "explore/entities.json") return "exploreEntities";
   if (/^topic\/[^/]+\.moments-[1-9]\d*\.json$/.test(file)) return "topicMoments";
   if (/^topic\/[^/]+\.json$/.test(file)) return "topic";
+  if (/^topic-shiurim\/[^/]+\.[1-9]\d*\.json$/.test(file)) return "topicShiurim";
   if (/^thread\/[^/]+\.json$/.test(file)) return "thread";
   if (/^story\/[^/]+\.json$/.test(file)) return "story";
   if (/^glossary\/[^/]+\.json$/.test(file)) return "glossary";

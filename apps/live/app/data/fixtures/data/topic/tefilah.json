@@ -627,5 +627,175 @@
  ],
  "momentTotal": 30,
  "momentShiurim": 15,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 6,
+   "shiurim": 5
+  },
+  "yi": {
+   "sections": 24,
+   "shiurim": 10
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-parshas-hashavua-vschnn-01",
+   "lang": "yi",
+   "title": "משה רבינו מלמד איך להתפלל. נחיצות וחשיבות פסוקי דזמרה",
+   "year": 5734,
+   "grade": "main",
+   "salience": 1
+  },
+  {
+   "id": "yi-zmanim-lvl-02",
+   "lang": "yi",
+   "title": "לדוד ה' אורי - בבטחון תלוי הכל",
+   "year": 5740,
+   "grade": "main",
+   "salience": 0.6
+  },
+  {
+   "id": "yi-zmanim-svds-zs-chnvkh-04",
+   "lang": "yi",
+   "title": "סעודה של המחכים לבנין ביהמ\"ק; חנוכה - להודות ולהלל - יו\"ט של הוד",
+   "year": 5751,
+   "grade": "main",
+   "salience": 0.6
+  },
+  {
+   "id": "yi-parshas-hashavua-mvr-01",
+   "lang": "yi",
+   "title": "אהרן והכהנים הם בחינת מדת הוד - קודש הקדשים - בחינת רשב\"י",
+   "year": 5736,
+   "grade": "discussed",
+   "salience": 0.55
+  },
+  {
+   "id": "yi-zmanim-chnvkh-11",
+   "lang": "yi",
+   "title": "דרוש בנס חנוכה - נס הנרות מגלים נס המלחמה",
+   "year": 5749,
+   "grade": "discussed",
+   "salience": 0.5
+  },
+  {
+   "id": "en-zmanim-en-tv-bshbt-01",
+   "lang": "en",
+   "title": "ט”ו בשבט Ushers in the Months of חסד (A Deeper Understanding of the צירופי החודש)",
+   "year": 5756,
+   "grade": "discussed",
+   "salience": 0.45
+  },
+  {
+   "id": "yi-parshas-hashavua-hzynv-01",
+   "lang": "yi",
+   "title": "פרשה של אמונה. עשי\"ת - זמן לנקות חציצות האמונה",
+   "year": 5732,
+   "grade": "discussed",
+   "salience": 0.4
+  },
+  {
+   "id": "yi-zmanim-lvl-01",
+   "lang": "yi",
+   "title": "דיבורים המעוררים את הלב",
+   "year": 5735,
+   "grade": "discussed",
+   "salience": 0.4
+  },
+  {
+   "id": "en-zmanim-en-rsh-hshnh-03",
+   "lang": "en",
+   "title": "The Theme of the Day - Proclaiming Hashem as King",
+   "year": 5757,
+   "grade": "discussed",
+   "salience": 0.35
+  },
+  {
+   "id": "yi-zmanim-pvrym-07",
+   "lang": "yi",
+   "title": "גודל כח היום; הדרכה איך לנהוג בו",
+   "year": 5767,
+   "grade": "discussed",
+   "salience": 0.35
+  },
+  {
+   "id": "yi-shonos-10",
+   "lang": "yi",
+   "title": "בענין קליפת \"תכבד העבודה\" בזמן הזה",
+   "year": null,
+   "grade": "discussed",
+   "salience": 0.3
+  },
+  {
+   "id": "en-parsha-en-vyshlch-01",
+   "lang": "en",
+   "title": "A Deeper Understanding of יעקב's Present to עשו",
+   "year": 5749,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-parsha-en-vyshlch-01~s12",
+    "t": 3650.78,
+    "title": {
+     "en": "Leah's tears and the debt to Esav",
+     "yi": "לאה'ס טרערן און דער חוב צו עשו"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-zmanim-svkvs-08",
+   "lang": "yi",
+   "title": "גודל מעלת קדושת הסוכה",
+   "year": 5758,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-svkvs-08~s11",
+    "t": 3601.14,
+    "title": {
+     "en": "Bitachon in practice: davening, eyes and the telephone",
+     "yi": "ביטחון למעשה: דאווענען, אויגן און דער טעלעפאן"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "en-parsha-en-ky-sb-01",
+   "lang": "en",
+   "title": "ביכורים - Bringing the Fruit of ראשית to the Place of ראשית",
+   "year": 5760,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-parsha-en-ky-sb-01~s1",
+    "t": 232.27,
+    "title": {
+     "en": "Why people must be hungry and thirsty",
+     "yi": "פארוואס מענטשן מוזן זיין הונגעריג און דורשטיג"
+    },
+    "count": 2
+   }
+  },
+  {
+   "id": "en-zmanim-en-psch-06",
+   "lang": "en",
+   "title": "The Beginning of our Nuptials with Hashem",
+   "year": 5765,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-zmanim-en-psch-06~s3",
+    "t": 1008.11,
+    "title": {
+     "en": "Bread holds the ten utterances",
+     "yi": "לחם האט אין זיך די עשרה מאמרות"
+    },
+    "count": 2
+   }
+  }
+ ],
+ "shiurTotal": 15,
+ "shiurPages": 0
 }

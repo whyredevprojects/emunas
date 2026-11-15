@@ -70,5 +70,53 @@
  ],
  "momentTotal": 2,
  "momentShiurim": 2,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 1,
+   "shiurim": 1
+  },
+  "yi": {
+   "sections": 1,
+   "shiurim": 1
+  }
+ },
+ "shiurim": [
+  {
+   "id": "en-miscellaneous-en-01",
+   "lang": "en",
+   "title": "פרק ששי: The קדושה of צדיקים and the חשיבות of Learning תורה",
+   "year": 5738,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-miscellaneous-en-01~s3",
+    "t": 802.3,
+    "title": {
+     "en": "Losing a name: Zimri and Dasan",
+     "yi": "דער נאמען פארלוירן: זמרי און דתן"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-zmanim-svkvs-08",
+   "lang": "yi",
+   "title": "גודל מעלת קדושת הסוכה",
+   "year": 5758,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-svkvs-08~s4",
+    "t": 1450.57,
+    "title": {
+     "en": "The Rokeach: sukkos in the war with Sichon and Og",
+     "yi": "דער רוקח: סוכות ביי דער מלחמה מיט סיחון ועוג"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 2,
+ "shiurPages": 0
 }

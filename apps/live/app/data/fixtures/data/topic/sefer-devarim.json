@@ -95,5 +95,44 @@
  ],
  "momentTotal": 3,
  "momentShiurim": 1,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 0,
+   "shiurim": 0
+  },
+  "yi": {
+   "sections": 3,
+   "shiurim": 1
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-zmanim-shbs-chzvn-01",
+   "lang": "yi",
+   "title": "בשבת חזון נתגלה השמחה של ט' באב לעתיד וכל יהודי רואה בית השלישי בבנינה. ביאור ענין שמיטה",
+   "year": 5746,
+   "grade": "main",
+   "salience": 0.6
+  },
+  {
+   "id": "yi-zmanim-tv-bb-04",
+   "lang": "yi",
+   "title": "זמן לשאוב יראת שמים בעד הכנה לר\"ה' זמן של שידוכים' ז' ימים אחר היו\"ט הגדול של ט' באב לעתיד.",
+   "year": 5739,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-tv-bb-04~s0",
+    "t": 0,
+    "title": {
+     "en": "The week of yiras Hashem and the start of teshuvah",
+     "yi": "די וואך פון יראת השם און דער אנהייב פון תשובה"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 2,
+ "shiurPages": 0
 }

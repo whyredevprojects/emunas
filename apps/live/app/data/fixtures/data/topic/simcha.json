@@ -95,5 +95,61 @@
  ],
  "momentTotal": 2,
  "momentShiurim": 2,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 0,
+   "shiurim": 0
+  },
+  "yi": {
+   "sections": 2,
+   "shiurim": 2
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-zmanim-svkvs-08",
+   "lang": "yi",
+   "title": "גודל מעלת קדושת הסוכה",
+   "year": 5758,
+   "grade": "main",
+   "salience": 0.6
+  },
+  {
+   "id": "yi-zmanim-svds-shvshn-pvrym-01",
+   "lang": "yi",
+   "title": "יו\"ט ליהודים בעלי מדריגה' ומרדכי לא יכרע- היה בטוח בה'' יו\"ט של לעתיד לבא' פעמונים בשולי המעיל- דור אחרון",
+   "year": 5743,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-svds-shvshn-pvrym-01~s9",
+    "t": 3018.443,
+    "title": {
+     "en": "Knowing the truth, and the dance",
+     "yi": "וויסן דעם אמת, און דאס טאנצן"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-zmanim-nysn-05",
+   "lang": "yi",
+   "title": "לעזור בבית בהכנה לפסח; להתחדש עצמו בזמן התחדשות",
+   "year": null,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-nysn-05~s9",
+    "t": 2526.74,
+    "title": {
+     "en": "Reb Arele and the Chanukah lights; closing",
+     "yi": "רבי ארל'ע און די חנוכה ליכט; סיום"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 3,
+ "shiurPages": 0
 }

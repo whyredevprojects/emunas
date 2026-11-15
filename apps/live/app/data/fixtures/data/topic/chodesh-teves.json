@@ -158,5 +158,44 @@
  ],
  "momentTotal": 5,
  "momentShiurim": 2,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 5,
+   "shiurim": 2
+  },
+  "yi": {
+   "sections": 0,
+   "shiurim": 0
+  }
+ },
+ "shiurim": [
+  {
+   "id": "en-zmanim-en-chvdsh-tbs-02",
+   "lang": "en",
+   "title": "An Explanation of ניטל and the Month of טבת",
+   "year": 5764,
+   "grade": "main",
+   "salience": 0.95
+  },
+  {
+   "id": "en-zmanim-en-tv-bshbt-01",
+   "lang": "en",
+   "title": "ט”ו בשבט Ushers in the Months of חסד (A Deeper Understanding of the צירופי החודש)",
+   "year": 5756,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-zmanim-en-tv-bshbt-01~s4",
+    "t": 1474.15,
+    "title": {
+     "en": "Tammuz, Teves, and the turn on the fifteenth",
+     "yi": "תמוז, טבת, און דער איבערקער אויפן פופצנטן"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 2,
+ "shiurPages": 0
 }

@@ -3,13 +3,15 @@
  * behaviour come from the platform, and the order follows the inline direction. Each value shows
  * the count it would give; zero counts are dimmed, never hidden. Long data facets (occasions, works,
  * people, concepts, series) show the strongest values first, a filter box and "show more".
+ * The Topic facet is a three-level picker over the topic tree: a value counts the shiurim tagged
+ * with the topic or anything under it, and a level opens in place to show the one below.
  */
 import { formatNumber, type UiLang } from "@emunas/i18n";
 import { useId, useMemo, useState, type ChangeEvent, type JSX } from "react";
 import { Text } from "../../components/Text.tsx";
 import type { FacetCounts } from "./engine.ts";
 import { valueLabel, yearText } from "./labels.ts";
-import type { FacetsFile } from "./live-data.ts";
+import type { FacetsFile, TopicNode } from "./live-data.ts";
 import { DURATION_BUCKETS, SET_FACETS, UNDATED, type ExploreFilters, type SetFacet, type YearFilter } from "./model.ts";
 import { exploreT, type ExploreKey } from "./strings.ts";
 import { exploreStyles as s } from "./styles.ts";
@@ -34,9 +36,17 @@ export interface FacetPanelProps {
   facets: FacetsFile;
   ui: UiLang;
   onChange(next: ExploreFilters): void;
+  /** The topic tree (labels, levels); empty when it could not be loaded. */
+  topics?: readonly TopicNode[];
+  /** Values left out of a facet's list unless selected (concepts dropped by the quarter rule). */
+  hidden?: Partial<Record<SetFacet, ReadonlySet<string>>>;
 }
 
-export function FacetPanel({ filters, counts, facets, ui, onChange }: FacetPanelProps): JSX.Element {
+/** Facets shown before the year facet. */
+const BEFORE_YEAR = 5;
+
+export function FacetPanel(props: FacetPanelProps): JSX.Element {
+  const { filters, ui, onChange } = props;
   const et = exploreT(ui);
   const headingId = useId();
   return (
@@ -54,13 +64,9 @@ export function FacetPanel({ filters, counts, facets, ui, onChange }: FacetPanel
           {et("explore.clear")}
         </button>
       </div>
-      {SET_FACETS.slice(0, 4).map((f) => (
-        <FacetGroup key={f} facet={f} filters={filters} counts={counts} facets={facets} ui={ui} onChange={onChange} />
-      ))}
-      <YearFacet filters={filters} counts={counts} ui={ui} onChange={onChange} />
-      {SET_FACETS.slice(4).map((f) => (
-        <FacetGroup key={f} facet={f} filters={filters} counts={counts} facets={facets} ui={ui} onChange={onChange} />
-      ))}
+      {SET_FACETS.slice(0, BEFORE_YEAR).map((f) => (f === "topic" ? <TopicFacet key={f} {...props} /> : <FacetGroup key={f} facet={f} {...props} />))}
+      <YearFacet filters={filters} counts={props.counts} ui={ui} onChange={onChange} />
+      {SET_FACETS.slice(BEFORE_YEAR).map((f) => (f === "topic" ? <TopicFacet key={f} {...props} /> : <FacetGroup key={f} facet={f} {...props} />))}
     </aside>
   );
 }
@@ -83,13 +89,17 @@ export function orderedValues(facet: SetFacet, counts: FacetCounts | null, selec
   });
 }
 
-function FacetGroup({ facet, filters, counts, facets, ui, onChange }: GroupProps): JSX.Element | null {
+function FacetGroup({ facet, filters, counts, facets, ui, onChange, hidden: hide }: GroupProps): JSX.Element | null {
   const et = exploreT(ui);
   const selected = filters.sets[facet] ?? [];
   const [query, setQuery] = useState("");
   const [shown, setShown] = useState(FACET_PREVIEW);
   const long = FIXED_ORDER[facet] === undefined;
-  const values = useMemo(() => orderedValues(facet, counts, selected), [facet, counts, selected]);
+  const drop = hide?.[facet];
+  const values = useMemo(
+    () => orderedValues(facet, counts, selected).filter((v) => !drop?.has(v) || selected.includes(v)),
+    [facet, counts, selected, drop],
+  );
   const legend = et(`explore.facet.${facet}` as ExploreKey);
   const filterId = useId();
   if (values.length === 0) return null;
@@ -143,6 +153,81 @@ function FacetGroup({ facet, filters, counts, facets, ui, onChange }: GroupProps
           {et("explore.facet.fewer")}
         </button>
       ) : null}
+    </fieldset>
+  );
+}
+
+/** The children of each topic (tree order), and the roots under `null`. */
+export function topicChildren(tree: readonly TopicNode[]): Map<string | null, TopicNode[]> {
+  const out = new Map<string | null, TopicNode[]>();
+  for (const n of tree) {
+    let list = out.get(n.parentId);
+    if (!list) out.set(n.parentId, (list = []));
+    list.push(n);
+  }
+  return out;
+}
+
+/** The Topic facet: a three-level picker over the tree; levels open in place. */
+function TopicFacet({ filters, counts, ui, onChange, topics = [] }: FacetPanelProps): JSX.Element | null {
+  const et = exploreT(ui);
+  const selected = filters.sets.topic ?? [];
+  const children = useMemo(() => topicChildren(topics), [topics]);
+  const byId = useMemo(() => new Map(topics.map((n) => [n.id, n])), [topics]);
+  // Selected topics start with their ancestors open, so a shared link shows what it filters on.
+  const [open, setOpen] = useState<ReadonlySet<string>>(() => {
+    const o = new Set<string>();
+    for (const id of selected) for (let p = byId.get(id)?.parentId ?? null; p !== null && !o.has(p); p = byId.get(p)?.parentId ?? null) o.add(p);
+    return o;
+  });
+  const roots = children.get(null) ?? [];
+  if (roots.length === 0) return null;
+  const toggleOpen = (id: string) =>
+    setOpen((cur) => {
+      const next = new Set(cur);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  const level = (nodes: readonly TopicNode[]): JSX.Element => (
+    <ul className={s.values}>
+      {nodes.map((n) => {
+        const count = counts?.topic?.[n.id] ?? 0;
+        const checked = selected.includes(n.id);
+        const kids = children.get(n.id) ?? [];
+        const expanded = open.has(n.id);
+        const name = n.label[ui];
+        return (
+          <li key={n.id} className={count === 0 && !checked ? s.dimmed : undefined} data-value={n.id} data-count={count} data-level={n.level}>
+            <div className={s.topicValue}>
+              <label className={s.value}>
+                <input type="checkbox" checked={checked} onChange={() => onChange(toggleValue(filters, "topic", n.id))} />
+                <Text value={name} lang={ui} />
+                <span className={s.count}>{formatNumber(count, ui)}</span>
+              </label>
+              {kids.length > 0 ? (
+                <button
+                  type="button"
+                  className={s.disclosure}
+                  aria-expanded={expanded}
+                  aria-label={et("explore.topic.expand", { name })}
+                  data-expand={n.id}
+                  onClick={() => toggleOpen(n.id)}
+                >
+                  <span aria-hidden="true">{expanded ? "−" : "+"}</span>
+                </button>
+              ) : null}
+            </div>
+            {kids.length > 0 && expanded ? level(kids) : null}
+          </li>
+        );
+      })}
+    </ul>
+  );
+  return (
+    <fieldset className={s.facet} data-facet="topic">
+      <legend className={s.legend}>{et("explore.facet.topic")}</legend>
+      {level(roots)}
     </fieldset>
   );
 }

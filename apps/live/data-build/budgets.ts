@@ -42,6 +42,7 @@ export const BR_TARGETS: Partial<Record<DataKind, number>> = {
   topics: 8 * KB,
   topic: 24 * KB,
   topicMoments: 24 * KB,
+  topicShiurim: 24 * KB,
   thread: 6 * KB,
   story: 6 * KB,
   storiesIndex: 120 * KB,

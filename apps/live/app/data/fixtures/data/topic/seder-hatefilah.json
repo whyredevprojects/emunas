@@ -176,5 +176,35 @@
  ],
  "momentTotal": 7,
  "momentShiurim": 2,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 1,
+   "shiurim": 1
+  },
+  "yi": {
+   "sections": 6,
+   "shiurim": 1
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-parshas-hashavua-vschnn-01",
+   "lang": "yi",
+   "title": "משה רבינו מלמד איך להתפלל. נחיצות וחשיבות פסוקי דזמרה",
+   "year": 5734,
+   "grade": "main",
+   "salience": 1
+  },
+  {
+   "id": "en-zmanim-en-rsh-hshnh-03",
+   "lang": "en",
+   "title": "The Theme of the Day - Proclaiming Hashem as King",
+   "year": 5757,
+   "grade": "discussed",
+   "salience": 0.35
+  }
+ ],
+ "shiurTotal": 2,
+ "shiurPages": 0
 }

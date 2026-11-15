@@ -7,12 +7,13 @@
  * value's count is the number of results the list would show if that value were added to its facet.
  * Values whose count is zero are dimmed, never hidden.
  */
-import type { CorpusRow } from "./live-data.ts";
+import type { ExploreRow } from "./entities.ts";
 
 /** Multi-select facets, in display order. */
 export const SET_FACETS = [
   "lang",
   "category",
+  "topic",
   "occasion",
   "series",
   "work",
@@ -57,9 +58,12 @@ export function durationBucket(seconds: number): DurationBucket {
   return "gte90";
 }
 
-/** The fields of a `corpus.json` row the facets read (the worker receives only these). */
+/**
+ * The fields of a row the facets read (the worker receives only these): a `corpus.json` row with
+ * Explore's entity ids from `explore/entities.json` (`entities.ts`).
+ */
 export type FacetRow = Pick<
-  CorpusRow,
+  ExploreRow,
   "lang" | "category" | "parsha" | "zman" | "series" | "years" | "entities" | "duration" | "counts" | "status" | "derived"
 >;
 
@@ -80,6 +84,8 @@ export function rowValues(row: FacetRow, facet: FacetKey): readonly string[] {
       return row.series ? [row.series.id] : [];
     case "year":
       return row.years.length === 0 ? [UNDATED] : [...new Set(row.years.map(String))];
+    case "topic":
+      return row.entities.topics ?? [];
     case "work":
       return row.entities.works;
     case "person":

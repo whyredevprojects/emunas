@@ -228,5 +228,86 @@
  ],
  "momentTotal": 9,
  "momentShiurim": 5,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 4,
+   "shiurim": 2
+  },
+  "yi": {
+   "sections": 5,
+   "shiurim": 3
+  }
+ },
+ "shiurim": [
+  {
+   "id": "en-parsha-en-svldvs-01",
+   "lang": "en",
+   "title": "Explaining יצחק's Fondness of עשו and the meaning of ויגדלו הנערים",
+   "year": 5749,
+   "grade": "main",
+   "salience": 0.6
+  },
+  {
+   "id": "yi-zmanim-pvrym-07",
+   "lang": "yi",
+   "title": "גודל כח היום; הדרכה איך לנהוג בו",
+   "year": 5767,
+   "grade": "discussed",
+   "salience": 0.55
+  },
+  {
+   "id": "en-miscellaneous-en-01",
+   "lang": "en",
+   "title": "פרק ששי: The קדושה of צדיקים and the חשיבות of Learning תורה",
+   "year": 5738,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-miscellaneous-en-01~s13",
+    "t": 4272.79,
+    "title": {
+     "en": "Food that once had a shaylah",
+     "yi": "עסן וואס עס איז געווען א שאלה דערויף"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-zmanim-lvl-02",
+   "lang": "yi",
+   "title": "לדוד ה' אורי - בבטחון תלוי הכל",
+   "year": 5740,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-lvl-02~s3",
+    "t": 882.06,
+    "title": {
+     "en": "Bitachon in everyday avodah",
+     "yi": "בטחון אין דער טאג-טעגליכער עבודה"
+    },
+    "count": 2
+   }
+  },
+  {
+   "id": "yi-zmanim-svkvs-08",
+   "lang": "yi",
+   "title": "גודל מעלת קדושת הסוכה",
+   "year": 5758,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-svkvs-08~s11",
+    "t": 3601.14,
+    "title": {
+     "en": "Bitachon in practice: davening, eyes and the telephone",
+     "yi": "ביטחון למעשה: דאווענען, אויגן און דער טעלעפאן"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 5,
+ "shiurPages": 0
 }

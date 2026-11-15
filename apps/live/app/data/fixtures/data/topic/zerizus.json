@@ -154,5 +154,43 @@
  ],
  "momentTotal": 4,
  "momentShiurim": 2,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 2,
+   "shiurim": 1
+  },
+  "yi": {
+   "sections": 2,
+   "shiurim": 1
+  }
+ },
+ "shiurim": [
+  {
+   "id": "en-parsha-en-ky-sb-01",
+   "lang": "en",
+   "title": "ביכורים - Bringing the Fruit of ראשית to the Place of ראשית",
+   "year": 5760,
+   "grade": "main",
+   "salience": 0.6
+  },
+  {
+   "id": "yi-shonos-10",
+   "lang": "yi",
+   "title": "בענין קליפת \"תכבד העבודה\" בזמן הזה",
+   "year": null,
+   "grade": "main",
+   "salience": 0.6
+  },
+  {
+   "id": "yi-parshas-hashavua-vschnn-01",
+   "lang": "yi",
+   "title": "משה רבינו מלמד איך להתפלל. נחיצות וחשיבות פסוקי דזמרה",
+   "year": 5734,
+   "grade": "discussed",
+   "salience": 0.3
+  }
+ ],
+ "shiurTotal": 3,
+ "shiurPages": 0
 }

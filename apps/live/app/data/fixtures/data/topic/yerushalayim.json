@@ -231,5 +231,68 @@
  ],
  "momentTotal": 9,
  "momentShiurim": 5,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 1,
+   "shiurim": 1
+  },
+  "yi": {
+   "sections": 8,
+   "shiurim": 4
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-zmanim-shbs-chzvn-01",
+   "lang": "yi",
+   "title": "בשבת חזון נתגלה השמחה של ט' באב לעתיד וכל יהודי רואה בית השלישי בבנינה. ביאור ענין שמיטה",
+   "year": 5746,
+   "grade": "main",
+   "salience": 0.7
+  },
+  {
+   "id": "yi-parshas-hashavua-shvptym-01",
+   "lang": "yi",
+   "title": "שופטים ושוטרים - עשה לך רב כדי שתהיה בטל להקב\"ה (שייכות לימים נוראים)",
+   "year": 5740,
+   "grade": "discussed",
+   "salience": 0.5
+  },
+  {
+   "id": "yi-zmanim-svds-shvshn-pvrym-01",
+   "lang": "yi",
+   "title": "יו\"ט ליהודים בעלי מדריגה' ומרדכי לא יכרע- היה בטוח בה'' יו\"ט של לעתיד לבא' פעמונים בשולי המעיל- דור אחרון",
+   "year": 5743,
+   "grade": "discussed",
+   "salience": 0.45
+  },
+  {
+   "id": "yi-zmanim-tv-bb-04",
+   "lang": "yi",
+   "title": "זמן לשאוב יראת שמים בעד הכנה לר\"ה' זמן של שידוכים' ז' ימים אחר היו\"ט הגדול של ט' באב לעתיד.",
+   "year": 5739,
+   "grade": "discussed",
+   "salience": 0.4
+  },
+  {
+   "id": "en-zmanim-en-chvdsh-tbs-02",
+   "lang": "en",
+   "title": "An Explanation of ניטל and the Month of טבת",
+   "year": 5764,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-zmanim-en-chvdsh-tbs-02~s7",
+    "t": 2731.13,
+    "title": {
+     "en": "Asarah b'Teves and the danger of nearness",
+     "yi": "עשרה בטבת און די סכנה פון נאענטקייט"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 5,
+ "shiurPages": 0
 }

@@ -239,5 +239,111 @@
  ],
  "momentTotal": 9,
  "momentShiurim": 6,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 3,
+   "shiurim": 3
+  },
+  "yi": {
+   "sections": 6,
+   "shiurim": 3
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-parshas-hashavua-brshys-01",
+   "lang": "yi",
+   "title": "“ולאדם לא מצא עזר כנגדו” - זה קוב\"ה וכנסת ישראל",
+   "year": 5736,
+   "grade": "main",
+   "salience": 0.9
+  },
+  {
+   "id": "yi-parshas-hashavua-brshys-03",
+   "lang": "yi",
+   "title": "לימוד משידוך הראשון - שנעשה בלי השתתפות של מעשי אדם",
+   "year": 5750,
+   "grade": "main",
+   "salience": 0.8
+  },
+  {
+   "id": "en-parsha-en-nch-01",
+   "lang": "en",
+   "title": "The Special Holiness of נח תיבת: a Microcosm of the עולם התיקון",
+   "year": 5749,
+   "grade": "discussed",
+   "salience": 0.5
+  },
+  {
+   "id": "en-miscellaneous-en-02",
+   "lang": "en",
+   "title": "The Greatness of the חכמי התורה and the קדושה that Exists in their names",
+   "year": 5735,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-miscellaneous-en-02~s5",
+    "t": 1373.85,
+    "title": {
+     "en": "Adam's names and Rabbi Meir's neshamah",
+     "yi": "אדם הראשונ'ס נעמען און רבי מאיר'ס נשמה"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "en-miscellaneous-en-01",
+   "lang": "en",
+   "title": "פרק ששי: The קדושה of צדיקים and the חשיבות of Learning תורה",
+   "year": 5738,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-miscellaneous-en-01~s2",
+    "t": 541.22,
+    "title": {
+     "en": "A name is the neshamah",
+     "yi": "דער נאמען איז די נשמה"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "en-zmanim-en-tv-bshbt-01",
+   "lang": "en",
+   "title": "ט”ו בשבט Ushers in the Months of חסד (A Deeper Understanding of the צירופי החודש)",
+   "year": 5756,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-zmanim-en-tv-bshbt-01~s10",
+    "t": 2938.52,
+    "title": {
+     "en": "Barren trees, and only scratching the surface",
+     "yi": "אילני סרק, און מ'קראצט נאר די אויבערפלאך"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-zmanim-nysn-05",
+   "lang": "yi",
+   "title": "לעזור בבית בהכנה לפסח; להתחדש עצמו בזמן התחדשות",
+   "year": null,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-nysn-05~s2",
+    "t": 636.88,
+    "title": {
+     "en": "Four Nissans of tikkun",
+     "yi": "פיר ניסנ'ס פון תיקון"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 7,
+ "shiurPages": 0
 }

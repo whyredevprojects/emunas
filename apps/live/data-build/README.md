@@ -59,7 +59,8 @@ corpus refs with labels). Neither requests `corpus.json`, `facets.json` or any c
 | `moments/<lang>-<n>.json` | every timed item of every full shiur, 1,000 per shard, catalog order |
 | `quick-index.<lang>.json` | serialized MiniSearch (`fields` title, occasion, oneLiner, sections, entities; stores `name`). `entities` holds the EntityDoc labels of the shiur's Live-listed works, people and concepts (no aliases). Values are folded with search-core's `foldForIndex`; the client searches `normalizeQuery(q).tokens` |
 | `topics.json` | the topic tree as rows `[id, parentId, en, yi, he, count]`, parents first (`topicNodes()` expands them) |
-| `topic/<id>.json`, `topic/<id>.moments-<n>.json` | description, term, hubs as cards, children, co-topics, threads and stories (with page flags), the first 30 mix sections with titles; further sections 300 per page, ids and times only |
+| `topic/<id>.json`, `topic/<id>.moments-<n>.json` | description, term, hubs as cards, children, co-topics, threads and stories (with page flags), the first 30 mix sections with titles; further sections 300 per page, ids and times only; mix totals per audio language; the first 40 rows of "all shiurim" (grade, salience, year; a `touched` row carries its first tagged section) |
+| `topic-shiurim/<id>.<n>.json` | further "all shiurim" rows of a topic, 200 per page |
 | `thread/<id>.json` | threads with a page (≥3 shiurim): label, summary, topics, members by year with the per-shiur insight |
 | `story/<id>.json` | stories with a page (≥2 tellings): title, retelling, people (linked or plain names), `attributionVaries` (the tellings credit it to different people), tellings with the chapter each sits in |
 | `stories-index.json` | every merged story without retellings: title, Live-listed people ids, telling count, languages, page flag, first telling |

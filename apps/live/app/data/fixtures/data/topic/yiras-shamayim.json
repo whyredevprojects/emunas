@@ -106,5 +106,61 @@
  ],
  "momentTotal": 4,
  "momentShiurim": 3,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 0,
+   "shiurim": 0
+  },
+  "yi": {
+   "sections": 4,
+   "shiurim": 3
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-zmanim-tv-bb-04",
+   "lang": "yi",
+   "title": "זמן לשאוב יראת שמים בעד הכנה לר\"ה' זמן של שידוכים' ז' ימים אחר היו\"ט הגדול של ט' באב לעתיד.",
+   "year": 5739,
+   "grade": "main",
+   "salience": 0.8
+  },
+  {
+   "id": "yi-parshas-hashavua-hzynv-01",
+   "lang": "yi",
+   "title": "פרשה של אמונה. עשי\"ת - זמן לנקות חציצות האמונה",
+   "year": 5732,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-parshas-hashavua-hzynv-01~s8",
+    "t": 2452.22,
+    "title": {
+     "en": "The shofar and its hundred sounds",
+     "yi": "דער שופר און זיינע הונדערט קולות"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-zmanim-lvl-02",
+   "lang": "yi",
+   "title": "לדוד ה' אורי - בבטחון תלוי הכל",
+   "year": 5740,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-lvl-02~s1",
+    "t": 353.66,
+    "title": {
+     "en": "The lost awe of Elul",
+     "yi": "דער פארלוירענער פחד פון אלול"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 3,
+ "shiurPages": 0
 }

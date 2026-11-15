@@ -11,12 +11,13 @@ import { afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
 import { settingsStore } from "../../../shell/settings.ts";
 import { createTestRouter } from "../../../shell/test-router.tsx";
 import { FacetEngine } from "../engine.ts";
-import { clearDataCache, configureData, resetDataConfig, type CorpusRow, type DataFetch, type EntityFile } from "../live-data.ts";
+import type { ExploreRow } from "../entities.ts";
+import { clearDataCache, configureData, resetDataConfig, type DataFetch, type EntityFile } from "../live-data.ts";
 import { clearMomentCache } from "../moments.ts";
 import { parseExploreQuery } from "../url.ts";
-import { buildFile, corpusFile, entityFile, facetsFile, momentShards, syntheticRows } from "./synthetic.ts";
+import { buildFile, corpusFile, entityFile, exploreEntitiesFile, facetsFile, momentShards, syntheticRows, topicsFile } from "./synthetic.ts";
 
-let rows: CorpusRow[] = syntheticRows({ n: 160, seed: 11, people: 30, concepts: 30, works: 30 });
+let rows: ExploreRow[] = syntheticRows({ n: 160, seed: 11, people: 30, concepts: 30, works: 30 });
 let entities: Record<string, EntityFile> = {};
 let requests: string[] = [];
 
@@ -29,6 +30,8 @@ function serve(): DataFetch {
     const shards = { en: momentShards(rows, "en"), yi: momentShards(rows, "yi") };
     if (path === "/data/corpus.json") return json(corpusFile(rows));
     if (path === "/data/facets.json") return json(facetsFile(rows));
+    if (path === "/data/topics.json") return json(topicsFile(rows));
+    if (path === "/data/explore/entities.json") return json(exploreEntitiesFile(rows));
     if (path === "/data/build.json") return json(buildFile(rows, { en: shards.en.length, yi: shards.yi.length }));
     const m = /^\/data\/moments\/(en|yi)-(\d+)\.json$/u.exec(path);
     if (m) {
@@ -79,7 +82,7 @@ async function noAxeViolations(): Promise<void> {
 
 describe("Explore list", () => {
   it("lists every shiur with facet counts, virtualized", async () => {
-    const { container } = await renderAt("/en/explore");
+    const { container } = await renderAt("/en/explore?view=browse");
     expect(status(container).textContent).toBe(`${rows.length} shiurim of ${rows.length}`);
     const list = container.querySelector("[data-testid=explore-shiurim]")!;
     expect(list.getAttribute("data-count")).toBe(String(rows.length));
@@ -94,7 +97,7 @@ describe("Explore list", () => {
   });
 
   it("a facet click writes the URL and the counts follow the brute-force reference", async () => {
-    const { container, router } = await renderAt("/en/explore");
+    const { container, router } = await renderAt("/en/explore?view=browse");
     const box = container.querySelector<HTMLInputElement>('[data-facet="category"] [data-value="zman"] input')!;
     await act(async () => {
       fireEvent.click(box);
@@ -128,11 +131,11 @@ describe("Explore list", () => {
   });
 
   it("the language facet sets the shell's audio filter", async () => {
-    const { container, router } = await renderAt("/en/explore");
+    const { container, router } = await renderAt("/en/explore?view=browse");
     await act(async () => {
       fireEvent.click(container.querySelector('[data-facet="lang"] [data-value="en"] input')!);
     });
-    await waitFor(() => expect(search(router)).toBe("?audio=en"));
+    await waitFor(() => expect(search(router)).toBe("?audio=en&view=browse"));
     expect(settingsStore.getState().audio).toBe("en");
     await waitFor(() => expect(status(container).textContent).toBe(`${rows.filter((r) => r.lang === "en").length} shiurim of ${rows.length}`));
   });
@@ -151,7 +154,7 @@ describe("Explore list", () => {
   });
 
   it("renders mirrored in Yiddish", async () => {
-    const { container } = await renderAt("/yi/explore");
+    const { container } = await renderAt("/yi/explore?view=browse");
     expect(container.querySelector("[data-ui=yi]")!.getAttribute("dir")).toBe("rtl");
     expect(status(container).textContent).toContain("שיעורים");
     await noAxeViolations();
@@ -289,7 +292,7 @@ describe("large result sets", () => {
   it("renders only a window of a 997-row list", async () => {
     rows = syntheticRows({ n: 997, seed: 1 });
     configureData({ fetch: serve() });
-    const { container } = await renderAt("/en/explore");
+    const { container } = await renderAt("/en/explore?view=browse");
     expect(status(container).textContent).toBe("997 shiurim of 997");
     const items = container.querySelectorAll("[data-testid=explore-shiurim] > li");
     expect(items.length).toBeLessThan(40);

@@ -177,5 +177,52 @@
  ],
  "momentTotal": 6,
  "momentShiurim": 3,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 4,
+   "shiurim": 2
+  },
+  "yi": {
+   "sections": 2,
+   "shiurim": 1
+  }
+ },
+ "shiurim": [
+  {
+   "id": "en-parsha-en-svldvs-01",
+   "lang": "en",
+   "title": "Explaining יצחק's Fondness of עשו and the meaning of ויגדלו הנערים",
+   "year": 5749,
+   "grade": "main",
+   "salience": 0.6
+  },
+  {
+   "id": "yi-zmanim-pvrym-07",
+   "lang": "yi",
+   "title": "גודל כח היום; הדרכה איך לנהוג בו",
+   "year": 5767,
+   "grade": "discussed",
+   "salience": 0.55
+  },
+  {
+   "id": "en-miscellaneous-en-01",
+   "lang": "en",
+   "title": "פרק ששי: The קדושה of צדיקים and the חשיבות of Learning תורה",
+   "year": 5738,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-miscellaneous-en-01~s13",
+    "t": 4272.79,
+    "title": {
+     "en": "Food that once had a shaylah",
+     "yi": "עסן וואס עס איז געווען א שאלה דערויף"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 3,
+ "shiurPages": 0
 }

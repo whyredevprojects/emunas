@@ -322,5 +322,93 @@
  ],
  "momentTotal": 13,
  "momentShiurim": 7,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 5,
+   "shiurim": 3
+  },
+  "yi": {
+   "sections": 8,
+   "shiurim": 4
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-zmanim-spyrh-01",
+   "lang": "yi",
+   "title": "בימי ספירה צריכים לעשות תשובה על שורש העבירות - המדות (שייכות לפרשת קדושים)",
+   "year": 5742,
+   "grade": "main",
+   "salience": 0.8
+  },
+  {
+   "id": "en-parsha-en-ky-sb-01",
+   "lang": "en",
+   "title": "ביכורים - Bringing the Fruit of ראשית to the Place of ראשית",
+   "year": 5760,
+   "grade": "main",
+   "salience": 0.8
+  },
+  {
+   "id": "yi-zmanim-tv-bb-04",
+   "lang": "yi",
+   "title": "זמן לשאוב יראת שמים בעד הכנה לר\"ה' זמן של שידוכים' ז' ימים אחר היו\"ט הגדול של ט' באב לעתיד.",
+   "year": 5739,
+   "grade": "main",
+   "salience": 0.6
+  },
+  {
+   "id": "yi-zmanim-lvl-02",
+   "lang": "yi",
+   "title": "לדוד ה' אורי - בבטחון תלוי הכל",
+   "year": 5740,
+   "grade": "discussed",
+   "salience": 0.5
+  },
+  {
+   "id": "en-zmanim-en-rsh-hshnh-03",
+   "lang": "en",
+   "title": "The Theme of the Day - Proclaiming Hashem as King",
+   "year": 5757,
+   "grade": "discussed",
+   "salience": 0.5
+  },
+  {
+   "id": "en-zmanim-en-chvdsh-tbs-02",
+   "lang": "en",
+   "title": "An Explanation of ניטל and the Month of טבת",
+   "year": 5764,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-zmanim-en-chvdsh-tbs-02~s1",
+    "t": 363.26,
+    "title": {
+     "en": "The king who brings back his queen",
+     "yi": "דער מלך וואס ברענגט צוריק די מלכה"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-zmanim-nysn-05",
+   "lang": "yi",
+   "title": "לעזור בבית בהכנה לפסח; להתחדש עצמו בזמן התחדשות",
+   "year": null,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-nysn-05~s3",
+    "t": 955.03,
+    "title": {
+     "en": "Always beginning again",
+     "yi": "אלעמאל אנפאנגען נאכאמאל"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 7,
+ "shiurPages": 0
 }

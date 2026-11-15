@@ -65,5 +65,44 @@
  ],
  "momentTotal": 1,
  "momentShiurim": 1,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 1,
+   "shiurim": 1
+  },
+  "yi": {
+   "sections": 0,
+   "shiurim": 0
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-zmanim-svkvs-08",
+   "lang": "yi",
+   "title": "גודל מעלת קדושת הסוכה",
+   "year": 5758,
+   "grade": "discussed",
+   "salience": 0.4
+  },
+  {
+   "id": "en-zmanim-en-tv-bshbt-01",
+   "lang": "en",
+   "title": "ט”ו בשבט Ushers in the Months of חסד (A Deeper Understanding of the צירופי החודש)",
+   "year": 5756,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-zmanim-en-tv-bshbt-01~s7",
+    "t": 2182.01,
+    "title": {
+     "en": "Havaya and Adnus: the union in the Mikdash",
+     "yi": "הוי\"ה און אדנות: דער יחוד אין מקדש"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 2,
+ "shiurPages": 0
 }

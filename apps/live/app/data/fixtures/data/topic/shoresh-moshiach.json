@@ -156,5 +156,86 @@
  ],
  "momentTotal": 5,
  "momentShiurim": 5,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 0,
+   "shiurim": 0
+  },
+  "yi": {
+   "sections": 5,
+   "shiurim": 5
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-shonos-31",
+   "lang": "yi",
+   "title": "חשיבות מסירת נפש בזמננו",
+   "year": 5771,
+   "grade": "discussed",
+   "salience": 0.55
+  },
+  {
+   "id": "yi-parshas-hashavua-brshys-01",
+   "lang": "yi",
+   "title": "“ולאדם לא מצא עזר כנגדו” - זה קוב\"ה וכנסת ישראל",
+   "year": 5736,
+   "grade": "discussed",
+   "salience": 0.4
+  },
+  {
+   "id": "yi-zmanim-shbs-chzvn-01",
+   "lang": "yi",
+   "title": "בשבת חזון נתגלה השמחה של ט' באב לעתיד וכל יהודי רואה בית השלישי בבנינה. ביאור ענין שמיטה",
+   "year": 5746,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-shbs-chzvn-01~s6",
+    "t": 1918.76,
+    "title": {
+     "en": "Shabbos as source of blessing and tosefes",
+     "yi": "שבת ווי דער מקור הברכה און תוספות"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-parshas-hashavua-vyshb-08",
+   "lang": "yi",
+   "title": "בפרשה זו נטמן משיח בן יוסף ומשיח בן דוד. שייכות לחנוכה",
+   "year": 5751,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-parshas-hashavua-vyshb-08~s3",
+    "t": 752.66,
+    "title": {
+     "en": "The light of Mashiach in the Chanukah lights",
+     "yi": "דער אור פון משיח אין די חנוכה ליכט"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-zmanim-svds-zs-chnvkh-04",
+   "lang": "yi",
+   "title": "סעודה של המחכים לבנין ביהמ\"ק; חנוכה - להודות ולהלל - יו\"ט של הוד",
+   "year": 5751,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-svds-zs-chnvkh-04~s4",
+    "t": 1235.9,
+    "title": {
+     "en": "Tzemach, ma'alin bakodesh, and one hammered menorah",
+     "yi": "צמח, מעלין בקודש, און איין מקשה"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 5,
+ "shiurPages": 0
 }

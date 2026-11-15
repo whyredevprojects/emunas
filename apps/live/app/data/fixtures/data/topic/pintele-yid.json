@@ -76,5 +76,61 @@
  ],
  "momentTotal": 2,
  "momentShiurim": 2,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 2,
+   "shiurim": 2
+  },
+  "yi": {
+   "sections": 0,
+   "shiurim": 0
+  }
+ },
+ "shiurim": [
+  {
+   "id": "en-parsha-en-vyshlch-01",
+   "lang": "en",
+   "title": "A Deeper Understanding of יעקב's Present to עשו",
+   "year": 5749,
+   "grade": "discussed",
+   "salience": 0.4
+  },
+  {
+   "id": "yi-zmanim-svds-shvshn-pvrym-01",
+   "lang": "yi",
+   "title": "יו\"ט ליהודים בעלי מדריגה' ומרדכי לא יכרע- היה בטוח בה'' יו\"ט של לעתיד לבא' פעמונים בשולי המעיל- דור אחרון",
+   "year": 5743,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-svds-shvshn-pvrym-01~s10",
+    "t": 3264.213,
+    "title": {
+     "en": "Every Jewish heart is Jerusalem",
+     "yi": "יעדע אידישע הארץ איז ירושלים"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "en-zmanim-en-rsh-hshnh-03",
+   "lang": "en",
+   "title": "The Theme of the Day - Proclaiming Hashem as King",
+   "year": 5757,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-zmanim-en-rsh-hshnh-03~s5",
+    "t": 1557.1,
+    "title": {
+     "en": "Yom Kippur, the Kodesh HaKodashim of the heart",
+     "yi": "יום כיפור, דער קודש הקדשים פון הארצן"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 3,
+ "shiurPages": 0
 }

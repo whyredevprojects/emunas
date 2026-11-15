@@ -216,5 +216,61 @@
  ],
  "momentTotal": 10,
  "momentShiurim": 3,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 8,
+   "shiurim": 1
+  },
+  "yi": {
+   "sections": 2,
+   "shiurim": 2
+  }
+ },
+ "shiurim": [
+  {
+   "id": "en-parsha-en-nch-01",
+   "lang": "en",
+   "title": "The Special Holiness of נח תיבת: a Microcosm of the עולם התיקון",
+   "year": 5749,
+   "grade": "main",
+   "salience": 1
+  },
+  {
+   "id": "yi-parshas-hashavua-brshys-03",
+   "lang": "yi",
+   "title": "לימוד משידוך הראשון - שנעשה בלי השתתפות של מעשי אדם",
+   "year": 5750,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-parshas-hashavua-brshys-03~s6",
+    "t": 1992.53,
+    "title": {
+     "en": "Three strikes, and the last chance at Sinai",
+     "yi": "דריי מאל דורכגעפאלן, און די לעצטע געלעגנהייט ביי מתן תורה"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-zmanim-svkvs-08",
+   "lang": "yi",
+   "title": "גודל מעלת קדושת הסוכה",
+   "year": 5758,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-svkvs-08~s5",
+    "t": 1850.94,
+    "title": {
+     "en": "Teivah, Mishkan and sukkah: holiness by measurement",
+     "yi": "תיבה, משכן און סוכה: קדושה מיט מדידות"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 3,
+ "shiurPages": 0
 }

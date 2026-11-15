@@ -94,6 +94,7 @@ const REQUIRED: { [K in keyof DataFiles]: readonly (keyof DataFiles[K])[] } = {
   topics: ["schemaVersion", "topics"],
   topic: ["schemaVersion", "id", "label", "description", "reviewed", "hubs", "moments", "momentPages"],
   topicMoments: ["schemaVersion", "topicId", "page", "moments"],
+  topicShiurim: ["schemaVersion", "topicId", "page", "shiurim"],
   thread: ["schemaVersion", "id", "label", "summary", "reviewed", "members"],
   story: ["schemaVersion", "id", "title", "retelling", "reviewed", "attributionVaries", "tellings"],
   storiesIndex: ["schemaVersion", "stories"],
@@ -113,6 +114,7 @@ function kindOf(file: string): keyof DataFiles {
   if (file === "explore/entities.json") return "exploreEntities";
   if (file.startsWith("quick-index.")) return "quickIndex";
   if (/^topic\/[^/]+\.moments-\d+\.json$/.test(file)) return "topicMoments";
+  if (file.startsWith("topic-shiurim/")) return "topicShiurim";
   const dir = file.split("/")[0];
   switch (dir) {
     case "topic":
@@ -288,6 +290,8 @@ describe("data contract", () => {
     expect(dataPaths.topic("hester-panim")).toBe("/data/topic/hester-panim.json");
     expect(dataPaths.topicMoments("hester-panim", 2)).toBe("/data/topic/hester-panim.moments-2.json");
     expect(() => dataPaths.topicMoments("x", 0)).toThrow();
+    expect(dataPaths.topicShiurim("hester-panim", 2)).toBe("/data/topic-shiurim/hester-panim.2.json");
+    expect(() => dataPaths.topicShiurim("x", 0)).toThrow();
     expect(dataPaths.thread("a")).toBe("/data/thread/a.json");
     expect(dataPaths.story("a")).toBe("/data/story/a.json");
     expect(dataPaths.glossary("ha")).toBe("/data/glossary/ha.json");

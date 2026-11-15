@@ -116,5 +116,52 @@
  ],
  "momentTotal": 2,
  "momentShiurim": 2,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 2,
+   "shiurim": 2
+  },
+  "yi": {
+   "sections": 0,
+   "shiurim": 0
+  }
+ },
+ "shiurim": [
+  {
+   "id": "en-parsha-en-vyshlch-01",
+   "lang": "en",
+   "title": "A Deeper Understanding of יעקב's Present to עשו",
+   "year": 5749,
+   "grade": "discussed",
+   "salience": 0.3
+  },
+  {
+   "id": "en-zmanim-en-rsh-hshnh-03",
+   "lang": "en",
+   "title": "The Theme of the Day - Proclaiming Hashem as King",
+   "year": 5757,
+   "grade": "discussed",
+   "salience": 0.3
+  },
+  {
+   "id": "yi-zmanim-svds-zs-chnvkh-04",
+   "lang": "yi",
+   "title": "סעודה של המחכים לבנין ביהמ\"ק; חנוכה - להודות ולהלל - יו\"ט של הוד",
+   "year": 5751,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-svds-zs-chnvkh-04~s5",
+    "t": 1595.1,
+    "title": {
+     "en": "Zos Chanukah, the day of the seal",
+     "yi": "זאת חנוכה, דער טאג פון דער חתימה"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 3,
+ "shiurPages": 0
 }

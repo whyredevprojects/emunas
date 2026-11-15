@@ -99,5 +99,61 @@
  ],
  "momentTotal": 4,
  "momentShiurim": 2,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 0,
+   "shiurim": 0
+  },
+  "yi": {
+   "sections": 4,
+   "shiurim": 2
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-parshas-hashavua-hzynv-01",
+   "lang": "yi",
+   "title": "פרשה של אמונה. עשי\"ת - זמן לנקות חציצות האמונה",
+   "year": 5732,
+   "grade": "main",
+   "salience": 1
+  },
+  {
+   "id": "yi-zmanim-svds-shvshn-pvrym-01",
+   "lang": "yi",
+   "title": "יו\"ט ליהודים בעלי מדריגה' ומרדכי לא יכרע- היה בטוח בה'' יו\"ט של לעתיד לבא' פעמונים בשולי המעיל- דור אחרון",
+   "year": 5743,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-svds-shvshn-pvrym-01~s6",
+    "t": 1973.213,
+    "title": {
+     "en": "Avraham's 400 chapters of Avodah Zarah",
+     "yi": "אברהם אבינו'ס פיר הונדערט פרקים עבודה זרה"
+    },
+    "count": 2
+   }
+  },
+  {
+   "id": "yi-zmanim-svkvs-08",
+   "lang": "yi",
+   "title": "גודל מעלת קדושת הסוכה",
+   "year": 5758,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-svkvs-08~s0",
+    "t": 0,
+    "title": {
+     "en": "Betzilo chimadti: the sukkah as the shade of emunah",
+     "yi": "בצלו חמדתי: די סוכה אלס צילא דמהימנותא"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 3,
+ "shiurPages": 0
 }

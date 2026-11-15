@@ -77,5 +77,44 @@
  ],
  "momentTotal": 2,
  "momentShiurim": 2,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 1,
+   "shiurim": 1
+  },
+  "yi": {
+   "sections": 1,
+   "shiurim": 1
+  }
+ },
+ "shiurim": [
+  {
+   "id": "en-zmanim-en-chvdsh-tbs-02",
+   "lang": "en",
+   "title": "An Explanation of ניטל and the Month of טבת",
+   "year": 5764,
+   "grade": "discussed",
+   "salience": 0.45
+  },
+  {
+   "id": "yi-zmanim-nysn-05",
+   "lang": "yi",
+   "title": "לעזור בבית בהכנה לפסח; להתחדש עצמו בזמן התחדשות",
+   "year": null,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-nysn-05~s2",
+    "t": 636.88,
+    "title": {
+     "en": "Four Nissans of tikkun",
+     "yi": "פיר ניסנ'ס פון תיקון"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 2,
+ "shiurPages": 0
 }

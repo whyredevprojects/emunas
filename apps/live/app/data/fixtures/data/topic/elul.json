@@ -241,5 +241,68 @@
  ],
  "momentTotal": 8,
  "momentShiurim": 4,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 2,
+   "shiurim": 1
+  },
+  "yi": {
+   "sections": 6,
+   "shiurim": 3
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-zmanim-lvl-01",
+   "lang": "yi",
+   "title": "דיבורים המעוררים את הלב",
+   "year": 5735,
+   "grade": "main",
+   "salience": 1
+  },
+  {
+   "id": "yi-zmanim-lvl-02",
+   "lang": "yi",
+   "title": "לדוד ה' אורי - בבטחון תלוי הכל",
+   "year": 5740,
+   "grade": "main",
+   "salience": 1
+  },
+  {
+   "id": "en-parsha-en-ky-sb-01",
+   "lang": "en",
+   "title": "ביכורים - Bringing the Fruit of ראשית to the Place of ראשית",
+   "year": 5760,
+   "grade": "main",
+   "salience": 0.8
+  },
+  {
+   "id": "yi-parshas-hashavua-shvptym-01",
+   "lang": "yi",
+   "title": "שופטים ושוטרים - עשה לך רב כדי שתהיה בטל להקב\"ה (שייכות לימים נוראים)",
+   "year": 5740,
+   "grade": "discussed",
+   "salience": 0.5
+  },
+  {
+   "id": "yi-zmanim-spyrh-01",
+   "lang": "yi",
+   "title": "בימי ספירה צריכים לעשות תשובה על שורש העבירות - המדות (שייכות לפרשת קדושים)",
+   "year": 5742,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-spyrh-01~s8",
+    "t": 2760.74,
+    "title": {
+     "en": "Fifty-one days and Pesach Sheni",
+     "yi": "איין און פופציג טעג און פסח שני"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 5,
+ "shiurPages": 0
 }

@@ -155,5 +155,69 @@
  ],
  "momentTotal": 6,
  "momentShiurim": 4,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 0,
+   "shiurim": 0
+  },
+  "yi": {
+   "sections": 6,
+   "shiurim": 4
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-zmanim-spyrh-01",
+   "lang": "yi",
+   "title": "בימי ספירה צריכים לעשות תשובה על שורש העבירות - המדות (שייכות לפרשת קדושים)",
+   "year": 5742,
+   "grade": "main",
+   "salience": 0.85
+  },
+  {
+   "id": "yi-zmanim-lvl-02",
+   "lang": "yi",
+   "title": "לדוד ה' אורי - בבטחון תלוי הכל",
+   "year": 5740,
+   "grade": "main",
+   "salience": 0.6
+  },
+  {
+   "id": "yi-parshas-hashavua-mvr-01",
+   "lang": "yi",
+   "title": "אהרן והכהנים הם בחינת מדת הוד - קודש הקדשים - בחינת רשב\"י",
+   "year": 5736,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-parshas-hashavua-mvr-01~s7",
+    "t": 2710.36,
+    "title": {
+     "en": "The seven nations and the seven weeks of Sefirah",
+     "yi": "די שבעה עממים און די זיבן וואכן פון ספירה"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-zmanim-nysn-05",
+   "lang": "yi",
+   "title": "לעזור בבית בהכנה לפסח; להתחדש עצמו בזמן התחדשות",
+   "year": null,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-nysn-05~s7",
+    "t": 1974.22,
+    "title": {
+     "en": "Riding one's own animal",
+     "yi": "רייטן אויף דער אייגענער חיה"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 4,
+ "shiurPages": 0
 }

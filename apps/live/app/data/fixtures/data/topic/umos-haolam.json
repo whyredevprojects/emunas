@@ -190,5 +190,43 @@
  ],
  "momentTotal": 6,
  "momentShiurim": 3,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 3,
+   "shiurim": 1
+  },
+  "yi": {
+   "sections": 3,
+   "shiurim": 2
+  }
+ },
+ "shiurim": [
+  {
+   "id": "en-zmanim-en-chvdsh-tbs-02",
+   "lang": "en",
+   "title": "An Explanation of ניטל and the Month of טבת",
+   "year": 5764,
+   "grade": "discussed",
+   "salience": 0.55
+  },
+  {
+   "id": "yi-parshas-hashavua-brshys-03",
+   "lang": "yi",
+   "title": "לימוד משידוך הראשון - שנעשה בלי השתתפות של מעשי אדם",
+   "year": 5750,
+   "grade": "discussed",
+   "salience": 0.4
+  },
+  {
+   "id": "yi-shonos-31",
+   "lang": "yi",
+   "title": "חשיבות מסירת נפש בזמננו",
+   "year": 5771,
+   "grade": "discussed",
+   "salience": 0.35
+  }
+ ],
+ "shiurTotal": 3,
+ "shiurPages": 0
 }

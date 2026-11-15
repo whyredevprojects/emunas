@@ -115,5 +115,60 @@
  ],
  "momentTotal": 2,
  "momentShiurim": 2,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 0,
+   "shiurim": 0
+  },
+  "yi": {
+   "sections": 2,
+   "shiurim": 2
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-zmanim-svds-pvrym-ktn-03",
+   "lang": "yi",
+   "title": "האור של מגילת אסתר יותר נעלה מאור של תורת משה (חתם סופר)",
+   "year": 5765,
+   "grade": "discussed",
+   "salience": 0.35
+  },
+  {
+   "id": "yi-zmanim-chnvkh-11",
+   "lang": "yi",
+   "title": "דרוש בנס חנוכה - נס הנרות מגלים נס המלחמה",
+   "year": 5749,
+   "grade": "discussed",
+   "salience": 0.3
+  },
+  {
+   "id": "yi-zmanim-svkvs-08",
+   "lang": "yi",
+   "title": "גודל מעלת קדושת הסוכה",
+   "year": 5758,
+   "grade": "discussed",
+   "salience": 0.2
+  },
+  {
+   "id": "yi-zmanim-shbs-chzvn-01",
+   "lang": "yi",
+   "title": "בשבת חזון נתגלה השמחה של ט' באב לעתיד וכל יהודי רואה בית השלישי בבנינה. ביאור ענין שמיטה",
+   "year": 5746,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-shbs-chzvn-01~s14",
+    "t": 4789.25,
+    "title": {
+     "en": "Three who said 'eicha': Shabbos Chazon as an aufruf",
+     "yi": "דריי וואס האבן געזאגט \"איכה\": שבת חזון ווי אן אויפרוף"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 4,
+ "shiurPages": 0
 }

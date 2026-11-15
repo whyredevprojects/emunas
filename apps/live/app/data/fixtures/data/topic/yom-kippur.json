@@ -139,5 +139,52 @@
  ],
  "momentTotal": 4,
  "momentShiurim": 3,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 1,
+   "shiurim": 1
+  },
+  "yi": {
+   "sections": 3,
+   "shiurim": 2
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-zmanim-tv-bb-04",
+   "lang": "yi",
+   "title": "זמן לשאוב יראת שמים בעד הכנה לר\"ה' זמן של שידוכים' ז' ימים אחר היו\"ט הגדול של ט' באב לעתיד.",
+   "year": 5739,
+   "grade": "discussed",
+   "salience": 0.5
+  },
+  {
+   "id": "en-zmanim-en-rsh-hshnh-03",
+   "lang": "en",
+   "title": "The Theme of the Day - Proclaiming Hashem as King",
+   "year": 5757,
+   "grade": "discussed",
+   "salience": 0.45
+  },
+  {
+   "id": "yi-zmanim-lvl-02",
+   "lang": "yi",
+   "title": "לדוד ה' אורי - בבטחון תלוי הכל",
+   "year": 5740,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-lvl-02~s8",
+    "t": 2386.56,
+    "title": {
+     "en": "'This' Rabbi Elazar ben Azaryah expounded",
+     "yi": "\"את זו\" דרש רבי אלעזר בן עזריה"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 3,
+ "shiurPages": 0
 }

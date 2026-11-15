@@ -207,5 +207,86 @@
  ],
  "momentTotal": 9,
  "momentShiurim": 4,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 2,
+   "shiurim": 2
+  },
+  "yi": {
+   "sections": 7,
+   "shiurim": 2
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-zmanim-spyrh-01",
+   "lang": "yi",
+   "title": "בימי ספירה צריכים לעשות תשובה על שורש העבירות - המדות (שייכות לפרשת קדושים)",
+   "year": 5742,
+   "grade": "main",
+   "salience": 1
+  },
+  {
+   "id": "yi-parshas-hashavua-mvr-01",
+   "lang": "yi",
+   "title": "אהרן והכהנים הם בחינת מדת הוד - קודש הקדשים - בחינת רשב\"י",
+   "year": 5736,
+   "grade": "main",
+   "salience": 0.8
+  },
+  {
+   "id": "en-miscellaneous-en-01",
+   "lang": "en",
+   "title": "פרק ששי: The קדושה of צדיקים and the חשיבות of Learning תורה",
+   "year": 5738,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-miscellaneous-en-01~s0",
+    "t": 0,
+    "title": {
+     "en": "Why the Mishnah names the Tanna",
+     "yi": "פארוואס די משנה דערמאנט דעם תנא"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "en-zmanim-en-tv-bshbt-01",
+   "lang": "en",
+   "title": "ט”ו בשבט Ushers in the Months of חסד (A Deeper Understanding of the צירופי החודש)",
+   "year": 5756,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-zmanim-en-tv-bshbt-01~s6",
+    "t": 1959.89,
+    "title": {
+     "en": "From Tu B'Shvat to Shavuos: the gates of chesed",
+     "yi": "פון ט\"ו בשבט ביז שבועות: די שערי חסד"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "en-zmanim-en-chvdsh-tbs-02",
+   "lang": "en",
+   "title": "An Explanation of ניטל and the Month of טבת",
+   "year": 5764,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-zmanim-en-chvdsh-tbs-02~s5",
+    "t": 2023.87,
+    "title": {
+     "en": "The beginning holds the whole: Teves and Dan",
+     "yi": "דער אנהייב האלט דאס גאנצע: טבת און דן"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 5,
+ "shiurPages": 0
 }

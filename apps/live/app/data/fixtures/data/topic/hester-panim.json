@@ -71,5 +71,44 @@
  ],
  "momentTotal": 1,
  "momentShiurim": 1,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 0,
+   "shiurim": 0
+  },
+  "yi": {
+   "sections": 1,
+   "shiurim": 1
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-parshas-hashavua-hzynv-01",
+   "lang": "yi",
+   "title": "פרשה של אמונה. עשי\"ת - זמן לנקות חציצות האמונה",
+   "year": 5732,
+   "grade": "discussed",
+   "salience": 0.4
+  },
+  {
+   "id": "yi-zmanim-tv-bb-04",
+   "lang": "yi",
+   "title": "זמן לשאוב יראת שמים בעד הכנה לר\"ה' זמן של שידוכים' ז' ימים אחר היו\"ט הגדול של ט' באב לעתיד.",
+   "year": 5739,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-tv-bb-04~s9",
+    "t": 2761.064,
+    "title": {
+     "en": "Adding in Torah from Chamishah Asar b'Av",
+     "yi": "מוסיף זיין אין תורה פון חמשה עשר באב"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 2,
+ "shiurPages": 0
 }

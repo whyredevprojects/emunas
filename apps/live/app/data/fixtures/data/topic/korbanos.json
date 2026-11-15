@@ -156,5 +156,51 @@
  ],
  "momentTotal": 3,
  "momentShiurim": 3,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 1,
+   "shiurim": 1
+  },
+  "yi": {
+   "sections": 2,
+   "shiurim": 2
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-zmanim-nysn-05",
+   "lang": "yi",
+   "title": "לעזור בבית בהכנה לפסח; להתחדש עצמו בזמן התחדשות",
+   "year": null,
+   "grade": "discussed",
+   "salience": 0.5
+  },
+  {
+   "id": "yi-parshas-hashavua-mvr-01",
+   "lang": "yi",
+   "title": "אהרן והכהנים הם בחינת מדת הוד - קודש הקדשים - בחינת רשב\"י",
+   "year": 5736,
+   "grade": "discussed",
+   "salience": 0.35
+  },
+  {
+   "id": "yi-parshas-hashavua-shvptym-01",
+   "lang": "yi",
+   "title": "שופטים ושוטרים - עשה לך רב כדי שתהיה בטל להקב\"ה (שייכות לימים נוראים)",
+   "year": 5740,
+   "grade": "discussed",
+   "salience": 0.3
+  },
+  {
+   "id": "en-parsha-en-ky-sb-01",
+   "lang": "en",
+   "title": "ביכורים - Bringing the Fruit of ראשית to the Place of ראשית",
+   "year": 5760,
+   "grade": "discussed",
+   "salience": 0.3
+  }
+ ],
+ "shiurTotal": 4,
+ "shiurPages": 0
 }

@@ -148,5 +148,61 @@
  ],
  "momentTotal": 4,
  "momentShiurim": 2,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 3,
+   "shiurim": 1
+  },
+  "yi": {
+   "sections": 1,
+   "shiurim": 1
+  }
+ },
+ "shiurim": [
+  {
+   "id": "en-miscellaneous-en-01",
+   "lang": "en",
+   "title": "פרק ששי: The קדושה of צדיקים and the חשיבות of Learning תורה",
+   "year": 5738,
+   "grade": "discussed",
+   "salience": 0.35
+  },
+  {
+   "id": "yi-parshas-hashavua-vyshb-08",
+   "lang": "yi",
+   "title": "בפרשה זו נטמן משיח בן יוסף ומשיח בן דוד. שייכות לחנוכה",
+   "year": 5751,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-parshas-hashavua-vyshb-08~s0",
+    "t": 0,
+    "title": {
+     "en": "The weekly parsha and the Belzer Rav's frozen river",
+     "yi": "די סדרה פון דער וואך און דעם בעלזער רב'ס פארפרוירענער טייך"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-zmanim-nysn-05",
+   "lang": "yi",
+   "title": "לעזור בבית בהכנה לפסח; להתחדש עצמו בזמן התחדשות",
+   "year": null,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-nysn-05~s9",
+    "t": 2526.74,
+    "title": {
+     "en": "Reb Arele and the Chanukah lights; closing",
+     "yi": "רבי ארל'ע און די חנוכה ליכט; סיום"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 3,
+ "shiurPages": 0
 }

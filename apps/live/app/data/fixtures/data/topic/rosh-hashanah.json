@@ -315,5 +315,84 @@
  ],
  "momentTotal": 12,
  "momentShiurim": 7,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 5,
+   "shiurim": 4
+  },
+  "yi": {
+   "sections": 7,
+   "shiurim": 3
+  }
+ },
+ "shiurim": [
+  {
+   "id": "en-zmanim-en-rsh-hshnh-03",
+   "lang": "en",
+   "title": "The Theme of the Day - Proclaiming Hashem as King",
+   "year": 5757,
+   "grade": "main",
+   "salience": 0.95
+  },
+  {
+   "id": "yi-parshas-hashavua-shvptym-01",
+   "lang": "yi",
+   "title": "שופטים ושוטרים - עשה לך רב כדי שתהיה בטל להקב\"ה (שייכות לימים נוראים)",
+   "year": 5740,
+   "grade": "main",
+   "salience": 0.8
+  },
+  {
+   "id": "yi-parshas-hashavua-hzynv-01",
+   "lang": "yi",
+   "title": "פרשה של אמונה. עשי\"ת - זמן לנקות חציצות האמונה",
+   "year": 5732,
+   "grade": "discussed",
+   "salience": 0.5
+  },
+  {
+   "id": "en-parsha-en-ky-sb-01",
+   "lang": "en",
+   "title": "ביכורים - Bringing the Fruit of ראשית to the Place of ראשית",
+   "year": 5760,
+   "grade": "discussed",
+   "salience": 0.5
+  },
+  {
+   "id": "yi-zmanim-lvl-01",
+   "lang": "yi",
+   "title": "דיבורים המעוררים את הלב",
+   "year": 5735,
+   "grade": "discussed",
+   "salience": 0.4
+  },
+  {
+   "id": "en-parsha-en-nch-01",
+   "lang": "en",
+   "title": "The Special Holiness of נח תיבת: a Microcosm of the עולם התיקון",
+   "year": 5749,
+   "grade": "discussed",
+   "salience": 0.4
+  },
+  {
+   "id": "en-zmanim-en-tv-bshbt-01",
+   "lang": "en",
+   "title": "ט”ו בשבט Ushers in the Months of חסד (A Deeper Understanding of the צירופי החודש)",
+   "year": 5756,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-zmanim-en-tv-bshbt-01~s3",
+    "t": 1111.24,
+    "title": {
+     "en": "Nissan and Tishrei, kings of the year",
+     "yi": "ניסן און תשרי, די מלכים פונעם יאר"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 7,
+ "shiurPages": 0
 }

@@ -97,5 +97,44 @@
  ],
  "momentTotal": 3,
  "momentShiurim": 2,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 0,
+   "shiurim": 0
+  },
+  "yi": {
+   "sections": 3,
+   "shiurim": 2
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-zmanim-svds-zs-chnvkh-04",
+   "lang": "yi",
+   "title": "סעודה של המחכים לבנין ביהמ\"ק; חנוכה - להודות ולהלל - יו\"ט של הוד",
+   "year": 5751,
+   "grade": "main",
+   "salience": 0.6
+  },
+  {
+   "id": "yi-parshas-hashavua-mvr-01",
+   "lang": "yi",
+   "title": "אהרן והכהנים הם בחינת מדת הוד - קודש הקדשים - בחינת רשב\"י",
+   "year": 5736,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-parshas-hashavua-mvr-01~s1",
+    "t": 404.09,
+    "title": {
+     "en": "Gratitude, and what is special about wholeness",
+     "yi": "דאנקבארקייט, און די מעלה פון א שלמה"
+    },
+    "count": 2
+   }
+  }
+ ],
+ "shiurTotal": 2,
+ "shiurPages": 0
 }

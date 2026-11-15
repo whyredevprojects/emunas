@@ -122,5 +122,95 @@
  ],
  "momentTotal": 5,
  "momentShiurim": 5,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 2,
+   "shiurim": 2
+  },
+  "yi": {
+   "sections": 3,
+   "shiurim": 3
+  }
+ },
+ "shiurim": [
+  {
+   "id": "en-parsha-en-nch-01",
+   "lang": "en",
+   "title": "The Special Holiness of נח תיבת: a Microcosm of the עולם התיקון",
+   "year": 5749,
+   "grade": "discussed",
+   "salience": 0.4
+  },
+  {
+   "id": "yi-parshas-hashavua-vschnn-01",
+   "lang": "yi",
+   "title": "משה רבינו מלמד איך להתפלל. נחיצות וחשיבות פסוקי דזמרה",
+   "year": 5734,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-parshas-hashavua-vschnn-01~s9",
+    "t": 2803.61,
+    "title": {
+     "en": "Why a Jew comes to a place",
+     "yi": "פארוואס א איד קומט אן אויף אן ארט"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "en-miscellaneous-en-01",
+   "lang": "en",
+   "title": "פרק ששי: The קדושה of צדיקים and the חשיבות of Learning תורה",
+   "year": 5738,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-miscellaneous-en-01~s6",
+    "t": 1697.83,
+    "title": {
+     "en": "The whole world is worthwhile for him",
+     "yi": "די גאנצע וועלט איז כדאי פאר אים"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-parshas-hashavua-brshys-03",
+   "lang": "yi",
+   "title": "לימוד משידוך הראשון - שנעשה בלי השתתפות של מעשי אדם",
+   "year": 5750,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-parshas-hashavua-brshys-03~s5",
+    "t": 1592.22,
+    "title": {
+     "en": "The Torah of man: creation in man's hands",
+     "yi": "תורת האדם: די בריאה אין די הענט פונעם מענטש"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-zmanim-nysn-05",
+   "lang": "yi",
+   "title": "לעזור בבית בהכנה לפסח; להתחדש עצמו בזמן התחדשות",
+   "year": null,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-nysn-05~s6",
+    "t": 1751.36,
+    "title": {
+     "en": "Becoming an adam: souls and mazalos",
+     "yi": "ווערן אן אדם: נשמות און מזלות"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 5,
+ "shiurPages": 0
 }

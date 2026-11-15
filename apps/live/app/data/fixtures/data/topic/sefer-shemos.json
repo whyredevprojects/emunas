@@ -303,5 +303,170 @@
  ],
  "momentTotal": 13,
  "momentShiurim": 9,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 2,
+   "shiurim": 2
+  },
+  "yi": {
+   "sections": 11,
+   "shiurim": 7
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-shonos-10",
+   "lang": "yi",
+   "title": "בענין קליפת \"תכבד העבודה\" בזמן הזה",
+   "year": null,
+   "grade": "main",
+   "salience": 0.7
+  },
+  {
+   "id": "yi-zmanim-lvl-01",
+   "lang": "yi",
+   "title": "דיבורים המעוררים את הלב",
+   "year": 5735,
+   "grade": "discussed",
+   "salience": 0.5
+  },
+  {
+   "id": "yi-zmanim-svds-zs-chnvkh-04",
+   "lang": "yi",
+   "title": "סעודה של המחכים לבנין ביהמ\"ק; חנוכה - להודות ולהלל - יו\"ט של הוד",
+   "year": 5751,
+   "grade": "discussed",
+   "salience": 0.5
+  },
+  {
+   "id": "yi-shonos-31",
+   "lang": "yi",
+   "title": "חשיבות מסירת נפש בזמננו",
+   "year": 5771,
+   "grade": "discussed",
+   "salience": 0.3
+  },
+  {
+   "id": "yi-parshas-hashavua-mvr-01",
+   "lang": "yi",
+   "title": "אהרן והכהנים הם בחינת מדת הוד - קודש הקדשים - בחינת רשב\"י",
+   "year": 5736,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-parshas-hashavua-mvr-01~s10",
+    "t": 3719.32,
+    "title": {
+     "en": "The kohanim, the Kohen Gadol and the Kodesh HaKodashim",
+     "yi": "די כהנים, דער כהן גדול און דער קודש הקדשים"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-zmanim-spyrh-01",
+   "lang": "yi",
+   "title": "בימי ספירה צריכים לעשות תשובה על שורש העבירות - המדות (שייכות לפרשת קדושים)",
+   "year": 5742,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-spyrh-01~s2",
+    "t": 621.73,
+    "title": {
+     "en": "Nissan's growth and the burned se'ir",
+     "yi": "די וואוקס פון ניסן און דער פארברענטער שעיר"
+    },
+    "count": 2
+   }
+  },
+  {
+   "id": "yi-zmanim-svds-shvshn-pvrym-01",
+   "lang": "yi",
+   "title": "יו\"ט ליהודים בעלי מדריגה' ומרדכי לא יכרע- היה בטוח בה'' יו\"ט של לעתיד לבא' פעמונים בשולי המעיל- דור אחרון",
+   "year": 5743,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-svds-shvshn-pvrym-01~s15",
+    "t": 4840.715,
+    "title": {
+     "en": "Bells on the hem: Esther's Yom Tov for the last generation",
+     "yi": "פעמונים בשולי המעיל: אסתר'ס יום טוב פאר'ן לעצטן דור"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-zmanim-shbs-chzvn-01",
+   "lang": "yi",
+   "title": "בשבת חזון נתגלה השמחה של ט' באב לעתיד וכל יהודי רואה בית השלישי בבנינה. ביאור ענין שמיטה",
+   "year": 5746,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-shbs-chzvn-01~s0",
+    "t": 0,
+    "title": {
+     "en": "Why the white manna drew Moshe's rebuke",
+     "yi": "פארוואס משה רבינו האט מוכיח געווען איבערן ווייסן מן"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "en-zmanim-en-tv-bshbt-01",
+   "lang": "en",
+   "title": "ט”ו בשבט Ushers in the Months of חסד (A Deeper Understanding of the צירופי החודש)",
+   "year": 5756,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-zmanim-en-tv-bshbt-01~s7",
+    "t": 2182.01,
+    "title": {
+     "en": "Havaya and Adnus: the union in the Mikdash",
+     "yi": "הוי\"ה און אדנות: דער יחוד אין מקדש"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-zmanim-svkvs-08",
+   "lang": "yi",
+   "title": "גודל מעלת קדושת הסוכה",
+   "year": 5758,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-svkvs-08~s5",
+    "t": 1850.94,
+    "title": {
+     "en": "Teivah, Mishkan and sukkah: holiness by measurement",
+     "yi": "תיבה, משכן און סוכה: קדושה מיט מדידות"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "en-zmanim-en-psch-06",
+   "lang": "en",
+   "title": "The Beginning of our Nuptials with Hashem",
+   "year": 5765,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-zmanim-en-psch-06~s6",
+    "t": 2057.53,
+    "title": {
+     "en": "The key of birth and opening",
+     "yi": "דער שליסל פון לידה און עפענען"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 11,
+ "shiurPages": 0
 }

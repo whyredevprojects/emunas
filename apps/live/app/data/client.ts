@@ -31,6 +31,7 @@ import {
   type ThreadFile,
   type TopicFile,
   type TopicMomentsFile,
+  type TopicShiurimFile,
   type TopicsFile,
   type FacetsFile,
   type MomentShardFile,
@@ -170,6 +171,8 @@ export const loadTopics = (o: LoadOptions = {}) => memoized<TopicsFile>(dataPath
 export const loadTopic = (id: string, o: LoadOptions = {}) => fetchData<TopicFile>(dataPaths.topic(id), o);
 export const loadTopicMoments = (id: string, page: number, o: LoadOptions = {}) =>
   fetchData<TopicMomentsFile>(dataPaths.topicMoments(id, page), o);
+export const loadTopicShiurim = (id: string, page: number, o: LoadOptions = {}) =>
+  fetchData<TopicShiurimFile>(dataPaths.topicShiurim(id, page), o);
 export const loadThread = (id: string, o: LoadOptions = {}) => fetchData<ThreadFile>(dataPaths.thread(id), o);
 export const loadStory = (id: string, o: LoadOptions = {}) => fetchData<StoryFile>(dataPaths.story(id), o);
 export const loadStoriesIndex = (o: LoadOptions = {}) => memoized<StoriesIndexFile>(dataPaths.storiesIndex(), o);

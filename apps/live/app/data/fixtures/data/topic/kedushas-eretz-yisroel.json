@@ -151,5 +151,60 @@
  ],
  "momentTotal": 6,
  "momentShiurim": 4,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 0,
+   "shiurim": 0
+  },
+  "yi": {
+   "sections": 6,
+   "shiurim": 4
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-parshas-hashavua-mvr-01",
+   "lang": "yi",
+   "title": "אהרן והכהנים הם בחינת מדת הוד - קודש הקדשים - בחינת רשב\"י",
+   "year": 5736,
+   "grade": "discussed",
+   "salience": 0.5
+  },
+  {
+   "id": "yi-parshas-hashavua-brshys-03",
+   "lang": "yi",
+   "title": "לימוד משידוך הראשון - שנעשה בלי השתתפות של מעשי אדם",
+   "year": 5750,
+   "grade": "discussed",
+   "salience": 0.5
+  },
+  {
+   "id": "yi-zmanim-svkvs-08",
+   "lang": "yi",
+   "title": "גודל מעלת קדושת הסוכה",
+   "year": 5758,
+   "grade": "discussed",
+   "salience": 0.3
+  },
+  {
+   "id": "yi-zmanim-shbs-chzvn-01",
+   "lang": "yi",
+   "title": "בשבת חזון נתגלה השמחה של ט' באב לעתיד וכל יהודי רואה בית השלישי בבנינה. ביאור ענין שמיטה",
+   "year": 5746,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-shbs-chzvn-01~s7",
+    "t": 2169.72,
+    "title": {
+     "en": "Removing the orlah: Torah conquers Eretz Yisroel",
+     "yi": "אראפנעמען די ערלה: תורה כובש'ט ארץ ישראל"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 4,
+ "shiurPages": 0
 }

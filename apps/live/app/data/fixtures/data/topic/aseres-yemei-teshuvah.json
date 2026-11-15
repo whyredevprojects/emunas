@@ -157,5 +157,52 @@
  ],
  "momentTotal": 4,
  "momentShiurim": 3,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 3,
+   "shiurim": 2
+  },
+  "yi": {
+   "sections": 1,
+   "shiurim": 1
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-parshas-hashavua-hzynv-01",
+   "lang": "yi",
+   "title": "פרשה של אמונה. עשי\"ת - זמן לנקות חציצות האמונה",
+   "year": 5732,
+   "grade": "main",
+   "salience": 0.9
+  },
+  {
+   "id": "en-zmanim-en-rsh-hshnh-03",
+   "lang": "en",
+   "title": "The Theme of the Day - Proclaiming Hashem as King",
+   "year": 5757,
+   "grade": "discussed",
+   "salience": 0.55
+  },
+  {
+   "id": "en-parsha-en-ky-sb-01",
+   "lang": "en",
+   "title": "ביכורים - Bringing the Fruit of ראשית to the Place of ראשית",
+   "year": 5760,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-parsha-en-ky-sb-01~s5",
+    "t": 1708.52,
+    "title": {
+     "en": "Forty days that decide the year",
+     "yi": "פערציג טעג וואס באשטימען דאס יאר"
+    },
+    "count": 2
+   }
+  }
+ ],
+ "shiurTotal": 3,
+ "shiurPages": 0
 }
