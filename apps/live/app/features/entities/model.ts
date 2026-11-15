@@ -1,15 +1,12 @@
 /**
- * Entity pages (concept-live §5.7, tech-live W14b): pure functions over `entity/{p,c,o}/<key>.json`,
- * `corpus.json` and `stories.json`.
+ * Entity pages (concept-live §5.7, tech-live W14b): pure functions over `entity/{p,c,o}/<key>.json` and
+ * `corpus.json`.
  *
  * One template for person, concept and occasion: name, counts, a year histogram, entities that occur
- * with it, and its moments grouped by shiur. A person's page is split three ways:
- * - cited as a source: shiurim that cite the person's own sefer (the work with the person's key, e.g.
- *   Rashi, the Chasam Sofer, the Bnei Yissaschar);
- * - in stories: the stories whose people include the person (`stories[].peopleKeys`);
- * - discussed: shiurim that list the person among the people discussed (`entities.people`).
+ * with it, and its moments grouped by shiur. People and concepts are the corpus layer's merged
+ * entities (C2.6); a person's page is split three ways (`personGroups`).
  */
-import type { CorpusFile, CorpusRow, EntityFile, MomentRef, StoryRow } from "./live-data.ts";
+import type { CorpusFile, CorpusRow, EntityFile, MomentRef, PersonDetail, PersonStory } from "./live-data.ts";
 
 const rowIndexes = new WeakMap<CorpusFile, Map<string, CorpusRow>>();
 
@@ -33,30 +30,44 @@ export function byYear<T extends Pick<CorpusRow, "years">>(rows: readonly T[]): 
     .map((x) => x.r);
 }
 
-export interface PersonSplit {
+export interface PersonGroups {
+  /** Shiurim citing his seforim (or a work in their family). */
   cited: CorpusRow[];
-  inStories: StoryRow[];
+  /** Merged stories naming him, most told first. */
+  stories: PersonStory[];
+  /** Shiurim that list him among the people discussed. */
   discussed: CorpusRow[];
 }
 
-/** Splits a person's appearances into cited / in stories / discussed (see the module comment). */
-export function personSplit(
-  key: string,
-  entity: Pick<EntityFile, "shiurIds">,
-  corpus: CorpusFile,
-  stories: readonly StoryRow[],
-): PersonSplit {
+/**
+ * The three groups of a person page (concept-live-corpus C.5): cited as a source, appears in
+ * stories, discussed. Everything comes from the person's entity file (corpus-layer recounts over the
+ * visible shiurim); `corpus.json` supplies the rows. A shiur id with no row is dropped.
+ */
+export function personGroups(entity: Pick<EntityFile, "shiurIds" | "person">, corpus: CorpusFile): PersonGroups {
   const rows = rowsById(corpus);
-  const cited = byYear(corpus.shiurim.filter((r) => r.entities.works.includes(key)));
-  const inStories = stories.filter((s) => s.peopleKeys.includes(key));
-  const storyShiurim = new Set(inStories.map((s) => s.shiurId));
-  const discussed = entity.shiurIds.flatMap((id) => {
-    const r = rows.get(id);
-    if (!r) return [];
-    // Listed among the people; or in the entity's shiurim for no other visible reason (never dropped).
-    return r.entities.people.includes(key) || !storyShiurim.has(id) ? [r] : [];
-  });
-  return { cited, inStories, discussed };
+  const toRows = (ids: readonly string[]) => byYear(ids.flatMap((id) => rows.get(id) ?? []));
+  return {
+    cited: toRows(entity.person?.cited ?? []),
+    stories: [...(entity.person?.stories ?? [])],
+    discussed: toRows(entity.shiurIds),
+  };
+}
+
+/** The person's names as the data gives them, each once, in the order Hebrew, English, Yiddish. */
+export function personNames(names: { he: string; en: string; yi: string }): { lang: "he" | "en" | "yi"; text: string }[] {
+  const out: { lang: "he" | "en" | "yi"; text: string }[] = [];
+  for (const lang of ["he", "en", "yi"] as const) {
+    const text = names[lang].trim();
+    if (text !== "" && !out.some((x) => x.text === text)) out.push({ lang, text });
+  }
+  return out;
+}
+
+/** "Also called": display aliases that are not already one of the names. */
+export function alsoCalled(person: Pick<PersonDetail, "names" | "aliases">): string[] {
+  const names = new Set(Object.values(person.names).map((n) => n.trim()));
+  return [...new Set(person.aliases.map((a) => a.trim()))].filter((a) => a !== "" && !names.has(a));
 }
 
 export interface ShiurMoments {

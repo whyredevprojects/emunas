@@ -1,4 +1,4 @@
-// The seforim shelf (W4.2): cited works in traditional order, genre-only names not shelved.
+// The seforim shelf (C2.6): merged corpus works in shelf order; those cited once or twice collapsed.
 import type { JSX } from "react";
 import { ShelfPage } from "../features/seforim/ShelfPage.tsx";
 import { stubMeta } from "../shell/PageStub.tsx";

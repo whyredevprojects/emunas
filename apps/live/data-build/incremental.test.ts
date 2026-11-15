@@ -58,6 +58,15 @@ function expectedFiles(s: PublicShiur, occasionKeys: string[], input: CorpusInpu
   const threadIds = new Set(refs.insights.map((x) => x.threadId));
   const people = [...refs.personIds, ...(layer.stories ?? []).filter((st) => storyIds.has(st.id)).flatMap((st) => st.people.flatMap((p) => ("id" in p ? [p.id] : [])))];
   for (const k of people) set.add(`entity/p/${k}.json`);
+  // C2.6: a family hub lists its children's shiurim and counts; a person page lists the shiurim
+  // citing his seforim (and their families); a work file carries its author's chip.
+  const workParent = new Map(layer.works.map((w) => [w.id, w.parentWorkId]));
+  const cited = new Set<string>();
+  for (const k of refs.workIds) for (let cur: string | null | undefined = k; cur && !cited.has(cur); cur = workParent.get(cur)) cited.add(cur);
+  for (const k of cited) set.add(`work/${k}.json`);
+  for (const p of layer.people) if ([...p.worksAuthored, ...(p.sameIdWork ? [p.sameIdWork] : [])].some((w) => cited.has(w))) set.add(`entity/p/${p.id}.json`);
+  const persons = new Set(refs.personIds);
+  for (const w of layer.works) if (w.authorPersonId && persons.has(w.authorPersonId)) set.add(`work/${w.id}.json`);
   for (const k of refs.conceptIds) {
     set.add(`entity/c/${k}.json`);
     const shard = glossaryShardFor(k, build.glossaryShards);

@@ -50,5 +50,66 @@
    "key": "adam-harishon",
    "shared": 5
   }
- ]
+ ],
+ "reviewed": false,
+ "person": {
+  "kind": "person",
+  "id": "baal-shem-tov",
+  "names": {
+   "he": "רבי ישראל בעל שם טוב",
+   "en": "the Baal Shem Tov",
+   "yi": "דער הייליגער בעל שם טוב"
+  },
+  "aliases": [
+   "the Besht",
+   "Rabbi Yisrael Baal Shem Tov"
+  ],
+  "description": null,
+  "works": [],
+  "cited": [],
+  "stories": [
+   {
+    "id": "rav-nachum-of-chernobyl-and-his-little-bread",
+    "title": {
+     "en": "Rav Nachum of Chernobyl and his little bread",
+     "yi": "רב נחום פון טשערנאביל און זיין ביסל ברויט"
+    },
+    "tellings": 1,
+    "page": false,
+    "first": {
+     "shiurId": "en-parsha-en-nch-01",
+     "momentId": "en-parsha-en-nch-01~st0",
+     "t": 3171.06
+    }
+   },
+   {
+    "id": "the-baal-shem-tov-and-the-man-from-danzig",
+    "title": {
+     "en": "The Ba'al Shem Tov and the man from Danzig",
+     "yi": "דער בעל שם טוב און דער איד פון דאנציג"
+    },
+    "tellings": 1,
+    "page": false,
+    "first": {
+     "shiurId": "yi-zmanim-lvl-01",
+     "momentId": "yi-zmanim-lvl-01~st0",
+     "t": 1296.67
+    }
+   },
+   {
+    "id": "the-baal-shem-tov-smiles-at-a-fallen-building",
+    "title": {
+     "en": "The Ba'al Shem Tov smiles at a fallen building",
+     "yi": "דער בעל שם טוב שמייכלט איבער א בנין וואס איז איינגעפאלן"
+    },
+    "tellings": 1,
+    "page": false,
+    "first": {
+     "shiurId": "en-miscellaneous-en-01",
+     "momentId": "en-miscellaneous-en-01~st1",
+     "t": 1995.94
+    }
+   }
+  ]
+ }
 }

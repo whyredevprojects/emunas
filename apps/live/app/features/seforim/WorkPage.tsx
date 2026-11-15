@@ -17,7 +17,13 @@ import { Text } from "../../components/Text.tsx";
 import { tFor, useUi } from "../../i18n/index.ts";
 import { useLoad } from "../today/use-data.ts";
 import { yearLabel } from "../today/format.ts";
-import { EntityName, LoadState, MoreButton, momentHref, useShowMore } from "../entities/common.tsx";
+import { EntityName, LoadState, MoreButton, ShiurRows, momentHref, useShowMore } from "../entities/common.tsx";
+import { PersonChip } from "../entities/chips.tsx";
+import { byYear } from "../entities/model.ts";
+import { CorpusLabel } from "../../components/CorpusLabel.tsx";
+import { NotFound } from "../../shell/PageStub.tsx";
+import { readingLang, useSettings } from "../../shell/settings.ts";
+import type { Ed } from "@emunas/corpus/public";
 import {
   loadCorpus,
   loadWork,
@@ -30,7 +36,16 @@ import {
 import { rowsById } from "../entities/model.ts";
 import { browseT } from "../entities/strings.ts";
 import { browseStyles as s } from "../entities/styles.ts";
-import { chapterLabel, isGenreWork, layoutWork, placeLabel, shiurimIn, wantsChapterIndex, type ChapterGroup, type Place } from "./model.ts";
+import {
+  chapterLabel,
+  layoutWork,
+  offersSefaria,
+  placeLabel,
+  shiurimIn,
+  wantsChapterIndex,
+  type ChapterGroup,
+  type Place,
+} from "./model.ts";
 
 const paths = livePaths();
 
@@ -39,9 +54,10 @@ interface Loaded {
   corpus: CorpusFile;
 }
 
-async function loadWorkPage(key: string): Promise<Loaded | null> {
-  const [work, corpus] = await Promise.all([notFoundToNull(loadWork(key)), loadCorpus()]);
-  return work ? { work, corpus } : null;
+export async function loadWorkPage(key: string): Promise<Loaded | null> {
+  const work = await notFoundToNull(loadWork(key));
+  if (!work) return null;
+  return { work, corpus: await loadCorpus() };
 }
 
 export function chapterHref(ui: UiLang, workKey: string, chapter: string): string {
@@ -56,6 +72,8 @@ export function WorkPage(): JSX.Element {
   const data = loaded.status === "ok" ? loaded.data : null;
   const layout = useMemo(() => (data ? layoutWork(data.work) : null), [data]);
   const group = chapter !== undefined && layout ? (layout.chapters.find((c) => c.key === chapter) ?? null) : null;
+
+  if (loaded.status === "ok" && data === null) return <NotFound ui={ui} />;
 
   const heading = data ? (
     group ? (
@@ -81,8 +99,8 @@ export function WorkPage(): JSX.Element {
         ) : null}
       </p>
       <h1 className={s.title}>{heading}</h1>
+      {data && chapter === undefined ? <CorpusLabel ui={ui} reviewed={data.work.reviewed} className={s.aiNote} /> : null}
       <LoadState load={loaded} ui={ui} />
-      {loaded.status === "ok" && data === null ? <p className={s.muted}>{bt("seforim.notFound")}</p> : null}
       {data && layout ? (
         chapter !== undefined ? (
           group ? (
@@ -100,10 +118,11 @@ export function WorkPage(): JSX.Element {
 
 function WorkBody({ data, ui }: { data: Loaded; ui: UiLang }): JSX.Element {
   const bt = browseT(ui);
+  const read = readingLang({ read: useSettings((x) => x.read) }, ui);
   const { work, corpus } = data;
   const layout = useMemo(() => layoutWork(work), [work]);
   const rows = rowsById(corpus);
-  const shiurim = new Set([...work.locations.flatMap((l) => l.citations), ...work.unlocated].map((c) => c.shiurId));
+  const shiurim = new Set([...work.shiurIds, ...[...work.locations.flatMap((l) => l.citations), ...work.unlocated].map((c) => c.shiurId)]);
   const index = wantsChapterIndex(layout);
   return (
     <>
@@ -116,7 +135,8 @@ function WorkBody({ data, ui }: { data: Loaded; ui: UiLang }): JSX.Element {
         <span>{bt("browse.shiurim", { count: shiurim.size })}</span>
         <span>{bt("browse.mentions", { count: layout.momentCount })}</span>
       </p>
-      {isGenreWork(work.key) ? <p className={s.lead}>{bt("seforim.genre")}</p> : null}
+      <WorkLinks work={work} ui={ui} />
+      {work.children.length > 0 ? <Family work={work} rows={rows} ui={ui} read={read} /> : null}
 
       {index ? (
         <section className={s.section} aria-labelledby="chapters-title">
@@ -143,7 +163,7 @@ function WorkBody({ data, ui }: { data: Loaded; ui: UiLang }): JSX.Element {
             <h2 id={`ch-${g.key}`} className={s.sectionTitle}>
               <Text value={chapterLabel(g, ui)} lang={ui === "en" ? "en" : "he"} />
             </h2>
-            <PlaceList places={g.places} rows={rows} ui={ui} />
+            <PlaceList places={g.places} rows={rows} ui={ui} sefaria={offersSefaria(work)} />
           </section>
         ))
       )}
@@ -154,7 +174,7 @@ function WorkBody({ data, ui }: { data: Loaded; ui: UiLang }): JSX.Element {
             {bt("seforim.unordered")}
           </h2>
           <p className={s.muted}>{bt("seforim.unordered.lead")}</p>
-          <PlaceList places={layout.unordered} rows={rows} ui={ui} />
+          <PlaceList places={layout.unordered} rows={rows} ui={ui} sefaria={offersSefaria(work)} />
         </section>
       ) : null}
 
@@ -184,7 +204,7 @@ function ChapterView({ data, chapters, group, ui }: { data: Loaded; chapters: re
         <span>{bt("seforim.chapter.places", { count: group.places.length })}</span>
         <span>{bt("browse.shiurim", { count: shiurimIn(group.places).length })}</span>
       </p>
-      <PlaceList places={group.places} rows={rows} ui={ui} />
+      <PlaceList places={group.places} rows={rows} ui={ui} sefaria={offersSefaria(data.work)} />
       <nav className={s.pager} aria-label={bt("seforim.chapters")}>
         {prev ? (
           <Link to={chapterHref(ui, data.work.key, prev.key)} rel="prev">
@@ -205,13 +225,24 @@ function ChapterView({ data, chapters, group, ui }: { data: Loaded; chapters: re
   );
 }
 
-function PlaceList({ places, rows, ui }: { places: readonly Place[]; rows: ReadonlyMap<string, CorpusRow>; ui: UiLang }): JSX.Element {
+function PlaceList({
+  places,
+  rows,
+  ui,
+  sefaria,
+}: {
+  places: readonly Place[];
+  rows: ReadonlyMap<string, CorpusRow>;
+  ui: UiLang;
+  /** The work has a Sefaria index title: places may link to Sefaria. */
+  sefaria: boolean;
+}): JSX.Element {
   const bt = browseT(ui);
   return (
     <ol className={s.list}>
       {places.map((pl, i) => {
         const label = placeLabel(pl, ui);
-        const resolved = pl.location.sefariaRef !== null && pl.location.citations.some((c) => c.resolution === "resolved");
+        const resolved = sefaria && pl.location.sefariaRef !== null && pl.location.citations.some((c) => c.resolution === "resolved");
         return (
           <li key={`${pl.location.ref}|${i}`} className={s.place} data-place={pl.location.sefariaRef ?? pl.location.ref}>
             <span className={s.moment}>
@@ -270,6 +301,75 @@ function Citations({
         })}
       </ul>
       <MoreButton more={more} left={left} ui={ui} />
+    </>
+  );
+}
+
+/** Author, family and the Sefaria link, under the title. */
+function WorkLinks({ work, ui }: { work: WorkFile; ui: UiLang }): JSX.Element | null {
+  const bt = browseT(ui);
+  if (!work.author && !work.parent && !offersSefaria(work)) return null;
+  return (
+    <div className={s.chips} data-testid="work-links">
+      {work.author ? (
+        <span className={s.chips} data-testid="work-author">
+          <span className={s.momentKind}>{bt("seforim.author")}</span>
+          <PersonChip chip={work.author} ui={ui} />
+        </span>
+      ) : null}
+      {work.parent ? (
+        <span className={s.chips} data-testid="work-parent">
+          <span className={s.momentKind}>{bt("seforim.partOf")}</span>
+          {work.parent.page ? (
+            <Link className={s.chip} to={paths.work(ui, work.parent.id)}>
+              <EntityName label={work.parent.label} kind="w" ui={ui} />
+            </Link>
+          ) : (
+            <EntityName label={work.parent.label} kind="w" ui={ui} />
+          )}
+        </span>
+      ) : null}
+      {work.sefariaIndexTitle ? (
+        <a className={s.chip} href={sefariaUrl(work.sefariaIndexTitle)} rel="noopener noreferrer" target="_blank" data-testid="work-sefaria">
+          {bt("seforim.sefaria.work")}
+        </a>
+      ) : null}
+    </div>
+  );
+}
+
+/** A family hub: its child works in data order with counts, then every shiur citing the family. */
+function Family({ work, rows, ui, read }: { work: WorkFile; rows: ReadonlyMap<string, CorpusRow>; ui: UiLang; read: Ed }): JSX.Element {
+  const bt = browseT(ui);
+  const familyRows = byYear(work.shiurIds.flatMap((id) => rows.get(id) ?? []));
+  return (
+    <>
+      <section className={s.section} aria-labelledby="family-title" data-testid="family">
+        <h2 id="family-title" className={s.sectionTitle}>
+          {bt("seforim.family")}
+        </h2>
+        <p className={s.muted}>{bt("seforim.family.lead")}</p>
+        <ul className={s.shelf}>
+          {work.children.map((c) => (
+            <li key={c.id} className={s.row} data-child={c.id}>
+              {c.page ? (
+                <Link className={s.rowLink} to={paths.work(ui, c.id)}>
+                  <EntityName label={c.label} kind="w" ui={ui} />
+                </Link>
+              ) : (
+                <EntityName label={c.label} kind="w" ui={ui} />
+              )}
+              <span className={s.momentKind}>{bt("browse.shiurim", { count: c.count })}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+      <section className={s.section} aria-labelledby="family-shiurim-title" data-testid="family-shiurim">
+        <h2 id="family-shiurim-title" className={s.sectionTitle}>
+          {bt("seforim.family.shiurim")}
+        </h2>
+        <ShiurRows rows={familyRows} ui={ui} read={read} label={bt("seforim.family.shiurim")} />
+      </section>
     </>
   );
 }

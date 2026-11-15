@@ -2,9 +2,10 @@
  * Seforim (concept-live §5.4, tech-live W14a): the shelf and the work pages, as pure functions over
  * `works.json` and `work/<key>.json`.
  *
- * - The shelf groups works by the traditional groups of `@emunas/normalize` (Torah, Nevi'im, …, Shas,
- *   Midrash, …), keeping the emitted order (the work's traditional order) inside each group. Genre-only
- *   labels ("Gemara", "Midrash") are never shelved.
+ * - The shelf holds the corpus layer's merged works (`sourceWorkIds`, C2.6) in the layer's shelf order,
+ *   grouped by its shelf group (Torah, Nevi'im, …, Shas, Midrash, …). Works below the page line sit
+ *   in a collapsed row at the end of their group; generic works (a genre with no child works) are not
+ *   shelved; a family hub (a genre with child works) is shelved with its children after it.
  * - A work page orders its cited places by the parsed `sefariaRef` (traditional order), groups them by
  *   chapter (or daf), and lists the moments under each place. For Chumash that is the pasuk view:
  *   Bereishis 12 lists the pesukim that are cited, in order, each with its moments. Places whose ref
@@ -19,7 +20,6 @@ import {
   parseSefariaRef,
   refLabel,
   slugify,
-  workByKey,
   type ParsedRef,
   type WorkGroup,
 } from "@emunas/normalize";
@@ -30,28 +30,44 @@ import type { FacetLabel, WorkCitation, WorkFile, WorkLocation, WorkSummary } fr
 export interface ShelfGroup {
   group: WorkGroup;
   label: { en: string; yi: string; he: string };
+  /** Works with a page (≥3 shiurim), in shelf order: a family hub followed by its children. */
   works: WorkSummary[];
+  /** Works below the page line: the collapsed "cited once or twice" row at the end of the group. */
+  few: WorkSummary[];
 }
 
-/** True for a generic label ("Gemara", "Midrash") that names no single sefer. */
-export function isGenreWork(key: string): boolean {
-  return workByKey(key)?.genre === true;
-}
+const GROUPS: ReadonlySet<string> = new Set(WORK_GROUPS);
+const groupOf = (w: WorkSummary): WorkGroup => (GROUPS.has(w.group) ? (w.group as WorkGroup) : "other");
 
-/** The shelf: works grouped by traditional group, genre labels left out, empty groups dropped. */
-export function shelfGroups(works: readonly WorkSummary[]): ShelfGroup[] {
-  const by = new Map<WorkGroup, WorkSummary[]>();
+/**
+ * The shelf (concept-live-corpus C.5): merged corpus works in the layer's shelf order, grouped by
+ * the layer's shelf group (unknown groups go to "other"), each group's works with a page first, the
+ * rest in a collapsed row. Generic works (a genre with no child works) are never shelved; the emit
+ * leaves them out and this drops any that slip through. Empty groups are dropped.
+ */
+export function shelfGroups(works: readonly (WorkSummary & { generic?: boolean })[]): ShelfGroup[] {
+  const by = new Map<WorkGroup, { works: WorkSummary[]; few: WorkSummary[] }>();
   for (const w of works) {
-    if (isGenreWork(w.key)) continue;
-    const g = workByKey(w.key)?.group ?? "other";
-    const list = by.get(g) ?? [];
-    list.push(w);
-    by.set(g, list);
+    if (w.generic === true || w.count <= 0) continue;
+    const g = groupOf(w);
+    let e = by.get(g);
+    if (!e) by.set(g, (e = { works: [], few: [] }));
+    (w.page ? e.works : e.few).push(w);
   }
   return WORK_GROUPS.flatMap((g) => {
-    const list = by.get(g);
-    return list && list.length > 0 ? [{ group: g, label: WORK_GROUP_LABELS[g], works: list }] : [];
+    const e = by.get(g);
+    return e ? [{ group: g, label: WORK_GROUP_LABELS[g], works: e.works, few: e.few }] : [];
   });
+}
+
+/** True when the work sits in a family listed on the shelf (indented after its hub). */
+export function isFamilyMember(w: Pick<WorkSummary, "parentId">, shelved: ReadonlySet<string>): boolean {
+  return w.parentId !== null && shelved.has(w.parentId);
+}
+
+/** Only a work with a Sefaria index title offers Sefaria links, for itself or its places (C.5). */
+export function offersSefaria(work: Pick<WorkFile, "sefariaIndexTitle">): boolean {
+  return typeof work.sefariaIndexTitle === "string" && work.sefariaIndexTitle.trim() !== "";
 }
 
 /** Case- and nikud-insensitive match of a filter string against a work's names. */

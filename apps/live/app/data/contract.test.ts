@@ -204,7 +204,7 @@ describe("data contract", () => {
     expect(series.perekGroups[0]).toEqual({ perek: "א", shiurIds: ["yi-tanya-1-01"] });
 
     const works = await loadWorks();
-    const first = works.works[0]!;
+    const first = works.works.find((w) => w.page)!;
     const work = await loadWork(first.key);
     // Every mention is one citation, grouped by place (the W3.6 emit groups a place's citations).
     expect(work.locations.reduce((n, l) => n + l.citations.length, 0) + work.unlocated.length).toBe(first.mentions);
