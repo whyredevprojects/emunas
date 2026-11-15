@@ -9,7 +9,7 @@ import { Text } from "../../components/Text.tsx";
 import { getEngine } from "../../player-ui/index.ts";
 import type { RoomContext } from "./context.ts";
 import { topicTargets } from "./model.ts";
-import { AiLabel } from "./parts.tsx";
+import { AiLabel, Report } from "./parts.tsx";
 import { printableUrl } from "./quiet-link.ts";
 import { roomStyles as s } from "./styles.ts";
 
@@ -101,6 +101,7 @@ export function RoomHeaderDetails({ room, quietOrigin }: { room: RoomContext; qu
             {rt("room.printable")}
           </a>
         ) : null}
+        <Report room={room} id={null} />
       </div>
       {!room.playable ? <p className={s.note}>{rt("room.unavailable")}</p> : null}
       {shiur.recordings.some((r) => !r.playable) && room.playable ? (

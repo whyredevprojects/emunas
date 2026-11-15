@@ -11,9 +11,10 @@ import { Text } from "../../components/Text.tsx";
 import type { PublicSource } from "@emunas/corpus/public";
 import type { Ed } from "./data.ts";
 import { settingsStore } from "../../shell/settings.ts";
+import type { FeedbackField } from "../feedback/index.ts";
 import type { RoomContext } from "./context.ts";
 import { activeParagraphId, groupSources, sefariaUrl } from "./model.ts";
-import { AiLabel, TimeButton, isActive } from "./parts.tsx";
+import { AiLabel, Report, TimeButton, isActive } from "./parts.tsx";
 import type { RoomKey } from "./strings.ts";
 import { roomStyles as s } from "./styles.ts";
 import { useCorpusRows, useWriteup } from "./use-room-data.ts";
@@ -193,6 +194,7 @@ function ReadTab({ room }: { room: RoomContext }): JSX.Element {
                           ))}
                         </span>
                       ) : null}
+                      <Report room={room} id={p.id} field="summary" />
                     </div>
                   </div>
                 );
@@ -242,6 +244,7 @@ function SourcesTab({ room }: { room: RoomContext }): JSX.Element {
                       </a>
                     ) : null}
                   </span>
+                  <Report room={room} id={src.id} field="source" />
                 </li>
               );
             })}
@@ -270,7 +273,7 @@ function MomentList({ room, title, items }: { room: RoomContext; title: string; 
   );
 }
 
-function MomentItem({ room, id, t, end, children }: { room: RoomContext; id: string; t: number | null; end: number | null; children: ReactNode }): JSX.Element {
+function MomentItem({ room, id, t, end, field = "summary", children }: { room: RoomContext; id: string; t: number | null; end: number | null; field?: FeedbackField; children: ReactNode }): JSX.Element {
   const ref = useRef<HTMLLIElement>(null);
   const focused = room.focusedMoment === id;
   useEffect(() => {
@@ -286,6 +289,7 @@ function MomentItem({ room, id, t, end, children }: { room: RoomContext; id: str
         {focused ? <span className={s.visuallyHidden}>{room.rt("moment.focused")}: </span> : null}
         {children}
       </span>
+      <Report room={room} id={id} field={field} />
     </li>
   );
 }
@@ -344,6 +348,7 @@ function QuestionsTab({ room }: { room: RoomContext }): JSX.Element {
                     {rt("questions.hearAnswer")} <span className={s.timeText}>{formatClock(q.ta)}</span>
                   </button>
                 ) : null}
+                <Report room={room} id={q.id} field="summary" />
               </div>
             </li>
           );

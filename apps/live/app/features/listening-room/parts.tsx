@@ -1,6 +1,7 @@
 /** Small shared pieces of the listening room. */
 import { formatClock, notice, type UiLang } from "@emunas/i18n";
 import type { JSX, ReactNode } from "react";
+import { ReportButton, type FeedbackField } from "../feedback/index.ts";
 import type { RoomContext } from "./context.ts";
 import { roomStyles as s } from "./styles.ts";
 
@@ -50,4 +51,9 @@ export function TimeButton({
 /** Whether `t` lies in [start, end). */
 export function isActive(now: number | null, start: number | null, end: number | null): boolean {
   return now !== null && start !== null && end !== null && start <= now && now < end;
+}
+
+/** "Something's wrong here" (W4.7) on one item of this shiur, or on the shiur itself (`id` null). */
+export function Report({ room, id, field }: { room: RoomContext; id: string | null; field?: FeedbackField }): JSX.Element {
+  return <ReportButton ui={room.ui} rev={room.shiur.rev} target={{ shiurId: room.shiur.id, momentId: id, field: field ?? null }} />;
 }
