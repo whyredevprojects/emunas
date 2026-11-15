@@ -7,6 +7,8 @@
   "exports": {
     "./public": "./src/public/index.ts",
     "./build": "./src/build/index.ts",
+    "./build/aggregate": "./src/aggregate/build.ts",
+    "./aggregate": "./src/aggregate/index.ts",
     "./transcript-gate": "./src/transcript-gate.ts",
     "./package.json": "./package.json"
   },
@@ -17,6 +19,7 @@
     "fixtures:mini": "tsx scripts/make-mini-corpus.ts"
   },
   "dependencies": {
+    "@emunas/normalize": "0.0.0",
     "valibot": "1.5.0"
   },
   "devDependencies": {

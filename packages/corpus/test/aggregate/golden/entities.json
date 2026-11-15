@@ -1,0 +1,4834 @@
+{
+ "thresholds": {
+  "quiet": {
+   "work": 2,
+   "person": 2,
+   "concept": 3
+  },
+  "live": {
+   "prerender": 3
+  }
+ },
+ "works": [
+  {
+   "key": "abudraham",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "agra-dekallah",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "al-hanissim",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "amos",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "ani-maamin",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "avnei-nezer",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "baal-haturim",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "bach",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "bamidbar",
+   "shiurim": 8,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "bavli-avodah-zarah",
+   "shiurim": 6,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "bavli-bava-basra",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "bavli-bava-kamma",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "bavli-bava-metzia",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "bavli-berachos",
+   "shiurim": 15,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "bavli-chagigah",
+   "shiurim": 4,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "bavli-chullin",
+   "shiurim": 5,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "bavli-eruvin",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "bavli-gittin",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "bavli-kiddushin",
+   "shiurim": 4,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "bavli-makkos",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "bavli-megillah",
+   "shiurim": 8,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "bavli-nedarim",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "bavli-rosh-hashanah",
+   "shiurim": 6,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "bavli-sanhedrin",
+   "shiurim": 6,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "bavli-shabbos",
+   "shiurim": 10,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "bavli-sotah",
+   "shiurim": 5,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "bavli-sukkah",
+   "shiurim": 4,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "bavli-taanis",
+   "shiurim": 5,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "bavli-temurah",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "bavli-yevamos",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "bavli-yoma",
+   "shiurim": 7,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "bavli-zevachim",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "beer-mayim-chaim",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "beis-aharon",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "bereishis",
+   "shiurim": 24,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "bereishis-rabbah",
+   "shiurim": 5,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "bnei-yissaschar",
+   "shiurim": 9,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "chasam-sofer",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "chasam-sofer-derashos",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "chasam-sofer-teshuvos",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "chiddushei-harim",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "chovos-halevavos",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "daniel",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "derech-hashem",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "devarim",
+   "shiurim": 18,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "divrei-chaim",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "divrei-hayamim",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "divrei-yoel",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "eichah",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "eichah-rabbah",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "esther",
+   "shiurim": 6,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "gemara",
+   "shiurim": 11,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "haggadah",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "haneiros-hallalu",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "hashkiveinu-maariv",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ibn-ezra",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "iyov",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "kad-hakemach",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "kedushas-levi",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "koheles",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "lecha-dodi",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "likkutei-torah-chernobyl",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "machzor-rosh-hashanah",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "magen-avraham",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "malachi",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "maor-vashemesh",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "masorah",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "megaleh-amukos",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "melachim",
+   "shiurim": 6,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "mesilas-yesharim",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "michah",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "midrash",
+   "shiurim": 15,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mishlei",
+   "shiurim": 8,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "mishnah-berurah",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mishnah-keilim",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mishnah-megillah",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mishnah-middos",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mishnah-peah",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mishnah-rosh-hashanah",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mishnah-sanhedrin",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mishnah-sukkah",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "mishnah-taanis",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mishnah-uktzin",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "mishnah-yoma",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "mishneh-lamelech",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mishneh-torah",
+   "shiurim": 10,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "modim-shemoneh-esreh",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "neilah-prayer",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "noam-elimelech",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ohr-hachaim",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "ovadiah",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "pesikta",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "pirkei-avos",
+   "shiurim": 7,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "pri-tzaddik",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbeinu-bachya",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "rambam",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rambam-peirush-hamishnayos",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "ramban",
+   "shiurim": 8,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "rashi",
+   "shiurim": 22,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "rema",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "rokeach",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rosh-hashanah-amidah",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rosh-hashanah-piyutim",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rus",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "seder-hadoros",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "sefer-mitzvos-gadol",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "sefer-yetzirah",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "sfas-emes",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "shaarei-kedushah",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shelah",
+   "shiurim": 4,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "shemoneh-esrei-of-the-ten-days-of-teshuvah",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shemos",
+   "shiurim": 14,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "shir-hashirim",
+   "shiurim": 8,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "shmuel",
+   "shiurim": 4,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "shmuel-ii-tehillim",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shomer-emunim",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shulchan-aruch",
+   "shiurim": 8,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "siddur",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "siddur-of-rabbi-shabsai",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "sifri",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "tanna-devei-eliyahu",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "tanya",
+   "shiurim": 8,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "targum-onkelos",
+   "shiurim": 6,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "targum-sheni",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "targum-tehillim",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "targum-yonasan",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "tehillim",
+   "shiurim": 21,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "teshuvos-harambam",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "thirteen-ikkarim",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "tikkunei-zohar",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "tosafos",
+   "shiurim": 5,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "tzidkas-hatzaddik",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "unesaneh-tokef",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "vayikra",
+   "shiurim": 13,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "yechezkel",
+   "shiurim": 4,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "yehi-ratzon-sukkah",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "yehoshua",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "yerushalmi",
+   "shiurim": 3,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "yerushalmi-megillah",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "yerushalmi-sukkah",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "yerushalmi-yoma",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "yeshayahu",
+   "shiurim": 12,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "yesod-hateshuvah",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "yirmiyahu",
+   "shiurim": 5,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "yismach-moshe",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "yom-tov-amidah",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "zechariah",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "zera-kodesh",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "zohar",
+   "shiurim": 11,
+   "quietPage": true,
+   "livePrerender": true
+  }
+ ],
+ "people": [
+  {
+   "key": "abudraham",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "achan",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "achashverosh",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "adam-harishon",
+   "shiurim": 14,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "agag",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "aharon-hakohen",
+   "shiurim": 6,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "apter-rav",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "arizal",
+   "shiurim": 7,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "avihu",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "avnei-nezer",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "avner",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "avraham-avinu",
+   "shiurim": 13,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "baal-hatanya",
+   "shiurim": 6,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "baal-haturim",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "baal-shem-tov",
+   "shiurim": 8,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "bach",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "beis-halevi",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "belzer-rav",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ben-zoma",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "berditchever-rav",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "bilaam",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "bilha",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "bnei-yissaschar",
+   "shiurim": 5,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "boaz",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "cham",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "chana",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "chanoch",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "chasam-sofer",
+   "shiurim": 13,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "chavah",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "chazon-ish",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "chiddushei-harim",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "chizkiyahu-hamelech",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "chofetz-chaim",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "chozeh-of-lublin",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "chushim-ben-dan",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "cozbi",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "dan",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "daniel",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "dasan-and-aviram",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "dinah",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "dovid-hamelech",
+   "shiurim": 11,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "efraim",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "eli",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "eliav",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "eliezer",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "elisha",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "eliyahu-hanavi",
+   "shiurim": 6,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "eltzafan",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ephraim",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "er",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "esav",
+   "shiurim": 7,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "esther",
+   "shiurim": 4,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "gavriel",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "haman",
+   "shiurim": 4,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "hevel",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ibn-ezra",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "kayin",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "king-yannai",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "klausenburger-rebbe",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "korach",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "lavan",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "leah-imeinu",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "lechovicher-tzaddik",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "levi-yitzchak-of-berditchev",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "lot",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "lubavitcher-rebbe",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "maggid-of-mezritch",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "maharal",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "malbim",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "malki-tzedek",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "menashe",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "michael",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "miriam-haneviah",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "mishael",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mishneh-lamelech",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mordechai",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "moshe-rabbeinu",
+   "shiurim": 14,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "nadav",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "naftali",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "naphtali",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "nasser",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "nimrod",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "noach",
+   "shiurim": 4,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "ohr-hachaim",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "onan",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "onkelos",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "osnas",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "osniel-ben-kenaz",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ostrovtzer-rebbe",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "peretz",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "pharaoh",
+   "shiurim": 4,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "pinchas",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "rabba-bar-avuha",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabban-yochanan-ben-zakkai",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "rabbeinu-bachya",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "rabbeinu-yona",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-ada",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-aharon-kotler",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-aharon-of-karlin",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-akiva",
+   "shiurim": 6,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "rabbi-arele-roth",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-aryeh",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-avraham-of-tchechanov",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-chaim-vital",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "rabbi-chanina-ben-teradyon",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-duvidl-of-skver",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-elazar-ben-azaryah",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-elchonon-wasserman",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-eliezer",
+   "shiurim": 4,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "rabbi-eliezer-brabbi-yosi",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-gifter",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-hoshaya",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-huna",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-meir",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-mendel-of-vitebsk",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-mordechai-of-lechovitch",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-mottele-of-chernobyl",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-nachman-bar-yitzchak",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-nachman-of-breslov",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-nachum-of-chernobyl",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-naftali-amsterdam",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-naftali-of-ropshitz",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-nosson-adler",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-nosson-wachtfogel",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-papi",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-pinchas-ben-yair",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-pinchas-of-koretz",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-samson-raphael-hirsch",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-shabsai",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-shalom-of-belz",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-shimon-bar-yochai",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-shimon-sofer",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-yehoshua",
+   "shiurim": 4,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "rabbi-yehoshua-ben-chananya",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-yehoshua-ben-levi",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-yehoshua-leib-diskin",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-yishmael",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-yisrael-salanter",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-yitzchak",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-yochanan",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-yonasan-ben-uziel",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rabbi-yonasan-eybeshutz",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rachel-imeinu",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "radziner-rebbe",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rambam",
+   "shiurim": 12,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "ramban",
+   "shiurim": 8,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "ramchal",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rashi",
+   "shiurim": 16,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "rav-tzadok-hakohen",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "rava",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rebbe-moshe-leib-of-sassov",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rebbe-pinchas-of-koretz",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rebbe-reb-bunim",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "rebbe-reb-elimelech",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rebbi",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "rechavam",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rema",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rivkah-imeinu",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rokeach",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rus",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ruzhiner",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "sancheriv",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "sanzer-rav",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "satmar-rav",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "sfas-emes",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shaul-hamelech",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shechem-ben-chamor",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shelah",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shem-ben-noach",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shimon-ben-shetach",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shlomo-hamelech",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "shmuel-amora",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shmuel-hanavi",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "shomer-emunim",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "slonimer-rebbe",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "slonimer-rebbe-rav-avraham",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "tamar",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "the-chashmonaim",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "titus",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "trisker-maggid",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "vashti",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "yaakov-avinu",
+   "shiurim": 11,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "yehoshua-bin-nun",
+   "shiurim": 4,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "yehudah",
+   "shiurim": 4,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "yeravam-ben-nevat",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "yeshayahu-hanavi",
+   "shiurim": 4,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "yeshuos-yaakov",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "yishmael",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "yismach-moshe",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "yitzchak-avinu",
+   "shiurim": 2,
+   "quietPage": true,
+   "livePrerender": false
+  },
+  {
+   "key": "yosef-hatzaddik",
+   "shiurim": 6,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "zecharia",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "zerach",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "zimri-ben-salu",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  }
+ ],
+ "concepts": [
+  {
+   "key": "ab-hrchmn-b1ecc8",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "abn-shsyh-be9d67",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "abrym-vpdrym-71dc58",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "advm-c4c36f",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "akvl-vshsv-ky-mchr-nmvs-d82d92",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "amvnh-6dd509",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "amvns-chkmym-a5f3ec",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "apykvrs-b63d5c",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "arbeym-sah-0548dc",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ash-zrh-26966c",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ashs-pvtypr-f15b96",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "asrvg-35777d",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "atztgnynvs-6e1c37",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "avr-chdsh-ec86aa",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "avr-hgnvz-365048",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "avrv-shl-mlk-hmshych-355b30",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "avrv-shl-mshych-a081f0",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "avs-bspr-svrh-d15e85",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "avshpyzyn-df018b",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "avsyvs-c8d5a2",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "aykh-7e4749",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ayln-33539f",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "aylny-srk-d4eaa4",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ayn-shyrvs-ala-mevmd-694f49",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ayrvsyn-fc780d",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "bchyrh-32f6c2",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "bel-mvm-199947",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "bely-sshvbh-926545",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "bhelvsk-10c61e",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "bkvl-rm-15834f",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "bkvrh-1d4a5e",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "bmravs-hlylh-dbcb45",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "bnym-lmkvm-19decf",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "brashys-2d4859",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "brkh-086007",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "brks-hchmh-8e9432",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "brkvs-kryas-shme-397f72",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "bryas-hevlm-5ec9c5",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "brys-byn-hbsrym-b23137",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "bryysa-06f9c5",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "btchvn-032372",
+   "shiurim": 4,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "bykvrym-4f735d",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "byn-adm-lchbyrv-7e4049",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "bynvnym-c2bed7",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "bys-gdvl-6251f1",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "bys-hmkdsh-196420",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "bytvl-5b36e7",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "chlk-alvk-mmel-14b9d1",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "chlks-mchvkk-aad040",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "chmshh-eshr-bab-719e02",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "chnvks-hmzbch-c65d74",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "chshbvn-hnpsh-793e98",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "chshvn-dc0f93",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "chsn-vklh-8eae1e",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "chsymh-b53bc0",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "chtzy-hsvrh-b63f12",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "chvb-23e739",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "chvdsh-alvl-82bbff",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "chvtz-ldrk-htbe-7e487d",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "chvtz-lmchnh-0882c8",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "chydvsh-6eaec1",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "chzrs-hshtz-8d5eec",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "dbrym-hrbh-7deedb",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "dbsh-b274b5",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "dglym-f4e0d8",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "dvr-hplgh-3f0c12",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "dybvr-a776b8",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ebvdh-shblb-fd35eb",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ebvdh-zrh-d8ef39",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ekbsa-dmshycha-99233e",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "el-hnsym-4e7604",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "el-mkra-mgylh-d5902d",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "elynv-lshbch-58c258",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "em-hartz-150855",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "emlk-0d87dc",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "enny-kbvd-43c6c6",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "erksy-nr-lmshychy-c97f78",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "erlh-a33de8",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "es-rtzvn-c7770e",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "eshrh-btbs-71c744",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "eshrh-hrvgy-mlkvs-1016ab",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "eshrh-mamrvs-f47d90",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "eshrs-bny-hmn-7bec64",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "eshrs-hdbrvs-05170b",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "eshrs-ymy-sshvbh-03066e",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "eshv-01c631",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "esyka-kdysha-fe7d1c",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "etz-hdes-7164a8",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "etzbvs-c44877",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "evbd-hshm-6df52e",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "evlm-hba-68958b",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "evlm-msvkn-1ec48d",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "evlm-shnh-npsh-32b48d",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "evmdym-tzpvpym-vmshschvym-rvvchym-625fae",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "evng-shbs-28a158",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "eyr-mklt-ac13c0",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "eyrvb-eb1cd6",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ezr-kngdv-4b2e8f",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ezrh-e59ba3",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ezvs-dkdvshh-2dd360",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "gavh-909a8c",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "gavlh-3d2e5c",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "gmr-chsymh-5bd4ca",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "gval-hdm-c00d2b",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "gymtrya-50ea10",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "hazynv-00107d",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "hchvdsh-hzh-lkm-bcaf05",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "hgbhh-a05617",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "hkms-hmshkn-efe483",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "hknss-avrchym-f6fdcd",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "hknss-klh-dee407",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "hksrh-77d2b4",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "hll-hgdvl-8344c0",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "hmlk-hkdvsh-2c0bd9",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "hmskh-490f89",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "hmvtzya-cee108",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "hnrvs-hllv-415a0e",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "hpsk-41d4a6",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "hsbvnnvs-a9064f",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "hschdshvs-c1b1c6",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "hshbh-603398",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "hshgchh-prtys-2f201f",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "hshkh-a48f21",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "hshkmh-d3fc88",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "hshtn-991193",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "hskshrvs-ec31f4",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "hslhbvs-c6afdf",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "hssr-pnym-a7560d",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "hvd-baa997",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "hvh-amyna-5fa650",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "hvshena-rbh-e66c97",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "hydvr-mtzvh-96f5f2",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "hykl-h-b598b6",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "hyklvs-hspylh-23f3a8",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "hyvm-leshvsm-vmchr-lkbl-shkrm-aedde8",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "kbls-hsvrh-2299ba",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "kbyevs-096658",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "kch-hsvrh-517f26",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "kd-hkmch-66cb86",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "kdvshh-2d0766",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "kdvshym-shyv-f2bd52",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "kerh-55d8a3",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "khn-gdvl-6e2353",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "khnym-zryzym-hm-070de4",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "kl-hshbyeyn-chbybyn-eb233c",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "klyph-ab9afa",
+   "shiurim": 5,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "knpy-hshkynh-619868",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "knss-yshral-315464",
+   "shiurim": 5,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "knyn-svrh-ff28b5",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "kpytzs-hdrk-b1e456",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "krbnvs-9b66e7",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "krk-hmvkf-chvmh-a5d849",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "krs-2bcde2",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ksr-21b997",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ksvbym-76ba07",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "kvchvs-hnpsh-72be36",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "kvdsh-hkdshym-cde0de",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "kvl-hshvpr-2687ea",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "kybvsh-9a220f",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "kybvtz-cce670",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "kydvsh-hshm-dd21a4",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "kyny-knyzy-vkdmvny-9319f6",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "kzys-bf6fc6",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ldvd-h-avry-aa9fc1",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "lemvd-lshrs-91de40",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "lkt-shkchh-vpah-b94e5c",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "lmth-meshrh-921eb4",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "lshm-mtzvs-mtzvh-8bac78",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "lshvn-chybh-a29084",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "lshvn-hkvdsh-63af69",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "lshvn-hmshnh-f1649f",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ltz-de6109",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "lv-tzdykym-39b7db",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "lvchvs-shnyvs-ca3ddf",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "lylys-5637e7",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "lystym-asm-f9e7c8",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "lytznvs-c3d04f",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "maklvs-asvrvs-c3ba0e",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mamynym-bny-mamynym-4f0bc8",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mbvl-34b703",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mbys-ebdym-13bcf5",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mchlvks-d1fbbd",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mchytzvs-63aea3",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mchyys-emlk-732201",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mdh-kngd-mdh-5d00b5",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mds-hchsd-8a2d8f",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mds-hdyn-1c0cfd",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "melyn-bkvdsh-a929e3",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "memdvs-ac0d28",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mers-hmkplh-1a3fe9",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "met-hmchzyk-as-hmrvbh-74bf64",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "meyn-evlm-hba-dfc24e",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mkbls-8646fb",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mkrh-kyvm-14536c",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mkshh-hya-ed-yrkh-ed-prchh-e671ab",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mkvm-hmkdsh-c155ca",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mkyf-5a0cf5",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mkyrs-yvsf-c0693e",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mlkvs-a04451",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mlkvs-shmym-27ce7c",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mlky-bys-dvd-ae715c",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mlky-tzdk-981448",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mlkyvs-ee86b4",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mn-a474e8",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mnchh-5a7391",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mnhg-yshral-svrh-f2f852",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mnvchs-hnpsh-fd60d9",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mpsch-shl-chyh-c9d20f",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mshpt-hkhnym-87c592",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mshpye-57cc67",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mshpye-vmkbl-606043",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mshych-bn-dvd-7d25ff",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mshych-bn-yvsf-350136",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "msyrvs-npsh-a8d223",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mtma-as-hydym-3f61e9",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mtzter-b1ec71",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mtzvh-mn-hmvbchr-0f0c2b",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mvkpyn-chvmh-b17cd6",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mvktzh-d4874d",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mvsyf-a62a4c",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "myevt-hyrch-83e341",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mykla-dmhymnvsa-b1776c",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mylvy-a3710e",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "mzl-madym-04e64e",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "nbl-brshvs-hsvrh-3dbdf2",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "nchs-rvch-af0251",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ndb-vabyhva-a3551b",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "nemyvs-8e3150",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "neshh-adm-9ec8a3",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "neylh-4068a2",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "nhnh-mshl-achrym-14b457",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "nkbh-2f8e40",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "nshmh-ysyrh-2979b9",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "nshyaym-ada991",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "nsyrh-398352",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ntzchvn-945231",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ntzr-mtey-73dfa3",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "nvkb-shm-h-b4c3a9",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "nyshvayn-df2beb",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "nytl-4619ef",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "nytzvtzvs-07037a",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "pdyvn-shbvyym-71bfc9",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "pkym-ktnym-98a7c5",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "pny-hshkynh-3ab65f",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "pnymy-7613d6",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "pnymyvs-hsvrh-4f1421",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "prshs-drkym-8b66d2",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "prvsh-ce6f2c",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "pry-etz-hdr-20aad7",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "przvs-f54fa4",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "psch-shny-788569",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "pshyeh-636f5b",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "psvky-dzmrh-9bdc50",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "psychs-harvn-affa47",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "psylvs-vshmnym-52b16a",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ptyr-56cb27",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ptyra-c1c6b8",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "pvrym-ktn-8476ac",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "py-shnym-f61d72",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rash-hshnh-833f25",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rashy-sybvs-096cab",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rashys-93edef",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rbym-byd-metym-a48da7",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rchmym-096a2e",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "re-d19424",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rtzvn-hshm-a7a025",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rvch-hkvdsh-1fd584",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "rvch-htvmah-ee908e",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "rvshm-ldvrvs-aec5d0",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "sanh-shbykrh-929082",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "schyys-hmsym-fa97ab",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "sdry-brashys-160915",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shbchv-shl-mkvm-2487e5",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shbe-brkvs-a0ae09",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shbe-mtzvvs-bny-nch-89ec40",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shbe-ypvl-tzdyk-vkm-6d991e",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shbeh-dnchmsa-79296d",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shbeh-emmym-11c544",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shbs-shvbh-1f1b34",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shbyrs-hlvchvs-8d2469",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shdym-5924d2",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "sheyr-e8e93e",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "sheyr-hchtas-07bd31",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "sheyr-lezazl-8c8e19",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shlmh-0281b8",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shlshs-ymy-hgblh-52a08d",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shlvm-0b8351",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shlyshy-lmylh-47cef0",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shm-a29008",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shm-adnvs-85c765",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shm-hvyh-ebf833",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "shm-shmym-f259e2",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shmchs-bys-hshvabh-33f108",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shmvs-hkdvshym-3af906",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shmyny-etzrs-7c7ac8",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shmyth-0806d8",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shpe-efd2a5",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shpyks-dmym-f2d99a",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shrf-f8e756",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shsvyy-yyn-8758c1",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shtn-ecbd0e",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shvbbym-09794d",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shvly-hmeyl-3ff4bc",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shvprvs-c0f194",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shvpt-1758ac",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shvrsh-hnshmh-9cac7d",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shvsf-bmeshh-brashys-70ac16",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shvshbynym-530bfd",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shvshn-pvrym-a64302",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shydvk-6149de",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "shyrh-f1dc80",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "skbd-hebvdh-dd3258",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "skk-a202ae",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "skshyty-klh-5609d0",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "skvph-9b2f91",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "skvps-tbs-093531",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "skypvs-77f62d",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "slmyd-chkm-cf0abb",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "smk-mlk-bbl-3f2e04",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "smym-shyh-fb26ef",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "smymvs-9951eb",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "snaym-21b0e0",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "spr-svrh-a81c20",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "spyrs-hevmr-1f73f5",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "srdmh-de6d51",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "srvms-hdshn-bfc191",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "sshbv-keyn-sdvrv-7cd63d",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "sshvbh-376006",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "stra-achra-b50a94",
+   "shiurim": 3,
+   "quietPage": true,
+   "livePrerender": true
+  },
+  {
+   "key": "svkchh-8f69ee",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "svkh-c20d03",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "svpy-sybvs-38eb79",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "svrh-lshmh-f5d40c",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "svrh-shbel-ph-9901bd",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "svrs-hadm-e2268b",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "svrs-hbryah-51cf5b",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "svrs-yshral-7d197d",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "svspvs-shbs-756c33",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "sybh-210ce3",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "sychvn-vevg-fdd337",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "syyesa-dshmya-bc83f9",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "tbe-8cf116",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "tbs-94f122",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "tem-helyvn-207731",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "tem-hschsvn-11b5b7",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "tl-shl-schyh-4125b2",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "tv-bshbt-9f765e",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "tvmah-577ade",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "tvmas-ms-327d23",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "tzmch-1176cb",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "tzyla-dmhymnvsa-08221a",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "tzyrvf-a40a60",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "tzyrvpy-hchvdsh-52850e",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "vahbs-lrek-kmvk-939763",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "vnhpvk-hva-31fe09",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "yavsh-43cd21",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ybvm-daa773",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ychydh-52db0e",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "yg-eykrym-dbe5ec",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ymvs-hmshych-3a39ce",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ymy-hspyrh-1244f1",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ymy-mshsh-vshmchh-917e3a",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ymy-rtzvn-2177df",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ymym-ashr-ayn-ly-bhm-chptz-06640b",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "yrah-shlmh-9c5a26",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "yras-shmym-f8f512",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "yrch-bvl-a79bd9",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "yshral-mvmr-9573e3",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "yshvb-hdes-178900",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "yshveh-e448d4",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ytzr-hre-b32929",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ytzr-tvb-17ba65",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "ytzyas-mtzrym-ff4d50",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "yvbl-275990",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "yvm-aydm-f8f80f",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "yvm-hdyn-343343",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "yvm-hkpvrym-a16487",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "yvm-kypvr-c5e624",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "yvm-shkvlv-shbs-8b8acc",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "yyn-hmshvmr-4ebe98",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "yyn-nsk-679502",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "zas-chnvkh-7f741a",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "zas-svrs-hevlh-60e3bf",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "zdym-byd-evsky-svrsk-ddb3ac",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "zkr-7c9904",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "zkr-lmkdsh-d151cb",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "zkrvnvs-6779b2",
+   "shiurim": 2,
+   "quietPage": false,
+   "livePrerender": false
+  },
+  {
+   "key": "zyvvg-ae5f16",
+   "shiurim": 1,
+   "quietPage": false,
+   "livePrerender": false
+  }
+ ],
+ "occasions": [
+  {
+   "key": "acharei-mos",
+   "shiurim": 0
+  },
+  {
+   "key": "acharei-mos-kedoshim",
+   "shiurim": 0
+  },
+  {
+   "key": "adar",
+   "shiurim": 0
+  },
+  {
+   "key": "aseres-yemei-teshuvah",
+   "shiurim": 0
+  },
+  {
+   "key": "balak",
+   "shiurim": 0
+  },
+  {
+   "key": "bamidbar",
+   "shiurim": 0
+  },
+  {
+   "key": "bechukosai",
+   "shiurim": 0
+  },
+  {
+   "key": "behaaloscha",
+   "shiurim": 0
+  },
+  {
+   "key": "behar",
+   "shiurim": 0
+  },
+  {
+   "key": "behar-bechukosai",
+   "shiurim": 0
+  },
+  {
+   "key": "bein-hametzarim",
+   "shiurim": 0
+  },
+  {
+   "key": "bereishis",
+   "shiurim": 2
+  },
+  {
+   "key": "beshalach",
+   "shiurim": 0
+  },
+  {
+   "key": "bo",
+   "shiurim": 0
+  },
+  {
+   "key": "chanukah",
+   "shiurim": 1
+  },
+  {
+   "key": "chayei-sarah",
+   "shiurim": 0
+  },
+  {
+   "key": "chol-hamoed-pesach",
+   "shiurim": 0
+  },
+  {
+   "key": "chukas",
+   "shiurim": 0
+  },
+  {
+   "key": "chukas-balak",
+   "shiurim": 0
+  },
+  {
+   "key": "devarim",
+   "shiurim": 0
+  },
+  {
+   "key": "eikev",
+   "shiurim": 0
+  },
+  {
+   "key": "elul",
+   "shiurim": 2
+  },
+  {
+   "key": "emor",
+   "shiurim": 1
+  },
+  {
+   "key": "erev-pesach",
+   "shiurim": 0
+  },
+  {
+   "key": "haazinu",
+   "shiurim": 1
+  },
+  {
+   "key": "hoshana-rabbah",
+   "shiurim": 0
+  },
+  {
+   "key": "iyar",
+   "shiurim": 0
+  },
+  {
+   "key": "kedoshim",
+   "shiurim": 0
+  },
+  {
+   "key": "ki-savo",
+   "shiurim": 1
+  },
+  {
+   "key": "ki-seitzei",
+   "shiurim": 0
+  },
+  {
+   "key": "ki-sisa",
+   "shiurim": 0
+  },
+  {
+   "key": "kislev",
+   "shiurim": 0
+  },
+  {
+   "key": "korach",
+   "shiurim": 0
+  },
+  {
+   "key": "lag-baomer",
+   "shiurim": 0
+  },
+  {
+   "key": "lech-lecha",
+   "shiurim": 0
+  },
+  {
+   "key": "masei",
+   "shiurim": 0
+  },
+  {
+   "key": "matos",
+   "shiurim": 0
+  },
+  {
+   "key": "matos-masei",
+   "shiurim": 0
+  },
+  {
+   "key": "metzora",
+   "shiurim": 0
+  },
+  {
+   "key": "mikeitz",
+   "shiurim": 0
+  },
+  {
+   "key": "mishpatim",
+   "shiurim": 0
+  },
+  {
+   "key": "nasso",
+   "shiurim": 0
+  },
+  {
+   "key": "nine-days",
+   "shiurim": 0
+  },
+  {
+   "key": "nisan",
+   "shiurim": 1
+  },
+  {
+   "key": "nitzavim",
+   "shiurim": 0
+  },
+  {
+   "key": "nitzavim-vayeilech",
+   "shiurim": 0
+  },
+  {
+   "key": "noach",
+   "shiurim": 1
+  },
+  {
+   "key": "parshas-hachodesh",
+   "shiurim": 0
+  },
+  {
+   "key": "parshas-parah",
+   "shiurim": 0
+  },
+  {
+   "key": "parshas-shekalim",
+   "shiurim": 0
+  },
+  {
+   "key": "parshas-zachor",
+   "shiurim": 0
+  },
+  {
+   "key": "pekudei",
+   "shiurim": 0
+  },
+  {
+   "key": "pesach",
+   "shiurim": 1
+  },
+  {
+   "key": "pinchas",
+   "shiurim": 0
+  },
+  {
+   "key": "purim",
+   "shiurim": 1
+  },
+  {
+   "key": "purim-katan",
+   "shiurim": 1
+  },
+  {
+   "key": "purim-meshulash",
+   "shiurim": 0
+  },
+  {
+   "key": "reeh",
+   "shiurim": 0
+  },
+  {
+   "key": "rosh-chodesh-nisan",
+   "shiurim": 0
+  },
+  {
+   "key": "rosh-chodesh-sivan",
+   "shiurim": 0
+  },
+  {
+   "key": "rosh-hashanah",
+   "shiurim": 1
+  },
+  {
+   "key": "sefirah",
+   "shiurim": 1
+  },
+  {
+   "key": "shabbos-chanukah",
+   "shiurim": 0
+  },
+  {
+   "key": "shabbos-chazon",
+   "shiurim": 1
+  },
+  {
+   "key": "shabbos-nachamu",
+   "shiurim": 0
+  },
+  {
+   "key": "shabbos-shirah",
+   "shiurim": 0
+  },
+  {
+   "key": "shabbos-shuvah",
+   "shiurim": 0
+  },
+  {
+   "key": "shavuos",
+   "shiurim": 0
+  },
+  {
+   "key": "shelach",
+   "shiurim": 0
+  },
+  {
+   "key": "shemini",
+   "shiurim": 0
+  },
+  {
+   "key": "shemini-atzeres",
+   "shiurim": 0
+  },
+  {
+   "key": "shemos",
+   "shiurim": 0
+  },
+  {
+   "key": "shevii-shel-pesach",
+   "shiurim": 0
+  },
+  {
+   "key": "shoftim",
+   "shiurim": 1
+  },
+  {
+   "key": "shovavim",
+   "shiurim": 0
+  },
+  {
+   "key": "shushan-purim",
+   "shiurim": 1
+  },
+  {
+   "key": "sivan",
+   "shiurim": 0
+  },
+  {
+   "key": "sukkos",
+   "shiurim": 1
+  },
+  {
+   "key": "tamuz",
+   "shiurim": 0
+  },
+  {
+   "key": "tazria",
+   "shiurim": 0
+  },
+  {
+   "key": "tazria-metzora",
+   "shiurim": 0
+  },
+  {
+   "key": "terumah",
+   "shiurim": 0
+  },
+  {
+   "key": "tetzaveh",
+   "shiurim": 0
+  },
+  {
+   "key": "teves",
+   "shiurim": 1
+  },
+  {
+   "key": "tishah-beav",
+   "shiurim": 0
+  },
+  {
+   "key": "toldos",
+   "shiurim": 1
+  },
+  {
+   "key": "tu-beav",
+   "shiurim": 1
+  },
+  {
+   "key": "tu-bishvat",
+   "shiurim": 1
+  },
+  {
+   "key": "tzav",
+   "shiurim": 0
+  },
+  {
+   "key": "vaeira",
+   "shiurim": 0
+  },
+  {
+   "key": "vaeschanan",
+   "shiurim": 1
+  },
+  {
+   "key": "vayakhel",
+   "shiurim": 0
+  },
+  {
+   "key": "vayakhel-pekudei",
+   "shiurim": 0
+  },
+  {
+   "key": "vayechi",
+   "shiurim": 0
+  },
+  {
+   "key": "vayeilech",
+   "shiurim": 0
+  },
+  {
+   "key": "vayeira",
+   "shiurim": 0
+  },
+  {
+   "key": "vayeishev",
+   "shiurim": 1
+  },
+  {
+   "key": "vayeitzei",
+   "shiurim": 0
+  },
+  {
+   "key": "vayigash",
+   "shiurim": 0
+  },
+  {
+   "key": "vayikra",
+   "shiurim": 0
+  },
+  {
+   "key": "vayishlach",
+   "shiurim": 1
+  },
+  {
+   "key": "vezos-haberachah",
+   "shiurim": 0
+  },
+  {
+   "key": "yahrzeit-ohr-hachaim",
+   "shiurim": 0
+  },
+  {
+   "key": "yisro",
+   "shiurim": 0
+  },
+  {
+   "key": "yom-kippur",
+   "shiurim": 0
+  },
+  {
+   "key": "yud-tes-kislev",
+   "shiurim": 0
+  },
+  {
+   "key": "zos-chanukah",
+   "shiurim": 1
+  }
+ ]
+}

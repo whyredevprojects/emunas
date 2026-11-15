@@ -10,7 +10,7 @@
  */
 import { resolve } from "node:path";
 import { parseArgs } from "node:util";
-import { buildCorpus } from "./build/build.ts";
+import { buildCorpusWithAggregates } from "./aggregate/build.ts";
 
 function main(argv: string[]): number {
   let args;
@@ -40,7 +40,7 @@ function main(argv: string[]): number {
   const base = process.env["INIT_CWD"] ?? process.cwd();
   const abs = (p: string | undefined) => (p === undefined ? undefined : resolve(base, p));
   try {
-    const opts: Parameters<typeof buildCorpus>[0] = { force: v.force, log: (l) => console.log(l) };
+    const opts: Parameters<typeof buildCorpusWithAggregates>[0] = { force: v.force, log: (l) => console.log(l) };
     const dataDir = abs(v["data-dir"]);
     const outDir = abs(v.out);
     const suppressFile = abs(v.suppress);
@@ -49,7 +49,7 @@ function main(argv: string[]): number {
     if (outDir) opts.outDir = outDir;
     if (suppressFile) opts.suppressFile = suppressFile;
     if (policyDir) opts.policyDir = policyDir;
-    const r = buildCorpus(opts);
+    const r = buildCorpusWithAggregates(opts);
     const rep = r.report;
     console.log(
       `report: ${rep.downgraded.length} downgraded, ${rep.notDoneWithFiles.length} mid-flight, ` +
