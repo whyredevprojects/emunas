@@ -1,0 +1,163 @@
+---
+/**
+ * A section page (concept-quiet §5.2, tech-quiet §2 `/{ed}/section/{sectionId}/`): the catalog,
+ * faithfully. A plain numbered table in catalog order; large sections are sub-grouped the way the
+ * guide groups them (פרשת השבוע by chumash and parsha, זמנים by zman in the order of the year)
+ * under headings on one long page with a jump list at the top. Works without script.
+ *
+ * Data: `.corpus/` sections.json, index.json, occasions.json, series.json, audio-table.json.
+ */
+import type { GetStaticPaths } from "astro";
+import { formatNumber } from "@emunas/i18n";
+import Base from "../../../layouts/Base.astro";
+import NotesLabel from "../../../components/NotesLabel.astro";
+import CatalogTable from "../../../components/catalog/CatalogTable.astro";
+import JumpList, { type JumpItem } from "../../../components/catalog/JumpList.astro";
+import { loadCatalogCorpus } from "../../../components/catalog/corpus.ts";
+import { contentsHref, sectionModel, sectionSummaries, type CatalogRow, type RowGroup } from "../../../components/catalog/model.ts";
+import { guidePages, useCatalogT, type CatalogKey } from "../../../components/catalog/strings.ts";
+import { runAttrs } from "../../../lib/bidi.ts";
+import { EDS, type Ed } from "../../../lib/edition.ts";
+import { useT } from "../../../i18n/index.ts";
+
+export const getStaticPaths = (() => {
+  const corpus = loadCatalogCorpus();
+  return EDS.flatMap((ed) => sectionSummaries(corpus).map((s) => ({ params: { ed, section: s.slug } })));
+}) satisfies GetStaticPaths;
+
+const ed = Astro.params.ed as Ed;
+const corpus = loadCatalogCorpus();
+const model = sectionModel(corpus, Astro.params.section as string, ed);
+if (!model) throw new Error(`section page: unknown section ${Astro.params.section}`);
+const { section, layout } = model;
+const t = useT(ed);
+const c = useCatalogT(ed);
+const titleAttrs = runAttrs(section.title, section.lang);
+const allUncatalogued = model.rows.every((r) => r.uncatalogued);
+const flatOccasion = layout.kind === "flat" && model.rows.some((r) => r.parsha !== null || r.zman !== null);
+const caption = (label: string) => c("table.caption", { name: label });
+const otherLabel = layout.kind === "parsha" ? c("section.otherParsha") : c("section.otherZman");
+const chumashKey = (k: string) => `chumash.${k}` as CatalogKey;
+const chumashLabel = (k: string) => (c.has(chumashKey(k)) ? c(chumashKey(k)) : k);
+
+let jump: JumpItem[] = [];
+if (layout.kind === "parsha") {
+  jump = layout.chumashim.map((ch) => ({
+    id: ch.id,
+    label: chumashLabel(ch.chumash),
+    children: ch.parshiyos.map((p) => ({ id: p.id, label: p.label, count: p.rows.length })),
+  }));
+  if (layout.other) jump.push({ id: layout.other.id, label: otherLabel, count: layout.other.rows.length });
+} else if (layout.kind === "zman") {
+  jump = layout.zmanim.map((z) => ({ id: z.id, label: z.label, count: z.rows.length }));
+  if (layout.other) jump.push({ id: layout.other.id, label: otherLabel, count: layout.other.rows.length });
+}
+const groupRows = (g: RowGroup): CatalogRow[] => g.rows;
+const pages = section.pages;
+---
+<Base
+  ed={ed}
+  title={section.title}
+  crumbs={[
+    { label: t("nav.contents"), href: contentsHref(ed) },
+    { label: section.title, ...titleAttrs },
+  ]}
+>
+  <header class="section-head">
+    <h1><bdi {...titleAttrs}>{section.title}</bdi></h1>
+    <p class="section-meta">
+      <span>{c("count.shiurim", { count: section.count })}</span>
+      {pages && (
+        <>
+          <span aria-hidden="true"> · </span>
+          <span>{guidePages(ed, pages, "section")}</span>
+        </>
+      )}
+    </p>
+    {allUncatalogued && <p class="section-lead">{c("section.uncataloguedLead", { mark: "*" })}</p>}
+    {model.series.length > 0 && (
+      <p class="section-series">
+        {c("section.alsoSeries")}{" "}
+        {model.series.map((s, i) => (
+          <>{i > 0 && ", "}<a href={s.href}>{s.title}</a> <span class="muted">({formatNumber(s.count, ed)})</span></>
+        ))}
+      </p>
+    )}
+  </header>
+
+  {model.anyNotes && <NotesLabel ed={ed} />}
+
+  {jump.length > 0 && <JumpList ed={ed} label={c("section.jump")} items={jump} />}
+
+  {layout.kind === "flat" && (
+    <CatalogTable ed={ed} rows={layout.rows} caption={caption(section.title)} occasion={flatOccasion} notes={model.anyNotes} />
+  )}
+
+  {layout.kind === "parsha" && (
+    <>
+      {layout.chumashim.map((ch) => (
+        <section class="group" aria-labelledby={ch.id}>
+          <h2 id={ch.id}>{chumashLabel(ch.chumash)}</h2>
+          {ch.parshiyos.map((p) => (
+            <section class="subgroup" aria-labelledby={p.id}>
+              <h3 id={p.id}>{p.label}</h3>
+              <CatalogTable ed={ed} rows={groupRows(p)} caption={caption(p.label)} notes={model.anyNotes} />
+            </section>
+          ))}
+        </section>
+      ))}
+      {layout.other && (
+        <section class="group" aria-labelledby={layout.other.id}>
+          <h2 id={layout.other.id}>{otherLabel}</h2>
+          <CatalogTable ed={ed} rows={groupRows(layout.other)} caption={caption(otherLabel)} occasion notes={model.anyNotes} />
+        </section>
+      )}
+    </>
+  )}
+
+  {layout.kind === "zman" && (
+    <>
+      {layout.zmanim.map((z) => (
+        <section class="group" aria-labelledby={z.id}>
+          <h2 id={z.id}>{z.label}</h2>
+          <CatalogTable ed={ed} rows={groupRows(z)} caption={caption(z.label)} occasion notes={model.anyNotes} />
+        </section>
+      ))}
+      {layout.other && (
+        <section class="group" aria-labelledby={layout.other.id}>
+          <h2 id={layout.other.id}>{otherLabel}</h2>
+          <CatalogTable ed={ed} rows={groupRows(layout.other)} caption={caption(otherLabel)} occasion notes={model.anyNotes} />
+        </section>
+      )}
+    </>
+  )}
+</Base>
+
+<style>
+  .section-head > * + * {
+    margin-block-start: var(--space-xs);
+  }
+
+  .section-meta,
+  .section-lead,
+  .section-series {
+    font-size: var(--step-0);
+    color: var(--color-ink-muted);
+  }
+
+  .muted {
+    color: var(--color-ink-muted);
+  }
+
+  .group > * + * {
+    margin-block-start: var(--space-s);
+  }
+
+  .subgroup {
+    margin-block-start: var(--space-l);
+  }
+
+  .subgroup > * + * {
+    margin-block-start: var(--space-xs);
+  }
+</style>

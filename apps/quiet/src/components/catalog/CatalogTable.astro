@@ -1,0 +1,211 @@
+---
+/**
+ * A numbered catalog table (concept-quiet §5.2, tech-quiet §4): one row per shiur, in catalog
+ * order. Columns: number as printed (or the part in a series), the title exactly as catalogued
+ * (with `catalog.heading` above it where there is one), optionally parsha/zman, year, length, and
+ * the one-line notes in the edition's language when the shiur has notes.
+ *
+ * - Every catalog string is its own `<bdi>` run with lang/dir from its dominant script.
+ * - Rows of the uncatalogued guide carry a small mark with a spoken explanation.
+ * - Rows whose recordings cannot be played from the media host are greyed and say so in words.
+ * - Catalog-only rows show no AI text (the notes cell stays empty).
+ * - `<caption>` and `<th scope>` throughout; no script.
+ */
+import { formatDuration } from "@emunas/i18n";
+import HebrewYear from "../HebrewYear.astro";
+import { NUMERIC_RUN, runAttrs } from "../../lib/bidi.ts";
+import type { Ed } from "../../lib/edition.ts";
+import type { CatalogRow, SeriesRow } from "./model.ts";
+import { useCatalogT } from "./strings.ts";
+
+interface Props {
+  ed: Ed;
+  rows: readonly (CatalogRow | SeriesRow)[];
+  /** Table caption (a group heading usually precedes it, so it is hidden visually by default). */
+  caption: string;
+  captionVisible?: boolean;
+  /** First column: catalog number as printed, or the part number in a series. */
+  number?: "n" | "part";
+  /** Show the parsha/zman column. */
+  occasion?: boolean;
+  /** Show the notes column (only when at least one row has notes). */
+  notes?: boolean;
+  /** Mark uncatalogued rows (off on pages where every row is uncatalogued and the lead says so). */
+  markUncatalogued?: boolean;
+  /** Total parts of the series (with `number="part"`). */
+  partsOf?: number;
+}
+
+const {
+  ed,
+  rows,
+  caption,
+  captionVisible = false,
+  number = "n",
+  occasion = false,
+  notes = false,
+  markUncatalogued = true,
+  partsOf,
+} = Astro.props;
+const c = useCatalogT(ed);
+const run = (text: string, lang: Ed) => runAttrs(text, lang);
+const anyYear = rows.some((r) => r.years.length > 0);
+const numberOf = (r: CatalogRow | SeriesRow): string => {
+  if (number === "part") return "part" in r ? String(r.part) : "";
+  return r.n ?? "";
+};
+---
+<table class="catalog-table">
+  <caption class:list={[{ "visually-hidden": !captionVisible }]}>{caption}</caption>
+  <thead>
+    <tr>
+      <th scope="col" class="col-num">{number === "part" ? c("table.part") : c("table.no")}</th>
+      <th scope="col" class="col-title">{c("table.title")}</th>
+      {occasion && <th scope="col" class="col-occasion">{c("table.occasion")}</th>}
+      {anyYear && <th scope="col" class="col-year">{c("table.year")}</th>}
+      <th scope="col" class="col-length">{c("table.length")}</th>
+      {notes && <th scope="col" class="col-notes">{c("table.notes")}</th>}
+    </tr>
+  </thead>
+  <tbody>
+    {rows.map((r) => {
+      const num = numberOf(r);
+      const occ = r.parsha?.raw ?? r.zman?.raw ?? null;
+      const length = formatDuration(r.duration, ed);
+      return (
+        <tr
+          id={`row-${r.id}`}
+          class:list={["catalog-row", { "no-recording": !r.playable, uncatalogued: r.uncatalogued }]}
+          data-status={r.status}
+        >
+          <td class="col-num">
+            {num !== "" && (
+              <bdi {...NUMERIC_RUN} title={number === "part" && partsOf ? c("row.part", { part: num, count: partsOf }) : undefined}>{num}</bdi>
+            )}
+          </td>
+          <th scope="row" class="col-title">
+            {r.heading && (
+              <span class="row-heading"><bdi {...run(r.heading, r.lang)}>{r.heading}</bdi></span>
+            )}
+            <a href={r.href}><bdi {...run(r.title, r.lang)}>{r.title}</bdi></a>
+            {r.subTitle && (
+              <span class="row-subtitle"><bdi {...run(r.subTitle, r.lang)}>{r.subTitle}</bdi></span>
+            )}
+            {markUncatalogued && r.uncatalogued && (
+              <span class="unc-mark"><span aria-hidden="true">*</span><span class="visually-hidden"> ({c("row.uncatalogued")})</span></span>
+            )}
+            {!r.playable && <span class="no-recording-note">{c("row.noRecording")}</span>}
+          </th>
+          {occasion && <td class="col-occasion">{occ && <bdi {...run(occ, r.lang)}>{occ}</bdi>}</td>}
+          {anyYear && <td class="col-year">{r.years.length > 0 && <HebrewYear year={r.years} />}</td>}
+          <td class="col-length">{length && <bdi {...NUMERIC_RUN}>{length}</bdi>}</td>
+          {notes && <td class="col-notes" lang={ed}>{r.oneLiner}</td>}
+        </tr>
+      );
+    })}
+  </tbody>
+</table>
+
+<style is:global>
+  /* Global (prefixed) rather than scoped: scoped styles add an attribute to every cell of tables
+     that run to hundreds of rows. */
+  .catalog-table {
+    font-size: var(--step-0);
+  }
+
+  .catalog-table thead th {
+    font-size: var(--step--1);
+    color: var(--color-ink-muted);
+    border-block-end-color: var(--color-rule-strong);
+  }
+
+  .catalog-table th[scope="row"] {
+    font-weight: var(--weight-regular);
+  }
+
+  .catalog-table .col-num,
+  .catalog-table .col-year,
+  .catalog-table .col-length {
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+
+  .catalog-table .col-num {
+    inline-size: 3em;
+    color: var(--color-ink-muted);
+  }
+
+  .catalog-table .row-heading,
+  .catalog-table .row-subtitle,
+  .catalog-table .no-recording-note {
+    display: block;
+    font-size: var(--step--1);
+    color: var(--color-ink-muted);
+  }
+
+  .catalog-table .unc-mark {
+    margin-inline-start: var(--space-3xs);
+    color: var(--color-ink-muted);
+  }
+
+  /* The catalog title is the main column; the notes line sits beside it, smaller. */
+  .catalog-table .col-title {
+    min-inline-size: 12em;
+  }
+
+  .catalog-table .col-year .hebrew-year {
+    white-space: normal;
+  }
+
+  .catalog-table .col-year .year,
+  .catalog-table .col-year .civil {
+    white-space: nowrap;
+  }
+
+  .catalog-table .col-notes {
+    color: var(--color-ink-muted);
+    font-size: var(--step--1);
+    inline-size: 40%;
+  }
+
+  .catalog-table .no-recording,
+  .catalog-table .no-recording a {
+    color: var(--color-ink-muted);
+  }
+
+  .catalog-table .no-recording .no-recording-note {
+    font-style: italic;
+  }
+
+  .catalog-table .no-recording .no-recording-note:lang(yi) {
+    font-style: normal;
+  }
+
+  /* Phones: number, title, year, length. The notes line and the parsha/zman column (both on the
+     shiur page) give way so the table fits the column without sideways scrolling. */
+  @media (max-width: 40rem) {
+    .catalog-table .col-notes,
+    .catalog-table .col-occasion {
+      display: none;
+    }
+
+    .catalog-table .col-title {
+      min-inline-size: 0;
+    }
+
+    .catalog-table th,
+    .catalog-table td {
+      padding-inline: var(--space-2xs);
+    }
+
+    .catalog-table .col-year,
+    .catalog-table .col-length,
+    .catalog-table .col-year .year {
+      white-space: normal;
+    }
+
+    .catalog-table .col-num {
+      inline-size: auto;
+    }
+  }
+</style>
