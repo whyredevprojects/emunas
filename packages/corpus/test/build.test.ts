@@ -19,6 +19,11 @@ describe("buildCorpus → .corpus/", () => {
     }
     expect(readdirSync(join(out, "shiurim"))).toHaveLength(60);
     expect(r.written).toHaveLength(60);
+    // updated.json: manifest updatedAt of the full shiurim only (W3.6 "newly summarized").
+    const updated = readJson<{ updatedAt: Record<string, string> }>(join(out, "updated.json")).updatedAt;
+    expect(updated["yi-zmanim-tv-bb-04"]).toBe("2026-11-15T04:40:14.564Z");
+    expect(updated["yi-zmanim-msybs-lchyym-bkmp-01-c"]).toBeUndefined();
+    expect(updated["yi-tanya-1-01"]).toBeUndefined();
     const info = readJson<BuildInfo>(join(out, "build.json"));
     expect(info.counts.total).toBe(60);
     expect(info.counts.full + info.counts.catalogOnly).toBe(60);
