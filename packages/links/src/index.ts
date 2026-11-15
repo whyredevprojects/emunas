@@ -22,6 +22,13 @@ export { momentId, parseMomentId, type ParsedMomentId } from "./moment.ts";
 export { ENTITY_PAGE_THRESHOLD, quietHasEntityPage, formatQuiet, parseQuiet } from "./quiet.ts";
 export { formatLive, parseLive } from "./live.ts";
 export {
+  sectionSlug,
+  quietSectionPath,
+  POCKET_GUIDE_SOURCE,
+  UNCATALOGUED_SECTION_PREFIX,
+  type SectionRef,
+} from "./section.ts";
+export {
   quietPaths,
   livePaths,
   type QuietPaths,

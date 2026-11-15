@@ -47,13 +47,15 @@ interface Props {
   counts?: EntityCounts;
   /** Display name of a person in this edition (`.corpus/people.json`). */
   personName?: (key: string, ed: Ed, fallback: string) => string;
+  /** Whether a concept has a line on the inyanim index (`.corpus/concepts.json`); unlisted ones are not linked. */
+  conceptListed?: (key: string) => boolean;
   /** Absolute URL of the same shiur in the listening app (`@emunas/links`), or null when hosts are not configured. */
   liveHref?: string | null;
   /** `mailto:` link that pre-fills the shiur id, or null when no address is configured. */
   reportHref?: string | null;
 }
 
-const { ed, shiur, place, counts, personName, liveHref = null, reportHref = null } = Astro.props;
+const { ed, shiur, place, counts, personName, conceptListed, liveHref = null, reportHref = null } = Astro.props;
 const t = useShiurT(ed);
 const ui = useT(ed);
 const c = shiur.catalog;
@@ -95,8 +97,8 @@ const path = formatQuiet({ kind: "shiur", ed, id: shiur.id }, {}, { bare: true }
         <TranscriptSlot recordings={shiur.recordings} />
         {hasWriteup(notes, ed) && <Writeup ed={ed} blocks={notes.writeup[ed]} recordings={shiur.recordings} sources={sources} />}
         {sources.count > 0 && <SourceList ed={ed} sources={sources} recordings={shiur.recordings} />}
-        <Apparatus ed={ed} notes={notes} recordings={shiur.recordings} {...(personName ? { personName } : {})} />
-        <Mentioned ed={ed} notes={notes} {...(counts ? { counts } : {})} {...(personName ? { personName } : {})} />
+        <Apparatus ed={ed} notes={notes} recordings={shiur.recordings} {...(personName ? { personName } : {})} {...(conceptListed ? { conceptListed } : {})} />
+        <Mentioned ed={ed} notes={notes} {...(counts ? { counts } : {})} {...(personName ? { personName } : {})} {...(conceptListed ? { conceptListed } : {})} />
       </div>
     ) : (
       <p class="notes-pending" lang={ed}>{notice("notesPending", ed)}</p>

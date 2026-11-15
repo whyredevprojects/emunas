@@ -58,15 +58,25 @@ jobs:
       # With CI=true (set by Actions) this makes corpus:build fail instead of warn when the media
       # origin would be the dev placeholder https://media.example.invalid.
       EMUNAS_DEPLOY: "1"
+      # Site hosts (canonical, hreflang, sitemaps, cross-site links; integration-plan §2.1) and the
+      # Quiet "report an error" address. Set EMUNAS_DOMAIN once the domain exists (O8); until then
+      # EMUNAS_WORKERS_SUBDOMAIN gives the workers.dev hosts. The Quiet build fails without them.
+      EMUNAS_DOMAIN: ${{ vars.EMUNAS_DOMAIN }}
+      EMUNAS_WORKERS_SUBDOMAIN: ${{ vars.EMUNAS_WORKERS_SUBDOMAIN }}
+      EMUNAS_STAGE: ${{ (inputs.target || 'production') == 'staging' && 'staging' || '' }}
+      EMUNAS_FEEDBACK_EMAIL: ${{ vars.EMUNAS_FEEDBACK_EMAIL }}
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
     steps:
       - name: Check configuration
         run: |
           missing=0
-          for v in EMUNAS_MEDIA_ORIGIN CLOUDFLARE_API_TOKEN CLOUDFLARE_ACCOUNT_ID; do
+          for v in EMUNAS_MEDIA_ORIGIN EMUNAS_FEEDBACK_EMAIL CLOUDFLARE_API_TOKEN CLOUDFLARE_ACCOUNT_ID; do
             if [ -z "${!v}" ]; then echo "::error::${v} is not set for environment ${TARGET}"; missing=1; fi
           done
+          if [ -z "$EMUNAS_DOMAIN" ] && [ -z "$EMUNAS_WORKERS_SUBDOMAIN" ]; then
+            echo "::error::neither EMUNAS_DOMAIN nor EMUNAS_WORKERS_SUBDOMAIN is set for environment ${TARGET}"; missing=1
+          fi
           exit "$missing"
 
       # The transcript folder is in git; only the guard steps below read it (from its default path).

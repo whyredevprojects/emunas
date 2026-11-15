@@ -1,0 +1,53 @@
+---
+/**
+ * `/{ed}/about/` (concept-quiet §5.11, tech-quiet §2): the Rav and the collection, how the site is
+ * arranged, how the notes were made (`#notes`, the anchor every notes label links to), how to
+ * report an error (`#report`), what is not included (`#excluded`).
+ *
+ * Every text on this page is written by a person (W5.3) and read from
+ * `src/content/about/{ed}/{part}.md`; until a file exists its part shows a clearly marked
+ * placeholder. The only non-heading content is the report address from `EMUNAS_FEEDBACK_EMAIL`
+ * (a dev placeholder outside deploy builds, ../../../components/seo/site-env.ts).
+ */
+import type { GetStaticPaths } from "astro";
+import Base from "../../../layouts/Base.astro";
+import { currentSiteEnv } from "../../../components/seo/site-env.ts";
+import { EDS, type Ed } from "../../../lib/edition.ts";
+import { aboutText } from "./_content.ts";
+import { ABOUT_PARTS, ABOUT_STRINGS } from "./_strings.ts";
+import "./_about.css";
+
+export const getStaticPaths = (() => EDS.map((ed) => ({ params: { ed } }))) satisfies GetStaticPaths;
+
+const ed = Astro.params.ed as Ed;
+const s = ABOUT_STRINGS[ed];
+const env = currentSiteEnv();
+const parts = ABOUT_PARTS.map((part) => ({ part, text: aboutText(ed, part) }));
+---
+<Base ed={ed} title={s.title}>
+  <article class="about">
+    <h1>{s.title}</h1>
+    {parts.map(({ part, text }) => {
+      const Text = text?.Content;
+      return (
+        <section id={part} aria-labelledby={`${part}-heading`}>
+          <h2 id={`${part}-heading`}>{s.headings[part]}</h2>
+          {Text ? (
+            <div class="about-text"><Text /></div>
+          ) : (
+            <p class="about-placeholder" data-placeholder={part}>
+              <strong class="about-placeholder-label">{s.placeholderLabel}:</strong> {s.placeholder}
+            </p>
+          )}
+          {part === "report" && (
+            <p class="about-report">
+              {s.reportAddress}{" "}
+              <a href={`mailto:${env.feedbackEmail}`}><bdi dir="ltr">{env.feedbackEmail}</bdi></a>
+              {env.placeholder.feedbackEmail && <> {s.reportPlaceholderAddress}</>}
+            </p>
+          )}
+        </section>
+      );
+    })}
+  </article>
+</Base>

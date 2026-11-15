@@ -7,7 +7,8 @@
  * - optional breadcrumb that mirrors the catalog;
  * - `main#main`, footer, and the print layer (styles/print.css: nav, switch and player hidden).
  *
- * Slots: default (page body), `head` (extra head tags: canonical, hreflang, OG — W4.6).
+ * Slots: default (page body), `head` (extra head tags). Canonical, hreflang, OG and robots come
+ * from components/seo/Seo.astro (W4.6).
  */
 import "../styles/fonts.css";
 import "@emunas/tokens/tokens.css";
@@ -20,6 +21,7 @@ import { dirOf, otherEdition, switchEdition, type Ed } from "../lib/edition.ts";
 import { fontPreloads } from "../lib/fonts.ts";
 import { navItems, navSectionOf, type Crumb } from "../lib/nav.ts";
 import { useT } from "../i18n/index.ts";
+import Seo from "../components/seo/Seo.astro";
 
 interface Props {
   ed: Ed;
@@ -53,9 +55,15 @@ const otherDir = dirOf(other);
     <meta name="color-scheme" content="light dark" />
     <title>{fullTitle}</title>
     <meta name="description" content={description ?? t("site.description")} />
-    {noindex && <meta name="robots" content="noindex" />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     {fontPreloads(ed).map((href) => <link rel="preload" href={href} as="font" type="font/woff2" crossorigin />)}
+    <Seo
+      path={path}
+      title={path === home ? t("site.name") : title}
+      description={description ?? t("site.description")}
+      siteName={t("site.name")}
+      noindex={noindex}
+    />
     <slot name="head" />
   </head>
   <body>
