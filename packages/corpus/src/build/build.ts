@@ -1,7 +1,10 @@
 /**
  * `corpus:build`: data/ → .corpus/ (integration-plan §4 step 1, §5.1).
  *
- *   build.json, shiurim/<id>.json, index.json, audio-table.json, build-report.json, .fingerprints.json
+ *   build.json, shiurim/<id>.json, index.json, audio-table.json, updated.json, build-report.json, .fingerprints.json
+ *
+ * `updated.json` carries the manifest `updatedAt` of every full shiur (`{ schemaVersion, updatedAt:
+ * { shiurId: iso } }`), so apps can list "newly summarized" without reading data/ (W3.6).
  *
  * Audio (Amendment A1): every recording gets `audioUrl` = media origin + per-segment-encoded bucket
  * key, or `playable: false` when its object is not an mp3. The media origin comes from
@@ -309,6 +312,7 @@ export function projectCorpus(
   const ctx: ProjectContext = { keyer, policy, suppress, report, recordingsById, seriesCount, audio: audioTable };
   const shiurim: PublicShiur[] = [];
   const fingerprints: Record<string, string> = {};
+  const updatedAt: Record<string, string> = {};
   let notDone = 0;
 
   for (const s of inScope) {
@@ -341,6 +345,7 @@ export function projectCorpus(
       report.downgraded.push({ id: s.id, manifestStatus: entry?.status ?? null, reasons: [r.notesError] });
     }
     shiurim.push(r.shiur);
+    if (r.shiur.status === "full" && typeof entry?.updatedAt === "string") updatedAt[s.id] = entry.updatedAt;
   }
 
   const sections = sectionsOf(catalogs, inScope, report);
@@ -352,7 +357,19 @@ export function projectCorpus(
     catalogOnly: shiurim.length - full,
     downgraded: report.downgraded.length,
   };
-  return { shiurim, index, report, counts, notDone, fingerprints, audioTable, mediaOrigin: media.origin, keyer, suppressIds };
+  return {
+    shiurim,
+    index,
+    report,
+    counts,
+    notDone,
+    fingerprints,
+    audioTable,
+    updatedAt,
+    mediaOrigin: media.origin,
+    keyer,
+    suppressIds,
+  };
 }
 
 export function buildCorpus(opts: BuildOptions = {}): BuildResult {
@@ -396,6 +413,7 @@ export function buildCorpus(opts: BuildOptions = {}): BuildResult {
   const info: BuildInfo = { buildId, dataSha, schemaVersion: SCHEMA_VERSION, mediaOrigin: p.mediaOrigin, counts: p.counts };
   writeIfChanged(join(outDir, "index.json"), toJson(p.index));
   writeIfChanged(join(outDir, "audio-table.json"), toJson(p.audioTable));
+  writeIfChanged(join(outDir, "updated.json"), toJson({ schemaVersion: SCHEMA_VERSION, updatedAt: p.updatedAt }));
   if (opts.extraOutputs) {
     const extra = opts.extraOutputs({ shiurim: p.shiurim, index: p.index, keyer: p.keyer, report: p.report });
     for (const [name, value] of Object.entries(extra)) {
