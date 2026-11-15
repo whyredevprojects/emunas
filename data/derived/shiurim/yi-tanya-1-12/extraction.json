@@ -1,0 +1,489 @@
+{
+  "shiurId": "yi-tanya-1-12",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "On Tanya chapter three, the Rav explains how chochmah and binah, the 'father and mother' of the mind, give birth to love and fear of Hashem through long, steady contemplation of His greatness, and why this was the Ba'al HaTanya's distinctive path.",
+      "yi": "אויפן תניא פרק ג ערקלערט דער משגיח ווי אזוי חכמה און בינה, דער \"אבא ואמא\" פונעם שכל, זענען מוליד אהבה און יראה דורך א לאנגע און שטארקע התבוננות אין גדולת הבורא, און פארוואס דאס איז געווען דער באזונדערער דרך פונעם בעל התניא."
+    },
+    "abstract": {
+      "en": "The Rav reads Tanya chapter three: the first flash of an idea is chochmah, its development in length and breadth is binah, and they are called father and mother because their children are the middos, love and fear. This, he says, was the Ba'al HaTanya's distinctive view against most of the Maggid's other students, who worked with the public from the middos; both are true, and the dispute was over which path to teach the masses. With the mashal of a carpenter, he explains that a person was given a thinking soul in order to use it, and he describes the endless creation, worlds above worlds and angels above angels, whose contemplation brings first fear and then love. He shows this order in the brachos of Krias Shema, distinguishes fear of His exaltedness from fear of punishment, explains the language of longing through Shechem's hidden spark of Rabbi Chanina ben Teradyon, and concludes that only contemplation bound with da'as yields lasting love and fear.",
+      "yi": "דער משגיח לערנט תניא פרק ג: דער ערשטער בליץ פון א שכל איז חכמה, ווען עס באקומט אורך און רוחב איז עס בינה, און זיי הייסן אבא ואמא ווייל זייערע קינדער זענען די מידות, אהבה און יראה. דאס, זאגט ער, איז געווען די שיטה פונעם בעל התניא, אנטקעגן רוב פון די אנדערע תלמידי המגיד וואס האבן געארבעט מיטן המון עם פון די מידות; אלו ואלו דברי אלקים חיים, נאר די שאלה איז געווען וועלכן דרך מען לערנט מיטן עולם. מיט א משל פון א סטאליער ערקלערט ער אז דער מענטש האט באקומען א נפש המשכלת כדי ער זאל זי נוצן, און ער שילדערט די בריאה וואס האט נישט קיין סוף, עולמות איבער עולמות און מלאכים איבער מלאכים, וואס די התבוננות דערין ברענגט צו יראה און דערנאך צו אהבה. ער ווייזט דעם סדר אין די ברכות פון קריאת שמע, איז מחלק צווישן יראת הרוממות און יראת העונש, ערקלערט די לשונות פון חשק דורך דעם ניצוץ פון רבי חנינא בן תרדיון וואס איז געווען באהאלטן אין שכם, און ענדיגט אז נאר א התבוננות מיט דעת ברענגט אן אהבה און יראה וואס האט א קיום."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Chochmah is the first point of an idea and binah its development; they are called father and mother because they give birth to the middos, love and fear of Hashem.",
+          "yi": "חכמה איז די ערשטע נקודה פון א שכל און בינה איז ווען עס ווערט אנטוויקלט; זיי הייסן אבא ואמא ווייל זיי זענען מוליד די מידות, אהבת השם און יראת השם."
+        },
+        "evidence": { "segs": [10, 15, 17, 22, 23], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The Ba'al HaTanya held that avodah must start with contemplating G-dliness through chochmah, binah and da'as, while most of the Maggid's other students began with the middos.",
+          "yi": "דער בעל התניא האט געהאלטן אז די עבודה דארף זיך אנהייבן מיט התבוננות אין אלקות דורך חכמה, בינה און דעת, בשעת רוב פון די אנדערע תלמידי המגיד האבן אנגעהויבן מיט די מידות."
+        },
+        "evidence": { "segs": [27, 29, 43, 57, 58, 59], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Contemplating Hashem's greatness, a creation with no end and worlds and angels each as nothing before the one above it, brings a person first to fear of Hashem and then to love.",
+          "yi": "ווען מען איז זיך מתבונן אין גדולת השם, א בריאה וואס האט נישט קיין סוף, און עולמות און מלאכים וואס יעדער איז ווי גארנישט אקעגן דעם וואס איבער אים, קומט מען צוערשט צו יראת השם און דערנאך צו אהבת השם."
+        },
+        "evidence": { "segs": [176, 184, 277, 282, 283, 285], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The yirah born of contemplation is fear of His exaltedness, awe before His greatness, not fear of punishment.",
+          "yi": "די יראה וואס קומט פון התבוננות איז יראת הרוממות, א פחד פאר זיין גרויסקייט, נישט יראת העונש."
+        },
+        "evidence": { "segs": [384, 386, 390, 393, 394], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Da'as means binding: only strong, sustained contemplation bound to the mind gives love and fear permanence; otherwise they are 'shav', real but passing.",
+          "yi": "דעת מיינט התקשרות: נאר א שטארקע התבוננות וואס האלט אן לאנגע צייט גיט די אהבה און יראה א קיום; אנדערש זענען זיי \"שוא\", זיי זענען יא דא אבער זיי גייען אוועק."
+        },
+        "evidence": { "segs": [559, 568, 571, 598, 600, 606], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-tanya-06-2-tanya",
+      "startSeg": 0,
+      "endSeg": 55,
+      "title": { "en": "Chochmah and binah as father and mother", "yi": "חכמה און בינה אלס אבא ואמא" },
+      "summary": {
+        "en": "The Rav reads Tanya chapter three: the first flash of an idea is chochmah, its development is binah, and they are father and mother whose children are love and fear. He explains that the Ba'al HaTanya held avodah must come through contemplating G-dliness with chochmah, binah and da'as, which then gives birth to the middos.",
+        "yi": "דער משגיח לערנט תניא פרק ג: דער ערשטער בליץ איז חכמה, די אנטוויקלונג איז בינה, און זיי זענען אבא ואמא וואס זייערע קינדער זענען אהבה און יראה. ער ערקלערט אז דער בעל התניא האט געהאלטן אז די עבודה דארף קומען דורך התבוננות אין אלקות מיט חב\"ד, און דאס איז מוליד די מידות."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-06-2-tanya",
+      "startSeg": 56,
+      "endSeg": 115,
+      "title": { "en": "The dispute among the Maggid's students", "yi": "דער חילוק דעות צווישן די תלמידי המגיד" },
+      "summary": {
+        "en": "The Rav describes the difference of opinion between the Ba'al HaTanya and most of the Maggid's students, who began with the middos: both are true, and the question was how to teach the masses. He compares it to Yosef and his brothers, and to the dispute with Rabbi Mottel of Chernobyl over whether the Rebbe lifts the chassidim or they must lift themselves.",
+        "yi": "דער משגיח שילדערט דעם חילוק דעות צווישן דעם בעל התניא און רוב תלמידי המגיד וואס האבן אנגעהויבן מיט די מידות: ביידע זענען אמת, נאר די שאלה איז ווי אזוי מען לערנט מיטן המון עם. ער גלייכט עס צו יוסף מיט די שבטים, און צום חילוק מיט רבי מאטעלע טשערנאבילער צי דער רבי הייבט אויף די חסידים אדער זיי מוזן זיך אליין אויפהייבן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-06-2-tanya",
+      "startSeg": 116,
+      "endSeg": 231,
+      "title": { "en": "The thinking soul and the endless creation", "yi": "דער נפש המשכלת און די בריאה אן א סוף" },
+      "summary": {
+        "en": "With the mashal of a carpenter who makes a table because he is a carpenter, the Rav explains that a person was created with an intellect in order to use it. He then describes what contemplation reaches: a creation without end, the higher hidden worlds, and Hashem who fills and surrounds all worlds beyond even that.",
+        "yi": "מיט א משל פון א סטאליער וואס מאכט א טיש ווייל ער איז א סטאליער, ערקלערט דער משגיח אז דער מענטש איז באשאפן געווארן מיט א שכל כדי ער זאל אים נוצן. דערנאך שילדערט ער וואס די התבוננות דערגרייכט: א בריאה אן א סוף, די העכערע באהאלטענע עולמות, און דעם אייבערשטן וואס איז ממלא און סובב כל עלמין נאך איבער דעם."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-06-2-tanya",
+      "startSeg": 232,
+      "endSeg": 309,
+      "title": { "en": "Planets and angels: first fear, then love", "yi": "פלאנעטן און מלאכים: צוערשט יראה, דערנאך אהבה" },
+      "summary": {
+        "en": "The Rav describes the earth's orbit as a galgal that is nothing beside larger ones, and above them the souls and angels, each as nothing before the one above, up to the Kisei HaKavod. Such contemplation brings fear of Hashem and then love; he insists avodah must begin with fear, as Rosh Hashanah comes before Sukkos.",
+        "yi": "דער משגיח שילדערט דעם גלגל פון דער ערד וואס איז ווי גארנישט אקעגן גרעסערע גלגלים, און איבער זיי די נשמות און מלאכים, יעדער ווי גארנישט אקעגן דעם וואס איבער אים, ביזן כסא הכבוד. אזא התבוננות ברענגט צו יראת השם און דערנאך צו אהבה; ער איז מדגיש אז מען דארף אנהייבן מיט יראה, אזוי ווי ראש השנה קומט פאר סוכות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-06-2-tanya",
+      "startSeg": 310,
+      "endSeg": 368,
+      "title": { "en": "The order in the brachos of Krias Shema", "yi": "דער סדר אין די ברכות פון קריאת שמע" },
+      "summary": {
+        "en": "The Rav shows the Tanya's order in the brachos of Krias Shema: Yotzer speaks of the luminaries and the angels and brings yirah, Ahavah Rabbah brings love, and then come Shema and Vehaya, the acceptance of the yoke of Heaven and of the mitzvos. He asks for whom Chazal instituted Yotzer if it is said in forty-five seconds without thought.",
+        "yi": "דער משגיח ווייזט דעם סדר פונעם תניא אין די ברכות פון קריאת שמע: יוצר רעדט פון די מאורות און די מלאכים און ברענגט יראה, אהבה רבה ברענגט אהבה, און דערנאך קומט שמע און והיה אם שמוע, קבלת עול מלכות שמים און קבלת עול מצוות. ער פרעגט פאר וועמען חז\"ל האבן מתקן געווען ברכת יוצר אויב מ'זאגט עס אין פינף און פערציג סעקונדעס אן א מחשבה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-06-2-tanya",
+      "startSeg": 369,
+      "endSeg": 426,
+      "title": { "en": "Fear of His exaltedness, not of punishment", "yi": "יראת הרוממות, נישט יראת העונש" },
+      "summary": {
+        "en": "Returning to the Tanya's words, the Rav explains that contemplation gives birth to fear of Hashem's exaltedness, unlike fear of punishment, which serves for reward. He compares it to the awe one feels before a great tzaddik, and explains the Tanya's word for shame through the Gemara that reads 'His fear upon your faces' as bushah.",
+        "yi": "צוריק צו די ווערטער פונעם תניא ערקלערט דער משגיח אז די התבוננות איז מוליד יראת הרוממות, נישט יראת העונש וואס איז ווי א משמש על מנת לקבל פרס. ער גלייכט עס צום פחד וואס כאפט ווען מ'קומט אריין צו א גרויסן צדיק, און ערקלערט דאס ווארט בושה דורך דער גמרא וואס טייטשט \"יראתו על פניכם\" אויף בושה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-06-2-tanya",
+      "startSeg": 427,
+      "endSeg": 509,
+      "title": { "en": "Shechem's longing and the spark of Rabbi Chanina ben Teradyon", "yi": "דער חשק פון שכם און דער ניצוץ פון רבי חנינא בן תרדיון" },
+      "summary": {
+        "en": "After fear comes a burning love, and the Rav notes that the Tanya's words of longing are those of the pesukim about Shechem and Dinah. Following the Midrash and the Ohr HaChaim, he explains that a hidden spark of Rabbi Chanina ben Teradyon in Shechem longed for its own kind, and so a Jew, a part of G-d, must long for Hashem; he adds that Rabbi Chanina was a gabbai tzedakah, a root of chesed.",
+        "yi": "נאך דער יראה קומט א ברענענדיגע אהבה, און דער משגיח ווייזט אן אז די לשונות פון חשק אינעם תניא זענען די לשונות פון די פסוקים ביי שכם און דינה. לויטן מדרש און דעם אור החיים ערקלערט ער אז א באהאלטענער ניצוץ פון רבי חנינא בן תרדיון אין שכם האט געגלוסט צו זיין מין, און אזוי דארף א איד, א חלק אלקה ממעל, האבן א חשק צום רבונו של עולם; ער לייגט צו אז רבי חנינא איז געווען א גבאי צדקה, א שורש פון חסד."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-06-2-tanya",
+      "startSeg": 510,
+      "endSeg": 572,
+      "title": { "en": "Love from Abba, fear from Imma, and da'as", "yi": "אהבה פון אבא, יראה פון אמא, און דעת" },
+      "summary": {
+        "en": "The Rav concludes that from chochmah, Abba, comes love, and from binah, Imma, comes fear, the two sides of right and left. He explains kelos hanefesh and the soul's thirst for Hashem from the element of fire, and that da'as means binding: the Ba'al HaTanya demands contemplation that is strong and sustained for long hours, not a moment.",
+        "yi": "דער משגיח שליסט אז פון חכמה, אבא, קומט אהבה, און פון בינה, אמא, קומט יראה, די צוויי זייטן פון רעכטס און לינקס. ער ערקלערט כלות הנפש און דעם דורשט פון דער נשמה צום אייבערשטן פון יסוד האש, און אז דעת מיינט התקשרות: דער בעל התניא פאדערט א התבוננות וואס איז שטארק און האלט אן לאנגע שעות, נישט א רגע."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-06-2-tanya",
+      "startSeg": 573,
+      "endSeg": 630,
+      "title": { "en": "Long davening and love that lasts", "yi": "לאנג דאווענען און אן אהבה וואס האט א קיום" },
+      "summary": {
+        "en": "The Rav recalls a talmid chacham in the Stoliner shul in Williamsburg who davened at length with contemplation and tears. Without da'as, he explains, love and fear are 'shav', not imaginary but without permanence; even passing life is worth something, yet the Ba'al HaTanya demands lasting life.",
+        "yi": "דער משגיח דערמאנט זיך אין א תלמיד חכם אין דער סטאלינער שול אין וויליאמסבורג וואס האט געדאווענט לאנג מיט התבוננות און מיט טרערן. אן דעת, ערקלערט ער, זענען אהבה און יראה \"שוא\", נישט קיין דמיון נאר אן א קיום; אפילו חיי שעה איז עפעס, אבער דער בעל התניא פאדערט חיי עולם וואס האט א קיום."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "והנה השכל שבנפש המזכהלות",
+      "work": "Tanya",
+      "ref": "Tanya ch. 3",
+      "sefariaRef": "Tanya, Part I; Likkutei Amarim 3",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [1, 3, 8, 20, 370, 556], "confidence": 0.9 }
+    },
+    {
+      "heardAs": "ס'חבר ועבר דברי אבער כהמת חיים",
+      "work": "Gemara Eruvin",
+      "ref": "Eruvin 13b",
+      "sefariaRef": "Eruvin 13b",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [72, 73], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דאס פאר סמות און פרשת פיישב",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [80, 81, 82], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "ברכת יצא ... אהבי זולם",
+      "work": "Siddur",
+      "ref": "Shacharis, brachos of Krias Shema (Yotzer Or, Ahavah Rabbah)",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [314, 319, 334, 343, 354], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "משנשמי ישראל",
+      "work": "Devarim",
+      "ref": "Devarim 6:4",
+      "sefariaRef": "Deuteronomy 6:4",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [365], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "והי' משמיר תשמור",
+      "work": "Devarim",
+      "ref": "Devarim 11:13",
+      "sefariaRef": "Deuteronomy 11:13",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [366], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די גמרא דארשענט ... יראת ה' על פנחם ... זאל הבשה",
+      "work": "Gemara Nedarim",
+      "ref": "Nedarim 20a",
+      "sefariaRef": "Nedarim 20a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [417, 418], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "בי שכם בן חמאה וצדבק נפשי בדיני",
+      "work": "Bereishis",
+      "ref": "Bereishis 34:3-8",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [439, 440, 442, 444], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער מדרש זאגט עס",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [438, 446], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער רחמ'ער קדש ... רחבות איז ראשי תיבות רבי חנונה בן טרעדיען ... אור החיימה קודש",
+      "work": "Ohr HaChaim",
+      "ref": "Ohr HaChaim, Bereishis 34:21",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [450, 452, 453, 473], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "יצחק'ים איז פון ארי הקודש",
+      "work": "Etz Chaim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [546], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "וכסוף צמא נפשי ללקום, דוד המלוה זאגט",
+      "work": "Tehillim",
+      "ref": "Tehillim 42:3",
+      "sefariaRef": "Psalms 42:3",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [536, 537], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "כ'כסוף נכסוף אויף וכם, כוסו נפשי",
+      "work": "Tehillim",
+      "ref": "Tehillim 84:3",
+      "sefariaRef": "Psalms 84:3",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [535], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "ואדם ידע את חבר",
+      "work": "Bereishis",
+      "ref": "Bereishis 4:1",
+      "sefariaRef": "Genesis 4:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [557], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "וועלכע חיי שואו, מעגל מען מחליל זיין שבת",
+      "work": "Gemara",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [624, 625], "confidence": 0.7 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav presents the dispute between the Ba'al HaTanya and the other students of the Maggid not as a question of truth, since both views are true, but of which path to teach the masses: the Ba'al HaTanya demanded that ordinary people learn chochmah of G-dliness, while the others may have done so themselves but worked differently with the public.",
+        "yi": "דער משגיח שטעלט אוועק דעם חילוק צווישן דעם בעל התניא און די אנדערע תלמידי המגיד נישט אלס א שאלה פון אמת, ווייל אלו ואלו דברי אלקים חיים, נאר וועלכן דרך מען לערנט מיטן המון עם: דער בעל התניא האט געפאדערט אז דער המון עם זאל לערנען חכמה, און די אנדערע האבן אפשר אליין אזוי געטון, אבער מיטן עולם האבן זיי געארבעט אויף אן אנדער אופן."
+      },
+      "evidence": { "segs": [72, 74, 75, 77, 78, 79], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He likens this to the dispute between Yosef and his brothers: whether to work with a few strong, great people in a concentrated way or with many, where each receives only a little.",
+        "yi": "ער גלייכט עס צום חילוק דעות צווישן יוסף און די שבטים: צי מ'ארבעט מיט ווייניג אבער שטארקע גרויסע מענטשן, קאנצענטרירט, אדער מיט א גרויסן עולם צושפרייט, וואו יעדער באקומט נאר א ביסל."
+      },
+      "evidence": { "segs": [81, 82, 85, 87, 91, 92], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The same divide, he says, separated the Ba'al HaTanya from Rabbi Mottel of Chernobyl: whether the Rebbe lifts up the chassidim, who bind themselves to him, or whether the chassidim must lift themselves.",
+        "yi": "דער זעלבער חילוק, זאגט ער, איז געווען צווישן דעם בעל התניא און רבי מאטעלע טשערנאבילער: צי דער רבי הייבט אויף די חסידים וואס זענען זיך מקשר צו אים, אדער די חסידים מוזן זיך אליין אויפהייבן."
+      },
+      "evidence": { "segs": [100, 102, 103, 104, 105, 107], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav finds the Tanya's path in the order of the brachos of Krias Shema: Yotzer contemplates the luminaries and the angels and brings fear, Ahavah Rabbah brings love, and only then come Shema and Vehaya, accepting the yoke of Heaven and of the mitzvos.",
+        "yi": "דער משגיח געפינט דעם דרך פונעם תניא אינעם סדר פון די ברכות פון קריאת שמע: ברכת יוצר איז זיך מתבונן אין די מאורות און די מלאכים און ברענגט יראה, אהבה רבה ברענגט אהבה, און ערשט דערנאך קומט שמע און והיה אם שמוע, קבלת עול מלכות שמים און קבלת עול מצוות."
+      },
+      "evidence": { "segs": [326, 334, 341, 343, 354, 368], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Shechem's intense words of desire for Dinah came from a hidden spark of Rabbi Chanina ben Teradyon within him that longed for its own kind; from this the Rav learns that a Jew, a part of G-d above, must long for Hashem in the same way.",
+        "yi": "די שטארקע לשונות פון חשק פון שכם צו דינה זענען געקומען פון א באהאלטענעם ניצוץ פון רבי חנינא בן תרדיון אין אים, וואס האט געגלוסט צו זיין מין; דערפון לערנט דער משגיח אז א איד, א חלק אלקה ממעל, דארף אזוי האבן א חשק צום רבונו של עולם."
+      },
+      "evidence": { "segs": [449, 461, 462, 484, 491, 493], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "He adds that the love-language came specifically through Shechem because Rabbi Chanina ben Teradyon was a devoted gabbai tzedakah, a spark of chesed, and chesed is love.",
+        "yi": "ער לייגט צו אז די לשונות פון אהבה זענען ארויס דווקא פון שכם ווייל רבי חנינא בן תרדיון איז געווען א געטריישער גבאי צדקה, א ניצוץ פון חסד, און חסד איז אהבה."
+      },
+      "evidence": { "segs": [495, 496, 503, 506, 509], "confidence": 0.65 }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "A long davening in the Stoliner shul",
+        "yi": "א לאנג דאווענען אין דער סטאלינער שול"
+      },
+      "retelling": {
+        "en": "The Rav recalls a Jew, a great talmid chacham, who davened in the Stoliner shul in Williamsburg where the Rav himself davened. He would sit down to daven with contemplation and with relish, until tears ran from both his eyes. Others would go home, eat, rest a little and learn, and come back to shul, while he was still davening. The Rav brings him as an example of contemplation with persistence and with all one's strength.",
+        "yi": "דער משגיח דערמאנט זיך אין א איד, א גרויסער תלמיד חכם, וואס האט געדאווענט אין דער סטאלינער שול אין וויליאמסבורג וואו דער משגיח האט אליין געדאווענט. ער פלעגט זיך אוועקזעצן דאווענען מיט התבוננות און מיט א געשמאק, ביז עס האבן געלאפן טרערן פון ביידע אויגן. אנדערע פלעגן אהיימגיין, עסן, זיך אפרוען און לערנען, און צוריקקומען אין שול, און ער האט נאך געדאווענט. דער משגיח ברענגט אים אלס א דוגמא פון התבוננות מיט התמדה און מיט אלע כוחות."
+      },
+      "people": [],
+      "evidence": { "segs": [575, 576, 577, 580, 582, 584], "confidence": 0.65 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "Why are chochmah and binah called father and mother?", "yi": "פארוואס הייסן חכמה און בינה אבא ואמא?" },
+      "answer": { "en": "Because their children are the middos, love and fear of Hashem, which they give birth to.", "yi": "ווייל זייערע קינדער זענען די מידות, אהבת השם און יראת השם, וואס זיי זענען מוליד." },
+      "questionSegs": [22],
+      "answerSegs": [23, 24],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why are the higher realms called olamos, worlds?", "yi": "פארוואס הייסן די העכערע מדריגות עולמות?" },
+      "answer": { "en": "Because they are hidden (ne'lam), beyond what the human mind is equipped to grasp.", "yi": "ווייל זיי זענען נעלם, באהאלטן, העכער פון וואס דער מענטשליכער שכל קען כאפן." },
+      "questionSegs": [208],
+      "answerSegs": [208, 209, 210, 213],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why must avodah begin with fear and not with love?", "yi": "פארוואס דארף די עבודה זיך אנהייבן מיט יראה און נישט מיט אהבה?" },
+      "answer": { "en": "If it begins with love, something is wrong with it; first comes fear, then love, as Rosh Hashanah and the Ten Days come before Sukkos.", "yi": "אויב עס הייבט זיך אן מיט אהבה איז עפעס נישט גלייך; צוערשט קומט יראה און דערנאך אהבה, אזוי ווי ראש השנה און עשרת ימי תשובה קומען פאר סוכות." },
+      "questionSegs": [294],
+      "answerSegs": [296, 298, 300, 305],
+      "confidence": 0.7
+    },
+    {
+      "question": { "en": "For whom did Chazal institute birchas Yotzer, if one says it in forty-five seconds without knowing what he said?", "yi": "פאר וועמען האבן חז\"ל מתקן געווען ברכת יוצר, אויב מ'זאגט עס אין פינף און פערציג סעקונדעס און מ'ווייסט נישט וואס מ'האט געזאגט?" },
+      "answer": { "en": "It is a bracha of contemplating Hashem's greatness, meant to bring a person to fear as the angels fear Him.", "yi": "עס איז א ברכה פון התבוננות אין גדולת הבורא, כדי מ'זאל קומען צו יראה אזוי ווי די מלאכים האבן מורא פארן רבונו של עולם." },
+      "questionSegs": [335, 336, 337],
+      "answerSegs": [334, 339, 341],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why did Shechem have such a great desire for Dinah?", "yi": "פארוואס האט שכם געהאט אזא גרויסן חשק צו דינה?" },
+      "answer": { "en": "The spark of holiness of Rabbi Chanina ben Teradyon within him longed for holiness, since every kind is drawn to its own kind.", "yi": "דער ניצוץ קדושה פון רבי חנינא בן תרדיון אין אים האט געגלוסט צו קדושה, ווייל כל מין חושק במינו." },
+      "questionSegs": [468],
+      "answerSegs": [461, 462, 469, 470],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "What does the Tanya mean by calling love and fear without da'as 'shav'?", "yi": "וואס מיינט דער תניא ווען ער רופט אהבה און יראה אן דעת \"שוא\"?" },
+      "answer": { "en": "Not that they are imaginary; they are real love and fear, but they have no permanence and pass away.", "yi": "נישט אז זיי זענען א דמיון; עס איז יא אהבה און יראה, נאר זיי האבן נישט קיין קיום און גייען אוועק." },
+      "questionSegs": [595, 619],
+      "answerSegs": [597, 598, 599, 600, 621],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says that contemplation of Hashem's greatness should not be for a moment or two, but sitting for long hours and thinking about it with all one's powers of thought.",
+        "yi": "דער משגיח זאגט אז די התבוננות אין גדולת השם זאל נישט זיין פאר א רגע אדער צוויי, נאר זיך אוועקזעצן לאנגע שעות און טראכטן דערפון מיט אלע כוחות המחשבה."
+      },
+      "evidence": { "segs": [563, 568, 569, 570, 571], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "He says birchas Yotzer is meant to be a bracha of contemplating Hashem's greatness, not something said in forty-five seconds without knowing what one said.",
+        "yi": "ער זאגט אז ברכת יוצר איז געמיינט א ברכה פון התבוננות אין גדולת הבורא, נישט עפעס וואס מ'זאגט אין פינף און פערציג סעקונדעס אן וויסן וואס מ'האט געזאגט."
+      },
+      "evidence": { "segs": [334, 335, 336, 339], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "According to the Rav, avodah must begin with fear of Hashem, and only after it comes love.",
+        "yi": "לויט דעם משגיח דארף די עבודה זיך אנהייבן מיט יראת השם, און ערשט דערנאך קומט אהבת השם."
+      },
+      "evidence": { "segs": [287, 298, 299, 300], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "He says that a Jew, being a part of G-d above, must arouse in himself a longing for Hashem.",
+        "yi": "ער זאגט אז א איד, וואס איז א חלק אלקה ממעל, דארף אין זיך אויפוועקן א חשק צום רבונו של עולם."
+      },
+      "evidence": { "segs": [488, 491, 493], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "Tanya chapter 3",
+    "chochmah, binah and da'as",
+    "intellect giving birth to emotions",
+    "love and fear of Hashem",
+    "contemplation of G-d's greatness",
+    "Chabad and the other students of the Maggid",
+    "brachos of Krias Shema",
+    "fear of G-d's exaltedness",
+    "Shechem and the spark of Rabbi Chanina ben Teradyon",
+    "lasting versus fleeting inspiration"
+  ],
+  "concepts": [
+    { "he": "חכמה", "heardAs": ["כחמה", "חכם"] },
+    { "he": "בינה", "heardAs": ["בינא", "רבינה"] },
+    { "he": "דעת", "heardAs": ["דעת", "פחינה פון דעת"] },
+    { "he": "אבא ואמא", "heardAs": ["אבא ואם", "אבא און אימא", "אבא און אומא"] },
+    { "he": "נפש המשכלת", "heardAs": ["נפש המזכהלות", "נפש המזכות", "נפש המסקלות"] },
+    { "he": "התבוננות", "heardAs": ["מתביינען", "יתביינענות", "מזבוענען", "התבוינעניסט"] },
+    { "he": "התקשרות", "heardAs": ["התקשרות", "מקאשל", "מקשר"] },
+    { "he": "ממלא כל עלמין", "heardAs": ["ממלא כל אלעמען"] },
+    { "he": "סובב כל עלמין", "heardAs": ["סייוו כל אלעמען", "לסבר פאר כל אלעמען"] },
+    { "he": "יראת הרוממות", "heardAs": ["ירא רממות", "סיירת רממות", "יראת רממות"] },
+    { "he": "יראת העונש", "heardAs": ["יראות אןיש"] },
+    { "he": "כלות הנפש", "heardAs": ["קלויס הנפש", "קלוסן נפש"] },
+    { "he": "יסוד האש", "heardAs": ["יסוד אש", "יסודו אש"] },
+    { "he": "ניצוץ קדושה", "heardAs": ["ניצוץ קדש", "נציץ קודש", "נציאת קודש"] },
+    { "he": "כסא הכבוד", "heardAs": ["כיסאי הכבוד"] },
+    { "he": "גלגל", "heardAs": ["גאלגאל"] },
+    { "he": "בושה", "heardAs": ["בשה", "בשש"] },
+    { "he": "שוא", "heardAs": ["שוו", "שאו-שאוו", "שואו"] },
+    { "he": "חיי שעה", "heardAs": ["חיי שואו"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבינו שלום", "רביה׳ן של עולם", "רבוש׳ן עולם"] }
+  ],
+  "people": [
+    { "name": "the Ba'al HaTanya", "heardAs": ["בעל התניא", "בעלתניה", "בעלי תניא"] },
+    { "name": "the Maggid of Mezritch", "heardAs": ["תלמידי המעגד"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["בעש''ט"] },
+    { "name": "Yosef", "heardAs": ["יוסף"] },
+    { "name": "Rabbi Mordechai (Mottel) of Chernobyl", "heardAs": ["רבי מאטל'ער טשערנאבילא"] },
+    { "name": "Shechem", "heardAs": ["שכם", "שכן"] },
+    { "name": "Dinah", "heardAs": ["דינען", "דיני"] },
+    { "name": "Rabbi Chanina ben Teradyon", "heardAs": ["רבי חנונה בן טרעדיען", "רבי חנונא בן חדיא", "רבי חנניה בן חניה"] },
+    { "name": "the Ohr HaChaim", "heardAs": ["אור החיימה קודש", "רחמ'ער קדש", "חיים הקודש"] },
+    { "name": "the Arizal", "heardAs": ["ארי הקודש"] },
+    { "name": "David HaMelech", "heardAs": ["דוד המלוה"] }
+  ],
+  "asrNotes": "Yiddish ASR fair, with Tanya, pesukim and Midrash quotations heavily garbled but mostly recoverable from Tanya chapter 3. The name of the sefer on Vayeshev cited for Yosef and his brothers (segs 80-81) could not be recovered, and the details of the story in segs 574-584 are partly garbled. Several long segments skip audio (seg 224 at 14:59, seg 493 at 31:18, the gap before seg 573 at 38:13), and the recording ends mid-sentence."
+}

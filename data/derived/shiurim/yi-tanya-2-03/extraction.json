@@ -1,0 +1,444 @@
+{
+  "shiurId": "yi-tanya-2-03",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "On Tanya chapter 18, the Rav explains why love and fear of Hashem can live together only with Hashem, how the avos became so united with Him that this bond passed to their children, and gives a short explanation of the four worlds and the ten sefiros.",
+      "yi": "אויף תניא פרק י\"ח ערקלערט דער משגיח פארוואס אהבה און יראה קענען זיין צוזאמען נאר ביים אייבערשטן, ווי אזוי די אבות זענען געווען אזוי פאראייניגט מיט אים אז דאס איז איבערגעגאנגען צו זייערע קינדער, און ער גיט א קורצן ביאור אין די פיר עולמות און די צען ספירות."
+    },
+    "abstract": {
+      "en": "The Rav reviews that every Jew inherits a hidden love from the avos: love is the trait of Avraham and of Beis Hillel, fear that of Yitzchak and of Beis Shammai. Positive mitzvos come from love and prohibitions from fear, which is why a positive mitzvah overrides a prohibition, as he shows from the Ramban on zachor and shamor and from the Gemara on tzitzis and shaatnez. He then asks how fear, the opposite of love, can be part of the same inheritance, and answers that only with Hashem can union and awe coexist. The avos were Hashem's merkavah, yet more united than a chariot with its rider; their bond became their very essence and so passed to their children, together with nefesh, ruach and neshamah, even where these remain hidden as a makif. Finally he explains the ten sefiros and four worlds through the mashal of vapor, steam, water and ice, and the human powers of the soul, ending with daas.",
+      "yi": "דער משגיח חזרט איבער אז יעדער איד ירשנט פון די אבות א באהאלטענע אהבה: אהבה איז די מדה פון אברהם אבינו און פון בית הלל, יראה די מדה פון יצחק און פון בית שמאי. מצוות עשה קומען פון אהבה און מצוות לא תעשה פון יראה, און דערפאר איז א עשה דוחה א לא תעשה, ווי ער ברענגט פונעם רמב\"ן אויף זכור און שמור און פון דער גמרא אויף ציצית און שעטנז. דערנאך פרעגט ער ווי אזוי יראה, וואס איז דער היפך פון אהבה, איז אויך א טייל פון דער ירושה, און ער ענטפערט אז נאר ביים רבונו של עולם קען יחוד און יראה זיין צוזאמען. די אבות זענען געווען די מרכבה, אבער נאך מער פאראייניגט ווי א רכב מיט זיין רוכב; זייער התקשרות איז געווארן זייער מהות, און דערפאר איז עס איבערגעגאנגען צו די קינדער, צוזאמען מיט נפש רוח ונשמה, אפילו ווען זיי בלייבן באהאלטן ווי א מקיף. צום סוף ערקלערט ער די צען ספירות און די פיר עולמות דורכן משל פון וואסער וואס ווערט פארע, סטים, וואסער און אייז, און די כחות הנפש פונעם מענטש, ביז דעת."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Love is the trait of Avraham and Beis Hillel, fear the trait of Yitzchak and Beis Shammai; positive mitzvos stem from love and prohibitions from fear.",
+          "yi": "אהבה איז די מדה פון אברהם אבינו און בית הלל, יראה די מדה פון יצחק און בית שמאי; מצוות עשה קומען פון אהבה און לא תעשה פון יראה."
+        },
+        "evidence": { "segs": [25, 26, 31, 35, 41, 44], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "A positive mitzvah overrides a prohibition because love is greater than fear.",
+          "yi": "א מצות עשה איז דוחה א לא תעשה ווייל אהבה איז גרעסער ווי יראה."
+        },
+        "evidence": { "segs": [46, 47, 59], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Love and fear can coexist without contradiction only toward Hashem: union with Him and nullification before Him go together.",
+          "yi": "אהבה און יראה קענען זיין צוזאמען אן א סתירה נאר צום רבונו של עולם: דער יחוד מיט אים און דער ביטול פאר אים גייען צוזאמען."
+        },
+        "evidence": { "segs": [123, 128, 132, 136], "confidence": 0.7 }
+      },
+      {
+        "text": {
+          "en": "The avos were completely nullified to Hashem, more united with Him than a chariot with its rider, and so they drew down nefesh, ruach and neshamah to their children.",
+          "yi": "די אבות זענען געווען אינגאנצן בטל צום אייבערשטן, מער פאראייניגט ווי א מרכבה מיט איר רוכב, און דערפאר האבן זיי ממשיך געווען נפש רוח ונשמה צו זייערע קינדער."
+        },
+        "evidence": { "segs": [142, 145, 147, 241, 242, 243], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Only a trait that is part of a person's essence is inherited; the avos' bond with Hashem became their essence, so their children inherit a hidden love.",
+          "yi": "נאר א מדה וואס איז א טייל פון דעם מענטשנס מהות ווערט גע'ירש'נט; די התקשרות פון די אבות מיטן אייבערשטן איז געווארן זייער מהות, ממילא ירשענען די קינדער א באהאלטענע אהבה."
+        },
+        "evidence": { "segs": [250, 252, 256, 258, 260], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "The ten sefiros come down through the four worlds of Atzilus, Beriah, Yetzirah and Asiyah by ever greater tzimtzum, like vapor that becomes steam, water and ice, and in man they become the ten powers of the soul.",
+          "yi": "די צען ספירות קומען אראפ דורך די פיר עולמות אצילות, בריאה, יצירה און עשיה מיט אלץ מער צמצום, אזוי ווי פארע וואס ווערט סטים, וואסער און אייז, און ביים מענטש ווערן זיי די צען כחות הנפש."
+        },
+        "evidence": { "segs": [399, 485, 539, 540, 625, 626], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Daas is the bridge between the intellect and the midos: it knows when to use each trait.",
+          "yi": "דעת איז די בריק צווישן דעם שכל און די מדות: עס ווייסט ווען צו נוצן יעדע מדה."
+        },
+        "evidence": { "segs": [629, 636, 637, 638, 639], "confidence": 0.85 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-new-tanya-03-tanya-new",
+      "startSeg": 0,
+      "endSeg": 51,
+      "title": { "en": "Love and fear as the traits of the avos", "yi": "אהבה און יראה, די מדות פון די אבות" },
+      "summary": {
+        "en": "The Rav reviews that every Jew has a hidden love inherited from the avos and asks what its root is. He links love to Avraham and Beis Hillel and fear to Yitzchak and Beis Shammai, and says positive mitzvos come from love and prohibitions from fear.",
+        "yi": "דער משגיח חזרט איבער אז יעדער איד האט א באהאלטענע אהבה בירושה פון די אבות, און פרעגט וואס איז איר שורש. ער פארבינדט אהבה מיט אברהם אבינו און בית הלל, יראה מיט יצחק און בית שמאי, און זאגט אז מצוות עשה קומען פון אהבה און לא תעשה פון יראה."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-03-tanya-new",
+      "startSeg": 52,
+      "endSeg": 109,
+      "title": { "en": "Why a positive mitzvah overrides a prohibition", "yi": "פארוואס עשה דוחה לא תעשה" },
+      "summary": {
+        "en": "The Rav brings the Ramban on zachor and shamor: a positive mitzvah overrides a prohibition because love is greater than fear. He contrasts another view that action is greater than refraining, and shows the Gemara's source from tzitzis of wool on a linen garment.",
+        "yi": "דער משגיח ברענגט דעם רמב\"ן אויף זכור און שמור, אז א עשה איז דוחה א לא תעשה ווייל אהבה איז גרעסער ווי יראה. ער ברענגט אנדערע מפרשים אז א מעשה בקום ועשה איז גרעסער, און דעם מקור פון דער גמרא פון ציצית פון וואל אויף א בגד פון פלאקס."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-03-tanya-new",
+      "startSeg": 110,
+      "endSeg": 186,
+      "title": { "en": "Love and fear together, and the avos as merkavah", "yi": "אהבה און יראה צוזאמען, און די אבות ווי א מרכבה" },
+      "summary": {
+        "en": "The Rav asks how fear, the opposite of love, can be part of the inherited love, and answers that only toward Hashem can union and awe coexist. He explains that the avos, as Hashem's merkavah, had no will of their own and drew nefesh, ruach and neshamah to their children, like a horse that does only what its rider wants.",
+        "yi": "דער משגיח פרעגט ווי אזוי יראה, דער היפך פון אהבה, איז אריינגערעכנט אין דער ירושה, און ענטפערט אז נאר צום רבונו של עולם קענען יחוד און יראה זיין צוזאמען. ער ערקלערט אז די אבות, וואס זענען די מרכבה, האבן נישט געהאט קיין רצון עצמי און האבן ממשיך געווען נפש רוח ונשמה צו די קינדער, אזוי ווי א פערד וואס טוט נאר וואס דער רוכב וויל."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-03-tanya-new",
+      "startSeg": 187,
+      "endSeg": 246,
+      "title": { "en": "The limit of a mashal: more than a chariot", "yi": "א משל איז נאר אין איין פרט: מער ווי א מרכבה" },
+      "summary": {
+        "en": "The Rav shows from Dovid HaMelech comparing himself to a desert bird that a mashal holds only in one detail. A chariot can be separated from its rider, but the avos were united completely with Hashem and became a level of Elokus, which is why they passed nefesh, ruach and neshamah to their children.",
+        "yi": "דער משגיח ווייזט פון דוד המלך, וואס האט זיך צוגעגליכן צו א פויגל אין מדבר, אז א משל איז נאר גלייך אין איין פרט. א מרכבה קען מען אפטיילן פונעם רוכב, אבער די אבות זענען געווען אינגאנצן נתאחד מיטן אייבערשטן און געווארן א בחינה פון אלקות, און דערפאר האבן זיי איבערגעגעבן נפש רוח ונשמה צו די קינדער."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-03-tanya-new",
+      "startSeg": 247,
+      "endSeg": 332,
+      "title": { "en": "What is inherited: essence, and the hidden makif", "yi": "וואס ווערט גע'ירש'נט: דער מהות, און דער באהאלטענער מקיף" },
+      "summary": {
+        "en": "The Rav explains that only essential traits are inherited, and the avos' bond with Hashem became their essence. He describes when one receives nefesh, ruach and neshamah, and explains through a mashal of hair color that ruach and neshamah held hidden as a makif, connected to a person's inner self, can come out in his children.",
+        "yi": "דער משגיח ערקלערט אז נאר מדות וואס זענען א טייל פונעם מהות ווערן גע'ירש'נט, און די התקשרות פון די אבות מיטן אייבערשטן איז געווארן זייער מהות. ער שילדערט ווען מען באקומט נפש, רוח און נשמה, און ערקלערט מיט א משל פון די קאליר פון האר אז רוח ונשמה וואס זענען באהאלטן ווי א מקיף, פארבונדן מיט דער פנימיות, קענען זיך ארויסווייזן ביי די קינדער."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-03-tanya-new",
+      "startSeg": 333,
+      "endSeg": 403,
+      "title": { "en": "The ten sefiros and tzimtzum", "yi": "די צען ספירות און דער צמצום" },
+      "summary": {
+        "en": "The Rav begins explaining the ten sefiros: the first powers Hashem drew forth at creation, named for the brilliant sapphire stone. Man, made in Hashem's image, has their reflection as his midos, and the great light was contracted and clothed again and again so the lower worlds could bear it.",
+        "yi": "דער משגיח הייבט אן ערקלערן די צען ספירות: די ערשטע כחות וואס דער אייבערשטער האט ארויסגעברענגט ביי דער בריאה, וואס ווערן אנגערופן נאכן ליכטיגן שטיין ספיר. דער מענטש, באשאפן בצלם אלקים, האט פון זיי זיינע מדות, און דאס גרויסע ליכט איז מצומצם געווארן און אנגעטון מיט לבושים כדי די נידעריגע עולמות זאלן עס קענען אויסהאלטן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-03-tanya-new",
+      "startSeg": 404,
+      "endSeg": 492,
+      "title": { "en": "The mashal of vapor, steam, water and ice", "yi": "דער משל פון פארע, סטים, וואסער און אייז" },
+      "summary": {
+        "en": "To explain hishtalshelus and tzimtzum the Rav gives the mashal of a boiling kettle: invisible vapor near the spout, then steam that has no substance, then water that takes no form, then ice that can be shaped and touched. It is all the same thing, only ever more physical.",
+        "yi": "כדי צו ערקלערן השתלשלות און צמצום גיט דער משגיח א משל פון א קאכנדיגן טשייניק: נאענט צום שנאבל איז א פארע וואס מען זעט נישט, דערנאך סטים אן ממשות, דערנאך וואסער וואס נעמט נישט קיין פארעם, און צום סוף אייז וואס מען קען פורעמען און אנטאפן. ס'איז אלץ די זעלבע זאך, נאר אלץ מער גשמיות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-03-tanya-new",
+      "startSeg": 493,
+      "endSeg": 546,
+      "title": { "en": "The four worlds and the names of the sefiros", "yi": "די פיר עולמות און די נעמען פון די ספירות" },
+      "summary": {
+        "en": "The Rav applies the mashal: the light was contracted step by step into Atzilus, Beriah, Yetzirah and Asiyah, each world able to create what the one above could not, until physicality is possible. The four worlds match the four letters of Hashem's Name, and he lists the ten sefiros.",
+        "yi": "דער משגיח ווענדט אן דעם משל: דאס ליכט איז מצומצם געווארן טריט ביי טריט אין אצילות, בריאה, יצירה און עשיה, יעדער עולם קען באשאפן וואס דער העכערער קען נישט, ביז ס'קען שוין זיין גשמיות. די פיר עולמות זענען קעגן די פיר אותיות פונעם שם הוי\"ה, און ער רעכנט אויס די צען ספירות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-03-tanya-new",
+      "startSeg": 547,
+      "endSeg": 656,
+      "title": { "en": "Chochmah, binah, daas and the midos in man", "yi": "חכמה, בינה, דעת און די מדות ביים מענטש" },
+      "summary": {
+        "en": "The Rav explains the powers of the soul: chochmah as the flash of an idea, binah as building it out, the midos from chesed to malchus, and daas as the bridge that knows when to use each trait. A child can be clever yet not a ba'al daas until he becomes bar mitzvah.",
+        "yi": "דער משגיח ערקלערט די כחות הנפש: חכמה איז דער בליץ פון א געדאנק, בינה איז דאס אויסבויען, די מדות פון חסד ביז מלכות, און דעת איז די בריק וואס ווייסט ווען צו נוצן יעדע מדה. א קינד קען זיין קלוג און דאך נישט זיין קיין בעל דעת ביז ער ווערט בר מצוה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "פרק יד חס ... די אהבה מתאסרת",
+      "work": "Tanya",
+      "ref": "Tanya ch. 18",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [0, 117, 327], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער רמב״ן איז מסביר אז אין די זכרות יום השבת",
+      "work": "Ramban on Torah",
+      "ref": "Ramban, Shemos 20:8",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [52, 54, 58], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "דער גמרא זאגט א כלל ... וואס שטעט אין שמר איז דאס א לוסת",
+      "work": "Gemara",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [56], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "לסובא שתנות צמר בפשטים יחדיו, גדולים תעשה לבב",
+      "work": "Devarim",
+      "ref": "Devarim 22:11-12",
+      "sefariaRef": "Deuteronomy 22:11-12",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [71, 72, 73, 82], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די גמרא לערנט ארויס, אז א מצוה סתר איז דורך עלוי סתר",
+      "work": "Gemara Yevamos",
+      "ref": "Yevamos 4a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [68, 69, 90], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אשת חיים ... דא שצמח לרב פישטען",
+      "work": "Mishlei",
+      "ref": "Mishlei 31:13",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [94, 95, 99], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "כי האבות היינט היינט א מלכה",
+      "work": "Bereishis Rabbah",
+      "ref": "Bereishis Rabbah 47:6",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [139, 167, 179], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "היותי לכעת דמותי לכעת מדמה ... היות כחות חרבת",
+      "work": "Tehillim",
+      "ref": "Tehillim 102:7",
+      "sefariaRef": "Psalms 102:7",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [192, 193, 210, 212], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "וואס ווערן איזגערעכנט אין פרשת שמוני",
+      "work": "Vayikra",
+      "ref": "Vayikra 11:17-18",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [195, 216], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "חכמר ראשית חכמי יראת ה'",
+      "work": "Tehillim",
+      "ref": "Tehillim 111:10",
+      "sefariaRef": "Psalms 111:10",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [336], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "ותחת רגל וכמעט לבנות א סאפיע",
+      "work": "Shemos",
+      "ref": "Shemos 24:10",
+      "sefariaRef": "Exodus 24:10",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [360], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "וואס עס שטעט אין די משנה, בשר הממורות, נברא העולם",
+      "work": "Pirkei Avos",
+      "ref": "Avos 5:1",
+      "sefariaRef": "Pirkei Avot 5:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [377, 378], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ניינסע ארדעם ... בצל מילים כדאו'ס",
+      "work": "Bereishis",
+      "ref": "Bereishis 1:26",
+      "sefariaRef": "Genesis 1:26",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [381], "confidence": 0.8 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Toward a person, love and fear pull against each other; only toward Hashem do they coexist, because loving Him means union and fearing Him means nullification, and both belong together.",
+        "yi": "צו א מענטש שטייען אהבה און יראה קעגן אנאנדער; נאר צום אייבערשטן קענען זיי זיין צוזאמען, ווייל אהבה צו אים מיינט יחוד און יראה מיינט ביטול, און ביידע גייען צוזאמען."
+      },
+      "evidence": { "segs": [123, 128, 129, 132, 134, 136], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Calling the avos a merkavah is a mashal that holds in one point only: a chariot stays a separate thing from its rider, while the avos became one with Hashem, a level of Elokus itself.",
+        "yi": "דאס וואס די אבות ווערן אנגערופן א מרכבה איז א משל וואס איז גלייך נאר אין איין פרט: א מרכבה בלייבט א באזונדערע זאך פונעם רוכב, אבער די אבות זענען געווארן איינס מיטן אייבערשטן, א בחינה פון אלקות אליין."
+      },
+      "evidence": { "segs": [234, 238, 241, 242, 243, 244], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Acquired knowledge is not inherited, but what is part of a person's essence is; the avos' bond with Hashem had become their essence, which is why Jews inherit a hidden love.",
+        "yi": "וויסן וואס מען האט זיך צוגעלערנט ווערט נישט גע'ירש'נט, נאר וואס איז א טייל פונעם מהות; די התקשרות פון די אבות איז געווארן זייער מהות, און דערפאר ירשענען אידן א באהאלטענע אהבה."
+      },
+      "evidence": { "segs": [250, 252, 256, 260, 264, 266], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Ruach and neshamah that a person never revealed still surround him as a makif connected to his inner self, so, like a hair color that skips a generation, they can appear in his children.",
+        "yi": "רוח ונשמה וואס א מענטש האט קיינמאל נישט נתגלה געמאכט זענען דאך ארום אים ווי א מקיף פארבונדן מיט זיין פנימיות, און ממילא, אזוי ווי א קאליר פון האר וואס שפרינגט איבער א דור, קענען זיי זיך ארויסווייזן ביי זיינע קינדער."
+      },
+      "evidence": { "segs": [294, 297, 299, 303, 319, 323], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Vapor and ice are the same substance with a vast difference between them; so too the worlds are one light, ever more contracted and physical.",
+        "yi": "פארע און אייז זענען די זעלבע זאך, און דאך א גרויסער חילוק צווישן זיי; אזוי אויך די עולמות זענען איין ליכט, אלץ מער מצומצם און גשמיות'דיג."
+      },
+      "evidence": { "segs": [488, 489, 490, 492, 493], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "A child may be cleverer than an adult and still lack daas, since daas is not intelligence but the power to govern the midos.",
+        "yi": "א קינד קען זיין קליגער ווי א דערוואקסענער און דאך נישט האבן קיין דעת, ווייל דעת איז נישט קלוגשאפט נאר דער כח צו פירן די מדות."
+      },
+      "evidence": { "segs": [640, 642, 643, 645], "confidence": 0.85 }
+    }
+  ],
+  "stories": [],
+  "questions": [
+    {
+      "question": {
+        "en": "Why does a positive mitzvah override a prohibition?",
+        "yi": "פארוואס איז א מצות עשה דוחה א לא תעשה?"
+      },
+      "answer": {
+        "en": "According to the Ramban, because love, the root of positive mitzvos, is greater than fear; other commentators say because an act is greater than refraining.",
+        "yi": "לויטן רמב\"ן, ווייל אהבה, דער שורש פון מצוות עשה, איז גרעסער ווי יראה; אנדערע מפרשים זאגן ווייל א מעשה בקום ועשה איז גרעסער ווי שב ואל תעשה."
+      },
+      "questionSegs": [45, 46],
+      "answerSegs": [47, 59, 61, 62, 63],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "If the hidden love is an inheritance, how can fear, its opposite, also be included in it?",
+        "yi": "אויב די באהאלטענע אהבה איז א ירושה, ווי אזוי איז יראה, איר היפך, אויך אריינגערעכנט דערין?"
+      },
+      "answer": {
+        "en": "There is no contradiction, but only toward Hashem: union with Him and awe before Him go together.",
+        "yi": "ס'איז נישט קיין סתירה, אבער נאר צום רבונו של עולם: דער יחוד מיט אים און די יראה פאר אים גייען צוזאמען."
+      },
+      "questionSegs": [112, 113, 114, 115],
+      "answerSegs": [123, 126, 128, 136],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "If the avos are compared to a chariot, which is separate from its rider, how could their bond with Hashem pass to their children?",
+        "yi": "אויב די אבות ווערן צוגעגליכן צו א מרכבה, וואס איז אפגעטיילט פונעם רוכב, ווי אזוי איז זייער התקשרות איבערגעגאנגען צו די קינדער?"
+      },
+      "answer": {
+        "en": "The mashal holds only in the point of nullification; the avos were truly united with Hashem and became a level of Elokus, so it became part of their essence.",
+        "yi": "דער משל איז נאר גלייך אינעם פרט פון ביטול; די אבות זענען באמת נתאחד געווען מיטן אייבערשטן און געווארן א בחינה פון אלקות, ממילא איז עס געווארן א טייל פון זייער מהות."
+      },
+      "questionSegs": [187, 189, 238, 241],
+      "answerSegs": [242, 243, 244, 245],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "How can a person who merited only nefesh have children with ruach and neshamah?",
+        "yi": "ווי אזוי קען א מענטש וואס איז זוכה נאר צו נפש האבן קינדער מיט רוח ונשמה?"
+      },
+      "answer": {
+        "en": "He too has ruach and neshamah, hidden as a makif connected to his inner self, and what is inherited can come out in the next generation, like a hidden hair color.",
+        "yi": "ער האט אויך רוח ונשמה, באהאלטן ווי א מקיף וואס איז פארבונדן מיט זיין פנימיות, און וואס ווערט גע'ירש'נט קען זיך ארויסווייזן אינעם קומענדיגן דור, אזוי ווי א באהאלטענע קאליר פון האר."
+      },
+      "questionSegs": [300, 301, 302, 303],
+      "answerSegs": [294, 297, 299, 323, 324, 326],
+      "confidence": 0.7
+    }
+  ],
+  "takeaways": [],
+  "candidateTopics": [
+    "Tanya chapter 18",
+    "hidden love inherited from the avos",
+    "love and fear of Hashem",
+    "positive mitzvah overrides a prohibition",
+    "the avos as the merkavah",
+    "nefesh, ruach and neshamah",
+    "ten sefiros",
+    "four worlds",
+    "tzimtzum and hishtalshelus",
+    "daas as the bridge between mind and midos"
+  ],
+  "concepts": [
+    { "he": "אהבה מסותרת", "heardAs": ["די אהבה מתאסרת", "באהאלטענע אהבה"] },
+    { "he": "עשה דוחה לא תעשה", "heardAs": ["א מצוות עשר איז דוחר לעותות", "עשה זדוכה לא תעשה"] },
+    { "he": "מרכבה", "heardAs": ["מלכה", "מקובה", "מקבה", "מקוה"] },
+    { "he": "נפש רוח ונשמה", "heardAs": ["נפש רוח און נשאמה", "נפש רוח נשון", "נפש רוח הנשמה"] },
+    { "he": "חיה יחידה", "heardAs": ["חיון יחידים"] },
+    { "he": "מקיף", "heardAs": ["מקבל"] },
+    { "he": "ספירות", "heardAs": ["ספורות", "צמ-ספירות", "צנצפורות"] },
+    { "he": "צמצום", "heardAs": ["צמצם", "צומצים", "מצטעצים"] },
+    { "he": "השתלשלות", "heardAs": ["איש תושבות", "שתושבות"] },
+    { "he": "אצילות", "heardAs": ["עצירות", "הצילות"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבינו שלום", "רבוש-על שולעים", "רבי'ן ירושלים"] },
+    { "he": "בית שמאי", "heardAs": ["בית שמע"] },
+    { "he": "שעטנז", "heardAs": ["שתנות", "שאטנעס"] },
+    { "he": "דעת", "heardAs": ["דת", "דעת"] }
+  ],
+  "people": [
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינו"] },
+    { "name": "Yitzchak Avinu", "heardAs": ["יצחק"] },
+    { "name": "Beis Hillel", "heardAs": ["בית הילל"] },
+    { "name": "Beis Shammai", "heardAs": ["בית שמע"] },
+    { "name": "the Ramban", "heardAs": ["רמב״ן"] },
+    { "name": "Dovid HaMelech", "heardAs": ["דעמאלד המלך", "רבי דער מעלות"] },
+    { "name": "Shaul HaMelech", "heardAs": ["שול המלך"] },
+    { "name": "the Alter Rebbe", "heardAs": ["דער עלטער באמער", "דער עלטער חבות"] }
+  ],
+  "asrNotes": "Yiddish ASR poor to fair; many Hebrew terms garbled (merkavah heard as מלכה/מקבה/מקוה, Atzilus as עצירות) but recoverable from context. The eishes chayil allusion (segs 94-104) and the passage on the Alter Rebbe and a series of stanzas about the sefiros (segs 333-344) could not be reliably recovered. The meaning of yesod (seg 611) is unclear. The catalog title is a single entry and covers the whole shiur."
+}

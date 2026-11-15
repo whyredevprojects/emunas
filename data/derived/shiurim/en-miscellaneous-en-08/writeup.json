@@ -1,0 +1,65 @@
+{
+  "shiurId": "en-miscellaneous-en-08",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4b-v2",
+  "extractionVariant": "extraction",
+  "en": [
+    {
+      "sectionIndex": 0,
+      "heading": "A neighbor's memories of the Satmar Rebbe",
+      "paragraphs": [
+        {
+          "text": "The Rav says the sun and earth are unchanged, yet the world is different now that the Satmar Rebbe's voice of Torah and tefillah is silenced. As his neighbor he would look into the lit windows at three or five in the morning and see him immersed in avodas Hashem; except on Shabbos he never went to bed. Rav Reuven Grozovsky, who often consulted him, said the whole Torah was open to him.",
+          "sourceIdx": [],
+          "evidence": { "segs": [0, 1, 3, 6, 8, 18], "confidence": 0.8 }
+        }
+      ]
+    },
+    {
+      "sectionIndex": 1,
+      "heading": "His fight for the true geulah",
+      "paragraphs": [
+        {
+          "text": "Turning to the vast funeral, the Rav explains why the Rebbe was controversial: he feared people would take the founding of the state as the geulah and its leader as Mashiach, so he fought like a lion for the truth. What he awaited was the geulah the Rambam describes in Hilchos Melachim: a king from the house of David, toiling in Torah, who compels Israel to follow it and fights Hashem's battles, and who, once successful, gathers the exiles and brings the whole world to serve Hashem together.",
+          "sourceIdx": [0],
+          "evidence": { "segs": [26, 28, 31, 35, 41, 55], "confidence": 0.75 }
+        },
+        {
+          "text": "Even an opponent, Rabbi Soloveitchik, admitted at a Mizrachi conference that the Rebbe kept them in check. The Rav concludes that thanks to his fight Jews still believe in Mashiach's coming.",
+          "sourceIdx": [],
+          "evidence": { "segs": [70, 72, 75, 79, 82], "confidence": 0.7 }
+        }
+      ]
+    }
+  ],
+  "yi": [
+    {
+      "sectionIndex": 0,
+      "heading": "זכרונות פון א שכן פונעם סאטמארער רב",
+      "paragraphs": [
+        {
+          "text": "דער משגיח זאגט אז די זון און די ערד זענען די זעלבע, אבער די וועלט איז אנדערש זינט דעם סאטמארער רב'ס קול התורה והתפילה איז פארשטומט געווארן. ווי א שכן פלעגט ער ארייננעמען אין די באלויכטענע פענצטער דריי אדער פינף אזייגער פארטאגס, און זען ווי דער רבי איז פארטיפט אין עבודת השם; אחוץ שבת איז ער קיינמאל נישט געגאנגען שלאפן. ר' ראובן גראזאווסקי, וואס איז אפט אריין צו אים, האט געזאגט אז די גאנצע תורה איז אפן פאר אים.",
+          "sourceIdx": [],
+          "evidence": { "segs": [0, 1, 3, 6, 8, 18], "confidence": 0.8 }
+        }
+      ]
+    },
+    {
+      "sectionIndex": 1,
+      "heading": "זיין קאמף פאר דער אמת'ער גאולה",
+      "paragraphs": [
+        {
+          "text": "נאכן דערמאנען די ריזיגע לויה ערקלערט דער משגיח פארוואס דער רבי איז געווען מחלוקת'דיג: ער האט מורא געהאט אז מ'וועט האלטן די גרינדונג פון דער מדינה פאר די גאולה און איר פירער פאר משיח, דערפאר האט ער געקעמפט ווי א לייב פארן אמת. ער האט געווארט אויף דער גאולה וואס דער רמב\"ם באשרייבט אין הלכות מלכים: א מלך פון בית דוד, הוגה בתורה, וואס צווינגט כלל ישראל צו גיין אין איר וועג און פירט די מלחמות פון השם, און ווען ער איז מצליח, קלייבט ער צונויף די גלות'ן און ברענגט די גאנצע וועלט צו דינען השם יתברך צוזאמען.",
+          "sourceIdx": [0],
+          "evidence": { "segs": [26, 28, 31, 35, 41, 55], "confidence": 0.75 }
+        },
+        {
+          "text": "אפילו א קעגנער, ר' סאלאווייטשיק, האט מודה געווען ביי אן אסיפה פון מזרחי אז דער רבי האט זיי געהאלטן אין צוים. דער משגיח שליסט אז דאנק זיין קאמף גלייבן אידן נאך אלץ אין ביאת המשיח.",
+          "sourceIdx": [],
+          "evidence": { "segs": [70, 72, 75, 79, 82], "confidence": 0.7 }
+        }
+      ]
+    }
+  ]
+}

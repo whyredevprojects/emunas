@@ -1,0 +1,517 @@
+{
+  "shiurId": "yi-tanya-2-08",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "On Tanya chapter 19, the Rav explains that the soul's longing to be nullified in Hashem like a candle in a torch comes from chochmah, the root of all kedushah, which is bittul, while the sitra achra is the opposite: self-importance even in giving.",
+      "yi": "אויף תניא פרק י\"ט ערקלערט דער משגיח אז דער חשק פון דער נשמה בטל צו ווערן אינעם רבונו של עולם, ווי א נר אין אן אבוקה, קומט פון חכמה, וואס איז דער שורש פון גאנץ קדושה, און קדושה מיינט ביטול; די סטרא אחרא איז פונקט פארקערט: זיך מאכן פאר א יש, אפילו ווען מ'גיט."
+    },
+    "abstract": {
+      "en": "The Rav learns Tanya chapter 19: like a candle flame drawn into a great torch even though it will be extinguished, every level of the soul longs to return to its Root, Hashem, the true Father who gives it every breath. This longing is beyond reason because it stems from chochmah, which cannot be grasped. He ties chochmah to the plague of darkness: there is a darkness of light too great to absorb, which is why 'borei choshech' is a higher word than 'yotzer ohr'. Purim brings down such a hidden light of chochmah, so its wine is different, just as wool becomes tzitzis. The Tanya then says all kedushah is bittul. The Rav explains true humility through Moshe Rabbeinu, signatures of 'hakatan', receiving from a Rebbe, and the Chernobyl story of the son who took 'nothing'. The sitra achra is the reverse: even its kindness, like a merchant's, seeks a return. He closes with a l'chaim for the yahrzeit of Rebbe Reb Zusha.",
+      "yi": "דער משגיח לערנט תניא פרק י\"ט: אזוי ווי א פלאם פון א נר ציט זיך אריין אין א גרויסע אבוקה, כאטש ער וועט אינגאנצן בטל ווערן, אזוי וויל יעדע מדריגה פון דער נשמה צוריקגיין צו איר שורש, צום רבונו של עולם, וואס איז דער אמת'ער טאטע וואס גיט יעדן אטעם. דער חשק איז למעלה מן הדעת, ווייל ער קומט פון חכמה, וואס מ'קען נישט משיג זיין. דאס בינדט ער צו מכת חושך: ס'איז דא א חושך פון א ליכטיגקייט וואס איז צו גרויס צו ארייננעמען, דערפאר שטייט \"בורא חושך\" און \"יוצר אור\". פורים קומט אראפ אזא באהאלטענע ליכטיגקייט פון חכמה, ממילא איז דער וויין פון פורים אן אנדער וויין, ווי וואל וואס ווערט ציצית. דערנאך זאגט דער תניא אז גאנץ קדושה איז ביטול. דער משגיח ערקלערט ענוה דורך משה רבינו, דורך דעם אונטערשרייבן \"הקטן\", דורך מקבל זיין פון א רבי'ן, און דורך דער מעשה פון טשערנאביל מיטן זון וואס האט גענומען דעם \"גארנישט\". די סטרא אחרא איז פארקערט: אפילו איר חסד, ווי ביי א סוחר, וויל צוריקקריגן. צום סוף מאכט ער א לחיים לכבוד דעם יארצייט פונעם רבי ר' זושא."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Like a candle drawn into a torch, every level of the soul longs to return to Hashem, its Root, even though it would be completely nullified there.",
+          "yi": "אזוי ווי א נר וואס ציט זיך צו אן אבוקה, וויל יעדע מדריגה פון דער נשמה צוריקגיין צום רבונו של עולם, איר שורש, כאטש זי וועט דארט אינגאנצן בטל ווערן."
+        },
+        "evidence": { "segs": [4, 6, 22, 28, 53], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "This longing is above reason because it comes from the chochmah of the soul, which is beyond understanding.",
+          "yi": "דער חשק איז למעלה מן הדעת, ווייל ער קומט פון דער חכמה שבנפש, וואס מ'קען נישט משיג זיין."
+        },
+        "evidence": { "segs": [84, 88, 94, 97], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "The plague of darkness corresponds to chochmah: a light so great that it appears as darkness, and Purim brings down a hidden light of this kind.",
+          "yi": "מכת חושך איז כנגד חכמה: א ליכטיגקייט אזוי גרויס אז זי ווייזט זיך ווי חושך, און פורים קומט אראפ אזא באהאלטענע ליכטיגקייט."
+        },
+        "evidence": { "segs": [106, 133, 138, 182], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The rule of kedushah is bittul: whatever is holy is nullified before Hashem, and this is the true meaning of humility.",
+          "yi": "דער כלל פון קדושה איז ביטול: אלעס וואס איז הייליג איז בטל צום רבונו של עולם, און דאס איז דער אמת'ער טייטש פון ענוה."
+        },
+        "evidence": { "segs": [277, 279, 314, 388, 389], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The sitra achra is the opposite: even when its people give, they give for themselves and want something back.",
+          "yi": "די סטרא אחרא איז פונקט פארקערט: אפילו ווען זיי גיבן, גיבן זיי פאר זיך און ווילן עפעס צוריק."
+        },
+        "evidence": { "segs": [476, 479, 489, 595, 597], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-new-tanya-08-tanya-new",
+      "startSeg": 0,
+      "endSeg": 99,
+      "title": { "en": "A candle drawn into the torch", "yi": "א נר וואס ציט זיך צו דער אבוקה" },
+      "summary": {
+        "en": "The Rav reads Tanya chapter 19: like a candle flame drawn into a torch, every level of the soul longs to return to Hashem, the true Father, even at the cost of being nullified. He explains that this nature is above reason because it stems from the chochmah of the soul.",
+        "yi": "דער משגיח לערנט תניא פרק י\"ט: אזוי ווי א פלאם פון א נר ציט זיך צו אן אבוקה, וויל יעדע מדריגה פון דער נשמה צוריקגיין צום רבונו של עולם, דעם אמת'ן טאטן, אפילו ווען זי ווערט בטל. ער ערקלערט אז די טבע איז למעלה מן הדעת, ווייל זי קומט פון דער חכמה שבנפש."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-08-tanya-new",
+      "startSeg": 100,
+      "endSeg": 186,
+      "title": { "en": "The plague of darkness and chochmah", "yi": "מכת חושך און חכמה" },
+      "summary": {
+        "en": "The Rav explains that the plague of darkness corresponds to chochmah: there is a darkness that is light too intense to absorb, which is why the blessing says 'borei choshech', a higher word than 'yotzer ohr'. Purim brings down such a hidden light of chochmah all day, which is why it is tied to Esther and to concealment.",
+        "yi": "דער משגיח ערקלערט אז מכת חושך איז כנגד חכמה: ס'איז דא א חושך וואס איז א ליכטיגקייט צו שטארק צו ארייננעמען, דערפאר זאגט מען אין דער ברכה \"בורא חושך\", א העכערע לשון ווי \"יוצר אור\". פורים קומט אראפ א גאנצן טאג אזא באהאלטענע ליכטיגקייט פון חכמה, און דערפאר איז עס פארבונדן מיט אסתר און מיט הסתרה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-08-tanya-new",
+      "startSeg": 187,
+      "endSeg": 264,
+      "title": { "en": "Why Purim wine is different", "yi": "פארוואס דער וויין פון פורים איז אנדערש" },
+      "summary": {
+        "en": "The Rav asks whether Purim wine is not the same wine as all year, and answers with meshalim: an esrog, wool made into tzitzis and leather made into tefillin straps become different things once holy names rest on them. Wine on an ordinary day is shown in a bad light, Kiddush and Pesach wine carry their own holy names, and Purim wine is 'yayin hameshumar', equal in gematria to Esther.",
+        "yi": "דער משגיח פרעגט צי דער וויין פון פורים איז נישט דער זעלבער וויין ווי א גאנץ יאר, און ענטפערט מיט משלים: אן אתרוג, וואל וואס ווערט ציצית און לעדער וואס ווערט רצועות פון תפילין ווערן אן אנדער זאך ווען שמות הקדושים רוען אויף זיי. וויין אין א געווענליכן טאג ווערט גערעדט בגנאי, וויין פון קידוש און פסח האט זיינע שמות, און וויין פון פורים איז \"יין המשומר\", בגימטריא אסתר."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-08-tanya-new",
+      "startSeg": 265,
+      "endSeg": 357,
+      "title": { "en": "Kedushah is bittul: true humility", "yi": "קדושה איז ביטול: אמת'ע ענוה" },
+      "summary": {
+        "en": "The Rav reads the Tanya's rule that all kedushah is drawn from chochmah, which is nullified before the Ein Sof. He explains that humility is not walking with a lowered head, which is really a form of pride, but being batel to Hashem like Moshe Rabbeinu, who was a king; he illustrates with the capital 'I' in English, the signature 'hakatan' of gedolim, and the small aleph of Vayikra.",
+        "yi": "דער משגיח לערנט דעם כלל אין תניא אז גאנץ קדושה איז נמשך פון חכמה, וואס איז בטל צום אין סוף. ער ערקלערט אז ענוה מיינט נישט ארומגיין מיט אן אראפגעלאזטן קאפ, וואס איז באמת א סארט גאווה, נאר בטל זיין צום רבונו של עולם ווי משה רבינו, וואס איז געווען א מלך; ער ברענגט משלים פונעם גרויסן \"I\" אין ענגליש, פונעם אונטערשרייבן \"הקטן\" ביי גדולים, און פונעם קליינעם א' פון ויקרא."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-08-tanya-new",
+      "startSeg": 358,
+      "endSeg": 425,
+      "title": { "en": "Bittul before Hashem, a Rebbe and a friend", "yi": "ביטול צום רבונו של עולם, צום רבי'ן און צום חבר" },
+      "summary": {
+        "en": "The Rav says one who knows Shas and boasts of it has pride, and compares the boaster to a fly claiming to be bigger than another fly beside the Empire State Building. A Yid is batel to Hashem, to his friend and to his Rebbe; one can receive from a Rebbe only when one feels smaller, like a cup held below the bottle's spout.",
+        "yi": "דער משגיח זאגט אז איינער וואס קען ש\"ס און בארימט זיך דערמיט האט גאווה, און ער גלייכט עס צו א פליג וואס בארימט זיך אז זי איז גרעסער ווי די אנדערע פליג, ביידע לעבן דעם עמפייער סטעיט בילדינג. א ערליכער איד איז בטל צום רבונו של עולם, צו זיין חבר און צו זיין רבי'ן; מ'קען נאר מקבל זיין פונעם רבי'ן ווען מ'פילט זיך קלענער, ווי א בעכער וואס ווערט געהאלטן אונטער דעם פלאש."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-08-tanya-new",
+      "startSeg": 426,
+      "endSeg": 474,
+      "title": { "en": "Koach mah and the son who took nothing", "yi": "כח מ\"ה און דער זון וואס האט גענומען גארנישט" },
+      "summary": {
+        "en": "The Rav laments that today much is imitation and bittul is missing. Returning to the Tanya, he explains that chochmah is 'koach mah', from Moshe Rabbeinu's 'venachnu mah', the highest humility compared with Avraham's 'afar va'efer' and Dovid's 'tola'as'. He tells of Reb Mordechai of Chernobyl's sons, each of whom took one of his father's middos, while the youngest took his 'nothing'.",
+        "yi": "דער משגיח קלאגט אז היינט איז אסאך נאכגעמאכט און עס פעלט די מידה פון ביטול. צוריק צום תניא ערקלערט ער אז חכמה איז \"כח מ\"ה\", פון משה רבינו'ס \"ונחנו מה\", די העכסטע ענוה לגבי אברהם'ס \"עפר ואפר\" און דוד'ס \"תולעת\". ער דערציילט פון ר' מרדכי טשערנאבילער'ס זין, וואס יעדער האט גענומען איין מידה פון טאטן, און דער יונגסטער האט גענומען זיין \"גארנישט\"."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-08-tanya-new",
+      "startSeg": 475,
+      "endSeg": 604,
+      "title": { "en": "The sitra achra: giving in order to get", "yi": "די סטרא אחרא: גיבן כדי צו קריגן" },
+      "summary": {
+        "en": "The Rav reads that the sitra achra is the opposite of bittul: the nations act for themselves even in charity, for honor and a monument. He maps the seven nations of Eretz Yisroel against the seven middos, with Canaan as chesed, and explains from Rashi why a merchant is called a 'Canaani' and why 'socher' means going around in a circle: the grocer gives in order to get back. The chesed of kedushah gives without wanting anything back.",
+        "yi": "דער משגיח לערנט אז די סטרא אחרא איז פארקערט פון ביטול: די אומות טוען פאר זיך אפילו ווען זיי גיבן צדקה, פאר כבוד און פאר א מאנומענט. ער שטעלט די זיבן אומות פון ארץ ישראל קעגן די זיבן מידות, מיט כנען כנגד חסד, און ערקלערט פון רש\"י פארוואס א סוחר הייסט \"כנעני\" און פארוואס \"סוחר\" מיינט ארומגיין ווי א קרייז: דער גראסער גיט כדי צוריקצוקריגן. דער חסד פון קדושה גיט און וויל גארנישט צוריק."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-08-tanya-new",
+      "startSeg": 605,
+      "endSeg": 691,
+      "title": { "en": "L'chaim for Rebbe Reb Zusha's yahrzeit", "yi": "לחיים לכבוד דעם רבי ר' זושא'ס יארצייט" },
+      "summary": {
+        "en": "The Rav notes that it is the yahrzeit of Rebbe Reb Zusha and makes a l'chaim, with an exchange about the drink and about bishul. He tells how Rebbe Reb Zusha's fear of Heaven was so great that a word of kabbalah alone would overwhelm him, and mentions the Chernobyl custom of saying Parshas Haman on the Tuesday of Beshalach.",
+        "yi": "דער משגיח מערקט אן אז היינט איז דער יארצייט פונעם רבי ר' זושא און מאכט א לחיים, מיט א שמועס וועגן דעם משקה און וועגן בישול. ער דערציילט ווי גרויס דער יראת שמים פונעם רבי ר' זושא איז געווען, אז שוין א ווארט פון קבלה האט אים איבערגענומען, און דערמאנט דעם טשערנאבילער מנהג צו זאגן פרשת המן דינסטאג פון פרשת בשלח."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "כח נשמע סודים ... איז אזוי ווי א נער וואס איז וועבן אן אבוקע",
+      "work": "Tanya",
+      "ref": "Tanya ch. 19",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [1, 4, 15, 55, 60], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "וזל כלל בכל סתרה די גדושה שאין אלא מה שנמשך מיוחכמה",
+      "work": "Tanya",
+      "ref": "Tanya ch. 19",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [267, 268, 273, 439, 443], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "והוא העפעך ממש מבחינות הקריפה וסדכי אחרא",
+      "work": "Tanya",
+      "ref": "Tanya ch. 19",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [475, 476, 477], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די ברכה יצר עור עבורי חשך",
+      "work": "Siddur",
+      "ref": "Shacharis, blessing of Yotzer Ohr",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [118, 126, 127], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "חייב אדם לפשמי בפוריה",
+      "work": "Gemara Megillah",
+      "ref": "Megillah 7b",
+      "sefariaRef": "Megillah 7b",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [255], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אין פרשת נח, ווען נח האט געטרינקען וויין ... ווי היטה קרם, וישט, וישקה, ויתגג",
+      "work": "Bereishis",
+      "ref": "Bereishis 9:20-21",
+      "sefariaRef": "Genesis 9:20-21",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [233, 234, 237], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אין מושלי שטעט אסאך לשנות פון גנאי",
+      "work": "Mishlei",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [231], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "וראש משה עניו",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 12:3",
+      "sefariaRef": "Numbers 12:3",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [288], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "משה הבן האט געשריבן ויקרא ... די א' האט ער געשריבן א קליינעם א'",
+      "work": "Vayikra",
+      "ref": "Vayikra 1:1",
+      "sefariaRef": "Leviticus 1:1",
+      "resolution": "resolved",
+      "mention": "alluded",
+      "evidence": { "segs": [348, 349, 352], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ויקרא ווי רשע זאגט, איז וואס איז לשון חיבה",
+      "work": "Rashi",
+      "ref": "Rashi on Vayikra 1:1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [350, 351], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "עג ישאלו חכם וחכמתו, וישאלו גיבור וגבורתו ... כהן בזאת ישאלו המסלל, הזקה וידועה אותו",
+      "work": "Yirmiyahu",
+      "ref": "Yirmiyahu 9:22-23",
+      "sefariaRef": "Jeremiah 9:22-23",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [382, 383, 384, 385], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "כיח מ', פון הלשון ונחנו מ'",
+      "work": "Shemos",
+      "ref": "Shemos 16:7",
+      "sefariaRef": "Exodus 16:7",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [446, 450], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אזא ווי שטענקען מדרש, וואס איז געווייזן דריי הנביאים",
+      "work": "Gemara Chullin",
+      "ref": "Chullin 89a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [446, 447, 451, 452, 455], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אברהם אבינה האט געזאגט וינכי אפה ואפה",
+      "work": "Bereishis",
+      "ref": "Bereishis 18:27",
+      "sefariaRef": "Genesis 18:27",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [451], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "דוד המלך האט געזאגט וינכי תלעת פלי איש",
+      "work": "Tehillim",
+      "ref": "Tehillim 22:7",
+      "sefariaRef": "Psalms 22:7",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [452, 453], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "ושם איש קנאי'ני, זאגט רשע, מיינט א סוחר",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 38:2",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [541, 542, 543], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "סוד נושא סוד התמכה, וחגיה נתנה לכנענו",
+      "work": "Mishlei",
+      "ref": "Mishlei 31:24",
+      "sefariaRef": "Proverbs 31:24",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [545, 546, 549, 550], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "פון לשון אהיהו חיטת אלוקים א פחד",
+      "work": "Bereishis",
+      "ref": "Bereishis 35:5",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [521, 522, 523], "confidence": 0.7 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The soul's longing to dissolve into Hashem is not a reasoned choice but a nature like a flame's, rooted in chochmah, which is above understanding.",
+        "yi": "דער חשק פון דער נשמה בטל צו ווערן אינעם רבונו של עולם איז נישט קיין חשבון נאר א טבע, ווי ביי א פלאם, וואס שטאמט פון חכמה, למעלה מן ההשגה."
+      },
+      "evidence": { "segs": [64, 84, 88, 97], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "There are two kinds of darkness: the absence of light, and a light so intense that it blinds, like staring at the sun; the plague of darkness was the second, from chochmah, which is why the blessing calls darkness 'borei', of the higher world of beriah.",
+        "yi": "ס'זענען דא צוויי סארטן חושך: ווען ס'איז נישטא קיין ליכט, און א ליכט אזוי שטארק אז ס'בלענדט, ווי ווען מ'קוקט אין דער זון; מכת חושך איז געווען דער צווייטער, פון חכמה, דערפאר שטייט ביי חושך \"בורא\", פון דעם העכערן עולם הבריאה."
+      },
+      "evidence": { "segs": [127, 128, 133, 136, 138], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Purim's light of chochmah is so lofty that it is hidden, which is why the day is bound to Esther, from concealment, and to 'yayin hameshumar', which equals Esther in gematria.",
+        "yi": "די ליכטיגקייט פון חכמה פון פורים איז אזוי הויך אז זי איז בהסתרה, דערפאר איז דער טאג פארבונדן מיט אסתר, לשון הסתרה, און מיט \"יין המשומר\", וואס איז בגימטריא אסתר."
+      },
+      "evidence": { "segs": [182, 183, 186, 252, 253], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Walking about with a lowered head and an 'inferiority complex' is not humility but pride: the person wants to be something and resents that he is not. True humility, like Moshe Rabbeinu's, can belong to a king.",
+        "yi": "ארומגיין מיט אן אראפגעלאזטן קאפ און מיט א געפיל פון מינדערווערטיגקייט איז נישט קיין ענוה נאר גאווה: ער וויל עפעס זיין און ס'פארדריסט אים אז ער איז נישט. אמת'ע ענוה, ווי ביי משה רבינו, קען זיין ביי א מלך."
+      },
+      "evidence": { "segs": [298, 301, 302, 304, 313, 314], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "A merchant is called 'socher' from going around in a circle: his giving comes back to him, so the 'chesed' of the sitra achra is really self-interest, unlike the chesed of kedushah, which gives without wanting a return.",
+        "yi": "א סוחר הייסט אזוי פון ארומגיין ווי א קרייז: זיין גיבן קומט צוריק צו אים, ממילא איז דער \"חסד\" פון דער סטרא אחרא באמת פאר זיך, נישט ווי דער חסד פון קדושה וואס גיט און וויל נישט צוריק."
+      },
+      "evidence": { "segs": [556, 561, 567, 581, 589, 600], "confidence": 0.8 }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "The son of Reb Mordechai of Chernobyl who took 'nothing'",
+        "yi": "דער זון פון ר' מרדכי טשערנאבילער וואס האט גענומען \"גארנישט\""
+      },
+      "retelling": {
+        "en": "The Rav tells that Reb Mordechai of Chernobyl had eight sons, and each took over a particular middah of his father: one Torah, one wisdom, one tefillah. The youngest said that he had taken his father's 'nothing', the way his father held himself as nothing, and that what remained for him was 'nothing with nothing'. The Rav concludes that this is the way of tzaddikim.",
+        "yi": "דער משגיח דערציילט אז ר' מרדכי טשערנאבילער האט געהאט אכט זין, און יעדער האט איבערגענומען א געוויסע מידה פון טאטן: איינער תורה, איינער חכמה, איינער תפילה. דער יונגסטער האט געזאגט אז ער האט גענומען דעם \"גארנישט\" פון טאטן, וויאזוי דער טאטע האט זיך געהאלטן פאר גארנישט, און אז פאר אים איז געבליבן \"גארנישט מיט גארנישט\". דער משגיח שליסט אז דאס איז דער דרך פון צדיקים."
+      },
+      "people": ["Rabbi Mordechai of Chernobyl"],
+      "evidence": { "segs": [460, 461, 462, 465, 466, 469], "confidence": 0.75 }
+    },
+    {
+      "title": {
+        "en": "Rebbe Reb Zusha's fear of Heaven",
+        "yi": "דער יראת שמים פונעם רבי ר' זושא"
+      },
+      "retelling": {
+        "en": "For the yahrzeit, the Rav tells about the fear of Heaven of Rebbe Reb Zusha: when one merely mentioned a word of kabbalah to him, such as the word 'sefirah', he would be overcome with fear of Hashem. Someone else remarked that he himself speaks of lofty levels, of keser and Ein Sof, and is not overcome, whereas Rebbe Reb Zusha has true fear of Heaven.",
+        "yi": "לכבוד דעם יארצייט דערציילט דער משגיח וועגן דעם יראת שמים פונעם רבי ר' זושא: ווען מ'האט אים נאר דערמאנט א ווארט פון קבלה, למשל דאס ווארט \"ספירה\", איז ער חלש געווארן פון יראת השם. איינער אנדערש האט געזאגט אז ער רעדט וועגן הויכע מדריגות, וועגן כתר און אין סוף, און ווערט נישט חלש, אבער דער רבי ר' זושא האט אמת'ע יראת שמים."
+      },
+      "people": ["Rebbe Reb Zusha of Anipoli"],
+      "evidence": { "segs": [654, 656, 659, 661, 664, 667], "confidence": 0.65 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why would the soul want to return to Hashem if it will be completely nullified there and gain nothing?",
+        "yi": "פארוואס וויל די נשמה צוריקגיין צום רבונו של עולם, ווען זי וועט דארט אינגאנצן בטל ווערן און גארנישט פארדינען?"
+      },
+      "answer": {
+        "en": "Because this is its nature, like the flame drawn to the torch; it is above reason, stemming from the chochmah of the soul.",
+        "yi": "ווייל דאס איז איר טבע, ווי דער פלאם וואס ציט זיך צו דער אבוקה; עס איז למעלה מן הדעת, פון דער חכמה שבנפש."
+      },
+      "questionSegs": [54, 74, 79],
+      "answerSegs": [64, 84, 88],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why does the blessing use 'borei' for darkness, a higher word than 'yotzer' used for light?",
+        "yi": "פארוואס זאגט די ברכה \"בורא\" ביי חושך, א העכערע לשון ווי \"יוצר\" ביי אור?"
+      },
+      "answer": {
+        "en": "Because there is a darkness that is really a light too great to absorb, from chochmah, and it belongs to beriah, which is above yetzirah.",
+        "yi": "ווייל ס'איז דא א חושך וואס איז באמת א ליכט צו גרויס צו ארייננעמען, פון חכמה, און דאס געהערט צו בריאה, וואס איז העכער ווי יצירה."
+      },
+      "questionSegs": [118, 119, 126],
+      "answerSegs": [127, 129, 133],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Is the wine drunk on Purim not the same wine as all year?",
+        "yi": "איז דער וויין וואס מ'טרינקט פורים נישט דער זעלבער וויין ווי א גאנץ יאר?"
+      },
+      "answer": {
+        "en": "No: just as an esrog, tzitzis or tefillin straps become different once holy names rest on them, the Purim wine carries the name of 'yayin hameshumar', tied to Esther.",
+        "yi": "ניין: אזוי ווי אן אתרוג, ציצית אדער רצועות ווערן אן אנדער זאך ווען שמות הקדושים רוען אויף זיי, טראגט דער וויין פון פורים די בחינה פון \"יין המשומר\", פארבונדן מיט אסתר."
+      },
+      "questionSegs": [187, 188],
+      "answerSegs": [200, 204, 210, 252, 253],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "What is the true meaning of humility, for which Moshe Rabbeinu is praised?",
+        "yi": "וואס איז דער אמת'ער טייטש פון ענוה, וואס משה רבינו ווערט דערמיט געלויבט?"
+      },
+      "answer": {
+        "en": "Not a lowered head or self-pity, but being batel to Hashem; Moshe was a king, yet completely batel.",
+        "yi": "נישט קיין אראפגעלאזטער קאפ און נישט קיין רחמנות אויף זיך, נאר בטל זיין צום רבונו של עולם; משה רבינו איז געווען א מלך און דאך אינגאנצן בטל."
+      },
+      "questionSegs": [288, 289, 290],
+      "answerSegs": [309, 313, 314],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why is a merchant called a 'Canaani', and why does 'socher' mean a merchant?",
+        "yi": "פארוואס הייסט א סוחר א \"כנעני\", און פארוואס מיינט \"סוחר\" א סוחר?"
+      },
+      "answer": {
+        "en": "'Socher' means going around, like a circle that returns to its start: the merchant gives in order to get back, which is the 'chesed' of Canaan, the sitra achra.",
+        "yi": "\"סוחר\" מיינט ארומגיין, ווי א קרייז וואס קומט צוריק צום אנהייב: דער סוחר גיט כדי צוריקצוקריגן, און דאס איז דער \"חסד\" פון כנען, די סטרא אחרא."
+      },
+      "questionSegs": [552, 553],
+      "answerSegs": [556, 561, 567, 581, 586],
+      "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says one must be batel to Hashem, to one's Rebbe, and to a friend, even one smaller than oneself, since even he has middos one lacks.",
+        "yi": "דער משגיח זאגט אז מ'דארף זיין בטל צום רבונו של עולם, צום רבי'ן און צו א חבר, אפילו א חבר וואס איז קלענער, ווייל אפילו ער האט מידות וואס מ'האט נישט."
+      },
+      "evidence": { "segs": [421, 422, 424, 425, 426], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "To receive from a Rebbe, the Rav says, one must feel smaller than him, like a cup held below the spout.",
+        "yi": "כדי מקבל צו זיין פונעם רבי'ן, זאגט דער משגיח, דארף מען זיך פילן קלענער ווי ער, ווי א בעכער וואס ווערט געהאלטן אונטער דעם פלאש."
+      },
+      "evidence": { "segs": [395, 397, 405, 409, 410], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one who knows Shas should not go about boasting of it; one who learns properly, with a measure of lishmah, becomes batel to Hashem.",
+        "yi": "דער משגיח זאגט אז איינער וואס קען ש\"ס זאל זיך נישט בארימען דערמיט; איינער וואס לערנט ווי ס'דארף צו זיין, מיט א מדריגה פון לשמה, ווערט בטל צום רבונו של עולם."
+      },
+      "evidence": { "segs": [358, 359, 360, 363, 364, 365], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "Tanya chapter 19",
+    "bittul as the essence of kedushah",
+    "candle and torch",
+    "plague of darkness and chochmah",
+    "Purim wine",
+    "true humility",
+    "receiving from a Rebbe",
+    "sitra achra and self-interest",
+    "seven nations and seven middos",
+    "Rebbe Reb Zusha"
+  ],
+  "concepts": [
+    { "he": "נר לאבוקה", "heardAs": ["נער וואס איז וועבן אן אבוקע", "דער נעל וואס ווערט באטלט צו די אבוקה"] },
+    { "he": "חכמה שבנפש", "heardAs": ["חכמישה בנפש", "חכמי שבו נפש", "חכמה שבנפת"] },
+    { "he": "אור אין סוף ברוך הוא", "heardAs": ["אור אין סוף ברכה", "ביורען סוף ברכה"] },
+    { "he": "מכת חושך", "heardAs": ["חשך", "די מכה פון חשך"] },
+    { "he": "אור הגנוז", "heardAs": ["אור הגנז"] },
+    { "he": "יין המשומר", "heardAs": ["יענע משומר", "ייין המשמר"] },
+    { "he": "ביטול", "heardAs": ["באטל", "בטל", "באטל לבאטל"] },
+    { "he": "ענוה", "heardAs": ["עניו", "ענרות", "עניבערס", "אנוות"] },
+    { "he": "כח מה", "heardAs": ["כיח מ'"] },
+    { "he": "סטרא אחרא", "heardAs": ["סדכי אחרא", "סדכא אחרא", "צדקה אחרע"] },
+    { "he": "קליפה", "heardAs": ["קריפה", "קריפן"] },
+    { "he": "כנעני", "heardAs": ["קנאי'ני", "כנענו", "קנא נו"] },
+    { "he": "סוחר", "heardAs": ["סוחר", "סחורה"] },
+    { "he": "שמות הקדושים", "heardAs": ["שמות הגדושים", "סגדשים"] }
+  ],
+  "people": [
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו", "משה רביהם"] },
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינה"] },
+    { "name": "Dovid Hamelech", "heardAs": ["דוד המלך"] },
+    { "name": "Noach", "heardAs": ["נח"] },
+    { "name": "Esther", "heardAs": ["אסתר"] },
+    { "name": "Rashi", "heardAs": ["רשע"] },
+    { "name": "the Chasam Sofer", "heardAs": ["חתם סופר"] },
+    { "name": "the Satmar Rav", "heardAs": ["סאטמארער רב זצ״ל", "הקטן יואל"] },
+    { "name": "Rabbi Mordechai of Chernobyl", "heardAs": ["רבי מרדכי טשערנאבילער"] },
+    { "name": "Rebbe Reb Zusha", "heardAs": ["רבי זוסא", "רבי רבי זושא"] }
+  ],
+  "asrNotes": "Yiddish ASR fair for the Rav's own speech; Tanya and passuk quotations are garbled but recoverable from context. Not recovered: the name attached to the wine-cup mashal (seg 398), the work called 'עזר קידוש' cited on the dog's 'hav hav' (segs 492-503), the mapping of the remaining nations after Canaan, Cheis and Emori (segs 516-531), and the start of segment 100-101 (a reference to last week). The closing stretch (segs 605-691) includes cross-talk with listeners about the drink and bishul, and segment 508 is a flagged repeat."
+}

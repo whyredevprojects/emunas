@@ -1,0 +1,29 @@
+{
+  "shiurId": "en-emunah-en-01",
+  "promptVersion": "audit-v1",
+  "auditedAt": "2026-11-15T12:00:00Z",
+  "counts": {
+    "claimsChecked": 24,
+    "unsupported": 0,
+    "hallucinated": 0,
+    "sourcesChecked": 14,
+    "sourceErrors": 1,
+    "sourcesMissed": 0,
+    "boundariesChecked": 4,
+    "boundariesBad": 0,
+    "noiseMishandled": 0,
+    "termsChecked": 14,
+    "termErrors": 0,
+    "termsCopiedGarbled": 0,
+    "yiddishSentencesChecked": 16,
+    "yiddishBadSentences": 5,
+    "yiddishTranslationese": 4,
+    "flowBreaks": 0,
+    "paddingSentences": 0,
+    "contradictsExtraction": 0,
+    "ruleViolations": 0
+  },
+  "severity": "minor",
+  "needsReview": false,
+  "notes": "Claims checked across segs 1-438 all supported, including the Rambam/Ramban reconstruction (segs 151-215, 249) and all resolved psukim; writeup.en[2].paragraphs[1] (and yi[2].paragraphs[1]) names 'Anochi' as a statement (segs 241-245) but sourceIdx [8,9,10] omits sources[4]; stories[0].retelling.yi 'געווען אויסגעשטעלט מיט די ענינים' is an English calque of 'equipped'; writeup.yi[2].paragraphs[1] '\"אנכי\" איז נאר א זאג' renders 'statement' unnaturally; sections[3].summary.yi 'ידיעה וואס מ'קויפט זיך איין' calques 'acquired knowledge'; writeup.yi[3].paragraphs[0] 'א טאטע ... האט נישט קיין קינד וואס ווערט געבוירן מיט דעם' is awkward; takeaways[1].text.yi 'אין גוטן צושטאנד' calques 'good working condition'"
+}

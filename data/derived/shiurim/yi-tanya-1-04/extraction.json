@@ -1,0 +1,507 @@
+{
+  "shiurId": "yi-tanya-1-04",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains the Tanya's teaching that the animal soul of a Jew comes from kelipas nogah, which can be elevated to kedushah, and how all bad middos stem from its four elements: fire, water, air and earth.",
+      "yi": "דער משגיח ערקלערט דעם תניא אז דער נפש הבהמית פון א איד קומט פון קליפת נוגה, וואס מ'קען מעלה זיין צו קדושה, און ווי אזוי אלע מדות רעות קומען פון אירע פיר יסודות: אש, מים, רוח און עפר."
+    },
+    "abstract": {
+      "en": "The Rav reviews the Tanya's opening: every Jew has an animal soul from the side of kelipah, and the four kelipos are the dross of the four letters of Hashem's Name. Three are wholly impure and must be destroyed; the fourth, kelipas nogah, can be transformed, as seen in milah and periah and in the four verbs of the brachah against the wicked. The animal soul of a Jew comes from nogah, so kosher food and natural middos can be raised to kedushah when used for serving Hashem, while a goy's animal soul comes from the three impure kelipos; this is the difference between tzedakah and mere charity. He then goes through the four elements: anger and pride from fire, desire and pleasure from water, frivolity, mockery, boasting and idle talk from air, laziness and sadness from earth, distinguishing sadness from constructive bitterness. He closes with the tree of knowledge of good and evil and the Midrash contrasting olos and shelamim.",
+      "yi": "דער משגיח חזר'ט איבער דעם אנהייב פונעם תניא: יעדער איד האט א נפש הבהמית פון צד הקליפה, און די פיר קליפות זענען די פסולת פון די פיר אותיות פונעם שם הוי\"ה. דריי זענען אינגאנצן טמא און מ'מוז זיי צעברעכן; די פערטע, קליפת נוגה, קען מען מהפך זיין, אזוי ווי מ'זעט ביי מילה און פריעה און אין די פיר לשונות פון דער ברכה פון ולמלשינים. דער נפש הבהמית פון א איד קומט פון נוגה, ממילא קען מען כשר'ע מאכלים און נאטורליכע מדות מעלה זיין צו קדושה ווען מ'נוצט זיי פאר עבודת השם, בשעת א גוי'ס נפש הבהמית קומט פון די שלש קליפות הטמאות; דאס איז דער חילוק צווישן צדקה און סתם טשעריטי. דערנאך גייט ער דורך די פיר יסודות: כעס און גאוה פון אש, תאוות און תענוגים פון מים, הוללות, ליצנות, התפארות און דברים בטלים פון רוח, עצלות און עצבות פון עפר, און ער מאכט א חילוק צווישן עצבות און מרירות. צום סוף ברענגט ער דעם עץ הדעת טוב ורע און דעם מדרש וואס שטעלט אוועק עולות קעגן שלמים."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The four kelipos are the dross of the four letters of Hashem's Name; three are wholly impure and must be broken, while the fourth, kelipas nogah, can be turned to kedushah.",
+          "yi": "די פיר קליפות זענען די פסולת פון די פיר אותיות פונעם שם הוי\"ה; דריי זענען אינגאנצן טמא און מ'מוז זיי צעברעכן, און די פערטע, קליפת נוגה, קען מען איבערדרייען צו קדושה."
+        },
+        "evidence": { "segs": [26, 27, 28, 56, 94], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The animal soul of a Jew comes from kelipas nogah, while that of a goy comes from the three impure kelipos.",
+          "yi": "דער נפש הבהמית פון א איד קומט פון קליפת נוגה, און דער פון א גוי קומט פון די שלש קליפות הטמאות."
+        },
+        "evidence": { "segs": [132, 133, 134], "confidence": 0.9 }
+      },
+      {
+        "text": {
+          "en": "Kosher food eaten for the sake of Heaven, with its strength used for Torah, tefilah and mitzvos, is elevated to kedushah, each according to his level.",
+          "yi": "כשר'ע עסן וואס מ'עסט לשם שמים, און מ'נוצט דעם כח דערפון פאר תורה, תפילה און מצוות, ווערט מעלה געווען צו קדושה, יעדער לויט זיין מדריגה."
+        },
+        "evidence": { "segs": [96, 98, 99, 156, 157, 162], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "All bad middos come from the four elements: anger and pride from fire, desires from water, frivolity, mockery, boasting and idle talk from air, laziness and sadness from earth.",
+          "yi": "אלע מדות רעות קומען פון די פיר יסודות: כעס און גאוה פון אש, תאוות פון מים, הוללות, ליצנות, התפארות און דברים בטלים פון רוח, עצלות און עצבות פון עפר."
+        },
+        "evidence": { "segs": [276, 281, 394, 421, 509, 513], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Sadness is not a mitzvah and leads to sin, whereas bitterness over one's state stirs a person to act.",
+          "yi": "עצבות איז נישט קיין מצוה און ברענגט צו עבירות, בשעת מרירות אויף זיך אליין וועקט א מענטש אויף צו טאן."
+        },
+        "evidence": { "segs": [535, 538, 565, 568, 590], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "A goy can bring only an olah, which is wholly burned, while a Jew can bring a shelamim whose eating is part of the offering, because a Jew can eat for the sake of Heaven.",
+          "yi": "א גוי קען נאר ברענגען א עולה וואס ווערט אינגאנצן פארברענט, און א איד קען ברענגען א שלמים וואס די אכילה איז א טייל פונעם קרבן, ווייל א איד קען עסן לשם שמים."
+        },
+        "evidence": { "segs": [669, 670, 673, 674, 681, 689], "confidence": 0.85 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-tanya-02-2-tanya",
+      "startSeg": 0,
+      "endSeg": 43,
+      "title": { "en": "Review: the animal soul and the four kelipos", "yi": "חזרה: דער נפש הבהמית און די פיר קליפות" },
+      "summary": {
+        "en": "After a request to keep up with the series on tape, the Rav reviews the Tanya's words that every Jew has an animal soul from kelipah, from which all bad middos come, and that the four kelipos are the dross of the four letters of Hashem's Name, from which the four elements of all creation come.",
+        "yi": "נאך א בקשה אז מ'זאל נאכהערן אויפן טייפ ווען מ'פארפעלט, חזר'ט דער משגיח איבער דעם תניא אז יעדער איד האט א נפש הבהמית פון קליפה פון וואנען עס קומען אלע מדות רעות, און אז די פיר קליפות זענען די פסולת פון די פיר אותיות פונעם שם הוי\"ה, פון וואנען די פיר יסודות פון דער גאנצער בריאה קומען."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-02-2-tanya",
+      "startSeg": 44,
+      "endSeg": 116,
+      "title": { "en": "Three impure kelipos and kelipas nogah", "yi": "דריי קליפות הטמאות און קליפת נוגה" },
+      "summary": {
+        "en": "The Rav explains that the first three kelipos are wholly impure and must be cut away, like the layers removed at milah, while nogah, like periah, is turned upward, and he finds the same four in the verbs of the brachah against the wicked in Nusach Ari. Forbidden food comes from the three, kosher food from nogah, and nogah is translucent; the four kelipos appear in Yechezkel's vision in chapter one.",
+        "yi": "דער משגיח ערקלערט אז די ערשטע דריי קליפות זענען אינגאנצן טמא און מ'מוז זיי אפשניידן אזוי ווי ביי מילה, און נוגה איז ווי פריעה וואס מ'דרייט ארויף, און ער געפינט די זעלבע פיר אין די לשונות פון דער ברכה פון ולמלשינים אין נוסח ארי. מאכלות אסורות קומען פון די דריי, כשר'ע מאכלים פון נוגה, און נוגה לאזט דורכשיינען; די פיר קליפות שטייען אין דעם ערשטן פרק פון יחזקאל."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-02-2-tanya",
+      "startSeg": 117,
+      "endSeg": 184,
+      "title": { "en": "A Jew's animal soul and elevating food", "yi": "דער נפש הבהמית פון א איד און מעלה זיין דאס עסן" },
+      "summary": {
+        "en": "The Rav explains that the animal soul is the life force a person shares with all creatures, distinct from the breath of life Hashem blew into Adam. A Jew's animal soul comes from nogah and a goy's from the three impure kelipos, and with the example of a piece of kosher chicken he shows how the same food is dragged down or raised to kedushah depending on how it is eaten and used.",
+        "yi": "דער משגיח ערקלערט אז דער נפש הבהמית איז דער כח החיים וואס א מענטש האט בשותפות מיט אלע בעלי חיים, נישט די נשמת חיים וואס דער אייבערשטער האט אריינגעבלאזן אין אדם. דער נפש הבהמית פון א איד קומט פון נוגה און פון א גוי פון די שלש קליפות הטמאות, און מיט א משל פון א שטיקל כשר'ע הון ווייזט ער ווי אזוי דאס זעלבע עסן ווערט אראפגעשלעפט אדער מעלה געווען צו קדושה, לויט ווי מ'עסט עס און וואס מ'טוט מיט דעם כח."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-02-2-tanya",
+      "startSeg": 185,
+      "endSeg": 270,
+      "title": { "en": "Natural middos: tzedakah versus charity", "yi": "נאטורליכע מדות: צדקה קעגן טשעריטי" },
+      "summary": {
+        "en": "The Rav shows that a person's natural middos, such as a love of giving, come from the animal soul; used for Heaven they are raised from nogah, used for evil they fall to the sitra achra. He distinguishes a Jew's tzedakah from a goy's charity, which is the animal kindness every creature has and is done for oneself, citing the Gemara that the kindness of the nations is a sin.",
+        "yi": "דער משגיח ווייזט אז א מענטשנס נאטורליכע מדות, ווי ליב האבן צו געבן, קומען פונעם נפש הבהמית; מ'נוצט זיי לשם שמים ווערן זיי מעלה געווען פון נוגה, מ'נוצט זיי צום שלעכטס פאלן זיי אריין אין די סטרא אחרא. ער מאכט א חילוק צווישן א אידס צדקה און א גוי'ס טשעריטי, וואס איז די בהמה'שע מדת החסד וואס יעדע באשעפעניש האט און מ'טוט עס פאר זיך אליין, און ער ברענגט די גמרא אז חסד לאומים חטאת."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-02-2-tanya",
+      "startSeg": 271,
+      "endSeg": 379,
+      "title": { "en": "Fire: the source of anger and pride", "yi": "אש: דער מקור פון כעס און גאוה" },
+      "summary": {
+        "en": "The Rav reads the Tanya that all bad middos come from the four elements, beginning with anger and pride from fire. Every object holds all four elements, as burning wood shows, which he compares to modern science's matter and energy. Fire rises because its root is in the moon, which he says is why bedikas chametz is done at night.",
+        "yi": "דער משגיח לערנט דעם תניא אז אלע מדות רעות קומען פון די פיר יסודות, און הייבט אן מיט כעס און גאוה פון אש. יעדע זאך האט אין זיך אלע פיר יסודות, אזוי ווי מ'זעט ביי א ברענענדיג שטיק האלץ, און ער פארגלייכט עס מיט דעם וואס די היינטיגע וויסנשאפט זאגט וועגן מאטעריע און ענערגיע. אש הייבט זיך ארויף ווייל איר שורש איז אין דער לבנה, און דערפאר, זאגט ער, איז בדיקת חמץ ביינאכט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-02-2-tanya",
+      "startSeg": 380,
+      "endSeg": 473,
+      "title": { "en": "Water and air: desire, frivolity, mockery", "yi": "מים און רוח: תאוה, הוללות, ליצנות" },
+      "summary": {
+        "en": "The Rav explains that desire and pleasure come from water, the first element, linked to chesed and to the first of the seven voices; all pleasure and all life involve water, and water draws and attracts. From air come frivolity and mockery: wild music that releases a person from all restraint, and jokes, whose humor lies in their distance from reality.",
+        "yi": "דער משגיח ערקלערט אז תאוה און תענוגים קומען פון מים, דער ערשטער יסוד, וואס איז פארבונדן מיט חסד און מיטן ערשטן פון די זיבן קולות; אלע תענוגים און אלע לעבן נעמען זיך מיט מים, און מים ציט צו. פון רוח קומען הוללות און ליצנות: ווילדע מוזיק וואס באפרייט א מענטש פון יעדן געדרונג, און וויצן, וואס דער גאנצער שפאס איז ווי ווייט זיי זענען פון דער מציאות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-02-2-tanya",
+      "startSeg": 474,
+      "endSeg": 601,
+      "title": { "en": "Boasting, idle talk, and earth: sadness versus bitterness", "yi": "התפארות, דברים בטלים, און עפר: עצבות קעגן מרירות" },
+      "summary": {
+        "en": "The Rav describes boasting and idle talk as hollow air, with the picture of an honoree at a charity banquet. From earth come laziness and sadness, which leave a person lying idle; he contrasts sadness with bitterness that drives a person to act, brings a saying of Reb Aharon of Karlin, and shows from the Gemara and Rashi that sadness is never a mitzvah.",
+        "yi": "דער משגיח שילדערט התפארות און דברים בטלים אלס פוסטע רוח, מיט א בילד פון איינעם וואס מ'כבד'ט אים ביי א צדקה סעודה. פון עפר קומען עצלות און עצבות, וואס לאזן א מענטש ליגן און גארנישט טאן; ער שטעלט אוועק עצבות קעגן מרירות וואס טרייבט א מענטש צו טאן, ברענגט א ווארט פון ר' אהרן קארלינער, און ווייזט פון דער גמרא און רש\"י אז עצבות איז קיינמאל נישט קיין מצוה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-02-2-tanya",
+      "startSeg": 602,
+      "endSeg": 714,
+      "title": { "en": "Good middos, the tree of knowledge, olah and shelamim", "yi": "גוטע מדות, עץ הדעת, עולה און שלמים" },
+      "summary": {
+        "en": "The Rav reads that even a Jew's inborn good middos, like mercy and kindness, come from the body and so from kelipas nogah, which holds good, as the secret of the tree of knowledge of good and evil. He brings the Midrash on 'awake, north, and come, south': the nations bring olos slaughtered in the north, Jews bring shelamim that are eaten, because only a Jew can eat for the sake of Heaven, apart from the few chasidei umos haolam who keep the seven mitzvos as the Rambam rules.",
+        "yi": "דער משגיח לערנט אז אפילו א אידס געבוירענע גוטע מדות, ווי רחמנות און גמילות חסדים, קומען פונעם גוף און ממילא פון קליפת נוגה, וואס האט אין זיך גוטס, אזוי ווי דער סוד פון עץ הדעת טוב ורע. ער ברענגט דעם מדרש אויף \"עורי צפון ובואי תימן\": די אומות העולם ברענגען עולות וואס מ'שחט'ן בצפון, אידן ברענגען שלמים וואס מ'עסט, ווייל נאר א איד קען עסן לשם שמים, אויסער די ווייניגע חסידי אומות העולם וואס היטן די שבע מצוות ווי דער רמב\"ם פסק'נט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "נשמות ... נפש אחת, מסדר קליפה",
+      "work": "Tanya",
+      "ref": "Tanya ch. 1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [20, 23, 24], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "וואלון עשינים ... יקירת השבט, ואתמגר ואתחניה",
+      "work": "Siddur (Nusach Ari)",
+      "ref": "Shemoneh Esrei, brachah of Velamalshinim",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [77, 78, 83, 85, 86], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דעם ערשטן פרק פון יחזקאל",
+      "work": "Yechezkel",
+      "ref": "Yechezkel ch. 1",
+      "sefariaRef": "Ezekiel 1",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [110, 112, 113, 115], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "ויפך פאפף נשמת חיים",
+      "work": "Bereishis",
+      "ref": "Bereishis 2:7",
+      "sefariaRef": "Genesis 2:7",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [121, 122], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "דער גמרא זאגט ... חסיד ליום ומחטא",
+      "work": "Gemara Bava Basra",
+      "ref": "Bava Basra 10b",
+      "sefariaRef": "Bava Batra 10b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [224, 225, 227, 229], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "באות כל עמודות רעות, מייבער יסודות רעות ... כעס וגייבער מייסודו אש",
+      "work": "Tanya",
+      "ref": "Tanya ch. 1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [276, 278, 281, 284], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "די פסק'נעס זאגן",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [363, 364, 366], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ותיבה וצנגים מיוסד המים ... כי המים מצמירתם כל מנהיג תינוק",
+      "work": "Tanya",
+      "ref": "Tanya ch. 1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [380, 381, 394, 396], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "קול השם על המים",
+      "work": "Tehillim",
+      "ref": "Tehillim 29:3",
+      "sefariaRef": "Psalms 29:3",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [389, 390, 391], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "פאר הללות, פאר ליצנות, פאר ספרים, פאר דברים בציילים",
+      "work": "Tanya",
+      "ref": "Tanya ch. 1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [421, 474, 502, 509], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ויצלות ויצפות, מי יסוד האפעל",
+      "work": "Tanya",
+      "ref": "Tanya ch. 1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [510, 511, 512, 513], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "ר' אהרן קארלינא, דער גרויסער ר' אהרן, האט געזאגט",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [558, 559, 564, 565], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "מזעהת אזא ודגמרא און סוכה",
+      "work": "Gemara Sukkah",
+      "ref": "Sukkah 25b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [579, 580, 581, 587, 589], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "רשע זאגט דאס בפירוש",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [583, 590], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "מידות טובה שבטבה כל ישראל בתולדותם כמרחמנות וגמלות חסדים",
+      "work": "Tanya",
+      "ref": "Tanya ch. 1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [605, 606, 607, 608], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "כיבוד ישראל נפש זאטה קליפה, האמי קליפת נוגע ... עצא דעת טוב ורא",
+      "work": "Tanya",
+      "ref": "Tanya ch. 1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [617, 619, 620, 621], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "שור השיעורים ארי צפון אבי סימן",
+      "work": "Shir Hashirim",
+      "ref": "Shir Hashirim 4:16",
+      "sefariaRef": "Song of Songs 4:16",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [646, 647, 650, 651], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אין מדרש שטעט ... זאגט דער מדרש",
+      "work": "Shir Hashirim Rabbah",
+      "ref": "Shir Hashirim Rabbah on 4:16",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [645, 654, 655, 656, 677], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "חסידי אמות העולם מיט די רמב״ם פסקנ''ט",
+      "work": "Rambam, Mishneh Torah",
+      "ref": "Rambam, Hilchos Melachim 8:11",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [703, 704, 705, 706], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The four verbs of the Nusach Ari brachah against the wicked match the four kelipos: three call for uprooting and breaking, the impure kelipos, while the last, subduing, fits nogah, which is not destroyed but turned to the good.",
+        "yi": "די פיר לשונות פון דער ברכה פון ולמלשינים אין נוסח ארי שטימען מיט די פיר קליפות: דריי רעדן פון אויסווארצלען און צעברעכן, די קליפות הטמאות, און די לעצטע, הכנעה, פאסט פאר נוגה, וואס מ'צעשטערט נישט נאר מ'דרייט עס איבער צום גוטן."
+      },
+      "evidence": { "segs": [77, 83, 85, 86, 87], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Milah and periah mirror the kelipos: the layers cut away entirely are the three impure kelipos, while periah, which is not cut off but drawn back upward, is kelipas nogah turned toward the holy.",
+        "yi": "מילה און פריעה שפיגלען אפ די קליפות: די הייטלעך וואס מ'שניידט אינגאנצן אפ זענען די דריי קליפות הטמאות, און פריעה, וואס מ'שניידט נישט אפ נאר מ'ציט ארויף, איז קליפת נוגה וואס ווערט איבערגעדרייט צו קדושה."
+      },
+      "evidence": { "segs": [57, 58, 60, 63, 68, 73], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "A goy's charity differs from a Jew's tzedakah not in the act but in its root: it is the animal kindness even predators show their young, exercised to satisfy oneself, while a Jew's mercy, even without conscious intent, comes from the side of kedushah.",
+        "yi": "א גוי'ס טשעריטי איז אנדערש פון א אידס צדקה נישט אין דער מעשה נאר אין איר שורש: עס איז די בהמה'שע מדת החסד וואס אפילו ווילדע חיות האבן צו זייערע קינדער, און מ'טוט עס כדי זיך צופרידן צו שטעלן, בשעת א אידס רחמנות, אפילו אן באוואוסטזיניגקייט, קומט פון צד הקדושה."
+      },
+      "evidence": { "segs": [213, 216, 217, 254, 257, 262], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Fire's root is in the moon, which is why fire rises and burns better at night, under the moon's rule; the Rav gives this as the reason the poskim require bedikas chametz at night.",
+        "yi": "דער שורש פון אש איז אין דער לבנה, דערפאר הייבט זיך אש ארויף און ברענט בעסער ביינאכט ווען ס'איז ממשלת הלבנה; דאס גיט דער משגיח אלס טעם פארוואס די פוסקים פארלאנגען בדיקת חמץ ביינאכט."
+      },
+      "evidence": { "segs": [338, 340, 364, 372, 373, 375], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Mockery is rooted in emptiness: a joke amuses in proportion to how far its statement is from reality, which is why leitzanus belongs to the element of air.",
+        "yi": "ליצנות שטאמט פון פוסטקייט: א וויץ איז אזוי שפאסיג ווי ווייט זיין זאג איז פון דער מציאות, און דערפאר געהערט ליצנות צום יסוד הרוח."
+      },
+      "evidence": { "segs": [463, 465, 466, 467, 468, 469], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "Sadness is a cousin of pride: it comes from a person feeling he ought to be something and is not, while true bitterness, like bitter herbs that stimulate the appetite, drives him to learn and daven.",
+        "yi": "עצבות איז א קרוב פון גאוה: עס קומט פון דעם וואס א מענטש מיינט אז ער דארף זיין עפעס און ער איז נישט, בשעת אמת'ע מרירות, ווי ביטערע גרינצן וואס עפענען דעם אפעטיט, טרייבט אים צו לערנען און דאווענען."
+      },
+      "evidence": { "segs": [535, 541, 544, 553, 554], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The difference between olah and shelamim reflects the two kinds of animal soul: a goy can sacrifice something wholly to Hashem, but only a Jew can make his eating itself part of the offering, since only his animal soul, from nogah, can be turned to kedushah.",
+        "yi": "דער חילוק צווישן עולה און שלמים שפיגלט אפ די צוויי סארטן נפש הבהמית: א גוי קען מקריב זיין עפעס אינגאנצן פארן אייבערשטן, אבער נאר א איד קען מאכן זיין עסן אליין א טייל פונעם קרבן, ווייל נאר זיין נפש הבהמית, פון נוגה, קען ווערן נתהפך צו קדושה."
+      },
+      "evidence": { "segs": [674, 681, 682, 689, 690, 695], "confidence": 0.8 }
+    }
+  ],
+  "stories": [],
+  "questions": [
+    {
+      "question": { "en": "What is the difference between a goy's charity and a Jew's tzedakah?", "yi": "וואס איז דער חילוק צווישן א גוי'ס טשעריטי און א אידס צדקה?" },
+      "answer": {
+        "en": "A goy's charity comes from the animal kindness every creature has and from the three impure kelipos, done for his own satisfaction; a Jew's mercy comes from kelipas nogah and the side of kedushah.",
+        "yi": "א גוי'ס טשעריטי קומט פון דער בהמה'שער מדת החסד וואס יעדע באשעפעניש האט און פון די שלש קליפות הטמאות, און מ'טוט עס פאר זיך אליין; א אידס רחמנות קומט פון קליפת נוגה און פון צד הקדושה."
+      },
+      "questionSegs": [209, 211],
+      "answerSegs": [213, 255, 257, 262, 263],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why must bedikas chametz be done at night and not during the day?", "yi": "פארוואס דארף מען בודק זיין חמץ ביינאכט און נישט ביי טאג?" },
+      "answer": {
+        "en": "Because fire comes from the moon and burns better at night, under the moon's rule, so the candle searches better then.",
+        "yi": "ווייל אש קומט פון דער לבנה און ברענט בעסער ביינאכט ווען ס'איז ממשלת הלבנה, ממילא זוכט די ליכט דעמאלט בעסער."
+      },
+      "questionSegs": [363, 364, 365],
+      "answerSegs": [372, 373, 375, 376],
+      "confidence": 0.7
+    },
+    {
+      "question": { "en": "What is the difference between sadness and bitterness?", "yi": "וואס איז דער חילוק צווישן עצבות און מרירות?" },
+      "answer": {
+        "en": "Sadness makes a person lie down and do nothing; bitterness over his state stimulates him to act, to learn and to daven.",
+        "yi": "עצבות לייגט א מענטש אוועק אין בעט און ער טוט גארנישט; מרירות אויף זיין מצב וועקט אים אויף צו טאן, צו לערנען און צו דאווענען."
+      },
+      "questionSegs": [532],
+      "answerSegs": [533, 535, 538, 539],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "What is the difference between an olah and a shelamim?", "yi": "וואס איז דער חילוק צווישן א עולה און א שלמים?" },
+      "answer": {
+        "en": "An olah is wholly burned for Hashem, while a shelamim is eaten and the eating itself is part of the offering.",
+        "yi": "א עולה ווערט אינגאנצן פארברענט פארן אייבערשטן, און א שלמים עסט מען, און די אכילה אליין איז א טייל פונעם קרבן."
+      },
+      "questionSegs": [671],
+      "answerSegs": [672, 673, 674],
+      "confidence": 0.85
+    },
+    {
+      "question": { "en": "If a goy's animal soul has no link to kedushah, how do chasidei umos haolam have a share in the World to Come?", "yi": "אויב א גוי'ס נפש הבהמית האט נישט קיין שייכות מיט קדושה, ווי אזוי האבן חסידי אומות העולם א חלק לעולם הבא?" },
+      "answer": {
+        "en": "They are the rare exception who do have a connection to kelipas nogah, because they keep the seven mitzvos as given through Moshe Rabbeinu, not because they are nice people.",
+        "yi": "זיי זענען די זעלטענע אויסנאמען וואס האבן יא א שייכות מיט קליפת נוגה, ווייל זיי היטן די שבע מצוות ווייל זיי זענען געגעבן געווארן דורך משה רבינו, נישט ווייל זיי זענען פיינע מענטשן."
+      },
+      "questionSegs": [709, 710],
+      "answerSegs": [700, 704, 705, 706],
+      "confidence": 0.7
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says a Jew should eat, drink and sleep for the sake of Heaven and use the strength from his food for Torah, tefilah and mitzvos, which raises the food to kedushah.",
+        "yi": "דער משגיח זאגט אז א איד זאל עסן, טרינקען און שלאפן לשם שמים און נוצן דעם כח פונעם עסן פאר תורה, תפילה און מצוות, און דערמיט הייבט ער אויף דאס עסן צו קדושה."
+      },
+      "evidence": { "segs": [98, 135, 136, 137, 157], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "According to the Rav, making a brachah with kavanah elevates the food far more than a plain brachah.",
+        "yi": "לויט דעם משגיח הייבט א ברכה מיט כוונה אויף דאס עסן אסאך מער ווי א פשוט'ע ברכה."
+      },
+      "evidence": { "segs": [163, 167, 168], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav teaches that regret over one's sins should take the form of bitterness that spurs action, learning and davening, not of sadness that leaves one lying idle.",
+        "yi": "דער משגיח לערנט אז חרטה אויף עבירות דארף זיין אין דעם אופן פון מרירות וואס טרייבט צו טאן, צו לערנען און צו דאווענען, און נישט פון עצבות וואס לאזט א מענטש ליגן."
+      },
+      "evidence": { "segs": [528, 530, 535, 536, 537], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "Tanya chapter 1",
+    "kelipas nogah",
+    "animal soul",
+    "four elements and bad middos",
+    "eating for the sake of Heaven",
+    "tzedakah versus charity",
+    "sadness versus bitterness",
+    "mockery and frivolity",
+    "olah and shelamim",
+    "chasidei umos haolam"
+  ],
+  "concepts": [
+    { "he": "קליפת נוגה", "heardAs": ["קליפת נוגע", "קריפת נוגע", "כלי פתנוגה", "תליפת נוגע"] },
+    { "he": "שלש קליפות הטמאות", "heardAs": ["שולש קליפות עצמיות", "שולש כליפות עצמיות", "שולש קריפת הצמאות", "ארבע כליפי סצמיות"] },
+    { "he": "נפש הבהמית", "heardAs": ["נפש הבאלנות", "נפש הבאמת", "נפש הבעמות", "נפש הבארנעס", "נפש הבענות"] },
+    { "he": "נפש האלקית", "heardAs": ["נפש האלקיץ"] },
+    { "he": "שם הוי\"ה", "heardAs": ["שם הבעיה"] },
+    { "he": "ארבע יסודות", "heardAs": ["ארבע יסודות", "יסודות רעות"] },
+    { "he": "מדות רעות", "heardAs": ["עמודות רעות"] },
+    { "he": "שבירת הכלים", "heardAs": ["שפירת הכלים"] },
+    { "he": "פריעה", "heardAs": ["אוהל הפריעה", "פריעה"] },
+    { "he": "סטרא אחרא", "heardAs": ["סדכא אחתא", "סדכי אחר", "סוד פאר אחרו"] },
+    { "he": "הוללות", "heardAs": ["הללות", "הוילעלעס"] },
+    { "he": "ליצנות", "heardAs": ["ליצנות", "ליצענעס"] },
+    { "he": "התפארות", "heardAs": ["הספרת", "ספרים"] },
+    { "he": "דברים בטלים", "heardAs": ["דברים בציילים", "דברים בתלעה"] },
+    { "he": "עצלות ועצבות", "heardAs": ["ויצלות ויצפות", "אצלות און עצות", "בייצפות"] },
+    { "he": "מרירות", "heardAs": ["מרורות", "מערירות"] },
+    { "he": "עץ הדעת טוב ורע", "heardAs": ["עצא דעת טוב ורא", "נצח דעת טובה רע"] },
+    { "he": "חסידי אומות העולם", "heardAs": ["חסידי אמות העולם", "חסיד ימים את העולם"] },
+    { "he": "עולה ושלמים", "heardAs": ["נולה", "שלמה", "שלומים"] }
+  ],
+  "people": [
+    { "name": "Yechezkel", "heardAs": ["יחזקאל"] },
+    { "name": "Reb Aharon of Karlin", "heardAs": ["ר' אהרן קארלינא"] },
+    { "name": "Rashi", "heardAs": ["רשע"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו"] }
+  ],
+  "asrNotes": "Yiddish ASR fair for the Rav's explanations but poor on quoted Tanya and liturgical text, which was recovered from the perek and context. The opening Tanya quotation (segs 17-22), the second half of Reb Aharon of Karlin's saying (segs 559-564) and the halachic details about the chasan and the mourner (segs 580-589) are only partly recoverable. The Rav mixes English words into the Yiddish, which the ASR renders phonetically."
+}

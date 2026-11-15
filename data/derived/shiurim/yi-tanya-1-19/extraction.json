@@ -1,0 +1,684 @@
+{
+  "shiurId": "yi-tanya-1-19",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains why the body, food and worldly matters of a Jew, which come from klipas nogah, can be turned to holiness, while what comes from the three wholly impure klipos cannot.",
+      "yi": "דער משגיח ערקלערט פארוואס דער גוף, די מאכלים און די גשמיות'דיגע ענינים פון א איד, וואס קומען פון קליפת נוגה, קענען זיך איבערדרייען צו קדושה, משא\"כ וואס קומט פון די שלש קליפות הטמאות קען נישט."
+    },
+    "abstract": {
+      "en": "The Rav opens with the haftarah of Shavuos, where Yechezkel passes through four layers before the vision; the letter vav before 'nogah' marks it as a different kind of klipah, like the edible fourth peel of a nut. From the Tanya he explains that the body and animal soul of a gentile come from the three impure klipos, which cannot be elevated, while a Jew's body and kosher food come from nogah, which can; this is why only olos are accepted from gentiles. The inanimate world is not listed among the impure klipos because earth is batel to Hashem, as shown by the Girgashi and by Avraham's dust on erev Pesach. He then shows that the psak of the chachamim decides whether a thing falls into the impure klipos, and that even reality follows the Torah's psak. Finally, from Tanya ch. 7, he explains that eating, business, a joke or a vacation done for the sake of Heaven are raised to holiness.",
+      "yi": "דער משגיח עפנט מיט דער הפטרה פון שבועות, וואו יחזקאל גייט דורך פיר מחיצות; דער וא\"ו פאר \"נוגה\" ווייזט אז דאס איז אן אנדער סארט קליפה, אזוי ווי די פערטע שאלעכץ פון א נוס וואס מ'עסט מיט. לויט'ן תניא ערקלערט ער אז דער גוף און די נפש הבהמית פון א גוי קומען פון די שלש קליפות הטמאות, וואס מ'קען נישט מהפך זיין, אבער דער גוף און די כשר'ע מאכלים פון א איד קומען פון נוגה, וואס מ'קען יא; דערפאר נעמט מען פון א גוי נאר עולות. דומם ווערט נישט דערמאנט ביי די טמא'ע קליפות, ווייל עפר איז בטל צום אייבערשטן, אזוי ווי מ'זעט ביים גרגשי און ביים עפר פון אברהם אבינו ערב פסח. דערנאך ווייזט ער אז דער פסק פון די חכמים באשטימט צי א זאך פאלט אריין אין די קליפות הטמאות, און אפילו די מציאות גייט לויט'ן פסק פון דער תורה. צום סוף, לויט תניא פרק ז, ערקלערט ער אז עסן, ביזנעס, א גלייכווערטל אדער א וואקאציע לשם שמים ווערן אויפגעהויבן צו קדושה."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Klipas nogah differs in kind from the three wholly impure klipos: what comes from it can be turned to good, while the three klipos cannot.",
+          "yi": "קליפת נוגה איז אן אנדער סארט ווי די שלש קליפות הטמאות: וואס קומט פון איר קען מען מהפך זיין לטוב, די שלש קליפות נישט."
+        },
+        "evidence": { "segs": [44, 45, 130, 131, 132], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "A gentile's body and animal soul come from the three impure klipos, so he can bring only an olah, while a Jew can eat meat for the sake of Heaven and bring shelamim.",
+          "yi": "דער גוף און די נפש הבהמית פון א גוי קומען פון די שלש קליפות הטמאות, דערפאר קען ער נאר ברענגען אן עולה, בשעת א איד קען עסן פלייש לשם שמים און ברענגען שלמים."
+        },
+        "evidence": { "segs": [55, 58, 59, 142, 145], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The inanimate is not counted among the three impure klipos, because earth, the level of malchus, is batel to Hashem.",
+          "yi": "דומם ווערט נישט גערעכנט ביי די שלש קליפות הטמאות, ווייל עפר, די בחינה פון מלכות, איז בטל צום רבונו של עולם."
+        },
+        "evidence": { "segs": [200, 202, 205, 208, 215], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Whether something falls into the impure klipos depends on how the chachamim rule, and even physical reality follows the Torah's psak.",
+          "yi": "צי א זאך פאלט אריין אין די קליפות הטמאות הענגט אפ ווי די חכמים פסק'נען, און אפילו די מציאות גייט לויט'ן פסק פון דער תורה."
+        },
+        "evidence": { "segs": [322, 325, 376, 379, 433, 468], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Permitted worldly acts such as eating, business or sleep become holiness when done for the sake of Heaven, and otherwise are no better than the animal soul itself.",
+          "yi": "ענינים פון רשות, ווי עסן, ביזנעס אדער שלאפן, ווערן קדושה ווען מ'טוט זיי לשם שמים, און אויב נישט, זענען זיי נישט בעסער ווי די נפש הבהמית אליין."
+        },
+        "evidence": { "segs": [524, 545, 548, 550], "confidence": 0.85 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-tanya-10-1-tanya",
+      "startSeg": 0,
+      "endSeg": 110,
+      "title": {
+        "en": "The four klipos and the vav before nogah",
+        "yi": "די פיר קליפות און דער וא\"ו פאר נוגה"
+      },
+      "summary": {
+        "en": "The Rav opens with Yechezkel's vision from the Shavuos haftarah and the four layers he passes through, compares them to the four peels of a nut, and explains that nogah alone can be turned to holiness. He shows this with the rule that only olos are accepted from gentiles, the Midrash about the chazir in the future, and the nesachim the Jews prepared from the meraglim's fruit.",
+        "yi": "דער משגיח עפנט מיט דעם מראה פון יחזקאל אין דער הפטרה פון שבועות און די פיר מחיצות וואס ער גייט דורך, גלייכט זיי צו די פיר שאלעכצן פון א נוס, און ערקלערט אז נאר נוגה קען מען מהפך זיין לקדושה. ער ווייזט דאס פון דעם וואס מ'נעמט פון גוים נאר עולות, פונעם מדרש אויף דעם חזיר לעתיד לבוא, און פון די נסכים פון די פירות פון די מרגלים."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-10-1-tanya",
+      "startSeg": 111,
+      "endSeg": 194,
+      "title": {
+        "en": "Tanya ch. 6: the two levels of klipah",
+        "yi": "תניא פרק ו: די צוויי מדריגות פון קליפה"
+      },
+      "summary": {
+        "en": "The Rav compares nogah to the priah of a bris, which is not cut off but folded back, then reads the Tanya on the two levels of klipah. He explains that the souls of gentiles and forbidden foods from the inanimate, plants and animals come from the three impure klipos, while a Jew's body, kosher food and permitted matters like business and health come from nogah.",
+        "yi": "דער משגיח גלייכט נוגה צו דער פריעה ביי מילה, וואס מ'שניידט נישט אראפ נאר מ'ציט עס צוריק, און לערנט דערנאך דעם תניא וועגן די צוויי מדריגות פון קליפה. ער ערקלערט אז די נפשות פון די גוים און מאכלות אסורות פון צומח און חי קומען פון די שלש קליפות הטמאות, בשעת דער גוף פון א איד, כשר'ע מאכלים און ענינים פון רשות ווי ביזנעס און געזונט קומען פון נוגה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-10-1-tanya",
+      "startSeg": 195,
+      "endSeg": 255,
+      "title": {
+        "en": "Why the inanimate is not in the impure klipos",
+        "yi": "פארוואס דומם איז נישט אין די קליפות הטמאות"
+      },
+      "summary": {
+        "en": "The Rav notes that the Tanya lists plants, animals and people among the three impure klipos but not the inanimate. He explains that the inanimate is malchus, earth, which is batel to Hashem, as Avraham called himself dust and ashes, and that the Girgashi, the nation opposite malchus, left the land on its own.",
+        "yi": "דער משגיח מערקט אן אז דער תניא רעכנט צומח, חי און מדבר ביי די שלש קליפות הטמאות, אבער נישט דומם. ער ערקלערט אז דומם איז מלכות, עפר, וואס איז בטל צום רבונו של עולם, אזוי ווי אברהם אבינו האט זיך גערופן עפר ואפר, און אז דער גרגשי, די אומה קעגן מלכות, איז אליין אוועקגעגאנגען פון ארץ ישראל."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-10-1-tanya",
+      "startSeg": 256,
+      "endSeg": 304,
+      "title": {
+        "en": "Avraham's dust against the kings on erev Pesach",
+        "yi": "דער עפר פון אברהם אבינו קעגן די מלכים ערב פסח"
+      },
+      "summary": {
+        "en": "The Rav tells the Midrash that Og came to Avraham on erev Pesach while he baked matzos, and that Avraham fought the four kings into the night by throwing dust at them. He explains that dust is bitul, like bitul chametz, and this is how one nullifies the yetzer hara and the klipos.",
+        "yi": "דער משגיח דערציילט דעם מדרש אז עוג איז געקומען צו אברהם אבינו ערב פסח בשעת ער האט געבאקן מצות, און אז אברהם האט מלחמה געהאלטן מיט די ארבע מלכים ביז אין דער נאכט אריין דורך ווארפן אויף זיי עפר. ער ערקלערט אז עפר איז ביטול, אזוי ווי ביטול חמץ, און אזוי איז מען מבטל דעם יצר הרע און די קליפות."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-10-1-tanya",
+      "startSeg": 305,
+      "endSeg": 391,
+      "title": {
+        "en": "The chacham's psak decides, and Reb Chaim Ozer's advice",
+        "yi": "דער פסק פון חכם באשטימט, און ר' חיים עוזר'ס עצה"
+      },
+      "summary": {
+        "en": "The Rav explains that when a question arises, Heaven rules as the chacham rules, so one should daven about it, as Dovid HaMelech did about his status. He tells how Reb Chaim Ozer advised a man with a lung illness to move to Eretz Yisroel, where the Beis Yosef's lenient ruling is followed, and he lived; every machlokes reflects different heavenly halls, and both views are true.",
+        "yi": "דער משגיח ערקלערט אז ווען ס'מאכט זיך א שאלה, פסק'נט מען אין הימל אזוי ווי דער חכם פסק'נט, דערפאר דארף מען מתפלל זיין דערויף, אזוי ווי דוד המלך. ער דערציילט ווי ר' חיים עוזר האט געראטן א איד מיט א מחלה אויף דער לונג צו פארן קיין ארץ ישראל, וואו מ'פסק'נט ווי דער בית יוסף, און ער איז געבליבן לעבן; ביי יעדער מחלוקת זענען דא פארשידענע היכלות, און ביידע זענען אמת."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-10-1-tanya",
+      "startSeg": 392,
+      "endSeg": 468,
+      "title": {
+        "en": "Reality follows the Torah's psak",
+        "yi": "די מציאות גייט לויט'ן פסק פון דער תורה"
+      },
+      "summary": {
+        "en": "The Rav brings the mishnah in Niddah on the inner organs, where Rashi, Tosfos and the Rambam each describe the anatomy differently, and the Chasam Sofer's statement that reality matches the Rambam. He explains that the Torah is the blueprint of the world, each opinion has its place in Heaven, and since the halachah follows the Rambam, the anatomy follows him; he adds Rashi's comment on the missing yud in 'nesi'im'.",
+        "yi": "דער משגיח ברענגט די משנה אין נדה וועגן די אברים הפנימיים, וואו רש\"י, תוספות און דער רמב\"ם האלטן יעדער אנדערש, און דעם חתם סופר אז די מציאות איז ווי דער רמב\"ם. ער ערקלערט אז די תורה איז דער פלאן פון דער וועלט, יעדע שיטה האט איר ארט אין הימל, און ווייל די הלכה איז ווי דער רמב\"ם, שטעלט זיך די מציאות אויס ווי ער; ער לייגט צו דעם רש\"י אויף דעם חסר'דיגן יו\"ד אין \"נשאים\"."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-10-1-tanya",
+      "startSeg": 469,
+      "endSeg": 514,
+      "title": {
+        "en": "Nature changes with the chachamim's chiddushim",
+        "yi": "די טבע בייט זיך לויט די חידושים פון די חכמים"
+      },
+      "summary": {
+        "en": "The Rav explains that nature changes from generation to generation, with new illnesses and remedies, and brings Tosfos on a mishnah about the age at which a cow gives birth. Since nature follows the Torah's chiddushim, he explains why the Gemara sends one with a sick person to a chacham: a tzaddik cannot change the Torah, but a chacham can, through a chiddush, change the psak and with it the order of creation.",
+        "yi": "דער משגיח ערקלערט אז די טבע בייט זיך פון דור צו דור, מיט נייע מחלות און נייע רפואות, און ברענגט תוספות אויף א משנה וועגן ווען א בהמה קען האבן א קינד. ווייל די טבע גייט לויט די חידושים פון דער תורה, ערקלערט ער פארוואס די גמרא שיקט איינעם מיט א חולה צו א חכם: א צדיק קען נישט משנה זיין די תורה, אבער א חכם קען מיט א חידוש פסק'נען אנדערש און משנה זיין סדרי בראשית."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-10-1-tanya",
+      "startSeg": 515,
+      "endSeg": 573,
+      "title": {
+        "en": "Tanya ch. 7: worldly acts for the sake of Heaven",
+        "yi": "תניא פרק ז: גשמיות'דיגע ענינים לשם שמים"
+      },
+      "summary": {
+        "en": "The Rav reads Tanya ch. 7 and explains that even eating kosher food, talking or doing business is nogah, which tips like a scale to holiness when done for the sake of Heaven, and otherwise is no better than the animal soul. He adds that in this world evil is the majority, from insects to people.",
+        "yi": "דער משגיח לערנט תניא פרק ז און ערקלערט אז אפילו עסן כשר'ע מאכלים, רעדן אדער טון ביזנעס איז נוגה, וואס נייגט זיך ווי א וואג צו קדושה ווען מ'טוט עס לשם שמים, און אויב נישט איז עס נישט בעסער ווי די נפש הבהמית. ער לייגט צו אז אין דער וועלט איז דער רע די מערהייט, פון אינסעקטן ביז מענטשן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [1],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-10-1-tanya",
+      "startSeg": 574,
+      "endSeg": 634,
+      "title": {
+        "en": "Good meat, wine and a joke before learning",
+        "yi": "גוט פלייש, וויין און א גלייכווערטל פארן לערנען"
+      },
+      "summary": {
+        "en": "The Rav continues the Tanya: nogah is an intermediate level, and someone who eats fine meat and drinks wine to broaden his mind for Torah and mitzvos elevates them. Likewise a joke said to open the heart before learning, as Rabbah did before his students, is raised to holiness, unlike empty levity.",
+        "yi": "דער משגיח לערנט ווייטער דעם תניא: נוגה איז א בחינה ממוצעת, און ווער עס עסט גוט פלייש און טרינקט וויין כדי צו האבן א הרחבת הדעת פאר תורה און מצוות, הייבט זיי אויף. אזוי אויך א גלייכווערטל כדי צו עפענען דאס הארץ פארן לערנען, אזוי ווי רבה פאר זיינע תלמידים, ווערט אויפגעהויבן צו קדושה, נישט ווי ליידיגע לצנות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [1],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-10-1-tanya",
+      "startSeg": 635,
+      "endSeg": 680,
+      "title": {
+        "en": "A vacation for the sake of Heaven",
+        "yi": "א וואקאציע לשם שמים"
+      },
+      "summary": {
+        "en": "Ending the season of Tanya, the Rav speaks about going to the country: seeing Hashem's natural world brings a person contentment and awareness of His greatness. A vacation taken to broaden the mind for avodah raises all of nature to holiness, and one taken otherwise drags it down to the impure klipos.",
+        "yi": "ביים ענדיגן דעם זמן פון תניא רעדט דער משגיח וועגן ארויספארן אויף די קאנטרי: ווען מ'זעט דעם רבונו של עולם'ס נאטירליכע וועלט, ברענגט עס א צופרידנהייט און מ'זעט די גדלות הבורא. א וואקאציע כדי צו האבן א הרחבת הדעת פאר עבודת השם הייבט אויף די גאנצע בריאה צו קדושה, און אנדערש שלעפט מען זי אראפ צו די קליפות הטמאות."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [1],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "אשמות לכחות ונוגה לתובב",
+      "work": "Yechezkel",
+      "ref": "Yechezkel 1:4",
+      "sefariaRef": "Ezekiel 1:4",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [0, 1, 8, 133], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אין מקבלים מליבנינו איך אלא עולות",
+      "work": "Gemara Menachos",
+      "ref": "Menachos 73b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [54, 60, 63], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "שטעט אין מדרש פארוואס וועט עס אנגעראכן א חזיר",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [79, 80], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "עס איז דארט פארשידענע תפאצים אינעם מדרש",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [94, 96, 103, 108], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "שהקליפות און החלקות לשתי מדריגות",
+      "work": "Tanya",
+      "ref": "Tanya ch. 6",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [127, 130, 132], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "א קמשי כתב בייצחיים ... פרק ו, דאס איז פון אריה קדש",
+      "work": "Etz Chaim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [173], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "וינכי אפעל ואפעל",
+      "work": "Bereishis",
+      "ref": "Bereishis 18:27",
+      "sefariaRef": "Genesis 18:27",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [226], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "ונפשי כאפה על הכולל תהי'",
+      "work": "Siddur",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [227], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "חז״ל זאגט – און רשע ברענגט עס אין פרשת משפטים",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [239, 240, 241], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "לך ה' הממלכה",
+      "work": "Divrei HaYamim I",
+      "ref": "Divrei HaYamim I 29:11",
+      "sefariaRef": "I Chronicles 29:11",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [247], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "שטעט אין מדרש, פאר אז ער איז געקומען צו אברהם אבינו",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [258, 262, 263], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די גמרא דערציילט יו ווייסט איך די מיינס מיט נחום איש גמזא",
+      "work": "Gemara Taanis",
+      "ref": "Taanis 21a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [273, 274], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די נתיבות ... אן איתר דרבנן איז אן איתר גבראי",
+      "work": "Nesivos HaMishpat",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [308, 309], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "א מחלוקת צווישן מחבר און רמה",
+      "work": "Shulchan Aruch",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [360, 361, 362], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "איבר ואיבר, דברי יואלי, קום חיים",
+      "work": "Gemara Eruvin",
+      "ref": "Eruvin 13b",
+      "sefariaRef": "Eruvin 13b",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [388, 389], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ס'איז פארהאנגען א משנה אין נידע",
+      "work": "Mishnah Niddah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [392, 398, 402, 403], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער חתם סופר אין די חידושים אויף מסכת נידע",
+      "work": "Chiddushei Chasam Sofer",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [404, 407, 410], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "איסטראכא בירתא ובארא עלמא",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [422, 423], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "זאגט רשע א תורה פארוואס א נשיאים איז חתן יד",
+      "work": "Rashi",
+      "ref": "Rashi Shemos 35:27",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [441, 442, 443, 448], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "אזוי ווי תוספות ברענגט א מורא'דיגע כשר",
+      "work": "Tosfos",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [483, 484, 486], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "יעילך אצל חכם ובקשר של אברכנים",
+      "work": "Gemara Bava Basra",
+      "ref": "Bava Basra 116a",
+      "sefariaRef": "Bava Batra 116a",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [500, 501], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אח נפש החינות הבאמה שבישראל שמצדק פליפה",
+      "work": "Tanya",
+      "ref": "Tanya ch. 7",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [516, 519, 574, 583], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "עוזבי חדווה במקומה",
+      "work": "Divrei HaYamim I",
+      "ref": "Divrei HaYamim I 16:27",
+      "sefariaRef": "I Chronicles 16:27",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [616, 617], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "רבי לתלמידות שאתה לפני מילתא די בדיחת",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 30b",
+      "sefariaRef": "Shabbat 30b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [631], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "מה גדול ומה שכר השם",
+      "work": "Tehillim",
+      "ref": "Tehillim 92:6",
+      "sefariaRef": "Psalms 92:6",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [649], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "רבם אסרך ה' כולם בחכמה אסיסה",
+      "work": "Tehillim",
+      "ref": "Tehillim 104:24",
+      "sefariaRef": "Psalms 104:24",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [674], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The vav that appears only before 'nogah' in Yechezkel's list shows that nogah is a separate category from the three impure klipos, like the fourth peel of a nut that is eaten together with the fruit.",
+        "yi": "דער וא\"ו וואס שטייט נאר פאר \"נוגה\" אין יחזקאל'ס רשימה ווייזט אז נוגה איז א באזונדער סארט ווי די שלש קליפות הטמאות, אזוי ווי די פערטע שאלעכץ פון א נוס וואס מ'עסט מיט דער פרוכט."
+      },
+      "evidence": { "segs": [16, 17, 20, 35, 41, 137], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Following his rebbi, Reb Feivel Mendlowitz, the Rav explains that only olos are accepted from gentiles because a gentile's eating cannot be for the sake of Heaven, while the eating of shelamim is itself part of the korban.",
+        "yi": "בשם זיין רבי'ן, ר' פייוול מענדלאוויטש, ערקלערט דער משגיח אז מ'נעמט פון גוים נאר עולות, ווייל דאס עסן פון א גוי קען נישט זיין לשם שמים, בשעת ביי שלמים איז די אכילה אליין א חלק פונעם קרבן."
+      },
+      "evidence": { "segs": [53, 54, 55, 59, 62, 63], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Jews offered nesachim from the very fruit the meraglim brought to slander the land, showing that a Jew can turn even something used for sin to good.",
+        "yi": "די אידן האבן געמאכט נסכים פון די פירות וואס די מרגלים האבן געבראכט צו רעדן לשון הרע אויף ארץ ישראל, און דאס ווייזט אז א איד קען אפילו מהפך זיין לטוב א זאך וואס איז גענוצט געווארן פאר א חטא."
+      },
+      "evidence": { "segs": [96, 98, 105, 108, 109], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Avraham threw dust at the kings on erev Pesach because dust is bitul: as one nullifies chametz by treating it as dust, one nullifies the klipos by ignoring them.",
+        "yi": "אברהם אבינו האט ערב פסח געווארפן עפר אויף די מלכים, ווייל עפר איז ביטול: אזוי ווי מ'איז מבטל חמץ ווי עפר, אזוי איז מען מבטל די קליפות דורך זיי איגנארירן."
+      },
+      "evidence": { "segs": [279, 281, 283, 289, 290, 291], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Because the world was created through the Torah, the chachamim's psak shapes reality itself: the anatomy matches the Rambam because the halachah follows him, and a chacham can change nature through a chiddush where a tzaddik cannot.",
+        "yi": "ווייל די וועלט איז באשאפן געווארן דורך דער תורה, פורעמט דער פסק פון די חכמים די מציאות אליין: די אנאטאמיע איז ווי דער רמב\"ם ווייל די הלכה איז ווי ער, און א חכם קען מיט א חידוש משנה זיין די טבע, וואס א צדיק קען נישט."
+      },
+      "evidence": { "segs": [423, 424, 468, 509, 510, 513], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Nogah is called a scale: the same permitted act tips to holiness or to the impure klipos depending on whether it is meant for the sake of Heaven.",
+        "yi": "נוגה ווערט גערופן א וואג: די זעלבע זאך פון רשות נייגט זיך צו קדושה אדער צו די קליפות הטמאות, לויט צי מ'מיינט עס לשם שמים."
+      },
+      "evidence": { "segs": [527, 528, 545, 548, 578], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "Avraham fights the four kings on erev Pesach",
+        "yi": "אברהם אבינו קעמפט מיט די ארבע מלכים ערב פסח"
+      },
+      "retelling": {
+        "en": "On erev Pesach, while Avraham was baking matzos, Og came and told him that Lot had been captured by the kings. Avraham went to war against them and fought into the night, so that he spent the Seder at war. He threw dust at them and they were nullified.",
+        "yi": "ערב פסח, בשעת אברהם אבינו האט געבאקן מצות, איז עוג געקומען און אים געזאגט אז לוט איז געפאנגען געווארן ביי די מלכים. אברהם איז ארויס אין מלחמה קעגן זיי און האט געקעמפט ביז אין דער נאכט אריין, אזוי אז ער האט דעם סדר געפראוועט מיט מלחמה. ער האט אויף זיי געווארפן עפר, און זיי זענען בטל געווארן."
+      },
+      "people": ["Avraham Avinu", "Og", "Lot"],
+      "evidence": { "segs": [256, 257, 259, 266, 268, 274], "confidence": 0.8 }
+    },
+    {
+      "title": {
+        "en": "Reb Chaim Ozer sends a sick man to Eretz Yisroel",
+        "yi": "ר' חיים עוזר שיקט א חולה קיין ארץ ישראל"
+      },
+      "retelling": {
+        "en": "A man came to Reb Chaim Ozer with an illness of the lung, after the doctors told him to write a will. Reb Chaim Ozer advised him to go to Eretz Yisroel, and he went and stayed healthy. Reb Chaim Ozer explained that the Rema rules such a lung treif and the Mechaber kosher; where the Rema is followed he was judged treif, but in Eretz Yisroel, where the Beis Yosef is followed, he was judged kosher and could live.",
+        "yi": "א איד מיט א מחלה אויף דער לונג, וועמען די דאקטוירים האבן געזאגט ער זאל שרייבן א צוואה, איז געקומען צו ר' חיים עוזר. ר' חיים עוזר האט אים געראטן צו פארן קיין ארץ ישראל, און ער איז געפארן און געבליבן געזונט. ר' חיים עוזר האט ערקלערט אז ביי אזא לונג פסק'נט דער רמ\"א טריפה און דער מחבר כשר; וואו מ'פסק'נט ווי דער רמ\"א איז ער געווען א טריפה, אבער אין ארץ ישראל, וואו מ'פסק'נט ווי דער בית יוסף, איז ער כשר און האט געקענט לעבן."
+      },
+      "people": ["Reb Chaim Ozer Grodzinski", "the Rema", "the Beis Yosef"],
+      "evidence": { "segs": [346, 349, 355, 357, 360, 371], "confidence": 0.8 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why does Yechezkel's list have a vav only before 'nogah'?",
+        "yi": "פארוואס שטייט אין יחזקאל'ס רשימה א וא\"ו נאר פאר \"נוגה\"?"
+      },
+      "answer": {
+        "en": "Because nogah begins a new category: unlike the first three, it can be turned to holiness.",
+        "yi": "ווייל מיט נוגה הייבט זיך אן א נייער סדר: נישט ווי די ערשטע דריי, קען מען אים מהפך זיין לקדושה."
+      },
+      "questionSegs": [12, 16, 17],
+      "answerSegs": [20, 22, 44],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why are only olos accepted from gentiles and not shelamim?",
+        "yi": "פארוואס נעמט מען פון גוים נאר עולות און נישט קיין שלמים?"
+      },
+      "answer": {
+        "en": "Because a gentile cannot eat meat for the sake of Heaven, and eating is part of the shelamim's atonement.",
+        "yi": "ווייל א גוי קען נישט עסן פלייש לשם שמים, און די אכילה איז א חלק פון דער כפרה פון שלמים."
+      },
+      "questionSegs": [54, 60],
+      "answerSegs": [55, 59, 62],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why does the Tanya list plants, animals and people among the three impure klipos, but not the inanimate?",
+        "yi": "פארוואס רעכנט דער תניא צומח, חי און מדבר ביי די שלש קליפות הטמאות, אבער נישט דומם?"
+      },
+      "answer": {
+        "en": "Because the inanimate is malchus, earth, which is batel to Hashem; there is nothing inanimate from the three impure klipos.",
+        "yi": "ווייל דומם איז מלכות, עפר, וואס איז בטל צום רבונו של עולם; ס'איז נישטא קיין דומם פון די שלש קליפות הטמאות."
+      },
+      "questionSegs": [196, 200, 201],
+      "answerSegs": [202, 205, 208, 217],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why did Avraham throw dust at the kings?",
+        "yi": "פארוואס האט אברהם אבינו געווארפן עפר אויף די מלכים?"
+      },
+      "answer": {
+        "en": "Dust is bitul; on erev Pesach, as one nullifies chametz, he nullified them.",
+        "yi": "עפר איז ביטול; ערב פסח, אזוי ווי מ'איז מבטל חמץ, איז ער זיי מבטל געווען."
+      },
+      "questionSegs": [275, 279],
+      "answerSegs": [279, 281, 293, 297],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "How can one daven about whether something will be ruled kosher?",
+        "yi": "ווי אזוי קען מען מתפלל זיין אז א זאך זאל אויסגעפסק'נט ווערן כשר?"
+      },
+      "answer": {
+        "en": "Because Heaven rules as the chacham rules, and whether it falls into the impure klipos depends on that psak.",
+        "yi": "ווייל אין הימל פסק'נט מען אזוי ווי דער חכם פסק'נט, און צי עס פאלט אריין אין די קליפות הטמאות הענגט אפ אין דעם פסק."
+      },
+      "questionSegs": [334],
+      "answerSegs": [322, 335, 337],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "Why does the Gemara send one with a sick person to a chacham rather than a tzaddik?",
+        "yi": "פארוואס שיקט די גמרא איינעם מיט א חולה צו א חכם און נישט צו א צדיק?"
+      },
+      "answer": {
+        "en": "A tzaddik cannot change the Torah, but a chacham can, through a chiddush, rule differently and so change nature.",
+        "yi": "א צדיק קען נישט משנה זיין די תורה, אבער א חכם קען מיט א חידוש פסק'נען אנדערש און אזוי משנה זיין די טבע."
+      },
+      "questionSegs": [501, 508],
+      "answerSegs": [509, 510, 513],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says a person should always daven to be on the side of purity and kashrus.",
+        "yi": "דער משגיח זאגט אז א איד דארף אלעמאל מתפלל זיין ער זאל זיין אויף דער זייט פון טהרה און כשרות."
+      },
+      "evidence": { "segs": [338, 339, 340], "confidence": 0.65 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one should ignore the yetzer hara and the klipos, as one nullifies chametz.",
+        "yi": "דער משגיח זאגט אז מ'דארף איגנארירן דעם יצר הרע און די קליפות, אזוי ווי מ'איז מבטל חמץ."
+      },
+      "evidence": { "segs": [289, 290, 291], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one should eat, do business and sleep for the sake of Heaven, so that they become holiness.",
+        "yi": "דער משגיח זאגט אז מ'זאל עסן, טון ביזנעס און שלאפן לשם שמים, כדי דאס זאל ווערן קדושה."
+      },
+      "evidence": { "segs": [545, 546, 547, 548], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says a person should not be depressed but in a good mood, since then he learns, davens and does mitzvos better.",
+        "yi": "דער משגיח זאגט אז א מענטש טאר נישט זיין צעבראכן נאר אין א גוטן מצב, ווייל דעמאלט לערנט ער, דאוונט ער און טוט ער מצוות בעסער."
+      },
+      "evidence": { "segs": [594, 596, 597], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says a vacation in the country should be taken to broaden the mind and see Hashem's greatness, so that it is raised to holiness.",
+        "yi": "דער משגיח זאגט אז א וואקאציע אויף די קאנטרי זאל מען נעמען כדי צו האבן א הרחבת הדעת און זען די גדלות הבורא, כדי זי זאל אויפגעהויבן ווערן צו קדושה."
+      },
+      "evidence": { "segs": [650, 672, 674], "confidence": 0.7 }
+    }
+  ],
+  "candidateTopics": [
+    "klipas nogah",
+    "three impure klipos",
+    "Tanya chapters 6-7",
+    "elevating the physical",
+    "for the sake of Heaven",
+    "halachic psak shapes reality",
+    "bitul",
+    "Yechezkel's vision",
+    "humor before learning",
+    "vacation and appreciating creation"
+  ],
+  "concepts": [
+    { "he": "קליפת נוגה", "heardAs": ["קליפת נוגה", "פליפת נוגע", "כלי פתנוגה", "קליפת נוגע"] },
+    { "he": "שלש קליפות הטמאות", "heardAs": ["שולש כליפי סאטמארעס", "שולש קליפה סאטמאט", "שולש כליפות התמעות"] },
+    { "he": "שלש קליפות הטמאות לגמרי", "heardAs": ["די שלש קליפות עצמיות ורעות לגמרי", "שולש קליפות עצמיות"] },
+    { "he": "נפש הבהמית", "heardAs": ["נפש הבא'מוז", "נפש הבא' מ'"] },
+    { "he": "מאכלות אסורות", "heardAs": ["מחלות אסורות", "מחלות השרית"] },
+    { "he": "דומם צומח חי מדבר", "heardAs": ["דעומם צומח חי און מדבר"] },
+    { "he": "ביטול", "heardAs": ["באטל", "בטל"] },
+    { "he": "לשם שמים", "heardAs": ["לשם שמים"] },
+    { "he": "הרחבת הדעת", "heardAs": ["ישוב הדת", "אחוות הדת"] },
+    { "he": "בחינה ממוצעת", "heardAs": ["ובחינה ממוצעת"] },
+    { "he": "גרגשי", "heardAs": ["געארגאשי", "געארגאזשי", "גורגאשיות"] },
+    { "he": "פריעה", "heardAs": ["פריעה"] }
+  ],
+  "people": [
+    { "name": "Yechezkel", "heardAs": ["יחזקאל", "יחסקא"] },
+    { "name": "Reb Feivel Mendlowitz", "heardAs": ["רבי פייוול מנדולעוויטש"] },
+    { "name": "Kalev", "heardAs": ["כל אייב"] },
+    { "name": "Yehoshua", "heardAs": ["ישעה", "וישוע"] },
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינו", "אברהם אבינא"] },
+    { "name": "Og", "heardAs": ["אויג"] },
+    { "name": "Lot", "heardAs": ["לויט"] },
+    { "name": "Nachum Ish Gamzu", "heardAs": ["נחום איש גמזא"] },
+    { "name": "Dovid HaMelech", "heardAs": ["דוד המלך"] },
+    { "name": "Reb Chaim Ozer Grodzinski", "heardAs": ["רבי חיים מייזעל", "ר' חיים עייזער"] },
+    { "name": "the Rema", "heardAs": ["רמה", "רמז"] },
+    { "name": "the Beis Yosef", "heardAs": ["בית יוסף", "מחבר"] },
+    { "name": "Rashi", "heardAs": ["רשע"] },
+    { "name": "Tosfos", "heardAs": ["תוספות", "תסוות"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "the Chasam Sofer", "heardAs": ["חתם סופר"] },
+    { "name": "Rabbah", "heardAs": ["רבי לתלמידות"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair in the Rav's own words but the Tanya, Etz Chaim and pesukim readings are heavily garbled (e.g. segs 123-124 and 551-552 are unreadable). The stretch on the Nesivos and sheilos (segs 305-319) and the Tosfos on the cow's age (segs 483-492) are only partly recoverable. Several Midrashim are cited without a recoverable location."
+}

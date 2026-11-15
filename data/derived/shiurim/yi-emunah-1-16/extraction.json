@@ -1,0 +1,410 @@
+{
+  "shiurId": "yi-emunah-1-16",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav reads the Vilna Gaon's tradition that the parshiyos of Sefer Devarim match the centuries of the sixth millennium, finds the Holocaust in Vayeilech and the coming geulah in Nitzavim, and teaches that emunah is what will bring Moshiach.",
+      "yi": "דער משגיח ברענגט דעם גר\"א'ס ווארט אז די פרשיות פון ספר דברים זענען כנגד די יארהונדערטער פונעם אלף הששי, געפינט דעם חורבן אייראפע אין פרשת וילך און די גאולה אין פרשת נצבים, און לערנט אז מיט אמונה וועט מען ברענגען משיח."
+    },
+    "abstract": {
+      "en": "The Rav opens by saying that every generation has its own mission, and the mission of the generation before Moshiach is emunah, which is harder now that the open wonders of tzaddikim are rare. He then brings the tradition of the Vilna Gaon's students that the ten parshiyos of Devarim correspond to the ten centuries of the sixth millennium, with the Gaon's own hint in Ki Seitzei, and notes that this places 5750 at the midday of the 'erev Shabbos' of history. He explains why earlier dates for Moshiach passed: they were times of eis ratzon that were not merited, and such missed moments can even turn into prosecution, as in 1914. Walking through Vayeilech, he finds the hester panim of the Holocaust, which began in 5700, and recalls the outbreak of the war from his own childhood. Nitzavim speaks of teshuvah and ingathering. He asks why the refuah precedes the makah and why they are two parshiyos, answers from the Gemara in Megillah and a surgeon parable, and closes that emunah will give Moshiach his strength.",
+      "yi": "דער משגיח עפנט אז יעדער דור האט זיין אייגענעם תפקיד, און דער תפקיד פונעם דור פאר משיח איז אמונה, וואס איז היינט שווערער ווייל מ'זעט שוין זעלטן די מופתים פון צדיקים. דערנאך ברענגט ער פון די ספרים פון די תלמידי הגר\"א אז די צען פרשיות פון ספר דברים זענען כנגד די צען יארהונדערטער פונעם אלף הששי, מיט דעם גר\"א'ס רמז אין כי תצא, און לויט דעם האלט מען אין יאר תש\"נ ביי חצות פונעם ערב שבת פון דער וועלט. ער ערקלערט פארוואס פריערדיגע זמנים פאר משיח זענען פארביי: ס'זענען געווען עתים פון רצון וואס מ'איז נישט זוכה געווען, און אזא צייט קען ווערן א קטרוג, ווי אין יאר תרע\"ד. אין פרשת וילך געפינט ער דעם הסתר פנים פונעם חורבן וואס האט זיך אנגעהויבן אין תש\"ת, און ער דערציילט ווי ער האט געזען דעם אנהייב פון דער מלחמה ווי א יונגל. פרשת נצבים רעדט פון תשובה און קיבוץ גליות. ער פרעגט פארוואס די רפואה קומט פאר דער מכה און פארוואס ס'זענען צוויי סדרות, ענטפערט מיט דער גמרא אין מגילה און א משל פון א כירורג, און ענדיגט אז די אמונה וועט געבן משיח די שטארקייט."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The Rav says the special mission of the generation before Moshiach is the mitzvah of emunah, the foundation of all mitzvos.",
+          "yi": "דער משגיח זאגט אז דער ספעציעלער תפקיד פונעם דור פאר משיח איז די מצוה פון אמונה, דער יסוד פון אלע מצוות."
+        },
+        "evidence": { "segs": [20, 21, 23, 25, 29], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Following the Vilna Gaon, the ten parshiyos of Sefer Devarim match the ten centuries of the sixth millennium, so the present century corresponds to Nitzavim-Vayeilech.",
+          "yi": "לויט דעם גר\"א זענען די צען פרשיות פון ספר דברים כנגד די צען יארהונדערטער פונעם אלף הששי, און דער היינטיגער יארהונדערט איז כנגד נצבים-וילך."
+        },
+        "evidence": { "segs": [50, 54, 55, 58, 179, 181], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Moshiach can come any day, but there are special times of eis ratzon (pekidos); if the generation does not merit them they pass, and they can even turn into a prosecution.",
+          "yi": "משיח קען קומען יעדן טאג, אבער ס'זענען דא ספעציעלע צייטן פון עת רצון (פקידות); אז דער דור איז נישט זוכה גייען זיי פארביי, און זיי קענען אפילו ווערן א קטרוג."
+        },
+        "evidence": { "segs": [120, 121, 124, 126, 155, 158], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The hester panim of Vayeilech describes the first half of the current century, the Holocaust that began in 5700, and Nitzavim describes the teshuvah and redemption of its second half.",
+          "yi": "דער הסתר פנים פון פרשת וילך שילדערט די ערשטע העלפט פונעם היינטיגן יארהונדערט, דעם חורבן וואס האט זיך אנגעהויבן אין תש\"ת, און פרשת נצבים שילדערט די תשובה און גאולה פון דער צווייטער העלפט."
+        },
+        "evidence": { "segs": [235, 247, 256, 270, 275, 309], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Emunah will be Moshiach's belt of strength, giving him the power to be revealed.",
+          "yi": "די אמונה וועט זיין משיח'ס גארטל פון שטארקייט, וואס וועט אים געבן די כח נתגלה צו ווערן."
+        },
+        "evidence": { "segs": [396, 401, 402, 406, 407], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-emunah-08-b-emunah-yiddish",
+      "startSeg": 0,
+      "endSeg": 49,
+      "title": { "en": "Emunah, the mission of this generation", "yi": "אמונה, דער תפקיד פון אונזער דור" },
+      "summary": {
+        "en": "The Rav recalls that every individual and generation has its own mission, and says that the mission of the generation before Moshiach is emunah. Since open wonders of tzaddikim are now rare, one must believe through the mesorah received from the fathers and by binding oneself to Torah and mitzvos.",
+        "yi": "דער משגיח דערמאנט אז יעדער מענטש און יעדער דור האט זיין תפקיד, און זאגט אז דער תפקיד פונעם דור פאר משיח איז אמונה. וויבאלד מ'זעט היינט זעלטן מופתים פון צדיקים, דארף מען גלייבן מיטן כח פון דער מסורה פון די אבות און דורכן זיך צובינדן צו תורה און מצוות."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-08-b-emunah-yiddish",
+      "startSeg": 50,
+      "endSeg": 116,
+      "title": { "en": "The Gaon's ten parshiyos and ten centuries", "yi": "דעם גר\"א'ס צען פרשיות און צען יארהונדערטער" },
+      "summary": {
+        "en": "The Rav brings the Vilna Gaon's teaching that the parshiyos of Devarim match the centuries of the sixth millennium, and the Gaon's hint to himself in Ki Seitzei when Rav Chaim Volozhiner asked him. By this count 5750 is midday of the 'erev Shabbos' of history, and the Gaon's students point to it for the geulah; he then asks why such dates matter when the dates of earlier gedolim passed.",
+        "yi": "דער משגיח ברענגט דעם גר\"א'ס ווארט אז די פרשיות פון ספר דברים זענען כנגד די יארהונדערטער פונעם אלף הששי, און דעם גר\"א'ס רמז אויף זיך אין כי תצא ווען רבי חיים וואלאזשינער האט אים געפרעגט. לויט דעם איז תש\"נ חצות פונעם ערב שבת פון דער וועלט, און די תלמידי הגר\"א ווייזן אויף דעם יאר פאר די גאולה; דערנאך פרעגט ער וואס דאס העלפט, אז די זמנים פון פריערדיגע גדולים זענען פארביי."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-08-b-emunah-yiddish",
+      "startSeg": 117,
+      "endSeg": 178,
+      "title": { "en": "Times of eis ratzon and their danger", "yi": "עתים פון רצון און זייער סכנה" },
+      "summary": {
+        "en": "The Rav explains that Moshiach can come any day, but there are hidden times of eis ratzon, called pekidos, that pass if the generation is not worthy, unlike the fixed time 'be'itah' that is never revealed. A missed eis ratzon can turn into a prosecution by the Satan, as happened in 1914, a year for which Moshiach had been calculated and in which the World War broke out.",
+        "yi": "דער משגיח ערקלערט אז משיח קען קומען יעדן טאג, אבער ס'זענען דא באהאלטענע עתים פון רצון, אנגערופן פקידות, וואס גייען פארביי אז דער דור איז נישט ראוי, נישט אזוי ווי דער פעסטער זמן פון \"בעתה\" וואס ווערט קיינמאל נישט נתגלה. אן עת רצון וואס מ'איז נישט זוכה ווערט א קטרוג פונעם שטן, ווי אין יאר תרע\"ד, וואס מ'האט אויסגערעכנט אויף משיח און אין יענעם יאר איז אויסגעבראכן די וועלט מלחמה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-08-b-emunah-yiddish",
+      "startSeg": 179,
+      "endSeg": 269,
+      "title": { "en": "Vayeilech and the outbreak of the war", "yi": "פרשת וילך און דער אנהייב פון דער מלחמה" },
+      "summary": {
+        "en": "The Rav applies the Gaon's count to the current century, Nitzavim-Vayeilech, and tells how as a boy on the eve of 5700 he heard confident talk that Hitler would be crushed in days, and saw the congregation weeping on Rosh Hashanah. The war lasted years and six million were killed; he finds this first half of the century in the hester panim of Vayeilech.",
+        "yi": "דער משגיח שטעלט צו דעם גר\"א'ס חשבון צום היינטיגן יארהונדערט, נצבים-וילך, און דערציילט ווי ער האט אלס יונגל ערב תש\"ת געהערט ווי מ'רעדט אז היטלער וועט אין עטליכע טעג אפגעווישט ווערן, און ווי דער עולם האט געוויינט ראש השנה. די מלחמה האט געדויערט יארן און מ'האט אומגעברענגט זעקס מיליאן אידן; די ערשטע העלפט פונעם יארהונדערט געפינט ער אינעם הסתר פנים פון פרשת וילך."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-08-b-emunah-yiddish",
+      "startSeg": 270,
+      "endSeg": 326,
+      "title": { "en": "Nitzavim: teshuvah and ingathering", "yi": "פרשת נצבים: תשובה און קיבוץ גליות" },
+      "summary": {
+        "en": "The Rav reads the second part, Nitzavim, as the promise of the century's second half: return to Hashem, ingathering from the farthest ends and the circumcision of the heart. He sees a drizzle, not yet a storm, of teshuvah today, and then asks two questions: why the redemption precedes the suffering in the order of the parshiyos, and why one parsha is two sidros.",
+        "yi": "דער משגיח לערנט דעם צווייטן טייל, פרשת נצבים, אלס די הבטחה פון דער צווייטער העלפט פונעם יארהונדערט: תשובה צום אייבערשטן, קיבוץ גליות פון די ווייטסטע עקן און מילת הלב. ער זעט היינט א דריבנעם רעגן פון תשובה, נאך נישט קיין שטורעם, און דערנאך פרעגט ער צוויי קשיות: פארוואס שטייט די גאולה פאר די צרות, און פארוואס איז איין פרשה צוויי סדרות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-08-b-emunah-yiddish",
+      "startSeg": 327,
+      "endSeg": 409,
+      "title": { "en": "Refuah before makah; emunah brings Moshiach", "yi": "די רפואה פאר דער מכה; אמונה ברענגט משיח" },
+      "summary": {
+        "en": "The Rav answers both questions from the Gemara in Megillah that Hashem prepares the cure before He strikes Yisrael, illustrated with a surgeon who lays out bandages before cutting, and explains that the geulah will be so different that the suffering will seem like a dream. He hopes the geulah begins in 5750 and closes that emunah, Moshiach's belt in the haftarah, will give him the strength to be revealed.",
+        "yi": "דער משגיח ענטפערט ביידע קשיות מיט דער גמרא אין מגילה אז דער אייבערשטער גרייט צו די רפואה איידער ער שלאגט אידן, מיט א משל פון א כירורג וואס לייגט אויס באנדאזשן איידער ער שניידט, און ערקלערט אז די גאולה וועט זיין אזוי אנדערש אז די צרות וועלן אויסזען ווי א חלום. ער האפט אז די גאולה הייבט זיך אן אין תש\"נ, און ענדיגט אז די אמונה, משיח'ס גארטל אין דער הפטרה, וועט אים געבן די שטארקייט נתגלה צו ווערן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "די ספרים פון די תלמידי הגרע ... אינעם ספר דברים איז דא צען פלשת",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [49, 50, 51, 55, 58], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אבן שלמה יא לך",
+      "work": "Devarim",
+      "ref": "Devarim 25:15",
+      "sefariaRef": "Deuteronomy 25:15",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [74, 75], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "אזוי רופטו די גמרא אין מגילה, א פקודו",
+      "work": "Gemara Megillah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [124, 125, 126], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "בעיטה ... בבחינות אחושנה",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 60:22",
+      "sefariaRef": "Isaiah 60:22",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [130, 135, 137], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "וכרע אפי בבא יום הזה, ועזבתים ... ומצאה הרעות רביך וצרי ... האסתא האסתא פני",
+      "work": "Devarim",
+      "ref": "Devarim 31:17-18",
+      "sefariaRef": "Deuteronomy 31:17-18",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [247, 248, 252, 256], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ושבטה והיה כי יבאיה ... והשבעת אליו ... והביאך ה' לכך להורץ ... המל ה' לכך",
+      "work": "Devarim",
+      "ref": "Devarim 30:1-6",
+      "sefariaRef": "Deuteronomy 30:1-6",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [276, 278, 293, 298, 304], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די גמרא זאגט אין מגילה אז ווען דער אייבערשטער שלאגט גוים, איז אנדערש ווי ער שלאגט אידן",
+      "work": "Gemara Megillah",
+      "ref": "Megillah 13b",
+      "sefariaRef": "Megillah 13b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [328, 329, 330, 332, 357], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "בשבו השם, אין שבעת ציני, אינו חולים",
+      "work": "Tehillim",
+      "ref": "Tehillim 126:1",
+      "sefariaRef": "Psalms 126:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [369], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די הפטירה פון ... ויותר חוטא מגזר ישבי ... והיה צדק אזא מוסניו, והאמונה אזא חלצה",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 11:1-5",
+      "sefariaRef": "Isaiah 11:1-5",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [397, 398, 400, 401], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "עוזר יתרוי בגברי",
+      "work": "Tehillim",
+      "ref": "Tehillim 89:20",
+      "sefariaRef": "Psalms 89:20",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [405], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "דער רמב״ם אין זייער צייט האט געשריבן א זמן",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [110], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער ארי הקודש האט געשריבן א זמן",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [111], "confidence": 0.8 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Earlier dates for Moshiach given by gedolim were not mistakes: each was a pekidah, a time especially suited for the geulah had the generation merited it.",
+        "yi": "די זמנים פאר משיח וואס גדולים האבן געגעבן זענען נישט געווען קיין טעות: יעדער איז געווען א פקידה, א צייט וואס איז געווען מער מסוגל פאר דער גאולה אויב דער דור וואלט זוכה געווען."
+      },
+      "evidence": { "segs": [109, 112, 113, 114, 116], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "An eis ratzon for the geulah that is not merited does not simply pass: the Satan argues that the Jews are unworthy, and the resulting kitrug brings harsh judgment, as the Rav sees in the war that broke out in 1914.",
+        "yi": "אן עת רצון פאר דער גאולה וואס מ'איז נישט זוכה גייט נישט סתם פארביי: דער שטן טענה'ט אז אידן זענען נישט ראוי, און דער קטרוג ברענגט שטרענגע מדת הדין, ווי דער משגיח זעט אין דער מלחמה וואס איז אויסגעבראכן אין תרע\"ד."
+      },
+      "evidence": { "segs": [152, 155, 158, 160, 165, 168], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav reads Nitzavim-Vayeilech, one parsha of the Gaon's count, as the current century: Vayeilech's double hester panim is its first half, the Holocaust, and Nitzavim's teshuvah and ingathering is its second half.",
+        "yi": "דער משגיח לערנט נצבים-וילך, איין פרשה אין דעם גר\"א'ס חשבון, אלס דעם היינטיגן יארהונדערט: דער דאפלטער הסתר פנים פון וילך איז די ערשטע העלפט, דער חורבן, און די תשובה און קיבוץ גליות פון נצבים איז די צווייטע העלפט."
+      },
+      "evidence": { "segs": [235, 241, 256, 267, 270, 309], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Nitzavim, the refuah, precedes Vayeilech, the makah, because Hashem prepares the cure before striking Yisrael, like a surgeon whose prepared bandages show he is a healer and not a murderer.",
+        "yi": "נצבים, די רפואה, שטייט פאר וילך, די מכה, ווייל דער אייבערשטער גרייט צו די רפואה איידער ער שלאגט אידן, אזוי ווי א כירורג וואס די צוגעגרייטע באנדאזשן ווייזן אז ער איז א רופא און נישט קיין רוצח."
+      },
+      "evidence": { "segs": [329, 345, 350, 353, 355, 359], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "They are two separate sidros although one parsha because the geulah will be an entirely different order of life, in which the suffering will be remembered like a dream that was not real.",
+        "yi": "ס'זענען צוויי באזונדערע סדרות כאטש ס'איז איין פרשה, ווייל די גאולה וועט זיין אן אינגאנצן אנדער סדר פון לעבן, וואו מ'וועט געדענקען די צרות ווי א חלום וואס איז נישט געווען קיין מציאות."
+      },
+      "evidence": { "segs": [361, 363, 365, 368, 371], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Since the suffering began in the first year of the century, 5700, the Rav hopes this is a sign that the geulah will begin in the first year of its second half, 5750.",
+        "yi": "וויבאלד די צרות האבן זיך אנגעהויבן אינעם ערשטן יאר פונעם יארהונדערט, תש\"ת, האפט דער משגיח אז דאס איז א סימן אז די גאולה וועט זיך אנהייבן אינעם ערשטן יאר פון דער צווייטער העלפט, תש\"נ."
+      },
+      "evidence": { "segs": [381, 382, 383, 384], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "The Gaon's hint in Ki Seitzei",
+        "yi": "דעם גר\"א'ס רמז אין כי תצא"
+      },
+      "retelling": {
+        "en": "The Vilna Gaon lived in the century that matched Ki Seitzei, and Rav Chaim Volozhiner asked him where he is hinted in that parsha. The Gaon answered with the words 'even shleimah', read as Eliyahu ben Shlomo, his own name. Rav Chaim asked further about the rest of the verse and the Gaon answered him, but Rav Chaim never revealed the answer to his students.",
+        "yi": "דער גר\"א האט געלעבט אינעם יארהונדערט וואס איז כנגד כי תצא, און רבי חיים וואלאזשינער האט אים געפרעגט וואו ער איז מרומז אין דער פרשה. דער גר\"א האט געענטפערט מיט די ווערטער \"אבן שלמה\", אליהו בן שלמה, זיין אייגענער נאמען. רבי חיים האט ווייטער געפרעגט אויף דעם המשך פונעם פסוק און דער גר\"א האט אים געענטפערט, אבער רבי חיים האט עס קיינמאל נישט מגלה געווען פאר די תלמידים."
+      },
+      "people": ["the Vilna Gaon", "Rav Chaim Volozhiner"],
+      "evidence": { "segs": [70, 71, 74, 75, 77, 82], "confidence": 0.75 }
+    },
+    {
+      "title": {
+        "en": "A boy hears of the coming war",
+        "yi": "א יונגל הערט וועגן דער קומענדיגער מלחמה"
+      },
+      "retelling": {
+        "en": "The Rav recalls that on the eve of 5700, as a boy in yeshiva in Williamsburg, some well-off boys had a radio and brought news that Hitler would enter Poland and that England and France would defend it. The boys were sure the Royal Air Force and the Maginot Line would wipe out Hitler within days. On Rosh Hashanah, standing beside his father, who was the ba'al tefillah, he saw the congregation weeping, and his father explained that Hitler had entered Poland where everyone had family. He did not understand why they cried; the war lasted years, and six million Jews were killed.",
+        "yi": "דער משגיח דערמאנט אז ערב תש\"ת, ווען ער איז געווען א יונגל אין ישיבה אין וויליאמסבורג, האבן עטליכע יונגלעך פון רייכע שטובער געהאט א ראדיא, און זיי האבן געברענגט די ידיעה אז היטלער וויל אריינגיין אין פוילן און אז ענגלאנד און פראנקרייך וועלן עס באשיצן. די יונגלעך זענען געווען זיכער אז די ענגלישע לופט-פלאט און די מאזשינא ליניע וועלן היטלער אין עטליכע טעג אפווישן. ראש השנה איז ער געשטאנען ביים טאטן, וואס איז געווען בעל תפילה, און געזען ווי דער עולם וויינט, און דער טאטע האט אים ערקלערט אז היטלער איז אריין אין פוילן וואו אלע האבן משפחה. ער האט נישט פארשטאנען פארוואס מ'וויינט; די מלחמה האט געדויערט יארן, און מ'האט אומגעברענגט זעקס מיליאן אידן."
+      },
+      "people": ["Hitler"],
+      "evidence": { "segs": [191, 196, 200, 214, 218, 225], "confidence": 0.8 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "If great gedolim gave dates for Moshiach that passed, what is the value of the date for 5750?",
+        "yi": "אז גרויסע גדולים האבן געגעבן זמנים פאר משיח וואס זענען פארביי, וואס איז דער ווערט פונעם זמן פון תש\"נ?"
+      },
+      "answer": {
+        "en": "Those dates were times of eis ratzon, especially suited for Moshiach had the generation merited, while Moshiach can come any day.",
+        "yi": "יענע זמנים זענען געווען עתים פון רצון, מער מסוגל פאר משיח אויב דער דור וואלט זוכה געווען, און משיח קען קומען יעדן טאג."
+      },
+      "questionSegs": [101, 103, 105, 112],
+      "answerSegs": [113, 114, 116, 120, 121],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Chronologically the suffering comes before the geulah, so why does Nitzavim, the geulah, come before Vayeilech, the suffering?",
+        "yi": "כראנאלאגיש קומען די צרות פאר דער גאולה, פארוואס שטייט דען נצבים, די גאולה, פאר וילך, די צרות?"
+      },
+      "answer": {
+        "en": "As the Gemara in Megillah says, Hashem prepares the cure for Yisrael before the blow, like a surgeon who lays out his bandages first.",
+        "yi": "ווי די גמרא אין מגילה זאגט, גרייט דער אייבערשטער צו פאר אידן די רפואה פאר דער מכה, אזוי ווי א כירורג וואס לייגט ערשט אויס די באנדאזשן."
+      },
+      "questionSegs": [316, 320, 321, 322],
+      "answerSegs": [328, 329, 353, 355, 359],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "If Nitzavim and Vayeilech are one parsha in the Gaon's count, why are they sometimes read as two sidros?",
+        "yi": "אויב נצבים און וילך איז איין פרשה אין דעם גר\"א'ס חשבון, פארוואס ליינט מען זיי אמאל אלס צוויי סדרות?"
+      },
+      "answer": {
+        "en": "Because the geulah will be an entirely different order, in which the suffering will be like a dream.",
+        "yi": "ווייל די גאולה וועט זיין אן אינגאנצן אנדער סדר, וואו די צרות וועלן זיין ווי א חלום."
+      },
+      "questionSegs": [324, 325, 326],
+      "answerSegs": [361, 363, 368, 371],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says one must live with emunah drawn from the mesorah of the fathers and from binding oneself to Torah and mitzvos, even without seeing wonders.",
+        "yi": "דער משגיח זאגט אז מ'דארף לעבן מיט אמונה פון דער מסורה פון די אבות און פונעם זיך צובינדן צו תורה און מצוות, אפילו אן זען מופתים."
+      },
+      "evidence": { "segs": [43, 45, 46, 47], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one must wait for Moshiach every day.",
+        "yi": "דער משגיח זאגט אז מ'דארף ווארטן אויף משיח יעדן טאג."
+      },
+      "evidence": { "segs": [120, 122], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The Rav calls on every Jew to strengthen himself and others in emunah and to proclaim aloud that there is a Ribono shel Olam.",
+        "yi": "דער משגיח רופט אז יעדער איד זאל זיך און אנדערע שטארקן אין אמונה און אויסרופן הויך אז ס'איז דא א רבונו של עולם."
+      },
+      "evidence": { "segs": [389, 391, 393, 394, 396], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "emunah in the generation before Moshiach",
+    "the Vilna Gaon on the parshiyos of Devarim and the centuries",
+    "times of eis ratzon for the geulah",
+    "the Holocaust and hester panim",
+    "Nitzavim and Vayeilech",
+    "refuah before makah",
+    "calculating the end of days",
+    "teshuvah before the geulah"
+  ],
+  "concepts": [
+    { "he": "אמונה", "heardAs": ["אמנה", "אמונה"] },
+    { "he": "עקבתא דמשיחא", "heardAs": ["נקפת פון די משיחה"] },
+    { "he": "אלף הששי", "heardAs": ["אלף השישי"] },
+    { "he": "פקידה", "heardAs": ["פקודא", "פקודו", "פקוד", "פקודות"] },
+    { "he": "עת רצון", "heardAs": ["עת רצון", "עתת רצון", "נס רצון"] },
+    { "he": "בעתה אחישנה", "heardAs": ["בעיטה", "בעוטה", "אחושנה", "אחי שענע"] },
+    { "he": "קטרוג", "heardAs": ["קוטחוג"] },
+    { "he": "מדת הדין", "heardAs": ["עמודת הדין", "תמידת הדין"] },
+    { "he": "הסתר פנים", "heardAs": ["הפתעה פנים", "היסטאר פנים", "האסתא האסתא פני"] },
+    { "he": "נצבים", "heardAs": ["נציון", "ניצבים", "הנצבים"] },
+    { "he": "וילך", "heardAs": ["ויאלך", "ויאלעך", "צדן ויאלעך"] },
+    { "he": "תשובה", "heardAs": ["תשובה"] }
+  ],
+  "people": [
+    { "name": "the Vilna Gaon", "heardAs": ["גרע", "גראד", "הגרות", "גרועה"] },
+    { "name": "Rav Chaim Volozhiner", "heardAs": ["רבי חיים וואלאזשינער", "רבי חיים וויילעשאן"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "the Arizal", "heardAs": ["ארי הקודש"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יעקב אבינו"] },
+    { "name": "Hitler", "heardAs": ["היטלער"] }
+  ],
+  "asrNotes": "Yiddish ASR fair for the Rav's speech but the pesukim of Vayeilech and Nitzavim are badly garbled and recovered only from context. An earlier source on a date for Moshiach (heard as 'דער חיים'ער קודש אין פרשת צב') and the author of the 1914 calculation (heard as 'די אלבום') could not be identified with confidence and are left out; segments 261-264 and 387-388 are unintelligible. Segment 358 is a long near-empty stretch."
+}

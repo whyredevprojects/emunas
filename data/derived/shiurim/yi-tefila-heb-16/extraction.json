@@ -1,0 +1,679 @@
+{
+  "shiurId": "yi-tefila-heb-16",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "Learning the verses of Ashrei from 'Ve'ezuz nora'osecha' onward, the Rav explains that Dovid HaMelech sees Hashem's mercy and hashgachah in every small thing, and that a person who believes this can turn suffering into delight.",
+      "yi": "אויף די פסוקים פון אשרי פון \"ועזוז נוראותיך\" און ווייטער ערקלערט דער משגיח אז דוד המלך זעט דעם רבונו של עולם'ס רחמנות און השגחה אין יעדע קליינע זאך, און א מענטש וואס גלייבט דאס קען איבערדרייען יסורים אויף תענוג."
+    },
+    "abstract": {
+      "en": "The Rav learns Tehillim 145 verse by verse. Others speak of Hashem's might when something extraordinary happens, but Dovid HaMelech sees His greatness in a leaf or a feather, and a small act done for avodas Hashem counts more in Heaven than events that make history. Hashem is gracious and slow to anger: He waits for the wicked and even gives them strength, hoping they will return. His mercy is on all His creatures, shown in stories of Rebbi and the calf, the Arizal and the chickens, and the Ba'al Shem Tov and the worm. The Rav explains the great destruction fifty years earlier as Hashem gathering damaged souls for their tikkun, like leftovers mixed into a kugel, and tells stories of the Malach, the Sadigura Rebbe and the Beis Aharon showing that everything has a reckoning. Whoever believes in hashgachah pratis sweetens his suffering: nega becomes oneg, as on Shabbos. He ends with 'Yoducha' and the levels of tzaddikim and chassidim.",
+      "yi": "דער משגיח לערנט קאפיטל קמ\"ה אין תהלים פסוק נאך פסוק. די וועלט רעדט פון דעם אייבערשטנס שטארקייט ווען עס קומט פאר עפעס אן אויסערגעוויינטלעכע זאך, אבער דוד המלך זעט זיין גרויסקייט אין א בלעטל און אין א פעדער, און א קליינע זאך וואס מ'טוט לשם שמים מאכט א גרעסערן רושם אין הימל ווי זאכן וואס גייען אריין אין היסטאריע. דער אייבערשטער איז חנון ורחום און ארך אפים: ער ווארט אויף די רשעים און גיט זיי נאך כח, אפשר וועלן זיי תשובה טאן. זיין רחמנות איז אויף אלע באשעפענישן, ווי מ'זעט פון די מעשיות פון רבי מיטן קאלב, פונעם אריז\"ל מיט די הינער און פונעם בעל שם טוב מיטן ווערעמל. די גרויסע חורבן מיט פופציג יאר צוריק ערקלערט ער אז דער אייבערשטער קלייבט צוזאם פארדארבענע נשמות צו זייער תיקון, ווי א קוגל פון שיריים, און ער דערציילט מעשיות פונעם מלאך, פונעם סאדיגערער רבי'ן און פונעם בית אהרן אז אלעס איז מיט א חשבון. ווער עס גלייבט אין השגחה פרטית ממתיק זיינע יסורים: פון נגע ווערט ענג, ווי ביי שבת. צום סוף לערנט ער \"יודוך\" און די מדריגות פון צדיקים און חסידים."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Dovid HaMelech does not need wonders to see Hashem; he sees His greatness and His connection to every small thing in the world.",
+          "yi": "דוד המלך דארף נישט קיין נסים כדי צו זען דעם רבונו של עולם; ער זעט זיין גרויסקייט און זיין חיבור מיט יעדע קליינע זאך אויף דער וועלט."
+        },
+        "evidence": { "segs": [15, 20, 22, 40, 49, 51], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Hashem's patience goes beyond waiting: He keeps giving the sinner life and strength, even to keep sinning, so that he may still do teshuvah.",
+          "yi": "דעם אייבערשטנס סבלנות גייט ווייטער ווי ווארטן: ער גיט דעם חוטא נאך לעבן און כח, אפילו צו זינדיגן ווייטער, כדי ער זאל נאך קענען תשובה טאן."
+        },
+        "evidence": { "segs": [143, 145, 151, 157, 158], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Hashem's mercy extends to every creature, down to a single worm, and every Jew must know that all He does is with mercy and kindness.",
+          "yi": "דעם אייבערשטנס רחמנות איז אויף יעדע באשעפעניש, ביז א איינציג ווערעמל, און יעדער איד דארף וויסן אז אלעס וואס ער טוט איז מיט רחמים און מיט חסד."
+        },
+        "evidence": { "segs": [229, 230, 236, 237, 241], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Everything that happens to a person has an exact reckoning, often a tikkun of a former life, which no human calculation can grasp.",
+          "yi": "אלעס וואס עס קומט פאר מיט א מענטש איז מיט א גענויען חשבון, אפט א תיקון פון א פריערדיגן גלגול, וואס קיין מענטשליכער חשבון קען נישט באנעמען."
+        },
+        "evidence": { "segs": [310, 336, 369, 412, 418], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "A person who recognizes that his suffering comes from Hashem through hashgachah pratis sweetens the judgments, so that the greatest suffering can shrink to a trifle.",
+          "yi": "א מענטש וואס דערקענט אז זיינע יסורים קומען פונעם אייבערשטן בהשגחה פרטית איז ממתיק די דינים, און די גרעסטע יסורים קענען ווערן א קלייניגקייט."
+        },
+        "evidence": { "segs": [482, 484, 485, 487, 489], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The same letters can turn nega (affliction) into oneg (delight), and this is the secret of Shabbos, on which a Jew testifies that Hashem created everything.",
+          "yi": "די זעלבע אותיות קענען איבערדרייען נגע אויף ענג, און דאס איז דער סוד פון שבת, וואס דערמיט איז א איד מעיד אז דער רבונו של עולם האט באשאפן אלעס."
+        },
+        "evidence": { "segs": [495, 497, 546, 547, 555, 558], "confidence": 0.75 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-teffilah-09-a-tefilah",
+      "startSeg": 0,
+      "endSeg": 89,
+      "title": {
+        "en": "Seeing Hashem in every small thing",
+        "yi": "זען דעם רבונו של עולם אין יעדע קלייניגקייט"
+      },
+      "summary": {
+        "en": "On 'Ve'ezuz nora'osecha' and 'Zecher rav tuvcha', the Rav explains that others praise Hashem when something awesome happens, but Dovid HaMelech sees Him in a leaf or a feather. A bottle of milk bought to daven better makes a greater impression in Heaven than events that make the newspapers.",
+        "yi": "אויף \"ועזוז נוראותיך\" און \"זכר רב טובך\" ערקלערט דער משגיח אז אנדערע לויבן דעם אייבערשטן ווען עס קומט פאר עפעס א נורא'דיגע זאך, אבער דוד המלך זעט אים אין א בלעטל און אין א פעדער. א פלאש מילך וואס מ'קויפט כדי בעסער צו דאווענען מאכט א גרעסערן רושם אין הימל ווי זאכן וואס קומען אריין אין די צייטונגען."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-09-a-tefilah",
+      "startSeg": 90,
+      "endSeg": 164,
+      "title": {
+        "en": "Gracious, slow to anger and great in kindness",
+        "yi": "חנון ורחום, ארך אפים וגדל חסד"
+      },
+      "summary": {
+        "en": "The Rav explains why the wicked prosper while tzaddikim are judged to a hair's breadth: Hashem waits for teshuvah. Beyond that, as 'great in kindness', He even gives the sinner strength to continue, as if handing more stones to someone throwing stones at Him.",
+        "yi": "דער משגיח ערקלערט פארוואס די רשעים זענען מצליח בשעת צדיקים ווערן געמשפט כחוט השערה: דער אייבערשטער ווארט אויף תשובה. און נאך מער, \"גדל חסד\": ער גיט דעם חוטא כח ווייטער צו טאן, ווי איינער וואס גיט נאך שטיינער צו דעם וואס ווארפט אויף אים שטיינער."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-09-a-tefilah",
+      "startSeg": 165,
+      "endSeg": 243,
+      "title": {
+        "en": "His mercy is on all His creatures",
+        "yi": "ורחמיו על כל מעשיו"
+      },
+      "summary": {
+        "en": "On 'Tov Hashem lakol', the Rav tells of Rebbi and the calf, the Arizal and the chickens, and the Ba'al Shem Tov and the worm in the heat, showing that Hashem has mercy on every creature, and says every Jew must know that all He does is with mercy.",
+        "yi": "אויף \"טוב ה' לכל\" דערציילט דער משגיח פון רבי מיטן קאלב, פונעם אריז\"ל מיט די הינער און פונעם בעל שם טוב מיטן ווערעמל אין דער היץ, צו ווייזן אז דער אייבערשטער האט רחמנות אויף יעדע באשעפעניש, און ער זאגט אז יעדער איד דארף וויסן אז אלעס וואס ער טוט איז מיט רחמים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-09-a-tefilah",
+      "startSeg": 244,
+      "endSeg": 307,
+      "title": {
+        "en": "The destruction and the kugel of souls",
+        "yi": "דער חורבן און דער קוגל פון נשמות"
+      },
+      "summary": {
+        "en": "The Rav addresses the great destruction of Klal Yisrael fifty years earlier: Hashem gathers souls from the generations of the Flood and the Dispersion into one generation before Moshiach, like a housewife mixing Shabbos leftovers into a kugel, and their suffering is a light judgment compared to what they deserved.",
+        "yi": "דער משגיח רעדט וועגן דעם גרויסן חורבן פון כלל ישראל מיט פופציג יאר צוריק: דער אייבערשטער קלייבט צוזאם נשמות פונעם דור המבול און דור הפלגה אין איין דור פאר משיח, ווי א בעל הביתטע וואס מישט צוזאם די שיריים פון שבת אין א קוגל, און זייערע יסורים זענען א גרינגע מדת הדין קעגן דעם וואס זיי האבן פארדינט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-09-a-tefilah",
+      "startSeg": 308,
+      "endSeg": 373,
+      "title": {
+        "en": "The Malach and the two neighbors",
+        "yi": "דער מלאך און די צוויי שכנים"
+      },
+      "summary": {
+        "en": "The Rav tells of two neighbors who came to the Malach, one with a bad wife and one with poor parnassah. Through the verse in Iyov about three chances, he explains that such a hard life lets a soul return to the world for its tikkun.",
+        "yi": "דער משגיח דערציילט פון צוויי שכנים וואס זענען געקומען צום מלאך, איינער מיט א שלעכטע ווייב און איינער מיט א שוואכע פרנסה. דורך דעם פסוק אין איוב פון דריי מאל ערקלערט ער אז אזא שווער לעבן לאזט א נשמה צוריקקומען אויף דער וועלט צו איר תיקון."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-09-a-tefilah",
+      "startSeg": 374,
+      "endSeg": 448,
+      "title": {
+        "en": "The mezuzah in Sadigura and the Beis Aharon",
+        "yi": "די מזוזה אין סאדיגורא און דער בית אהרן"
+      },
+      "summary": {
+        "en": "The Rav tells of a chassid whom the Sadigura Rebbe kept from moving, who died after affixing his mezuzah with kavanah, and of a man whose wife tormented him, whom the Beis Aharon sent home, after which he suffered in the street instead. Both show that everything comes with a reckoning.",
+        "yi": "דער משגיח דערציילט פון א חסיד וואס דער סאדיגערער רבי האט אים נישט געלאזט אריבערציען, און ער איז אוועק נאכן ארויפקלאפן די מזוזה מיט כוונה, און פון א מענטש וואס זיין ווייב האט אים געפייניגט, וואס דער בית אהרן האט אים אהיימגעשיקט, און ער האט דערנאך געליטן אין גאס. ביידע ווייזן אז אלעס איז מיט א חשבון."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-09-a-tefilah",
+      "startSeg": 449,
+      "endSeg": 518,
+      "title": {
+        "en": "Believing sweetens the suffering",
+        "yi": "אמונה איז ממתיק די יסורים"
+      },
+      "summary": {
+        "en": "The Rav brings the Gemara's measure of suffering, a nickel instead of a quarter, and the Bnei Yissaschar: one who acknowledges that suffering comes from Hashem turns great suffering into a trifle. He explains that nega becomes oneg through the letters, and that one should daven for the judgments to be sweetened for himself, his family and all Yisrael.",
+        "yi": "דער משגיח ברענגט די גמרא וועגן דעם שיעור פון יסורים, א ניקל אנשטאט א קווארטער, און דעם בני יששכר: ווער עס איז מודה אז די יסורים קומען פונעם אייבערשטן, ווערן ביי אים גרויסע יסורים א קלייניגקייט. ער ערקלערט אז נגע ווערט ענג דורך די אותיות, און אז מ'זאל בעטן אז די דינים זאלן ווערן ממותק פאר זיך, פאר דער משפחה און פאר כלל ישראל."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-09-a-tefilah",
+      "startSeg": 519,
+      "endSeg": 569,
+      "title": {
+        "en": "The metzora's nega and the oneg of Shabbos",
+        "yi": "דער נגע פונעם מצורע און עונג שבת"
+      },
+      "summary": {
+        "en": "The Rav reads 'the nega did not turn its ayin' as the nega not becoming oneg, and explains that Shabbos, on which a Jew testifies that Hashem created everything, is the secret of turning nega into oneg and pesha into shefa.",
+        "yi": "דער משגיח טייטשט \"לא הפך הנגע את עינו\" אז דער נגע איז נישט געווארן ענג, און ער ערקלערט אז שבת, ווען א איד איז מעיד אז דער רבונו של עולם האט באשאפן אלעס, איז דער סוד ווי אזוי פון נגע ווערט ענג און פון פשע ווערט שפע."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-09-a-tefilah",
+      "startSeg": 570,
+      "endSeg": 672,
+      "title": {
+        "en": "Yoducha: Your works and Your chassidim",
+        "yi": "יודוך: מעשיך און חסידיך"
+      },
+      "summary": {
+        "en": "On 'Yoducha Hashem kol ma'asecha', the Rav explains that the soul praises Hashem with every breath, that tzaddikim are called His 'handiwork' and adorn the Torah on Shavuos night, and that chassidim are a higher level who bring blessing into the Shechinah. He closes by announcing a break to learn about Pesach.",
+        "yi": "אויף \"יודוך ה' כל מעשיך\" ערקלערט דער משגיח אז די נשמה לויבט דעם אייבערשטן מיט יעדן אטעם, אז צדיקים הייסן \"מעשה ידיו\" און באצירן די תורה שבועות ביינאכט, און אז חסידים זענען א העכערע מדריגה וואס ברענגען א שפע אין דער שכינה. צום סוף זאגט ער אן אז מ'וועט מפסיק זיין צו לערנען עפעס פון פסח."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "ועזוז נורא אסאך ימירה ... א גדולתך את הפעמל",
+      "work": "Tehillim",
+      "ref": "Tehillim 145:6",
+      "sefariaRef": "Psalms 145:6",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [2, 27, 39, 42], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "זכרון רב תבחר יביאה וצדקתך ירננא",
+      "work": "Tehillim",
+      "ref": "Tehillim 145:7",
+      "sefariaRef": "Psalms 145:7",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [52, 53, 54, 76, 80], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "חנן ורחם ה' ערך הפים הגדול החסיד",
+      "work": "Tehillim",
+      "ref": "Tehillim 145:8",
+      "sefariaRef": "Psalms 145:8",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [90, 91, 112, 140, 142], "confidence": 0.9 }
+    },
+    {
+      "heardAs": "והקדוש ברכה מדקתוקים מצדיקי וכחוט השרה",
+      "work": "Gemara Yevamos",
+      "ref": "Yevamos 121b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [107], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "טוב השם לכל ... דער רחם אויף אל כל מעשיו",
+      "work": "Tehillim",
+      "ref": "Tehillim 145:9",
+      "sefariaRef": "Psalms 145:9",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [165, 174, 175, 238], "confidence": 0.9 }
+    },
+    {
+      "heardAs": "וואס דער גמרא האט דערציילט, אז רבי הקודש",
+      "work": "Gemara Bava Metzia",
+      "ref": "Bava Metzia 85a",
+      "sefariaRef": "Bava Metzia 85a",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [180, 181, 183, 186, 190], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "רבי חיים ויטל ברענגט ארונטער א מיינסף",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [194, 196, 198], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "א טויזנט יאר איז איין טאק",
+      "work": "Tehillim",
+      "ref": "Tehillim 90:4",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [274], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "היין פאר מיום יפה על כהל ... היום פעמיים יפה הקיל ... שלש עם גבע",
+      "work": "Iyov",
+      "ref": "Iyov 33:29",
+      "sefariaRef": "Job 33:29",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [335, 338, 343], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער גמרא זאגט אז כל מי ... חייו עינים חיים",
+      "work": "Gemara Beitzah",
+      "ref": "Beitzah 32b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [351, 352], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "אדער אן יחושב כמעס",
+      "work": "Gemara Nedarim",
+      "ref": "Nedarim 64b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [354, 355], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "א תיכון תכלית של יסורים ... דער גמרא זאגט",
+      "work": "Gemara Arachin",
+      "ref": "Arachin 16b",
+      "sefariaRef": "Arakhin 16b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [461, 462, 465, 466], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ראה עניו ואמלי וסלחו לך אתותו",
+      "work": "Tehillim",
+      "ref": "Tehillim 25:18",
+      "sefariaRef": "Psalms 25:18",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [479, 484], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אזוי שטעט אין די ענגל בפירקא פון בני יששכר",
+      "work": "Bnei Yissaschar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [480, 482], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "וראה הקיין והנה ולא הפך הנגע את עינו",
+      "work": "Vayikra",
+      "ref": "Vayikra 13:55",
+      "sefariaRef": "Leviticus 13:55",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [519, 536, 539, 541], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "כשאשת ימים עשה השי' את השמים את הארץ ... בני ווי בני ישראל אותי ליולם",
+      "work": "Shemos",
+      "ref": "Shemos 31:17",
+      "sefariaRef": "Exodus 31:17",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [551, 553, 554], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "כל השי' משבת גלחותי איז אפילו עובד אבודי זכרו כדור אנוש איז מוחל",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 118b",
+      "sefariaRef": "Shabbat 118b",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [563], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ידעך השם כל מהסכר ... וחסידך ובאכלך",
+      "work": "Tehillim",
+      "ref": "Tehillim 145:10",
+      "sefariaRef": "Psalms 145:10",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [570, 573, 643, 654], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "כאלא נשמה תל האלקה ... הכל נשימה אין נשימה",
+      "work": "Tehillim",
+      "ref": "Tehillim 150:6",
+      "sefariaRef": "Psalms 150:6",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [576, 582, 586], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דא שטעט נזייע ביי שבעות ביינאכט ... השמים מתרפים כבוד כלים ומיינסע יד",
+      "work": "Zohar",
+      "ref": "Zohar, Introduction 8a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [592, 599, 600, 601], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אזוי ווי רשע זאגט אין אנפאנג בראשית ... ויוויה אל האדם",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 2:22",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [607, 609, 610, 611], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "אזוי ווי דער גמלא זאגט ... אז שמים איז א נאמען פונעם רבינו של עולם",
+      "work": "Gemara",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [625, 626], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "מגיד דער רוקע ... דער רוקע דערציילט",
+      "work": "Rokeach",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [633, 634, 635], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אזוי ווי עס שעט כאטע ביי מעשה יעשה מן העושה",
+      "work": "Gemara Bava Basra",
+      "ref": "Bava Basra 9a",
+      "sefariaRef": "Bava Batra 9a",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [639, 640], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "א צדיק גזר אין די גשביל פון מקיים",
+      "work": "Gemara Moed Katan",
+      "ref": "Moed Katan 16b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [642], "confidence": 0.7 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav reads the extra vav of 'u'gedulascha' as a connection: Dovid HaMelech sees the bond between every single thing and Hashem, and tells of it calmly, as a narrative, not as a surprise.",
+        "yi": "דער משגיח טייטשט דעם עקסטערן ווא\"ו אין \"וגדולתך\" אלס א חיבור: דוד המלך זעט דעם חיבור פון יעדע זאך מיטן רבונו של עולם, און ער דערציילט עס בדרך סיפור, נישט ווי א חידוש וואס איבערראשט."
+      },
+      "evidence": { "segs": [42, 47, 48, 49, 50, 51], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Buying a bottle of milk so as to have strength to daven or to learn with a bochur makes a great impression in Heaven, while a famous lecture reported in the newspapers makes none.",
+        "yi": "א פלאש מילך וואס מ'קויפט כדי צו האבן כח צו דאווענען אדער צו לערנען מיט א בחור מאכט א גרויסן רושם אין הימל, און א בארימטע דרשה וואס ווערט געדרוקט אין די צייטונגען מאכט גארנישט קיין רושם."
+      },
+      "evidence": { "segs": [63, 64, 68, 69, 72], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav notes that a wind requires atmospheric changes over miles; to cool one worm, Hashem changed the whole region.",
+        "yi": "דער משגיח מערקט אן אז כדי צו מאכן א ווינט דארף זיך טוישן די לופט אויף עטליכע מייל ארום; כדי צו קילן איין ווערעמל האט דער אייבערשטער געטוישט די גאנצע געגנט."
+      },
+      "evidence": { "segs": [225, 226, 227, 229, 230], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The souls of a terrible generation are like a kugel made of Shabbos leftovers: Hashem gathers damaged souls of many generations into one and mixes them into something good.",
+        "yi": "די נשמות פון א שרעקלעכן דור זענען ווי א קוגל פון די שיריים פון שבת: דער אייבערשטער קלייבט צוזאם פארדארבענע נשמות פון אסאך דורות אין איין דור און מישט זיי צוזאם אויף עפעס גוטס."
+      },
+      "evidence": { "segs": [277, 280, 282, 283, 287], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "A life with a bad wife or in poverty, which Chazal count as no life, lets a soul that has used up its three chances come down again, since the accuser cannot claim it has really returned to the world.",
+        "yi": "א לעבן מיט א שלעכטע ווייב אדער אין ארימקייט, וואס חז\"ל רעכענען נישט פאר קיין לעבן, לאזט א נשמה וואס האט שוין אויסגענוצט אירע דריי מאל נאכאמאל אראפקומען, ווייל דער מקטרג קען נישט טענה'ן אז זי איז באמת צוריקגעקומען אויף דער וועלט."
+      },
+      "evidence": { "segs": [346, 350, 352, 355, 357], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "'The nega did not turn its ayin' means the letter ayin did not move: a nega that is not turned around stays a nega instead of becoming oneg.",
+        "yi": "\"לא הפך הנגע את עינו\" מיינט אז דער עי\"ן האט זיך נישט איבערגעדרייט: א נגע וואס מ'דרייט נישט איבער בלייבט א נגע און ווערט נישט קיין ענג."
+      },
+      "evidence": { "segs": [537, 539, 541], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Causing others to act is greater than acting: tzaddikim are called Hashem's 'handiwork' because they cause Hashem to act, as a tzaddik decrees and Hashem fulfills.",
+        "yi": "דער וואס מאכט אז אנדערע זאלן טאן איז גרעסער ווי דער וואס טוט: צדיקים הייסן \"מעשה ידיו\" ווייל זיי מאכן אז דער רבונו של עולם זאל טאן, ווי צדיק גוזר והקב\"ה מקיים."
+      },
+      "evidence": { "segs": [638, 639, 640, 641, 642], "confidence": 0.7 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "Rebbi and the calf", "yi": "רבי מיטן קאלב" },
+      "retelling": {
+        "en": "As the Gemara tells, a calf being led to slaughter ran away and hid under Rebbi's garments. Rebbi told it to go, since for this it was created, and for thirteen years Rebbi suffered because of this. Later, when his maid wanted to sweep some creatures out of the house, he said 'His mercy is on all His creatures'.",
+        "yi": "ווי די גמרא דערציילט, איז א קאלב וואס מ'האט געפירט צו דער שחיטה אנטלאפן און זיך באהאלטן אונטער רבי'ס בגדים. רבי האט עס געזאגט אז עס זאל גיין, ווייל דערצו איז עס באשאפן געווארן, און דרייצן יאר האט רבי געליטן צוליב דעם. שפעטער, ווען די דינסט האט געוואלט ארויסקערן באשעפענישן פון שטוב, האט ער געזאגט \"ורחמיו על כל מעשיו\"."
+      },
+      "people": ["Rebbi (Rabbi Yehuda HaNasi)"],
+      "evidence": { "segs": [180, 181, 184, 186, 188, 190], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "The Arizal and the farmer's chickens", "yi": "דער אריז\"ל און דעם פויער'ס הינער" },
+      "retelling": {
+        "en": "Rabbi Chaim Vital records that a man with no children came to the Arizal for a yeshuah. The Arizal told him the reason: he was a farmer with chickens, and the little chicks could not fly or climb up to the shelf where the chickens rest, and they suffered. He told him to make a ladder so the chicks could go up easily.",
+        "yi": "רבי חיים ויטאל ברענגט אז א מענטש אן קינדער איז געקומען צום אריז\"ל בעטן א ישועה. דער אריז\"ל האט אים געזאגט די סיבה: ער איז א פויער מיט הינער, און די קליינע הינדעלעך האבן נישט געקענט ארויפפליען אדער ארויפקריכן אויף דער פאליצע וואו די הינער רוען, און זיי האבן געהאט צער. ער האט אים געהייסן מאכן א לייטער כדי די הינדעלעך זאלן גרינג קענען ארויפגיין."
+      },
+      "people": ["the Arizal", "Rabbi Chaim Vital"],
+      "evidence": { "segs": [194, 197, 199, 205, 206, 209], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The Ba'al Shem Tov and the worm in the heat", "yi": "דער בעל שם טוב און דאס ווערעמל אין דער היץ" },
+      "retelling": {
+        "en": "On a hot day the Ba'al Shem Tov sat under a tree with his talmidim when a light breeze suddenly passed. He said that on top of the tree there was a little worm suffering from the sun's heat, so Hashem made a breeze, and the leaf fell with the worm to the shade beneath the tree, and the worm was relieved.",
+        "yi": "אויף א הייסן טאג איז דער בעל שם טוב געזעסן אונטער א בוים מיט זיינע תלמידים, און פלוצלונג איז דורכגעגאנגען א קליין ווינטעלע. ער האט געזאגט אז אויבן אויפן בוים איז געווען א ווערעמל וואס האט געליטן פון דער היץ פון דער זון, האט דער אייבערשטער געמאכט א ווינטעלע, און דאס בלעטל איז אראפגעפאלן מיטן ווערעמל אונטערן בוים, און עס האט שוין געהאט א הרחבה."
+      },
+      "people": ["the Ba'al Shem Tov"],
+      "evidence": { "segs": [212, 214, 217, 218, 220, 221], "confidence": 0.85 }
+    },
+    {
+      "title": { "en": "The Malach and the two neighbors", "yi": "דער מלאך און די צוויי שכנים" },
+      "retelling": {
+        "en": "Two neighbors came to the Malach, the son of the Maggid: one suffered greatly from a bad wife, and the other had a poor livelihood and an offer of a promising new one. The Rebbe told the second not to change his parnassah, but he did not listen, and he suddenly fell ill until the doctors gave up hope. He sent a messenger to the Malach, the neighbor with the bad wife, and the Malach explained to him that his bad wife and his friend's bad parnassah were a kindness from Hashem and their tikkun.",
+        "yi": "צוויי שכנים זענען געקומען צום מלאך, דעם מגיד'ס זון: איינער האט שטארק געליטן פון א שלעכטע ווייב, און דער אנדערער האט געהאט א שוואכע פרנסה און א פארשלאג פון א נייע וואס האט אויסגעזען גוט. דער רבי האט דעם צווייטן געזאגט ער זאל נישט טוישן זיין פרנסה, אבער ער האט נישט געפאלגט, און פלוצלונג איז ער קראנק געווארן ביז די דאקטוירים האבן זיך מייאש געווען. ער האט געשיקט א שליח צום מלאך, דעם שכן מיט דער שלעכטער ווייב, און דער מלאך האט אים ערקלערט אז זיין שלעכטע ווייב און זיין חבר'ס שלעכטע פרנסה זענען א טובה פונעם אייבערשטן און זייער תיקון."
+      },
+      "people": ["the Malach (son of the Maggid of Mezritch)"],
+      "evidence": { "segs": [312, 313, 318, 327, 330, 366], "confidence": 0.7 }
+    },
+    {
+      "title": { "en": "The mezuzah affixed with kavanah", "yi": "די מזוזה מיט כוונה" },
+      "retelling": {
+        "en": "A young man lived after his wedding in an apartment his father-in-law gave him, and as children were born he asked the Sadigura Rebbe whether to move, and the Rebbe told him to stay. Eventually he moved to his own house and asked for a brachah for his chanukas habayis; the Rebbe sighed and told him to affix the mezuzah with great kavanah. As he affixed it, a fire broke out on the other side of the house, and as he ran there a fire wagon coming to put it out struck him and he was killed. The Rebbe said the man had only one thing to fix in the world, a brachah on a mezuzah with kavanah, and that is why he had not let him move.",
+        "yi": "א יונגערמאן האט נאך דער חתונה געוואוינט אין א דירה וואס זיין שווער האט אים געגעבן, און ווען עס זענען געבוירן געווארן קינדער האט ער געפרעגט דעם סאדיגערער רבי'ן צי ער זאל אריבערציען, און דער רבי האט אים געזאגט ער זאל בלייבן. צום סוף איז ער אריבער אין זיין אייגן הויז און געבעטן א ברכה אויף דער חנוכת הבית; דער רבי האט געגעבן א קרעכץ און אים געזאגט ער זאל ארויפקלאפן די מזוזה מיט גרויס כוונה. ווען ער האט זי ארויפגעקלאפט איז אויסגעבראכן א פייער אויף דער אנדערער זייט הויז, און ווען ער איז געלאפן אהין האט א פייער-וואגן וואס איז געקומען לעשן אים איבערגעפארן, און ער איז אומגעקומען. דער רבי האט געזאגט אז דער מענטש האט נאר געדארפט מתקן זיין איין זאך אויף דער וועלט, א ברכה אויף א מזוזה מיט כוונה, און דערפאר האט ער אים נישט געלאזט אריבערציען."
+      },
+      "people": ["the Sadigura Rebbe", "the Ruzhiner Rebbe"],
+      "evidence": { "segs": [380, 387, 395, 401, 405, 412], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The Beis Aharon and the tormented husband", "yi": "דער בית אהרן און דער געפייניגטער מאן" },
+      "retelling": {
+        "en": "A man's wife tormented him, tearing at him and throwing dishes at his head, and he would come to the Beis Aharon to complain while the Rebbe stayed silent. Once he came and said he could no longer bear it, and the Rebbe told him to go home and it would be good. At home she greeted him with a smile and a fine supper, but when he went out to the street a policeman seized him, handcuffed him and took him to jail, until the captain apologized for a case of mistaken identity. When he ran to daven mincha, the Beis Aharon met him and told him that since he did not want it at home, he got it in the street.",
+        "yi": "א מענטש'ס ווייב האט אים געפייניגט, געריסן פון אים שטיקער און געווארפן כלים אויף זיין קאפ, און ער פלעגט קומען צום בית אהרן זיך באקלאגן, און דער רבי האט אלעמאל געשוויגן. איינמאל איז ער געקומען און געזאגט אז ער קען שוין מער נישט אויסהאלטן, און דער רבי האט אים געזאגט ער זאל גיין אהיים, עס וועט זיין גוט. אינדערהיים האט זי אים מקבל פנים געווען מיט א שמייכל און א שיינע וועטשערע, אבער ווען ער איז ארויס אין גאס האט אים א פאליציאנט געכאפט, אנגעטון קייטן און אוועקגעשלעפט אין תפיסה, ביז דער הויפטמאן האט זיך אנטשולדיגט אז מ'האט אים פארטוישט מיט א גנב. ווען ער איז געלאפן דאווענען מנחה איז אים דער בית אהרן אנטקעגן געקומען און געזאגט: דו האסט עס נישט געוואלט אינדערהיים, האסטו עס באקומען אין גאס."
+      },
+      "people": ["the Beis Aharon"],
+      "evidence": { "segs": [420, 422, 428, 431, 441, 448], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why does Hashem keep giving a sinner life and strength, which he uses to continue sinning?",
+        "yi": "פארוואס גיט דער אייבערשטער א חוטא ווייטער לעבן און כח, וואס ער נוצט עס צו זינדיגן ווייטער?"
+      },
+      "answer": {
+        "en": "Because Hashem's essence is mercy and kindness, and He wants to give him a chance; perhaps he will yet do teshuvah.",
+        "yi": "ווייל דעם אייבערשטנס מהות איז רחמים און חסד, און ער וויל אים געבן א געלעגנהייט; אפשר וועט ער נאך תשובה טאן."
+      },
+      "questionSegs": [143, 147, 149],
+      "answerSegs": [157, 158, 160, 163],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "How can the terrible destruction of fifty years earlier be mercy?",
+        "yi": "ווי אזוי קען דער שרעקלעכער חורבן מיט פופציג יאר צוריק זיין רחמים?"
+      },
+      "answer": {
+        "en": "Hashem gathered damaged souls of many generations for their tikkun before the geulah, and what they suffered is light compared to what they deserved, like surgery that saves a patient.",
+        "yi": "דער אייבערשטער האט צוזאמגעקליבן פארדארבענע נשמות פון אסאך דורות צו זייער תיקון פאר דער גאולה, און וואס זיי האבן געליטן איז גרינג קעגן דעם וואס זיי האבן פארדינט, ווי אן אפעראציע וואס ראטעוועט דעם חולה."
+      },
+      "questionSegs": [244, 248, 249],
+      "answerSegs": [268, 282, 287, 304],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "Why did the Malach say a bad wife and a bad livelihood were a kindness?",
+        "yi": "פארוואס האט דער מלאך געזאגט אז א שלעכטע ווייב און א שלעכטע פרנסה זענען א טובה?"
+      },
+      "answer": {
+        "en": "A soul is sent down only three times; such a life counts as no life, so the soul can return once more to fix what it damaged.",
+        "yi": "א נשמה ווערט אראפגעשיקט נאר דריי מאל; אזא לעבן ווערט נישט גערעכנט פאר קיין לעבן, ממילא קען די נשמה נאכאמאל צוריקקומען מתקן זיין וואס זי האט פוגם געווען."
+      },
+      "questionSegs": [331, 365],
+      "answerSegs": [336, 346, 350, 352, 366],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "What does it mean that 'the nega did not turn its ayin'?",
+        "yi": "וואס מיינט \"לא הפך הנגע את עינו\"?"
+      },
+      "answer": {
+        "en": "The letter ayin did not move, so the nega did not become oneg.",
+        "yi": "דער עי\"ן האט זיך נישט איבערגעדרייט, ממילא איז דער נגע נישט געווארן ענג."
+      },
+      "questionSegs": [536, 538],
+      "answerSegs": [539, 541],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why does 'yevarchucha' end with kaf-heh rather than a plain kaf?",
+        "yi": "פארוואס ענדיגט זיך \"יברכוכה\" מיט כ\"ה און נישט מיט א פשוטן כ\"ף?"
+      },
+      "answer": {
+        "en": "It alludes to the twenty-five letters of Shema Yisrael: the chassidim bring an abundance of blessing into the Shechinah.",
+        "yi": "עס איז א רמז אויף די פינף און צוואנציג אותיות פון שמע ישראל: די חסידים ברענגען א שפע אין דער שכינה הקדושה."
+      },
+      "questionSegs": [656, 657],
+      "answerSegs": [658, 660, 661],
+      "confidence": 0.65
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says every Jew must know that everything Hashem does is with mercy and kindness.",
+        "yi": "דער משגיח זאגט אז יעדער איד דארף וויסן אז אלעס וואס דער אייבערשטער טוט איז מיט רחמים און מיט חסד."
+      },
+      "evidence": { "segs": [237, 241, 242], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The Rav says a person must know that nothing happens to him without hashgachah pratis, and should acknowledge that his suffering comes from Hashem.",
+        "yi": "דער משגיח זאגט אז א מענטש דארף וויסן אז גארנישט קומט פאר מיט אים אן השגחה פרטית, און ער זאל מודה זיין אז זיינע יסורים קומען פונעם אייבערשטן."
+      },
+      "evidence": { "segs": [468, 470, 471, 482], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one should ask Hashem to turn all troubles to good and sweeten the judgments, for himself, his family and all of Klal Yisrael.",
+        "yi": "דער משגיח זאגט אז מ'זאל בעטן דעם אייבערשטן אז אלע צרות זאלן זיך איבערדרייען לטובה און די דינים זאלן ווערן ממותק, פאר זיך, פאר דער משפחה און פאר גאנץ כלל ישראל."
+      },
+      "evidence": { "segs": [500, 501, 502, 504], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one must thank Hashem for everything and know that He is present in all that happens.",
+        "yi": "דער משגיח זאגט אז מ'דארף דאנקען דעם רבונו של עולם אויף אלעס און וויסן אז אין אלעס וואס קומט פאר איז דארט דער רבונו של עולם."
+      },
+      "evidence": { "segs": [419, 568, 569], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "Ashrei",
+    "Tehillim 145",
+    "hashgachah pratis",
+    "Hashem's mercy on all creatures",
+    "patience with the wicked",
+    "gilgulim and tikkun",
+    "sweetening the judgments",
+    "nega and oneg",
+    "Shabbos as testimony",
+    "tzaddikim and chassidim"
+  ],
+  "concepts": [
+    { "he": "השגחה פרטית", "heardAs": ["השגחה פרטית", "השגחה פחדת", "בהשגחה פרטוס"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבינו שלום", "רבינו שלילון", "רבינו ישראל'ים", "רבי שליל'עם"] },
+    { "he": "ארך אפים", "heardAs": ["ערך הפים", "ערך א פיום"] },
+    { "he": "המתקת הדינים", "heardAs": ["עמטוקה סדינים", "המצוקת הדין", "המתוקת הדינים"] },
+    { "he": "נגע", "heardAs": ["נגע", "נעגער", "נענגער"] },
+    { "he": "ענג", "heardAs": ["עונג"] },
+    { "he": "גלגול", "heardAs": ["גלגלים"] },
+    { "he": "יסורים", "heardAs": ["יסורים", "ישורים"] },
+    { "he": "מצורע", "heardAs": ["מצורה"] },
+    { "he": "כ\"ד קישוטים", "heardAs": ["24 קשאטים", "ח' ד' כשט' כלה"] },
+    { "he": "תיקון ליל שבועות", "heardAs": ["צוקן לעב שבעות"] },
+    { "he": "מעשה ידיו", "heardAs": ["מיינסע ידים", "מעשה ידף"] }
+  ],
+  "people": [
+    { "name": "Dovid HaMelech", "heardAs": ["דוד המלך"] },
+    { "name": "Rebbi (Rabbi Yehuda HaNasi)", "heardAs": ["רבי הקודש", "ר' יקודש"] },
+    { "name": "the Arizal", "heardAs": ["דער אריה קודש"] },
+    { "name": "Rabbi Chaim Vital", "heardAs": ["רבי חיים ויטל"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["דער בעש''ט הקודש", "דער בעש''ק"] },
+    { "name": "the Malach", "heardAs": ["דער מלאך"] },
+    { "name": "the Maggid of Mezritch", "heardAs": ["רבי רבי בעל"] },
+    { "name": "the Sadigura Rebbe", "heardAs": ["דער סאדי גאווער רבי", "סאדיק'ער רבי", "דער סאדיגער"] },
+    { "name": "the Ruzhiner Rebbe", "heardAs": ["רוזשינעל"] },
+    { "name": "the Beis Aharon", "heardAs": ["דער בית אהרן", "בית איין", "בית הרע'ן"] },
+    { "name": "Rashi", "heardAs": ["רשע"] },
+    { "name": "the Rokeach", "heardAs": ["דער רוקע"] },
+    { "name": "Chava", "heardAs": ["חוה"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair for the narrative and stories but garbles nearly every Hebrew quotation; the verses of Ashrei (Tehillim 145:6-10) were recovered from context. The Rav's remark on the Mesorah of the extra vav (segs 43-47), the source behind 'ישוי גאווה' (segs 115-118), the gematria of the 24 ornaments (segs 607-616) and the levels of yesharim, tzaddikim, chassidim and kedoshim (segs 648-653) are too garbled to reconstruct in detail. The shiur ends with a short announcement of a break to learn about Pesach."
+}

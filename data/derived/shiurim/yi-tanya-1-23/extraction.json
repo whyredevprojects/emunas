@@ -1,0 +1,597 @@
+{
+  "shiurId": "yi-tanya-1-23",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that teshuvah out of love draws a flash of the days of Moshiach into a person's own world, which is why it can repair even what the Tanya calls beyond repair, and shows that Hashem never lets a sin become a mishap for the whole world.",
+      "yi": "דער משגיח ערקלערט אז תשובה מאהבה ברענגט א בליץ פון ימות המשיח אריין אין דעם מענטשנס אייגענער וועלט, דערפאר קען זי מתקן זיין אפילו די זאכן וואס דער תניא רופט אן אן עיוות, און ער ווייזט אז דער אייבערשטער לאזט קיינמאל נישט אז אן עבירה זאל ווערן א תקלה פאר דער גאנצער וועלט."
+    },
+    "abstract": {
+      "en": "The Rav reviews Tanya chapter 7: forbidden relations create a body and cannot be repaired except in the future or by great teshuvah out of love, which brings a flash of the days of Moshiach. He compares it to a lightning flash in the night and to Chanukah, when the light of Moshiach is revealed at the lighting. Hashem's domain is reshus hayachid and the klipah's is reshus harabim; Shabbos centers on hotza'ah, and Chanukah lights a candle in reshus harabim. Chanukah comes from Binah, the root of teshuvah out of love. He then explains why even such teshuvah cannot instantly repair a mamzer, and why a mamzer still dies through sustained teshuvah. Turning to Tanya chapter 8, he discusses forbidden food eaten unknowingly, the Tzemach Tzedek's link to the Rambam and the Mechaber, and why the Mishnah Berurah ruled like the Ra'avad: so that the cantonist children could still do teshuvah.",
+      "yi": "דער משגיח חזר'ט איבער תניא פרק ז: ביאת איסורים שאפט א גוף און קען נישט האבן קיין תיקון נאר לעתיד לבוא אדער דורך א תשובה מאהבה רבה, וואס ברענגט א בליץ פון ימות המשיח. ער גלייכט עס צו א בליץ אינמיטן דער נאכט און צו חנוכה, ווען ביים צינדן ווערט נתגלה דער אור פון משיח. דעם אייבערשטנס רשות איז רשות היחיד, און די קליפה איז רשות הרבים; דער עיקר פון שבת איז הוצאה, און חנוכה צינדט מען א ליכט אין רשות הרבים. חנוכה קומט פון בינה, דער שורש פון תשובה מאהבה. דערנאך ערקלערט ער פארוואס אפילו אזא תשובה קען נישט אין איין מאמענט מתקן זיין א ממזר, און אז דורך א לאנגע תשובה שטארבן די ממזרים. ביי פרק ח רעדט ער וועגן מאכלות אסורות בלי יודע, ברענגט דעם צמח צדק וואס פארבינדט עס מיטן רמב\"ם און מיטן מחבר, און ערקלערט פארוואס דער משנה ברורה האט גע'פסק'נט ווי דער ראב\"ד: כדי די קאנטאניסטן קינדער זאלן קענען תשובה טון."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Following Tanya chapter 7, the Rav explains that forbidden relations cannot be repaired except in the future or by great teshuvah out of love, which already now draws a taste of the days of Moshiach.",
+          "yi": "לויט תניא פרק ז ערקלערט דער משגיח אז ביאת איסורים קען נישט האבן קיין תיקון נאר לעתיד לבוא אדער דורך א גרויסע תשובה מאהבה, וואס ברענגט שוין יעצט א טעם פון ימות המשיח."
+        },
+        "evidence": { "segs": [15, 19, 20, 23, 26], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Hashem's domain is reshus hayachid and the domain of the sitra achra is reshus harabim, which is why carrying out (hotza'ah) is the core of Shabbos.",
+          "yi": "דעם רבונו של עולמ'ס רשות איז רשות היחיד, און די רשות פון דער סטרא אחרא איז רשות הרבים, דערפאר איז הוצאה דער עיקר פון שבת."
+        },
+        "evidence": { "segs": [93, 95, 103, 125, 128], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Chanukah is a flash of the days of Moshiach in the darkness of exile, lighting a light in reshus harabim and turning Har Eisav into Har Tziyon.",
+          "yi": "חנוכה איז א בליץ פון ימות המשיח אינמיטן דער פינסטערניש פון גלות, מ'צינדט א ליכט אין רשות הרבים און מ'מאכט פון הר עשו א הר ציון."
+        },
+        "evidence": { "segs": [136, 138, 140, 155, 156], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Teshuvah out of love is Binah, the source of Chanukah, and one who does it lives the days of Moshiach in his own small world.",
+          "yi": "תשובה מאהבה איז בינה, פון וואנעט חנוכה קומט, און דער וואס טוט עס לעבט אין זיין עולם קטן די ימות המשיח."
+        },
+        "evidence": { "segs": [183, 206, 212, 223, 225], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "A mamzer cannot be repaired by a moment of teshuvah, but sustained teshuvah out of love can repair it, and then the mamzerim die; there is no situation in which a Jew's path to repair is closed.",
+          "yi": "א ממזר קען מען נישט מתקן זיין מיט איין מאמענט תשובה, אבער א לאנגע תשובה מאהבה קען עס מתקן זיין, און דעמאלט שטארבן די ממזרים; עס איז נישטא קיין מציאות אז א איד זאל פארשפארט ווערן זיין וועג צו תיקון."
+        },
+        "evidence": { "segs": [242, 253, 264, 265, 283, 286], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "The Rav explains that the Mishnah Berurah's ruling, that forbidden food eaten unknowingly can be elevated, was guided by Heaven so that the cantonist children could later do teshuvah.",
+          "yi": "דער משגיח ערקלערט אז דער פסק פונעם משנה ברורה, אז מאכלות אסורות בלי יודע קענען יא האבן אן עליה, איז געקומען מן השמים כדי די קאנטאניסטן קינדער זאלן שפעטער קענען תשובה טון."
+        },
+        "evidence": { "segs": [560, 589, 612, 615, 625], "confidence": 0.75 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-tanya-12-1-tanya",
+      "startSeg": 0,
+      "endSeg": 78,
+      "title": {
+        "en": "Teshuvah out of love as a flash of Moshiach",
+        "yi": "תשובה מאהבה ווי א בליץ פון משיח"
+      },
+      "summary": {
+        "en": "The Rav reviews Tanya chapter 7: forbidden relations create a body and have no repair except in the future or by great teshuvah out of love, which brings a taste of the days of Moshiach. He compares this to a lightning flash in the night and to Chanukah, when, as the Bnei Yissaschar brings, the light of Moshiach is revealed at the lighting.",
+        "yi": "דער משגיח חזר'ט איבער תניא פרק ז: ביאת איסורים שאפט א גוף און האט נישט קיין תיקון נאר לעתיד לבוא אדער דורך א תשובה מאהבה רבה, וואס ברענגט א טעם פון ימות המשיח. ער גלייכט עס צו א בליץ אין דער נאכט און צו חנוכה, ווען ביים צינדן ווערט נתגלה דער אור פון משיח, ווי דער בני יששכר ברענגט."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-12-1-tanya",
+      "startSeg": 79,
+      "endSeg": 128,
+      "title": {
+        "en": "Reshus hayachid and reshus harabim",
+        "yi": "רשות היחיד און רשות הרבים"
+      },
+      "summary": {
+        "en": "The Rav asks what Chanukah and the days of Moshiach are, bringing the haftarah's verse that saviors will judge Har Eisav from Har Tziyon. He explains that Hashem's domain is reshus hayachid and the klipah's is reshus harabim, and shows from Maseches Shabbos and the verse 'let no man leave his place' that hotza'ah is the heart of Shabbos.",
+        "yi": "דער משגיח פרעגט וואס איז חנוכה און וואס זענען ימות המשיח, און ברענגט דעם פסוק פון דער הפטרה אז מושיעים וועלן משפט'ן הר עשו פון הר ציון. ער ערקלערט אז דעם אייבערשטנס רשות איז רשות היחיד און די קליפה'ס רשות איז רשות הרבים, און ווייזט פון מסכת שבת און פונעם פסוק \"אל יצא איש ממקומו\" אז הוצאה איז דער עיקר פון שבת."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-12-1-tanya",
+      "startSeg": 129,
+      "endSeg": 177,
+      "title": {
+        "en": "Kislev: lighting a candle in reshus harabim",
+        "yi": "כסלו: א ליכט אין רשות הרבים"
+      },
+      "summary": {
+        "en": "Kislev opens with Yaakov leaving the reshus hayachid of Eretz Yisrael for reshus harabim, and its avodah is to light a candle there, the light of Moshiach, until all becomes reshus hayachid in the day that is wholly Shabbos. He adds that the twenty-four days before Chanukah lead into it, as the sefarim count them against the letters of Baruch Shem and Shema Yisrael.",
+        "yi": "כסלו הייבט זיך אן מיט יעקב וואס גייט ארויס פון דער רשות היחיד פון ארץ ישראל צו רשות הרבים, און די עבודה פון כסלו איז צו צינדן דארט א ליכט, דער אור פון משיח, ביז אלעס וועט ווערן רשות היחיד אין יום שכולו שבת. ער לייגט צו אז די פיר און צוואנציג טעג פאר חנוכה פירן אריין אין חנוכה, ווי די ספרים רעכענען זיי קעגן די אותיות פון ברוך שם און שמע ישראל."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-12-1-tanya",
+      "startSeg": 178,
+      "endSeg": 233,
+      "title": {
+        "en": "Binah, Chanukah and teshuvah out of love",
+        "yi": "בינה, חנוכה און תשובה מאהבה"
+      },
+      "summary": {
+        "en": "The Rav explains that Chanukah comes from Binah, eight levels above Malchus, and that teshuvah out of love is Binah while teshuvah out of fear is Malchus. One who does teshuvah out of love brings the days of Moshiach into his own small world, and can therefore repair even forbidden relations and forbidden foods.",
+        "yi": "דער משגיח ערקלערט אז חנוכה קומט פון בינה, אכט מדריגות העכער פון מלכות, און אז תשובה מאהבה איז בינה, בשעת תשובה מיראה איז מלכות. דער וואס טוט תשובה מאהבה ברענגט ימות המשיח אריין אין זיין עולם קטן, און דערפאר קען ער מתקן זיין אפילו ביאות אסורות און מאכלות אסורות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-12-1-tanya",
+      "startSeg": 234,
+      "endSeg": 333,
+      "title": {
+        "en": "Why a mamzer needs sustained teshuvah",
+        "yi": "פארוואס א ממזר דארף א לאנגע תשובה"
+      },
+      "summary": {
+        "en": "The Rav explains why even teshuvah out of love cannot instantly repair a mamzer: the sin lives on in another body, a process the klipah dug into time. He brings the tradition that through great sustained teshuvah the mamzerim die, stresses that no Jew's path to repair is ever closed, and adds that Hashem also does not reveal families whose taint was forgotten.",
+        "yi": "דער משגיח ערקלערט פארוואס אפילו תשובה מאהבה קען נישט אין איין מאמענט מתקן זיין א ממזר: די עבירה לעבט ווייטער אין אן אנדער גוף, א פראצעס וואס די קליפה האט אריינגעגראבן אין זמן. ער ברענגט די קבלה אז דורך א גרויסע לאנגע תשובה שטארבן די ממזרים, ער שטארקט אז קיין אידס וועג צו תיקון ווערט קיינמאל נישט פארשפארט, און לייגט צו אז משפחות וואס זענען נתערב געווארן וועט מען נישט מגלה זיין."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-12-1-tanya",
+      "startSeg": 334,
+      "endSeg": 391,
+      "title": {
+        "en": "Hashem's world cannot be ruined",
+        "yi": "דעם אייבערשטנס וועלט קען מען נישט מקלקל זיין"
+      },
+      "summary": {
+        "en": "The Rav contrasts the nations' worry about pollution of air, water and the earth with the Jew's belief that Hashem created and runs the world and it cannot be ruined. A Jew's worry is to learn, daven, give tzedakah and have good middos; he brings the generation of the Tower, who worried about the heavens, against Avraham Avinu.",
+        "yi": "דער משגיח שטעלט אוועק די גוים'ס זארג וועגן קלקול פון דער לופט, די וואסערן און דער ערד, קעגן דער אמונה פון א איד אז דער רבונו של עולם האט באשאפן די וועלט און פירט זי, און מ'קען זי נישט מקלקל זיין. א אידס זארג איז צו לערנען, דאווענען, געבן צדקה און האבן גוטע מדות; ער ברענגט דעם דור הפלגה וואס האט זיך געזארגט וועגן דעם הימל, קעגן אברהם אבינו."
+      },
+      "kind": "tangent",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-12-1-tanya",
+      "startSeg": 392,
+      "endSeg": 486,
+      "title": {
+        "en": "Forbidden foods and aveirah lishmah",
+        "yi": "מאכלות אסורות און עבירה לשמה"
+      },
+      "summary": {
+        "en": "Returning to Tanya chapter 8, the Rav explains that forbidden foods are bound in the klipah, so even eaten unknowingly for the sake of Heaven they do not rise, and a true issur will be removed only in the days of Moshiach. He explains what an aveirah lishmah is, when it was permitted, and why eating forbidden food unknowingly is not one.",
+        "yi": "צוריק צו תניא פרק ח ערקלערט דער משגיח אז מאכלות אסורות זענען געבונדן אין דער קליפה, דערפאר אפילו ווען מ'עסט זיי בלי יודע לשם שמים גייען זיי נישט ארויף, און א דבר איסור וועט אוועקגיין ערשט אין ימות המשיח. ער ערקלערט וואס איז אן עבירה לשמה, ווען מ'האט עס געמעגט, און פארוואס עסן מאכלות אסורות בלי יודע איז נישט קיין עבירה לשמה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-12-1-tanya",
+      "startSeg": 487,
+      "endSeg": 557,
+      "title": {
+        "en": "The Tzemach Tzedek, the Rambam and the Ra'avad",
+        "yi": "דער צמח צדק, דער רמב\"ם און דער ראב\"ד"
+      },
+      "summary": {
+        "en": "The Rav brings the Tzemach Tzedek in Derech Mitzvosecha, who ties the Tanya's statement to the Rambam and the Mechaber, who rule that one who ate forbidden food unknowingly does not make a bracha acharonah, against the Ra'avad. Since a bracha elevates the food, no bracha means no elevation, while the Mishnah Berurah rules like the Ra'avad.",
+        "yi": "דער משגיח ברענגט דעם צמח צדק אין דרך מצותיך, וואס פארבינדט דעם תניא מיטן רמב\"ם און מיטן מחבר, וואס פסק'נען אז ווער עס האט געגעסן מאכלות אסורות בלי יודע מאכט נישט קיין ברכה אחרונה, קעגן דעם ראב\"ד. ווייל א ברכה איז מעלה די מאכל, איז ווען מ'קען נישט מאכן קיין ברכה האט עס נישט קיין עליה, און דער משנה ברורה פסק'נט ווי דער ראב\"ד."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-12-1-tanya",
+      "startSeg": 558,
+      "endSeg": 625,
+      "title": {
+        "en": "Why the Mishnah Berurah ruled otherwise",
+        "yi": "פארוואס דער משנה ברורה האט אנדערש גע'פסק'נט"
+      },
+      "summary": {
+        "en": "The Rav asks why the Mishnah Berurah ruled differently and answers that nothing happens by chance: halachos follow each generation's sages, as with Rabbi Eliezer's view on preparations for milah and Beis Shammai's rulings in the days of Moshiach. In the Mishnah Berurah's time the Russian government forced thousands of cantonist children to eat forbidden food, and Heaven guided his ruling so that they could still do teshuvah.",
+        "yi": "דער משגיח פרעגט פארוואס דער משנה ברורה האט אנדערש גע'פסק'נט, און ענטפערט אז גארנישט איז במקרה: די הלכות גייען לויט די חכמים פון יעדן דור, ווי ביי רבי אליעזר'ס שיטה אין מכשירי מילה און ביי בית שמאי לעתיד לבוא. אין די צייטן פונעם משנה ברורה האט די רוסישע רעגירונג געצוואונגען טויזנטער קאנטאניסטן קינדער צו עסן מאכלות אסורות, און מן השמים האט מען געפירט זיין פסק כדי זיי זאלן קענען תשובה טון."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "ולכן לבות כאבין זרע לבטלה ... יעשה טשאבה מיאבה רבה, כל כך עד שדונות נשא ליק זכיות",
+      "work": "Tanya",
+      "ref": "Tanya ch. 7",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [7, 12, 13], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער בני יששכר ברענגט פון דעם רוקח",
+      "work": "Bnei Yissaschar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [48, 52, 135, 136], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "יואל משיעים בהר ציון לשפטת הר עסב",
+      "work": "Ovadiah",
+      "ref": "Ovadiah 1:21",
+      "sefariaRef": "Obadiah 1:21",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [85, 86, 87], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "ביי יעקב שטעט שבעה מנפשת ... נפשת בית ... רבים",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [89, 90, 91, 92], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "מסכת שבת פאנגט זיך אן מיט הוצאה",
+      "work": "Mishnah Shabbos",
+      "ref": "Mishnah Shabbos 1:1",
+      "sefariaRef": "Mishnah Shabbat 1:1",
+      "resolution": "resolved",
+      "mention": "alluded",
+      "evidence": { "segs": [106, 107], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "על יצאי ישמע מקומו ביומי שבת",
+      "work": "Shemos",
+      "ref": "Shemos 16:29",
+      "sefariaRef": "Exodus 16:29",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [122, 124], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "בילה המובש לנצח",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 25:8",
+      "sefariaRef": "Isaiah 25:8",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [144], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "קינא של שמי נע ... בזמן המקדש ... קינא של שבע נע",
+      "work": "Gemara Arachin",
+      "ref": "Arachin 13b",
+      "sefariaRef": "Arachin 13b",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [216, 217, 218], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "מאבער שלא יכא לזכן",
+      "work": "Koheles",
+      "ref": "Koheles 1:15",
+      "sefariaRef": "Ecclesiastes 1:15",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [230], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "שעות גמ' יעשה תשובה גדולה כל כך ... דאס וואס ס'טאר מענטער בעל התניא",
+      "work": "Tanya",
+      "ref": "Tanya ch. 7",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [231, 232, 288], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "דער גמרא זאגט אז אפילו א מאמע זאל טאן מיט חכם, איז גדול מיט קיין גדול אמור ארץ",
+      "work": "Gemara Horayos",
+      "ref": "Horayos 13a",
+      "sefariaRef": "Horayot 13a",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [293, 294], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אזוי ווי דער גמרא זאגט אין קדושים",
+      "work": "Gemara Kiddushin",
+      "ref": "Kiddushin 69a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [296, 297], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "אזוי ווי די משנה זאגט ... משפחה של נתמע און נתמע א",
+      "work": "Mishnah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [318, 319, 321, 328], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "שלכך נקראים בשם אסור ... בלי הודע בשם שמים ... שחמורים דברי ספרים",
+      "work": "Tanya",
+      "ref": "Tanya ch. 8",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [398, 404, 413], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אדמרס איז רוח אטמה, אבר מן הארץ",
+      "work": "Zecharyah",
+      "ref": "Zecharyah 13:2",
+      "sefariaRef": "Zechariah 13:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [418], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אין ספר דרך מצוות אחר פון שמח צדק",
+      "work": "Derech Mitzvosecha",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [487, 488, 492, 493], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אין שולחן ערוך אין הלכות ברכות ... ס'טאר נישט בענטשן",
+      "work": "Shulchan Aruch",
+      "ref": "Shulchan Aruch Orach Chaim 196:1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [494, 495, 498], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "א מחלוקת צווישן רמב״ם און דער רבי׳ט",
+      "work": "Rambam, Mishneh Torah",
+      "ref": "Rambam Hilchos Berachos 1:19",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [501, 502, 505], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "דער משנה ברורה ברענגט אונטער דעם רבי'ט",
+      "work": "Mishnah Berurah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [521, 522, 523], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער גמרא זאגט אז די וואס האבן גע'פסק'נט פון רבי יואל אזוי ... מכשיר המילה איז דוחת השבת",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 130a",
+      "sefariaRef": "Shabbat 130a",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [565, 566, 567, 573], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "זאגט דאך סם סופר א נצה טובה מ'זאל אין די תשובות",
+      "work": "Shu\"t Chasam Sofer",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [602, 603, 604, 605], "confidence": 0.65 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Teshuvah out of love is a private arrival of Moshiach: just as in the days of Moshiach the sitra achra will be nullified, so in the small world of the one who returns out of love it is already nullified, which is why he can repair what for the world at large waits for Moshiach.",
+        "yi": "תשובה מאהבה איז ווי משיח'ס קומען פאר דעם יחיד: אזוי ווי אין ימות המשיח וועט די סטרא אחרא בטל ווערן, אזוי איז זי שוין בטל אין דעם עולם קטן פון דעם וואס טוט תשובה מאהבה, און דערפאר קען ער מתקן זיין וואס פאר דער גאנצער וועלט ווארט אויף משיח."
+      },
+      "evidence": { "segs": [223, 224, 225, 226, 229], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Since Hashem is reshus hayachid and the klipah is reshus harabim, hotza'ah is the heart of Shabbos, and Gehinnom and machlokes were created on the second day, when plurality began.",
+        "yi": "ווייל דער אייבערשטער איז רשות היחיד און די קליפה איז רשות הרבים, איז הוצאה דער עיקר פון שבת, און גיהנום און מחלוקת זענען באשאפן געווארן דעם צווייטן טאג, ווען רבים האט זיך אנגעהויבן."
+      },
+      "evidence": { "segs": [93, 96, 97, 98, 105, 126], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Kislev opens with Yaakov leaving Eretz Yisrael for reshus harabim, and the avodah of Chanukah is to light a candle in reshus harabim, making Har Eisav into Har Tziyon.",
+        "yi": "כסלו הייבט זיך אן מיט יעקב וואס גייט ארויס פון ארץ ישראל צו רשות הרבים, און די עבודה פון חנוכה איז צו צינדן א ליכט אין רשות הרבים, מאכן פון הר עשו א הר ציון."
+      },
+      "evidence": { "segs": [130, 131, 137, 138, 140], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Chanukah's eight days come from Binah, eight levels above Malchus, and teshuvah out of love is Binah; so teshuvah out of love lifts a Jew to the very place Chanukah comes from.",
+        "yi": "די אכט טעג חנוכה קומען פון בינה, אכט מדריגות העכער פון מלכות, און תשובה מאהבה איז בינה; ממילא הייבט תשובה מאהבה א איד ארויף צו דעם ארט פון וואנעט חנוכה קומט."
+      },
+      "evidence": { "segs": [183, 184, 198, 199, 206, 213], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "A mamzer cannot be repaired in a moment because the klipah has dug itself into time through a nine-month process, so only sustained teshuvah can spread into the mamzer's body and cut off its life.",
+        "yi": "א ממזר קען מען נישט מתקן זיין אין איין מאמענט, ווייל די קליפה האט זיך אריינגעגראבן אין זמן דורך א פראצעס פון ניין חדשים, און נאר א לאנגע תשובה קען זיך אריינשפרייטן אין דעם גוף פונעם ממזר און אפשניידן זיין חיות."
+      },
+      "evidence": { "segs": [279, 280, 281, 289, 290, 291], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Halachic rulings follow Providence: the Mishnah Berurah's ruling that food eaten unknowingly or under coercion can be elevated was placed in his heart so that the cantonist children would not be left with a sealed heart unable to return.",
+        "yi": "פסקי הלכה גייען לויט השגחה: דער פסק פונעם משנה ברורה אז מאכלות אסורות בלי יודע אדער באונס קענען האבן אן עליה, האט מען אים מן השמים אריינגעגעבן אין הארץ, כדי די קאנטאניסטן קינדער זאלן נישט בלייבן מיט א טמטום הלב און נישט קענען תשובה טון."
+      },
+      "evidence": { "segs": [560, 562, 612, 615, 625], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Tzemach Tzedek reads the Tanya through the laws of bracha acharonah: a bracha elevates the sparks in the food, so where no bracha may be said, the food has no elevation.",
+        "yi": "דער צמח צדק לערנט פשט אין תניא דורך די הלכות פון ברכה אחרונה: א ברכה איז מעלה די ניצוצות אין דעם מאכל, ממילא וואו מ'מעג נישט מאכן קיין ברכה האט דער מאכל נישט קיין עליה."
+      },
+      "evidence": { "segs": [536, 540, 542, 543, 546], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "A man who unknowingly ate forbidden food",
+        "yi": "א מענטש וואס האט בלי יודע געגעסן מאכלות אסורות"
+      },
+      "retelling": {
+        "en": "The Rav relates that someone once came to him with a question: he had been made to eat forbidden food without knowing it, and when he found out he was very distressed. The Rav says he answered him at the time with the Tzemach Tzedek, who ties the Tanya's view to the Mechaber and the Rambam.",
+        "yi": "דער משגיח דערציילט אז איינער איז אמאל געקומען צו אים מיט א שאלה: מ'האט אים געגעבן צו עסן מאכלות אסורות און ער האט נישט געוואוסט, און ווען ער האט זיך דערוואוסט איז ער געווען זייער צוטראגן. דער משגיח זאגט אז ער האט אים דעמאלט געענטפערט מיטן צמח צדק, וואס פארבינדט דעם תניא מיטן מחבר און מיטן רמב\"ם."
+      },
+      "people": [],
+      "evidence": { "segs": [525, 526, 527, 529, 534], "confidence": 0.65 }
+    },
+    {
+      "title": {
+        "en": "The cantonist children",
+        "yi": "די קאנטאניסטן קינדער"
+      },
+      "retelling": {
+        "en": "The Rav relates that in the Mishnah Berurah's time and lands the Russian government seized thousands of Jewish children and took them away as cantonists for twenty-five years. There they had no choice and were forced to eat forbidden food, which would have brought them to a state from which they could not do teshuvah.",
+        "yi": "דער משגיח דערציילט אז אין די צייטן און אין די מדינות פונעם משנה ברורה האט די רוסישע רעגירונג געכאפט טויזנטער אידישע קינדער און זיי אוועקגעשלעפט ווי קאנטאניסטן אויף פינף און צוואנציג יאר. דארט האבן זיי נישט געהאט קיין ברירה און האבן געמוזט עסן מאכלות אסורות, וואס וואלט זיי געברענגט צו א מצב וואו מ'קען נישט תשובה טון."
+      },
+      "people": [],
+      "evidence": { "segs": [586, 587, 588, 589, 594], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "How can great teshuvah out of love repair forbidden relations, which the Tanya says have no repair until the future?",
+        "yi": "וויאזוי קען א גרויסע תשובה מאהבה מתקן זיין ביאת איסורים, וואס דער תניא זאגט האבן נישט קיין תיקון ביז לעתיד לבוא?"
+      },
+      "answer": {
+        "en": "Teshuvah out of love draws the light of the days of Moshiach into the present, so the person already lives that future state.",
+        "yi": "תשובה מאהבה ברענגט אראפ דעם אור פון ימות המשיח אין דער היינטיגער צייט, און דער מענטש לעבט שוין יעצט איבער יענעם מצב."
+      },
+      "questionSegs": [15, 19, 20],
+      "answerSegs": [22, 23, 26],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why does the Tanya say that even teshuvah out of love cannot repair a mamzer?",
+        "yi": "פארוואס זאגט דער תניא אז אפילו תשובה מאהבה קען נישט מתקן זיין א ממזר?"
+      },
+      "answer": {
+        "en": "The penitent's teshuvah works on himself, while the sin remains in the mamzer's body; a moment of teshuvah cannot reach it, but sustained teshuvah spreads into that body until the mamzer dies.",
+        "yi": "די תשובה ווירקט נאר אויף אים אליין, און די עבירה בלייבט אין דעם גוף פונעם ממזר; א מאמענט תשובה קען דארט נישט צוקומען, אבער א לאנגע תשובה שפרייט זיך אריין אין יענעם גוף ביז דער ממזר שטארבט."
+      },
+      "questionSegs": [235, 236, 237],
+      "answerSegs": [241, 242, 243, 289, 290],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why is eating forbidden food unknowingly not considered an aveirah lishmah?",
+        "yi": "פארוואס הייסט עסן מאכלות אסורות בלי יודע נישט קיין עבירה לשמה?"
+      },
+      "answer": {
+        "en": "He could have checked and eaten kosher food; it was simply a mishap he did not know of, not a mitzvah bound up with a sin.",
+        "yi": "ער האט דאך געקענט עסן כשר'ס; עס איז נאר א תקלה וואס ער האט נישט געוואוסט, נישט קיין מצוה וואס איז פארבונדן מיט אן עבירה."
+      },
+      "questionSegs": [478, 479],
+      "answerSegs": [480, 482, 484, 485],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "Why did the Mishnah Berurah rule against the Mechaber that one who ate forbidden food unknowingly makes a bracha acharonah?",
+        "yi": "פארוואס האט דער משנה ברורה גע'פסק'נט קעגן דעם מחבר אז ווער עס האט געגעסן מאכלות אסורות בלי יודע מאכט א ברכה אחרונה?"
+      },
+      "answer": {
+        "en": "Nothing is by chance; Heaven guided his ruling so that the cantonist children forced to eat forbidden food could have an elevation and still do teshuvah.",
+        "yi": "גארנישט איז במקרה; מן השמים האט מען געפירט זיין פסק, כדי די קאנטאניסטן קינדער וואס האבן געמוזט עסן מאכלות אסורות זאלן האבן אן עליה און קענען תשובה טון."
+      },
+      "questionSegs": [558, 561],
+      "answerSegs": [560, 562, 612, 615, 625],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav describes the half hour while the Chanukah candles burn as a precious time to sit by them, look at the lights and absorb their kedushah.",
+        "yi": "דער משגיח באשרייבט די האלבע שעה וואס די חנוכה ליכט ברענען ווי א טייערע צייט צו זיצן ביי די ליכט, קוקן אויף די נרות און אריינזאפן די קדושה."
+      },
+      "evidence": { "segs": [54, 55, 56], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says a Jew need not worry about the world; his worry should be to learn enough, daven well, give tzedakah and be a refined person with good middos.",
+        "yi": "דער משגיח זאגט אז א איד דארף זיך נישט זארגן וועגן דער וועלט; זיין זארג דארף זיין צו לערנען גענוג, דאווענען גוט, געבן צדקה און זיין אן איידעלער מענטש מיט גוטע מדות."
+      },
+      "evidence": { "segs": [370, 371, 372], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "Tanya chapters 7-8",
+    "teshuvah out of love",
+    "days of Moshiach",
+    "Chanukah and the light of Moshiach",
+    "reshus hayachid and reshus harabim",
+    "Binah and Malchus",
+    "mamzer and teshuvah",
+    "forbidden foods eaten unknowingly",
+    "aveirah lishmah",
+    "Divine providence in halachic rulings"
+  ],
+  "concepts": [
+    { "he": "ביאת איסורים", "heardAs": ["ביאת הסורות", "מביאת הסורות"] },
+    { "he": "זרע לבטלה", "heardAs": ["זרע לבטלה", "הזלב התולה"] },
+    { "he": "תשובה מאהבה", "heardAs": ["תשובה מואבה", "תשובה מייבא", "תשובה מוארעווע", "תשובה מאוהב", "טשאבה מיאבה"] },
+    { "he": "תשובה מיראה", "heardAs": ["תשובה מיורה", "תשובה מאירה"] },
+    { "he": "ימות המשיח", "heardAs": ["ימית המשיח", "ימות המשיח"] },
+    { "he": "רשות היחיד", "heardAs": ["רשות היוחד", "ראשית היחד", "רשות היחד"] },
+    { "he": "רשות הרבים", "heardAs": ["ראשית הרבים", "ראשית הרב", "מראשי השרבים"] },
+    { "he": "הוצאה", "heardAs": ["הוצאה", "היצע"] },
+    { "he": "בינה", "heardAs": ["בינא"] },
+    { "he": "מלכות", "heardAs": ["מלכות"] },
+    { "he": "ממזר", "heardAs": ["ממשא", "ממזל", "מזורם", "מעמזורים", "ממזרחים"] },
+    { "he": "מאכלות אסורות", "heardAs": ["מאכלות השחית", "מחלות השרות", "מחליות השרות", "מחריות השרית"] },
+    { "he": "בלי יודע", "heardAs": ["בלי הודע", "בלוי הודע", "פלוה הודע"] },
+    { "he": "עבירה לשמה", "heardAs": ["עבורי לשמה", "עבירה ולשמה", "עביר על השמעה"] },
+    { "he": "ברכה אחרונה", "heardAs": ["ברכה אחרינע", "כברכה אחראינע"] },
+    { "he": "טמטום הלב", "heardAs": ["צומצם א לב", "מטאמטים"] },
+    { "he": "סטרא אחרא", "heardAs": ["סתחי אחרא", "סידכע אחרא", "סדכא אחא", "סתר אחר"] },
+    { "he": "יום שכולו שבת", "heardAs": ["יום שכולי שבת", "יום שקולי שמות"] },
+    { "he": "הר עשו", "heardAs": ["הר עסב", "הר אסאב"] }
+  ],
+  "people": [
+    { "name": "the Bnei Yissaschar", "heardAs": ["בני יששכר"] },
+    { "name": "the Rokeach", "heardAs": ["רוקח"] },
+    { "name": "Reb Pinchas of Koretz", "heardAs": ["ר' פינחס'ל קארצל"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יעקב"] },
+    { "name": "Dovid Hamelech", "heardAs": ["דוד המלך"] },
+    { "name": "the Alter Rebbe (Ba'al HaTanya)", "heardAs": ["בעל התניא"] },
+    { "name": "Eliyahu Hanavi", "heardAs": ["אליהו הנביא"] },
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינו"] },
+    { "name": "Amram", "heardAs": ["אמרי'ם"] },
+    { "name": "Esther", "heardAs": ["אסתר", "נסתר"] },
+    { "name": "Achashverosh", "heardAs": ["חשבורש"] },
+    { "name": "the Tzemach Tzedek", "heardAs": ["שמח צדק", "צמח צדק", "צמח צדיק"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם", "רמבון", "רמב״ל"] },
+    { "name": "the Ra'avad", "heardAs": ["רבי׳ט", "רבי'ט", "רעווארט"] },
+    { "name": "the Mishnah Berurah", "heardAs": ["משנה ברורה", "משנה ברוה"] },
+    { "name": "Rabbi Eliezer", "heardAs": ["רבי יואל עזרא", "רבי יואל אזוי"] },
+    { "name": "the Chasam Sofer", "heardAs": ["סם סופר"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair for the Rav's own speech but Tanya quotations (ch. 7-8) and Kabbalistic terms are heavily garbled; mamzer appears in many forms (ממשא, ממזל, מזורם). Segments 59-78 on a ruling that quotes Beis Shammai about Chanukah candles, 303-311 (partly in English) and 392-398 are largely unrecoverable and were left out. Segment 436 is a flagged exact repeat."
+}

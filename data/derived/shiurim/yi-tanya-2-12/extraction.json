@@ -1,0 +1,561 @@
+{
+  "shiurId": "yi-tanya-2-12",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "On Tanya chapter 26, the Rav explains why sadness lets the yetzer hara win, how a set time of broken-heartedness leads to a greater joy, and why sadness that comes in the middle of business or avodah is a trick of the yetzer.",
+      "yi": "אויף תניא פרק כ\"ו ערקלערט דער משגיח פארוואס עצבות לאזט דעם יצר הרע געווינען, וויאזוי א באשטימטע צייט פון צובראכנקייט ברענגט צו א גרעסערע שמחה, און פארוואס עצבות וואס פאלט אריין אינמיטן געשעפט אדער אינמיטן עבודה איז א טריק פונעם יצר."
+    },
+    "abstract": {
+      "en": "The Rav learns the opening of Tanya chapter 26: just as a sluggish wrestler loses even to a weaker opponent, a person in sadness cannot defeat the yetzer, because sadness and laziness both come from the element of earth. One must be joyful, free of worry about the future and of dissatisfaction with the present. He then explains the verse 'in every sadness there is an advantage': a broken heart at a set time, as in the Arizal's order of Tikkun Chatzos followed by Tehillim 51, leads to a joy greater than before, like light after darkness. Along the way he discusses the four tefillos and four Shabbos meals, staying awake on leil shishi and Shavuos night, and the hidden chassadim that come clothed in suffering. He closes with the Tanya's warning that sadness during business or davening is a ploy of the yetzer, which leads to cravings.",
+      "yi": "דער משגיח לערנט דעם אנהייב פון תניא פרק כ\"ו: אזוי ווי א פוילער רינגער פארלירט אפילו קעגן א שוואכערן, אזוי קען א מענטש אין עצבות נישט מנצח זיין דעם יצר, ווייל עצבות און עצלות קומען ביידע פונעם יסוד העפר. מ'דארף זיין בשמחה, ריין פון דאגה אויף שפעטער און פון עצב אויפן היינטיגן מצב. דערנאך טייטשט ער דעם פסוק \"בכל עצב יהיה מותר\": א צובראכן הארץ אין א באשטימטע צייט, ווי דער סדר פונעם אריז\"ל צו זאגן קאפיטל נ\"א נאך תיקון חצות, ברענגט צו א גרעסערע שמחה, ווי ליכט נאך חושך. אונטערוועגנס רעדט ער וועגן די פיר תפילות און די פיר סעודות שבת, וועגן אויפבלייבן ליל שישי און שבועות ביינאכט, און וועגן די פארבארגענע חסדים וואס קומען אנגעטון אין יסורים. צום סוף ברענגט ער דעם תניא אז עצבות אינמיטן געשעפט אדער אינמיטן דאווענען איז א טריק פונעם יצר, וואס ברענגט צו תאוות."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Like a sluggish wrestler who loses to a weaker opponent, a person in sadness and heaviness cannot overcome the yetzer hara.",
+          "yi": "אזוי ווי א פוילער רינגער פארלירט קעגן א שוואכערן, אזוי קען א מענטש וואס איז אין עצבות און כבדות נישט מנצח זיין דעם יצר הרע."
+        },
+        "evidence": { "segs": [7, 13, 15, 33, 34], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Sadness and laziness come from the same element of earth; a sad person lacks the joy of life and moves slowly, while zerizus comes from joy.",
+          "yi": "עצבות און עצלות קומען פונעם זעלבן יסוד העפר; א מענטש אין עצבות האט נישט קיין שמחת החיים און באוועגט זיך פאמעלעך, און זריזות קומט פון שמחה."
+        },
+        "evidence": { "segs": [37, 38, 44, 53, 58, 63], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "'In every sadness there is an advantage': the joy that comes after a true broken heart at a set time is greater, like light that comes after darkness.",
+          "yi": "\"בכל עצב יהיה מותר\": די שמחה וואס קומט נאך אן אמת'ע צובראכנקייט אין א באשטימטע צייט איז גרעסער, ווי ליכט וואס קומט נאך חושך."
+        },
+        "evidence": { "segs": [118, 138, 153, 419, 425, 427], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Regret over one's avodah belongs only at a fixed time, such as after Tikkun Chatzos or at Krias Shema before sleep, not all day.",
+          "yi": "חרטה אויף זיין עבודת השם געהערט נאר צו א באשטימטע צייט, ווי נאך תיקון חצות אדער ביי קריאת שמע שעל המטה, נישט דעם גאנצן טאג."
+        },
+        "evidence": { "segs": [189, 190, 191, 211, 441, 447], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Suffering that comes from the hidden world is a greater kindness, and great tzaddikim rejoiced in suffering because it bound them to Hashem.",
+          "yi": "יסורים וואס קומען פון עלמא דאתכסיא זענען גרעסערע חסדים, און גרויסע צדיקים האבן זיך געפרייט מיט יסורים ווייל דאס האט זיי מקושר געמאכט מיטן רבונו של עולם."
+        },
+        "evidence": { "segs": [504, 509, 518, 563, 564, 581], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Sadness about one's spiritual standing that falls on a person in the middle of business or davening comes from the yetzer hara, which uses it to lead him to cravings.",
+          "yi": "עצבות אויף זיין רוחניות וואס פאלט אריין אינמיטן געשעפט אדער אינמיטן דאווענען קומט פונעם יצר הרע, וואס וויל אים דורך דעם אריינברענגען אין תאוות."
+        },
+        "evidence": { "segs": [650, 654, 655, 663, 685, 688], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-new-tanya-12-tanya-new",
+      "startSeg": 0,
+      "endSeg": 62,
+      "title": { "en": "Sadness and laziness lose the battle", "yi": "עצבות און עצלות פארלירן די מלחמה" },
+      "summary": {
+        "en": "The Rav reads the opening of Tanya chapter 26 and its mashal of two wrestlers, adding the example of the lion and the ox. He explains that sadness and laziness both come from the element of earth, so a depressed person moves slowly and cannot defeat the yetzer.",
+        "yi": "דער משגיח לערנט דעם אנהייב פון תניא פרק כ\"ו מיטן משל פון צוויי וואס ראנגלען זיך, און לייגט צו דעם משל פון א לייב און אן אקס. ער ערקלערט אז עצבות און עצלות קומען ביידע פונעם יסוד העפר, דערפאר באוועגט זיך א צוגעדריקטער מענטש פאמעלעך און קען נישט מנצח זיין דעם יצר."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-12-tanya-new",
+      "startSeg": 63,
+      "endSeg": 116,
+      "title": { "en": "Joy, zerizus and waking up early", "yi": "שמחה, זריזות און פרי אויפשטיין" },
+      "summary": {
+        "en": "The Rav explains the Tanya's call to be free of worry and sadness, distinguishing worry about the future from dissatisfaction with the present. He shows that people who wake up late are escaping life, while on a day they expect something good they rise early, as a Jew who looks forward to serving Hashem does.",
+        "yi": "דער משגיח ערקלערט דעם תניא אז מ'דארף זיין ריין פון דאגה און עצב, און מאכט א חילוק צווישן דאגה אויף דער צוקונפט און עצב אויפן היינטיגן מצב. ער ווייזט אז מענטשן וואס שטייען אויף שפעט אנטלויפן פונעם לעבן, אבער אויף א טאג וואס זיי ערווארטן עפעס גוטס שטייען זיי אויף פרי, אזוי ווי א איד וואס פרייט זיך צו דינען דעם אייבערשטן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-12-tanya-new",
+      "startSeg": 117,
+      "endSeg": 178,
+      "title": { "en": "In every sadness there is an advantage", "yi": "בכל עצב יהיה מותר" },
+      "summary": {
+        "en": "The Rav brings the verse 'in every sadness there is an advantage' and explains with the Tanya that the advantage is the joy that follows true regret over one's avodah. A broken heart breaks the sitra achra and the wall between a person and Hashem, as the verse 'the offerings of G-d are a broken spirit' teaches.",
+        "yi": "דער משגיח ברענגט דעם פסוק \"בכל עצב יהיה מותר\" און ערקלערט מיטן תניא אז די מעלה איז די שמחה וואס קומט נאך אן אמת'ע חרטה אויף זיין עבודה. א צובראכן הארץ צוברעכט די סטרא אחרא און די מחיצה צווישן דעם מענטש און דעם רבונו של עולם, ווי דער פסוק זאגט \"זבחי אלקים רוח נשברה\"."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-12-tanya-new",
+      "startSeg": 179,
+      "endSeg": 228,
+      "title": { "en": "A set time for sadness: Tikkun Chatzos", "yi": "א באשטימטע צייט פאר עצבות: תיקון חצות" },
+      "summary": {
+        "en": "The Rav explains that sadness may enter only at an appointed time, for a few minutes. He shows this in the Arizal's order to say Tehillim 51, Dovid HaMelech's chapter of teshuvah, after Tikkun Chatzos, where one mourns the destruction of his own inner Beis HaMikdash and then learns in joy.",
+        "yi": "דער משגיח ערקלערט אז עצבות טאר מען אריינלאזן נאר אין א באשטימטע צייט, אויף עטליכע מינוט. דאס ווייזט ער אין דעם סדר פונעם אריז\"ל צו זאגן קאפיטל נ\"א אין תהלים, דוד המלך'ס קאפיטל פון תשובה, נאך תיקון חצות, וואו מ'קלאגט אויפן חורבן פון זיין אייגענעם בית המקדש און דערנאך לערנט מען בשמחה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-12-tanya-new",
+      "startSeg": 229,
+      "endSeg": 330,
+      "title": { "en": "Four tefillos, four meals, and leil shishi", "yi": "פיר תפילות, פיר סעודות, און ליל שישי" },
+      "summary": {
+        "en": "The Rav digresses to the four tefillos: Shacharis and Mincha are obligations, Maariv was a choice that Jews accepted like a vow, and Dovid HaMelech's midnight tefillah remained for tzaddikim. He parallels them to the four Shabbos meals, and criticizes staying up on Thursday night only to sleep through Shabbos.",
+        "yi": "דער משגיח גייט אוועק צו די פיר תפילות: שחרית און מנחה זענען א חוב, מעריב איז א רשות וואס אידן האבן אנגענומען ווי א נדר, און די תפילה פון דוד המלך ביי חצות איז געבליבן פאר צדיקים. ער גלייכט עס צו די פיר סעודות שבת, און ער זאגט אז עס טויג נישט אויפצובלייבן דאנערשטאג ביינאכט און דערנאך אוועקשלאפן דעם שבת."
+      },
+      "kind": "tangent",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-12-tanya-new",
+      "startSeg": 331,
+      "endSeg": 400,
+      "title": { "en": "Shavuos night and serving with sense", "yi": "שבועות ביינאכט און דינען מיט שכל" },
+      "summary": {
+        "en": "The Rav explains that staying awake on Shavuos night is meant to prepare for the morning, so one who will doze through davening and Kerias HaTorah gains nothing, like a chasan who arranged everything and then went to sleep at the chuppah. Since the generations have weakened, one must serve Hashem with sense, and on Shabbos rise early, learn and daven with strength.",
+        "yi": "דער משגיח ערקלערט אז אויפבלייבן שבועות ביינאכט איז כדי זיך צוצוגרייטן צום אינדערפרי, און דער וואס וועט דרימלען ביים דאווענען און ביי קריאת התורה האט גארנישט דערפון, ווי א חתן וואס האט אלעס באשטעלט און ביי דער חופה איז ער געגאנגען שלאפן. ווייל די דורות זענען שוואכער געווארן, דארף מען דינען דעם אייבערשטן מיט שכל, און שבת אויפשטיין פרי, לערנען און דאווענען מיט כח."
+      },
+      "kind": "tangent",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-12-tanya-new",
+      "startSeg": 401,
+      "endSeg": 482,
+      "title": { "en": "Light after darkness; sorrows of this world", "yi": "ליכט נאך חושך; צרות פון עולם הזה" },
+      "summary": {
+        "en": "Returning to the Tanya, the Rav explains with 'as light excels over darkness' that joy after sadness is greater, and brings the Arizal's reading of 'because you did not serve Hashem with joy'. He lists other set times for a reckoning, then turns to sadness over children, health and livelihood, which the Tanya rejects, since one blesses Hashem for bad as for good.",
+        "yi": "צוריק צום תניא, ערקלערט דער משגיח מיטן פסוק \"כיתרון האור מן החשך\" אז שמחה נאך עצבות איז גרעסער, און ברענגט דעם אריז\"ל'ס פשט אין \"תחת אשר לא עבדת\". ער רעכנט אויס נאך באשטימטע צייטן פאר א חשבון הנפש, און דערנאך רעדט ער וועגן עצבות אויף בני חיי ומזוני, וואס דער תניא שטויסט אפ, ווייל מ'בענטשט אויפן שלעכטן אזוי ווי אויפן גוטן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-12-tanya-new",
+      "startSeg": 483,
+      "endSeg": 561,
+      "title": { "en": "Hidden chassadim clothed in suffering", "yi": "פארבארגענע חסדים אנגעטון אין יסורים" },
+      "summary": {
+        "en": "The Rav explains that rejoicing in suffering is a high level reached through years of work. The first two letters of Hashem's name stand for the hidden worlds, whose greater chassadim come down covered in suffering, as he shows in the word 'mitzvah', and he brings 'fortunate is the man whom Hashem chastises' and Chazal on those who rejoice in suffering.",
+        "yi": "דער משגיח ערקלערט אז זיך פרייען מיט יסורים איז א הויכע מדריגה וואס מ'קומט צו דורך יארן ארבעט. די ערשטע צוויי אותיות פונעם שם הוי'ה זענען די פארבארגענע עולמות, און זייערע גרעסערע חסדים קומען אראפ צוגעדעקט מיט יסורים, ווי ער ווייזט אין דעם ווארט \"מצוה\", און ער ברענגט \"אשרי הגבר אשר תיסרנו יה\" און חז\"ל אויף די וואס פרייען זיך מיט יסורים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-12-tanya-new",
+      "startSeg": 562,
+      "endSeg": 616,
+      "title": { "en": "Tzaddikim who rejoiced in suffering", "yi": "צדיקים וואס האבן זיך געפרייט מיט יסורים" },
+      "summary": {
+        "en": "The Rav tells of tzaddikim who rejoiced in suffering, including a Rav named Eliyahu who put his hand into fire, because closeness to Hashem is better than life. He explains that the hidden chassadim will one day be revealed like the sun leaving its sheath, and that in worldly troubles one should bind himself to Hashem.",
+        "yi": "דער משגיח דערציילט פון צדיקים וואס האבן זיך געפרייט מיט יסורים, און פון א רב מיטן נאמען ר' אליהו וואס האט אריינגעלייגט זיין האנט אין פייער, ווייל צו זיין מקושר מיטן אייבערשטן איז בעסער ווי לעבן. ער ערקלערט אז די פארבארגענע חסדים וועלן אמאל אנטפלעקט ווערן ווי די זון וואס קומט ארויס פון איר שייד, און אז ביי צרות פון עולם הזה דארף מען זיך מקשר זיין מיטן אייבערשטן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-12-tanya-new",
+      "startSeg": 617,
+      "endSeg": 713,
+      "title": { "en": "Sadness in business and avodah is the yetzer", "yi": "עצבות אינמיטן געשעפט און עבודה איז פונעם יצר" },
+      "summary": {
+        "en": "The Rav says simpler people should meet worldly troubles with bitachon. He then brings the Tanya that even sadness over spiritual matters, when it comes during business or davening, is a trick of the yetzer that leads to cravings, as seen in people who overeat, and that true bitterness belongs only at a fixed time such as chatzos or Krias Shema before sleep.",
+        "yi": "דער משגיח זאגט אז פשוט'ע מענטשן דארפן זיך שטארקן מיט ביטחון קעגן צרות פון עולם הזה. דערנאך ברענגט ער דעם תניא אז אפילו עצבות אויף מילי דשמיא, ווען זי קומט אינמיטן געשעפט אדער אינמיטן דאווענען, איז א טריק פונעם יצר וואס ברענגט צו תאוות, ווי מ'זעט ביי מענטשן וואס עסן צו פיל, און אז אמת'ע מרירות געהערט נאר צו א באשטימטע צייט ווי חצות אדער קריאת שמע שעל המטה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "כלל גדול כי כמשנ'צחר ומצחר דבר גשנו",
+      "work": "Tanya",
+      "ref": "Tanya ch. 26",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [2, 3, 4, 10, 13], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "פסחת הלב ... נקי מכל דייגע ועצב",
+      "work": "Tanya",
+      "ref": "Tanya ch. 26",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [65, 66, 67], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "בכל עצב יהי מותם",
+      "work": "Mishlei",
+      "ref": "Mishlei 14:23",
+      "sefariaRef": "Proverbs 14:23",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [117, 118, 128], "confidence": 0.9 }
+    },
+    {
+      "heardAs": "והנה להשמח ... הבא אחר העצה",
+      "work": "Tanya",
+      "ref": "Tanya ch. 26",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [136, 137, 138], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "זבחי אלקים רוח נשבעה, לעבן נשבעה ונתקי אלקים",
+      "work": "Tehillim",
+      "ref": "Tehillim 51:19",
+      "sefariaRef": "Psalms 51:19",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [169, 172, 173], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "תשמיינו אסתם ושמחה תגאולה נעצמת דקותא",
+      "work": "Tehillim",
+      "ref": "Tehillim 51:10",
+      "sefariaRef": "Psalms 51:10",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [178], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "השיבה לתתונג השחר ... ורוח נדיבת את מחני",
+      "work": "Tehillim",
+      "ref": "Tehillim 51:14",
+      "sefariaRef": "Psalms 51:14",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [180, 182, 183], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "פארוואס האט דער ארי הקדש געהייסן אז מען זאל זאגן דן נזמה נאך תיקון חצות",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [196, 207, 209, 211], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "חצות להיה לאקם להדות לך על משפט וצדקהך",
+      "work": "Tehillim",
+      "ref": "Tehillim 119:62",
+      "sefariaRef": "Psalms 119:62",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [272], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "לשון פונעם זוהל ... שבעות",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [353], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "כל ארים יעשה בדעת",
+      "work": "Mishlei",
+      "ref": "Mishlei 13:16",
+      "sefariaRef": "Proverbs 13:16",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [387, 388], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "כי יתרון ... אייל מן החשך",
+      "work": "Koheles",
+      "ref": "Koheles 2:13",
+      "sefariaRef": "Ecclesiastes 2:13",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [409, 410, 411], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "תחת השוואה ובטדה איז ה' מקפד אין שמחה",
+      "work": "Devarim",
+      "ref": "Devarim 28:47",
+      "sefariaRef": "Deuteronomy 28:47",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [430, 431, 433], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "דער ראי הקדוש האט כ'טייטש'ט אין פסוק",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [433, 434], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "והנה עצה היצר ... מילי די עלמא",
+      "work": "Tanya",
+      "ref": "Tanya ch. 26",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [435, 458, 459], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "כשמש ומברכה בטבע, כח מברכה על הרע",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 54a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [466, 467, 470], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אשכה הגבעה ... אשר'ע גבעה",
+      "work": "Tehillim",
+      "ref": "Tehillim 94:12",
+      "sefariaRef": "Psalms 94:12",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [553, 555], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ולכן אמן ראזאל, כי א שמחה מיט יסורים ... ואייבער כצאת ה' נישט בגברתו",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 88b",
+      "sefariaRef": "Shabbat 88b",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [558, 559, 560], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "כי דאס זיך כטוב חסדך מיר חיים",
+      "work": "Tehillim",
+      "ref": "Tehillim 63:4",
+      "sefariaRef": "Psalms 63:4",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [583, 584], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "וישי בסתר על יען",
+      "work": "Tehillim",
+      "ref": "Tehillim 91:1",
+      "sefariaRef": "Psalms 91:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [590, 591], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אפי' מי שראה בעל עסקים ... עצה ודגים, און גלי דשמיא בשעת התלקף",
+      "work": "Tanya",
+      "ref": "Tanya ch. 26",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [633, 635, 640, 641], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "בענשון נפלה עלי עצות בשעת עבודה ... כי אין הזמן געווארן כעסל עצבות אמיתות",
+      "work": "Tanya",
+      "ref": "Tanya ch. 26",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [687, 694, 697, 701], "confidence": 0.8 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Sadness and laziness share one root in the heaviest element, earth, which is why a depressed person is also a slow one.",
+        "yi": "עצבות און עצלות האבן איין שורש אינעם שווערסטן יסוד, דעם יסוד העפר, דערפאר איז א צוגעדריקטער מענטש אויך א פוילער."
+      },
+      "evidence": { "segs": [37, 38, 44, 45, 53], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Sleeping late is a sign of sadness, a flight from life by someone who expects nothing of the new day; the same person rises early on a day he looks forward to.",
+        "yi": "שפעט אויפשטיין איז א סימן פון עצבות, אן אנטלויפן פונעם לעבן פון איינעם וואס ערווארט גארנישט פונעם נייעם טאג; דער זעלבער מענטש שטייט אויף פרי אויף א טאג וואס ער פרייט זיך דערמיט."
+      },
+      "evidence": { "segs": [77, 82, 87, 95, 104, 105], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Arizal placed Tehillim 51 after Tikkun Chatzos so that the mourning over one's own inner Beis HaMikdash would lead straight into learning with the joy that follows sadness.",
+        "yi": "דער אריז\"ל האט געשטעלט קאפיטל נ\"א נאך תיקון חצות כדי די קלאגע אויפן אייגענעם בית המקדש זאל גלייך ברענגען צו לערנען מיט דער שמחה וואס קומט נאך עצב."
+      },
+      "evidence": { "segs": [211, 219, 222, 225, 407], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The four tefillos parallel the four Shabbos meals: the first two are obligations, Yaakov's third is a choice and the greatest, and Dovid HaMelech's fourth is kept only by the few.",
+        "yi": "די פיר תפילות זענען אקעגן די פיר סעודות שבת: די ערשטע צוויי זענען א חוב, די דריטע פון יעקב איז א רשות און די גרעסטע, און די פערטע פון דוד המלך האלטן נאר יחידים."
+      },
+      "evidence": { "segs": [232, 268, 271, 279, 286, 298], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Suffering comes from the hidden letters Yud-Heh of Hashem's name, so it is a greater kindness than revealed blessing, just as the first letters of 'mitzvah' are hidden by the at-bash exchange.",
+        "yi": "יסורים קומען פון די פארבארגענע אותיות י\"ה פונעם שם הוי'ה, דערפאר זענען זיי גרעסערע חסדים ווי אנטפלעקטע ברכה, אזוי ווי די ערשטע אותיות פון \"מצוה\" זענען פארבארגן דורך אתב\"ש."
+      },
+      "evidence": { "segs": [494, 503, 509, 533, 546, 554], "confidence": 0.65 }
+    },
+    {
+      "text": {
+        "en": "The proof that spiritual sadness during business is from the yetzer is that the yetzer otherwise wants a person to forget Hashem; it sends such sadness only to drag him into cravings.",
+        "yi": "די ראיה אז עצבות אויף רוחניות אינמיטן געשעפט קומט פונעם יצר איז, אז דער יצר וויל דאך אז מ'זאל פארגעסן דעם אייבערשטן; ער שיקט אזא עצבות נאר כדי אים אריינצוציען אין תאוות."
+      },
+      "evidence": { "segs": [663, 664, 681, 683, 684, 685], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "Rav Eliyahu's white hand", "yi": "ר' אליהו'ס ווייסע האנט" },
+      "retelling": {
+        "en": "The Rav tells of a Rav named Eliyahu who had a white hand. He had once put his hand into fire, wanting to burn it as an atonement for something he had done as a small child. Afterward he was given a new, white hand, and he took suffering upon himself because through it he was bound to Hashem.",
+        "yi": "דער משגיח דערציילט פון א רב מיטן נאמען ר' אליהו וואס האט געהאט א ווייסע האנט. ער האט אמאל אריינגעלייגט זיין האנט אין פייער, ווייל ער האט געוואלט א כפרה אויף עפעס וואס ער האט געטון ווי א קליין קינד. דערנאך האט מען אים געגעבן א נייע ווייסע האנט, און ער האט אויף זיך גענומען יסורים ווייל דורך דעם איז ער געווען מקושר מיטן אייבערשטן."
+      },
+      "people": ["Rav Eliyahu"],
+      "evidence": { "segs": [566, 567, 568, 577, 580, 581], "confidence": 0.6 }
+    },
+    {
+      "title": { "en": "The chasan who slept at his wedding", "yi": "דער חתן וואס איז געגאנגען שלאפן ביי זיין חתונה" },
+      "retelling": {
+        "en": "As a mashal for one who stays up Shavuos night and then sleeps through the morning, the Rav describes a chasan who prepared for his wedding, ordering whiskey, a photographer and every good thing. When it came time for the chuppah, he said he was very tired and went to sleep. The Rav says this makes no sense.",
+        "yi": "אלס משל פאר איינעם וואס בלייבט אויף שבועות ביינאכט און דערנאך שלאפט ער דורך דעם אינדערפרי, שילדערט דער משגיח א חתן וואס האט זיך צוגעגרייט צו זיין חתונה, באשטעלט וויסקי, א פאטאגראף און אלע גוטע זאכן. ווען עס איז געקומען צו דער חופה, האט ער געזאגט אז ער איז שוין זייער מיד און איז געגאנגען שלאפן. דער משגיח זאגט אז דאס פאסט נישט."
+      },
+      "people": [],
+      "evidence": { "segs": [364, 367, 368, 370, 371, 375], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "If sadness is bad, how can the verse say that every sadness has an advantage?", "yi": "אויב עצבות איז שלעכט, וויאזוי זאגט דער פסוק אז ביי יעדן עצב איז דא א מעלה?" },
+      "answer": { "en": "The advantage is the joy that follows a true broken heart; it is greater, like light after darkness.", "yi": "די מעלה איז די שמחה וואס קומט נאך אן אמת'ע צובראכנקייט; זי איז גרעסער, ווי ליכט נאך חושך." },
+      "questionSegs": [129, 131, 135],
+      "answerSegs": [138, 153, 425, 427],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why did the Arizal order Tehillim 51 to be said after Tikkun Chatzos?", "yi": "פארוואס האט דער אריז\"ל געהייסן זאגן קאפיטל נ\"א נאך תיקון חצות?" },
+      "answer": { "en": "So that after mourning, the learning that follows would be in the joy that comes after sadness.", "yi": "כדי נאך דער קלאגע זאל דאס לערנען וואס קומט נאכדעם זיין מיט דער שמחה וואס קומט נאך עצב." },
+      "questionSegs": [211],
+      "answerSegs": [225, 406, 407],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why do people sleep late?", "yi": "פארוואס שטייען מענטשן אויף שפעט?" },
+      "answer": { "en": "They are escaping life because they expect nothing from the new day; it is a sign of sadness.", "yi": "זיי אנטלויפן פונעם לעבן ווייל זיי ערווארטן גארנישט פונעם נייעם טאג; דאס איז א סימן פון עצבות." },
+      "questionSegs": [77],
+      "answerSegs": [81, 82, 87, 89, 96],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "What does one gain from staying up Shavuos night if he dozes through davening and Kerias HaTorah?", "yi": "וואס האט מען פון אויפבלייבן שבועות ביינאכט אויב מ'דרימלט ביים דאווענען און ביי קריאת התורה?" },
+      "answer": { "en": "Nothing; the purpose is the morning, so it is like a chasan who sleeps at his own chuppah.", "yi": "גארנישט; דער תכלית איז דער אינדערפרי, און עס איז ווי א חתן וואס שלאפט ביי זיין אייגענער חופה." },
+      "questionSegs": [352, 363],
+      "answerSegs": [338, 364, 370, 375],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "If the yetzer hara wants a person to forget Hashem, why would it bring sadness about avodas Hashem in the middle of business?", "yi": "אויב דער יצר הרע וויל אז מ'זאל פארגעסן דעם אייבערשטן, פארוואס זאל ער ברענגען עצבות וועגן עבודת השם אינמיטן געשעפט?" },
+      "answer": { "en": "Because sadness leads to cravings, which is what the yetzer is after.", "yi": "ווייל עצבות ברענגט צו תאוות, און דאס איז וואס דער יצר וויל." },
+      "questionSegs": [683, 684],
+      "answerSegs": [663, 664, 679, 685],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says one should set a specific time, such as chatzos, Krias Shema before sleep, erev Shabbos or erev Rosh Chodesh, to let in some sadness and make a reckoning, and not be sad the rest of the day.",
+        "yi": "דער משגיח זאגט אז מ'זאל מאכן א באשטימטע צייט, ווי חצות, קריאת שמע שעל המטה, ערב שבת אדער ערב ראש חודש, אריינצולאזן א ביסל עצבות און מאכן א חשבון, און נישט זיין עצבות'דיג דעם גאנצן טאג."
+      },
+      "evidence": { "segs": [189, 190, 191, 441, 443, 447], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that when sadness about one's avodah falls on a person in the middle of business, he should know it is from the yetzer and push it away.",
+        "yi": "דער משגיח זאגט אז ווען עס פאלט אריין עצבות וועגן זיין עבודה אינמיטן געשעפט, זאל מען וויסן אז דאס קומט פונעם יצר און עס אפשטויסן."
+      },
+      "evidence": { "segs": [646, 650, 654, 655, 657], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says simpler people facing worldly troubles should strengthen themselves with bitachon that Hashem provides all they need.",
+        "yi": "דער משגיח זאגט אז פשוט'ע מענטשן וואס האבן צרות פון עולם הזה זאלן זיך שטארקן מיט ביטחון אז דער אייבערשטער גיט אלעס וואס מ'דארף."
+      },
+      "evidence": { "segs": [617, 618, 619, 621, 622], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one should rather be awake on Shabbos itself: rise early, learn before davening and daven with strength.",
+        "yi": "דער משגיח זאגט אז מ'זאל בעסער זיין וואך אויף שבת אליין: פרי אויפשטיין, לערנען פארן דאווענען און דאווענען מיט כח."
+      },
+      "evidence": { "segs": [329, 391, 392, 393, 394], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "Tanya chapter 26",
+    "sadness and the yetzer hara",
+    "joy and zerizus",
+    "in every sadness there is an advantage",
+    "Tikkun Chatzos",
+    "rejoicing in suffering",
+    "hidden chassadim",
+    "Shavuos night",
+    "four tefillos and four Shabbos meals",
+    "sadness during business"
+  ],
+  "concepts": [
+    { "he": "עצבות", "heardAs": ["עצות", "אצפות", "עצפות", "אצוות"] },
+    { "he": "עצלות", "heardAs": ["אצלות", "עצלות"] },
+    { "he": "זריזות", "heardAs": ["זרועזעס", "זריזעס", "רעזות"] },
+    { "he": "יסוד העפר", "heardAs": ["יסודי אפעלס", "אפעל"] },
+    { "he": "תיקון חצות", "heardAs": ["תוקן חצות", "צוקון חצות"] },
+    { "he": "לב נשבר", "heardAs": ["לעבן נשבעה", "לב נשבע"] },
+    { "he": "עלמא דאתכסיא", "heardAs": ["אלמא דיסקאסיע", "עלמדית כסיא", "עמוד דיסקעתיה"] },
+    { "he": "עלמא דאתגליא", "heardAs": ["מלמדת גליא"] },
+    { "he": "אתב\"ש", "heardAs": ["אט באש", "אדבש"] },
+    { "he": "ליל שישי", "heardAs": ["לעה שישי", "לעל שישי"] },
+    { "he": "מלוה מלכה", "heardAs": ["מלוה מלכים"] },
+    { "he": "שמחת החיים", "heardAs": ["צמחת החיים"] },
+    { "he": "סטרא אחרא", "heardAs": ["ספרי אחרא"] }
+  ],
+  "people": [
+    { "name": "the Alter Rebbe", "heardAs": ["בעל התניא"] },
+    { "name": "the Arizal", "heardAs": ["ארי הקדש", "ראי הקדוש"] },
+    { "name": "Dovid HaMelech", "heardAs": ["דוד המלך", "דבר המלך", "דוד ממלא"] },
+    { "name": "Nosson HaNavi", "heardAs": ["נתן הנביא"] },
+    { "name": "Avraham Avinu", "heardAs": ["אברהם"] },
+    { "name": "Yitzchak Avinu", "heardAs": ["יצחק"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יענקער בבין", "יעקב אבינעל", "יעקב לווינען"] },
+    { "name": "Rav Eliyahu", "heardAs": ["ר' אליהו"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair, but the Tanya, Tehillim and Kabbalistic quotations are heavily garbled; 'atzvus' is often heard as 'עצות' (advice). The name of the Rav quoted on asking for anything at Maariv (seg 262) and the place of Rav Eliyahu in the story (seg 566) could not be recovered, and the story's detail about his childhood is unclear. The Kabbalistic stretch on Shem Havaya and at-bash (segs 491-551) and the passage at segs 593-608 are partly unrecoverable. Seg 171 is flagged noise."
+}

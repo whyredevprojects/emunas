@@ -1,0 +1,381 @@
+{
+  "shiurId": "en-emunah-en-02",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that every Jew inherits emunah from Avraham Avinu, and that a Jew who denies Hashem is only covering his inner belief with a layer of rationalization, which is what the word 'kofer' means.",
+      "yi": "דער משגיח ערקלערט אז יעדער איד ירשנט די אמונה פון אברהם אבינו, און אז א איד וואס לייקנט האט נאר צוגעדעקט זיין אמונה מיט תירוצים, און דאס איז דער טייטש פון דעם ווארט \"כופר\"."
+    },
+    "abstract": {
+      "en": "The Rav begins with the point of the previous week: a Jew has emunah by inheritance, the way a newborn instinctively knows how to nurse and a migrating bird finds its way back to the same tree, and the ba'al teshuvah's return to his roots shows it. He then asks why so many Jews declare that they do not believe. His answer is that they do believe, but disbelief is comfortable, so they suppress their emunah through rationalization. He explains rationalization with the fable of the wolf and the sour grapes, everyday examples, and the story of Chiel of Beis El, who explained away the death of his sons. He contrasts people driven by taivah, who do teshuvah in old age, with those driven by ga'avah, who never admit their mistake. He then explains Avraham Avinu as a new species that believes in Hashem, which is why the Avos were barren and why a hey was added to Avraham's name. Finally he explains that a kofer is one who covers over the truth, like the tar on Noach's ark.",
+      "yi": "דער משגיח הייבט אן מיט דעם וואס ער האט געזאגט די פאריגע וואך: א איד האט די אמונה בירושה, אזוי ווי א קינד וואס איז נאר געבוירן ווייסט שוין ווי אזוי צו זויגן, און א פויגל וואס פליט אוועק אויפן ווינטער געפינט צוריק דעם זעלבן בוים. דאס זעט מען ביי די בעלי תשובה, וואס קומען צוריק צו זייערע שורשים. דערנאך פרעגט ער: פארוואס זשע זאגן אזוי פיל אידן אז זיי גלייבן נישט? ער ענטפערט אז זיי גלייבן יא, נאר עס איז זיי באקוועם נישט צו גלייבן, און זיי פארשטיקן די אמונה דורך \"ראציאנאליזאציע\", דאס הייסט מ'זוכט תירוצים. דאס ערקלערט ער מיטן משל פונעם וואלף מיט די זויערע ווינטרויבן, מיט משלים פונעם לעבן, און מיט דער מעשה פון חיאל בית האלי, וואס האט געפונען א תירוץ אויף יעדן זון וואס איז געשטארבן. ער מאכט א חילוק צווישן מענטשן וואס ווערן געטריבן פון תאוה, וואס טוען תשובה אויף דער עלטער, און מענטשן וואס ווערן געטריבן פון גאוה, וואס וועלן קיינמאל נישט מודה זיין. דערנאך ערקלערט ער אז אברהם אבינו איז געווען א נייער מין וואס גלייבט אין השם יתברך, און דערפאר זענען די אבות געווען עקרים און מ'האט צוגעלייגט א ה' צו אברהמ'ס נאמען. צום סוף ערקלערט ער אז א כופר איז איינער וואס דעקט צו דעם אמת, אזוי ווי דער כופר אויף נח'ס תיבה."
+    },
+    "keyPoints": [
+      {
+        "text": { "en": "Every Jew has emunah by inheritance from the Avos, like the knowledge animals and infants are born with rather than learn.", "yi": "יעדער איד האט די אמונה בירושה פון די אבות, אזוי ווי די ידיעה וואס חיות און קליינע קינדער ווערן געבוירן דערמיט, אן לערנען." },
+        "evidence": { "segs": [0, 1, 57, 59, 61, 62], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "A Jew who declares that he does not believe is not telling the truth: he believes, but finds it comfortable not to, and suppresses his emunah.", "yi": "א איד וואס זאגט אז ער גלייבט נישט זאגט נישט דעם אמת: ער גלייבט יא, נאר עס איז אים באקוועם נישט צו גלייבן, און ער פארשטיקט זיין אמונה." },
+        "evidence": { "segs": [77, 78, 80, 85, 368, 373], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "Rationalization means that a person's ego will not let him admit his own fault, so he blames something else.", "yi": "\"ראציאנאליזאציע\" מיינט אז די גאוה פון א מענטש לאזט אים נישט מודה זיין אויף זיין חסרון, און ער שטופט עס אויף עפעס אנדערש." },
+        "evidence": { "segs": [173, 177, 210, 211], "confidence": 0.9 }
+      },
+      {
+        "text": { "en": "Whether a person does teshuvah in old age depends on whether his dominant drive is taivah or ga'avah.", "yi": "צי א מענטש טוט תשובה אויף דער עלטער, הענגט אפ צי ביי אים איז דער עיקר די תאוה אדער די גאוה." },
+        "evidence": { "segs": [307, 312, 313, 326, 336, 341], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "Avraham Avinu was a new species, a human being who naturally believes in Hashem, and the hey added to his name gave him the power to continue that species.", "yi": "אברהם אבינו איז געווען א נייער מין, א מענטש וואס גלייבט בטבע אין השם יתברך, און דער ה' וואס מ'האט צוגעלייגט צו זיין נאמען האט אים געגעבן דעם כח ווייטער צו פירן דעם מין." },
+        "evidence": { "segs": [386, 388, 405, 414, 436, 438], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "A kofer is one who covers over a truth he knows inside; his heresy is only a veneer.", "yi": "א כופר איז איינער וואס דעקט צו א אמת וואס ער ווייסט אינעווייניג; זיין כפירה איז נאר א שיכט פון אויבן." },
+        "evidence": { "segs": [541, 544, 545, 548, 551, 553], "confidence": 0.85 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-english-sets-emunah-english-02-emunah-english",
+      "startSeg": 0,
+      "endSeg": 63,
+      "title": { "en": "Emunah as an inherited instinct", "yi": "אמונה ווי א געירשנטער חוש" },
+      "summary": {
+        "en": "The Rav recalls that the children of Avraham, Yitzchak and Yaakov have emunah by inheritance, and compares it to a newborn who knows how to nurse and a bird that finds its way back to the same tree. He sees the same instinct in ba'alei teshuvah returning to their roots.",
+        "yi": "דער משגיח דערמאנט אז די קינדער פון אברהם יצחק און יעקב האבן די אמונה בירושה, און ער גלייכט עס צו א קינד וואס ווייסט ווי אזוי צו זויגן און צו א פויגל וואס געפינט צוריק דעם זעלבן בוים. דעם זעלבן חוש זעט ער ביי בעלי תשובה וואס קומען צוריק צו זייערע שורשים."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-emunah-english-02-emunah-english",
+      "startSeg": 64,
+      "endSeg": 189,
+      "title": { "en": "Why do Jews deny? Rationalization", "yi": "פארוואס לייקנען אידן? די תירוצים" },
+      "summary": {
+        "en": "The Rav asks why so many Jews say they do not believe, and answers that they do believe but suppress it, through the psychological law of rationalization. He notes that all of psychology is in the Torah, with the Chazon Ish's answer about psychology books, and explains rationalization with the fable of the wolf and the sour grapes.",
+        "yi": "דער משגיח פרעגט פארוואס אזוי פיל אידן זאגן אז זיי גלייבן נישט, און ענטפערט אז זיי גלייבן יא נאר זיי פארשטיקן עס דורך \"ראציאנאליזאציע\". ער ברענגט אז די גאנצע פסיכאלאגיע געפינט זיך אין דער תורה, מיטן ענטפער פונעם חזון איש, און ער ערקלערט דעם ענין מיטן משל פונעם וואלף און די זויערע ווינטרויבן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-emunah-english-02-emunah-english",
+      "startSeg": 190,
+      "endSeg": 269,
+      "title": { "en": "Examples of rationalization: Chiel of Beis El", "yi": "משלים פון תירוצים: חיאל בית האלי" },
+      "summary": {
+        "en": "The Rav gives everyday examples of blaming something else, a bochur who blames the lighting and an inexperienced sukkah builder who blames the hammer, and then tells how Chiel of Beis El rebuilt Yericho despite Yehoshua's curse and found an excuse for the death of each son.",
+        "yi": "דער משגיח ברענגט משלים פונעם לעבן, א בחור וואס שטופט עס אויף דער ליכט און א מענטש וואס בויט א סוכה און שטופט עס אויפן האמער, און דערנאך דערציילט ער ווי חיאל בית האלי האט אויפגעבויט יריחו טראץ דער קללה פון יהושע, און האט געפונען א תירוץ אויף יעדן זון וואס איז געשטארבן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-emunah-english-02-emunah-english",
+      "startSeg": 270,
+      "endSeg": 361,
+      "title": { "en": "Taivah, ga'avah and teshuvah in old age", "yi": "תאוה, גאוה און תשובה אויף דער עלטער" },
+      "summary": {
+        "en": "After the bird that hides its head in the sand, the Rav describes old people in a nursing home who return to Yiddishkeit once they can no longer indulge, and explains that those driven by taivah do teshuvah while those driven by ga'avah never admit their life was folly. A weak person who does not want to fight his yetzer says the fault is in religion.",
+        "yi": "נאכן משל פונעם פויגל וואס באהאלט דעם קאפ אין זאמד, באשרייבט דער משגיח אלטע מענטשן אין א מושב זקנים וואס קומען צוריק צו אידישקייט ווען זיי קענען שוין נישט נאכגיין זייערע תאוות. ער ערקלערט אז די וואס ווערן געטריבן פון תאוה טוען תשובה, אבער די וואס ווערן געטריבן פון גאוה וועלן קיינמאל נישט מודה זיין. א שוואכער מענטש וואס וויל נישט קעמפן מיטן יצר הרע זאגט אז די שולד ליגט אין דער רעליגיע."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-emunah-english-02-emunah-english",
+      "startSeg": 362,
+      "endSeg": 494,
+      "title": { "en": "Avraham Avinu, a new species of believer", "yi": "אברהם אבינו, א נייער מין וואס גלייבט" },
+      "summary": {
+        "en": "The Rav says that a professed atheist really believes, because every Jew inherits the emunah of Avraham Avinu, of whom the Torah first says that he believed in Hashem. He explains that Avraham was a new species, severed from the previous generations, which is why he was barren and needed the hey added to his name, as with Sarah and Bilhah.",
+        "yi": "דער משגיח זאגט אז איינער וואס רופט זיך אן אן אפיקורס גלייבט באמת, ווייל יעדער איד ירשנט די אמונה פון אברהם אבינו, וועגן וועמען די תורה זאגט צום ערשטן מאל \"והאמין בה'\". ער ערקלערט אז אברהם איז געווען א נייער מין, אפגעשניטן פון די פריערדיגע דורות, און דערפאר איז ער געווען אן עקר און האט געדארפט א ה' צו זיין נאמען, אזוי ווי ביי שרה און ביי בלהה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-emunah-english-02-emunah-english",
+      "startSeg": 495,
+      "endSeg": 582,
+      "title": { "en": "A kofer covers over the truth", "yi": "א כופר דעקט צו דעם אמת" },
+      "summary": {
+        "en": "The Rav sums up that the believing Jew is a new kind of being, which is why the Avos had to be barren. He then explains that 'kofer' means one who covers over a truth he knows, like the kofer (tar) smeared on Noach's ark and the kapores covering the aron, and concludes that every Jew believes deep down, as believers the children of believers.",
+        "yi": "דער משגיח פאסט צוזאם אז דער איד וואס גלייבט איז א נייע בריאה, און דערפאר האבן די אבות געמוזט זיין עקרים. דערנאך ערקלערט ער אז \"כופר\" מיינט איינער וואס דעקט צו א אמת וואס ער ווייסט, אזוי ווי דער כופר וואס מ'האט געשמירט אויף נח'ס תיבה און די כפורת וואס דעקט צו דעם ארון, און ער ענדיגט אז יעדער איד גלייבט טיף אינעווייניג, מאמינים בני מאמינים."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "in the Peir Adaya from the Chazayn Ish",
+      "work": "Pe'er HaDor",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [113, 114, 116, 128, 129], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Madrash tells us Istarku B'irayse B'ra'ama",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [134, 136, 138, 139], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "with a mashu of Ben Sira",
+      "work": "Ben Sira",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [148, 150, 151], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Yeshua conquered Yerichai ... he cursed anybody who will rebuild Yerichai",
+      "work": "Yehoshua",
+      "ref": "Yehoshua 6:26",
+      "sefariaRef": "Joshua 6:26",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [212, 215, 219, 225, 226], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Chiyar Beisa Eili as the Pesach tells us",
+      "work": "Melachim I",
+      "ref": "Melachim I 16:34",
+      "sefariaRef": "I Kings 16:34",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [228, 229, 230, 233, 235], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "V'hemin B'Hashem",
+      "work": "Bereishis",
+      "ref": "Bereishis 15:6",
+      "sefariaRef": "Genesis 15:6",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [380, 381, 382, 383], "confidence": 0.9 }
+    },
+    {
+      "heardAs": "Vayvar David which are Psukim of Divri Ayam",
+      "work": "Divrei HaYamim I",
+      "ref": "Divrei HaYamim I 29:10 (Vayevarech David)",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [392, 394, 395], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "as the Chazal tell us that Sarah couldn't have any children until she had a hay added",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [453, 454, 455, 457, 458], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "so the Zayel explains that Bilhah has two hay's",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [473, 474, 475, 477], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "especially in the Gemma Bava Metzi ... and Rosh explains it",
+      "work": "Gemara Bava Metzia",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [526, 527, 528, 529, 530], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "cover it with keifer ... in last week's sedra",
+      "work": "Bereishis",
+      "ref": "Bereishis 6:14",
+      "sefariaRef": "Genesis 6:14",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [533, 535, 537, 563, 564], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "just like Rasha explains in Parashas Truma ... kapeiris",
+      "work": "Rashi",
+      "ref": "Rashi, Shemos 25:17",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [554, 555, 557, 558, 560], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "we are called Maminim Bnei Maminim",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 97a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [575, 576], "confidence": 0.7 }
+    }
+  ],
+  "insights": [
+    {
+      "text": { "en": "The Rav compares the ba'al teshuvah to the migrating bird: with no memory or instruments it returns to the very tree where it was born, and so the Jew's heart navigates him back to Hashem by an inherited sense.", "yi": "דער משגיח גלייכט דעם בעל תשובה צום פויגל וואס פליט אוועק: אן זכרון און אן כלים קומט ער צוריק צום זעלבן בוים וואו ער איז געבוירן געווארן, און אזוי פירט דאס הארץ פון א איד אים צוריק צום רבונו של עולם מיט א חוש וואס ער האט בירושה." },
+      "evidence": { "segs": [39, 41, 46, 48, 50, 55], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "Chiel of Beis El found a natural explanation for each son's death, a virus, a cold, a kidney disorder, because his ambition would not let him admit Yehoshua's curse; the Rav presents this as the model of rationalization.", "yi": "חיאל בית האלי האט געפונען א טבעי'דיגן תירוץ אויף יעדן זון וואס איז געשטארבן, א ווירוס, א פארקילונג, א קרענק אין די נירן, ווייל זיין שטרעבן צו ווערן בארימט האט אים נישט געלאזט מודה זיין אויף דער קללה פון יהושע; דאס ברענגט דער משגיח אלס דוגמא פון \"ראציאנאליזאציע\"." },
+      "evidence": { "segs": [240, 245, 250, 257, 259, 264], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "Old people who return to observance once their desires are gone no longer need to rationalize, while those whose driving force is ga'avah grow even prouder in old age and cannot admit their life was folly.", "yi": "אלטע מענטשן וואס קומען צוריק צו אידישקייט ווען די תאוות זענען אוועק דארפן שוין נישט קיין תירוצים, אבער די וואס זייער עיקר כח איז די גאוה, ווערן נאך גרעסערע בעלי גאוה אויף דער עלטער און קענען נישט מודה זיין אז זייער לעבן איז געווען שטות." },
+      "evidence": { "segs": [299, 300, 301, 335, 336, 341], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "Avraham Avinu had to be barren because he was a new species; had he been able to have children in the natural way, Yitzchak would simply have been a grandchild of Terach.", "yi": "אברהם אבינו האט געמוזט זיין אן עקר ווייל ער איז געווען א נייער מין; ווען ער וואלט געקענט האבן קינדער אויפן געווענליכן אופן, וואלט יצחק פשוט געווען אן אייניקל פון תרח." },
+      "evidence": { "segs": [405, 414, 416, 417, 418, 420], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Rav connects the hey added to Avraham's and Sarah's names with the power to have children, and brings that Bilhah's name has two heys, one for Rachel and one for herself.", "yi": "דער משגיח פארבינדט דעם ה' וואס מ'האט צוגעלייגט צום נאמען פון אברהם און שרה מיטן כח צו האבן קינדער, און ער ברענגט אז בלהה האט צוויי ה'ס אין איר נאמען, איינס פאר רחל און איינס פאר זיך." },
+      "evidence": { "segs": [438, 455, 459, 469, 475, 477], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "From the kofer (tar) on Noach's ark and the kapores that covers the aron, the Rav explains that apikorsus is only a cover smeared over the emunah that remains inside.", "yi": "פונעם כופר אויף נח'ס תיבה און פון דער כפורת וואס דעקט צו דעם ארון ערקלערט דער משגיח אז אפיקורסות איז נאר א צודעק וואס מ'שמירט איבער דער אמונה וואס בלייבט אינעווייניג." },
+      "evidence": { "segs": [537, 541, 548, 551, 558, 562], "confidence": 0.85 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Chazon Ish and the psychology books", "yi": "דער חזון איש און די ספרים פון פסיכאלאגיע" },
+      "retelling": {
+        "en": "A rabbi who was already a good rabbi wanted to improve, and asked the Chazon Ish whether he should study psychology books to become a better rabbi. The Chazon Ish answered that he could get it from Chumash and Rashi: one who learns Chumash and Rashi should know psychology.",
+        "yi": "א רב וואס איז שוין געווען א גוטער רב האט געוואלט זיך פארבעסערן, און האט געפרעגט דעם חזון איש צי ער זאל לערנען ספרים פון פסיכאלאגיע כדי צו ווערן א בעסערער רב. דער חזון איש האט געענטפערט אז ער קען עס קריגן פון חומש מיט רש\"י: איינער וואס לערנט חומש מיט רש\"י דארף קענען פסיכאלאגיע."
+      },
+      "people": ["the Chazon Ish"],
+      "evidence": { "segs": [116, 117, 123, 125, 129, 132], "confidence": 0.85 }
+    },
+    {
+      "title": { "en": "The wolf and the sour grapes", "yi": "דער וואלף און די זויערע ווינטרויבן" },
+      "retelling": {
+        "en": "A wolf came to a vineyard and saw beautiful grapes, but a high fence surrounded it. For three days and three nights he tried to climb over and could not. He turned around and said the grapes were sour anyway.",
+        "yi": "א וואלף איז געקומען צו א וויינגארטן און געזען שיינע ווינטרויבן, נאר ארום איז געווען א הויכער פלויט. דריי טעג און דריי נעכט האט ער פרובירט איבערצוקריכן און האט נישט געקענט. האט ער זיך אויסגעדרייט און געזאגט אז די ווינטרויבן זענען סיי ווי זויער."
+      },
+      "people": [],
+      "evidence": { "segs": [157, 158, 162, 163, 165, 168], "confidence": 0.9 }
+    },
+    {
+      "title": { "en": "Chiel of Beis El rebuilds Yericho", "yi": "חיאל בית האלי בויט אויף יריחו" },
+      "retelling": {
+        "en": "Yehoshua cursed whoever would rebuild Yericho: his oldest son would die when he began and his youngest when he set up the gates. Chiel of Beis El, who had ten sons, rebuilt it, and his sons died one after another. The Rav suggests that he wanted to be remembered in history, and for each death he found a natural cause rather than admit the curse.",
+        "yi": "יהושע האט געשאלטן ווער עס וועט אויפבויען יריחו: ווען ער הייבט אן וועט שטארבן זיין עלטסטער זון, און ווען ער שטעלט אוועק די טויערן, זיין יינגסטער. חיאל בית האלי, וואס האט געהאט צען זין, האט עס אויפגעבויט, און זיינע זין זענען געשטארבן איינער נאכן אנדערן. דער משגיח זאגט אז ער האט געוואלט ווערן פארשריבן אין דער היסטאריע, און אויף יעדן טויט האט ער געפונען א טבעי'דיגע סיבה, אבי נישט מודה צו זיין אויף דער קללה."
+      },
+      "people": ["Yehoshua", "Chiel of Beis El"],
+      "evidence": { "segs": [212, 228, 231, 236, 241, 261], "confidence": 0.85 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "If emunah is in every Jew's blood, why do so many Jews declare that they do not believe?", "yi": "אויב די אמונה איז אין בלוט פון יעדן איד, פארוואס זאגן אזוי פיל אידן אז זיי גלייבן נישט?" },
+      "answer": { "en": "They do believe; it is comfortable for them not to, so they suppress their emunah into the subconscious.", "yi": "זיי גלייבן יא; עס איז זיי באקוועם נישט צו גלייבן, און זיי פארשטיקן די אמונה אין אונטער-באוואוסטזיין." },
+      "questionSegs": [65, 66, 69, 71, 74],
+      "answerSegs": [77, 78, 80, 83, 85, 87],
+      "confidence": 0.85
+    },
+    {
+      "question": { "en": "Why do some irreligious people do teshuvah in old age while others do not?", "yi": "פארוואס טוען טייל מענטשן וואס האבן נישט געהאלטן תורה ומצוות תשובה אויף דער עלטער, און אנדערע נישט?" },
+      "answer": { "en": "It depends on the dominant drive: those ruled by taivah return once they can no longer indulge, but those ruled by ga'avah cannot admit their life was folly.", "yi": "עס הענגט אפ אין דעם עיקר כח: די וואס ווערן געפירט פון תאוה קומען צוריק ווען זיי קענען שוין נישט נאכגיין די תאוות, אבער די וואס ווערן געפירט פון גאוה קענען נישט מודה זיין אז זייער לעבן איז געווען שטות." },
+      "questionSegs": [302, 304, 305],
+      "answerSegs": [307, 313, 326, 329, 336, 341],
+      "confidence": 0.85
+    },
+    {
+      "question": { "en": "Why was Avraham Avinu barren?", "yi": "פארוואס איז אברהם אבינו געווען אן עקר?" },
+      "answer": { "en": "As a new species cut off from the previous generations he could not continue Terach's line, and needed a new power of reproduction, given by the hey added to his name.", "yi": "אלס א נייער מין, אפגעשניטן פון די פריערדיגע דורות, האט ער נישט געקענט ווייטער פירן די שורה פון תרח, און ער האט געדארפט א נייעם כח פון האבן קינדער, וואס איז געקומען דורכן ה' וואס מ'האט צוגעלייגט צו זיין נאמען." },
+      "questionSegs": [405, 406],
+      "answerSegs": [414, 417, 420, 422, 436, 438],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "What does the word 'kofer' mean?", "yi": "וואס מיינט דאס ווארט \"כופר\"?" },
+      "answer": { "en": "One who denies a truth he knows inside; the word means a covering, like the tar smeared on Noach's ark.", "yi": "איינער וואס לייקנט א אמת וואס ער ווייסט אינעווייניג; דאס ווארט מיינט א צודעק, אזוי ווי דער כופר וואס מ'האט געשמירט אויף נח'ס תיבה." },
+      "questionSegs": [529, 530, 531],
+      "answerSegs": [537, 540, 541, 542, 545, 553],
+      "confidence": 0.85
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Rav says that when one meets someone who professes to be an atheist, one should tell him he is a liar: deep down he does believe.", "yi": "דער משגיח זאגט אז ווען מ'טרעפט איינעם וואס זאגט אז ער איז אן אפיקורס, זאל מען אים זאגן אז ער זאגט ליגן: טיף אינעווייניג גלייבט ער יא." },
+      "evidence": { "segs": [362, 364, 366, 367, 368, 373], "confidence": 0.85 }
+    }
+  ],
+  "candidateTopics": [
+    "inherited emunah",
+    "rationalization and denial",
+    "ga'avah and taivah",
+    "teshuvah in old age",
+    "Avraham Avinu as a new species",
+    "the hey added to Avraham's name",
+    "meaning of the word kofer",
+    "Torah and psychology",
+    "Chiel of Beis El"
+  ],
+  "concepts": [
+    { "he": "אמונה", "heardAs": ["amunah", "Emunah", "immune"] },
+    { "he": "ירושה", "heardAs": ["Yerusha", "Yairish"] },
+    { "he": "רבונו של עולם", "heardAs": ["Rabbi Nishleilam", "Rabbani Shalei", "Rabbani Shlodon", "Rabbeinah Shalei", "Rabbani Shredem", "Rabbina Shalayim"] },
+    { "he": "בעלי תשובה", "heardAs": ["bali tshuvas", "bali tshuva"] },
+    { "he": "גאוה", "heardAs": ["gaiva", "geyver", "gaiver"] },
+    { "he": "תאוה", "heardAs": ["taiva", "tithe", "tithes", "tithists"] },
+    { "he": "כופר", "heardAs": ["Kaifer", "keifer", "kaifa", "kaifel", "cave"] },
+    { "he": "אפיקורס", "heardAs": ["apicaurus", "apicaidus", "anapikeiris"] },
+    { "he": "כפירה", "heardAs": ["kvira"] },
+    { "he": "כפורת", "heardAs": ["kapeiris"] },
+    { "he": "עקר", "heardAs": ["Akar", "Akara", "uncle", "a Karim"] },
+    { "he": "כח", "heardAs": ["kayach"] },
+    { "he": "מסוגל", "heardAs": ["m'sugl"] },
+    { "he": "קללה", "heardAs": ["clola", "Klon"] },
+    { "he": "תירוץ", "heardAs": ["terret", "Territzes"] },
+    { "he": "מעשה בראשית", "heardAs": ["Mayin Sehb Reishas", "Main Sehbrayshus"] },
+    { "he": "מאמינים בני מאמינים", "heardAs": ["Maminim Bnei Maminim"] },
+    { "he": "יצר הרע", "heardAs": ["Yetzirah"] },
+    { "he": "מושב זקנים", "heardAs": ["Moshevskainen"] }
+  ],
+  "people": [
+    { "name": "Avraham Avinu", "heardAs": ["Avraham Avinu", "Avram", "Abraham"] },
+    { "name": "Yitzchak", "heardAs": ["Yitzchuk", "Yitzhak", "Yitzchak"] },
+    { "name": "Yaakov", "heardAs": ["Yen Keif", "Viyank"] },
+    { "name": "Sarah", "heardAs": ["Sarah"] },
+    { "name": "Rachel", "heardAs": ["Rachel"] },
+    { "name": "Bilhah", "heardAs": ["Bilhah"] },
+    { "name": "Yishmael", "heardAs": ["Yishmael"] },
+    { "name": "Terach", "heardAs": ["Tarach"] },
+    { "name": "the Chazon Ish", "heardAs": ["Chazayn Ish", "Chuzay Nish"] },
+    { "name": "Ben Sira", "heardAs": ["Ben Sira", "Ben Sirah"] },
+    { "name": "Yirmiyahu HaNavi", "heardAs": ["Yim Yohanavi"] },
+    { "name": "Yehoshua", "heardAs": ["Yeshua"] },
+    { "name": "Chiel of Beis El", "heardAs": ["Chiyar Beisa Eili", "Chiyobay Sa'eli", "Chiyobah Yisraeli"] },
+    { "name": "Freud", "heardAs": ["Freund"] }
+  ],
+  "asrNotes": "English ASR is fair; Hebrew terms are heavily garbled (Ribono shel Olam appears in many forms, kofer as 'Kaifer/kaifa/cave') but recoverable from context. Segment 403 is a repeated-phrase hallucination over about 30 seconds, and the Rav's quotation of the passuk around segments 401-402 and 489-495 is not recoverable. The source cited for Bilhah's two heys ('the Zayel') and the 'Rosh' on kofer could not be identified with confidence."
+}

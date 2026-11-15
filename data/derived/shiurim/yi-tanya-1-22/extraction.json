@@ -1,0 +1,558 @@
+{
+  "shiurId": "yi-tanya-1-22",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "On Tanya chapter 7, the Rav explains that permitted worldly things come from kelipas nogah and that a Jew can raise them to holiness by using them for the sake of Heaven, as Yitzchak found living water in the wells he dug.",
+      "yi": "אויפן תניא פרק ז ערקלערט דער משגיח אז דברי רשות קומען פון קליפת נוגה, און א איד קען זיי מעלה זיין צו קדושה ווען ער טוט זיי לשם שמים, אזוי ווי יצחק האט געפונען א באר מים חיים אין די בארות וואס ער האט געגראבן."
+    },
+    "abstract": {
+      "en": "The Rav opens chapter 7 of Tanya: after showing that Torah and mitzvos clothe a person in holiness and sins clothe him in the sitra achra, the Alter Rebbe turns to permitted things. The animal soul of a Jew, kosher animals and permitted food come from kelipas nogah, a middle level that can tip either way. Eating, drinking and business are neutral in themselves; done for the sake of Heaven they rise to holiness, done for pleasure they fall to the kelipos. The world was created with the Torah, so every thing holds a point of G-dliness, and this is what Yitzchak's wells and Yaakov's sheep mean. Only a Jew can raise nogah. A plain person needs some pleasure, but with a measure each must judge for himself, as the Bnei Yissaschar explains. Pleasure taken for its own sake leaves a residue that needs chibut hakever, while forbidden things stay bound until the end of days.",
+      "yi": "דער משגיח עפנט תניא פרק ז: נאכדעם וואס דער בעל התניא האט מסביר געווען אז תורה און מצוות זענען מלביש דעם מענטש אין קדושה און עבירות אין דעם סטרא אחרא, רעדט ער יעצט פון דברי רשות. דער נפש הבהמית פון א איד, כשר'ע בהמות און עסנווארג וואס מ'מעג עסן קומען פון קליפת נוגה, א בחינה ממוצעת וואס קען זיך נוטה זיין אהער אדער אהין. עסן, טרינקען און ביזנעס זענען פאר זיך נישט קיין מצוה און נישט קיין עבירה; לשם שמים ווערן זיי מעלה צו קדושה, און פאר תאוה פאלן זיי אריין אין די קליפות. די וועלט איז באשאפן געווארן מיט דער תורה, ממילא האט יעדע זאך א נקודה פון אלקות, און דאס איז דער פשט אין די בארות פון יצחק און די שעפסן פון יעקב. נאר א איד קען מעלה זיין נוגה. א פשוטער מענטש דארף האבן א הנאה, אבער מיט א מאס וואס יעדער מוז אפשאצן פאר זיך, אזוי ווי דער בני יששכר ערקלערט. א הנאה שלא לשם שמים לאזט איבער א רושם וואס דארף חיבוט הקבר, און דברים אסורים בלייבן געבונדן ביז די לעצטע צייטן."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The animal soul of a Jew comes from kelipas nogah, not from the three wholly impure kelipos, so the permitted things it uses can be turned to holiness.",
+          "yi": "דער נפש הבהמית פון א איד קומט פון קליפת נוגה און נישט פון די דריי קליפות הטמאות לגמרי, ממילא קען מען די דברי רשות וואס ער ניצט מהפך זיין צו קדושה."
+        },
+        "evidence": { "segs": [31, 33, 34, 49, 50], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "A permitted thing is neutral in itself; whether it rises to holiness or falls to the kelipos depends on whether it is done for the sake of Heaven.",
+          "yi": "א דבר הרשות איז פאר זיך אויף דער וואג; צי עס גייט ארויף צו קדושה אדער אראפ צו די קליפות ווענדט זיך אין דעם צי מ'טוט עס לשם שמים."
+        },
+        "evidence": { "segs": [59, 61, 63, 73, 74], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Since the world was created with the Torah, every thing in it holds a point of G-dliness, and a Jew came into the world to find it.",
+          "yi": "וויבאלד די וועלט איז באשאפן געווארן מיט דער תורה, האט יעדע זאך א נקודה פון אלקות, און א איד איז געקומען אויף דער וועלט זי צו געפינען."
+        },
+        "evidence": { "segs": [254, 255, 256, 259, 261], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Only a Jew can raise kelipas nogah; for a non-Jew everything belongs to the three impure kelipos.",
+          "yi": "נאר א איד קען מעלה זיין קליפת נוגה; ביי א גוי געהערט אלץ צו די דריי קליפות הטמאות."
+        },
+        "evidence": { "segs": [380, 381, 382, 389, 390], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "A plain person needs some pleasure from this world in order to learn and daven, but it must be taken with a measure that each one judges for himself.",
+          "yi": "א פשוטער מענטש דארף האבן א הנאה פון עולם הזה כדי ער זאל קענען לערנען און דאווענען, אבער מיט א מאס וואס יעדער מוז אפשאצן פאר זיך."
+        },
+        "evidence": { "segs": [438, 441, 442, 476, 477, 507], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Permitted food eaten for pleasure falls temporarily into the impure kelipos but can rise again when its strength is used for Torah and tefillah; its residue needs chibut hakever, while forbidden things stay bound until the end of days.",
+          "yi": "היתר'דיגע עסנווארג וואס מ'עסט פאר תאוה פאלט לפי שעה אריין אין די קליפות הטמאות, אבער עס קען ווידער ארויפגיין ווען מ'לערנט און מ'דאווענט מיט איר כח; דער רושם דארף חיבוט הקבר, און דברים אסורים בלייבן געבונדן ביז די לעצטע צייטן."
+        },
+        "evidence": { "segs": [570, 583, 586, 610, 614, 624], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-tanya-11-2-tanya",
+      "startSeg": 0,
+      "endSeg": 90,
+      "title": {
+        "en": "Permitted things and kelipas nogah",
+        "yi": "דברי רשות און קליפת נוגה"
+      },
+      "summary": {
+        "en": "The Rav recalls the previous chapter, where Torah and mitzvos clothe a person in holiness and sins in the sitra achra, and introduces chapter 7 on permitted things. The animal soul of a Jew is from kelipas nogah, so permitted things are neutral and depend on intent, which he shows with matzah, chametz and bread with butter.",
+        "yi": "דער משגיח חזר'ט איבער דעם פריערדיגן פרק, אז תורה און מצוות זענען מלביש דעם מענטש אין קדושה און עבירות אין דעם סטרא אחרא, און פירט אריין פרק ז וועגן דברי רשות. דער נפש הבהמית פון א איד איז פון קליפת נוגה, ממילא איז א דבר הרשות אויף דער וואג און ווענדט זיך אין דער כוונה, וואס ער ווייזט מיט א משל פון מצה, חמץ און ברויט מיט פוטער."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-11-2-tanya",
+      "startSeg": 91,
+      "endSeg": 202,
+      "title": {
+        "en": "The Tanya text: a middle level in a mostly evil world",
+        "yi": "דער לשון התניא: א בחינה ממוצעת אין א וועלט וואס איז רובו רע"
+      },
+      "summary": {
+        "en": "The Rav reads the Tanya: the vital soul of a Jew, kosher animals and permitted plants, and every permitted deed, word and thought not done for Heaven draw their life from kelipas nogah. He explains nogah as a middle level, like a scale that can tip either way, and shows that this world is mostly evil with a little good mixed in.",
+        "yi": "דער משגיח לערנט דעם תניא: דער נפש החיונית פון א איד, כשר'ע בהמות און צמחים וואס מ'מעג עסן, און יעדע מעשה, דיבור און מחשבה פון דברי רשות וואס מ'טוט נישט לשם שמים, באקומען זייער חיות פון קליפת נוגה. ער ערקלערט נוגה אלס א בחינה ממוצעת, אזוי ווי א וואג וואס קען זיך נייגן אויף ביידע זייטן, און ווייזט אז עולם הזה איז רובו רע מיט א ביסל גוטס אריינגעמישט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-11-2-tanya",
+      "startSeg": 203,
+      "endSeg": 300,
+      "title": {
+        "en": "Yitzchak's wells: finding G-dliness in the earth",
+        "yi": "די בארות פון יצחק: געפינען אלקות אין דער ערד"
+      },
+      "summary": {
+        "en": "The Rav applies the idea to eating and business done to serve Hashem, then turns to the parsha's account of Yitzchak's wells. Since the world was created with the Torah, the world is the composition and the Torah its commentary, and digging wells means finding the point of G-dliness in earthly things; he connects the three wells to weekday and Shabbos.",
+        "yi": "דער משגיח ווענדט עס אן אויף עסן און ביזנעס כדי צו דינען דעם אייבערשטן, און גייט איבער צו די בארות וואס יצחק האט געגראבן אין דער פרשה. וויבאלד די וועלט איז באשאפן געווארן מיט דער תורה, איז די וועלט דער חיבור און די תורה דער פירוש, און בארות גראבן הייסט געפינען די נקודה פון אלקות אין ארציות'דיגע זאכן; די דריי בארות פארבינדט ער מיט וואכנטאג און שבת."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-11-2-tanya",
+      "startSeg": 301,
+      "endSeg": 363,
+      "title": {
+        "en": "Yaakov's sheep and Yitzchak's blessing",
+        "yi": "די שעפסן פון יעקב און די ברכה פון יצחק"
+      },
+      "summary": {
+        "en": "The Rav contrasts a modern biography with the Torah's account of Yaakov tending sheep for twenty years; only one who learns with emunah knows these were not plain dealings. Yitzchak's wells were dug for all of Klal Yisroel, and his blessing of dew, fat of the land, grain and wine shows the Avos could enter material things and raise the holy sparks in them.",
+        "yi": "דער משגיח שטעלט אוועק א היינטיגע ביאגראפיע קעגן דעם וואס די תורה דערציילט וועגן יעקב וואס האט געפאשעט שעפסן צוואנציג יאר; נאר דער וואס לערנט מיט אמונה ווייסט אז דאס איז נישט געווען קיין פשוטע געשעפטן. יצחק האט געגראבן בארות פאר גאנץ כלל ישראל, און זיין ברכה פון טל השמים, שמני הארץ, דגן און תירוש ווייזט אז די אבות האבן געקענט אריינגיין אין גשמיות און מעלה זיין די ניצוצות הקדושה וואס ליגן דארט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-11-2-tanya",
+      "startSeg": 364,
+      "endSeg": 409,
+      "title": {
+        "en": "Business for Heaven; only a Jew raises nogah",
+        "yi": "ביזנעס לשם שמים; נאר א איד איז מעלה נוגה"
+      },
+      "summary": {
+        "en": "Citing seforim on Noach and Vayetzei, the Rav says that business done in holiness, honestly and to have money for Torah, mitzvos and tzedakah, raises kelipas nogah and can reach great heights. Only a Jew can do this; he brings the Midrash that a non-Jew offers only olos, while a Jew can eat shelamim for the sake of Heaven.",
+        "yi": "דער משגיח ברענגט פון ספרים אויף פרשת נח און פרשת ויצא אז ביזנעס וואס מ'טוט אויפן אופן פון קדושה, ערליך און כדי צו האבן געלט פאר תורה, מצוות און צדקה, איז מעלה קליפת נוגה און קען דערגרייכן גרויסע עליות. דאס קען נאר א איד; ער ברענגט דעם מדרש אז א גוי ברענגט נאר עולות, ווייל א איד קען עסן שלמים לשם שמים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-11-2-tanya",
+      "startSeg": 410,
+      "endSeg": 482,
+      "title": {
+        "en": "A person needs pleasure, with a measure",
+        "yi": "א מענטש דארף א הנאה, מיט א מאס"
+      },
+      "summary": {
+        "en": "The Rav reads the Tanya on eating fat meat and drinking wine to broaden the mind for Hashem and His Torah, and explains that a plain person who is hungry cannot learn or daven. He tells of a psychologist's example of feeding through a zipper and of Rebbe Nachum of Chernobyl, and concludes that great tzaddikim aside, one must take pleasure with a measure.",
+        "yi": "דער משגיח לערנט דעם תניא וועגן עסן פעטס פלייש און טרינקען גוטן וויין כדי צו דערברייטערן דעם דעת צום אייבערשטן און זיין תורה, און ערקלערט אז א פשוטער מענטש וואס איז הונגעריג קען נישט לערנען און נישט דאווענען. ער דערציילט א משל פון א פסיכאלאגיסט מיט א זיפער אינעם בויך און פון ר' נחום טשערנאבילער, און ער ענדיגט אז חוץ די גרויסע צדיקים מוז מען נעמען א הנאה מיט א מאס."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-11-2-tanya",
+      "startSeg": 483,
+      "endSeg": 553,
+      "title": {
+        "en": "Kedoshim tihyu, oneg Shabbos and Rabbah's joke",
+        "yi": "קדושים תהיו, עונג שבת און דעם מילתא דבדיחותא פון רבה"
+      },
+      "summary": {
+        "en": "The Rav brings the Bnei Yissaschar on kedoshim tihyu and the Ramban's 'naval birshus haTorah': the Torah cannot fix how much to eat because people differ, so each must judge for himself. He adds that on Shabbos the pleasure itself is the mitzvah, and explains Rabbah's joke before the shiur as bringing the students into a good mood so the joke was absorbed into holiness.",
+        "yi": "דער משגיח ברענגט דעם בני יששכר אויף קדושים תהיו און דעם רמב\"ן'ס נבל ברשות התורה: די תורה קען נישט באשטימען וויפיל מ'זאל עסן ווייל יעדער מענטש איז אנדערש, ממילא מוז יעדער אפשאצן פאר זיך. ער לייגט צו אז שבת איז דער עונג אליין די מצוה, און ערקלערט דעם מילתא דבדיחותא וואס רבה האט געזאגט פארן שיעור, אז ער האט אריינגעברענגט די תלמידים אין א גוטע שטימונג און אזוי איז עס נכלל געווארן אין קדושה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-11-2-tanya",
+      "startSeg": 554,
+      "endSeg": 636,
+      "title": {
+        "en": "Pleasure for its own sake, chibut hakever and forbidden things",
+        "yi": "הנאה פאר זיך, חיבוט הקבר און דברים אסורים"
+      },
+      "summary": {
+        "en": "The Rav reads the Tanya: one who eats only for pleasure brings the food's vitality down temporarily into the three impure kelipos, but because it was kosher it rises again when he learns and davens with its strength. The imprint of the pleasure remains and needs chibut hakever, while forbidden things stay bound to the kelipos until the end of days when death and impurity are removed.",
+        "yi": "דער משגיח לערנט דעם תניא: דער וואס עסט נאר פאר תאוה ברענגט אראפ די חיות פון דעם מאכל לפי שעה אין די דריי קליפות הטמאות, אבער וויבאלד עס איז געווען כשר גייט עס ווידער ארויף ווען ער לערנט און דאווענט מיט איר כח. דער רושם פון דער הנאה בלייבט און דארף חיבוט הקבר, און דברים אסורים בלייבן געבונדן צו די קליפות ביז די לעצטע צייטן ווען דער מות און די טומאה וועלן אוועקגענומען ווערן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "אך נפש אחיינות הבאמת שבאישראל שמצד הקליפה המרובשת בדמר אדם",
+      "work": "Tanya",
+      "ref": "Tanya ch. 7",
+      "sefariaRef": "Tanya, Part I; Likkutei Amarim 7",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [1, 2, 3, 91, 96, 133], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "אתר כבר אתר באר אלמא",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [257], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "בראשית באר אלקים",
+      "work": "Bereishis",
+      "ref": "Bereishis 1:1",
+      "sefariaRef": "Genesis 1:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [257, 258], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "לכבוד בערית, אשר כפכה עבד אביו ... ויקהלים שמות כשמות אשר כהלהם אביו",
+      "work": "Bereishis",
+      "ref": "Bereishis 26:18",
+      "sefariaRef": "Genesis 26:18",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [246, 248, 249], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "עסק און סטנא ... רחובות",
+      "work": "Bereishis",
+      "ref": "Bereishis 26:20-22",
+      "sefariaRef": "Genesis 26:20-22",
+      "resolution": "resolved",
+      "mention": "alluded",
+      "evidence": { "segs": [286, 290, 291], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "בער מיום חיים ונעזל מן לבנון",
+      "work": "Shir HaShirim",
+      "ref": "Shir HaShirim 4:15",
+      "sefariaRef": "Song of Songs 4:15",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [336, 338], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "נלכה אלוקים מיט תלה שמים ומשמעינו יארץ, ורוב דגן וסורש",
+      "work": "Bereishis",
+      "ref": "Bereishis 27:28",
+      "sefariaRef": "Genesis 27:28",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [349, 350], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "ליכטע צורה פרשת נח",
+      "work": "Likutei Torah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [367], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "מורינו פרשת ויצע",
+      "work": "Me'or Einayim",
+      "ref": "Me'or Einayim, Vayetzei",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [367, 368], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "זאגט דער מדרש ארי צפון",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [387, 388, 389], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "א רעסט גאטן פעטן פלעש, ושושא יענע ... לאחר ודעתי אל השם לצורותו",
+      "work": "Tanya",
+      "ref": "Tanya ch. 7",
+      "sefariaRef": "Tanya, Part I; Likkutei Amarim 7",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [416, 417, 418, 512, 513, 516], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "כדא מרובה, חמרא וריכה פקחה",
+      "work": "Gemara Yoma",
+      "ref": "Yoma 76b",
+      "sefariaRef": "Yoma 76b",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [420, 421, 520], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "זאגט דער בני יששכר",
+      "work": "Bnei Yissaschar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [483, 500], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "קדושים צהיר",
+      "work": "Vayikra",
+      "ref": "Vayikra 19:2",
+      "sefariaRef": "Leviticus 19:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [484, 485], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "נארוועל בפשוט התורה, ווי דער רמב״ן זאגט אין פרשת קדושים",
+      "work": "Ramban",
+      "ref": "Ramban on Vayikra 19:2",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [488, 489], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "וקראס אלא שבת עונג",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 58:13",
+      "sefariaRef": "Isaiah 58:13",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [532], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ולקימעשת רבי לתלמידיו שמה לפני מילתא די בדיחת",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 30b",
+      "sefariaRef": "Shabbat 30b",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [539, 540, 541, 552], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אזוי ווי שטעט אין זייער הקודש, און די ספרים רעדן וועגן דעם",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [601, 602], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "ווי יבאה'לע, המבות און הנצח",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 25:8",
+      "sefariaRef": "Isaiah 25:8",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [628, 629, 633], "confidence": 0.65 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The view that nothing is truly 'reshus' and everything is either a mitzvah or a sin fits the Tanya: the thing itself stands on the scale, and only what one does with it decides.",
+        "yi": "דער שיטה אז ס'איז נישטא קיין דבר הרשות און אלץ איז אדער א מצוה אדער אן עבירה גייט צוזאמען מיטן תניא: די זאך אליין שטייט אויף דער וואג, און נאר וואס מ'טוט דערמיט באשליסט."
+      },
+      "evidence": { "segs": [56, 57, 58, 62, 63], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Creator made a composition and wrote a commentary on it: the world is the composition and the Torah is its commentary, so only one who learns Torah understands what the world is.",
+        "yi": "דער אייבערשטער האט געמאכט א חיבור און דערויף א פירוש: די וועלט איז דער חיבור און די תורה איז דער פירוש, ממילא נאר דער וואס לערנט תורה פארשטייט וואס די וועלט איז."
+      },
+      "evidence": { "segs": [264, 266, 267, 268, 273, 274], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The wells Avraham and Yitzchak dug are the search for the 'well of living water', the point of G-dliness inside earthly things, and Yitzchak dug them as a path for all of Klal Yisroel in exile.",
+        "yi": "די בארות וואס אברהם און יצחק האבן געגראבן זענען דאס זוכן דעם באר מים חיים, די נקודה פון אלקות אין ארציות'דיגע זאכן, און יצחק האט זיי געגראבן אלס א וועג פאר גאנץ כלל ישראל אין גלות."
+      },
+      "evidence": { "segs": [279, 283, 284, 343, 345], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Torah can tell at length of Yaakov tending Lavan's sheep, which no biographer would write of a great man, because one who learns with emunah knows these were not plain dealings.",
+        "yi": "די תורה קען לאנג דערציילן ווי יעקב האט געפאשעט לבן'ס שעפסן, וואס קיין ביאגראף וואלט נישט געשריבן אויף א גרויסן מענטש, ווייל דער וואס לערנט מיט אמונה ווייסט אז דאס זענען נישט געווען פשוטע געשעפטן."
+      },
+      "evidence": { "segs": [304, 319, 324, 325, 329, 330], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Yitzchak blessed Yaakov with material bounty rather than Torah because the strength of the Avos was to enter material things and raise the holy sparks hidden in them.",
+        "yi": "יצחק האט געבענטשט יעקב מיט גשמיות'דיגע ברכות און נישט מיט תורה, ווייל די כח פון די אבות איז געווען אריינצוגיין אין גשמיות און מעלה זיין די ניצוצות הקדושה וואס ליגן דארט."
+      },
+      "evidence": { "segs": [348, 349, 357, 358, 359, 360], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Torah cannot set how much a person should eat, because what is for Heaven's sake for one is too much for another; it can only forbid treif.",
+        "yi": "די תורה קען נישט באשטימען וויפיל א מענטש זאל עסן, ווייל וואס ביי איינעם איז לשם שמים איז ביי א צווייטן צופיל; זי קען נאר אסר'ן טריפות."
+      },
+      "evidence": { "segs": [499, 500, 503, 504, 505, 506], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Even when the food itself rises through later Torah and tefillah, the imprint of the pleasure taken not for Heaven remains, and this is what chibut hakever removes.",
+        "yi": "אפילו ווען דער מאכל אליין גייט ארויף דורך דעם וואס מ'לערנט און מ'דאווענט נאכדעם, בלייבט דער רושם פון דער הנאה שלא לשם שמים, און דאס איז וואס חיבוט הקבר נעמט ארויס."
+      },
+      "evidence": { "segs": [606, 607, 609, 610, 611, 612], "confidence": 0.8 }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "The psychologist and the zipper",
+        "yi": "דער פסיכאלאגיסט און דער זיפער"
+      },
+      "retelling": {
+        "en": "The Rav recounts that he once spoke with a great psychologist about this. The psychologist gave the example of a person whose doctor made an opening in his stomach with a zipper, so that each day a bit of meat and bread could be put in and he would live. Within a short time, he said, the man would have a nervous breakdown, because he gets no taste from eating.",
+        "yi": "דער משגיח דערציילט אז ער האט אמאל גערעדט וועגן דעם מיט א גרויסן פסיכאלאגיסט. יענער האט געגעבן א משל פון א מענטש וואס דער דאקטער האט אים געמאכט אן עפענונג אינעם בויך מיט א זיפער, אז יעדן טאג זאל מען אריינלייגן א ביסל פלייש און ברויט און אזוי זאל ער לעבן. אין א קורצע צייט, האט ער געזאגט, וועט ער באקומען א נערוון-צוזאמענברוך, ווייל ער האט נישט קיין טעם פון דעם עסן."
+      },
+      "people": [],
+      "evidence": { "segs": [444, 445, 447, 449, 450, 452], "confidence": 0.8 }
+    },
+    {
+      "title": {
+        "en": "Rebbe Nachum of Chernobyl",
+        "yi": "ר' נחום טשערנאבילער"
+      },
+      "retelling": {
+        "en": "The Rav tells that Rebbe Nachum of Chernobyl, the Me'or Einayim, was a stout, heavy man, yet he ate very little. The Rav brings this to show that great tzaddikim have their pleasure from Torah and mitzvos, unlike a plain person.",
+        "yi": "דער משגיח דערציילט אז ר' נחום טשערנאבילער, דער מאור עינים, איז געווען א דיקער, פעטער מענטש, און פונדעסטוועגן האט ער געגעסן גאר ווייניג. דער משגיח ברענגט עס צו ווייזן אז גרויסע צדיקים האבן זייער הנאה פון תורה און מצוות, נישט אזוי ווי א פשוטער מענטש."
+      },
+      "people": ["Rebbe Nachum of Chernobyl"],
+      "evidence": { "segs": [464, 465, 466, 467, 468], "confidence": 0.65 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "If, as some hold, there is no such thing as a 'davar reshus' and everything is either a mitzvah or a sin, how can the Tanya speak of permitted things?",
+        "yi": "אויב, ווי טייל האלטן, ס'איז נישטא קיין דבר הרשות און אלץ איז אדער א מצוה אדער אן עבירה, ווי אזוי רעדט דער תניא פון דברי רשות?"
+      },
+      "answer": {
+        "en": "The thing itself is neutral, on the scale; doing it for Heaven makes it a fulfillment of Hashem's will and doing it for pleasure does not.",
+        "yi": "די זאך אליין שטייט אויף דער וואג; ווען מ'טוט עס לשם שמים טוט מען דערמיט דעם רצון הבורא, און ווען פאר תאוה, נישט."
+      },
+      "questionSegs": [55, 56, 57],
+      "answerSegs": [58, 59, 60, 61, 63],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why does the Torah describe at such length the wells Yitzchak dug and the names he gave them?",
+        "yi": "פארוואס דערציילט די תורה אזוי באריכות וועגן די בארות וואס יצחק האט געגראבן און די נעמען וואס ער האט זיי געגעבן?"
+      },
+      "answer": {
+        "en": "They were not plain wells for water; digging in the earth was finding the well of living water, the point of G-dliness in every thing, for all of Klal Yisroel.",
+        "yi": "דאס זענען נישט געווען פשוטע בארות פאר וואסער; גראבן אין דער ערד איז געווען געפינען דעם באר מים חיים, די נקודה פון אלקות אין יעדע זאך, פאר גאנץ כלל ישראל."
+      },
+      "questionSegs": [238, 240, 241, 244],
+      "answerSegs": [283, 284, 333, 336, 343],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why did Yitzchak bless Yaakov with dew, the fat of the land, grain and wine, when one would wish a child success in Torah?",
+        "yi": "פארוואס האט יצחק געבענטשט יעקב מיט טל השמים, שמני הארץ, דגן און תירוש, ווען מ'וואלט געוואונטשן א קינד ער זאל זוכה זיין צו תורה?"
+      },
+      "answer": {
+        "en": "The strength of the Avos was to enter material matters and raise the holy sparks that lie in them.",
+        "yi": "די כח פון די אבות איז געווען אריינצוגיין אין גשמיות'דיגע ענינים און מעלה זיין די ניצוצות הקדושה וואס ליגן דארט."
+      },
+      "questionSegs": [348, 351, 353, 357],
+      "answerSegs": [358, 359, 360],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why does the Torah not state how much a person may eat?",
+        "yi": "פארוואס שטייט נישט אין דער תורה וויפיל א מענטש זאל עסן?"
+      },
+      "answer": {
+        "en": "As the Bnei Yissaschar explains, people differ: what is for Heaven's sake for one is too much for another, so each must judge for himself.",
+        "yi": "אזוי ווי דער בני יששכר ערקלערט, מענטשן זענען אנדערש: וואס ביי איינעם איז לשם שמים איז ביי א צווייטן צופיל, ממילא מוז יעדער אפשאצן פאר זיך."
+      },
+      "questionSegs": [499],
+      "answerSegs": [500, 503, 504, 505, 507],
+      "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says business should be done for Heaven: honestly, keeping all the halachos of business, so as to have money for Torah learning, mitzvos and tzedakah.",
+        "yi": "דער משגיח זאגט אז ביזנעס זאל מען טאן לשם שמים: ערליך, מקיים זיין אלע הלכות פון ביזנעס, כדי צו האבן געלט פאר לימוד התורה, מצוות און צדקה."
+      },
+      "evidence": { "segs": [369, 370, 372, 373, 374], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says he often tells young bochurim not to fly into the heavens but to know where they stand.",
+        "yi": "דער משגיח זאגט אז ער געפינט אפטמאל נויטיג צו זאגן פאר יונגע בחורים אז זיי זאלן נישט פליען אין הימל נאר וויסן וואו זיי האלטן."
+      },
+      "evidence": { "segs": [456, 457], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The Rav says a person must take what he needs of physical pleasure with a measure, not too much, and each must assess for himself how much he needs for Heaven's sake.",
+        "yi": "דער משגיח זאגט אז א מענטש מוז נעמען וואס ער דארף פון גשמיות'דיגע הנאות מיט א מאס, נישט צופיל, און יעדער מוז אפשאצן פאר זיך וויפיל ער דארף לשם שמים."
+      },
+      "evidence": { "segs": [476, 477, 482, 507, 508], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "Tanya chapter 7",
+    "kelipas nogah",
+    "permitted things for the sake of Heaven",
+    "elevating the physical",
+    "Yitzchak's wells",
+    "business for the sake of Heaven",
+    "pleasure with a measure",
+    "oneg Shabbos",
+    "chibut hakever"
+  ],
+  "concepts": [
+    { "he": "קליפת נוגה", "heardAs": ["קליפת נוגע", "כליפת נוגה", "תליפת נוגע", "כלי פתנוגע", "כלפת נוגה", "כליפת נגן"] },
+    { "he": "שלש קליפות הטמאות", "heardAs": ["שולש קליפות עתמיות", "שולש קליפת התמאות", "שלש כליפות עצמאות", "דריי קליפות עצמיות"] },
+    { "he": "נפש הבהמית", "heardAs": ["נפש הבאמת", "נפש הבהמות", "נפש הבעמות", "נפש אברהם'ס"] },
+    { "he": "נפש החיונית", "heardAs": ["נפש אחיינות", "נפש החיונות"] },
+    { "he": "דברי רשות", "heardAs": ["דברם של רשות", "דבר המשול רשות", "דברים שאו רשות"] },
+    { "he": "לשם שמים", "heardAs": ["לשם שמים", "שם שמים", "בשם שמים"] },
+    { "he": "בחינה ממוצעת", "heardAs": ["בחינה ממוצעת", "בחונה ממוצעת"] },
+    { "he": "סטרא אחרא", "heardAs": ["סדקה אחרא", "סדכי אחת", "סידכא אחא"] },
+    { "he": "רובו רע", "heardAs": ["רב בורא", "רא בורא"] },
+    { "he": "עולם העשיה", "heardAs": ["עולם העשיר", "עולם העשיא"] },
+    { "he": "באר מים חיים", "heardAs": ["בער מיום חיים", "באן מיום חיים", "בער מאיר מחיים"] },
+    { "he": "ניצוצות הקדושה", "heardAs": ["נציץ הקדושות"] },
+    { "he": "מילתא דבדיחותא", "heardAs": ["מילתא די בדיחת", "מילתא דבידחותא", "מרסא די בדיחות"] },
+    { "he": "עונג שבת", "heardAs": ["עונג שבת"] },
+    { "he": "חיבוט הקבר", "heardAs": ["חיבור תקבע", "חיבור תקבל"] }
+  ],
+  "people": [
+    { "name": "the Alter Rebbe", "heardAs": ["בעל התניא"] },
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינו", "אברהם"] },
+    { "name": "Yitzchak Avinu", "heardAs": ["יצחק", "יצחק אבינא"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יעקב אבינא", "יעקב אבינם", "יעקב אבינו"] },
+    { "name": "Rachel", "heardAs": ["רחל"] },
+    { "name": "Rabbi Yisroel Salanter", "heardAs": ["רבי ישראל סאלאנטה", "ר' ישראל סאנאנטעוו"] },
+    { "name": "Rabbi Moshe Feinstein", "heardAs": ["ר' משה פיינשטיין"] },
+    { "name": "Rebbe Nachum of Chernobyl", "heardAs": ["רבי נחום טשערנאבילא", "מורינוי"] },
+    { "name": "the Ramban", "heardAs": ["רמב״ן"] },
+    { "name": "Rabbah", "heardAs": ["רבה", "רבי"] }
+  ],
+  "asrNotes": "Yiddish ASR fair for the Rav's explanations but poor for the Tanya text he reads, which is heavily garbled (e.g. segs 412, 511, 535, 575). The aside on Bnei Noach and milah (segs 383-384), the remark attributed to an unclear figure about Shabbos (seg 525) and the opening of the Rechovos/weekday comparison (segs 286-289) could not be fully recovered. No long silent or hallucinated stretches."
+}

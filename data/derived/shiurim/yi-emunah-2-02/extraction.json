@@ -1,0 +1,394 @@
+{
+  "shiurId": "yi-emunah-2-02",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav teaches that Jewish history, read like the Megillah, reveals Hashem's hand, and he presents the 'seven wonders' of Jewish history as a way to clarify emunah.",
+      "yi": "דער משגיח לערנט אז די אידישע היסטאריע, געלערנט ווי א מגילה, ווייזט ארויס די האנט פונעם אייבערשטן, און ער ברענגט די זיבן פלאים פון דער אידישער היסטאריע כדי צו מחזק זיין די אמונה."
+    },
+    "abstract": {
+      "en": "The Rav opens by saying that strengthening oneself in the fundamentals of emunah requires basic knowledge, and that Hashem is seen in daily events just as in the Megillah, where every simple detail turns out to be part of the miracle; this is why the Megillah is read a second time. Jewish history is such a Megillah, as Moshe Rabbeinu says in Haazinu, 'remember the days of old'. He recalls that no other nation ever claimed a revelation to an entire people. He then describes the 'seven wonders of history' taught in Aish HaTorah courses: the eternal people, the spread of belief in one G-d, the bond to Eretz Yisrael, the return to Torah, the refusal to assimilate, the foretold hatred, and the small people that survives. He adds the Septuagint as proof the Torah text was not altered, and closes with the Torah's promises that the Jewish people will remain forever.",
+      "yi": "דער משגיח עפנט אז כדי זיך צו שטארקן אין עיקר האמונה דארף מען האבן ידיעות יסודיות, און אז מ'זעט דעם רבונו של עולם אין די געשעענישן פון יעדן טאג, אזוי ווי אין דער מגילה, וואו יעדע פשוטע זאך ווערט צום סוף א חלק פונעם נס; דערפאר לייענט מען די מגילה א צווייטן מאל. די אידישע היסטאריע איז אזא מגילה, ווי משה רבינו זאגט אין האזינו \"זכור ימות עולם\". ער דערמאנט אז קיין שום פאלק האט קיינמאל נישט געטענהט אז דער אייבערשטער האט זיך באוויזן פאר א גאנצן פאלק. דערנאך ברענגט ער די \"זיבן פלאים פון היסטאריע\" וואס מ'לערנט אין די קורסעס פון אש התורה: דער אייביגער פאלק, די אמונה אין איין גאט וואס אידן האבן פארשפרייט, דער קשר מיט ארץ ישראל, די צוריקקער צו תורה, אז אידן לאזן זיך נישט איינשלינגען, די שנאה וואס איז פאראויסגעזאגט געווארן, און דער קליינער פאלק וואס בלייבט. ער ברענגט דעם תרגום השבעים אלס ראיה אז די תורה איז נישט געטוישט געווארן, און ער ענדיגט מיט די הבטחות פון דער תורה אז דער אידישער פאלק וועט בלייבן אויף אייביג."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Like the Megillah, where every ordinary event turns out to be part of the miracle, all of Jewish history shows Hashem's hand once one looks back at it.",
+          "yi": "אזוי ווי אין דער מגילה, וואו יעדע געווענליכע געשעעניש ווערט א חלק פונעם נס, ווייזט די גאנצע אידישע היסטאריע די האנט פונעם אייבערשטן ווען מ'קוקט צוריק."
+        },
+        "evidence": { "segs": [34, 35, 53, 56, 57, 58], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Moshe Rabbeinu told the Jews to remember the days of old and reflect on every generation, and they would see that all of history is for the sake of Bnei Yisrael.",
+          "yi": "משה רבינו האט געזאגט פאר די אידן זיי זאלן געדענקען די ימות עולם און זיך אריינטראכטן אין יעדן דור, וועלן זיי זען אז די גאנצע היסטאריע איז פאר בני ישראל."
+        },
+        "evidence": { "segs": [73, 74, 81, 96, 97], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "No other nation has ever had, or even claimed, a revelation of Hashem to an entire people.",
+          "yi": "קיין שום פאלק האט קיינמאל נישט געהאט, און אפילו נישט געטענהט, אן התגלות פונעם אייבערשטן צו א גאנצן פאלק."
+        },
+        "evidence": { "segs": [117, 120, 126, 136, 137], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The seven wonders are each a wonder in itself, and looked at together they are all connected to one another.",
+          "yi": "די זיבן פלאים זענען יעדער א פלא פאר זיך, און ווען מ'קוקט זיי אלע דורך זעט מען אז זיי זענען פארבונדן איינער מיטן אנדערן."
+        },
+        "evidence": { "segs": [195, 196, 197, 198], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The first wonder is that the Jews are an eternal people, while the great empires that ruled over them, Egypt, Bavel, Greece and Rome, have vanished.",
+          "yi": "דער ערשטער פלא איז אז אידן זענען אן אייביגער פאלק, בשעת די גרויסע מלכויות וואס האבן געהערשט איבער זיי, מצרים, בבל, יון און רוים, זענען פארשוואונדן."
+        },
+        "evidence": { "segs": [216, 219, 224, 236, 243, 261], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The Septuagint, translated at the start of the second Beis Hamikdash, shows that nothing was added to the Torah later.",
+          "yi": "דער תרגום השבעים, וואס איז איבערגעזעצט געווארן אין אנפאנג פונעם צווייטן בית המקדש, ווייזט אז מ'האט שפעטער גארנישט צוגעלייגט אין דער תורה."
+        },
+        "evidence": { "segs": [507, 552, 556, 566, 569, 570], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The Torah promises many times that the Jewish people will remain an eternal people, small in number but never destroyed.",
+          "yi": "די תורה זאגט צו אסאך מאל אז דער אידישער פאלק וועט בלייבן אן אייביגער פאלק, קליין אין צאל אבער קיינמאל נישט פארניכטעט."
+        },
+        "evidence": { "segs": [581, 582, 598, 602, 604, 605], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-emunah-set-new-5771-02-emunah-new",
+      "startSeg": 0,
+      "endSeg": 56,
+      "title": { "en": "Seeing Hashem in events, as in the Megillah", "yi": "דעם אייבערשטן זען אין געשעענישן, ווי אין דער מגילה" },
+      "summary": {
+        "en": "The Rav says that to strengthen oneself in emunah one needs foundational knowledge, and that Hashem is seen in daily events. He explains that in the Megillah each ordinary event is part of the miracle, which is why it is read a second time, by day.",
+        "yi": "דער משגיח זאגט אז כדי זיך צו שטארקן אין אמונה דארף מען ידיעות יסודיות, און אז מ'זעט דעם אייבערשטן אין די געשעענישן פון יעדן טאג. ער ערקלערט אז אין דער מגילה איז יעדע פשוטע געשעעניש א חלק פונעם נס, און דערפאר לייענט מען זי א צווייטן מאל ביי טאג."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-set-new-5771-02-emunah-new",
+      "startSeg": 57,
+      "endSeg": 141,
+      "title": { "en": "Jewish history as a Megillah", "yi": "די אידישע היסטאריע איז א מגילה" },
+      "summary": {
+        "en": "The Rav calls Jewish history a Megillah and brings Moshe Rabbeinu's words in Haazinu to remember the days of old and see that all history is for Bnei Yisrael. He recalls that no other nation ever had a revelation of Hashem to a whole people.",
+        "yi": "דער משגיח רופט די אידישע היסטאריע א מגילה און ברענגט משה רבינו'ס ווערטער אין האזינו, מ'זאל געדענקען די ימות עולם און זען אז די גאנצע היסטאריע איז פאר בני ישראל. ער דערמאנט אז קיין שום פאלק האט נישט געהאט אן התגלות פונעם אייבערשטן צו א גאנצן פאלק."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-set-new-5771-02-emunah-new",
+      "startSeg": 142,
+      "endSeg": 215,
+      "title": { "en": "Wonders no nation has seen; the Aish HaTorah courses", "yi": "נפלאות וואס קיין פאלק האט נישט געזען; די קורסעס פון אש התורה" },
+      "summary": {
+        "en": "The Rav brings the passuk from the week's parsha that Hashem will do wonders before the whole people, and describes the Aish HaTorah courses in Jerusalem that bring young people to teshuvah by showing them the wonders of Jewish history. He introduces their series on the 'seven wonders of history'.",
+        "yi": "דער משגיח ברענגט דעם פסוק פון דער סדרה פון דער וואך אז דער אייבערשטער וועט טון נפלאות פארן גאנצן פאלק, און דערציילט וועגן די קורסעס פון אש התורה אין ירושלים וואס ברענגען יונגע לייט צו תשובה דורך ווייזן די נפלאות פון דער אידישער היסטאריע. ער שטעלט פאר זייער סעריע איבער די \"זיבן פלאים פון היסטאריע\"."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-set-new-5771-02-emunah-new",
+      "startSeg": 216,
+      "endSeg": 320,
+      "title": { "en": "The eternal people; teaching the world one G-d", "yi": "דער אייביגער פאלק; די וועלט געלערנט אז ס'איז דא איין גאט" },
+      "summary": {
+        "en": "The first wonder: the Jews are an eternal people while Egypt, Bavel, Greece and Rome have disappeared. The second: the Jews brought the world to believe in one G-d, so that Christians and Muslims build on the Torah.",
+        "yi": "דער ערשטער פלא: אידן זענען אן אייביגער פאלק, בשעת מצרים, בבל, יון און רוים זענען פארשוואונדן. דער צווייטער: אידן האבן געברענגט די וועלט צו גלייבן אין איין גאט, אזוי אז די קריסטן און די מוסולמענער בויען אויף דער תורה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-set-new-5771-02-emunah-new",
+      "startSeg": 321,
+      "endSeg": 432,
+      "title": { "en": "Wonders three through seven", "yi": "דער דריטער ביזן זיבעטן פלא" },
+      "summary": {
+        "en": "The Rav lists the remaining wonders: the bond to Eretz Yisrael after two thousand years, the return to Torah after the 'isms', the refusal to assimilate, the foretold hatred of the nations, and the small people that survives, illustrated by the numbers of Yishmael's and Yitzchak's descendants.",
+        "yi": "דער משגיח רעכנט אויס די איבעריגע פלאים: דער קשר מיט ארץ ישראל נאך צוויי טויזנט יאר, די צוריקקער צו תורה נאך די אלע \"איזמס\", אז אידן לאזן זיך נישט איינשלינגען, די שנאה פון די גוים וואס איז פאראויסגעזאגט געווארן, און דער קליינער פאלק וואס בלייבט, מיט דעם חשבון פון די קינדער פון ישמעאל און פון יצחק."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-set-new-5771-02-emunah-new",
+      "startSeg": 433,
+      "endSeg": 505,
+      "title": { "en": "Where to begin: the eternity promised in the Torah", "yi": "וואו אנצוהייבן: די נצחיות וואס די תורה זאגט צו" },
+      "summary": {
+        "en": "The Rav says each wonder needs long explanation, and that the first thing to learn is that the Jews are an eternal people, as the Torah foretold. He recalls that the whole Torah was given before all of Israel, who remembered the miracles of forty years and passed them on, so it could not have been invented later.",
+        "yi": "דער משגיח זאגט אז יעדער פלא דארף א לאנגע הסבר, און אז די ערשטע זאך צו לערנען איז אז אידן זענען אן אייביגער פאלק, ווי די תורה האט פאראויסגעזאגט. ער דערמאנט אז די גאנצע תורה איז געגעבן געווארן פאר אלע אידן, וואס האבן געדענקט די נסים פון פערציג יאר און זיי איבערגעגעבן, אזוי אז מ'האט זי נישט געקענט שפעטער אויסטראכטן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-set-new-5771-02-emunah-new",
+      "startSeg": 506,
+      "endSeg": 572,
+      "title": { "en": "The Septuagint as proof", "yi": "דער תרגום השבעים אלס ראיה" },
+      "summary": {
+        "en": "The Rav tells how King Talmai had the elders translate the Torah into Greek in separate rooms, and all made the same changes, as the Gemara in Megillah relates. Since this translation from early in the second Beis Hamikdash still exists, no one can claim something was inserted into the Torah later.",
+        "yi": "דער משגיח דערציילט ווי תלמי המלך האט געהייסן די זקנים איבערזעצן די תורה אויף גריכיש, יעדער אין א באזונדער שטוב, און אלע האבן געמאכט די זעלבע שינויים, ווי די גמרא אין מגילה ברענגט. וויבאלד דער תרגום פון אנפאנג צווייטן בית המקדש איז נאך דא, קען קיינער נישט זאגן אז מ'האט שפעטער עפעס אריינגעשטעלט אין דער תורה."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-set-new-5771-02-emunah-new",
+      "startSeg": 573,
+      "endSeg": 614,
+      "title": { "en": "The Torah's promise that Israel will remain", "yi": "די הבטחה פון דער תורה אז אידן וועלן בלייבן" },
+      "summary": {
+        "en": "The Rav adds that the mesorah from generation to generation cannot be falsified, and brings pesukim from Malachi, Bechukosai and Yeshayahu that the Jewish people will remain forever, small in number but eternal.",
+        "yi": "דער משגיח לייגט צו אז די מסורה פון דור צו דור קען מען נישט פארפעלשן, און ברענגט פסוקים פון מלאכי, פון בחוקותי און פון ישעיה אז דער אידישער פאלק וועט בלייבן אויף אייביג, קליין אין צאל אבער אייביג."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "מען לערנט די מגילה ביינאכטס און נאך ביי צוריק",
+      "work": "Gemara Megillah",
+      "ref": "Megillah 4a",
+      "sefariaRef": "Megillah 4a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [41, 42, 44], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "זכי' ימי ... בין משנות דבר דעים",
+      "work": "Devarim",
+      "ref": "Devarim 32:7",
+      "sefariaRef": "Deuteronomy 32:7",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [73, 77, 450], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "בהנחל על ים גוים, בפחידה בני אדם",
+      "work": "Devarim",
+      "ref": "Devarim 32:8",
+      "sefariaRef": "Deuteronomy 32:8",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [81], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "כשאמה אב ימים ... השמה כדבי הזה ... הנשמה כמו השם העם",
+      "work": "Devarim",
+      "ref": "Devarim 4:32-33",
+      "sefariaRef": "Deuteronomy 4:32-33",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [131, 133, 135], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "נגד כל עמיך עשה די פלעות אשא לב נברא",
+      "work": "Shemos",
+      "ref": "Shemos 34:10",
+      "sefariaRef": "Exodus 34:10",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [144, 145], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "יתום בני יעקב הלכה ניסן; ויתם בני ישראל לך לתן",
+      "work": "Malachi",
+      "ref": "Malachi 3:6",
+      "sefariaRef": "Malachi 3:6",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [258, 583, 584], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "עטה וחטא נאר ... אזוי זאגן מען די קידוש",
+      "work": "Siddur (Yom Tov tefillah and Kiddush)",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [273, 274, 276], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "אזוי ווי שטעט ביי יוסף ויקנא בו יחד",
+      "work": "Bereishis",
+      "ref": "Bereishis 37:11",
+      "sefariaRef": "Genesis 37:11",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [383, 384, 385], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די גמרא און מגילה",
+      "work": "Gemara Megillah",
+      "ref": "Megillah 9a",
+      "sefariaRef": "Megillah 9a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [511, 528, 548], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "פרשת די חוקותי ... ביותם ויאלעך ... ולא גאהלטים לך לויסים",
+      "work": "Vayikra",
+      "ref": "Vayikra 26:44",
+      "sefariaRef": "Leviticus 26:44",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [588, 595, 597, 598], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ישעי' הנביא זאגט ידות מהתורה כי הארם ירשם וגבותו בתנאה",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 54:10",
+      "sefariaRef": "Isaiah 54:10",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [609, 610, 611, 612], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער מבעלה שרייבט אויף די ענדע פון האזינים",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [102, 103], "confidence": 0.6 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Megillah is read a second time because only after reaching its end does one understand how each detail at its beginning was part of the miracle; the second reading is read with that knowledge.",
+        "yi": "מ'לייענט די מגילה א צווייטן מאל ווייל ערשט ווען מ'קומט צום סוף פארשטייט מען ווי יעדער פרט פונעם אנפאנג איז געווען א חלק פונעם נס; דאס צווייטע מאל לייענט מען מיט דער ידיעה."
+      },
+      "evidence": { "segs": [39, 40, 44, 54, 55, 56], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav applies the Megillah model to all of Jewish history from Yetzias Mitzrayim until today: every part of it is a part of the miracle.",
+        "yi": "דער משגיח שטעלט צו דעם משל פון דער מגילה צו דער גאנצער אידישער היסטאריע פון יציאת מצרים ביז היינט: יעדער חלק דערפון איז א חלק פונעם נס."
+      },
+      "evidence": { "segs": [57, 58, 62, 63, 64, 65], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The hatred of the nations toward the Jews comes from envy, because they see that the Jew is better, as with Yosef's brothers; and despite that hatred they cannot swallow the Jews up.",
+        "yi": "די שנאה פון די גוים צו אידן קומט פון קנאה, ווייל זיי זען אז א איד איז בעסער, אזוי ווי ביי יוסף'ס ברידער; און טראץ דער שנאה קענען זיי אידן נישט איינשלינגען."
+      },
+      "evidence": { "segs": [381, 382, 384, 385, 388, 390], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Yitzchak and Yishmael were brothers, yet Yishmael's descendants number over three hundred million while the Jews number about fifteen million; this smallness was itself foretold, and the small people is the one that endures.",
+        "yi": "יצחק און ישמעאל זענען געווען ברידער, און פונעם ישמעאל זענען היינט מער ווי דריי הונדערט מיליאן, בשעת אידן זענען ארום פופצן מיליאן; די קלענקייט איז אליין פאראויסגעזאגט געווארן, און דער קליינער פאלק איז דער וואס בלייבט."
+      },
+      "evidence": { "segs": [409, 411, 416, 420, 423, 400], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Septuagint, translated by the elders long before the churban, preserves the Torah's text from that time, so the claim that passages were written in later cannot stand.",
+        "yi": "דער תרגום השבעים, וואס די זקנים האבן איבערגעזעצט לאנג פארן חורבן, היט אפ דעם נוסח פון דער תורה פון יענער צייט, אזוי אז די טענה אז מ'האט שפעטער אריינגעשריבן פסוקים קען נישט באשטיין."
+      },
+      "evidence": { "segs": [566, 567, 569, 570, 571], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The translation for King Talmai", "yi": "דער תרגום פאר תלמי המלך" },
+      "retelling": {
+        "en": "In the time of Greek rule early in the second Beis Hamikdash, King Talmai gathered the elders and put each in a separate room, without knowing of one another, to translate the Torah into Greek. The Rav notes that a fast was later fixed over this translation. With ruach hakodesh they all made the same changes, for example writing the opening of Bereishis so that it begins with 'Elokim'. The Greek translation was spread among the nations and is still known today as the Septuagint, the translation of the seventy.",
+        "yi": "אין דער צייט פון דער גריכישער הערשאפט, אין אנפאנג פונעם צווייטן בית המקדש, האט תלמי המלך צוזאמגענומען די זקנים און יעדן אריינגעשטעלט אין א באזונדער שטוב, אן וויסן פונעם אנדערן, כדי איבערצוזעצן די תורה אויף גריכיש. דער משגיח מערקט אן אז מ'האט שפעטער געמאכט א תענית איבער דעם תרגום. מיט רוח הקודש האבן זיי אלע געמאכט די זעלבע שינויים, למשל צו שרייבן דעם אנפאנג פון בראשית אזוי אז עס הייבט זיך אן מיט \"אלקים\". דער גריכישער תרגום איז פארשפרייט געווארן צווישן די גוים, און מ'קען אים היינט אלס דעם \"סעפטואגינט\", דער תרגום פון די זיבעציג."
+      },
+      "people": ["Talmai HaMelech"],
+      "evidence": { "segs": [511, 514, 516, 517, 541, 545], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "Why must the Megillah be read twice, at night and again by day?", "yi": "פארוואס דארף מען לייענען די מגילה צוויי מאל, ביינאכט און נאכאמאל ביי טאג?" },
+      "answer": {
+        "en": "Because only at the end of the Megillah does one understand that everything was part of the miracle; the second reading is done knowing why each detail belongs to the nes.",
+        "yi": "ווייל ערשט ביים סוף פון דער מגילה פארשטייט מען אז אלעס איז געווען א חלק פונעם נס; דאס צווייטע מאל לייענט מען שוין מיטן וויסן פארוואס יעדער פרט געהערט צום נס."
+      },
+      "questionSegs": [41, 44],
+      "answerSegs": [53, 54, 55, 56],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "How do we know nothing was added to the Torah later?", "yi": "פון וואו ווייסט מען אז מ'האט שפעטער גארנישט צוגעלייגט אין דער תורה?" },
+      "answer": {
+        "en": "The Septuagint, made at the start of the second Beis Hamikdash, still exists and shows the text as it was; and in any case the mesorah handed from generation to generation cannot be falsified.",
+        "yi": "דער תרגום השבעים, וואס איז געמאכט געווארן אין אנפאנג פונעם צווייטן בית המקדש, איז נאך דא און ווייזט דעם נוסח ווי ער איז געווען; און סיי ווי קען מען נישט פארפעלשן די מסורה וואס גייט פון דור צו דור."
+      },
+      "questionSegs": [570, 579],
+      "answerSegs": [566, 569, 571, 574, 575],
+      "confidence": 0.7
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says one should reflect on Jewish history and on what happened in all the generations, to see that everything that happens among the nations revolves around the Jews.",
+        "yi": "דער משגיח זאגט אז מ'זאל זיך מתבונן זיין אין דער אידישער היסטאריע און אין דעם וואס איז פארגעקומען אין אלע דורות, כדי צו זען אז אלעס וואס קומט פאר ביי די פעלקער דרייט זיך ארום דעם איד."
+      },
+      "evidence": { "segs": [59, 450, 452, 454, 455], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "seven wonders of Jewish history",
+    "emunah through history",
+    "reading the Megillah twice",
+    "eternity of the Jewish people",
+    "revelation at Sinai to a whole nation",
+    "the Septuagint",
+    "Aish HaTorah",
+    "hatred of the nations",
+    "bond to Eretz Yisrael",
+    "remember the days of old"
+  ],
+  "concepts": [
+    { "he": "נפלאות", "heardAs": ["פלעות", "פליעות", "פלוענ'ס", "פליאת"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבי יושע בעלום", "רבי'נישער עול", "רבי'נ'ער שוועל"] },
+    { "he": "זכור ימות עולם", "heardAs": ["זכי' ימי", "זכרוי הימות עולם"] },
+    { "he": "עם הנצחי", "heardAs": ["עם הנסחר", "נצחא", "נעבעיקע פאלק"] },
+    { "he": "אש התורה", "heardAs": ["עשת תורה", "עשר תורה", "עשי' תיאור"] },
+    { "he": "תרגום השבעים", "heardAs": ["סעפטוארגונז"] },
+    { "he": "תלמי המלך", "heardAs": ["תלמי המלך"] },
+    { "he": "בעלי תשובה", "heardAs": ["בעלי דשאוה"] }
+  ],
+  "people": [
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו", "משה רב בענגל", "משה אביגם"] },
+    { "name": "Esther", "heardAs": ["אסתר"] },
+    { "name": "Yosef", "heardAs": ["יוסף"] },
+    { "name": "Yitzchak", "heardAs": ["יצחק"] },
+    { "name": "Yishmael", "heardAs": ["ישמעאל"] },
+    { "name": "Talmai HaMelech", "heardAs": ["תלמי המלך"] },
+    { "name": "Yeshayahu HaNavi", "heardAs": ["ישעי' הנביא"] }
+  ],
+  "asrNotes": "Yiddish ASR is poor throughout; Ribono shel Olam and 'nifla'os' are badly garbled, and pesukim are recoverable only from context. The source the Rav cites at the end of Haazinu (seg 102), a statement attributed to a Rav at segs 278-279, a Gemara at seg 357 and a passuk on the covenant at segs 606-608 could not be identified. The Rav's account of the fourth wonder (return to Torah) is partly unclear around segs 333-352."
+}

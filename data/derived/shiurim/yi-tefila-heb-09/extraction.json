@@ -1,0 +1,685 @@
+{
+  "shiurId": "yi-tefila-heb-09",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains the l'shem yichud said before Baruch She'amar, as a unification of Hashem with Klal Yisrael done in the name of all Jews, and then the first phrases of Baruch She'amar, showing that creation, Hashem's word and nature itself continue every moment according to the Torah.",
+      "yi": "דער משגיח ערקלערט דעם לשם יחוד וואס מ'זאגט פאר ברוך שאמר, אז מ'איז מייחד דעם רבונו של עולם מיט כלל ישראל בשם כל ישראל, און דערנאך די ערשטע ווערטער פון ברוך שאמר, אז די בריאה, דעם אייבערשטנס ווארט און די טבע גייען יעדן רגע ווייטער לויט די תורה."
+    },
+    "abstract": {
+      "en": "The Rav opens with the l'shem yichud before Pesukei d'Zimra: its aim is to unite Hashem with His Shechinah dwelling in Klal Yisrael, with fear and love as the two wings that lift a mitzvah, and to complete Hashem's Name broken by Amalek. Saying it in the name of all Israel brings the deed into the world of Klal Yisrael, which no accusation reaches, like the Kodesh HaKodashim on Yom Kippur. He then explains it as a moda'ah, a prior declaration that voids later stray thoughts, and tells of the Noda B'Yehuda's teshuva against saying it and the answers to it. Turning to Baruch She'amar, he explains that creation from nothing is renewed every moment, that Hashem is 'gozer u'mekayem' and never changes His mind, and that nature runs according to the Torah, changing as Jews add new chiddushim.",
+      "yi": "דער משגיח עפנט מיטן לשם יחוד פאר פסוקי דזמרה: דער תכלית איז מייחד צו זיין דעם רבונו של עולם מיט זיין שכינה וואס רוט ביי כלל ישראל, מיט יראה און אהבה וואס זענען די צוויי פליגלען וואס הייבן אויף א מצוה, און גאנץ צו מאכן דעם שם וואס עמלק האט צעבראכן. ווען מ'טוט עס בשם כל ישראל קומט די מצוה אריין אינעם עולם פון כלל ישראל, וואו קיין קטרוג דערגרייכט נישט, אזוי ווי דער קודש הקדשים יום כיפור. דערנאך ערקלערט ער עס ווי א מסירת מודעה, א פריערדיגע דעקלאראציע וואס איז מבטל פרעמדע מחשבות, און ער דערציילט פון דעם נודע ביהודה'ס תשובה קעגן זאגן לשם יחוד און די תשובות דערויף. ביי ברוך שאמר ערקלערט ער אז די בריאה יש מאין ווערט באנייט יעדן רגע, אז דער אייבערשטער איז גוזר ומקיים און טוישט זיך נישט, און אז די טבע פירט זיך לויט די תורה און טוישט זיך לויט די חידושים וואס אידן זענען מחדש."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The l'shem yichud declares that a mitzvah is done to unite Hashem with His Shechinah in Klal Yisrael, like a groom with a bride, with fear and love.",
+          "yi": "דער לשם יחוד זאגט ארויס אז די מצוה ווערט געטון כדי מייחד צו זיין דעם רבונו של עולם מיט די שכינה ביי כלל ישראל, ווי א חתן מיט א כלה, מיט יראה און אהבה."
+        },
+        "evidence": { "segs": [15, 16, 22, 23, 24, 29], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "A mitzvah done in the name of all Israel reaches the root of Klal Yisrael, where no accusation can reach and sins are erased, as on Yom Kippur.",
+          "yi": "א מצוה וואס מ'טוט בשם כל ישראל דערגרייכט דעם שורש פון כלל ישראל, וואו קיין קטרוג קען נישט צוקומען און עבירות ווערן אויסגעמעקט, אזוי ווי יום כיפור."
+        },
+        "evidence": { "segs": [119, 121, 122, 123, 125], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Saying l'shem yichud before a mitzvah works like a moda'ah: a prior declaration that cancels foreign thoughts the yetzer hara may bring in during the mitzvah.",
+          "yi": "זאגן לשם יחוד פאר א מצוה ארבעט ווי א מסירת מודעה: א פריערדיגע דעקלאראציע וואס איז מבטל די פרעמדע מחשבות וואס דער יצר הרע קען אריינברענגען אינמיטן דער מצוה."
+        },
+        "evidence": { "segs": [252, 257, 271, 273, 290], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Creation is not a past event: Hashem's ten utterances still act every moment, and without them everything would cease.",
+          "yi": "די בריאה איז נישט א זאך וואס איז אמאל געשען: די עשרה מאמרות פונעם אייבערשטן ווירקן יעדן רגע, און אן זיי וואלט אלץ בטל געווארן."
+        },
+        "evidence": { "segs": [451, 452, 457, 460, 466], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "'Baruch gozer u'mekayem' means that Hashem, who knows the future, never changes His mind, unlike a human ruler.",
+          "yi": "\"ברוך גוזר ומקיים\" מיינט אז דער אייבערשטער, וואס ווייסט דעם עתיד, טוישט קיינמאל נישט זיין מיינונג, נישט ווי א מלך בשר ודם."
+        },
+        "evidence": { "segs": [542, 544, 567, 569, 630], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Nature runs according to the Torah, so when Jews add new chiddushim in Torah, Hashem renews nature accordingly.",
+          "yi": "די טבע פירט זיך לויט די תורה, און ממילא ווען אידן זענען מחדש נייע חידושים אין תורה, באנייט דער אייבערשטער די טבע לויט דעם."
+        },
+        "evidence": { "segs": [654, 660, 724, 742, 749], "confidence": 0.85 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-teffilah-05-b-tefilah",
+      "startSeg": 0,
+      "endSeg": 82,
+      "title": { "en": "What l'shem yichud means", "yi": "וואס דער לשם יחוד מיינט" },
+      "summary": {
+        "en": "The Rav explains in simple terms the l'shem yichud said before Baruch She'amar: uniting Hashem with His Shechinah in Klal Yisrael with fear and love, the two wings without which a mitzvah cannot rise, and uniting the letters of Hashem's Name that are split because of Amalek.",
+        "yi": "דער משגיח ערקלערט אויף א פשוטן אופן דעם לשם יחוד פאר ברוך שאמר: מייחד זיין דעם רבונו של עולם מיט זיין שכינה ביי כלל ישראל בדחילו ורחימו, די צוויי פליגלען אן וואס א מצוה קען נישט ארויפגיין, און מייחד זיין די אותיות פונעם שם וואס זענען אפגעטיילט צוליב עמלק."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-05-b-tefilah",
+      "startSeg": 83,
+      "endSeg": 211,
+      "title": { "en": "In the name of all Israel", "yi": "בשם כל ישראל" },
+      "summary": {
+        "en": "The Rav explains why a mitzvah is done in the name of all Israel: the root world called Klal Yisrael is beyond any accusation, like the Kodesh HaKodashim on Yom Kippur, which is why one must make peace before Yom Kippur and accept ahavas Yisrael before davening.",
+        "yi": "דער משגיח ערקלערט פארוואס מ'טוט א מצוה בשם כל ישראל: דער עולם פון כלל ישראל איז העכער פון יעדן קטרוג, אזוי ווי דער קודש הקדשים יום כיפור, און דערפאר דארף מען זיך איבערבעטן פאר יום כיפור און מקבל זיין אהבת ישראל פארן דאווענען."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-05-b-tefilah",
+      "startSeg": 212,
+      "endSeg": 294,
+      "title": { "en": "L'shem yichud as a moda'ah", "yi": "לשם יחוד ווי א מסירת מודעה" },
+      "summary": {
+        "en": "The Rav notes that the nusach comes from the early mekubalim and that the Ba'al HaTanya kept it in his siddur only before Baruch She'amar, then explains it as a moda'ah, like the declaration that voids a coerced get, which cancels stray thoughts during a mitzvah.",
+        "yi": "דער משגיח ברענגט אז דער נוסח קומט פון די מקובלים, און אז דער בעל התניא האט אים געלאזט אין זיין סידור נאר פאר ברוך שאמר, און ער ערקלערט עס ווי א מסירת מודעה, ווי ביי א גט וואס מ'צווינגט, וואס איז מבטל פרעמדע מחשבות אינמיטן א מצוה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-05-b-tefilah",
+      "startSeg": 295,
+      "endSeg": 406,
+      "title": { "en": "The Noda B'Yehuda and the early misnagdim", "yi": "דער נודע ביהודה און די ערשטע מתנגדים" },
+      "summary": {
+        "en": "The Rav explains that the first misnagdim were honest people who feared a new movement after the damage of Shabbatai Tzvi, tells of R' Shimon of Yaroslav and the stone-throwing misnaged, and relates that the Noda B'Yehuda wrote a teshuva against saying l'shem yichud, which the Sidduro shel Shabbos refuted; today it is accepted.",
+        "yi": "דער משגיח ערקלערט אז די ערשטע מתנגדים זענען געווען ערליכע אידן וואס האבן מורא געהאט פון א נייע באוועגונג נאך דעם חורבן פון שבתי צבי, דערציילט פון ר' שמעון יערוסלאווער און דעם מתנגד וואס האט געווארפן שטיינער, און ברענגט אז דער נודע ביהודה האט געשריבן א תשובה קעגן זאגן לשם יחוד, וואס דער סידורו של שבת האט אפגעפרעגט; היינט איז עס אנגענומען."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-05-b-tefilah",
+      "startSeg": 407,
+      "endSeg": 538,
+      "title": { "en": "Baruch She'amar: creation renewed every moment", "yi": "ברוך שאמר: די בריאה ווערט באנייט יעדן רגע" },
+      "summary": {
+        "en": "The Rav turns to Baruch She'amar, which came down from heaven with eighty-seven words, and explains 'she'amar v'haya ha'olam' and 'omer v'oseh': creation from nothing is not history but goes on every second, shown with the meshalim of a power station's dynamos and a glass held in the hand.",
+        "yi": "דער משגיח גייט איבער צו ברוך שאמר, וואס איז אראפגעקומען פון הימל מיט זיבן און אכציג ווערטער, און ערקלערט \"שאמר והיה העולם\" און \"אומר ועושה\": די בריאה יש מאין איז נישט היסטאריע נאר גייט יעדע סעקונדע, מיט די משלים פון די דינאמא'ס אין דער עלעקטריק-סטאנציע און א גלאז וואס מ'האלט אין דער האנט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-05-b-tefilah",
+      "startSeg": 539,
+      "endSeg": 647,
+      "title": { "en": "Gozer u'mekayem: Hashem does not change His mind", "yi": "גוזר ומקיים: דער אייבערשטער טוישט זיך נישט" },
+      "summary": {
+        "en": "The Rav contrasts Hashem with politicians who break promises, explains that the One who knows the future cannot change His mind, uses this against religions that claim He gave a new law, grounding it in the mesorah from Sinai, and tells of a Rebbe exiled to Siberia who read 'gozer u'mekayem' about his own survival.",
+        "yi": "דער משגיח שטעלט אנטקעגן דעם אייבערשטן מיט פאליטיקער וואס האלטן נישט זייערע הבטחות, ערקלערט אז דער וואס ווייסט דעם עתיד קען זיך נישט איבערטראכטן, און ווייזט דערמיט אפ די רעליגיעס וואס זאגן אז ער האט געגעבן א נייע תורה, באזירט אויף דער מסורה פון הר סיני; און ער דערציילט פון א רבי וואס איז פארשיקט געווארן קיין סיביר און האט געזאגט א פשט אין \"גוזר ומקיים\" אויף זיך אליין."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-05-b-tefilah",
+      "startSeg": 648,
+      "endSeg": 729,
+      "title": { "en": "Oseh bereishis: nature follows the Torah", "yi": "עושה בראשית: די טבע גייט לויט די תורה" },
+      "summary": {
+        "en": "The Rav explains 'oseh bereishis': Hashem looked into the Torah and created the world, so changes in the Torah's psak bring changes in the world, shown from R' Eliezer's town and from R' Chaim Ozer's advice to a sick man to move to Eretz Yisrael, where the Mechaber's ruling holds.",
+        "yi": "דער משגיח ערקלערט \"עושה בראשית\": דער אייבערשטער האט אריינגעקוקט אין דער תורה און באשאפן די וועלט, ממילא ברענגען שינויים אין פסק שינויים אין דער וועלט, וואס ער ווייזט פון ר' אליעזר'ס שטאט און פון ר' חיים עוזר'ס עצה פאר א קראנקן צו פארן קיין ארץ ישראל, וואו מ'פסק'נט ווי דער מחבר."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-05-b-tefilah",
+      "startSeg": 730,
+      "endSeg": 814,
+      "title": { "en": "New chiddushim, new wonders in nature", "yi": "נייע חידושים, נייע נפלאות אין דער טבע" },
+      "summary": {
+        "en": "The Rav tells of the Avnei Nezer healing a sick man through a chiddush in Tosafos, brings that nature changes from generation to generation, and shows that the great flowering of Torah chiddushim in the Acharonim and in our day came together with great wonders in technology.",
+        "yi": "דער משגיח דערציילט ווי דער אבני נזר האט געהיילט א קראנקן דורך א חידוש אין א תוספות, ברענגט אז די טבע טוישט זיך פון דור צו דור, און ווייזט אז דער גרויסער שפע פון חידושי תורה ביי די אחרונים און היינט איז געקומען צוזאמען מיט גרויסע נפלאות אין דער טעכניק."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "ושכנתי בתוכם",
+      "work": "Shemos",
+      "ref": "Shemos 25:8",
+      "sefariaRef": "Exodus 25:8",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [13, 14], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "שטעט אין זייעל, אז כל מצוה ולעוד חולה וחומרה ופחת לילה",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [30, 31, 32, 34], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ווי דער גמרא זאגט אין רשע ברענגטעס אין חומש, עין השם שלום, ועין הכיסא שלום",
+      "work": "Rashi",
+      "ref": "Rashi on Shemos 17:16",
+      "sefariaRef": "Rashi on Exodus 17:16",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [50, 51, 52, 57], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ויאב תלרעכא כמחא",
+      "work": "Vayikra",
+      "ref": "Vayikra 19:18",
+      "sefariaRef": "Leviticus 19:18",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [93, 98, 199, 207], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "שטעט אין די גמרא נשוכה נרוך אז יעדער איד מוז בעטן מכילה",
+      "work": "Gemara Yoma",
+      "ref": "Yoma 85b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [130, 131], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "ס'טעט אין ירושלמי וכל אדם לא יהיה",
+      "work": "Talmud Yerushalmi",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [140, 141, 143, 144], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "וכל אדם לא יהיה ויאל מייד ווי אהרן על הקדוש",
+      "work": "Vayikra",
+      "ref": "Vayikra 16:17",
+      "sefariaRef": "Leviticus 16:17",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [140, 143, 190], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "פניים פני אדם, ווי ס'שטעט אין יחזקה",
+      "work": "Yechezkel",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [141, 142], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אבי ברעכתך ה' מיט ציון, עושה שמים וארוץ",
+      "work": "Tehillim",
+      "ref": "Tehillim 134:3",
+      "sefariaRef": "Psalms 134:3",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [160, 161, 163], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דעריבער שט פון ראי הקודש",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [196, 197, 198, 200], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "די מצוה וואס רבי יקיבא זאגט, זה כלל גדול בתורה",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [201, 202, 210], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "די סידור פון באלענטאניע",
+      "work": "Siddur of the Ba'al HaTanya",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [219, 223, 224], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ווי די סוגיה און די גמרא גיטן",
+      "work": "Gemara Gittin",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [234, 235, 247], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "דער חתם ספר זאגט עס אויך",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [249, 250, 252], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "נוידי ביהודה ... מ'געפינט עס פון די שנאלגעץ, צדיקים יורל חברים, וחסידים יקושבים",
+      "work": "Noda B'Yehuda",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [340, 341, 342, 396], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "תשובות דברי חיים",
+      "work": "Shu\"t Divrei Chaim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [349, 351, 352], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "איז דער חדש ירומהאט געזאגט",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [385, 387, 391, 392], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "שער התפילה פון בעה מיום חיים פון סדרו של שבת",
+      "work": "Sidduro shel Shabbos",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [397, 398, 400, 401], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "דער בית יוסף ברענגט עס",
+      "work": "Beis Yosef",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [408, 411, 412], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ליעולם ה' דברכה ניצוף בעשמיים",
+      "work": "Tehillim",
+      "ref": "Tehillim 119:89",
+      "sefariaRef": "Psalms 119:89",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [453, 507, 538], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "וואס לא איש כלה ויחזר ... האום עובד לאיעשה בדבר ולא יקומענער",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 23:19",
+      "sefariaRef": "Numbers 23:19",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [577, 578, 579], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די כוזרית",
+      "work": "Kuzari",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [582, 583], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ווי דער רמב״ם איז מסביר אין יסודי התורה פערע כחס",
+      "work": "Rambam, Mishneh Torah",
+      "ref": "Hilchos Yesodei HaTorah ch. 8",
+      "sefariaRef": "Mishneh Torah, Foundations of the Torah 8",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [609, 610, 612], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "פנים בפנים דבר השם עליכם מתוכה אש",
+      "work": "Devarim",
+      "ref": "Devarim 5:4",
+      "sefariaRef": "Deuteronomy 5:4",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [613], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "איסטאקעל בירתה הבורא עלמה",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [655, 656], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "די תורה איז די בלו-פרינט פון די וועלט. אזוי שטעט אין מדרש",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [657, 658], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ולעשת פחמים ולעשת איזמל אפילו בשבת ... במקומה של רבי אלעזר",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 130a",
+      "sefariaRef": "Shabbat 130a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [668, 669, 674, 675], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "א מחלוקת צווישן מחבר און דעם רמה",
+      "work": "Shulchan Aruch",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [714, 715, 716], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "שטעט אין די משנה אז א קא קען נישט האבן קיין קינד ביז זי איז דריי יאר אלט",
+      "work": "Mishnah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [745, 746], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דארט טייסטערס ברענגען ... טייסטערס פרעגט די קשיא",
+      "work": "Tosafos",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [744, 747], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "א מחדש בטבע בכור יום טוב מיינסט בראשית",
+      "work": "Siddur (Birchos Krias Shema)",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [652, 752, 812], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "א תשובה – לאמיר זאגן פון ר' משה פיינשטענג",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [801], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav reads 'b'shem kol Yisrael' as lifting a private mitzvah into the world of Klal Yisrael, the place of Yom Kippur and of the Kodesh HaKodashim, where no accuser, angel or king can enter; strife between Jews cuts a person off from that place.",
+        "yi": "דער משגיח טייטשט \"בשם כל ישראל\" אז מ'הייבט אויף א פריוואטע מצוה אינעם עולם פון כלל ישראל, דער מקום פון יום כיפור און פונעם קודש הקדשים, וואו קיין מקטרג, קיין מלאך און קיין מלך קען נישט אריין; און מחלוקת צווישן אידן שניידט א מענטש אפ פון דעם מקום."
+      },
+      "evidence": { "segs": [119, 123, 129, 171, 182, 183], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He compares l'shem yichud to the moda'ah of a coerced get: just as a prior declaration voids what follows, declaring beforehand that the mitzvah is for Hashem voids any foreign thought that later slips in, like bitul chametz.",
+        "yi": "ער גלייכט לשם יחוד צו א מסירת מודעה ביי א גט מעושה: אזוי ווי א פריערדיגע דעקלאראציע מאכט בטל וואס קומט נאכדעם, אזוי איז די דעקלאראציע פאר א מצוה אז מ'טוט עס פארן רבונו של עולם מבטל יעדע פרעמדע מחשבה וואס כאפט זיך שפעטער אריין, ווי ביטול חמץ."
+      },
+      "evidence": { "segs": [245, 247, 252, 277, 279, 290], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "Maaseh bereishis is 'current events': like a child who thinks the switch makes the light while the dynamos must turn every second, or a glass held in the hand that falls the moment the muscles relax, the world exists only through Hashem's constant renewal.",
+        "yi": "מעשה בראשית איז נישט היסטאריע נאר א זאך וואס גייט יעצט: ווי א קינד מיינט אז דער קנעפל צינדט אן די לאמפ, בשעת די דינאמא'ס מוזן זיך דרייען יעדע סעקונדע, אדער ווי א גלאז אין דער האנט פאלט באלד ווען מ'לאזט אפ די מוסקלען, אזוי עקזיסטירט די וועלט נאר דורך דעם אייבערשטנס כסדר'דיגע באנייאונג."
+      },
+      "evidence": { "segs": [452, 475, 479, 492, 516, 523], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "From 'gozer u'mekayem' the Rav argues that since Hashem knows the future, a claim that He changed His mind and gave a new law cannot hold, while the giving of the Torah itself, witnessed by the whole nation, is a historical fact others cannot deny.",
+        "yi": "פון \"גוזר ומקיים\" ווייזט דער משגיח אז ווייל דער אייבערשטער ווייסט דעם עתיד, קען נישט זיין אז ער האט זיך איבערגעטראכט און געגעבן א נייע תורה, בשעת מתן תורה אליין, וואס דאס גאנצע פאלק האט געזען, איז א היסטארישע עובדה וואס מ'קען נישט אפלייקענען."
+      },
+      "evidence": { "segs": [569, 591, 616, 620, 624, 630], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Because nature follows the Torah's psak, a lung that the Mechaber rules kosher can live in Eretz Yisrael, where his rulings are followed.",
+        "yi": "ווייל די טבע גייט לויט דעם פסק פון דער תורה, קען א לונג וואס דער מחבר פסק'נט כשר לעבן אין ארץ ישראל, וואו מ'פירט זיך ווי דער מחבר."
+      },
+      "evidence": { "segs": [714, 719, 721, 723, 724], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav links the new wonders of pilpul in the Acharonim, and the long teshuvos of today, with the industrial revolution and today's technology: as Jews add wonders in Torah, Hashem opens wonders in creation.",
+        "yi": "דער משגיח פארבינדט די נייע נפלאות פון פלפול ביי די אחרונים, און די לאנגע תשובות פון היינט, מיט דער אינדוסטריעלער רעוואלוציע און דער היינטיגער טעכניק: לויט די נפלאות וואס אידן זענען מחדש אין תורה, עפנט דער אייבערשטער נפלאות אין דער בריאה."
+      },
+      "evidence": { "segs": [775, 787, 791, 794, 801, 808], "confidence": 0.8 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Ba'al Shem Tov at the door of a shul", "yi": "דער בעל שם טוב ביי דער טיר פון א שול" },
+      "retelling": {
+        "en": "The Ba'al Shem Tov came to a certain shul and stood at the door without entering. Asked why, he said he could not go in because it was full of Torah and tefilah. When they asked whether the Ba'al Shem Tov's own shul was not full of Torah and tefilah, he answered that there it flies up to heaven and the room is empty; here, without fear and love, it stays below.",
+        "yi": "דער בעל שם טוב איז געקומען צו א געוויסער שול און איז געשטאנען ביי דער טיר און נישט אריינגעגאנגען. ווען מ'האט אים געפרעגט פארוואס, האט ער געזאגט אז ער קען נישט אריין ווייל ס'איז אנגעפילט מיט תורה און תפילה. ווען מ'האט געפרעגט צי זיין אייגענע שול איז נישט אנגעפילט מיט תורה און תפילה, האט ער געענטפערט אז ביי אים פליט עס ארויף אין הימל און ס'איז ליידיג; דא, אן יראה און אהבה, בלייבט עס אומזיסט אראפ."
+      },
+      "people": ["the Ba'al Shem Tov"],
+      "evidence": { "segs": [36, 39, 40, 42, 43, 44], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "R' Shimon of Yaroslav and the stone-throwers", "yi": "ר' שמעון יערוסלאווער און די וואס האבן געווארפן שטיינער" },
+      "retelling": {
+        "en": "R' Shimon of Yaroslav went to the mikveh every morning, passing a quarter where misnagdim lived, and they would throw stones at him. One morning he ran when they threw. His gabbai asked why the Rebbe ran now, when they throw every day and he is never hurt. He answered that there was one there who throws l'shem shamayim, and of him he was afraid.",
+        "yi": "ר' שמעון יערוסלאווער פלעגט גיין יעדן אינדערפרי אין מקוה, דורך א קווארטאל וואו מתנגדים האבן געוואוינט, און זיי פלעגן ווארפן שטיינער אויף אים. איינמאל ווען מ'האט געווארפן, האט ער גענומען לויפן. דער גבאי האט אים געפרעגט פארוואס דער רבי לויפט, זיי ווארפן דאך יעדן טאג און ער ווערט נישט געטראפן. האט ער געענטפערט אז דארט איז דא איינער וואס ווארפט לשם שמים, און פאר אים האט ער מורא."
+      },
+      "people": ["R' Shimon of Yaroslav"],
+      "evidence": { "segs": [364, 365, 374, 379, 381, 383], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "A Rebbe in Siberia and 'gozer u'mekayem'", "yi": "א רבי אין סיביר און \"גוזר ומקיים\"" },
+      "retelling": {
+        "en": "A Rebbe was exiled to Siberia for founding yeshivos and mikvaos in Russia when atheism was preached there, and suffered terribly in the cold and in the prisons. He said he could not understand how he survived so much suffering, and gave a new pshat in 'Baruch gozer u'mekayem': Hashem decreed the suffering, and Hashem also keeps him alive anyway.",
+        "yi": "א רבי איז פארשיקט געווארן קיין סיביר ווייל ער האט געמאכט ישיבות און מקוואות אין רוסלאנד, ווען מ'האט דארט געפרעדיגט אפיקורסות, און ער האט געליטן שרעקליכע יסורים אין דער קעלט און אין די תפיסות. ער האט דערציילט אז ער האט נישט פארשטאנען ווי אזוי ער איז געבליבן לעבן נאך אזויפיל יסורים, און האט געזאגט א נייעם פשט אין \"ברוך גוזר ומקיים\": דער אייבערשטער האט גוזר געווען די יסורים, און דער אייבערשטער האלט אים אויך ביים לעבן."
+      },
+      "people": [],
+      "evidence": { "segs": [632, 633, 637, 640, 644, 645], "confidence": 0.7 }
+    },
+    {
+      "title": { "en": "R' Chaim Ozer sends a sick man to Eretz Yisrael", "yi": "ר' חיים עוזר שיקט א קראנקן קיין ארץ ישראל" },
+      "retelling": {
+        "en": "A sick man with a lung illness, whom the doctors had given up on, came to R' Chaim Ozer Grodzinski for a brachah. R' Chaim Ozer advised him to move to Eretz Yisrael and settle there, and there he would live; he did, and lived. R' Chaim Ozer explained that the condition the doctor described is, as a treifus, a dispute between the Mechaber and the Rema, and in Eretz Yisrael, where the Mechaber is the authority and his ruling of kosher is followed, nature would not overrule it.",
+        "yi": "א קראנקער מיט א מחלה אויף דער לונג, וואס די דאקטוירים האבן אים מייאש געווען, איז געקומען צו ר' חיים עוזר גראדזשענסקי בעטן א ברכה. ר' חיים עוזר האט אים געגעבן אן עצה צו פארן קיין ארץ ישראל און זיך דארט באזעצן, און דארט וועט ער לעבן; און אזוי איז געווען. ר' חיים עוזר האט ערקלערט אז די מחלה וואס דער דאקטער האט באשריבן איז, ביי טריפות, א מחלוקת צווישן דעם מחבר און דעם רמ\"א, און אין ארץ ישראל, וואו דער מחבר איז דער מרא דאתרא און מ'פסק'נט ווי ער אז עס איז כשר, וועט די טבע נישט אנדערש זיין."
+      },
+      "people": ["R' Chaim Ozer Grodzinski"],
+      "evidence": { "segs": [695, 696, 700, 705, 714, 719], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The Avnei Nezer and a chiddush in Tosafos", "yi": "דער אבני נזר און א חידוש אין א תוספות" },
+      "retelling": {
+        "en": "A sick man with no hope of living came to the Avnei Nezer, the Sochatchover Rebbe. The Avnei Nezer delved into a Tosafos and said chiddushim in it, by which the matter came out kosher, and he told the man that he would have a refuah, and he was healed.",
+        "yi": "א קראנקער מענטש וואס האט נישט געהאט קיין האפענונג צו לעבן איז געקומען צום אבני נזר, דעם סאכאטשעווער רבי'ן. דער אבני נזר האט זיך פארטיפט אין א תוספות און איז מחדש געווען חידושים, און לויט די חידושים איז ארויסגעקומען אז עס איז כשר, און ער האט אים געזאגט אז ער וועט האבן א רפואה, און ער איז געהיילט געווארן."
+      },
+      "people": ["the Avnei Nezer"],
+      "evidence": { "segs": [731, 732, 737, 738, 739, 740], "confidence": 0.7 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why say that a mitzvah is done in the name of all Israel?",
+        "yi": "פארוואס זאגט מען אז מ'טוט די מצוה בשם כל ישראל?"
+      },
+      "answer": {
+        "en": "Because an individual's mitzvos can be pushed away by accusations, but a mitzvah done for all Israel reaches the root of Klal Yisrael, where no accusation reaches.",
+        "yi": "ווייל די מצוות פון א יחיד קענען נדחה ווערן דורך קטרוגים, אבער א מצוה בשם כל ישראל דערגרייכט דעם שורש פון כלל ישראל, וואו קיין קטרוג דערגרייכט נישט."
+      },
+      "questionSegs": [116, 117, 118],
+      "answerSegs": [119, 121, 122, 123],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why were great and honest people misnagdim in the Ba'al Shem Tov's time?",
+        "yi": "פארוואס זענען גרויסע און ערליכע אידן געווען מתנגדים אין דעם בעל שם טוב'ס צייטן?"
+      },
+      "answer": {
+        "en": "Because about a hundred years earlier Shabbatai Tzvi, who also used Kabbalah, had brought ruin, and they feared a new movement might be the same.",
+        "yi": "ווייל בערך הונדערט יאר פריער האט שבתי צבי, וואס האט אויך גענוצט קבלה, געברענגט א חורבן, און זיי האבן מורא געהאט אז א נייע באוועגונג קען זיין דאס זעלבע."
+      },
+      "questionSegs": [300, 301, 302],
+      "answerSegs": [303, 308, 310, 312, 336],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "How can it be that Hashem would change His mind about a decree?",
+        "yi": "ווי קען זיין אז דער אייבערשטער זאל זיך איבערטראכטן אויף א גזירה?"
+      },
+      "answer": {
+        "en": "It cannot: a person changes his mind because new situations arise that he did not foresee, but Hashem knows the future.",
+        "yi": "עס קען נישט זיין: א מענטש טוישט זיין מיינונג ווייל עס קומען נייע מצבים וואס ער האט נישט געוואוסט, אבער דער אייבערשטער ווייסט דעם עתיד."
+      },
+      "questionSegs": [553, 554, 567],
+      "answerSegs": [555, 569, 630],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "How can the Mishnah say a cow cannot give birth before three years, when every farmer knows it can at two?",
+        "yi": "ווי אזוי זאגט די משנה אז א קו קען נישט האבן קיין וולד ביז זי איז דריי יאר אלט, ווען יעדער פויער ווייסט אז זי קען שוין מיט צוויי יאר?"
+      },
+      "answer": {
+        "en": "Tosafos answers that nature changes; the Rav explains that it changes according to the new chiddushim the tzaddikim bring in Torah.",
+        "yi": "תוספות ענטפערט אז די טבע טוישט זיך; דער משגיח ערקלערט אז זי טוישט זיך לויט די נייע חידושים וואס צדיקים זענען מחדש אין דער תורה."
+      },
+      "questionSegs": [745, 746],
+      "answerSegs": [747, 749, 750],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says a person should do mitzvos not privately for himself but in the name of all Israel.",
+        "yi": "דער משגיח זאגט אז מ'זאל טון די מצוות נישט פריוואט פאר זיך אליין, נאר בשם כל ישראל."
+      },
+      "evidence": { "segs": [102, 103, 119], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Bringing the Arizal, he says that before davening one should accept upon himself the mitzvah of ahavas Yisrael.",
+        "yi": "ער ברענגט פונעם אר\"י הקדוש אז פארן דאווענען דארף מען מקבל זיין די מצוה פון אהבת ישראל."
+      },
+      "evidence": { "segs": [196, 197, 198, 200], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "He says that before Yom Kippur Jews must make peace with one another, since one tied to strife has no share in Yom Kippur.",
+        "yi": "ער זאגט אז פאר יום כיפור דארפן אידן זיך איבערבעטן איינער מיטן אנדערן, ווייל ווער עס האט א שייכות מיט פירוד האט נישט קיין שייכות מיט יום כיפור."
+      },
+      "evidence": { "segs": [130, 182, 183, 185], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He says that saying l'shem yichud before a mitzvah serves as a declaration that cancels any foolish thoughts the yetzer hara brings during it.",
+        "yi": "ער זאגט אז זאגן לשם יחוד פאר א מצוה איז א דעקלאראציע וואס איז מבטל די נארישע מחשבות וואס דער יצר הרע ברענגט אינמיטן."
+      },
+      "evidence": { "segs": [271, 273, 277, 290], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "l'shem yichud",
+    "Baruch She'amar",
+    "unity of Klal Yisrael",
+    "mitzvos with fear and love",
+    "mesiras moda'ah",
+    "chassidim and misnagdim",
+    "continuous creation",
+    "Hashem does not change His mind",
+    "nature follows the Torah",
+    "Torah chiddushim and technology"
+  ],
+  "concepts": [
+    { "he": "לשם יחוד", "heardAs": ["לשם יחד", "לשם יחיד", "שם יחיד"] },
+    { "he": "קודשא בריך הוא ושכינתיה", "heardAs": ["קדוש ברכה השכונתי", "כדשא ברכה השכנתה", "קדוש ברכה ושכונתה"] },
+    { "he": "בדחילו ורחימו", "heardAs": ["בתחילה רחימא", "בתחילה און רחימה"] },
+    { "he": "יחוד י\"ה בו\"ה", "heardAs": ["ליחד שם ידכי ובבקה", "ליחד שם יד כא בוו כא"] },
+    { "he": "בשם כל ישראל", "heardAs": ["בשם כל ישראל"] },
+    { "he": "אהבת ישראל", "heardAs": ["א הבת ישראל", "אהבת ישראל"] },
+    { "he": "קטרוג", "heardAs": ["קטחוג", "קוטרוג", "כתחגים"] },
+    { "he": "קודש הקדשים", "heardAs": ["קידוש הקדושין", "קודש הגדושים", "קדוש הקדושים"] },
+    { "he": "מסירת מודעה", "heardAs": ["מסירת מידה", "מסירת מודע", "מסירת מדאה"] },
+    { "he": "ביטול חמץ", "heardAs": ["ביטול חמץ"] },
+    { "he": "ברוך שאמר", "heardAs": ["ב' אשר יאר", "ברשי ימי", "בראשי רמא", "ברשי עמל"] },
+    { "he": "יש מאין", "heardAs": ["יש מי איין", "יש מיין"] },
+    { "he": "עשרה מאמרות", "heardAs": ["עשרה ממורות", "עשרה מאמערעס"] },
+    { "he": "גוזר ומקיים", "heardAs": ["גוזר המקיים", "בעור גוזרים וקיים"] },
+    { "he": "מעשה בראשית", "heardAs": ["מיין סברשות", "מיינס הבראשית", "מיין סיב רשות"] },
+    { "he": "מכשירי מילה", "heardAs": ["מכשירה מילה"] },
+    { "he": "מתנגדים", "heardAs": ["מתנגדים", "מתנהגה"] }
+  ],
+  "people": [
+    { "name": "the Ba'al Shem Tov", "heardAs": ["בעש''ט", "בעשם טוב", "בעש''ט הקודש"] },
+    { "name": "Rashi", "heardAs": ["רשע"] },
+    { "name": "Rabbi Akiva", "heardAs": ["רבי יקיבא"] },
+    { "name": "the Arizal", "heardAs": ["ראי הקודש"] },
+    { "name": "the Ba'al HaTanya", "heardAs": ["בעל התניא"] },
+    { "name": "the Chasam Sofer", "heardAs": ["חתם ספר"] },
+    { "name": "Shabbatai Tzvi", "heardAs": ["שבתי צבי", "חסדי שלום"] },
+    { "name": "the Noda B'Yehuda", "heardAs": ["נוידי ביהודה", "ניידער ביהודה", "נאדער ביהאדע", "נוידי בידי"] },
+    { "name": "the Divrei Chaim", "heardAs": ["דבר חיים", "דברי חיים"] },
+    { "name": "R' Shimon of Yaroslav", "heardAs": ["רבי שמעון יורסלאב'ער"] },
+    { "name": "the Chiddushei HaRim", "heardAs": ["חדש ירום"] },
+    { "name": "the Be'er Mayim Chaim", "heardAs": ["בעה מיום חיים"] },
+    { "name": "the Beis Yosef", "heardAs": ["בית יוסף", "בית'ער"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "Rabbi Eliezer", "heardAs": ["רבי אלעזר", "ר' יואל לעזל"] },
+    { "name": "R' Chaim Ozer Grodzinski", "heardAs": ["רבי חיים עוזר גורזשענסקי", "רבי חיים עייזעל"] },
+    { "name": "the Rema", "heardAs": ["רמה"] },
+    { "name": "the Avnei Nezer", "heardAs": ["אבנר נעזל", "הרב דערנעזר", "סאכעטשעווער רבי"] },
+    { "name": "the Pnei Yehoshua", "heardAs": ["פני ישוע"] },
+    { "name": "R' Moshe Feinstein", "heardAs": ["ר' משה פיינשטענג"] }
+  ],
+  "asrNotes": "Yiddish ASR fair to poor; liturgical and Hebrew quotations (the l'shem yichud text, Baruch She'amar, pesukim) are heavily garbled but recoverable from context. The source of the statement in seg 393 ('חודשי יואל') and the name of the Rebbe exiled to Siberia (seg 632) could not be recovered; some Acharonim named around segs 778-785 are unclear. Seg 671 is partly a repeated-syllable run and was ignored."
+}

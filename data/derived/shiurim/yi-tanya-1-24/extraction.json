@@ -1,0 +1,454 @@
+{
+  "shiurId": "yi-tanya-1-24",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "Continuing Tanya chapter 8, the Rav explains the lasting imprint of physical pleasure and idle talk, the special severity of bitul Torah for one who can learn, and why secular wisdom studied for its own sake is worse than idle talk, permitted only as a means for the sake of Heaven.",
+      "yi": "ווייטער אין תניא פרק ח ערקלערט דער משגיח דעם רושם וואס הנאות הגוף און דברים בטלים לאזן איבער, די ספעציעלע חומרא פון ביטול תורה ביי איינעם וואס קען לערנען, און פארוואס חכמות חיצוניות לשמה זענען ערגער ווי דברים בטלים, און זענען נאר מותר ווי א מיטל לשם שמים."
+    },
+    "abstract": {
+      "en": "The Rav continues Tanya chapter 8. Forbidden food comes from the three impure kelipos, and even a rabbinic prohibition rests on the food itself. Kosher food eaten for pleasure falls temporarily into kelipas noga; even if later elevated, an imprint remains in the body, like a stain that survives washing, and only chibut hakever removes it, unless one, like Rebbi, never enjoyed this world. Idle talk of an am ha'aretz is kelipas noga, cleansed by kaf hakela; a talmid chacham who could learn commits bitul Torah, with its own severe punishment, beyond the cold Gehinom for neglected positive mitzvos. Secular wisdom is worse than idle talk: idle talk comes from the middos, as animals chatter, while wisdom comes from chabad that fell into kelipah at the breaking of the vessels. It is allowed only as a means, for parnassah or serving Hashem, with honest calculations and never through studies bound up with heresy and sin.",
+      "yi": "דער משגיח לערנט ווייטער תניא פרק ח. מאכלות אסורות קומען פון די שלש קליפות הטמאות, און אפילו אן איסור דרבנן ליגט אויפן חפצא. כשר'ע מאכלים וואס מ'עסט פאר הנאה פאלן צייטווייליג אריין אין קליפת נוגה, און אפילו ווען מ'איז זיי שפעטער מעלה, בלייבט א רושם אינעם גוף, אזוי ווי א פלעק וואס בלייבט נאכן וואשן, און נאר חיבוט הקבר נעמט עס ארויס, סיידן ווער ס'האט קיינמאל נישט גענאסן, אזוי ווי רבינו הקדוש. דברים בטלים פון אן עם הארץ זענען קליפת נוגה און ווערן גערייניגט דורך כף הקלע; א תלמיד חכם וואס קען לערנען איז עובר אויף ביטול תורה, מיט אן אייגענעם שווערן עונש, העכער פונעם קאלטן גיהנם פאר ביטול מצוות עשה. חכמות חיצוניות זענען ערגער ווי דברים בטלים: דברים בטלים קומען פון די מידות, ווי בעלי חיים רעדן, אבער חכמה קומט פון חב\"ד וואס איז אראפגעפאלן אין קליפה ביי שבירת הכלים. מ'מעג זיי נאר לערנען ווי א מיטל, פאר פרנסה אדער עבודת השם, מיט ערליכע חשבונות, און קיינמאל נישט דורך לימודים וואס זענען פארבונדן מיט אפיקורסות און עבירות."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Kosher food eaten for pleasure falls into kelipas noga, and even after it is elevated an imprint remains in the body that only chibut hakever removes.",
+          "yi": "כשר'ע מאכלים וואס מ'עסט פאר הנאה ווערן קליפת נוגה, און אפילו נאכדעם וואס מ'איז זיי מעלה בלייבט א רושם אינעם גוף, וואס נאר חיבוט הקבר נעמט ארויס."
+        },
+        "evidence": { "segs": [60, 61, 70, 118, 123], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Idle talk of one who cannot learn is kelipas noga, while for a talmid chacham who could learn it is the sin of bitul Torah, with its own severe punishment.",
+          "yi": "דברים בטלים פון איינעם וואס קען נישט לערנען זענען קליפת נוגה, אבער ביי א תלמיד חכם וואס קען לערנען איז עס די עבירה פון ביטול תורה, מיט אן אייגענעם שווערן עונש."
+        },
+        "evidence": { "segs": [146, 158, 190, 207, 248], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Studying secular wisdom when one could learn Torah is worse than idle talk, because it clothes the soul's chabad in kelipah.",
+          "yi": "לערנען חכמות חיצוניות ווען מ'קען לערנען תורה איז ערגער ווי דברים בטלים, ווייל דאס באקליידט דעם חב\"ד פון דער נשמה אין קליפה."
+        },
+        "evidence": { "segs": [290, 390, 391, 393, 420], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Secular wisdom reached the nations through the breaking of the vessels, when chochmah fell into the kelipos.",
+          "yi": "חכמה איז אנגעקומען צו די אומות העולם דורך שבירת הכלים, ווען די חכמה איז אראפגעפאלן אין די קליפות."
+        },
+        "evidence": { "segs": [466, 467, 469, 482], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Torah must be learned for its own sake, while secular wisdom may be learned only as a means, for parnassah or to serve Hashem.",
+          "yi": "תורה דארף מען לערנען לשמה, אבער חכמות חיצוניות מעג מען לערנען נאר ווי א מיטל, פאר פרנסה אדער כדי צו דינען דעם אייבערשטן."
+        },
+        "evidence": { "segs": [510, 512, 513, 546], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The permission has two conditions: the intent must be for the sake of Heaven, and the studies may not be bound up with prohibitions such as heresy.",
+          "yi": "דער היתר האט צוויי תנאים: די כוונה מוז זיין לשם שמים, און די לימודים טארן נישט זיין פארבונדן מיט איסורים ווי אפיקורסות."
+        },
+        "evidence": { "segs": [651, 652, 653, 641], "confidence": 0.85 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-tanya-12-2-tanya",
+      "startSeg": 0,
+      "endSeg": 55,
+      "title": { "en": "Forbidden food and the impure kelipos", "yi": "מאכלות אסורות און די קליפות הטמאות" },
+      "summary": {
+        "en": "The Rav reads Tanya on forbidden food, which cannot be elevated, and mentions the Tzemach Tzedek's notes on rabbinic prohibitions, explaining that even a rabbinic prohibition rests on the food itself. He contrasts the desire for forbidden things, from the gentile 'demons' of the impure kelipos, with the desire for kosher things, which can be elevated.",
+        "yi": "דער משגיח לערנט אינעם תניא וועגן מאכלות אסורות וואס מ'קען נישט מעלה זיין, און דערמאנט די הגהות פונעם צמח צדק וועגן איסורי דרבנן, אז אפילו אן איסור דרבנן ליגט אויפן מאכל אליין. ער שטעלט אוועק די תאוה צו דברים אסורים, וואס קומט פון די גוי'אישע שדים פון די קליפות הטמאות, קעגן די תאוה צו כשר'ע זאכן, וואס מ'קען מעלה זיין."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-12-2-tanya",
+      "startSeg": 56,
+      "endSeg": 133,
+      "title": { "en": "The imprint of permitted pleasure", "yi": "דער רושם פון הנאות היתר" },
+      "summary": {
+        "en": "The Rav explains that kosher food eaten for pleasure enters kelipas noga and leaves an imprint in the body even after teshuvah, like a stain that survives washing, removed only by chibut hakever. He brings Rebbi, who raised his ten fingers and said he had not enjoyed this world, though he was very wealthy, as Rashi in Toldos shows.",
+        "yi": "דער משגיח ערקלערט אז כשר'ע מאכלים וואס מ'עסט פאר הנאה גייען אריין אין קליפת נוגה און לאזן א רושם אינעם גוף אפילו נאך תשובה, אזוי ווי א פלעק וואס בלייבט נאכן וואשן, און נאר חיבוט הקבר נעמט עס ארויס. ער ברענגט רבינו הקדוש, וואס האט אויפגעהויבן זיינע צען פינגער און געזאגט אז ער האט נישט גענאסן פון דער וועלט, הגם ער איז געווען זייער רייך, ווי רש\"י אין פרשת תולדות ווייזט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-12-2-tanya",
+      "startSeg": 134,
+      "endSeg": 250,
+      "title": { "en": "Idle talk: the am ha'aretz and the talmid chacham", "yi": "דברים בטלים: דער עם הארץ און דער תלמיד חכם" },
+      "summary": {
+        "en": "The Rav explains that the idle talk of an am ha'aretz who cannot learn is not itself a sin, but is kelipas noga and needs cleansing by kaf hakela. A talmid chacham who could learn commits bitul Torah, and the Rav explains the fire Gehinom for active sins, the snow Gehinom for neglected positive mitzvos, and a special punishment for bitul Torah.",
+        "yi": "דער משגיח ערקלערט אז די דברים בטלים פון אן עם הארץ וואס קען נישט לערנען זענען נישט קיין עבירה פאר זיך, נאר זיי זענען קליפת נוגה און דארפן גערייניגט ווערן דורך כף הקלע. א תלמיד חכם וואס קען לערנען איז עובר אויף ביטול תורה, און דער משגיח ערקלערט דעם גיהנם פון פייער פאר עבירות בפועל, דעם גיהנם של שלג פאר ביטול מצוות עשה, און אן אייגענעם עונש פאר ביטול תורה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-12-2-tanya",
+      "startSeg": 251,
+      "endSeg": 303,
+      "title": { "en": "Secular wisdom counts as idle talk", "yi": "חכמות חיצוניות זענען אין כלל דברים בטלים" },
+      "summary": {
+        "en": "The Rav reads Tanya that the wisdom of the nations is included in idle talk regarding bitul Torah, and is worse. Mathematics or physics studied when one could learn is idle talk compared to Torah. He brings Rabbi Yehoshua ben Chananya to show that the wisdom of the nations rises and falls opposite the sages of Torah.",
+        "yi": "דער משגיח לערנט אינעם תניא אז חכמות אומות העולם זענען אין כלל דברים בטלים לגבי ביטול תורה, און נאך ערגער. מאטעמאטיק אדער פיזיק ווען מ'קען לערנען זענען דברים בטלים לגבי תורה. ער ברענגט רבי יהושע בן חנניה צו ווייזן אז די חכמה פון די אומות גייט ארויף און אראפ קעגן די חכמי התורה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [1],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-12-2-tanya",
+      "startSeg": 304,
+      "endSeg": 358,
+      "title": { "en": "Earlier generations' depth, today's details", "yi": "די טיפקייט פון פריערדיגע דורות, די פרטים פון היינט" },
+      "summary": {
+        "en": "In a digression the Rav observes that recent generations developed pilpul and new chiddushim, while the earlier Rishonim had deeper knowledge; likewise the nations' earlier wise men pursued wisdom for its own sake, while today's science is details and machinery. A doctor once knew a patient's state from his face and pulse; today it is tests and electronics.",
+        "yi": "אין א צדדי'דיגן ענין זאגט דער משגיח אז די לעצטע דורות האבן אנטוויקלט פלפול און נייע חידושים, בשעת די ראשונים האבן געהאט א טיפערע ידיעה; אזוי אויך ביי די אומות האבן די פריערדיגע חכמים זיך עוסק געווען אין חכמה לשם חכמה, און היינט איז די חכמה פרטים און מאשינען. א רופא האט אמאל געקענט וויסן פונעם פנים און פונעם דופק וואס עס פעלט דעם חולה, היינט איז אלץ טעסטן און עלעקטראניק."
+      },
+      "kind": "tangent",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-12-2-tanya",
+      "startSeg": 359,
+      "endSeg": 449,
+      "title": { "en": "Idle talk from the middos, wisdom from chabad", "yi": "דברים בטלים פון די מידות, חכמה פון חב\"ד" },
+      "summary": {
+        "en": "The Rav explains that empty chatter comes from the middos, as animals bark and sing, while wisdom comes from chabad, and kelipah too has chabad. So one who studies secular wisdom to be a scientist when he could learn does greater damage than one who tells jokes, since the impurity reaches the soul's chabad. He then rereads the Tanya's words on this.",
+        "yi": "דער משגיח ערקלערט אז ליידיגע שמועסן קומען פון די מידות, אזוי ווי בעלי חיים בילן און זינגען, אבער חכמה קומט פון חב\"ד, און אויך אין קליפה איז פאראן חב\"ד. ממילא ווער ס'לערנט חכמות כדי צו זיין א געלערנטער ווען ער קען לערנען, מאכט א גרעסערן פגם ווי איינער וואס דערציילט וויצן, ווייל די טומאה דערגרייכט דעם חב\"ד פון דער נשמה. דערנאך לערנט ער נאכאמאל איבער די ווערטער פונעם תניא."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [1],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-12-2-tanya",
+      "startSeg": 450,
+      "endSeg": 490,
+      "title": { "en": "The breaking of the vessels", "yi": "שבירת הכלים" },
+      "summary": {
+        "en": "The Rav brings the beginning of Tanya chapter 3: the seven middos have good and evil, while chabad is only good. He explains, calling it an awesome matter, that at the breaking of the vessels chochmah fell into the kelipos, which is why the nations have wisdom, and why engaging in it gives the kelipah a hold on something from a very high place.",
+        "yi": "דער משגיח ברענגט דעם אנהייב פון תניא פרק ג: די שבע מידות זענען כפולות, אין טוב און אין רע, אבער חב\"ד איז נאר טוב. ער ערקלערט, און זאגט אז ס'איז א מורא'דיגער ענין, אז ביי שבירת הכלים איז די חכמה אראפגעפאלן אין די קליפות, דערפאר האבן די אומות חכמה, און דערפאר גיט דאס עוסק זיין דערין דער קליפה א אחיזה אין א זאך פון א גאר הויכן מקום."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [1],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-12-2-tanya",
+      "startSeg": 491,
+      "endSeg": 560,
+      "title": { "en": "Torah lishmah, secular wisdom only as a means", "yi": "תורה לשמה, חכמות חיצוניות נאר ווי א מיטל" },
+      "summary": {
+        "en": "The Rav explains the exception: one who studies secular wisdom for parnassah, to support his family in Torah and to learn, elevates it like eating for the sake of Heaven. Torah must be learned lishmah and never as a spade, as the Mishnah says, while secular wisdom must be learned as a spade, not for its own sake; a better-paying profession can leave more time to learn.",
+        "yi": "דער משגיח ערקלערט דעם אויסנאם: ווער ס'לערנט חכמות חיצוניות פאר פרנסה, כדי צו האלטן זיין משפחה ביי תורה און אליין צו לערנען, איז זיי מעלה אזוי ווי עסן לשם שמים. תורה דארף מען לערנען לשמה און נישט ווי א קרדום, ווי די משנה זאגט, אבער חכמות חיצוניות דארף מען לערנען ווי א קרדום, נישט לשמה; א פרנסה מיט א גרעסערע הכנסה קען לאזן מער צייט צו לערנען."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [1],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-12-2-tanya",
+      "startSeg": 561,
+      "endSeg": 609,
+      "title": { "en": "All wisdom is found in the Torah", "yi": "אלע חכמות געפינט מען אין דער תורה" },
+      "summary": {
+        "en": "The Rav explains the reason of the Rambam and Ramban for studying these wisdoms: to serve Hashem, such as drawing people closer to Torah. He adds that they knew the wisdoms from the Torah itself, citing the Ramban's introduction to Chumash, and points to tzaddikim whom doctors consulted and Rebbes who wrote prescriptions without schooling, since one who learns lishmah knows everything.",
+        "yi": "דער משגיח ערקלערט דעם טעם פונעם רמב\"ם און רמב\"ן פארוואס זיי האבן זיך עוסק געווען אין די חכמות: כדי צו דינען דעם אייבערשטן, ווי למשל מקרב זיין מענטשן צו תורה. ער לייגט צו אז זיי האבן די חכמות געוואוסט פון דער תורה אליין, ווי דער רמב\"ן אין זיין הקדמה צום חומש, און ווייזט אויף צדיקים מיט וועמען דאקטוירים האבן זיך געעצהט, און רביים וואס האבן געשריבן רעצעפטן אן קיין שולע, ווייל ווער ס'לערנט לשמה ווייסט אלץ."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [1],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-12-2-tanya",
+      "startSeg": 610,
+      "endSeg": 664,
+      "title": { "en": "Honest calculations and the two conditions", "yi": "ערליכע חשבונות און די צוויי תנאים" },
+      "summary": {
+        "en": "The Rav warns that the intent must be honest: few who study medicine do so for chessed, and many calculations about parnassah are false. An aveirah cannot be done lishmah, so college, where one must study heresy and faces tests of immorality, has no heter even for parnassah. He concludes with two conditions: intent for the sake of Heaven and studies free of prohibitions.",
+        "yi": "דער משגיח ווארנט אז די כוונה מוז זיין ערליך: ווייניג פון די וואס לערנען מעדיצין טוען עס פאר חסד, און אסאך חשבונות וועגן פרנסה זענען פאלש. אן עבירה לשמה קען מען נישט טאן, דערפאר איז קאלעדזש, וואו מ'מוז לערנען אפיקורסות און מ'פאלט אריין אין נסיונות פון גילוי עריות, אן א היתר אפילו פאר פרנסה. ער ענדיגט מיט צוויי תנאים: א כוונה לשם שמים, און לימודים וואס זענען נישט פארבונדן מיט איסורים."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [1],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "שבקאך נקראים בשם איסא ... לעבד השם בכח החילה ההיא",
+      "work": "Tanya",
+      "ref": "Tanya ch. 8",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [2, 3, 251, 283], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די הגות פון צמח צדק, וואס זיי זענען געדרוקט אין א ספר דורך מצוותך",
+      "work": "Derech Mitzvosecha",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [9, 10, 11], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "די גמרא זאגט אז רבינו הרבי הקדש ... עשרת בית למילה",
+      "work": "Gemara Kesubos",
+      "ref": "Kesubos 104a",
+      "sefariaRef": "Ketubot 104a",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [79, 80, 81], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ורשע ברענגט פון פרשת תודות, אלא רבי ועם תנינות",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 25:23",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [85, 86, 87], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "וכמשה כתב בנחת תלמוד תירום",
+      "work": "Hilchos Talmud Torah (Shulchan Aruch HaRav)",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [252, 428], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "רבי חנונה בן דייס, רבי יהושע בן חנניה, וואס ער פלעגט האבן וויכחים מיט די מינים",
+      "work": "Gemara Chagigah",
+      "ref": "Chagigah 5b",
+      "sefariaRef": "Chagigah 5b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [296, 298, 299, 300], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "דאס איז אינעם אנפאנג פון דריטן פרק",
+      "work": "Tanya",
+      "ref": "Tanya ch. 3",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [452, 453, 455, 457], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "עס שטעט דאך אין די משנה ... קארדאם",
+      "work": "Pirkei Avos",
+      "ref": "Avos 4:5",
+      "sefariaRef": "Pirkei Avot 4:5",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [537, 538, 539], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די אקדמ'ע פון חומש",
+      "work": "Ramban on the Torah",
+      "ref": "Ramban, introduction to Bereishis",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [567, 568], "confidence": 0.65 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The imprint of permitted pleasure is like a stain that remains after washing: even teshuvah removes the kelipas noga, but the trace needs a stronger 'detergent', chibut hakever.",
+        "yi": "דער רושם פון א הנאה פון היתר איז ווי א פלעק וואס בלייבט נאכן וואשן: אפילו תשובה נעמט ארויס די קליפת נוגה, אבער דער רושם דארף א שטערקערע וואשמיטל, חיבוט הקבר."
+      },
+      "evidence": { "segs": [105, 107, 116, 117, 119, 123], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The two Gehinoms match two failures: fire for one who warmed himself to an active sin, snow for the coldness and laziness of neglecting a positive mitzvah.",
+        "yi": "די צוויי גיהנומס פאסן צו צוויי חסרונות: פייער פאר איינעם וואס האט זיך אנגעווארעמט צו אן עבירה בפועל, שניי פאר דער קאלטקייט און עצלות פון ביטול א מצות עשה."
+      },
+      "evidence": { "segs": [224, 225, 228, 231, 233, 239], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Idle chatter is a drive of the middos that even animals share, barking and singing; secular wisdom is worse precisely because its impurity reaches the higher level of chabad.",
+        "yi": "ליידיגע שמועסן זענען א נטיה פון די מידות וואס אפילו בעלי חיים האבן, ווען זיי בילן און זינגען; חכמות חיצוניות זענען ערגער פונקט ווייל זייער טומאה דערגרייכט די העכערע מדריגה פון חב\"ד."
+      },
+      "evidence": { "segs": [371, 372, 375, 396, 416, 418], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Torah and secular wisdom are opposites: Torah must be learned lishmah and not as a spade, while secular wisdom may be learned only as a spade and never for its own sake.",
+        "yi": "תורה און חכמות חיצוניות זענען היפוכים: תורה דארף מען לערנען לשמה און נישט ווי א קרדום, אבער חכמות חיצוניות מעג מען לערנען נאר ווי א קרדום און קיינמאל נישט לשמה."
+      },
+      "evidence": { "segs": [510, 512, 513, 539, 546], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The wisdom of the nations rises and falls opposite the sages of Torah, as zeh l'umas zeh; when the Torah's sages are gone, the nations' wise men also decline.",
+        "yi": "די חכמה פון די אומות גייט ארויף און אראפ קעגן די חכמי התורה, זה לעומת זה; ווען ס'זענען נישטא קיין חכמי התורה, פאלן אויך די חכמי אומות העולם."
+      },
+      "evidence": { "segs": [292, 293, 300, 301, 302], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "An aveirah cannot be done lishmah, so a good intention cannot permit studies that require learning heresy, which comes from the three impure kelipos rather than kelipas noga.",
+        "yi": "אן עבירה לשמה קען מען נישט טאן, דערפאר קען א גוטע כוונה נישט מתיר זיין לימודים וואס פארלאנגען לערנען אפיקורסות, וואס קומט פון די שלש קליפות הטמאות און נישט פון קליפת נוגה."
+      },
+      "evidence": { "segs": [634, 636, 639, 640, 641, 647], "confidence": 0.8 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "Rebbi's ten fingers", "yi": "רבינו הקדוש'ס צען פינגער" },
+      "retelling": {
+        "en": "The Rav relates from the Gemara that when Rebbi was passing away, he raised his ten fingers and said to the Ribono shel Olam that he had not enjoyed this world even with his little finger. The Rav stresses that this is a great chiddush, because Rebbi was very rich and had all foods even out of season, which in those days had to be brought from afar at great expense.",
+        "yi": "דער משגיח דערציילט פון דער גמרא אז ווען רבינו הקדוש איז נפטר געווארן, האט ער אויפגעהויבן זיינע צען פינגער און געזאגט צום רבונו של עולם אז ער האט נישט גענאסן פון דער וועלט אפילו מיטן קליינעם פינגער. דער משגיח באטאנט אז דאס איז א גרויסער חידוש, ווייל רבינו הקדוש איז געווען זייער רייך און האט געהאט אלע מאכלים אפילו נישט אין זייער צייט, וואס דאן האט מען זיי געמוזט ברענגען פון ווייטן מיט גרויס הוצאות."
+      },
+      "people": ["Rebbi (Rabbi Yehudah HaNasi)"],
+      "evidence": { "segs": [79, 80, 81, 84, 90, 98], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "Rabbi Yehoshua ben Chananya and the debates", "yi": "רבי יהושע בן חנניה און די ויכוחים" },
+      "retelling": {
+        "en": "The Rav tells that Rabbi Yehoshua ben Chananya used to debate the minim. When he was passing away, his students asked who would now conduct the debates for them, and he answered that when he is gone, they too will no longer be.",
+        "yi": "דער משגיח דערציילט אז רבי יהושע בן חנניה פלעגט האבן ויכוחים מיט די מינים. ווען ער איז נפטר געווארן האבן די תלמידים געפרעגט ווער וועט יעצט פירן די ויכוחים, און ער האט געענטפערט אז ווען ער איז נישטא, וועלן זיי אויך נישט זיין."
+      },
+      "people": ["Rabbi Yehoshua ben Chananya"],
+      "evidence": { "segs": [298, 299, 300], "confidence": 0.7 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why is the idle talk of an am ha'aretz not itself a sin, while that of a talmid chacham is?",
+        "yi": "פארוואס זענען די דברים בטלים פון אן עם הארץ נישט קיין עבירה, און ביי א תלמיד חכם יא?"
+      },
+      "answer": {
+        "en": "The prohibition is not in the idle words themselves but in not speaking words of Torah; one who cannot learn is not neglecting Torah, while one who can is guilty of bitul Torah.",
+        "yi": "דער איסור ליגט נישט אין די דברים בטלים אליין, נאר אין דעם וואס מ'רעדט נישט דברי תורה; איינער וואס קען נישט לערנען איז נישט מבטל תורה, אבער איינער וואס קען יא איז עובר אויף ביטול תורה."
+      },
+      "questionSegs": [160, 161, 163],
+      "answerSegs": [157, 158, 165, 207, 208],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why is studying secular wisdom worse than idle talk and jokes?",
+        "yi": "פארוואס איז לערנען חכמות חיצוניות ערגער ווי דברים בטלים און וויצן?"
+      },
+      "answer": {
+        "en": "Idle talk comes from the middos of kelipah, but wisdom comes from the chabad of kelipah, so it defiles the soul's chabad, a higher place that idle talk does not touch.",
+        "yi": "דברים בטלים קומען פון די מידות פון דער קליפה, אבער חכמה קומט פונעם חב\"ד פון דער קליפה, ממילא איז עס מטמא דעם חב\"ד פון דער נשמה, א העכערן מקום וואס דברים בטלים רירן נישט אן."
+      },
+      "questionSegs": [415, 419],
+      "answerSegs": [393, 395, 416, 418, 442],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "How can the nations possess true wisdom, which is from holiness?",
+        "yi": "ווי אזוי קענען די אומות העולם האבן חכמה, וואס איז פון קדושה?"
+      },
+      "answer": {
+        "en": "At the breaking of the vessels the vessels could not hold the lights and burst, and chochmah fell to the place of the kelipos, where it remains until the end.",
+        "yi": "ביי שבירת הכלים זענען די כלים געווען צו קליין צו מקבל זיין די אורות און האבן געפלאצט, און די חכמה איז אראפגעפאלן צום מקום הקליפות, וואו זי בלייבט ביזן קץ."
+      },
+      "questionSegs": [471, 472],
+      "answerSegs": [467, 468, 469, 473, 474],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "How did the Rambam and Ramban, and later tzaddikim, know the secular wisdoms without schooling?",
+        "yi": "פון וואו האבן דער רמב\"ם און רמב\"ן, און שפעטערדיגע צדיקים, געוואוסט די חכמות אן קיין שולע?"
+      },
+      "answer": {
+        "en": "They knew them from the Torah itself; one who learns Torah lishmah knows everything.",
+        "yi": "זיי האבן זיי געוואוסט פון דער תורה אליין; ווער ס'לערנט תורה לשמה ווייסט אלץ."
+      },
+      "questionSegs": [575, 579, 588],
+      "answerSegs": [580, 582, 592, 593],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says secular wisdom may be studied only as a means, for parnassah or to serve Hashem, and never for its own sake or to become a learned man.",
+        "yi": "דער משגיח זאגט אז מ'מעג לערנען חכמות חיצוניות נאר ווי א מיטל, פאר פרנסה אדער צו דינען דעם אייבערשטן, און קיינמאל נישט לשמה אדער כדי צו ווערן א געלערנטער מענטש."
+      },
+      "evidence": { "segs": [508, 509, 525, 526, 546], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one who studies for parnassah must make honest calculations, since many such calculations are false and do not bring more time for learning.",
+        "yi": "דער משגיח זאגט אז ווער ס'לערנט פאר פרנסה דארף מאכן ערליכע חשבונות, ווייל אסאך אזעלכע חשבונות זענען פאלש און ברענגען נישט מער צייט צו לערנען."
+      },
+      "evidence": { "segs": [626, 627, 628, 630, 631], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says studies that require learning heresy or bring tests of immorality, as in college, have no heter even for parnassah; it is better to collect at doors than to earn a living that way.",
+        "yi": "דער משגיח זאגט אז לימודים וואס פארלאנגען לערנען אפיקורסות אדער ברענגען נסיונות פון גילוי עריות, ווי אין קאלעדזש, האבן נישט קיין היתר אפילו פאר פרנסה; בעסער גיין קלאפן אויף די טירן איידער האבן אזא פרנסה."
+      },
+      "evidence": { "segs": [637, 639, 646, 647, 659, 660], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "Tanya chapter 8",
+    "kelipas noga",
+    "chibut hakever",
+    "idle talk and bitul Torah",
+    "Gehinom of fire and snow",
+    "secular wisdom",
+    "breaking of the vessels",
+    "Torah lishmah",
+    "parnassah and secular studies"
+  ],
+  "concepts": [
+    { "he": "קליפת נוגה", "heardAs": ["קליפת נוגע", "כלי פסנוגה", "קלי פארתנוגה"] },
+    { "he": "שלש קליפות הטמאות", "heardAs": ["שולש קליפה סאטמאת", "קליפות עצמיות"] },
+    { "he": "חיבוט הקבר", "heardAs": ["חיבורת הקבל", "חיבור דקבל"] },
+    { "he": "כף הקלע", "heardAs": ["כף הכולה", "כף הכלה"] },
+    { "he": "דברים בטלים", "heardAs": ["דברים בציון", "דברים וציילים", "דברים בתלום", "דברים בטעילים"] },
+    { "he": "ביטול תורה", "heardAs": ["ביטול תירום", "ביטול תורה בפרטות"] },
+    { "he": "גיהנם של שלג", "heardAs": ["גיהנים של שלג", "גנב של שלג"] },
+    { "he": "חכמות חיצוניות", "heardAs": ["חכמות חצניות", "חכמות חוץ עניות", "חכמת חצוני'ת"] },
+    { "he": "חכמת אומות העולם", "heardAs": ["חכמת עומת עובדי גלילים", "חכמה סומת העולם"] },
+    { "he": "חב\"ד", "heardAs": ["חב''ד", "חבד", "חב״ט"] },
+    { "he": "שבירת הכלים", "heardAs": ["שבירת הקהלים", "שבורת הכולם", "שבורת הקלן"] },
+    { "he": "לשמה", "heardAs": ["לשמן", "לשמור"] },
+    { "he": "עם הארץ", "heardAs": ["אמרעס", "המורא'ץ"] },
+    { "he": "אפיקורסות", "heardAs": ["עפיקורסעס"] }
+  ],
+  "people": [
+    { "name": "the Tzemach Tzedek", "heardAs": ["צמח צדק"] },
+    { "name": "the Ba'al HaTanya", "heardAs": ["בעל התניא", "דער רבי'ט"] },
+    { "name": "Rebbi (Rabbi Yehudah HaNasi)", "heardAs": ["רבינו הקדש", "רבינו הרבי הקדש", "רבי הקודש"] },
+    { "name": "Rashi", "heardAs": ["ורשע"] },
+    { "name": "Antoninus", "heardAs": ["ועם תנינות"] },
+    { "name": "Rabbi Yehoshua ben Chananya", "heardAs": ["רבי חנונה בן דייס", "רבי יהושע בן חנניה"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "the Ramban", "heardAs": ["רמב״נער", "רמב״ם"] }
+  ],
+  "asrNotes": "Yiddish ASR fair to poor; the Tanya text read aloud is heavily garbled but recognizable from chapter 8. The opening on the Tzemach Tzedek's notes and rabbinic prohibitions (segs 9-26) is only partly recoverable, and a reference to a dispute with another authority there (seg 20) was left out. Segments 509 and 536 mention a 'Rabbi Chanina/Chana' whose statement could not be recovered, and the unnamed tzaddik consulted by doctors (573-577) is not identifiable."
+}

@@ -1,0 +1,457 @@
+{
+  "shiurId": "yi-emunah-1-11",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains from the Rambam that our belief in the Torah rests on the mesorah of Har Sinai, so no later prophet can change it, and that the nations, who know this, deny it through rationalization born of jealousy.",
+      "yi": "דער משגיח ערקלערט פונעם רמב\"ם אז די אמונה אין דער תורה שטייט אויף דער מסורה פון הר סיני, ממילא קען קיין שפעטערדיגער נביא זי נישט טוישן, און אז די אומות וואס ווייסן דאס לייקענען עס דורך ראציאנאליזאציע וואס קומט פון קנאה."
+    },
+    "abstract": {
+      "en": "The Rav recalls that the mesorah of Klal Yisroel is true because a whole nation heard Hashem at Har Sinai, and that a prophet is believed only because the Torah commands it, like two witnesses. With the Rambam in Hilchos Yesodei HaTorah he shows that a prophet with signs who contradicts Moshe is not heeded, as witnesses who say it is night are not believed by one who sees daylight. The Torah cannot be added to or changed, so the claims of the nations about a new law collapse; Bilaam himself said Hashem does not change His mind. Why do they hold on? Rationalization and jealousy of the chosen people. The Rav applies this to Rashi's question about the first mitzvah, to Moshe as father of all prophets, and to the world's preoccupation with Jews and Yerushalayim. A story of a dying heretic who recanted shows that rationalization falls away at the end. He closes that mesorah is the halachic basis of emunah.",
+      "yi": "דער משגיח דערמאנט אז די מסורה פון כלל ישראל איז אמת ווייל א גאנץ פאלק האט געהערט דעם רבונו של עולם ביי הר סיני, און אז מ'גלייבט א נביא נאר ווייל די תורה הייסט, אזוי ווי צוויי עדות. מיטן רמב\"ם אין הלכות יסודי התורה ווייזט ער אז א נביא מיט אותות וואס קומט קעגן משה רבינו הערט מען נישט, אזוי ווי עדות וואס זאגן אז ס'איז נאכט ווען מ'זעט אז ס'איז טאג. די תורה קען מען נישט טוישן, ממילא פאלט אוועק דער גאנצער בנין פון די אומות מיט זייער נייע תורה; בלעם אליין האט געזאגט \"לא איש קל ויכזב\". פארוואס האלטן זיי זיך דערביי? ראציאנאליזאציע און קנאה אויפן עם הנבחר. דערנאך ערקלערט ער מיט דעם רש\"י'ס קשיא אויף דער ערשטער מצוה, אז משה רבינו איז דער אב פון אלע נביאים, און אז די גאנצע וועלט דרייט זיך ארום אידן און ירושלים. א מעשה מיט אן אפיקורס וואס האט חרטה געהאט פארן שטארבן ווייזט אז די ראציאנאליזאציע פאלט אוועק ביים סוף. ער ענדיגט אז מסורה איז דער הלכה'דיגער יסוד פון אמונה."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Belief in a prophet after Moshe is only a decree of the Torah, like believing two witnesses, while belief in Moshe rests on what the whole nation saw at Har Sinai.",
+          "yi": "מ'גלייבט א נביא נאך משה רבינו נאר ווייל ס'איז א גזירת הכתוב, אזוי ווי צוויי עדות, אבער די אמונה אין משה רבינו שטייט אויף דעם וואס דאס גאנצע פאלק האט געזען ביי הר סיני."
+        },
+        "evidence": { "segs": [34, 35, 38, 45, 46], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "A prophet who comes with wonders to contradict Moshe is not heeded, just as a court that sees daylight does not believe witnesses who say it is night.",
+          "yi": "א נביא וואס קומט מיט מופתים קעגן משה רבינו הערט מען נישט, אזוי ווי א בית דין וואס זעט אז ס'איז טאג גלייבט נישט קיין עדות וואס זאגן אז ס'איז נאכט."
+        },
+        "evidence": { "segs": [61, 64, 70, 71, 73, 75], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The Torah cannot be added to, reduced or exchanged, so any claim that Hashem gave a new Torah is false by the very Torah its claimants accept.",
+          "yi": "די תורה קען מען נישט מוסיף זיין, גורע זיין אדער טוישן, ממילא איז יעדע טענה אז דער רבונו של עולם האט געגעבן א נייע תורה א שקר לויט דער תורה וואס זיי אליין זענען מודה."
+        },
+        "evidence": { "segs": [93, 105, 111, 117, 160, 161], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The nations hold on to their claims through rationalization, driven above all by jealousy of the Jewish people as the chosen nation.",
+          "yi": "די אומות האלטן זיך ביי זייערע טענות דורך ראציאנאליזאציע, און דער הויפט גורם איז קנאה אויף דעם אידישן פאלק ווייל ער איז דער עם הנבחר."
+        },
+        "evidence": { "segs": [167, 168, 170, 171, 172], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Even mitzvos given to Avraham and the Avos are kept only because Moshe wrote them in the Torah; Moshe is the father of the prophets before him and after him.",
+          "yi": "אפילו די מצוות וואס זענען געגעבן געווארן צו אברהם אבינו און די אבות היט מען נאר ווייל משה רבינו האט זיי געשריבן אין דער תורה; משה רבינו איז דער אב פון די נביאים פאר אים און נאך אים."
+        },
+        "evidence": { "segs": [244, 245, 266, 268, 269], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Mesorah, not philosophy, is the halachic basis of emunah, and it is the strongest of the ways to faith.",
+          "yi": "מסורה, נישט פילאסאפיע, איז דער הלכה'דיגער יסוד פון אמונה, און דאס איז דער שטארקסטער אופן."
+        },
+        "evidence": { "segs": [276, 279, 280, 384, 388], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-emunah-06-a-emunah-yiddish",
+      "startSeg": 0,
+      "endSeg": 46,
+      "title": { "en": "The mesorah of Sinai and belief in a prophet", "yi": "די מסורה פון סיני און די אמונה אין א נביא" },
+      "summary": {
+        "en": "The Rav recalls that the mesorah is true because the whole nation heard Hashem at Sinai and passed it down. He explains from the Rambam that a later prophet is believed only by decree of the Torah, like two witnesses, which is not true knowledge.",
+        "yi": "דער משגיח דערמאנט אז די מסורה איז אמת ווייל דאס גאנצע פאלק האט געהערט דעם רבונו של עולם ביי סיני און עס איבערגעגעבן. ער ערקלערט פונעם רמב\"ם אז א שפעטערדיגער נביא גלייבט מען נאר ווייל די תורה הייסט, אזוי ווי צוויי עדות, און דאס איז נישט קיין אמת'ע ידיעה."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-06-a-emunah-yiddish",
+      "startSeg": 47,
+      "endSeg": 139,
+      "title": { "en": "No prophet can change the Torah", "yi": "קיין נביא קען נישט טוישן די תורה" },
+      "summary": {
+        "en": "The Rav reads the Rambam that a prophet who performs wonders to contradict Moshe is not heeded, comparing him to witnesses who claim it is night in daylight. He continues with the Rambam that the Torah can never be changed, rejecting the claims that Hashem gave a new law or moved Shabbos to Sunday or Friday.",
+        "yi": "דער משגיח לערנט דעם רמב\"ם אז א נביא וואס טוט מופתים כדי צו לייקענען משה רבינו הערט מען נישט, אזוי ווי עדות וואס זאגן ביי טאג אז ס'איז נאכט. ער לערנט ווייטער אינעם רמב\"ם אז די תורה קען זיך קיינמאל נישט טוישן, און ער ווארפט אפ די טענות אז דער רבונו של עולם האט געגעבן א נייע תורה אדער אריבערגערוקט שבת אויף זונטאג אדער פרייטאג."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-06-a-emunah-yiddish",
+      "startSeg": 140,
+      "endSeg": 195,
+      "title": { "en": "Bilaam's words and the nations' jealousy", "yi": "בלעמ'ס ווערטער און די קנאה פון די אומות" },
+      "summary": {
+        "en": "The Rav brings the passuk said by Bilaam, that Hashem is not a man who changes His mind, and shows that the nations' whole structure collapses on the Torah they themselves accept. He explains that they hold on through rationalization, driven by jealousy of the chosen people, as the Ohr HaChaim writes on Yosef's brothers.",
+        "yi": "דער משגיח ברענגט דעם פסוק וואס בלעם האט געזאגט, אז דער רבונו של עולם איז נישט קיין מענטש וואס טוישט זיין מיינונג, און ווייזט אז זייער גאנצער בנין פאלט איין לויט דער תורה וואס זיי אליין זענען מודה. ער ערקלערט אז זיי האלטן זיך דערביי דורך ראציאנאליזאציע, און דער גורם איז קנאה אויפן עם הנבחר, אזוי ווי דער אור החיים שרייבט ביי די ברידער פון יוסף."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-06-a-emunah-yiddish",
+      "startSeg": 196,
+      "endSeg": 269,
+      "title": { "en": "Why HaChodesh is the first mitzvah", "yi": "פארוואס החודש הזה איז די ערשטע מצוה" },
+      "summary": {
+        "en": "The Rav asks on Rashi's opening why 'HaChodesh hazeh lachem' is called the first mitzvah when earlier mitzvos were given. Following the Rambam, he answers that an individual prophet like Avraham cannot be believed with certainty; we keep even milah only because Moshe wrote it, so HaChodesh is the first mitzvah received from Moshe, who is father of the prophets before and after him.",
+        "yi": "דער משגיח פרעגט אויפן ערשטן רש\"י פארוואס \"החודש הזה לכם\" הייסט די ערשטע מצוה, ווען ס'זענען שוין געווען פריערדיגע מצוות. לויטן רמב\"ם ענטפערט ער אז א יחיד, אפילו אברהם אבינו, קען מען נישט גלייבן מיט בירור; מילה היטן מיר נאר ווייל משה רבינו האט עס געשריבן, ממילא איז החודש די ערשטע מצוה פון משה רבינו, וואס איז דער אב פון די נביאים פאר אים און נאך אים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-06-a-emunah-yiddish",
+      "startSeg": 270,
+      "endSeg": 335,
+      "title": { "en": "Mesorah as halacha; the world revolves around Jews", "yi": "מסורה איז הלכה; די וועלט דרייט זיך ארום אידן" },
+      "summary": {
+        "en": "The Rav notes that the Rambam's Yad HaChazakah is a book of halacha, not philosophy, and its basis for emunah is the mesorah of Sinai. The nations are jealous and know the truth subconsciously: everything revolves around the Jews, Eretz Yisroel and Yerushalayim, yet they deceive themselves, as the Kotzker said.",
+        "yi": "דער משגיח מערקט אן אז דעם רמב\"ם'ס יד החזקה איז א ספר הלכות, נישט פילאסאפיע, און דער יסוד פון אמונה דארט איז די מסורה פון סיני. די אומות זענען מקנא און ווייסן דעם אמת אינעווייניג: אלעס דרייט זיך ארום אידן, ארץ ישראל און ירושלים, נאר זיי נארן זיך אליין אפ, אזוי ווי דער קאצקער האט געזאגט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-06-a-emunah-yiddish",
+      "startSeg": 336,
+      "endSeg": 401,
+      "title": { "en": "The heretic who recanted; mesorah as the strongest way", "yi": "דער אפיקורס וואס האט חרטה געהאט; מסורה איז דער שטארקסטער אופן" },
+      "summary": {
+        "en": "The Rav retells a story of a leading heretic in Eretz Yisroel who on his deathbed told his students that the Torah is true, and explains that at death rationalization falls away. He then sums up the ways to emunah discussed so far and closes that mesorah is the halachic and strongest way, tied to yetzias Mitzrayim and Matan Torah.",
+        "yi": "דער משגיח דערציילט א מעשה פון א הויפט אפיקורס אין ארץ ישראל וואס האט פארן שטארבן געזאגט פאר זיינע תלמידים אז די תורה איז אמת, און ערקלערט אז ביים שטארבן פאלט אוועק די ראציאנאליזאציע. דערנאך חזר'ט ער איבער די אופנים צו אמונה וואס מ'האט גערעדט, און ענדיגט אז מסורה איז דער הלכה'דיגער און שטארקסטער אופן, צוגעבונדן צו יציאת מצרים און מתן תורה."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "השם עם אלוקים מדבר עליו, מצוחה אש",
+      "work": "Devarim",
+      "ref": "Devarim 4:33",
+      "sefariaRef": "Deuteronomy 4:33",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [8, 9, 10, 283], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "איז דעריבער זאגט ווייטער דער רמב״ם לפיקח ומעמד הנביא",
+      "work": "Rambam, Mishneh Torah",
+      "ref": "Hilchos Yesodei HaTorah ch. 8",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [26, 47, 48, 49, 60, 83], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אזוי ווי דער גמרא זאגט נישט שבת",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 104b",
+      "sefariaRef": "Shabbat 104b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [55, 56, 57, 58], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "דא וואלט בעורר מפרש בתורה ... לפיקח ומועמד איש",
+      "work": "Rambam, Mishneh Torah",
+      "ref": "Hilchos Yesodei HaTorah ch. 9",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [90, 106, 127, 131, 132, 134], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "לעתות לתוסף עליו ולתגרא מומנהל",
+      "work": "Devarim",
+      "ref": "Devarim 13:1",
+      "sefariaRef": "Deuteronomy 13:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [116, 118, 119], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ונגילות לנו על ונינו עד עולם",
+      "work": "Devarim",
+      "ref": "Devarim 29:28",
+      "sefariaRef": "Deuteronomy 29:28",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [121], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ונאמא לבא שמים הוא",
+      "work": "Devarim",
+      "ref": "Devarim 30:12",
+      "sefariaRef": "Deuteronomy 30:12",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [124, 125], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "לא איש קייל ויחזב ובנורדן ויסנחם",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 23:19",
+      "sefariaRef": "Numbers 23:19",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [141, 142, 143, 145], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "ולקחתי את המלוא לים",
+      "work": "Shemos",
+      "ref": "Shemos 6:7",
+      "sefariaRef": "Exodus 6:7",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [174, 175, 176, 177], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ויוסימע ליזגאלא מכל האמים, כבחר בחור השם",
+      "work": "Devarim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [181, 182, 183], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אזוי שטעט אין עזר הקדש אין פרשת היושב",
+      "work": "Ohr HaChaim",
+      "ref": "Ohr HaChaim, Bereishis 37:11",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [185, 186, 187, 188], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "הלכה היא בידלי שעסף סיני ליעקב",
+      "work": "Rashi",
+      "ref": "Rashi, Bereishis 33:4",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [195], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אמר רבי יצחק, להוה את תירי צחך",
+      "work": "Rashi",
+      "ref": "Rashi, Bereishis 1:1",
+      "sefariaRef": "Rashi on Genesis 1:1:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [199, 200, 201, 202, 251], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "לויטן מדרש אז יענקעוו איז באשאפן געווארן א געמאלעטע",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [232], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "וגם בחי אמינו לעולם",
+      "work": "Shemos",
+      "ref": "Shemos 19:9",
+      "sefariaRef": "Exodus 19:9",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [243], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "און אזוי פסק'נט הרמב״ם בתושבי מצוות בני נחך",
+      "work": "Rambam, Mishneh Torah",
+      "ref": "Hilchos Melachim 8:11",
+      "sefariaRef": "Mishneh Torah, Kings and Wars 8:11",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [256, 257, 259, 261], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "מ'פארשטענט די מלשון פון די עיקר, אני מיין מן זלמנה שלמה",
+      "work": "Rambam, Thirteen Principles of Faith",
+      "ref": "Thirteen Principles, principle 7",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [262, 263, 264, 265, 266], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די קוצקע האט געזאגט",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [321, 323], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "א נחי ה' לכחש ולצצוכה מארץ מצרים",
+      "work": "Shemos",
+      "ref": "Shemos 20:2",
+      "sefariaRef": "Exodus 20:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [401], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Belief in any prophet but Moshe is only a decree, like trusting two witnesses who could be lying; true knowledge of Hashem belongs to Klal Yisroel alone through what they saw at Sinai.",
+        "yi": "די אמונה אין יעדן נביא חוץ משה רבינו איז נאר א גזירת הכתוב, אזוי ווי מ'גלייבט צוויי עדות וואס קענען ליגן; אן אמת'ע ידיעה האט נאר כלל ישראל דורך דעם וואס זיי האבן געזען ביי סיני."
+      },
+      "evidence": { "segs": [37, 38, 39, 43, 45, 46], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The verse 'Hashem is not a man that He should lie or change His mind' was said by Bilaam, a gentile, so the nations' own prophet testifies against the idea of a new testament.",
+        "yi": "דער פסוק \"לא איש קל ויכזב\" האט געזאגט בלעם, א גוי, ממילא זאגט זייער אייגענער נביא עדות קעגן דעם געדאנק פון א נייע תורה."
+      },
+      "evidence": { "segs": [144, 145, 146, 147, 149], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Rashi's statement that HaChodesh is the first mitzvah Yisroel were commanded is simple according to the Rambam: it is the first mitzvah received from Moshe, the only prophet believed with certainty.",
+        "yi": "דער רש\"י אז החודש איז די ערשטע מצוה וואס ישראל זענען נצטווה געווארן איז פשוט לויטן רמב\"ם: ס'איז די ערשטע מצוה פון משה רבינו, דער איינציגער נביא וואס מ'גלייבט מיט בירור."
+      },
+      "evidence": { "segs": [216, 217, 249, 251, 252], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rambam's words that Moshe is 'father to the prophets before him' mean that even the Avos and Adam are believed only because Moshe recorded their mitzvos.",
+        "yi": "דעם רמב\"ם'ס ווערטער אז משה רבינו איז \"אב לנביאים לקודמים לפניו\" מיינען אז אפילו די אבות און אדם הראשון גלייבט מען נאר ווייל משה רבינו האט פארשריבן זייערע מצוות."
+      },
+      "evidence": { "segs": [266, 267, 268, 269], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "A Jew who kept the Torah all his life never recants at death, while sinners often repent then, because at death rationalization falls away and only the truth remains.",
+        "yi": "קיין ערליכער איד וואס האט געהיטן די תורה האט קיינמאל נישט חרטה ביים שטארבן, אבער א רשע טוט אפט תשובה דעמאלט, ווייל ביים שטארבן פאלט אוועק די ראציאנאליזאציע און עס בלייבט נאר דער אמת."
+      },
+      "evidence": { "segs": [356, 358, 359, 369, 370, 374], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "The heretic who recanted on his deathbed",
+        "yi": "דער אפיקורס וואס האט חרטה געהאט ביים שטארבן"
+      },
+      "retelling": {
+        "en": "The Rav tells of a leading Zionist heretic in Eretz Yisroel who taught that there is no need to believe in the Torah and had many students who came to hear his ideology. When he fell ill and was dying, he told his students that he had lived his whole life in error and that the Torah is true. His students answered that he had taught them heresy all along, so how could they know he was not lying now.",
+        "yi": "דער משגיח דערציילט פון א הויפט ציוניסט אין ארץ ישראל, א רשע, וואס האט געלערנט אז מ'דארף נישט גלייבן אין דער תורה, און האט געהאט א סך תלמידים וואס זענען געקומען הערן זיין שיטה. ווען ער איז קראנק געווארן און געהאלטן ביים שטארבן, האט ער געזאגט פאר זיינע תלמידים אז ער האט געלעבט זיין גאנץ לעבן בטעות און אז די תורה איז אמת. די תלמידים האבן אים געענטפערט אז ער האט זיי דאך אויסגעלערנט אפיקורסות, פון וואנעט ווייסן זיי אז ער זאגט יעצט נישט קיין ליגן."
+      },
+      "people": [],
+      "evidence": { "segs": [338, 339, 341, 344, 345, 352], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Should a court believe witnesses who testify that it is night when the court sees it is day?",
+        "yi": "דארף א בית דין גלייבן עדות וואס זאגן אז ס'איז נאכט ווען דער בית דין זעט אז ס'איז טאג?"
+      },
+      "answer": {
+        "en": "No; likewise a prophet who claims Hashem changed the Torah is not believed, because the whole nation heard it at Sinai.",
+        "yi": "ניין; אזוי אויך גלייבט מען נישט א נביא וואס זאגט אז דער רבונו של עולם האט געטוישט די תורה, ווייל דאס גאנצע פאלק האט עס געהערט ביי סיני."
+      },
+      "questionSegs": [70, 71, 72],
+      "answerSegs": [73, 74, 75],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why do the nations persist in their claims when the Torah they accept refutes them?",
+        "yi": "פארוואס האלטן זיך די אומות ביי זייערע טענות ווען די תורה וואס זיי זענען מודה ווארפט זיי אפ?"
+      },
+      "answer": {
+        "en": "Through rationalization, since they cannot keep the Torah, and above all out of jealousy of the chosen people.",
+        "yi": "דורך ראציאנאליזאציע, ווייל זיי קענען נישט היטן די תורה, און דער עיקר צוליב קנאה אויפן עם הנבחר."
+      },
+      "questionSegs": [166],
+      "answerSegs": [167, 168, 170, 171],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why does Rashi call HaChodesh the first mitzvah, when milah and other mitzvos were given earlier?",
+        "yi": "פארוואס רופט רש\"י החודש די ערשטע מצוה, ווען מילה און אנדערע מצוות זענען געגעבן געווארן פריער?"
+      },
+      "answer": {
+        "en": "Because earlier mitzvos are kept only through Moshe's word, and HaChodesh is the first mitzvah received directly from Moshe.",
+        "yi": "ווייל די פריערדיגע מצוות היט מען נאר צוליב משה רבינו, און החודש איז די ערשטע מצוה וואס מ'האט מקבל געווען גלייך פון משה רבינו."
+      },
+      "questionSegs": [203, 204, 205],
+      "answerSegs": [244, 249, 252],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why do sinners repent at death while an observant Jew never recants?",
+        "yi": "פארוואס טוען רשעים תשובה ביים שטארבן, אבער קיין ערליכער איד האט נישט חרטה?"
+      },
+      "answer": {
+        "en": "Because at death there is no longer any reason to rationalize, and the truth comes out.",
+        "yi": "ווייל ביים שטארבן איז שוין נישטא קיין סיבה צו ראציאנאליזירן, און דער אמת קומט ארויס."
+      },
+      "questionSegs": [359, 360],
+      "answerSegs": [363, 365, 369, 374],
+      "confidence": 0.7
+    }
+  ],
+  "takeaways": [],
+  "candidateTopics": [
+    "mesorah of Har Sinai",
+    "belief in prophecy",
+    "immutability of the Torah",
+    "Rambam Hilchos Yesodei HaTorah",
+    "rationalization and denial",
+    "jealousy of the nations toward the Jewish people",
+    "Moshe as father of the prophets",
+    "the first mitzvah HaChodesh hazeh lachem",
+    "deathbed repentance",
+    "ways to emunah"
+  ],
+  "concepts": [
+    { "he": "מסורה", "heardAs": ["מסורה", "מסירה"] },
+    { "he": "גזירת הכתוב", "heardAs": ["גזירת הכ brackosove", "גזירת הכוסף", "גזירת הכסף"] },
+    { "he": "אותות ומופתים", "heardAs": ["אותות און מבשים", "עשית ומבשים", "עושות ומבשים"] },
+    { "he": "כישוף", "heardAs": ["כישוף"] },
+    { "he": "מעמד הר סיני", "heardAs": ["מימד הר סיני"] },
+    { "he": "נביא שקר", "heardAs": ["נביא שקר"] },
+    { "he": "עם הנבחר", "heardAs": ["עם הנבחר"] },
+    { "he": "קנאה", "heardAs": ["כינע", "קינה", "נמכנע"] },
+    { "he": "אב לנביאים", "heardAs": ["האו לנביאים", "אוו לנביאים", "עוול הנביאים"] },
+    { "he": "שבע מצוות בני נח", "heardAs": ["שבט מצוות בני נח"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבנה של עולם", "דרייבערש", "רבינו שבלם"] }
+  ],
+  "people": [
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "Bilaam", "heardAs": ["בולם"] },
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינא", "אברהם אבינו"] },
+    { "name": "Yitzchak", "heardAs": ["יצחק", "יצטאג"] },
+    { "name": "Yaakov", "heardAs": ["יענקעוו", "יענקוב"] },
+    { "name": "Adam HaRishon", "heardAs": ["אדם הראשי"] },
+    { "name": "Rashi", "heardAs": ["רשע"] },
+    { "name": "Yosef", "heardAs": ["יוסף"] },
+    { "name": "the Kotzker Rebbe", "heardAs": ["די קוצקע"] }
+  ],
+  "asrNotes": "Yiddish ASR fair for the Rav's own words but Hebrew quotations from the Rambam and pesukim are heavily garbled and were recovered from context. The Rambam citations are identified by chapter only. Segment 134 and segments 205-210 (earlier mitzvos and the Gemara on them) are partly unintelligible, as is the name of the person in the story (seg 336)."
+}

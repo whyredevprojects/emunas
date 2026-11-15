@@ -1,0 +1,461 @@
+{
+  "shiurId": "yi-tanya-2-07",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that a Jew's emunah is above understanding, which is why even the simplest Jew gives up his life rather than deny Hashem, why bris milah is done on an eight-day-old baby, and how the soul is 'the candle of Hashem'.",
+      "yi": "דער משגיח ערקלערט אז די אמונה פון א איד איז העכער פון דעת, און דערפאר איז אפילו דער פשוטסטער איד מוסר נפש, דערפאר מאכט מען א ברית צו אכט טעג, און אזוי איז די נשמה \"נר ה'\"."
+    },
+    "abstract": {
+      "en": "Continuing Tanya chapter 18, the Rav explains that every Jew, even the simplest, inherited emunah from the Avos and heard 'Anochi' at Har Sinai, and that this emunah is above daas: before Hashem everyone is a 'peti' who simply believes, and that is the greatest wisdom. Simple Jews who do not think about Hashem's greatness still give up their lives rather than deny Him, not out of fear of Gehinnom or hope for Gan Eden, but because the soul cannot cut itself off from Hashem, just as a person cannot jump off a roof. He then brings the argument of Yishmael and Yitzchak before the Akeidah and asks why milah, the greatest mitzvah, is given to a baby who has no kavanah. His answer: milah is emunah, above daas. He adds that a goy's milah is not milah, that Eretz Yisroel is 'the Jew of geography', and links Chevron to milah and Shechem to periah. Opening chapter 19, he explains 'ner Hashem nishmas adam' through the custom of lighting a Shabbos candle for each child, and begins the image of the flame that always rises.",
+      "yi": "דער משגיח לערנט ווייטער תניא פרק י\"ח און ערקלערט אז יעדער איד, אפילו דער קלענסטער, האט אמונה בירושה פון די אבות, און האט געהערט \"אנכי\" ביים הר סיני; די אמונה איז העכער פון דעת, און לגבי דעם רבונו של עולם איז יעדער א \"פתי\" וואס גלייבט פשוט, און דאס איז די גרעסטע חכמה. פשוטע אידן וואס טראכטן נישט אריין אין גדולת ה' זענען פונדעסטוועגן מוסר נפש, נישט מחמת מורא פון גיהנום אדער פאר גן עדן, נאר ווייל די נשמה קען זיך נישט אפרייסן פונעם רבונו של עולם, אזוי ווי א מענטש קען נישט שפרינגען פון א דאך. דערנאך ברענגט ער דעם ויכוח פון ישמעאל מיט יצחק פאר דער עקידה, און פרעגט פארוואס מען גיט די מצוה פון מילה, די גרעסטע מצוה, צו א קינד אן כוונה. דער תירוץ: מילה איז אמונה, העכער פון דעת. ער לייגט צו אז די מילה פון א גוי איז נישט קיין מילה, אז ארץ ישראל איז \"דער איד פון געאגראפיע\", און אז חברון איז דער מקום פון מילה און שכם פון פריעה. ביים אנהייב פון פרק י\"ט ערקלערט ער \"נר ה' נשמת אדם\" דורך דעם מנהג צו צינדן א ליכט לכבוד שבת פאר יעדן קינד, און הייבט אן דעם משל פון א פלאם וואס גייט אלעמאל ארויף."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Every Jew, even the simplest, has emunah inherited from Avraham, Yitzchak and Yaakov and implanted at Har Sinai, and this emunah is above daas.",
+          "yi": "יעדער איד, אפילו דער פשוטסטער, האט אמונה בירושה פון אברהם יצחק און יעקב און פונעם הר סיני, און די אמונה איז העכער פון דעת."
+        },
+        "evidence": { "segs": [7, 9, 10, 21, 41, 46], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Before Hashem every person is a 'peti' who simply believes, and believing that way is the greatest wisdom.",
+          "yi": "לגבי דעם רבונו של עולם איז יעדער א \"פתי\" וואס גלייבט פשוט, און אזוי צו גלייבן איז די גרעסטע חכמה."
+        },
+        "evidence": { "segs": [61, 74, 79, 83, 86], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Simple Jews give up their lives for emunah not out of reward or punishment but because the soul cannot cut itself off from Hashem.",
+          "yi": "פשוטע אידן זענען מוסר נפש אויף אמונה נישט מחמת שכר אדער גיהנום, נאר ווייל די נשמה קען זיך נישט אפרייסן פונעם רבונו של עולם."
+        },
+        "evidence": { "segs": [145, 146, 151, 157, 166], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Milah is given to an eight-day-old baby because milah is emunah, the bond with Avraham Avinu that is above daas.",
+          "yi": "מען מאכט מילה צו אן אכט טאג אלט קינד ווייל מילה איז אמונה, דער קשר מיט אברהם אבינו וואס איז העכער פון דעת."
+        },
+        "evidence": { "segs": [328, 329, 337, 344, 470], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "A goy's milah is not considered milah, since he is entirely orlah, while a Jew has orlah only in one place.",
+          "yi": "די מילה פון א גוי הייסט נישט קיין מילה, ווייל ער איז אינגאנצן ערלה, בשעת א איד האט נאר ערלה אין איין ארט."
+        },
+        "evidence": { "segs": [382, 384, 394, 396, 398], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The soul is the 'candle of Hashem', which is why many light another Shabbos candle for each child born.",
+          "yi": "די נשמה איז \"נר ה'\", און דערפאר צינדן אסאך נאך א שבת ליכט פאר יעדן קינד וואס ווערט געבוירן."
+        },
+        "evidence": { "segs": [515, 531, 556, 557, 561], "confidence": 0.85 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-new-tanya-07-tanya-new",
+      "startSeg": 0,
+      "endSeg": 98,
+      "title": { "en": "Emunah above daas: everyone a 'peti'", "yi": "אמונה העכער פון דעת: יעדער איז א פתי" },
+      "summary": {
+        "en": "Continuing Tanya chapter 18, the Rav explains that every Jew inherited emunah from the Avos and heard 'Anochi' at Sinai, and that emunah is above daas. He brings 'peti ya'amin lechol davar' and 'va'ani va'ar velo eida' to show that before Hashem everyone is a simple believer, and that this is the greatest wisdom.",
+        "yi": "דער משגיח לערנט ווייטער אין תניא פרק י\"ח, אז יעדער איד האט אמונה בירושה פון די אבות און האט געהערט \"אנכי\" ביים הר סיני, און אמונה איז העכער פון דעת. ער ברענגט \"פתי יאמין לכל דבר\" און \"ואני בער ולא אדע\" צו ווייזן אז לגבי דעם רבונו של עולם איז יעדער א פשוטער מאמין, און דאס איז די גרעסטע חכמה."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-07-tanya-new",
+      "startSeg": 99,
+      "endSeg": 204,
+      "title": { "en": "Why simple Jews give up their lives", "yi": "פארוואס פשוטע אידן זענען מוסר נפש" },
+      "summary": {
+        "en": "The Rav asks why simple Jews, who do not contemplate Hashem and sin in other areas, still give up their lives rather than deny Him. He answers that it is not fear of Gehinnom or hope of reward, but that the soul cannot cut itself off from Hashem, just as a sane person cannot jump off a roof.",
+        "yi": "דער משגיח פרעגט פארוואס פשוטע אידן, וואס טראכטן נישט אריין אין דעם רבונו של עולם און זענען עובר אויף אנדערע זאכן, זענען פונדעסטוועגן מוסר נפש אויף אמונה. ער ענטפערט אז דאס איז נישט מחמת גיהנום אדער גן עדן, נאר ווייל די נשמה קען זיך נישט אפרייסן פונעם רבונו של עולם, אזוי ווי א מענטש מיט דעת קען נישט שפרינגען פון א דאך."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-07-tanya-new",
+      "startSeg": 205,
+      "endSeg": 328,
+      "title": { "en": "Yishmael's claim and milah without kavanah", "yi": "ישמעאלס טענה און מילה אן כוונה" },
+      "summary": {
+        "en": "The Rav brings Rashi's account of the argument between Yishmael and Yitzchak before the Akeidah. Citing the Shulchan Aruch that milah is the greatest mitzvah, and the question whether mitzvos need kavanah, he contrasts the Ba'al Shem Tov's tefillin with an ordinary person's, and asks why such a mitzvah is given to a baby who cannot have kavanah: was Yishmael right? He answers that milah is above kavanah.",
+        "yi": "דער משגיח ברענגט רש\"י וועגן דעם ויכוח פון ישמעאל מיט יצחק פאר דער עקידה. ער ברענגט דעם שולחן ערוך אז מילה איז די גרעסטע מצוה, און די שאלה צי מצוות צריכות כוונה, ער שטעלט אוועק די תפילין פונעם בעל שם טוב קעגן די תפילין פון א פשוטן מענטש, און פרעגט פארוואס מען גיט אזא מצוה צו א קינד וואס קען נישט האבן קיין כוונה: איז ישמעאל גערעכט? דער תירוץ איז אז מילה איז העכער פון כוונה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-07-tanya-new",
+      "startSeg": 329,
+      "endSeg": 406,
+      "title": { "en": "Milah is emunah; a goy's milah is not milah", "yi": "מילה איז אמונה; די מילה פון א גוי איז נישט קיין מילה" },
+      "summary": {
+        "en": "The Rav explains that milah binds a Jew to Avraham Avinu, the root of emunah, and is therefore done on a baby to show that the bond is above daas. Yishmael's milah is merely a cut: from the Mishnah in Nedarim and the episode of Shechem he shows that a goy, even circumcised, is not called circumcised, because he is entirely orlah while a Jew has orlah in one place only.",
+        "yi": "דער משגיח ערקלערט אז מילה פארבינדט א איד מיט אברהם אבינו, דער שורש פון אמונה, און דערפאר מאכט מען עס ביי א קינד, צו ווייזן אז דער קשר איז העכער פון דעת. די מילה פון ישמעאל איז סתם א שניט: פון דער משנה אין נדרים און פון דער מעשה פון שכם ווייזט ער אז א גוי, אפילו געמלט, הייסט נישט קיין מהול, ווייל ער איז אינגאנצן ערלה, און א איד האט ערלה נאר אין איין ארט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-07-tanya-new",
+      "startSeg": 407,
+      "endSeg": 490,
+      "title": { "en": "Eretz Yisroel, Chevron and Shechem", "yi": "ארץ ישראל, חברון און שכם" },
+      "summary": {
+        "en": "The Rav calls Eretz Yisroel 'the Jew of geography' and explains that milah has two parts, milah and periah: Chevron, where Avraham was circumcised, is the place of milah, and Shechem, linked to Yosef and Yehoshua, is the place of periah, which is why Yaakov's sons cut off its inhabitants. He returns to milah at eight days as emunah above daas, and describes the custom in Eretz Yisroel of saying Shema with closed eyes before a bris.",
+        "yi": "דער משגיח רופט ארץ ישראל \"דער איד פון געאגראפיע\", און ערקלערט אז מילה האט צוויי חלקים, מילה און פריעה: חברון, וואו אברהם האט זיך מל געווען, איז דער מקום פון מילה, און שכם, וואס איז פארבונדן מיט יוסף און יהושע, איז דער מקום פון פריעה, און דערפאר האבן די בני יעקב אויסגעהרגעט די אנשי שכם. ער קומט צוריק צו מילה צו אכט טעג אלס אמונה העכער פון דעת, און דערציילט דעם מנהג אין ארץ ישראל צו זאגן שמע ישראל מיט פארמאכטע אויגן פאר א ברית."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-07-tanya-new",
+      "startSeg": 491,
+      "endSeg": 559,
+      "title": { "en": "Hidden love and a candle for each child", "yi": "אהבה מסותרת און א ליכט פאר יעדן קינד" },
+      "summary": {
+        "en": "Opening Tanya chapter 19, the Rav recalls that every Jew has a hidden love of Hashem that comes out at mesiras nefesh, and introduces 'ner Hashem nishmas adam'. He describes the widespread Ashkenazi custom of lighting two Shabbos candles from the wedding, for zachor and shamor, and adding a candle for each child, because each child is another soul, another light.",
+        "yi": "ביים אנהייב פון תניא פרק י\"ט דערמאנט דער משגיח אז יעדער איד האט אן אהבה מסותרת צום רבונו של עולם וואס קומט ארויס ביי מסירת נפש, און ברענגט \"נר ה' נשמת אדם\". ער דערציילט דעם מנהג ביי אשכנזים צו צינדן צוויי שבת ליכט פון דער חתונה, קעגן זכור און שמור, און צולייגן א ליכט פאר יעדן קינד, ווייל יעדע קינד איז נאך א נשמה, נאך א ליכט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-07-tanya-new",
+      "startSeg": 560,
+      "endSeg": 615,
+      "title": { "en": "The soul as a flame that rises", "yi": "די נשמה ווי א פלאם וואס גייט ארויף" },
+      "summary": {
+        "en": "The Rav explains 'ner Hashem nishmas adam' as the Tanya does: the soul is like the light of a candle, which constantly flickers upward. He notes that fire has no solidity, yet unlike water on a slope it does not fall but rises, and leaves the question of why for the next shiur.",
+        "yi": "דער משגיח ערקלערט \"נר ה' נשמת אדם\" ווי דער תניא: די נשמה איז ווי דאס ליכט פון א נר וואס שאקלט זיך כסדר ארויף. ער ווייזט אן אז פייער האט נישט קיין שטייפקייט, און פונדעסטוועגן פאלט עס נישט ארונטער ווי וואסער אויף א שיפוע, נאר גייט ארויף, און לאזט איבער די קשיא פארוואס אויפן קומענדיגן שיעור."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "ולחן כל ישראל אפילו אנשים ויאמי הארץ האבן אמונים ביי די שם",
+      "work": "Tanya",
+      "ref": "Tanya ch. 18",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [15, 20, 100, 102], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "אנכי ולא יאולך ... מפי הגברה שמעונם",
+      "work": "Gemara Makkos",
+      "ref": "Makkos 24a",
+      "sefariaRef": "Makkot 24a",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [38, 40], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "פסח יאר מען לכל דבר",
+      "work": "Mishlei",
+      "ref": "Mishlei 14:15",
+      "sefariaRef": "Proverbs 14:15",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [57, 60, 61], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "טרת ה' נאמנה ... מחכמה את פסוק",
+      "work": "Tehillim",
+      "ref": "Tehillim 19:8",
+      "sefariaRef": "Psalms 19:8",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [84, 85], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ואני בעל ולא עדה ... בהימש אייסא אומך ... ואני א תלמיד אומך",
+      "work": "Tehillim",
+      "ref": "Tehillim 73:22-23",
+      "sefariaRef": "Psalms 73:22-23",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [87, 89, 91, 93], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "והוא אחר הדבר מועלה. זאגט רשע",
+      "work": "Rashi on Bereishis",
+      "ref": "Rashi on Bereishis 22:1",
+      "sefariaRef": "Rashi on Genesis 22:1",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [206, 208, 210, 214, 223], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "דער שוחנורא פאנגט אין הילכות סמילה ... ירדעי סימן'ס ראש סמך",
+      "work": "Shulchan Aruch",
+      "ref": "Shulchan Aruch Yoreh De'ah 260:1",
+      "sefariaRef": "Shulchan Arukh, Yoreh De'ah 260:1",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [231, 232, 233], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "מצוות צריכה איז כוונה. זיין מחלקות אין די גמרא",
+      "work": "Gemara",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [235, 236, 245], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ס'איז דא א משנה נדורים ... כל הגוים ארעלים",
+      "work": "Mishnah Nedarim",
+      "ref": "Mishnah Nedarim 3:11",
+      "sefariaRef": "Mishnah Nedarim 3:11",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [361, 364, 369, 382, 383], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "מ'זעהט ביי שכם ... כאשר האבן די מולם",
+      "work": "Bereishis",
+      "ref": "Bereishis 34",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [372, 373, 375, 377, 381], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "עמלתם את ארלת לבבכם",
+      "work": "Devarim",
+      "ref": "Devarim 10:16",
+      "sefariaRef": "Deuteronomy 10:16",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [391], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "המלשמל לכחות לבבכה ושלבב זרעכה",
+      "work": "Devarim",
+      "ref": "Devarim 30:6",
+      "sefariaRef": "Deuteronomy 30:6",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [392], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ויאבו שכמא שכמא איז בגימטריא פריעה",
+      "work": "Bereishis",
+      "ref": "Bereishis 37:14",
+      "sefariaRef": "Genesis 37:14",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [449, 450], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "פון ארי הקדוש אז שבת זאל מ'צינדן זיבן ליכט",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [521], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "פון שלא הקדוש שטעט אז שבת זאל מ'צינדן צען ליכט",
+      "work": "Shelah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [522, 523], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "נר השם נשמע סדים",
+      "work": "Mishlei",
+      "ref": "Mishlei 20:27",
+      "sefariaRef": "Proverbs 20:27",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [509, 561, 562, 575], "confidence": 0.9 }
+    },
+    {
+      "heardAs": "שחרית זאגט דער בעל לתניא פרק י'-ט ... שישראל הקריאים אדם נשמעותם היא למשל כי אור הנורא",
+      "work": "Tanya",
+      "ref": "Tanya ch. 19",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [503, 504, 576, 580], "confidence": 0.85 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Relative to Hashem every person is a 'peti' who believes without understanding, and the verse calls this simple belief the greatest wisdom.",
+        "yi": "לגבי דעם רבונו של עולם איז יעדער מענטש א \"פתי\" וואס גלייבט אן פארשטיין, און דער פסוק רופט די פשוטע אמונה די גרעסטע חכמה."
+      },
+      "evidence": { "segs": [74, 79, 83, 84, 86], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Self-sacrifice for emunah works like the instinct of life: just as a sane person cannot jump off a roof, a Jewish soul cannot do something, such as denying Hashem, that would kill the soul.",
+        "yi": "מסירת נפש אויף אמונה איז ווי דער כח פונעם לעבן: אזוי ווי א מענטש מיט דעת קען נישט שפרינגען פון א דאך, אזוי קען א אידישע נשמה נישט טאן א זאך, ווי כפירה, וואס הרגעט אוועק די נשמה."
+      },
+      "evidence": { "segs": [183, 187, 193, 199, 201, 203], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "Giving milah to a baby without kavanah answers Yishmael's claim: precisely because milah is emunah, above daas, it is fitting for an eight-day-old who has no daas.",
+        "yi": "דאס וואס מען גיט מילה צו א קינד אן כוונה ענטפערט אויף ישמעאלס טענה: דווקא ווייל מילה איז אמונה, העכער פון דעת, פאסט עס פאר אן אכט טאג אלט קינד וואס האט נאך נישט קיין דעת."
+      },
+      "evidence": { "segs": [324, 328, 343, 344], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "A goy is entirely orlah from head to foot, so cutting does not make him circumcised, while a Jew's orlah is in one place only.",
+        "yi": "א גוי איז אינגאנצן ערלה פון קאפ ביז די פיס, ממילא מאכט אים א שניט נישט קיין מהול, בשעת ביי א איד איז די ערלה נאר אין איין ארט."
+      },
+      "evidence": { "segs": [394, 396, 398, 399], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Just as among souls there is a Jew, in geography Eretz Yisroel is the Jew and other lands are the goyim; within it Chevron is the place of milah and Shechem, whose name equals 'periah' in gematria, the place of periah.",
+        "yi": "אזוי ווי ביי נשמות איז דא א איד, אזוי איז אין געאגראפיע ארץ ישראל דער איד און די אנדערע ארצות די גוים; און אין ארץ ישראל איז חברון דער מקום פון מילה, און שכם, וואס איז בגימטריא \"פריעה\", דער מקום פון פריעה."
+      },
+      "evidence": { "segs": [410, 411, 413, 432, 435, 450], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The custom of adding a Shabbos candle for each child expresses 'ner Hashem nishmas adam': every child born is another soul, another light.",
+        "yi": "דער מנהג צולייגן א שבת ליכט פאר יעדן קינד דריקט אויס \"נר ה' נשמת אדם\": יעדע קינד וואס ווערט געבוירן איז נאך א נשמה, נאך א ליכט."
+      },
+      "evidence": { "segs": [531, 532, 556, 557, 559], "confidence": 0.85 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "Yishmael and Yitzchak argue over milah", "yi": "דער ויכוח פון ישמעאל מיט יצחק וועגן מילה" },
+      "retelling": {
+        "en": "Following Rashi, the Rav tells that before the Akeidah Yishmael argued with Yitzchak. Yishmael said Yitzchak was circumcised at eight days, when as a baby he could not object, while he himself allowed himself to be circumcised at thirteen, so he was greater. Yitzchak answered that he was ready to give his whole self to Hashem, and the Akeidah followed to show it.",
+        "yi": "לויט רש\"י דערציילט דער משגיח אז פאר דער עקידה האט ישמעאל געהאט א ויכוח מיט יצחק. ישמעאל האט געזאגט אז יצחק איז געמלט געווארן צו אכט טעג, ווען ער האט אלס קליין קינד נישט געקענט זאגן אז ער וויל נישט, און ער, ישמעאל, האט זיך געלאזט מל זיין צו דרייצן יאר, ממילא איז ער גרעסער. יצחק האט געענטפערט אז ער איז גרייט מוסר נפש צו זיין אינגאנצן פארן רבונו של עולם, און דערנאך איז געקומען די עקידה צו ווייזן דאס."
+      },
+      "people": ["Yishmael", "Yitzchak", "Avraham"],
+      "evidence": { "segs": [213, 217, 218, 219, 223, 228], "confidence": 0.8 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why do simple Jews, who sin in other matters and do not think about Gehinnom, give up their lives for emunah?",
+        "yi": "פארוואס זענען פשוטע אידן, וואס זענען עובר אויף אנדערע זאכן און טראכטן נישט אריין אין גיהנום, מוסר נפש אויף אמונה?"
+      },
+      "answer": {
+        "en": "Not because of reward or punishment, but because denying emunah cuts one off from Hashem and the soul cannot allow itself to be cut off.",
+        "yi": "נישט מחמת שכר און עונש, נאר ווייל דורך כפירה רייסט מען זיך אפ פונעם רבונו של עולם, און די נשמה לאזט זיך נישט אפרייסן."
+      },
+      "questionSegs": [136, 137, 138, 144],
+      "answerSegs": [145, 146, 151, 157, 166],
+      "confidence": 0.85
+    },
+    {
+      "question": {
+        "en": "What makes the Ba'al Shem Tov's tefillin greater than an ordinary person's, if both fulfil the mitzvah?",
+        "yi": "מיט וואס איז דער בעל שם טוב'ס תפילין לייגן גרעסער ווי ביי א פשוטן מענטש, אויב ביידע זענען יוצא די מצוה?"
+      },
+      "answer": {
+        "en": "He put them on with love, fear and deveikus; the difference between Jews is not what they do but how, with what kavanah and fervor.",
+        "yi": "ער האט זיי געלייגט מיט אהבה, יראה און דביקות; דער חילוק צווישן אידן איז נישט וואס מען טוט, נאר ווי אזוי, מיט וואספארא כוונה און התלהבות."
+      },
+      "questionSegs": [286, 290],
+      "answerSegs": [295, 296, 306, 308],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "If milah is the greatest mitzvah and mitzvos with kavanah are far greater, why is it given to an eight-day-old who cannot intend it; was Yishmael right?",
+        "yi": "אויב מילה איז די גרעסטע מצוה און א מצוה מיט כוונה איז אסאך גרעסער, פארוואס גיט מען עס צו אן אכט טאג אלט קינד וואס קען נישט מכוון זיין; איז ישמעאל גערעכט?"
+      },
+      "answer": {
+        "en": "Milah is above kavanah: it is emunah, the bond with Avraham Avinu that is above daas, so it is done precisely on a baby.",
+        "yi": "מילה איז העכער פון כוונה: עס איז אמונה, דער קשר מיט אברהם אבינו וואס איז העכער פון דעת, און דערפאר מאכט מען עס דווקא ביי א קינד."
+      },
+      "questionSegs": [309, 310, 312, 318],
+      "answerSegs": [324, 328, 329, 344],
+      "confidence": 0.85
+    },
+    {
+      "question": {
+        "en": "Why were the people of Shechem killed though they had circumcised themselves?",
+        "yi": "פארוואס האט מען אויסגעהרגעט די אנשי שכם כאטש זיי האבן זיך מל געווען?"
+      },
+      "answer": {
+        "en": "A goy's milah is not milah, for he is entirely orlah; and Shechem is the place of periah, so its orlah had to be cut off.",
+        "yi": "די מילה פון א גוי איז נישט קיין מילה, ווייל ער איז אינגאנצן ערלה; און שכם איז דער מקום פון פריעה, ממילא האט מען געדארפט אפשניידן איר ערלה."
+      },
+      "questionSegs": [376, 377, 380],
+      "answerSegs": [382, 398, 455, 456, 458],
+      "confidence": 0.7
+    }
+  ],
+  "takeaways": [],
+  "candidateTopics": [
+    "Tanya chapter 18",
+    "Tanya chapter 19",
+    "emunah above daas",
+    "mesiras nefesh",
+    "bris milah",
+    "Yishmael and Yitzchak",
+    "mitzvos and kavanah",
+    "Eretz Yisroel",
+    "ahavah mesuteres",
+    "Shabbos candles and the soul"
+  ],
+  "concepts": [
+    { "he": "אמונה", "heardAs": ["אמנה", "אמונים"] },
+    { "he": "למעלה מן הדעת", "heardAs": ["למעלה מן הדעת וההתרגה", "העכער פון דעת"] },
+    { "he": "מסירת נפש", "heardAs": ["מייסחים ונפשים", "מתה נפש", "מושא נפש"] },
+    { "he": "התבוננות", "heardAs": ["תביינענות", "מתבונען"] },
+    { "he": "פתי", "heardAs": ["פסח", "פעסי", "פסי"] },
+    { "he": "עתיקא", "heardAs": ["עתיקה", "עתקיומים"] },
+    { "he": "מצוות צריכות כוונה", "heardAs": ["מצוות צריכה איז כוונה", "מצוות זכוכות כוונה"] },
+    { "he": "ברית מילה", "heardAs": ["סמילה", "מילא"] },
+    { "he": "פריעה", "heardAs": ["פריע", "פחיע", "פחוע"] },
+    { "he": "ערלה", "heardAs": ["ארלע", "ארלה", "אורל"] },
+    { "he": "אהבה מסותרת", "heardAs": ["אהבה מסוסרת", "אהבה מתאותית"] },
+    { "he": "נר ה' נשמת אדם", "heardAs": ["נר השם נשמע סדים", "נייר השם נשמעות אדם"] },
+    { "he": "זכור ושמור", "heardAs": ["זכר און שמש", "זכר און שמר"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבי'ן ירושלים", "רבי'נ'ע שולעל'ע", "רביה של עולם"] }
+  ],
+  "people": [
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינא"] },
+    { "name": "Yitzchak", "heardAs": ["יצחק"] },
+    { "name": "Yaakov", "heardAs": ["יעקב"] },
+    { "name": "Yishmael", "heardAs": ["ישמעיא", "ישמואל", "וישמע"] },
+    { "name": "Rashi", "heardAs": ["רשע"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["בעש''ט הקודש"] },
+    { "name": "Yosef", "heardAs": ["יוסף"] },
+    { "name": "Yehoshua bin Nun", "heardAs": ["יהושע בן נמר", "הראש ישעיה"] },
+    { "name": "Dinah", "heardAs": ["דינא"] },
+    { "name": "the Arizal", "heardAs": ["ארי הקדוש"] },
+    { "name": "the Shelah", "heardAs": ["שלא הקדוש"] },
+    { "name": "the Alter Rebbe", "heardAs": ["בעל לתניא", "עלעתניא"] }
+  ],
+  "asrNotes": "Yiddish ASR fair; Hebrew quotations from Tanya and pesukim are heavily garbled but mostly recoverable from context. The single catalog topic lists the shiur's themes in order and spans the whole recording. Segments 0-4 (locating the line in Tanya), 177-182, the reference to 'Rebbe Yisroel' and the zealots in Eretz Yisroel (416-420), and parts of 403-406 could not be recovered and are left out."
+}

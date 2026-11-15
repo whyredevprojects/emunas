@@ -1,0 +1,549 @@
+{
+  "shiurId": "yi-tanya-1-20",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that every Jew has his own portion in the Torah and a hidden inner point of closeness to Hashem, and that this hidden point is why learning not for its own sake leads to learning lishmah.",
+      "yi": "דער משגיח ערקלערט אז יעדער איד האט זיין אייגענעם חלק אין דער תורה און א באהאלטענע נקודה פנימית ביים רבונו של עולם, און דערפאר קומט מען מתוך שלא לשמה צו לשמה."
+    },
+    "abstract": {
+      "en": "The Rav reads the Tanya's definition of Torah lishmah: learning in order to bind one's soul to Hashem through grasping the Torah, each according to his intellect, and contrasts it with the Nefesh HaChaim's definition of learning to understand. Since every Jewish soul is rooted in the Torah, each person is drawn to particular parts of it. This leads him to the levels of pshat, remez, drush and sod, and to Rabbi Shimon bar Yochai, who revealed the hidden part of the Torah. Every Jew, too, carries a sod: a hidden grace before Hashem that no one else knows. He illustrates this with Pesach Sheni, the people who were tamei who still asked why they should be left out, and their link to Nadav and Avihu, Pinchas and Lag BaOmer. Returning to the Tanya, he explains that a hidden point of lishmah lies within every act done not lishmah. He ends with the Tanya's teaching that Torah is food and garment, while mitzvos are garments alone.",
+      "yi": "דער משגיח לערנט דעם תניא'ס פשט אין תורה לשמה, אז מ'לערנט כדי צו מקשר זיין די נפש צום אייבערשטן דורך השגת התורה, איש כפי שכלו, און ער שטעלט עס אקעגן דעם נפש החיים, וואס טייטשט לשמה אז מ'לערנט כדי צו פארשטיין די תורה. וויבאלד יעדע אידישע נשמה איז געווארצלט אין דער תורה, ציט זיך יעדער צו אנדערע חלקים פון דער תורה. פון דארט גייט ער צו פשט, רמז, דרש און סוד, און צו רבי שמעון בן יוחאי וואס האט מגלה געווען דעם חלק הסוד פון דער תורה. אויך יעדער איד האט א סוד, א באהאלטענעם חן ביים רבונו של עולם וואס קיינער ווייסט נישט. דאס ווייזט ער אויף פסח שני, אויף די טמאים וואס האבן געטענהט למה נגרע, און זייער שייכות צו נדב ואביהוא, פנחס און ל\"ג בעומר. צוריק צום תניא ערקלערט ער אז אין יעדן שלא לשמה ליגט א באהאלטענע נקודה פון לשמה. צום סוף ערקלערט ער דעם תניא אז תורה איז מזון און לבוש, און מצוות זענען נאר לבושים."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "According to the Tanya, learning Torah lishmah means learning in order to bind one's soul to Hashem through grasping the Torah, each according to his intellect.",
+          "yi": "לויטן תניא מיינט תורה לשמה אז מ'לערנט כדי צו מקשר זיין די נפש צום אייבערשטן דורך השגת התורה, יעדער לויט זיין שכל."
+        },
+        "evidence": { "segs": [4, 8, 22, 390, 391], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Every Jewish soul is rooted in the Torah, so each person feels a desire for the particular part of the Torah where his soul is rooted.",
+          "yi": "יעדע אידישע נשמה איז געווארצלט אין דער תורה, און דערפאר האט יעדער א חשק צו דעם חלק פון דער תורה וואו זיין שורש הנשמה ליגט."
+        },
+        "evidence": { "segs": [35, 36, 38, 51, 59], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Just as the Torah has pshat, remez, drush and sod, every Jew carries a sod: a hidden grace before Hashem that only Hashem knows.",
+          "yi": "אזוי ווי די תורה האט פשט, רמז, דרש און סוד, האט יעדער איד אין זיך א סוד: א באהאלטענער חן ביים רבונו של עולם וואס נאר דער אייבערשטער ווייסט."
+        },
+        "evidence": { "segs": [140, 142, 149, 160, 171], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The people who were tamei on Pesach Sheni could ask why they should be left out because their inner point is untouched by tumah, and in that hidden place all Jews are equal.",
+          "yi": "די טמאים פון פסח שני האבן געקענט טענהן למה נגרע ווייל זייער פנימיות איז נישט אנגערירט פון טומאה, און אין יענעם סוד זענען אלע אידן גלייך."
+        },
+        "evidence": { "segs": [320, 321, 322, 354, 356, 382], "confidence": 0.7 }
+      },
+      {
+        "text": {
+          "en": "Learning not lishmah leads to lishmah because within every act not done lishmah lies a hidden point that wants to do it lishmah, and Hashem knows it.",
+          "yi": "מתוך שלא לשמה בא לשמה ווייל אין יעדן שלא לשמה ליגט א באהאלטענע נקודה וואס וויל עס טאן לשמה, און דער רבונו של עולם ווייסט עס."
+        },
+        "evidence": { "segs": [395, 399, 400, 401, 402], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Torah is food and also a garment for the soul, while mitzvos are only garments that surround a person from outside.",
+          "yi": "תורה איז מזון און אויך א לבוש פאר דער נפש, און מצוות זענען נאר לבושים וואס רינגלען ארום דעם מענטש פון דרויסן."
+        },
+        "evidence": { "segs": [445, 446, 451, 452, 474], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-tanya-10-2-tanya",
+      "startSeg": 0,
+      "endSeg": 60,
+      "title": {
+        "en": "Lishmah and each soul's portion in Torah",
+        "yi": "לשמה, און יעדע נשמה'ס חלק אין דער תורה"
+      },
+      "summary": {
+        "en": "The Rav reads the Tanya's definition of lishmah, binding the soul to Hashem through grasping the Torah, and contrasts it with the Nefesh HaChaim. He explains that every soul is rooted in the Torah, so each person is drawn to a particular part of it, and nowadays a person carries sparks of many souls whose desires change over the years.",
+        "yi": "דער משגיח לערנט דעם תניא'ס טייטש פון לשמה, מקשר זיין די נפש צום אייבערשטן דורך השגת התורה, און שטעלט עס אקעגן דעם נפש החיים. ער ערקלערט אז יעדע נשמה איז געווארצלט אין דער תורה, דערפאר ציט זיך יעדער צו א געוויסן חלק, און היינטיגע צייטן האט א מענטש ניצוצות פון אסאך נשמות וואס זייער חשק טוישט זיך מיט די יארן."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-10-2-tanya",
+      "startSeg": 61,
+      "endSeg": 138,
+      "title": {
+        "en": "The levels of Torah and Rabbi Shimon bar Yochai",
+        "yi": "די מדריגות פון תורה און רבי שמעון בן יוחאי"
+      },
+      "summary": {
+        "en": "The Rav explains that the Torah has levels of pshat, remez, drush and sod, and that some souls belong to its inner part, the portion of Rabbi Shimon bar Yochai. Rashbi dug out and revealed the hidden part of the Torah, which will be the main learning when Moshiach comes, and this is the idea of Lag BaOmer.",
+        "yi": "דער משגיח ערקלערט אז די תורה האט מדריגות פון פשט, רמז, דרש און סוד, און געוויסע נשמות האבן שייכות צום פנימיות פון דער תורה, דעם חלק פון רבי שמעון בן יוחאי. רשב\"י האט אויסגעגראבן און מגלה געווען דעם חלק הסוד, וואס וועט זיין דער עיקר לימוד ווען משיח וועט קומען, און דאס איז דער ענין פון ל\"ג בעומר."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-10-2-tanya",
+      "startSeg": 139,
+      "endSeg": 199,
+      "title": {
+        "en": "Every Jew carries a secret",
+        "yi": "יעדער איד טראגט א סוד"
+      },
+      "summary": {
+        "en": "Since every Jew is a letter in the Torah, he too has pshat, remez, drush and sod; his sod is a hidden grace before Hashem that no one else has, even when outwardly he looks like a sinner. The Rav brings the Chiddushei HaRim on this and the Beis Aharon that every Jew can find chizuk in Rabbi Shimon bar Yochai.",
+        "yi": "וויבאלד יעדער איד איז אן אות אין דער תורה, האט ער אויך פשט, רמז, דרש און סוד; זיין סוד איז א באהאלטענער חן ביים רבונו של עולם וואס קיין אנדערער האט נישט, אפילו ווען פון דרויסן זעט ער אויס ווי א בעל עבירה. דער משגיח ברענגט דערויף דעם חידושי הרי\"ם און דעם בית אהרן אז יעדער איד קען געפינען חיזוק אין רבי שמעון בן יוחאי."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-10-2-tanya",
+      "startSeg": 200,
+      "endSeg": 252,
+      "title": {
+        "en": "Chesed shebehod and the claim of Pesach Sheni",
+        "yi": "חסד שבהוד און די טענה פון פסח שני"
+      },
+      "summary": {
+        "en": "The Rav notes that today is chesed shebehod, the start of the week of hod, which already carries the power of Lag BaOmer. He turns to the people who were tamei from a dead body and asked why they should be left out of the korban Pesach, and explains the halachos about who may not enter the camps.",
+        "yi": "דער משגיח מערקט אן אז היינט איז חסד שבהוד, דער אנהייב פון דער וואך פון הוד, וואס טראגט שוין אין זיך דעם כח פון ל\"ג בעומר. ער גייט איבער צו די טמאים לנפש אדם וואס האבן געטענהט למה נגרע, און ערקלערט די הלכות ווער עס טאר נישט אריינגיין אין די מחנות."
+      },
+      "kind": "tangent",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-10-2-tanya",
+      "startSeg": 253,
+      "endSeg": 306,
+      "title": {
+        "en": "Nadav and Avihu, Pinchas and Eliyahu",
+        "yi": "נדב ואביהוא, פנחס און אליהו"
+      },
+      "summary": {
+        "en": "The Rav explains that the people who were tamei had dealt with Nadav and Avihu, whose souls entered Pinchas, and Pinchas is Eliyahu. He asks why the passuk calls Pinchas the son of Elazar the son of Aharon HaKohen again, and answers that with Nadav and Avihu's souls he became also a son of Aharon.",
+        "yi": "דער משגיח ערקלערט אז די טמאים האבן זיך עוסק געווען מיט נדב ואביהוא, וועמענס נשמות זענען אריינגעגאנגען אין פנחס, און פנחס איז אליהו. ער פרעגט פארוואס דער פסוק רופט ווידער פנחס בן אלעזר בן אהרן הכהן, און ענטפערט אז מיט די נשמות פון נדב ואביהוא איז ער געווארן אויך א זון פון אהרן."
+      },
+      "kind": "tangent",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-10-2-tanya",
+      "startSeg": 307,
+      "endSeg": 388,
+      "title": {
+        "en": "The hidden point no tumah reaches",
+        "yi": "די באהאלטענע נקודה וואו קיין טומאה דערגרייכט נישט"
+      },
+      "summary": {
+        "en": "The Rav explains that the people who were tamei received a spark of Nadav and Avihu's soul and so felt that in their inner point they were no different from other Jews. He ties Pesach Sheni, chesed shebehod, to Lag BaOmer, hod shebehod, and teaches that no Jew becomes so tamei that it takes hold of him entirely; in the sod all Jews are equal, like the circle dance of the tzaddikim.",
+        "yi": "דער משגיח ערקלערט אז די טמאים האבן באקומען א ניצוץ פון דער נשמה פון נדב ואביהוא, און דערפאר האבן זיי געשפירט אז אין זייער פנימיות זענען זיי נישט אנדערש ווי אנדערע אידן. ער פארבינדט פסח שני, חסד שבהוד, מיט ל\"ג בעומר, הוד שבהוד, און לערנט אז קיין איד ווערט נישט אזוי טמא אז עס זאל אים אינגאנצן דורכנעמען; אינעם סוד זענען אלע אידן גלייך, ווי דער מחול פון די צדיקים."
+      },
+      "kind": "tangent",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-10-2-tanya",
+      "startSeg": 389,
+      "endSeg": 441,
+      "title": {
+        "en": "Why not lishmah leads to lishmah",
+        "yi": "פארוואס מתוך שלא לשמה בא לשמה"
+      },
+      "summary": {
+        "en": "Returning to the Tanya, the Rav asks why learning not lishmah should lead to lishmah. He answers that Hashem knows that in his inner self every Jew wants to do it lishmah, so within every act done not lishmah lies a point of lishmah, and with this every Jew can bind himself to the Torah he learns.",
+        "yi": "צוריק צום תניא פרעגט דער משגיח פארוואס זאל מען פון שלא לשמה קומען צו לשמה. ער ענטפערט אז דער רבונו של עולם ווייסט אז אין זיין פנימיות וויל יעדער איד עס טאן לשמה, ממילא ליגט אין יעדן שלא לשמה א נקודה פון לשמה, און דערמיט קען יעדער איד זיך מקשר זיין מיט דער תורה וואס ער לערנט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [1],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-10-2-tanya",
+      "startSeg": 442,
+      "endSeg": 553,
+      "title": {
+        "en": "Torah as food, mitzvos as garments",
+        "yi": "תורה איז מזון, מצוות זענען לבושים"
+      },
+      "summary": {
+        "en": "The Rav explains the Tanya that Torah is food entering a person's inner self, while a mitzvah surrounds him like a garment. Most mitzvos relate to a particular limb, but tzitzis, sukkah and above all the spoken words of Torah surround the whole body, which is why Torah is also called a garment.",
+        "yi": "דער משגיח ערקלערט דעם תניא אז תורה איז מזון וואס גייט אריין אין דעם מענטש'ס פנימיות, און א מצוה רינגלט אים ארום ווי א לבוש. רוב מצוות האבן שייכות צו א געוויסן אבר, אבער ציצית, סוכה, און בפרט דער דיבור פון דברי תורה, נעמען ארום דעם גאנצן גוף, און דערפאר הייסט תורה אויך א לבוש."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "ולשמה היינט גדולה כשר נפשי'ל'השם עדה יסוגת הצורה",
+      "work": "Tanya",
+      "ref": "Tanya ch. 5",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [4, 5, 22, 390], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "כמשה כשר בחיי יצחק'ים",
+      "work": "Pri Etz Chaim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [6, 23], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "ס'איז פארהאן אין די נפש החיים",
+      "work": "Nefesh HaChaim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [13, 16, 19], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "אין הגה דפורקה פון בני סתר",
+      "work": "Bnei Yissaschar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [73], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "מיט'ן ספר הזיין ... מיט דעם ספר וועט קומען משיח",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [118, 119, 120, 121], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "איבער משכת שבת פאסקעט מען ר' שמעון",
+      "work": "Gemara",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [129, 130, 131], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "לשון גאל עיני ויאביטה נפלות",
+      "work": "Tehillim",
+      "ref": "Tehillim 119:18",
+      "sefariaRef": "Psalms 119:18",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [133, 134], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער חדש ירום האט געזאגט",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [161, 162, 163], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ספר בית אהרן",
+      "work": "Beis Aharon",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [176, 177, 180, 183, 184], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "צמיים לנפש אדם ... לבולטי הקריבת קרבנות שם במיידו",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 9:6-8",
+      "sefariaRef": "Numbers 9:6-8",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [216, 217, 220, 222, 331], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אזוי שטעט מזרח קדוש",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [259, 260, 266], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "פינחס בן אלעזר בן נרן הקיין",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 25:11",
+      "sefariaRef": "Numbers 25:11",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [271, 272, 274, 276], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ותרחם צל מ'אייבן מן הארץ",
+      "work": "Zechariah",
+      "ref": "Zechariah 13:2",
+      "sefariaRef": "Zechariah 13:2",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [316, 327], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "עשה לגדוש ברכה לעשות מוחל לצדיקים",
+      "work": "Gemara Taanis",
+      "ref": "Taanis 31a",
+      "sefariaRef": "Taanit 31a",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [380, 383], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אזוי זאגט א חתם סופר",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [381], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "בטח שלאו לשמה בעל לשמה",
+      "work": "Gemara Pesachim",
+      "ref": "Pesachim 50b",
+      "sefariaRef": "Pesachim 50b",
+      "resolution": "resolved",
+      "mention": "alluded",
+      "evidence": { "segs": [394, 395, 396], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "די גמרא ... ברכות ... ויהוד זה בית המקדש",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 58a",
+      "sefariaRef": "Berakhot 58a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [429, 430, 431], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "ולכן אמר אזעל שתלמוד תורה שאקל קנאקלט כל המצוות לפי שהמצוות זענען לבשים לבד",
+      "work": "Tanya",
+      "ref": "Tanya ch. 5",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [450, 451, 452], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער זוהן זאגט אז תורה איז מאזונג לנפש",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [459, 460, 461], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "רמ''ח געווארן קנאגעד די רמ''ח מצוות",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [488], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "צצות שכר קנאגעד כל הטלות",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [495, 496], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "שטעט אין די פיוט פון סוכות וואס מען זאגט בשחות",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [509, 510, 511], "confidence": 0.7 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav contrasts the Nefesh HaChaim's lishmah, learning in order to know what the Torah says, with the Tanya's lishmah, binding the soul to the G-dliness in the Torah, and says these are different levels.",
+        "yi": "דער משגיח שטעלט אקעגן דעם נפש החיים'ס לשמה, לערנען כדי צו וויסן וואס די תורה זאגט, מיטן תניא'ס לשמה, מקשר זיין די נפש מיט דער אלקות אין דער תורה, און זאגט אז דאס זענען פארשידענע מדריגות."
+      },
+      "evidence": { "segs": [16, 19, 22, 25, 32], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Nowadays a person holds sparks of many souls, so after a few years his desire moves from one area of learning to another, as he finishes repairing one part of his soul and moves to the next.",
+        "yi": "היינטיגע צייטן האט א מענטש אין זיך ניצוצות פון אסאך נשמות, דערפאר טוישט זיך זיין חשק נאך אפאר יאר פון איין לימוד צום אנדערן, ווען ער ענדיגט מתקן צו זיין איין חלק פון זיין נשמה און גייט ווייטער צום צווייטן."
+      },
+      "evidence": { "segs": [43, 48, 52, 55, 56], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The 'secret' of every Jew is a grace he holds before Hashem that no other Jew has and that he himself cannot name; if he thinks he has found it, that is a sign he has not.",
+        "yi": "דער סוד פון יעדן איד איז א חן ביים רבונו של עולם וואס קיין אנדער איד האט נישט, און ער אליין קען עס נישט אנווייזן; אויב ער מיינט אז ער האט עס געטראפן, איז א סימן אז ער האט נישט."
+      },
+      "evidence": { "segs": [161, 162, 163, 165, 167, 171], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The passuk calls Pinchas 'son of Elazar son of Aharon HaKohen' a second time because once the souls of Nadav and Avihu entered him, he became also a son of Aharon himself.",
+        "yi": "דער פסוק רופט ווידער פנחס בן אלעזר בן אהרן הכהן ווייל זינט די נשמות פון נדב ואביהוא זענען אריינגעגאנגען אין אים, איז ער געווארן אויך א זון פון אהרן אליין."
+      },
+      "evidence": { "segs": [274, 279, 281, 282, 288], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The people who were tamei were people who had dealt with Nadav and Avihu and received a spark of their souls; that spark of the inner Torah made them feel that tumah could not separate them from all other Jews.",
+        "yi": "די טמאים זענען געווען די וואס האבן זיך עוסק געווען מיט נדב ואביהוא און באקומען א ניצוץ פון זייערע נשמות; דער ניצוץ פון פנימיות התורה האט זיי געמאכט שפירן אז די טומאה קען זיי נישט אפטיילן פון אלע אידן."
+      },
+      "evidence": { "segs": [309, 310, 320, 321, 328], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Learning not lishmah leads to lishmah because the angels see only the outside, while Hashem sees the hidden point in the Jew that learns lishmah even then.",
+        "yi": "מתוך שלא לשמה בא לשמה ווייל די מלאכים זעען נאר דעם חיצוניות, אבער דער רבונו של עולם זעט די באהאלטענע נקודה אינעם איד וואס לערנט לשמה אפילו דעמאלט."
+      },
+      "evidence": { "segs": [411, 412, 416, 418, 420], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Speech of Torah is breath, which has almost no substance but surrounds the whole body, so learning Torah is a garment over all of a person, like tzitzis and sukkah and unlike mitzvos tied to one limb.",
+        "yi": "דער דיבור פון דברי תורה איז א הבל, וואס האט כמעט נישט קיין ממשות אבער נעמט ארום דעם גאנצן גוף, ממילא איז לערנען תורה א לבוש אויף דעם גאנצן מענטש, אזוי ווי ציצית און סוכה, און נישט ווי מצוות וואס זענען צוגעבונדן צו איין אבר."
+      },
+      "evidence": { "segs": [529, 538, 540, 542, 543], "confidence": 0.7 }
+    }
+  ],
+  "stories": [],
+  "questions": [
+    {
+      "question": {
+        "en": "Why do some people find they can learn one area of Torah and not another?",
+        "yi": "פארוואס קען איינער לערנען איין חלק פון דער תורה און נישט אן אנדערן?"
+      },
+      "answer": {
+        "en": "Because each one's soul has a connection to a particular part, such as the inner part of the Torah.",
+        "yi": "ווייל יעדנס נשמה האט א שייכות צו א געוויסן חלק, למשל צום פנימיות פון דער תורה."
+      },
+      "questionSegs": [65, 66],
+      "answerSegs": [67, 69, 70],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "Why does the passuk repeat 'Pinchas son of Elazar son of Aharon HaKohen' when it was already said?",
+        "yi": "פארוואס שטייט ווידער פנחס בן אלעזר בן אהרן הכהן, ס'איז דאך שוין געשטאנען?"
+      },
+      "answer": {
+        "en": "Because the souls of Nadav and Avihu, sons of Aharon, entered him, so he became also a son of Aharon.",
+        "yi": "ווייל די נשמות פון נדב ואביהוא, די זין פון אהרן, זענען אריינגעגאנגען אין אים, ממילא איז ער געווארן אויך א זון פון אהרן."
+      },
+      "questionSegs": [274, 275, 276],
+      "answerSegs": [279, 281, 282, 288],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "How could people who were tamei ask why they should be different from all other Jews?",
+        "yi": "ווי אזוי האבן טמאים געקענט פרעגן פארוואס זאלן זיי זיין אנדערש ווי אלע אידן?"
+      },
+      "answer": {
+        "en": "They felt that their inner point, which tumah does not reach, is no different from that of other Jews.",
+        "yi": "זיי האבן געשפירט אז זייער פנימיות, וואו קיין טומאה דערגרייכט נישט, איז נישט אנדערש ווי ביי אנדערע אידן."
+      },
+      "questionSegs": [221, 319],
+      "answerSegs": [320, 321, 322, 324],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "Why should learning not lishmah lead to lishmah?",
+        "yi": "פארוואס זאל מען פון שלא לשמה קומען צו לשמה?"
+      },
+      "answer": {
+        "en": "Because within every act not done lishmah lies a hidden point of lishmah, which Hashem knows.",
+        "yi": "ווייל אין יעדן שלא לשמה ליגט א באהאלטענע נקודה פון לשמה, וואס דער רבונו של עולם ווייסט."
+      },
+      "questionSegs": [394, 395, 396],
+      "answerSegs": [399, 400, 401, 402],
+      "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says that one who finds it hard to believe on the surface can find chizuk in the Torah of Rabbi Shimon bar Yochai, the hidden part of the Torah.",
+        "yi": "דער משגיח זאגט אז איינער וואס קען אויבנאויף נישט גלייבן, קען געפינען חיזוק אין דער תורה פון רבי שמעון בן יוחאי, דעם חלק הסוד פון דער תורה."
+      },
+      "evidence": { "segs": [192, 194, 195, 197, 198], "confidence": 0.65 }
+    }
+  ],
+  "candidateTopics": [
+    "torah lishmah",
+    "Tanya chapter 5",
+    "each soul's portion in the Torah",
+    "pnimiyus haTorah",
+    "Rabbi Shimon bar Yochai and Lag BaOmer",
+    "Pesach Sheni",
+    "the hidden point of every Jew",
+    "shelo lishmah leading to lishmah",
+    "Torah as food and mitzvos as garments"
+  ],
+  "concepts": [
+    { "he": "לשמה", "heardAs": ["לשמה", "ושמע", "שמה"] },
+    { "he": "שלא לשמה", "heardAs": ["שלב ושמע", "שלאו לשמה"] },
+    { "he": "פנימיות התורה", "heardAs": ["פניםיות פון תורה", "חלק הפנימיות"] },
+    { "he": "פרד\"ס", "heardAs": ["פרדות", "פשט רמז דרשן סעוד"] },
+    { "he": "סוד", "heardAs": ["סעוד", "סוד", "פסוד", "ביסוד"] },
+    { "he": "חן", "heardAs": ["חיין", "חיים", "חן"] },
+    { "he": "פסח שני", "heardAs": ["פתח שני", "פסח שעינו"] },
+    { "he": "למה נגרע", "heardAs": ["לאמיר נו גורם", "למנה גורי", "ראמאנא גארא"] },
+    { "he": "טמאים לנפש אדם", "heardAs": ["צמיים לנפש אדם", "צנעים לנפש אדם"] },
+    { "he": "ל\"ג בעומר", "heardAs": ["לגביימער", "לגבי עומא", "לאג באומן"] },
+    { "he": "חסד שבהוד", "heardAs": ["חסד שבאהייט", "חסיד שבהד"] },
+    { "he": "הוד שבהוד", "heardAs": ["הוד שבהד", "בהוד שבהד"] },
+    { "he": "מזון", "heardAs": ["מזון", "מאזונג", "מוזיין"] },
+    { "he": "לבוש", "heardAs": ["לבשים", "לבשון", "מלבוש"] },
+    { "he": "מקיף", "heardAs": ["מקופים", "מקב", "מקוה"] },
+    { "he": "מחול", "heardAs": ["מוחל", "מחי'"] },
+    { "he": "הבל", "heardAs": ["העביל", "העבר"] }
+  ],
+  "people": [
+    { "name": "the Alter Rebbe (Baal HaTanya)", "heardAs": ["בעל התניא"] },
+    { "name": "Rabbi Shimon bar Yochai", "heardAs": ["רבי שמעון יחוי", "ר' שלמה בן יוחאי", "רבי שמעון בן יחוי"] },
+    { "name": "Chiddushei HaRim", "heardAs": ["חדש ירום"] },
+    { "name": "Beis Aharon", "heardAs": ["בית אהרן"] },
+    { "name": "Chasam Sofer", "heardAs": ["חתם סופר"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו"] },
+    { "name": "Nadav and Avihu", "heardAs": ["נדב אביה", "נדב ואביאווע", "נדב ונביא"] },
+    { "name": "Pinchas", "heardAs": ["פינחס", "פנחס"] },
+    { "name": "Eliyahu HaNavi", "heardAs": ["אליאנע", "נליא הנביא", "אליהו הנביא"] },
+    { "name": "Aharon HaKohen", "heardAs": ["ארים", "נרן הקיין"] },
+    { "name": "Zimri ben Salu", "heardAs": ["זמרי בן סואלא"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair to poor; Tanya and Hebrew quotations are heavily garbled but recoverable from context. The Tanya text discussed (Torah lishmah, Torah as food and garment) matches the end of Tanya ch. 5, although the header gives perek ז. Segments 0-1, 127, 188-190, 296-304 (Eliyahu resolving doubts) and 549-553 (the closing lines) could not be reliably recovered. The Rav himself calls the Pesach Sheni stretch (segs 200-388) a digression before returning to the Tanya."
+}
