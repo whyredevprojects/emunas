@@ -1,26 +1,26 @@
 {
-  "generatedAt": "2026-11-14T12:11:10.096Z",
+  "generatedAt": "2026-11-15T01:24:20.175Z",
   "stats": {
     "bucket.audio": 1129,
     "bucket.objects": 4556,
     "bucket.transcripts": 1129,
     "recordings": 1129,
-    "recordings.duplicateOf": 4,
+    "recordings.duplicateOf": 2,
     "recordings.partOf": 0,
     "recordings.transcribed": 1129,
     "series": 17,
-    "shiurim": 1046,
-    "shiurim.inScope": 995,
+    "shiurim": 1048,
+    "shiurim.inScope": 997,
     "shiurim.inScope.category.current": 79,
     "shiurim.inScope.category.misc": 23,
     "shiurim.inScope.category.parsha": 199,
-    "shiurim.inScope.category.set": 266,
+    "shiurim.inScope.category.set": 268,
     "shiurim.inScope.category.shonos": 49,
     "shiurim.inScope.category.simcha": 72,
     "shiurim.inScope.category.zman": 307,
-    "shiurim.inScope.hours": 771.14,
+    "shiurim.inScope.hours": 772.41,
     "shiurim.inScope.lang.en": 267,
-    "shiurim.inScope.lang.yi": 728,
+    "shiurim.inScope.lang.yi": 730,
     "shiurim.inScope.series.current-bachurim-5771": 9,
     "shiurim.inScope.series.current-bachurim-5773": 19,
     "shiurim.inScope.series.current-ey-bachurim-5769": 21,
@@ -28,7 +28,7 @@
     "shiurim.inScope.series.current-kayitz-5771": 25,
     "shiurim.inScope.series.emunah-en": 28,
     "shiurim.inScope.series.emunah-yi": 27,
-    "shiurim.inScope.series.eretz-yisroel-yi": 12,
+    "shiurim.inScope.series.eretz-yisroel-yi": 14,
     "shiurim.inScope.series.kedushas-hashabbos-yi": 8,
     "shiurim.inScope.series.pirkei-avos-yi": 4,
     "shiurim.inScope.series.shir-hashirim-yi": 8,
@@ -38,7 +38,7 @@
     "shiurim.inScope.series.tefila-en": 17,
     "shiurim.inScope.series.tefila-yi": 41,
     "shiurim.inScope.source.pocket-guide-2012": 786,
-    "shiurim.inScope.source.uncatalogued-guide": 209,
+    "shiurim.inScope.source.uncatalogued-guide": 211,
     "shiurim.outOfScope.category.purim": 40,
     "shiurim.outOfScope.category.set": 9,
     "shiurim.outOfScope.category.zman": 2,
@@ -52,8 +52,8 @@
     "shiurim.outOfScope.series.tanya-en": 1,
     "shiurim.outOfScope.source.pocket-guide-2012": 5,
     "shiurim.outOfScope.source.uncatalogued-guide": 46,
-    "transcripts.attachedInScope": 1125,
-    "transcripts.redundant": 4,
+    "transcripts.attachedInScope": 1127,
+    "transcripts.redundant": 2,
     "warnings.duplicate": 2,
     "warnings.grouped-tracks": 2,
     "warnings.junk-row": 3,
@@ -71,7 +71,6 @@
     "warnings.split-year-by-order": 10,
     "warnings.split-year-unknown": 1,
     "warnings.transcribed-out-of-scope": 124,
-    "warnings.undeclared-duplicate": 2,
     "warnings.year-junk": 1
   },
   "shiurim": [
@@ -24272,11 +24271,67 @@
       "pathNotes": []
     },
     {
-      "id": "yi-eretz-yisroel-unc-13",
+      "id": "yi-eretz-yisroel-unc-12-1",
       "lang": "yi",
       "category": "set",
       "seriesId": "eretz-yisroel-yi",
       "seriesOrder": 12,
+      "catalog": {
+        "source": "uncatalogued-guide",
+        "sectionId": "eretz-yisroel",
+        "sectionTitle": "ארץ ישראל",
+        "n": "12",
+        "page": null,
+        "titleOriginal": "kever rochel",
+        "subTitle": null,
+        "derived": "filename",
+        "note": null
+      },
+      "parsha": null,
+      "zman": null,
+      "perek": null,
+      "hebrewYears": [],
+      "recordingIds": [
+        "y-sets-eretz-yisrael-12-01-kever-rochel"
+      ],
+      "inScope": true,
+      "outOfScopeReason": null,
+      "pathNotes": []
+    },
+    {
+      "id": "yi-eretz-yisroel-unc-12-2",
+      "lang": "yi",
+      "category": "set",
+      "seriesId": "eretz-yisroel-yi",
+      "seriesOrder": 13,
+      "catalog": {
+        "source": "uncatalogued-guide",
+        "sectionId": "eretz-yisroel",
+        "sectionTitle": "ארץ ישראל",
+        "n": "12",
+        "page": null,
+        "titleOriginal": "Shmuel Hanavi",
+        "subTitle": null,
+        "derived": "filename",
+        "note": null
+      },
+      "parsha": null,
+      "zman": null,
+      "perek": null,
+      "hebrewYears": [],
+      "recordingIds": [
+        "y-sets-eretz-yisrael-12-2-shmuel-hanavi"
+      ],
+      "inScope": true,
+      "outOfScopeReason": null,
+      "pathNotes": []
+    },
+    {
+      "id": "yi-eretz-yisroel-unc-13",
+      "lang": "yi",
+      "category": "set",
+      "seriesId": "eretz-yisroel-yi",
+      "seriesOrder": 14,
       "catalog": {
         "source": "uncatalogued-guide",
         "sectionId": "eretz-yisroel",
@@ -36761,7 +36816,7 @@
       "durationSec": 2263.68,
       "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 9055256,
-      "duplicateOf": "y-current-kayitz-5771-07-kever-rochel",
+      "duplicateOf": null,
       "partOf": null
     },
     {
@@ -36771,7 +36826,7 @@
       "durationSec": 2317.81,
       "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 9271801,
-      "duplicateOf": "y-current-kayitz-5771-08-shmuel-hanavi",
+      "duplicateOf": null,
       "partOf": null
     },
     {
@@ -42430,6 +42485,8 @@
         "yi-eretz-yisroel-09",
         "yi-eretz-yisroel-10",
         "yi-eretz-yisroel-unc-11-1",
+        "yi-eretz-yisroel-unc-12-1",
+        "yi-eretz-yisroel-unc-12-2",
         "yi-eretz-yisroel-unc-13"
       ]
     },
@@ -43044,8 +43101,6 @@
     "[duplicate] y-zemanim-adar-purim-copy-of-02-10-purim-katan-1 marked duplicateOf y-zemanim-adar-purim-02-10-purim-katan (uncatalogued-guide zmanim: file-manager copy of \"02-10 Purim Katan\" in the same folder; zman \"פורים קטן\" comes from the file-name text, but the \"02-\" prefix files this recording under \"סעודת פורים קטן\" in this folder; both are kept)",
     "[duplicate] y-zemanim-adar-purim-copy-of-02-10-purim-katan marked duplicateOf y-zemanim-adar-purim-02-10-purim-katan (uncatalogued-guide zmanim: file-manager copy of \"02-10 Purim Katan\" in the same folder; zman \"פורים קטן\" comes from the file-name text, but the \"02-\" prefix files this recording under \"סעודת פורים קטן\" in this folder; both are kept)",
     "[partly-missing] yi-purim-seudos-5775: 1 of 4 files not in R2",
-    "[undeclared-duplicate] y-sets-eretz-yisrael-12-01-kever-rochel has the same transcript text as y-current-kayitz-5771-07-kever-rochel; marked duplicateOf, shiur yi-eretz-yisroel-unc-12-1 dropped",
-    "[undeclared-duplicate] y-sets-eretz-yisrael-12-2-shmuel-hanavi has the same transcript text as y-current-kayitz-5771-08-shmuel-hanavi; marked duplicateOf, shiur yi-eretz-yisroel-unc-12-2 dropped",
     "[no-audio] en-shabbos-tefilah-en-unc-01-1: all 1 catalog files are absent from R2",
     "[no-audio] en-shabbos-tefilah-en-unc-01-2: all 1 catalog files are absent from R2",
     "[no-audio] en-shabbos-tefilah-en-unc-02-1: all 1 catalog files are absent from R2",
