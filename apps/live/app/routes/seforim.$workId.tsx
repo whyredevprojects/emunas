@@ -1,11 +1,10 @@
-// Stub (W2.4). Replaced by W4.2.
+// One sefer (W4.2): its cited places in the work's own order, a chapter index for large works.
 import type { JSX } from "react";
-import { useParams } from "react-router";
-import { PageStub, stubMeta } from "../shell/PageStub.tsx";
+import { WorkPage } from "../features/seforim/WorkPage.tsx";
+import { stubMeta } from "../shell/PageStub.tsx";
 
 export const meta = stubMeta("page.work");
 
 export default function Work(): JSX.Element {
-  const p = useParams();
-  return <PageStub title="page.work" lead="page.work.lead" params={{ work: p["workId"] ?? "" }} />;
+  return <WorkPage />;
 }

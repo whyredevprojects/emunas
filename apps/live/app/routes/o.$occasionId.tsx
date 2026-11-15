@@ -1,11 +1,10 @@
-// Stub (W2.4). Replaced by W4.2.
+// A parsha or zman (W4.2): its shiurim by year and its moments.
 import type { JSX } from "react";
-import { useParams } from "react-router";
-import { PageStub, stubMeta } from "../shell/PageStub.tsx";
+import { EntityPage } from "../features/entities/EntityPage.tsx";
+import { stubMeta } from "../shell/PageStub.tsx";
 
 export const meta = stubMeta("page.occasion");
 
 export default function Occasion(): JSX.Element {
-  const p = useParams();
-  return <PageStub title="page.occasion" lead="page.occasion.lead" params={{ id: p["occasionId"] ?? "" }} />;
+  return <EntityPage kind="o" />;
 }

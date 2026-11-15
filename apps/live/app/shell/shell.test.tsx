@@ -12,10 +12,11 @@ import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { useEffect, type JSX } from "react";
-import { RouterProvider } from "react-router";
+import { createMemoryRouter, RouterProvider } from "react-router";
 import { afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
 import { UI_CHILD_ROUTES } from "../routes.ts";
 import { registerDock } from "./dock.tsx";
+import { PageStub } from "./PageStub.tsx";
 import { switchUiHref } from "./LanguageMenu.tsx";
 import { railItems } from "./Rail.tsx";
 import { DEFAULT_SETTINGS, settingsStore } from "./settings.ts";
@@ -117,8 +118,13 @@ describe("shell rendering", () => {
   }
 
   it("shows data params direction-isolated with the right lang", async () => {
-    const { container } = await renderAt("/en/c/תורה-לשמה");
-    const bdi = container.querySelector("main bdi")!;
+    // The entity routes became real pages (W4.2); the stub component is checked on its own.
+    const router = createMemoryRouter(
+      [{ path: "/:ui/x", element: <PageStub title="page.concept" lead="page.concept.lead" params={{ id: "תורה-לשמה" }} /> }],
+      { initialEntries: ["/en/x"] },
+    );
+    const { container } = render(<RouterProvider router={router} />);
+    const bdi = container.querySelector("p bdi")!;
     expect(bdi.textContent).toBe("תורה-לשמה");
     expect(bdi.getAttribute("dir")).toBe("rtl");
     expect(bdi.getAttribute("lang")).toBe("he");

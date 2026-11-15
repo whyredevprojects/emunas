@@ -1,11 +1,10 @@
-// Stub (W2.4). Replaced by W4.2.
+// A person (W4.2): cited as a source / in stories / discussed.
 import type { JSX } from "react";
-import { useParams } from "react-router";
-import { PageStub, stubMeta } from "../shell/PageStub.tsx";
+import { EntityPage } from "../features/entities/EntityPage.tsx";
+import { stubMeta } from "../shell/PageStub.tsx";
 
 export const meta = stubMeta("page.person");
 
 export default function Person(): JSX.Element {
-  const p = useParams();
-  return <PageStub title="page.person" lead="page.person.lead" params={{ id: p["personId"] ?? "" }} />;
+  return <EntityPage kind="p" />;
 }
