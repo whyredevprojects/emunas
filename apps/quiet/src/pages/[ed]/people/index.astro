@@ -1,49 +1,58 @@
 ---
 /**
- * People index, שמות (concept-quiet §5.9; tech-quiet §2 `/{ed}/people/`): every name in the notes,
- * alphabetical in the edition's script, with a jump list by letter. A person in ≥2 shiurim gets a
- * count and a link to their page (no 300-line lists here); anyone else's line links straight to
- * the shiur (at the story, when the person is in one). Every line has an anchor (`#key`), which is
- * where @emunas/links sends a person below the page threshold.
+ * שמות, the index of names (Quiet C4.3; corpus-wave-plan C2.1): the merged people of the corpus
+ * layer in blocks by era (`namesIndex` in components/names/model.ts), alphabetical inside each,
+ * with "also:" names on the line and "ראה" lines in the alphabet. A person with a page links to it;
+ * anyone else's line carries their shiurim. Every person line has its id as anchor, which is where
+ * @emunas/links sends a person without a page.
  */
 import type { GetStaticPaths } from "astro";
 import Base from "../../../layouts/Base.astro";
 import CiteList from "../../../components/indexes/CiteList.astro";
-import IndexHead from "../../../components/indexes/IndexHead.astro";
+import EntryIndexHead from "../../../components/indexes/EntryIndexHead.astro";
 import JumpList from "../../../components/indexes/JumpList.astro";
-import { indexesData } from "../../../components/indexes/corpus.ts";
-import { indexCrumbs, indexTitle } from "../../../components/indexes/crumbs.ts";
-import { peopleIndex, run } from "../../../components/indexes/model.ts";
+import { entryData } from "../../../components/indexes/entries.ts";
+import { entryCrumbs, entryIndexTitle } from "../../../components/indexes/crumbs.ts";
 import { useIndexesT } from "../../../components/indexes/strings.ts";
+import { namesIndex } from "../../../components/names/model.ts";
 import { EDS, type Ed } from "../../../lib/edition.ts";
 
-export const getStaticPaths = (() => (indexesData() ? EDS.map((ed) => ({ params: { ed } })) : [])) satisfies GetStaticPaths;
+export const getStaticPaths = (() => (entryData() ? EDS.map((ed) => ({ params: { ed } })) : [])) satisfies GetStaticPaths;
 
 const ed = Astro.params.ed as Ed;
-const data = indexesData()!;
+const data = entryData()!;
 const t = useIndexesT(ed);
-const title = indexTitle(ed, "people");
-const letters = peopleIndex(data, ed);
+const title = entryIndexTitle(ed, "people");
+const groups = namesIndex(data, ed);
 ---
-<Base ed={ed} title={title} crumbs={indexCrumbs(ed, "people")}>
-  <IndexHead ed={ed} title={run(title, ed)} intro={t("people.intro")} counts={data.build.counts} />
-  <JumpList ed={ed} items={letters.map((b) => ({ id: b.id, label: b.letter }))} />
-  {letters.map((b) => (
-    <section class="index-block" id={b.id} aria-labelledby={`${b.id}-h`}>
-      <h2 id={`${b.id}-h`}><bdi>{b.letter}</bdi></h2>
+<Base ed={ed} title={title} crumbs={entryCrumbs(ed, "people")}>
+  <EntryIndexHead ed={ed} title={title} intro={t("names.intro")} visibleShiurim={data.layer.visibleShiurim} />
+  <JumpList ed={ed} items={groups.map((g) => ({ id: g.id, label: g.label }))} />
+  {groups.map((g) => (
+    <section class="index-block" id={g.id} aria-labelledby={`${g.id}-h`} data-group={g.group}>
+      <h2 id={`${g.id}-h`}>{g.label}</h2>
       <ul class="entries" role="list">
-        {b.items.map((p) => (
-          <li id={p.key}>
-            {p.href ? (
-              <a class="entry-name" href={p.href}><bdi lang={p.name.lang} dir={p.name.dir}>{p.name.text}</bdi></a>
-            ) : (
-              <span class="entry-name"><bdi lang={p.name.lang} dir={p.name.dir}>{p.name.text}</bdi></span>
-            )}
-            {p.alt && <> <span class="alt-name"><bdi lang={p.alt.lang} dir={p.alt.dir}>{p.alt.text}</bdi></span></>}
-            <span class="entry-count">{t("count.shiurim", { count: p.shiurCount })}</span>
-            <CiteList ed={ed} cites={p.cites} />
-          </li>
-        ))}
+        {g.lines.map((l) =>
+          l.kind === "see" ? (
+            <li class="see-line" data-see={l.id}>
+              <bdi lang={l.name.lang} dir={l.name.dir}>{l.name.text}</bdi>{", "}<span class="see-label">{t("names.see")}</span>{" "}<a href={l.href}><bdi lang={l.target.lang} dir={l.target.dir}>{l.target.text}</bdi></a>
+            </li>
+          ) : (
+            <li id={l.id} data-person={l.id}>
+              {l.href ? (
+                <a class="entry-name" href={l.href}><bdi lang={l.name.lang} dir={l.name.dir}>{l.name.text}</bdi></a>
+              ) : (
+                <span class="entry-name"><bdi lang={l.name.lang} dir={l.name.dir}>{l.name.text}</bdi></span>
+              )}
+              {l.alt && <> <span class="alt-name"><bdi lang={l.alt.lang} dir={l.alt.dir}>{l.alt.text}</bdi></span></>}
+              <span class="entry-count">{l.countText}</span>
+              <CiteList ed={ed} cites={l.cites} />
+              {l.also.length > 0 && (
+                <p class="entry-also">{t("names.also")}{" "}{l.also.map((n, i) => <>{i > 0 && ", "}<bdi lang={n.lang} dir={n.dir}>{n.text}</bdi></>)}</p>
+              )}
+            </li>
+          ),
+        )}
       </ul>
     </section>
   ))}

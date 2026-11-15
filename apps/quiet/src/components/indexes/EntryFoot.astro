@@ -1,0 +1,23 @@
+---
+/**
+ * The foot of a corpus entry page: the AI label once ("Notes prepared by AI; not reviewed. The
+ * recordings are the source.", the reviewed variant for a reviewed entity) and beside it the
+ * "Report an error in this entry" mail link (Quiet C6).
+ */
+import type { CorpusKind } from "@emunas/links";
+import EntityLabel from "../corpus/EntityLabel.astro";
+import ReportEntry from "../corpus/ReportEntry.astro";
+import type { Ed } from "../../lib/edition.ts";
+
+interface Props {
+  ed: Ed;
+  kind: CorpusKind;
+  id: string;
+  reviewed: boolean;
+}
+
+const { ed, kind, id, reviewed } = Astro.props;
+---
+<EntityLabel ed={ed} variant="entry" reviewed={reviewed}>
+  <ReportEntry ed={ed} kind={kind} id={id} />
+</EntityLabel>

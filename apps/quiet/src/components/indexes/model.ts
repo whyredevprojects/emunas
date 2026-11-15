@@ -110,7 +110,7 @@ function orderOf(data: IndexesData): Map<string, number> {
   return o;
 }
 
-function citeFromRow(row: IndexRow, ed: Ed, t: number | null, href?: string): Cite {
+export function citeFromRow(row: IndexRow, ed: Ed, t: number | null, href?: string): Cite {
   const occasion = row.parsha?.raw ?? row.zman?.raw ?? row.catalog.sectionTitle;
   return {
     shiurId: row.id,

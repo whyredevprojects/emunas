@@ -1,0 +1,55 @@
+---
+/**
+ * ערכים, the glossary (Quiet C4.2; corpus-wave-plan C2.1): one long page, aleph to tav
+ * (`glossaryIndex` in components/glossary/model.ts). Each entry: the Hebrew headword, the gloss,
+ * the definition and a count; a term with a page links to it, a term merged into a topic links to
+ * the topic, a passim term says "throughout", and any other term carries its shiurim. Every line
+ * has the concept id as anchor (where @emunas/links sends a term without a page).
+ */
+import type { GetStaticPaths } from "astro";
+import { corpusLabel } from "@emunas/i18n";
+import Base from "../../../layouts/Base.astro";
+import CiteList from "../../../components/indexes/CiteList.astro";
+import EntryIndexHead from "../../../components/indexes/EntryIndexHead.astro";
+import JumpList from "../../../components/indexes/JumpList.astro";
+import { entryData } from "../../../components/indexes/entries.ts";
+import { entryCrumbs, entryIndexTitle } from "../../../components/indexes/crumbs.ts";
+import { useIndexesT } from "../../../components/indexes/strings.ts";
+import { glossaryIndex } from "../../../components/glossary/model.ts";
+import { EDS, type Ed } from "../../../lib/edition.ts";
+
+export const getStaticPaths = (() => (entryData() ? EDS.map((ed) => ({ params: { ed } })) : [])) satisfies GetStaticPaths;
+
+const ed = Astro.params.ed as Ed;
+const data = entryData()!;
+const t = useIndexesT(ed);
+const title = entryIndexTitle(ed, "glossary");
+const letters = glossaryIndex(data, ed);
+const throughout = corpusLabel("throughout", ed);
+---
+<Base ed={ed} title={title} crumbs={entryCrumbs(ed, "glossary")}>
+  <EntryIndexHead ed={ed} title={title} intro={t("glossary.intro")} visibleShiurim={data.layer.visibleShiurim} />
+  <JumpList ed={ed} items={letters.map((b) => ({ id: b.id, label: b.letter, lang: "he", dir: "rtl" }))} />
+  {letters.map((b) => (
+    <section class="index-block" id={b.id} aria-labelledby={`${b.id}-h`}>
+      <h2 id={`${b.id}-h`}><bdi lang="he" dir="rtl">{b.letter}</bdi></h2>
+      <ul class="entries" role="list">
+        {b.items.map((c) => (
+          <li id={c.id} data-concept={c.id} data-topic={c.toTopic ? "true" : undefined}>
+            {c.href ? (
+              <a class="entry-name" href={c.href}><bdi lang="he" dir="rtl">{c.he.text}</bdi></a>
+            ) : (
+              <span class="entry-name"><bdi lang="he" dir="rtl">{c.he.text}</bdi></span>
+            )}
+            {c.gloss && <> <span class="alt-name"><bdi lang={c.gloss.lang} dir={c.gloss.dir}>{c.gloss.text}</bdi></span></>}
+            <span class="entry-count">{c.countText}</span>
+            {c.toTopic && c.href && <> <span class="see-line">(<a href={c.href}>{t("glossary.topic")}</a>)</span></>}
+            {c.throughout && !c.toTopic && <> <span class="entry-count">{throughout}</span></>}
+            <CiteList ed={ed} cites={c.cites} />
+            {c.definition && <p class="entry-definition"><bdi lang={c.definition.lang} dir={c.definition.dir}>{c.definition.text}</bdi></p>}
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</Base>

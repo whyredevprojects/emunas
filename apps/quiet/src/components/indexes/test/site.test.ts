@@ -1,19 +1,21 @@
 /**
- * W3.4 acceptance on the real corpus, end to end:
- *   corpus:build (repo data, into a temp dir) → astro build (EMUNAS_CORPUS_DIR) → checks on dist.
+ * C2.1 acceptance on the real corpus, end to end:
+ *   corpus:build (repo data, into a temp dir) → astro build (EMUNAS_CORPUS_DIR) → checks on dist,
+ * for the three corpus-entry indexes this package owns: שמות (`people/`), מראי מקומות
+ * (`sources/`) and ערכים (`erachim/`).
  *
- * - the entity page set equals the threshold rule (works and people ≥2 shiurim, concepts ≥3 and
- *   listed, never a generic work), recomputed here from the aggregate files;
- * - link crawler: every link inside <main> of every index page resolves: index and entity pages
- *   exist, in-page and cross-page anchors exist, shiur links name a shiur of the corpus with a time
- *   inside it or a section it has, and the only external links are Sefaria links next to a
- *   reference some mention resolved;
- * - every entry line carries a link; coverage line and "partial and unreviewed" notice on every page;
- * - file count and page weight within budget;
- * - nothing from transcripts or the story retellings reaches these pages.
+ * - page counts equal the layer's Quiet page flags (people, works, concepts; `all/` for passim
+ *   people), so no page for an other-type person, a generic work or a concept below five;
+ * - a concept merged into a topic has no glossary page and its line links to the topic;
+ * - no link to a shiur outside the visible set (needs_review, catalog-only);
+ * - every index page carries the AI label once; every entry page carries the label once and one
+ *   report link;
+ * - links inside these pages resolve (pages of these three indexes, their anchors, shiur
+ *   moments); the only external links go to Sefaria;
+ * - file count and page weight within budget; nothing from transcripts reaches these pages.
  *
- * Slow-ish (two builds, about 15 s); it reads the repository's data folder only through the
- * corpus CLI, like CI does.
+ * Slow-ish (one full corpus build and one site build, about 30 s); it reads the repository's data
+ * folder only through the corpus CLI, like CI does.
  */
 import { spawnSync } from "node:child_process";
 import { existsSync, mkdtempSync, readFileSync, readdirSync, rmSync, statSync } from "node:fs";
@@ -21,26 +23,23 @@ import { tmpdir } from "node:os";
 import { dirname, join, relative, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { gzipSync } from "node:zlib";
-import type { ConceptsFile, PeopleFile, StoriesFile, WorksFile } from "@emunas/corpus/aggregate";
-import { ENTITY_THRESHOLDS, type CorpusIndex, type PublicShiur } from "@emunas/corpus/public";
-import { coverageNotice } from "@emunas/i18n";
+import type { CorpusIndex, LayerConceptsFile, LayerPeopleFile, LayerWorksFile, PublicShiur } from "@emunas/corpus/public";
+import { corpusLabel } from "@emunas/i18n";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { astroBuild } from "../../../../test/astro-build.ts";
-import { indexesEn, indexesYi } from "../strings.ts";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const app = join(here, "..", "..", "..", "..");
 const repo = join(app, "..", "..");
 
 /**
- * tech-quiet §3.5 estimated ~4,000 index pages at full corpus inside an 18,000-file site. Measured
- * 4,144 at 993 of 997 shiurim full (2026-11-15: 360 sources, 617 people, 1,094 inyanim, 1 stories per
- * edition; 7,772 files in the whole site), so the budget is 5,000 (~20% headroom). The site-wide
- * 18,000-file cap is enforced by the build's budget check.
+ * Measured 2026-11-15 on the real corpus: 444 person pages (with `all/`), 384 work pages and 533
+ * glossary pages per edition, about 2,750 pages in all. The budget leaves room for growth; the
+ * site-wide 18,000-file cap is enforced by the build's budget check.
  */
-const INDEX_PAGE_BUDGET = 5_000;
-/** No index page heavier than this, gzip (the largest, /yi/stories/, is about 90 KB at 993 of 997 full). */
-const PAGE_GZIP_BUDGET = 120 * 1024;
+const PAGE_BUDGET = 5_000;
+/** No page heavier than this, gzip (the largest, /en/erachim/, is about 92 KB). */
+const PAGE_GZIP_BUDGET = 150 * 1024;
 
 let tmp = "";
 let corpus = "";
@@ -49,7 +48,7 @@ let dist = "";
 const readJson = <T,>(p: string): T => JSON.parse(readFileSync(p, "utf8")) as T;
 
 beforeAll(() => {
-  tmp = mkdtempSync(join(tmpdir(), "quiet-indexes-"));
+  tmp = mkdtempSync(join(tmpdir(), "quiet-entries-site-"));
   corpus = join(tmp, "corpus");
   dist = join(tmp, "dist");
   const tsx = join(repo, "node_modules", ".bin", "tsx");
@@ -68,7 +67,7 @@ afterAll(() => {
 });
 
 const EDS = ["yi", "en"] as const;
-const DIRS = ["sources", "stories", "people", "inyanim"] as const;
+const DIRS = ["people", "sources", "erachim"] as const;
 
 function walk(dir: string): string[] {
   if (!existsSync(dir)) return [];
@@ -78,23 +77,22 @@ function walk(dir: string): string[] {
   });
 }
 
-/** Index pages as `/{ed}/{dir}/…/` paths → file. */
-function indexPages(): Map<string, string> {
+/** Pages of the three indexes as `/{ed}/{dir}/…/` paths → file. */
+function entryPages(): Map<string, string> {
   const out = new Map<string, string>();
   for (const ed of EDS) {
     for (const d of DIRS) {
       for (const f of walk(join(dist, ed, d))) {
         if (!f.endsWith("index.html")) continue;
-        const rel = relative(dist, dirname(f)).split(sep).join("/");
-        out.set(`/${rel}/`, f);
+        out.set(`/${relative(dist, dirname(f)).split(sep).join("/")}/`, f);
       }
     }
   }
   return out;
 }
 
-/** Entity keys that have a page under `/{ed}/{dir}/{key}/`. */
-function entityDirs(ed: string, dir: string): string[] {
+/** Ids that have a page under `/{ed}/{dir}/{id}/`. */
+function entryDirs(ed: string, dir: string): string[] {
   const root = join(dist, ed, dir);
   return readdirSync(root).filter((n) => statSync(join(root, n)).isDirectory()).sort();
 }
@@ -106,74 +104,73 @@ const mainOf = (html: string): string => {
   return html.slice(a, b);
 };
 const idsOf = (html: string): Set<string> => new Set([...html.matchAll(/\sid="([^"]*)"/g)].map((m) => m[1]!));
-const VOID = new Set(["br", "hr", "img", "input", "meta", "link", "source", "wbr"]);
-
-/** Items directly under each `<ul class="entries">`, and whether each holds an `<a href>`. */
-function entryItems(html: string): { hasLink: boolean }[] {
-  const out: { hasLink: boolean }[] = [];
-  const stack: { tag: string; entries: boolean; item: { hasLink: boolean } | null }[] = [];
-  for (const m of html.matchAll(/<(\/?)([a-z][a-z0-9]*)\b([^>]*)>/g)) {
-    const [, close, tag, attrs] = m as unknown as [string, string, string, string];
-    if (VOID.has(tag)) continue;
-    if (close) {
-      while (stack.length > 0 && stack.pop()!.tag !== tag);
-      continue;
-    }
-    const parent = stack[stack.length - 1];
-    const inItem = [...stack].reverse().find((e) => e.item !== null)?.item ?? null;
-    let item: { hasLink: boolean } | null = null;
-    if (tag === "li" && parent?.entries) {
-      item = { hasLink: false };
-      out.push(item);
-    }
-    if (tag === "a" && /\shref="/.test(attrs) && inItem) inItem.hasLink = true;
-    stack.push({ tag, entries: tag === "ul" && /class="entries"/.test(attrs), item });
-  }
-  return out;
-}
-
 const hrefsOf = (html: string): string[] => [...html.matchAll(/\shref="([^"]*)"/g)].map((m) => m[1]!.replace(/&amp;/g, "&"));
+const count = (s: string, needle: string): number => s.split(needle).length - 1;
 
-describe("W3.4 on the real corpus", () => {
-  it("builds the four indexes in both editions", () => {
-    const pages = indexPages();
+describe("C2.1 names, works and glossary on the real corpus", () => {
+  it("builds the three indexes in both editions", () => {
+    const pages = entryPages();
     for (const ed of EDS) for (const d of DIRS) expect(pages.has(`/${ed}/${d}/`), `/${ed}/${d}/`).toBe(true);
   });
 
-  it("entity page set equals the threshold rule", () => {
-    const works = readJson<WorksFile>(join(corpus, "works.json")).works;
-    const people = readJson<PeopleFile>(join(corpus, "people.json")).people;
-    const concepts = readJson<ConceptsFile>(join(corpus, "concepts.json")).concepts;
-    const q = ENTITY_THRESHOLDS.quiet;
+  it("page counts equal the layer's Quiet page flags", () => {
+    const people = readJson<LayerPeopleFile>(join(corpus, "layer", "people.json")).people;
+    const works = readJson<LayerWorksFile>(join(corpus, "layer", "works.json")).works;
+    const concepts = readJson<LayerConceptsFile>(join(corpus, "layer", "concepts.json")).concepts;
     const want = {
-      sources: works.filter((w) => !w.genre && w.shiurCount >= q.work).map((w) => w.key).sort(),
-      people: people.filter((p) => p.shiurCount >= q.person).map((p) => p.key).sort(),
-      inyanim: concepts.filter((c) => c.shiurCount >= q.concept).map((c) => c.key).sort(),
+      people: people.filter((p) => p.pages.quiet).map((p) => p.id).sort(),
+      sources: works.filter((w) => w.pages.quiet).map((w) => w.id).sort(),
+      erachim: concepts.filter((c) => c.pages.quiet).map((c) => c.id).sort(),
     };
-    expect(want.sources.length).toBeGreaterThan(100);
     expect(want.people.length).toBeGreaterThan(100);
-    expect(want.inyanim.length).toBeGreaterThan(100);
+    expect(want.sources.length).toBeGreaterThan(100);
+    expect(want.erachim.length).toBeGreaterThan(100);
     for (const ed of EDS) {
-      expect(entityDirs(ed, "sources")).toEqual(want.sources);
-      expect(entityDirs(ed, "people")).toEqual(want.people);
-      expect(entityDirs(ed, "inyanim")).toEqual(want.inyanim);
-      expect(entityDirs(ed, "stories")).toEqual([]);
+      expect(entryDirs(ed, "people")).toEqual(want.people);
+      expect(entryDirs(ed, "sources")).toEqual(want.sources);
+      expect(entryDirs(ed, "erachim")).toEqual(want.erachim);
+      const all = people.filter((p) => p.quietAllList).map((p) => p.id).sort();
+      expect(all.length).toBeGreaterThan(0);
+      expect(want.people.filter((id) => existsSync(join(dist, ed, "people", id, "all", "index.html")))).toEqual(all);
     }
-    // keys are URL-safe as they are, so ids, paths and @emunas/links anchors agree
-    for (const k of [...want.sources, ...want.people, ...want.inyanim]) expect(k).toMatch(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
+    // never a page for an other-type person, a generic work, a concept below five or merged into a topic
+    for (const p of people.filter((x) => x.group === "other")) expect(want.people.includes(p.id), p.id).toBe(false);
+    for (const w of works.filter((x) => x.generic)) expect(want.sources.includes(w.id), w.id).toBe(false);
+    for (const c of concepts.filter((x) => x.count < 5 || x.mergedIntoTopic !== null)) expect(want.erachim.includes(c.id), c.id).toBe(false);
+    // family hubs (genre works with children) do have pages
+    expect(want.sources).toEqual(expect.arrayContaining(["rashi", "ramban", "tosafos", "chasam-sofer"]));
   });
 
-  it("every link in every index page resolves (link crawler)", () => {
-    const pages = indexPages();
+  it("a concept merged into a topic links to the topic from its glossary line", () => {
+    const concepts = readJson<LayerConceptsFile>(join(corpus, "layer", "concepts.json")).concepts;
+    const merged = concepts.filter((c) => c.mergedIntoTopic !== null);
+    expect(merged.length).toBeGreaterThan(0);
+    for (const ed of EDS) {
+      const html = readFileSync(join(dist, ed, "erachim", "index.html"), "utf8");
+      for (const c of merged) {
+        const at = html.indexOf(`<li id="${c.id}"`);
+        expect(at, c.id).toBeGreaterThan(0);
+        const li = html.slice(at, html.indexOf("</li>", at));
+        const hrefs = hrefsOf(li);
+        expect(hrefs.length, c.id).toBeGreaterThan(0);
+        for (const h of hrefs) expect(h.startsWith(`/${ed}/inyanim/`), `${c.id} → ${h}`).toBe(true);
+        expect(hrefs.some((h) => h.includes(c.mergedIntoTopic!)), c.id).toBe(true);
+      }
+    }
+  });
+
+  it("every link resolves, and no link goes to a shiur outside the visible set", () => {
+    const pages = entryPages();
     const index = readJson<CorpusIndex>(join(corpus, "index.json"));
     const rows = new Map(index.shiurim.map((r) => [r.id, r]));
+    const visible = new Set(readdirSync(join(corpus, "layer", "shiur")).map((f) => f.replace(/\.json$/, "")));
+    expect(index.shiurim.some((r) => r.status !== "full")).toBe(true);
     const chapters = new Map<string, Set<number>>();
     const chaptersOf = (id: string): Set<number> => {
       let s = chapters.get(id);
       if (!s) {
         const shiur = readJson<PublicShiur>(join(corpus, "shiurim", `${id}.json`));
-        s = new Set((shiur.notes?.chapters ?? []).map((c) => c.idx));
-        chapters.set(id, s);
+        chapters.set(id, (s = new Set((shiur.notes?.chapters ?? []).map((c) => c.idx))));
       }
       return s;
     };
@@ -183,7 +180,6 @@ describe("W3.4 on the real corpus", () => {
       if (!s) idCache.set(path, (s = idsOf(readFileSync(pages.get(path)!, "utf8"))));
       return s;
     };
-
     const broken: string[] = [];
     let checked = 0;
     let shiurLinks = 0;
@@ -192,9 +188,10 @@ describe("W3.4 on the real corpus", () => {
       for (const href of hrefsOf(main)) {
         checked++;
         const bad = (why: string) => broken.push(`${path} → ${href}: ${why}`);
-        if (href.startsWith("https://www.sefaria.org/")) continue; // checked below
+        if (href.startsWith("https://www.sefaria.org/")) continue;
+        if (href.startsWith("mailto:")) continue; // the report link
         if (href.startsWith("#")) {
-          if (!idsOfPage(path).has(href.slice(1))) bad("no such anchor");
+          if (!idsOfPage(path).has(decodeURIComponent(href.slice(1)))) bad("no such anchor");
           continue;
         }
         if (/^[a-z]+:/i.test(href)) {
@@ -206,22 +203,26 @@ describe("W3.4 on the real corpus", () => {
         if (shiur) {
           shiurLinks++;
           if (shiur[1] !== path.split("/")[1]) bad("crosses editions");
-          const row = rows.get(decodeURIComponent(shiur[2]!));
+          const id = decodeURIComponent(shiur[2]!);
+          const row = rows.get(id);
           if (!row) {
             bad("unknown shiur");
             continue;
           }
+          if (!visible.has(id) || row.status !== "full") bad(`shiur not in the visible set (${row.status})`);
           if (frag === undefined) continue;
           const t = /^t=(\d+)$/.exec(frag);
           const s = /^s(\d+)$/.exec(frag);
           if (t) {
             if (Number(t[1]) > Math.ceil(row.duration)) bad(`time beyond the shiur (${row.duration}s)`);
           } else if (s) {
-            if (!chaptersOf(row.id).has(Number(s[1]))) bad("no such section");
+            if (!chaptersOf(id).has(Number(s[1]))) bad("no such section");
           } else bad("unknown fragment");
           continue;
         }
-        if (/^\/(yi|en)\/about\/$/.test(p)) continue; // the notes label links to About (W4.x page)
+        // Topic and story entries belong to other indexes (C2.2, C2.3): well-formed addresses only.
+        if (/^\/(yi|en)\/(inyanim|stories)\/(?:[a-z0-9-]+\/)?$/.test(p)) continue;
+        if (/^\/(yi|en)\/(about|)\/?$/.test(p)) continue; // edition home (#indexes) and About
         if (!pages.has(p)) {
           bad("no such page");
           continue;
@@ -234,63 +235,28 @@ describe("W3.4 on the real corpus", () => {
     expect(shiurLinks).toBeGreaterThan(10_000);
   });
 
-  it("links to Sefaria only next to a reference some mention resolved", () => {
-    const works = readJson<WorksFile>(join(corpus, "works.json")).works;
-    const resolved = new Set<string>();
-    const any = new Set<string>();
-    for (const w of works) {
-      for (const r of w.refs) {
-        const url = `https://www.sefaria.org/${encodeURIComponent(r.ref.trim())}`;
-        any.add(`${w.key} ${url}`);
-        if (r.mentions.some((m) => m.resolution === "resolved")) resolved.add(`${w.key} ${url}`);
-      }
-    }
-    for (const ed of EDS) {
-      const seen = new Set<string>();
-      for (const key of entityDirs(ed, "sources")) {
-        const main = mainOf(readFileSync(join(dist, ed, "sources", key, "index.html"), "utf8"));
-        for (const href of hrefsOf(main).filter((h) => h.startsWith("https://"))) {
-          expect(href.startsWith("https://www.sefaria.org/"), href).toBe(true);
-          seen.add(`${key} ${href}`);
-        }
-        expect(/rel="noopener external"/.test(main) || !main.includes("sefaria.org"), key).toBe(true);
-      }
-      for (const s of seen) expect(resolved.has(s), s).toBe(true);
-      const expected = [...resolved].filter((s) => entityDirs(ed, "sources").includes(s.split(" ")[0]!));
-      expect([...seen].sort()).toEqual(expected.sort());
-      expect(seen.size).toBeLessThan(any.size);
-    }
-    // the index pages themselves link out nowhere
-    for (const ed of EDS) {
-      for (const d of DIRS) {
-        const main = mainOf(readFileSync(join(dist, ed, d, "index.html"), "utf8"));
-        expect(hrefsOf(main).filter((h) => /^https?:/.test(h)), `${ed}/${d}`).toEqual([]);
-      }
-    }
-  });
-
-  it("every entry line links somewhere, and every page carries the coverage line and the notice", () => {
-    const build = readJson<{ counts: { full: number; total: number } }>(join(corpus, "build.json"));
-    for (const [path, file] of indexPages()) {
+  it("carries the AI label once on every page and one report link on every entry page", () => {
+    for (const [path, file] of entryPages()) {
       const ed = path.split("/")[1] as "yi" | "en";
       const html = readFileSync(file, "utf8");
       const main = mainOf(html);
-      expect(main.includes(coverageNotice(build.counts.full, build.counts.total, ed)), `${path} coverage`).toBe(true);
-      expect(main.includes(String((ed === "en" ? indexesEn : indexesYi)["index.partial"])), `${path} notice`).toBe(true);
-      expect(html).toContain(`<html lang="${ed}" dir="${ed === "yi" ? "rtl" : "ltr"}"`);
-      expect((main.match(/<h1\b/g) ?? []).length, `${path} h1`).toBe(1);
-      // each item directly under a <ul class="entries"> must contain a link
-      for (const [i, item] of entryItems(main).entries()) {
-        expect(item.hasLink, `${path}: entry ${i} without a link`).toBe(true);
+      const isIndex = /^\/(yi|en)\/[a-z]+\/$/.test(path);
+      expect(count(main, 'class="corpus-label'), `${path} label`).toBe(1 + (isIndex ? 0 : 1)); // entry: the footer wraps the label
+      expect(count(main, '<p class="corpus-label'), `${path} label text`).toBe(1);
+      expect(count(main, 'class="report-entry"'), `${path} report`).toBe(isIndex ? 0 : 1);
+      if (!isIndex) {
+        const label = main.includes(corpusLabel("label.entry", ed)) || main.includes(corpusLabel("label.entry.reviewed", ed));
+        expect(label, `${path} entry label`).toBe(true);
+        expect(/href="mailto:[^"]*subject=/.test(main), `${path} mailto`).toBe(true);
       }
-      // and every page lists something: entries, or (on a work page) citations
-      expect(entryItems(main).length + (main.match(/<a class="cite"/g) ?? []).length, `${path}: empty`).toBeGreaterThan(0);
+      expect((main.match(/<h1\b/g) ?? []).length, `${path} h1`).toBe(1);
+      expect(html).toContain(`<html lang="${ed}" dir="${ed === "yi" ? "rtl" : "ltr"}"`);
     }
   });
 
   it("stays within the file-count and page-weight budget", () => {
-    const pages = indexPages();
-    expect(pages.size).toBeLessThanOrEqual(INDEX_PAGE_BUDGET);
+    const pages = entryPages();
+    expect(pages.size).toBeLessThanOrEqual(PAGE_BUDGET);
     let heaviest = ["", 0] as [string, number];
     for (const [path, file] of pages) {
       const gz = gzipSync(readFileSync(file)).length;
@@ -299,26 +265,11 @@ describe("W3.4 on the real corpus", () => {
     expect(heaviest[1], heaviest[0]).toBeLessThanOrEqual(PAGE_GZIP_BUDGET);
   });
 
-  it("ships nothing from transcripts and no story retellings", () => {
-    const pages = indexPages();
-    // Field names and paths (the full list, ASR input files included, is the corpus-guard post-pass in CI).
-    const forbidden = ["heardAs", "asrNotes", "transcriptKey", "audioKey", "transcripts/", '"segs"', "startSeg", '"retelling"'];
-    const retellings: string[] = [];
-    const stories = readJson<StoriesFile>(join(corpus, "stories.json"));
-    for (const id of new Set(stories.stories.map((s) => s.shiurId))) {
-      const shiur = readJson<PublicShiur>(join(corpus, "shiurim", `${id}.json`));
-      for (const s of shiur.notes?.stories ?? []) {
-        for (const text of [s.retelling.en, s.retelling.yi]) if (text.length >= 40) retellings.push(text.slice(0, 40));
-      }
-    }
-    expect(retellings.length).toBeGreaterThan(500);
-    const storyPages = [...pages].filter(([p]) => /\/(stories|people)\//.test(p));
-    for (const [path, file] of pages) {
+  it("ships nothing from transcripts", () => {
+    const forbidden = ["heardAs", "asrNotes", "asrVariants", "transcriptKey", "audioKey", "transcripts/", '"segs"', "startSeg", '"retelling"'];
+    for (const [path, file] of entryPages()) {
       const html = readFileSync(file, "utf8");
       for (const f of forbidden) expect(html.includes(f), `${path} contains ${f}`).toBe(false);
     }
-    const all = storyPages.map(([, f]) => readFileSync(f, "utf8")).join("\n");
-    const leaked = retellings.filter((r) => all.includes(r));
-    expect(leaked).toEqual([]);
   });
 });

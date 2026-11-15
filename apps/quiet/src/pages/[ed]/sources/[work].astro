@@ -1,0 +1,91 @@
+---
+/**
+ * A work page (Quiet C4.4; `/{ed}/sources/{workId}/`), for every work the layer gives a Quiet page
+ * (two or more shiurim, never a generic label). Headword, author, Sefaria, the same-subject
+ * pointer; a family hub's child works; then the references in the work's own order, each with the
+ * shiurim that bring it at their moment ("apparently" for an inferred place), and the shiurim that
+ * cite it without a place.
+ */
+import type { GetStaticPaths } from "astro";
+import Base from "../../../layouts/Base.astro";
+import EntryHead from "../../../components/corpus/EntryHead.astro";
+import CiteList from "../../../components/indexes/CiteList.astro";
+import EntryFoot from "../../../components/indexes/EntryFoot.astro";
+import MentionList from "../../../components/indexes/MentionList.astro";
+import { entryData } from "../../../components/indexes/entries.ts";
+import { entryCrumbs } from "../../../components/indexes/crumbs.ts";
+import { useIndexesT } from "../../../components/indexes/strings.ts";
+import { workPage, workPageIds } from "../../../components/indexes/works.ts";
+import { EDS, type Ed } from "../../../lib/edition.ts";
+
+export const getStaticPaths = (() => {
+  const data = entryData();
+  if (!data) return [];
+  const ids = workPageIds(data);
+  return EDS.flatMap((ed) => ids.map((work) => ({ params: { ed, work } })));
+}) satisfies GetStaticPaths;
+
+const ed = Astro.params.ed as Ed;
+const data = entryData()!;
+const work = data.layer.work(Astro.params.work as string)!;
+const t = useIndexesT(ed);
+const page = workPage(data, ed, work);
+---
+<Base ed={ed} title={page.head.title.text} crumbs={entryCrumbs(ed, "sources", { run: page.head.title })}>
+  <EntryHead ed={ed} title={page.head.title} alt={page.head.alt} meta={page.meta} seeAlso={page.seeAlso}>
+    {(page.author || page.sefaria) && (
+      <p class="entry-author">
+        {page.author && <>{t("works.by")}{" "}{page.author.href ? (
+          <a href={page.author.href}><bdi lang={page.author.label.lang} dir={page.author.label.dir}>{page.author.label.text}</bdi></a>
+        ) : (
+          <bdi lang={page.author.label.lang} dir={page.author.label.dir}>{page.author.label.text}</bdi>
+        )}</>}
+        {page.author && page.sefaria && <span class="sep" aria-hidden="true"> · </span>}
+        {page.sefaria && <a class="external" href={page.sefaria.href} rel="noopener external" aria-label={page.sefaria.label}>{t("works.onSefaria")}</a>}
+      </p>
+    )}
+    {page.aliases.length > 0 && (
+      <p class="entry-also">{t("names.also")}{" "}{page.aliases.map((n, i) => <>{i > 0 && ", "}<bdi lang={n.lang} dir={n.dir}>{n.text}</bdi></>)}</p>
+    )}
+  </EntryHead>
+  {page.children.length > 0 && (
+    <section class="index-block" aria-labelledby="family-h">
+      <h2 id="family-h" class="label">{t("works.family")}</h2>
+      <ul class="entries" role="list">
+        {page.children.map((c) => (
+          <li data-work={c.id} data-depth={c.depth > 0 ? String(Math.min(c.depth, 3)) : undefined}>
+            <a class="entry-name" href={c.href}><bdi lang={c.name.lang} dir={c.name.dir}>{c.name.text}</bdi></a>
+            <span class="entry-count">{c.countText}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+  {page.refs.length > 0 && (
+    <section class="index-block" aria-labelledby="refs-h">
+      <h2 id="refs-h" class="label">{t("work.refs")}</h2>
+      <ul class="entries" role="list">
+        {page.refs.map((r) => (
+          <li>
+            <span class="ref-label"><bdi lang={r.label.lang} dir={r.label.dir}>{r.label.text}</bdi></span>
+            {r.sefaria && <> <a class="external" href={r.sefaria} rel="noopener external" aria-label={t("work.onSefariaLabel", { ref: r.label.text })}>{t("work.onSefaria")}</a></>}
+            {" "}<MentionList ed={ed} mentions={r.mentions} />
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+  {page.otherRefs.length > 0 && (
+    <section class="index-block" aria-labelledby="other-h">
+      <h2 id="other-h" class="label">{t("work.otherRefs")}</h2>
+      <MentionList ed={ed} mentions={page.otherRefs} />
+    </section>
+  )}
+  {page.shiurim.length > 0 && (
+    <section class="index-block" aria-labelledby="shiurim-h">
+      <h2 id="shiurim-h" class="label">{page.children.length > 0 ? t("works.familyShiurim") : page.shiurimAreRest ? t("works.alsoCited") : t("works.shiurim")}</h2>
+      <CiteList ed={ed} cites={page.shiurim} />
+    </section>
+  )}
+  <EntryFoot ed={ed} kind="work" id={page.id} reviewed={page.reviewed} />
+</Base>
