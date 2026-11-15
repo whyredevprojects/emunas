@@ -184,9 +184,11 @@ describe.each(["yi", "en"] as const)("%s edition", (ed) => {
     expect(pendingNotes.length).toBeGreaterThan(0);
     expect(pendingNotes.every((t) => t === "")).toBe(true);
     await page.context().close();
-    // the three shiurim whose only recording is a .WMA (not playable from the media host)
+    // the three shiurim whose only recording is a .WMA: not playable from the media host unless
+    // site-policy/audio-transcoded.json lists an MP3 sibling for it
+    const transcoded = (JSON.parse(readFileSync(join(repo, "site-policy/audio-transcoded.json"), "utf8")) as { mp3Siblings: string[] }).mp3Siblings;
     const unc = await open(`/${ed}/section/unc-zmanim/`, { js: false });
-    expect(await unc.locator("tr.no-recording .no-recording-note").count()).toBe(3);
+    expect(await unc.locator("tr.no-recording .no-recording-note").count()).toBe(3 - new Set(transcoded).size);
     expect(await unc.locator("tr.uncatalogued .unc-mark").count()).toBe(await unc.locator("tbody tr").count());
     await unc.context().close();
   });
