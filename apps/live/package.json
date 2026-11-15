@@ -6,17 +6,21 @@
   "scripts": {
     "dev": "react-router dev",
     "build": "react-router build",
-    "typecheck": "react-router typegen && tsc --noEmit -p tsconfig.json",
-    "test": "vitest run",
-    "test:e2e": "react-router build && playwright test"
+    "typecheck": "react-router typegen && tsc --noEmit -p tsconfig.json && tsc --noEmit -p data-build/tsconfig.json",
+    "test": "vitest run && vitest run --config data-build/vitest.config.ts",
+    "test:e2e": "react-router build && playwright test",
+    "data:build": "tsx data-build/cli.ts emit",
+    "data:budgets": "tsx data-build/cli.ts budgets"
   },
   "dependencies": {
     "@emunas/corpus": "0.0.0",
     "@emunas/i18n": "0.0.0",
     "@emunas/links": "0.0.0",
+    "@emunas/search-core": "0.0.0",
     "@emunas/tokens": "0.0.0",
     "@react-router/node": "7.18.5",
     "isbot": "5.2.2",
+    "minisearch": "7.2.0",
     "react": "19.3.1",
     "react-aria": "3.53.1",
     "react-aria-components": "1.22.1",
@@ -27,14 +31,19 @@
   "devDependencies": {
     "@axe-core/playwright": "4.14.0",
     "@emunas/config": "0.0.0",
+    "@emunas/corpus-guard": "0.0.0",
+    "@emunas/normalize": "0.0.0",
     "@playwright/test": "1.64.1",
     "@react-router/dev": "7.18.5",
     "@testing-library/react": "16.3.3",
+    "@types/node": "26.6.6",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
     "axe-core": "4.14.0",
     "jsdom": "30.1.3",
     "playwright-core": "1.64.1",
+    "tsx": "4.23.15",
+    "valibot": "1.5.0",
     "vite": "8.3.5",
     "vitest": "5.0.5"
   }

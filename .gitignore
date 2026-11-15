@@ -12,3 +12,5 @@ build/
 .wrangler/
 .astro/
 .react-router/
+# Live static data, emitted from .corpus/ by apps/live/data-build (W3.6)
+apps/live/public/data/
