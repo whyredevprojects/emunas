@@ -1,0 +1,1428 @@
+{
+  "version": 1,
+  "note": "60 eval queries. expected = full shiurim whose generated metadata matches select (occasion/parsha key, cited work, person, recording language); frozen, refresh with run.ts --refresh.",
+  "queries": [
+    {
+      "id": "en01",
+      "set": "en",
+      "q": "the hidden miracle of Purim",
+      "select": {
+        "occasion": "purim"
+      },
+      "expected": [
+        "en-zmanim-en-pvrym-01",
+        "en-zmanim-en-pvrym-02",
+        "en-zmanim-en-pvrym-04",
+        "en-zmanim-en-pvrym-05",
+        "en-zmanim-en-pvrym-06",
+        "en-zmanim-en-pvrym-07",
+        "en-zmanim-en-pvrym-08",
+        "en-zmanim-en-pvrym-09",
+        "en-zmanim-en-pvrym-10",
+        "en-zmanim-en-pvrym-11",
+        "en-zmanim-en-pvrym-12",
+        "en-zmanim-en-pvrym-13",
+        "en-zmanim-en-pvrym-14",
+        "en-zmanim-en-pvrym-15",
+        "en-zmanim-en-pvrym-16",
+        "en-zmanim-en-pvrym-for-children-03",
+        "yi-zmanim-pvrym-01",
+        "yi-zmanim-pvrym-02",
+        "yi-zmanim-pvrym-03",
+        "yi-zmanim-pvrym-04",
+        "yi-zmanim-pvrym-05",
+        "yi-zmanim-pvrym-06",
+        "yi-zmanim-pvrym-07",
+        "yi-zmanim-pvrym-08",
+        "yi-zmanim-pvrym-09",
+        "yi-zmanim-pvrym-10",
+        "yi-zmanim-pvrym-11",
+        "yi-zmanim-pvrym-12",
+        "yi-zmanim-pvrym-13",
+        "yi-zmanim-pvrym-14",
+        "yi-zmanim-pvrym-15"
+      ]
+    },
+    {
+      "id": "en02",
+      "set": "en",
+      "q": "lighting the Chanukah candles",
+      "select": {
+        "occasion": "chanukah"
+      },
+      "expected": [
+        "en-zmanim-en-chnvkh-02",
+        "en-zmanim-en-chnvkh-03",
+        "en-zmanim-en-chnvkh-04-a",
+        "en-zmanim-en-chnvkh-04-b",
+        "en-zmanim-en-chnvkh-05",
+        "en-zmanim-en-chnvkh-06",
+        "en-zmanim-en-chnvkh-07",
+        "en-zmanim-en-chnvkh-08",
+        "en-zmanim-en-chnvkh-09",
+        "en-zmanim-en-chnvkh-10",
+        "yi-zmanim-chnvkh-01",
+        "yi-zmanim-chnvkh-02",
+        "yi-zmanim-chnvkh-03",
+        "yi-zmanim-chnvkh-04",
+        "yi-zmanim-chnvkh-05",
+        "yi-zmanim-chnvkh-06",
+        "yi-zmanim-chnvkh-07",
+        "yi-zmanim-chnvkh-08",
+        "yi-zmanim-chnvkh-09-a",
+        "yi-zmanim-chnvkh-09-b",
+        "yi-zmanim-chnvkh-10",
+        "yi-zmanim-chnvkh-11",
+        "yi-zmanim-chnvkh-12",
+        "yi-zmanim-chnvkh-13-a",
+        "yi-zmanim-chnvkh-13-b",
+        "yi-zmanim-chnvkh-14",
+        "yi-zmanim-chnvkh-15-a",
+        "yi-zmanim-chnvkh-15-b"
+      ]
+    },
+    {
+      "id": "en03",
+      "set": "en",
+      "q": "receiving the Torah on Shavuos",
+      "select": {
+        "occasion": "shavuos"
+      },
+      "expected": [
+        "en-zmanim-en-shbvvs-01",
+        "en-zmanim-en-shbvvs-02",
+        "en-zmanim-en-shbvvs-03",
+        "en-zmanim-en-shbvvs-04",
+        "en-zmanim-en-shbvvs-05",
+        "en-zmanim-en-shbvvs-07",
+        "en-zmanim-en-shbvvs-09",
+        "en-zmanim-en-shbvvs-children-06",
+        "en-zmanim-en-shbvvs-young-bachurim-08",
+        "yi-zmanim-shbvvs-01",
+        "yi-zmanim-shbvvs-02",
+        "yi-zmanim-shbvvs-03",
+        "yi-zmanim-shbvvs-04",
+        "yi-zmanim-shbvvs-05",
+        "yi-zmanim-shbvvs-06",
+        "yi-zmanim-shbvvs-07",
+        "yi-zmanim-shbvvs-08",
+        "yi-zmanim-shbvvs-09",
+        "yi-zmanim-shbvvs-10"
+      ]
+    },
+    {
+      "id": "en04",
+      "set": "en",
+      "q": "the Pesach seder and leaving Egypt",
+      "select": {
+        "occasion": "pesach"
+      },
+      "expected": [
+        "en-zmanim-en-psch-01",
+        "en-zmanim-en-psch-02",
+        "en-zmanim-en-psch-03",
+        "en-zmanim-en-psch-04",
+        "en-zmanim-en-psch-05",
+        "en-zmanim-en-psch-06",
+        "en-zmanim-en-psch-07",
+        "yi-zmanim-psch-01",
+        "yi-zmanim-psch-02",
+        "yi-zmanim-psch-03",
+        "yi-zmanim-psch-04",
+        "yi-zmanim-psch-05",
+        "yi-zmanim-psch-06",
+        "yi-zmanim-psch-07-a",
+        "yi-zmanim-psch-07-b",
+        "yi-zmanim-psch-08-a",
+        "yi-zmanim-psch-08-b",
+        "yi-zmanim-psch-09"
+      ]
+    },
+    {
+      "id": "en05",
+      "set": "en",
+      "q": "Lag BaOmer and Rabbi Shimon bar Yochai",
+      "select": {
+        "occasion": "lag-baomer"
+      },
+      "expected": [
+        "en-zmanim-en-lg-bvmr-01",
+        "en-zmanim-en-lg-bvmr-02",
+        "en-zmanim-en-lg-bvmr-03",
+        "en-zmanim-en-lg-bvmr-04",
+        "en-zmanim-en-lg-bvmr-05",
+        "yi-zmanim-lg-bvmr-01",
+        "yi-zmanim-lg-bvmr-04",
+        "yi-zmanim-svds-lg-bvmr-02",
+        "yi-zmanim-svds-lg-bvmr-03",
+        "yi-zmanim-svds-lg-bvmr-05",
+        "yi-zmanim-svds-lg-bvmr-06",
+        "yi-zmanim-svds-lg-bvmr-07",
+        "yi-zmanim-svds-lg-bvmr-08-a",
+        "yi-zmanim-svds-lg-bvmr-08-b",
+        "yi-zmanim-svds-lg-bvmr-09",
+        "yi-zmanim-svds-lg-bvmr-10"
+      ]
+    },
+    {
+      "id": "en06",
+      "set": "en",
+      "q": "the month of Elul and teshuvah",
+      "select": {
+        "occasion": "elul"
+      },
+      "expected": [
+        "en-zmanim-en-lvl-01",
+        "en-zmanim-en-lvl-02",
+        "en-zmanim-en-lvl-03",
+        "en-zmanim-en-lvl-04",
+        "yi-zmanim-lvl-01",
+        "yi-zmanim-lvl-02",
+        "yi-zmanim-lvl-03",
+        "yi-zmanim-lvl-04",
+        "yi-zmanim-lvl-05",
+        "yi-zmanim-lvl-06",
+        "yi-zmanim-lvl-07",
+        "yi-zmanim-lvl-08"
+      ]
+    },
+    {
+      "id": "en07",
+      "set": "en",
+      "q": "counting the days of the Omer",
+      "select": {
+        "occasion": "sefirah"
+      },
+      "expected": [
+        "en-zmanim-en-spyrh-01",
+        "en-zmanim-en-spyrh-02",
+        "yi-zmanim-spyrh-01",
+        "yi-zmanim-spyrh-02",
+        "yi-zmanim-spyrh-03",
+        "yi-zmanim-spyrh-04",
+        "yi-zmanim-spyrh-05",
+        "yi-zmanim-spyrh-06",
+        "yi-zmanim-spyrh-07",
+        "yi-zmanim-spyrh-08",
+        "yi-zmanim-spyrh-09"
+      ]
+    },
+    {
+      "id": "en08",
+      "set": "en",
+      "q": "the judgment of Rosh Hashanah",
+      "select": {
+        "occasion": "rosh-hashanah"
+      },
+      "expected": [
+        "en-zmanim-en-rsh-hshnh-01",
+        "en-zmanim-en-rsh-hshnh-02",
+        "en-zmanim-en-rsh-hshnh-03",
+        "en-zmanim-en-rsh-hshnh-04",
+        "yi-zmanim-rsh-hshnh-01",
+        "yi-zmanim-rsh-hshnh-02",
+        "yi-zmanim-rsh-hshnh-03",
+        "yi-zmanim-rsh-hshnh-04",
+        "yi-zmanim-rsh-hshnh-05",
+        "yi-zmanim-rsh-hshnh-06-a",
+        "yi-zmanim-rsh-hshnh-06-b"
+      ]
+    },
+    {
+      "id": "en09",
+      "set": "en",
+      "q": "atonement on Yom Kippur",
+      "select": {
+        "occasion": "yom-kippur"
+      },
+      "expected": [
+        "en-zmanim-en-yvk-01",
+        "en-zmanim-en-yvk-02",
+        "en-zmanim-en-yvk-03",
+        "en-zmanim-en-yvk-04",
+        "en-zmanim-en-yvk-05",
+        "en-zmanim-en-yvk-06",
+        "yi-zmanim-yvm-hkypvrym-01",
+        "yi-zmanim-yvm-hkypvrym-02",
+        "yi-zmanim-yvm-hkypvrym-03",
+        "yi-zmanim-yvm-hkypvrym-04"
+      ]
+    },
+    {
+      "id": "en10",
+      "set": "en",
+      "q": "Noah, the ark and the flood",
+      "select": {
+        "occasion": "noach"
+      },
+      "expected": [
+        "en-parsha-en-nch-01",
+        "en-parsha-en-nch-02",
+        "yi-parshas-hashavua-nch-01",
+        "yi-parshas-hashavua-nch-02",
+        "yi-parshas-hashavua-nch-03",
+        "yi-parshas-hashavua-nch-04",
+        "yi-parshas-hashavua-nch-05",
+        "yi-parshas-hashavua-nch-06",
+        "yi-parshas-hashavua-nch-07",
+        "yi-parshas-hashavua-nch-08",
+        "yi-parshas-hashavua-nch-09"
+      ]
+    },
+    {
+      "id": "en11",
+      "set": "en",
+      "q": "Yaakov takes the blessings from Esav",
+      "select": {
+        "occasion": "toldos"
+      },
+      "expected": [
+        "en-parsha-en-svldvs-01",
+        "en-parsha-en-svldvs-02",
+        "en-parsha-en-svldvs-03",
+        "en-parsha-en-svldvs-04",
+        "yi-parshas-hashavua-svldvs-01",
+        "yi-parshas-hashavua-svldvs-02",
+        "yi-parshas-hashavua-svldvs-03",
+        "yi-parshas-hashavua-svldvs-04",
+        "yi-parshas-hashavua-svldvs-05",
+        "yi-parshas-hashavua-svldvs-06",
+        "yi-parshas-hashavua-svldvs-07"
+      ]
+    },
+    {
+      "id": "en12",
+      "set": "en",
+      "q": "Yosef sold by his brothers",
+      "select": {
+        "occasion": "vayeishev"
+      },
+      "expected": [
+        "en-parsha-en-vyshb-01",
+        "en-parsha-en-vyshb-02",
+        "yi-parshas-hashavua-vyshb-01",
+        "yi-parshas-hashavua-vyshb-02",
+        "yi-parshas-hashavua-vyshb-03",
+        "yi-parshas-hashavua-vyshb-04",
+        "yi-parshas-hashavua-vyshb-05",
+        "yi-parshas-hashavua-vyshb-06",
+        "yi-parshas-hashavua-vyshb-07",
+        "yi-parshas-hashavua-vyshb-08"
+      ]
+    },
+    {
+      "id": "en13",
+      "set": "en",
+      "q": "the splitting of the sea and the song",
+      "select": {
+        "occasion": "beshalach"
+      },
+      "expected": [
+        "en-parsha-en-bshlch-01",
+        "en-parsha-en-bshlch-02",
+        "en-parsha-en-bshlch-03",
+        "en-parsha-en-bshlch-04",
+        "yi-parshas-hashavua-bshlch-01",
+        "yi-parshas-hashavua-bshlch-02",
+        "yi-parshas-hashavua-bshlch-03",
+        "yi-parshas-hashavua-bshlch-04",
+        "yi-parshas-hashavua-bshlch-05",
+        "yi-parshas-hashavua-bshlch-06",
+        "yi-parshas-hashavua-bshlch-07",
+        "yi-parshas-hashavua-bshlch-08",
+        "yi-parshas-hashavua-bshlch-09"
+      ]
+    },
+    {
+      "id": "en14",
+      "set": "en",
+      "q": "stories of the Baal Shem Tov",
+      "select": {
+        "person": "baal-shem-tov"
+      },
+      "expected": [
+        "en-parsha-en-bhlvsk-02",
+        "en-parsha-en-bshlch-03",
+        "en-parsha-en-mshptym-01",
+        "en-parsha-en-nch-01",
+        "en-parsha-en-pkvdy-01",
+        "en-zmanim-en-nysn-02",
+        "en-zmanim-en-prh-01",
+        "en-zmanim-en-shbvvs-04",
+        "yi-parshas-hashavua-bshlch-01",
+        "yi-parshas-hashavua-chyy-shrh-03-b",
+        "yi-parshas-hashavua-hzynv-02",
+        "yi-parshas-hashavua-ky-sbv-01",
+        "yi-parshas-hashavua-lk-lk-03",
+        "yi-parshas-hashavua-mshptym-02",
+        "yi-parshas-hashavua-mshptym-03",
+        "yi-parshas-hashavua-mshptym-05",
+        "yi-parshas-hashavua-nch-01",
+        "yi-parshas-hashavua-nch-09",
+        "yi-parshas-hashavua-shlch-01",
+        "yi-parshas-hashavua-shlch-kyndr-03",
+        "yi-parshas-hashavua-vychy-02",
+        "yi-parshas-hashavua-vyshb-03",
+        "yi-parshas-hashavua-vyshb-07",
+        "yi-parshas-hashavua-vytz-01",
+        "yi-shonos-09",
+        "yi-shonos-12",
+        "yi-shonos-16",
+        "yi-shonos-22",
+        "yi-zmanim-chnvkh-14",
+        "yi-zmanim-lvl-01",
+        "yi-zmanim-nysn-01",
+        "yi-zmanim-psch-08-b",
+        "yi-zmanim-pvrym-13",
+        "yi-zmanim-rsh-hshnh-02",
+        "yi-zmanim-shbvvs-09",
+        "yi-zmanim-spyrh-03",
+        "yi-zmanim-spyrh-05",
+        "yi-zmanim-svds-lg-bvmr-08-a",
+        "yi-zmanim-svkvs-02",
+        "yi-zmanim-svkvs-07"
+      ]
+    },
+    {
+      "id": "en15",
+      "set": "en",
+      "q": "the Chofetz Chaim",
+      "select": {
+        "person": "chofetz-chaim"
+      },
+      "expected": [
+        "en-parsha-en-bhlvsk-02",
+        "en-parsha-en-vygsh-01",
+        "en-parsha-en-vyr-01",
+        "en-zmanim-en-chnvkh-05",
+        "yi-parshas-hashavua-bmdbr-02",
+        "yi-parshas-hashavua-shlch-kyndr-03",
+        "yi-parshas-hashavua-shmvs-01",
+        "yi-parshas-hashavua-shmvs-02",
+        "yi-parshas-hashavua-shmyny-01",
+        "yi-parshas-hashavua-stzvh-03",
+        "yi-parshas-hashavua-svldvs-02",
+        "yi-shonos-02",
+        "yi-shonos-20",
+        "yi-shonos-27",
+        "yi-zmanim-mhrl-gbvrs-h-01-b",
+        "yi-zmanim-psch-03",
+        "yi-zmanim-psch-04",
+        "yi-zmanim-pvrym-13",
+        "yi-zmanim-spyrh-06",
+        "yi-zmanim-spyrh-07",
+        "yi-zmanim-spyrh-08",
+        "yi-zmanim-svkvs-05"
+      ]
+    },
+    {
+      "id": "en16",
+      "set": "en",
+      "q": "Yaakov blesses his sons before his passing",
+      "select": {
+        "occasion": "vayechi"
+      },
+      "expected": [
+        "en-parsha-en-vychy-01",
+        "en-parsha-en-vychy-02",
+        "en-parsha-en-vychy-03",
+        "yi-parshas-hashavua-vychy-01",
+        "yi-parshas-hashavua-vychy-02",
+        "yi-parshas-hashavua-vychy-03"
+      ]
+    },
+    {
+      "id": "en17",
+      "set": "en",
+      "q": "Yisro and the giving of the Ten Commandments",
+      "select": {
+        "occasion": "yisro"
+      },
+      "expected": [
+        "en-parsha-en-ysrv-01",
+        "en-parsha-en-ysrv-02",
+        "en-parsha-en-ysrv-03",
+        "yi-parshas-hashavua-ysrv-01",
+        "yi-parshas-hashavua-ysrv-02"
+      ]
+    },
+    {
+      "id": "en18",
+      "set": "en",
+      "q": "mourning the destruction of the Temple on Tishah B'Av",
+      "select": {
+        "occasion": "tishah-beav"
+      },
+      "expected": [
+        "en-zmanim-en-t-bb-01",
+        "en-zmanim-en-t-bb-02",
+        "en-zmanim-en-t-bb-03",
+        "en-zmanim-en-t-bb-04",
+        "yi-zmanim-t-bb-01-a",
+        "yi-zmanim-t-bb-01-b",
+        "yi-zmanim-t-bb-02",
+        "yi-zmanim-t-bb-03"
+      ]
+    },
+    {
+      "id": "en19",
+      "set": "en",
+      "q": "rejoicing in the sukkah",
+      "select": {
+        "occasion": "sukkos"
+      },
+      "expected": [
+        "yi-zmanim-svkvs-01",
+        "yi-zmanim-svkvs-02",
+        "yi-zmanim-svkvs-03-a",
+        "yi-zmanim-svkvs-03-b",
+        "yi-zmanim-svkvs-04",
+        "yi-zmanim-svkvs-05",
+        "yi-zmanim-svkvs-06",
+        "yi-zmanim-svkvs-07",
+        "yi-zmanim-svkvs-08"
+      ]
+    },
+    {
+      "id": "en20",
+      "set": "en",
+      "q": "the fifteenth of Av",
+      "select": {
+        "occasion": "tu-beav"
+      },
+      "expected": [
+        "yi-zmanim-svds-tv-bb-05",
+        "yi-zmanim-tv-bb-01",
+        "yi-zmanim-tv-bb-02",
+        "yi-zmanim-tv-bb-03",
+        "yi-zmanim-tv-bb-04"
+      ]
+    },
+    {
+      "id": "yi01",
+      "set": "yi",
+      "q": "דער נס פון פורים",
+      "select": {
+        "occasion": "purim"
+      },
+      "expected": [
+        "en-zmanim-en-pvrym-01",
+        "en-zmanim-en-pvrym-02",
+        "en-zmanim-en-pvrym-04",
+        "en-zmanim-en-pvrym-05",
+        "en-zmanim-en-pvrym-06",
+        "en-zmanim-en-pvrym-07",
+        "en-zmanim-en-pvrym-08",
+        "en-zmanim-en-pvrym-09",
+        "en-zmanim-en-pvrym-10",
+        "en-zmanim-en-pvrym-11",
+        "en-zmanim-en-pvrym-12",
+        "en-zmanim-en-pvrym-13",
+        "en-zmanim-en-pvrym-14",
+        "en-zmanim-en-pvrym-15",
+        "en-zmanim-en-pvrym-16",
+        "en-zmanim-en-pvrym-for-children-03",
+        "yi-zmanim-pvrym-01",
+        "yi-zmanim-pvrym-02",
+        "yi-zmanim-pvrym-03",
+        "yi-zmanim-pvrym-04",
+        "yi-zmanim-pvrym-05",
+        "yi-zmanim-pvrym-06",
+        "yi-zmanim-pvrym-07",
+        "yi-zmanim-pvrym-08",
+        "yi-zmanim-pvrym-09",
+        "yi-zmanim-pvrym-10",
+        "yi-zmanim-pvrym-11",
+        "yi-zmanim-pvrym-12",
+        "yi-zmanim-pvrym-13",
+        "yi-zmanim-pvrym-14",
+        "yi-zmanim-pvrym-15"
+      ]
+    },
+    {
+      "id": "yi02",
+      "set": "yi",
+      "q": "חנוכה ליכט",
+      "select": {
+        "occasion": "chanukah"
+      },
+      "expected": [
+        "en-zmanim-en-chnvkh-02",
+        "en-zmanim-en-chnvkh-03",
+        "en-zmanim-en-chnvkh-04-a",
+        "en-zmanim-en-chnvkh-04-b",
+        "en-zmanim-en-chnvkh-05",
+        "en-zmanim-en-chnvkh-06",
+        "en-zmanim-en-chnvkh-07",
+        "en-zmanim-en-chnvkh-08",
+        "en-zmanim-en-chnvkh-09",
+        "en-zmanim-en-chnvkh-10",
+        "yi-zmanim-chnvkh-01",
+        "yi-zmanim-chnvkh-02",
+        "yi-zmanim-chnvkh-03",
+        "yi-zmanim-chnvkh-04",
+        "yi-zmanim-chnvkh-05",
+        "yi-zmanim-chnvkh-06",
+        "yi-zmanim-chnvkh-07",
+        "yi-zmanim-chnvkh-08",
+        "yi-zmanim-chnvkh-09-a",
+        "yi-zmanim-chnvkh-09-b",
+        "yi-zmanim-chnvkh-10",
+        "yi-zmanim-chnvkh-11",
+        "yi-zmanim-chnvkh-12",
+        "yi-zmanim-chnvkh-13-a",
+        "yi-zmanim-chnvkh-13-b",
+        "yi-zmanim-chnvkh-14",
+        "yi-zmanim-chnvkh-15-a",
+        "yi-zmanim-chnvkh-15-b"
+      ]
+    },
+    {
+      "id": "yi03",
+      "set": "yi",
+      "q": "קבלת התורה שבועות",
+      "select": {
+        "occasion": "shavuos"
+      },
+      "expected": [
+        "en-zmanim-en-shbvvs-01",
+        "en-zmanim-en-shbvvs-02",
+        "en-zmanim-en-shbvvs-03",
+        "en-zmanim-en-shbvvs-04",
+        "en-zmanim-en-shbvvs-05",
+        "en-zmanim-en-shbvvs-07",
+        "en-zmanim-en-shbvvs-09",
+        "en-zmanim-en-shbvvs-children-06",
+        "en-zmanim-en-shbvvs-young-bachurim-08",
+        "yi-zmanim-shbvvs-01",
+        "yi-zmanim-shbvvs-02",
+        "yi-zmanim-shbvvs-03",
+        "yi-zmanim-shbvvs-04",
+        "yi-zmanim-shbvvs-05",
+        "yi-zmanim-shbvvs-06",
+        "yi-zmanim-shbvvs-07",
+        "yi-zmanim-shbvvs-08",
+        "yi-zmanim-shbvvs-09",
+        "yi-zmanim-shbvvs-10"
+      ]
+    },
+    {
+      "id": "yi04",
+      "set": "yi",
+      "q": "יציאת מצרים און דער סדר",
+      "select": {
+        "occasion": "pesach"
+      },
+      "expected": [
+        "en-zmanim-en-psch-01",
+        "en-zmanim-en-psch-02",
+        "en-zmanim-en-psch-03",
+        "en-zmanim-en-psch-04",
+        "en-zmanim-en-psch-05",
+        "en-zmanim-en-psch-06",
+        "en-zmanim-en-psch-07",
+        "yi-zmanim-psch-01",
+        "yi-zmanim-psch-02",
+        "yi-zmanim-psch-03",
+        "yi-zmanim-psch-04",
+        "yi-zmanim-psch-05",
+        "yi-zmanim-psch-06",
+        "yi-zmanim-psch-07-a",
+        "yi-zmanim-psch-07-b",
+        "yi-zmanim-psch-08-a",
+        "yi-zmanim-psch-08-b",
+        "yi-zmanim-psch-09"
+      ]
+    },
+    {
+      "id": "yi05",
+      "set": "yi",
+      "q": "ל\"ג בעומר רבי שמעון בר יוחאי",
+      "select": {
+        "occasion": "lag-baomer"
+      },
+      "expected": [
+        "en-zmanim-en-lg-bvmr-01",
+        "en-zmanim-en-lg-bvmr-02",
+        "en-zmanim-en-lg-bvmr-03",
+        "en-zmanim-en-lg-bvmr-04",
+        "en-zmanim-en-lg-bvmr-05",
+        "yi-zmanim-lg-bvmr-01",
+        "yi-zmanim-lg-bvmr-04",
+        "yi-zmanim-svds-lg-bvmr-02",
+        "yi-zmanim-svds-lg-bvmr-03",
+        "yi-zmanim-svds-lg-bvmr-05",
+        "yi-zmanim-svds-lg-bvmr-06",
+        "yi-zmanim-svds-lg-bvmr-07",
+        "yi-zmanim-svds-lg-bvmr-08-a",
+        "yi-zmanim-svds-lg-bvmr-08-b",
+        "yi-zmanim-svds-lg-bvmr-09",
+        "yi-zmanim-svds-lg-bvmr-10"
+      ]
+    },
+    {
+      "id": "yi06",
+      "set": "yi",
+      "q": "חודש אלול און תשובה",
+      "select": {
+        "occasion": "elul"
+      },
+      "expected": [
+        "en-zmanim-en-lvl-01",
+        "en-zmanim-en-lvl-02",
+        "en-zmanim-en-lvl-03",
+        "en-zmanim-en-lvl-04",
+        "yi-zmanim-lvl-01",
+        "yi-zmanim-lvl-02",
+        "yi-zmanim-lvl-03",
+        "yi-zmanim-lvl-04",
+        "yi-zmanim-lvl-05",
+        "yi-zmanim-lvl-06",
+        "yi-zmanim-lvl-07",
+        "yi-zmanim-lvl-08"
+      ]
+    },
+    {
+      "id": "yi07",
+      "set": "yi",
+      "q": "ספירת העומר",
+      "select": {
+        "occasion": "sefirah"
+      },
+      "expected": [
+        "en-zmanim-en-spyrh-01",
+        "en-zmanim-en-spyrh-02",
+        "yi-zmanim-spyrh-01",
+        "yi-zmanim-spyrh-02",
+        "yi-zmanim-spyrh-03",
+        "yi-zmanim-spyrh-04",
+        "yi-zmanim-spyrh-05",
+        "yi-zmanim-spyrh-06",
+        "yi-zmanim-spyrh-07",
+        "yi-zmanim-spyrh-08",
+        "yi-zmanim-spyrh-09"
+      ]
+    },
+    {
+      "id": "yi08",
+      "set": "yi",
+      "q": "דער דין פון ראש השנה",
+      "select": {
+        "occasion": "rosh-hashanah"
+      },
+      "expected": [
+        "en-zmanim-en-rsh-hshnh-01",
+        "en-zmanim-en-rsh-hshnh-02",
+        "en-zmanim-en-rsh-hshnh-03",
+        "en-zmanim-en-rsh-hshnh-04",
+        "yi-zmanim-rsh-hshnh-01",
+        "yi-zmanim-rsh-hshnh-02",
+        "yi-zmanim-rsh-hshnh-03",
+        "yi-zmanim-rsh-hshnh-04",
+        "yi-zmanim-rsh-hshnh-05",
+        "yi-zmanim-rsh-hshnh-06-a",
+        "yi-zmanim-rsh-hshnh-06-b"
+      ]
+    },
+    {
+      "id": "yi09",
+      "set": "yi",
+      "q": "כפרה אום יום כיפור",
+      "select": {
+        "occasion": "yom-kippur"
+      },
+      "expected": [
+        "en-zmanim-en-yvk-01",
+        "en-zmanim-en-yvk-02",
+        "en-zmanim-en-yvk-03",
+        "en-zmanim-en-yvk-04",
+        "en-zmanim-en-yvk-05",
+        "en-zmanim-en-yvk-06",
+        "yi-zmanim-yvm-hkypvrym-01",
+        "yi-zmanim-yvm-hkypvrym-02",
+        "yi-zmanim-yvm-hkypvrym-03",
+        "yi-zmanim-yvm-hkypvrym-04"
+      ]
+    },
+    {
+      "id": "yi10",
+      "set": "yi",
+      "q": "נח און דער מבול",
+      "select": {
+        "occasion": "noach"
+      },
+      "expected": [
+        "en-parsha-en-nch-01",
+        "en-parsha-en-nch-02",
+        "yi-parshas-hashavua-nch-01",
+        "yi-parshas-hashavua-nch-02",
+        "yi-parshas-hashavua-nch-03",
+        "yi-parshas-hashavua-nch-04",
+        "yi-parshas-hashavua-nch-05",
+        "yi-parshas-hashavua-nch-06",
+        "yi-parshas-hashavua-nch-07",
+        "yi-parshas-hashavua-nch-08",
+        "yi-parshas-hashavua-nch-09"
+      ]
+    },
+    {
+      "id": "yi11",
+      "set": "yi",
+      "q": "יעקב און עשו און די ברכות",
+      "select": {
+        "occasion": "toldos"
+      },
+      "expected": [
+        "en-parsha-en-svldvs-01",
+        "en-parsha-en-svldvs-02",
+        "en-parsha-en-svldvs-03",
+        "en-parsha-en-svldvs-04",
+        "yi-parshas-hashavua-svldvs-01",
+        "yi-parshas-hashavua-svldvs-02",
+        "yi-parshas-hashavua-svldvs-03",
+        "yi-parshas-hashavua-svldvs-04",
+        "yi-parshas-hashavua-svldvs-05",
+        "yi-parshas-hashavua-svldvs-06",
+        "yi-parshas-hashavua-svldvs-07"
+      ]
+    },
+    {
+      "id": "yi12",
+      "set": "yi",
+      "q": "מכירת יוסף",
+      "select": {
+        "occasion": "vayeishev"
+      },
+      "expected": [
+        "en-parsha-en-vyshb-01",
+        "en-parsha-en-vyshb-02",
+        "yi-parshas-hashavua-vyshb-01",
+        "yi-parshas-hashavua-vyshb-02",
+        "yi-parshas-hashavua-vyshb-03",
+        "yi-parshas-hashavua-vyshb-04",
+        "yi-parshas-hashavua-vyshb-05",
+        "yi-parshas-hashavua-vyshb-06",
+        "yi-parshas-hashavua-vyshb-07",
+        "yi-parshas-hashavua-vyshb-08"
+      ]
+    },
+    {
+      "id": "yi13",
+      "set": "yi",
+      "q": "קריעת ים סוף און די שירה",
+      "select": {
+        "occasion": "beshalach"
+      },
+      "expected": [
+        "en-parsha-en-bshlch-01",
+        "en-parsha-en-bshlch-02",
+        "en-parsha-en-bshlch-03",
+        "en-parsha-en-bshlch-04",
+        "yi-parshas-hashavua-bshlch-01",
+        "yi-parshas-hashavua-bshlch-02",
+        "yi-parshas-hashavua-bshlch-03",
+        "yi-parshas-hashavua-bshlch-04",
+        "yi-parshas-hashavua-bshlch-05",
+        "yi-parshas-hashavua-bshlch-06",
+        "yi-parshas-hashavua-bshlch-07",
+        "yi-parshas-hashavua-bshlch-08",
+        "yi-parshas-hashavua-bshlch-09"
+      ]
+    },
+    {
+      "id": "yi14",
+      "set": "yi",
+      "q": "מעשיות פונעם בעל שם טוב",
+      "select": {
+        "person": "baal-shem-tov"
+      },
+      "expected": [
+        "en-parsha-en-bhlvsk-02",
+        "en-parsha-en-bshlch-03",
+        "en-parsha-en-mshptym-01",
+        "en-parsha-en-nch-01",
+        "en-parsha-en-pkvdy-01",
+        "en-zmanim-en-nysn-02",
+        "en-zmanim-en-prh-01",
+        "en-zmanim-en-shbvvs-04",
+        "yi-parshas-hashavua-bshlch-01",
+        "yi-parshas-hashavua-chyy-shrh-03-b",
+        "yi-parshas-hashavua-hzynv-02",
+        "yi-parshas-hashavua-ky-sbv-01",
+        "yi-parshas-hashavua-lk-lk-03",
+        "yi-parshas-hashavua-mshptym-02",
+        "yi-parshas-hashavua-mshptym-03",
+        "yi-parshas-hashavua-mshptym-05",
+        "yi-parshas-hashavua-nch-01",
+        "yi-parshas-hashavua-nch-09",
+        "yi-parshas-hashavua-shlch-01",
+        "yi-parshas-hashavua-shlch-kyndr-03",
+        "yi-parshas-hashavua-vychy-02",
+        "yi-parshas-hashavua-vyshb-03",
+        "yi-parshas-hashavua-vyshb-07",
+        "yi-parshas-hashavua-vytz-01",
+        "yi-shonos-09",
+        "yi-shonos-12",
+        "yi-shonos-16",
+        "yi-shonos-22",
+        "yi-zmanim-chnvkh-14",
+        "yi-zmanim-lvl-01",
+        "yi-zmanim-nysn-01",
+        "yi-zmanim-psch-08-b",
+        "yi-zmanim-pvrym-13",
+        "yi-zmanim-rsh-hshnh-02",
+        "yi-zmanim-shbvvs-09",
+        "yi-zmanim-spyrh-03",
+        "yi-zmanim-spyrh-05",
+        "yi-zmanim-svds-lg-bvmr-08-a",
+        "yi-zmanim-svkvs-02",
+        "yi-zmanim-svkvs-07"
+      ]
+    },
+    {
+      "id": "yi15",
+      "set": "yi",
+      "q": "דער חוזה פון לובלין",
+      "select": {
+        "person": "chozeh-of-lublin"
+      },
+      "expected": [
+        "en-parsha-en-shmvs-01",
+        "en-parsha-en-szry-mtzvr-01",
+        "en-zmanim-en-psch-05",
+        "yi-parshas-hashavua-mshptym-03",
+        "yi-parshas-hashavua-stzvh-01",
+        "yi-parshas-hashavua-svldvs-01",
+        "yi-parshas-hashavua-svldvs-07",
+        "yi-parshas-hashavua-vyshb-06",
+        "yi-parshas-hashavua-vyshb-07",
+        "yi-shonos-14",
+        "yi-shonos-23",
+        "yi-zmanim-chnvkh-03",
+        "yi-zmanim-chnvkh-05",
+        "yi-zmanim-chnvkh-09-b",
+        "yi-zmanim-hvshn-rbh-03",
+        "yi-zmanim-nysn-01",
+        "yi-zmanim-nysn-03",
+        "yi-zmanim-nysn-06",
+        "yi-zmanim-nysn-07",
+        "yi-zmanim-psch-01",
+        "yi-zmanim-svds-lg-bvmr-08-a",
+        "yi-zmanim-svds-zs-chnvkh-07",
+        "yi-zmanim-svds-zs-chnvkh-17"
+      ]
+    },
+    {
+      "id": "yi16",
+      "set": "yi",
+      "q": "יעקב בענטשט די שבטים",
+      "select": {
+        "occasion": "vayechi"
+      },
+      "expected": [
+        "en-parsha-en-vychy-01",
+        "en-parsha-en-vychy-02",
+        "en-parsha-en-vychy-03",
+        "yi-parshas-hashavua-vychy-01",
+        "yi-parshas-hashavua-vychy-02",
+        "yi-parshas-hashavua-vychy-03"
+      ]
+    },
+    {
+      "id": "yi17",
+      "set": "yi",
+      "q": "יתרו און מתן תורה",
+      "select": {
+        "occasion": "yisro"
+      },
+      "expected": [
+        "en-parsha-en-ysrv-01",
+        "en-parsha-en-ysrv-02",
+        "en-parsha-en-ysrv-03",
+        "yi-parshas-hashavua-ysrv-01",
+        "yi-parshas-hashavua-ysrv-02"
+      ]
+    },
+    {
+      "id": "yi18",
+      "set": "yi",
+      "q": "תשעה באב און דער חורבן",
+      "select": {
+        "occasion": "tishah-beav"
+      },
+      "expected": [
+        "en-zmanim-en-t-bb-01",
+        "en-zmanim-en-t-bb-02",
+        "en-zmanim-en-t-bb-03",
+        "en-zmanim-en-t-bb-04",
+        "yi-zmanim-t-bb-01-a",
+        "yi-zmanim-t-bb-01-b",
+        "yi-zmanim-t-bb-02",
+        "yi-zmanim-t-bb-03"
+      ]
+    },
+    {
+      "id": "yi19",
+      "set": "yi",
+      "q": "שמחה אין דער סוכה",
+      "select": {
+        "occasion": "sukkos"
+      },
+      "expected": [
+        "yi-zmanim-svkvs-01",
+        "yi-zmanim-svkvs-02",
+        "yi-zmanim-svkvs-03-a",
+        "yi-zmanim-svkvs-03-b",
+        "yi-zmanim-svkvs-04",
+        "yi-zmanim-svkvs-05",
+        "yi-zmanim-svkvs-06",
+        "yi-zmanim-svkvs-07",
+        "yi-zmanim-svkvs-08"
+      ]
+    },
+    {
+      "id": "yi20",
+      "set": "yi",
+      "q": "פרשת שקלים",
+      "select": {
+        "occasion": "parshas-shekalim"
+      },
+      "expected": [
+        "en-zmanim-en-shklym-01",
+        "en-zmanim-en-shklym-02",
+        "yi-zmanim-shklym-01",
+        "yi-zmanim-shklym-02"
+      ]
+    },
+    {
+      "id": "x01",
+      "set": "cross",
+      "q": "zos chanukah",
+      "select": {
+        "occasion": "zos-chanukah",
+        "audio": "yi"
+      },
+      "expected": [
+        "yi-zmanim-svds-zs-chnvkh-02-a",
+        "yi-zmanim-svds-zs-chnvkh-02-b",
+        "yi-zmanim-svds-zs-chnvkh-03",
+        "yi-zmanim-svds-zs-chnvkh-04",
+        "yi-zmanim-svds-zs-chnvkh-05",
+        "yi-zmanim-svds-zs-chnvkh-06",
+        "yi-zmanim-svds-zs-chnvkh-07",
+        "yi-zmanim-svds-zs-chnvkh-08",
+        "yi-zmanim-svds-zs-chnvkh-09",
+        "yi-zmanim-svds-zs-chnvkh-10",
+        "yi-zmanim-svds-zs-chnvkh-11",
+        "yi-zmanim-svds-zs-chnvkh-12",
+        "yi-zmanim-svds-zs-chnvkh-15",
+        "yi-zmanim-svds-zs-chnvkh-16",
+        "yi-zmanim-svds-zs-chnvkh-17",
+        "yi-zmanim-zs-chnvkh-01",
+        "yi-zmanim-zs-chnvkh-13",
+        "yi-zmanim-zs-chnvkh-14"
+      ]
+    },
+    {
+      "id": "x02",
+      "set": "cross",
+      "q": "purim katan",
+      "select": {
+        "occasion": "purim-katan",
+        "audio": "yi"
+      },
+      "expected": [
+        "yi-zmanim-pvrym-ktn-08",
+        "yi-zmanim-pvrym-ktn-09",
+        "yi-zmanim-svds-pvrym-ktn-01",
+        "yi-zmanim-svds-pvrym-ktn-02",
+        "yi-zmanim-svds-pvrym-ktn-03",
+        "yi-zmanim-svds-pvrym-ktn-04",
+        "yi-zmanim-svds-pvrym-ktn-05",
+        "yi-zmanim-svds-pvrym-ktn-06",
+        "yi-zmanim-svds-pvrym-ktn-07-a",
+        "yi-zmanim-svds-pvrym-ktn-07-b",
+        "yi-zmanim-svds-pvrym-ktn-07-c"
+      ]
+    },
+    {
+      "id": "x03",
+      "set": "cross",
+      "q": "shushan purim",
+      "select": {
+        "occasion": "shushan-purim",
+        "audio": "yi"
+      },
+      "expected": [
+        "yi-zmanim-svds-shvshn-pvrym-01",
+        "yi-zmanim-svds-shvshn-pvrym-02",
+        "yi-zmanim-svds-shvshn-pvrym-03",
+        "yi-zmanim-svds-shvshn-pvrym-04-a",
+        "yi-zmanim-svds-shvshn-pvrym-04-b",
+        "yi-zmanim-svds-shvshn-pvrym-05",
+        "yi-zmanim-svds-shvshn-pvrym-06",
+        "yi-zmanim-svds-shvshn-pvrym-07-a",
+        "yi-zmanim-svds-shvshn-pvrym-07-b",
+        "yi-zmanim-svds-shvshn-pvrym-08",
+        "yi-zmanim-svds-shvshn-pvrym-09"
+      ]
+    },
+    {
+      "id": "x04",
+      "set": "cross",
+      "q": "parshas Chayei Sarah",
+      "select": {
+        "occasion": "chayei-sarah",
+        "audio": "yi"
+      },
+      "expected": [
+        "yi-parshas-hashavua-chyy-shrh-01",
+        "yi-parshas-hashavua-chyy-shrh-02",
+        "yi-parshas-hashavua-chyy-shrh-03-a",
+        "yi-parshas-hashavua-chyy-shrh-03-b",
+        "yi-parshas-hashavua-chyy-shrh-04",
+        "yi-parshas-hashavua-chyy-shrh-05",
+        "yi-parshas-hashavua-chyy-shrh-06"
+      ]
+    },
+    {
+      "id": "x05",
+      "set": "cross",
+      "q": "lech lecha, Avraham leaves his land",
+      "select": {
+        "occasion": "lech-lecha",
+        "audio": "yi"
+      },
+      "expected": [
+        "yi-parshas-hashavua-lk-lk-01",
+        "yi-parshas-hashavua-lk-lk-02",
+        "yi-parshas-hashavua-lk-lk-03",
+        "yi-parshas-hashavua-lk-lk-04",
+        "yi-parshas-hashavua-lk-lk-05",
+        "yi-parshas-hashavua-lk-lk-06",
+        "yi-parshas-hashavua-lk-lk-07",
+        "yi-parshas-hashavua-lk-lk-08"
+      ]
+    },
+    {
+      "id": "x06",
+      "set": "cross",
+      "q": "vayeira and the akeidah",
+      "select": {
+        "occasion": "vayeira",
+        "audio": "yi"
+      },
+      "expected": [
+        "yi-parshas-hashavua-vyr-01",
+        "yi-parshas-hashavua-vyr-02",
+        "yi-parshas-hashavua-vyr-03",
+        "yi-parshas-hashavua-vyr-04",
+        "yi-parshas-hashavua-vyr-05",
+        "yi-parshas-hashavua-vyr-06"
+      ]
+    },
+    {
+      "id": "x07",
+      "set": "cross",
+      "q": "hoshana rabbah",
+      "select": {
+        "occasion": "hoshana-rabbah",
+        "audio": "yi"
+      },
+      "expected": [
+        "yi-zmanim-hvshn-rbh-01-a",
+        "yi-zmanim-hvshn-rbh-01-b",
+        "yi-zmanim-hvshn-rbh-01-c",
+        "yi-zmanim-hvshn-rbh-02-a",
+        "yi-zmanim-hvshn-rbh-02-b",
+        "yi-zmanim-hvshn-rbh-02-c",
+        "yi-zmanim-hvshn-rbh-03"
+      ]
+    },
+    {
+      "id": "x08",
+      "set": "cross",
+      "q": "behar bechukosai",
+      "select": {
+        "occasion": "behar-bechukosai",
+        "audio": "yi"
+      },
+      "expected": [
+        "yi-parshas-hashavua-bhr-bchkvsy-01",
+        "yi-parshas-hashavua-bhr-bchkvsy-02",
+        "yi-parshas-hashavua-bhr-bchkvsy-03",
+        "yi-parshas-hashavua-bhr-bchkvsy-04",
+        "yi-parshas-hashavua-bhr-bchkvsy-05",
+        "yi-parshas-hashavua-bhr-bchkvsy-06"
+      ]
+    },
+    {
+      "id": "x09",
+      "set": "cross",
+      "q": "the Satmar Rav",
+      "select": {
+        "person": "satmar-rav",
+        "audio": "yi"
+      },
+      "expected": [
+        "yi-parshas-hashavua-bhr-bchkvsy-06",
+        "yi-parshas-hashavua-bmdbr-02",
+        "yi-parshas-hashavua-lk-lk-04",
+        "yi-shonos-07",
+        "yi-shonos-14",
+        "yi-zmanim-byn-hmtzrym-02",
+        "yi-zmanim-chnvkh-07",
+        "yi-zmanim-lg-bvmr-04",
+        "yi-zmanim-psch-02",
+        "yi-zmanim-pvrym-07",
+        "yi-zmanim-pvrym-08",
+        "yi-zmanim-pvrym-10",
+        "yi-zmanim-shbvvs-10",
+        "yi-zmanim-shvbbym-01",
+        "yi-zmanim-spyrh-08",
+        "yi-zmanim-svds-lg-bvmr-02",
+        "yi-zmanim-svds-shvshn-pvrym-05",
+        "yi-zmanim-yvm-hkypvrym-01",
+        "yi-zmanim-yvm-hkypvrym-03"
+      ]
+    },
+    {
+      "id": "x10",
+      "set": "cross",
+      "q": "the Sanzer Rav",
+      "select": {
+        "person": "sanzer-rav",
+        "audio": "yi"
+      },
+      "expected": [
+        "yi-parshas-hashavua-bmdbr-01",
+        "yi-parshas-hashavua-lk-lk-05",
+        "yi-parshas-hashavua-svldvs-06",
+        "yi-parshas-hashavua-szry-mtzvr-02",
+        "yi-parshas-hashavua-vyshlch-01",
+        "yi-shonos-05",
+        "yi-shonos-07",
+        "yi-zmanim-nysn-02",
+        "yi-zmanim-psch-03",
+        "yi-zmanim-pvrym-02",
+        "yi-zmanim-pvrym-13",
+        "yi-zmanim-shbvvs-06",
+        "yi-zmanim-shbvvs-09",
+        "yi-zmanim-shbyy-shl-psch-02",
+        "yi-zmanim-spyrh-02",
+        "yi-zmanim-spyrh-07",
+        "yi-zmanim-spyrh-08"
+      ]
+    },
+    {
+      "id": "x11",
+      "set": "cross",
+      "q": "the Maggid of Mezritch",
+      "select": {
+        "person": "maggid-of-mezritch",
+        "audio": "yi"
+      },
+      "expected": [
+        "yi-parshas-hashavua-bshlch-01",
+        "yi-parshas-hashavua-chyy-shrh-04",
+        "yi-parshas-hashavua-lk-lk-03",
+        "yi-parshas-hashavua-lk-lk-04",
+        "yi-parshas-hashavua-mshptym-02",
+        "yi-parshas-hashavua-mshptym-03",
+        "yi-parshas-hashavua-vychy-01",
+        "yi-parshas-hashavua-vyshb-03",
+        "yi-shonos-12",
+        "yi-shonos-15",
+        "yi-zmanim-chnvkh-02",
+        "yi-zmanim-chnvkh-14",
+        "yi-zmanim-chvl-hmvd-psch-01",
+        "yi-zmanim-svds-lg-bvmr-06",
+        "yi-zmanim-svds-shvshn-pvrym-07-a",
+        "yi-zmanim-svds-zs-chnvkh-12"
+      ]
+    },
+    {
+      "id": "x12",
+      "set": "cross",
+      "q": "Rebbe Reb Elimelech of Lizhensk",
+      "select": {
+        "person": "rebbe-reb-elimelech",
+        "audio": "yi"
+      },
+      "expected": [
+        "yi-parshas-hashavua-mshptym-02",
+        "yi-parshas-hashavua-mshptym-03",
+        "yi-parshas-hashavua-nch-06",
+        "yi-parshas-hashavua-tzv-01",
+        "yi-parshas-hashavua-vr-02",
+        "yi-parshas-hashavua-vr-04",
+        "yi-parshas-hashavua-vschnn-01",
+        "yi-parshas-hashavua-vychy-02",
+        "yi-zmanim-lvl-07",
+        "yi-zmanim-svds-lg-bvmr-08-a",
+        "yi-zmanim-t-bb-01-b",
+        "yi-zmanim-tv-bb-01"
+      ]
+    },
+    {
+      "id": "x13",
+      "set": "cross",
+      "q": "Chiddushei HaRim of Ger",
+      "select": {
+        "person": "chiddushei-harim",
+        "audio": "yi"
+      },
+      "expected": [
+        "yi-parshas-hashavua-bhr-bchkvsy-03",
+        "yi-parshas-hashavua-mshptym-02",
+        "yi-parshas-hashavua-shmvs-03",
+        "yi-parshas-hashavua-svldvs-04",
+        "yi-parshas-hashavua-svldvs-06",
+        "yi-shonos-07",
+        "yi-zmanim-chnvkh-01",
+        "yi-zmanim-chnvkh-09-b",
+        "yi-zmanim-lvl-05"
+      ]
+    },
+    {
+      "id": "x14",
+      "set": "cross",
+      "q": "the Kotzker Rebbe",
+      "select": {
+        "person": "kotzker-rebbe",
+        "audio": "yi"
+      },
+      "expected": [
+        "yi-parshas-hashavua-bshlch-01",
+        "yi-parshas-hashavua-mshptym-03",
+        "yi-parshas-hashavua-stzvh-03",
+        "yi-parshas-hashavua-vychy-03",
+        "yi-shonos-24",
+        "yi-zmanim-pvrym-02",
+        "yi-zmanim-pvrym-15",
+        "yi-zmanim-svds-zs-chnvkh-05",
+        "yi-zmanim-tv-bb-02"
+      ]
+    },
+    {
+      "id": "x15",
+      "set": "cross",
+      "q": "chodesh Nisan, the month of redemption",
+      "select": {
+        "occasion": "nisan",
+        "audio": "yi"
+      },
+      "expected": [
+        "yi-zmanim-nysn-01",
+        "yi-zmanim-nysn-02",
+        "yi-zmanim-nysn-03",
+        "yi-zmanim-nysn-04",
+        "yi-zmanim-nysn-05",
+        "yi-zmanim-nysn-06",
+        "yi-zmanim-nysn-07",
+        "yi-zmanim-nysn-08"
+      ]
+    },
+    {
+      "id": "x16",
+      "set": "cross",
+      "q": "the Chasam Sofer",
+      "select": {
+        "person": "chasam-sofer",
+        "audio": "yi"
+      },
+      "expected": [
+        "yi-parshas-hashavua-brshys-02",
+        "yi-parshas-hashavua-bshlch-01",
+        "yi-parshas-hashavua-bshlch-03",
+        "yi-parshas-hashavua-nch-09",
+        "yi-parshas-hashavua-pnchs-02",
+        "yi-parshas-hashavua-shlch-01",
+        "yi-parshas-hashavua-stzvh-01",
+        "yi-parshas-hashavua-vr-02",
+        "yi-parshas-hashavua-vyr-04",
+        "yi-shonos-02",
+        "yi-shonos-07",
+        "yi-zmanim-lvl-02",
+        "yi-zmanim-nysn-07",
+        "yi-zmanim-psch-01",
+        "yi-zmanim-rsh-hshnh-02",
+        "yi-zmanim-shbvvs-08",
+        "yi-zmanim-spyrh-07",
+        "yi-zmanim-spyrh-08",
+        "yi-zmanim-svds-lg-bvmr-08-b",
+        "yi-zmanim-zkvr-02"
+      ]
+    },
+    {
+      "id": "x17",
+      "set": "cross",
+      "q": "parshas Mishpatim",
+      "select": {
+        "occasion": "mishpatim",
+        "audio": "yi"
+      },
+      "expected": [
+        "yi-parshas-hashavua-mshptym-01",
+        "yi-parshas-hashavua-mshptym-02",
+        "yi-parshas-hashavua-mshptym-03",
+        "yi-parshas-hashavua-mshptym-04",
+        "yi-parshas-hashavua-mshptym-05"
+      ]
+    },
+    {
+      "id": "x18",
+      "set": "cross",
+      "q": "דער סדר פון פסח",
+      "select": {
+        "occasion": "pesach",
+        "audio": "en"
+      },
+      "expected": [
+        "en-zmanim-en-psch-01",
+        "en-zmanim-en-psch-02",
+        "en-zmanim-en-psch-03",
+        "en-zmanim-en-psch-04",
+        "en-zmanim-en-psch-05",
+        "en-zmanim-en-psch-06",
+        "en-zmanim-en-psch-07"
+      ]
+    },
+    {
+      "id": "x19",
+      "set": "cross",
+      "q": "חנוכה ליכט",
+      "select": {
+        "occasion": "chanukah",
+        "audio": "en"
+      },
+      "expected": [
+        "en-zmanim-en-chnvkh-02",
+        "en-zmanim-en-chnvkh-03",
+        "en-zmanim-en-chnvkh-04-a",
+        "en-zmanim-en-chnvkh-04-b",
+        "en-zmanim-en-chnvkh-05",
+        "en-zmanim-en-chnvkh-06",
+        "en-zmanim-en-chnvkh-07",
+        "en-zmanim-en-chnvkh-08",
+        "en-zmanim-en-chnvkh-09",
+        "en-zmanim-en-chnvkh-10"
+      ]
+    },
+    {
+      "id": "x20",
+      "set": "cross",
+      "q": "ראש השנה",
+      "select": {
+        "occasion": "rosh-hashanah",
+        "audio": "en"
+      },
+      "expected": [
+        "en-zmanim-en-rsh-hshnh-01",
+        "en-zmanim-en-rsh-hshnh-02",
+        "en-zmanim-en-rsh-hshnh-03",
+        "en-zmanim-en-rsh-hshnh-04"
+      ]
+    }
+  ]
+}

@@ -11,18 +11,27 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "typecheck": "tsc --noEmit -p tsconfig.json",
-    "test": "vitest run",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p sync/tsconfig.json",
+    "test": "vitest run && vitest run --config sync/vitest.config.ts",
     "check:deploy": "wrangler deploy --dry-run --env= --outdir .wrangler/dry-run && wrangler deploy --dry-run --env staging --outdir .wrangler/dry-run-staging",
-    "migrations:local": "rm -rf .wrangler/migrations-check && wrangler d1 migrations apply emunas-search --local --env= --persist-to .wrangler/migrations-check && wrangler d1 migrations apply emunas-feedback --local --env= --persist-to .wrangler/migrations-check"
+    "migrations:local": "rm -rf .wrangler/migrations-check && wrangler d1 migrations apply emunas-search --local --env= --persist-to .wrangler/migrations-check && wrangler d1 migrations apply emunas-feedback --local --env= --persist-to .wrangler/migrations-check",
+    "test:sync": "vitest run --config sync/vitest.config.ts",
+    "search:sync": "tsx sync/src/cli.ts --remote",
+    "search:sync:local": "tsx sync/src/cli.ts --migrate"
   },
   "dependencies": {
-    "@emunas/normalize": "0.0.0"
+    "@emunas/corpus-guard": "0.0.0",
+    "@emunas/normalize": "0.0.0",
+    "@emunas/search-core": "0.0.0",
+    "miniflare": "5.20261023.3-beta",
+    "tsx": "4.23.15"
   },
   "devDependencies": {
     "@cloudflare/vitest-plugin": "1.4.11",
     "@cloudflare/workers-types": "5.20261031.1",
     "@emunas/config": "0.0.0",
+    "@emunas/corpus": "0.0.0",
+    "@types/node": "26.6.6",
     "vitest": "5.0.5",
     "wrangler": "4.156.0"
   }

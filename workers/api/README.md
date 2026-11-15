@@ -34,7 +34,7 @@ Snippets are plain text cut from `moment_text` (generated display text) with hig
 client renders `<mark>`. No HTML is ever returned. A cursor from another `corpus_rev` gets 409
 `stale_cursor` (restart the search).
 
-## What the index sync (W3.10) must write
+## What the index sync (W3.10, `sync/`, see `sync/README.md`) writes
 
 Schema: `migrations/search/0001_init.sql`.
 
@@ -61,9 +61,10 @@ Only generated and catalog text may be written to any of these (integration-plan
 
 ## Query normalization
 
-`src/query.ts` is a local shim for `@emunas/search-core`'s `normalizeQuery` (W2.2 had not landed):
-`fold` + transliteration variants from `@emunas/normalize`. Swap it for the search-core import when
-that package is merged.
+`src/query.ts` adapts `normalizeQuery` from `@emunas/search-core` (W3.10): its `terms` are the
+tokens that must all match, every further search-core `variant` (alias expansion) and the
+pre-variant spelling are alternative token sequences. The index side uses search-core's
+`momentSearchText` (same `fold`); see `sync/README.md`.
 
 ## Commands
 
@@ -72,6 +73,9 @@ npm test -w @emunas/api              # vitest in workerd (@cloudflare/vitest-plu
 npm run typecheck -w @emunas/api
 npm run check:deploy -w @emunas/api  # wrangler deploy --dry-run, production and staging
 npm run migrations:local -w @emunas/api   # apply both migration sets to a fresh local D1 via wrangler
+npm run test:sync -w @emunas/api          # index sync tests (Node, local D1 via Miniflare)
+npm run search:sync:local -w @emunas/api  # sync .corpus/search into the local D1 `wrangler dev` reads
+npm run search:sync -w @emunas/api -- --env staging|production   # CI: D1 + Workers AI + Vectorize
 ```
 
 Secrets per environment: `TURNSTILE_SECRET`, `FEEDBACK_HASH_SALT`. Vars: `ACCESS_TEAM_DOMAIN`,

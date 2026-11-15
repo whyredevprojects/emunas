@@ -1,0 +1,581 @@
+{
+  "generatedAt": "2026-11-15T09:52:15.144Z",
+  "real": false,
+  "moments": 36595,
+  "chosen": null,
+  "results": [
+    {
+      "model": "fake/hashing-trigram-1024",
+      "dims": 1024,
+      "units": 33942,
+      "summary": {
+        "en": {
+          "queries": 20,
+          "recall10": 0.4365,
+          "mrr": 0.7576
+        },
+        "yi": {
+          "queries": 20,
+          "recall10": 0.4121,
+          "mrr": 0.6381
+        },
+        "cross": {
+          "queries": 20,
+          "recall10": 0.4267,
+          "mrr": 0.5728
+        },
+        "all": {
+          "queries": 60,
+          "recall10": 0.4251,
+          "mrr": 0.6562
+        }
+      },
+      "queries": [
+        {
+          "id": "en01",
+          "set": "en",
+          "q": "the hidden miracle of Purim",
+          "expected": 31,
+          "recall10": 0.4,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "en02",
+          "set": "en",
+          "q": "lighting the Chanukah candles",
+          "expected": 28,
+          "recall10": 0.6,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "en03",
+          "set": "en",
+          "q": "receiving the Torah on Shavuos",
+          "expected": 19,
+          "recall10": 0.7,
+          "rr": 0.5,
+          "firstHit": 2
+        },
+        {
+          "id": "en04",
+          "set": "en",
+          "q": "the Pesach seder and leaving Egypt",
+          "expected": 18,
+          "recall10": 0.2,
+          "rr": 0.1429,
+          "firstHit": 7
+        },
+        {
+          "id": "en05",
+          "set": "en",
+          "q": "Lag BaOmer and Rabbi Shimon bar Yochai",
+          "expected": 16,
+          "recall10": 0.7,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "en06",
+          "set": "en",
+          "q": "the month of Elul and teshuvah",
+          "expected": 12,
+          "recall10": 0.1,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "en07",
+          "set": "en",
+          "q": "counting the days of the Omer",
+          "expected": 11,
+          "recall10": 0,
+          "rr": 0.0333,
+          "firstHit": 30
+        },
+        {
+          "id": "en08",
+          "set": "en",
+          "q": "the judgment of Rosh Hashanah",
+          "expected": 11,
+          "recall10": 0.4,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "en09",
+          "set": "en",
+          "q": "atonement on Yom Kippur",
+          "expected": 10,
+          "recall10": 0.5,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "en10",
+          "set": "en",
+          "q": "Noah, the ark and the flood",
+          "expected": 11,
+          "recall10": 0.6,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "en11",
+          "set": "en",
+          "q": "Yaakov takes the blessings from Esav",
+          "expected": 11,
+          "recall10": 0.2,
+          "rr": 0.5,
+          "firstHit": 2
+        },
+        {
+          "id": "en12",
+          "set": "en",
+          "q": "Yosef sold by his brothers",
+          "expected": 10,
+          "recall10": 0.1,
+          "rr": 0.1429,
+          "firstHit": 7
+        },
+        {
+          "id": "en13",
+          "set": "en",
+          "q": "the splitting of the sea and the song",
+          "expected": 13,
+          "recall10": 0.4,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "en14",
+          "set": "en",
+          "q": "stories of the Baal Shem Tov",
+          "expected": 40,
+          "recall10": 0.6,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "en15",
+          "set": "en",
+          "q": "the Chofetz Chaim",
+          "expected": 22,
+          "recall10": 1,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "en16",
+          "set": "en",
+          "q": "Yaakov blesses his sons before his passing",
+          "expected": 6,
+          "recall10": 0.5,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "en17",
+          "set": "en",
+          "q": "Yisro and the giving of the Ten Commandments",
+          "expected": 5,
+          "recall10": 0.2,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "en18",
+          "set": "en",
+          "q": "mourning the destruction of the Temple on Tishah B'Av",
+          "expected": 8,
+          "recall10": 0.375,
+          "rr": 0.3333,
+          "firstHit": 3
+        },
+        {
+          "id": "en19",
+          "set": "en",
+          "q": "rejoicing in the sukkah",
+          "expected": 9,
+          "recall10": 0.5556,
+          "rr": 0.5,
+          "firstHit": 2
+        },
+        {
+          "id": "en20",
+          "set": "en",
+          "q": "the fifteenth of Av",
+          "expected": 5,
+          "recall10": 0.6,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "yi01",
+          "set": "yi",
+          "q": "דער נס פון פורים",
+          "expected": 31,
+          "recall10": 0.6,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "yi02",
+          "set": "yi",
+          "q": "חנוכה ליכט",
+          "expected": 28,
+          "recall10": 0.5,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "yi03",
+          "set": "yi",
+          "q": "קבלת התורה שבועות",
+          "expected": 19,
+          "recall10": 0.4,
+          "rr": 0.3333,
+          "firstHit": 3
+        },
+        {
+          "id": "yi04",
+          "set": "yi",
+          "q": "יציאת מצרים און דער סדר",
+          "expected": 18,
+          "recall10": 0.2,
+          "rr": 0.2,
+          "firstHit": 5
+        },
+        {
+          "id": "yi05",
+          "set": "yi",
+          "q": "ל\"ג בעומר רבי שמעון בר יוחאי",
+          "expected": 16,
+          "recall10": 0.7,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "yi06",
+          "set": "yi",
+          "q": "חודש אלול און תשובה",
+          "expected": 12,
+          "recall10": 0.1,
+          "rr": 0.25,
+          "firstHit": 4
+        },
+        {
+          "id": "yi07",
+          "set": "yi",
+          "q": "ספירת העומר",
+          "expected": 11,
+          "recall10": 0.1,
+          "rr": 0.1111,
+          "firstHit": 9
+        },
+        {
+          "id": "yi08",
+          "set": "yi",
+          "q": "דער דין פון ראש השנה",
+          "expected": 11,
+          "recall10": 0.5,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "yi09",
+          "set": "yi",
+          "q": "כפרה אום יום כיפור",
+          "expected": 10,
+          "recall10": 0.5,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "yi10",
+          "set": "yi",
+          "q": "נח און דער מבול",
+          "expected": 11,
+          "recall10": 0.4,
+          "rr": 0.3333,
+          "firstHit": 3
+        },
+        {
+          "id": "yi11",
+          "set": "yi",
+          "q": "יעקב און עשו און די ברכות",
+          "expected": 11,
+          "recall10": 0.2,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "yi12",
+          "set": "yi",
+          "q": "מכירת יוסף",
+          "expected": 10,
+          "recall10": 0.2,
+          "rr": 0.25,
+          "firstHit": 4
+        },
+        {
+          "id": "yi13",
+          "set": "yi",
+          "q": "קריעת ים סוף און די שירה",
+          "expected": 13,
+          "recall10": 0.3,
+          "rr": 0.2,
+          "firstHit": 5
+        },
+        {
+          "id": "yi14",
+          "set": "yi",
+          "q": "מעשיות פונעם בעל שם טוב",
+          "expected": 40,
+          "recall10": 0.3,
+          "rr": 0.3333,
+          "firstHit": 3
+        },
+        {
+          "id": "yi15",
+          "set": "yi",
+          "q": "דער חוזה פון לובלין",
+          "expected": 23,
+          "recall10": 0.6,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "yi16",
+          "set": "yi",
+          "q": "יעקב בענטשט די שבטים",
+          "expected": 6,
+          "recall10": 0.3333,
+          "rr": 0.5,
+          "firstHit": 2
+        },
+        {
+          "id": "yi17",
+          "set": "yi",
+          "q": "יתרו און מתן תורה",
+          "expected": 5,
+          "recall10": 0.6,
+          "rr": 0.25,
+          "firstHit": 4
+        },
+        {
+          "id": "yi18",
+          "set": "yi",
+          "q": "תשעה באב און דער חורבן",
+          "expected": 8,
+          "recall10": 0.375,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "yi19",
+          "set": "yi",
+          "q": "שמחה אין דער סוכה",
+          "expected": 9,
+          "recall10": 0.3333,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "yi20",
+          "set": "yi",
+          "q": "פרשת שקלים",
+          "expected": 4,
+          "recall10": 1,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "x01",
+          "set": "cross",
+          "q": "zos chanukah",
+          "expected": 18,
+          "recall10": 0.8,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "x02",
+          "set": "cross",
+          "q": "purim katan",
+          "expected": 11,
+          "recall10": 0.4,
+          "rr": 0.5,
+          "firstHit": 2
+        },
+        {
+          "id": "x03",
+          "set": "cross",
+          "q": "shushan purim",
+          "expected": 11,
+          "recall10": 0.4,
+          "rr": 0.5,
+          "firstHit": 2
+        },
+        {
+          "id": "x04",
+          "set": "cross",
+          "q": "parshas Chayei Sarah",
+          "expected": 7,
+          "recall10": 0.1429,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "x05",
+          "set": "cross",
+          "q": "lech lecha, Avraham leaves his land",
+          "expected": 8,
+          "recall10": 0.75,
+          "rr": 0.5,
+          "firstHit": 2
+        },
+        {
+          "id": "x06",
+          "set": "cross",
+          "q": "vayeira and the akeidah",
+          "expected": 6,
+          "recall10": 0.3333,
+          "rr": 0.25,
+          "firstHit": 4
+        },
+        {
+          "id": "x07",
+          "set": "cross",
+          "q": "hoshana rabbah",
+          "expected": 7,
+          "recall10": 0.8571,
+          "rr": 0.5,
+          "firstHit": 2
+        },
+        {
+          "id": "x08",
+          "set": "cross",
+          "q": "behar bechukosai",
+          "expected": 6,
+          "recall10": 0,
+          "rr": 0,
+          "firstHit": null
+        },
+        {
+          "id": "x09",
+          "set": "cross",
+          "q": "the Satmar Rav",
+          "expected": 19,
+          "recall10": 0.8,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "x10",
+          "set": "cross",
+          "q": "the Sanzer Rav",
+          "expected": 17,
+          "recall10": 0.6,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "x11",
+          "set": "cross",
+          "q": "the Maggid of Mezritch",
+          "expected": 16,
+          "recall10": 0.4,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "x12",
+          "set": "cross",
+          "q": "Rebbe Reb Elimelech of Lizhensk",
+          "expected": 12,
+          "recall10": 0.6,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "x13",
+          "set": "cross",
+          "q": "Chiddushei HaRim of Ger",
+          "expected": 9,
+          "recall10": 0.4444,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "x14",
+          "set": "cross",
+          "q": "the Kotzker Rebbe",
+          "expected": 9,
+          "recall10": 0.5556,
+          "rr": 0.5,
+          "firstHit": 2
+        },
+        {
+          "id": "x15",
+          "set": "cross",
+          "q": "chodesh Nisan, the month of redemption",
+          "expected": 8,
+          "recall10": 0.25,
+          "rr": 0.1667,
+          "firstHit": 6
+        },
+        {
+          "id": "x16",
+          "set": "cross",
+          "q": "the Chasam Sofer",
+          "expected": 20,
+          "recall10": 0.7,
+          "rr": 1,
+          "firstHit": 1
+        },
+        {
+          "id": "x17",
+          "set": "cross",
+          "q": "parshas Mishpatim",
+          "expected": 5,
+          "recall10": 0.2,
+          "rr": 0.2,
+          "firstHit": 5
+        },
+        {
+          "id": "x18",
+          "set": "cross",
+          "q": "דער סדר פון פסח",
+          "expected": 7,
+          "recall10": 0,
+          "rr": 0.0769,
+          "firstHit": 13
+        },
+        {
+          "id": "x19",
+          "set": "cross",
+          "q": "חנוכה ליכט",
+          "expected": 10,
+          "recall10": 0.3,
+          "rr": 0.2,
+          "firstHit": 5
+        },
+        {
+          "id": "x20",
+          "set": "cross",
+          "q": "ראש השנה",
+          "expected": 4,
+          "recall10": 0,
+          "rr": 0.0625,
+          "firstHit": 16
+        }
+      ],
+      "embed": {
+        "unitsEmbedded": 0,
+        "unitsFromCache": 33941
+      }
+    }
+  ]
+}
