@@ -2,8 +2,12 @@
 /**
  * Minimal static server for the Live e2e tests: serves `build/client` the way the site Worker's
  * static assets do (`not_found_handling: "single-page-application"` → `__spa-fallback.html` for
- * page paths). `/data/*` falls back to the committed contract fixtures when the build has no data,
- * so wave-3 pages can be tested before the real emitter (W3.6) runs.
+ * page paths).
+ *
+ * `/data/*` is always answered from the committed contract fixtures (`app/data/fixtures/data`), never
+ * from `build/client/data`: a local `npm run data:build` writes the real corpus into
+ * `public/data/`, which the build copies into `build/client/data`, and the specs assert on fixture
+ * shiurim. Set `LIVE_E2E_DATA=build` to serve the built data instead (a manual smoke run).
  *
  *   node test/e2e/serve.js [port]
  */
@@ -16,6 +20,7 @@ const appDir = resolve(fileURLToPath(new URL("../..", import.meta.url)));
 const clientDir = join(appDir, "build", "client");
 const fixtureDir = join(appDir, "app", "data", "fixtures", "data");
 const port = Number(process.argv[2] ?? process.env["PORT"] ?? 4173);
+const dataDir = process.env["LIVE_E2E_DATA"] === "build" ? join(clientDir, "data") : fixtureDir;
 
 /** @type {Record<string, string>} */
 const TYPES = {
@@ -44,9 +49,11 @@ const server = createServer((req, res) => {
     res.writeHead(400).end();
     return;
   }
-  let file = fileIn(clientDir, path) ?? (path.endsWith("/") ? fileIn(clientDir, join(path, "index.html")) : null);
-  if (!file && path.startsWith("/data/")) file = fileIn(fixtureDir, path.slice("/data/".length));
-  if (!file && extname(path) === "") {
+  const isData = path.startsWith("/data/");
+  let file = isData
+    ? fileIn(dataDir, path.slice("/data/".length))
+    : (fileIn(clientDir, path) ?? (path.endsWith("/") ? fileIn(clientDir, join(path, "index.html")) : null));
+  if (!file && !isData && extname(path) === "") {
     file = fileIn(clientDir, "__spa-fallback.html") ?? fileIn(clientDir, "index.html");
   }
   if (!file) {
