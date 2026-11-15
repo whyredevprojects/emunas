@@ -4,7 +4,7 @@
 // Reads (read-only): data/derived/corpus/raw/topics.json
 // Writes: data/derived/corpus/topics.json            (Topic[]; description null, shiurCount 0,
 //                                                    hubShiurIds [] - filled by later steps)
-//         data/derived/corpus/topic-alias-map.json   ({ "<raw phrase>": "<topic id>" })
+//         data/derived/corpus/raw/topic-alias-map.json   ({ "<raw phrase>": "<topic id>" })
 //
 // How it works: every raw candidate-topic phrase is matched against RULES in order (first match
 // wins). A leaf whose mapped phrases reach fewer than MIN_SHIURIM distinct shiurim is folded into
@@ -17,7 +17,7 @@ import type { Topic } from "../../src/corpus-types.js";
 
 const RAW_PATH = "data/derived/corpus/raw/topics.json";
 const OUT_TOPICS = "data/derived/corpus/topics.json";
-const OUT_ALIASES = "data/derived/corpus/topic-alias-map.json";
+const OUT_ALIASES = "data/derived/corpus/raw/topic-alias-map.json";
 const MIN_SHIURIM = 8;
 const MAX_ALIASES = 40;
 /** Leaves kept below MIN_SHIURIM: a whole catalog series covers them, so retagging will reach 8. */

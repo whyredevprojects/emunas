@@ -36,6 +36,8 @@ export interface Topic {
   shiurCount: number;
   /** Representative shiurim for the topic page (highest salience first), subset of tagged shiurim. */
   hubShiurIds: string[];
+  /** Set when an entity page with the same id exists (the topic and that entity are the same subject). */
+  sameAs?: { conceptId?: string; personId?: string; workId?: string };
   reviewStatus?: ReviewStatus;
 }
 
@@ -48,8 +50,6 @@ export interface Concept {
   label: Bilingual;
   /** Latin-script spellings, e.g. ["bitachon", "bitochon"]. */
   transliterations: string[];
-  /** Misspellings produced by ASR (from extraction.concepts[].heardAs). Internal; useful for search expansion. */
-  asrVariants: string[];
   /** Definition as the Rav uses the term, grounded in the shiurim that mention it. */
   definition: Bilingual;
   /** Shiurim whose extraction lists this concept. */
@@ -72,8 +72,6 @@ export interface Person {
   type: PersonType;
   /** Other names/titles, e.g. "the Besht", "Reb Yisroel Baal Shem Tov". */
   aliases: string[];
-  /** ASR misspellings (from extraction.people[].heardAs). */
-  asrVariants: string[];
   shiurIds: string[];
   reviewStatus?: ReviewStatus;
 }
@@ -86,8 +84,6 @@ export interface Work {
   titleEn: string;
   /** Other spellings of the work name found in extractions (e.g. "Likutei Amarim"). */
   aliases: string[];
-  /** ASR misspellings (from sources[].heardAs). */
-  asrVariants: string[];
   /** Person id of the author when known (a Person entry must exist), else null. */
   authorPersonId: string | null;
   /** Sefaria index title when the work exists on Sefaria, e.g. "Tanya", "Bnei Yissaschar". */
@@ -139,6 +135,8 @@ export interface TeachingCluster {
 /** Closed-list tags for one shiur (P8 re-tag against the frozen taxonomy and glossary). */
 export interface ShiurTags {
   shiurId: string;
+  /** Share (0..1) of the shiur's time in sections of kind other_speaker. Shiurim at >= 0.5 are left out of topic hubs. */
+  otherSpeakerShare: number;
   /** At most 8 topics; salience 0..1 (1 = the shiur's main subject). */
   topics: { id: string; salience: number }[];
   /** Per section (index into extraction.sections[]), at most 3 topic ids. */
@@ -200,4 +198,13 @@ export interface CorpusIndex {
   files: string[];
   /** Level-1/2 topic ids whose `description` is still null, waiting for the description pass. */
   pendingDescriptions: string[];
+}
+
+/** redirects.json: retired id -> the id it was merged into, per entity kind. For redirecting old addresses. */
+export interface Redirects {
+  topics?: Record<string, string>;
+  concepts?: Record<string, string>;
+  people?: Record<string, string>;
+  works?: Record<string, string>;
+  stories?: Record<string, string>;
 }

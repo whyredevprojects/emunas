@@ -21,6 +21,7 @@ import type {
   Concept,
   CorpusIndex,
   Person,
+  Redirects,
   SearchSectionDoc,
   SeriesSynthesis,
   ShiurTags,
@@ -38,6 +39,8 @@ const CORPUS_VERSION = 1;
 const HUB_SIZE = 10;
 /** Salience given to a topic that a shiur carries only at section level (shiur-level tags are >= 0.1). */
 const SECTION_ONLY_SALIENCE = 0.05;
+/** Shiurim where another speaker takes at least this share of the time are left out of topic hubs. */
+const OTHER_SPEAKER_HUB_MAX = 0.5;
 const MAX_TOPICS = 8;
 const MAX_SECTION_TOPICS = 3;
 const EXCLUDED_KINDS = new Set(["noise", "singing"]);
@@ -105,7 +108,7 @@ const series = seriesFiles.map((f) => ({ file: f, data: readJson<SeriesSynthesis
 // Story people: resolve raw names to person ids through people-alias-map (same normalization as
 // aggregate/link). Unresolved names stay as written. Rewrites stories.json in place (idempotent).
 {
-  const aliasPath = join(CORPUS, "people-alias-map.json");
+  const aliasPath = join(CORPUS, "raw", "people-alias-map.json");
   const alias = existsSync(aliasPath) ? readJson<Record<string, string>>(aliasPath) : {};
   const norm = (x: string): string => x.normalize("NFC").replace(/\s+/g, " ").trim();
   const known = new Set(people.map((p) => p.id));
@@ -230,8 +233,21 @@ for (const id of doneIds) {
     sourceWorkIds = ex.sources.map((_, i) => sourceWorkIds[i] ?? null);
   }
 
+  // Share of the shiur's section duration given by another speaker (kind other_speaker).
+  const recsById = new Map(metas.get(id)!.recordings.map((r) => [r.recording.id, r]));
+  let total = 0;
+  let other = 0;
+  for (const sec of ex.sections) {
+    const r = recsById.get(sec.recordingId);
+    const a = r?.starts[sec.startSeg];
+    const b = r?.ends[sec.endSeg];
+    if (a === undefined || b === undefined) continue;
+    total += b - a;
+    if (sec.kind === "other_speaker") other += b - a;
+  }
   shiurTags.set(id, {
     shiurId: id,
+    otherSpeakerShare: total > 0 ? Math.round((other / total) * 100) / 100 : 0,
     topics,
     sections,
     conceptIds: resolveIds("shiur-tags concepts", id, link?.conceptIds, conceptIds),
@@ -249,6 +265,25 @@ const tagsDir = join(CORPUS, "shiur-tags");
 rmSync(tagsDir, { recursive: true, force: true });
 mkdirSync(tagsDir, { recursive: true });
 for (const [id, t] of shiurTags) writeJson(join(tagsDir, `${id}.json`), t);
+
+// ---------- redirects ----------
+// Hand-kept map of retired ids -> the id they were merged into, per kind. Checked here: the target
+// must exist and the old id must not be live again.
+const redirectsPath = join(CORPUS, "redirects.json");
+const redirects: Redirects = existsSync(redirectsPath) ? readJson<Redirects>(redirectsPath) : {};
+const liveIds: Record<keyof Redirects, Set<string>> = {
+  topics: topicIds,
+  concepts: conceptIds,
+  people: personIds,
+  works: workIds,
+  stories: storyIds,
+};
+for (const [kind, map] of Object.entries(redirects) as [keyof Redirects, Record<string, string>][]) {
+  for (const [from, to] of Object.entries(map)) {
+    if (liveIds[kind].has(from)) issue("redirects: retired id is live", `${kind}: ${from}`);
+    if (!liveIds[kind].has(to)) issue("redirects: target missing", `${kind}: ${from} -> ${to}`);
+  }
+}
 
 // ---------- topics ----------
 
@@ -306,12 +341,18 @@ const topicsOut: Topic[] = topicsIn.map((t) => {
     }
   }
   const hubShiurIds = [...best.entries()]
+    .filter(([sid]) => (shiurTags.get(sid)?.otherSpeakerShare ?? 0) < OTHER_SPEAKER_HUB_MAX)
     .sort((a, b) => b[1].sal - a[1].sal || Number(b[1].direct) - Number(a[1].direct) || a[0].localeCompare(b[0]))
     .slice(0, HUB_SIZE)
     .map(([sid]) => sid);
   if (best.size === 0) issue("topics: no tagged shiurim (shiurCount 0)", t.id);
   if (t.level <= 2 && t.description === null) pendingDescriptions.push(t.id);
-  return { ...t, shiurCount: best.size, hubShiurIds };
+  const sameAs: Topic["sameAs"] = {};
+  if (conceptIds.has(t.id)) sameAs.conceptId = t.id;
+  if (personIds.has(t.id)) sameAs.personId = t.id;
+  if (workIds.has(t.id)) sameAs.workId = t.id;
+  const { sameAs: _old, ...rest } = t;
+  return { ...rest, ...(Object.keys(sameAs).length ? { sameAs } : {}), shiurCount: best.size, hubShiurIds };
 });
 topicsOut.sort((a, b) => a.level - b.level || a.label.en.localeCompare(b.label.en));
 writeJson(join(CORPUS, "topics.json"), topicsOut);
@@ -459,6 +500,7 @@ const files = [
   "people.json",
   "works.json",
   "stories.json",
+  "redirects.json",
   "teaching-clusters.json",
   ...seriesFiles.map((f) => `series/${f}`),
   ...doneIds.map((id) => `shiur-tags/${id}.json`),
