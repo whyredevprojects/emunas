@@ -15,6 +15,7 @@ import { brotliCompressSync, constants } from "node:zlib";
 import { MAX_FILES, MAX_FILE_BYTES, checkBudgets, walkFiles } from "@emunas/corpus-guard/budgets";
 import type { DataKind } from "../app/data/types.ts";
 import { kindOfFile } from "./schemas.ts";
+import { isTranscriptDataFile } from "../app/features/transcript/emit.server.ts";
 
 const KB = 1024;
 
@@ -111,6 +112,8 @@ export function checkLiveBudgets(opts: LiveBudgetOptions): LiveBudgetResult {
       findings.push({ kind: "file-size", root: opts.dataDir, file, bytes: buf.length, limit: maxFileBytes });
     const kind = kindOfFile(file);
     if (kind === null) {
+      // W5.2: approved public transcript files (flag on only) count toward files and size, no br target.
+      if (isTranscriptDataFile(file)) continue;
       findings.push({ kind: "unknown-file", file });
       continue;
     }
