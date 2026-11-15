@@ -1,0 +1,160 @@
+/*
+ * Maasios library and story pages (concept-live-corpus C.4). Logical properties only, so every row,
+ * chip line and button group mirrors with `dir`.
+ */
+@layer components {
+  .page {
+    max-inline-size: var(--measure-wide);
+    padding: var(--space-l) var(--space-m) var(--space-2xl);
+    display: grid;
+    gap: var(--space-l);
+  }
+
+  .title {
+    font-size: var(--step-4);
+    margin: 0;
+  }
+
+  .lead {
+    margin: 0;
+    max-inline-size: var(--measure-text);
+    color: var(--color-ink-muted);
+  }
+
+  .muted {
+    margin: 0;
+    color: var(--color-ink-muted);
+  }
+
+  .meta {
+    font-size: var(--step--1);
+    color: var(--color-ink-muted);
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+  }
+
+  .section {
+    display: grid;
+    gap: var(--space-s);
+  }
+
+  .groupTitle {
+    font-size: var(--step-1);
+    margin: 0;
+  }
+
+  .chips {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    align-items: center;
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3xs);
+    min-block-size: var(--tap-min);
+    padding-inline: var(--space-s);
+    border: var(--rule-hairline) solid var(--color-rule-strong);
+    border-radius: var(--radius-pill);
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+
+  .chip[aria-current="true"],
+  .chip[aria-pressed="true"] {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+
+  .select {
+    min-block-size: var(--tap-min);
+    max-inline-size: 100%;
+    padding-inline: var(--space-s);
+    border: var(--rule-hairline) solid var(--color-rule-strong);
+    border-radius: var(--radius-m);
+    background: var(--color-surface);
+    color: var(--color-ink);
+    font: inherit;
+  }
+
+  .field {
+    display: grid;
+    gap: var(--space-3xs);
+    max-inline-size: 24rem;
+  }
+
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    align-items: center;
+  }
+
+  .button {
+    min-block-size: var(--tap-min);
+    padding-inline: var(--space-m);
+    border: var(--rule-hairline) solid var(--color-rule-strong);
+    border-radius: var(--radius-pill);
+    background: var(--color-surface);
+    color: var(--color-ink);
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .primary {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+
+  .status {
+    margin: 0;
+    font-size: var(--step--1);
+    color: var(--color-ink-muted);
+  }
+
+  .list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-s);
+  }
+
+  .card {
+    display: grid;
+    gap: var(--space-2xs);
+    padding-block: var(--space-xs);
+    border-block-end: var(--rule-hairline) solid var(--color-rule);
+  }
+
+  .cardTitle {
+    font-size: var(--step-1);
+    font-weight: var(--weight-semibold);
+    margin: 0;
+  }
+
+  .retelling {
+    margin: 0;
+    max-inline-size: var(--measure-text);
+  }
+
+  .telling {
+    display: grid;
+    gap: var(--space-2xs);
+    padding-block: var(--space-xs);
+    padding-inline-start: var(--space-s);
+    border-inline-start: var(--rule-hairline) solid var(--color-rule);
+  }
+
+  .telling[aria-current="true"] {
+    border-inline-start-color: var(--color-accent);
+  }
+}
