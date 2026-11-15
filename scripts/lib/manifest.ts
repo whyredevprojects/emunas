@@ -47,12 +47,27 @@ export interface ManifestEntry {
 export interface AsrInfo {
   /** Distinct "model" or "model/mode" labels over the shiur's transcripts, e.g. "ivrit-ai/yi-whisper-large-v3-ct2/careful". */
   models: string[];
-  /** True when every transcript of the shiur is a re-transcription (mode "careful"; the model name did not change). */
+  /** True when every transcript of the shiur meets config/asr-policy.json for its language. */
   redone: boolean;
 }
 
-/** ASR provenance from the committed compact transcripts (data/transcripts/<recordingId>.json). */
-export function transcriptAsr(recordingIds: string[], dir = "data/transcripts"): AsrInfo {
+export interface AsrRequirement {
+  model?: string | null;
+  mode?: string | null;
+}
+
+/** Per-language transcript requirement from config/asr-policy.json (null or missing = any transcript is fine). */
+export function asrPolicy(lang: string, path = "config/asr-policy.json"): AsrRequirement | null {
+  if (!existsSync(path)) return null;
+  const p = JSON.parse(readFileSync(path, "utf8")) as Record<string, unknown>;
+  const r = p[lang];
+  return r && typeof r === "object" ? (r as AsrRequirement) : null;
+}
+
+/** ASR provenance from the committed compact transcripts (data/transcripts/<recordingId>.json).
+ * `redone` is true when every transcript meets the language's requirement in config/asr-policy.json. */
+export function transcriptAsr(recordingIds: string[], lang = "yi", dir = "data/transcripts"): AsrInfo {
+  const req = asrPolicy(lang);
   const labels = new Set<string>();
   let redone = recordingIds.length > 0;
   for (const id of recordingIds) {
@@ -60,7 +75,10 @@ export function transcriptAsr(recordingIds: string[], dir = "data/transcripts"):
     if (!existsSync(p)) continue; // untranscribed part: ignore (ingest guarantees at least one transcript)
     const t = JSON.parse(readFileSync(p, "utf8")) as { model?: string | null; mode?: string | null };
     labels.add(`${t.model ?? "unknown"}${t.mode ? `/${t.mode}` : ""}`);
-    if (t.mode !== "careful") redone = false;
+    if (req) {
+      if (req.model !== undefined && (t.model ?? null) !== req.model) redone = false;
+      if (req.mode !== undefined && (t.mode ?? null) !== req.mode) redone = false;
+    }
   }
   if (!labels.size) redone = false;
   return { models: [...labels].sort(), redone };

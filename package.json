@@ -21,7 +21,8 @@
     "batch:reset-stale": "tsx scripts/batch.ts reset-stale",
     "batch:mark": "tsx scripts/batch.ts mark",
     "batch:pick-audit": "tsx scripts/batch.ts pick-audit",
-    "batch:usage": "tsx scripts/batch.ts usage"
+    "batch:usage": "tsx scripts/batch.ts usage",
+    "batch:reset-changed": "tsx scripts/reset-changed.ts"
   },
   "devDependencies": {
     "@types/node": "^26.6.6",

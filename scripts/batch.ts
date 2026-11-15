@@ -25,6 +25,7 @@ import {
   SHIURIM_DIR,
   STATUSES,
   transcriptAsr,
+  asrPolicy,
   USAGE_PATH,
   type Manifest,
   type ManifestEntry,
@@ -89,7 +90,7 @@ function cmdInit(reset: boolean): void {
   const entries = ordered.map((s, order) => {
     const prev = oldById.get(s.id);
     const fresh = freshEntry(s, order, ingestDurationSec(s, ingest));
-    const asr = transcriptAsr(s.recordingIds.filter((id) => !dupIds.has(id)));
+    const asr = transcriptAsr(s.recordingIds.filter((id) => !dupIds.has(id)), s.lang);
     return prev ? { ...prev, order, lang: s.lang, durationSec: fresh.durationSec, asr } : { ...fresh, asr };
   });
   const dropped = [...oldById.keys()].filter((id) => !inScope.some((s) => s.id === id));
@@ -165,14 +166,14 @@ function cmdNext(n: number, allowInProgress: boolean, lang?: string): void {
   let skippedOld = 0;
   const candidates = m.entries.filter((e) => e.status === "pending" && (lang === undefined || e.lang === lang));
   const eligible = candidates.filter((e) => {
-    if (e.lang !== "yi") return true;
+    if (!asrPolicy(e.lang)) return true;
     const s = byId.get(e.shiurId);
-    e.asr = transcriptAsr((s?.recordingIds ?? []).filter((id) => !dupIds.has(id)));
+    e.asr = transcriptAsr((s?.recordingIds ?? []).filter((id) => !dupIds.has(id)), e.lang);
     if (e.asr.redone) return true;
     skippedOld++;
     return false;
   });
-  if (skippedOld) console.log(`Skipped ${skippedOld} pending Yiddish shiurim whose transcript is still on the old model (not yet re-transcribed).`);
+  if (skippedOld) console.log(`Skipped ${skippedOld} pending shiurim whose transcript doesn't meet config/asr-policy.json yet.`);
   const picked = eligible.slice(0, n);
   if (!picked.length) {
     console.log(`No pending shiurim${skippedOld ? " with a usable transcript" : ""}. Nothing to do.`);

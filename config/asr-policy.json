@@ -1,0 +1,5 @@
+{
+  "_comment": "Which transcripts batch:next may process, per language. null = any transcript. Otherwise every field given must match the compact transcript in data/transcripts (fields: model, mode). Change this when a new transcription run replaces the old one, then run scripts/reset-changed.ts. See .claude/skills/emunas-pipeline/SKILL.md.",
+  "yi": { "mode": "careful" },
+  "en": null
+}
