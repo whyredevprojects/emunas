@@ -4,13 +4,20 @@
  *
  * The field lists below are the allow-list. `SearchDoc`/`MomentRow` are checked against them at
  * compile time (`AssertEqual`), and the builders construct objects key by key from a
- * `PublicShiur`, which has no transcript-derived field. The one non-PublicShiur input,
- * `candidateTopics` (derived extraction data, never displayed), lands only in `SearchDoc.keywords`.
+ * `PublicShiur`, which has no transcript-derived field. The other input is the corpus layer
+ * (`.corpus/layer/`, corpus-wave-plan §3.3, §3.6): topic labels and the entities' own display-field
+ * synonyms, and corpus ids for facets and entities. Topic labels and aliases land only in
+ * `SearchDoc.keywords` (low weight, never displayed). The retired extraction topic strings (C9) are
+ * not read at all and are a forbidden key.
  */
-import type { Category, Ed, L, MomentKind, PublicShiur, ShiurStatus } from "@emunas/corpus/public";
+import type { Category, Ed, L, LayerShiurRefs, MomentKind, PublicShiur, ShiurStatus } from "@emunas/corpus/public";
+import type { SearchLayer } from "./layer-types.ts";
 
-/** Bump when the shape of a SearchDoc or MomentRow, or the text that feeds a hash, changes. */
-export const SEARCH_SCHEMA_VERSION = 1;
+/**
+ * Bump when the shape of a SearchDoc, MomentRow or EntityDoc, or the text that feeds a hash, changes.
+ * 2: corpus-layer keywords, corpus-id facets and entities (+ topics), entities.ndjson.
+ */
+export const SEARCH_SCHEMA_VERSION = 2;
 
 // ---------------------------------------------------------------- allow-lists
 
@@ -43,7 +50,17 @@ export const SEARCH_DOC_FIELDS = [
 
 export const SEARCH_DOC_SECTION_FIELDS = ["title", "summary"] as const;
 export const SEARCH_DOC_SOURCE_FIELDS = ["work", "ref"] as const;
-export const DOC_FACET_FIELDS = ["parsha", "zman", "series", "years", "catalogued", "works", "people", "concepts"] as const;
+export const DOC_FACET_FIELDS = [
+  "parsha",
+  "zman",
+  "series",
+  "years",
+  "catalogued",
+  "works",
+  "people",
+  "concepts",
+  "topics",
+] as const;
 
 export const MOMENT_ROW_FIELDS = [
   "id",
@@ -61,11 +78,18 @@ export const MOMENT_ROW_FIELDS = [
   "hash",
 ] as const;
 
-export const MOMENT_ENTITY_FIELDS = ["works", "people", "concepts"] as const;
+export const MOMENT_ENTITY_FIELDS = ["works", "people", "concepts", "topics"] as const;
 export const MOMENT_FACET_FIELDS = ["category", "occasion", "series", "year", "catalogued", "soft"] as const;
 
-/** The only field that carries `candidateTopics` (C9: low-weight keywords, never displayed). */
+/** The only field that carries topic labels and topic aliases (low-weight keywords, never displayed). */
 export const KEYWORD_FIELD = "keywords" as const;
+
+export const ENTITY_DOC_KINDS = ["topic", "concept", "person", "work"] as const;
+export type EntityDocKind = (typeof ENTITY_DOC_KINDS)[number];
+
+export const ENTITY_DOC_FIELDS = ["kind", "id", "labels", "synonyms", "count", "listed", "pages", "mergedInto", "hash"] as const;
+export const ENTITY_DOC_LABEL_FIELDS = ["he", "en", "yi"] as const;
+export const ENTITY_DOC_FLAG_FIELDS = ["quiet", "live"] as const;
 
 /** Keys that must never appear anywhere in search output (§0.1, §5.2). */
 export const FORBIDDEN_SEARCH_KEYS = [
@@ -85,6 +109,8 @@ export const FORBIDDEN_SEARCH_KEYS = [
   "types",
   "transcript",
   "candidateTopics",
+  "asrVariants",
+  "heardAsSamples",
 ] as const;
 export type ForbiddenSearchKey = (typeof FORBIDDEN_SEARCH_KEYS)[number];
 
@@ -101,7 +127,11 @@ export interface SearchDocSource {
   ref: string | null;
 }
 
-/** Ids only; used for filters and entity pages, not for text matching. */
+/**
+ * Corpus ids only (`.corpus/layer/shiur/<id>.json`), for filters and entity pages, not for text
+ * matching. Entities that no site lists (excluded or unlisted people, entities with no visible
+ * shiur) are left out.
+ */
 export interface DocFacets {
   parsha: string | null;
   zman: string | null;
@@ -112,6 +142,8 @@ export interface DocFacets {
   works: string[];
   people: string[];
   concepts: string[];
+  /** Shiur-level and section-level topics. */
+  topics: string[];
 }
 
 /** One per in-scope shiur (catalog-only shiurim have empty note fields). */
@@ -140,7 +172,10 @@ export interface SearchDoc {
   sources: SearchDocSource[];
   people: string[];
   concepts: string[];
-  /** `candidateTopics`: low-weight keywords, never displayed (C9). */
+  /**
+   * The shiur's visible topics: labels (he/en/yi) and the topics' own aliases (search-folded),
+   * deduplicated after folding. Low weight, never displayed.
+   */
   keywords: string[];
   facets: DocFacets;
   /** sha256(schemaVersion + every other field), hex. */
@@ -164,10 +199,16 @@ export const ROW_KIND_OF: Readonly<Record<Exclude<MomentKind, "src" | "ol" | "ab
   wyi: "writeup",
 };
 
+/**
+ * Corpus ids. Section rows: works cited and people of stories inside the chapter, concepts whose
+ * example section it is, the chapter's topics. Other rows: their own works/people, and the shiur's
+ * topics with salience ≥ 0.6.
+ */
 export interface MomentEntities {
   works: string[];
   people: string[];
   concepts: string[];
+  topics: string[];
 }
 
 export interface MomentFacets {
@@ -206,11 +247,47 @@ export interface MomentRow {
   hash: string;
 }
 
-/** What the builders read: the public contract plus derived keywords, nothing else. */
+/** What the builders read: the public contract plus the corpus layer, nothing else. */
 export interface SearchInput {
   shiur: PublicShiur;
-  /** `extraction.candidateTopics` of a full shiur; [] otherwise. */
-  candidateTopics: readonly string[];
+  /** The corpus layer; absent or null: no keywords and empty entity facets. */
+  layer?: SearchLayer | null;
+}
+
+// ---------------------------------------------------------------- EntityDoc
+
+/** Display labels: topic label, concept label (+ canonicalHe), person names, work titles. */
+export interface EntityDocLabels {
+  he: string | null;
+  en: string | null;
+  yi: string | null;
+}
+
+export interface EntityDocFlags {
+  quiet: boolean;
+  live: boolean;
+}
+
+/**
+ * One per corpus entity listed on at least one site (`.corpus/search/entities.ndjson`): headword
+ * results on Quiet, entity suggestions on Live. Never people of type `other`, never excluded
+ * people. Story and thread documents are second cut. All entities are AI-generated and unreviewed.
+ */
+export interface EntityDoc {
+  kind: EntityDocKind;
+  id: string;
+  labels: EntityDocLabels;
+  /** Search-folded terms from the entity's own display fields (layer synonyms.json only). Never displayed. */
+  synonyms: string[];
+  /** Visible shiurim. */
+  count: number;
+  /** Listed in that site's index. */
+  listed: EntityDocFlags;
+  /** Has its own page on that site. */
+  pages: EntityDocFlags;
+  /** Concepts merged into a topic: that topic's id (the topic page is the entry). Otherwise null. */
+  mergedInto: string | null;
+  hash: string;
 }
 
 // ---------------------------------------------------------------- compile-time checks
@@ -234,9 +311,15 @@ export const _fieldChecks: {
   row: AssertEqual<keyof MomentRow, (typeof MOMENT_ROW_FIELDS)[number]>;
   entities: AssertEqual<keyof MomentEntities, (typeof MOMENT_ENTITY_FIELDS)[number]>;
   rowFacets: AssertEqual<keyof MomentFacets, (typeof MOMENT_FACET_FIELDS)[number]>;
+  entity: AssertEqual<keyof EntityDoc, (typeof ENTITY_DOC_FIELDS)[number]>;
+  entityLabels: AssertEqual<keyof EntityDocLabels, (typeof ENTITY_DOC_LABEL_FIELDS)[number]>;
+  entityFlags: AssertEqual<keyof EntityDocFlags, (typeof ENTITY_DOC_FLAG_FIELDS)[number]>;
   /** No transcript-derived key can exist in the output types or in the builder input. */
   docClean: AssertNever<Extract<DeepKeys<SearchDoc>, ForbiddenSearchKey>>;
   rowClean: AssertNever<Extract<DeepKeys<MomentRow>, ForbiddenSearchKey>>;
+  entityClean: AssertNever<Extract<DeepKeys<EntityDoc>, ForbiddenSearchKey>>;
+  /** The per-shiur layer refs the builders read. */
+  layerClean: AssertNever<Extract<DeepKeys<LayerShiurRefs>, ForbiddenSearchKey>>;
   inputClean: AssertNever<Extract<DeepKeys<SearchInput["shiur"]>, Exclude<ForbiddenSearchKey, "transcript">>>;
 } = {
   doc: true,
@@ -246,7 +329,12 @@ export const _fieldChecks: {
   row: true,
   entities: true,
   rowFacets: true,
+  entity: true,
+  entityLabels: true,
+  entityFlags: true,
   docClean: true,
   rowClean: true,
+  entityClean: true,
+  layerClean: true,
   inputClean: true,
 };

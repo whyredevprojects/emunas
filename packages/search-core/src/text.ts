@@ -73,7 +73,7 @@ export function docTextParts(doc: SearchDoc): string[] {
 }
 
 /**
- * Folded index text of a SearchDoc: `content` (main weight) and `keywords` (candidateTopics,
+ * Folded index text of a SearchDoc: `content` (main weight) and `keywords` (topic labels and aliases,
  * low weight). Pagefind puts `content` in the record body and `keywords` in a low-weight field;
  * MiniSearch indexes them as two fields with boosts.
  */

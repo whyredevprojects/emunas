@@ -1,8 +1,11 @@
 /**
  * SearchDoc and MomentRow builders. They copy allowed fields one by one from a `PublicShiur`
  * (never spread or strip), so nothing reaches the index unless it is mapped here on purpose.
+ * Keywords, facet ids and moment entities come from the corpus layer (`SearchLayer`).
  */
-import type { L, PublicShiur } from "@emunas/corpus/public";
+import type { L, LayerShiurRefs, PublicShiur } from "@emunas/corpus/public";
+import { fold } from "@emunas/normalize";
+import { synonymKey, type SearchLayer } from "../layer-types.ts";
 import { parshaLabels, yearLabels, zmanLabels } from "../text.ts";
 import type {
   DocFacets,
@@ -45,9 +48,58 @@ const sortedUniq = (xs: Iterable<string | null | undefined>): string[] => uniq(x
 
 const catalogued = (s: PublicShiur): boolean => s.catalog.source === "pocket-guide-2012";
 
-export function buildSearchDoc(input: SearchInput): SearchDoc {
+/** Shiur-level topics at or above this salience are a moment's topics (outside section rows). */
+export const MOMENT_TOPIC_SALIENCE = 0.6;
+
+/** The layer refs of a full shiur, or null. */
+function refsOf(shiur: PublicShiur, layer: SearchLayer | null | undefined): LayerShiurRefs | null {
+  if (!layer || shiur.status !== "full") return null;
+  return layer.refs.get(shiur.id) ?? null;
+}
+
+const listOf = <T>(x: readonly T[] | undefined | null): readonly T[] => (Array.isArray(x) ? x : []);
+
+/** Visible topic ids of a shiur: shiur level (by salience), then section level. */
+function shiurTopicIds(refs: LayerShiurRefs, layer: SearchLayer): string[] {
+  const ids = [...listOf(refs.topics).map((t) => t.id), ...listOf(refs.chapters).flatMap((c) => listOf(c.topicIds))];
+  return uniq(ids).filter((id) => layer.topics.has(id));
+}
+
+/** Topic labels (he/en/yi) and the topics' own aliases, deduplicated after folding. */
+export function topicKeywords(topicIds: readonly string[], layer: SearchLayer): string[] {
+  const out: string[] = [];
+  const seen = new Set<string>();
+  const push = (x: string | null | undefined) => {
+    const v = nz(x);
+    if (v === null) return;
+    const f = fold(v);
+    if (f === "" || seen.has(f)) return;
+    seen.add(f);
+    out.push(v);
+  };
+  for (const id of topicIds) {
+    const t = layer.topics.get(id);
+    if (!t) continue;
+    push(t.he);
+    push(t.en);
+    push(t.yi);
+  }
+  for (const id of topicIds) for (const a of layer.synonyms.get(synonymKey("topic", id)) ?? []) push(a);
+  return out;
+}
+
+const keep = (set: ReadonlySet<string> | undefined, ids: Iterable<string | null | undefined>): string[] =>
+  sortedUniq([...ids].filter((x) => typeof x === "string" && set !== undefined && set.has(x)));
+
+/**
+ * Build one SearchDoc. Keys besides `shiur` and `layer` (older callers still pass the retired
+ * extraction topic list until C1.7) are accepted and ignored.
+ */
+export function buildSearchDoc(input: SearchInput & { readonly [legacy: string]: unknown }): SearchDoc {
   const s = input.shiur;
+  const layer = input.layer ?? null;
   const n = s.status === "full" ? s.notes : undefined;
+  const refs = refsOf(s, layer);
   const sources: SearchDocSource[] = [];
   for (const x of n?.sources ?? []) {
     const work = nz(x.work);
@@ -61,9 +113,10 @@ export function buildSearchDoc(input: SearchInput): SearchDoc {
     series: s.series?.id ?? null,
     years: [...s.years],
     catalogued: catalogued(s),
-    works: sortedUniq((n?.sources ?? []).map((x) => x.workKey)),
-    people: sortedUniq([...(n?.people ?? []).map((p) => p.key), ...(n?.stories ?? []).flatMap((st) => st.peopleKeys)]),
-    concepts: sortedUniq((n?.concepts ?? []).map((c) => c.key)),
+    works: refs && layer ? keep(layer.facetIds.work, listOf(refs.workIds)) : [],
+    people: refs && layer ? keep(layer.facetIds.person, listOf(refs.personIds)) : [],
+    concepts: refs && layer ? keep(layer.facetIds.concept, listOf(refs.conceptIds)) : [],
+    topics: refs && layer ? sortedUniq(shiurTopicIds(refs, layer)) : [],
   };
   const body: Omit<SearchDoc, "hash"> = {
     id: s.id,
@@ -95,8 +148,8 @@ export function buildSearchDoc(input: SearchInput): SearchDoc {
     sources,
     people: uniq([...(n?.people ?? []).map((p) => p.name), ...(n?.stories ?? []).flatMap((st) => st.people)]),
     concepts: uniq((n?.concepts ?? []).map((c) => c.he)),
-    // C9: candidateTopics only here, and only for shiurim that passed the status gate.
-    keywords: n ? uniq(input.candidateTopics) : [],
+    // Topic labels and aliases only here, and only for full shiurim in the visible set.
+    keywords: refs && layer ? topicKeywords(shiurTopicIds(refs, layer), layer) : [],
     facets,
   };
   return { ...body, hash: contentHash(body) };
@@ -106,10 +159,30 @@ function joinLines(xs: (string | null)[]): string | null {
   return nz(xs.filter((x): x is string => x !== null && x.trim() !== "").join("\n"));
 }
 
-/** Moment rows of one shiur (none for catalog-only shiurim). */
-export function buildMomentRows(shiur: PublicShiur): MomentRow[] {
+/** Moment rows of one shiur (none for catalog-only shiurim). Entities need the layer. */
+export function buildMomentRows(shiur: PublicShiur, layer?: SearchLayer | null): MomentRow[] {
   const n = shiur.status === "full" ? shiur.notes : undefined;
   if (!n) return [];
+  const refs = refsOf(shiur, layer);
+  const workOf = new Map<string, string>();
+  const storyOf = new Map<string, string>();
+  const chapterTopics = new Map<number, string[]>();
+  let mainTopics: string[] = [];
+  if (refs && layer) {
+    for (const x of listOf(refs.sources)) if (layer.facetIds.work.has(x.workId)) workOf.set(x.momentId, x.workId);
+    for (const x of listOf(refs.stories)) storyOf.set(x.momentId, x.storyId);
+    for (const c of listOf(refs.chapters)) chapterTopics.set(c.idx, keep(layer.facetIds.topic, listOf(c.topicIds)));
+    mainTopics = keep(
+      layer.facetIds.topic,
+      listOf(refs.topics)
+        .filter((t) => t.salience >= MOMENT_TOPIC_SALIENCE)
+        .map((t) => t.id),
+    );
+  }
+  const storyPeople = (momentId: string): string[] => {
+    const storyId = storyOf.get(momentId);
+    return storyId === undefined ? [] : [...(layer?.storyPeople.get(storyId) ?? [])];
+  };
   const base = {
     category: shiur.category,
     occasion: shiur.parsha?.key ?? shiur.zman?.key ?? null,
@@ -118,7 +191,7 @@ export function buildMomentRows(shiur: PublicShiur): MomentRow[] {
     catalogued: catalogued(shiur),
   };
   const rows: MomentRow[] = [];
-  const noEntities = (): MomentEntities => ({ works: [], people: [], concepts: [] });
+  const noEntities = (): MomentEntities => ({ works: [], people: [], concepts: [], topics: [...mainTopics] });
 
   function add(p: {
     id: string;
@@ -171,9 +244,10 @@ export function buildMomentRows(shiur: PublicShiur): MomentRow[] {
       title: c.title,
       body: { en: joinLines([c.summary.en, ...subs("en")]) ?? "", yi: joinLines([c.summary.yi, ...subs("yi")]) ?? "" },
       entities: {
-        works: sortedUniq(n.sources.filter((x) => inRange(x.t, c.t, c.end)).map((x) => x.workKey)),
-        people: sortedUniq(n.stories.filter((st) => inRange(st.t, c.t, c.end)).flatMap((st) => st.peopleKeys)),
-        concepts: [],
+        works: sortedUniq(n.sources.filter((x) => inRange(x.t, c.t, c.end)).map((x) => workOf.get(x.id))),
+        people: sortedUniq(n.stories.filter((st) => inRange(st.t, c.t, c.end)).flatMap((st) => storyPeople(st.id))),
+        concepts: [...(layer?.sectionConcepts.get(c.id) ?? [])],
+        topics: [...(chapterTopics.get(c.idx) ?? [])],
       },
     });
   }
@@ -189,7 +263,7 @@ export function buildMomentRows(shiur: PublicShiur): MomentRow[] {
       end: st.end,
       title: st.title,
       body: st.retelling,
-      entities: { works: [], people: sortedUniq(st.peopleKeys), concepts: [] },
+      entities: { works: [], people: storyPeople(st.id), concepts: [], topics: [...mainTopics] },
       soft: st.soft,
     });
   }
@@ -208,7 +282,15 @@ export function buildMomentRows(shiur: PublicShiur): MomentRow[] {
           end: p.end,
           title,
           body: ed === "en" ? { en: p.text, yi: "" } : { en: "", yi: p.text },
-          entities: { works: sortedUniq(p.src.map((k) => n.sources[k]?.workKey)), people: [], concepts: [] },
+          entities: {
+            works: sortedUniq(p.src.map((k) => {
+              const id = n.sources[k]?.id;
+              return id === undefined ? undefined : workOf.get(id);
+            })),
+            people: [],
+            concepts: [],
+            topics: [...mainTopics],
+          },
         });
       }
     }

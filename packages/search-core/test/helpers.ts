@@ -1,9 +1,9 @@
-import { cpSync, mkdtempSync, rmSync } from "node:fs";
+import { cpSync, mkdtempSync, readFileSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { afterAll } from "vitest";
-import { buildCorpus } from "@emunas/corpus/build";
+import { buildCorpusWithAggregates } from "@emunas/corpus/build/aggregate";
 
 export const PKG = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 export const REPO = resolve(PKG, "../..");
@@ -31,13 +31,23 @@ export function miniCopy(): string {
   return d;
 }
 
-/** corpus:build into a fresh temp dir. */
+/** corpus:build (with the aggregates and the corpus layer, as the CLI does) into a fresh temp dir. */
 export function buildCorpusTo(dataDir: string, policyDir: string, suppressFile?: string): string {
   const outDir = join(tmp(), ".corpus");
-  const opts: Parameters<typeof buildCorpus>[0] = { dataDir, outDir, policyDir, dataSha: null };
+  const opts: NonNullable<Parameters<typeof buildCorpusWithAggregates>[0]> = { dataDir, outDir, policyDir, dataSha: null };
   if (suppressFile !== undefined) opts.suppressFile = suppressFile;
-  buildCorpus(opts);
+  buildCorpusWithAggregates(opts);
   return outDir;
+}
+
+/** Corpus data folder (`data/derived/corpus`) of a data dir. */
+export const corpusDataDir = (dataDir: string): string => join(dataDir, "derived/corpus");
+
+export function readNdjson<T>(path: string): T[] {
+  return readFileSync(path, "utf8")
+    .split("\n")
+    .filter((l) => l.trim() !== "")
+    .map((l) => JSON.parse(l) as T);
 }
 
 /** Every key of every object anywhere in `x`. */

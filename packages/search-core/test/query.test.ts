@@ -52,7 +52,7 @@ describe("normalizeQuery", () => {
   });
 
   it("is total: empty, punctuation, nikud and very long input", () => {
-    expect(normalizeQuery("")).toEqual({ raw: "", folded: "", terms: [], expansions: [], tokens: [], variants: [] });
+    expect(normalizeQuery("")).toEqual({ raw: "", folded: "", terms: [], expansions: [], entities: [], tokens: [], variants: [] });
     expect(normalizeQuery("  ?!  ").terms).toEqual([]);
     expect(normalizeQuery("בְּרֵאשִׁית").terms).toEqual(["בראשית"]);
     const long = normalizeQuery("noach ".repeat(500));

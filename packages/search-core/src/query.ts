@@ -7,6 +7,11 @@
  * person in the normalize tables (or a concept spelling variant) add that entry's other names as
  * alternatives, so `parshas noach` also looks for `נח`, and `rambam` for `רמב"ם`.
  *
+ * With a corpus synonym table (`buildSynonymTable`, from the EntityDocs, i.e. the layer's
+ * synonyms.json), spans that name a corpus topic, concept, person or work also give
+ * `entities`: the corpus ids and their canonical labels. The table holds display-field terms only,
+ * so an ASR mishearing ("Hashem Tov") never expands to an entity.
+ *
  * Index time uses the same `fold` (see `text.ts`), so both sides meet on folded tokens.
  */
 import {
@@ -18,6 +23,8 @@ import {
   lookupWork,
   lookupZman,
 } from "@emunas/normalize";
+import { isFunctionWord, matchSpan, type EntityMatchKind, type SynonymTable } from "./synonyms.ts";
+import type { EntityDocKind } from "./types.ts";
 
 export type ExpansionKind = "parsha" | "occasion" | "work" | "person" | "concept";
 
@@ -34,6 +41,19 @@ export interface Expansion {
   forms: string[];
 }
 
+/** A span of the query that names a corpus entity (synonym table). */
+export interface EntityExpansion {
+  kind: EntityDocKind;
+  /** Corpus id. */
+  id: string;
+  /** Token range [from, to) in `terms` that matched. */
+  span: [number, number];
+  /** `exact`: a display term of the entity; `prefix`: the first words of one of its labels. */
+  match: EntityMatchKind;
+  /** Folded canonical labels (he/en/yi), excluding the matched text itself. */
+  forms: string[];
+}
+
 export interface NormalizedQuery {
   /** The query as typed (trimmed). */
   raw: string;
@@ -42,6 +62,8 @@ export interface NormalizedQuery {
   /** Folded tokens in query order, deduplicated. Engines that AND their terms use these. */
   terms: string[];
   expansions: Expansion[];
+  /** Corpus entities named by the query (only with a synonym table; else empty). */
+  entities: EntityExpansion[];
   /** `terms` plus every token of every expansion form, deduplicated. Engines that OR use these. */
   tokens: string[];
   /** The folded query, then one alternative query per expansion form (span replaced), at most 9. */
@@ -76,8 +98,35 @@ function lookupSpan(text: string): { kind: ExpansionKind; key: string; names: st
   return null;
 }
 
-/** Fold a query and expand aliases (see module doc). Never throws. */
-export function normalizeQuery(q: string): NormalizedQuery {
+/** Greedy longest-first, left to right, non-overlapping spans that name corpus entities. */
+function entitySpans(table: SynonymTable, tokens0: readonly string[]): EntityExpansion[] {
+  const out: EntityExpansion[] = [];
+  let i = 0;
+  while (i < tokens0.length) {
+    let advanced = false;
+    for (let len = Math.min(MAX_SPAN, tokens0.length - i); len >= 1; len--) {
+      const text = tokens0.slice(i, i + len).join(" ");
+      if (text.length < 2) continue;
+      const hits = matchSpan(table, text);
+      if (hits.length === 0) continue;
+      for (const h of hits) {
+        if (out.some((e) => e.kind === h.entry.kind && e.id === h.entry.id)) continue;
+        out.push({ kind: h.entry.kind, id: h.entry.id, span: [i, i + len], match: h.match, forms: h.entry.forms.filter((f) => f !== text) });
+      }
+      i += len;
+      advanced = true;
+      break;
+    }
+    if (!advanced) i += 1;
+  }
+  return out;
+}
+
+/**
+ * Fold a query and expand aliases (see module doc). With `synonyms`, also name the corpus entities
+ * the query mentions. Never throws.
+ */
+export function normalizeQuery(q: string, synonyms?: SynonymTable | null): NormalizedQuery {
   let raw = q.trim();
   if (raw.length > MAX_QUERY_LENGTH) {
     // Cut at a word boundary so the last term is not a fragment.
@@ -111,14 +160,20 @@ export function normalizeQuery(q: string): NormalizedQuery {
     if (!advanced) i += 1;
   }
 
-  const allTokens = uniq([...terms, ...expansions.flatMap((e) => e.forms.flatMap((f) => f.split(" ")))]);
+  const entities = synonyms ? entitySpans(synonyms, tokens0) : [];
+
+  const allTokens = uniq([
+    ...terms,
+    ...expansions.flatMap((e) => e.forms.flatMap((f) => f.split(" "))),
+    ...entities.flatMap((e) => e.forms.flatMap((f) => f.split(" ").filter((t) => !isFunctionWord(t)))),
+  ]);
   const variants = folded.length === 0 ? [] : [folded];
-  for (const e of expansions) {
+  for (const e of [...expansions, ...entities]) {
     for (const f of e.forms) {
       if (variants.length >= MAX_VARIANTS) break;
       const v = [...tokens0.slice(0, e.span[0]), f, ...tokens0.slice(e.span[1])].join(" ");
       if (!variants.includes(v)) variants.push(v);
     }
   }
-  return { raw, folded, terms, expansions, tokens: allTokens, variants };
+  return { raw, folded, terms, expansions, entities, tokens: allTokens, variants };
 }
