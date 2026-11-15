@@ -103,9 +103,13 @@ export function occasionHref(ed: Ed, kind: OccasionKind, key: string): string {
   return formatQuiet({ kind: "occasion", ed, key, occasion: kind });
 }
 
-/** The calendar's front door (the nav's "Calendar" link): the parsha index. */
+/**
+ * The calendar's front door (the nav's "Calendar" link and the breadcrumbs): `/{ed}/calendar/`,
+ * the page with the three ways in (W4.9). `@emunas/links` has no index kind for that address (it
+ * parses it as the parsha index), so it is built from the edition's home path.
+ */
 export function calendarHref(ed: Ed): string {
-  return formatQuiet({ kind: "index", ed, index: "calendar-parsha" });
+  return `${formatQuiet({ kind: "home", ed })}calendar/`;
 }
 
 export function yearsHref(ed: Ed): string {

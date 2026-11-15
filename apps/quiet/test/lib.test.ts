@@ -57,7 +57,7 @@ describe("nav", () => {
   it("has the five items in order with @emunas/links paths", () => {
     expect(navItems("yi").map((i) => [i.id, i.href])).toEqual([
       ["contents", "/yi/contents/"],
-      ["calendar", "/yi/calendar/parsha/"],
+      ["calendar", "/yi/calendar/"],
       ["indexes", `/yi/#${INDEXES_ANCHOR}`],
       ["search", "/yi/search/"],
       ["about", "/yi/about/"],
