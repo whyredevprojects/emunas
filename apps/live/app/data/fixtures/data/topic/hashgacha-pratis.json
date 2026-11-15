@@ -181,5 +181,103 @@
  ],
  "momentTotal": 6,
  "momentShiurim": 6,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 2,
+   "shiurim": 2
+  },
+  "yi": {
+   "sections": 4,
+   "shiurim": 4
+  }
+ },
+ "shiurim": [
+  {
+   "id": "en-parsha-en-vyshlch-01",
+   "lang": "en",
+   "title": "A Deeper Understanding of יעקב's Present to עשו",
+   "year": 5749,
+   "grade": "discussed",
+   "salience": 0.5
+  },
+  {
+   "id": "yi-parshas-hashavua-vyshb-08",
+   "lang": "yi",
+   "title": "בפרשה זו נטמן משיח בן יוסף ומשיח בן דוד. שייכות לחנוכה",
+   "year": 5751,
+   "grade": "discussed",
+   "salience": 0.5
+  },
+  {
+   "id": "yi-parshas-hashavua-vschnn-01",
+   "lang": "yi",
+   "title": "משה רבינו מלמד איך להתפלל. נחיצות וחשיבות פסוקי דזמרה",
+   "year": 5734,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-parshas-hashavua-vschnn-01~s9",
+    "t": 2803.61,
+    "title": {
+     "en": "Why a Jew comes to a place",
+     "yi": "פארוואס א איד קומט אן אויף אן ארט"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "en-miscellaneous-en-01",
+   "lang": "en",
+   "title": "פרק ששי: The קדושה of צדיקים and the חשיבות of Learning תורה",
+   "year": 5738,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-miscellaneous-en-01~s7",
+    "t": 1989.8,
+    "title": {
+     "en": "Everything happens for the tzaddikim",
+     "yi": "אלעס קומט פאר צוליב די צדיקים"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-zmanim-svds-shvshn-pvrym-01",
+   "lang": "yi",
+   "title": "יו\"ט ליהודים בעלי מדריגה' ומרדכי לא יכרע- היה בטוח בה'' יו\"ט של לעתיד לבא' פעמונים בשולי המעיל- דור אחרון",
+   "year": 5743,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-svds-shvshn-pvrym-01~s4",
+    "t": 1058.67,
+    "title": {
+     "en": "Haman, his ten sons, and inner Torah",
+     "yi": "המן, די עשרת בני המן, און פנימיות התורה"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-shonos-31",
+   "lang": "yi",
+   "title": "חשיבות מסירת נפש בזמננו",
+   "year": 5771,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-shonos-31~s1",
+    "t": 323.61,
+    "title": {
+     "en": "Iran, the economy, and a hard question",
+     "yi": "איראן, די פרנסה, און א שווערע קשיא"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 6,
+ "shiurPages": 0
 }

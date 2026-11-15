@@ -74,5 +74,70 @@
  ],
  "momentTotal": 3,
  "momentShiurim": 3,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 1,
+   "shiurim": 1
+  },
+  "yi": {
+   "sections": 2,
+   "shiurim": 2
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-parshas-hashavua-vschnn-01",
+   "lang": "yi",
+   "title": "משה רבינו מלמד איך להתפלל. נחיצות וחשיבות פסוקי דזמרה",
+   "year": 5734,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-parshas-hashavua-vschnn-01~s3",
+    "t": 962.62,
+    "title": {
+     "en": "Hiddur and Rabbi Pinchas ben Yair",
+     "yi": "הידור און רבי פנחס בן יאיר"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "en-miscellaneous-en-01",
+   "lang": "en",
+   "title": "פרק ששי: The קדושה of צדיקים and the חשיבות of Learning תורה",
+   "year": 5738,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-miscellaneous-en-01~s8",
+    "t": 2361.13,
+    "title": {
+     "en": "Mitzvos bring down blessing",
+     "yi": "מצוות ברענגען אראפ שפע"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-zmanim-svkvs-08",
+   "lang": "yi",
+   "title": "גודל מעלת קדושת הסוכה",
+   "year": 5758,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-svkvs-08~s9",
+    "t": 3107.75,
+    "title": {
+     "en": "The sukkah protects the whole world; bitachon brings simcha",
+     "yi": "די סוכה באשיצט די גאנצע וועלט; ביטחון ברענגט שמחה"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 3,
+ "shiurPages": 0
 }

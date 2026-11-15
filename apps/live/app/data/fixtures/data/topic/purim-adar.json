@@ -409,5 +409,77 @@
  ],
  "momentTotal": 22,
  "momentShiurim": 4,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 0,
+   "shiurim": 0
+  },
+  "yi": {
+   "sections": 22,
+   "shiurim": 4
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-zmanim-svds-shvshn-pvrym-01",
+   "lang": "yi",
+   "title": "יו\"ט ליהודים בעלי מדריגה' ומרדכי לא יכרע- היה בטוח בה'' יו\"ט של לעתיד לבא' פעמונים בשולי המעיל- דור אחרון",
+   "year": 5743,
+   "grade": "main",
+   "salience": 0.95
+  },
+  {
+   "id": "yi-zmanim-svds-pvrym-ktn-03",
+   "lang": "yi",
+   "title": "האור של מגילת אסתר יותר נעלה מאור של תורת משה (חתם סופר)",
+   "year": 5765,
+   "grade": "main",
+   "salience": 0.95
+  },
+  {
+   "id": "yi-zmanim-pvrym-07",
+   "lang": "yi",
+   "title": "גודל כח היום; הדרכה איך לנהוג בו",
+   "year": 5767,
+   "grade": "main",
+   "salience": 0.95
+  },
+  {
+   "id": "en-zmanim-en-chvdsh-tbs-02",
+   "lang": "en",
+   "title": "An Explanation of ניטל and the Month of טבת",
+   "year": 5764,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-zmanim-en-chvdsh-tbs-02~s0",
+    "t": 0,
+    "title": {
+     "en": "Why Teves is a difficult month",
+     "yi": "פארוואס טבת איז א שווערער חודש"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-shonos-31",
+   "lang": "yi",
+   "title": "חשיבות מסירת נפש בזמננו",
+   "year": 5771,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-shonos-31~s1",
+    "t": 323.61,
+    "title": {
+     "en": "Iran, the economy, and a hard question",
+     "yi": "איראן, די פרנסה, און א שווערע קשיא"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 5,
+ "shiurPages": 0
 }

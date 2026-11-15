@@ -137,5 +137,69 @@
  ],
  "momentTotal": 5,
  "momentShiurim": 4,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 1,
+   "shiurim": 1
+  },
+  "yi": {
+   "sections": 4,
+   "shiurim": 3
+  }
+ },
+ "shiurim": [
+  {
+   "id": "en-zmanim-en-chvdsh-tbs-02",
+   "lang": "en",
+   "title": "An Explanation of ניטל and the Month of טבת",
+   "year": 5764,
+   "grade": "main",
+   "salience": 0.75
+  },
+  {
+   "id": "yi-parshas-hashavua-shvptym-01",
+   "lang": "yi",
+   "title": "שופטים ושוטרים - עשה לך רב כדי שתהיה בטל להקב\"ה (שייכות לימים נוראים)",
+   "year": 5740,
+   "grade": "main",
+   "salience": 0.7
+  },
+  {
+   "id": "yi-parshas-hashavua-hzynv-01",
+   "lang": "yi",
+   "title": "פרשה של אמונה. עשי\"ת - זמן לנקות חציצות האמונה",
+   "year": 5732,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-parshas-hashavua-hzynv-01~s10",
+    "t": 2972.72,
+    "title": {
+     "en": "Rosh Hashanah, the day of gathering",
+     "yi": "ראש השנה, דער טאג פון קיבוץ"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-zmanim-nysn-05",
+   "lang": "yi",
+   "title": "לעזור בבית בהכנה לפסח; להתחדש עצמו בזמן התחדשות",
+   "year": null,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-nysn-05~s5",
+    "t": 1416.79,
+    "title": {
+     "en": "Matzah, emunah and the key to renewal",
+     "yi": "מצה, אמונה און דער שליסל צום באנייען"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 4,
+ "shiurPages": 0
 }

@@ -609,5 +609,201 @@
  ],
  "momentTotal": 26,
  "momentShiurim": 15,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 13,
+   "shiurim": 7
+  },
+  "yi": {
+   "sections": 13,
+   "shiurim": 8
+  }
+ },
+ "shiurim": [
+  {
+   "id": "en-miscellaneous-en-02",
+   "lang": "en",
+   "title": "The Greatness of the חכמי התורה and the קדושה that Exists in their names",
+   "year": 5735,
+   "grade": "main",
+   "salience": 0.9
+  },
+  {
+   "id": "en-miscellaneous-en-01",
+   "lang": "en",
+   "title": "פרק ששי: The קדושה of צדיקים and the חשיבות of Learning תורה",
+   "year": 5738,
+   "grade": "main",
+   "salience": 0.9
+  },
+  {
+   "id": "yi-zmanim-chnvkh-11",
+   "lang": "yi",
+   "title": "דרוש בנס חנוכה - נס הנרות מגלים נס המלחמה",
+   "year": 5749,
+   "grade": "main",
+   "salience": 0.7
+  },
+  {
+   "id": "yi-parshas-hashavua-mvr-01",
+   "lang": "yi",
+   "title": "אהרן והכהנים הם בחינת מדת הוד - קודש הקדשים - בחינת רשב\"י",
+   "year": 5736,
+   "grade": "discussed",
+   "salience": 0.45
+  },
+  {
+   "id": "en-zmanim-en-tv-bshbt-01",
+   "lang": "en",
+   "title": "ט”ו בשבט Ushers in the Months of חסד (A Deeper Understanding of the צירופי החודש)",
+   "year": 5756,
+   "grade": "discussed",
+   "salience": 0.45
+  },
+  {
+   "id": "yi-zmanim-tv-bb-04",
+   "lang": "yi",
+   "title": "זמן לשאוב יראת שמים בעד הכנה לר\"ה' זמן של שידוכים' ז' ימים אחר היו\"ט הגדול של ט' באב לעתיד.",
+   "year": 5739,
+   "grade": "discussed",
+   "salience": 0.4
+  },
+  {
+   "id": "en-zmanim-en-psch-06",
+   "lang": "en",
+   "title": "The Beginning of our Nuptials with Hashem",
+   "year": 5765,
+   "grade": "discussed",
+   "salience": 0.4
+  },
+  {
+   "id": "yi-zmanim-lvl-02",
+   "lang": "yi",
+   "title": "לדוד ה' אורי - בבטחון תלוי הכל",
+   "year": 5740,
+   "grade": "discussed",
+   "salience": 0.3
+  },
+  {
+   "id": "en-parsha-en-vyshlch-01",
+   "lang": "en",
+   "title": "A Deeper Understanding of יעקב's Present to עשו",
+   "year": 5749,
+   "grade": "discussed",
+   "salience": 0.3
+  },
+  {
+   "id": "yi-zmanim-svds-pvrym-ktn-03",
+   "lang": "yi",
+   "title": "האור של מגילת אסתר יותר נעלה מאור של תורת משה (חתם סופר)",
+   "year": 5765,
+   "grade": "discussed",
+   "salience": 0.3
+  },
+  {
+   "id": "yi-parshas-hashavua-vschnn-01",
+   "lang": "yi",
+   "title": "משה רבינו מלמד איך להתפלל. נחיצות וחשיבות פסוקי דזמרה",
+   "year": 5734,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-parshas-hashavua-vschnn-01~s8",
+    "t": 2310.68,
+    "title": {
+     "en": "What one owes the tzibbur; Torah with tefillah",
+     "yi": "וואס מען איז שולדיג דעם ציבור; תורה מיט תפילה"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-parshas-hashavua-shvptym-01",
+   "lang": "yi",
+   "title": "שופטים ושוטרים - עשה לך רב כדי שתהיה בטל להקב\"ה (שייכות לימים נוראים)",
+   "year": 5740,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-parshas-hashavua-shvptym-01~s6",
+    "t": 2142.88,
+    "title": {
+     "en": "The king's limits and the honor of the Torah",
+     "yi": "די גדרים פונעם מלך און דער כבוד פון דער תורה"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-zmanim-spyrh-01",
+   "lang": "yi",
+   "title": "בימי ספירה צריכים לעשות תשובה על שורש העבירות - המדות (שייכות לפרשת קדושים)",
+   "year": 5742,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-spyrh-01~s4",
+    "t": 1341.16,
+    "title": {
+     "en": "The middle of the Torah and Rosh Chodesh",
+     "yi": "דער מיטן פון דער תורה און ראש חודש"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-zmanim-shbs-chzvn-01",
+   "lang": "yi",
+   "title": "בשבת חזון נתגלה השמחה של ט' באב לעתיד וכל יהודי רואה בית השלישי בבנינה. ביאור ענין שמיטה",
+   "year": 5746,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-shbs-chzvn-01~s2",
+    "t": 662.99,
+    "title": {
+     "en": "Turn north: the hidden Torah and the heel generation",
+     "yi": "ווענדט זיך צפונה: די באהאלטענע תורה און דער דור פון עקבתא דמשיחא"
+    },
+    "count": 3
+   }
+  },
+  {
+   "id": "en-parsha-en-nch-01",
+   "lang": "en",
+   "title": "The Special Holiness of נח תיבת: a Microcosm of the עולם התיקון",
+   "year": 5749,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-parsha-en-nch-01~s2",
+    "t": 461.83,
+    "title": {
+     "en": "Bringing Tishrei's honey into the month of Bul",
+     "yi": "אריינטראגן דעם האניג פון תשרי אין ירח בול"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "en-zmanim-en-chvdsh-tbs-02",
+   "lang": "en",
+   "title": "An Explanation of ניטל and the Month of טבת",
+   "year": 5764,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-zmanim-en-chvdsh-tbs-02~s3",
+    "t": 1504.32,
+    "title": {
+     "en": "Yosef, Onkelos and the night of Nittel",
+     "yi": "יוסף, אונקלוס און ניטל ביינאכט"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 16,
+ "shiurPages": 0
 }

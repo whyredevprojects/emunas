@@ -330,5 +330,85 @@
  ],
  "momentTotal": 15,
  "momentShiurim": 5,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 4,
+   "shiurim": 2
+  },
+  "yi": {
+   "sections": 11,
+   "shiurim": 3
+  }
+ },
+ "shiurim": [
+  {
+   "id": "en-zmanim-en-psch-06",
+   "lang": "en",
+   "title": "The Beginning of our Nuptials with Hashem",
+   "year": 5765,
+   "grade": "main",
+   "salience": 0.9
+  },
+  {
+   "id": "yi-zmanim-nysn-05",
+   "lang": "yi",
+   "title": "לעזור בבית בהכנה לפסח; להתחדש עצמו בזמן התחדשות",
+   "year": null,
+   "grade": "main",
+   "salience": 0.8
+  },
+  {
+   "id": "yi-zmanim-spyrh-01",
+   "lang": "yi",
+   "title": "בימי ספירה צריכים לעשות תשובה על שורש העבירות - המדות (שייכות לפרשת קדושים)",
+   "year": 5742,
+   "grade": "discussed",
+   "salience": 0.5
+  },
+  {
+   "id": "yi-parshas-hashavua-brshys-03",
+   "lang": "yi",
+   "title": "לימוד משידוך הראשון - שנעשה בלי השתתפות של מעשי אדם",
+   "year": 5750,
+   "grade": "discussed",
+   "salience": 0.3
+  },
+  {
+   "id": "yi-zmanim-shbs-chzvn-01",
+   "lang": "yi",
+   "title": "בשבת חזון נתגלה השמחה של ט' באב לעתיד וכל יהודי רואה בית השלישי בבנינה. ביאור ענין שמיטה",
+   "year": 5746,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-shbs-chzvn-01~s3",
+    "t": 890.25,
+    "title": {
+     "en": "Three matzos, three nations, three weeks",
+     "yi": "דריי מצות, דריי פעלקער, דריי וואכן"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "en-zmanim-en-tv-bshbt-01",
+   "lang": "en",
+   "title": "ט”ו בשבט Ushers in the Months of חסד (A Deeper Understanding of the צירופי החודש)",
+   "year": 5756,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-zmanim-en-tv-bshbt-01~s3",
+    "t": 1111.24,
+    "title": {
+     "en": "Nissan and Tishrei, kings of the year",
+     "yi": "ניסן און תשרי, די מלכים פונעם יאר"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 6,
+ "shiurPages": 0
 }

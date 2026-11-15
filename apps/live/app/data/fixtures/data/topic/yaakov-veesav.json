@@ -345,5 +345,68 @@
  ],
  "momentTotal": 18,
  "momentShiurim": 5,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 14,
+   "shiurim": 3
+  },
+  "yi": {
+   "sections": 4,
+   "shiurim": 2
+  }
+ },
+ "shiurim": [
+  {
+   "id": "en-parsha-en-svldvs-01",
+   "lang": "en",
+   "title": "Explaining יצחק's Fondness of עשו and the meaning of ויגדלו הנערים",
+   "year": 5749,
+   "grade": "main",
+   "salience": 1
+  },
+  {
+   "id": "en-parsha-en-vyshlch-01",
+   "lang": "en",
+   "title": "A Deeper Understanding of יעקב's Present to עשו",
+   "year": 5749,
+   "grade": "main",
+   "salience": 1
+  },
+  {
+   "id": "yi-zmanim-svkvs-08",
+   "lang": "yi",
+   "title": "גודל מעלת קדושת הסוכה",
+   "year": 5758,
+   "grade": "discussed",
+   "salience": 0.5
+  },
+  {
+   "id": "yi-zmanim-shbs-chzvn-01",
+   "lang": "yi",
+   "title": "בשבת חזון נתגלה השמחה של ט' באב לעתיד וכל יהודי רואה בית השלישי בבנינה. ביאור ענין שמיטה",
+   "year": 5746,
+   "grade": "discussed",
+   "salience": 0.4
+  },
+  {
+   "id": "en-zmanim-en-tv-bshbt-01",
+   "lang": "en",
+   "title": "ט”ו בשבט Ushers in the Months of חסד (A Deeper Understanding of the צירופי החודש)",
+   "year": 5756,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-zmanim-en-tv-bshbt-01~s2",
+    "t": 571.1,
+    "title": {
+     "en": "In kedushah the masculine comes first",
+     "yi": "אין קדושה קומט דער זכר פריער"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 5,
+ "shiurPages": 0
 }

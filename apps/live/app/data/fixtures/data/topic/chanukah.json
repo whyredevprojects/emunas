@@ -228,5 +228,77 @@
  ],
  "momentTotal": 9,
  "momentShiurim": 5,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 2,
+   "shiurim": 2
+  },
+  "yi": {
+   "sections": 7,
+   "shiurim": 3
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-zmanim-chnvkh-11",
+   "lang": "yi",
+   "title": "דרוש בנס חנוכה - נס הנרות מגלים נס המלחמה",
+   "year": 5749,
+   "grade": "main",
+   "salience": 0.9
+  },
+  {
+   "id": "yi-zmanim-svds-zs-chnvkh-04",
+   "lang": "yi",
+   "title": "סעודה של המחכים לבנין ביהמ\"ק; חנוכה - להודות ולהלל - יו\"ט של הוד",
+   "year": 5751,
+   "grade": "main",
+   "salience": 0.85
+  },
+  {
+   "id": "yi-parshas-hashavua-vyshb-08",
+   "lang": "yi",
+   "title": "בפרשה זו נטמן משיח בן יוסף ומשיח בן דוד. שייכות לחנוכה",
+   "year": 5751,
+   "grade": "main",
+   "salience": 0.6
+  },
+  {
+   "id": "en-parsha-en-ky-sb-01",
+   "lang": "en",
+   "title": "ביכורים - Bringing the Fruit of ראשית to the Place of ראשית",
+   "year": 5760,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-parsha-en-ky-sb-01~s6",
+    "t": 1912.09,
+    "title": {
+     "en": "Four periods of teshuvah: 30, 40, 52, 122",
+     "yi": "פיר תקופות פון תשובה: 30, 40, 52, 122"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "en-zmanim-en-chvdsh-tbs-02",
+   "lang": "en",
+   "title": "An Explanation of ניטל and the Month of טבת",
+   "year": 5764,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-zmanim-en-chvdsh-tbs-02~s2",
+    "t": 797.84,
+    "title": {
+     "en": "The tekufah of Teves and the origin of Nittel",
+     "yi": "תקופת טבת און דער שורש פון ניטל"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 5,
+ "shiurPages": 0
 }

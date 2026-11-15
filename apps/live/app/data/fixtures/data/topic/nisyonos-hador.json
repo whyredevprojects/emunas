@@ -128,5 +128,44 @@
  ],
  "momentTotal": 4,
  "momentShiurim": 2,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 1,
+   "shiurim": 1
+  },
+  "yi": {
+   "sections": 3,
+   "shiurim": 1
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-shonos-10",
+   "lang": "yi",
+   "title": "בענין קליפת \"תכבד העבודה\" בזמן הזה",
+   "year": null,
+   "grade": "discussed",
+   "salience": 0.5
+  },
+  {
+   "id": "en-parsha-en-ky-sb-01",
+   "lang": "en",
+   "title": "ביכורים - Bringing the Fruit of ראשית to the Place of ראשית",
+   "year": 5760,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-parsha-en-ky-sb-01~s8",
+    "t": 2730.57,
+    "title": {
+     "en": "Ki Savo as rebuke for the past year",
+     "yi": "כי תבא אלס תוכחה אויפן פארגאנגענעם יאר"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 2,
+ "shiurPages": 0
 }

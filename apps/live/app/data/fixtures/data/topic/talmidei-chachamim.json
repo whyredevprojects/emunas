@@ -163,5 +163,52 @@
  ],
  "momentTotal": 4,
  "momentShiurim": 3,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 2,
+   "shiurim": 1
+  },
+  "yi": {
+   "sections": 2,
+   "shiurim": 2
+  }
+ },
+ "shiurim": [
+  {
+   "id": "en-miscellaneous-en-02",
+   "lang": "en",
+   "title": "The Greatness of the חכמי התורה and the קדושה that Exists in their names",
+   "year": 5735,
+   "grade": "main",
+   "salience": 0.75
+  },
+  {
+   "id": "yi-zmanim-lvl-02",
+   "lang": "yi",
+   "title": "לדוד ה' אורי - בבטחון תלוי הכל",
+   "year": 5740,
+   "grade": "discussed",
+   "salience": 0.3
+  },
+  {
+   "id": "yi-parshas-hashavua-shvptym-01",
+   "lang": "yi",
+   "title": "שופטים ושוטרים - עשה לך רב כדי שתהיה בטל להקב\"ה (שייכות לימים נוראים)",
+   "year": 5740,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-parshas-hashavua-shvptym-01~s6",
+    "t": 2142.88,
+    "title": {
+     "en": "The king's limits and the honor of the Torah",
+     "yi": "די גדרים פונעם מלך און דער כבוד פון דער תורה"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 3,
+ "shiurPages": 0
 }

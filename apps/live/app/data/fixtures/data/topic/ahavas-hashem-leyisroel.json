@@ -222,5 +222,102 @@
  ],
  "momentTotal": 9,
  "momentShiurim": 5,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 2,
+   "shiurim": 1
+  },
+  "yi": {
+   "sections": 7,
+   "shiurim": 4
+  }
+ },
+ "shiurim": [
+  {
+   "id": "en-zmanim-en-psch-06",
+   "lang": "en",
+   "title": "The Beginning of our Nuptials with Hashem",
+   "year": 5765,
+   "grade": "main",
+   "salience": 0.8
+  },
+  {
+   "id": "yi-zmanim-svds-pvrym-ktn-03",
+   "lang": "yi",
+   "title": "האור של מגילת אסתר יותר נעלה מאור של תורת משה (חתם סופר)",
+   "year": 5765,
+   "grade": "main",
+   "salience": 0.75
+  },
+  {
+   "id": "yi-parshas-hashavua-brshys-01",
+   "lang": "yi",
+   "title": "“ולאדם לא מצא עזר כנגדו” - זה קוב\"ה וכנסת ישראל",
+   "year": 5736,
+   "grade": "main",
+   "salience": 0.7
+  },
+  {
+   "id": "en-zmanim-en-chvdsh-tbs-02",
+   "lang": "en",
+   "title": "An Explanation of ניטל and the Month of טבת",
+   "year": 5764,
+   "grade": "discussed",
+   "salience": 0.45
+  },
+  {
+   "id": "yi-zmanim-lvl-01",
+   "lang": "yi",
+   "title": "דיבורים המעוררים את הלב",
+   "year": 5735,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-lvl-01~s8",
+    "t": 2804.64,
+    "title": {
+     "en": "Elul and Hashem's love for Klal Yisrael",
+     "yi": "אלול און דעם אייבערשטנס אהבה צו כלל ישראל"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-parshas-hashavua-mvr-01",
+   "lang": "yi",
+   "title": "אהרן והכהנים הם בחינת מדת הוד - קודש הקדשים - בחינת רשב\"י",
+   "year": 5736,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-parshas-hashavua-mvr-01~s6",
+    "t": 2268.82,
+    "title": {
+     "en": "Netzer mata'ai: Hashem's planting and His child",
+     "yi": "נצר מטעי: דעם אייבערשטנס פלאנץ און זיין קינד"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-zmanim-tv-bb-04",
+   "lang": "yi",
+   "title": "זמן לשאוב יראת שמים בעד הכנה לר\"ה' זמן של שידוכים' ז' ימים אחר היו\"ט הגדול של ט' באב לעתיד.",
+   "year": 5739,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-tv-bb-04~s1",
+    "t": 262.83,
+    "title": {
+     "en": "A shidduch between Hashem and Klal Yisrael",
+     "yi": "א שידוך צווישן דעם רבונו של עולם און כלל ישראל"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 7,
+ "shiurPages": 0
 }

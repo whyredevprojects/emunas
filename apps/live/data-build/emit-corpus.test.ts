@@ -20,9 +20,10 @@ import type {
   TodayFile,
   TopicFile,
   TopicMomentsFile,
+  TopicShiurimFile,
   TopicsFile,
 } from "../app/data/types.ts";
-import { TOPIC_FIRST_MOMENTS, TOPIC_MOMENTS_PAGE_SIZE } from "../app/data/types.ts";
+import { TOPIC_FIRST_MOMENTS, TOPIC_FIRST_SHIURIM, TOPIC_MOMENTS_PAGE_SIZE, TOPIC_SHIURIM_PAGE_SIZE } from "../app/data/types.ts";
 import { brotliSize } from "./budgets.ts";
 import { readCorpusInput, type CorpusInput } from "./corpus-input.ts";
 import { CORPUS_LIMITS, shardByPrefix } from "./emit-corpus.ts";
@@ -171,6 +172,43 @@ describe("corpus-layer files on the mini corpus", () => {
       for (const m of t.moments) expect(m.id).toMatch(new RegExp(`^${m.shiurId}~s\\d+$`, "u"));
     }
     expect(tree.length).toBe(layer.topics.filter((t) => t.count > 0 && t.pages.live).length);
+  });
+
+  it("a topic's 'all shiurim' rows follow the layer grades: main, discussed, touched; paged after the first rows", () => {
+    const detail = layer.topicDetail;
+    const full = new Set(input.shiurim.filter((s) => s.status === "full").map((s) => s.id));
+    let touchedSeen = 0;
+    for (const [id] of get<TopicsFile>("topics.json").topics) {
+      const t = get<TopicFile>(`topic/${id}.json`);
+      expect(t.shiurim.length).toBeLessThanOrEqual(TOPIC_FIRST_SHIURIM);
+      expect(t.shiurPages).toBe(Math.ceil(Math.max(0, t.shiurTotal - TOPIC_FIRST_SHIURIM) / TOPIC_SHIURIM_PAGE_SIZE));
+      const rows = [...t.shiurim];
+      for (let n = 1; n <= t.shiurPages; n++) rows.push(...get<TopicShiurimFile>(`topic-shiurim/${id}.${n}.json`).shiurim);
+      expect(files.has(`topic-shiurim/${id}.${t.shiurPages + 1}.json`)).toBe(false);
+      expect(rows).toHaveLength(t.shiurTotal);
+      const g = detail.get(id)!.grades;
+      const want = new Set([...g.main, ...g.discussed, ...g.touched].map((r) => r.shiurId).filter((s) => full.has(s)));
+      expect(new Set(rows.map((r) => r.id))).toEqual(want);
+      const rank = { main: 0, discussed: 1, touched: 2 } as const;
+      for (let i = 1; i < rows.length; i++) {
+        const a = rows[i - 1]!;
+        const b = rows[i]!;
+        expect(rank[a.grade]).toBeLessThanOrEqual(rank[b.grade]);
+        if (a.grade === b.grade && a.grade !== "touched") expect(a.salience).toBeGreaterThanOrEqual(b.salience);
+      }
+      for (const r of rows) {
+        expect(r.grade === "touched").toBe(r.section !== undefined);
+        if (r.section) {
+          touchedSeen++;
+          expect(r.section.id).toMatch(new RegExp(`^${r.id}~s\\d+$`, "u"));
+          expect(r.section.count).toBeGreaterThan(0);
+        }
+      }
+      // Per-language mix totals add up to the whole mix.
+      expect(t.momentLangs.en.sections + t.momentLangs.yi.sections).toBe(t.momentTotal);
+      expect(t.momentLangs.en.shiurim + t.momentLangs.yi.shiurim).toBe(t.momentShiurim);
+    }
+    expect(touchedSeen).toBeGreaterThan(0);
   });
 
   it("generated layer text stays out of corpus.json, facets.json, today.json and the shiur files", () => {

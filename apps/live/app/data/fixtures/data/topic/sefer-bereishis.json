@@ -671,5 +671,209 @@
  ],
  "momentTotal": 50,
  "momentShiurim": 16,
- "momentPages": 1
+ "momentPages": 1,
+ "momentLangs": {
+  "en": {
+   "sections": 27,
+   "shiurim": 7
+  },
+  "yi": {
+   "sections": 23,
+   "shiurim": 9
+  }
+ },
+ "shiurim": [
+  {
+   "id": "en-parsha-en-nch-01",
+   "lang": "en",
+   "title": "The Special Holiness of נח תיבת: a Microcosm of the עולם התיקון",
+   "year": 5749,
+   "grade": "main",
+   "salience": 1
+  },
+  {
+   "id": "en-parsha-en-svldvs-01",
+   "lang": "en",
+   "title": "Explaining יצחק's Fondness of עשו and the meaning of ויגדלו הנערים",
+   "year": 5749,
+   "grade": "main",
+   "salience": 1
+  },
+  {
+   "id": "en-parsha-en-vyshlch-01",
+   "lang": "en",
+   "title": "A Deeper Understanding of יעקב's Present to עשו",
+   "year": 5749,
+   "grade": "main",
+   "salience": 1
+  },
+  {
+   "id": "yi-parshas-hashavua-brshys-01",
+   "lang": "yi",
+   "title": "“ולאדם לא מצא עזר כנגדו” - זה קוב\"ה וכנסת ישראל",
+   "year": 5736,
+   "grade": "main",
+   "salience": 0.9
+  },
+  {
+   "id": "yi-parshas-hashavua-brshys-03",
+   "lang": "yi",
+   "title": "לימוד משידוך הראשון - שנעשה בלי השתתפות של מעשי אדם",
+   "year": 5750,
+   "grade": "main",
+   "salience": 0.8
+  },
+  {
+   "id": "yi-parshas-hashavua-vyshb-08",
+   "lang": "yi",
+   "title": "בפרשה זו נטמן משיח בן יוסף ומשיח בן דוד. שייכות לחנוכה",
+   "year": 5751,
+   "grade": "main",
+   "salience": 0.7
+  },
+  {
+   "id": "yi-shonos-31",
+   "lang": "yi",
+   "title": "חשיבות מסירת נפש בזמננו",
+   "year": 5771,
+   "grade": "main",
+   "salience": 0.6
+  },
+  {
+   "id": "en-zmanim-en-chvdsh-tbs-02",
+   "lang": "en",
+   "title": "An Explanation of ניטל and the Month of טבת",
+   "year": 5764,
+   "grade": "discussed",
+   "salience": 0.55
+  },
+  {
+   "id": "yi-zmanim-svkvs-08",
+   "lang": "yi",
+   "title": "גודל מעלת קדושת הסוכה",
+   "year": 5758,
+   "grade": "discussed",
+   "salience": 0.5
+  },
+  {
+   "id": "yi-zmanim-shbs-chzvn-01",
+   "lang": "yi",
+   "title": "בשבת חזון נתגלה השמחה של ט' באב לעתיד וכל יהודי רואה בית השלישי בבנינה. ביאור ענין שמיטה",
+   "year": 5746,
+   "grade": "discussed",
+   "salience": 0.4
+  },
+  {
+   "id": "yi-zmanim-nysn-05",
+   "lang": "yi",
+   "title": "לעזור בבית בהכנה לפסח; להתחדש עצמו בזמן התחדשות",
+   "year": null,
+   "grade": "discussed",
+   "salience": 0.4
+  },
+  {
+   "id": "en-miscellaneous-en-02",
+   "lang": "en",
+   "title": "The Greatness of the חכמי התורה and the קדושה that Exists in their names",
+   "year": 5735,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-miscellaneous-en-02~s5",
+    "t": 1373.85,
+    "title": {
+     "en": "Adam's names and Rabbi Meir's neshamah",
+     "yi": "אדם הראשונ'ס נעמען און רבי מאיר'ס נשמה"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "en-miscellaneous-en-01",
+   "lang": "en",
+   "title": "פרק ששי: The קדושה of צדיקים and the חשיבות of Learning תורה",
+   "year": 5738,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-miscellaneous-en-01~s2",
+    "t": 541.22,
+    "title": {
+     "en": "A name is the neshamah",
+     "yi": "דער נאמען איז די נשמה"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-parshas-hashavua-shvptym-01",
+   "lang": "yi",
+   "title": "שופטים ושוטרים - עשה לך רב כדי שתהיה בטל להקב\"ה (שייכות לימים נוראים)",
+   "year": 5740,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-parshas-hashavua-shvptym-01~s1",
+    "t": 272.01,
+    "title": {
+     "en": "Malki-Tzedek, Ashrei and the need for a rebbe",
+     "yi": "מלכי צדק, אשרי, און א איד דארף א רבי"
+    },
+    "count": 3
+   }
+  },
+  {
+   "id": "yi-zmanim-spyrh-01",
+   "lang": "yi",
+   "title": "בימי ספירה צריכים לעשות תשובה על שורש העבירות - המדות (שייכות לפרשת קדושים)",
+   "year": 5742,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-spyrh-01~s0",
+    "t": 0,
+    "title": {
+     "en": "Kedoshim tihyu: Chanoch and Avraham",
+     "yi": "קדושים תהיו: חנוך און אברהם אבינו"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-zmanim-svds-shvshn-pvrym-01",
+   "lang": "yi",
+   "title": "יו\"ט ליהודים בעלי מדריגה' ומרדכי לא יכרע- היה בטוח בה'' יו\"ט של לעתיד לבא' פעמונים בשולי המעיל- דור אחרון",
+   "year": 5743,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-svds-shvshn-pvrym-01~s6",
+    "t": 1973.213,
+    "title": {
+     "en": "Avraham's 400 chapters of Avodah Zarah",
+     "yi": "אברהם אבינו'ס פיר הונדערט פרקים עבודה זרה"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "en-zmanim-en-tv-bshbt-01",
+   "lang": "en",
+   "title": "ט”ו בשבט Ushers in the Months of חסד (A Deeper Understanding of the צירופי החודש)",
+   "year": 5756,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-zmanim-en-tv-bshbt-01~s2",
+    "t": 571.1,
+    "title": {
+     "en": "In kedushah the masculine comes first",
+     "yi": "אין קדושה קומט דער זכר פריער"
+    },
+    "count": 2
+   }
+  }
+ ],
+ "shiurTotal": 17,
+ "shiurPages": 0
 }

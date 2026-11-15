@@ -573,6 +573,42 @@ export interface TopicFile {
   momentShiurim: number;
   /** Further sections in `topic/<id>.moments-<n>.json`, n = 1 … momentPages. */
   momentPages: number;
+  /** Sections and distinct shiurim of the mix per audio language (the header under a language filter). */
+  momentLangs: Record<Ed, { sections: number; shiurim: number }>;
+  /** "All shiurim": the first rows (see `TopicShiurRow` for the order). */
+  shiurim: TopicShiurRow[];
+  /** All rows; the rest are in `topic-shiurim/<id>.<n>.json`, n = 1 … shiurPages. */
+  shiurTotal: number;
+  shiurPages: number;
+}
+
+/**
+ * A row of a topic's "all shiurim" list (concept-live C.2 item 6). Order: `main` then `discussed`,
+ * each by salience (highest first), then year (undated last), then catalog order; then `touched`
+ * (section-level tags only), by year. A `touched` row links straight to its first tagged section.
+ */
+export interface TopicShiurRow {
+  id: string;
+  lang: Ed;
+  /** `catalog.titleOriginal`, as written. */
+  title: string;
+  year: number | null;
+  grade: "main" | "discussed" | "touched";
+  /** Shiur-level salience (two decimals); 0 for `touched`. */
+  salience: number;
+  /** `touched` only: the first tagged section and how many sections carry the topic. */
+  section?: { id: string; t: number; title: L; count: number };
+}
+
+export const TOPIC_FIRST_SHIURIM = 40;
+export const TOPIC_SHIURIM_PAGE_SIZE = 200;
+
+/** /data/topic-shiurim/<id>.<n>.json: further rows of a topic's "all shiurim" list. */
+export interface TopicShiurimFile {
+  schemaVersion: typeof LIVE_DATA_SCHEMA_VERSION;
+  topicId: string;
+  page: number;
+  shiurim: TopicShiurRow[];
 }
 
 export const TOPIC_FIRST_MOMENTS = 30;
@@ -699,6 +735,7 @@ export interface DataFiles {
   topics: TopicsFile;
   topic: TopicFile;
   topicMoments: TopicMomentsFile;
+  topicShiurim: TopicShiurimFile;
   thread: ThreadFile;
   story: StoryFile;
   storiesIndex: StoriesIndexFile;

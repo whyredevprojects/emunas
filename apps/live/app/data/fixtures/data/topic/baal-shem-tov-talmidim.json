@@ -139,5 +139,61 @@
  ],
  "momentTotal": 4,
  "momentShiurim": 3,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 3,
+   "shiurim": 2
+  },
+  "yi": {
+   "sections": 1,
+   "shiurim": 1
+  }
+ },
+ "shiurim": [
+  {
+   "id": "en-miscellaneous-en-01",
+   "lang": "en",
+   "title": "פרק ששי: The קדושה of צדיקים and the חשיבות of Learning תורה",
+   "year": 5738,
+   "grade": "discussed",
+   "salience": 0.3
+  },
+  {
+   "id": "yi-parshas-hashavua-vschnn-01",
+   "lang": "yi",
+   "title": "משה רבינו מלמד איך להתפלל. נחיצות וחשיבות פסוקי דזמרה",
+   "year": 5734,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-parshas-hashavua-vschnn-01~s10",
+    "t": 3179.64,
+    "title": {
+     "en": "The melamed and the 'uncle'",
+     "yi": "דער מלמד און דער 'פעטער'"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "en-parsha-en-ky-sb-01",
+   "lang": "en",
+   "title": "ביכורים - Bringing the Fruit of ראשית to the Place of ראשית",
+   "year": 5760,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-parsha-en-ky-sb-01~s1",
+    "t": 232.27,
+    "title": {
+     "en": "Why people must be hungry and thirsty",
+     "yi": "פארוואס מענטשן מוזן זיין הונגעריג און דורשטיג"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 3,
+ "shiurPages": 0
 }

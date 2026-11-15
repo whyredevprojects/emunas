@@ -5,7 +5,9 @@ export {
   MOMENT_SHARD_SIZE,
   TODAY_ROW_PER_LANG,
   TOPIC_FIRST_MOMENTS,
+  TOPIC_FIRST_SHIURIM,
   TOPIC_MOMENTS_PAGE_SIZE,
+  TOPIC_SHIURIM_PAGE_SIZE,
 } from "./types.ts";
 export { DATA_ROOT, DataPathError, dataFileOf, dataPaths, glossaryShardFor } from "./paths.ts";
 export { topicNodes, topicRowLabel } from "./topics.ts";
@@ -26,6 +28,7 @@ export {
   loadThread,
   loadTopic,
   loadTopicMoments,
+  loadTopicShiurim,
   loadTopics,
   loadMomentShard,
   loadQuickIndex,

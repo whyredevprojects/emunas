@@ -117,11 +117,12 @@ describe("a new done shiur", () => {
 
     const occasionKeys = [s.parsha?.key, s.zman?.key].flatMap((k) => (k ? [k] : []));
     const expected = expectedFiles(s, occasionKeys, after.input, after.files.get("build.json") as BuildFile);
-    // Moment shards after the new shiur's position may shift, and topic moment pages after its
-    // sections; they are expected to change.
-    const changed = r.written.filter((f) => !f.startsWith("moments/") && !/^topic\/.+\.moments-\d+\.json$/.test(f));
+    // Moment shards after the new shiur's position may shift, and topic moment and "all shiurim"
+    // pages after its sections and rows; they are expected to change.
+    const paged = (f: string) => /^topic\/.+\.moments-\d+\.json$/.test(f) || f.startsWith("topic-shiurim/");
+    const changed = r.written.filter((f) => !f.startsWith("moments/") && !paged(f));
     for (const f of changed) expect(expected.has(f), `unexpected change: ${f}`).toBe(true);
-    expect(r.removed.filter((f) => !/^topic\/.+\.moments-\d+\.json$/.test(f))).toEqual([]);
+    expect(r.removed.filter((f) => !paged(f))).toEqual([]);
 
     // The must-change files did change.
     for (const f of [

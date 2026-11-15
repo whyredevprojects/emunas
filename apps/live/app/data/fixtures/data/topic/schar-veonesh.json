@@ -185,5 +185,51 @@
  ],
  "momentTotal": 6,
  "momentShiurim": 4,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 4,
+   "shiurim": 3
+  },
+  "yi": {
+   "sections": 2,
+   "shiurim": 1
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-parshas-hashavua-mvr-01",
+   "lang": "yi",
+   "title": "אהרן והכהנים הם בחינת מדת הוד - קודש הקדשים - בחינת רשב\"י",
+   "year": 5736,
+   "grade": "main",
+   "salience": 0.6
+  },
+  {
+   "id": "en-miscellaneous-en-02",
+   "lang": "en",
+   "title": "The Greatness of the חכמי התורה and the קדושה that Exists in their names",
+   "year": 5735,
+   "grade": "discussed",
+   "salience": 0.4
+  },
+  {
+   "id": "en-miscellaneous-en-01",
+   "lang": "en",
+   "title": "פרק ששי: The קדושה of צדיקים and the חשיבות of Learning תורה",
+   "year": 5738,
+   "grade": "discussed",
+   "salience": 0.4
+  },
+  {
+   "id": "en-zmanim-en-psch-06",
+   "lang": "en",
+   "title": "The Beginning of our Nuptials with Hashem",
+   "year": 5765,
+   "grade": "discussed",
+   "salience": 0.4
+  }
+ ],
+ "shiurTotal": 4,
+ "shiurPages": 0
 }

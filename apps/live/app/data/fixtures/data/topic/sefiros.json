@@ -153,5 +153,60 @@
  ],
  "momentTotal": 6,
  "momentShiurim": 4,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 2,
+   "shiurim": 1
+  },
+  "yi": {
+   "sections": 4,
+   "shiurim": 3
+  }
+ },
+ "shiurim": [
+  {
+   "id": "en-zmanim-en-tv-bshbt-01",
+   "lang": "en",
+   "title": "ט”ו בשבט Ushers in the Months of חסד (A Deeper Understanding of the צירופי החודש)",
+   "year": 5756,
+   "grade": "main",
+   "salience": 0.6
+  },
+  {
+   "id": "yi-zmanim-svds-zs-chnvkh-04",
+   "lang": "yi",
+   "title": "סעודה של המחכים לבנין ביהמ\"ק; חנוכה - להודות ולהלל - יו\"ט של הוד",
+   "year": 5751,
+   "grade": "discussed",
+   "salience": 0.3
+  },
+  {
+   "id": "yi-zmanim-pvrym-07",
+   "lang": "yi",
+   "title": "גודל כח היום; הדרכה איך לנהוג בו",
+   "year": 5767,
+   "grade": "discussed",
+   "salience": 0.3
+  },
+  {
+   "id": "yi-zmanim-spyrh-01",
+   "lang": "yi",
+   "title": "בימי ספירה צריכים לעשות תשובה על שורש העבירות - המדות (שייכות לפרשת קדושים)",
+   "year": 5742,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-spyrh-01~s3",
+    "t": 954.06,
+    "title": {
+     "en": "Tishrei and Nissan: din and chesed",
+     "yi": "תשרי און ניסן: דין און חסד"
+    },
+    "count": 2
+   }
+  }
+ ],
+ "shiurTotal": 4,
+ "shiurPages": 0
 }

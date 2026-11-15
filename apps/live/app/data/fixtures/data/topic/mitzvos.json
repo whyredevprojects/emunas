@@ -241,5 +241,110 @@
  ],
  "momentTotal": 8,
  "momentShiurim": 7,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 3,
+   "shiurim": 2
+  },
+  "yi": {
+   "sections": 5,
+   "shiurim": 5
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-shonos-31",
+   "lang": "yi",
+   "title": "חשיבות מסירת נפש בזמננו",
+   "year": 5771,
+   "grade": "main",
+   "salience": 0.7
+  },
+  {
+   "id": "yi-zmanim-nysn-05",
+   "lang": "yi",
+   "title": "לעזור בבית בהכנה לפסח; להתחדש עצמו בזמן התחדשות",
+   "year": null,
+   "grade": "discussed",
+   "salience": 0.5
+  },
+  {
+   "id": "yi-parshas-hashavua-mvr-01",
+   "lang": "yi",
+   "title": "אהרן והכהנים הם בחינת מדת הוד - קודש הקדשים - בחינת רשב\"י",
+   "year": 5736,
+   "grade": "discussed",
+   "salience": 0.35
+  },
+  {
+   "id": "en-parsha-en-ky-sb-01",
+   "lang": "en",
+   "title": "ביכורים - Bringing the Fruit of ראשית to the Place of ראשית",
+   "year": 5760,
+   "grade": "discussed",
+   "salience": 0.35
+  },
+  {
+   "id": "yi-parshas-hashavua-shvptym-01",
+   "lang": "yi",
+   "title": "שופטים ושוטרים - עשה לך רב כדי שתהיה בטל להקב\"ה (שייכות לימים נוראים)",
+   "year": 5740,
+   "grade": "discussed",
+   "salience": 0.3
+  },
+  {
+   "id": "yi-parshas-hashavua-vschnn-01",
+   "lang": "yi",
+   "title": "משה רבינו מלמד איך להתפלל. נחיצות וחשיבות פסוקי דזמרה",
+   "year": 5734,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-parshas-hashavua-vschnn-01~s3",
+    "t": 962.62,
+    "title": {
+     "en": "Hiddur and Rabbi Pinchas ben Yair",
+     "yi": "הידור און רבי פנחס בן יאיר"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "en-miscellaneous-en-01",
+   "lang": "en",
+   "title": "פרק ששי: The קדושה of צדיקים and the חשיבות of Learning תורה",
+   "year": 5738,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-miscellaneous-en-01~s8",
+    "t": 2361.13,
+    "title": {
+     "en": "Mitzvos bring down blessing",
+     "yi": "מצוות ברענגען אראפ שפע"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-zmanim-svkvs-08",
+   "lang": "yi",
+   "title": "גודל מעלת קדושת הסוכה",
+   "year": 5758,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-svkvs-08~s9",
+    "t": 3107.75,
+    "title": {
+     "en": "The sukkah protects the whole world; bitachon brings simcha",
+     "yi": "די סוכה באשיצט די גאנצע וועלט; ביטחון ברענגט שמחה"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 8,
+ "shiurPages": 0
 }

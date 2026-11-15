@@ -198,5 +198,60 @@
  ],
  "momentTotal": 7,
  "momentShiurim": 4,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 4,
+   "shiurim": 2
+  },
+  "yi": {
+   "sections": 3,
+   "shiurim": 2
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-zmanim-nysn-05",
+   "lang": "yi",
+   "title": "לעזור בבית בהכנה לפסח; להתחדש עצמו בזמן התחדשות",
+   "year": null,
+   "grade": "main",
+   "salience": 0.9
+  },
+  {
+   "id": "en-zmanim-en-rsh-hshnh-03",
+   "lang": "en",
+   "title": "The Theme of the Day - Proclaiming Hashem as King",
+   "year": 5757,
+   "grade": "main",
+   "salience": 0.7
+  },
+  {
+   "id": "en-zmanim-en-psch-06",
+   "lang": "en",
+   "title": "The Beginning of our Nuptials with Hashem",
+   "year": 5765,
+   "grade": "main",
+   "salience": 0.6
+  },
+  {
+   "id": "yi-parshas-hashavua-brshys-01",
+   "lang": "yi",
+   "title": "“ולאדם לא מצא עזר כנגדו” - זה קוב\"ה וכנסת ישראל",
+   "year": 5736,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-parshas-hashavua-brshys-01~s10",
+    "t": 3796.24,
+    "title": {
+     "en": "This year's rain; from broken luchos to Bereishis",
+     "yi": "דעם יאר'ס רעגן; פון שבירת הלוחות צו בראשית"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 4,
+ "shiurPages": 0
 }

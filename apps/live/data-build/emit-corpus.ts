@@ -23,6 +23,7 @@ import type {
   LayerPerson,
   LayerShiurRefs,
   LayerStory,
+  LayerTopicDetail,
   LayerTopicNode,
   LayerWork,
   PublicShiur,
@@ -39,7 +40,9 @@ import {
 import {
   LIVE_DATA_SCHEMA_VERSION,
   TOPIC_FIRST_MOMENTS,
+  TOPIC_FIRST_SHIURIM,
   TOPIC_MOMENTS_PAGE_SIZE,
+  TOPIC_SHIURIM_PAGE_SIZE,
   type CorpusMember,
   type DataFiles,
   type EntityChip,
@@ -56,6 +59,7 @@ import {
   type ThreadFile,
   type TopicFile,
   type TopicMoment,
+  type TopicShiurRow,
   type TopicsFile,
 } from "../app/data/types.ts";
 import type { LayerInput } from "./layer-input.ts";
@@ -360,10 +364,55 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
     const w = view.works.get(id);
     return w ? { id, label: view.workLabel(id), page: true } : null;
   };
+  const round2 = (x: number): number => Math.round(x * 100) / 100;
+  const byYear = (a: string, b: string): number =>
+    (firstYear(byId.get(a)) ?? Number.POSITIVE_INFINITY) - (firstYear(byId.get(b)) ?? Number.POSITIVE_INFINITY) ||
+    (catalogPos.get(a) ?? 0) - (catalogPos.get(b) ?? 0) ||
+    cmp(a, b);
+  /** "All shiurim" (C.2 item 6): main, then discussed, by salience then year; then touched, by year. */
+  const shiurRows = (d: { grades?: LayerTopicDetail["grades"] } | undefined): TopicShiurRow[] => {
+    const g = d?.grades;
+    const base = (id: string) => {
+      const s = byId.get(id)!;
+      return { id, lang: s.lang, title: s.catalog.titleOriginal, year: firstYear(s) };
+    };
+    const graded = (rows: readonly { shiurId: string; salience: number }[] | undefined, grade: "main" | "discussed") =>
+      arr(rows)
+        .filter((r) => visible(r.shiurId))
+        .sort((a, b) => b.salience - a.salience || byYear(a.shiurId, b.shiurId))
+        .map((r): TopicShiurRow => ({ ...base(r.shiurId), grade, salience: round2(r.salience) }));
+    const touched = arr(g?.touched)
+      .filter((r) => visible(r.shiurId))
+      .sort((a, b) => byYear(a.shiurId, b.shiurId))
+      .flatMap((r): TopicShiurRow[] => {
+        const chs = arr(r.chapters).flatMap((c) => {
+          const ch = chapterOf(r.shiurId, c.idx);
+          return ch ? [ch] : [];
+        });
+        const first = chs[0];
+        if (!first) return [];
+        return [
+          {
+            ...base(r.shiurId),
+            grade: "touched",
+            salience: 0,
+            section: { id: first.id, t: first.t, title: lcopy(first.title), count: chs.length },
+          },
+        ];
+      });
+    return [...graded(g?.main, "main"), ...graded(g?.discussed, "discussed"), ...touched];
+  };
+  const langTally = (secs: readonly Section[], lang: Ed) => {
+    const xs = secs.filter((x) => x.lang === lang);
+    return { sections: xs.length, shiurim: new Set(xs.map((x) => x.shiurId)).size };
+  };
   for (const t of allTopics) {
     if (!view.topics.has(t.id)) continue;
     const d = layer?.topicDetail.get(t.id);
     const secs = ordered(perTopic.get(t.id));
+    const rows = shiurRows(d);
+    const shiurRest = rows.slice(TOPIC_FIRST_SHIURIM);
+    const shiurPages = Math.ceil(shiurRest.length / TOPIC_SHIURIM_PAGE_SIZE);
     const rest = secs.slice(TOPIC_FIRST_MOMENTS);
     const pages = Math.ceil(rest.length / TOPIC_MOMENTS_PAGE_SIZE);
     const sameConcept = t.sameAs?.conceptId ? view.allConcepts.get(t.sameAs.conceptId) : undefined;
@@ -411,8 +460,20 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
       momentTotal: secs.length,
       momentShiurim: perTopic.get(t.id)?.size ?? 0,
       momentPages: pages,
+      momentLangs: { en: langTally(secs, "en"), yi: langTally(secs, "yi") },
+      shiurim: rows.slice(0, TOPIC_FIRST_SHIURIM),
+      shiurTotal: rows.length,
+      shiurPages,
     };
     put<"topic">(dataPaths.topic(t.id), file);
+    for (let p = 0; p < shiurPages; p++) {
+      put<"topicShiurim">(dataPaths.topicShiurim(t.id, p + 1), {
+        schemaVersion: V,
+        topicId: t.id,
+        page: p + 1,
+        shiurim: shiurRest.slice(p * TOPIC_SHIURIM_PAGE_SIZE, (p + 1) * TOPIC_SHIURIM_PAGE_SIZE),
+      });
+    }
     for (let p = 0; p < pages; p++) {
       put<"topicMoments">(dataPaths.topicMoments(t.id, p + 1), {
         schemaVersion: V,

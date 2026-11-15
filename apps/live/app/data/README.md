@@ -20,6 +20,7 @@ contract in `@emunas/corpus/public` (integration-plan §5.2). W3.6 emits files t
 | `/data/quick-index.<lang>.json` | `QuickIndexFile` (serialized MiniSearch) | `loadQuickIndex(lang)` |
 | `/data/topics.json` | `TopicsFile` (tree rows; `topicNodes()`) | `loadTopics()` (memoized) |
 | `/data/topic/<id>.json`, `.moments-<n>.json` | `TopicFile`, `TopicMomentsFile` | `loadTopic(id)`, `loadTopicMoments(id, n)` |
+| `/data/topic-shiurim/<id>.<n>.json` | `TopicShiurimFile` (rows after the topic file's first `TOPIC_FIRST_SHIURIM`) | `loadTopicShiurim(id, n)` |
 | `/data/thread/<id>.json` | `ThreadFile` (threads with a page; noindex) | `loadThread(id)` |
 | `/data/story/<id>.json` | `StoryFile` (stories told at least twice) | `loadStory(id)` |
 | `/data/stories-index.json` | `StoriesIndexFile` (no retellings) | `loadStoriesIndex()` (memoized) |

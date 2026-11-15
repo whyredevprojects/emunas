@@ -152,5 +152,35 @@
  ],
  "momentTotal": 5,
  "momentShiurim": 2,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 2,
+   "shiurim": 1
+  },
+  "yi": {
+   "sections": 3,
+   "shiurim": 1
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-parshas-hashavua-vyshb-08",
+   "lang": "yi",
+   "title": "בפרשה זו נטמן משיח בן יוסף ומשיח בן דוד. שייכות לחנוכה",
+   "year": 5751,
+   "grade": "main",
+   "salience": 0.7
+  },
+  {
+   "id": "en-zmanim-en-chvdsh-tbs-02",
+   "lang": "en",
+   "title": "An Explanation of ניטל and the Month of טבת",
+   "year": 5764,
+   "grade": "discussed",
+   "salience": 0.55
+  }
+ ],
+ "shiurTotal": 2,
+ "shiurPages": 0
 }

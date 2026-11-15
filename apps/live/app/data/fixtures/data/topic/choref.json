@@ -220,5 +220,52 @@
  ],
  "momentTotal": 9,
  "momentShiurim": 3,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 7,
+   "shiurim": 2
+  },
+  "yi": {
+   "sections": 2,
+   "shiurim": 1
+  }
+ },
+ "shiurim": [
+  {
+   "id": "en-zmanim-en-tv-bshbt-01",
+   "lang": "en",
+   "title": "ט”ו בשבט Ushers in the Months of חסד (A Deeper Understanding of the צירופי החודש)",
+   "year": 5756,
+   "grade": "main",
+   "salience": 0.95
+  },
+  {
+   "id": "en-zmanim-en-chvdsh-tbs-02",
+   "lang": "en",
+   "title": "An Explanation of ניטל and the Month of טבת",
+   "year": 5764,
+   "grade": "main",
+   "salience": 0.95
+  },
+  {
+   "id": "yi-zmanim-spyrh-01",
+   "lang": "yi",
+   "title": "בימי ספירה צריכים לעשות תשובה על שורש העבירות - המדות (שייכות לפרשת קדושים)",
+   "year": 5742,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-spyrh-01~s1",
+    "t": 352.04,
+    "title": {
+     "en": "Three seasons of teshuvah",
+     "yi": "דריי צייטן פון תשובה אין יאר"
+    },
+    "count": 2
+   }
+  }
+ ],
+ "shiurTotal": 3,
+ "shiurPages": 0
 }

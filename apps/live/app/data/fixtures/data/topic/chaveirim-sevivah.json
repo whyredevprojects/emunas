@@ -50,5 +50,36 @@
  ],
  "momentTotal": 1,
  "momentShiurim": 1,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 0,
+   "shiurim": 0
+  },
+  "yi": {
+   "sections": 1,
+   "shiurim": 1
+  }
+ },
+ "shiurim": [
+  {
+   "id": "yi-zmanim-lvl-01",
+   "lang": "yi",
+   "title": "דיבורים המעוררים את הלב",
+   "year": 5735,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-lvl-01~s3",
+    "t": 799.15,
+    "title": {
+     "en": "Letzanus, the opposite of emunah",
+     "yi": "ליצנות, דער היפך פון אמונה"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 1,
+ "shiurPages": 0
 }

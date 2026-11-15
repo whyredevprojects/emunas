@@ -198,5 +198,78 @@
  ],
  "momentTotal": 6,
  "momentShiurim": 4,
- "momentPages": 0
+ "momentPages": 0,
+ "momentLangs": {
+  "en": {
+   "sections": 2,
+   "shiurim": 2
+  },
+  "yi": {
+   "sections": 4,
+   "shiurim": 2
+  }
+ },
+ "shiurim": [
+  {
+   "id": "en-miscellaneous-en-01",
+   "lang": "en",
+   "title": "פרק ששי: The קדושה of צדיקים and the חשיבות of Learning תורה",
+   "year": 5738,
+   "grade": "discussed",
+   "salience": 0.4
+  },
+  {
+   "id": "yi-parshas-hashavua-hzynv-01",
+   "lang": "yi",
+   "title": "פרשה של אמונה. עשי\"ת - זמן לנקות חציצות האמונה",
+   "year": 5732,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-parshas-hashavua-hzynv-01~s12",
+    "t": 3638.02,
+    "title": {
+     "en": "Rebbi and the calf",
+     "yi": "רבי און דאס קעלבל"
+    },
+    "count": 1
+   }
+  },
+  {
+   "id": "yi-zmanim-lvl-02",
+   "lang": "yi",
+   "title": "לדוד ה' אורי - בבטחון תלוי הכל",
+   "year": 5740,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "yi-zmanim-lvl-02~s7",
+    "t": 2186.95,
+    "title": {
+     "en": "Rabbi Yisrael Salanter and the torn shoe",
+     "yi": "ר' ישראל סאלאנטער און דער צעריסענער שוך"
+    },
+    "count": 3
+   }
+  },
+  {
+   "id": "en-zmanim-en-chvdsh-tbs-02",
+   "lang": "en",
+   "title": "An Explanation of ניטל and the Month of טבת",
+   "year": 5764,
+   "grade": "touched",
+   "salience": 0,
+   "section": {
+    "id": "en-zmanim-en-chvdsh-tbs-02~s4",
+    "t": 1820.91,
+    "title": {
+     "en": "Keeping Nittel: a time when one does not learn",
+     "yi": "היטן ניטל: א צייט ווען מ'לערנט נישט"
+    },
+    "count": 1
+   }
+  }
+ ],
+ "shiurTotal": 4,
+ "shiurPages": 0
 }
