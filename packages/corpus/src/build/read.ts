@@ -31,7 +31,11 @@ export const DATA_ALLOW_LIST: readonly RegExp[] = [
 ];
 
 /** Files in `site-policy/` the build may read. */
-export const POLICY_ALLOW_LIST: readonly RegExp[] = [/^publish-policy\.json$/, /^verbatim-allow\.json$/];
+export const POLICY_ALLOW_LIST: readonly RegExp[] = [
+  /^publish-policy\.json$/,
+  /^verbatim-allow\.json$/,
+  /^audio-transcoded\.json$/,
+];
 
 export class ForbiddenPathError extends Error {
   constructor(rel: string) {

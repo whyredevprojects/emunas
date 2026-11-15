@@ -156,10 +156,16 @@ describe("data contract", () => {
     const facets = await loadFacets();
     expect(Object.keys(facets.occasion).length).toBeGreaterThan(0);
     const today = await loadToday();
+    // An occasion has a page exactly when facets.json says so (≥2 listed shiurim).
     for (const key of Object.keys(today.occasions)) {
-      const e = await loadEntity("o", key);
-      expect(e.shiurIds).toEqual(today.occasions[key]!.shiurIds);
+      if (facets.occasion[key]?.hasPage) {
+        const e = await loadEntity("o", key);
+        expect(e.shiurIds).toEqual(today.occasions[key]!.shiurIds);
+      } else {
+        await expect(loadEntity("o", key)).rejects.toMatchObject({ status: 404 });
+      }
     }
+    expect(Object.values(facets.occasion).some((o) => o.hasPage)).toBe(true);
     const series = await loadSeries("tanya-yi");
     expect(series.parts[0]!.shiurId).toBe("yi-tanya-1-01");
     expect(series.perekGroups[0]).toEqual({ perek: "א", shiurIds: ["yi-tanya-1-01"] });
@@ -167,11 +173,13 @@ describe("data contract", () => {
     const works = await loadWorks();
     const first = works.works[0]!;
     const work = await loadWork(first.key);
-    expect(work.locations.length + work.unlocated.length).toBe(first.mentions);
+    // Every mention is one citation, grouped by place (the W3.6 emit groups a place's citations).
+    expect(work.locations.reduce((n, l) => n + l.citations.length, 0) + work.unlocated.length).toBe(first.mentions);
 
-    const person = Object.keys(facets.person)[0]!;
+    // Entity files exist from 2 shiurim on (W3.6 `entityFileMin`).
+    const person = Object.keys(facets.person).find((k) => facets.person[k]!.count >= 2)!;
     expect((await loadEntity("p", person)).kind).toBe("p");
-    const concept = Object.keys(facets.concept).find((k) => /[א-ת]/u.test(k))!;
+    const concept = Object.keys(facets.concept).find((k) => facets.concept[k]!.count >= 2)!;
     expect((await loadEntity("c", concept)).key).toBe(concept);
 
     expect((await loadStories()).stories.length).toBeGreaterThan(0);

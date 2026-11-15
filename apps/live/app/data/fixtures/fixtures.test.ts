@@ -1,55 +1,38 @@
 /**
- * The committed fixture tree (`./data/**`) is generated from the golden projected shiurim of
- * `@emunas/corpus` (`packages/corpus/test/fixtures/golden/*.json`). This test regenerates it in memory
- * and fails when the committed files are stale. To rewrite them after an intended change:
+ * The committed fixture tree (`./data/**`) is the real W3.6 emitter's output (`data-build/emit.ts`,
+ * with W4.4's lexical neighbours) over the `@emunas/corpus` mini corpus
+ * (`packages/corpus/test/fixtures/mini`), so the fixtures follow the data contract exactly. This test
+ * regenerates the tree in memory and fails when the committed files are stale. To rewrite them after
+ * an intended change (to the emitter, the contract or the mini corpus):
  *
- *   UPDATE_LIVE_FIXTURES=1 npx vitest run app/data/fixtures --root apps/live
+ *   UPDATE_LIVE_FIXTURES=1 npx vitest run app/data/fixtures   # from apps/live
  */
-import { SCHEMA_VERSION } from "@emunas/corpus/public";
-import { lookupParsha, lookupZman } from "@emunas/normalize";
 import { mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
-import { deriveLiveData, type DeriveOptions, type FixtureShiur } from "./derive.ts";
+import { readCorpusInput } from "../../../data-build/corpus-input.ts";
+import { emitLiveData, type EmittedFiles } from "../../../data-build/emit.ts";
+import { buildNeighbors } from "../../../data-build/neighbors.ts";
+import { validateFile } from "../../../data-build/schemas.ts";
+import { MINI_DATA, MINI_POLICY, buildCorpusTo } from "../../../data-build/test-helpers.ts";
+import type { FacetsFile, ShiurFile, TodayFile } from "../types.ts";
 
 const here = dirname(fileURLToPath(import.meta.url));
-const goldenDir = join(here, "../../../../../packages/corpus/test/fixtures/golden");
 const outDir = join(here, "data");
 
-export const FIXTURE_OPTIONS: DeriveOptions = {
-  buildId: "fixtures",
+/** Fixed inputs, so the tree only changes when the emitter, the contract or the mini corpus does. */
+export const FIXTURE_OPTIONS = {
   generatedAt: "2026-11-15T00:00:00.000Z",
-  corpusSchemaVersion: SCHEMA_VERSION,
-  seriesTitles: { "tanya-yi": { en: "Tanya", yi: "תניא" } },
-  updatedAt: {
-    "en-miscellaneous-en-01": "2026-11-10T08:00:00.000Z",
-    "en-parsha-en-nch-01": "2026-11-12T08:00:00.000Z",
-    "yi-parshas-hashavua-brshys-01": "2026-11-14T08:00:00.000Z",
-    "yi-zmanim-lvl-01": "2026-11-01T08:00:00.000Z",
-    "yi-zmanim-tv-bb-04": "2026-11-13T08:00:00.000Z",
-  },
-};
+  mediaOrigin: "https://media.example.invalid",
+} as const;
 
-/**
- * The goldens are projected with the corpus's table-free identity keyer, so their parsha and zman
- * keys are slugs of the raw catalog strings (`נח`). The real build keys them with @emunas/normalize
- * (`noach`), which is what Today, facets and the calendar join on, so the fixtures are re-keyed the
- * same way (W4.9).
- */
-function normalizeOccasionKeys(s: FixtureShiur): FixtureShiur {
-  return {
-    ...s,
-    parsha: s.parsha ? { raw: s.parsha.raw, key: lookupParsha(s.parsha.raw).key } : null,
-    zman: s.zman ? { raw: s.zman.raw, key: lookupZman(s.zman.raw).key } : null,
-  };
-}
-
-function goldens(): FixtureShiur[] {
-  return readdirSync(goldenDir)
-    .filter((f) => f.endsWith(".json"))
-    .sort()
-    .map((f) => normalizeOccasionKeys(JSON.parse(readFileSync(join(goldenDir, f), "utf8")) as FixtureShiur));
+/** corpus:build (with the W2.1 aggregates) over the mini corpus, then the Live emit. */
+async function generate(): Promise<EmittedFiles> {
+  const corpusDir = buildCorpusTo(MINI_DATA, MINI_POLICY, { mediaOrigin: FIXTURE_OPTIONS.mediaOrigin });
+  const input = readCorpusInput(corpusDir);
+  const neighbors = await buildNeighbors(input.shiurim, { mode: "lexical", workers: 1 });
+  return emitLiveData(input, { generatedAt: FIXTURE_OPTIONS.generatedAt, neighbors });
 }
 
 function listFiles(dir: string, prefix = ""): string[] {
@@ -70,47 +53,65 @@ function listFiles(dir: string, prefix = ""): string[] {
 
 const serialize = (v: unknown): string => `${JSON.stringify(v, null, 1)}\n`;
 
-describe("live data fixtures", () => {
-  const derived = deriveLiveData(goldens(), FIXTURE_OPTIONS);
+describe("live data fixtures", async () => {
+  const generated = await generate();
 
   if (process.env["UPDATE_LIVE_FIXTURES"] === "1") {
     rmSync(outDir, { recursive: true, force: true });
-    for (const [file, body] of derived) {
+    for (const [file, body] of generated) {
       const path = join(outDir, file);
       mkdirSync(dirname(path), { recursive: true });
       writeFileSync(path, serialize(body));
     }
   }
 
-  it("covers the golden shiurim, both statuses and a multi-recording shiur", () => {
-    const ids = goldens().map((g) => g.id);
-    expect(ids.length).toBeGreaterThanOrEqual(7);
-    for (const id of ids) expect(derived.has(`shiur/${id}.json`)).toBe(true);
-    const statuses = new Set(goldens().map((g) => g.status));
-    expect(statuses).toEqual(new Set(["full", "catalog-only"]));
-    expect(goldens().some((g) => g.recordings.length > 1)).toBe(true);
+  it("every file passes the emitter's strict contract schemas", () => {
+    for (const [file, body] of generated) expect(validateFile(file, body), file).toBeNull();
+  });
+
+  it("covers both statuses, both languages, a multi-recording shiur, a series part and neighbours", () => {
+    const shiurim = [...generated].filter(([f]) => f.startsWith("shiur/")).map(([, b]) => b as ShiurFile);
+    expect(shiurim.length).toBeGreaterThanOrEqual(30);
+    expect(new Set(shiurim.map((s) => s.status))).toEqual(new Set(["full", "catalog-only"]));
+    expect(new Set(shiurim.map((s) => s.lang))).toEqual(new Set(["en", "yi"]));
+    expect(shiurim.some((s) => s.recordings.length > 1)).toBe(true);
+    expect(shiurim.some((s) => s.series !== null)).toBe(true);
+    expect(shiurim.some((s) => s.related.neighbors.length > 0)).toBe(true);
+    // The ids the UI tests use.
+    for (const id of ["yi-parshas-hashavua-brshys-01", "en-parsha-en-nch-01", "yi-zmanim-tv-bb-04", "yi-tanya-1-01"]) {
+      expect(generated.has(`shiur/${id}.json`), id).toBe(true);
+    }
   });
 
   it("committed fixture files equal the regenerated ones", () => {
     const committed = listFiles(outDir);
-    expect(committed).toEqual([...derived.keys()].sort());
-    for (const [file, body] of derived) {
+    expect(committed).toEqual([...generated.keys()].sort());
+    for (const [file, body] of generated) {
       expect(readFileSync(join(outDir, file), "utf8"), file).toBe(serialize(body));
     }
   });
 
   it("keys occasions the way the real build does (normalize keys, never raw Hebrew)", () => {
-    const today = derived.get("today.json") as { occasions: Record<string, unknown> };
-    const facets = derived.get("facets.json") as { occasion: Record<string, unknown> };
+    const today = generated.get("today.json") as TodayFile;
+    const facets = generated.get("facets.json") as FacetsFile;
     const keys = [...Object.keys(today.occasions), ...Object.keys(facets.occasion)];
     expect(keys.length).toBeGreaterThan(0);
     for (const k of keys) expect(k, k).toMatch(/^[a-z0-9-]+$/);
     expect(Object.keys(today.occasions)).toEqual(expect.arrayContaining(["noach", "bereishis", "elul"]));
   });
 
-  it("is deterministic", () => {
-    const again = deriveLiveData([...goldens()].reverse(), FIXTURE_OPTIONS);
-    expect([...again.keys()].sort()).toEqual([...derived.keys()].sort());
-    for (const [k, v] of derived) expect(serialize(again.get(k))).toBe(serialize(v));
+  it("media URLs point at the placeholder host", () => {
+    for (const [file, body] of generated) {
+      if (!file.startsWith("shiur/")) continue;
+      for (const r of (body as ShiurFile).recordings) {
+        if (r.audioUrl !== null) expect(r.audioUrl.startsWith(`${FIXTURE_OPTIONS.mediaOrigin}/`)).toBe(true);
+      }
+    }
+  });
+
+  it("is deterministic", async () => {
+    const again = await generate();
+    expect([...again.keys()].sort()).toEqual([...generated.keys()].sort());
+    for (const [k, v] of generated) expect(serialize(again.get(k))).toBe(serialize(v));
   });
 });

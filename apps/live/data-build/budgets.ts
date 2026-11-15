@@ -10,8 +10,9 @@
  * a precompressing deploy would get, so the targets are checked conservatively.
  */
 import { existsSync, readFileSync, statSync } from "node:fs";
-import { relative, sep } from "node:path";
+import { join, relative, sep } from "node:path";
 import { brotliCompressSync, constants } from "node:zlib";
+import type { EntitiesFile } from "@emunas/corpus/aggregate";
 import { MAX_FILES, MAX_FILE_BYTES, checkBudgets, walkFiles } from "@emunas/corpus-guard/budgets";
 import type { DataKind } from "../app/data/types.ts";
 import { kindOfFile } from "./schemas.ts";
@@ -82,17 +83,84 @@ export interface LiveBudgetOptions {
   publicDir?: string | null;
   /** The built client (`build/client`); when it exists it is the authority for the file count. */
   clientDir?: string | null;
+  /**
+   * Which entity routes are prerendered (`prerenderSetsFromCorpus` over `.corpus/`). Without it every
+   * work, person and concept file is counted as a page (an upper bound).
+   */
+  prerender?: PrerenderSets | null;
   maxFiles?: number;
   maxFileBytes?: number;
 }
 
 /**
- * Prerendered pages at completion (tech-live §3.3): 2 UI languages × (shiur pages + work pages +
- * entity pages + about 100 other routes). An upper bound: every entity with a data file is counted.
+ * Files the app build adds besides the prerendered pages and `public/`: hashed JS/CSS chunks under
+ * `assets/`, the SPA fallback `index.html`, `robots.txt`, `sw.js` and `__spa-fallback.html`
+ * (87 on 2026-11-15; rounded up for growth).
  */
-export function projectedPrerender(byKind: Partial<Record<DataKind, KindStats>>): number {
-  const n = (k: DataKind) => byKind[k]?.files ?? 0;
-  return 2 * (n("shiur") + n("work") + n("entity") + 100);
+export const APP_BUILD_FILES = 120;
+
+/** Keys whose entity routes the build prerenders (`.corpus/entities.json`, W4.5 `prerenderPaths`). */
+export interface PrerenderSets {
+  /** Works with `livePrerender` (≥3 shiurim, not a genre label). */
+  works: ReadonlySet<string>;
+  people: ReadonlySet<string>;
+  concepts: ReadonlySet<string>;
+  /** Occasions with at least `OCCASION_PRERENDER_MIN` (2) shiurim. */
+  occasions: ReadonlySet<string>;
+}
+
+/** W4.5 `OCCASION_PRERENDER_MIN` (app/seo/model.ts). */
+const OCCASION_PRERENDER_MIN = 2;
+
+export function prerenderSetsFromEntities(entities: EntitiesFile): PrerenderSets {
+  const live = (xs: readonly { key: string; livePrerender: boolean }[]) => new Set(xs.filter((x) => x.livePrerender).map((x) => x.key));
+  return {
+    works: live(entities.works),
+    people: live(entities.people),
+    concepts: live(entities.concepts),
+    occasions: new Set(entities.occasions.filter((o) => o.shiurim >= OCCASION_PRERENDER_MIN).map((o) => o.key)),
+  };
+}
+
+/** `prerenderSetsFromEntities` of `<corpusDir>/entities.json`, or null when there is none. */
+export function prerenderSetsFromCorpus(corpusDir: string | null | undefined): PrerenderSets | null {
+  const file = corpusDir ? join(corpusDir, "entities.json") : null;
+  if (!file || !existsSync(file)) return null;
+  return prerenderSetsFromEntities(JSON.parse(readFileSync(file, "utf8")) as EntitiesFile);
+}
+
+/**
+ * Pages `react-router build` prerenders over this data tree, by the rules of W4.5's
+ * `prerenderPaths` (app/seo/model.ts): per UI language, Today, every shiur, series and occasion
+ * (≥2 shiurim) with a data file, and the works, people and concepts with `livePrerender` that have
+ * one. One HTML file per page. Without `sets`, every work and entity file counts (an upper bound).
+ */
+export function projectedPrerender(dataFiles: Iterable<string>, sets: PrerenderSets | null = null): number {
+  let perUi = 1; // Today
+  for (const file of dataFiles) {
+    const m = /^(shiur|series|work|entity\/[pco])\/([^/]+)\.json$/u.exec(file);
+    if (!m) continue;
+    const key = m[2] ?? "";
+    switch (m[1]) {
+      case "shiur":
+      case "series":
+        perUi++;
+        break;
+      case "work":
+        if (!sets || sets.works.has(key)) perUi++;
+        break;
+      case "entity/p":
+        if (!sets || sets.people.has(key)) perUi++;
+        break;
+      case "entity/c":
+        if (!sets || sets.concepts.has(key)) perUi++;
+        break;
+      case "entity/o":
+        if (!sets || sets.occasions.has(key)) perUi++;
+        break;
+    }
+  }
+  return 2 * perUi;
 }
 
 export function checkLiveBudgets(opts: LiveBudgetOptions): LiveBudgetResult {
@@ -103,9 +171,11 @@ export function checkLiveBudgets(opts: LiveBudgetOptions): LiveBudgetResult {
   const byKind: Partial<Record<DataKind, KindStats>> = {};
   let dataFiles = 0;
   let dataBytes = 0;
+  const names: string[] = [];
   for (const path of walkFiles(opts.dataDir)) {
     const file = relative(opts.dataDir, path).split(sep).join("/");
     dataFiles++;
+    names.push(file);
     const buf = readFileSync(path);
     dataBytes += buf.length;
     if (buf.length > maxFileBytes)
@@ -148,7 +218,7 @@ export function checkLiveBudgets(opts: LiveBudgetOptions): LiveBudgetResult {
         if (rel[0] !== "data") otherPublic++;
       }
     }
-    projectedFiles = dataFiles + otherPublic + projectedPrerender(byKind);
+    projectedFiles = dataFiles + otherPublic + projectedPrerender(names, opts.prerender ?? null) + APP_BUILD_FILES;
     if (projectedFiles > maxFiles) {
       findings.push({
         kind: "file-count",

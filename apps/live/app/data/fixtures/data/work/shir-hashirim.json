@@ -4,29 +4,9 @@
  "name": "Shir HaShirim",
  "label": {
   "en": "Shir HaShirim",
-  "yi": "Shir HaShirim"
+  "yi": "שיר השירים"
  },
  "locations": [
-  {
-   "ref": "Shir HaShirim 8:7",
-   "sefariaRef": "Song of Songs 8:7",
-   "citations": [
-    {
-     "shiurId": "en-miscellaneous-en-01",
-     "sourceId": "en-miscellaneous-en-01~src21",
-     "t": 3010.3,
-     "mention": "quoted",
-     "resolution": "resolved"
-    },
-    {
-     "shiurId": "yi-zmanim-lvl-01",
-     "sourceId": "yi-zmanim-lvl-01~src23",
-     "t": 3369.01,
-     "mention": "quoted",
-     "resolution": "inferred"
-    }
-   ]
-  },
   {
    "ref": "Shir HaShirim 1:6",
    "sefariaRef": "Song of Songs 1:6",
@@ -39,7 +19,114 @@
      "resolution": "inferred"
     }
    ]
+  },
+  {
+   "ref": "Shir HaShirim 2:2",
+   "sefariaRef": "Song of Songs 2:2",
+   "citations": [
+    {
+     "shiurId": "yi-zmanim-svds-shvshn-pvrym-01",
+     "sourceId": "yi-zmanim-svds-shvshn-pvrym-01~src9",
+     "t": 883.53,
+     "mention": "quoted",
+     "resolution": "resolved"
+    }
+   ]
+  },
+  {
+   "ref": "Shir HaShirim 2:3",
+   "sefariaRef": "Song of Songs 2:3",
+   "citations": [
+    {
+     "shiurId": "yi-zmanim-svkvs-08",
+     "sourceId": "yi-zmanim-svkvs-08~src0",
+     "t": 6.25,
+     "mention": "quoted",
+     "resolution": "resolved"
+    }
+   ]
+  },
+  {
+   "ref": "Shir HaShirim 2:6",
+   "sefariaRef": "Song of Songs 2:6",
+   "citations": [
+    {
+     "shiurId": "yi-zmanim-svkvs-08",
+     "sourceId": "yi-zmanim-svkvs-08~src10",
+     "t": 559.78,
+     "mention": "quoted",
+     "resolution": "resolved"
+    }
+   ]
+  },
+  {
+   "ref": "Shir HaShirim 2:11–2:13",
+   "sefariaRef": "Song of Songs 2:11-13",
+   "citations": [
+    {
+     "shiurId": "yi-zmanim-nysn-05",
+     "sourceId": "yi-zmanim-nysn-05~src12",
+     "t": 1185.52,
+     "mention": "quoted",
+     "resolution": "resolved"
+    }
+   ]
+  },
+  {
+   "ref": "Shir HaShirim 5:2",
+   "sefariaRef": "Song of Songs 5:2",
+   "citations": [
+    {
+     "shiurId": "en-zmanim-en-psch-06",
+     "sourceId": "en-zmanim-en-psch-06~src19",
+     "t": 1243.07,
+     "mention": "quoted",
+     "resolution": "resolved"
+    },
+    {
+     "shiurId": "yi-zmanim-nysn-05",
+     "sourceId": "yi-zmanim-nysn-05~src14",
+     "t": 1387.83,
+     "mention": "quoted",
+     "resolution": "resolved"
+    }
+   ]
+  },
+  {
+   "ref": "Shir HaShirim 8:7",
+   "sefariaRef": "Song of Songs 8:7",
+   "citations": [
+    {
+     "shiurId": "yi-zmanim-lvl-01",
+     "sourceId": "yi-zmanim-lvl-01~src23",
+     "t": 3369.01,
+     "mention": "quoted",
+     "resolution": "inferred"
+    },
+    {
+     "shiurId": "en-miscellaneous-en-01",
+     "sourceId": "en-miscellaneous-en-01~src21",
+     "t": 3010.3,
+     "mention": "quoted",
+     "resolution": "resolved"
+    },
+    {
+     "shiurId": "yi-zmanim-svds-pvrym-ktn-03",
+     "sourceId": "yi-zmanim-svds-pvrym-ktn-03~src9",
+     "t": 1052.91,
+     "mention": "quoted",
+     "resolution": "resolved"
+    }
+   ]
   }
  ],
- "unlocated": []
+ "unlocated": [
+  {
+   "shiurId": "en-zmanim-en-psch-06",
+   "sourceId": "en-zmanim-en-psch-06~src6",
+   "t": 733.98,
+   "mention": "alluded",
+   "resolution": "unresolved"
+  }
+ ]
 }

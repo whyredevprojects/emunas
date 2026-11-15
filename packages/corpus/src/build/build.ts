@@ -10,7 +10,8 @@
  * { shiurId: iso } }`), so apps can list "newly summarized" without reading data/ (W3.6).
  *
  * Audio (Amendment A1): every recording gets `audioUrl` = media origin + per-segment-encoded bucket
- * key, or `playable: false` when its object is not an mp3. The media origin comes from
+ * key, or `playable: false` when its object is not an mp3 (unless `site-policy/audio-transcoded.json`
+ * lists the key: then the URL is that of the `.mp3` transcode next to it). The media origin comes from
  * `BuildOptions.mediaOrigin`, else env `EMUNAS_MEDIA_ORIGIN`, else the dev placeholder
  * `https://media.example.invalid` (reported as a warning). The bucket key never reaches the output.
  *
@@ -46,7 +47,7 @@ import { catalogGaps } from "./gaps.ts";
 import { gate } from "./gate.ts";
 import { identitySlugKeyer, type Keyer } from "./keyer.ts";
 import { loadCatalogs, loadIngest, loadManifest, loadShiurFiles, type Catalogs, type ShiurFiles } from "./load.ts";
-import { loadPublishPolicy, loadSuppressFile, type PublishPolicy } from "./policy.ts";
+import { loadAudioTranscoded, loadPublishPolicy, loadSuppressFile, type PublishPolicy } from "./policy.ts";
 import { PROJECTOR_VERSION, projectShiur, type ProjectContext } from "./project.ts";
 import { createDataReader, defaultDataDir, defaultPolicyDir, REPO_ROOT } from "./read.ts";
 import { emitEligibleTranscripts } from "../transcript-gate.ts";
@@ -312,6 +313,7 @@ export function projectCorpus(
   }
   const audioTable: AudioTable = buildAudioTable(ingest.recordings, {
     origin: media.origin,
+    mp3Siblings: loadAudioTranscoded(opts.policyDir ?? defaultPolicyDir()),
     only: inScope.flatMap((s) => s.recordingIds),
     onIssue: (i) => report.warnings.push(audioIssueText(i)),
   });

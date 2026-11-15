@@ -4,22 +4,64 @@
  "name": "Bereishis Rabbah",
  "label": {
   "en": "Bereishis Rabbah",
-  "yi": "Bereishis Rabbah"
+  "yi": "בראשית רבה"
  },
  "locations": [
   {
-   "ref": "Bereishis Rabbah 56:10",
-   "sefariaRef": null,
+   "ref": "Bereishis Rabbah 8:5",
+   "sefariaRef": "Bereshit Rabbah 8:5",
    "citations": [
     {
-     "shiurId": "yi-zmanim-tv-bb-04",
-     "sourceId": "yi-zmanim-tv-bb-04~src10",
-     "t": 1639.51,
+     "shiurId": "en-zmanim-en-rsh-hshnh-03",
+     "sourceId": "en-zmanim-en-rsh-hshnh-03~src6",
+     "t": 444.84,
+     "mention": "paraphrased",
+     "resolution": "inferred"
+    }
+   ]
+  },
+  {
+   "ref": "Bereishis Rabbah 79:6",
+   "sefariaRef": "Bereshit Rabbah 79:6",
+   "citations": [
+    {
+     "shiurId": "en-parsha-en-vyshlch-01",
+     "sourceId": "en-parsha-en-vyshlch-01~src2",
+     "t": 397.19,
      "mention": "paraphrased",
      "resolution": "inferred"
     }
    ]
   }
  ],
- "unlocated": []
+ "unlocated": [
+  {
+   "shiurId": "yi-zmanim-tv-bb-04",
+   "sourceId": "yi-zmanim-tv-bb-04~src10",
+   "t": 1639.51,
+   "mention": "paraphrased",
+   "resolution": "inferred"
+  },
+  {
+   "shiurId": "en-parsha-en-vyshlch-01",
+   "sourceId": "en-parsha-en-vyshlch-01~src9",
+   "t": 1464.84,
+   "mention": "paraphrased",
+   "resolution": "inferred"
+  },
+  {
+   "shiurId": "yi-parshas-hashavua-brshys-03",
+   "sourceId": "yi-parshas-hashavua-brshys-03~src14",
+   "t": 430.49,
+   "mention": "paraphrased",
+   "resolution": "inferred"
+  },
+  {
+   "shiurId": "yi-parshas-hashavua-vyshb-08",
+   "sourceId": "yi-parshas-hashavua-vyshb-08~src17",
+   "t": 1623.48,
+   "mention": "paraphrased",
+   "resolution": "inferred"
+  }
+ ]
 }

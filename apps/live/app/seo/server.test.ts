@@ -10,9 +10,15 @@ import { liveBuildEnd, livePrerenderPaths } from "./config.server.ts";
 import { findCorpusDir, readDataFileSet, readSeoCorpus } from "./corpus.server.ts";
 import type { RootSeoData } from "./head.ts";
 import { createSeoContext, resetSeoContext, seoDataFor, seoLoader, SPA_MODE_HEADER } from "./loader.server.ts";
+import { seoMeta } from "./meta.ts";
 import { prerenderPaths } from "./model.ts";
 import { SeoHead } from "./SeoHead.tsx";
 import { corpusFixture, SHIUR_CATALOG, SHIUR_FULL, writeCorpusFixture } from "./test-fixtures.ts";
+import { prerenderSetsFromCorpus, projectedPrerender } from "../../data-build/budgets.ts";
+import { readCorpusInput } from "../../data-build/corpus-input.ts";
+import { emitLiveData } from "../../data-build/emit.ts";
+import { MINI_DATA, MINI_POLICY, buildCorpusTo } from "../../data-build/test-helpers.ts";
+import { writeDataDir } from "../../data-build/write.ts";
 
 const dirs: string[] = [];
 afterAll(() => {
@@ -27,14 +33,25 @@ function tmp(): string {
 const ENV = { EMUNAS_DOMAIN: "example.org" };
 const QUIET = "https://example.org";
 
-/** Renders the SeoHead for `path` with the given root loader data, as the prerender does. */
+/**
+ * Renders the SeoHead for `path` with the given root loader data, as the prerender does, plus the
+ * `<title>` the page route's `meta` (`seoMeta`) gives with that data (React Router's `<Meta>` needs
+ * the framework context, so the route `meta` is called the way it calls it).
+ */
 function renderHead(path: string, data: RootSeoData): string {
   // A root route with id "root" (as in the app) whose element is the head component.
   const router = createMemoryRouter(
     [{ id: "root", path: "/", Component: SeoHead, children: [{ path: "*", Component: () => null }] }],
     { initialEntries: [path], hydrationData: { loaderData: { root: data } } },
   );
-  return `<html><head>${renderToStaticMarkup(createElement(RouterProvider, { router }))}</head><body></body></html>`;
+  const ui = path.split("/")[1];
+  const [meta] = seoMeta("page.shiur")({ params: { ui }, location: { pathname: path }, matches: [{ id: "root", loaderData: data }] });
+  const title = `<title>${escapeHtml(meta!.title)}</title>`;
+  return `<html><head>${title}${renderToStaticMarkup(createElement(RouterProvider, { router }))}</head><body></body></html>`;
+}
+
+function escapeHtml(s: string): string {
+  return s.replace(/&/gu, "&amp;").replace(/</gu, "&lt;").replace(/>/gu, "&gt;");
 }
 
 describe(".corpus reader", () => {
@@ -143,7 +160,7 @@ describe("SeoHead", () => {
 
 describe("post-build checks", () => {
   const goodShiur = (canonical: string) =>
-    `<html><head><link rel="canonical" href="${canonical}"/>` +
+    `<html><head><title>t · Emunas</title><link rel="canonical" href="${canonical}"/>` +
     `<link rel="alternate" hrefLang="en" href="https://listen.example.org/en/s/a"/>` +
     `<meta name="description" content="d"/><meta property="og:title" content="t"/>` +
     `<meta property="og:description" content="d"/></head><body></body></html>`;
@@ -177,6 +194,16 @@ describe("post-build checks", () => {
     expect(problems(goodShiur(`${QUIET}/en/shiur/a/`).replace("<head>", '<head><meta name="robots" content="noindex"/>'))).toEqual([
       "content page (shiur) is noindex",
     ]);
+  });
+
+  it("flags a content page whose <title> is generic or missing (W5.4)", () => {
+    const problems = (html: string) => checkPage("en/s/a.html", html, hosts).map((f) => f.problem);
+    const good = goodShiur(`${QUIET}/en/shiur/a/`);
+    expect(parseHead(good).title).toBe("t · Emunas");
+    expect(problems(good.replace("<title>t · Emunas</title>", "<title>Shiur · Emunas</title>"))).toEqual([
+      "<title> does not carry the page's name (og:title)",
+    ]);
+    expect(problems(good.replace("<title>t · Emunas</title>", ""))).toEqual(["<title> does not carry the page's name (og:title)"]);
   });
 
   it("flags app-only pages without noindex", () => {
@@ -296,5 +323,20 @@ describe("react-router config hooks", () => {
     const logs: string[] = [];
     liveBuildEnd(args, ENV, (m) => logs.push(m));
     expect(logs.join()).toMatch(/1 prerendered pages checked/u);
+  });
+});
+
+describe("data:budgets projection (data-build/budgets.ts)", () => {
+  it("projects exactly as many pages as prerenderPaths lists over the emitted mini corpus", () => {
+    const corpusDir = buildCorpusTo(MINI_DATA, MINI_POLICY);
+    const files = emitLiveData(readCorpusInput(corpusDir), { generatedAt: "2026-11-15T00:00:00.000Z" });
+    const dataDir = join(tmp(), "data");
+    writeDataDir(dataDir, files);
+    const dataFiles = readDataFileSet(dataDir);
+    const expected = prerenderPaths(readSeoCorpus(corpusDir), dataFiles).paths.length;
+    expect(expected).toBeGreaterThan(40);
+    expect(projectedPrerender(dataFiles ?? [], prerenderSetsFromCorpus(corpusDir))).toBe(expected);
+    // Without entities.json it is an upper bound.
+    expect(projectedPrerender(dataFiles ?? [])).toBeGreaterThanOrEqual(expected);
   });
 });

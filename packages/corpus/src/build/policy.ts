@@ -4,6 +4,7 @@
  * one is fatal (it is a reviewed, human-edited file).
  */
 import { readFileSync } from "node:fs";
+import { mp3SiblingKey } from "@emunas/audio";
 import * as v from "valibot";
 import { issueSummary } from "./schemas.ts";
 import { readPolicyText } from "./read.ts";
@@ -39,6 +40,29 @@ export function loadPublishPolicy(policyDir: string): PublishPolicy {
   const { dropBelow, softBelow } = r.output.confidence;
   if (softBelow < dropBelow) throw new Error("site-policy/publish-policy.json: softBelow < dropBelow");
   return { dropBelow, softBelow, suppress: ids(r.output.suppress) };
+}
+
+const AudioTranscodedSchema = v.object({
+  policyVersion: v.literal(1),
+  mp3Siblings: v.array(v.string()),
+});
+
+/**
+ * `site-policy/audio-transcoded.json`: original (non-mp3) bucket keys that have an MP3 transcode
+ * next to them (same key, `.mp3`), written by `packages/audio/scripts/transcode-wma.ts`. Missing →
+ * none; invalid, an `.mp3` key or a key that may not become a URL → fatal (reviewed file).
+ */
+export function loadAudioTranscoded(policyDir: string): string[] {
+  const text = readPolicyText(policyDir, "audio-transcoded.json");
+  if (text === null) return [];
+  const r = v.safeParse(AudioTranscodedSchema, JSON.parse(text));
+  if (!r.success) throw new Error(`site-policy/audio-transcoded.json invalid: ${issueSummary(r.issues).join("; ")}`);
+  r.output.mp3Siblings.forEach((key, i) => {
+    if (mp3SiblingKey(key) === null) {
+      throw new Error(`site-policy/audio-transcoded.json: mp3Siblings[${i}] is not a non-mp3 audio key with an extension`);
+    }
+  });
+  return [...new Set(r.output.mp3Siblings)];
 }
 
 const SuppressFileSchema = v.union([

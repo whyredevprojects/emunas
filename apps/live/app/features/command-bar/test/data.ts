@@ -114,8 +114,8 @@ export const FACETS: FacetsFile = {
   category: { parsha: fv("Parsha", "פרשה", 1) },
   lang: { en: fv("English", "ענגליש", 2), yi: fv("Yiddish", "אידיש", 4) },
   occasion: {
-    noach: { ...fv("Noach", "נח", 1, "נח"), type: "parsha" },
-    "lag-baomer": { ...fv("Lag BaOmer", "ל\"ג בעומר", 1, "ל\"ג בעומר"), type: "zman" },
+    noach: { ...fv("Noach", "נח", 1, "נח"), type: "parsha", hasPage: false },
+    "lag-baomer": { ...fv("Lag BaOmer", "ל\"ג בעומר", 1, "ל\"ג בעומר"), type: "zman", hasPage: false },
   },
   year: { "5736": fv("5736", "תשל\"ו", 1), "5738": fv("5738", "תשל\"ח", 1), "5743": fv("5743", "תשמ\"ג", 1), unknown: fv("?", "?", 3) },
   series: { "tanya-yi": { ...fv("Tanya", "תניא", 3), lang: "yi", sibling: null } },

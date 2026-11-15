@@ -7,6 +7,7 @@
  *            [--neighbor-threshold <x>] [--neighbor-workers <n>]           "same idea elsewhere" (W4.4)
  *   validate [--data <dir>]                                          every file against its contract schema
  *   budgets  [--data <dir>] [--client <dir>] [--public <dir>]        file counts and sizes (tech-live §3.3)
+ *            [--corpus <dir>]                                        (entities.json: which routes prerender)
  *
  * Defaults: corpus `<repo>/.corpus`, data `apps/live/public/data`, client `apps/live/build/client`,
  * public `apps/live/public`. `--generated-at` defaults to SOURCE_DATE_EPOCH, else now.
@@ -20,7 +21,7 @@ import { dirname, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parseArgs } from "node:util";
 import { walkFiles } from "@emunas/corpus-guard/budgets";
-import { checkLiveBudgets, describeFinding } from "./budgets.ts";
+import { checkLiveBudgets, describeFinding, prerenderSetsFromCorpus } from "./budgets.ts";
 import { readCorpusInput } from "./corpus-input.ts";
 import { emitLiveData } from "./emit.ts";
 import { buildNeighbors, DEFAULT_EMBED_MODEL, DirBlobReader, type BuildNeighborsOptions, type NeighborMode } from "./neighbors.ts";
@@ -180,6 +181,7 @@ export async function main(argv: string[]): Promise<number> {
         dataDir: abs(v.data, DEFAULTS.data),
         publicDir: abs(v.public, DEFAULTS.public),
         clientDir: abs(v.client, DEFAULTS.client),
+        prerender: prerenderSetsFromCorpus(abs(v.corpus, DEFAULTS.corpus)),
       });
       const kb = (n: number) => `${(n / 1024).toFixed(1)} KiB`;
       for (const [kind, st] of Object.entries(r.byKind)) {

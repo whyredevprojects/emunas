@@ -4,7 +4,7 @@
  "name": "Yirmiyahu",
  "label": {
   "en": "Yirmiyahu",
-  "yi": "Yirmiyahu"
+  "yi": "ירמיהו"
  },
  "locations": [
   {
@@ -17,9 +17,57 @@
      "t": 2789.56,
      "mention": "quoted",
      "resolution": "resolved"
+    },
+    {
+     "shiurId": "yi-zmanim-shbs-chzvn-01",
+     "sourceId": "yi-zmanim-shbs-chzvn-01~src41",
+     "t": 3414.71,
+     "mention": "quoted",
+     "resolution": "resolved"
+    }
+   ]
+  },
+  {
+   "ref": "Yirmiyahu 7:4",
+   "sefariaRef": "Jeremiah 7:4",
+   "citations": [
+    {
+     "shiurId": "yi-zmanim-chnvkh-11",
+     "sourceId": "yi-zmanim-chnvkh-11~src25",
+     "t": 2040.07,
+     "mention": "quoted",
+     "resolution": "inferred"
+    },
+    {
+     "shiurId": "en-zmanim-en-rsh-hshnh-03",
+     "sourceId": "en-zmanim-en-rsh-hshnh-03~src16",
+     "t": 1764.56,
+     "mention": "quoted",
+     "resolution": "inferred"
+    }
+   ]
+  },
+  {
+   "ref": "Yirmiyahu 33:10–33:11",
+   "sefariaRef": "Jeremiah 33:10-11",
+   "citations": [
+    {
+     "shiurId": "yi-zmanim-shbs-chzvn-01",
+     "sourceId": "yi-zmanim-shbs-chzvn-01~src14",
+     "t": 1618.31,
+     "mention": "quoted",
+     "resolution": "resolved"
     }
    ]
   }
  ],
- "unlocated": []
+ "unlocated": [
+  {
+   "shiurId": "yi-zmanim-spyrh-01",
+   "sourceId": "yi-zmanim-spyrh-01~src24",
+   "t": 2082.02,
+   "mention": "quoted",
+   "resolution": "inferred"
+  }
+ ]
 }

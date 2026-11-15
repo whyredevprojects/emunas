@@ -7,12 +7,14 @@
  *   route has a `loader` (it never revalidates under `ssr: false`, so nothing requests them); refused
  *   when any other route module exports a server `loader`;
  * - checks every prerendered page: canonical on the Quiet origin (never `listen.*`), OG title and
- *   description on content pages, `noindex` on app-only pages and on the SPA fallback;
+ *   description on content pages, a `<title>` carrying the page's own name on content pages (W5.4),
+ *   `noindex` on app-only pages and on the SPA fallback;
  * - checks the static file budget (≤ 18,000 files, tech-live §3.3).
  */
 import { existsSync, readFileSync, readdirSync, renameSync, rmSync, rmdirSync, statSync, writeFileSync } from "node:fs";
 import { dirname, join, relative, sep } from "node:path";
 import { LIVE_SUBDOMAIN, hostOf, type Hosts } from "@emunas/links";
+import { TITLE_SEPARATOR } from "./meta.ts";
 import { APP_ONLY_KINDS, classifyLivePath, isIndexable, normalizeLivePath } from "./policy.ts";
 import { ROBOTS_TXT } from "./robots.ts";
 
@@ -38,6 +40,8 @@ export interface ParsedHead {
   robots: string[];
   meta: Map<string, string>;
   alternates: { hrefLang: string; href: string }[];
+  /** Text of the first `<title>`, entities decoded; null when there is none. */
+  title: string | null;
 }
 
 function decodeEntities(s: string): string {
@@ -59,7 +63,14 @@ function attrs(tag: string): Map<string, string> {
 export function parseHead(html: string): ParsedHead {
   const end = html.indexOf("</head>");
   const head = end === -1 ? html : html.slice(0, end);
-  const out: ParsedHead = { canonical: [], robots: [], meta: new Map(), alternates: [] };
+  const titleMatch = /<title>([^<]*)<\/title>/u.exec(head);
+  const out: ParsedHead = {
+    canonical: [],
+    robots: [],
+    meta: new Map(),
+    alternates: [],
+    title: titleMatch ? decodeEntities(titleMatch[1]!) : null,
+  };
   for (const m of head.matchAll(/<(meta|link)\b[^>]*>/gu)) {
     const a = attrs(m[0]);
     if (m[1] === "link") {
@@ -137,7 +148,9 @@ export function checkPage(file: string, html: string, hosts: Hosts | null): SeoF
   if (APP_ONLY_KINDS.has(kind) && !noindex) bad(`app-only page (${kind}) without noindex`);
   if (isIndexable(kind)) {
     if (noindex) bad(`content page (${kind}) is noindex`);
-    if (!head.meta.get("og:title")) bad("no og:title");
+    const ogTitle = head.meta.get("og:title");
+    if (!ogTitle) bad("no og:title");
+    else if (!head.title?.startsWith(`${ogTitle}${TITLE_SEPARATOR}`)) bad("<title> does not carry the page's name (og:title)");
     if (!head.meta.get("og:description")) bad("no og:description");
     if (!head.meta.get("description")) bad("no meta description");
     if (hosts && head.alternates.length === 0) bad("no hreflang alternates");

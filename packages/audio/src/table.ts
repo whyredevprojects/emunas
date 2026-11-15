@@ -3,14 +3,15 @@
  * `recordingId → { url, canonicalId, playable, size }`, built from the corpus recordings at build
  * time. A recording with `duplicateOf` maps to its canonical recording and shares its URL. A
  * recording whose canonical key is not playable (not `.mp3`, or refused) gets `playable: false`
- * and `url: null`.
+ * and `url: null`, unless the key is in `mp3Siblings` (site-policy/audio-transcoded.json): then the
+ * URL points at the MP3 transcode next to it and `size` is 0 (unknown).
  *
  * The bucket key (`audioKey`) is read to build the URL and is never copied into the table.
  *
  * Pure and browser/Workers-safe.
  */
 import { mediaUrl, normalizeMediaOrigin, type MediaUrl } from "./media.ts";
-import { unplayableReason, type UnplayableReason } from "./playable.ts";
+import { servedKey, unplayableReason, type UnplayableReason } from "./playable.ts";
 
 interface AudioTableEntryBase {
   /** Recording whose object holds the bytes (itself unless a duplicate). */
@@ -52,6 +53,11 @@ export interface BuildAudioTableOptions {
    */
   only?: Iterable<string>;
   onIssue?: (issue: AudioTableIssue) => void;
+  /**
+   * Original (non-mp3) bucket keys that have an MP3 transcode next to them
+   * (`site-policy/audio-transcoded.json` `mp3Siblings`). Default: none.
+   */
+  mp3Siblings?: Iterable<string>;
 }
 
 const MAX_DUP_CHAIN = 16;
@@ -64,6 +70,7 @@ const MAX_DUP_CHAIN = 16;
 export function buildAudioTable(recordings: readonly AudioTableInput[], options: BuildAudioTableOptions): AudioTable {
   const origin = normalizeMediaOrigin(options.origin);
   const report = options.onIssue ?? (() => {});
+  const transcoded: ReadonlySet<string> = new Set(options.mp3Siblings ?? []);
   const byId = new Map<string, AudioTableInput>();
   for (const rec of recordings) {
     if (byId.has(rec.id)) {
@@ -100,13 +107,15 @@ export function buildAudioTable(recordings: readonly AudioTableInput[], options:
       report({ kind: "invalid-size", id });
       size = 0;
     }
-    const reason = unplayableReason(canonical.audioKey);
-    if (reason) {
-      report({ kind: "unplayable", id, reason });
+    const key = servedKey(canonical.audioKey, transcoded);
+    if (key === null) {
+      report({ kind: "unplayable", id, reason: unplayableReason(canonical.audioKey) ?? "not-mp3" });
       out[id] = { canonicalId: canonical.id, size, playable: false, url: null };
       continue;
     }
-    out[id] = { canonicalId: canonical.id, size, playable: true, url: mediaUrl(canonical.audioKey, origin) };
+    // The transcode's byte size is not in the ingest: 0 means unknown.
+    if (key !== canonical.audioKey) size = 0;
+    out[id] = { canonicalId: canonical.id, size, playable: true, url: mediaUrl(key, origin) };
   }
   return out;
 }

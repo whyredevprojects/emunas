@@ -3,15 +3,16 @@
  "kind": "o",
  "key": "elul",
  "label": {
-  "en": "אלול",
-  "yi": "אלול",
-  "he": "אלול"
+  "en": "Elul",
+  "yi": "אלול"
  },
  "shiurIds": [
-  "yi-zmanim-lvl-01"
+  "yi-zmanim-lvl-01",
+  "yi-zmanim-lvl-02"
  ],
  "years": {
-  "5735": 1
+  "5735": 1,
+  "5740": 1
  },
  "moments": [
   {
@@ -57,6 +58,20 @@
    "end": 2038.44
   },
   {
+   "id": "yi-zmanim-lvl-01~st0",
+   "shiurId": "yi-zmanim-lvl-01",
+   "kind": "st",
+   "t": 1296.67,
+   "end": 1312.91
+  },
+  {
+   "id": "yi-zmanim-lvl-01~st1",
+   "shiurId": "yi-zmanim-lvl-01",
+   "kind": "st",
+   "t": 1879.96,
+   "end": 1935.2
+  },
+  {
    "id": "yi-zmanim-lvl-01~q0",
    "shiurId": "yi-zmanim-lvl-01",
    "kind": "q",
@@ -85,18 +100,95 @@
    "end": 2014.68
   },
   {
-   "id": "yi-zmanim-lvl-01~st0",
-   "shiurId": "yi-zmanim-lvl-01",
-   "kind": "st",
-   "t": 1296.67,
-   "end": 1312.91
+   "id": "yi-zmanim-lvl-02~i0",
+   "shiurId": "yi-zmanim-lvl-02",
+   "kind": "i",
+   "t": 97.21,
+   "end": 150.1
   },
   {
-   "id": "yi-zmanim-lvl-01~st1",
-   "shiurId": "yi-zmanim-lvl-01",
+   "id": "yi-zmanim-lvl-02~i1",
+   "shiurId": "yi-zmanim-lvl-02",
+   "kind": "i",
+   "t": 285.8,
+   "end": 350.78
+  },
+  {
+   "id": "yi-zmanim-lvl-02~i2",
+   "shiurId": "yi-zmanim-lvl-02",
+   "kind": "i",
+   "t": 1237.68,
+   "end": 1284.64
+  },
+  {
+   "id": "yi-zmanim-lvl-02~i3",
+   "shiurId": "yi-zmanim-lvl-02",
+   "kind": "i",
+   "t": 1317.46,
+   "end": 1410.1
+  },
+  {
+   "id": "yi-zmanim-lvl-02~i4",
+   "shiurId": "yi-zmanim-lvl-02",
+   "kind": "i",
+   "t": 1807.68,
+   "end": 1899
+  },
+  {
+   "id": "yi-zmanim-lvl-02~i5",
+   "shiurId": "yi-zmanim-lvl-02",
+   "kind": "i",
+   "t": 2073.23,
+   "end": 2141.05
+  },
+  {
+   "id": "yi-zmanim-lvl-02~i6",
+   "shiurId": "yi-zmanim-lvl-02",
+   "kind": "i",
+   "t": 2414.62,
+   "end": 2488.38
+  },
+  {
+   "id": "yi-zmanim-lvl-02~st0",
+   "shiurId": "yi-zmanim-lvl-02",
    "kind": "st",
-   "t": 1879.96,
-   "end": 1935.2
+   "t": 2231.49,
+   "end": 2288.05
+  },
+  {
+   "id": "yi-zmanim-lvl-02~st1",
+   "shiurId": "yi-zmanim-lvl-02",
+   "kind": "st",
+   "t": 2697.19,
+   "end": 2791.71
+  },
+  {
+   "id": "yi-zmanim-lvl-02~q0",
+   "shiurId": "yi-zmanim-lvl-02",
+   "kind": "q",
+   "t": 708.5,
+   "end": 750.78
+  },
+  {
+   "id": "yi-zmanim-lvl-02~q1",
+   "shiurId": "yi-zmanim-lvl-02",
+   "kind": "q",
+   "t": 1682.08,
+   "end": 1693.88
+  },
+  {
+   "id": "yi-zmanim-lvl-02~q2",
+   "shiurId": "yi-zmanim-lvl-02",
+   "kind": "q",
+   "t": 2409.8,
+   "end": 2433.04
+  },
+  {
+   "id": "yi-zmanim-lvl-02~q3",
+   "shiurId": "yi-zmanim-lvl-02",
+   "kind": "q",
+   "t": 2667.97,
+   "end": 2755.43
   }
  ],
  "related": []

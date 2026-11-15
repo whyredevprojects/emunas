@@ -1,0 +1,46 @@
+{
+ "schemaVersion": 1,
+ "id": "tanya-en",
+ "title": {
+  "en": "Tanya (English)",
+  "yi": "ספר התניא"
+ },
+ "lang": "en",
+ "sibling": "tanya-yi",
+ "parts": [
+  {
+   "shiurId": "en-tanya-en-05",
+   "order": 5,
+   "title": "אפ' נשמות של שערות וצפרנים הם מקושר בקשר נפלא ועצום בעצמותו ומהותו הראשון.",
+   "oneLiner": null,
+   "duration": 3081.72,
+   "years": [],
+   "status": "catalog-only",
+   "perek": "ב"
+  },
+  {
+   "shiurId": "en-tanya-en-24",
+   "order": 24,
+   "title": "צדיק ורע לו - עוד יש לו שייכות אל הרע. “ראיתי בני עליה והמה מועטים” - זה צדיק וטוב לו. ביאור ענין יחוד קובהו\"ש.",
+   "oneLiner": null,
+   "duration": 2857.72,
+   "years": [],
+   "status": "catalog-only",
+   "perek": "י"
+  }
+ ],
+ "perekGroups": [
+  {
+   "perek": "ב",
+   "shiurIds": [
+    "en-tanya-en-05"
+   ]
+  },
+  {
+   "perek": "י",
+   "shiurIds": [
+    "en-tanya-en-24"
+   ]
+  }
+ ]
+}

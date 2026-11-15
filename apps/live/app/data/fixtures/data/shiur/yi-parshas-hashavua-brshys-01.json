@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "id": "yi-parshas-hashavua-brshys-01",
- "rev": "<rev>",
+ "rev": "cd5c979ba4f0",
  "lang": "yi",
  "category": "parsha",
  "catalog": {
@@ -45,10 +45,19 @@
   }
  ],
  "related": {
-  "sameOccasion": [],
+  "sameOccasion": [
+   "yi-parshas-hashavua-brshys-03"
+  ],
   "prev": null,
-  "next": null,
-  "neighbors": []
+  "next": "yi-parshas-hashavua-brshys-03",
+  "neighbors": [
+   {
+    "momentId": "yi-zmanim-svkvs-08~i3",
+    "shiurId": "yi-zmanim-svkvs-08",
+    "t": 1289.69,
+    "score": 0.364
+   }
+  ]
  },
  "notes": {
   "summary": {
@@ -370,7 +379,7 @@
     "idx": 1,
     "id": "yi-parshas-hashavua-brshys-01~src1",
     "work": "Rambam, Commentary on the Mishnah",
-    "workKey": "rambam-commentary-on-the-mishnah",
+    "workKey": "rambam-peirush-hamishnayos",
     "ref": "Rambam, Commentary on the Mishnah, Sukkah 2:9",
     "sefariaRef": "Rambam on Mishnah Sukkah 2:9",
     "resolution": "inferred",
@@ -381,7 +390,7 @@
     "idx": 2,
     "id": "yi-parshas-hashavua-brshys-01~src2",
     "work": "Gemara Sukkah",
-    "workKey": "gemara-sukkah",
+    "workKey": "bavli-sukkah",
     "ref": "Sukkah 27a",
     "sefariaRef": "Sukkah 27a",
     "resolution": "inferred",
@@ -439,7 +448,7 @@
     "idx": 7,
     "id": "yi-parshas-hashavua-brshys-01~src8",
     "work": "Gemara Kiddushin",
-    "workKey": "gemara-kiddushin",
+    "workKey": "bavli-kiddushin",
     "ref": "Kiddushin 2b",
     "sefariaRef": "Kiddushin 2b",
     "resolution": "inferred",
@@ -496,7 +505,7 @@
     "idx": 12,
     "id": "yi-parshas-hashavua-brshys-01~src13",
     "work": "Gemara Sukkah",
-    "workKey": "gemara-sukkah",
+    "workKey": "bavli-sukkah",
     "ref": "Sukkah 55b",
     "sefariaRef": "Sukkah 55b",
     "resolution": "inferred",
@@ -532,7 +541,7 @@
     "idx": 15,
     "id": "yi-parshas-hashavua-brshys-01~src17",
     "work": "Gemara Avodah Zarah",
-    "workKey": "gemara-avodah-zarah",
+    "workKey": "bavli-avodah-zarah",
     "ref": "Avodah Zarah 3a",
     "sefariaRef": "Avodah Zarah 3a",
     "resolution": "resolved",
@@ -734,11 +743,11 @@
   "people": [
    {
     "name": "the Rambam",
-    "key": "the-rambam"
+    "key": "rambam"
    },
    {
     "name": "the Ramban",
-    "key": "the-ramban"
+    "key": "ramban"
    },
    {
     "name": "Rashi",
@@ -746,7 +755,7 @@
    },
    {
     "name": "the Chasam Sofer",
-    "key": "the-chasam-sofer"
+    "key": "chasam-sofer"
    },
    {
     "name": "Adam HaRishon",
@@ -754,7 +763,7 @@
    },
    {
     "name": "Chava",
-    "key": "chava"
+    "key": "chavah"
    },
    {
     "name": "Yehudah",
@@ -780,59 +789,59 @@
   "concepts": [
    {
     "he": "סוכה",
-    "key": "סוכה"
+    "key": "svkh-c20d03"
    },
    {
     "he": "תשבו כעין תדורו",
-    "key": "תשבו-כעין-תדורו"
+    "key": "sshbv-keyn-sdvrv-7cd63d"
    },
    {
     "he": "מצטער",
-    "key": "מצטער"
+    "key": "mtzter-b1ec71"
    },
    {
     "he": "כזית",
-    "key": "כזית"
+    "key": "kzys-bf6fc6"
    },
    {
     "he": "קביעות",
-    "key": "קביעות"
+    "key": "kbyevs-096658"
    },
    {
     "he": "עירוב",
-    "key": "עירוב"
+    "key": "eyrvb-eb1cd6"
    },
    {
     "he": "כנסת ישראל",
-    "key": "כנסת-ישראל"
+    "key": "knss-yshral-315464"
    },
    {
     "he": "אירוסין",
-    "key": "אירוסין"
+    "key": "ayrvsyn-fc780d"
    },
    {
     "he": "נישואין",
-    "key": "נישואין"
+    "key": "nyshvayn-df2beb"
    },
    {
     "he": "נסירה",
-    "key": "נסירה"
+    "key": "nsyrh-398352"
    },
    {
     "he": "שמיני עצרת",
-    "key": "שמיני-עצרת"
+    "key": "shmyny-etzrs-7c7ac8"
    },
    {
     "he": "שבירת הלוחות",
-    "key": "שבירת-הלוחות"
+    "key": "shbyrs-hlvchvs-8d2469"
    },
    {
     "he": "בראשית",
-    "key": "בראשית"
+    "key": "brashys-2d4859"
    },
    {
     "he": "שטן",
-    "key": "שטן"
+    "key": "shtn-ecbd0e"
    }
   ],
   "writeupLangs": [

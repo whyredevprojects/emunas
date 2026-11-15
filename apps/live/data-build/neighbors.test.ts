@@ -7,7 +7,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { cacheKey, encodeF16 } from "../../../workers/api/sync/src/embed.ts";
+import { cacheKey, encodeF16 } from "@emunas/api/sync/embed";
 import type { ShiurFile } from "../app/data/types.ts";
 import { readCorpusInput } from "./corpus-input.ts";
 import { emitLiveData } from "./emit.ts";
@@ -18,9 +18,12 @@ import {
   computeNeighbors,
   lexicalVectors,
   neighborUnits,
+  siblingSeriesId,
+  twinShiurim,
   vectorsFromCache,
   type BlobReader,
   type NeighborUnit,
+  type TwinInput,
   type VectorizedUnits,
 } from "./neighbors.ts";
 import { validateFile } from "./schemas.ts";
@@ -63,7 +66,7 @@ function synthetic(shiurim: number, maxPer: number, dims: number, seed = 1): Vec
 }
 
 /** The obvious O(n²) implementation the kernel must agree with. */
-function reference(v: VectorizedUnits, threshold: number, perShiur: number) {
+function reference(v: VectorizedUnits, threshold: number, perShiur: number, twins: ReadonlyMap<string, ReadonlySet<string>> = new Map()) {
   const n = v.units.length;
   const dot = (i: number, j: number) => {
     let s = 0;
@@ -76,7 +79,7 @@ function reference(v: VectorizedUnits, threshold: number, perShiur: number) {
     const list = byShiur.get(ui.shiurId) ?? [];
     for (let j = 0; j < n; j++) {
       const uj = v.units[j] as NeighborUnit;
-      if (uj.shiurId === ui.shiurId) continue;
+      if (uj.shiurId === ui.shiurId || twins.get(ui.shiurId)?.has(uj.shiurId)) continue;
       const s = dot(Math.min(i, j), Math.max(i, j));
       if (s < threshold) continue;
       const cur = list.find((x) => x.shiurId === uj.shiurId);
@@ -146,6 +149,29 @@ describe("computeNeighbors (kernel)", () => {
     expect(r1.byShiur.get("g")?.map((n) => n.shiurId)).toEqual(["a", "b", "c", "d", "e"]);
   });
 
+  it("never lists a shiur's twin, and otherwise agrees with the reference (any worker split)", async () => {
+    // Twin every shiur with its strongest neighbour, so the exclusion changes the lists.
+    const plain = await computeNeighbors(v, { threshold, workers: 1 });
+    const twins = new Map<string, Set<string>>();
+    const link = (a: string, b: string) => {
+      twins.set(a, (twins.get(a) ?? new Set()).add(b));
+      twins.set(b, (twins.get(b) ?? new Set()).add(a));
+    };
+    for (const [sid, list] of plain.byShiur) if (list[0]) link(sid, list[0].shiurId);
+    expect(twins.size).toBeGreaterThan(10);
+    const one = await computeNeighbors(v, { threshold, workers: 1, twins });
+    expect(strip(one.byShiur)).toEqual(reference(v, threshold, NEIGHBOR_DEFAULTS.perShiur, twins));
+    expect(one.byShiur).not.toEqual(plain.byShiur);
+    const four = await computeNeighbors(v, { threshold, workers: 4, twins });
+    expect(four.byShiur).toEqual(one.byShiur);
+    expect(four.byMoment).toEqual(one.byMoment);
+    for (const [sid, list] of one.byShiur) for (const n of list) expect(twins.get(sid)?.has(n.shiurId) ?? false).toBe(false);
+    for (const [mid, list] of one.byMoment) {
+      const sid = mid.split("~")[0] as string;
+      for (const n of list) expect(twins.get(sid)?.has(n.shiurId) ?? false).toBe(false);
+    }
+  });
+
   it("stays within the CI budget (< 3 min) projected to 18,000 moments × 1,024 dims", async () => {
     const dims = 1024;
     const v2 = synthetic(400, 11, dims, 7);
@@ -156,6 +182,50 @@ describe("computeNeighbors (kernel)", () => {
     // Work grows with the number of pairs.
     const projected = ms * ((18_000 * 17_999) / (n * (n - 1)));
     expect(projected).toBeLessThan(180_000);
+  });
+});
+
+describe("other-language twins", () => {
+  const part = (id: string, series: string | null, order: number | null, perek: string | null = null): TwinInput => ({
+    id,
+    series: series === null ? null : { id: series, order, count: 9 },
+    perek,
+  });
+
+  it("pairs series by the W2.1 rule", () => {
+    expect(siblingSeriesId("emunah-yi")).toBe("emunah-en");
+    expect(siblingSeriesId("tanya-en")).toBe("tanya-yi");
+    expect(siblingSeriesId("current-bachurim-5773")).toBeNull();
+  });
+
+  it("matches the same order, or a shared perek; symmetric; nothing without a sibling series", () => {
+    const t = twinShiurim([
+      part("yi-emunah-1-01", "emunah-yi", 1),
+      part("yi-emunah-1-02", "emunah-yi", 2),
+      part("en-emunah-en-01", "emunah-en", 1),
+      part("en-emunah-en-03", "emunah-en", 3),
+      part("yi-tanya-1-01", "tanya-yi", 2, "א"),
+      part("yi-tanya-1-06", "tanya-yi", 7, "ב"),
+      part("yi-tanya-1-09", "tanya-yi", 10, "ג"),
+      part("yi-tanya-2-01", "tanya-yi", 1, "הקדמה"),
+      part("en-tanya-en-03", "tanya-en", 3, "א-ב"),
+      part("en-tanya-en-07", "tanya-en", 7, "ג"),
+      part("en-tanya-en-99", "tanya-en", 1, null),
+      part("yi-shonos-01", null, null),
+      part("x-current-01", "current-bachurim-5773", 1),
+    ]);
+    const of = (id: string) => [...(t.get(id) ?? [])].sort();
+    expect(of("yi-emunah-1-01")).toEqual(["en-emunah-en-01"]);
+    expect(of("en-emunah-en-01")).toEqual(["yi-emunah-1-01"]);
+    expect(of("yi-emunah-1-02")).toEqual([]);
+    expect(of("en-emunah-en-03")).toEqual([]);
+    expect(of("en-tanya-en-03")).toEqual(["yi-tanya-1-01", "yi-tanya-1-06"]);
+    expect(of("yi-tanya-1-09")).toEqual(["en-tanya-en-07"]);
+    // A part with a perek never twins one without, whatever the order.
+    expect(of("yi-tanya-2-01")).toEqual([]);
+    expect(of("en-tanya-en-99")).toEqual([]);
+    expect(of("yi-shonos-01")).toEqual([]);
+    expect(of("x-current-01")).toEqual([]);
   });
 });
 
@@ -253,10 +323,12 @@ describe("emit with neighbours (mini corpus, lexical)", async () => {
     for (const [f, body] of files) expect(validateFile(f, body)).toBeNull();
   });
 
-  it("never points into the same shiur; every neighbour is a real section or insight at its time", () => {
+  it("never points into the same shiur or its twin; every neighbour is a real section or insight at its time", () => {
+    const twins = twinShiurim(input.shiurim);
     for (const s of shiurFiles) {
       for (const n of s.related.neighbors) {
         expect(n.shiurId).not.toBe(s.id);
+        expect(twins.get(s.id)?.has(n.shiurId) ?? false).toBe(false);
         const target = byId.get(n.shiurId);
         expect(target?.status).toBe("full");
         const moments = [...(target?.notes?.chapters ?? []), ...(target?.notes?.insights ?? [])];

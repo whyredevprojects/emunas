@@ -14,7 +14,7 @@ import { tFor, useUi } from "../../i18n/index.ts";
 import { readingLang, useSettings } from "../../shell/settings.ts";
 import { useLoad } from "../today/use-data.ts";
 import { AiNote, EntityName, LoadState, QueueActions } from "../entities/common.tsx";
-import { loadCorpus, loadFacets, loadStories, loadToday, type CorpusFile, type StoryRow } from "../entities/live-data.ts";
+import { loadCorpus, loadFacets, loadStories, type CorpusFile, type StoryRow } from "../entities/live-data.ts";
 import { queueItems, rowsById } from "../entities/model.ts";
 import { createResolver, type EntityResolver } from "../entities/resolve.ts";
 import { browseT } from "../entities/strings.ts";
@@ -29,8 +29,8 @@ interface Loaded {
 }
 
 async function loadMaasios(): Promise<Loaded> {
-  const [stories, corpus, facets, today] = await Promise.all([loadStories(), loadCorpus(), loadFacets(), loadToday().catch(() => null)]);
-  return { stories: stories.stories, corpus, resolver: createResolver(facets, today) };
+  const [stories, corpus, facets] = await Promise.all([loadStories(), loadCorpus(), loadFacets()]);
+  return { stories: stories.stories, corpus, resolver: createResolver(facets) };
 }
 
 /** People shown as chips before "More people". */

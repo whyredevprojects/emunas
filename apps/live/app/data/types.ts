@@ -122,6 +122,12 @@ export interface SeriesFacetValue extends FacetValue {
 
 export interface OccasionFacetValue extends FacetValue {
   type: "parsha" | "zman";
+  /**
+   * True when `/data/entity/o/<key>.json` exists (the occasion is listed in `today.json` with at
+   * least two shiurim), so links to `/o/<key>` need no other file. `count` can be higher than the
+   * listed membership: it also counts uncatalogued file-name guesses.
+   */
+  hasPage: boolean;
 }
 
 export interface FacetsFile {

@@ -3,7 +3,14 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { randomBytes } from "node:crypto";
 import { join } from "node:path";
 import { describe, expect, it, vi } from "vitest";
-import { BR_TARGETS, SOFT_TARGETS, checkLiveBudgets, projectedPrerender } from "./budgets.ts";
+import {
+  APP_BUILD_FILES,
+  BR_TARGETS,
+  SOFT_TARGETS,
+  checkLiveBudgets,
+  prerenderSetsFromEntities,
+  projectedPrerender,
+} from "./budgets.ts";
 import { main } from "./cli.ts";
 import { GENERATED_AT, MINI_DATA, MINI_POLICY, buildCorpusTo, tmp } from "./test-helpers.ts";
 
@@ -54,9 +61,9 @@ describe("checkLiveBudgets", () => {
     const { root, data } = tree({ "shiur/a.json": "{}", "shiur/b.json": "{}", "entity/p/x.json": "{}" });
     writeFileSync(join(root, "robots.txt"), "");
     const r = checkLiveBudgets({ dataDir: data, publicDir: root, clientDir: join(root, "missing"), maxFiles: 100 });
-    expect(projectedPrerender(r.byKind)).toBe(2 * (2 + 0 + 1 + 100));
-    expect(r.projectedFiles).toBe(3 + 1 + 206);
-    expect(r.findings).toMatchObject([{ kind: "file-count", projected: true, files: 210, limit: 100 }]);
+    // Today + 2 shiurim + 1 person (no entities.json: every entity file counts), per UI language.
+    expect(r.projectedFiles).toBe(3 + 1 + 2 * (1 + 2 + 1) + APP_BUILD_FILES);
+    expect(r.findings).toMatchObject([{ kind: "file-count", projected: true, files: r.projectedFiles, limit: 100 }]);
 
     const client = join(tmp(), "client");
     mkdirSync(client);
@@ -65,6 +72,45 @@ describe("checkLiveBudgets", () => {
     expect(c.clientFiles).toBe(5);
     expect(c.projectedFiles).toBeNull();
     expect(c.findings).toMatchObject([{ kind: "file-count", files: 5, limit: 4 }]);
+  });
+
+  it("projects exactly the routes W4.5 prerenders: entity routes by livePrerender, occasions by count", () => {
+    const files = [
+      "build.json",
+      "corpus.json",
+      "shiur/a.json",
+      "shiur/b.json",
+      "writeup/a.en.json",
+      "series/s-yi.json",
+      "work/genesis.json",
+      "work/rare.json",
+      "entity/p/x.json",
+      "entity/p/y.json",
+      "entity/c/k.json",
+      "entity/o/noach.json",
+      "entity/o/once.json",
+      "moments/en-0.json",
+    ];
+    expect(projectedPrerender(files)).toBe(2 * (1 + 2 + 1 + 2 + 2 + 1 + 2));
+    const sets = prerenderSetsFromEntities({
+      thresholds: { quiet: { work: 2, person: 2, concept: 3 }, live: { prerender: 3 } },
+      works: [
+        { key: "genesis", shiurim: 9, quietPage: true, livePrerender: true },
+        { key: "rare", shiurim: 2, quietPage: true, livePrerender: false },
+      ],
+      people: [
+        { key: "x", shiurim: 3, quietPage: true, livePrerender: true },
+        { key: "y", shiurim: 2, quietPage: true, livePrerender: false },
+      ],
+      concepts: [{ key: "k", shiurim: 2, quietPage: false, livePrerender: false }],
+      occasions: [
+        { key: "noach", shiurim: 4 },
+        { key: "once", shiurim: 1 },
+        { key: "no-file", shiurim: 9 },
+      ],
+    });
+    // Today + shiurim a, b + series + genesis + x + noach, per UI language.
+    expect(projectedPrerender(files, sets)).toBe(2 * (1 + 2 + 1 + 1 + 1 + 1));
   });
 });
 

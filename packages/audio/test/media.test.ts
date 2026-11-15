@@ -8,7 +8,9 @@ import {
   lookupAudio,
   mediaTimeUrl,
   mediaUrl,
+  mp3SiblingKey,
   normalizeMediaOrigin,
+  servedKey,
   refuseKey,
   unplayableReason,
   type AudioTableInput,
@@ -119,6 +121,48 @@ describe("playability", () => {
     expect(unplayableReason("x/a.mp3.json")).toBe("not-mp3");
     expect(unplayableReason("x/a.m4a")).toBe("not-mp3");
     expect(unplayableReason("transcripts/a.mp3")).toBe("forbidden-substring");
+  });
+});
+
+describe("mp3 siblings (site-policy/audio-transcoded.json)", () => {
+  it("mp3SiblingKey swaps the extension of non-mp3 keys only", () => {
+    expect(mp3SiblingKey("Y Zemanim/02-22 Zos Chanukah 5778.WMA")).toBe("Y Zemanim/02-22 Zos Chanukah 5778.mp3");
+    expect(mp3SiblingKey("a.b/c d.v2.wma")).toBe("a.b/c d.v2.mp3");
+    expect(mp3SiblingKey("x/a.mp3")).toBeNull();
+    expect(mp3SiblingKey("x/a.MP3")).toBeNull();
+    expect(mp3SiblingKey("x.y/noext")).toBeNull();
+    expect(mp3SiblingKey("x/.WMA")).toBeNull();
+    expect(mp3SiblingKey("transcripts/x/a.WMA")).toBeNull();
+    expect(mp3SiblingKey("")).toBeNull();
+  });
+
+  it("servedKey: playable key as is; listed non-mp3 → sibling; otherwise null", () => {
+    const listed = new Set(["x/a.WMA"]);
+    expect(servedKey("x/b.mp3", listed)).toBe("x/b.mp3");
+    expect(servedKey("x/a.WMA", listed)).toBe("x/a.mp3");
+    expect(servedKey("x/a.WMA")).toBeNull();
+    expect(servedKey("x/c.WMA", listed)).toBeNull();
+    expect(servedKey("transcripts/a.WMA", new Set(["transcripts/a.WMA"]))).toBeNull();
+  });
+
+  it("buildAudioTable links the sibling for listed keys only (duplicates follow), size unknown", () => {
+    const recs: AudioTableInput[] = [
+      { id: "w1", audioKey: "Dir W/02-11 Purim Katan.WMA", sizeBytes: 5, duplicateOf: null },
+      { id: "w1-dup", audioKey: "Dir W/dup.mp3", sizeBytes: 5, duplicateOf: "w1" },
+      { id: "w2", audioKey: "Dir W/other.WMA", sizeBytes: 7, duplicateOf: null },
+    ];
+    const issues: AudioTableIssue[] = [];
+    const table = buildAudioTable(recs, {
+      origin: ORIGIN,
+      mp3Siblings: ["Dir W/02-11 Purim Katan.WMA"],
+      onIssue: (i) => issues.push(i),
+    });
+    const url = `${ORIGIN}/Dir%20W/02-11%20Purim%20Katan.mp3`;
+    expect(table["w1"]).toEqual({ canonicalId: "w1", size: 0, playable: true, url });
+    expect(table["w1-dup"]).toEqual({ canonicalId: "w1", size: 0, playable: true, url });
+    expect(table["w2"]).toEqual({ canonicalId: "w2", size: 7, playable: false, url: null });
+    expect(issues).toEqual([{ kind: "unplayable", id: "w2", reason: "not-mp3" }]);
+    expect(JSON.stringify(table)).not.toContain("WMA");
   });
 });
 

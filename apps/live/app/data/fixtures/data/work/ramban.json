@@ -4,24 +4,11 @@
  "name": "Ramban",
  "label": {
   "en": "Ramban",
-  "yi": "Ramban"
+  "yi": "רמב\"ן"
  },
  "locations": [
   {
-   "ref": "Ramban on Vayikra 26:6",
-   "sefariaRef": null,
-   "citations": [
-    {
-     "shiurId": "en-parsha-en-nch-01",
-     "sourceId": "en-parsha-en-nch-01~src21",
-     "t": 2207.44,
-     "mention": "paraphrased",
-     "resolution": "inferred"
-    }
-   ]
-  },
-  {
-   "ref": "Ramban on Shemos 20:8",
+   "ref": "Shemos 20:8",
    "sefariaRef": "Ramban on Exodus 20:8",
    "citations": [
     {
@@ -32,15 +19,77 @@
      "resolution": "inferred"
     }
    ]
+  },
+  {
+   "ref": "Bamidbar 8:2",
+   "sefariaRef": "Ramban on Numbers 8:2",
+   "citations": [
+    {
+     "shiurId": "yi-zmanim-svds-zs-chnvkh-04",
+     "sourceId": "yi-zmanim-svds-zs-chnvkh-04~src1",
+     "t": 75.39,
+     "mention": "paraphrased",
+     "resolution": "resolved"
+    }
+   ]
   }
  ],
  "unlocated": [
+  {
+   "shiurId": "yi-parshas-hashavua-hzynv-01",
+   "sourceId": "yi-parshas-hashavua-hzynv-01~src0",
+   "t": 141.95,
+   "mention": "paraphrased",
+   "resolution": "inferred"
+  },
+  {
+   "shiurId": "yi-parshas-hashavua-hzynv-01",
+   "sourceId": "yi-parshas-hashavua-hzynv-01~src1",
+   "t": 271.78,
+   "mention": "quoted",
+   "resolution": "inferred"
+  },
+  {
+   "shiurId": "en-miscellaneous-en-01",
+   "sourceId": "en-miscellaneous-en-01~src12",
+   "t": 1396.84,
+   "mention": "paraphrased",
+   "resolution": "unresolved"
+  },
+  {
+   "shiurId": "yi-zmanim-spyrh-01",
+   "sourceId": "yi-zmanim-spyrh-01~src42",
+   "t": 4447.8,
+   "mention": "quoted",
+   "resolution": "inferred"
+  },
+  {
+   "shiurId": "yi-zmanim-shbs-chzvn-01",
+   "sourceId": "yi-zmanim-shbs-chzvn-01~src32",
+   "t": 2737.82,
+   "mention": "paraphrased",
+   "resolution": "inferred"
+  },
   {
    "shiurId": "en-parsha-en-nch-01",
    "sourceId": "en-parsha-en-nch-01~src13",
    "t": 1469.1,
    "mention": "paraphrased",
    "resolution": "unresolved"
+  },
+  {
+   "shiurId": "en-parsha-en-nch-01",
+   "sourceId": "en-parsha-en-nch-01~src21",
+   "t": 2207.44,
+   "mention": "paraphrased",
+   "resolution": "inferred"
+  },
+  {
+   "shiurId": "en-zmanim-en-chvdsh-tbs-02",
+   "sourceId": "en-zmanim-en-chvdsh-tbs-02~src7",
+   "t": 570.93,
+   "mention": "quoted",
+   "resolution": "inferred"
   }
  ]
 }

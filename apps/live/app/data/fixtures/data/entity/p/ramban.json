@@ -1,0 +1,50 @@
+{
+ "schemaVersion": 1,
+ "kind": "p",
+ "key": "ramban",
+ "label": {
+  "en": "the Ramban",
+  "yi": "הרמב\"ן"
+ },
+ "shiurIds": [
+  "yi-parshas-hashavua-hzynv-01",
+  "yi-parshas-hashavua-brshys-01",
+  "yi-zmanim-spyrh-01",
+  "yi-zmanim-shbs-chzvn-01",
+  "en-parsha-en-nch-01",
+  "yi-zmanim-svds-zs-chnvkh-04",
+  "yi-zmanim-svkvs-08",
+  "en-zmanim-en-chvdsh-tbs-02"
+ ],
+ "years": {
+  "5732": 1,
+  "5736": 1,
+  "5742": 1,
+  "5746": 1,
+  "5749": 1,
+  "5751": 1,
+  "5758": 1,
+  "5764": 1
+ },
+ "moments": [
+  {
+   "id": "yi-parshas-hashavua-hzynv-01~st0",
+   "shiurId": "yi-parshas-hashavua-hzynv-01",
+   "kind": "st",
+   "t": 141.95,
+   "end": 196.07
+  }
+ ],
+ "related": [
+  {
+   "kind": "p",
+   "key": "rambam",
+   "shared": 6
+  },
+  {
+   "kind": "p",
+   "key": "chasam-sofer",
+   "shared": 5
+  }
+ ]
+}
