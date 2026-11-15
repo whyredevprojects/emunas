@@ -4,6 +4,6 @@
     "lib": ["ES2023", "DOM", "DOM.Iterable"],
     "types": ["node"]
   },
-  "include": ["astro.config.ts", "src/**/*.ts", ".astro/types.d.ts"],
+  "include": ["astro.config.ts", "vitest.config.ts", "vitest.e2e.config.ts", "src/**/*", "test/**/*.ts", ".astro/types.d.ts"],
   "exclude": ["dist", "node_modules"]
 }

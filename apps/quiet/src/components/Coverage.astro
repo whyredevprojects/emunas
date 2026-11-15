@@ -1,0 +1,20 @@
+---
+/**
+ * The coverage line under each AI-derived index heading (concept-quiet §10): "Compiled from the
+ * 518 shiurim that have notes so far, of 997." Catalog-derived pages (contents, calendar, years)
+ * do not use it. Counts come from `.corpus/build.json` (`counts.full`, `counts.total`).
+ */
+import { coverageNotice } from "@emunas/i18n";
+import type { Ed } from "../lib/edition.ts";
+
+interface Props {
+  ed: Ed;
+  /** Shiurim with notes (status "full"). */
+  withNotes: number;
+  /** All in-scope shiurim. */
+  total: number;
+}
+
+const { ed, withNotes, total } = Astro.props;
+---
+<p class="coverage">{coverageNotice(withNotes, total, ed)}</p>

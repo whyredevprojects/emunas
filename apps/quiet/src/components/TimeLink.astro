@@ -1,0 +1,54 @@
+---
+/**
+ * The one way to render a time (tech-quiet §4, §7; integration-plan C5 and Amendment A1).
+ *
+ * - Visible text: the global time (`12:34`, `1:02:03`) in an LTR isolate, so it reads the same in
+ *   both editions.
+ * - `href`: `${recording.audioUrl}#t=${local}`. Without script the browser opens the recording at
+ *   that second (media fragment); `local` comes from `toLocal`, so multi-recording shiurim open
+ *   the right file.
+ * - `data-rec` (recording id), `data-t` (seconds into that recording) and `data-g` (global
+ *   seconds) for the player script, which seeks instead of navigating.
+ * - Accessible name "Play from 12:34" / "שפּיל פון 12:34" (with the part on multi-recording shiurim).
+ * - A time whose recording is not playable is plain text, never a dead link.
+ */
+import { timeTarget, type AudioRecording } from "../lib/audio.ts";
+import { clock } from "../lib/bidi.ts";
+import type { Ed } from "../lib/edition.ts";
+import { useT } from "../i18n/index.ts";
+
+interface Props {
+  ed: Ed;
+  recordings: readonly AudioRecording[];
+  /** Global seconds. */
+  t: number;
+  class?: string;
+}
+
+const { ed, recordings, t: seconds, class: extra } = Astro.props;
+const t = useT(ed);
+const target = timeTarget(recordings, seconds);
+const text = clock(target?.global ?? seconds);
+const classes = ["time", extra].filter(Boolean).join(" ");
+const label = target
+  ? target.parts > 1
+    ? t("time.playFromPart", { time: text, part: target.part })
+    : t("time.playFrom", { time: text })
+  : text;
+---
+{target?.href ? (
+  <a
+    class={classes}
+    href={target.href}
+    data-rec={target.recordingId}
+    data-t={target.local}
+    data-g={target.global}
+    aria-label={label}
+  ><bdi dir="ltr">{text}</bdi></a>
+) : (
+  <span
+    class={`${classes} time-unavailable`}
+    data-rec={target?.recordingId}
+    data-g={target?.global ?? seconds}
+  ><bdi dir="ltr">{text}</bdi></span>
+)}

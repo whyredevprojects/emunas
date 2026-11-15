@@ -1,0 +1,80 @@
+---
+/**
+ * Listen (concept-quiet §5.4 part 2; integration-plan Amendment A1): one native
+ * `<audio controls preload="none">` per recording, in playback order, each with a download link.
+ * `src` is the recording's `audioUrl` on the media host; there is no `/audio/` route. A recording
+ * that is not playable (no URL, non-mp3 source) gets one plain sentence instead of a control.
+ *
+ * Works without script; the player script (W3.2) docks the first `audio.listen-audio` and
+ * drives the others through `data-rec`.
+ */
+import { formatDuration } from "@emunas/i18n";
+import { playableUrl, type AudioRecording } from "../lib/audio.ts";
+import type { Ed } from "../lib/edition.ts";
+import { useT } from "../i18n/index.ts";
+
+interface Props {
+  ed: Ed;
+  recordings: readonly AudioRecording[];
+  /** id of the section (anchor `#listen`). */
+  id?: string;
+  /** Heading level of the "Listen" label. Default 2. */
+  level?: 2 | 3;
+}
+
+const { ed, recordings, id = "listen", level = 2 } = Astro.props;
+const t = useT(ed);
+const count = recordings.length;
+const tracks = recordings.map((rec, i) => ({
+  rec,
+  part: i + 1,
+  url: playableUrl(rec),
+  duration: formatDuration(rec.duration, ed),
+}));
+const Heading = `h${level}` as "h2" | "h3";
+const headingId = `${id}-heading`;
+---
+<section class="listen" id={id} aria-labelledby={headingId} data-recordings={count}>
+  <Heading class="label" id={headingId}>{t("listen.heading")}</Heading>
+  {count === 0 ? (
+    <p class="listen-unavailable">{t("listen.unavailable")}</p>
+  ) : (
+    <ol class="tracks" role="list">
+      {tracks.map(({ rec, part, url, duration }) => (
+        <li class="track" data-rec={rec.id}>
+          {count > 1 && (
+            <p class="track-label" id={`${id}-part-${part}`}>
+              {t("listen.part", { part, count })}
+              {duration && <> · {duration}</>}
+            </p>
+          )}
+          {url ? (
+            <>
+              <audio
+                class="listen-audio"
+                controls
+                preload="none"
+                src={url}
+                data-rec={rec.id}
+                data-offset={rec.offset}
+                aria-label={count > 1 ? t("listen.part", { part, count }) : t("listen.heading")}
+              >
+                <p>{t("listen.noSupport")} <a href={url}>{t("listen.download")}</a></p>
+              </audio>
+              <p class="track-meta">
+                <a class="download" href={url} download>
+                  {count > 1 ? t("listen.downloadPart", { part }) : t("listen.download")}
+                </a>
+                {count === 1 && duration && <> · <span>{t("listen.duration", { duration })}</span></>}
+              </p>
+            </>
+          ) : (
+            <p class="listen-unavailable">
+              {count > 1 ? t("listen.unavailablePart", { part }) : t("listen.unavailable")}
+            </p>
+          )}
+        </li>
+      ))}
+    </ol>
+  )}
+</section>
