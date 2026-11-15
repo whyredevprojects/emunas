@@ -4,6 +4,14 @@ Status: plan, nothing built. Lead-architect decisions that let the "Quiet" site 
 
 Figures checked against the repo on 2026-11-15: 997 in-scope shiurim (730 yi, 267 en), manifest 518 `done` / 479 `pending`, 519 shiur directories (one partial: `yi-zmanim-msybs-lchyym-bkmp-01-c` has no `writeup.json`), 1,129 recordings, 4 multi-recording shiurim, 1,125 transcript files (63 MB). Samples read: `yi-parshas-hashavua-brshys-01` (Yiddish parsha, 12 sections, 21 sources), `en-parsha-en-nch-01` (English parsha, 13 sections, 34 sources), `yi-zmanim-tv-bb-04` (zman, 2 recordings, `evidence.recordingId` set), `yi-tanya-1-01` (Tanya, no directory yet = catalog-only).
 
+
+> **Amendment A1 (owner decision, 2026-11-15): audio is served directly from the existing `emunas` R2 bucket on a public custom domain `media.<domain>`, with CORS headers set on the bucket by the owner. No `emunas-audio` bucket, no copy/publish CLI, no audio Worker, no `/audio/*` routes, no `AUDIO_ENABLED` 503 switch.** The transcripts in the bucket being publicly reachable but unlinked is accepted by the owner (they will be removed from the bucket later). Consequences, overriding everything below that conflicts (C12–C15, §3.1 R2 rows, §3.2, §3.3 `/audio/*`, §2.2 audio row, W1.5, W2.7, W3.11, W4.8):
+> - Public audio URL = `${MEDIA_ORIGIN}/${encodeURIComponent-per-path-segment(audioKey)}`; `MEDIA_ORIGIN` is build config (env `EMUNAS_MEDIA_ORIGIN`, e.g. `https://media.<domain>`). The corpus build emits `recordings[].audioUrl`; the raw field name `audioKey` stays forbidden in public output, and no public string may contain `transcripts/`.
+> - Range requests and edge caching come from Cloudflare's CDN in front of the R2 custom domain (mp3 is cached by default). Cost: no egress; only cache-miss Class B reads.
+> - Both sites use plain `<audio src>` to the media host; CSP `media-src` allows the media origin. The Live service worker's offline downloads `fetch()` the media URL with CORS (both site origins must be in the bucket's CORS AllowedOrigins). The `download` attribute is ignored cross-origin, so "download" links save under the bucket filename unless the owner sets `Content-Disposition` on objects.
+> - Recordings whose key is not `.mp3` (3 `.WMA` today) are shown as unavailable rather than linked.
+> - `@emunas/audio` shrinks to: `mediaUrl(key, origin)`, `buildAudioTable(corpusRecordings)` (id → url, duplicateOf → canonical), and the playability rule. W3.11 only attaches the custom domain and CORS rules.
+
 ---
 
 ## 0. Hard rules (both sites, enforced in shared code)
