@@ -167,7 +167,10 @@ export interface SearchSectionDoc {
   shiurTitle: string;
   title: Bilingual;
   summary: Bilingual;
+  /** Section-level topic ids (from shiur-tags sections[].topicIds). */
   topicIds: string[];
+  /** Shiur-level concept ids (shiur-tags conceptIds); concepts are not tagged per section. */
+  conceptIds: string[];
   seriesId: string | null;
   parsha: string | null;
   zman: string | null;
@@ -190,7 +193,11 @@ export interface CorpusIndex {
     stories: number;
     teachingClusters: number;
     searchSections: number;
+    /** Number of shiur-tags/<shiurId>.json files (equals shiurim). */
+    shiurTags: number;
   };
   /** Files under data/derived/corpus/, relative paths. */
   files: string[];
+  /** Level-1/2 topic ids whose `description` is still null, waiting for the description pass. */
+  pendingDescriptions: string[];
 }

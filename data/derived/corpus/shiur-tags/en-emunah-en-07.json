@@ -1,0 +1,133 @@
+{
+ "shiurId": "en-emunah-en-07",
+ "topics": [
+  {
+   "id": "torah-min-hashamayim",
+   "salience": 1
+  },
+  {
+   "id": "maalas-hatorah",
+   "salience": 0.75
+  },
+  {
+   "id": "netzach-yisroel",
+   "salience": 0.6
+  },
+  {
+   "id": "yesodei-haemunah",
+   "salience": 0.6
+  },
+  {
+   "id": "gedolei-yisroel",
+   "salience": 0.35
+  },
+  {
+   "id": "galus-haumos",
+   "salience": 0.35
+  },
+  {
+   "id": "maasios",
+   "salience": 0.25
+  }
+ ],
+ "sections": [
+  {
+   "index": 0,
+   "topicIds": [
+    "torah-min-hashamayim",
+    "maalas-hatorah"
+   ]
+  },
+  {
+   "index": 1,
+   "topicIds": [
+    "maalas-hatorah",
+    "torah-min-hashamayim"
+   ]
+  },
+  {
+   "index": 2,
+   "topicIds": [
+    "maasios",
+    "maalas-hatorah",
+    "gedolei-yisroel"
+   ]
+  },
+  {
+   "index": 3,
+   "topicIds": [
+    "maalas-hatorah",
+    "gedolei-yisroel"
+   ]
+  },
+  {
+   "index": 4,
+   "topicIds": [
+    "torah-min-hashamayim"
+   ]
+  },
+  {
+   "index": 5,
+   "topicIds": [
+    "netzach-yisroel",
+    "galus-haumos"
+   ]
+  }
+ ],
+ "conceptIds": [
+  "aliyah-laregel",
+  "apikores",
+  "baal-teshuvah",
+  "chochmah",
+  "galus",
+  "goral",
+  "kiddush-hachodesh",
+  "niflaos",
+  "talmid-chacham",
+  "torah-min-hashamayim"
+ ],
+ "personIds": [
+  "alexander-the-great",
+  "avner",
+  "avraham-avinu",
+  "chasam-sofer",
+  "chazon-ish",
+  "moshe-rabbeinu",
+  "rabbi-shimon-bar-yochai",
+  "rambam",
+  "ramban",
+  "rashba",
+  "rav-aharon-kotler",
+  "rav-moshe-feinstein",
+  "rif",
+  "yaakov-avinu",
+  "yehoshua-bin-nun",
+  "yitzchak-avinu"
+ ],
+ "workIds": [
+  "bamidbar",
+  "bava-metzia",
+  "bereishis",
+  "devarim",
+  "kav-hayashar",
+  "ramban-on-the-torah",
+  "seder-hadoros",
+  "shemos",
+  "tehillim",
+  "zohar"
+ ],
+ "sourceWorkIds": [
+  "bava-metzia",
+  "seder-hadoros",
+  "kav-hayashar",
+  "devarim",
+  "ramban-on-the-torah",
+  "zohar",
+  "bereishis",
+  "bamidbar",
+  "shemos",
+  "devarim",
+  "tehillim",
+  "devarim"
+ ]
+}

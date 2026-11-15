@@ -1,0 +1,80 @@
+{
+ "shiurId": "yi-simchos-unc-bar-mitzvah-04",
+ "topics": [
+  {
+   "id": "bar-mitzvah",
+   "salience": 1
+  },
+  {
+   "id": "tefillin",
+   "salience": 0.8
+  },
+  {
+   "id": "hischadshus",
+   "salience": 0.7
+  },
+  {
+   "id": "bris-milah",
+   "salience": 0.5
+  },
+  {
+   "id": "galus-mitzrayim-makkos",
+   "salience": 0.4
+  },
+  {
+   "id": "megillas-esther",
+   "salience": 0.3
+  },
+  {
+   "id": "kedushas-shabbos",
+   "salience": 0.3
+  }
+ ],
+ "sections": [
+  {
+   "index": 0,
+   "topicIds": [
+    "galus-mitzrayim-makkos",
+    "bris-milah",
+    "megillas-esther"
+   ]
+  },
+  {
+   "index": 1,
+   "topicIds": [
+    "tefillin",
+    "hischadshus",
+    "bar-mitzvah"
+   ]
+  }
+ ],
+ "conceptIds": [
+  "bar-mitzvah",
+  "hischadshus",
+  "kabbalas-ol-malchus-shamayim",
+  "oneg-shabbos",
+  "sitra-achra"
+ ],
+ "personIds": [
+  "achashverosh",
+  "avnei-nezer",
+  "pharaoh",
+  "shem-mishmuel"
+ ],
+ "workIds": [
+  "avnei-nezer",
+  "esther-rabbah",
+  "nechemiah",
+  "shem-mishmuel",
+  "shemos"
+ ],
+ "sourceWorkIds": [
+  "shem-mishmuel",
+  "shemos",
+  "avnei-nezer",
+  "esther-rabbah",
+  "nechemiah",
+  "shemos",
+  null
+ ]
+}

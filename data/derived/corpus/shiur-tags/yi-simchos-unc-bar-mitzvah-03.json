@@ -1,0 +1,64 @@
+{
+ "shiurId": "yi-simchos-unc-bar-mitzvah-03",
+ "topics": [
+  {
+   "id": "bar-mitzvah",
+   "salience": 1
+  },
+  {
+   "id": "yaakov-veesav",
+   "salience": 0.7
+  },
+  {
+   "id": "zerizus",
+   "salience": 0.5
+  }
+ ],
+ "sections": [
+  {
+   "index": 0,
+   "topicIds": [
+    "yaakov-veesav",
+    "zerizus"
+   ]
+  },
+  {
+   "index": 1,
+   "topicIds": [
+    "bar-mitzvah"
+   ]
+  },
+  {
+   "index": 2,
+   "topicIds": [
+    "bar-mitzvah",
+    "yaakov-veesav"
+   ]
+  }
+ ],
+ "conceptIds": [
+  "bar-mitzvah",
+  "bechorah",
+  "nachas-ruach",
+  "yesod"
+ ],
+ "personIds": [
+  "esav",
+  "yaakov-avinu"
+ ],
+ "workIds": [
+  "bereishis",
+  "eruvin",
+  "yeshayahu",
+  "zohar"
+ ],
+ "sourceWorkIds": [
+  "bereishis",
+  "eruvin",
+  "yeshayahu",
+  "bereishis",
+  "zohar",
+  null,
+  "bereishis"
+ ]
+}

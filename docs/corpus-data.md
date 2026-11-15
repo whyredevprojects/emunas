@@ -1,7 +1,9 @@
 # Corpus data contract (for the website)
 
-Status: contract. `data/derived/corpus/raw/` exists (built by `npm run corpus:aggregate`); every other
-file below **will** exist once the corpus stage (P7-P11 in `docs/data-generation-plan.md`) has run.
+Status: contract. `data/derived/corpus/raw/` is built by `npm run corpus:aggregate`. The public files
+below are assembled by `npm run corpus:assemble` (`scripts/corpus/assemble.ts`) from the corpus agents'
+outputs (`topic-tags/`, `raw/links/`, `teaching-clusters/`, entity files); it also fills `topics.json`
+`shiurCount`/`hubShiurIds`, writes `index.json` and runs integrity checks (prints coverage and issues).
 Types live in `src/corpus-types.ts`; per-shiur types in `src/types.ts`. Code against those types, not
 against this prose.
 
@@ -38,7 +40,7 @@ against this prose.
 
 | File | Shape | Notes |
 |---|---|---|
-| `index.json` | `CorpusIndex` | `version` (integer, bumped when any shape changes), `generatedAt`, `shiurIds`, `counts` per file, `files` list. Load this first. |
+| `index.json` | `CorpusIndex` | `version` (integer, bumped when any shape changes), `generatedAt`, `shiurIds`, `counts` per file (incl. `shiurTags`), `files` list, `pendingDescriptions` (level-1/2 topic ids whose `description` is still null, filled by a later LLM pass). Load this first. |
 | `topics.json` | `Topic[]` | Taxonomy, max 3 levels; tree via `parentId` (null = level 1). Level 1 is seeded from the Pocket Guide sections. Sorted by level, then label. `shiurCount` includes descendants; `hubShiurIds` = representative shiurim for a topic page. |
 | `concepts.json` | `Concept[]` | Glossary. `shiurIds` = shiurim whose extraction lists the concept; `exampleRefs` point at sections. `asrVariants` are for search expansion only, never display. |
 | `people.json` | `Person[]` | Typed persons (`tanach`, `chazal`, `rishon`, `acharon`, `chassidic_rebbe`, `other`). `asrVariants` for search only. |
@@ -47,14 +49,14 @@ against this prose.
 | `stories.json` | `Story[]` | Deduplicated maasios; each `tellings[]` entry points at `extraction.stories[storyIndex]` of a shiur. `people` holds person ids where resolved, else the raw name. |
 | `teaching-clusters.json` | `TeachingCluster[]` | Same idea across shiurim/years; members point at `extraction.insights[insightIndex]`. `topicIds` reference `topics.json`. |
 | `shiur-tags/<shiurId>.json` | `ShiurTags` | One per done shiur. Closed-list tags: <=8 topics with salience, <=3 topics per section (`sections[].index` = extraction section index), concept/person/work ids, and `sourceWorkIds` parallel to `extraction.sources`. |
-| `search/sections.jsonl` | `SearchSectionDoc` per line | One line per extraction section of every done shiur (sections of kind `noise`/`singing` excluded). `id` = `<shiurId>#<sectionIndex>`. Feeds FTS5/Vectorize. Times are converted in code from segment indices. |
+| `search/sections.jsonl` | `SearchSectionDoc` per line | One line per extraction section of every done shiur (sections of kind `noise`/`singing` excluded). `id` = `<shiurId>#<sectionIndex>`. Feeds FTS5/Vectorize. Times (seconds within the section's `recordingId`) are converted in code from segment indices via `meta.json` `recordings[].starts/ends`. `shiurTitle` is the catalog title (`catalog.titleOriginal`). `topicIds` are the section's topics; `conceptIds` are shiur-level (concepts are not tagged per section). |
 | `raw/...` | internal | Aggregation inputs for the corpus agents (below). Not for the website. |
 
 ### How the pieces join
 
-- Topic page: `topics.json` entry -> all `shiur-tags/*.json` whose `topics[].id` is the topic or a
+- Topic page: `topics.json` entry -> all `shiur-tags/*.json` whose `topics[].id` or `sections[].topicIds` include the topic or a
   descendant (precompute an inverted index at build time) -> per-shiur `meta.json` / `extraction.json`
-  for cards. Section-level deep links use `shiur-tags.sections[].topicIds`.
+  for cards. Section-level deep links use `shiur-tags.sections[].topicIds`. A shiur tagged with a topic only at section level still counts toward that topic's `shiurCount` and can appear in `hubShiurIds` (ranked at salience 0.05).
 - Shiur page "sources" panel: `extraction.sources[i]` + `works.json[sourceWorkIds[i]]`.
 - Concept / person / work page: entity file -> `shiurIds` -> shiur cards.
 - Story page: `stories.json` -> each telling's shiur `extraction.stories[storyIndex]` (evidence and
@@ -74,3 +76,15 @@ Written by `npm run corpus:aggregate` (`scripts/corpus/aggregate.ts`) from done 
 | `raw/stories.json` | `{shiurId, storyIndex, title:{en}, people, retelling:{en}}[]` (retelling cut at 400 chars). |
 | `raw/insights.json` | `{shiurId, insightIndex, text:{en}}[]` |
 | `raw/digests/chunk-NN.json` | 40 shiurim each in manifest order: `{shiurId, lang, catalogTitle, seriesId, parsha, zman, oneLiner:{en}, abstract:{en}, keyPoints:{en[]}, candidateTopics, sections:{index, title:{en}, summary:{en}, kind}[]}` for topic tagging. |
+
+## Known issues (from the independent audit, not yet fixed)
+
+All of this is `reviewStatus: "unreviewed"`; it's the list a human reviewer should start from.
+
+- Some concept definitions read as stitched-together usages rather than definitions (e.g. `olam-hazeh`, `sar-shel-maalah`); 23 concepts have empty `exampleRefs`.
+- Some `asrVariants` are generic or wrong (e.g. `עשה טוב` on `sur-mera-veaseh-tov`), and 9 variants are shared by two concepts. Use them for search expansion with low weight only.
+- The taxonomy has overlapping siblings (e.g. `avodas-hashem/simcha` vs `tanya-simcha`; `kedushah` vs `tumah-taharah` vs `kedushah-vekelipah`; `tefilah/tehillim` vs `nach`). `pidyon-haben` has 7 shiurim, below the 8 minimum.
+- Possible missed story merges: `avraham-fights-the-four-kings-on-erev-pesach` / `avrahams-dust-against-the-four-kings`; `answering-an-objector-with-a-baseball-game` / `the-bochur-and-the-baseball-game`.
+- Ambiguous people: `belzer-rav` overlaps the specific Belzer Rebbes; `chaggai-zechariah-malachi` is one entity for three prophets. 61 story people are unresolved raw names.
+- About 11% of sources have no work (`sourceWorkIds` null), because the extraction itself named no work.
+- A few Daytshmerish `וועלכע` clauses in corpus Yiddish, plus nikud in some upstream extraction Yiddish.

@@ -1,0 +1,83 @@
+{
+ "shiurId": "yi-zmanim-psch-07-b",
+ "topics": [
+  {
+   "id": "pesach",
+   "salience": 1
+  },
+  {
+   "id": "yeshivah-bachurim",
+   "salience": 0.9
+  },
+  {
+   "id": "chodesh-nissan",
+   "salience": 0.75
+  },
+  {
+   "id": "chametz",
+   "salience": 0.45
+  },
+  {
+   "id": "hischadshus",
+   "salience": 0.4
+  },
+  {
+   "id": "ahavas-hashem-leyisroel",
+   "salience": 0.3
+  },
+  {
+   "id": "brachos",
+   "salience": 0.25
+  },
+  {
+   "id": "leil-haseder",
+   "salience": 0.25
+  }
+ ],
+ "sections": [
+  {
+   "index": 0,
+   "topicIds": [
+    "pesach",
+    "chametz"
+   ]
+  },
+  {
+   "index": 1,
+   "topicIds": [
+    "chodesh-nissan",
+    "brachos",
+    "hischadshus"
+   ]
+  },
+  {
+   "index": 2,
+   "topicIds": [
+    "yeshivah-bachurim",
+    "chodesh-nissan"
+   ]
+  }
+ ],
+ "conceptIds": [
+  "ribono-shel-olam"
+ ],
+ "personIds": [
+  "avnei-nezer",
+  "baal-hatanya",
+  "imrei-emes"
+ ],
+ "workIds": [
+  "avnei-nezer",
+  "berachos",
+  "divrei-hayamim",
+  "shulchan-aruch-harav"
+ ],
+ "sourceWorkIds": [
+  "shulchan-aruch-harav",
+  "berachos",
+  null,
+  null,
+  "avnei-nezer",
+  "divrei-hayamim"
+ ]
+}
