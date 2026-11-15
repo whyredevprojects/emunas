@@ -69,8 +69,11 @@ export function stubTitle(ui: UiLang, key: UiKey): string {
 }
 
 /**
- * A route `meta` export for a stub: the page title in the interface language. Stubs are `noindex`
- * (root layout); real pages add OG tags and the canonical link to Quiet in W4.5.
+ * A route `meta` export: the page kind as the title, in the interface language. It sets only the
+ * title. Robots, canonical, hreflang and OG tags come from `SeoHead` in the root layout
+ * (`app/seo`, W4.5), which marks a page `noindex` by its kind (`seo/policy.ts`), not by whether it
+ * is a stub. Prerendered content pages use `seoMeta` (`seo/meta.ts`) instead, which titles them
+ * with the shiur's, series', sefer's or entity's own name.
  */
 export function stubMeta(key: UiKey) {
   return ({ params }: { params: Readonly<Record<string, string | undefined>> }) => {

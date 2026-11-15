@@ -14,6 +14,7 @@ listings, unknown paths and the SPA fallback) are `noindex`. `robots.txt` allows
 | `strings.ts` | Description templates (catalog values and entity names only, never transcripts) |
 | `head.ts` | `SeoPage` (build time) and the head tags for a path (`headTags`) |
 | `SeoHead.tsx` | Renders `headTags` in the root `<head>` (from the root loader data) |
+| `meta.ts` | `seoMeta`: route `meta` exports; `<title>` = the page's own name on prerendered content pages (W5.4) |
 | `corpus.server.ts` | Reads `.corpus/` (index.json and the aggregate files) |
 | `loader.server.ts` | The root route `loader`: runs at build time only (`ssr: false`) |
 | `config.server.ts` | `prerender` and `buildEnd` hooks for `react-router.config.ts` |
@@ -45,5 +46,6 @@ another route module exports a server `loader`.
   Today is prerendered; with `EMUNAS_DEPLOY=1` that is an error.
 
 `buildEnd` fails the build when a prerendered page lacks a Quiet canonical (hosts configured), OG
-title/description on a content page, `noindex` on an app-only page, or when `build/client` holds
+title/description on a content page, a `<title>` carrying the page's name (`og:title`) on a content
+page, `noindex` on an app-only page, or when `build/client` holds
 more than 18,000 files.

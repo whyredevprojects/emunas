@@ -3,14 +3,10 @@
  * focuses a moment and starts there (falling back to `t`). The page itself lives in
  * `features/listening-room`; the player dock it registers lives in `player-ui`.
  */
-import { isUiLang } from "@emunas/i18n";
-import { tFor } from "../i18n/index.ts";
 import { ListeningRoomPage } from "../features/listening-room/index.ts";
+import { seoMeta } from "../seo/meta.ts";
 
-export function meta({ params }: { params: Readonly<Record<string, string | undefined>> }) {
-  const ui = isUiLang(params["ui"]) ? params["ui"] : "en";
-  const t = tFor(ui);
-  return [{ title: `${t("page.shiur")} · ${t("site.name")}` }];
-}
+// Prerendered: the shiur's catalog title (W4.5 root loader data); otherwise "Shiur".
+export const meta = seoMeta("page.shiur");
 
 export default ListeningRoomPage;
