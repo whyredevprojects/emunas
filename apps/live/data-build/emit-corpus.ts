@@ -546,21 +546,63 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
     }
     return "name" in p && typeof p.name === "string" && p.name !== "" ? { name: p.name } : null;
   };
-  const storiesIndex: StoriesIndexFile = { schemaVersion: V, stories: [] };
+  // The section join (layer topics' storyIds), restricted to topics Live lists.
+  const topicsOfStory = new Map<string, string[]>();
+  for (const t of allTopics) {
+    if (!view.topics.has(t.id)) continue;
+    for (const id of arr(layer?.topicDetail.get(t.id)?.storyIds)) {
+      const list = topicsOfStory.get(id) ?? [];
+      if (!list.includes(t.id)) list.push(t.id);
+      topicsOfStory.set(id, list);
+    }
+  }
+  // Only the most specific topics are written: the client adds the ancestors from the topic tree.
+  const mostSpecific = (ids: readonly string[]): string[] => {
+    const covered = new Set(ids.flatMap((id) => chain(id).slice(1)));
+    return ids.filter((id) => !covered.has(id)).sort(cmp);
+  };
+  // Catalogued shiurim (the guide) before uncatalogued ones (titles from file names), concept-live C.4.
+  const catalogued = (shiurId: string): boolean => {
+    const d = byId.get(shiurId)?.catalog.derived;
+    return d !== "filename" && d !== "dir-prefix";
+  };
+  const storyEnd = (shiurId: string, momentId: string): number | null =>
+    byId.get(shiurId)?.notes?.stories.find((x) => x.id === momentId)?.end ?? null;
+  const storiesIndex: StoriesIndexFile = { schemaVersion: V, stories: [], people: {} };
+  const indexPeople = new Set<string>();
   for (const st of layer?.stories ?? []) {
     const tellings = arr(st.tellings).filter((t) => visible(t.shiurId));
     const first = tellings[0];
     if (!first) continue;
+    const people = [
+      ...new Set(arr(st.people).flatMap((p) => ("id" in p && typeof p.id === "string" && view.people.has(p.id) ? [p.id] : []))),
+    ];
+    for (const id of people) indexPeople.add(id);
+    const names = [
+      ...new Set(
+        arr(st.people).flatMap((p) => {
+          const sp = storyPerson(p);
+          return sp && "name" in sp && sp.name !== "" ? [sp.name] : [];
+        }),
+      ),
+    ];
+    const ranked = tellings
+      .map((t, i) => ({ t, i, cat: catalogued(t.shiurId) }))
+      .sort((a, b) => Number(b.cat) - Number(a.cat) || a.i - b.i);
+    const plays = ranked
+      .filter((x, k) => ranked.findIndex((y) => y.t.lang === x.t.lang) === k)
+      .map(({ t }) => ({ lang: t.lang, shiurId: t.shiurId, momentId: t.momentId, t: t.t, end: storyEnd(t.shiurId, t.momentId) }));
     storiesIndex.stories.push({
       id: st.id,
       title: lcopy(st.title),
-      people: [
-        ...new Set(arr(st.people).flatMap((p) => ("id" in p && typeof p.id === "string" && view.people.has(p.id) ? [p.id] : []))),
-      ],
+      people,
+      names,
+      topics: mostSpecific(topicsOfStory.get(st.id) ?? []),
       tellings: tellings.length,
       langs: (["en", "yi"] as const).filter((l) => tellings.some((t) => t.lang === l)),
       page: liveStoryPage(st),
       first: { shiurId: first.shiurId, momentId: first.momentId, t: first.t },
+      plays,
     });
     if (!liveStoryPage(st)) continue;
     const file: StoryFile = {
@@ -575,6 +617,7 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
     };
     put<"story">(dataPaths.story(st.id), file);
   }
+  storiesIndex.people = sortedRecord([...indexPeople].map((id) => [id, view.personLabel(id)]));
   put<"storiesIndex">(dataPaths.storiesIndex(), storiesIndex);
 
   // ------------------------------------------------------------------ glossary/<prefix>.json

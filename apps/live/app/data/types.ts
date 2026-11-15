@@ -751,22 +751,42 @@ export interface StoryFile {
   tellings: CorpusMember[];
 }
 
+/** One telling a story card can play: the best telling in its language. */
+export interface StoryPlay {
+  lang: Ed;
+  shiurId: string;
+  momentId: string;
+  t: number | null;
+  end: number | null;
+}
+
 /** /data/stories-index.json: every merged story, without retellings (Maasios). */
 export interface StoryIndexRow {
   id: string;
   title: L;
-  /** Linked people with a Live listing. */
+  /** Linked people with a Live listing (labels in `StoriesIndexFile.people`). */
   people: string[];
+  /** People named on the story without a Live listing: plain text, never links or facets. */
+  names: string[];
+  /** Live topics with a telling inside a section tagged with them (the layer's section join). */
+  topics: string[];
   tellings: number;
   langs: Ed[];
   page: boolean;
   /** The first telling: where a story without a page links. */
   first: { shiurId: string; momentId: string; t: number | null };
+  /**
+   * The telling the play button plays, one per language: catalogued before uncatalogued, then the
+   * layer's telling order. The overall best first.
+   */
+  plays: StoryPlay[];
 }
 
 export interface StoriesIndexFile {
   schemaVersion: typeof LIVE_DATA_SCHEMA_VERSION;
   stories: StoryIndexRow[];
+  /** Labels of every linked person above. */
+  people: Record<string, FacetLabel>;
 }
 
 /** A glossary card ("as the term is used in these shiurim"). */

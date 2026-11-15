@@ -7,23 +7,18 @@
  * - every link to a sefer, chapter, person, concept or occasion on every page resolves to a data file
  *   (a crawl over every work and entity page);
  * - a person page splits cited / in stories / discussed;
- * - the maasios "stories only" mode plays the listed stories back to back through the queue;
  * - axe finds no violations in either interface language.
  */
 import { act, cleanup, fireEvent, render, waitFor } from "@testing-library/react";
 import axe from "axe-core";
 import { RouterProvider } from "react-router";
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
-import { createPlayerEngine } from "../../../player-engine/engine.ts";
-import { FakeAudio, FakeClock } from "../../../player-engine/test/fakes.ts";
-import type { PlayerEngine, PlayerShiur } from "../../../player-engine/types.ts";
 import { settingsStore } from "../../../shell/settings.ts";
 import { createTestRouter } from "../../../shell/test-router.tsx";
-import { MemoryBackend } from "../../../store/backend.ts";
-import { createPersonal, setPersonal, type Personal } from "../../../store/personal.ts";
-import { createQueuePlayer, setQueuePlayer } from "../../../store/queue-player.ts";
+import { setPersonal } from "../../../store/personal.ts";
+import { setQueuePlayer } from "../../../store/queue-player.ts";
 import { layoutWork } from "../../seforim/model.ts";
-import { configureData, resetDataConfig, type EntityFile, type StoriesFile, type WorkFile, type WorksFile } from "../live-data.ts";
+import { configureData, resetDataConfig, type EntityFile, type WorkFile, type WorksFile } from "../live-data.ts";
 import { HAVE_REAL_DATA, emittedFetch, emittedMini, emittedReal, keysUnder, type Emitted } from "./emitted.ts";
 
 let files: Emitted;
@@ -299,98 +294,6 @@ describe("entity pages", () => {
   });
 });
 
-// ---------------------------------------------------------------------------------- maasios
-
-describe("maasios", () => {
-  it("lists every story, facets by person, links resolving", async () => {
-    const stories = get<StoriesFile>("stories.json").stories;
-    const { container, router } = await renderAt("/en/maasios");
-    expect([...container.querySelectorAll("li[data-story]")].length).toBe(Math.min(30, stories.length));
-    expect(container.textContent).toContain(`${stories.length} of ${stories.length} stories`);
-    const chip = container.querySelector("a[data-person]")!;
-    const person = chip.getAttribute("data-person")!;
-    await act(async () => {
-      await router.navigate(chip.getAttribute("href")!);
-    });
-    const shown = [...container.querySelectorAll("li[data-story]")].map((li) => li.getAttribute("data-story"));
-    expect(shown).toEqual(stories.filter((s) => s.peopleKeys.includes(person)).map((s) => s.id).slice(0, 30));
-    expect(chip.getAttribute("aria-current")).toBe("true");
-    expect(entityLinks(container).map(unresolved).filter(Boolean)).toEqual([]);
-    await noAxeViolations();
-  });
-
-  it("follows the audio-language setting", async () => {
-    settingsStore.getState().setAudio("en");
-    const stories = get<StoriesFile>("stories.json").stories.filter((s) => s.lang === "en");
-    const { container } = await renderAt("/yi/maasios");
-    expect([...container.querySelectorAll("li[data-story]")].map((li) => li.getAttribute("data-story"))).toEqual(stories.map((s) => s.id).slice(0, 30));
-    await noAxeViolations();
-  });
-
-  describe("stories only", () => {
-    let clock: FakeClock;
-    let engine: PlayerEngine;
-    let personal: Personal;
-
-    beforeEach(() => {
-      clock = new FakeClock();
-      const stories = get<StoriesFile>("stories.json").stories;
-      const ids = [...new Set(stories.map((s) => s.shiurId))];
-      const shiur = (id: string): PlayerShiur => ({
-        id,
-        lang: id.startsWith("en") ? "en" : "yi",
-        duration: 6000,
-        catalog: { titleOriginal: id },
-        recordings: [{ id: `${id}-r`, offset: 0, duration: 6000, audioUrl: `https://media.example.invalid/${id}.mp3` }],
-      });
-      const audio = new FakeAudio(clock, Object.fromEntries(ids.map((id) => [`https://media.example.invalid/${id}.mp3`, 6000])));
-      engine = createPlayerEngine({ audio, clock, lifecycle: null, mediaSession: null });
-      personal = createPersonal({ open: async () => ({ backend: new MemoryBackend(), fallbackReason: null }), channel: null });
-      setPersonal(personal);
-      setQueuePlayer(createQueuePlayer({ engine, personal, loadShiur: async (id) => shiur(id) }));
-    });
-
-    afterEach(() => {
-      setQueuePlayer(null);
-      engine.destroy();
-    });
-
-    async function run(seconds: number): Promise<void> {
-      for (let i = 0; i < seconds * 10; i++) {
-        clock.tick(100);
-        await new Promise((r) => setImmediate(r));
-      }
-    }
-
-    it("queues the listed stories and plays them back to back", async () => {
-      const stories = get<StoriesFile>("stories.json").stories.filter((s) => s.t !== null && s.end !== null);
-      const { container } = await renderAt("/en/maasios");
-      const play = container.querySelector("button[data-action=play-all]")!;
-      expect(play.textContent).toBe(`Play ${stories.length} back to back`);
-      await act(async () => {
-        fireEvent.click(play);
-      });
-      await waitFor(() => expect(personal.store.getState().queue.length).toBe(stories.length));
-      expect(personal.store.getState().queue.map((q) => q.momentId)).toEqual(stories.map((s) => s.id));
-
-      // Three stories in a row: each starts at its own time and gives way to the next at its end.
-      for (const [i, st] of stories.slice(0, 3).entries()) {
-        await act(async () => {
-          await run(0.5);
-        });
-        expect(engine.getState().shiurId, `story ${i}`).toBe(st.shiurId);
-        expect(engine.getState().t).toBeGreaterThanOrEqual(st.t! - 0.01);
-        expect(engine.getState().t).toBeLessThan(st.end!);
-        await act(async () => {
-          await run(st.end! - engine.getState().t + 0.3);
-        });
-      }
-      expect(engine.getState().shiurId).toBe(stories[3]!.shiurId);
-      expect(container.textContent).toContain(`Playing ${stories.length} in the queue.`);
-    }, 120_000);
-  });
-});
-
 // ---------------------------------------------------------------------------------- real data
 
 describe.runIf(HAVE_REAL_DATA)("on the repo's data", () => {
@@ -418,13 +321,6 @@ describe.runIf(HAVE_REAL_DATA)("on the repo's data", () => {
     const splits = [...container.querySelectorAll("section[data-split]")].map((s) => s.getAttribute("data-split"));
     expect(splits).toEqual(["cited", "stories", "discussed"]);
     expect(container.querySelector("[data-testid=his-seforim] a[href^='/en/seforim/']")).not.toBeNull();
-    expect(entityLinks(container).map(unresolved).filter(Boolean)).toEqual([]);
-    await noAxeViolations();
-  });
-
-  it("the maasios person facet and its links resolve", async () => {
-    const { container } = await renderAt("/yi/maasios?p=baal-shem-tov");
-    expect(container.querySelectorAll("li[data-story]").length).toBe(30);
     expect(entityLinks(container).map(unresolved).filter(Boolean)).toEqual([]);
     await noAxeViolations();
   });

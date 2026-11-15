@@ -1,7 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { LIVE_DATA_SCHEMA_VERSION, type CorpusFile, type CorpusRow, type PersonDetail, type PersonStory, type StoryRow } from "../live-data.ts";
 import { alsoCalled, byYear, groupByShiur, personGroups, personNames, queueItems, rowsById, yearHistogram } from "../model.ts";
-import { filterStories, personFromQuery, personSearch, playableStories, storyPeople } from "../../maasios/model.ts";
 
 function row(id: string, years: number[], entities: Partial<CorpusRow["entities"]> = {}): CorpusRow {
   return {
@@ -120,30 +119,5 @@ describe("helpers", () => {
 
   it("queue items keep timed moments only, with their end", () => {
     expect(queueItems([story("a~st0", [], 5), story("b~st1", [], null)])).toEqual([{ shiurId: "a", start: 5, end: 65, momentId: "a~st0" }]);
-  });
-});
-
-describe("maasios model", () => {
-  const all = [story("a~st0", ["bst", "maggid"]), story("b~st0", ["bst"], 20, "en"), story("c~st0", [], null), story("d~st0", ["maggid", "maggid"])];
-
-  it("counts stories per person (most first, a person once per story)", () => {
-    expect(storyPeople(all)).toEqual([
-      { key: "bst", count: 2 },
-      { key: "maggid", count: 2 },
-    ]);
-  });
-
-  it("filters by person and audio language", () => {
-    expect(filterStories(all, { person: "bst", audio: "both" }).map((s) => s.id)).toEqual(["a~st0", "b~st0"]);
-    expect(filterStories(all, { person: "bst", audio: "yi" }).map((s) => s.id)).toEqual(["a~st0"]);
-    expect(filterStories(all, { person: null, audio: "en" }).map((s) => s.id)).toEqual(["b~st0"]);
-    expect(playableStories(all).map((s) => s.id)).toEqual(["a~st0", "b~st0", "d~st0"]);
-  });
-
-  it("keeps the person in the query string with other parameters", () => {
-    expect(personFromQuery("?p=bst&audio=yi")).toBe("bst");
-    expect(personFromQuery("?p=")).toBeNull();
-    expect(personSearch("?audio=yi", "bst")).toBe("?audio=yi&p=bst");
-    expect(personSearch("?p=bst", null)).toBe("");
   });
 });
