@@ -69,30 +69,30 @@ describe("checkLiveBudgets", () => {
 });
 
 describe("data-build CLI", () => {
-  it("emit → validate → budgets on the mini corpus; bad input and usage errors exit non-zero", () => {
+  it("emit → validate → budgets on the mini corpus; bad input and usage errors exit non-zero", async () => {
     const log = vi.spyOn(console, "log").mockImplementation(() => {});
     const err = vi.spyOn(console, "error").mockImplementation(() => {});
     vi.spyOn(console, "warn").mockImplementation(() => {});
     const corpus = buildCorpusTo(MINI_DATA, MINI_POLICY);
     const root = join(tmp(), "public");
     const data = join(root, "data");
-    expect(main(["emit", "--corpus", corpus, "--out", data, "--generated-at", GENERATED_AT])).toBe(0);
+    expect(await main(["emit", "--corpus", corpus, "--out", data, "--generated-at", GENERATED_AT])).toBe(0);
     expect(JSON.parse(readFileSync(join(data, "build.json"), "utf8")).generatedAt).toBe(GENERATED_AT);
-    expect(main(["validate", "--data", data])).toBe(0);
-    expect(main(["budgets", "--data", data, "--public", root, "--client", join(root, "none")])).toBe(0);
+    expect(await main(["validate", "--data", data])).toBe(0);
+    expect(await main(["budgets", "--data", data, "--public", root, "--client", join(root, "none")])).toBe(0);
 
     writeFileSync(join(data, "facets.json"), JSON.stringify({ schemaVersion: 1 }));
-    expect(main(["validate", "--data", data])).toBe(1);
-    expect(main(["emit", "--corpus", join(tmp(), "missing"), "--out", data])).toBe(1);
-    expect(main(["emit", "--out", join(tmp(), "not-named-data"), "--corpus", corpus, "--bogus"])).toBe(2);
-    expect(main(["frobnicate"])).toBe(2);
+    expect(await main(["validate", "--data", data])).toBe(1);
+    expect(await main(["emit", "--corpus", join(tmp(), "missing"), "--out", data])).toBe(1);
+    expect(await main(["emit", "--out", join(tmp(), "not-named-data"), "--corpus", corpus, "--bogus"])).toBe(2);
+    expect(await main(["frobnicate"])).toBe(2);
     expect(log).toHaveBeenCalled();
     expect(err).toHaveBeenCalled();
   });
 
-  it("refuses to write outside a directory named data", () => {
+  it("refuses to write outside a directory named data", async () => {
     vi.spyOn(console, "log").mockImplementation(() => {});
     const corpus = buildCorpusTo(MINI_DATA, MINI_POLICY);
-    expect(() => main(["emit", "--corpus", corpus, "--out", join(tmp(), "elsewhere")])).toThrow(/data/);
+    await expect(main(["emit", "--corpus", corpus, "--out", join(tmp(), "elsewhere")])).rejects.toThrow(/data/);
   });
 });
