@@ -4,6 +4,9 @@ URL builders for both sites, cross-site equivalents, canonical and hreflang help
 config. Implements integration-plan §2 (W1.8). Pure and browser-safe: no Node APIs, no DOM,
 no globals (`test/purity.test.ts` checks this).
 
+Audio URLs are not built here: they come from `recordings[].audioUrl` in the corpus, on
+the media host (Amendment A1). There is no `/audio/*` route on either site.
+
 ## Model
 
 Both sites' paths parse into one site-neutral `Route` (`parseQuiet`, `parseLive`) and format
@@ -20,7 +23,6 @@ the other". Time is global seconds (C5), written as whole seconds.
 | Parsha / Zman | `/{ed}/calendar/{parsha,zman}/{key}/` | `/{ui}/o/{key}` |
 | Work / Person / Concept | `/{ed}/{sources,people,inyanim}/{key}/` (index anchor `/{ed}/people/#{key}` below threshold) | `/{ui}/{seforim,p,c}/{key}` |
 | Search | `/{ed}/search/?q=` | `/{ui}/search?q=` |
-| Audio | `/audio/{recordingId}.mp3` | same |
 
 ## Use
 

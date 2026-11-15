@@ -74,8 +74,6 @@ export function formatQuiet(route: Route, data: LinkData = {}, opts: FormatOptio
     }
     case "search":
       return `/${route.ed}/search/${buildQuery([["q", route.q === "" ? undefined : route.q]])}`;
-    case "audio":
-      return `/audio/${seg(route.recordingId)}.mp3${route.download ? "?download=1" : ""}`;
   }
 }
 
@@ -86,8 +84,6 @@ export function parseQuiet(url: string): Route | null {
   const s = pathSegments(u.path);
   if (!s) return null;
   if (s.length === 0) return { kind: "root" };
-  const audio = parseAudio(s, u.query);
-  if (audio) return audio;
   const [ed, a, b, c] = s;
   if (!isEd(ed)) return null;
   const hash = u.hash;
@@ -158,13 +154,4 @@ function shiurFromHash(ed: Ed, id: string, hash: string): Route {
   const tm = /^t=(.*)$/.exec(hash);
   const t = tm ? parseSeconds(tm[1]) : undefined;
   return t === undefined ? { kind: "shiur", ed, id } : { kind: "shiur", ed, id, t };
-}
-
-/** `/audio/{recordingId}.mp3` (shared by both sites). `dl=1` is accepted as an alias (C14). */
-export function parseAudio(s: readonly string[], query: Parameters<typeof queryGet>[0]): Route | null {
-  if (s.length !== 2 || s[0] !== "audio") return null;
-  const m = /^(.+)\.mp3$/.exec(s[1] as string);
-  if (!m || m[1] === undefined) return null;
-  const download = queryGet(query, "download") === "1" || queryGet(query, "dl") === "1";
-  return download ? { kind: "audio", recordingId: m[1], download: true } : { kind: "audio", recordingId: m[1] };
 }

@@ -55,8 +55,7 @@ export type Route =
   | { readonly kind: "occasion"; readonly ed: Ed; readonly key: string; readonly occasion?: OccasionKind }
   | { readonly kind: "entity"; readonly ed: Ed; readonly entity: EntityKind; readonly key: string }
   | { readonly kind: "index"; readonly ed: Ed; readonly index: IndexName }
-  | { readonly kind: "search"; readonly ed: Ed; readonly q?: string }
-  | { readonly kind: "audio"; readonly recordingId: string; readonly download?: boolean };
+  | { readonly kind: "search"; readonly ed: Ed; readonly q?: string };
 
 /**
  * Lookups from `.corpus/` that some mappings need. All optional: without them the

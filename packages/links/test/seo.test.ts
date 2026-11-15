@@ -104,7 +104,7 @@ describe("hreflangPair", () => {
     }
   });
 
-  it("is empty for audio and non-pages", () => {
+  it("is empty for non-pages, including legacy /audio/ paths", () => {
     expect(links.hreflangPair("/audio/r1.mp3")).toEqual([]);
     expect(links.hreflangPair("/nope/")).toEqual([]);
   });
@@ -115,6 +115,6 @@ describe("withEdition", () => {
     expect(links.withEdition(`${HOSTS.quiet}/en/shiur/${ID}/#s2`, "yi")).toBe(`${HOSTS.quiet}/yi/shiur/${ID}/#s2`);
     expect(links.withEdition(`${HOSTS.live}/en/s/${ID}?t=9&read=en`, "yi")).toBe(`${HOSTS.live}/yi/s/${ID}?t=9`);
     expect(links.withEdition(`${HOSTS.quiet}/`, "en")).toBe(`${HOSTS.quiet}/en/`);
-    expect(links.withEdition(`${HOSTS.quiet}/audio/a.mp3`, "en")).toBe(`${HOSTS.quiet}/audio/a.mp3`);
+    expect(links.withEdition(`${HOSTS.quiet}/audio/a.mp3`, "en")).toBe(`${HOSTS.quiet}/en/`);
   });
 });

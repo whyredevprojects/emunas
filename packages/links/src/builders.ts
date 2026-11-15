@@ -84,7 +84,6 @@ export function quietPaths(data: LinkData = {}) {
     person: entity("person"),
     concept: entity("concept"),
     search: (e: Ed, q?: string) => f(q ? { kind: "search", ed: ed(e), q } : { kind: "search", ed: ed(e) }),
-    audio: (recordingId: string, opts: { readonly download?: boolean } = {}) => audioPath(recordingId, opts),
   };
 }
 
@@ -101,15 +100,8 @@ export function livePaths(data: LinkData = {}) {
     person: (ui: Ed, k: string) => f({ kind: "entity", ed: ed(ui), entity: "person", key: key("person key", k) }),
     concept: (ui: Ed, k: string) => f({ kind: "entity", ed: ed(ui), entity: "concept", key: key("concept key", k) }),
     search: (ui: Ed, q?: string) => f(q ? { kind: "search", ed: ed(ui), q } : { kind: "search", ed: ed(ui) }),
-    audio: (recordingId: string, opts: { readonly download?: boolean } = {}) => audioPath(recordingId, opts),
   };
 }
 
 export type QuietPaths = ReturnType<typeof quietPaths>;
 export type LivePaths = ReturnType<typeof livePaths>;
-
-/** `/audio/{recordingId}.mp3`, the same path on both hosts (C15); `?download=1` (C14). */
-export function audioPath(recordingId: string, opts: { readonly download?: boolean } = {}): `/audio/${string}.mp3${string}` {
-  const id = key("recording id", recordingId);
-  return `/audio/${encodeURIComponent(id)}.mp3${opts.download ? "?download=1" : ""}`;
-}

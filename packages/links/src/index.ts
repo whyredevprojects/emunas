@@ -24,7 +24,6 @@ export { formatLive, parseLive } from "./live.ts";
 export {
   quietPaths,
   livePaths,
-  audioPath,
   type QuietPaths,
   type LivePaths,
   type QuietShiurOptions,

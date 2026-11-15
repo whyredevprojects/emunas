@@ -5,7 +5,6 @@
  * `audio`, `read`, `lens` and Explore facets is dropped (integration-plan §2.2).
  */
 import { momentId, parseMomentId } from "./moment.ts";
-import { parseAudio } from "./quiet.ts";
 import { isEd, type EntityKind, type IndexName, type LinkData, type Route } from "./types.ts";
 import { buildQuery, formatSeconds, parseSeconds, pathSegments, queryGet, seg, splitUrl } from "./url.ts";
 
@@ -58,8 +57,6 @@ export function formatLive(route: Route, data: LinkData = {}, opts: { readonly b
     }
     case "search":
       return `/${route.ed}/search${buildQuery([["q", route.q === "" ? undefined : route.q]])}`;
-    case "audio":
-      return `/audio/${seg(route.recordingId)}.mp3${route.download ? "?download=1" : ""}`;
   }
 }
 
@@ -70,8 +67,6 @@ export function parseLive(url: string, data: LinkData = {}): Route | null {
   const s = pathSegments(u.path);
   if (!s) return null;
   if (s.length === 0) return { kind: "root" };
-  const audio = parseAudio(s, u.query);
-  if (audio) return audio;
   const [ed, a, b] = s;
   if (!isEd(ed)) return null;
   if (s.length === 1) return { kind: "home", ed };
