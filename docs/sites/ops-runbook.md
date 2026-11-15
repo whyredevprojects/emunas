@@ -64,7 +64,8 @@ because Live binds to it.
 ```sh
 W="npx --yes wrangler@4.156.0"
 
-# D1 (W2.6 puts the ids in workers/api/wrangler.jsonc)
+# D1: put each printed database_id into workers/api/wrangler.jsonc (top level and env.staging),
+# replacing the placeholder 00000000-0000-4000-8000-… ids. deploy.yml refuses to run until then.
 $W d1 create emunas-search
 $W d1 create emunas-search-staging
 $W d1 create emunas-feedback
@@ -86,6 +87,17 @@ $W secret put TURNSTILE_SECRET --config workers/api/wrangler.jsonc --env staging
 $W secret put FEEDBACK_HASH_SALT --config workers/api/wrangler.jsonc --env staging
 
 # first deploys (after a local build, see §6): api, then quiet, then live, for both environments
+```
+
+**Provisioning check.** `workers/api/wrangler.jsonc` ships placeholder D1 ids
+(`00000000-0000-4000-8000-…`) so the repo validates before the account exists. deploy.yml's step
+"Check emunas-api resources are provisioned" (right after `npm ci`) reads that file for the target
+environment and fails with one `::error::` per binding that still has a placeholder id, or when the
+environment has no `d1_databases` at all. It runs before any build, so an unprovisioned
+environment fails in seconds instead of half-way through the deploy. To check locally:
+
+```sh
+grep -n '00000000-0000-4000-8000-' workers/api/wrangler.jsonc   # no output = provisioned
 ```
 
 Audio (Amendment A1, W3.11; owner action):
@@ -127,7 +139,17 @@ Turnstile: one widget for `listen.<domain>` (site key goes to the Live app confi
 | secret | `CLOUDFLARE_API_TOKEN` | environments `production`, `staging`; repository (for PR previews) | deploy.yml, ci.yml preview job |
 | secret | `CLOUDFLARE_ACCOUNT_ID` | same | same |
 | variable | `EMUNAS_MEDIA_ORIGIN` | environments `production`, `staging`; repository (PR builds) | corpus build, `_headers` |
+| env (in the workflow) | `EMUNAS_DEPLOY: "1"` | set by deploy.yml itself, not configured | corpus build (placeholder media origin is fatal) |
 | variable | `DATA_BRANCH` | repository (default `claude/dual-website-concepts-sm99sh`) | data-sync.yml |
+
+**Deploy builds and the media origin.** `corpus:build` falls back to the dev placeholder
+`https://media.example.invalid` when `EMUNAS_MEDIA_ORIGIN` is unset; normally that is only a
+`build-report.json` warning (PR builds in ci.yml use it on purpose). A deploy must never ship it, so
+when `CI=true` **and** the build is a deploy (the `--deploy` flag, or `EMUNAS_DEPLOY=1`/`true`/`yes`)
+a placeholder origin makes `corpus:build` exit 1. deploy.yml sets `EMUNAS_DEPLOY: "1"` for the whole
+job (and Actions sets `CI=true`), so a missing variable fails at "Check configuration" and, if that
+were bypassed, again at "Corpus build". Locally (no `CI`) the flag has no effect; to rehearse the
+deploy check: `CI=true npm run corpus:build -- --deploy` (fails without `EMUNAS_MEDIA_ORIGIN`).
 
 Token scopes: Workers Scripts edit, Workers Routes edit (custom domains), D1 edit, Vectorize edit,
 Workers AI read, Account settings read, and R2 limited to `emunas-site-build`. No workflow holds
@@ -140,8 +162,9 @@ open pull requests.
 
 ## 5. Workflows
 
-**ci.yml** (PRs, pushes to main): `check` (pipeline typecheck, site typecheck, Worker typecheck,
-lint, unit tests, Worker/config/_headers tests) and `build` (corpus:build → guard pre →
+**ci.yml** (PRs, pushes to main): `check` (pipeline typecheck; `site:typecheck`, which also
+covers the site Workers and the Live search eval suite; lint; `site:test`, which also runs the
+Worker/config/`_headers` tests and the eval suite) and `build` (corpus:build → guard pre →
 corpus:build --suppress → Quiet and Live builds → render `_headers` → `wrangler deploy --dry-run`
 for both Workers and both environments, bundling the Live Worker → guard self-test (a planted
 `heardAs` file must fail) → guard post-pass over `.corpus`, both outputs and the Worker bundle
@@ -151,12 +174,25 @@ secrets the preview step logs a notice and passes.
 
 **deploy.yml** (push to main touching `data/derived`, `data/catalog`, `apps`, `packages`,
 `workers`, `site-policy`; daily 05:17 UTC; manual dispatch with `target: production|staging`):
-configuration check → the same build and guard chain (guard post covers the api bundle too) →
-D1 migrations (each `d1_databases` binding of the target environment whose migrations folder
-exists) → `npm run search:sync --workspace=@emunas/api -- --env <target>` when that script exists
-(W3.10) → deploy `emunas-api` (when `workers/api/wrangler.jsonc` exists) → `emunas-quiet` →
-`emunas-live` → job summary (full/total, newly full ids, downgrades with reasons, unmapped
+configuration check (`EMUNAS_MEDIA_ORIGIN` and the Cloudflare secrets) → provisioning check (§3)
+→ corpus:build (with `EMUNAS_DEPLOY=1`) → guard pre → corpus:build --suppress →
+`npm run search:build` → `npm run data:build --workspace=@emunas/live` → Quiet and Live builds →
+render `_headers` → Worker bundles (dry run) → guard post (covers the api bundle too) → budgets →
+`npm run data:budgets --workspace=@emunas/live` → D1 migrations (`DB_SEARCH`, `DB_FEEDBACK`) →
+`npm run search:sync --workspace=@emunas/api -- --env <target>` when that script exists (W3.10) →
+deploy `emunas-api` → `emunas-quiet` → `emunas-live` → job summary (full/total, newly full ids, downgrades with reasons, unmapped
 counts, suppressed ids; never text). `concurrency: deploy-<target>`, cancel in progress.
+
+The data steps between the corpus build and the app builds:
+
+| Script | Reads | Writes | Notes |
+|---|---|---|---|
+| `npm run search:build` (`@emunas/search-core`) | `.corpus/` (+ `candidateTopics` through the corpus's allow-listed reader) | `.corpus/search/docs.ndjson`, `.corpus/search/moments.ndjson` | the indexed-field allow-list; read by Quiet's Pagefind glue and by `search:sync`. Flags: `--corpus`, `--data-dir`, `--no-keywords` |
+| `npm run data:build -w @emunas/live` (`data-build/cli.ts emit`) | `.corpus/` | `apps/live/public/data/` (gitignored), every file validated against the W2.4 contract | must run before the Live build, which copies `public/` into `build/client/`. `--generated-at` defaults to `SOURCE_DATE_EPOCH`, else now |
+| `npm run data:budgets -w @emunas/live` (`data-build/cli.ts budgets`) | `apps/live/public/data`, `apps/live/build/client` | nothing (console) | ≤ 18,000 client files, ≤ 25 MiB per file, brotli size targets per data kind (tech-live §3.3). Over a target is a warning; `corpus.json` has a soft target with a 400 KiB hard limit; a hard overrun exits 1 |
+
+All three run after the guard pre-pass and before the guard post-pass, so everything they write is
+scanned. None of them reads transcript files.
 
 Guard drill: dispatch deploy with `plant_leak_fixture: true` (target staging). The run must
 stop at "Guard post-pass" and deploy nothing.
@@ -174,6 +210,8 @@ npm ci
 npm run corpus:build
 npm run guard --workspace=@emunas/corpus-guard -- pre --corpus .corpus --out .corpus/suppress.json
 npm run corpus:build -- --suppress .corpus/suppress.json
+npm run search:build
+npm run data:build --workspace=@emunas/live
 npm run build --workspace=@emunas/quiet && npm run build --workspace=@emunas/live
 export EMUNAS_MEDIA_ORIGIN=https://media.example.org
 npx tsx apps/quiet/worker/render-headers.ts apps/quiet/dist/_headers
@@ -181,10 +219,14 @@ npx tsx apps/live/worker/render-headers.ts apps/live/build/client/_headers
 (cd apps/quiet && npx --yes wrangler@4.156.0 deploy --dry-run --env="")
 (cd apps/live && npx --yes wrangler@4.156.0 deploy --dry-run --env="" --outdir ../../.wrangler/bundles/live)
 npm run guard --workspace=@emunas/corpus-guard -- post --scan .corpus apps/quiet/dist apps/live/build/client .wrangler/bundles --corpus .corpus
-npx vitest run --config apps/quiet/worker/vitest.config.ts
-npx vitest run --config apps/live/worker/vitest.config.ts
+npm run data:budgets --workspace=@emunas/live
+npm run site:typecheck && npm run site:lint && npm run site:test   # includes Workers + eval suite
 actionlint
 ```
+
+The Live e2e suite (`npm run test:e2e -w @emunas/live`) always answers `/data/*` from the committed
+contract fixtures (`apps/live/app/data/fixtures/data`), so a local `data:build` does not change
+what it tests; `LIVE_E2E_DATA=build` serves the built data instead for a manual smoke run.
 
 `wrangler dev` from `apps/live` serves the built client with the Worker; without a local
 `emunas-api` the `/api/*` binding is unavailable.
@@ -207,7 +249,11 @@ actionlint
 | Check configuration | a secret/variable missing for the environment | set it (§4) |
 | corpus:build | `ingest.json`/`manifest.json`/policy invalid (the only fatal data errors) | fix in the pipeline |
 | Guard post-pass | a forbidden key/substring or a ≥20-token verbatim run reached an output; the report has ids and paths only | fix the projector/app, or add an accepted id to `site-policy/verbatim-allow.json` by PR |
+| Check emunas-api resources are provisioned | placeholder D1 ids in `workers/api/wrangler.jsonc` for the target | create the databases and commit their ids (§3) |
+| corpus:build: "placeholder media origin" | `EMUNAS_DEPLOY` build without `EMUNAS_MEDIA_ORIGIN` | set the variable on the environment (§4) |
+| search:build / data:build | `.corpus/` missing or a file fails its contract schema (data:build prints the file and path) | fix the emitter or the corpus projection |
 | Budgets | > 18,000 files or a file > 25 MiB | look at what grew |
+| Live data budgets | a data file over its hard limit (warnings alone do not fail) | look at what grew; targets are in `apps/live/data-build/budgets.ts` |
 | Deploy emunas-live | service binding target missing | deploy `emunas-api` for that environment first |
 
 ## 9. Contracts for later packages
