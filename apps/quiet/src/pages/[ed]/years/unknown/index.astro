@@ -1,0 +1,48 @@
+---
+/**
+ * "Year not recorded" (concept-quiet §5.6): every shiur without a year, grouped by catalog section
+ * in catalog order, with a sentence that explains the gap (the sets and simchos were not dated in
+ * the guide). Its count equals the shiurim with empty `years`. The groups are plain blocks, not
+ * labelled regions: section titles repeat across the two catalogs, and regions need unique names.
+ */
+import type { GetStaticPaths } from "astro";
+import Base from "../../../../layouts/Base.astro";
+import CalendarViews from "../../../../components/calendar/CalendarViews.astro";
+import NotesKey from "../../../../components/calendar/NotesKey.astro";
+import ShiurList from "../../../../components/calendar/ShiurList.astro";
+import { loadCalendarData } from "../../../../components/calendar/data.ts";
+import { calendarHref, unknownYearGroups, yearsHref } from "../../../../components/calendar/model.ts";
+import { useCalendarT } from "../../../../components/calendar/strings.ts";
+import { runAttrs } from "../../../../lib/bidi.ts";
+import { EDS, type Ed } from "../../../../lib/edition.ts";
+
+export const getStaticPaths = (() => (loadCalendarData() ? EDS.map((ed) => ({ params: { ed } })) : [])) satisfies GetStaticPaths;
+
+const ed = Astro.params.ed as Ed;
+const data = loadCalendarData();
+if (!data) throw new Error("years: no .corpus/");
+const t = useCalendarT(ed);
+const groups = unknownYearGroups(data, ed);
+const all = groups.flatMap((g) => g.shiurim);
+const title = t("years.unknown.title");
+---
+<Base
+  ed={ed}
+  title={title}
+  crumbs={[{ label: t("cal.label"), href: calendarHref(ed) }, { label: t("cal.byYear"), href: yearsHref(ed) }, { label: title }]}
+>
+  <h1>{title}</h1>
+  <CalendarViews ed={ed} current="years" />
+  <p class="cal-intro" data-count={all.length}>{t("years.unknown.intro", { count: all.length })}</p>
+  <p class="cal-intro">{t("years.unknown.why")}</p>
+  <NotesKey ed={ed} entries={all} />
+  {groups.map((g, i) => {
+    const lang = g.shiurim[0]?.lang ?? ed;
+    return (
+      <div class="cal-sub">
+        <h2 id={`section-${i}`}><bdi {...runAttrs(g.title, lang)}>{g.title}</bdi></h2>
+        <ShiurList ed={ed} entries={g.shiurim} showYear={false} />
+      </div>
+    );
+  })}
+</Base>

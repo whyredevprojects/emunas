@@ -1,0 +1,48 @@
+---
+/**
+ * One year (concept-quiet §5.6): that year's shiurim in calendar order (parsha and zman sequence;
+ * the catalog has no dates finer than the year), each with its parsha or zman linked to the
+ * calendar page.
+ */
+import type { GetStaticPaths } from "astro";
+import Base from "../../../../layouts/Base.astro";
+import HebrewYear from "../../../../components/HebrewYear.astro";
+import CalendarViews from "../../../../components/calendar/CalendarViews.astro";
+import NotesKey from "../../../../components/calendar/NotesKey.astro";
+import ShiurList from "../../../../components/calendar/ShiurList.astro";
+import { loadCalendarData } from "../../../../components/calendar/data.ts";
+import { calendarHref, yearList, yearPage, yearSlug, yearsHref } from "../../../../components/calendar/model.ts";
+import { useCalendarT } from "../../../../components/calendar/strings.ts";
+import { formatHebrewYear } from "@emunas/i18n";
+import { EDS, type Ed } from "../../../../lib/edition.ts";
+
+export const getStaticPaths = (() => {
+  const data = loadCalendarData();
+  if (!data) return [];
+  return EDS.flatMap((ed) => yearList(data).map((y) => ({ params: { ed, year: yearSlug(y) } })));
+}) satisfies GetStaticPaths;
+
+const ed = Astro.params.ed as Ed;
+const year = Number(Astro.params.year);
+const data = loadCalendarData();
+if (!data) throw new Error("years: no .corpus/");
+const entries = yearPage(data, year, ed);
+if (!entries) throw new Error(`years: unknown year ${String(Astro.params.year)}`);
+const t = useCalendarT(ed);
+const title = formatHebrewYear(year, ed);
+---
+<Base
+  ed={ed}
+  title={title}
+  crumbs={[
+    { label: t("cal.label"), href: calendarHref(ed) },
+    { label: t("cal.byYear"), href: yearsHref(ed) },
+    { label: title, lang: "he", dir: "rtl" },
+  ]}
+>
+  <h1><HebrewYear year={year} /></h1>
+  <CalendarViews ed={ed} current="years" />
+  <p class="cal-intro">{t("years.page.intro")} <span class="count">{t("cal.count", { count: entries.length })}</span></p>
+  <NotesKey ed={ed} entries={entries} />
+  <ShiurList ed={ed} entries={entries} showYear={false} />
+</Base>

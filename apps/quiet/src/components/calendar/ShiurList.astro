@@ -1,0 +1,51 @@
+---
+/**
+ * A list of shiurim on a calendar or year page. Each entry is a catalog line (title exactly as
+ * catalogued, then a citation line: parsha/zman on year pages, year, section, spoken language,
+ * audience) and, where notes exist, the one-liner in the edition's language. The one-liner is the
+ * notes voice: the page shows the standing notes label once (`NotesKey`), never per item.
+ */
+import "./calendar.css";
+import { languageName } from "@emunas/i18n";
+import HebrewYear from "../HebrewYear.astro";
+import OccasionName from "./OccasionName.astro";
+import { runAttrs } from "../../lib/bidi.ts";
+import type { Ed } from "../../lib/edition.ts";
+import { AUDIENCE_KEYS, type ShiurEntry } from "./model.ts";
+import { useCalendarT } from "./strings.ts";
+
+interface Props {
+  ed: Ed;
+  entries: readonly ShiurEntry[];
+  /** Show the year in each entry (off on a year page, where it is the heading). Default true. */
+  showYear?: boolean;
+  /** Accessible name of the list. */
+  label?: string;
+}
+
+const { ed, entries, showYear = true, label } = Astro.props;
+const t = useCalendarT(ed);
+---
+<ol role="list" class="cal-list" aria-label={label}>
+  {entries.map((e) => (
+    <li class="cal-entry" data-shiur={e.id}>
+      <p class="cal-title"><a href={e.href}><bdi {...runAttrs(e.title, e.lang)}>{e.title}</bdi></a></p>
+      <p class="citation cal-cite">
+        {e.occasions.map((o) => (
+          <span class="cite-item">{o.href ? (
+            <a href={o.href}><OccasionName ed={ed} name={o.name} /></a>
+          ) : (
+            <bdi {...runAttrs(o.raw ?? o.name.name, e.lang)}>{o.raw ?? o.name.name}</bdi>
+          )}</span>
+        ))}
+        {showYear && (
+          <span class="cite-item">{e.years.length > 0 ? <HebrewYear year={e.years} /> : <span class="cal-no-year">{t("cal.yearUnknown")}</span>}</span>
+        )}
+        <span class="cite-item"><bdi {...runAttrs(e.sectionTitle, e.lang)}>{e.sectionTitle}</bdi></span>
+        <span class="cite-item" data-lang={e.lang}>{languageName(e.lang, ed)}</span>
+        {e.audience && <span class="cite-item">{t(AUDIENCE_KEYS[e.audience])}</span>}
+      </p>
+      {e.oneLiner && <p class="cal-oneliner" lang={ed}>{e.oneLiner}</p>}
+    </li>
+  ))}
+</ol>

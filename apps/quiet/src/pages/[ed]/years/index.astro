@@ -1,0 +1,48 @@
+---
+/**
+ * Year index (concept-quiet §5.6): one row per year with its count, each leading to the year's
+ * page, and a final row "Year not recorded" for the shiurim without a year. Partial on purpose,
+ * and it says so: the intro states how many shiurim have a year.
+ */
+import type { GetStaticPaths } from "astro";
+import Base from "../../../layouts/Base.astro";
+import HebrewYear from "../../../components/HebrewYear.astro";
+import CalendarViews from "../../../components/calendar/CalendarViews.astro";
+import { loadCalendarData } from "../../../components/calendar/data.ts";
+import { calendarHref, yearIndex } from "../../../components/calendar/model.ts";
+import { useCalendarT } from "../../../components/calendar/strings.ts";
+import { EDS, type Ed } from "../../../lib/edition.ts";
+
+export const getStaticPaths = (() => (loadCalendarData() ? EDS.map((ed) => ({ params: { ed } })) : [])) satisfies GetStaticPaths;
+
+const ed = Astro.params.ed as Ed;
+const data = loadCalendarData();
+if (!data) throw new Error("years: no .corpus/");
+const t = useCalendarT(ed);
+const idx = yearIndex(data, ed);
+const title = t("years.title");
+---
+<Base ed={ed} title={title} crumbs={[{ label: t("cal.label"), href: calendarHref(ed) }, { label: t("cal.byYear") }]}>
+  <h1>{title}</h1>
+  <CalendarViews ed={ed} current="years" isIndex />
+  <p class="cal-intro">{t("years.intro", { known: idx.known, total: idx.total })}</p>
+  <table class="cal-years">
+    <thead>
+      <tr><th scope="col">{t("years.col.year")}</th><th scope="col">{t("years.col.count")}</th></tr>
+    </thead>
+    <tbody>
+      {idx.rows.map((r) => (
+        <tr data-year={r.year}>
+          <th scope="row"><a href={r.href}><HebrewYear year={r.year} /></a></th>
+          <td>{t("cal.count", { count: r.count })}</td>
+        </tr>
+      ))}
+      {idx.unknown.count > 0 && (
+        <tr class="unknown" data-year="unknown">
+          <th scope="row"><a href={idx.unknown.href}>{t("years.unknown")}</a></th>
+          <td>{t("cal.count", { count: idx.unknown.count })}</td>
+        </tr>
+      )}
+    </tbody>
+  </table>
+</Base>

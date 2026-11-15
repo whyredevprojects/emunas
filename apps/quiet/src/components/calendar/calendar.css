@@ -1,0 +1,136 @@
+/* Calendar (לוח) and year (שנים) pages: printed-catalog lists with hairline rules. Logical properties only. */
+@layer components {
+  .cal-views ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs) var(--space-m);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .cal-views a[aria-current] {
+    color: var(--color-ink);
+    font-weight: var(--weight-semibold);
+  }
+
+  .cal-views a[aria-current="page"] {
+    text-decoration: none;
+  }
+
+  .cal-intro {
+    color: var(--color-ink-muted);
+    max-inline-size: var(--measure-text);
+  }
+
+  .cal-index {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .cal-index > li {
+    display: flex;
+    gap: var(--space-s);
+    justify-content: space-between;
+    align-items: baseline;
+    padding-block: var(--space-3xs);
+    border-block-end: var(--rule-hairline) solid var(--color-rule);
+    max-inline-size: var(--measure-narrow);
+  }
+
+  .cal-index .count {
+    color: var(--color-ink-muted);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .cal-groups {
+    display: grid;
+    gap: var(--space-s) var(--space-xl);
+  }
+
+  @media (min-width: 48rem) {
+    .cal-groups {
+      grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    }
+  }
+
+  .cal-group > h2,
+  .cal-sub > h2 {
+    margin-block: var(--space-l) var(--space-xs);
+  }
+
+  .occasion-he {
+    color: var(--color-ink-muted);
+  }
+
+  .cal-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .cal-entry {
+    padding-block: var(--space-s);
+    border-block-end: var(--rule-hairline) solid var(--color-rule);
+    max-inline-size: var(--measure-text);
+  }
+
+  .cal-entry > * {
+    margin: 0;
+  }
+
+  .cal-entry > * + * {
+    margin-block-start: var(--space-3xs);
+  }
+
+  .cal-title {
+    font-size: var(--step-1);
+    line-height: var(--leading-snug);
+  }
+
+  .cal-oneliner {
+    color: var(--color-ink-muted);
+    font-family: var(--font-ui);
+    font-size: var(--step-0);
+  }
+
+  .cal-no-year {
+    font-style: italic;
+  }
+
+  .cal-notes-key {
+    max-inline-size: var(--measure-text);
+  }
+
+  .cal-years {
+    inline-size: min(100%, 26rem);
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .cal-years th,
+  .cal-years td {
+    padding-block: var(--space-3xs);
+    padding-inline: 0 var(--space-xl);
+    border-block-end: var(--rule-hairline) solid var(--color-rule);
+    text-align: start;
+    font-weight: normal;
+  }
+
+  .cal-years thead th {
+    font-weight: var(--weight-semibold);
+    color: var(--color-ink-muted);
+  }
+
+  .cal-years tr.unknown > * {
+    border-block-start: var(--rule-thick) solid var(--color-rule-strong);
+  }
+}
+
+@media print {
+  .cal-views {
+    display: none;
+  }
+}
