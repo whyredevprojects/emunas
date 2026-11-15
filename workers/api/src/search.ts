@@ -15,7 +15,7 @@ import { filterClause, vectorFilter } from "./filters.ts";
 import { adjust, groupByShiur, roundScore, rrf, type Scored } from "./rank.ts";
 import { decodeCursor, encodeCursor } from "./cursor.ts";
 import { makeSnippet, findMarks, queryTokenSet } from "./snippet.ts";
-import { isKind, isLang, parseVectorId, type Kind, type Lang, type Matched, type SearchResponse, type SearchResult, type Snippet } from "./contract.ts";
+import { fnv1a32Hex, isKind, isLang, parseVectorId, type Kind, type Lang, type Matched, type SearchResponse, type SearchResult, type Snippet } from "./contract.ts";
 
 export const LEXICAL_TOP_K = 100;
 export const VECTOR_TOP_K = 50;
@@ -123,12 +123,36 @@ async function semantic(env: Env, q: string, filters: SearchFilters): Promise<st
   } catch {
     throw new SemanticUnavailable("vectorize failed");
   }
-  const ids: string[] = [];
-  for (const m of matches.matches) {
-    const parsed = parseVectorId(m.id);
-    if (parsed) ids.push(parsed.momentId);
+  const ids = await momentIdsOfVectors(env.DB_SEARCH, matches.matches.map((m) => m.id));
+  return [...new Set(ids.filter((id): id is string => id !== null))];
+}
+
+const globLiteral = (s: string): string => s.replace(/[*?[]/g, (c) => `[${c}]`);
+
+/**
+ * The moment id of each Vectorize id (same order and length). A plain id names its moment; an
+ * alias (an over-long moment id, see `vectorIdFor`) is resolved against the shiur ids in D1. An id
+ * that does not parse or resolve maps to null.
+ */
+export async function momentIdsOfVectors(db: D1Database, vectorIds: readonly string[]): Promise<(string | null)[]> {
+  const parsed = vectorIds.map(parseVectorId);
+  const heads = [...new Set(parsed.flatMap((p) => (p?.alias ? [p.alias.shiurHead] : [])))];
+  const shiurIds: string[] = [];
+  if (heads.length > 0) {
+    const sql = `SELECT DISTINCT shiur_id FROM moments WHERE ${heads.map(() => "shiur_id GLOB ?").join(" OR ")}`;
+    const { results } = await db
+      .prepare(sql)
+      .bind(...heads.map((h) => `${globLiteral(h)}*`))
+      .all<{ shiur_id: string }>();
+    for (const r of results) shiurIds.push(r.shiur_id);
   }
-  return [...new Set(ids)];
+  return parsed.map((p) => {
+    if (!p) return null;
+    if (!p.alias) return p.momentId;
+    const { shiurHead, shiurHash, local } = p.alias;
+    const shiurId = shiurIds.find((id) => id.startsWith(shiurHead) && fnv1a32Hex(id) === shiurHash);
+    return shiurId === undefined ? null : `${shiurId}${local}`;
+  });
 }
 
 /** Moment rows for candidate ids that pass every filter (vector hits are filtered here). */

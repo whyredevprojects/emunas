@@ -1,6 +1,6 @@
 import { beforeAll, beforeEach, describe, expect, it } from "vitest";
-import { ALLOWED_KEYS, type HealthResponse, type SimilarResponse } from "../src/contract.ts";
-import { FakeAI, FakeVectorize, call, getJson, makeEnv, migrate, seed, sortedKeys } from "./helpers.ts";
+import { ALLOWED_KEYS, VECTOR_ID_MAX_BYTES, vectorIdFor, type HealthResponse, type SearchResponse, type SimilarResponse } from "../src/contract.ts";
+import { FakeAI, FakeVectorize, MOMENTS, call, getJson, makeEnv, migrate, seed, sortedKeys, type SeedMoment } from "./helpers.ts";
 
 const vec = new FakeVectorize();
 const e = makeEnv({ vec, ai: new FakeAI() });
@@ -87,5 +87,48 @@ describe("GET /api/similar", () => {
     const { status, body } = await getJson<SimilarResponse>(e, "/api/similar?moment=en-misc-01~tk0");
     expect(status).toBe(200);
     expect(body).toEqual({ rev: "rev-routes", results: [] });
+  });
+});
+
+describe("over-long moment ids (vector id alias)", () => {
+  // 64-character shiur ids exist in the real catalog; `<id>~kp0@en` would exceed Vectorize's 64 bytes.
+  const LONG = "yi-zmanim-unc-yt-kslv-17-01-17-19-kislev-5775-12-r-moshe-wolfson";
+  const TWIN = `${LONG.slice(0, 40)}-a-different-shiur-sharing-a-prefix`;
+  const longMoment = (shiurId: string, body: string): SeedMoment => ({
+    id: `${shiurId}~kp0`,
+    shiurId,
+    kind: "keypoint",
+    t: 10,
+    audioLang: "yi",
+    category: "zman",
+    titleEn: "Kislev light",
+    text: { en: { title: "Kislev light", body } },
+  });
+  const extra = [
+    longMoment(LONG, "Zebra quokka marmalade: the Kislev light shines in the longest nights."),
+    longMoment(TWIN, "Zebra quokka marmalade: a second shiur on the Kislev light in long nights."),
+  ];
+
+  beforeEach(async () => {
+    await seed(vec, [...MOMENTS, ...extra], "rev-routes");
+  });
+
+  it("stores them under a short alias", () => {
+    for (const m of extra) {
+      const id = vectorIdFor(m.id, "en");
+      expect(new TextEncoder().encode(id).length).toBeLessThanOrEqual(VECTOR_ID_MAX_BYTES);
+      expect(id).not.toBe(`${m.id}@en`);
+      expect(vec.vectors.has(id)).toBe(true);
+    }
+  });
+
+  it("semantic search and similar resolve the alias back to the full moment id", async () => {
+    const { body } = await getJson<SearchResponse>(e, "/api/search?q=zebra%20quokka%20marmalade&mode=semantic");
+    const ids = body.results.map((r) => r.momentId);
+    expect(ids).toContain(`${LONG}~kp0`);
+    expect(ids).toContain(`${TWIN}~kp0`);
+    const sim = await getJson<SimilarResponse>(e, `/api/similar?moment=${LONG}~kp0&limit=5`);
+    expect(sim.status).toBe(200);
+    expect(sim.body.results[0]).toMatchObject({ momentId: `${TWIN}~kp0`, shiurId: TWIN });
   });
 });

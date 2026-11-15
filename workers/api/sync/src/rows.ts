@@ -29,9 +29,30 @@ export const LANGS: readonly Lang[] = ["en", "yi"];
 /** Vectorize id limit (bytes); mirrors `VECTOR_ID_MAX_BYTES` in src/contract.ts. */
 export const VECTOR_ID_MAX_BYTES = 64;
 
-/** `<momentId>@<lang>`, the id the Worker's `parseVectorId` reads back. */
+/** FNV-1a (32-bit) of the UTF-16 code units, 8 lowercase hex digits; mirrors src/contract.ts. */
+export function fnv1a32Hex(s: string): string {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < s.length; i++) {
+    h ^= s.charCodeAt(i);
+    h = Math.imul(h, 0x01000193) >>> 0;
+  }
+  return h.toString(16).padStart(8, "0");
+}
+
+/**
+ * `<momentId>@<lang>`, the id the Worker's `parseVectorId` reads back. A moment id too long for
+ * that gets the alias `<shiurId head>~h<fnv1a32(shiurId)>~<local>@<lang>`, which the Worker
+ * resolves against D1 (mirrors `vectorIdFor` in src/contract.ts; sync/test/rows.test.ts checks
+ * that both agree).
+ */
 export function vectorIdFor(momentId: string, lang: Lang): string {
-  return `${momentId}@${lang}`;
+  const plain = `${momentId}@${lang}`;
+  const cut = momentId.indexOf("~");
+  if (utf8Bytes(plain) <= VECTOR_ID_MAX_BYTES || cut <= 0) return plain;
+  const shiurId = momentId.slice(0, cut);
+  const tail = `~h${fnv1a32Hex(shiurId)}${momentId.slice(cut)}@${lang}`;
+  // Shiur ids are ASCII; an id that still does not fit stays long and is skipped (wantedUnits).
+  return `${shiurId.slice(0, Math.max(1, VECTOR_ID_MAX_BYTES - utf8Bytes(tail)))}${tail}`;
 }
 
 /** Confidence written for `soft` items (C7: 0.6–0.75; the lower bound, the exact value is not published). */
@@ -67,7 +88,7 @@ export interface MomentRecord {
 }
 
 export interface VectorUnit {
-  /** `<momentId>@<lang>`. */
+  /** `vectorIdFor(momentId, lang)`: `<momentId>@<lang>`, or its alias when that is over 64 bytes. */
   vectorId: string;
   momentId: string;
   lang: Lang;

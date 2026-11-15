@@ -125,19 +125,57 @@ export const ALLOWED_KEYS = {
  * Vectorize ids: one vector per (moment, language), id `<momentId>@<lang>`, metadata
  * `{ shiurId, t, hash, audio_lang, kind, category, year }` (the last four are the declared
  * metadata indexes). Vectorize ids are limited to 64 bytes; the sync must check that.
+ *
+ * A moment id too long for that (shiur ids run to 64 characters) gets a short alias
+ * `<shiurId head>~h<fnv1a32(shiurId)>~<local>@<lang>`: the shiur id is cut to fit and tagged with
+ * its hash, the moment's own `~<local>` part is kept. Plain moment ids hold one `~`, an alias two,
+ * so the forms never collide. The Worker resolves an alias against D1 (`resolveVectorIds`).
+ * The index sync mirrors this in sync/src/rows.ts.
  */
 export const VECTOR_ID_MAX_BYTES = 64;
 
-export function vectorIdFor(momentId: string, lang: Lang): string {
-  return `${momentId}@${lang}`;
+export interface VectorAlias {
+  /** Leading characters of the shiur id. */
+  shiurHead: string;
+  /** `fnv1a32Hex` of the whole shiur id. */
+  shiurHash: string;
+  /** The moment's part after the shiur id, with its `~` (e.g. `~kp0`). */
+  local: string;
 }
 
-export function parseVectorId(id: string): { momentId: string; lang: Lang } | null {
+export type ParsedVectorId = { momentId: string; lang: Lang; alias?: undefined } | { momentId: null; lang: Lang; alias: VectorAlias };
+
+const utf8Length = (s: string): number => new TextEncoder().encode(s).length;
+
+/** FNV-1a (32-bit) of the UTF-16 code units, 8 lowercase hex digits. */
+export function fnv1a32Hex(s: string): string {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < s.length; i++) {
+    h ^= s.charCodeAt(i);
+    h = Math.imul(h, 0x01000193) >>> 0;
+  }
+  return h.toString(16).padStart(8, "0");
+}
+
+export function vectorIdFor(momentId: string, lang: Lang): string {
+  const plain = `${momentId}@${lang}`;
+  const cut = momentId.indexOf("~");
+  if (utf8Length(plain) <= VECTOR_ID_MAX_BYTES || cut <= 0) return plain;
+  const shiurId = momentId.slice(0, cut);
+  const tail = `~h${fnv1a32Hex(shiurId)}${momentId.slice(cut)}@${lang}`;
+  // Shiur ids are ASCII; an id that still does not fit is left long and skipped by the sync.
+  return `${shiurId.slice(0, Math.max(1, VECTOR_ID_MAX_BYTES - utf8Length(tail)))}${tail}`;
+}
+
+export function parseVectorId(id: string): ParsedVectorId | null {
   const at = id.lastIndexOf("@");
   if (at <= 0) return null;
   const lang = id.slice(at + 1);
   if (lang !== "en" && lang !== "yi") return null;
-  return { momentId: id.slice(0, at), lang };
+  const momentId = id.slice(0, at);
+  const m = /^([^~]+)~h([0-9a-f]{8})(~[^~]+)$/.exec(momentId);
+  if (m) return { momentId: null, lang, alias: { shiurHead: m[1]!, shiurHash: m[2]!, local: m[3]! } };
+  return { momentId, lang };
 }
 
 export function isKind(v: string): v is Kind {

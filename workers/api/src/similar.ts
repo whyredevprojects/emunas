@@ -5,8 +5,8 @@
 import { BadRequest, error, json } from "./http.ts";
 import type { Env } from "./env.ts";
 import { parseSimilarParams, type SimilarParams } from "./params.ts";
-import { corpusRev, hydrate } from "./search.ts";
-import { parseVectorId, vectorIdFor, type Lang, type SimilarResponse, type SimilarResult } from "./contract.ts";
+import { corpusRev, hydrate, momentIdsOfVectors } from "./search.ts";
+import { vectorIdFor, type Lang, type SimilarResponse, type SimilarResult } from "./contract.ts";
 import { roundScore } from "./rank.ts";
 
 export async function handleSimilar(request: Request, env: Env): Promise<Response> {
@@ -39,10 +39,11 @@ export async function handleSimilar(request: Request, env: Env): Promise<Respons
   if (matches === null) return json({ rev, results: [] } satisfies SimilarResponse);
 
   const best = new Map<string, number>();
-  for (const m of matches) {
-    const parsed = parseVectorId(m.id);
-    if (!parsed || parsed.momentId === p.moment) continue;
-    if (!best.has(parsed.momentId)) best.set(parsed.momentId, m.score);
+  const momentIds = await momentIdsOfVectors(db, matches.map((m) => m.id));
+  for (const [i, m] of matches.entries()) {
+    const momentId = momentIds[i] ?? null;
+    if (momentId === null || momentId === p.moment) continue;
+    if (!best.has(momentId)) best.set(momentId, m.score);
   }
   const facts = await hydrate(db, [...best.keys()], null);
   const results: SimilarResult[] = [];

@@ -17,7 +17,9 @@ describe("allow-listed data reader", () => {
     expect(reader.readText("derived/manifest.json")).toContain('"entries"');
     expect(reader.readText("catalog/pocket-guide-2012.json")).toContain('"sections"');
     expect(reader.readText("derived/shiurim/yi-zmanim-tv-bb-04/meta.json")).toContain('"starts"');
-    expect(reader.readText("derived/shiurim/yi-tanya-1-01/meta.json")).toBeNull();
+    // An allowed path with no file behind it reads as null (an id no pipeline run will ever produce).
+    expect(reader.readText("derived/shiurim/yi-no-such-shiur-0/meta.json")).toBeNull();
+    expect(reader.exists("derived/shiurim/yi-no-such-shiur-0/meta.json")).toBe(false);
   });
 
   const transcriptFile = readdirSync(join(REAL_DATA, TRANSCRIPTS))[0]!;

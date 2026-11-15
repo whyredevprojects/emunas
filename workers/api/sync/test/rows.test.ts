@@ -8,9 +8,11 @@ import {
   toMomentRecord,
   toVectorUnits,
   utf8Bytes,
+  vectorIdFor,
   VECTOR_ID_MAX_BYTES,
   VECTOR_METADATA_KEYS,
 } from "../src/rows.ts";
+import { parseVectorId, vectorIdFor as workerVectorIdFor } from "../../src/contract.ts";
 import { splitSql } from "../src/sql.ts";
 import { miniMoments } from "./helpers.ts";
 
@@ -66,10 +68,26 @@ describe("row mapping", () => {
     expect(units.length).toBeGreaterThan(100);
     expect(units.some((u) => u.momentId.includes("~w"))).toBe(false);
     for (const u of units) {
-      expect(u.vectorId).toBe(`${u.momentId}@${u.lang}`);
+      expect(u.vectorId).toBe(vectorIdFor(u.momentId, u.lang));
       expect(utf8Bytes(u.vectorId)).toBeLessThanOrEqual(VECTOR_ID_MAX_BYTES);
       for (const k of Object.keys(u.metadata)) expect(VECTOR_METADATA_KEYS).toContain(k);
       expect(u.text.length).toBeGreaterThan(0);
+    }
+  });
+
+  it("vector ids: plain when they fit, else an alias the Worker parses; identical to the Worker's scheme", () => {
+    const short = "yi-a-01~kp0";
+    expect(vectorIdFor(short, "yi")).toBe(`${short}@yi`);
+    const shiurId = "yi-zmanim-unc-yt-kslv-17-01-17-19-kislev-5775-12-r-moshe-wolfson";
+    for (const local of ["~s0", "~kp4", "~st12", "~q123"]) {
+      for (const lang of ["en", "yi"] as const) {
+        const id = vectorIdFor(`${shiurId}${local}`, lang);
+        expect(utf8Bytes(id)).toBeLessThanOrEqual(VECTOR_ID_MAX_BYTES);
+        expect(id).toBe(workerVectorIdFor(`${shiurId}${local}`, lang));
+        const parsed = parseVectorId(id);
+        expect(parsed?.alias?.local).toBe(local);
+        expect(shiurId.startsWith(parsed!.alias!.shiurHead)).toBe(true);
+      }
     }
   });
 

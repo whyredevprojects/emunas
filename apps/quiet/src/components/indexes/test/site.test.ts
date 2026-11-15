@@ -32,9 +32,14 @@ const here = dirname(fileURLToPath(import.meta.url));
 const app = join(here, "..", "..", "..", "..");
 const repo = join(app, "..", "..");
 
-/** tech-quiet §3.5: ~4,000 index pages at full corpus inside an 18,000-file site. */
-const INDEX_PAGE_BUDGET = 4_000;
-/** No index page heavier than this, gzip (the largest today is about 55 KB). */
+/**
+ * tech-quiet §3.5 estimated ~4,000 index pages at full corpus inside an 18,000-file site. Measured
+ * 4,144 at 993 of 997 shiurim full (2026-11-15: 360 sources, 617 people, 1,094 inyanim, 1 stories per
+ * edition; 7,772 files in the whole site), so the budget is 5,000 (~20% headroom). The site-wide
+ * 18,000-file cap is enforced by the build's budget check.
+ */
+const INDEX_PAGE_BUDGET = 5_000;
+/** No index page heavier than this, gzip (the largest, /yi/stories/, is about 90 KB at 993 of 997 full). */
 const PAGE_GZIP_BUDGET = 120 * 1024;
 
 let tmp = "";

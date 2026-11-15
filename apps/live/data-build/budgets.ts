@@ -23,7 +23,10 @@ const KB = 1024;
 /** Brotli size targets per file kind (bytes), tech-live §3.3. Kinds without a target are "small"/lazy. */
 export const BR_TARGETS: Partial<Record<DataKind, number>> = {
   corpus: 150 * KB,
-  facets: 60 * KB,
+  // tech-live §3.3 says 60 KiB. facets.json labels every work, person and browse concept in the
+  // corpus, so it grows with the number of summarized shiurim: about 73 KiB br (74,854 B) at 993 of
+  // 997 full on 2026-11-15, concepts alone about 37 KiB. 90 KiB leaves ~20% headroom.
+  facets: 90 * KB,
   today: 30 * KB,
   shiur: 40 * KB,
   writeup: 8 * KB,

@@ -59,7 +59,11 @@ describe("aggregates on real data", () => {
     for (let i = 1; i < mapped.length; i++) {
       expect(compareWorks(workByKey(mapped[i - 1]!.key)!, workByKey(mapped[i]!.key)!), mapped[i]!.key).toBeLessThan(0);
     }
-    expect(mapped.slice(0, 5).map((w) => w.key)).toEqual(["bereishis", "shemos", "vayikra", "bamidbar", "devarim"]);
+    // The shelf opens with the Torah group (a generic "Chumash" row, order 0, may precede the books),
+    // and the five books keep their canonical order wherever they fall.
+    expect(workByKey(mapped[0]!.key)!.group).toBe("torah");
+    const books = ["bereishis", "shemos", "vayikra", "bamidbar", "devarim"];
+    expect(mapped.map((w) => w.key).filter((k) => books.includes(k))).toEqual(books);
   });
 
   it("groups Tanya by perek", () => {

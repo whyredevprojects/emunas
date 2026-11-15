@@ -4,7 +4,7 @@ import { trigramMatch, wordsMatch } from "../src/fts.ts";
 import { adjust, groupByShiur, rrf } from "../src/rank.ts";
 import { decodeCursor, encodeCursor } from "../src/cursor.ts";
 import { findMarks, makeSnippet, SNIPPET_LENGTH } from "../src/snippet.ts";
-import { parseVectorId, vectorIdFor } from "../src/contract.ts";
+import { fnv1a32Hex, parseVectorId, vectorIdFor } from "../src/contract.ts";
 import { canonicalSearchKey, parseSearchParams } from "../src/params.ts";
 
 describe("normalizeQuery (search-core shim)", () => {
@@ -115,6 +115,15 @@ describe("vector ids and params", () => {
     expect(parseVectorId(vectorIdFor("a-b~s3", "yi"))).toEqual({ momentId: "a-b~s3", lang: "yi" });
     expect(parseVectorId("a-b~s3")).toBeNull();
     expect(parseVectorId("a@fr")).toBeNull();
+    // An over-long moment id gets an alias that fits and parses as one.
+    const long = `${"x".repeat(64)}~kp12`;
+    const alias = vectorIdFor(long, "en");
+    expect(new TextEncoder().encode(alias).length).toBe(64);
+    expect(parseVectorId(alias)).toEqual({
+      momentId: null,
+      lang: "en",
+      alias: { shiurHead: alias.slice(0, alias.indexOf("~")), shiurHash: fnv1a32Hex("x".repeat(64)), local: "~kp12" },
+    });
   });
 
   it("canonical cache key ignores parameter and list order", () => {

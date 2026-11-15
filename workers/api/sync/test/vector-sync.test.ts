@@ -8,7 +8,7 @@ import type { MomentRow } from "@emunas/search-core";
 import { cacheKey, decodeF16, embedCached, encodeF16, fromHalf, modelSlug, roundF16, toHalf } from "../src/embed.ts";
 import { HashingEmbedder, MemoryBlobStore, MemoryVectorIndex } from "../src/local.ts";
 import { loadState, stateKey, syncVectors, vectorMetadataNdjson, wantedUnits } from "../src/vector-sync.ts";
-import { toVectorUnits } from "../src/rows.ts";
+import { toVectorUnits, vectorIdFor } from "../src/rows.ts";
 import { miniMoments, rehash } from "./helpers.ts";
 
 function setup(dims = 32) {
@@ -121,14 +121,18 @@ describe("Vectorize sync", () => {
     expect((await loadState(store, index.index))!.model).toBe("fake/b");
   });
 
-  it("ids over 64 bytes are skipped and reported, not sent", async () => {
+  it("over-long moment ids are sent under their alias; an id even the alias cannot fit is skipped and reported", async () => {
     const { index, ai, store } = setup();
     const row = miniMoments().find((r) => r.kind === "section")!;
-    const longShiur = `yi-${"x".repeat(60)}`;
+    const longShiur = `yi-${"x".repeat(61)}`;
     const long = rehash({ ...row, id: `${longShiur}~s0`, shiurId: longShiur });
-    const r = await syncVectors(index, ai, store, [row, long]);
-    expect(r.skipped).toEqual([`${longShiur}~s0@en`, `${longShiur}~s0@yi`]);
-    expect([...index.vectors.keys()].sort()).toEqual([`${row.id}@en`, `${row.id}@yi`]);
+    const tooLong = rehash({ ...row, id: `${longShiur}~s${"0".repeat(60)}`, shiurId: longShiur });
+    const r = await syncVectors(index, ai, store, [row, long, tooLong]);
+    expect(r.skipped).toEqual([vectorIdFor(tooLong.id, "en"), vectorIdFor(tooLong.id, "yi")]);
+    for (const id of r.skipped) expect(id.length).toBeGreaterThan(64);
+    const aliases = [vectorIdFor(long.id, "en"), vectorIdFor(long.id, "yi")];
+    for (const a of aliases) expect(a.length).toBeLessThanOrEqual(64);
+    expect([...index.vectors.keys()].sort()).toEqual([`${row.id}@en`, `${row.id}@yi`, ...aliases].sort());
   });
 
   it("a dry run sends nothing and saves no state", async () => {

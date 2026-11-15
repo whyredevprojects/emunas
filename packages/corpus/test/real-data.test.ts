@@ -3,7 +3,7 @@
  * allow-listed reader. Counts are derived from ingest/manifest, so the suite stays valid while the
  * pipeline keeps adding shiurim.
  */
-import { readFileSync, statSync } from "node:fs";
+import { existsSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import type { IngestOutput } from "../../../src/types.ts";
@@ -37,9 +37,13 @@ describe("real data", () => {
     console.log(`real data: ${p.counts.total} shiurim, ${p.counts.full} full, ${p.counts.downgraded} downgraded`);
   });
 
-  it("the partial directory and the unprocessed Tanya shiur are catalog-only", () => {
-    expect(byId.get("yi-zmanim-msybs-lchyym-bkmp-01-c")?.status).toBe("catalog-only");
-    expect(byId.get("yi-tanya-1-01")?.status).toBe("catalog-only");
+  it("every in-scope shiur the manifest does not mark done is catalog-only, even with files on disk", () => {
+    const notDone = inScope.filter((s) => !done.has(s.id));
+    for (const s of notDone) expect(byId.get(s.id)?.status, s.id).toBe("catalog-only");
+    // Partial or unreviewed directories (meta/extraction present, manifest not "done") must not leak in.
+    const partial = notDone.filter((s) => existsSync(join(REAL_DATA, "derived/shiurim", s.id, "meta.json")));
+    for (const s of partial) expect(byId.get(s.id)?.status, s.id).toBe("catalog-only");
+    console.log(`real data: ${notDone.length} not done (${partial.length} with files on disk)`);
   });
 
   it("yi-zmanim-tv-bb-04 has 2 recordings with correct offsets", () => {
