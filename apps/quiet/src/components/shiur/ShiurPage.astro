@@ -7,6 +7,12 @@
  * renders nothing], the write-up with margin times and source letters, graded sources, the
  * apparatus, mentioned) · place in the catalog · report an error.
  *
+ * From the corpus layer (concept-quiet-corpus C4.8; `refs.ts`), for a shiur in the visible set:
+ * one line of ענינים under the abstract, sources linked to their work entry by corpus work id,
+ * "told in N other shiurim →" under a story told elsewhere too, and "mentioned in this shiur" by
+ * corpus id. The order of the page does not change, and the place in the catalog stays
+ * catalog-only. These sit inside the notes area, under its one standing AI label.
+ *
  * Catalog-only page: catalog header, listen, one sentence ("Notes for this shiur have not been
  * prepared yet."), place in the catalog. No skeletons, no placeholders.
  *
@@ -18,7 +24,7 @@
  * exists to render.
  */
 import { notice } from "@emunas/i18n";
-import type { PublicShiur } from "@emunas/corpus/public";
+import type { LayerShiurRefs, PublicShiur } from "@emunas/corpus/public";
 import Base from "../../layouts/Base.astro";
 import CatalogHeader from "../CatalogHeader.astro";
 import Listen from "../Listen.astro";
@@ -33,35 +39,40 @@ import JumpList from "./JumpList.astro";
 import Mentioned from "./Mentioned.astro";
 import Outline from "./Outline.astro";
 import SourceList from "./SourceList.astro";
+import TopicLine from "./TopicLine.astro";
 import TranscriptSlot from "./TranscriptSlot.astro";
 import Writeup from "./Writeup.astro";
 import { useShiurT } from "./strings.ts";
-import { buildSources, hasWriteup, pageParts, sectionHref, type CatalogPlaceView, type EntityCounts } from "./view.ts";
+import { mentionedView, sourceLinks, storyLines, topicLine, type ShiurLayer } from "./refs.ts";
+import { buildSources, hasWriteup, pageParts, sectionHref, type CatalogPlaceView } from "./view.ts";
 import "./shiur.css";
 
 interface Props {
   ed: Ed;
   shiur: PublicShiur;
   place: CatalogPlaceView;
-  /** Shiur counts per entity (`.corpus/entities.json`), for index links. */
-  counts?: EntityCounts;
-  /** Display name of a person in this edition (`.corpus/people.json`). */
-  personName?: (key: string, ed: Ed, fallback: string) => string;
-  /** Whether a concept has a line on the inyanim index (`.corpus/concepts.json`); unlisted ones are not linked. */
-  conceptListed?: (key: string) => boolean;
+  /** The corpus layer's entity records and page flags (`.corpus/layer/`). */
+  layer?: ShiurLayer;
+  /** The shiur's layer refs (`.corpus/layer/shiur/<id>.json`); null when it is not in the visible set. */
+  refs?: LayerShiurRefs | null;
   /** Absolute URL of the same shiur in the listening app (`@emunas/links`), or null when hosts are not configured. */
   liveHref?: string | null;
   /** `mailto:` link that pre-fills the shiur id, or null when no address is configured. */
   reportHref?: string | null;
 }
 
-const { ed, shiur, place, counts, personName, conceptListed, liveHref = null, reportHref = null } = Astro.props;
+const { ed, shiur, place, layer, refs = null, liveHref = null, reportHref = null } = Astro.props;
 const t = useShiurT(ed);
 const ui = useT(ed);
 const c = shiur.catalog;
 const notes = shiur.status === "full" ? shiur.notes : undefined;
-const sources = notes ? buildSources(notes, ed, counts) : undefined;
-const parts = pageParts(shiur, ed, sources);
+// Only a shiur with notes is in the visible set; a catalog-only page shows no corpus line.
+const shiurRefs = notes && layer ? refs : null;
+const topics = layer && shiurRefs ? topicLine(ed, layer, shiurRefs) : [];
+const mentioned = layer && shiurRefs ? mentionedView(ed, layer, shiurRefs) : { people: [], concepts: [] };
+const sources = notes ? buildSources(notes, ed, layer && shiurRefs ? sourceLinks(ed, layer, shiurRefs) : undefined) : undefined;
+const stories = layer && shiurRefs ? storyLines(ed, layer, shiur.id, shiurRefs) : undefined;
+const parts = pageParts(shiur, ed, sources, mentioned);
 const section = sectionHref(ed, c);
 const crumbs: Crumb[] = [
   { label: ui("nav.contents"), href: formatQuiet({ kind: "index", ed, index: "contents" }) },
@@ -92,13 +103,14 @@ const path = formatQuiet({ kind: "shiur", ed, id: shiur.id }, {}, { bare: true }
           <h2 id="about-heading">{t("about.heading")}</h2>
           {notes.summary.oneLiner[ed] !== "" && <p class="one-liner">{notes.summary.oneLiner[ed]}</p>}
           {notes.summary.abstract[ed] !== "" && <p class="abstract">{notes.summary.abstract[ed]}</p>}
+          <TopicLine ed={ed} topics={topics} />
         </section>
         {notes.chapters.length > 0 && <Outline ed={ed} chapters={notes.chapters} recordings={shiur.recordings} />}
         <TranscriptSlot recordings={shiur.recordings} />
         {hasWriteup(notes, ed) && <Writeup ed={ed} blocks={notes.writeup[ed]} recordings={shiur.recordings} sources={sources} />}
         {sources.count > 0 && <SourceList ed={ed} sources={sources} recordings={shiur.recordings} />}
-        <Apparatus ed={ed} notes={notes} recordings={shiur.recordings} {...(personName ? { personName } : {})} {...(conceptListed ? { conceptListed } : {})} />
-        <Mentioned ed={ed} notes={notes} {...(counts ? { counts } : {})} {...(personName ? { personName } : {})} {...(conceptListed ? { conceptListed } : {})} />
+        <Apparatus ed={ed} notes={notes} recordings={shiur.recordings} {...(stories ? { stories } : {})} />
+        <Mentioned ed={ed} mentioned={mentioned} />
       </div>
     ) : (
       <p class="notes-pending" lang={ed}>{notice("notesPending", ed)}</p>

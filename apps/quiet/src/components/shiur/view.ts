@@ -7,13 +7,13 @@
  * field through which transcript text could arrive.
  */
 import { sourceRefParts, type SourceRefParts } from "@emunas/i18n";
-import type { EntityKind } from "@emunas/links";
 import { quietPaths } from "@emunas/links";
 import { sefariaUrl, WORK_GROUP_LABELS, WORK_GROUPS, workByKey, type WorkGroup } from "@emunas/normalize";
 import type { IndexRow, PublicCatalog, PublicNotes, PublicShiur, PublicSource } from "@emunas/corpus/public";
 import type { Neighbours } from "@emunas/corpus/aggregate";
 import type { Ed } from "../../lib/edition.ts";
 import { sectionHref as catalogSectionHref } from "../catalog/model.ts";
+import type { MentionedView, SourceWork } from "./refs.ts";
 
 // ---------------------------------------------------------------- anchors
 
@@ -47,23 +47,7 @@ export function sourceLetter(n: number, ed: Ed): string {
   return out;
 }
 
-// ---------------------------------------------------------------- entity links
-
-/** Shiur counts per entity, from `.corpus/entities.json`. */
-export type EntityCounts = (kind: EntityKind, key: string) => number | undefined;
-
-/**
- * Link into the indexes: the entity's own page at the Quiet threshold, else its index anchor.
- * Hebrew keys are written as Unicode (an IRI) rather than percent-encoded: the browser requests
- * the same URL, and the href is a third of the size (concept keys are Hebrew).
- */
-export function entityHref(ed: Ed, kind: EntityKind, key: string, counts?: EntityCounts): string {
-  const paths = quietPaths(counts ? { entityCount: counts } : {});
-  const count = counts?.(kind, key);
-  const opts = count === undefined ? undefined : { count };
-  const href = kind === "work" ? paths.work(ed, key, opts) : kind === "person" ? paths.person(ed, key, opts) : paths.concept(ed, key, opts);
-  return iri(href);
-}
+// ---------------------------------------------------------------- IRIs
 
 /** Decodes percent-encoded non-ASCII (UTF-8) sequences only; ASCII escapes (`%20`, `%2F`) stay. */
 export function iri(href: string): string {
@@ -96,9 +80,11 @@ export interface SourceView {
   readonly sefaria: string | null;
   readonly sefariaRef: string | null;
   readonly t: number | null;
-  readonly workKey: string | null;
+  /** The corpus work id (`.corpus/layer/shiur/<id>.json` `sources`), or null when unresolved. */
+  readonly workId: string | null;
   readonly workName: string | null;
   readonly group: WorkGroup;
+  /** The work's entry (page or index anchor) by corpus work id; null when there is none. */
   readonly indexHref: string | null;
   /** Write-up paragraphs (edition language) that cite this source, in reading order. */
   readonly citedBy: readonly CitedBy[];
@@ -118,7 +104,15 @@ export interface SourcesView {
   readonly count: number;
 }
 
-function groupOf(source: Pick<PublicSource, "workKey">): WorkGroup {
+const isWorkGroup = (g: string | null | undefined): g is WorkGroup => typeof g === "string" && (WORK_GROUPS as readonly string[]).includes(g);
+
+/**
+ * The shelf group of a source: the corpus work's group from the layer when the source resolved to
+ * a corpus work (null there means "not in the ordering table": other), else the ordering table's
+ * group for the work as the notes name it.
+ */
+function groupOf(source: Pick<PublicSource, "workKey">, work: SourceWork | undefined): WorkGroup {
+  if (work) return isWorkGroup(work.orderGroup) ? work.orderGroup : "other";
   if (!source.workKey) return "other";
   return workByKey(source.workKey)?.group ?? "other";
 }
@@ -129,7 +123,7 @@ function groupOf(source: Pick<PublicSource, "workKey">): WorkGroup {
  * a page can never show an empty line). Letters follow the published order, which is the order
  * the sources come up in the shiur.
  */
-export function buildSources(notes: PublicNotes, ed: Ed, counts?: EntityCounts): SourcesView {
+export function buildSources(notes: PublicNotes, ed: Ed, works: ReadonlyMap<string, SourceWork> = new Map()): SourcesView {
   const cited = new Map<number, CitedBy[]>();
   let n = 0;
   notes.writeup[ed].forEach((block, b) => {
@@ -148,6 +142,7 @@ export function buildSources(notes: PublicNotes, ed: Ed, counts?: EntityCounts):
   for (const s of [...notes.sources].sort((a, b) => a.idx - b.idx)) {
     const ref = sourceRefParts(s, ed);
     if (!ref) continue;
+    const work = works.get(s.id);
     byIdx.set(s.idx, {
       idx: s.idx,
       anchor: sourceAnchor(s.idx),
@@ -156,10 +151,10 @@ export function buildSources(notes: PublicNotes, ed: Ed, counts?: EntityCounts):
       sefaria: s.resolution === "resolved" && s.sefariaRef ? sefariaUrl(s.sefariaRef) : null,
       sefariaRef: s.resolution === "resolved" ? s.sefariaRef : null,
       t: s.t,
-      workKey: s.workKey,
+      workId: work?.workId ?? null,
       workName: s.work,
-      group: groupOf(s),
-      indexHref: s.workKey ? entityHref(ed, "work", s.workKey, counts) : null,
+      group: groupOf(s, work),
+      indexHref: work?.href ?? null,
       citedBy: cited.get(s.idx) ?? [],
     });
   }
@@ -207,8 +202,11 @@ export const hasWriteup = (notes: PublicNotes, ed: Ed): boolean =>
 
 export type PagePart = "about" | "outline" | "writeup" | "sources" | "apparatus" | "mentioned" | "catalog";
 
-/** The parts present on a page, in page order (for the jump list under the header). */
-export function pageParts(shiur: Pick<PublicShiur, "status" | "notes">, ed: Ed, sources?: SourcesView): PagePart[] {
+/**
+ * The parts present on a page, in page order (for the jump list under the header). "Mentioned"
+ * is there when the layer names people or glossary terms for the shiur (`mentioned`).
+ */
+export function pageParts(shiur: Pick<PublicShiur, "status" | "notes">, ed: Ed, sources?: SourcesView, mentioned?: MentionedView): PagePart[] {
   const parts: PagePart[] = [];
   const notes = shiur.status === "full" ? shiur.notes : undefined;
   if (notes) {
@@ -217,7 +215,7 @@ export function pageParts(shiur: Pick<PublicShiur, "status" | "notes">, ed: Ed, 
     if (hasWriteup(notes, ed)) parts.push("writeup");
     if ((sources ?? buildSources(notes, ed)).count > 0) parts.push("sources");
     if (hasApparatus(notes)) parts.push("apparatus");
-    if (notes.people.length > 0 || notes.concepts.length > 0) parts.push("mentioned");
+    if (mentioned && (mentioned.people.length > 0 || mentioned.concepts.length > 0)) parts.push("mentioned");
   }
   parts.push("catalog");
   return parts;

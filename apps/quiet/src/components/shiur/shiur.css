@@ -224,13 +224,20 @@
     margin-block-start: var(--space-3xs);
   }
 
-  .story-people {
+  .story-people,
+  .story-elsewhere {
     font-size: var(--step--1);
     color: var(--color-ink-muted);
   }
 
+  /* The ענינים line under the abstract. */
+  .topic-line {
+    font-size: var(--step--1);
+  }
+
   /* Mentioned and the place in the catalog. */
   .mentioned-line .label,
+  .topic-line .label,
   .prev-next .label {
     margin-inline-end: var(--space-2xs);
   }

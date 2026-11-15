@@ -1,7 +1,8 @@
 ---
 /**
  * `/{ed}/shiur/{shiurId}/`: one page per in-scope shiur per edition (tech-quiet §2), built from
- * `.corpus/shiurim/<id>.json` and the aggregate files (integration-plan §5.1). The page body is
+ * `.corpus/shiurim/<id>.json`, the aggregate files (integration-plan §5.1) and the corpus layer's
+ * per-shiur refs (`.corpus/layer/shiur/<id>.json`, corpus-wave-plan §3.3). The page body is
  * `components/shiur/ShiurPage.astro`; this file only resolves the data.
  *
  * Build config read here (all optional):
@@ -44,9 +45,8 @@ const report = reportHref(
   ed={ed}
   shiur={shiur}
   place={place}
-  counts={corpus.entityCounts}
-  personName={corpus.personName}
-  conceptListed={corpus.conceptListed}
+  layer={corpus.layer}
+  refs={shiur.status === "full" ? corpus.refs(id) : null}
   liveHref={links.live.shiur(ed, id)}
   reportHref={report}
 />
