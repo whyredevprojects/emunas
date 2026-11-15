@@ -1,0 +1,414 @@
+{
+  "shiurId": "yi-shonos-26",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "On the yahrtzeit of Reb Shraga Feivel Mendlowitz, the Rav describes him as an eved Hashem whose whole life was a Shabbos niggun of shleimus and harmony, a song that still sings in the yeshiva.",
+      "yi": "אויפן יארצייט פון ר' שרגא פייוול מענדלאוויטש שילדערט דער משגיח ווי ער איז געווען אן עבד השם, וועמענס גאנץ לעבן איז געווען א שבת'דיגער ניגון פון שלימות און הארמאניע, א שירה וואס זינגט זיך נאך אלץ אין דער ישיבה."
+    },
+    "abstract": {
+      "en": "The Rav opens with the end of the Torah: Moshe is called both 'ish ha'Elokim' and 'eved Hashem', and Yehoshua, who wrote the last pesukim, could describe him only from his own level, as eved Hashem. Like a blade of grass that also benefits from the sun, the Rav will describe Reb Shraga Feivel Mendlowitz as an eved Hashem: a builder of Torah in America who sat in the last bench and refused titles. His deepest teacher was his own neshamah, a neshamah of Shabbos, which is shleimus, and of shirah, which is harmony, like seven notes making one melody. The Rav brings the 'seventh' in creation, Eretz Yisrael as a land of song, and stories of a torn leaf whose song was interrupted. Every life is a niggun; his was a Shabbos niggun, seen in his love of creation's beauty, the flowers he planted, the harmony he made between groups, the best talmidim he gave away, and his kabbalos. His niggun still sings.",
+      "yi": "דער משגיח עפנט מיטן סוף פון דער תורה: משה רבינו ווערט אנגערופן סיי \"איש האלקים\" סיי \"עבד השם\", און יהושע, וואס האט געשריבן די לעצטע פסוקים, האט אים נאר געקענט באשרייבן פון זיין אייגענער מדרגה, אלס עבד השם. אזוי ווי א גרעזעלע וואס האט אויך הנאה פון דער זון, וועט דער משגיח שילדערן ר' שרגא פייוול מענדלאוויטש אלס עבד השם: ער האט אויפגעבויט תורה אין אמעריקע, און דאך געזעסן אויף דער לעצטער באנק און נישט געוואלט קיין טיטלען. זיין גרעסטער רבי איז געווען זיין אייגענע נשמה, א נשמה פון שבת, וואס איז שלימות, און פון שירה, וואס איז הארמאניע, אזוי ווי זיבן טענער וואס ווערן איין ניגון. ער ברענגט דעם ענין פון דעם \"זיבעטן\" אין דער בריאה, ארץ ישראל אלס א לאנד פון געזאנג, און מעשיות פון א בלעטל וואס מ'האט אפגעריסן און איבערגעהאקט זיין שירה. יעדן מענטשנס לעבן איז א ניגון, און זיינס איז געווען א שבת'דיגער ניגון: אין זיין ליבשאפט צו דער שיינקייט פון דער בריאה, די בלומען וואס ער האט געפלאנצט, די הארמאניע וואס ער האט געמאכט צווישן אלע שיכטן, די בעסטע תלמידים וואס ער האט אוועקגעגעבן, און זיינע קבלות. זיין ניגון זינגט זיך נאך."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Yehoshua could describe Moshe only as 'eved Hashem', from his own level; likewise the Rav describes Reb Shraga Feivel as an eved Hashem.",
+          "yi": "יהושע האט משה רבינו נאר געקענט באשרייבן אלס \"עבד השם\", פון זיין אייגענער מדרגה; אזוי שילדערט דער משגיח ר' שרגא פייוול אלס עבד השם."
+        },
+        "evidence": { "segs": [23, 27, 29, 41, 80], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Reb Shraga Feivel built Torah in America yet wanted no honor or title, preferring to remain a plain Jew.",
+          "yi": "ר' שרגא פייוול האט אויפגעבויט תורה אין אמעריקע, און דאך נישט געוואלט קיין כבוד און קיין טיטל, נאר בלייבן א פשוט'ער איד."
+        },
+        "evidence": { "segs": [66, 67, 96, 145, 146], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "His main teacher was his own neshamah, a neshamah of Shabbos and of shirah: Shabbos is shleimus, and shirah is harmony.",
+          "yi": "זיין עיקר רבי איז געווען זיין אייגענע נשמה, א נשמה פון שבת און פון שירה: שבת איז שלימות, און שירה איז הארמאניע."
+        },
+        "evidence": { "segs": [165, 169, 173, 196, 231, 232], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Every part of creation sings shirah to Hashem, and every person's life is a niggun; his life was one long Shabbos niggun.",
+          "yi": "יעדער חלק פון דער בריאה זינגט שירה צום רבונו של עולם, און יעדן מענטשנס לעבן איז א ניגון; זיין לעבן איז געווען איין לאנגער שבת'דיגער ניגון."
+        },
+        "evidence": { "segs": [299, 336, 342, 361], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "As an eved Hashem he sent his best talmidim to build other yeshivos, and his niggun still sings in the yeshiva.",
+          "yi": "אלס עבד השם האט ער אוועקגעשיקט זיינע בעסטע תלמידים אויפצובויען אנדערע ישיבות, און זיין ניגון זינגט זיך נאך אין דער ישיבה."
+        },
+        "evidence": { "segs": [454, 458, 483, 536, 544], "confidence": 0.75 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-shoinos-26-yrtzt-r-shrag-feivel-mendelovitz",
+      "startSeg": 0,
+      "endSeg": 59,
+      "title": { "en": "Moshe: ish ha'Elokim and eved Hashem", "yi": "משה רבינו: איש האלקים און עבד השם" },
+      "summary": {
+        "en": "The Rav opens with the last parsha of the Torah, where Moshe is called 'ish ha'Elokim', and explains that Yehoshua, who wrote the last pesukim, could describe him only as 'eved Hashem'. Comparing himself to a blade of grass that also benefits from the sun, he says he too will try to describe Reb Shraga Feivel.",
+        "yi": "דער משגיח עפנט מיט דער לעצטער פרשה פון דער תורה, וואו משה רבינו ווערט אנגערופן \"איש האלקים\", און ער ערקלערט אז יהושע, וואס האט געשריבן די לעצטע פסוקים, האט אים נאר געקענט באשרייבן אלס \"עבד השם\". ער פארגלייכט זיך צו א גרעזעלע וואס האט אויך הנאה פון דער זון, און זאגט אז ער וועט אויך פרובירן צו שילדערן ר' שרגא פייוול."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-26-yrtzt-r-shrag-feivel-mendelovitz",
+      "startSeg": 60,
+      "endSeg": 156,
+      "title": { "en": "A builder of Torah who sat in the last bench", "yi": "א בויער פון תורה וואס איז געזעסן אויף דער לעצטער באנק" },
+      "summary": {
+        "en": "The Rav describes Reb Shraga Feivel as an eved Hashem: he planted Torah in America, yet sought no honor, sat in the last bench at the dedication of the new building he had organized, and taught his talmidim Tanya and Shaarei Teshuvah. He did not take a title and preferred to remain a plain Jew.",
+        "yi": "דער משגיח שילדערט ר' שרגא פייוול אלס עבד השם: ער האט איינגעפלאנצט תורה אין אמעריקע, און דאך נישט געזוכט קיין כבוד, געזעסן אויף דער לעצטער באנק ביי דער חנוכת הבית פונעם נייעם בנין וואס ער אליין האט ארגאניזירט, און געלערנט מיט די תלמידים תניא און שערי תשובה. ער האט נישט אנגענומען קיין טיטל און געוואלט בלייבן א פשוט'ער איד."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-26-yrtzt-r-shrag-feivel-mendelovitz",
+      "startSeg": 157,
+      "endSeg": 288,
+      "title": { "en": "A neshamah of Shabbos and of shirah", "yi": "א נשמה פון שבת און פון שירה" },
+      "summary": {
+        "en": "The Rav says Reb Shraga Feivel's main rebbe was his own neshamah, a Shabbos neshamah: on Erev Shabbos he became a different person. Shabbos is shleimus, and shirah is harmony, like seven notes; he brings the 'seventh' in creation and Eretz Yisrael as a land of song, and concludes that Reb Shraga Feivel was not limited to one area but was a neshamah of shleimus.",
+        "yi": "דער משגיח זאגט אז ר' שרגא פייוול'ס עיקר רבי איז געווען זיין אייגענע נשמה, א שבת'דיגע נשמה: ערב שבת איז ער געווארן אן אנדער מענטש. שבת איז שלימות, און שירה איז הארמאניע, אזוי ווי זיבן טענער; ער ברענגט דעם ענין פון דעם \"זיבעטן\" אין דער בריאה און ארץ ישראל אלס א לאנד פון געזאנג, און ענדיגט אז ר' שרגא פייוול איז נישט געווען באגרעניצט, נאר א נשמה פון שלימות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-26-yrtzt-r-shrag-feivel-mendelovitz",
+      "startSeg": 289,
+      "endSeg": 359,
+      "title": { "en": "The leaf that sings", "yi": "דאס בלעטל וואס זינגט" },
+      "summary": {
+        "en": "The Rav tells how in camp Reb Shraga Feivel stopped a talmid who tore off a leaf, since he had interrupted its shirah, and how in Monsey he saw one leaf moving among still ones as the chazan. He adds that Reb Shraga Feivel would repeat that every person's life is a niggun sung to Hashem.",
+        "yi": "דער משגיח דערציילט ווי ר' שרגא פייוול האט אין קעמפ אפגעשטעלט א תלמיד וואס האט אפגעריסן א בלעטל, ווייל ער האט איבערגעהאקט זיין שירה, און ווי ער האט אין מאנסי געזען איין בלעטל וואס שאקלט זיך צווישן שטילע בלעטער, ווי א חזן. ער לייגט צו אז ר' שרגא פייוול פלעגט איבערחזרן אז יעדן מענטשנס לעבן איז א ניגון צום רבונו של עולם."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-26-yrtzt-r-shrag-feivel-mendelovitz",
+      "startSeg": 360,
+      "endSeg": 432,
+      "title": { "en": "Beauty of creation and harmony between groups", "yi": "די שיינקייט פון דער בריאה און הארמאניע צווישן שיכטן" },
+      "summary": {
+        "en": "The Rav explains that Reb Shraga Feivel taught bochurim to develop a sense for the beauty of creation in order to thank Hashem, bringing David Hamelech and the Rambam. In Monsey he planted flowers among the first things, and in the yeshiva he made a harmony between Hungarian Jews, Litvish roshei yeshiva and chassidus.",
+        "yi": "דער משגיח ערקלערט אז ר' שרגא פייוול האט געלערנט די בחורים צו אנטוויקלען א חוש פאר דער שיינקייט פון דער בריאה כדי צו דאנקען דעם רבונו של עולם, און ער ברענגט דוד המלך און דעם רמב\"ם. אין מאנסי האט ער צווישן די ערשטע זאכן געפלאנצט בלומען, און אין דער ישיבה האט ער געמאכט א הארמאניע צווישן אונגארישע אידן, ליטווישע ראשי ישיבה און חסידות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-26-yrtzt-r-shrag-feivel-mendelovitz",
+      "startSeg": 433,
+      "endSeg": 487,
+      "title": { "en": "Giving away his best talmidim", "yi": "אוועקגעבן זיינע בעסטע תלמידים" },
+      "summary": {
+        "en": "The Rav relates that Reb Shraga Feivel sent his best talmidim to found other yeshivos, and he tells the bochurim to remember, when they are in business, what it means to give one's best people to a competitor. He did this because he was an eved Hashem.",
+        "yi": "דער משגיח דערציילט אז ר' שרגא פייוול האט אוועקגעשיקט זיינע בעסטע תלמידים צו גרינדן אנדערע ישיבות, און ער זאגט די בחורים אז ווען זיי וועלן זיין אין געשעפט זאלן זיי געדענקען וואס עס מיינט אוועקצוגעבן די בעסטע מענטשן צום קאנקורענט. ער האט דאס געטון ווייל ער איז געווען אן עבד השם."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-26-yrtzt-r-shrag-feivel-mendelovitz",
+      "startSeg": 488,
+      "endSeg": 550,
+      "title": { "en": "A path for each bochur; the niggun still sings", "yi": "א באזונדערער וועג פאר יעדן בחור; דער ניגון זינגט זיך נאך" },
+      "summary": {
+        "en": "The Rav says Reb Shraga Feivel had no single method but a separate path for each bochur, and tells of kabbalos found after his passing: to find a new idea every day to improve the yeshiva and to love every bochur. He concludes that his spirit remains in the yeshiva and his niggun is still sung.",
+        "yi": "דער משגיח זאגט אז ר' שרגא פייוול האט נישט געהאט קיין איין שיטה, נאר א באזונדערן וועג פאר יעדן בחור, און ער דערציילט פון קבלות וואס מ'האט געפונען נאך זיין פטירה: יעדן טאג מחדש זיין א נייע עצה ווי אזוי צו פארבעסערן די ישיבה, און ליב האבן יעדן בחור. ער ענדיגט אז זיין רוח איז נאך פארהאן אין דער ישיבה, און זיין ניגון זינגט זיך נאך."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "די פרשה פון בזכה ברכה ... אישור אלוקים",
+      "work": "Devarim",
+      "ref": "Devarim 33:1",
+      "sefariaRef": "Deuteronomy 33:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [0, 1, 2], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ידעה השם תנאה מלתנאה ... ולכל הידך הזקה, ולכל המורא הגבוה",
+      "work": "Devarim",
+      "ref": "Devarim 34:10-12",
+      "sefariaRef": "Deuteronomy 34:10-12",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [13, 15, 16, 17], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ויהו אחת ומת משה עבד השם",
+      "work": "Devarim",
+      "ref": "Devarim 34:5",
+      "sefariaRef": "Deuteronomy 34:5",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [27, 28, 29], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "תניא",
+      "work": "Tanya",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [106, 190], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "שערי תשובה",
+      "work": "Shaarei Teshuvah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [107], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "מוזאדזשעס מיט כול השם על המים ... די זיבן תנאים",
+      "work": "Tehillim",
+      "ref": "Tehillim 29",
+      "sefariaRef": "Psalms 29",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [222, 223], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "תירקעי דער רבי אלעזר",
+      "work": "Pirkei deRabbi Eliezer",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [243, 248, 252, 257], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "מחתם סופר",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [260, 262], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "מדמע שיעור ליום השבת",
+      "work": "Tehillim",
+      "ref": "Tehillim 92:1",
+      "sefariaRef": "Psalms 92:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [230, 275], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "קטן מהרם",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [340, 342], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "פיארעשע מרחם מתי את ביום שטחה, ירחליך",
+      "work": "Tehillim",
+      "ref": "Tehillim 8:4",
+      "sefariaRef": "Psalms 8:4",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [374, 375, 376], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "דער רמב״ם זאגט, ידרך לאהבתי",
+      "work": "Rambam, Mishneh Torah",
+      "ref": "Hilchos Yesodei HaTorah 2:2",
+      "sefariaRef": "Mishneh Torah, Foundations of the Torah 2:2",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [381, 382], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav reads the two titles of Moshe as two vantage points: Yehoshua could only write 'eved Hashem' because he could describe Moshe only from his own level, and so the Rav, like a blade of grass that also benefits from the sun, describes Reb Shraga Feivel as an eved Hashem.",
+        "yi": "דער משגיח טייטשט די צוויי נעמען פון משה רבינו אלס צוויי בליקן: יהושע האט נאר געקענט שרייבן \"עבד השם\", ווייל ער האט אים נאר געקענט באשרייבן פון זיין אייגענער מדרגה, און אזוי שילדערט דער משגיח, ווי א גרעזעלע וואס האט אויך הנאה פון דער זון, ר' שרגא פייוול אלס עבד השם."
+      },
+      "evidence": { "segs": [23, 25, 27, 51, 54], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Shabbos is shleimus and shirah is harmony: just as a melody needs all seven notes, the seventh day completes creation, and a person who has all the parts in harmony has a neshamah of Shabbos and of song.",
+        "yi": "שבת איז שלימות און שירה איז הארמאניע: אזוי ווי א ניגון דארף האבן אלע זיבן טענער, אזוי פארענדיגט דער זיבעטער טאג די בריאה, און א מענטש ביי וועמען אלע חלקים זענען אין הארמאניע האט א נשמה פון שבת און פון געזאנג."
+      },
+      "evidence": { "segs": [196, 200, 226, 231, 232, 284], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Eretz Yisrael, the seventh land, is a land of song, and the seventh sea, the Kinneret, carries the name of the kinor, the harp.",
+        "yi": "ארץ ישראל, דאס זיבעטע לאנד, איז א לאנד פון געזאנג, און דער זיבעטער ים, דער כנרת, טראגט דעם נאמען פון כינור."
+      },
+      "evidence": { "segs": [257, 258, 264, 265, 266], "confidence": 0.65 }
+    },
+    {
+      "text": {
+        "en": "Since every leaf sings shirah to Hashem, tearing a leaf for no purpose interrupts its song, and a lone moving leaf among still ones is the chazan with the others answering.",
+        "yi": "ווייל יעדעס בלעטל זינגט שירה צום רבונו של עולם, הייסט אפרייסן א בלעטל אומזיסט איבערהאקן זיין שירה, און איין בלעטל וואס שאקלט זיך צווישן שטילע בלעטער איז דער חזן, און די אנדערע ענטפערן."
+      },
+      "evidence": { "segs": [299, 303, 304, 326, 327], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav presents Reb Shraga Feivel's harmony between Hungarian Jews, Litvish roshei yeshiva and chassidus as an expression of his neshamah of shirah.",
+        "yi": "דער משגיח שטעלט פאר ר' שרגא פייוול'ס הארמאניע צווישן אונגארישע אידן, ליטווישע ראשי ישיבה און חסידות אלס אן אויסדרוק פון זיין נשמה פון שירה."
+      },
+      "evidence": { "segs": [423, 426, 427, 430, 431], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "A niggun can outlast its singer: the Rav says Reb Shraga Feivel's niggun is still sung in the yeshiva and in America, and his leaf will not be torn off.",
+        "yi": "א ניגון קען בלייבן אויך נאכן זינגער: דער משגיח זאגט אז ר' שרגא פייוול'ס ניגון זינגט זיך נאך אין דער ישיבה און אין אמעריקע, און זיין בלאט וועט נישט אפגעריסן ווערן."
+      },
+      "evidence": { "segs": [535, 536, 544, 547], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "In the last bench at the dedication", "yi": "אויף דער לעצטער באנק ביי דער חנוכת הבית" },
+      "retelling": {
+        "en": "When the new building was dedicated, there were days of celebration at which the greatest rabbanim came and spoke, all of it organized by Reb Shraga Feivel. He himself sat in the last bench of the hall, as one of the audience. The talmidim knew that wherever he sat, that was the mizrach, and all eyes were turned to him.",
+        "yi": "ווען מ'האט איינגעווייט דעם נייעם בנין, זענען געווען טעג פון פייערונגען וואו די גרעסטע רבנים זענען געקומען און גערעדט, און אלעס איז געווען דורכדעם וואס ער האט עס ארגאניזירט. ער אליין איז געזעסן אויף דער לעצטער באנק פונעם זאל, ווי איינער פונעם עולם. די תלמידים האבן געוואוסט אז וואו ער זיצט, דארט איז דער מזרח, און אלע אויגן זענען געווען געווענדט צו אים."
+      },
+      "people": ["Reb Shraga Feivel Mendlowitz"],
+      "evidence": { "segs": [91, 93, 95, 96, 102, 104], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The torn leaf in camp", "yi": "דאס אפגעריסענע בלעטל אין קעמפ" },
+      "retelling": {
+        "en": "Reb Shraga Feivel was the first to think of a summer camp for bnei Torah. Once, walking in camp with talmidim, one of them tore a leaf off a plant, and he stopped. He asked whether the talmid knew that all of creation sings shirah to Hashem, every blade of grass and every leaf, and said that by tearing the leaf he had interrupted its song in the middle.",
+        "yi": "ר' שרגא פייוול איז געווען דער ערשטער וואס איז געקומען אויפן געדאנק פון א זומער קעמפ פאר בני תורה. אמאל, ווען ער איז געגאנגען אין קעמפ מיט תלמידים, האט איינער פון זיי אפגעריסן א בלעטל פון א פלאנץ, און ער האט זיך אפגעשטעלט. ער האט אים געפרעגט צי ער ווייסט אז די גאנצע בריאה זינגט שירה צום רבונו של עולם, יעדעס גרעזעלע און יעדעס בלעטל, און געזאגט אז מיטן אפרייסן דאס בלעטל האט ער איבערגעהאקט זיין שירה אינמיטן."
+      },
+      "people": ["Reb Shraga Feivel Mendlowitz"],
+      "evidence": { "segs": [289, 291, 295, 299, 303], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "The leaf that leads the song", "yi": "דאס בלעטל וואס פירט דעם געזאנג" },
+      "retelling": {
+        "en": "In his last period, Reb Shraga Feivel sat in his home in Monsey on a still day when no leaf on the trees was moving. He pointed to the top of a tree, where a single leaf was shaking while all the others were still, and said that the top leaf is the chazan and the others answer after it.",
+        "yi": "אין זיינע לעצטע צייטן איז ר' שרגא פייוול געזעסן אין זיין וואוינונג אין מאנסי אויף א שטילן טאג, ווען קיין איין בלעטל אויף די ביימער האט זיך נישט גערירט. ער האט אנגעוויזן אויפן שפיץ פון א בוים, וואו איין בלעטל האט זיך געשאקלט בשעת אלע אנדערע זענען געווען שטיל, און געזאגט אז דאס אויבערשטע בלאט איז דער חזן און די אנדערע ענטפערן נאך."
+      },
+      "people": ["Reb Shraga Feivel Mendlowitz"],
+      "evidence": { "segs": [314, 316, 319, 324, 326, 327], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "Flowers in Monsey", "yi": "בלומען אין מאנסי" },
+      "retelling": {
+        "en": "When the yeshiva was being built in Monsey, then a place without Jews, one of the first things Reb Shraga Feivel did was plant flowers. He said the place must be beautiful so that there is something to say shirah on and to thank Hashem for, so that the bochurim see that Hashem made a beautiful world.",
+        "yi": "ווען מ'האט געבויט די ישיבה אין מאנסי, וואס איז דעמאלט געווען א גוי'אישער ארט, איז איינע פון די ערשטע זאכן וואס ר' שרגא פייוול האט געטון געווען צו פלאנצן בלומען. ער האט געזאגט אז דער ארט דארף זיין שיין, כדי מ'זאל האבן אויף וואס צו זאגן שירה און צו דאנקען דעם רבונו של עולם, און די בחורים זאלן זען אז דער אייבערשטער האט באשאפן א שיינע וועלט."
+      },
+      "people": ["Reb Shraga Feivel Mendlowitz"],
+      "evidence": { "segs": [389, 392, 399, 401, 406, 409], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The kabbalos found after his passing", "yi": "די קבלות וואס מ'האט געפונען נאך זיין פטירה" },
+      "retelling": {
+        "en": "In his last years, when he was ill, Reb Shraga Feivel wrote down kabbalos for himself, and these were found later. His son passed two of them on to the Rav. One was that every day he would come up with a new idea to improve the yeshiva, never letting a day pass without one; the other was to love every bochur and to deal warmly with each one.",
+        "yi": "אין זיינע לעצטע יארן, ווען ער איז געווען קראנק, האט ר' שרגא פייוול זיך פארשריבן קבלות, און מ'האט זיי שפעטער געפונען. זיין זון האט איבערגעגעבן צוויי דערפון צום משגיח. איינע איז געווען אז יעדן טאג וועט ער מחדש זיין א נייע עצה ווי אזוי צו פארבעסערן די ישיבה, און נישט לאזן אריבערגיין קיין טאג אן א חידוש; די אנדערע איז געווען ליב צו האבן יעדן בחור און זיך פירן ווארעם מיט יעדן איינעם."
+      },
+      "people": ["Reb Shraga Feivel Mendlowitz"],
+      "evidence": { "segs": [503, 505, 507, 510, 514, 519], "confidence": 0.7 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why did Yehoshua describe Moshe at his death as 'eved Hashem' and not as 'ish ha'Elokim'?",
+        "yi": "פארוואס האט יהושע באשריבן משה רבינו ביי זיין פטירה אלס \"עבד השם\" און נישט אלס \"איש האלקים\"?"
+      },
+      "answer": {
+        "en": "Yehoshua could not describe Moshe on the level of 'ish ha'Elokim', who stood above angels; he could describe him only from his own level, as an eved Hashem.",
+        "yi": "יהושע האט נישט געקענט באשרייבן משה רבינו אויף דער מדרגה פון \"איש האלקים\", וואס איז געשטאנען העכער מלאכים; ער האט אים נאר געקענט באשרייבן פון זיין אייגענער מדרגה, אלס עבד השם."
+      },
+      "questionSegs": [21, 23, 24],
+      "answerSegs": [25, 27, 34, 41],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "Why did Reb Shraga Feivel give away his best talmidim to build other yeshivos?",
+        "yi": "פארוואס האט ר' שרגא פייוול אוועקגעגעבן זיינע בעסטע תלמידים אויפצובויען אנדערע ישיבות?"
+      },
+      "answer": {
+        "en": "Because he was an eved Hashem, a servant of the Ribono shel Olam, and his whole life was devoted to serving Him.",
+        "yi": "ווייל ער איז געווען אן עבד השם, א קנעכט פונעם רבונו של עולם, און זיין גאנץ לעבן איז געווען געווידמעט צו דינען אים."
+      },
+      "questionSegs": [482],
+      "answerSegs": [483, 484, 486, 487],
+      "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav tells the bochurim that when they are in business, they should remember what it means to give one's best people to a competitor, to understand the mesirus nefesh of sending one's best talmidim to another yeshiva.",
+        "yi": "דער משגיח זאגט די בחורים אז ווען זיי וועלן זיין אין געשעפט, זאלן זיי געדענקען וואס עס מיינט אוועקצוגעבן די בעסטע מענטשן צום קאנקורענט, כדי צו פארשטיין די מסירות נפש פון אוועקשיקן די בעסטע תלמידים צו אן אנדער ישיבה."
+      },
+      "evidence": { "segs": [465, 470, 474, 476, 480], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "Reb Shraga Feivel Mendlowitz",
+    "yahrtzeit hesped",
+    "eved Hashem",
+    "Moshe as ish ha'Elokim",
+    "Shabbos as shleimus",
+    "shirah of creation",
+    "life as a niggun",
+    "harmony between groups",
+    "chinuch of each bochur according to his way",
+    "building yeshivos in America"
+  ],
+  "concepts": [
+    { "he": "איש האלקים", "heardAs": ["אישור אלוקים", "איש אלהים", "איש אבן דער שם"] },
+    { "he": "עבד השם", "heardAs": ["עבוד השם", "נבוד השם", "עובד השם", "נזר השם"] },
+    { "he": "שלימות", "heardAs": ["שלמה", "שלעמות", "שלילות", "שלנות"] },
+    { "he": "שירה", "heardAs": ["שורה", "שורות", "שיעור"] },
+    { "he": "כנרת", "heardAs": ["קינער", "קינערן"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבינו שלום", "רבינו שלמה", "רבנו של עולם"] },
+    { "he": "ארץ ישראל", "heardAs": ["ערבת ישראל", "ערב ישראל"] },
+    { "he": "קבלות", "heardAs": ["קאבאלעס"] }
+  ],
+  "people": [
+    { "name": "Reb Shraga Feivel Mendlowitz", "heardAs": ["רבי מענדלעה", "רבי מענדלאוויטש", "רבי מנדל לאבווי", "ראמאנדולעוויטש"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו"] },
+    { "name": "Yehoshua", "heardAs": ["ישעי", "ישוע"] },
+    { "name": "David Hamelech", "heardAs": ["דוד המלך", "דבר המלך"] },
+    { "name": "Rambam", "heardAs": ["רמב״ם"] }
+  ],
+  "asrNotes": "Yiddish ASR is poor throughout, with many garbled phrases. Names of Reb Shraga Feivel's teachers and of other figures in 111-153 (an account of a Rosh Yeshiva's shiur and a passage about a ship) could not be recovered and were left out; the source cited at seg 340 ('קטן מהרם') and the Chasam Sofer reference at 260 are unclear, and the passages at 356, 433-451 and 499-501 are mostly unrecoverable."
+}

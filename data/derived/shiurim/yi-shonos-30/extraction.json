@@ -1,0 +1,531 @@
+{
+  "shiurId": "yi-shonos-30",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "At the opening of a new beis medrash, the Rav teaches that in the days before Moshiach tefillah is the main avodah and demands constant mesiras nefesh, and that the foundation of the Ba'al Shem Tov's path is love between friends and among all Jews, as the sefer Shomer Emunim writes.",
+      "yi": "ביי דער חנוכת הבית פון א נייעם בית המדרש לערנט דער משגיח אז אין עקבתא דמשיחא איז תפילה דער עיקר עבודה און זי פאדערט כסדר מסירת נפש, און אז דער יסוד פונעם דרך הבעל שם טוב איז אהבת חברים און אהבת ישראל, אזוי ווי דער ספר שומר אמונים שרייבט."
+    },
+    "abstract": {
+      "en": "The Rav opens with thanks to those who built the new beis medrash and with the bracha 'matziv gevul almanah', explaining that Klal Yisroel is only 'like' a widow, since the Husband will return. Every new good thing draws the opposition of Amalek, and in the days before Moshiach nothing is achieved without mesiras nefesh. Tefillah, which Chazal call a thing standing at the height of the world yet treated lightly, is now the main avodah that will bring the geulah, so Amalek fights it most; one must ignore the scoffers and give up time and wishes daily, since many small sacrifices add up to more than one great one. He then explains the chassidic innovation of dibuk chaverim, citing the Divrei Chaim and the Ba'al Shem Tov, and reads at length from the Shomer Emunim on love of tzaddikim, friends and all Jews and on avoiding division. He explains that each shevet and each kehillah has its own nusach and ways from its own root above, that friends brought together share a root of the soul, and closes with brachos for the new beis medrash.",
+      "yi": "דער משגיח עפנט מיט א דאנק צו די וואס האבן אויפגעבויט דעם נייעם בית המדרש און מיט דער ברכה \"מציב גבול אלמנה\", און ער איז מסביר אז כלל ישראל איז נאר \"כאלמנה\", ווייל דער בעל וועט צוריקקומען. יעדע נייע גוטע זאך ווערט אנגעגריפן פון עמלק, און אין עקבתא דמשיחא קען מען צו גארנישט אנקומען אן מסירת נפש. תפילה, וואס חז\"ל רופן א זאך וואס שטייט ברומו של עולם און מען איז דערביי מזלזל, איז היינט דער עיקר עבודה וואס וועט ברענגען די גאולה, דערפאר קעמפט עמלק דערקעגן; מען טאר זיך נישט נתפעל זיין פון די ליצנים, און מען דארף יעדן טאג אוועקגעבן צייט און רצונות, ווייל אסאך קליינע מסירת נפש קומען צוזאמען צו מער ווי איין גרויסע. דערנאך ערקלערט ער דעם חסידישן ענין פון דיבוק חברים, מיט'ן דברי חיים און דעם בעל שם טוב, און לערנט לאנג פונעם ספר שומר אמונים וועגן אהבת צדיקים, אהבת חברים און אהבת ישראל און זיך היטן פון פירוד. ער איז מסביר אז יעדער שבט און יעדע קהילה האט אן אייגענעם נוסח און דרך לויט איר שורש אויבן, אז חברים וואס ווערן צוזאמגעפירט זענען פון איין שורש הנשמה, און ער ענדיגט מיט ברכות פאר דעם נייעם בית המדרש."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Every new good undertaking is attacked by Amalek, and in the days before Moshiach nothing can be achieved without mesiras nefesh.",
+          "yi": "יעדע נייע גוטע זאך ווערט אנגעגריפן פון עמלק, און אין עקבתא דמשיחא קען מען צו גארנישט אנקומען אן מסירת נפש."
+        },
+        "evidence": { "segs": [41, 51, 62, 63], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "In the days before Moshiach tefillah is the main avodah that will bring the geulah, though Torah study loses none of its greatness.",
+          "yi": "אין עקבתא דמשיחא איז תפילה דער עיקר עבודה וואס וועט ברענגען די גאולה, כאטש תלמוד תורה פארלירט גארנישט פון איר גרייסקייט."
+        },
+        "evidence": { "segs": [97, 102, 104, 108], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Constant mesiras nefesh is the great avodah: giving up any wish, such as a daily half hour to forty minutes for davening, is mesiras nefesh, and the small ones add up.",
+          "yi": "כסדר מסירת נפש איז די גרויסע עבודה: יעדער רצון וואס מען גיט אוועק, ווי א האלבע שעה ביז פערציג מינוט יעדן טאג צום דאווענען, איז מסירת נפש, און די קליינע קומען צוזאמען."
+        },
+        "evidence": { "segs": [137, 138, 147, 151, 155], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The Ba'al Shem Tov laid a great foundation on dibuk chaverim, and the Divrei Chaim explains that chassidic batei knesses are built on condition so that friends can eat and farbreng there.",
+          "yi": "דער בעל שם טוב האט אוועקגעלייגט א גרויסן יסוד אויף דיבוק חברים, און דער דברי חיים ערקלערט אז חסידישע בתי כנסיות ווערן געבויט על תנאי כדי מען זאל דארט קענען עסן און פארברענגען מיט חברים."
+        },
+        "evidence": { "segs": [176, 187, 199, 200], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Following the Shomer Emunim, love of tzaddikim, of friends and of all Jews is the heart of chassidus, and division between chassidic groups goes against the Ba'al Shem Tov's intent.",
+          "yi": "לויט'ן שומר אמונים איז אהבת צדיקים, אהבת חברים און אהבת ישראל דער עיקר פון חסידות, און פירוד צווישן די חסידישע קהילות איז קעגן דעם רצון פונעם בעל שם טוב."
+        },
+        "evidence": { "segs": [259, 264, 265, 266, 300, 391], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Each shevet has its own gate above and its own nusach and halachic ways, and people whom Providence brings together as friends share one root of the soul.",
+          "yi": "יעדער שבט האט זיין אייגענעם שער אין הימל און זיין אייגענעם נוסח און הלכות, און מענטשן וואס די השגחה פירט אז זיי זאלן זיין חברים זענען פון איין שורש הנשמה."
+        },
+        "evidence": { "segs": [433, 434, 435, 489, 490], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-shoinos-30-chanikus-habayis",
+      "startSeg": 0,
+      "endSeg": 27,
+      "title": {
+        "en": "Thanks and the bracha of the widow",
+        "yi": "א דאנק און די ברכה פון \"מציב גבול אלמנה\""
+      },
+      "summary": {
+        "en": "After a stretch of unusable audio, the Rav thanks those who worked with great dedication to build the beis medrash and brings the bracha 'matziv gevul almanah' said over a rebuilt beis haknesses. He explains that Klal Yisroel is only 'like' a widow, for the Husband will return.",
+        "yi": "נאך א שטיק אומפארשטענדליכן קלאנג דאנקט דער משגיח די וואס האבן מיט מסירת נפש אויפגעבויט דעם בית המדרש, און ער ברענגט די ברכה \"מציב גבול אלמנה\" וואס מען מאכט אויף א בית הכנסת וואס ווערט אויפגעבויט. ער ערקלערט אז כלל ישראל איז נאר \"כאלמנה\", ווייל דער בעל וועט צוריקקומען."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-30-chanikus-habayis",
+      "startSeg": 28,
+      "endSeg": 74,
+      "title": {
+        "en": "Amalek attacks every new beginning",
+        "yi": "עמלק פאלט אן אויף יעדן נייעם אנהייב"
+      },
+      "summary": {
+        "en": "The Rav says every good thing comes together with its opposite, and Amalek especially attacks the start of something new, so young men who begin a new undertaking must strengthen themselves against it. He cites a saying in the name of the Imrei Emes and of Belz that in the days before Moshiach nothing is reached without mesiras nefesh, and says the beis medrash is not built for a party but for avodas Hashem.",
+        "yi": "דער משגיח זאגט אז יעדע גוטע זאך קומט צוזאמען מיט א רע, און עמלק פארלייגט זיך בפרט אויף דעם אנהייב פון א נייע זאך, דערפאר דארפן יונגעלייט וואס הייבן אן א זאך זיך מחזק זיין דערקעגן. ער ברענגט א ווארט פון אמרי אמת און פון בעלז אז אין עקבתא דמשיחא קומט מען צו גארנישט אן מסירת נפש, און ער זאגט אז דער בית המדרש ווערט נישט געבויט פאר א פארטיי נאר פאר עבודת השם."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-30-chanikus-habayis",
+      "startSeg": 75,
+      "endSeg": 167,
+      "title": {
+        "en": "Tefillah as the main avodah before Moshiach",
+        "yi": "תפילה איז דער עיקר עבודה אין עקבתא דמשיחא"
+      },
+      "summary": {
+        "en": "The Rav brings the Gemara that tefillah stands at the height of the world yet people treat it lightly, and says that before Moshiach tefillah is the main avodah, illustrated by a sick man for whom orange juice matters more than bread. Amalek therefore fights tefillah most; one must ignore the scoffers and have constant mesiras nefesh, such as giving a half hour to forty minutes a day to davening.",
+        "yi": "דער משגיח ברענגט די גמרא אז תפילה שטייט ברומו של עולם און מענטשן זענען דערביי מזלזל, און זאגט אז אין עקבתא דמשיחא איז תפילה דער עיקר עבודה, מיט א משל פון א קראנקן וואס ביי אים איז ארענדזש דזשוס וויכטיגער ווי ברויט. דערפאר קעמפט עמלק מערסטנס קעגן תפילה; מען טאר זיך נישט נתפעל זיין פון די ליצנים און מען דארף האבן כסדר מסירת נפש, ווי צו געבן יעדן טאג א האלבע שעה ביז פערציג מינוט צום דאווענען."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-30-chanikus-habayis",
+      "startSeg": 168,
+      "endSeg": 253,
+      "title": {
+        "en": "Dibuk chaverim in the chassidic shtibel",
+        "yi": "דיבוק חברים אין דעם חסידישן שטיבל"
+      },
+      "summary": {
+        "en": "The Rav explains that a 'bayis gadol' is one where Torah and tefillah are made great, and that chassidus brought a new element to the beis haknesses: dibuk chaverim. He cites the Divrei Chaim that chassidic shuls are built on condition so friends can eat and farbreng there, the Ba'al Shem Tov's foundation of love between friends and the Arizal's practice before davening, and says that today, amid great breaches, the shtibel must be a place where friends give each other advice in Yiddishkeit.",
+        "yi": "דער משגיח ערקלערט אז א \"בית גדול\" איז וואו מען איז מגדל תורה און תפילה, און אז ביי חסידים איז נתחדש געווארן א נייער ענין אין בית הכנסת: דיבוק חברים. ער ברענגט דעם דברי חיים אז חסידישע שולן ווערן געבויט על תנאי כדי מען זאל דארט קענען עסן און פארברענגען, דעם יסוד פונעם בעל שם טוב אויף אהבת חברים און דעם מנהג פונעם אריז\"ל פאר'ן דאווענען, און זאגט אז היינט, ווען עס זענען דא גרויסע פרצות, דארף דער שטיבל זיין א פלאץ וואו חברים געבן זיך עצות אין אידישקייט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-30-chanikus-habayis",
+      "startSeg": 254,
+      "endSeg": 353,
+      "title": {
+        "en": "Shomer Emunim on love of friends and all Jews",
+        "yi": "דער שומר אמונים וועגן אהבת חברים און אהבת ישראל"
+      },
+      "summary": {
+        "en": "The Rav reads from the sefer Shomer Emunim that what remains from the tzaddikim of old is love of tzaddikim, of friends and of all Jews, that Klal Yisroel as a whole has no blemish, and that division between chassidic groups is against the Ba'al Shem Tov's will. He then applies it: going to a friend's simcha, helping families when a wife gives birth, and dealing with a wrongdoer gently rather than with zealotry that comes from one's own anger.",
+        "yi": "דער משגיח לערנט פונעם ספר שומר אמונים אז וואס עס איז געבליבן פון די אמאליגע צדיקים איז אהבת צדיקים, אהבת חברים און אהבת ישראל, אז כלל ישראל אלס גאנצעס האט נישט קיין מום, און אז פירוד צווישן חסידישע קהילות איז קעגן דעם רצון פונעם בעל שם טוב. דערנאך ברענגט ער עס צו למעשה: גיין צו א חברס שמחה, העלפן משפחות ווען א ווייב איז א קימפעטארין, און זיך פירן מיט א איד וואס טוט נישט ריכטיג בדרכי נועם און נישט מיט קנאות וואס קומט פון אייגענעם כעס."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-30-chanikus-habayis",
+      "startSeg": 354,
+      "endSeg": 418,
+      "title": {
+        "en": "Against division and lashon hara between groups",
+        "yi": "קעגן פירוד און לשון הרע צווישן קהילות"
+      },
+      "summary": {
+        "en": "The Rav continues reading the Shomer Emunim: through love of Jews one reaches the highest levels, the aim of the Ba'al Shem Tov's path is unity among Jews, and one must not speak lashon hara about any group of chassidim but seek mercy for others. Division, the sefer says, is complete falsehood, and the Rav calls these great foundations.",
+        "yi": "דער משגיח לערנט ווייטער אין שומר אמונים: דורך אהבת ישראל קומט מען צו די העכסטע מדריגות, די תכלית פונעם דרך הבעל שם טוב איז אחדות צווישן אידן, און מען טאר נישט רעדן לשון הרע אויף קיין שום כת חסידים נאר בעטן רחמים אויף זיי. פירוד, שרייבט דער ספר, איז א שקר מוחלט, און דער משגיח רופט עס גרויסע יסודות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-30-chanikus-habayis",
+      "startSeg": 419,
+      "endSeg": 485,
+      "title": {
+        "en": "Each shevet with its own gate and nusach",
+        "yi": "יעדער שבט מיט זיין אייגענעם שער און נוסח"
+      },
+      "summary": {
+        "en": "The Rav calls ahavas chaverim the foundation of the Ba'al Shem Tov's path, then explains the passuk of appointing judges 'for your tribes': each of the twelve shevatim has its own gate in heaven and its own nusach and halachic ways, as Sefardim and Ashkenazim differ today. He tells of Rav Chaim Ozer advising a man to move to Eretz Yisroel because of such a difference, and concludes that each kehillah has its own ways from its root at Matan Torah.",
+        "yi": "דער משגיח רופט אהבת חברים דעם יסוד פונעם דרך הבעל שם טוב, און ערקלערט דערנאך דעם פסוק פון שופטים \"לשבטיך\": יעדער פון די צוועלף שבטים האט זיין אייגענעם שער אין הימל און זיין אייגענעם נוסח און הלכות, אזוי ווי ספרדים און אשכנזים זענען היינט אנדערש. ער דערציילט אז רבי חיים עוזר האט געראטן א איד צו פארן קיין ארץ ישראל צוליב אזא חילוק, און זאגט אז יעדע קהילה האט אירע אייגענע וועגן פון איר שורש ביי קבלת התורה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-30-chanikus-habayis",
+      "startSeg": 486,
+      "endSeg": 518,
+      "title": {
+        "en": "One root of the soul; brachos for the beis medrash",
+        "yi": "איין שורש הנשמה; ברכות פאר'ן בית המדרש"
+      },
+      "summary": {
+        "en": "The Rav says that when Providence makes people friends it is a sign they share a root of the soul, and between them love must be stronger, as he cites from the Arizal. He closes with brachos that the beis medrash be a 'bayis gadol' for Torah, tefillah and love of friends and of all Jews, and with the hope of the rebuilt Beis Hamikdash.",
+        "yi": "דער משגיח זאגט אז ווען די השגחה פירט אז מענטשן זאלן זיין חברים איז עס א סימן אז זיי זענען פון איין שורש הנשמה, און צווישן זיי דארף די אהבה זיין שטארקער, אזוי ווי ער ברענגט פונעם אריז\"ל. ער ענדיגט מיט ברכות אז דער בית המדרש זאל זיין א \"בית גדול\" פאר תורה, תפילה, אהבת חברים און אהבת ישראל, און מיט דער האפענונג אויף דעם בית המקדש."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "ברוך מצה גדול האלמנה",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 58b",
+      "sefariaRef": "Berakhot 58b",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [14, 15], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "כה אלמאנע ולא אלמאנע ממש",
+      "work": "Gemara Taanis",
+      "ref": "Taanis 20a",
+      "sefariaRef": "Taanit 20a",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [19, 20, 21, 23], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "השניה נבואים מתנבאים בתגנן אחד",
+      "work": "Gemara Sanhedrin",
+      "ref": "Sanhedrin 89a",
+      "sefariaRef": "Sanhedrin 89a",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [57, 58], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די גורלע חסידים איבער פון די אמרי אמת",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [60, 62, 63], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "קרום זלות לבני ידים, עובדים ביים שום דעם ברמה של עולם",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 6b",
+      "sefariaRef": "Berakhot 6b",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [77, 78, 89], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "דוד המלך זאגט אזוי, תום זלות לבני אדם",
+      "work": "Tehillim",
+      "ref": "Tehillim 12:9",
+      "sefariaRef": "Psalms 12:9",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [90, 91], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "מסמתי פני כחלומות",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 50:7",
+      "sefariaRef": "Isaiah 50:7",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [131], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "מגדלון בית גדול ... מגדלון בית תורה, מגדלון בית תפילה",
+      "work": "Gemara Megillah",
+      "ref": "Megillah 27a",
+      "sefariaRef": "Megillah 27a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [173], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער שטעטן תשובים דברי חיים",
+      "work": "Responsa Divrei Chaim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [177, 199, 200, 223], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "שטעט פון ראי' הקודש",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [188, 189, 190], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "האמר רבי יקילי, זעה כלל גדול בתורה",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [191, 420, 421], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "עז נטברא יראי ה' איש אליהו",
+      "work": "Malachi",
+      "ref": "Malachi 3:16",
+      "sefariaRef": "Malachi 3:16",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [231], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ספר שמע רמנים",
+      "work": "Shomer Emunim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [259, 260, 263, 264, 265, 266], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "כהלך יפה רעייתו, ומום אין ברך",
+      "work": "Shir Hashirim",
+      "ref": "Shir Hashirim 4:7",
+      "sefariaRef": "Song of Songs 4:7",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [273, 274, 276], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "נייע מלוה מלך און פרשת דברים",
+      "work": "Noam Elimelech",
+      "ref": "Noam Elimelech, Devarim",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [277, 278, 279], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "שפטים ושטחים ... ושפטים ושמים משפט צדק",
+      "work": "Devarim",
+      "ref": "Devarim 16:18",
+      "sefariaRef": "Deuteronomy 16:18",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [424, 426, 428, 472], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די סארדים, פסק'נען ווי דער השכן הערוך ... די אשכנזים פסק'נען ווי דער המור",
+      "work": "Shulchan Aruch",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [446, 447, 448], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אזוי שטעט פון ארי הקדש ... פון רבי חיים זצ״ל",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [493, 494], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "מכן יהי בית ה' בראש הארים ... ה' ירושלים",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 2:2-3",
+      "sefariaRef": "Isaiah 2:2-3",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [506, 508, 509], "confidence": 0.7 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Amalek, the klipah of 'reishis', concentrates on beginnings, so a new beis medrash and a new effort in tefillah meet the strongest opposition.",
+        "yi": "עמלק, די קליפה פון \"ראשית\", פארלייגט זיך דווקא אויף אנהייבן, דערפאר באגעגנט א נייער בית המדרש און א נייע התחזקות אין תפילה דעם שטארקסטן קעגנשטאנד."
+      },
+      "evidence": { "segs": [42, 43, 51], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Like a patient for whom orange juice is at the moment more important than bread, in the days before Moshiach tefillah takes first place without lessening the greatness of Torah study.",
+        "yi": "אזוי ווי ביי א קראנקן איז אין יענער צייט ארענדזש דזשוס וויכטיגער ווי ברויט, אזוי נעמט תפילה אין עקבתא דמשיחא דעם ערשטן פלאץ, אן מינדערן די גרייסקייט פון תלמוד תורה."
+      },
+      "evidence": { "segs": [111, 114, 117, 119, 120], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "Many small daily sacrifices of one's wishes add up to a mesiras nefesh greater even than the one great act of giving up life.",
+        "yi": "אסאך קליינע טעגליכע מסירת נפש פון אייגענע רצונות קומען צוזאמען צו א מסירת נפש וואס איז נאך גרעסער ווי די עיקר מסירת נפש פון אוועקגעבן דאס לעבן."
+      },
+      "evidence": { "segs": [143, 145, 147, 151, 152], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Eating and farbrenging together in the shtibel after davening is no interruption of tefillah but can itself lead to accepting the yoke of Heaven.",
+        "yi": "עסן און פארברענגען צוזאמען אין שטיבל נאכ'ן דאווענען איז נישט קיין הינטערשטעלונג פון תפילה, נאר עס קען אליין ברענגען צו קבלת עול מלכות שמים."
+      },
+      "evidence": { "segs": [212, 220, 221], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The differences of nusach and custom between Jewish groups reflect the twelve gates in heaven, one for each shevet, which is why the Torah says to appoint judges 'for your tribes'.",
+        "yi": "די חילוקים אין נוסח און מנהג צווישן אידישע קהילות קומען פון די צוועלף שערים אין הימל, איינער פאר יעדן שבט, און דערפאר זאגט די תורה צו שטעלן שופטים \"לשבטיך\"."
+      },
+      "evidence": { "segs": [433, 434, 435, 468, 473], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "When Providence draws certain people together as friends, it shows they share a root of the soul, and the love between them must be stronger.",
+        "yi": "ווען די השגחה פירט אז געוויסע מענטשן זאלן זיין חברים, ווייזט עס אז זיי זענען פון איין שורש הנשמה, און די אהבה צווישן זיי דארף זיין שטארקער."
+      },
+      "evidence": { "segs": [488, 489, 490, 493], "confidence": 0.8 }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "Rav Chaim Ozer advises a move to Eretz Yisroel",
+        "yi": "רבי חיים עוזר ראט צו פארן קיין ארץ ישראל"
+      },
+      "retelling": {
+        "en": "The Rav tells of a man who had a certain illness about which, in the laws of treifos, the Beis Yosef rules leniently and the Rema strictly. Rav Chaim Ozer advised him to move to Eretz Yisroel, where the halachah follows the Beis Yosef. The Rav brings it to show that the halachah can differ from place to place.",
+        "yi": "דער משגיח דערציילט פון א איד וואס האט געהאט א געוויסע מחלה; אין הלכות טריפות איז זי לויט'ן בית יוסף כשר און לויט'ן רמ\"א נישט כשר. רבי חיים עוזר האט אים געראטן ער זאל זיך איבערציען קיין ארץ ישראל, וואו מען פסק'נט ווי דער בית יוסף. דער משגיח ברענגט עס צו ווייזן אז די הלכה קען זיין אנדערש פון ארט צו ארט."
+      },
+      "people": ["Rav Chaim Ozer", "the Beis Yosef", "the Rema"],
+      "evidence": { "segs": [453, 456, 459, 464, 465], "confidence": 0.65 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why is Klal Yisroel called 'like a widow' in the bracha over a rebuilt beis haknesses?",
+        "yi": "פארוואס רופט מען כלל ישראל \"אלמנה\" אין דער ברכה אויף א בית הכנסת וואס ווערט אויפגעבויט?"
+      },
+      "answer": {
+        "en": "Chazal say she is only like a widow and not truly one, for she knows the Husband will return.",
+        "yi": "חז\"ל זאגן אז זי איז נאר \"כאלמנה\" און נישט קיין אלמנה ממש, ווייל זי ווייסט אז דער בעל וועט צוריקקומען."
+      },
+      "questionSegs": [14, 17, 19],
+      "answerSegs": [21, 22, 23],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why do chassidim sit down to eat together in the beis haknesses after davening?",
+        "yi": "פארוואס זעצן זיך חסידים נאכ'ן דאווענען אוועק עסן צוזאמען אין בית הכנסת?"
+      },
+      "answer": {
+        "en": "Their batei knesses are built on condition for this, and eating together as dibuk chaverim leads to kabbalas ol malchus shamayim and is no interruption of tefillah.",
+        "yi": "זייערע בתי כנסיות ווערן געבויט על תנאי דערויף, און דאס עסן צוזאמען אלס דיבוק חברים ברענגט צו קבלת עול מלכות שמים און איז נישט קיין הינטערשטעלונג פון תפילה."
+      },
+      "questionSegs": [212],
+      "answerSegs": [200, 203, 221, 223],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "Why does the passuk say to appoint judges 'for your tribes'?",
+        "yi": "פארוואס זאגט דער פסוק צו שטעלן שופטים \"לשבטיך\"?"
+      },
+      "answer": {
+        "en": "Each shevet has its own root and gate above and receives its own share of Torah, so only judges of its own shevet can give it a just judgment.",
+        "yi": "יעדער שבט האט זיין אייגענעם שורש און שער אויבן און באקומט זיין אייגענע השפעה פון תורה, דערפאר קענען נאר שופטים פון זיין אייגענעם שבט אים געבן א משפט צדק."
+      },
+      "questionSegs": [428, 429],
+      "answerSegs": [468, 471, 474, 477],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says one must not be swayed by those who mock tefillah, but must have mesiras nefesh for it.",
+        "yi": "דער משגיח זאגט אז מען טאר זיך נישט נתפעל זיין פון די וואס שפעטן פון תפילה, נאר מען דארף האבן מסירת נפש דערויף."
+      },
+      "evidence": { "segs": [129, 132, 134], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says friends should go to and help at each other's simchas, and help each other's families, such as cooking meals when a wife has given birth.",
+        "yi": "דער משגיח זאגט אז חברים זאלן גיין צו און העלפן ביי איינעם דעם אנדערנס שמחה, און העלפן די משפחות, ווי קאכן מאלצייטן ווען א ווייב איז א קימפעטארין."
+      },
+      "evidence": { "segs": [314, 315, 316, 320, 322, 323], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that today one should not respond to a wrongdoer with zealotry and shouting, but gently and without anger, since everyone has his weaknesses.",
+        "yi": "דער משגיח זאגט אז היינט דארף מען נישט רעאגירן אויף א איד וואס טוט נישט ריכטיג מיט קנאות און געשריי, נאר בדרכי נועם און אן כעס, ווייל יעדער האט זיינע שוואכקייטן."
+      },
+      "evidence": { "segs": [331, 332, 343, 347, 348, 350], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Following the Shomer Emunim, the Rav teaches that one must not speak lashon hara about any group of chassidim.",
+        "yi": "לויט'ן שומר אמונים לערנט דער משגיח אז מען טאר נישט רעדן לשון הרע אויף קיין שום כת חסידים."
+      },
+      "evidence": { "segs": [387, 388, 393], "confidence": 0.7 }
+    }
+  ],
+  "candidateTopics": [
+    "mesiras nefesh for tefillah",
+    "tefillah in the days before Moshiach",
+    "Amalek and new beginnings",
+    "dibuk chaverim",
+    "ahavas Yisroel",
+    "Shomer Emunim",
+    "the chassidic shtibel",
+    "twelve tribes and their nuschaos",
+    "root of the soul",
+    "chanukas habayis"
+  ],
+  "concepts": [
+    { "he": "מציב גבול אלמנה", "heardAs": ["מצה גדול האלמנה"] },
+    { "he": "כאלמנה", "heardAs": ["כה אלמאנע"] },
+    { "he": "מסירת נפש", "heardAs": ["מסירת נפש", "משה נפש"] },
+    { "he": "עקבתא דמשיחא", "heardAs": ["תנקפת איז די משיחה", "נקפס איז די משיח'ע", "עקוויס איז דער משיח'ער"] },
+    { "he": "עמלק", "heardAs": ["מולק", "עמלק"] },
+    { "he": "ברומו של עולם", "heardAs": ["ברמה של עולם", "ברמי של עולם"] },
+    { "he": "מזלזלים בהם", "heardAs": ["מזל זלום בהם", "מזעל זלים בהם"] },
+    { "he": "דיבוק חברים", "heardAs": ["דיבוג חברים", "אבות חברים", "אבת חברים"] },
+    { "he": "אהבת ישראל", "heardAs": ["אבות ישראל", "יבאות ישראל"] },
+    { "he": "שורש הנשמה", "heardAs": ["שורש הנפש"] },
+    { "he": "קנאות", "heardAs": ["כנות"] },
+    { "he": "שבטים", "heardAs": ["שבטים", "שבט"] }
+  ],
+  "people": [
+    { "name": "the Imrei Emes", "heardAs": ["אמרי אמת"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["בעש''ט", "ביי שם טוב", "בעשי'ט"] },
+    { "name": "the Divrei Chaim", "heardAs": ["דברי חיים"] },
+    { "name": "the Arizal", "heardAs": ["ראי' הקודש", "ארי הקדש"] },
+    { "name": "Rabbi Akiva", "heardAs": ["רבי יקילי"] },
+    { "name": "Dovid Hamelech", "heardAs": ["דוד המלך"] },
+    { "name": "Rav Chaim Ozer", "heardAs": ["רבי חיים עוזר", "רבי חיים עוזבי"] },
+    { "name": "the Beis Yosef", "heardAs": ["בית יוסף"] },
+    { "name": "the Rema", "heardAs": ["רמאי", "המור"] },
+    { "name": "Rabbi Chaim Vital", "heardAs": ["רבי חיים זצ״ל"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair for the Rav's own speech but the long passages he reads from the Shomer Emunim (segs 263-305, 355-416) are badly garbled; only their general line could be recovered. Segment 0 (about three minutes) is a repeated hallucination over unusable audio, and the names of the people thanked (segs 10-11) and of the Belzer Rebbe (seg 61) could not be recovered. The explanation of 'lishvatecha' is attributed to a sefer whose name (seg 431) is unclear and is not listed as a source."
+}

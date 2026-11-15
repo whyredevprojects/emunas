@@ -1,0 +1,103 @@
+{
+ "shiurId": "yi-shonos-21",
+ "generatedAt": "2026-11-15T00:27:07.537Z",
+ "shiur": {
+  "id": "yi-shonos-21",
+  "lang": "yi",
+  "category": "shonos",
+  "seriesId": null,
+  "seriesOrder": null,
+  "catalog": {
+   "source": "pocket-guide-2012",
+   "sectionId": "shonos",
+   "sectionTitle": "שונות",
+   "n": "21",
+   "page": 36,
+   "titleOriginal": "השבת אבידה של נשמות להקב\"ה' מחנכים יחידים' יחזקאל - טענות הקב\"ה על מלמדים שאינם נאמנים' אינו אובד תקוה על נשמה בישראל",
+   "subTitle": null,
+   "heading": "חינוך",
+   "derived": "catalog",
+   "note": null
+  },
+  "parsha": null,
+  "zman": null,
+  "perek": null,
+  "hebrewYears": [5762],
+  "recordingIds": [
+   "y-shoinos-21-chinuch"
+  ],
+  "inScope": true,
+  "outOfScopeReason": null,
+  "pathNotes": []
+ },
+ "series": null,
+ "catalogTopics": [
+  "השבת אבידה של נשמות להקב\"ה' מחנכים יחידים' יחזקאל - טענות הקב\"ה על מלמדים שאינם נאמנים' אינו אובד תקוה על נשמה בישראל"
+ ],
+ "totalDurationSec": 1822.4870625,
+ "recordings": [
+  {
+   "recording": {
+    "id": "y-shoinos-21-chinuch",
+    "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 03 Shoinos/21 Chinuch.mp3",
+    "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 03 Shoinos/21 Chinuch",
+    "durationSec": 1822.49,
+    "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+    "sizeBytes": 9070332,
+    "duplicateOf": null,
+    "partOf": null
+   },
+   "order": 0,
+   "transcriptLanguage": "yi",
+   "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+   "durationSec": 1822.4870625,
+   "segmentCount": 14,
+   "starts": [0.66,288.92,601.42,609.18,672.73,768.66,845.41,847.69,1297.43,1515.53,1526.26,1691.34,1709.38,1715.5],
+   "ends": [151.84,539.06,608.44,672.35,734.06,823.64,847.69,848.05,1515.19,1521.87,1559.95,1708.9,1715.5,1725.7],
+   "noise": [
+    {
+     "idx": 0,
+     "types": [
+      "long_sparse"
+     ]
+    },
+    {
+     "idx": 1,
+     "types": [
+      "long_sparse"
+     ]
+    },
+    {
+     "idx": 3,
+     "types": [
+      "long_sparse"
+     ]
+    },
+    {
+     "idx": 4,
+     "types": [
+      "long_sparse"
+     ]
+    },
+    {
+     "idx": 5,
+     "types": [
+      "long_sparse"
+     ]
+    },
+    {
+     "idx": 8,
+     "types": [
+      "long_sparse"
+     ]
+    },
+    {
+     "idx": 10,
+     "types": [
+      "long_sparse"
+     ]
+    }
+   ]
+  }
+ ]
+}

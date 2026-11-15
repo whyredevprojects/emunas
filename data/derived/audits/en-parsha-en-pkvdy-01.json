@@ -1,0 +1,17 @@
+{
+  "shiurId": "en-parsha-en-pkvdy-01",
+  "promptVersion": "audit-v1",
+  "auditedAt": "2026-11-15T12:00:00Z",
+  "counts": {
+    "claimsChecked": 26, "unsupported": 0, "hallucinated": 0,
+    "sourcesChecked": 12, "sourceErrors": 0, "sourcesMissed": 0,
+    "boundariesChecked": 5, "boundariesBad": 0, "noiseMishandled": 0,
+    "termsChecked": 14, "termErrors": 0, "termsCopiedGarbled": 0,
+    "yiddishSentencesChecked": 22, "yiddishBadSentences": 6, "yiddishTranslationese": 2,
+    "flowBreaks": 0, "paddingSentences": 0, "contradictsExtraction": 0,
+    "ruleViolations": 0
+  },
+  "severity": "minor",
+  "needsReview": false,
+  "notes": "Claims, sources and boundaries hold up well: sampled claims across all ten sections are supported by cited segs, and all 12 sampled refs (Shemos 38, Sotah 42a, Devarim 7:12, Bereishis 22:1, Bamidbar 23:19, Ramban 12:6, Chullin 139b, Menachos 29b, Esther 8:17, Sanhedrin 70b) are correct; writeup.yi[5].paragraphs[1] 'א פיל פון אמונה' renders English 'pill' (segs 829-830) as an English word that reads as 'much'; writeup.yi[8].paragraphs[1] 'נעמט אים אוועק די כח' and sections[8].summary.yi 'דעם שליטה' have wrong gender; writeup.yi[1].paragraphs[0] 'איין שפעטישע ווארט' ungrammatical; sections[6].summary.yi uses Daytshmerish 'שילדערט'; 'פרובירונג'/'אויפהייבונג' (sections[3].summary.yi, writeup.yi[3].paragraphs[1]) stiff Germanic coinages; translationese in writeup.yi[6].paragraphs[1] 'דער משכן שפיגלט עס אפ' and insights[0].yi 'פארלענגערונג ... האט זיין גורל'"
+}

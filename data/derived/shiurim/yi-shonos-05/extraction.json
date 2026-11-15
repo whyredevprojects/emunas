@@ -1,0 +1,350 @@
+{
+  "shiurId": "yi-shonos-05",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "Parting from the bachurim before they leave for camp, the Rav blesses them and asks them to sanctify Hashem's name through good conduct with others, warm tefillah and small daily acts that help complete the Beis Hamikdash.",
+      "yi": "ביים זיך געזעגענען מיט די בחורים פארן ארויספארן אין קעמפ, בענטשט זיי דער משגיח און בעט אז זיי זאלן מקדש שם שמים זיין מיט א שיינע הנהגה מיט אנדערע, מיט א ווארעמע תפילה און מיט קליינע זאכן יעדן טאג וואס בויען דעם בית המקדש."
+    },
+    "abstract": {
+      "en": "The Rav opens with the custom of Chazal to bless one another when parting from the yeshiva, citing the brachos in Gemara Berachos, including the wish that no talmid of the group turn out badly. From there he turns to the bachurim's time in camp among others: a ben Torah is watched, and bad middos or making things hard for roommates is a chillul Hashem, while good conduct makes him an example. He warns against showing off and pride, with a play on the name Devorah (a bee). He asks them to strengthen Torah and tefillah daily, to come on time and daven warmly, since kiddush Hashem is the greatest thing and chillul Hashem the worst. He brings the Sanzer Rav's teaching that the Beis Hamikdash is nearly complete, so small acts of self-restraint finish it, and a story of Reb Yechezkel'e of Kuzmir about ahavas chinam on Tisha B'Av. He closes with daily chizuk, like vitamin C, and blessings.",
+      "yi": "דער משגיח עפנט מיטן מנהג פון די חכמים זיך צו בענטשן איינער דעם אנדערן ביים אוועקגיין פון דער ישיבה, און ער ברענגט די ברכות פון דער גמרא אין ברכות, אויך דעם וואונטש אז קיין תלמיד פון דער חבורה זאל נישט ארויסגיין שלעכט. דערנאך רעדט ער וועגן די בחורים אין קעמפ צווישן אנדערע: מ'קוקט אויף א בן תורה, און א שלעכטע מידה אדער שווער מאכן פאר די חברים אין צימער איז א חילול השם, אבער א גוטע הנהגה מאכט אים פאר א ביישפיל. ער ווארנט קעגן זיך ארויסווייזן און גאוה, מיט א ווארט אויפן נאמען דבורה. ער בעט מחזק זיין תורה און תפילה יעדן טאג, קומען אין צייט און דאווענען ווארעם, ווייל א קידוש השם איז די גרעסטע זאך און א חילול השם די ערגסטע. ער ברענגט פונעם צאנזער רב אז דער בית המקדש איז כמעט פארטיג, און קליינע זאכן פון איינהאלטן זיך ענדיגן אים, און א מעשה פון רבי יחזקאל'ע קוזמירער וועגן אהבת חנם אום תשעה באב. ער שליסט מיט חיזוק יעדן טאג, ווי וויטאמין סי, און מיט ברכות."
+    },
+    "keyPoints": [
+      {
+        "text": { "en": "Chazal's custom was to bless one another when parting, and the Rav applies their brachos to the bachurim leaving the yeshiva.", "yi": "דער מנהג פון חז\"ל איז געווען זיך צו בענטשן ביים זיך געזעגענען, און דער משגיח בענטשט אזוי די בחורים וואס פארן אוועק פון דער ישיבה." },
+        "evidence": { "segs": [14, 17, 19, 20, 25], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "A ben Torah among others is watched, so bad middos or inconsiderate behavior is a chillul Hashem, while good conduct makes him an example for all.", "yi": "א בן תורה צווישן אנדערע ווערט באקוקט, דערפאר איז א שלעכטע מידה אדער שווער מאכן פאר אנדערע א חילול השם, און א גוטע הנהגה מאכט אים פאר א ביישפיל פאר אלע." },
+        "evidence": { "segs": [57, 60, 64, 88, 89, 102], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "Torah and tefillah need fresh chizuk every day, and a ben Torah should love rebuke and words of mussar.", "yi": "תורה און תפילה דארפן האבן חיזוק יעדן טאג, און א בן תורה דארף ליב האבן תוכחה און ווערטער פון מוסר." },
+        "evidence": { "segs": [156, 157, 161, 165, 174], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "Kiddush Hashem is the greatest thing there is, and its opposite, chillul Hashem, is not atoned even by Yom Kippur and suffering.", "yi": "קידוש השם איז די גרעסטע זאך וואס קען זיין, און דער היפוך, חילול השם, ווערט נישט מכופר אפילו מיט יום כיפור און יסורים." },
+        "evidence": { "segs": [192, 195, 199, 200], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "The Beis Hamikdash is nearly complete, and small acts of self-restraint, good learning and davening by each person help finish it.", "yi": "דער בית המקדש איז כמעט פארטיג, און קליינע זאכן פון איינהאלטן זיך, גוט לערנען און דאווענען פון יעדן איינעם העלפן אים ענדיגן." },
+        "evidence": { "segs": [231, 262, 277, 286, 288], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "Since the Beis Hamikdash was destroyed through sinas chinam, the main mourning today is ahavas chinam, doing a favor for another Jew.", "yi": "ווייל דער בית המקדש איז חרוב געווארן צוליב שנאת חנם, איז די עיקר קינה היינט אהבת חנם, טאן א טובה פאר א איד." },
+        "evidence": { "segs": [318, 319, 321, 322], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-shoinos-05-hadracha-lekayitz-lebachurim",
+      "startSeg": 0,
+      "endSeg": 54,
+      "title": { "en": "Chazal's blessings when parting", "yi": "די ברכות פון חז\"ל ביים זיך געזעגענען" },
+      "summary": {
+        "en": "The Rav takes leave of the bachurim, praising them, and explains that Chazal used to bless one another when leaving the yeshiva. He brings the brachos from Gemara Berachos, including the wish that no talmid of the group turn out like Achitofel, Doeg or Gechazi.",
+        "yi": "דער משגיח געזעגנט זיך מיט די בחורים, לויבט זיי, און ערקלערט אז די חכמים פלעגן זיך בענטשן ביים אוועקגיין פון דער ישיבה. ער ברענגט די ברכות פון דער גמרא אין ברכות, אויך דעם וואונטש אז קיינער פון דער חבורה זאל נישט ארויסגיין ווי אחיתופל, דואג אדער גחזי."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-05-hadracha-lekayitz-lebachurim",
+      "startSeg": 55,
+      "endSeg": 151,
+      "title": { "en": "Kiddush Hashem among others in camp", "yi": "קידוש השם צווישן אנדערע אין קעמפ" },
+      "summary": {
+        "en": "The Rav warns that a ben Torah who goes out among others is watched: anger, a mess in a shared room or mockery is a chillul Hashem, while good middos make him an example. He warns against showing off group pride and against haughtiness, with a play on Devorah, whose name means bee.",
+        "yi": "דער משגיח ווארנט אז מ'קוקט אויף א בן תורה וואס גייט ארויס צווישן אנדערע: כעס, אן אומארדענונג אין א צימער מיט חברים אדער שפיצלעך איז א חילול השם, און גוטע מידות מאכן אים פאר א ביישפיל. ער ווארנט קעגן ארויסווייזן פארטייאישקייט און קעגן גאוה, מיט א ווארט אויפן נאמען דבורה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-05-hadracha-lekayitz-lebachurim",
+      "startSeg": 152,
+      "endSeg": 221,
+      "title": { "en": "Daily chizuk in Torah and tefillah", "yi": "חיזוק יעדן טאג אין תורה און תפילה" },
+      "summary": {
+        "en": "The Rav says Torah and tefillah need chizuk every day, that loving rebuke is one of the ways Torah is acquired, and asks the bachurim to come on time and daven warmly. Kiddush Hashem is the greatest thing, and chillul Hashem is not atoned even by Yom Kippur.",
+        "yi": "דער משגיח זאגט אז תורה און תפילה דארפן האבן חיזוק יעדן טאג, אז אוהב את התוכחות איז פון די זאכן וואס דורך זיי קונה מען תורה, און ער בעט די בחורים קומען אין צייט און דאווענען ווארעם. קידוש השם איז די גרעסטע זאך, און חילול השם ווערט נישט מכופר אפילו מיט יום כיפור."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-05-hadracha-lekayitz-lebachurim",
+      "startSeg": 222,
+      "endSeg": 305,
+      "title": { "en": "Small deeds finish the Beis Hamikdash", "yi": "קליינע זאכן ענדיגן דעם בית המקדש" },
+      "summary": {
+        "en": "The Rav brings the Sanzer Rav's teaching that the heavenly Beis Hamikdash is complete except for the paroches, and his answer why he did not make it himself. Today only the smallest details remain, so small acts of restraint, not shaming others and good learning and davening, build it.",
+        "yi": "דער משגיח ברענגט פונעם צאנזער רב אז דער בית המקדש אין הימל איז פארטיג חוץ דעם פרוכת, און זיין תירוץ פארוואס ער האט אים נישט אליין געמאכט. היינט פעלן נאר די קלענסטע זאכן, און קליינע זאכן פון איינהאלטן זיך, נישט פארשעמען און גוט לערנען און דאווענען בויען אים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-05-hadracha-lekayitz-lebachurim",
+      "startSeg": 306,
+      "endSeg": 369,
+      "title": { "en": "Ahavas chinam and the closing brachah", "yi": "אהבת חנם און די ברכה צום סוף" },
+      "summary": {
+        "en": "The Rav tells how Reb Yechezkel'e of Kuzmir sent a weeping chassid on Tisha B'Av to do a favor for a Jew, since the churban came through sinas chinam. He asks the bachurim to help and encourage others, compares chizuk to vitamin C that must be taken daily, and blesses them.",
+        "yi": "דער משגיח דערציילט ווי רבי יחזקאל'ע קוזמירער האט אום תשעה באב געשיקט א חסיד וואס האט געוויינט ביי די קינות צו טאן א טובה פאר א איד, ווייל דער חורבן איז געקומען דורך שנאת חנם. ער בעט די בחורים העלפן און מחזק זיין אנדערע, פארגלייכט חיזוק מיט וויטאמין סי וואס מ'דארף נעמען יעדן טאג, און בענטשט זיי."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-05-hadracha-lekayitz-lebachurim",
+      "startSeg": 370,
+      "endSeg": 401,
+      "title": { "en": "The old chassidim's parting song", "yi": "דאס ליד פון די אלטע חסידים ביים געזעגענען" },
+      "summary": {
+        "en": "The Rav recalls how old Russian chassidim sang a niggun when parting from the Rebbe, about meeting again if Hashem grants life, followed by singing and poorly transcribed audio.",
+        "yi": "דער משגיח דערמאנט ווי די אלטע רוסישע חסידים פלעגן זינגען א ניגון ביים אוועקפארן פונעם רבי'ן, אז מ'וועט זיך נאכאמאל זען אויב השם יתברך וועט געבן לעבן, און דערנאך קומט געזאנג און אומקלארע אויפנאמע."
+      },
+      "kind": "singing",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "אזוי שטעט אין די גמרא און ברכות ... עולמך תורה וכחייך",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 17a",
+      "sefariaRef": "Berakhot 17a",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [20, 21, 25, 33, 37], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "שלא תעשה יתנא כסייעתא שאו דוד שיצא ממינל אחי צפל",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 17b",
+      "sefariaRef": "Berakhot 17b",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [45, 46, 50, 52, 54], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "עס שטעט אין מדרש, א בן תורה דארף ארויסשיינען כששנה בן החכם",
+      "work": "Shir HaShirim",
+      "ref": "Shir HaShirim 2:2",
+      "sefariaRef": "Song of Songs 2:2",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [68, 69, 70, 71], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דבורה ... זי האט געהאט גייווע אין זיך, זי האט געשיקט",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [134, 135, 136], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "כביסי בית תפילה",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 56:7",
+      "sefariaRef": "Isaiah 56:7",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [154], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "ממחר דברים שהתורה נקנות ביי איהם, אוהבת התוכחות, אוהבת המשרים",
+      "work": "Pirkei Avos",
+      "ref": "Avos 6:6",
+      "sefariaRef": "Pirkei Avot 6:6",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [163, 164, 165, 171, 172], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "יום כיפור מיט יסורים ... איז נישט מוכאפער ... זאגט איר גמרא",
+      "work": "Gemara Yoma",
+      "ref": "Yoma 86a",
+      "sefariaRef": "Yoma 86a",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [197, 198, 199, 200, 202], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער סנזא רוב זכרו לברוך האט געזאגט",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [222, 231, 233, 237], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "תל ארץ על בלומה – די וואלט שטעט אויף דעם וואס איז בולא",
+      "work": "Gemara Chullin",
+      "ref": "Chullin 89a",
+      "sefariaRef": "Chullin 89a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [273], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ועל אסתרך ולבבך, ויחרו נחם",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 15:39",
+      "sefariaRef": "Numbers 15:39",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [276], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "כל ראייהם יקירים, כהם זרע בערך השם",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 61:9",
+      "sefariaRef": "Isaiah 61:9",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [303], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "היינט עס שטעט דאך משוכן ערוך מ'דארף זיך",
+      "work": "Shulchan Aruch",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [317], "confidence": 0.65 }
+    }
+  ],
+  "insights": [
+    {
+      "text": { "en": "The Rav reads Chazal's parting wish that no talmid 'spoil his dish in public' as a call to every ben Torah to guard against chillul Hashem when he goes out among strangers.", "yi": "דער משגיח לערנט דעם וואונטש פון חז\"ל אז קיין תלמיד זאל נישט פארברענען זיין תבשיל ברבים אלס א רוף צו יעדן בן תורה זיך צו היטן פון חילול השם ווען ער גייט ארויס צווישן פרעמדע." },
+      "evidence": { "segs": [54, 55, 56, 57], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "He explains Devorah's name as a bee, which goes around buzzing 'bin, bin' ('I am, I am'), a picture of one who thinks himself great.", "yi": "ער טייטשט דעם נאמען דבורה, א בין, וואס גייט ארום און זשומעט \"בין, בין\", א בילד פון איינעם וואס האלט זיך גרויס." },
+      "evidence": { "segs": [139, 140, 141, 143], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "Group pride, whether nation, team, chassidus or beis medrash, is one kelipah with many names, and a bachur should not display it among others.", "yi": "פארטייאישקייט, צי עס הייסט מדינה, א טים, א חסידות אדער א בית המדרש, איז איין קליפה מיט אסאך נעמען, און א בחור זאל דאס נישט ארויסווייזן צווישן אנדערע." },
+      "evidence": { "segs": [119, 120, 122, 126, 127, 128], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "Since the Beis Hamikdash is almost complete, what is missing today is like a thumbtack, and holding back a cutting joke or a look in the street supplies it.", "yi": "ווייל דער בית המקדש איז כמעט פארטיג, איז דאס וואס פעלט היינט ווי א טשוועקל, און זיך איינהאלטן פון א שטאך-וויץ אדער פון א קוק אין גאס גיט דאס צו." },
+      "evidence": { "segs": [254, 261, 272, 276, 277], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "Chizuk is like vitamin C, which the body does not store, so yesterday's chizuk is gone and must be taken again today.", "yi": "חיזוק איז ווי וויטאמין סי, וואס דער גוף האלט נישט אן, ממילא איז דער נעכטיגער חיזוק שוין פארפאלן און מ'דארף אים היינט נאכאמאל נעמען." },
+      "evidence": { "segs": [345, 346, 347, 348, 349], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "A bachur who has no money to give maaser can give maaser of his time to help another.", "yi": "א בחור וואס האט נישט קיין געלט צו געבן מעשר קען געבן מעשר פון זיין צייט צו העלפן אן אנדערן." },
+      "evidence": { "segs": [338, 339, 340], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Sanzer Rav and the missing paroches", "yi": "דער צאנזער רב און דער פרוכת וואס פעלט" },
+      "retelling": {
+        "en": "The Sanzer Rav said that the Beis Hamikdash built above through the Torah, tefillah and good deeds of the generations was already complete, and only the paroches was missing. One of the rabbanim at his table asked why the Rebbe, a great tzaddik, did not weave the paroches himself. He answered that he had made it, but some rasha came and ruined it.",
+        "yi": "דער צאנזער רב האט געזאגט אז דער בית המקדש וואס אידן בויען אויבן דורך תורה, תפילה און מעשים טובים דורך די דורות איז שוין פארטיג, נאר דער פרוכת פעלט נאך. איינער פון די רבנים ביים טיש האט געפרעגט פארוואס דער רבי, א גרויסער צדיק, וועבט נישט אליין דעם פרוכת. האט ער געענטפערט אז ער האט אים יא געמאכט, נאר א רשע איז געקומען און האט אים קאליע געמאכט."
+      },
+      "people": ["the Sanzer Rav"],
+      "evidence": { "segs": [222, 231, 233, 236, 237, 239], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "Reb Yechezkel'e of Kuzmir on Tisha B'Av", "yi": "רבי יחזקאל'ע קוזמירער אום תשעה באב" },
+      "retelling": {
+        "en": "On Tisha B'Av a chassid was saying kinos with a broken heart and pouring tears. Reb Yechezkel'e of Kuzmir came over and asked him to go on an errand to do a favor for a Jew. The chassid was reluctant, since one is supposed to mourn the Beis Hamikdash. The Rebbe told him that the Beis Hamikdash was destroyed through sinas chinam, so the main kinah today is ahavas chinam, doing a favor for a Jew.",
+        "yi": "אום תשעה באב האט א חסיד געזאגט קינות מיט א צעבראכן הארץ און געגאסן טרערן. איז רבי יחזקאל'ע קוזמירער צוגעגאנגען און אים געבעטן גיין אויף א שליחות טאן א טובה פאר א איד. דער חסיד האט זיך נישט געוואלט אפרייסן, ווייל מ'דארף טרויערן אויפן בית המקדש. האט אים דער רבי געזאגט אז דער בית המקדש איז חרוב געווארן צוליב שנאת חנם, ממילא איז די עיקר קינה היינט אהבת חנם, טאן א טובה פאר א איד."
+      },
+      "people": ["Reb Yechezkel of Kuzmir"],
+      "evidence": { "segs": [308, 311, 315, 317, 319, 321], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "Why is a haughty person compared to Devorah, a bee?", "yi": "פארוואס ווערט א בעל גאוה פארגליכן צו א דבורה, א בין?" },
+      "answer": { "en": "Because a bee goes around buzzing 'bin, bin', 'I am, I am', like one who thinks himself something.", "yi": "ווייל א בין גייט ארום און זשומעט \"בין, בין\", \"איך בין\", אזוי ווי איינער וואס האלט זיך פאר עפעס." },
+      "questionSegs": [140, 142],
+      "answerSegs": [141, 143],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why did the Sanzer Rav not make the missing paroches himself?", "yi": "פארוואס האט דער צאנזער רב נישט אליין געמאכט דעם פרוכת וואס פעלט?" },
+      "answer": { "en": "He had made it, but a rasha came and ruined it; in galus the tzaddikim build and the wicked destroy.", "yi": "ער האט אים יא געמאכט, נאר א רשע האט אים קאליע געמאכט; אין גלות בויען די צדיקים און די רשעים זענען מחריב." },
+      "questionSegs": [235, 236],
+      "answerSegs": [237, 238, 239, 244, 245],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "How could helping a Jew take precedence over weeping at the kinos on Tisha B'Av?", "yi": "ווי אזוי קען טאן א טובה פאר א איד זיין וויכטיגער ווי וויינען ביי די קינות אום תשעה באב?" },
+      "answer": { "en": "The Beis Hamikdash was destroyed through sinas chinam, so the main kinah today is ahavas chinam.", "yi": "דער בית המקדש איז חרוב געווארן צוליב שנאת חנם, ממילא איז די עיקר קינה היינט אהבת חנם." },
+      "questionSegs": [315, 317],
+      "answerSegs": [318, 319, 321],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Rav asks the bachurim in camp to behave considerately with roommates and others so that Hashem's name is sanctified through them.", "yi": "דער משגיח בעט די בחורים אין קעמפ זיך אויפצופירן גוט מיט די חברים אין צימער און מיט אנדערע, אז שם שמים זאל ווערן מקודש דורך זיי." },
+      "evidence": { "segs": [102, 106, 107, 116], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "He asks them not to show off or act superior, but to be at ease among others.", "yi": "ער בעט זיי נישט ארויסווייזן און זיך נישט האלטן העכער, נאר זיין גוט מיט אנדערע." },
+      "evidence": { "segs": [128, 131, 145, 146], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "He asks them to come to davening on time and daven warmly, as a kiddush Hashem.", "yi": "ער בעט זיי קומען אין צייט צום דאווענען און דאווענען ווארעם, וואס דאס איז א קידוש השם." },
+      "evidence": { "segs": [182, 183, 184, 188, 191], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "He asks them to avoid lashon hara, shaming others and hurtful jokes, and to help and encourage a bachur who needs it, even at the cost of some learning time.", "yi": "ער בעט זיי נישט רעדן לשון הרע, נישט פארשעמען און נישט מאכן קיין שטאכיגע שפיצלעך, און העלפן און מעודד זיין א בחור וואס דארף עס, אפילו אויף חשבון פון אביסל לערנען." },
+      "evidence": { "segs": [290, 292, 293, 328, 329], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "kiddush Hashem and chillul Hashem",
+    "parting blessings of Chazal",
+    "conduct of a ben Torah in camp",
+    "daily chizuk in Torah and tefillah",
+    "humility and avoiding showing off",
+    "building the Beis Hamikdash through small deeds",
+    "ahavas chinam",
+    "the three weeks"
+  ],
+  "concepts": [
+    { "he": "קידוש השם", "heardAs": ["קידוש השם", "מקדש שם שמים"] },
+    { "he": "חילול השם", "heardAs": ["חילול השם", "מיכאלע זיין שם שמים"] },
+    { "he": "אהבת חנם", "heardAs": ["אבות חינום"] },
+    { "he": "שנאת חנם", "heardAs": ["פסונת חינום"] },
+    { "he": "אוהב את התוכחות", "heardAs": ["אוהבת התוכחות"] },
+    { "he": "פרוכת", "heardAs": ["פרוכות", "פרוכת"] },
+    { "he": "קינות", "heardAs": ["כינות", "כינוס"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבונו ישראלים", "רבינו של עולם", "רבונו שלעולם"] },
+    { "he": "בן תורה", "heardAs": ["בן תורה"] }
+  ],
+  "people": [
+    { "name": "the Sanzer Rav", "heardAs": ["דער סנזא רוב", "סאנזערעוו"] },
+    { "name": "Reb Yechezkel of Kuzmir", "heardAs": ["רבי חצקאלע קוזמארער", "רב חצקא וקוזימער"] },
+    { "name": "Devorah", "heardAs": ["דבורה"] },
+    { "name": "Achitofel", "heardAs": ["אחי צפל"] },
+    { "name": "Gechazi", "heardAs": ["גחזי"] },
+    { "name": "Elisha", "heardAs": ["אלישע"] },
+    { "name": "Dovid", "heardAs": ["דוד"] }
+  ],
+  "asrNotes": "Yiddish ASR fair, Hebrew quotations (the Berachos 17a-b brachos) heavily garbled but recoverable. A remark attributed to the Chasam Sofer about his talmidim (segs 8-11) and an attribution in seg 338 could not be recovered. Segments 383-401 are singing of the chassidim's parting niggun and garbled, partly flagged speech about Moshiach; seg 393 is a long noise stretch."
+}

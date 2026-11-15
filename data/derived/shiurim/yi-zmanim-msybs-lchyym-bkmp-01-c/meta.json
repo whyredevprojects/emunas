@@ -1,0 +1,59 @@
+{
+ "shiurId": "yi-zmanim-msybs-lchyym-bkmp-01-c",
+ "generatedAt": "2026-11-15T00:27:07.251Z",
+ "shiur": {
+  "id": "yi-zmanim-msybs-lchyym-bkmp-01-c",
+  "lang": "yi",
+  "category": "zman",
+  "seriesId": null,
+  "seriesOrder": null,
+  "catalog": {
+   "source": "pocket-guide-2012",
+   "sectionId": "zmanim",
+   "sectionTitle": "זמנים",
+   "n": "1",
+   "page": 32,
+   "titleOriginal": "ג - ט\"ו תמוז יארצייט האוה\"ח הק' - תורה על הפרשה.",
+   "subTitle": null,
+   "derived": "catalog",
+   "note": "side/segment ג - of a 3-file catalog row"
+  },
+  "parsha": null,
+  "zman": "מסיבת לחיים בקעמפ תורה ודעת דרשה אחר שריפה במחנה תורה ודעת (קעמפ)",
+  "perek": null,
+  "hebrewYears": [],
+  "recordingIds": [
+   "y-zemanim-taamuz-av-04-01-3-oir-hachaim"
+  ],
+  "inScope": true,
+  "outOfScopeReason": null,
+  "pathNotes": []
+ },
+ "series": null,
+ "catalogTopics": [
+  "ג - ט\"ו תמוז יארצייט האוה\"ח הק' - תורה על הפרשה."
+ ],
+ "totalDurationSec": 227.1749375,
+ "recordings": [
+  {
+   "recording": {
+    "id": "y-zemanim-taamuz-av-04-01-3-oir-hachaim",
+    "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 06 Taamuz Av/04-01-3 Oir Hachaim.MP3",
+    "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 06 Taamuz Av/04-01-3 Oir Hachaim",
+    "durationSec": 227.17,
+    "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+    "sizeBytes": 909220,
+    "duplicateOf": null,
+    "partOf": null
+   },
+   "order": 0,
+   "transcriptLanguage": "yi",
+   "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+   "durationSec": 227.1749375,
+   "segmentCount": 29,
+   "starts": [2.45,5.87,8.57,15.81,19.79,25.51,29.37,30.35,33.21,37.25,39.57,41.43,44.91,50.31,56.3,62.2,66.32,72.72,74.84,77.08,80.92,82.64,85.28,89.4,92.18,98.3,100.6,102.34,104.6],
+   "ends": [5.13,7.87,15.03,18.83,24.81,28.41,29.57,32.51,36.57,38.63,41.09,44.47,49.73,54.18,61.76,66.32,71.8,74.08,75.14,80.4,81.8,84.4,88.6,91.04,97.72,99.76,102,103.8,111.58],
+   "noise": []
+  }
+ ]
+}

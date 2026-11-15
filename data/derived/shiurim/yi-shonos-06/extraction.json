@@ -1,0 +1,416 @@
+{
+  "shiurId": "yi-shonos-06",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "Speaking to bachurim about to leave for a summer camp, the Rav explains that each of them is sent there as a shaliach of Hashem, like all of creation, and tells them to fulfill that mission by learning, avoiding machlokes, and davening warmly and aloud.",
+      "yi": "דער משגיח רעדט צו בחורים וואס פארן אין א קעמפ איבער'ן זומער, און ערקלערט אז יעדער איינער ווערט דארט געשיקט אלס א שליח פונעם רבונו של עולם, אזוי ווי די גאנצע בריאה, און אז מ'דארף די שליחות ערפילן מיט לערנען, אן מחלוקת, און מיט א ווארעמען הויכן דאווענען."
+    },
+    "abstract": {
+      "en": "The Rav opens with the summer months, when the meraglim went out, and says that every bachur going to camp is a shaliach meant to repair that sin. In the country one sees how trees, birds and water all do exactly what Hashem commanded at creation; a person should join this 'family' of creation, but by his own choice. He warns against machlokes, citing Korach, and contrasts it with machlokes for the sake of Heaven. He then introduces the perek of Rabbi Eliezer d'Milah: through the Eglei Tal and Pirkei d'Rabbi Eliezer he shows that milah and Shabbos are one matter, which is why hilchos milah are taught inside Maseches Shabbos. He stresses the danger that comes with a great mission, and closes with a long call, from the Ramban, the Ba'al haTanya and others, to daven together, with warmth and a raised voice.",
+      "yi": "דער משגיח עפנט מיט די זומער חדשים, ווען די מרגלים זענען ארויסגעגאנגען, און זאגט אז יעדער בחור וואס פארט אין קעמפ איז א שליח צו מתקן זיין דעם חטא. אינדרויסן זעט מען ווי די ביימער, די פייגל און דאס וואסער טוען אלע פונקט וואס דער רבונו של עולם האט געהייסן ביי בריאת העולם; א מענטש דארף זיך אנשליסן אין דער משפחה פון דער בריאה, נאר מיט בחירה. ער ווארנט קעגן מחלוקת, פון קרח און זיין עדה, לעומת א מחלוקת לשם שמים. דערנאך עפנט ער דעם פרק רבי אליעזר דמילה: פונעם עגלי טל און פון פרקי דרבי אליעזר ווייזט ער אז מילה און שבת זענען איין ענין, און דערפאר שטייען הלכות מילה אין מסכת שבת. ער מאכט אויפמערקזאם אויף דער סכנה וואס קומט מיט א גרויסער שליחות, און ענדיגט מיט א לאנגן רוף, פונעם רמב\"ן, פונעם בעל התניא און אנדערע, צו דאווענען צוזאמען, ווארעם און מיט א הויכן קול."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Each bachur going to camp is a shaliach sent by Hashem, and the place, the rebbeim, the chaverim and the learning are the tools of that mission.",
+          "yi": "יעדער בחור וואס פארט אין קעמפ איז א שליח פונעם רבונו של עולם, און דער ארט, די רבי'ס, די חברים און דאס לערנען זענען די כלים פון דער שליחות."
+        },
+        "evidence": { "segs": [13, 45, 57, 61, 62], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "All of nature carries out the command Hashem gave it at creation; a person is asked to do the same, but through his own free choice.",
+          "yi": "די גאנצע נאטור טוט אויס דעם באפעל וואס דער רבונו של עולם האט איר געגעבן ביי בריאת העולם; פון א מענטש ווערט געבעטן דאס זעלבע, נאר מיט זיין אייגענער בחירה."
+        },
+        "evidence": { "segs": [98, 101, 109, 111, 125, 129], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Milah and Shabbos are one matter, each containing the whole Torah, so the laws of milah are taught within Maseches Shabbos.",
+          "yi": "מילה און שבת זענען איין ענין, יעדע איינע איז כולל די גאנצע תורה, און דערפאר ווערן הלכות מילה געלערנט אין מסכת שבת."
+        },
+        "evidence": { "segs": [317, 318, 341, 349, 364], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "The greater the mission, the greater the danger along the way, so one must strengthen oneself and guard against lashon hara, leitzanus and machlokes.",
+          "yi": "וואס גרעסער די שליחות, אלס גרעסער איז די סכנה אויפן וועג, דערפאר דארף מען זיך מחזק זיין און זיך היטן פון לשון הרע, ליצנות און מחלוקת."
+        },
+        "evidence": { "segs": [570, 571, 581, 582, 583, 587], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Davening aloud is a proclamation that we are Hashem's creations, and the voice arouses the heart, so the Rav urges davening warmly and together, word by word.",
+          "yi": "הויך דאווענען איז א פראקלאמאציע אז מיר זענען דעם רבונו של עולם'ס באשעפענישן, און דאס קול וועקט אויף דאס הארץ; דערפאר מוטיגט דער משגיח צו דאווענען ווארעם און צוזאמען, ווארט ביי ווארט."
+        },
+        "evidence": { "segs": [697, 700, 702, 733, 833, 834], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Every tefillah is a diamond, as precious as Ne'ilah of Yom Kippur, and one who feels the pain cries out.",
+          "yi": "יעדע תפילה איז א דימענט, אזוי טייער ווי נעילה פון יום כיפור, און ווער ס'טוט אים וויי, דער שרייט."
+        },
+        "evidence": { "segs": [930, 938, 939, 941, 971], "confidence": 0.7 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-shoinos-06-hadracha-lekayitz-lebachurim",
+      "startSeg": 0,
+      "endSeg": 72,
+      "title": { "en": "Going to camp as a shaliach", "yi": "פארן אין קעמפ אלס א שליח" },
+      "summary": {
+        "en": "The Rav ties the summer to the time the meraglim set out, and says each bachur leaving home for camp is a shaliach meant to repair their sin. The rebbeim, chaverim, learning and davening are the tools of the mission, and at every step one chooses whether to be a faithful shaliach or like the meraglim.",
+        "yi": "דער משגיח פארבינדט דעם זומער מיט דער צייט ווען די מרגלים זענען ארויסגעגאנגען, און זאגט אז יעדער בחור וואס פארט אוועק אין קעמפ איז א שליח צו מתקן זיין זייער חטא. די רבי'ס, די חברים, דאס לערנען און דאס דאווענען זענען די כלים פון דער שליחות, און ביי יעדן טריט האט מען א בחירה צו זיין א געטרייער שליח אדער ווי די מרגלים."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-06-hadracha-lekayitz-lebachurim",
+      "startSeg": 73,
+      "endSeg": 150,
+      "title": { "en": "All of creation does its shlichus", "yi": "די גאנצע בריאה טוט אירע שליחות" },
+      "summary": {
+        "en": "In the country one sees the sky, grass, birds and water without buildings hiding them, each doing what Hashem commanded at creation. The Rav asks why a person should be different, and says the bachurim should join this 'family of nature' as shluchim, but by choice, and work together as a team.",
+        "yi": "אינדרויסן זעט מען דעם הימל, דאס גראז, די פייגל און דאס וואסער אן הויכע געביידעס וואס פארשטעלן זיי, און יעדע זאך טוט וואס דער רבונו של עולם האט געהייסן ביי בריאת העולם. דער משגיח פרעגט פארוואס זאל א מענטש זיין אנדערש, און זאגט אז די בחורים זאלן זיך אנשליסן אין דער משפחה פון דער נאטור אלס שלוחים, נאר מיט בחירה, און ארבעטן צוזאמען."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-06-hadracha-lekayitz-lebachurim",
+      "startSeg": 151,
+      "endSeg": 196,
+      "title": { "en": "Korach and machlokes for Heaven's sake", "yi": "קרח און מחלוקת לשם שמים" },
+      "summary": {
+        "en": "From Parshas Korach the Rav teaches that one may not make machlokes like Korach and his company. He explains that their dispute was split inside as well, each wanting something else, because each sought himself; a machlokes of Torah for Heaven's sake instead brings friendship and team-work.",
+        "yi": "פון פרשת קרח לערנט דער משגיח אז מ'טאר נישט מאכן קיין מחלוקת ווי קרח ועדתו. ער ערקלערט אז זייער מחלוקת איז געווען צעשפאלטן אויך אינעווייניג, יעדער האט געוואלט עפעס אנדערש, ווייל יעדער האט געמיינט זיך; א מחלוקת פון תורה לשם שמים ברענגט פארקערט צו פריינדשאפט און צוזאמענארבעט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-06-hadracha-lekayitz-lebachurim",
+      "startSeg": 197,
+      "endSeg": 315,
+      "title": { "en": "The Eglei Tal: Shabbos, milah and the Shach", "yi": "דער עגלי טל: שבת, מילה און דער ש\"ך" },
+      "summary": {
+        "en": "Introducing the perek of Rabbi Eliezer d'Milah, the Rav brings the Eglei Tal's introduction: he wrote on hilchos Shabbos as a tikkun for pegam habris, since Shabbos contains the whole Torah. He then relates the Eglei Tal's defense of the Shach, who allows a transgression to save a limb, against the kal vachomer from milah in Yoma: milah overrides Shabbos only because it too contains everything.",
+        "yi": "ביים עפענען דעם פרק רבי אליעזר דמילה ברענגט דער משגיח די הקדמה פונעם עגלי טל, אז ער האט מחבר געווען זיין ספר אויף הלכות שבת אלס א תיקון פאר פגם הברית, ווייל שבת איז כולל די גאנצע תורה. דערנאך ברענגט ער ווי דער עגלי טל פארענטפערט דעם ש\"ך, וואס ערלויבט אן עבירה כדי צו ראטעווען אן אבר, קעגן דעם קל וחומר פון מילה אין יומא: מילה איז דוחה שבת נאר ווייל זי איז אויך כולל אלעס."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-06-hadracha-lekayitz-lebachurim",
+      "startSeg": 316,
+      "endSeg": 411,
+      "title": { "en": "Why hilchos milah are in Maseches Shabbos", "yi": "פארוואס הלכות מילה שטייען אין מסכת שבת" },
+      "summary": {
+        "en": "The Rav shows that Shabbos and milah are both called bris and strengthen each other, and that all the laws of milah are taught through how milah falls on Shabbos. He asks why the perek opens with 'if he did not bring the tool' rather than with a new halacha, and answers that it continues the previous perek to show that hilchos milah are hilchos Shabbos.",
+        "yi": "דער משגיח ווייזט אז שבת און מילה הייסן ביידע ברית און שטארקן איינס דאס אנדערע, און אז אלע דינים פון מילה ווערן געלערנט דורך דעם ווי מילה קומט אויס אום שבת. ער פרעגט פארוואס דער פרק עפנט זיך מיט \"אם לא הביא כלי\" און נישט מיט א נייער הלכה, און ענטפערט אז ער גייט ווייטער פונעם פריערדיגן פרק, כדי צו ווייזן אז הלכות מילה זענען הלכות שבת."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-06-hadracha-lekayitz-lebachurim",
+      "startSeg": 412,
+      "endSeg": 494,
+      "title": { "en": "Avraham's milah on Yom Kippur", "yi": "אברהם אבינו'ס מילה אום יום כיפור" },
+      "summary": {
+        "en": "The Rav asks why Avraham, who kept the whole Torah, waited for his milah until commanded, and answers from Pirkei d'Rabbi Eliezer that he was circumcised on Yom Kippur, the Shabbos of Shabbosos and root of Shabbos. He adds that milah is called the greatest mitzvah and pegam habris the greatest aveirah, and both are tied to Yom Kippur.",
+        "yi": "דער משגיח פרעגט פארוואס אברהם אבינו, וואס האט מקיים געווען די גאנצע תורה, האט געווארט מיט דער מילה ביז ער האט באקומען דעם ציווי, און ענטפערט פון פרקי דרבי אליעזר אז ער איז נימול געווארן יום כיפור, שבת שבתון, דער שורש פון שבת. ער לייגט צו אז מילה הייסט די גרעסטע מצוה און פגם הברית די גרעסטע עבירה, און ביידע זענען פארבונדן מיט יום כיפור."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-06-hadracha-lekayitz-lebachurim",
+      "startSeg": 495,
+      "endSeg": 550,
+      "title": { "en": "The worth of learning in camp", "yi": "דער ווערט פון לערנען אין קעמפ" },
+      "summary": {
+        "en": "The Rav explains that every bit of Torah and every mitzvah of the smallest Jew raises the whole creation, and learning about milah is like fulfilling it. He urges the bachurim to use the precious time in camp with toil and chiddushim, and says that being sent to learn such Torah shows they are considered important in Heaven, like a president who sends only his best men on vital missions.",
+        "yi": "דער משגיח ערקלערט אז יעדעס ביסל תורה און יעדע מצוה פונעם קלענסטן איד דערהייבט די גאנצע בריאה, און דאס לערנען וועגן מילה איז גלייך ווי מ'מקיים די מצוה. ער מוטיגט די בחורים צו נוצן די טייערע צייט אין קעמפ מיט יגיעה און מיט חידושים, און זאגט אז דאס וואס מ'שיקט זיי צו לערנען אזא תורה ווייזט אז מ'האלט זיי חשוב אין הימל, אזוי ווי א פרעזידענט וואס שיקט נאר זיינע בעסטע מענטשן אויף א וויכטיגע שליחות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-06-hadracha-lekayitz-lebachurim",
+      "startSeg": 551,
+      "endSeg": 603,
+      "title": { "en": "A great mission needs chizuk", "yi": "א גרויסע שליחות דארף חיזוק" },
+      "summary": {
+        "en": "Like Moshe telling the meraglim to strengthen themselves, the Rav says a precious mission is a dangerous one: a truck of diamonds needs armor and two drivers. The yetzer hara will lie in wait with lashon hara, leitzanus and machlokes, and just as the Gemara has a soul sworn and strengthened before birth, one must ask Hashem for chizuk and take only the good.",
+        "yi": "אזוי ווי משה רבינו האט געזאגט צו די מרגלים זיי זאלן זיך שטארקן, זאגט דער משגיח אז א טייערע שליחות איז א געפערליכע: א טראק מיט דימענטן דארף פאנצער און צוויי דרייווערס. דער יצר הרע וועט לויערן מיט לשון הרע, ליצנות און מחלוקת, און אזוי ווי די גמרא זאגט אז מ'באשווערט א נשמה פאר'ן געבוירן ווערן, דארף מען בעטן ביים רבונו של עולם חיזוק און נעמען נאר דאס גוטע."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-06-hadracha-lekayitz-lebachurim",
+      "startSeg": 604,
+      "endSeg": 709,
+      "title": { "en": "Avodas hatefillah and the Ramban", "yi": "עבודת התפילה און דער רמב\"ן" },
+      "summary": {
+        "en": "Turning to tefillah, the Rav says this generation must measure its davening against earlier ones and be ashamed of the weakness. Tefillah is avodah of the heart, and he brings the Ramban at the end of Parshas Bo: every mitzvah, even buying a mezuzah, rests on emunah, and the purpose of raising the voice in tefillah and of shuls is to proclaim publicly that we are Hashem's creations.",
+        "yi": "דער משגיח גייט איבער צו תפילה און זאגט אז דער דור דארף מעסטן זיין דאווענען מיט די פריערדיגע דורות און זיך שעמען מיט דער שוואכקייט. תפילה איז עבודה שבלב, און ער ברענגט דעם רמב\"ן אין סוף פרשת בא: יעדע מצוה, אפילו קויפן א מזוזה, איז געבויט אויף אמונה, און דער תכלית פון הויך דאווענען און פון בתי כנסיות איז ארויסצוזאגן ברבים אז מיר זענען דעם רבונו של עולם'ס באשעפענישן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-06-hadracha-lekayitz-lebachurim",
+      "startSeg": 710,
+      "endSeg": 784,
+      "title": { "en": "The Ba'al haTanya: daven together aloud", "yi": "דער בעל התניא: דאווענען צוזאמען הויך" },
+      "summary": {
+        "en": "The Rav brings the Ba'al haTanya, whose Shulchan Aruch is accepted everywhere, pleading that the tzibbur daven together word by word in a raised voice, not some loudly and others silently, as the Sefardim do. He adds that one asked by the gabbai to daven should not refuse, and that one with a fine voice must use it for Hashem, recalling Navos who withheld his voice.",
+        "yi": "דער משגיח ברענגט דעם בעל התניא, וועמענס שולחן ערוך איז אנגענומען אומעטום, וואס בעט אז דער ציבור זאל דאווענען צוזאמען ווארט ביי ווארט מיט א הויכן קול, נישט איינער הויך און דער אנדערער שטיל, אזוי ווי ביי די ספרדים. ער לייגט צו אז ווען דער גבאי הייסט איינעם דאווענען זאל ער נישט אפזאגן, און ווער ס'האט א שיין קול דארף עס נוצן פאר'ן רבונו של עולם, און דערמאנט נבות וואס האט זיין קול צוריקגעהאלטן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-06-hadracha-lekayitz-lebachurim",
+      "startSeg": 785,
+      "endSeg": 840,
+      "title": { "en": "The Pri Megadim and why we raise our voice", "yi": "דער פרי מגדים און פארוואס מ'דאוונט הויך" },
+      "summary": {
+        "en": "The Rav goes through the poskim on a loud voice: the Beis Yosef on answering with all one's strength, the Kaf HaChaim citing the Eliyahu Rabbah, and the Pri Megadim, brought by the Mishnah Berurah, that one need not shout since Hashem hears. He answers that the voice is not for Hashem to hear but to arouse kavanah and wake the sleeping neshamah; only one who needs no such arousal may daven quietly.",
+        "yi": "דער משגיח גייט דורך די פוסקים וועגן א הויכן קול: דעם בית יוסף וועגן ענטפערן בכל כחו, דעם כף החיים וואס ברענגט דעם אליה רבה, און דעם פרי מגדים, געבראכט אינעם משנה ברורה, אז מ'דארף נישט שרייען ווייל דער רבונו של עולם הערט. ער ענטפערט אז דאס קול איז נישט כדי דער אויבערשטער זאל הערן, נאר כדי אויפצוועקן די כוונה און די פארשלאפענע נשמה; נאר ווער ס'דארף נישט אזא אויפוועקונג מעג דאווענען שטיל."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-06-hadracha-lekayitz-lebachurim",
+      "startSeg": 841,
+      "endSeg": 901,
+      "title": { "en": "Levels of hidden avodah; the Chafetz Chaim", "yi": "מדריגות פון באהאלטענע עבודה; דער חפץ חיים" },
+      "summary": {
+        "en": "From the Shunamis, who needed signs to know Elisha was holy, the Rav explains that the higher a person stands, the less his avodah shows outside: yesharim sing and shout, tzaddikim less, chassidim and kedoshim hide it. He then brings the Chafetz Chaim, who writes that one should cry out to Hashem in tefillah, and the Stoliner Rebbe who davened aloud so chassidim would learn from him.",
+        "yi": "פון דער שונמית, וואס האט געדארפט סימנים צו וויסן אז אלישע איז הייליג, ערקלערט דער משגיח אז וואס העכער א מענטש שטייט, אלס ווייניגער זעט מען זיין עבודה פון דרויסן: ישרים זינגען און שרייען, צדיקים ווייניגער, חסידים און קדושים באהאלטן עס. דערנאך ברענגט ער דעם חפץ חיים, וואס שרייבט אז מ'זאל שרייען צום רבונו של עולם ביי דער תפילה, און דעם סטאלינער רבי'ן וואס האט הויך געדאוונט כדי די חסידים זאלן זיך אפלערנען פון אים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-06-hadracha-lekayitz-lebachurim",
+      "startSeg": 902,
+      "endSeg": 997,
+      "title": { "en": "Every tefillah a Ne'ilah; closing charge", "yi": "יעדע תפילה א נעילה; דער סיום" },
+      "summary": {
+        "en": "The Rav asks the bachurim to test for themselves whether they daven better with warmth, and notes that even a cold shul shouts at Ne'ilah, though every tefillah is a diamond. With the Gemara on Iyov, punished for keeping silent, he explains that one who feels the pain cries out. He closes with Shabbos Parshas Korach, the sweetness of Hodu on Erev Shabbos, and a brachah to be good shluchim.",
+        "yi": "דער משגיח בעט די בחורים אליין צו פרובירן צי זיי דאווענען בעסער מיט ווארעמקייט, און מערקט אן אז אפילו א קאלטע שול שרייט ביי נעילה, כאטש יעדע תפילה איז א דימענט. מיט דער גמרא וועגן איוב, וואס איז געשטראפט געווארן פאר'ן שווייגן, ערקלערט ער אז ווער ס'טוט אים וויי, דער שרייט. ער ענדיגט מיט שבת פרשת קרח, די זיסקייט פון הודו ערב שבת, און א ברכה צו זיין גוטע שלוחים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "ולא יחק קרח וכדותו", "work": "Bamidbar", "ref": "Bamidbar 17:5", "sefariaRef": "Numbers 17:5", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [154, 156, 157], "confidence": 0.8 } },
+    { "heardAs": "איזה מחלוקת שהיא לשם שמים", "work": "Pirkei Avos", "ref": "Pirkei Avos 5:17", "sefariaRef": "Pirkei Avot 5:17", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [161, 162, 163], "confidence": 0.85 } },
+    { "heardAs": "אין חתם ספר זאגט", "work": "Chasam Sofer", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [189], "confidence": 0.6 } },
+    { "heardAs": "עגלי טייל אין די אקאדעמאן", "work": "Eglei Tal", "ref": "Eglei Tal, introduction", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [198, 199, 202, 203, 211], "confidence": 0.75 } },
+    { "heardAs": "דער שייך פסק'ן", "work": "Shach", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [218, 225, 236, 291], "confidence": 0.7 } },
+    { "heardAs": "ומה מילה שהאחץ מרמך ועורף של אדם", "work": "Gemara Yoma", "ref": "Yoma 85b", "sefariaRef": "Yoma 85b", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [239, 243, 244, 245], "confidence": 0.8 } },
+    { "heardAs": "ביי שבת שטעט בבינו ... ברות עולם", "work": "Shemos", "ref": "Shemos 31:16", "sefariaRef": "Exodus 31:16", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [324, 325, 326], "confidence": 0.65 } },
+    { "heardAs": "אומ'להבי כלי מיורב שבת", "work": "Mishnah Shabbos", "ref": "Mishnah Shabbos 19:1", "sefariaRef": "Mishnah Shabbat 19:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [374, 375, 376, 388], "confidence": 0.8 } },
+    { "heardAs": "קול צוח ומילה עסן בשבת", "work": "Mishnah Shabbos", "ref": "Mishnah Shabbos 18:3", "sefariaRef": "Mishnah Shabbat 18:3", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [380, 381, 387, 390], "confidence": 0.8 } },
+    { "heardAs": "זאגט רשת", "work": "Rashi", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [378, 379], "confidence": 0.65 } },
+    { "heardAs": "פרקוד ר' יואל לעזל", "work": "Pirkei d'Rabbi Eliezer", "ref": "Pirkei d'Rabbi Eliezer ch. 29", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [425, 426, 429, 430], "confidence": 0.8 } },
+    { "heardAs": "וגדולה עבירה זא מכל עבירה שבטורה ... אבנז'ל ... סימן ח' ג'", "work": "Shulchan Aruch Even HaEzer", "ref": "Even HaEzer 23", "sefariaRef": null, "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [468, 469, 471, 472], "confidence": 0.7 } },
+    { "heardAs": "זאת הצורה ועלולה למינכה", "work": "Gemara Menachos", "ref": "Menachos 110a", "sefariaRef": "Menachot 110a", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [517], "confidence": 0.65 } },
+    { "heardAs": "משה רבינו האט געזאגט צו זיינע שלחים ... ולקחת מיט חייא ארץ", "work": "Bamidbar", "ref": "Bamidbar 13:20", "sefariaRef": "Numbers 13:20", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [553, 554, 598], "confidence": 0.75 } },
+    { "heardAs": "משבוע נושא ... צדק ועלטי רשע", "work": "Gemara Niddah", "ref": "Niddah 30b", "sefariaRef": "Niddah 30b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [589, 593, 594], "confidence": 0.7 } },
+    { "heardAs": "מעזה עובדת שבלב זי תפילה", "work": "Gemara Taanis", "ref": "Taanis 2a", "sefariaRef": "Taanit 2a", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [636, 637], "confidence": 0.8 } },
+    { "heardAs": "דעם רמב׳ן אין סוף פרשת בוי", "work": "Ramban", "ref": "Ramban on Shemos 13:16", "sefariaRef": "Ramban on Exodus 13:16", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [662, 673, 697, 700, 807], "confidence": 0.8 } },
+    { "heardAs": "דער רב שכר נורוך", "work": "Shulchan Aruch HaRav", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [712, 714, 716, 719], "confidence": 0.7 } },
+    { "heardAs": "אזוי שטעט אין תניא ... זאגט ער בעל התניא", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "quoted", "evidence": { "segs": [724, 725, 726, 728, 784], "confidence": 0.7 } },
+    { "heardAs": "דער גמרא זאגט אז נאבותי ישראלי האט געהאט א שיינעם כולל", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [760, 762, 763], "confidence": 0.7 } },
+    { "heardAs": "בית יוסף ברענגט צוויי שיטות", "work": "Beis Yosef", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [788, 789, 790], "confidence": 0.65 } },
+    { "heardAs": "כף החיים ברענגט ארוינט אויפן עהל'יהו הרבה", "work": "Kaf HaChaim", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [794, 795, 888], "confidence": 0.7 } },
+    { "heardAs": "עהל'יהו הרבה ... באלע הרבה", "work": "Eliyahu Rabbah", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [795, 798, 802, 807], "confidence": 0.65 } },
+    { "heardAs": "דער פריער מיט גדים", "work": "Pri Megadim", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [811, 813, 814, 816], "confidence": 0.75 } },
+    { "heardAs": "דער משום ברור ברענגט אים", "work": "Mishnah Berurah", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [812], "confidence": 0.65 } },
+    { "heardAs": "ביי תשנ''ה אז זי האט געזען אלישע ... איש קדוש", "work": "Melachim II", "ref": "Melachim II 4:9", "sefariaRef": "II Kings 4:9", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [842, 843, 844], "confidence": 0.7 } },
+    { "heardAs": "חפץ חיים אלס סידור התפילה", "work": "Siddur Chafetz Chaim", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "quoted", "evidence": { "segs": [877, 881, 882, 883], "confidence": 0.7 } },
+    { "heardAs": "שלשי הבתי עצה ... בילם ... אייב ששתק ... ישרא", "work": "Gemara Sotah", "ref": "Sotah 11a", "sefariaRef": "Sotah 11a", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [944, 945, 948, 949, 952], "confidence": 0.75 } },
+    { "heardAs": "די זיבן קולות, כול השם על המים", "work": "Tehillim", "ref": "Tehillim 29:3", "sefariaRef": "Psalms 29:3", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [988], "confidence": 0.7 } }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The summer camp season, which falls in the days the meraglim went out, is a chance to repair their failed mission by being faithful shluchim.",
+        "yi": "די זומער צייט אין קעמפ, וואס פאלט אין די טעג ווען די מרגלים זענען ארויסגעגאנגען, איז א געלעגנהייט מתקן צו זיין זייער פארפעלטע שליחות דורך זיין געטרייע שלוחים."
+      },
+      "evidence": { "segs": [25, 27, 34, 35], "confidence": 0.65 }
+    },
+    {
+      "text": {
+        "en": "Korach's dispute was split within itself because each side sought itself; only when all seek Hashem's honor are they bound together, even in disagreement.",
+        "yi": "קרח'ס מחלוקת איז געווען צעשפאלטן אין זיך, ווייל יעדער האט געמיינט זיך; נאר ווען אלע מיינען כבוד שמים זענען זיי צוגעבונדן, אפילו ווען זיי טענה'ן."
+      },
+      "evidence": { "segs": [164, 167, 168, 169, 172], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Mishnah ends one perek with 'all needs of milah are done on Shabbos' and opens the next by continuing it, to teach that hilchos milah are themselves hilchos Shabbos.",
+        "yi": "די משנה ענדיגט איין פרק מיט \"כל צרכי מילה עושין בשבת\" און עפנט דעם קומענדיגן מיט א המשך דערפון, כדי צו לערנען אז הלכות מילה זענען אליין הלכות שבת."
+      },
+      "evidence": { "segs": [389, 390, 398, 405, 409, 411], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Avraham delayed his milah so it could fall on Yom Kippur, the root of Shabbos, because milah must be bound up with Shabbos.",
+        "yi": "אברהם אבינו האט אפגעלייגט זיין מילה כדי זי זאל אויספאלן אום יום כיפור, דער שורש פון שבת, ווייל מילה מוז זיין פארבונדן מיט שבת."
+      },
+      "evidence": { "segs": [433, 434, 435, 459, 464], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "A loud voice in tefillah is not for Hashem to hear but to awaken the one davening; this answers the Pri Megadim's question.",
+        "yi": "א הויך קול ביי דער תפילה איז נישט כדי דער אויבערשטער זאל הערן, נאר כדי אויפצוועקן דעם וואס דאוונט; דערמיט איז דער פרי מגדים'ס קשיא פארענטפערט."
+      },
+      "evidence": { "segs": [824, 825, 826, 833, 834], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Iyov was punished for his silence even though shouting would not have helped, because one who truly feels the pain cries out regardless.",
+        "yi": "איוב איז געשטראפט געווארן פאר'ן שווייגן, כאטש שרייען וואלט נישט געהאלפן, ווייל ווער ס'פילט באמת דעם ווייטאג, דער שרייט סיי ווי סיי."
+      },
+      "evidence": { "segs": [954, 959, 963, 970, 971], "confidence": 0.7 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Stoliner Rebbe as ba'al tefillah", "yi": "דער סטאלינער רבי אלס בעל תפילה" },
+      "retelling": {
+        "en": "The Rav tells that the Stoliner Rebbe had a powerful voice and would always serve as the ba'al tefillah himself. His davening carried far, and he did it so that his chassidim would learn from him to daven with warmth.",
+        "yi": "דער משגיח דערציילט אז דער סטאלינער רבי האט געהאט א שטארק קול און איז אלעמאל אליין געווען דער בעל תפילה. זיין דאווענען האט מען געהערט פון ווייטן, און ער האט עס געטון כדי זיינע חסידים זאלן זיך אפלערנען פון אים צו דאווענען מיט ווארעמקייט."
+      },
+      "people": ["the Stoliner Rebbe"],
+      "evidence": { "segs": [893, 894, 895, 899, 900], "confidence": 0.65 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "Since milah, one of a person's 248 limbs, overrides Shabbos, why may one not desecrate Shabbos to save a limb, while the Shach allows a transgression to save one?", "yi": "אויב מילה, וואס איז איינס פון די רמ\"ח אברים, איז דוחה שבת, פארוואס טאר מען נישט מחלל שבת זיין צו ראטעווען אן אבר, ווען דער ש\"ך ערלויבט אן עבירה צו ראטעווען איינעם?" },
+      "answer": { "en": "Milah contains all the limbs and Shabbos contains the whole Torah, so only milah can override Shabbos; an ordinary limb against one ordinary aveirah is one against one, so the Shach is right.", "yi": "מילה איז כולל אלע אברים און שבת איז כולל די גאנצע תורה, דערפאר קען נאר מילה דוחה זיין שבת; אן אנדער אבר קעגן איין געווענליכע עבירה איז איינס קעגן איינס, און דער ש\"ך איז גערעכט." },
+      "questionSegs": [236, 241, 263, 264],
+      "answerSegs": [277, 285, 288, 297, 305],
+      "confidence": 0.7
+    },
+    {
+      "question": { "en": "Why does the perek of Rabbi Eliezer d'Milah open with 'if he did not bring the tool' instead of beginning a new subject?", "yi": "פארוואס עפנט זיך דער פרק רבי אליעזר דמילה מיט \"אם לא הביא כלי\" אנשטאט אנצוהייבן א נייעם ענין?" },
+      "answer": { "en": "To continue the previous perek and teach that hilchos milah are hilchos Shabbos, not a separate subject placed there by chance.", "yi": "כדי צו גיין ווייטער פונעם פריערדיגן פרק און לערנען אז הלכות מילה זענען הלכות שבת, נישט קיין באזונדערער ענין וואס איז דארט אריין דרך אגב." },
+      "questionSegs": [377, 384, 385, 391],
+      "answerSegs": [398, 406, 409, 411],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why did Avraham, who kept the whole Torah before it was given, wait for his milah until he was commanded?", "yi": "פארוואס האט אברהם אבינו, וואס האט מקיים געווען די גאנצע תורה, געווארט מיט דער מילה ביז ער האט באקומען דעם ציווי?" },
+      "answer": { "en": "So that it would fall on Yom Kippur, the Shabbos of Shabbosos, since milah must be bound up with Shabbos.", "yi": "כדי זי זאל אויספאלן אום יום כיפור, שבת שבתון, ווייל מילה דארף זיין פארבונדן מיט שבת." },
+      "questionSegs": [416, 417, 421],
+      "answerSegs": [426, 433, 434, 459, 464],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "If Hashem hears even a quiet tefillah, as the Pri Megadim says, why raise the voice?", "yi": "אויב דער אויבערשטער הערט אפילו א שטילע תפילה, אזוי ווי דער פרי מגדים זאגט, פארוואס דאווענען הויך?" },
+      "answer": { "en": "The voice arouses kavanah and wakes the sleeping neshamah; one who needs no such arousal may indeed daven quietly.", "yi": "דאס קול וועקט אויף די כוונה און די פארשלאפענע נשמה; ווער ס'דארף נישט אזא אויפוועקונג מעג טאקע דאווענען שטיל." },
+      "questionSegs": [813, 814, 824, 825],
+      "answerSegs": [826, 828, 833, 834],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why was Iyov punished for keeping silent at Pharaoh's counsel, if crying out would not have helped?", "yi": "פארוואס איז איוב געשטראפט געווארן פאר'ן שווייגן ביי פרעה'ס עצה, אויב שרייען וואלט נישט געהאלפן?" },
+      "answer": { "en": "Because when he later suffered he did cry out, showing that one who truly feels the pain shouts even when it will not help.", "yi": "ווייל ווען ער האט שפעטער געליטן האט ער יא געשריגן, א סימן אז ווער ס'פילט באמת דעם ווייטאג שרייט אפילו ווען ס'וועט נישט העלפן." },
+      "questionSegs": [954, 957, 959],
+      "answerSegs": [966, 968, 970, 971],
+      "confidence": 0.7
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Rav tells the bachurim to work together as a team in camp and avoid machlokes, lashon hara and leitzanus.", "yi": "דער משגיח הייסט די בחורים ארבעטן צוזאמען אין קעמפ און זיך היטן פון מחלוקת, לשון הרע און ליצנות." },
+      "evidence": { "segs": [74, 76, 581, 582, 583], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "He urges them to use the time in camp to learn with toil and with heart, and to try for chiddushim.", "yi": "ער מוטיגט זיי צו נוצן די צייט אין קעמפ צו לערנען מיט יגיעה און בלב ונפש, און צו מחדש זיין חידושים." },
+      "evidence": { "segs": [519, 520, 521, 976], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "He asks that the tzibbur daven together, word by word, with a warm and raised voice, and that each test for himself whether warmth improves his davening.", "yi": "ער בעט אז דער ציבור זאל דאווענען צוזאמען, ווארט ביי ווארט, מיט א ווארעמען און הויכן קול, און אז יעדער זאל אליין פרובירן צי ווארעמקייט פארבעסערט זיין דאווענען." },
+      "evidence": { "segs": [733, 830, 833, 913], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "One whom the gabbai asks to daven before the amud should not refuse, and one with a good voice should use it for Hashem.", "yi": "ווען דער גבאי הייסט איינעם דאווענען פארן עמוד זאל ער נישט אפזאגן, און ווער ס'האט א גוט קול זאל עס נוצן פאר'ן רבונו של עולם." },
+      "evidence": { "segs": [747, 748, 766, 769], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "shlichus in this world",
+    "summer camp guidance for bachurim",
+    "meraglim",
+    "machlokes l'shem shamayim",
+    "milah and Shabbos",
+    "perek Rabbi Eliezer d'Milah",
+    "Avraham's milah on Yom Kippur",
+    "raising the voice in tefillah",
+    "davening together with the tzibbur",
+    "Ramban end of Parshas Bo"
+  ],
+  "concepts": [
+    { "he": "שליחות", "heardAs": ["שליחות", "שלחים"] },
+    { "he": "מרגלים", "heardAs": ["מראגלים", "מרגמים", "מראדעלען"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבינו שלום", "רבי נשאללים", "רבונות שלעדים", "רבינו שלאדים"] },
+    { "he": "מחלוקת לשם שמים", "heardAs": ["מחליקת שם אברהם", "מחלוקת שמים"] },
+    { "he": "פגם הברית", "heardAs": ["בגם הברית", "בגם הבריסק"] },
+    { "he": "פיקוח נפש", "heardAs": ["Facah nefesh", "פיקוח נפש"] },
+    { "he": "רמ\"ח אברים", "heardAs": ["מרמך ועורף של אדם", "מאהב של אדם"] },
+    { "he": "שבת שבתון", "heardAs": ["שבת שבתים"] },
+    { "he": "עבודה שבלב", "heardAs": ["עובדת שבלב"] },
+    { "he": "הרמת קול בתפילה", "heardAs": ["רוממות הכול בתפילות", "חממות הכולת בטפולת"] },
+    { "he": "נשמה יתירה", "heardAs": ["נשמה יסורי", "נפש ישורי"] },
+    { "he": "יגיעה", "heardAs": ["יגעזיין", "יגיען"] }
+  ],
+  "people": [
+    { "name": "Korach", "heardAs": ["כרח", "קרח", "קירוך"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו"] },
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינו", "אברהם אבינא"] },
+    { "name": "the Eglei Tal", "heardAs": ["עגלי טייל", "עגל היטל"] },
+    { "name": "the Shach", "heardAs": ["שייך", "שחט", "שך"] },
+    { "name": "the Ramban", "heardAs": ["רמב׳ן", "רמב״ן"] },
+    { "name": "the Ba'al haTanya", "heardAs": ["בעל התניא"] },
+    { "name": "Navos", "heardAs": ["נאבותי ישראלי"] },
+    { "name": "the Pri Megadim", "heardAs": ["פריער מיט גדים", "פרי מגדים"] },
+    { "name": "the Chafetz Chaim", "heardAs": ["חפץ חיים"] },
+    { "name": "Elisha", "heardAs": ["אלישע"] },
+    { "name": "the Stoliner Rebbe", "heardAs": ["רבי באשע סטאלינא"] },
+    { "name": "Iyov", "heardAs": ["אייב", "אייו", "איום"] },
+    { "name": "Bilam", "heardAs": ["בילם", "בילום"] },
+    { "name": "Yisro", "heardAs": ["ישרא"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair for the Rav's own speech but badly garbled on Hebrew quotations (the Ramban, the Ba'al haTanya's letter, the Eliyahu Rabbah); these were recovered only in outline. The exact location of the Ba'al haTanya's words could not be pinned down, and some names could not be recovered: the author of a 'Brisker vort' on Iyov, the 'R' Moshe' quoted on talking during Hodu (segs 978-985), and the source at seg 466. The details of the Stoliner Rebbe story (seg 898) are unclear. The single catalog entry covers the whole shiur."
+}

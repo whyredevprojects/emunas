@@ -1,0 +1,75 @@
+{
+  "shiurId": "yi-shonos-36",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4b-v2",
+  "extractionVariant": "extraction",
+  "en": [
+    {
+      "sectionIndex": 0,
+      "heading": "Every member shares in the whole Shas",
+      "paragraphs": [
+        {
+          "text": "The Rav brings the Ba'al HaTanya's request at the end of the Tanya that every town divide the masechtos each year and finish Shas, small minyanim joining a larger one. From this he learns that each member of the group is connected to the whole Shas, as the Lubavitcher Rebbe explains, through the bond of souls among them.",
+          "sourceIdx": [0, 1],
+          "evidence": { "segs": [8, 19, 21, 26, 28, 34], "confidence": 0.8 }
+        },
+        {
+          "text": "He then brings the Midrash on 'sixty are the queens', the sixty masechtos: whoever learns a masechta, or even halachah after halachah, merits a share in malchus, which means having a say in Heaven.",
+          "sourceIdx": [2],
+          "evidence": { "segs": [41, 43, 53, 58, 61, 74], "confidence": 0.7 }
+        }
+      ]
+    },
+    {
+      "sectionIndex": 1,
+      "heading": "Torah learning and tefillah for the redemption",
+      "paragraphs": [
+        {
+          "text": "The Rav says the situation grows sharper and Jews need a great salvation. When Jews in Eretz Yisroel and abroad learn and daven for each other, their tefillos join, since all tefillah goes through Yerushalayim.",
+          "sourceIdx": [],
+          "evidence": { "segs": [80, 81, 89, 92, 93, 94], "confidence": 0.8 }
+        },
+        {
+          "text": "Citing Hoshea, he says learning Mishnah among the nations brings the ingathering of the exiles, and prays that this merit bring the great nechamah.",
+          "sourceIdx": [4],
+          "evidence": { "segs": [108, 110, 129, 131, 132], "confidence": 0.75 }
+        }
+      ]
+    }
+  ],
+  "yi": [
+    {
+      "sectionIndex": 0,
+      "heading": "יעדער איינער האט א חלק אינעם גאנצן ש\"ס",
+      "paragraphs": [
+        {
+          "text": "דער משגיח ברענגט דעם בעל התניא'ס בקשה אין סוף תניא, אז יעדע שטאט זאל יעדעס יאר צעטיילן די מסכתות און ענדיגן ש\"ס, און קליינע מנינים זאלן זיך משתתף זיין מיט א גרעסערן. דערפון לערנט ער אז יעדער פון דער חבורה איז פארבונדן מיטן גאנצן ש\"ס, ווי דער ליובאוויטשער רבי ערקלערט, מחמת דעם קשר הנשמות צווישן זיי.",
+          "sourceIdx": [0, 1],
+          "evidence": { "segs": [8, 19, 21, 26, 28, 34], "confidence": 0.8 }
+        },
+        {
+          "text": "דערנאך ברענגט ער דעם מדרש אויף \"ששים המה מלכות\", די זעכציג מסכתות: דער וואס לערנט א מסכתא, אדער אפילו הלכה נאך הלכה, איז זוכה צו א חלק אין מלכות, דאס הייסט אז ער האט א דעה אין הימל.",
+          "sourceIdx": [2],
+          "evidence": { "segs": [41, 43, 53, 58, 61, 74], "confidence": 0.7 }
+        }
+      ]
+    },
+    {
+      "sectionIndex": 1,
+      "heading": "לימוד התורה און תפילה פאר דער גאולה",
+      "paragraphs": [
+        {
+          "text": "דער משגיח זאגט אז דער מצב ווערט שארפער און אידן דארפן א גרויסע ישועה. ווען אידן אין ארץ ישראל און אין חוץ לארץ לערנען און זענען מתפלל איינער פארן אנדערן, ווערן די תפילות מקושר, ווייל אלע תפילות גייען דורך ירושלים.",
+          "sourceIdx": [],
+          "evidence": { "segs": [80, 81, 89, 92, 93, 94], "confidence": 0.8 }
+        },
+        {
+          "text": "ער ברענגט דעם פסוק אין הושע, אז לערנען משניות צווישן די גוים ברענגט קיבוץ גליות, און בעט אז אין דעם זכות זאל מען זוכה זיין צו דער גרויסער נחמה.",
+          "sourceIdx": [4],
+          "evidence": { "segs": [108, 110, 129, 131, 132], "confidence": 0.75 }
+        }
+      ]
+    }
+  ]
+}

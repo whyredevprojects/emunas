@@ -1,0 +1,544 @@
+{
+  "shiurId": "yi-shonos-34",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that hod, thanks and self-effacement, is the root of a Jew, from Modeh Ani each morning to the Korban Pesach, and that this power belongs most of all to the lowest souls whom Rabbi Shimon bar Yochai lifts up.",
+      "yi": "דער משגיח ערקלערט אז הוד, דאס הייסט הודאה און ביטול, איז דער יסוד פון א איד, פון מודה אני יעדן אינדערפרי ביז דעם קרבן פסח, און אז דער כח געהערט בפרט צו די נידעריגסטע נשמות וואס רבי שמעון בן יוחאי הייבט אויף."
+    },
+    "abstract": {
+      "en": "The Rav opens with the six hundred thousand letters of the Torah that match the six hundred thousand souls: the first letters are Moshe, David and Moshiach, the last ones the lowest souls of the generations before Moshiach. Souls are also ordered by the middos, and ours are of hod, the lowest; hod shebehod is Lag BaOmer, the day of Rabbi Shimon bar Yochai, who sees the hidden worth of even the lowest Jew. Hod means beauty, thanks and submission. Leah thanked Hashem at Yehudah's birth for receiving more than her share, so kingship, which demands that the king stay small, went to Yehudah. A Jew's first word each day is Modeh Ani, and the Korban Pesach, the first offering, is a thanks offering of pure kindness. Modeh Ani is said with impure hands to declare that the kelipah is nothing, as Avraham did with dust. The Rav ends with Pesach Sheini, the Alter Rebbe's day and thanks for the final redemption.",
+      "yi": "דער משגיח עפנט מיט די זעקס הונדערט טויזנט אותיות אין דער תורה וואס זענען קעגן די זעקס הונדערט טויזנט נשמות: די ערשטע אותיות זענען משה רבינו, דוד המלך און משיח, און די לעצטע זענען די נידעריגסטע נשמות פון עקבתא דמשיחא. די נשמות זענען אויך איינגעטיילט לויט די מידות, און אונזערע זענען פון הוד, די נידעריגסטע מדריגה; הוד שבהוד איז ל\"ג בעומר, דער יום טוב פון רבי שמעון בן יוחאי, וואס זעט דעם סוד אפילו אין דעם נידעריגסטן איד. הוד מיינט שיינקייט, הודאה און זיך אונטערגעבן. לאה האט געדאנקט ביי יהודה'ס געבורט ווייל זי האט באקומען מער ווי איר חלק, דערפאר געהערט מלכות צו יהודה, ווייל א מלך מוז זיך האלטן קליין. דאס ערשטע ווארט פון א איד יעדן טאג איז מודה אני, און דער קרבן פסח, דער ערשטער קרבן, איז א קרבן תודה פון חסד. מען זאגט מודה אני מיט טמא'נע הענט כדי צו ווייזן אז די קליפה איז גארנישט, אזוי ווי אברהם אבינו מיטן עפר. צום סוף רעדט ער וועגן פסח שני, דעם אלטן רבי'נס טאג, און דאנקען פאר דער גאולה שלמה."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The souls of the last generations are souls of hod, the lowest level, and Rabbi Shimon bar Yochai, whose day is hod shebehod, reveals the hidden worth in them.",
+          "yi": "די נשמות פון די לעצטע דורות זענען נשמות פון הוד, די נידעריגסטע מדריגה, און רבי שמעון בן יוחאי, וועמענס טאג איז הוד שבהוד, אנטפלעקט דעם באהאלטענעם חשיבות אין זיי."
+        },
+        "evidence": { "segs": [43, 48, 70, 74, 85, 86], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Hod means beauty, thanks and submission; Leah's thanks at Yehudah's birth came from feeling she had received more than her share.",
+          "yi": "הוד מיינט שיינקייט, הודאה און זיך אונטערגעבן; לאה'ס הודאה ביי יהודה'ס געבורט איז געקומען דערפון וואס זי האט געפילט אז זי האט באקומען מער ווי איר חלק."
+        },
+        "evidence": { "segs": [93, 94, 97, 108, 110], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Kingship belongs to Yehudah because a king must hold himself no higher than the lowest Jew, and only one rooted in thanks can do so.",
+          "yi": "מלכות געהערט צו יהודה ווייל א מלך טאר זיך נישט האלטן העכער ווי דער נידעריגסטער איד, און דאס קען נאר איינער וואס איז געווארצלט אין הודאה."
+        },
+        "evidence": { "segs": [154, 158, 174, 175, 176], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "A Jew's first word each morning, Modeh Ani, sets the tone of the whole day, since everything follows its beginning.",
+          "yi": "דאס ערשטע ווארט פון א איד יעדן אינדערפרי, מודה אני, באשטימט דעם גאנצן טאג, ווייל אלעס גייט נאך דעם אנהייב."
+        },
+        "evidence": { "segs": [186, 197, 204, 205, 207], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The Korban Pesach, the first offering of the Jewish people, is a thanks offering for a redemption that came through Hashem's kindness and not through their deeds.",
+          "yi": "דער קרבן פסח, דער ערשטער קרבן פון כלל ישראל, איז א קרבן תודה פאר א גאולה וואס איז געקומען פון חסד השם און נישט לויט זייערע מעשים."
+        },
+        "evidence": { "segs": [222, 225, 230, 234, 258], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Modeh Ani is said even with impure hands to declare that the kelipah has no power before Hashem, and through this declaration it is nullified.",
+          "yi": "מען זאגט מודה אני אפילו מיט טמא'נע הענט כדי צו מכריז זיין אז די קליפה האט נישט קיין כח אנטקעגן דעם רבונו של עולם, און דורך דעם ווערט זי בטל."
+        },
+        "evidence": { "segs": [278, 290, 294, 398, 404, 406], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-shoinos-34-hodaah",
+      "startSeg": 0,
+      "endSeg": 0,
+      "title": { "en": "Untranscribed opening", "yi": "דער אנהייב וואס איז נישט אויפגעכאפט" },
+      "summary": {
+        "en": "The first six and a half minutes of the recording are a single segment with only a few words transcribed; nothing of the content can be recovered.",
+        "yi": "די ערשטע זעקס און א האלב מינוט פונעם שיעור זענען איין שטיק מיט בלויז א פאר ווערטער; דער אינהאלט לאזט זיך נישט אויפכאפן."
+      },
+      "kind": "noise",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-34-hodaah",
+      "startSeg": 1,
+      "endSeg": 87,
+      "title": { "en": "Souls of hod and Rabbi Shimon bar Yochai", "yi": "נשמות פון הוד און רבי שמעון בן יוחאי" },
+      "summary": {
+        "en": "The Rav matches the letters of the Torah to the souls, from Moshe, David and Moshiach at the start to the lowest souls at the end, and explains that our souls are of hod. Hod shebehod is Lag BaOmer, the day of Rabbi Shimon bar Yochai, who sees and reveals the hidden worth of the lowest Jews.",
+        "yi": "דער משגיח שטעלט צוזאמען די אותיות פון דער תורה מיט די נשמות, פון משה, דוד און משיח ביים אנהייב ביז די נידעריגסטע נשמות ביים סוף, און ערקלערט אז אונזערע נשמות זענען פון הוד. הוד שבהוד איז ל\"ג בעומר, דער טאג פון רבי שמעון בן יוחאי, וואס זעט און אנטפלעקט דעם באהאלטענעם חשיבות פון די נידעריגסטע אידן."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-34-hodaah",
+      "startSeg": 88,
+      "endSeg": 147,
+      "title": { "en": "Hod as thanks: Leah and Yehudah", "yi": "הוד איז הודאה: לאה און יהודה" },
+      "summary": {
+        "en": "The Rav lists the meanings of hod: beauty, thanks and submission. He brings Leah's words at Yehudah's birth and Rashi's explanation that she received more than her share, and explains that a Jew who knows everything is a gift bows in thanks, as at Modim.",
+        "yi": "דער משגיח רעכנט אויס די טייטשן פון הוד: שיינקייט, הודאה און זיך אונטערגעבן. ער ברענגט לאה'ס ווערטער ביי יהודה'ס געבורט און רש\"י'ס פשט אז זי האט באקומען מער ווי איר חלק, און ערקלערט אז א איד וואס ווייסט אז אלעס איז א מתנת חנם בויגט זיך און דאנקט, אזוי ווי ביי מודים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-34-hodaah",
+      "startSeg": 148,
+      "endSeg": 219,
+      "title": { "en": "Why kingship belongs to Yehudah; Modeh Ani", "yi": "פארוואס מלכות געהערט צו יהודה; מודה אני" },
+      "summary": {
+        "en": "The Rav explains that a king must not hold himself above his brothers, which is why kingship was given to Yehudah, born of Leah's thanks, and he brings David who stayed small. Since everything follows its beginning, a Jew's first word, Modeh Ani, must leave its mark on the whole day; this is why a Jew is called Yehudi.",
+        "yi": "דער משגיח ערקלערט אז א מלך טאר זיך נישט האלטן העכער פון זיינע ברידער, און דערפאר האט מען געגעבן מלכות צו יהודה, וואס איז געבוירן געווארן מיט לאה'ס הודאה; ער ברענגט דוד המלך וואס איז געבליבן קליין. ווייל אלעס גייט נאכן אנהייב, מוז דאס ערשטע ווארט פון א איד, מודה אני, לאזן א רושם אויפן גאנצן טאג, און דערפאר הייסט א איד יהודי."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-34-hodaah",
+      "startSeg": 220,
+      "endSeg": 275,
+      "title": { "en": "The Korban Pesach as a thanks offering", "yi": "דער קרבן פסח אלס קרבן תודה" },
+      "summary": {
+        "en": "The Rav explains that the Exodus came not by merit but because the Jews are Hashem's children, so the first offering, the Korban Pesach, is a thanks offering. He brings the Abarbanel's question why it has no chametz loaves, and answers that it is an offering of pure kindness, not of deeds.",
+        "yi": "דער משגיח ערקלערט אז יציאת מצרים איז נישט געקומען לויט די מעשים נאר ווייל אידן זענען קינדער פונעם אייבערשטן, און דערפאר איז דער ערשטער קרבן, דער קרבן פסח, א קרבן תודה. ער ברענגט דעם אברבנאל'ס קשיא פארוואס עס האט נישט קיין לחמי חמץ, און ענטפערט אז ס'איז א קרבן פון חסד, נישט לויט מעשים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-34-hodaah",
+      "startSeg": 276,
+      "endSeg": 370,
+      "title": { "en": "Modeh Ani with impure hands", "yi": "מודה אני מיט טמא'נע הענט" },
+      "summary": {
+        "en": "The Rav brings the Hayom Yom that Modeh Ani is said before washing, and asks why one does not wash first. He explains that declaring the world nothing before Hashem nullifies evil, as in bittul chametz and Avraham's dust against the kings, and brings the Gemara in Shabbos about the 'king's daughter' on the fingers who insists on proper washing.",
+        "yi": "דער משגיח ברענגט פונעם היום יום אז מען זאגט מודה אני פאר נעגל וואסער, און פרעגט פארוואס מען וואשט זיך נישט פריער. ער ערקלערט אז ווען מען איז מכריז אז די וועלט איז גארנישט קעגן דעם אייבערשטן ווערט דאס שלעכטס בטל, אזוי ווי ביי ביטול חמץ און ביי אברהם אבינו'ס עפר קעגן די מלכים, און ברענגט די גמרא אין שבת וועגן דער בת מלך אויף די פינגער וואס איז מקפיד אויף א ריכטיגע נטילה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-34-hodaah",
+      "startSeg": 371,
+      "endSeg": 474,
+      "title": { "en": "The true prince and Pesach Sheini", "yi": "דער אמת'ער בן מלך און פסח שני" },
+      "summary": {
+        "en": "The Rav contrasts the proud 'king's daughter' of the kelipah with the Jew, a true king's son who makes himself small; his Modeh Ani with impure hands nullifies her. He then explains Pesach Sheini: the impure argued that the Korban Pesach, like Modeh Ani, could be brought in impurity, and it was instead set in the week of hod to show that even the lowest souls bring it.",
+        "yi": "דער משגיח שטעלט אוועק די שטאלצע בת מלך פון דער קליפה קעגן דעם איד, דעם אמת'ן בן מלך וואס מאכט זיך קליין; זיין מודה אני מיט טמא'נע הענט מאכט זי בטל. דערנאך ערקלערט ער פסח שני: די טמאים האבן געטענה'ט אז דער קרבן פסח, אזוי ווי מודה אני, קען מען מקריב זיין אין טומאה, און מען האט עס אנשטאט דעם אפגעשטעלט צו דער וואך פון הוד, צו ווייזן אז אפילו די נידעריגסטע נשמות ברענגען אים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-34-hodaah",
+      "startSeg": 475,
+      "endSeg": 573,
+      "title": { "en": "The Alter Rebbe's day and closing thanks", "yi": "דעם אלטן רבי'נס טאג און דאנקען צום סוף" },
+      "summary": {
+        "en": "The Rav brings a teaching linking the twenty-fourth of Teves to Lag BaOmer, and explains that the Alter Rebbe and his successors continued Rabbi Shimon bar Yochai's work of raising the lowest Jew through shluchim. He closes with thanks to Hashem, mentions birthdays being marked, his own among them, and wishes for the final redemption.",
+        "yi": "דער משגיח ברענגט א ווארט וואס פארבינדט כ\"ד טבת מיט ל\"ג בעומר, און ערקלערט אז דער אלטער רבי מיט די נשיאים נאך אים האבן ממשיך געווען רבי שמעון בן יוחאי'ס עבודה צו אויפהייבן דעם נידעריגסטן איד דורך שלוחים. ער פארענדיקט מיט הודאה צום אייבערשטן, דערמאנט געבורטסטעג וואס ווערן געפייערט, זיינער אויך, און בענטשט מיט דער גאולה שלמה."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "זאל יענער קאל ישראל, זאגט רשע, דאס איז שבירת הלכות",
+      "work": "Rashi on Devarim",
+      "ref": "Rashi on Devarim 34:12",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [24, 25], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "פון שלש אלפים הלכות, נישט טאקע כח ומאבלי של משה",
+      "work": "Gemara Temurah",
+      "ref": "Temurah 16a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [23], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ותקערי שמי יהודה בתמל הפעם עודת ה'",
+      "work": "Bereishis",
+      "ref": "Bereishis 29:35",
+      "sefariaRef": "Genesis 29:35",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [108, 140, 141], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "זאגט רשע נטעתו, יתר מרחלקו",
+      "work": "Rashi on Bereishis",
+      "ref": "Rashi on Bereishis 29:35",
+      "sefariaRef": "Rashi on Genesis 29:35:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [110, 137], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "לאה זאגט איר גמרא, איז די ערשטע וואס האט געדאנקט",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 7b",
+      "sefariaRef": "Berakhot 7b",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [145, 146], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "לביל צו רם לבבם היחד",
+      "work": "Devarim",
+      "ref": "Devarim 17:20",
+      "sefariaRef": "Deuteronomy 17:20",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [153, 164], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ודוד האט א קטן",
+      "work": "Shmuel I",
+      "ref": "Shmuel I 17:14",
+      "sefariaRef": "I Samuel 17:14",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [180, 387], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "הכל בתר רשע גרירה",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 12a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [186, 190], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "מודה אני לפונאכע",
+      "work": "Siddur (Modeh Ani)",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [197, 202, 236], "confidence": 0.9 }
+    },
+    {
+      "heardAs": "הלל על עובדי עובדת זרע, והלל על עובדי עובדת זרע",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [223], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "איז ר' אבנאל מסביר",
+      "work": "Abarbanel on the Haggadah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [241, 242, 245, 246], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "צורת חיים ואיבת חסד",
+      "work": "Siddur (Sim Shalom)",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [259, 260], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "עס שטעט אין היום יום",
+      "work": "Hayom Yom",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [276, 279], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "מלאכה על ארץ כבודו",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 6:3",
+      "sefariaRef": "Isaiah 6:3",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [288, 304], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "הלוי את השמים ואת ארץ אני מלא",
+      "work": "Yirmiyahu",
+      "ref": "Yirmiyahu 23:24",
+      "sefariaRef": "Jeremiah 23:24",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [305], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "לבטל לבי הפקק כי יפחה דיירה",
+      "work": "Bittul chametz (Kol Chamira)",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [298, 308], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "די גמרא זאגט אין שבת ... זי הייסט א באס מילך",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 109a",
+      "sefariaRef": "Shabbat 109a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [340, 343, 349, 359], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "רבי שמעון בן יוחאי זאגט, כל ישראל בנימלכים",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 111a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [371, 372], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "מיים רבים בלי יחרו לך בית את האהבה",
+      "work": "Shir HaShirim",
+      "ref": "Shir HaShirim 8:7",
+      "sefariaRef": "Song of Songs 8:7",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [424], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "א נחת נעבד צומאי ימלו נפש עדה",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 9:7",
+      "sefariaRef": "Numbers 9:7",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [432, 437, 454], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "פונעם פאטער פון רבי'ן זצ״ל, ר' אליהו יצחק",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [477, 479, 480, 483], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "אשרינם הצבחה קנאהם, ומנהם גורלינם",
+      "work": "Siddur",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [532, 533], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Rabbi Shimon bar Yochai, the revealer of secrets, is the patron of the lowest souls, because he sees the secret hidden even in the lowest Jew.",
+        "yi": "רבי שמעון בן יוחאי, וואס איז מגלה סודות, איז דער פטרון פון די נידעריגסטע נשמות, ווייל ער זעט דעם סוד וואס ליגט באהאלטן אפילו אינעם נידעריגסטן איד."
+      },
+      "evidence": { "segs": [68, 70, 72, 74, 75], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Kingship, the most dangerous position for pride, is entrusted only to Yehudah, whose very name comes from thanks for receiving more than one's share.",
+        "yi": "מלכות, דער פלאץ וואו מען קען דאס גרינגסטע זיך האלטן גרויס, ווערט געגעבן נאר צו יהודה, וועמענס נאמען אליין קומט פון הודאה פאר באקומען מער ווי זיין חלק."
+      },
+      "evidence": { "segs": [169, 172, 174, 176, 178], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Korban Pesach has no chametz loaves although it is a thanks offering, because it thanks for kindness that came regardless of deeds.",
+        "yi": "דער קרבן פסח האט נישט קיין לחמי חמץ הגם ער איז א קרבן תודה, ווייל ער דאנקט פאר א חסד וואס איז געקומען נישט לויט די מעשים."
+      },
+      "evidence": { "segs": [246, 250, 252, 258], "confidence": 0.65 }
+    },
+    {
+      "text": {
+        "en": "Saying Modeh Ani with impure hands is itself the defeat of the kelipah: declaring that it is nothing before Hashem makes it nothing, as Avraham's dust did to the kings.",
+        "yi": "מודה אני זאגן מיט טמא'נע הענט איז אליין דער נצחון איבער דער קליפה: ווען מען איז מכריז אז זי איז גארנישט קעגן דעם אייבערשטן, ווערט זי טאקע גארנישט, אזוי ווי אברהם אבינו'ס עפר קעגן די מלכים."
+      },
+      "evidence": { "segs": [292, 294, 325, 327, 332, 404], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The 'king's daughter' of the kelipah is a counterfeit royalty that holds itself great, while the Jew is the true king's son whose greatness is in his smallness.",
+        "yi": "די בת מלך פון דער קליפה איז א נאכגעמאכטע מלכות וואס האלט זיך גרויס, און דער איד איז דער אמת'ער בן מלך וועמענס גרויסקייט איז זיין קליינקייט."
+      },
+      "evidence": { "segs": [378, 384, 386, 413, 414], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Pesach Sheini falls in the week of hod to show that even the lowest souls bring the Korban Pesach, their Modeh Ani.",
+        "yi": "פסח שני איז אין דער וואך פון הוד, צו ווייזן אז אפילו די נידעריגסטע נשמות ברענגען דעם קרבן פסח, זייער מודה אני."
+      },
+      "evidence": { "segs": [463, 464, 465, 467, 472], "confidence": 0.65 }
+    }
+  ],
+  "stories": [],
+  "questions": [
+    {
+      "question": {
+        "en": "Why is kingship given specifically to Yehudah?",
+        "yi": "פארוואס גיט מען מלכות דווקא צו יהודה?"
+      },
+      "answer": {
+        "en": "Because a king may not hold himself greater than anyone, and Yehudah, born of Leah's thanks for receiving more than her share, holds himself small.",
+        "yi": "ווייל א מלך טאר זיך נישט האלטן גרעסער ווי קיינער, און יהודה, וואס איז געבוירן געווארן מיט לאה'ס הודאה אז זי האט באקומען מער ווי איר חלק, האלט זיך קליין."
+      },
+      "questionSegs": [166, 169],
+      "answerSegs": [174, 175, 176, 178],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "If the Korban Pesach is a thanks offering, why is it not brought with chametz loaves?",
+        "yi": "אויב דער קרבן פסח איז א קרבן תודה, פארוואס ברענגט מען עס נישט מיט לחמי חמץ?"
+      },
+      "answer": {
+        "en": "Because it is an offering of kindness, the first thanks of a Jew, not one that depends on his deeds.",
+        "yi": "ווייל ס'איז א קרבן פון חסד, די ערשטע הודאה פון א איד, נישט לויט זיינע מעשים."
+      },
+      "questionSegs": [249, 250, 251],
+      "answerSegs": [252, 255, 258],
+      "confidence": 0.65
+    },
+    {
+      "question": {
+        "en": "Would it not be better to wash first and then say Modeh Ani in purity?",
+        "yi": "וואלט נישט בעסער געווען צו וואשן נעגל וואסער פריער און דערנאך זאגן מודה אני בטהרה?"
+      },
+      "answer": {
+        "en": "Saying it with impure hands declares that the kelipah and the whole world are nothing before Hashem, and that declaration nullifies it.",
+        "yi": "ווען מען זאגט עס מיט טמא'נע הענט איז מען מכריז אז די קליפה און די גאנצע וועלט זענען גארנישט קעגן דעם אייבערשטן, און דאס מאכט זי בטל."
+      },
+      "questionSegs": [282, 286, 287],
+      "answerSegs": [288, 290, 294, 404, 406],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why did Avraham need to throw dust at the kings in his war?",
+        "yi": "פארוואס האט אברהם אבינו געדארפט ווארפן עפר אויף די מלכים?"
+      },
+      "answer": {
+        "en": "Throwing dust declared that their power was nothing before Hashem, and by declaring them nullified he defeated them.",
+        "yi": "מיטן ווארפן עפר האט ער מכריז געווען אז זייער כח איז גארנישט קעגן דעם אייבערשטן, און דורך דעם האט ער זיי בטל געמאכט."
+      },
+      "questionSegs": [319, 320, 321],
+      "answerSegs": [322, 324, 327, 329, 332],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "The impure asked why they should lose the Korban Pesach; since it is a Modeh Ani said even with impure hands, could it not be brought in impurity?",
+        "yi": "די טמאים האבן געפרעגט פארוואס זיי זאלן פארלירן דעם קרבן פסח; ווייל ער איז א מודה אני וואס מען זאגט אפילו מיט טמא'נע הענט, קען מען אים נישט מקריב זיין בטומאה?"
+      },
+      "answer": {
+        "en": "They were answered with a better plan: to postpone it to the week of hod, the lowest level, showing that even the lowest souls bring it.",
+        "yi": "מען האט זיי געענטפערט מיט א בעסערן פלאן: עס אפצושטעלן צו דער וואך פון הוד, די נידעריגסטע מדריגה, צו ווייזן אז אפילו די נידעריגסטע נשמות ברענגען אים."
+      },
+      "questionSegs": [434, 439, 446, 452],
+      "answerSegs": [460, 462, 463, 465, 467],
+      "confidence": 0.65
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says a Jew must know that whatever Hashem gives him, large or small, is more than his share, a free gift.",
+        "yi": "דער משגיח זאגט אז א איד דארף וויסן אז וואס דער אייבערשטער גיט אים, גרויס אדער קליין, איז מער ווי זיין חלק, א מתנת חנם."
+      },
+      "evidence": { "segs": [111, 112, 113, 114], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says the impression of the morning's Modeh Ani should rest in all of a Jew's words throughout the day.",
+        "yi": "דער משגיח זאגט אז דער רושם פונעם מודה אני אינדערפרי דארף ליגן אין אלע דיבורים פון א איד דעם גאנצן טאג."
+      },
+      "evidence": { "segs": [205, 206, 207, 208], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that on such a day it is right to gather and thank Hashem for being Jews and chassidim.",
+        "yi": "דער משגיח זאגט אז אויף אזא טאג איז רעכט זיך צוזאמענצוקומען און דאנקען דעם אייבערשטן אז מיר זענען אידן און חסידים."
+      },
+      "evidence": { "segs": [527, 529, 530, 534, 535], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "hod and hodaah",
+    "Modeh Ani",
+    "Lag BaOmer and Rabbi Shimon bar Yochai",
+    "kingship and humility",
+    "Korban Pesach as a thanks offering",
+    "negel vasser and the kelipah",
+    "bittul of evil",
+    "Pesach Sheini",
+    "the lowest souls of the last generations",
+    "the Alter Rebbe's yahrzeit"
+  ],
+  "concepts": [
+    { "he": "הוד", "heardAs": ["הויד", "הייד", "היינט", "היוט"] },
+    { "he": "הוד שבהוד", "heardAs": ["הייד שבי הייד"] },
+    { "he": "הודאה", "heardAs": ["הודעה"] },
+    { "he": "מודה אני", "heardAs": ["מיידע אני", "מודה אנו", "מוד אנו", "מודה הנהי"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבינו שלעדין", "רבי יושע לילא", "רבישא", "רבונו שלענ'ען"] },
+    { "he": "עקבתא דמשיחא", "heardAs": ["עקבות און די משיחה"] },
+    { "he": "קרבן תודה", "heardAs": ["קרבן תודע"] },
+    { "he": "קרבן פסח", "heardAs": ["קרבן פסח"] },
+    { "he": "בת מלך", "heardAs": ["באס מילך", "בת מלאך"] },
+    { "he": "בני מלכים", "heardAs": ["בנימלכים"] },
+    { "he": "קליפה", "heardAs": ["קליפע"] },
+    { "he": "ביטול חמץ", "heardAs": ["ביטל חמץ"] },
+    { "he": "מתנת חנם", "heardAs": ["מתנה סכינים"] },
+    { "he": "נטילת ידים", "heardAs": ["נעגל וואסער", "נגל בשל"] },
+    { "he": "פסח שני", "heardAs": [] },
+    { "he": "שלוחים", "heardAs": ["שלחים"] }
+  ],
+  "people": [
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו", "רבי משה"] },
+    { "name": "David HaMelech", "heardAs": ["דוד המלך", "דוד"] },
+    { "name": "Rabbi Shimon bar Yochai", "heardAs": ["רבי שמעון בן יחוי", "רבי יושעון בן יוחאי", "רבי שמעון ביוחר"] },
+    { "name": "Leah", "heardAs": ["לאה", "אליהו"] },
+    { "name": "Yehudah", "heardAs": ["יהודה"] },
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינם", "אברהם אבינו"] },
+    { "name": "Eliezer", "heardAs": ["אליעזר"] },
+    { "name": "Rashi", "heardAs": ["רשע"] },
+    { "name": "Abarbanel", "heardAs": ["ר' אבנאל"] },
+    { "name": "the Alter Rebbe", "heardAs": ["דעם אלטן רבי'ן", "דער אלטער רבי"] }
+  ],
+  "asrNotes": "Segment 0 covers the first 6:40 with only one transcribed phrase and is treated as a noise section; the opening of the shiur is lost. The word hod is often misheard as 'היינט' or 'היוט', and Hebrew quotations are heavily garbled. The name of the sefer or rabbi near segment 53 and the gematria in segments 88-89 could not be recovered, nor the names of the people whose birthdays are mentioned in segments 544-551."
+}

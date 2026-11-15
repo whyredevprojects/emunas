@@ -1,0 +1,627 @@
+{
+  "shiurId": "yi-shonos-11",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "At a seudas Rosh Chodesh Adar, the Rav teaches that every person needs pleasure, and a Jew should draw it from Torah, tefillah and avodas Hashem rather than chase the new pleasures the world keeps inventing.",
+      "yi": "ביי א סעודת ראש חודש אדר לערנט דער משגיח אז יעדער מענטש דארף האבן הנאה, און א איד זאל זי נעמען פון תורה, תפילה און עבודת השם, און נישט נאכלויפן די נייע הנאות וואס די וועלט טראכט כסדר אויס."
+    },
+    "abstract": {
+      "en": "The Rav opens with two neglected one-line simanim in Shulchan Aruch, melaveh malkah and the seudah of Rosh Chodesh, and explains the Rosh Chodesh meal as a korban-like feast for the diminished moon and a seudah of Moshiach, tied to malchus beis Dovid and to Shaul's anger at Dovid's family feast. Adar has strong mazal, and Jews sit at this seudah even in a time when the sitra achra rules. Building on Dovid's words 'all my wellsprings are in You', he brings a psychologist's rule that a person must have pleasure, and shows from the Yismach Moshe and Rabbi Aharon of Karlin that tzaddikim had it from Torah and tefillah. The danger is drawing in new taavos, new foods and goyish joys. He then praises the miracle that avodas Hashem survives in galus, including in his own beis medrash, and closes with the Yaaros Devash, whose pleasure was standing in tefillah, and a call to begin Adar with simcha.",
+      "yi": "דער משגיח עפנט מיט צוויי סימנים אין שולחן ערוך פון איין סעיף וואס מ'איז נישט מקיים, מלוה מלכה און סעודת ראש חודש, און ער ערקלערט אז די סעודה פון ראש חודש איז ווי א קרבן אויף מיעוט הירח און א סעודה פון משיח, פארבונדן מיט מלכות בית דוד און מיט שאול'ס כעס אויף דוד'ס זבח משפחה. אדר איז בריא מזליה, און אידן זיצן ביי דער סעודה אפילו ווען די סטרא אחרא האט די שליטה. אויפן פסוק \"כל מעייני בך\" ברענגט ער א כלל פון א פסיכאלאג אז א מענטש מוז האבן הנאה, און ער ווייזט פונעם ישמח משה און פון רבי אהרן פון קארלין אז צדיקים האבן עס געהאט פון תורה און תפילה. די סכנה איז ממשיך זיין נייע תאוות, נייע מאכלים און גויאישע שמחות. דערנאך רעדט ער וועגן דעם נס אז עבודת השם עקזיסטירט אין גלות, אויך אין זיין בית המדרש, און ער שליסט מיטן יערות דבש, וועמענס הנאה איז געווען צו שטיין אין תפילה, און מיט א רוף אנצוהייבן אדר בשמחה."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The seudah of Rosh Chodesh is like a korban for the diminished moon, and a seudah of Moshiach bound up with malchus beis Dovid.",
+          "yi": "די סעודה פון ראש חודש איז ווי א קרבן אויף מיעוט הירח, און א סעודה פון משיח וואס איז פארבונדן מיט מלכות בית דוד."
+        },
+        "evidence": { "segs": [35, 44, 47, 49], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Hashem created man so that he must have pleasure; without any enjoyment a person breaks down.",
+          "yi": "דער רבונו של עולם האט באשאפן דעם מענטש אז ער מוז האבן הנאה; אן הנאה ברעכט ער זיך."
+        },
+        "evidence": { "segs": [155, 156, 159, 164], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Tzaddikim who tasted nothing in food had the greatest pleasure, from Torah, tefillah and Tehillim.",
+          "yi": "צדיקים וואס האבן נישט געשפירט קיין טעם אין עסן האבן געהאט די גרעסטע הנאה, פון תורה, תפילה און תהלים."
+        },
+        "evidence": { "segs": [190, 192, 193, 195], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The bodily pleasures a person was created with are his test, but drawing in new pleasures and new foods distances him from Hashem.",
+          "yi": "די גוף'ישע הנאות וואס א מענטש איז באשאפן געווארן דערמיט זענען זיין נסיון, אבער ממשיך זיין נייע הנאות און נייע מאכלים דערווייטערט אים פונעם רבונו של עולם."
+        },
+        "evidence": { "segs": [290, 296, 336, 350], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "A Jew must not let goyish joys into his home, even a little, as with chametz.",
+          "yi": "א איד טאר נישט אריינלאזן אין שטוב די גויאישע שמחות, אפילו א משהו, אזוי ווי ביי חמץ."
+        },
+        "evidence": { "segs": [433, 437, 439, 441], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "The survival of avodas Hashem in galus is an even greater miracle than the survival of the Jews themselves.",
+          "yi": "אז עבודת השם עקזיסטירט אין גלות איז א נאך גרעסערער נס ווי אז אידן אליין עקזיסטירן."
+        },
+        "evidence": { "segs": [519, 521, 526, 527], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "A Jew should take his pleasure from what Hashem provides, Torah, mitzvos and tefillah, and begin Adar with that simcha.",
+          "yi": "א איד זאל נעמען זיין הנאה פון דעם וואס דער רבונו של עולם גיט, תורה, מצוות און תפילה, און אנהייבן אדר מיט אט די שמחה."
+        },
+        "evidence": { "segs": [655, 661, 727, 728, 730], "confidence": 0.85 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-shoinos-11-perishus-m-taavos",
+      "startSeg": 0,
+      "endSeg": 75,
+      "title": {
+        "en": "The neglected seudah of Rosh Chodesh",
+        "yi": "די פארלאזטע סעודת ראש חודש"
+      },
+      "summary": {
+        "en": "The Rav notes two simanim in Shulchan Aruch, melaveh malkah and the seudah of Rosh Chodesh, that people do not keep, and tells of a Yerushalmi who left his rental income for Rosh Chodesh meals. He explains the meal as a korban for the diminished moon and a seudah of Moshiach, and shows this in Shaul's anger at Dovid's Rosh Chodesh family feast.",
+        "yi": "דער משגיח מערקט אן צוויי סימנים אין שולחן ערוך, מלוה מלכה און סעודת ראש חודש, וואס מענטשן זענען נישט מקיים, און דערציילט פון א ירושלמי'ער איד וואס האט איבערגעלאזט די הכנסה פון זיינע הייזער פאר סעודות ראש חודש. ער ערקלערט די סעודה ווי א קרבן אויף מיעוט הירח און א סעודה פון משיח, און ווייזט עס אין שאול'ס כעס אויף דוד'ס זבח משפחה פון ראש חודש."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-11-perishus-m-taavos",
+      "startSeg": 76,
+      "endSeg": 138,
+      "title": {
+        "en": "Adar's strong mazal and 'all my wellsprings'",
+        "yi": "בריא מזליה פון אדר און \"כל מעייני בך\""
+      },
+      "summary": {
+        "en": "The Rav marvels that Jews sit at a Rosh Chodesh seudah while the sitra achra rules, and explains that Adar's mazal is strong, bringing the Gemara that a Jew should push off a case against a gentile to Adar. Adar is a time of ratzon, and he introduces Dovid's words 'all my wellsprings are in You', warning that he will speak sharply and is speaking to himself.",
+        "yi": "דער משגיח וואונדערט זיך אז אידן זיצן ביי א סעודת ראש חודש ווען די סטרא אחרא האט די שליטה, און ערקלערט אז אדר איז בריא מזליה, מיט דער גמרא אז א איד וואס האט א דין מיט א גוי זאל עס אפשטופן אויף אדר. אדר איז אן עת רצון, און ער ברענגט דוד המלך'ס ווערטער \"כל מעייני בך\", און זאגט אז ער גייט רעדן שארף און ער רעדט צו זיך."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-11-perishus-m-taavos",
+      "startSeg": 139,
+      "endSeg": 232,
+      "title": {
+        "en": "Man must have pleasure, and tzaddikim had theirs",
+        "yi": "א מענטש מוז האבן הנאה, און צדיקים האבן זייערע געהאט"
+      },
+      "summary": {
+        "en": "The Rav brings a psychologist's rule that a person fed only through a tube will break down, because Hashem made man to need pleasure. He asks how the Yismach Moshe, who once ate soap water as his supper unawares, fits this, and answers that he had the greatest pleasure from Gemara, tefillah and Tehillim, adding a story of Rabbi Aharon of Karlin and a vort of the Kotzker.",
+        "yi": "דער משגיח ברענגט א כלל פון א פסיכאלאג אז א מענטש וואס מ'שפייזט אים נאר דורך א רער וועט זיך צעברעכן, ווייל דער רבונו של עולם האט באשאפן דעם מענטש אז ער דארף הנאה. ער פרעגט ווי אזוי דאס שטימט מיטן ישמח משה, וואס האט אמאל געגעסן זייף-וואסער פאר וועטשערע און נישט געוואוסט, און ענטפערט אז ער האט געהאט די גרעסטע הנאה פון גמרא, תפילה און תהלים; ער לייגט צו א מעשה פון רבי אהרן פון קארלין און א ווארט פונעם קאצקער."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-11-perishus-m-taavos",
+      "startSeg": 233,
+      "endSeg": 300,
+      "title": {
+        "en": "Natural tests versus new taavos",
+        "yi": "נאטירלעכע נסיונות קעגן נייע תאוות"
+      },
+      "summary": {
+        "en": "The Rav explains that bodily pleasures are a person's given test, and holding back from sin is itself kedushah, while one can also enjoy learning. But one who seeks out new pleasures, like lying in a newly bought tub, cannot at the same time feel the joy of a blatt Gemara or Shabbos; Hashem can forgive the natural taavos, but drawing in new ones is far away.",
+        "yi": "דער משגיח ערקלערט אז די הנאות פונעם גוף זענען דעם מענטשנס נסיון, און זיך צוריקהאלטן פון עבירות איז אליין א קדושה, און מ'קען אויך האבן הנאה פון לערנען. אבער ווער עס זוכט נייע הנאות, ווי ליגן אין א נייע וואנע, קען נישט גלייכצייטיג שפירן די שמחה פון א בלאט גמרא אדער פון שבת; די נאטירלעכע תאוות קען דער רבונו של עולם מוחל זיין, אבער ממשיך זיין נייע איז ווייט אוועק."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-11-perishus-m-taavos",
+      "startSeg": 301,
+      "endSeg": 352,
+      "title": {
+        "en": "Joy in avodas Hashem and the new foods",
+        "yi": "שמחה אין עבודת השם און די נייע מאכלים"
+      },
+      "summary": {
+        "en": "From the seder's request to rejoice in Hashem's service, the Rav says every yungerman knows moments of great pleasure in avodas Hashem, on Shabbos, Yom Tov, at the Megillah, Akdamus or in the sukkah, despite times of dullness. Running after the world's new foods, a new cake at every kiddush, distances a person from Hashem and from 'all my wellsprings are in You'.",
+        "yi": "פון דער בקשה ביים סדר צו זיין \"ששים בעבודתך\" זאגט דער משגיח אז יעדער יונגערמאן קען מאמענטן פון גרויסע הנאה אין עבודת השם, שבת, יום טוב, ביי קריאת המגילה, אקדמות אדער אין סוכה, כאטש ס'זענען דא צייטן פון טמטום הלב. נאכלויפן די נייע מאכלים פון דער וועלט, א נייעם קוכן ביי יעדן קידוש, דערווייטערט פונעם רבונו של עולם און פון \"כל מעייני בך\"."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-11-perishus-m-taavos",
+      "startSeg": 353,
+      "endSeg": 424,
+      "title": {
+        "en": "Pleasure from Torah, not the spider's web",
+        "yi": "הנאה פון תורה, נישט פון דער שפינוועב"
+      },
+      "summary": {
+        "en": "The Rav sums up that one should enjoy what Hashem provides, not what the sitra achra offers, reading the Mishnah 'one who enjoys words of Torah' as meaning he no longer draws vitality from the world. The new inventions are a web that traps a person like a fly, so one must hold back from new tests; he applies 'do not rejoice, Yisrael, like the nations' and contrasts a Jewish piece of kugel with goyish pleasures.",
+        "yi": "דער משגיח פאסט צוזאמען אז מ'זאל געניסן פון דעם וואס דער רבונו של עולם דערלאנגט, נישט פון וואס די סטרא אחרא דערלאנגט, און טייטשט די משנה \"כל הנהנה מדברי תורה\" אז ער קען שוין נישט נעמען קיין חיות פון דער וועלט. די נייע המצאות זענען א נעץ וואס פאנגט א מענטש ווי א פליג, ממילא דארף מען זיך אפהאלטן פון נייע נסיונות; ער ברענגט \"אל תשמח ישראל אל גיל כעמים\" און שטעלט אקעגן א אידיש שטיקל קוגל מיט גויאישע תאוות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-11-perishus-m-taavos",
+      "startSeg": 425,
+      "endSeg": 504,
+      "title": {
+        "en": "Not even a trace, and the miracle of survival",
+        "yi": "אפילו נישט קיין משהו, און דער נס פון קיום"
+      },
+      "summary": {
+        "en": "The Rav says he painted it in vivid colors, but even a trace of goyish joy must be kept out like chametz; the beis medrash itself filters out those with no connection to avodas Hashem. He then turns to the miracle of Jewish survival in galus, bringing the Yaavetz's count of the vanished empires, and mentions Paras, which never harmed the Jews.",
+        "yi": "דער משגיח זאגט אז ער האט עס געמאלט מיט שטארקע פארבן, אבער אפילו א משהו פון גויאישע שמחה דארף מען אפהאלטן ווי חמץ; דער בית המדרש אליין פילטערט אויס די וואס האבן נישט קיין שייכות צו עבודת השם. דערנאך רעדט ער וועגן דעם נס פון אידן'ס קיום אין גלות, מיטן יעב\"ץ'ס חשבון פון די מלכויות וואס זענען פארשוואונדן, און דערמאנט פרס, וואס האט אידן קיינמאל נישט געשאדט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-11-perishus-m-taavos",
+      "startSeg": 505,
+      "endSeg": 603,
+      "title": {
+        "en": "The greater miracle: avodas Hashem in galus",
+        "yi": "דער גרעסערער נס: עבודת השם אין גלות"
+      },
+      "summary": {
+        "en": "The Rav says Jewish survival in galus is a greater miracle than Yetzias Mitzrayim, only hidden in nature like the Megillah, and the survival of avodas Hashem greater still, though the Nazi aimed at the Talmud and today's yeshivos hold more students than all prewar ones. He calls his own chevra Emunas Yisroel one of the great miracles and ties it to the seudas Rosh Chodesh, where the moon that died rises again.",
+        "yi": "דער משגיח זאגט אז דער קיום פון אידן אין גלות איז א גרעסערער נס ווי יציאת מצרים, נאר באהאלטן אין טבע ווי די מגילה, און דער קיום פון עבודת השם איז נאך גרעסער, כאטש דער נאצי האט געצילט אויפן תלמוד, און היינט לערנען אין די ישיבות מער ווי אין אלע ישיבות פאר דער מלחמה. ער רופט זיין חבורה אמונת ישראל איינע פון די גרויסע נסים, און פארבינדט עס מיט דער סעודת ראש חודש, וואו די לבנה וואס איז געשטארבן שטייט ווידער אויף."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-11-perishus-m-taavos",
+      "startSeg": 604,
+      "endSeg": 664,
+      "title": {
+        "en": "Gan Eden or Gehinnom in the same davening",
+        "yi": "גן עדן אדער גיהנום אין דעם זעלבן דאווענען"
+      },
+      "summary": {
+        "en": "The Rav laments those who do not take advantage of the beis medrash's davening, especially on weekdays, and brings the Gemara that Gan Eden and Gehinnom are one place: the same davening is Gan Eden for one and Gehinnom for another. Other shuls draw people with bagels and lox; theirs serves Nishmas and Shabbos tefillos, and a person should enjoy Hashem's recipe, not foreign foods.",
+        "yi": "דער משגיח באדויערט די וואס נוצן נישט אויס דאס דאווענען אין בית המדרש, בפרט אין די וואכנטעג, און ברענגט די גמרא אז גן עדן און גיהנום זענען איין פלאץ: דאס זעלבע דאווענען איז פאר איינעם גן עדן און פאר א צווייטן גיהנום. אנדערע שולן ציען מיט בייגל און לאקס; ביי זיי סערווירט מען נשמת און שבת'דיגע תפילות, און א מענטש זאל געניסן פונעם רבונו של עולם'ס רעצעפט, נישט פון פרעמדע מאכלים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-11-perishus-m-taavos",
+      "startSeg": 665,
+      "endSeg": 745,
+      "title": {
+        "en": "The Yaaros Devash's pleasure in tefillah",
+        "yi": "דעם יערות דבש'ס הנאה אין תפילה"
+      },
+      "summary": {
+        "en": "The Rav brings Rabbi Aharon's saying that he does not trust a bochur until he sees him as a yungerman, and urges continuing. He reads a letter of the Yaaros Devash about his long kavanos in tefillah, for which people laughed at him, and his answer that standing before Hashem in tefillah is his portion. He closes that Rosh Chodesh Adar is a time to begin with the simcha of Torah, mitzvos and tefillah, with a brachah.",
+        "yi": "דער משגיח ברענגט רבי אהרן'ס ווארט אז ער גלייבט נישט א בחור ביז ער זעט אים ווי א יונגערמאן, און מאנט ממשיך צו זיין. ער לייענט א בריוו פונעם יערות דבש וועגן זיינע לאנגע כוונות אין תפילה, וואס מ'האט אויף אים געלאכט, און זיין ענטפער אז שטיין פאר דעם רבונו של עולם אין תפילה איז זיין חלק. ער שליסט אז ראש חודש אדר איז א צייט אנצוהייבן מיט דער שמחה פון תורה, מצוות און תפילה, מיט א ברכה."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "א מצווה סתם מלוה מלכה, דאס איז דער גאנצער סימן",
+      "work": "Shulchan Aruch",
+      "ref": "Shulchan Aruch Orach Chaim 300",
+      "sefariaRef": "Shulchan Arukh, Orach Chayim 300:1",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1, 3, 4], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער צווייטער סימן, סטות חשקדות, דער גאנצער סימן",
+      "work": "Shulchan Aruch",
+      "ref": "Shulchan Aruch Orach Chaim 419",
+      "sefariaRef": "Shulchan Arukh, Orach Chayim 419:1",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [5, 6], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ווי רשע ברענגט דעם חז״ל אין פרשת פינחס, אביהו אלי כפרה",
+      "work": "Rashi",
+      "ref": "Rashi on Bamidbar 28:15",
+      "sefariaRef": "Rashi on Numbers 28:15",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [24, 25, 26, 27], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "כי ירח יקין עולם שעד ביי מלכות בית דוד",
+      "work": "Tehillim",
+      "ref": "Tehillim 89:38",
+      "sefariaRef": "Psalms 89:38",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [49, 50], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "זבח משפחה לויב אר ... בן אבת המחדות",
+      "work": "Shmuel I",
+      "ref": "Shmuel I 20",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [56, 58, 61, 64], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער גמרא זאגט אז א איד האט א דין מיט א גאה, זאל ער עס אפשטופן אויף אדל",
+      "work": "Gemara Taanis",
+      "ref": "Taanis 29b",
+      "sefariaRef": "Taanit 29b",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [106, 107, 108], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "כל מהייני בח",
+      "work": "Tehillim",
+      "ref": "Tehillim 87:7",
+      "sefariaRef": "Psalms 87:7",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [124, 125, 126, 134], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "ס'איז דא א ווארט פון קארטסקער",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [218, 223, 224, 225], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "שמחים בבינין הצחר, בבינין ירחם, וסתים בעבודת סחר",
+      "work": "Pesach Haggadah",
+      "ref": "Pesach Haggadah, brachah of Asher Ge'alanu",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [301, 302, 303, 304], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ס'איז דא פחקים און תניא וואס א גוט עצות",
+      "work": "Tanya",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [314, 315], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "קדושת לוי באשרייבט עס אין זיינע קדושות",
+      "work": "Kedushas Levi",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [326, 327], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "טייטשט ער די משנה, כא נהנא מדברי תורה נדיל חייו מן העולם",
+      "work": "Pirkei Avos",
+      "ref": "Avos 4:5",
+      "sefariaRef": "Pirkei Avot 4:5",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [361, 362, 364, 366], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אזוי ווי מ'זאגט אין אקדמות צו די גוים",
+      "work": "Akdamus",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [370, 371], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "אל תשמך ישרא-ל הגל כאמן",
+      "work": "Hoshea",
+      "ref": "Hoshea 9:1",
+      "sefariaRef": "Hosea 9:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [408, 409, 420], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "דער רבי יענגע וועמדין ... ער מאכט א חשבון פון די אלע עמי סעולם",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [479, 480, 483, 486], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "פון דוד מלך ישראל חי וקים",
+      "work": "Gemara Rosh Hashanah",
+      "ref": "Rosh Hashanah 25a",
+      "sefariaRef": "Rosh Hashanah 25a",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [601, 602], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די גמרא זאגט, ס'איז פארנען א גענעדן מיט א גיהנין",
+      "work": "Gemara",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [618, 619, 621, 623], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "די מייארעס דבש, א בריוו",
+      "work": "Yaaros Devash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [687, 689, 693, 708], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rosh Chodesh meal is the Jews' share in the korban Hashem asked for the diminished moon: like kohanim eating a korban, their seudah is a pleasing offering before Hashem.",
+        "yi": "די סעודה פון ראש חודש איז דער חלק פון אידן אינעם קרבן וואס דער רבונו של עולם האט געבעטן אויף מיעוט הירח: ווי כהנים וואס עסן א קרבן, איז זייער סעודה א נחת רוח פארן רבונו של עולם."
+      },
+      "evidence": { "segs": [35, 38, 44, 45], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Shaul's fury at Dovid's family feast came because the seudah of Rosh Chodesh belongs to the king; a Rosh Chodesh feast of Dovid looked to him like rebellion, a seudah of Moshiach.",
+        "yi": "שאול האט זיך אזוי געכעסט אויף דוד'ס זבח משפחה ווייל די סעודה פון ראש חודש געהערט צום מלך; א סעודת ראש חודש ביי דוד האט אים אויסגעזען ווי מרידה במלכות, א סעודה פון משיח."
+      },
+      "evidence": { "segs": [64, 67, 70, 73], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Yismach Moshe, who could eat soap water without noticing, does not refute the rule that man needs pleasure; he proves it, since no one enjoyed the world more than he did through Gemara and tefillah.",
+        "yi": "דער ישמח משה, וואס האט געקענט עסן זייף-וואסער און נישט באמערקן, ווארפט נישט אפ דעם כלל אז א מענטש דארף הנאה; ער באווייזט עס, ווייל קיינער האט נישט געהאט אזויפיל הנאה פון דער וועלט ווי ער, דורך גמרא און תפילה."
+      },
+      "evidence": { "segs": [188, 190, 192, 195], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Hashem can forgive a person for the taavos he was created with, but one who brings in new ones has gone far beyond them, to the other side of the sea.",
+        "yi": "די תאוות וואס א מענטש איז באשאפן געווארן דערמיט קען אים דער רבונו של עולם מוחל זיין, אבער ווער עס איז ממשיך נייע איז שוין ווייט אוועק, אויף יענער זייט ים."
+      },
+      "evidence": { "segs": [291, 292, 296, 300], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Even overindulging in a Jewish piece of kugel is kelipas nogah that can be elevated, but goyish pleasures cannot be, and that is the meaning of 'do not rejoice like the nations'.",
+        "yi": "אפילו צופיל עסן פון א אידיש שטיקל קוגל איז קליפת נוגה וואס מ'קען מעלה זיין, אבער גויאישע תאוות נישט, און דאס איז דער פשט אין \"אל תשמח ישראל אל גיל כעמים\"."
+      },
+      "evidence": { "segs": [414, 416, 417, 419, 420], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Gan Eden and Gehinnom are one place: the same long davening is Gan Eden for one who is connected to it and Gehinnom for one who is not.",
+        "yi": "גן עדן און גיהנום זענען איין פלאץ: דאס זעלבע לאנגע דאווענען איז גן עדן פאר דעם וואס האט א שייכות דערמיט, און גיהנום פאר דעם וואס נישט."
+      },
+      "evidence": { "segs": [621, 623, 629, 632], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The seudah of Rosh Chodesh is itself a miracle like the survival of avodas Hashem: the moon that died rises again, like techiyas hameisim, and it is the meal of Dovid, king of Israel, who lives on.",
+        "yi": "די סעודת ראש חודש איז אליין א נס ווי דער קיום פון עבודת השם: די לבנה וואס איז געשטארבן שטייט ווידער אויף, ווי תחיית המתים, און ס'איז די סעודה פון דוד מלך ישראל חי וקים."
+      },
+      "evidence": { "segs": [594, 596, 597, 602], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "A Yerushalmi's will for Rosh Chodesh meals",
+        "yi": "א ירושלמי'ס צוואה פאר סעודות ראש חודש"
+      },
+      "retelling": {
+        "en": "Rabbi Moshe Halberstam of Yerushalayim, a grandson of the Tshakava Rav, owned a house with several apartments. He left a will that all the income from the apartments be used for seudos of Rosh Chodesh. The Rav says he understood what a seudah of Rosh Chodesh is.",
+        "yi": "רבי משה האלבערשטאם פון ירושלים, אן אייניקל פונעם טשאקאווער רב, האט געהאט א הויז מיט עטלעכע דירות. ער האט איבערגעלאזט א צוואה אז די גאנצע הכנסה פון די דירות זאל גיין אויף סעודות ראש חודש. דער משגיח זאגט אז ער האט פארשטאנען וואס א סעודת ראש חודש איז."
+      },
+      "people": ["Rabbi Moshe Halberstam", "the Tshakava Rav"],
+      "evidence": { "segs": [8, 9, 14, 16, 17, 18], "confidence": 0.75 }
+    },
+    {
+      "title": {
+        "en": "The Yismach Moshe's supper of soap water",
+        "yi": "דעם ישמח משה'ס וועטשערע פון זייף-וואסער"
+      },
+      "retelling": {
+        "en": "The Yismach Moshe's rebbetzin once had to go to a wedding and told him his supper, a piece of meat and soup, was in a pot on the stove to warm up. When she came back in the morning the pot was untouched. Next to it had stood a pot of soapy water for washing dishes, and he had eaten that by mistake as his supper without noticing.",
+        "yi": "דעם ישמח משה'ס רביצין האט אמאל געדארפט גיין צו א חתונה, און זי האט אים געזאגט אז זיין וועטשערע, א שטיקל פלייש מיט זופ, שטייט אין א טאפ אויפן אויוון צום אנווארעמען. ווען זי איז צוריקגעקומען אינדערפרי איז דער טאפ געווען אומבארירט. דערנעבן איז געשטאנען א טאפ מיט זייף-וואסער צו וואשן די כלים, און דאס האט ער בטעות געגעסן פאר וועטשערע און גארנישט באמערקט."
+      },
+      "people": ["the Yismach Moshe"],
+      "evidence": { "segs": [170, 171, 174, 180, 182, 183], "confidence": 0.8 }
+    },
+    {
+      "title": {
+        "en": "The poritz who sledded on sugar",
+        "yi": "דער פריץ וואס איז געפארן אויף צוקער"
+      },
+      "retelling": {
+        "en": "A chassid came to Rabbi Aharon of Karlin and told him of a poritz who, on a hot summer day in Tammuz, wanted to ride a sleigh. Sugar was very expensive in Russia, yet he had his servants spread hundreds of sacks of sugar over the field and rode over it as over snow. Rabbi Aharon answered that this poritz is to be pitied, and asked how it compares to the pleasure of saying Nishmas kol chai.",
+        "yi": "א חסיד איז געקומען צו רבי אהרן פון קארלין און דערציילט פון א פריץ וואס האט געוואלט פארן מיט א שליטן אויף א הייסן זומער טאג אין תמוז. צוקער איז אין רוסלאנד געווען זייער טייער, פונדעסטוועגן האט ער געהייסן זיינע משרתים צעשפרייטן הונדערטער זעק צוקער איבערן פעלד, און ער איז געפארן דערויף ווי אויף שניי. רבי אהרן האט געענטפערט אז דער פריץ איז א נעבעך, און געפרעגט ווי קומט עס צו דער הנאה ווען מ'זאגט \"נשמת כל חי\"."
+      },
+      "people": ["Rabbi Aharon of Karlin"],
+      "evidence": { "segs": [198, 200, 201, 203, 206, 213], "confidence": 0.7 }
+    },
+    {
+      "title": {
+        "en": "Rabbi Aharon does not trust a bochur",
+        "yi": "רבי אהרן גלייבט נישט א בחור"
+      },
+      "retelling": {
+        "en": "Rabbi Eliyahu Steinberg told the Rav that Rabbi Ahrele, the Shomer Emunim Rebbe, used to say that he does not believe a bochur who davens and learns; he wants to see how he is as a yungerman. The Rav uses this to urge the young men to continue.",
+        "yi": "רבי אליהו שטיינבערג האט דערציילט פארן משגיח אז רבי אהרעלע, דער שומר אמונים רבי, פלעגט זאגן אז ער גלייבט נישט א בחור וואס דאווענט און לערנט; ער וויל זען ווי אזוי ער איז ווען ער ווערט א יונגערמאן. דערמיט מאנט דער משגיח די יונגעלייט ממשיך צו זיין."
+      },
+      "people": ["Rabbi Eliyahu Steinberg", "Rabbi Ahrele Roth (Shomer Emunim)"],
+      "evidence": { "segs": [665, 666, 667, 670, 672], "confidence": 0.7 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "What is special about the seudah of Rosh Chodesh compared with the meals of other festivals?",
+        "yi": "וואס איז אנדערש די סעודה פון ראש חודש פון די סעודות פון אנדערע מועדים?"
+      },
+      "answer": {
+        "en": "Rosh Chodesh atones for Hashem's diminishing of the moon, which brought sins and troubles to the world; the Jews bring the korban and, like kohanim eating it, their meal is a seudah of Moshiach.",
+        "yi": "ראש חודש איז א כפרה אויף מיעוט הירח, וואס האט געברענגט חטאים און צרות אויף דער וועלט; אידן ברענגען דעם קרבן, און ווי כהנים וואס עסן אים איז זייער סעודה א סעודה פון משיח."
+      },
+      "questionSegs": [19, 20],
+      "answerSegs": [24, 28, 35, 44, 47],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why was Shaul so angry precisely at Dovid's family feast?",
+        "yi": "פארוואס האט זיך שאול אזוי געכעסט דווקא ביי דוד'ס זבח משפחה?"
+      },
+      "answer": {
+        "en": "Because the feast was on Rosh Chodesh, whose seudah belongs to the king, and a seudah of Moshiach at Dovid's looked like rebellion against his kingdom.",
+        "yi": "ווייל די סעודה איז געווען ראש חודש, וועמענס סעודה געהערט צום מלך, און א סעודה פון משיח ביי דוד האט אויסגעזען ווי מרידה במלכות."
+      },
+      "questionSegs": [64, 66],
+      "answerSegs": [67, 68, 70, 73, 74],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "If a person must have pleasure to stay healthy, how did tzaddikim like the Yismach Moshe live without tasting their food?",
+        "yi": "אויב א מענטש מוז האבן הנאה כדי צו בלייבן געזונט, ווי אזוי האבן צדיקים ווי דער ישמח משה געלעבט אן שפירן א טעם אין עסן?"
+      },
+      "answer": {
+        "en": "No one enjoyed the world more than the Yismach Moshe: his pleasure came from Gemara, tefillah and Tehillim, so the whole world was his.",
+        "yi": "קיינער האט נישט געהאט אזויפיל הנאה פון דער וועלט ווי דער ישמח משה: זיין הנאה איז געקומען פון גמרא, תפילה און תהלים, און די גאנצע וועלט איז געווען זיינע."
+      },
+      "questionSegs": [168, 169, 188, 189],
+      "answerSegs": [190, 192, 193, 194, 195],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Can a person immerse himself in new physical pleasures and at the same time feel the joy of a blatt Gemara or of Shabbos?",
+        "yi": "קען א מענטש זיך איינטונקען אין נייע גשמיות'דיגע הנאות און גלייכצייטיג שפירן די שמחה פון א בלאט גמרא אדער פון שבת?"
+      },
+      "answer": {
+        "en": "No; one who draws in new taavos beyond those he was created with has moved far away, to the other side of the sea.",
+        "yi": "ניין; ווער עס איז ממשיך נייע תאוות איבער די וואס ער איז באשאפן געווארן דערמיט, איז שוין ווייט אוועק, אויף יענער זייט ים."
+      },
+      "questionSegs": [281, 284, 285, 287],
+      "answerSegs": [290, 296, 299, 300],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says one must hold back and not be drawn to new tests, new pleasures and new excitements; the natural ones are challenge enough.",
+        "yi": "דער משגיח זאגט אז מ'דארף זיך אפהאלטן און נישט נמשך ווערן צו נייע נסיונות, נייע הנאות און נייע עקסייטמענטס; די נאטירלעכע זענען גענוג."
+      },
+      "evidence": { "segs": [397, 399, 400, 401, 405], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He says not to let goyish joys into one's home, even a trace, as with chametz.",
+        "yi": "ער זאגט אז מ'זאל נישט אריינלאזן אין שטוב די גויאישע שמחות, אפילו נישט קיין משהו, ווי ביי חמץ."
+      },
+      "evidence": { "segs": [433, 436, 437, 439, 441], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "He says a person should take his pleasure from Hashem's 'recipe', Torah and tefillah, and not from the foods of other cultures.",
+        "yi": "ער זאגט אז א מענטש זאל נעמען זיין הנאה פונעם רבונו של עולם'ס רעצעפט, תורה און תפילה, און נישט פון די מאכלים פון פרעמדע פעלקער."
+      },
+      "evidence": { "segs": [653, 654, 655, 656, 661], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He urges the young men to take advantage of the beis medrash's davening, especially on weekdays.",
+        "yi": "ער מאנט די יונגעלייט אויסצונוצן דאס דאווענען אין בית המדרש, בפרט אין די וואכנטעג."
+      },
+      "evidence": { "segs": [610, 611, 614], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "He says to use Rosh Chodesh Adar to begin anew with the simcha of Torah, mitzvos and tefillah.",
+        "yi": "ער זאגט מ'זאל אויסנוצן ראש חודש אדר אנצוהייבן מיט דער שמחה פון תורה, מצוות און תפילה."
+      },
+      "evidence": { "segs": [721, 722, 727, 728], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "seudas rosh chodesh",
+    "rosh chodesh adar",
+    "the need for pleasure",
+    "pleasure in torah and tefillah",
+    "new taavos of ikvesa dimeshicha",
+    "separation from goyish pleasures",
+    "miracle of jewish survival in galus",
+    "avodas hashem in galus",
+    "kol mayanai bach",
+    "malchus beis dovid"
+  ],
+  "concepts": [
+    { "he": "סעודת ראש חודש", "heardAs": ["סטות חשקדות", "סעודת חשקי חידוש", "יסודות חשקי'דיש", "סעדת חשקאידעש"] },
+    { "he": "מלוה מלכה", "heardAs": ["מלוה מלכה", "מלוה דמלכה"] },
+    { "he": "מיעוט הירח", "heardAs": ["מייטה טייסע ירח", "מיוטי ירח"] },
+    { "he": "בריא מזליה", "heardAs": ["באריא מזלי", "בורא ומזלה", "בארי מזלה"] },
+    { "he": "כל מעייני בך", "heardAs": ["כל מהייני בח", "כל מעיניי בח", "כל מיני בח"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבונו שאולים", "רבינו שלום", "רבי שלום", "דער רבישאי"] },
+    { "he": "סטרא אחרא", "heardAs": ["סידכי אחרא", "סטחי אחת", "צדקה אחת"] },
+    { "he": "זבח משפחה", "heardAs": ["זבח משפחה"] },
+    { "he": "קליפת נוגה", "heardAs": ["חטש כליפת נוגע"] },
+    { "he": "תאוות", "heardAs": ["טייווע", "טבת", "תיבות"] },
+    { "he": "גן עדן", "heardAs": ["גענעדן", "גענערן"] },
+    { "he": "יערות דבש", "heardAs": ["מייארעס דבש", "יראת דבש"] }
+  ],
+  "people": [
+    { "name": "Rabbi Moshe Halberstam", "heardAs": ["דער למשה הרבערשטאם"] },
+    { "name": "the Tshakava Rav", "heardAs": ["טויטשאווע רב", "טויטשאווער רב"] },
+    { "name": "Shaul HaMelech", "heardAs": ["שאול המלך", "שאול המלאך"] },
+    { "name": "Dovid HaMelech", "heardAs": ["דוד", "דוד המלך"] },
+    { "name": "Yonasan", "heardAs": ["יונתן"] },
+    { "name": "Haman", "heardAs": ["האמען"] },
+    { "name": "Rabbi Yaakov Greenwald", "heardAs": ["רבי יעקב גרינבוילד", "ר' יאנקעל בין ווארלד"] },
+    { "name": "the Yismach Moshe", "heardAs": ["דער ישמח משה"] },
+    { "name": "Rabbi Aharon of Karlin", "heardAs": ["רבי בעלון קאלענא", "ר' אהלן קאלינא"] },
+    { "name": "the Kotzker Rebbe", "heardAs": ["קארטסקער", "קארצק"] },
+    { "name": "Rabbi Yaakov Emden (Yaavetz)", "heardAs": ["דער רבי יענגע וועמדין"] },
+    { "name": "Rabbi Eliyahu Steinberg", "heardAs": ["ר' אליהו שטיינבערג"] },
+    { "name": "Rabbi Ahrele Roth (Shomer Emunim)", "heardAs": ["שם רמנים רבי דער ר' אהרעלע"] }
+  ],
+  "asrNotes": "Yiddish ASR fair to poor; Hebrew phrases heavily garbled but mostly recoverable from context. Several cited authorities could not be identified: the sefer said to require enjoying one's learning (seg 262), the explainer of the Mishnah on enjoying Torah (seg 360), the figure quoted at seg 423, the source that Paras lasts until Moshiach (seg 491) and the author named at seg 505. Segments 455-460 (on the beis medrash's Shabbos davening) are largely unintelligible."
+}

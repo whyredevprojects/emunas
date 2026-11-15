@@ -1,0 +1,504 @@
+{
+  "shiurId": "yi-shonos-14",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "Before Rosh Hashanah, the Rav speaks about the Satmar Rav after his passing, explaining that a tzaddik whose Torah is still learned and whose path is still followed has not truly departed, and describing his holiness, prayer, Torah and his battle for a pure belief in Moshiach.",
+      "yi": "פאר ראש השנה רעדט דער משגיח וועגן דעם סאטמארער רב נאך זיין הסתלקות, און ער ערקלערט אז א צדיק וואס מ'לערנט נאך זיין תורה און מ'גייט אין זיינע וועגן איז נישט באמת אוועק; ער באשרייבט זיין קדושה, זיין תפילה, זיין תורה און זיין מלחמה פאר א ריינע אמונה אין משיח."
+    },
+    "abstract": {
+      "en": "The Rav opens with 'Atem nitzavim hayom', Rosh Hashanah as the judgment of every day of the year, and the losses of the year, the last of them the passing of the Satmar Rav. He chooses not to give a hesped but to speak about the tzaddik, since speaking of a tzaddik draws holiness. From the Midrash that 'every illness and every plague not written in the Torah' is the death of tzaddikim, he explains that this curse exists only in the Oral Torah and cannot be reversed, unless the tzaddik's wisdom is not lost. Through Eliyahu, Elisha and a sefer of the Satmar Rav he concludes that learning a tzaddik's Torah keeps him alive. He then describes the Satmar Rav's Torah, kedushas habris, his krias haTorah, Megillah, Ahavah Rabbah, Shabbos and Yom Tov, tzedakah, his last instruction about kohanim, and compares him to Rabbi Yochanan ben Zakai and Chizkiyahu in his fight for a pure geulah. He closes with the orphaned generation and the call to hold to the tzaddikim's mesorah.",
+      "yi": "דער משגיח עפנט מיט \"אתם נצבים היום\", אז ראש השנה איז דער משפט פון יעדן טאג פונעם יאר, און מיט די פארלוסטן פונעם יאר, וואס דער לעצטער דערפון איז די הסתלקות פונעם סאטמארער רב. ער וויל נישט זאגן קיין הספד, נאר רעדן וועגן דעם צדיק, ווייל רעדן וועגן א צדיק איז ממשיך קדושה. פונעם מדרש אז \"כל חלי וכל מכה אשר לא כתוב\" איז מיתת צדיקים, ערקלערט ער אז די קללה שטייט נאר אין תורה שבעל פה און מ'קען זי נישט מבטל זיין, סיידן די חכמה פונעם צדיק ווערט נישט פארלוירן. דורך אליהו, אלישע און א ספר פונעם סאטמארער רב לערנט ער ארויס אז ווען מ'לערנט דעם צדיקס תורה לעבט ער ווייטער. דערנאך באשרייבט ער דעם סאטמארער רבס תורה, קדושת הברית, קריאת התורה, מגילה, אהבה רבה, שבת און יום טוב, צדקה, זיין לעצטע הוראה וועגן כהנים, און ער גלייכט אים צו רבן יוחנן בן זכאי און חזקיהו המלך אין זיין מלחמה פאר א ריינע גאולה. ער שליסט מיט דעם דור יתום און מיט א רוף זיך צו האלטן ביי דער מסורה פון די צדיקים."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Rosh Hashanah judges every day of the coming year, which is why it is called 'hayom'.",
+          "yi": "ראש השנה איז דער משפט פון יעדן טאג פונעם קומענדיגן יאר, און דערפאר הייסט עס \"היום\"."
+        },
+        "evidence": { "segs": [12, 14, 18, 21, 25], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The Rav does not give a hesped but speaks of the tzaddik, because speech draws down what is spoken, and speaking of a tzaddik draws kedushah and taharah.",
+          "yi": "דער משגיח זאגט נישט קיין הספד נאר רעדט וועגן דעם צדיק, ווייל דער דיבור איז ממשיך דאס וואס מ'רעדט, און רעדן וועגן א צדיק איז ממשיך קדושה און טהרה."
+        },
+        "evidence": { "segs": [98, 108, 110, 117, 125], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The death of tzaddikim, a curse hidden in 'every illness not written', is only the loss of the tzaddik's wisdom; where his Torah is learned, he is not truly gone.",
+          "yi": "מיתת צדיקים, די קללה וואס איז באהאלטן אין \"כל חלי אשר לא כתוב\", מיינט נאר אז די חכמה פונעם צדיק גייט פארלוירן; וואו מ'לערנט זיין תורה, איז ער נישט באמת אוועק."
+        },
+        "evidence": { "segs": [381, 382, 389, 391, 403], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The Rav describes the Satmar Rav's holiness, his Torah lishmah, his prayer and the way Shabbos and Yom Tov showed on his face.",
+          "yi": "דער משגיח באשרייבט דעם סאטמארער רבס קדושה, זיין תורה לשמה, זיין תפילה, און ווי שבת און יום טוב האבן זיך געזען אויף זיין פנים."
+        },
+        "evidence": { "segs": [458, 472, 628, 670, 693], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Like Rabbi Yochanan ben Zakai, the Satmar Rav fought for a pure geulah, and according to the Rav, those who still believe in Moshiach's coming owe it to him.",
+          "yi": "אזוי ווי רבן יוחנן בן זכאי האט דער סאטמארער רב מלחמה געהאלטן פאר א ריינע גאולה, און לויט דעם משגיח איז דער וואס גלייבט נאך היינט אין ביאת המשיח אים דאס שולדיג."
+        },
+        "evidence": { "segs": [1040, 1068, 1078, 1092, 1135], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The generation is left orphaned, but for those who hold to the tzaddikim's mesorah and learn their Torah, the tzaddikim have not passed away.",
+          "yi": "דער דור איז געבליבן א דור יתום, אבער פאר די וואס האלטן זיך ביי דער מסורה פון די צדיקים און לערנען זייער תורה, זענען די צדיקים נישט נפטר געווארן."
+        },
+        "evidence": { "segs": [1221, 1297, 1328, 1338, 1340], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-shoinos-14-hespad-admor-misatmar", "startSeg": 0, "endSeg": 91,
+      "title": { "en": "Atem nitzavim and a year of losses", "yi": "אתם נצבים און א יאר פון פארלוסטן" },
+      "summary": {
+        "en": "The Rav opens with 'Atem nitzavim hayom': Rosh Hashanah judges every day of the year. Had one known in Elul what this year would bring, one would have prayed harder; the gedolim were taken one after another, last of all the Satmar Rav, and he mentions the great mitzvah of a hesped.",
+        "yi": "דער משגיח עפנט מיט \"אתם נצבים היום\": ראש השנה ווערט גע'משפט יעדער טאג פונעם יאר. ווען מ'וואלט געוואוסט אין אלול וואס דאס יאר וועט ברענגען, וואלט מען שטארקער געדאוונט; די גדולים זענען צוגענומען געווארן איינער נאכן אנדערן, צום לעצט דער סאטמארער רב, און ער דערמאנט די גרויסע מצוה פון א הספד."
+      },
+      "kind": "intro", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-14-hespad-admor-misatmar", "startSeg": 92, "endSeg": 163,
+      "title": { "en": "Not a hesped, but speaking of the tzaddik", "yi": "נישט קיין הספד, נאר רעדן וועגן דעם צדיק" },
+      "summary": {
+        "en": "Following those who for certain reasons do not say hespeidim, the Rav will only speak of the tzaddik: speech has the power to draw down, as with hekdesh and terumah, so one speaks only good. He brings the Chasam Sofer on the Gemara 'be warm at my hesped, for I will be standing there': the departed speaks through the speaker.",
+        "yi": "נאכפאלגנדיג די וואס זאגן נישט קיין הספדים צוליב געוויסע טעמים, וויל דער משגיח נאר רעדן וועגן דעם צדיק: דער דיבור האט א כח צו ממשיך זיין, אזוי ווי ביי הקדש און תרומה, דערפאר רעדט מען נאר גוטס. ער ברענגט דעם חתם סופר אויף דער גמרא \"אחים בהספדא דהתם קאימנא\": דער נפטר רעדט ארויס דורך דעם וואס רעדט."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-14-hespad-admor-misatmar", "startSeg": 164, "endSeg": 270,
+      "title": { "en": "Death of tzaddikim, and why Ki Savo says 'arur'", "yi": "מיתת צדיקים, און פארוואס כי תבוא זאגט \"ארור\"" },
+      "summary": {
+        "en": "Nitzavim comforts after the curses of Ki Savo, and a Midrash reads 'every illness and every plague not written' as the death of tzaddikim. The Rav recalls asking his young cheder pupils why the Torah writes only 'arur' when Rashi says 'baruch' was also said; a child answered that Hashem left the blessing for the Oral Torah, which he supports with the Gemara on Chulda's mercy.",
+        "yi": "פרשת נצבים טרייסט נאך די קללות פון כי תבוא, און א מדרש טייטשט \"כל חלי וכל מכה אשר לא כתוב\" אויף מיתת צדיקים. דער משגיח דערציילט ווי ער האט געפרעגט זיינע קליינע תלמידים אין חדר פארוואס די תורה שרייבט נאר \"ארור\" ווען רש\"י זאגט אז מ'האט אויך געזאגט \"ברוך\"; א קינד האט געענטפערט אז דער רבונו של עולם האט איבערגעלאזט די ברכה פאר תורה שבעל פה, און ער שטיצט עס מיט דער גמרא וועגן חולדה'ס רחמנות."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-14-hespad-admor-misatmar", "startSeg": 271, "endSeg": 343,
+      "title": { "en": "The one curse the Oral Torah cannot reverse", "yi": "די איינציגע קללה וואס תורה שבעל פה קען נישט איבערדרייען" },
+      "summary": {
+        "en": "The Rav brings the Zohar: Rabbi Yossi asked why Ki Savo has no consolation, and Rabbi Shimon bar Yochai answered, from Eliyahu, that its curses are all blessings and are meant for the nations. The Oral Torah turns the curses around, but the death of tzaddikim is not written at all; it exists only in the Oral Torah, so nothing can reverse it, unless the tzaddikim are not truly gone.",
+        "yi": "דער משגיח ברענגט דעם זוהר: רבי יוסי האט געפרעגט פארוואס אין כי תבוא איז נישטא קיין נחמה, און רבי שמעון בר יוחאי האט געענטפערט פון אליהו הנביא אז די קללות זענען אלע ברכות און זענען געמיינט אויף די גוים. תורה שבעל פה דרייט איבער די קללות, אבער מיתת צדיקים שטייט בכלל נישט; עס איז נאר אין תורה שבעל פה, ממילא קען עס גארנישט מבטל זיין, סיידן די צדיקים זענען נישט באמת אוועק."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-14-hespad-admor-misatmar", "startSeg": 344, "endSeg": 404,
+      "title": { "en": "Eliyahu, Elisha and learning the tzaddik's Torah", "yi": "אליהו, אלישע, און לערנען דעם צדיקס תורה" },
+      "summary": {
+        "en": "From Rashi on the passing of Eliyahu, the Rav shows that the bnei haneviim lost their prophecy, while Elisha received a double portion. He brings the Satmar Rav's own sefer: when the tzaddik's Torah is learned and one attaches to him it is not death of tzaddikim; it is only when his wisdom is lost.",
+        "yi": "פון רש\"י אויף דער הסתלקות פון אליהו הנביא ווייזט דער משגיח אז די בני הנביאים האבן פארלוירן זייער נבואה, בשעת אלישע האט באקומען פי שנים. ער ברענגט פונעם סאטמארער רבס אייגענעם ספר: ווען מ'לערנט דעם צדיקס תורה און מ'איז זיך מדבק אין אים, איז עס נישט מיתת צדיקים; נאר ווען זיין חכמה גייט פארלוירן."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-14-hespad-admor-misatmar", "startSeg": 405, "endSeg": 459,
+      "title": { "en": "The sweetness of his chiddushei Torah", "yi": "די זיסקייט פון זיינע חידושי תורה" },
+      "summary": {
+        "en": "The Rav urges learning the Satmar Rav's sefarim, full of guidance in avodas Hashem and of chiddushim whose sweetness makes one smile, 'sweeter than honey'. He describes his total mastery of Torah and explains with 'pikudei Hashem yesharim mesamchei lev' that a chiddush that gladdens the heart is a sign of Torah lishmah.",
+        "yi": "דער משגיח מאנט צו לערנען דעם סאטמארער רבס ספרים, פול מיט עצות אין עבודת השם און מיט חידושים וואס זייער זיסקייט מאכט שמייכלען, \"ומתוקים מדבש\". ער באשרייבט ווי די גאנצע תורה איז געווען אפן פאר אים, און ערקלערט מיט \"פקודי ה' ישרים משמחי לב\" אז א חידוש וואס דערפרייט דאס הארץ איז א סימן פון תורה לשמה."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-14-hespad-admor-misatmar", "startSeg": 460, "endSeg": 528,
+      "title": { "en": "Kedushas habris and the power of his words", "yi": "קדושת הברית און דער כח פון זיינע דיבורים" },
+      "summary": {
+        "en": "The Rav describes the Satmar Rav as a tzaddik of earlier generations: great tzaddikim attested to his purity, he did not sleep in a bed except Friday night, and once at three in the morning he was seen learning. In the Shovavim weeks his words on kedushas habris brought thousands to tears, because one can only give others what one has oneself.",
+        "yi": "דער משגיח באשרייבט דעם סאטמארער רב ווי א צדיק פון פריערדיגע דורות: גרויסע צדיקים האבן עדות געזאגט אויף זיין טהרה, ער האט זיך נישט געלייגט שלאפן אין א בעט חוץ פרייטאג צונאכטס, און איינמאל דריי אזייגער אינדערפרי האט מען אים געזען זיצן און לערנען. אין די וואכן פון שובבים האבן זיינע דיבורים וועגן קדושת הברית געברענגט טויזנטער אידן צו וויינען, ווייל מ'קען נאר געבן פאר אנדערע וואס מ'האט אליין."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-14-hespad-admor-misatmar", "startSeg": 529, "endSeg": 637,
+      "title": { "en": "Bereishis, the Aseres HaDibros, the Megillah and Ahavah Rabbah", "yi": "בראשית, עשרת הדברות, די מגילה און אהבה רבה" },
+      "summary": {
+        "en": "The Rav recounts hearing the Satmar Rav lain 'Bereishis' so that even the walls felt Hashem creating the world, and the crowds, including the elderly Rabbi Yonasan Steif, pushing to hear the Aseres HaDibros. He describes his Megillah reading, brings the story of Rabbi Shalom of Belz reading the Megillah before the Chozeh of Lublin, and his long Ahavah Rabbah, recalling the Ba'al Shem Tov that Moshiach tarries because people do not lengthen it.",
+        "yi": "דער משגיח דערציילט ווי ער האט געהערט דעם סאטמארער רב ליינען \"בראשית\" אזוי אז אפילו די ווענט האבן געשפירט ווי דער אייבערשטער באשאפט די וועלט, און ווי דער עולם, אפילו דער אלטער ר' יונתן שטייף, האבן זיך געשטופט צו הערן די עשרת הדברות. ער באשרייבט זיין ליינען די מגילה, ברענגט די מעשה פון ר' שלום בעלזער וואס האט געליינט די מגילה פארן חוזה פון לובלין, און זיין לאנגע אהבה רבה, און דערמאנט דעם בעל שם טוב אז משיח קומט נישט ווייל מ'איז נישט מאריך אין אהבה רבה."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-14-hespad-admor-misatmar", "startSeg": 638, "endSeg": 706,
+      "title": { "en": "A refined body: cherries, Shabbos fish, a changed face", "yi": "א געלייטערטער גוף: טשערעס, שבת'דיגע פיש, א פארענדערט פנים" },
+      "summary": {
+        "en": "The Rav describes how the Satmar Rav's body was refined: seen through the blinds eating cherries on a Motzaei Shabbos with kavanos, eating not the fish but the Shabbos at his tish, and arranging the fish in a way Rabbi Yonasan Steif saw as holy names. His face changed so much on Shabbos, Pesach and hakafos that one could have taken him for another person.",
+        "yi": "דער משגיח באשרייבט ווי דעם סאטמארער רבס גוף איז געווען געלייטערט: מ'האט אים געזען דורך די בלינדס עסן טשערעס מוצאי שבת מיט כוונות, ביים טיש האט ער נישט געגעסן די פיש נאר דעם שבת, און ר' יונתן שטייף האט געזען ווי ער לייגט אויס די פיש מיט שמות. זיין פנים האט זיך אזוי געטוישט שבת, פסח און ביי הקפות, אז מ'וואלט געקענט מיינען אז ס'איז אן אנדער מענטש."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-14-hespad-admor-misatmar", "startSeg": 707, "endSeg": 766,
+      "title": { "en": "Simchas Yom Tov and the freshness of Chanukah", "yi": "שמחת יום טוב און די פרישקייט פון חנוכה" },
+      "summary": {
+        "en": "The Rav explains 'u'smachtem lifnei Hashem shivas yamim' through the Satmar Rav's long na'anuim with the lulav, which filled the beis medrash with joy and chen, which Rashi ties to Yosef's guarding of the bris. On Chanukah every night was for him like the first, which the Rav connects to his answering the Beis Yosef's question each night.",
+        "yi": "דער משגיח ערקלערט \"ושמחתם לפני ה' אלקיכם שבעת ימים\" דורך דעם סאטמארער רבס לאנגע נענועים מיטן לולב, וואס האבן אנגעפילט דעם בית המדרש מיט שמחה און חן, וואס רש\"י פארבינדט מיט יוסף'ס שמירת הברית. חנוכה איז ביי אים יעדע נאכט געווען ווי די ערשטע נאכט, און דער משגיח פארבינדט עס מיט דעם וואס ער האט יעדע נאכט פארענטפערט דעם בית יוסף'ס קשיא."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-14-hespad-admor-misatmar", "startSeg": 767, "endSeg": 840,
+      "title": { "en": "Torah from a holy mouth, and tzedakah", "yi": "תורה פון א הייליגן מויל, און צדקה" },
+      "summary": {
+        "en": "With 'Torah yevakshu mipihu' the Rav explains that Torah from a holy person is a different Torah; one went to hear the Satmar Rav test his students to sense Torah lishmah, and he adds that children should be given to a melamed who is a yerei shamayim. He then describes how the Satmar Rav taught Williamsburg to give tzedakah beyond its means, even a week's wages at an appeal.",
+        "yi": "מיט \"ותורה יבקשו מפיהו\" ערקלערט דער משגיח אז תורה פון א קדוש איז אן אנדער סארט תורה; מ'איז געגאנגען הערן ווי דער סאטמארער רב פארהערט די תלמידים כדי צו שפירן תורה לשמה, און ער לייגט צו אז מ'דארף געבן קינדער צו א מלמד וואס איז א ירא שמים. דערנאך באשרייבט ער ווי דער סאטמארער רב האט אויסגעלערנט וויליאמסבורג צו געבן צדקה איבער די כחות, אפילו א וואכנס פארדינסט ביי אן אפיל."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-14-hespad-admor-misatmar", "startSeg": 841, "endSeg": 969,
+      "title": { "en": "His last instruction: kohanim, and Rabbi Yochanan ben Zakai", "yi": "זיין לעצטע הוראה: כהנים, און רבן יוחנן בן זכאי" },
+      "summary": {
+        "en": "At the levayah the Rav heard that one of the Satmar Rav's last instructions was that kohanim not enter the beis medrash. He explains the dispute whether tzaddikim impart tumah, the Yismach Moshe's view, and reads Rabbi Yochanan ben Zakai's last words 'clear the vessels because of tumah and prepare a chair for Chizkiyahu' as a ruling that tzaddikim do impart tumah, with Chizkiyahu, master of tumah and taharah, coming to greet him.",
+        "yi": "ביי דער לויה האט דער משגיח געהערט אז איינע פון דעם סאטמארער רבס לעצטע הוראות איז געווען אז כהנים זאלן נישט אריינגיין אין בית המדרש. ער ערקלערט די מחלוקת צי צדיקים זענען מטמא, דעם ישמח משה'ס שיטה, און טייטשט רבן יוחנן בן זכאי'ס לעצטע ווערטער \"פנו כלים מפני הטומאה והכינו כסא לחזקיהו\" ווי א פסק אז צדיקים זענען יא מטמא, און אז חזקיהו, דער גרעסטער אין הלכות טומאה וטהרה, קומט אים מקבל פנים זיין."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-14-hespad-admor-misatmar", "startSeg": 970, "endSeg": 1064,
+      "title": { "en": "Purity in the camp and the Rambam's Moshiach", "yi": "טהרה אין לאגער און דעם רמב\"ם'ס משיח" },
+      "summary": {
+        "en": "The Rav tells from a survivor's article how the Satmar Rav kept clean in the concentration camp and kept his beard. He explains that great tzaddikim sensed he could have led toward Moshiach, as with Chizkiyahu and Rabbi Yochanan ben Zakai, but the 'biryonim' spoiled it; he reads the Rambam's description of Moshiach as the pure Moshiach the Satmar Rav wanted.",
+        "yi": "דער משגיח דערציילט פון אן ארטיקל פון א איד וואס איז געווען מיט אים אין לאגער, ווי ריין דער סאטמארער רב איז געבליבן דארט און ווי ער האט אפגעהיטן זיין בארד. ער ערקלערט אז גרויסע צדיקים האבן געשפירט אז ער האט געקענט פירן צו משיח, אזוי ווי ביי חזקיהו און רבן יוחנן בן זכאי, אבער די בריונים האבן עס קאליע געמאכט; ער ליינט דעם רמב\"ם'ס באשרייבונג פון משיח ווי דער ריינער משיח וואס דער סאטמארער רב האט געוואלט."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-14-hespad-admor-misatmar", "startSeg": 1065, "endSeg": 1149,
+      "title": { "en": "Belief in Moshiach owed to the Satmar Rav", "yi": "די אמונה אין משיח דאנק דעם סאטמארער רב" },
+      "summary": {
+        "en": "The Rav says that today's belief in the coming of Moshiach is owed to the Satmar Rav, who alone cried out when many called the state the geulah, and he tells of a speech at a Mizrachi convention asking prayers for his health. He compares him to Rabbi Yochanan ben Zakai, who asked for Yavneh and was called a traitor yet was the true 'doresh l'Tzion'.",
+        "yi": "דער משגיח זאגט אז די היינטיגע אמונה אין ביאת המשיח איז דאנק דעם סאטמארער רב, וואס האט אליין געשריגן ווען אסאך האבן גערופן די מדינה די גאולה, און ער דערציילט פון א רעדע ביי א מזרחי קאנווענשאן וואס האט געבעטן מ'זאל מתפלל זיין פאר זיין געזונט. ער גלייכט אים צו רבן יוחנן בן זכאי, וואס האט געבעטן יבנה און מ'האט אים גערופן א בוגד, און ער איז געווען דער אמת'ער דורש לציון."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-14-hespad-admor-misatmar", "startSeg": 1150, "endSeg": 1210,
+      "title": { "en": "True lover of Zion, and the Kosel ruling", "yi": "דער אמת'ער אוהב ציון, און דער פסק וועגן דעם כותל" },
+      "summary": {
+        "en": "The Rav calls the Satmar Rav the true lover of Zion who could tolerate no stain on the geulah. He explains his ruling against going to the Kosel, which was not generally accepted, with the Gemara of Rav Ketina mocking a necromancer so that people would not be drawn after him: the ruling protected even those who go.",
+        "yi": "דער משגיח רופט דעם סאטמארער רב דער אמת'ער אוהב ציון, וואס האט נישט געקענט פארטראגן קיין פלעק אויף דער גאולה. ער ערקלערט זיין פסק נישט צו גיין צום כותל מערבי, וואס איז בדרך כלל נישט נתקבל געווארן, מיט דער גמרא פון רב קטינא וואס האט חוזק געמאכט פון א בעל אוב כדי מ'זאל נישט נמשך ווערן נאך אים: דער פסק האט געראטעוועט אפילו די וואס גייען."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-14-hespad-admor-misatmar", "startSeg": 1211, "endSeg": 1296,
+      "title": { "en": "Levi, the last of the Shevatim", "yi": "לוי, דער לעצטער פון די שבטים" },
+      "summary": {
+        "en": "The Rav calls the Satmar Rav a tzaddik of earlier generations and laments the orphaned generation left like a small boat in the sea. He paints the scene of Levi, the last of the Shevatim, telling the Jews in Egypt about Avraham, Yitzchak and Yaakov, and their despair at his passing; the Midrash on 'Yosef and all his brothers died' answers that the One Above did not die, and he adds that Shimshon's might outlived him.",
+        "yi": "דער משגיח רופט דעם סאטמארער רב א צדיק פון עטליכע דורות צוריק, און באוויינט דעם דור יתום וואס איז געבליבן ווי א קליין שיפל אינמיטן ים. ער מאלט אויס ווי לוי, דער לעצטער פון די שבטים, האט דערציילט פאר די אידן אין מצרים וועגן אברהם, יצחק און יעקב, און זייער יאוש ווען ער איז נפטר געווארן; דער מדרש אויף \"וימת יוסף וכל אחיו\" ענטפערט אז דער אייבערשטער איז נישט נפטר געווארן, און ער לייגט צו אז שמשון'ס גבורה איז געבליבן נאך זיין פטירה."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-14-hespad-admor-misatmar", "startSeg": 1297, "endSeg": 1362,
+      "title": { "en": "Following the footsteps of the flock", "yi": "גיין אין די טריט פון די שעפסן" },
+      "summary": {
+        "en": "The Rav brings the Pesikta that the tzaddikim of the churban are greater than those of the binyan, relative to what is expected of their generation. With 'tz'i lach b'ikvei hatzon' he says that whoever holds to the tzaddikim's mesorah and learns their Torah keeps them alive; he ends with hashgachah, emunah until Moshiach, and blessings for the new year.",
+        "yi": "דער משגיח ברענגט די פסיקתא אז די צדיקים פון חורבן זענען גרעסער ווי די פון בנין, לויט דעם וואס מ'ערווארט פונעם דור. מיט \"צאי לך בעקבי הצאן\" זאגט ער אז דער וואס האלט זיך ביי דער מסורה פון די צדיקים און לערנט זייער תורה, ביי אים לעבן זיי ווייטער; ער שליסט מיט השגחה, אמונה ביז משיח, און ברכות אויפן נייעם יאר."
+      },
+      "kind": "closing", "catalogTopicIdx": [0], "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "אטעם לצוון היום כולכם בפני ה' אלהככם", "work": "Devarim", "ref": "Devarim 29:9", "sefariaRef": "Deuteronomy 29:9", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [0, 4, 22], "confidence": 0.85 } },
+    { "heardAs": "תכלי שני וקבלה ישועה, און תוך השנה ברכה", "work": "Gemara Megillah", "ref": "Megillah 31b", "sefariaRef": "Megillah 31b", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [79, 80], "confidence": 0.7 } },
+    { "heardAs": "אין שולחן ערוך, די גרייסקייט ... פונעם זאגענער הספרד", "work": "Shulchan Aruch", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [89, 90, 91], "confidence": 0.75 } },
+    { "heardAs": "ערכים בהספדת דעתים כאימנים", "work": "Gemara Shabbos", "ref": "Shabbos 153a", "sefariaRef": "Shabbat 153a", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [136, 137, 139, 140], "confidence": 0.75 } },
+    { "heardAs": "שטעט פון די חתם סופר", "work": "Chasam Sofer", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [135, 141, 143, 145], "confidence": 0.8 } },
+    { "heardAs": "דער נפש החיים רופט עס אן כוונה שנועה", "work": "Nefesh HaChaim", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [152], "confidence": 0.65 } },
+    { "heardAs": "המאה כללות, חשש תים ... הבא יחסם לתנאי המקום", "work": "Rashi", "ref": "Rashi, Devarim 29:12", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [165, 167, 169, 170], "confidence": 0.7 } },
+    { "heardAs": "גם כל חלילה, כל מכה, השאולי כתב, ספר התורה הזה", "work": "Devarim", "ref": "Devarim 28:61", "sefariaRef": "Deuteronomy 28:61", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [183, 184, 185, 316, 327], "confidence": 0.9 } },
+    { "heardAs": "עס איז דא א מדרש ... זה מיתה'ס צדיקים", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [179, 181, 187, 190, 317], "confidence": 0.85 } },
+    { "heardAs": "שנאמא ויבאו דחכמת חכמות, ובנות נבנות תסתתף", "work": "Yeshayahu", "ref": "Yeshayahu 29:14", "sefariaRef": "Isaiah 29:14", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [191, 192, 387], "confidence": 0.8 } },
+    { "heardAs": "און רשע זאגט אז ... מתוחק זאגט ברוך", "work": "Rashi", "ref": "Rashi, Devarim 27:12", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [207, 209, 210, 211], "confidence": 0.75 } },
+    { "heardAs": "כל התמשה עשת חיל", "work": "Mishlei", "ref": "Mishlei 31:10", "sefariaRef": "Proverbs 31:10", "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [229, 266], "confidence": 0.6 } },
+    { "heardAs": "זאגט די גמרא פארוואס איז אזוי געגאנגען צו חלבי הנביאות", "work": "Gemara Megillah", "ref": "Megillah 14b", "sefariaRef": "Megillah 14b", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [236, 238, 239, 254], "confidence": 0.75 } },
+    { "heardAs": "עס אין שנין נביאים מתנביאים בסיגני נחץ", "work": "Gemara Sanhedrin", "ref": "Sanhedrin 89a", "sefariaRef": "Sanhedrin 89a", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [248], "confidence": 0.75 } },
+    { "heardAs": "עס שטעט אין זוה' ... רבי שמעון בן יוחאי ... רבי יוסי", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [273, 274, 275, 281, 282], "confidence": 0.8 } },
+    { "heardAs": "ולא מעשים ולא גלתים ... ותחטר את ברית יענקב", "work": "Vayikra", "ref": "Vayikra 26:42-44", "sefariaRef": "Leviticus 26:42-44", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [277, 278], "confidence": 0.75 } },
+    { "heardAs": "רשע ברענגט אין שמואל ... אליהו הנביא האט געהאלטן ביים נפטר ווערן", "work": "Rashi", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [344, 346, 357, 359, 360], "confidence": 0.75 } },
+    { "heardAs": "אום תורה אסי לאקח מידך וועסטו זוכה זיין צו פי שניים", "work": "Melachim II", "ref": "Melachim II 2:9-10", "sefariaRef": "II Kings 2:9-10", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [364, 365, 367, 369], "confidence": 0.8 } },
+    { "heardAs": "ער האט געזעהן טאקע אין ספר פון סאטמאר", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [376, 378, 380, 381, 382], "confidence": 0.8 } },
+    { "heardAs": "גם תירות חששוי מסכים מיט וואש נפת צפים", "work": "Tehillim", "ref": "Tehillim 19:11", "sefariaRef": "Psalms 19:11", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [423, 424, 432], "confidence": 0.75 } },
+    { "heardAs": "פיקודי ה' ישורים מסמכי לב", "work": "Tehillim", "ref": "Tehillim 19:9", "sefariaRef": "Psalms 19:9", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [445, 446, 454], "confidence": 0.85 } },
+    { "heardAs": "ווען עס שטעט אין מדרש בקדו השם ישורים", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [455], "confidence": 0.6 } },
+    { "heardAs": "ער בריינגט פונעם בעש''ט אז דאס וואס משיח קומט נישט", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [622], "confidence": 0.8 } },
+    { "heardAs": "ותמכה לפני ה' לכחם שבעת ימים", "work": "Vayikra", "ref": "Vayikra 23:40", "sefariaRef": "Leviticus 23:40", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [714, 717, 731], "confidence": 0.8 } },
+    { "heardAs": "רשע ברענגט בן פרת יוסף", "work": "Rashi", "ref": "Rashi, Bereishis 49:22", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [733, 734, 735], "confidence": 0.65 } },
+    { "heardAs": "צו פארענטפערן דעם בית יוספ'ס קשר", "work": "Beis Yosef", "ref": "Beis Yosef, Orach Chaim 670", "sefariaRef": null, "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [757, 758, 762], "confidence": 0.75 } },
+    { "heardAs": "אימער הרב דומה'לעמלך ה' תבאגשא תורה מפיה", "work": "Gemara Chagigah", "ref": "Chagigah 15b", "sefariaRef": null, "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [767], "confidence": 0.7 } },
+    { "heardAs": "ברכת עשה ובזעה, כנתנתה מסיני", "work": "Gemara Berachos", "ref": "Berachos 22a", "sefariaRef": null, "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [795, 796, 797], "confidence": 0.65 } },
+    { "heardAs": "כתובות ברענגט ער אנטער פון רבי חיים קיין ... ביי די לויה פון רבי עניל טעם", "work": "Tosafos", "ref": "Tosafos, Kesubos 103b", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [852, 853], "confidence": 0.65 } },
+    { "heardAs": "די יתמוך משה זאגט", "work": "Yismach Moshe", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [855, 856, 864, 865, 867], "confidence": 0.75 } },
+    { "heardAs": "הנה כלה מפני התמה וכינה כתה לחזקיו מלך יהודה שבא", "work": "Gemara Berachos", "ref": "Berachos 28b", "sefariaRef": "Berakhot 28b", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [885, 886, 891, 892], "confidence": 0.85 } },
+    { "heardAs": "עס שטעט אין זרע ידיד", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [906, 907, 908, 911, 912], "confidence": 0.6 } },
+    { "heardAs": "חבל עולם ופני שמעון ... פון דן ביז באר שבע", "work": "Gemara Sanhedrin", "ref": "Sanhedrin 94b", "sefariaRef": "Sanhedrin 94b", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [938, 939, 940], "confidence": 0.75 } },
+    { "heardAs": "אזוי ווי שטעטן חידושי ארום ... מבקר חולה", "work": "Chiddushei HaRim", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [969], "confidence": 0.65 } },
+    { "heardAs": "דער פארט ברענגט ארונטער דעם רמב״ם, און הלכות משיח און הלכות מלכים ... רבי יקיבא", "work": "Rambam", "ref": "Rambam, Hilchos Melachim 11:3", "sefariaRef": "Mishneh Torah, Kings and Wars 11:3", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [1010, 1011, 1012], "confidence": 0.8 } },
+    { "heardAs": "ביקור שבט די שפראך לעתת חסקי יואל משיח", "work": "Gemara Sanhedrin", "ref": "Sanhedrin 94a", "sefariaRef": "Sanhedrin 94a", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1024, 1025, 1042], "confidence": 0.8 } },
+    { "heardAs": "די איין און צוואנציג יאר וואס רבי יוחנן בן זאקר האט מסדר געוועזן", "work": "Gemara Gittin", "ref": "Gittin 56a", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [1028, 1029, 1030], "confidence": 0.65 } },
+    { "heardAs": "במיימד מלך מבית דוד, הוגה פאר תורה", "work": "Rambam", "ref": "Rambam, Hilchos Melachim 11:4", "sefariaRef": "Mishneh Torah, Kings and Wars 11:4", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1047, 1048, 1049, 1059, 1061], "confidence": 0.85 } },
+    { "heardAs": "אני מעמד בן מנה שלמה בביאת המשיח", "work": "Ani Maamin", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "quoted", "evidence": { "segs": [1066, 1067], "confidence": 0.8 } },
+    { "heardAs": "יוצר עמל עלי חוק", "work": "Tehillim", "ref": "Tehillim 94:20", "sefariaRef": "Psalms 94:20", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1112, 1114], "confidence": 0.75 } },
+    { "heardAs": "רבי יוחנן בן זאקי האט זיך אויסגעבעטן יאוונע וחכם", "work": "Gemara Gittin", "ref": "Gittin 56b", "sefariaRef": "Gittin 56b", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [1127, 1129, 1150], "confidence": 0.8 } },
+    { "heardAs": "כשחרב ... איסכן ר' יוחנן בינזאקי ... ציון דורך שלום, מיכלא דבי דרושה", "work": "Gemara Rosh Hashanah", "ref": "Rosh Hashanah 30a", "sefariaRef": "Rosh Hashanah 30a", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [1142, 1143, 1145, 1146, 1147], "confidence": 0.75 } },
+    { "heardAs": "דער גמרא זאגט אין ברכות אז רב קטנה ... אבא תמיה", "work": "Gemara Berachos", "ref": "Berachos 59a", "sefariaRef": "Berakhot 59a", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [1179, 1180, 1190, 1192], "confidence": 0.75 } },
+    { "heardAs": "שטעט אין מדרש אז די שכונה איז דא ביים כתל מערבי", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [1203], "confidence": 0.7 } },
+    { "heardAs": "ביומת יוסף בכל עכב בכל הדור הרע", "work": "Shemos", "ref": "Shemos 1:6", "sefariaRef": "Exodus 1:6", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1212, 1234, 1282], "confidence": 0.8 } },
+    { "heardAs": "ער שטעט אין מדרש יוסף מסל ... אבער על הקיום של עולה לא מסל", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1212, 1214, 1284, 1285], "confidence": 0.75 } },
+    { "heardAs": "רשע ברענגט ... לוי איז געוועזן דער לעצטער פון די שבטים", "work": "Rashi", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1235, 1236], "confidence": 0.7 } },
+    { "heardAs": "שטעט אין חז״ל ... שמשון איז שפט געוועזן אידן צוואנציג יאר", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1288, 1289, 1290, 1291], "confidence": 0.75 } },
+    { "heardAs": "דעם מדרש דאס איז א פסוקתא ... כרבן בני ועלים ובנשא ממה", "work": "Pesikta", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1301, 1303, 1304], "confidence": 0.7 } },
+    { "heardAs": "דער ר' יואל קודש האט געזאגט צו ר' חיים ויטל", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1311], "confidence": 0.65 } },
+    { "heardAs": "צולח ביקוי הציין ... הרעיא איז כדי יצחק על משכנות הרעים", "work": "Shir HaShirim", "ref": "Shir HaShirim 1:8", "sefariaRef": "Song of Songs 1:8", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1315, 1323, 1325, 1326], "confidence": 0.75 } },
+    { "heardAs": "אזוי ווי ראשי זאגט וויאזוי קענען אידן זיך פרשען", "work": "Rashi", "ref": "Rashi, Shir HaShirim 1:8", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [1318, 1322], "confidence": 0.65 } },
+    { "heardAs": "די ווארט פון חתם סופר חדש עושה מן התורה", "work": "Chasam Sofer", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "quoted", "evidence": { "segs": [1329, 1330], "confidence": 0.8 } }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Through the Chasam Sofer, the Rav reads 'be warm at my hesped, for I will be standing there' to mean that the departed tzaddik puts the words into the speaker's mouth, so speaking about him is in a sense hearing him.",
+        "yi": "דורכן חתם סופר טייטשט דער משגיח \"אחים בהספדא דהתם קאימנא\" אז דער נפטר'דיגער צדיק לייגט אריין די ווערטער אין דעם וואס רעדט, אזוי אז רעדן וועגן אים איז אין א געוויסן זין הערן אים אליין."
+      },
+      "evidence": { "segs": [141, 143, 144, 145, 146], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Every curse in Ki Savo can be turned to blessing by the Oral Torah, but the death of tzaddikim is not written at all; it exists only through the Oral Torah, so no further layer of Oral Torah can reverse it. The only remedy is that the tzaddik not truly be gone.",
+        "yi": "יעדע קללה אין כי תבוא קען תורה שבעל פה איבערדרייען אויף א ברכה, אבער מיתת צדיקים שטייט בכלל נישט אין פסוק; עס איז נאר דורך תורה שבעל פה, ממילא קען עס קיין תורה שבעל פה נישט מבטל זיין. די איינציגע עצה איז אז דער צדיק זאל נישט באמת אוועק זיין."
+      },
+      "evidence": { "segs": [328, 329, 331, 335, 339, 340], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The difference between the bnei haneviim, who lost their prophecy when Eliyahu departed, and Elisha, who grew twice as great, is whether one carries on the tzaddik's Torah; the Rav brings this from the Satmar Rav's own sefer.",
+        "yi": "דער חילוק צווישן די בני הנביאים, וואס האבן פארלוירן זייער נבואה ווען אליהו איז נסתלק געווארן, און אלישע, וואס איז געווארן צוויי מאל אזוי גרויס, איז צי מ'גייט ווייטער מיט דעם צדיקס תורה; דאס ברענגט דער משגיח פונעם סאטמארער רבס אייגענעם ספר."
+      },
+      "evidence": { "segs": [360, 362, 373, 376, 380, 381], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Because every night of Chanukah was fresh for the Satmar Rav like the first, the Rav sees meaning in his answering every night the Beis Yosef's question about the miracle of the first night.",
+        "yi": "ווייל יעדע נאכט חנוכה איז ביים סאטמארער רב געווען פריש ווי די ערשטע נאכט, זעט דער משגיח א טייטש אין דעם וואס ער האט יעדע נאכט פארענטפערט דעם בית יוסף'ס קשיא וועגן דעם נס פון דער ערשטער נאכט."
+      },
+      "evidence": { "segs": [753, 754, 757, 762, 763], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Rabbi Yochanan ben Zakai's last words about clearing the vessels were a deliberate ruling that tzaddikim impart tumah, and he knew no error was involved because Chizkiyahu, the greatest master of tumah and taharah, came to greet him.",
+        "yi": "רבן יוחנן בן זכאי'ס לעצטע ווערטער וועגן ארויסנעמען די כלים זענען געווען א בכוונה'דיגער פסק אז צדיקים זענען מטמא, און ער האט געוואוסט אז ס'איז נישט קיין טעות ווייל חזקיהו, דער גרעסטער אין הלכות טומאה וטהרה, איז געקומען אים מקבל פנים זיין."
+      },
+      "evidence": { "segs": [900, 902, 903, 941, 947], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The Rav presents the Satmar Rav, like Rabbi Yochanan ben Zakai, as the true 'doresh l'Tzion': precisely because he loved Zion he could tolerate no stain on its redemption.",
+        "yi": "דער משגיח שטעלט פאר דעם סאטמארער רב, אזוי ווי רבן יוחנן בן זכאי, ווי דער אמת'ער דורש לציון: גראד ווייל ער האט ליב געהאט ציון האט ער נישט געקענט פארטראגן קיין פלעק אויף איר גאולה."
+      },
+      "evidence": { "segs": [1148, 1151, 1152, 1153, 1154], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Like Rav Ketina mocking the necromancer, the Kosel ruling was meant so that people not be drawn after the Zionists; its greater benefit was to the many who still go but, remembering it, are not drawn.",
+        "yi": "אזוי ווי רב קטינא האט חוזק געמאכט פונעם בעל אוב, איז דער פסק וועגן דעם כותל געווען כדי מ'זאל נישט נמשך ווערן נאך די ציוניסטן; זיין גרעסערע טובה איז פאר די פילע וואס גייען יא, אבער געדענקענדיג דעם פסק ווערן זיי נישט נמשך."
+      },
+      "evidence": { "segs": [1198, 1199, 1207, 1208, 1209], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The cheder boy's answer about 'arur'", "yi": "דעם חדר אינגלס תירוץ וועגן \"ארור\"" },
+      "retelling": {
+        "en": "The Rav recalls that as a melamed of eight- and nine-year-old children he learned Parshas Ki Savo with them, with Rashi that 'baruch' was also said. He asked them why a Torah of chesed writes only 'arur'. One child answered that Hashem wanted to honor the Oral Torah with the blessing, and the Rav says the child did not realize how good his answer was.",
+        "yi": "דער משגיח דערציילט אז ווען ער איז געווען א מלמד פאר אכט, ניין יעריגע קינדער האט ער מיט זיי געלערנט פרשת כי תבוא מיט רש\"י אז מ'האט אויך געזאגט \"ברוך\". ער האט זיי געפרעגט פארוואס א תורת חסד שרייבט נאר \"ארור\". איין קינד האט געענטפערט אז דער רבונו של עולם האט געוואלט מכבד זיין תורה שבעל פה מיט דער ברכה, און דער משגיח זאגט אז דאס קינד האט נישט געוואוסט ווי גוט ער ענטפערט."
+      },
+      "people": [],
+      "evidence": { "segs": [205, 206, 214, 220, 224, 227], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "Learning at three in the morning", "yi": "לערנען דריי אזייגער אינדערפרי" },
+      "retelling": {
+        "en": "The Rav, who lived on the same block as the Satmar Rav for about twenty years, once came there at three in the morning. People would climb up and look through the cracks of the blinds to see what he was doing, and he sat and learned. He dozed for a few minutes in the middle of speaking and on waking knew exactly at which word he had stopped.",
+        "yi": "דער משגיח, וואס האט געוואוינט אויף דעם זעלבן בלאק מיטן סאטמארער רב אפשר צוואנציג יאר, איז איינמאל אהינגעקומען דריי אזייגער אינדערפרי. מ'פלעגט ארויפקריכן און אריינקוקן דורך די שפאלטן פון די בלינדס צו זען וואס ער טוט, און ער איז געזעסן און געלערנט. ער פלעגט איינדרעמלען פאר א פאר מינוט אינמיטן רעדן, און ביים אויפכאפן געוואוסט פונקטליך ביי וועלכן ווארט ער האט געהאלטן."
+      },
+      "people": ["the Satmar Rav"],
+      "evidence": { "segs": [480, 482, 486, 488, 494, 496], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The Shovavim drashos", "yi": "די דרשות אין די וואכן פון שובבים" },
+      "retelling": {
+        "en": "In the Shovavim weeks the Satmar Rav would arouse the people to teshuvah about kedushas habris, and thousands stood in his large shul like a pyramid. The Rav once had to leave on a Motzaei Shabbos to give a shiur. He says the whole crowd wept, and there was not one dry cheek among the thousands.",
+        "yi": "אין די וואכן פון שובבים פלעגט דער סאטמארער רב מעורר זיין צו תשובה וועגן קדושת הברית, און טויזנטער אידן זענען געשטאנען אין זיין גרויסער שול ווי א פיראמיד. דער משגיח האט איינמאל געדארפט ארויסגיין מוצאי שבת צו זאגן א שיעור. ער זאגט אז דער גאנצער עולם האט געוויינט, און צווישן די טויזנטער אידן איז נישט געווען קיין איין טרוקענע באק."
+      },
+      "people": ["the Satmar Rav"],
+      "evidence": { "segs": [510, 511, 512, 514, 522, 523], "confidence": 0.7 }
+    },
+    {
+      "title": { "en": "Rabbi Yonasan Steif pushing to hear the Aseres HaDibros", "yi": "ר' יונתן שטייף שטופט זיך צו הערן די עשרת הדברות" },
+      "retelling": {
+        "en": "The Rav remembers Rabbi Yonasan Steif, an eighty-year-old who was rav of his own shul and had already davened and eaten, pushing his way through the packed crowd to hear the Satmar Rav lain the Aseres HaDibros. Nobody made way for him, and he waited, whether five minutes or two hours, to hear it.",
+        "yi": "דער משגיח געדענקט ווי ר' יונתן שטייף, אן אכציג יעריגער איד וואס איז געווען רב אין זיין אייגענער שול און האט שוין געדאוונט און געגעסן, האט זיך געשטופט צווישן דעם געפאקטן עולם צו הערן דעם סאטמארער רב ליינען די עשרת הדברות. קיינער האט נישט געמאכט פלאץ פאר אים, און ער האט געווארט, צי פינף מינוט צי צוויי שעה, כדי עס צו הערן."
+      },
+      "people": ["Rabbi Yonasan Steif"],
+      "evidence": { "segs": [570, 571, 573, 574, 579, 582], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "Rabbi Shalom of Belz reads the Megillah in Lublin", "yi": "ר' שלום בעלזער ליינט די מגילה אין לובלין" },
+      "retelling": {
+        "en": "The Rav tells that Rabbi Shalom of Belz was once in Lublin, and the Chozeh of Lublin honored him with reading the Megillah. Afterwards the Chozeh said he had heard the story many times, but never told as beautifully as this young man told it.",
+        "yi": "דער משגיח דערציילט אז ר' שלום בעלזער איז אמאל געווען אין לובלין, און דער חוזה פון לובלין האט אים מכבד געווען צו ליינען די מגילה. נאכן ליינען האט דער לובלינער געזאגט אז די מעשה האט ער שוין געהערט אסאך מאל, אבער אזוי שיין ווי דער יונגערמאן דערציילט עס האט ער נאך קיינמאל נישט געהערט."
+      },
+      "people": ["Rabbi Shalom of Belz", "the Chozeh of Lublin"],
+      "evidence": { "segs": [601, 602, 603, 604, 607, 608], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "Eating cherries on Motzaei Shabbos", "yi": "עסן טשערעס מוצאי שבת" },
+      "retelling": {
+        "en": "One Motzaei Shabbos at three in the morning the Rav and others looked through the gap in the blinds and saw the Satmar Rav eating cherries. He held each cherry in his hand and moved his hands for several minutes before eating it, not knowing anyone was watching; the Rav says these were the kavanos with which he ate.",
+        "yi": "איין מוצאי שבת דריי אזייגער אינדערפרי האבן דער משגיח און אנדערע אריינגעקוקט דורך דער שפאלט אין די בלינדס און געזען ווי דער סאטמארער רב עסט טשערעס. ער האט געהאלטן יעדע טשערי אין האנט און געמאכט מיט די הענט עטליכע מינוט איידער ער האט זי געגעסן, נישט וויסנדיג אז איינער קוקט; דער משגיח זאגט אז דאס זענען געווען די כוונות מיט וועלכע ער האט געגעסן."
+      },
+      "people": ["the Satmar Rav"],
+      "evidence": { "segs": [643, 644, 646, 649, 651, 659], "confidence": 0.7 }
+    },
+    {
+      "title": { "en": "Holy names in the Shabbos fish", "yi": "שמות אין די שבת'דיגע פיש" },
+      "retelling": {
+        "en": "Rabbi Yonasan Steif, who knew Kabbalah, once sat at the Satmar Rav's tish and saw that as he cut the fish he arranged a piece of fish according to certain holy names. The Rav says he does not know what it meant, but the Satmar Rav was clearly doing something there.",
+        "yi": "ר' יונתן שטייף, וואס האט געקענט קבלה, איז איינמאל געזעסן ביים סאטמארער רבס טיש און געזען אז ווען ער שניידט די פיש לייגט ער אויס א שטיקל פיש לויט געוויסע שמות. דער משגיח זאגט אז ער ווייסט נישט וואס דאס האט געמיינט, אבער עפעס האט ער דארט געטאן."
+      },
+      "people": ["Rabbi Yonasan Steif", "the Satmar Rav"],
+      "evidence": { "segs": [673, 674, 675, 676, 678], "confidence": 0.7 }
+    },
+    {
+      "title": { "en": "The beard in the concentration camp", "yi": "די בארד אין לאגער" },
+      "retelling": {
+        "en": "The Rav tells of an article by a writer who had been with the Satmar Rav in a concentration camp, describing his wondrous cleanliness. All the others had to cut their beards under a decree threatening death, but he did not. When an inspector came to check for cleanliness, he touched his beard and declared him clean.",
+        "yi": "דער משגיח דערציילט פון אן ארטיקל פון א שרייבער וואס איז געווען מיטן סאטמארער רב אין לאגער, וואס באשרייבט זיין וואונדערליכע ריינקייט. אלע אנדערע האבן געמוזט אפשניידן די בערד אונטער א גזירה מיט טויט, אבער ער נישט. ווען מ'האט געקאנטראלירט צי מ'איז ריין, האט מען אנגערירט זיין בארד און געזאגט אז ער איז ריין."
+      },
+      "people": ["the Satmar Rav"],
+      "evidence": { "segs": [974, 976, 983, 985, 990, 993], "confidence": 0.65 }
+    },
+    {
+      "title": { "en": "A speech at a Mizrachi convention", "yi": "א רעדע ביי א מזרחי קאנווענשאן" },
+      "retelling": {
+        "en": "The Rav recalls that eleven years earlier, when the Satmar Rav fell ill, Rabbi Yosef Soloveitchik spoke at a Mizrachi convention and told them to pray for the Satmar Rav's health. The reason he gave was that what little they held on to Yiddishkeit was only out of fear of how the Satmar Rav would react.",
+        "yi": "דער משגיח געדענקט אז מיט עלף יאר צוריק, ווען דער סאטמארער רב איז קראנק געווארן, האט ר' יוסף סאלאווייטשיק גערעדט ביי א מזרחי קאנווענשאן און זיי געזאגט מ'זאל מתפלל זיין פארן סאטמארער רבס געזונט. דער טעם וואס ער האט געגעבן איז געווען אז דאס ביסל וואס זיי האלטן זיך ביי אידישקייט איז נאר פון מורא ווי אזוי דער סאטמארער רב וועט רעאגירן."
+      },
+      "people": ["Rabbi Yosef Soloveitchik", "the Satmar Rav"],
+      "evidence": { "segs": [1087, 1088, 1089, 1090], "confidence": 0.7 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "Why does a Torah of chesed write only 'arur' in Ki Savo, when Rashi says 'baruch' was also said?", "yi": "פארוואס שרייבט א תורת חסד נאר \"ארור\" אין כי תבוא, ווען רש\"י זאגט אז מ'האט אויך געזאגט \"ברוך\"?" },
+      "answer": { "en": "Hashem wanted to honor the Oral Torah with the blessing; had the curses also been in the Oral Torah, even the merciful 'eishes chayil' would be saying curses.", "yi": "דער רבונו של עולם האט געוואלט מכבד זיין תורה שבעל פה מיט דער ברכה; ווען די קללות וואלטן אויך געווען אין תורה שבעל פה, וואלט אפילו די רחמנות'דיגע \"אשת חיל\" געזאגט קללות." },
+      "questionSegs": [215, 216, 218, 220], "answerSegs": [227, 230, 265, 268], "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why did the king send to Chulda the prophetess rather than to Yirmiyahu?", "yi": "פארוואס איז דער מלך געגאנגען צו חולדה הנביאה און נישט צו ירמיהו?" },
+      "answer": { "en": "Every prophet receives prophecy according to his own vessel, and a woman, being more merciful, would convey a prophecy with more mercy.", "yi": "יעדער נביא באקומט די נבואה לויט זיין אייגענעם כלי, און א אשה, וואס איז מער רחמנות'דיג, וועט זאגן די נבואה מיט מער רחמנות." },
+      "questionSegs": [238, 239], "answerSegs": [248, 249, 250, 251, 254], "confidence": 0.75
+    },
+    {
+      "question": { "en": "The bnei haneviim knew by prophecy that Eliyahu would depart; why did they not know afterwards what had happened to him?", "yi": "די בני הנביאים האבן געוואוסט בנבואה אז אליהו גייט נסתלק ווערן; פארוואס האבן זיי נאכדעם נישט געוואוסט וואס איז געשען מיט אים?" },
+      "answer": { "en": "Their prophecy came through Eliyahu's power, so when he departed it left them.", "yi": "זייער נבואה איז געקומען דורך אליהו'ס כח, ממילא ווען ער איז נסתלק געווארן איז זי פארשווונדן." },
+      "questionSegs": [357, 358], "answerSegs": [359, 360, 361], "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why did Elisha grow twice as great after Eliyahu's passing while the bnei haneviim lost their prophecy?", "yi": "פארוואס איז אלישע געווארן צוויי מאל אזוי גרויס נאך אליהו'ס הסתלקות, בשעת די בני הנביאים האבן פארלוירן זייער נבואה?" },
+      "answer": { "en": "If one learns the tzaddik's Torah and attaches to him, it is not death of tzaddikim; it is only when his wisdom is lost.", "yi": "אויב מ'לערנט דעם צדיקס תורה און מ'איז זיך מדבק אין אים, איז עס נישט מיתת צדיקים; נאר ווען זיין חכמה גייט פארלוירן." },
+      "questionSegs": [372, 373], "answerSegs": [378, 380, 381, 382], "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why would Rabbi Yochanan ben Zakai, in his last moments, concern himself with clearing vessels from tumah?", "yi": "פארוואס האט זיך רבן יוחנן בן זכאי אין זיינע לעצטע מינוטן געזארגט וועגן ארויסנעמען די כלים פון טומאה?" },
+      "answer": { "en": "He knew there would be a view that tzaddikim do not impart tumah, and wanted to make clear once and for all that one may not rely on it.", "yi": "ער האט געוואוסט אז עס וועט זיין א שיטה אז צדיקים זענען נישט מטמא, און ער האט געוואלט קלאר מאכן איינמאל פאר אלעמאל אז מ'טאר זיך נישט סומך זיין דערויף." },
+      "questionSegs": [893, 895, 898], "answerSegs": [900, 901, 902, 903], "confidence": 0.7
+    },
+    {
+      "question": { "en": "How can the tzaddikim of the churban be greater than those of the times of the Beis HaMikdash, when those included David, Shlomo and Yeshayahu?", "yi": "ווי אזוי קענען די צדיקים פון חורבן זיין גרעסער ווי די פון די צייטן פון בית המקדש, ווען דעמאלט זענען געווען דוד, שלמה און ישעיהו?" },
+      "answer": { "en": "Relative to what is expected of their generation they are greater, as the Arizal told Rabbi Chaim Vital that the small deeds of a small generation outweigh the great deeds of earlier ones.", "yi": "לגבי דעם וואס מ'ערווארט פון זייער דור זענען זיי גרעסער, אזוי ווי דער אריז\"ל האט געזאגט פאר ר' חיים וויטאל אז די קליינע זאכן פון א קליינעם דור זענען גרעסער ווי די גרויסע זאכן פון פריערדיגע דורות." },
+      "questionSegs": [1306, 1307, 1308], "answerSegs": [1310, 1311], "confidence": 0.7
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Rav says one should speak only good things, since speech draws down what is spoken, and speaking of tzaddikim draws kedushah.", "yi": "דער משגיח זאגט אז מ'זאל נאר רעדן גוטע זאכן, ווייל דער דיבור איז ממשיך דאס וואס מ'רעדט, און רעדן וועגן צדיקים איז ממשיך קדושה." },
+      "evidence": { "segs": [108, 109, 110, 120, 125], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Rav calls it plain good advice to learn the Satmar Rav's sefarim, so as not to fall under the curse of the death of tzaddikim.", "yi": "דער משגיח רופט עס א פשוט'ע עצה טובה צו לערנען דעם סאטמארער רבס ספרים, כדי נישט צו זיין אין דער קללה פון מיתת צדיקים." },
+      "evidence": { "segs": [414, 415, 416, 417, 418], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "The Rav says one should give children to learn with a melamed who is a yerei shamayim, since the child absorbs yiras shamayim from him.", "yi": "דער משגיח זאגט אז מ'זאל געבן קינדער צו לערנען ביי א מלמד וואס איז א ירא שמים, ווייל דאס קינד זאפט איין יראת שמים פון אים." },
+      "evidence": { "segs": [790, 791, 792, 793], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Rav calls on his listeners to hold to the mesorah, paths and Torah of the tzaddikim and to learn their sefarim.", "yi": "דער משגיח רופט זיך צו האלטן ביי דער מסורה, די דרכים און די תורה פון די צדיקים, און צו לערנען זייערע ספרים." },
+      "evidence": { "segs": [1328, 1332, 1333, 1334, 1337], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "The Rav says one must believe in Hashem's hashgachah and place oneself under it, and so remain with complete emunah until Moshiach.", "yi": "דער משגיח זאגט אז מ'דארף גלייבן אין דער השגחה און זיך אונטערשטעלן אונטער איר, און אזוי בלייבן ביי דער אמונה שלמה ביז משיח." },
+      "evidence": { "segs": [1348, 1349, 1350], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": ["the Satmar Rav", "death of tzaddikim", "learning a tzaddik's Torah after his passing", "Rosh Hashanah judgment", "curses of Ki Savo", "kedushas habris", "Torah lishmah", "belief in the coming of Moshiach", "Rabbi Yochanan ben Zakai", "tumah of tzaddikim"],
+  "concepts": [
+    { "he": "הספד", "heardAs": ["הספרד", "התפעדים", "הספר"] },
+    { "he": "מיתת צדיקים", "heardAs": ["מיתה'ס צדיקים", "מוסדות צדיקים", "מיאוס'ער צדיקים", "מוסד התדיקים"] },
+    { "he": "תורה שבעל פה", "heardAs": ["תורשי ביאל-פע", "תורה שבלפה", "תירה שבו יעלטה"] },
+    { "he": "תורה שבכתב", "heardAs": ["תירה שבו כתב", "תורה שביק סוף"] },
+    { "he": "קדושת הברית", "heardAs": ["דשת הברית", "קדושת הברית"] },
+    { "he": "תורה לשמה", "heardAs": ["צורי וואס ווערט געלערנט לשמה"] },
+    { "he": "אהבה רבה", "heardAs": ["אהבה רבה"] },
+    { "he": "מיטמא", "heardAs": ["מתאמב", "מיטאמען", "מטעמיב", "מתמי"] },
+    { "he": "ביאת המשיח", "heardAs": ["ביאת המשיח"] },
+    { "he": "דור יתום", "heardAs": ["דור יתום", "דבר יתום"] },
+    { "he": "בריונים", "heardAs": ["בוריונים", "בנינים", "ביינים"] },
+    { "he": "כותל המערבי", "heardAs": ["כתר המערבי", "כתל מערבי"] },
+    { "he": "שובבים", "heardAs": ["שובע"] },
+    { "he": "השגחה", "heardAs": ["ישגחה"] },
+    { "he": "נענועים", "heardAs": ["ננאים", "ננא"] }
+  ],
+  "people": [
+    { "name": "the Satmar Rav", "heardAs": ["סאטמארער רב", "סאטמאר רוב", "סאטמאראוו"] },
+    { "name": "the Chasam Sofer", "heardAs": ["חתם סופר", "חיים סופר"] },
+    { "name": "Rabbi Shimon bar Yochai", "heardAs": ["רבי שמעון בן יוחאי", "רבי שמעון בן יחודים"] },
+    { "name": "Rabbi Yossi", "heardAs": ["רבי יוסי"] },
+    { "name": "Eliyahu HaNavi", "heardAs": ["אליהו הנביא"] },
+    { "name": "Elisha", "heardAs": ["אלישע"] },
+    { "name": "Chulda the prophetess", "heardAs": ["חלבי הנביאות", "חרדי א נביאה"] },
+    { "name": "Rabbi Yonasan Steif", "heardAs": ["ר' יונתן שטייף", "ר' יונתן שטייפער"] },
+    { "name": "Rabbi Shalom of Belz", "heardAs": ["רבי שלום בעלזא"] },
+    { "name": "the Chozeh of Lublin", "heardAs": ["חזר מלובלין", "דער לובלינער"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["בעש''ט"] },
+    { "name": "Rabbi Yochanan ben Zakai", "heardAs": ["ר' יוחנן מזרק", "רבי יוחנן בן זאקע", "ר' יוחנן בינזאקי"] },
+    { "name": "Chizkiyahu", "heardAs": ["חזקיהו המלך", "חסקיאל המלך", "חסקי יואל"] },
+    { "name": "Rabbeinu Tam", "heardAs": ["רבי עניל טעם"] },
+    { "name": "Rabbi Chaim Kohen", "heardAs": ["רבי חיים קיין"] },
+    { "name": "the Yismach Moshe", "heardAs": ["יתמוך משה", "ישמח משה"] },
+    { "name": "Rabbi Akiva", "heardAs": ["רבי יקיבא"] },
+    { "name": "Bar Kochba", "heardAs": ["בן קזיווע"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "Rabbi Yosef Soloveitchik", "heardAs": ["רבי יוסף הלווייטשער"] },
+    { "name": "Rav Ketina", "heardAs": ["רב קטנה", "רב קטינא"] },
+    { "name": "Levi", "heardAs": ["לוי"] },
+    { "name": "Shimshon", "heardAs": ["שמשון"] },
+    { "name": "the Arizal", "heardAs": ["ר' יואל קודש"] },
+    { "name": "Rabbi Chaim Vital", "heardAs": ["ר' חיים ויטל"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair for the narrative but badly garbles names and quotations (e.g. 'מוסדות צדיקים' for mitas tzaddikim, 'רבי עניל טעם' for Rabbeinu Tam, 'חסקי יואל' for Chizkiyahu). Several stretches are unrecoverable and left out: segs 121-123 (a Pharaoh remark), 438-441 (who visited the Satmar Rav), 613-617 (letters to the distant), 768-773 (who went to hear shiurim), 826-839 (the gabbai and the collections), 1004-1007 (the Divrei Chaim and the bris) and 1217-1219 (a Kabbalah source on Moshe's soul). Only seg 654 is flagged as noise; it is a short repeat inside the cherries story."
+}
