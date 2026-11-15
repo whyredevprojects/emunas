@@ -1,0 +1,521 @@
+/*
+ * Explore (concept-live §5.2): facet column, results, lenses. Logical properties only, so the whole
+ * page mirrors with `dir`; the SVG lenses mirror their own geometry in code.
+ */
+@layer components {
+  .page {
+    padding: var(--space-l) var(--space-m) var(--space-2xl);
+    display: grid;
+    gap: var(--space-m);
+  }
+
+  .title {
+    font-size: var(--step-4);
+    margin: 0;
+  }
+
+  .lead {
+    margin: 0;
+    max-inline-size: var(--measure-text);
+    color: var(--color-ink-muted);
+  }
+
+  .muted {
+    margin: 0;
+    color: var(--color-ink-muted);
+  }
+
+  .aiNote {
+    margin: 0;
+    font-size: var(--step--2);
+    color: var(--color-ink-muted);
+  }
+
+  .layout {
+    display: grid;
+    grid-template-columns: minmax(14rem, 18rem) minmax(0, 1fr);
+    gap: var(--space-l);
+    align-items: start;
+  }
+
+  @media (width < 48rem) {
+    .layout {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  /* ------------------------------------------------------------------ facets */
+
+  .facets {
+    display: grid;
+    gap: var(--space-s);
+  }
+
+  .facetsHead {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-xs);
+  }
+
+  .facetsTitle {
+    font-size: var(--step-1);
+    margin: 0;
+  }
+
+  .facet {
+    margin: 0;
+    padding: var(--space-xs) var(--space-s);
+    border: var(--rule-hairline) solid var(--color-rule);
+    border-radius: var(--radius-m);
+    background: var(--color-surface);
+    display: grid;
+    gap: var(--space-2xs);
+    min-inline-size: 0;
+  }
+
+  .legend {
+    font-weight: var(--weight-semibold);
+    padding-inline: var(--space-3xs);
+  }
+
+  .facetFilter {
+    inline-size: 100%;
+    min-block-size: var(--tap-min);
+    padding-inline: var(--space-xs);
+    border: var(--rule-hairline) solid var(--color-rule-strong);
+    border-radius: var(--radius-s);
+    font: inherit;
+  }
+
+  .values {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-3xs);
+  }
+
+  .value {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    min-block-size: var(--tap-min);
+    cursor: pointer;
+  }
+
+  .value > input {
+    flex: none;
+    inline-size: 1.125rem;
+    block-size: 1.125rem;
+    accent-color: var(--color-accent);
+  }
+
+  .count {
+    margin-inline-start: auto;
+    font-size: var(--step--1);
+    color: var(--color-ink-muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Zero-count values: dimmed but readable (text keeps the muted ink's contrast). */
+  .dimmed {
+    color: var(--color-ink-muted);
+  }
+
+  .dimmed > .value > input {
+    opacity: 0.6;
+  }
+
+  .chip.dimmed {
+    border-style: dashed;
+  }
+
+  .stop.dimmed,
+  .bar.dimmed {
+    opacity: 0.4;
+  }
+
+  .yearRow {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: var(--space-2xs) var(--space-xs);
+    align-items: center;
+  }
+
+  .yearRow select {
+    min-block-size: var(--tap-min);
+    font: inherit;
+  }
+
+  .textButton {
+    justify-self: start;
+    min-block-size: var(--tap-min);
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--color-accent);
+    font: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .textButton:disabled {
+    color: var(--color-ink-faint);
+    text-decoration: none;
+    cursor: default;
+  }
+
+  .textButton[aria-pressed="true"] {
+    font-weight: var(--weight-semibold);
+  }
+
+  /* ------------------------------------------------------------------ controls */
+
+  .results {
+    display: grid;
+    gap: var(--space-s);
+    min-inline-size: 0;
+  }
+
+  .controls {
+    display: grid;
+    gap: var(--space-xs);
+  }
+
+  .controlRow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2xs);
+  }
+
+  .controlLabel {
+    font-size: var(--step--1);
+    color: var(--color-ink-muted);
+    margin-inline-end: var(--space-2xs);
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: var(--tap-min);
+    padding-inline: var(--space-s);
+    border: var(--rule-hairline) solid var(--color-rule-strong);
+    border-radius: var(--radius-pill);
+    background: var(--color-surface);
+    color: var(--color-ink);
+    font: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .pill[aria-current="true"],
+  .pill[aria-pressed="true"] {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+
+  .status {
+    margin: 0;
+    font-weight: var(--weight-semibold);
+  }
+
+  /* ------------------------------------------------------------------ result lists */
+
+  .vlist {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .vrow {
+    position: absolute;
+    inset-inline: 0;
+    padding-block-end: var(--space-2xs);
+    box-sizing: border-box;
+  }
+
+  .shiurRow,
+  .momentRow {
+    block-size: 100%;
+    box-sizing: border-box;
+    display: grid;
+    align-content: start;
+    gap: var(--space-3xs);
+    padding: var(--space-xs) var(--space-s);
+    border: var(--rule-hairline) solid var(--color-rule);
+    border-radius: var(--radius-m);
+    background: var(--color-surface);
+    color: var(--color-ink);
+    text-decoration: none;
+    overflow: hidden;
+  }
+
+  .shiurRow:hover {
+    border-color: var(--color-rule-strong);
+  }
+
+  .rowTitle {
+    font-weight: var(--weight-semibold);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .rowMeta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    font-size: var(--step--1);
+    color: var(--color-ink-muted);
+    overflow: hidden;
+    max-block-size: 1.6em;
+  }
+
+  .rowText {
+    font-size: var(--step--1);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+  }
+
+  .badge {
+    padding-inline: var(--space-2xs);
+    border: var(--rule-hairline) solid var(--color-rule-strong);
+    border-radius: var(--radius-s);
+  }
+
+  .kind {
+    font-size: var(--step--2);
+    font-weight: var(--weight-semibold);
+    text-transform: uppercase;
+    color: var(--color-ink-muted);
+  }
+
+  .play {
+    justify-self: start;
+    display: inline-flex;
+    align-items: center;
+    min-block-size: 2rem;
+    padding-inline: var(--space-s);
+    border-radius: var(--radius-pill);
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    font-size: var(--step--1);
+    text-decoration: none;
+  }
+
+  /* ------------------------------------------------------------------ lenses */
+
+  .lens {
+    display: grid;
+    gap: var(--space-xs);
+  }
+
+  .lensTitle {
+    font-size: var(--step-1);
+    margin: 0;
+  }
+
+  .subTitle {
+    font-size: var(--step-0);
+    margin: 0;
+  }
+
+  .chart {
+    inline-size: 100%;
+    max-inline-size: 36rem;
+    block-size: auto;
+    overflow: visible;
+  }
+
+  .track {
+    fill: none;
+    stroke: var(--color-rule);
+    stroke-width: 1;
+  }
+
+  .stop,
+  .bar,
+  .node {
+    cursor: pointer;
+    outline: none;
+  }
+
+  .stop circle {
+    fill: var(--color-accent);
+    stroke: var(--color-surface);
+    stroke-width: 1.5;
+  }
+
+  .combined circle {
+    fill: var(--color-surface);
+    stroke: var(--color-accent);
+  }
+
+  .stop.on circle,
+  .node.on circle {
+    fill: var(--color-highlight);
+    stroke: var(--color-ink);
+    stroke-width: 2;
+  }
+
+  .stop:focus-visible circle,
+  .bar:focus-visible rect:last-of-type,
+  .node:focus-visible circle {
+    stroke: var(--color-focus);
+    stroke-width: 3;
+  }
+
+  .centerText {
+    fill: var(--color-ink);
+    font-size: 14px;
+    font-weight: var(--weight-semibold);
+  }
+
+  .bar rect:last-of-type {
+    fill: var(--color-accent);
+  }
+
+  .bar.on rect:last-of-type {
+    fill: var(--color-highlight);
+    stroke: var(--color-ink);
+  }
+
+  .lane rect:last-of-type {
+    fill: var(--color-paper-sunk);
+    stroke: var(--color-rule-strong);
+    stroke-dasharray: 3 2;
+  }
+
+  .lane.on rect:last-of-type {
+    fill: var(--color-highlight);
+    stroke: var(--color-ink);
+  }
+
+  .laneCount {
+    fill: var(--color-ink);
+    font-size: 10px;
+    font-weight: var(--weight-semibold);
+  }
+
+  .hit {
+    fill: transparent;
+  }
+
+  .axis {
+    fill: var(--color-ink-muted);
+    font-size: 9px;
+  }
+
+  .edge {
+    stroke: var(--color-rule-strong);
+  }
+
+  .edge.on {
+    stroke: var(--color-accent);
+  }
+
+  .centerNode circle {
+    fill: var(--color-accent);
+  }
+
+  .centerNode text {
+    fill: var(--color-on-accent);
+    font-size: 12px;
+    font-weight: var(--weight-semibold);
+  }
+
+  .node circle {
+    fill: var(--color-surface);
+    stroke: var(--color-accent);
+    stroke-width: 2;
+  }
+
+  .node text {
+    fill: var(--color-ink);
+    font-size: 11px;
+  }
+
+  .others {
+    display: grid;
+    gap: var(--space-2xs);
+  }
+
+  .chips {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs);
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2xs);
+    min-block-size: var(--tap-min);
+    padding-inline: var(--space-s);
+    border: var(--rule-hairline) solid var(--color-rule-strong);
+    border-radius: var(--radius-pill);
+    background: var(--color-surface);
+    color: var(--color-ink);
+    font: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .chip[aria-pressed="true"] {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+
+  .alt summary {
+    cursor: pointer;
+    min-block-size: var(--tap-min);
+    display: flex;
+    align-items: center;
+  }
+
+  .table {
+    border-collapse: collapse;
+    margin-block: var(--space-xs);
+  }
+
+  .table caption {
+    text-align: start;
+    font-weight: var(--weight-semibold);
+  }
+
+  .table th,
+  .table td {
+    text-align: start;
+    padding: var(--space-3xs) var(--space-s);
+    border-block-end: var(--rule-hairline) solid var(--color-rule);
+  }
+
+  .edgeList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-2xs);
+  }
+
+  .edgeShiurim {
+    display: grid;
+    gap: var(--space-xs);
+    padding: var(--space-s);
+    border: var(--rule-hairline) solid var(--color-rule);
+    border-radius: var(--radius-m);
+    background: var(--color-surface);
+  }
+}

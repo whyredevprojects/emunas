@@ -1,9 +1,10 @@
-// Stub (W2.4). Replaced by W4.1.
+// Explore (W4.1): facets, shiurim/moments list and the Luach, Years and Connections lenses.
 import type { JSX } from "react";
-import { PageStub, stubMeta } from "../shell/PageStub.tsx";
+import { ExplorePage } from "../features/explore/index.ts";
+import { stubMeta } from "../shell/PageStub.tsx";
 
 export const meta = stubMeta("page.explore");
 
 export default function Explore(): JSX.Element {
-  return <PageStub title="page.explore" lead="page.explore.lead" />;
+  return <ExplorePage />;
 }
