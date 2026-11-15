@@ -1,5 +1,5 @@
 {
- "schemaVersion": 2,
+ "schemaVersion": 3,
  "key": "mishneh-torah",
  "name": "Mishneh Torah",
  "label": {
@@ -17,7 +17,14 @@
   },
   "page": true
  },
- "parent": null,
+ "parent": {
+  "id": "rambam",
+  "label": {
+   "en": "Rambam",
+   "yi": "רמב״ם"
+  },
+  "page": false
+ },
  "children": [],
  "shiurIds": [
   "yi-parshas-hashavua-hzynv-01",

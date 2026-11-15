@@ -1,11 +1,51 @@
 {
- "schemaVersion": 2,
+ "schemaVersion": 3,
  "key": "talmud-yerushalmi",
  "name": "Talmud Yerushalmi",
  "label": {
   "en": "Talmud Yerushalmi",
   "yi": "תלמוד ירושלמי"
  },
+ "reviewed": false,
+ "sefariaIndexTitle": null,
+ "author": null,
+ "parent": null,
+ "children": [
+  {
+   "id": "yerushalmi-yoma",
+   "label": {
+    "en": "Yerushalmi Yoma",
+    "yi": "ירושלמי יומא"
+   },
+   "page": false,
+   "count": 1
+  },
+  {
+   "id": "yerushalmi-sukkah",
+   "label": {
+    "en": "Yerushalmi Sukkah",
+    "yi": "ירושלמי סוכה"
+   },
+   "page": false,
+   "count": 1
+  },
+  {
+   "id": "yerushalmi-megillah",
+   "label": {
+    "en": "Yerushalmi Megillah",
+    "yi": "ירושלמי מגילה"
+   },
+   "page": false,
+   "count": 1
+  }
+ ],
+ "shiurIds": [
+  "yi-zmanim-tv-bb-04",
+  "yi-zmanim-chnvkh-11",
+  "yi-zmanim-svds-zs-chnvkh-04",
+  "yi-zmanim-svkvs-08",
+  "yi-zmanim-svds-pvrym-ktn-03"
+ ],
  "locations": [],
  "unlocated": [
   {

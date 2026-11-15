@@ -1,11 +1,50 @@
 {
- "schemaVersion": 2,
+ "schemaVersion": 3,
  "key": "chasam-sofer",
  "name": "Chasam Sofer",
  "label": {
   "en": "Chasam Sofer",
   "yi": "חתם סופר"
  },
+ "reviewed": false,
+ "sefariaIndexTitle": null,
+ "author": {
+  "id": "chasam-sofer",
+  "label": {
+   "en": "the Chasam Sofer",
+   "yi": "דער חתם סופר",
+   "he": "חתם סופר"
+  },
+  "page": true
+ },
+ "parent": null,
+ "children": [
+  {
+   "id": "derashos-chasam-sofer",
+   "label": {
+    "en": "Derashos Chasam Sofer",
+    "yi": "דרשות חתם סופר"
+   },
+   "page": false,
+   "count": 1
+  },
+  {
+   "id": "shut-chasam-sofer",
+   "label": {
+    "en": "Responsa Chasam Sofer",
+    "yi": "שו״ת חתם סופר"
+   },
+   "page": false,
+   "count": 1
+  }
+ ],
+ "shiurIds": [
+  "yi-zmanim-tv-bb-04",
+  "yi-zmanim-spyrh-01",
+  "yi-zmanim-chnvkh-11",
+  "en-parsha-en-svldvs-01",
+  "yi-zmanim-svds-pvrym-ktn-03"
+ ],
  "locations": [],
  "unlocated": [
   {

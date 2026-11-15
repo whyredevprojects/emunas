@@ -1,5 +1,5 @@
 {
- "schemaVersion": 2,
+ "schemaVersion": 3,
  "key": "chagigah",
  "name": "Gemara Chagigah",
  "label": {
@@ -9,7 +9,14 @@
  "reviewed": false,
  "sefariaIndexTitle": "Chagigah",
  "author": null,
- "parent": null,
+ "parent": {
+  "id": "talmud-bavli",
+  "label": {
+   "en": "Gemara (Talmud Bavli)",
+   "yi": "תלמוד בבלי"
+  },
+  "page": true
+ },
  "children": [],
  "shiurIds": [
   "en-parsha-en-svldvs-01",

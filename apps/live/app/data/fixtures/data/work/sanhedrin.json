@@ -1,5 +1,5 @@
 {
- "schemaVersion": 2,
+ "schemaVersion": 3,
  "key": "sanhedrin",
  "name": "Gemara Sanhedrin",
  "label": {
@@ -9,7 +9,14 @@
  "reviewed": false,
  "sefariaIndexTitle": "Sanhedrin",
  "author": null,
- "parent": null,
+ "parent": {
+  "id": "talmud-bavli",
+  "label": {
+   "en": "Gemara (Talmud Bavli)",
+   "yi": "תלמוד בבלי"
+  },
+  "page": true
+ },
  "children": [],
  "shiurIds": [
   "yi-parshas-hashavua-shvptym-01",

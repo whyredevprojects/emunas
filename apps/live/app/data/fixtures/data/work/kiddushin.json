@@ -1,5 +1,5 @@
 {
- "schemaVersion": 2,
+ "schemaVersion": 3,
  "key": "kiddushin",
  "name": "Gemara Kiddushin",
  "label": {
@@ -9,7 +9,14 @@
  "reviewed": false,
  "sefariaIndexTitle": "Kiddushin",
  "author": null,
- "parent": null,
+ "parent": {
+  "id": "talmud-bavli",
+  "label": {
+   "en": "Gemara (Talmud Bavli)",
+   "yi": "תלמוד בבלי"
+  },
+  "page": true
+ },
  "children": [],
  "shiurIds": [
   "yi-parshas-hashavua-brshys-01",

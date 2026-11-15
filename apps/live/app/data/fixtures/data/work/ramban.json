@@ -1,11 +1,44 @@
 {
- "schemaVersion": 2,
+ "schemaVersion": 3,
  "key": "ramban",
  "name": "Ramban",
  "label": {
   "en": "Ramban",
   "yi": "רמב״ן"
  },
+ "reviewed": false,
+ "sefariaIndexTitle": null,
+ "author": {
+  "id": "ramban",
+  "label": {
+   "en": "the Ramban",
+   "yi": "דער רמב\"ן",
+   "he": "רמב\"ן"
+  },
+  "page": true
+ },
+ "parent": null,
+ "children": [
+  {
+   "id": "ramban-on-the-torah",
+   "label": {
+    "en": "Ramban on the Torah",
+    "yi": "רמב״ן על התורה"
+   },
+   "page": false,
+   "count": 2
+  }
+ ],
+ "shiurIds": [
+  "yi-parshas-hashavua-hzynv-01",
+  "yi-parshas-hashavua-brshys-01",
+  "en-miscellaneous-en-01",
+  "yi-zmanim-spyrh-01",
+  "yi-zmanim-shbs-chzvn-01",
+  "en-parsha-en-nch-01",
+  "yi-zmanim-svds-zs-chnvkh-04",
+  "en-zmanim-en-chvdsh-tbs-02"
+ ],
  "locations": [
   {
    "ref": "Shemos 20:8",

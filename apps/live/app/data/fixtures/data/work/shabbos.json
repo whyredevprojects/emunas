@@ -1,5 +1,5 @@
 {
- "schemaVersion": 2,
+ "schemaVersion": 3,
  "key": "shabbos",
  "name": "Gemara Shabbos",
  "label": {
@@ -9,7 +9,14 @@
  "reviewed": false,
  "sefariaIndexTitle": "Shabbat",
  "author": null,
- "parent": null,
+ "parent": {
+  "id": "talmud-bavli",
+  "label": {
+   "en": "Gemara (Talmud Bavli)",
+   "yi": "תלמוד בבלי"
+  },
+  "page": true
+ },
  "children": [],
  "shiurIds": [
   "yi-zmanim-lvl-01",

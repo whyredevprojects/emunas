@@ -1,11 +1,256 @@
 {
- "schemaVersion": 2,
+ "schemaVersion": 3,
  "key": "talmud-bavli",
  "name": "Gemara (Talmud Bavli)",
  "label": {
   "en": "Gemara (Talmud Bavli)",
   "yi": "תלמוד בבלי"
  },
+ "reviewed": false,
+ "sefariaIndexTitle": null,
+ "author": null,
+ "parent": null,
+ "children": [
+  {
+   "id": "berachos",
+   "label": {
+    "en": "Gemara Berachos",
+    "yi": "גמרא ברכות"
+   },
+   "page": true,
+   "count": 15
+  },
+  {
+   "id": "shabbos",
+   "label": {
+    "en": "Gemara Shabbos",
+    "yi": "גמרא שבת"
+   },
+   "page": true,
+   "count": 10
+  },
+  {
+   "id": "eruvin",
+   "label": {
+    "en": "Gemara Eruvin",
+    "yi": "גמרא עירובין"
+   },
+   "page": true,
+   "count": 3
+  },
+  {
+   "id": "yoma",
+   "label": {
+    "en": "Gemara Yoma",
+    "yi": "גמרא יומא"
+   },
+   "page": true,
+   "count": 7
+  },
+  {
+   "id": "sukkah",
+   "label": {
+    "en": "Gemara Sukkah",
+    "yi": "גמרא סוכה"
+   },
+   "page": true,
+   "count": 4
+  },
+  {
+   "id": "rosh-hashanah",
+   "label": {
+    "en": "Gemara Rosh Hashanah",
+    "yi": "גמרא ראש השנה"
+   },
+   "page": true,
+   "count": 6
+  },
+  {
+   "id": "taanis",
+   "label": {
+    "en": "Gemara Taanis",
+    "yi": "גמרא תענית"
+   },
+   "page": true,
+   "count": 5
+  },
+  {
+   "id": "megillah",
+   "label": {
+    "en": "Gemara Megillah",
+    "yi": "גמרא מגילה"
+   },
+   "page": true,
+   "count": 8
+  },
+  {
+   "id": "chagigah",
+   "label": {
+    "en": "Gemara Chagigah",
+    "yi": "גמרא חגיגה"
+   },
+   "page": true,
+   "count": 4
+  },
+  {
+   "id": "yevamos",
+   "label": {
+    "en": "Gemara Yevamos",
+    "yi": "גמרא יבמות"
+   },
+   "page": false,
+   "count": 2
+  },
+  {
+   "id": "nedarim",
+   "label": {
+    "en": "Gemara Nedarim",
+    "yi": "גמרא נדרים"
+   },
+   "page": false,
+   "count": 1
+  },
+  {
+   "id": "sotah",
+   "label": {
+    "en": "Gemara Sotah",
+    "yi": "גמרא סוטה"
+   },
+   "page": true,
+   "count": 5
+  },
+  {
+   "id": "gittin",
+   "label": {
+    "en": "Gemara Gittin",
+    "yi": "גמרא גיטין"
+   },
+   "page": false,
+   "count": 1
+  },
+  {
+   "id": "kiddushin",
+   "label": {
+    "en": "Gemara Kiddushin",
+    "yi": "גמרא קידושין"
+   },
+   "page": true,
+   "count": 4
+  },
+  {
+   "id": "bava-kamma",
+   "label": {
+    "en": "Gemara Bava Kamma",
+    "yi": "גמרא בבא קמא"
+   },
+   "page": false,
+   "count": 1
+  },
+  {
+   "id": "bava-metzia",
+   "label": {
+    "en": "Gemara Bava Metzia",
+    "yi": "גמרא בבא מציעא"
+   },
+   "page": true,
+   "count": 3
+  },
+  {
+   "id": "bava-basra",
+   "label": {
+    "en": "Gemara Bava Basra",
+    "yi": "גמרא בבא בתרא"
+   },
+   "page": false,
+   "count": 1
+  },
+  {
+   "id": "sanhedrin",
+   "label": {
+    "en": "Gemara Sanhedrin",
+    "yi": "גמרא סנהדרין"
+   },
+   "page": true,
+   "count": 6
+  },
+  {
+   "id": "makkos",
+   "label": {
+    "en": "Gemara Makkos",
+    "yi": "גמרא מכות"
+   },
+   "page": false,
+   "count": 1
+  },
+  {
+   "id": "avodah-zarah",
+   "label": {
+    "en": "Gemara Avodah Zarah",
+    "yi": "גמרא עבודה זרה"
+   },
+   "page": true,
+   "count": 6
+  },
+  {
+   "id": "zevachim",
+   "label": {
+    "en": "Gemara Zevachim",
+    "yi": "גמרא זבחים"
+   },
+   "page": false,
+   "count": 1
+  },
+  {
+   "id": "chullin",
+   "label": {
+    "en": "Gemara Chullin",
+    "yi": "גמרא חולין"
+   },
+   "page": true,
+   "count": 5
+  },
+  {
+   "id": "temurah",
+   "label": {
+    "en": "Gemara Temurah",
+    "yi": "גמרא תמורה"
+   },
+   "page": false,
+   "count": 1
+  }
+ ],
+ "shiurIds": [
+  "yi-parshas-hashavua-hzynv-01",
+  "yi-parshas-hashavua-vschnn-01",
+  "yi-zmanim-lvl-01",
+  "en-miscellaneous-en-02",
+  "yi-parshas-hashavua-brshys-01",
+  "yi-parshas-hashavua-mvr-01",
+  "en-miscellaneous-en-01",
+  "yi-zmanim-tv-bb-04",
+  "yi-parshas-hashavua-shvptym-01",
+  "yi-zmanim-lvl-02",
+  "yi-zmanim-spyrh-01",
+  "yi-zmanim-svds-shvshn-pvrym-01",
+  "yi-zmanim-shbs-chzvn-01",
+  "yi-zmanim-chnvkh-11",
+  "en-parsha-en-nch-01",
+  "en-parsha-en-svldvs-01",
+  "en-parsha-en-vyshlch-01",
+  "yi-parshas-hashavua-brshys-03",
+  "yi-parshas-hashavua-vyshb-08",
+  "yi-zmanim-svds-zs-chnvkh-04",
+  "en-zmanim-en-tv-bshbt-01",
+  "en-zmanim-en-rsh-hshnh-03",
+  "yi-zmanim-svkvs-08",
+  "en-parsha-en-ky-sb-01",
+  "en-zmanim-en-chvdsh-tbs-02",
+  "yi-zmanim-svds-pvrym-ktn-03",
+  "en-zmanim-en-psch-06",
+  "yi-zmanim-pvrym-07",
+  "yi-shonos-31",
+  "yi-zmanim-nysn-05"
+ ],
  "locations": [],
  "unlocated": [
   {

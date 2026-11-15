@@ -1,5 +1,5 @@
 /**
- * UI strings for the seforim, maasios and entity pages (W4.2). Kept with the feature (the app's table
+ * UI strings for the seforim and entity pages (W4.2). Kept with the feature (the app's table
  * in `app/i18n/` belongs to the shell); same `createT` contract: `yi` must provide every key.
  */
 import { createT, type MessageTable, type TFunction, type UiLang } from "@emunas/i18n";
@@ -60,15 +60,6 @@ export const browseEn = {
   "seforim.family": "In this family",
   "seforim.family.lead": "Each sefer in the family, in order, with the shiurim that cite it.",
   "seforim.family.shiurim": "Shiurim citing any of them",
-
-  "maasios.lead": "The stories told in the shiurim. Each one starts where the story starts. The same story told in several shiurim is not yet grouped.",
-  "maasios.people": "Stories about",
-  "maasios.people.all": "Everyone",
-  "maasios.people.more": "More people",
-  "maasios.none": "No stories match.",
-  "maasios.count": "{shown} of {total} stories",
-  "maasios.storiesOnly": "Stories only",
-  "maasios.storiesOnly.lead": "Plays the stories below one after another, each from its start to its end.",
 
   "entity.person": "Person",
   "entity.concept": "Glossary entry",
@@ -146,15 +137,6 @@ export const browseYi: MessageTable<BrowseKey> = {
   "seforim.family": "אין דער משפחה",
   "seforim.family.lead": "יעדער ספר אין דער משפחה, על הסדר, מיט די שיעורים וואס ברענגען אים.",
   "seforim.family.shiurim": "שיעורים וואס ברענגען איינעם פון זיי",
-
-  "maasios.lead": "די מעשיות וואס ווערן דערציילט אין די שיעורים. יעדע מעשה שפילט פון דארט וואו זי הייבט זיך אן. די זעלבע מעשה, דערציילט אין עטליכע שיעורים, איז נאך נישט צוזאמגעשטעלט.",
-  "maasios.people": "מעשיות וועגן",
-  "maasios.people.all": "אלעמען",
-  "maasios.people.more": "נאך פערזאנען",
-  "maasios.none": "קיין מעשיות פאסן נישט.",
-  "maasios.count": "{shown} פון {total} מעשיות",
-  "maasios.storiesOnly": "נאר מעשיות",
-  "maasios.storiesOnly.lead": "שפילט די מעשיות אונטן איינע נאך די אנדערע, יעדע פון אנהייב ביזן סוף.",
 
   "entity.person": "פערזאן",
   "entity.concept": "ערך",
