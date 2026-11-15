@@ -206,6 +206,24 @@ describe("post-build checks", () => {
     expect(problems(good.replace("<title>t · Emunas</title>", ""))).toEqual(["<title> does not carry the page's name (og:title)"]);
   });
 
+  it("corpus entries: noindex with no canonical when Quiet has no page; threads always so (C1.7)", () => {
+    const problems = (file: string, html: string) => checkPage(file, html, hosts).map((f) => f.problem);
+    const entry = (canonical: string | null, noindex: boolean) =>
+      `<html><head><title>t · Emunas</title>${noindex ? '<meta name="robots" content="noindex"/>' : ""}` +
+      (canonical ? `<link rel="canonical" href="${canonical}"/><link rel="alternate" hrefLang="en" href="https://listen.example.org/en/t/a"/>` : "") +
+      `<meta name="description" content="d"/><meta property="og:title" content="t"/><meta property="og:description" content="d"/></head></html>`;
+    expect(problems("en/t/a.html", entry(`${QUIET}/en/inyanim/a/`, false))).toEqual([]);
+    expect(problems("en/t/a.html", entry(null, true))).toEqual([]);
+    expect(problems("en/maasios/a.html", entry(null, true))).toEqual([]);
+    expect(problems("en/t/a.html", entry(null, false))).toEqual(["no canonical link", "no hreflang alternates"]);
+    expect(problems("en/t/a.html", entry(`${QUIET}/en/inyanim/a/`, true))).toEqual(["topic page without a Quiet page carries a canonical"]);
+    expect(problems("en/th/a.html", entry(null, true))).toEqual([]);
+    expect(problems("en/th/a.html", entry(null, false))).toEqual(["page of kind thread without noindex"]);
+    expect(problems("en/th/a.html", entry(`${QUIET}/en/`, true))).toEqual(["thread page without a Quiet page carries a canonical"]);
+    // A shiur page is never allowed to be noindex.
+    expect(problems("en/s/a.html", entry(null, true))).toEqual(["no canonical link", "content page (shiur) is noindex"]);
+  });
+
   it("flags app-only pages without noindex", () => {
     const html = `<html><head><link rel="canonical" href="${QUIET}/en/"/><meta property="og:title" content="t"/></head></html>`;
     expect(checkPage("en/index.html", html, hosts).map((f) => f.problem)).toEqual(["app-only page (today) without noindex"]);
@@ -323,6 +341,27 @@ describe("react-router config hooks", () => {
     const logs: string[] = [];
     liveBuildEnd(args, ENV, (m) => logs.push(m));
     expect(logs.join()).toMatch(/1 prerendered pages checked/u);
+  });
+});
+
+describe(".corpus reader with the corpus layer (C1.7)", () => {
+  it("reads corpus ids and the Live and Quiet page flags, as the data emit does", () => {
+    const corpusDir = buildCorpusTo(MINI_DATA, MINI_POLICY);
+    const c = readSeoCorpus(corpusDir);
+    expect(c.layer).toBe(true);
+    expect(c.topics.length).toBeGreaterThan(100);
+    const files = emitLiveData(readCorpusInput(corpusDir), { generatedAt: "2026-11-15T00:00:00.000Z" });
+    const pages = (xs: { key: string; prerender: boolean }[]) => xs.filter((x) => x.prerender).map((x) => x.key).sort();
+    const keys = (prefix: string) =>
+      [...files.keys()].filter((f) => f.startsWith(prefix) && !f.includes(".moments-")).map((f) => f.slice(prefix.length, -".json".length)).sort();
+    expect(pages(c.topics)).toEqual(keys("topic/"));
+    expect(pages(c.stories)).toEqual(keys("story/"));
+    expect(pages(c.threads)).toEqual(keys("thread/"));
+    expect(pages(c.people)).toEqual(keys("entity/p/"));
+    expect(pages(c.concepts)).toEqual(keys("entity/c/"));
+    expect(pages(c.works)).toEqual(keys("work/"));
+    // A merged concept points at its topic, so its links and redirects go there.
+    expect(c.concepts.some((x) => x.topicId)).toBe(true);
   });
 });
 

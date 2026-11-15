@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "yi-zmanim-lvl-02",
  "rev": "8386da846a2c",
  "lang": "yi",
@@ -50,7 +50,427 @@
   ],
   "prev": "yi-zmanim-lvl-01",
   "next": "yi-zmanim-svkvs-08",
-  "neighbors": []
+  "neighbors": [],
+  "titles": {
+   "yi-zmanim-lvl-01": {
+    "title": "דיבורים המעוררים את הלב",
+    "lang": "yi",
+    "years": [
+     5735
+    ]
+   },
+   "yi-zmanim-svkvs-08": {
+    "title": "גודל מעלת קדושת הסוכה",
+    "lang": "yi",
+    "years": [
+     5758
+    ]
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "elul",
+    "salience": 1
+   },
+   {
+    "id": "bitachon",
+    "salience": 0.8
+   },
+   {
+    "id": "bein-adam-lachaveiro",
+    "salience": 0.6
+   },
+   {
+    "id": "middos",
+    "salience": 0.6
+   },
+   {
+    "id": "tehillim",
+    "salience": 0.6
+   },
+   {
+    "id": "teshuvah",
+    "salience": 0.5
+   },
+   {
+    "id": "maasios",
+    "salience": 0.4
+   },
+   {
+    "id": "talmidei-chachamim",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "elul"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "elul",
+     "yiras-shamayim"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "tehillim",
+     "elul"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "bitachon",
+     "shmiras-einayim",
+     "tefilah-betzibbur"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "tehillim",
+     "bitachon"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "elul",
+     "tumah-taharah",
+     "teshuvah"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "elul",
+     "middos",
+     "teshuvah"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "maasios",
+     "bein-adam-lachaveiro",
+     "gedolei-yisroel"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "gedolei-yisroel",
+     "yom-kippur",
+     "bein-adam-lachaveiro"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "maasios",
+     "gedolei-yisroel",
+     "talmidei-chachamim"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "bein-adam-lachaveiro": {
+    "id": "bein-adam-lachaveiro",
+    "label": {
+     "en": "Bein Adam LaChaveiro",
+     "yi": "בין אדם לחבירו"
+    },
+    "page": true
+   },
+   "bitachon": {
+    "id": "bitachon",
+    "label": {
+     "en": "Bitachon",
+     "yi": "בטחון"
+    },
+    "page": true
+   },
+   "elul": {
+    "id": "elul",
+    "label": {
+     "en": "Chodesh Elul",
+     "yi": "חודש אלול"
+    },
+    "page": true
+   },
+   "gedolei-yisroel": {
+    "id": "gedolei-yisroel",
+    "label": {
+     "en": "Chazal and Gedolei Yisroel",
+     "yi": "חז\"ל און גדולי ישראל",
+     "he": "חז\"ל וגדולי ישראל"
+    },
+    "page": true
+   },
+   "maasios": {
+    "id": "maasios",
+    "label": {
+     "en": "Stories of Tzaddikim",
+     "yi": "מעשיות פון צדיקים",
+     "he": "מעשיות"
+    },
+    "page": true
+   },
+   "middos": {
+    "id": "middos",
+    "label": {
+     "en": "Middos Tovos",
+     "yi": "מידות טובות",
+     "he": "תיקון המידות"
+    },
+    "page": true
+   },
+   "shmiras-einayim": {
+    "id": "shmiras-einayim",
+    "label": {
+     "en": "Shmiras Einayim",
+     "yi": "שמירת עינים"
+    },
+    "page": true
+   },
+   "talmidei-chachamim": {
+    "id": "talmidei-chachamim",
+    "label": {
+     "en": "Kavod HaTorah and Talmidei Chachamim",
+     "yi": "כבוד התורה און תלמידי חכמים",
+     "he": "כבוד התורה"
+    },
+    "page": true
+   },
+   "tefilah-betzibbur": {
+    "id": "tefilah-betzibbur",
+    "label": {
+     "en": "Davening with the Tzibbur and the Beis HaKnesses",
+     "yi": "דאווענען מיט'ן ציבור און דער בית הכנסת",
+     "he": "תפילה בציבור"
+    },
+    "page": true
+   },
+   "tehillim": {
+    "id": "tehillim",
+    "label": {
+     "en": "Tehillim",
+     "yi": "תהלים"
+    },
+    "page": true
+   },
+   "teshuvah": {
+    "id": "teshuvah",
+    "label": {
+     "en": "Teshuvah",
+     "yi": "תשובה"
+    },
+    "page": true
+   },
+   "tumah-taharah": {
+    "id": "tumah-taharah",
+    "label": {
+     "en": "Tumah, Taharah and Mikveh",
+     "yi": "טומאה, טהרה און מקוה",
+     "he": "טומאה וטהרה"
+    },
+    "page": true
+   },
+   "yiras-shamayim": {
+    "id": "yiras-shamayim",
+    "label": {
+     "en": "Yiras Shamayim",
+     "yi": "יראת שמים"
+    },
+    "page": true
+   },
+   "yom-kippur": {
+    "id": "yom-kippur",
+    "label": {
+     "en": "Yom Kippur",
+     "yi": "יום כיפור",
+     "he": "יום הכיפורים"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "bein-adam-lachaveiro",
+    "label": {
+     "en": "Bein adam lachaveiro (between man and his fellow)",
+     "yi": "בין אדם לחבירו"
+    },
+    "page": false
+   },
+   {
+    "id": "bitachon",
+    "label": {
+     "en": "Bitachon (trust in Hashem)",
+     "yi": "בטחון"
+    },
+    "page": false
+   },
+   {
+    "id": "ir-miklat",
+    "label": {
+     "en": "Ir miklat (city of refuge)",
+     "yi": "עיר מקלט"
+    },
+    "page": false
+   },
+   {
+    "id": "klipah",
+    "label": {
+     "en": "Klipah (husk, a shell of impurity)",
+     "yi": "קליפה"
+    },
+    "page": true
+   },
+   {
+    "id": "neilah",
+    "label": {
+     "en": "Ne'ilah (the closing prayer of Yom Kippur)",
+     "yi": "נעילה"
+    },
+    "page": false
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "yi-zmanim-lvl-02~src0",
+    "workId": "bnei-yissaschar",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src1",
+    "workId": "shemos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src2",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src3",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src4",
+    "workId": "yeshayahu",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src5",
+    "workId": "siddur-rabbi-shabsai",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src7",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src8",
+    "workId": "berachos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src9",
+    "workId": "shemos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src10",
+    "workId": "berachos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src12",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src14",
+    "workId": "targum-tehillim",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src15",
+    "workId": "bnei-yissaschar",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src16",
+    "workId": "mishnah-yoma",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src17",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src18",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src20",
+    "workId": "mishneh-torah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src21",
+    "workId": "bava-metzia",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src22",
+    "workId": "esther",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src23",
+    "workId": "mishnah-yoma",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src24",
+    "workId": "machzor-yom-kippur",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src25",
+    "workId": "yoma",
+    "page": true
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "yi-zmanim-lvl-02~st0",
+    "storyId": "the-torn-shoe-at-the-chuppah",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~st1",
+    "storyId": "the-malbim-in-the-chasam-sofers-place",
+    "tellings": 1,
+    "page": false
+   }
+  ],
+  "insights": []
  },
  "notes": {
   "summary": {

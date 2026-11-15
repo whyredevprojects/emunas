@@ -13,7 +13,7 @@ import { isUiLang, type UiLang } from "@emunas/i18n";
 import { useEffect, useMemo, useState, type JSX } from "react";
 import { useLocation, useParams } from "react-router";
 import { Text } from "../../components/Text.tsx";
-import type { FacetsFile, ShiurFile } from "./data.ts";
+import type { ShiurFile } from "./data.ts";
 import { tFor } from "../../i18n/index.ts";
 import {
   canPlay,
@@ -50,7 +50,7 @@ export function ListeningRoomPage(): JSX.Element {
     ensureDockRegistered();
   }, []);
 
-  if (data.status === "ready") return <Room key={data.shiur.id} ui={ui} shiur={data.shiur} facets={data.facets} />;
+  if (data.status === "ready") return <Room key={data.shiur.id} ui={ui} shiur={data.shiur} />;
 
   // One h1 in every state, at the same place, so focus after navigation lands on it.
   return (
@@ -73,7 +73,7 @@ export function ListeningRoomPage(): JSX.Element {
   );
 }
 
-function Room({ ui, shiur, facets }: { ui: UiLang; shiur: ShiurFile; facets: FacetsFile | null }): JSX.Element {
+function Room({ ui, shiur }: { ui: UiLang; shiur: ShiurFile }): JSX.Element {
   const rt = roomT(ui);
   const { search } = useLocation();
   const settings = useSettings((st) => st.read);
@@ -81,16 +81,7 @@ function Room({ ui, shiur, facets }: { ui: UiLang; shiur: ShiurFile; facets: Fac
   const state = usePlayerState();
   const quietOrigin = useMemo(() => currentQuietOrigin(), []);
 
-  const info: PlayingInfo = useMemo(
-    () => ({ shiur, seriesTitle: seriesTitle(shiur, facets) }),
-    [shiur, facets],
-  );
-  const siblingSeries = useMemo(() => {
-    const id = shiur.series ? (facets?.series[shiur.series.id]?.sibling ?? null) : null;
-    if (!id) return null;
-    const label = facets?.series[id]?.label;
-    return { id, title: label ? { en: label.en, yi: label.yi } : null };
-  }, [shiur, facets]);
+  const info: PlayingInfo = useMemo(() => ({ shiur, seriesTitle: seriesTitle(shiur) }), [shiur]);
 
   const params = new URLSearchParams(search);
   const tParam = params.get("t");
@@ -141,7 +132,6 @@ function Room({ ui, shiur, facets }: { ui: UiLang; shiur: ShiurFile; facets: Fac
     start: deep.start ?? 0,
     focusedMoment: deep.momentId,
     skippedKinds: new Set(state.skip.enabled ? state.skip.kinds : []),
-    siblingSeries,
     playAt: (t, end) => enginePlayAt(info, t, end),
     playable: hasPlayableAudio(shiur),
   };

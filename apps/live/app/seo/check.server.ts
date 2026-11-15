@@ -15,7 +15,7 @@ import { existsSync, readFileSync, readdirSync, renameSync, rmSync, rmdirSync, s
 import { dirname, join, relative, sep } from "node:path";
 import { LIVE_SUBDOMAIN, hostOf, type Hosts } from "@emunas/links";
 import { TITLE_SEPARATOR } from "./meta.ts";
-import { APP_ONLY_KINDS, classifyLivePath, isIndexable, normalizeLivePath } from "./policy.ts";
+import { APP_ONLY_KINDS, ENTRY_KINDS, classifyLivePath, isIndexable, normalizeLivePath } from "./policy.ts";
 import { ROBOTS_TXT } from "./robots.ts";
 
 export const MAX_CLIENT_FILES = 18_000;
@@ -144,16 +144,19 @@ export function checkPage(file: string, html: string, hosts: Hosts | null): SeoF
     if (hosts && !c.startsWith(`${hosts.quiet}/`)) bad(`canonical is not on the Quiet origin ${hosts.quiet}: ${c}`);
     if (c.includes("#")) bad(`canonical has a fragment: ${c}`);
   }
-  if (hosts && head.canonical.length === 0) bad("no canonical link");
+  // A corpus entry without a Quiet page, and every thread page: noindex with no canonical (D8).
+  const noQuietPage = (ENTRY_KINDS.has(kind) && noindex) || kind === "thread";
+  if (noQuietPage && head.canonical.length > 0) bad(`${kind} page without a Quiet page carries a canonical`);
+  if (hosts && head.canonical.length === 0 && !noQuietPage) bad("no canonical link");
   if (APP_ONLY_KINDS.has(kind) && !noindex) bad(`app-only page (${kind}) without noindex`);
   if (isIndexable(kind)) {
-    if (noindex) bad(`content page (${kind}) is noindex`);
+    if (noindex && !ENTRY_KINDS.has(kind)) bad(`content page (${kind}) is noindex`);
     const ogTitle = head.meta.get("og:title");
     if (!ogTitle) bad("no og:title");
     else if (!head.title?.startsWith(`${ogTitle}${TITLE_SEPARATOR}`)) bad("<title> does not carry the page's name (og:title)");
     if (!head.meta.get("og:description")) bad("no og:description");
     if (!head.meta.get("description")) bad("no meta description");
-    if (hosts && head.alternates.length === 0) bad("no hreflang alternates");
+    if (hosts && head.alternates.length === 0 && !noindex) bad("no hreflang alternates");
   } else if (kind === "today") {
     if (!head.meta.get("og:title")) bad("no og:title");
   } else if (!noindex && !APP_ONLY_KINDS.has(kind)) {

@@ -1,6 +1,6 @@
 {
- "schemaVersion": 1,
- "buildId": "f6f301f67e23ae14",
+ "schemaVersion": 2,
+ "buildId": "c85bc6defe753328",
  "counts": {
   "total": 60,
   "full": 31,
@@ -32,41 +32,32 @@
    },
    "entities": {
     "works": [
-     "amos",
-     "bavli-avodah-zarah",
-     "bavli-kiddushin",
-     "bavli-sukkah",
+     "avodah-zarah",
      "bereishis",
      "devarim",
-     "midrash",
+     "kiddushin",
      "mishnah-sukkah",
      "mishneh-torah",
-     "rambam-peirush-hamishnayos",
      "ramban",
      "rashi",
+     "sukkah",
      "vayikra",
      "yirmiyahu"
     ],
     "people": [
-     "achan",
      "adam-harishon",
      "chasam-sofer",
-     "chavah",
      "peretz",
      "rambam",
      "ramban",
      "rashi",
      "tamar",
-     "yehudah",
-     "zerach"
+     "yehudah-ben-yaakov"
     ],
     "concepts": [
-     "kbyevs-096658",
-     "knss-yshral-315464",
-     "shmyny-etzrs-7c7ac8",
-     "shtn-ecbd0e",
-     "sshbv-keyn-sdvrv-7cd63d",
-     "svkh-c20d03"
+     "knesses-yisrael",
+     "satan",
+     "sukkah"
     ]
    },
    "counts": {
@@ -101,48 +92,31 @@
    "entities": {
     "works": [
      "bamidbar",
-     "bavli-sanhedrin",
-     "bavli-shabbos",
-     "bavli-yevamos",
-     "bavli-yoma",
      "bereishis",
      "bereishis-rabbah",
-     "chovos-halevavos",
      "devarim",
-     "gemara",
-     "melachim",
-     "midrash",
+     "melachim-ii",
      "mishnah-sukkah",
      "rashi",
+     "sanhedrin",
+     "shabbos",
      "shemos",
-     "tehillim"
+     "tehillim",
+     "yoma"
     ],
     "people": [
      "adam-harishon",
      "avraham-avinu",
-     "chizkiyahu-hamelech",
      "dovid-hamelech",
-     "eliezer",
      "esav",
-     "hevel",
-     "lavan",
      "moshe-rabbeinu",
-     "rabbi-yitzchak",
      "rambam",
      "rashi",
-     "sancheriv",
-     "yaakov-avinu",
-     "yishmael",
-     "yitzchak-avinu"
+     "yaakov-avinu"
     ],
     "concepts": [
-     "bchyrh-32f6c2",
-     "btchvn-032372",
-     "bytvl-5b36e7",
-     "mbvl-34b703",
-     "sdry-brashys-160915",
-     "shbeh-emmym-11c544",
-     "svkh-c20d03"
+     "ribono-shel-olam",
+     "sukkah"
     ]
    },
    "counts": {
@@ -176,47 +150,34 @@
    },
    "entities": {
     "works": [
+     "avodah-zarah",
      "bamidbar",
-     "bavli-avodah-zarah",
-     "bavli-sanhedrin",
-     "bavli-shabbos",
-     "bavli-sotah",
-     "bavli-sukkah",
      "bereishis",
      "bereishis-rabbah",
      "bnei-yissaschar",
-     "gemara",
-     "kad-hakemach",
-     "lecha-dodi",
-     "midrash",
      "mishlei",
      "mishneh-torah",
      "rashi",
-     "rus",
+     "sanhedrin",
+     "shabbos",
+     "sotah",
+     "sukkah",
      "yeshayahu"
     ],
     "people": [
      "adam-harishon",
      "bnei-yissaschar",
-     "dinah",
-     "ephraim",
-     "michael",
-     "osnas",
      "peretz",
      "rabbeinu-bachya",
-     "rabbi-shalom-of-belz",
      "rambam",
      "rashi",
      "tamar",
-     "the-chashmonaim",
      "yaakov-avinu",
-     "yehudah",
+     "yehudah-ben-yaakov",
      "yosef-hatzaddik"
     ],
     "concepts": [
-     "msyrvs-npsh-a8d223",
-     "nytl-4619ef",
-     "stra-achra-b50a94"
+     "sitra-achra"
     ]
    },
    "counts": {
@@ -250,11 +211,8 @@
    },
    "entities": {
     "works": [
-     "bavli-berachos",
-     "bavli-yevamos",
+     "berachos",
      "bereishis",
-     "divrei-hayamim",
-     "mishnah-sanhedrin",
      "rashi",
      "shemos",
      "tehillim",
@@ -265,19 +223,12 @@
     "people": [
      "aharon-hakohen",
      "avraham-avinu",
-     "chozeh-of-lublin",
      "maharal",
-     "michael",
      "rabbi-akiva",
-     "rabbi-huna",
-     "rabbi-nachman-bar-yitzchak",
-     "rabbi-yochanan",
      "rashi"
     ],
     "concepts": [
-     "evlm-hba-68958b",
-     "kvdsh-hkdshym-cde0de",
-     "shbeh-emmym-11c544"
+     "olam-haba"
     ]
    },
    "counts": {
@@ -311,14 +262,13 @@
    },
    "entities": {
     "works": [
-     "bavli-berachos",
-     "bavli-chullin",
-     "bavli-taanis",
+     "berachos",
+     "chullin",
      "devarim",
      "mesilas-yesharim",
-     "mishnah-uktzin",
-     "shmuel",
+     "shmuel-i",
      "shulchan-aruch",
+     "taanis",
      "tanya",
      "tehillim",
      "yechezkel",
@@ -328,13 +278,11 @@
      "aharon-hakohen",
      "arizal",
      "dovid-hamelech",
-     "korach",
-     "moshe-rabbeinu",
-     "rabbi-pinchas-ben-yair",
-     "rebbe-moshe-leib-of-sassov",
-     "rebbe-reb-elimelech"
+     "moshe-rabbeinu"
     ],
-    "concepts": []
+    "concepts": [
+     "ribono-shel-olam"
+    ]
    },
    "counts": {
     "chapters": 14,
@@ -367,23 +315,18 @@
    },
    "entities": {
     "works": [
-     "bavli-avodah-zarah",
-     "bavli-berachos",
-     "bavli-nedarim",
-     "bavli-rosh-hashanah",
-     "bavli-sanhedrin",
+     "avodah-zarah",
+     "berachos",
      "bereishis",
      "bnei-yissaschar",
-     "chovos-halevavos",
      "devarim",
-     "divrei-hayamim",
-     "gemara",
-     "mishneh-lamelech",
      "mishneh-torah",
      "pirkei-avos",
      "rashi",
+     "rosh-hashanah",
+     "sanhedrin",
      "shemos",
-     "shmuel",
+     "shmuel-i",
      "tanya",
      "tehillim",
      "vayikra",
@@ -396,22 +339,13 @@
      "baal-hatanya",
      "bnei-yissaschar",
      "dovid-hamelech",
-     "king-yannai",
-     "malki-tzedek",
-     "mishneh-lamelech",
      "moshe-rabbeinu",
-     "rabbi-naftali-amsterdam",
      "rambam",
      "rashi",
-     "shem-ben-noach",
-     "shimon-ben-shetach",
-     "shlomo-hamelech",
-     "shmuel-hanavi"
+     "shlomo-hamelech"
     ],
     "concepts": [
-     "avshpyzyn-df018b",
-     "btchvn-032372",
-     "bytvl-5b36e7"
+     "ribono-shel-olam"
     ]
    },
    "counts": {
@@ -446,43 +380,23 @@
    "entities": {
     "works": [
      "bamidbar",
-     "bavli-bava-metzia",
+     "bava-metzia",
      "bereishis",
      "devarim",
-     "midrash",
      "mishneh-torah",
-     "ramban",
-     "sefer-yetzirah",
-     "sfas-emes",
      "shulchan-aruch",
-     "sifri",
      "tehillim",
-     "teshuvos-harambam",
      "vayikra",
      "yeshayahu"
     ],
     "people": [
-     "apter-rav",
-     "avner",
-     "kayin",
-     "nasser",
-     "rabbi-aharon-kotler",
-     "rabbi-elchonon-wasserman",
-     "rabbi-mordechai-of-lechovitch",
-     "rabbi-nosson-wachtfogel",
      "rambam",
      "ramban",
-     "rebbi",
-     "ruzhiner",
-     "sfas-emes",
      "yehoshua-bin-nun"
     ],
     "concepts": [
-     "amvnh-6dd509",
-     "eshrh-mamrvs-f47d90",
-     "eshrs-ymy-sshvbh-03066e",
-     "mlkyvs-ee86b4",
-     "yvm-hdyn-343343"
+     "asarah-maamaros",
+     "ribono-shel-olam"
     ]
    },
    "counts": {
@@ -516,35 +430,33 @@
    },
    "entities": {
     "works": [
-     "bavli-shabbos",
-     "bavli-sotah",
-     "bavli-yoma",
      "bereishis",
      "devarim",
      "machzor-rosh-hashanah",
      "mesilas-yesharim",
-     "midrash",
      "mishlei",
      "rashi",
+     "shabbos",
      "shemos",
      "shir-hashirim",
      "shulchan-aruch",
+     "sotah",
      "tehillim",
-     "tzidkas-hatzaddik",
-     "vayikra"
+     "vayikra",
+     "yoma"
     ],
     "people": [
      "adam-harishon",
      "baal-shem-tov",
      "moshe-rabbeinu",
      "pharaoh",
+     "rabbi-tzadok-hakohen",
      "rashi",
-     "rav-tzadok-hakohen",
      "yosef-hatzaddik"
     ],
     "concepts": [
-     "amvnh-6dd509",
-     "shmyth-0806d8"
+     "ribono-shel-olam",
+     "satan"
     ]
    },
    "counts": {
@@ -578,37 +490,28 @@
    },
    "entities": {
     "works": [
-     "bavli-bava-metzia",
-     "bavli-berachos",
-     "bavli-yoma",
+     "bava-metzia",
+     "berachos",
      "bnei-yissaschar",
      "devarim",
      "esther",
-     "mishnah-yoma",
      "mishneh-torah",
-     "neilah-prayer",
      "rashi",
      "shemos",
-     "siddur-of-rabbi-shabsai",
-     "targum-tehillim",
      "tehillim",
-     "yeshayahu"
+     "yeshayahu",
+     "yoma"
     ],
     "people": [
      "arizal",
      "chasam-sofer",
-     "malbim",
      "rabban-yochanan-ben-zakkai",
      "rabbi-akiva",
-     "rabbi-elazar-ben-azaryah",
      "rabbi-pinchas-of-koretz",
-     "rabbi-shabsai",
-     "rabbi-yisrael-salanter",
      "rashi"
     ],
     "concepts": [
-     "btchvn-032372",
-     "klyph-ab9afa"
+     "klipah"
     ]
    },
    "counts": {
@@ -642,68 +545,42 @@
    },
    "entities": {
     "works": [
-     "bach",
-     "bavli-eruvin",
-     "bavli-makkos",
-     "bavli-megillah",
-     "bavli-rosh-hashanah",
-     "bavli-sukkah",
-     "beer-mayim-chaim",
-     "beis-aharon",
      "bereishis",
      "devarim",
-     "divrei-chaim",
-     "hashkiveinu-maariv",
-     "midrash",
+     "eruvin",
+     "megillah",
      "mishnah-sukkah",
-     "modim-shemoneh-esreh",
      "pirkei-avos",
-     "rambam-peirush-hamishnayos",
-     "rashi",
-     "rokeach",
+     "rashi-on-bereishis",
+     "rosh-hashanah",
      "shemos",
      "shir-hashirim",
-     "shulchan-aruch",
+     "sukkah",
      "targum-onkelos",
      "tehillim",
      "vayikra",
-     "yehi-ratzon-sukkah",
-     "yerushalmi",
-     "yerushalmi-sukkah",
-     "zera-kodesh",
      "zohar"
     ],
     "people": [
      "aharon-hakohen",
      "arizal",
      "avraham-avinu",
-     "bach",
-     "chizkiyahu-hamelech",
      "dovid-hamelech",
      "esav",
      "noach",
-     "onkelos",
      "rabban-yochanan-ben-zakkai",
      "rabbi-akiva",
      "rabbi-eliezer",
-     "rabbi-naftali-of-ropshitz",
-     "rabbi-shalom-of-belz",
-     "rabbi-yehoshua",
+     "rabbi-pinchas-of-koretz",
+     "rabbi-yehoshua-ben-chananya",
      "rambam",
      "ramban",
-     "rebbe-pinchas-of-koretz",
-     "rokeach",
-     "sancheriv",
-     "sanzer-rav",
      "yaakov-avinu",
      "yeshayahu-hanavi"
     ],
     "concepts": [
-     "btchvn-032372",
-     "rvch-hkvdsh-1fd584",
-     "shmyny-etzrs-7c7ac8",
-     "sshbv-keyn-sdvrv-7cd63d",
-     "sybh-210ce3"
+     "ruach-hakodesh",
+     "sukkah"
     ]
    },
    "counts": {
@@ -737,43 +614,28 @@
    },
    "entities": {
     "works": [
-     "al-hanissim",
-     "bach",
-     "bavli-berachos",
-     "bavli-kiddushin",
-     "bavli-megillah",
-     "bavli-sanhedrin",
-     "bavli-shabbos",
+     "berachos",
      "bereishis",
-     "chasam-sofer-teshuvos",
      "devarim",
-     "haneiros-hallalu",
-     "melachim",
-     "mishnah-peah",
+     "kiddushin",
+     "megillah",
+     "melachim-i",
+     "melachim-ii",
      "pirkei-avos",
+     "sanhedrin",
+     "shabbos",
      "shemos",
      "tanya",
      "tehillim",
-     "tzidkas-hatzaddik",
-     "yerushalmi",
      "yeshayahu",
      "yirmiyahu",
      "zohar"
     ],
     "people": [
-     "bach",
      "chasam-sofer",
-     "elisha",
-     "moshe-rabbeinu",
-     "rabbi-papi",
-     "rabbi-yehoshua-ben-levi",
-     "rabbi-yochanan",
-     "rava"
+     "moshe-rabbeinu"
     ],
-    "concepts": [
-     "melyn-bkvdsh-a929e3",
-     "sdry-brashys-160915"
-    ]
+    "concepts": []
    },
    "counts": {
     "chapters": 7,
@@ -807,23 +669,15 @@
    "entities": {
     "works": [
      "bamidbar",
-     "bavli-berachos",
+     "berachos",
      "bnei-yissaschar",
-     "daniel",
-     "megaleh-amukos",
      "mishneh-torah",
-     "noam-elimelech",
-     "ohr-hachaim",
-     "rabbeinu-bachya",
+     "or-hachaim",
      "ramban",
      "rashi",
-     "sefer-mitzvos-gadol",
-     "sfas-emes",
      "shelah",
      "tanya",
      "tehillim",
-     "unesaneh-tokef",
-     "yerushalmi",
      "zechariah"
     ],
     "people": [
@@ -834,13 +688,9 @@
      "rabbeinu-bachya",
      "rambam",
      "ramban",
-     "rashi",
-     "zecharia"
+     "rashi"
     ],
-    "concepts": [
-     "melyn-bkvdsh-a929e3",
-     "zas-chnvkh-7f741a"
-    ]
+    "concepts": []
    },
    "counts": {
     "chapters": 6,
@@ -873,30 +723,25 @@
    },
    "entities": {
     "works": [
-     "bavli-megillah",
      "chasam-sofer",
      "esther",
+     "megillah",
      "mishlei",
      "rashi",
      "shir-hashirim",
-     "shmuel-ii-tehillim",
-     "tanya",
-     "yerushalmi-megillah"
+     "tanya"
     ],
     "people": [
      "chasam-sofer",
-     "daniel",
      "dovid-hamelech",
      "esther",
      "haman",
-     "klausenburger-rebbe",
      "moshe-rabbeinu",
-     "rabbi-eliezer-brabbi-yosi",
      "rashi"
     ],
     "concepts": [
-     "knss-yshral-315464",
-     "rvch-hkvdsh-1fd584"
+     "knesses-yisrael",
+     "ruach-hakodesh"
     ]
    },
    "counts": {
@@ -930,15 +775,11 @@
    },
    "entities": {
     "works": [
-     "bavli-shabbos",
-     "bavli-taanis",
      "bereishis",
      "esther",
-     "maor-vashemesh",
-     "mishnah-berurah",
-     "mishnah-megillah",
-     "rema",
-     "shmuel",
+     "shabbos",
+     "shmuel-i",
+     "taanis",
      "tikkunei-zohar",
      "zechariah"
     ],
@@ -949,11 +790,7 @@
      "esther",
      "mordechai",
      "noach",
-     "rabbi-avraham-of-tchechanov",
-     "rav-tzadok-hakohen",
-     "satmar-rav",
-     "shmuel-hanavi",
-     "shomer-emunim",
+     "rabbi-tzadok-hakohen",
      "yehoshua-bin-nun"
     ],
     "concepts": []
@@ -992,31 +829,22 @@
    },
    "entities": {
     "works": [
-     "bavli-avodah-zarah",
-     "bavli-berachos",
-     "bavli-megillah",
+     "avodah-zarah",
+     "berachos",
      "bnei-yissaschar",
      "devarim",
-     "divrei-hayamim",
-     "divrei-yoel",
      "esther",
-     "gemara",
-     "likkutei-torah-chernobyl",
-     "midrash",
-     "mishnah-middos",
+     "megillah",
      "mishneh-torah",
      "rashi",
-     "rema",
      "shemos",
      "shir-hashirim",
-     "shmuel",
-     "targum-sheni",
+     "shmuel-i",
      "tosafos",
      "zohar"
     ],
     "people": [
      "achashverosh",
-     "agag",
      "avraham-avinu",
      "baal-shem-tov",
      "bnei-yissaschar",
@@ -1024,18 +852,10 @@
      "esther",
      "haman",
      "mordechai",
-     "rabbi-yonasan-ben-uziel",
      "rambam",
-     "satmar-rav",
-     "shaul-hamelech",
-     "shmuel-amora",
      "yehoshua-bin-nun"
     ],
-    "concepts": [
-     "erlh-a33de8",
-     "hshgchh-prtys-2f201f",
-     "hssr-pnym-a7560d"
-    ]
+    "concepts": []
    },
    "counts": {
     "chapters": 16,
@@ -1067,27 +887,24 @@
    "entities": {
     "works": [
      "bamidbar",
-     "bavli-berachos",
-     "bavli-chullin",
-     "bavli-eruvin",
-     "bavli-rosh-hashanah",
-     "bavli-shabbos",
-     "bavli-yoma",
+     "berachos",
      "bereishis",
      "bnei-yissaschar",
+     "chullin",
      "devarim",
-     "gemara",
-     "haggadah",
+     "eruvin",
      "mishlei",
+     "rosh-hashanah",
+     "shabbos",
      "shelah",
      "shemos",
      "shir-hashirim",
-     "shomer-emunim",
      "targum-onkelos",
      "tehillim",
      "tikkunei-zohar",
      "vayikra",
      "yechezkel",
+     "yoma",
      "zohar"
     ],
     "people": [
@@ -1097,22 +914,15 @@
      "bnei-yissaschar",
      "eliyahu-hanavi",
      "esther",
-     "korach",
      "maharal",
-     "miriam-haneviah",
      "moshe-rabbeinu",
-     "ostrovtzer-rebbe",
-     "rabbi-arele-roth",
      "rabbi-eliezer",
-     "rabbi-gifter",
-     "rabbi-samson-raphael-hirsch",
-     "rabbi-yehoshua",
+     "rabbi-yehoshua-ben-chananya",
      "shlomo-hamelech"
     ],
     "concepts": [
-     "chshbvn-hnpsh-793e98",
-     "schyys-hmsym-fa97ab",
-     "ytzr-hre-b32929"
+     "cheshbon-hanefesh",
+     "techiyas-hameisim"
     ]
    },
    "counts": {
@@ -1146,63 +956,44 @@
    },
    "entities": {
     "works": [
-     "bavli-berachos",
-     "bavli-megillah",
-     "bavli-rosh-hashanah",
-     "bavli-sanhedrin",
-     "bavli-shabbos",
-     "bavli-sukkah",
-     "beer-mayim-chaim",
+     "berachos",
      "bnei-yissaschar",
      "chasam-sofer",
-     "gemara",
-     "masorah",
-     "melachim",
-     "midrash",
+     "megillah",
+     "melachim-i",
      "mishneh-torah",
-     "rabbeinu-bachya",
      "ramban",
      "rashi",
-     "shaarei-kedushah",
+     "rosh-hashanah",
+     "sanhedrin",
+     "shabbos",
      "shemos",
      "shulchan-aruch",
-     "siddur",
+     "sukkah",
      "tehillim",
      "tosafos",
      "vayikra",
      "yeshayahu",
-     "yesod-hateshuvah",
      "yirmiyahu",
      "zohar"
     ],
     "people": [
      "aharon-hakohen",
-     "avihu",
      "avraham-avinu",
-     "chanoch",
      "chasam-sofer",
      "eliyahu-hanavi",
-     "eltzafan",
      "maharal",
-     "mishael",
      "moshe-rabbeinu",
-     "nadav",
-     "pinchas",
      "rabbeinu-bachya",
-     "rabbeinu-yona",
      "rabbi-akiva",
      "rabbi-chaim-vital",
      "rabbi-eliezer",
      "rabbi-pinchas-of-koretz",
-     "rabbi-yehoshua",
+     "rabbi-yehoshua-ben-chananya",
      "rambam",
-     "ramban",
-     "rechavam",
-     "yeravam-ben-nevat"
+     "ramban"
     ],
-    "concepts": [
-     "kbyevs-096658"
-    ]
+    "concepts": []
    },
    "counts": {
     "chapters": 15,
@@ -1235,34 +1026,23 @@
    },
    "entities": {
     "works": [
-     "bavli-bava-kamma",
-     "bavli-bava-metzia",
-     "bavli-berachos",
-     "bavli-megillah",
-     "bavli-shabbos",
-     "bavli-temurah",
-     "bavli-yoma",
+     "bava-metzia",
+     "berachos",
      "bereishis",
      "devarim",
-     "eichah-rabbah",
-     "kedushas-levi",
+     "megillah",
      "mishlei",
-     "ovadiah",
-     "pri-tzaddik",
-     "rambam",
      "ramban",
      "rashi",
-     "seder-hadoros",
+     "shabbos",
      "shemos",
-     "tanna-devei-eliyahu",
      "targum-onkelos",
      "tehillim",
      "tosafos",
      "vayikra",
-     "yehoshua",
      "yeshayahu",
      "yirmiyahu",
-     "yismach-moshe",
+     "yoma",
      "zohar"
     ],
     "people": [
@@ -1271,30 +1051,19 @@
      "dovid-hamelech",
      "eliyahu-hanavi",
      "esav",
-     "levi-yitzchak-of-berditchev",
      "moshe-rabbeinu",
-     "osniel-ben-kenaz",
-     "rabba-bar-avuha",
      "rabban-yochanan-ben-zakkai",
-     "rabbi-aharon-of-karlin",
      "rabbi-akiva",
      "rabbi-eliezer",
-     "rabbi-shimon-bar-yochai",
-     "rabbi-yehoshua",
-     "rabbi-yishmael",
+     "rabbi-tzadok-hakohen",
+     "rabbi-yehoshua-ben-chananya",
      "rambam",
      "ramban",
-     "rav-tzadok-hakohen",
      "yaakov-avinu",
      "yehoshua-bin-nun",
      "yeshayahu-hanavi"
     ],
-    "concepts": [
-     "erlh-a33de8",
-     "mds-hdyn-1c0cfd",
-     "sheyr-e8e93e",
-     "shmyth-0806d8"
-    ]
+    "concepts": []
    },
    "counts": {
     "chapters": 15,
@@ -1356,19 +1125,14 @@
    },
    "entities": {
     "works": [
-     "ani-maamin",
-     "bavli-shabbos",
-     "bavli-sotah",
-     "bavli-taanis",
      "bereishis-rabbah",
      "chasam-sofer",
-     "chiddushei-harim",
      "devarim",
-     "mishnah-taanis",
-     "pesikta",
+     "shabbos",
      "shir-hashirim",
+     "sotah",
+     "taanis",
      "tehillim",
-     "yerushalmi-yoma",
      "yeshayahu"
     ],
     "people": [
@@ -1378,12 +1142,10 @@
      "chiddushei-harim",
      "dovid-hamelech",
      "rabbi-chaim-vital",
-     "rebbe-reb-bunim",
      "yeshayahu-hanavi"
     ],
     "concepts": [
-     "bchyrh-32f6c2",
-     "hssr-pnym-a7560d"
+     "ribono-shel-olam"
     ]
    },
    "counts": {
@@ -1417,30 +1179,22 @@
     "works": [
      "bamidbar",
      "bereishis",
-     "koheles",
-     "magen-avraham",
      "mesilas-yesharim",
-     "midrash",
      "shemos",
      "tosafos"
     ],
     "people": [
      "baal-hatanya",
      "baal-shem-tov",
-     "lubavitcher-rebbe",
      "moshe-rabbeinu",
      "pharaoh",
-     "rabbi-duvidl-of-skver",
-     "rabbi-elchonon-wasserman",
-     "rabbi-mottele-of-chernobyl",
-     "trisker-maggid",
      "yaakov-avinu",
      "yosef-hatzaddik"
     ],
     "concepts": [
-     "chshbvn-hnpsh-793e98",
-     "klyph-ab9afa",
-     "stra-achra-b50a94"
+     "cheshbon-hanefesh",
+     "klipah",
+     "sitra-achra"
     ]
    },
    "counts": {
@@ -1474,34 +1228,25 @@
    },
    "entities": {
     "works": [
-     "bavli-berachos",
-     "bavli-chagigah",
+     "berachos",
      "bereishis",
+     "chagigah",
      "esther",
-     "gemara",
-     "malachi",
-     "midrash",
      "pirkei-avos"
     ],
     "people": [
      "avraham-avinu",
-     "er",
      "haman",
-     "lot",
      "mordechai",
-     "onan",
      "peretz",
      "pharaoh",
-     "rabbi-aryeh",
      "tamar",
      "yaakov-avinu",
-     "yehudah"
+     "yehudah-ben-yaakov"
     ],
     "concepts": [
-     "hshgchh-prtys-2f201f",
-     "msyrvs-npsh-a8d223",
-     "shtn-ecbd0e",
-     "ytzyas-mtzrym-ff4d50"
+     "ribono-shel-olam",
+     "satan"
     ]
    },
    "counts": {
@@ -1823,17 +1568,13 @@
    },
    "entities": {
     "works": [
-     "bavli-sanhedrin",
-     "bavli-zevachim",
      "bereishis",
      "devarim",
-     "ibn-ezra",
      "machzor-rosh-hashanah",
-     "melachim",
-     "midrash",
+     "melachim-i",
      "ramban",
      "rashi",
-     "shemoneh-esrei-of-the-ten-days-of-teshuvah",
+     "sanhedrin",
      "vayikra",
      "yeshayahu"
     ],
@@ -1842,26 +1583,14 @@
      "aharon-hakohen",
      "avraham-avinu",
      "baal-shem-tov",
-     "cham",
-     "chavah",
-     "chazon-ish",
      "dovid-hamelech",
-     "ibn-ezra",
-     "lechovicher-tzaddik",
-     "miriam-haneviah",
      "noach",
-     "rabbi-nachum-of-chernobyl",
      "ramban",
      "rashi",
      "yeshayahu-hanavi"
     ],
     "concepts": [
-     "kdvshh-2d0766",
-     "mbvl-34b703",
-     "mlkyvs-ee86b4",
-     "shm-hvyh-ebf833",
-     "sybh-210ce3",
-     "zkrvnvs-6779b2"
+     "shem-havaya"
     ]
    },
    "counts": {
@@ -1895,47 +1624,29 @@
    },
    "entities": {
     "works": [
-     "agra-dekallah",
-     "bavli-chagigah",
-     "bavli-sotah",
      "bereishis",
      "bnei-yissaschar",
-     "chasam-sofer-derashos",
+     "chagigah",
      "devarim",
-     "gemara",
-     "melachim",
-     "mishnah-uktzin",
+     "melachim-ii",
      "rashi",
+     "sotah",
      "targum-onkelos",
-     "targum-yonasan",
-     "thirteen-ikkarim",
      "yeshayahu",
      "zohar"
     ],
     "people": [
      "avraham-avinu",
      "chasam-sofer",
-     "chushim-ben-dan",
-     "elisha",
      "eliyahu-hanavi",
      "esav",
      "moshe-rabbeinu",
-     "naftali",
-     "nimrod",
-     "rabbi-nosson-adler",
      "rabbi-yehoshua-ben-chananya",
-     "rivkah-imeinu",
-     "slonimer-rebbe",
      "yaakov-avinu",
-     "yismach-moshe",
-     "yitzchak-avinu",
      "yosef-hatzaddik"
     ],
     "concepts": [
-     "avshpyzyn-df018b",
-     "kdvshh-2d0766",
-     "schyys-hmsym-fa97ab",
-     "tvmah-577ade"
+     "techiyas-hameisim"
     ]
    },
    "counts": {
@@ -1969,19 +1680,16 @@
    },
    "entities": {
     "works": [
-     "bavli-bava-basra",
-     "bavli-berachos",
-     "bavli-chagigah",
-     "bavli-chullin",
-     "bavli-kiddushin",
-     "bavli-megillah",
+     "berachos",
      "bereishis",
      "bereishis-rabbah",
-     "gemara",
-     "melachim",
-     "midrash",
+     "chagigah",
+     "chullin",
+     "kiddushin",
+     "megillah",
+     "melachim-i",
      "mishlei",
-     "ohr-hachaim",
+     "or-hachaim",
      "rashi",
      "tehillim",
      "zohar"
@@ -1989,36 +1697,14 @@
     "people": [
      "arizal",
      "baal-shem-tov",
-     "boaz",
-     "dinah",
-     "efraim",
      "eliyahu-hanavi",
      "esav",
-     "gavriel",
-     "lavan",
-     "leah-imeinu",
-     "menashe",
-     "ohr-hachaim",
-     "osnas",
-     "rabbi-chanina-ben-teradyon",
-     "rabbi-hoshaya",
-     "rabbi-pinchas-ben-yair",
-     "rabbi-shimon-bar-yochai",
-     "rachel-imeinu",
      "rashi",
-     "rus",
-     "shechem-ben-chamor",
      "yaakov-avinu",
      "yosef-hatzaddik"
     ],
     "concepts": [
-     "gavlh-3d2e5c",
-     "hgbhh-a05617",
-     "hshgchh-prtys-2f201f",
-     "klyph-ab9afa",
-     "nytzvtzvs-07037a",
-     "sheyr-e8e93e",
-     "ytzr-hre-b32929"
+     "klipah"
     ]
    },
    "counts": {
@@ -2052,26 +1738,23 @@
    },
    "entities": {
     "works": [
-     "baal-haturim",
      "bamidbar",
-     "bavli-berachos",
-     "bavli-megillah",
-     "bavli-rosh-hashanah",
-     "bavli-taanis",
+     "berachos",
      "bereishis",
      "devarim",
-     "gemara",
+     "megillah",
      "mishlei",
      "mishneh-torah",
      "rashi",
+     "rosh-hashanah",
      "shulchan-aruch",
+     "taanis",
      "tehillim",
      "zohar"
     ],
     "people": [
      "adam-harishon",
      "arizal",
-     "baal-haturim",
      "baal-shem-tov",
      "dovid-hamelech",
      "moshe-rabbeinu",
@@ -2080,10 +1763,7 @@
      "yaakov-avinu"
     ],
     "concepts": [
-     "nytzvtzvs-07037a",
-     "rashys-93edef",
-     "sshvbh-376006",
-     "zas-chnvkh-7f741a"
+     "ribono-shel-olam"
     ]
    },
    "counts": {
@@ -2117,15 +1797,12 @@
    },
    "entities": {
     "works": [
-     "bavli-rosh-hashanah",
      "bereishis",
      "bereishis-rabbah",
      "machzor-rosh-hashanah",
-     "mishnah-keilim",
      "mishneh-torah",
      "pirkei-avos",
-     "rosh-hashanah-amidah",
-     "rosh-hashanah-piyutim",
+     "rosh-hashanah",
      "shelah",
      "tanya",
      "tehillim",
@@ -2135,17 +1812,12 @@
     "people": [
      "adam-harishon",
      "pharaoh",
-     "rambam",
-     "rebbe-reb-bunim",
-     "shelah"
+     "rambam"
     ],
     "concepts": [
-     "chshbvn-hnpsh-793e98",
-     "eshrh-mamrvs-f47d90",
-     "eshrs-ymy-sshvbh-03066e",
-     "kvdsh-hkdshym-cde0de",
-     "yvm-hdyn-343343",
-     "zkrvnvs-6779b2"
+     "asarah-maamaros",
+     "cheshbon-hanefesh",
+     "ribono-shel-olam"
     ]
    },
    "counts": {
@@ -2179,58 +1851,35 @@
    },
    "entities": {
     "works": [
-     "abudraham",
-     "amos",
-     "bavli-avodah-zarah",
-     "bavli-chullin",
-     "bavli-eruvin",
-     "bavli-gittin",
-     "bavli-kiddushin",
-     "bavli-sotah",
+     "avodah-zarah",
      "bereishis",
-     "eichah",
-     "malachi",
-     "megaleh-amukos",
-     "michah",
+     "chullin",
+     "eruvin",
+     "kiddushin",
      "ramban",
      "rashi",
-     "sefer-yetzirah",
+     "sotah",
      "targum-onkelos",
      "tehillim",
      "vayikra",
      "yechezkel"
     ],
     "people": [
-     "abudraham",
      "adam-harishon",
      "arizal",
-     "bilaam",
-     "chana",
      "chasam-sofer",
-     "chofetz-chaim",
-     "dan",
-     "eli",
      "haman",
-     "naphtali",
-     "onkelos",
-     "rabbi-ada",
      "rabbi-chaim-vital",
-     "rabbi-yonasan-eybeshutz",
      "ramban",
      "rashi",
-     "shmuel-hanavi",
-     "titus",
      "yaakov-avinu",
-     "yehudah",
+     "yehudah-ben-yaakov",
      "yosef-hatzaddik"
     ],
     "concepts": [
-     "gavlh-3d2e5c",
-     "hssr-pnym-a7560d",
-     "klyph-ab9afa",
-     "knss-yshral-315464",
-     "nytl-4619ef",
-     "sshvbh-376006"
+     "klipah",
+     "knesses-yisrael",
+     "ribono-shel-olam"
     ]
    },
    "counts": {
@@ -2266,14 +1915,9 @@
     "works": [
      "bereishis",
      "bnei-yissaschar",
-     "divrei-chaim",
      "esther",
-     "gemara",
-     "iyov",
-     "magen-avraham",
-     "midrash",
-     "ohr-hachaim",
-     "rashi",
+     "or-hachaim",
+     "rashi-on-bereishis",
      "shemos",
      "shulchan-aruch",
      "tanya",
@@ -2285,23 +1929,15 @@
      "adam-harishon",
      "avraham-avinu",
      "baal-hatanya",
-     "bilha",
      "bnei-yissaschar",
      "esav",
-     "ohr-hachaim",
-     "rabbi-nachman-of-breslov",
-     "rachel-imeinu",
      "rashi",
-     "sanzer-rav",
-     "vashti",
      "yaakov-avinu"
     ],
     "concepts": [
-     "knss-yshral-315464",
-     "mds-hdyn-1c0cfd",
-     "shm-hvyh-ebf833",
-     "stra-achra-b50a94",
-     "tvmah-577ade"
+     "knesses-yisrael",
+     "shem-havaya",
+     "sitra-achra"
     ]
    },
    "counts": {
@@ -2335,43 +1971,35 @@
    },
    "entities": {
     "works": [
-     "avnei-nezer",
-     "bavli-chagigah",
-     "bavli-shabbos",
-     "bavli-taanis",
      "bereishis",
+     "chagigah",
      "devarim",
-     "midrash",
-     "mishnah-rosh-hashanah",
      "rashi",
+     "shabbos",
      "shemos",
      "shir-hashirim",
      "shulchan-aruch",
+     "taanis",
      "tanya",
      "targum-onkelos",
      "tehillim",
-     "yom-tov-amidah",
      "zohar"
     ],
     "people": [
      "adam-harishon",
-     "avnei-nezer",
      "baal-hatanya",
      "eliyahu-hanavi",
      "esav",
-     "malbim",
      "rashi",
-     "rema",
      "shlomo-hamelech"
     ],
     "concepts": [
-     "eshrh-mamrvs-f47d90",
-     "klyph-ab9afa",
-     "knss-yshral-315464",
-     "rashys-93edef",
-     "schyys-hmsym-fa97ab",
-     "shm-hvyh-ebf833",
-     "ytzyas-mtzrym-ff4d50"
+     "asarah-maamaros",
+     "klipah",
+     "knesses-yisrael",
+     "ribono-shel-olam",
+     "shem-havaya",
+     "techiyas-hameisim"
     ]
    },
    "counts": {
@@ -2405,58 +2033,32 @@
    },
    "entities": {
     "works": [
+     "avodah-zarah",
      "bamidbar",
-     "bavli-avodah-zarah",
-     "bavli-berachos",
-     "bavli-chullin",
-     "bavli-yoma",
+     "berachos",
      "bereishis",
-     "derech-hashem",
+     "chullin",
      "devarim",
-     "midrash",
      "mishlei",
      "pirkei-avos",
-     "ramban",
-     "rashi",
+     "rashi-on-bereishis",
      "shelah",
      "shir-hashirim",
-     "vayikra"
+     "vayikra",
+     "yoma"
     ],
     "people": [
      "achashverosh",
      "adam-harishon",
      "baal-hatanya",
-     "beis-halevi",
-     "belzer-rav",
-     "ben-zoma",
-     "berditchever-rav",
      "chiddushei-harim",
-     "cozbi",
-     "dasan-and-aviram",
-     "eliav",
-     "maggid-of-mezritch",
      "moshe-rabbeinu",
      "noach",
-     "pinchas",
-     "rabbi-akiva",
-     "rabbi-meir",
-     "rabbi-mendel-of-vitebsk",
-     "rabbi-nachum-of-chernobyl",
-     "rabbi-yehoshua-leib-diskin",
-     "radziner-rebbe",
-     "ramchal",
-     "slonimer-rebbe-rav-avraham",
-     "vashti",
-     "yeshuos-yaakov",
-     "zimri-ben-salu"
+     "rabbi-akiva"
     ],
     "concepts": [
-     "bryysa-06f9c5",
-     "evlm-hba-68958b",
-     "hgbhh-a05617",
-     "kdvshh-2d0766",
-     "svrh-lshmh-f5d40c",
-     "yyn-hmshvmr-4ebe98"
+     "olam-haba",
+     "ribono-shel-olam"
     ]
    },
    "counts": {
@@ -2490,15 +2092,12 @@
    },
    "entities": {
     "works": [
-     "bavli-berachos",
-     "bavli-yoma",
+     "berachos",
      "bereishis",
-     "mishnah-yoma",
      "pirkei-avos",
-     "rashi",
-     "siddur",
      "tehillim",
-     "tikkunei-zohar"
+     "tikkunei-zohar",
+     "yoma"
     ],
     "people": [
      "adam-harishon",
@@ -2506,17 +2105,11 @@
      "chiddushei-harim",
      "dovid-hamelech",
      "moshe-rabbeinu",
-     "rabbi-meir",
-     "rabbi-shimon-sofer",
-     "rashi",
-     "rebbi"
+     "rashi"
     ],
     "concepts": [
-     "bryysa-06f9c5",
-     "evlm-hba-68958b",
-     "rvch-hkvdsh-1fd584",
-     "svrh-lshmh-f5d40c",
-     "yyn-hmshvmr-4ebe98"
+     "olam-haba",
+     "ruach-hakodesh"
     ]
    },
    "counts": {

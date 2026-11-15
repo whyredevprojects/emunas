@@ -1,2183 +1,650 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
+ "counts": {
+  "total": 60,
+  "full": 31,
+  "catalogOnly": 29,
+  "downgraded": 0
+ },
  "occasions": {
   "bereishis": {
    "shiurIds": [
     "yi-parshas-hashavua-brshys-01",
     "yi-parshas-hashavua-brshys-03"
    ],
+   "total": 2,
    "moments": [
     {
      "id": "yi-parshas-hashavua-brshys-01~i0",
-     "shiurId": "yi-parshas-hashavua-brshys-01",
-     "kind": "i",
-     "t": 347.54,
-     "end": 392.88
+     "t": 347.54
     },
     {
      "id": "yi-parshas-hashavua-brshys-03~i0",
-     "shiurId": "yi-parshas-hashavua-brshys-03",
-     "kind": "i",
-     "t": 40.75,
-     "end": 833.16
+     "t": 40.75
     },
     {
      "id": "yi-parshas-hashavua-brshys-01~q0",
-     "shiurId": "yi-parshas-hashavua-brshys-01",
-     "kind": "q",
-     "t": 241.04,
-     "end": 331.94
+     "t": 241.04
     },
     {
      "id": "yi-parshas-hashavua-brshys-03~st0",
-     "shiurId": "yi-parshas-hashavua-brshys-03",
-     "kind": "st",
-     "t": 338.35,
-     "end": 372.75
-    },
-    {
-     "id": "yi-parshas-hashavua-brshys-01~i1",
-     "shiurId": "yi-parshas-hashavua-brshys-01",
-     "kind": "i",
-     "t": 874.98,
-     "end": 912.42
-    },
-    {
-     "id": "yi-parshas-hashavua-brshys-03~q0",
-     "shiurId": "yi-parshas-hashavua-brshys-03",
-     "kind": "q",
-     "t": 99.45,
-     "end": 186.68
-    },
-    {
-     "id": "yi-parshas-hashavua-brshys-01~q1",
-     "shiurId": "yi-parshas-hashavua-brshys-01",
-     "kind": "q",
-     "t": 697,
-     "end": 840.92
-    },
-    {
-     "id": "yi-parshas-hashavua-brshys-03~i1",
-     "shiurId": "yi-parshas-hashavua-brshys-03",
-     "kind": "i",
-     "t": 515.21,
-     "end": 625.6
-    },
-    {
-     "id": "yi-parshas-hashavua-brshys-01~i2",
-     "shiurId": "yi-parshas-hashavua-brshys-01",
-     "kind": "i",
-     "t": 1108.61,
-     "end": 1158.76
-    },
-    {
-     "id": "yi-parshas-hashavua-brshys-03~st1",
-     "shiurId": "yi-parshas-hashavua-brshys-03",
-     "kind": "st",
-     "t": 1142.85,
-     "end": 1191.43
-    },
-    {
-     "id": "yi-parshas-hashavua-brshys-01~q2",
-     "shiurId": "yi-parshas-hashavua-brshys-01",
-     "kind": "q",
-     "t": 1088.15,
-     "end": 1103.93
-    },
-    {
-     "id": "yi-parshas-hashavua-brshys-03~q1",
-     "shiurId": "yi-parshas-hashavua-brshys-03",
-     "kind": "q",
-     "t": 601.38,
-     "end": 618.22
+     "t": 338.35
     }
-   ]
+   ],
+   "mix": null
   },
   "chanukah": {
    "shiurIds": [
     "yi-zmanim-chnvkh-11"
    ],
+   "total": 1,
    "moments": [
     {
      "id": "yi-zmanim-chnvkh-11~i0",
-     "shiurId": "yi-zmanim-chnvkh-11",
-     "kind": "i",
-     "t": 352.82,
-     "end": 508.59
+     "t": 352.82
     },
     {
      "id": "yi-zmanim-chnvkh-11~q0",
-     "shiurId": "yi-zmanim-chnvkh-11",
-     "kind": "q",
-     "t": 25.41,
-     "end": 1935.45
+     "t": 25.41
     },
     {
      "id": "yi-zmanim-chnvkh-11~i1",
-     "shiurId": "yi-zmanim-chnvkh-11",
-     "kind": "i",
-     "t": 1157.76,
-     "end": 1296.04
+     "t": 1157.76
     },
     {
      "id": "yi-zmanim-chnvkh-11~q1",
-     "shiurId": "yi-zmanim-chnvkh-11",
-     "kind": "q",
-     "t": 352.82,
-     "end": 382.08
-    },
-    {
-     "id": "yi-zmanim-chnvkh-11~i2",
-     "shiurId": "yi-zmanim-chnvkh-11",
-     "kind": "i",
-     "t": 1431.84,
-     "end": 1516.74
-    },
-    {
-     "id": "yi-zmanim-chnvkh-11~q2",
-     "shiurId": "yi-zmanim-chnvkh-11",
-     "kind": "q",
-     "t": 661.56,
-     "end": 761.39
-    },
-    {
-     "id": "yi-zmanim-chnvkh-11~i3",
-     "shiurId": "yi-zmanim-chnvkh-11",
-     "kind": "i",
-     "t": 1747.57,
-     "end": 1840.19
-    },
-    {
-     "id": "yi-zmanim-chnvkh-11~q3",
-     "shiurId": "yi-zmanim-chnvkh-11",
-     "kind": "q",
-     "t": 1114.84,
-     "end": 1149.68
-    },
-    {
-     "id": "yi-zmanim-chnvkh-11~i4",
-     "shiurId": "yi-zmanim-chnvkh-11",
-     "kind": "i",
-     "t": 1904.39,
-     "end": 1944.07
-    },
-    {
-     "id": "yi-zmanim-chnvkh-11~q4",
-     "shiurId": "yi-zmanim-chnvkh-11",
-     "kind": "q",
-     "t": 1873.15,
-     "end": 1904.39
+     "t": 352.82
     }
-   ]
+   ],
+   "mix": null
   },
   "elul": {
    "shiurIds": [
     "yi-zmanim-lvl-01",
     "yi-zmanim-lvl-02"
    ],
+   "total": 2,
    "moments": [
     {
      "id": "yi-zmanim-lvl-01~i0",
-     "shiurId": "yi-zmanim-lvl-01",
-     "kind": "i",
-     "t": 399.82,
-     "end": 615.74
+     "t": 399.82
     },
     {
      "id": "yi-zmanim-lvl-02~i0",
-     "shiurId": "yi-zmanim-lvl-02",
-     "kind": "i",
-     "t": 97.21,
-     "end": 150.1
+     "t": 97.21
     },
     {
      "id": "yi-zmanim-lvl-01~st0",
-     "shiurId": "yi-zmanim-lvl-01",
-     "kind": "st",
-     "t": 1296.67,
-     "end": 1312.91
+     "t": 1296.67
     },
     {
      "id": "yi-zmanim-lvl-02~st0",
-     "shiurId": "yi-zmanim-lvl-02",
-     "kind": "st",
-     "t": 2231.49,
-     "end": 2288.05
-    },
-    {
-     "id": "yi-zmanim-lvl-01~q0",
-     "shiurId": "yi-zmanim-lvl-01",
-     "kind": "q",
-     "t": 503.54,
-     "end": 493
-    },
-    {
-     "id": "yi-zmanim-lvl-02~q0",
-     "shiurId": "yi-zmanim-lvl-02",
-     "kind": "q",
-     "t": 708.5,
-     "end": 750.78
-    },
-    {
-     "id": "yi-zmanim-lvl-01~i1",
-     "shiurId": "yi-zmanim-lvl-01",
-     "kind": "i",
-     "t": 503.54,
-     "end": 631.5
-    },
-    {
-     "id": "yi-zmanim-lvl-02~i1",
-     "shiurId": "yi-zmanim-lvl-02",
-     "kind": "i",
-     "t": 285.8,
-     "end": 350.78
-    },
-    {
-     "id": "yi-zmanim-lvl-01~st1",
-     "shiurId": "yi-zmanim-lvl-01",
-     "kind": "st",
-     "t": 1879.96,
-     "end": 1935.2
-    },
-    {
-     "id": "yi-zmanim-lvl-02~st1",
-     "shiurId": "yi-zmanim-lvl-02",
-     "kind": "st",
-     "t": 2697.19,
-     "end": 2791.71
-    },
-    {
-     "id": "yi-zmanim-lvl-01~q1",
-     "shiurId": "yi-zmanim-lvl-01",
-     "kind": "q",
-     "t": 1161.56,
-     "end": 1170.6
-    },
-    {
-     "id": "yi-zmanim-lvl-02~q1",
-     "shiurId": "yi-zmanim-lvl-02",
-     "kind": "q",
-     "t": 1682.08,
-     "end": 1693.88
+     "t": 2231.49
     }
-   ]
+   ],
+   "mix": null
   },
   "emor": {
    "shiurIds": [
     "yi-parshas-hashavua-mvr-01"
    ],
+   "total": 1,
    "moments": [
     {
      "id": "yi-parshas-hashavua-mvr-01~i0",
-     "shiurId": "yi-parshas-hashavua-mvr-01",
-     "kind": "i",
-     "t": 543.82,
-     "end": 584.78
+     "t": 543.82
     },
     {
      "id": "yi-parshas-hashavua-mvr-01~q0",
-     "shiurId": "yi-parshas-hashavua-mvr-01",
-     "kind": "q",
-     "t": 149.69,
-     "end": 867.7
+     "t": 149.69
     },
     {
      "id": "yi-parshas-hashavua-mvr-01~i1",
-     "shiurId": "yi-parshas-hashavua-mvr-01",
-     "kind": "i",
-     "t": 762.23,
-     "end": 903.12
+     "t": 762.23
     },
     {
      "id": "yi-parshas-hashavua-mvr-01~q1",
-     "shiurId": "yi-parshas-hashavua-mvr-01",
-     "kind": "q",
-     "t": 601.04,
-     "end": 646.79
-    },
-    {
-     "id": "yi-parshas-hashavua-mvr-01~i2",
-     "shiurId": "yi-parshas-hashavua-mvr-01",
-     "kind": "i",
-     "t": 2195.7,
-     "end": 2236.8
-    },
-    {
-     "id": "yi-parshas-hashavua-mvr-01~q2",
-     "shiurId": "yi-parshas-hashavua-mvr-01",
-     "kind": "q",
-     "t": 1048.77,
-     "end": 1095.37
-    },
-    {
-     "id": "yi-parshas-hashavua-mvr-01~i3",
-     "shiurId": "yi-parshas-hashavua-mvr-01",
-     "kind": "i",
-     "t": 1548.92,
-     "end": 1745.64
-    },
-    {
-     "id": "yi-parshas-hashavua-mvr-01~q3",
-     "shiurId": "yi-parshas-hashavua-mvr-01",
-     "kind": "q",
-     "t": 1895.1,
-     "end": 2205.48
-    },
-    {
-     "id": "yi-parshas-hashavua-mvr-01~i4",
-     "shiurId": "yi-parshas-hashavua-mvr-01",
-     "kind": "i",
-     "t": 2761.32,
-     "end": 2853.56
-    },
-    {
-     "id": "yi-parshas-hashavua-mvr-01~q4",
-     "shiurId": "yi-parshas-hashavua-mvr-01",
-     "kind": "q",
-     "t": 3546.62,
-     "end": 3566.74
-    },
-    {
-     "id": "yi-parshas-hashavua-mvr-01~i5",
-     "shiurId": "yi-parshas-hashavua-mvr-01",
-     "kind": "i",
-     "t": 3562,
-     "end": 3629.86
+     "t": 601.04
     }
-   ]
+   ],
+   "mix": null
   },
   "haazinu": {
    "shiurIds": [
     "yi-parshas-hashavua-hzynv-01"
    ],
+   "total": 1,
    "moments": [
     {
      "id": "yi-parshas-hashavua-hzynv-01~i0",
-     "shiurId": "yi-parshas-hashavua-hzynv-01",
-     "kind": "i",
-     "t": 576.73,
-     "end": 606.25
+     "t": 576.73
     },
     {
      "id": "yi-parshas-hashavua-hzynv-01~st0",
-     "shiurId": "yi-parshas-hashavua-hzynv-01",
-     "kind": "st",
-     "t": 141.95,
-     "end": 196.07
+     "t": 141.95
     },
     {
      "id": "yi-parshas-hashavua-hzynv-01~q0",
-     "shiurId": "yi-parshas-hashavua-hzynv-01",
-     "kind": "q",
-     "t": 96.25,
-     "end": 105.07
+     "t": 96.25
     },
     {
      "id": "yi-parshas-hashavua-hzynv-01~i1",
-     "shiurId": "yi-parshas-hashavua-hzynv-01",
-     "kind": "i",
-     "t": 1112.95,
-     "end": 1221.97
-    },
-    {
-     "id": "yi-parshas-hashavua-hzynv-01~st1",
-     "shiurId": "yi-parshas-hashavua-hzynv-01",
-     "kind": "st",
-     "t": 699.57,
-     "end": 806.27
-    },
-    {
-     "id": "yi-parshas-hashavua-hzynv-01~q1",
-     "shiurId": "yi-parshas-hashavua-hzynv-01",
-     "kind": "q",
-     "t": 1009.13,
-     "end": 1156.07
-    },
-    {
-     "id": "yi-parshas-hashavua-hzynv-01~i2",
-     "shiurId": "yi-parshas-hashavua-hzynv-01",
-     "kind": "i",
-     "t": 2165.94,
-     "end": 2193.72
-    },
-    {
-     "id": "yi-parshas-hashavua-hzynv-01~st2",
-     "shiurId": "yi-parshas-hashavua-hzynv-01",
-     "kind": "st",
-     "t": 3425.8,
-     "end": 3475.14
-    },
-    {
-     "id": "yi-parshas-hashavua-hzynv-01~q2",
-     "shiurId": "yi-parshas-hashavua-hzynv-01",
-     "kind": "q",
-     "t": 2026.8,
-     "end": 2307.5
-    },
-    {
-     "id": "yi-parshas-hashavua-hzynv-01~i3",
-     "shiurId": "yi-parshas-hashavua-hzynv-01",
-     "kind": "i",
-     "t": 2351.12,
-     "end": 2390.42
-    },
-    {
-     "id": "yi-parshas-hashavua-hzynv-01~st3",
-     "shiurId": "yi-parshas-hashavua-hzynv-01",
-     "kind": "st",
-     "t": 3662.51,
-     "end": 3754.85
-    },
-    {
-     "id": "yi-parshas-hashavua-hzynv-01~q3",
-     "shiurId": "yi-parshas-hashavua-hzynv-01",
-     "kind": "q",
-     "t": 2120.64,
-     "end": 2162.8
+     "t": 1112.95
     }
-   ]
+   ],
+   "mix": null
   },
   "ki-savo": {
    "shiurIds": [
     "en-parsha-en-ky-sb-01"
    ],
+   "total": 1,
    "moments": [
     {
      "id": "en-parsha-en-ky-sb-01~i0",
-     "shiurId": "en-parsha-en-ky-sb-01",
-     "kind": "i",
-     "t": 473.46,
-     "end": 496.06
+     "t": 473.46
     },
     {
      "id": "en-parsha-en-ky-sb-01~st0",
-     "shiurId": "en-parsha-en-ky-sb-01",
-     "kind": "st",
-     "t": 1649.2,
-     "end": 1700.6
+     "t": 1649.2
     },
     {
      "id": "en-parsha-en-ky-sb-01~q0",
-     "shiurId": "en-parsha-en-ky-sb-01",
-     "kind": "q",
-     "t": 260.36,
-     "end": 270.32
+     "t": 260.36
     },
     {
      "id": "en-parsha-en-ky-sb-01~i1",
-     "shiurId": "en-parsha-en-ky-sb-01",
-     "kind": "i",
-     "t": 621.94,
-     "end": 798.59
-    },
-    {
-     "id": "en-parsha-en-ky-sb-01~st1",
-     "shiurId": "en-parsha-en-ky-sb-01",
-     "kind": "st",
-     "t": 2628.25,
-     "end": 2657.94
-    },
-    {
-     "id": "en-parsha-en-ky-sb-01~q1",
-     "shiurId": "en-parsha-en-ky-sb-01",
-     "kind": "q",
-     "t": 611.06,
-     "end": 621.94
-    },
-    {
-     "id": "en-parsha-en-ky-sb-01~i2",
-     "shiurId": "en-parsha-en-ky-sb-01",
-     "kind": "i",
-     "t": 969.53,
-     "end": 1168.16
-    },
-    {
-     "id": "en-parsha-en-ky-sb-01~q2",
-     "shiurId": "en-parsha-en-ky-sb-01",
-     "kind": "q",
-     "t": 969.53,
-     "end": 1040.03
-    },
-    {
-     "id": "en-parsha-en-ky-sb-01~i3",
-     "shiurId": "en-parsha-en-ky-sb-01",
-     "kind": "i",
-     "t": 1822.9,
-     "end": 1856.64
-    },
-    {
-     "id": "en-parsha-en-ky-sb-01~q3",
-     "shiurId": "en-parsha-en-ky-sb-01",
-     "kind": "q",
-     "t": 2194.34,
-     "end": 2237.71
-    },
-    {
-     "id": "en-parsha-en-ky-sb-01~i4",
-     "shiurId": "en-parsha-en-ky-sb-01",
-     "kind": "i",
-     "t": 2559.12,
-     "end": 2625.76
-    },
-    {
-     "id": "en-parsha-en-ky-sb-01~q4",
-     "shiurId": "en-parsha-en-ky-sb-01",
-     "kind": "q",
-     "t": 2700.84,
-     "end": 2733.43
+     "t": 621.94
     }
-   ]
+   ],
+   "mix": null
   },
   "nisan": {
    "shiurIds": [
     "yi-zmanim-nysn-05"
    ],
+   "total": 1,
    "moments": [
     {
      "id": "yi-zmanim-nysn-05~i0",
-     "shiurId": "yi-zmanim-nysn-05",
-     "kind": "i",
-     "t": 218.9,
-     "end": 282.46
+     "t": 218.9
     },
     {
      "id": "yi-zmanim-nysn-05~st0",
-     "shiurId": "yi-zmanim-nysn-05",
-     "kind": "st",
-     "t": 302.98,
-     "end": 365.36
+     "t": 302.98
     },
     {
      "id": "yi-zmanim-nysn-05~q0",
-     "shiurId": "yi-zmanim-nysn-05",
-     "kind": "q",
-     "t": 49.93,
-     "end": 88.38
+     "t": 49.93
     },
     {
      "id": "yi-zmanim-nysn-05~i1",
-     "shiurId": "yi-zmanim-nysn-05",
-     "kind": "i",
-     "t": 769.23,
-     "end": 931.88
-    },
-    {
-     "id": "yi-zmanim-nysn-05~st1",
-     "shiurId": "yi-zmanim-nysn-05",
-     "kind": "st",
-     "t": 2626,
-     "end": 2791.36
-    },
-    {
-     "id": "yi-zmanim-nysn-05~q1",
-     "shiurId": "yi-zmanim-nysn-05",
-     "kind": "q",
-     "t": 1473.05,
-     "end": 1488.93
-    },
-    {
-     "id": "yi-zmanim-nysn-05~i2",
-     "shiurId": "yi-zmanim-nysn-05",
-     "kind": "i",
-     "t": 1512.89,
-     "end": 1619.87
-    },
-    {
-     "id": "yi-zmanim-nysn-05~q2",
-     "shiurId": "yi-zmanim-nysn-05",
-     "kind": "q",
-     "t": 1658.54,
-     "end": 1663.72
-    },
-    {
-     "id": "yi-zmanim-nysn-05~i3",
-     "shiurId": "yi-zmanim-nysn-05",
-     "kind": "i",
-     "t": 1661.64,
-     "end": 1690.96
-    },
-    {
-     "id": "yi-zmanim-nysn-05~q3",
-     "shiurId": "yi-zmanim-nysn-05",
-     "kind": "q",
-     "t": 554.36,
-     "end": 563.1
-    },
-    {
-     "id": "yi-zmanim-nysn-05~i4",
-     "shiurId": "yi-zmanim-nysn-05",
-     "kind": "i",
-     "t": 2146.76,
-     "end": 2221.31
-    },
-    {
-     "id": "yi-zmanim-nysn-05~i5",
-     "shiurId": "yi-zmanim-nysn-05",
-     "kind": "i",
-     "t": 2490.42,
-     "end": 2505.22
+     "t": 769.23
     }
-   ]
+   ],
+   "mix": null
   },
   "noach": {
    "shiurIds": [
     "en-parsha-en-nch-01"
    ],
+   "total": 1,
    "moments": [
     {
      "id": "en-parsha-en-nch-01~i0",
-     "shiurId": "en-parsha-en-nch-01",
-     "kind": "i",
-     "t": 405.59,
-     "end": 885.91
+     "t": 405.59
     },
     {
      "id": "en-parsha-en-nch-01~st0",
-     "shiurId": "en-parsha-en-nch-01",
-     "kind": "st",
-     "t": 3171.06,
-     "end": 3186.78
+     "t": 3171.06
     },
     {
      "id": "en-parsha-en-nch-01~q0",
-     "shiurId": "en-parsha-en-nch-01",
-     "kind": "q",
-     "t": 415.43,
-     "end": 781.21
+     "t": 415.43
     },
     {
      "id": "en-parsha-en-nch-01~i1",
-     "shiurId": "en-parsha-en-nch-01",
-     "kind": "i",
-     "t": 561.38,
-     "end": 579.56
-    },
-    {
-     "id": "en-parsha-en-nch-01~q1",
-     "shiurId": "en-parsha-en-nch-01",
-     "kind": "q",
-     "t": 1200,
-     "end": 3864.37
-    },
-    {
-     "id": "en-parsha-en-nch-01~i2",
-     "shiurId": "en-parsha-en-nch-01",
-     "kind": "i",
-     "t": 2634.79,
-     "end": 2698.07
-    },
-    {
-     "id": "en-parsha-en-nch-01~q2",
-     "shiurId": "en-parsha-en-nch-01",
-     "kind": "q",
-     "t": 2473.24,
-     "end": 2504
-    },
-    {
-     "id": "en-parsha-en-nch-01~i3",
-     "shiurId": "en-parsha-en-nch-01",
-     "kind": "i",
-     "t": 2876.74,
-     "end": 2912.76
-    },
-    {
-     "id": "en-parsha-en-nch-01~q3",
-     "shiurId": "en-parsha-en-nch-01",
-     "kind": "q",
-     "t": 2990.45,
-     "end": 3071.86
-    },
-    {
-     "id": "en-parsha-en-nch-01~i4",
-     "shiurId": "en-parsha-en-nch-01",
-     "kind": "i",
-     "t": 3071.86,
-     "end": 3251.46
-    },
-    {
-     "id": "en-parsha-en-nch-01~q4",
-     "shiurId": "en-parsha-en-nch-01",
-     "kind": "q",
-     "t": 1659.76,
-     "end": 3330.58
-    },
-    {
-     "id": "en-parsha-en-nch-01~i5",
-     "shiurId": "en-parsha-en-nch-01",
-     "kind": "i",
-     "t": 3693.26,
-     "end": 3816.33
+     "t": 561.38
     }
-   ]
+   ],
+   "mix": null
   },
   "other": {
+   "label": {
+    "en": "Other occasions",
+    "yi": "אנדערע געלעגנהייטן"
+   },
    "shiurIds": [
     "yi-zmanim-msybs-lchyym-bkmp-01-c"
    ],
-   "moments": []
+   "total": 1,
+   "moments": [],
+   "mix": null
   },
   "pesach": {
    "shiurIds": [
     "en-zmanim-en-psch-06"
    ],
+   "total": 1,
    "moments": [
     {
      "id": "en-zmanim-en-psch-06~i0",
-     "shiurId": "en-zmanim-en-psch-06",
-     "kind": "i",
-     "t": 323.15,
-     "end": 357.45
+     "t": 323.15
     },
     {
      "id": "en-zmanim-en-psch-06~st0",
-     "shiurId": "en-zmanim-en-psch-06",
-     "kind": "st",
-     "t": 1514.62,
-     "end": 1603.22
+     "t": 1514.62
     },
     {
      "id": "en-zmanim-en-psch-06~q0",
-     "shiurId": "en-zmanim-en-psch-06",
-     "kind": "q",
-     "t": 197.59,
-     "end": 323.15
+     "t": 197.59
     },
     {
      "id": "en-zmanim-en-psch-06~i1",
-     "shiurId": "en-zmanim-en-psch-06",
-     "kind": "i",
-     "t": 576.77,
-     "end": 747.24
-    },
-    {
-     "id": "en-zmanim-en-psch-06~q1",
-     "shiurId": "en-zmanim-en-psch-06",
-     "kind": "q",
-     "t": 1296.67,
-     "end": 1339.97
-    },
-    {
-     "id": "en-zmanim-en-psch-06~i2",
-     "shiurId": "en-zmanim-en-psch-06",
-     "kind": "i",
-     "t": 1704.55,
-     "end": 1962.48
-    },
-    {
-     "id": "en-zmanim-en-psch-06~q2",
-     "shiurId": "en-zmanim-en-psch-06",
-     "kind": "q",
-     "t": 1889.08,
-     "end": 1871.12
-    },
-    {
-     "id": "en-zmanim-en-psch-06~i3",
-     "shiurId": "en-zmanim-en-psch-06",
-     "kind": "i",
-     "t": 2137.45,
-     "end": 2197.57
-    },
-    {
-     "id": "en-zmanim-en-psch-06~q3",
-     "shiurId": "en-zmanim-en-psch-06",
-     "kind": "q",
-     "t": 2376.21,
-     "end": 2403.66
-    },
-    {
-     "id": "en-zmanim-en-psch-06~i4",
-     "shiurId": "en-zmanim-en-psch-06",
-     "kind": "i",
-     "t": 2403.66,
-     "end": 2475.08
-    },
-    {
-     "id": "en-zmanim-en-psch-06~q4",
-     "shiurId": "en-zmanim-en-psch-06",
-     "kind": "q",
-     "t": 1743.87,
-     "end": 1800
-    },
-    {
-     "id": "en-zmanim-en-psch-06~i5",
-     "shiurId": "en-zmanim-en-psch-06",
-     "kind": "i",
-     "t": 2297.27,
-     "end": 2339.73
+     "t": 576.77
     }
-   ]
+   ],
+   "mix": null
   },
   "purim": {
    "shiurIds": [
     "yi-zmanim-pvrym-07"
    ],
+   "total": 1,
    "moments": [
     {
      "id": "yi-zmanim-pvrym-07~i0",
-     "shiurId": "yi-zmanim-pvrym-07",
-     "kind": "i",
-     "t": 47.56,
-     "end": 117.2
+     "t": 47.56
     },
     {
      "id": "yi-zmanim-pvrym-07~st0",
-     "shiurId": "yi-zmanim-pvrym-07",
-     "kind": "st",
-     "t": 1310.45,
-     "end": 1421.24
+     "t": 1310.45
     },
     {
      "id": "yi-zmanim-pvrym-07~q0",
-     "shiurId": "yi-zmanim-pvrym-07",
-     "kind": "q",
-     "t": 420.07,
-     "end": 448.81
+     "t": 420.07
     },
     {
      "id": "yi-zmanim-pvrym-07~i1",
-     "shiurId": "yi-zmanim-pvrym-07",
-     "kind": "i",
-     "t": 420.07,
-     "end": 506.43
-    },
-    {
-     "id": "yi-zmanim-pvrym-07~st1",
-     "shiurId": "yi-zmanim-pvrym-07",
-     "kind": "st",
-     "t": 2050.35,
-     "end": 2214.99
-    },
-    {
-     "id": "yi-zmanim-pvrym-07~q1",
-     "shiurId": "yi-zmanim-pvrym-07",
-     "kind": "q",
-     "t": 1691.72,
-     "end": 1738.6
-    },
-    {
-     "id": "yi-zmanim-pvrym-07~i2",
-     "shiurId": "yi-zmanim-pvrym-07",
-     "kind": "i",
-     "t": 637.08,
-     "end": 656.22
-    },
-    {
-     "id": "yi-zmanim-pvrym-07~q2",
-     "shiurId": "yi-zmanim-pvrym-07",
-     "kind": "q",
-     "t": 1927.5,
-     "end": 1965.73
-    },
-    {
-     "id": "yi-zmanim-pvrym-07~i3",
-     "shiurId": "yi-zmanim-pvrym-07",
-     "kind": "i",
-     "t": 996.89,
-     "end": 1194.15
-    },
-    {
-     "id": "yi-zmanim-pvrym-07~i4",
-     "shiurId": "yi-zmanim-pvrym-07",
-     "kind": "i",
-     "t": 1691.72,
-     "end": 1744.66
-    },
-    {
-     "id": "yi-zmanim-pvrym-07~i5",
-     "shiurId": "yi-zmanim-pvrym-07",
-     "kind": "i",
-     "t": 1963.59,
-     "end": 1981.09
+     "t": 420.07
     }
-   ]
+   ],
+   "mix": null
   },
   "purim-katan": {
    "shiurIds": [
     "yi-zmanim-svds-pvrym-ktn-03"
    ],
+   "total": 1,
    "moments": [
     {
      "id": "yi-zmanim-svds-pvrym-ktn-03~i0",
-     "shiurId": "yi-zmanim-svds-pvrym-ktn-03",
-     "kind": "i",
-     "t": 675.52,
-     "end": 767.65
+     "t": 675.52
     },
     {
      "id": "yi-zmanim-svds-pvrym-ktn-03~q0",
-     "shiurId": "yi-zmanim-svds-pvrym-ktn-03",
-     "kind": "q",
-     "t": 28.04,
-     "end": 743.41
+     "t": 28.04
     },
     {
      "id": "yi-zmanim-svds-pvrym-ktn-03~i1",
-     "shiurId": "yi-zmanim-svds-pvrym-ktn-03",
-     "kind": "i",
-     "t": 795.59,
-     "end": 818.51
+     "t": 795.59
     },
     {
      "id": "yi-zmanim-svds-pvrym-ktn-03~q1",
-     "shiurId": "yi-zmanim-svds-pvrym-ktn-03",
-     "kind": "q",
-     "t": 1167.45,
-     "end": 1179.75
-    },
-    {
-     "id": "yi-zmanim-svds-pvrym-ktn-03~i2",
-     "shiurId": "yi-zmanim-svds-pvrym-ktn-03",
-     "kind": "i",
-     "t": 1179.75,
-     "end": 1224.15
-    },
-    {
-     "id": "yi-zmanim-svds-pvrym-ktn-03~q2",
-     "shiurId": "yi-zmanim-svds-pvrym-ktn-03",
-     "kind": "q",
-     "t": 169.71,
-     "end": 175.73
-    },
-    {
-     "id": "yi-zmanim-svds-pvrym-ktn-03~i3",
-     "shiurId": "yi-zmanim-svds-pvrym-ktn-03",
-     "kind": "i",
-     "t": 1522.02,
-     "end": 1544.18
-    },
-    {
-     "id": "yi-zmanim-svds-pvrym-ktn-03~i4",
-     "shiurId": "yi-zmanim-svds-pvrym-ktn-03",
-     "kind": "i",
-     "t": 1616.14,
-     "end": 1679.39
-    },
-    {
-     "id": "yi-zmanim-svds-pvrym-ktn-03~i5",
-     "shiurId": "yi-zmanim-svds-pvrym-ktn-03",
-     "kind": "i",
-     "t": 1761.78,
-     "end": 1780.46
+     "t": 1167.45
     }
-   ]
+   ],
+   "mix": null
   },
   "rosh-hashanah": {
    "shiurIds": [
     "en-zmanim-en-rsh-hshnh-03"
    ],
+   "total": 1,
    "moments": [
     {
      "id": "en-zmanim-en-rsh-hshnh-03~i0",
-     "shiurId": "en-zmanim-en-rsh-hshnh-03",
-     "kind": "i",
-     "t": 562.16,
-     "end": 641.19
+     "t": 562.16
     },
     {
      "id": "en-zmanim-en-rsh-hshnh-03~q0",
-     "shiurId": "en-zmanim-en-rsh-hshnh-03",
-     "kind": "q",
-     "t": 265.83,
-     "end": 410.67
+     "t": 265.83
     },
     {
      "id": "en-zmanim-en-rsh-hshnh-03~i1",
-     "shiurId": "en-zmanim-en-rsh-hshnh-03",
-     "kind": "i",
-     "t": 197.68,
-     "end": 225.72
+     "t": 197.68
     },
     {
      "id": "en-zmanim-en-rsh-hshnh-03~q1",
-     "shiurId": "en-zmanim-en-rsh-hshnh-03",
-     "kind": "q",
-     "t": 705.14,
-     "end": 742.21
-    },
-    {
-     "id": "en-zmanim-en-rsh-hshnh-03~i2",
-     "shiurId": "en-zmanim-en-rsh-hshnh-03",
-     "kind": "i",
-     "t": 1017.13,
-     "end": 1087.95
-    },
-    {
-     "id": "en-zmanim-en-rsh-hshnh-03~q2",
-     "shiurId": "en-zmanim-en-rsh-hshnh-03",
-     "kind": "q",
-     "t": 1020.25,
-     "end": 1037.28
-    },
-    {
-     "id": "en-zmanim-en-rsh-hshnh-03~i3",
-     "shiurId": "en-zmanim-en-rsh-hshnh-03",
-     "kind": "i",
-     "t": 799.54,
-     "end": 836.44
-    },
-    {
-     "id": "en-zmanim-en-rsh-hshnh-03~q3",
-     "shiurId": "en-zmanim-en-rsh-hshnh-03",
-     "kind": "q",
-     "t": 1795.24,
-     "end": 1800.86
-    },
-    {
-     "id": "en-zmanim-en-rsh-hshnh-03~i4",
-     "shiurId": "en-zmanim-en-rsh-hshnh-03",
-     "kind": "i",
-     "t": 1722.48,
-     "end": 1760.76
-    },
-    {
-     "id": "en-zmanim-en-rsh-hshnh-03~i5",
-     "shiurId": "en-zmanim-en-rsh-hshnh-03",
-     "kind": "i",
-     "t": 1191.38,
-     "end": 1378.65
+     "t": 705.14
     }
-   ]
+   ],
+   "mix": null
   },
   "sefirah": {
    "shiurIds": [
     "yi-zmanim-spyrh-01"
    ],
+   "total": 1,
    "moments": [
     {
      "id": "yi-zmanim-spyrh-01~i0",
-     "shiurId": "yi-zmanim-spyrh-01",
-     "kind": "i",
-     "t": 128.11,
-     "end": 228.19
+     "t": 128.11
     },
     {
      "id": "yi-zmanim-spyrh-01~q0",
-     "shiurId": "yi-zmanim-spyrh-01",
-     "kind": "q",
-     "t": 803.3,
-     "end": 1790.32
+     "t": 803.3
     },
     {
      "id": "yi-zmanim-spyrh-01~i1",
-     "shiurId": "yi-zmanim-spyrh-01",
-     "kind": "i",
-     "t": 1038.14,
-     "end": 1244.31
+     "t": 1038.14
     },
     {
      "id": "yi-zmanim-spyrh-01~q1",
-     "shiurId": "yi-zmanim-spyrh-01",
-     "kind": "q",
-     "t": 925.02,
-     "end": 2282.16
-    },
-    {
-     "id": "yi-zmanim-spyrh-01~i2",
-     "shiurId": "yi-zmanim-spyrh-01",
-     "kind": "i",
-     "t": 1790.32,
-     "end": 1865.92
-    },
-    {
-     "id": "yi-zmanim-spyrh-01~q2",
-     "shiurId": "yi-zmanim-spyrh-01",
-     "kind": "q",
-     "t": 483.07,
-     "end": 3780.35
-    },
-    {
-     "id": "yi-zmanim-spyrh-01~i3",
-     "shiurId": "yi-zmanim-spyrh-01",
-     "kind": "i",
-     "t": 2293.42,
-     "end": 2755.68
-    },
-    {
-     "id": "yi-zmanim-spyrh-01~q3",
-     "shiurId": "yi-zmanim-spyrh-01",
-     "kind": "q",
-     "t": 3488.72,
-     "end": 3501.14
-    },
-    {
-     "id": "yi-zmanim-spyrh-01~i4",
-     "shiurId": "yi-zmanim-spyrh-01",
-     "kind": "i",
-     "t": 2433.88,
-     "end": 2628.9
-    },
-    {
-     "id": "yi-zmanim-spyrh-01~q4",
-     "shiurId": "yi-zmanim-spyrh-01",
-     "kind": "q",
-     "t": 2576.74,
-     "end": 2597.8
-    },
-    {
-     "id": "yi-zmanim-spyrh-01~i5",
-     "shiurId": "yi-zmanim-spyrh-01",
-     "kind": "i",
-     "t": 2824.8,
-     "end": 2918.22
-    },
-    {
-     "id": "yi-zmanim-spyrh-01~i6",
-     "shiurId": "yi-zmanim-spyrh-01",
-     "kind": "i",
-     "t": 3780.35,
-     "end": 3863.79
+     "t": 925.02
     }
-   ]
+   ],
+   "mix": null
   },
   "shabbos-chazon": {
    "shiurIds": [
     "yi-zmanim-shbs-chzvn-01"
    ],
+   "total": 1,
    "moments": [
     {
      "id": "yi-zmanim-shbs-chzvn-01~i0",
-     "shiurId": "yi-zmanim-shbs-chzvn-01",
-     "kind": "i",
-     "t": 182.6,
-     "end": 359.77
+     "t": 182.6
     },
     {
      "id": "yi-zmanim-shbs-chzvn-01~st0",
-     "shiurId": "yi-zmanim-shbs-chzvn-01",
-     "kind": "st",
-     "t": 1848.74,
-     "end": 1896.82
+     "t": 1848.74
     },
     {
      "id": "yi-zmanim-shbs-chzvn-01~q0",
-     "shiurId": "yi-zmanim-shbs-chzvn-01",
-     "kind": "q",
-     "t": 48.47,
-     "end": 357.99
+     "t": 48.47
     },
     {
      "id": "yi-zmanim-shbs-chzvn-01~i1",
-     "shiurId": "yi-zmanim-shbs-chzvn-01",
-     "kind": "i",
-     "t": 1222.57,
-     "end": 1548.34
-    },
-    {
-     "id": "yi-zmanim-shbs-chzvn-01~st1",
-     "shiurId": "yi-zmanim-shbs-chzvn-01",
-     "kind": "st",
-     "t": 4055.34,
-     "end": 4090.64
-    },
-    {
-     "id": "yi-zmanim-shbs-chzvn-01~q1",
-     "shiurId": "yi-zmanim-shbs-chzvn-01",
-     "kind": "q",
-     "t": 700.37,
-     "end": 679.21
-    },
-    {
-     "id": "yi-zmanim-shbs-chzvn-01~i2",
-     "shiurId": "yi-zmanim-shbs-chzvn-01",
-     "kind": "i",
-     "t": 2057.72,
-     "end": 2096.08
-    },
-    {
-     "id": "yi-zmanim-shbs-chzvn-01~st2",
-     "shiurId": "yi-zmanim-shbs-chzvn-01",
-     "kind": "st",
-     "t": 4517.44,
-     "end": 4628.89
-    },
-    {
-     "id": "yi-zmanim-shbs-chzvn-01~q2",
-     "shiurId": "yi-zmanim-shbs-chzvn-01",
-     "kind": "q",
-     "t": 1820.2,
-     "end": 1834.86
-    },
-    {
-     "id": "yi-zmanim-shbs-chzvn-01~i3",
-     "shiurId": "yi-zmanim-shbs-chzvn-01",
-     "kind": "i",
-     "t": 2308.11,
-     "end": 2623.42
-    },
-    {
-     "id": "yi-zmanim-shbs-chzvn-01~q3",
-     "shiurId": "yi-zmanim-shbs-chzvn-01",
-     "kind": "q",
-     "t": 2608.16,
-     "end": 2788.54
-    },
-    {
-     "id": "yi-zmanim-shbs-chzvn-01~i4",
-     "shiurId": "yi-zmanim-shbs-chzvn-01",
-     "kind": "i",
-     "t": 3222.74,
-     "end": 3297.8
+     "t": 1222.57
     }
-   ]
+   ],
+   "mix": null
   },
   "shoftim": {
    "shiurIds": [
     "yi-parshas-hashavua-shvptym-01"
    ],
+   "total": 1,
    "moments": [
     {
      "id": "yi-parshas-hashavua-shvptym-01~i0",
-     "shiurId": "yi-parshas-hashavua-shvptym-01",
-     "kind": "i",
-     "t": 1878.95,
-     "end": 2005.81
+     "t": 1878.95
     },
     {
      "id": "yi-parshas-hashavua-shvptym-01~st0",
-     "shiurId": "yi-parshas-hashavua-shvptym-01",
-     "kind": "st",
-     "t": 2354.36,
-     "end": 2378.7
+     "t": 2354.36
     },
     {
      "id": "yi-parshas-hashavua-shvptym-01~q0",
-     "shiurId": "yi-parshas-hashavua-shvptym-01",
-     "kind": "q",
-     "t": 152.35,
-     "end": 4778.62
+     "t": 152.35
     },
     {
      "id": "yi-parshas-hashavua-shvptym-01~i1",
-     "shiurId": "yi-parshas-hashavua-shvptym-01",
-     "kind": "i",
-     "t": 1099.28,
-     "end": 1176.08
-    },
-    {
-     "id": "yi-parshas-hashavua-shvptym-01~st1",
-     "shiurId": "yi-parshas-hashavua-shvptym-01",
-     "kind": "st",
-     "t": 3227.93,
-     "end": 3293.43
-    },
-    {
-     "id": "yi-parshas-hashavua-shvptym-01~q1",
-     "shiurId": "yi-parshas-hashavua-shvptym-01",
-     "kind": "q",
-     "t": 1363.2,
-     "end": 1445.87
-    },
-    {
-     "id": "yi-parshas-hashavua-shvptym-01~i2",
-     "shiurId": "yi-parshas-hashavua-shvptym-01",
-     "kind": "i",
-     "t": 1614.64,
-     "end": 1701.28
-    },
-    {
-     "id": "yi-parshas-hashavua-shvptym-01~q2",
-     "shiurId": "yi-parshas-hashavua-shvptym-01",
-     "kind": "q",
-     "t": 3126.97,
-     "end": 3141.29
-    },
-    {
-     "id": "yi-parshas-hashavua-shvptym-01~i3",
-     "shiurId": "yi-parshas-hashavua-shvptym-01",
-     "kind": "i",
-     "t": 3501.21,
-     "end": 3580.42
-    },
-    {
-     "id": "yi-parshas-hashavua-shvptym-01~q3",
-     "shiurId": "yi-parshas-hashavua-shvptym-01",
-     "kind": "q",
-     "t": 2520.5,
-     "end": 3425.79
-    },
-    {
-     "id": "yi-parshas-hashavua-shvptym-01~i4",
-     "shiurId": "yi-parshas-hashavua-shvptym-01",
-     "kind": "i",
-     "t": 3126.97,
-     "end": 3183.99
-    },
-    {
-     "id": "yi-parshas-hashavua-shvptym-01~q4",
-     "shiurId": "yi-parshas-hashavua-shvptym-01",
-     "kind": "q",
-     "t": 2724.9,
-     "end": 3565.78
+     "t": 1099.28
     }
-   ]
+   ],
+   "mix": null
   },
   "shushan-purim": {
    "shiurIds": [
     "yi-zmanim-svds-shvshn-pvrym-01"
    ],
+   "total": 1,
    "moments": [
     {
      "id": "yi-zmanim-svds-shvshn-pvrym-01~i0",
-     "shiurId": "yi-zmanim-svds-shvshn-pvrym-01",
-     "kind": "i",
-     "t": 690.07,
-     "end": 728.59
+     "t": 690.07
     },
     {
      "id": "yi-zmanim-svds-shvshn-pvrym-01~st0",
-     "shiurId": "yi-zmanim-svds-shvshn-pvrym-01",
-     "kind": "st",
-     "t": 1756.693,
-     "end": 1830.233
+     "t": 1756.693
     },
     {
      "id": "yi-zmanim-svds-shvshn-pvrym-01~q0",
-     "shiurId": "yi-zmanim-svds-shvshn-pvrym-01",
-     "kind": "q",
-     "t": 219.22,
-     "end": 710.35
+     "t": 219.22
     },
     {
      "id": "yi-zmanim-svds-shvshn-pvrym-01~i1",
-     "shiurId": "yi-zmanim-svds-shvshn-pvrym-01",
-     "kind": "i",
-     "t": 397.85,
-     "end": 454.45
-    },
-    {
-     "id": "yi-zmanim-svds-shvshn-pvrym-01~q1",
-     "shiurId": "yi-zmanim-svds-shvshn-pvrym-01",
-     "kind": "q",
-     "t": 367.91,
-     "end": 397.85
-    },
-    {
-     "id": "yi-zmanim-svds-shvshn-pvrym-01~i2",
-     "shiurId": "yi-zmanim-svds-shvshn-pvrym-01",
-     "kind": "i",
-     "t": 846.55,
-     "end": 883.13
-    },
-    {
-     "id": "yi-zmanim-svds-shvshn-pvrym-01~q2",
-     "shiurId": "yi-zmanim-svds-shvshn-pvrym-01",
-     "kind": "q",
-     "t": 1937.973,
-     "end": 2254.973
-    },
-    {
-     "id": "yi-zmanim-svds-shvshn-pvrym-01~i3",
-     "shiurId": "yi-zmanim-svds-shvshn-pvrym-01",
-     "kind": "i",
-     "t": 2663.753,
-     "end": 2810.253
-    },
-    {
-     "id": "yi-zmanim-svds-shvshn-pvrym-01~q3",
-     "shiurId": "yi-zmanim-svds-shvshn-pvrym-01",
-     "kind": "q",
-     "t": 1836.073,
-     "end": 2663.753
-    },
-    {
-     "id": "yi-zmanim-svds-shvshn-pvrym-01~i4",
-     "shiurId": "yi-zmanim-svds-shvshn-pvrym-01",
-     "kind": "i",
-     "t": 2870.853,
-     "end": 2916.513
-    },
-    {
-     "id": "yi-zmanim-svds-shvshn-pvrym-01~q4",
-     "shiurId": "yi-zmanim-svds-shvshn-pvrym-01",
-     "kind": "q",
-     "t": 3990.296,
-     "end": 4006.956
-    },
-    {
-     "id": "yi-zmanim-svds-shvshn-pvrym-01~i5",
-     "shiurId": "yi-zmanim-svds-shvshn-pvrym-01",
-     "kind": "i",
-     "t": 4299.406,
-     "end": 4393.006
+     "t": 397.85
     }
-   ]
+   ],
+   "mix": null
   },
   "sukkos": {
    "shiurIds": [
     "yi-zmanim-svkvs-08"
    ],
+   "total": 1,
    "moments": [
     {
      "id": "yi-zmanim-svkvs-08~i0",
-     "shiurId": "yi-zmanim-svkvs-08",
-     "kind": "i",
-     "t": 226.65,
-     "end": 244.97
+     "t": 226.65
     },
     {
      "id": "yi-zmanim-svkvs-08~st0",
-     "shiurId": "yi-zmanim-svkvs-08",
-     "kind": "st",
-     "t": 2332.37,
-     "end": 2423.27
+     "t": 2332.37
     },
     {
      "id": "yi-zmanim-svkvs-08~q0",
-     "shiurId": "yi-zmanim-svkvs-08",
-     "kind": "q",
-     "t": 222.58,
-     "end": 234.27
+     "t": 222.58
     },
     {
      "id": "yi-zmanim-svkvs-08~i1",
-     "shiurId": "yi-zmanim-svkvs-08",
-     "kind": "i",
-     "t": 311.16,
-     "end": 336.32
-    },
-    {
-     "id": "yi-zmanim-svkvs-08~q1",
-     "shiurId": "yi-zmanim-svkvs-08",
-     "kind": "q",
-     "t": 975.87,
-     "end": 981.15
-    },
-    {
-     "id": "yi-zmanim-svkvs-08~i2",
-     "shiurId": "yi-zmanim-svkvs-08",
-     "kind": "i",
-     "t": 1564.98,
-     "end": 1767.52
-    },
-    {
-     "id": "yi-zmanim-svkvs-08~q2",
-     "shiurId": "yi-zmanim-svkvs-08",
-     "kind": "q",
-     "t": 1037.77,
-     "end": 1359.02
-    },
-    {
-     "id": "yi-zmanim-svkvs-08~i3",
-     "shiurId": "yi-zmanim-svkvs-08",
-     "kind": "i",
-     "t": 1289.69,
-     "end": 1419.48
-    },
-    {
-     "id": "yi-zmanim-svkvs-08~q3",
-     "shiurId": "yi-zmanim-svkvs-08",
-     "kind": "q",
-     "t": 1510.59,
-     "end": 1575.12
-    },
-    {
-     "id": "yi-zmanim-svkvs-08~i4",
-     "shiurId": "yi-zmanim-svkvs-08",
-     "kind": "i",
-     "t": 1962.55,
-     "end": 2014.81
-    },
-    {
-     "id": "yi-zmanim-svkvs-08~q4",
-     "shiurId": "yi-zmanim-svkvs-08",
-     "kind": "q",
-     "t": 1880.6,
-     "end": 1983.13
-    },
-    {
-     "id": "yi-zmanim-svkvs-08~i5",
-     "shiurId": "yi-zmanim-svkvs-08",
-     "kind": "i",
-     "t": 3396.39,
-     "end": 3481.31
+     "t": 311.16
     }
-   ]
+   ],
+   "mix": null
   },
   "teves": {
    "shiurIds": [
     "en-zmanim-en-chvdsh-tbs-02"
    ],
+   "total": 1,
    "moments": [
     {
      "id": "en-zmanim-en-chvdsh-tbs-02~i0",
-     "shiurId": "en-zmanim-en-chvdsh-tbs-02",
-     "kind": "i",
-     "t": 2053.22,
-     "end": 2293.01
+     "t": 2053.22
     },
     {
      "id": "en-zmanim-en-chvdsh-tbs-02~st0",
-     "shiurId": "en-zmanim-en-chvdsh-tbs-02",
-     "kind": "st",
-     "t": 999.59,
-     "end": 1084.53
+     "t": 999.59
     },
     {
      "id": "en-zmanim-en-chvdsh-tbs-02~q0",
-     "shiurId": "en-zmanim-en-chvdsh-tbs-02",
-     "kind": "q",
-     "t": 279.78,
-     "end": 2053.22
+     "t": 279.78
     },
     {
      "id": "en-zmanim-en-chvdsh-tbs-02~i1",
-     "shiurId": "en-zmanim-en-chvdsh-tbs-02",
-     "kind": "i",
-     "t": 581.07,
-     "end": 765.98
-    },
-    {
-     "id": "en-zmanim-en-chvdsh-tbs-02~st1",
-     "shiurId": "en-zmanim-en-chvdsh-tbs-02",
-     "kind": "st",
-     "t": 1711.96,
-     "end": 1799.9
-    },
-    {
-     "id": "en-zmanim-en-chvdsh-tbs-02~q1",
-     "shiurId": "en-zmanim-en-chvdsh-tbs-02",
-     "kind": "q",
-     "t": 2076.9,
-     "end": 2094.3
-    },
-    {
-     "id": "en-zmanim-en-chvdsh-tbs-02~i2",
-     "shiurId": "en-zmanim-en-chvdsh-tbs-02",
-     "kind": "i",
-     "t": 1963.45,
-     "end": 2023.87
-    },
-    {
-     "id": "en-zmanim-en-chvdsh-tbs-02~st2",
-     "shiurId": "en-zmanim-en-chvdsh-tbs-02",
-     "kind": "st",
-     "t": 1851.09,
-     "end": 1893.01
-    },
-    {
-     "id": "en-zmanim-en-chvdsh-tbs-02~q2",
-     "shiurId": "en-zmanim-en-chvdsh-tbs-02",
-     "kind": "q",
-     "t": 1873.95,
-     "end": 1885.83
-    },
-    {
-     "id": "en-zmanim-en-chvdsh-tbs-02~i3",
-     "shiurId": "en-zmanim-en-chvdsh-tbs-02",
-     "kind": "i",
-     "t": 2454.48,
-     "end": 2512.11
-    },
-    {
-     "id": "en-zmanim-en-chvdsh-tbs-02~q3",
-     "shiurId": "en-zmanim-en-chvdsh-tbs-02",
-     "kind": "q",
-     "t": 2374.71,
-     "end": 2382.13
-    },
-    {
-     "id": "en-zmanim-en-chvdsh-tbs-02~i4",
-     "shiurId": "en-zmanim-en-chvdsh-tbs-02",
-     "kind": "i",
-     "t": 2915.81,
-     "end": 3083.96
+     "t": 581.07
     }
-   ]
+   ],
+   "mix": null
   },
   "toldos": {
    "shiurIds": [
     "en-parsha-en-svldvs-01"
    ],
+   "total": 1,
    "moments": [
     {
      "id": "en-parsha-en-svldvs-01~i0",
-     "shiurId": "en-parsha-en-svldvs-01",
-     "kind": "i",
-     "t": 262.82,
-     "end": 329.12
+     "t": 262.82
     },
     {
      "id": "en-parsha-en-svldvs-01~st0",
-     "shiurId": "en-parsha-en-svldvs-01",
-     "kind": "st",
-     "t": 3001.01,
-     "end": 3097.77
+     "t": 3001.01
     },
     {
      "id": "en-parsha-en-svldvs-01~q0",
-     "shiurId": "en-parsha-en-svldvs-01",
-     "kind": "q",
-     "t": 707.1,
-     "end": 3734.95
+     "t": 707.1
     },
     {
      "id": "en-parsha-en-svldvs-01~i1",
-     "shiurId": "en-parsha-en-svldvs-01",
-     "kind": "i",
-     "t": 1672.65,
-     "end": 1743.41
-    },
-    {
-     "id": "en-parsha-en-svldvs-01~st1",
-     "shiurId": "en-parsha-en-svldvs-01",
-     "kind": "st",
-     "t": 3457.3,
-     "end": 3696.61
-    },
-    {
-     "id": "en-parsha-en-svldvs-01~q1",
-     "shiurId": "en-parsha-en-svldvs-01",
-     "kind": "q",
-     "t": 1228.92,
-     "end": 3305.36
-    },
-    {
-     "id": "en-parsha-en-svldvs-01~i2",
-     "shiurId": "en-parsha-en-svldvs-01",
-     "kind": "i",
-     "t": 1460.86,
-     "end": 2613.2
-    },
-    {
-     "id": "en-parsha-en-svldvs-01~st2",
-     "shiurId": "en-parsha-en-svldvs-01",
-     "kind": "st",
-     "t": 3936.28,
-     "end": 4047.15
-    },
-    {
-     "id": "en-parsha-en-svldvs-01~q2",
-     "shiurId": "en-parsha-en-svldvs-01",
-     "kind": "q",
-     "t": 1358.41,
-     "end": 2574.92
-    },
-    {
-     "id": "en-parsha-en-svldvs-01~i3",
-     "shiurId": "en-parsha-en-svldvs-01",
-     "kind": "i",
-     "t": 2662.53,
-     "end": 2855.26
-    },
-    {
-     "id": "en-parsha-en-svldvs-01~q3",
-     "shiurId": "en-parsha-en-svldvs-01",
-     "kind": "q",
-     "t": 1522.85,
-     "end": 1838.82
-    },
-    {
-     "id": "en-parsha-en-svldvs-01~i4",
-     "shiurId": "en-parsha-en-svldvs-01",
-     "kind": "i",
-     "t": 3891.41,
-     "end": 3913.67
+     "t": 1672.65
     }
-   ]
+   ],
+   "mix": null
   },
   "tu-beav": {
    "shiurIds": [
     "yi-zmanim-tv-bb-04"
    ],
+   "total": 1,
    "moments": [
     {
      "id": "yi-zmanim-tv-bb-04~i0",
-     "shiurId": "yi-zmanim-tv-bb-04",
-     "kind": "i",
-     "t": 408.33,
-     "end": 427.19
+     "t": 408.33
     },
     {
      "id": "yi-zmanim-tv-bb-04~st0",
-     "shiurId": "yi-zmanim-tv-bb-04",
-     "kind": "st",
-     "t": 858.19,
-     "end": 925.49
+     "t": 858.19
     },
     {
      "id": "yi-zmanim-tv-bb-04~q0",
-     "shiurId": "yi-zmanim-tv-bb-04",
-     "kind": "q",
-     "t": 902.82,
-     "end": 915.29
+     "t": 902.82
     },
     {
      "id": "yi-zmanim-tv-bb-04~i1",
-     "shiurId": "yi-zmanim-tv-bb-04",
-     "kind": "i",
-     "t": 1081.82,
-     "end": 1151.22
-    },
-    {
-     "id": "yi-zmanim-tv-bb-04~q1",
-     "shiurId": "yi-zmanim-tv-bb-04",
-     "kind": "q",
-     "t": 2136.514,
-     "end": 2160.354
-    },
-    {
-     "id": "yi-zmanim-tv-bb-04~i2",
-     "shiurId": "yi-zmanim-tv-bb-04",
-     "kind": "i",
-     "t": 1652.89,
-     "end": 1703.01
-    },
-    {
-     "id": "yi-zmanim-tv-bb-04~q2",
-     "shiurId": "yi-zmanim-tv-bb-04",
-     "kind": "q",
-     "t": 2309.564,
-     "end": 2371.944
-    },
-    {
-     "id": "yi-zmanim-tv-bb-04~i3",
-     "shiurId": "yi-zmanim-tv-bb-04",
-     "kind": "i",
-     "t": 2350.224,
-     "end": 2665.604
-    },
-    {
-     "id": "yi-zmanim-tv-bb-04~q3",
-     "shiurId": "yi-zmanim-tv-bb-04",
-     "kind": "q",
-     "t": 2522.924,
-     "end": 2549.084
-    },
-    {
-     "id": "yi-zmanim-tv-bb-04~i4",
-     "shiurId": "yi-zmanim-tv-bb-04",
-     "kind": "i",
-     "t": 2830.914,
-     "end": 2858.494
-    },
-    {
-     "id": "yi-zmanim-tv-bb-04~q4",
-     "shiurId": "yi-zmanim-tv-bb-04",
-     "kind": "q",
-     "t": 2801.234,
-     "end": 2834.794
+     "t": 1081.82
     }
-   ]
+   ],
+   "mix": null
   },
   "tu-bishvat": {
    "shiurIds": [
     "en-zmanim-en-tv-bshbt-01"
    ],
+   "total": 1,
    "moments": [
     {
      "id": "en-zmanim-en-tv-bshbt-01~i0",
-     "shiurId": "en-zmanim-en-tv-bshbt-01",
-     "kind": "i",
-     "t": 600,
-     "end": 648.04
+     "t": 600
     },
     {
      "id": "en-zmanim-en-tv-bshbt-01~st0",
-     "shiurId": "en-zmanim-en-tv-bshbt-01",
-     "kind": "st",
-     "t": 2427.8,
-     "end": 2459.42
+     "t": 2427.8
     },
     {
      "id": "en-zmanim-en-tv-bshbt-01~q0",
-     "shiurId": "en-zmanim-en-tv-bshbt-01",
-     "kind": "q",
-     "t": 1698.52,
-     "end": 1713.9
+     "t": 1698.52
     },
     {
      "id": "en-zmanim-en-tv-bshbt-01~i1",
-     "shiurId": "en-zmanim-en-tv-bshbt-01",
-     "kind": "i",
-     "t": 777.26,
-     "end": 823.84
-    },
-    {
-     "id": "en-zmanim-en-tv-bshbt-01~q1",
-     "shiurId": "en-zmanim-en-tv-bshbt-01",
-     "kind": "q",
-     "t": 1764.26,
-     "end": 1783.37
-    },
-    {
-     "id": "en-zmanim-en-tv-bshbt-01~i2",
-     "shiurId": "en-zmanim-en-tv-bshbt-01",
-     "kind": "i",
-     "t": 1644.92,
-     "end": 1725.1
-    },
-    {
-     "id": "en-zmanim-en-tv-bshbt-01~q2",
-     "shiurId": "en-zmanim-en-tv-bshbt-01",
-     "kind": "q",
-     "t": 711.8,
-     "end": 719.14
-    },
-    {
-     "id": "en-zmanim-en-tv-bshbt-01~i3",
-     "shiurId": "en-zmanim-en-tv-bshbt-01",
-     "kind": "i",
-     "t": 2579.85,
-     "end": 2711.37
-    },
-    {
-     "id": "en-zmanim-en-tv-bshbt-01~q3",
-     "shiurId": "en-zmanim-en-tv-bshbt-01",
-     "kind": "q",
-     "t": 1395.08,
-     "end": 1457.99
-    },
-    {
-     "id": "en-zmanim-en-tv-bshbt-01~i4",
-     "shiurId": "en-zmanim-en-tv-bshbt-01",
-     "kind": "i",
-     "t": 1233.42,
-     "end": 1570.76
-    },
-    {
-     "id": "en-zmanim-en-tv-bshbt-01~i5",
-     "shiurId": "en-zmanim-en-tv-bshbt-01",
-     "kind": "i",
-     "t": 2900.81,
-     "end": 2927.52
+     "t": 777.26
     }
-   ]
+   ],
+   "mix": null
   },
   "vaeschanan": {
    "shiurIds": [
     "yi-parshas-hashavua-vschnn-01"
    ],
+   "total": 1,
    "moments": [
     {
      "id": "yi-parshas-hashavua-vschnn-01~i0",
-     "shiurId": "yi-parshas-hashavua-vschnn-01",
-     "kind": "i",
-     "t": 508.9,
-     "end": 648.92
+     "t": 508.9
     },
     {
      "id": "yi-parshas-hashavua-vschnn-01~st0",
-     "shiurId": "yi-parshas-hashavua-vschnn-01",
-     "kind": "st",
-     "t": 1682.16,
-     "end": 1762.66
+     "t": 1682.16
     },
     {
      "id": "yi-parshas-hashavua-vschnn-01~q0",
-     "shiurId": "yi-parshas-hashavua-vschnn-01",
-     "kind": "q",
-     "t": 779.8,
-     "end": 856.24
+     "t": 779.8
     },
     {
      "id": "yi-parshas-hashavua-vschnn-01~i1",
-     "shiurId": "yi-parshas-hashavua-vschnn-01",
-     "kind": "i",
-     "t": 856.24,
-     "end": 1144
-    },
-    {
-     "id": "yi-parshas-hashavua-vschnn-01~st1",
-     "shiurId": "yi-parshas-hashavua-vschnn-01",
-     "kind": "st",
-     "t": 2953.59,
-     "end": 3033.61
-    },
-    {
-     "id": "yi-parshas-hashavua-vschnn-01~q1",
-     "shiurId": "yi-parshas-hashavua-vschnn-01",
-     "kind": "q",
-     "t": 2245.92,
-     "end": 2255.8
-    },
-    {
-     "id": "yi-parshas-hashavua-vschnn-01~i2",
-     "shiurId": "yi-parshas-hashavua-vschnn-01",
-     "kind": "i",
-     "t": 1423.22,
-     "end": 1551.24
-    },
-    {
-     "id": "yi-parshas-hashavua-vschnn-01~st2",
-     "shiurId": "yi-parshas-hashavua-vschnn-01",
-     "kind": "st",
-     "t": 3206.22,
-     "end": 3605.3
-    },
-    {
-     "id": "yi-parshas-hashavua-vschnn-01~q2",
-     "shiurId": "yi-parshas-hashavua-vschnn-01",
-     "kind": "q",
-     "t": 4341.28,
-     "end": 4381.46
-    },
-    {
-     "id": "yi-parshas-hashavua-vschnn-01~i3",
-     "shiurId": "yi-parshas-hashavua-vschnn-01",
-     "kind": "i",
-     "t": 1825.16,
-     "end": 1915.7
-    },
-    {
-     "id": "yi-parshas-hashavua-vschnn-01~q3",
-     "shiurId": "yi-parshas-hashavua-vschnn-01",
-     "kind": "q",
-     "t": 4527.34,
-     "end": 4549.64
-    },
-    {
-     "id": "yi-parshas-hashavua-vschnn-01~i4",
-     "shiurId": "yi-parshas-hashavua-vschnn-01",
-     "kind": "i",
-     "t": 2868.19,
-     "end": 2904.55
+     "t": 856.24
     }
-   ]
+   ],
+   "mix": null
   },
   "vayeishev": {
    "shiurIds": [
     "yi-parshas-hashavua-vyshb-08"
    ],
+   "total": 1,
    "moments": [
     {
      "id": "yi-parshas-hashavua-vyshb-08~i0",
-     "shiurId": "yi-parshas-hashavua-vyshb-08",
-     "kind": "i",
-     "t": 376.1,
-     "end": 510.58
+     "t": 376.1
     },
     {
      "id": "yi-parshas-hashavua-vyshb-08~st0",
-     "shiurId": "yi-parshas-hashavua-vyshb-08",
-     "kind": "st",
-     "t": 76.02,
-     "end": 277.06
+     "t": 76.02
     },
     {
      "id": "yi-parshas-hashavua-vyshb-08~q0",
-     "shiurId": "yi-parshas-hashavua-vyshb-08",
-     "kind": "q",
-     "t": 313.66,
-     "end": 341.8
+     "t": 313.66
     },
     {
      "id": "yi-parshas-hashavua-vyshb-08~i1",
-     "shiurId": "yi-parshas-hashavua-vyshb-08",
-     "kind": "i",
-     "t": 524.4,
-     "end": 566.16
-    },
-    {
-     "id": "yi-parshas-hashavua-vyshb-08~q1",
-     "shiurId": "yi-parshas-hashavua-vyshb-08",
-     "kind": "q",
-     "t": 569.92,
-     "end": 1203.64
-    },
-    {
-     "id": "yi-parshas-hashavua-vyshb-08~i2",
-     "shiurId": "yi-parshas-hashavua-vyshb-08",
-     "kind": "i",
-     "t": 1246.38,
-     "end": 1322.54
-    },
-    {
-     "id": "yi-parshas-hashavua-vyshb-08~q2",
-     "shiurId": "yi-parshas-hashavua-vyshb-08",
-     "kind": "q",
-     "t": 1749.4,
-     "end": 1762.16
-    },
-    {
-     "id": "yi-parshas-hashavua-vyshb-08~i3",
-     "shiurId": "yi-parshas-hashavua-vyshb-08",
-     "kind": "i",
-     "t": 1833.5,
-     "end": 1900.1
-    },
-    {
-     "id": "yi-parshas-hashavua-vyshb-08~q3",
-     "shiurId": "yi-parshas-hashavua-vyshb-08",
-     "kind": "q",
-     "t": 2069.58,
-     "end": 2082.48
-    },
-    {
-     "id": "yi-parshas-hashavua-vyshb-08~i4",
-     "shiurId": "yi-parshas-hashavua-vyshb-08",
-     "kind": "i",
-     "t": 2078.2,
-     "end": 2279.2
-    },
-    {
-     "id": "yi-parshas-hashavua-vyshb-08~i5",
-     "shiurId": "yi-parshas-hashavua-vyshb-08",
-     "kind": "i",
-     "t": 2392.14,
-     "end": 2431.68
+     "t": 524.4
     }
-   ]
+   ],
+   "mix": null
   },
   "vayishlach": {
    "shiurIds": [
     "en-parsha-en-vyshlch-01"
    ],
+   "total": 1,
    "moments": [
     {
      "id": "en-parsha-en-vyshlch-01~i0",
-     "shiurId": "en-parsha-en-vyshlch-01",
-     "kind": "i",
-     "t": 847.58,
-     "end": 941.84
+     "t": 847.58
     },
     {
      "id": "en-parsha-en-vyshlch-01~st0",
-     "shiurId": "en-parsha-en-vyshlch-01",
-     "kind": "st",
-     "t": 402.23,
-     "end": 466.19
+     "t": 402.23
     },
     {
      "id": "en-parsha-en-vyshlch-01~q0",
-     "shiurId": "en-parsha-en-vyshlch-01",
-     "kind": "q",
-     "t": 1094,
-     "end": 1382.59
+     "t": 1094
     },
     {
      "id": "en-parsha-en-vyshlch-01~i1",
-     "shiurId": "en-parsha-en-vyshlch-01",
-     "kind": "i",
-     "t": 1382.59,
-     "end": 1421.17
-    },
-    {
-     "id": "en-parsha-en-vyshlch-01~st1",
-     "shiurId": "en-parsha-en-vyshlch-01",
-     "kind": "st",
-     "t": 568.77,
-     "end": 639.54
-    },
-    {
-     "id": "en-parsha-en-vyshlch-01~q1",
-     "shiurId": "en-parsha-en-vyshlch-01",
-     "kind": "q",
-     "t": 1552.26,
-     "end": 1569.28
-    },
-    {
-     "id": "en-parsha-en-vyshlch-01~i2",
-     "shiurId": "en-parsha-en-vyshlch-01",
-     "kind": "i",
-     "t": 2603.88,
-     "end": 2974.34
-    },
-    {
-     "id": "en-parsha-en-vyshlch-01~st2",
-     "shiurId": "en-parsha-en-vyshlch-01",
-     "kind": "st",
-     "t": 1251.4,
-     "end": 1378.71
-    },
-    {
-     "id": "en-parsha-en-vyshlch-01~q2",
-     "shiurId": "en-parsha-en-vyshlch-01",
-     "kind": "q",
-     "t": 2868,
-     "end": 2885.3
-    },
-    {
-     "id": "en-parsha-en-vyshlch-01~i3",
-     "shiurId": "en-parsha-en-vyshlch-01",
-     "kind": "i",
-     "t": 3139.92,
-     "end": 3338.98
-    },
-    {
-     "id": "en-parsha-en-vyshlch-01~st3",
-     "shiurId": "en-parsha-en-vyshlch-01",
-     "kind": "st",
-     "t": 1469.45,
-     "end": 1603.6
-    },
-    {
-     "id": "en-parsha-en-vyshlch-01~q3",
-     "shiurId": "en-parsha-en-vyshlch-01",
-     "kind": "q",
-     "t": 2995.58,
-     "end": 3139.92
+     "t": 1382.59
     }
-   ]
+   ],
+   "mix": null
   },
   "zos-chanukah": {
    "shiurIds": [
     "yi-zmanim-svds-zs-chnvkh-04"
    ],
+   "total": 1,
    "moments": [
     {
      "id": "yi-zmanim-svds-zs-chnvkh-04~i0",
-     "shiurId": "yi-zmanim-svds-zs-chnvkh-04",
-     "kind": "i",
-     "t": 115.57,
-     "end": 138.23
+     "t": 115.57
     },
     {
      "id": "yi-zmanim-svds-zs-chnvkh-04~q0",
-     "shiurId": "yi-zmanim-svds-zs-chnvkh-04",
-     "kind": "q",
-     "t": 30.39,
-     "end": 90.25
+     "t": 30.39
     },
     {
      "id": "yi-zmanim-svds-zs-chnvkh-04~i1",
-     "shiurId": "yi-zmanim-svds-zs-chnvkh-04",
-     "kind": "i",
-     "t": 777.6,
-     "end": 850.02
+     "t": 777.6
     },
     {
      "id": "yi-zmanim-svds-zs-chnvkh-04~q1",
-     "shiurId": "yi-zmanim-svds-zs-chnvkh-04",
-     "kind": "q",
-     "t": 749.4,
-     "end": 777.6
-    },
-    {
-     "id": "yi-zmanim-svds-zs-chnvkh-04~i2",
-     "shiurId": "yi-zmanim-svds-zs-chnvkh-04",
-     "kind": "i",
-     "t": 1013.44,
-     "end": 1067.54
-    },
-    {
-     "id": "yi-zmanim-svds-zs-chnvkh-04~q2",
-     "shiurId": "yi-zmanim-svds-zs-chnvkh-04",
-     "kind": "q",
-     "t": 1290.36,
-     "end": 1297.98
-    },
-    {
-     "id": "yi-zmanim-svds-zs-chnvkh-04~i3",
-     "shiurId": "yi-zmanim-svds-zs-chnvkh-04",
-     "kind": "i",
-     "t": 1290.36,
-     "end": 1309.14
-    },
-    {
-     "id": "yi-zmanim-svds-zs-chnvkh-04~i4",
-     "shiurId": "yi-zmanim-svds-zs-chnvkh-04",
-     "kind": "i",
-     "t": 1478.44,
-     "end": 1496.5
-    },
-    {
-     "id": "yi-zmanim-svds-zs-chnvkh-04~i5",
-     "shiurId": "yi-zmanim-svds-zs-chnvkh-04",
-     "kind": "i",
-     "t": 1843.96,
-     "end": 1880.14
+     "t": 749.4
     }
-   ]
+   ],
+   "mix": null
   }
  },
  "newlySummarized": [
@@ -2228,54 +695,323 @@
   {
    "shiurId": "yi-zmanim-svkvs-08",
    "updatedAt": "2026-11-14T10:50:32.016Z"
-  },
-  {
-   "shiurId": "yi-zmanim-lvl-01",
-   "updatedAt": "2026-11-14T10:50:31.898Z"
-  },
-  {
-   "shiurId": "en-miscellaneous-en-02",
-   "updatedAt": "2026-11-14T05:27:18.030Z"
-  },
-  {
-   "shiurId": "en-miscellaneous-en-01",
-   "updatedAt": "2026-11-14T05:27:18.026Z"
-  },
-  {
-   "shiurId": "yi-zmanim-lvl-02",
-   "updatedAt": "2026-11-14T05:27:17.922Z"
-  },
-  {
-   "shiurId": "yi-parshas-hashavua-hzynv-01",
-   "updatedAt": "2026-11-14T05:27:17.916Z"
-  },
-  {
-   "shiurId": "yi-parshas-hashavua-shvptym-01",
-   "updatedAt": "2026-11-14T05:27:17.876Z"
-  },
-  {
-   "shiurId": "yi-parshas-hashavua-vschnn-01",
-   "updatedAt": "2026-11-14T05:27:17.869Z"
-  },
-  {
-   "shiurId": "yi-parshas-hashavua-mvr-01",
-   "updatedAt": "2026-11-14T05:27:17.727Z"
-  },
-  {
-   "shiurId": "en-zmanim-en-psch-06",
-   "updatedAt": "2026-11-13T21:00:38.504Z"
-  },
-  {
-   "shiurId": "yi-parshas-hashavua-vyshb-08",
-   "updatedAt": "2026-11-13T16:02:32.697Z"
-  },
-  {
-   "shiurId": "yi-parshas-hashavua-brshys-03",
-   "updatedAt": "2026-11-13T16:02:32.428Z"
-  },
-  {
-   "shiurId": "yi-parshas-hashavua-brshys-01",
-   "updatedAt": "2026-11-13T16:02:32.414Z"
   }
- ]
+ ],
+ "cards": {
+  "en-parsha-en-ky-sb-01": {
+   "lang": "en",
+   "title": "ביכורים - Bringing the Fruit of ראשית to the Place of ראשית",
+   "duration": 3535,
+   "years": [
+    5760
+   ],
+   "status": "full"
+  },
+  "en-parsha-en-nch-01": {
+   "lang": "en",
+   "title": "The Special Holiness of נח תיבת: a Microcosm of the עולם התיקון",
+   "duration": 4232,
+   "years": [
+    5749
+   ],
+   "status": "full"
+  },
+  "en-parsha-en-svldvs-01": {
+   "lang": "en",
+   "title": "Explaining יצחק's Fondness of עשו and the meaning of ויגדלו הנערים",
+   "duration": 4065,
+   "years": [
+    5749
+   ],
+   "status": "full"
+  },
+  "en-parsha-en-vyshlch-01": {
+   "lang": "en",
+   "title": "A Deeper Understanding of יעקב's Present to עשו",
+   "duration": 4346,
+   "years": [
+    5749
+   ],
+   "status": "full"
+  },
+  "en-zmanim-en-chvdsh-tbs-02": {
+   "lang": "en",
+   "title": "An Explanation of ניטל and the Month of טבת",
+   "duration": 3247,
+   "years": [
+    5764
+   ],
+   "status": "full"
+  },
+  "en-zmanim-en-psch-06": {
+   "lang": "en",
+   "title": "The Beginning of our Nuptials with Hashem",
+   "duration": 2930,
+   "years": [
+    5765
+   ],
+   "status": "full"
+  },
+  "en-zmanim-en-rsh-hshnh-03": {
+   "lang": "en",
+   "title": "The Theme of the Day - Proclaiming Hashem as King",
+   "duration": 1983,
+   "years": [
+    5757
+   ],
+   "status": "full"
+  },
+  "en-zmanim-en-tv-bshbt-01": {
+   "lang": "en",
+   "title": "ט”ו בשבט Ushers in the Months of חסד (A Deeper Understanding of the צירופי החודש)",
+   "duration": 3138,
+   "years": [
+    5756
+   ],
+   "status": "full"
+  },
+  "yi-parshas-hashavua-brshys-01": {
+   "lang": "yi",
+   "title": "“ולאדם לא מצא עזר כנגדו” - זה קוב\"ה וכנסת ישראל",
+   "duration": 4597,
+   "years": [
+    5736
+   ],
+   "status": "full"
+  },
+  "yi-parshas-hashavua-brshys-03": {
+   "lang": "yi",
+   "title": "לימוד משידוך הראשון - שנעשה בלי השתתפות של מעשי אדם",
+   "duration": 2832,
+   "years": [
+    5750
+   ],
+   "status": "full"
+  },
+  "yi-parshas-hashavua-hzynv-01": {
+   "lang": "yi",
+   "title": "פרשה של אמונה. עשי\"ת - זמן לנקות חציצות האמונה",
+   "duration": 4049,
+   "years": [
+    5732
+   ],
+   "status": "full"
+  },
+  "yi-parshas-hashavua-mvr-01": {
+   "lang": "yi",
+   "title": "אהרן והכהנים הם בחינת מדת הוד - קודש הקדשים - בחינת רשב\"י",
+   "duration": 4420,
+   "years": [
+    5736
+   ],
+   "status": "full"
+  },
+  "yi-parshas-hashavua-shvptym-01": {
+   "lang": "yi",
+   "title": "שופטים ושוטרים - עשה לך רב כדי שתהיה בטל להקב\"ה (שייכות לימים נוראים)",
+   "duration": 5185,
+   "years": [
+    5740
+   ],
+   "status": "full"
+  },
+  "yi-parshas-hashavua-vschnn-01": {
+   "lang": "yi",
+   "title": "משה רבינו מלמד איך להתפלל. נחיצות וחשיבות פסוקי דזמרה",
+   "duration": 4709,
+   "years": [
+    5734
+   ],
+   "status": "full"
+  },
+  "yi-parshas-hashavua-vyshb-08": {
+   "lang": "yi",
+   "title": "בפרשה זו נטמן משיח בן יוסף ומשיח בן דוד. שייכות לחנוכה",
+   "duration": 2498,
+   "years": [
+    5751
+   ],
+   "status": "full"
+  },
+  "yi-shonos-10": {
+   "lang": "yi",
+   "title": "בענין קליפת \"תכבד העבודה\" בזמן הזה",
+   "duration": 2322,
+   "years": [],
+   "status": "full",
+   "oneLiner": {
+    "en": "The Rav explains that Pharaoh's decree 'let the work be made heavier' lives on today as a klipah of constant busyness, from phones and cell phones to social obligations and lavish simchas, that robs a Jew of any moment of calm reflection.",
+    "yi": "דער משגיח ערקלערט אז פרעה'ס גזירה \"תכבד העבודה\" לעבט היינט ווייטער אלס א קליפה פון אייביגע פארנומענקייט, פון טעלעפאן און סעלפאן ביז די געזעלשאפטליכע חובות און די הוצאות אויף שמחות, וואס נעמט צו פון א איד יעדע מינוט ישוב הדעת."
+   }
+  },
+  "yi-shonos-31": {
+   "lang": "yi",
+   "title": "חשיבות מסירת נפש בזמננו",
+   "duration": 2093,
+   "years": [
+    5771
+   ],
+   "status": "full",
+   "oneLiner": {
+    "en": "The Rav explains that in a time of crisis before the redemption, Hashem withholds the means for mitzvos like hachnasas kallah so that they are done with mesiras nefesh, the one weapon the Satan cannot stop, which will bring Mashiach.",
+    "yi": "דער משגיח ערקלערט אז אין א שווערע צייט פאר דער גאולה נעמט דער רבונו של עולם צו די מיטלען פאר מצוות ווי הכנסת כלה, כדי מ'זאל זיי טאן מיט מסירת נפש, דער איינציגער וואפן וואס דער שטן קען נישט אפשטעלן, און דאס וועט ברענגען משיח."
+   }
+  },
+  "yi-zmanim-chnvkh-11": {
+   "lang": "yi",
+   "title": "דרוש בנס חנוכה - נס הנרות מגלים נס המלחמה",
+   "duration": 2743,
+   "years": [
+    5749
+   ],
+   "status": "full",
+   "oneLiner": {
+    "en": "The Rav explains that the Chanukah victory was a miracle wrought through the power of Torah, which cannot openly break nature, and that the miracle of the oil in the Beis HaMikdash revealed that the war itself was a miracle.",
+    "yi": "דער משגיח ערקלערט אז דער נצחון פון חנוכה איז געווען א נס דורכן כח התורה, וואס קען נישט בפירוש משנה זיין די טבע, און אז דער נס פון שמן אינעם בית המקדש האט אנגעוויזן אז די מלחמה אליין איז געווען א נס."
+   }
+  },
+  "yi-zmanim-lvl-01": {
+   "lang": "yi",
+   "title": "דיבורים המעוררים את הלב",
+   "duration": 3440,
+   "years": [
+    5735
+   ],
+   "status": "full"
+  },
+  "yi-zmanim-lvl-02": {
+   "lang": "yi",
+   "title": "לדוד ה' אורי - בבטחון תלוי הכל",
+   "duration": 2974,
+   "years": [
+    5740
+   ],
+   "status": "full"
+  },
+  "yi-zmanim-msybs-lchyym-bkmp-01-c": {
+   "lang": "yi",
+   "title": "ג - ט\"ו תמוז יארצייט האוה\"ח הק' - תורה על הפרשה.",
+   "duration": 227,
+   "years": [],
+   "status": "catalog-only"
+  },
+  "yi-zmanim-nysn-05": {
+   "lang": "yi",
+   "title": "לעזור בבית בהכנה לפסח; להתחדש עצמו בזמן התחדשות",
+   "duration": 2891,
+   "years": [],
+   "status": "full",
+   "oneLiner": {
+    "en": "The Rav teaches that the lowly work of cleaning before Pesach is precious to Hashem, and that Nissan, the month in which all of creation is renewed, calls on every Jew to renew himself through emunah and to begin again.",
+    "yi": "דער משגיח לערנט אז די נידעריגע ארבעט פון ארויסקערן פאר פסח איז טייער ביים אייבערשטן, און אז ניסן, דער חודש וואס די גאנצע בריאה ווערט באנייט, רופט יעדן איד זיך מחדש צו זיין מיט אמונה און אנצופאנגען פון ניי."
+   }
+  },
+  "yi-zmanim-pvrym-07": {
+   "lang": "yi",
+   "title": "גודל כח היום; הדרכה איך לנהוג בו",
+   "duration": 2312,
+   "years": [
+    5767
+   ],
+   "status": "full",
+   "oneLiner": {
+    "en": "The Rav describes the great power of Purim, a day of turning around and of accepting the Torah with love whose holiness lasts all day, and guides how to keep it: with joy, with kavanah in its foods, without drunkenness, and with tefillah for every yeshuah.",
+    "yi": "דער משגיח שילדערט דעם גרויסן כח פון פורים, א טאג פון זיך איבערדרייען און פון מקבל זיין די תורה מיט אהבה, וואס זיין קדושה בלייבט א גאנצן טאג, און ער גיט א הדרכה ווי אזוי זיך צו פירן: מיט שמחה, מיט כוונה ביים עסן, אן שכרות, און מיט תפילה אויף אלע ישועות."
+   }
+  },
+  "yi-zmanim-shbs-chzvn-01": {
+   "lang": "yi",
+   "title": "בשבת חזון נתגלה השמחה של ט' באב לעתיד וכל יהודי רואה בית השלישי בבנינה. ביאור ענין שמיטה",
+   "duration": 5126,
+   "years": [
+    5746
+   ],
+   "status": "full",
+   "oneLiner": {
+    "en": "The Rav explains that the Three Weeks are the hidden, still-unconquered 'territory of Esav' in time, that Shabbos Chazon already lets every Jew see the future consolation, and that shemittah, like Shabbos and Yerushalayim, makes every Jew a kohen who lives on Hashem's blessing.",
+    "yi": "דער משגיח ערקלערט אז די דריי וואכן זענען די באהאלטענע גבול פון עשו אין זמן וואס מ'האט נאך נישט איינגענומען, אז שבת חזון זעט יעדער איד שוין די נחמה פון לעתיד, און אז שמיטה, אזוי ווי שבת און ירושלים, מאכט פון יעדן איד א כהן וואס לעבט פון דעם אייבערשטנס ברכה."
+   }
+  },
+  "yi-zmanim-spyrh-01": {
+   "lang": "yi",
+   "title": "בימי ספירה צריכים לעשות תשובה על שורש העבירות - המדות (שייכות לפרשת קדושים)",
+   "duration": 5201,
+   "years": [
+    5742
+   ],
+   "status": "full",
+   "oneLiner": {
+    "en": "The Rav explains that the days of Sefirah, as the beginning and root of the year, are the time to do teshuvah on the root of sin, the middos, and that this is the meaning of 'kedoshim tihyu'.",
+    "yi": "דער משגיח ערקלערט אז די ימי הספירה, וואס זענען דער אנפאנג און דער שורש פונעם יאר, זענען די צייט צו טאן תשובה אויפן שורש פון די עבירות, די מידות, און אז דאס איז דער פשט פון \"קדושים תהיו\"."
+   }
+  },
+  "yi-zmanim-svds-pvrym-ktn-03": {
+   "lang": "yi",
+   "title": "האור של מגילת אסתר יותר נעלה מאור של תורת משה (חתם סופר)",
+   "duration": 2112,
+   "years": [
+    5765
+   ],
+   "status": "full",
+   "oneLiner": {
+    "en": "The Rav explains that the Megillah has two faces, the level of Kesuvim all year and on Purim a light higher even than Toras Moshe, and that through it Klal Yisroel, even in its lowest state, is revealed as Hashem's kallah.",
+    "yi": "דער משגיח ערקלערט אז די מגילה האט צוויי פנים, א גאנץ יאר די מדריגה פון כתובים און פורים א ליכט וואס איז העכער אפילו ווי תורת משה, און אז דורך איר ווערט אנטפלעקט אז כלל ישראל, אפילו אין זייער נידריגסטן מצב, איז דעם רבונו של עולם'ס כלה."
+   }
+  },
+  "yi-zmanim-svds-shvshn-pvrym-01": {
+   "lang": "yi",
+   "title": "יו\"ט ליהודים בעלי מדריגה' ומרדכי לא יכרע- היה בטוח בה'' יו\"ט של לעתיד לבא' פעמונים בשולי המעיל- דור אחרון",
+   "duration": 5515,
+   "years": [
+    5743,
+    5744,
+    5746,
+    5747
+   ],
+   "status": "full",
+   "oneLiner": {
+    "en": "The Rav explains Shushan Purim as the Yom Tov of the higher levels, Mordechai's refusal to bow as a deeper standard of emunah, and Purim as a foretaste of the complete wiping out of Amalek in the days of Moshiach.",
+    "yi": "דער משגיח ערקלערט אז שושן פורים איז דער יום טוב פון די העכערע מדריגות, אז מרדכי'ס \"לא יכרע\" איז א טיפערע מדריגה פון אמונה, און אז פורים איז א טעם פון דער פולשטענדיגער מחיית עמלק לעתיד לבוא."
+   }
+  },
+  "yi-zmanim-svds-zs-chnvkh-04": {
+   "lang": "yi",
+   "title": "סעודה של המחכים לבנין ביהמ\"ק; חנוכה - להודות ולהלל - יו\"ט של הוד",
+   "duration": 2093,
+   "years": [
+    5751
+   ],
+   "status": "full",
+   "oneLiner": {
+    "en": "At the seudah of Zos Chanukah the Rav explains that Chanukah is the Yom Tov of Aharon and the kohanim, the day of hod and hallel, on which every Jew, by lighting his candles, builds a piece of the menorah of the Beis Hamikdash that Moshiach will bring down.",
+    "yi": "ביי דער סעודה פון זאת חנוכה ערקלערט דער משגיח אז חנוכה איז דער יום טוב פון אהרן און די כהנים, דער טאג פון הוד און הלל, וואס יעדער איד בויט דאן מיט זיינע ליכט א שטיקל פון דער מנורה פונעם בית המקדש וואס משיח וועט אראפברענגען."
+   }
+  },
+  "yi-zmanim-svkvs-08": {
+   "lang": "yi",
+   "title": "גודל מעלת קדושת הסוכה",
+   "duration": 4407,
+   "years": [
+    5758
+   ],
+   "status": "full",
+   "oneLiner": {
+    "en": "The Rav explains that the sukkah, Yaakov Avinu's gift to his children, carries the holiness of the Beis HaMikdash and the shelter of the Shechinah, and that from it a Jew takes bitachon, protection and simcha for the whole year.",
+    "yi": "דער משגיח ערקלערט אז די סוכה, וואס יעקב אבינו האט איבערגעלאזט פאר זיינע קינדער, האט אין זיך די קדושה פונעם בית המקדש און דעם שיץ פון די כנפי השכינה, און פון איר נעמט א איד מיט ביטחון, הגנה און שמחה אויפן גאנצן יאר."
+   }
+  },
+  "yi-zmanim-tv-bb-04": {
+   "lang": "yi",
+   "title": "זמן לשאוב יראת שמים בעד הכנה לר\"ה' זמן של שידוכים' ז' ימים אחר היו\"ט הגדול של ט' באב לעתיד.",
+   "duration": 3028,
+   "years": [
+    5739
+   ],
+   "status": "full",
+   "oneLiner": {
+    "en": "The Rav explains Chamishah Asar b'Av as the start of the season of yiras shamayim and teshuvah leading to Yom Kippur, a day of shidduchim between Hashem and Klal Yisrael, and the yom tov of the hidden good in the churban: that the avodah of Jews in galus is more precious to Hashem than ever, which is why one adds in Torah from that day.",
+    "yi": "דער משגיח ערקלערט אז חמשה עשר באב איז דער אנהייב פון די צייט פון יראת שמים און תשובה ביז יום כיפור, א טאג פון שידוכים צווישן דעם רבונו של עולם און כלל ישראל, און דער יום טוב פון דעם גוטן וואס איז באהאלטן אינעם חורבן: אז די עבודה פון אידן אין גלות איז ביים רבונו של עולם טייערער ווי אלעמאל, און דערפאר לייגט מען צו אין תורה פון דעם טאג אן."
+   }
+  }
+ }
 }

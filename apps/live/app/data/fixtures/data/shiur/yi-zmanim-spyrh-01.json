@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "yi-zmanim-spyrh-01",
  "rev": "cb0b3a58b86e",
  "lang": "yi",
@@ -55,7 +55,613 @@
     "t": 402.64,
     "score": 0.395
    }
-  ]
+  ],
+  "titles": {
+   "yi-zmanim-nysn-05": {
+    "title": "לעזור בבית בהכנה לפסח; להתחדש עצמו בזמן התחדשות",
+    "lang": "yi",
+    "years": []
+   },
+   "yi-zmanim-shbs-chzvn-01": {
+    "title": "בשבת חזון נתגלה השמחה של ט' באב לעתיד וכל יהודי רואה בית השלישי בבנינה. ביאור ענין שמיטה",
+    "lang": "yi",
+    "years": [
+     5746
+    ]
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "sefiras-haomer",
+    "salience": 1
+   },
+   {
+    "id": "middos",
+    "salience": 0.85
+   },
+   {
+    "id": "teshuvah",
+    "salience": 0.8
+   },
+   {
+    "id": "sefer-vayikra",
+    "salience": 0.6
+   },
+   {
+    "id": "chodesh-nissan",
+    "salience": 0.5
+   },
+   {
+    "id": "rosh-chodesh",
+    "salience": 0.4
+   },
+   {
+    "id": "moshiach",
+    "salience": 0.35
+   },
+   {
+    "id": "pesach-sheni",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "sefer-vayikra",
+     "avraham-avinu"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "sefiras-haomer",
+     "teshuvah",
+     "shovavim"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "chodesh-nissan",
+     "rosh-chodesh",
+     "mishkan"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "chodesh-nissan",
+     "maaseh-bereishis",
+     "sefiros"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "rosh-chodesh",
+     "otiyos-gematria"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "chodesh-nissan",
+     "mishkan"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "sefer-vayikra",
+     "moshiach",
+     "eliyahu-hanavi"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "eliyahu-hanavi",
+     "moshiach"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "sefiras-haomer",
+     "pesach-sheni",
+     "elul"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "middos",
+     "teshuvah",
+     "sefiras-haomer"
+    ]
+   },
+   {
+    "idx": 10,
+    "topicIds": [
+     "middos",
+     "sefiros"
+    ]
+   },
+   {
+    "idx": 11,
+    "topicIds": [
+     "teshuvah",
+     "middos",
+     "shovavim"
+    ]
+   },
+   {
+    "idx": 12,
+    "topicIds": [
+     "sefer-vayikra",
+     "sefiras-haomer"
+    ]
+   },
+   {
+    "idx": 13,
+    "topicIds": [
+     "sefer-vayikra",
+     "avodah-begashmiyus"
+    ]
+   },
+   {
+    "idx": 14,
+    "topicIds": [
+     "sefer-vayikra",
+     "avodah-begashmiyus"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "avodah-begashmiyus": {
+    "id": "avodah-begashmiyus",
+    "label": {
+     "en": "Serving Hashem in Physical Life",
+     "yi": "עבודה בגשמיות"
+    },
+    "page": true
+   },
+   "avraham-avinu": {
+    "id": "avraham-avinu",
+    "label": {
+     "en": "Avraham Avinu",
+     "yi": "אברהם אבינו"
+    },
+    "page": true
+   },
+   "chodesh-nissan": {
+    "id": "chodesh-nissan",
+    "label": {
+     "en": "Chodesh Nissan",
+     "yi": "חודש ניסן"
+    },
+    "page": true
+   },
+   "eliyahu-hanavi": {
+    "id": "eliyahu-hanavi",
+    "label": {
+     "en": "Eliyahu HaNavi",
+     "yi": "אליהו הנביא"
+    },
+    "page": true
+   },
+   "elul": {
+    "id": "elul",
+    "label": {
+     "en": "Chodesh Elul",
+     "yi": "חודש אלול"
+    },
+    "page": true
+   },
+   "maaseh-bereishis": {
+    "id": "maaseh-bereishis",
+    "label": {
+     "en": "Creation and Its Wonders",
+     "yi": "מעשה בראשית און די נפלאות הבריאה",
+     "he": "מעשה בראשית"
+    },
+    "page": true
+   },
+   "middos": {
+    "id": "middos",
+    "label": {
+     "en": "Middos Tovos",
+     "yi": "מידות טובות",
+     "he": "תיקון המידות"
+    },
+    "page": true
+   },
+   "mishkan": {
+    "id": "mishkan",
+    "label": {
+     "en": "The Mishkan and the Kohanim",
+     "yi": "דער משכן און די כהנים",
+     "he": "המשכן"
+    },
+    "page": true
+   },
+   "moshiach": {
+    "id": "moshiach",
+    "label": {
+     "en": "Moshiach and the Days of Moshiach",
+     "yi": "משיח און ימות המשיח",
+     "he": "ימות המשיח"
+    },
+    "page": true
+   },
+   "otiyos-gematria": {
+    "id": "otiyos-gematria",
+    "label": {
+     "en": "Letters, Gematria and Lashon HaKodesh",
+     "yi": "אותיות, גימטריא און לשון הקודש",
+     "he": "אותיות וגימטריאות"
+    },
+    "page": true
+   },
+   "pesach-sheni": {
+    "id": "pesach-sheni",
+    "label": {
+     "en": "Pesach Sheni",
+     "yi": "פסח שני"
+    },
+    "page": true
+   },
+   "rosh-chodesh": {
+    "id": "rosh-chodesh",
+    "label": {
+     "en": "Rosh Chodesh and the Months",
+     "yi": "ראש חודש און די חדשים",
+     "he": "ראש חודש"
+    },
+    "page": true
+   },
+   "sefer-vayikra": {
+    "id": "sefer-vayikra",
+    "label": {
+     "en": "Sefer Vayikra",
+     "yi": "ספר ויקרא"
+    },
+    "page": true
+   },
+   "sefiras-haomer": {
+    "id": "sefiras-haomer",
+    "label": {
+     "en": "Sefiras HaOmer",
+     "yi": "ספירת העומר"
+    },
+    "page": true
+   },
+   "sefiros": {
+    "id": "sefiros",
+    "label": {
+     "en": "The Sefiros",
+     "yi": "די ספירות",
+     "he": "עשר ספירות"
+    },
+    "page": true
+   },
+   "shovavim": {
+    "id": "shovavim",
+    "label": {
+     "en": "Shovavim",
+     "yi": "שובבי\"ם"
+    },
+    "page": true
+   },
+   "teshuvah": {
+    "id": "teshuvah",
+    "label": {
+     "en": "Teshuvah",
+     "yi": "תשובה"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "esh-zarah",
+    "label": {
+     "en": "Eish zarah (strange fire)",
+     "yi": "אש זרה"
+    },
+    "page": false
+   },
+   {
+    "id": "gaavah",
+    "label": {
+     "en": "Ga'avah (pride)",
+     "yi": "גאוה"
+    },
+    "page": false
+   },
+   {
+    "id": "mazal",
+    "label": {
+     "en": "Mazal (fortune, constellation)",
+     "yi": "מזל"
+    },
+    "page": false
+   },
+   {
+    "id": "mishkan",
+    "label": {
+     "en": "Mishkan (the Tabernacle)",
+     "yi": "משכן"
+    },
+    "page": false
+   },
+   {
+    "id": "miut-hayareach",
+    "label": {
+     "en": "Mi'ut hayareach (the diminishing of the moon)",
+     "yi": "מיעוט הירח"
+    },
+    "page": false
+   },
+   {
+    "id": "pesach-sheni",
+    "label": {
+     "en": "Pesach Sheni (the second Pesach)",
+     "yi": "פסח שני"
+    },
+    "page": false
+   },
+   {
+    "id": "sefiras-haomer",
+    "label": {
+     "en": "Sefiras HaOmer (the counting of the Omer)",
+     "yi": "ספירת העומר"
+    },
+    "page": false
+   },
+   {
+    "id": "shovavim",
+    "label": {
+     "en": "Shovavim (the weeks of Shemos through Mishpatim)",
+     "yi": "שובבים"
+    },
+    "page": false
+   },
+   {
+    "id": "tumas-mes",
+    "label": {
+     "en": "Tumas mes (corpse impurity)",
+     "yi": "טומאת מת"
+    },
+    "page": false
+   },
+   {
+    "id": "yemos-hamashiach",
+    "label": {
+     "en": "Yemos HaMashiach (the days of Moshiach)",
+     "yi": "ימות המשיח"
+    },
+    "page": false
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "yi-zmanim-spyrh-01~src0",
+    "workId": "vayikra",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src1",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src2",
+    "workId": "chasam-sofer",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src3",
+    "workId": "melachim-i",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src4",
+    "workId": "siddur",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src5",
+    "workId": "shemos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src7",
+    "workId": "vayikra",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src8",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src9",
+    "workId": "talmud-bavli",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src11",
+    "workId": "vayikra",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src12",
+    "workId": "midrash",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src13",
+    "workId": "rosh-hashanah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src14",
+    "workId": "tosafos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src15",
+    "workId": "berachos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src18",
+    "workId": "masorah",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src19",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src20",
+    "workId": "megillah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src21",
+    "workId": "zohar",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src22",
+    "workId": "vayikra",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src23",
+    "workId": "yeshayahu",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src24",
+    "workId": "yirmiyahu",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src25",
+    "workId": "berachos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src26",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src27",
+    "workId": "midrash",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src28",
+    "workId": "talmud-bavli",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src29",
+    "workId": "shabbos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src30",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src31",
+    "workId": "chasam-sofer",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src32",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src33",
+    "workId": "sukkah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src34",
+    "workId": "shaarei-kedushah",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src35",
+    "workId": "beer-mayim-chaim",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src36",
+    "workId": "sanhedrin",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src37",
+    "workId": "yesod-hateshuvah",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src38",
+    "workId": "vayikra",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src39",
+    "workId": "vayikra",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src40",
+    "workId": "mishneh-torah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src41",
+    "workId": "rabbeinu-bachya",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src42",
+    "workId": "ramban",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src43",
+    "workId": "shulchan-aruch",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src44",
+    "workId": "vayikra",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src45",
+    "workId": "bnei-yissaschar",
+    "page": true
+   }
+  ],
+  "stories": [],
+  "insights": []
  },
  "notes": {
   "summary": {

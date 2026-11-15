@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "yi-parshas-hashavua-brshys-03",
  "rev": "f32c13f35437",
  "lang": "yi",
@@ -50,7 +50,561 @@
   ],
   "prev": "yi-parshas-hashavua-brshys-01",
   "next": "yi-parshas-hashavua-vyshb-08",
-  "neighbors": []
+  "neighbors": [],
+  "titles": {
+   "yi-parshas-hashavua-brshys-01": {
+    "title": "“ולאדם לא מצא עזר כנגדו” - זה קוב\"ה וכנסת ישראל",
+    "lang": "yi",
+    "years": [
+     5736
+    ]
+   },
+   "yi-parshas-hashavua-vyshb-08": {
+    "title": "בפרשה זו נטמן משיח בן יוסף ומשיח בן דוד. שייכות לחנוכה",
+    "lang": "yi",
+    "years": [
+     5751
+    ]
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "bitachon",
+    "salience": 1
+   },
+   {
+    "id": "adam-harishon",
+    "salience": 0.8
+   },
+   {
+    "id": "nissim-veteva",
+    "salience": 0.6
+   },
+   {
+    "id": "kedushas-eretz-yisroel",
+    "salience": 0.5
+   },
+   {
+    "id": "shidduchim-chasunah",
+    "salience": 0.5
+   },
+   {
+    "id": "umos-haolam",
+    "salience": 0.4
+   },
+   {
+    "id": "chodesh-nissan",
+    "salience": 0.3
+   },
+   {
+    "id": "sukkos",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "adam-harishon",
+     "shidduchim-chasunah"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "bitachon",
+     "sukkos"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "bitachon",
+     "anavah-bittul"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "maaseh-bereishis"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "nissim-veteva"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "shlichus-hanefesh",
+     "umos-haolam"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "adam-harishon",
+     "noach-mabul",
+     "matan-torah"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "kedushas-eretz-yisroel",
+     "umos-haolam"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "chodesh-nissan",
+     "maaseh-bereishis"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "adam-harishon": {
+    "id": "adam-harishon",
+    "label": {
+     "en": "Adam HaRishon and Gan Eden",
+     "yi": "אדם הראשון און גן עדן",
+     "he": "אדם הראשון"
+    },
+    "page": true
+   },
+   "anavah-bittul": {
+    "id": "anavah-bittul",
+    "label": {
+     "en": "Anavah and Bittul",
+     "yi": "ענוה און ביטול",
+     "he": "ענוה וביטול"
+    },
+    "page": true
+   },
+   "bitachon": {
+    "id": "bitachon",
+    "label": {
+     "en": "Bitachon",
+     "yi": "בטחון"
+    },
+    "page": true
+   },
+   "chodesh-nissan": {
+    "id": "chodesh-nissan",
+    "label": {
+     "en": "Chodesh Nissan",
+     "yi": "חודש ניסן"
+    },
+    "page": true
+   },
+   "kedushas-eretz-yisroel": {
+    "id": "kedushas-eretz-yisroel",
+    "label": {
+     "en": "Kedushas Eretz Yisroel",
+     "yi": "קדושת ארץ ישראל"
+    },
+    "page": true
+   },
+   "maaseh-bereishis": {
+    "id": "maaseh-bereishis",
+    "label": {
+     "en": "Creation and Its Wonders",
+     "yi": "מעשה בראשית און די נפלאות הבריאה",
+     "he": "מעשה בראשית"
+    },
+    "page": true
+   },
+   "matan-torah": {
+    "id": "matan-torah",
+    "label": {
+     "en": "Matan Torah at Har Sinai",
+     "yi": "מתן תורה ביי הר סיני",
+     "he": "מתן תורה"
+    },
+    "page": true
+   },
+   "nissim-veteva": {
+    "id": "nissim-veteva",
+    "label": {
+     "en": "Miracles and Nature",
+     "yi": "ניסים און טבע",
+     "he": "נס וטבע"
+    },
+    "page": true
+   },
+   "noach-mabul": {
+    "id": "noach-mabul",
+    "label": {
+     "en": "Noach and the Mabul",
+     "yi": "נח און דער מבול",
+     "he": "נח והמבול"
+    },
+    "page": true
+   },
+   "shidduchim-chasunah": {
+    "id": "shidduchim-chasunah",
+    "label": {
+     "en": "Shidduchim and Chasunah",
+     "yi": "שידוכים און חתונה",
+     "he": "שידוכים וחתונה"
+    },
+    "page": true
+   },
+   "shlichus-hanefesh": {
+    "id": "shlichus-hanefesh",
+    "label": {
+     "en": "A Person's Mission in the World",
+     "yi": "דער תפקיד פון א מענטש אויף דער וועלט",
+     "he": "שליחות"
+    },
+    "page": true
+   },
+   "sukkos": {
+    "id": "sukkos",
+    "label": {
+     "en": "Sukkos",
+     "yi": "סוכות",
+     "he": "חג הסוכות"
+    },
+    "page": true
+   },
+   "umos-haolam": {
+    "id": "umos-haolam",
+    "label": {
+     "en": "Yisroel and the Nations",
+     "yi": "אידן און די אומות העולם",
+     "he": "ישראל והעמים"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "bechirah",
+    "label": {
+     "en": "Bechirah (free choice)",
+     "yi": "בחירה"
+    },
+    "page": false
+   },
+   {
+    "id": "bitachon",
+    "label": {
+     "en": "Bitachon (trust in Hashem)",
+     "yi": "בטחון"
+    },
+    "page": false
+   },
+   {
+    "id": "bittul",
+    "label": {
+     "en": "Bittul (self-nullification)",
+     "yi": "ביטול"
+    },
+    "page": false
+   },
+   {
+    "id": "dor-haflagah",
+    "label": {
+     "en": "Dor HaPalagah (the generation of the Tower of Bavel)",
+     "yi": "דור הפלגה"
+    },
+    "page": false
+   },
+   {
+    "id": "hachodesh-hazeh-lachem",
+    "label": {
+     "en": "Hachodesh hazeh lachem (\"this month is for you\")",
+     "yi": "החודש הזה לכם"
+    },
+    "page": false
+   },
+   {
+    "id": "listim-atem",
+    "label": {
+     "en": "Listim atem (\"you are bandits\")",
+     "yi": "ליסטים אתם"
+    },
+    "page": false
+   },
+   {
+    "id": "maaseh-bereishis",
+    "label": {
+     "en": "Ma'aseh Bereishis (the work of creation)",
+     "yi": "מעשה בראשית"
+    },
+    "page": false
+   },
+   {
+    "id": "mabul",
+    "label": {
+     "en": "Mabul (the Flood)",
+     "yi": "מבול"
+    },
+    "page": false
+   },
+   {
+    "id": "mann",
+    "label": {
+     "en": "Mann (the manna)",
+     "yi": "מן"
+    },
+    "page": false
+   },
+   {
+    "id": "ribono-shel-olam",
+    "label": {
+     "en": "Ribono shel Olam (Master of the World)",
+     "yi": "רבונו של עולם"
+    },
+    "page": true
+   },
+   {
+    "id": "sheva-mitzvos-bnei-noach",
+    "label": {
+     "en": "Sheva mitzvos bnei Noach (the seven Noahide laws)",
+     "yi": "שבע מצוות בני נח"
+    },
+    "page": false
+   },
+   {
+    "id": "sukkah",
+    "label": {
+     "en": "Sukkah (the sukkah)",
+     "yi": "סוכה"
+    },
+    "page": true
+   },
+   {
+    "id": "tardemah",
+    "label": {
+     "en": "Tardemah (deep sleep)",
+     "yi": "תרדמה"
+    },
+    "page": false
+   },
+   {
+    "id": "teva",
+    "label": {
+     "en": "Teva (nature)",
+     "yi": "טבע"
+    },
+    "page": false
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src0",
+    "workId": "midrash",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src1",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src2",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src3",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src4",
+    "workId": "yevamos",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src5",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src6",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src7",
+    "workId": "midrash",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src8",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src9",
+    "workId": "melachim-ii",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src10",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src11",
+    "workId": "talmud-bavli",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src12",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src13",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src14",
+    "workId": "bereishis-rabbah",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src15",
+    "workId": "mishnah-sukkah",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src16",
+    "workId": "chovos-halevavos",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src17",
+    "workId": "yoma",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src18",
+    "workId": "bamidbar",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src19",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src20",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src21",
+    "workId": "shemos",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src22",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src23",
+    "workId": "shabbos",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src24",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src25",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src26",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src27",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src28",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src29",
+    "workId": "sanhedrin",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src30",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src31",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src32",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src33",
+    "workId": "talmud-bavli",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src35",
+    "workId": "yoma",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src36",
+    "workId": "talmud-bavli",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src37",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src38",
+    "workId": "tehillim",
+    "page": true
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~st0",
+    "storyId": "chizkiyahu-sleeps-during-sanherivs-siege",
+    "tellings": 2,
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~st1",
+    "storyId": "the-man-who-nursed-his-infant",
+    "tellings": 1,
+    "page": false
+   }
+  ],
+  "insights": []
  },
  "notes": {
   "summary": {

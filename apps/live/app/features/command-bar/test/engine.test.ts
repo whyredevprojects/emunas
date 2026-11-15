@@ -4,6 +4,7 @@
  * engine works from files the service worker has cached.
  */
 import { describe, expect, it } from "vitest";
+import { LIVE_DATA_SCHEMA_VERSION } from "../../../data/index.ts";
 import { createQuickSearch, perekNumbers, yearCandidates, type QuickSearch, type Suggestion } from "../engine.ts";
 import { CORPUS, FACETS, quickIndexFile } from "./data.ts";
 
@@ -23,7 +24,7 @@ describe("engine construction", () => {
     expect(rebuilt().shippedIndex).toBe(false);
     const placeholder = createQuickSearch({
       ui: "en",
-      quick: { schemaVersion: 1, lang: "en", options: { fields: ["title"], storeFields: ["title"], idField: "id" }, index: { fixture: true } },
+      quick: { schemaVersion: LIVE_DATA_SCHEMA_VERSION, lang: "en", options: { fields: ["title"], storeFields: ["title"], idField: "id" }, index: { fixture: true } },
       corpus: CORPUS,
       facets: FACETS,
     });

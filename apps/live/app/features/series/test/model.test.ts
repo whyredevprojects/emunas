@@ -1,6 +1,7 @@
 /**
  * W3.8 acceptance: all 17 real series are listed and their parts come out in `seriesOrder`; Tanya is
- * laid out by perek across both languages; progress and the view switch behave.
+ * laid out by perek; progress and the view switch behave. C1.7 (concept-live-corpus F.1): nothing
+ * pairs a course with one in the other language (one series per index row, no side-by-side view).
  *
  * `real-series.json` is the real catalog's series structure (see `make-real-series.ts`).
  */
@@ -39,7 +40,6 @@ function toSeriesFile(r: RealSeries, seed = 7): SeriesFile {
     id: r.id,
     title: { en: r.id, yi: r.id },
     lang: r.lang,
-    sibling: r.sibling,
     parts: shuffle(
       r.parts.map((p) => part(p.shiurId, p.order, p.perek)),
       seed,
@@ -51,7 +51,7 @@ function toSeriesFile(r: RealSeries, seed = 7): SeriesFile {
 function facetsOf(series: readonly RealSeries[]): Pick<FacetsFile, "series"> {
   return {
     series: Object.fromEntries(
-      series.map((s) => [s.id, { label: { en: s.id, yi: s.id }, count: s.parts.length, lang: s.lang, sibling: s.sibling }]),
+      series.map((s) => [s.id, { label: { en: s.id, yi: s.id }, count: s.parts.length, lang: s.lang }]),
     ),
   };
 }
@@ -75,17 +75,12 @@ describe("the 17 real series", () => {
     });
   }
 
-  it("the index lists every series once, siblings paired on one row", () => {
+  it("the index lists every series once, one per row: no course is paired with another", () => {
     const rows = seriesIndex(facetsOf(REAL));
     const ids = rows.flatMap((row) => row.entries.map((e) => e.id));
     expect(ids.sort()).toEqual(REAL.map((s) => s.id).sort());
-    const pairs = rows.filter((row) => row.entries.length === 2).map((row) => row.entries.map((e) => e.id));
-    expect(pairs).toEqual([
-      ["emunah-yi", "emunah-en"],
-      ["tanya-yi", "tanya-en"],
-      ["tefila-yi", "tefila-en"],
-    ]);
-    expect(rows).toHaveLength(14);
+    expect(rows.every((row) => row.entries.length === 1)).toBe(true);
+    expect(rows).toHaveLength(17);
   });
 
   it("Tanya by perek: every placed part of both languages under each perek it covers, perakim in order", () => {
@@ -153,16 +148,15 @@ describe("orderParts", () => {
 });
 
 describe("seriesIndex", () => {
-  it("ignores a sibling that is not listed and never makes rows of three", () => {
+  it("keeps the facets order, one series per row", () => {
     const rows = seriesIndex({
       series: {
-        a: { label: { en: "A", yi: "A" }, count: 1, lang: "yi", sibling: "b" },
-        b: { label: { en: "B", yi: "B" }, count: 1, lang: "en", sibling: "a" },
-        c: { label: { en: "C", yi: "C" }, count: 1, lang: "en", sibling: "a" },
-        d: { label: { en: "D", yi: "D" }, count: 1, lang: "en", sibling: "zzz" },
+        a: { label: { en: "A", yi: "A" }, count: 1, lang: "yi" },
+        b: { label: { en: "B", yi: "B" }, count: 1, lang: "en" },
+        c: { label: { en: "C", yi: "C" }, count: 1, lang: "en" },
       },
     });
-    expect(rows.map((r) => r.entries.map((e) => e.id))).toEqual([["a", "b"], ["c"], ["d"]]);
+    expect(rows.map((r) => r.entries.map((e) => e.id))).toEqual([["a"], ["b"], ["c"]]);
   });
 });
 
@@ -189,10 +183,10 @@ describe("seriesProgress", () => {
 
 describe("viewFromQuery", () => {
   it("only offers views the series supports", () => {
-    expect(viewFromQuery("?view=perek", { hasPerek: true, hasSibling: false })).toBe("perek");
-    expect(viewFromQuery("?view=perek", { hasPerek: false, hasSibling: true })).toBe("order");
-    expect(viewFromQuery("?view=both", { hasPerek: false, hasSibling: true })).toBe("both");
-    expect(viewFromQuery("?view=both", { hasPerek: true, hasSibling: false })).toBe("order");
-    expect(viewFromQuery("", { hasPerek: true, hasSibling: true })).toBe("order");
+    expect(viewFromQuery("?view=perek", { hasPerek: true })).toBe("perek");
+    expect(viewFromQuery("?view=perek", { hasPerek: false })).toBe("order");
+    // The side-by-side view is gone (F.1): an old link falls back to the parts in order.
+    expect(viewFromQuery("?view=both", { hasPerek: true })).toBe("order");
+    expect(viewFromQuery("", { hasPerek: true })).toBe("order");
   });
 });

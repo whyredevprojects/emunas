@@ -5,7 +5,7 @@ import type { HebrewDate } from "@emunas/calendar";
 import type { L } from "@emunas/corpus/public";
 import { formatHebrewYear, hebrewNumeral, hebrewYearParts, type UiLang } from "@emunas/i18n";
 import { OCCASIONS, PARSHIYOS } from "@emunas/normalize";
-import type { FacetLabel, FacetsFile, MomentKind, ShiurFile } from "./live-data.ts";
+import type { FacetLabel, FacetsFile, MomentKind, ShiurFile, TodayFile } from "./live-data.ts";
 
 /** "5 Kislev 5787" / "ה׳ כסלו תשפ״ז". */
 export function formatHebrewDate(d: HebrewDate, ui: UiLang): string {
@@ -42,11 +42,17 @@ function tableLabel(key: string): { en: string; yi: string } | undefined {
 }
 
 /**
- * The label for an occasion key: from `facets.json` (what the build published), else from the
- * `@emunas/normalize` tables (for a key with no shiurim yet), else the key made readable.
+ * The label for an occasion key: from the data file at hand (`today.json` states it where it differs
+ * from the shared tables; Explore passes `facets.json`), else from the `@emunas/normalize` tables,
+ * else the key made readable.
  */
-export function occasionLabel(key: string, facets: FacetsFile | null, ui: UiLang): string {
-  const f: FacetLabel | undefined = facets?.occasion[key]?.label;
+export function occasionLabel(
+  key: string,
+  source: Pick<TodayFile, "occasions"> | Pick<FacetsFile, "occasion"> | null,
+  ui: UiLang,
+): string {
+  const f: FacetLabel | undefined =
+    source === null ? undefined : "occasions" in source ? source.occasions[key]?.label : source.occasion[key]?.label;
   if (f) return f[ui];
   return tableLabel(key)?.[ui] ?? humanizeKey(key);
 }

@@ -4,7 +4,11 @@
  * - at most 18,000 files in the deployed client (`build/client`: data + prerendered HTML + assets);
  *   before the app build, the data tree plus a projected prerender count must fit;
  * - at most 25 MiB for any file;
- * - per-file size targets (brotli) for the data files, and at most 1,000 work files.
+ * - per-file size targets (brotli) for the data files, and at most 1,000 work files;
+ * - the corpus layer's files (corpus-wave-plan §4, C1.7): topic tree ≤ 8 KiB, topic file and topic
+ *   moment page ≤ 24 KiB, thread and story file ≤ 6 KiB, stories index ≤ 120 KiB, glossary shard
+ *   ≤ 8 KiB, today ≤ 30 KiB (all brotli). The median growth of a shiur file (≤ 2 KiB) is checked by
+ *   `real-data.test.ts`, since it needs the file without its additions.
  *
  * Sizes are measured with brotli at quality 5, close to on-the-fly edge compression and below what
  * a precompressing deploy would get, so the targets are checked conservatively.
@@ -13,6 +17,7 @@ import { existsSync, readFileSync, statSync } from "node:fs";
 import { join, relative, sep } from "node:path";
 import { brotliCompressSync, constants } from "node:zlib";
 import type { EntitiesFile } from "@emunas/corpus/aggregate";
+import { readLayerLists } from "../app/seo/corpus.server.ts";
 import { MAX_FILES, MAX_FILE_BYTES, checkBudgets, walkFiles } from "@emunas/corpus-guard/budgets";
 import type { DataKind } from "../app/data/types.ts";
 import { kindOfFile } from "./schemas.ts";
@@ -33,6 +38,14 @@ export const BR_TARGETS: Partial<Record<DataKind, number>> = {
   stories: 120 * KB,
   quickIndex: 600 * KB,
   build: 4 * KB,
+  // Corpus layer (plan §4).
+  topics: 8 * KB,
+  topic: 24 * KB,
+  topicMoments: 24 * KB,
+  thread: 6 * KB,
+  story: 6 * KB,
+  storiesIndex: 120 * KB,
+  glossary: 8 * KB,
 };
 
 /**
@@ -102,14 +115,21 @@ export interface LiveBudgetOptions {
  */
 export const APP_BUILD_FILES = 120;
 
-/** Keys whose entity routes the build prerenders (`.corpus/entities.json`, W4.5 `prerenderPaths`). */
+/**
+ * Keys whose entity routes the build prerenders (W4.5 `prerenderPaths`): with a corpus layer, the
+ * Live page flags of `.corpus/layer/` (C1.7); without one, `.corpus/entities.json`.
+ */
 export interface PrerenderSets {
-  /** Works with `livePrerender` (≥3 shiurim, not a genre label). */
+  /** Works with a Live page (≥3 shiurim, not a genre label). */
   works: ReadonlySet<string>;
   people: ReadonlySet<string>;
   concepts: ReadonlySet<string>;
   /** Occasions with at least `OCCASION_PRERENDER_MIN` (2) shiurim. */
   occasions: ReadonlySet<string>;
+  /** Corpus layer: every topic, threads of ≥3 shiurim, stories told at least twice. */
+  topics?: ReadonlySet<string>;
+  threads?: ReadonlySet<string>;
+  stories?: ReadonlySet<string>;
 }
 
 /** W4.5 `OCCASION_PRERENDER_MIN` (app/seo/model.ts). */
@@ -125,23 +145,39 @@ export function prerenderSetsFromEntities(entities: EntitiesFile): PrerenderSets
   };
 }
 
-/** `prerenderSetsFromEntities` of `<corpusDir>/entities.json`, or null when there is none. */
+/**
+ * The prerender sets of `<corpusDir>`: occasions from `entities.json`, entity routes from the corpus
+ * layer's Live page flags when there is a layer (else from `entities.json`). Null without either.
+ */
 export function prerenderSetsFromCorpus(corpusDir: string | null | undefined): PrerenderSets | null {
   const file = corpusDir ? join(corpusDir, "entities.json") : null;
-  if (!file || !existsSync(file)) return null;
-  return prerenderSetsFromEntities(JSON.parse(readFileSync(file, "utf8")) as EntitiesFile);
+  if (!corpusDir || !file || !existsSync(file)) return null;
+  const legacy = prerenderSetsFromEntities(JSON.parse(readFileSync(file, "utf8")) as EntitiesFile);
+  const layer = readLayerLists(corpusDir);
+  if (!layer) return legacy;
+  const live = (xs: readonly { key: string; prerender: boolean }[]) => new Set(xs.filter((x) => x.prerender).map((x) => x.key));
+  return {
+    works: live(layer.works),
+    people: live(layer.people),
+    concepts: live(layer.concepts),
+    occasions: legacy.occasions,
+    topics: live(layer.topics),
+    threads: live(layer.threads),
+    stories: live(layer.stories),
+  };
 }
 
 /**
  * Pages `react-router build` prerenders over this data tree, by the rules of W4.5's
  * `prerenderPaths` (app/seo/model.ts): per UI language, Today, every shiur, series and occasion
- * (≥2 shiurim) with a data file, and the works, people and concepts with `livePrerender` that have
- * one. One HTML file per page. Without `sets`, every work and entity file counts (an upper bound).
+ * (≥2 shiurim) with a data file, and the works, people, concepts, topics, threads and stories with a
+ * Live page that have one (topic moment pages are data, not routes). One HTML file per page.
+ * Without `sets`, every work, entity, topic, thread and story file counts (an upper bound).
  */
 export function projectedPrerender(dataFiles: Iterable<string>, sets: PrerenderSets | null = null): number {
   let perUi = 1; // Today
   for (const file of dataFiles) {
-    const m = /^(shiur|series|work|entity\/[pco])\/([^/]+)\.json$/u.exec(file);
+    const m = /^(shiur|series|work|entity\/[pco]|topic|thread|story)\/([^/]+)\.json$/u.exec(file);
     if (!m) continue;
     const key = m[2] ?? "";
     switch (m[1]) {
@@ -160,6 +196,17 @@ export function projectedPrerender(dataFiles: Iterable<string>, sets: PrerenderS
         break;
       case "entity/o":
         if (!sets || sets.occasions.has(key)) perUi++;
+        break;
+      case "topic":
+        // `topic/<id>.moments-<n>.json` pages are data, not routes.
+        if (/\.moments-\d+$/u.test(key)) break;
+        if (!sets?.topics || sets.topics.has(key)) perUi++;
+        break;
+      case "thread":
+        if (!sets?.threads || sets.threads.has(key)) perUi++;
+        break;
+      case "story":
+        if (!sets?.stories || sets.stories.has(key)) perUi++;
         break;
     }
   }

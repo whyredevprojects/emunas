@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "en-zmanim-en-rsh-hshnh-03",
  "rev": "0bea938d612f",
  "lang": "en",
@@ -48,7 +48,361 @@
   "sameOccasion": [],
   "prev": null,
   "next": "en-zmanim-en-chvdsh-tbs-02",
-  "neighbors": []
+  "neighbors": [],
+  "titles": {
+   "en-zmanim-en-chvdsh-tbs-02": {
+    "title": "An Explanation of ניטל and the Month of טבת",
+    "lang": "en",
+    "years": [
+     5764
+    ]
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "rosh-hashanah",
+    "salience": 0.95
+   },
+   {
+    "id": "hischadshus",
+    "salience": 0.7
+   },
+   {
+    "id": "aseres-yemei-teshuvah",
+    "salience": 0.55
+   },
+   {
+    "id": "maaseh-bereishis",
+    "salience": 0.55
+   },
+   {
+    "id": "teshuvah",
+    "salience": 0.5
+   },
+   {
+    "id": "yom-kippur",
+    "salience": 0.45
+   },
+   {
+    "id": "shemoneh-esrei",
+    "salience": 0.35
+   },
+   {
+    "id": "tanya",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "rosh-hashanah",
+     "maaseh-bereishis"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "rosh-hashanah",
+     "shemoneh-esrei"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "hischadshus",
+     "maaseh-bereishis"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "tanya",
+     "hischadshus",
+     "rosh-hashanah"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "aseres-yemei-teshuvah",
+     "teshuvah"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "yom-kippur",
+     "pintele-yid"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "aseres-yemei-teshuvah": {
+    "id": "aseres-yemei-teshuvah",
+    "label": {
+     "en": "Aseres Yemei Teshuvah",
+     "yi": "עשרת ימי תשובה"
+    },
+    "page": true
+   },
+   "hischadshus": {
+    "id": "hischadshus",
+    "label": {
+     "en": "Renewal in Avodas Hashem",
+     "yi": "התחדשות אין עבודת השם",
+     "he": "התחדשות"
+    },
+    "page": true
+   },
+   "maaseh-bereishis": {
+    "id": "maaseh-bereishis",
+    "label": {
+     "en": "Creation and Its Wonders",
+     "yi": "מעשה בראשית און די נפלאות הבריאה",
+     "he": "מעשה בראשית"
+    },
+    "page": true
+   },
+   "pintele-yid": {
+    "id": "pintele-yid",
+    "label": {
+     "en": "The Pintele Yid: The Inner Point of Every Jew",
+     "yi": "דער פינטעלע איד: די פנימיות'דיגע נקודה פון יעדן איד",
+     "he": "הנקודה הפנימית שבכל יהודי"
+    },
+    "page": true
+   },
+   "rosh-hashanah": {
+    "id": "rosh-hashanah",
+    "label": {
+     "en": "Rosh Hashanah",
+     "yi": "ראש השנה"
+    },
+    "page": true
+   },
+   "shemoneh-esrei": {
+    "id": "shemoneh-esrei",
+    "label": {
+     "en": "Shemoneh Esrei",
+     "yi": "שמונה עשרה"
+    },
+    "page": true
+   },
+   "tanya": {
+    "id": "tanya",
+    "label": {
+     "en": "Sefer HaTanya",
+     "yi": "ספר התניא"
+    },
+    "page": true
+   },
+   "teshuvah": {
+    "id": "teshuvah",
+    "label": {
+     "en": "Teshuvah",
+     "yi": "תשובה"
+    },
+    "page": true
+   },
+   "yom-kippur": {
+    "id": "yom-kippur",
+    "label": {
+     "en": "Yom Kippur",
+     "yi": "יום כיפור",
+     "he": "יום הכיפורים"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "asarah-maamaros",
+    "label": {
+     "en": "Asarah maamaros (the ten utterances of creation)",
+     "yi": "עשרה מאמרות"
+    },
+    "page": true
+   },
+   {
+    "id": "aseres-yemei-teshuvah",
+    "label": {
+     "en": "Aseres Yemei Teshuvah (the Ten Days of Repentance)",
+     "yi": "עשרת ימי תשובה"
+    },
+    "page": false
+   },
+   {
+    "id": "cheshbon-hanefesh",
+    "label": {
+     "en": "Cheshbon hanefesh (soul-accounting)",
+     "yi": "חשבון הנפש"
+    },
+    "page": true
+   },
+   {
+    "id": "kodesh-hakodashim",
+    "label": {
+     "en": "Kodesh HaKodashim (the Holy of Holies)",
+     "yi": "קודש הקדשים"
+    },
+    "page": false
+   },
+   {
+    "id": "kohen-gadol",
+    "label": {
+     "en": "Kohen Gadol (the High Priest)",
+     "yi": "כהן גדול"
+    },
+    "page": false
+   },
+   {
+    "id": "maaseh-bereishis",
+    "label": {
+     "en": "Ma'aseh Bereishis (the work of creation)",
+     "yi": "מעשה בראשית"
+    },
+    "page": false
+   },
+   {
+    "id": "malchus",
+    "label": {
+     "en": "Malchus (kingship; the sefirah of Malchus)",
+     "yi": "מלכות"
+    },
+    "page": false
+   },
+   {
+    "id": "oneg-shabbos",
+    "label": {
+     "en": "Oneg Shabbos (the delight of Shabbos)",
+     "yi": "עונג שבת"
+    },
+    "page": false
+   },
+   {
+    "id": "retzon-hashem",
+    "label": {
+     "en": "Retzon Hashem (the will of Hashem)",
+     "yi": "רצון השם"
+    },
+    "page": false
+   },
+   {
+    "id": "ribono-shel-olam",
+    "label": {
+     "en": "Ribono shel Olam (Master of the World)",
+     "yi": "רבונו של עולם"
+    },
+    "page": true
+   },
+   {
+    "id": "shabbos-shuvah",
+    "label": {
+     "en": "Shabbos Shuvah (the Shabbos of Return)",
+     "yi": "שבת שובה"
+    },
+    "page": false
+   },
+   {
+    "id": "yom-hadin",
+    "label": {
+     "en": "Yom hadin (the Day of Judgment)",
+     "yi": "יום הדין"
+    },
+    "page": false
+   },
+   {
+    "id": "zichronos",
+    "label": {
+     "en": "Zichronos (the remembrances of Rosh Hashanah)",
+     "yi": "זכרונות"
+    },
+    "page": false
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "en-zmanim-en-rsh-hshnh-03~src0",
+    "workId": "pirkei-avos",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-rsh-hshnh-03~src1",
+    "workId": "rosh-hashanah",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-rsh-hshnh-03~src2",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-rsh-hshnh-03~src3",
+    "workId": "yechezkel",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-rsh-hshnh-03~src4",
+    "workId": "machzor-rosh-hashanah",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-rsh-hshnh-03~src5",
+    "workId": "machzor-rosh-hashanah",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-rsh-hshnh-03~src6",
+    "workId": "bereishis-rabbah",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-rsh-hshnh-03~src9",
+    "workId": "tanya",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-rsh-hshnh-03~src10",
+    "workId": "machzor-rosh-hashanah",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-rsh-hshnh-03~src11",
+    "workId": "shelah",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-rsh-hshnh-03~src12",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-rsh-hshnh-03~src13",
+    "workId": "rosh-hashanah",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-rsh-hshnh-03~src14",
+    "workId": "mishnah-keilim",
+    "page": false
+   },
+   {
+    "momentId": "en-zmanim-en-rsh-hshnh-03~src16",
+    "workId": "yirmiyahu",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-rsh-hshnh-03~src17",
+    "workId": "mishneh-torah",
+    "page": true
+   }
+  ],
+  "stories": [],
+  "insights": []
  },
  "notes": {
   "summary": {

@@ -1,29 +1,20 @@
 /**
- * Data for the listening room: `/data/shiur/<id>.json` (required) and the facet labels (optional,
- * for the series title and the other-language series). Loaded in the component rather than a route
+ * Data for the listening room: `/data/shiur/<id>.json`, and nothing else on first paint. The shiur
+ * file is self-contained (concept-live-corpus G.1, corpus-wave-plan §4): the series title, the titles
+ * of the related shiurim and the corpus-layer labels are all inside it, so the room never waits on
+ * `corpus.json`, `facets.json` or any corpus-wide file. Loaded in the component rather than a route
  * `clientLoader` so the page renders its `h1` immediately (focus after navigation lands on it) and
  * keeps working inside the shell test router; W4.5 can add a prerender `loader` that seeds `initial`.
  */
 import type { L } from "@emunas/corpus/public";
 import { useCallback, useEffect, useState } from "react";
-import {
-  DataError,
-  loadCorpus,
-  loadFacets,
-  loadShiur,
-  loadWriteup,
-  type CorpusRow,
-  type Ed,
-  type FacetsFile,
-  type ShiurFile,
-  type WriteupFile,
-} from "./data.ts";
+import { DataError, loadShiur, loadWriteup, type Ed, type ShiurFile, type WriteupFile } from "./data.ts";
 
 export type RoomData =
   | { status: "loading" }
   | { status: "notFound" }
   | { status: "error"; retry: () => void }
-  | { status: "ready"; shiur: ShiurFile; facets: FacetsFile | null };
+  | { status: "ready"; shiur: ShiurFile };
 
 export function useRoomData(shiurId: string): RoomData {
   const [attempt, setAttempt] = useState(0);
@@ -33,11 +24,9 @@ export function useRoomData(shiurId: string): RoomData {
   useEffect(() => {
     let live = true;
     setData({ status: "loading" });
-    const facets = loadFacets().catch(() => null);
     loadShiur(shiurId)
-      .then(async (shiur) => {
-        const f = await facets;
-        if (live) setData({ status: "ready", shiur, facets: f });
+      .then((shiur) => {
+        if (live) setData({ status: "ready", shiur });
       })
       .catch((e: unknown) => {
         if (!live) return;
@@ -52,11 +41,18 @@ export function useRoomData(shiurId: string): RoomData {
   return data;
 }
 
-/** The series title (both languages) from the facets, or null. */
-export function seriesTitle(shiur: Pick<ShiurFile, "series">, facets: FacetsFile | null): L | null {
-  if (!shiur.series || !facets) return null;
-  const v = facets.series[shiur.series.id];
-  return v ? { en: v.label.en, yi: v.label.yi } : null;
+/** The series title (both languages) from the shiur file, or null. */
+export function seriesTitle(shiur: Pick<ShiurFile, "series" | "seriesTitle">): L | null {
+  if (!shiur.series || !shiur.seriesTitle) return null;
+  return { en: shiur.seriesTitle.en, yi: shiur.seriesTitle.yi };
+}
+
+/** Title, audio language and years of a shiur the file names (related, thread pointers). */
+export type RelatedTitle = ShiurFile["related"]["titles"][string];
+
+/** Titles of the shiurim the room links to, from the shiur file itself. */
+export function relatedTitles(shiur: Pick<ShiurFile, "related">): ReadonlyMap<string, RelatedTitle> {
+  return new Map(Object.entries(shiur.related.titles));
 }
 
 export type WriteupState =
@@ -87,24 +83,4 @@ export function useWriteup(shiur: Pick<ShiurFile, "id" | "notes">, lang: Ed): Wr
     };
   }, [shiur.id, lang, available]);
   return state;
-}
-
-/** Corpus rows by id (titles for Related), loaded when first needed. */
-export function useCorpusRows(enabled: boolean): Map<string, CorpusRow> | null {
-  const [rows, setRows] = useState<Map<string, CorpusRow> | null>(null);
-  useEffect(() => {
-    if (!enabled || rows) return;
-    let live = true;
-    loadCorpus()
-      .then((c) => {
-        if (live) setRows(new Map(c.shiurim.map((r) => [r.id, r])));
-      })
-      .catch(() => {
-        if (live) setRows(new Map());
-      });
-    return () => {
-      live = false;
-    };
-  }, [enabled, rows]);
-  return rows;
 }

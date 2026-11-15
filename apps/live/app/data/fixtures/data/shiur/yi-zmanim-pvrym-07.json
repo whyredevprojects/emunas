@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "yi-zmanim-pvrym-07",
  "rev": "73199156f96f",
  "lang": "yi",
@@ -49,7 +49,346 @@
   "sameOccasion": [],
   "prev": "yi-zmanim-svds-pvrym-ktn-03",
   "next": "yi-zmanim-svds-shvshn-pvrym-01",
-  "neighbors": []
+  "neighbors": [],
+  "titles": {
+   "yi-zmanim-svds-pvrym-ktn-03": {
+    "title": "האור של מגילת אסתר יותר נעלה מאור של תורת משה (חתם סופר)",
+    "lang": "yi",
+    "years": [
+     5765
+    ]
+   },
+   "yi-zmanim-svds-shvshn-pvrym-01": {
+    "title": "יו\"ט ליהודים בעלי מדריגה' ומרדכי לא יכרע- היה בטוח בה'' יו\"ט של לעתיד לבא' פעמונים בשולי המעיל- דור אחרון",
+    "lang": "yi",
+    "years": [
+     5743,
+     5744,
+     5746,
+     5747
+    ]
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "purim",
+    "salience": 0.95
+   },
+   {
+    "id": "kashrus",
+    "salience": 0.55
+   },
+   {
+    "id": "chodesh-adar",
+    "salience": 0.5
+   },
+   {
+    "id": "megillas-esther",
+    "salience": 0.45
+   },
+   {
+    "id": "koach-hatefilah",
+    "salience": 0.35
+   },
+   {
+    "id": "matan-torah",
+    "salience": 0.35
+   },
+   {
+    "id": "sefiros",
+    "salience": 0.3
+   },
+   {
+    "id": "tzipisa-liyeshua",
+    "salience": 0.25
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "chodesh-adar"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "purim"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "purim",
+     "sefiros"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "purim",
+     "kashrus"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "kashrus"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "purim"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "megillas-esther",
+     "koach-hatefilah"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "koach-hatefilah",
+     "tzipisa-liyeshua"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "chodesh-adar": {
+    "id": "chodesh-adar",
+    "label": {
+     "en": "Chodesh Adar",
+     "yi": "חודש אדר"
+    },
+    "page": true
+   },
+   "kashrus": {
+    "id": "kashrus",
+    "label": {
+     "en": "Kashrus and Kedushas HaAchilah",
+     "yi": "כשרות און קדושת האכילה",
+     "he": "כשרות"
+    },
+    "page": true
+   },
+   "koach-hatefilah": {
+    "id": "koach-hatefilah",
+    "label": {
+     "en": "The Power of Tefilah",
+     "yi": "דער כח פון תפילה",
+     "he": "כח התפילה"
+    },
+    "page": true
+   },
+   "matan-torah": {
+    "id": "matan-torah",
+    "label": {
+     "en": "Matan Torah at Har Sinai",
+     "yi": "מתן תורה ביי הר סיני",
+     "he": "מתן תורה"
+    },
+    "page": true
+   },
+   "megillas-esther": {
+    "id": "megillas-esther",
+    "label": {
+     "en": "Megillas Esther",
+     "yi": "מגילת אסתר"
+    },
+    "page": true
+   },
+   "purim": {
+    "id": "purim",
+    "label": {
+     "en": "Purim",
+     "yi": "פורים"
+    },
+    "page": true
+   },
+   "sefiros": {
+    "id": "sefiros",
+    "label": {
+     "en": "The Sefiros",
+     "yi": "די ספירות",
+     "he": "עשר ספירות"
+    },
+    "page": true
+   },
+   "tzipisa-liyeshua": {
+    "id": "tzipisa-liyeshua",
+    "label": {
+     "en": "Awaiting Moshiach",
+     "yi": "ווארטן אויף משיח",
+     "he": "ציפית לישועה"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "eis-ratzon",
+    "label": {
+     "en": "Eis ratzon (a time of Divine favor)",
+     "yi": "עת רצון"
+    },
+    "page": false
+   },
+   {
+    "id": "keser",
+    "label": {
+     "en": "Keser (the crown; the highest sefirah)",
+     "yi": "כתר"
+    },
+    "page": false
+   },
+   {
+    "id": "maachalos-asuros",
+    "label": {
+     "en": "Ma'achalos asuros (forbidden foods)",
+     "yi": "מאכלות אסורות"
+    },
+    "page": false
+   },
+   {
+    "id": "matan-torah",
+    "label": {
+     "en": "Matan Torah (the giving of the Torah)",
+     "yi": "מתן תורה"
+    },
+    "page": false
+   },
+   {
+    "id": "shloshes-yemei-hagbalah",
+    "label": {
+     "en": "Shloshes yemei hagbalah (the three days of preparation before Shavuos)",
+     "yi": "שלשת ימי הגבלה"
+    },
+    "page": false
+   },
+   {
+    "id": "torah-shebaal-peh",
+    "label": {
+     "en": "Torah SheBe'al Peh (the Oral Torah)",
+     "yi": "תורה שבעל פה"
+    },
+    "page": false
+   },
+   {
+    "id": "venahafoch-hu",
+    "label": {
+     "en": "V'nahafoch hu (\"and it was turned around\")",
+     "yi": "ונהפוך הוא"
+    },
+    "page": false
+   },
+   {
+    "id": "yom-kippur",
+    "label": {
+     "en": "Yom Kippur (the Day of Atonement)",
+     "yi": "יום הכפורים"
+    },
+    "page": false
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "yi-zmanim-pvrym-07~src0",
+    "workId": "esther",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-pvrym-07~src1",
+    "workId": "esther",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-pvrym-07~src2",
+    "workId": "taanis",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-pvrym-07~src3",
+    "workId": "mishnah-megillah",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-pvrym-07~src4",
+    "workId": "shabbos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-pvrym-07~src6",
+    "workId": "tikkunei-zohar",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-pvrym-07~src8",
+    "workId": "esther",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-pvrym-07~src10",
+    "workId": "rema",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-pvrym-07~src11",
+    "workId": "mishnah-berurah",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-pvrym-07~src12",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-pvrym-07~src13",
+    "workId": "maor-vashemesh",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-pvrym-07~src14",
+    "workId": "esther",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-pvrym-07~src15",
+    "workId": "esther",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-pvrym-07~src16",
+    "workId": "shmuel-i",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-pvrym-07~src17",
+    "workId": "zechariah",
+    "page": true
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "yi-zmanim-pvrym-07~st0",
+    "storyId": "the-satmar-rav-on-purim",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-pvrym-07~st1",
+    "storyId": "the-shomer-emunim-and-the-silver-kearah",
+    "tellings": 1,
+    "page": false
+   }
+  ],
+  "insights": []
  },
  "notes": {
   "summary": {

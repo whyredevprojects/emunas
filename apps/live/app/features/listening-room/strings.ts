@@ -78,9 +78,7 @@ export const roomEn = {
   "related.next": "Next",
   "related.neighbors": "Same idea elsewhere",
   "related.neighbors.note": "Suggested by similarity of the notes; may be loose.",
-  "related.otherLanguage": "A separate course on this subject in the other language",
   "related.none": "Nothing related is listed yet.",
-  "related.loading": "Loading",
 
   "moment.focused": "The moment this link points to",
   "time.at": "at {time}",
@@ -186,9 +184,7 @@ export const roomYi: MessageTable<RoomKey> = {
   "related.next": "קומענדיגער",
   "related.neighbors": "דער זעלבער געדאנק אנדערש וואו",
   "related.neighbors.note": "פארגעשלאגן לויט ענליכקייט פון די נאטיצן; קען זיין ווייט.",
-  "related.otherLanguage": "א באזונדערע סדרה אויף דער אנדערער שפראך",
   "related.none": "נאך גארנישט ענליכס.",
-  "related.loading": "מ׳לאדט",
 
   "moment.focused": "דער מאמענט וואס דער לינק ווייזט",
   "time.at": "ביי {time}",

@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "yi-zmanim-svkvs-08",
  "rev": "9e2a0036cd41",
  "lang": "yi",
@@ -55,7 +55,706 @@
     "t": 914.48,
     "score": 0.364
    }
-  ]
+  ],
+  "titles": {
+   "yi-parshas-hashavua-brshys-01": {
+    "title": "“ולאדם לא מצא עזר כנגדו” - זה קוב\"ה וכנסת ישראל",
+    "lang": "yi",
+    "years": [
+     5736
+    ]
+   },
+   "yi-zmanim-chnvkh-11": {
+    "title": "דרוש בנס חנוכה - נס הנרות מגלים נס המלחמה",
+    "lang": "yi",
+    "years": [
+     5749
+    ]
+   },
+   "yi-zmanim-lvl-02": {
+    "title": "לדוד ה' אורי - בבטחון תלוי הכל",
+    "lang": "yi",
+    "years": [
+     5740
+    ]
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "sukkos",
+    "salience": 0.95
+   },
+   {
+    "id": "bitachon",
+    "salience": 0.85
+   },
+   {
+    "id": "simcha",
+    "salience": 0.6
+   },
+   {
+    "id": "yaakov-veesav",
+    "salience": 0.5
+   },
+   {
+    "id": "shechinah",
+    "salience": 0.4
+   },
+   {
+    "id": "kedushas-eretz-yisroel",
+    "salience": 0.3
+   },
+   {
+    "id": "shemini-atzeres",
+    "salience": 0.3
+   },
+   {
+    "id": "neviim",
+    "salience": 0.2
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "sukkos",
+     "shechinah",
+     "yesodei-haemunah"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "yaakov-veesav",
+     "sukkos",
+     "beis-hamikdash-churban"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "bitachon",
+     "sukkos"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "sukkos"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "sukkos",
+     "sefer-bamidbar"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "noach-mabul",
+     "mishkan",
+     "sukkos"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "neviim",
+     "bitachon"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "sukkos",
+     "olamos-tzimtzum"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "yaakov-veesav",
+     "bitachon"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "sukkos",
+     "taamei-hamitzvos"
+    ]
+   },
+   {
+    "idx": 10,
+    "topicIds": [
+     "simcha",
+     "bitachon"
+    ]
+   },
+   {
+    "idx": 11,
+    "topicIds": [
+     "bitachon",
+     "tefilah-betzibbur",
+     "shmiras-einayim"
+    ]
+   },
+   {
+    "idx": 12,
+    "topicIds": [
+     "shemini-atzeres",
+     "hoshana-rabbah",
+     "kedushas-eretz-yisroel"
+    ]
+   },
+   {
+    "idx": 13,
+    "topicIds": [
+     "sukkos",
+     "simcha"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "beis-hamikdash-churban": {
+    "id": "beis-hamikdash-churban",
+    "label": {
+     "en": "The Beis HaMikdash and Its Churban",
+     "yi": "דער בית המקדש און דער חורבן",
+     "he": "בית המקדש וחורבנו"
+    },
+    "page": true
+   },
+   "bitachon": {
+    "id": "bitachon",
+    "label": {
+     "en": "Bitachon",
+     "yi": "בטחון"
+    },
+    "page": true
+   },
+   "hoshana-rabbah": {
+    "id": "hoshana-rabbah",
+    "label": {
+     "en": "Hoshana Rabbah",
+     "yi": "הושענא רבה"
+    },
+    "page": true
+   },
+   "kedushas-eretz-yisroel": {
+    "id": "kedushas-eretz-yisroel",
+    "label": {
+     "en": "Kedushas Eretz Yisroel",
+     "yi": "קדושת ארץ ישראל"
+    },
+    "page": true
+   },
+   "mishkan": {
+    "id": "mishkan",
+    "label": {
+     "en": "The Mishkan and the Kohanim",
+     "yi": "דער משכן און די כהנים",
+     "he": "המשכן"
+    },
+    "page": true
+   },
+   "neviim": {
+    "id": "neviim",
+    "label": {
+     "en": "The Neviim and Their Times",
+     "yi": "די נביאים און זייערע צייטן",
+     "he": "נביאים"
+    },
+    "page": true
+   },
+   "noach-mabul": {
+    "id": "noach-mabul",
+    "label": {
+     "en": "Noach and the Mabul",
+     "yi": "נח און דער מבול",
+     "he": "נח והמבול"
+    },
+    "page": true
+   },
+   "olamos-tzimtzum": {
+    "id": "olamos-tzimtzum",
+    "label": {
+     "en": "Tzimtzum, the Worlds and the Merkavah",
+     "yi": "צמצום, עולמות און די מרכבה",
+     "he": "צמצום ועולמות"
+    },
+    "page": true
+   },
+   "sefer-bamidbar": {
+    "id": "sefer-bamidbar",
+    "label": {
+     "en": "Sefer Bamidbar",
+     "yi": "ספר במדבר"
+    },
+    "page": true
+   },
+   "shechinah": {
+    "id": "shechinah",
+    "label": {
+     "en": "The Shechinah and Galus HaShechinah",
+     "yi": "די שכינה און גלות השכינה",
+     "he": "שכינה וגלות השכינה"
+    },
+    "page": true
+   },
+   "shemini-atzeres": {
+    "id": "shemini-atzeres",
+    "label": {
+     "en": "Shemini Atzeres and Simchas Torah",
+     "yi": "שמיני עצרת און שמחת תורה",
+     "he": "שמיני עצרת ושמחת תורה"
+    },
+    "page": true
+   },
+   "shmiras-einayim": {
+    "id": "shmiras-einayim",
+    "label": {
+     "en": "Shmiras Einayim",
+     "yi": "שמירת עינים"
+    },
+    "page": true
+   },
+   "simcha": {
+    "id": "simcha",
+    "label": {
+     "en": "Serving Hashem with Simcha",
+     "yi": "עבודת השם בשמחה",
+     "he": "שמחה"
+    },
+    "page": true
+   },
+   "sukkos": {
+    "id": "sukkos",
+    "label": {
+     "en": "Sukkos",
+     "yi": "סוכות",
+     "he": "חג הסוכות"
+    },
+    "page": true
+   },
+   "taamei-hamitzvos": {
+    "id": "taamei-hamitzvos",
+    "label": {
+     "en": "The Reasons and Power of the Mitzvos",
+     "yi": "טעמי המצוות און דער כח פון א מצוה",
+     "he": "טעמי המצוות"
+    },
+    "page": true
+   },
+   "tefilah-betzibbur": {
+    "id": "tefilah-betzibbur",
+    "label": {
+     "en": "Davening with the Tzibbur and the Beis HaKnesses",
+     "yi": "דאווענען מיט'ן ציבור און דער בית הכנסת",
+     "he": "תפילה בציבור"
+    },
+    "page": true
+   },
+   "yaakov-veesav": {
+    "id": "yaakov-veesav",
+    "label": {
+     "en": "Yitzchak, Yaakov and Esav",
+     "yi": "יצחק, יעקב און עשו",
+     "he": "יעקב ועשו"
+    },
+    "page": true
+   },
+   "yesodei-haemunah": {
+    "id": "yesodei-haemunah",
+    "label": {
+     "en": "Foundations of Emunah",
+     "yi": "יסודי האמונה"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "ananei-hakavod",
+    "label": {
+     "en": "Ananei HaKavod (the Clouds of Glory)",
+     "yi": "ענני הכבוד"
+    },
+    "page": false
+   },
+   {
+    "id": "atzvus",
+    "label": {
+     "en": "Atzvus (sadness, gloom)",
+     "yi": "עצבות"
+    },
+    "page": false
+   },
+   {
+    "id": "bitachon",
+    "label": {
+     "en": "Bitachon (trust in Hashem)",
+     "yi": "בטחון"
+    },
+    "page": false
+   },
+   {
+    "id": "gmar-chasimah",
+    "label": {
+     "en": "Gmar chasimah (the final sealing)",
+     "yi": "גמר חתימה"
+    },
+    "page": false
+   },
+   {
+    "id": "kfitzas-haderech",
+    "label": {
+     "en": "Kfitzas haderech (miraculous shortening of the way)",
+     "yi": "קפיצת הדרך"
+    },
+    "page": false
+   },
+   {
+    "id": "makif",
+    "label": {
+     "en": "Makif (the encompassing light)",
+     "yi": "מקיף"
+    },
+    "page": false
+   },
+   {
+    "id": "ruach-hakodesh",
+    "label": {
+     "en": "Ruach hakodesh (Divine inspiration)",
+     "yi": "רוח הקודש"
+    },
+    "page": true
+   },
+   {
+    "id": "shemini-atzeres",
+    "label": {
+     "en": "Shemini Atzeres (the eighth-day festival after Sukkos)",
+     "yi": "שמיני עצרת"
+    },
+    "page": false
+   },
+   {
+    "id": "simchas-beis-hashoevah",
+    "label": {
+     "en": "Simchas Beis HaSho'evah (the water-drawing celebration)",
+     "yi": "שמחת בית השואבה"
+    },
+    "page": false
+   },
+   {
+    "id": "sukkah",
+    "label": {
+     "en": "Sukkah (the sukkah)",
+     "yi": "סוכה"
+    },
+    "page": true
+   },
+   {
+    "id": "teivah",
+    "label": {
+     "en": "Teivah (Noach's ark; also a word)",
+     "yi": "תיבה"
+    },
+    "page": false
+   },
+   {
+    "id": "tzila-dimheimnusa",
+    "label": {
+     "en": "Tzila d'meheimnusa (the shade of faith (the sukkah))",
+     "yi": "צילא דמהימנותא"
+    },
+    "page": false
+   },
+   {
+    "id": "zecher-lamikdash",
+    "label": {
+     "en": "Zecher laMikdash (remembrance of the Temple)",
+     "yi": "זכר למקדש"
+    },
+    "page": false
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "yi-zmanim-svkvs-08~src0",
+    "workId": "shir-hashirim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src1",
+    "workId": "zohar",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src3",
+    "workId": "siddur",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src5",
+    "workId": "midrash",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src6",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src7",
+    "workId": "zohar",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src8",
+    "workId": "rashi-on-bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src9",
+    "workId": "zera-kodesh",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src10",
+    "workId": "shir-hashirim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src11",
+    "workId": "beis-aharon",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src12",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src14",
+    "workId": "sukkah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src15",
+    "workId": "vayikra",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src16",
+    "workId": "tur",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src17",
+    "workId": "bach",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src18",
+    "workId": "targum-onkelos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src19",
+    "workId": "megillah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src20",
+    "workId": "peirush-hamishnayos",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src21",
+    "workId": "divrei-chaim",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src22",
+    "workId": "eruvin",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src23",
+    "workId": "rokeach",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src24",
+    "workId": "rashi-on-the-torah",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src25",
+    "workId": "zohar",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src26",
+    "workId": "talmud-yerushalmi",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src27",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src28",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src29",
+    "workId": "mishnah-sukkah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src30",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src31",
+    "workId": "vayikra",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src32",
+    "workId": "zohar",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src34",
+    "workId": "mishnah-sukkah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src35",
+    "workId": "sukkah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src36",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src37",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src38",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src39",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src40",
+    "workId": "siddur",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src41",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src42",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src45",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src46",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src47",
+    "workId": "shemos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src48",
+    "workId": "beer-mayim-chaim",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src49",
+    "workId": "pirkei-avos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src50",
+    "workId": "rosh-hashanah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src51",
+    "workId": "zohar",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src53",
+    "workId": "makkos",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src54",
+    "workId": "midrash",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src55",
+    "workId": "yerushalmi-sukkah",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src56",
+    "workId": "shut-divrei-chaim",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src57",
+    "workId": "shemoneh-esrei",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src59",
+    "workId": "tehillim",
+    "page": true
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "yi-zmanim-svkvs-08~st0",
+    "storyId": "chizkiyahu-sleeps-during-sanherivs-siege",
+    "tellings": 2,
+    "page": true
+   }
+  ],
+  "insights": []
  },
  "notes": {
   "summary": {

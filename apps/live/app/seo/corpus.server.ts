@@ -1,11 +1,24 @@
 /**
  * Build-time reader: `.corpus/` → `SeoCorpus` (W4.5). Node only (`.server` keeps it out of the
- * client bundle). Reads the aggregate files and `index.json` only, never per-shiur files and never
- * anything under the pipeline's `data/` folder (integration-plan §1.4 C3).
+ * client bundle). Reads the aggregate files, `index.json` and the corpus layer's entity files
+ * (`layer/`, C1.7), never per-shiur files and never anything under the pipeline's `data/` folder
+ * (integration-plan §1.4 C3). With a layer, works, people and concepts are corpus ids and every
+ * page flag comes from the layer, by the same rules as the data emit (`app/data/live-pages.ts`).
  */
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { dirname, join, relative, resolve, sep } from "node:path";
-import type { CorpusIndex } from "@emunas/corpus/public";
+import {
+  LAYER_DIR,
+  LAYER_FILES,
+  type CorpusIndex,
+  type LayerConcept,
+  type LayerPerson,
+  type LayerStory,
+  type LayerThread,
+  type LayerTopicNode,
+  type LayerWork,
+} from "@emunas/corpus/public";
+import { liveConceptPage, livePersonPage, liveStoryPage, liveThreadPage, liveTopicPage, liveWorkPage } from "../data/live-pages.ts";
 import type {
   ConceptsFile,
   EntitiesFile,
@@ -35,6 +48,76 @@ export function findCorpusDir(env: Readonly<Record<string, string | undefined>>,
     if (up === dir) return null;
     dir = up;
   }
+}
+
+const arr = <T>(x: unknown): T[] => (Array.isArray(x) ? (x as T[]) : []);
+const str = (x: unknown): string => (typeof x === "string" ? x : "");
+
+interface LayerLists {
+  topics: SeoEntity[];
+  concepts: SeoEntity[];
+  people: SeoEntity[];
+  works: SeoEntity[];
+  stories: SeoEntity[];
+  threads: SeoEntity[];
+}
+
+/** The corpus layer's entities with their page flags, or null when `.corpus/layer/` is off or absent. */
+export function readLayerLists(corpusDir: string): LayerLists | null {
+  const dir = join(corpusDir, LAYER_DIR);
+  const info = join(dir, LAYER_FILES.layer);
+  if (!existsSync(info)) return null;
+  if ((JSON.parse(readFileSync(info, "utf8")) as { enabled?: unknown }).enabled === false) return null;
+  const read = (file: string): Record<string, unknown> => {
+    const p = join(dir, file);
+    return existsSync(p) ? (JSON.parse(readFileSync(p, "utf8")) as Record<string, unknown>) : {};
+  };
+  const quiet = (x: { pages?: { quiet?: unknown } | null }) => x.pages?.quiet === true;
+  return {
+    topics: arr<LayerTopicNode>(read(LAYER_FILES.topics)["tree"]).map((t) => ({
+      key: t.id,
+      label: { en: str(t.label?.en), yi: str(t.label?.yi) },
+      count: t.count,
+      prerender: liveTopicPage(t),
+      quietPage: quiet(t),
+    })),
+    concepts: arr<LayerConcept>(read(LAYER_FILES.concepts)["concepts"]).map((c) => ({
+      key: c.id,
+      label: { en: str(c.label?.en) || str(c.canonicalHe), yi: str(c.label?.yi) || str(c.canonicalHe) },
+      count: c.count,
+      prerender: liveConceptPage(c),
+      quietPage: quiet(c),
+      topicId: c.mergedIntoTopic ?? null,
+    })),
+    people: arr<LayerPerson>(read(LAYER_FILES.people)["people"]).map((p) => ({
+      key: p.id,
+      label: { en: str(p.nameEn), yi: str(p.nameYi) || str(p.nameHe) || str(p.nameEn) },
+      count: p.count,
+      prerender: livePersonPage(p),
+      quietPage: quiet(p),
+    })),
+    works: arr<LayerWork>(read(LAYER_FILES.works)["works"]).map((w) => ({
+      key: w.id,
+      label: { en: str(w.titleEn), yi: str(w.titleHe) || str(w.titleEn) },
+      count: w.count,
+      prerender: liveWorkPage(w),
+      quietPage: quiet(w),
+    })),
+    stories: arr<LayerStory>(read(LAYER_FILES.stories)["stories"]).map((s) => ({
+      key: s.id,
+      label: { en: str(s.title?.en), yi: str(s.title?.yi) },
+      count: arr(s.tellings).length,
+      prerender: liveStoryPage(s),
+      quietPage: quiet(s),
+    })),
+    threads: arr<LayerThread>(read(LAYER_FILES.threads)["threads"]).map((t) => ({
+      key: t.id,
+      label: { en: str(t.label?.en), yi: str(t.label?.yi) },
+      count: t.shiurCount,
+      prerender: liveThreadPage(t),
+      quietPage: false,
+    })),
+  };
 }
 
 export function readSeoCorpus(corpusDir: string): SeoCorpus {
@@ -76,14 +159,22 @@ export function readSeoCorpus(corpusDir: string): SeoCorpus {
   const entity = (counts: readonly EntityCount[], label: (key: string) => SeoLabel): SeoEntity[] =>
     counts.map((c) => ({ key: c.key, label: label(c.key), count: c.shiurim, prerender: c.livePrerender }));
 
+  const layer = readLayerLists(corpusDir);
+  if (layer) return { shiurim, series, occasions, ...layer, layer: true };
+
   const works = new Map(worksFile.works.map((w) => [w.key, w]));
   const people = new Map(peopleFile.people.map((p) => [p.key, p]));
   const concepts = new Map(conceptsFile.concepts.map((c) => [c.key, c]));
-  // Every entity in entities.json (for the Quiet thresholds); labels from the aggregate files.
+  // Without a layer: every entity in entities.json (for the Quiet thresholds); labels from the
+  // aggregate files.
   return {
     shiurim,
     series,
     occasions,
+    topics: [],
+    stories: [],
+    threads: [],
+    layer: false,
     works: entity(entities.works, (key) => {
       const w = works.get(key);
       return w ? { en: w.en, yi: w.yi ?? w.he ?? w.en } : { en: key, yi: key };

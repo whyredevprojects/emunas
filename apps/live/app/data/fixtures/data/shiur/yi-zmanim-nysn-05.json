@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "yi-zmanim-nysn-05",
  "rev": "fa1d80a2d8cc",
  "lang": "yi",
@@ -60,7 +60,589 @@
     "t": 2291.61,
     "score": 0.368
    }
-  ]
+  ],
+  "titles": {
+   "en-zmanim-en-psch-06": {
+    "title": "The Beginning of our Nuptials with Hashem",
+    "lang": "en",
+    "years": [
+     5765
+    ]
+   },
+   "yi-zmanim-spyrh-01": {
+    "title": "בימי ספירה צריכים לעשות תשובה על שורש העבירות - המדות (שייכות לפרשת קדושים)",
+    "lang": "yi",
+    "years": [
+     5742
+    ]
+   },
+   "yi-zmanim-svds-shvshn-pvrym-01": {
+    "title": "יו\"ט ליהודים בעלי מדריגה' ומרדכי לא יכרע- היה בטוח בה'' יו\"ט של לעתיד לבא' פעמונים בשולי המעיל- דור אחרון",
+    "lang": "yi",
+    "years": [
+     5743,
+     5744,
+     5746,
+     5747
+    ]
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "hischadshus",
+    "salience": 0.9
+   },
+   {
+    "id": "chodesh-nissan",
+    "salience": 0.8
+   },
+   {
+    "id": "chametz",
+    "salience": 0.65
+   },
+   {
+    "id": "matzah",
+    "salience": 0.6
+   },
+   {
+    "id": "korbanos",
+    "salience": 0.5
+   },
+   {
+    "id": "yetzer-hara",
+    "salience": 0.45
+   },
+   {
+    "id": "avraham-avinu",
+    "salience": 0.4
+   },
+   {
+    "id": "bayis-neeman",
+    "salience": 0.4
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "korbanos",
+     "chametz",
+     "bayis-neeman"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "chodesh-nissan",
+     "maaseh-bereishis"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "chodesh-nissan",
+     "adam-harishon",
+     "ketz-hageulah"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "hischadshus",
+     "teshuvah"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "chodesh-nissan",
+     "hischadshus",
+     "shir-hashirim"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "matzah",
+     "hiskashrus-tzaddikim",
+     "moshe-rabbeinu"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "madreigos-haneshamah",
+     "yetzer-hara",
+     "shlichus-hanefesh"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "yetzer-hara",
+     "middos"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "avraham-avinu",
+     "chinuch-habanim",
+     "leil-haseder"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "rebbes-hador",
+     "simcha",
+     "hischadshus"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "adam-harishon": {
+    "id": "adam-harishon",
+    "label": {
+     "en": "Adam HaRishon and Gan Eden",
+     "yi": "אדם הראשון און גן עדן",
+     "he": "אדם הראשון"
+    },
+    "page": true
+   },
+   "avraham-avinu": {
+    "id": "avraham-avinu",
+    "label": {
+     "en": "Avraham Avinu",
+     "yi": "אברהם אבינו"
+    },
+    "page": true
+   },
+   "bayis-neeman": {
+    "id": "bayis-neeman",
+    "label": {
+     "en": "The Jewish Home and Shalom Bayis",
+     "yi": "א אידישע שטוב און שלום בית",
+     "he": "בית נאמן בישראל"
+    },
+    "page": true
+   },
+   "chametz": {
+    "id": "chametz",
+    "label": {
+     "en": "Chametz and Preparing for Pesach",
+     "yi": "חמץ און די הכנה צו פסח",
+     "he": "ביעור חמץ"
+    },
+    "page": true
+   },
+   "chinuch-habanim": {
+    "id": "chinuch-habanim",
+    "label": {
+     "en": "Chinuch HaBanim",
+     "yi": "חינוך הבנים"
+    },
+    "page": true
+   },
+   "chodesh-nissan": {
+    "id": "chodesh-nissan",
+    "label": {
+     "en": "Chodesh Nissan",
+     "yi": "חודש ניסן"
+    },
+    "page": true
+   },
+   "hischadshus": {
+    "id": "hischadshus",
+    "label": {
+     "en": "Renewal in Avodas Hashem",
+     "yi": "התחדשות אין עבודת השם",
+     "he": "התחדשות"
+    },
+    "page": true
+   },
+   "hiskashrus-tzaddikim": {
+    "id": "hiskashrus-tzaddikim",
+    "label": {
+     "en": "Hiskashrus to Tzaddikim and Emunas Chachamim",
+     "yi": "התקשרות צו צדיקים און אמונת חכמים",
+     "he": "התקשרות לצדיקים"
+    },
+    "page": true
+   },
+   "ketz-hageulah": {
+    "id": "ketz-hageulah",
+    "label": {
+     "en": "The Time of the Geulah and the Ketz",
+     "yi": "די צייט פון דער גאולה און דער קץ",
+     "he": "קץ הגאולה"
+    },
+    "page": true
+   },
+   "korbanos": {
+    "id": "korbanos",
+    "label": {
+     "en": "Korbanos and Avodas HaMikdash",
+     "yi": "קרבנות און עבודת בית המקדש",
+     "he": "קרבנות"
+    },
+    "page": true
+   },
+   "leil-haseder": {
+    "id": "leil-haseder",
+    "label": {
+     "en": "The Seder Night",
+     "yi": "ליל הסדר"
+    },
+    "page": true
+   },
+   "maaseh-bereishis": {
+    "id": "maaseh-bereishis",
+    "label": {
+     "en": "Creation and Its Wonders",
+     "yi": "מעשה בראשית און די נפלאות הבריאה",
+     "he": "מעשה בראשית"
+    },
+    "page": true
+   },
+   "madreigos-haneshamah": {
+    "id": "madreigos-haneshamah",
+    "label": {
+     "en": "Levels and Root of the Soul",
+     "yi": "די מדריגות און דער שורש פון דער נשמה",
+     "he": "שורש הנשמה ומדרגותיה"
+    },
+    "page": true
+   },
+   "matzah": {
+    "id": "matzah",
+    "label": {
+     "en": "Matzah, the Food of Emunah",
+     "yi": "מצה, מיכלא דמהימנותא",
+     "he": "מצה"
+    },
+    "page": true
+   },
+   "middos": {
+    "id": "middos",
+    "label": {
+     "en": "Middos Tovos",
+     "yi": "מידות טובות",
+     "he": "תיקון המידות"
+    },
+    "page": true
+   },
+   "moshe-rabbeinu": {
+    "id": "moshe-rabbeinu",
+    "label": {
+     "en": "Moshe Rabbeinu",
+     "yi": "משה רבינו"
+    },
+    "page": true
+   },
+   "rebbes-hador": {
+    "id": "rebbes-hador",
+    "label": {
+     "en": "The Rebbes of Later Generations",
+     "yi": "די רביים פון שפעטערדיגע דורות",
+     "he": "צדיקי הדורות"
+    },
+    "page": true
+   },
+   "shir-hashirim": {
+    "id": "shir-hashirim",
+    "label": {
+     "en": "Shir HaShirim",
+     "yi": "שיר השירים"
+    },
+    "page": true
+   },
+   "shlichus-hanefesh": {
+    "id": "shlichus-hanefesh",
+    "label": {
+     "en": "A Person's Mission in the World",
+     "yi": "דער תפקיד פון א מענטש אויף דער וועלט",
+     "he": "שליחות"
+    },
+    "page": true
+   },
+   "simcha": {
+    "id": "simcha",
+    "label": {
+     "en": "Serving Hashem with Simcha",
+     "yi": "עבודת השם בשמחה",
+     "he": "שמחה"
+    },
+    "page": true
+   },
+   "teshuvah": {
+    "id": "teshuvah",
+    "label": {
+     "en": "Teshuvah",
+     "yi": "תשובה"
+    },
+    "page": true
+   },
+   "yetzer-hara": {
+    "id": "yetzer-hara",
+    "label": {
+     "en": "The Yetzer Hara and Nisyonos",
+     "yi": "דער יצר הרע און נסיונות",
+     "he": "יצר הרע ונסיונות"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "birkas-hachamah",
+    "label": {
+     "en": "Birkas HaChamah (the blessing on the sun)",
+     "yi": "ברכת החמה"
+    },
+    "page": false
+   },
+   {
+    "id": "bris-bein-habesarim",
+    "label": {
+     "en": "Bris Bein HaBesarim (the Covenant between the Parts)",
+     "yi": "ברית בין הבתרים"
+    },
+    "page": false
+   },
+   {
+    "id": "cheshbon-hanefesh",
+    "label": {
+     "en": "Cheshbon hanefesh (soul-accounting)",
+     "yi": "חשבון הנפש"
+    },
+    "page": true
+   },
+   {
+    "id": "emunas-chachamim",
+    "label": {
+     "en": "Emunas chachamim (faith in the Sages)",
+     "yi": "אמונת חכמים"
+    },
+    "page": false
+   },
+   {
+    "id": "ikvesa-dimeshicha",
+    "label": {
+     "en": "Ikvesa D'Meshicha (the footsteps of Moshiach, the final era before the redemption)",
+     "yi": "עקבתא דמשיחא"
+    },
+    "page": false
+   },
+   {
+    "id": "maaminim-bnei-maaminim",
+    "label": {
+     "en": "Ma'aminim bnei ma'aminim (believers, children of believers)",
+     "yi": "מאמינים בני מאמינים"
+    },
+    "page": false
+   },
+   {
+    "id": "michla-dimheimnusa",
+    "label": {
+     "en": "Michla d'meheimnusa (the food of faith (matzah))",
+     "yi": "מיכלא דמהימנותא"
+    },
+    "page": false
+   },
+   {
+    "id": "naaseh-adam",
+    "label": {
+     "en": "Na'aseh adam (\"let us make man\")",
+     "yi": "נעשה אדם"
+    },
+    "page": false
+   },
+   {
+    "id": "olam-hatikkun",
+    "label": {
+     "en": "Olam hatikkun (the world of rectification)",
+     "yi": "עולם התיקון"
+    },
+    "page": false
+   },
+   {
+    "id": "techiyas-hameisim",
+    "label": {
+     "en": "Techiyas hameisim (the resurrection of the dead)",
+     "yi": "תחיית המתים"
+    },
+    "page": true
+   },
+   {
+    "id": "yetzer-hara",
+    "label": {
+     "en": "Yetzer hara (the evil inclination)",
+     "yi": "יצר הרע"
+    },
+    "page": false
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "yi-zmanim-nysn-05~src0",
+    "workId": "vayikra",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src1",
+    "workId": "talmud-bavli",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src2",
+    "workId": "berachos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src3",
+    "workId": "yoma",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src4",
+    "workId": "rosh-hashanah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src6",
+    "workId": "eruvin",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src7",
+    "workId": "shabbos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src8",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src9",
+    "workId": "mishlei",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src10",
+    "workId": "shelah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src11",
+    "workId": "chullin",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src12",
+    "workId": "shir-hashirim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src14",
+    "workId": "shir-hashirim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src15",
+    "workId": "yechezkel",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src16",
+    "workId": "bnei-yissaschar",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src17",
+    "workId": "zohar",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src18",
+    "workId": "bamidbar",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src20",
+    "workId": "targum-onkelos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src21",
+    "workId": "haggadah",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src22",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src23",
+    "workId": "tikkunei-zohar",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src24",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src25",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src26",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src27",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src28",
+    "workId": "shemos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src29",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src31",
+    "workId": "shomer-emunim",
+    "page": false
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "yi-zmanim-nysn-05~st0",
+    "storyId": "rav-gifter-takes-out-the-garbage",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~st1",
+    "storyId": "reb-arele-lights-the-chanukah-lights",
+    "tellings": 1,
+    "page": false
+   }
+  ],
+  "insights": []
  },
  "notes": {
   "summary": {

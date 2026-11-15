@@ -18,6 +18,8 @@ import {
   type TodayView,
 } from "../model.ts";
 import { fnv1a, pickForDay } from "../pick.ts";
+import { loadContinueRows } from "../continue.ts";
+import type { ShiurFile } from "../live-data.ts";
 import { row, todayData } from "./helpers.ts";
 
 const KEYS = [
@@ -29,10 +31,10 @@ const KEYS = [
   "parshas-shekalim", "purim", "shushan-purim", "lag-baomer", "shavuos", "pesach", "shevii-shel-pesach",
 ];
 
-const { today, corpus } = todayData(KEYS);
+const { today } = todayData(KEYS);
 
 function view(date: string, israel = false, audio: "both" | "yi" | "en" = "both"): TodayView {
-  return buildToday({ date, israel, audio, today, corpus });
+  return buildToday({ date, israel, audio, today });
 }
 
 const ids = (rows: { id: string }[]) => rows.map((r) => r.id);
@@ -239,7 +241,7 @@ describe("moment of the day", () => {
     expect(a).toEqual(b);
     const shuffled = structuredClone(today);
     for (const o of Object.values(shuffled.occasions)) o.moments.reverse();
-    const c = buildToday({ date: "2026-12-08", israel: false, audio: "both", today: shuffled, corpus }).moment;
+    const c = buildToday({ date: "2026-12-08", israel: false, audio: "both", today: shuffled }).moment;
     expect(c).toEqual(a);
   });
 
@@ -255,9 +257,10 @@ describe("moment of the day", () => {
   });
 
   it("skips moments without a time and falls back through the priority list", () => {
-    const byId = rowsById(corpus);
+    const byId = rowsById(today);
     const noTimes = structuredClone(today);
-    for (const m of noTimes.occasions["chanukah"]!.moments) m.t = null;
+    // A pool whose moments have no time (an older file) is skipped like an empty one.
+    for (const m of noTimes.occasions["chanukah"]!.moments) (m as { t: number | null }).t = null;
     const m = momentOfTheDay("2026-12-08", [["chanukah"], ["mikeitz"]], noTimes, byId, "both");
     expect(m?.occasionKey).toBe("mikeitz");
     expect(m?.t).not.toBeNull();
@@ -265,7 +268,7 @@ describe("moment of the day", () => {
 
   it("is null when there is nothing to pick", () => {
     const empty = { ...today, occasions: {} };
-    expect(momentOfTheDay("2026-12-08", [["chanukah"]], empty, rowsById(corpus), "both")).toBeNull();
+    expect(momentOfTheDay("2026-12-08", [["chanukah"]], empty, rowsById(today), "both")).toBeNull();
   });
 
   it("pickForDay and fnv1a are deterministic", () => {
@@ -284,21 +287,23 @@ describe("newly summarized and counter", () => {
       { shiurId: "en-purim", updatedAt: "2026-11-13T00:00:00Z" },
       { shiurId: "missing", updatedAt: "2026-11-12T00:00:00Z" },
     ];
-    const v = buildToday({ date: "2026-11-15", israel: false, audio: "yi", today: t, corpus });
+    const v = buildToday({ date: "2026-11-15", israel: false, audio: "yi", today: t });
     expect(v.newly.map((n) => n.row.id)).toEqual(["yi-purim"]);
     expect(v.stillArriving).toBe(true);
-    expect(v.counts).toEqual(corpus.counts);
-    const complete = { ...corpus, counts: { total: 5, full: 5, catalogOnly: 0, downgraded: 0 } };
-    expect(buildToday({ date: "2026-11-15", israel: false, audio: "both", today: t, corpus: complete }).stillArriving).toBe(false);
+    expect(v.counts).toEqual(today.counts);
+    const complete = { ...t, counts: { total: 5, full: 5, catalogOnly: 0, downgraded: 0 } };
+    expect(buildToday({ date: "2026-11-15", israel: false, audio: "both", today: complete }).stillArriving).toBe(false);
   });
 });
 
 describe("continue", () => {
-  const series = [1, 2, 3, 4].map((n) => row(`yi-tanya-${n}`, { series: { id: "tanya-yi", order: n } }));
-  const data = todayData(["noach"], [...series, row("en-other")]);
+  const series = [1, 2, 3, 4].map((n) =>
+    row(`yi-tanya-${n}`, { series: { id: "tanya-yi", order: n }, next: n < 4 ? `yi-tanya-${n + 1}` : null }),
+  );
+  const rows = new Map([...series, row("en-other"), row("yi-noach")].map((r) => [r.id, r]));
 
   it("is empty with the stub store", () => {
-    expect(continueItems([], data.corpus, "both")).toEqual([]);
+    expect(continueItems([], rows, "both")).toEqual([]);
   });
 
   it("resumes unfinished shiurim (newest first), then the next part of a series in progress", () => {
@@ -309,7 +314,7 @@ describe("continue", () => {
         { shiurId: "yi-tanya-2", t: 3600, completed: true, updatedAt: "2026-11-12T00:00:00Z" },
         { shiurId: "yi-noach", t: 10, completed: false, updatedAt: "2026-11-13T00:00:00Z" },
       ],
-      data.corpus,
+      rows,
       "both",
     );
     expect(items.map((i) => [i.kind, i.row.id])).toEqual([
@@ -325,14 +330,66 @@ describe("continue", () => {
         { shiurId: "yi-tanya-1", t: 3600, completed: true, updatedAt: "2026-11-11T00:00:00Z" },
         { shiurId: "yi-tanya-2", t: 30, completed: false, updatedAt: "2026-11-12T00:00:00Z" },
       ],
-      data.corpus,
+      rows,
       "both",
     );
     expect(items.map((i) => [i.kind, i.row.id])).toEqual([
       ["resume", "yi-tanya-2"],
       ["next", "yi-tanya-3"],
     ]);
-    expect(continueItems([{ shiurId: "yi-noach", t: 5, completed: false, updatedAt: "x" }], data.corpus, "en")).toEqual([]);
+    expect(continueItems([{ shiurId: "yi-noach", t: 5, completed: false, updatedAt: "x" }], rows, "en")).toEqual([]);
+  });
+
+  it("skips finished parts along the series and stops at the end", () => {
+    const items = continueItems(
+      [
+        { shiurId: "yi-tanya-1", t: 3600, completed: true, updatedAt: "2026-11-11T00:00:00Z" },
+        { shiurId: "yi-tanya-3", t: 3600, completed: true, updatedAt: "2026-11-09T00:00:00Z" },
+        { shiurId: "yi-tanya-2", t: 3600, completed: true, updatedAt: "2026-11-10T00:00:00Z" },
+      ],
+      rows,
+      "both",
+    );
+    expect(items.map((i) => [i.kind, i.row.id])).toEqual([["next", "yi-tanya-4"]]);
+    const all = [1, 2, 3, 4].map((n) => ({ shiurId: `yi-tanya-${n}`, t: 1, completed: true, updatedAt: `2026-11-1${n}T00:00:00Z` }));
+    expect(continueItems(all, rows, "both")).toEqual([]);
+  });
+
+  it("loads the heard shiurim's files and the parts after them, nothing corpus-wide", async () => {
+    const files = new Map(
+      [...series, row("en-other")].map((r) => [
+        r.id,
+        {
+          id: r.id,
+          lang: r.lang,
+          catalog: { titleOriginal: r.title },
+          duration: r.duration,
+          years: r.years,
+          status: r.status,
+          series: r.series ? { ...r.series, count: 4 } : null,
+          related: { next: r.next },
+        },
+      ]),
+    );
+    const requested: string[] = [];
+    const load = async (id: string) => {
+      requested.push(id);
+      const f = files.get(id);
+      if (!f) throw new Error("404");
+      return f as unknown as ShiurFile;
+    };
+    const progress = [
+      { shiurId: "yi-tanya-1", t: 3600, completed: true, updatedAt: "2026-11-11T00:00:00Z" },
+      { shiurId: "yi-tanya-2", t: 3600, completed: true, updatedAt: "2026-11-12T00:00:00Z" },
+      { shiurId: "en-other", t: 10, completed: false, updatedAt: "2026-11-13T00:00:00Z" },
+    ];
+    const loaded = await loadContinueRows(progress, load);
+    expect([...requested].sort()).toEqual(["en-other", "yi-tanya-1", "yi-tanya-2", "yi-tanya-3"]);
+    expect(continueItems(progress, loaded, "both").map((i) => [i.kind, i.row.id])).toEqual([
+      ["resume", "en-other"],
+      ["next", "yi-tanya-3"],
+    ]);
+    expect(await loadContinueRows([], load)).toEqual(new Map());
   });
 });
 

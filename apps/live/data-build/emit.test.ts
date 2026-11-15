@@ -23,7 +23,7 @@ import type {
   WorksFile,
   WriteupFile,
 } from "../app/data/types.ts";
-import { MOMENT_SHARD_SIZE } from "../app/data/types.ts";
+import { MOMENT_SHARD_SIZE, TODAY_ROW_PER_LANG } from "../app/data/types.ts";
 import { readCorpusInput } from "./corpus-input.ts";
 import { EMIT_LIMITS, emitLiveData, type EmittedFiles } from "./emit.ts";
 import { kindOfFile, validateFile } from "./schemas.ts";
@@ -128,13 +128,13 @@ describe("emitLiveData on the mini corpus", () => {
     }
   });
 
-  it("entity files exist exactly for entities with at least two shiurim, with consistent contents", () => {
+  it("entity files: occasions from two shiurim, people and concepts exactly with a Live page (corpus ids)", () => {
     const entityFiles = [...files.keys()].filter((f) => f.startsWith("entity/"));
     expect(entityFiles.length).toBeGreaterThan(0);
     for (const f of entityFiles) {
       const e = get<EntityFile>(f);
       expect(f).toBe(`entity/${e.kind}/${e.key}.json`);
-      expect(e.shiurIds.length).toBeGreaterThanOrEqual(EMIT_LIMITS.entityFileMin);
+      expect(e.shiurIds.length).toBeGreaterThanOrEqual(e.kind === "o" ? EMIT_LIMITS.entityFileMin : 3);
       expect(new Set(e.shiurIds).size).toBe(e.shiurIds.length);
       for (const m of e.moments) {
         expect(e.shiurIds).toContain(m.shiurId);
@@ -147,29 +147,48 @@ describe("emitLiveData on the mini corpus", () => {
       const years = Object.values(e.years).reduce((a, b) => a + b, 0);
       expect(years).toBeGreaterThanOrEqual(e.shiurIds.length);
     }
-    // People with ≥2 shiurim in people.json all have a file; people with one do not.
-    for (const p of input.aggregates.people.people) {
-      expect(files.has(`entity/p/${p.key}.json`), p.key).toBe(p.shiurim.length >= EMIT_LIMITS.entityFileMin);
+    // People: a file exactly for a Live page (≥3 shiurim, listed, never type other or excluded).
+    for (const p of input.layer!.people) {
+      const page = p.pages.live && p.listed.live && p.type !== "other" && p.excluded === null && p.count > 0;
+      expect(files.has(`entity/p/${p.id}.json`), p.id).toBe(page);
     }
-    // Every browse concept in corpus.json has a page.
+    // Concepts: a file exactly for a Live page; a concept merged into a topic has none.
+    for (const c of input.layer!.concepts) {
+      expect(files.has(`entity/c/${c.id}.json`), c.id).toBe(c.pages.live && !c.mergedIntoTopic && c.count > 0);
+    }
+    // Every entity id in corpus.json is a corpus id with a page.
     for (const r of get<CorpusFile>("corpus.json").shiurim) {
       for (const k of r.entities.concepts) expect(files.has(`entity/c/${k}.json`), k).toBe(true);
+      for (const k of r.entities.people) expect(files.has(`entity/p/${k}.json`), k).toBe(true);
+      for (const k of r.entities.works) expect(files.has(`work/${k}.json`), k).toBe(true);
     }
   });
 
-  it("today.json lists the occasions with year-ordered shiurim and timed moment pools", () => {
+  it("today.json lists the occasions with year-ordered rows, timed moment pools and a card for each", () => {
     const today = get<TodayFile>("today.json");
     expect(Object.keys(today.occasions).length).toBeGreaterThan(5);
+    expect(today.counts).toEqual(input.info.counts);
     for (const [k, o] of Object.entries(today.occasions)) {
       expect(o.shiurIds.length, k).toBeGreaterThan(0);
+      expect(o.total).toBeGreaterThanOrEqual(o.shiurIds.length);
       const ys = o.shiurIds.map((id) => input.shiurim.find((s) => s.id === id)!.years[0] ?? Infinity);
       expect([...ys].sort((a, b) => a - b)).toEqual(ys);
+      for (const l of ["en", "yi"]) expect(o.shiurIds.filter((id) => today.cards[id]!.lang === l).length).toBeLessThanOrEqual(TODAY_ROW_PER_LANG);
       expect(o.moments.length).toBeLessThanOrEqual(EMIT_LIMITS.todayPoolPerOccasion);
       for (const m of o.moments) {
-        expect(["i", "st", "q"]).toContain(m.kind);
-        expect(m.t).not.toBeNull();
-        expect(o.shiurIds).toContain(m.shiurId);
+        const [shiurId, kind] = m.id.split("~") as [string, string];
+        expect(kind).toMatch(/^(i|st|q)\d+$/);
+        expect(o.shiurIds).toContain(shiurId);
       }
+      for (const id of o.shiurIds) expect(today.cards[id], id).toBeDefined();
+      for (const m of o.mix?.first ?? []) expect(today.cards[m.id.split("~")[0]!]).toBeDefined();
+    }
+    for (const [id, c] of Object.entries(today.cards)) {
+      const s = input.shiurim.find((x) => x.id === id)!;
+      expect(c.title).toBe(s.catalog.titleOriginal);
+      expect(c.lang).toBe(s.lang);
+      // One-liners only on the newly-summarized cards (budget).
+      expect(c.oneLiner !== undefined).toBe(today.newlySummarized.some((n) => n.shiurId === id));
     }
     // Newly summarized: manifest updatedAt (carried in .corpus/updated.json), newest first, full only.
     const ns = today.newlySummarized;
@@ -183,20 +202,30 @@ describe("emitLiveData on the mini corpus", () => {
     for (const x of input.aggregates.series.series.filter((s) => s.parts.length > 0)) {
       const f = get<SeriesFile>(`series/${x.id}.json`);
       expect(f.parts.map((p) => p.shiurId)).toEqual(x.parts.map((p) => p.id));
-      expect(f.sibling).toBe(x.sibling);
+      // F.1: a series never names a course in the other language.
+      expect(f).not.toHaveProperty("sibling");
     }
+    // Works: corpus ids with a Live page, never generic; one file each.
     const works = get<WorksFile>("works.json");
-    const genre = new Set(input.aggregates.works.works.filter((w) => w.genre).map((w) => w.key));
-    for (const w of works.works) expect(genre.has(w.key)).toBe(false);
-    for (const w of input.aggregates.works.works.filter((x) => x.shiurCount > 0)) {
+    const live = input.layer!.works.filter((w) => w.pages.live && !w.generic && w.count > 0);
+    expect(works.works.map((w) => w.key)).toEqual(live.map((w) => w.id));
+    expect([...files.keys()].filter((f) => f.startsWith("work/")).sort()).toEqual(live.map((w) => `work/${w.id}.json`).sort());
+    for (const w of works.works) {
       const f = get<WorkFile>(`work/${w.key}.json`);
-      expect(f.locations.map((l) => l.sefariaRef)).toEqual(w.refs.map((r) => r.ref));
       const cites = f.locations.reduce((a, l) => a + l.citations.length, 0) + f.unlocated.length;
-      expect(cites).toBe(w.refs.reduce((a, r) => a + r.mentions.length, 0) + w.unlocated.length);
+      expect(cites, w.key).toBe(w.mentions);
+      for (const c of [...f.locations.flatMap((l) => l.citations), ...f.unlocated]) expect(c.sourceId.startsWith(`${c.shiurId}~src`)).toBe(true);
     }
+    // Bereishis keeps its reference order.
+    const ber = get<WorkFile>("work/bereishis.json");
+    const agg = input.aggregates.works.works.find((w) => w.key === "bereishis")!;
+    expect(ber.locations.map((l) => l.sefariaRef)).toEqual(agg.refs.filter((r) => ber.locations.some((l) => l.sefariaRef === r.ref)).map((r) => r.ref));
     const stories = get<StoriesFile>("stories.json");
     expect(stories.stories.map((s) => s.id)).toEqual(input.aggregates.stories.stories.map((s) => s.id));
     expect(allKeys(stories).has("retelling")).toBe(false);
+    // peopleKeys are corpus person ids with a Live page.
+    for (const st of stories.stories) for (const k of st.peopleKeys) expect(files.has(`entity/p/${k}.json`), k).toBe(true);
+    expect(stories.stories.some((st) => st.peopleKeys.length > 0)).toBe(true);
   });
 
   it("moment shards cover every timed item once, in both languages, and build.json counts them", () => {

@@ -48,6 +48,18 @@ export const dataPaths = {
     return `${DATA_ROOT}/moments/${lang(l)}-${shard}.json`;
   },
   quickIndex: (l: Ed) => `${DATA_ROOT}/quick-index.${lang(l)}.json`,
+  topics: () => `${DATA_ROOT}/topics.json`,
+  topic: (id: string) => `${DATA_ROOT}/topic/${segment("topic id", id)}.json`,
+  topicMoments: (id: string, page: number) => {
+    if (!Number.isInteger(page) || page < 1) throw new DataPathError(`invalid page: ${page}`);
+    return `${DATA_ROOT}/topic/${segment("topic id", id)}.moments-${page}.json`;
+  },
+  thread: (id: string) => `${DATA_ROOT}/thread/${segment("thread id", id)}.json`,
+  story: (id: string) => `${DATA_ROOT}/story/${segment("story id", id)}.json`,
+  storiesIndex: () => `${DATA_ROOT}/stories-index.json`,
+  glossary: (shard: string) => `${DATA_ROOT}/glossary/${segment("glossary shard", shard)}.json`,
+  redirects: () => `${DATA_ROOT}/redirects.json`,
+  exploreEntities: () => `${DATA_ROOT}/explore/entities.json`,
 } as const satisfies Record<DataKind, (...args: never[]) => string>;
 
 /**
@@ -63,4 +75,14 @@ export function dataFileOf(urlPath: string): string | null {
   } catch {
     return null;
   }
+}
+
+/**
+ * The glossary shard holding a concept's card: the longest prefix in `shards` (build.json
+ * `glossaryShards`) that the id starts with, or null when none does.
+ */
+export function glossaryShardFor(id: string, shards: readonly string[]): string | null {
+  let best: string | null = null;
+  for (const p of shards) if (id.startsWith(p) && (best === null || p.length > best.length)) best = p;
+  return best;
 }

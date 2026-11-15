@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "yi-parshas-hashavua-vyshb-08",
  "rev": "e01f662682a2",
  "lang": "yi",
@@ -55,7 +55,444 @@
     "t": 797.84,
     "score": 0.377
    }
-  ]
+  ],
+  "titles": {
+   "en-zmanim-en-chvdsh-tbs-02": {
+    "title": "An Explanation of ניטל and the Month of טבת",
+    "lang": "en",
+    "years": [
+     5764
+    ]
+   },
+   "yi-parshas-hashavua-brshys-03": {
+    "title": "לימוד משידוך הראשון - שנעשה בלי השתתפות של מעשי אדם",
+    "lang": "yi",
+    "years": [
+     5750
+    ]
+   },
+   "yi-parshas-hashavua-mvr-01": {
+    "title": "אהרן והכהנים הם בחינת מדת הוד - קודש הקדשים - בחינת רשב\"י",
+    "lang": "yi",
+    "years": [
+     5736
+    ]
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "moshiach-ben-yosef",
+    "salience": 1
+   },
+   {
+    "id": "yehuda-vetamar",
+    "salience": 0.7
+   },
+   {
+    "id": "yosef-veechav",
+    "salience": 0.7
+   },
+   {
+    "id": "nes-chanukah",
+    "salience": 0.6
+   },
+   {
+    "id": "hashgacha-pratis",
+    "salience": 0.5
+   },
+   {
+    "id": "neros-chanukah",
+    "salience": 0.4
+   },
+   {
+    "id": "maasios",
+    "salience": 0.2
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "maasios",
+     "rebbes-hador"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "neros-chanukah"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "yehuda-vetamar",
+     "yosef-veechav"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "shoresh-moshiach",
+     "neros-chanukah"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "moshiach-ben-yosef"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "hashgacha-pratis"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "yehuda-vetamar",
+     "yosef-veechav"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "yosef-veechav"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "nes-chanukah"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "hashgacha-pratis": {
+    "id": "hashgacha-pratis",
+    "label": {
+     "en": "Hashgacha Pratis",
+     "yi": "השגחה פרטית"
+    },
+    "page": true
+   },
+   "maasios": {
+    "id": "maasios",
+    "label": {
+     "en": "Stories of Tzaddikim",
+     "yi": "מעשיות פון צדיקים",
+     "he": "מעשיות"
+    },
+    "page": true
+   },
+   "moshiach-ben-yosef": {
+    "id": "moshiach-ben-yosef",
+    "label": {
+     "en": "Moshiach ben Yosef and Moshiach ben Dovid",
+     "yi": "משיח בן יוסף און משיח בן דוד",
+     "he": "משיח בן יוסף ומשיח בן דוד"
+    },
+    "page": true
+   },
+   "neros-chanukah": {
+    "id": "neros-chanukah",
+    "label": {
+     "en": "The Chanukah Lights",
+     "yi": "די חנוכה ליכט",
+     "he": "נר חנוכה"
+    },
+    "page": true
+   },
+   "nes-chanukah": {
+    "id": "nes-chanukah",
+    "label": {
+     "en": "The Miracle of Chanukah and the Greeks",
+     "yi": "דער נס חנוכה און די יוונים",
+     "he": "נס חנוכה"
+    },
+    "page": true
+   },
+   "rebbes-hador": {
+    "id": "rebbes-hador",
+    "label": {
+     "en": "The Rebbes of Later Generations",
+     "yi": "די רביים פון שפעטערדיגע דורות",
+     "he": "צדיקי הדורות"
+    },
+    "page": true
+   },
+   "shoresh-moshiach": {
+    "id": "shoresh-moshiach",
+    "label": {
+     "en": "The Hidden Roots of Moshiach",
+     "yi": "דער באהאלטענער שורש פון משיח",
+     "he": "שורש נשמת משיח"
+    },
+    "page": true
+   },
+   "yehuda-vetamar": {
+    "id": "yehuda-vetamar",
+    "label": {
+     "en": "Yehuda and Tamar",
+     "yi": "יהודה און תמר",
+     "he": "יהודה ותמר"
+    },
+    "page": true
+   },
+   "yosef-veechav": {
+    "id": "yosef-veechav",
+    "label": {
+     "en": "Yosef and His Brothers",
+     "yi": "יוסף און זיינע ברידער",
+     "he": "יוסף ואחיו"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "lematah-measarah",
+    "label": {
+     "en": "Lematah me'asarah (below ten handbreadths)",
+     "yi": "למטה מעשרה"
+    },
+    "page": false
+   },
+   {
+    "id": "mashiach-ben-david",
+    "label": {
+     "en": "Moshiach ben David (Moshiach son of David)",
+     "yi": "משיח בן דוד"
+    },
+    "page": false
+   },
+   {
+    "id": "mashiach-ben-yosef",
+    "label": {
+     "en": "Moshiach ben Yosef (Moshiach son of Yosef)",
+     "yi": "משיח בן יוסף"
+    },
+    "page": false
+   },
+   {
+    "id": "mazal",
+    "label": {
+     "en": "Mazal (fortune, constellation)",
+     "yi": "מזל"
+    },
+    "page": false
+   },
+   {
+    "id": "mechiras-yosef",
+    "label": {
+     "en": "Mechiras Yosef (the sale of Yosef)",
+     "yi": "מכירת יוסף"
+    },
+    "page": false
+   },
+   {
+    "id": "mesiras-nefesh",
+    "label": {
+     "en": "Mesiras nefesh (self-sacrifice)",
+     "yi": "מסירות נפש"
+    },
+    "page": false
+   },
+   {
+    "id": "nittel",
+    "label": {
+     "en": "Nittel (Nittel night)",
+     "yi": "ניטל"
+    },
+    "page": false
+   },
+   {
+    "id": "ohr-haganuz",
+    "label": {
+     "en": "Ohr HaGanuz (the hidden light of creation)",
+     "yi": "אור הגנוז"
+    },
+    "page": false
+   },
+   {
+    "id": "oro-shel-mashiach",
+    "label": {
+     "en": "Oro shel Moshiach (the light of Moshiach)",
+     "yi": "אורו של משיח"
+    },
+    "page": false
+   },
+   {
+    "id": "psilos-ushemanim",
+    "label": {
+     "en": "Psilos u'shemanim (wicks and oils)",
+     "yi": "פתילות ושמנים"
+    },
+    "page": false
+   },
+   {
+    "id": "sitra-achra",
+    "label": {
+     "en": "Sitra Achra (the \"other side\", the realm of evil)",
+     "yi": "סטרא אחרא"
+    },
+    "page": true
+   },
+   {
+    "id": "tekufah",
+    "label": {
+     "en": "Tekufah (a season)",
+     "yi": "תקופה"
+    },
+    "page": false
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src0",
+    "workId": "shabbos",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src1",
+    "workId": "mishlei",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src2",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src3",
+    "workId": "shabbos",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src4",
+    "workId": "sukkah",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src5",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src6",
+    "workId": "bnei-yissaschar",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src7",
+    "workId": "kad-hakemach",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src9",
+    "workId": "midrash",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src10",
+    "workId": "yeshayahu",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src11",
+    "workId": "sotah",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src12",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src13",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src14",
+    "workId": "lecha-dodi",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src15",
+    "workId": "rus",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src16",
+    "workId": "talmud-bavli",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src17",
+    "workId": "bereishis-rabbah",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src18",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src19",
+    "workId": "sotah",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src20",
+    "workId": "midrash",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src21",
+    "workId": "sanhedrin",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src22",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src23",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src24",
+    "workId": "mishneh-torah",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src25",
+    "workId": "bamidbar",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src26",
+    "workId": "avodah-zarah",
+    "page": true
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~st0",
+    "storyId": "the-belzer-rav-and-the-frozen-river",
+    "tellings": 1,
+    "page": false
+   }
+  ],
+  "insights": []
  },
  "notes": {
   "summary": {

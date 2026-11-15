@@ -2,6 +2,11 @@
  * Today (concept-live §5.1, tech-live §1 `/:ui/`). The frame and `h1` render at once (prerendered
  * per interface language); the date-dependent parts are computed on the client after mount from the
  * visitor's own day, so the page stays current without a rebuild and hydration never mismatches.
+ *
+ * Loading (corpus-wave-plan §4, C1.7): the page renders from `today.json` alone. The moment of the
+ * day then loads its one shiur file for the text, and Continue loads the heard shiurim's files only
+ * when the personal store has progress. `corpus.json`, `facets.json` and the corpus layer's
+ * corpus-wide files are never requested here.
  */
 import type { Ed } from "@emunas/corpus/public";
 import { formatClock, formatNumber, notice, type UiLang } from "@emunas/i18n";
@@ -9,12 +14,13 @@ import { livePaths } from "@emunas/links";
 import { Fragment, useEffect, useMemo, useState, type JSX, type ReactNode } from "react";
 import { Link, useLocation } from "react-router";
 import { Text } from "../../components/Text.tsx";
-import { loadCorpus, loadFacets, loadShiur, loadToday, type CorpusFile, type CorpusRow, type FacetsFile, type TodayFile } from "./live-data.ts";
+import { loadShiur, loadToday, type TodayFile } from "./live-data.ts";
 import { tFor, useUi } from "../../i18n/index.ts";
 import { readingLang, useSettings } from "../../shell/settings.ts";
 import { formatCivilDate, formatHebrewDate, momentContent, occasionLabel } from "./format.ts";
 import { useIsrael } from "./israel.ts";
-import { buildToday, continueItems, dateFromQuery, localIsoDay, type DayMoment, type TodayView } from "./model.ts";
+import { loadContinueRows } from "./continue.ts";
+import { buildToday, continueItems, dateFromQuery, localIsoDay, rowsById, type DayMoment, type TodayRow, type TodayView } from "./model.ts";
 import { readProgress, useProgressSourceVersion } from "./personal.ts";
 import { ShiurCard, type CardData } from "./ShiurCard.tsx";
 import { todayT, type TodayKey } from "./strings.ts";
@@ -23,21 +29,13 @@ import { useLoad } from "./use-data.ts";
 
 interface TodayData {
   today: TodayFile;
-  corpus: CorpusFile;
-  facets: FacetsFile | null;
 }
 
 async function loadTodayData(): Promise<TodayData> {
-  const [today, corpus, facets] = await Promise.all([
-    loadToday(),
-    loadCorpus(),
-    // labels only: the page works without them
-    loadFacets().catch(() => null),
-  ]);
-  return { today, corpus, facets };
+  return { today: await loadToday() };
 }
 
-export function cardOf(r: CorpusRow): CardData {
+export function cardOf(r: TodayRow): CardData {
   return { id: r.id, lang: r.lang, title: r.title, oneLiner: r.oneLiner, duration: r.duration, years: r.years, status: r.status };
 }
 
@@ -68,7 +66,7 @@ export function TodayPage(): JSX.Element {
   const data = useLoad(loadTodayData, []);
   const view = useMemo<TodayView | null>(() => {
     if (date === null || data.status !== "ok") return null;
-    return buildToday({ date, israel, audio, today: data.data.today, corpus: data.data.corpus });
+    return buildToday({ date, israel, audio, today: data.data.today });
   }, [date, israel, audio, data]);
 
   return (
@@ -95,9 +93,9 @@ export function TodayPage(): JSX.Element {
         <p className={s.muted}>{tt("today.loading")}</p>
       ) : (
         <>
-          <ThisWeek view={view} facets={data.data.facets} ui={ui} read={read} />
-          <MomentOfTheDay moment={view.moment} corpus={data.data.corpus} ui={ui} read={read} />
-          <Continue corpus={data.data.corpus} ui={ui} read={read} />
+          <ThisWeek view={view} today={data.data.today} ui={ui} read={read} />
+          <MomentOfTheDay moment={view.moment} today={data.data.today} ui={ui} read={read} />
+          <Continue ui={ui} read={read} />
           {view.stillArriving && view.newly.length > 0 ? (
             <section className={s.section} aria-labelledby="today-newly">
               <h2 id="today-newly" className={s.sectionTitle}>
@@ -117,7 +115,7 @@ export function TodayPage(): JSX.Element {
   );
 }
 
-function CardRow({ rows, ui, read }: { rows: readonly CorpusRow[]; ui: UiLang; read: Ed }): JSX.Element {
+function CardRow({ rows, ui, read }: { rows: readonly TodayRow[]; ui: UiLang; read: Ed }): JSX.Element {
   return (
     <ul className={s.row}>
       {rows.map((r) => (
@@ -129,7 +127,7 @@ function CardRow({ rows, ui, read }: { rows: readonly CorpusRow[]; ui: UiLang; r
   );
 }
 
-function ThisWeek({ view, facets, ui, read }: { view: TodayView; facets: FacetsFile | null; ui: UiLang; read: Ed }): JSX.Element {
+function ThisWeek({ view, today, ui, read }: { view: TodayView; today: TodayFile; ui: UiLang; read: Ed }): JSX.Element {
   const tt = todayT(ui);
   if (!view.week) {
     return (
@@ -152,7 +150,7 @@ function ThisWeek({ view, facets, ui, read }: { view: TodayView; facets: FacetsF
         <div className={s.section} data-parsha={p.key}>
           <h3 className={s.occasionTitle}>
             <Link to={paths.occasion(ui, p.key)}>
-              <ParshaName parshaKey={p.key} facets={facets} ui={ui} />
+              <ParshaName parshaKey={p.key} today={today} ui={ui} />
             </Link>
             {p.shiurim.length > 0 ? <span className={s.badge}>{tt("today.count", { count: p.shiurim.length })}</span> : null}
           </h3>
@@ -164,7 +162,7 @@ function ThisWeek({ view, facets, ui, read }: { view: TodayView; facets: FacetsF
         <div key={o.key} className={s.section} data-occasion={o.key}>
           <h3 className={s.occasionTitle}>
             <Link to={paths.occasion(ui, o.key)}>
-              <Text value={occasionLabel(o.key, facets, ui)} shiurLang={ui} />
+              <Text value={occasionLabel(o.key, today, ui)} shiurLang={ui} />
             </Link>
             <span className={s.badge}>{o.active ? tt("today.occasion.active") : tt("today.occasion.soon", { count: o.daysUntil })}</span>
           </h3>
@@ -176,16 +174,16 @@ function ThisWeek({ view, facets, ui, read }: { view: TodayView; facets: FacetsF
   );
 }
 
-function ParshaName({ parshaKey, facets, ui }: { parshaKey: string; facets: FacetsFile | null; ui: UiLang }): JSX.Element {
+function ParshaName({ parshaKey, today, ui }: { parshaKey: string; today: TodayFile; ui: UiLang }): JSX.Element {
   const tt = todayT(ui);
-  return <>{withSlot(tt("today.parsha"), "name", <Text value={occasionLabel(parshaKey, facets, ui)} shiurLang={ui} />)}</>;
+  return <>{withSlot(tt("today.parsha"), "name", <Text value={occasionLabel(parshaKey, today, ui)} shiurLang={ui} />)}</>;
 }
 
-function MomentOfTheDay({ moment, corpus, ui, read }: { moment: DayMoment | null; corpus: CorpusFile; ui: UiLang; read: Ed }): JSX.Element | null {
+function MomentOfTheDay({ moment, today, ui, read }: { moment: DayMoment | null; today: TodayFile; ui: UiLang; read: Ed }): JSX.Element | null {
   const tt = todayT(ui);
   const shiur = useLoad(() => (moment ? loadShiur(moment.shiurId) : Promise.resolve(null)), [moment?.shiurId]);
   if (!moment || moment.t === null) return null;
-  const row = corpus.shiurim.find((r) => r.id === moment.shiurId);
+  const row = rowsById(today).get(moment.shiurId);
   const content = shiur.status === "ok" && shiur.data ? momentContent(shiur.data, moment.id) : null;
   if (shiur.status === "error" || (shiur.status === "ok" && !content)) return null;
   const href = paths.shiur(ui, moment.shiurId, { t: moment.t, m: moment.id });
@@ -217,12 +215,18 @@ function MomentOfTheDay({ moment, corpus, ui, read }: { moment: DayMoment | null
   );
 }
 
-function Continue({ corpus, ui, read }: { corpus: CorpusFile; ui: UiLang; read: Ed }): JSX.Element {
+async function loadContinue(): Promise<{ progress: Awaited<ReturnType<typeof readProgress>>; rows: Awaited<ReturnType<typeof loadContinueRows>> }> {
+  const progress = await readProgress();
+  // Nothing heard yet: no shiur file is requested.
+  return { progress, rows: progress.length > 0 ? await loadContinueRows(progress) : new Map() };
+}
+
+function Continue({ ui, read }: { ui: UiLang; read: Ed }): JSX.Element {
   const tt = todayT(ui);
   const audio = useSettings((st) => st.audio);
   const version = useProgressSourceVersion();
-  const progress = useLoad(readProgress, [version]);
-  const items = progress.status === "ok" ? continueItems(progress.data, corpus, audio) : [];
+  const loaded = useLoad(loadContinue, [version]);
+  const items = loaded.status === "ok" ? continueItems(loaded.data.progress, loaded.data.rows, audio) : [];
   return (
     <section className={s.section} aria-labelledby="today-continue">
       <h2 id="today-continue" className={s.sectionTitle}>

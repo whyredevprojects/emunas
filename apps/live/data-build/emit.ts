@@ -9,10 +9,10 @@
  */
 import { createHash } from "node:crypto";
 import type { PublicShiur, Ed, L } from "@emunas/corpus/public";
-import type { OccasionShiurRef, WorkEntry } from "@emunas/corpus/aggregate";
-import { OTHER_OCCASION_KEY } from "@emunas/normalize";
+import type { MentionRef, OccasionShiurRef, WorkRef } from "@emunas/corpus/aggregate";
+import { OCCASIONS, OTHER_OCCASION_KEY, PARSHIYOS } from "@emunas/normalize";
 import { CATEGORY_LABELS, formatHebrewYear, hebrewYearParts } from "@emunas/i18n";
-import { buildSearchDoc } from "@emunas/search-core/build";
+import { buildEntityDocs, buildSearchDoc } from "@emunas/search-core/build";
 import { foldForIndex, type SearchDoc } from "@emunas/search-core";
 import MiniSearch from "minisearch";
 import { dataFileOf, dataPaths } from "../app/data/paths.ts";
@@ -38,7 +38,10 @@ import {
   type ShiurFile,
   type ShiurRelated,
   type StoriesFile,
+  type TodayCard,
   type TodayFile,
+  type TodayOccasion,
+  TODAY_ROW_PER_LANG,
   type WorkCitation,
   type WorkFile,
   type WorksFile,
@@ -46,21 +49,35 @@ import {
   type DataFiles,
 } from "../app/data/types.ts";
 import type { CorpusInput } from "./corpus-input.ts";
+import {
+  DEFAULT_FEATURED,
+  corpusView,
+  emitCorpusFiles,
+  facetLabel,
+  seriesSynthesis,
+  type CorpusView,
+  type FeaturedPolicy,
+} from "./emit-corpus.ts";
 
 /** Bump when the emit logic changes the output for the same input (part of `buildId`). */
-export const EMITTER_VERSION = 1;
+export const EMITTER_VERSION = 2;
 
 /** Tunables (tech-live §3.3). */
 export const EMIT_LIMITS = {
-  /** Only entities with at least this many shiurim get an `entity/{p,c,o}/<key>.json` file. */
+  /**
+   * Occasions with at least this many shiurim get an `entity/o/<key>.json` file. People and concepts
+   * follow the corpus layer's Live page flags (≥3 shiurim, C1.7).
+   */
   entityFileMin: 2,
   /** `related` lists entities sharing at least this many shiurim. */
   relatedMinShared: 5,
   relatedMax: 12,
-  /** "A moment for today" candidates per occasion in today.json. */
-  todayPoolPerOccasion: 12,
-  /** Entries in today.json `newlySummarized`. */
-  newlySummarized: 24,
+  /** "A moment for today" candidates per occasion in today.json (from the row's shiurim). */
+  todayPoolPerOccasion: 4,
+  /** Sections of the occasion mix in today.json. */
+  todayMixFirst: 3,
+  /** Entries in today.json `newlySummarized` (Today shows 8 after the language filter). */
+  newlySummarized: 12,
 } as const;
 
 export interface EmitOptions {
@@ -71,6 +88,8 @@ export interface EmitOptions {
    * need worker threads and the embedding cache. Absent: every `related.neighbors` is empty.
    */
   neighbors?: { byShiur: ReadonlyMap<string, ShiurRelated["neighbors"]>; fingerprint: string };
+  /** Featured-slot policy (corpus-policy `featured`, D7); defaults to the shipped defaults. */
+  featured?: FeaturedPolicy;
 }
 
 export type EmittedFiles = Map<string, DataFiles[keyof DataFiles]>;
@@ -79,6 +98,9 @@ const V = LIVE_DATA_SCHEMA_VERSION;
 const EDS: readonly Ed[] = ["en", "yi"];
 
 const cmp = (a: string, b: string): number => (a < b ? -1 : a > b ? 1 : 0);
+
+/** `<shiurId>~<kind><n>` → `<shiurId>`. */
+const shiurOfMoment = (id: string): string => id.slice(0, Math.max(0, id.indexOf("~")));
 
 function sortedRecord<T>(entries: Iterable<[string, T]>): Record<string, T> {
   return Object.fromEntries([...entries].sort(([a], [b]) => cmp(a, b)));
@@ -105,9 +127,7 @@ const LANG_LABELS: Record<Ed, FacetLabel> = {
 const OTHER_OCCASION: FacetLabel = { en: "Other occasions", yi: "אנדערע געלעגנהייטן" };
 
 /** A label whose `he` is set only when it differs from the Yiddish form (keeps facets.json small). */
-function label(en: string, yi: string, he: string | null | undefined): FacetLabel {
-  return he && he !== yi ? { en, yi, he } : { en, yi };
-}
+const label = facetLabel;
 
 export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFiles {
   const { info, index, aggregates: agg } = input;
@@ -154,14 +174,19 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
     return m ? { ...m } : null;
   };
 
+  // ------------------------------------------------------------------ corpus layer (C1.7)
+  const view: CorpusView = corpusView(input.layer);
+  const layerOut = emitCorpusFiles(view, {
+    input,
+    byId,
+    put,
+    featured: opts.featured ?? DEFAULT_FEATURED,
+  });
+
   // ------------------------------------------------------------------ corpus.json
   const counts = { ...info.counts };
-  // Concepts are AI-extracted terms; one that occurs in a single shiur (or is stop-listed) is not a
-  // browse facet. corpus.json and facets.json carry only concepts with an entity page; the shiur
-  // file still lists all of its own concepts.
-  const browseConcepts = new Set(
-    agg.entities.concepts.filter((c) => c.shiurim >= EMIT_LIMITS.entityFileMin).map((c) => c.key),
-  );
+  // Entities are corpus ids listed on Live (people/concepts/works with a Live page); Explore's own
+  // copy with topics is explore/entities.json, this one stays until C3.1.
   const corpusRows: CorpusRow[] = index.shiurim.map((r) => ({
     id: r.id,
     rev: r.rev,
@@ -179,11 +204,10 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
     series: r.series ? { id: r.series.id, order: r.series.order } : null,
     duration: r.duration,
     oneLiner: r.oneLiner,
-    entities: {
-      works: r.entities.works,
-      people: r.entities.people,
-      concepts: r.entities.concepts.filter((k) => browseConcepts.has(k)),
-    },
+    entities: (() => {
+      const e = view.entitiesOf(r.id);
+      return { works: e.works, people: e.people, concepts: e.concepts };
+    })(),
     counts: {
       chapters: r.counts.chapters,
       stories: r.counts.stories,
@@ -231,43 +255,10 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
     listed.set(v.key, { type: prev?.type ?? type, label: l, ids: sortByYear([...(prev?.ids ?? []), r.id]) });
   }
 
-  // ------------------------------------------------------------------ entity labels and members
-  const workByKey = new Map<string, WorkEntry>(agg.works.works.map((w) => [w.key, w]));
-  const personByKey = new Map(agg.people.people.map((p) => [p.key, p]));
-  const conceptByKey = new Map(agg.concepts.concepts.map((c) => [c.key, c]));
-  const fallbackWork = new Map<string, string>();
-  const fallbackPerson = new Map<string, string>();
-  const fallbackConcept = new Map<string, string>();
-  for (const s of shiurim) {
-    const n = s.notes;
-    if (!n) continue;
-    for (const src of n.sources)
-      if (src.workKey && src.work && !fallbackWork.has(src.workKey)) fallbackWork.set(src.workKey, src.work);
-    for (const p of n.people) if (!fallbackPerson.has(p.key)) fallbackPerson.set(p.key, p.name);
-    for (const st of n.stories) {
-      st.peopleKeys.forEach((k, i) => {
-        const name = st.people[i];
-        if (name !== undefined && !fallbackPerson.has(k)) fallbackPerson.set(k, name);
-      });
-    }
-    for (const c of n.concepts) if (!fallbackConcept.has(c.key)) fallbackConcept.set(c.key, c.he);
-  }
-  const workLabel = (key: string): FacetLabel => {
-    const w = workByKey.get(key);
-    if (w) return label(w.en, w.yi ?? w.en, w.he);
-    const name = fallbackWork.get(key) ?? key;
-    return { en: name, yi: name };
-  };
-  const personLabel = (key: string): FacetLabel => {
-    const p = personByKey.get(key);
-    if (p) return p.he ? { en: p.en, yi: p.he } : { en: p.en, yi: p.en };
-    const name = fallbackPerson.get(key) ?? key;
-    return { en: name, yi: name };
-  };
-  const conceptLabel = (key: string): FacetLabel => {
-    const he = conceptByKey.get(key)?.he ?? fallbackConcept.get(key) ?? key;
-    return { en: he, yi: he };
-  };
+  // ------------------------------------------------------------------ entity labels (corpus layer)
+  const workLabel = view.workLabel;
+  const personLabel = view.personLabel;
+  const conceptLabel = view.conceptLabel;
 
   // ------------------------------------------------------------------ facets.json
   const tally = (pick: (r: CorpusRow) => Iterable<string>): Map<string, number> => {
@@ -306,7 +297,7 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
     .filter((x) => x.parts.length > 0)
     .map((x) => [
       x.id,
-      { label: { en: x.title.en, yi: x.title.yi }, count: x.parts.length, lang: x.lang, sibling: x.sibling },
+      { label: { en: x.title.en, yi: x.title.yi }, count: x.parts.length, lang: x.lang },
     ]);
   const facets: FacetsFile = {
     schemaVersion: V,
@@ -351,33 +342,115 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
     }
     return out;
   };
+  // Today renders from this file alone (plan §4): a compact card for every shiur it names, the
+  // occasion labels, and per occasion the first items of its mix (occasion → topic, corpus layer).
+  // Rows hold a few shiurim per audio language (the occasion page lists all); only the
+  // newly-summarized cards carry a one-liner. That keeps the file inside its 30 KiB budget.
+  const newlySummarized = Object.entries(input.updatedAt)
+    .filter(([id]) => byId.get(id)?.status === "full")
+    .sort(([a, x], [b, y]) => cmp(y, x) || cmp(a, b))
+    .slice(0, EMIT_LIMITS.newlySummarized)
+    .map(([shiurId, updatedAt]) => ({ shiurId, updatedAt }));
+  const rowOf = (ids: readonly string[]): string[] => {
+    const seen: Partial<Record<Ed, number>> = {};
+    return ids.filter((id) => {
+      const lang = byId.get(id)?.lang;
+      if (lang === undefined) return false;
+      seen[lang] = (seen[lang] ?? 0) + 1;
+      return seen[lang] <= TODAY_ROW_PER_LANG;
+    });
+  };
+  const sharedLabel = new Map([...PARSHIYOS, ...OCCASIONS].map((r) => [r.key, { en: r.en, yi: r.yi }]));
+  const sameAsShared = (k: string, l: FacetLabel) => sharedLabel.get(k)?.en === l.en && sharedLabel.get(k)?.yi === l.yi;
+  const todayOccasions = sortedRecord(
+    [...listed].map(([k, o]): [string, TodayOccasion] => {
+      const row = rowOf(o.ids);
+      const topicId = layerOut.occasionTopic.get(k);
+      const mix = topicId ? layerOut.featuredMix(topicId) : null;
+      return [
+        k,
+        {
+          ...(sameAsShared(k, o.label) ? {} : { label: o.label }),
+          shiurIds: row,
+          total: o.ids.length,
+          moments: todayPool(row).flatMap((m) => (m.t === null ? [] : [{ id: m.id, t: m.t }])),
+          mix: mix && {
+            topicId: mix.topicId,
+            label: mix.label,
+            sections: mix.sections,
+            shiurim: mix.shiurim,
+            first: mix.first
+              .slice(0, EMIT_LIMITS.todayMixFirst)
+              .map((x) => ({ id: x.id, t: x.t, end: x.end, title: x.title })),
+          },
+        },
+      ];
+    }),
+  );
+  const withOneLiner = new Set(newlySummarized.map((n) => n.shiurId));
+  const cardIds = new Set<string>([
+    ...Object.values(todayOccasions).flatMap((o) => [
+      ...o.shiurIds,
+      ...o.moments.map((m) => shiurOfMoment(m.id)),
+      ...(o.mix?.first.map((m) => shiurOfMoment(m.id)) ?? []),
+    ]),
+    ...withOneLiner,
+  ]);
+  const todayCard = (s: PublicShiur): TodayCard => {
+    const ol = withOneLiner.has(s.id) ? s.notes?.summary.oneLiner : undefined;
+    return {
+      lang: s.lang,
+      title: s.catalog.titleOriginal,
+      duration: Math.round(s.duration),
+      years: [...s.years],
+      status: s.status,
+      ...(ol ? { oneLiner: { en: ol.en, yi: ol.yi } } : {}),
+    };
+  };
   const today: TodayFile = {
     schemaVersion: V,
-    occasions: sortedRecord([...listed].map(([k, o]) => [k, { shiurIds: o.ids, moments: todayPool(o.ids) }])),
-    newlySummarized: Object.entries(input.updatedAt)
-      .filter(([id]) => byId.get(id)?.status === "full")
-      .sort(([a, x], [b, y]) => cmp(y, x) || cmp(a, b))
-      .slice(0, EMIT_LIMITS.newlySummarized)
-      .map(([shiurId, updatedAt]) => ({ shiurId, updatedAt })),
+    counts,
+    occasions: todayOccasions,
+    newlySummarized,
+    cards: sortedRecord(
+      [...cardIds].flatMap((id) => {
+        const s = byId.get(id);
+        return s ? [[id, todayCard(s)] as const] : [];
+      }),
+    ),
   };
   put<"today">(dataPaths.today(), today);
 
   // ------------------------------------------------------------------ shiur/<id>.json, writeup/<id>.<lang>.json
+  const seriesById = new Map(agg.series.series.map((x) => [x.id, x]));
   for (const s of shiurim) {
     const nb = agg.neighbours[s.id];
     const nav = nb?.series ?? nb?.section ?? null;
     const { notes, recordings, ...rest } = s;
+    const neighbors = (opts.neighbors?.byShiur.get(s.id) ?? []).map((n) => ({ ...n }));
+    const prev = nav?.prev ?? null;
+    const next = nav?.next ?? null;
+    const sameOccasion = nb?.sameOccasion ?? [];
+    // Self-contained (G.1): titles of every shiur this file points at, the series title and the
+    // corpus-layer refs with their labels, so the room loads nothing corpus-wide.
+    const named = [...sameOccasion, prev, next, ...neighbors.map((n) => n.shiurId), ...layerOut.shiurPointers(s.id)];
+    const titles = sortedRecord(
+      uniq(named.filter((x): x is string => x !== null && x !== s.id)).flatMap((id) => {
+        const o = byId.get(id);
+        const t: [string, { title: string; lang: Ed; years: number[] }][] = o ? [[id, { title: o.catalog.titleOriginal, lang: o.lang, years: [...o.years] }]] : [];
+        return t;
+      }),
+    );
+    const series = s.series ? seriesById.get(s.series.id) : undefined;
     const file: ShiurFile = {
       schemaVersion: V,
       ...rest,
       recordings: recordings.map((r) => ({ ...r })),
-      related: {
-        sameOccasion: nb?.sameOccasion ?? [],
-        prev: nav?.prev ?? null,
-        next: nav?.next ?? null,
-        neighbors: (opts.neighbors?.byShiur.get(s.id) ?? []).map((n) => ({ ...n })),
-      },
+      related: { sameOccasion, prev, next, neighbors, titles },
+      seriesTitle: series ? { en: series.title.en, yi: series.title.yi } : null,
     };
+    const refs = layerOut.shiurCorpus(s.id);
+    if (refs) file.corpus = refs;
     if (s.status === "full" && notes) {
       const { writeup, ...without } = notes;
       const langs = EDS.filter((l) => writeup[l].length > 0);
@@ -398,7 +471,6 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
       id: x.id,
       title: { en: x.title.en, yi: x.title.yi },
       lang: x.lang,
-      sibling: x.sibling,
       parts: x.parts.flatMap((p) => {
         const s = byId.get(p.id);
         if (!s) return [];
@@ -419,6 +491,12 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
         g.perek === null ? [] : [{ perek: g.perek, shiurIds: g.shiurIds }],
       ),
     };
+    const synthesis = seriesSynthesis(
+      input.layer,
+      x.id,
+      new Set(x.parts.filter((p) => byId.get(p.id)?.status === "full").map((p) => p.id)),
+    );
+    if (synthesis) file.synthesis = synthesis;
     put<"series">(dataPaths.series(x.id), file);
   }
 
@@ -436,51 +514,95 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
     mention: m.mention,
     resolution: m.resolution,
   });
-  const listedWorks = agg.works.works.filter((w) => w.shiurCount > 0);
+  // Keyed by corpus work id (C1.7): a work with a Live page (≥3 shiurim, never generic). Each cited
+  // source goes to the work its moment resolves to in the layer refs, else to its aggregate entry's
+  // work; locations keep the reference order of the aggregate (W2.1).
+  const sourceWork = new Map<string, string>();
+  for (const r of input.layer?.refs.values() ?? []) for (const x of r.sources ?? []) sourceWork.set(x.momentId, x.workId);
+  type Loc = { ref: WorkRef; citations: WorkCitation[] };
+  const locs = new Map<string, Map<string, Loc>>();
+  const unloc = new Map<string, WorkCitation[]>();
+  const mentions = new Map<string, number>();
+  const workOfMention = (m: MentionRef, fallback: string | null | undefined): string | null =>
+    sourceWork.get(m.id) ?? fallback ?? null;
+  for (const w of agg.works.works) {
+    for (const r of w.refs) {
+      for (const m of r.mentions) {
+        const id = workOfMention(m, w.workId);
+        if (id === null || !view.works.has(id)) continue;
+        let byRef = locs.get(id);
+        if (!byRef) locs.set(id, (byRef = new Map()));
+        let l = byRef.get(r.ref);
+        if (!l) byRef.set(r.ref, (l = { ref: r, citations: [] }));
+        l.citations.push(citation(m));
+        mentions.set(id, (mentions.get(id) ?? 0) + 1);
+      }
+    }
+    for (const m of w.unlocated) {
+      const id = workOfMention(m, w.workId);
+      if (id === null || !view.works.has(id)) continue;
+      unloc.set(id, [...(unloc.get(id) ?? []), citation(m)]);
+      mentions.set(id, (mentions.get(id) ?? 0) + 1);
+    }
+  }
+  const sortKeyCmp = (a: readonly number[], b: readonly number[]): number => {
+    for (let i = 0; i < Math.max(a.length, b.length); i++) {
+      const d = (a[i] ?? -1) - (b[i] ?? -1);
+      if (d !== 0) return d;
+    }
+    return 0;
+  };
+  const liveWorks = [...view.works.values()];
   const works: WorksFile = {
     schemaVersion: V,
-    // The shelf: generic labels ("Gemara", "Midrash") are listed in facets, not shelved.
-    works: listedWorks
-      .filter((w) => !w.genre)
-      .map((w) => ({ key: w.key, name: w.en, label: workLabel(w.key), count: w.shiurCount, mentions: w.mentionCount })),
+    // The shelf, in the layer's shelf order; generic labels never have a page.
+    works: liveWorks.map((w) => ({
+      key: w.id,
+      name: w.titleEn,
+      label: workLabel(w.id),
+      count: w.count,
+      mentions: mentions.get(w.id) ?? 0,
+    })),
   };
   put<"works">(dataPaths.works(), works);
-  for (const w of listedWorks) {
+  for (const w of liveWorks) {
     const file: WorkFile = {
       schemaVersion: V,
-      key: w.key,
-      name: w.en,
-      label: workLabel(w.key),
-      locations: w.refs.map((r) => ({ ref: r.label.en, sefariaRef: r.ref, citations: r.mentions.map(citation) })),
-      unlocated: w.unlocated.map(citation),
+      key: w.id,
+      name: w.titleEn,
+      label: workLabel(w.id),
+      locations: [...(locs.get(w.id)?.values() ?? [])]
+        .sort((a, b) => sortKeyCmp(a.ref.sortKey, b.ref.sortKey))
+        .map((l) => ({ ref: l.ref.label.en, sefariaRef: l.ref.ref, citations: l.citations })),
+      unlocated: unloc.get(w.id) ?? [],
     };
-    put<"work">(dataPaths.work(w.key), file);
+    put<"work">(dataPaths.work(w.id), file);
   }
 
   // ------------------------------------------------------------------ entity/{p,c,o}/<key>.json
   type Ent = { kind: EntityKind; key: string; label: FacetLabel; ids: string[]; moments: MomentRef[] };
   const ents: Ent[] = [];
   const entityMin = EMIT_LIMITS.entityFileMin;
-  for (const p of agg.people.people) {
-    const ids = sortByYear(p.shiurim.map((x) => x.id));
-    if (ids.length < entityMin) continue;
-    const moments = p.shiurim.flatMap((x) => x.stories.flatMap((id) => ref(id) ?? []));
-    ents.push({ kind: "p", key: p.key, label: personLabel(p.key), ids, moments });
+  // People and concepts: corpus ids with a Live page (C1.7). A person's moments are the tellings
+  // of the merged stories that name him; a concept's are its example sections.
+  const storyTellings = new Map((input.layer?.stories ?? []).map((st) => [st.id, st.tellings ?? []]));
+  for (const p of view.people.values()) {
+    const ids = sortByYear(p.shiurIds ?? []);
+    if (ids.length === 0) continue;
+    const mine = new Set(ids);
+    const moments = uniq((p.storyIds ?? []).flatMap((sid) => (storyTellings.get(sid) ?? []).map((t) => t.momentId)))
+      .flatMap((id) => ref(id) ?? [])
+      .filter((m) => mine.has(m.shiurId));
+    ents.push({ kind: "p", key: p.id, label: personLabel(p.id), ids, moments });
   }
-  // Concepts: every browse concept (≥2 shiurim, not stop-listed). concepts.json (≥3) supplies the
-  // chapters whose title names the term; a 2-shiur concept has its shiurim only.
-  const conceptShiurim = new Map<string, string[]>();
-  for (const s of shiurim) {
-    for (const k of uniq((s.notes?.concepts ?? []).map((c) => c.key))) {
-      if (browseConcepts.has(k)) conceptShiurim.set(k, [...(conceptShiurim.get(k) ?? []), s.id]);
-    }
-  }
-  for (const [key, members] of [...conceptShiurim].sort(([a], [b]) => cmp(a, b))) {
-    const ids = sortByYear(members);
-    if (ids.length < entityMin) continue;
-    const c = conceptByKey.get(key);
-    const moments = (c?.shiurim ?? []).flatMap((x) => x.sections.flatMap((id) => ref(id) ?? []));
-    ents.push({ kind: "c", key, label: conceptLabel(key), ids, moments });
+  for (const c of view.concepts.values()) {
+    const ids = sortByYear(c.shiurIds ?? []);
+    if (ids.length === 0) continue;
+    const mine = new Set(ids);
+    const moments = uniq((c.exampleRefs ?? []).map((x) => x.momentId))
+      .flatMap((id) => ref(id) ?? [])
+      .filter((m) => mine.has(m.shiurId));
+    ents.push({ kind: "c", key: c.id, label: conceptLabel(c.id), ids, moments });
   }
   for (const [key, o] of listed) {
     if (o.ids.length < entityMin) continue;
@@ -542,7 +664,12 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
       id: st.id,
       shiurId: st.shiurId,
       title: { en: st.title.en, yi: st.title.yi },
-      peopleKeys: st.peopleKeys,
+      // Corpus person ids (Live-listed) of the merged story this telling belongs to.
+      peopleKeys: [
+        ...new Set(
+          (view.storyOfMoment.get(st.id)?.people ?? []).flatMap((p) => ("id" in p && view.people.has(p.id) ? [p.id] : [])),
+        ),
+      ],
       t: st.t,
       end: st.end,
       year: st.years[0] ?? null,
@@ -587,8 +714,14 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
   }
 
   // ------------------------------------------------------------------ quick-index.<lang>.json
-  const docs = shiurim.map((shiur) => buildSearchDoc({ shiur, candidateTopics: [] }));
-  for (const lang of EDS) put<"quickIndex">(dataPaths.quickIndex(lang), quickIndex(docs, lang));
+  const docs = shiurim.map((shiur) => buildSearchDoc({ shiur }));
+  const names = entityNames(view);
+  const entityText = (id: string): string[] => {
+    const e = view.entitiesOf(id);
+    const keys = [...e.works.map((x) => `work:${x}`), ...e.people.map((x) => `person:${x}`), ...e.concepts.map((x) => `concept:${x}`)];
+    return keys.flatMap((k) => names.get(k) ?? []);
+  };
+  for (const lang of EDS) put<"quickIndex">(dataPaths.quickIndex(lang), quickIndex(docs, lang, entityText));
 
   // ------------------------------------------------------------------ build.json, corpus.json
   const buildId = createHash("sha256")
@@ -605,6 +738,7 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
     generatedAt: opts.generatedAt,
     counts,
     momentShards,
+    glossaryShards: layerOut.glossaryShards,
   };
   put<"build">(dataPaths.build(), build);
 
@@ -625,7 +759,30 @@ export const QUICK_INDEX_STORE_FIELDS = ["name"] as const;
 
 type QuickDoc = { id: string; name: string } & Record<(typeof QUICK_INDEX_FIELDS)[number], string>;
 
-function quickDoc(d: SearchDoc, lang: Ed): QuickDoc {
+/**
+ * Entity names for the quick index, from the search-core EntityDocs (labels only: the entity's own
+ * display names; no synonyms or aliases), keyed `<kind>:<id>`. Only entities listed on Live.
+ */
+function entityNames(view: CorpusView): Map<string, string[]> {
+  const out = new Map<string, string[]>();
+  const layer = view.layer;
+  if (!layer) return out;
+  const docs = buildEntityDocs({
+    topics: { tree: layer.topics, detail: [...layer.topicDetail.values()] },
+    concepts: { concepts: layer.concepts },
+    people: { people: layer.people },
+    works: { works: layer.works },
+    stories: layer.stories ? { stories: layer.stories } : null,
+    synonyms: { synonyms: [] },
+  });
+  for (const d of docs) {
+    if (!d.listed.live) continue;
+    out.set(`${d.kind}:${d.id}`, uniq([d.labels.en, d.labels.yi, d.labels.he].filter((x): x is string => x !== null)));
+  }
+  return out;
+}
+
+function quickDoc(d: SearchDoc, lang: Ed, entityText: (shiurId: string) => readonly string[]): QuickDoc {
   const f = (xs: readonly (string | null | undefined)[]) =>
     xs
       .flatMap((x) => (x ? [foldForIndex(x)] : []))
@@ -638,17 +795,21 @@ function quickDoc(d: SearchDoc, lang: Ed): QuickDoc {
     occasion: f([...d.parsha, ...d.zman]),
     oneLiner: f([d.oneLiner?.[lang]]),
     sections: f(d.sections.map((s) => s.title[lang])),
-    entities: f([...uniq(d.sources.map((s) => s.work)), ...d.people, ...d.concepts]),
+    entities: f([...entityText(d.id)]),
   };
 }
 
-export function quickIndex(docs: readonly SearchDoc[], lang: Ed): QuickIndexFile {
+export function quickIndex(
+  docs: readonly SearchDoc[],
+  lang: Ed,
+  entityText: (shiurId: string) => readonly string[] = () => [],
+): QuickIndexFile {
   const options = {
     fields: [...QUICK_INDEX_FIELDS],
     storeFields: [...QUICK_INDEX_STORE_FIELDS],
     idField: "id",
   };
   const ms = new MiniSearch<QuickDoc>(options);
-  ms.addAll([...docs].sort((a, b) => cmp(a.id, b.id)).map((d) => quickDoc(d, lang)));
+  ms.addAll([...docs].sort((a, b) => cmp(a.id, b.id)).map((d) => quickDoc(d, lang, entityText)));
   return { schemaVersion: V, lang, options, index: ms.toJSON() };
 }

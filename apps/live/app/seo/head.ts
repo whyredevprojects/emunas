@@ -28,6 +28,11 @@ export interface SeoPage {
   alternates: HreflangLink[];
   /** Absolute Live URL of the page (og:url), or null without hosts. */
   url: string | null;
+  /**
+   * A corpus entry without a Quiet page (and every thread page): `noindex`, no canonical, no
+   * hreflang (corpus-wave-plan §3.5, D8).
+   */
+  noindex: boolean;
 }
 
 /** What the root loader returns (serialized into every prerendered page). */
@@ -67,7 +72,8 @@ function linksFor(hosts: Hosts): Links | null {
 export function buildSeoPage(pathname: string, text: PageText, links: Links | null): SeoPage {
   const path = normalizeLivePath(pathname);
   const page = classifyLivePath(path);
-  const indexable = isIndexable(page.kind);
+  const noindex = !isIndexable(page.kind) || text.noindex === true || (links ? links.noindexFor(links.hosts.live + path) : false);
+  const indexable = !noindex;
   return {
     path,
     kind: page.kind,
@@ -75,9 +81,11 @@ export function buildSeoPage(pathname: string, text: PageText, links: Links | nu
     title: text.title,
     description: text.description,
     titleLang: text.titleLang,
-    canonical: links ? links.canonicalFor(links.hosts.live + path) : null,
+    // No canonical for a corpus entry without a Quiet page, nor for a thread (D8).
+    canonical: links && text.noindex !== true && page.kind !== "thread" ? links.canonicalFor(links.hosts.live + path) : null,
     alternates: links && indexable ? links.hreflangPair(path, "live") : [],
     url: links ? links.hosts.live + path : null,
+    noindex,
   };
 }
 
@@ -96,7 +104,8 @@ export function headTags(pathname: string, data: RootSeoData["seo"] | null | und
   const ui: UiLang = info.ui ?? "en";
   const page = data?.page && data.page.path === path ? data.page : null;
   const links = data?.hosts ? linksFor(data.hosts) : null;
-  const indexable = isIndexable(info.kind);
+  // Threads are never indexable; a corpus entry is noindex when the build found no Quiet page.
+  const indexable = isIndexable(info.kind) && page?.noindex !== true;
   const tags: HeadTag[] = [];
 
   // The fallback document itself (server render at "/"): after hydration the real path takes over.
@@ -104,7 +113,7 @@ export function headTags(pathname: string, data: RootSeoData["seo"] | null | und
 
   if (!indexable) tags.push({ tag: "meta", name: "robots", content: "noindex" });
 
-  const canonical = page ? page.canonical : links ? links.canonicalFor(links.hosts.live + path) : null;
+  const canonical = page ? page.canonical : links && info.kind !== "thread" ? links.canonicalFor(links.hosts.live + path) : null;
   if (canonical) tags.push({ tag: "link", rel: "canonical", href: canonical });
 
   const alternates = indexable ? (page ? page.alternates : links ? links.hreflangPair(path, "live") : []) : [];

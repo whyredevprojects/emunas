@@ -8,7 +8,8 @@ import { type RouteConfig, index, route } from "@react-router/dev/routes";
  * Every page under `/:ui/` renders inside `shell/ui-layout.tsx`, which owns the rail and the dock slot
  * and stays mounted across navigation. Files under `routes/` are stubs until their wave-3/4 owners
  * replace them (file names match the owners' briefs: `_ui.index.tsx` W3.8, `s.$shiurId.tsx` W3.7,
- * `series*.tsx` W3.8, `shelf*.tsx` and `pl.tsx` W3.9).
+ * `series*.tsx` W3.8, `shelf*.tsx` and `pl.tsx` W3.9). The corpus-layer entries `t/:topicId`,
+ * `th/:threadId` and `maasios/:storyId` (corpus-wave-plan §3.5) are C1.7 stubs.
  */
 export const UI_CHILD_ROUTES = [
   index("routes/_ui.index.tsx"),
@@ -18,11 +19,15 @@ export const UI_CHILD_ROUTES = [
   route("seforim/:workId", "routes/seforim.$workId.tsx"),
   route("seforim/:workId/:chapter", "routes/seforim.$workId.$chapter.tsx"),
   route("maasios", "routes/maasios.tsx"),
+  route("maasios/:storyId", "routes/maasios.$storyId.tsx"),
   route("series", "routes/series.tsx"),
   route("series/:seriesId", "routes/series.$seriesId.tsx"),
   route("p/:personId", "routes/p.$personId.tsx"),
   route("c/:conceptId", "routes/c.$conceptId.tsx"),
   route("o/:occasionId", "routes/o.$occasionId.tsx"),
+  // Corpus layer (C1.7 stubs; C2.5 topics, C2.7 stories, C3.3 threads replace the bodies).
+  route("t/:topicId", "routes/t.$topicId.tsx"),
+  route("th/:threadId", "routes/th.$threadId.tsx"),
   route("search", "routes/search.tsx"),
   route("shelf", "routes/shelf.tsx"),
   route("shelf/:section", "routes/shelf.$section.tsx"),

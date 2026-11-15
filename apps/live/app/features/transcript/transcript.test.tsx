@@ -85,7 +85,6 @@ function roomOf(over: Partial<RoomContext> = {}): RoomContext {
     focusedMoment: null,
     skippedKinds: new Set(),
     playAt: vi.fn(),
-    siblingSeries: null,
     playable: true,
     ...over,
   };

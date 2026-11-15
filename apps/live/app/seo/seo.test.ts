@@ -4,7 +4,7 @@ import { buildSeoPage, clip, headTags, type HeadTag, type RootSeoData } from "./
 import { createPageText, linkDataFor, prerenderPaths, todayPaths } from "./model.ts";
 import { classifyLivePath, isIndexable, normalizeLivePath } from "./policy.ts";
 import { ROBOTS_TXT } from "./robots.ts";
-import { corpusFixture, SHIUR_CATALOG, SHIUR_FULL } from "./test-fixtures.ts";
+import { corpusFixture, layerCorpusFixture, SHIUR_CATALOG, SHIUR_FULL } from "./test-fixtures.ts";
 import { seoHosts } from "./env.ts";
 
 const HOSTS: Hosts = { quiet: "https://example.org", live: "https://listen.example.org" };
@@ -41,6 +41,11 @@ describe("policy", () => {
       ["/en/p/achashverosh", "person", "achashverosh"],
       ["/en/c/%D7%90", "concept", "א"],
       ["/en/maasios", "maasios", null],
+      ["/en/maasios/sugar-sled", "story", "sugar-sled"],
+      ["/en/t/hester-panim", "topic", "hester-panim"],
+      ["/yi/th/akeidah", "thread", "akeidah"],
+      ["/en/t", "unknown", null],
+      ["/en/th/a/b", "unknown", null],
       ["/en/explore", "explore", null],
       ["/en/search", "search", null],
       ["/en/shelf", "shelf", null],
@@ -57,8 +62,8 @@ describe("policy", () => {
   });
 
   it("indexes content pages only", () => {
-    for (const k of ["shiur", "series", "occasion", "work", "person", "concept"] as const) expect(isIndexable(k)).toBe(true);
-    for (const k of ["root", "today", "explore", "search", "shelf", "playlist", "maasios", "unknown"] as const) {
+    for (const k of ["shiur", "series", "occasion", "work", "person", "concept", "topic", "story"] as const) expect(isIndexable(k)).toBe(true);
+    for (const k of ["root", "today", "explore", "search", "shelf", "playlist", "maasios", "thread", "unknown"] as const) {
       expect(isIndexable(k)).toBe(false);
     }
   });
@@ -272,5 +277,68 @@ describe("env and robots.txt", () => {
     expect(ROBOTS_TXT).toContain("Disallow: /api/");
     expect(ROBOTS_TXT).toContain("Disallow: /admin/");
     expect(ROBOTS_TXT.toLowerCase()).not.toContain("sitemap");
+  });
+});
+
+describe("corpus layer (C1.7)", () => {
+  const lLinks = createLinks({ hosts: HOSTS, data: linkDataFor(layerCorpusFixture) });
+  const lText = createPageText(layerCorpusFixture);
+  const lSeo = (path: string): RootSeoData["seo"] => {
+    const t = lText(path);
+    return { hosts: HOSTS, page: t ? buildSeoPage(path, t, lLinks) : null };
+  };
+
+  it("prerenders every topic, threads and stories with a page, and corpus-id entity pages, per UI", () => {
+    const { paths } = prerenderPaths(layerCorpusFixture);
+    for (const ui of ["en", "yi"]) {
+      for (const p of ["t/hester-panim", "t/rare-topic", "th/akeidah-last-generation", "maasios/sugar-sled", "seforim/bereishis", "p/moshe-rabbeinu", "c/tzimtzum"]) {
+        expect(paths, p).toContain(`/${ui}/${p}`);
+      }
+      // Below the line: a two-shiur thread, a story told once, a person with one shiur, a concept merged into a topic.
+      for (const p of ["th/two-member", "maasios/told-once", "p/a-local", "c/hester-panim"]) expect(paths, p).not.toContain(`/${ui}/${p}`);
+    }
+    const files = new Set(["topic/hester-panim.json", "story/sugar-sled.json"]);
+    const r = prerenderPaths(layerCorpusFixture, files);
+    expect(r.paths).toContain("/en/t/hester-panim");
+    expect(r.skipped).toContain("/en/th/akeidah-last-generation");
+  });
+
+  it("canonical to Quiet where Quiet has the page; otherwise noindex and no canonical", () => {
+    const tagsOf = (p: string) => headTags(p, lSeo(p));
+    expect(canonicals(tagsOf("/en/t/hester-panim"))).toEqual(["https://example.org/en/inyanim/hester-panim/"]);
+    expect(robots(tagsOf("/en/t/hester-panim"))).toHaveLength(0);
+    expect(canonicals(tagsOf("/en/maasios/sugar-sled"))).toEqual(["https://example.org/en/stories/sugar-sled/"]);
+    for (const p of ["/en/t/rare-topic", "/yi/th/akeidah-last-generation"]) {
+      const tags = tagsOf(p);
+      expect(canonicals(tags), p).toEqual([]);
+      expect(robots(tags), p).toHaveLength(1);
+      expect(tags.some((t) => t.tag === "link" && t.rel === "alternate"), p).toBe(false);
+      expect(meta(tags, "og:title")?.content, p).toBeTruthy();
+    }
+  });
+
+  it("thread pages are noindex even on client navigation, and their description is not the summary", () => {
+    const t = lText("/en/th/akeidah-last-generation")!;
+    expect(t.description).toContain("8 shiurim");
+    expect(t.noindex).toBe(true);
+    const tags = headTags("/en/th/akeidah-last-generation", { hosts: HOSTS, page: null });
+    expect(robots(tags)).toHaveLength(1);
+    expect(canonicals(tags)).toEqual([]);
+  });
+
+  it("describes topics and stories with their counts", () => {
+    expect(lText("/en/t/hester-panim")).toMatchObject({ title: "Hester Panim", kind: "topic" });
+    expect(lText("/en/t/hester-panim")!.description).toContain("112 shiurim");
+    expect(lText("/yi/maasios/sugar-sled")!.title).toBe("דער צוקער שליטן");
+    expect(lText("/en/maasios/sugar-sled")!.description).toContain("14 times");
+    expect(lText("/en/t/missing")).toBeNull();
+  });
+
+  it("links: a merged concept goes to its topic; pages below the line have no Live link", () => {
+    expect(lLinks.live.concept("en", "hester-panim")).toBe("https://listen.example.org/en/t/hester-panim");
+    expect(lLinks.hrefFor("live", { kind: "entry", ed: "en", entry: "story", id: "told-once" })).toBeNull();
+    expect(lLinks.hrefFor("live", { kind: "entry", ed: "en", entry: "thread", id: "akeidah-last-generation" })).toBe(
+      "https://listen.example.org/en/th/akeidah-last-generation",
+    );
   });
 });

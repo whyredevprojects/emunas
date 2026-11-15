@@ -8,7 +8,7 @@
  */
 import type { Ed, L } from "@emunas/corpus/public";
 import { formatHebrewYears, type UiLang } from "@emunas/i18n";
-import type { EntityKind, LinkData, OccasionKind } from "@emunas/links";
+import type { CorpusKind, EntityKind, LinkData, OccasionKind, Site } from "@emunas/links";
 import { tFor } from "../i18n/index.ts";
 import { classifyLivePath, normalizeLivePath, type LivePageKind } from "./policy.ts";
 import { seoStrings } from "./strings.ts";
@@ -42,12 +42,17 @@ export interface SeoOccasion {
 }
 
 export interface SeoEntity {
+  /** Corpus id (corpus layer), or the legacy site key without a layer. */
   key: string;
   label: SeoLabel;
-  /** Number of shiurim (entities.json). */
+  /** Number of visible shiurim (layer recount; entities.json without a layer). */
   count: number;
-  /** entities.json `livePrerender` (≥3 shiurim, not a genre label). */
+  /** Has a Live page, which is prerendered (layer page flags, C1.7; entities.json `livePrerender` without a layer). */
   prerender: boolean;
+  /** Has a Quiet page (layer page flags): else the Live page has no canonical and is noindex. */
+  quietPage?: boolean;
+  /** A concept merged into this topic (layer `mergedIntoTopic`). */
+  topicId?: string | null;
 }
 
 export interface SeoCorpus {
@@ -57,9 +62,26 @@ export interface SeoCorpus {
   works: SeoEntity[];
   people: SeoEntity[];
   concepts: SeoEntity[];
+  /** Corpus layer (C1.7); empty without one. */
+  topics: SeoEntity[];
+  stories: SeoEntity[];
+  threads: SeoEntity[];
+  /** True when the entity lists come from the corpus layer: their page flags are authoritative. */
+  layer: boolean;
 }
 
-export const EMPTY_CORPUS: SeoCorpus = { shiurim: [], series: [], occasions: [], works: [], people: [], concepts: [] };
+export const EMPTY_CORPUS: SeoCorpus = {
+  shiurim: [],
+  series: [],
+  occasions: [],
+  works: [],
+  people: [],
+  concepts: [],
+  topics: [],
+  stories: [],
+  threads: [],
+  layer: false,
+};
 
 /** Live entity data files exist from this many shiurim on (W3.6 `EMIT_LIMITS.entityFileMin`). */
 export const OCCASION_PRERENDER_MIN = 2;
@@ -110,6 +132,10 @@ export function prerenderPaths(corpus: SeoCorpus, dataFiles: DataFileSet = null)
     for (const w of corpus.works) if (w.prerender) add(`/${ui}/seforim/${seg(w.key)}`, `work/${w.key}.json`);
     for (const p of corpus.people) if (p.prerender) add(`/${ui}/p/${seg(p.key)}`, `entity/p/${p.key}.json`);
     for (const c of corpus.concepts) if (c.prerender) add(`/${ui}/c/${seg(c.key)}`, `entity/c/${c.key}.json`);
+    // Corpus layer (C1.7): every topic, threads of ≥3 shiurim, stories told at least twice.
+    for (const t of corpus.topics) if (t.prerender) add(`/${ui}/t/${seg(t.key)}`, `topic/${t.key}.json`);
+    for (const t of corpus.threads) if (t.prerender) add(`/${ui}/th/${seg(t.key)}`, `thread/${t.key}.json`);
+    for (const s of corpus.stories) if (s.prerender) add(`/${ui}/maasios/${seg(s.key)}`, `story/${s.key}.json`);
   }
   return { paths, skipped };
 }
@@ -123,10 +149,30 @@ export function linkDataFor(corpus: SeoCorpus): LinkData {
   };
   const kinds = new Map<string, OccasionKind>();
   for (const o of corpus.occasions) if (o.kind !== null) kinds.set(o.key, o.kind);
-  return {
+  const base: LinkData = {
     // Unknown key: 0 (no Quiet page), so the canonical falls back to the index, never a 404.
     entityCount: (entity, key) => counts[entity].get(key) ?? 0,
     occasionKind: (key) => kinds.get(key),
+  };
+  if (!corpus.layer) return base;
+  // Corpus layer: page flags per site decide canonicals, noindex and links (plan §3.5).
+  const flags = (xs: readonly SeoEntity[]) => new Map(xs.map((e) => [e.key, e]));
+  const by: Record<CorpusKind, Map<string, SeoEntity>> = {
+    topic: flags(corpus.topics),
+    concept: flags(corpus.concepts),
+    person: flags(corpus.people),
+    work: flags(corpus.works),
+    story: flags(corpus.stories),
+    thread: flags(corpus.threads),
+  };
+  return {
+    ...base,
+    hasPage: (site: Site, kind: CorpusKind, id: string) => {
+      if (kind === "thread" && site === "quiet") return false;
+      const e = by[kind].get(id);
+      return e ? (site === "live" ? e.prerender : e.quietPage === true) : false;
+    },
+    conceptTopic: (id) => by.concept.get(id)?.topicId ?? undefined,
   };
 }
 
@@ -136,6 +182,8 @@ export interface PageText {
   description: string;
   /** Language of `title` when it is data in another language (a Yiddish title on the English UI). */
   titleLang: Ed | null;
+  /** A corpus entry without a Quiet page: no canonical, noindex (C1.7). */
+  noindex?: boolean;
 }
 
 function count(ui: UiLang, n: number): string {
@@ -151,6 +199,11 @@ export function createPageText(corpus: SeoCorpus): (pathname: string) => PageTex
   const works = by(corpus.works);
   const people = by(corpus.people);
   const concepts = by(corpus.concepts);
+  const topics = by(corpus.topics);
+  const stories = by(corpus.stories);
+  const threads = by(corpus.threads);
+  /** Layer entries: noindex when Quiet has no page for them. */
+  const entry = (e: SeoEntity) => (corpus.layer && e.quietPage !== true ? { noindex: true } : {});
 
   return (pathname) => {
     const page = classifyLivePath(normalizeLivePath(pathname));
@@ -188,19 +241,38 @@ export function createPageText(corpus: SeoCorpus): (pathname: string) => PageTex
         const w = works.get(key);
         if (!w) return null;
         const title = w.label[ui];
-        return { kind: page.kind, title, description: str.work(title, count(ui, w.count)), titleLang: null };
+        return { kind: page.kind, title, description: str.work(title, count(ui, w.count)), titleLang: null, ...entry(w) };
       }
       case "person": {
         const p = people.get(key);
         if (!p) return null;
         const title = p.label[ui];
-        return { kind: page.kind, title, description: str.person(title, count(ui, p.count)), titleLang: null };
+        return { kind: page.kind, title, description: str.person(title, count(ui, p.count)), titleLang: null, ...entry(p) };
       }
       case "concept": {
         const c = concepts.get(key);
         if (!c) return null;
         const title = c.label[ui];
-        return { kind: page.kind, title, description: str.concept(title, count(ui, c.count)), titleLang: null };
+        return { kind: page.kind, title, description: str.concept(title, count(ui, c.count)), titleLang: null, ...entry(c) };
+      }
+      case "topic": {
+        const t = topics.get(key);
+        if (!t) return null;
+        const title = t.label[ui];
+        return { kind: page.kind, title, description: str.topic(title, count(ui, t.count)), titleLang: null, ...entry(t) };
+      }
+      case "story": {
+        const s = stories.get(key);
+        if (!s) return null;
+        const title = s.label[ui];
+        return { kind: page.kind, title, description: str.story(title, s.count), titleLang: null, ...entry(s) };
+      }
+      case "thread": {
+        // Never indexed (D8); the share preview names the thread and its count, never the summary (E.5).
+        const t = threads.get(key);
+        if (!t) return null;
+        const title = t.label[ui];
+        return { kind: page.kind, title, description: str.thread(count(ui, t.count)), titleLang: null, noindex: true };
       }
       default:
         return null;

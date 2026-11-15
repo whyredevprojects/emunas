@@ -10,14 +10,18 @@
  *   (`pickForDay`) from the pool of the most specific occasion of the week that has one: the active
  *   occasion with the shortest window, else the parsha, else the next occasion; with no pool this
  *   week, from all pools.
- * - **Continue**: unfinished shiurim, then the next part of each series in progress.
- * - **Newly summarized** and the corpus counter come from `today.json` and `build.json`.
+ * - **Continue**: unfinished shiurim, then the next part of each series in progress (rows from the
+ *   heard shiurim's own files, `continue.ts`).
+ * - **Newly summarized** and the corpus counter come from `today.json`.
+ *
+ * Today renders from `today.json` alone (corpus-wave-plan §4, C1.7): its cards carry every shiur it
+ * names. No corpus-wide file (`corpus.json`, `facets.json`, the corpus layer) is read here.
  *
  * Everything respects the audio-language filter (settings store), except the counter.
  */
 import { calendar as defaultCalendar, type Calendar, type HebrewDate, type ThisWeek } from "@emunas/calendar";
-import type { BuildCounts } from "@emunas/corpus/public";
-import type { CorpusFile, CorpusRow, MomentRef, TodayFile } from "./live-data.ts";
+import type { BuildCounts, Ed, L, ShiurStatus } from "@emunas/corpus/public";
+import type { TodayFile } from "./live-data.ts";
 import { audioAllows, type AudioFilter } from "../../shell/settings.ts";
 import type { ProgressRecord } from "./personal.ts";
 import { pickForDay } from "./pick.ts";
@@ -37,9 +41,39 @@ export interface TodayInputs {
   israel: boolean;
   audio: AudioFilter;
   today: TodayFile;
-  corpus: CorpusFile;
   /** For tests; defaults to the committed table. */
   calendar?: Calendar;
+}
+
+/** A shiur as Today shows it: a card from `today.json`. */
+export interface TodayRow {
+  id: string;
+  lang: Ed;
+  title: string;
+  oneLiner: L | null;
+  duration: number;
+  years: number[];
+  status: ShiurStatus;
+}
+
+/** A shiur Continue knows from its own file: its card, its series place and the next part. */
+export interface ContinueRow extends TodayRow {
+  series: { id: string; order: number | null } | null;
+  /** The next part in series order (shiur file `related.next`), or null. */
+  next: string | null;
+}
+
+/** `<shiurId>~<kind><n>` → `<shiurId>`. */
+export function shiurOfMoment(id: string): string {
+  const at = id.indexOf("~");
+  return at < 0 ? id : id.slice(0, at);
+}
+
+/** A moment of the day candidate. */
+export interface PoolMoment {
+  id: string;
+  shiurId: string;
+  t: number;
 }
 
 export interface OccasionBlock {
@@ -48,7 +82,9 @@ export interface OccasionBlock {
   daysUntil: number;
   start: string;
   end: string;
-  shiurim: CorpusRow[];
+  shiurim: TodayRow[];
+  /** All of the occasion's shiurim (the row shows a few per language). */
+  total: number;
 }
 
 export interface ParshaBlock {
@@ -60,10 +96,10 @@ export interface ParshaBlock {
   date: string | null;
   /** True when this Shabbos is a Yom Tov and the parsha is next week's reading. */
   deferred: boolean;
-  shiurim: CorpusRow[];
+  shiurim: TodayRow[];
 }
 
-export interface DayMoment extends MomentRef {
+export interface DayMoment extends PoolMoment {
   /** The occasion key whose pool it came from; null for the all-pools fallback. */
   occasionKey: string | null;
 }
@@ -76,25 +112,30 @@ export interface TodayView {
   parsha: ParshaBlock | null;
   occasions: OccasionBlock[];
   moment: DayMoment | null;
-  newly: { row: CorpusRow; updatedAt: string }[];
+  newly: { row: TodayRow; updatedAt: string }[];
   counts: BuildCounts;
   /** False once every in-scope shiur has notes; the newly-summarized strip disappears then. */
   stillArriving: boolean;
 }
 
-/** Index of corpus rows by id. */
-export function rowsById(corpus: CorpusFile): Map<string, CorpusRow> {
-  return new Map(corpus.shiurim.map((r) => [r.id, r]));
+/** Today's cards by shiur id. */
+export function rowsById(today: Pick<TodayFile, "cards">): Map<string, TodayRow> {
+  return new Map(
+    Object.entries(today.cards).map(([id, c]) => [
+      id,
+      { id, lang: c.lang, title: c.title, oneLiner: c.oneLiner ?? null, duration: c.duration, years: c.years, status: c.status },
+    ]),
+  );
 }
 
-function firstYear(r: CorpusRow): number {
+function firstYear(r: TodayRow): number {
   return r.years.length > 0 ? Math.min(...r.years) : Number.POSITIVE_INFINITY;
 }
 
 /** Rows for ids in the order given, merged across several lists by year (undated last), deduped, filtered. */
-function rowsFor(lists: readonly (readonly string[])[], byId: Map<string, CorpusRow>, audio: AudioFilter): CorpusRow[] {
+function rowsFor(lists: readonly (readonly string[])[], byId: Map<string, TodayRow>, audio: AudioFilter): TodayRow[] {
   const seen = new Set<string>();
-  const out: CorpusRow[] = [];
+  const out: TodayRow[] = [];
   for (const ids of lists) {
     for (const id of ids) {
       if (seen.has(id)) continue;
@@ -111,18 +152,19 @@ function rowsFor(lists: readonly (readonly string[])[], byId: Map<string, Corpus
 function momentPool(
   keys: readonly string[],
   today: TodayFile,
-  byId: Map<string, CorpusRow>,
+  byId: Map<string, TodayRow>,
   audio: AudioFilter,
-): MomentRef[] {
-  const out: MomentRef[] = [];
+): PoolMoment[] {
+  const out: PoolMoment[] = [];
   const seen = new Set<string>();
   for (const k of keys) {
     for (const m of today.occasions[k]?.moments ?? []) {
-      if (seen.has(m.id) || m.t === null) continue;
-      const row = byId.get(m.shiurId);
+      if (seen.has(m.id) || typeof m.t !== "number") continue;
+      const shiurId = shiurOfMoment(m.id);
+      const row = byId.get(shiurId);
       if (!row || !audioAllows(audio, row.lang)) continue;
       seen.add(m.id);
-      out.push(m);
+      out.push({ id: m.id, shiurId, t: m.t });
     }
   }
   return out;
@@ -133,7 +175,7 @@ export function momentOfTheDay(
   date: string,
   priority: readonly (readonly string[])[],
   today: TodayFile,
-  byId: Map<string, CorpusRow>,
+  byId: Map<string, TodayRow>,
   audio: AudioFilter,
 ): DayMoment | null {
   for (const keys of priority) {
@@ -148,8 +190,8 @@ export function momentOfTheDay(
 
 export function buildToday(input: TodayInputs): TodayView {
   const cal = input.calendar ?? defaultCalendar;
-  const { date, today, corpus, audio } = input;
-  const byId = rowsById(corpus);
+  const { date, today, audio } = input;
+  const byId = rowsById(today);
   const week = cal.thisWeek(date, { israel: input.israel, lookaheadDays: LOOKAHEAD_DAYS });
 
   let parsha: ParshaBlock | null = null;
@@ -175,9 +217,10 @@ export function buildToday(input: TodayInputs): TodayView {
       (a, b) => Number(b.active) - Number(a.active) || (a.active ? a.length - b.length : a.daysUntil - b.daysUntil) || (a.key < b.key ? -1 : 1),
     );
     for (const h of hits) {
-      const shiurim = rowsFor([today.occasions[h.key]?.shiurIds ?? []], byId, audio);
+      const o = today.occasions[h.key];
+      const shiurim = rowsFor([o?.shiurIds ?? []], byId, audio);
       if (shiurim.length > 0 && occasions.length < MAX_OCCASIONS) {
-        occasions.push({ key: h.key, active: h.active, daysUntil: h.daysUntil, start: h.start, end: h.end, shiurim });
+        occasions.push({ key: h.key, active: h.active, daysUntil: h.daysUntil, start: h.start, end: h.end, shiurim, total: o?.total ?? shiurim.length });
       }
     }
     for (const h of hits.filter((x) => x.active)) priority.push([h.key]);
@@ -187,7 +230,7 @@ export function buildToday(input: TodayInputs): TodayView {
 
   const newly = today.newlySummarized
     .map((n) => ({ row: byId.get(n.shiurId), updatedAt: n.updatedAt }))
-    .filter((n): n is { row: CorpusRow; updatedAt: string } => n.row !== undefined && n.row.status === "full" && audioAllows(audio, n.row.lang))
+    .filter((n): n is { row: TodayRow; updatedAt: string } => n.row !== undefined && n.row.status === "full" && audioAllows(audio, n.row.lang))
     .slice(0, MAX_NEWLY);
 
   return {
@@ -198,8 +241,8 @@ export function buildToday(input: TodayInputs): TodayView {
     occasions,
     moment: momentOfTheDay(date, priority, today, byId, audio),
     newly,
-    counts: corpus.counts,
-    stillArriving: corpus.counts.full < corpus.counts.total,
+    counts: today.counts,
+    stillArriving: today.counts.full < today.counts.total,
   };
 }
 
@@ -207,68 +250,54 @@ export function buildToday(input: TodayInputs): TodayView {
 // Continue
 
 export type ContinueItem =
-  | { kind: "resume"; row: CorpusRow; t: number; updatedAt: string }
-  | { kind: "next"; row: CorpusRow; seriesId: string; updatedAt: string };
+  | { kind: "resume"; row: ContinueRow; t: number; updatedAt: string }
+  | { kind: "next"; row: ContinueRow; seriesId: string; updatedAt: string };
+
+/** Hops along `next` past parts already finished. */
+export const MAX_NEXT_HOPS = 8;
 
 /**
  * "Continue" (concept-live §5.1): unfinished shiurim (most recent first), then for each series with
- * a heard part, the first part after the furthest heard one that is not finished. Deduped, filtered
- * by the audio language, at most `MAX_CONTINUE`.
+ * a heard part, the first part after the furthest heard one that is not finished (following each
+ * part's `next`). Deduped, filtered by the audio language, at most `MAX_CONTINUE`. `rows` holds the
+ * heard shiurim and the parts after them (`continue.ts` loads their files).
  */
 export function continueItems(
   progress: readonly ProgressRecord[],
-  corpus: CorpusFile,
+  rows: ReadonlyMap<string, ContinueRow>,
   audio: AudioFilter,
 ): ContinueItem[] {
-  const byId = rowsById(corpus);
   const byShiur = new Map(progress.map((p) => [p.shiurId, p]));
   const recent = [...progress].sort((a, b) => (a.updatedAt < b.updatedAt ? 1 : a.updatedAt > b.updatedAt ? -1 : 0));
   const out: ContinueItem[] = [];
   const used = new Set<string>();
 
   for (const p of recent) {
-    const row = byId.get(p.shiurId);
+    const row = rows.get(p.shiurId);
     if (!row || p.completed || p.t <= 0 || !audioAllows(audio, row.lang)) continue;
     out.push({ kind: "resume", row, t: p.t, updatedAt: p.updatedAt });
     used.add(row.id);
   }
 
-  // Series in progress, most recently touched first.
-  const seriesParts = new Map<string, CorpusRow[]>();
-  for (const r of corpus.shiurim) {
-    if (!r.series) continue;
-    const list = seriesParts.get(r.series.id) ?? [];
-    list.push(r);
-    seriesParts.set(r.series.id, list);
+  // Series in progress, most recently touched first; per series the furthest heard part.
+  const touched = new Map<string, { updatedAt: string; furthest: ContinueRow }>();
+  for (const p of recent) {
+    const row = rows.get(p.shiurId);
+    if (!row?.series) continue;
+    const prev = touched.get(row.series.id);
+    const order = (r: ContinueRow) => r.series?.order ?? Number.NEGATIVE_INFINITY;
+    if (!prev) touched.set(row.series.id, { updatedAt: p.updatedAt, furthest: row });
+    else if (order(row) > order(prev.furthest)) prev.furthest = row;
   }
-  const touched: { seriesId: string; updatedAt: string }[] = [];
-  for (const [seriesId, parts] of seriesParts) {
-    const heard = parts.map((r) => byShiur.get(r.id)).filter((p): p is ProgressRecord => p !== undefined);
-    if (heard.length === 0) continue;
-    const last = heard.reduce((a, b) => (a.updatedAt >= b.updatedAt ? a : b));
-    touched.push({ seriesId, updatedAt: last.updatedAt });
-  }
-  touched.sort((a, b) => (a.updatedAt < b.updatedAt ? 1 : a.updatedAt > b.updatedAt ? -1 : 0));
-  for (const { seriesId, updatedAt } of touched) {
-    const ordered = orderSeriesRows(seriesParts.get(seriesId) ?? []);
-    let furthest = -1;
-    ordered.forEach((r, i) => {
-      if (byShiur.has(r.id)) furthest = i;
-    });
-    const next = ordered.slice(furthest + 1).find((r) => !byShiur.get(r.id)?.completed) ?? null;
-    if (!next || used.has(next.id) || !audioAllows(audio, next.lang)) continue;
+  for (const [seriesId, { updatedAt, furthest }] of touched) {
+    let id = furthest.next;
+    for (let hop = 0; id !== null && byShiur.get(id)?.completed && hop < MAX_NEXT_HOPS; hop++) id = rows.get(id)?.next ?? null;
+    const next = id === null ? undefined : rows.get(id);
+    if (!next || byShiur.get(next.id)?.completed || used.has(next.id) || !audioAllows(audio, next.lang)) continue;
     out.push({ kind: "next", row: next, seriesId, updatedAt });
     used.add(next.id);
   }
   return out.slice(0, MAX_CONTINUE);
-}
-
-/** Series rows by `series.order` (null last, otherwise stable). */
-export function orderSeriesRows(rows: readonly CorpusRow[]): CorpusRow[] {
-  return rows
-    .map((r, i) => ({ r, i, o: r.series?.order ?? Number.POSITIVE_INFINITY }))
-    .sort((a, b) => a.o - b.o || a.i - b.i)
-    .map((x) => x.r);
 }
 
 /** The visitor's civil date (local calendar day). */

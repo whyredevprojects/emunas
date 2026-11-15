@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "en-parsha-en-vyshlch-01",
  "rev": "e9135fea2b18",
  "lang": "en",
@@ -55,7 +55,518 @@
     "t": 2400,
     "score": 0.315
    }
-  ]
+  ],
+  "titles": {
+   "en-parsha-en-ky-sb-01": {
+    "title": "ביכורים - Bringing the Fruit of ראשית to the Place of ראשית",
+    "lang": "en",
+    "years": [
+     5760
+    ]
+   },
+   "en-parsha-en-svldvs-01": {
+    "title": "Explaining יצחק's Fondness of עשו and the meaning of ויגדלו הנערים",
+    "lang": "en",
+    "years": [
+     5749
+    ]
+   },
+   "en-zmanim-en-tv-bshbt-01": {
+    "title": "ט”ו בשבט Ushers in the Months of חסד (A Deeper Understanding of the צירופי החודש)",
+    "lang": "en",
+    "years": [
+     5756
+    ]
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "yaakov-veesav",
+    "salience": 1
+   },
+   {
+    "id": "gilgulim",
+    "salience": 0.6
+   },
+   {
+    "id": "maalas-yisroel",
+    "salience": 0.6
+   },
+   {
+    "id": "hashgacha-pratis",
+    "salience": 0.5
+   },
+   {
+    "id": "pintele-yid",
+    "salience": 0.4
+   },
+   {
+    "id": "yetzer-hara",
+    "salience": 0.4
+   },
+   {
+    "id": "otiyos-gematria",
+    "salience": 0.3
+   },
+   {
+    "id": "tanya-tzaddik-beinoni-rasha",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "gilgulim",
+     "avodah-begashmiyus"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "hashgacha-pratis"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "yaakov-veesav",
+     "otiyos-gematria"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "eliyahu-hanavi",
+     "yaakov-veesav"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "maasios",
+     "maalas-yisroel"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "maalas-yisroel"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "tanya-tzaddik-beinoni-rasha"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "yaakov-veesav"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "maalas-yisroel",
+     "yaakov-veesav"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "pintele-yid",
+     "gilgulim"
+    ]
+   },
+   {
+    "idx": 10,
+    "topicIds": [
+     "gilgulim"
+    ]
+   },
+   {
+    "idx": 11,
+    "topicIds": [
+     "yaakov-veesav"
+    ]
+   },
+   {
+    "idx": 12,
+    "topicIds": [
+     "yaakov-veesav",
+     "koach-hatefilah"
+    ]
+   },
+   {
+    "idx": 13,
+    "topicIds": [
+     "yaakov-veesav"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "avodah-begashmiyus": {
+    "id": "avodah-begashmiyus",
+    "label": {
+     "en": "Serving Hashem in Physical Life",
+     "yi": "עבודה בגשמיות"
+    },
+    "page": true
+   },
+   "eliyahu-hanavi": {
+    "id": "eliyahu-hanavi",
+    "label": {
+     "en": "Eliyahu HaNavi",
+     "yi": "אליהו הנביא"
+    },
+    "page": true
+   },
+   "gilgulim": {
+    "id": "gilgulim",
+    "label": {
+     "en": "Gilgulim and Tikkun HaNeshamos",
+     "yi": "גלגולים און תיקון הנשמות",
+     "he": "גלגולים ותיקון הנשמות"
+    },
+    "page": true
+   },
+   "hashgacha-pratis": {
+    "id": "hashgacha-pratis",
+    "label": {
+     "en": "Hashgacha Pratis",
+     "yi": "השגחה פרטית"
+    },
+    "page": true
+   },
+   "koach-hatefilah": {
+    "id": "koach-hatefilah",
+    "label": {
+     "en": "The Power of Tefilah",
+     "yi": "דער כח פון תפילה",
+     "he": "כח התפילה"
+    },
+    "page": true
+   },
+   "maalas-yisroel": {
+    "id": "maalas-yisroel",
+    "label": {
+     "en": "The Greatness of Every Jew",
+     "yi": "די מעלה פון יעדן איד",
+     "he": "מעלת ישראל"
+    },
+    "page": true
+   },
+   "maasios": {
+    "id": "maasios",
+    "label": {
+     "en": "Stories of Tzaddikim",
+     "yi": "מעשיות פון צדיקים",
+     "he": "מעשיות"
+    },
+    "page": true
+   },
+   "otiyos-gematria": {
+    "id": "otiyos-gematria",
+    "label": {
+     "en": "Letters, Gematria and Lashon HaKodesh",
+     "yi": "אותיות, גימטריא און לשון הקודש",
+     "he": "אותיות וגימטריאות"
+    },
+    "page": true
+   },
+   "pintele-yid": {
+    "id": "pintele-yid",
+    "label": {
+     "en": "The Pintele Yid: The Inner Point of Every Jew",
+     "yi": "דער פינטעלע איד: די פנימיות'דיגע נקודה פון יעדן איד",
+     "he": "הנקודה הפנימית שבכל יהודי"
+    },
+    "page": true
+   },
+   "tanya-tzaddik-beinoni-rasha": {
+    "id": "tanya-tzaddik-beinoni-rasha",
+    "label": {
+     "en": "Tzaddik, Beinoni and Rasha (Tanya ch. 9-17)",
+     "yi": "צדיק, בינוני און רשע (תניא פרקים ט-יז)",
+     "he": "צדיק בינוני ורשע"
+    },
+    "page": true
+   },
+   "yaakov-veesav": {
+    "id": "yaakov-veesav",
+    "label": {
+     "en": "Yitzchak, Yaakov and Esav",
+     "yi": "יצחק, יעקב און עשו",
+     "he": "יעקב ועשו"
+    },
+    "page": true
+   },
+   "yetzer-hara": {
+    "id": "yetzer-hara",
+    "label": {
+     "en": "The Yetzer Hara and Nisyonos",
+     "yi": "דער יצר הרע און נסיונות",
+     "he": "יצר הרע ונסיונות"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "am-haaretz",
+    "label": {
+     "en": "Am ha'aretz (an unlearned person)",
+     "yi": "עם הארץ"
+    },
+    "page": false
+   },
+   {
+    "id": "asarah-harugei-malchus",
+    "label": {
+     "en": "Asarah harugei malchus (the ten martyrs)",
+     "yi": "עשרה הרוגי מלכות"
+    },
+    "page": false
+   },
+   {
+    "id": "beinoni",
+    "label": {
+     "en": "Beinoni (the \"intermediate\" person of the Tanya)",
+     "yi": "בינוני"
+    },
+    "page": false
+   },
+   {
+    "id": "gematria",
+    "label": {
+     "en": "Gematria (numerical value)",
+     "yi": "גימטריא"
+    },
+    "page": false
+   },
+   {
+    "id": "geulah",
+    "label": {
+     "en": "Geulah (redemption)",
+     "yi": "גאולה"
+    },
+    "page": false
+   },
+   {
+    "id": "hashgacha-pratis",
+    "label": {
+     "en": "Hashgacha pratis (individual Divine providence)",
+     "yi": "השגחה פרטית"
+    },
+    "page": false
+   },
+   {
+    "id": "kiddush-hashem",
+    "label": {
+     "en": "Kiddush Hashem (sanctifying Hashem's Name)",
+     "yi": "קידוש השם"
+    },
+    "page": false
+   },
+   {
+    "id": "klipah",
+    "label": {
+     "en": "Klipah (husk, a shell of impurity)",
+     "yi": "קליפה"
+    },
+    "page": true
+   },
+   {
+    "id": "nitzotzos",
+    "label": {
+     "en": "Nitzotzos (holy sparks)",
+     "yi": "ניצוצות"
+    },
+    "page": false
+   },
+   {
+    "id": "seir-laazazel",
+    "label": {
+     "en": "Sa'ir la'Azazel (the goat sent to Azazel)",
+     "yi": "שעיר לעזאזל"
+    },
+    "page": false
+   },
+   {
+    "id": "yetzer-hara",
+    "label": {
+     "en": "Yetzer hara (the evil inclination)",
+     "yi": "יצר הרע"
+    },
+    "page": false
+   },
+   {
+    "id": "yetzer-tov",
+    "label": {
+     "en": "Yetzer tov (the good inclination)",
+     "yi": "יצר טוב"
+    },
+    "page": false
+   },
+   {
+    "id": "zivug",
+    "label": {
+     "en": "Zivug (a match, union)",
+     "yi": "זיווג"
+    },
+    "page": false
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src1",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src2",
+    "workId": "bereishis-rabbah",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src3",
+    "workId": "chullin",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src4",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src5",
+    "workId": "or-hachaim",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src6",
+    "workId": "zohar",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src7",
+    "workId": "melachim-i",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src8",
+    "workId": "talmud-bavli",
+    "page": false
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src9",
+    "workId": "bereishis-rabbah",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src10",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src12",
+    "workId": "bava-basra",
+    "page": false
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src13",
+    "workId": "berachos",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src14",
+    "workId": "mishlei",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src15",
+    "workId": "kiddushin",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src16",
+    "workId": "megillah",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src17",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src18",
+    "workId": "kiddushin",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src19",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src20",
+    "workId": "midrash",
+    "page": false
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src21",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src22",
+    "workId": "or-hachaim",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src23",
+    "workId": "chagigah",
+    "page": true
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "en-parsha-en-vyshlch-01~st0",
+    "storyId": "rabbi-shimon-bar-yochai-and-the-hunters-birds",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~st1",
+    "storyId": "rabbi-pinchas-ben-yairs-donkey",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~st2",
+    "storyId": "eliyahus-two-oxen",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~st3",
+    "storyId": "rabbi-hoshaya-and-the-unlearned-man",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~st4",
+    "storyId": "asnas-and-the-charm",
+    "tellings": 1,
+    "page": false
+   }
+  ],
+  "insights": []
  },
  "notes": {
   "summary": {

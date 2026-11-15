@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "yi-zmanim-svds-shvshn-pvrym-01",
  "rev": "faee7484473e",
  "lang": "yi",
@@ -84,7 +84,581 @@
   "sameOccasion": [],
   "prev": "yi-zmanim-pvrym-07",
   "next": "yi-zmanim-nysn-05",
-  "neighbors": []
+  "neighbors": [],
+  "titles": {
+   "yi-zmanim-nysn-05": {
+    "title": "לעזור בבית בהכנה לפסח; להתחדש עצמו בזמן התחדשות",
+    "lang": "yi",
+    "years": []
+   },
+   "yi-zmanim-pvrym-07": {
+    "title": "גודל כח היום; הדרכה איך לנהוג בו",
+    "lang": "yi",
+    "years": [
+     5767
+    ]
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "shushan-purim",
+    "salience": 0.95
+   },
+   {
+    "id": "bitachon",
+    "salience": 0.75
+   },
+   {
+    "id": "emunah-safek-amalek",
+    "salience": 0.75
+   },
+   {
+    "id": "megillas-esther",
+    "salience": 0.65
+   },
+   {
+    "id": "moshiach",
+    "salience": 0.5
+   },
+   {
+    "id": "yerushalayim",
+    "salience": 0.45
+   },
+   {
+    "id": "avodas-dor-haacharon",
+    "salience": 0.35
+   },
+   {
+    "id": "bris-milah",
+    "salience": 0.35
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "emunah-safek-amalek",
+     "shushan-purim"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "shushan-purim",
+     "yerushalayim"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "emunah-safek-amalek",
+     "shushan-purim"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "shushan-purim",
+     "megillas-esther",
+     "ahavas-yisroel"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "emunah-safek-amalek",
+     "hashgacha-pratis",
+     "megillas-esther"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "megillas-esther",
+     "bitachon"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "yesodei-haemunah",
+     "avraham-avinu"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "bitachon",
+     "megillas-esther"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "bitachon",
+     "yesodei-haemunah",
+     "megillas-esther"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "bitachon",
+     "simcha"
+    ]
+   },
+   {
+    "idx": 10,
+    "topicIds": [
+     "yerushalayim",
+     "shushan-purim",
+     "pintele-yid"
+    ]
+   },
+   {
+    "idx": 11,
+    "topicIds": [
+     "megillas-esther",
+     "emunah-safek-amalek"
+    ]
+   },
+   {
+    "idx": 12,
+    "topicIds": [
+     "megillas-esther",
+     "moshiach"
+    ]
+   },
+   {
+    "idx": 13,
+    "topicIds": [
+     "bris-milah",
+     "shushan-purim",
+     "moshiach"
+    ]
+   },
+   {
+    "idx": 14,
+    "topicIds": [
+     "bris-milah",
+     "emunah-safek-amalek"
+    ]
+   },
+   {
+    "idx": 15,
+    "topicIds": [
+     "avodas-dor-haacharon",
+     "mishkan",
+     "shushan-purim"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "ahavas-yisroel": {
+    "id": "ahavas-yisroel",
+    "label": {
+     "en": "Ahavas Yisroel and Achdus",
+     "yi": "אהבת ישראל און אחדות",
+     "he": "אהבת ישראל ואחדות"
+    },
+    "page": true
+   },
+   "avodas-dor-haacharon": {
+    "id": "avodas-dor-haacharon",
+    "label": {
+     "en": "Avodah of the Last Generation",
+     "yi": "די עבודה פונעם לעצטן דור",
+     "he": "עבודת הדור האחרון"
+    },
+    "page": true
+   },
+   "avraham-avinu": {
+    "id": "avraham-avinu",
+    "label": {
+     "en": "Avraham Avinu",
+     "yi": "אברהם אבינו"
+    },
+    "page": true
+   },
+   "bitachon": {
+    "id": "bitachon",
+    "label": {
+     "en": "Bitachon",
+     "yi": "בטחון"
+    },
+    "page": true
+   },
+   "bris-milah": {
+    "id": "bris-milah",
+    "label": {
+     "en": "Bris Milah",
+     "yi": "ברית מילה"
+    },
+    "page": true
+   },
+   "emunah-safek-amalek": {
+    "id": "emunah-safek-amalek",
+    "label": {
+     "en": "Doubts in Emunah and Amalek",
+     "yi": "ספיקות אין אמונה און עמלק",
+     "he": "ספק ועמלק"
+    },
+    "page": true
+   },
+   "hashgacha-pratis": {
+    "id": "hashgacha-pratis",
+    "label": {
+     "en": "Hashgacha Pratis",
+     "yi": "השגחה פרטית"
+    },
+    "page": true
+   },
+   "megillas-esther": {
+    "id": "megillas-esther",
+    "label": {
+     "en": "Megillas Esther",
+     "yi": "מגילת אסתר"
+    },
+    "page": true
+   },
+   "mishkan": {
+    "id": "mishkan",
+    "label": {
+     "en": "The Mishkan and the Kohanim",
+     "yi": "דער משכן און די כהנים",
+     "he": "המשכן"
+    },
+    "page": true
+   },
+   "moshiach": {
+    "id": "moshiach",
+    "label": {
+     "en": "Moshiach and the Days of Moshiach",
+     "yi": "משיח און ימות המשיח",
+     "he": "ימות המשיח"
+    },
+    "page": true
+   },
+   "pintele-yid": {
+    "id": "pintele-yid",
+    "label": {
+     "en": "The Pintele Yid: The Inner Point of Every Jew",
+     "yi": "דער פינטעלע איד: די פנימיות'דיגע נקודה פון יעדן איד",
+     "he": "הנקודה הפנימית שבכל יהודי"
+    },
+    "page": true
+   },
+   "shushan-purim": {
+    "id": "shushan-purim",
+    "label": {
+     "en": "Shushan Purim",
+     "yi": "שושן פורים"
+    },
+    "page": true
+   },
+   "simcha": {
+    "id": "simcha",
+    "label": {
+     "en": "Serving Hashem with Simcha",
+     "yi": "עבודת השם בשמחה",
+     "he": "שמחה"
+    },
+    "page": true
+   },
+   "yerushalayim": {
+    "id": "yerushalayim",
+    "label": {
+     "en": "Yerushalayim and the Kosel",
+     "yi": "ירושלים און דער כותל",
+     "he": "ירושלים עיר הקודש"
+    },
+    "page": true
+   },
+   "yesodei-haemunah": {
+    "id": "yesodei-haemunah",
+    "label": {
+     "en": "Foundations of Emunah",
+     "yi": "יסודי האמונה"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "amalek",
+    "label": {
+     "en": "Amalek (the nation of Amalek and the doubt it embodies)",
+     "yi": "עמלק"
+    },
+    "page": false
+   },
+   {
+    "id": "avodah-zarah",
+    "label": {
+     "en": "Avodah zarah (idol worship)",
+     "yi": "עבודה זרה"
+    },
+    "page": false
+   },
+   {
+    "id": "hashgacha-pratis",
+    "label": {
+     "en": "Hashgacha pratis (individual Divine providence)",
+     "yi": "השגחה פרטית"
+    },
+    "page": false
+   },
+   {
+    "id": "hester-panim",
+    "label": {
+     "en": "Hester panim (the hiding of Hashem's face)",
+     "yi": "הסתר פנים"
+    },
+    "page": false
+   },
+   {
+    "id": "kochos-hanefesh",
+    "label": {
+     "en": "Kochos hanefesh (faculties of the soul)",
+     "yi": "כוחות הנפש"
+    },
+    "page": false
+   },
+   {
+    "id": "mechiyas-amalek",
+    "label": {
+     "en": "Mechiyas Amalek (wiping out Amalek)",
+     "yi": "מחיית עמלק"
+    },
+    "page": false
+   },
+   {
+    "id": "mukafin-chomah",
+    "label": {
+     "en": "Mukafin chomah (walled cities)",
+     "yi": "מוקפין חומה"
+    },
+    "page": false
+   },
+   {
+    "id": "orlah",
+    "label": {
+     "en": "Orlah (the foreskin; a covering that blocks holiness)",
+     "yi": "ערלה"
+    },
+    "page": false
+   },
+   {
+    "id": "shushan-purim",
+    "label": {
+     "en": "Shushan Purim (the fifteenth of Adar)",
+     "yi": "שושן פורים"
+    },
+    "page": false
+   },
+   {
+    "id": "sodos-hatorah",
+    "label": {
+     "en": "Sodos haTorah (the secrets of the Torah)",
+     "yi": "סודות התורה"
+    },
+    "page": false
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src0",
+    "workId": "esther",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src1",
+    "workId": "esther",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src2",
+    "workId": "esther",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src3",
+    "workId": "esther",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src4",
+    "workId": "megillah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src5",
+    "workId": "targum-sheni",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src6",
+    "workId": "esther",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src8",
+    "workId": "mishnah-middos",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src9",
+    "workId": "shir-hashirim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src10",
+    "workId": "esther",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src11",
+    "workId": "esther",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src12",
+    "workId": "targum-sheni",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src13",
+    "workId": "esther",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src14",
+    "workId": "megillah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src15",
+    "workId": "divrei-yoel",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src16",
+    "workId": "avodah-zarah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src17",
+    "workId": "megillah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src18",
+    "workId": "divrei-hayamim-i",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src19",
+    "workId": "zohar",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src20",
+    "workId": "zohar",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src21",
+    "workId": "rema",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src22",
+    "workId": "esther",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src23",
+    "workId": "berachos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src24",
+    "workId": "megillah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src25",
+    "workId": "shemos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src26",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src27",
+    "workId": "shmuel-i",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src28",
+    "workId": "tosafos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src29",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src30",
+    "workId": "midrash",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src31",
+    "workId": "likkutei-torah-chernobyl",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src32",
+    "workId": "mishneh-torah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src33",
+    "workId": "bnei-yissaschar",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src35",
+    "workId": "shemos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src36",
+    "workId": "talmud-bavli",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src37",
+    "workId": "megillah",
+    "page": true
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~st0",
+    "storyId": "the-jews-complaint-to-mordechai-on-the-night-of-the-kings",
+    "tellings": 1,
+    "page": false
+   }
+  ],
+  "insights": []
  },
  "notes": {
   "summary": {

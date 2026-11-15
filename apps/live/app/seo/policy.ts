@@ -5,6 +5,10 @@
  * Quiet equivalent. Content pages (shiur, series, occasion, work, person, concept) are left
  * indexable so the canonical can consolidate them; app-only pages (Today, Explore, search, shelf,
  * playlists, the listings and anything unknown) are `noindex`. Pure and browser-safe.
+ *
+ * Corpus entries (corpus-wave-plan §3.5, C1.7): a topic, story, person, concept or sefer page whose
+ * Quiet equivalent has no page has no canonical and is `noindex` (`@emunas/links` `noindexFor`); a
+ * thread page is always `noindex` with no canonical (D8).
  */
 import { isUiLang, type UiLang } from "@emunas/i18n";
 
@@ -20,6 +24,9 @@ export type LivePageKind =
   | "works-index"
   | "person"
   | "concept"
+  | "topic"
+  | "story"
+  | "thread"
   | "maasios"
   | "explore"
   | "search"
@@ -44,6 +51,21 @@ export const INDEXABLE_KINDS: ReadonlySet<LivePageKind> = new Set<LivePageKind>(
   "work-chapter",
   "person",
   "concept",
+  "topic",
+  "story",
+]);
+
+/**
+ * Corpus-entry kinds: indexable, but `noindex` with no canonical when Quiet has no page for the
+ * entity (the build decides from the layer's page flags). Threads are never indexable.
+ */
+export const ENTRY_KINDS: ReadonlySet<LivePageKind> = new Set<LivePageKind>([
+  "work",
+  "work-chapter",
+  "person",
+  "concept",
+  "topic",
+  "story",
 ]);
 
 /** The app-only pages the brief names explicitly (§2.3): always `noindex`. */
@@ -104,7 +126,12 @@ export function classifyLivePath(pathname: string): LivePage {
     case "c":
       return n === 3 && b !== undefined ? page("concept", b) : page("unknown");
     case "maasios":
-      return n === 2 ? page("maasios") : page("unknown");
+      if (n === 2) return page("maasios");
+      return n === 3 && b !== undefined ? page("story", b) : page("unknown");
+    case "t":
+      return n === 3 && b !== undefined ? page("topic", b) : page("unknown");
+    case "th":
+      return n === 3 && b !== undefined ? page("thread", b) : page("unknown");
     case "explore":
       return n === 2 ? page("explore") : page("unknown");
     case "search":

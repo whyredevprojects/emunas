@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "yi-parshas-hashavua-mvr-01",
  "rev": "30e969060b73",
  "lang": "yi",
@@ -48,7 +48,466 @@
   "sameOccasion": [],
   "prev": "yi-parshas-hashavua-vyshb-08",
   "next": "yi-parshas-hashavua-vschnn-01",
-  "neighbors": []
+  "neighbors": [],
+  "titles": {
+   "yi-parshas-hashavua-vschnn-01": {
+    "title": "משה רבינו מלמד איך להתפלל. נחיצות וחשיבות פסוקי דזמרה",
+    "lang": "yi",
+    "years": [
+     5734
+    ]
+   },
+   "yi-parshas-hashavua-vyshb-08": {
+    "title": "בפרשה זו נטמן משיח בן יוסף ומשיח בן דוד. שייכות לחנוכה",
+    "lang": "yi",
+    "years": [
+     5751
+    ]
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "sefiras-haomer",
+    "salience": 0.8
+   },
+   {
+    "id": "schar-veonesh",
+    "salience": 0.6
+   },
+   {
+    "id": "brachos",
+    "salience": 0.55
+   },
+   {
+    "id": "kedushas-eretz-yisroel",
+    "salience": 0.5
+   },
+   {
+    "id": "hachanah-lekabbalas-hatorah",
+    "salience": 0.45
+   },
+   {
+    "id": "pirkei-avos",
+    "salience": 0.45
+   },
+   {
+    "id": "kedushas-shabbos",
+    "salience": 0.4
+   },
+   {
+    "id": "korbanos",
+    "salience": 0.35
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "brachos"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "brachos",
+     "hodaah"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "brachos",
+     "hodaah"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "pirkei-avos",
+     "schar-veonesh",
+     "maalas-yisroel"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "schar-veonesh",
+     "kedushas-shabbos",
+     "kedushas-eretz-yisroel"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "kedushas-eretz-yisroel"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "pirkei-avos",
+     "ahavas-hashem-leyisroel"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "sefiras-haomer",
+     "kedushas-eretz-yisroel",
+     "middos"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "sefiras-haomer",
+     "hachanah-lekabbalas-hatorah"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "maaseh-bereishis",
+     "kedushas-shabbos"
+    ]
+   },
+   {
+    "idx": 10,
+    "topicIds": [
+     "mishkan",
+     "kedushas-shabbos"
+    ]
+   },
+   {
+    "idx": 11,
+    "topicIds": [
+     "sefiras-haomer",
+     "lag-baomer"
+    ]
+   },
+   {
+    "idx": 12,
+    "topicIds": [
+     "korbanos",
+     "sefiras-haomer",
+     "madreigos-haneshamah"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "ahavas-hashem-leyisroel": {
+    "id": "ahavas-hashem-leyisroel",
+    "label": {
+     "en": "Hashem's Love for Klal Yisroel",
+     "yi": "דעם אייבערשטנס אהבה צו כלל ישראל",
+     "he": "אהבת השם לישראל"
+    },
+    "page": true
+   },
+   "brachos": {
+    "id": "brachos",
+    "label": {
+     "en": "Brachos",
+     "yi": "ברכות"
+    },
+    "page": true
+   },
+   "hachanah-lekabbalas-hatorah": {
+    "id": "hachanah-lekabbalas-hatorah",
+    "label": {
+     "en": "Preparing for Kabbalas HaTorah",
+     "yi": "הכנה צו קבלת התורה",
+     "he": "הכנה לקבלת התורה"
+    },
+    "page": true
+   },
+   "hodaah": {
+    "id": "hodaah",
+    "label": {
+     "en": "Thanks and Praise to Hashem",
+     "yi": "הודאה און שבח צום אייבערשטן",
+     "he": "הודאה"
+    },
+    "page": true
+   },
+   "kedushas-eretz-yisroel": {
+    "id": "kedushas-eretz-yisroel",
+    "label": {
+     "en": "Kedushas Eretz Yisroel",
+     "yi": "קדושת ארץ ישראל"
+    },
+    "page": true
+   },
+   "kedushas-shabbos": {
+    "id": "kedushas-shabbos",
+    "label": {
+     "en": "Kedushas Shabbos",
+     "yi": "קדושת שבת"
+    },
+    "page": true
+   },
+   "korbanos": {
+    "id": "korbanos",
+    "label": {
+     "en": "Korbanos and Avodas HaMikdash",
+     "yi": "קרבנות און עבודת בית המקדש",
+     "he": "קרבנות"
+    },
+    "page": true
+   },
+   "lag-baomer": {
+    "id": "lag-baomer",
+    "label": {
+     "en": "Lag BaOmer and Rabbi Shimon bar Yochai",
+     "yi": "ל\"ג בעומר און רבי שמעון בר יוחאי",
+     "he": "ל\"ג בעומר"
+    },
+    "page": true
+   },
+   "maalas-yisroel": {
+    "id": "maalas-yisroel",
+    "label": {
+     "en": "The Greatness of Every Jew",
+     "yi": "די מעלה פון יעדן איד",
+     "he": "מעלת ישראל"
+    },
+    "page": true
+   },
+   "maaseh-bereishis": {
+    "id": "maaseh-bereishis",
+    "label": {
+     "en": "Creation and Its Wonders",
+     "yi": "מעשה בראשית און די נפלאות הבריאה",
+     "he": "מעשה בראשית"
+    },
+    "page": true
+   },
+   "madreigos-haneshamah": {
+    "id": "madreigos-haneshamah",
+    "label": {
+     "en": "Levels and Root of the Soul",
+     "yi": "די מדריגות און דער שורש פון דער נשמה",
+     "he": "שורש הנשמה ומדרגותיה"
+    },
+    "page": true
+   },
+   "middos": {
+    "id": "middos",
+    "label": {
+     "en": "Middos Tovos",
+     "yi": "מידות טובות",
+     "he": "תיקון המידות"
+    },
+    "page": true
+   },
+   "mishkan": {
+    "id": "mishkan",
+    "label": {
+     "en": "The Mishkan and the Kohanim",
+     "yi": "דער משכן און די כהנים",
+     "he": "המשכן"
+    },
+    "page": true
+   },
+   "pirkei-avos": {
+    "id": "pirkei-avos",
+    "label": {
+     "en": "Pirkei Avos",
+     "yi": "פרקי אבות"
+    },
+    "page": true
+   },
+   "schar-veonesh": {
+    "id": "schar-veonesh",
+    "label": {
+     "en": "Reward, Olam HaBa and Techiyas HaMeisim",
+     "yi": "שכר ועונש, עולם הבא און תחיית המתים",
+     "he": "שכר ועונש"
+    },
+    "page": true
+   },
+   "sefiras-haomer": {
+    "id": "sefiras-haomer",
+    "label": {
+     "en": "Sefiras HaOmer",
+     "yi": "ספירת העומר"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "baal-mum",
+    "label": {
+     "en": "Ba'al mum (one with a blemish)",
+     "yi": "בעל מום"
+    },
+    "page": false
+   },
+   {
+    "id": "kodesh-hakodashim",
+    "label": {
+     "en": "Kodesh HaKodashim (the Holy of Holies)",
+     "yi": "קודש הקדשים"
+    },
+    "page": false
+   },
+   {
+    "id": "mazikin",
+    "label": {
+     "en": "Mazikin (harmful spirits)",
+     "yi": "מזיקים"
+    },
+    "page": false
+   },
+   {
+    "id": "meein-olam-haba",
+    "label": {
+     "en": "Me'ein Olam Haba (a taste of the World to Come)",
+     "yi": "מעין עולם הבא"
+    },
+    "page": false
+   },
+   {
+    "id": "olam-haba",
+    "label": {
+     "en": "Olam Haba (the World to Come)",
+     "yi": "עולם הבא"
+    },
+    "page": true
+   },
+   {
+    "id": "sefiras-haomer",
+    "label": {
+     "en": "Sefiras HaOmer (the counting of the Omer)",
+     "yi": "ספירת העומר"
+    },
+    "page": false
+   },
+   {
+    "id": "temimus",
+    "label": {
+     "en": "Temimus (wholeheartedness)",
+     "yi": "תמימות"
+    },
+    "page": false
+   },
+   {
+    "id": "yovel",
+    "label": {
+     "en": "Yovel (the Jubilee year)",
+     "yi": "יובל"
+    },
+    "page": false
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src0",
+    "workId": "berachos",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src1",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src2",
+    "workId": "tosafos",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src3",
+    "workId": "vayikra",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src4",
+    "workId": "mishnah-sanhedrin",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src6",
+    "workId": "yeshayahu",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src7",
+    "workId": "berachos",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src8",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src9",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src10",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src12",
+    "workId": "shemos",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src14",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src15",
+    "workId": "shemos",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src17",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src18",
+    "workId": "vayikra",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src19",
+    "workId": "vayikra",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src20",
+    "workId": "yevamos",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src21",
+    "workId": "vayikra",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src22",
+    "workId": "vayikra",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src23",
+    "workId": "divrei-hayamim",
+    "page": false
+   }
+  ],
+  "stories": [],
+  "insights": []
  },
  "notes": {
   "summary": {

@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "yi-parshas-hashavua-brshys-01",
  "rev": "733d114f0692",
  "lang": "yi",
@@ -57,7 +57,375 @@
     "t": 1289.69,
     "score": 0.364
    }
-  ]
+  ],
+  "titles": {
+   "yi-parshas-hashavua-brshys-03": {
+    "title": "לימוד משידוך הראשון - שנעשה בלי השתתפות של מעשי אדם",
+    "lang": "yi",
+    "years": [
+     5750
+    ]
+   },
+   "yi-zmanim-svkvs-08": {
+    "title": "גודל מעלת קדושת הסוכה",
+    "lang": "yi",
+    "years": [
+     5758
+    ]
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "adam-harishon",
+    "salience": 0.9
+   },
+   {
+    "id": "sukkos",
+    "salience": 0.85
+   },
+   {
+    "id": "ahavas-hashem-leyisroel",
+    "salience": 0.7
+   },
+   {
+    "id": "shemini-atzeres",
+    "salience": 0.6
+   },
+   {
+    "id": "shidduchim-chasunah",
+    "salience": 0.5
+   },
+   {
+    "id": "shoresh-moshiach",
+    "salience": 0.4
+   },
+   {
+    "id": "yehuda-vetamar",
+    "salience": 0.3
+   },
+   {
+    "id": "yeshivah-bachurim",
+    "salience": 0.2
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "sukkos"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "sukkos"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "sukkos"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "adam-harishon",
+     "ahavas-hashem-leyisroel",
+     "sukkos"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "adam-harishon",
+     "shidduchim-chasunah"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "shidduchim-chasunah",
+     "adam-harishon"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "adam-harishon"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "ahavas-hashem-leyisroel",
+     "yamim-noraim"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "ahavas-hashem-leyisroel"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "shoresh-moshiach",
+     "yehuda-vetamar"
+    ]
+   },
+   {
+    "idx": 10,
+    "topicIds": [
+     "sukkos",
+     "shemini-atzeres",
+     "hischadshus"
+    ]
+   },
+   {
+    "idx": 11,
+    "topicIds": [
+     "yeshivah-bachurim"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "adam-harishon": {
+    "id": "adam-harishon",
+    "label": {
+     "en": "Adam HaRishon and Gan Eden",
+     "yi": "אדם הראשון און גן עדן",
+     "he": "אדם הראשון"
+    },
+    "page": true
+   },
+   "ahavas-hashem-leyisroel": {
+    "id": "ahavas-hashem-leyisroel",
+    "label": {
+     "en": "Hashem's Love for Klal Yisroel",
+     "yi": "דעם אייבערשטנס אהבה צו כלל ישראל",
+     "he": "אהבת השם לישראל"
+    },
+    "page": true
+   },
+   "hischadshus": {
+    "id": "hischadshus",
+    "label": {
+     "en": "Renewal in Avodas Hashem",
+     "yi": "התחדשות אין עבודת השם",
+     "he": "התחדשות"
+    },
+    "page": true
+   },
+   "shemini-atzeres": {
+    "id": "shemini-atzeres",
+    "label": {
+     "en": "Shemini Atzeres and Simchas Torah",
+     "yi": "שמיני עצרת און שמחת תורה",
+     "he": "שמיני עצרת ושמחת תורה"
+    },
+    "page": true
+   },
+   "shidduchim-chasunah": {
+    "id": "shidduchim-chasunah",
+    "label": {
+     "en": "Shidduchim and Chasunah",
+     "yi": "שידוכים און חתונה",
+     "he": "שידוכים וחתונה"
+    },
+    "page": true
+   },
+   "shoresh-moshiach": {
+    "id": "shoresh-moshiach",
+    "label": {
+     "en": "The Hidden Roots of Moshiach",
+     "yi": "דער באהאלטענער שורש פון משיח",
+     "he": "שורש נשמת משיח"
+    },
+    "page": true
+   },
+   "sukkos": {
+    "id": "sukkos",
+    "label": {
+     "en": "Sukkos",
+     "yi": "סוכות",
+     "he": "חג הסוכות"
+    },
+    "page": true
+   },
+   "yamim-noraim": {
+    "id": "yamim-noraim",
+    "label": {
+     "en": "Elul and the Yomim Noraim",
+     "yi": "אלול און ימים נוראים",
+     "he": "ימים נוראים"
+    },
+    "page": true
+   },
+   "yehuda-vetamar": {
+    "id": "yehuda-vetamar",
+    "label": {
+     "en": "Yehuda and Tamar",
+     "yi": "יהודה און תמר",
+     "he": "יהודה ותמר"
+    },
+    "page": true
+   },
+   "yeshivah-bachurim": {
+    "id": "yeshivah-bachurim",
+    "label": {
+     "en": "Bachurim in Yeshivah",
+     "yi": "בחורים אין ישיבה",
+     "he": "ישיבה"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "knesses-yisrael",
+    "label": {
+     "en": "Knesses Yisrael (the collective soul of the Jewish people)",
+     "yi": "כנסת ישראל"
+    },
+    "page": true
+   },
+   {
+    "id": "satan",
+    "label": {
+     "en": "Satan (the accuser)",
+     "yi": "שטן"
+    },
+    "page": true
+   },
+   {
+    "id": "shemini-atzeres",
+    "label": {
+     "en": "Shemini Atzeres (the eighth-day festival after Sukkos)",
+     "yi": "שמיני עצרת"
+    },
+    "page": false
+   },
+   {
+    "id": "shviras-haluchos",
+    "label": {
+     "en": "Shviras haLuchos (the breaking of the Tablets)",
+     "yi": "שבירת הלוחות"
+    },
+    "page": false
+   },
+   {
+    "id": "sukkah",
+    "label": {
+     "en": "Sukkah (the sukkah)",
+     "yi": "סוכה"
+    },
+    "page": true
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src0",
+    "workId": "mishnah-sukkah",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src1",
+    "workId": "peirush-hamishnayos",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src2",
+    "workId": "sukkah",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src3",
+    "workId": "vayikra",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src4",
+    "workId": "mishneh-torah",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src5",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src6",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src8",
+    "workId": "kiddushin",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src9",
+    "workId": "ramban",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src10",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src11",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src12",
+    "workId": "yirmiyahu",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src13",
+    "workId": "sukkah",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src15",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src16",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src17",
+    "workId": "avodah-zarah",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src18",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src19",
+    "workId": "amos",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src20",
+    "workId": "midrash",
+    "page": false
+   }
+  ],
+  "stories": [],
+  "insights": []
  },
  "notes": {
   "summary": {
