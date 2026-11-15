@@ -8,7 +8,7 @@
  */
 import { calendar as defaultCalendar, type Calendar } from "@emunas/calendar";
 import type { OccasionShiurRef, ParshaOccasion, SeriesEntry, ZmanOccasion } from "@emunas/corpus/aggregate";
-import type { CatalogSource, IndexRow, IndexSection } from "@emunas/corpus/public";
+import type { CatalogGap, CatalogSource, IndexRow, IndexSection } from "@emunas/corpus/public";
 import { hebrewNumeral, hebrewYearParts } from "@emunas/i18n";
 import { formatQuiet } from "@emunas/links";
 import type { Ed } from "../../lib/edition.ts";
@@ -70,6 +70,8 @@ export interface CatalogRow {
   readonly playable: boolean;
   /** The one-line summary in the edition's language; only for shiurim with notes (status "full"). */
   readonly oneLiner: string | null;
+  /** A guide row with no recording at all (`index.json` gaps): greyed, no page, no link. */
+  readonly gap?: true;
 }
 
 export function catalogRow(row: IndexRow, ed: Ed, audio: CatalogCorpus["audio"]): CatalogRow {
@@ -93,6 +95,57 @@ export function catalogRow(row: IndexRow, ed: Ed, audio: CatalogCorpus["audio"])
     playable: row.recordingIds.some((id) => audio[id]?.playable === true),
     oneLiner,
   };
+}
+
+/** A catalog gap (a guide row with no audio) as a greyed table row; `href` is unused (no page). */
+export function gapRow(g: CatalogGap): CatalogRow {
+  return {
+    id: g.id,
+    href: "",
+    lang: g.lang,
+    status: "catalog-only",
+    title: g.catalog.titleOriginal,
+    heading: g.catalog.heading ?? null,
+    subTitle: g.catalog.subTitle,
+    n: g.catalog.n,
+    uncatalogued: g.catalog.source !== GUIDE,
+    derived: g.catalog.derived,
+    parsha: g.parsha,
+    zman: g.zman,
+    perek: g.perek,
+    years: g.years,
+    duration: 0,
+    playable: false,
+    oneLiner: null,
+    gap: true,
+  };
+}
+
+/** The catalog gaps of a section key, in catalog order (older `.corpus/` builds have none). */
+export function sectionGaps(corpus: CatalogCorpus, key: string): CatalogGap[] {
+  return (corpus.index.gaps ?? []).filter((g) => g.sectionKey === key);
+}
+
+/**
+ * The rows of a section with its gaps put where the guide prints them: each gap after the in-scope
+ * shiur it follows in catalog order (`after`), or first.
+ */
+export function withGaps(rows: CatalogRow[], gaps: readonly CatalogGap[]): CatalogRow[] {
+  if (gaps.length === 0) return rows;
+  const out: CatalogRow[] = gaps.filter((g) => g.after === null).map((g) => gapRow(g));
+  const placed = new Set(out.map((r) => r.id));
+  for (const r of rows) {
+    out.push(r);
+    for (const g of gaps) {
+      if (g.after === r.id) {
+        out.push(gapRow(g));
+        placed.add(g.id);
+      }
+    }
+  }
+  // A gap whose predecessor is not on this page goes last rather than disappearing.
+  for (const g of gaps) if (!placed.has(g.id)) out.push(gapRow(g));
+  return out;
 }
 
 /** Index rows by id, memoised per corpus object. */
@@ -135,18 +188,23 @@ export interface SectionSummary {
   readonly shiurIds: readonly string[];
 }
 
-/** Every section with at least one in-scope shiur, in catalog order (guide, then uncatalogued guide). */
+/**
+ * Every section with at least one in-scope shiur or catalog gap (a guide row with no audio), in
+ * catalog order (guide, then uncatalogued guide). `count` is the in-scope shiurim only.
+ */
 export function sectionSummaries(corpus: CatalogCorpus): SectionSummary[] {
   const meta = new Map(corpus.index.sections.map((s) => [s.key, s]));
   const rows = indexRows(corpus);
+  const gapSections = new Set((corpus.index.gaps ?? []).map((g) => g.sectionKey));
   return corpus.sections.sections
-    .filter((s) => s.count > 0)
+    .filter((s) => s.count > 0 || gapSections.has(s.key))
     .map((s) => {
       const m = meta.get(s.key);
       const source = (m?.source ?? s.source) as CatalogSource;
-      let yi = 0;
-      for (const id of s.shiurIds) if (rows.get(id)?.lang === "yi") yi++;
-      const en = s.shiurIds.length - yi;
+      // A section of gaps only takes its language from them.
+      const langs = s.count > 0 ? s.shiurIds.map((id) => rows.get(id)?.lang) : sectionGaps(corpus, s.key).map((g) => g.lang);
+      const yi = langs.filter((l) => l === "yi").length;
+      const en = langs.length - yi;
       const dir = m?.dir ?? (/[֐-׿]/.test(s.title) ? "rtl" : "ltr");
       const lang: Ed = yi > en ? "yi" : en > yi ? "en" : dir === "rtl" ? "yi" : "en";
       return {
@@ -311,7 +369,7 @@ export function sectionLayout(rows: CatalogRow[], corpus: CatalogCorpus, ed: Ed)
 export function sectionModel(corpus: CatalogCorpus, slug: string, ed: Ed): SectionModel | null {
   const section = sectionSummaries(corpus).find((s) => s.slug === slug);
   if (!section) return null;
-  const rows = rowsOf(corpus, section.shiurIds, ed);
+  const rows = withGaps(rowsOf(corpus, section.shiurIds, ed), sectionGaps(corpus, section.key));
   const ids = new Set(section.shiurIds);
   const series = seriesSummaries(corpus, ed).filter((s) => {
     const entry = corpus.series.series.find((x) => x.id === s.id);

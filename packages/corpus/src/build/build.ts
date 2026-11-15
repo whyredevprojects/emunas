@@ -3,6 +3,9 @@
  *
  *   build.json, shiurim/<id>.json, index.json, audio-table.json, updated.json, build-report.json, .fingerprints.json
  *
+ * `index.json` also lists the catalog gaps (`gaps`: guide rows with no audio, catalog fields only;
+ * see gaps.ts), which have no shiur file.
+ *
  * `updated.json` carries the manifest `updatedAt` of every full shiur (`{ schemaVersion, updatedAt:
  * { shiurId: iso } }`), so apps can list "newly summarized" without reading data/ (W3.6).
  *
@@ -39,6 +42,7 @@ import type {
   PublicShiur,
 } from "../public/types.ts";
 import { shiurIdOf } from "../public/moment-id.ts";
+import { catalogGaps } from "./gaps.ts";
 import { gate } from "./gate.ts";
 import { identitySlugKeyer, type Keyer } from "./keyer.ts";
 import { loadCatalogs, loadIngest, loadManifest, loadShiurFiles, type Catalogs, type ShiurFiles } from "./load.ts";
@@ -132,7 +136,7 @@ function gitDataSha(dataDir: string): string | null {
   }
 }
 
-function sectionsOf(catalogs: Catalogs, inScope: Shiur[], report: ReportCollector): IndexSection[] {
+function sectionsOf(catalogs: Catalogs, listed: Shiur[], report: ReportCollector): IndexSection[] {
   const out: IndexSection[] = [];
   const add = (source: IndexSection["source"], file: Catalogs["pocketGuide"]) => {
     for (const s of file?.sections ?? []) {
@@ -143,7 +147,7 @@ function sectionsOf(catalogs: Catalogs, inScope: Shiur[], report: ReportCollecto
   };
   add("pocket-guide-2012", catalogs.pocketGuide);
   add("uncatalogued-guide", catalogs.uncatalogued);
-  for (const s of inScope) {
+  for (const s of listed) {
     const key = `${s.catalog.source}:${s.catalog.sectionId}`;
     if (out.some((x) => x.key === key)) continue;
     report.missingSections.push(key);
@@ -348,8 +352,14 @@ export function projectCorpus(
     if (r.shiur.status === "full" && typeof entry?.updatedAt === "string") updatedAt[s.id] = entry.updatedAt;
   }
 
-  const sections = sectionsOf(catalogs, inScope, report);
-  const index: CorpusIndex = { schemaVersion: SCHEMA_VERSION, sections, series, shiurim: shiurim.map(indexRow) };
+  const gaps = catalogGaps(ingest.shiurim, keyer, report);
+  const gapIds = new Set(gaps.map((g) => g.id));
+  const sections = sectionsOf(
+    catalogs,
+    ingest.shiurim.filter((s) => s.inScope || gapIds.has(s.id)),
+    report,
+  );
+  const index: CorpusIndex = { schemaVersion: SCHEMA_VERSION, sections, series, shiurim: shiurim.map(indexRow), gaps };
   const full = shiurim.filter((s) => s.status === "full").length;
   const counts = {
     total: shiurim.length,

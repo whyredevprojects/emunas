@@ -18,6 +18,7 @@ import {
   buildDate,
   catalogRow,
   contentsModel,
+  gapRow,
   corpusTotals,
   perekIsNumeral,
   sectionHref,
@@ -134,8 +135,9 @@ describe("catalog models on the mini corpus", () => {
     for (const s of sectionSummaries(corpus)) {
       const page = sectionModel(corpus, s.slug, "yi");
       expect(page, s.slug).not.toBeNull();
-      for (const r of page!.rows) seen.set(r.id, (seen.get(r.id) ?? 0) + 1);
-      expect(page!.rows.map((r) => r.id)).toEqual(s.shiurIds);
+      const shiurRows = page!.rows.filter((r) => !r.gap);
+      for (const r of shiurRows) seen.set(r.id, (seen.get(r.id) ?? 0) + 1);
+      expect(shiurRows.map((r) => r.id)).toEqual(s.shiurIds);
     }
     expect([...seen.keys()].sort()).toEqual(corpus.index.shiurim.map((r) => r.id).sort());
     expect([...seen.values()].every((n) => n === 1)).toBe(true);
@@ -160,8 +162,27 @@ describe("catalog models on the mini corpus", () => {
     const order = new Map(corpus.occasions.zmanim.map((z) => [`z-${z.key}`, z.order]));
     const orders = m.layout.zmanim.map((g) => order.get(g.id)!);
     expect(orders).toEqual([...orders].sort((a, b) => a - b));
-    const grouped = [...m.layout.zmanim.flatMap((g) => g.rows), ...(m.layout.other?.rows ?? [])];
+    const grouped = [...m.layout.zmanim.flatMap((g) => g.rows), ...(m.layout.other?.rows ?? [])].filter((r) => !r.gap);
     expect(grouped.map((r) => r.id).sort()).toEqual([...m.section.shiurIds].sort());
+  });
+
+  it("shows guide rows without audio greyed in their section, where the guide prints them (W4.9)", () => {
+    expect(corpus.index.gaps!.map((g) => g.id)).toEqual(["yi-zmanim-tv-bshbt-02", "en-zmanim-en-chnvkh-01"]);
+    for (const g of corpus.index.gaps!) {
+      const section = sectionSummaries(corpus).find((s) => s.key === g.sectionKey)!;
+      const m = sectionModel(corpus, section.slug, "en")!;
+      const i = m.rows.findIndex((r) => r.id === g.id);
+      expect(i, g.id).toBeGreaterThanOrEqual(0);
+      const row = m.rows[i]!;
+      expect(row).toMatchObject({ gap: true, playable: false, oneLiner: null, status: "catalog-only" });
+      if (g.after !== null) expect(m.rows[i - 1]!.id).toBe(g.after);
+      else expect(i).toBe(0);
+      // grouped by zman like the shiurim around it
+      if (m.layout.kind === "zman") {
+        const inGroup = m.layout.zmanim.find((z) => z.rows.some((r) => r.id === g.id));
+        expect(inGroup?.id, g.id).toBe(g.zman ? `z-${g.zman.key}` : undefined);
+      }
+    }
   });
 
   it("keeps small sections flat", () => {
@@ -265,6 +286,8 @@ describe("catalog models on today's data", () => {
       const key = `${s.catalog.source}:${s.catalog.sectionId}`;
       want.set(key, (want.get(key) ?? 0) + 1);
     }
+    // Sections made only of guide rows without audio are listed with no shiurim (W4.9).
+    for (const g of corpus.index.gaps!) if (!want.has(g.sectionKey)) want.set(g.sectionKey, 0);
     const got = new Map(sectionSummaries(corpus).map((s) => [s.key, s.count]));
     expect(got).toEqual(want);
     // and the per-category totals of the ingest stats
@@ -311,6 +334,9 @@ describe("catalog models on today's data", () => {
     const expected = corpus.index.shiurim
       .filter((r) => !r.recordingIds.some((id) => corpus.audio[id]?.playable))
       .map((r) => r.id);
+    // plus the guide rows that have no audio at all (11 today)
+    expected.push(...corpus.index.gaps!.map((g) => g.id));
+    expect(corpus.index.gaps!.length).toBeGreaterThanOrEqual(11);
     expect(unplayable.sort()).toEqual(expected.sort());
   });
 
@@ -376,6 +402,31 @@ describe("CatalogTable", () => {
     expect(html).toContain("קיין רעקארדירונג אויפן נעץ");
     expect(html).toContain('class="unc-mark"');
     expect(html).toContain("נישט אינעם גייד פון 2012");
+  });
+
+  it("greys a guide row with no audio and gives it no link (W4.9)", async () => {
+    const gap = gapRow({
+      id: "yi-zmanim-tv-bshbt-02",
+      lang: "yi",
+      category: "zman",
+      catalog: { source: "pocket-guide-2012", sectionId: "zmanim", sectionTitle: "זמנים", n: "2", page: 21, titleOriginal: "זמן התחלת התנוצצות", subTitle: null, derived: "catalog" },
+      sectionKey: "pocket-guide-2012:zmanim",
+      after: null,
+      reason: "not-on-disk",
+      parsha: null,
+      zman: { raw: 'ט"ו בשבט', key: "tu-bishvat" },
+      perek: null,
+      years: [5768],
+      series: null,
+    });
+    const html = await container.renderToString(CatalogTable, {
+      props: { ed: "en", rows: [base, gap], caption: "x", occasion: true, notes: true },
+    });
+    const row = html.slice(html.indexOf('id="row-yi-zmanim-tv-bshbt-02"'));
+    expect(row).toContain("no-recording");
+    expect(row).toContain("data-gap");
+    expect(row.slice(0, row.indexOf("</tr>"))).not.toContain("<a ");
+    expect(html).toContain('<a href="/en/shiur/yi-x-01/">');
   });
 
   it("numbers series parts", async () => {
