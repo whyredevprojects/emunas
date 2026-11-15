@@ -1,0 +1,28 @@
+# Quiet site (emunas-quiet): headers for static asset responses (integration-plan §3.3).
+# Template: the media-origin placeholder is filled in after `astro build` by
+# apps/quiet/worker/render-headers.ts (dist/_headers), from the EMUNAS_MEDIA_ORIGIN
+# build variable (Amendment A1: <audio src> points at media.<domain>).
+# Pagefind needs 'wasm-unsafe-eval'. No inline scripts or styles (astro.config).
+
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self'; font-src 'self'; img-src 'self' data:; media-src 'self' {{EMUNAS_MEDIA_ORIGIN}}; connect-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Content-Type-Options: nosniff
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()
+  Cross-Origin-Opener-Policy: same-origin
+
+# Hashed build output.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Font files keep stable names (copied from @emunas/tokens), so they are not immutable.
+/fonts/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/pagefind/*
+  Cache-Control: public, max-age=3600
+
+# Only the custom domain is indexable (§2.1). Covers <worker>.<account>.workers.dev
+# and preview hosts (<alias>-<worker>.<account>.workers.dev).
+https://:worker.:subdomain.workers.dev/*
+  X-Robots-Tag: noindex

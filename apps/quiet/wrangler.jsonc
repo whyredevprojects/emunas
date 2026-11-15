@@ -1,0 +1,26 @@
+// emunas-quiet: the Quiet site, static assets only (integration-plan §3.1, Amendment A1).
+// No Worker script: nothing on this host needs code. Audio is served from the media host,
+// "/" is a static edition chooser, and workers.dev noindex is a `_headers` rule.
+// Build first (`npm run build --workspace=@emunas/quiet`), then render dist/_headers
+// (worker/render-headers.ts). Deploy: `wrangler deploy` (production) or `--env staging`.
+// The custom domain (owner decision O8) is attached by adding at the top level:
+//   "routes": [{ "pattern": "<domain>", "custom_domain": true }]
+// See docs/sites/ops-runbook.md.
+{
+  "name": "emunas-quiet",
+  "compatibility_date": "2026-10-28",
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "workers_dev": true,
+  "preview_urls": true,
+  "env": {
+    // Manual staging deploys and per-PR previews (`wrangler versions upload --env staging
+    // --preview-alias pr-<n>`) go to this Worker, never to production.
+    "staging": {
+      "name": "emunas-quiet-staging"
+    }
+  }
+}
