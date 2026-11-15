@@ -1,0 +1,166 @@
+/*
+ * "Something's wrong here" (W4.7): a quiet flag button on each item and a small dialog.
+ * Logical properties only, so the dialog mirrors with `dir`.
+ */
+@layer components {
+  .trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-block-size: var(--tap-min);
+    min-inline-size: var(--tap-min);
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--color-ink-muted);
+    cursor: pointer;
+    flex: none;
+  }
+
+  .trigger:hover,
+  .trigger[data-pressed] {
+    color: var(--color-accent);
+  }
+
+  .icon {
+    inline-size: 1rem;
+    block-size: 1rem;
+  }
+
+  .popover {
+    background: var(--color-surface);
+    color: var(--color-ink);
+    border: var(--rule-hairline) solid var(--color-rule-strong);
+    border-radius: var(--radius-m);
+    box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 0.15);
+    inline-size: min(24rem, 100vw - 2rem);
+    max-block-size: min(36rem, 100vh - 2rem);
+    overflow: auto;
+  }
+
+  .dialog {
+    padding: var(--space-m);
+    outline: none;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .title {
+    font-size: var(--step-1);
+    margin-block: 0;
+  }
+
+  .lead {
+    margin-block: 0;
+    font-size: var(--step--1);
+    color: var(--color-ink-muted);
+  }
+
+  .label {
+    margin-block: var(--space-2xs) 0;
+    font-weight: var(--weight-semibold);
+  }
+
+  .note {
+    font: inherit;
+    inline-size: 100%;
+    min-block-size: 4.5rem;
+    padding: var(--space-2xs) var(--space-xs);
+    color: var(--color-ink);
+    background: var(--color-paper);
+    border: var(--rule-hairline) solid var(--color-rule-strong);
+    border-radius: var(--radius-s);
+    resize: vertical;
+  }
+
+  .count {
+    margin-block: 0;
+    font-size: var(--step--2);
+    color: var(--color-ink-muted);
+  }
+
+  .over {
+    color: var(--color-danger);
+  }
+
+  .reasons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+  }
+
+  .reason {
+    font: inherit;
+    min-block-size: var(--tap-min);
+    padding-inline: var(--space-s);
+    text-align: start;
+    color: var(--color-ink);
+    background: var(--color-paper-sunk);
+    border: var(--rule-hairline) solid var(--color-rule);
+    border-radius: var(--radius-m);
+    cursor: pointer;
+  }
+
+  .reason:hover:not(:disabled) {
+    border-color: var(--color-accent);
+  }
+
+  .reason:disabled {
+    cursor: default;
+    color: var(--color-ink-muted);
+  }
+
+  .reason[data-chosen] {
+    border-color: var(--color-accent);
+    color: var(--color-ink);
+  }
+
+  .widget:empty {
+    display: none;
+  }
+
+  .status,
+  .error {
+    margin-block: 0;
+  }
+
+  .status:empty,
+  .error:empty {
+    display: none;
+  }
+
+  .error {
+    color: var(--color-danger);
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: var(--space-xs);
+  }
+
+  .secondary {
+    font: inherit;
+    min-block-size: var(--tap-min);
+    padding-inline: var(--space-s);
+    color: var(--color-accent);
+    background: transparent;
+    border: var(--rule-hairline) solid var(--color-rule-strong);
+    border-radius: var(--radius-m);
+    cursor: pointer;
+  }
+
+  .visuallyHidden {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}

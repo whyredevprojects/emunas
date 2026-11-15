@@ -8,7 +8,7 @@ import type { JSX } from "react";
 import { Text } from "../../components/Text.tsx";
 import type { RoomContext } from "./context.ts";
 import { COLLAPSED_KINDS, SKIPPED_KINDS, chapterAt } from "./model.ts";
-import { AiLabel, TimeButton } from "./parts.tsx";
+import { AiLabel, Report, TimeButton } from "./parts.tsx";
 import { roomStyles as s } from "./styles.ts";
 
 export function Chapters({ room }: { room: RoomContext }): JSX.Element | null {
@@ -61,6 +61,7 @@ export function Chapters({ room }: { room: RoomContext }): JSX.Element | null {
                   <span className={s.kind}>{sectionKindLabel(c.kind, ui)}</span>
                 ) : null}
                 {skipped ? <span className={s.kind}>{rt("room.chapterSkipped")}</span> : null}
+                <Report room={room} id={c.id} field="summary" />
               </div>
               {collapsed ? (
                 <details className={s.details}>
