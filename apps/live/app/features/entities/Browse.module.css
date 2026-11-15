@@ -242,6 +242,38 @@
     fill: var(--color-ink-muted);
   }
 
+  /* A family member on the shelf, after its family hub. */
+  .child {
+    padding-inline-start: var(--space-m);
+  }
+
+  /* The collapsed "cited once or twice" row at the end of a shelf group, and a person chip's list. */
+  .few {
+    display: grid;
+    gap: var(--space-xs);
+  }
+
+  .few > summary {
+    min-block-size: var(--tap-min);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: var(--color-ink-muted);
+  }
+
+  .names {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs) var(--space-s);
+    color: var(--color-ink-muted);
+  }
+
+  .definition {
+    margin: 0;
+    max-inline-size: var(--measure-text);
+  }
+
   .aiNote {
     margin: 0;
     font-size: var(--step--1);

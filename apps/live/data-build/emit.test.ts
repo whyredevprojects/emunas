@@ -205,12 +205,15 @@ describe("emitLiveData on the mini corpus", () => {
       // F.1: a series never names a course in the other language.
       expect(f).not.toHaveProperty("sibling");
     }
-    // Works: corpus ids with a Live page, never generic; one file each.
+    // Works: the shelf lists every non-generic work with shiurim in the layer's shelf order (C2.6);
+    // a file for each with a Live page, never generic.
     const works = get<WorksFile>("works.json");
-    const live = input.layer!.works.filter((w) => w.pages.live && !w.generic && w.count > 0);
-    expect(works.works.map((w) => w.key)).toEqual(live.map((w) => w.id));
+    const shelf = input.layer!.works.filter((w) => !w.generic && w.count > 0);
+    expect(works.works.map((w) => w.key)).toEqual(shelf.map((w) => w.id));
+    const live = shelf.filter((w) => w.pages.live);
+    expect(works.works.filter((w) => w.page).map((w) => w.key)).toEqual(live.map((w) => w.id));
     expect([...files.keys()].filter((f) => f.startsWith("work/")).sort()).toEqual(live.map((w) => `work/${w.id}.json`).sort());
-    for (const w of works.works) {
+    for (const w of works.works.filter((x) => x.page)) {
       const f = get<WorkFile>(`work/${w.key}.json`);
       const cites = f.locations.reduce((a, l) => a + l.citations.length, 0) + f.unlocated.length;
       expect(cites, w.key).toBe(w.mentions);

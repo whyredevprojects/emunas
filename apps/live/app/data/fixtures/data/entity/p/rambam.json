@@ -83,5 +83,84 @@
    "key": "yaakov-avinu",
    "shared": 5
   }
- ]
+ ],
+ "reviewed": false,
+ "person": {
+  "kind": "person",
+  "id": "rambam",
+  "names": {
+   "he": "רמב\"ם",
+   "en": "the Rambam",
+   "yi": "דער רמב\"ם"
+  },
+  "aliases": [
+   "Rabbi Moshe ben Maimon",
+   "Maimonides"
+  ],
+  "description": null,
+  "works": [
+   {
+    "id": "rambam",
+    "label": {
+     "en": "Rambam",
+     "yi": "רמב״ם"
+    },
+    "page": false,
+    "count": 1
+   },
+   {
+    "id": "igros-harambam",
+    "label": {
+     "en": "Igros HaRambam",
+     "yi": "אגרות הרמב״ם"
+    },
+    "page": false,
+    "count": 1
+   },
+   {
+    "id": "mishneh-torah",
+    "label": {
+     "en": "Mishneh Torah",
+     "yi": "משנה תורה"
+    },
+    "page": true,
+    "count": 10
+   },
+   {
+    "id": "peirush-hamishnayos",
+    "label": {
+     "en": "Rambam's Commentary on the Mishnah",
+     "yi": "פירוש המשניות לרמב״ם"
+    },
+    "page": false,
+    "count": 2
+   },
+   {
+    "id": "shloshah-asar-ikkarim",
+    "label": {
+     "en": "Thirteen Principles of Faith (Ani Maamin)",
+     "yi": "שלשה עשר עיקרים"
+    },
+    "page": false,
+    "count": 2
+   }
+  ],
+  "cited": [
+   "yi-parshas-hashavua-hzynv-01",
+   "yi-parshas-hashavua-brshys-01",
+   "yi-zmanim-tv-bb-04",
+   "yi-parshas-hashavua-shvptym-01",
+   "yi-zmanim-lvl-02",
+   "yi-zmanim-spyrh-01",
+   "yi-zmanim-svds-shvshn-pvrym-01",
+   "yi-zmanim-shbs-chzvn-01",
+   "en-parsha-en-svldvs-01",
+   "yi-parshas-hashavua-vyshb-08",
+   "yi-zmanim-svds-zs-chnvkh-04",
+   "en-zmanim-en-rsh-hshnh-03",
+   "yi-zmanim-svkvs-08",
+   "en-parsha-en-ky-sb-01"
+  ],
+  "stories": []
+ }
 }

@@ -8,7 +8,8 @@
  * search-core documents without their `keywords`.
  */
 import { createHash } from "node:crypto";
-import type { PublicShiur, Ed, L } from "@emunas/corpus/public";
+import type { PublicShiur, Ed, L, LayerWork } from "@emunas/corpus/public";
+import { livePersonChipList, liveStoryPage } from "../app/data/live-pages.ts";
 import type { MentionRef, OccasionShiurRef, WorkRef } from "@emunas/corpus/aggregate";
 import { OCCASIONS, OTHER_OCCASION_KEY, PARSHIYOS } from "@emunas/normalize";
 import { CATEGORY_LABELS, formatHebrewYear, hebrewYearParts } from "@emunas/i18n";
@@ -32,6 +33,7 @@ import {
   type MomentRow,
   type MomentShardFile,
   type OccasionFacetValue,
+  type PersonChip,
   type QuickIndexFile,
   type SeriesFile,
   type SeriesFacetValue,
@@ -533,20 +535,22 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
     for (const r of w.refs) {
       for (const m of r.mentions) {
         const id = workOfMention(m, w.workId);
-        if (id === null || !view.works.has(id)) continue;
+        if (id === null || !view.allWorks.has(id)) continue;
+        mentions.set(id, (mentions.get(id) ?? 0) + 1);
+        if (!view.works.has(id)) continue;
         let byRef = locs.get(id);
         if (!byRef) locs.set(id, (byRef = new Map()));
         let l = byRef.get(r.ref);
         if (!l) byRef.set(r.ref, (l = { ref: r, citations: [] }));
         l.citations.push(citation(m));
-        mentions.set(id, (mentions.get(id) ?? 0) + 1);
       }
     }
     for (const m of w.unlocated) {
       const id = workOfMention(m, w.workId);
-      if (id === null || !view.works.has(id)) continue;
-      unloc.set(id, [...(unloc.get(id) ?? []), citation(m)]);
+      if (id === null || !view.allWorks.has(id)) continue;
       mentions.set(id, (mentions.get(id) ?? 0) + 1);
+      if (!view.works.has(id)) continue;
+      unloc.set(id, [...(unloc.get(id) ?? []), citation(m)]);
     }
   }
   const sortKeyCmp = (a: readonly number[], b: readonly number[]): number => {
@@ -556,25 +560,75 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
     }
     return 0;
   };
+  // C2.6: the shelf lists every non-generic work with visible shiurim (those below the page line go
+  // in a collapsed row); a family hub (genre with child works, generic false in the layer) is shelved
+  // with its children after it, in the layer's shelf order.
+  /** A person as a chip: page link, the 1–2 shiurim it opens (E.1), or plain text. */
+  const personChip = (id: string): PersonChip | null => {
+    const p = view.allPeople.get(id);
+    if (!p) return null;
+    const chip: PersonChip = { id, label: personLabel(id), page: view.people.has(id) };
+    if (livePersonChipList(p)) {
+      chip.shiurim = sortByYear(p.shiurIds ?? []).map((sid) => {
+        const s = byId.get(sid)!;
+        return { id: sid, title: s.catalog.titleOriginal, lang: s.lang, years: s.years };
+      });
+    }
+    return chip;
+  };
   const liveWorks = [...view.works.values()];
+  const shelfWorks = [...view.allWorks.values()].filter((w) => w.count > 0 && w.generic !== true);
+  const shelved = new Set(shelfWorks.map((w) => w.id));
+  const childrenOf = new Map<string, LayerWork[]>();
+  for (const w of view.allWorks.values()) {
+    if (!w.parentWorkId || w.count <= 0) continue;
+    childrenOf.set(w.parentWorkId, [...(childrenOf.get(w.parentWorkId) ?? []), w]);
+  }
+  /** The work and every work below it (layer `parentWorkId`), guarded against loops. */
+  const familyOf = (id: string): string[] => {
+    const out: string[] = [];
+    const visit = (x: string) => {
+      if (out.includes(x)) return;
+      out.push(x);
+      for (const c of childrenOf.get(x) ?? []) visit(c.id);
+    };
+    visit(id);
+    return out;
+  };
+  const familyShiurim = (id: string): string[] => sortByYear(familyOf(id).flatMap((x) => view.allWorks.get(x)?.shiurIds ?? []));
+  const workChip = (id: string) => ({
+    id,
+    label: workLabel(id),
+    page: view.works.has(id),
+    count: view.allWorks.get(id)?.count ?? 0,
+  });
   const works: WorksFile = {
     schemaVersion: V,
-    // The shelf, in the layer's shelf order; generic labels never have a page.
-    works: liveWorks.map((w) => ({
+    works: shelfWorks.map((w) => ({
       key: w.id,
       name: w.titleEn,
       label: workLabel(w.id),
       count: w.count,
       mentions: mentions.get(w.id) ?? 0,
+      page: view.works.has(w.id),
+      group: w.orderGroup ?? "other",
+      parentId: w.parentWorkId && shelved.has(w.parentWorkId) ? w.parentWorkId : null,
     })),
   };
   put<"works">(dataPaths.works(), works);
   for (const w of liveWorks) {
+    const parent = w.parentWorkId ? view.allWorks.get(w.parentWorkId) : undefined;
     const file: WorkFile = {
       schemaVersion: V,
       key: w.id,
       name: w.titleEn,
       label: workLabel(w.id),
+      reviewed: w.reviewed === true,
+      sefariaIndexTitle: typeof w.sefariaIndexTitle === "string" && w.sefariaIndexTitle.trim() !== "" ? w.sefariaIndexTitle : null,
+      author: w.authorPersonId ? personChip(w.authorPersonId) : null,
+      parent: parent && parent.generic !== true ? { id: parent.id, label: workLabel(parent.id), page: view.works.has(parent.id) } : null,
+      children: (childrenOf.get(w.id) ?? []).map((c) => workChip(c.id)),
+      shiurIds: familyShiurim(w.id),
       locations: [...(locs.get(w.id)?.values() ?? [])]
         .sort((a, b) => sortKeyCmp(a.ref.sortKey, b.ref.sortKey))
         .map((l) => ({ ref: l.ref.label.en, sefariaRef: l.ref.ref, citations: l.citations })),
@@ -584,12 +638,20 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
   }
 
   // ------------------------------------------------------------------ entity/{p,c,o}/<key>.json
-  type Ent = { kind: EntityKind; key: string; label: FacetLabel; ids: string[]; moments: MomentRef[] };
+  type Ent = {
+    kind: EntityKind;
+    key: string;
+    label: FacetLabel;
+    ids: string[];
+    moments: MomentRef[];
+    extra?: Pick<EntityFile, "reviewed" | "person" | "concept">;
+  };
   const ents: Ent[] = [];
   const entityMin = EMIT_LIMITS.entityFileMin;
   // People and concepts: corpus ids with a Live page (C1.7). A person's moments are the tellings
   // of the merged stories that name him; a concept's are its example sections.
   const storyTellings = new Map((input.layer?.stories ?? []).map((st) => [st.id, st.tellings ?? []]));
+  const storyById = new Map((input.layer?.stories ?? []).map((st) => [st.id, st]));
   for (const p of view.people.values()) {
     const ids = sortByYear(p.shiurIds ?? []);
     if (ids.length === 0) continue;
@@ -597,7 +659,44 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
     const moments = uniq((p.storyIds ?? []).flatMap((sid) => (storyTellings.get(sid) ?? []).map((t) => t.momentId)))
       .flatMap((id) => ref(id) ?? [])
       .filter((m) => mine.has(m.shiurId));
-    ents.push({ kind: "p", key: p.id, label: personLabel(p.id), ids, moments });
+    // C2.6: names as given, aliases, his seforim, shiurim citing them, merged stories.
+    const own = uniq([...(p.worksAuthored ?? []), ...(p.sameIdWork ? [p.sameIdWork] : [])]).filter((id) => view.allWorks.has(id));
+    const personStories = uniq(p.storyIds ?? []).flatMap((sid) => {
+      const st = storyById.get(sid);
+      const tellings = (st?.tellings ?? []).filter((t) => byId.has(t.shiurId));
+      const first = tellings[0];
+      if (!st || !first) return [];
+      return [
+        {
+          id: sid,
+          title: { en: st.title?.en ?? "", yi: st.title?.yi ?? "" },
+          tellings: tellings.length,
+          page: liveStoryPage(st),
+          first: { shiurId: first.shiurId, momentId: first.momentId, t: first.t ?? null },
+        },
+      ];
+    });
+    personStories.sort((a, b) => b.tellings - a.tellings || cmp(a.id, b.id));
+    ents.push({
+      kind: "p",
+      key: p.id,
+      label: personLabel(p.id),
+      ids,
+      moments,
+      extra: {
+        reviewed: p.reviewed === true,
+        person: {
+          kind: "person",
+          id: p.id,
+          names: { he: p.nameHe ?? "", en: p.nameEn ?? "", yi: p.nameYi ?? "" },
+          aliases: uniq((p.aliases ?? []).filter((a) => typeof a === "string" && a.trim() !== "")),
+          description: p.description ? { en: p.description.en ?? "", yi: p.description.yi ?? "" } : null,
+          works: own.map((id) => workChip(id)),
+          cited: sortByYear(own.flatMap((id) => familyShiurim(id))),
+          stories: personStories,
+        },
+      },
+    });
   }
   for (const c of view.concepts.values()) {
     const ids = sortByYear(c.shiurIds ?? []);
@@ -606,7 +705,21 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
     const moments = uniq((c.exampleRefs ?? []).map((x) => x.momentId))
       .flatMap((id) => ref(id) ?? [])
       .filter((m) => mine.has(m.shiurId));
-    ents.push({ kind: "c", key: c.id, label: conceptLabel(c.id), ids, moments });
+    ents.push({
+      kind: "c",
+      key: c.id,
+      label: conceptLabel(c.id),
+      ids,
+      moments,
+      extra: {
+        reviewed: c.reviewed === true,
+        concept: {
+          he: c.canonicalHe ?? "",
+          label: { en: c.label?.en ?? "", yi: c.label?.yi ?? "" },
+          definition: { en: c.definition?.en ?? "", yi: c.definition?.yi ?? "" },
+        },
+      },
+    });
   }
   for (const [key, o] of listed) {
     if (o.ids.length < entityMin) continue;
@@ -657,6 +770,7 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
       years: sortedRecord(years),
       moments: e.moments,
       related,
+      ...e.extra,
     };
     put<"entity">(dataPaths.entity(e.kind, e.key), file);
   });

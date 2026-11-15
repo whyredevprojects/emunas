@@ -1,4 +1,4 @@
-// One sefer (W4.2): its cited places in the work's own order, a chapter index for large works.
+// One sefer (C2.6): a merged corpus work; its cited places in order, or a family hub with its children.
 import type { JSX } from "react";
 import { WorkPage } from "../features/seforim/WorkPage.tsx";
 import { seoMeta } from "../seo/meta.ts";

@@ -10,6 +10,7 @@ import { glossaryShardFor } from "../app/data/paths.ts";
 import type {
   BuildFile,
   CorpusFile,
+  EntityFile,
   DataKind,
   FacetsFile,
   GlossaryShardFile,
@@ -197,9 +198,14 @@ describe("corpus-layer files on the mini corpus", () => {
   });
 
   it("publishes no alias, synonym, ASR or pairing field anywhere", () => {
+    const people = new Map(layer.people.map((p) => [p.id, p]));
     for (const [f, body] of files) {
       const keys = allKeys(body);
+      // C2.6: a person page shows the person's own display aliases ("also called"), and only those.
+      const person = /^entity\/p\//.test(f) ? (body as EntityFile).person : undefined;
+      if (person) expect(person.aliases.every((a) => people.get(person.id)!.aliases.includes(a)), f).toBe(true);
       for (const k of ["aliases", "synonyms", "transliterations", "terms_", "asrVariants", "heardAsSamples", "sibling", "counterpart"]) {
+        if (k === "aliases" && person) continue;
         expect(keys.has(k), `${f}: ${k}`).toBe(false);
       }
     }

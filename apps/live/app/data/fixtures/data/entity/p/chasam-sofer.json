@@ -85,5 +85,85 @@
    "key": "ramban",
    "shared": 5
   }
- ]
+ ],
+ "reviewed": false,
+ "person": {
+  "kind": "person",
+  "id": "chasam-sofer",
+  "names": {
+   "he": "חתם סופר",
+   "en": "the Chasam Sofer",
+   "yi": "דער חתם סופר"
+  },
+  "aliases": [
+   "Rabbi Moshe Sofer"
+  ],
+  "description": null,
+  "works": [
+   {
+    "id": "chasam-sofer",
+    "label": {
+     "en": "Chasam Sofer",
+     "yi": "חתם סופר"
+    },
+    "page": false,
+    "count": 3
+   },
+   {
+    "id": "derashos-chasam-sofer",
+    "label": {
+     "en": "Derashos Chasam Sofer",
+     "yi": "דרשות חתם סופר"
+    },
+    "page": false,
+    "count": 1
+   },
+   {
+    "id": "shut-chasam-sofer",
+    "label": {
+     "en": "Responsa Chasam Sofer",
+     "yi": "שו״ת חתם סופר"
+    },
+    "page": false,
+    "count": 1
+   }
+  ],
+  "cited": [
+   "yi-zmanim-tv-bb-04",
+   "yi-zmanim-spyrh-01",
+   "yi-zmanim-chnvkh-11",
+   "en-parsha-en-svldvs-01",
+   "yi-zmanim-svds-pvrym-ktn-03"
+  ],
+  "stories": [
+   {
+    "id": "rav-shimon-sofer-and-the-factory-on-shabbos",
+    "title": {
+     "en": "Rav Shimon Sofer and the factory on Shabbos",
+     "yi": "רב שמעון סופר און די פאבריק אום שבת"
+    },
+    "tellings": 1,
+    "page": false,
+    "first": {
+     "shiurId": "en-miscellaneous-en-02",
+     "momentId": "en-miscellaneous-en-02~st0",
+     "t": 870.66
+    }
+   },
+   {
+    "id": "the-malbim-in-the-chasam-sofers-place",
+    "title": {
+     "en": "The Malbim in the Chasam Sofer's place",
+     "yi": "דער מלבי\"ם אויף'ן חתם סופר'ס ארט"
+    },
+    "tellings": 1,
+    "page": false,
+    "first": {
+     "shiurId": "yi-zmanim-lvl-02",
+     "momentId": "yi-zmanim-lvl-02~st1",
+     "t": 2697.19
+    }
+   }
+  ]
+ }
 }

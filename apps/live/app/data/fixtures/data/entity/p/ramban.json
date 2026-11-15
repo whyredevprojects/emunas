@@ -47,5 +47,66 @@
    "key": "chasam-sofer",
    "shared": 5
   }
- ]
+ ],
+ "reviewed": false,
+ "person": {
+  "kind": "person",
+  "id": "ramban",
+  "names": {
+   "he": "רמב\"ן",
+   "en": "the Ramban",
+   "yi": "דער רמב\"ן"
+  },
+  "aliases": [
+   "Rabbi Moshe ben Nachman",
+   "Nachmanides"
+  ],
+  "description": null,
+  "works": [
+   {
+    "id": "ramban",
+    "label": {
+     "en": "Ramban",
+     "yi": "רמב״ן"
+    },
+    "page": false,
+    "count": 6
+   },
+   {
+    "id": "ramban-on-the-torah",
+    "label": {
+     "en": "Ramban on the Torah",
+     "yi": "רמב״ן על התורה"
+    },
+    "page": false,
+    "count": 2
+   }
+  ],
+  "cited": [
+   "yi-parshas-hashavua-hzynv-01",
+   "yi-parshas-hashavua-brshys-01",
+   "en-miscellaneous-en-01",
+   "yi-zmanim-spyrh-01",
+   "yi-zmanim-shbs-chzvn-01",
+   "en-parsha-en-nch-01",
+   "yi-zmanim-svds-zs-chnvkh-04",
+   "en-zmanim-en-chvdsh-tbs-02"
+  ],
+  "stories": [
+   {
+    "id": "the-ramban-and-his-student-avner",
+    "title": {
+     "en": "The Ramban and his student Avner",
+     "yi": "דער רמב\"ן און זיין תלמיד אבנר"
+    },
+    "tellings": 1,
+    "page": false,
+    "first": {
+     "shiurId": "yi-parshas-hashavua-hzynv-01",
+     "momentId": "yi-parshas-hashavua-hzynv-01~st0",
+     "t": 141.95
+    }
+   }
+  ]
+ }
 }

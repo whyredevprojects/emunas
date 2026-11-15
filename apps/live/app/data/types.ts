@@ -383,13 +383,22 @@ export interface SeriesFile {
 export interface WorkSummary {
   /** Corpus work id. */
   key: string;
-  /** The work's name as cited (first spelling seen; normalize supplies canonical names in W2.1). */
+  /** The work's English title. */
   name: string;
   label: FacetLabel;
-  /** Number of shiurim citing it. */
+  /** Number of shiurim citing it (visible recount of the corpus layer). */
   count: number;
   /** Number of citations. */
   mentions: number;
+  /**
+   * True when `/data/work/<key>.json` exists (≥3 shiurim, not generic). Works below the line are
+   * still listed, for the shelf's collapsed "cited once or twice" row (concept-live-corpus E.1).
+   */
+  page: boolean;
+  /** Shelf group (corpus layer `orderGroup`; `other` when the layer does not place it). */
+  group: string;
+  /** The family the work belongs to (corpus layer `parentWorkId`), listed in this file; else null. */
+  parentId: string | null;
 }
 
 export interface WorksFile {
@@ -413,11 +422,37 @@ export interface WorkLocation {
   citations: WorkCitation[];
 }
 
+/** A person as a chip (C2.6): a page link, or a short list of shiurim, or plain text. */
+export interface PersonChip extends EntityChip {
+  /**
+   * No page, but 1–2 shiurim (never type `other`, never excluded): the shiurim the chip opens as a
+   * small list (concept-live-corpus E.1). Absent when the name is plain text.
+   */
+  shiurim?: { id: string; title: string; lang: Ed; years: number[] }[];
+}
+
+/** A work in a family list ("his sefer", a family hub's children). */
+export interface WorkChip extends EntityChip {
+  /** Visible shiurim citing it. */
+  count: number;
+}
+
 export interface WorkFile {
   schemaVersion: typeof LIVE_DATA_SCHEMA_VERSION;
   key: string;
   name: string;
   label: FacetLabel;
+  /** Corpus layer `reviewStatus === "reviewed"`. */
+  reviewed: boolean;
+  /** The Sefaria index title; only a work with one offers Sefaria links (concept-live-corpus C.5). */
+  sefariaIndexTitle: string | null;
+  author: PersonChip | null;
+  /** The family the work belongs to (a family hub or a larger work), when it is listed. */
+  parent: EntityChip | null;
+  /** A family hub (a genre work with child works): its children in data order, with counts. */
+  children: WorkChip[];
+  /** Visible shiurim citing the work or, for a family, any work in it; by year. */
+  shiurIds: string[];
   /** In the work's own order where known (W2.1 normalize order), else by first appearance. */
   locations: WorkLocation[];
   /** Citations without a usable reference. */
@@ -440,6 +475,53 @@ export interface EntityFile {
   moments: MomentRef[];
   /** Entities sharing ≥ N shiurim with this one. */
   related: { kind: EntityKind; key: string; shared: number }[];
+  /** People and concepts (corpus layer): `reviewStatus === "reviewed"`. */
+  reviewed?: boolean;
+  /** People only. */
+  person?: PersonDetail;
+  /** Concepts only. */
+  concept?: ConceptDetail;
+}
+
+/** A merged story on a person page. */
+export interface PersonStory {
+  id: string;
+  title: L;
+  /** Visible tellings. */
+  tellings: number;
+  /** `/maasios/<id>` exists (told at least twice). */
+  page: boolean;
+  /** Where a story without a page links. */
+  first: { shiurId: string; momentId: string; t: number | null };
+}
+
+/** The person's own fields (corpus layer `people.json`), shown as the data gives them. */
+export interface PersonDetail {
+  /**
+   * The corpus entity the names and aliases belong to, so the guard's alias check (corpus-guard
+   * post-pass: every published alias is a display field of its entity) attributes them.
+   */
+  kind: "person";
+  id: string;
+  names: { he: string; en: string; yi: string };
+  /** Display aliases ("also called"); never ASR spellings. */
+  aliases: string[];
+  /** Generated disambiguation note, or null. */
+  description: L | null;
+  /** His seforim (`Work.authorPersonId`, and the work with his id). */
+  works: WorkChip[];
+  /** Shiurim citing his seforim (or a work in their family), by year. */
+  cited: string[];
+  /** Merged stories naming him, most told first. */
+  stories: PersonStory[];
+}
+
+/** The concept's own fields; `EntityFile.moments` holds its example sections. */
+export interface ConceptDetail {
+  he: string;
+  label: L;
+  /** Generated ("as the term is used in these shiurim"). */
+  definition: L;
 }
 
 // ---------------------------------------------------------------------------------------------

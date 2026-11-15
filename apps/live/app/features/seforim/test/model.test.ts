@@ -2,7 +2,18 @@ import { describe, expect, it } from "vitest";
 import { compareSortKeys } from "@emunas/normalize";
 import bereishisFixture from "../../../data/fixtures/data/work/bereishis.json" with { type: "json" };
 import { LIVE_DATA_SCHEMA_VERSION, type WorkCitation, type WorkFile, type WorkSummary } from "../../entities/live-data.ts";
-import { chapterLabel, isGenreWork, layoutWork, matchesWork, placeLabel, shelfGroups, shiurimIn, wantsChapterIndex, INLINE_PLACES_MAX } from "../model.ts";
+import {
+  INLINE_PLACES_MAX,
+  chapterLabel,
+  isFamilyMember,
+  layoutWork,
+  matchesWork,
+  offersSefaria,
+  placeLabel,
+  shelfGroups,
+  shiurimIn,
+  wantsChapterIndex,
+} from "../model.ts";
 
 const cite = (shiurId: string, n: number, t: number | null = 10 * n): WorkCitation => ({
   shiurId,
@@ -18,28 +29,64 @@ function work(key: string, refs: (string | null)[], unlocated: WorkCitation[] = 
     key,
     name: key,
     label: { en: key, yi: key },
+    reviewed: false,
+    sefariaIndexTitle: null,
+    author: null,
+    parent: null,
+    children: [],
+    shiurIds: [],
     locations: refs.map((r, i) => ({ ref: r ?? `cited ${i}`, sefariaRef: r, citations: [cite("yi-a-01", i)] })),
     unlocated,
   };
 }
 
-const summary = (key: string): WorkSummary => ({ key, name: key, label: { en: key, yi: key }, count: 1, mentions: 1 });
+const summary = (key: string, group: string, over: Partial<WorkSummary> = {}): WorkSummary => ({
+  key,
+  name: key,
+  label: { en: key, yi: key },
+  count: 5,
+  mentions: 5,
+  page: true,
+  group,
+  parentId: null,
+  ...over,
+});
 
 describe("shelf", () => {
-  it("groups works traditionally, keeps the emitted order inside a group, never shelves genre labels", () => {
-    const groups = shelfGroups(["bavli-shabbos", "shemos", "chumash", "bereishis", "gemara", "tanya", "not-in-table"].map(summary));
-    expect(isGenreWork("chumash")).toBe(true);
-    expect(groups.map((g) => [g.group, g.works.map((w) => w.key)])).toEqual([
-      ["torah", ["shemos", "bereishis"]],
-      ["bavli", ["bavli-shabbos"]],
-      ["acharonim", ["tanya"]],
-      ["other", ["not-in-table"]],
+  it("groups works by the layer's shelf group in shelf order; below the page line in the collapsed row; generic never", () => {
+    const groups = shelfGroups([
+      summary("bereishis", "torah"),
+      summary("shemos", "torah"),
+      summary("yehoshua", "neviim", { page: false, count: 1 }),
+      summary("rashi", "rishonim"),
+      summary("rashi-on-the-torah", "rishonim", { parentId: "rashi" }),
+      summary("rashi-on-tehillim", "rishonim", { parentId: "rashi", page: false, count: 2 }),
+      { ...summary("gemara", "bavli"), generic: true },
+      summary("shabbos", "bavli"),
+      summary("not-placed", "no-such-group"),
+      summary("empty", "torah", { count: 0, page: false }),
     ]);
-    expect(groups.flatMap((g) => g.works).some((w) => w.key === "gemara" || w.key === "chumash")).toBe(false);
+    expect(groups.map((g) => [g.group, g.works.map((w) => w.key), g.few.map((w) => w.key)])).toEqual([
+      ["torah", ["bereishis", "shemos"], []],
+      ["neviim", [], ["yehoshua"]],
+      ["bavli", ["shabbos"], []],
+      ["rishonim", ["rashi", "rashi-on-the-torah"], ["rashi-on-tehillim"]],
+      ["other", ["not-placed"], []],
+    ]);
+    const shelved = new Set(["rashi", "rashi-on-the-torah"]);
+    expect(isFamilyMember(summary("rashi-on-the-torah", "rishonim", { parentId: "rashi" }), shelved)).toBe(true);
+    expect(isFamilyMember(summary("rashi", "rishonim"), shelved)).toBe(false);
+    expect(isFamilyMember(summary("x", "rishonim", { parentId: "not-shelved" }), shelved)).toBe(false);
+  });
+
+  it("offers Sefaria only with a Sefaria index title", () => {
+    expect(offersSefaria({ sefariaIndexTitle: "Tanya" })).toBe(true);
+    expect(offersSefaria({ sefariaIndexTitle: null })).toBe(false);
+    expect(offersSefaria({ sefariaIndexTitle: " " })).toBe(false);
   });
 
   it("filters by any name, folded", () => {
-    const w: WorkSummary = { key: "bereishis", name: "Bereishis", label: { en: "Bereishis", yi: "בראשית", he: "בְּרֵאשִׁית" }, count: 1, mentions: 1 };
+    const w = summary("bereishis", "torah", { name: "Bereishis", label: { en: "Bereishis", yi: "בראשית", he: "בְּרֵאשִׁית" } });
     const fold = (s: string) => s.normalize("NFD").replace(/[֑-ׇ̀-ͯ]/gu, "").toLowerCase();
     expect(matchesWork(w, fold("BEREI"), fold)).toBe(true);
     expect(matchesWork(w, fold("בראש"), fold)).toBe(true);

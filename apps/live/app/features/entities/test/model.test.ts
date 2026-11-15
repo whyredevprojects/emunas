@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { LIVE_DATA_SCHEMA_VERSION, type CorpusFile, type CorpusRow, type StoryRow } from "../live-data.ts";
-import { byYear, groupByShiur, personSplit, queueItems, rowsById, yearHistogram } from "../model.ts";
+import { LIVE_DATA_SCHEMA_VERSION, type CorpusFile, type CorpusRow, type PersonDetail, type PersonStory, type StoryRow } from "../live-data.ts";
+import { alsoCalled, byYear, groupByShiur, personGroups, personNames, queueItems, rowsById, yearHistogram } from "../model.ts";
 import { filterStories, personFromQuery, personSearch, playableStories, storyPeople } from "../../maasios/model.ts";
 
 function row(id: string, years: number[], entities: Partial<CorpusRow["entities"]> = {}): CorpusRow {
@@ -37,27 +37,53 @@ const corpus = (rows: CorpusRow[]): CorpusFile => ({
   shiurim: rows,
 });
 
-describe("person split", () => {
-  const rows = [
-    row("yi-a-01", [5750], { works: ["chasam-sofer"], people: ["chasam-sofer"] }),
-    row("yi-b-01", [5740], { people: ["chasam-sofer"] }),
-    row("en-c-01", [], { people: [] }),
-    row("yi-d-01", [5760], { works: ["chasam-sofer"] }),
-    row("yi-e-01", [5730], {}),
-  ];
-  const stories = [story("en-c-01~st0", ["chasam-sofer", "baal-shem-tov"]), story("yi-e-01~st2", ["baal-shem-tov"]), story("yi-b-01~st1", ["chasam-sofer"])];
+const person = (over: Partial<PersonDetail> = {}): PersonDetail => ({
+  kind: "person",
+  id: "chasam-sofer",
+  names: { he: "חתם סופר", en: "the Chasam Sofer", yi: "דער חתם סופר" },
+  aliases: [],
+  description: null,
+  works: [],
+  cited: [],
+  stories: [],
+  ...over,
+});
 
-  it("cited = shiurim citing the person's sefer; in stories = stories with the person; discussed = listed among the people", () => {
-    const split = personSplit("chasam-sofer", { shiurIds: ["yi-b-01", "yi-a-01", "en-c-01"] }, corpus(rows), stories);
-    expect(split.cited.map((r) => r.id)).toEqual(["yi-a-01", "yi-d-01"]);
-    expect(split.inStories.map((s) => s.id)).toEqual(["en-c-01~st0", "yi-b-01~st1"]);
-    // en-c-01 is in the entity only through its story, so it is not "discussed"
-    expect(split.discussed.map((r) => r.id)).toEqual(["yi-b-01", "yi-a-01"]);
+describe("person groups", () => {
+  const rows = [row("yi-a-01", [5750]), row("yi-b-01", [5740]), row("en-c-01", []), row("yi-d-01", [5760]), row("yi-e-01", [5730])];
+  const st = (id: string, tellings: number, page: boolean): PersonStory => ({
+    id,
+    title: { en: id, yi: id },
+    tellings,
+    page,
+    first: { shiurId: "yi-a-01", momentId: "yi-a-01~st0", t: 10 },
   });
 
-  it("never drops a shiur of the entity that has no other reason to be there", () => {
-    const split = personSplit("x", { shiurIds: ["yi-e-01"] }, corpus(rows), []);
-    expect(split.discussed.map((r) => r.id)).toEqual(["yi-e-01"]);
+  it("cited = shiurim citing his seforim; stories = his merged stories as given; discussed = his shiurim, by year", () => {
+    const g = personGroups(
+      { shiurIds: ["yi-b-01", "yi-a-01", "en-c-01"], person: person({ cited: ["yi-d-01", "yi-a-01", "no-such-shiur"], stories: [st("s1", 3, true), st("s2", 1, false)] }) },
+      corpus(rows),
+    );
+    expect(g.cited.map((r) => r.id)).toEqual(["yi-a-01", "yi-d-01"]);
+    expect(g.stories.map((x) => x.id)).toEqual(["s1", "s2"]);
+    expect(g.discussed.map((r) => r.id)).toEqual(["yi-b-01", "yi-a-01", "en-c-01"]);
+  });
+
+  it("reads a file without person details as discussed only", () => {
+    const g = personGroups({ shiurIds: ["yi-e-01"] }, corpus(rows));
+    expect(g).toEqual({ cited: [], stories: [], discussed: [rows[4]] });
+  });
+
+  it("shows each name once and only aliases that are not already a name", () => {
+    expect(personNames({ he: "רש\"י", en: "Rashi", yi: "רש\"י" })).toEqual([
+      { lang: "he", text: "רש\"י" },
+      { lang: "en", text: "Rashi" },
+    ]);
+    expect(personNames({ he: "", en: "Onkelos", yi: " " })).toEqual([{ lang: "en", text: "Onkelos" }]);
+    expect(alsoCalled(person({ aliases: ["Chasam Sofer", "the Chasam Sofer", " ", "Rabbi Moshe Sofer", "Chasam Sofer"] }))).toEqual([
+      "Chasam Sofer",
+      "Rabbi Moshe Sofer",
+    ]);
   });
 });
 

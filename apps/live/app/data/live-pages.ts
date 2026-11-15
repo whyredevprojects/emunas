@@ -26,9 +26,33 @@ export function livePersonPage(p: {
   readonly pages?: Flags | null;
   readonly listed?: Flags | null;
   readonly type?: string;
+  readonly group?: string;
   readonly excluded?: string | null;
 }): boolean {
-  return positive(p.count) && live(p.pages) && live(p.listed) && p.type !== "other" && (p.excluded ?? null) === null;
+  return (
+    positive(p.count) && live(p.pages) && live(p.listed) && p.type !== "other" && p.group !== "other" && (p.excluded ?? null) === null
+  );
+}
+
+/** Most shiurim a person chip without a page lists (concept-live-corpus E.1: "1 or 2 shiurim"). */
+export const PERSON_CHIP_LIST_MAX = 2;
+
+/**
+ * A person without a page whose chip opens a small list of his shiurim (E.1): 1–2 shiurim, never
+ * the `other` group (type `other`, private individuals, D2), never excluded (D5). Anyone else
+ * without a page is plain text.
+ */
+export function livePersonChipList(p: {
+  readonly count?: number;
+  readonly pages?: Flags | null;
+  readonly listed?: Flags | null;
+  readonly type?: string;
+  readonly group?: string;
+  readonly excluded?: string | null;
+}): boolean {
+  if (livePersonPage(p)) return false;
+  const n = typeof p.count === "number" ? p.count : 0;
+  return n > 0 && n <= PERSON_CHIP_LIST_MAX && p.type !== "other" && p.group !== "other" && (p.excluded ?? null) === null;
 }
 
 /** Concepts: ≥3 shiurim (layer flag) and not merged into a topic (the topic page is the entry). */

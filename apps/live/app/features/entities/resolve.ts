@@ -3,7 +3,8 @@
  * ("every entity link resolves", W4.2 acceptance).
  *
  * The rules mirror what the data build (W3.6, `data-build/emit.ts`) writes:
- * - `work/<key>.json` exists for every work in `facets.work` (every cited work, genre labels too);
+ * - `work/<key>.json` exists for every work in `facets.work` (corpus works with a Live page: ≥3
+ *   shiurim, never generic; a family hub has one);
  * - `entity/p/<key>.json` and `entity/c/<key>.json` exist for people and browse concepts with at least
  *   `ENTITY_FILE_MIN` shiurim; `facets.person` / `facets.concept` carry that count;
  * - `entity/o/<key>.json` exists exactly when `facets.occasion[key].hasPage` (the occasion facet's

@@ -83,5 +83,100 @@
    "key": "avraham-avinu",
    "shared": 5
   }
- ]
+ ],
+ "reviewed": false,
+ "person": {
+  "kind": "person",
+  "id": "rashi",
+  "names": {
+   "he": "רש\"י",
+   "en": "Rashi",
+   "yi": "רש\"י"
+  },
+  "aliases": [
+   "Rabbi Shlomo Yitzchaki"
+  ],
+  "description": null,
+  "works": [
+   {
+    "id": "rashi",
+    "label": {
+     "en": "Rashi",
+     "yi": "רש״י"
+    },
+    "page": false,
+    "count": 18
+   },
+   {
+    "id": "rashi-on-tehillim",
+    "label": {
+     "en": "Rashi on Tehillim",
+     "yi": "רש״י על תהלים"
+    },
+    "page": false,
+    "count": 1
+   },
+   {
+    "id": "rashi-on-rosh-hashanah",
+    "label": {
+     "en": "Rashi on Gemara Rosh Hashanah",
+     "yi": "רש״י על ראש השנה"
+    },
+    "page": false,
+    "count": 1
+   },
+   {
+    "id": "rashi-on-the-torah",
+    "label": {
+     "en": "Rashi on the Torah",
+     "yi": "רש״י על התורה"
+    },
+    "page": false,
+    "count": 1
+   },
+   {
+    "id": "rashi-on-bereishis",
+    "label": {
+     "en": "Rashi on Bereishis",
+     "yi": "רש״י על בראשית"
+    },
+    "page": true,
+    "count": 3
+   },
+   {
+    "id": "rashi-on-vayikra",
+    "label": {
+     "en": "Rashi on Vayikra",
+     "yi": "רש״י על ויקרא"
+    },
+    "page": false,
+    "count": 1
+   }
+  ],
+  "cited": [
+   "yi-zmanim-lvl-01",
+   "en-miscellaneous-en-02",
+   "yi-parshas-hashavua-brshys-01",
+   "yi-parshas-hashavua-mvr-01",
+   "en-miscellaneous-en-01",
+   "yi-parshas-hashavua-shvptym-01",
+   "yi-zmanim-lvl-02",
+   "yi-zmanim-spyrh-01",
+   "yi-zmanim-svds-shvshn-pvrym-01",
+   "yi-zmanim-shbs-chzvn-01",
+   "en-parsha-en-nch-01",
+   "en-parsha-en-svldvs-01",
+   "en-parsha-en-vyshlch-01",
+   "yi-parshas-hashavua-brshys-03",
+   "yi-parshas-hashavua-vyshb-08",
+   "yi-zmanim-svds-zs-chnvkh-04",
+   "en-zmanim-en-tv-bshbt-01",
+   "yi-zmanim-svkvs-08",
+   "en-parsha-en-ky-sb-01",
+   "en-zmanim-en-chvdsh-tbs-02",
+   "yi-zmanim-svds-pvrym-ktn-03",
+   "en-zmanim-en-psch-06"
+  ],
+  "stories": []
+ }
 }

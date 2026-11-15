@@ -342,15 +342,39 @@ export const SeriesSchema = v.strictObject({
 
 export const WorksSchema = v.strictObject({
   schemaVersion: version,
-  works: v.array(v.strictObject({ key: str, name: str, label: facetLabel, count: int, mentions: int })),
+  works: v.array(
+    v.strictObject({
+      key: str,
+      name: str,
+      label: facetLabel,
+      count: int,
+      mentions: int,
+      page: v.boolean(),
+      group: str,
+      parentId: nstr,
+    }),
+  ),
 });
 
 const workCitation = v.strictObject({ shiurId: str, sourceId: str, t: nnum, mention, resolution });
+const personChip = v.strictObject({
+  id: str,
+  label: facetLabel,
+  page: v.boolean(),
+  shiurim: v.exactOptional(v.array(v.strictObject({ id: str, title: str, lang: ed, years: v.array(int) }))),
+});
+const workChip = v.strictObject({ id: str, label: facetLabel, page: v.boolean(), count: int });
 export const WorkSchema = v.strictObject({
   schemaVersion: version,
   key: str,
   name: str,
   label: facetLabel,
+  reviewed: v.boolean(),
+  sefariaIndexTitle: nstr,
+  author: v.nullable(personChip),
+  parent: v.nullable(v.strictObject({ id: str, label: facetLabel, page: v.boolean() })),
+  children: v.array(workChip),
+  shiurIds: v.array(str),
   locations: v.array(v.strictObject({ ref: str, sefariaRef: nstr, citations: v.array(workCitation) })),
   unlocated: v.array(workCitation),
 });
@@ -364,6 +388,28 @@ export const EntitySchema = v.strictObject({
   years: v.record(str, int),
   moments: v.array(momentRef),
   related: v.array(v.strictObject({ kind: entityKind, key: str, shared: int })),
+  reviewed: v.exactOptional(v.boolean()),
+  person: v.exactOptional(
+    v.strictObject({
+      kind: v.literal("person"),
+      id: str,
+      names: v.strictObject({ he: str, en: str, yi: str }),
+      aliases: v.array(str),
+      description: v.nullable(L),
+      works: v.array(workChip),
+      cited: v.array(str),
+      stories: v.array(
+        v.strictObject({
+          id: str,
+          title: L,
+          tellings: int,
+          page: v.boolean(),
+          first: v.strictObject({ shiurId: str, momentId: str, t: nnum }),
+        }),
+      ),
+    }),
+  ),
+  concept: v.exactOptional(v.strictObject({ he: str, label: L, definition: L })),
 });
 
 export const StoriesSchema = v.strictObject({

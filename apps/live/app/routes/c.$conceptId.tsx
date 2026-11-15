@@ -1,4 +1,4 @@
-// An inyan (W4.2): headed by the Hebrew term, with the chapters about it.
+// A glossary entry (C2.6): the merged corpus concept, headed by the Hebrew term; definition, examples, shiurim.
 import type { JSX } from "react";
 import { EntityPage } from "../features/entities/EntityPage.tsx";
 import { seoMeta } from "../seo/meta.ts";

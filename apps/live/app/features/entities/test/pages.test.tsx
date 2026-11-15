@@ -22,8 +22,8 @@ import { createTestRouter } from "../../../shell/test-router.tsx";
 import { MemoryBackend } from "../../../store/backend.ts";
 import { createPersonal, setPersonal, type Personal } from "../../../store/personal.ts";
 import { createQueuePlayer, setQueuePlayer } from "../../../store/queue-player.ts";
-import { isGenreWork, layoutWork } from "../../seforim/model.ts";
-import { configureData, resetDataConfig, type CorpusFile, type EntityFile, type StoriesFile, type WorkFile, type WorksFile } from "../live-data.ts";
+import { layoutWork } from "../../seforim/model.ts";
+import { configureData, resetDataConfig, type EntityFile, type StoriesFile, type WorkFile, type WorksFile } from "../live-data.ts";
 import { HAVE_REAL_DATA, emittedFetch, emittedMini, emittedReal, keysUnder, type Emitted } from "./emitted.ts";
 
 let files: Emitted;
@@ -52,7 +52,8 @@ async function renderAt(path: string) {
   const router = createTestRouter(path);
   const utils = render(<RouterProvider router={router} />);
   await act(async () => {});
-  await waitFor(() => expect(utils.container.querySelector("article[aria-busy=false]")).not.toBeNull());
+  // A page is ready when it stops loading, or when it is the not-found page (no aria-busy).
+  await waitFor(() => expect(utils.container.querySelector("article[aria-busy=false], article:not([aria-busy])")).not.toBeNull());
   return { router, ...utils };
 }
 
@@ -93,17 +94,22 @@ function entityLinks(root: ParentNode): string[] {
 // ---------------------------------------------------------------------------------- seforim
 
 describe("seforim", () => {
-  it("shelves works by group, without genre labels, every link resolving", async () => {
+  it("shelves merged works by group, those below the page line in a collapsed row, every link resolving", async () => {
     const { container } = await renderAt("/en/seforim");
     const groups = [...container.querySelectorAll("section[data-group]")].map((s) => s.getAttribute("data-group"));
     expect(groups[0]).toBe("torah");
-    // C1.7: the shelf holds corpus works with a Live page (≥3 shiurim); the mini corpus cites no
-    // tractate that often, so the groups are the Tanach ones and later.
     expect(groups.length).toBeGreaterThan(1);
     const shelved = [...container.querySelectorAll("[data-work]")].map((e) => e.getAttribute("data-work"));
-    const listed = get<WorksFile>("works.json").works.map((w) => w.key);
-    expect(new Set(shelved)).toEqual(new Set(listed.filter((k) => !isGenreWork(k))));
-    expect(listed.some(isGenreWork) || shelved.length === listed.length).toBe(true);
+    const few = [...container.querySelectorAll("[data-work-few]")].map((e) => e.getAttribute("data-work-few"));
+    const listed = get<WorksFile>("works.json").works;
+    expect(shelved).toEqual(listed.filter((w) => w.page).map((w) => w.key));
+    expect(new Set(few)).toEqual(new Set(listed.filter((w) => !w.page).map((w) => w.key)));
+    expect(few.length).toBeGreaterThan(0);
+    // The collapsed rows are closed and hold no links (those works have no page).
+    for (const d of container.querySelectorAll("details[data-testid=shelf-few]")) {
+      expect(d.hasAttribute("open")).toBe(false);
+      expect(d.querySelectorAll("a").length).toBe(0);
+    }
     const links = entityLinks(container);
     expect(links.length).toBe(shelved.length);
     expect(links.map(unresolved).filter(Boolean)).toEqual([]);
@@ -170,9 +176,9 @@ describe("seforim", () => {
     await noAxeViolations();
   });
 
-  it("unknown works and chapters say so", async () => {
+  it("an unknown work is the not-found page; an unknown chapter says so", async () => {
     const a = await renderAt("/en/seforim/no-such-work");
-    expect(a.container.textContent).toContain("There is no sefer at this address.");
+    expect(a.container.querySelector("h1")!.textContent).toBe("Page not found");
     cleanup();
     const b = await renderAt("/en/seforim/bereishis/999");
     expect(b.container.textContent).toContain("Nothing is cited in this chapter.");
@@ -218,48 +224,58 @@ describe("entity pages", () => {
     }, 120_000);
   }
 
-  it("a person page splits cited / in stories / discussed", async () => {
-    // A person in stories in the mini corpus; give one shiur a citation of the person's own sefer.
-    const stories = get<StoriesFile>("stories.json").stories;
-    const people = keysUnder(files, "entity/p/");
-    const key = people.find((k) => stories.some((s) => s.peopleKeys.includes(k)))!;
-    expect(key).toBeDefined();
+  it("a person page: names, also called, his seforim, then cited / in stories / discussed", async () => {
+    const key = "chasam-sofer";
     const entity = get<EntityFile>(`entity/p/${key}.json`);
-    const corpus = get<CorpusFile>("corpus.json");
-    const citing = corpus.shiurim.find((r) => r.status === "full")!;
-    const patched: CorpusFile = {
-      ...corpus,
-      shiurim: corpus.shiurim.map((r) => (r.id === citing.id ? { ...r, entities: { ...r.entities, works: [...r.entities.works, key] } } : r)),
-    };
-    const base = emittedFetch(files);
-    configureData({
-      fetch: async (input, init) =>
-        new URL(input, "http://x.invalid").pathname === "/data/corpus.json"
-          ? new Response(JSON.stringify(patched), { status: 200 })
-          : base(input, init),
-    });
-    const { container } = await renderAt(`/en/p/${encodeURIComponent(key)}`);
+    const person = entity.person!;
+    expect(person.works.length).toBeGreaterThan(0);
+    expect(person.stories.length).toBeGreaterThan(0);
+    const { container } = await renderAt(`/en/p/${key}`);
+    expect(container.querySelector("[data-testid=person-names]")!.textContent).toContain(person.names.he);
+    expect(container.querySelector("[data-testid=also-called]")!.textContent).toContain("Rabbi Moshe Sofer");
+    const seforim = container.querySelector("[data-testid=his-seforim]")!;
+    for (const w of person.works) {
+      const linked = seforim.querySelector(`a[data-work="${w.id}"]`);
+      expect(linked !== null, w.id).toBe(w.page);
+      if (linked) expect(linked.getAttribute("href")).toBe(`/en/seforim/${w.id}`);
+    }
     const splits = [...container.querySelectorAll("section[data-split]")].map((s) => s.getAttribute("data-split"));
-    expect(splits[0]).toBe("cited");
-    expect(splits).toContain("stories");
+    expect(splits).toEqual(["cited", "stories", "discussed"]);
     const cited = container.querySelector("section[data-split=cited]")!;
-    expect([...cited.querySelectorAll("a[data-shiur]")].map((a) => a.getAttribute("data-shiur"))).toEqual([citing.id]);
-    const inStories = [...container.querySelectorAll("section[data-split=stories] li[data-story]")].map((li) => li.getAttribute("data-story"));
-    expect(inStories).toEqual(stories.filter((s) => s.peopleKeys.includes(key)).map((s) => s.id));
-    const discussed = container.querySelector("section[data-split=discussed]");
-    const discussedIds = discussed ? [...discussed.querySelectorAll("a[data-shiur]")].map((a) => a.getAttribute("data-shiur")) : [];
-    for (const id of discussedIds) expect(entity.shiurIds).toContain(id);
+    const citedShown = [...cited.querySelectorAll("a[data-shiur]")].map((a) => a.getAttribute("data-shiur")!);
+    expect(citedShown.length).toBe(Math.min(20, person.cited.length));
+    for (const id of citedShown) expect(person.cited).toContain(id);
+    const stories = [...container.querySelectorAll("section[data-split=stories] li[data-story]")];
+    expect(stories.map((li) => li.getAttribute("data-story"))).toEqual(person.stories.map((x) => x.id));
+    for (const [i, li] of stories.entries()) {
+      const st = person.stories[i]!;
+      const href = li.querySelector("a")!.getAttribute("href")!;
+      if (st.page) expect(href).toBe(`/en/maasios/${st.id}`);
+      else expect(href.startsWith(`/en/s/${st.first.shiurId}`)).toBe(true);
+    }
+    const discussed = container.querySelector("section[data-split=discussed]")!;
+    for (const a of discussed.querySelectorAll("a[data-shiur]")) expect(entity.shiurIds).toContain(a.getAttribute("data-shiur"));
     expect(container.querySelector("svg[role=img]")!.getAttribute("aria-label")).toMatch(/shiur/u);
     await noAxeViolations();
   });
 
-  it("a concept is headed by its Hebrew term and renders in Yiddish", async () => {
-    const key = keysUnder(files, "entity/c/")[0]!;
+  it("a concept is headed by its Hebrew term, then its definition, examples as play buttons, then shiurim", async () => {
+    const keys = keysUnder(files, "entity/c/");
+    const key = keys.find((k) => get<EntityFile>(`entity/c/${k}.json`).moments.some((m) => m.t !== null))!;
+    expect(key).toBeDefined();
     const entity = get<EntityFile>(`entity/c/${key}.json`);
     const { container } = await renderAt(`/yi/c/${encodeURIComponent(key)}`);
     const h1 = container.querySelector("h1 bdi")!;
     expect(h1.getAttribute("lang")).toBe("he");
     expect(h1.textContent).toBe(entity.label.he ?? entity.label.yi);
+    expect(container.querySelector("[data-testid=definition]")!.textContent).toContain(entity.concept!.definition.yi);
+    const examples = [...container.querySelectorAll("[data-testid=examples] li[data-example]")].map((li) => li.getAttribute("data-example"));
+    expect(examples).toEqual(entity.moments.filter((m) => m.t !== null).map((m) => m.id));
+    expect(container.querySelectorAll("button[data-action=play-example]").length).toBe(examples.length);
+    // The definition comes before the examples, the examples before the shiurim.
+    const order = ["[data-testid=definition]", "[data-testid=examples]", "#shiurim-title"].map((q) => container.querySelector(q)!);
+    expect(order[0]!.compareDocumentPosition(order[1]!) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(order[1]!.compareDocumentPosition(order[2]!) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
     await noAxeViolations();
   });
 
@@ -276,8 +292,9 @@ describe("entity pages", () => {
     await noAxeViolations();
   });
 
-  it("an unknown entity says so", async () => {
+  it("an unknown entity is the not-found page", async () => {
     const { container } = await renderAt("/en/p/no-such-person");
+    expect(container.querySelector("h1")!.textContent).toBe("Page not found");
     expect(container.textContent).toContain("There is no page at this address.");
   });
 });
@@ -400,7 +417,7 @@ describe.runIf(HAVE_REAL_DATA)("on the repo's data", () => {
     const { container } = await renderAt("/en/p/chofetz-chaim");
     const splits = [...container.querySelectorAll("section[data-split]")].map((s) => s.getAttribute("data-split"));
     expect(splits).toEqual(["cited", "stories", "discussed"]);
-    expect(container.querySelector('section[data-split=cited] a[href="/en/seforim/chofetz-chaim"]')).not.toBeNull();
+    expect(container.querySelector("[data-testid=his-seforim] a[href^='/en/seforim/']")).not.toBeNull();
     expect(entityLinks(container).map(unresolved).filter(Boolean)).toEqual([]);
     await noAxeViolations();
   });
