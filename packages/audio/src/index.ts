@@ -14,7 +14,7 @@ export {
   type MediaTimeUrl,
   type MediaUrl,
 } from "./media.ts";
-export { isPlayableKey, unplayableReason, type UnplayableReason } from "./playable.ts";
+export { isPlayableKey, mp3SiblingKey, servedKey, unplayableReason, type UnplayableReason } from "./playable.ts";
 export {
   buildAudioTable,
   lookupAudio,

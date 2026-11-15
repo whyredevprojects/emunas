@@ -3,6 +3,7 @@
  * host, `playable: false` for non-mp3 objects, duplicates share the canonical URL, the bucket key
  * never appears as a field, `.corpus/audio-table.json` is written.
  */
+import { cpSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import type { IngestOutput } from "../../../src/types.ts";
@@ -91,6 +92,64 @@ describe("recordings[].audioUrl", () => {
     // Only in-scope recordings are in the table (the canonical is not in any in-scope shiur).
     expect(table[canonical]).toBeUndefined();
     expect(r.report.warnings).toContain(`audio: ${WMA} not playable (not-mp3); shown as unavailable`);
+  });
+
+  describe("site-policy/audio-transcoded.json (MP3 sibling of a non-mp3 object)", () => {
+    const WMA = "y-zemanim-taamuz-av-07-04-2-15-av";
+    const WMA_KEY = "Y Zemanim/07 Taamuz-Av/04-2 15 Av #2.WMA";
+    const withWma = () => {
+      const d = miniCopy();
+      editJson<IngestOutput>(join(d, "derived/ingest.json"), (i) => {
+        i.recordings.find((r) => r.id === WMA)!.audioKey = WMA_KEY;
+      });
+      return d;
+    };
+    const policyWith = (body: unknown) => {
+      const p = join(tmp(), "site-policy");
+      cpSync(MINI_POLICY, p, { recursive: true });
+      writeFileSync(join(p, "audio-transcoded.json"), JSON.stringify(body));
+      return p;
+    };
+    const recOf = (shiurim: PublicShiur[]) => shiurim.flatMap((s) => s.recordings).find((r) => r.id === WMA)!;
+
+    it("listed → playable, audioUrl is the encoded .mp3 sibling; the raw key is not in the output", () => {
+      const policyDir = policyWith({ policyVersion: 1, mp3Siblings: [WMA_KEY] });
+      const p = projectCorpus({ dataDir: withWma(), policyDir, mediaOrigin: ORIGIN });
+      const sibling = `${ORIGIN}/Y%20Zemanim/07%20Taamuz-Av/04-2%2015%20Av%20%232.mp3`;
+      expect(recOf(p.shiurim)).toMatchObject({ playable: true, audioUrl: sibling });
+      expect(p.audioTable[WMA]).toEqual({ canonicalId: WMA, size: 0, playable: true, url: sibling });
+      expect(p.report.warnings.some((w) => w.includes(WMA))).toBe(false);
+      const json = JSON.stringify([p.shiurim, p.index, p.audioTable]);
+      expect(json).not.toContain("WMA");
+      expect(json).not.toContain("15 Av #2");
+      for (const k of FORBIDDEN_KEYS) expect(allKeys([p.shiurim, p.index, p.audioTable]).has(k), k).toBe(false);
+    });
+
+    it("not listed (or listing another key) → still unplayable", () => {
+      for (const policyDir of [
+        MINI_POLICY,
+        policyWith({ policyVersion: 1, mp3Siblings: [] }),
+        policyWith({ policyVersion: 1, mp3Siblings: ["Y Zemanim/other.WMA"] }),
+      ]) {
+        const p = projectCorpus({ dataDir: withWma(), policyDir, mediaOrigin: ORIGIN });
+        expect(recOf(p.shiurim)).toMatchObject({ playable: false, audioUrl: null });
+        expect(p.report.warnings).toContain(`audio: ${WMA} not playable (not-mp3); shown as unavailable`);
+      }
+    });
+
+    it("an invalid file is fatal", () => {
+      for (const body of [
+        { policyVersion: 2, mp3Siblings: [] },
+        { policyVersion: 1 },
+        { policyVersion: 1, mp3Siblings: ["a/b.mp3"] },
+        { policyVersion: 1, mp3Siblings: ["transcripts/a/b.WMA"] },
+        { policyVersion: 1, mp3Siblings: ["a/noext"] },
+      ]) {
+        expect(() => projectCorpus({ dataDir: MINI_DATA, policyDir: policyWith(body), mediaOrigin: ORIGIN })).toThrow(
+          /audio-transcoded\.json/,
+        );
+      }
+    });
   });
 
   it("changing the media origin re-emits every shiur; build.json records the origin", () => {

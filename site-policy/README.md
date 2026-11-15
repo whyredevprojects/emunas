@@ -41,3 +41,12 @@ together with the transcript.
 An array of `{ "id": "<item id>", "reason": "…", "reviewedBy": "…", "reviewedAt": "YYYY-MM-DD" }`
 used by `@emunas/corpus-guard` for reviewed verbatim exceptions. Ships empty. Reports and this
 file carry ids only, never transcript text.
+
+## audio-transcoded.json
+
+`{ "policyVersion": 1, "mp3Siblings": ["<original .WMA key>", …] }`. Ships with an empty list.
+Each key is a non-mp3 bucket key that has an MP3 transcode next to it (same key, extension `.mp3`),
+added by `npm run transcode:wma --workspace=@emunas/audio` after a verified upload
+(`docs/sites/ops-runbook.md` §10). The corpus build links the `.mp3` for listed keys only; every
+other non-mp3 recording stays unplayable. An `.mp3` key, a key without an extension or a key that
+may not become a URL is fatal.

@@ -267,3 +267,20 @@ what it tests; `LIVE_E2E_DATA=build` serves the built data instead for a manual 
   (written by corpus:build or an emit step placed before the guard post-pass), never be
   generated inside the sync itself.
 - The app builds could run `render-headers.ts` themselves later; until then the workflows do.
+
+## 10. Transcoding the `.WMA` recordings to MP3
+
+Three in-scope recordings exist only as `.WMA`, which browsers do not play. One command (repo root,
+R2 credentials in `.env` as for `transcripts:sync`, `ffmpeg`/`ffprobe` on PATH) converts each to MP3
+and uploads it next to the original (same key, `.mp3`; the WMA stays):
+
+```sh
+npm run transcode:wma --workspace=@emunas/audio -- --dry-run   # list the plan
+npm run transcode:wma --workspace=@emunas/audio                # transcode, verify, upload
+```
+
+Per key: skip if the `.mp3` already exists (`--force` overwrites), download to a temp dir,
+`ffmpeg -codec:a libmp3lame -q:a 4` (mono stays mono, sample rate kept), check the duration with
+ffprobe (within 1 s), upload as `audio/mpeg`, then add the original key to
+`site-policy/audio-transcoded.json`. Commit that file by PR; the next corpus:build links the MP3
+(`playable: true`) for the listed keys only. Keys under `transcripts/` are never touched.

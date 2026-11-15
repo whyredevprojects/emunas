@@ -10,7 +10,7 @@ export { identitySlugKeyer, foldForKey, slugKey } from "./keyer.ts";
 export type { KeyKind, KeyResult, Keyer } from "./keyer.ts";
 export { FatalDataError, loadCatalogs, loadIngest, loadManifest, loadShiurFiles } from "./load.ts";
 export type { Catalogs, ShiurFiles } from "./load.ts";
-export { DEFAULT_POLICY, loadPublishPolicy, loadSuppressFile } from "./policy.ts";
+export { DEFAULT_POLICY, loadAudioTranscoded, loadPublishPolicy, loadSuppressFile } from "./policy.ts";
 export type { PublishPolicy } from "./policy.ts";
 export { PROJECTOR_VERSION, projectShiur, splitCatalogTopics } from "./project.ts";
 export type { ProjectContext, ProjectInput } from "./project.ts";
