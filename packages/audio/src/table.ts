@@ -1,77 +1,78 @@
 /**
- * The audio table (integration-plan §3.2, §5.1 `audio-table.json`):
- * `recordingId → { size, canonicalId }`, generated from the corpus at build time
- * and bundled into each site Worker. Ids not in it are 404. Recordings with
- * `duplicateOf` map to their canonical object, which is the only one published.
+ * The audio table (integration-plan §5.1 `audio-table.json`, Amendment A1):
+ * `recordingId → { url, canonicalId, playable, size }`, built from the corpus recordings at build
+ * time. A recording with `duplicateOf` maps to its canonical recording and shares its URL. A
+ * recording whose canonical key is not playable (not `.mp3`, or refused) gets `playable: false`
+ * and `url: null`.
+ *
+ * The bucket key (`audioKey`) is read to build the URL and is never copied into the table.
  *
  * Pure and browser/Workers-safe.
  */
-import { asciiFilenameBase } from "./filename.ts";
-import { isAudioId } from "./paths.ts";
-import { refuseSourceKey } from "./keys.ts";
+import { mediaUrl, normalizeMediaOrigin, type MediaUrl } from "./media.ts";
+import { unplayableReason, type UnplayableReason } from "./playable.ts";
 
-export interface AudioTableEntry {
-  /** Byte size of the canonical object. */
-  size: number;
-  /** Recording id whose object `<canonicalId>.mp3` holds the bytes (itself unless a duplicate). */
+interface AudioTableEntryBase {
+  /** Recording whose object holds the bytes (itself unless a duplicate). */
   canonicalId: string;
-  /** ASCII-safe title for download filenames; absent → the recording id is used. */
-  title?: string;
+  /** Byte size of the canonical object (0 when unknown). */
+  size: number;
 }
+
+export type AudioTableEntry =
+  | (AudioTableEntryBase & { playable: true; url: MediaUrl })
+  | (AudioTableEntryBase & { playable: false; url: null });
 
 export type AudioTable = Readonly<Record<string, AudioTableEntry>>;
 
 /**
- * What the table builder needs per recording. The pipeline's `Recording` type
- * (src/types.ts) satisfies it structurally. `audioKey` is used only to leave out
- * recordings that can never be published (non-mp3 sources); it is not copied
- * into the table.
+ * What the builder needs per recording. The pipeline's `Recording` type (src/types.ts) satisfies it
+ * structurally.
  */
 export interface AudioTableInput {
   id: string;
+  audioKey: string;
   sizeBytes: number;
   duplicateOf: string | null;
-  audioKey?: string;
-  /** Catalog title (any script); folded to ASCII for the download filename. */
-  title?: string | null;
 }
 
 export type AudioTableIssue =
-  | { kind: "invalid-id"; id: string }
   | { kind: "duplicate-id"; id: string }
-  | { kind: "invalid-size"; id: string }
   | { kind: "missing-canonical"; id: string; duplicateOf: string }
   | { kind: "duplicate-cycle"; id: string }
-  | { kind: "unpublishable-key"; id: string; reason: string };
+  | { kind: "invalid-size"; id: string }
+  | { kind: "unplayable"; id: string; reason: UnplayableReason };
 
 export interface BuildAudioTableOptions {
+  /** Media origin, e.g. `https://media.<domain>`; validated by `normalizeMediaOrigin`. */
+  origin: string;
+  /**
+   * Ids to emit (e.g. the in-scope recordings). All given recordings are still used to resolve
+   * `duplicateOf`, so a duplicate can point at a canonical outside this set. Default: every id.
+   */
+  only?: Iterable<string>;
   onIssue?: (issue: AudioTableIssue) => void;
 }
 
 const MAX_DUP_CHAIN = 16;
 
 /**
- * Builds the table from the corpus's in-scope recordings. Never throws on bad
- * rows: a bad row is left out (→ 404 at the edge) and reported via `onIssue`.
- * Output keys are sorted, so the JSON is deterministic.
+ * Builds the table. Never throws on bad rows (only on an invalid origin): a broken duplicate chain
+ * or an unplayable key gives `playable: false`; everything is reported via `onIssue`. Output keys
+ * are sorted, so the JSON is deterministic.
  */
-export function buildAudioTable(
-  recordings: readonly AudioTableInput[],
-  options: BuildAudioTableOptions = {},
-): AudioTable {
+export function buildAudioTable(recordings: readonly AudioTableInput[], options: BuildAudioTableOptions): AudioTable {
+  const origin = normalizeMediaOrigin(options.origin);
   const report = options.onIssue ?? (() => {});
   const byId = new Map<string, AudioTableInput>();
   for (const rec of recordings) {
-    if (!isAudioId(rec.id)) {
-      report({ kind: "invalid-id", id: rec.id });
-      continue;
-    }
     if (byId.has(rec.id)) {
       report({ kind: "duplicate-id", id: rec.id });
       continue;
     }
     byId.set(rec.id, rec);
   }
+  const wanted = options.only ? [...new Set(options.only)] : [...byId.keys()];
 
   const resolveCanonical = (rec: AudioTableInput): AudioTableInput | AudioTableIssue => {
     let cur = rec;
@@ -85,29 +86,27 @@ export function buildAudioTable(
   };
 
   const out: Record<string, AudioTableEntry> = {};
-  for (const id of [...byId.keys()].sort()) {
+  for (const id of wanted.sort()) {
     const rec = byId.get(id);
-    if (!rec) continue;
+    if (!rec) continue; // unknown id: the caller reports missing recordings itself
     const canonical = resolveCanonical(rec);
     if ("kind" in canonical) {
       report(canonical);
+      out[id] = { canonicalId: id, size: 0, playable: false, url: null };
       continue;
     }
-    if (canonical.audioKey !== undefined) {
-      const reason = refuseSourceKey(canonical.audioKey);
-      if (reason) {
-        report({ kind: "unpublishable-key", id, reason });
-        continue;
-      }
-    }
-    if (!Number.isSafeInteger(canonical.sizeBytes) || canonical.sizeBytes <= 0) {
+    let size = canonical.sizeBytes;
+    if (!Number.isSafeInteger(size) || size < 0) {
       report({ kind: "invalid-size", id });
+      size = 0;
+    }
+    const reason = unplayableReason(canonical.audioKey);
+    if (reason) {
+      report({ kind: "unplayable", id, reason });
+      out[id] = { canonicalId: canonical.id, size, playable: false, url: null };
       continue;
     }
-    const entry: AudioTableEntry = { size: canonical.sizeBytes, canonicalId: canonical.id };
-    const title = rec.title ? asciiFilenameBase(rec.title) : "";
-    if (title) entry.title = title;
-    out[id] = entry;
+    out[id] = { canonicalId: canonical.id, size, playable: true, url: mediaUrl(canonical.audioKey, origin) };
   }
   return out;
 }

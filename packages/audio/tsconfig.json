@@ -2,18 +2,7 @@
   "extends": "@emunas/config/tsconfig.base.json",
   "compilerOptions": {
     "lib": ["ES2023"],
-    "types": ["@cloudflare/workers-types", "@cloudflare/vitest-plugin/types"]
+    "types": ["node"]
   },
-  "include": [
-    "src/index.ts",
-    "src/paths.ts",
-    "src/table.ts",
-    "src/filename.ts",
-    "src/keys.ts",
-    "src/http.ts",
-    "src/handler.ts",
-    "src/constants.ts",
-    "test/edge/**/*.ts",
-    "vitest.workers.config.ts"
-  ]
+  "include": ["src/**/*.ts", "test/**/*.ts", "vitest.config.ts"]
 }
