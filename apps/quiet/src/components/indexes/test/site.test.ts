@@ -68,7 +68,9 @@ afterAll(() => {
 });
 
 const EDS = ["yi", "en"] as const;
-const DIRS = ["sources", "stories", "people", "inyanim"] as const;
+// The stories index and story pages are on the corpus layer now (C2.3; tested in
+// components/stories/test/site.build.test.ts), so they are not crawled here.
+const DIRS = ["sources", "people", "inyanim"] as const;
 
 function walk(dir: string): string[] {
   if (!existsSync(dir)) return [];
@@ -157,7 +159,6 @@ describe("W3.4 on the real corpus", () => {
       expect(entityDirs(ed, "sources")).toEqual(want.sources);
       expect(entityDirs(ed, "people")).toEqual(want.people);
       expect(entityDirs(ed, "inyanim")).toEqual(want.inyanim);
-      expect(entityDirs(ed, "stories")).toEqual([]);
     }
     // keys are URL-safe as they are, so ids, paths and @emunas/links anchors agree
     for (const k of [...want.sources, ...want.people, ...want.inyanim]) expect(k).toMatch(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
@@ -312,7 +313,7 @@ describe("W3.4 on the real corpus", () => {
       }
     }
     expect(retellings.length).toBeGreaterThan(500);
-    const storyPages = [...pages].filter(([p]) => /\/(stories|people)\//.test(p));
+    const storyPages = [...pages].filter(([p]) => /\/people\//.test(p));
     for (const [path, file] of pages) {
       const html = readFileSync(file, "utf8");
       for (const f of forbidden) expect(html.includes(f), `${path} contains ${f}`).toBe(false);

@@ -71,6 +71,8 @@ export const catalogEn = {
   "series.noPerek": "Without a perek",
   "series.jump": "Perakim",
   "series.empty": "None of the shiurim of this set is in the collection online.",
+  "series.intro": "About this series",
+  "series.keyThemes": "Key themes",
 
   "chumash.bereishis": "Sefer Bereishis",
   "chumash.shemos": "Sefer Shemos",
@@ -142,6 +144,8 @@ export const catalogYi: MessageTable<CatalogKey> = {
   "series.noPerek": "אן א פרק",
   "series.jump": "פרקים",
   "series.empty": "קיינער פון די שיעורים פון דער סדרה איז נישט אין דער זאמלונג אויפן אינטערנעט.",
+  "series.intro": "וועגן דער סדרה",
+  "series.keyThemes": "די הויפט ענינים",
 
   "chumash.bereishis": "ספר בראשית",
   "chumash.shemos": "ספר שמות",

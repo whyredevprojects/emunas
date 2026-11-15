@@ -1,0 +1,64 @@
+---
+/**
+ * The series introduction (Quiet C4.7): the reserved introduction slot of a series page, filled
+ * from the layer's series synthesis. It sits inside the notes area, after the notes label: the
+ * generated title as a subtitle (the catalog name stays the page title, since this is the AI's
+ * wording and not the guide's), the overview, and the key themes as a short plain list (never
+ * links). Generated, reported speech: set as plain paragraphs, without quotation styling. The
+ * caller renders it only when the model has an intro, so a series without a synthesis shows no
+ * empty block.
+ */
+import type { Ed } from "../../lib/edition.ts";
+import type { SeriesIntro } from "./model.ts";
+import { useCatalogT } from "./strings.ts";
+
+interface Props {
+  ed: Ed;
+  intro: SeriesIntro;
+}
+
+const { ed, intro } = Astro.props;
+const c = useCatalogT(ed);
+---
+<section class="series-intro" aria-labelledby="series-intro-h" data-series-intro data-reviewed={intro.reviewed ? "true" : undefined}>
+  <h2 id="series-intro-h" class="visually-hidden">{c("series.intro")}</h2>
+  {intro.subtitle && <p class="series-subtitle" lang={ed}>{intro.subtitle}</p>}
+  {intro.overview && <p class="series-overview" lang={ed}>{intro.overview}</p>}
+  {intro.keyThemes.length > 0 && (
+    <>
+      <h3 class="series-themes-h">{c("series.keyThemes")}</h3>
+      <ul class="series-themes" lang={ed}>
+        {intro.keyThemes.map((k) => <li>{k}</li>)}
+      </ul>
+    </>
+  )}
+</section>
+
+<style>
+  .series-intro > * + * {
+    margin-block-start: var(--space-xs);
+  }
+
+  .series-subtitle {
+    font-size: var(--step-1);
+    font-style: italic;
+  }
+
+  .series-subtitle:lang(yi) {
+    font-style: normal;
+  }
+
+  .series-themes-h {
+    font-size: var(--step-0);
+    font-weight: var(--weight-regular);
+    color: var(--color-ink-muted);
+  }
+
+  .series-themes {
+    padding-inline-start: var(--space-m);
+  }
+
+  .series-themes li + li {
+    margin-block-start: var(--space-3xs);
+  }
+</style>

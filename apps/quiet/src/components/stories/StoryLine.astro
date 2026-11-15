@@ -1,0 +1,53 @@
+---
+/**
+ * One story on the stories index (Quiet C4.5): the generated title in the edition's language. A
+ * story with a page links to it, with how often it is told. A story without a page links straight
+ * to the place in the shiur where it is told: the occasion as catalogued, the year, the shiur's
+ * language and the time. The retelling is never shown here; it is on the story page and the shiur
+ * page. With `anchor`, the line carries the story's id, where `@emunas/links` sends a story that
+ * has no page.
+ */
+import { formatHebrewYears } from "@emunas/i18n";
+import { NUMERIC_RUN } from "../../lib/bidi.ts";
+import type { Ed } from "../../lib/edition.ts";
+import type { StoryLine } from "./model.ts";
+import { useStoriesT } from "./strings.ts";
+import "./stories.css";
+
+interface Props {
+  ed: Ed;
+  line: StoryLine;
+}
+
+const { ed, line } = Astro.props;
+const t = useStoriesT(ed);
+const years = (ys: readonly number[]) => (ys.length > 0 ? formatHebrewYears(ys, ed, { civil: false }) : null);
+---
+<li class="story-line" id={line.anchor ? line.id : undefined}>
+  {line.href ? (
+    <>
+      <a class="story-title" href={line.href}><bdi lang={line.name.lang} dir={line.name.dir}>{line.name.text}</bdi></a>
+      <span class="story-count">{t("count.tellings", { count: line.tellings })}</span>
+    </>
+  ) : (
+    <>
+      <span class="story-title"><bdi lang={line.name.lang} dir={line.name.dir}>{line.name.text}</bdi></span>
+      <span class="story-cites">
+        {line.moments.map((m, i) => {
+          const y = years(m.years);
+          return (
+            <>
+              {i > 0 && <span class="sep" aria-hidden="true"> · </span>}
+              <a class="cite" href={m.href}>
+                <bdi lang={m.occasion.lang} dir={m.occasion.dir}>{m.occasion.text}</bdi>
+                {y && <> <bdi lang="he" dir="rtl">{y}</bdi></>}
+                {" "}<span class="cite-lang">({m.langName})</span>
+                {m.time && <> <span class="time"><bdi {...NUMERIC_RUN}>{m.time}</bdi></span></>}
+              </a>
+            </>
+          );
+        })}
+      </span>
+    </>
+  )}
+</li>
