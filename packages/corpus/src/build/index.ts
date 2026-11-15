@@ -2,7 +2,7 @@
  * `@emunas/corpus/build`: Node-only build tooling. Apps never import this (ESLint enforces it);
  * they read `.corpus/` and `@emunas/corpus/public`.
  */
-export { buildCorpus, projectCorpus, resolveOutDir, toJson } from "./build.ts";
+export { buildCorpus, projectCorpus, resolveMediaOrigin, resolveOutDir, toJson } from "./build.ts";
 export type { BuildOptions, BuildResult, ProjectedCorpus } from "./build.ts";
 export { gate, structuralProblems } from "./gate.ts";
 export type { GateResult } from "./gate.ts";

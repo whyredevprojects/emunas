@@ -11,6 +11,7 @@ Figures checked against the repo on 2026-11-15: 997 in-scope shiurim (730 yi, 26
 > - Both sites use plain `<audio src>` to the media host; CSP `media-src` allows the media origin. The Live service worker's offline downloads `fetch()` the media URL with CORS (both site origins must be in the bucket's CORS AllowedOrigins). The `download` attribute is ignored cross-origin, so "download" links save under the bucket filename unless the owner sets `Content-Disposition` on objects.
 > - Recordings whose key is not `.mp3` (3 `.WMA` today) are shown as unavailable rather than linked.
 > - `@emunas/audio` shrinks to: `mediaUrl(key, origin)`, `buildAudioTable(corpusRecordings)` (id → url, duplicateOf → canonical), and the playability rule. W3.11 only attaches the custom domain and CORS rules.
+> - Done in W2.8 (packages/audio, corpus build). The sections listed above have been edited to match; where an old decision is kept for history it is marked "superseded by A1".
 
 ---
 
@@ -44,9 +45,9 @@ and a few `site:*` scripts. Existing scripts and dependencies stay untouched; ro
 
 ```
 apps/
-  quiet/          Astro static site + worker/index.ts (audio route only)          → Worker "emunas-quiet"
+  quiet/          Astro static site + worker/index.ts (static assets, headers)     → Worker "emunas-quiet"
   live/           React Router v7 (ssr:false + prerender) + worker/index.ts        → Worker "emunas-live"
-                  (audio route, /api/* and /admin/* via service binding, "/" language redirect)
+                  (/api/* and /admin/* via service binding, "/" language redirect; no audio route, A1)
 workers/
   api/            search (D1 FTS5 + Vectorize + Workers AI) and feedback (D1, Turnstile) → Worker "emunas-api"
 packages/
@@ -57,13 +58,13 @@ packages/
   normalize/      text folding, alias tables (parsha, occasions/zmanim, works+order, people, concepts), stable keys,
                   Sefaria ref parser, Hebrew year gematria
   calendar/       build-time generator (@hebcal/core) → committed table; runtime thisWeek() over the table
-  audio/          audio URL logic, edge handler (Range/HEAD/conditional), audio table, publish CLI (private → public bucket)
+  audio/          media-host audio URLs (mediaUrl), audio table, playability rule (A1; no Worker, no copy)
   links/          URL builders for both sites, cross-site equivalents, canonical/hreflang helpers, host config
   search-core/    the indexed-field allow-list → SearchDoc / MomentRow; query normalization + alias expansion
   i18n/           shared formatting (Hebrew year, durations, plurals, numbers), data-vocabulary labels, bidi/script helpers, t() factory
   tokens/         design primitives as CSS custom properties + subset self-hosted fonts (Hebrew + Latin)
 site-policy/      transcript-eligibility.json, publish-policy.json, verbatim-allow.json (human-edited, reviewed)
-.github/workflows/ ci.yml, deploy.yml, audio-publish.yml, data-sync.yml
+.github/workflows/ ci.yml, deploy.yml, data-sync.yml
 data/ scripts/ src/ config/ prompts/   pipeline (unchanged, read-only for site code)
 ```
 
@@ -81,7 +82,7 @@ All packages are `"private": true`, named `@emunas/<dir>`, ESM, TypeScript sourc
 | Aggregated indexes (works, people, concepts, occasions, years, series, stories) | yes | `@emunas/corpus/build` aggregate step | both sites render the same groupings and keys |
 | Normalization + alias tables | yes | `@emunas/normalize` | the first thing a human reviewer edits; one copy |
 | Hebrew calendar / parsha / gematria | yes | `@emunas/calendar`, `@emunas/normalize` (gematria) | |
-| Audio URL logic, edge handler, publish CLI | yes | `@emunas/audio` | one URL scheme `/audio/<recordingId>.mp3` on both hosts |
+| Audio URLs, audio table, playability rule | yes | `@emunas/audio` (called by `corpus:build`) | both sites link the same `recordings[].audioUrl` on `media.<domain>` (A1) |
 | Leak guard | yes | `@emunas/corpus-guard` | runs over both sites' outputs in one CI step |
 | Search documents (what is indexed) | yes | `@emunas/search-core` | Pagefind (Quiet) and D1/Vectorize/MiniSearch (Live) index the same allow-listed fields |
 | Query folding / alias expansion | yes | `@emunas/search-core` (uses `normalize`) | same in Pagefind glue, MiniSearch, Worker |
@@ -92,7 +93,7 @@ All packages are `"private": true`, named `@emunas/<dir>`, ESM, TypeScript sourc
 | Theme, components, CSS | **no** | each app | Quiet: printed catalog; Live: app shell |
 | Player | **no** | Quiet `apps/quiet/src/scripts/player.ts` (≤6 KB vanilla); Live `apps/live/app/player-engine/` | timeline math (global ↔ recording-local seconds) is shared in `@emunas/corpus/public` |
 | Framework | **no** | Astro (Quiet), React Router 7 + React 19 (Live) | the two concepts need different runtimes; shared packages are framework-free |
-| Workers | site Workers per app (thin, import `@emunas/audio`); one `emunas-api` Worker | | |
+| Workers | site Workers per app (thin, no audio route); one `emunas-api` Worker | | |
 | Policy files | yes | `site-policy/` | one eligibility file, one publish policy |
 
 ### 1.4 Conflicts between the two tech plans, resolved
@@ -103,17 +104,17 @@ All packages are `"private": true`, named `@emunas/<dir>`, ESM, TypeScript sourc
 | C2 | Shared data package names | `corpus`, `corpus-maps` | `corpus`, `corpus-guard`, `normalize`, `hebcal-map` | `corpus`, `corpus-guard`, `normalize`, `calendar` (§1.2); `corpus-maps` is merged into `normalize` |
 | C3 | Who runs the data stage | Quiet's `build-data.ts` | Live's `build/index.ts` | **One shared CLI** `npm run corpus:build` → `.corpus/` (gitignored). Apps read only `.corpus/`, never `data/`. Quiet emits pages from it; Live emits `/data/*.json` from it. |
 | C4 | Status gate | done + extraction + writeup + `extractionVariant === "extraction"` | done + 3 files + structural check | **Union of both**: manifest `done` AND `meta`/`extraction`/`writeup` exist, parse and validate AND `writeup.extractionVariant === "extraction"` AND structural checks (seg ranges within `starts.length`, recording ids belong to the shiur, `sectionIndex`/`sourceIdx` in range, sections tile). Status values: `"full" \| "catalog-only"`. |
-| C5 | Time model | `{rec, t}` per recording | global seconds + `recordings[{id, offset, duration}]` | **Global seconds** `t` everywhere in the public model and in URLs, plus the recordings table. `@emunas/corpus/public` exports `toLocal(shiur, t) → {recordingId, t}` and `toGlobal`. Quiet's no-JS link `href="/audio/{rec}.mp3#t={local}"` is computed with `toLocal`. (993 of 997 shiurim have one recording, so they are identical in practice.) |
+| C5 | Time model | `{rec, t}` per recording | global seconds + `recordings[{id, offset, duration}]` | **Global seconds** `t` everywhere in the public model and in URLs, plus the recordings table. `@emunas/corpus/public` exports `toLocal(shiur, t) → {recordingId, t}` and `toGlobal`. Quiet's no-JS link `href="{audioUrl}#t={local}"` (`mediaTimeUrl` from `@emunas/audio`) is computed with `toLocal`. (993 of 997 shiurim have one recording, so they are identical in practice.) |
 | C6 | Item time | `segs[0]` | min of segs; end = max seg's `ends` | **min(segs) → start, max(segs) → end**, recording from `evidence.recordingId` → section's recording → the only recording. Out-of-range seg: drop the time, keep the item, report. Unresolvable section time: shiur becomes catalog-only. |
 | C7 | Confidence | drop < 0.6 | drop < 0.6, `soft` 0.6–0.75 | Drop < 0.6; `soft: true` for 0.6–0.75 (in `publish-policy.json`). Quiet may ignore `soft`. |
 | C8 | Sources | drop `unresolved` with `work: null`, remap `sourceIdx` | keep all | **Drop `unresolved && work === null`** (nothing displayable) and remap `writeup.paragraphs[].sourceIdx` in the shared projector. `inferred` keeps a flag; Sefaria link-out only for `resolved`. |
 | C9 | `candidateTopics` | search keywords only | not published | **Not in any page payload.** Exposed only to `search-core` as low-weight keywords (Pagefind records, D1 rows, embeddings). They are derived data, not transcript, so this is allowed. Never displayed as topics. |
 | C10 | Unmapped zman/parsha/work | never fail, report | fail on unmapped zman | **Never fail a data build.** Unmapped → "other" bucket + `build-report.json` + GitHub job-summary warning. A unit test in `normalize` (run on PRs that touch `packages/normalize`) asserts full coverage of today's values. Data commits arrive unattended; a new spelling must not block publishing. |
 | C11 | Verbatim guard | report ≥10, fail ≥16 | report ≥14, fail ≥20 | **Report ≥12 tokens, auto-suppress ≥20** (see §5.3). Owner confirms thresholds (O3). Reports carry ids and counts only, never ASR text. |
-| C12 | Audio bucket | copy mp3s into separate public-content bucket | Worker over the private bucket with an allow-table | **Separate bucket `emunas-audio`** (mp3 only, keyed `<recordingId>.mp3`) **plus** id validation against the audio table. Site Workers never get a binding to `emunas`, so no bug can reach a transcript object. |
-| C13 | Range handling | R2 `get` with `range` → 206 | full 200 + Workers cache slicing | **R2 `get({range, onlyIf})` → 206/304/412**, `head` for HEAD. Correct on iOS Safari; no reliance on plan-specific cache behaviour. Cache API layer can be added later if Class B ops show up on the bill. |
-| C14 | Download param | `?download=1` | `?dl=1` | `?download=1` (`dl` accepted as alias). |
-| C15 | Audio host | same origin per site | route on each host | **Same origin on each host**: `/audio/*` in both site Workers (`run_worker_first`). No CORS; Live's service worker can cache it. |
+| C12 | Audio bucket | copy mp3s into separate public-content bucket | Worker over the private bucket with an allow-table | **Superseded by A1: the existing `emunas` bucket, public on `media.<domain>`.** No second bucket, no copy. URLs are built at build time from `audioKey` (`recordings[].audioUrl`); only `.mp3` keys are linked; keys containing `transcripts/` are refused. No Worker has an R2 binding. |
+| C13 | Range handling | R2 `get` with `range` → 206 | full 200 + Workers cache slicing | **Superseded by A1: Cloudflare's CDN in front of the R2 custom domain** serves Range (206), HEAD and conditional requests and caches mp3 by default. No Worker code. |
+| C14 | Download param | `?download=1` | `?dl=1` | **Superseded by A1: no download parameter.** "Download" is a plain link to the media URL; the `download` attribute is ignored cross-origin, so the file saves under its bucket filename unless the owner sets `Content-Disposition` on the objects. |
+| C15 | Audio host | same origin per site | route on each host | **Superseded by A1: one media host `media.<domain>` for both sites.** Plain `<audio src>`; CSP `media-src` allows the media origin. The bucket's CORS rules allow both site origins so Live's service worker can `fetch()` audio for offline downloads. |
 | C16 | `@hebcal/core` (GPL-2.0) | build-time only | in the client | **Build-time only, both sites.** `packages/calendar` generates `calendar/table.json` for 5787–5800 (Shabbos → parsha, diaspora + Israel; occasion windows), committed. Runtime `thisWeek(date, {israel})` is our own ~2 KB code over that table, so Live's "Today" stays current without a rebuild and no GPL code ships to browsers. License confirmation is still flagged (O6). |
 | C17 | Transcript eligibility file | `apps/quiet/config/…` | `apps/live/config/…` | **One file** `site-policy/transcript-eligibility.json`, entries keyed by recordingId: `{ model, mode, transcribedAt, quality: "reviewed" \| "high-asr", approvedBy, approvedAt, allowSearch: false, note }`. Identity fields must equal the compact transcript's top-level fields, so re-transcription voids approval. Plus build flag `EMUNAS_TRANSCRIPT_VIEW` (default off). Public descriptor per recording: `transcript: { eligible: false }` (literal type today). |
 | C18 | Feedback | `mailto:` | `/api/feedback` + D1 | Live uses `/api/feedback` (in `emunas-api`). Quiet keeps `mailto:` at launch (no-JS, no Turnstile); it can post to the same endpoint later. |
@@ -149,7 +150,7 @@ Edition/UI language is the first path segment on both sites (`yi` | `en`). Time 
 | Person | `/{ed}/people/{personKey}/` | `/{ui}/p/{personKey}` |
 | Concept | `/{ed}/inyanim/{conceptKey}/` | `/{ui}/c/{conceptKey}` |
 | Search | `/{ed}/search/?q=` | `/{ui}/search?q=` |
-| Audio | `/audio/{recordingId}.mp3` | same |
+| Audio | `recordings[].audioUrl` on `media.<domain>` (A1; not built by `@emunas/links`) | same URL |
 
 All keys come from `@emunas/normalize` and exist before any AI data, so URLs never change when notes arrive. Parsha keys and zman keys share one occasion namespace and are guaranteed disjoint by a test. Quiet creates entity pages only at ≥2 shiurim (concepts ≥3); `links.quiet.entity()` falls back to the index page anchor (`/{ed}/people/#{key}`) below the threshold, using the counts in `.corpus/entities.json`. Live serves every entity through its SPA fallback.
 
@@ -160,7 +161,7 @@ Moving between sites: Quiet shiur page has "Open in the listening app" (`links.l
 - Quiet: self-canonical; `hreflang="yi"`/`"en"` pairs + `x-default` → `/`; `sitemap-index.xml` (per edition) built from `.corpus`; OG tags from catalog title + `oneLiner`.
 - Live: prerendered shiur/series/occasion/work/entity pages carry OG tags (share previews) and `<link rel="canonical">` **to the Quiet equivalent**. Today, Explore, search, shelf, playlists: `noindex`. No sitemap. One indexable copy of each shiur, so the two sites do not compete.
 - Catalog-only shiurim are indexable (catalog title, section, year); they gain description text when notes land.
-- `robots.txt` on both: allow all, disallow `/api/`, `/admin/`, `/audio/`.
+- `robots.txt` on both: allow all, disallow `/api/`, `/admin/`. (Audio lives on `media.<domain>`, A1; whether that host gets its own `robots.txt` is the owner's call.)
 
 ---
 
@@ -170,11 +171,10 @@ Moving between sites: Quiet shiur page has "Open in the listening app" (`links.l
 
 | Resource | Name | Used by | Notes |
 |---|---|---|---|
-| R2 | `emunas` (exists) | pipeline only | **private; never bound to any Worker; never public.** Holds mp3s and `transcripts/…`. |
-| R2 | `emunas-audio` | site Workers (read) | mp3 only, `<recordingId>.mp3`, metadata `audio/mpeg`, filled by `audio-publish` |
+| R2 | `emunas` (exists) | pipeline (write); browsers (read, via `media.<domain>`) | **public custom domain `media.<domain>` with CORS for both site origins (A1); never bound to any Worker.** Holds mp3s and `transcripts/…`; the transcripts are reachable but never linked (accepted by the owner until they are removed from the bucket). |
 | R2 | `emunas-site-build` | CI only | embedding cache `emb/<model>/<hash>.f16`; private |
-| Worker | `emunas-quiet` | `<domain>` | static assets (`dist/`), `run_worker_first: ["/audio/*"]` |
-| Worker | `emunas-live` | `listen.<domain>` | static assets (`build/client`), `not_found_handling: "single-page-application"`, `run_worker_first: ["/", "/audio/*", "/api/*", "/admin/*"]`, service binding `API` → `emunas-api` |
+| Worker | `emunas-quiet` | `<domain>` | static assets (`dist/`); no audio route (A1) |
+| Worker | `emunas-live` | `listen.<domain>` | static assets (`build/client`), `not_found_handling: "single-page-application"`, `run_worker_first: ["/", "/api/*", "/admin/*"]`, service binding `API` → `emunas-api` |
 | Worker | `emunas-api` | via service binding only (`workers_dev: false`, no route) | `/api/search`, `/api/similar`, `/api/feedback`, `/api/health`, `/admin/feedback` |
 | D1 | `emunas-search`, `emunas-feedback` (+ `-staging`) | api | separate DBs: rebuildable index vs. user reports that must never be wiped |
 | Vectorize | `emunas-moments` (+ `-staging`), 1,024 dims, cosine | api | model gated on the Yiddish eval (bge-m3 vs qwen3-embedding) |
@@ -188,10 +188,14 @@ Workers Paid plan recommended ($5/mo): file-count headroom (Quiet ≈ 8–12k fi
 
 ### 3.2 Audio
 
-- `audio-publish` CLI (`packages/audio`), run from the manual `audio-publish.yml` workflow (protected GitHub environment with R2 S3 keys: read `emunas`, write `emunas-audio`). For each in-scope recording with `duplicateOf === null`: server-side `CopyObject` `audioKey` → `emunas-audio/<id>.mp3`, skipping matching size/etag; refuses keys not ending `.mp3` or starting `transcripts/`. Idempotent. The corpus is closed, so this runs once plus after any ingest change.
-- The audio table (`recordingId → {size, canonicalId}`) is generated from `.corpus/` at build time and bundled into each site Worker; ids not in it → 404; `duplicateOf` ids map to their canonical object.
-- Handler `handleAudio(request, env, table)`: `GET|HEAD /audio/<id>.mp3`, regex `^[a-z0-9-]+$`, 206/304/412, `Accept-Ranges`, `ETag`, `Cache-Control: public, max-age=604800`, `?download=1` → `Content-Disposition: attachment; filename="<ascii catalog title>.mp3"`.
-- Var `AUDIO_ENABLED` (per environment). Off → 503 page and the players show "not yet available online". **Public audio and downloads need the owner's yes** (O2); everything else ships regardless.
+Per Amendment A1 (owner decision): audio is served straight from the `emunas` bucket on `media.<domain>`. There is no audio Worker, no `/audio/*` route, no copy CLI or `audio-publish` workflow, and no `AUDIO_ENABLED` switch.
+
+- **URL**: `recordings[].audioUrl = ${MEDIA_ORIGIN}/${encodeURIComponent(segment)…}` of the recording's `audioKey` (each `/`-separated segment encoded; spaces, `#`, Hebrew all survive). `MEDIA_ORIGIN` is build config: env `EMUNAS_MEDIA_ORIGIN` (or `corpus:build --media-origin`); unset → the placeholder `https://media.example.invalid` plus a build-report warning. `build.json` records `mediaOrigin` for the apps' CSP. The raw `audioKey` field never reaches public output.
+- **Playability**: only `.mp3` keys (any case) are linked. Other recordings (3 `.WMA` today) are `playable: false, audioUrl: null` and both sites show them as unavailable. Keys containing `transcripts/` are refused outright.
+- **Duplicates**: a recording with `duplicateOf` gets its canonical recording's URL.
+- **Audio table** (`.corpus/audio-table.json`, `recordingId → {url, canonicalId, playable, size}`) is built by `@emunas/audio` `buildAudioTable` during `corpus:build`, for apps that want a lookup (e.g. Live offline downloads, size estimates).
+- **Range, caching, CORS**: Cloudflare's CDN in front of the R2 custom domain handles Range/206, HEAD and conditional requests and caches mp3 by default (no egress; only cache-miss Class B reads). The owner sets the bucket's CORS AllowedOrigins to both site origins; both sites' CSP `media-src` (and Live's `connect-src`, for the service worker) allow the media origin.
+- **Downloads**: a plain link to `audioUrl`. The `download` attribute is ignored cross-origin, so the file saves under its bucket filename unless the owner sets `Content-Disposition` on objects.
 
 ### 3.3 Caching
 
@@ -201,7 +205,7 @@ Workers Paid plan recommended ($5/mo): file-count headroom (Quiet ≈ 8–12k fi
 | HTML | platform default (revalidate) |
 | Live `/data/*` (stable paths) | `public, max-age=300, stale-while-revalidate=86400` |
 | `/pagefind/*` | `public, max-age=3600` (hashed fragments are immutable) |
-| `/audio/*` | `public, max-age=604800` |
+| `media.<domain>` (audio, A1) | Cloudflare default for the R2 custom domain (mp3 cached); not set by site code |
 | `/api/search` | Cache API in api Worker, key = query + filters + `corpus_rev`, 10 min |
 
 ### 3.4 Environments
@@ -212,13 +216,12 @@ Workers Paid plan recommended ($5/mo): file-count headroom (Quiet ≈ 8–12k fi
 | staging | manual dispatch (api schema changes, search tuning) | `*-staging` workers.dev | `-staging` D1/Vectorize, `emunas-api-staging` |
 | preview | every same-repo PR: `wrangler versions upload --preview-alias pr-<n>` | per-PR preview URL, `noindex` | staging bindings (so a PR can never write prod D1) |
 
-Each `wrangler.jsonc` has a top-level (production) config and `env.staging`. `compatibility_date` pinned at implementation. Worker secrets: `TURNSTILE_SECRET`, `FEEDBACK_HASH_SALT` (api). GitHub secrets: `CLOUDFLARE_API_TOKEN` (Workers Scripts, D1, Vectorize, Workers AI, R2 on `emunas-site-build` only), `CLOUDFLARE_ACCOUNT_ID`; environment `audio-publish`: `R2_AUDIO_SRC_*`, `R2_AUDIO_DST_*`. CI never holds credentials to `emunas` outside that environment, and the build never reads R2.
+Each `wrangler.jsonc` has a top-level (production) config and `env.staging`. `compatibility_date` pinned at implementation. Worker secrets: `TURNSTILE_SECRET`, `FEEDBACK_HASH_SALT` (api). GitHub secrets: `CLOUDFLARE_API_TOKEN` (Workers Scripts, D1, Vectorize, Workers AI, R2 on `emunas-site-build` only), `CLOUDFLARE_ACCOUNT_ID`. CI never holds credentials to `emunas` (A1: audio URLs are computed from `ingest.json`, nothing is copied), and the build never reads R2.
 
 ### 3.5 CI/CD (GitHub Actions)
 
 - `ci.yml` (PRs): `npm ci` → typecheck (pipeline `npm run typecheck` too) → lint → unit tests → `corpus:build` on the real `data/` → guard pre-pass → both app builds → guard post-pass → budgets → Playwright smoke (`wrangler dev`) → preview uploads.
-- `deploy.yml` (push to `main` touching `data/derived/**`, `data/catalog/**`, `apps/**`, `packages/**`, `workers/**`, `site-policy/**`; daily at 05:17 UTC; dispatch): same build → D1 migrations → D1 incremental sync → Vectorize incremental sync → deploy `emunas-api` → deploy `emunas-quiet` → deploy `emunas-live`. `concurrency: deploy-production, cancel-in-progress: true` (syncs are hash-diffed and idempotent, so cancelling is safe). Caches: `actions/cache` for `.corpus/` fingerprints, `.astro`, embedding cache is in R2.
-- `audio-publish.yml`: manual, protected.
+- `deploy.yml` (push to `main` touching `data/derived/**`, `data/catalog/**`, `apps/**`, `packages/**`, `workers/**`, `site-policy/**`; daily at 05:17 UTC; dispatch): same build (with `EMUNAS_MEDIA_ORIGIN` set) → D1 migrations → D1 incremental sync → Vectorize incremental sync → deploy `emunas-api` → deploy `emunas-quiet` → deploy `emunas-live`. `concurrency: deploy-production, cancel-in-progress: true` (syncs are hash-diffed and idempotent, so cancelling is safe). Caches: `actions/cache` for `.corpus/` fingerprints, `.astro`, embedding cache is in R2.
 - `data-sync.yml`: see §4.
 - The checkout includes `data/transcripts` (it is in git) only because the guard reads it; no other step does.
 - Rollback: `wrangler rollback` per Worker; D1 search is rebuildable; feedback D1 is never touched by deploys.
@@ -261,12 +264,12 @@ deploy.yml on main
 
 ```
 .corpus/
-  build.json            { buildId, dataSha, schemaVersion, counts: {total, full, catalogOnly, downgraded} }
+  build.json            { buildId, dataSha, schemaVersion, mediaOrigin, counts: {total, full, catalogOnly, downgraded} }
   shiurim/<id>.json     PublicShiur (below), one per in-scope shiur (997)
   index.json            list rows for all shiurim (catalog fields, oneLiner, duration, status, entity ids)
   series.json, occasions.json, years.json, works.json, people.json, concepts.json, stories.json, entities.json
   search/docs.ndjson    SearchDoc per shiur and per moment (search-core allow-list; includes candidateTopics keywords)
-  audio-table.json      recordingId → { size, canonicalId }
+  audio-table.json      recordingId → { url, canonicalId, playable, size }   (A1; url null when not playable)
   build-report.json     downgrades, unmapped values, dropped items, time warnings, suppressed ids
   suppress.json         from guard pre-pass (ids only)
   .fingerprints.json    per shiur sha256(manifest entry + meta + extraction + writeup + catalog row + maps/projector versions)
@@ -278,7 +281,8 @@ deploy.yml on main
 type Ed = "yi" | "en";
 type L = { en: string; yi: string };
 interface PublicRecording { id: string; order: number; offset: number; duration: number;
-  audio: `/audio/${string}.mp3`; transcript: { eligible: false } }
+  audioUrl: string | null /* media.<domain> URL (A1); null when !playable */; playable: boolean;
+  transcript: { eligible: false } }
 type Moment = { id: string; text: L; t: number; end: number; soft?: true };
 interface PublicShiur {
   id: string; rev: string; lang: Ed; category: Shiur["category"];
@@ -322,7 +326,7 @@ Never present (type test + guard): `heardAs`, `asrNotes`, `segs`, `startSeg`, `e
 | # | Decision | Default |
 |---|---|---|
 | O1 | Transcript text or `heardAs` in a hidden search index | **No** |
-| O2 | Public audio at all; free downloads | Infrastructure ready, **`AUDIO_ENABLED=false` until the owner says yes**; downloads via `?download=1` when enabled |
+| O2 | Public audio at all; free downloads | **Decided (A1): public**, straight from `media.<domain>`; downloads are plain links (bucket filename unless `Content-Disposition` is set on objects) |
 | O3 | Verbatim thresholds (report 12, suppress 20) and whether short pesukim runs count as "verbatim quotes" | **As stated**; owner reviews the first report |
 | O4 | Who approves transcript eligibility | Pipeline owner, by PR to `site-policy/` |
 | O5 | Accounts / sync for Live | **Local-only** first |
@@ -346,7 +350,7 @@ Rules for every package: an agent touches only its listed paths; never `data/`, 
 | W1.2 | `@emunas/corpus` core | `packages/corpus/**` except `src/aggregate/**` | (contract) | status gate, projection, time model, moment ids, transcript gate, `corpus:build`; on real data: 997 shiurim, 518 full, `-01-c` catalog-only; zero forbidden keys; < 30 s |
 | W1.3 | `@emunas/normalize` | `packages/normalize/**` | — | all 56 parsha + 61 zman strings mapped or explicit "other"; disjoint occasion keys; folding and gematria tests; Sefaria ref parser over all current refs |
 | W1.4 | `@emunas/calendar` | `packages/calendar/**` | — | committed table 5787–5800; `thisWeek` correct on 10 fixed dates (diaspora/Israel, combined parshiyos, leap years); no hebcal in runtime export |
-| W1.5 | `@emunas/audio` | `packages/audio/**` | — | Range/HEAD/304/bad-id tests in workers pool; publish CLI refuses non-mp3/`transcripts/`; dry-run plan on real ingest |
+| W1.5 | `@emunas/audio` | `packages/audio/**` | — | (superseded by A1 / W2.8) media URL encoding, audio table, playability rule; tests on real ingest keys |
 | W1.6 | `@emunas/corpus-guard` | `packages/corpus-guard/**` | — | planted `heardAs` and planted 20-token synthetic run fail; ids-only reports; full-corpus run < 2 min |
 | W1.7 | `@emunas/i18n` + `@emunas/tokens` | `packages/i18n/**`, `packages/tokens/**` | — | typed `createT`; Hebrew year/duration formatting; font subset coverage test (U+05D0–05EA, 05F0–05F4, FB1D–FB4F, 0591–05C7) |
 | W1.8 | `@emunas/links` | `packages/links/**` | — | round-trip tests for every row of §2.2; canonical/hreflang helpers |
@@ -357,7 +361,7 @@ W2.1 corpus aggregates (`packages/corpus/src/aggregate/**`), W2.2 `search-core`,
 
 ### Wave 3 — pages and site data
 
-Quiet: W3.1 catalog pages, W3.2 shiur page + player, W3.3 calendar + years, W3.4 AI indexes, W3.5 Pagefind search. Live: W3.6 static data emit (to the W2.4 data contract), W3.7 listening room, W3.8 Today + series, W3.9 personal store + shelf + queue, W3.10 D1/Vectorize sync + embedding eval. Ops: W3.11 Cloudflare provisioning + audio publish.
+Quiet: W3.1 catalog pages, W3.2 shiur page + player, W3.3 calendar + years, W3.4 AI indexes, W3.5 Pagefind search. Live: W3.6 static data emit (to the W2.4 data contract), W3.7 listening room, W3.8 Today + series, W3.9 personal store + shelf + queue, W3.10 D1/Vectorize sync + embedding eval. Ops: W3.11 Cloudflare provisioning + media domain/CORS.
 
 ### Wave 4 — browse, search UI, SEO, cross-site
 
@@ -407,12 +411,13 @@ Same ids as the wave lists in §7 and the structured plan. Paths are the only fi
 - **Brief (inputs, deliverables):** Inputs: integration-plan C16. @hebcal/core as devDependency used only by a generator script that writes packages/calendar/table/5787-5800.json (each Shabbos: civil date, parsha diaspora + Israel incl. combined, holiday/occasion windows using occasion ids from the agreed key scheme; ids are plain strings so no import of normalize is required, a later test cross-checks). Runtime export (no hebcal import): thisWeek(date, {israel}) → {parshaKey(s), upcomingOccasions[], hebrewDate}, nearestOccasion(). Record the license note in the package README.
 - **Acceptance:** thisWeek correct for 10 fixed dates covering combined parshiyos, leap year, Israel vs diaspora divergence, Chanukah, Lag BaOmer; bundle-analysis test proves the runtime entry imports nothing from @hebcal/*; table is committed and regenerable deterministically.
 
-#### W1.5 — @emunas/audio: URL scheme, edge handler, audio table, publish CLI
+#### W1.5 — @emunas/audio: media URLs, audio table, playability rule
 
 - **Owns:** `packages/audio/**`
 - **Depends on:** — (contracts in this document)
-- **Brief (inputs, deliverables):** Inputs: integration-plan §3.2, C12–C15; scripts/sync-transcripts.ts for how the private bucket emunas is addressed (S3 endpoint, R2_BUCKET); Recording type. Deliverables: audioPath(id), downloadPath(id); handleAudio(request, env:{AUDIO:R2Bucket, AUDIO_ENABLED}, table) for GET|HEAD /audio/<id>.mp3 with id regex ^[a-z0-9-]+$, table lookup (duplicateOf → canonical), R2 get with range+onlyIf → 206/304/412, HEAD via head(), headers Accept-Ranges/ETag/Last-Modified/Content-Length/Content-Range, Cache-Control public max-age=604800, ?download=1 (alias dl) attachment with ASCII-safe filename, AUDIO_ENABLED=false → 503 HTML; buildAudioTable(corpusRecordings); publish CLI (node, @aws-sdk/client-s3) that server-side copies audioKey from emunas to emunas-audio/<id>.mp3 for in-scope non-duplicate recordings, skips size/etag matches, refuses keys not ending .mp3 or starting transcripts/, --dry-run prints plan. Never accepts a key from a client.
-- **Acceptance:** @cloudflare/vitest-pool-workers tests with local R2: bytes=0-, bytes=100-199, bytes=-500, If-None-Match 304, HEAD, unknown id 404, id with / or .. 404, disabled 503, download header; publish CLI unit tests with mocked S3: idempotent rerun copies 0, refusal cases; dry-run on real ingest lists exactly the in-scope recordings with duplicateOf null (count computed from ingest and printed) and no transcripts/ key.
+- **Status:** first built as an edge handler + publish CLI (emunas → emunas-audio); **superseded by Amendment A1 and reworked in W2.8**. The handler, publish CLI, R2/S3 dependencies and their tests were removed.
+- **Brief (inputs, deliverables), as reworked:** Inputs: Amendment A1, §3.2; Recording type. Deliverables: `mediaUrl(audioKey, origin)` (origin + per-segment `encodeURIComponent`; refuses keys with `transcripts/`, empty/`.`/`..` segments, control characters); `normalizeMediaOrigin`; playability rule (`.mp3` in any case; `.WMA` etc. unplayable); `buildAudioTable(recordings, {origin, only, onIssue})` → `recordingId → {url, canonicalId, playable, size}` with `duplicateOf` → canonical URL; `mediaTimeUrl(url, t)` for no-JS `#t=` links. Pure, no dependencies. `@emunas/corpus` calls it in `corpus:build`.
+- **Acceptance:** encoding round-trips on real keys with spaces, Hebrew and `#`; duplicates map to the canonical URL; `.WMA` unplayable; the table over the real ingest covers every in-scope recording (1,000 playable, 3 `.WMA`); no `@aws-sdk` or R2 binding in the package.
 
 #### W1.6 — @emunas/corpus-guard: leak scanner and verbatim suppression
 
@@ -432,7 +437,7 @@ Same ids as the wave lists in §7 and the structured plan. Paths are the only fi
 
 - **Owns:** `packages/links/**`
 - **Depends on:** — (contracts in this document)
-- **Brief (inputs, deliverables):** Inputs: integration-plan §2. Host config (production apex/listen hosts from env, workers.dev fallbacks). Builders: quiet.{home,shiur(id,{section,t}),series,parsha,zman,work,person,concept,search}, live.{home,shiur(id,{t,m}),series,occasion,work,person,concept,search}, audio(recordingId); equivalent(url) parser that maps any URL of one site to the other (dropping live-only params; quiet entity fallback to index anchor below thresholds given an entity-count lookup); canonicalFor(liveUrl) → quiet URL; hreflangPair(path). Pure, browser-safe.
+- **Brief (inputs, deliverables):** Inputs: integration-plan §2. Host config (production apex/listen hosts from env, workers.dev fallbacks). Builders: quiet.{home,shiur(id,{section,t}),series,parsha,zman,work,person,concept,search}, live.{home,shiur(id,{t,m}),series,occasion,work,person,concept,search} (audio URLs are not built here: they come from `recordings[].audioUrl`, A1); equivalent(url) parser that maps any URL of one site to the other (dropping live-only params; quiet entity fallback to index anchor below thresholds given an entity-count lookup); canonicalFor(liveUrl) → quiet URL; hreflangPair(path). Pure, browser-safe.
 - **Acceptance:** Round-trip tests for every row of the §2.2 table in both editions; equivalent(quiet→live→quiet) is identity for shiur/section/time/series/occasion/work/person/concept; below-threshold entity maps to index anchor; canonicalFor never returns a listen.* URL.
 
 ### Wave 2
@@ -455,7 +460,7 @@ Same ids as the wave lists in §7 and the structured plan. Paths are the only fi
 
 - **Owns:** `apps/quiet/src/styles/**`, `apps/quiet/src/layouts/**`, `apps/quiet/src/i18n/**`, `apps/quiet/src/lib/**`, `apps/quiet/src/components/{TimeLink,HebrewYear,Coverage,NotesLabel,CatalogHeader,Listen}.astro`, `apps/quiet/public/{fonts/**,favicon.svg}`
 - **Depends on:** W1.1, W1.7, W1.8
-- **Brief (inputs, deliverables):** Inputs: concept-quiet §3, §8, §11; tech-quiet §4; @emunas/tokens, @emunas/i18n, @emunas/links. Base layout with html lang/dir per edition, one-line nav (Contents · Calendar · Indexes · Search · About) + edition switch keeping the hash, breadcrumb, footer, skip link; print layer (kuntres); bidi helpers; the shared components listed (TimeLink renders href=/audio/{rec}.mp3#t={local} via toLocal plus data-rec/data-t; CatalogHeader with <bdi> and catalog-derived notice; Listen with native <audio preload=none> per recording and AUDIO_ENABLED fallback text). Logical CSS only, no blockquote/q.
+- **Brief (inputs, deliverables):** Inputs: concept-quiet §3, §8, §11; tech-quiet §4; @emunas/tokens, @emunas/i18n, @emunas/links. Base layout with html lang/dir per edition, one-line nav (Contents · Calendar · Indexes · Search · About) + edition switch keeping the hash, breadcrumb, footer, skip link; print layer (kuntres); bidi helpers; the shared components listed (TimeLink renders href={audioUrl}#t={local} via toLocal + mediaTimeUrl plus data-rec/data-t; CatalogHeader with <bdi> and catalog-derived notice; Listen with native <audio preload=none src={audioUrl}> per recording and "not available online" text for playable:false recordings). Logical CSS only, no blockquote/q.
 - **Acceptance:** A sample page renders correctly in both editions (screenshot), Stylelint logical-properties clean, axe zero violations on the sample, print preview hides nav/player, edition switch preserves path and hash.
 
 #### W2.4 — Live app shell
@@ -469,7 +474,7 @@ Same ids as the wave lists in §7 and the structured plan. Paths are the only fi
 
 - **Owns:** `apps/live/app/player-engine/**`
 - **Depends on:** W1.2
-- **Brief (inputs, deliverables):** Inputs: tech-live §4.1; PublicShiur recordings/chapters/skip from @emunas/corpus/public. Framework-free engine with one HTMLAudioElement created outside React, getState/subscribe, global timeline over recordings with src swap at boundaries, chapter next/prev (restart if >3 s), skip rules (default noise/singing/other_speaker/asr-noise ≥20 s) scheduled from currentTime and playbackRate with undo event, moment queue items {shiurId,start,end?} pausing at end, Media Session (metadata, position state, prev/next = chapters, seek ±15 s, seekto), speed 0.75–2, sleep timer, progress callback every 5 s/pause/pagehide. Audio URLs from @emunas/audio audioPath.
+- **Brief (inputs, deliverables):** Inputs: tech-live §4.1; PublicShiur recordings/chapters/skip from @emunas/corpus/public. Framework-free engine with one HTMLAudioElement created outside React, getState/subscribe, global timeline over recordings with src swap at boundaries, chapter next/prev (restart if >3 s), skip rules (default noise/singing/other_speaker/asr-noise ≥20 s) scheduled from currentTime and playbackRate with undo event, moment queue items {shiurId,start,end?} pausing at end, Media Session (metadata, position state, prev/next = chapters, seek ±15 s, seekto), speed 0.75–2, sleep timer, progress callback every 5 s/pause/pagehide. Audio URLs from recordings[].audioUrl (media host, A1); playable:false recordings are skipped with an "unavailable" state.
 - **Acceptance:** Vitest with a fake media element: timeline math across 2 recordings, skip scheduling at 1×/1.5×/2×, recording swap, moment end pause, chapter prev rule; no React import in the engine.
 
 #### W2.6 — emunas-api Worker: D1 schema, search API, feedback API
@@ -481,10 +486,10 @@ Same ids as the wave lists in §7 and the structured plan. Paths are the only fi
 
 #### W2.7 — Site Workers, wrangler configs, deploy and preview workflows
 
-- **Owns:** `apps/quiet/worker/**`, `apps/quiet/wrangler.jsonc`, `apps/quiet/public/_headers`, `apps/live/worker/**`, `apps/live/wrangler.jsonc`, `apps/live/public/_headers`, `.github/workflows/deploy.yml`, `.github/workflows/audio-publish.yml`, `.github/workflows/data-sync.yml`, `docs/sites/ops-runbook.md`, `.github/workflows/ci.yml (preview-upload job only)`
+- **Owns:** `apps/quiet/worker/**`, `apps/quiet/wrangler.jsonc`, `apps/quiet/public/_headers`, `apps/live/worker/**`, `apps/live/wrangler.jsonc`, `apps/live/public/_headers`, `.github/workflows/deploy.yml`, `.github/workflows/data-sync.yml`, `docs/sites/ops-runbook.md`, `.github/workflows/ci.yml (preview-upload job only)`
 - **Depends on:** W1.1, W1.5, W1.6
-- **Brief (inputs, deliverables):** Inputs: integration-plan §3, §4. Quiet Worker: assets dist/, auto-trailing-slash, 404-page, run_worker_first [/audio/*], R2 binding AUDIO → emunas-audio, AUDIO_ENABLED var, X-Robots-Tag noindex on workers.dev hosts. Live Worker: assets build/client, single-page-application, run_worker_first [/, /audio/*, /api/*, /admin/*], service binding API → emunas-api, / redirect by cookie then Accept-Language. _headers per §3.3 incl. CSP (Quiet: default-src 'self', script-src 'self' 'wasm-unsafe-eval', media-src 'self'). env.staging in each. deploy.yml exactly as §3.5/§4 (corpus build → guard pre → rebuild with suppress → app builds → guard post → budgets → D1/Vectorize sync → deploy api, quiet, live; concurrency cancel-in-progress; daily 05:17 UTC; job summary). ci.yml extension for PR previews via wrangler versions upload --preview-alias pr-<n> bound to staging resources. audio-publish.yml (manual, protected environment). data-sync.yml (hourly: merge data-only commits from DATA_BRANCH into main, else open PR). Runbook: provisioning commands for buckets/D1/Vectorize/Turnstile/Access, secrets list, rollback.
-- **Acceptance:** wrangler deploy --dry-run passes for all three Workers; actionlint clean; a test run on a fork/branch deploys hello apps to workers.dev; data-sync dry-run refuses a commit touching non-data paths; the deploy job fails when the guard post-pass is given a planted fixture; no workflow step other than audio-publish references R2 S3 credentials.
+- **Brief (inputs, deliverables):** Inputs: integration-plan §3, §4. Quiet Worker: assets dist/, auto-trailing-slash, 404-page, X-Robots-Tag noindex on workers.dev hosts; no audio route and no R2 binding (A1). Live Worker: assets build/client, single-page-application, run_worker_first [/, /api/*, /admin/*], service binding API → emunas-api, / redirect by cookie then Accept-Language. _headers per §3.3 incl. CSP (Quiet: default-src 'self', script-src 'self' 'wasm-unsafe-eval', media-src 'self' <media origin>; Live also connect-src <media origin> for the service worker). env.staging in each. deploy.yml exactly as §3.5/§4 (corpus build with EMUNAS_MEDIA_ORIGIN → guard pre → rebuild with suppress → app builds → guard post → budgets → D1/Vectorize sync → deploy api, quiet, live; concurrency cancel-in-progress; daily 05:17 UTC; job summary). ci.yml extension for PR previews via wrangler versions upload --preview-alias pr-<n> bound to staging resources. data-sync.yml (hourly: merge data-only commits from DATA_BRANCH into main, else open PR). Runbook: provisioning commands for the emunas-site-build bucket, the media.<domain> custom domain + CORS on emunas (A1), D1/Vectorize/Turnstile/Access, secrets list, rollback.
+- **Acceptance:** wrangler deploy --dry-run passes for all three Workers; actionlint clean; a test run on a fork/branch deploys hello apps to workers.dev; data-sync dry-run refuses a commit touching non-data paths; the deploy job fails when the guard post-pass is given a planted fixture; no workflow step references R2 S3 credentials or binds the emunas bucket.
 
 ### Wave 3
 
@@ -558,12 +563,12 @@ Same ids as the wave lists in §7 and the structured plan. Paths are the only fi
 - **Brief (inputs, deliverables):** Inputs: .corpus/search/moments.ndjson, tech-live §5.3, W16–W17. Incremental D1 sync (select id,hash → diff → batched INSERT OR REPLACE/DELETE, FTS rows too, meta.corpus_rev last); embeddings through Workers AI REST with cache in R2 emunas-site-build (emb/<model>/<hash>.f16); Vectorize upsert/delete by diff; 60-query eval set (20 en, 20 yi, 20 cross-language/transliteration) with recall@10 and MRR comparing bge-m3 vs qwen3-embedding-0.6b; record decision O10.
 - **Acceptance:** Second run with no data change writes 0 rows and 0 vectors; one changed shiur writes only its rows; eval report committed with chosen model; guard clean on NDJSON and vector metadata; runs against staging resources in CI.
 
-#### W3.11 — Audio provisioning and publish (ops)
+#### W3.11 — Cloudflare provisioning and media domain (ops)
 
 - **Owns:** `(no repo files; Cloudflare account resources)`
 - **Depends on:** W1.5, W2.7
-- **Brief (inputs, deliverables):** A person with Cloudflare + R2 credentials creates emunas-audio (private, no public access), emunas-site-build, D1 emunas-search/-staging and emunas-feedback/-staging, Vectorize emunas-moments/-staging (1024, cosine, metadata indexes audio_lang, kind, category, year), Turnstile widget, Access app, and runs audio-publish.yml (dry-run first). AUDIO_ENABLED stays false in production until the owner decides (O2).
-- **Acceptance:** emunas-audio contains exactly the planned mp3 set and no other object; a manual iOS Safari and Android Chrome check plays and seeks a staging /audio/<id>.mp3; the emunas bucket's public access settings are unchanged (still private).
+- **Brief (inputs, deliverables):** A person with Cloudflare credentials attaches the custom domain media.<domain> to the existing emunas bucket (A1) and sets its CORS rules (AllowedOrigins: https://<domain>, https://listen.<domain>, plus staging/preview origins as needed; methods GET, HEAD; Range allowed as a request header), sets EMUNAS_MEDIA_ORIGIN for deploy builds, and creates emunas-site-build, D1 emunas-search/-staging and emunas-feedback/-staging, Vectorize emunas-moments/-staging (1024, cosine, metadata indexes audio_lang, kind, category, year), Turnstile widget, Access app. No emunas-audio bucket and no copy step.
+- **Acceptance:** a manual iOS Safari and Android Chrome check plays and seeks an audioUrl from a staging page (Range → 206); a CORS fetch() from both site origins succeeds; a recording with a Hebrew/space/# key plays; the 3 .WMA recordings show as unavailable.
 
 ### Wave 4
 
@@ -620,7 +625,7 @@ Same ids as the wave lists in §7 and the structured plan. Paths are the only fi
 
 - **Owns:** `apps/live/sw/**`, `apps/live/public/manifest.webmanifest`
 - **Depends on:** W3.9, W2.5
-- **Brief (inputs, deliverables):** Inputs: tech-live §4.5. Precache shell, /data/* SWR with cap, /audio/* network-only unless downloaded; downloads into Cache Storage audio-v1 with navigator.storage.persist(); SW serves Range 206 from cached blobs; shiur + writeup JSON pinned with audio.
+- **Brief (inputs, deliverables):** Inputs: tech-live §4.5. Precache shell, /data/* SWR with cap, audio (media.<domain> URLs, A1) network-only unless downloaded; downloads fetch() the audioUrl with CORS (mode: cors; the bucket's CORS allows the Live origin) into Cache Storage audio-v1 keyed by that URL, with navigator.storage.persist(); SW serves Range 206 from cached blobs; shiur + writeup JSON pinned with audio; playable:false recordings cannot be downloaded.
 - **Acceptance:** Airplane-mode playback with seeking of a downloaded shiur on iOS Safari and Android Chrome (manual); shell loads offline (Playwright offline mode).
 
 ### Wave 5
@@ -652,6 +657,6 @@ Same ids as the wave lists in §7 and the structured plan. Paths are the only fi
 
 - **Owns:** `docs/sites/launch-checklist.md`
 - **Depends on:** W5.1, W5.2, W5.3, W3.11
-- **Brief (inputs, deliverables):** Walk the checklist: owner decisions O1–O10 recorded, first verbatim report reviewed by a person, guard report clean, AUDIO_ENABLED decided, domains attached, Access/Turnstile live, data-sync behaviour confirmed with the pipeline session, rollback rehearsed.
+- **Brief (inputs, deliverables):** Walk the checklist: owner decisions O1–O10 recorded, first verbatim report reviewed by a person, guard report clean, media.<domain> + CORS verified (A1), domains attached, Access/Turnstile live, data-sync behaviour confirmed with the pipeline session, rollback rehearsed.
 - **Acceptance:** Checklist signed; production deploy from main serves both hosts with current data; a fresh pipeline data commit reaches production with no code change.
 

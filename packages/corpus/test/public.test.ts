@@ -2,7 +2,6 @@ import fc from "fast-check";
 import { describe, expect, expectTypeOf, it } from "vitest";
 import {
   ENTITY_THRESHOLDS,
-  audioPath,
   momentId,
   offsetsFor,
   parseMomentId,
@@ -50,6 +49,12 @@ describe("public types", () => {
 
   it("transcript descriptor is the literal false", () => {
     expectTypeOf<PublicRecording["transcript"]>().toEqualTypeOf<{ eligible: false }>();
+    // Amendment A1: a media URL when playable, null (shown as unavailable) otherwise.
+    expectTypeOf<Extract<PublicRecording, { playable: true }>["audioUrl"]>().toEqualTypeOf<
+      `https://${string}` | `http://${string}`
+    >();
+    expectTypeOf<Extract<PublicRecording, { playable: false }>["audioUrl"]>().toEqualTypeOf<null>();
+    expectTypeOf<Extract<keyof PublicRecording, "audio">>().toEqualTypeOf<never>();
   });
 });
 
@@ -134,9 +139,8 @@ describe("moment ids", () => {
 });
 
 describe("constants", () => {
-  it("entity thresholds and audio path", () => {
+  it("entity thresholds", () => {
     expect(ENTITY_THRESHOLDS.quiet).toEqual({ work: 2, person: 2, concept: 3 });
     expect(ENTITY_THRESHOLDS.live.prerender).toBe(3);
-    expect(audioPath("y-a-01")).toBe("/audio/y-a-01.mp3");
   });
 });

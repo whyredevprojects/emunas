@@ -4,19 +4,23 @@ The shared data layer (integration-plan §1.2, §5). It reads `data/`, which bel
 
 | Entry | For | Contents |
 |---|---|---|
-| `@emunas/corpus/public` | browsers and apps | `PublicShiur` and the other output types, `toLocal`/`toGlobal`/`offsetsFor`, `momentId`/`parseMomentId`, `ENTITY_THRESHOLDS`, `audioPath`, `SCHEMA_VERSION`. Has no Node imports. |
+| `@emunas/corpus/public` | browsers and apps | `PublicShiur` and the other output types, `toLocal`/`toGlobal`/`offsetsFor`, `momentId`/`parseMomentId`, `ENTITY_THRESHOLDS`, `SCHEMA_VERSION`, the `AudioTable`/`MediaUrl` types. Has no Node imports. |
 | `@emunas/corpus/build` | Node build steps only | `buildCorpus`, `projectCorpus`, the allow-listed reader, valibot schemas, the status gate, the projector, the `Keyer` interface with its default `identitySlugKeyer`, and the report. ESLint blocks app code from importing it. |
 | `@emunas/corpus/transcript-gate` | the transcript view (W5.2), currently off | `readEligibleTranscript(recordingId)` |
 
 ## `npm run corpus:build`
 
 ```
-npm run corpus:build -- [--data-dir data] [--out .corpus] [--suppress .corpus/suppress.json] [--policy-dir site-policy] [--force]
+npm run corpus:build -- [--data-dir data] [--out .corpus] [--suppress .corpus/suppress.json] [--policy-dir site-policy] [--media-origin https://media.<domain>] [--force]
 ```
 
-Defaults: data comes from `EMUNAS_DATA_DIR` or `<repo>/data`, output goes to `<repo>/.corpus`, policy from `<repo>/site-policy`. Relative paths resolve against the directory npm was started from. Exit code 1 means invalid ingest, manifest or policy. Exit code 2 means a bad flag. On today's data a full build takes about 1.5 s.
+Defaults: data comes from `EMUNAS_DATA_DIR` or `<repo>/data`, output goes to `<repo>/.corpus`, policy from `<repo>/site-policy`, media origin from `--media-origin`, else `EMUNAS_MEDIA_ORIGIN`, else the dev placeholder `https://media.example.invalid` (reported as a build-report warning). Relative paths resolve against the directory npm was started from. Exit code 1 means invalid ingest, manifest, policy or media origin. Exit code 2 means a bad flag. On today's data a full build takes about 1.5 s.
 
-Output: `build.json`, `shiurim/<id>.json` (one per in-scope shiur), `index.json` (rows plus catalog sections and series), `audio-table.json` (`recordingId → {size, canonicalId}`), `build-report.json`, `.fingerprints.json`. A shiur file is rewritten only when its fingerprint changes. The fingerprint covers the ingest row, recordings, manifest entry, meta/extraction/writeup bytes, keyer id and version, policy thresholds, the shiur's suppress ids, the schema version and a hash of this package's projection source. The other outputs are rewritten only when their content changes.
+Output: `build.json`, `shiurim/<id>.json` (one per in-scope shiur), `index.json` (rows plus catalog sections and series), `audio-table.json` (`recordingId → {canonicalId, size, playable, url}`, built by `@emunas/audio`), `build-report.json`, `.fingerprints.json`. A shiur file is rewritten only when its fingerprint changes. The fingerprint covers the ingest row, recordings, manifest entry, meta/extraction/writeup bytes, keyer id and version, policy thresholds, the shiur's suppress ids, its audio-table rows (so a media origin or bucket key change re-emits it), the schema version and a hash of this package's projection source. The other outputs are rewritten only when their content changes.
+
+## Audio (integration-plan Amendment A1)
+
+Every `recordings[]` entry carries `audioUrl` and `playable`. `audioUrl` is the media origin plus the bucket key with each path segment `encodeURIComponent`-encoded; a `duplicateOf` recording gets its canonical's URL. A recording whose object is not an mp3 (3 `.WMA` today) is `playable: false, audioUrl: null`, and the build report lists it. The raw `audioKey` field never reaches any output, and no URL can contain `transcripts/` (`@emunas/audio` refuses such keys). `build.json` records `mediaOrigin` so the apps can put it in CSP `media-src`.
 
 ## Rules implemented here
 

@@ -29,8 +29,9 @@ const SAMPLES = [
   "yi-zmanim-msybs-lchyym-bkmp-01-c",
 ];
 
-const project = (dataDir = MINI_DATA, extra: { suppressFile?: string; policyDir?: string } = {}) =>
-  projectCorpus({ dataDir, policyDir: MINI_POLICY, ...extra });
+/** The placeholder origin is passed explicitly so goldens do not depend on `EMUNAS_MEDIA_ORIGIN`. */
+const project = (dataDir = MINI_DATA, extra: { suppressFile?: string; policyDir?: string; mediaOrigin?: string } = {}) =>
+  projectCorpus({ dataDir, policyDir: MINI_POLICY, mediaOrigin: "https://media.example.invalid", ...extra });
 const byId = (p: { shiurim: PublicShiur[] }, id: string) => {
   const s = p.shiurim.find((x) => x.id === id);
   if (!s) throw new Error(`no ${id}`);
@@ -210,7 +211,10 @@ describe("allow-list projection", () => {
       const s = i.shiurim.find((x) => x.id === FULL)!;
       poison(s as unknown as Record<string, unknown>);
       poison(s.catalog as unknown as Record<string, unknown>);
-      for (const r of i.recordings) poison(r as unknown as Record<string, unknown>);
+      for (const r of i.recordings) {
+        poison(r as unknown as Record<string, unknown>);
+        r.transcriptKey = `transcripts/fixture/${r.id}.json`;
+      }
     });
     const p = project(d);
     const s = byId(p, FULL);
@@ -218,7 +222,12 @@ describe("allow-list projection", () => {
     const out = JSON.stringify(s) + JSON.stringify(p.index) + JSON.stringify(p.audioTable);
     expect(out).not.toContain(POISON);
     expect(out).not.toContain("unknownFutureField");
-    expect(out).not.toContain("fixture/");
+    expect(out).not.toContain("transcripts/");
+    expect(out).not.toContain("asrModel");
+    // The bucket key reaches the output only as the encoded path of a media URL (Amendment A1).
+    const withoutUrls = out.replace(/"https:\/\/media\.example\.invalid\/[^"]*"/g, '"<url>"');
+    expect(withoutUrls).not.toContain("fixture/");
+    expect(s.recordings.every((r) => r.playable && r.audioUrl.startsWith("https://media.example.invalid/fixture/"))).toBe(true);
     for (const k of FORBIDDEN_KEYS) expect(allKeys(s).has(k), k).toBe(false);
   });
 

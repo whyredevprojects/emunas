@@ -3,6 +3,11 @@
  *
  *   build.json, shiurim/<id>.json, index.json, audio-table.json, build-report.json, .fingerprints.json
  *
+ * Audio (Amendment A1): every recording gets `audioUrl` = media origin + per-segment-encoded bucket
+ * key, or `playable: false` when its object is not an mp3. The media origin comes from
+ * `BuildOptions.mediaOrigin`, else env `EMUNAS_MEDIA_ORIGIN`, else the dev placeholder
+ * `https://media.example.invalid` (reported as a warning). The bucket key never reaches the output.
+ *
  * Every build takes what is in data/ at that moment. Only an invalid ingest or manifest is fatal; a
  * bad shiur becomes catalog-only and is reported. A shiur file is rewritten only when its fingerprint
  * (all of its inputs + projector/keyer/schema versions + policy) changed or the file is missing.
@@ -12,10 +17,17 @@ import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import {
+  DEFAULT_MEDIA_ORIGIN,
+  MEDIA_ORIGIN_ENV,
+  buildAudioTable,
+  normalizeMediaOrigin,
+  type AudioTable,
+  type AudioTableIssue,
+} from "@emunas/audio";
 import type { Recording, Shiur } from "../../../../src/types.ts";
 import { SCHEMA_VERSION } from "../public/index.ts";
 import type {
-  AudioTable,
   BuildInfo,
   CorpusIndex,
   IndexRow,
@@ -39,6 +51,12 @@ export interface BuildOptions {
   /** Guard pre-pass output (ids only). */
   suppressFile?: string;
   keyer?: Keyer;
+  /**
+   * Origin of the public media host (`https://media.<domain>`). Default: env `EMUNAS_MEDIA_ORIGIN`,
+   * else `DEFAULT_MEDIA_ORIGIN` (a `.invalid` placeholder for dev, reported as a warning).
+   * An invalid origin is fatal.
+   */
+  mediaOrigin?: string;
   /** Rewrite every shiur file even when its fingerprint is unchanged. */
   force?: boolean;
   /** Commit sha of the data; default: `EMUNAS_DATA_SHA`, else git's last commit touching the data dir. */
@@ -168,6 +186,8 @@ function indexRow(p: PublicShiur): IndexRow {
 function fingerprintOf(parts: {
   shiur: Shiur;
   recordings: (Recording | undefined)[];
+  /** This shiur's audio-table rows (URL and playability: covers media origin and bucket key changes). */
+  audio: unknown[];
   seriesCount: number | null;
   entry: unknown;
   files: ShiurFiles | null;
@@ -184,6 +204,7 @@ function fingerprintOf(parts: {
   add("suppress", JSON.stringify(parts.suppress));
   add("shiur", JSON.stringify(parts.shiur));
   add("recordings", JSON.stringify(parts.recordings.map((r) => (r ? [r.id, r.durationSec, r.sizeBytes, r.duplicateOf] : null))));
+  add("audio", JSON.stringify(parts.audio));
   add("series", String(parts.seriesCount));
   add("manifest", JSON.stringify(parts.entry ?? null));
   add("meta", parts.files?.texts.meta ?? "");
@@ -210,8 +231,33 @@ export function resolveOutDir(outDir: string | undefined): string {
   return outDir ? resolve(outDir) : resolve(REPO_ROOT, ".corpus");
 }
 
+/** `opts.mediaOrigin`, else env `EMUNAS_MEDIA_ORIGIN`, else the placeholder; validated (throws when invalid). */
+export function resolveMediaOrigin(mediaOrigin?: string): { origin: string; placeholder: boolean } {
+  const raw = mediaOrigin ?? process.env[MEDIA_ORIGIN_ENV];
+  const origin = normalizeMediaOrigin(raw === undefined || raw.trim() === "" ? DEFAULT_MEDIA_ORIGIN : raw);
+  return { origin, placeholder: origin === DEFAULT_MEDIA_ORIGIN };
+}
+
+function audioIssueText(i: AudioTableIssue): string {
+  switch (i.kind) {
+    case "unplayable":
+      return `audio: ${i.id} not playable (${i.reason}); shown as unavailable`;
+    case "missing-canonical":
+      return `audio: ${i.id} duplicateOf ${i.duplicateOf} not in ingest; shown as unavailable`;
+    case "duplicate-cycle":
+      return `audio: ${i.id} duplicateOf chain does not end; shown as unavailable`;
+    case "duplicate-id":
+      return `audio: recording ${i.id} listed twice in ingest`;
+    case "invalid-size":
+      return `audio: ${i.id} has an invalid sizeBytes`;
+  }
+}
+
 /** Load, gate and project every in-scope shiur (no file output). */
-export function projectCorpus(opts: Pick<BuildOptions, "dataDir" | "policyDir" | "suppressFile" | "keyer"> = {}) {
+export function projectCorpus(
+  opts: Pick<BuildOptions, "dataDir" | "policyDir" | "suppressFile" | "keyer" | "mediaOrigin"> = {},
+) {
+  const media = resolveMediaOrigin(opts.mediaOrigin);
   const reader = createDataReader(opts.dataDir ?? defaultDataDir());
   const keyer = opts.keyer ?? identitySlugKeyer;
   const policy = loadPublishPolicy(opts.policyDir ?? defaultPolicyDir());
@@ -251,7 +297,16 @@ export function projectCorpus(opts: Pick<BuildOptions, "dataDir" | "policyDir" |
   const seriesCount = new Map<string, number>();
   for (const s of inScope) if (s.seriesId !== null) seriesCount.set(s.seriesId, (seriesCount.get(s.seriesId) ?? 0) + 1);
 
-  const ctx: ProjectContext = { keyer, policy, suppress, report, recordingsById, seriesCount };
+  if (media.placeholder) {
+    report.warnings.push(`audio: ${MEDIA_ORIGIN_ENV} not set; audio URLs use the placeholder ${DEFAULT_MEDIA_ORIGIN}`);
+  }
+  const audioTable: AudioTable = buildAudioTable(ingest.recordings, {
+    origin: media.origin,
+    only: inScope.flatMap((s) => s.recordingIds),
+    onIssue: (i) => report.warnings.push(audioIssueText(i)),
+  });
+
+  const ctx: ProjectContext = { keyer, policy, suppress, report, recordingsById, seriesCount, audio: audioTable };
   const shiurim: PublicShiur[] = [];
   const fingerprints: Record<string, string> = {};
   let notDone = 0;
@@ -269,6 +324,7 @@ export function projectCorpus(opts: Pick<BuildOptions, "dataDir" | "policyDir" |
     const fp = fingerprintOf({
       shiur: s,
       recordings: s.recordingIds.map((id) => recordingsById.get(id)),
+      audio: s.recordingIds.map((id) => audioTable[id] ?? null),
       seriesCount: s.seriesId !== null ? (seriesCount.get(s.seriesId) ?? 0) : null,
       entry,
       files: entry?.status === "done" ? files : null,
@@ -296,12 +352,7 @@ export function projectCorpus(opts: Pick<BuildOptions, "dataDir" | "policyDir" |
     catalogOnly: shiurim.length - full,
     downgraded: report.downgraded.length,
   };
-  const audioTable: AudioTable = {};
-  for (const id of [...new Set(inScope.flatMap((s) => s.recordingIds))].sort()) {
-    const r = recordingsById.get(id);
-    if (r) audioTable[id] = { size: r.sizeBytes, canonicalId: r.duplicateOf ?? r.id };
-  }
-  return { shiurim, index, report, counts, notDone, fingerprints, audioTable, keyer, suppressIds };
+  return { shiurim, index, report, counts, notDone, fingerprints, audioTable, mediaOrigin: media.origin, keyer, suppressIds };
 }
 
 export function buildCorpus(opts: BuildOptions = {}): BuildResult {
@@ -331,10 +382,18 @@ export function buildCorpus(opts: BuildOptions = {}): BuildResult {
   }
 
   const buildId = sha256(
-    JSON.stringify([SCHEMA_VERSION, PROJECTOR_VERSION, CODE_HASH, p.keyer.id, p.keyer.version, Object.entries(p.fingerprints).sort()]),
+    JSON.stringify([
+      SCHEMA_VERSION,
+      PROJECTOR_VERSION,
+      CODE_HASH,
+      p.keyer.id,
+      p.keyer.version,
+      p.mediaOrigin,
+      Object.entries(p.fingerprints).sort(),
+    ]),
   ).slice(0, 16);
   const dataSha = opts.dataSha !== undefined ? opts.dataSha : (process.env["EMUNAS_DATA_SHA"] ?? gitDataSha(dataDir));
-  const info: BuildInfo = { buildId, dataSha, schemaVersion: SCHEMA_VERSION, counts: p.counts };
+  const info: BuildInfo = { buildId, dataSha, schemaVersion: SCHEMA_VERSION, mediaOrigin: p.mediaOrigin, counts: p.counts };
   writeIfChanged(join(outDir, "index.json"), toJson(p.index));
   writeIfChanged(join(outDir, "audio-table.json"), toJson(p.audioTable));
   if (opts.extraOutputs) {

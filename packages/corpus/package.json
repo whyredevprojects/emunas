@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "The shared data layer: allow-listed loaders, status gate, allow-list projection, time model, transcript gate and the corpus:build CLI (integration-plan §5).",
+  "description": "The shared data layer: allow-listed loaders, status gate, allow-list projection, time model, transcript gate and the corpus:build CLI (integration-plan \u00a75).",
   "exports": {
     "./public": "./src/public/index.ts",
     "./build": "./src/build/index.ts",
@@ -17,6 +17,7 @@
     "fixtures:mini": "tsx scripts/make-mini-corpus.ts"
   },
   "dependencies": {
+    "@emunas/audio": "0.0.0",
     "valibot": "1.5.0"
   },
   "devDependencies": {

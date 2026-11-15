@@ -1,20 +1,20 @@
 /**
- * @emunas/audio — edge-safe entry point (no Node APIs, no AWS SDK).
- * The publish CLI lives at `@emunas/audio/publish` (Node only).
+ * @emunas/audio: public audio URLs on the media host, the audio table and the playability rule
+ * (integration-plan Amendment A1). Pure and browser/Workers/Node-safe; no dependencies.
  */
 export {
-  AUDIO_EXT,
-  AUDIO_ID_MAX_LENGTH,
-  AUDIO_ID_RE,
-  AUDIO_PREFIX,
-  audioPath,
-  audioTimePath,
-  downloadPath,
-  isAudioId,
-  parseAudioPath,
-  wantsDownload,
-  type AudioPath,
-} from "./paths.ts";
+  DEFAULT_MEDIA_ORIGIN,
+  MEDIA_ORIGIN_ENV,
+  encodeKeyPath,
+  mediaTimeUrl,
+  mediaUrl,
+  normalizeMediaOrigin,
+  refuseKey,
+  type KeyRefusal,
+  type MediaTimeUrl,
+  type MediaUrl,
+} from "./media.ts";
+export { isPlayableKey, unplayableReason, type UnplayableReason } from "./playable.ts";
 export {
   buildAudioTable,
   lookupAudio,
@@ -24,24 +24,3 @@ export {
   type AudioTableIssue,
   type BuildAudioTableOptions,
 } from "./table.ts";
-export { asciiFilenameBase, attachmentDisposition, downloadFilename } from "./filename.ts";
-export { isPublishableSourceKey, publicObjectKey, refuseSourceKey, type KeyRefusal } from "./keys.ts";
-export {
-  AUDIO_CACHE_CONTROL,
-  AUDIO_CONTENT_TYPE,
-  audioEnabled,
-  handleAudio,
-  type AudioBucket,
-  type AudioEnv,
-  type AudioObject,
-  type AudioObjectBody,
-} from "./handler.ts";
-export {
-  evaluateConditionals,
-  ifRangeHolds,
-  parseRangeHeader,
-  resolveRange,
-  type ByteRange,
-  type ConditionalOutcome,
-  type ParsedRange,
-} from "./http.ts";
