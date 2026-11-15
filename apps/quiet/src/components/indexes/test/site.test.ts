@@ -17,7 +17,6 @@
  */
 import { spawnSync } from "node:child_process";
 import { existsSync, mkdtempSync, readFileSync, readdirSync, rmSync, statSync } from "node:fs";
-import { createRequire } from "node:module";
 import { tmpdir } from "node:os";
 import { dirname, join, relative, sep } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -26,12 +25,12 @@ import type { ConceptsFile, PeopleFile, StoriesFile, WorksFile } from "@emunas/c
 import { ENTITY_THRESHOLDS, type CorpusIndex, type PublicShiur } from "@emunas/corpus/public";
 import { coverageNotice } from "@emunas/i18n";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
+import { astroBuild } from "../../../../test/astro-build.ts";
 import { indexesEn, indexesYi } from "../strings.ts";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const app = join(here, "..", "..", "..", "..");
 const repo = join(app, "..", "..");
-const require = createRequire(import.meta.url);
 
 /** tech-quiet §3.5: ~4,000 index pages at full corpus inside an 18,000-file site. */
 const INDEX_PAGE_BUDGET = 4_000;
@@ -55,13 +54,7 @@ beforeAll(() => {
     encoding: "utf8",
   });
   if (c.status !== 0) throw new Error(`corpus:build failed:\n${c.stdout}\n${c.stderr}`);
-  const astro = join(dirname(require.resolve("astro/package.json")), "bin", "astro.mjs");
-  const b = spawnSync(process.execPath, [astro, "build", "--outDir", dist], {
-    cwd: app,
-    env: { ...process.env, EMUNAS_CORPUS_DIR: corpus, ASTRO_TELEMETRY_DISABLED: "1" },
-    encoding: "utf8",
-    maxBuffer: 64 * 1024 * 1024,
-  });
+  const b = astroBuild(app, dist, { EMUNAS_CORPUS_DIR: corpus });
   if (b.status !== 0) throw new Error(`astro build failed:\n${b.stdout.slice(-4000)}\n${b.stderr.slice(-4000)}`);
 }, 300_000);
 

@@ -12,7 +12,9 @@
 import { createStore, useStore, type StoreApi } from "zustand";
 // eslint-disable-next-line no-restricted-imports -- app/data is the Live data contract (W2.4), not the pipeline data folder
 import { loadShiur } from "../data/index.ts";
-import { getPlayerEngine, type PlayerEngine, type PlayerShiur } from "../player-engine/index.ts";
+import type { PlayerEngine, PlayerShiur } from "../player-engine/index.ts";
+import { getEngine } from "../player-ui/engine.ts";
+import { ensureDockRegistered } from "../player-ui/register.ts";
 import { getPersonal, queueCurrentKey, type Personal } from "./personal.ts";
 import { attachProgressRecorder } from "./progress-recorder.ts";
 import type { QueueRecord } from "./schema.ts";
@@ -160,7 +162,10 @@ let shared: QueuePlayer | null = null;
  */
 export function getQueuePlayer(): QueuePlayer {
   if (!shared) {
-    const engine = getPlayerEngine();
+    // The shared engine as the player UI creates it (series-title Media Session), and the dock, so
+    // queue playback started outside the listening room has controls.
+    const engine = getEngine();
+    ensureDockRegistered();
     attachProgressRecorder(engine, getPersonal());
     shared = createQueuePlayer({ engine, loadShiur: (id) => loadShiur(id), personal: getPersonal() });
   }

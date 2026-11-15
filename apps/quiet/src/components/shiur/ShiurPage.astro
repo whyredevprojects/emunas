@@ -60,7 +60,7 @@ const c = shiur.catalog;
 const notes = shiur.status === "full" ? shiur.notes : undefined;
 const sources = notes ? buildSources(notes, ed, counts) : undefined;
 const parts = pageParts(shiur, ed, sources);
-const section = sectionHref(ed, c.sectionId);
+const section = sectionHref(ed, c);
 const crumbs: Crumb[] = [
   { label: ui("nav.contents"), href: formatQuiet({ kind: "index", ed, index: "contents" }) },
   { label: c.sectionTitle, href: section, ...(/[א-ת]/.test(c.sectionTitle) ? { lang: shiur.lang === "en" ? "he" : "yi", dir: "rtl" as const } : { lang: "en", dir: "ltr" as const }) },

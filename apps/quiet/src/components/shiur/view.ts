@@ -10,9 +10,10 @@ import { sourceRefParts, type SourceRefParts } from "@emunas/i18n";
 import type { EntityKind } from "@emunas/links";
 import { quietPaths } from "@emunas/links";
 import { sefariaUrl, WORK_GROUP_LABELS, WORK_GROUPS, workByKey, type WorkGroup } from "@emunas/normalize";
-import type { IndexRow, PublicNotes, PublicShiur, PublicSource } from "@emunas/corpus/public";
+import type { IndexRow, PublicCatalog, PublicNotes, PublicShiur, PublicSource } from "@emunas/corpus/public";
 import type { Neighbours } from "@emunas/corpus/aggregate";
 import type { Ed } from "../../lib/edition.ts";
+import { sectionHref as catalogSectionHref } from "../catalog/model.ts";
 
 // ---------------------------------------------------------------- anchors
 
@@ -265,9 +266,12 @@ export function rowRef(ed: Ed, id: string, rows: RowLookup): RowRef | null {
   };
 }
 
-/** Section page path (`/{ed}/section/{sectionId}/`, tech-quiet §2). */
-export function sectionHref(ed: Ed, sectionId: string): string {
-  return `/${ed}/section/${encodeURIComponent(sectionId)}/`;
+/**
+ * Section page path (`/{ed}/section/{slug}/`, tech-quiet §2). Uses the catalog pages' slug rule
+ * (W3.1), since uncatalogued-guide section ids repeat the guide's and are prefixed there.
+ */
+export function sectionHref(ed: Ed, catalog: Pick<PublicCatalog, "source" | "sectionId">): string {
+  return catalogSectionHref(ed, { source: catalog.source, id: catalog.sectionId });
 }
 
 /**
@@ -286,7 +290,7 @@ export function catalogPlace(
   const section: PositionView | null = neighbours
     ? {
         label: shiur.catalog.sectionTitle,
-        href: sectionHref(ed, shiur.catalog.sectionId),
+        href: sectionHref(ed, shiur.catalog),
         pos: neighbours.section.pos,
         count: neighbours.section.count,
         prev: ref(neighbours.section.prev),

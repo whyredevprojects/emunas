@@ -70,7 +70,13 @@ export function loadShiurCorpus(dir: string): ShiurCorpus {
     ["person", "people"],
     ["concept", "concepts"],
   ];
-  for (const [kind, field] of kinds) for (const e of entities?.[field] ?? []) counts.set(`${kind}:${e.key}`, e.shiurim);
+  for (const [kind, field] of kinds) {
+    for (const e of entities?.[field] ?? []) {
+      // Only entities.json's quietPage decides whether a page exists (generic works never get one,
+      // whatever their count), so an entity without a page, or not listed, is passed as count 0.
+      counts.set(`${kind}:${e.key}`, e.quietPage ? e.shiurim : 0);
+    }
+  }
   const heName = new Map<string, string>();
   for (const p of people?.people ?? []) if (p.he) heName.set(p.key, p.he);
   const seriesTitles = new Map((series?.series ?? []).map((s) => [s.id, s.title] as const));
@@ -82,7 +88,7 @@ export function loadShiurCorpus(dir: string): ShiurCorpus {
     index,
     rows: (id) => rowMap.get(id),
     neighbours,
-    entityCounts: entities ? (kind, key) => counts.get(`${kind}:${key}`) : () => undefined,
+    entityCounts: entities ? (kind, key) => counts.get(`${kind}:${key}`) ?? 0 : () => undefined,
     personName: (key, ed, fallback) => (ed === "yi" ? (heName.get(key) ?? fallback) : fallback),
     seriesTitle: (id, ed) => seriesTitles.get(id)?.[ed],
     shiur(id) {

@@ -119,6 +119,10 @@ jobs:
           pre --corpus .corpus --out .corpus/suppress.json
       - name: Corpus rebuild with suppress list
         run: npm run corpus:build -- --suppress .corpus/suppress.json
+      - name: Search documents and moments (.corpus/search, read by Quiet search and search:sync)
+        run: npm run search:build
+      - name: Live static data (apps/live/public/data, from .corpus)
+        run: npm run data:build --workspace=@emunas/live
 
       - name: Build Quiet
         run: npm run build --workspace=@emunas/quiet
@@ -144,6 +148,8 @@ jobs:
           --corpus .corpus --report "$RUNNER_TEMP/guard-post.json"
       - name: Budgets
         run: npm run guard --workspace=@emunas/corpus-guard -- budgets apps/quiet/dist apps/live/build/client
+      - name: Live data budgets (tech-live size targets; over-target is a warning)
+        run: npm run data:budgets --workspace=@emunas/live
 
       # Search infrastructure (W2.6 / W3.10).
       - name: D1 migrations
@@ -155,7 +161,7 @@ jobs:
               --config workers/api/wrangler.jsonc --env="${WRANGLER_ENV}"
           done
       - name: D1 and Vectorize incremental sync
-        # No-op until W3.10 adds the search:sync script to @emunas/api.
+        # W3.10: reads .corpus/search/moments.ndjson (search:build above); guards its own uploads.
         run: |
           if node -e 'process.exit(require("./workers/api/package.json").scripts?.["search:sync"] ? 0 : 1)'; then
             npm run search:sync --workspace=@emunas/api -- --env "${TARGET}"

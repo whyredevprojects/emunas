@@ -18,6 +18,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import type { OccasionShiurRef } from "@emunas/corpus/aggregate";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
+import { astroBuild } from "../../../test/astro-build.ts";
 import { readCalendarData } from "./data.ts";
 import { isGuessedRow, type CalendarData } from "./model.ts";
 
@@ -51,12 +52,7 @@ beforeAll(() => {
   if (c.status !== 0) throw new Error(`corpus:build failed:\n${c.stdout}\n${c.stderr}`);
   data = readCalendarData(corpus);
 
-  const astro = join(dirname(require.resolve("astro/package.json")), "bin", "astro.mjs");
-  const b = spawnSync(process.execPath, [astro, "build", "--outDir", dist], {
-    cwd: app,
-    encoding: "utf8",
-    env: { ...process.env, EMUNAS_CORPUS_DIR: corpus, ASTRO_TELEMETRY_DISABLED: "1" },
-  });
+  const b = astroBuild(app, dist, { EMUNAS_CORPUS_DIR: corpus });
   if (b.status !== 0) throw new Error(`astro build failed:\n${b.stdout}\n${b.stderr}`);
 }, 300_000);
 

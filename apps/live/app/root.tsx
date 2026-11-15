@@ -1,5 +1,5 @@
 import { UI_DIR, isUiLang, type UiLang } from "@emunas/i18n";
-import type { JSX, ReactNode } from "react";
+import { useEffect, type JSX, type ReactNode } from "react";
 import {
   Links,
   Meta,
@@ -12,6 +12,7 @@ import {
 } from "react-router";
 import { tFor } from "./i18n/index.ts";
 import { NotFound } from "./shell/PageStub.tsx";
+import { connectPersonal } from "./store/connect.ts";
 import "./styles/global.css";
 
 /** Interface language from the first path segment (`/yi/…`); English for `/` and unknown paths. */
@@ -42,6 +43,8 @@ export function Layout({ children }: { children: ReactNode }): JSX.Element {
 }
 
 export default function App(): JSX.Element {
+  // Personal store ↔ player and Today/series progress (browser only, once).
+  useEffect(connectPersonal, []);
   return <Outlet />;
 }
 
