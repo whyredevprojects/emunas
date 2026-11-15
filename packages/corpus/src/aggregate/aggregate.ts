@@ -57,6 +57,8 @@ import type {
 export interface AggregateInput {
   shiurim: readonly PublicShiur[];
   index: CorpusIndex;
+  /** Source moment id → merged corpus work id (corpus layer, C1.2); absent → every `workId` is null. */
+  sourceWorkIds?: ReadonlyMap<string, string>;
 }
 
 export interface AggregateResult {
@@ -302,6 +304,17 @@ function mostUsed(names: Map<string, number>): string {
   return [...names.entries()].sort((a, b) => b[1] - a[1] || cmpStr(a[0], b[0]))[0]?.[0] ?? "";
 }
 
+/** The corpus work most of an entry's mentions resolve to (ties: the smaller id). */
+function corpusWorkOf(w: WorkAcc, sourceWorkIds: ReadonlyMap<string, string> | undefined): string | null {
+  if (!sourceWorkIds) return null;
+  const tally = new Map<string, number>();
+  for (const m of [...[...w.refs.values()].flatMap((r) => r.mentions), ...w.unlocated]) {
+    const id = sourceWorkIds.get(m.id);
+    if (id !== undefined) tally.set(id, (tally.get(id) ?? 0) + 1);
+  }
+  return [...tally.entries()].sort((a, b) => b[1] - a[1] || cmpStr(a[0], b[0]))[0]?.[0] ?? null;
+}
+
 function works(c: Ctx): { file: WorksFile; unparsedRefs: number } {
   const acc = new Map<string, WorkAcc>();
   let unparsedRefs = 0;
@@ -341,6 +354,7 @@ function works(c: Ctx): { file: WorksFile; unparsedRefs: number } {
       .map((r) => ({ ...r, mentions: r.mentions.sort(byMention) }));
     const e: WorkEntry = {
       key: w.key,
+      workId: corpusWorkOf(w, c.input.sourceWorkIds),
       mapped: work !== null,
       group: work?.group ?? null,
       order: work?.order ?? null,

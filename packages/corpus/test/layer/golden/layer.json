@@ -1,0 +1,72 @@
+{
+ "layerSchemaVersion": 1,
+ "enabled": true,
+ "corpusVersion": 1,
+ "knownCorpusVersion": true,
+ "generatedAt": "2026-11-15T16:20:32.487Z",
+ "inputs": {
+  "topics": true,
+  "concepts": true,
+  "people": true,
+  "works": true,
+  "stories": true,
+  "teachingClusters": true,
+  "redirects": true,
+  "series": 12,
+  "shiurTags": 31
+ },
+ "policyHash": "1e6bedacd430",
+ "counts": {
+  "visibleShiurim": 31,
+  "topics": 207,
+  "concepts": 225,
+  "people": 186,
+  "works": 154,
+  "stories": 56,
+  "threads": 5,
+  "series": 0,
+  "shiurRefs": 31,
+  "synonyms": 733,
+  "redirects": {
+   "corpus": 4,
+   "legacy": 731,
+   "legacyUnmatched": 375
+  },
+  "pages": {
+   "quiet": {
+    "topics": 176,
+    "concepts": 3,
+    "people": 39,
+    "works": 71,
+    "stories": 2,
+    "threads": 0
+   },
+   "live": {
+    "topics": 176,
+    "concepts": 12,
+    "people": 39,
+    "works": 50,
+    "stories": 2,
+    "threads": 0
+   }
+  }
+ },
+ "warnings": [
+  "1 index.json files entries on the deny list (not read)",
+  "1 stories with no visible telling (left out)",
+  "45 teaching clusters with fewer than two visible shiurim (dropped)",
+  "redirect people:syn-cycle-x dropped (cycle)",
+  "redirect people:syn-cycle-y dropped (cycle)"
+ ],
+ "notRead": [
+  "future-insights.json"
+ ],
+ "droppedKeys": {
+  "concepts.json": 1,
+  "works.json": 1
+ },
+ "droppedRecords": 0,
+ "lint": {
+  "clusterCounts": []
+ }
+}

@@ -6,6 +6,7 @@ The shared data layer (integration-plan §1.2, §5). It reads `data/`, which bel
 |---|---|---|
 | `@emunas/corpus/public` | browsers and apps | `PublicShiur` and the other output types, `toLocal`/`toGlobal`/`offsetsFor`, `momentId`/`parseMomentId`, `ENTITY_THRESHOLDS`, `SCHEMA_VERSION`, the `AudioTable`/`MediaUrl` types. Has no Node imports. |
 | `@emunas/corpus/build` | Node build steps only | `buildCorpus`, `projectCorpus`, the allow-listed reader, valibot schemas, the status gate, the projector, the `Keyer` interface with its default `identitySlugKeyer`, and the report. ESLint blocks app code from importing it. |
+| `@emunas/corpus/layer` | Node build steps only | the corpus-layer projection: `loadLayerInput`, `prepareLayer`, `finishLayer`, `buildLayer` (C1.2). Node-only like `/build`. |
 | `@emunas/corpus/transcript-gate` | the transcript view (W5.2), currently off | `readEligibleTranscript(recordingId)` |
 
 ## `npm run corpus:build`
@@ -17,6 +18,31 @@ npm run corpus:build -- [--data-dir data] [--out .corpus] [--suppress .corpus/su
 Defaults: data comes from `EMUNAS_DATA_DIR` or `<repo>/data`, output goes to `<repo>/.corpus`, policy from `<repo>/site-policy`, media origin from `--media-origin`, else `EMUNAS_MEDIA_ORIGIN`, else the dev placeholder `https://media.example.invalid` (reported as a build-report warning). Relative paths resolve against the directory npm was started from. Exit code 1 means invalid ingest, manifest, policy or media origin. Exit code 2 means a bad flag. On today's data a full build takes about 1.5 s.
 
 Output: `build.json`, `shiurim/<id>.json` (one per in-scope shiur), `index.json` (rows plus catalog sections and series), `audio-table.json` (`recordingId → {canonicalId, size, playable, url}`, built by `@emunas/audio`), `updated.json` (manifest `updatedAt` per full shiur, for "newly summarized"), `build-report.json`, `.fingerprints.json`. A shiur file is rewritten only when its fingerprint changes. The fingerprint covers the ingest row, recordings, manifest entry, meta/extraction/writeup bytes, keyer id and version, policy thresholds, the shiur's suppress ids, its audio-table rows (so a media origin or bucket key change re-emits it), the schema version and a hash of this package's projection source. The other outputs are rewritten only when their content changes.
+
+## The corpus layer: `.corpus/layer/` (corpus-wave-plan §3.3, C1.2)
+
+`corpus:build` also projects the pipeline's corpus-wide files (`data/derived/corpus/`, contract `docs/corpus-data.md`) into `.corpus/layer/`. The input is read by the allow-listed corpus reader (`src/layer/input`, C1.1): `raw/`, alias maps, ASR files, the agents' working folders and `search/sections.jsonl` are never opened. Owner decisions come from `site-policy/corpus-policy.json` (`src/layer/policy.ts`). Types are `Layer*` in `@emunas/corpus/public` (`src/public/corpus-layer.ts`), versioned by `LAYER_SCHEMA_VERSION`, which is separate from `SCHEMA_VERSION`, so a layer change does not churn shiur fingerprints (the layer types are left out of the projection code hash).
+
+| File | Contents |
+|---|---|
+| `layer.json` | layer schema version, corpus version and `generatedAt`, which inputs were read, policy hash, counts (visible shiurim, entities, pages per site, redirects), warnings, files not read, dropped-key counts, and the cluster-count lint |
+| `topics.json` | `tree` (id, parent, level, labels, visible count incl. descendants, `sameAs`, reviewed, page flags, Quiet gateway) and `detail` (description, hubs, grades `main`/`discussed`/`touched`, children, co-topics, thread ids, story ids, occasion keys) |
+| `concepts.json` | canonical Hebrew, label, transliterations, definition, visible shiurs and example sections, `passim`, `liveFacetDrop`, `mergedIntoTopic`, page flags |
+| `people.json` | names and aliases, type and its order, visible shiurs, stories, works authored, same-id work, `sameAsTopic`, `excluded` (family / private / owner), listing and page flags per site |
+| `works.json` | titles, aliases, author, Sefaria title, `generic`, shelf group and order from `@emunas/normalize` (unknown works last), visible shiurs, page flags |
+| `stories.json` | title, retelling, people (`{id}` or `{name, linked:false}`), visible tellings `{shiurId, momentId, chapterIdx, t, year, lang}`, page flags |
+| `threads.json` | teaching clusters with ≥2 visible shiurim: label, summary, topics, visible members, shiur and dated counts, year span, page and timeline flags |
+| `series/<id>.json` | only series with a visible part: title, overview, key themes, arc of visible parts, part numbers of the missing ones |
+| `shiur/<id>.json` | one per visible shiur: `otherSpeakerShare`, topics with salience, chapter topics, concept/person/work ids, work per source moment, story refs (telling count, page flags), insight refs (thread count, year span, page flag, or the two-shiur inline pointer) |
+| `synonyms.json` | `{kind, id, terms}`: folded terms from the entity's own display fields only |
+| `redirects.json` | `corpus`: retired → live id per kind (data `redirects.json` + `mergedInto`, chains resolved, cycles and dangling targets dropped). `legacy`: old normalize-keyed people, works and concepts → `{kind, id}` or null, with `hadPage` and how it matched |
+| `occasion-topics.json` | parsha/zman key → topic, from the topic's own field or derived by the share rule (D11) |
+
+Rules: every file is built by copying named fields, never by spreading a record. The visible set `V` is the shiurim that are `full` in `.corpus` and in the corpus index; a member counts only if its shiur is in `V` and its item survived projection, and, under D6, tellings and cluster members also need a category in general browse. All counts are recounted from `V` (never `shiurCount` or `shiurIds.length`). Section tags on `other_speaker` chapters are dropped. Hubs leave out shiurim at or above `featured.maxOtherSpeakerShare` and are refilled by salience. Family exclusion is a rule over the person's own fields (`people.familyPattern`, `family`/`private` flags, `excludeIds`). Layer warnings go to `layer.json`, never to `build-report.json`. Files no longer produced are removed; an unchanged rerun rewrites nothing. With the corpus absent only `layer.json` is written, with `enabled: false`.
+
+`works.json` (the aggregate) gains `workId`: the merged corpus work most of the entry's mentions resolve to through `shiur-tags.sourceWorkIds`. The legacy aggregate people, concepts, stories and entities files are unchanged until C3.1.
+
+Tests: `test/layer/` (mini goldens in `test/layer/golden/`, rule tests on edited fixture copies, and the C1.2 acceptance on real data). Regenerate the goldens with `npx vitest run test/layer -u` and review the diff.
 
 ## Audio (integration-plan Amendment A1)
 

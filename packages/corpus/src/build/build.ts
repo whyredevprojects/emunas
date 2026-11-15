@@ -101,6 +101,14 @@ export interface BuildResult {
 const sha256 = (s: string) => createHash("sha256").update(s).digest("hex");
 
 /**
+ * Public files that never affect the projection of a shiur: the corpus-layer types (C1.2), which
+ * have their own LAYER_SCHEMA_VERSION. They and the line re-exporting them are left out of
+ * CODE_HASH, so a layer change does not churn every shiur fingerprint.
+ */
+const NOT_PROJECTION_SOURCES = new Set(["corpus-layer.ts"]);
+const NOT_PROJECTION_EXPORT = /^export \* from "\.\/corpus-layer\.ts";\n/gm;
+
+/**
  * Hash of this package's projection source (src/public, src/build). Part of every fingerprint, so a
  * code change re-emits the affected shiurim even when nobody bumped PROJECTOR_VERSION.
  */
@@ -108,8 +116,8 @@ export const CODE_HASH: string = (() => {
   const h = createHash("sha256");
   const here = dirname(fileURLToPath(import.meta.url));
   for (const dir of [here, resolve(here, "../public")]) {
-    for (const f of readdirSync(dir).filter((x) => x.endsWith(".ts") && !x.endsWith(".test.ts")).sort()) {
-      h.update(`${f}\u0000${readFileSync(join(dir, f), "utf8")}\u0000`);
+    for (const f of readdirSync(dir).filter((x) => x.endsWith(".ts") && !x.endsWith(".test.ts") && !NOT_PROJECTION_SOURCES.has(x)).sort()) {
+      h.update(`${f}\u0000${readFileSync(join(dir, f), "utf8").replace(NOT_PROJECTION_EXPORT, "")}\u0000`);
     }
   }
   return h.digest("hex").slice(0, 16);

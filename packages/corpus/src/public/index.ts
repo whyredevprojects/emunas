@@ -5,6 +5,7 @@
 export type * from "./types.ts";
 export * from "./timeline.ts";
 export * from "./moment-id.ts";
+export * from "./corpus-layer.ts";
 
 /** Bump when the shape of anything in `.corpus/` changes. */
 export const SCHEMA_VERSION = 2;

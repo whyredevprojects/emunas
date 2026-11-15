@@ -1,0 +1,9023 @@
+{
+ "shiur/en-miscellaneous-en-01.json": {
+  "shiurId": "en-miscellaneous-en-01",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "pirkei-avos",
+    "salience": 0.9
+   },
+   {
+    "id": "torah-lishmah",
+    "salience": 0.85
+   },
+   {
+    "id": "kriyas-shem",
+    "salience": 0.6
+   },
+   {
+    "id": "maasios",
+    "salience": 0.6
+   },
+   {
+    "id": "gedolei-yisroel",
+    "salience": 0.4
+   },
+   {
+    "id": "schar-veonesh",
+    "salience": 0.4
+   },
+   {
+    "id": "rebbes-hador",
+    "salience": 0.35
+   },
+   {
+    "id": "baal-shem-tov-talmidim",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "pirkei-avos",
+     "sefiras-haomer"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "kriyas-shem",
+     "baal-shem-tov-talmidim"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "kriyas-shem",
+     "adam-harishon"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "kriyas-shem",
+     "balak-pinchas"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "torah-lishmah",
+     "pirkei-avos"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "schar-veonesh"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "torah-lishmah",
+     "shlichus-hanefesh"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "maasios",
+     "hashgacha-pratis"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "taamei-hamitzvos",
+     "torah-lishmah"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "ahavas-hashem",
+     "ahavas-yisroel"
+    ]
+   },
+   {
+    "idx": 10,
+    "topicIds": [
+     "bein-adam-lachaveiro",
+     "moshiach"
+    ]
+   },
+   {
+    "idx": 11,
+    "topicIds": [
+     "maasios",
+     "gedolei-yisroel",
+     "torah-lishmah"
+    ]
+   },
+   {
+    "idx": 12,
+    "topicIds": [
+     "maasios",
+     "baal-shem-tov-talmidim",
+     "yishuv-eretz-yisroel"
+    ]
+   },
+   {
+    "idx": 13,
+    "topicIds": [
+     "maasios",
+     "rebbes-hador",
+     "kashrus"
+    ]
+   },
+   {
+    "idx": 14,
+    "topicIds": [
+     "maasios",
+     "rebbes-hador"
+    ]
+   },
+   {
+    "idx": 15,
+    "topicIds": [
+     "maasios",
+     "rebbes-hador"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "chelek-eloka-mimaal",
+   "hashpaah",
+   "hava-amina",
+   "kedushah",
+   "kinyan-torah",
+   "machlokes",
+   "olam-haba",
+   "ribono-shel-olam",
+   "ruach-hatumah",
+   "sefer-torah",
+   "torah-lishmah",
+   "yayin-hameshumar",
+   "yeshuah"
+  ],
+  "personIds": [
+   "achashverosh",
+   "adam-harishon",
+   "baal-hatanya",
+   "beis-halevi",
+   "belzer-rav",
+   "ben-zoma",
+   "chiddushei-harim",
+   "dasan-and-aviram",
+   "eliav-ben-chelon",
+   "kozbi-bas-tzur",
+   "maggid-of-mezritch",
+   "me-or-einayim",
+   "moshe-rabbeinu",
+   "noach",
+   "pinchas",
+   "rabbi-akiva",
+   "rabbi-levi-yitzchak-of-berditchev",
+   "rabbi-meir",
+   "rabbi-menachem-mendel-of-vitebsk",
+   "rabbi-yehoshua-leib-diskin",
+   "radziner-rebbe",
+   "ramchal",
+   "vashti",
+   "yeshuos-yaakov",
+   "zimri-ben-salu"
+  ],
+  "workIds": [
+   "avodah-zarah",
+   "bamidbar",
+   "berachos",
+   "bereishis",
+   "chullin",
+   "derech-hashem",
+   "devarim",
+   "midrash",
+   "mishlei",
+   "pirkei-avos",
+   "ramban-on-the-torah",
+   "rashi-on-bereishis",
+   "shelah",
+   "shir-hashirim",
+   "vayikra",
+   "yoma"
+  ],
+  "sources": [
+   {
+    "momentId": "en-miscellaneous-en-01~src0",
+    "workId": "pirkei-avos"
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src1",
+    "workId": "pirkei-avos"
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src4",
+    "workId": "yoma"
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src5",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src6",
+    "workId": "shelah"
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src7",
+    "workId": "bamidbar"
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src8",
+    "workId": "bamidbar"
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src10",
+    "workId": "berachos"
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src11",
+    "workId": "berachos"
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src12",
+    "workId": "ramban-on-the-torah"
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src13",
+    "workId": "berachos"
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src14",
+    "workId": "mishlei"
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src15",
+    "workId": "avodah-zarah"
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src16",
+    "workId": "derech-hashem"
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src17",
+    "workId": "rashi-on-bereishis"
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src18",
+    "workId": "pirkei-avos"
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src19",
+    "workId": "pirkei-avos"
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src20",
+    "workId": "midrash"
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src21",
+    "workId": "shir-hashirim"
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src22",
+    "workId": "vayikra"
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src23",
+    "workId": "chullin"
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src24",
+    "workId": "pirkei-avos"
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src25",
+    "workId": "devarim"
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "en-miscellaneous-en-01~st0",
+    "storyId": "the-shoemaker-who-said-tzaddikims-names",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~st1",
+    "storyId": "the-baal-shem-tov-smiles-at-a-fallen-building",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~st2",
+    "storyId": "the-beis-halevi-and-the-chicken-for-the-road",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~st3",
+    "storyId": "the-yeshuos-yaakov-and-the-pancake",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~st4",
+    "storyId": "the-vitebskers-fish-and-the-voices-of-tzfas",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~st5",
+    "storyId": "the-chiddushei-harim-and-the-shaylah",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~st6",
+    "storyId": "the-slonimer-rebbe-and-the-unimmersed-plates",
+    "tellings": 2,
+    "pages": {
+     "quiet": true,
+     "live": true
+    }
+   }
+  ],
+  "insights": [
+   {
+    "momentId": "en-miscellaneous-en-01~i0",
+    "threadId": "torah-chacham-name-is-torah",
+    "shiurCount": 2,
+    "years": [
+     5735,
+     5738
+    ],
+    "page": false,
+    "other": {
+     "shiurId": "en-miscellaneous-en-02",
+     "momentId": "en-miscellaneous-en-02~i1",
+     "chapterIdx": 1,
+     "t": 555.04,
+     "year": 5735,
+     "lang": "en"
+    }
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~i1",
+    "threadId": "torah-hebrew-name-is-essence",
+    "shiurCount": 2,
+    "years": [
+     5735,
+     5738
+    ],
+    "page": false,
+    "other": {
+     "shiurId": "en-miscellaneous-en-02",
+     "momentId": "en-miscellaneous-en-02~i3",
+     "chapterIdx": 5,
+     "t": 1464.27,
+     "year": 5735,
+     "lang": "en"
+    }
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~i2",
+    "threadId": "torah-holier-more-easily-spoiled",
+    "shiurCount": 2,
+    "years": [
+     5735,
+     5738
+    ],
+    "page": false,
+    "other": {
+     "shiurId": "en-miscellaneous-en-02",
+     "momentId": "en-miscellaneous-en-02~i5",
+     "chapterIdx": 7,
+     "t": 1882.66,
+     "year": 5735,
+     "lang": "en"
+    }
+   }
+  ]
+ },
+ "shiur/en-miscellaneous-en-02.json": {
+  "shiurId": "en-miscellaneous-en-02",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "pirkei-avos",
+    "salience": 0.9
+   },
+   {
+    "id": "talmidei-chachamim",
+    "salience": 0.75
+   },
+   {
+    "id": "kriyas-shem",
+    "salience": 0.65
+   },
+   {
+    "id": "machshavah-dibur",
+    "salience": 0.6
+   },
+   {
+    "id": "torah-lishmah",
+    "salience": 0.5
+   },
+   {
+    "id": "schar-veonesh",
+    "salience": 0.4
+   },
+   {
+    "id": "kedushah-vekelipah",
+    "salience": 0.3
+   },
+   {
+    "id": "maasios",
+    "salience": 0.25
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "pirkei-avos"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "pirkei-avos",
+     "talmidei-chachamim"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "machshavah-dibur"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "maasios",
+     "talmidei-chachamim"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "kriyas-shem",
+     "mekomos-hakedoshim"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "kriyas-shem",
+     "adam-harishon",
+     "madreigos-haneshamah"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "torah-lishmah",
+     "schar-veonesh",
+     "pirkei-avos"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "kedushah-vekelipah"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "dibur",
+   "lashon-hakodesh",
+   "midas-harachamim",
+   "olam-haba",
+   "osiyos",
+   "ruach-hakodesh",
+   "torah-lishmah",
+   "yayin-hameshumar",
+   "yayin-nesech"
+  ],
+  "personIds": [
+   "adam-harishon",
+   "chasam-sofer",
+   "chiddushei-harim",
+   "dovid-hamelech",
+   "moshe-rabbeinu",
+   "rabbi-meir",
+   "rabbi-shimon-sofer",
+   "rabbi-yehuda-hanasi",
+   "rashi"
+  ],
+  "workIds": [
+   "berachos",
+   "bereishis",
+   "mishnah-yoma",
+   "pirkei-avos",
+   "rashi-on-tehillim",
+   "siddur",
+   "tehillim",
+   "tikkunei-zohar",
+   "yoma"
+  ],
+  "sources": [
+   {
+    "momentId": "en-miscellaneous-en-02~src0",
+    "workId": "pirkei-avos"
+   },
+   {
+    "momentId": "en-miscellaneous-en-02~src1",
+    "workId": "siddur"
+   },
+   {
+    "momentId": "en-miscellaneous-en-02~src2",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "en-miscellaneous-en-02~src3",
+    "workId": "tikkunei-zohar"
+   },
+   {
+    "momentId": "en-miscellaneous-en-02~src4",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "en-miscellaneous-en-02~src5",
+    "workId": "rashi-on-tehillim"
+   },
+   {
+    "momentId": "en-miscellaneous-en-02~src7",
+    "workId": "mishnah-yoma"
+   },
+   {
+    "momentId": "en-miscellaneous-en-02~src8",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "en-miscellaneous-en-02~src9",
+    "workId": "yoma"
+   },
+   {
+    "momentId": "en-miscellaneous-en-02~src10",
+    "workId": "pirkei-avos"
+   },
+   {
+    "momentId": "en-miscellaneous-en-02~src11",
+    "workId": "berachos"
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "en-miscellaneous-en-02~st0",
+    "storyId": "rav-shimon-sofer-and-the-factory-on-shabbos",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "en-miscellaneous-en-02~st1",
+    "storyId": "the-chiddushei-harim-declines-to-name-a-child",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   }
+  ],
+  "insights": [
+   {
+    "momentId": "en-miscellaneous-en-02~i1",
+    "threadId": "torah-chacham-name-is-torah",
+    "shiurCount": 2,
+    "years": [
+     5735,
+     5738
+    ],
+    "page": false,
+    "other": {
+     "shiurId": "en-miscellaneous-en-01",
+     "momentId": "en-miscellaneous-en-01~i0",
+     "chapterIdx": 0,
+     "t": 189.76,
+     "year": 5738,
+     "lang": "en"
+    }
+   },
+   {
+    "momentId": "en-miscellaneous-en-02~i3",
+    "threadId": "torah-hebrew-name-is-essence",
+    "shiurCount": 2,
+    "years": [
+     5735,
+     5738
+    ],
+    "page": false,
+    "other": {
+     "shiurId": "en-miscellaneous-en-01",
+     "momentId": "en-miscellaneous-en-01~i1",
+     "chapterIdx": 2,
+     "t": 625.97,
+     "year": 5738,
+     "lang": "en"
+    }
+   },
+   {
+    "momentId": "en-miscellaneous-en-02~i5",
+    "threadId": "torah-holier-more-easily-spoiled",
+    "shiurCount": 2,
+    "years": [
+     5735,
+     5738
+    ],
+    "page": false,
+    "other": {
+     "shiurId": "en-miscellaneous-en-01",
+     "momentId": "en-miscellaneous-en-01~i2",
+     "chapterIdx": 4,
+     "t": 1237.76,
+     "year": 5738,
+     "lang": "en"
+    }
+   }
+  ]
+ },
+ "shiur/en-parsha-en-ky-sb-01.json": {
+  "shiurId": "en-parsha-en-ky-sb-01",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "sefer-devarim",
+    "salience": 0.9
+   },
+   {
+    "id": "elul",
+    "salience": 0.8
+   },
+   {
+    "id": "teshuvah",
+    "salience": 0.8
+   },
+   {
+    "id": "avodah-begashmiyus",
+    "salience": 0.6
+   },
+   {
+    "id": "zerizus",
+    "salience": 0.6
+   },
+   {
+    "id": "rosh-hashanah",
+    "salience": 0.5
+   },
+   {
+    "id": "tzedakah-chesed",
+    "salience": 0.35
+   },
+   {
+    "id": "korbanos",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "sefer-devarim",
+     "avodah-begashmiyus"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "avodah-begashmiyus",
+     "brachos",
+     "baal-shem-tov-talmidim"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "tzedakah-chesed",
+     "sefer-devarim"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "korbanos",
+     "zerizus",
+     "maaseh-bereishis"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "rosh-hashanah",
+     "elul",
+     "zerizus"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "elul",
+     "aseres-yemei-teshuvah",
+     "koach-hatefilah"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "teshuvah",
+     "aseres-yemei-teshuvah",
+     "zos-chanukah"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "teshuvah",
+     "sefer-devarim"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "sefer-devarim",
+     "teshuvah",
+     "nisyonos-hador"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "zerizus",
+     "elul"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "beis-hamikdash",
+   "bikkurim",
+   "even-hashesiyah",
+   "hashkamah",
+   "hoshana-rabbah",
+   "nitzotzos",
+   "reishis",
+   "ribono-shel-olam",
+   "teshuvah",
+   "tochachah",
+   "zos-chanukah"
+  ],
+  "personIds": [
+   "adam-harishon",
+   "arizal",
+   "baal-haturim",
+   "baal-shem-tov",
+   "dovid-hamelech",
+   "moshe-rabbeinu",
+   "rambam",
+   "rashi",
+   "yaakov-avinu"
+  ],
+  "workIds": [
+   "baal-haturim",
+   "bamidbar",
+   "berachos",
+   "bereishis",
+   "devarim",
+   "megillah",
+   "mishlei",
+   "mishneh-torah",
+   "rashi",
+   "rosh-hashanah",
+   "shulchan-aruch",
+   "taanis",
+   "talmud-bavli",
+   "tehillim",
+   "zohar"
+  ],
+  "sources": [
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src0",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src2",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src3",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src4",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src5",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src6",
+    "workId": "taanis"
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src7",
+    "workId": "talmud-bavli"
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src8",
+    "workId": "talmud-bavli"
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src9",
+    "workId": "shulchan-aruch"
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src10",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src11",
+    "workId": "talmud-bavli"
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src12",
+    "workId": "shulchan-aruch"
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src13",
+    "workId": "mishneh-torah"
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src14",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src15",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src16",
+    "workId": "baal-haturim"
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src17",
+    "workId": "berachos"
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src18",
+    "workId": "bamidbar"
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src19",
+    "workId": "rosh-hashanah"
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src20",
+    "workId": "zohar"
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src22",
+    "workId": "talmud-bavli"
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src23",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src24",
+    "workId": "zohar"
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src25",
+    "workId": "megillah"
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src26",
+    "workId": "mishlei"
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src27",
+    "workId": "talmud-bavli"
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "en-parsha-en-ky-sb-01~st0",
+    "storyId": "yaakov-wakes-at-the-place-of-the-beis-hamikdash",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~st1",
+    "storyId": "a-listener-counts-the-pesukim-of-ki-savo",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   }
+  ],
+  "insights": []
+ },
+ "shiur/en-parsha-en-nch-01.json": {
+  "shiurId": "en-parsha-en-nch-01",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "noach-mabul",
+    "salience": 1
+   },
+   {
+    "id": "adam-harishon",
+    "salience": 0.5
+   },
+   {
+    "id": "moshiach",
+    "salience": 0.5
+   },
+   {
+    "id": "rosh-chodesh",
+    "salience": 0.4
+   },
+   {
+    "id": "rosh-hashanah",
+    "salience": 0.4
+   },
+   {
+    "id": "shemos-hakedoshim",
+    "salience": 0.4
+   },
+   {
+    "id": "shlichus-hanefesh",
+    "salience": 0.4
+   },
+   {
+    "id": "avraham-avinu",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "noach-mabul",
+     "rosh-chodesh"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "shemos-hakedoshim",
+     "rosh-chodesh"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "rosh-chodesh",
+     "otiyos-gematria"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "rosh-hashanah",
+     "noach-mabul"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "noach-mabul"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "noach-mabul"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "moshiach",
+     "noach-mabul"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "shlichus-hanefesh",
+     "noach-mabul"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "noach-mabul",
+     "adam-harishon",
+     "moshiach"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "noach-mabul",
+     "avodah-begashmiyus"
+    ]
+   },
+   {
+    "idx": 10,
+    "topicIds": [
+     "noach-mabul"
+    ]
+   },
+   {
+    "idx": 11,
+    "topicIds": [
+     "noach-mabul",
+     "avraham-avinu"
+    ]
+   },
+   {
+    "idx": 12,
+    "topicIds": [
+     "noach-mabul",
+     "rosh-chodesh"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "etz-hadaas",
+   "hischadshus",
+   "kedushah",
+   "mabul",
+   "shem-havaya",
+   "siyata-dishmaya",
+   "teivah",
+   "tziruf",
+   "zichronos"
+  ],
+  "personIds": [
+   "adam-harishon",
+   "aharon-hakohen",
+   "avraham-avinu",
+   "baal-shem-tov",
+   "cham",
+   "chava",
+   "chazon-ish",
+   "dovid-hamelech",
+   "ibn-ezra",
+   "me-or-einayim",
+   "miriam",
+   "noach",
+   "rabbi-mordechai-of-lechovitch",
+   "ramban",
+   "rashi",
+   "yeshayahu-hanavi"
+  ],
+  "workIds": [
+   "bereishis",
+   "devarim",
+   "ibn-ezra",
+   "machzor",
+   "machzor-rosh-hashanah",
+   "melachim-i",
+   "midrash",
+   "ramban",
+   "rashi",
+   "sanhedrin",
+   "vayikra",
+   "yeshayahu",
+   "zevachim"
+  ],
+  "sources": [
+   {
+    "momentId": "en-parsha-en-nch-01~src0",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src1",
+    "workId": "midrash"
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src2",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src3",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src4",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src5",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src6",
+    "workId": "machzor"
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src8",
+    "workId": "melachim-i"
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src9",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src10",
+    "workId": "machzor-rosh-hashanah"
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src11",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src12",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src13",
+    "workId": "ramban"
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src14",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src16",
+    "workId": "ibn-ezra"
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src17",
+    "workId": "sanhedrin"
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src18",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src19",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src20",
+    "workId": "yeshayahu"
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src21",
+    "workId": "ramban"
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src22",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src23",
+    "workId": "midrash"
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src24",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src26",
+    "workId": "zevachim"
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src27",
+    "workId": "vayikra"
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src28",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src29",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src30",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src32",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src33",
+    "workId": "bereishis"
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "en-parsha-en-nch-01~st0",
+    "storyId": "rav-nachum-of-chernobyl-and-his-little-bread",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   }
+  ],
+  "insights": []
+ },
+ "shiur/en-parsha-en-svldvs-01.json": {
+  "shiurId": "en-parsha-en-svldvs-01",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "yaakov-veesav",
+    "salience": 1
+   },
+   {
+    "id": "histalkus-tzaddik",
+    "salience": 0.6
+   },
+   {
+    "id": "kashrus",
+    "salience": 0.6
+   },
+   {
+    "id": "avodah-begashmiyus",
+    "salience": 0.4
+   },
+   {
+    "id": "kedushah-vekelipah",
+    "salience": 0.4
+   },
+   {
+    "id": "eliyahu-hanavi",
+    "salience": 0.3
+   },
+   {
+    "id": "maasios",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "yaakov-veesav"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "yaakov-veesav",
+     "kashrus"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "yaakov-veesav",
+     "histalkus-tzaddik"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "yaakov-veesav"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "histalkus-tzaddik"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "kedushah-vekelipah",
+     "yaakov-veesav"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "histalkus-tzaddik",
+     "kedushah-vekelipah"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "yaakov-veesav"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "kashrus",
+     "avodah-begashmiyus"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "maasios",
+     "kashrus"
+    ]
+   },
+   {
+    "idx": 10,
+    "topicIds": [
+     "yaakov-veesav"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "apikores",
+   "bechorah",
+   "brachah",
+   "kedushah",
+   "mearas-hamachpelah",
+   "pi-shnayim",
+   "techiyas-hameisim",
+   "tumah",
+   "tzaddik-nistar",
+   "ushpizin",
+   "yud-gimmel-ikarim"
+  ],
+  "personIds": [
+   "avraham-avinu",
+   "chasam-sofer",
+   "chushim-ben-dan",
+   "elisha-hanavi",
+   "eliyahu-hanavi",
+   "esav",
+   "moshe-rabbeinu",
+   "naftali",
+   "nimrod",
+   "rabbi-nosson-adler",
+   "rabbi-yehoshua-ben-chananya",
+   "rivka-imeinu",
+   "slonimer-rebbe",
+   "yaakov-avinu",
+   "yismach-moshe",
+   "yitzchak-avinu",
+   "yosef-hatzaddik"
+  ],
+  "workIds": [
+   "agra-dekallah",
+   "bereishis",
+   "bnei-yissaschar",
+   "chagigah",
+   "derashos-chasam-sofer",
+   "devarim",
+   "melachim-ii",
+   "mishnah-uktzin",
+   "rashi",
+   "shloshah-asar-ikkarim",
+   "sotah",
+   "talmud-bavli",
+   "targum-onkelos",
+   "targum-yonasan",
+   "yeshayahu",
+   "zohar"
+  ],
+  "sources": [
+   {
+    "momentId": "en-parsha-en-svldvs-01~src0",
+    "workId": "mishnah-uktzin"
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src1",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src2",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src3",
+    "workId": "targum-onkelos"
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src4",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src5",
+    "workId": "shloshah-asar-ikkarim"
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src6",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src7",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src8",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src9",
+    "workId": "melachim-ii"
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src10",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src11",
+    "workId": "agra-dekallah"
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src12",
+    "workId": "bnei-yissaschar"
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src13",
+    "workId": "zohar"
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src14",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src15",
+    "workId": "derashos-chasam-sofer"
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src16",
+    "workId": "chagigah"
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src17",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src18",
+    "workId": "sotah"
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src19",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src20",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src21",
+    "workId": "yeshayahu"
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src22",
+    "workId": "talmud-bavli"
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src23",
+    "workId": "targum-onkelos"
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src24",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src25",
+    "workId": "targum-yonasan"
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "en-parsha-en-svldvs-01~st0",
+    "storyId": "the-yismach-moshe-eats-the-dish-rag",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~st1",
+    "storyId": "the-slonimer-rebbe-and-the-unimmersed-plates",
+    "tellings": 2,
+    "pages": {
+     "quiet": true,
+     "live": true
+    }
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~st2",
+    "storyId": "the-cholent-of-reb-yechezkel-of-kuzmir",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   }
+  ],
+  "insights": []
+ },
+ "shiur/en-parsha-en-vyshlch-01.json": {
+  "shiurId": "en-parsha-en-vyshlch-01",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "yaakov-veesav",
+    "salience": 1
+   },
+   {
+    "id": "gilgulim",
+    "salience": 0.6
+   },
+   {
+    "id": "maalas-yisroel",
+    "salience": 0.6
+   },
+   {
+    "id": "hashgacha-pratis",
+    "salience": 0.5
+   },
+   {
+    "id": "pintele-yid",
+    "salience": 0.4
+   },
+   {
+    "id": "yetzer-hara",
+    "salience": 0.4
+   },
+   {
+    "id": "otiyos-gematria",
+    "salience": 0.3
+   },
+   {
+    "id": "tanya-tzaddik-beinoni-rasha",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "gilgulim",
+     "avodah-begashmiyus"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "hashgacha-pratis"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "yaakov-veesav",
+     "otiyos-gematria"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "eliyahu-hanavi",
+     "yaakov-veesav"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "maasios",
+     "maalas-yisroel"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "maalas-yisroel"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "tanya-tzaddik-beinoni-rasha"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "yaakov-veesav"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "maalas-yisroel",
+     "yaakov-veesav"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "pintele-yid",
+     "gilgulim"
+    ]
+   },
+   {
+    "idx": 10,
+    "topicIds": [
+     "gilgulim"
+    ]
+   },
+   {
+    "idx": 11,
+    "topicIds": [
+     "yaakov-veesav"
+    ]
+   },
+   {
+    "idx": 12,
+    "topicIds": [
+     "yaakov-veesav",
+     "koach-hatefilah"
+    ]
+   },
+   {
+    "idx": 13,
+    "topicIds": [
+     "yaakov-veesav"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "am-haaretz",
+   "asarah-harugei-malchus",
+   "beinoni",
+   "gematria",
+   "geulah",
+   "hashgacha-pratis",
+   "kiddush-hashem",
+   "klipah",
+   "nitzotzos",
+   "seir-laazazel",
+   "yetzer-hara",
+   "yetzer-tov",
+   "zivug"
+  ],
+  "personIds": [
+   "arizal",
+   "baal-shem-tov",
+   "boaz",
+   "dinah",
+   "eliyahu-hanavi",
+   "ephraim",
+   "esav",
+   "lavan",
+   "leah-imeinu",
+   "malach-gavriel",
+   "menashe",
+   "or-hachaim",
+   "osnas",
+   "rabbi-chanina-ben-teradyon",
+   "rabbi-hoshaya",
+   "rabbi-pinchas-ben-yair",
+   "rabbi-shimon-bar-yochai",
+   "rachel-imeinu",
+   "rashi",
+   "rus",
+   "shechem-ben-chamor",
+   "yaakov-avinu",
+   "yosef-hatzaddik"
+  ],
+  "workIds": [
+   "bava-basra",
+   "berachos",
+   "bereishis",
+   "bereishis-rabbah",
+   "chagigah",
+   "chullin",
+   "kiddushin",
+   "megillah",
+   "melachim-i",
+   "midrash",
+   "mishlei",
+   "or-hachaim",
+   "rashi",
+   "talmud-bavli",
+   "tehillim",
+   "zohar"
+  ],
+  "sources": [
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src1",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src2",
+    "workId": "bereishis-rabbah"
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src3",
+    "workId": "chullin"
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src4",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src5",
+    "workId": "or-hachaim"
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src6",
+    "workId": "zohar"
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src7",
+    "workId": "melachim-i"
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src8",
+    "workId": "talmud-bavli"
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src9",
+    "workId": "bereishis-rabbah"
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src10",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src12",
+    "workId": "bava-basra"
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src13",
+    "workId": "berachos"
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src14",
+    "workId": "mishlei"
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src15",
+    "workId": "kiddushin"
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src16",
+    "workId": "megillah"
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src17",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src18",
+    "workId": "kiddushin"
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src19",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src20",
+    "workId": "midrash"
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src21",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src22",
+    "workId": "or-hachaim"
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~src23",
+    "workId": "chagigah"
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "en-parsha-en-vyshlch-01~st0",
+    "storyId": "rabbi-shimon-bar-yochai-and-the-hunters-birds",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~st1",
+    "storyId": "rabbi-pinchas-ben-yairs-donkey",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~st2",
+    "storyId": "eliyahus-two-oxen",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~st3",
+    "storyId": "rabbi-hoshaya-and-the-unlearned-man",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "en-parsha-en-vyshlch-01~st4",
+    "storyId": "asnas-and-the-charm",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   }
+  ],
+  "insights": []
+ },
+ "shiur/en-zmanim-en-chvdsh-tbs-02.json": {
+  "shiurId": "en-zmanim-en-chvdsh-tbs-02",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "chodesh-teves",
+    "salience": 0.95
+   },
+   {
+    "id": "hiskashrus-tzaddikim",
+    "salience": 0.75
+   },
+   {
+    "id": "tachlis-hagalus",
+    "salience": 0.6
+   },
+   {
+    "id": "umos-haolam",
+    "salience": 0.55
+   },
+   {
+    "id": "yosef-veechav",
+    "salience": 0.55
+   },
+   {
+    "id": "ahavas-hashem-leyisroel",
+    "salience": 0.45
+   },
+   {
+    "id": "ketz-hageulah",
+    "salience": 0.45
+   },
+   {
+    "id": "vayechi-shevatim",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "chodesh-teves",
+     "vayechi-shevatim",
+     "chodesh-adar"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "ketz-hageulah",
+     "teshuvah",
+     "ahavas-hashem-leyisroel"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "chodesh-teves",
+     "umos-haolam",
+     "neros-chanukah"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "yosef-veechav",
+     "umos-haolam",
+     "maalas-hatorah"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "umos-haolam",
+     "gedolei-yisroel",
+     "chodesh-teves"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "chodesh-teves",
+     "vayechi-shevatim",
+     "sefiras-haomer"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "ahavas-hashem-leyisroel",
+     "tachlis-hagalus",
+     "yosef-veechav"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "chodesh-teves",
+     "hiskashrus-tzaddikim",
+     "yerushalayim"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "hiskashrus-tzaddikim",
+     "yosef-veechav"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "asarah-bteves",
+   "degalim",
+   "geulah",
+   "hester-panim",
+   "klipah",
+   "knesses-yisrael",
+   "lashon-chibah",
+   "minhag-yisrael-torah",
+   "nittel",
+   "olam-shanah-nefesh",
+   "ribono-shel-olam",
+   "shoresh-haneshamah",
+   "talmid-chacham",
+   "tekufas-teves",
+   "teshuvah",
+   "teves"
+  ],
+  "personIds": [
+   "abudraham",
+   "adam-harishon",
+   "arizal",
+   "bilaam",
+   "chana",
+   "chasam-sofer",
+   "chofetz-chaim",
+   "dan",
+   "eli-hakohen",
+   "haman",
+   "naftali",
+   "onkelos",
+   "rabbi-chaim-vital",
+   "ramban",
+   "rashi",
+   "rav-ada-bar-ahava",
+   "titus",
+   "yaakov-avinu",
+   "yehudah-ben-yaakov",
+   "yonasan-eybeschutz",
+   "yosef-hatzaddik"
+  ],
+  "workIds": [
+   "abudraham",
+   "amos",
+   "avodah-zarah",
+   "bereishis",
+   "chullin",
+   "eichah",
+   "eruvin",
+   "gittin",
+   "kiddushin",
+   "malachi",
+   "megaleh-amukos",
+   "michah",
+   "ramban",
+   "rashi",
+   "sefer-yetzirah",
+   "sotah",
+   "targum-onkelos",
+   "tehillim",
+   "vayikra",
+   "yechezkel"
+  ],
+  "sources": [
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src0",
+    "workId": "megaleh-amukos"
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src1",
+    "workId": "chullin"
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src2",
+    "workId": "michah"
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src4",
+    "workId": "amos"
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src5",
+    "workId": "malachi"
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src6",
+    "workId": "eichah"
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src7",
+    "workId": "ramban"
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src8",
+    "workId": "eruvin"
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src9",
+    "workId": "avodah-zarah"
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src10",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src11",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src12",
+    "workId": "targum-onkelos"
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src13",
+    "workId": "kiddushin"
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src14",
+    "workId": "gittin"
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src18",
+    "workId": "sefer-yetzirah"
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src19",
+    "workId": "vayikra"
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src21",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src22",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src24",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src25",
+    "workId": "yechezkel"
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src26",
+    "workId": "abudraham"
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src27",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src28",
+    "workId": "sotah"
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~st0",
+    "storyId": "adam-harishon-and-the-shortening-days",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~st1",
+    "storyId": "onkelos-consults-the-dead",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~st2",
+    "storyId": "rabbi-yonasan-eybeshutz-answers-the-priests",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   }
+  ],
+  "insights": [
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~i3",
+    "threadId": "zmanim-small-avodah-today-precious",
+    "shiurCount": 2,
+    "years": [
+     5764,
+     5765
+    ],
+    "page": false,
+    "other": {
+     "shiurId": "yi-zmanim-svds-pvrym-ktn-03",
+     "momentId": "yi-zmanim-svds-pvrym-ktn-03~i5",
+     "chapterIdx": 5,
+     "t": 1761.78,
+     "year": 5765,
+     "lang": "yi"
+    }
+   }
+  ]
+ },
+ "shiur/en-zmanim-en-psch-06.json": {
+  "shiurId": "en-zmanim-en-psch-06",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "matzah",
+    "salience": 0.9
+   },
+   {
+    "id": "ahavas-hashem-leyisroel",
+    "salience": 0.8
+   },
+   {
+    "id": "chodesh-nissan",
+    "salience": 0.6
+   },
+   {
+    "id": "hischadshus",
+    "salience": 0.6
+   },
+   {
+    "id": "chametz",
+    "salience": 0.5
+   },
+   {
+    "id": "otiyos-gematria",
+    "salience": 0.4
+   },
+   {
+    "id": "schar-veonesh",
+    "salience": 0.4
+   },
+   {
+    "id": "leil-haseder",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "ahavas-hashem-leyisroel",
+     "chametz"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "hischadshus",
+     "chodesh-nissan"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "schar-veonesh",
+     "hischadshus"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "maaseh-bereishis",
+     "brachos"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "maasios",
+     "avodah-begashmiyus"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "matzah",
+     "otiyos-gematria",
+     "shemos-hakedoshim"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "galus-mitzrayim-makkos",
+     "schar-veonesh"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "matzah",
+     "otiyos-gematria"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "koach-hatefilah",
+     "moshiach",
+     "chodesh-nissan"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "asarah-maamaros",
+   "hamotzi",
+   "hiskashrus",
+   "kares",
+   "klipah",
+   "knesses-yisrael",
+   "milui",
+   "reishis",
+   "ribono-shel-olam",
+   "shem-havaya",
+   "techiyas-hameisim",
+   "yetzias-mitzrayim"
+  ],
+  "personIds": [
+   "adam-harishon",
+   "avnei-nezer",
+   "baal-hatanya",
+   "eliyahu-hanavi",
+   "esav",
+   "malbim",
+   "rashi",
+   "rema",
+   "shlomo-hamelech"
+  ],
+  "workIds": [
+   "avnei-nezer",
+   "bereishis",
+   "chagigah",
+   "devarim",
+   "machzor",
+   "midrash",
+   "mishnah-rosh-hashanah",
+   "rashi",
+   "shabbos",
+   "shemos",
+   "shir-hashirim",
+   "shulchan-aruch",
+   "taanis",
+   "tanya",
+   "targum-onkelos",
+   "tehillim",
+   "zohar"
+  ],
+  "sources": [
+   {
+    "momentId": "en-zmanim-en-psch-06~src0",
+    "workId": "zohar"
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src1",
+    "workId": "tanya"
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src3",
+    "workId": "mishnah-rosh-hashanah"
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src4",
+    "workId": "shemos"
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src5",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src6",
+    "workId": "shir-hashirim"
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src8",
+    "workId": "shulchan-aruch"
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src9",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src10",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src12",
+    "workId": "shabbos"
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src14",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src15",
+    "workId": "taanis"
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src16",
+    "workId": "shemos"
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src17",
+    "workId": "targum-onkelos"
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src18",
+    "workId": "zohar"
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src19",
+    "workId": "shir-hashirim"
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src21",
+    "workId": "avnei-nezer"
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src22",
+    "workId": "chagigah"
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src23",
+    "workId": "midrash"
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src24",
+    "workId": "machzor"
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "en-zmanim-en-psch-06~st0",
+    "storyId": "the-malbim-and-the-cookie",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   }
+  ],
+  "insights": []
+ },
+ "shiur/en-zmanim-en-rsh-hshnh-03.json": {
+  "shiurId": "en-zmanim-en-rsh-hshnh-03",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "rosh-hashanah",
+    "salience": 0.95
+   },
+   {
+    "id": "hischadshus",
+    "salience": 0.7
+   },
+   {
+    "id": "aseres-yemei-teshuvah",
+    "salience": 0.55
+   },
+   {
+    "id": "maaseh-bereishis",
+    "salience": 0.55
+   },
+   {
+    "id": "teshuvah",
+    "salience": 0.5
+   },
+   {
+    "id": "yom-kippur",
+    "salience": 0.45
+   },
+   {
+    "id": "shemoneh-esrei",
+    "salience": 0.35
+   },
+   {
+    "id": "tanya",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "rosh-hashanah",
+     "maaseh-bereishis"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "rosh-hashanah",
+     "shemoneh-esrei"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "hischadshus",
+     "maaseh-bereishis"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "tanya",
+     "hischadshus",
+     "rosh-hashanah"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "aseres-yemei-teshuvah",
+     "teshuvah"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "yom-kippur",
+     "pintele-yid"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "asarah-maamaros",
+   "aseres-yemei-teshuvah",
+   "cheshbon-hanefesh",
+   "kodesh-hakodashim",
+   "kohen-gadol",
+   "maaseh-bereishis",
+   "malchus",
+   "oneg-shabbos",
+   "retzon-hashem",
+   "ribono-shel-olam",
+   "shabbos-shuvah",
+   "yom-hadin",
+   "zichronos"
+  ],
+  "personIds": [
+   "adam-harishon",
+   "pharaoh",
+   "rambam",
+   "rebbe-reb-bunim",
+   "shelah"
+  ],
+  "workIds": [
+   "bereishis",
+   "bereishis-rabbah",
+   "machzor-rosh-hashanah",
+   "mishnah-keilim",
+   "mishneh-torah",
+   "pirkei-avos",
+   "rosh-hashanah",
+   "shelah",
+   "tanya",
+   "tehillim",
+   "yechezkel",
+   "yirmiyahu"
+  ],
+  "sources": [
+   {
+    "momentId": "en-zmanim-en-rsh-hshnh-03~src0",
+    "workId": "pirkei-avos"
+   },
+   {
+    "momentId": "en-zmanim-en-rsh-hshnh-03~src1",
+    "workId": "rosh-hashanah"
+   },
+   {
+    "momentId": "en-zmanim-en-rsh-hshnh-03~src2",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "en-zmanim-en-rsh-hshnh-03~src3",
+    "workId": "yechezkel"
+   },
+   {
+    "momentId": "en-zmanim-en-rsh-hshnh-03~src4",
+    "workId": "machzor-rosh-hashanah"
+   },
+   {
+    "momentId": "en-zmanim-en-rsh-hshnh-03~src5",
+    "workId": "machzor-rosh-hashanah"
+   },
+   {
+    "momentId": "en-zmanim-en-rsh-hshnh-03~src6",
+    "workId": "bereishis-rabbah"
+   },
+   {
+    "momentId": "en-zmanim-en-rsh-hshnh-03~src9",
+    "workId": "tanya"
+   },
+   {
+    "momentId": "en-zmanim-en-rsh-hshnh-03~src10",
+    "workId": "machzor-rosh-hashanah"
+   },
+   {
+    "momentId": "en-zmanim-en-rsh-hshnh-03~src11",
+    "workId": "shelah"
+   },
+   {
+    "momentId": "en-zmanim-en-rsh-hshnh-03~src12",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "en-zmanim-en-rsh-hshnh-03~src13",
+    "workId": "rosh-hashanah"
+   },
+   {
+    "momentId": "en-zmanim-en-rsh-hshnh-03~src14",
+    "workId": "mishnah-keilim"
+   },
+   {
+    "momentId": "en-zmanim-en-rsh-hshnh-03~src16",
+    "workId": "yirmiyahu"
+   },
+   {
+    "momentId": "en-zmanim-en-rsh-hshnh-03~src17",
+    "workId": "mishneh-torah"
+   }
+  ],
+  "stories": [],
+  "insights": []
+ },
+ "shiur/en-zmanim-en-tv-bshbt-01.json": {
+  "shiurId": "en-zmanim-en-tv-bshbt-01",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "tu-bishvat",
+    "salience": 0.95
+   },
+   {
+    "id": "shemos-hakedoshim",
+    "salience": 0.9
+   },
+   {
+    "id": "sefiros",
+    "salience": 0.6
+   },
+   {
+    "id": "rosh-chodesh",
+    "salience": 0.55
+   },
+   {
+    "id": "kedushah-vekelipah",
+    "salience": 0.5
+   },
+   {
+    "id": "kavanah-betefilah",
+    "salience": 0.45
+   },
+   {
+    "id": "otiyos-gematria",
+    "salience": 0.45
+   },
+   {
+    "id": "sukkos",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "pardes",
+     "shemos-hakedoshim"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "sefiros",
+     "shidduchim-chasunah"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "sefiros",
+     "yaakov-veesav"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "shemos-hakedoshim",
+     "chodesh-nissan",
+     "rosh-hashanah"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "shemos-hakedoshim",
+     "tammuz-av",
+     "chodesh-teves"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "kavanah-betefilah",
+     "shemos-hakedoshim"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "tu-bishvat",
+     "sefiras-haomer",
+     "shavuos"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "shemos-hakedoshim",
+     "shechinah",
+     "mishkan"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "kedushah-vekelipah",
+     "otiyos-gematria"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "tu-bishvat",
+     "kedushah-vekelipah",
+     "sukkos"
+    ]
+   },
+   {
+    "idx": 10,
+    "topicIds": [
+     "tu-bishvat",
+     "adam-harishon"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "esrog",
+   "ilan",
+   "ilanei-serak",
+   "knesses-yisrael",
+   "mashpia-umekabel",
+   "midas-hachesed",
+   "midas-hadin",
+   "rashei-teivos",
+   "shem-adnus",
+   "shem-havaya",
+   "sitra-achra",
+   "sofei-teivos",
+   "tu-bishvat",
+   "tumah"
+  ],
+  "personIds": [
+   "achashverosh",
+   "adam-harishon",
+   "avraham-avinu",
+   "baal-hatanya",
+   "bilhah",
+   "bnei-yissaschar",
+   "divrei-chaim",
+   "esav",
+   "or-hachaim",
+   "rachel-imeinu",
+   "rashi",
+   "rebbe-nachman-of-breslov",
+   "vashti",
+   "yaakov-avinu"
+  ],
+  "workIds": [
+   "bereishis",
+   "bnei-yissaschar",
+   "divrei-chaim",
+   "esther",
+   "iyov",
+   "magen-avraham",
+   "midrash",
+   "or-hachaim",
+   "rashi-on-bereishis",
+   "rashi-on-rosh-hashanah",
+   "rashi-on-vayikra",
+   "shemos",
+   "shulchan-aruch",
+   "talmud-bavli",
+   "tanya",
+   "tehillim",
+   "vayikra"
+  ],
+  "sources": [
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src0",
+    "workId": "tanya"
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src1",
+    "workId": "rashi-on-bereishis"
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src2",
+    "workId": "talmud-bavli"
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src4",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src5",
+    "workId": "shemos"
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src6",
+    "workId": "esther"
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src8",
+    "workId": "divrei-chaim"
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src9",
+    "workId": "shemos"
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src10",
+    "workId": "or-hachaim"
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src11",
+    "workId": "iyov"
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src12",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src13",
+    "workId": "rashi-on-rosh-hashanah"
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src14",
+    "workId": "bnei-yissaschar"
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src15",
+    "workId": "shulchan-aruch"
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src16",
+    "workId": "magen-avraham"
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src17",
+    "workId": "midrash"
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src18",
+    "workId": "vayikra"
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src19",
+    "workId": "rashi-on-vayikra"
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~st0",
+    "storyId": "the-ohr-hachaim-and-the-two-dogs",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   }
+  ],
+  "insights": []
+ },
+ "shiur/yi-parshas-hashavua-brshys-01.json": {
+  "shiurId": "yi-parshas-hashavua-brshys-01",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "adam-harishon",
+    "salience": 0.9
+   },
+   {
+    "id": "sukkos",
+    "salience": 0.85
+   },
+   {
+    "id": "ahavas-hashem-leyisroel",
+    "salience": 0.7
+   },
+   {
+    "id": "shemini-atzeres",
+    "salience": 0.6
+   },
+   {
+    "id": "shidduchim-chasunah",
+    "salience": 0.5
+   },
+   {
+    "id": "shoresh-moshiach",
+    "salience": 0.4
+   },
+   {
+    "id": "yehuda-vetamar",
+    "salience": 0.3
+   },
+   {
+    "id": "yeshivah-bachurim",
+    "salience": 0.2
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "sukkos"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "sukkos"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "sukkos"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "adam-harishon",
+     "ahavas-hashem-leyisroel",
+     "sukkos"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "adam-harishon",
+     "shidduchim-chasunah"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "shidduchim-chasunah",
+     "adam-harishon"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "adam-harishon"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "ahavas-hashem-leyisroel",
+     "yamim-noraim"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "ahavas-hashem-leyisroel"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "shoresh-moshiach",
+     "yehuda-vetamar"
+    ]
+   },
+   {
+    "idx": 10,
+    "topicIds": [
+     "sukkos",
+     "shemini-atzeres",
+     "hischadshus"
+    ]
+   },
+   {
+    "idx": 11,
+    "topicIds": [
+     "yeshivah-bachurim"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "knesses-yisrael",
+   "satan",
+   "shemini-atzeres",
+   "shviras-haluchos",
+   "sukkah"
+  ],
+  "personIds": [
+   "achan",
+   "adam-harishon",
+   "chasam-sofer",
+   "chava",
+   "peretz",
+   "rambam",
+   "ramban",
+   "rashi",
+   "tamar",
+   "yehudah-ben-yaakov",
+   "zerach"
+  ],
+  "workIds": [
+   "amos",
+   "avodah-zarah",
+   "bereishis",
+   "devarim",
+   "kiddushin",
+   "midrash",
+   "mishnah-sukkah",
+   "mishneh-torah",
+   "peirush-hamishnayos",
+   "ramban",
+   "rashi",
+   "sukkah",
+   "vayikra",
+   "yirmiyahu"
+  ],
+  "sources": [
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src0",
+    "workId": "mishnah-sukkah"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src1",
+    "workId": "peirush-hamishnayos"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src2",
+    "workId": "sukkah"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src3",
+    "workId": "vayikra"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src4",
+    "workId": "mishneh-torah"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src5",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src6",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src8",
+    "workId": "kiddushin"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src9",
+    "workId": "ramban"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src10",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src11",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src12",
+    "workId": "yirmiyahu"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src13",
+    "workId": "sukkah"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src15",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src16",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src17",
+    "workId": "avodah-zarah"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src18",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src19",
+    "workId": "amos"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-01~src20",
+    "workId": "midrash"
+   }
+  ],
+  "stories": [],
+  "insights": []
+ },
+ "shiur/yi-parshas-hashavua-brshys-03.json": {
+  "shiurId": "yi-parshas-hashavua-brshys-03",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "bitachon",
+    "salience": 1
+   },
+   {
+    "id": "adam-harishon",
+    "salience": 0.8
+   },
+   {
+    "id": "nissim-veteva",
+    "salience": 0.6
+   },
+   {
+    "id": "kedushas-eretz-yisroel",
+    "salience": 0.5
+   },
+   {
+    "id": "shidduchim-chasunah",
+    "salience": 0.5
+   },
+   {
+    "id": "umos-haolam",
+    "salience": 0.4
+   },
+   {
+    "id": "chodesh-nissan",
+    "salience": 0.3
+   },
+   {
+    "id": "sukkos",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "adam-harishon",
+     "shidduchim-chasunah"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "bitachon",
+     "sukkos"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "bitachon",
+     "anavah-bittul"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "maaseh-bereishis"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "nissim-veteva"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "shlichus-hanefesh",
+     "umos-haolam"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "adam-harishon",
+     "noach-mabul",
+     "matan-torah"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "kedushas-eretz-yisroel",
+     "umos-haolam"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "chodesh-nissan",
+     "maaseh-bereishis"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "bechirah",
+   "bitachon",
+   "bittul",
+   "dor-haflagah",
+   "hachodesh-hazeh-lachem",
+   "listim-atem",
+   "maaseh-bereishis",
+   "mabul",
+   "mann",
+   "ribono-shel-olam",
+   "sheva-mitzvos-bnei-noach",
+   "sukkah",
+   "tardemah",
+   "teva"
+  ],
+  "personIds": [
+   "adam-harishon",
+   "avraham-avinu",
+   "chizkiyahu-hamelech",
+   "dovid-hamelech",
+   "eliezer-eved-avraham",
+   "esav",
+   "hevel",
+   "lavan",
+   "moshe-rabbeinu",
+   "rabbi-yitzchak",
+   "rambam",
+   "rashi",
+   "sancheiriv",
+   "yaakov-avinu",
+   "yishmael",
+   "yitzchak-avinu"
+  ],
+  "workIds": [
+   "bamidbar",
+   "bereishis",
+   "bereishis-rabbah",
+   "chovos-halevavos",
+   "devarim",
+   "melachim-ii",
+   "midrash",
+   "mishnah-sukkah",
+   "rashi",
+   "sanhedrin",
+   "shabbos",
+   "shemos",
+   "talmud-bavli",
+   "tehillim",
+   "yevamos",
+   "yoma"
+  ],
+  "sources": [
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src0",
+    "workId": "midrash"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src1",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src2",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src3",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src4",
+    "workId": "yevamos"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src5",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src6",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src7",
+    "workId": "midrash"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src8",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src9",
+    "workId": "melachim-ii"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src10",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src11",
+    "workId": "talmud-bavli"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src12",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src13",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src14",
+    "workId": "bereishis-rabbah"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src15",
+    "workId": "mishnah-sukkah"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src16",
+    "workId": "chovos-halevavos"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src17",
+    "workId": "yoma"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src18",
+    "workId": "bamidbar"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src19",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src20",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src21",
+    "workId": "shemos"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src22",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src23",
+    "workId": "shabbos"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src24",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src25",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src26",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src27",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src28",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src29",
+    "workId": "sanhedrin"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src30",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src31",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src32",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src33",
+    "workId": "talmud-bavli"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src35",
+    "workId": "yoma"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src36",
+    "workId": "talmud-bavli"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src37",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~src38",
+    "workId": "tehillim"
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~st0",
+    "storyId": "chizkiyahu-sleeps-during-sanherivs-siege",
+    "tellings": 2,
+    "pages": {
+     "quiet": true,
+     "live": true
+    }
+   },
+   {
+    "momentId": "yi-parshas-hashavua-brshys-03~st1",
+    "storyId": "the-man-who-nursed-his-infant",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   }
+  ],
+  "insights": []
+ },
+ "shiur/yi-parshas-hashavua-hzynv-01.json": {
+  "shiurId": "yi-parshas-hashavua-hzynv-01",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "yesodei-haemunah",
+    "salience": 1
+   },
+   {
+    "id": "aseres-yemei-teshuvah",
+    "salience": 0.9
+   },
+   {
+    "id": "churban-europa",
+    "salience": 0.6
+   },
+   {
+    "id": "simanei-ikvesa",
+    "salience": 0.6
+   },
+   {
+    "id": "rosh-hashanah",
+    "salience": 0.5
+   },
+   {
+    "id": "sefer-devarim",
+    "salience": 0.5
+   },
+   {
+    "id": "hester-panim",
+    "salience": 0.4
+   },
+   {
+    "id": "tefilah-betzibbur",
+    "salience": 0.4
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "sefer-devarim",
+     "aseres-yemei-teshuvah"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "sefer-devarim",
+     "netzach-yisroel"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "rosh-hashanah",
+     "sefer-devarim"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "churban-europa",
+     "hester-panim"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "simanei-ikvesa",
+     "maasios"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "simanei-ikvesa",
+     "nissim-beretz-yisroel",
+     "moshiach"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "niggun-shirah",
+     "sefer-devarim"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "yesodei-haemunah",
+     "sefer-devarim"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "rosh-hashanah",
+     "yiras-shamayim"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "aseres-yemei-teshuvah",
+     "tefilah-betzibbur",
+     "yesodei-haemunah"
+    ]
+   },
+   {
+    "idx": 10,
+    "topicIds": [
+     "rosh-hashanah",
+     "hiskashrus-tzaddikim"
+    ]
+   },
+   {
+    "idx": 11,
+    "topicIds": [
+     "madreigos-haneshamah",
+     "rosh-hashanah"
+    ]
+   },
+   {
+    "idx": 12,
+    "topicIds": [
+     "maasios",
+     "gedolei-yisroel"
+    ]
+   },
+   {
+    "idx": 13,
+    "topicIds": [
+     "koach-hatefilah",
+     "ahavas-yisroel",
+     "aseres-yemei-teshuvah"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "asarah-maamaros",
+   "aseres-yemei-teshuvah",
+   "chazaras-hashatz",
+   "emunah",
+   "haazinu",
+   "ribono-shel-olam",
+   "rosh-hashanah",
+   "shirah",
+   "shofar",
+   "yechidah",
+   "yom-hadin",
+   "yom-kippur"
+  ],
+  "personIds": [
+   "avner",
+   "gamal-nasser",
+   "kayin",
+   "ohev-yisrael",
+   "rabbi-elchonon-wasserman",
+   "rabbi-mordechai-of-lechovitch",
+   "rabbi-yehuda-hanasi",
+   "rambam",
+   "ramban",
+   "rav-aharon-kotler",
+   "rav-nosson-wachtfogel",
+   "ruzhiner",
+   "sfas-emes",
+   "yehoshua-bin-nun"
+  ],
+  "workIds": [
+   "bamidbar",
+   "bava-metzia",
+   "bereishis",
+   "devarim",
+   "igros-harambam",
+   "midrash",
+   "mishneh-torah",
+   "ramban-on-the-torah",
+   "sefer-yetzirah",
+   "sfas-emes",
+   "shulchan-aruch",
+   "sifrei",
+   "tehillim",
+   "vayikra",
+   "yeshayahu"
+  ],
+  "sources": [
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src0",
+    "workId": "ramban-on-the-torah"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src1",
+    "workId": "ramban-on-the-torah"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src2",
+    "workId": "sifrei"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src3",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src4",
+    "workId": "yeshayahu"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src5",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src6",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src7",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src8",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src9",
+    "workId": "vayikra"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src10",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src11",
+    "workId": "mishneh-torah"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src12",
+    "workId": "sfas-emes"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src13",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src14",
+    "workId": "igros-harambam"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src15",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src16",
+    "workId": "midrash"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src17",
+    "workId": "shulchan-aruch"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src18",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src20",
+    "workId": "bamidbar"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src21",
+    "workId": "sefer-yetzirah"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src22",
+    "workId": "yeshayahu"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src23",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src24",
+    "workId": "bava-metzia"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src25",
+    "workId": "vayikra"
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~st0",
+    "storyId": "the-ramban-and-his-student-avner",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~st1",
+    "storyId": "the-chassan-waiting-for-the-mechutan",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~st2",
+    "storyId": "the-lechovitcher-chassid-who-heard-hamelech",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~st3",
+    "storyId": "rebbi-the-calf-and-the-mouse",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   }
+  ],
+  "insights": [
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~i4",
+    "threadId": "avodas-hashem-the-hundred-and-first-time",
+    "shiurCount": 2,
+    "years": [
+     5732,
+     5771
+    ],
+    "page": false,
+    "other": {
+     "shiurId": "yi-shonos-31",
+     "momentId": "yi-shonos-31~i6",
+     "chapterIdx": 5,
+     "t": 2014.07,
+     "year": 5771,
+     "lang": "yi"
+    }
+   }
+  ]
+ },
+ "shiur/yi-parshas-hashavua-mvr-01.json": {
+  "shiurId": "yi-parshas-hashavua-mvr-01",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "sefiras-haomer",
+    "salience": 0.8
+   },
+   {
+    "id": "schar-veonesh",
+    "salience": 0.6
+   },
+   {
+    "id": "brachos",
+    "salience": 0.55
+   },
+   {
+    "id": "kedushas-eretz-yisroel",
+    "salience": 0.5
+   },
+   {
+    "id": "hachanah-lekabbalas-hatorah",
+    "salience": 0.45
+   },
+   {
+    "id": "pirkei-avos",
+    "salience": 0.45
+   },
+   {
+    "id": "kedushas-shabbos",
+    "salience": 0.4
+   },
+   {
+    "id": "korbanos",
+    "salience": 0.35
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "brachos"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "brachos",
+     "hodaah"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "brachos",
+     "hodaah"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "pirkei-avos",
+     "schar-veonesh",
+     "maalas-yisroel"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "schar-veonesh",
+     "kedushas-shabbos",
+     "kedushas-eretz-yisroel"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "kedushas-eretz-yisroel"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "pirkei-avos",
+     "ahavas-hashem-leyisroel"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "sefiras-haomer",
+     "kedushas-eretz-yisroel",
+     "middos"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "sefiras-haomer",
+     "hachanah-lekabbalas-hatorah"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "maaseh-bereishis",
+     "kedushas-shabbos"
+    ]
+   },
+   {
+    "idx": 10,
+    "topicIds": [
+     "mishkan",
+     "kedushas-shabbos"
+    ]
+   },
+   {
+    "idx": 11,
+    "topicIds": [
+     "sefiras-haomer",
+     "lag-baomer"
+    ]
+   },
+   {
+    "idx": 12,
+    "topicIds": [
+     "korbanos",
+     "sefiras-haomer",
+     "madreigos-haneshamah"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "baal-mum",
+   "kodesh-hakodashim",
+   "mazikin",
+   "meein-olam-haba",
+   "olam-haba",
+   "sefiras-haomer",
+   "temimus",
+   "yovel"
+  ],
+  "personIds": [
+   "aharon-hakohen",
+   "avraham-avinu",
+   "chozeh-of-lublin",
+   "maharal",
+   "malach-michael",
+   "rabbi-akiva",
+   "rabbi-yochanan",
+   "rashi",
+   "rav-huna",
+   "rav-nachman-bar-yitzchak"
+  ],
+  "workIds": [
+   "berachos",
+   "bereishis",
+   "divrei-hayamim",
+   "mishnah-sanhedrin",
+   "rashi",
+   "shemos",
+   "tehillim",
+   "tosafos",
+   "vayikra",
+   "yeshayahu",
+   "yevamos"
+  ],
+  "sources": [
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src0",
+    "workId": "berachos"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src1",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src2",
+    "workId": "tosafos"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src3",
+    "workId": "vayikra"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src4",
+    "workId": "mishnah-sanhedrin"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src6",
+    "workId": "yeshayahu"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src7",
+    "workId": "berachos"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src8",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src9",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src10",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src12",
+    "workId": "shemos"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src14",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src15",
+    "workId": "shemos"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src17",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src18",
+    "workId": "vayikra"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src19",
+    "workId": "vayikra"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src20",
+    "workId": "yevamos"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src21",
+    "workId": "vayikra"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src22",
+    "workId": "vayikra"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-mvr-01~src23",
+    "workId": "divrei-hayamim"
+   }
+  ],
+  "stories": [],
+  "insights": []
+ },
+ "shiur/yi-parshas-hashavua-shvptym-01.json": {
+  "shiurId": "yi-parshas-hashavua-shvptym-01",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "anavah-bittul",
+    "salience": 1
+   },
+   {
+    "id": "rosh-hashanah",
+    "salience": 0.8
+   },
+   {
+    "id": "hiskashrus-tzaddikim",
+    "salience": 0.7
+   },
+   {
+    "id": "dovid-hamelech",
+    "salience": 0.6
+   },
+   {
+    "id": "elul",
+    "salience": 0.5
+   },
+   {
+    "id": "yerushalayim",
+    "salience": 0.5
+   },
+   {
+    "id": "bitachon",
+    "salience": 0.4
+   },
+   {
+    "id": "korbanos",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "korbanos",
+     "anavah-bittul"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "hiskashrus-tzaddikim",
+     "avraham-avinu",
+     "anavah-bittul"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "dovid-hamelech",
+     "anavah-bittul",
+     "kedushas-shabbos"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "yerushalayim",
+     "kedushas-shabbos"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "rosh-hashanah",
+     "yerushalayim"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "avraham-avinu",
+     "anavah-bittul"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "dovid-hamelech",
+     "talmidei-chachamim"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "dovid-hamelech",
+     "beis-hamikdash-churban",
+     "yerushalayim"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "anavah-bittul",
+     "dovid-hamelech",
+     "avraham-avinu"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "dovid-hamelech",
+     "beis-hamikdash-churban"
+    ]
+   },
+   {
+    "idx": 10,
+    "topicIds": [
+     "elul",
+     "anavah-bittul",
+     "bitachon"
+    ]
+   },
+   {
+    "idx": 11,
+    "topicIds": [
+     "bitachon"
+    ]
+   },
+   {
+    "idx": 12,
+    "topicIds": [
+     "anavah-bittul",
+     "hiskashrus-tzaddikim"
+    ]
+   },
+   {
+    "idx": 13,
+    "topicIds": [
+     "korbanos",
+     "anavah-bittul"
+    ]
+   },
+   {
+    "idx": 14,
+    "topicIds": [
+     "rosh-hashanah",
+     "moshiach"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "bitachon",
+   "bittul",
+   "elul",
+   "kabbalas-ol-malchus-shamayim",
+   "malchus-beis-david",
+   "mashpia-umekabel",
+   "ribono-shel-olam",
+   "ushpizin"
+  ],
+  "personIds": [
+   "avraham-avinu",
+   "baal-hatanya",
+   "bnei-yissaschar",
+   "dovid-hamelech",
+   "malki-tzedek",
+   "mishneh-lamelech",
+   "moshe-rabbeinu",
+   "rabbi-naftali-amsterdam",
+   "rambam",
+   "rashi",
+   "shem",
+   "shimon-ben-shetach",
+   "shlomo-hamelech",
+   "shmuel-hanavi",
+   "yannai-hamelech"
+  ],
+  "workIds": [
+   "avodah-zarah",
+   "berachos",
+   "bereishis",
+   "bnei-yissaschar",
+   "chovos-halevavos",
+   "devarim",
+   "divrei-hayamim-i",
+   "mishneh-lamelech",
+   "mishneh-torah",
+   "nedarim",
+   "pirkei-avos",
+   "rashi",
+   "rosh-hashanah",
+   "sanhedrin",
+   "shemos",
+   "shmuel-i",
+   "shmuel-ii",
+   "talmud-bavli",
+   "tanya",
+   "tehillim",
+   "vayikra",
+   "yeshayahu",
+   "zechariah",
+   "zohar"
+  ],
+  "sources": [
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src0",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src1",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src2",
+    "workId": "talmud-bavli"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src3",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src4",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src5",
+    "workId": "sanhedrin"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src6",
+    "workId": "shmuel-i"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src7",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src8",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src9",
+    "workId": "nedarim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src10",
+    "workId": "berachos"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src11",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src12",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src13",
+    "workId": "yeshayahu"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src14",
+    "workId": "zohar"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src15",
+    "workId": "avodah-zarah"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src16",
+    "workId": "shemos"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src17",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src18",
+    "workId": "rosh-hashanah"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src19",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src20",
+    "workId": "zechariah"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src22",
+    "workId": "pirkei-avos"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src23",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src24",
+    "workId": "divrei-hayamim-i"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src25",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src26",
+    "workId": "vayikra"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src27",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src28",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src29",
+    "workId": "sanhedrin"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src30",
+    "workId": "talmud-bavli"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src31",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src32",
+    "workId": "shmuel-ii"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src33",
+    "workId": "mishneh-lamelech"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src34",
+    "workId": "shmuel-i"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src36",
+    "workId": "bnei-yissaschar"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src37",
+    "workId": "tanya"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src39",
+    "workId": "sanhedrin"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src40",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src41",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src42",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src43",
+    "workId": "chovos-halevavos"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src44",
+    "workId": "mishneh-torah"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src45",
+    "workId": "yeshayahu"
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~st0",
+    "storyId": "r-naftali-amsterdams-sefer",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~st1",
+    "storyId": "king-yannai-and-the-sanhedrin",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   }
+  ],
+  "insights": []
+ },
+ "shiur/yi-parshas-hashavua-vschnn-01.json": {
+  "shiurId": "yi-parshas-hashavua-vschnn-01",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "pesukei-dezimra",
+    "salience": 1
+   },
+   {
+    "id": "tefilah-betzibbur",
+    "salience": 0.7
+   },
+   {
+    "id": "kavanah-betefilah",
+    "salience": 0.6
+   },
+   {
+    "id": "moshe-rabbeinu",
+    "salience": 0.6
+   },
+   {
+    "id": "kedushas-shabbos",
+    "salience": 0.4
+   },
+   {
+    "id": "yetzer-hara",
+    "salience": 0.4
+   },
+   {
+    "id": "sefer-devarim",
+    "salience": 0.3
+   },
+   {
+    "id": "zerizus",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "moshe-rabbeinu",
+     "koach-hatefilah",
+     "sefer-devarim"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "pesukei-dezimra",
+     "koach-hatefilah",
+     "dovid-hamelech"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "pesukei-dezimra"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "pesukei-dezimra",
+     "taamei-hamitzvos"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "pesukei-dezimra",
+     "tefilah-betzibbur",
+     "kedushas-shabbos"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "pesukei-dezimra",
+     "kedushas-shabbos"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "kedushas-shabbos",
+     "pesukei-dezimra",
+     "moshe-rabbeinu"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "tefilah-betzibbur"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "tefilah-betzibbur",
+     "torah"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "hashgacha-pratis",
+     "shlichus-hanefesh"
+    ]
+   },
+   {
+    "idx": 10,
+    "topicIds": [
+     "maasios",
+     "yetzer-hara",
+     "baal-shem-tov-talmidim"
+    ]
+   },
+   {
+    "idx": 11,
+    "topicIds": [
+     "yetzer-hara"
+    ]
+   },
+   {
+    "idx": 12,
+    "topicIds": [
+     "kavanah-betefilah"
+    ]
+   },
+   {
+    "idx": 13,
+    "topicIds": [
+     "zerizus",
+     "yetzer-hara"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "avodah-shebalev",
+   "azus-dikdushah",
+   "hisbonenus",
+   "hislahavus",
+   "kol-ram",
+   "korbanos",
+   "mehadrin",
+   "neshamah-yeseirah",
+   "pesukei-dezimra",
+   "pidyon-shvuyim",
+   "ribono-shel-olam"
+  ],
+  "personIds": [
+   "aharon-hakohen",
+   "arizal",
+   "dovid-hamelech",
+   "korach",
+   "moshe-rabbeinu",
+   "rabbi-moshe-leib-of-sassov",
+   "rabbi-pinchas-ben-yair",
+   "rebbe-elimelech-of-lizhensk"
+  ],
+  "workIds": [
+   "berachos",
+   "chullin",
+   "devarim",
+   "mesilas-yesharim",
+   "mishnah-uktzin",
+   "shmuel-i",
+   "shulchan-aruch",
+   "taanis",
+   "tanya",
+   "tehillim",
+   "yechezkel",
+   "yeshayahu"
+  ],
+  "sources": [
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src0",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src1",
+    "workId": "yeshayahu"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src2",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src3",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src4",
+    "workId": "shmuel-i"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src5",
+    "workId": "berachos"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src6",
+    "workId": "chullin"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src7",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src8",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src10",
+    "workId": "mishnah-uktzin"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src11",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src12",
+    "workId": "shulchan-aruch"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src13",
+    "workId": "mesilas-yesharim"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src14",
+    "workId": "taanis"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src15",
+    "workId": "tanya"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src16",
+    "workId": "yechezkel"
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~st0",
+    "storyId": "reb-moshe-leib-of-sassov-at-the-poritzs-feast",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~st1",
+    "storyId": "the-lost-chassids-blessings",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~st2",
+    "storyId": "the-melamed-and-his-uncle",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   }
+  ],
+  "insights": []
+ },
+ "shiur/yi-parshas-hashavua-vyshb-08.json": {
+  "shiurId": "yi-parshas-hashavua-vyshb-08",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "moshiach-ben-yosef",
+    "salience": 1
+   },
+   {
+    "id": "yehuda-vetamar",
+    "salience": 0.7
+   },
+   {
+    "id": "yosef-veechav",
+    "salience": 0.7
+   },
+   {
+    "id": "nes-chanukah",
+    "salience": 0.6
+   },
+   {
+    "id": "hashgacha-pratis",
+    "salience": 0.5
+   },
+   {
+    "id": "neros-chanukah",
+    "salience": 0.4
+   },
+   {
+    "id": "maasios",
+    "salience": 0.2
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "maasios",
+     "rebbes-hador"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "neros-chanukah"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "yehuda-vetamar",
+     "yosef-veechav"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "shoresh-moshiach",
+     "neros-chanukah"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "moshiach-ben-yosef"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "hashgacha-pratis"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "yehuda-vetamar",
+     "yosef-veechav"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "yosef-veechav"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "nes-chanukah"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "lematah-measarah",
+   "mashiach-ben-david",
+   "mashiach-ben-yosef",
+   "mazal",
+   "mechiras-yosef",
+   "mesiras-nefesh",
+   "nittel",
+   "ohr-haganuz",
+   "oro-shel-mashiach",
+   "psilos-ushemanim",
+   "sitra-achra",
+   "tekufah"
+  ],
+  "personIds": [
+   "adam-harishon",
+   "bnei-yissaschar",
+   "chashmonaim",
+   "dinah",
+   "ephraim",
+   "malach-michael",
+   "osnas",
+   "peretz",
+   "rabbeinu-bachya",
+   "rambam",
+   "rashi",
+   "sar-shalom-of-belz",
+   "tamar",
+   "yaakov-avinu",
+   "yehudah-ben-yaakov",
+   "yosef-hatzaddik"
+  ],
+  "workIds": [
+   "avodah-zarah",
+   "bamidbar",
+   "bereishis",
+   "bereishis-rabbah",
+   "bnei-yissaschar",
+   "kad-hakemach",
+   "lecha-dodi",
+   "midrash",
+   "mishlei",
+   "mishneh-torah",
+   "rashi",
+   "rus",
+   "sanhedrin",
+   "shabbos",
+   "sotah",
+   "sukkah",
+   "talmud-bavli",
+   "yeshayahu"
+  ],
+  "sources": [
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src0",
+    "workId": "shabbos"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src1",
+    "workId": "mishlei"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src2",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src3",
+    "workId": "shabbos"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src4",
+    "workId": "sukkah"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src5",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src6",
+    "workId": "bnei-yissaschar"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src7",
+    "workId": "kad-hakemach"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src9",
+    "workId": "midrash"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src10",
+    "workId": "yeshayahu"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src11",
+    "workId": "sotah"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src12",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src13",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src14",
+    "workId": "lecha-dodi"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src15",
+    "workId": "rus"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src16",
+    "workId": "talmud-bavli"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src17",
+    "workId": "bereishis-rabbah"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src18",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src19",
+    "workId": "sotah"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src20",
+    "workId": "midrash"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src21",
+    "workId": "sanhedrin"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src22",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src23",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src24",
+    "workId": "mishneh-torah"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src25",
+    "workId": "bamidbar"
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~src26",
+    "workId": "avodah-zarah"
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "yi-parshas-hashavua-vyshb-08~st0",
+    "storyId": "the-belzer-rav-and-the-frozen-river",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   }
+  ],
+  "insights": []
+ },
+ "shiur/yi-shonos-10.json": {
+  "shiurId": "yi-shonos-10",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "technology",
+    "salience": 0.95
+   },
+   {
+    "id": "galus-mitzrayim-makkos",
+    "salience": 0.7
+   },
+   {
+    "id": "zerizus",
+    "salience": 0.6
+   },
+   {
+    "id": "nisyonos-hador",
+    "salience": 0.5
+   },
+   {
+    "id": "bayis-neeman",
+    "salience": 0.4
+   },
+   {
+    "id": "shidduchim-chasunah",
+    "salience": 0.4
+   },
+   {
+    "id": "tefilah-betzibbur",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "galus-mitzrayim-makkos",
+     "nisyonos-hador"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "galus-mitzrayim-makkos",
+     "zerizus"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "galus-mitzrayim-makkos",
+     "nisyonos-hador"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "nisyonos-hador",
+     "galus-mitzrayim-makkos"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "technology",
+     "zerizus"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "technology",
+     "tefilah-betzibbur"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "shidduchim-chasunah",
+     "bar-mitzvah",
+     "nisyonos-hador"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "zerizus",
+     "bayis-neeman"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "cheshbon-hanefesh",
+   "klipah",
+   "sheva-brachos",
+   "sitra-achra",
+   "yishuv-hadaas"
+  ],
+  "personIds": [
+   "baal-hatanya",
+   "baal-shem-tov",
+   "lubavitcher-rebbe",
+   "moshe-rabbeinu",
+   "pharaoh",
+   "rabbi-elchonon-wasserman",
+   "rabbi-mordechai-of-chernobyl",
+   "reb-dovid-of-skver",
+   "trisker-maggid",
+   "yaakov-avinu",
+   "yosef-hatzaddik"
+  ],
+  "workIds": [
+   "bamidbar",
+   "bereishis",
+   "koheles",
+   "magen-avraham-trisk",
+   "mesilas-yesharim",
+   "midrash",
+   "shemos",
+   "tosafos"
+  ],
+  "sources": [
+   {
+    "momentId": "yi-shonos-10~src0",
+    "workId": "mesilas-yesharim"
+   },
+   {
+    "momentId": "yi-shonos-10~src2",
+    "workId": "shemos"
+   },
+   {
+    "momentId": "yi-shonos-10~src3",
+    "workId": "shemos"
+   },
+   {
+    "momentId": "yi-shonos-10~src4",
+    "workId": "midrash"
+   },
+   {
+    "momentId": "yi-shonos-10~src5",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-shonos-10~src6",
+    "workId": "mesilas-yesharim"
+   },
+   {
+    "momentId": "yi-shonos-10~src7",
+    "workId": "shemos"
+   },
+   {
+    "momentId": "yi-shonos-10~src8",
+    "workId": "magen-avraham-trisk"
+   },
+   {
+    "momentId": "yi-shonos-10~src9",
+    "workId": "bamidbar"
+   },
+   {
+    "momentId": "yi-shonos-10~src10",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-shonos-10~src11",
+    "workId": "tosafos"
+   },
+   {
+    "momentId": "yi-shonos-10~src12",
+    "workId": "koheles"
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "yi-shonos-10~st0",
+    "storyId": "the-baal-hatanya-and-the-minister-where-are-you",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "yi-shonos-10~st1",
+    "storyId": "the-ravs-first-telephone",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "yi-shonos-10~st2",
+    "storyId": "the-man-who-wanted-his-cell-phone-in-the-beis-medrash",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "yi-shonos-10~st3",
+    "storyId": "the-skverer-rebbe-and-the-young-mans-mikveh",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   }
+  ],
+  "insights": []
+ },
+ "shiur/yi-shonos-31.json": {
+  "shiurId": "yi-shonos-31",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "mesiras-nefesh",
+    "salience": 0.9
+   },
+   {
+    "id": "tzedakah-chesed",
+    "salience": 0.7
+   },
+   {
+    "id": "yehuda-vetamar",
+    "salience": 0.6
+   },
+   {
+    "id": "shoresh-moshiach",
+    "salience": 0.55
+   },
+   {
+    "id": "shidduchim-chasunah",
+    "salience": 0.45
+   },
+   {
+    "id": "tzipisa-liyeshua",
+    "salience": 0.4
+   },
+   {
+    "id": "umos-haolam",
+    "salience": 0.35
+   },
+   {
+    "id": "galus-mitzrayim-makkos",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "galus-mitzrayim-makkos",
+     "tzedakah-chesed"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "purim",
+     "umos-haolam",
+     "hashgacha-pratis"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "yehuda-vetamar",
+     "mesiras-nefesh"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "shoresh-moshiach",
+     "yehuda-vetamar"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "tzedakah-chesed",
+     "mesiras-nefesh",
+     "tzipisa-liyeshua"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "mesiras-nefesh"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "hachnasas-kallah",
+   "hachnasas-orchim",
+   "hashgacha-pratis",
+   "mesiras-nefesh",
+   "oved-hashem",
+   "ribono-shel-olam",
+   "satan",
+   "yeiush",
+   "yetzias-mitzrayim",
+   "yibum"
+  ],
+  "personIds": [
+   "avraham-avinu",
+   "er",
+   "haman",
+   "lot",
+   "mordechai",
+   "onan",
+   "peretz",
+   "pharaoh",
+   "tamar",
+   "yaakov-avinu",
+   "yehudah-ben-yaakov"
+  ],
+  "workIds": [
+   "berachos",
+   "bereishis",
+   "chagigah",
+   "esther",
+   "malachi",
+   "midrash",
+   "pirkei-avos",
+   "talmud-bavli"
+  ],
+  "sources": [
+   {
+    "momentId": "yi-shonos-31~src0",
+    "workId": "esther"
+   },
+   {
+    "momentId": "yi-shonos-31~src1",
+    "workId": "berachos"
+   },
+   {
+    "momentId": "yi-shonos-31~src2",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-shonos-31~src3",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-shonos-31~src4",
+    "workId": "midrash"
+   },
+   {
+    "momentId": "yi-shonos-31~src5",
+    "workId": "midrash"
+   },
+   {
+    "momentId": "yi-shonos-31~src7",
+    "workId": "talmud-bavli"
+   },
+   {
+    "momentId": "yi-shonos-31~src8",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-shonos-31~src9",
+    "workId": "midrash"
+   },
+   {
+    "momentId": "yi-shonos-31~src10",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-shonos-31~src11",
+    "workId": "pirkei-avos"
+   },
+   {
+    "momentId": "yi-shonos-31~src12",
+    "workId": "malachi"
+   },
+   {
+    "momentId": "yi-shonos-31~src13",
+    "workId": "chagigah"
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "yi-shonos-31~st0",
+    "storyId": "the-author-of-unesaneh-tokef-asks-for-three-days",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "yi-shonos-31~st1",
+    "storyId": "the-girl-of-sedom-who-fed-a-poor-man",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "yi-shonos-31~st2",
+    "storyId": "a-spoonful-every-hour",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   }
+  ],
+  "insights": [
+   {
+    "momentId": "yi-shonos-31~i6",
+    "threadId": "avodas-hashem-the-hundred-and-first-time",
+    "shiurCount": 2,
+    "years": [
+     5732,
+     5771
+    ],
+    "page": false,
+    "other": {
+     "shiurId": "yi-parshas-hashavua-hzynv-01",
+     "momentId": "yi-parshas-hashavua-hzynv-01~i4",
+     "chapterIdx": 8,
+     "t": 2528.94,
+     "year": 5732,
+     "lang": "yi"
+    }
+   }
+  ]
+ },
+ "shiur/yi-zmanim-chnvkh-11.json": {
+  "shiurId": "yi-zmanim-chnvkh-11",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "nes-chanukah",
+    "salience": 0.9
+   },
+   {
+    "id": "nissim-veteva",
+    "salience": 0.85
+   },
+   {
+    "id": "maalas-hatorah",
+    "salience": 0.7
+   },
+   {
+    "id": "tefilah-betzibbur",
+    "salience": 0.5
+   },
+   {
+    "id": "koach-hatefilah",
+    "salience": 0.4
+   },
+   {
+    "id": "shemos-hakedoshim",
+    "salience": 0.35
+   },
+   {
+    "id": "neviim",
+    "salience": 0.3
+   },
+   {
+    "id": "moshe-rabbeinu",
+    "salience": 0.2
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "nes-chanukah"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "tefilah-betzibbur",
+     "maalas-hatorah"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "neviim",
+     "koach-hatefilah",
+     "shemos-hakedoshim"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "maalas-hatorah",
+     "nissim-veteva"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "nissim-veteva",
+     "moshe-rabbeinu"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "nes-chanukah",
+     "maalas-hatorah",
+     "nissim-veteva"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "tefilah-betzibbur",
+     "maalas-hatorah"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "al-hanissim",
+   "chanukas-hamizbeach",
+   "maaseh-bereishis",
+   "mekom-hamikdash",
+   "miut-hamachzik-es-hamerubeh",
+   "ner-chanukah",
+   "shemos-hakedoshim"
+  ],
+  "personIds": [
+   "bach",
+   "chasam-sofer",
+   "elisha-hanavi",
+   "moshe-rabbeinu",
+   "rabbi-yehoshua-ben-levi",
+   "rabbi-yochanan",
+   "rav-papi",
+   "rava"
+  ],
+  "workIds": [
+   "al-hanissim",
+   "bach",
+   "berachos",
+   "bereishis",
+   "devarim",
+   "haneiros-halalu",
+   "kiddushin",
+   "megillah",
+   "melachim-i",
+   "melachim-ii",
+   "mishnah-peah",
+   "pirkei-avos",
+   "sanhedrin",
+   "shabbos",
+   "shemos",
+   "shut-chasam-sofer",
+   "talmud-yerushalmi",
+   "tanya",
+   "tehillim",
+   "tzidkas-hatzaddik",
+   "yeshayahu",
+   "yirmiyahu",
+   "zohar"
+  ],
+  "sources": [
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src0",
+    "workId": "al-hanissim"
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src1",
+    "workId": "haneiros-halalu"
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src2",
+    "workId": "bach"
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src3",
+    "workId": "tanya"
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src4",
+    "workId": "megillah"
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src5",
+    "workId": "melachim-ii"
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src6",
+    "workId": "yeshayahu"
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src7",
+    "workId": "melachim-ii"
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src8",
+    "workId": "mishnah-peah"
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src9",
+    "workId": "berachos"
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src10",
+    "workId": "melachim-i"
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src11",
+    "workId": "shut-chasam-sofer"
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src12",
+    "workId": "kiddushin"
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src13",
+    "workId": "talmud-yerushalmi"
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src14",
+    "workId": "berachos"
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src15",
+    "workId": "sanhedrin"
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src16",
+    "workId": "tzidkas-hatzaddik"
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src17",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src18",
+    "workId": "zohar"
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src19",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src20",
+    "workId": "shabbos"
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src21",
+    "workId": "shemos"
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src22",
+    "workId": "pirkei-avos"
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src23",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src24",
+    "workId": "shabbos"
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src25",
+    "workId": "yirmiyahu"
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src26",
+    "workId": "tehillim"
+   }
+  ],
+  "stories": [],
+  "insights": []
+ },
+ "shiur/yi-zmanim-lvl-01.json": {
+  "shiurId": "yi-zmanim-lvl-01",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "elul",
+    "salience": 1
+   },
+   {
+    "id": "emunah-safek-amalek",
+    "salience": 0.7
+   },
+   {
+    "id": "bein-adam-lachaveiro",
+    "salience": 0.6
+   },
+   {
+    "id": "shemitah-yovel",
+    "salience": 0.6
+   },
+   {
+    "id": "galus-mitzrayim-makkos",
+    "salience": 0.5
+   },
+   {
+    "id": "kavanah-betefilah",
+    "salience": 0.4
+   },
+   {
+    "id": "rosh-hashanah",
+    "salience": 0.4
+   },
+   {
+    "id": "cheit-haegel",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "elul",
+     "cheit-haegel"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "shemitah-yovel"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "shemitah-yovel",
+     "bein-adam-lachaveiro",
+     "rosh-hashanah"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "emunah-safek-amalek",
+     "chaveirim-sevivah"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "emunah-safek-amalek",
+     "kavanah-betefilah"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "galus-mitzrayim-makkos",
+     "emunah-safek-amalek"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "galus-mitzrayim-makkos"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "rosh-hashanah"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "elul",
+     "ahavas-hashem-leyisroel",
+     "cheit-haegel"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "ahavas-yisrael",
+   "baal-teshuvah",
+   "eis-ratzon",
+   "emunah",
+   "leitzanus",
+   "midah-keneged-midah",
+   "ribono-shel-olam",
+   "satan",
+   "shemitah",
+   "shviras-haluchos"
+  ],
+  "personIds": [
+   "adam-harishon",
+   "baal-shem-tov",
+   "moshe-rabbeinu",
+   "pharaoh",
+   "rabbi-tzadok-hakohen",
+   "rashi",
+   "yosef-hatzaddik"
+  ],
+  "workIds": [
+   "bereishis",
+   "devarim",
+   "machzor-rosh-hashanah",
+   "mesilas-yesharim",
+   "midrash",
+   "mishlei",
+   "rashi",
+   "shabbos",
+   "shemos",
+   "shir-hashirim",
+   "shulchan-aruch",
+   "sotah",
+   "tehillim",
+   "tzidkas-hatzaddik",
+   "vayikra",
+   "yoma"
+  ],
+  "sources": [
+   {
+    "momentId": "yi-zmanim-lvl-01~src2",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src3",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src4",
+    "workId": "midrash"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src5",
+    "workId": "midrash"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src6",
+    "workId": "yoma"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src7",
+    "workId": "shulchan-aruch"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src8",
+    "workId": "vayikra"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src9",
+    "workId": "tzidkas-hatzaddik"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src10",
+    "workId": "shemos"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src11",
+    "workId": "shabbos"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src12",
+    "workId": "mishlei"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src13",
+    "workId": "midrash"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src14",
+    "workId": "sotah"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src15",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src17",
+    "workId": "mishlei"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src18",
+    "workId": "mesilas-yesharim"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src19",
+    "workId": "shemos"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src20",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src21",
+    "workId": "machzor-rosh-hashanah"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src22",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src23",
+    "workId": "shir-hashirim"
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "yi-zmanim-lvl-01~st0",
+    "storyId": "the-baal-shem-tov-and-the-man-from-danzig",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~st1",
+    "storyId": "rebbi-i-dont-like-fish",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   }
+  ],
+  "insights": []
+ },
+ "shiur/yi-zmanim-lvl-02.json": {
+  "shiurId": "yi-zmanim-lvl-02",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "elul",
+    "salience": 1
+   },
+   {
+    "id": "bitachon",
+    "salience": 0.8
+   },
+   {
+    "id": "bein-adam-lachaveiro",
+    "salience": 0.6
+   },
+   {
+    "id": "middos",
+    "salience": 0.6
+   },
+   {
+    "id": "tehillim",
+    "salience": 0.6
+   },
+   {
+    "id": "teshuvah",
+    "salience": 0.5
+   },
+   {
+    "id": "maasios",
+    "salience": 0.4
+   },
+   {
+    "id": "talmidei-chachamim",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "elul"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "elul",
+     "yiras-shamayim"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "tehillim",
+     "elul"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "bitachon",
+     "shmiras-einayim",
+     "tefilah-betzibbur"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "tehillim",
+     "bitachon"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "elul",
+     "tumah-taharah",
+     "teshuvah"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "elul",
+     "middos",
+     "teshuvah"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "maasios",
+     "bein-adam-lachaveiro",
+     "gedolei-yisroel"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "gedolei-yisroel",
+     "yom-kippur",
+     "bein-adam-lachaveiro"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "maasios",
+     "gedolei-yisroel",
+     "talmidei-chachamim"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "bein-adam-lachaveiro",
+   "bitachon",
+   "ir-miklat",
+   "klipah",
+   "neilah"
+  ],
+  "personIds": [
+   "arizal",
+   "chasam-sofer",
+   "malbim",
+   "rabban-yochanan-ben-zakkai",
+   "rabbi-akiva",
+   "rabbi-elazar-ben-azaryah",
+   "rabbi-pinchas-of-koretz",
+   "rabbi-yisrael-salanter",
+   "rashi"
+  ],
+  "workIds": [
+   "bava-metzia",
+   "berachos",
+   "bnei-yissaschar",
+   "devarim",
+   "esther",
+   "machzor-yom-kippur",
+   "mishnah-yoma",
+   "mishneh-torah",
+   "rashi",
+   "shemos",
+   "siddur-rabbi-shabsai",
+   "targum-tehillim",
+   "tehillim",
+   "yeshayahu",
+   "yoma"
+  ],
+  "sources": [
+   {
+    "momentId": "yi-zmanim-lvl-02~src0",
+    "workId": "bnei-yissaschar"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src1",
+    "workId": "shemos"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src2",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src3",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src4",
+    "workId": "yeshayahu"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src5",
+    "workId": "siddur-rabbi-shabsai"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src7",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src8",
+    "workId": "berachos"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src9",
+    "workId": "shemos"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src10",
+    "workId": "berachos"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src12",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src14",
+    "workId": "targum-tehillim"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src15",
+    "workId": "bnei-yissaschar"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src16",
+    "workId": "mishnah-yoma"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src17",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src18",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src20",
+    "workId": "mishneh-torah"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src21",
+    "workId": "bava-metzia"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src22",
+    "workId": "esther"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src23",
+    "workId": "mishnah-yoma"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src24",
+    "workId": "machzor-yom-kippur"
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~src25",
+    "workId": "yoma"
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "yi-zmanim-lvl-02~st0",
+    "storyId": "the-torn-shoe-at-the-chuppah",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "yi-zmanim-lvl-02~st1",
+    "storyId": "the-malbim-in-the-chasam-sofers-place",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   }
+  ],
+  "insights": []
+ },
+ "shiur/yi-zmanim-nysn-05.json": {
+  "shiurId": "yi-zmanim-nysn-05",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "hischadshus",
+    "salience": 0.9
+   },
+   {
+    "id": "chodesh-nissan",
+    "salience": 0.8
+   },
+   {
+    "id": "chametz",
+    "salience": 0.65
+   },
+   {
+    "id": "matzah",
+    "salience": 0.6
+   },
+   {
+    "id": "korbanos",
+    "salience": 0.5
+   },
+   {
+    "id": "yetzer-hara",
+    "salience": 0.45
+   },
+   {
+    "id": "avraham-avinu",
+    "salience": 0.4
+   },
+   {
+    "id": "bayis-neeman",
+    "salience": 0.4
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "korbanos",
+     "chametz",
+     "bayis-neeman"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "chodesh-nissan",
+     "maaseh-bereishis"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "chodesh-nissan",
+     "adam-harishon",
+     "ketz-hageulah"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "hischadshus",
+     "teshuvah"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "chodesh-nissan",
+     "hischadshus",
+     "shir-hashirim"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "matzah",
+     "hiskashrus-tzaddikim",
+     "moshe-rabbeinu"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "madreigos-haneshamah",
+     "yetzer-hara",
+     "shlichus-hanefesh"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "yetzer-hara",
+     "middos"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "avraham-avinu",
+     "chinuch-habanim",
+     "leil-haseder"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "rebbes-hador",
+     "simcha",
+     "hischadshus"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "birkas-hachamah",
+   "bris-bein-habesarim",
+   "cheshbon-hanefesh",
+   "emunas-chachamim",
+   "ikvesa-dimeshicha",
+   "maaminim-bnei-maaminim",
+   "michla-dimheimnusa",
+   "naaseh-adam",
+   "olam-hatikkun",
+   "techiyas-hameisim",
+   "yetzer-hara"
+  ],
+  "personIds": [
+   "adam-harishon",
+   "avraham-avinu",
+   "baal-shem-tov",
+   "bnei-yissaschar",
+   "eliyahu-hanavi",
+   "esther",
+   "korach",
+   "maharal",
+   "miriam",
+   "moshe-rabbeinu",
+   "ostrovtzer-rebbe",
+   "rabbi-eliezer",
+   "rabbi-yehoshua-ben-chananya",
+   "rav-gifter",
+   "samson-raphael-hirsch",
+   "shlomo-hamelech",
+   "shomer-emunim"
+  ],
+  "workIds": [
+   "bamidbar",
+   "berachos",
+   "bereishis",
+   "bnei-yissaschar",
+   "chullin",
+   "devarim",
+   "eruvin",
+   "haggadah",
+   "mishlei",
+   "rosh-hashanah",
+   "shabbos",
+   "shelah",
+   "shemos",
+   "shir-hashirim",
+   "shomer-emunim",
+   "talmud-bavli",
+   "targum-onkelos",
+   "tehillim",
+   "tikkunei-zohar",
+   "vayikra",
+   "yechezkel",
+   "yoma",
+   "zohar"
+  ],
+  "sources": [
+   {
+    "momentId": "yi-zmanim-nysn-05~src0",
+    "workId": "vayikra"
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src1",
+    "workId": "talmud-bavli"
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src2",
+    "workId": "berachos"
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src3",
+    "workId": "yoma"
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src4",
+    "workId": "rosh-hashanah"
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src6",
+    "workId": "eruvin"
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src7",
+    "workId": "shabbos"
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src8",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src9",
+    "workId": "mishlei"
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src10",
+    "workId": "shelah"
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src11",
+    "workId": "chullin"
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src12",
+    "workId": "shir-hashirim"
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src14",
+    "workId": "shir-hashirim"
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src15",
+    "workId": "yechezkel"
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src16",
+    "workId": "bnei-yissaschar"
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src17",
+    "workId": "zohar"
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src18",
+    "workId": "bamidbar"
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src20",
+    "workId": "targum-onkelos"
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src21",
+    "workId": "haggadah"
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src22",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src23",
+    "workId": "tikkunei-zohar"
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src24",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src25",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src26",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src27",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src28",
+    "workId": "shemos"
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src29",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~src31",
+    "workId": "shomer-emunim"
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "yi-zmanim-nysn-05~st0",
+    "storyId": "rav-gifter-takes-out-the-garbage",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "yi-zmanim-nysn-05~st1",
+    "storyId": "reb-arele-lights-the-chanukah-lights",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   }
+  ],
+  "insights": []
+ },
+ "shiur/yi-zmanim-pvrym-07.json": {
+  "shiurId": "yi-zmanim-pvrym-07",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "purim",
+    "salience": 0.95
+   },
+   {
+    "id": "kashrus",
+    "salience": 0.55
+   },
+   {
+    "id": "chodesh-adar",
+    "salience": 0.5
+   },
+   {
+    "id": "megillas-esther",
+    "salience": 0.45
+   },
+   {
+    "id": "koach-hatefilah",
+    "salience": 0.35
+   },
+   {
+    "id": "matan-torah",
+    "salience": 0.35
+   },
+   {
+    "id": "sefiros",
+    "salience": 0.3
+   },
+   {
+    "id": "tzipisa-liyeshua",
+    "salience": 0.25
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "chodesh-adar"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "purim"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "purim",
+     "sefiros"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "purim",
+     "kashrus"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "kashrus"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "purim"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "megillas-esther",
+     "koach-hatefilah"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "koach-hatefilah",
+     "tzipisa-liyeshua"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "eis-ratzon",
+   "keser",
+   "maachalos-asuros",
+   "matan-torah",
+   "shloshes-yemei-hagbalah",
+   "torah-shebaal-peh",
+   "venahafoch-hu",
+   "yom-kippur"
+  ],
+  "personIds": [
+   "adam-harishon",
+   "baal-shem-tov",
+   "chasam-sofer",
+   "esther",
+   "mordechai",
+   "noach",
+   "rabbi-avraham-of-ciechanow",
+   "rabbi-tzadok-hakohen",
+   "satmar-rav",
+   "shmuel-hanavi",
+   "shomer-emunim",
+   "yehoshua-bin-nun"
+  ],
+  "workIds": [
+   "bereishis",
+   "esther",
+   "maor-vashemesh",
+   "mishnah-berurah",
+   "mishnah-megillah",
+   "rema",
+   "shabbos",
+   "shmuel-i",
+   "taanis",
+   "tikkunei-zohar",
+   "zechariah"
+  ],
+  "sources": [
+   {
+    "momentId": "yi-zmanim-pvrym-07~src0",
+    "workId": "esther"
+   },
+   {
+    "momentId": "yi-zmanim-pvrym-07~src1",
+    "workId": "esther"
+   },
+   {
+    "momentId": "yi-zmanim-pvrym-07~src2",
+    "workId": "taanis"
+   },
+   {
+    "momentId": "yi-zmanim-pvrym-07~src3",
+    "workId": "mishnah-megillah"
+   },
+   {
+    "momentId": "yi-zmanim-pvrym-07~src4",
+    "workId": "shabbos"
+   },
+   {
+    "momentId": "yi-zmanim-pvrym-07~src6",
+    "workId": "tikkunei-zohar"
+   },
+   {
+    "momentId": "yi-zmanim-pvrym-07~src8",
+    "workId": "esther"
+   },
+   {
+    "momentId": "yi-zmanim-pvrym-07~src10",
+    "workId": "rema"
+   },
+   {
+    "momentId": "yi-zmanim-pvrym-07~src11",
+    "workId": "mishnah-berurah"
+   },
+   {
+    "momentId": "yi-zmanim-pvrym-07~src12",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-zmanim-pvrym-07~src13",
+    "workId": "maor-vashemesh"
+   },
+   {
+    "momentId": "yi-zmanim-pvrym-07~src14",
+    "workId": "esther"
+   },
+   {
+    "momentId": "yi-zmanim-pvrym-07~src15",
+    "workId": "esther"
+   },
+   {
+    "momentId": "yi-zmanim-pvrym-07~src16",
+    "workId": "shmuel-i"
+   },
+   {
+    "momentId": "yi-zmanim-pvrym-07~src17",
+    "workId": "zechariah"
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "yi-zmanim-pvrym-07~st0",
+    "storyId": "the-satmar-rav-on-purim",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "yi-zmanim-pvrym-07~st1",
+    "storyId": "the-shomer-emunim-and-the-silver-kearah",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   }
+  ],
+  "insights": []
+ },
+ "shiur/yi-zmanim-shbs-chzvn-01.json": {
+  "shiurId": "yi-zmanim-shbs-chzvn-01",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "shemitah-yovel",
+    "salience": 0.9
+   },
+   {
+    "id": "tisha-bav",
+    "salience": 0.9
+   },
+   {
+    "id": "kedushas-shabbos",
+    "salience": 0.7
+   },
+   {
+    "id": "yerushalayim",
+    "salience": 0.7
+   },
+   {
+    "id": "beis-hamikdash-churban",
+    "salience": 0.6
+   },
+   {
+    "id": "sefer-devarim",
+    "salience": 0.6
+   },
+   {
+    "id": "tammuz-av",
+    "salience": 0.5
+   },
+   {
+    "id": "yaakov-veesav",
+    "salience": 0.4
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "sefer-devarim",
+     "krias-yam-suf"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "sefer-devarim",
+     "yaakov-veesav"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "sefer-devarim",
+     "pardes",
+     "ikvesa-dimeshicha"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "leil-haseder",
+     "moshiach",
+     "tammuz-av"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "yaakov-veesav",
+     "tammuz-av"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "kedushas-shabbos",
+     "beis-hamikdash-churban",
+     "tisha-bav"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "kedushas-shabbos",
+     "tisha-bav",
+     "shoresh-moshiach"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "kedushas-eretz-yisroel",
+     "bris-milah",
+     "maalas-hatorah"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "sefer-devarim",
+     "torah-min-hashamayim"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "shemitah-yovel",
+     "yerushalayim",
+     "kedushas-shabbos"
+    ]
+   },
+   {
+    "idx": 10,
+    "topicIds": [
+     "shemitah-yovel",
+     "yerushalayim"
+    ]
+   },
+   {
+    "idx": 11,
+    "topicIds": [
+     "yerushalayim",
+     "vayechi-shevatim"
+    ]
+   },
+   {
+    "idx": 12,
+    "topicIds": [
+     "shemitah-yovel",
+     "oneg-shabbos"
+    ]
+   },
+   {
+    "idx": 13,
+    "topicIds": [
+     "eliyahu-hanavi"
+    ]
+   },
+   {
+    "idx": 14,
+    "topicIds": [
+     "tisha-bav",
+     "neviim"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "atika-kadisha",
+   "esav",
+   "keini-knizi-kadmoni",
+   "midas-hadin",
+   "orlah",
+   "shemitah",
+   "yom-shekulo-shabbos"
+  ],
+  "personIds": [
+   "avraham-avinu",
+   "beis-aharon",
+   "chasam-sofer",
+   "dovid-hamelech",
+   "eliyahu-hanavi",
+   "esav",
+   "moshe-rabbeinu",
+   "osniel-ben-kenaz",
+   "rabbah-bar-avuha",
+   "rabban-yochanan-ben-zakkai",
+   "rabbi-akiva",
+   "rabbi-eliezer",
+   "rabbi-levi-yitzchak-of-berditchev",
+   "rabbi-shimon-bar-yochai",
+   "rabbi-tzadok-hakohen",
+   "rabbi-yehoshua-ben-chananya",
+   "rabbi-yishmael",
+   "rambam",
+   "ramban",
+   "yaakov-avinu",
+   "yehoshua-bin-nun",
+   "yeshayahu-hanavi"
+  ],
+  "workIds": [
+   "bava-kamma",
+   "bava-metzia",
+   "berachos",
+   "bereishis",
+   "devarim",
+   "eichah-rabbah",
+   "kedushas-levi",
+   "megillah",
+   "mishlei",
+   "ovadiah",
+   "pri-tzaddik",
+   "rambam",
+   "ramban",
+   "rashi",
+   "seder-hadoros",
+   "shabbos",
+   "shemos",
+   "tanna-devei-eliyahu",
+   "targum-onkelos",
+   "tehillim",
+   "temurah",
+   "tosafos",
+   "vayikra",
+   "yehoshua",
+   "yeshayahu",
+   "yirmiyahu",
+   "yismach-moshe",
+   "yoma",
+   "zohar"
+  ],
+  "sources": [
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src0",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src1",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src2",
+    "workId": "zohar"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src3",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src4",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src5",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src6",
+    "workId": "yeshayahu"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src7",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src8",
+    "workId": "mishlei"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src9",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src10",
+    "workId": "ovadiah"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src11",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src14",
+    "workId": "yirmiyahu"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src15",
+    "workId": "yeshayahu"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src16",
+    "workId": "zohar"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src17",
+    "workId": "kedushas-levi"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src18",
+    "workId": "pri-tzaddik"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src19",
+    "workId": "eichah-rabbah"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src20",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src21",
+    "workId": "zohar"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src22",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src23",
+    "workId": "yehoshua"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src24",
+    "workId": "temurah"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src26",
+    "workId": "yismach-moshe"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src27",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src28",
+    "workId": "pri-tzaddik"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src29",
+    "workId": "megillah"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src30",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src31",
+    "workId": "shabbos"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src32",
+    "workId": "ramban"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src33",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src34",
+    "workId": "vayikra"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src35",
+    "workId": "vayikra"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src36",
+    "workId": "bava-kamma"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src37",
+    "workId": "vayikra"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src38",
+    "workId": "shemos"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src39",
+    "workId": "yoma"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src40",
+    "workId": "shemos"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src41",
+    "workId": "yirmiyahu"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src42",
+    "workId": "yeshayahu"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src43",
+    "workId": "yeshayahu"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src44",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src45",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src46",
+    "workId": "shemos"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src47",
+    "workId": "vayikra"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src48",
+    "workId": "targum-onkelos"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src49",
+    "workId": "zohar"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src50",
+    "workId": "berachos"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src51",
+    "workId": "seder-hadoros"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src52",
+    "workId": "rambam"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src53",
+    "workId": "bava-metzia"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src54",
+    "workId": "tanna-devei-eliyahu"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src55",
+    "workId": "tosafos"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src56",
+    "workId": "eichah-rabbah"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src57",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src58",
+    "workId": "yeshayahu"
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src59",
+    "workId": "yeshayahu"
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~st0",
+    "storyId": "the-father-and-the-third-garment",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~st1",
+    "storyId": "the-beis-aharon-and-the-simple-jews-shir-hashirim",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~st2",
+    "storyId": "eliyahu-in-the-non-jewish-cemetery",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   }
+  ],
+  "insights": []
+ },
+ "shiur/yi-zmanim-spyrh-01.json": {
+  "shiurId": "yi-zmanim-spyrh-01",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "sefiras-haomer",
+    "salience": 1
+   },
+   {
+    "id": "middos",
+    "salience": 0.85
+   },
+   {
+    "id": "teshuvah",
+    "salience": 0.8
+   },
+   {
+    "id": "sefer-vayikra",
+    "salience": 0.6
+   },
+   {
+    "id": "chodesh-nissan",
+    "salience": 0.5
+   },
+   {
+    "id": "rosh-chodesh",
+    "salience": 0.4
+   },
+   {
+    "id": "moshiach",
+    "salience": 0.35
+   },
+   {
+    "id": "pesach-sheni",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "sefer-vayikra",
+     "avraham-avinu"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "sefiras-haomer",
+     "teshuvah",
+     "shovavim"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "chodesh-nissan",
+     "rosh-chodesh",
+     "mishkan"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "chodesh-nissan",
+     "maaseh-bereishis",
+     "sefiros"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "rosh-chodesh",
+     "otiyos-gematria"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "chodesh-nissan",
+     "mishkan"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "sefer-vayikra",
+     "moshiach",
+     "eliyahu-hanavi"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "eliyahu-hanavi",
+     "moshiach"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "sefiras-haomer",
+     "pesach-sheni",
+     "elul"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "middos",
+     "teshuvah",
+     "sefiras-haomer"
+    ]
+   },
+   {
+    "idx": 10,
+    "topicIds": [
+     "middos",
+     "sefiros"
+    ]
+   },
+   {
+    "idx": 11,
+    "topicIds": [
+     "teshuvah",
+     "middos",
+     "shovavim"
+    ]
+   },
+   {
+    "idx": 12,
+    "topicIds": [
+     "sefer-vayikra",
+     "sefiras-haomer"
+    ]
+   },
+   {
+    "idx": 13,
+    "topicIds": [
+     "sefer-vayikra",
+     "avodah-begashmiyus"
+    ]
+   },
+   {
+    "idx": 14,
+    "topicIds": [
+     "sefer-vayikra",
+     "avodah-begashmiyus"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "esh-zarah",
+   "gaavah",
+   "mazal",
+   "mishkan",
+   "miut-hayareach",
+   "pesach-sheni",
+   "sefiras-haomer",
+   "shovavim",
+   "tumas-mes",
+   "yemos-hamashiach"
+  ],
+  "personIds": [
+   "aharon-hakohen",
+   "avihu",
+   "avraham-avinu",
+   "chanoch",
+   "chasam-sofer",
+   "eliyahu-hanavi",
+   "eltzafan",
+   "maharal",
+   "mishael",
+   "moshe-rabbeinu",
+   "nadav",
+   "pinchas",
+   "rabbeinu-bachya",
+   "rabbeinu-yonah",
+   "rabbi-akiva",
+   "rabbi-chaim-vital",
+   "rabbi-eliezer",
+   "rabbi-pinchas-of-koretz",
+   "rabbi-yehoshua-ben-chananya",
+   "rambam",
+   "ramban",
+   "rechavam",
+   "yeravam-ben-nevat"
+  ],
+  "workIds": [
+   "beer-mayim-chaim",
+   "berachos",
+   "bnei-yissaschar",
+   "chasam-sofer",
+   "masorah",
+   "megillah",
+   "melachim-i",
+   "midrash",
+   "mishneh-torah",
+   "rabbeinu-bachya",
+   "ramban",
+   "rashi",
+   "rosh-hashanah",
+   "sanhedrin",
+   "shaarei-kedushah",
+   "shabbos",
+   "shemos",
+   "shulchan-aruch",
+   "siddur",
+   "sukkah",
+   "talmud-bavli",
+   "tehillim",
+   "tosafos",
+   "vayikra",
+   "yeshayahu",
+   "yesod-hateshuvah",
+   "yirmiyahu",
+   "zohar"
+  ],
+  "sources": [
+   {
+    "momentId": "yi-zmanim-spyrh-01~src0",
+    "workId": "vayikra"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src1",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src2",
+    "workId": "chasam-sofer"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src3",
+    "workId": "melachim-i"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src4",
+    "workId": "siddur"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src5",
+    "workId": "shemos"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src7",
+    "workId": "vayikra"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src8",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src9",
+    "workId": "talmud-bavli"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src11",
+    "workId": "vayikra"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src12",
+    "workId": "midrash"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src13",
+    "workId": "rosh-hashanah"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src14",
+    "workId": "tosafos"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src15",
+    "workId": "berachos"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src18",
+    "workId": "masorah"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src19",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src20",
+    "workId": "megillah"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src21",
+    "workId": "zohar"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src22",
+    "workId": "vayikra"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src23",
+    "workId": "yeshayahu"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src24",
+    "workId": "yirmiyahu"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src25",
+    "workId": "berachos"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src26",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src27",
+    "workId": "midrash"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src28",
+    "workId": "talmud-bavli"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src29",
+    "workId": "shabbos"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src30",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src31",
+    "workId": "chasam-sofer"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src32",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src33",
+    "workId": "sukkah"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src34",
+    "workId": "shaarei-kedushah"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src35",
+    "workId": "beer-mayim-chaim"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src36",
+    "workId": "sanhedrin"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src37",
+    "workId": "yesod-hateshuvah"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src38",
+    "workId": "vayikra"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src39",
+    "workId": "vayikra"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src40",
+    "workId": "mishneh-torah"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src41",
+    "workId": "rabbeinu-bachya"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src42",
+    "workId": "ramban"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src43",
+    "workId": "shulchan-aruch"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src44",
+    "workId": "vayikra"
+   },
+   {
+    "momentId": "yi-zmanim-spyrh-01~src45",
+    "workId": "bnei-yissaschar"
+   }
+  ],
+  "stories": [],
+  "insights": []
+ },
+ "shiur/yi-zmanim-svds-pvrym-ktn-03.json": {
+  "shiurId": "yi-zmanim-svds-pvrym-ktn-03",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "megillas-esther",
+    "salience": 0.95
+   },
+   {
+    "id": "ahavas-hashem-leyisroel",
+    "salience": 0.75
+   },
+   {
+    "id": "purim",
+    "salience": 0.7
+   },
+   {
+    "id": "purim-katan",
+    "salience": 0.5
+   },
+   {
+    "id": "shidduchim-chasunah",
+    "salience": 0.4
+   },
+   {
+    "id": "neviim",
+    "salience": 0.35
+   },
+   {
+    "id": "maalas-hatorah",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "megillas-esther",
+     "neviim"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "megillas-esther",
+     "maalas-hatorah"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "megillas-esther",
+     "purim"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "ahavas-hashem-leyisroel",
+     "purim"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "megillas-esther",
+     "ahavas-hashem-leyisroel"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "purim-katan"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "shidduchim-chasunah",
+     "ahavas-hashem-leyisroel"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "aseres-hadibros",
+   "chassan-kallah",
+   "knesses-yisrael",
+   "michutz-lamachaneh",
+   "purim-katan",
+   "ruach-hakodesh"
+  ],
+  "personIds": [
+   "chasam-sofer",
+   "daniel",
+   "dovid-hamelech",
+   "esther",
+   "haman",
+   "klausenburger-rebbe",
+   "moshe-rabbeinu",
+   "rabbi-eliezer-ben-rabbi-yossi",
+   "rashi"
+  ],
+  "workIds": [
+   "chasam-sofer",
+   "esther",
+   "megillah",
+   "mishlei",
+   "rashi",
+   "shir-hashirim",
+   "shmuel-ii",
+   "tanya",
+   "yerushalmi-megillah"
+  ],
+  "sources": [
+   {
+    "momentId": "yi-zmanim-svds-pvrym-ktn-03~src0",
+    "workId": "megillah"
+   },
+   {
+    "momentId": "yi-zmanim-svds-pvrym-ktn-03~src1",
+    "workId": "megillah"
+   },
+   {
+    "momentId": "yi-zmanim-svds-pvrym-ktn-03~src2",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "yi-zmanim-svds-pvrym-ktn-03~src3",
+    "workId": "yerushalmi-megillah"
+   },
+   {
+    "momentId": "yi-zmanim-svds-pvrym-ktn-03~src4",
+    "workId": "tanya"
+   },
+   {
+    "momentId": "yi-zmanim-svds-pvrym-ktn-03~src5",
+    "workId": "shmuel-ii"
+   },
+   {
+    "momentId": "yi-zmanim-svds-pvrym-ktn-03~src6",
+    "workId": "chasam-sofer"
+   },
+   {
+    "momentId": "yi-zmanim-svds-pvrym-ktn-03~src7",
+    "workId": "megillah"
+   },
+   {
+    "momentId": "yi-zmanim-svds-pvrym-ktn-03~src8",
+    "workId": "esther"
+   },
+   {
+    "momentId": "yi-zmanim-svds-pvrym-ktn-03~src9",
+    "workId": "shir-hashirim"
+   },
+   {
+    "momentId": "yi-zmanim-svds-pvrym-ktn-03~src10",
+    "workId": "megillah"
+   },
+   {
+    "momentId": "yi-zmanim-svds-pvrym-ktn-03~src11",
+    "workId": "megillah"
+   },
+   {
+    "momentId": "yi-zmanim-svds-pvrym-ktn-03~src13",
+    "workId": "esther"
+   },
+   {
+    "momentId": "yi-zmanim-svds-pvrym-ktn-03~src14",
+    "workId": "mishlei"
+   }
+  ],
+  "stories": [],
+  "insights": [
+   {
+    "momentId": "yi-zmanim-svds-pvrym-ktn-03~i5",
+    "threadId": "zmanim-small-avodah-today-precious",
+    "shiurCount": 2,
+    "years": [
+     5764,
+     5765
+    ],
+    "page": false,
+    "other": {
+     "shiurId": "en-zmanim-en-chvdsh-tbs-02",
+     "momentId": "en-zmanim-en-chvdsh-tbs-02~i3",
+     "chapterIdx": 6,
+     "t": 2454.48,
+     "year": 5764,
+     "lang": "en"
+    }
+   }
+  ]
+ },
+ "shiur/yi-zmanim-svds-shvshn-pvrym-01.json": {
+  "shiurId": "yi-zmanim-svds-shvshn-pvrym-01",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "shushan-purim",
+    "salience": 0.95
+   },
+   {
+    "id": "bitachon",
+    "salience": 0.75
+   },
+   {
+    "id": "emunah-safek-amalek",
+    "salience": 0.75
+   },
+   {
+    "id": "megillas-esther",
+    "salience": 0.65
+   },
+   {
+    "id": "moshiach",
+    "salience": 0.5
+   },
+   {
+    "id": "yerushalayim",
+    "salience": 0.45
+   },
+   {
+    "id": "avodas-dor-haacharon",
+    "salience": 0.35
+   },
+   {
+    "id": "bris-milah",
+    "salience": 0.35
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "emunah-safek-amalek",
+     "shushan-purim"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "shushan-purim",
+     "yerushalayim"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "emunah-safek-amalek",
+     "shushan-purim"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "shushan-purim",
+     "megillas-esther",
+     "ahavas-yisroel"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "emunah-safek-amalek",
+     "hashgacha-pratis",
+     "megillas-esther"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "megillas-esther",
+     "bitachon"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "yesodei-haemunah",
+     "avraham-avinu"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "bitachon",
+     "megillas-esther"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "bitachon",
+     "yesodei-haemunah",
+     "megillas-esther"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "bitachon",
+     "simcha"
+    ]
+   },
+   {
+    "idx": 10,
+    "topicIds": [
+     "yerushalayim",
+     "shushan-purim",
+     "pintele-yid"
+    ]
+   },
+   {
+    "idx": 11,
+    "topicIds": [
+     "megillas-esther",
+     "emunah-safek-amalek"
+    ]
+   },
+   {
+    "idx": 12,
+    "topicIds": [
+     "megillas-esther",
+     "moshiach"
+    ]
+   },
+   {
+    "idx": 13,
+    "topicIds": [
+     "bris-milah",
+     "shushan-purim",
+     "moshiach"
+    ]
+   },
+   {
+    "idx": 14,
+    "topicIds": [
+     "bris-milah",
+     "emunah-safek-amalek"
+    ]
+   },
+   {
+    "idx": 15,
+    "topicIds": [
+     "avodas-dor-haacharon",
+     "mishkan",
+     "shushan-purim"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "amalek",
+   "avodah-zarah",
+   "hashgacha-pratis",
+   "hester-panim",
+   "kochos-hanefesh",
+   "mechiyas-amalek",
+   "mukafin-chomah",
+   "orlah",
+   "shushan-purim",
+   "sodos-hatorah"
+  ],
+  "personIds": [
+   "achashverosh",
+   "agag",
+   "avraham-avinu",
+   "baal-shem-tov",
+   "bnei-yissaschar",
+   "chasam-sofer",
+   "esther",
+   "haman",
+   "mordechai",
+   "rambam",
+   "satmar-rav",
+   "shaul-hamelech",
+   "shmuel-amora",
+   "yehoshua-bin-nun",
+   "yonasan-ben-uziel"
+  ],
+  "workIds": [
+   "avodah-zarah",
+   "berachos",
+   "bnei-yissaschar",
+   "devarim",
+   "divrei-hayamim-i",
+   "divrei-yoel",
+   "esther",
+   "likkutei-torah-chernobyl",
+   "megillah",
+   "midrash",
+   "mishnah-middos",
+   "mishneh-torah",
+   "rashi",
+   "rema",
+   "shemos",
+   "shir-hashirim",
+   "shmuel-i",
+   "talmud-bavli",
+   "targum-sheni",
+   "tosafos",
+   "zohar"
+  ],
+  "sources": [
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src0",
+    "workId": "esther"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src1",
+    "workId": "esther"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src2",
+    "workId": "esther"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src3",
+    "workId": "esther"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src4",
+    "workId": "megillah"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src5",
+    "workId": "targum-sheni"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src6",
+    "workId": "esther"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src8",
+    "workId": "mishnah-middos"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src9",
+    "workId": "shir-hashirim"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src10",
+    "workId": "esther"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src11",
+    "workId": "esther"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src12",
+    "workId": "targum-sheni"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src13",
+    "workId": "esther"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src14",
+    "workId": "megillah"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src15",
+    "workId": "divrei-yoel"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src16",
+    "workId": "avodah-zarah"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src17",
+    "workId": "megillah"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src18",
+    "workId": "divrei-hayamim-i"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src19",
+    "workId": "zohar"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src20",
+    "workId": "zohar"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src21",
+    "workId": "rema"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src22",
+    "workId": "esther"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src23",
+    "workId": "berachos"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src24",
+    "workId": "megillah"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src25",
+    "workId": "shemos"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src26",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src27",
+    "workId": "shmuel-i"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src28",
+    "workId": "tosafos"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src29",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src30",
+    "workId": "midrash"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src31",
+    "workId": "likkutei-torah-chernobyl"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src32",
+    "workId": "mishneh-torah"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src33",
+    "workId": "bnei-yissaschar"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src35",
+    "workId": "shemos"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src36",
+    "workId": "talmud-bavli"
+   },
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~src37",
+    "workId": "megillah"
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "yi-zmanim-svds-shvshn-pvrym-01~st0",
+    "storyId": "the-jews-complaint-to-mordechai-on-the-night-of-the-kings",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   }
+  ],
+  "insights": []
+ },
+ "shiur/yi-zmanim-svds-zs-chnvkh-04.json": {
+  "shiurId": "yi-zmanim-svds-zs-chnvkh-04",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "zos-chanukah",
+    "salience": 0.85
+   },
+   {
+    "id": "tzipisa-liyeshua",
+    "salience": 0.8
+   },
+   {
+    "id": "neros-chanukah",
+    "salience": 0.7
+   },
+   {
+    "id": "hodaah",
+    "salience": 0.6
+   },
+   {
+    "id": "mishkan",
+    "salience": 0.5
+   },
+   {
+    "id": "moshiach",
+    "salience": 0.45
+   },
+   {
+    "id": "ahavas-yisroel",
+    "salience": 0.35
+   },
+   {
+    "id": "sefiros",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "mishkan",
+     "neros-chanukah"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "tzipisa-liyeshua",
+     "zos-chanukah"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "hodaah",
+     "sefiros",
+     "mishkan"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "neros-chanukah",
+     "moshiach",
+     "beis-hamikdash-churban"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "moshiach",
+     "neros-chanukah",
+     "shoresh-moshiach"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "zos-chanukah",
+     "ahavas-yisroel",
+     "tanya-shtei-nefashos"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "chasimah",
+   "hod",
+   "nesiim",
+   "oro-shel-mashiach",
+   "zos-chanukah"
+  ],
+  "personIds": [
+   "aharon-hakohen",
+   "baal-hatanya",
+   "chasam-sofer",
+   "dovid-hamelech",
+   "rabbeinu-bachya",
+   "rambam",
+   "ramban",
+   "rashi",
+   "zechariah-hanavi"
+  ],
+  "workIds": [
+   "bamidbar",
+   "berachos",
+   "bnei-yissaschar",
+   "daniel",
+   "megaleh-amukos",
+   "mishneh-torah",
+   "noam-elimelech",
+   "or-hachaim",
+   "rabbeinu-bachya",
+   "ramban",
+   "rashi",
+   "sfas-emes",
+   "shelah",
+   "smag",
+   "talmud-yerushalmi",
+   "tanya",
+   "tehillim",
+   "unesaneh-tokef",
+   "zechariah"
+  ],
+  "sources": [
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src0",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src1",
+    "workId": "ramban"
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src2",
+    "workId": "sfas-emes"
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src3",
+    "workId": "rabbeinu-bachya"
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src4",
+    "workId": "bnei-yissaschar"
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src5",
+    "workId": "smag"
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src6",
+    "workId": "daniel"
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src7",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src8",
+    "workId": "berachos"
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src9",
+    "workId": "mishneh-torah"
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src10",
+    "workId": "bamidbar"
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src11",
+    "workId": "talmud-yerushalmi"
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src12",
+    "workId": "megaleh-amukos"
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src13",
+    "workId": "zechariah"
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src14",
+    "workId": "or-hachaim"
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src15",
+    "workId": "shelah"
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src16",
+    "workId": "tanya"
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src17",
+    "workId": "noam-elimelech"
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src18",
+    "workId": "bamidbar"
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src19",
+    "workId": "rashi"
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src20",
+    "workId": "unesaneh-tokef"
+   }
+  ],
+  "stories": [],
+  "insights": []
+ },
+ "shiur/yi-zmanim-svkvs-08.json": {
+  "shiurId": "yi-zmanim-svkvs-08",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "sukkos",
+    "salience": 0.95
+   },
+   {
+    "id": "bitachon",
+    "salience": 0.85
+   },
+   {
+    "id": "simcha",
+    "salience": 0.6
+   },
+   {
+    "id": "yaakov-veesav",
+    "salience": 0.5
+   },
+   {
+    "id": "shechinah",
+    "salience": 0.4
+   },
+   {
+    "id": "kedushas-eretz-yisroel",
+    "salience": 0.3
+   },
+   {
+    "id": "shemini-atzeres",
+    "salience": 0.3
+   },
+   {
+    "id": "neviim",
+    "salience": 0.2
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "sukkos",
+     "shechinah",
+     "yesodei-haemunah"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "yaakov-veesav",
+     "sukkos",
+     "beis-hamikdash-churban"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "bitachon",
+     "sukkos"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "sukkos"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "sukkos",
+     "sefer-bamidbar"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "noach-mabul",
+     "mishkan",
+     "sukkos"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "neviim",
+     "bitachon"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "sukkos",
+     "olamos-tzimtzum"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "yaakov-veesav",
+     "bitachon"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "sukkos",
+     "taamei-hamitzvos"
+    ]
+   },
+   {
+    "idx": 10,
+    "topicIds": [
+     "simcha",
+     "bitachon"
+    ]
+   },
+   {
+    "idx": 11,
+    "topicIds": [
+     "bitachon",
+     "tefilah-betzibbur",
+     "shmiras-einayim"
+    ]
+   },
+   {
+    "idx": 12,
+    "topicIds": [
+     "shemini-atzeres",
+     "hoshana-rabbah",
+     "kedushas-eretz-yisroel"
+    ]
+   },
+   {
+    "idx": 13,
+    "topicIds": [
+     "sukkos",
+     "simcha"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "ananei-hakavod",
+   "atzvus",
+   "bitachon",
+   "gmar-chasimah",
+   "kfitzas-haderech",
+   "makif",
+   "ruach-hakodesh",
+   "shemini-atzeres",
+   "simchas-beis-hashoevah",
+   "sukkah",
+   "teivah",
+   "tzila-dimheimnusa",
+   "zecher-lamikdash"
+  ],
+  "personIds": [
+   "aharon-hakohen",
+   "arizal",
+   "avraham-avinu",
+   "bach",
+   "chizkiyahu-hamelech",
+   "divrei-chaim",
+   "dovid-hamelech",
+   "esav",
+   "noach",
+   "onkelos",
+   "rabban-yochanan-ben-zakkai",
+   "rabbi-akiva",
+   "rabbi-eliezer",
+   "rabbi-naftali-of-ropshitz",
+   "rabbi-pinchas-of-koretz",
+   "rabbi-yehoshua-ben-chananya",
+   "rambam",
+   "ramban",
+   "rokeach",
+   "sancheiriv",
+   "sar-shalom-of-belz",
+   "yaakov-avinu",
+   "yeshayahu-hanavi"
+  ],
+  "workIds": [
+   "bach",
+   "beer-mayim-chaim",
+   "beis-aharon",
+   "bereishis",
+   "devarim",
+   "divrei-chaim",
+   "eruvin",
+   "makkos",
+   "megillah",
+   "midrash",
+   "mishnah-sukkah",
+   "peirush-hamishnayos",
+   "pirkei-avos",
+   "rashi-on-bereishis",
+   "rashi-on-the-torah",
+   "rokeach",
+   "rosh-hashanah",
+   "shemoneh-esrei",
+   "shemos",
+   "shir-hashirim",
+   "shut-divrei-chaim",
+   "siddur",
+   "sukkah",
+   "talmud-yerushalmi",
+   "targum-onkelos",
+   "tehillim",
+   "tur",
+   "vayikra",
+   "yerushalmi-sukkah",
+   "zera-kodesh",
+   "zohar"
+  ],
+  "sources": [
+   {
+    "momentId": "yi-zmanim-svkvs-08~src0",
+    "workId": "shir-hashirim"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src1",
+    "workId": "zohar"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src3",
+    "workId": "siddur"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src5",
+    "workId": "midrash"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src6",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src7",
+    "workId": "zohar"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src8",
+    "workId": "rashi-on-bereishis"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src9",
+    "workId": "zera-kodesh"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src10",
+    "workId": "shir-hashirim"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src11",
+    "workId": "beis-aharon"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src12",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src14",
+    "workId": "sukkah"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src15",
+    "workId": "vayikra"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src16",
+    "workId": "tur"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src17",
+    "workId": "bach"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src18",
+    "workId": "targum-onkelos"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src19",
+    "workId": "megillah"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src20",
+    "workId": "peirush-hamishnayos"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src21",
+    "workId": "divrei-chaim"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src22",
+    "workId": "eruvin"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src23",
+    "workId": "rokeach"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src24",
+    "workId": "rashi-on-the-torah"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src25",
+    "workId": "zohar"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src26",
+    "workId": "talmud-yerushalmi"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src27",
+    "workId": "bereishis"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src28",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src29",
+    "workId": "mishnah-sukkah"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src30",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src31",
+    "workId": "vayikra"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src32",
+    "workId": "zohar"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src34",
+    "workId": "mishnah-sukkah"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src35",
+    "workId": "sukkah"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src36",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src37",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src38",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src39",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src40",
+    "workId": "siddur"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src41",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src42",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src45",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src46",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src47",
+    "workId": "shemos"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src48",
+    "workId": "beer-mayim-chaim"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src49",
+    "workId": "pirkei-avos"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src50",
+    "workId": "rosh-hashanah"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src51",
+    "workId": "zohar"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src53",
+    "workId": "makkos"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src54",
+    "workId": "midrash"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src55",
+    "workId": "yerushalmi-sukkah"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src56",
+    "workId": "shut-divrei-chaim"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src57",
+    "workId": "shemoneh-esrei"
+   },
+   {
+    "momentId": "yi-zmanim-svkvs-08~src59",
+    "workId": "tehillim"
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "yi-zmanim-svkvs-08~st0",
+    "storyId": "chizkiyahu-sleeps-during-sanherivs-siege",
+    "tellings": 2,
+    "pages": {
+     "quiet": true,
+     "live": true
+    }
+   }
+  ],
+  "insights": []
+ },
+ "shiur/yi-zmanim-tv-bb-04.json": {
+  "shiurId": "yi-zmanim-tv-bb-04",
+  "otherSpeakerShare": 0,
+  "topics": [
+   {
+    "id": "tu-bav-nechamah",
+    "salience": 0.95
+   },
+   {
+    "id": "yiras-shamayim",
+    "salience": 0.8
+   },
+   {
+    "id": "tachlis-hagalus",
+    "salience": 0.6
+   },
+   {
+    "id": "teshuvah",
+    "salience": 0.6
+   },
+   {
+    "id": "shidduchim-chasunah",
+    "salience": 0.5
+   },
+   {
+    "id": "yom-kippur",
+    "salience": 0.5
+   },
+   {
+    "id": "torah-lishmah",
+    "salience": 0.4
+   },
+   {
+    "id": "yerushalayim",
+    "salience": 0.4
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "yiras-shamayim",
+     "sefer-devarim",
+     "teshuvah"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "ahavas-hashem-leyisroel",
+     "shidduchim-chasunah",
+     "yiras-shamayim"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "shidduchim-chasunah",
+     "yom-kippur",
+     "maasios"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "yom-kippur",
+     "teshuvah",
+     "tu-bav-nechamah"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "yerushalayim",
+     "yiras-shamayim",
+     "tammuz-av"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "tachlis-hagalus"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "tisha-bav",
+     "tachlis-hagalus"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "tachlis-hagalus",
+     "teshuvah"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "torah-lishmah",
+     "hester-panim"
+    ]
+   }
+  ],
+  "conceptIds": [
+   "bechirah",
+   "hester-panim",
+   "nachas-ruach",
+   "nechamah",
+   "ribono-shel-olam",
+   "shidduch",
+   "tu-bav",
+   "yiras-shamayim"
+  ],
+  "personIds": [
+   "arizal",
+   "avraham-avinu",
+   "chasam-sofer",
+   "chiddushei-harim",
+   "dovid-hamelech",
+   "rabbi-chaim-vital",
+   "rebbe-reb-bunim",
+   "yeshayahu-hanavi"
+  ],
+  "workIds": [
+   "bereishis-rabbah",
+   "chasam-sofer",
+   "chiddushei-harim",
+   "devarim",
+   "mishnah-taanis",
+   "pesikta",
+   "shabbos",
+   "shir-hashirim",
+   "shloshah-asar-ikkarim",
+   "sotah",
+   "taanis",
+   "tehillim",
+   "yerushalmi-yoma",
+   "yeshayahu"
+  ],
+  "sources": [
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src0",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src1",
+    "workId": "yeshayahu"
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src2",
+    "workId": "mishnah-taanis"
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src4",
+    "workId": "shir-hashirim"
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src5",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src6",
+    "workId": "sotah"
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src7",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src8",
+    "workId": "tehillim"
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src9",
+    "workId": "mishnah-taanis"
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src10",
+    "workId": "bereishis-rabbah"
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src11",
+    "workId": "taanis"
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src14",
+    "workId": "yeshayahu"
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src15",
+    "workId": "pesikta"
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src17",
+    "workId": "chiddushei-harim"
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src18",
+    "workId": "taanis"
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src19",
+    "workId": "devarim"
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src20",
+    "workId": "yerushalmi-yoma"
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src21",
+    "workId": "chasam-sofer"
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src22",
+    "workId": "chasam-sofer"
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src23",
+    "workId": "shabbos"
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src24",
+    "workId": "yeshayahu"
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src25",
+    "workId": "shloshah-asar-ikkarim"
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "yi-zmanim-tv-bb-04~st0",
+    "storyId": "the-man-from-biala-who-chose-right-after-yom-kippur",
+    "tellings": 1,
+    "pages": {
+     "quiet": false,
+     "live": false
+    }
+   }
+  ],
+  "insights": []
+ }
+}

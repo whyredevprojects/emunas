@@ -28,9 +28,9 @@ describe("aggregates on the mini corpus", () => {
   });
 
   it("is deterministic", () => {
-    const again = aggregate({ shiurim: mini.shiurim, index: mini.index });
+    const again = aggregate({ shiurim: mini.shiurim, index: mini.index, sourceWorkIds: mini.sourceWorkIds });
     expect(toJson(again.files)).toBe(toJson(files));
-    const reversed = aggregate({ shiurim: [...mini.shiurim].reverse(), index: mini.index });
+    const reversed = aggregate({ shiurim: [...mini.shiurim].reverse(), index: mini.index, sourceWorkIds: mini.sourceWorkIds });
     expect(toJson(reversed.files)).toBe(toJson(files));
   });
 

@@ -8,6 +8,7 @@
     "./public": "./src/public/index.ts",
     "./build": "./src/build/index.ts",
     "./build/aggregate": "./src/aggregate/build.ts",
+    "./layer": "./src/layer/index.ts",
     "./aggregate": "./src/aggregate/index.ts",
     "./transcript-gate": "./src/transcript-gate.ts",
     "./package.json": "./package.json"

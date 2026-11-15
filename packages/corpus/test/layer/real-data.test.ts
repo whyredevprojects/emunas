@@ -1,0 +1,164 @@
+/**
+ * C1.2 acceptance on today's data/ (corpus-wave-plan §7 C1.2). Figures are derived from the data
+ * where they can grow; the fixed ones (78 sameAs topics, the sugar-sled redirect, shabbos-tefilah-en)
+ * are the ones the plan names.
+ */
+import { existsSync, readFileSync, readdirSync, statSync, utimesSync } from "node:fs";
+import { join } from "node:path";
+import { describe, expect, it } from "vitest";
+import { aggregate, aggregateOutputs } from "../../src/aggregate/aggregate.ts";
+import { buildCorpusWithAggregates, projectAndAggregate } from "../../src/aggregate/build.ts";
+import { buildCorpus, toJson } from "../../src/build/build.ts";
+import { createNormalizeKeyer } from "../../src/keyer-normalize.ts";
+import { finishLayer, loadLayerInput, prepareLayer } from "../../src/layer/build.ts";
+import type {
+  LayerConceptsFile,
+  LayerInfo,
+  LayerOccasionTopicsFile,
+  LayerRedirectsFile,
+  LayerTopicsFile,
+} from "../../src/public/corpus-layer.ts";
+import { REAL_DATA, REAL_POLICY, readJson, tmp } from "../helpers.ts";
+import { aliasViolations, countViolations, forbiddenKeys, referencedShiurIds } from "./helpers.ts";
+
+type Json = Record<string, unknown>;
+const corpusDir = join(REAL_DATA, "derived/corpus");
+const manifest = readJson<{ entries: { shiurId: string; status: string }[] }>(join(REAL_DATA, "derived/manifest.json"));
+const corpusIndex = readJson<{ shiurIds: string[] }>(join(corpusDir, "index.json"));
+const dataTopics = readJson<Json[]>(join(corpusDir, "topics.json"));
+
+const p = projectAndAggregate({ dataDir: REAL_DATA, policyDir: REAL_POLICY });
+const files = p.layer.files;
+const inCorpus = new Set(corpusIndex.shiurIds);
+const V = new Set(p.shiurim.filter((s) => s.status === "full" && inCorpus.has(s.id)).map((s) => s.id));
+const needsReview = manifest.entries.filter((e) => e.status === "needs_review").map((e) => e.shiurId);
+
+describe("corpus layer on real data", () => {
+  it("(1) no count exceeds the visible recount, and nothing references a shiur outside V", () => {
+    expect((files["layer.json"] as LayerInfo).counts.visibleShiurim).toBe(V.size);
+    expect(countViolations(files, V)).toEqual([]);
+    expect(referencedShiurIds(files).filter((r) => !V.has(r.shiurId))).toEqual([]);
+  });
+
+  it("(2) the needs_review shiurim appear in no layer file", () => {
+    expect(needsReview.length).toBeGreaterThan(0);
+    for (const [name, content] of Object.entries(files)) {
+      const text = JSON.stringify(content);
+      for (const id of needsReview) {
+        expect(text.includes(`"${id}"`) || text.includes(`"${id}~`), `${id} in ${name}`).toBe(false);
+        expect(name.includes(id)).toBe(false);
+      }
+    }
+  });
+
+  it("(3) every sameAs topic resolves (78 today) and no concept merged into a topic has a page", () => {
+    const withSameAs = dataTopics.filter((t) => t["sameAs"] !== undefined);
+    expect(withSameAs.length).toBeGreaterThanOrEqual(78);
+    const tree = (files["topics.json"] as LayerTopicsFile).tree;
+    const resolved = tree.filter((t) => t.sameAs !== null);
+    expect(resolved.map((t) => t.id).sort()).toEqual(withSameAs.map((t) => String(t["id"])).sort());
+    const concepts = (files["concepts.json"] as LayerConceptsFile).concepts;
+    for (const t of resolved) {
+      if (t.sameAs?.conceptId === undefined) continue;
+      const c = concepts.find((x) => x.id === t.sameAs!.conceptId)!;
+      expect(c.mergedIntoTopic).toBe(t.id);
+      expect(c.pages).toEqual({ quiet: false, live: false });
+    }
+    expect(concepts.filter((c) => c.mergedIntoTopic !== null && (c.pages.quiet || c.pages.live))).toEqual([]);
+  });
+
+  it("(4) the stories redirect is resolved", () => {
+    const r = files["redirects.json"] as LayerRedirectsFile;
+    expect(r.corpus.stories["the-sanzer-rav-and-the-business-competitor"]).toBe("the-divrei-chaim-and-the-man-who-shamed");
+  });
+
+  it("(5) every published alias and synonym is in its entity's display-field set", () => {
+    expect(aliasViolations(files, REAL_DATA)).toEqual([]);
+  });
+
+  it("(6) no layer file carries asrVariants, heardAs*, startSeg or endSeg", () => {
+    expect(forbiddenKeys(files)).toEqual([]);
+    for (const content of Object.values(files)) expect(JSON.stringify(content)).not.toMatch(/"(?:asrVariants|heardAs\w*|startSeg|endSeg)"/);
+  });
+
+  it("(7) shabbos-tefilah-en has no series synthesis output", () => {
+    expect(Object.keys(files)).not.toContain("series/shabbos-tefilah-en.json");
+    expect(Object.keys(files).filter((k) => k.startsWith("series/")).length).toBeGreaterThan(10);
+  });
+
+  it("(8) the layer adds under 10 s to corpus:build", () => {
+    const t0 = performance.now();
+    const prepared = prepareLayer(loadLayerInput({ dataDir: REAL_DATA, policyDir: REAL_POLICY }), p);
+    finishLayer(prepared, p.aggregates.files);
+    expect(performance.now() - t0).toBeLessThan(10_000);
+  });
+
+  it("(9) a rerun with unchanged input rewrites no file; (10) the other .corpus outputs are unchanged by the layer", () => {
+    const out = join(tmp(), "with-layer");
+    buildCorpusWithAggregates({ dataDir: REAL_DATA, policyDir: REAL_POLICY, outDir: out, dataSha: null });
+    const all = (dir: string): string[] =>
+      readdirSync(dir).flatMap((f) => (statSync(join(dir, f)).isDirectory() ? all(join(dir, f)) : [join(dir, f)]));
+    const old = new Date("2020-01-01T00:00:00Z");
+    for (const f of all(out)) utimesSync(f, old, old);
+    buildCorpusWithAggregates({ dataDir: REAL_DATA, policyDir: REAL_POLICY, outDir: out, dataSha: null });
+    expect(all(out).filter((f) => statSync(f).mtimeMs !== old.getTime())).toEqual([]);
+
+    // The same build without the layer (the W2.1 wiring): identical outputs except works.json.
+    const plain = join(tmp(), "without-layer");
+    buildCorpus({
+      dataDir: REAL_DATA,
+      policyDir: REAL_POLICY,
+      outDir: plain,
+      dataSha: null,
+      keyer: createNormalizeKeyer(),
+      extraOutputs: (corpus) => {
+        const a = aggregate({ shiurim: corpus.shiurim, index: corpus.index });
+        corpus.report.warnings.push(...a.warnings);
+        return aggregateOutputs(a.files);
+      },
+    });
+    const rel = (dir: string) => all(dir).map((f) => f.slice(dir.length + 1)).sort();
+    const withFiles = rel(out).filter((f) => !f.startsWith("layer/"));
+    expect(withFiles).toEqual(rel(plain));
+    for (const f of withFiles) {
+      const a = readFileSync(join(out, f), "utf8");
+      const b = readFileSync(join(plain, f), "utf8");
+      if (f === "works.json") {
+        const strip = (t: string) => t.replace(/\n {3}"workId": (?:null|"[a-z0-9-]+"),/g, "");
+        expect(strip(a)).toBe(strip(b));
+        expect(a).not.toBe(b);
+      } else {
+        expect(a === b, f).toBe(true);
+      }
+    }
+    expect(existsSync(join(out, "layer/layer.json"))).toBe(true);
+  });
+
+  it("aggregate works.json carries the merged work id", () => {
+    const works = p.aggregates.files.works.works;
+    const withId = works.filter((w) => typeof w.workId === "string");
+    expect(withId.length).toBeGreaterThan(works.length / 2);
+    const layerWorks = new Set((files["works.json"] as { works: { id: string }[] }).works.map((w) => w.id));
+    for (const w of withId) expect(layerWorks.has(w.workId as string)).toBe(true);
+    expect(works.find((w) => w.key === "tanya")?.workId).toBe("tanya");
+  });
+
+  it("derives the occasion link for a parsha (noach → noach-mabul)", () => {
+    const occ = (files["occasion-topics.json"] as LayerOccasionTopicsFile).occasions;
+    expect(occ.find((o) => o.kind === "parsha" && o.key === "noach")).toMatchObject({ topicId: "noach-mabul", source: "derived" });
+    for (const o of occ) if (o.source === "derived") expect(o.share!).toBeGreaterThanOrEqual(0.5);
+  });
+
+  it("matches the Quiet addendum's worked example (hashgacha pratis: three grades)", () => {
+    const t = files["topics.json"] as LayerTopicsFile;
+    const d = t.detail.find((x) => x.id === "hashgacha-pratis")!;
+    expect(d.grades.main.length + d.grades.discussed.length + d.grades.touched.length).toBe(t.tree.find((x) => x.id === "hashgacha-pratis")!.count);
+    expect(d.grades.main.length).toBeGreaterThan(0);
+    expect(d.grades.touched.length).toBeGreaterThan(0);
+  });
+
+  it("is deterministic", () => {
+    const again = finishLayer(prepareLayer(loadLayerInput({ dataDir: REAL_DATA, policyDir: REAL_POLICY }), p), p.aggregates.files);
+    expect(toJson(again.files)).toBe(toJson(files));
+  });
+});
