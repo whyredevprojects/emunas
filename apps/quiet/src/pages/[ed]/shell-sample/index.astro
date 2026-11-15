@@ -1,0 +1,59 @@
+---
+/**
+ * Design-shell sample (W2.3 acceptance: renders in both editions, axe-clean, print hides nav and
+ * player, edition switch keeps path and hash). Built only when `EMUNAS_SHELL_SAMPLE=1`, so it never
+ * ships; synthetic data from `lib/sample.ts`.
+ */
+import type { GetStaticPaths } from "astro";
+import Base from "../../../layouts/Base.astro";
+import CatalogHeader from "../../../components/CatalogHeader.astro";
+import Coverage from "../../../components/Coverage.astro";
+import HebrewYear from "../../../components/HebrewYear.astro";
+import Listen from "../../../components/Listen.astro";
+import NotesLabel from "../../../components/NotesLabel.astro";
+import TimeLink from "../../../components/TimeLink.astro";
+import { formatQuiet } from "@emunas/links";
+import { EDS, type Ed } from "../../../lib/edition.ts";
+import { sampleNotes, sampleRecordings, sampleShiur, sampleUncatalogued } from "../../../lib/sample.ts";
+import { useT } from "../../../i18n/index.ts";
+
+export const getStaticPaths = (() =>
+  process.env["EMUNAS_SHELL_SAMPLE"] === "1" ? EDS.map((ed) => ({ params: { ed } })) : []) satisfies GetStaticPaths;
+
+const ed = Astro.params.ed as Ed;
+const t = useT(ed);
+const notes = sampleNotes[ed];
+const contents = formatQuiet({ kind: "index", ed, index: "contents" });
+---
+<Base
+  ed={ed}
+  title={sampleShiur.catalog.titleOriginal}
+  noindex
+  crumbs={[
+    { label: t("nav.contents"), href: contents },
+    { label: sampleShiur.catalog.sectionTitle, href: contents, lang: "en", dir: "ltr" },
+    { label: t("citation.number", { n: sampleShiur.catalog.n ?? "" }) },
+  ]}
+>
+  <CatalogHeader ed={ed} shiur={sampleShiur} sectionHref={contents} />
+  <Listen ed={ed} recordings={sampleRecordings} />
+  <section class="voice-notes" aria-labelledby="about-shiur" lang={ed}>
+    <NotesLabel ed={ed} />
+    <h2 id="about-shiur">{t("notes.label")}</h2>
+    <p>{notes.oneLiner}</p>
+    <ol role="list" class="sample-outline">
+      {notes.outline.map((item, i) => (
+        <li id={`s${i}`}>
+          <TimeLink ed={ed} recordings={sampleRecordings} t={item.t} /> {item.title}
+        </li>
+      ))}
+      <li id="s3"><TimeLink ed={ed} recordings={sampleRecordings} t={3400} /> {notes.outline[0].title}</li>
+    </ol>
+    <Coverage ed={ed} withNotes={518} total={997} />
+    <p><HebrewYear year={[5736, 5743]} /></p>
+  </section>
+  <section aria-labelledby="sample-uncatalogued">
+    <h2 id="sample-uncatalogued" class="label">{t("citation.label")}</h2>
+    <CatalogHeader ed={ed} shiur={sampleUncatalogued} level={3} />
+  </section>
+</Base>

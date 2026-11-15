@@ -103,6 +103,13 @@ export default defineConfig(
   },
   ...astro.configs["flat/recommended"],
   {
+    // .astro frontmatter is TypeScript (interface Props, `import type`): parse it with the TS parser.
+    files: ["**/*.astro"],
+    languageOptions: {
+      parserOptions: { parser: tseslint.parser, extraFileExtensions: [".astro"] },
+    },
+  },
+  {
     files: [
       "**/*.config.{js,mjs,ts}",
       "packages/**/*.{js,ts}",

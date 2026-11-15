@@ -1,0 +1,121 @@
+/*
+ * Print layer: the page as a kuntres (tech-quiet §4, §11). Navigation, the edition switch, the
+ * skip link, the breadcrumb trail and the player are hidden; times stay as plain text; the text is
+ * black on white in a single column with the page's path at the foot so a printout can be found
+ * again. Logical properties only.
+ */
+@page {
+  size: auto;
+  margin-block: 18mm 20mm;
+  margin-inline: 20mm 18mm;
+}
+
+@layer print {
+  @media print {
+    :root {
+      --color-paper: #fff;
+      --color-surface: #fff;
+      --color-ink: #000;
+      --color-ink-muted: #333;
+      --color-accent: #000;
+      --color-accent-hover: #000;
+      --color-now-playing: #000;
+      --color-rule: #999;
+      --color-rule-strong: #666;
+      color-scheme: light;
+    }
+
+    html {
+      background: #fff;
+      color: #000;
+      font-size: 11pt;
+    }
+
+    body {
+      display: block;
+      font-size: 1rem;
+    }
+
+    .skip-link,
+    .site-nav,
+    .edition-switch,
+    .breadcrumb,
+    .listen,
+    audio,
+    [data-print="hide"] {
+      display: none !important;
+    }
+
+    .site-header,
+    .site-footer {
+      border: 0;
+      padding-block: 0;
+      max-inline-size: none;
+    }
+
+    .site-header {
+      padding-block-end: 6pt;
+      border-block-end: 0.5pt solid #666;
+    }
+
+    .site-name {
+      font-size: 10pt;
+      font-weight: var(--weight-regular);
+    }
+
+    main,
+    .site-header,
+    .site-footer {
+      max-inline-size: none;
+      padding-inline: 0;
+    }
+
+    main {
+      padding-block: 12pt 0;
+    }
+
+    a,
+    a:visited {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Times print as plain text, still in an LTR run. */
+    .time,
+    .time[aria-current] {
+      color: inherit;
+      font-weight: inherit;
+    }
+
+    .site-footer {
+      margin-block-start: 18pt;
+      font-size: 9pt;
+    }
+
+    .footer-links {
+      display: none;
+    }
+
+    .print-only {
+      display: block;
+    }
+
+    h1,
+    h2,
+    h3 {
+      break-after: avoid-page;
+    }
+
+    p,
+    li {
+      orphans: 3;
+      widows: 3;
+    }
+
+    .catalog-header,
+    table,
+    tr {
+      break-inside: avoid;
+    }
+  }
+}

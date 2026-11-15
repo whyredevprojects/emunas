@@ -1,29 +1,45 @@
 ---
-// Placeholder hello page. W2.3 replaces it with the edition chooser (integration-plan C20).
-const title = "Emunas";
+/**
+ * The root: the two editions side by side, Yiddish on the right and English on the left
+ * (concept-quiet §8, integration-plan C20). Static, no redirect, remembers nothing.
+ */
+import "../styles/fonts.css";
+import "@emunas/tokens/tokens.css";
+import "../styles/quiet.css";
+import "../styles/print.css";
+import { formatQuiet } from "@emunas/links";
+import { useT } from "../i18n/index.ts";
+
+const en = useT("en");
+const yi = useT("yi");
 ---
 <!doctype html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="noindex" />
-    <title>{title}</title>
+    <meta name="color-scheme" content="light dark" />
+    <title>{en("site.name")}</title>
+    <meta name="description" content={en("site.description")} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" hreflang="yi" href={formatQuiet({ kind: "home", ed: "yi" })} />
+    <link rel="alternate" hreflang="en" href={formatQuiet({ kind: "home", ed: "en" })} />
   </head>
   <body>
-    <main>
-      <h1>{title}</h1>
-      <p lang="yi" dir="rtl">שיעורים</p>
-      <p>Hello from the Quiet site skeleton.</p>
+    <main id="main">
+      <h1 class="visually-hidden">{en("chooser.title")}</h1>
+      <div class="chooser" dir="rtl">
+        <section lang="yi" dir="rtl" aria-labelledby="chooser-yi">
+          <h2 id="chooser-yi"><a href={formatQuiet({ kind: "home", ed: "yi" })}>{yi("site.name")}</a></h2>
+          <p>{yi("site.description")}</p>
+          <p><a href={formatQuiet({ kind: "home", ed: "yi" })}>{yi("chooser.enter")}</a> · {yi("chooser.enterNote")}</p>
+        </section>
+        <section lang="en" dir="ltr" aria-labelledby="chooser-en">
+          <h2 id="chooser-en"><a href={formatQuiet({ kind: "home", ed: "en" })}>{en("site.name")}</a></h2>
+          <p>{en("site.description")}</p>
+          <p><a href={formatQuiet({ kind: "home", ed: "en" })}>{en("chooser.enter")}</a> · {en("chooser.enterNote")}</p>
+        </section>
+      </div>
     </main>
   </body>
 </html>
-
-<style>
-  main {
-    max-inline-size: 40rem;
-    margin-inline: auto;
-    padding-inline: 1rem;
-    text-align: start;
-  }
-</style>

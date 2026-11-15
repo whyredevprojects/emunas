@@ -1,0 +1,26 @@
+---
+/**
+ * The single standing label over the notes area (concept-quiet §3 "three voices", §5.4 part 3):
+ * "Notes prepared by AI from the recording; not reviewed. The recording is the source." It links
+ * to About and appears once per page, never on individual items. It opens the `.voice-notes`
+ * area: the rule above it is the visible line between the catalog's voice and the notes.
+ */
+import { formatQuiet } from "@emunas/links";
+import { notice } from "@emunas/i18n";
+import type { Ed } from "../lib/edition.ts";
+import { useT } from "../i18n/index.ts";
+
+interface Props {
+  ed: Ed;
+  /** Anchor on the About page that explains how the notes were made. */
+  aboutAnchor?: string;
+}
+
+const { ed, aboutAnchor = "notes" } = Astro.props;
+const t = useT(ed);
+const about = `${formatQuiet({ kind: "index", ed, index: "about" })}#${aboutAnchor}`;
+---
+<p class="notes-label" role="note">
+  <span class="label">{t("notes.label")}</span>
+  <a href={about}>{notice("aiNotes", ed)}</a>
+</p>

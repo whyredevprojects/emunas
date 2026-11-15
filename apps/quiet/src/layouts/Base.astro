@@ -1,0 +1,114 @@
+---
+/**
+ * Base layout for every edition page (concept-quiet §4, §8, §11; tech-quiet §4):
+ * - `<html lang dir>` per edition (yi → rtl, en → ltr);
+ * - skip link, the one-line nav (Contents · Calendar · Indexes · Search · About) and the edition
+ *   switch, which goes to the same path in the other edition and keeps the hash;
+ * - optional breadcrumb that mirrors the catalog;
+ * - `main#main`, footer, and the print layer (styles/print.css: nav, switch and player hidden).
+ *
+ * Slots: default (page body), `head` (extra head tags: canonical, hreflang, OG — W4.6).
+ */
+import "../styles/fonts.css";
+import "@emunas/tokens/tokens.css";
+import "../styles/quiet.css";
+import "../styles/print.css";
+import { scriptOf } from "@emunas/i18n";
+import { formatQuiet } from "@emunas/links";
+import { isolateText } from "../lib/bidi.ts";
+import { dirOf, otherEdition, switchEdition, type Ed } from "../lib/edition.ts";
+import { fontPreloads } from "../lib/fonts.ts";
+import { navItems, navSectionOf, type Crumb } from "../lib/nav.ts";
+import { useT } from "../i18n/index.ts";
+
+interface Props {
+  ed: Ed;
+  /** Page title, without the site name. Catalog titles are isolated automatically. */
+  title: string;
+  /** Root-relative path of this page (default: `Astro.url.pathname`). */
+  path?: string;
+  crumbs?: readonly Crumb[];
+  description?: string;
+  noindex?: boolean;
+}
+
+const { ed, title, crumbs, description, noindex = false } = Astro.props;
+const path = Astro.props.path ?? Astro.url.pathname;
+const t = useT(ed);
+const dir = dirOf(ed);
+const other = otherEdition(ed);
+const switchHref = switchEdition(path, other);
+const current = navSectionOf(path);
+const home = formatQuiet({ kind: "home", ed });
+const editionScript = ed === "yi" ? "he" : "latin";
+const titleText = scriptOf(title) === editionScript ? title : isolateText(title);
+const fullTitle = path === home ? t("site.name") : `${titleText} · ${t("site.name")}`;
+const otherDir = dirOf(other);
+---
+<!doctype html>
+<html lang={ed} dir={dir}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description ?? t("site.description")} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    {fontPreloads(ed).map((href) => <link rel="preload" href={href} as="font" type="font/woff2" crossorigin />)}
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{t("skip.toMain")}</a>
+    <header class="site-header">
+      <p class="site-name"><a href={home} aria-current={path === home ? "page" : undefined}>{t("site.name")}</a></p>
+      <nav class="site-nav" aria-label={t("nav.label")}>
+        <ul role="list">
+          {navItems(ed).map((item) => (
+            <li>
+              <a
+                href={item.href}
+                aria-current={item.href === path ? "page" : current === item.id ? "true" : undefined}
+              >{t(item.key)}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      <p class="edition-switch">
+        <span class="visually-hidden">{t("edition.label")}: </span>
+        <a href={switchHref} hreflang={other} lang={other} dir={otherDir} data-edition-switch>{t("edition.other")}</a>
+      </p>
+    </header>
+    {crumbs && crumbs.length > 0 && (
+      <nav class="breadcrumb" aria-label={t("breadcrumb.label")}>
+        <ol role="list">
+          {crumbs.map((c, i) => (
+            <li>
+              {c.href && i < crumbs.length - 1 ? (
+                <a href={c.href}><bdi lang={c.lang} dir={c.dir}>{c.label}</bdi></a>
+              ) : (
+                <span aria-current="page"><bdi lang={c.lang} dir={c.dir}>{c.label}</bdi></span>
+              )}
+            </li>
+          ))}
+        </ol>
+      </nav>
+    )}
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <p>{t("footer.recordingIsSource")}</p>
+      <p class="footer-links">
+        <a href={formatQuiet({ kind: "index", ed, index: "about" })}>{t("nav.about")}</a>
+        <span aria-hidden="true"> · </span>
+        <a href={switchHref} hreflang={other} data-edition-switch>{t("footer.otherEdition")}</a>
+      </p>
+      <p class="print-only print-source"><bdi dir="ltr">{path}</bdi></p>
+    </footer>
+    <script>
+      import { keepPlace } from "../lib/edition-switch.client.ts";
+      keepPlace(document, location, window);
+    </script>
+  </body>
+</html>

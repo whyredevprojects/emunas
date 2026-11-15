@@ -1,0 +1,25 @@
+---
+/**
+ * A Hebrew year with its civil pair: תשמ"ג (1982–83) (concept-quiet §8). The Hebrew numeral is
+ * an RTL isolate and the civil pair an LTR isolate, so neither reorders inside the other
+ * edition's text. Several years are joined with commas. A year that cannot be written in letters
+ * shows as its digits (integration-plan §0.4: bad data never breaks a page).
+ */
+import { hebrewYearParts } from "@emunas/i18n";
+
+interface Props {
+  /** One year or several (a shiur given across two years). */
+  year: number | readonly number[];
+  /** Show the civil pair. Default true. */
+  civil?: boolean;
+}
+
+const { year, civil = true } = Astro.props;
+const years = [...(typeof year === "number" ? [year] : year)].sort((a, b) => a - b);
+const items = years.map((y, i) => ({ y, parts: hebrewYearParts(y), sep: i > 0 ? ", " : "" }));
+---
+<span class="hebrew-year">{items.map(({ y, parts, sep }) => parts ? (
+  <>{sep}<span class="year" data-year={y}><bdi lang="he" dir="rtl">{parts.hebrew}</bdi>{civil ? <>{" "}<bdi dir="ltr" class="civil">({parts.civil})</bdi></> : null}</span></>
+) : (
+  <>{sep}<bdi dir="ltr" class="year" data-year={y}>{String(y)}</bdi></>
+))}</span>
