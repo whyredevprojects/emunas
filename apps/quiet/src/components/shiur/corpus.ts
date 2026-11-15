@@ -2,7 +2,7 @@
  * Build-time reader for the shiur pages (Node only; used in page frontmatter and
  * `getStaticPaths`, never shipped to a browser). Reads `.corpus/` only (integration-plan C3):
  * `index.json`, `shiurim/<id>.json`, `neighbours.json`, `entities.json`, `people.json`,
- * `series.json`, `build.json`. Never `data/`.
+ * `series.json`, `concepts.json`, `build.json`. Never `data/`.
  *
  * Where `.corpus/` is: `EMUNAS_CORPUS_DIR`, else the first `.corpus/` with a `build.json` found
  * walking up from the working directory (`astro build` runs in `apps/quiet`). Without a corpus the
@@ -11,7 +11,7 @@
 import { existsSync, readFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import type { BuildInfo, CorpusIndex, IndexRow, PublicShiur } from "@emunas/corpus/public";
-import type { EntitiesFile, NeighboursFile, PeopleFile, SeriesFile } from "@emunas/corpus/aggregate";
+import type { ConceptsFile, EntitiesFile, NeighboursFile, PeopleFile, SeriesFile } from "@emunas/corpus/aggregate";
 import type { EntityKind } from "@emunas/links";
 import type { Ed } from "../../lib/edition.ts";
 import type { EntityCounts, RowLookup } from "./view.ts";
@@ -47,6 +47,8 @@ export interface ShiurCorpus {
   /** Display name of a person key in an edition (Hebrew spelling in the Yiddish edition when known). */
   readonly personName: (key: string, ed: Ed, fallback: string) => string;
   readonly seriesTitle: (id: string, ed: Ed) => string | undefined;
+  /** True when a concept has a line on the inyanim index (`concepts.json`), so it can be linked. */
+  readonly conceptListed: (key: string) => boolean;
   shiur(id: string): PublicShiur;
 }
 
@@ -62,6 +64,8 @@ export function loadShiurCorpus(dir: string): ShiurCorpus {
   const entities = readOptional<EntitiesFile>(dir, "entities.json");
   const people = readOptional<PeopleFile>(dir, "people.json");
   const series = readOptional<SeriesFile>(dir, "series.json");
+  const concepts = readOptional<ConceptsFile>(dir, "concepts.json");
+  const listedConcepts = concepts ? new Set(concepts.concepts.map((c) => c.key)) : null;
 
   const rowMap = new Map<string, IndexRow>(index.shiurim.map((r) => [r.id, r]));
   const counts = new Map<string, number>();
@@ -91,6 +95,7 @@ export function loadShiurCorpus(dir: string): ShiurCorpus {
     entityCounts: entities ? (kind, key) => counts.get(`${kind}:${key}`) ?? 0 : () => undefined,
     personName: (key, ed, fallback) => (ed === "yi" ? (heName.get(key) ?? fallback) : fallback),
     seriesTitle: (id, ed) => seriesTitles.get(id)?.[ed],
+    conceptListed: (key) => listedConcepts === null || listedConcepts.has(key),
     shiur(id) {
       let s = shiurim.get(id);
       if (!s) {

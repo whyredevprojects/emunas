@@ -6,13 +6,13 @@
  *
  * Build config read here (all optional):
  * - `EMUNAS_CORPUS_DIR`: where `.corpus/` is (default: found walking up from the working dir);
- * - host variables of `@emunas/links` (`EMUNAS_DOMAIN`, …): for "Open in the listening app";
- *   without them the link is left out;
- * - `EMUNAS_FEEDBACK_EMAIL`: the "report an error" address; without it the line is left out.
+ * - host variables of `@emunas/links` (`EMUNAS_DOMAIN`, …) for "Open in the listening app" and
+ *   `EMUNAS_FEEDBACK_EMAIL` for "report an error", both through components/seo/site-env.ts
+ *   (dev placeholders outside deploy builds; a deploy build without them fails).
  */
 import type { GetStaticPaths } from "astro";
-import { createLinks, hostsFromEnv, type Links } from "@emunas/links";
 import ShiurPage from "../../../../components/shiur/ShiurPage.astro";
+import { currentSiteEnv } from "../../../../components/seo/site-env.ts";
 import { currentCorpus } from "../../../../components/shiur/corpus.ts";
 import { useShiurT } from "../../../../components/shiur/strings.ts";
 import { catalogPlace, reportHref } from "../../../../components/shiur/view.ts";
@@ -31,16 +31,11 @@ if (!corpus) throw new Error("shiur page without a corpus");
 const shiur = corpus.shiur(id);
 const place = catalogPlace(ed, shiur, corpus.neighbours[id], corpus.rows, (sid) => corpus.seriesTitle(sid, ed));
 
-let links: Links | null = null;
-try {
-  links = createLinks({ hosts: hostsFromEnv(process.env) });
-} catch {
-  links = null; // hosts not configured (local builds): no cross-site link
-}
+const { links, feedbackEmail } = currentSiteEnv();
 const t = useShiurT(ed);
-const pageUrl = links ? links.quiet.shiur(ed, id) : `/${ed}/shiur/${id}/`;
+const pageUrl = links.quiet.shiur(ed, id);
 const report = reportHref(
-  process.env["EMUNAS_FEEDBACK_EMAIL"],
+  feedbackEmail,
   t("report.subject", { id }),
   t("report.body", { id, url: pageUrl }),
 );
@@ -51,6 +46,7 @@ const report = reportHref(
   place={place}
   counts={corpus.entityCounts}
   personName={corpus.personName}
-  liveHref={links ? links.live.shiur(ed, id) : null}
+  conceptListed={corpus.conceptListed}
+  liveHref={links.live.shiur(ed, id)}
   reportHref={report}
 />

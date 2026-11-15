@@ -1,0 +1,20 @@
+---
+/**
+ * Head tags for search engines and share previews (integration-plan §2.3, W4.6): canonical,
+ * hreflang yi/en + x-default, Open Graph. Rendered by layouts/Base.astro on every edition page
+ * and by the root chooser. Hosts come from the build environment (./site-env.ts); with dev
+ * placeholders the page is `noindex` and carries no canonical.
+ */
+import { headTags, type HeadInput } from "./head.ts";
+import { currentSiteEnv } from "./site-env.ts";
+
+type Props = HeadInput;
+
+const env = currentSiteEnv();
+const tags = headTags(Astro.props, env.hosts, { placeholder: env.placeholder.hosts });
+---
+{tags.robots && <meta name="robots" content={tags.robots} />}
+{tags.canonical && <link rel="canonical" href={tags.canonical} />}
+{tags.alternates.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
+{tags.og.map((m) => <meta property={m.property} content={m.content} />)}
+{tags.meta.map((m) => <meta name={m.name} content={m.content} />)}

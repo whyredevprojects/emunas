@@ -9,6 +9,7 @@ import "../styles/quiet.css";
 import "../styles/print.css";
 import { formatQuiet } from "@emunas/links";
 import { useT } from "../i18n/index.ts";
+import Seo from "../components/seo/Seo.astro";
 
 const en = useT("en");
 const yi = useT("yi");
@@ -22,8 +23,7 @@ const yi = useT("yi");
     <title>{en("site.name")}</title>
     <meta name="description" content={en("site.description")} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="alternate" hreflang="yi" href={formatQuiet({ kind: "home", ed: "yi" })} />
-    <link rel="alternate" hreflang="en" href={formatQuiet({ kind: "home", ed: "en" })} />
+    <Seo path="/" title={en("site.name")} description={en("site.description")} siteName={en("site.name")} />
   </head>
   <body>
     <main id="main">
@@ -33,11 +33,13 @@ const yi = useT("yi");
           <h2 id="chooser-yi"><a href={formatQuiet({ kind: "home", ed: "yi" })}>{yi("site.name")}</a></h2>
           <p>{yi("site.description")}</p>
           <p><a href={formatQuiet({ kind: "home", ed: "yi" })}>{yi("chooser.enter")}</a> · {yi("chooser.enterNote")}</p>
+          <p><a href={formatQuiet({ kind: "index", ed: "yi", index: "about" })}>{yi("nav.about")}</a></p>
         </section>
         <section lang="en" dir="ltr" aria-labelledby="chooser-en">
           <h2 id="chooser-en"><a href={formatQuiet({ kind: "home", ed: "en" })}>{en("site.name")}</a></h2>
           <p>{en("site.description")}</p>
           <p><a href={formatQuiet({ kind: "home", ed: "en" })}>{en("chooser.enter")}</a> · {en("chooser.enterNote")}</p>
+          <p><a href={formatQuiet({ kind: "index", ed: "en", index: "about" })}>{en("nav.about")}</a></p>
         </section>
       </div>
     </main>
