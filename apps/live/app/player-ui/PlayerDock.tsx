@@ -147,7 +147,7 @@ export function PlayerDock(): JSX.Element {
       data-player-chapter={state.chapterIndex}
     >
       <div className={s.transport}>
-        <button type="button" className={`${s.button} ${s.wide}`} onClick={() => engine.prevChapter()} aria-label={rt("dock.prevChapter")} disabled={disabled}>
+        <button type="button" className={s.button} onClick={() => engine.prevChapter()} aria-label={rt("dock.prevChapter")} disabled={disabled}>
           <Icon name="prev" />
         </button>
         <button type="button" className={`${s.button} ${s.wide}`} onClick={() => engine.seekBy(-15)} aria-label={rt("dock.back")} disabled={disabled}>
@@ -203,9 +203,9 @@ export function PlayerDock(): JSX.Element {
             disabled={disabled}
           />
         </div>
-        <div className={s.notice} role="status" aria-live="polite">
-          {notice}
-          <span className={s.visuallyHidden}>{announcement ? rt("dock.chapterNow", { title: announcement }) : ""}</span>
+        {notice ? <div className={s.notice}>{notice}</div> : null}
+        <div className={s.visuallyHidden} role="status" aria-live="polite">
+          {announcement ? rt("dock.chapterNow", { title: announcement }) : ""}
         </div>
       </div>
 
