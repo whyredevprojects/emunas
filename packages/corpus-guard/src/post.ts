@@ -1,16 +1,23 @@
 /**
  * Guard post-pass (integration-plan §4 step 5): scan built output for forbidden keys,
- * forbidden substrings, unapproved transcript files and verbatim transcript runs.
+ * forbidden substrings, unapproved transcript files, verbatim transcript runs and (corpus-wave-plan
+ * §3.4) aliases that are ASR variants or not display fields of their entity.
  * Any finding fails the deploy. Findings and reports carry file paths, ids, field paths,
  * key names, counts and run lengths, never transcript or shipped text.
+ *
+ * Corpus-layer text (`.corpus/layer/` stories, threads, topics, concepts, series) is compared with
+ * the transcripts of its member shiurim, under its `corpus:` item id; those comparisons run when the
+ * result is taken, grouped by shiur, so each shiur's index is built once.
  */
 import { readFileSync, statSync } from "node:fs";
 import { basename, extname, relative, sep } from "node:path";
 import { walkFiles } from "./budgets.ts";
 import { decodeJsEscapes, htmlProse } from "./extract.ts";
 import { collectShiurItems, fieldOf } from "./items.ts";
+import { ALIAS_KEYS, entityKindOfFile, isLegacyAggregateFile, aliasTerms, isEntityKind, type AliasRule, type AliasRules, type EntityKind } from "./aliases.ts";
+import { layerFileOf, layerFileUnits, pathKey, type CorpusUnit } from "./layer.ts";
 import { findKeysInText, findSubstrings, isForbiddenKey } from "./rules.ts";
-import type { VerbatimMatcher } from "./verbatim.ts";
+import { NO_RUN, mergeScans, type ScanResult, type VerbatimMatcher } from "./verbatim.ts";
 import { NO_TRANSCRIPTS, checkTranscriptFile, type TranscriptEligibility, type TranscriptRejection } from "./eligible.ts";
 
 export type Finding =
@@ -18,6 +25,8 @@ export type Finding =
   | { kind: "substring"; source: string; substring: string; count: number }
   | { kind: "transcript-file"; source: string; recordingId: string; reason: TranscriptRejection | "unreadable" }
   | { kind: "verbatim"; source: string; itemId?: string; shiurId?: string; field?: string; runLength: number }
+  /** An alias-bearing string that is an ASR variant or not a display field of its entity (`entity` = `kind:id`). */
+  | { kind: "alias"; source: string; rule: AliasRule; entity?: string; field: string; count: number }
   | { kind: "unreadable"; source: string; reason: string };
 
 export interface VerbatimReportEntry {
@@ -40,6 +49,12 @@ export interface PostCounts {
   unitsMappedToShiur: number;
   unitsCheckedAgainstCorpus: number;
   verbatimReported: number;
+  /** Corpus-layer text units compared with their member shiurim. */
+  corpusUnits: number;
+  /** Strings in alias-bearing positions checked against the display fields and ASR variants. */
+  aliasTermsChecked: number;
+  /** Strings in alias-bearing positions of the legacy `.corpus/` aggregates (not checked; C3.1 retires them). */
+  aliasTermsLegacy: number;
   findings: number;
 }
 
@@ -47,6 +62,8 @@ export interface PostResult {
   version: 1;
   generatedBy: "@emunas/corpus-guard post";
   verbatimChecked: boolean;
+  /** Whether the raw ban and the alias-key assertion ran (they need the corpus data folder). */
+  aliasesChecked: boolean;
   counts: PostCounts;
   findings: Finding[];
   verbatim: VerbatimReportEntry[];
@@ -61,6 +78,22 @@ export interface ScannerOptions {
   transcripts?: TranscriptEligibility;
   /** Paths in findings are shown relative to this directory. */
   baseDir?: string;
+  /** Display-field sets and ASR variants; without them the alias checks are off. */
+  aliases?: AliasRules | null;
+  /** Extra alias-bearing JSON keys (e.g. a minified quick-index field) on top of ALIAS_KEYS. */
+  aliasKeys?: readonly string[];
+}
+
+/** Context for scanning one parsed value. */
+export interface ValueContext {
+  /** File inside `.corpus/layer/` this value is (enables the corpus item ids and member attribution). */
+  layerFile?: string | null;
+  /** Entity kind of the records of this file (`layer/people.json` → person). */
+  fileKind?: EntityKind | null;
+  /** Entity the alias-bearing fields of this value belong to when the value itself does not say (Pagefind entity records). */
+  entity?: { kind: EntityKind; id: string } | null;
+  /** A legacy `.corpus/` aggregate: its alias positions name no corpus entity and are not checked. */
+  legacyAggregate?: boolean;
 }
 
 const JSON_EXT = new Set([".json", ".map", ".webmanifest"]);
@@ -95,9 +128,16 @@ export class LeakScanner {
     unitsMappedToShiur: 0,
     unitsCheckedAgainstCorpus: 0,
     verbatimReported: 0,
+    corpusUnits: 0,
+    aliasTermsChecked: 0,
+    aliasTermsLegacy: 0,
     findings: 0,
   };
   private readonly matcher: VerbatimMatcher | null;
+  private readonly aliases: AliasRules | null;
+  private readonly aliasKeys: ReadonlySet<string>;
+  /** Corpus-layer units waiting for the grouped member scan. */
+  private pending: { unit: CorpusUnit; source: string }[] = [];
   private readonly allow: ReadonlySet<string>;
   private readonly transcripts: TranscriptEligibility;
   private readonly baseDir: string;
@@ -107,6 +147,8 @@ export class LeakScanner {
     this.allow = opts.allow ?? new Set();
     this.transcripts = opts.transcripts ?? NO_TRANSCRIPTS;
     this.baseDir = opts.baseDir ?? process.cwd();
+    this.aliases = opts.aliases ?? null;
+    this.aliasKeys = new Set<string>([...ALIAS_KEYS, ...(opts.aliasKeys ?? [])]);
   }
 
   private add(f: Finding): void {
@@ -142,7 +184,12 @@ export class LeakScanner {
     if (text.length < this.matcher.thresholds.report) return;
     if (ctx.shiurId !== null) this.counts.unitsMappedToShiur++;
     else this.counts.unitsCheckedAgainstCorpus++;
-    const r = this.matcher.scan(text, ctx.shiurId);
+    this.record(this.matcher.scan(text, ctx.shiurId), source, ctx);
+  }
+
+  /** Report (and fail) one scanned unit. */
+  private record(r: ScanResult, source: string, ctx: { shiurId: string | null; itemId?: string; field?: string }): void {
+    if (!this.matcher) return;
     if (r.maxRun < this.matcher.thresholds.report) return;
     const allowedById = ctx.itemId !== undefined && this.allow.has(ctx.itemId);
     const failing = !allowedById && r.maxUnallowedRun >= this.matcher.thresholds.suppress;
@@ -167,6 +214,105 @@ export class LeakScanner {
     }
   }
 
+  /**
+   * Compare the waiting corpus-layer units with their member shiurim, one shiur index at a time.
+   * A unit none of whose members is known is compared with every transcript. Called by `result()`.
+   */
+  flushDeferred(): void {
+    const matcher = this.matcher;
+    const pending = this.pending;
+    this.pending = [];
+    if (!matcher || pending.length === 0) return;
+    const results = new Map<number, ScanResult>();
+    const best = new Map<number, { shiurId: string; run: number }>();
+    const byShiur = new Map<string, number[]>();
+    pending.forEach(({ unit }, i) => {
+      this.counts.textUnits++;
+      this.counts.corpusUnits++;
+      let known = false;
+      for (const sid of unit.members) {
+        if (!matcher.knowsShiur(sid)) continue;
+        known = true;
+        const list = byShiur.get(sid) ?? [];
+        list.push(i);
+        byShiur.set(sid, list);
+      }
+      if (known) this.counts.unitsMappedToShiur++;
+      else {
+        this.counts.unitsCheckedAgainstCorpus++;
+        if (unit.text.length >= matcher.thresholds.report) results.set(i, matcher.scan(unit.text, null));
+      }
+    });
+    for (const [sid, idxs] of byShiur) {
+      const index = matcher.buildShiurIndex(sid);
+      if (!index) continue;
+      for (const i of idxs) {
+        const text = pending[i]!.unit.text;
+        if (text.length < matcher.thresholds.report) continue;
+        const r = matcher.scanIndex(index, text);
+        results.set(i, mergeScans(results.get(i) ?? NO_RUN, r));
+        const b = best.get(i);
+        if (!b || r.maxRun > b.run) best.set(i, { shiurId: sid, run: r.maxRun });
+      }
+    }
+    pending.forEach(({ unit, source }, i) => {
+      const r = results.get(i);
+      if (!r) return;
+      const b = best.get(i);
+      this.record(r, source, { shiurId: b && b.run > 0 ? b.shiurId : null, itemId: unit.id, field: fieldOf(unit.path) });
+    });
+  }
+
+  // ---- aliases ---------------------------------------------------------------
+
+  /**
+   * Check every string under an alias-bearing key. The entity is the nearest enclosing object with
+   * an entity `kind` and an `id`, else (in a layer entity file) the nearest object with an `id`,
+   * else `ctx.entity`, else unknown (raw ban only).
+   */
+  private walkAliases(value: unknown, source: string, ctx: ValueContext): void {
+    const rules = this.aliases;
+    if (!rules) return;
+    const acc = new Map<string, { rule: AliasRule; entity?: string; field: string; count: number }>();
+    const walk = (node: unknown, path: (string | number)[], entity: { kind: EntityKind; id: string } | null): void => {
+      if (Array.isArray(node)) {
+        node.forEach((c, i) => walk(c, [...path, i], entity));
+        return;
+      }
+      if (!isRecord(node)) return;
+      let e = entity;
+      if (isEntityKind(node.kind) && typeof node.id === "string") e = { kind: node.kind, id: node.id };
+      else if (ctx.fileKind && typeof node.id === "string") e = { kind: ctx.fileKind, id: node.id };
+      for (const [k, c] of Object.entries(node)) {
+        if (this.aliasKeys.has(k)) {
+          const field = fieldOf([...path, k]);
+          for (const term of aliasTerms(c)) {
+            if (e === null && ctx.legacyAggregate) {
+              this.counts.aliasTermsLegacy++;
+              continue;
+            }
+            this.counts.aliasTermsChecked++;
+            const v = rules.check(e, term);
+            if (!v) continue;
+            const entityKey = e ? `${e.kind}:${e.id}` : undefined;
+            const key = `${v.rule}\u0000${entityKey ?? ""}\u0000${field}`;
+            const prev = acc.get(key);
+            if (prev) prev.count++;
+            else acc.set(key, entityKey === undefined ? { rule: v.rule, field, count: 1 } : { rule: v.rule, entity: entityKey, field, count: 1 });
+          }
+        }
+        if (typeof c === "object" && c !== null) walk(c, [...path, k], e);
+      }
+    };
+    walk(value, [], ctx.entity ?? null);
+    for (const a of acc.values()) this.add({ kind: "alias", source, ...a });
+  }
+
+  /** Alias check for terms an emitter publishes for one entity (search docs, quick index rows). */
+  checkEntityAliases(entity: { kind: EntityKind; id: string } | null, terms: readonly string[], source: string): void {
+    this.walkAliases({ terms: [...terms] }, source, { entity });
+  }
+
   // ---- structured values -----------------------------------------------------
 
   /**
@@ -174,10 +320,13 @@ export class LeakScanner {
    * Keys are checked structurally; strings are checked for substrings and verbatim runs,
    * mapped to a shiur by the nearest enclosing `shiurId`/`id`, else by `pathHint`.
    */
-  scanValue(value: unknown, source: string, pathHint: string | null = null): void {
+  scanValue(value: unknown, source: string, pathHint: string | null = null, vctx: ValueContext = {}): void {
     const keyCounts = new Map<string, { count: number; field: string }>();
     const subCounts = new Map<string, number>();
     const fallbackShiur = pathHint;
+    this.walkAliases(value, source, vctx);
+    const layerUnits = new Map<string, CorpusUnit>();
+    if (vctx.layerFile) for (const u of layerFileUnits(vctx.layerFile, value)) layerUnits.set(pathKey(u.path), u);
 
     // A whole PublicShiur: use the shared item-id scheme so allow-listed ids line up with the pre-pass.
     if (isRecord(value) && Array.isArray(value.recordings) && this.shiurOf(value.id) === value.id) {
@@ -196,6 +345,11 @@ export class LeakScanner {
     const walk = (node: unknown, path: (string | number)[], shiur: string | null, itemId: string | undefined): void => {
       if (typeof node === "string") {
         for (const [s, n] of findSubstrings(node)) subCounts.set(s, (subCounts.get(s) ?? 0) + n);
+        const unit = layerUnits.size > 0 ? layerUnits.get(pathKey(path)) : undefined;
+        if (unit && unit.text === node) {
+          if (this.matcher) this.pending.push({ unit, source });
+          return;
+        }
         const ctx: { shiurId: string | null; itemId?: string; field?: string } = { shiurId: shiur, field: fieldOf(path) };
         if (itemId !== undefined) ctx.itemId = itemId;
         this.checkUnit(node, source, ctx);
@@ -312,7 +466,7 @@ export class LeakScanner {
         this.scanText(raw, source, decodeJsEscapes(raw), hint);
         return;
       }
-      this.scanValue(parsed, source, hint);
+      this.scanValue(parsed, source, hint, { layerFile: layerFileOf(file), fileKind: entityKindOfFile(file), legacyAggregate: isLegacyAggregateFile(file) });
       return;
     }
     if (NDJSON_EXT.has(ext)) {
@@ -348,10 +502,12 @@ export class LeakScanner {
   }
 
   result(): PostResult {
+    this.flushDeferred();
     return {
       version: 1,
       generatedBy: "@emunas/corpus-guard post",
       verbatimChecked: this.matcher !== null,
+      aliasesChecked: this.aliases !== null,
       counts: { ...this.counts },
       findings: [...this.findings],
       verbatim: [...this.verbatim],

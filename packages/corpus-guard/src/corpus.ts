@@ -2,6 +2,7 @@
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { collectShiurItems, type CollectOptions, type ShiurUnits } from "./items.ts";
+import { readLayerUnits } from "./layer.ts";
 
 /** Files `.corpus/shiurim/*.json`, sorted. */
 export function listCorpusShiurFiles(corpusDir: string): string[] {
@@ -36,7 +37,10 @@ export function readShiurRecordings(corpusDir: string): Map<string, string[]> {
   return out;
 }
 
-/** Texts of allow-listed items (used so a reviewed run that also appears in HTML/JS does not fail the post-pass). */
+/**
+ * Texts of allow-listed items, shiur items and corpus-layer units alike (used so a reviewed run that
+ * also appears in HTML/JS does not fail the post-pass).
+ */
 export function readAllowedTexts(corpusDir: string, allow: ReadonlySet<string>): string[] {
   if (allow.size === 0) return [];
   const out: string[] = [];
@@ -44,5 +48,6 @@ export function readAllowedTexts(corpusDir: string, allow: ReadonlySet<string>):
     if (!units) continue;
     for (const item of units.items) if (allow.has(item.id)) out.push(item.text);
   }
+  for (const u of readLayerUnits(corpusDir).units) if (allow.has(u.id)) out.push(u.text);
   return out;
 }

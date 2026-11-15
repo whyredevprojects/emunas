@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "Leak guard for both sites: forbidden keys and substrings, verbatim n-gram scan against the ASR transcripts, pre-pass suppression list, Pagefind record checker, budget helpers (integration-plan §5.3).",
+  "description": "Leak guard for both sites: forbidden keys and substrings, verbatim n-gram scan against the ASR transcripts (shiur items and corpus-layer text), pre-pass suppression list, alias checks (raw ban, display fields only), Pagefind record checker, budget helpers (integration-plan §5.3, corpus-wave-plan §3.4).",
   "exports": {
     ".": "./src/index.ts",
     "./tokenize": "./src/tokenize.ts",
@@ -16,6 +16,9 @@
     "bench:real": "tsx bench/real-prepass.ts",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "test": "vitest run"
+  },
+  "dependencies": {
+    "@emunas/normalize": "0.0.0"
   },
   "devDependencies": {
     "@emunas/config": "0.0.0",

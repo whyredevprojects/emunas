@@ -51,6 +51,7 @@ import { loadAudioTranscoded, loadPublishPolicy, loadSuppressFile, type PublishP
 import { PROJECTOR_VERSION, projectShiur, type ProjectContext } from "./project.ts";
 import { createDataReader, defaultDataDir, defaultPolicyDir, REPO_ROOT } from "./read.ts";
 import { emitEligibleTranscripts } from "../transcript-gate.ts";
+import { isCorpusItemId } from "../layer/suppress.ts";
 import { ReportCollector, type BuildReport } from "./report.ts";
 
 export interface BuildOptions {
@@ -280,7 +281,10 @@ export function projectCorpus(
   const reader = createDataReader(opts.dataDir ?? defaultDataDir());
   const keyer = opts.keyer ?? identitySlugKeyer;
   const policy = loadPublishPolicy(opts.policyDir ?? defaultPolicyDir());
-  const suppressIds = [...policy.suppress, ...(opts.suppressFile ? loadSuppressFile(opts.suppressFile) : [])];
+  // Corpus-layer ids (`corpus:…`) are applied to `.corpus/layer/` by layer/suppress.ts, not here.
+  const suppressIds = [...policy.suppress, ...(opts.suppressFile ? loadSuppressFile(opts.suppressFile) : [])].filter(
+    (id) => !isCorpusItemId(id),
+  );
   const suppress = new Set(suppressIds);
   const suppressByShiur = new Map<string, string[]>();
   for (const id of suppress) {

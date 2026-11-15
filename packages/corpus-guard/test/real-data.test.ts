@@ -8,7 +8,7 @@ import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { prePassUnits } from "../src/pre.ts";
 import { DEFAULT_TRANSCRIPTS_DIR } from "../src/transcripts.ts";
-import { REPO_ROOT, hasRealData, realUnits } from "../bench/real-corpus.ts";
+import { REPO_ROOT, hasRealData, realLayerUnits, realUnits } from "../bench/real-corpus.ts";
 
 const transcripts = join(REPO_ROOT, DEFAULT_TRANSCRIPTS_DIR);
 const available = hasRealData() && existsSync(transcripts);
@@ -37,5 +37,30 @@ describe("real data", () => {
       }
     },
     120_000,
+  );
+
+  it.runIf(available)(
+    "pre-pass including the corpus-layer text units finishes in < 3 min, prints counts, ids and numbers only (C1.3)",
+    () => {
+      const t0 = performance.now();
+      const corpusUnits = realLayerUnits();
+      const r = prePassUnits(realUnits(), { transcriptsDir: transcripts, corpusUnits });
+      const secs = (performance.now() - t0) / 1000;
+      console.log(`[corpus-guard] real-data pre-pass with corpus layer ${secs.toFixed(1)} s`, JSON.stringify(r.counts));
+      expect(secs).toBeLessThan(180);
+      expect(r.counts.corpusUnits).toBeGreaterThan(1000);
+      expect(r.counts.corpusUnitsScanned).toBeGreaterThan(r.counts.corpusUnits * 0.9);
+      for (const e of r.suppress.filter((x) => x.id.startsWith("corpus:"))) console.log(`[corpus-guard] corpus suppress ${e.id} ${e.runLength}`);
+      const strings: string[] = [];
+      JSON.stringify(r, (_k, v: unknown) => {
+        if (typeof v === "string") strings.push(v);
+        return v;
+      });
+      for (const s of strings) {
+        if (s === "@emunas/corpus-guard pre") continue;
+        expect(s).toMatch(/^[\w.~:#/\-[\]]+$/);
+      }
+    },
+    180_000,
   );
 });

@@ -3,6 +3,7 @@
  * custom record before `index.writeFiles()`, because Pagefind's output fragments are
  * compressed and the post-pass cannot read them.
  */
+import type { EntityKind } from "./aliases.ts";
 import { LeakScanner, type Finding, type ScannerOptions } from "./post.ts";
 
 /** Shape of a Pagefind `addCustomRecord` argument (only what the guard reads). */
@@ -24,16 +25,27 @@ export interface PagefindCheckOptions extends ScannerOptions {
  * Check one record. Keys of `meta`/`filters`/`sort` are checked against the forbidden key
  * list, every string for forbidden substrings and verbatim runs. Returns findings (empty = ok).
  * Pass the same `scanner` across records to reuse the transcript indexes.
+ *
+ * Entity records (Quiet headword results): pass `entity`, and the alias-bearing meta/filter keys
+ * (`synonyms`, `aliases`, …; a meta string may join terms with `|` or newlines) are checked with
+ * the raw ban and the alias-key assertion when the scanner has the corpus data.
  */
-export function checkPagefindRecord(record: PagefindRecordLike, scanner: LeakScanner, shiurId?: string): Finding[] {
+export function checkPagefindRecord(
+  record: PagefindRecordLike,
+  scanner: LeakScanner,
+  shiurId?: string,
+  entity?: { kind: EntityKind; id: string },
+): Finding[] {
   const before = scanner.findings.length;
   const hint = shiurId ?? scanner.shiurFromPath(record.url);
-  scanner.scanValue(record, `pagefind:${record.url}`, hint);
+  scanner.scanValue(record, `pagefind:${record.url}`, hint, { entity: entity ?? null });
   return scanner.findings.slice(before);
 }
 
 /** Convenience: a scanner for Pagefind checks (same options as the post-pass). */
-export function createPagefindChecker(opts: PagefindCheckOptions = {}): (record: PagefindRecordLike) => Finding[] {
+export function createPagefindChecker(
+  opts: PagefindCheckOptions = {},
+): (record: PagefindRecordLike, entity?: { kind: EntityKind; id: string }) => Finding[] {
   const scanner = new LeakScanner(opts);
-  return (record) => checkPagefindRecord(record, scanner, opts.shiurId);
+  return (record, entity) => checkPagefindRecord(record, scanner, opts.shiurId, entity);
 }

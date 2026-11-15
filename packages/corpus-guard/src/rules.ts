@@ -1,4 +1,4 @@
-/** Forbidden keys and substrings (integration-plan §0.1, §5.2, §5.3). */
+/** Forbidden keys and substrings (integration-plan §0.1, §5.2, §5.3; corpus-wave-plan §3.4). */
 
 /** JSON keys that must never appear in any public output. */
 export const FORBIDDEN_KEYS = [
@@ -12,6 +12,15 @@ export const FORBIDDEN_KEYS = [
   "answerSegs",
   "transcriptKey",
   "audioKey",
+  // Raw-only keys of data/derived/corpus/raw/ (ASR spellings and their aggregation counters,
+  // corpus-wave-plan §3.4). None of them is ever a public field.
+  "asrVariants",
+  "heardAsSamples",
+  "sampleTitles",
+  "resolutionTotals",
+  "nullWork",
+  "fromStories",
+  "fromPeople",
 ] as const;
 
 export type ForbiddenKey = (typeof FORBIDDEN_KEYS)[number];
@@ -30,10 +39,21 @@ export const DISTINCTIVE_KEYS: readonly ForbiddenKey[] = [
   "answerSegs",
   "transcriptKey",
   "audioKey",
+  "asrVariants",
+  "heardAsSamples",
 ];
 
 /** Substrings that point at transcript material. */
-export const FORBIDDEN_SUBSTRINGS = ["transcripts/", "input.txt", ".vtt", "audits/"] as const;
+export const FORBIDDEN_SUBSTRINGS = [
+  "transcripts/",
+  "input.txt",
+  ".vtt",
+  "audits/",
+  // The corpus raw/ folder (alias maps, ASR variants, digests) and its file names (§3.4).
+  "corpus/raw/",
+  "alias-map",
+  "asr-variants",
+] as const;
 
 const KEY_SET: ReadonlySet<string> = new Set(FORBIDDEN_KEYS);
 

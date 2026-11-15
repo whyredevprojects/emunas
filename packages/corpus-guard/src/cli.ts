@@ -3,6 +3,7 @@
  * guard pre     --corpus .corpus --transcripts data/transcripts --out .corpus/suppress.json
  *               [--site-policy site-policy] [--report-at 12] [--suppress-at 20]
  * guard post    --scan <dirs/files...> [--corpus .corpus] [--transcripts data/transcripts]
+ *               [--corpus-data data/derived/corpus | --no-aliases]
  *               [--site-policy site-policy] [--report <file>] [--report-at 12] [--suppress-at 20]
  * guard budgets <roots...> [--max-files 18000] [--max-file-bytes 26214400]
  *
@@ -13,6 +14,7 @@
 import { existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { dirname, isAbsolute, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { DEFAULT_CORPUS_DATA_DIR } from "./aliases.ts";
 import { checkBudgets, formatBytes } from "./budgets.ts";
 import { createLeakScanner } from "./index.ts";
 import { readVerbatimAllow } from "./policy.ts";
@@ -31,7 +33,7 @@ export interface ParsedArgs {
 }
 
 const MULTI = new Set(["scan"]);
-const BOOLEAN = new Set(["no-verbatim", "help"]);
+const BOOLEAN = new Set(["no-verbatim", "no-aliases", "help"]);
 
 export function parseArgs(argv: readonly string[]): ParsedArgs {
   const [command = "help", ...rest] = argv;
@@ -100,6 +102,8 @@ function describe(f: Finding): string {
       return `verbatim run of ${f.runLength} tokens in ${f.source}${f.itemId ? ` item ${f.itemId}` : ""}${f.field ? ` field ${f.field}` : ""}`;
     case "unreadable":
       return `unreadable file ${f.source} (${f.reason})`;
+    case "alias":
+      return `alias ${f.rule === "asr-variant" ? "is an ASR variant" : f.rule === "unknown-entity" ? "names an unknown entity" : "is not a display field"} ×${f.count}${f.entity ? ` of ${f.entity}` : ""} at ${f.field} in ${f.source}`;
   }
 }
 
@@ -115,6 +119,7 @@ function pre(args: ParsedArgs, log: (s: string) => void): number {
   writeJson(out, result);
   const c = result.counts;
   log(`guard pre: ${c.shiurim} shiurim (${c.shiurimScanned} with transcripts, ${c.shiurimWithoutTranscript} without), ${c.items} text items, ${c.tokensScanned} tokens`);
+  log(`guard pre: corpus layer ${c.corpusUnits} text units (${c.corpusUnitsScanned} compared with ${c.corpusComparisons} member transcripts, ${c.corpusUnitsUnchecked} without a member transcript), reported ${c.corpusReported}, at or above the suppress threshold ${c.corpusSuppressed}, unreadable layer files ${c.corpusUnreadableFiles}`);
   log(`guard pre: reported (≥${result.thresholds.report}) ${c.reported}, suppressed (≥${result.thresholds.suppress}) ${c.suppressed}, allow-listed ${c.allowed}, missing recordings ${c.recordingsMissing}, unreadable files ${c.unreadableFiles}`);
   for (const s of result.suppress) log(`  suppress ${s.id} (${s.runLength} tokens; ${s.fields.join(", ")})`);
   log(`guard pre: wrote ${out} in ${secs.toFixed(1)} s`);
@@ -131,9 +136,15 @@ function post(args: ParsedArgs, log: (s: string) => void): number {
   if (transcripts && !existsSync(transcripts)) throw new Error(`transcripts folder not found: ${transcripts} (or pass --no-verbatim)`);
   const corpusFlag = one(args, "corpus");
   const corpus = corpusFlag ? path(corpusFlag) : null;
+  const dataFlag = one(args, "corpus-data");
+  if (dataFlag && args.flags.has("no-aliases")) throw new Error("post: --corpus-data and --no-aliases exclude each other");
+  const defaultData = resolve(REPO_ROOT, DEFAULT_CORPUS_DATA_DIR);
+  // An explicit folder must exist (AliasRules.read throws); the default is used when present.
+  const corpusData = args.flags.has("no-aliases") ? null : dataFlag ? path(dataFlag) : existsSync(defaultData) ? defaultData : null;
   const t0 = performance.now();
   const scanner = createLeakScanner({
     corpusDir: corpus,
+    corpusDataDir: corpusData,
     transcriptsDir: transcripts,
     siteDir,
     env: process.env,
@@ -153,6 +164,9 @@ function post(args: ParsedArgs, log: (s: string) => void): number {
   } else {
     log("guard post: verbatim scan DISABLED (--no-verbatim)");
   }
+  log(`guard post: corpus-layer text units compared with their member shiurim ${c.corpusUnits}`);
+  if (result.aliasesChecked) log(`guard post: alias terms checked (raw ban + display fields) ${c.aliasTermsChecked}; legacy aggregate names not checked ${c.aliasTermsLegacy}`);
+  else log(`guard post: alias checks DISABLED (${args.flags.has("no-aliases") ? "--no-aliases" : `no corpus data at ${defaultData}`})`);
   for (const f of result.findings) log(`  FAIL ${describe(f)}`);
   log(`guard post: ${result.findings.length} finding(s) in ${secs.toFixed(1)} s${report ? `; report ${report}` : ""}`);
   return result.findings.length > 0 ? 1 : 0;
@@ -180,7 +194,8 @@ function budgets(args: ParsedArgs, log: (s: string) => void): number {
 
 const USAGE = `usage:
   guard pre --corpus .corpus --transcripts <dir> --out .corpus/suppress.json [--site-policy dir]
-  guard post --scan <dirs/files...> [--corpus .corpus] [--transcripts <dir> | --no-verbatim] [--report file]
+  guard post --scan <dirs/files...> [--corpus .corpus] [--transcripts <dir> | --no-verbatim]
+             [--corpus-data <dir> | --no-aliases] [--report file]
   guard budgets <roots...> [--max-files n] [--max-file-bytes n]`;
 
 export function main(argv: readonly string[], log: (s: string) => void = console.log): number {

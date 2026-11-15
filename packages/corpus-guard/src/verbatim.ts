@@ -85,14 +85,20 @@ export class VerbatimMatcher {
     return this.shiurRecordings.keys();
   }
 
+  /** A fresh (uncached) index over one shiur's recordings, or null when the shiur is unknown. */
+  buildShiurIndex(shiurId: string): ShingleIndex | null {
+    const recs = this.shiurRecordings.get(shiurId);
+    if (!recs) return null;
+    const { tokens } = this.store.stream(recs);
+    return new ShingleIndex(tokens, this.thresholds.report);
+  }
+
   /** Index over one shiur's recordings, or null when the shiur is unknown. */
   shiurIndex(shiurId: string): ShingleIndex | null {
     const cached = this.shiurCache.get(shiurId);
     if (cached) return cached;
-    const recs = this.shiurRecordings.get(shiurId);
-    if (!recs) return null;
-    const { tokens } = this.store.stream(recs);
-    const index = new ShingleIndex(tokens, this.thresholds.report);
+    const index = this.buildShiurIndex(shiurId);
+    if (!index) return null;
     if (this.shiurCache.size >= this.cacheShiurim) {
       const first = this.shiurCache.keys().next();
       if (!first.done) this.shiurCache.delete(first.value);
@@ -136,6 +142,11 @@ export class VerbatimMatcher {
   /** Scan one text unit; `shiurId` null (or unknown) → the whole transcript corpus. */
   scan(text: string, shiurId: string | null): ScanResult {
     const index = (shiurId !== null ? this.shiurIndex(shiurId) : null) ?? this.globalIndex();
+    return this.scanIndex(index, text);
+  }
+
+  /** Scan one text unit against a given index (allow-listed text honoured). */
+  scanIndex(index: ShingleIndex, text: string): ScanResult {
     const { query, runs } = this.runsAgainst(index, text);
     let unallowed = 0;
     const allow = this.allowed();
@@ -147,3 +158,10 @@ export class VerbatimMatcher {
     return { maxRun: maxRun(runs), runs: runs.length, maxUnallowedRun: unallowed };
   }
 }
+
+/** The combined result of one text scanned against several indexes (a run never spans two). */
+export function mergeScans(a: ScanResult, b: ScanResult): ScanResult {
+  return { maxRun: Math.max(a.maxRun, b.maxRun), runs: a.runs + b.runs, maxUnallowedRun: Math.max(a.maxUnallowedRun, b.maxUnallowedRun) };
+}
+
+export const NO_RUN: ScanResult = { maxRun: 0, runs: 0, maxUnallowedRun: 0 };

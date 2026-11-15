@@ -7,6 +7,9 @@
  * Enforces integration-plan §0 in code:
  *  - forbidden literals (transcript path, ASR input file, audit folder) anywhere
  *    except packages/corpus/src/transcript-gate.ts and packages/corpus-guard/**;
+ *  - forbidden literals for the corpus raw/ folder and its ASR variant dump (corpus-wave-plan
+ *    §1 rule 1, §3.4) anywhere except packages/corpus-guard/** (and the corpus package's own
+ *    tests and mini-fixture script, which prove the reader refuses those paths);
  *  - app and worker code may not import from the pipeline's data folder or from
  *    the Node-only `@emunas/corpus/build` entry. Relative imports are resolved against the
  *    importing file (`emunas/no-pipeline-data-import`), so an app's own `data/` module
@@ -29,14 +32,35 @@ const LEAK_MESSAGE =
 /** Regex sources for esquery selectors. `\W` / `\.` / `\b` keep them from matching this file. */
 const FORBIDDEN_LITERAL_REGEXES = ["data\\Wtranscripts", "input\\.txt", "\\baudits\\b"];
 
+const RAW_MESSAGE =
+  "The corpus data's raw folder (alias maps, ASR variants) may only be referenced in packages/corpus-guard (corpus-wave-plan §1 rule 1, §3.4).";
+
+/** The corpus raw/ folder and its ASR variant dump. `\W` keeps them from matching this file. */
+const RAW_LITERAL_REGEXES = ["corpus\\Wraw\\b", "asr\\Wvariants"];
+
+/**
+ * @param {readonly string[]} regexes
+ * @param {string} message
+ */
+const literalSelectors = (regexes, message) =>
+  regexes.flatMap((re) => [
+    { selector: `Literal[value=/${re}/]`, message },
+    { selector: `TemplateElement[value.raw=/${re}/]`, message },
+    { selector: `JSXText[value=/${re}/]`, message },
+  ]);
+
 /** @type {import("eslint").Linter.RuleEntry} */
-export const forbiddenLiteralRule = [
+export const forbiddenLiteralRule = ["error", ...literalSelectors(FORBIDDEN_LITERAL_REGEXES, LEAK_MESSAGE)];
+
+/** @type {import("eslint").Linter.RuleEntry} */
+export const corpusRawLiteralRule = ["error", ...literalSelectors(RAW_LITERAL_REGEXES, RAW_MESSAGE)];
+
+/** Both literal lists (one `no-restricted-syntax` entry per file: a later entry would replace an earlier one). */
+/** @type {import("eslint").Linter.RuleEntry} */
+export const allForbiddenLiteralsRule = [
   "error",
-  ...FORBIDDEN_LITERAL_REGEXES.flatMap((re) => [
-    { selector: `Literal[value=/${re}/]`, message: LEAK_MESSAGE },
-    { selector: `TemplateElement[value.raw=/${re}/]`, message: LEAK_MESSAGE },
-    { selector: `JSXText[value=/${re}/]`, message: LEAK_MESSAGE },
-  ]),
+  ...literalSelectors(FORBIDDEN_LITERAL_REGEXES, LEAK_MESSAGE),
+  ...literalSelectors(RAW_LITERAL_REGEXES, RAW_MESSAGE),
 ];
 
 const DATA_MESSAGE = "Site code reads .corpus/ only, never the pipeline's data folder (integration-plan §1.4 C3).";
@@ -114,6 +138,16 @@ export const TRANSCRIPT_ALLOWED_FILES = [
   "packages/corpus-guard/**",
 ];
 
+/**
+ * Files allowed to name the corpus raw/ folder or its ASR variant dump. Only the guard reads it;
+ * the corpus package's tests and mini-fixture script name it to prove the reader refuses it.
+ */
+export const CORPUS_RAW_ALLOWED_FILES = [
+  "packages/corpus-guard/**",
+  "packages/corpus/test/**",
+  "packages/corpus/scripts/make-mini-corpus.ts",
+];
+
 const ALL_SOURCE = ["**/*.{js,mjs,cjs,ts,mts,cts,tsx,jsx,astro}"];
 
 export default defineConfig(
@@ -176,10 +210,21 @@ export default defineConfig(
     files: ["workers/**/*.ts", "apps/*/worker/**/*.ts"],
     languageOptions: { globals: { ...globals.serviceworker } },
   },
+  // One `no-restricted-syntax` entry per file, so the two literal lists are combined per exemption set.
   {
     files: ALL_SOURCE,
+    ignores: [...TRANSCRIPT_ALLOWED_FILES, ...CORPUS_RAW_ALLOWED_FILES],
+    rules: { "no-restricted-syntax": allForbiddenLiteralsRule },
+  },
+  {
+    files: CORPUS_RAW_ALLOWED_FILES.map((f) => (f.endsWith("/**") ? `${f}/*.{js,mjs,cjs,ts,mts,cts,tsx,jsx,astro}` : f)),
     ignores: TRANSCRIPT_ALLOWED_FILES,
     rules: { "no-restricted-syntax": forbiddenLiteralRule },
+  },
+  {
+    files: TRANSCRIPT_ALLOWED_FILES.map((f) => (f.endsWith("/**") ? `${f}/*.{js,mjs,cjs,ts,mts,cts,tsx,jsx,astro}` : f)),
+    ignores: CORPUS_RAW_ALLOWED_FILES,
+    rules: { "no-restricted-syntax": corpusRawLiteralRule },
   },
   {
     files: [

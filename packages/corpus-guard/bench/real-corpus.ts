@@ -5,10 +5,11 @@
  * write-up), never heardAs/asrNotes/segs. Used by the bench and the real-data test to
  * time the pre-pass on today's corpus. Nothing here is written to disk.
  */
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { collectShiurItems, type ShiurUnits } from "../src/items.ts";
+import { layerFileUnits, type CorpusUnit } from "../src/layer.ts";
 
 export const REPO_ROOT = resolve(fileURLToPath(new URL("../../..", import.meta.url)));
 export const DERIVED_DIR = join(REPO_ROOT, "data", "derived");
@@ -91,4 +92,41 @@ export function* realUnits(): Generator<ShiurUnits | null> {
 
 export function hasRealData(): boolean {
   return existsSync(join(DERIVED_DIR, "manifest.json")) && existsSync(join(DERIVED_DIR, "ingest.json"));
+}
+
+/**
+ * Real-data stand-in for the corpus-layer text units (`.corpus/layer/`, C1.2): the generated corpus
+ * prose of `data/derived/corpus/` (stories, teaching clusters, topic descriptions, concepts, series
+ * syntheses) in the layer's shape, with every listed member (not only the visible ones, so the
+ * stand-in is a superset of what the layer ships). Reads only the public entity files, never raw/.
+ */
+export function realLayerUnits(): CorpusUnit[] {
+  const dir = join(DERIVED_DIR, "corpus");
+  if (!existsSync(join(dir, "index.json"))) return [];
+  const read = (f: string): J[] => (existsSync(join(dir, f)) ? arr(readJson(join(dir, f))) : []);
+  const ids = (v: unknown, key = "shiurId") => arr(v).map((x) => ({ shiurId: x[key] }));
+  const units: CorpusUnit[] = [];
+  units.push(...layerFileUnits("stories.json", { stories: read("stories.json").map((s) => ({ ...pick(s, "id", "title", "retelling"), tellings: ids(s.tellings) })) }));
+  units.push(...layerFileUnits("threads.json", { threads: read("teaching-clusters.json").map((c) => ({ ...pick(c, "id", "label", "summary"), members: ids(c.members) })) }));
+  units.push(
+    ...layerFileUnits("topics.json", {
+      detail: read("topics.json").map((t) => ({ id: t.id, description: t.description, hubs: t.hubShiurIds, grades: { main: [], discussed: [], touched: [] } })),
+    }),
+  );
+  units.push(...layerFileUnits("concepts.json", { concepts: read("concepts.json").map((c) => pick(c, "id", "label", "definition", "shiurIds", "exampleRefs")) }));
+  const seriesDir = join(dir, "series");
+  if (existsSync(seriesDir)) {
+    for (const f of readdirSync(seriesDir).sort()) {
+      if (!f.endsWith(".json")) continue;
+      const s = readJson(join(seriesDir, f)) as J;
+      units.push(...layerFileUnits(`series/${f}`, pick(s, "seriesId", "title", "overview", "keyThemes", "arc")));
+    }
+  }
+  return units;
+}
+
+function pick(r: J, ...keys: string[]): J {
+  const out: J = {};
+  for (const k of keys) out[k] = r[k];
+  return out;
 }

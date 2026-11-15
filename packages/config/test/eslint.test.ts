@@ -3,7 +3,7 @@ import { spawnSync } from "node:child_process";
 import { resolve } from "node:path";
 import { beforeAll, describe, expect, it } from "vitest";
 import config, { importsPipelineData } from "../eslint.config.js";
-import { AUDITS, INPUT_TXT, TRANSCRIPTS_PATH, configDir, repoRoot } from "./helpers.ts";
+import { ASR_VARIANTS, AUDITS, CORPUS_RAW, INPUT_TXT, TRANSCRIPTS_PATH, configDir, repoRoot } from "./helpers.ts";
 
 let eslint: ESLint;
 
@@ -154,6 +154,53 @@ describe("forbidden literals (one door: transcript gate and guard only)", () => 
   });
 });
 
+describe("forbidden literals for the corpus data's raw folder (guard only, corpus-wave-plan §3.4)", () => {
+  it("fails an apps/ file naming the corpus data's raw folder", async () => {
+    const msgs = await lint("apps/quiet/src/lib/leak.ts", `export const p = "data/derived/${CORPUS_RAW}/people.json";\n`);
+    expect(ruleIds(msgs)).toContain("no-restricted-syntax");
+    expect(msgs.some((m) => m.message.includes("packages/corpus-guard"))).toBe(true);
+  });
+
+  it("fails a template literal naming the ASR variant dump in Live app code", async () => {
+    const msgs = await lint("apps/live/app/data/leak.ts", "export const f = (d: string) => `${d}/raw/" + ASR_VARIANTS + ".json`;\n");
+    expect(ruleIds(msgs)).toContain("no-restricted-syntax");
+  });
+
+  it("fails it in site packages and workers, including the corpus build code", async () => {
+    for (const file of ["packages/search-core/src/leak.ts", "packages/corpus/src/layer/leak.ts", "workers/api/src/leak.ts"]) {
+      const msgs = await lint(file, `export const p = "${CORPUS_RAW}/${ASR_VARIANTS}.json";\n`);
+      expect(ruleIds(msgs), file).toContain("no-restricted-syntax");
+    }
+  });
+
+  it("is not exempt in the transcript gate, which still may name the transcripts path", async () => {
+    const raw = await lint("packages/corpus/src/transcript-gate.ts", `export const p = "${CORPUS_RAW}";\n`);
+    expect(ruleIds(raw)).toContain("no-restricted-syntax");
+    const tr = await lint("packages/corpus/src/transcript-gate.ts", `export const p = "${TRANSCRIPTS_PATH}";\n`);
+    expect(tr).toEqual([]);
+  });
+
+  it("allows it in packages/corpus-guard", async () => {
+    const msgs = await lint(
+      "packages/corpus-guard/src/aliases.ts",
+      `export const p = "data/derived/${CORPUS_RAW}/${ASR_VARIANTS}.json";\nexport const t = "${TRANSCRIPTS_PATH}";\n`,
+    );
+    expect(msgs).toEqual([]);
+  });
+
+  it("allows it in the corpus package's tests (which prove the reader refuses it), where the transcript literal still fails", async () => {
+    const ok = await lint("packages/corpus/test/layer/x.test.ts", `export const p = "${CORPUS_RAW}/${ASR_VARIANTS}.json";\n`);
+    expect(ok).toEqual([]);
+    const tr = await lint("packages/corpus/test/layer/x.test.ts", `export const p = "${TRANSCRIPTS_PATH}";\n`);
+    expect(ruleIds(tr)).toContain("no-restricted-syntax");
+  });
+
+  it("does not flag ordinary words", async () => {
+    const msgs = await lint("apps/live/app/routes/ok.ts", `export const a = "corpus/rawness";\nexport const b = "asr";\nexport const c = "variants";\n`);
+    expect(msgs).toEqual([]);
+  });
+});
+
 describe("site:lint CLI path", () => {
   const eslintBin = resolve(repoRoot, "node_modules/eslint/bin/eslint.js");
   const run = (stdinFilename: string, code: string) =>
@@ -170,6 +217,12 @@ describe("site:lint CLI path", () => {
     );
     expect(res.status).toBe(1);
     expect(res.stdout).toContain("no-restricted-imports");
+    expect(res.stdout).toContain("no-restricted-syntax");
+  });
+
+  it("exits non-zero for an apps/ file naming the corpus data's raw folder", () => {
+    const res = run("apps/live/app/routes/leak.ts", `export const p = "data/derived/${CORPUS_RAW}/x.json";\n`);
+    expect(res.status).toBe(1);
     expect(res.stdout).toContain("no-restricted-syntax");
   });
 

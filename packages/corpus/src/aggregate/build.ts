@@ -15,6 +15,7 @@ import { buildCorpus, projectCorpus, resolveOutDir, type BuildOptions, type Buil
 import { defaultDataDir, defaultPolicyDir } from "../build/read.ts";
 import { createNormalizeKeyer } from "../keyer-normalize.ts";
 import { finishLayer, loadLayerInput, prepareLayer, type LayerOutput } from "../layer/build.ts";
+import { applyCorpusSuppress, loadCorpusSuppressIds, type CorpusSuppressReport } from "../layer/suppress.ts";
 import { LAYER_DIR, type LayerInfo } from "../public/corpus-layer.ts";
 import { aggregate, aggregateOutputs, type AggregateResult } from "./aggregate.ts";
 
@@ -29,6 +30,8 @@ export interface AggregatedBuildResult extends BuildResult {
     removed: string[];
     /** Time spent reading the corpus input and building the layer. */
     ms: number;
+    /** Corpus item ids blanked by `--suppress` / publish-policy `suppress[]`, and those that matched nothing. */
+    suppress: CorpusSuppressReport;
   };
 }
 
@@ -53,6 +56,8 @@ export function buildCorpusWithAggregates(opts: AggregatedBuildOptions = {}): Ag
   const policyDir = opts.policyDir ?? defaultPolicyDir();
   let layer: LayerOutput | null = null;
   let layerMs = 0;
+  let suppress: CorpusSuppressReport = { applied: [], unmatched: [] };
+  const suppressIds = loadCorpusSuppressIds({ policyDir, suppressFile: opts.suppressFile });
   const r = buildCorpus({
     ...opts,
     keyer: opts.keyer ?? createNormalizeKeyer(),
@@ -64,6 +69,7 @@ export function buildCorpusWithAggregates(opts: AggregatedBuildOptions = {}): Ag
       corpus.report.warnings.push(...a.warnings);
       const t1 = performance.now();
       layer = finishLayer(prepared, a.files);
+      if (prepared.state !== null) suppress = applyCorpusSuppress(layer.files, suppressIds);
       layerMs += performance.now() - t1;
       const out = aggregateOutputs(a.files);
       for (const [name, value] of Object.entries(layer.files)) out[`${LAYER_DIR}/${name}`] = value;
@@ -93,7 +99,7 @@ export function buildCorpusWithAggregates(opts: AggregatedBuildOptions = {}): Ag
           `in ${Math.round(layerMs)} ms`
       : `corpus layer off: ${done.info.warnings.join("; ")}`,
   );
-  return { ...r, layer: { info: done.info, files: [...keep].sort(), removed, ms: Math.round(layerMs) } };
+  return { ...r, layer: { info: done.info, files: [...keep].sort(), removed, ms: Math.round(layerMs), suppress } };
 }
 
 /** Project with normalize keys, aggregate and build the layer in memory (no file output); for tests and tools. */
@@ -106,5 +112,9 @@ export function projectAndAggregate(
     p,
   );
   const aggregates = aggregate({ shiurim: p.shiurim, index: p.index, sourceWorkIds: prepared.sourceWorkIds });
-  return { ...p, aggregates, layer: finishLayer(prepared, aggregates.files), sourceWorkIds: prepared.sourceWorkIds };
+  const layer = finishLayer(prepared, aggregates.files);
+  if (prepared.state !== null) {
+    applyCorpusSuppress(layer.files, loadCorpusSuppressIds({ policyDir: opts.policyDir ?? defaultPolicyDir(), suppressFile: opts.suppressFile }));
+  }
+  return { ...p, aggregates, layer, sourceWorkIds: prepared.sourceWorkIds };
 }

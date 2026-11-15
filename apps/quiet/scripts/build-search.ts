@@ -142,7 +142,9 @@ export function guardRecords(records: readonly { record: QuietSearchRecord; shiu
               ? `verbatim run ${f.runLength}${f.field ? ` in ${f.field}` : ""}${f.itemId ? ` (${f.itemId})` : ""}`
               : f.kind === "transcript-file"
                 ? `transcript file ${f.recordingId}`
-                : `unreadable: ${f.reason}`;
+                : f.kind === "alias"
+                  ? `alias ${f.rule} ×${f.count}${f.entity ? ` of ${f.entity}` : ""} at ${f.field}`
+                  : `unreadable: ${f.reason}`;
       findings.push({ kind: f.kind, source: f.source, detail });
     }
   }
