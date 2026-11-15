@@ -1,0 +1,14 @@
+---
+/**
+ * A topic's name as the index prints it: the Hebrew headword (both editions), and in the English
+ * edition the English label beside it. Each part is an isolate in its own script.
+ */
+import type { TopicName } from "./model.ts";
+
+interface Props {
+  name: TopicName;
+}
+
+const { name } = Astro.props;
+---
+<span class="topic-name"><bdi lang={name.title.lang} dir={name.title.dir}>{name.title.text}</bdi>{name.alt && <>{" "}<bdi class="topic-alt" lang={name.alt.lang} dir={name.alt.dir}>{name.alt.text}</bdi></>}</span>

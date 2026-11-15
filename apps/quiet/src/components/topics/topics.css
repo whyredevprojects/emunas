@@ -1,0 +1,139 @@
+/*
+ * The topic index (מפתח הענינים): the tree set as a sefer's subject index (runs of entries with
+ * their counts), topic pages with the three grades in words and weight, gateway children with
+ * their notes. Hairlines, no badges, no colour coding. Logical properties only.
+ */
+@layer components {
+  .topic-alt,
+  .tree-count,
+  .grade-count,
+  .topic-tree .sep,
+  .topic-tree .dash,
+  .calendar-rule,
+  .topic-children .count,
+  .full-list .count {
+    color: var(--color-ink-muted);
+  }
+
+  .tree-count,
+  .grade-count {
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+
+  .topic-gate {
+    border-block-start: var(--rule-hairline) solid var(--color-rule);
+    padding-block-start: var(--space-s);
+    max-inline-size: var(--measure-text);
+  }
+
+  .topic-gate + .topic-gate {
+    margin-block-start: var(--space-m);
+  }
+
+  .topic-gate > h2 {
+    margin-block-end: var(--space-2xs);
+  }
+
+  .tree-run,
+  .tree-sub {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .tree-run > li,
+  .tree-sub > li {
+    display: inline;
+  }
+
+  .tree-run > li + li::before {
+    content: " · ";
+    color: var(--color-ink-muted);
+  }
+
+  .tree-sub > li + li::before {
+    content: ", ";
+    color: var(--color-ink-muted);
+  }
+
+  .calendar-rule {
+    font-size: var(--step-0);
+    max-inline-size: var(--measure-text);
+  }
+
+  .topic-notes {
+    max-inline-size: var(--measure-text);
+  }
+
+  .topic-notes > * + * {
+    margin-block-start: var(--space-xs);
+  }
+
+  .topic-definition {
+    font-style: italic;
+  }
+
+  :lang(yi) .topic-definition,
+  .topic-definition:lang(yi) {
+    font-style: normal;
+  }
+
+  .topic-section {
+    margin-block-start: var(--space-l);
+  }
+
+  .topic-section > h2 {
+    margin-block-end: var(--space-xs);
+  }
+
+  .topic-children {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    max-inline-size: var(--measure-text);
+  }
+
+  .topic-children > li {
+    padding-block: var(--space-2xs);
+    border-block-end: var(--rule-hairline) solid var(--color-rule);
+  }
+
+  .topic-children p {
+    margin: 0;
+    margin-block-start: var(--space-3xs);
+    color: var(--color-ink-muted);
+  }
+
+  .topic-grade {
+    margin-block-start: var(--space-l);
+  }
+
+  .topic-rows {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    max-inline-size: var(--measure-text);
+  }
+
+  .topic-row {
+    padding-block: var(--space-3xs);
+  }
+
+  .topic-row > * {
+    display: block;
+  }
+
+  .topic-row.principal .topic-row-title {
+    font-weight: var(--weight-semibold);
+  }
+
+  .topic-parts .part-link + .part-link::before {
+    content: " · ";
+    color: var(--color-ink-muted);
+  }
+
+  .topic-occasions {
+    margin: 0;
+  }
+}

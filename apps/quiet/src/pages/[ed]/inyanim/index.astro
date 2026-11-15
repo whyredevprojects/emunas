@@ -1,48 +1,44 @@
 ---
 /**
- * Inyanim index, ענינים (concept-quiet §5.10; tech-quiet §2 `/{ed}/inyanim/`): concepts by their
- * Hebrew term (the headword in both editions), for terms in at least CONCEPT_MIN_SHIURIM shiurim
- * and not on the stop-list. No topic hierarchy: candidateTopics are search keywords only (C9).
- * Says in one line that it is partial and unreviewed.
+ * מפתח הענינים, the topic index (concept-quiet-corpus C4.1 "The tree page"; corpus-wave-plan
+ * §3.5 `/{ed}/inyanim/`): the whole taxonomy on one page, as the subject index of a sefer. Gates as
+ * headings, their topics beneath, deeper topics run in after a dash; the Hebrew term with its count.
+ * The AI label once, under the heading. Built only when the corpus layer is there.
  */
 import type { GetStaticPaths } from "astro";
+import { corpusLabel } from "@emunas/i18n";
 import Base from "../../../layouts/Base.astro";
-import CiteList from "../../../components/indexes/CiteList.astro";
-import IndexHead from "../../../components/indexes/IndexHead.astro";
-import JumpList from "../../../components/indexes/JumpList.astro";
-import { indexesData } from "../../../components/indexes/corpus.ts";
-import { indexCrumbs, indexTitle } from "../../../components/indexes/crumbs.ts";
-import { conceptsIndex, run } from "../../../components/indexes/model.ts";
-import { useIndexesT } from "../../../components/indexes/strings.ts";
+import EntityLabel from "../../../components/corpus/EntityLabel.astro";
+import CalendarRule from "../../../components/topics/CalendarRule.astro";
+import TopicTree from "../../../components/topics/TopicTree.astro";
+import { topicsLayer, topicsSource } from "../../../components/topics/data.ts";
+import { topicTree } from "../../../components/topics/model.ts";
+import { useTopicsT } from "../../../components/topics/strings.ts";
 import { EDS, type Ed } from "../../../lib/edition.ts";
+import { INDEXES_ANCHOR } from "../../../lib/nav.ts";
+import { useT } from "../../../i18n/index.ts";
+import { formatQuiet } from "@emunas/links";
 
-export const getStaticPaths = (() => (indexesData() ? EDS.map((ed) => ({ params: { ed } })) : [])) satisfies GetStaticPaths;
+export const getStaticPaths = (() => (topicsSource() ? EDS.map((ed) => ({ params: { ed } })) : [])) satisfies GetStaticPaths;
 
 const ed = Astro.params.ed as Ed;
-const data = indexesData()!;
-const t = useIndexesT(ed);
-const title = indexTitle(ed, "inyanim");
-const letters = conceptsIndex(data, ed);
+const src = topicsSource()!;
+const layer = topicsLayer();
+const t = useTopicsT(ed);
+const ui = useT(ed);
+const title = corpusLabel("index.topics", ed);
+const gates = topicTree(ed, src);
 ---
-<Base ed={ed} title={title} crumbs={indexCrumbs(ed, "inyanim")}>
-  <IndexHead ed={ed} title={run(title, ed)} intro={t("inyanim.intro", { min: data.concepts.minShiurim })} counts={data.build.counts} />
-  <JumpList ed={ed} items={letters.map((b) => ({ id: b.id, label: b.letter, lang: "he", dir: "rtl" as const }))} />
-  {letters.map((b) => (
-    <section class="index-block" id={b.id} aria-labelledby={`${b.id}-h`}>
-      <h2 id={`${b.id}-h`}><bdi lang="he" dir="rtl">{b.letter}</bdi></h2>
-      <ul class="entries" role="list">
-        {b.items.map((c) => (
-          <li id={c.key}>
-            {c.href ? (
-              <a class="entry-name" href={c.href}><bdi lang={c.he.lang} dir={c.he.dir}>{c.he.text}</bdi></a>
-            ) : (
-              <span class="entry-name"><bdi lang={c.he.lang} dir={c.he.dir}>{c.he.text}</bdi></span>
-            )}
-            <span class="entry-count">{t("count.shiurim", { count: c.shiurCount })}</span>
-            <CiteList ed={ed} cites={c.cites} />
-          </li>
-        ))}
-      </ul>
-    </section>
-  ))}
+<Base
+  ed={ed}
+  title={title}
+  crumbs={[{ label: ui("nav.indexes"), href: `${formatQuiet({ kind: "home", ed })}#${INDEXES_ANCHOR}` }, { label: title }]}
+>
+  <header class="index-head topic-index-head">
+    <h1>{title}</h1>
+    <EntityLabel ed={ed} variant="index" count={layer.visibleShiurim} />
+    <p class="index-intro">{t("tree.intro")}</p>
+    <CalendarRule ed={ed} />
+  </header>
+  <TopicTree ed={ed} gates={gates} />
 </Base>

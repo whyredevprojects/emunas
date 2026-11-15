@@ -1,7 +1,9 @@
 ---
 /**
  * One zman (concept-quiet §5.5): every shiur on it, Yiddish and English together, by year, with
- * section, language and one-liner. Seudah and lechaim shiurim follow under their own sub-heading
+ * section, language and one-liner. Where the occasion is linked to a topic, one line sends the
+ * reader to the topic index for the shiurim on it said at other times (concept-quiet-corpus C4.1).
+ * Seudah and lechaim shiurim follow under their own sub-heading
  * ("סעודת זאת חנוכה" under זאת חנוכה). One page per zman key in `.corpus/occasions.json`.
  */
 import type { GetStaticPaths } from "astro";
@@ -10,6 +12,7 @@ import CalendarViews from "../../../../../components/calendar/CalendarViews.astr
 import NotesKey from "../../../../../components/calendar/NotesKey.astro";
 import OccasionName from "../../../../../components/calendar/OccasionName.astro";
 import ShiurList from "../../../../../components/calendar/ShiurList.astro";
+import TopicLine from "../../../../../components/calendar/TopicLine.astro";
 import { loadCalendarData } from "../../../../../components/calendar/data.ts";
 import { calendarHref, occasionPage, zmanKeys } from "../../../../../components/calendar/model.ts";
 import { useCalendarT } from "../../../../../components/calendar/strings.ts";
@@ -43,6 +46,7 @@ const all = [...page.shiurim, ...page.subs.flatMap((s) => s.shiurim)];
 >
   <h1><OccasionName ed={ed} name={page} /></h1>
   <CalendarViews ed={ed} current="zman" />
+  <TopicLine ed={ed} kind="zman" occasionKey={key} name={page.name} />
   {page.count > 0 ? (
     <>
       <p class="cal-intro">{t("cal.zman.pageIntro")} <span class="count">{t("cal.count", { count: page.count })}</span></p>

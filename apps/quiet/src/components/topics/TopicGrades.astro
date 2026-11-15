@@ -1,0 +1,61 @@
+---
+/**
+ * A topic's shiurim in three grades (concept-quiet-corpus C4.1 part 4), the way a careful index
+ * tells a main treatment from a mention:
+ *
+ * - "The shiur is about this": principal rows, in the heavier weight;
+ * - "Discussed in the shiur": plain rows;
+ * - "Touched on in one part": one line each, the shiur and then each tagged part's title with its
+ *   time as the link (to the minute).
+ *
+ * Within a grade, catalog order; every row states its language and year. A row the catalog places
+ * on one of the topic's occasions says so ("said on Chanukah", linked to the calendar page). Grading
+ * is in words and weight, never colour or icons. An empty grade is left out.
+ */
+import { languageName, topicGradeLabel, TOPIC_GRADES } from "@emunas/i18n";
+import HebrewYear from "../HebrewYear.astro";
+import { runAttrs } from "../../lib/bidi.ts";
+import type { Ed } from "../../lib/edition.ts";
+import type { TopicGrades, TopicRow, TouchedPart, TouchedRow } from "./model.ts";
+import { useTopicsT } from "./strings.ts";
+import "./topics.css";
+
+interface Props {
+  ed: Ed;
+  grades: TopicGrades;
+}
+
+const { ed, grades } = Astro.props;
+const t = useTopicsT(ed);
+const sizes = { main: grades.main.length, discussed: grades.discussed.length, touched: grades.touched.length };
+const rowsOf = (g: "main" | "discussed" | "touched"): readonly TopicRow[] => grades[g];
+const partsOf = (r: TopicRow): readonly TouchedPart[] => ("parts" in r ? (r as TouchedRow).parts : []);
+---
+{TOPIC_GRADES.filter((g) => sizes[g] > 0).map((g) => (
+  <section class={`grade topic-grade grade-${g}`} aria-labelledby={`grade-${g}`} data-grade={g}>
+    <h2 id={`grade-${g}`}>{topicGradeLabel(g, ed)} <span class="grade-count">({sizes[g].toLocaleString("en")})</span></h2>
+    <ol role="list" class="topic-rows">
+      {rowsOf(g).map((r) => (
+        <li class={`topic-row${g === "main" ? " principal" : ""}`} data-shiur={r.shiurId} data-on-occasion={r.onOccasion ? `${r.onOccasion.kind}:${r.onOccasion.key}` : undefined}>
+          <a class="topic-row-title" href={r.href}><bdi {...runAttrs(r.title, r.lang)}>{r.title}</bdi></a>
+          <span class="citation topic-row-cite">
+            {r.occasion && <span class="cite-item"><bdi {...runAttrs(r.occasion, r.lang)}>{r.occasion}</bdi></span>}
+            <span class="cite-item">{r.years.length > 0 ? <HebrewYear year={r.years} civil={false} /> : t("row.yearUnknown")}</span>
+            {r.section && <span class="cite-item"><bdi {...runAttrs(r.section, r.lang)}>{r.section}</bdi></span>}
+            <span class="cite-item" data-lang={r.lang}>{languageName(r.lang, ed)}</span>
+            {r.onOccasion && (
+              <span class="cite-item on-occasion"><a href={r.onOccasion.href}>{t("row.onOccasion", { occasion: r.onOccasion.name })}</a></span>
+            )}
+          </span>
+          {partsOf(r).length > 0 && (
+            <span class="topic-parts">
+              {partsOf(r).map((p) => (
+                <a class="part-link" href={p.href} data-section={p.idx}>{p.title && <><bdi lang={ed}>{p.title}</bdi>{" "}</>}<span class="time"><bdi dir="ltr">{p.time}</bdi></span></a>
+              ))}
+            </span>
+          )}
+        </li>
+      ))}
+    </ol>
+  </section>
+))}
