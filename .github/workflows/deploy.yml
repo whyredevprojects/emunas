@@ -1,0 +1,210 @@
+name: deploy
+
+# integration-plan §3.5 and §4 (as amended by A1: no audio bucket, no audio routes):
+# corpus:build → guard pre → corpus:build --suppress → app builds → _headers → Worker bundles
+# → guard post (FAIL = nothing deploys) → budgets → D1 migrations → D1/Vectorize sync
+# → deploy emunas-api → emunas-quiet → emunas-live → job summary.
+# Production from main (push touching site inputs, daily 05:17 UTC, dispatch);
+# staging by dispatch only. See docs/sites/ops-runbook.md.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/derived/**"
+      - "data/catalog/**"
+      - "apps/**"
+      - "packages/**"
+      - "workers/**"
+      - "site-policy/**"
+  schedule:
+    - cron: "17 5 * * *"
+  workflow_dispatch:
+    inputs:
+      target:
+        description: Where to deploy
+        type: choice
+        options: [production, staging]
+        default: production
+      plant_leak_fixture:
+        description: "Test only: plant a forbidden-key file in the Quiet output; the guard must stop the deploy"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  # Syncs are hash-diffed and idempotent, so cancelling a stale run is safe.
+  group: deploy-${{ inputs.target || 'production' }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: 22.23.4
+  WRANGLER_VERSION: 4.156.0
+  WRANGLER_SEND_METRICS: "false"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    # GitHub environments hold the protection rules and the Cloudflare secrets/variables.
+    environment: ${{ inputs.target || 'production' }}
+    env:
+      TARGET: ${{ inputs.target || 'production' }}
+      # wrangler.jsonc: top level = production, env.staging = staging.
+      WRANGLER_ENV: ${{ (inputs.target || 'production') == 'staging' && 'staging' || '' }}
+      EMUNAS_MEDIA_ORIGIN: ${{ vars.EMUNAS_MEDIA_ORIGIN }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - name: Check configuration
+        run: |
+          missing=0
+          for v in EMUNAS_MEDIA_ORIGIN CLOUDFLARE_API_TOKEN CLOUDFLARE_ACCOUNT_ID; do
+            if [ -z "${!v}" ]; then echo "::error::${v} is not set for environment ${TARGET}"; missing=1; fi
+          done
+          exit "$missing"
+
+      # The transcript folder is in git; only the guard steps below read it (from its default path).
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - name: Install
+        run: npm ci
+
+      - name: Restore corpus fingerprints and Astro cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            .corpus
+            apps/quiet/node_modules/.astro
+            node_modules/.astro
+          key: site-build-${{ env.TARGET }}-${{ github.sha }}
+          restore-keys: site-build-${{ env.TARGET }}-
+      - name: Remember previous statuses (for "newly full" in the summary)
+        run: |
+          mkdir -p "$RUNNER_TEMP/prev"
+          if [ -f .corpus/index.json ]; then cp .corpus/index.json "$RUNNER_TEMP/prev/index.json"; fi
+
+      - name: Corpus build
+        run: npm run corpus:build
+      - name: Guard pre-pass (verbatim suppress list, ids only)
+        run: >-
+          npm run guard --workspace=@emunas/corpus-guard --
+          pre --corpus .corpus --out .corpus/suppress.json
+      - name: Corpus rebuild with suppress list
+        run: npm run corpus:build -- --suppress .corpus/suppress.json
+
+      - name: Build Quiet
+        run: npm run build --workspace=@emunas/quiet
+      - name: Build Live
+        run: npm run build --workspace=@emunas/live
+      - name: Render _headers (media origin into CSP; fails without it)
+        run: |
+          npx tsx apps/quiet/worker/render-headers.ts apps/quiet/dist/_headers
+          npx tsx apps/live/worker/render-headers.ts apps/live/build/client/_headers
+      - name: Bundle Workers for the guard (dry run)
+        run: |
+          (cd apps/quiet && npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --env="${WRANGLER_ENV}")
+          (cd apps/live && npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --env="${WRANGLER_ENV}" --outdir ../../.wrangler/bundles/live)
+          if [ -f workers/api/wrangler.jsonc ]; then
+            npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --config workers/api/wrangler.jsonc --env="${WRANGLER_ENV}" --outdir .wrangler/bundles/api
+          fi
+
+      - name: Plant a leak fixture (dispatch test only)
+        if: inputs.plant_leak_fixture
+        run: printf '{"id":"planted","heardAs":"planted"}\n' > apps/quiet/dist/planted-leak.json
+      - name: Guard post-pass (all outputs and Worker bundles; any finding stops the deploy)
+        run: >-
+          npm run guard --workspace=@emunas/corpus-guard --
+          post --scan .corpus apps/quiet/dist apps/live/build/client .wrangler/bundles
+          --corpus .corpus --report "$RUNNER_TEMP/guard-post.json"
+      - name: Budgets
+        run: npm run guard --workspace=@emunas/corpus-guard -- budgets apps/quiet/dist apps/live/build/client
+
+      # Search infrastructure (W2.6 / W3.10). Each step is a no-op until its package provides it.
+      - name: D1 migrations
+        run: |
+          if [ ! -f workers/api/wrangler.jsonc ]; then
+            echo "::notice::workers/api/wrangler.jsonc does not exist yet; skipping D1 migrations."
+            exit 0
+          fi
+          # Every D1 binding of the target environment whose migrations folder exists.
+          node --input-type=module > "$RUNNER_TEMP/d1-bindings.txt" <<'JS'
+          import { existsSync, readFileSync } from "node:fs";
+          const text = readFileSync("workers/api/wrangler.jsonc", "utf8").split("\n").filter((l) => !l.trimStart().startsWith("//")).join("\n");
+          const cfg = JSON.parse(text);
+          const env = process.env.WRANGLER_ENV;
+          const dbs = (env ? cfg.env?.[env]?.d1_databases : cfg.d1_databases) ?? [];
+          for (const db of dbs) if (existsSync(`workers/api/${db.migrations_dir ?? "migrations"}`)) console.log(db.binding);
+          JS
+          while read -r binding; do
+            npx --yes "wrangler@${WRANGLER_VERSION}" d1 migrations apply "${binding}" --remote \
+              --config workers/api/wrangler.jsonc --env="${WRANGLER_ENV}"
+          done < "$RUNNER_TEMP/d1-bindings.txt"
+      - name: D1 and Vectorize incremental sync
+        run: |
+          if node -e 'process.exit(require("./workers/api/package.json").scripts?.["search:sync"] ? 0 : 1)'; then
+            npm run search:sync --workspace=@emunas/api -- --env "${TARGET}"
+          else
+            echo "::notice::@emunas/api has no search:sync script yet; skipping D1/Vectorize sync."
+          fi
+
+      - name: Deploy emunas-api
+        run: |
+          if [ -f workers/api/wrangler.jsonc ]; then
+            npx --yes "wrangler@${WRANGLER_VERSION}" deploy --config workers/api/wrangler.jsonc --env="${WRANGLER_ENV}" \
+              --message "deploy ${GITHUB_SHA:0:12}"
+          else
+            echo "::warning::workers/api/wrangler.jsonc does not exist yet; emunas-api not deployed."
+          fi
+      - name: Deploy emunas-quiet
+        working-directory: apps/quiet
+        run: npx --yes "wrangler@${WRANGLER_VERSION}" deploy --env="${WRANGLER_ENV}" --message "deploy ${GITHUB_SHA:0:12}"
+      - name: Deploy emunas-live
+        working-directory: apps/live
+        run: npx --yes "wrangler@${WRANGLER_VERSION}" deploy --env="${WRANGLER_ENV}" --message "deploy ${GITHUB_SHA:0:12}"
+
+      - name: Job summary (ids, counts and catalog strings only; never transcript text)
+        if: always()
+        env:
+          PREV_INDEX: ${{ runner.temp }}/prev/index.json
+          GUARD_REPORT: ${{ runner.temp }}/guard-post.json
+        run: |
+          node --input-type=module <<'JS' >> "$GITHUB_STEP_SUMMARY"
+          import { existsSync, readFileSync } from "node:fs";
+          const read = (p) => (p && existsSync(p) ? JSON.parse(readFileSync(p, "utf8")) : null);
+          const build = read(".corpus/build.json");
+          const report = read(".corpus/build-report.json");
+          const sup = read(".corpus/suppress.json");
+          const index = read(".corpus/index.json");
+          const prev = read(process.env.PREV_INDEX);
+          const guard = read(process.env.GUARD_REPORT);
+          const out = [`## Deploy (${process.env.TARGET})`, ""];
+          if (!build) out.push("Corpus build did not complete.");
+          else {
+            const c = build.counts;
+            out.push(`**${c.full} of ${c.total}** shiurim with notes · ${c.catalogOnly} catalog-only · ${c.downgraded} downgraded · data ${String(build.dataSha).slice(0, 12)}`);
+          }
+          if (index && prev) {
+            const before = new Map(prev.shiurim.map((s) => [s.id, s.status]));
+            const newly = index.shiurim.filter((s) => s.status === "full" && before.get(s.id) !== "full").map((s) => s.id);
+            out.push("", `### Newly full (${newly.length})`, ...newly.slice(0, 200).map((id) => `- ${id}`));
+          }
+          if (report) {
+            out.push("", `### Downgraded (${report.downgraded.length})`);
+            for (const d of report.downgraded) out.push(`- ${d.id}: ${d.reasons.join("; ")}`);
+            const un = report.unmapped ?? {};
+            out.push("", "### Unmapped catalog/derived strings");
+            for (const [k, rows] of Object.entries(un)) out.push(`- ${k}: ${rows.length}`);
+          }
+          if (sup) {
+            out.push("", `### Verbatim suppressed (${sup.suppress.length}), reported ${sup.report.length}`);
+            for (const s of sup.suppress) out.push(`- ${s.id} (${s.runLength} tokens)`);
+          }
+          if (guard) out.push("", `Guard post-pass: ${guard.counts.findings} finding(s) in ${guard.counts.filesScanned} files, ${guard.counts.verbatimReported} verbatim runs reported`);
+          console.log(out.join("\n"));
+          JS

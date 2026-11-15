@@ -1,0 +1,32 @@
+// emunas-live: the Live site (integration-plan §1.2, §3.1, C20, Amendment A1).
+// Static assets from build/client with SPA fallback. worker/index.ts runs only for
+// "/" (language redirect), /api/* and /admin/* (service binding to emunas-api).
+// No audio route and no R2 binding: audio is served from the media host.
+// Build first (`npm run build --workspace=@emunas/live`), then render
+// build/client/_headers (worker/render-headers.ts). Deploy: `wrangler deploy` or `--env staging`.
+// The custom domain (owner decision O8) is attached by adding at the top level:
+//   "routes": [{ "pattern": "listen.<domain>", "custom_domain": true }]
+// See docs/sites/ops-runbook.md.
+{
+  "name": "emunas-live",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-10-28",
+  "assets": {
+    "directory": "./build/client",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/", "/api/*", "/admin/*"]
+  },
+  "services": [{ "binding": "API", "service": "emunas-api" }],
+  "workers_dev": true,
+  "preview_urls": true,
+  "observability": { "enabled": true },
+  "env": {
+    // Manual staging deploys and per-PR previews (`wrangler versions upload --env staging
+    // --preview-alias pr-<n>`) use the staging api, so a PR can never write production D1.
+    "staging": {
+      "name": "emunas-live-staging",
+      "services": [{ "binding": "API", "service": "emunas-api-staging" }]
+    }
+  }
+}

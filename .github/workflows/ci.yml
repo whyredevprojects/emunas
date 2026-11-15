@@ -1,8 +1,9 @@
 name: ci
 
-# Skeleton (W1.1): install, typecheck (pipeline + sites), lint, unit tests.
-# Later waves add corpus:build, guard passes, app builds, budgets, smoke tests
-# and preview uploads (integration-plan §3.5).
+# integration-plan §3.5: typecheck (pipeline + sites) → lint → unit tests → corpus:build on
+# the real data → guard pre-pass → rebuild with the suppress list → both app builds →
+# guard post-pass → budgets → PR preview uploads (staging Workers, `pr-<n>` alias).
+# Playwright smoke against `wrangler dev` arrives with W5.1.
 
 on:
   pull_request:
@@ -17,6 +18,11 @@ concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  NODE_VERSION: 22.23.4
+  WRANGLER_VERSION: 4.156.0
+  WRANGLER_SEND_METRICS: "false"
+
 jobs:
   check:
     runs-on: ubuntu-24.04
@@ -25,7 +31,7 @@ jobs:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with:
-          node-version: 22.23.4
+          node-version: ${{ env.NODE_VERSION }}
           cache: npm
       - name: Install
         run: npm ci
@@ -33,7 +39,147 @@ jobs:
         run: npm run typecheck
       - name: Typecheck (sites)
         run: npm run site:typecheck
+      - name: Typecheck (site Workers and deploy tooling)
+        run: |
+          node node_modules/typescript/bin/tsc --noEmit -p apps/quiet/worker/tsconfig.json
+          node node_modules/typescript/bin/tsc --noEmit -p apps/live/worker/tsconfig.json
       - name: Lint
         run: npm run site:lint
       - name: Unit tests
         run: npm run site:test
+      - name: Unit tests (site Workers, wrangler configs, _headers)
+        run: |
+          npx vitest run --config apps/quiet/worker/vitest.config.ts
+          npx vitest run --config apps/live/worker/vitest.config.ts
+
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      # Amendment A1: audio URLs and CSP media-src come from this build variable. PR builds
+      # fall back to a placeholder host when the repository variable is not set.
+      EMUNAS_MEDIA_ORIGIN: ${{ vars.EMUNAS_MEDIA_ORIGIN || 'https://media.example.invalid' }}
+    steps:
+      # The transcript folder is in git; only the guard steps below read it (from its default path).
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - name: Install
+        run: npm ci
+
+      - name: Corpus build
+        run: npm run corpus:build
+      - name: Guard pre-pass (verbatim suppress list, ids only)
+        run: >-
+          npm run guard --workspace=@emunas/corpus-guard --
+          pre --corpus .corpus --out .corpus/suppress.json
+      - name: Corpus rebuild with suppress list
+        run: npm run corpus:build -- --suppress .corpus/suppress.json
+
+      - name: Build Quiet
+        run: npm run build --workspace=@emunas/quiet
+      - name: Build Live
+        run: npm run build --workspace=@emunas/live
+      - name: Render _headers (media origin into CSP)
+        run: |
+          npx tsx apps/quiet/worker/render-headers.ts apps/quiet/dist/_headers
+          npx tsx apps/live/worker/render-headers.ts apps/live/build/client/_headers
+      - name: Validate wrangler configs and bundle the Live Worker (dry run)
+        run: |
+          (cd apps/quiet && npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --env="")
+          (cd apps/quiet && npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --env=staging)
+          (cd apps/live && npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --env="" --outdir ../../.wrangler/bundles/live)
+          (cd apps/live && npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --env=staging)
+
+      - name: Guard self-test (a planted leak must fail)
+        run: |
+          plant="$(mktemp -d)"
+          printf '{"id":"planted","heardAs":"planted"}\n' > "$plant/planted.json"
+          if npm run --silent guard --workspace=@emunas/corpus-guard -- post --no-verbatim --scan "$plant"; then
+            echo "::error::guard post-pass passed a planted heardAs fixture"
+            exit 1
+          fi
+          echo "guard post-pass rejected the planted fixture, as it must"
+      - name: Guard post-pass (all outputs and the Worker bundle)
+        run: >-
+          npm run guard --workspace=@emunas/corpus-guard --
+          post --scan .corpus apps/quiet/dist apps/live/build/client .wrangler/bundles
+          --corpus .corpus --report guard-post.json
+      - name: Budgets
+        run: npm run guard --workspace=@emunas/corpus-guard -- budgets apps/quiet/dist apps/live/build/client
+
+      - name: Job summary
+        if: always()
+        run: |
+          node --input-type=module <<'JS' >> "$GITHUB_STEP_SUMMARY"
+          import { existsSync, readFileSync } from "node:fs";
+          const read = (p) => (existsSync(p) ? JSON.parse(readFileSync(p, "utf8")) : null);
+          const build = read(".corpus/build.json");
+          const sup = read(".corpus/suppress.json");
+          console.log("## Site build");
+          if (build) {
+            const c = build.counts;
+            console.log(`- ${c.full} of ${c.total} shiurim with notes; ${c.catalogOnly} catalog-only; ${c.downgraded} downgraded`);
+          }
+          if (sup) console.log(`- verbatim: ${sup.suppress.length} suppressed, ${sup.report.length} reported (ids only)`);
+          JS
+
+      - name: Keep build output for the preview job
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-builds
+          path: |
+            apps/quiet/dist
+            apps/live/build/client
+          include-hidden-files: true
+          retention-days: 3
+          if-no-files-found: error
+
+  preview:
+    # Same-repo PRs only (fork PRs get no secrets). Uploads a version of each staging Worker
+    # with the alias pr-<n>; nothing is promoted, production is never touched (§3.4).
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+    needs: [check, build]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    concurrency:
+      group: preview-pr-${{ github.event.pull_request.number }}
+      cancel-in-progress: true
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      PR_NUMBER: ${{ github.event.pull_request.number }}
+      HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          sparse-checkout: |
+            apps/quiet/wrangler.jsonc
+            apps/live/wrangler.jsonc
+            apps/live/worker
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: site-builds
+          path: apps
+      - name: Upload preview versions (staging Workers)
+        run: |
+          if [ -z "${CLOUDFLARE_API_TOKEN}" ] || [ -z "${CLOUDFLARE_ACCOUNT_ID}" ]; then
+            echo "::notice::Cloudflare secrets are not configured; skipping preview upload."
+            exit 0
+          fi
+          for app in quiet live; do
+            (cd "apps/${app}" && npx --yes "wrangler@${WRANGLER_VERSION}" versions upload --env=staging \
+              --preview-alias "pr-${PR_NUMBER}" --message "PR #${PR_NUMBER} ${HEAD_SHA:0:12}" \
+              | tee "../../preview-${app}.log")
+          done
+          {
+            echo "## Preview"
+            grep -h -o 'https://[^ ]*workers\.dev[^ ]*' preview-*.log | sort -u | sed 's/^/- /' || true
+          } >> "$GITHUB_STEP_SUMMARY"
