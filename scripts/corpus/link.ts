@@ -5,9 +5,14 @@
 // (keys are the raw extraction strings, normalized exactly as scripts/corpus/aggregate.ts does:
 // NFC, whitespace collapsed, trimmed, case kept). Concepts additionally fall back to a
 // nikud/geresh-insensitive match of the Hebrew spelling.
+// people-alias-map values are a person id or a list of person ids (a compound key such as
+// "Nadav and Avihu" names several persons). raw/people-shiur-overrides.json ({shiurId: {rawName: id | ids}})
+// overrides the corpus-wide key for one shiur, where that shiur's extraction means someone else
+// (e.g. "the Belzer Rav" heard as the Bluzhever).
 //
 // Reads (read-only): data/derived/manifest.json, data/derived/shiurim/<id>/extraction.json,
-//   data/derived/corpus/{concept,people,works}-alias-map.json, data/derived/corpus/{concepts,people,works}.json
+//   data/derived/corpus/raw/{concept,people,works}-alias-map.json, raw/people-shiur-overrides.json,
+//   data/derived/corpus/{concepts,people,works}.json
 // Writes: data/derived/corpus/raw/links/<shiurId>.json  (ShiurLinks)
 //         data/derived/corpus/{concepts,people,works}.json  (only the shiurIds field, only when it disagrees
 //         with the links; entity order and every other field are kept)
@@ -55,7 +60,12 @@ function main(): void {
     .map(({ e }) => e.shiurId);
 
   const conceptMap = readJson<Record<string, string>>(join(CORPUS_DIR, "raw", "concept-alias-map.json"));
-  const peopleMap = readJson<Record<string, string>>(join(CORPUS_DIR, "raw", "people-alias-map.json"));
+  type PersonAlias = string | string[];
+  const peopleMap = readJson<Record<string, PersonAlias>>(join(CORPUS_DIR, "raw", "people-alias-map.json"));
+  const overridesPath = join(CORPUS_DIR, "raw", "people-shiur-overrides.json");
+  const peopleOverrides = existsSync(overridesPath)
+    ? readJson<Record<string, Record<string, PersonAlias>>>(overridesPath)
+    : {};
   const worksMap = readJson<Record<string, string>>(join(CORPUS_DIR, "raw", "works-alias-map.json"));
 
   const conceptsPath = join(CORPUS_DIR, "concepts.json");
@@ -69,12 +79,13 @@ function main(): void {
   const workIdSet = new Set(works.map((w) => w.id));
 
   // Fail loudly if a map points at an id the canon file does not have.
-  const dangling = (name: string, m: Record<string, string>, ids: Set<string>): void => {
-    const bad = [...new Set(Object.values(m))].filter((v) => !ids.has(v));
+  const dangling = (name: string, m: Record<string, string | string[]>, ids: Set<string>): void => {
+    const bad = [...new Set(Object.values(m).flat())].filter((v) => !ids.has(v));
     if (bad.length) throw new Error(`${name}: ${bad.length} alias targets missing from canon (${bad.slice(0, 5).join(", ")})`);
   };
   dangling("concept-alias-map", conceptMap, conceptIdSet);
   dangling("people-alias-map", peopleMap, personIdSet);
+  for (const [sid, m] of Object.entries(peopleOverrides)) dangling(`people-shiur-overrides ${sid}`, m, personIdSet);
   dangling("works-alias-map", worksMap, workIdSet);
 
   // Loose Hebrew fallback for concepts: stripped alias keys and canonical spellings, kept only when unambiguous.
@@ -91,7 +102,10 @@ function main(): void {
     const k = norm(he);
     return conceptMap[k] ?? looseConcept.get(stripHe(k)) ?? null;
   };
-  const resolvePerson = (name: string): string | null => peopleMap[norm(name)] ?? null;
+  const resolvePerson = (shiurId: string, name: string): string[] => {
+    const v = peopleOverrides[shiurId]?.[norm(name)] ?? peopleMap[norm(name)];
+    return v === undefined ? [] : [v].flat();
+  };
   const resolveWork = (work: string | null): string | null => (work && norm(work) ? (worksMap[norm(work)] ?? null) : null);
 
   const cT = tally();
@@ -140,11 +154,11 @@ function main(): void {
       if (!norm(name)) return;
       pT.mentions++;
       sub.mentions++;
-      const id = resolvePerson(name);
-      if (id) {
+      const ids = resolvePerson(shiurId, name);
+      if (ids.length) {
         pT.mapped++;
         sub.mapped++;
-        personIds.add(id);
+        for (const id of ids) personIds.add(id);
       }
     };
     for (const p of x.people ?? []) person(p.name, pPeopleT);

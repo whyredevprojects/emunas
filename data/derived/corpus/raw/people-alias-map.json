@@ -1,7 +1,10 @@
 {
  "Abarbanel": "abarbanel",
  "Abaye": "abaye",
- "Abaye and Rava": "abaye-and-rava",
+ "Abaye and Rava": [
+  "abaye",
+  "rava"
+ ],
  "Abba Sikra": "abba-sikra",
  "Abraham ibn Ezra": "ibn-ezra",
  "Achan": "achan",
@@ -16,7 +19,10 @@
  "Adam": "adam-harishon",
  "Adam HaRishon": "adam-harishon",
  "Adam Harishon": "adam-harishon",
- "Adam and Chava": "adam-and-chava",
+ "Adam and Chava": [
+  "adam-harishon",
+  "chava"
+ ],
  "Adam haRishon": "adam-harishon",
  "Adel": "adel-bas-habesht",
  "Adel, daughter of the Ba'al Shem Tov": "adel-bas-habesht",
@@ -94,7 +100,10 @@
  "Beis Aharon": "beis-aharon",
  "Beis Hillel": "beis-hillel",
  "Beis Shammai": "beis-shammai",
- "Beis Shammai and Beis Hillel": "beis-shammai-and-beis-hillel",
+ "Beis Shammai and Beis Hillel": [
+  "beis-shammai",
+  "beis-hillel"
+ ],
  "Beis Yosef": "beis-yosef",
  "Bela ben Be'or": "bela-ben-beor",
  "Belshatzar": "belshatzar",
@@ -128,8 +137,17 @@
  "Carter": "jimmy-carter",
  "Chabakuk": "chavakuk",
  "Chaggai": "chaggai",
- "Chaggai, Zechariah, Malachi and Mordechai": "chaggai-zechariah-malachi",
- "Chaggai, Zecharyah and Malachi": "chaggai-zechariah-malachi",
+ "Chaggai, Zechariah, Malachi and Mordechai": [
+  "chaggai",
+  "zechariah-hanavi",
+  "malachi",
+  "mordechai"
+ ],
+ "Chaggai, Zecharyah and Malachi": [
+  "chaggai",
+  "zechariah-hanavi",
+  "malachi"
+ ],
  "Cham": "cham",
  "Chamberlain": "chamberlain",
  "Chamor": "chamor",
@@ -138,9 +156,17 @@
  "Chanamel": "chanamel",
  "Chanamel ben Shalum": "chanamel",
  "Chananiah": "chananyah",
- "Chananya, Mishael and Azarya": "chananya-mishael-azarya",
+ "Chananya, Mishael and Azarya": [
+  "chananyah",
+  "mishael",
+  "azaryah"
+ ],
  "Chananyah": "chananyah",
- "Chananyah, Mishael and Azaryah": "chananya-mishael-azarya",
+ "Chananyah, Mishael and Azaryah": [
+  "chananyah",
+  "mishael",
+  "azaryah"
+ ],
  "Chanoch": "chanoch",
  "Charbona": "charvonah",
  "Charles de Gaulle": "charles-de-gaulle",
@@ -160,7 +186,10 @@
  "Chizkiyahu HaMelech": "chizkiyahu-hamelech",
  "Chmielnicki": "chmielnicki",
  "Chofni": "chofni",
- "Chofni and Pinchas": "chofni-and-pinchas",
+ "Chofni and Pinchas": [
+  "chofni",
+  "pinchas-ben-eli"
+ ],
  "Chok Yaakov": "chok-yaakov",
  "Choni HaMe'agel": "choni-hamagel",
  "Chulda": "chuldah",
@@ -181,7 +210,10 @@
  "Dan": "dan",
  "Daniel": "daniel",
  "Dasan": "dasan",
- "Dasan and Aviram": "dasan-and-aviram",
+ "Dasan and Aviram": [
+  "dasan",
+  "aviram"
+ ],
  "David": "dovid-hamelech",
  "David Ben Gurion": "david-ben-gurion",
  "David Ben-Gurion": "david-ben-gurion",
@@ -235,9 +267,15 @@
  "Elyasaf ben De'uel": "elyasaf-ben-deuel",
  "Ephraim": "ephraim",
  "Ephraim Tenenbaum": "ephraim-tenenbaum",
- "Ephraim and Menashe": "ephraim-and-menashe",
+ "Ephraim and Menashe": [
+  "ephraim",
+  "menashe"
+ ],
  "Er": "er",
- "Er and Onan": "er-and-onan",
+ "Er and Onan": [
+  "er",
+  "onan"
+ ],
  "Esav": "esav",
  "Eshes Potiphar": "eshes-potiphar",
  "Eshkol": "levi-eshkol",
@@ -279,7 +317,10 @@
  "Hillel (the calendar's author)": "hillel-hanasi",
  "Hillel Hanasi": "hillel-hanasi",
  "Hillel Zaks": "hillel-zaks",
- "Hillel and Shammai": "hillel-and-shammai",
+ "Hillel and Shammai": [
+  "hillel-hazaken",
+  "shammai-hazaken"
+ ],
  "Hitler": "hitler",
  "Hoshea": "hoshea",
  "Ibn Ezra": "ibn-ezra",
@@ -296,9 +337,18 @@
  "Kalev": "kalev-ben-yefuneh",
  "Kalev ben Yefuneh": "kalev-ben-yefuneh",
  "Kamtza": "kamtza",
- "Kamtza and Bar Kamtza": "kamtza-and-bar-kamtza",
- "Kamtza and bar Kamtza": "kamtza-and-bar-kamtza",
- "Kamtza bar Kamtza": "kamtza-and-bar-kamtza",
+ "Kamtza and Bar Kamtza": [
+  "kamtza",
+  "bar-kamtza"
+ ],
+ "Kamtza and bar Kamtza": [
+  "kamtza",
+  "bar-kamtza"
+ ],
+ "Kamtza bar Kamtza": [
+  "kamtza",
+  "bar-kamtza"
+ ],
  "Kasztner": "kasztner",
  "Kayin": "kayin",
  "Kedarlaomer": "kedarlaomer",
@@ -332,7 +382,10 @@
  "Machir ben Menashe": "machir-ben-menashe",
  "Machlah, Noa, Choglah, Milkah and Tirtzah": "bnos-tzelofchad",
  "Machlon": "machlon",
- "Machlon and Kilyon": "machlon-and-kilyon",
+ "Machlon and Kilyon": [
+  "machlon",
+  "kilyon"
+ ],
  "Magen Avraham": "magen-avraham",
  "Maharal": "maharal",
  "Malachi": "malachi",
@@ -343,9 +396,6 @@
  "Mamre": "mamre",
  "Manoach": "manoach",
  "Mark Twain": "mark-twain",
- "Moshiach": "moshiach",
- "Moshiach ben David": "moshiach",
- "Moshiach ben Yosef": "moshiach-ben-yosef",
  "Matisyahu": "matisyahu",
  "Matisyahu Kohen Gadol": "matisyahu",
  "Matisyahu ben Yochanan": "matisyahu",
@@ -358,7 +408,12 @@
  "Michael": "malach-michael",
  "Michael (the angel)": "malach-michael",
  "Michael the angel": "malach-michael",
- "Michael, Gavriel, Uriel and Refael": "four-malachim",
+ "Michael, Gavriel, Uriel and Refael": [
+  "malach-michael",
+  "malach-gavriel",
+  "malach-uriel",
+  "malach-refael"
+ ],
  "Michah": "micha",
  "Miriam": "miriam",
  "Miriam bas Bilgah": "miriam-bas-bilgah",
@@ -368,12 +423,14 @@
  "Montgomery": "montgomery",
  "Mordechai": "mordechai",
  "Mordechai HaTzaddik": "mordechai",
- "Mordechai and Esther": "mordechai-and-esther",
+ "Mordechai and Esther": [
+  "mordechai",
+  "esther"
+ ],
  "Moses Mendelssohn": "moses-mendelssohn",
  "Moses Montefiore": "moses-montefiore",
  "Moshe": "moshe-rabbeinu",
  "Moshe Rabbeinu": "moshe-rabbeinu",
- "Moshiach ben Dovid": "moshiach",
  "Mubarak": "hosni-mubarak",
  "Muhammad": "mohammed",
  "Naamah HaAmonis": "naamah-haamonis",
@@ -382,7 +439,10 @@
  "Nachshon ben Aminadav": "nachshon-ben-aminadav",
  "Nachum Ish Gamzu": "nachum-ish-gamzu",
  "Nadav": "nadav",
- "Nadav and Avihu": "nadav-and-avihu",
+ "Nadav and Avihu": [
+  "nadav",
+  "avihu"
+ ],
  "Naftali": "naftali",
  "Nakdimon ben Gurion": "nakdimon-ben-gurion",
  "Naomi": "naomi",
@@ -996,7 +1056,10 @@
  "Rav Zusha": "reb-zusha-of-anipoli",
  "Rava": "rava",
  "Ravina": "ravina",
- "Ravina and Rav Ashi": "ravina-and-rav-ashi",
+ "Ravina and Rav Ashi": [
+  "ravina",
+  "rav-ashi"
+ ],
  "Reb Aharon Roth": "shomer-emunim",
  "Reb Aharon of Karlin": "rabbi-aharon-of-karlin",
  "Reb Aharon of Karlin (Beis Aharon)": "beis-aharon",
@@ -1225,22 +1288,37 @@
  "Shelumiel": "shelumiel-ben-tzurishaddai",
  "Shelumiel ben Tzurishaddai": "shelumiel-ben-tzurishaddai",
  "Shem": "shem",
- "Shem and Ever": "shem-and-ever",
- "Shem and Yefes": "shem-and-yefes",
+ "Shem and Ever": [
+  "shem",
+  "ever"
+ ],
+ "Shem and Yefes": [
+  "shem",
+  "yefes"
+ ],
  "Shem ben Noach": "shem",
  "Shem son of Noach": "shem",
  "Shemaya": "shemaya",
- "Shemaya and Avtalyon": "shemaya-and-avtalyon",
+ "Shemaya and Avtalyon": [
+  "shemaya",
+  "avtalyon"
+ ],
  "Shemayah the Nechelami": "shemaya",
  "Shes": "shes",
  "Sheva ben Bichri": "sheva-ben-bichri",
  "Shevet Levi": "levi-ben-yaakov",
  "Shifra": "yocheved",
- "Shifrah and Puah": "shifra-and-puah",
+ "Shifrah and Puah": [
+  "yocheved",
+  "miriam"
+ ],
  "Shimi ben Gera": "shimi-ben-gera",
  "Shimon": "shimon-ben-yaakov",
  "Shimon HaTzaddik": "shimon-hatzaddik",
- "Shimon and Levi": "shimon-and-levi",
+ "Shimon and Levi": [
+  "shimon-ben-yaakov",
+  "levi-ben-yaakov"
+ ],
  "Shimon ben Shetach": "shimon-ben-shetach",
  "Shimon ben Yaakov": "shimon-ben-yaakov",
  "Shimshon": "shimshon",
@@ -1483,7 +1561,6 @@
  "the Klausenberger Rebbe": "klausenburger-rebbe",
  "the Klausenburger Rav": "klausenburger-rebbe",
  "the Klausenburger Rebbe": "klausenburger-rebbe",
- "the Kohen Gadol": "kohen-gadol",
  "the Komarna Rebbe": "komarna-rebbe",
  "the Komarna Rebbe (Heichal HaBrachah)": "komarna-rebbe",
  "the Komarner": "komarna-rebbe",
@@ -1734,5 +1811,16 @@
  "the previous Gerrer Rebbe (Beis Yisrael)": "beis-yisrael-ger",
  "the previous Skverer Rebbe": "skverer-rebbe",
  "the sar hamashkim": "sar-hamashkim",
- "the wife of Potiphar": "eshes-potiphar"
+ "the wife of Potiphar": "eshes-potiphar",
+ "Reb Avraham of Slonim": "yesod-haavodah",
+ "Rav Avraham of Slonim": "beis-avraham-slonim",
+ "the Slonimer Rebbe, Rav Avraham": "beis-avraham-slonim",
+ "Rabbi Dov Ber": "mitteler-rebbe",
+ "Rabbi Eizikl": "reb-eizikel-of-zidichov",
+ "Reb Eizikel": "komarna-rebbe",
+ "Reb Hersh": "reb-hershele-of-rimanov",
+ "Horowitz": "rabbi-horowitz-chaplain",
+ "Rabbi Horowitz": "rabbi-horowitz-chaplain",
+ "Rabbi Yeshaya": "rabbi-yeshaya-disciple-of-rabbi-chanina",
+ "Naamah": "naamah-haamonis"
 }
