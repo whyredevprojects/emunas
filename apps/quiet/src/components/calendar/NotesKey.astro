@@ -1,0 +1,18 @@
+---
+/**
+ * The standing notes label, shown once on a listing page when at least one entry carries a
+ * one-liner (concept-quiet §3: the notes voice is always under its label, never per item).
+ */
+import NotesLabel from "../NotesLabel.astro";
+import type { Ed } from "../../lib/edition.ts";
+import type { ShiurEntry } from "./model.ts";
+
+interface Props {
+  ed: Ed;
+  entries: readonly ShiurEntry[];
+}
+
+const { ed, entries } = Astro.props;
+const any = entries.some((e) => e.oneLiner !== null);
+---
+{any && <div class="cal-notes-key"><NotesLabel ed={ed} /></div>}

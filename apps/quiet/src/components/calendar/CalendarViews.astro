@@ -1,0 +1,33 @@
+---
+/**
+ * The three ways into the calendar, one line under the page heading: by parsha · by zman · by
+ * year (concept-quiet §5.5, §5.6). The current view carries `aria-current="page"` on its index
+ * page and `aria-current="true"` on the pages below it.
+ */
+import "./calendar.css";
+import { formatQuiet } from "@emunas/links";
+import type { Ed } from "../../lib/edition.ts";
+import { useCalendarT, type CalendarKey } from "./strings.ts";
+
+interface Props {
+  ed: Ed;
+  current: "parsha" | "zman" | "years";
+  /** True on the view's own index page. */
+  isIndex?: boolean;
+}
+
+const { ed, current, isIndex = false } = Astro.props;
+const t = useCalendarT(ed);
+const views: { id: Props["current"]; key: CalendarKey; href: string }[] = [
+  { id: "parsha", key: "cal.byParsha", href: formatQuiet({ kind: "index", ed, index: "calendar-parsha" }) },
+  { id: "zman", key: "cal.byZman", href: formatQuiet({ kind: "index", ed, index: "calendar-zman" }) },
+  { id: "years", key: "cal.byYear", href: formatQuiet({ kind: "index", ed, index: "years" }) },
+];
+---
+<nav class="cal-views" aria-label={t("cal.views")}>
+  <ul role="list">
+    {views.map((v) => (
+      <li><a href={v.href} aria-current={v.id === current ? (isIndex ? "page" : "true") : undefined}>{t(v.key)}</a></li>
+    ))}
+  </ul>
+</nav>

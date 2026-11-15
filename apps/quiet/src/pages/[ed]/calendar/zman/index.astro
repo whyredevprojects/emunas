@@ -1,0 +1,49 @@
+---
+/**
+ * By zman (concept-quiet §5.5): around the year from Elul, each zman with its count and a link to
+ * its page (every zman of the table has one). Below, the catalogued shiurim on a one-off occasion
+ * that has no place of its own, as the catalog prints it. Uncatalogued rows whose zman is only a
+ * guess from a file name are not here (decision 7).
+ */
+import type { GetStaticPaths } from "astro";
+import Base from "../../../../layouts/Base.astro";
+import CalendarViews from "../../../../components/calendar/CalendarViews.astro";
+import NotesKey from "../../../../components/calendar/NotesKey.astro";
+import OccasionName from "../../../../components/calendar/OccasionName.astro";
+import ShiurList from "../../../../components/calendar/ShiurList.astro";
+import { loadCalendarData } from "../../../../components/calendar/data.ts";
+import { calendarHref, otherOccasions, zmanIndex } from "../../../../components/calendar/model.ts";
+import { useCalendarT } from "../../../../components/calendar/strings.ts";
+import { EDS, type Ed } from "../../../../lib/edition.ts";
+
+export const getStaticPaths = (() => (loadCalendarData() ? EDS.map((ed) => ({ params: { ed } })) : [])) satisfies GetStaticPaths;
+
+const ed = Astro.params.ed as Ed;
+const data = loadCalendarData();
+if (!data) throw new Error("calendar: no .corpus/");
+const t = useCalendarT(ed);
+const items = zmanIndex(data.occasions, ed);
+const other = otherOccasions(data, ed);
+const title = t("cal.zman.title");
+---
+<Base ed={ed} title={title} crumbs={[{ label: t("cal.label"), href: calendarHref(ed) }, { label: t("cal.byZman") }]}>
+  <h1>{title}</h1>
+  <CalendarViews ed={ed} current="zman" isIndex />
+  <p class="cal-intro">{t("cal.zman.intro")}</p>
+  <ul role="list" class="cal-index">
+    {items.map((z) => (
+      <li data-key={z.key}>
+        <a href={z.href}><OccasionName ed={ed} name={z} /></a>
+        <span class="count">{z.count > 0 ? t("cal.count", { count: z.count }) : t("cal.countNone")}</span>
+      </li>
+    ))}
+  </ul>
+  {other.length > 0 && (
+    <section class="cal-sub" aria-labelledby="other-occasions">
+      <h2 id="other-occasions">{t("cal.other.title")}</h2>
+      <p class="cal-intro">{t("cal.other.intro")}</p>
+      <NotesKey ed={ed} entries={other} />
+      <ShiurList ed={ed} entries={other} />
+    </section>
+  )}
+</Base>

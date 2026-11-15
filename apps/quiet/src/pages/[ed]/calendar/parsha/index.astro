@@ -1,0 +1,44 @@
+---
+/**
+ * By parsha (concept-quiet §5.5): the parshiyos in Torah order, grouped by chumash, each with its
+ * count and a link to its page. Every parsha of the table is listed and has a page, including
+ * those with no shiur. Catalog-derived, so no coverage line.
+ */
+import type { GetStaticPaths } from "astro";
+import Base from "../../../../layouts/Base.astro";
+import CalendarViews from "../../../../components/calendar/CalendarViews.astro";
+import OccasionName from "../../../../components/calendar/OccasionName.astro";
+import { loadCalendarData } from "../../../../components/calendar/data.ts";
+import { calendarHref, parshaIndex } from "../../../../components/calendar/model.ts";
+import { useCalendarT } from "../../../../components/calendar/strings.ts";
+import { EDS, type Ed } from "../../../../lib/edition.ts";
+
+export const getStaticPaths = (() => (loadCalendarData() ? EDS.map((ed) => ({ params: { ed } })) : [])) satisfies GetStaticPaths;
+
+const ed = Astro.params.ed as Ed;
+const data = loadCalendarData();
+if (!data) throw new Error("calendar: no .corpus/");
+const t = useCalendarT(ed);
+const groups = parshaIndex(data.occasions, ed);
+const title = t("cal.parsha.title");
+---
+<Base ed={ed} title={title} crumbs={[{ label: t("cal.label"), href: calendarHref(ed) }, { label: t("cal.byParsha") }]}>
+  <h1>{title}</h1>
+  <CalendarViews ed={ed} current="parsha" isIndex />
+  <p class="cal-intro">{t("cal.parsha.intro")}</p>
+  <div class="cal-groups">
+    {groups.map((g) => (
+      <section class="cal-group" aria-labelledby={`chumash-${g.chumash}`}>
+        <h2 id={`chumash-${g.chumash}`}>{t(g.labelKey)}</h2>
+        <ul role="list" class="cal-index">
+          {g.items.map((p) => (
+            <li data-key={p.key}>
+              <a href={p.href}><OccasionName ed={ed} name={p} /></a>
+              <span class="count">{p.count > 0 ? t("cal.count", { count: p.count }) : t("cal.countNone")}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </div>
+</Base>

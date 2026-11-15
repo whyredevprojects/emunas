@@ -1,0 +1,53 @@
+---
+/**
+ * One parsha (concept-quiet §5.5): every shiur on it, Yiddish and English together, by year, with
+ * section, language and one-liner. One page per parsha key in `.corpus/occasions.json`.
+ */
+import type { GetStaticPaths } from "astro";
+import Base from "../../../../../layouts/Base.astro";
+import CalendarViews from "../../../../../components/calendar/CalendarViews.astro";
+import NotesKey from "../../../../../components/calendar/NotesKey.astro";
+import OccasionName from "../../../../../components/calendar/OccasionName.astro";
+import ShiurList from "../../../../../components/calendar/ShiurList.astro";
+import { loadCalendarData } from "../../../../../components/calendar/data.ts";
+import { calendarHref, occasionPage, parshaKeys } from "../../../../../components/calendar/model.ts";
+import { useCalendarT } from "../../../../../components/calendar/strings.ts";
+import { formatQuiet } from "@emunas/links";
+import { EDS, type Ed } from "../../../../../lib/edition.ts";
+
+export const getStaticPaths = (() => {
+  const data = loadCalendarData();
+  if (!data) return [];
+  return EDS.flatMap((ed) => parshaKeys(data.occasions).map((key) => ({ params: { ed, key } })));
+}) satisfies GetStaticPaths;
+
+const ed = Astro.params.ed as Ed;
+const key = Astro.params.key as string;
+const data = loadCalendarData();
+if (!data) throw new Error("calendar: no .corpus/");
+const page = occasionPage(data, "parsha", key, ed);
+if (!page) throw new Error(`calendar: unknown parsha ${key}`);
+const t = useCalendarT(ed);
+const title = ed === "yi" ? page.name : `${page.name} ${page.he ?? ""}`.trim();
+---
+<Base
+  ed={ed}
+  title={title}
+  crumbs={[
+    { label: t("cal.label"), href: calendarHref(ed) },
+    { label: t("cal.byParsha"), href: formatQuiet({ kind: "index", ed, index: "calendar-parsha" }) },
+    { label: page.name, lang: ed === "yi" ? "he" : "en", dir: ed === "yi" ? "rtl" : "ltr" },
+  ]}
+>
+  <h1><OccasionName ed={ed} name={page} /></h1>
+  <CalendarViews ed={ed} current="parsha" />
+  {page.count > 0 ? (
+    <>
+      <p class="cal-intro">{t("cal.parsha.pageIntro")} <span class="count">{t("cal.count", { count: page.count })}</span></p>
+      <NotesKey ed={ed} entries={page.shiurim} />
+      <ShiurList ed={ed} entries={page.shiurim} />
+    </>
+  ) : (
+    <p class="cal-intro cal-empty">{t("cal.parsha.empty")}</p>
+  )}
+</Base>
