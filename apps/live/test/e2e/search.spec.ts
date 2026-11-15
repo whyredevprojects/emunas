@@ -13,7 +13,9 @@
  * `@data`: queries and expectations come from the served `/data/*`, so this also runs on real data.
  */
 import { expect, test, type Page, type Route } from "@playwright/test";
-import { axeViolations, corpusRows, dataJson, pageErrors, ready, UIS, type Row } from "./helpers.ts";
+import { axeViolations, corpusRows, dataJson, NO_SERVICE_WORKER, pageErrors, ready, UIS, type Row } from "./helpers.ts";
+
+test.use(NO_SERVICE_WORKER);
 
 interface FacetValue {
   label: { en: string; yi: string };
@@ -105,14 +107,15 @@ test.describe("@data command bar", () => {
         expect(hrefs, q).toContain(href);
       }
     }
-    // Arrow down + Enter follows the first suggestion (client navigation, still offline).
+    expect(errors, "no errors while suggesting offline").toEqual([]);
+    // Arrow down + Enter follows the first suggestion (client navigation; the page it opens needs
+    // the network for its data, which is not this test's concern).
     await bar.fill(occ.label.en);
     await bar.press("ArrowDown");
     const first = await page.locator('[role=option][aria-selected="true"]').getAttribute("data-href");
+    await context.setOffline(false);
     await bar.press("Enter");
     await expect(page).toHaveURL(new RegExp(`${first!.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&")}$`));
-    await context.setOffline(false);
-    expect(errors).toEqual([]);
   });
 
   test("after 250 ms idle the bar shows shiur-level results, labelled, when the API fails", async ({ page, request }) => {

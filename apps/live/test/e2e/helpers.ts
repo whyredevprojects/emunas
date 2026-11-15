@@ -11,6 +11,13 @@ import { expect, type APIRequestContext, type Page, type Route } from "@playwrig
 export const UIS = ["en", "yi"] as const;
 export type Ui = (typeof UIS)[number];
 
+/**
+ * `test.use(NO_SERVICE_WORKER)`: the service worker is offline.spec.ts's subject. Elsewhere it would
+ * answer `/data` and `/api` requests before `page.route()` sees them (Playwright does not route
+ * requests a service worker handles), so stand-in APIs and planted files would be bypassed.
+ */
+export const NO_SERVICE_WORKER = { serviceWorkers: "block" } as const;
+
 /** True when the e2e server answers `/data/*` from the real build (see serve.js). */
 export const REAL_DATA = process.env["LIVE_E2E_DATA"] === "build";
 

@@ -11,7 +11,9 @@
  * `@data`: expectations come from the served `/data/*`, so this also runs on a real-data build.
  */
 import { expect, test, type Page } from "@playwright/test";
-import { axeViolations, corpusRows, dataJson, pageErrors, settled, UIS } from "./helpers.ts";
+import { axeViolations, corpusRows, dataJson, NO_SERVICE_WORKER, pageErrors, settled, UIS } from "./helpers.ts";
+
+test.use(NO_SERVICE_WORKER);
 
 /**
  * Shabbos parshiyos of 5787 (diaspora), from the printed luach: a weekday maps to the coming

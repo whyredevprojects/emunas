@@ -12,7 +12,9 @@
  * `@data`: expectations come from the served `/data/*`, so this also runs on a real-data build.
  */
 import { expect, test, type APIRequestContext, type Page } from "@playwright/test";
-import { axeViolations, dataJson, dock, LinkResolver, pageErrors, serveSilentMedia, settled, UIS } from "./helpers.ts";
+import { axeViolations, dataJson, dock, LinkResolver, NO_SERVICE_WORKER, pageErrors, serveSilentMedia, settled, UIS } from "./helpers.ts";
+
+test.use(NO_SERVICE_WORKER);
 
 interface WorkFile {
   key: string;
@@ -116,7 +118,7 @@ test.describe("@data seforim", () => {
 });
 
 test.describe("@data maasios", () => {
-  test("stories only: the listed stories queue back to back, and the next plays when one ends", async ({ page, request }) => {
+  test("stories only: the listed stories queue back to back, and the next plays when one ends", async ({ page, request, browserName }) => {
     const stories = (await dataJson<StoriesFile>(request, "stories.json")).stories;
     test.skip(stories.length < 2, "fewer than two stories in this data");
     await serveSilentMedia(page);
@@ -150,8 +152,12 @@ test.describe("@data maasios", () => {
     await page.locator("section[data-section=queue] h2 a").click();
     const items = page.getByTestId("queue-list").locator("> li");
     expect(await items.count()).toBeGreaterThan(1);
-    await expect(items.nth(0)).toHaveAttribute("aria-current", "true", { timeout: 10_000 });
+    expect(errors).toEqual([]);
 
+    // Playwright's WebKit build on Linux does not play the stand-in media (it stays "loading"; the
+    // listening-room spec sees the same), so playback itself is checked in Chromium only.
+    if (browserName === "webkit") return;
+    await expect(items.nth(0)).toHaveAttribute("aria-current", "true", { timeout: 10_000 });
     // Jump to just before the first story's end: the second story takes over.
     const firstStory = stories.find((s) => s.id === listed[0])!;
     await expect(dock(page)).toHaveAttribute("data-player-status", "playing", { timeout: 10_000 });

@@ -11,10 +11,11 @@
  *
  *   node test/e2e/serve.js [port]
  */
-import { createReadStream, existsSync, statSync } from "node:fs";
+import { createReadStream, existsSync, readFileSync, statSync } from "node:fs";
 import { createServer } from "node:http";
 import { extname, join, normalize, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { brotliCompressSync, constants as zlibConstants, gzipSync } from "node:zlib";
 
 const appDir = resolve(fileURLToPath(new URL("../..", import.meta.url)));
 const clientDir = join(appDir, "build", "client");
@@ -61,9 +62,39 @@ const server = createServer((req, res) => {
     res.writeHead(404, { "content-type": "text/plain" }).end("not found");
     return;
   }
-  res.writeHead(200, { "content-type": TYPES[extname(file)] ?? "application/octet-stream" });
-  createReadStream(file).pipe(res);
+  const type = TYPES[extname(file)] ?? "application/octet-stream";
+  // Text is compressed as Cloudflare does in production (brotli, else gzip), so Lighthouse measures
+  // transfer sizes close to the real ones.
+  const accept = String(req.headers["accept-encoding"] ?? "");
+  const encoding = !COMPRESSIBLE.test(type) ? null : /\bbr\b/u.test(accept) ? "br" : /\bgzip\b/u.test(accept) ? "gzip" : null;
+  if (!encoding) {
+    res.writeHead(200, { "content-type": type });
+    createReadStream(file).pipe(res);
+    return;
+  }
+  const body = compressed(file, encoding);
+  res.writeHead(200, { "content-type": type, "content-encoding": encoding, "content-length": body.length, vary: "accept-encoding" });
+  res.end(body);
 });
+
+const COMPRESSIBLE = /^(text\/|application\/(json|javascript|manifest\+json)|image\/svg)/u;
+/** @type {Map<string, Buffer>} */
+const compressCache = new Map();
+
+/** @param {string} file @param {"br" | "gzip"} encoding */
+function compressed(file, encoding) {
+  const key = `${encoding}:${file}:${statSync(file).mtimeMs}`;
+  let out = compressCache.get(key);
+  if (!out) {
+    const raw = readFileSync(file);
+    out =
+      encoding === "br"
+        ? brotliCompressSync(raw, { params: { [zlibConstants.BROTLI_PARAM_QUALITY]: 5 } })
+        : gzipSync(raw, { level: 6 });
+    compressCache.set(key, out);
+  }
+  return out;
+}
 
 server.listen(port, "127.0.0.1", () => {
   console.log(`live e2e server on http://127.0.0.1:${port}`);
