@@ -1,9 +1,14 @@
-// Stub (W2.4). Replaced by W3.9.
+// Shared playlist (W3.9): `/:ui/pl#<base64url(JSON [shiurId, t, end?][])>`, decoded client-side.
+import { isUiLang } from "@emunas/i18n";
 import type { JSX } from "react";
-import { PageStub, stubMeta } from "../shell/PageStub.tsx";
+import { SharedPlaylist, shelfT, useShelfT } from "../features/shelf/index.ts";
+import { tFor, useUi } from "../i18n/index.ts";
 
-export const meta = stubMeta("page.playlist");
+export function meta({ params }: { params: Readonly<Record<string, string | undefined>> }) {
+  const ui = isUiLang(params["ui"]) ? params["ui"] : "en";
+  return [{ title: `${shelfT(ui)("pl.title")} · ${tFor(ui)("site.name")}` }];
+}
 
-export default function SharedPlaylist(): JSX.Element {
-  return <PageStub title="page.playlist" lead="page.playlist.lead" />;
+export default function SharedPlaylistRoute(): JSX.Element {
+  return <SharedPlaylist ui={useUi()} t={useShelfT()} />;
 }
