@@ -14,7 +14,7 @@ moments.ndjson ──validate (allow-list)──► leak guard ──► Vectori
 | Target | Content | Diff key |
 |---|---|---|
 | D1 `moments` | one row per moment; facets copied from the shiur; `confidence` = 0.6 for `soft` items, else NULL | `hash` (search-core content hash) |
-| D1 `moment_entities` | `(moment_id, work\|person\|concept, key)` | with the moment |
+| D1 `moment_entities` | `(moment_id, work\|person\|concept\|topic, corpus id)` from `MomentRow.entities` (`works`, `people`, `concepts`, `topics`); the report counts rows per type (`entityRows`) | with the moment |
 | D1 `moment_text` | display title/body per language (normalizeHe). Insights, key points and takeaways have only a title: it goes in `body`. Write-up paragraphs only in their own language. | with the moment |
 | D1 `fts_words`, `fts_tri` | the same text in search form: search-core `momentSearchText` (`fold`), so `normalizeQuery` tokens meet it | with the moment; FTS rowid = 48 bits of sha256(`id@lang`), so changed rows are deleted by rowid |
 | D1 `meta.corpus_rev` | `m1-` + sha256 of the sorted `(id, hash)` pairs. Written last, and only when it changes | content only |
@@ -99,4 +99,8 @@ Options: `--env production|staging`, `--only d1|vectors`, `--dry-run`, `--model 
    again: it must report 0 statements and 0 vectors.
 5. Production: deploy.yml on `main` runs the same command with `--env production`.
 
-Expected size today: 36,596 moments (19,624 write-up paragraphs, lexical only), 33,944 vectors.
+Real data on 2026-11-15 (`search:sync:local --dry-run` after `corpus:build` and `search:build`):
+59,512 moments, 57,908 vectors, `moment_entities` rows: work 54,947, person 4,605, concept 2,094,
+topic 181,916 (192 distinct topics). A second run writes nothing.
+
+Earlier size (before the corpus layer): 36,596 moments (19,624 write-up paragraphs, lexical only), 33,944 vectors.

@@ -4,7 +4,8 @@ import { trigramMatch, wordsMatch } from "../src/fts.ts";
 import { adjust, groupByShiur, rrf } from "../src/rank.ts";
 import { decodeCursor, encodeCursor } from "../src/cursor.ts";
 import { findMarks, makeSnippet, SNIPPET_LENGTH } from "../src/snippet.ts";
-import { fnv1a32Hex, parseVectorId, vectorIdFor } from "../src/contract.ts";
+import { ENTITY_TYPES, fnv1a32Hex, parseVectorId, vectorIdFor } from "../src/contract.ts";
+import { filterClause } from "../src/filters.ts";
 import { canonicalSearchKey, parseSearchParams } from "../src/params.ts";
 
 describe("normalizeQuery (search-core shim)", () => {
@@ -130,5 +131,28 @@ describe("vector ids and params", () => {
     const a = parseSearchParams(new URLSearchParams("q=Trust&audio=yi,en&kind=story,section"));
     const b = parseSearchParams(new URLSearchParams("kind=section,story&audio=en,yi&q=Trust"));
     expect(canonicalSearchKey(a)).toBe(canonicalSearchKey(b));
+  });
+
+  it("topic is an entity filter like work, person and concept, with its own cache key part", () => {
+    expect([...ENTITY_TYPES]).toEqual(["work", "person", "concept", "topic"]);
+    const p = parseSearchParams(new URLSearchParams("q=a&topic=hester-panim,emunah&concept=hester-panim"));
+    expect(p.filters.topic).toEqual(["emunah", "hester-panim"]);
+    expect(p.filters.concept).toEqual(["hester-panim"]);
+    expect(parseSearchParams(new URLSearchParams("q=a")).filters.topic).toEqual([]);
+    const asTopic = canonicalSearchKey(parseSearchParams(new URLSearchParams("q=a&topic=emunah")));
+    const asConcept = canonicalSearchKey(parseSearchParams(new URLSearchParams("q=a&concept=emunah")));
+    expect(asTopic).not.toBe(asConcept);
+    expect(new URLSearchParams(asTopic).get("topic")).toBe("emunah");
+    for (const qs of ["q=a&topic=Hester%20Panim", "q=a&topic=a&topic=b", `q=a&topic=${Array.from({ length: 11 }, (_, i) => `t${i}`).join(",")}`]) {
+      expect(() => parseSearchParams(new URLSearchParams(qs)), qs).toThrow();
+    }
+  });
+
+  it("entity filters become one EXISTS clause per type, values bound as JSON", () => {
+    const f = parseSearchParams(new URLSearchParams("q=a&topic=emunah,lag-baomer&work=bereishis")).filters;
+    const c = filterClause(f);
+    expect(c.sql.match(/EXISTS/g)).toHaveLength(2);
+    expect(c.params).toEqual(["work", JSON.stringify(["bereishis"]), "topic", JSON.stringify(["emunah", "lag-baomer"])]);
+    expect(filterClause(parseSearchParams(new URLSearchParams("q=a")).filters)).toEqual({ sql: "1", params: [] });
   });
 });

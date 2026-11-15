@@ -3,6 +3,7 @@
  * json_each(), so a query never comes near D1's bound-parameter limit. Column names are fixed
  * strings here; values are always bound.
  */
+import { ENTITY_TYPES } from "./contract.ts";
 import type { SearchFilters } from "./params.ts";
 
 export interface SqlFragment {
@@ -26,11 +27,8 @@ export function filterClause(f: SearchFilters): SqlFragment {
   if (f.series.length > 0) add(IN_LIST("m.series"), JSON.stringify(f.series));
   if (f.yearFrom !== null) add("m.year >= ?", f.yearFrom);
   if (f.yearTo !== null) add("m.year <= ?", f.yearTo);
-  for (const [type, values] of [
-    ["work", f.work],
-    ["person", f.person],
-    ["concept", f.concept],
-  ] as const) {
+  for (const type of ENTITY_TYPES) {
+    const values = f[type];
     if (values.length === 0) continue;
     add(
       `EXISTS (SELECT 1 FROM moment_entities e WHERE e.moment_id = m.id AND e.type = ? AND ${IN_LIST("e.entity_id")})`,

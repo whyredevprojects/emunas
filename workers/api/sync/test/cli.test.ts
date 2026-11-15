@@ -11,7 +11,7 @@ import { API, buildMiniCorpus, tmp } from "./helpers.ts";
 
 const env = { ...process.env, CI: "1", WRANGLER_SEND_METRICS: "false", NO_COLOR: "1" };
 
-type Section = Record<string, number | string | boolean | null>;
+type Section = Record<string, unknown>;
 interface Summary {
   moments: number;
   d1: Section;
@@ -43,6 +43,17 @@ describe("sync CLI, local mode", () => {
     );
     const parsed = JSON.parse(read.slice(read.indexOf("["))) as { results: { n: number }[] }[];
     expect(parsed[0]!.results[0]!.n).toBe(Number(first.summary.d1["inserted"]));
+
+    // Topic rows are reported per type and are what D1 holds.
+    const entityRows = first.summary.d1["entityRows"] as Record<string, number>;
+    expect(Object.keys(entityRows)).toEqual(["work", "person", "concept", "topic"]);
+    expect(entityRows["topic"]).toBeGreaterThan(0);
+    const topics = execFileSync(
+      "npx",
+      ["wrangler", "d1", "execute", "emunas-search-staging", "--local", "--env", "staging", "--persist-to", persist, "--json", "--command", "SELECT count(*) AS n FROM moment_entities WHERE type = 'topic'"],
+      { cwd: API, env, encoding: "utf8" },
+    );
+    expect((JSON.parse(topics.slice(topics.indexOf("["))) as { results: { n: number }[] }[])[0]!.results[0]!.n).toBe(entityRows["topic"]);
 
     const second = cli(args);
     expect(second.summary.d1).toMatchObject({ inserted: 0, updated: 0, deleted: 0, statements: 0, rowsWritten: 0 });

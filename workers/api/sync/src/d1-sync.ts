@@ -10,7 +10,7 @@
  * `meta.corpus_rev` is written after everything else, and only when it changes.
  */
 import type { MomentRow } from "@emunas/search-core";
-import { corpusRevOf, ftsRowid, LANGS, toMomentRecord, type MomentRecord } from "./rows.ts";
+import { corpusRevOf, ENTITY_TYPES, ftsRowid, LANGS, toMomentRecord, type EntityType, type MomentRecord } from "./rows.ts";
 import { stmt, type SqlTarget, type Stmt } from "./sql.ts";
 
 /** The search schema version this sync writes (migrations/search/0001_init.sql). */
@@ -38,6 +38,8 @@ export interface D1Report {
   statements: number;
   /** Rows inserted or replaced across all tables, plus the meta row when written. */
   rowsWritten: number;
+  /** `moment_entities` rows written per type (part of rowsWritten). */
+  entityRows: Record<EntityType, number>;
   /** Shiurim touched by inserts, updates or deletes. */
   shiurim: string[];
   revWritten: boolean;
@@ -151,11 +153,22 @@ function rowsOf(r: MomentRecord): number {
   return 1 + r.entities.length + r.texts.length + 2 * r.fts.length;
 }
 
-/** Rough JSON bytes a record adds to its largest statement parameter (the FTS payload). */
+/**
+ * Rough JSON bytes a record adds to a chunk's statement parameters: the FTS payload plus the
+ * `moment_entities` triples (topics add several per moment), so neither parameter can pass the cap.
+ */
 function weightOf(r: MomentRecord): number {
   let n = 100;
   for (const f of r.fts) n += Buffer.byteLength(`${f.title}${f.body}`, "utf8");
+  for (const e of r.entities) n += Buffer.byteLength(`${r.id}${e.type}${e.entityId}`, "utf8") + 12;
   return n;
+}
+
+/** `moment_entities` rows written per type (inserted and changed moments). */
+export function entityRowsByType(records: readonly MomentRecord[]): Record<EntityType, number> {
+  const out = Object.fromEntries(ENTITY_TYPES.map((t) => [t, 0])) as Record<EntityType, number>;
+  for (const r of records) for (const e of r.entities) out[e.type]++;
+  return out;
 }
 
 export interface SyncD1Options {
@@ -204,11 +217,12 @@ export async function syncD1(target: SqlTarget, rows: readonly MomentRow[], opts
   const shiurim = new Set<string>([...plan.inserts, ...plan.updates].map((r) => r.shiurId));
   for (const id of plan.deletes) shiurim.add(id.slice(0, id.indexOf("~")));
   let rowsWritten = [...plan.inserts, ...plan.updates].reduce((n, r) => n + rowsOf(r), 0);
+  const entityRows = entityRowsByType([...plan.inserts, ...plan.updates]);
   const revWritten = plan.rev !== previousRev;
   const statements = chunks.reduce((n, g) => n + g.length, 0) + (revWritten ? 1 : 0);
   log(
     `d1 ${target.name}: ${plan.inserts.length} new, ${plan.updates.length} changed, ${plan.deletes.length} removed, ` +
-      `${plan.unchanged} unchanged; rev ${previousRev ?? "none"} → ${plan.rev}${opts.dryRun ? " (dry run)" : ""}`,
+      `${plan.unchanged} unchanged; entity rows ${ENTITY_TYPES.map((t) => `${t} ${entityRows[t]}`).join(", ")}; rev ${previousRev ?? "none"} → ${plan.rev}${opts.dryRun ? " (dry run)" : ""}`,
   );
   if (!opts.dryRun) {
     let done = 0;
@@ -232,6 +246,7 @@ export async function syncD1(target: SqlTarget, rows: readonly MomentRow[], opts
     unchanged: plan.unchanged,
     statements,
     rowsWritten,
+    entityRows,
     shiurim: [...shiurim].sort(),
     revWritten,
     dryRun: opts.dryRun === true,
