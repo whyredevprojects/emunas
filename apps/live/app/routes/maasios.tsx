@@ -1,9 +1,10 @@
-// Stub (W2.4). Replaced by W4.2.
+// The maasios library (W4.2): stories by person, playable one by one or back to back.
 import type { JSX } from "react";
-import { PageStub, stubMeta } from "../shell/PageStub.tsx";
+import { MaasiosPage } from "../features/maasios/MaasiosPage.tsx";
+import { stubMeta } from "../shell/PageStub.tsx";
 
 export const meta = stubMeta("page.maasios");
 
 export default function Maasios(): JSX.Element {
-  return <PageStub title="page.maasios" lead="page.maasios.lead" />;
+  return <MaasiosPage />;
 }
