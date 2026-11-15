@@ -47,7 +47,21 @@ describe("apps/quiet/wrangler.jsonc", () => {
   it("ships no runtime Worker code in worker/ (only build-time tooling)", () => {
     const dir = `${APP}worker`;
     expect(existsSync(`${dir}/index.ts`)).toBe(false);
-    expect(readdirSync(dir).filter((f) => f.endsWith(".ts")).sort()).toEqual(["render-headers.ts", "vitest.config.ts"]);
+    expect(readdirSync(dir).filter((f) => f.endsWith(".ts")).sort()).toEqual(["redirects-file.ts", "render-headers.ts", "vitest.config.ts"]);
+  });
+});
+
+describe("apps/quiet/public/_redirects", () => {
+  it("is not in public/: dist/_redirects is generated after the build (scripts/redirects.ts)", () => {
+    expect(existsSync(`${APP}public/_redirects`)).toBe(false);
+  });
+
+  it("runs the redirects step after astro build and the search index", () => {
+    const pkg = JSON.parse(readFileSync(`${APP}package.json`, "utf8")) as { scripts: Record<string, string> };
+    const steps = pkg.scripts["build"]!.split("&&").map((s) => s.trim());
+    expect(steps.at(-1)).toBe("tsx scripts/redirects.ts");
+    expect(steps.findIndex((s) => s.includes("astro build"))).toBeLessThan(steps.length - 1);
+    expect(steps.findIndex((s) => s.includes("build-search"))).toBeLessThan(steps.length - 1);
   });
 });
 
