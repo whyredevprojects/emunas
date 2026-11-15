@@ -1,0 +1,29 @@
+{
+  "name": "@emunas/corpus",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "The shared data layer: allow-listed loaders, status gate, allow-list projection, time model, transcript gate and the corpus:build CLI (integration-plan §5).",
+  "exports": {
+    "./public": "./src/public/index.ts",
+    "./build": "./src/build/index.ts",
+    "./transcript-gate": "./src/transcript-gate.ts",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "corpus:build": "tsx src/cli.ts",
+    "fixtures:mini": "tsx scripts/make-mini-corpus.ts"
+  },
+  "dependencies": {
+    "valibot": "1.5.0"
+  },
+  "devDependencies": {
+    "@emunas/config": "0.0.0",
+    "@types/node": "26.6.6",
+    "fast-check": "4.10.2",
+    "tsx": "4.23.15",
+    "vitest": "5.0.5"
+  }
+}
