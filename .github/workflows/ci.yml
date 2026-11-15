@@ -37,20 +37,14 @@ jobs:
         run: npm ci
       - name: Typecheck (pipeline, unchanged)
         run: npm run typecheck
-      - name: Typecheck (sites)
+      # site:typecheck and site:test also cover the site Workers (site:*:workers) and the Live
+      # search eval suite (site:*:eval), so those have no steps of their own.
+      - name: Typecheck (sites, site Workers, eval suite)
         run: npm run site:typecheck
-      - name: Typecheck (site Workers and deploy tooling)
-        run: |
-          node node_modules/typescript/bin/tsc --noEmit -p apps/quiet/worker/tsconfig.json
-          node node_modules/typescript/bin/tsc --noEmit -p apps/live/worker/tsconfig.json
       - name: Lint
         run: npm run site:lint
-      - name: Unit tests
+      - name: Unit tests (sites, site Workers, eval suite)
         run: npm run site:test
-      - name: Unit tests (site Workers, wrangler configs, _headers)
-        run: |
-          npx vitest run --config apps/quiet/worker/vitest.config.ts
-          npx vitest run --config apps/live/worker/vitest.config.ts
 
   build:
     runs-on: ubuntu-24.04

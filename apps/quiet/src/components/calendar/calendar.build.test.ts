@@ -175,7 +175,9 @@ describe("year pages", () => {
 describe("all calendar and year pages", () => {
   it("work without JS: content is in the HTML, links are plain, internal calendar links resolve", () => {
     const pages = calendarPages();
-    expect(pages.length).toBe(2 * (2 + data.occasions.parshiyos.length + data.occasions.zmanim.length + 2 + data.years.years.length));
+    // per edition: /calendar/ (W4.9), the parsha and zman indexes, every occasion, the year index,
+    // the unknown-year page and every year
+    expect(pages.length).toBe(2 * (3 + data.occasions.parshiyos.length + data.occasions.zmanim.length + 2 + data.years.years.length));
     for (const p of pages) {
       const html = page(p);
       expect(html, p).not.toContain("astro-island");
@@ -184,6 +186,14 @@ describe("all calendar and year pages", () => {
       for (const href of hrefsIn(html)) {
         if (/^\/(yi|en)\/(calendar|years)\//.test(href)) expect(exists(href.replace(/#.*$/, "")), `${p} → ${href}`).toBe(true);
       }
+    }
+  });
+
+  it("/{ed}/calendar/ leads to the three ways in (W4.9)", () => {
+    for (const ed of ["yi", "en"] as const) {
+      const html = page(`${ed}/calendar`);
+      const hrefs = hrefsIn(html);
+      for (const want of [`/${ed}/calendar/parsha/`, `/${ed}/calendar/zman/`, `/${ed}/years/`]) expect(hrefs, ed).toContain(want);
     }
   });
 

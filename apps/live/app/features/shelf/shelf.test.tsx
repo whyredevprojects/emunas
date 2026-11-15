@@ -12,9 +12,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { RouterProvider } from "react-router";
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
-// eslint-disable-next-line no-restricted-imports -- app/data is the Live data contract (W2.4), not the pipeline data folder
 import { configureData, resetDataConfig } from "../../data/index.ts";
-// eslint-disable-next-line no-restricted-imports -- app/data is the Live data contract (W2.4), not the pipeline data folder
 import { fixtureFetch } from "../../data/fixtures/fetch.ts";
 import { createTestRouter } from "../../shell/test-router.tsx";
 import { MemoryBackend } from "../../store/backend.ts";

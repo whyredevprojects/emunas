@@ -7,7 +7,6 @@ import { livePaths } from "@emunas/links";
 import { useEffect, useState, type JSX, type ReactNode } from "react";
 import { Link } from "react-router";
 import { Text } from "../../components/Text.tsx";
-// eslint-disable-next-line no-restricted-imports -- app/data is the Live data contract (W2.4), not the pipeline data folder
 import { loadCorpus, type CorpusRow } from "../../data/index.ts";
 import { getPersonal, getQueuePlayer, type MomentInput } from "../../store/index.ts";
 import type { ShelfT } from "./strings.ts";

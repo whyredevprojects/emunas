@@ -1,34 +1,20 @@
 // @vitest-environment jsdom
 /**
- * Today in the real route tree, over the W2.4 fixture files. The fixture `today.json` is keyed by raw
- * catalog strings (fixtures predate the normalize keyer); here it is re-keyed to the normalize keys
- * the W3.6 emitter writes, so the calendar join is exercised end to end.
+ * Today in the real route tree, over the W2.4 fixture files. The fixture `today.json` carries the
+ * normalize occasion keys the W3.6 emitter writes, so the calendar join is exercised end to end.
  */
 import { act, cleanup, render, screen, waitFor } from "@testing-library/react";
 import axe from "axe-core";
 import { RouterProvider } from "react-router";
 import { afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
-import { configureData, resetDataConfig, type DataFetch, type ShiurFile, type TodayFile } from "../live-data.ts";
-import { fixtureFetch, shiurNoachFixture as shiurNoach, todayFixture } from "./fixtures.ts";
+import { configureData, resetDataConfig, type DataFetch, type ShiurFile } from "../live-data.ts";
+import { fixtureFetch, shiurNoachFixture as shiurNoach } from "./fixtures.ts";
 import { settingsStore } from "../../../shell/settings.ts";
 import { createTestRouter } from "../../../shell/test-router.tsx";
 import { momentContent } from "../format.ts";
 import { registerProgressSource } from "../personal.ts";
 
-const REKEY: Record<string, string> = { "נח": "noach", "בראשית": "bereishis", "אלול": "elul", "טו-באב": "tu-beav" };
-
-function rekeyedToday(): TodayFile {
-  const t = structuredClone(todayFixture) as TodayFile;
-  t.occasions = Object.fromEntries(Object.entries(t.occasions).map(([k, v]) => [REKEY[k] ?? k, v]));
-  return t;
-}
-
-const dataFetch: DataFetch = async (input, init) => {
-  if (new URL(input, "http://x.invalid").pathname === "/data/today.json") {
-    return new Response(JSON.stringify(rekeyedToday()), { status: 200, headers: { "content-type": "application/json" } });
-  }
-  return fixtureFetch(input, init);
-};
+const dataFetch: DataFetch = fixtureFetch;
 
 let restore: () => void = () => {};
 

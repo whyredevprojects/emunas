@@ -8,6 +8,7 @@
  * - Every catalog string is its own `<bdi>` run with lang/dir from its dominant script.
  * - Rows of the uncatalogued guide carry a small mark with a spoken explanation.
  * - Rows whose recordings cannot be played from the media host are greyed and say so in words.
+ * - Guide rows with no audio at all (catalog gaps) are greyed the same way and have no link (no page).
  * - Catalog-only rows show no AI text (the notes cell stays empty).
  * - `<caption>` and `<th scope>` throughout; no script.
  */
@@ -77,6 +78,7 @@ const numberOf = (r: CatalogRow | SeriesRow): string => {
           id={`row-${r.id}`}
           class:list={["catalog-row", { "no-recording": !r.playable, uncatalogued: r.uncatalogued }]}
           data-status={r.status}
+          data-gap={r.gap ? "" : undefined}
         >
           <td class="col-num">
             {num !== "" && (
@@ -87,7 +89,11 @@ const numberOf = (r: CatalogRow | SeriesRow): string => {
             {r.heading && (
               <span class="row-heading"><bdi {...run(r.heading, r.lang)}>{r.heading}</bdi></span>
             )}
-            <a href={r.href}><bdi {...run(r.title, r.lang)}>{r.title}</bdi></a>
+            {r.gap ? (
+              <bdi {...run(r.title, r.lang)}>{r.title}</bdi>
+            ) : (
+              <a href={r.href}><bdi {...run(r.title, r.lang)}>{r.title}</bdi></a>
+            )}
             {r.subTitle && (
               <span class="row-subtitle"><bdi {...run(r.subTitle, r.lang)}>{r.subTitle}</bdi></span>
             )}

@@ -226,11 +226,44 @@ export interface PublicSeries {
   shiurIds: string[];
 }
 
+/**
+ * A catalog row that has no recording (concept-quiet decision 3, tech-quiet §4): listed in a guide
+ * but its audio is not on disk or not in the bucket. Catalog fields only; it gets no page and no
+ * shiur file, and is shown greyed as "no recording" in its section. Purim rows are not listed.
+ */
+export interface CatalogGap {
+  id: string;
+  lang: Ed;
+  category: Category;
+  catalog: Omit<PublicCatalog, "topics" | "note">;
+  /** `${source}:${sectionId}`, as in `sections[].key`. */
+  sectionKey: string;
+  /**
+   * The in-scope shiur of the same section that precedes this row in catalog order (null: the row
+   * comes first), so a section page can put the row where the guide prints it.
+   */
+  after: string | null;
+  reason: CatalogGapReason;
+  parsha: KeyedValue | null;
+  zman: KeyedValue | null;
+  perek: string | null;
+  years: number[];
+  series: { id: string; order: number | null } | null;
+}
+
+/** `not-on-disk`: the 2012 guide lists it but no file exists; `not-in-bucket`: the file never reached the bucket. */
+export type CatalogGapReason = "not-on-disk" | "not-in-bucket";
+
 export interface CorpusIndex {
   schemaVersion: number;
   sections: IndexSection[];
   series: PublicSeries[];
   shiurim: IndexRow[];
+  /**
+   * Guide rows without audio, in catalog order (not part of `shiurim`). Always written by
+   * corpus:build; optional so readers of an older `.corpus/` and hand-made test indexes still type.
+   */
+  gaps?: CatalogGap[];
 }
 
 export interface BuildCounts {

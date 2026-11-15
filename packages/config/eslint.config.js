@@ -8,11 +8,15 @@
  *  - forbidden literals (transcript path, ASR input file, audit folder) anywhere
  *    except packages/corpus/src/transcript-gate.ts and packages/corpus-guard/**;
  *  - app and worker code may not import from the pipeline's data folder or from
- *    the Node-only `@emunas/corpus/build` entry.
+ *    the Node-only `@emunas/corpus/build` entry. Relative imports are resolved against the
+ *    importing file (`emunas/no-pipeline-data-import`), so an app's own `data/` module
+ *    (apps/live/app/data) is not mistaken for the repo-root one.
  *
  * The patterns below are written so that this file does not itself contain the
  * literals it bans (the regexes cannot match their own source text).
  */
+import { dirname, isAbsolute, relative, resolve, sep } from "node:path";
+import { fileURLToPath } from "node:url";
 import js from "@eslint/js";
 import { defineConfig } from "eslint/config";
 import astro from "eslint-plugin-astro";
@@ -35,20 +39,66 @@ export const forbiddenLiteralRule = [
   ]),
 ];
 
+const DATA_MESSAGE = "Site code reads .corpus/ only, never the pipeline's data folder (integration-plan §1.4 C3).";
+
+/** The repo root (this file lives in packages/config/). */
+export const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
+
+/**
+ * True when a relative import specifier, resolved against the importing file, lands in the
+ * repo-root data folder. A pattern on the specifier alone (`^(\.\./)+data`) cannot tell the
+ * pipeline's folder from an app's own `data/` module (apps/live/app/data), so the climb is resolved.
+ *
+ * @param {string} filename absolute path of the importing file
+ * @param {string} specifier the import source
+ * @param {string} [root] repo root
+ */
+export function importsPipelineData(filename, specifier, root = REPO_ROOT) {
+  if (!specifier.startsWith("./") && !specifier.startsWith("../")) return false;
+  if (!isAbsolute(filename)) return false;
+  const target = relative(root, resolve(dirname(filename), specifier.split(/[?#]/)[0] ?? ""));
+  return target === "data" || target.startsWith(`data${sep}`);
+}
+
+/**
+ * `emunas/no-pipeline-data-import`: relative imports, re-exports and dynamic imports that resolve
+ * into the repo-root data folder.
+ * @type {import("eslint").Rule.RuleModule}
+ */
+const noPipelineDataImport = {
+  meta: {
+    type: "problem",
+    docs: { description: "Disallow relative imports that resolve into the pipeline's data folder." },
+    schema: [],
+    messages: { pipelineData: DATA_MESSAGE },
+  },
+  create(context) {
+    /** @param {import("estree").Node | null | undefined} source */
+    const check = (source) => {
+      if (!source || source.type !== "Literal" || typeof source.value !== "string") return;
+      if (importsPipelineData(context.filename, source.value)) context.report({ node: source, messageId: "pipelineData" });
+    };
+    return {
+      ImportDeclaration: (node) => check(node.source),
+      ExportNamedDeclaration: (node) => check(node.source),
+      ExportAllDeclaration: (node) => check(node.source),
+      ImportExpression: (node) => check(node.source),
+    };
+  },
+};
+
+/** Local rules of the site config (plugin prefix `emunas/`). */
+export const emunasPlugin = { meta: { name: "emunas" }, rules: { "no-pipeline-data-import": noPipelineDataImport } };
+
 /** @type {import("eslint").Linter.RuleEntry} */
 export const restrictedImportsRule = [
   "error",
   {
     patterns: [
       {
-        // ../../data/..., ../../../data (relative climbs into the repo-root data folder)
-        regex: "^(\\.\\./)+data(/|$)",
-        message: "Site code reads .corpus/ only, never the pipeline's data folder (integration-plan §1.4 C3).",
-      },
-      {
         // any path that names the pipeline's data subfolders
         regex: "(^|/)data/(derived|catalog|transcripts)(/|$)",
-        message: "Site code reads .corpus/ only, never the pipeline's data folder (integration-plan §1.4 C3).",
+        message: DATA_MESSAGE,
       },
       {
         regex: "^@emunas/corpus/build(/|$)",
@@ -138,6 +188,7 @@ export default defineConfig(
       "apps/*/worker/**/*.ts",
       "workers/*/src/**/*.ts",
     ],
-    rules: { "no-restricted-imports": restrictedImportsRule },
+    plugins: { emunas: emunasPlugin },
+    rules: { "no-restricted-imports": restrictedImportsRule, "emunas/no-pipeline-data-import": "error" },
   },
 );

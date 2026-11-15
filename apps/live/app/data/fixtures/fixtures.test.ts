@@ -6,6 +6,7 @@
  *   UPDATE_LIVE_FIXTURES=1 npx vitest run app/data/fixtures --root apps/live
  */
 import { SCHEMA_VERSION } from "@emunas/corpus/public";
+import { lookupParsha, lookupZman } from "@emunas/normalize";
 import { mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -30,11 +31,25 @@ export const FIXTURE_OPTIONS: DeriveOptions = {
   },
 };
 
+/**
+ * The goldens are projected with the corpus's table-free identity keyer, so their parsha and zman
+ * keys are slugs of the raw catalog strings (`נח`). The real build keys them with @emunas/normalize
+ * (`noach`), which is what Today, facets and the calendar join on, so the fixtures are re-keyed the
+ * same way (W4.9).
+ */
+function normalizeOccasionKeys(s: FixtureShiur): FixtureShiur {
+  return {
+    ...s,
+    parsha: s.parsha ? { raw: s.parsha.raw, key: lookupParsha(s.parsha.raw).key } : null,
+    zman: s.zman ? { raw: s.zman.raw, key: lookupZman(s.zman.raw).key } : null,
+  };
+}
+
 function goldens(): FixtureShiur[] {
   return readdirSync(goldenDir)
     .filter((f) => f.endsWith(".json"))
     .sort()
-    .map((f) => JSON.parse(readFileSync(join(goldenDir, f), "utf8")) as FixtureShiur);
+    .map((f) => normalizeOccasionKeys(JSON.parse(readFileSync(join(goldenDir, f), "utf8")) as FixtureShiur));
 }
 
 function listFiles(dir: string, prefix = ""): string[] {
@@ -82,6 +97,15 @@ describe("live data fixtures", () => {
     for (const [file, body] of derived) {
       expect(readFileSync(join(outDir, file), "utf8"), file).toBe(serialize(body));
     }
+  });
+
+  it("keys occasions the way the real build does (normalize keys, never raw Hebrew)", () => {
+    const today = derived.get("today.json") as { occasions: Record<string, unknown> };
+    const facets = derived.get("facets.json") as { occasion: Record<string, unknown> };
+    const keys = [...Object.keys(today.occasions), ...Object.keys(facets.occasion)];
+    expect(keys.length).toBeGreaterThan(0);
+    for (const k of keys) expect(k, k).toMatch(/^[a-z0-9-]+$/);
+    expect(Object.keys(today.occasions)).toEqual(expect.arrayContaining(["noach", "bereishis", "elul"]));
   });
 
   it("is deterministic", () => {

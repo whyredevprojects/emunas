@@ -1,7 +1,91 @@
 {
  "schemaVersion": 1,
  "occasions": {
-  "אלול": {
+  "bereishis": {
+   "shiurIds": [
+    "yi-parshas-hashavua-brshys-01"
+   ],
+   "moments": [
+    {
+     "id": "yi-parshas-hashavua-brshys-01~i0",
+     "shiurId": "yi-parshas-hashavua-brshys-01",
+     "kind": "i",
+     "t": 347.54,
+     "end": 392.88
+    },
+    {
+     "id": "yi-parshas-hashavua-brshys-01~i1",
+     "shiurId": "yi-parshas-hashavua-brshys-01",
+     "kind": "i",
+     "t": 874.98,
+     "end": 912.42
+    },
+    {
+     "id": "yi-parshas-hashavua-brshys-01~i2",
+     "shiurId": "yi-parshas-hashavua-brshys-01",
+     "kind": "i",
+     "t": 1108.61,
+     "end": 1158.76
+    },
+    {
+     "id": "yi-parshas-hashavua-brshys-01~i3",
+     "shiurId": "yi-parshas-hashavua-brshys-01",
+     "kind": "i",
+     "t": 1418.85,
+     "end": 1598.6
+    },
+    {
+     "id": "yi-parshas-hashavua-brshys-01~i4",
+     "shiurId": "yi-parshas-hashavua-brshys-01",
+     "kind": "i",
+     "t": 1838.85,
+     "end": 2090.06
+    },
+    {
+     "id": "yi-parshas-hashavua-brshys-01~i5",
+     "shiurId": "yi-parshas-hashavua-brshys-01",
+     "kind": "i",
+     "t": 2576.58,
+     "end": 2592.8
+    },
+    {
+     "id": "yi-parshas-hashavua-brshys-01~i6",
+     "shiurId": "yi-parshas-hashavua-brshys-01",
+     "kind": "i",
+     "t": 4028.19,
+     "end": 4208.18
+    },
+    {
+     "id": "yi-parshas-hashavua-brshys-01~q0",
+     "shiurId": "yi-parshas-hashavua-brshys-01",
+     "kind": "q",
+     "t": 241.04,
+     "end": 331.94
+    },
+    {
+     "id": "yi-parshas-hashavua-brshys-01~q1",
+     "shiurId": "yi-parshas-hashavua-brshys-01",
+     "kind": "q",
+     "t": 697,
+     "end": 840.92
+    },
+    {
+     "id": "yi-parshas-hashavua-brshys-01~q2",
+     "shiurId": "yi-parshas-hashavua-brshys-01",
+     "kind": "q",
+     "t": 1088.15,
+     "end": 1103.93
+    },
+    {
+     "id": "yi-parshas-hashavua-brshys-01~q3",
+     "shiurId": "yi-parshas-hashavua-brshys-01",
+     "kind": "q",
+     "t": 1833.61,
+     "end": 2007.74
+    }
+   ]
+  },
+  "elul": {
    "shiurIds": [
     "yi-zmanim-lvl-01"
    ],
@@ -92,181 +176,7 @@
     }
    ]
   },
-  "בראשית": {
-   "shiurIds": [
-    "yi-parshas-hashavua-brshys-01"
-   ],
-   "moments": [
-    {
-     "id": "yi-parshas-hashavua-brshys-01~i0",
-     "shiurId": "yi-parshas-hashavua-brshys-01",
-     "kind": "i",
-     "t": 347.54,
-     "end": 392.88
-    },
-    {
-     "id": "yi-parshas-hashavua-brshys-01~i1",
-     "shiurId": "yi-parshas-hashavua-brshys-01",
-     "kind": "i",
-     "t": 874.98,
-     "end": 912.42
-    },
-    {
-     "id": "yi-parshas-hashavua-brshys-01~i2",
-     "shiurId": "yi-parshas-hashavua-brshys-01",
-     "kind": "i",
-     "t": 1108.61,
-     "end": 1158.76
-    },
-    {
-     "id": "yi-parshas-hashavua-brshys-01~i3",
-     "shiurId": "yi-parshas-hashavua-brshys-01",
-     "kind": "i",
-     "t": 1418.85,
-     "end": 1598.6
-    },
-    {
-     "id": "yi-parshas-hashavua-brshys-01~i4",
-     "shiurId": "yi-parshas-hashavua-brshys-01",
-     "kind": "i",
-     "t": 1838.85,
-     "end": 2090.06
-    },
-    {
-     "id": "yi-parshas-hashavua-brshys-01~i5",
-     "shiurId": "yi-parshas-hashavua-brshys-01",
-     "kind": "i",
-     "t": 2576.58,
-     "end": 2592.8
-    },
-    {
-     "id": "yi-parshas-hashavua-brshys-01~i6",
-     "shiurId": "yi-parshas-hashavua-brshys-01",
-     "kind": "i",
-     "t": 4028.19,
-     "end": 4208.18
-    },
-    {
-     "id": "yi-parshas-hashavua-brshys-01~q0",
-     "shiurId": "yi-parshas-hashavua-brshys-01",
-     "kind": "q",
-     "t": 241.04,
-     "end": 331.94
-    },
-    {
-     "id": "yi-parshas-hashavua-brshys-01~q1",
-     "shiurId": "yi-parshas-hashavua-brshys-01",
-     "kind": "q",
-     "t": 697,
-     "end": 840.92
-    },
-    {
-     "id": "yi-parshas-hashavua-brshys-01~q2",
-     "shiurId": "yi-parshas-hashavua-brshys-01",
-     "kind": "q",
-     "t": 1088.15,
-     "end": 1103.93
-    },
-    {
-     "id": "yi-parshas-hashavua-brshys-01~q3",
-     "shiurId": "yi-parshas-hashavua-brshys-01",
-     "kind": "q",
-     "t": 1833.61,
-     "end": 2007.74
-    }
-   ]
-  },
-  "טו-באב": {
-   "shiurIds": [
-    "yi-zmanim-tv-bb-04"
-   ],
-   "moments": [
-    {
-     "id": "yi-zmanim-tv-bb-04~i0",
-     "shiurId": "yi-zmanim-tv-bb-04",
-     "kind": "i",
-     "t": 408.33,
-     "end": 427.19
-    },
-    {
-     "id": "yi-zmanim-tv-bb-04~i1",
-     "shiurId": "yi-zmanim-tv-bb-04",
-     "kind": "i",
-     "t": 1081.82,
-     "end": 1151.22
-    },
-    {
-     "id": "yi-zmanim-tv-bb-04~i2",
-     "shiurId": "yi-zmanim-tv-bb-04",
-     "kind": "i",
-     "t": 1652.89,
-     "end": 1703.01
-    },
-    {
-     "id": "yi-zmanim-tv-bb-04~i3",
-     "shiurId": "yi-zmanim-tv-bb-04",
-     "kind": "i",
-     "t": 2350.224,
-     "end": 2665.604
-    },
-    {
-     "id": "yi-zmanim-tv-bb-04~i4",
-     "shiurId": "yi-zmanim-tv-bb-04",
-     "kind": "i",
-     "t": 2830.914,
-     "end": 2858.494
-    },
-    {
-     "id": "yi-zmanim-tv-bb-04~q0",
-     "shiurId": "yi-zmanim-tv-bb-04",
-     "kind": "q",
-     "t": 902.82,
-     "end": 915.29
-    },
-    {
-     "id": "yi-zmanim-tv-bb-04~q1",
-     "shiurId": "yi-zmanim-tv-bb-04",
-     "kind": "q",
-     "t": 2136.514,
-     "end": 2160.354
-    },
-    {
-     "id": "yi-zmanim-tv-bb-04~q2",
-     "shiurId": "yi-zmanim-tv-bb-04",
-     "kind": "q",
-     "t": 2309.564,
-     "end": 2371.944
-    },
-    {
-     "id": "yi-zmanim-tv-bb-04~q3",
-     "shiurId": "yi-zmanim-tv-bb-04",
-     "kind": "q",
-     "t": 2522.924,
-     "end": 2549.084
-    },
-    {
-     "id": "yi-zmanim-tv-bb-04~q4",
-     "shiurId": "yi-zmanim-tv-bb-04",
-     "kind": "q",
-     "t": 2801.234,
-     "end": 2834.794
-    },
-    {
-     "id": "yi-zmanim-tv-bb-04~st0",
-     "shiurId": "yi-zmanim-tv-bb-04",
-     "kind": "st",
-     "t": 858.19,
-     "end": 925.49
-    }
-   ]
-  },
-  "מסיבת-לחיים-בקעמפ-תורה-ודעת-דרשה-אחר-שריפה-במחנה-תורה-ודעת-קעמפ": {
-   "shiurIds": [
-    "yi-zmanim-msybs-lchyym-bkmp-01-c"
-   ],
-   "moments": []
-  },
-  "נח": {
+  "noach": {
    "shiurIds": [
     "en-parsha-en-nch-01"
    ],
@@ -361,6 +271,96 @@
      "kind": "st",
      "t": 3171.06,
      "end": 3186.78
+    }
+   ]
+  },
+  "other": {
+   "shiurIds": [
+    "yi-zmanim-msybs-lchyym-bkmp-01-c"
+   ],
+   "moments": []
+  },
+  "tu-beav": {
+   "shiurIds": [
+    "yi-zmanim-tv-bb-04"
+   ],
+   "moments": [
+    {
+     "id": "yi-zmanim-tv-bb-04~i0",
+     "shiurId": "yi-zmanim-tv-bb-04",
+     "kind": "i",
+     "t": 408.33,
+     "end": 427.19
+    },
+    {
+     "id": "yi-zmanim-tv-bb-04~i1",
+     "shiurId": "yi-zmanim-tv-bb-04",
+     "kind": "i",
+     "t": 1081.82,
+     "end": 1151.22
+    },
+    {
+     "id": "yi-zmanim-tv-bb-04~i2",
+     "shiurId": "yi-zmanim-tv-bb-04",
+     "kind": "i",
+     "t": 1652.89,
+     "end": 1703.01
+    },
+    {
+     "id": "yi-zmanim-tv-bb-04~i3",
+     "shiurId": "yi-zmanim-tv-bb-04",
+     "kind": "i",
+     "t": 2350.224,
+     "end": 2665.604
+    },
+    {
+     "id": "yi-zmanim-tv-bb-04~i4",
+     "shiurId": "yi-zmanim-tv-bb-04",
+     "kind": "i",
+     "t": 2830.914,
+     "end": 2858.494
+    },
+    {
+     "id": "yi-zmanim-tv-bb-04~q0",
+     "shiurId": "yi-zmanim-tv-bb-04",
+     "kind": "q",
+     "t": 902.82,
+     "end": 915.29
+    },
+    {
+     "id": "yi-zmanim-tv-bb-04~q1",
+     "shiurId": "yi-zmanim-tv-bb-04",
+     "kind": "q",
+     "t": 2136.514,
+     "end": 2160.354
+    },
+    {
+     "id": "yi-zmanim-tv-bb-04~q2",
+     "shiurId": "yi-zmanim-tv-bb-04",
+     "kind": "q",
+     "t": 2309.564,
+     "end": 2371.944
+    },
+    {
+     "id": "yi-zmanim-tv-bb-04~q3",
+     "shiurId": "yi-zmanim-tv-bb-04",
+     "kind": "q",
+     "t": 2522.924,
+     "end": 2549.084
+    },
+    {
+     "id": "yi-zmanim-tv-bb-04~q4",
+     "shiurId": "yi-zmanim-tv-bb-04",
+     "kind": "q",
+     "t": 2801.234,
+     "end": 2834.794
+    },
+    {
+     "id": "yi-zmanim-tv-bb-04~st0",
+     "shiurId": "yi-zmanim-tv-bb-04",
+     "kind": "st",
+     "t": 858.19,
+     "end": 925.49
     }
    ]
   }

@@ -19,7 +19,7 @@ Shared tooling for the site workspaces (`apps/*`, `packages/*`, `workers/*`). Se
 ## What the ESLint config enforces
 
 - **Forbidden literals** (`no-restricted-syntax`): the transcripts folder path, the ASR input file name and the audit folder name, in string literals, template literals and JSX/Astro text, everywhere except `packages/corpus/src/transcript-gate.ts` and `packages/corpus-guard/**` (§0.3). `test/repo-literals.test.ts` additionally greps every file under `apps/`, `packages/`, `workers/`, `site-policy/` and `ci.yml` for the transcripts path.
-- **Restricted imports** (`no-restricted-imports`) in `apps/*/src`, `apps/live/app`, `apps/*/worker` and `workers/*/src`: nothing from the pipeline's data folder and nothing from `@emunas/corpus/build` (apps read `.corpus/` and `@emunas/corpus/public`).
+- **Restricted imports** in `apps/*/src`, `apps/live/app`, `apps/*/worker` and `workers/*/src`: nothing from the pipeline's data folder and nothing from `@emunas/corpus/build` (apps read `.corpus/` and `@emunas/corpus/public`). `no-restricted-imports` bans `@emunas/corpus/build` and any specifier naming `data/{derived,catalog,transcripts}`; the local rule `emunas/no-pipeline-data-import` resolves every relative import (static, re-export, dynamic) against the importing file and bans the ones that land in the repo-root `data/` folder. Resolving, rather than matching `^(\.\./)+data`, is what lets the Live app import its own `app/data` contract module without lint exceptions.
 - `typescript-eslint` recommended (syntax-only, no type-aware rules) and `eslint-plugin-astro` recommended.
 
 ## TypeScript versions (why this package pins `typescript@6.0.3` and `ts-api-utils@2.4.0`)
