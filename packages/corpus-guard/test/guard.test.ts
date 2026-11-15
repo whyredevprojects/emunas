@@ -2,7 +2,7 @@ import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { afterEach, describe, expect, it } from "vitest";
 import { main } from "../src/cli.ts";
-import { createLeakScanner } from "../src/index.ts";
+import { createLeakScanner, transcriptIdentityVersion } from "../src/index.ts";
 import { runPrePass } from "../src/pre.ts";
 import { readVerbatimAllow } from "../src/policy.ts";
 import { checkBudgets } from "../src/budgets.ts";
@@ -227,9 +227,13 @@ describe("post-pass", () => {
 
   it("transcript files are rejected unless eligible and the flag is on", () => {
     fx = makeFixture();
-    writeFile(join(fx.site, "transcript-eligibility.json"), JSON.stringify({ policyVersion: 1, eligible: { [REC]: { model: "m" } } }));
+    // Identity of the fixture transcript (fixtures.ts): model "m", mode null, transcribedAt null.
+    const identity = { model: "m", mode: null, transcribedAt: null };
+    const entry = { ...identity, quality: "reviewed", approvedBy: "t", approvedAt: "2026-11-15", allowSearch: false };
+    writeFile(join(fx.site, "transcript-eligibility.json"), JSON.stringify({ policyVersion: 1, eligible: { [REC]: entry } }));
     const d = join(fx.root, "dist7");
-    writeFile(join(d, "transcript", `${REC}.json`), JSON.stringify({ segments: [[0, 1, RUN22]] }));
+    const body = { schemaVersion: 1, recordingId: REC, quality: "reviewed", lang: null, version: transcriptIdentityVersion(identity), cues: [[0, 1, RUN22]] };
+    writeFile(join(d, "transcript", `${REC}.json`), JSON.stringify(body));
     writeFile(join(d, "transcript", "yi-test-rec-02.json"), JSON.stringify({ segments: [] }));
 
     const off = scanner(fx);

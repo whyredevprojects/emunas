@@ -26,6 +26,8 @@ import { emitLiveData } from "./emit.ts";
 import { buildNeighbors, DEFAULT_EMBED_MODEL, DirBlobReader, type BuildNeighborsOptions, type NeighborMode } from "./neighbors.ts";
 import { validateFile, type ValidationIssue } from "./schemas.ts";
 import { writeDataDir } from "./write.ts";
+import { isTranscriptDataFile, transcriptDataFiles } from "../app/features/transcript/emit.server.ts";
+import { parseTranscriptFile } from "../app/features/transcript/contract.ts";
 
 const APP = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const REPO = resolve(APP, "../..");
@@ -136,10 +138,13 @@ export async function main(argv: string[]): Promise<number> {
         console.error(`data:build: ${invalid.length} emitted files do not match the data contract; nothing written`);
         return 1;
       }
-      const r = writeDataDir(out, files);
+      // W5.2: approved public transcript files (none with the defaults; see emit.server.ts).
+      const transcripts = transcriptDataFiles(corpusDir);
+      if (transcripts.size > 0) console.log(`data:build transcript view ON: ${transcripts.size} file(s)`);
+      const r = writeDataDir(out, new Map<string, unknown>([...files, ...transcripts]));
       const ms = Math.round(performance.now() - t0);
       console.log(
-        `data:build ${files.size} files (${input.info.counts.full} of ${input.info.counts.total} shiurim summarized): ` +
+        `data:build ${files.size + transcripts.size} files (${input.info.counts.full} of ${input.info.counts.total} shiurim summarized): ` +
           `wrote ${r.written.length}, unchanged ${r.unchanged}, removed ${r.removed.length} → ${relative(BASE, out) || "."} in ${ms} ms`,
       );
       return 0;
@@ -156,6 +161,11 @@ export async function main(argv: string[]): Promise<number> {
           body = JSON.parse(readFileSync(path, "utf8"));
         } catch {
           invalid.push({ file, issues: [{ path: "", message: "not JSON" }] });
+          continue;
+        }
+        if (isTranscriptDataFile(file)) {
+          const id = file.slice("transcript/".length, -".json".length);
+          if (!parseTranscriptFile(body, id)) invalid.push({ file, issues: [{ path: "", message: "not a public transcript file" }] });
           continue;
         }
         const issue = validateFile(file, body);

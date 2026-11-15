@@ -1,6 +1,8 @@
 /**
  * Companion tabs (concept-live §5.3), all time-linked: Read, Sources, Insights, Questions, Stories,
- * Related. The Transcript slot stays empty (`TRANSCRIPT_VIEW` is false; see `flags.ts`).
+ * Related. The Transcript tab (W5.2, `features/transcript`) is appended only behind `TRANSCRIPT_VIEW`
+ * (`app/config/feature-flags.ts`, false by default) and only when an approved file loaded, so the
+ * default bundle carries no part of it.
  */
 import { formatClock, sourceRefParts } from "@emunas/i18n";
 import { livePaths } from "@emunas/links";
@@ -18,8 +20,10 @@ import { AiLabel, Report, TimeButton, isActive } from "./parts.tsx";
 import type { RoomKey } from "./strings.ts";
 import { roomStyles as s } from "./styles.ts";
 import { useCorpusRows, useWriteup } from "./use-room-data.ts";
+import { TRANSCRIPT_VIEW } from "../../config/feature-flags.ts";
+import { TRANSCRIPT_TAB, TranscriptTab, transcriptT, useTranscripts } from "../transcript/index.ts";
 
-export type TabId = "read" | "sources" | "insights" | "questions" | "stories" | "related";
+export type TabId = "read" | "sources" | "insights" | "questions" | "stories" | "related" | typeof TRANSCRIPT_TAB;
 
 const paths = livePaths();
 
@@ -35,8 +39,7 @@ export function availableTabs(room: Pick<RoomContext, "shiur">): TabId[] {
     if (n.stories.length > 0) out.push("stories");
   }
   out.push("related");
-  // Reserved slot (flags.ts): W5.2 appends its tab here behind `if (TRANSCRIPT_VIEW)`. Nothing is
-  // imported for it today, so the bundle carries no such component.
+  // The Transcript tab is added by CompanionTabs (behind TRANSCRIPT_VIEW) once its files have loaded.
   return out;
 }
 
@@ -58,7 +61,7 @@ export function tabForMoment(momentId: string | null): TabId | null {
   }
 }
 
-const TAB_LABEL: Record<TabId, RoomKey> = {
+const TAB_LABEL: Record<Exclude<TabId, typeof TRANSCRIPT_TAB>, RoomKey> = {
   read: "tab.read",
   sources: "tab.sources",
   insights: "tab.insights",
@@ -76,7 +79,11 @@ export function CompanionTabs({
   selected: TabId;
   onSelect: (id: TabId) => void;
 }): JSX.Element {
+  // TRANSCRIPT_VIEW is a build-time literal: with it false this whole branch (and the transcript
+  // feature) is dropped by the bundler. The hook is never conditional at runtime.
+  const transcripts = TRANSCRIPT_VIEW ? useTranscripts(room.shiur) : null;
   const tabs = availableTabs(room);
+  if (TRANSCRIPT_VIEW && transcripts?.status === "ready" && transcripts.files.size > 0) tabs.push(TRANSCRIPT_TAB);
   const current = tabs.includes(selected) ? selected : tabs[0]!;
   return (
     <Tabs
@@ -88,7 +95,7 @@ export function CompanionTabs({
       <TabList className={s.tabList} aria-label={room.rt("room.tabs")}>
         {tabs.map((id) => (
           <Tab key={id} id={id} className={s.tab} data-tab={id}>
-            {room.rt(TAB_LABEL[id])}
+            {TRANSCRIPT_VIEW && id === TRANSCRIPT_TAB ? transcriptT(room.ui)("tx.tab") : room.rt(TAB_LABEL[id as Exclude<TabId, typeof TRANSCRIPT_TAB>])}
           </Tab>
         ))}
       </TabList>
@@ -100,6 +107,9 @@ export function CompanionTabs({
           {id === "questions" ? <QuestionsTab room={room} /> : null}
           {id === "stories" ? <StoriesTab room={room} /> : null}
           {id === "related" ? <RelatedTab room={room} /> : null}
+          {TRANSCRIPT_VIEW && id === TRANSCRIPT_TAB && transcripts?.status === "ready" ? (
+            <TranscriptTab room={room} files={transcripts.files} />
+          ) : null}
         </TabPanel>
       ))}
     </Tabs>
