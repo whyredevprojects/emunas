@@ -5,6 +5,7 @@
  */
 import { audioLanguageLabel, formatDuration, formatHebrewYears, notice } from "@emunas/i18n";
 import type { JSX } from "react";
+import { DownloadButton } from "../../../sw/client/DownloadButton.tsx";
 import { Text } from "../../components/Text.tsx";
 import { getEngine } from "../../player-ui/index.ts";
 import type { RoomContext } from "./context.ts";
@@ -102,6 +103,7 @@ export function RoomHeaderDetails({ room, quietOrigin }: { room: RoomContext; qu
           </a>
         ) : null}
         <Report room={room} id={null} />
+        <DownloadButton shiur={shiur} ui={ui} className={s.printable} />
       </div>
       {!room.playable ? <p className={s.note}>{rt("room.unavailable")}</p> : null}
       {shiur.recordings.some((r) => !r.playable) && room.playable ? (

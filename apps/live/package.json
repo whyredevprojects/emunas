@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "react-router dev",
-    "build": "react-router build",
-    "typecheck": "react-router typegen && tsc --noEmit -p tsconfig.json && tsc --noEmit -p data-build/tsconfig.json",
-    "test": "vitest run && vitest run --config data-build/vitest.config.ts",
-    "test:e2e": "react-router build && playwright test",
+    "build": "react-router build && tsx sw/build.ts",
+    "typecheck": "react-router typegen && tsc --noEmit -p tsconfig.json && tsc --noEmit -p data-build/tsconfig.json && tsc --noEmit -p sw/tsconfig.json && tsc --noEmit -p sw/tsconfig.page.json",
+    "test": "vitest run && vitest run --config data-build/vitest.config.ts && vitest run --config sw/vitest.config.ts",
+    "test:e2e": "npm run build && playwright test",
     "data:build": "tsx data-build/cli.ts emit",
     "data:budgets": "tsx data-build/cli.ts budgets"
   },
