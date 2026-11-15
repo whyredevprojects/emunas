@@ -1,0 +1,62 @@
+---
+/**
+ * The body of a person page (Quiet C4.3): names, his seforim cited, the stories (merged stories
+ * from the layer; they come before the list because for a chassidic rebbe they are what the
+ * listener wants), then the shiurim, or for a passim person a link to the full list on `all/`.
+ * The AI label and the report link close the page, once.
+ */
+import EntryHead from "../corpus/EntryHead.astro";
+import CiteList from "../indexes/CiteList.astro";
+import EntryFoot from "../indexes/EntryFoot.astro";
+import { useIndexesT } from "../indexes/strings.ts";
+import type { Ed } from "../../lib/edition.ts";
+import type { PersonPage } from "./model.ts";
+import "../indexes/indexes.css";
+
+interface Props {
+  ed: Ed;
+  page: PersonPage;
+  /** The continuation page (`all/`): only the list. */
+  all?: boolean;
+}
+
+const { ed, page, all = false } = Astro.props;
+const t = useIndexesT(ed);
+const listHeading = t("names.shiurim");
+---
+<EntryHead ed={ed} title={page.head.title} alt={page.head.alt} meta={page.countText} seeAlso={all ? [] : page.seeAlso}>
+  {!all && page.also.length > 0 && (
+    <p class="entry-also">{t("names.also")}{" "}{page.also.map((n, i) => <>{i > 0 && ", "}<bdi lang={n.lang} dir={n.dir}>{n.text}</bdi></>)}</p>
+  )}
+  {!all && page.description && <p class="entry-definition">{page.description}</p>}
+</EntryHead>
+{!all && page.seforim.length > 0 && (
+  <section class="index-block" aria-labelledby="seforim-h">
+    <h2 id="seforim-h" class="label">{t("names.seforim")}</h2>
+    <ul class="entries" role="list">
+      {page.seforim.map((w) => (
+        <li data-work={w.id}><a class="entry-name" href={w.href}><bdi lang={w.label.lang} dir={w.label.dir}>{w.label.text}</bdi></a>{w.note && <span class="entry-count">{w.note}</span>}</li>
+      ))}
+    </ul>
+  </section>
+)}
+{!all && page.stories.length > 0 && (
+  <section class="index-block" aria-labelledby="stories-h">
+    <h2 id="stories-h" class="label">{t("names.stories")}</h2>
+    <ul class="entries" role="list">
+      {page.stories.map((s) => (
+        <li data-story={s.id}><a class="entry-name" href={s.href}><bdi lang={s.label.lang} dir={s.label.dir}>{s.label.text}</bdi></a>{s.note && <span class="entry-count">{s.note}</span>}</li>
+      ))}
+    </ul>
+  </section>
+)}
+{page.shiurim.length > 0 && (
+  <section class="index-block" aria-labelledby="shiurim-h">
+    <h2 id="shiurim-h" class="label">{listHeading}</h2>
+    <CiteList ed={ed} cites={page.shiurim} />
+  </section>
+)}
+{page.allHref && page.allText && (
+  <p class="entry-lead"><a href={page.allHref}>{page.allText}</a></p>
+)}
+<EntryFoot ed={ed} kind="person" id={page.id} reviewed={page.reviewed} />

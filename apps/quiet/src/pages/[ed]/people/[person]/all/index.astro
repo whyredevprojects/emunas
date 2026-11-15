@@ -1,0 +1,33 @@
+---
+/**
+ * The continuation page of a passim person (Quiet C4.3; `/{ed}/people/{personId}/all/`): the
+ * full list of shiurim, for people in 100 or more shiurim (`quietAllList`, by policy).
+ */
+import type { GetStaticPaths } from "astro";
+import Base from "../../../../../layouts/Base.astro";
+import { entryData } from "../../../../../components/indexes/entries.ts";
+import { entryCrumbs } from "../../../../../components/indexes/crumbs.ts";
+import { useIndexesT } from "../../../../../components/indexes/strings.ts";
+import PersonEntry from "../../../../../components/names/PersonEntry.astro";
+import { personPage, personPageIds } from "../../../../../components/names/model.ts";
+import { formatQuiet } from "@emunas/links";
+import { EDS, type Ed } from "../../../../../lib/edition.ts";
+
+export const getStaticPaths = (() => {
+  const data = entryData();
+  if (!data) return [];
+  const { all } = personPageIds(data);
+  return EDS.flatMap((ed) => all.map((person) => ({ params: { ed, person } })));
+}) satisfies GetStaticPaths;
+
+const ed = Astro.params.ed as Ed;
+const data = entryData()!;
+const person = data.layer.person(Astro.params.person as string)!;
+const page = personPage(data, ed, person, true);
+const t = useIndexesT(ed);
+const title = t("names.allTitle", { name: page.head.title.text });
+const href = formatQuiet({ kind: "entry", ed, entry: "person", id: person.id }, data.layer.links);
+---
+<Base ed={ed} title={title} crumbs={entryCrumbs(ed, "people", { run: page.head.title, href }, t("names.shiurim"))}>
+  <PersonEntry ed={ed} page={page} all />
+</Base>

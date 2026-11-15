@@ -1,0 +1,29 @@
+---
+/**
+ * A person page (Quiet C4.3; `/{ed}/people/{personId}/`), for every person the layer gives a Quiet
+ * page (three or more shiurim, never type `other`, never an excluded person). Passim people put
+ * the full list on `all/`.
+ */
+import type { GetStaticPaths } from "astro";
+import Base from "../../../../layouts/Base.astro";
+import { entryData } from "../../../../components/indexes/entries.ts";
+import { entryCrumbs } from "../../../../components/indexes/crumbs.ts";
+import PersonEntry from "../../../../components/names/PersonEntry.astro";
+import { personPage, personPageIds } from "../../../../components/names/model.ts";
+import { EDS, type Ed } from "../../../../lib/edition.ts";
+
+export const getStaticPaths = (() => {
+  const data = entryData();
+  if (!data) return [];
+  const { pages } = personPageIds(data);
+  return EDS.flatMap((ed) => pages.map((person) => ({ params: { ed, person } })));
+}) satisfies GetStaticPaths;
+
+const ed = Astro.params.ed as Ed;
+const data = entryData()!;
+const person = data.layer.person(Astro.params.person as string)!;
+const page = personPage(data, ed, person);
+---
+<Base ed={ed} title={page.head.title.text} crumbs={entryCrumbs(ed, "people", { run: page.head.title })}>
+  <PersonEntry ed={ed} page={page} />
+</Base>

@@ -1,0 +1,24 @@
+---
+/**
+ * The head of a generated corpus index (שמות, מראי מקומות, ערכים): the heading, a one-line
+ * description and the AI label under the heading, once (Quiet C6 "The label").
+ */
+import EntityLabel from "../corpus/EntityLabel.astro";
+import type { Ed } from "../../lib/edition.ts";
+import "./indexes.css";
+
+interface Props {
+  ed: Ed;
+  title: string;
+  intro?: string | null;
+  /** Visible shiurim the index is compiled from. */
+  visibleShiurim: number;
+}
+
+const { ed, title, intro = null, visibleShiurim } = Astro.props;
+---
+<header class="index-head">
+  <h1>{title}</h1>
+  <EntityLabel ed={ed} variant="index" count={visibleShiurim} />
+  {intro && <p class="index-intro">{intro}</p>}
+</header>

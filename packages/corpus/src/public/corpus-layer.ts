@@ -299,7 +299,11 @@ export interface LayerWork {
   authorPersonId: string | null;
   sefariaIndexTitle: string | null;
   kind: LayerWorkKind;
-  /** A collection or an author's writings cited by name (`kind` `genre`): listed, never a page. */
+  /**
+   * A collection or an author's writings cited by name (`kind` `genre`) with no child works in this
+   * file: listed, never a page. A genre work with children (`parentWorkId`) is a family hub instead
+   * (not generic: it gets a page listing its child works).
+   */
   generic: boolean;
   /**
    * Shelf group: from the data for Tanach books (torah / neviim / kesuvim by `order`), tractates

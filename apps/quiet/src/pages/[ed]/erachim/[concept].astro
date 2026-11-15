@@ -1,0 +1,58 @@
+---
+/**
+ * A glossary entry page (Quiet C4.2; `/{ed}/erachim/{conceptId}/`), for every term the layer gives
+ * a Quiet page (five or more shiurim, never one merged into a topic): the definition, "well
+ * illustrated in" (each a section title with its time, linking to that section), then the shiurim,
+ * or "throughout" for a passim term.
+ */
+import type { GetStaticPaths } from "astro";
+import Base from "../../../layouts/Base.astro";
+import EntryHead from "../../../components/corpus/EntryHead.astro";
+import CiteLink from "../../../components/indexes/CiteLink.astro";
+import CiteList from "../../../components/indexes/CiteList.astro";
+import EntryFoot from "../../../components/indexes/EntryFoot.astro";
+import { entryData } from "../../../components/indexes/entries.ts";
+import { entryCrumbs } from "../../../components/indexes/crumbs.ts";
+import { useIndexesT } from "../../../components/indexes/strings.ts";
+import { conceptPage, conceptPageIds } from "../../../components/glossary/model.ts";
+import { EDS, type Ed } from "../../../lib/edition.ts";
+
+export const getStaticPaths = (() => {
+  const data = entryData();
+  if (!data) return [];
+  const ids = conceptPageIds(data);
+  return EDS.flatMap((ed) => ids.map((concept) => ({ params: { ed, concept } })));
+}) satisfies GetStaticPaths;
+
+const ed = Astro.params.ed as Ed;
+const data = entryData()!;
+const concept = data.layer.concept(Astro.params.concept as string)!;
+const t = useIndexesT(ed);
+const page = conceptPage(data, ed, concept);
+---
+<Base ed={ed} title={page.he.text} crumbs={entryCrumbs(ed, "glossary", { run: page.he })}>
+  <EntryHead ed={ed} title={page.he} alt={page.gloss} meta={page.countText}>
+    {page.definition && <p class="entry-definition"><bdi lang={page.definition.lang} dir={page.definition.dir}>{page.definition.text}</bdi></p>}
+    {page.also.length > 0 && (
+      <p class="entry-also">{t("glossary.also")}{" "}{page.also.map((n, i) => <>{i > 0 && ", "}<bdi lang={n.lang} dir={n.dir}>{n.text}</bdi></>)}</p>
+    )}
+  </EntryHead>
+  {page.examples.length > 0 && (
+    <section class="index-block" aria-labelledby="examples-h">
+      <h2 id="examples-h" class="label">{t("glossary.examples")}</h2>
+      <ul class="entries" role="list">
+        {page.examples.map((x) => (
+          <li data-shiur={x.shiurId}>
+            <a class="entry-name" href={x.href}><bdi lang={x.title.lang} dir={x.title.dir}>{x.title.text}</bdi> <span class="time"><bdi dir="ltr">{x.time}</bdi></span></a>
+            {" "}<span class="cites"><CiteLink ed={ed} cite={x.cite} /></span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+  <section class="index-block" aria-labelledby="shiurim-h">
+    <h2 id="shiurim-h" class="label">{t("glossary.shiurim")}</h2>
+    {page.throughout ? <p class="entry-lead">{page.throughoutText}</p> : <CiteList ed={ed} cites={page.shiurim} />}
+  </section>
+  <EntryFoot ed={ed} kind="concept" id={page.id} reviewed={page.reviewed} />
+</Base>

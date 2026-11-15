@@ -1234,7 +1234,7 @@
    "authorPersonId": null,
    "sefariaIndexTitle": null,
    "kind": "genre",
-   "generic": true,
+   "generic": false,
    "orderGroup": "bavli",
    "order": null,
    "parentWorkId": null,
@@ -1256,8 +1256,8 @@
    "sameAsTopic": null,
    "reviewed": false,
    "pages": {
-    "quiet": false,
-    "live": false
+    "quiet": true,
+    "live": true
    }
   },
   {
@@ -1903,7 +1903,7 @@
    "authorPersonId": null,
    "sefariaIndexTitle": null,
    "kind": "genre",
-   "generic": true,
+   "generic": false,
    "orderGroup": "yerushalmi",
    "order": null,
    "parentWorkId": null,
@@ -1917,8 +1917,8 @@
    "sameAsTopic": null,
    "reviewed": false,
    "pages": {
-    "quiet": false,
-    "live": false
+    "quiet": true,
+    "live": true
    }
   },
   {
@@ -2290,7 +2290,7 @@
    "authorPersonId": "rashi",
    "sefariaIndexTitle": null,
    "kind": "genre",
-   "generic": true,
+   "generic": false,
    "orderGroup": "rishonim",
    "order": null,
    "parentWorkId": null,
@@ -2319,8 +2319,8 @@
    "sameAsTopic": null,
    "reviewed": false,
    "pages": {
-    "quiet": false,
-    "live": false
+    "quiet": true,
+    "live": true
    }
   },
   {
@@ -2480,7 +2480,7 @@
    "authorPersonId": "rambam",
    "sefariaIndexTitle": null,
    "kind": "genre",
-   "generic": true,
+   "generic": false,
    "orderGroup": "rishonim",
    "order": null,
    "parentWorkId": null,
@@ -2674,7 +2674,7 @@
    "authorPersonId": "ramban",
    "sefariaIndexTitle": null,
    "kind": "genre",
-   "generic": true,
+   "generic": false,
    "orderGroup": "rishonim",
    "order": null,
    "parentWorkId": null,
@@ -2691,8 +2691,8 @@
    "sameAsTopic": null,
    "reviewed": false,
    "pages": {
-    "quiet": false,
-    "live": false
+    "quiet": true,
+    "live": true
    }
   },
   {
@@ -3311,7 +3311,7 @@
    "authorPersonId": "chasam-sofer",
    "sefariaIndexTitle": null,
    "kind": "genre",
-   "generic": true,
+   "generic": false,
    "orderGroup": "acharonim",
    "order": null,
    "parentWorkId": null,
@@ -3325,8 +3325,8 @@
    "sameAsTopic": null,
    "reviewed": false,
    "pages": {
-    "quiet": false,
-    "live": false
+    "quiet": true,
+    "live": true
    }
   },
   {

@@ -189,13 +189,25 @@ describe("corpus layer on the mini corpus", () => {
     }
   });
 
-  it("takes generic from the data's kind: genre works are listed, never a page; an unknown kind reads as sefer", () => {
+  it("takes generic from the data's kind and nesting: a childless genre work is listed, never a page; an unknown kind reads as sefer", () => {
+    const parents = new Set(works.works.map((w) => w.parentWorkId).filter((p): p is string => p !== null));
     const genre = works.works.filter((w) => w.kind === "genre");
     expect(genre.length).toBeGreaterThan(0);
-    for (const w of works.works) expect(w.generic).toBe(w.kind === "genre");
-    for (const w of genre) expect(w.pages).toEqual({ quiet: false, live: false });
+    for (const w of works.works) expect(w.generic, w.id).toBe(w.kind === "genre" && !parents.has(w.id));
+    expect(genre.some((w) => w.generic)).toBe(true);
+    for (const w of genre.filter((x) => x.generic)) expect(w.pages).toEqual({ quiet: false, live: false });
     const unknown = works.works.find((x) => x.id === picks.unknownKindWorkId)!;
     expect(unknown).toMatchObject({ kind: "sefer", generic: false });
+  });
+
+  it("makes a genre work with child works a family hub: not generic, a page by the usual threshold", () => {
+    const hubs = works.works.filter((w) => w.kind === "genre" && works.works.some((c) => c.parentWorkId === w.id));
+    expect(hubs.map((w) => w.id)).toEqual(expect.arrayContaining(["rashi", "talmud-bavli"]));
+    for (const w of hubs) {
+      expect(w.generic, w.id).toBe(false);
+      expect(w.pages.quiet, w.id).toBe(w.count >= 2);
+      expect(w.pages.live, w.id).toBe(w.count >= 3);
+    }
   });
 
   it("nests works under their parent and orders the shelf by group, then position", () => {

@@ -190,7 +190,6 @@ export function buildWorks(ctx: LayerContext, people: Map<string, PersonBase>, l
     if (shiurIds.length === 0) continue;
     const table = tableWorkOf(w);
     const anc = ancestors(w);
-    const generic = w.kind === "genre";
     const author = w.authorPersonId === null ? null : ctx.resolve("people", w.authorPersonId);
     const authorOk = author !== null && people.has(author) && people.get(author)!.excluded === null;
     const samePerson = people.get(w.id);
@@ -206,7 +205,8 @@ export function buildWorks(ctx: LayerContext, people: Map<string, PersonBase>, l
         authorPersonId: authorOk ? author : null,
         sefariaIndexTitle: w.sefariaIndexTitle,
         kind: w.kind,
-        generic,
+        // Decided once the nesting is known (a genre work with children is a family hub).
+        generic: false,
         orderGroup: shelfGroupOf(w, anc.at(-1) ?? w.id, table),
         order: w.order,
         parentWorkId: null,
@@ -215,13 +215,21 @@ export function buildWorks(ctx: LayerContext, people: Map<string, PersonBase>, l
         sameIdPerson: samePerson && samePerson.excluded === null ? w.id : null,
         sameAsTopic: links.workTopic.get(w.id) ?? null,
         reviewed: w.reviewStatus === "reviewed",
-        pages: { quiet: !generic && count >= pol.quiet.workPageMin, live: !generic && count >= pol.live.workPageMin },
+        pages: { quiet: false, live: false },
       },
     });
   }
   // Nesting: the nearest ancestor that is in the file (a parent without visible shiurim is skipped).
   const present = new Set(rows.map((r) => r.w.id));
   for (const r of rows) r.w.parentWorkId = r.anc.find((a) => present.has(a)) ?? null;
+  // A genre work with child works in the file (rashi, ramban, talmud-bavli) is a family hub with a
+  // page of its own; only a genre work without children is a generic label (listed, never a page).
+  const parents = new Set(rows.map((r) => r.w.parentWorkId).filter((p): p is string => p !== null));
+  for (const r of rows) {
+    const generic = r.w.kind === "genre" && !parents.has(r.w.id);
+    r.w.generic = generic;
+    r.w.pages = { quiet: !generic && r.w.count >= pol.quiet.workPageMin, live: !generic && r.w.count >= pol.live.workPageMin };
+  }
 
   const byTitle = (a: LayerWork, b: LayerWork) => cmpStr(foldBasic(a.titleEn), foldBasic(b.titleEn)) || cmpStr(a.id, b.id);
   const groupIdx = (r: (typeof rows)[number]) => {
