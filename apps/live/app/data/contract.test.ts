@@ -112,7 +112,7 @@ describe("data contract", () => {
     expectTypeOf<ShiurFile["catalog"]>().toEqualTypeOf<PublicShiur["catalog"]>();
     expectTypeOf<ShiurFile["status"]>().toEqualTypeOf<PublicShiur["status"]>();
     expectTypeOf<LiveRecording["offset"]>().toEqualTypeOf<PublicRecording["offset"]>();
-    expectTypeOf<LiveRecording["audioUrl"]>().toEqualTypeOf<string | null>();
+    expectTypeOf<LiveRecording>().toEqualTypeOf<PublicRecording>();
     expectTypeOf<LiveRecording>().not.toHaveProperty("audio");
     expectTypeOf<NonNullable<ShiurFile["notes"]>>().not.toHaveProperty("writeup");
   });

@@ -157,11 +157,11 @@ export interface TodayFile {
 // ---------------------------------------------------------------------------------------------
 // /data/shiur/<id>.json — the listening room, without the write-up
 
-/** A recording with its media-host URL (Amendment A1). */
-export interface LiveRecording extends Omit<PublicRecording, "audio"> {
-  /** Absolute URL on the media host, or `null` when the recording cannot be played (shown as unavailable). */
-  audioUrl: string | null;
-}
+/**
+ * A recording with its media-host URL (Amendment A1): exactly the corpus `PublicRecording`, i.e.
+ * `{ audioUrl: MediaUrl, playable: true }` or `{ audioUrl: null, playable: false }` (shown as unavailable).
+ */
+export type LiveRecording = PublicRecording;
 
 /** Notes without the write-up (loaded lazily per language from `/data/writeup/`). */
 export interface LiveNotes extends Omit<PublicNotes, "writeup"> {

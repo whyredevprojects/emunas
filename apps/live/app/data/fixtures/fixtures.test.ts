@@ -17,7 +17,6 @@ const goldenDir = join(here, "../../../../../packages/corpus/test/fixtures/golde
 const outDir = join(here, "data");
 
 export const FIXTURE_OPTIONS: DeriveOptions = {
-  mediaOrigin: "https://media.example.invalid",
   buildId: "fixtures",
   generatedAt: "2026-11-15T00:00:00.000Z",
   corpusSchemaVersion: SCHEMA_VERSION,

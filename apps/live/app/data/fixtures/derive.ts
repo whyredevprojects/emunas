@@ -37,14 +37,10 @@ import {
   type WriteupFile,
 } from "../types.ts";
 
-/** Input shiur: the public contract, optionally already carrying A1 `audioUrl`s. */
-export type FixtureShiur = Omit<PublicShiur, "recordings"> & {
-  recordings: (PublicShiur["recordings"][number] & { audioUrl?: string | null })[];
-};
+/** Input shiur: the public contract (recordings already carry A1 `audioUrl`/`playable` from the corpus). */
+export type FixtureShiur = PublicShiur;
 
 export interface DeriveOptions {
-  /** Media host for recordings without an `audioUrl` (Amendment A1). */
-  mediaOrigin: string;
   buildId: string;
   generatedAt: string;
   corpusSchemaVersion: number;
@@ -71,20 +67,9 @@ function plainLabel(text: string): FacetLabel {
   return { en: text, yi: text };
 }
 
-/** Same scheme as the corpus build will use after A1: one encoded path segment per key segment. */
-function fixtureAudioUrl(origin: string, recordingId: string): string {
-  return `${origin.replace(/\/+$/, "")}/${encodeURIComponent(recordingId)}.mp3`;
-}
-
-function liveRecordings(s: FixtureShiur, origin: string): LiveRecording[] {
-  return s.recordings.map((r) => ({
-    id: r.id,
-    order: r.order,
-    offset: r.offset,
-    duration: r.duration,
-    audioUrl: r.audioUrl !== undefined ? r.audioUrl : fixtureAudioUrl(origin, r.id),
-    transcript: { eligible: false },
-  }));
+/** Recordings as the corpus emits them (A1 media-host URLs, or `null` when unplayable). */
+function liveRecordings(s: FixtureShiur): LiveRecording[] {
+  return s.recordings.map((r) => ({ ...r }));
 }
 
 function corpusRow(s: FixtureShiur): CorpusRow {
@@ -322,7 +307,7 @@ export function deriveLiveData(input: readonly FixtureShiur[], opts: DeriveOptio
     const file: ShiurFile = {
       schemaVersion: V,
       ...rest,
-      recordings: liveRecordings(s, opts.mediaOrigin),
+      recordings: liveRecordings(s),
       related: {
         sameOccasion: same,
         prev: pos > 0 ? order[pos - 1]!.id : null,
