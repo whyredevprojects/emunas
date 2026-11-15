@@ -1,0 +1,29 @@
+{
+  "id": "/",
+  "name": "Emunas — Listen",
+  "short_name": "Emunas",
+  "description": "Shiurim to listen to and explore, in Yiddish and English.",
+  "lang": "en",
+  "dir": "auto",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#1f3a5f",
+  "background_color": "#f6f1e7",
+  "categories": ["education", "books"],
+  "icons": [
+    { "src": "/icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ],
+  "shortcuts": [
+    { "name": "English", "short_name": "English", "url": "/en/", "icons": [{ "src": "/icons/icon.svg", "sizes": "any", "type": "image/svg+xml" }] },
+    { "name": "אידיש", "short_name": "אידיש", "url": "/yi/", "icons": [{ "src": "/icons/icon.svg", "sizes": "any", "type": "image/svg+xml" }] }
+  ],
+  "translations": {
+    "yi": {
+      "name": "אמונת — הערן",
+      "short_name": "אמונת",
+      "description": "שיעורים צו הערן און דורכזוכן, אויף אידיש און ענגליש."
+    }
+  }
+}

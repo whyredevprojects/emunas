@@ -1,0 +1,9 @@
+{
+  // The worker itself: WebWorker globals only (no DOM), so page APIs cannot creep into sw.js.
+  "extends": "@emunas/config/tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2023", "WebWorker"],
+    "types": []
+  },
+  "include": ["src/**/*.ts"]
+}

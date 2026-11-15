@@ -11,6 +11,7 @@ import {
   useRouteError,
 } from "react-router";
 import { tFor } from "./i18n/index.ts";
+import { registerServiceWorker } from "../sw/client/register.ts";
 import { NotFound } from "./shell/PageStub.tsx";
 import { connectPersonal } from "./store/connect.ts";
 import "./styles/global.css";
@@ -30,6 +31,8 @@ export function Layout({ children }: { children: ReactNode }): JSX.Element {
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta name="robots" content="noindex" />
         <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
+        <link rel="manifest" href="/manifest.webmanifest" />
+        <meta name="theme-color" content="#1f3a5f" />
         <Meta />
         <Links />
       </head>
@@ -45,6 +48,8 @@ export function Layout({ children }: { children: ReactNode }): JSX.Element {
 export default function App(): JSX.Element {
   // Personal store ↔ player and Today/series progress (browser only, once).
   useEffect(connectPersonal, []);
+  // Offline shell and downloads (W4.8; production builds only).
+  useEffect(registerServiceWorker, []);
   return <Outlet />;
 }
 
