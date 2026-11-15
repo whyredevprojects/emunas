@@ -37,11 +37,12 @@ export function miniCopy(): string {
 export function buildCorpusTo(
   dataDir: string,
   policyDir: string,
-  opts: { outDir?: string; suppressFile?: string } = {},
+  opts: { outDir?: string; suppressFile?: string; mediaOrigin?: string } = {},
 ): string {
   const outDir = opts.outDir ?? join(tmp(), ".corpus");
   const o: Parameters<typeof buildCorpusWithAggregates>[0] = { dataDir, outDir, policyDir, dataSha: null };
   if (opts.suppressFile !== undefined) o.suppressFile = opts.suppressFile;
+  if (opts.mediaOrigin !== undefined) o.mediaOrigin = opts.mediaOrigin;
   buildCorpusWithAggregates(o);
   return outDir;
 }

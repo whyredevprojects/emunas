@@ -8,7 +8,8 @@ import axe from "axe-core";
 import { RouterProvider } from "react-router";
 import { afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
 import { configureData, resetDataConfig, type DataFetch, type ShiurFile } from "../live-data.ts";
-import { fixtureFetch, shiurNoachFixture as shiurNoach } from "./fixtures.ts";
+import { buildFixture, fixtureFetch, shiurNoachFixture as shiurNoach, todayFixture } from "./fixtures.ts";
+import { MAX_NEWLY } from "../model.ts";
 import { settingsStore } from "../../../shell/settings.ts";
 import { createTestRouter } from "../../../shell/test-router.tsx";
 import { momentContent } from "../format.ts";
@@ -60,7 +61,8 @@ describe("Today page", () => {
     expect(parsha).not.toBeNull();
     expect([...parsha.querySelectorAll("[data-shiur]")].map((a) => a.getAttribute("data-shiur"))).toEqual(["en-parsha-en-nch-01"]);
     expect(parsha.querySelector("a[data-shiur]")!.getAttribute("href")).toBe("/en/s/en-parsha-en-nch-01");
-    expect(screen.getByTestId("corpus-counter").textContent).toBe("5 of 7 shiurim have notes so far.");
+    const { full, total } = buildFixture.counts;
+    expect(screen.getByTestId("corpus-counter").textContent).toBe(`${full} of ${total} shiurim have notes so far.`);
   });
 
   it("shows the moment of the day with its text and a deep link, the same on every load", async () => {
@@ -84,7 +86,7 @@ describe("Today page", () => {
   it("lists newly summarized shiurim and an empty Continue with the stub store", async () => {
     const { container } = await renderAt(`/en/?date=${NOACH_WEEK}`);
     const newly = container.querySelector("#today-newly")!.parentElement!;
-    expect(newly.querySelectorAll("a[data-shiur]").length).toBe(5);
+    expect(newly.querySelectorAll("a[data-shiur]").length).toBe(Math.min(MAX_NEWLY, todayFixture.newlySummarized.length));
     expect(container.textContent).toContain("Shiurim you start will appear here");
   });
 

@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "id": "en-parsha-en-nch-01",
- "rev": "<rev>",
+ "rev": "5e72e5332532",
  "lang": "en",
  "category": "parsha",
  "catalog": {
@@ -47,7 +47,7 @@
  "related": {
   "sameOccasion": [],
   "prev": null,
-  "next": null,
+  "next": "en-parsha-en-svldvs-01",
   "neighbors": []
  },
  "notes": {
@@ -446,7 +446,7 @@
     "idx": 7,
     "id": "en-parsha-en-nch-01~src8",
     "work": "Melachim I",
-    "workKey": "melachim-i",
+    "workKey": "melachim",
     "ref": "Melachim I 6:38",
     "sefariaRef": "I Kings 6:38",
     "resolution": "inferred",
@@ -468,7 +468,7 @@
     "idx": 9,
     "id": "en-parsha-en-nch-01~src10",
     "work": "Rosh Hashanah Musaf (Zichronos)",
-    "workKey": "rosh-hashanah-musaf-zichronos",
+    "workKey": "machzor-rosh-hashanah",
     "ref": null,
     "sefariaRef": null,
     "resolution": "unresolved",
@@ -534,7 +534,7 @@
     "idx": 15,
     "id": "en-parsha-en-nch-01~src17",
     "work": "Gemara Sanhedrin",
-    "workKey": "gemara-sanhedrin",
+    "workKey": "bavli-sanhedrin",
     "ref": "Sanhedrin 108b",
     "sefariaRef": "Sanhedrin 108b",
     "resolution": "inferred",
@@ -622,7 +622,7 @@
     "idx": 23,
     "id": "en-parsha-en-nch-01~src26",
     "work": "Gemara Zevachim",
-    "workKey": "gemara-zevachim",
+    "workKey": "bavli-zevachim",
     "ref": "Zevachim 113a",
     "sefariaRef": "Zevachim 113a",
     "resolution": "inferred",
@@ -865,8 +865,8 @@
      "the Ba'al Shem Tov"
     ],
     "peopleKeys": [
-     "rav-nachum-of-chernobyl",
-     "the-baal-shem-tov"
+     "rabbi-nachum-of-chernobyl",
+     "baal-shem-tov"
     ],
     "t": 3171.06,
     "end": 3186.78,
@@ -888,7 +888,7 @@
    },
    {
     "name": "Chava",
-    "key": "chava"
+    "key": "chavah"
    },
    {
     "name": "Avraham Avinu",
@@ -900,15 +900,15 @@
    },
    {
     "name": "the Ramban",
-    "key": "the-ramban"
+    "key": "ramban"
    },
    {
     "name": "the Ibn Ezra",
-    "key": "the-ibn-ezra"
+    "key": "ibn-ezra"
    },
    {
     "name": "the Chazon Ish",
-    "key": "the-chazon-ish"
+    "key": "chazon-ish"
    },
    {
     "name": "Yeshayahu HaNavi",
@@ -916,23 +916,23 @@
    },
    {
     "name": "the Lechovicher tzaddik",
-    "key": "the-lechovicher-tzaddik"
+    "key": "lechovicher-tzaddik"
    },
    {
     "name": "Rav Nachum of Chernobyl",
-    "key": "rav-nachum-of-chernobyl"
+    "key": "rabbi-nachum-of-chernobyl"
    },
    {
     "name": "the Ba'al Shem Tov",
-    "key": "the-baal-shem-tov"
+    "key": "baal-shem-tov"
    },
    {
     "name": "David HaMelech",
-    "key": "david-hamelech"
+    "key": "dovid-hamelech"
    },
    {
     "name": "Miriam",
-    "key": "miriam"
+    "key": "miriam-haneviah"
    },
    {
     "name": "Aharon HaKohen",
@@ -942,67 +942,67 @@
   "concepts": [
    {
     "he": "תיבה",
-    "key": "תיבה"
+    "key": "sybh-210ce3"
    },
    {
     "he": "מבול",
-    "key": "מבול"
+    "key": "mbvl-34b703"
    },
    {
     "he": "חשון",
-    "key": "חשון"
+    "key": "chshvn-dc0f93"
    },
    {
     "he": "ירח בול",
-    "key": "ירח-בול"
+    "key": "yrch-bvl-a79bd9"
    },
    {
     "he": "צירוף",
-    "key": "צירוף"
+    "key": "tzyrvf-a40a60"
    },
    {
     "he": "שם הוי\"ה",
-    "key": "שם-הויה"
+    "key": "shm-hvyh-ebf833"
    },
    {
     "he": "דבש",
-    "key": "דבש"
+    "key": "dbsh-b274b5"
    },
    {
     "he": "אב הרחמן",
-    "key": "אב-הרחמן"
+    "key": "ab-hrchmn-b1ecc8"
    },
    {
     "he": "זכרונות",
-    "key": "זכרונות"
+    "key": "zkrvnvs-6779b2"
    },
    {
     "he": "מלכיות",
-    "key": "מלכיות"
+    "key": "mlkyvs-ee86b4"
    },
    {
     "he": "שופרות",
-    "key": "שופרות"
+    "key": "shvprvs-c0f194"
    },
    {
     "he": "עץ הדעת",
-    "key": "עץ-הדעת"
+    "key": "etz-hdes-7164a8"
    },
    {
     "he": "נעמיות",
-    "key": "נעמיות"
+    "key": "nemyvs-8e3150"
    },
    {
     "he": "סייעתא דשמיא",
-    "key": "סייעתא-דשמיא"
+    "key": "syyesa-dshmya-bc83f9"
    },
    {
     "he": "התחדשות",
-    "key": "התחדשות"
+    "key": "hschdshvs-c1b1c6"
    },
    {
     "he": "קדושה",
-    "key": "קדושה"
+    "key": "kdvshh-2d0766"
    }
   ],
   "writeupLangs": [

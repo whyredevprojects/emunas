@@ -1,0 +1,88 @@
+{
+ "schemaVersion": 1,
+ "kind": "p",
+ "key": "chasam-sofer",
+ "label": {
+  "en": "the Chasam Sofer",
+  "yi": "החתם סופר"
+ },
+ "shiurIds": [
+  "en-miscellaneous-en-02",
+  "yi-parshas-hashavua-brshys-01",
+  "yi-zmanim-tv-bb-04",
+  "yi-zmanim-lvl-02",
+  "yi-zmanim-spyrh-01",
+  "yi-zmanim-svds-shvshn-pvrym-01",
+  "yi-zmanim-shbs-chzvn-01",
+  "yi-zmanim-chnvkh-11",
+  "en-parsha-en-svldvs-01",
+  "yi-zmanim-svds-zs-chnvkh-04",
+  "en-zmanim-en-chvdsh-tbs-02",
+  "yi-zmanim-svds-pvrym-ktn-03",
+  "yi-zmanim-pvrym-07"
+ ],
+ "years": {
+  "5735": 1,
+  "5736": 1,
+  "5739": 1,
+  "5740": 1,
+  "5742": 1,
+  "5743": 1,
+  "5744": 1,
+  "5746": 2,
+  "5747": 1,
+  "5749": 2,
+  "5751": 1,
+  "5764": 1,
+  "5765": 1,
+  "5767": 1
+ },
+ "moments": [
+  {
+   "id": "yi-zmanim-lvl-02~st1",
+   "shiurId": "yi-zmanim-lvl-02",
+   "kind": "st",
+   "t": 2697.19,
+   "end": 2791.71
+  },
+  {
+   "id": "en-miscellaneous-en-02~st0",
+   "shiurId": "en-miscellaneous-en-02",
+   "kind": "st",
+   "t": 870.66,
+   "end": 1108.44
+  }
+ ],
+ "related": [
+  {
+   "kind": "p",
+   "key": "moshe-rabbeinu",
+   "shared": 6
+  },
+  {
+   "kind": "p",
+   "key": "rashi",
+   "shared": 6
+  },
+  {
+   "kind": "p",
+   "key": "avraham-avinu",
+   "shared": 5
+  },
+  {
+   "kind": "p",
+   "key": "dovid-hamelech",
+   "shared": 5
+  },
+  {
+   "kind": "p",
+   "key": "rambam",
+   "shared": 5
+  },
+  {
+   "kind": "p",
+   "key": "ramban",
+   "shared": 5
+  }
+ ]
+}

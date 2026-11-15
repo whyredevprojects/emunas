@@ -4,14 +4,28 @@
  "key": "yeshayahu-hanavi",
  "label": {
   "en": "Yeshayahu HaNavi",
-  "yi": "Yeshayahu HaNavi"
+  "yi": "ישעיהו הנביא"
  },
  "shiurIds": [
-  "en-parsha-en-nch-01"
+  "yi-zmanim-tv-bb-04",
+  "yi-zmanim-shbs-chzvn-01",
+  "en-parsha-en-nch-01",
+  "yi-zmanim-svkvs-08"
  ],
  "years": {
-  "5749": 1
+  "5739": 1,
+  "5746": 1,
+  "5749": 1,
+  "5758": 1
  },
- "moments": [],
+ "moments": [
+  {
+   "id": "yi-zmanim-svkvs-08~st0",
+   "shiurId": "yi-zmanim-svkvs-08",
+   "kind": "st",
+   "t": 2332.37,
+   "end": 2423.27
+  }
+ ],
  "related": []
 }

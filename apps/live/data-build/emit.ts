@@ -292,7 +292,13 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
       if (!v) continue;
       const prev = occasionFacet.get(v.key);
       const l = listed.get(v.key)?.label ?? tableLabel.get(v.key) ?? { en: v.raw, yi: v.raw };
-      occasionFacet.set(v.key, { label: prev?.label ?? l, count: (prev?.count ?? 0) + 1, type: prev?.type ?? type });
+      occasionFacet.set(v.key, {
+        label: prev?.label ?? l,
+        count: (prev?.count ?? 0) + 1,
+        type: prev?.type ?? type,
+        // The same rule as the entity/o files below.
+        hasPage: (listed.get(v.key)?.ids.length ?? 0) >= EMIT_LIMITS.entityFileMin,
+      });
     }
   }
   const yearCounts = tally((r) => (r.years.length ? r.years.map(String) : ["unknown"]));

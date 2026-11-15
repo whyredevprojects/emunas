@@ -31,10 +31,12 @@ source): show it as unavailable. There is no `audio`/`audioKey` field and no `/a
 
 ## Fixtures
 
-`fixtures/data/**` is a complete `/data/` tree derived (`fixtures/derive.ts`) from the golden projected
-shiurim of `@emunas/corpus` (7 shiurim: full and catalog-only, Yiddish and English, a 2-recording
-shiur, a Tanya series part). `fixtures/fixtures.test.ts` fails when the committed tree is stale;
-regenerate with
+`fixtures/data/**` is a complete `/data/` tree written by the real W3.6 emitter
+(`data-build/emit.ts`, with W4.4's lexical neighbours) over the `@emunas/corpus` mini corpus
+(`packages/corpus/test/fixtures/mini`: 60 shiurim, 31 with notes, Yiddish and English, a
+2-recording shiur, Tanya series parts), so the fixtures follow the contract exactly.
+`fixtures/fixtures.test.ts` validates every file against the emitter's strict schemas and fails when
+the committed tree is stale; regenerate with
 
 ```sh
 UPDATE_LIVE_FIXTURES=1 npx vitest run app/data/fixtures   # from apps/live

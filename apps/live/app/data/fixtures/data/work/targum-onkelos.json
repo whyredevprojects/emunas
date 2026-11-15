@@ -1,0 +1,86 @@
+{
+ "schemaVersion": 1,
+ "key": "targum-onkelos",
+ "name": "Targum Onkelos",
+ "label": {
+  "en": "Targum Onkelos",
+  "yi": "תרגום אונקלוס"
+ },
+ "locations": [
+  {
+   "ref": "Bereishis 25:28",
+   "sefariaRef": "Onkelos Genesis 25:28",
+   "citations": [
+    {
+     "shiurId": "en-parsha-en-svldvs-01",
+     "sourceId": "en-parsha-en-svldvs-01~src3",
+     "t": 672.18,
+     "mention": "paraphrased",
+     "resolution": "inferred"
+    }
+   ]
+  },
+  {
+   "ref": "Bereishis 39:11",
+   "sefariaRef": "Onkelos Genesis 39:11",
+   "citations": [
+    {
+     "shiurId": "en-zmanim-en-chvdsh-tbs-02",
+     "sourceId": "en-zmanim-en-chvdsh-tbs-02~src12",
+     "t": 1603.32,
+     "mention": "paraphrased",
+     "resolution": "inferred"
+    }
+   ]
+  },
+  {
+   "ref": "Vayikra 23:43",
+   "sefariaRef": "Onkelos Leviticus 23:43",
+   "citations": [
+    {
+     "shiurId": "yi-zmanim-svkvs-08",
+     "sourceId": "yi-zmanim-svkvs-08~src18",
+     "t": 983.31,
+     "mention": "quoted",
+     "resolution": "resolved"
+    }
+   ]
+  },
+  {
+   "ref": "Vayikra 25:22",
+   "sefariaRef": "Onkelos Leviticus 25:22",
+   "citations": [
+    {
+     "shiurId": "yi-zmanim-shbs-chzvn-01",
+     "sourceId": "yi-zmanim-shbs-chzvn-01~src48",
+     "t": 4017.6,
+     "mention": "quoted",
+     "resolution": "inferred"
+    }
+   ]
+  }
+ ],
+ "unlocated": [
+  {
+   "shiurId": "en-parsha-en-svldvs-01",
+   "sourceId": "en-parsha-en-svldvs-01~src23",
+   "t": 3812.53,
+   "mention": "paraphrased",
+   "resolution": "inferred"
+  },
+  {
+   "shiurId": "en-zmanim-en-psch-06",
+   "sourceId": "en-zmanim-en-psch-06~src17",
+   "t": 2186.87,
+   "mention": "paraphrased",
+   "resolution": "unresolved"
+  },
+  {
+   "shiurId": "yi-zmanim-nysn-05",
+   "sourceId": "yi-zmanim-nysn-05~src20",
+   "t": 1658.54,
+   "mention": "paraphrased",
+   "resolution": "unresolved"
+  }
+ ]
+}

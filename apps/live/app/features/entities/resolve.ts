@@ -6,16 +6,15 @@
  * - `work/<key>.json` exists for every work in `facets.work` (every cited work, genre labels too);
  * - `entity/p/<key>.json` and `entity/c/<key>.json` exist for people and browse concepts with at least
  *   `ENTITY_FILE_MIN` shiurim; `facets.person` / `facets.concept` carry that count;
- * - `entity/o/<key>.json` exists for listed occasions with at least `ENTITY_FILE_MIN` shiurim. The
- *   occasion facet also counts uncatalogued file-name guesses, so the listed membership is read from
- *   `today.json` (the same occasion lists the emitter uses).
+ * - `entity/o/<key>.json` exists exactly when `facets.occasion[key].hasPage` (the occasion facet's
+ *   `count` also counts uncatalogued file-name guesses, so the emitter states it per occasion).
  *
  * A test (`test/resolve.test.ts`) runs the real emitter over the mini corpus and the repo's data and
  * checks these rules against the files it writes.
  */
 import type { UiLang } from "@emunas/i18n";
 import { livePaths } from "@emunas/links";
-import type { EntityKind, FacetLabel, FacetsFile, TodayFile } from "./live-data.ts";
+import type { EntityKind, FacetLabel, FacetsFile } from "./live-data.ts";
 
 /** `EMIT_LIMITS.entityFileMin` in the data build. */
 export const ENTITY_FILE_MIN = 2;
@@ -33,8 +32,7 @@ export interface EntityResolver {
 
 const paths = livePaths();
 
-export function createResolver(facets: FacetsFile, today: TodayFile | null): EntityResolver {
-  const occasionMembers = (key: string): number => today?.occasions[key]?.shiurIds.length ?? 0;
+export function createResolver(facets: FacetsFile): EntityResolver {
   const facetOf = (kind: LinkKind) =>
     kind === "w" ? facets.work : kind === "p" ? facets.person : kind === "c" ? facets.concept : facets.occasion;
 
@@ -48,7 +46,7 @@ export function createResolver(facets: FacetsFile, today: TodayFile | null): Ent
       case "c":
         return (facets.concept[key]?.count ?? 0) >= ENTITY_FILE_MIN;
       case "o":
-        return occasionMembers(key) >= ENTITY_FILE_MIN;
+        return facets.occasion[key]?.hasPage === true;
     }
   }
 

@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "id": "en-miscellaneous-en-01",
- "rev": "<rev>",
+ "rev": "d105e530654c",
  "lang": "en",
  "category": "misc",
  "catalog": {
@@ -45,8 +45,21 @@
  "related": {
   "sameOccasion": [],
   "prev": null,
-  "next": null,
-  "neighbors": []
+  "next": "en-miscellaneous-en-02",
+  "neighbors": [
+   {
+    "momentId": "en-parsha-en-svldvs-01~s9",
+    "shiurId": "en-parsha-en-svldvs-01",
+    "t": 3374.86,
+    "score": 0.658
+   },
+   {
+    "momentId": "en-miscellaneous-en-02~s6",
+    "shiurId": "en-miscellaneous-en-02",
+    "t": 1669.81,
+    "score": 0.523
+   }
+  ]
  },
  "notes": {
   "summary": {
@@ -498,7 +511,7 @@
     "idx": 2,
     "id": "en-miscellaneous-en-01~src4",
     "work": "Gemara Yoma",
-    "workKey": "gemara-yoma",
+    "workKey": "bavli-yoma",
     "ref": "Yoma ch. 3",
     "sefariaRef": null,
     "resolution": "inferred",
@@ -555,7 +568,7 @@
     "idx": 7,
     "id": "en-miscellaneous-en-01~src10",
     "work": "Gemara Berachos",
-    "workKey": "gemara-berachos",
+    "workKey": "bavli-berachos",
     "ref": "Berachos 34b",
     "sefariaRef": null,
     "resolution": "inferred",
@@ -567,7 +580,7 @@
     "idx": 8,
     "id": "en-miscellaneous-en-01~src11",
     "work": "Gemara Berachos",
-    "workKey": "gemara-berachos",
+    "workKey": "bavli-berachos",
     "ref": "Berachos 34b",
     "sefariaRef": null,
     "resolution": "inferred",
@@ -579,7 +592,7 @@
     "idx": 9,
     "id": "en-miscellaneous-en-01~src12",
     "work": "Ramban on the Torah",
-    "workKey": "ramban-on-the-torah",
+    "workKey": "ramban",
     "ref": null,
     "sefariaRef": null,
     "resolution": "unresolved",
@@ -591,7 +604,7 @@
     "idx": 10,
     "id": "en-miscellaneous-en-01~src13",
     "work": "Gemara Berachos",
-    "workKey": "gemara-berachos",
+    "workKey": "bavli-berachos",
     "ref": "Berachos 58a",
     "sefariaRef": "Berakhot 58a",
     "resolution": "resolved",
@@ -614,7 +627,7 @@
     "idx": 12,
     "id": "en-miscellaneous-en-01~src15",
     "work": "Gemara Avodah Zarah",
-    "workKey": "gemara-avodah-zarah",
+    "workKey": "bavli-avodah-zarah",
     "ref": "Avodah Zarah 2b",
     "sefariaRef": "Avodah Zarah 2b",
     "resolution": "inferred",
@@ -636,7 +649,7 @@
     "idx": 14,
     "id": "en-miscellaneous-en-01~src17",
     "work": "Rashi on Bereishis",
-    "workKey": "rashi-on-bereishis",
+    "workKey": "rashi",
     "ref": "Rashi, Bereishis 6:12",
     "sefariaRef": null,
     "resolution": "inferred",
@@ -704,7 +717,7 @@
     "idx": 20,
     "id": "en-miscellaneous-en-01~src23",
     "work": "Gemara Chullin",
-    "workKey": "gemara-chullin",
+    "workKey": "bavli-chullin",
     "ref": "Chullin 7a",
     "sefariaRef": null,
     "resolution": "inferred",
@@ -960,8 +973,8 @@
      "Rav Yehoshua Leib Diskin"
     ],
     "peopleKeys": [
-     "the-beis-halevi",
-     "rav-yehoshua-leib-diskin"
+     "beis-halevi",
+     "rabbi-yehoshua-leib-diskin"
     ],
     "t": 3569.22,
     "end": 3653.86,
@@ -981,7 +994,7 @@
      "the Yeshuos Yaakov"
     ],
     "peopleKeys": [
-     "the-yeshuos-yaakov"
+     "yeshuos-yaakov"
     ],
     "t": 3668.94,
     "end": 3820.93
@@ -1000,7 +1013,7 @@
      "Rav Menachem Mendel of Vitebsk"
     ],
     "peopleKeys": [
-     "rav-menachem-mendel-of-vitebsk"
+     "rabbi-mendel-of-vitebsk"
     ],
     "t": 3941.48,
     "end": 4208.12
@@ -1019,7 +1032,7 @@
      "the Chiddushei HaRim"
     ],
     "peopleKeys": [
-     "the-chiddushei-harim"
+     "chiddushei-harim"
     ],
     "t": 4430.76,
     "end": 4468.8,
@@ -1039,7 +1052,7 @@
      "the Slonimer Rebbe, Rav Avraham"
     ],
     "peopleKeys": [
-     "the-slonimer-rebbe-rav-avraham"
+     "slonimer-rebbe-rav-avraham"
     ],
     "t": 4687.81,
     "end": 5045.43
@@ -1056,7 +1069,7 @@
    },
    {
     "name": "Rabbi Levi Yitzchak of Berditchev",
-    "key": "rabbi-levi-yitzchak-of-berditchev"
+    "key": "berditchever-rav"
    },
    {
     "name": "Adam HaRishon",
@@ -1096,11 +1109,11 @@
    },
    {
     "name": "Achashveirosh",
-    "key": "achashveirosh"
+    "key": "achashverosh"
    },
    {
     "name": "the Ramchal",
-    "key": "the-ramchal"
+    "key": "ramchal"
    },
    {
     "name": "Noach",
@@ -1108,129 +1121,129 @@
    },
    {
     "name": "the Beis Halevi",
-    "key": "the-beis-halevi"
+    "key": "beis-halevi"
    },
    {
     "name": "Rav Yehoshua Leib Diskin",
-    "key": "rav-yehoshua-leib-diskin"
+    "key": "rabbi-yehoshua-leib-diskin"
    },
    {
     "name": "the Yeshuos Yaakov",
-    "key": "the-yeshuos-yaakov"
+    "key": "yeshuos-yaakov"
    },
    {
     "name": "Rav Menachem Mendel of Vitebsk",
-    "key": "rav-menachem-mendel-of-vitebsk"
+    "key": "rabbi-mendel-of-vitebsk"
    },
    {
     "name": "the Maggid of Mezritch",
-    "key": "the-maggid-of-mezritch"
+    "key": "maggid-of-mezritch"
    },
    {
     "name": "the Ba'al HaTanya",
-    "key": "the-baal-hatanya"
+    "key": "baal-hatanya"
    },
    {
     "name": "Rav Nachum of Chernobyl",
-    "key": "rav-nachum-of-chernobyl"
+    "key": "rabbi-nachum-of-chernobyl"
    },
    {
     "name": "the Chiddushei HaRim",
-    "key": "the-chiddushei-harim"
+    "key": "chiddushei-harim"
    },
    {
     "name": "the Belzer Rav",
-    "key": "the-belzer-rav"
+    "key": "belzer-rav"
    },
    {
     "name": "the Slonimer Rebbe, Rav Avraham",
-    "key": "the-slonimer-rebbe-rav-avraham"
+    "key": "slonimer-rebbe-rav-avraham"
    },
    {
     "name": "the Radziner Rebbe",
-    "key": "the-radziner-rebbe"
+    "key": "radziner-rebbe"
    }
   ],
   "concepts": [
    {
     "he": "תורה לשמה",
-    "key": "תורה-לשמה"
+    "key": "svrh-lshmh-f5d40c"
    },
    {
     "he": "לשון המשנה",
-    "key": "לשון-המשנה"
+    "key": "lshvn-hmshnh-f1649f"
    },
    {
     "he": "ברייתא",
-    "key": "ברייתא"
+    "key": "bryysa-06f9c5"
    },
    {
     "he": "קנין תורה",
-    "key": "קנין-תורה"
+    "key": "knyn-svrh-ff28b5"
    },
    {
     "he": "קדושה",
-    "key": "קדושה"
+    "key": "kdvshh-2d0766"
    },
    {
     "he": "ישועה",
-    "key": "ישועה"
+    "key": "yshveh-e448d4"
    },
    {
     "he": "רבונו של עולם",
-    "key": "רבונו-של-עולם"
+    "key": "rbvnv-shl-evlm-52e424"
    },
    {
     "he": "דברים הרבה",
-    "key": "דברים-הרבה"
+    "key": "dbrym-hrbh-7deedb"
    },
    {
     "he": "יין המשומר",
-    "key": "יין-המשומר"
+    "key": "yyn-hmshvmr-4ebe98"
    },
    {
     "he": "עולם הבא",
-    "key": "עולם-הבא"
+    "key": "evlm-hba-68958b"
    },
    {
     "he": "ספר תורה",
-    "key": "ספר-תורה"
+    "key": "spr-svrh-a81c20"
    },
    {
     "he": "הגבהה",
-    "key": "הגבהה"
+    "key": "hgbhh-a05617"
    },
    {
     "he": "שפע",
-    "key": "שפע"
+    "key": "shpe-efd2a5"
    },
    {
     "he": "רע",
-    "key": "רע"
+    "key": "re-d19424"
    },
    {
     "he": "חלק אלוק ממעל",
-    "key": "חלק-אלוק-ממעל"
+    "key": "chlk-alvk-mmel-14b9d1"
    },
    {
     "he": "מחלוקת",
-    "key": "מחלוקת"
+    "key": "mchlvks-d1fbbd"
    },
    {
     "he": "הוה אמינא",
-    "key": "הוה-אמינא"
+    "key": "hvh-amyna-5fa650"
    },
    {
     "he": "רוח הטומאה",
-    "key": "רוח-הטומאה"
+    "key": "rvch-htvmah-ee908e"
    },
    {
     "he": "תקיפות",
-    "key": "תקיפות"
+    "key": "skypvs-77f62d"
    },
    {
     "he": "מעמדות",
-    "key": "מעמדות"
+    "key": "memdvs-ac0d28"
    }
   ],
   "writeupLangs": [

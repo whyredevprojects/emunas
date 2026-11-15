@@ -1,0 +1,87 @@
+{
+ "schemaVersion": 1,
+ "kind": "p",
+ "key": "yaakov-avinu",
+ "label": {
+  "en": "Yaakov Avinu",
+  "yi": "יעקב אבינו"
+ },
+ "shiurIds": [
+  "yi-zmanim-shbs-chzvn-01",
+  "en-parsha-en-svldvs-01",
+  "en-parsha-en-vyshlch-01",
+  "yi-parshas-hashavua-brshys-03",
+  "yi-parshas-hashavua-vyshb-08",
+  "en-zmanim-en-tv-bshbt-01",
+  "yi-zmanim-svkvs-08",
+  "en-parsha-en-ky-sb-01",
+  "en-zmanim-en-chvdsh-tbs-02",
+  "yi-shonos-31",
+  "yi-shonos-10"
+ ],
+ "years": {
+  "5746": 1,
+  "5749": 2,
+  "5750": 1,
+  "5751": 1,
+  "5756": 1,
+  "5758": 1,
+  "5760": 1,
+  "5764": 1,
+  "5771": 1,
+  "unknown": 1
+ },
+ "moments": [
+  {
+   "id": "en-parsha-en-vyshlch-01~st4",
+   "shiurId": "en-parsha-en-vyshlch-01",
+   "kind": "st",
+   "t": 3983.51,
+   "end": 4061.8
+  },
+  {
+   "id": "en-parsha-en-ky-sb-01~st0",
+   "shiurId": "en-parsha-en-ky-sb-01",
+   "kind": "st",
+   "t": 1649.2,
+   "end": 1700.6
+  }
+ ],
+ "related": [
+  {
+   "kind": "p",
+   "key": "avraham-avinu",
+   "shared": 6
+  },
+  {
+   "kind": "p",
+   "key": "esav",
+   "shared": 6
+  },
+  {
+   "kind": "p",
+   "key": "rashi",
+   "shared": 6
+  },
+  {
+   "kind": "p",
+   "key": "adam-harishon",
+   "shared": 5
+  },
+  {
+   "kind": "p",
+   "key": "moshe-rabbeinu",
+   "shared": 5
+  },
+  {
+   "kind": "p",
+   "key": "rambam",
+   "shared": 5
+  },
+  {
+   "kind": "p",
+   "key": "yosef-hatzaddik",
+   "shared": 5
+  }
+ ]
+}

@@ -248,8 +248,8 @@ describe("engine binding and deep links", () => {
 
   it("uses the series title as the Media Session album", async () => {
     await openAt("/en/s/yi-tanya-1-01");
-    expect(media.metadata()?.album).toBe("Tanya");
-    expect(screen.getByText(/Tanya, part 2 of 4/)).toBeTruthy();
+    expect(media.metadata()?.album).toBe("Tanya (Yiddish)");
+    expect(screen.getByText(/Tanya \(Yiddish\), part 2 of 4/)).toBeTruthy();
   });
 });
 

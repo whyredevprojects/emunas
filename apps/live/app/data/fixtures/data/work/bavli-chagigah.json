@@ -1,0 +1,53 @@
+{
+ "schemaVersion": 1,
+ "key": "bavli-chagigah",
+ "name": "Gemara Chagigah",
+ "label": {
+  "en": "Gemara Chagigah",
+  "yi": "גמרא חגיגה"
+ },
+ "locations": [
+  {
+   "ref": "Chagigah 2a",
+   "sefariaRef": "Chagigah 2a",
+   "citations": [
+    {
+     "shiurId": "en-zmanim-en-psch-06",
+     "sourceId": "en-zmanim-en-psch-06~src22",
+     "t": 2763.86,
+     "mention": "quoted",
+     "resolution": "resolved"
+    }
+   ]
+  },
+  {
+   "ref": "Chagigah 9b",
+   "sefariaRef": "Chagigah 9b",
+   "citations": [
+    {
+     "shiurId": "yi-shonos-31",
+     "sourceId": "yi-shonos-31~src13",
+     "t": 1989.33,
+     "mention": "quoted",
+     "resolution": "resolved"
+    }
+   ]
+  }
+ ],
+ "unlocated": [
+  {
+   "shiurId": "en-parsha-en-svldvs-01",
+   "sourceId": "en-parsha-en-svldvs-01~src16",
+   "t": 1934.16,
+   "mention": "paraphrased",
+   "resolution": "inferred"
+  },
+  {
+   "shiurId": "en-parsha-en-vyshlch-01",
+   "sourceId": "en-parsha-en-vyshlch-01~src23",
+   "t": 4255.32,
+   "mention": "paraphrased",
+   "resolution": "unresolved"
+  }
+ ]
+}

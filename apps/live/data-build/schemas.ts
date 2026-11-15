@@ -195,7 +195,7 @@ export const FacetsSchema = v.strictObject({
     purim: fv,
   }),
   lang: v.strictObject({ en: facetValue, yi: facetValue }),
-  occasion: v.record(str, v.strictObject({ label: facetLabel, count: int, type: v.picklist(["parsha", "zman"]) })),
+  occasion: v.record(str, v.strictObject({ label: facetLabel, count: int, type: v.picklist(["parsha", "zman"]), hasPage: v.boolean() })),
   year: facetRecord,
   series: v.record(str, v.strictObject({ label: facetLabel, count: int, lang: ed, sibling: nstr })),
   work: facetRecord,

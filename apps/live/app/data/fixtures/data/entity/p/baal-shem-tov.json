@@ -1,0 +1,53 @@
+{
+ "schemaVersion": 1,
+ "kind": "p",
+ "key": "baal-shem-tov",
+ "label": {
+  "en": "the Ba'al Shem Tov",
+  "yi": "הבעל שם טוב"
+ },
+ "shiurIds": [
+  "yi-zmanim-lvl-01",
+  "yi-zmanim-svds-shvshn-pvrym-01",
+  "en-parsha-en-nch-01",
+  "en-parsha-en-vyshlch-01",
+  "en-parsha-en-ky-sb-01",
+  "yi-zmanim-pvrym-07",
+  "yi-zmanim-nysn-05",
+  "yi-shonos-10"
+ ],
+ "years": {
+  "5735": 1,
+  "5743": 1,
+  "5744": 1,
+  "5746": 1,
+  "5747": 1,
+  "5749": 2,
+  "5760": 1,
+  "5767": 1,
+  "unknown": 2
+ },
+ "moments": [
+  {
+   "id": "yi-zmanim-lvl-01~st0",
+   "shiurId": "yi-zmanim-lvl-01",
+   "kind": "st",
+   "t": 1296.67,
+   "end": 1312.91
+  },
+  {
+   "id": "en-parsha-en-nch-01~st0",
+   "shiurId": "en-parsha-en-nch-01",
+   "kind": "st",
+   "t": 3171.06,
+   "end": 3186.78
+  }
+ ],
+ "related": [
+  {
+   "kind": "p",
+   "key": "adam-harishon",
+   "shared": 5
+  }
+ ]
+}

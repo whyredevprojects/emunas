@@ -4,19 +4,32 @@
  "name": "Shemos",
  "label": {
   "en": "Shemos",
-  "yi": "Shemos"
+  "yi": "שמות"
  },
  "locations": [
   {
-   "ref": "Shemos 20:2",
-   "sefariaRef": "Exodus 20:2",
+   "ref": "Shemos 2:23",
+   "sefariaRef": "Exodus 2:23",
    "citations": [
     {
-     "shiurId": "yi-zmanim-lvl-01",
-     "sourceId": "yi-zmanim-lvl-01~src10",
-     "t": 896.99,
-     "mention": "alluded",
+     "shiurId": "yi-shonos-10",
+     "sourceId": "yi-shonos-10~src2",
+     "t": 115.1,
+     "mention": "quoted",
      "resolution": "inferred"
+    }
+   ]
+  },
+  {
+   "ref": "Shemos 5:9",
+   "sefariaRef": "Exodus 5:9",
+   "citations": [
+    {
+     "shiurId": "yi-shonos-10",
+     "sourceId": "yi-shonos-10~src3",
+     "t": 227.24,
+     "mention": "quoted",
+     "resolution": "resolved"
     }
    ]
   },
@@ -32,7 +45,245 @@
      "resolution": "resolved"
     }
    ]
+  },
+  {
+   "ref": "Shemos 12:2",
+   "sefariaRef": "Exodus 12:2",
+   "citations": [
+    {
+     "shiurId": "yi-parshas-hashavua-mvr-01",
+     "sourceId": "yi-parshas-hashavua-mvr-01~src12",
+     "t": 2168.46,
+     "mention": "alluded",
+     "resolution": "resolved"
+    },
+    {
+     "shiurId": "yi-zmanim-spyrh-01",
+     "sourceId": "yi-zmanim-spyrh-01~src5",
+     "t": 509.41,
+     "mention": "quoted",
+     "resolution": "resolved"
+    },
+    {
+     "shiurId": "yi-parshas-hashavua-brshys-03",
+     "sourceId": "yi-parshas-hashavua-brshys-03~src21",
+     "t": 1670.45,
+     "mention": "quoted",
+     "resolution": "resolved"
+    },
+    {
+     "shiurId": "en-zmanim-en-psch-06",
+     "sourceId": "en-zmanim-en-psch-06~src4",
+     "t": 451.96,
+     "mention": "quoted",
+     "resolution": "resolved"
+    }
+   ]
+  },
+  {
+   "ref": "Shemos 13:2",
+   "sefariaRef": "Exodus 13:2",
+   "citations": [
+    {
+     "shiurId": "en-zmanim-en-psch-06",
+     "sourceId": "en-zmanim-en-psch-06~src16",
+     "t": 2164.53,
+     "mention": "quoted",
+     "resolution": "resolved"
+    }
+   ]
+  },
+  {
+   "ref": "Shemos 13:4",
+   "sefariaRef": "Exodus 13:4",
+   "citations": [
+    {
+     "shiurId": "en-zmanim-en-tv-bshbt-01",
+     "sourceId": "en-zmanim-en-tv-bshbt-01~src5",
+     "t": 1386.04,
+     "mention": "quoted",
+     "resolution": "resolved"
+    }
+   ]
+  },
+  {
+   "ref": "Shemos 14:27",
+   "sefariaRef": "Exodus 14:27",
+   "citations": [
+    {
+     "shiurId": "yi-zmanim-chnvkh-11",
+     "sourceId": "yi-zmanim-chnvkh-11~src21",
+     "t": 1370.24,
+     "mention": "alluded",
+     "resolution": "inferred"
+    }
+   ]
+  },
+  {
+   "ref": "Shemos 15:17",
+   "sefariaRef": "Exodus 15:17",
+   "citations": [
+    {
+     "shiurId": "en-zmanim-en-tv-bshbt-01",
+     "sourceId": "en-zmanim-en-tv-bshbt-01~src9",
+     "t": 2276,
+     "mention": "quoted",
+     "resolution": "resolved"
+    }
+   ]
+  },
+  {
+   "ref": "Shemos 17:13",
+   "sefariaRef": "Exodus 17:13",
+   "citations": [
+    {
+     "shiurId": "yi-zmanim-svds-shvshn-pvrym-01",
+     "sourceId": "yi-zmanim-svds-shvshn-pvrym-01~src25",
+     "t": 3659.926,
+     "mention": "alluded",
+     "resolution": "resolved"
+    }
+   ]
+  },
+  {
+   "ref": "Shemos 19:6",
+   "sefariaRef": "Exodus 19:6",
+   "citations": [
+    {
+     "shiurId": "yi-zmanim-shbs-chzvn-01",
+     "sourceId": "yi-zmanim-shbs-chzvn-01~src46",
+     "t": 3877.26,
+     "mention": "quoted",
+     "resolution": "resolved"
+    }
+   ]
+  },
+  {
+   "ref": "Shemos 19:15",
+   "sefariaRef": "Exodus 19:15",
+   "citations": [
+    {
+     "shiurId": "yi-parshas-hashavua-mvr-01",
+     "sourceId": "yi-parshas-hashavua-mvr-01~src15",
+     "t": 3214.1,
+     "mention": "alluded",
+     "resolution": "resolved"
+    }
+   ]
+  },
+  {
+   "ref": "Shemos 20:2",
+   "sefariaRef": "Exodus 20:2",
+   "citations": [
+    {
+     "shiurId": "yi-zmanim-lvl-01",
+     "sourceId": "yi-zmanim-lvl-01~src10",
+     "t": 896.99,
+     "mention": "alluded",
+     "resolution": "inferred"
+    },
+    {
+     "shiurId": "yi-zmanim-nysn-05",
+     "sourceId": "yi-zmanim-nysn-05~src28",
+     "t": 2388.26,
+     "mention": "quoted",
+     "resolution": "resolved"
+    },
+    {
+     "shiurId": "yi-shonos-10",
+     "sourceId": "yi-shonos-10~src7",
+     "t": 479.6,
+     "mention": "quoted",
+     "resolution": "resolved"
+    }
+   ]
+  },
+  {
+   "ref": "Shemos 20:11",
+   "sefariaRef": "Exodus 20:11",
+   "citations": [
+    {
+     "shiurId": "yi-zmanim-shbs-chzvn-01",
+     "sourceId": "yi-zmanim-shbs-chzvn-01~src38",
+     "t": 3207.62,
+     "mention": "quoted",
+     "resolution": "resolved"
+    }
+   ]
+  },
+  {
+   "ref": "Shemos 21:13",
+   "sefariaRef": "Exodus 21:13",
+   "citations": [
+    {
+     "shiurId": "yi-zmanim-lvl-02",
+     "sourceId": "yi-zmanim-lvl-02~src1",
+     "t": 8.79,
+     "mention": "quoted",
+     "resolution": "resolved"
+    }
+   ]
+  },
+  {
+   "ref": "Shemos 23:11",
+   "sefariaRef": "Exodus 23:11",
+   "citations": [
+    {
+     "shiurId": "yi-zmanim-shbs-chzvn-01",
+     "sourceId": "yi-zmanim-shbs-chzvn-01~src40",
+     "t": 3317.26,
+     "mention": "quoted",
+     "resolution": "inferred"
+    }
+   ]
+  },
+  {
+   "ref": "Shemos 26:28",
+   "sefariaRef": "Exodus 26:28",
+   "citations": [
+    {
+     "shiurId": "yi-zmanim-svkvs-08",
+     "sourceId": "yi-zmanim-svkvs-08~src47",
+     "t": 3537.79,
+     "mention": "quoted",
+     "resolution": "resolved"
+    }
+   ]
+  },
+  {
+   "ref": "Shemos 28:33",
+   "sefariaRef": "Exodus 28:33",
+   "citations": [
+    {
+     "shiurId": "yi-zmanim-svds-shvshn-pvrym-01",
+     "sourceId": "yi-zmanim-svds-shvshn-pvrym-01~src35",
+     "t": 4912.205,
+     "mention": "alluded",
+     "resolution": "inferred"
+    }
+   ]
+  },
+  {
+   "ref": "Shemos 31:16",
+   "sefariaRef": "Exodus 31:16",
+   "citations": [
+    {
+     "shiurId": "yi-parshas-hashavua-shvptym-01",
+     "sourceId": "yi-parshas-hashavua-shvptym-01~src16",
+     "t": 1107.34,
+     "mention": "quoted",
+     "resolution": "resolved"
+    }
+   ]
   }
  ],
- "unlocated": []
+ "unlocated": [
+  {
+   "shiurId": "yi-zmanim-lvl-02",
+   "sourceId": "yi-zmanim-lvl-02~src9",
+   "t": 769.5,
+   "mention": "alluded",
+   "resolution": "inferred"
+  }
+ ]
 }

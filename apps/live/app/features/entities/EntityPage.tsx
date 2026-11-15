@@ -5,7 +5,7 @@
  * a concept is headed by its Hebrew term; an occasion lists its shiurim by year and its moments.
  *
  * Links go only to pages that exist (`resolve.ts`). Data: `entity/<kind>/<key>.json`, `corpus.json`,
- * `facets.json`, `today.json` (occasion membership) and, for people, `stories.json`.
+ * `facets.json` and, for people, `stories.json`.
  */
 import type { Ed } from "@emunas/corpus/public";
 import type { UiLang } from "@emunas/i18n";
@@ -22,7 +22,6 @@ import {
   loadEntity,
   loadFacets,
   loadStories,
-  loadToday,
   notFoundToNull,
   type CorpusFile,
   type EntityFile,
@@ -42,16 +41,14 @@ interface Loaded {
 }
 
 async function loadEntityPage(kind: EntityKind, key: string): Promise<Loaded | null> {
-  const [entity, corpus, facets, today, stories] = await Promise.all([
+  const [entity, corpus, facets, stories] = await Promise.all([
     notFoundToNull(loadEntity(kind, key)),
     loadCorpus(),
     loadFacets(),
-    // Only used to know which occasion pages exist; a failure just means fewer links.
-    loadToday().catch(() => null),
     kind === "p" ? loadStories().then((x) => x.stories) : Promise.resolve([]),
   ]);
   if (!entity) return null;
-  return { entity, corpus, resolver: createResolver(facets, today), stories };
+  return { entity, corpus, resolver: createResolver(facets), stories };
 }
 
 const PAGE_KEY = { p: "page.person", c: "page.concept", o: "page.occasion" } as const;

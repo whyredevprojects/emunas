@@ -4,16 +4,73 @@
  "key": "moshe-rabbeinu",
  "label": {
   "en": "Moshe Rabbeinu",
-  "yi": "Moshe Rabbeinu"
+  "yi": "משה רבינו"
  },
  "shiurIds": [
+  "yi-parshas-hashavua-vschnn-01",
   "yi-zmanim-lvl-01",
-  "en-miscellaneous-en-01"
+  "en-miscellaneous-en-02",
+  "en-miscellaneous-en-01",
+  "yi-parshas-hashavua-shvptym-01",
+  "yi-zmanim-spyrh-01",
+  "yi-zmanim-shbs-chzvn-01",
+  "yi-zmanim-chnvkh-11",
+  "en-parsha-en-svldvs-01",
+  "yi-parshas-hashavua-brshys-03",
+  "en-parsha-en-ky-sb-01",
+  "yi-zmanim-svds-pvrym-ktn-03",
+  "yi-zmanim-nysn-05",
+  "yi-shonos-10"
  ],
  "years": {
-  "5735": 1,
-  "5738": 1
+  "5734": 1,
+  "5735": 2,
+  "5738": 1,
+  "5740": 1,
+  "5742": 1,
+  "5746": 1,
+  "5749": 2,
+  "5750": 1,
+  "5760": 1,
+  "5765": 1,
+  "unknown": 2
  },
  "moments": [],
- "related": []
+ "related": [
+  {
+   "kind": "p",
+   "key": "dovid-hamelech",
+   "shared": 7
+  },
+  {
+   "kind": "p",
+   "key": "adam-harishon",
+   "shared": 6
+  },
+  {
+   "kind": "p",
+   "key": "avraham-avinu",
+   "shared": 6
+  },
+  {
+   "kind": "p",
+   "key": "chasam-sofer",
+   "shared": 6
+  },
+  {
+   "kind": "p",
+   "key": "rashi",
+   "shared": 6
+  },
+  {
+   "kind": "p",
+   "key": "rambam",
+   "shared": 5
+  },
+  {
+   "kind": "p",
+   "key": "yaakov-avinu",
+   "shared": 5
+  }
+ ]
 }

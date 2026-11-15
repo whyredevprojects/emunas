@@ -4,20 +4,73 @@
  "key": "adam-harishon",
  "label": {
   "en": "Adam HaRishon",
-  "yi": "Adam HaRishon"
+  "yi": "אדם הראשון"
  },
  "shiurIds": [
   "yi-zmanim-lvl-01",
+  "en-miscellaneous-en-02",
   "yi-parshas-hashavua-brshys-01",
   "en-miscellaneous-en-01",
-  "en-parsha-en-nch-01"
+  "en-parsha-en-nch-01",
+  "yi-parshas-hashavua-brshys-03",
+  "yi-parshas-hashavua-vyshb-08",
+  "en-zmanim-en-tv-bshbt-01",
+  "en-zmanim-en-rsh-hshnh-03",
+  "en-parsha-en-ky-sb-01",
+  "en-zmanim-en-chvdsh-tbs-02",
+  "en-zmanim-en-psch-06",
+  "yi-zmanim-pvrym-07",
+  "yi-zmanim-nysn-05"
  ],
  "years": {
-  "5735": 1,
+  "5735": 2,
   "5736": 1,
   "5738": 1,
-  "5749": 1
+  "5749": 1,
+  "5750": 1,
+  "5751": 1,
+  "5756": 1,
+  "5757": 1,
+  "5760": 1,
+  "5764": 1,
+  "5765": 1,
+  "5767": 1,
+  "unknown": 1
  },
- "moments": [],
- "related": []
+ "moments": [
+  {
+   "id": "en-zmanim-en-chvdsh-tbs-02~st0",
+   "shiurId": "en-zmanim-en-chvdsh-tbs-02",
+   "kind": "st",
+   "t": 999.59,
+   "end": 1084.53
+  }
+ ],
+ "related": [
+  {
+   "kind": "p",
+   "key": "rashi",
+   "shared": 10
+  },
+  {
+   "kind": "p",
+   "key": "moshe-rabbeinu",
+   "shared": 6
+  },
+  {
+   "kind": "p",
+   "key": "baal-shem-tov",
+   "shared": 5
+  },
+  {
+   "kind": "p",
+   "key": "rambam",
+   "shared": 5
+  },
+  {
+   "kind": "p",
+   "key": "yaakov-avinu",
+   "shared": 5
+  }
+ ]
 }

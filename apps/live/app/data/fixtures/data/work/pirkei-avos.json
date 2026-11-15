@@ -4,37 +4,44 @@
  "name": "Pirkei Avos",
  "label": {
   "en": "Pirkei Avos",
-  "yi": "Pirkei Avos"
+  "yi": "פרקי אבות"
  },
  "locations": [
   {
-   "ref": "Avos ch. 6, opening",
-   "sefariaRef": "Pirkei Avot 6:1",
+   "ref": "Pirkei Avos 2:1",
+   "sefariaRef": "Pirkei Avot 2:1",
    "citations": [
     {
      "shiurId": "en-miscellaneous-en-01",
-     "sourceId": "en-miscellaneous-en-01~src0",
-     "t": 52.41,
+     "sourceId": "en-miscellaneous-en-01~src19",
+     "t": 2911.45,
+     "mention": "paraphrased",
+     "resolution": "inferred"
+    },
+    {
+     "shiurId": "yi-zmanim-svkvs-08",
+     "sourceId": "yi-zmanim-svkvs-08~src49",
+     "t": 3804.51,
+     "mention": "alluded",
+     "resolution": "inferred"
+    }
+   ]
+  },
+  {
+   "ref": "Pirkei Avos 2:4",
+   "sefariaRef": "Pirkei Avot 2:4",
+   "citations": [
+    {
+     "shiurId": "yi-shonos-31",
+     "sourceId": "yi-shonos-31~src11",
+     "t": 1778.88,
      "mention": "quoted",
      "resolution": "resolved"
     }
    ]
   },
   {
-   "ref": "Avos 6:1",
-   "sefariaRef": "Pirkei Avot 6:1",
-   "citations": [
-    {
-     "shiurId": "en-miscellaneous-en-01",
-     "sourceId": "en-miscellaneous-en-01~src1",
-     "t": 1099.69,
-     "mention": "quoted",
-     "resolution": "resolved"
-    }
-   ]
-  },
-  {
-   "ref": "Avos 3:10",
+   "ref": "Pirkei Avos 3:10",
    "sefariaRef": "Pirkei Avot 3:10",
    "citations": [
     {
@@ -47,20 +54,80 @@
    ]
   },
   {
-   "ref": "Avos 2:1",
-   "sefariaRef": "Pirkei Avot 2:1",
+   "ref": "Pirkei Avos 5:1",
+   "sefariaRef": "Pirkei Avot 5:1",
    "citations": [
     {
-     "shiurId": "en-miscellaneous-en-01",
-     "sourceId": "en-miscellaneous-en-01~src19",
-     "t": 2911.45,
+     "shiurId": "en-zmanim-en-rsh-hshnh-03",
+     "sourceId": "en-zmanim-en-rsh-hshnh-03~src0",
+     "t": 171.81,
+     "mention": "paraphrased",
+     "resolution": "resolved"
+    }
+   ]
+  },
+  {
+   "ref": "Pirkei Avos 5:5",
+   "sefariaRef": "Pirkei Avot 5:5",
+   "citations": [
+    {
+     "shiurId": "yi-parshas-hashavua-shvptym-01",
+     "sourceId": "yi-parshas-hashavua-shvptym-01~src22",
+     "t": 1614.64,
+     "mention": "quoted",
+     "resolution": "resolved"
+    }
+   ]
+  },
+  {
+   "ref": "Pirkei Avos 5:6",
+   "sefariaRef": "Pirkei Avot 5:6",
+   "citations": [
+    {
+     "shiurId": "yi-zmanim-chnvkh-11",
+     "sourceId": "yi-zmanim-chnvkh-11~src22",
+     "t": 1377.64,
      "mention": "paraphrased",
      "resolution": "inferred"
     }
    ]
   },
   {
-   "ref": "Avos 6:2",
+   "ref": "Pirkei Avos 6:1",
+   "sefariaRef": "Pirkei Avot 6:1",
+   "citations": [
+    {
+     "shiurId": "en-miscellaneous-en-02",
+     "sourceId": "en-miscellaneous-en-02~src0",
+     "t": 447.92,
+     "mention": "quoted",
+     "resolution": "resolved"
+    },
+    {
+     "shiurId": "en-miscellaneous-en-02",
+     "sourceId": "en-miscellaneous-en-02~src10",
+     "t": 1669.81,
+     "mention": "quoted",
+     "resolution": "resolved"
+    },
+    {
+     "shiurId": "en-miscellaneous-en-01",
+     "sourceId": "en-miscellaneous-en-01~src0",
+     "t": 52.41,
+     "mention": "quoted",
+     "resolution": "resolved"
+    },
+    {
+     "shiurId": "en-miscellaneous-en-01",
+     "sourceId": "en-miscellaneous-en-01~src1",
+     "t": 1099.69,
+     "mention": "quoted",
+     "resolution": "resolved"
+    }
+   ]
+  },
+  {
+   "ref": "Pirkei Avos 6:2",
    "sefariaRef": "Pirkei Avot 6:2",
    "citations": [
     {

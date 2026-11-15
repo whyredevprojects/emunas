@@ -3,7 +3,7 @@
  * links has a file, and every entity file is linked (on the mini corpus, and on the repo's data).
  */
 import { describe, expect, it } from "vitest";
-import type { FacetsFile, TodayFile } from "../live-data.ts";
+import type { FacetsFile } from "../live-data.ts";
 import { createResolver, type LinkKind } from "../resolve.ts";
 import { HAVE_REAL_DATA, emittedMini, emittedReal, keysUnder, type Emitted } from "./emitted.ts";
 
@@ -12,8 +12,7 @@ const FACET: Record<LinkKind, keyof FacetsFile> = { w: "work", p: "person", c: "
 
 function check(files: Emitted): void {
   const facets = files.get("facets.json") as FacetsFile;
-  const today = files.get("today.json") as TodayFile;
-  const r = createResolver(facets, today);
+  const r = createResolver(facets);
   for (const kind of ["w", "p", "c", "o"] as const) {
     const onDisk = new Set(keysUnder(files, DIRS[kind]));
     const facetKeys = Object.keys(facets[FACET[kind]] as Record<string, unknown>);
@@ -31,10 +30,15 @@ function check(files: Emitted): void {
 describe("entity link resolution", () => {
   it("matches the emitted files of the mini corpus", () => check(emittedMini()));
 
-  it("without today.json no occasion is linked", () => {
+  it("links occasions from facets.json alone: hasPage marks exactly the occasions with a file", () => {
     const files = emittedMini();
-    const r = createResolver(files.get("facets.json") as FacetsFile, null);
-    for (const k of keysUnder(files, "entity/o/")) expect(r.has("o", k)).toBe(false);
+    const facets = files.get("facets.json") as FacetsFile;
+    const onDisk = new Set(keysUnder(files, "entity/o/"));
+    const flagged = Object.entries(facets.occasion).filter(([, o]) => o.hasPage).map(([k]) => k);
+    expect(new Set(flagged)).toEqual(onDisk);
+    // An occasion whose facet count includes file-name guesses can still have no page.
+    const r = createResolver(facets);
+    for (const [k, o] of Object.entries(facets.occasion)) expect(r.has("o", k)).toBe(o.hasPage);
   });
 
   it.runIf(HAVE_REAL_DATA)("matches the emitted files of the repo's data", () => check(emittedReal()), 300_000);

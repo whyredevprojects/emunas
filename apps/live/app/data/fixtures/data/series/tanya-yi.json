@@ -2,11 +2,11 @@
  "schemaVersion": 1,
  "id": "tanya-yi",
  "title": {
-  "en": "Tanya",
-  "yi": "תניא"
+  "en": "Tanya (Yiddish)",
+  "yi": "ספר התניא"
  },
  "lang": "yi",
- "sibling": null,
+ "sibling": "tanya-en",
  "parts": [
   {
    "shiurId": "yi-tanya-1-01",
@@ -17,6 +17,36 @@
    "years": [],
    "status": "catalog-only",
    "perek": "א"
+  },
+  {
+   "shiurId": "yi-tanya-1-10",
+   "order": 11,
+   "title": "חלקי הנשמה הם מעשר ספירות. ביאור עשר ספירות.",
+   "oneLiner": null,
+   "duration": 2606.96,
+   "years": [],
+   "status": "catalog-only",
+   "perek": "ב"
+  },
+  {
+   "shiurId": "yi-tanya-1-29",
+   "order": 30,
+   "title": "בינוני - זה וזה שופטן וה' מכריע. תשובה על הקושיא על המילים - תהא בעיניך כרשע.",
+   "oneLiner": null,
+   "duration": 2345.86,
+   "years": [],
+   "status": "catalog-only",
+   "perek": "י\"ב"
+  },
+  {
+   "shiurId": "yi-tanya-2-02",
+   "order": 40,
+   "title": "שורש ומהות של אהבה מסותרת. הם ירושה מהאבות' האבות הם המרכבה' יראת ה' ואהבת ה' נתאחדו בגופם ונמשכו לבניהם.",
+   "oneLiner": null,
+   "duration": 2619.91,
+   "years": [],
+   "status": "catalog-only",
+   "perek": "י\"ח"
   }
  ],
  "perekGroups": [
@@ -24,6 +54,24 @@
    "perek": "א",
    "shiurIds": [
     "yi-tanya-1-01"
+   ]
+  },
+  {
+   "perek": "ב",
+   "shiurIds": [
+    "yi-tanya-1-10"
+   ]
+  },
+  {
+   "perek": "י\"ב",
+   "shiurIds": [
+    "yi-tanya-1-29"
+   ]
+  },
+  {
+   "perek": "י\"ח",
+   "shiurIds": [
+    "yi-tanya-2-02"
    ]
   }
  ]

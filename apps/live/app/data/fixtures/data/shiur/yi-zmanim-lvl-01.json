@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "id": "yi-zmanim-lvl-01",
- "rev": "<rev>",
+ "rev": "5ccf58889c1f",
  "lang": "yi",
  "category": "zman",
  "catalog": {
@@ -45,9 +45,11 @@
   }
  ],
  "related": {
-  "sameOccasion": [],
+  "sameOccasion": [
+   "yi-zmanim-lvl-02"
+  ],
   "prev": null,
-  "next": null,
+  "next": "yi-zmanim-lvl-02",
   "neighbors": []
  },
  "notes": {
@@ -402,7 +404,7 @@
     "idx": 4,
     "id": "yi-zmanim-lvl-01~src6",
     "work": "Gemara Yoma",
-    "workKey": "gemara-yoma",
+    "workKey": "bavli-yoma",
     "ref": "Yoma 20a",
     "sefariaRef": "Yoma 20a",
     "resolution": "resolved",
@@ -460,7 +462,7 @@
     "idx": 9,
     "id": "yi-zmanim-lvl-01~src11",
     "work": "Gemara Shabbos",
-    "workKey": "gemara-shabbos",
+    "workKey": "bavli-shabbos",
     "ref": "Shabbos 104a",
     "sefariaRef": "Shabbat 104a",
     "resolution": "inferred",
@@ -496,7 +498,7 @@
     "idx": 12,
     "id": "yi-zmanim-lvl-01~src14",
     "work": "Gemara Sotah",
-    "workKey": "gemara-sotah",
+    "workKey": "bavli-sotah",
     "ref": "Sotah 42a",
     "sefariaRef": "Sotah 42a",
     "resolution": "inferred",
@@ -531,7 +533,7 @@
     "idx": 15,
     "id": "yi-zmanim-lvl-01~src18",
     "work": "Mesillas Yesharim",
-    "workKey": "mesillas-yesharim",
+    "workKey": "mesilas-yesharim",
     "ref": "Mesillas Yesharim ch. 5",
     "sefariaRef": null,
     "resolution": "inferred",
@@ -565,7 +567,7 @@
     "idx": 18,
     "id": "yi-zmanim-lvl-01~src21",
     "work": "Rosh Hashanah liturgy",
-    "workKey": "rosh-hashanah-liturgy",
+    "workKey": "machzor-rosh-hashanah",
     "ref": null,
     "sefariaRef": null,
     "resolution": "unresolved",
@@ -760,7 +762,7 @@
      "the Ba'al Shem Tov"
     ],
     "peopleKeys": [
-     "the-baal-shem-tov"
+     "baal-shem-tov"
     ],
     "t": 1296.67,
     "end": 1312.91,
@@ -794,11 +796,11 @@
    },
    {
     "name": "Rabbi Tzadok HaKohen of Lublin",
-    "key": "rabbi-tzadok-hakohen-of-lublin"
+    "key": "rav-tzadok-hakohen"
    },
    {
     "name": "the Ba'al Shem Tov",
-    "key": "the-baal-shem-tov"
+    "key": "baal-shem-tov"
    },
    {
     "name": "Pharaoh",
@@ -810,73 +812,73 @@
    },
    {
     "name": "Yosef",
-    "key": "yosef"
+    "key": "yosef-hatzaddik"
    }
   ],
   "concepts": [
    {
     "he": "ימי רצון",
-    "key": "ימי-רצון"
+    "key": "ymy-rtzvn-2177df"
    },
    {
     "he": "לוחות שניות",
-    "key": "לוחות-שניות"
+    "key": "lvchvs-shnyvs-ca3ddf"
    },
    {
     "he": "בעלי תשובה",
-    "key": "בעלי-תשובה"
+    "key": "bely-sshvbh-926545"
    },
    {
     "he": "רושם לדורות",
-    "key": "רושם-לדורות"
+    "key": "rvshm-ldvrvs-aec5d0"
    },
    {
     "he": "שמיטה",
-    "key": "שמיטה"
+    "key": "shmyth-0806d8"
    },
    {
     "he": "כל השביעין חביבין",
-    "key": "כל-השביעין-חביבין"
+    "key": "kl-hshbyeyn-chbybyn-eb233c"
    },
    {
     "he": "חוב",
-    "key": "חוב"
+    "key": "chvb-23e739"
    },
    {
     "he": "השטן",
-    "key": "השטן"
+    "key": "hshtn-991193"
    },
    {
     "he": "ואהבת לרעך כמוך",
-    "key": "ואהבת-לרעך-כמוך"
+    "key": "vahbs-lrek-kmvk-939763"
    },
    {
     "he": "ליצנות",
-    "key": "ליצנות"
+    "key": "lytznvs-c3d04f"
    },
    {
     "he": "לץ",
-    "key": "לץ"
+    "key": "ltz-de6109"
    },
    {
     "he": "אמונה",
-    "key": "אמונה"
+    "key": "amvnh-6dd509"
    },
    {
     "he": "היכלות התפילה",
-    "key": "היכלות-התפילה"
+    "key": "hyklvs-hspylh-23f3a8"
    },
    {
     "he": "פני השכינה",
-    "key": "פני-השכינה"
+    "key": "pny-hshkynh-3ab65f"
    },
    {
     "he": "מדה כנגד מדה",
-    "key": "מדה-כנגד-מדה"
+    "key": "mdh-kngd-mdh-5d00b5"
    },
    {
     "he": "רבונו של עולם",
-    "key": "רבונו-של-עולם"
+    "key": "rbvnv-shl-evlm-52e424"
    }
   ],
   "writeupLangs": [

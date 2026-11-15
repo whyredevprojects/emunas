@@ -54,7 +54,7 @@ describe("work layout", () => {
     const placed = layout.chapters.flatMap((c) => c.places);
     const withRef = bereishisFixture.locations.filter((l) => l.sefariaRef !== null);
     expect(placed).toHaveLength(withRef.length);
-    expect(layout.unordered.map((p) => p.location.sefariaRef)).toEqual([null]);
+    expect(layout.unordered.map((p) => p.location.sefariaRef)).toEqual(bereishisFixture.locations.filter((l) => l.sefariaRef === null).map(() => null));
     const keys = placed.map((p) => p.parsed!.sortKey);
     for (let i = 1; i < keys.length; i++) expect(compareSortKeys(keys[i - 1]!, keys[i]!)).toBeLessThanOrEqual(0);
     expect(layout.chapters.map((c) => c.key)).toEqual([...new Set(placed.map((p) => String(p.parsed!.start!.kind === "chapter" ? p.parsed!.start!.chapter : 0)))]);
