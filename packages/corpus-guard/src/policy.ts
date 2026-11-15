@@ -8,6 +8,7 @@
  */
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
+import { readTranscriptEligibility } from "./eligible.ts";
 
 function readJson(file: string): unknown {
   return JSON.parse(readFileSync(file, "utf8"));
@@ -40,17 +41,9 @@ export function readVerbatimAllow(siteDir: string): Set<string> {
 
 /**
  * Recording ids whose public transcript file the post-pass may accept. Empty unless
- * `EMUNAS_TRANSCRIPT_VIEW=on`. Identity checks against the transcript itself belong to the
- * transcript gate (packages/corpus/src/transcript-gate.ts); the guard only needs the id set.
+ * `EMUNAS_TRANSCRIPT_VIEW=on`. The full rule (entry validity, identity version, file shape) is in
+ * eligible.ts; this keeps the id-only view for callers that only need the set.
  */
 export function readEligibleTranscriptIds(siteDir: string, env: Record<string, string | undefined>): Set<string> {
-  if (env.EMUNAS_TRANSCRIPT_VIEW !== "on") return new Set();
-  const file = join(siteDir, "transcript-eligibility.json");
-  if (!existsSync(file)) return new Set();
-  const json = readJson(file);
-  const eligible = typeof json === "object" && json !== null ? (json as { eligible?: unknown }).eligible : undefined;
-  if (typeof eligible !== "object" || eligible === null || Array.isArray(eligible)) {
-    throw new Error(`${file}: expected { eligible: { <recordingId>: {...} } }`);
-  }
-  return new Set(Object.keys(eligible));
+  return new Set(readTranscriptEligibility(siteDir, env).versions.keys());
 }

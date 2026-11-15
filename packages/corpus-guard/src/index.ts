@@ -7,7 +7,8 @@
  */
 import { existsSync } from "node:fs";
 import { readAllowedTexts, readShiurRecordings } from "./corpus.ts";
-import { readEligibleTranscriptIds, readVerbatimAllow } from "./policy.ts";
+import { readVerbatimAllow } from "./policy.ts";
+import { readTranscriptEligibility } from "./eligible.ts";
 import { LeakScanner } from "./post.ts";
 import { VerbatimMatcher, type Thresholds } from "./verbatim.ts";
 
@@ -17,6 +18,15 @@ export { TranscriptStore, segmentTexts, DEFAULT_TRANSCRIPTS_DIR } from "./transc
 export { collectShiurItems, qualifyId, fieldOf, type ShippedItem, type ShiurUnits } from "./items.ts";
 export { readCorpusUnits, readShiurRecordings, readAllowedTexts, listCorpusShiurFiles } from "./corpus.ts";
 export { readVerbatimAllow, readEligibleTranscriptIds } from "./policy.ts";
+export {
+  readTranscriptEligibility,
+  checkTranscriptFile,
+  transcriptIdentityVersion,
+  NO_TRANSCRIPTS,
+  type TranscriptEligibility,
+  type TranscriptIdentity,
+  type TranscriptRejection,
+} from "./eligible.ts";
 export {
   VerbatimMatcher,
   REPORT_AT,
@@ -56,7 +66,7 @@ export interface GuardContextOptions {
 /** A post-pass scanner wired to `.corpus/`, the transcripts and `site-policy/`. */
 export function createLeakScanner(opts: GuardContextOptions): LeakScanner {
   const allow = readVerbatimAllow(opts.siteDir);
-  const eligible = readEligibleTranscriptIds(opts.siteDir, opts.env ?? process.env);
+  const transcripts = readTranscriptEligibility(opts.siteDir, opts.env ?? process.env, { transcriptsDir: opts.transcriptsDir ?? null });
   let matcher: VerbatimMatcher | null = null;
   if (opts.transcriptsDir) {
     if (!existsSync(opts.transcriptsDir)) throw new Error(`transcripts folder not found: ${opts.transcriptsDir}`);
@@ -71,7 +81,7 @@ export function createLeakScanner(opts: GuardContextOptions): LeakScanner {
     if (opts.thresholds) matcherOpts.thresholds = opts.thresholds;
     matcher = new VerbatimMatcher(matcherOpts);
   }
-  const scannerOpts: ConstructorParameters<typeof LeakScanner>[0] = { matcher, allow, eligibleTranscripts: eligible };
+  const scannerOpts: ConstructorParameters<typeof LeakScanner>[0] = { matcher, allow, transcripts };
   if (opts.baseDir !== undefined) scannerOpts.baseDir = opts.baseDir;
   return new LeakScanner(scannerOpts);
 }

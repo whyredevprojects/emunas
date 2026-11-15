@@ -95,7 +95,7 @@ function describe(f: Finding): string {
     case "substring":
       return `forbidden substring "${f.substring}" ×${f.count} in ${f.source}`;
     case "transcript-file":
-      return `transcript file for non-eligible recording ${f.recordingId}: ${f.source}`;
+      return `transcript file not accepted for recording ${f.recordingId} (${f.reason}): ${f.source}`;
     case "verbatim":
       return `verbatim run of ${f.runLength} tokens in ${f.source}${f.itemId ? ` item ${f.itemId}` : ""}${f.field ? ` field ${f.field}` : ""}`;
     case "unreadable":

@@ -11,11 +11,12 @@ import { decodeJsEscapes, htmlProse } from "./extract.ts";
 import { collectShiurItems, fieldOf } from "./items.ts";
 import { findKeysInText, findSubstrings, isForbiddenKey } from "./rules.ts";
 import type { VerbatimMatcher } from "./verbatim.ts";
+import { NO_TRANSCRIPTS, checkTranscriptFile, type TranscriptEligibility, type TranscriptRejection } from "./eligible.ts";
 
 export type Finding =
   | { kind: "key"; source: string; key: string; field?: string; count: number }
   | { kind: "substring"; source: string; substring: string; count: number }
-  | { kind: "transcript-file"; source: string; recordingId: string }
+  | { kind: "transcript-file"; source: string; recordingId: string; reason: TranscriptRejection | "unreadable" }
   | { kind: "verbatim"; source: string; itemId?: string; shiurId?: string; field?: string; runLength: number }
   | { kind: "unreadable"; source: string; reason: string };
 
@@ -56,8 +57,8 @@ export interface ScannerOptions {
   matcher?: VerbatimMatcher | null;
   /** Item ids a person accepted (verbatim-allow.json + publish-policy allowVerbatim). */
   allow?: ReadonlySet<string>;
-  /** Recording ids whose `/transcript/<id>.json` may ship (eligibility + EMUNAS_TRANSCRIPT_VIEW=on). */
-  eligibleTranscripts?: ReadonlySet<string>;
+  /** Which `/transcript/<id>.json` files may ship (eligible.ts; default: none). */
+  transcripts?: TranscriptEligibility;
   /** Paths in findings are shown relative to this directory. */
   baseDir?: string;
 }
@@ -98,13 +99,13 @@ export class LeakScanner {
   };
   private readonly matcher: VerbatimMatcher | null;
   private readonly allow: ReadonlySet<string>;
-  private readonly eligible: ReadonlySet<string>;
+  private readonly transcripts: TranscriptEligibility;
   private readonly baseDir: string;
 
   constructor(opts: ScannerOptions = {}) {
     this.matcher = opts.matcher ?? null;
     this.allow = opts.allow ?? new Set();
-    this.eligible = opts.eligibleTranscripts ?? new Set();
+    this.transcripts = opts.transcripts ?? NO_TRANSCRIPTS;
     this.baseDir = opts.baseDir ?? process.cwd();
   }
 
@@ -268,11 +269,16 @@ export class LeakScanner {
     const source = relative(this.baseDir, file).split(sep).join("/") || basename(file);
     const tid = transcriptFileId(file);
     if (tid !== null) {
-      if (this.eligible.has(tid)) {
-        this.counts.transcriptFilesAllowed++;
-        return;
+      // Accepted only for an eligible id with the gate's exact public shape and identity version
+      // (eligible.ts); never scanned as ordinary text, since it is the approved transcript itself.
+      let reason: TranscriptRejection | "unreadable" | null;
+      try {
+        reason = checkTranscriptFile(tid, readFileSync(file, "utf8"), this.transcripts);
+      } catch {
+        reason = "unreadable";
       }
-      this.add({ kind: "transcript-file", source, recordingId: tid });
+      if (reason === null) this.counts.transcriptFilesAllowed++;
+      else this.add({ kind: "transcript-file", source, recordingId: tid, reason });
       return;
     }
     const ext = extname(file).toLowerCase();
