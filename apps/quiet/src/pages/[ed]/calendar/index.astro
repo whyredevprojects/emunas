@@ -1,0 +1,77 @@
+---
+/**
+ * The calendar's own address, `/{ed}/calendar/` (W4.9): the three ways into it (concept-quiet §5.5,
+ * §5.6), by parsha, by zman and by year, each with its one-line description. Before this page the
+ * address answered 404 although `@emunas/links` parses it. Catalog-derived, so no coverage line.
+ */
+import type { GetStaticPaths } from "astro";
+import "../../../components/calendar/calendar.css";
+import { formatQuiet } from "@emunas/links";
+import Base from "../../../layouts/Base.astro";
+import { loadCalendarData } from "../../../components/calendar/data.ts";
+import { yearIndex } from "../../../components/calendar/model.ts";
+import { useCalendarT, type CalendarKey } from "../../../components/calendar/strings.ts";
+import { EDS, type Ed } from "../../../lib/edition.ts";
+
+export const getStaticPaths = (() => (loadCalendarData() ? EDS.map((ed) => ({ params: { ed } })) : [])) satisfies GetStaticPaths;
+
+const ed = Astro.params.ed as Ed;
+const data = loadCalendarData();
+if (!data) throw new Error("calendar: no .corpus/");
+const t = useCalendarT(ed);
+const years = yearIndex(data, ed);
+const title = t("cal.label");
+const views: { id: string; label: CalendarKey; href: string; intro: string }[] = [
+  {
+    id: "parsha",
+    label: "cal.byParsha",
+    href: formatQuiet({ kind: "index", ed, index: "calendar-parsha" }),
+    intro: t("cal.parsha.intro"),
+  },
+  {
+    id: "zman",
+    label: "cal.byZman",
+    href: formatQuiet({ kind: "index", ed, index: "calendar-zman" }),
+    intro: t("cal.zman.intro"),
+  },
+  {
+    id: "years",
+    label: "cal.byYear",
+    href: formatQuiet({ kind: "index", ed, index: "years" }),
+    intro: t("years.intro", { known: years.known, total: years.total }),
+  },
+];
+---
+<Base ed={ed} title={title} crumbs={[{ label: title }]}>
+  <h1>{title}</h1>
+  <ul role="list" class="cal-ways" aria-label={t("cal.views")}>
+    {views.map((v) => (
+      <li data-view={v.id}>
+        <h2><a href={v.href}>{t(v.label)}</a></h2>
+        <p class="cal-intro">{v.intro}</p>
+      </li>
+    ))}
+  </ul>
+</Base>
+
+<style is:global>
+  /* Global (prefixed) like the catalog table, so the page heading carries no scoping attribute. */
+  .cal-ways {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .cal-ways > li {
+    padding-block: var(--space-s);
+    border-block-end: var(--rule-hairline) solid var(--color-rule);
+  }
+
+  .cal-ways > li > * + * {
+    margin-block-start: var(--space-3xs);
+  }
+
+  .cal-ways > li > h2 {
+    font-size: var(--step-1);
+  }
+</style>
