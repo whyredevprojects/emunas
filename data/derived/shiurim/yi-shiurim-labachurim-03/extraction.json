@@ -1,0 +1,558 @@
+{
+  "shiurId": "yi-shiurim-labachurim-03",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains Yitzchak's digging of wells as the avodah of toiling in Torah and tefillah until one reaches the 'living waters', and warns that the Plishtim who stopped up the wells stand for letzanus, the mockery that cools a person's fervor in davening.",
+      "yi": "דער משגיח ערקלערט אז יצחק אבינו'ס גראבן בארות איז די עבודה פון הארעווען אין תורה און תפילה ביז מ'קומט צו די מים חיים, און ער ווארנט אז די פלשתים וואס האבן פארשטאפט די בארות זענען די ליצנות, וואס קילט אפ דעם חשק צו דאווענען מיט התלהבות."
+    },
+    "abstract": {
+      "en": "The Rav opens with the avodah of each of the Avos and turns to Yitzchak's digging of wells. Since Hashem created everything, holiness lies in every thing; great tzaddikim could serve Hashem with all of it, while ordinary people have the mitzvos. Yitzchak's wells were deeds with meaning, and a Jew must likewise dig in the Gemara until the Torah reveals wondrous things. The Plishtim who stopped up the wells were leitzim who dismiss everything as 'just wells', and their mockery cools the desire to daven with feeling. Through the Yaaros Devash's letter, the mockery of the Chofetz Chaim and of Dovid Hamelech, the Rav shows that tefillah is the portion of a person's toil. He weighs dveikus against knowing the whole Torah, explains moments of closeness as preparation for learning, brings the levels of davening from Nishmas and the Beis Aharon, and asks the bochurim to daven with liveliness, ending with strengthening in Torah in Kislev.",
+      "yi": "דער משגיח עפנט מיט דער עבודה פון יעדן פון די אבות הקדושים, און גייט אריבער צו יצחק אבינו'ס גראבן בארות. וויבאלד דער רבונו של עולם האט באשאפן אלעס, ליגט קדושה אין יעדע זאך; גרויסע צדיקים האבן געקענט דינען דעם אייבערשטן מיט אלעס, און פשוט'ע מענטשן האבן די תרי\"ג מצוות. יצחק'ס בארות זענען געווען פעולות, און א איד דארף אזוי אויך גראבן אין דער גמרא ביז די תורה איז מגלה מורא'דיגע זאכן. די פלשתים וואס האבן פארשטאפט די בארות זענען געווען לצים, וואס זאגן אויף אלעס \"סתם בארות\", און זייער ליצנות קילט אפ דעם חשק צו דאווענען מיט השתפכות הלב. דורך דעם יערות דבש'ס בריוו, דורך דעם וואס מ'האט נישט געשאצט דעם חפץ חיים און מ'האט געלאכט פון דוד המלך, ווייזט דער משגיח אז תפילה איז דער חלק פון א מענטש'ס גאנצן עמל. ער שטעלט אוועק דבקות קעגן ידיעת התורה, ערקלערט אז מאמענטן פון דבקות זענען א הכנה צו לערנען, ברענגט די מדריגות פון דאווענען פון נשמת און פונעם בית אהרן, און בעט די בחורים צו דאווענען מיט לעבעדיגקייט. צום סוף רעדט ער וועגן זיך מחזק זיין אין תורה אין חודש כסלו."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Each of the Avos had his own avodah, and Yitzchak's was digging wells again and again.",
+          "yi": "יעדער פון די אבות הקדושים האט געהאט זיין אייגענע עבודה, און יצחק'ס עבודה איז געווען צו גראבן בארות נאכאמאל און נאכאמאל."
+        },
+        "evidence": { "segs": [3, 4, 10, 11, 28, 29], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "A Jew's avodah is to dig and dig in Torah with a Gemara until he reaches the 'living waters' and the Torah reveals wondrous things; if nothing is revealed, he must dig longer and deeper.",
+          "yi": "די עבודה פון א איד איז צו גראבן און גראבן אין תורה מיט א גמרא ביז ער קומט צו די מים חיים און די תורה איז אים מגלה מורא'דיגע זאכן; ווערט אים גארנישט נתגלה, דארף ער גראבן לענגער און טיפער."
+        },
+        "evidence": { "segs": [114, 118, 119, 126, 129, 130], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The Plishtim who stopped up the wells were leitzim, and their mockery of learning and of long davening cools the desire for heartfelt tefillah.",
+          "yi": "די פלשתים וואס האבן פארשטאפט די בארות זענען געווען לצים, און זייער ליצנות פון לערנען און פון לאנג דאווענען קילט אפ דעם חשק צו א תפילה מיט השתפכות הלב."
+        },
+        "evidence": { "segs": [139, 141, 150, 156, 157], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The Yaaros Devash wrote that, beyond all his learning and work for the public, his portion from all his toil is the moment he stands before Hashem in tefillah, even when people laugh at him.",
+          "yi": "דער יערות דבש האט געשריבן אז חוץ זיין לערנען און זיין ארבעט פארן ציבור, איז זיין חלק פון זיין גאנצן עמל דער מאמענט ווען ער שטייט פארן רבונו של עולם אין תפילה, אפילו ווען מ'לאכט פון אים."
+        },
+        "evidence": { "segs": [281, 315, 317, 320, 328, 329], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Moments of dveikus in tefillah, even a few times a year, do not take away from knowing the Torah; they are a preparation that makes a person's learning a different kind of Torah.",
+          "yi": "מאמענטן פון דבקות ביי תפילה, אפילו נאר עטליכע מאל א יאר, נעמען נישט אוועק פון ידיעת התורה; זיי זענען א הכנה וואס מאכט פון א מענטש'ס לערנען אן אנדערע תורה."
+        },
+        "evidence": { "segs": [431, 437, 439, 452, 463, 473], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Ordinary people must daven with liveliness and excitement, at a comfortable pitch rather than shouting themselves hoarse.",
+          "yi": "פשוט'ע מענטשן דארפן דאווענען מיט לעבעדיגקייט און התפעלות, אויף א באקוועמען קול, נישט שרייען ביז מ'ווערט הייזעריג."
+        },
+        "evidence": { "segs": [551, 562, 566, 568, 572, 611], "confidence": 0.85 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-03-hisorerus-beavodas-hashem",
+      "startSeg": 0,
+      "endSeg": 44,
+      "title": { "en": "The avodah of each of the Avos", "yi": "די עבודה פון יעדן פון די אבות" },
+      "summary": {
+        "en": "The Rav notes that each of the Avos had his own avodah: Avraham built altars, Yitzchak dug wells, Yaakov carved rods at the watering troughs. He announces that he will speak of Yitzchak's digging, and explains that because Hashem created everything, holiness lies in every part of creation.",
+        "yi": "דער משגיח מערקט אן אז יעדער פון די אבות האט געהאט זיין עבודה: אברהם האט געבויט מזבחות, יצחק האט געגראבן בארות, יעקב האט געשניצט שטעקלעך ביי די שקתות המים. ער זאגט אז ער וועט רעדן וועגן יצחק'ס גראבן, און ערקלערט אז וויבאלד דער רבונו של עולם האט באשאפן אלעס, ליגט קדושה אין יעדע זאך."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-03-hisorerus-beavodas-hashem",
+      "startSeg": 45,
+      "endSeg": 136,
+      "title": { "en": "Digging in Torah until the living waters", "yi": "גראבן אין תורה ביז די מים חיים" },
+      "summary": {
+        "en": "The Rav brings the Ba'al Shem Tov's cup and table and a story of the Kotzker and the Chasam Sofer to show how great tzaddikim served Hashem with every thing, while we have the mitzvos. He explains that Yitzchak's wells were meaningful deeds, and that a Jew must dig in the Gemara until the Torah reveals wondrous things.",
+        "yi": "דער משגיח ברענגט דעם בעל שם טוב'ס בעכער און טיש, און מעשיות פונעם קאצקער און פונעם חתם סופר, צו ווייזן ווי גרויסע צדיקים האבן געדינט דעם אייבערשטן מיט יעדע זאך, בשעת מיר האבן די מצוות. ער ערקלערט אז יצחק'ס בארות זענען געווען פעולות, און א איד דארף גראבן אין דער גמרא ביז די תורה איז מגלה מורא'דיגע זאכן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-03-hisorerus-beavodas-hashem",
+      "startSeg": 137,
+      "endSeg": 204,
+      "title": { "en": "The Plishtim: the danger of letzanus", "yi": "די פלשתים: די סכנה פון ליצנות" },
+      "summary": {
+        "en": "The Rav explains that the Plishtim were leitzim whose jokes cool a bochur's learning and davening, citing the Midrash and the Kol Simchah: they called the wells 'just wells' and filled them with earth, the element of laziness. Yitzchak dug them again, which teaches toil in Torah and in tefillah.",
+        "yi": "דער משגיח ערקלערט אז די פלשתים זענען געווען לצים, וואס זייערע וויצן קילן אפ א בחור'ס לערנען און דאווענען, און ער ברענגט דעם מדרש און דעם קול שמחה: זיי האבן געזאגט \"סתם בארות\" און זיי אנגעפילט מיט עפר, דער יסוד פון עצלות. יצחק האט זיי נאכאמאל אויסגעגראבן, און דאס לערנט יגיעה אין תורה און אין תפילה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [1],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-03-hisorerus-beavodas-hashem",
+      "startSeg": 205,
+      "endSeg": 289,
+      "title": { "en": "The Yaaros Devash's letter on long davening", "yi": "דעם יערות דבש'ס בריוו וועגן לאנג דאווענען" },
+      "summary": {
+        "en": "The Rav reads a letter in the Yaaros Devash: the Rav of Königsberg asked Rabbi Yonasan Eybeschutz about his long Shemoneh Esrei on Rosh Hashanah, and he answered that on weekdays his learning and public duties keep him from long davening, yet he is still in Shemoneh Esrei when the tzibur says Kedushah, and people laugh at him.",
+        "yi": "דער משגיח לערנט א בריוו אינעם יערות דבש: דער קעניגסבערגער רב האט געפרעגט רבי יהונתן אייבשיץ וועגן זיין לאנגע שמונה עשרה ראש השנה, און ער האט געענטפערט אז אין די וואכן לאזט אים זיין לערנען און די צרכי ציבור נישט דאווענען לאנג, פונדעסטוועגן האלט ער נאך אין שמונה עשרה ווען דער ציבור זאגט קדושה, און מ'לאכט פון אים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0, 1],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-03-hisorerus-beavodas-hashem",
+      "startSeg": 290,
+      "endSeg": 363,
+      "title": { "en": "Tzaddikim mocked in their time; tefillah as one's portion", "yi": "צדיקים וואס מ'האט געלאכט פון זיי; תפילה איז דער חלק" },
+      "summary": {
+        "en": "The Rav shows that tzaddikim are mocked in their lifetime, with a story of young talmidim in Radin who did not go to hear the Chofetz Chaim. He returns to the Yaaros Devash's words that tefillah is his portion from all his toil, brings the same from the Brisker Rav, and shows from Tehillim that even Dovid Hamelech was mocked and kept davening.",
+        "yi": "דער משגיח ווייזט אז מ'לאכט פון צדיקים בשעת זיי לעבן, מיט א מעשה פון יונגע תלמידים אין ראדין וואס זענען נישט געגאנגען הערן דעם חפץ חיים. ער קומט צוריק צום יערות דבש'ס ווערטער אז תפילה איז זיין חלק פון זיין גאנצן עמל, ברענגט דאס זעלבע פונעם בריסקער רב, און ווייזט פון תהלים אז מ'האט אפילו געלאכט פון דוד המלך און ער האט ווייטער געדאווענט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [1],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-03-hisorerus-beavodas-hashem",
+      "startSeg": 364,
+      "endSeg": 440,
+      "title": { "en": "Dveikus and knowing the whole Torah", "yi": "דבקות און ידיעת התורה" },
+      "summary": {
+        "en": "The Rav calls dveikus the greatest mitzvah and brings the Shulchan Aruch HaRav that one may interrupt learning for it, except that knowing the whole Torah comes first. He explains the dispute over what that knowledge means, through the Rambam and the Beis Yosef, and concludes that ordinary people may still pause for moments of dveikus in tefillah, Nishmas or zemiros.",
+        "yi": "דער משגיח רופט דבקות די גרעסטע מצוה און ברענגט פונעם שולחן ערוך הרב אז מ'מעג מבטל זיין תורה דערפאר, אחוץ ידיעת התורה וואס איז פריער. ער ערקלערט די מחלוקת וואס ידיעת התורה מיינט, דורך דעם רמב\"ם און דעם בית יוסף, און ער שליסט אז פשוט'ע מענטשן מעגן זיך פארט אפשטעלן פאר מאמענטן פון דבקות ביי תפילה, ביי נשמת אדער ביי זמירות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-03-hisorerus-beavodas-hashem",
+      "startSeg": 441,
+      "endSeg": 489,
+      "title": { "en": "Tefillah as a preparation for Torah", "yi": "תפילה איז א הכנה צו תורה" },
+      "summary": {
+        "en": "The Rav tells of the Gerrer Rebbe, the Imrei Emes, learning Gemara with dveikus at the Knessia Gedolah, and explains that a person who has had a moment of closeness in tefillah learns afterward with joy and a different approach. He cites the Gemara that tefillah stands at the height of the world yet people treat it lightly.",
+        "yi": "דער משגיח דערציילט ווי דער גערער רבי, דער אמרי אמת, האט געלערנט גמרא מיט דבקות ביי דער כנסיה גדולה, און ערקלערט אז ווער עס האט געהאט א מאמענט פון קירבה ביי דאווענען, לערנט נאכדעם מיט שמחה און מיט אן אנדער צוגאנג. ער ברענגט די גמרא אז תפילה שטייט אין די העכסטע פון דער וועלט, און פונדעסטוועגן איז מען זיך מזלזל דערמיט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0, 1],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-03-hisorerus-beavodas-hashem",
+      "startSeg": 490,
+      "endSeg": 550,
+      "title": { "en": "Levels of davening: Nishmas and the Beis Aharon", "yi": "מדריגות אין דאווענען: נשמת און דער בית אהרן" },
+      "summary": {
+        "en": "The Rav brings the Vizhnitzer's reading of 'bepi yesharim' in Nishmas: the higher a person stands, the less physical motion his tefillah needs, and great tzaddikim could daven quickly with no outward sign. From the Beis Aharon he explains that tzaddikei emes are like seraphim, while others are like ofanim and chayos who rise only with a great noise.",
+        "yi": "דער משגיח ברענגט דעם וויזשניצער'ס פשט אין \"בפי ישרים\" פון נשמת: וואס העכער א מענטש שטייט, אלץ ווייניגער גשמיות'דיגע תנועות דארף זיין תפילה, און גרויסע צדיקים האבן געקענט דאווענען שנעל אן א סימן פון אויסן. פונעם בית אהרן ערקלערט ער אז צדיקי אמת זענען ווי שרפים, און אנדערע זענען ווי אופנים און חיות הקודש, וואס הייבן זיך אויף נאר מיט א רעש גדול."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-03-hisorerus-beavodas-hashem",
+      "startSeg": 551,
+      "endSeg": 638,
+      "title": { "en": "Davening with liveliness; Kislev and Torah", "yi": "דאווענען מיט לעבעדיגקייט; כסלו און תורה" },
+      "summary": {
+        "en": "The Rav asks the bochurim to daven with warmth and excitement at a comfortable pitch, with a pleasant nusach, and tells of a bochur who answered a complaint about his loud davening by pointing to the crowd shouting at a baseball game. He closes by urging strengthening in Torah in Kislev, since the Chashmonaim had mesiras nefesh for Torah.",
+        "yi": "דער משגיח בעט די בחורים צו דאווענען מיט ווארעמקייט און התפעלות אויף א באקוועמען קול, מיט א שיינעם נוסח, און דערציילט פון א בחור וואס האט געענטפערט אויף א טענה פארוואס ער דאווענט הויך, אז ביי א בעיסבאל שפיל שרייט דער גאנצער עולם. צום סוף רופט ער זיך מחזק זיין אין תורה אין חודש כסלו, ווייל די חשמונאים האבן געהאט מסירות נפש פאר תורה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "ויחפרה שמבדה יצחק ויעוריו יצחק באמים חיים",
+      "work": "Bereishis",
+      "ref": "Bereishis 26:19",
+      "sefariaRef": "Genesis 26:19",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [14], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "וכה הבורות אשר כפרה אבדו אבי מלך במי אברהם אביו, סתמים פלשתים",
+      "work": "Bereishis",
+      "ref": "Bereishis 26:15",
+      "sefariaRef": "Genesis 26:15",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [136, 137, 164, 166, 197], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "עס שטייט אין קול שמחה פון רבי רבנים",
+      "work": "Kol Simchah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [135, 163, 179], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "עס שטעט אין מדרש די פלשתים זענען געוועזן לעצטן",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [159, 162], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די קריעה פון ראש השנה",
+      "work": "Bereishis",
+      "ref": "Bereishis 21:25",
+      "sefariaRef": "Genesis 21:25",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [170, 172, 173], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "וישוב יצחק ויחפר את כולה בארץ",
+      "work": "Bereishis",
+      "ref": "Bereishis 26:18",
+      "sefariaRef": "Genesis 26:18",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [204], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "יראת דבש ... אין די אקדמי א בריוו",
+      "work": "Yaaros Devash",
+      "ref": "Yaaros Devash, introduction (letter)",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [223, 226, 227, 264], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער ג'מלך זאגט אז די חסידים הראשונים פלעגן א גאנצע שטונדע פארן דאווענען",
+      "work": "Mishnah Berachos",
+      "ref": "Berachos 30b",
+      "sefariaRef": "Berakhot 30b",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [274, 275], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ישי, ישייך ביושב שאהל ... ואני תפילה",
+      "work": "Tehillim",
+      "ref": "Tehillim 69:13-14",
+      "sefariaRef": "Psalms 69:13-14",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [352, 353, 354, 356], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "עזר הקודש שטעט",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [365], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "אין רבי שלחן ערוך שטעט",
+      "work": "Shulchan Aruch HaRav",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [366, 367, 372, 374], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער רמב״ם ... ער שרייבט אין די אגדות עומר",
+      "work": "Mishneh Torah",
+      "ref": "Mishneh Torah, introduction",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [382, 386, 387], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער בית יוסף געשריבן דעם בית יוסף",
+      "work": "Beis Yosef",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [392, 393, 400, 407], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "קרום זלות בפני אדם ... דבר העומד ברמה של עולם",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 6b",
+      "sefariaRef": "Berakhot 6b",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [478, 479], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "קליין שטיקל בית ארון ... סדיקי אמת יכולן לתפלאה",
+      "work": "Beis Aharon",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [490, 491, 492, 527, 528], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "בפי ישורים תסכמים ... לשון חסידים תקדש ... קרוב קדושים תסלל",
+      "work": "Nishmas (Shabbos morning tefillah)",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [503, 512, 514, 517], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "והאופנים בחיות הקודש ... רעש גדול ... מתנשם וליומות התרוחים",
+      "work": "Birchos Krias Shema (Kedushah of Yotzer)",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [533, 537, 539, 549], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אופן אחת בארץ, אזוי ווי ס'שטעט אין פסוק",
+      "work": "Yechezkel",
+      "ref": "Yechezkel 1:15",
+      "sefariaRef": "Ezekiel 1:15",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [535, 536], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די מנורה איז מרמז אויף תורה ... אזוי ווי שטעט אין מדרש",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [635, 636], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Yitzchak's wells were not plain wells but deeds through which he worked toward the 'living waters', which is Hashem Himself; learning the Torah's account of the wells teaches that one must toil and dig to reach Him.",
+        "yi": "יצחק'ס בארות זענען נישט געווען סתם בארות, נאר פעולות מיט וואס ער האט זיך געמוטשעט ביז ער איז צוגעקומען צו די מים חיים, וואס איז דער רבונו של עולם אליין; אז מ'לערנט אין דער תורה וועגן די בארות, לערנט מען אז מ'דארף זיך מוטשען און גראבן כדי צו קומען צו אים."
+      },
+      "evidence": { "segs": [98, 102, 103, 191, 192, 193], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Following the Kol Simchah, the Plishtim's stopping of the wells was their declaration that the wells were 'just wells', nothing to learn from; that dismissive mockery is itself what blocks the source.",
+        "yi": "לויטן קול שמחה איז די פלשתים'ס פארשטאפן די בארות געווען זייער זאגן אז ס'איז \"סתם בארות\" און מ'דארף זיך גארנישט אפלערנען דערפון; די ליצנות אליין איז דאס וואס פארשטאפט דעם מקור."
+      },
+      "evidence": { "segs": [180, 181, 195, 196], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The earth the Plishtim filled the wells with is the element of afar, the root of laziness, so letzanus leads to laziness, and Yitzchak's re-digging stands for renewing toil in Torah and tefillah.",
+        "yi": "דער עפר מיט וואס די פלשתים האבן אנגעפילט די בארות איז דער יסוד העפר, דער שורש פון עצלות, אזוי אז ליצנות פירט צו עצלות, און יצחק'ס נאכאמאל גראבן מיינט מחדש זיין די יגיעה אין תורה און אין תפילה."
+      },
+      "evidence": { "segs": [197, 199, 201, 204, 205, 207], "confidence": 0.65 }
+    },
+    {
+      "text": {
+        "en": "The Vizhnitzer reads the phrases of Nishmas as levels: the higher a person stands, the less physical motion his tefillah needs, from the yesharim who sing and shout, to the tzaddikim with their lips, the chassidim with their tongue, and the kedoshim whose davening is entirely inward.",
+        "yi": "דער וויזשניצער לערנט די ווערטער פון נשמת ווי מדריגות: וואס העכער א מענטש שטייט, אלץ ווייניגער גשמיות דארף זיין תפילה; פון די ישרים וואס זינגען און שרייען, ביז די צדיקים מיט די ליפן, די חסידים מיט דער צונג, און די קדושים וואס זייער דאווענען איז אינגאנצן אינעווייניג."
+      },
+      "evidence": { "segs": [499, 502, 508, 512, 516, 517], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Moments of dveikus in tefillah serve as a preparation for Torah: after such a moment a person's learning is different, like one to whom the king has spoken.",
+        "yi": "מאמענטן פון דבקות ביי דאווענען זענען א הכנה צו תורה: נאך אזא מאמענט איז א מענטש'ס לערנען אנדערש, ווי איינער מיט וועמען דער מלך האט גערעדט."
+      },
+      "evidence": { "segs": [452, 463, 465, 470, 473, 474], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "A person who would refuse to daven or do mitzvos because he does not yet know the whole Torah shows that his learning is not lishmah, which is why one must interrupt Torah for mitzvos.",
+        "yi": "ווער עס וואלט נישט געוואלט דאווענען אדער טאן מצוות ווייל ער קען נאך נישט די גאנצע תורה, ווייזט אז זיין לערנען איז נישט לשמה, און דערפאר מוז מען מבטל זיין תורה פאר מצוות."
+      },
+      "evidence": { "segs": [417, 419, 420, 423, 424], "confidence": 0.65 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Ba'al Shem Tov's table and Hashem's sky", "yi": "דעם בעל שם טוב'ס טיש און דעם רבונו של עולם'ס הימל" },
+      "retelling": {
+        "en": "A chassid of Kotzk traveled to a town where he saw the Ba'al Shem Tov's old table. When he returned, the Kotzker asked what he had seen, and he told him about the table. The Kotzker brought him to the window and told him to look at the sky, which is Hashem's sky and has been for thousands of years.",
+        "yi": "א קאצקער חסיד איז געפארן אין א שטאט וואו ער האט געזען דעם בעל שם טוב'ס אלטן טיש. ווען ער איז צוריקגעקומען האט אים דער קאצקער געפרעגט וואס ער האט געזען, און ער האט דערציילט פונעם טיש. האט אים דער קאצקער צוגעפירט צום פענסטער און געהייסן קוקן אויפן הימל, וואס איז דעם רבונו של עולם'ס הימל שוין טויזנטער יארן."
+      },
+      "people": ["the Kotzker Rebbe", "the Ba'al Shem Tov"],
+      "evidence": { "segs": [60, 65, 67, 69, 70, 71], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The Chasam Sofer and the glass on the table", "yi": "דער חתם סופר און דאס גלעזל אויפן טיש" },
+      "retelling": {
+        "en": "While the Chasam Sofer was learning, a householder came about an important matter and he spoke with him. One of his sons moved away so as not to hear. The Chasam Sofer asked why he had not listened, and the son answered that it was only mundane talk. The Chasam Sofer replied that he had never spoken idle words, and that even when he picks up a glass from the table and puts it down, it is with a halachah.",
+        "yi": "בשעת דער חתם סופר האט געלערנט איז געקומען א בעל הבית וועגן א וויכטיגע זאך, און ער האט זיך מיט אים דורכגערעדט. איינער פון זיינע זין האט זיך אוועקגעזעצט ווייטער כדי נישט צו הערן. האט דער חתם סופר אים געפרעגט פארוואס ער האט זיך נישט צוגעהערט, און דער זון האט געענטפערט אז ס'איז געווען סתם גשמיות'דיגע רייד. האט דער חתם סופר געזאגט אז ער האט קיינמאל נישט גערעדט דברים בטלים, און אפילו ווען ער נעמט א גלעזל פונעם טיש און לייגט עס אוועק, איז דאס מיט א הלכה."
+      },
+      "people": ["the Chasam Sofer"],
+      "evidence": { "segs": [80, 82, 83, 85, 87, 91], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "Talmidim in Radin who did not go to the Chofetz Chaim", "yi": "תלמידים אין ראדין וואס זענען נישט געגאנגען צום חפץ חיים" },
+      "retelling": {
+        "en": "A rebbe of the Rav's in yeshiva told that as a young talmid in Radin he and his brilliant friends did not go to hear the Chofetz Chaim's talks, thinking they were meant for simple tailors and shoemakers. Only later, when he went out into the world, did he understand who the Chofetz Chaim was; while learning there he had thought of him as just a pious elderly Jew.",
+        "yi": "א רבי פונעם משגיח אין ישיבה האט דערציילט אז ווען ער איז געווען א יונגער תלמיד אין ראדין, זענען ער און זיינע חברים די עילוים נישט געגאנגען הערן דעם חפץ חיים'ס שמועסן, ווייל זיי האבן געמיינט אז דאס איז פאר פשוט'ע שניידערס און שוסטערס. ערשט שפעטער, ווען ער איז ארויס אין דער וועלט, האט ער פארשטאנען ווער דער חפץ חיים איז; בשעת ער איז דארט געווען האט ער געמיינט אז ער איז סתם א פרומער אלטער איד."
+      },
+      "people": ["the Chofetz Chaim"],
+      "evidence": { "segs": [293, 295, 297, 299, 305, 306], "confidence": 0.7 }
+    },
+    {
+      "title": { "en": "The Imrei Emes learning with dveikus", "yi": "דער אמרי אמת לערנט מיט דבקות" },
+      "retelling": {
+        "en": "A rebbe who attended the Knessia Gedolah of Agudas Yisrael saw the Gerrer Rebbe, the Imrei Emes, sit in front of his house learning Gemara for hours with great dveikus. He was deeply moved, and said that he had seen many great tzaddikim with dveikus in tefillah, but dveikus in learning he had seen only in the Gerrer Rebbe.",
+        "yi": "א רבי וואס איז געווען ביי דער כנסיה גדולה פון אגודת ישראל האט געזען דעם גערער רבי'ן, דעם אמרי אמת, זיצן פאר זיין הויז און לערנען גמרא שעות לאנג מיט א מורא'דיגער דבקות. ער איז שטארק נתפעל געווארן, און האט געזאגט אז ער האט געזען אסאך גרויסע צדיקים מיט דבקות ביי תפילה, אבער דבקות ביים לערנען האט ער געזען נאר ביים גערער רבי'ן."
+      },
+      "people": ["the Imrei Emes of Ger"],
+      "evidence": { "segs": [443, 444, 445, 446, 447, 449], "confidence": 0.7 }
+    },
+    {
+      "title": { "en": "The bochur and the baseball game", "yi": "דער בחור און די בעיסבאל שפיל" },
+      "retelling": {
+        "en": "Someone complained to a bochur about why he davened so loudly. The bochur answered that the night before he had been at a baseball game, where the whole stadium screamed and got excited when a player hit the ball; if people get excited over that, he asked, why should one not get excited when speaking to the Ribono shel Olam.",
+        "yi": "איינער האט געהאט א טענה צו א בחור פארוואס ער דאווענט אזוי הויך. האט דער בחור געענטפערט אז נעכטן ביינאכט איז ער געווען ביי א בעיסבאל שפיל, וואו דער גאנצער סטאדיאן האט געשריגן און זיך נתפעל געווען ווען א שפילער האט געגעבן א קלאפ דעם באל; אויב מ'ווערט אזוי אויפגערעגט דערפון, פארוואס זאל מען נישט ווערן אויפגערעגט ווען מ'רעדט צום רבונו של עולם."
+      },
+      "people": [],
+      "evidence": { "segs": [579, 580, 583, 587, 591, 592], "confidence": 0.7 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why should the quarrel between Avraham and Avimelech over a single well be read on Rosh Hashanah?",
+        "yi": "פארוואס זאל מען ליינען ראש השנה וועגן דעם קריג פון אברהם מיט אבימלך איבער איין באר?"
+      },
+      "answer": {
+        "en": "Because a well of Avraham was no small thing; the Plishtim dismissed the wells as 'just wells', but they were a great avodah.",
+        "yi": "ווייל א באר פון אברהם איז נישט קיין קלייניגקייט; די פלשתים האבן געזאגט \"סתם בארות\", אבער ס'איז געווען א גרויסע עבודה."
+      },
+      "questionSegs": [170, 172, 174, 175],
+      "answerSegs": [171, 180, 181],
+      "confidence": 0.65
+    },
+    {
+      "question": {
+        "en": "If one may interrupt learning for dveikus, and knowing the whole Torah comes first, may someone who does not yet know the whole Torah skip davening and mitzvos?",
+        "yi": "אויב ידיעת התורה איז פריער, מעג איינער וואס קען נאך נישט די גאנצע תורה זיך אפזאגן פון דאווענען און מצוות?"
+      },
+      "answer": {
+        "en": "No; one must interrupt Torah for mitzvos, and a person who refused would show that his learning is not lishmah; so at certain moments one may pause even for dveikus.",
+        "yi": "ניין; מ'מוז מבטל זיין תורה פאר מצוות, און ווער עס וואלט זיך אפגעזאגט ווייזט אז זיין לערנען איז נישט לשמה; דערפאר מעג מען זיך אין געוויסע מאמענטן אפשטעלן אפילו פאר דבקות."
+      },
+      "questionSegs": [415, 419, 420],
+      "answerSegs": [417, 423, 424, 429],
+      "confidence": 0.65
+    },
+    {
+      "question": {
+        "en": "Why may one shout in davening when people complain about it?",
+        "yi": "פארוואס מעג מען שרייען ביים דאווענען ווען מענטשן האבן טענות דערויף?"
+      },
+      "answer": {
+        "en": "Just as a person shouts when he is excited or angry, or speaks loudly when he learns well, one who means something by his davening becomes excited about it; but it should be at a comfortable pitch, with a pleasant nusach.",
+        "yi": "פונקט ווי א מענטש שרייט ווען ער איז אויפגערעגט אדער אין כעס, אדער רעדט הויך ווען ער לערנט גוט, אזוי ווערט דער וואס מיינט עפעס מיטן דאווענען אויפגערעגט דערפון; נאר עס דארף זיין אויף א באקוועמען קול, מיט א שיינעם נוסח."
+      },
+      "questionSegs": [580, 603],
+      "answerSegs": [604, 607, 611, 612, 618],
+      "confidence": 0.7
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav urges the bochurim to toil in Torah, digging deeper if nothing is yet revealed to them.",
+        "yi": "דער משגיח מוטיגט די בחורים צו הארעווען אין תורה, און גראבן טיפער אויב עס ווערט זיי נאך גארנישט נתגלה."
+      },
+      "evidence": { "segs": [123, 124, 125, 130], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one must daven with liveliness and excitement, not shouting at the highest pitch but at a comfortable one, with nusach and a pleasant niggun.",
+        "yi": "דער משגיח זאגט אז מ'דארף דאווענען מיט לעבעדיגקייט און התפעלות, נישט שרייען אויפן העכסטן טאן נאר אויף א באקוועמען, מיט נוסח און מיט א שיינעם ניגון."
+      },
+      "evidence": { "segs": [562, 566, 568, 572, 607, 609], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The Rav calls for using the month of Kislev to strengthen oneself in Torah with new strength.",
+        "yi": "דער משגיח רופט צו נוצן דעם חודש כסלו זיך מחזק צו זיין אין תורה מיט א נייעם כח."
+      },
+      "evidence": { "segs": [622, 624, 637], "confidence": 0.7 }
+    }
+  ],
+  "candidateTopics": [
+    "Yitzchak digging wells",
+    "toil in Torah",
+    "letzanus",
+    "the Plishtim and the wells",
+    "long davening",
+    "dveikus and knowledge of Torah",
+    "levels of tefillah",
+    "davening with excitement",
+    "Chanukah and Torah"
+  ],
+  "concepts": [
+    { "he": "בארות", "heardAs": ["בארעס", "בעורות", "באורות", "בערית"] },
+    { "he": "מים חיים", "heardAs": ["מים חיים", "מיום חיים", "באמים חיים"] },
+    { "he": "ליצנות", "heardAs": ["ליצענות", "לצנות", "מצנות"] },
+    { "he": "לצים", "heardAs": ["לעצים", "לעצטן", "ליצענעס"] },
+    { "he": "עצלות", "heardAs": ["אצלות"] },
+    { "he": "עפר", "heardAs": ["אפער"] },
+    { "he": "השתפכות הלב", "heardAs": ["השתפכות הלב", "השתפכות הלוי"] },
+    { "he": "יגיעת התפילה", "heardAs": ["יגיעת התפילה"] },
+    { "he": "דבקות", "heardAs": ["דבקות", "דקות", "תפאקות", "דבוק"] },
+    { "he": "ידיעת התורה", "heardAs": ["ידיעת התורה", "ידיעות התורה"] },
+    { "he": "ביטול תורה", "heardAs": ["ביטול תורה", "מבטל זיין תורה"] },
+    { "he": "לשמה", "heardAs": ["מנת לע אתות", "מנת לעמטית"] },
+    { "he": "רעש גדול", "heardAs": ["רעש גדול", "ראש גדול"] },
+    { "he": "אופנים", "heardAs": ["אופנים", "יפנים"] },
+    { "he": "שרפים", "heardAs": ["שראפים", "התרוחים", "התרחה"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבינו של עולם", "רבונו שלעולם", "רבי ירושלים", "רבי נשאללים", "ר' יושל אלעם"] }
+  ],
+  "people": [
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינו"] },
+    { "name": "Yitzchak Avinu", "heardAs": ["יצחק"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יעקב אבינו"] },
+    { "name": "Avimelech", "heardAs": ["אבי מלך"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["בעש''ט"] },
+    { "name": "the Kotzker Rebbe", "heardAs": ["קאצקער", "זאקאצקע"] },
+    { "name": "the Chasam Sofer", "heardAs": ["חתם סופר", "דאך ס'המתי", "וואס המספר"] },
+    { "name": "Rebbe Reb Bunim", "heardAs": ["רבי רבנים", "רבי רבי עננב", "רב רבנים"] },
+    { "name": "Rabbi Yonasan Eybeschutz", "heardAs": ["רבי רבי יונתן", "רבי רבי יענתא", "רבי רבי יענתן"] },
+    { "name": "the Rav of Königsberg", "heardAs": ["קענערסבורג", "קעניגסבורגער רב", "קענערסבורגער רוב"] },
+    { "name": "the Chofetz Chaim", "heardAs": ["חפץ חיים"] },
+    { "name": "the Brisker Rav, Reb Velvel", "heardAs": ["בריסקי רוב", "ר' וואלוועל"] },
+    { "name": "Reb Refael", "heardAs": ["רבי רפאל"] },
+    { "name": "Dovid Hamelech", "heardAs": ["דוד המלך"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "the Beis Yosef", "heardAs": ["בית יוסף"] },
+    { "name": "the Imrei Emes of Ger", "heardAs": ["גור הארעם", "אמרי אמת", "גורי רבי"] },
+    { "name": "the Vizhnitzer Rebbe", "heardAs": ["וויזשנער"] },
+    { "name": "the Chashmonaim", "heardAs": ["חשמונ'עים", "חשמונאים"] }
+  ],
+  "asrNotes": "Yiddish ASR fair to poor; most Hebrew quotations (the Yaaros Devash letter, the Beis Aharon, the Nishmas and Kedushah phrases) are heavily garbled and only partly recoverable. The Gemara about an amora and Rebbi's possessions (segs 52-56), the town the Kotzker chassid visited, the name of the Rav's rebbe in yeshiva, the rebbe who saw the Imrei Emes, and the sefer at seg 365 could not be recovered. Segment 446 is a long run-on line covering about 30 seconds; no long silent or hallucinated stretches."
+}

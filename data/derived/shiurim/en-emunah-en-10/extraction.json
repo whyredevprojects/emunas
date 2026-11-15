@@ -1,0 +1,464 @@
+{
+  "shiurId": "en-emunah-en-10",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that the emunah of Klal Yisrael rests not on the word of one man but on what millions of people saw together at Har Sinai and in the Midbar, a testimony that could never have been fabricated.",
+      "yi": "דער משגיח ערקלערט אז די אמונה פון כלל ישראל שטייט נישט אויף דעם ווארט פון איין מענטש, נאר אויף דעם וואס מיליאנען אידן האבן אליין געזען ביי הר סיני און אין מדבר, א זאך וואס מ'קען קיינמאל נישט אויסטראכטן."
+    },
+    "abstract": {
+      "en": "The Rav opens with emunas tzaddikim, belief in tzaddikim alongside belief in Hashem, and says tzaddikim know everything because everything is in the Torah. He illustrates this with the story of the Ramban and his student Avner, who found his name hinted in a passuk of Haazinu, and with the Chazon Ish, who guided surgeons from his knowledge of Hilchos Treifos. The Torah is the blueprint of the world, and it also foretells the future: the division of Eretz Yisrael, the promise that nobody will covet a man's land when he goes up to Yerushalayim, galus, and the survival of the Jewish people and of the Torah while the empires that oppressed them vanished. After a question on Rashi's first comment, he turns to the catalog's theme. Christianity and Islam each began with one man whom people believed. Jewish emunah rests on millions who stood at Har Sinai and lived through forty years of open miracles, recorded in a Torah that every Jew received and that was copied identically across the world.",
+      "yi": "דער משגיח הייבט אן מיט אמונת צדיקים, אז מ'דארף גלייבן אין צדיקים צוזאמען מיט דער אמונה אין השם יתברך, און ער זאגט אז צדיקים ווייסן אלעס ווייל אלעס איז אין דער תורה. ער ברענגט די מעשה פונעם רמב\"ן מיט זיין תלמיד אבנר, וואס האט געפונען זיין נאמען רמז'ט אין א פסוק אין האזינו, און פונעם חזון איש, וואס האט געוויזן די דאקטוירים ווי אזוי צו מאכן אן אפעראציע פון הלכות טריפות. די תורה איז דער פלאן פון דער וועלט, און זי זאגט אויך פאר וואס וועט געשען: די חלוקה פון ארץ ישראל, די הבטחה אז קיינער וועט נישט באגערן דאס לאנד ווען מ'גייט ארויף קיין ירושלים, דער גלות, און אז אידן און די תורה וועלן בלייבן בשעת די מלכות וואס האבן זיי געפייניגט זענען פארשוואונדן. נאך א קשיא אויף דעם ערשטן רש\"י, קומט ער צום עיקר ענין. די קריסטליכע רעליגיע און דער איסלאם האבן זיך אנגעהויבן מיט איין מענטש וואס מ'האט אים געגלייבט. די אמונה פון אידן שטייט אויף מיליאנען וואס זענען געשטאנען ביי הר סיני און האבן געלעבט פערציג יאר מיט נסים גלויים, אנגעשריבן אין א תורה וואס יעדער איד האט באקומען, און וואס מ'האט אפגעשריבן גענוי די זעלבע איבער דער גאנצער וועלט."
+    },
+    "keyPoints": [
+      {
+        "text": { "en": "Emunah includes emunas tzaddikim: believing in Moshe Rabbeinu and the tzaddikim, not only in Hashem.", "yi": "אמונה נעמט אריין אמונת צדיקים: מ'דארף גלייבן אין משה רבינו און אין די צדיקים, נישט נאר אין השם יתברך." },
+        "evidence": { "segs": [4, 7, 11, 12, 13], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "Everything in the world is in the Torah, because Hashem looked into the Torah and created the world; this is how tzaddikim know everything.", "yi": "אלעס וואס איז אויף דער וועלט איז אין דער תורה, ווייל דער אייבערשטער האט געקוקט אין דער תורה און באשאפן די וועלט; דערפאר ווייסן צדיקים אלעס." },
+        "evidence": { "segs": [21, 75, 81, 82, 83], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "The Torah foretells the future, from the division of Eretz Yisrael to galus and the eternal survival of the Jewish people and the Torah.", "yi": "די תורה זאגט פאר וואס עס וועט געשען, פון דער חלוקה פון ארץ ישראל ביז דעם גלות און דעם אייביגן קיום פון כלל ישראל און פון דער תורה." },
+        "evidence": { "segs": [101, 129, 131, 145, 147], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "An event witnessed by a multitude, such as the existence of a president or of Alexander the Great, cannot be fabricated or denied.", "yi": "א זאך וואס א גרויסער עולם האט געזען, אזוי ווי אז ס'איז געווען א פרעזידענט אדער אלכסנדר מוקדון, קען מען נישט אויסטראכטן און נישט אפלייקענען." },
+        "evidence": { "segs": [210, 215, 248, 249], "confidence": 0.9 }
+      },
+      {
+        "text": { "en": "Christianity and Islam rest on the word of one person; Jewish emunah rests on the experience of millions at Har Sinai.", "yi": "די קריסטליכע רעליגיע און דער איסלאם שטייען אויפן ווארט פון איין מענטש; די אמונה פון אידן שטייט אויף דעם וואס מיליאנען האבן מיטגעלעבט ביי הר סיני." },
+        "evidence": { "segs": [259, 272, 275, 286, 287], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "The Torah, written at the end of forty years in the Midbar, recorded what the whole people had experienced and was copied letter for letter by every Jew down the generations.", "yi": "די תורה, וואס איז אנגעשריבן געווארן צום סוף פון די פערציג יאר אין מדבר, האט פארשריבן וואס דאס גאנצע פאלק האט מיטגעלעבט, און יעדער איד האט זי אפגעשריבן אות באות דור נאך דור." },
+        "evidence": { "segs": [290, 292, 323, 325, 328], "confidence": 0.85 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-english-sets-emunah-english-10-emunah-english",
+      "startSeg": 0,
+      "endSeg": 22,
+      "title": { "en": "Emunas tzaddikim", "yi": "אמונת צדיקים" },
+      "summary": {
+        "en": "The Rav opens with emunas tzaddikim: at Kriyas Yam Suf the Jews believed in Hashem and in Moshe His servant. He says he has himself seen the ruach hakodesh of tzaddikim, and that tzaddikim know everything because everything is in the Torah.",
+        "yi": "דער משגיח עפנט מיט אמונת צדיקים: ביי קריעת ים סוף האבן אידן געגלייבט אין השם און אין משה עבדו. ער זאגט אז ער אליין האט געזען די רוח הקודש פון צדיקים, און אז צדיקים ווייסן אלעס ווייל אלעס איז אין דער תורה."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-emunah-english-10-emunah-english",
+      "startSeg": 23,
+      "endSeg": 56,
+      "title": { "en": "The Ramban and Avner in Haazinu", "yi": "דער רמב\"ן און אבנר אין האזינו" },
+      "summary": {
+        "en": "The Rav tells the story of the Ramban's student Avner, who went off the derech, challenged the Ramban's teaching that Haazinu contains every Jew's history, and was shown his name in the third letters of a passuk. Shaken, Avner did teshuvah and set off in a boat without oars.",
+        "yi": "דער משגיח דערציילט די מעשה פונעם רמב\"ן'ס תלמיד אבנר, וואס איז אוועק פונעם דרך, האט געטענה'ט קעגן דעם רמב\"ן'ס לימוד אז האזינו נעמט אריין יעדן אידנס היסטאריע, און דער רמב\"ן האט אים געוויזן זיין נאמען אין די דריטע אותיות פון א פסוק. אבנר האט תשובה געטון און איז אוועקגעפארן אין א שיפל אן רודערס."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-emunah-english-10-emunah-english",
+      "startSeg": 57,
+      "endSeg": 101,
+      "title": { "en": "Everything is in the Torah", "yi": "אלעס איז אין דער תורה" },
+      "summary": {
+        "en": "The Rav tells how the Chazon Ish showed surgeons how to perform brain surgery, saying he knew it from Hilchos Treifos. He brings the Ramban that Shlomo HaMelech knew everything from the Torah, explains that the Torah is the blueprint of creation, and notes that the Zohar says the world is round. He adds that, unlike other religions' books, the Torah foretells the future, and it was given identically to all of Klal Yisrael.",
+        "yi": "דער משגיח דערציילט ווי דער חזון איש האט געוויזן די דאקטוירים ווי אזוי צו מאכן אן אפעראציע אויפן מוח, און געזאגט אז ער ווייסט עס פון הלכות טריפות. ער ברענגט דעם רמב\"ן אז שלמה המלך האט אלעס געוואוסט פון דער תורה, ערקלערט אז די תורה איז דער פלאן פון דער בריאה, און ברענגט אז דער זוהר זאגט אז די וועלט איז קיילעכדיג. ער לייגט צו אז אנדערש ווי די ספרים פון אנדערע רעליגיעס, זאגט די תורה פאר די צוקונפט, און זי איז געגעבן געווארן די זעלבע צו גאנץ כלל ישראל."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-emunah-english-10-emunah-english",
+      "startSeg": 102,
+      "endSeg": 160,
+      "title": { "en": "The Torah's promises come true", "yi": "די הבטחות פון דער תורה ווערן מקוים" },
+      "summary": {
+        "en": "The Rav shows the Torah foretelling the future: the nachalos of the shevatim and Yehoshua's conquest; the promise that nobody will covet a man's land when he goes up to Yerushalayim three times a year; galus and the survival of the Jews while Bavel, Paras, Yavan and Rome disappeared; and that the Torah will not be forgotten, as seen in the growth of Torah learning after the war.",
+        "yi": "דער משגיח ווייזט ווי די תורה זאגט פאר די צוקונפט: די נחלות פון די שבטים און ווי יהושע וועט איינעמען דאס לאנד; די הבטחה אז קיינער וועט נישט באגערן דאס לאנד ווען מ'גייט ארויף קיין ירושלים דריי מאל א יאר; דער גלות, און ווי אידן זענען געבליבן בשעת בבל, פרס, יון און רומי זענען פארשוואונדן; און אז די תורה וועט נישט פארגעסן ווערן, וואס מ'זעט אין דעם ווי לימוד התורה איז געוואקסן נאך דער מלחמה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-emunah-english-10-emunah-english",
+      "startSeg": 161,
+      "endSeg": 181,
+      "title": { "en": "A question on the first Rashi", "yi": "א קשיא אויפן ערשטן רש\"י" },
+      "summary": {
+        "en": "The Rav brings Rashi's first comment on Bereishis, that the Torah should have begun with the mitzvah of Rosh Chodesh, the first mitzvah given to Yisrael, and asks how it can be called the first when milah, and according to one opinion gid hanasheh, were commanded earlier.",
+        "yi": "דער משגיח ברענגט דעם ערשטן רש\"י אין בראשית, אז די תורה האט געדארפט אנהייבן מיט החודש הזה לכם, די ערשטע מצוה וואס כלל ישראל האט באקומען, און ער פרעגט ווי אזוי מ'קען עס רופן די ערשטע, ווען מילה, און לויט איין שיטה אויך גיד הנשה, זענען געזאגט געווארן פריער."
+      },
+      "kind": "tangent",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-emunah-english-10-emunah-english",
+      "startSeg": 182,
+      "endSeg": 251,
+      "title": { "en": "What a multitude witnessed cannot be denied", "yi": "וואס א גרויסער עולם האט געזען קען מען נישט אפלייקענען" },
+      "summary": {
+        "en": "The Rav sets out why we believe: of the three main religions, Christianity and Islam accept the Torah but claim Hashem changed His mind. He then builds the principle that an event witnessed by hundreds of thousands cannot be fabricated, using President Ford, George Washington, Julius Caesar and Alexander the Great, whom the Gemara mentions meeting Shimon HaTzaddik.",
+        "yi": "דער משגיח שטעלט אוועק פארוואס מיר גלייבן: פון די דריי הויפט רעליגיעס, האלטן די קריסטן און דער איסלאם פון דער תורה, נאר זיי זאגן אז דער אייבערשטער האט זיך איבערגעטראכט. דערנאך בויט ער אויף דעם יסוד אז א זאך וואס הונדערטער טויזנטער מענטשן האבן געזען קען מען נישט אויסטראכטן, מיט די משלים פון פרעזידענט פארד, דזשארדזש וואשינגטאן, יוליוס קיסר און אלכסנדר מוקדון, וועמען די גמרא דערמאנט ביי שמעון הצדיק."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-emunah-english-10-emunah-english",
+      "startSeg": 252,
+      "endSeg": 274,
+      "title": { "en": "Religions built on one man", "yi": "רעליגיעס וואס שטייען אויף איין מענטש" },
+      "summary": {
+        "en": "The Rav describes how Christianity began with one charismatic man whose teaching, built on Judaism, people believed, and how Islam began with Mohammed, whom the Rambam calls a madman, whose book contradicts recorded history. In both cases people believed one person.",
+        "yi": "דער משגיח באשרייבט ווי די קריסטליכע רעליגיע האט זיך אנגעהויבן מיט איין מענטש מיט כח השפעה, וואס זיין לערע איז געבויט אויף אידישקייט און מ'האט אים געגלייבט, און ווי דער איסלאם האט זיך אנגעהויבן מיט מוחמד, וואס דער רמב\"ם רופט אים א משוגע, און זיין ספר שטימט נישט מיט דער היסטאריע. ביי ביידע האט מען געגלייבט איין מענטש."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-emunah-english-10-emunah-english",
+      "startSeg": 275,
+      "endSeg": 367,
+      "title": { "en": "Millions at Har Sinai", "yi": "מיליאנען ביי הר סיני" },
+      "summary": {
+        "en": "The Rav concludes that Jews do not believe because Moshe said so, but because a few million people stood at Har Sinai and heard Hashem. The Torah, written at the end of forty years, recorded the miracles they all lived through, every Jew was commanded to have a Sefer Torah, and the Torah was copied letter for letter so that Jews cut off from each other for centuries hold the identical text.",
+        "yi": "דער משגיח שליסט אז אידן גלייבן נישט ווייל משה האט עס געזאגט, נאר ווייל עטליכע מיליאן מענטשן זענען געשטאנען ביי הר סיני און האבן געהערט דעם אייבערשטן. די תורה, וואס איז אנגעשריבן געווארן צום סוף פון פערציג יאר, האט פארשריבן די נסים וואס אלע האבן מיטגעלעבט, יעדער איד האט געמוזט האבן א ספר תורה, און מ'האט זי אפגעשריבן אות באות, אזוי אז אידן וואס זענען געווען אפגעשניטן איינער פונעם אנדערן הונדערטער יארן האבן די זעלבע תורה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "by Kiyos Yomsof ... by the Shem of Amosha Avdeh",
+      "work": "Shemos",
+      "ref": "Shemos 14:31",
+      "sefariaRef": "Exodus 14:31",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [11, 12, 13], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the ramban is maramis to it in this pirosh and nazim",
+      "work": "Ramban on the Torah",
+      "ref": "Ramban on Devarim, Parshas Haazinu",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [36, 37], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "Amati afayim ashbisa meyanoish zekhram",
+      "work": "Devarim",
+      "ref": "Devarim 32:26",
+      "sefariaRef": "Deuteronomy 32:26",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [42, 47, 49, 51, 53], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Hilchus Treifes ... from the Shulchanara",
+      "work": "Shulchan Aruch",
+      "ref": "Shulchan Aruch Yoreh De'ah, Hilchos Treifos",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [66, 72, 73], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Ramban says that everything is in the Torah he speaks about Shleim HaMelech",
+      "work": "Ramban on the Torah",
+      "ref": "Ramban, introduction to the commentary on the Torah",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [76, 77, 78, 79], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Stalko Beirai Yisabara Alma",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [81, 82], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "and desire which was written about two thousand years ago mainly from Rabbi Shimon ben Yechai",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [84, 85, 86], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Nachla should be given out a Piyah Gairo",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 26:55",
+      "sefariaRef": "Numbers 26:55",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [103, 104], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "HaKel HaNashem HaNashem HaTaf",
+      "work": "Devarim",
+      "ref": "Devarim 31:12",
+      "sefariaRef": "Deuteronomy 31:12",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [112, 115, 116, 117], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "nobody is going to covet nobody was going to gamble from you the Torah gives a flat promise",
+      "work": "Shemos",
+      "ref": "Shemos 34:24",
+      "sefariaRef": "Exodus 34:24",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [123, 124, 125], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Torah says Torah will not be forgotten",
+      "work": "Devarim",
+      "ref": "Devarim 31:21",
+      "sefariaRef": "Deuteronomy 31:21",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [146, 147], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Yavetz Rebbe ... the Rebbe Yank of Emden writes Chaye Reishi",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [158, 159], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "Amr Rabbi Yitzchak L'haisa Taira Tzricha L'hashchil El Lamey Achaydash Azah Lachem",
+      "work": "Rashi on Bereishis",
+      "ref": "Rashi on Bereishis 1:1",
+      "sefariaRef": "Rashi on Genesis 1:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [162, 163, 164, 169], "confidence": 0.9 }
+    },
+    {
+      "heardAs": "this Machleches about Gid Hanashe, if it was given for the B'nai Yain Kaif",
+      "work": "Gemara Chullin",
+      "ref": "Chullin 100b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [176, 177, 178], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "the Gemara talks about him Shimonat Tzadik had an encounter with him",
+      "work": "Gemara Yoma",
+      "ref": "Yoma 69a",
+      "sefariaRef": "Yoma 69a",
+      "resolution": "resolved",
+      "mention": "alluded",
+      "evidence": { "segs": [246, 247], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Rambam says he was a Meshuggah",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [265], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "every yid that's a mitzvah says in the Torah and you have that in the Rambam",
+      "work": "Rambam, Mishneh Torah",
+      "ref": "Rambam, Hilchos Sefer Torah 7:1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [294, 295, 296], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Roshayim ... Rosh says that today the Mitzvah Sesah were made by buying Sverden",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [297, 299, 300, 301, 302], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Emunas tzaddikim is part of emunah itself: the Torah describes the height of emunah at the sea as belief in Hashem and in Moshe His servant, and the Rav adds that one must also believe in oneself, since all Jews are tzaddikim.",
+        "yi": "אמונת צדיקים איז א חלק פון דער אמונה אליין: די תורה באשרייבט די העכסטע מדריגה פון אמונה ביים ים מיט אמונה אין השם און אין משה עבדו, און דער משגיח לייגט צו אז מ'דארף אויך גלייבן אין זיך אליין, ווייל אלע אידן זענען צדיקים."
+      },
+      "evidence": { "segs": [8, 9, 10, 11, 13], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Because Hashem looked into the Torah to create the world, anything that exists in the world must be found in the Torah; a tzaddik's knowledge of medicine or of the future is drawn from the Torah, not from outside study.",
+        "yi": "ווייל דער אייבערשטער האט געקוקט אין דער תורה ווען ער האט באשאפן די וועלט, מוז אלעס וואס איז אויף דער וועלט געפונען ווערן אין דער תורה; וואס א צדיק ווייסט אין רפואה אדער וועגן די צוקונפט נעמט ער פון דער תורה, נישט פון אנדערע לימודים."
+      },
+      "evidence": { "segs": [65, 75, 81, 82, 83], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Torah's daring promise that no one will covet a Jew's land while he goes up to Yerushalayim with his whole family is something no human author could have written; it shows the Torah's divine source.",
+        "yi": "די תורה'ס דרייסטע הבטחה אז קיינער וועט נישט באגערן א אידנס לאנד בשעת ער גייט ארויף קיין ירושלים מיט זיין גאנצער פאמיליע, איז א זאך וואס קיין מענטש וואלט נישט געקענט שרייבן; עס ווייזט אז די תורה איז פון הימל."
+      },
+      "evidence": { "segs": [118, 124, 126, 127, 128], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Details reported by a single historian may be doubted, but the bare existence of a figure witnessed by multitudes cannot; this is the type of certainty on which Matan Torah rests.",
+        "yi": "פרטים וואס איין היסטאריקער שרייבט קען מען זיך מספק זיין, אבער אז ס'איז געווען אזא פערזאן וואס מאסן מענטשן האבן געזען, קען מען נישט אפלייקענען; אויף אזא סארט ודאות שטייט מתן תורה."
+      },
+      "evidence": { "segs": [235, 236, 237, 238, 249], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The worldwide identity of the Sefer Torah is itself a proof: Jews separated for centuries by geography, with no means of contact, are found to hold the same text letter for letter, preserved by the halachah that one missing letter disqualifies a Sefer Torah.",
+        "yi": "וואס דער ספר תורה איז די זעלבע איבער דער גאנצער וועלט איז אליין א ראיה: אידן וואס זענען געווען אפגעטיילט הונדערטער יארן, אן קיין שום פארבינדונג, האבן די זעלבע תורה אות באות, אפגעהיט דורך דער הלכה אז אויב עס פעלט איין אות איז דער ספר תורה פסול."
+      },
+      "evidence": { "segs": [334, 337, 341, 343, 344], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Ramban and his student Avner", "yi": "דער רמב\"ן און זיין תלמיד אבנר" },
+      "retelling": {
+        "en": "The Ramban had a student named Avner who went off the derech and became a general in the king's army. One Yom Kippur he summoned the Ramban, ate a pig in front of him, and argued with him. Avner said he had left because of the Ramban's teaching that Haazinu contains every Jew's history, and asked where he was in it. After praying by the wall, the Ramban showed him the passuk 'amarti af'eihem ashbisa me'enosh zichram', whose third letters spell Avner. Shaken, Avner decided to do teshuvah, set off in a rowboat without oars, and was never heard of again.",
+        "yi": "דער רמב\"ן האט געהאט א תלמיד מיטן נאמען אבנר, וואס איז אוועק פונעם דרך און איז געווארן א גענעראל אין דעם קעניגס ארמיי. איין יום כיפור האט ער גערופן דעם רמב\"ן, געגעסן פאר אים א חזיר, און זיך געטענה'ט מיט אים. אבנר האט געזאגט אז ער איז אוועק צוליב דעם רמב\"ן'ס לימוד אז האזינו נעמט אריין יעדן אידנס היסטאריע, און געפרעגט וואו ער איז דארט. דער רמב\"ן האט זיך געשטעלט ביי דער וואנט און מתפלל געווען, און אים געוויזן דעם פסוק \"אמרתי אפאיהם אשביתה מאנוש זכרם\", וואו די דריטע אותיות שרייבן אבנר. אבנר איז געווארן צעטרייסלט, באשלאסן צו טון תשובה, איז אוועקגעפארן אין א שיפל אן רודערס, און מ'האט מער נישט געהערט פון אים."
+      },
+      "people": ["the Ramban", "Avner"],
+      "evidence": { "segs": [25, 27, 30, 35, 53, 56], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "The Chazon Ish and the brain surgeons", "yi": "דער חזון איש און די דאקטוירים" },
+      "retelling": {
+        "en": "In the Rav's own adult years the Chazon Ish was known in America to know everything. When doctors were unsure how to perform a brain operation, they sent the patient to the Chazon Ish, who drew a diagram showing how to do it. The professors followed it and succeeded. Asked how he knew medicine, he answered that it is in the Torah: from Hilchos Treifos and the Gemara one knows the anatomy of the human body.",
+        "yi": "אין דעם משגיח'ס אייגענע יארן האט מען אין אמעריקע געוואוסט אז דער חזון איש ווייסט אלעס. ווען דאקטוירים האבן נישט געוואוסט ווי אזוי צו מאכן אן אפעראציע אויפן מוח, האבן זיי געשיקט דעם חולה צום חזון איש, און ער האט געמאכט א צייכענונג ווי אזוי מ'דארף עס טון. די פראפעסארן האבן געפאלגט און עס איז זיי געלונגען. ווען מ'האט אים געפרעגט פון וואו ער ווייסט רפואה, האט ער געענטפערט אז עס שטייט אין דער תורה: פון הלכות טריפות און פון דער גמרא ווייסט מען דעם בנין פונעם מענטשליכן גוף."
+      },
+      "people": ["the Chazon Ish"],
+      "evidence": { "segs": [58, 60, 61, 62, 64, 66], "confidence": 0.85 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "How can the Christians and Muslims, who accept the Chumash and Nevi'im, be forced to agree to the Torah's truth?",
+        "yi": "פארוואס מוזן די קריסטן און די ישמעאלים, וואס האלטן פון חומש און נביאים, מודה זיין אז די תורה איז אמת?"
+      },
+      "answer": {
+        "en": "Because an event experienced by a multitude, like the existence of a known historical figure, cannot be fabricated; Matan Torah was such an event.",
+        "yi": "ווייל א זאך וואס א גרויסער עולם האט מיטגעלעבט, אזוי ווי א באוואוסטע פערזאן אין דער היסטאריע, קען מען נישט אויסטראכטן; מתן תורה איז געווען אזא זאך."
+      },
+      "questionSegs": [196, 197, 200, 201],
+      "answerSegs": [210, 214, 215, 248],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why do Jews believe, if not because Moshe told them?",
+        "yi": "פארוואס גלייבן אידן, אויב נישט ווייל משה האט זיי עס געזאגט?"
+      },
+      "answer": {
+        "en": "Because a few million people stood at Har Sinai and heard Hashem speak to each of them, and passed it on to their children.",
+        "yi": "ווייל עטליכע מיליאן מענטשן זענען געשטאנען ביי הר סיני און האבן געהערט ווי דער אייבערשטער רעדט צו יעדן איינעם, און האבן עס איבערגעגעבן צו זייערע קינדער."
+      },
+      "questionSegs": [278, 279, 281, 283],
+      "answerSegs": [286, 287, 288, 289],
+      "confidence": 0.85
+    },
+    {
+      "question": {
+        "en": "Why did the Torah not begin with the first mitzvah?",
+        "yi": "פארוואס האט די תורה נישט אנגעהויבן מיט דער ערשטער מצוה?"
+      },
+      "answer": {
+        "en": "Rashi gives a reason, which the Rav mentions without spelling out here; he goes on to ask how Rosh Chodesh can be the first mitzvah when milah came before it.",
+        "yi": "רש\"י גיט א טעם, וואס דער משגיח דערמאנט נאר נישט דא; ער פרעגט ווייטער ווי אזוי החודש הזה לכם קען זיין די ערשטע מצוה ווען מילה איז געווען פריער."
+      },
+      "questionSegs": [168, 170, 171, 172],
+      "answerSegs": [169, 173, 175, 179],
+      "confidence": 0.65
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says it is not enough to believe in Hashem; one must believe in tzaddikim, and also believe in oneself.",
+        "yi": "דער משגיח זאגט אז ס'איז נישט גענוג צו גלייבן אין השם יתברך; מ'דארף גלייבן אין צדיקים, און אויך גלייבן אין זיך אליין."
+      },
+      "evidence": { "segs": [6, 7, 8, 10], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "proof of the truth of the Torah",
+    "the multitude at Har Sinai",
+    "emunas tzaddikim",
+    "everything is contained in the Torah",
+    "prophecies of the Torah fulfilled",
+    "eternity of the Jewish people",
+    "Judaism compared with Christianity and Islam",
+    "transmission of the Sefer Torah",
+    "the Ramban and Avner"
+  ],
+  "concepts": [
+    { "he": "אמונת צדיקים", "heardAs": ["emunas tzaddikim"] },
+    { "he": "קריעת ים סוף", "heardAs": ["Kiyos Yomsof", "Kriyus Yamsuf"] },
+    { "he": "רוח הקודש", "heardAs": ["Ruech HaKadosh"] },
+    { "he": "הסתר", "heardAs": ["Hester"] },
+    { "he": "רשות מן השמים", "heardAs": ["rishus menashmayim"] },
+    { "he": "הלכות טריפות", "heardAs": ["Hilchus Treifes"] },
+    { "he": "אסתכל באורייתא וברא עלמא", "heardAs": ["Stalko Beirai Yisabara Alma"] },
+    { "he": "נחלה", "heardAs": ["Nachla", "nachles"] },
+    { "he": "הקהל", "heardAs": ["HaKel"] },
+    { "he": "החודש הזה לכם", "heardAs": ["Achaydash Azah Lachem", "chaydeshezalachem"] },
+    { "he": "גיד הנשה", "heardAs": ["Gid Hanashe"] },
+    { "he": "דור המדבר", "heardAs": ["Daira Hamidba"] },
+    { "he": "תורה שבעל פה", "heardAs": ["Torah Shebi Alpeh"] },
+    { "he": "עמוד הענן", "heardAs": ["Amuda Onan", "Amada'an"] },
+    { "he": "מן", "heardAs": ["Mun"] },
+    { "he": "רבונו של עולם", "heardAs": ["Rabbi Yisrael", "Rabbani Shalom", "Rabban Yashveram", "Rabbani Shreelim"] }
+  ],
+  "people": [
+    { "name": "Moshe Rabbeinu", "heardAs": ["Amosha", "Moshe Rabbeinu", "masha"] },
+    { "name": "the Ramban", "heardAs": ["ramban", "aban"] },
+    { "name": "Avner", "heardAs": ["avni", "abner", "avonar", "Avner"] },
+    { "name": "the Chazon Ish", "heardAs": ["chazaynish"] },
+    { "name": "Shlomo HaMelech", "heardAs": ["Shleim HaMelech"] },
+    { "name": "Rabbi Shimon bar Yochai", "heardAs": ["Rabbi Shimon ben Yechai"] },
+    { "name": "Yehoshua", "heardAs": ["yeshua"] },
+    { "name": "Rabbi Yaakov Emden (the Yaavetz)", "heardAs": ["Yavetz Rebbe", "Rebbe Yank of Emden"] },
+    { "name": "Rashi", "heardAs": ["Rasha", "Rashi"] },
+    { "name": "Shimon HaTzaddik", "heardAs": ["Shimonat Tzadik"] },
+    { "name": "Alexander the Great", "heardAs": ["alexander the great"] },
+    { "name": "the Rambam", "heardAs": ["Rambam"] },
+    { "name": "the Rosh", "heardAs": ["Rosh", "Roshayim"] }
+  ],
+  "asrNotes": "English ASR is fair, but Hebrew terms are heavily garbled (Ribono shel Olam appears as 'Rabbi Yisraelim', 'Rabbani Shalom', 'Rabban Yashveram'; Torah as 'taiva'/'title'/'tyra'). Segment 161 is a long sparse stretch (about 50 seconds) with little text, and the Yaavetz's statement (seg 158-159) and the Rav's own answer to his question on Rashi (around seg 181) could not be recovered. The last segment (367) is unintelligible."
+}

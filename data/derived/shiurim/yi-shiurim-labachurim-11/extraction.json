@@ -1,0 +1,959 @@
+{
+  "shiurId": "yi-shiurim-labachurim-11",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that through ahavas Yisroel a Jew joins the whole of Klal Yisroel and so completes all the mitzvos, and that the same bond carries his davening up through the worlds, leading to a call to daven in the days of mercy, also for the soldiers fighting in the Gulf War.",
+      "yi": "דער משגיח ערקלערט אז דורך אהבת ישראל ווערט א איד פארבונדן מיט גאנץ כלל ישראל און ער ווערט שלם אין אלע מצוות, און דער זעלבער קשר הייבט אויף זיין דאווענען דורך די עולמות; דערפון רופט ער צו דאווענען אין די טעג פון רחמים, אויך פאר די סאלדאטן וואס שלאגן זיך אין דער מלחמה מיט איראק."
+    },
+    "abstract": {
+      "en": "The Rav opens with Rashi's words that ahavas Yisroel is a great principle of the Torah, and explains through the Arizal, brought by the Bnei Yissaschar, that every Jew must fulfil all 613 mitzvos, which correspond to the limbs and give them life at techiyas hameisim. Mitzvos a person cannot do himself he completes through learning their laws and through ahavas Yisroel, which makes him a partner of every other Jew. He then turns to judging others favorably, following Rabbeinu Yonah, and shows from Dovid and Nasan that a person who judges another judges himself. Love of Hashem is measured by love of Jews, so one must share Klal Yisroel's pain. Before davening one accepts ahavas Yisroel, and davening climbs through the worlds with each kaddish as a staircase; one who comes late loses it. Tefillah is dveikus with the heart. The Rav urges davening in these days of mercy, also for the American soldiers, and tells an Apter Rav prophecy of a war that is good for the Jews.",
+      "yi": "דער משגיח עפנט מיט רש\"י אז אהבת ישראל איז א כלל גדול בתורה, און ערקלערט לויט דעם אריז\"ל, געבראכט אין בני יששכר, אז יעדער איד מוז מקיים זיין אלע תרי\"ג מצוות, וואס זענען כנגד די אברים און זיי לעבן פון זיי ביי תחיית המתים. מצוות וואס ער קען נישט מקיים זיין, דערגאנצט ער דורך לערנען די דינים און דורך אהבת ישראל, וואס מאכט אים א שותף מיט יעדן איד. דערנאך רעדט ער וועגן דן זיין לכף זכות לויט רבינו יונה, און ווייזט פון דוד המלך און נתן הנביא אז ווער עס משפט'ט א צווייטן, פסק'נט אויף זיך אליין. אהבת ה' מעסט מען מיט אהבת ישראל, און מ'דארף זיך משתתף זיין אין צער פון כלל ישראל. פארן דאווענען נעמט מען אויף זיך אהבת ישראל, און דאס דאווענען גייט ארויף דורך די עולמות, יעדער קדיש איז א טרעפ; ווער עס קומט שפעט פארלירט דאס. תפילה איז דביקות מיטן הארץ. דער משגיח רופט צו דאווענען אין די טעג פון רחמים, אויך פאר די אמעריקאנער סאלדאטן, און דערציילט א נבואה פונעם אפטער רב וועגן א מלחמה וואס איז גוט פאר אידן."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Every Jew must fulfil all the mitzvos, and through ahavas Yisroel he becomes a partner in the mitzvos other Jews do, completing what he himself cannot.",
+          "yi": "יעדער איד מוז מקיים זיין אלע מצוות, און דורך אהבת ישראל ווערט ער א שותף אין די מצוות פון אנדערע אידן און דערגאנצט וואס ער אליין קען נישט."
+        },
+        "evidence": {
+          "segs": [
+            16,
+            17,
+            59,
+            61,
+            63
+          ],
+          "confidence": 0.8
+        }
+      },
+      {
+        "text": {
+          "en": "Whoever judges another person is in effect judging himself, so one must judge every Jew favorably.",
+          "yi": "ווער עס משפט'ט א צווייטן, פסק'נט באמת אויף זיך אליין, דערפאר דארף מען דן זיין יעדן איד לכף זכות."
+        },
+        "evidence": {
+          "segs": [
+            118,
+            121,
+            122,
+            144
+          ],
+          "confidence": 0.85
+        }
+      },
+      {
+        "text": {
+          "en": "How much a person loves Hashem can be measured by how much he loves a Jew.",
+          "yi": "וויפיל א מענטש האט ליב דעם רבונו של עולם קען מען מעסטן מיט וויפיל ער האט ליב א איד."
+        },
+        "evidence": {
+          "segs": [
+            164,
+            165,
+            170
+          ],
+          "confidence": 0.85
+        }
+      },
+      {
+        "text": {
+          "en": "Davening rises from world to world, and each kaddish is the staircase that lifts the davener to the next world; one who comes late misses it.",
+          "yi": "דאס דאווענען גייט ארויף פון איין עולם צום צווייטן, און יעדער קדיש איז די טרעפ וואס הייבט אויף צום נעקסטן עולם; ווער עס קומט שפעט פארפעלט דאס."
+        },
+        "evidence": {
+          "segs": [
+            206,
+            209,
+            213,
+            215,
+            244
+          ],
+          "confidence": 0.8
+        }
+      },
+      {
+        "text": {
+          "en": "Tefillah means cleaving to Hashem, and it must be with the heart and with a feeling of pleasure, not only the words.",
+          "yi": "תפילה מיינט דביקות מיטן רבונו של עולם, און זי דארף זיין מיטן הארץ און מיט א געפיל פון תענוג, נישט נאר די ווערטער."
+        },
+        "evidence": {
+          "segs": [
+            290,
+            291,
+            299,
+            310,
+            311
+          ],
+          "confidence": 0.8
+        }
+      },
+      {
+        "text": {
+          "en": "The months from Adar to Sivan are days of mercy when the gates of tefillah are open, and they should be used to daven for Klal Yisroel and also for the soldiers fighting for the Jews.",
+          "yi": "די חדשים פון אדר ביז סיון זענען טעג פון רחמים ווען די שערי תפילה זענען אפן, און מ'דארף זיי אויסנוצן צו דאווענען פאר כלל ישראל און אויך פאר די סאלדאטן וואס שלאגן זיך פאר אידן."
+        },
+        "evidence": {
+          "segs": [
+            321,
+            325,
+            328,
+            335,
+            347
+          ],
+          "confidence": 0.8
+        }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-11-hisorerus-beavodas-hashem",
+      "startSeg": 0,
+      "endSeg": 69,
+      "title": {
+        "en": "Ahavas Yisroel completes all the mitzvos",
+        "yi": "אהבת ישראל דערגאנצט אלע מצוות"
+      },
+      "summary": {
+        "en": "The Rav calls ahavas Yisroel a great principle of the Torah and brings the Arizal, via the Bnei Yissaschar, that every Jew must keep all the mitzvos, which give life to the limbs at techiyas hameisim. A mitzvah one cannot do, like pidyon haben, is completed by learning its laws and by ahavas Yisroel, which makes one a partner of the Jew who does it.",
+        "yi": "דער משגיח רופט אהבת ישראל א כלל גדול בתורה און ברענגט דעם אריז\"ל דורכן בני יששכר, אז יעדער איד מוז מקיים זיין אלע מצוות, וואס געבן לעבן די אברים ביי תחיית המתים. א מצוה וואס מ'קען נישט טון, ווי פדיון הבן, דערגאנצט מען דורך לערנען אירע דינים און דורך אהבת ישראל, וואס מאכט אים א שותף מיט דעם איד וואס טוט זי."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [
+        0
+      ],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-11-hisorerus-beavodas-hashem",
+      "startSeg": 70,
+      "endSeg": 152,
+      "title": {
+        "en": "Judging favorably, and judging oneself",
+        "yi": "דן זיין לכף זכות, און דן זיין זיך אליין"
+      },
+      "summary": {
+        "en": "The Rav lays out, following Rabbeinu Yonah, how far one must judge a tzaddik, an average person and a rasha favorably, with the Gemara's story of the worker who judged his employer favorably. He then shows from Nasan's parable to Dovid that a person who passes judgment on another is passing judgment on himself.",
+        "yi": "דער משגיח שטעלט אוועק לויט רבינו יונה וויפיל מ'דארף דן זיין לכף זכות א צדיק, א בינוני און א רשע, מיט דער מעשה אין גמרא פונעם פועל וואס האט דן געווען זיין בעל הבית לכף זכות. דערנאך ווייזט ער פונעם משל פון נתן הנביא צו דוד המלך אז ווער עס משפט'ט א צווייטן, פסק'נט אויף זיך אליין."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [
+        0
+      ],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-11-hisorerus-beavodas-hashem",
+      "startSeg": 153,
+      "endSeg": 192,
+      "title": {
+        "en": "Love of Hashem measured by love of Jews",
+        "yi": "אהבת ה' געמאסטן מיט אהבת ישראל"
+      },
+      "summary": {
+        "en": "The Rav shows from the order of davening that love of Hashem follows Hashem's love for Yisroel, and brings from tzaddikim that love of Hashem is measured by love of a Jew. Ahavas Yisroel means sharing the pain of Jews, including those in Eretz Yisroel in the war, and accepting ahavas Yisroel before davening opens the gates of tefillah.",
+        "yi": "דער משגיח ווייזט פונעם סדר התפילה אז אהבת ה' קומט נאך דער אהבה פונעם רבונו של עולם צו אידן, און ברענגט פון צדיקים אז אהבת ה' מעסט מען מיט אהבת ישראל. אהבת ישראל מיינט זיך משתתף זיין אינעם צער פון אידן, אויך די אידן אין ארץ ישראל אין דער מלחמה, און ווער עס נעמט אויף זיך אהבת ישראל פארן דאווענען, עפענען זיך פאר אים די טויערן פון תפילה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [
+        0,
+        1
+      ],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-11-hisorerus-beavodas-hashem",
+      "startSeg": 193,
+      "endSeg": 287,
+      "title": {
+        "en": "The worlds of davening and the kaddish staircase",
+        "yi": "די עולמות פון דאווענען און די טרעפ פון קדיש"
+      },
+      "summary": {
+        "en": "The Rav explains that davening climbs from Asiyah to Yetzirah, Beriah and Atzilus, and that each kaddish is a staircase to the next world, with a kaddish on the way down after Shemoneh Esrei. One who comes late has missed the staircase; he can still say the words, but rising without it takes enormous kavanah.",
+        "yi": "דער משגיח ערקלערט אז דאס דאווענען גייט ארויף פון עולם העשיה צו יצירה, בריאה און אצילות, און יעדער קדיש איז א טרעפ צום נעקסטן עולם, מיט א קדיש אויפן וועג אראפ נאך שמונה עשרה. ווער עס קומט שפעט האט פארפעלט די טרעפ; ער קען נאך זאגן די ווערטער, אבער ארויפגיין אן איר פאדערט זייער גרויסע כוונה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [
+        1
+      ],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-11-hisorerus-beavodas-hashem",
+      "startSeg": 288,
+      "endSeg": 366,
+      "title": {
+        "en": "Tefillah as dveikus, and davening for the soldiers",
+        "yi": "תפילה איז דביקות, און דאווענען פאר די סאלדאטן"
+      },
+      "summary": {
+        "en": "The Rav defines tefillah as cleaving to Hashem, which must be felt as pleasure and done with the whole heart. He urges using the merciful months from Adar to Sivan to daven for Klal Yisroel and for the American soldiers, since there is an obligation to pray for the peace of one's country and these soldiers are fighting the wicked man of Iraq who threatens Eretz Yisroel.",
+        "yi": "דער משגיח ערקלערט אז תפילה איז דביקות מיטן רבונו של עולם, וואס דארף זיין מיט א געפיל פון תענוג און בכל לבבכם. ער רופט אויסצונוצן די חדשים פון רחמים פון אדר ביז סיון צו דאווענען פאר כלל ישראל און פאר די אמעריקאנער סאלדאטן, ווייל ס'איז א חיוב צו דאווענען פארן שלום פון דער מדינה, און די סאלדאטן שלאגן זיך קעגן דעם רשע פון איראק וואס וויל פארניכטן ארץ ישראל."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [
+        1
+      ],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-11-hisorerus-beavodas-hashem",
+      "startSeg": 367,
+      "endSeg": 422,
+      "title": {
+        "en": "Which stories of tzaddikim can be trusted",
+        "yi": "וועלכע מעשיות פון צדיקים מ'קען גלייבן"
+      },
+      "summary": {
+        "en": "Before telling a story of the Apter Rav, the Rav warns that most story books are false or mixed with falsehood, and that a story of tzaddikim, which is like Torah, must come from a trustworthy source. He presents the recorded stories of Reb Motel Slonimer, who accepted stories only from reliable people and whose chassid wrote them down the same day.",
+        "yi": "איידער ער דערציילט א מעשה פונעם אפטער רב, ווארנט דער משגיח אז רוב מעשה-ביכלעך זענען פאלש אדער פארמישט מיט שקר, און א מעשה פון צדיקים, וואס איז ווי תורה, דארף קומען פון א נאמן. ער שטעלט פאר די מעשיות פון רבי מאטל סלאנימער, וואס האט מקבל געווען מעשיות נאר פון נאמנים, און זיין חסיד האט זיי פארשריבן דעם זעלבן טאג."
+      },
+      "kind": "tangent",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-11-hisorerus-beavodas-hashem",
+      "startSeg": 423,
+      "endSeg": 486,
+      "title": {
+        "en": "The Apter Rav's war that is good for the Jews",
+        "yi": "דעם אפטער רבס מלחמה וואס איז גוט פאר אידן"
+      },
+      "summary": {
+        "en": "The Rav tells, through Reb Motel Slonimer, the Apter Rav's words that before Moshiach the nations will be dragged into a war that is good for the Jews, and explains that the present war is the first such war, since the enemy wants to destroy Eretz Yisroel. He concludes that one must daven for the soldiers, describes the chapter of Tehillim said for them in his beis medrash, and urges using these days of mercy.",
+        "yi": "דער משגיח דערציילט, דורך רבי מאטל סלאנימער, דעם אפטער רבס ווערטער אז פאר משיח וועלן די גוים אריינגעשלעפט ווערן אין א מלחמה וואס איז גוט פאר אידן, און ערקלערט אז די היינטיגע מלחמה איז די ערשטע אזא מלחמה, ווייל דער שונא וויל פארניכטן ארץ ישראל. ער ענדיגט אז מ'דארף מתפלל זיין פאר די סאלדאטן, דערציילט וועגן דעם קאפיטל תהלים וואס מ'זאגט פאר זיי אין זיין בית המדרש, און רופט אויסצונוצן די טעג פון רחמים."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [
+        1
+      ],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "אזא כלל גדול בתורה אזא זאגט רשע פרשת קדושים",
+      "work": "Rashi",
+      "ref": "Rashi on Vayikra 19:18",
+      "sefariaRef": "Rashi on Leviticus 19:18",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          8,
+          9
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "heardAs": "דורפה גדעכן פון בני יששכר",
+      "work": "Derech Pikudecha",
+      "ref": "Derech Pikudecha, introduction",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          13,
+          14,
+          15
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "heardAs": "ארי הקדש",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          15,
+          16,
+          17
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "אזוי פסק'נט דער שערי תשוב, אדער רבינו יונה",
+      "work": "Shaarei Teshuvah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          75,
+          76
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "heardAs": "די געמארדערס צייט דריי מעמסת",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 127b",
+      "sefariaRef": "Shabbat 127b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          84,
+          92,
+          95,
+          102
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "אין ספר מלאכים ביי דוד המלך",
+      "work": "Shmuel II",
+      "ref": "Shmuel II ch. 12",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          126,
+          128,
+          129,
+          137
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "א בוך הבא מישראל בפי הבא, און נאכדעם שמי ישראל ועפת את ה'",
+      "work": "Siddur",
+      "ref": "Shacharis, blessing of Ahavah Rabbah and Shema",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": {
+        "segs": [
+          157,
+          158,
+          160,
+          162
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "heardAs": "שטעט פון צדיקים תחתיו פון רבי אהלין קאלינא",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          163,
+          164,
+          165
+        ],
+        "confidence": 0.65
+      }
+    },
+    {
+      "heardAs": "עס שטעט פון הרה''ק אז סעודים מפאנגען דאווענען",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          189,
+          190
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "heardAs": "ליבדו בכל לבבך",
+      "work": "Devarim",
+      "ref": "Devarim 11:13",
+      "sefariaRef": "Deuteronomy 11:13",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": {
+        "segs": [
+          297,
+          309,
+          311
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "heardAs": "ימי ענב ... ותפלל על שלמה",
+      "work": "Yirmiyahu",
+      "ref": "Yirmiyahu 29:7",
+      "sefariaRef": "Jeremiah 29:7",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          338,
+          340,
+          342
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "א ספר פון די תורות פון רבי מאטל סלאנימער",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          399,
+          402,
+          403
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "עפטער רב",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          437,
+          438,
+          440
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "מען זאגט קאפיטל כ' מ' ד' ביי דוד ברך השם צרי",
+      "work": "Tehillim",
+      "ref": "Tehillim 144",
+      "sefariaRef": "Psalms 144",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          477,
+          478,
+          479
+        ],
+        "confidence": 0.85
+      }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Through ahavas Yisroel a person becomes a partner in every mitzvah another Jew does, so mitzvos he cannot do himself are still completed in him and his limbs can rise at techiyas hameisim.",
+        "yi": "דורך אהבת ישראל ווערט א מענטש א שותף אין יעדע מצוה וואס א צווייטער איד טוט, ממילא ווערן אויך די מצוות וואס ער קען נישט טון דערגאנצט ביי אים, און זיינע אברים קענען אויפשטיין ביי תחיית המתים."
+      },
+      "evidence": {
+        "segs": [
+          33,
+          61,
+          62,
+          63,
+          65
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "text": {
+        "en": "Hashem does not carry out a judgment on a person until the person has pronounced it on himself, which is why judging others harshly is so dangerous.",
+        "yi": "דער רבונו של עולם פירט נישט דורך קיין דין אויף א מענטש סיידן דער מענטש האט עס אליין געפסק'נט אויף זיך, דערפאר איז אזוי געפערליך צו משפט'ן א צווייטן לחובה."
+      },
+      "evidence": {
+        "segs": [
+          121,
+          122,
+          142,
+          143,
+          144
+        ],
+        "confidence": 0.85
+      }
+    },
+    {
+      "text": {
+        "en": "The order of davening, in the morning and at night, puts Hashem's love for Yisroel before the command to love Hashem, showing that ahavas Yisroel is the introduction to ahavas Hashem.",
+        "yi": "דער סדר פון דאווענען, אינדערפרי און ביי נאכט, שטעלט די אהבה פונעם רבונו של עולם צו אידן פאר דעם ציווי צו ליב האבן השם יתברך, א סימן אז אהבת ישראל איז די הקדמה צו אהבת ה'."
+      },
+      "evidence": {
+        "segs": [
+          155,
+          157,
+          158,
+          159,
+          162
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "text": {
+        "en": "Each kaddish in davening is a staircase between the worlds; between Beriah and Shemoneh Esrei there is none because one may not interrupt between Ga'al Yisroel and Shemoneh Esrei, and after Shemoneh Esrei there is a kaddish on the way back down.",
+        "yi": "יעדער קדיש אין דאווענען איז א טרעפ צווישן די עולמות; צווישן בריאה און שמונה עשרה איז נישטא קיין קדיש ווייל מ'טאר נישט מפסיק זיין צווישן גאל ישראל און שמונה עשרה, און נאך שמונה עשרה איז דא א קדיש אויפן וועג אראפ."
+      },
+      "evidence": {
+        "segs": [
+          213,
+          216,
+          219,
+          221,
+          223,
+          235
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "text": {
+        "en": "Unlike every war since Yehoshua's conquest, in which Jews suffered first, this war is good for the Jews, because the enemy aims to destroy Eretz Yisroel, matching the Apter Rav's prediction.",
+        "yi": "אנדערש ווי יעדע מלחמה זינט דעם כיבוש פון יהושע, וואו אידן האבן געליטן צום ערשט, איז די מלחמה גוט פאר אידן, ווייל דער שונא וויל פארניכטן ארץ ישראל, פונקט ווי דער אפטער רב האט געזאגט."
+      },
+      "evidence": {
+        "segs": [
+          453,
+          454,
+          457,
+          459,
+          461
+        ],
+        "confidence": 0.75
+      }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "The worker who judged his employer favorably",
+        "yi": "דער פועל וואס האט דן געווען זיין בעל הבית לכף זכות"
+      },
+      "retelling": {
+        "en": "A Jew worked for an employer for three years and, before going home for Yom Tov, asked for his wages. The employer said he had no money, no produce, no sheep and no land. The worker judged him favorably, and later it turned out that it was so: the employer had in fact had nothing available at the time.",
+        "yi": "א איד האט געארבעט ביי א בעל הבית דריי יאר, און פאר'ן אהיימפארן אויף יום טוב האט ער געבעטן זיין שכירות. דער בעל הבית האט געזאגט אז ער האט נישט קיין געלט, נישט קיין פירות, נישט קיין שאף און נישט קיין קרקע. דער פועל האט אים דן געווען לכף זכות, און שפעטער האט זיך ארויסגעוויזן אז אזוי איז טאקע געווען: ער האט דעמאלט באמת גארנישט געהאט."
+      },
+      "people": [],
+      "evidence": {
+        "segs": [
+          92,
+          93,
+          95,
+          98,
+          102,
+          103
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "title": {
+        "en": "Nasan's parable of the sheep",
+        "yi": "נתן הנביא'ס משל פון דעם שאף"
+      },
+      "retelling": {
+        "en": "After Dovid took Bas Sheva from Uriah, Nasan the prophet came and told him of a man who had a sheep that was very dear to him, which another man took away. Dovid ruled that the taker was liable and must pay. Nasan told him that he himself was the one who had taken it; Dovid did not know that in judging the other he was judging himself.",
+        "yi": "נאכדעם וואס דוד המלך האט גענומען בת שבע פון אוריה, איז געקומען נתן הנביא און דערציילט אז איינער האט געהאט א שאף וואס איז אים געווען זייער טייער, און א צווייטער האט עס צוגענומען. דוד המלך האט געפסק'נט אז יענער איז חייב און מוז באצאלן. האט אים נתן הנביא געזאגט אז ער אליין איז דער וואס האט צוגענומען; דוד המלך האט נישט געוואוסט אז ווען ער משפט'ט יענעם, משפט'ט ער זיך אליין."
+      },
+      "people": [
+        "Dovid HaMelech",
+        "Nasan HaNavi",
+        "Bas Sheva",
+        "Uriah"
+      ],
+      "evidence": {
+        "segs": [
+          127,
+          128,
+          129,
+          133,
+          137,
+          139
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "title": {
+        "en": "The written-down stories of Reb Motel Slonimer",
+        "yi": "די פארשריבענע מעשיות פון רבי מאטל סלאנימער"
+      },
+      "retelling": {
+        "en": "Reb Motel Slonimer, the Slonimer Rebbe in Yerushalayim, accepted stories only from people he knew to be trustworthy. One of his distinguished chassidim wrote down each day the stories he heard from him, so that no mistake would creep in. The Rav received a typewritten copy some twenty or thirty years earlier, though Slonimer chassidim were unhappy that copies were made, and in recent years the book was printed.",
+        "yi": "רבי מאטל סלאנימער, דער סלאנימער רבי אין ירושלים, האט מקבל געווען מעשיות נאר פון מענטשן וואס ער האט געוואוסט אז זיי זענען נאמנים. איינער פון די חשוב'ע סלאנימער חסידים האט יעדן טאג פארשריבן די מעשיות וואס ער האט געהערט פון אים, כדי עס זאל נישט אריינקומען קיין טעות. דער משגיח האט מיט צוואנציג דרייסיג יאר צוריק באקומען א קאפיע געשריבן אויף א שרייבמאשין, הגם די סלאנימער חסידים זענען געווען ברוגז אויף די קאפיעס, און אין די לעצטע יארן האט מען דעם ספר געדרוקט."
+      },
+      "people": [
+        "Reb Motel Slonimer"
+      ],
+      "evidence": {
+        "segs": [
+          400,
+          401,
+          403,
+          407,
+          411,
+          415
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "title": {
+        "en": "The Apter Rav on the war before Moshiach",
+        "yi": "דער אפטער רב וועגן דער מלחמה פאר משיח"
+      },
+      "retelling": {
+        "en": "Reb Motel Slonimer related that he heard from a chassid, who heard from Reb Yitzchak Meir of Zinkov, the son of the Apter Rav, that the Apter Rav said: before Moshiach comes, the nations will be dragged into a war they will not want to enter because they will see it is good for the Jews. They will meet and make agreements to avoid it, but they will be grabbed by the forelocks and pulled in, and after that war Moshiach will come. The Apter Rav asked that this be repeated in his name.",
+        "yi": "רבי מאטל סלאנימער האט דערציילט אז ער האט געהערט פון א חסיד, וואס האט געהערט פון רבי יצחק מאיר זינקאווער, דעם זון פונעם אפטער רב, אז דער אפטער רב האט געזאגט: פאר משיח קומט וועלן די גוים אריינגעשלעפט ווערן אין א מלחמה, וואס זיי וועלן נישט וועלן אריינגיין ווייל זיי וועלן זען אז זי איז גוט פאר אידן. זיי וועלן זיך צוזאמענקומען און מאכן אפמאכן כדי עס זאל נישט זיין קיין מלחמה, אבער מ'וועט זיי אנכאפן ביי די טשופעס און אריינשלעפן, און נאך דער מלחמה וועט משיח קומען. דער אפטער רב האט געבעטן מ'זאל עס איבערזאגן אין זיין נאמען."
+      },
+      "people": [
+        "the Apter Rav",
+        "Reb Yitzchak Meir of Zinkov",
+        "Reb Motel Slonimer"
+      ],
+      "evidence": {
+        "segs": [
+          423,
+          426,
+          437,
+          438,
+          442,
+          449
+        ],
+        "confidence": 0.75
+      }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Every Jew must fulfil all the mitzvos to rise whole at techiyas hameisim, yet some mitzvos, like pidyon haben, a person cannot do; how is he completed?",
+        "yi": "יעדער איד מוז מקיים זיין אלע מצוות כדי אויפצושטיין שלם ביי תחיית המתים, אבער טייל מצוות, ווי פדיון הבן, קען ער נישט טון; ווי אזוי ווערט ער דערגאנצט?"
+      },
+      "answer": {
+        "en": "If it is not his fault, it is enough to fulfil it in speech and thought by learning its laws or helping another do it, and through ahavas Yisroel he becomes a partner of the Jew who does it.",
+        "yi": "אויב ס'איז נישט זיין שולד, איז גענוג ער זאל עס מקיים זיין בדיבור ובמחשבה דורך לערנען די דינים אדער צוהעלפן א צווייטן, און דורך אהבת ישראל ווערט ער א שותף מיט דעם איד וואס טוט עס."
+      },
+      "questionSegs": [
+        51,
+        52,
+        53
+      ],
+      "answerSegs": [
+        54,
+        55,
+        56,
+        60,
+        63
+      ],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Since Yehoshua's conquest every war has hurt the Jews first; how can the Apter Rav speak of a war that is good for the Jews?",
+        "yi": "זינט דעם כיבוש פון יהושע האט יעדע מלחמה צום ערשט געשאדט אידן; ווי אזוי קען דער אפטער רב רעדן פון א מלחמה וואס איז גוט פאר אידן?"
+      },
+      "answer": {
+        "en": "The present war is the first such war, because the enemy wants to destroy Eretz Yisroel and the fighting against him protects the Jews.",
+        "yi": "די היינטיגע מלחמה איז די ערשטע אזא מלחמה, ווייל דער שונא וויל פארניכטן ארץ ישראל, און די מלחמה קעגן אים באשיצט אידן."
+      },
+      "questionSegs": [
+        452,
+        453,
+        454,
+        455
+      ],
+      "answerSegs": [
+        456,
+        459,
+        461
+      ],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says one must judge every Jew favorably, knowing that in judging another one judges oneself.",
+        "yi": "דער משגיח זאגט אז מ'דארף דן זיין יעדן איד לכף זכות, וויסנדיג אז ווען מ'משפט'ט א צווייטן משפט'ט מען זיך אליין."
+      },
+      "evidence": {
+        "segs": [
+          117,
+          118,
+          123,
+          152
+        ],
+        "confidence": 0.85
+      }
+    },
+    {
+      "text": {
+        "en": "The Rav says one must share in the pain of Klal Yisroel, and when Tehillim is said with the tzibbur in the yeshivah or shul one should join and not slip away.",
+        "yi": "דער משגיח זאגט אז מ'דארף זיך משתתף זיין אין צער פון כלל ישראל, און ווען מ'זאגט תהלים מיטן עולם אין ישיבה אדער אין בית הכנסת דארף מען גיין מיטזאגן און זיך נישט ארויסדרייען."
+      },
+      "evidence": {
+        "segs": [
+          177,
+          178,
+          184,
+          185
+        ],
+        "confidence": 0.85
+      }
+    },
+    {
+      "text": {
+        "en": "The Rav says one should come on time to davening so as not to miss the kaddish that lifts the tefillah.",
+        "yi": "דער משגיח זאגט אז מ'זאל קומען בזמן צום דאווענען כדי נישט צו פארפעלן דעם קדיש וואס הייבט אויף די תפילה."
+      },
+      "evidence": {
+        "segs": [
+          242,
+          244,
+          257,
+          319
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "text": {
+        "en": "The Rav says the days from Adar to Sivan should not be wasted but used to daven for Klal Yisroel, the Beis HaMikdash, one's family and friends, and the American soldiers.",
+        "yi": "דער משגיח זאגט אז מ'טאר נישט פארפאסן די טעג פון אדר ביז סיון, נאר זיי אויסנוצן צו דאווענען פאר כלל ישראל, פארן בנין בית המקדש, פאר זיך און די משפחה און חברים, און פאר די אמעריקאנער סאלדאטן."
+      },
+      "evidence": {
+        "segs": [
+          327,
+          328,
+          329,
+          330,
+          335
+        ],
+        "confidence": 0.85
+      }
+    }
+  ],
+  "candidateTopics": [
+    "ahavas Yisroel",
+    "fulfilling all 613 mitzvos",
+    "judging others favorably",
+    "love of Hashem and love of Jews",
+    "the worlds of tefillah",
+    "kaddish in davening",
+    "tefillah as dveikus",
+    "praying for the government and soldiers",
+    "the Gulf War",
+    "authentic stories of tzaddikim"
+  ],
+  "concepts": [
+    {
+      "he": "אהבת ישראל",
+      "heardAs": [
+        "אבת ישראל",
+        "אבות ישראל",
+        "נבות ישראל",
+        "נאוות ישראל"
+      ]
+    },
+    {
+      "he": "דן לכף זכות",
+      "heardAs": [
+        "לכב זכות",
+        "בכף זכות",
+        "לכבוד זכות"
+      ]
+    },
+    {
+      "he": "תרי\"ג מצוות",
+      "heardAs": [
+        "צייג מצוות",
+        "טייעג מצוות"
+      ]
+    },
+    {
+      "he": "רמ\"ח אברים",
+      "heardAs": [
+        "רמחי ווארים",
+        "ר' מאחי עברים"
+      ]
+    },
+    {
+      "he": "תחיית המתים",
+      "heardAs": [
+        "תחיות המתים",
+        "די דחויות ומאותים"
+      ]
+    },
+    {
+      "he": "פדיון הבן",
+      "heardAs": [
+        "פדיון א בן"
+      ]
+    },
+    {
+      "he": "קדיש דרבנן",
+      "heardAs": [
+        "קדש דרבנים",
+        "קידוש רבונם",
+        "דאס דרבנום"
+      ]
+    },
+    {
+      "he": "עולם העשיה",
+      "heardAs": [
+        "עולם העשיאה"
+      ]
+    },
+    {
+      "he": "עולם האצילות",
+      "heardAs": [
+        "א צילוס"
+      ]
+    },
+    {
+      "he": "דביקות",
+      "heardAs": [
+        "התדבקות"
+      ]
+    },
+    {
+      "he": "שמונה עשרה",
+      "heardAs": [
+        "שמי נסחר",
+        "שמעון עשרה"
+      ]
+    },
+    {
+      "he": "תחנון",
+      "heardAs": [
+        "טעכענען"
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Rashi",
+      "heardAs": [
+        "רשע"
+      ]
+    },
+    {
+      "name": "the Bnei Yissaschar",
+      "heardAs": [
+        "בני יששכר",
+        "אייבאס יששכר"
+      ]
+    },
+    {
+      "name": "the Arizal",
+      "heardAs": [
+        "ארי הקדש"
+      ]
+    },
+    {
+      "name": "Rabbeinu Yonah",
+      "heardAs": [
+        "רבינו יונה"
+      ]
+    },
+    {
+      "name": "Dovid HaMelech",
+      "heardAs": [
+        "דוד המלך"
+      ]
+    },
+    {
+      "name": "Nasan HaNavi",
+      "heardAs": [
+        "נתן הנביא"
+      ]
+    },
+    {
+      "name": "Bas Sheva",
+      "heardAs": [
+        "בת שבע",
+        "בת שבעה"
+      ]
+    },
+    {
+      "name": "Reb Aharon of Karlin",
+      "heardAs": [
+        "רבי אהלין קאלינא"
+      ]
+    },
+    {
+      "name": "Yirmiyahu HaNavi",
+      "heardAs": [
+        "ימי ענב",
+        "ימי"
+      ]
+    },
+    {
+      "name": "Reb Motel Slonimer",
+      "heardAs": [
+        "רבי מאטל סלאנימער",
+        "רבי מרדכי סלאנימער"
+      ]
+    },
+    {
+      "name": "the Apter Rav",
+      "heardAs": [
+        "עפטער רב",
+        "אבטרעוו"
+      ]
+    },
+    {
+      "name": "Reb Yitzchak Meir of Zinkov",
+      "heardAs": [
+        "רבי יצחק מאיר דזשינקאווער"
+      ]
+    },
+    {
+      "name": "Reb Elimelech of Lizhensk",
+      "heardAs": [
+        "רבי רבי מלך"
+      ]
+    },
+    {
+      "name": "the Chozeh of Lublin",
+      "heardAs": [
+        "דער רבי פון לובלין"
+      ]
+    },
+    {
+      "name": "the Kozhnitzer Maggid",
+      "heardAs": [
+        "רבי ישראל קאזשניצער"
+      ]
+    },
+    {
+      "name": "Reb Menachem Mendel of Rimanov",
+      "heardAs": [
+        "רבי מענדיל'ער רימאנאווער"
+      ]
+    }
+  ],
+  "asrNotes": "Yiddish ASR fair to poor; the opening (segs 0-7) is badly garbled, apparently a Bnei Yissaschar on Haman's 'one scattered people' and Esther's 'gather all the Jews', and was not used. Hebrew quotations (the Gemara on tefillah as dveikus around seg 290, the Gemara on reliable transmission around segs 380-386, the phrase 'kom tosfos' at seg 145) could not be recovered and are left out. The ASR attributes the Gemara's worker story to the father of Rabbi Eliezer ben Hurkanos; this was not relied on. The second catalog topic covers both the worlds of tefillah and the Gulf War passages."
+}

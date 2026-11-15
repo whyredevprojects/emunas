@@ -1,0 +1,589 @@
+{
+  "shiurId": "yi-zmanim-unc-pvrym-ktn-11",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that although the Megillah is read in Adar Sheni, on Purim Katan it is read in Heaven in the yeshivah of Rabbi Yosi, and its lights come down to break the concealment of Adar Rishon.",
+      "yi": "דער משגיח ערקלערט אז כאטש מ'ליינט די מגילה אין אדר שני, ליינט מען זי פורים קטן אין הימל אין דער מתיבתא פון רבי יוסי, און אירע אורות קומען ארונטער און צעברעכן דעם הסתר פנים פון אדר ראשון."
+    },
+    "abstract": {
+      "en": "The Rav opens with the Mishnah's wording 'megillah nikreis', the Megillah 'is read', and notes that every word hints at many matters. He brings the passuk of the two great luminaries: the moon, the smaller light, is Knesses Yisrael, diminished both in its light and in its year, which is about ten days shorter than the sun's. Each year the moon falls further behind, until in Adar Sheni of the leap year the two are evened out, so Adar Rishon is the time of distance. The halachah follows Rabban Shimon ben Gamliel that the Megillah is read in Adar Sheni, but Rabbi Yosi holds Adar Rishon, and both are the words of the living G-d. In Rabbi Yosi's heavenly yeshivah the Megillah is read on Purim Katan, and its lights break the concealment. The Rav closes with Purim as a new Matan Torah, unity, and brachos.",
+      "yi": "דער משגיח עפנט מיט דעם לשון פון דער משנה \"מגילה נקראת\", און זאגט אז יעדעס ווארט איז מרמז אויף כמה וכמה ענינים. ער ברענגט דעם פסוק פון די צוויי מאורות הגדולים: די לבנה, דער מאור הקטן, איז כנסת ישראל, און זי איז פארקלענערט געווארן אויף צוויי אופנים, אין איר ליכטיקייט און אין איר יאר, וואס איז בערך צען טעג קירצער ווי דאס יאר פון דער חמה. יעדעס יאר ווערט די לבנה מער אפגערוקט, ביז עס קומט א שנה מעוברת, און אין אדר שני גלייכן זיך די צוויי אויס. ממילא איז אדר ראשון די צייט פון ריחוק. די הלכה איז ווי רבן שמעון בן גמליאל אז מ'ליינט די מגילה אין אדר שני, אבער רבי יוסי האלט אדר ראשון, און אלו ואלו דברי אלקים חיים. אין דער מתיבתא דרקיעא פון רבי יוסי ליינט מען די מגילה פורים קטן, און די אורות קומען ארונטער און צעברעכן דעם הסתר. צום סוף רעדט דער משגיח פון פורים ווי א נייע קבלת התורה, פון אחדות, און ער גיט ברכות."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The moon, the smaller luminary, represents Knesses Yisrael, and it was diminished both in its light and in the length of its year.",
+          "yi": "די לבנה, דער מאור הקטן, איז די בחינה פון כנסת ישראל, און זי איז פארקלענערט געווארן סיי אין איר ליכטיקייט און סיי אין דער לענג פון איר יאר."
+        },
+        "evidence": {
+          "segs": [
+            32,
+            33,
+            38,
+            40,
+            53
+          ],
+          "confidence": 0.8
+        }
+      },
+      {
+        "text": {
+          "en": "Each year the moon falls further behind the sun, until the leap year, when in Adar Sheni the sun's year and the moon's year are evened out; Adar Rishon is the time of distance.",
+          "yi": "יעדעס יאר ווערט די לבנה מער אפגערוקט פון דער חמה, ביז עס קומט א שנה מעוברת, און אין אדר שני גלייכט זיך אויס דאס יאר פון דער חמה מיט דער לבנה; אדר ראשון איז די צייט פון ריחוק."
+        },
+        "evidence": {
+          "segs": [
+            59,
+            60,
+            72,
+            76,
+            80,
+            82
+          ],
+          "confidence": 0.75
+        }
+      },
+      {
+        "text": {
+          "en": "Although the halachah follows Rabban Shimon ben Gamliel that the Megillah is read in Adar Sheni, Rabbi Yosi's view that it is read in Adar Rishon is also true, since both are the words of the living G-d.",
+          "yi": "כאטש די הלכה איז ווי רבן שמעון בן גמליאל אז מ'ליינט די מגילה אין אדר שני, איז די שיטה פון רבי יוסי אז מ'ליינט אין אדר ראשון אויך אמת, ווייל אלו ואלו דברי אלקים חיים."
+        },
+        "evidence": {
+          "segs": [
+            94,
+            96,
+            98,
+            101,
+            106,
+            117
+          ],
+          "confidence": 0.85
+        }
+      },
+      {
+        "text": {
+          "en": "On Purim Katan the Megillah is read in Heaven, in Rabbi Yosi's yeshivah, and great lights come down that break the concealment of Adar Rishon.",
+          "yi": "פורים קטן ליינט מען די מגילה אין הימל, אין דער מתיבתא פון רבי יוסי, און עס קומען ארונטער גרויסע אורות וואס צעברעכן דעם הסתר פנים פון אדר ראשון."
+        },
+        "evidence": {
+          "segs": [
+            142,
+            149,
+            152,
+            154,
+            157,
+            170
+          ],
+          "confidence": 0.85
+        }
+      },
+      {
+        "text": {
+          "en": "Purim is a new receiving of the Torah and brings a pure desire for Torah, yiras Shamayim and mitzvos.",
+          "yi": "פורים איז א נייע מתן תורה, און עס ברענגט א ריינע חשק צו תורה, צו יראת שמים און צו מצוות."
+        },
+        "evidence": {
+          "segs": [
+            227,
+            228,
+            235,
+            236
+          ],
+          "confidence": 0.75
+        }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-zemanim-adar-purim-02-11-purim-katan-5779",
+      "startSeg": 0,
+      "endSeg": 27,
+      "title": {
+        "en": "Why the Mishnah says 'megillah nikreis'",
+        "yi": "פארוואס די משנה זאגט \"מגילה נקראת\""
+      },
+      "summary": {
+        "en": "After a long untranscribed opening, the Rav asks why the Mishnah says the Megillah 'is read' rather than stating an obligation. He answers simply that the villagers may read early on the day of gathering, and adds that every word hints at many matters without end.",
+        "yi": "נאך א לאנגן אנהייב וואס איז נישט אויפגעכאפט, פרעגט דער משגיח פארוואס די משנה זאגט \"מגילה נקראת\" און נישט א לשון פון חיוב. ער ענטפערט על פי פשט אז די בני הכפרים מעגן ליינען פריער ביום הכניסה, און לייגט צו אז יעדעס ווארט איז מרמז אויף כמה וכמה ענינים עד אין סוף."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [
+        0
+      ],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-02-11-purim-katan-5779",
+      "startSeg": 28,
+      "endSeg": 79,
+      "title": {
+        "en": "The moon diminished and the leap year",
+        "yi": "די לבנה וואס איז פארקלענערט געווארן און די שנה מעוברת"
+      },
+      "summary": {
+        "en": "The Rav brings the passuk of the two luminaries: the moon, Knesses Yisrael, was diminished in its light and in its shorter year. It falls further behind the sun each year in its longing to unite with Hashem, until Adar Sheni of the leap year evens the two out.",
+        "yi": "דער משגיח ברענגט דעם פסוק פון די צוויי מאורות: די לבנה, כנסת ישראל, איז פארקלענערט געווארן אין איר ליכט און אין איר קירצערן יאר. יעדעס יאר ווערט זי מער אפגערוקט פון דער חמה, כאטש זי וויל זיך מייחד זיין מיטן רבונו של עולם, ביז אדר שני פון דער שנה מעוברת גלייכט עס אויס."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [
+        0
+      ],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-02-11-purim-katan-5779",
+      "startSeg": 80,
+      "endSeg": 146,
+      "title": {
+        "en": "Adar Rishon and the view of Rabbi Yosi",
+        "yi": "אדר ראשון און די שיטה פון רבי יוסי"
+      },
+      "summary": {
+        "en": "The Rav explains that Adar Rishon is the time of distance. The halachah follows Rabban Shimon ben Gamliel that the Megillah is read in Adar Sheni, but Rabbi Yosi's view is also true, as illustrated by Rabbeinu Tam's tefillin; in Rabbi Yosi's heavenly yeshivah the Megillah is read in Adar Rishon.",
+        "yi": "דער משגיח ערקלערט אז אדר ראשון איז די צייט פון ריחוק. די הלכה איז ווי רבן שמעון בן גמליאל אז מ'ליינט די מגילה אין אדר שני, אבער די שיטה פון רבי יוסי איז אויך אמת, ווי ער ווייזט אן פון רבינו תם'ס תפילין; אין רבי יוסי'ס מתיבתא אין הימל ליינט מען די מגילה אין אדר ראשון."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [
+        0
+      ],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-02-11-purim-katan-5779",
+      "startSeg": 147,
+      "endSeg": 197,
+      "title": {
+        "en": "The lights of Purim Katan break the concealment",
+        "yi": "די אורות פון פורים קטן צעברעכן דעם הסתר"
+      },
+      "summary": {
+        "en": "The Rav explains that when the Megillah is read in Heaven on Purim Katan, wondrous lights come down that break the concealment and annul decrees, doubled when Adar Sheni comes. He brings the Chasam Sofer on the light of reading the Megillah and the Arizal on the new lights of Purim.",
+        "yi": "דער משגיח ערקלערט אז ווען מ'ליינט די מגילה אין הימל פורים קטן, קומען ארונטער אורות נפלאות וואס צעברעכן דעם הסתר פנים און מבטל זיין גזירות, און עס וועט זיין כפלי כפליים ווען אדר שני קומט. ער ברענגט דעם חתם סופר אויף דעם אור פון קריאת המגילה, און דעם אריז\"ל אויף די נייע אורות פון פורים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [
+        0
+      ],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-zemanim-adar-purim-02-11-purim-katan-5779",
+      "startSeg": 198,
+      "endSeg": 274,
+      "title": {
+        "en": "Purim as a new Matan Torah; unity and brachos",
+        "yi": "פורים א נייע מתן תורה; אחדות און ברכות"
+      },
+      "summary": {
+        "en": "The Rav says Purim Katan is a great day for Jews, that Purim is a new Matan Torah bringing pure desire for Torah and mitzvos, and that unity brings the salvation. He closes with brachos for yeshuos and for the revelation of the light of Moshiach; the untranscribed singing and dancing that follows is part of this stretch.",
+        "yi": "דער משגיח זאגט אז פורים קטן איז א גרויסער טאג פאר אידן, אז פורים איז א נייע מתן תורה וואס ברענגט א ריינע חשק צו תורה און מצוות, און אז דורך אחדות קומט די ישועה. ער ענדיגט מיט ברכות אויף ישועות און אויף התגלות פון דעם אור פון משיח; דערנאך קומט זינגען און טאנצן וואס איז נישט אויפגעכאפט."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [
+        0
+      ],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "מגילה נקחות",
+      "work": "Mishnah Megillah",
+      "ref": "Mishnah Megillah 1:1",
+      "sefariaRef": "Mishnah Megillah 1:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          5,
+          9,
+          13,
+          21
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "ויעשה מקום ושניה מורות הגדולים",
+      "work": "Bereishis",
+      "ref": "Bereishis 1:16",
+      "sefariaRef": "Genesis 1:16",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          28,
+          29,
+          30,
+          31
+        ],
+        "confidence": 0.85
+      }
+    },
+    {
+      "heardAs": "ר' ישמעאל בן גמליה ... אבער ר' יוסי",
+      "work": "Gemara Megillah",
+      "ref": "Megillah 6b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          94,
+          95,
+          96,
+          98,
+          101
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "heardAs": "א איבלע באאיבל דברי אלקים חיים",
+      "work": "Gemara Eruvin",
+      "ref": "Eruvin 13b",
+      "sefariaRef": "Eruvin 13b",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          103,
+          106,
+          139
+        ],
+        "confidence": 0.85
+      }
+    },
+    {
+      "heardAs": "לתכו' רבים להטה",
+      "work": "Shemos",
+      "ref": "Shemos 23:2",
+      "sefariaRef": "Exodus 23:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          108,
+          109
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "הסתר מן התורה מניין",
+      "work": "Gemara Chullin",
+      "ref": "Chullin 139b",
+      "sefariaRef": "Chullin 139b",
+      "resolution": "resolved",
+      "mention": "alluded",
+      "evidence": {
+        "segs": [
+          155,
+          156
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "heardAs": "חתם סופר זאגט",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          162,
+          163
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "heardAs": "דער הרי הקדוש זאגט",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          174,
+          175,
+          176,
+          177
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "לך כנסת כלי האדם",
+      "work": "Esther",
+      "ref": "Esther 4:16",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          250,
+          251
+        ],
+        "confidence": 0.65
+      }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The leap year is read as the moon's chase after the sun: each year Knesses Yisrael falls further behind in its longing to unite with Hashem, until Adar Sheni evens the two out, which makes Purim in Adar Sheni of a wholly different kind.",
+        "yi": "דער משגיח טייטשט די שנה מעוברת ווי די לבנה וואס לויפט נאך דער חמה: יעדעס יאר בלייבט כנסת ישראל מער צוריק אין איר תשוקה זיך מייחד צו זיין מיטן רבונו של עולם, ביז אדר שני גלייכט עס אויס, און דערפאר איז פורים אין אדר שני גאר אן אנדער פורים."
+      },
+      "evidence": {
+        "segs": [
+          65,
+          66,
+          70,
+          72,
+          76,
+          77
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "text": {
+        "en": "Every Tanna has his own heichal in Heaven where one learns as he holds; just as one who never wore Rabbeinu Tam's tefillin will not be admitted to Rabbeinu Tam's heichal, so in Rabbi Yosi's heichal the Megillah is read in Adar Rishon.",
+        "yi": "יעדער תנא האט זיין היכל אין הימל וואו מ'לערנט ווי ער האלט; אזוי ווי איינער וואס האט קיינמאל נישט געלייגט רבינו תם'ס תפילין וועט מען נישט אריינלאזן אין רבינו תם'ס היכל, אזוי ליינט מען אין רבי יוסי'ס היכל די מגילה אין אדר ראשון."
+      },
+      "evidence": {
+        "segs": [
+          126,
+          128,
+          130,
+          132,
+          137,
+          142
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "text": {
+        "en": "The Megillah is read in Heaven on Purim Katan even when Jews below do not read it, so the lights of Purim come down on Purim Katan as well.",
+        "yi": "אין הימל ליינט מען די מגילה פורים קטן אפילו ווען אידן אליין ליינען נישט, און ממילא קומען די אורות פון פורים ארונטער אויך פורים קטן."
+      },
+      "evidence": {
+        "segs": [
+          168,
+          183,
+          185,
+          186
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "text": {
+        "en": "Adar Rishon, the time of distance, is itself a month of hester panim, and Purim Katan is when that concealment is broken.",
+        "yi": "אדר ראשון, די צייט פון ריחוק, איז א חודש פון הסתר פנים, און פורים קטן איז ווען דער הסתר ווערט צעבראכן."
+      },
+      "evidence": {
+        "segs": [
+          154,
+          155,
+          157,
+          170
+        ],
+        "confidence": 0.7
+      }
+    }
+  ],
+  "stories": [],
+  "questions": [
+    {
+      "question": {
+        "en": "If reading the Megillah is an obligation, why does the Mishnah say 'megillah nikreis', the Megillah 'is read', rather than stating a duty?",
+        "yi": "אויב קריאת המגילה איז א חיוב, פארוואס זאגט די משנה \"מגילה נקראת\" און נישט אז מ'מוז ליינען?"
+      },
+      "answer": {
+        "en": "Simply, because the villagers may read early on the day of gathering, the Megillah can be read on several days; but every word also hints at many deeper matters.",
+        "yi": "על פי פשט, ווייל די בני הכפרים מעגן ליינען פריער ביום הכניסה, קען מען ליינען אין עטליכע טעג; אבער יעדעס ווארט איז אויך מרמז אויף כמה ענינים."
+      },
+      "questionSegs": [
+        5,
+        6,
+        7,
+        9
+      ],
+      "answerSegs": [
+        15,
+        16,
+        18,
+        21,
+        26,
+        27
+      ],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "If the halachah follows Rabban Shimon ben Gamliel that the Megillah is read in Adar Sheni, what is there on Purim Katan?",
+        "yi": "אויב די הלכה איז ווי רבן שמעון בן גמליאל אז מ'ליינט די מגילה אין אדר שני, וואס איז דא פורים קטן?"
+      },
+      "answer": {
+        "en": "Both views are true; in Rabbi Yosi's heavenly yeshivah the Megillah is read in Adar Rishon, and its lights come down.",
+        "yi": "ביידע שיטות זענען אמת; אין רבי יוסי'ס מתיבתא אין הימל ליינט מען די מגילה אין אדר ראשון, און אירע אורות קומען ארונטער."
+      },
+      "questionSegs": [
+        94,
+        96,
+        98,
+        101
+      ],
+      "answerSegs": [
+        113,
+        114,
+        138,
+        142,
+        144
+      ],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [],
+  "candidateTopics": [
+    "Purim Katan",
+    "Adar Rishon and Adar Sheni",
+    "the diminished moon",
+    "leap year",
+    "eilu v'eilu divrei Elokim chayim",
+    "lights of the Megillah reading",
+    "hester panim",
+    "Purim as a new receiving of the Torah"
+  ],
+  "concepts": [
+    {
+      "he": "מגילה נקראת",
+      "heardAs": [
+        "מגילה נקחות",
+        "מגילה נקרייס"
+      ]
+    },
+    {
+      "he": "מאור הקטן",
+      "heardAs": [
+        "מור הקוטן",
+        "מוהר הקטן",
+        "אמער הקטן"
+      ]
+    },
+    {
+      "he": "כנסת ישראל",
+      "heardAs": [
+        "כנסת ישראל",
+        "כנסת יששכר"
+      ]
+    },
+    {
+      "he": "אדר ראשון",
+      "heardAs": [
+        "אדר ראשון",
+        "בידו הראשון",
+        "בידי ראשונים",
+        "ביאגר הראשון"
+      ]
+    },
+    {
+      "he": "אדר שני",
+      "heardAs": [
+        "אדר השני",
+        "אדער השיינע",
+        "ראדער השני"
+      ]
+    },
+    {
+      "he": "אלו ואלו דברי אלקים חיים",
+      "heardAs": [
+        "א איבלע באאיבל דברי אלקים חיים",
+        "וואלער וואלער דברי אלהים חיים"
+      ]
+    },
+    {
+      "he": "מתיבתא דרקיעא",
+      "heardAs": [
+        "מסופת אין הימל",
+        "מסופטה",
+        "מסכתו"
+      ]
+    },
+    {
+      "he": "הסתר פנים",
+      "heardAs": [
+        "היסטאפאנעם",
+        "הסתר פנים",
+        "היסטאר"
+      ]
+    },
+    {
+      "he": "פורים קטן",
+      "heardAs": [
+        "פרום קטן",
+        "פורים קדם",
+        "פרום קדם",
+        "פרום קארטן"
+      ]
+    },
+    {
+      "he": "בני הכפרים",
+      "heardAs": [
+        "בני יקפרים"
+      ]
+    },
+    {
+      "he": "יום הכניסה",
+      "heardAs": [
+        "יום הכניסה"
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Rabban Shimon ben Gamliel",
+      "heardAs": [
+        "ר' ישמעאל בן גמליה"
+      ]
+    },
+    {
+      "name": "Rabbi Yosi",
+      "heardAs": [
+        "ר' יוסי",
+        "רבי יוסי"
+      ]
+    },
+    {
+      "name": "Rabbeinu Tam",
+      "heardAs": [
+        "רבי יואל דאמב",
+        "רבי ענגעל טאם",
+        "רבי ענגעל טעם"
+      ]
+    },
+    {
+      "name": "the Chasam Sofer",
+      "heardAs": [
+        "חתם סופר"
+      ]
+    },
+    {
+      "name": "the Arizal",
+      "heardAs": [
+        "הרי הקדוש"
+      ]
+    }
+  ],
+  "asrNotes": "Yiddish ASR poor to fair. The opening (segs 0-4) is almost entirely untranscribed with a gap of about five minutes before seg 5, and the recording ends with about thirteen minutes of untranscribed singing or dancing after seg 274, so the spoken part is about 18 minutes. A story about a Spinka figure and the Megillah (segs 147-148), a gematria hint (segs 191-193), and stretches of the closing (segs 216-232) are too garbled to recover. The catalog title is a derived guess; the whole shiur is about Purim Katan."
+}

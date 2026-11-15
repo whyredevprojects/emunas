@@ -1,0 +1,550 @@
+{
+  "shiurId": "yi-shir-hashirim-unc-07",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "On 'I am black but beautiful', the Rav explains that a Jew's sins are only an outer stain while his essence stays good, and that on Shabbos he returns to that essence and feels it.",
+      "yi": "אויף \"שחורה אני ונאוה\" ערקלערט דער משגיח אז די עבירות פון א איד זענען נאר א פלעק פון אויסן, אבער זיין עצם בלייבט גוט, און שבת קומט ער צוריק צו דעם עצם און שפירט עס."
+    },
+    "abstract": {
+      "en": "The Rav explains Shir HaShirim 1:5-6: Klal Yisroel tells the nations that its blackness is only a sunburn, not its nature. Through the Midrash brought by Rashi, black in its own deeds but beautiful in the deeds of the Avos, he explains that a Jew is good in essence and his sins are incidental, which is why teshuvah helps him; he brings Malachi, that Hashem loves Yaakov and hates Esav even when their deeds look alike. A second Midrash reads the verse as black on weekdays and beautiful on Shabbos. The Rav describes Shabbos as the Jew's soul, digresses on Rabbi Samson Raphael Hirsch and reads his English essay on Shabbos, and then says a Jew must work all week to taste Shabbos, which is a day of love, a taste of Olam Haba and a return to the soul's source where sin does not reach. He ends with the Ba'al Shem Tov's custom of saying Hodu before Shabbos and with teshuvah on Erev Shabbos.",
+      "yi": "דער משגיח טייטשט שיר השירים א, ה-ו: כנסת ישראל זאגט צו די אומות העולם אז איר שווארצקייט איז נאר אפגעברענט פון דער זון און נישט איר נאטור. לויט דעם מדרש וואס רש\"י ברענגט, שווארץ אין אירע אייגענע מעשים און שיין אין די מעשים פון די אבות, ערקלערט ער אז א איד איז בעצם גוט און די עבירה איז ביי אים נאר במקרה, דערפאר העלפט ביי אים תשובה; ער ברענגט דעם פסוק אין מלאכי אז דער אויבערשטער האט ליב יעקב און פיינט עשו אפילו ווען זייערע מעשים זעען אויס גלייך. א צווייטער מדרש טייטשט שווארץ אין די וואכנטעג און שיין אום שבת. דער משגיח שילדערט שבת אלס די נשמה פון א איד, דערציילט וועגן רבי שמשון רפאל הירש און לייענט פאר זיין עסיי איבער שבת, און זאגט דערנאך אז א איד מוז זיך אנשטרענגן א גאנצע וואך כדי צו שפירן דעם טעם פון שבת, וואס איז א טאג פון אהבה, מעין עולם הבא, און א צוריקקער צום מקור פון דער נשמה וואו קיין חטא דערגרייכט נישט. ער ענדיגט מיט דעם מנהג פונעם בעל שם טוב צו זאגן הודו ערב שבת, און מיט תשובה ערב שבת."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Klal Yisroel's blackness is like a sunburn: external and temporary, not its true nature.",
+          "yi": "די שווארצקייט פון כנסת ישראל איז ווי אפגעברענט פון דער זון: פון אויסן און צייטווייליג, נישט איר אמת'דיגע נאטור."
+        },
+        "evidence": { "segs": [19, 35, 37, 38, 39], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "A Jew is good in essence because he comes from the Avos; his sins are incidental, so teshuvah, a return to his roots, helps him.",
+          "yi": "א איד איז בעצם גוט ווייל ער שטאמט פון די אבות; די עבירות זענען ביי אים נאר במקרה, דערפאר העלפט אים תשובה, א צוריקגיין צו די שורשים."
+        },
+        "evidence": { "segs": [84, 94, 95, 103, 107, 108], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Shabbos is the soul and life-spirit of a Jew; it is what makes him a Jew.",
+          "yi": "שבת איז די נשמה און דער רוח החיים פון א איד; שבת מאכט אים פאר א איד."
+        },
+        "evidence": { "segs": [193, 194, 195, 199, 230], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Hashem gave Shabbos as a gift and wanted the Jews to know what it is; a Jew must work during the week to feel its taste.",
+          "yi": "דער אויבערשטער האט געגעבן שבת אלס מתנה און געוואלט אז אידן זאלן וויסן וואס שבת איז; א איד מוז זיך אנשטרענגן אינדערוואכן כדי צו שפירן איר טעם."
+        },
+        "evidence": { "segs": [433, 438, 460, 463, 481, 502], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Shabbos is a day of love between Hashem and Klal Yisroel, a taste of Olam Haba, and a return to the place the soul was hewn from.",
+          "yi": "שבת איז א טאג פון אהבה צווישן הקב\"ה און כנסת ישראל, מעין עולם הבא, און א צוריקקער צום ארט פון וואנעט די נשמה איז אויסגעהאקט."
+        },
+        "evidence": { "segs": [507, 525, 527, 553, 563], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "On Shabbos a Jew should feel like one freed from prison, sickness, the desert and the sea, which is why Hodu is said before Shabbos.",
+          "yi": "אום שבת דארף א איד שפירן ווי איינער וואס איז ארויס פון תפיסה, פון קרענק, פון מדבר און פון ים, דערפאר זאגט מען הודו פאר שבת."
+        },
+        "evidence": { "segs": [601, 636, 637, 638, 649], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-shir-hashirim-07-shir-hashirim",
+      "startSeg": 0,
+      "endSeg": 63,
+      "title": { "en": "Black but beautiful: only a sunburn", "yi": "שחורה אני ונאוה: נאר אפגעברענט פון דער זון" },
+      "summary": {
+        "en": "The Rav explains the verses: Klal Yisroel tells the nations, the 'daughters of Jerusalem', that it is black like the tents of Kedar but beautiful like the curtains of Shlomo, and that its blackness is only a sunburn. He adds that in the future Jerusalem will be the metropolis to which the other nations submit.",
+        "yi": "דער משגיח טייטשט די פסוקים: כנסת ישראל זאגט צו די אומות העולם, די \"בנות ירושלים\", אז זי איז שווארץ ווי די געצעלטן פון קדר אבער שיין ווי די יריעות פון שלמה, און אז די שווארצקייט איז נאר פון דער זון. ער לייגט צו אז לעתיד וועט ירושלים זיין די הויפטשטאט און די אנדערע אומות וועלן זיך צו איר אונטערגעבן."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-shir-hashirim-07-shir-hashirim",
+      "startSeg": 64,
+      "endSeg": 156,
+      "title": { "en": "Good in essence, sinful only incidentally", "yi": "בעצם גוט, די עבירה נאר במקרה" },
+      "summary": {
+        "en": "From the Midrash in Rashi, black in my deeds and beautiful in my fathers' deeds, the Rav explains that like begets like: a Jew coming from the Avos is good in essence, so teshuvah helps him, unlike a gentile. He brings Malachi, that Hashem loves Yaakov and hates Esav even when their deeds look alike.",
+        "yi": "פונעם מדרש אין רש\"י, שווארץ אין מיינע מעשים און שיין אין די מעשים פון מיינע אבות, ערקלערט דער משגיח אז יעדע מין געבוירט זיין מין: א איד וואס שטאמט פון די אבות איז בעצם גוט, דערפאר העלפט ביי אים תשובה, נישט ווי ביי א גוי. ער ברענגט דעם פסוק אין מלאכי אז דער אויבערשטער האט ליב יעקב און פיינט עשו אפילו ווען זייערע מעשים זעען אויס גלייך."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-shir-hashirim-07-shir-hashirim",
+      "startSeg": 157,
+      "endSeg": 232,
+      "title": { "en": "Black on weekdays, beautiful on Shabbos", "yi": "שווארץ וואכנטאג, שיין אום שבת" },
+      "summary": {
+        "en": "A second Midrash reads the verse as black during the week and beautiful on Shabbos. The Rav compares Shabbos to an oasis after the desert, calls it the soul of the Jew, and brings the Midrash that Shabbos had no partner until Klal Yisroel was given to it.",
+        "yi": "א צווייטער מדרש טייטשט דעם פסוק: שווארץ אין די וואכנטעג און שיין אום שבת. דער משגיח גלייכט שבת צו אן אאזיס נאך דעם מדבר, רופט עס די נשמה פון א איד, און ברענגט דעם מדרש אז שבת האט נישט געהאט קיין בן זוג ביז מען האט איר געגעבן כנסת ישראל."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-shir-hashirim-07-shir-hashirim",
+      "startSeg": 233,
+      "endSeg": 316,
+      "title": { "en": "Rabbi Samson Raphael Hirsch and the Haskalah", "yi": "רבי שמשון רפאל הירש און די השכלה" },
+      "summary": {
+        "en": "Before reading Rabbi Samson Raphael Hirsch's essay on Shabbos, the Rav describes the destruction the Haskalah caused in Germany, how Rabbi Hirsch brought German Jews back, and why he wrote in German, ending with his answer to a maskil who criticized him for it.",
+        "yi": "איידער ער לייענט רבי שמשון רפאל הירש'ס עסיי איבער שבת, שילדערט דער משגיח דעם חורבן וואס די השכלה האט געמאכט אין דייטשלאנד, ווי אזוי רבי הירש האט צוריקגעברענגט די דייטשע אידן, און פארוואס ער האט געשריבן אויף דייטש, ביז זיין תשובה צו א משכיל וואס האט אים דערויף קריטיקירט."
+      },
+      "kind": "tangent",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-shir-hashirim-07-shir-hashirim",
+      "startSeg": 317,
+      "endSeg": 421,
+      "title": { "en": "Reading Rabbi Hirsch's essay on Shabbos", "yi": "רבי הירש'ס עסיי איבער שבת" },
+      "summary": {
+        "en": "The Rav reads in English from Rabbi Hirsch's essay: taking Shabbos from a Jew robs him of his richest jewel, and Shabbos, given to children, stays with them when all else fails. He comments that it is still pale, but a very good attempt to describe what Shabbos means to a Jew.",
+        "yi": "דער משגיח לייענט אויף ענגליש פון רבי הירש'ס עסיי: ווער עס נעמט צו פון א איד זיין שבת, צוראבעוועט פון אים זיין טייערסטן בריליאנט, און שבת וואס מען גיט איבער די קינדער בלייבט ביי זיי ווען אלעס אנדערש פאלט אוועק. ער באמערקט אז עס איז נאך בלאס, אבער א גאר גוטער פרואוו צו שילדערן וואס שבת מיינט פאר א איד."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-shir-hashirim-07-shir-hashirim",
+      "startSeg": 422,
+      "endSeg": 503,
+      "title": { "en": "A gift from the treasury: tasting Shabbos", "yi": "א מתנה פון בית גנזי: שפירן דעם טעם פון שבת" },
+      "summary": {
+        "en": "The Rav brings the Gemara that Hashem told Moshe He has a good gift in His treasury called Shabbos and to let the Jews know it, and Rabbi Shlomo of Karlin's word that one who keeps Shabbos without toiling for it will sit in Gan Eden like a block. He describes a Shabbos table of Torah and zemiros, and uses his own upset stomach, when good apple juice tasted bitter, to show why one must prepare all week.",
+        "yi": "דער משגיח ברענגט די גמרא אז דער אויבערשטער האט געזאגט צו משה אז ער האט א מתנה טובה אין זיין בית גנזי וואס הייסט שבת, און אז ער זאל עס לאזן וויסן די אידן, און דאס ווארט פון רבי שלמה קארלינער אז ווער עס האלט שבת אן זיך מייגע זיין דערויף וועט זיצן אין גן עדן ווי א קלאץ. ער שילדערט א שבת'דיגן טיש מיט דברי תורה און זמירות, און ברענגט א משל פון זיין אייגענעם צעשטערטן מאגן, ווען גוטער עפל זאפט האט אים געשמעקט ביטער, אז מען דארף זיך גרייטן א גאנצע וואך."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-shir-hashirim-07-shir-hashirim",
+      "startSeg": 504,
+      "endSeg": 600,
+      "title": { "en": "Shabbos: day of love and return to the source", "yi": "שבת: א טאג פון אהבה און צוריקקער צום מקור" },
+      "summary": {
+        "en": "Shabbos is the root of all pleasure and the source of Olam Haba; the Ramban explains there is no sin-offering on Shabbos because it is a day of love, which covers all sins. The Rav explains that the soul is hewn from the Kisei HaKavod and on Shabbos returns there, to the world of Klal Yisroel that sin does not reach, which ties the two Midrashim together.",
+        "yi": "שבת איז דער שורש פון אלע תענוגים און דער קוואל פון עולם הבא; דער רמב\"ן ערקלערט אז אום שבת ברענגט מען נישט קיין קרבן חטאת ווייל עס איז א טאג פון אהבה, און אהבה דעקט צו אלע פשעים. דער משגיח ערקלערט אז די נשמה איז אויסגעהאקט פונעם כסא הכבוד און שבת קומט זי דארט צוריק, צו דער וועלט פון כלל ישראל וואו קיין חטא דערגרייכט נישט, און דערמיט פארבינדט ער ביידע מדרשים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-shir-hashirim-07-shir-hashirim",
+      "startSeg": 601,
+      "endSeg": 686,
+      "title": { "en": "Hodu before Shabbos and teshuvah on Erev Shabbos", "yi": "הודו פאר שבת און תשובה ערב שבת" },
+      "summary": {
+        "en": "The Rav explains the Ba'al Shem Tov's institution of saying Hodu before Shabbos: the four who must thank Hashem are like a Jew leaving the prison, sickness, desert and stormy sea of the weekdays. He closes with the Gemara on checking one's garments on Erev Shabbos, read as checking one's betrayals, and with teshuvah and mikveh before Shabbos.",
+        "yi": "דער משגיח ערקלערט די תקנה פונעם בעל שם טוב צו זאגן הודו פאר שבת: די פיר וואס דארפן דאנקען דעם אויבערשטן זענען ווי א איד וואס גייט ארויס פון דער תפיסה, דער קרענק, דעם מדבר און דעם שטורעמדיגן ים פון די ימי החול. ער ענדיגט מיט דער גמרא אז מען דארף משמש זיין די בגדים ערב שבת, געטייטשט אויף די בגידות, און מיט תשובה און מקוה פאר שבת."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "שפירה אני ונבה בנות ירושלים",
+      "work": "Shir HaShirim",
+      "ref": "Shir HaShirim 1:5",
+      "sefariaRef": "Song of Songs 1:5",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [0, 1, 20, 25], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "עפעט אימאל זאבאנו אישי ... ששתפתנו השמש",
+      "work": "Shir HaShirim",
+      "ref": "Shir HaShirim 1:6",
+      "sefariaRef": "Song of Songs 1:6",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [30, 32, 34, 120], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "האט רשע געבראכט דעם מדרש",
+      "work": "Rashi",
+      "ref": "Rashi on Shir HaShirim 1:5",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [48, 50, 53, 54, 64], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "כמשנו ביחזקה, ונתתי עתים לס לבנות",
+      "work": "Yechezkel",
+      "ref": "Yechezkel 16:61",
+      "sefariaRef": "Ezekiel 16:61",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [61], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער מגיל האט עטליכע פראקים אין ספר נצח ישראל",
+      "work": "Netzach Yisrael",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [100], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "הלו אויך אסאב ... אהבתי יצחק ... ואוהבת יעקב",
+      "work": "Malachi",
+      "ref": "Malachi 1:2-3",
+      "sefariaRef": "Malachi 1:2-3",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [126, 127, 131, 147, 149], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אן אנדער מדרש איז שכירה אני בימיתך היום",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [157, 159, 160], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "שבת האט געזאגט לחולם יש לו בן זאג",
+      "work": "Bereishis Rabbah",
+      "ref": "Bereishis Rabbah 11:8",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [204, 211, 214, 215], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די מטות זמר פון רבי אהרן קאלינא",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [228], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "די אקדאמצע המקנה אויף קדושין פון רבי פינחס הורוויץ, דער בעל אפלויער",
+      "work": "Haflaah",
+      "ref": "Haflaah, introduction to Kiddushin",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [252, 253, 255], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אן עסיי אויף שמות ... אט אסאי וועגן שבת",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [282, 311, 320, 321, 322], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "וארקי ה' נתן לחמת השבת",
+      "work": "Shemos",
+      "ref": "Shemos 16:29",
+      "sefariaRef": "Exodus 16:29",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [424], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "מען תאנע תיבה ישלי בבית גנזי ושבת שמח ... לך והידועה",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 10b",
+      "sefariaRef": "Shabbat 10b",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [426, 427, 428, 432, 433], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "ר׳ שלמה קאלינער האט געזאגט",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [453, 456, 458, 508], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "בקרות אלא שבת עונג",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 58:13",
+      "sefariaRef": "Isaiah 58:13",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [505], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "עס שטעט אין רמב״ן",
+      "work": "Ramban",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [515, 518, 524, 525], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "על כל פשוים תכסי אהבה",
+      "work": "Mishlei",
+      "ref": "Mishlei 10:12",
+      "sefariaRef": "Proverbs 10:12",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [528, 533, 541], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "מכתה כבוד חצבה",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [557, 559], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "עס שטעט אין נייעם אלימלע, פון פרשת דבורנים",
+      "work": "Noam Elimelech",
+      "ref": "Noam Elimelech, Devarim",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [569, 570, 575, 576], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "קאפיטל כ'ו' דאכצעך מ' הודע",
+      "work": "Tehillim",
+      "ref": "Tehillim 107",
+      "sefariaRef": "Psalms 107",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [602, 603, 605, 647, 648], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ילולם יומשים יושדים בגדיו ערב שבת",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 12a",
+      "sefariaRef": "Shabbat 12a",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [667, 668], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "סאלאנעמער רבי'ס",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [673, 674, 676], "confidence": 0.7 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The proof that a Jew is good in essence is that like begets like: since he comes from the Avos, he is essentially as they were, and his sins are only incidental.",
+        "yi": "די ראיה אז א איד איז בעצם גוט איז ווייל יעדע מין געבוירט זיין מין: ווייל ער שטאמט פון די אבות איז ער בעצם ווי זיי, און די עבירות זענען ביי אים נאר במקרה."
+      },
+      "evidence": { "segs": [85, 86, 88, 89, 90], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Teshuvah means returning to one's roots; a Jew has good roots to return to, while for a gentile, whose sin is essential, it does not help in the same way.",
+        "yi": "תשובה מיינט צוריקגיין צו די שורשים; א איד האט גוטע שורשים צו וואס צוריקצוגיין, משא\"כ ביי א גוי, וואו די עבירה איז בעצם, העלפט עס נישט אזוי."
+      },
+      "evidence": { "segs": [103, 104, 107, 108, 109], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Hashem's answer to 'is not Esav a brother to Yaakov' is that even when their deeds look alike, Esav is bad in essence and Yaakov good in essence.",
+        "yi": "דער תירוץ אויף \"הלוא אח עשו ליעקב\" איז אז אפילו ווען זייערע מעשים זעען אויס גלייך, איז עשו בעצם שלעכט און יעקב בעצם גוט."
+      },
+      "evidence": { "segs": [145, 147, 150, 151, 152], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Shabbos is not only a taste of Olam Haba: following Rabbi Shlomo of Karlin, it is the fountain from which Olam Haba itself draws.",
+        "yi": "שבת איז נישט נאר מעין עולם הבא: לויט רבי שלמה קארלינער איז עס דער קוואל פון וואנעט עולם הבא אליין נעמט."
+      },
+      "evidence": { "segs": [507, 508, 509, 510], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The word 'Shabbos' means return: on Shabbos the soul goes back to the Kisei HaKavod it was hewn from, where no sin reaches, which unites the two Midrashim on 'black but beautiful'.",
+        "yi": "דאס ווארט \"שבת\" מיינט צוריקקערן: שבת גייט די נשמה צוריק צום כסא הכבוד פון וואנעט זי איז אויסגעהאקט, וואו קיין חטא דערגרייכט נישט, און דערמיט ווערן די צוויי מדרשים אויף \"שחורה אני ונאוה\" איינס."
+      },
+      "evidence": { "segs": [563, 565, 577, 579, 580], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Weekdays ('chol') are like sickness ('choleh'), prison, desert and sea; Shabbos is the release for which the four who must give thanks in Hodu thank Hashem.",
+        "yi": "די ימי החול זענען ווי קרענק (\"חולה\"), תפיסה, מדבר און ים; שבת איז די באפרייאונג פאר וואס די פיר וואס דארפן דאנקען אין הודו לויבן דעם אויבערשטן."
+      },
+      "evidence": { "segs": [637, 638, 639, 649], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Checking one's garments ('begadim') on Erev Shabbos is read, in the Slonimer Rebbes' Chassidic interpretation, as checking one's betrayals ('bgidos') against Hashem and doing teshuvah.",
+        "yi": "משמש זיין די בגדים ערב שבת ווערט געטייטשט, לויט די סלאנימער רביס, אויף אונטערזוכן די בגידות קעגן דעם רבונו של עולם און תשובה טאן."
+      },
+      "evidence": { "segs": [673, 674, 676, 677], "confidence": 0.7 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "Frankfurt before and after the Haskalah", "yi": "פראנקפורט פאר און נאך דער השכלה" },
+      "retelling": {
+        "en": "The Rav relates that the Haflaah, Rabbi Pinchas Horowitz, wrote in his introduction that he thanked Hashem for becoming Rav in Frankfurt, a city full of talmidei chachamim and a yeshivah. Some thirty years after the Haskalah began to rage, Rabbi Samson Raphael Hirsch came to Frankfurt and found only thirteen families keeping Shabbos. He brought German Jewry back to emunah.",
+        "yi": "דער משגיח דערציילט אז דער הפלאה, רבי פנחס הורוויץ, שרייבט אין זיין הקדמה אז ער דאנקט דעם רבונו של עולם וואס ער איז געווארן רב אין פראנקפורט, א שטאט פול מיט תלמידי חכמים און א ישיבה. ארום דרייסיג יאר שפעטער, נאכדעם וואס די השכלה האט אנגעהויבן צו בושעווען, איז רבי שמשון רפאל הירש אנגעקומען קיין פראנקפורט און געטראפן נאר דרייצן משפחות וואס האבן געהאלטן שבת. ער האט צוריקגעברענגט די דייטשע אידן צו אמונה."
+      },
+      "people": ["Rabbi Pinchas Horowitz (the Haflaah)", "Rabbi Samson Raphael Hirsch"],
+      "evidence": { "segs": [252, 255, 257, 259, 261], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "Rabbi Hirsch answers a maskil", "yi": "רבי הירש ענטפערט א משכיל" },
+      "retelling": {
+        "en": "The maskilim wrote their heretical books in Hebrew, and one of them criticized Rabbi Hirsch for writing his works in German rather than in the eternal language. Rabbi Hirsch answered that his writings in German would remain forever, while the other's writings in the eternal language would be lost. The Rav adds that so it indeed was.",
+        "yi": "די משכילים פלעגן שרייבן זייערע אפיקורסישע ספרים אויף העברעאיש, און איינער פון זיי האט קריטיקירט רבי הירש פארוואס ער שרייבט אויף דייטש און נישט אין דער אייביגער שפראך. רבי הירש האט געענטפערט אז זיינע שריפטן אויף דייטש וועלן בלייבן אויף אייביג, און יענעמ'ס שריפטן אין דער אייביגער שפראך וועלן פארלוירן ווערן. דער משגיח לייגט צו אז אזוי איז טאקע געווען."
+      },
+      "people": ["Rabbi Samson Raphael Hirsch"],
+      "evidence": { "segs": [297, 299, 303, 305, 306, 307], "confidence": 0.85 }
+    },
+    {
+      "title": { "en": "The bitter apple juice", "yi": "דער ביטערער עפל זאפט" },
+      "retelling": {
+        "en": "The Rav relates that the previous week he had an upset stomach, and was given a glass of apple juice. It tasted bitter to him and he thought it was spoiled, but he was told it was good apple juice. Once his stomach recovered, the same apple juice tasted wonderful. So too, one with a spiritually upset stomach does not know what Shabbos is.",
+        "yi": "דער משגיח דערציילט אז די פאריגע וואך האט ער געהאט א צעשטערטן מאגן, און מען האט אים געגעבן א גלאז עפל זאפט. עס האט אים געשמעקט ביטער און ער האט געמיינט אז עס איז פארדארבן, אבער מען האט אים געזאגט אז ס'איז גוטער עפל זאפט. ווען דער מאגן איז געזונט געווארן, האט דער זעלבער עפל זאפט געשמעקט א מחיה. אזוי אויך, ווער עס האט א רוחניות'דיגן צעשטערטן מאגן ווייסט נישט וואס שבת איז."
+      },
+      "people": [],
+      "evidence": { "segs": [486, 488, 492, 499, 500, 501], "confidence": 0.8 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "If Esav is Yaakov's brother and at times their deeds look alike, why does Hashem love Yaakov and hate Esav?",
+        "yi": "אויב עשו איז א ברודער פון יעקב און צומאל זעען זייערע מעשים אויס גלייך, פארוואס האט דער אויבערשטער ליב יעקב און פיינט עשו?"
+      },
+      "answer": {
+        "en": "Because Esav is bad in essence and Yaakov good in essence; Yaakov's bad is only incidental and temporary and can be washed off.",
+        "yi": "ווייל עשו איז בעצם שלעכט און יעקב איז בעצם גוט; דאס שלעכטס ביי יעקב איז נאר במקרה און צייטווייליג, און מען קען עס אפוואשן."
+      },
+      "questionSegs": [139, 140, 141, 145],
+      "answerSegs": [150, 151, 152, 154, 155],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why is there no sin-offering among the Shabbos offerings, unlike every Yom Tov?",
+        "yi": "פארוואס ברענגט מען נישט קיין קרבן חטאת אום שבת, נישט ווי ביי יעדן יום טוב?"
+      },
+      "answer": {
+        "en": "Because Shabbos is a day of mutual love between Hashem and Klal Yisroel, and love covers all sins.",
+        "yi": "ווייל שבת איז א טאג פון אהבה צווישן הקב\"ה און כנסת ישראל, און אהבה דעקט צו אלע פשעים."
+      },
+      "questionSegs": [516, 518, 519, 522],
+      "answerSegs": [525, 526, 527, 528, 535],
+      "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says a Jew must toil and try with all his strength to feel what Shabbos is: a Shabbos table with divrei Torah and zemiros, not magazines.",
+        "yi": "דער משגיח זאגט אז א איד דארף הארעווען און פרובירן מיט אלע כוחות צו שפירן וואס שבת איז: א שבת'דיגער טיש מיט דברי תורה און זמירות, נישט מאגאזינען."
+      },
+      "evidence": { "segs": [460, 462, 466, 467, 471], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "He says one prepares for Shabbos all week, by learning, davening and guarding oneself properly, and then tastes Olam Haba on Shabbos.",
+        "yi": "ער זאגט אז מען גרייט זיך צו שבת א גאנצע וואך, מיט לערנען, דאווענען און זיך היטן ווי עס דארף צו זיין, און דעמאלט שפירט מען אום שבת מעין עולם הבא."
+      },
+      "evidence": { "segs": [502, 546, 547, 548, 550], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "He says that when Shabbos comes a Jew should feel freed from the troubles of the week, like one of those who give thanks in Hodu.",
+        "yi": "ער זאגט אז ווען שבת קומט דארף א איד שפירן ווי באפרייט פון די צרות פון דער וואך, ווי איינער פון די וואס דאנקען אין הודו."
+      },
+      "evidence": { "segs": [636, 637, 651, 659], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He says one must do teshuvah on Erev Shabbos and not enter Shabbos unprepared; the mikveh on Erev Shabbos is a form of teshuvah.",
+        "yi": "ער זאגט אז מען דארף תשובה טאן ערב שבת און נישט אריינפאלן אין שבת אן הכנה; די מקוה ערב שבת איז א ענין פון תשובה."
+      },
+      "evidence": { "segs": [677, 678, 680, 681], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "shir hashirim 1:5-6",
+    "black but beautiful",
+    "the essential goodness of a Jew",
+    "teshuvah as return to the roots",
+    "Shabbos as the soul of the Jew",
+    "Shabbos as a taste of Olam Haba",
+    "Rabbi Samson Raphael Hirsch on Shabbos",
+    "preparing for Shabbos",
+    "Hodu before Shabbos",
+    "Yaakov and Esav"
+  ],
+  "concepts": [
+    { "he": "שחורה אני ונאוה", "heardAs": ["שפירה אני ונבה", "שחרע אני בנובע", "שחרר אני ונבא"] },
+    { "he": "בנות ירושלים", "heardAs": ["בנות ירושליםכנסת ישראל"] },
+    { "he": "אומות העולם", "heardAs": ["עמות העולם", "לעומת העולם"] },
+    { "he": "ששזפתני השמש", "heardAs": ["ששתפתנו השמש", "זופת השמש"] },
+    { "he": "במקרה", "heardAs": ["במקרא"] },
+    { "he": "בעצם", "heardAs": ["ביצם", "בעטם"] },
+    { "he": "בן זוג", "heardAs": ["בן זאג", "בן-זאג"] },
+    { "he": "מתנה טובה יש לי בבית גנזי", "heardAs": ["מען תאנע תיבה ישלי בבית גנזי"] },
+    { "he": "מעין עולם הבא", "heardAs": ["מיין עולם הבא", "עין עולם הבא"] },
+    { "he": "כסא הכבוד", "heardAs": ["כיסא הכבוד", "כיסוי הכבוד"] },
+    { "he": "השכלה", "heardAs": ["עסקאלע", "השכלה"] },
+    { "he": "ימי החול", "heardAs": ["ימית החול", "ימית החיל", "ימיות החיל"] },
+    { "he": "חייב אדם למשמש בבגדיו ערב שבת", "heardAs": ["ילולם יומשים יושדים בגדיו ערב שבת"] }
+  ],
+  "people": [
+    { "name": "Rashi", "heardAs": ["רשע"] },
+    { "name": "the Maharal", "heardAs": ["מגיל"] },
+    { "name": "Yaakov", "heardAs": ["יענקב", "יעקב", "יכב"] },
+    { "name": "Esav", "heardAs": ["אסף", "יין כיף", "יעשף", "אסאב"] },
+    { "name": "Rabbi Aharon of Karlin", "heardAs": ["רבי אהרן קאלינא"] },
+    { "name": "Rabbi Samson Raphael Hirsch", "heardAs": ["רבי שמשון רפאל הירש", "ר' שמשל'ן פארל הערש", "ר' שמשון ראפאלא הערשט"] },
+    { "name": "Rabbi Yisroel Salanter", "heardAs": ["רבי ישראל סאלאנזשען"] },
+    { "name": "Rabbi Pinchas Horowitz (the Haflaah)", "heardAs": ["רבי פינחס הורוויץ", "בעל אפלויער"] },
+    { "name": "the Divrei Chaim", "heardAs": ["דער רחיים"] },
+    { "name": "Rabbi Shraga Feivel Mendlowitz", "heardAs": ["רבי פייוור מענדלארוויטש"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו"] },
+    { "name": "Rabbi Shlomo of Karlin", "heardAs": ["ר׳ שלמה קאלינער", "רבי שלמה קאלינא"] },
+    { "name": "the Ramban", "heardAs": ["רמב״ן"] },
+    { "name": "the Noam Elimelech", "heardAs": ["נייעם אלימלע"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["בעש''ק", "בעש''ט"] },
+    { "name": "the Slonimer Rebbes", "heardAs": ["סאלאנעמער רבי'ס"] }
+  ],
+  "asrNotes": "Yiddish ASR fair for the Rav's own speech but badly garbled on the pesukim and Midrash quotations, which were recovered from context (Shir HaShirim 1:5-6). The reading of Rabbi Hirsch's English essay (segs 316-414) is partly transcribed as English in Hebrew letters. Unclear stretches not used: the zemer of R' Aharon of Karlin (segs 228-229), the source on the soul hewn from the Kisei HaKavod (segs 557-558), and the prison digression (segs 613-630). The catalog title is only a filename guess."
+}

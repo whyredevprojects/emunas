@@ -1,0 +1,141 @@
+{
+  "shiurId": "yi-shiurim-labachurim-01",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav teaches bochurim that a Jew's whole life belongs to the service of Hashem, and that in our generation the main avodah is tefillah, davened with the heart and with time.",
+      "yi": "דער משגיח לערנט די בחורים אז א אידס גאנץ לעבן געהערט צו עבודת השם, און אז אין אונזער דור איז די עיקר עבודה תפילה, געדאווענט מיטן הארץ און מיט צייט."
+    },
+    "abstract": {
+      "en": "The Rav opens by calling the beis medrash a place of tefillah and lays the foundation from the first chapter of Mesilas Yesharim: a person must know his duty in his world. Serving Hashem is not a tax paid three times a day; eating, sleeping, earning a living and even exercise are part of the avodah when done for that purpose, as the Rambam's hired worker who sharpens his axe is paid for the whole day. He then turns to tefillah, which Chazal say people belittle. Torah is greater, yet its study is mixed with incentives, while tefillah is pure speech to Hashem; in the era before Moshiach, as the Ba'al Shem Tov taught, tefillah is the main avodah. Tefillah must be avodah of the heart: knowing the words, taking time, saying each word like counting money. He recalls how Jews once davened and announces a program of learning the meaning of davening.",
+      "yi": "דער משגיח עפנט אז דער בית המדרש איז א מקום פון תפילה, און לייגט אוועק דעם יסוד פונעם ערשטן פרק מסילת ישרים: א מענטש דארף וויסן וואס זיין חוב איז אין זיין וועלט. עבודת השם איז נישט ווי באצאלן טעקסעס דריי מאל א טאג; עסן, שלאפן, פרנסה און אפילו זיך באוועגן איז אלץ עבודה ווען מ'טוט עס דערפאר, אזוי ווי דער פועל ביים רמב\"ם וואס שארפט די האק ווערט באצאלט פארן גאנצן טאג. דערנאך גייט ער איבער צו תפילה, וואס חז\"ל זאגן אז מענטשן זענען מזלזל דערין. תורה איז גרעסער, נאר דאס לערנען איז געמישט מיט פניות, און תפילה איז ריין, מ'רעדט צום רבונו של עולם; אין עקבתא דמשיחא, ווי דער בעל שם טוב האט געלערנט, איז דער עיקר תפילה. תפילה דארף זיין עבודה שבלב: וויסן דעם טייטש, נעמען צייט, זאגן יעדעס ווארט ווי מ'ציילט געלט. ער דערמאנט ווי אידן פלעגן דאווענען און זאגט אן א סדר צו לערנען דעם טייטש פון דאווענען."
+    },
+    "keyPoints": [
+      { "text": { "en": "A person must know his duty in his world: his entire life, every hour of the day, is meant for the service of Hashem.", "yi": "א מענטש דארף וויסן זיין חוב אין זיין וועלט: זיין גאנץ לעבן, יעדע שעה פונעם טאג, איז געמיינט פאר עבודת השם." }, "evidence": { "segs": [31, 35, 37, 82], "confidence": 0.85 } },
+      { "text": { "en": "Physical needs such as eating, sleeping and rest become part of avodas Hashem when done with that intent, and are revealed retroactively as such when the person then turns to serving Hashem.", "yi": "גשמיות'דיגע צרכים ווי עסן, שלאפן און זיך אפרוען ווערן א טייל פון עבודת השם ווען מ'טוט זיי מיט דעם חשבון, און עס ווערט נתגלה למפרע ווען ער נעמט זיך דערנאך צו דינען דעם רבונו של עולם." }, "evidence": { "segs": [93, 94, 109, 110], "confidence": 0.8 } },
+      { "text": { "en": "Tefillah is a great avodah that people belittle and do not value.", "yi": "תפילה איז א גרויסע עבודה וואס מענטשן זענען מזלזל דערין און שאצן נישט אפ." }, "evidence": { "segs": [138, 140, 164, 169], "confidence": 0.85 } },
+      { "text": { "en": "Although Torah is the greater avodah, in our time, the era before Moshiach, the main avodah is tefillah.", "yi": "כאטש תורה איז די גרעסערע עבודה, איז היינט, אין עקבתא דמשיחא, דער עיקר עבודה תפילה." }, "evidence": { "segs": [215, 239, 284, 295], "confidence": 0.75 } },
+      { "text": { "en": "Tefillah must be avodah of the heart: knowing what one says, turning to Hashem, and taking enough time.", "yi": "תפילה דארף זיין עבודה שבלב: וויסן וואס מ'זאגט, זיך ווענדן צום רבונו של עולם, און נעמען גענוג צייט." }, "evidence": { "segs": [368, 370, 371, 403, 407], "confidence": 0.8 } },
+      { "text": { "en": "The Rav announces that the beis medrash will learn the meaning of the words of davening, beginning with a few weeks on the importance of tefillah.", "yi": "דער משגיח זאגט אן אז אין בית המדרש וועט מען לערנען דעם טייטש פון דאווענען, און מ'וועט אנהייבן מיט עטליכע וואכן רעדן פון דעם ענין פון תפילה." }, "evidence": { "segs": [599, 600, 603, 604], "confidence": 0.75 } }
+    ]
+  },
+  "sections": [
+    { "recordingId": "y-sets-hisorerus-liavodas-hashem-01-hisorerus-beavodas-hashem", "startSeg": 0, "endSeg": 64,
+      "title": { "en": "A place of tefillah; a person's duty in his world", "yi": "א מקום פון תפילה; דעם מענטשנס חוב אין זיין וועלט" },
+      "summary": { "en": "The Rav tells the bochurim that their yeshivos are places of Torah and this beis medrash a place of tefillah, and opens with the foundation from Mesilas Yesharim that a person must know his duty in his world. Avodas Hashem is not like paying taxes for set times; a Jew's whole life is devoted to it.", "yi": "דער משגיח זאגט די בחורים אז די ישיבות זענען א מקום פון תורה און דער בית המדרש איז א מקום פון תפילה, און עפנט מיטן יסוד פון מסילת ישרים אז א מענטש דארף וויסן זיין חוב אין זיין וועלט. עבודת השם איז נישט ווי באצאלן טעקסעס פאר געוויסע צייטן; א אידס גאנץ לעבן איז געווידמעט דערצו." },
+      "kind": "intro", "catalogTopicIdx": [0], "subsections": [] },
+    { "recordingId": "y-sets-hisorerus-liavodas-hashem-01-hisorerus-beavodas-hashem", "startSeg": 65, "endSeg": 137,
+      "title": { "en": "Eating and sleeping as part of avodah", "yi": "עסן און שלאפן אלס טייל פון עבודה" },
+      "summary": { "en": "The Rav explains that eating, sleeping, earning a living and even exercise are for avodas Hashem, like the Rambam's worker whose axe-sharpening counts as work. If after his physical needs a person does not turn to Torah, it shows he did them for himself.", "yi": "דער משגיח ערקלערט אז עסן, שלאפן, פרנסה און אפילו זיך באוועגן איז אלץ פאר עבודת השם, אזוי ווי דער פועל ביים רמב\"ם וועמענס שארפן די האק ווערט גערעכנט פאר ארבעט. אויב ער נעמט זיך נישט צו תורה נאך די גשמיות'דיגע צרכים, איז א סימן אז ער האט עס געטון פאר זיך." },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": [] },
+    { "recordingId": "y-sets-hisorerus-liavodas-hashem-01-hisorerus-beavodas-hashem", "startSeg": 138, "endSeg": 210,
+      "title": { "en": "Tefillah, the belittled avodah", "yi": "תפילה, די עבודה וואס מ'איז מזלזל" },
+      "summary": { "en": "The Rav says davening is a great avodah people do not recognize, and brings the Gemara that tefillah stands at the height of the world yet people belittle it. He tells how Reb Nochum of Chernobyl davened over a quarrel with a maid, since everything one needs must be asked of Hashem.", "yi": "דער משגיח זאגט אז דאווענען איז א גרויסע עבודה וואס מענטשן דערקענען נישט, און ברענגט די גמרא אז תפילה שטייט אין רומו של עולם און מענטשן זענען מזלזל דערין. ער דערציילט ווי ר' נחום טשערנאבילער האט געדאווענט וועגן א קריגעריי מיט א דינסט, ווייל אלץ וואס מ'דארף מוז מען בעטן פונעם רבונו של עולם." },
+      "kind": "main", "catalogTopicIdx": [1], "subsections": [] },
+    { "recordingId": "y-sets-hisorerus-liavodas-hashem-01-hisorerus-beavodas-hashem", "startSeg": 211, "endSeg": 295,
+      "title": { "en": "Torah is greater, yet tefillah is the main avodah now", "yi": "תורה איז גרעסער, אבער היינט איז תפילה דער עיקר" },
+      "summary": { "en": "The Rav sets the order: Torah, then tefillah, then the other mitzvos. Yet Torah study draws many incentives, and the Toldos Yaakov Yosef writes that the Ba'al Shem Tov came mainly to strengthen tefillah; from the Arizal's time, the era before Moshiach, the main avodah is tefillah.", "yi": "דער משגיח שטעלט אוועק דעם סדר: תורה, דערנאך תפילה, דערנאך די אנדערע מצוות. אבער ביים לערנען זענען דא אסאך פניות, און דער תולדות יעקב יוסף שרייבט אז דער בעל שם טוב איז געקומען בעיקר מחזק זיין תפילה; פונעם אריז\"ל'ס צייט, עקבתא דמשיחא, איז דער עיקר עבודה תפילה." },
+      "kind": "main", "catalogTopicIdx": [1], "subsections": [] },
+    { "recordingId": "y-sets-hisorerus-liavodas-hashem-01-hisorerus-beavodas-hashem", "startSeg": 296, "endSeg": 367,
+      "title": { "en": "The sick man's diet; tefillah's purity and kavanah", "yi": "דעם חולה'ס שפייז; די ריינקייט פון תפילה און כוונה" },
+      "summary": { "en": "With a mashal of a sick man who cannot eat bread and meat and must live on oranges, the Rav explains why a weak generation needs tefillah. Torah lishmah is hard and mixed with motives, but tefillah is pure speech to Hashem; davening without kavanah fulfills the rabbinic obligation but not 'with all your heart'.", "yi": "מיט א משל פון א חולה וואס קען נישט עסן ברויט מיט פלייש און מוז לעבן פון אראנזשעס, ערקלערט דער משגיח פארוואס א שוואכער דור דארף תפילה. תורה לשמה איז שווער און געמישט מיט פניות, אבער תפילה איז ריין, מ'רעדט צום רבונו של עולם; דאווענען אן כוונה איז מקיים דעם דרבנן, אבער נישט \"בכל לבבכם\"." },
+      "kind": "main", "catalogTopicIdx": [1, 2], "subsections": [] },
+    { "recordingId": "y-sets-hisorerus-liavodas-hashem-01-hisorerus-beavodas-hashem", "startSeg": 368, "endSeg": 464,
+      "title": { "en": "Avodah of the heart takes time", "yi": "עבודה שבלב דארף צייט" },
+      "summary": { "en": "The Rav explains that tefillah must come from the heart: Gemara is to be learned, davening is to be davened. It needs preparation and time; one cannot daven in twenty minutes, and he brings the Magen Avraham and the Shulchan Aruch on how long Pesukei Dezimra should take and saying words like counting money.", "yi": "דער משגיח ערקלערט אז תפילה דארף קומען פונעם הארץ: גמרא דארף מען לערנען, דאווענען דארף מען דאווענען. עס דארף הכנה און צייט; מ'קען נישט דאווענען אין צוואנציג מינוט, און ער ברענגט דעם מגן אברהם און דעם שולחן ערוך וויפיל צייט פסוקי דזמרה דארף נעמען און אז מ'זאל זאגן די ווערטער ווי מ'ציילט געלט." },
+      "kind": "main", "catalogTopicIdx": [2], "subsections": [] },
+    { "recordingId": "y-sets-hisorerus-liavodas-hashem-01-hisorerus-beavodas-hashem", "startSeg": 465, "endSeg": 535,
+      "title": { "en": "How Jews used to daven", "yi": "וויאזוי אידן פלעגן דאווענען" },
+      "summary": { "en": "The Rav recalls an old chassid who davened word by word like counting money, contrasts today's hurried minyanim in the shtiblach with how simple Jews once davened, and describes the Satmar Rav davening slowly and aloud with the bochurim. He brings the Gemara that one who lengthens his tefillah has his days lengthened.", "yi": "דער משגיח דערמאנט אן אלטן חסיד וואס האט געדאווענט ווארט ביי ווארט ווי מ'ציילט געלט, שטעלט אקעגן די היינטיגע געאיילטע מנינים אין די שטיבלעך מיט ווי פשוט'ע אידן האבן אמאל געדאווענט, און באשרייבט ווי דער סאטמארער רב האט געדאווענט פאמעלעך און הויך מיט די בחורים. ער ברענגט די גמרא אז דער וואס איז מאריך בתפילתו ווערט מאריך ימים." },
+      "kind": "main", "catalogTopicIdx": [2], "subsections": [] },
+    { "recordingId": "y-sets-hisorerus-liavodas-hashem-01-hisorerus-beavodas-hashem", "startSeg": 536, "endSeg": 610,
+      "title": { "en": "The chassidim harishonim and the beis medrash's aim", "yi": "די חסידים הראשונים און דעם בית המדרש'ס תכלית" },
+      "summary": { "en": "The Rav tells of a tzaddik's pity for young men who never saw a Jew's avodah in davening, and brings the Gemara that the early chassidim spent nine hours a day on tefillah and their Torah was preserved. He explains the beis medrash wants to renew what was forgotten and announces learning the meaning of davening.", "yi": "דער משגיח דערציילט פון א צדיק'ס רחמנות אויף יונגעלייט וואס האבן קיינמאל נישט געזען א אידס עבודה ביים דאווענען, און ברענגט די גמרא אז די חסידים הראשונים האבן פארברענגט ניין שעה א טאג מיט תפילה און זייער תורה איז געבליבן. ער ערקלערט אז דער בית המדרש וויל מחדש זיין וואס איז פארגעסן געווארן, און זאגט אן אז מ'וועט לערנען דעם טייטש פון דאווענען." },
+      "kind": "main", "catalogTopicIdx": [1, 2], "subsections": [] },
+    { "recordingId": "y-sets-hisorerus-liavodas-hashem-01-hisorerus-beavodas-hashem", "startSeg": 611, "endSeg": 668,
+      "title": { "en": "An old world needs tefillah", "yi": "אן אלטע וועלט דארף תפילה" },
+      "summary": { "en": "The Rav contrasts earlier generations, when Torah alone sufficed, with today, when the world is old and bent over and the main avodah is tefillah. He tells the bochurim that their years are for Torah, yet they must give davening its proper importance, and mentions the Yesod HaAvodah of Reb Avraham of Slonim.", "yi": "דער משגיח שטעלט אקעגן די פריערדיגע דורות, ווען תורה אליין איז געווען גענוג, מיט היינט, ווען די וועלט איז אלט און איינגעבויגן און דער עיקר עבודה איז תפילה. ער זאגט די בחורים אז זייערע יארן זענען פאר תורה, אבער זיי דארפן געבן דאווענען די ריכטיגע חשיבות, און דערמאנט דעם יסוד העבודה פון ר' אברהם סלאנימער." },
+      "kind": "closing", "catalogTopicIdx": [1, 2], "subsections": [] }
+  ],
+  "sources": [
+    { "heardAs": "מסילת ישורים אין דעם ערשטן קריג", "work": "Mesilas Yesharim", "ref": "Mesilas Yesharim ch. 1", "sefariaRef": "Mesillat Yesharim 1", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [28, 29, 30, 65], "confidence": 0.8 } },
+    { "heardAs": "אזוי פסק'נט ביי רמב״ם", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [95, 96, 100], "confidence": 0.75 } },
+    { "heardAs": "דאס איז דברים שעומדים, ברמה של עולם, ובני אדם מזלזלים ובהם", "work": "Gemara Berachos", "ref": "Berachos 6b", "sefariaRef": "Berakhot 6b", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [165, 166, 167, 168], "confidence": 0.85 } },
+    { "heardAs": "קרום זלות לבני אדם", "work": "Tehillim", "ref": "Tehillim 12:9", "sefariaRef": "Psalms 12:9", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [166, 170], "confidence": 0.75 } },
+    { "heardAs": "ולעובדי בכל לבבך / לובבי בכל לבבכם", "work": "Devarim", "ref": "Devarim 11:13", "sefariaRef": "Deuteronomy 11:13", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [185, 342, 343], "confidence": 0.75 } },
+    { "heardAs": "עס שטעט אין תלמידי צו יעקב יוסף", "work": "Toldos Yaakov Yosef", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [256, 263, 264], "confidence": 0.75 } },
+    { "heardAs": "אריה קבוש / יריא קודש", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [268, 282, 284], "confidence": 0.65 } },
+    { "heardAs": "אין די גמרא שטעט אז דער וואס האט נישט מזונען ... ברכת אבותא", "work": "Gemara Berachos", "ref": "Berachos 34b", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [345, 346], "confidence": 0.7 } },
+    { "heardAs": "אבער אין ראש הנברה שטעט אז היינט טאגט מען נישט אזא", "work": "Shulchan Aruch (Rema)", "ref": "Shulchan Aruch Orach Chaim 101:1, Rema", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [347, 366], "confidence": 0.6 } },
+    { "heardAs": "שולחן marriage ... כמנה מורות", "work": "Shulchan Aruch", "ref": "Shulchan Aruch Orach Chaim 51:8", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [454, 458, 459], "confidence": 0.65 } },
+    { "heardAs": "מגן אברהם", "work": "Magen Avraham", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [431, 433, 434, 439], "confidence": 0.7 } },
+    { "heardAs": "כל המעריך בתפילתו מרוחם ויאמה ושנתך", "work": "Gemara Berachos", "ref": "Berachos 54b", "sefariaRef": "Berakhot 54b", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [535], "confidence": 0.75 } },
+    { "heardAs": "חסידים ... פלעגען דאווענען הישן שחר ... אזוי זאגט דער גמרא ברכת", "work": "Gemara Berachos", "ref": "Berachos 32b", "sefariaRef": "Berakhot 32b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [567, 568, 570, 571, 572, 574], "confidence": 0.75 } },
+    { "heardAs": "יסודי העבידה פון רבי אברהם סלעניברא", "work": "Yesod HaAvodah", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [650, 651], "confidence": 0.7 } }
+  ],
+  "insights": [
+    { "text": { "en": "Avodas Hashem is not a tax paid at set times, after which the rest of the day is one's own; the claim 'I may have my own time' is a mistake.", "yi": "עבודת השם איז נישט קיין טעקס וואס מ'באצאלט צו געוויסע צייטן און דער איבעריגער טאג געהערט צו זיך; דער טענה \"איך מעג האבן מיין אייגענע צייט\" איז א טעות." }, "evidence": { "segs": [38, 39, 42, 48, 50], "confidence": 0.85 } },
+    { "text": { "en": "Whether physical activity was for Hashem is revealed retroactively: if after his needs a person turns to Torah, all of it was service; if not, the whole day was empty.", "yi": "צי די גשמיות'דיגע זאכן זענען געווען פאר'ן רבונו של עולם ווערט נתגלה למפרע: אויב ער נעמט זיך נאכדעם צו תורה, איז אלץ געווען עבודה; אויב נישט, איז דער גאנצער טאג א ליידיגער." }, "evidence": { "segs": [93, 110, 114, 115, 118], "confidence": 0.8 } },
+    { "text": { "en": "Torah study, though greater, attracts incentives such as honor and recognition, whereas tefillah is purely speaking to Hashem.", "yi": "לערנען, כאטש עס איז גרעסער, ציט צו פניות ווי כבוד און א שם, משא\"כ תפילה איז ריין רעדן צום רבונו של עולם." }, "evidence": { "segs": [230, 232, 328, 330, 333, 334], "confidence": 0.8 } },
+    { "text": { "en": "Like a sick man who must live on oranges when he cannot eat bread and meat, the weak generation before Moshiach must strengthen itself through tefillah.", "yi": "אזוי ווי א חולה וואס קען נישט עסן ברויט מיט פלייש מוז לעבן פון אראנזשעס, אזוי מוז דער שוואכער דור פון עקבתא דמשיחא זיך מחזק זיין מיט תפילה." }, "evidence": { "segs": [297, 300, 301, 302, 304, 308], "confidence": 0.75 } },
+    { "text": { "en": "Gemara must be learned, not davened, and davening must be davened, not learned.", "yi": "גמרא דארף מען לערנען, נישט דאווענען, און דאווענען דארף מען דאווענען, נישט לערנען." }, "evidence": { "segs": [382, 383, 385, 387], "confidence": 0.8 } },
+    { "text": { "en": "In early generations Torah alone sufficed, but now the world is old and bent over and its main avodah is tefillah.", "yi": "אין די פריערדיגע דורות איז תורה אליין געווען גענוג, אבער היינט איז די וועלט אלט און איינגעבויגן און איר עיקר עבודה איז תפילה." }, "evidence": { "segs": [612, 616, 621, 629], "confidence": 0.65 } }
+  ],
+  "stories": [
+    { "title": { "en": "Reb Nochum of Chernobyl and the maid", "yi": "ר' נחום טשערנאבילער און די דינסט" },
+      "retelling": { "en": "Mentioning that it is Reb Nochum of Chernobyl's yahrzeit that week, the Rav tells that there was once a quarrel between his rebbetzin and the maid who helped in the house, and the maid said she was leaving. Reb Nochum stood up and davened to Hashem that the maid should not leave. Asked why he davened over such a simple matter, he answered: is there a different G-d for the matter of the maid?", "yi": "דער משגיח דערמאנט אז די וואך איז ר' נחום טשערנאבילער'ס יארצייט, און דערציילט אז אמאל איז געווען א קריגעריי צווישן זיין רביצין און די דינסט וואס האט געהאלפן אין שטוב, און די דינסט האט געזאגט אז זי גייט אוועק. ר' נחום האט זיך אוועקגעשטעלט דאווענען צום רבונו של עולם אז די דינסט זאל נישט אוועקגיין. מ'האט אים געפרעגט פארוואס ער דאווענט אויף אזא פשוט'ע זאך, האט ער געענטפערט: איז דען דא אן אנדער גאט פאר דער זאך פון דער דינסט?" },
+      "people": ["Reb Nochum of Chernobyl"], "evidence": { "segs": [193, 195, 197, 198, 199, 205], "confidence": 0.75 } },
+    { "title": { "en": "The Satmar Rav davening with the bochurim", "yi": "דער סאטמארער רב דאווענט מיט די בחורים" },
+      "retelling": { "en": "The Rav recalls that the Satmar Rav used to daven with the bochurim in his minyan, slowly and in a loud voice. Nobody told them how to daven, but they felt that they were davening with the Rebbe.", "yi": "דער משגיח דערמאנט אז דער סאטמארער רב פלעגט דאווענען מיט די בחורים אין זיין מנין, פאמעלעך און הויך מיטן קול. קיינער האט זיי נישט געזאגט ווי אזוי צו דאווענען, אבער זיי האבן געשפירט אז מ'דאווענט מיטן רבי'ן." },
+      "people": ["the Satmar Rav"], "evidence": { "segs": [504, 505, 506, 508], "confidence": 0.7 } }
+  ],
+  "questions": [
+    { "question": { "en": "Why would Reb Nochum daven to Hashem over a simple matter like a maid leaving?", "yi": "פארוואס זאל ר' נחום דאווענען צום רבונו של עולם אויף אזא פשוט'ע זאך ווי א דינסט וואס גייט אוועק?" },
+      "answer": { "en": "Because there is no other G-d for small matters: everything a person needs he must ask of Hashem.", "yi": "ווייל ס'איז נישטא קיין אנדער גאט פאר קליינע זאכן: אלץ וואס א מענטש דארף, מוז ער בעטן פונעם רבונו של עולם." },
+      "questionSegs": [201, 204], "answerSegs": [205, 207, 209], "confidence": 0.75 },
+    { "question": { "en": "If Torah is greater than tefillah, why is tefillah the main avodah today?", "yi": "אויב תורה איז גרעסער פון תפילה, פארוואס איז היינט דער עיקר עבודה תפילה?" },
+      "answer": { "en": "Like a sick man who cannot eat bread and meat and must live on oranges, our weak generation must strengthen itself in other things; Torah lishmah is hard for most people, while tefillah is pure.", "yi": "אזוי ווי א חולה וואס קען נישט עסן ברויט מיט פלייש און מוז לעבן פון אראנזשעס, מוז אונזער שוואכער דור זיך מחזק זיין אין אנדערע זאכן; תורה לשמה איז שווער פאר רוב מענטשן, און תפילה איז ריין." },
+      "questionSegs": [294, 295], "answerSegs": [297, 302, 304, 308, 333], "confidence": 0.75 },
+    { "question": { "en": "Why does one not repeat Shemoneh Esrei today when he had no kavanah in the first berachah?", "yi": "פארוואס חזר'ט מען היינט נישט איבער שמונה עשרה ווען מ'האט נישט מכוון געווען אין דער ערשטער ברכה?" },
+      "answer": { "en": "Because the second time too he may not have kavanah.", "yi": "ווייל דאס צווייטע מאל וועט ער אויך אפשר נישט מכוון זיין." },
+      "questionSegs": [347, 348], "answerSegs": [366], "confidence": 0.6 },
+    { "question": { "en": "If the early chassidim spent nine hours a day on tefillah, how was their Torah preserved?", "yi": "אויב די חסידים הראשונים האבן פארברענגט ניין שעה א טאג מיט תפילה, ווי אזוי איז זייער תורה געבליבן?" },
+      "answer": { "en": "The Gemara answers that because they were chassidim, their Torah was preserved.", "yi": "די גמרא ענטפערט אז ווייל זיי זענען געווען חסידים, איז זייער תורה געבליבן." },
+      "questionSegs": [572, 573], "answerSegs": [574], "confidence": 0.7 }
+  ],
+  "takeaways": [
+    { "text": { "en": "The Rav says one should eat, sleep, rest and exercise with the calculation that it is for avodas Hashem.", "yi": "דער משגיח זאגט אז מ'זאל עסן, שלאפן, זיך אפרוען און זיך באוועגן מיטן חשבון אז ס'איז פאר עבודת השם." }, "evidence": { "segs": [101, 103, 106, 109], "confidence": 0.8 } },
+    { "text": { "en": "The Rav says every thing a person needs, even small things, should be asked of Hashem.", "yi": "דער משגיח זאגט אז יעדע זאך וואס א מענטש דארף, אפילו קליינע זאכן, דארף מען בעטן פונעם רבונו של עולם." }, "evidence": { "segs": [207, 208, 209], "confidence": 0.75 } },
+    { "text": { "en": "The Rav says one must daven with the heart, knowing what one is saying, and take time; one cannot daven in twenty minutes.", "yi": "דער משגיח זאגט אז מ'דארף דאווענען מיטן הארץ, וויסן וואס מ'זאגט, און נעמען צייט; מ'קען נישט דאווענען אין צוואנציג מינוט." }, "evidence": { "segs": [368, 370, 403, 405, 407], "confidence": 0.8 } },
+    { "text": { "en": "The Rav says to say each word of davening carefully, as one counts money.", "yi": "דער משגיח זאגט אז מ'זאל זאגן יעדעס ווארט פון דאווענען מיט אכטונג, ווי מ'ציילט געלט." }, "evidence": { "segs": [459, 460, 477], "confidence": 0.75 } },
+    { "text": { "en": "The Rav tells the bochurim that while their years are for Torah, they must give davening its due importance.", "yi": "דער משגיח זאגט די בחורים אז כאטש זייערע יארן זענען פאר תורה, דארפן זיי געבן דאווענען די ריכטיגע חשיבות." }, "evidence": { "segs": [632, 634, 635, 636], "confidence": 0.65 } }
+  ],
+  "candidateTopics": ["a person's duty in his world", "Mesilas Yesharim chapter 1", "physical needs as avodas Hashem", "tefillah as the main avodah in our time", "avodah shebalev", "kavanah in davening", "Torah and tefillah", "davening slowly", "ikvesa d'meshicha", "bochurim and avodas Hashem"],
+  "concepts": [
+    { "he": "מה חובתו בעולמו", "heardAs": ["לידי מאכי וואסא של אדם בילמא", "וואס זיין חור איז אין דעלע וועלט"] },
+    { "he": "עבודת השם", "heardAs": ["עבודת השם", "עבודת ה'"] },
+    { "he": "עבודה שבלב", "heardAs": ["ולעובדי בכל לבבך", "לובבי בכל לבבכם", "בכל הבאב לכם"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבינו שלום", "רבושלים", "רבונו של עירום", "רבי'נישער לעהלין"] },
+    { "he": "נתגלה למפרע", "heardAs": ["גלה למפריע", "נתגללים הפרעה"] },
+    { "he": "עקבתא דמשיחא", "heardAs": ["עקוואס אדער משיח", "נקבות איבער משיחה"] },
+    { "he": "כוונה", "heardAs": ["קבנה", "קוואנא"] },
+    { "he": "לשמה", "heardAs": ["לשמוע", "לשמה"] },
+    { "he": "פניות", "heardAs": ["פניות"] },
+    { "he": "פסוקי דזמרה", "heardAs": ["פסוקי די זמרא", "סוגי די זימערע", "פרקלו דער זמרע"] },
+    { "he": "ברכת אבות", "heardAs": ["ברכת אבותא"] },
+    { "he": "חסידים הראשונים", "heardAs": ["חסידים וואס ראשונים"] }
+  ],
+  "people": [
+    { "name": "Reb Nochum of Chernobyl", "heardAs": ["רבי נחום טשערנאבילא", "ר' נחמן טשערנעלבער"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["באשעמטאווע", "באשעמטאווער", "באשעמטער"] },
+    { "name": "Reb Yaakov Yosef of Polnoye (Toldos Yaakov Yosef)", "heardAs": ["תלמידי צו יעקב יוסף"] },
+    { "name": "the Arizal", "heardAs": ["אריה קבוש", "אריה הקדש", "יריא קודש"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "the Magen Avraham", "heardAs": ["מגן אברהם"] },
+    { "name": "the Satmar Rav", "heardAs": ["סאטמאר רב"] },
+    { "name": "Reb Avraham of Slonim", "heardAs": ["רבי אברהם סלעניברא"] }
+  ],
+  "asrNotes": "Yiddish ASR is poor, with many garbled Hebrew quotations and phonetic English words (taxes, exercise, mistake). The story at 32:15-34:00 about a tzaddik (heard as Reb Shlomo of Munkatch) and his son is too garbled to recover its details, as are the source cited at 23:09 and the closing remarks about a yahrzeit and a story at 39:30-42:24. The dispute on the obligation of daily tefillah (11:16-11:34) is unclear and left out. Segment 661 is a short flagged stretch of noise."
+}

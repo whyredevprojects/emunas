@@ -1,0 +1,17 @@
+{
+  "shiurId": "yi-emunah-1-22",
+  "promptVersion": "audit-v1",
+  "auditedAt": "2026-11-15T12:00:00Z",
+  "counts": {
+    "claimsChecked": 22, "unsupported": 0, "hallucinated": 0,
+    "sourcesChecked": 15, "sourceErrors": 1, "sourcesMissed": 2,
+    "boundariesChecked": 5, "boundariesBad": 0, "noiseMishandled": 0,
+    "termsChecked": 14, "termErrors": 0, "termsCopiedGarbled": 0,
+    "yiddishSentencesChecked": 16, "yiddishBadSentences": 5, "yiddishTranslationese": 2,
+    "flowBreaks": 0, "paddingSentences": 0, "contradictsExtraction": 0,
+    "ruleViolations": 0
+  },
+  "severity": "minor",
+  "needsReview": false,
+  "notes": "writeup.en[3].paragraphs[1] / yi[3].paragraphs[1] name the Ohr Hameir and Reb Yisroel of Ruzhin (segs 268-275) with empty sourceIdx and no sources[] entry; Zohar hakadosh on the 50 gates / 50 mentions of yetzias Mitzrayim (segs 188-191) not in sources[]; Rambam letter claim (sections[1].summary, writeup[1].paragraphs[0]) rests on badly garbled segs 72-76, only loosely supported; Yiddish: YIVO-style 'נאטירלעכן' (writeup.yi[0].paragraphs[0], keyPoints[0]), Daytshmerish 'שילדערט' (sections[1].summary.yi) and 'פארשמוצונג' (writeup.yi[3].paragraphs[0]), odd 'וורנט' (writeup.yi[2].paragraphs[0]), awkward 'ער ווייזט אן אויף רב בעלסקי ... צו פרעגן' (writeup.yi[1].paragraphs[1]); translationese 'וואו דער תירוץ איז געווען' (writeup.yi[1].paragraphs[0]) and 'בינדט ער עס צו פרשת שלח' (summary.abstract.yi); good term recovery overall (ולא תתורו from 'ולא יששכר', עמלק from 'מלוק', geresh remez at segs 392-396)"
+}

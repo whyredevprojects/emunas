@@ -1,0 +1,438 @@
+{
+  "shiurId": "yi-shiurim-labachurim-19",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that when learning or davening does not go, one must look for the cause, as a doctor does, and that purity, yiras shamayim and preparation are the vessel through which the light of Torah and tefillah comes.",
+      "yi": "דער משגיח ערקלערט אז ווען ס'לערנט זיך נישט און ס'דאווענט זיך נישט, דארף מען זוכן די סיבה אזוי ווי א דאקטער, ווייל טהרה, יראת שמים און הכנה זענען דער כלי וואס דורך אים קומט די ליכטיגקייט פון תורה און תפילה."
+    },
+    "abstract": {
+      "en": "The Rav opens with the question: eating comes by itself and sleeping comes by itself, so why does learning and davening not come? He has spoken to the bachurim about negel vasser, mikvah and preparing for davening, and was asked why he does not speak more about learning. He answers that the rebbeim already speak about learning, and that a doctor treating a patient with no appetite looks for the cause rather than telling him to eat. Learning needs preparation and purity. He brings the Ramchal's Derech Hashem: the words of Torah are only a case for its inner light, which comes only to one who learns with yiras shamayim. Reb Aharon of Karlin said mikvah brings what no mitzvah brings, and the Ohr HaChaim teaches that a pure person keeps the mitzvos by nature. After stories of long, warm davening, he concludes that davening and learning depend on each other, and urges the bachurim to use their golden years.",
+      "yi": "דער משגיח עפנט מיט דער שאלה: עסן עסט זיך און שלאפן שלאפט זיך, פארוואס לערנט זיך נישט און דאווענט זיך נישט? ער האט גערעדט מיט די בחורים וועגן נעגל וואסער, מקוה און זיך צוגרייטן צום דאווענען, און מ'האט אים געפרעגט פארוואס ער רעדט נישט מער וועגן לערנען. ער ענטפערט אז די רבי'ס אין ישיבה רעדן שוין וועגן לערנען, און אז א דאקטער וואס האט א חולה אן אפעטיט זאגט אים נישט ער זאל עסן, נאר ער זוכט די סיבה. לערנען פאדערט הכנה און טהרה. ער ברענגט דעם רמח\"ל אין דרך ה' אז די ווערטער פון תורה זענען נאר א קעיס פאר די אורות, וואס קומען נאר צו דעם וואס לערנט מיט יראת שמים. ר' אהרן קארלינער האט געזאגט אז מקוה ברענגט וואס קיין מצוה ברענגט נישט, און דער אור החיים לערנט אז א טהור'ער מענטש היט די מצוות מן הטבע. נאך מעשיות פון לאנגע, ווארעמע תפילות, ענדיגט ער אז דאווענען און לערנען הענגען איינס אין צווייטן, און ער מוטשעט די בחורים אויסצונוצן זייערע גאלדענע יארן."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "When learning or davening does not go, one must look for its cause, as a doctor looks for the cause of a lost appetite.",
+          "yi": "ווען ס'לערנט זיך נישט אדער ס'דאווענט זיך נישט, דארף מען זוכן די סיבה, אזוי ווי א דאקטער זוכט פארוואס א מענטש האט פארלוירן דעם אפעטיט."
+        },
+        "evidence": { "segs": [79, 86, 97, 104, 105], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Purity, washing the hands, mikvah and preparing oneself are the preparation for Torah, not side matters.",
+          "yi": "טהרה, הענט וואשן, מקוה און זיך צוגרייטן זענען די הכנה צו תורה, נישט קיין זייטיגע זאכן."
+        },
+        "evidence": { "segs": [377, 379, 380, 383], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "According to the Derech Hashem, the words of Torah are a vessel for its holy light, which comes down only when one learns with yiras shamayim.",
+          "yi": "לויט דעם דרך ה' זענען די ווערטער פון תורה א כלי פאר איר הייליגע ליכטיגקייט, וואס קומט נאר ארונטער ווען מ'לערנט מיט יראת שמים."
+        },
+        "evidence": { "segs": [202, 205, 212, 239, 240], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "The neshama wants to learn and daven; only barriers such as impurity and forbidden speech hold it back.",
+          "yi": "די נשמה וויל לערנען און דאווענען, נאר ס'זענען דא מחיצות, ווי טומאה און אסור'דיגע דיבורים, וואס האלטן זי אפ."
+        },
+        "evidence": { "segs": [365, 366, 367, 370], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Davening and learning depend on each other: as one davens in the morning, so one learns through the day.",
+          "yi": "דאווענען און לערנען הענגען איינס אין צווייטן: אזוי ווי מ'דאווענט אינדערפרי, אזוי לערנט מען דורכן טאג."
+        },
+        "evidence": { "segs": [466, 471, 472], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-19-hisorerus-beavodas-hashem",
+      "startSeg": 0,
+      "endSeg": 60,
+      "title": { "en": "Why doesn't learning come by itself?", "yi": "פארוואס לערנט זיך נישט?" },
+      "summary": {
+        "en": "The Rav asks why eating and sleeping come by themselves but learning and davening do not. He recalls his talks on negel vasser, mikvah and preparing for davening, and the question why he does not speak more about learning, since Talmud Torah outweighs everything; Torah is the mind and tefillah the heart, and both must be healthy.",
+        "yi": "דער משגיח פרעגט פארוואס עסן עסט זיך און שלאפן שלאפט זיך, אבער לערנען און דאווענען גייט נישט. ער דערמאנט זיינע שמועסן וועגן נעגל וואסער, מקוה און זיך צוגרייטן צום דאווענען, און די קשיא פארוואס ער רעדט נישט מער וועגן לערנען, ווייל תלמוד תורה כנגד כולם; תורה איז דער מוח און תפילה דאס הארץ, און ביידע דארפן זיין געזונט."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-19-hisorerus-beavodas-hashem",
+      "startSeg": 61,
+      "endSeg": 129,
+      "title": { "en": "The doctor looks for the cause", "yi": "דער דאקטער זוכט די סיבה" },
+      "summary": {
+        "en": "The Rav answers that the rebbeim and mashgichim already speak about learning, while these matters are rarely discussed. He compares a weak boy without appetite: the doctor does not tell him to eat but searches for the infection or the bad air causing it. So too, when learning does not go, prizes and honor are not the real answer.",
+        "yi": "דער משגיח ענטפערט אז די רבי'ס און משגיחים רעדן שוין כסדר וועגן לערנען, אבער וועגן די ענינים רעדט מען זייער ווייניג. ער ברענגט א משל פון א בחור אן אפעטיט: דער דאקטער זאגט אים נישט ער זאל עסן, נאר ער זוכט די אינפעקציע אדער די שלעכטע לופט וואס איז די סיבה. אזוי אויך, ווען ס'לערנט זיך נישט, זענען פרייזן און כבוד נישט דער אמת'ער ענטפער."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-19-hisorerus-beavodas-hashem",
+      "startSeg": 130,
+      "endSeg": 199,
+      "title": { "en": "Torah needs purity and preparation", "yi": "תורה פאדערט טהרה און הכנה" },
+      "summary": {
+        "en": "The Rav speaks of washing the hands after touching covered places before learning, and says one who does not go to mikvah when he needs to will not merit true Torah. Torah is not an ordinary wisdom; Klal Yisroel had to prepare to receive it. He introduces the Ramchal's Derech Hashem with a mashal of an expensive watch and its case.",
+        "yi": "דער משגיח רעדט וועגן וואשן די הענט ווען מ'האט אנגערירט פארדעקטע ערטער פארן לערנען, און זאגט אז ווער ס'גייט נישט אין מקוה ווען ער דארף, וועט נישט זוכה זיין צו תורה על פי אמת. די תורה איז נישט קיין סתם חכמה; אידן האבן זיך געדארפט צוגרייטן צו מקבל זיין די תורה. ער הייבט אן מיטן רמח\"ל אין דרך ה' מיט א משל פון א טייערן זייגער און זיין קעיס."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-19-hisorerus-beavodas-hashem",
+      "startSeg": 200,
+      "endSeg": 318,
+      "title": { "en": "The Derech Hashem: conditions for learning", "yi": "דרך ה': די תנאים פון לערנען" },
+      "summary": {
+        "en": "The Rav learns the Derech Hashem: the words of Torah, even a sugya like 'two holding a tallis', are a case for great lights that come down only when one learns with yiras shamayim; knowledge alone is like science. He contrasts a medical student reclining with his feet on the table with one who learns Gemara that way, and explains that learning without awe is like reading a letter, yet Torah itself still sanctifies a little over time.",
+        "yi": "דער משגיח לערנט דעם דרך ה': די ווערטער פון תורה, אפילו א סוגיא ווי שנים אוחזין בטלית, זענען א קעיס פאר גרויסע אורות וואס קומען נאר ארונטער ווען מ'לערנט מיט יראת שמים; די ידיעה אליין איז ווי סייענס. ער שטעלט אנטקעגן א סטודענט פון מעדיצין וואס ליגט אויסגעצויגן מיט די פיס אויפן טיש, מיט איינעם וואס לערנט אזוי גמרא, און ערקלערט אז לערנען אן יראה איז ווי מ'לייענט א בריוו, אבער די תורה אליין הייליגט פונדעסטוועגן א ביסל מיט דער צייט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-19-hisorerus-beavodas-hashem",
+      "startSeg": 319,
+      "endSeg": 375,
+      "title": { "en": "Why the kallah runs away", "yi": "פארוואס די כלה אנטלויפט" },
+      "summary": {
+        "en": "The Rav asks why the Torah, the kallah, runs away from a person. He brings Reb Aharon of Karlin, that mikvah is not a mitzvah but what it brings no mitzvah can bring, and the Ohr HaChaim on 'lalleches bahem', that one who is pure and holy keeps the mitzvos by nature. The neshama wants to learn and daven; impurity, lashon hara and idle talk before davening are the barrier.",
+        "yi": "דער משגיח פרעגט פארוואס די תורה, די כלה, אנטלויפט פון א מענטש. ער ברענגט ר' אהרן קארלינער אז מקוה איז נישט קיין מצוה, אבער וואס מקוה ברענגט קען קיין מצוה נישט ברענגען, און דעם אור החיים אויף \"ללכת בהם\", אז ווער ס'איז טהור און קדוש היט די מצוות מן הטבע. די נשמה וויל לערנען און דאווענען; טומאה, לשון הרע און ליידיגע דיבורים פארן דאווענען זענען די מחיצה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-19-hisorerus-beavodas-hashem",
+      "startSeg": 376,
+      "endSeg": 453,
+      "title": { "en": "Preparation, and how Jews once davened", "yi": "הכנה, און ווי אזוי אידן האבן אמאל געדאווענט" },
+      "summary": {
+        "en": "The Rav stresses that speaking of negel vasser, mikvah and a clean body is speaking about Torah itself. He regrets that many bachurim do not use the chance to daven with the shul on Shabbos, and tells of a stranger at Reb Aharon of Karlin's minyan and of the Karliner shtiebel on Orchard Street, where a two-hour weekday Shacharis still felt rushed.",
+        "yi": "דער משגיח באטאנט אז ווען מ'רעדט וועגן נעגל וואסער, מקוה און א ריינעם גוף, רעדט מען וועגן תורה אליין. עס טוט אים באנג אז אסאך בחורים נוצן נישט אויס די געלעגנהייט צו דאווענען מיטן בית המדרש שבת, און ער דערציילט פון א פרעמדן ביי ר' אהרן קארלינער'ס מנין, און פונעם קארלינער שטיבל אויף ארטשערד סטריט, וואו א שחרית פון צוויי שעה אינדערוואכן האט נאך אויסגעזען צו גייאגט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-19-hisorerus-beavodas-hashem",
+      "startSeg": 454,
+      "endSeg": 528,
+      "title": { "en": "Davening and learning together; using the golden years", "yi": "דאווענען און לערנען צוזאמען; די גאלדענע יארן" },
+      "summary": {
+        "en": "The Rav returns to the doctor: if the neshama wants to daven and learn, one must ask what is contaminating the body. Davening and learning depend on each other, as the Mishnah Berurah brings, and a tzaddik compared asking which is more important to asking a child whom he loves more. He ends by urging the bachurim to use their precious years and to purify themselves to serve Hashem.",
+        "yi": "דער משגיח קומט צוריק צום דאקטער: אויב די נשמה וויל דאווענען און לערנען, דארף מען פרעגן וואס פארגיפט דעם גוף. דאווענען און לערנען הענגען איינס אין צווייטן, ווי די משנה ברורה ברענגט, און א צדיק האט די שאלה וואס איז וויכטיגער גלייך געשטעלט צו פרעגן א קינד וועמען ער האט מער ליב. ער ענדיגט מיט א מוטשונג צו די בחורים אויסצונוצן זייערע טייערע יארן און זיך מטהר זיין כדי צו דינען השם יתברך."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "תלמוד תורה כנגד כלים / תלמיד תורה קנעגער תקלים",
+      "work": "Mishnah Peah",
+      "ref": "Peah 1:1",
+      "sefariaRef": "Mishnah Peah 1:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [37, 43], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "אין דרך ה' ... דער מחבר פון מסורת ישורים, רבי משה חיים אליצעטל",
+      "work": "Derech Hashem",
+      "ref": "Derech Hashem 4:2",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [173, 174, 210, 212, 240], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "שני מיוחדים בטלות",
+      "work": "Gemara Bava Metzia",
+      "ref": "Bava Metzia 2a",
+      "sefariaRef": "Bava Metzia 2a",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [218, 220], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ר' ארלן קאלינער / רבי אהרן קאלינא האט געזאגט",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [329, 330, 336, 337, 338], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ושמעתם את חוקותיו ואת משפטי' ... את משפטי' תתך את חוקותי תשמר וללחץ בהם",
+      "work": "Vayikra",
+      "ref": "Vayikra 18:4-5",
+      "sefariaRef": "Leviticus 18:4-5",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [348, 351, 352], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אורחים הקדוש אין פרשת אחראי ... זאגט דער אור החיים הקודש",
+      "work": "Ohr HaChaim",
+      "ref": "Ohr HaChaim on Vayikra 18:4",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [346, 353, 355, 358, 359], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "בית ארון שמיצה בו צלותה, צלותה בו שמיצה",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [465, 466], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "אזוי ווי די משנה און ברירה ברענגט פונ'ן רבי'ן רבי יענתם",
+      "work": "Mishnah Berurah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [469, 470, 471], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "און פון ירא'ת דבש",
+      "work": "Yaaros Devash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [470, 471], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "כי כורא ועלכע אדבר מיועד, בפיכה ולבבך",
+      "work": "Devarim",
+      "ref": "Devarim 30:14",
+      "sefariaRef": "Deuteronomy 30:14",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [484, 485, 488, 489], "confidence": 0.8 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "A lack of desire to learn is like a lack of appetite: a symptom of a deeper cause, so incentives that only push a person to learn miss the point, just as a doctor would not simply tell such a patient to eat.",
+        "yi": "א מאנגל אין חשק צו לערנען איז ווי א מאנגל אין אפעטיט: א סימן פון א טיפערע סיבה, ממילא טרעפן נישט פרייזן וואס שטופן נאר צום לערנען, אזוי ווי א דאקטער זאגט נישט סתם א חולה ער זאל עסן."
+      },
+      "evidence": { "segs": [85, 86, 97, 125, 128], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The words of Torah are like the gold case of a costly watch: the case does not show the value, which lies in the inner works; so too the knowledge of a sugya is only a vessel for the light within it.",
+        "yi": "די ווערטער פון תורה זענען ווי די גאלדענע קעיס פון א טייערן זייגער: די קעיס זאגט נישט וויפיל ער איז ווערט, נאר די אינעווייניגסטע רעדער; אזוי איז די ידיעה פון א סוגיא נאר א כלי פאר דער ליכטיגקייט וואס אין איר."
+      },
+      "evidence": { "segs": [191, 198, 199, 202, 239], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Even a Gemara about a thief's claims carries the light of Torah, so the difference between Torah and science is not the subject matter but whether the light comes down through the learner.",
+        "yi": "אפילו א גמרא וועגן די טענות פון א גנב טראגט די אורות פון תורה, ממילא ליגט דער חילוק צווישן תורה און סייענס נישט אינעם נושא, נאר צי די ליכטיגקייט קומט ארונטער דורכן לומד."
+      },
+      "evidence": { "segs": [222, 224, 226, 234, 238], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Reb Aharon of Karlin's saying: mikvah is not a mitzvah, yet what it brings no mitzvah can bring, because when one purifies himself holiness comes running to him, and then learning and davening go.",
+        "yi": "ר' אהרן קארלינער'ס ווארט: מקוה איז נישט קיין מצוה, אבער וואס מקוה ברענגט קען קיין מצוה נישט ברענגען, ווייל ווען מ'איז זיך מטהר קומט די קדושה לויפן, און דעמאלט לערנט זיך און דאווענט זיך."
+      },
+      "evidence": { "segs": [336, 337, 338, 340, 341], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Speaking about negel vasser, mikvah and a clean body is not speaking about side matters but about Torah itself, since they are its preparation.",
+        "yi": "ווען מ'רעדט וועגן נעגל וואסער, מקוה און א ריינעם גוף, רעדט מען נישט וועגן זייטיגע זאכן, נאר וועגן תורה אליין, ווייל דאס איז איר הכנה."
+      },
+      "evidence": { "segs": [377, 379, 380, 383], "confidence": 0.85 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The stranger at Reb Aharon of Karlin's minyan", "yi": "דער פרעמדער ביי ר' אהרן קארלינער'ס מנין" },
+      "retelling": {
+        "en": "A stranger came to Reb Aharon of Karlin's minyan when they began Baruch She'amar. He waited for the chazzan to finish the brachah, but the chazzan did not. Thinking the chazzan was not heard, he davened on alone up to Shemoneh Esrei and was still waiting, until it suddenly grew quiet and the chazzan concluded the brachah, so long had Baruch She'amar taken.",
+        "yi": "א פרעמדער איז געקומען צו ר' אהרן קארלינער'ס מנין ווען מ'האט אנגעהויבן ברוך שאמר. ער האט געווארט אז דער חזן זאל ענדיגן די ברכה, און דער חזן האט נישט געענדיגט. ער האט געמיינט אז מ'הערט נישט דעם חזן, און האט ווייטער געדאווענט אליין ביז שמונה עשרה, און נאך אלץ געווארט, ביז ס'איז פלוצלינג געווארן שטיל און דער חזן האט פארענדיגט די ברכה; אזוי לאנג האט גענומען דער ברוך שאמר."
+      },
+      "people": ["Reb Aharon of Karlin"],
+      "evidence": { "segs": [415, 417, 420, 422, 425, 427], "confidence": 0.7 }
+    },
+    {
+      "title": { "en": "The Karliner shtiebel on Orchard Street", "yi": "דאס קארלינער שטיבל אויף ארטשערד סטריט" },
+      "retelling": {
+        "en": "An older Jew the Rav davened with used to tell about a Karliner shtiebel on Orchard Street on the East Side, fifty to seventy years earlier, where immigrants gathered to daven and the Rebbe would send them letters of chizuk. There they davened weekday Shacharis for about two hours, and after davening Ephraim Tenenbaum asked why they had rushed so today, since two hours was not enough when every word is sweet as honey.",
+        "yi": "אן עלטערער איד וואס דער משגיח האט מיט אים געדאווענט פלעגט דערציילן פון א קארלינער שטיבל אויף ארטשערד סטריט, אויף דער איסט סייד, מיט פופציג ביז זיבעציג יאר צוריק, וואו אימיגראנטן האבן זיך צוזאמגעקומען דאווענען און דער רבי פלעגט זיי שיקן בריוו פון חיזוק. דארט האט מען געדאווענט שחרית אינדערוואכן ארום צוויי שעה, און נאכן דאווענען האט אפרים טענענבוים געפרעגט פארוואס מ'האט זיך היינט אזוי גייאגט, ווייל צוויי שעה איז נישט גענוג ווען יעדעס ווארט איז זיס ווי האניג."
+      },
+      "people": ["Ephraim Tenenbaum"],
+      "evidence": { "segs": [432, 439, 440, 444, 447, 451], "confidence": 0.7 }
+    },
+    {
+      "title": { "en": "Davening or learning: which is more important?", "yi": "דאווענען אדער לערנען: וואס איז וויכטיגער?" },
+      "retelling": {
+        "en": "Someone once asked a tzaddik what is more important, davening or learning. The tzaddik answered that if one asks a small child whom he loves more, his father or his mother, the child says he loves each one more. Both are needed: they are the heart and the mind.",
+        "yi": "איינער האט אמאל געפרעגט א צדיק וואס איז וויכטיגער, דאווענען אדער לערנען. דער צדיק האט געענטפערט אז ווען מ'פרעגט א קליין קינד וועמען ער האט מער ליב, דעם טאטן אדער די מאמע, זאגט דאס קינד אז ער האט יעדן מער ליב. מ'דארף ביידע האבן: דאס איז דאס הארץ און דער מוח."
+      },
+      "people": [],
+      "evidence": { "segs": [475, 477, 479, 480, 481, 482], "confidence": 0.8 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Since Talmud Torah outweighs everything, why does the Rav not speak more to the bachurim about learning?",
+        "yi": "אז תלמוד תורה כנגד כולם, פארוואס רעדט דער משגיח נישט מער מיט די בחורים וועגן לערנען?"
+      },
+      "answer": {
+        "en": "The rebbeim and mashgichim in yeshiva already speak about learning constantly, while purity and preparation are rarely discussed, and they are what make learning succeed.",
+        "yi": "די רבי'ס און משגיחים אין ישיבה רעדן שוין כסדר וועגן לערנען, אבער וועגן טהרה און הכנה רעדט מען ווייניג, און דאס איז וואס מאכט אז דאס לערנען זאל געלינגען."
+      },
+      "questionSegs": [32, 33, 37, 60],
+      "answerSegs": [66, 68, 71, 72, 76],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Which is greater, Torah or tefillah?",
+        "yi": "וואס איז גרעסער, תורה אדער תפילה?"
+      },
+      "answer": {
+        "en": "That is not our concern: Torah is the mind and tefillah the heart, and asking which matters more is like asking whether one should be healthy in the body or the heart.",
+        "yi": "דאס איז נישט אונזער געשעפט: תורה איז דער מוח און תפילה איז דאס הארץ, און די שאלה איז ווי צו פרעגן צי מ'דארף זיין געזונט אויפן קערפער אדער אויפן הארץ."
+      },
+      "questionSegs": [45, 48],
+      "answerSegs": [49, 51, 53, 57, 58],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "What should one do when learning does not go?",
+        "yi": "וואס זאל מען טון ווען ס'לערנט זיך נישט?"
+      },
+      "answer": {
+        "en": "Look for the cause, as a doctor does: learning needs purity and preparation, and without them one will not merit true Torah.",
+        "yi": "מ'דארף זוכן די סיבה, אזוי ווי א דאקטער: לערנען פאדערט טהרה און הכנה, און אן דעם וועט מען נישט זוכה זיין צו תורה על פי אמת."
+      },
+      "questionSegs": [104, 119],
+      "answerSegs": [105, 151, 152, 164, 165],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why does the Torah, the kallah, run away from a person?",
+        "yi": "פארוואס אנטלויפט די תורה, די כלה, פון א מענטש?"
+      },
+      "answer": {
+        "en": "Because he is not purified; when one purifies himself holiness comes to him and then learning and davening go, as Reb Aharon of Karlin said of mikvah.",
+        "yi": "ווייל ער איז נישט מטוהר; ווען מ'איז זיך מטהר קומט די קדושה צו אים און דעמאלט לערנט זיך און דאווענט זיך, ווי ר' אהרן קארלינער האט געזאגט וועגן מקוה."
+      },
+      "questionSegs": [321, 322, 323],
+      "answerSegs": [337, 339, 340, 341],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "If the neshama wants to daven and learn, why does it not happen?",
+        "yi": "אויב די נשמה וויל דאווענען און לערנען, פארוואס גייט עס נישט?"
+      },
+      "answer": {
+        "en": "Something is contaminating the body, such as forbidden speech or impure food, drink or places; one must find it and repair one's deeds.",
+        "yi": "עפעס פארגיפט דעם גוף, ווי אסור'דיגע דיבורים אדער אומריינע מאכלים, משקאות אדער ערטער; מ'דארף עס געפינען און זיך מתקן זיין די מעשים."
+      },
+      "questionSegs": [459, 460],
+      "answerSegs": [499, 502, 506, 507, 525],
+      "confidence": 0.7
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says the first step is to wash negel vasser properly, then to purify oneself and learn before davening.",
+        "yi": "דער משגיח זאגט אז די ערשטע זאך איז גיסן נעגל וואסער ווי עס דארף צו זיין, און דערנאך זיך מטהר זיין און לערנען פארן דאווענען."
+      },
+      "evidence": { "segs": [391, 392, 393, 394], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He says one who scratches his head or touches covered places while learning must wash his hands.",
+        "yi": "ער זאגט אז ווער ס'קראצט זיך אין קאפ אדער רירט אן פארדעקטע ערטער ביים לערנען, דארף וואשן די הענט."
+      },
+      "evidence": { "segs": [160, 161, 163], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "He says one must sit and learn with yiras shamayim, not lightheadedly or reclining.",
+        "yi": "ער זאגט אז מ'דארף זיצן און לערנען מיט יראת שמים, נישט מיט קלות ראש און נישט אויסגעצויגן."
+      },
+      "evidence": { "segs": [262, 271, 272, 273], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He urges the bachurim to use their precious years, free of parnassah worries, for learning and davening.",
+        "yi": "ער מוטשעט די בחורים אויסצונוצן זייערע טייערע יארן, וואס זענען פריי פון דאגות פרנסה, פאר לערנען און דאווענען."
+      },
+      "evidence": { "segs": [516, 517, 518, 520, 521], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "When learning and davening do not go, he says one must look for the lack, repair one's deeds and sanctify oneself.",
+        "yi": "ווען ס'לערנט זיך נישט און ס'דאווענט זיך נישט, זאגט ער אז מ'דארף זוכן דעם חסרון, זיך מתקן זיין די מעשים און זיך מקדש זיין."
+      },
+      "evidence": { "segs": [522, 523, 525, 526], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "preparation for Torah study",
+    "purity and mikvah",
+    "negel vasser",
+    "Torah and tefillah",
+    "learning with yiras shamayim",
+    "Derech Hashem on Torah study",
+    "Karliner davening",
+    "bachurim's years in yeshiva",
+    "lack of desire to learn"
+  ],
+  "concepts": [
+    { "he": "נעגל וואסער", "heardAs": ["נעגל וואסערל", "עגל וואסער", "ערגער וואסער", "הנהגה וואסער"] },
+    { "he": "טהרה", "heardAs": ["בטהרה", "בטערה"] },
+    { "he": "תלמוד תורה כנגד כולם", "heardAs": ["תלמוד תורה כנגד כלים", "תלמיד תורה קנעגער תקלים"] },
+    { "he": "יראת שמים", "heardAs": ["יחד שמים", "ירא שמים", "עניר את שמים"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבנה שלעה", "רבינו שלילים", "רבור'ן של עולם", "רבי שלעולם", "רבינות שלעולם"] },
+    { "he": "כלי קיבול", "heardAs": ["כלי קיבל", "קלע קיבל"] },
+    { "he": "השפעה", "heardAs": ["השפעות היעקה רבה", "אשפעה"] },
+    { "he": "קלות ראש", "heardAs": ["בקלות ראש"] },
+    { "he": "ברוך שאמר", "heardAs": ["בורשו יאמר", "ברושו יאמר", "ברשי ימי"] },
+    { "he": "חלק אלוק ממעל", "heardAs": ["חלק אלוקם ימיו"] }
+  ],
+  "people": [
+    { "name": "the Ramchal (Rabbi Moshe Chaim Luzzatto)", "heardAs": ["רבי משה חיים אליצעטל"] },
+    { "name": "Reb Aharon of Karlin", "heardAs": ["רבי אהרן קאלינא", "ר' ארלן קאלינער", "ר' אהלן קאליאנא"] },
+    { "name": "the Ohr HaChaim", "heardAs": ["אורחים הקדוש", "אור החיים הקודש"] },
+    { "name": "Ephraim Tenenbaum", "heardAs": ["אפרים טענענבאם"] }
+  ],
+  "asrNotes": "Yiddish ASR fair for the Rav's own words but poor for the long Derech Hashem quotation (segs 210-316), much of which is unintelligible and was used only where the Yiddish explanation is clear. The figure who was particular about short pants in Eretz Yisroel (seg 131), the name of the elder who told the Orchard Street story (seg 431), the 'Avraham Rabbah' remark (seg 429), and a source on the years of youth (segs 511-513) could not be recovered. Several English phrases are mixed into the Yiddish."
+}

@@ -1,0 +1,635 @@
+{
+  "shiurId": "yi-shiurim-labachurim-20",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav teaches that in the last generation davening is a Jew's main avodah and very breath, and that only real toil in tefillah brings the sweetness that the neshamah is ready to feel.",
+      "yi": "דער משגיח לערנט אז אין דור אחרון איז דאווענען דער עיקר עבודה און דער אטעם פון א איד, און נאר דורך זיך מוטשען אין תפילה קומט מען צו דער זיסקייט וואס די נשמה איז גרייט צו שפירן."
+    },
+    "abstract": {
+      "en": "The Rav opens with the teaching that walking four amos in the morning without washing the hands carries a death penalty, and explains that the Shulchan Aruch speaks to the lowest level while more is demanded of a higher soul, like an ink spot on a silk shirt. Earlier tzaddikim fasted to wash off the stain of sin; today, citing the Maor VaShemesh, that work is done through tefillah. A Jew who does not toil to feel the sweetness of davening and of Shabbos will not feel it in the next world either. In a time of hidden face, each tefillah must be precious; avodas avodah, toil, is what is asked, with stories of the Ba'al HaTanya's chassid and the old soldier whose service kept him warm. Davening is a Jew's breath, the test of the last generation and the war against Amalek, and good davening lifts one's learning.",
+      "yi": "דער משגיח עפנט מיט דעם אז דער וואס גייט ארבע אמות אן נעגל וואסער איז חייב מיתה, און ערקלערט אז דער שולחן ערוך רעדט פון דער נידריגסטער מדריגה, אבער פון א העכערן מענטש פארלאנגט מען מער, אזוי ווי א פלעק טינט אויף א זיידן העמד. אמאל האבן צדיקים געפאסט כדי אפצוואשן דעם פגם פון א עבירה; היינט, ברענגט ער פונעם מאור ושמש, טוט מען דאס מיט תפילה. א איד וואס מוטשעט זיך נישט צו שפירן א זיסקייט אין דאווענען און אין שבת, וועט עס אויך נישט שפירן אויף יענער וועלט. אין א צייט פון הסתר דארף יעדע תפילה זיין א דבר של חשיבות; מ'פארלאנגט עבודת עבודה, זיך מוטשען, און ער דערציילט די מעשה פונעם חסיד ביים בעל התניא און פונעם אלטן סאלדאט וואס די סערוויס האט אים געווארעמט. דאווענען איז דער אטעם פון א איד, דער נסיון פונעם דור אחרון און די מלחמה מיט עמלק, און א גוט דאווענען הייבט אויף דאס לערנען."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The Shulchan Aruch is the minimum for the lowest level; a person on a higher level is held to more, as a tiny ink spot ruins a silk shirt but not a potato sack.",
+          "yi": "דער שולחן ערוך איז דער מינימום פאר דער נידריגסטער מדריגה; פון א העכערן מענטש פארלאנגט מען מער, אזוי ווי א קליין פלעקל טינט איז א פגם אויף א זיידן העמד אבער נישט אויף א זאק קארטאפל."
+        },
+        "evidence": { "segs": [59, 60, 62, 63, 83, 85], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Teshuvah brings forgiveness, but the stain on the soul must still be washed; earlier tzaddikim did this with fasts, and today it is done with tefillah.",
+          "yi": "תשובה ברענגט מחילה, אבער דעם פגם אויף דער נשמה דארף מען נאך אלץ אפוואשן; אמאל האבן צדיקים דאס געטאן מיט תעניתים, און היינט טוט מען דאס מיט תפילה."
+        },
+        "evidence": { "segs": [154, 158, 164, 165, 181, 182], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "What a person accustoms himself to enjoy in this world is what he will enjoy in the next; one who never toiled to feel sweetness in davening or Shabbos will be like a block of wood in Gan Eden.",
+          "yi": "וואס א מענטש געוויינט זיך איין צו הנאה האבן אויף דער וועלט, דאס האט ער אויף יענער וועלט; ווער עס האט זיך קיינמאל נישט געמוטשעט צו שפירן א זיסקייט אין דאווענען אדער אין שבת, וועט זיין אין גן עדן ווי א קלאץ."
+        },
+        "evidence": { "segs": [184, 186, 253, 254, 258, 260], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Avodas avodah, real toil, is what is demanded; one may not wait for a good mood to daven, and whoever toils is guaranteed to come to feel sweetness.",
+          "yi": "מ'פארלאנגט עבודת עבודה, אמת'דיגע יגיעה; מ'טאר נישט ווארטן אויף א גוטן מוד צו דאווענען, און ווער עס מוטשעט זיך האט א גאראנטיע אז ער וועט שפירן א זיסקייט."
+        },
+        "evidence": { "segs": [364, 365, 413, 414, 443, 444], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Davening is the breath of a Jew; a Jew who does not daven has lost his bond with the Ribono shel Olam in a way that other sins do not express.",
+          "yi": "דאווענען איז דער אטעם פון א איד; א איד וואס דאווענט נישט האט פארלוירן זיין קשר מיטן רבונו של עולם, אויף אן אופן וואס אנדערע עבירות ווייזן נישט."
+        },
+        "evidence": { "segs": [506, 532, 533, 548, 563, 568], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "In the last generation, the time before Moshiach, davening is the main avodah, its great test is being mocked, and it is the war against Amalek.",
+          "yi": "אין דור אחרון, די צייט פאר משיח, איז דאווענען דער עיקר עבודה, דער גרויסער נסיון דערביי איז אז מ'לאכט אויף אים, און דאס איז די מלחמה מיט עמלק."
+        },
+        "evidence": { "segs": [575, 588, 606, 607, 629, 636], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-20-hisorerus-beavodas-hashem",
+      "startSeg": 0,
+      "endSeg": 65,
+      "title": { "en": "Death penalty for four amos without washing?", "yi": "חייב מיתה אויף ארבע אמות אן נעגל וואסער?" },
+      "summary": {
+        "en": "The Rav brings the teaching that one who walks four amos without washing his hands in the morning is liable to death, tells of a scoffer in Peshischa whom the Kotzker drove away, and asks why the Shulchan Aruch does not treat it so. He answers that there are levels of souls, and the Shulchan Aruch addresses the lowest.",
+        "yi": "דער משגיח ברענגט אז דער וואס גייט ארבע אמות אינדערפרי אן נעגל וואסער איז חייב מיתה, דערציילט פון א לץ אין פשיסחא וואס דער קאצקער האט אים אוועקגעטריבן, און פרעגט פארוואס דער שולחן ערוך האלט נישט אזוי. ער ענטפערט אז ס'איז דא מדריגות אין נשמות, און דער שולחן ערוך רעדט פון דער נידריגסטער."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-20-hisorerus-beavodas-hashem",
+      "startSeg": 66,
+      "endSeg": 136,
+      "title": { "en": "A spot on silk; anger as idolatry", "yi": "א פלעק אויף זייד; כעס ווי עבודה זרה" },
+      "summary": {
+        "en": "With a mashal of a potato sack and a silk shirt, the Rav explains that the harsh statements apply to people of high level, and shows the same with anger, a trace of idolatry for most but real idolatry for an elevated person. He ties the levels of nefesh, ruach and neshamah to milestones in a Jew's life.",
+        "yi": "מיט א משל פון א זאק קארטאפל און א זיידן העמד ערקלערט דער משגיח אז די שטרענגע ווערטער זענען געזאגט אויף בעלי מדריגה, און ער ווייזט דאס זעלבע ביי כעס, וואס איז ביי רוב מענטשן א שמץ עבודה זרה אבער ביי א געהויבענעם מענטש ממש עבודה זרה. ער שטעלט צו די מדריגות נפש, רוח און נשמה צו די שטאפלען אין א אידנס לעבן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-20-hisorerus-beavodas-hashem",
+      "startSeg": 137,
+      "endSeg": 212,
+      "title": { "en": "From fasting to tefillah", "yi": "פון תעניתים צו תפילה" },
+      "summary": {
+        "en": "Closing the season, the Rav explains that tzaddikim once fasted to wash away the stain of sin, which the Ba'al Shem Tov did away with; according to the Maor VaShemesh, tefillah takes that place today. He brings the Toldos Yaakov Yosef and the Chasam Sofer that one who did not toil for sweetness in davening cannot feel it in the next world.",
+        "yi": "ביים ענדיגן דעם זמן ערקלערט דער משגיח אז אמאל האבן צדיקים געפאסט כדי אפצוואשן דעם פגם פון א עבירה, וואס דער בעל שם טוב האט מבטל געווען; לויט'ן מאור ושמש איז היינט תפילה אויף דעם ארט. ער ברענגט דעם תולדות יעקב יוסף און דעם חתם סופר אז ווער עס האט זיך נישט געמוטשעט אויף א זיסקייט אין דאווענען, קען עס נישט שפירן אויף יענער וועלט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-20-hisorerus-beavodas-hashem",
+      "startSeg": 213,
+      "endSeg": 313,
+      "title": { "en": "Oneg Shabbos and a taste for ruchniyus", "yi": "עונג שבת און א געשמאק אין רוחניות" },
+      "summary": {
+        "en": "The Rav speaks of the sweetness of Shabbos, recalling the previous Skverer Rebbe, and of people for whom Shabbos is a burden; such a person will sit in Gan Eden like a block of wood. A body ruined by bad food has no appetite, and so one who fills himself with this world cannot taste a blatt Gemara or davening.",
+        "yi": "דער משגיח רעדט פון דער זיסקייט פון שבת, דערמאנט דעם פריערדיגן סקווירער רבי'ן, און פון מענטשן וואס ביי זיי איז שבת א לאסט; אזא מענטש וועט זיצן אין גן עדן ווי א קלאץ. א מאגן וואס איז צעשטערט פון שלעכט עסן האט נישט קיין אפעטיט, און אזוי קען דער וואס פילט זיך אן מיט עולם הזה נישט שפירן קיין טעם אין א בלאט גמרא אדער אין דאווענען."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-20-hisorerus-beavodas-hashem",
+      "startSeg": 314,
+      "endSeg": 449,
+      "title": { "en": "Hester, and the toil of avodas avodah", "yi": "הסתר, און די יגיעה פון עבודת עבודה" },
+      "summary": {
+        "en": "In a time of hester, when a Jew fears mockery for a warm word to Hashem, the Rav says to ignore the mockers and treat each tefillah like a precious business deal. From the Ba'al HaTanya's two kinds of avodah and the Ba'al Shem Tov's grapes mashal he teaches that a gift of inspiration must be paid for with toil, and that one who toils will surely feel sweetness.",
+        "yi": "אין א צייט פון הסתר, ווען א איד האט מורא מ'זאל אים אויסלאכן פאר א ווארעם ווארט צום אייבערשטן, זאגט דער משגיח מ'זאל זיי איגנארירן און יעדע תפילה האלטן ווי א טייערע עסק. פונעם בעל התניא'ס צוויי סארט עבודה און פונעם בעל שם טוב'ס משל פון וויינטרויבן לערנט ער אז א מתנה פון התעוררות דארף מען באצאלן מיט יגיעה, און ווער עס מוטשעט זיך וועט זיכער שפירן א זיסקייט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-20-hisorerus-beavodas-hashem",
+      "startSeg": 450,
+      "endSeg": 505,
+      "title": { "en": "The boiling blood of service", "yi": "דאס קאכנדיגע בלוט פון דינסט" },
+      "summary": {
+        "en": "The Rav tells of a chassid who came to the Ba'al HaTanya after six years: seeing a soldier punished for frozen ears, he learned that in davening the blood must boil. He adds the story of the Czar and an old soldier who said the service itself keeps him warm.",
+        "yi": "דער משגיח דערציילט פון א חסיד וואס איז געקומען צום בעל התניא נאך זעקס יאר: ער האט געזען ווי מ'שטראפט א סאלדאט פאר געפרוירענע אויערן, און דערפון געלערנט אז ביים דאווענען דארף דאס בלוט קאכן. ער לייגט צו די מעשה פונעם צאר מיט אן אלטן סאלדאט וואס האט געזאגט אז די סערוויס אליין ווארעמט אים."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-20-hisorerus-beavodas-hashem",
+      "startSeg": 506,
+      "endSeg": 608,
+      "title": { "en": "Davening, the breath of a Jew", "yi": "דאווענען, דער אטעם פון א איד" },
+      "summary": {
+        "en": "The Rav explains that davening is a Jew's life and breath: one who speaks lashon hara must do teshuvah, but one who does not daven has lost his bond with Hashem. He brings the Arizal that today davening is the main avodah, the posuk of the prayer of the destitute written for the last generation, and the Gemara that people treat tefillah lightly, which is the test of this generation.",
+        "yi": "דער משגיח ערקלערט אז דאווענען איז דאס לעבן און דער אטעם פון א איד: ווער עס רעדט לשון הרע דארף תשובה טון, אבער ווער עס דאווענט נישט האט פארלוירן דעם קשר מיטן אייבערשטן. ער ברענגט פונעם אר\"י הקדוש אז היינט איז דאווענען דער עיקר עבודה, דעם פסוק פון תפילת הערער וואס איז געשריבן פאר דעם דור אחרון, און די גמרא אז מענטשן זענען מזלזל אין תפילה, וואס דאס איז דער נסיון פון דעם דור."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-20-hisorerus-beavodas-hashem",
+      "startSeg": 609,
+      "endSeg": 675,
+      "title": { "en": "Learning, davening and the war with Amalek", "yi": "לערנען, דאווענען און די מלחמה מיט עמלק" },
+      "summary": {
+        "en": "The Rav says that for bachurim learning is the main thing, yet learning and davening need each other. From Esther and from Moshe's raised hands against Amalek he shows that the war with Amalek, who cools a Jew's davening, is fought with tefillah, and he closes the season with the Yaaras Devash and Mishnah Berurah that good davening in the morning changes the day's learning.",
+        "yi": "דער משגיח זאגט אז ביי בחורים איז דער עיקר דאס לערנען, אבער לערנען און דאווענען דארפן איינס דאס אנדערע. פון אסתר און פון משה רבינו'ס אויפגעהויבענע הענט קעגן עמלק ווייזט ער אז די מלחמה מיט עמלק, וואס קילט אפ דאס דאווענען, פירט מען מיט תפילה, און ער ענדיגט דעם זמן מיטן יערות דבש און דעם משנה ברורה אז א גוט דאווענען אינדערפרי טוישט דאס לערנען פונעם גאנצן טאג."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "עס שטעט בן זורק קדש",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [9, 11, 12, 30, 31], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "דער בהתיב אויפ'ן שולחן ערוך",
+      "work": "Ba'er Heitev",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [34, 35, 38, 39], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "כל הכי איסקיה עובד עבודה זרה",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 105b",
+      "sefariaRef": "Shabbat 105b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [95, 98, 99, 119], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "שטעט פון ראי' הקודש, אויף יעדער עבירה, וויפיל תינוסים",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [148, 149], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "דער בעש''ט האט מבטל געמאכט די תונסים",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [167, 168], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "דער מבער שמש זאגט; מואב השמש",
+      "work": "Maor VaShemesh",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [181, 182, 308, 313], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "תולדות יעקב יוסף",
+      "work": "Toldos Yaakov Yosef",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [183, 184, 186, 187, 188, 191], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "סתם סופר; דער חתם ספר זאגט",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [193, 194, 197, 198, 199], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "ראוי צו חמם מן התיקה, צדיקים ומתראפים ביי, א רשעים נדינים ביי",
+      "work": "Gemara Nedarim",
+      "ref": "Nedarim 8b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [205, 207, 208, 209], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "א נחמד די מוזא ומפת רב, ומתקים ודבש פון א יפות צפון",
+      "work": "Tehillim",
+      "ref": "Tehillim 19:11",
+      "sefariaRef": "Psalms 19:11",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [265, 266, 267], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "וכהל לכמה ולחמה, ושתה ביום ושחתי",
+      "work": "Mishlei",
+      "ref": "Mishlei 9:5",
+      "sefariaRef": "Proverbs 9:5",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [295, 296, 297, 298], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "הסתר מן התורה מן עין שנעמע וינכי הסתר הסתר",
+      "work": "Gemara Chullin",
+      "ref": "Chullin 139b",
+      "sefariaRef": "Chullin 139b",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [316, 317], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ועס טוט זיך חיין וחסד לפניו מכה הבתלי'ס",
+      "work": "Esther",
+      "ref": "Esther 2:17",
+      "sefariaRef": "Esther 2:17",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [337, 338], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "עס שטעט אין בעל התניא אז מען געפינט ביי די לויים ביי די קיינים צוויי סארט עבודה",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [361, 364, 365, 368, 369], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "עבודת מתנה את ענת כנסך",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 18:7",
+      "sefariaRef": "Numbers 18:7",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [362], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "עבודת עבודה",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 4:47",
+      "sefariaRef": "Numbers 4:47",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [363, 364], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "עס שטעט אים בעש''ט טאמא ארויאג יטובעשם",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [375, 376, 388, 390, 391], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "טאמא ארויאג יטובעשם; טאמאל אבער יו כי טוב ה'",
+      "work": "Tehillim",
+      "ref": "Tehillim 34:9",
+      "sefariaRef": "Psalms 34:9",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [375, 391], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "כולא נשמה תהלה לכה; ועם תהלה לכה",
+      "work": "Tehillim",
+      "ref": "Tehillim 150:6",
+      "sefariaRef": "Psalms 150:6",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [564, 567], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "די עשינדיגע מראה, הכל נשימה א נשימה",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [565], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "אזוי שטעט פון ארי הקודש, פון זיין צייט אן",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [573, 575, 576, 577], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "נמשנה תלמוד תורה קנגד כלים",
+      "work": "Mishnah Peah",
+      "ref": "Mishnah Peah 1:1",
+      "sefariaRef": "Mishnah Peah 1:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [578, 579], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ער בריינגט פון ר' משה פשעווארסקער",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [583, 585], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "פאנע א תפילת הארע ולאויבאזע את תפילתם – די כתב זאת לדבר אחרון",
+      "work": "Tehillim",
+      "ref": "Tehillim 102:18-19",
+      "sefariaRef": "Psalms 102:18-19",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [584, 585, 586, 588], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "כרום זלות לבני אדם, אלא דברים ושומעומדים ברמי של עולם, ובני אדם מזלזלים",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 6b",
+      "sefariaRef": "Berakhot 6b",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [595, 596, 597, 598, 599], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "בית שרון, תפילה בו צלותא, צלותא בו שמצה, שמצה בו תלותא",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [616, 617, 618, 621], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "ויאכאשר יא משה את ידי וגבה ישראל",
+      "work": "Shemos",
+      "ref": "Shemos 17:11",
+      "sefariaRef": "Exodus 17:11",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [627, 628], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אזוי ווי עס שטעט אין מדרש אשר כרכה בדרך, כרכה מיינט ער האט קאלט געמאכט",
+      "work": "Midrash",
+      "ref": "on Devarim 25:18",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [638, 639, 640, 641], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "שטעט אין יארת דבש",
+      "work": "Yaaros Devash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [663, 664, 665], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער משנה ברכה ברענגט עס",
+      "work": "Mishnah Berurah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [664, 665, 666], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The severe statements of the sefarim that go beyond the Shulchan Aruch are not exaggerations: they are the halachah of a higher soul, for whom a small flaw is a real blemish.",
+        "yi": "די שטרענגע ווערטער אין ספרים וואס גייען ווייטער פונעם שולחן ערוך זענען נישט קיין גוזמא: זיי זענען די הלכה פון א העכערער נשמה, ביי וועמען א קליינער חסרון איז א אמת'ער פגם."
+      },
+      "evidence": { "segs": [59, 62, 63, 64, 91, 92], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Gan Eden and Gehinnom can be the same place: the same fiery davening of the tzaddikim is pleasure for those who trained for it and torment for those who did not.",
+        "yi": "גן עדן און גיהנום קענען זיין דער זעלבער ארט: דאס זעלבע פייערדיגע דאווענען פון די צדיקים איז א תענוג פאר די וואס האבן זיך צוגעוואוינט דערצו, און א יסורים פאר די וואס נישט."
+      },
+      "evidence": { "segs": [187, 188, 189, 191, 198, 199], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "A spiritual appetite works like a physical one: one who spoils his appetite with the pleasures of this world cannot take in the bread of Torah and tefillah.",
+        "yi": "א רוחניות'דיגער אפעטיט ארבעט אזוי ווי א גשמיות'דיגער: ווער עס צעשטערט זיין אפעטיט מיט די תענוגים פון עולם הזה, קען נישט אריינעמען דאס ברויט פון תורה און תפילה."
+      },
+      "evidence": { "segs": [283, 288, 289, 290, 292, 294], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "A gift of inspiration is like the free taste of grapes the storekeeper offers: it is given to show the quality, but afterwards one must pay with toil.",
+        "yi": "א מתנה פון התעוררות איז ווי דער פרייער טעם פון וויינטרויבן וואס דער סטאר'קיפער גיט: מ'גיט עס צו ווייזן די קוואליטעט, אבער דערנאך דארף מען באצאלן מיט יגיעה."
+      },
+      "evidence": { "segs": [376, 381, 388, 390, 399, 402], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Whether someone davens is a truer measure of whether he is still bound to Hashem than the severity of the punishment for a sin, just as going bareheaded marks a person though it is hard to name the sin.",
+        "yi": "צי א מענטש דאווענט איז א מער אמת'ע מאס צי ער איז נאך צוגעבינדן צום אייבערשטן ווי ווי שווער דער עונש אויף אן עבירה איז, אזוי ווי גיין בגילוי ראש באצייכנט א מענטש כאטש ס'איז שווער צו זאגן וואספארא עבירה דאס איז."
+      },
+      "evidence": { "segs": [548, 549, 550, 553, 557, 561], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Amalek's attack is coldness: 'asher karcha' means he cooled you, and the war against Amalek today is the struggle to daven with warmth.",
+        "yi": "עמלק'ס אנפאל איז קאלטקייט: \"אשר קרך\" מיינט ער האט דיך אפגעקילט, און די מלחמה מיט עמלק היינט איז די מלחמה צו דאווענען מיט ווארעמקייט."
+      },
+      "evidence": { "segs": [629, 635, 636, 638, 639, 641], "confidence": 0.8 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The scoffer in Peshischa", "yi": "דער לץ אין פשיסחא" },
+      "retelling": {
+        "en": "At the court of Rebbe Reb Bunim in Peshischa there was a young man, a great scholar, who mocked the avodah of the chassidim. The Kotzker took him aside and told him that Rebbe Reb Bunim was not as great a tzaddik as he seemed. The young man took it seriously and left Peshischa, and the Kotzker used to say that he had saved the group, because that young man was killing their yiras shamayim.",
+        "yi": "ביים רבי ר' בונים אין פשיסחא איז געווען א יונגערמאן, א גרויסער עילוי, וואס האט געמאכט חוזק פון דער עבודה פון די חסידים. דער קאצקער האט זיך גענומען צו אים און אים געזאגט אז דער רבי ר' בונים איז נישט אזא צדיק ווי ער שטעלט זיך פאר. יענער האט עס גענומען ערנסט און איז אוועק פון פשיסחא, און דער קאצקער האט זיך אלעמאל געלויבט אז ער האט געראטעוועט די חבורה, ווייל יענער האט געטייטעט די יראת שמים."
+      },
+      "people": ["the Kotzker Rebbe", "Rebbe Reb Bunim of Peshischa"],
+      "evidence": { "segs": [13, 15, 17, 19, 24, 28], "confidence": 0.7 }
+    },
+    {
+      "title": { "en": "The previous Skverer Rebbe and the sweetness of Shabbos", "yi": "דער פריערדיגער סקווירער רבי און די זיסקייט פון שבת" },
+      "retelling": {
+        "en": "The Rav recalls an audience with the previous Skverer Rebbe in which the Rebbe spoke of how sweet Shabbos is. He was so absorbed in Shabbos that he could not grasp that there is a Jew who does not feel its sweetness.",
+        "yi": "דער משגיח דערמאנט אן אריינגאנג צום פריערדיגן סקווירער רבי'ן, וואו דער רבי האט גערעדט ווי זיס שבת איז. ער איז געווען אזוי פארקאכט אין שבת, אז ער האט נישט געקענט באגרייפן אז ס'איז דא א איד וואס שפירט נישט די זיסקייט פון שבת."
+      },
+      "people": ["the previous Skverer Rebbe"],
+      "evidence": { "segs": [225, 233, 234, 235], "confidence": 0.7 }
+    },
+    {
+      "title": { "en": "The chassid, the frozen soldier and the Ba'al HaTanya", "yi": "דער חסיד, דער געפרוירענער סאלדאט און דער בעל התניא" },
+      "retelling": {
+        "en": "A chassid came to the Ba'al HaTanya after six years away and explained that he was a businessman supplying the government's army. He once saw a soldier stretched out and whipped, and was told the soldier's ears had frozen while he stood guard on a frosty winter night; one who serves the Czar must have boiling blood. The chassid took from this a path that in davening the blood must boil, and it served him for six years; now that his inspiration had cooled, he had come for a fresh hisorerus.",
+        "yi": "א חסיד איז געקומען צום בעל התניא נאך זעקס יאר, און דערציילט אז ער איז א סוחר וואס ברענגט סחורה פאר דער מלוכה'ס ארמיי. איינמאל האט ער געזען ווי מ'לייגט אויס א סאלדאט און מ'שמייסט אים, און מ'האט אים געזאגט אז דעם סאלדאט'ס אויערן זענען אים פארפרוירן געווארן ווען ער איז געשטאנען אויף שמירה אין א פראסטיגער ווינטער נאכט; ווער עס דינט דעם צאר, דארף דאס בלוט קאכן. דער חסיד האט פון דעם גענומען א דרך אז ביים דאווענען דארף דאס בלוט קאכן, און דאס האט אים געדינט זעקס יאר; יעצט איז די התעוררות אפגעקילט געווארן, איז ער געקומען נאך א פרישע התעוררות."
+      },
+      "people": ["the Ba'al HaTanya"],
+      "evidence": { "segs": [450, 455, 464, 471, 478, 485], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "The Czar and the old soldier", "yi": "דער צאר און דער אלטער סאלדאט" },
+      "retelling": {
+        "en": "The Czar was reviewing his soldiers and saw a very old soldier of about eighty standing with his rifle. He asked whether his blood was still warm enough for army service. The soldier answered that the service warms him: his own blood is cold, but serving the king keeps him warm.",
+        "yi": "דער צאר איז געגאנגען דורכקוקן זיינע סאלדאטן און האט געזען אן אלטן סאלדאט, ארום אכציג יאר אלט, שטיין מיט א ביקס. ער האט אים געפרעגט צי זיין בלוט איז נאך ווארעם גענוג פאר דינסט אין דער ארמיי. דער סאלדאט האט געענטפערט אז די סערוויס ווארעמט אים: זיין אייגן בלוט איז שוין קאלט, אבער דאס דינען דעם קעניג ווארעמט אים."
+      },
+      "people": [],
+      "evidence": { "segs": [491, 493, 496, 499, 501, 503], "confidence": 0.8 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "How can walking four amos without washing be called a death penalty, when the Ba'er Heitev on the Shulchan Aruch says it is not a real one?",
+        "yi": "וויאזוי קען מען זאגן אז ארבע אמות אן נעגל וואסער איז חייב מיתה, ווען דער באר היטב אויפן שולחן ערוך זאגט אז ס'איז נישט ממש אזוי?"
+      },
+      "answer": {
+        "en": "The Shulchan Aruch is for the lowest level; a person of high level, connected to pnimiyus haTorah, is held to more, as an ink spot ruins a silk shirt.",
+        "yi": "דער שולחן ערוך איז פאר דער נידריגסטער מדריגה; פון א בעל מדריגה וואס האט א שייכות מיט פנימיות התורה פארלאנגט מען מער, אזוי ווי א פלעק טינט איז א פגם אויף א זיידן העמד."
+      },
+      "questionSegs": [33, 35, 36],
+      "answerSegs": [59, 60, 62, 63, 91, 92],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "If teshuvah brings forgiveness, why did the tzaddikim of old still fast so many fasts?",
+        "yi": "אויב תשובה ברענגט מחילה, פארוואס האבן די צדיקים פון אמאל נאך אלץ געפאסט אזויפיל תעניתים?"
+      },
+      "answer": {
+        "en": "Forgiveness does not remove the stain: like a child who soiled his suit and whose mother forgives him, the suit must still be washed, and the fasts did the washing.",
+        "yi": "מחילה נעמט נישט אוועק דעם פגם: אזוי ווי א קינד וואס האט שמוציג געמאכט דעם אנצוג און די מאמע איז מוחל, דארף מען אבער נאך אלץ וואשן דעם אנצוג, און די תעניתים האבן דאס אפגעוואשן."
+      },
+      "questionSegs": [151, 153, 154],
+      "answerSegs": [158, 161, 163, 164, 165],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why is one who does not daven considered outside the fold, while one who speaks lashon hara, a terrible sin, is not?",
+        "yi": "פארוואס ווערט דער וואס דאווענט נישט גערעכנט ווי נישט פון אונזערע, און דער וואס רעדט לשון הרע, א שרעקליכע עבירה, נישט?"
+      },
+      "answer": {
+        "en": "Davening is a Jew's breath and life; not davening shows he has lost his bond with the Ribono shel Olam, which cannot be measured by the punishment for a sin.",
+        "yi": "דאווענען איז דער אטעם און דאס לעבן פון א איד; ווען ער דאווענט נישט ווייזט עס אז ער האט פארלוירן זיין קשר מיטן רבונו של עולם, וואס מ'קען נישט מעסטן לויט דעם עונש פון אן עבירה."
+      },
+      "questionSegs": [513, 517, 539, 540],
+      "answerSegs": [530, 531, 548, 549, 563],
+      "confidence": 0.7
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says one should eat and sleep enough to stay healthy and learn with a clear head, but not lie in the pleasures of this world.",
+        "yi": "דער משגיח זאגט אז מ'דארף עסן און שלאפן גענוג כדי צו זיין געזונט און לערנען מיט א קלארן קאפ, אבער נישט ליגן אין די תענוגים פון עולם הזה."
+      },
+      "evidence": { "segs": [174, 175, 179, 275], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that when others mock warm davening, one should simply ignore them.",
+        "yi": "דער משגיח זאגט אז ווען מ'לאכט אויס א ווארעם דאווענען, זאל מען זיי פשוט איגנארירן."
+      },
+      "evidence": { "segs": [323, 324, 325, 326], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says not to wait for a good mood to daven; there is no such thing as 'not being up to it', and one must toil now.",
+        "yi": "דער משגיח זאגט אז מ'זאל נישט ווארטן אויף א גוטן מוד צום דאווענען; ס'איז נישטא אזא זאך ווי \"נישט דערביי\", און מ'דארף זיך מוטשען יעצט."
+      },
+      "evidence": { "segs": [413, 414, 419, 420, 425, 426], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that davening well in the morning makes the whole day's learning different, because the neshamah is warmed.",
+        "yi": "דער משגיח זאגט אז ווען מ'דאווענט גוט אינדערפרי, ווערט דאס לערנען פונעם גאנצן טאג אנדערש, ווייל די נשמה ווערט אנגעווארעמט."
+      },
+      "evidence": { "segs": [664, 665, 666, 667], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "tefillah as the main avodah of the last generation",
+    "toil in davening",
+    "sweetness in avodas Hashem",
+    "gan eden and gehinnom",
+    "oneg Shabbos",
+    "levels of the soul",
+    "hester panim and Purim",
+    "war against Amalek",
+    "learning and davening together"
+  ],
+  "concepts": [
+    { "he": "לפנים משורת הדין", "heardAs": ["לפני משורת הדין"] },
+    { "he": "חייב מיתה", "heardAs": ["חייב מיאוסע", "חייב מושא", "חייב ומוסע", "חייב מועסע"] },
+    { "he": "נטילת ידים", "heardAs": ["נטילת ידים", "שונא תלית ידים", "ארבעה מתא נטילת ידים"] },
+    { "he": "נפש רוח נשמה", "heardAs": ["בפחינת נפש", "פחונת רוח", "פחונת נשמה"] },
+    { "he": "פנימיות התורה", "heardAs": ["פנימיות התורה"] },
+    { "he": "השגחה פרטית", "heardAs": ["שגחה פרטות"] },
+    { "he": "תעניתים", "heardAs": ["תינוסים", "תונסים"] },
+    { "he": "תיקון חצות", "heardAs": ["עתיקים חצות", "טייל חצות"] },
+    { "he": "עונג שבת", "heardAs": ["נונוג אין שבת", "שבת אייניג"] },
+    { "he": "הסתר פנים", "heardAs": ["הסתר", "היסטאר פארנעם", "טנות הסתר"] },
+    { "he": "עבודת עבודה", "heardAs": ["עבודת עבודה"] },
+    { "he": "עבודת מתנה", "heardAs": ["עבודת מתנה"] },
+    { "he": "מתיקות", "heardAs": ["מסוכות", "מוסדיקות"] },
+    { "he": "יגיעה", "heardAs": ["יגיעה"] },
+    { "he": "דור אחרון", "heardAs": ["דור אחרון", "לדבר אחרון", "לדור אחרים"] },
+    { "he": "מלחמת עמלק", "heardAs": ["מלחמת המלק", "מלחמת המלאק"] },
+    { "he": "אשר קרך בדרך", "heardAs": ["אשר כרכה בדרך"] }
+  ],
+  "people": [
+    { "name": "the Kotzker Rebbe", "heardAs": ["קאצק", "דער קאצקעל", "דער קאצקע", "די קארצקער"] },
+    { "name": "Rebbe Reb Bunim of Peshischa", "heardAs": ["רבי'ן רבונים אין פשיסחא", "דער רבי רבונים", "פארשיסטעך"] },
+    { "name": "the Arizal", "heardAs": ["ראי' הקודש", "ארי הקודש"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["בעש''ט"] },
+    { "name": "the Chasam Sofer", "heardAs": ["סתם סופר", "חתם ספר"] },
+    { "name": "Dovid HaMelech", "heardAs": ["דוד המלך"] },
+    { "name": "the previous Skverer Rebbe", "heardAs": ["פריערדיגן סקווערער רבי'ן"] },
+    { "name": "the Ba'al HaTanya", "heardAs": ["בעל התניא", "בר אליין טעניע"] },
+    { "name": "Rabbi Moshe of Pshevorsk", "heardAs": ["ר' משה פשעווארסקער"] },
+    { "name": "Esther", "heardAs": ["אסתר"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבי ענער", "משה"] }
+  ],
+  "asrNotes": "Yiddish ASR fair to poor; most Hebrew quotations are garbled but recoverable from context. The rebbe named around seg 169 (apparently ending tikkun chatzos), the tzaddik cited at seg 213, the Chabad-sounding reference at seg 250, the name at seg 592-593, and the sefer at seg 617 ('בית שרון') could not be recovered with confidence; the ending of the Peshischa story (seg 47) is unclear. Seg 528 is a short hallucinated repeat run; seg 674 is largely garbled."
+}

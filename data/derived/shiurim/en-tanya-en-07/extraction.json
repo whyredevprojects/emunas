@@ -1,0 +1,536 @@
+{
+  "shiurId": "en-tanya-en-07",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "On the opening of Tanya chapter three, the Rav explains that the ten utterances of creation are the ten sefiros through which Hashem reveals Himself, and that a person carries them as intellect (Chabad) and seven character traits (Chagas Nehim).",
+      "yi": "אויפן אנהייב פון תניא פרק ג ערקלערט דער משגיח אז די עשרה מאמרות פון בריאת העולם זענען די צען ספירות דורך וואס דער אויבערשטער אנטפלעקט זיך, און אז א מענטש טראגט זיי אין זיך אלס שכל (חב\"ד) און זיבן מדות (חג\"ת נהי\"ם)."
+    },
+    "abstract": {
+      "en": "The Rav reads the opening of Tanya chapter three: each of nefesh, ruach and neshamah contains ten aspects corresponding to the ten sefiros. He starts from the Mishnah's ten utterances of creation and the Gemara's question that only nine are found, and explains that these ten are ten powers, the sefiros, through which the infinite Hashem appears to us, filtered down through the worlds like sunlight through darkened films. Man, created in the image of G-d, contains all ten, though in him they are not called sefiros but Chabad (intellect) and seven midos. He defines chesed as giving and extending, gevurah as fear and withdrawal, tiferes as a new harmony, netzach and hod as two ways of survival, yesod as the power to create. He links the seven midos to music, the seven days of creation and Shabbos, contrasts Chabad's path of intellect with other Chassidim's path of emotion, and shows that the seven midos can serve good or evil, unlike the higher three.",
+      "yi": "דער משגיח לערנט דעם אנהייב פון תניא פרק ג, אז יעדע מדרגה פון נפש, רוח און נשמה איז כלול פון צען בחינות אקעגן די צען ספירות. ער הייבט אן מיט די עשרה מאמרות פון דער משנה און מיט דער קשיא פון דער גמרא אז מ'געפינט נאר ניין, און ערקלערט אז די צען זענען צען כוחות, די ספירות, דורך וואס דער אויבערשטער וואס איז אין סוף באווייזט זיך צו אונז, אראפגעלאזט דורך די עולמות אזוי ווי מ'קוקט אויף דער זון דורך פינצטערע גלעזער. דער מענטש, באשאפן בצלם אלקים, האט אלע צען אין זיך, נאר ביי אים הייסן זיי נישט ספירות נאר חב\"ד און זיבן מדות. ער טייטשט חסד אלס געבן און זיך אויסשפרייטן, גבורה אלס יראה און זיך איינהאלטן, תפארת אלס א נייע הרמוניע, נצח און הוד אלס צוויי וועגן ווי אזוי זיך צו האלטן, און יסוד אלס דער כח צו באשאפן. ער פארבינדט די זיבן מדות מיט ניגון, מיט די זיבן טעג פון בריאה און מיט שבת, שטעלט אקעגן דעם דרך פון חב\"ד מיט שכל צום דרך פון אנדערע חסידים מיט די מדות, און ווייזט אז די זיבן מדות קענען זיין סיי לטוב סיי למוטב, נישט אזוי ווי די אויבערשטע דריי."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The ten utterances of creation are ten powers, the sefiros, through which the infinite Hashem reveals Himself in creation in different aspects.",
+          "yi": "די עשרה מאמרות זענען צען כוחות, די ספירות, דורך וואס דער אין סוף אנטפלעקט זיך אין דער בריאה אין פארשידענע אופנים."
+        },
+        "evidence": { "segs": [100, 102, 105, 113, 118, 164], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Man, created in the image of G-d, contains all ten, but in him they are not called sefiros; they are divided into Chabad, Chagas and Nehim.",
+          "yi": "דער מענטש, באשאפן בצלם אלקים, האט אלע צען אין זיך, נאר ביי אים הייסן זיי נישט ספירות; מ'טיילט זיי אויף אין חב\"ד, חג\"ת און נהי\"ם."
+        },
+        "evidence": { "segs": [174, 177, 235, 239, 240, 242], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Chesed is extending oneself and giving; gevurah is fear and drawing into oneself; tiferes is the harmony that arises when the two meet.",
+          "yi": "חסד הייסט זיך אויסשפרייטן און געבן; גבורה איז יראה און זיך צוריקציען אין זיך; תפארת איז די הרמוניע וואס קומט ארויס ווען די צוויי טרעפן זיך."
+        },
+        "evidence": { "segs": [323, 324, 331, 336, 425, 448], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Netzach and hod are two ways of survival, fighting the adversary or bending under pressure; yesod is the power to create.",
+          "yi": "נצח און הוד זענען צוויי וועגן ווי אזוי זיך צו האלטן, דורך קעמפן קעגן דעם שונא אדער דורך זיך בייגן; יסוד איז דער כח צו באשאפן."
+        },
+        "evidence": { "segs": [538, 545, 546, 611, 616, 624], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Chabad, the intellect, is the father and root of the midos and is above this world, so in essence it has no evil, while the seven midos can be used for good or for evil.",
+          "yi": "חב\"ד, דער שכל, איז דער טאטע און דער שורש פון די מדות און איז העכער פון דער וועלט, ממילא האט עס בעצם נישט קיין רע, בשעת די זיבן מדות קענען זיין סיי לטוב סיי לרע."
+        },
+        "evidence": { "segs": [765, 767, 902, 910, 915, 1060], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Chesed and gevurah run through all of creation: male and female, summer and winter, the poles of a magnet, day and night.",
+          "yi": "חסד און גבורה גייען דורך די גאנצע בריאה: זכר און נקבה, זומער און ווינטער, די צוויי זייטן פון א מאגנעט, טאג און נאכט."
+        },
+        "evidence": { "segs": [1094, 1097, 1099, 1107, 1144, 1147], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-english-sets-tanya-07-e-tanya",
+      "startSeg": 0,
+      "endSeg": 141,
+      "title": { "en": "Tanya chapter three and the ten utterances", "yi": "תניא פרק ג און די עשרה מאמרות" },
+      "summary": {
+        "en": "The Rav reads the opening of Tanya chapter three and recalls that nefesh, ruach and neshamah each consist of ten powers. He brings the Mishnah's ten utterances of creation, the Gemara's question that only nine are found and its answers, and explains that these ten are the sefiros through which the infinite Hashem appears in creation.",
+        "yi": "דער משגיח לערנט דעם אנהייב פון תניא פרק ג און דערמאנט אז נפש, רוח און נשמה באשטייען יעדע פון צען כוחות. ער ברענגט די עשרה מאמרות פון דער משנה, די קשיא פון דער גמרא אז מ'געפינט נאר ניין און די תירוצים, און ערקלערט אז די צען זענען די ספירות דורך וואס דער אין סוף באווייזט זיך אין דער בריאה."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-07-e-tanya",
+      "startSeg": 142,
+      "endSeg": 270,
+      "title": { "en": "From the sefiros above to man below", "yi": "פון די ספירות אויבן ביזן מענטש אונטן" },
+      "summary": {
+        "en": "With the mashal of looking at the sun through darkened films, the Rav describes how the light comes down from Atzilus to Asiyah. Man, in the image of G-d, contains the ten, but in him they are not called sefiros; the Rav shows that Adam equals the filled-out Name of Havayah and divides the ten into Chabad, Chagas and Nehim.",
+        "yi": "מיט דעם משל פון קוקן אויף דער זון דורך פינצטערע גלעזער באשרייבט דער משגיח ווי דאס ליכט קומט אראפ פון אצילות ביז עשיה. דער מענטש בצלם אלקים האט די צען אין זיך, נאר ביי אים הייסן זיי נישט ספירות; ער ווייזט אז אדם איז בגימטריא דער מילוי פונעם שם הוי\"ה, און טיילט די צען אויף אין חב\"ד, חג\"ת און נהי\"ם."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-07-e-tanya",
+      "startSeg": 271,
+      "endSeg": 376,
+      "title": { "en": "Chesed and gevurah: giving and withdrawing", "yi": "חסד און גבורה: געבן און זיך איינהאלטן" },
+      "summary": {
+        "en": "The Rav explains that Chabad belongs only to man while midos are found even in animals. Chesed is love that extends itself and gives; gevurah is fear, a contraction into oneself. He applies this to the male as giver and the female as receiver, as seen in kiddushin and the kesubah.",
+        "yi": "דער משגיח ערקלערט אז חב\"ד געהערט נאר צום מענטש, בשעת מדות געפינט מען אפילו ביי בהמות. חסד איז אהבה וואס שפרייט זיך אויס און גיט; גבורה איז יראה, א צמצום אין זיך אליין. ער ווענדט עס אן אויף דעם זכר אלס משפיע און די נקבה אלס מקבל, ווי מ'זעט ביי קידושין און ביי דער כתובה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-07-e-tanya",
+      "startSeg": 377,
+      "endSeg": 535,
+      "title": { "en": "Tiferes: a new harmony, not a mixture", "yi": "תפארת: א נייע הרמוניע, נישט קיין געמיש" },
+      "summary": {
+        "en": "The Rav explains tiferes as the blending of chesed and gevurah, tied to the joining of mercy at the start of Bereishis and to the last utterance about a helpmate. With lemonade, a painting, a niggun and a second voice harmonizing, he shows that tiferes is a qualitatively new creation, and applies it to man and woman together.",
+        "yi": "דער משגיח ערקלערט תפארת אלס די פארמישונג פון חסד און גבורה, פארבונדן מיט דעם שיתוף פון רחמים ביים אנהייב בראשית און מיט דעם לעצטן מאמר וועגן עזר כנגדו. מיט לעמאנאד, א בילד, א ניגון און א צווייטן קול וואס זינגט מיט, ווייזט ער אז תפארת איז א נייע בריאה, נישט קיין צוגאב, און ווענדט עס אן אויף איש ואשה צוזאמען."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-07-e-tanya",
+      "startSeg": 536,
+      "endSeg": 644,
+      "title": { "en": "Netzach, hod, yesod and the body", "yi": "נצח, הוד, יסוד און דער גוף" },
+      "summary": {
+        "en": "The Rav defines netzach as surviving by fighting and hod as surviving by yielding. He brings Pasach Eliyahu from the Tikkunei Zohar, which maps the sefiros onto the body: chesed the right arm, gevurah the left, tiferes the body, netzach and hod the two legs, yesod the organ of creation and malchus the mouth, and postpones explaining malchus.",
+        "yi": "דער משגיח טייטשט נצח אלס זיך האלטן דורך קעמפן און הוד אלס זיך האלטן דורך זיך אונטערגעבן. ער ברענגט פתח אליהו פון די תיקוני זוהר, וואס שטעלט צו די ספירות צום גוף: חסד די רעכטע האנט, גבורה די לינקע, תפארת דער גוף, נצח און הוד די צוויי פיס, יסוד דער אבר פון באשאפן און מלכות דאס מויל, און ער לאזט איבער מלכות אויף שפעטער."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-07-e-tanya",
+      "startSeg": 645,
+      "endSeg": 753,
+      "title": { "en": "Music, the days of creation and Shabbos", "yi": "ניגון, די טעג פון בריאה און שבת" },
+      "summary": {
+        "en": "The Rav compares the seven sefiros to the seven notes of music, brings the harp of seven, eight and ten strings, and the Zohar's heichal opened only by song. Each day of creation was made with one sefira; when Shabbos completes the harp, one can sing zemiros, and the seven voices of the psalm said to welcome Shabbos correspond to the sefiros.",
+        "yi": "דער משגיח פארגלייכט די זיבן ספירות מיט די זיבן נאטן פון ניגון, ברענגט דעם כנור פון זיבן, אכט און צען סטרונעס, און דעם היכל אין זוהר וואס מ'עפנט נאר מיט נגינה. יעדער טאג פון בריאה איז באשאפן געווארן מיט איין ספירה; ווען שבת קומט איז די הארפע פולשטענדיג און מ'קען זינגען זמירות, און די זיבן קולות פונעם מזמור ביים מקבל שבת זיין זענען אקעגן די ספירות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-07-e-tanya",
+      "startSeg": 754,
+      "endSeg": 844,
+      "title": { "en": "Chabad: the mochin and the Chabad derech", "yi": "חב\"ד: די מוחין און דער דרך פון חב\"ד" },
+      "summary": {
+        "en": "The Rav explains that chochmah, binah and da'as are mochin, the father, mother and root of the midos. He explains the name Chabad Chassidus: serving Hashem through understanding creation, while most other Chassidim worked on love, fear and praise of Hashem and were wary of delving into what is above this world.",
+        "yi": "דער משגיח ערקלערט אז חכמה, בינה און דעת זענען מוחין, דער טאטע, די מאמע און דער שורש פון די מדות. ער ערקלערט דעם נאמען חב\"ד חסידות: עבודת השם דורך פארשטיין די בריאה, בשעת רוב אנדערע חסידים האבן געארבעט אויף אהבה, יראה און שבח פונעם אויבערשטן און האבן מורא געהאט זיך אריינצולאזן אין וואס איז העכער פון דער וועלט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-07-e-tanya",
+      "startSeg": 845,
+      "endSeg": 892,
+      "title": { "en": "Animals have one trait, man has all", "yi": "א בהמה האט איין מדה, דער מענטש האט אלע" },
+      "summary": {
+        "en": "Everything in creation comes from one or a combination of the ten. Each animal shows one sefira, like the lion, whose name equals gevurah, or the timid sheep, while man, to whom every part of creation contributed according to the Ramban, can be anything, with one or two sefiros dominant.",
+        "yi": "אלעס אין דער בריאה קומט פון איינע אדער א צוזאמשטעל פון די צען. יעדע בהמה ווייזט איין ספירה, אזוי ווי דער לייב וואס זיין נאמען איז בגימטריא גבורה, אדער דאס שעפעלע, בשעת דער מענטש, צו וועמען יעדער חלק פון דער בריאה האט צוגעגעבן לויט דעם רמב\"ן, קען זיין אלעס, מיט איין אדער צוויי ספירות וואס הערשן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-07-e-tanya",
+      "startSeg": 893,
+      "endSeg": 1086,
+      "title": { "en": "The seven midos for good and for evil", "yi": "די זיבן מדות לטוב און למוטב" },
+      "summary": {
+        "en": "The Rav explains that the upper three are above this world and have no evil, while the seven lower midos, where the Tree of Knowledge took hold, can be good or bad. He brings the Ba'al Shem Tov on the passuk calling a forbidden union chesed, a judge who fears the powerful, and poetry that inflames the yetzer, and adds that the ten sons of Haman are the ten sefiros of impurity.",
+        "yi": "דער משגיח ערקלערט אז די אויבערשטע דריי זענען העכער פון דער וועלט און האבן נישט קיין רע, בשעת די זיבן מדות, וואו דער עץ הדעת האט א אחיזה, קענען זיין טוב אדער רע. ער ברענגט דעם בעל שם טוב אויפן פסוק וואס רופט אן אן איסור \"חסד\", א דיין וואס האט מורא פון א מעכטיגן, און שירה וואס רייצט דעם יצר, און לייגט צו אז די צען זין פון המן זענען די צען ספירות פון טומאה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-07-e-tanya",
+      "startSeg": 1087,
+      "endSeg": 1208,
+      "title": { "en": "Chesed and gevurah in all creation; the Tanya's words", "yi": "חסד און גבורה אין דער גאנצער בריאה; די ווערטער פון תניא" },
+      "summary": {
+        "en": "The Rav shows chesed and gevurah throughout creation: male and female, summer and winter, positive and negative charge, the poles of a magnet pointing north and south, day and night. He then reads the Tanya's words that each level contains ten aspects corresponding to the ten sefiros, divided into three mothers and seven doubles, and closes with intellect and midos in the human soul.",
+        "yi": "דער משגיח ווייזט חסד און גבורה אין דער גאנצער בריאה: זכר און נקבה, זומער און ווינטער, פאזיטיוו און נעגאטיוו אין עלעקטריק, די צוויי זייטן פון א מאגנעט צו צפון און דרום, טאג און נאכט. דערנאך לערנט ער די ווערטער פון תניא אז יעדע מדרגה איז כלול פון צען בחינות אקעגן די צען ספירות, אויפגעטיילט אין דריי אמות און זיבן כפולות, און ענדיגט מיט שכל און מדות אין דער נפש פונעם מענטש."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "Kol p'china madrega Mishale sheilu Nefesh shrooch neshama K'lula Me'essa p'chinais",
+      "work": "Tanya",
+      "ref": "Tanya ch. 3",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [4, 5, 6, 1151, 1156, 1159], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the Mishnah says ... there are ten Mamaris",
+      "work": "Pirkei Avos",
+      "ref": "Avos 5:1",
+      "sefariaRef": "Pirkei Avot 5:1",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [35, 38, 39], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Gemara asks in Rosh Hashanah there's only nine",
+      "work": "Gemara Rosh Hashanah",
+      "ref": "Rosh Hashanah 32a",
+      "sefariaRef": "Rosh Hashanah 32a",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [40, 41, 46, 47, 48], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Teretz of the Zaya",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [53, 54, 55], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "Vayaymah Lekim Yehi Ayah",
+      "work": "Bereishis",
+      "ref": "Bereishis 1:3",
+      "sefariaRef": "Genesis 1:3",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [62, 64, 65, 66], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Laitai Vayay Sardam Lavadai Esor Lai Ezor Kinagdai",
+      "work": "Bereishis",
+      "ref": "Bereishis 2:18",
+      "sefariaRef": "Genesis 2:18",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [77, 80, 83, 84, 406], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Atzilei B'nai Yisrael",
+      "work": "Shemos",
+      "ref": "Shemos 24:11",
+      "sefariaRef": "Exodus 24:11",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [150, 151, 152], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Rav Tachis Chagel of K'mayin Seh Livnas Asapir",
+      "work": "Shemos",
+      "ref": "Shemos 24:10",
+      "sefariaRef": "Exodus 24:10",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [181, 182], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "B'Tsalam Aleykim",
+      "work": "Bereishis",
+      "ref": "Bereishis 1:27",
+      "sefariaRef": "Genesis 1:27",
+      "resolution": "resolved",
+      "mention": "alluded",
+      "evidence": { "segs": [172, 173, 201, 202], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Pasach HaIliah ... the first limer in Tikkuni Zaya",
+      "work": "Tikkunei Zohar",
+      "ref": "Tikkunei Zohar, second introduction (Pasach Eliyahu)",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [553, 558, 563, 579, 585, 587], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Lushna of the Gemara smal daiche yamin mekarif",
+      "work": "Gemara Sotah",
+      "ref": "Sotah 47a",
+      "sefariaRef": "Sotah 47a",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [581, 582, 583], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Kinnah and the Beis Hamikdash had seven strings, but Mashiach will come to have eight strings",
+      "work": "Gemara Arachin",
+      "ref": "Arachin 13b",
+      "sefariaRef": "Arakhin 13b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [665, 666, 667], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "it says in Zaya that there's a certain heichol by Shemayim",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [686, 687], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Koyal Hashem al HaMayim ... Koyal Hashem Bakayach ... Koyal Hashem Bahado",
+      "work": "Tehillim",
+      "ref": "Tehillim 29:3-4",
+      "sefariaRef": "Psalms 29:3-4",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [724, 727, 732, 734], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Aylam Chesed Yibana",
+      "work": "Tehillim",
+      "ref": "Tehillim 89:3",
+      "sefariaRef": "Psalms 89:3",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [835, 836], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "I like the Ramban says ... every part of the Bria should contribute something to the Asiyah of Adam",
+      "work": "Ramban on Torah",
+      "ref": "Ramban, Bereishis 1:26",
+      "sefariaRef": "Ramban on Genesis 1:26",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [879, 880, 881, 882], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Isha Shayika Chesachay Chesed",
+      "work": "Vayikra",
+      "ref": "Vayikra 20:17",
+      "sefariaRef": "Leviticus 20:17",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [954, 958, 963, 966], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Bosham Tev has a very classical ... Pirosh",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [943, 944, 951, 1013, 1014], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Torah says don't be afraid",
+      "work": "Devarim",
+      "ref": "Devarim 1:17",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [1024, 1025, 1026, 1027], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "like the Evan Ezra did ... Tzamalacha Nafshi",
+      "work": "Tzama Lecha Nafshi",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [1039, 1042], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Rabbi Srona Gara did to write Karibayn",
+      "work": "Kah Ribon",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [1040, 1041], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "in the Megillah, the Ten Sons of Haman",
+      "work": "Megillas Esther",
+      "ref": "Esther 9:7-9",
+      "sefariaRef": "Esther 9:7-9",
+      "resolution": "resolved",
+      "mention": "alluded",
+      "evidence": { "segs": [1078, 1079, 1080, 1081], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the three mothers ... and the seven double ones",
+      "work": "Sefer Yetzirah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [1186, 1189, 1192], "confidence": 0.65 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The word Adam equals forty-five, the value of the Name of Havayah filled out with alefs, so man is the throne and chariot for the holiness of the ten sefiros.",
+        "yi": "דאס ווארט אדם איז בגימטריא מ\"ה, דער מילוי פונעם שם הוי\"ה מיט אלפי\"ן, ממילא איז דער מענטש דער כסא און די מרכבה פאר דער קדושה פון די צען ספירות."
+      },
+      "evidence": { "segs": [213, 219, 221, 222, 226, 228], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Tiferes is not a mixture of chesed and gevurah, like sugar and lemon in water, but a qualitatively new creation that appears when they meet, like the beauty of a painting or the harmony of two voices.",
+        "yi": "תפארת איז נישט קיין געמיש פון חסד און גבורה, אזוי ווי צוקער און לימענע אין וואסער, נאר א נייע בריאה וואס באווייזט זיך ווען זיי טרעפן זיך, אזוי ווי די שיינקייט פון א בילד אדער די הרמוניע פון צוויי קולות."
+      },
+      "evidence": { "segs": [435, 447, 448, 468, 471, 513], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "Netzach and hod are the two legs a person stands on: the right leg survives by fighting adversaries, the left by bending and bearing the pressure, both serving the one purpose of standing.",
+        "yi": "נצח און הוד זענען די צוויי פיס אויף וואס א מענטש שטייט: די רעכטע פוס האלט זיך דורך קעמפן מיט די שונאים, די לינקע דורך זיך בייגן און אויסהאלטן דעם דרוק, און ביידע דינען צו איין תכלית, צו שטיין."
+      },
+      "evidence": { "segs": [587, 598, 601, 603, 606, 609], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "Each day of creation adds a string to the harp, and only when Shabbos adds the seventh can music be played; this is why zemiros are sung on Shabbos.",
+        "yi": "יעדער טאג פון בריאה לייגט צו א סטרונע צו דער הארפע, און ערשט ווען שבת לייגט צו די זיבעטע קען מען שפילן א ניגון; דערפאר זינגט מען זמירות שבת."
+      },
+      "evidence": { "segs": [713, 714, 716, 719, 721, 742], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Each animal expresses one sefira, as the lion, whose name Aryeh equals gevurah, expresses fear, while man has no single defining trait because every part of creation contributed to him.",
+        "yi": "יעדע בהמה ווייזט ארויס איין ספירה, אזוי ווי דער לייב, וואס זיין נאמען אריה איז בגימטריא גבורה, ווייזט יראה, בשעת דער מענטש האט נישט קיין איינציגע מדה וואס באשטימט אים, ווייל יעדער חלק פון דער בריאה האט צוגעגעבן צו אים."
+      },
+      "evidence": { "segs": [861, 865, 882, 883, 889, 890], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The seven lower sefiros are called double because they can be for good or for evil; Chabad can be used for evil but is not evil in essence, and the ten sons of Haman, written from top to bottom, are the ten sefiros of impurity.",
+        "yi": "די זיבן אונטערשטע ספירות הייסן כפולות ווייל זיי קענען זיין לטוב אדער לרע; חב\"ד קען מען נוצן פאר רע, אבער עס איז נישט רע בעצם, און די צען זין פון המן, געשריבן פון אויבן ביז אונטן, זענען די צען ספירות פון טומאה."
+      },
+      "evidence": { "segs": [1059, 1060, 1079, 1080, 1190, 1192], "confidence": 0.75 }
+    }
+  ],
+  "stories": [],
+  "questions": [
+    {
+      "question": {
+        "en": "The Mishnah counts ten utterances of creation, yet only nine times does the Torah say 'and G-d said'.",
+        "yi": "די משנה ציילט עשרה מאמרות, און פונדעסטוועגן שטייט נאר ניין מאל \"ויאמר\"."
+      },
+      "answer": {
+        "en": "The Gemara answers that 'Bereishis' is also an utterance; the other answer counts from the first 'and G-d said' to the last, about the helpmate for man.",
+        "yi": "די גמרא ענטפערט אז \"בראשית\" איז אויך א מאמר; דער אנדערער תירוץ ציילט פונעם ערשטן \"ויאמר\" ביזן לעצטן, וועגן עזר כנגדו פארן מענטש."
+      },
+      "questionSegs": [39, 40, 41],
+      "answerSegs": [46, 49, 51, 57, 68, 84],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "If tiferes is a blend of chesed and gevurah, why is it a midah of its own and not just a mixture?",
+        "yi": "אויב תפארת איז א פארמישונג פון חסד און גבורה, פארוואס איז עס א באזונדערע מדה און נישט סתם א געמיש?"
+      },
+      "answer": {
+        "en": "Because when they come together a new quality appears that was not in either, as harmony arises when two voices meet.",
+        "yi": "ווייל ווען זיי קומען צוזאמען באווייזט זיך א נייע זאך וואס איז נישט געווען אין קיינעם פון זיי, אזוי ווי הרמוניע קומט ארויס ווען צוויי קולות טרעפן זיך."
+      },
+      "questionSegs": [435, 438, 439],
+      "answerSegs": [447, 448, 450, 508, 513],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why do the first three sefiros have no evil, while the seven lower ones can?",
+        "yi": "פארוואס האבן די ערשטע דריי ספירות נישט קיין רע, און די זיבן אונטערשטע יא?"
+      },
+      "answer": {
+        "en": "The first three are above this world, where there is no place for evil; the seven belong to this world, where the Tree of Knowledge of good and evil took hold.",
+        "yi": "די ערשטע דריי זענען העכער פון דער וועלט, וואו ס'איז נישטא קיין פלאץ פאר רע; די זיבן געהערן צו דער וועלט, וואו דער עץ הדעת טוב ורע האט א אחיזה."
+      },
+      "questionSegs": [909, 910, 914],
+      "answerSegs": [902, 905, 907, 918, 919],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [],
+  "candidateTopics": [
+    "Tanya chapter 3",
+    "ten sefiros",
+    "ten utterances of creation",
+    "Chabad, Chagas, Nehim",
+    "chesed and gevurah",
+    "tiferes as harmony",
+    "music and the sefiros",
+    "Shabbos and zemiros",
+    "man as a microcosm",
+    "good and evil in the midos"
+  ],
+  "concepts": [
+    { "he": "עשרה מאמרות", "heardAs": ["asaram amareis", "Asaram Amaris", "Tenma Marais", "asara mamarais"] },
+    { "he": "ספירות", "heardAs": ["Sfiris", "spherais", "sphires", "Sphiris", "Sfirais"] },
+    { "he": "כוחות", "heardAs": ["kiches", "kaichais", "K'ichais", "Kayach"] },
+    { "he": "סדר השתלשלות", "heardAs": ["seder hishtau shalas", "Heshtau Shalos", "Heshtau Shalus"] },
+    { "he": "אין סוף", "heardAs": ["ein saif"] },
+    { "he": "רבונו של עולם", "heardAs": ["Rabbi Neshelayim", "Rabbani Shalala", "Abhanushalayim", "Rabbeinu Sholeilam"] },
+    { "he": "אצילות", "heardAs": ["Atsilus", "Atzilus"] },
+    { "he": "בצלם אלקים", "heardAs": ["B'Tsalam Aleykim", "B'Tselem Alekim", "B'Tselem Aleichim"] },
+    { "he": "שם הוי\"ה", "heardAs": ["Shem Havaya", "Sheyma Vaya", "Yudke Vavke"] },
+    { "he": "חב\"ד חג\"ת נהי\"ם", "heardAs": ["Chabad Chagat Nehim", "Chagat Nehim"] },
+    { "he": "מוחין", "heardAs": ["Maychen", "Meichen"] },
+    { "he": "מדות", "heardAs": ["Midais", "Midas"] },
+    { "he": "תפארת", "heardAs": ["Tiferis", "Teferis", "teferas", "teferos"] },
+    { "he": "נצח", "heardAs": ["Netzach", "Natsach"] },
+    { "he": "הוד", "heardAs": ["Haid"] },
+    { "he": "יסוד", "heardAs": ["Yisayid", "yesoid", "Yesaid"] },
+    { "he": "מלכות", "heardAs": ["malchus", "Maruchos", "Marchas"] },
+    { "he": "משפיע ומקבל", "heardAs": ["mashpiyah", "mechabel"] },
+    { "he": "פתח אליהו", "heardAs": ["Pasach HaIliah", "Pasachal Eliyahu"] },
+    { "he": "תיקוני זוהר", "heardAs": ["Tikkuni Zaya", "Tikkun Isaiah"] },
+    { "he": "שבעה ימי הבנין", "heardAs": ["Shiva Simei Abinyin"] },
+    { "he": "שבע תחתונות", "heardAs": ["Shiva Tachtainas", "Sheva Acharaynas", "Shavah Achorainais"] },
+    { "he": "ג' ראשונות", "heardAs": ["Gimur Hishaynas"] },
+    { "he": "עץ הדעת", "heardAs": ["Eitz Adas"] },
+    { "he": "דעת דקליפה", "heardAs": ["Dastaklipa", "Dastiklip"] }
+  ],
+  "people": [
+    { "name": "the Ba'al Shem Tov", "heardAs": ["Bosham Tev", "Basham"] },
+    { "name": "the Ramban", "heardAs": ["Ramban"] },
+    { "name": "Rabbi Avraham Ibn Ezra", "heardAs": ["Evan Ezra"] },
+    { "name": "Rabbi Yisrael Najara", "heardAs": ["Rabbi Srona Gara"] },
+    { "name": "Haman", "heardAs": ["Haman"] },
+    { "name": "Amalek", "heardAs": ["Amalik", "Amalek"] }
+  ],
+  "asrNotes": "English ASR of fair quality; Hebrew and Aramaic quotations (the ten utterances, Pasach Eliyahu, the psalm verses) are badly garbled and recovered from context. The Zohar's alternative answer to the nine utterances (segs 53-84) and the remark on Bereishis and the joining of mercy (segs 387-402) are only partly intelligible. The opening line of the Tikkunei Zohar passage (segs 566-570) is paraphrased in English and broken. The two segments flagged [NOISE?] (752-753) are only a repeated 'so'."
+}

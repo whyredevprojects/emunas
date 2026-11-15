@@ -1,0 +1,602 @@
+{
+  "shiurId": "yi-eretz-yisroel-02",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "Before a group journey to Yerushalayim for Purim Meshulash, the Rav explains that a journey to a holy place is itself a cleansing preparation, describes the holiness of Eretz Yisroel, Yerushalayim and Purim there, and gives practical guidance for traveling with seriousness, calm and derech eretz.",
+      "yi": "פאר א נסיעה קיין ירושלים אויף פורים המשולש ערקלערט דער משגיח אז א נסיעה צו א מקום הקדוש איז אליין א הכנה וואס רייניגט דעם מענטש, ער שילדערט די קדושה פון ארץ ישראל, ירושלים און פורים אין ירושלים, און ער גיט עצות ווי אזוי צו פארן מיט ערנסטקייט, מיט מנוחה און מיט דרך ארץ."
+    },
+    "abstract": {
+      "en": "The Rav opens by noting that rabbanim speak about Purim before it, and announces that he will speak about Purim in Yerushalayim, since a journey is coming. A journey to a holy place or a holy person is a great tikkun hanefesh: Avraham was first told to go, the Jews passed through forty-two journeys, and the Ba'al Shem Tov's students traveled to their Rebbe. He warns of the trials of modern travel and stresses guarding the eyes. He then describes the unique holiness of Purim, the honor of Yerushalayim behind walled-city Purim, and Yerushalayim and Purim as places and times of unity. Drawing on 'eretz chemdah', he explains that the Avos and all generations longed for the land, and that a mitzvah there is greater and a sin worse. He closes with practical guidance: no pictures, calm visits, effort in avodah, kiddush Hashem, obeying organizers, and contentment for those who cannot go.",
+      "yi": "דער משגיח עפנט אז די רבנים פלעגן זאגן דרשות פאר פורים, און ער זאגט אז ער וועט רעדן וועגן פורים אין ירושלים, ווייל מ'גרייט זיך צו א נסיעה. א נסיעה צו א מקום קדוש אדער צו א איש קדוש איז א גרויסער תיקון הנפש: דער ערשטער דיבור צו אברהם אבינו איז געווען לך לך, אידן זענען דורכגעגאנגען מ\"ב מסעות, און די תלמידי הבעש\"ט זענען געפארן צום רבי'ן. ער ווארנט פון די נסיונות פון די היינטיגע נסיעות און פון שמירת עינים. דערנאך שילדערט ער די קדושה פון פורים, דעם כבוד פון ירושלים וואס שטעקט אין דעם דין פון מוקפין חומה, און ירושלים און פורים אלס ארט און צייט פון אחדות. פון \"ארץ חמדה\" ערקלערט ער אז די אבות און אלע דורות האבן חומד געווען ארץ ישראל, און אז א מצוה דארט איז גרעסער און אן עבירה ערגער. צום סוף גיט ער עצות: נישט נעמען פיקטשערס, זיין במנוחה ביי די מקומות הקדושים, ארבעטן אין עבודה, מקדש שם שמים זיין, פאלגן די מסדרים, און זיין צופרידן ווער עס קען נישט פארן."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The Rav teaches that a journey to a holy place or to a tzaddik is itself a great tikkun hanefesh that prepares the vessels to receive the lights of the place.",
+          "yi": "דער משגיח לערנט אז א נסיעה צו א מקום קדוש אדער צו א צדיק איז אליין א גרויסער תיקון הנפש, וואס גרייט צו די כלים צו מקבל זיין די אורות פונעם ארט."
+        },
+        "evidence": { "segs": [19, 20, 21, 140, 141], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Today's travel carries great trials, and guarding the eyes and thoughts on the way is itself part of the preparation for reaching the holy land, city and time.",
+          "yi": "די היינטיגע נסיעות האבן גרויסע נסיונות, און דאס וואס מ'היט זיך אפ די אויגן און די מחשבה אויפן וועג איז אליין א טייל פון דער הכנה צו קומען צום ארץ הקדוש, עיר הקדוש און זמן הקדוש."
+        },
+        "evidence": { "segs": [168, 173, 197, 199, 205, 207], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Walled-city Purim was set from the time of Yehoshua bin Nun to give honor to Yerushalayim, so coming to Yerushalayim for Purim reaches the true intent of Shushan Purim.",
+          "yi": "דער דין פון מוקפין חומה מימות יהושע בן נון איז געמאכט געווארן כדי צו געבן כבוד צו ירושלים, און ממילא ווער עס קומט קיין ירושלים אויף פורים קומט צום אמת'ן כוונה פון שושן פורים."
+        },
+        "evidence": { "segs": [265, 267, 271, 290, 292], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Yerushalayim, the concentration of Eretz Yisroel, is the place of unity, and Purim is the time of unity, so Purim in Yerushalayim is the peak of achdus.",
+          "yi": "ירושלים, וואס איז די קאנצענטראציע פון ארץ ישראל, איז דער ארט פון אחדות, און פורים איז די צייט פון אחדות, ממילא איז פורים אין ירושלים דער שפיץ פון אחדות."
+        },
+        "evidence": { "segs": [334, 338, 344, 347, 351], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "A healthy Jewish soul inherits from the Avos a desire for Eretz Yisroel, and all generations longed for it.",
+          "yi": "א געזונטע אידישע נשמה ירשנט פון די אבות א חמדה צו ארץ ישראל, און אלע דורות האבן חומד געווען ארץ ישראל."
+        },
+        "evidence": { "segs": [393, 400, 445, 447, 448], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "A mitzvah done in Eretz Yisroel, and especially in Yerushalayim, is far greater, and a sin there is far worse.",
+          "yi": "א מצוה וואס מ'טוט אין ארץ ישראל, און בפרט אין ירושלים, איז אסאך גרעסער, און אן עבירה דארט איז אסאך ערגער."
+        },
+        "evidence": { "segs": [506, 512, 513, 516], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Whether one goes or stays is decreed in Heaven, and one who cannot go should be content with the mission Hashem gives him where he is.",
+          "yi": "צי מ'פארט אדער מ'בלייבט איז פארשריבן אין הימל, און ווער עס קען נישט פארן זאל זיין צופרידן מיט דער שליחות וואס דער אייבערשטער גיט אים דארט וואו ער געפינט זיך."
+        },
+        "evidence": { "segs": [964, 970, 975, 977, 995], "confidence": 0.85 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-eretz-yisrael-02-ey-upurim-hisorerrus-5768",
+      "startSeg": 0, "endSeg": 57,
+      "title": { "en": "A journey to holiness as tikkun hanefesh", "yi": "א נסיעה צו קדושה איז א תיקון הנפש" },
+      "summary": {
+        "en": "The Rav notes the custom of speaking about Purim before it and announces he will speak about Purim in Yerushalayim, as a journey is near. He explains that a journey to a holy place or person is a tikkun hanefesh, pointing to the command to Avraham to go and to the forty-two journeys in the desert.",
+        "yi": "דער משגיח דערמאנט דעם מנהג צו רעדן וועגן פורים פאר פורים, און זאגט אז ער וועט רעדן וועגן פורים אין ירושלים, ווייל מ'גרייט זיך צו א נסיעה. ער ערקלערט אז א נסיעה צו א מקום קדוש אדער צו א איש קדוש איז א תיקון הנפש, און ברענגט דעם ציווי צו אברהם אבינו צו גיין און די מ\"ב מסעות אין מדבר."
+      },
+      "kind": "intro", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-sets-eretz-yisrael-02-ey-upurim-hisorerrus-5768",
+      "startSeg": 58, "endSeg": 127,
+      "title": { "en": "The Rebbe Reb Elimelech and journeys to tzaddikim", "yi": "דער רבי ר' אלימלך און נסיעות צו צדיקים" },
+      "summary": {
+        "en": "The Rav tells of a penitent sent to the Rebbe Reb Elimelech who was told on arrival that the journey had already rectified almost everything. He describes the journeys of the Ba'al Shem Tov's students to their Rebbe, likens them to the forty-two journeys and the days of sefirah, and explains that a journey repairs the vessels so they can receive the lights.",
+        "yi": "דער משגיח דערציילט פון א בעל תשובה וואס מ'האט געשיקט צום רבי ר' אלימלך, און ווען ער איז אנגעקומען האט דער רבי געזאגט אז די נסיעה האט שוין כמעט אלץ מתקן געווען. ער שילדערט די נסיעות פון די תלמידי הבעש\"ט צום רבי'ן, גלייכט עס צו די מ\"ב מסעות און צו די ימי הספירה, און ערקלערט אז די נסיעה פארריכט די כלים כדי מ'זאל קענען מקבל זיין די אורות."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-sets-eretz-yisrael-02-ey-upurim-hisorerrus-5768",
+      "startSeg": 128, "endSeg": 218,
+      "title": { "en": "Old journeys to Meron and today's trials", "yi": "די אמאליגע נסיעות קיין מירון און די היינטיגע נסיונות" },
+      "summary": {
+        "en": "The Rav recalls how people traveled two weeks by donkey from Yerushalayim to Meron with great joy. He warns that today's travel, at airports and on planes, holds great trials, and that guarding the eyes and thoughts turns the journey into a greater preparation, since one sees Tziyon according to the eyes one brings.",
+        "yi": "דער משגיח דערמאנט ווי מ'פלעגט פארן צוויי וואכן אויף אייזלעך פון ירושלים קיין מירון מיט א גרויסע שמחה. ער ווארנט אז די היינטיגע נסיעות, אין עראפארט און אויפן עראפלאן, האבן גרויסע נסיונות, און אז שמירת עינים און שמירת המחשבה מאכן די נסיעה פאר א גרעסערע הכנה, ווייל מ'זעט ציון לויט די אויגן וואס מ'ברענגט מיט."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-sets-eretz-yisrael-02-ey-upurim-hisorerrus-5768",
+      "startSeg": 219, "endSeg": 306,
+      "title": { "en": "The holiness of Purim and the honor of Yerushalayim", "yi": "די קדושה פון פורים און דער כבוד פון ירושלים" },
+      "summary": {
+        "en": "The Rav describes the unique holiness of Purim, a new light greater even than Yom Kippur, and Purim as a time when prayer is accepted. He explains that walled-city Purim was set from the days of Yehoshua bin Nun to honor Yerushalayim, which lay in ruins at the time of the miracle, and connects this to Yerushalayim's future wall of fire.",
+        "yi": "דער משגיח שילדערט די באזונדערע קדושה פון פורים, אן אור חדש וואס איז נאך גרעסער ווי יום כיפור, און אז פורים איז אן עת רצון פאר תפילה. ער ערקלערט אז דער דין פון מוקפין חומה מימות יהושע בן נון איז געמאכט געווארן צו געבן כבוד צו ירושלים, וואס איז ביים נס געווען חרוב, און פארבינדט עס מיט דער חומת אש פון ירושלים לעתיד לבוא."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-sets-eretz-yisrael-02-ey-upurim-hisorerrus-5768",
+      "startSeg": 307, "endSeg": 386,
+      "title": { "en": "Yerushalayim and Purim as unity", "yi": "ירושלים און פורים, ארט און צייט פון אחדות" },
+      "summary": {
+        "en": "The Rav says that a Jew traveling to Yerushalayim with longing arouses longing above for the rebuilding. Yerushalayim is the place of unity and Purim the time of unity, so traveling together with friends in unity prepares one to receive the lights; perhaps the small efforts of small people will bring the geulah.",
+        "yi": "דער משגיח זאגט אז א איד וואס פארט קיין ירושלים מיט א תשוקה איז מעורר א געבענק אויבן אויף דעם בנין ירושלים. ירושלים איז דער ארט פון אחדות און פורים די צייט פון אחדות, ממילא ווען מ'פארט צוזאמען מיט חברים באחדות איז מען מער צוגעגרייט צו מקבל זיין די אורות; אפשר וועלן די קליינע זאכן פון קליינע מענטשן ברענגען די גאולה."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-sets-eretz-yisrael-02-ey-upurim-hisorerrus-5768",
+      "startSeg": 387, "endSeg": 489,
+      "title": { "en": "Eretz chemdah: the longing of the Avos", "yi": "ארץ חמדה: די חמדה פון די אבות" },
+      "summary": {
+        "en": "The Rav explains 'eretz chemdah' as the land the Avos desired, because their healthy desire sought only true good. A healthy Jew inherits this desire unless he has spoiled it; he brings Avraham, Moshe, Dovid, Amora'im who kissed the stones and rolled in the dust, and the Ramban's words on leaving home for Eretz Yisroel.",
+        "yi": "דער משגיח טייטשט \"ארץ חמדה\" אז ס'איז דאס לאנד וואס די אבות האבן חומד געווען, ווייל זייער געזונטע חמדה האט זיך געצויגן נאר צום אמת'ן גוטס. א געזונטער איד ירשנט די חמדה, סיידן ער האט זי מקלקל געווען; ער ברענגט אברהם אבינו, משה רבינו, דוד המלך, די אמוראים וואס האבן געקושט די שטיינער און זיך געקייקלט אין שטויב, און די ווערטער פונעם רמב\"ן."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-sets-eretz-yisrael-02-ey-upurim-hisorerrus-5768",
+      "startSeg": 490, "endSeg": 599,
+      "title": { "en": "Mitzvos and sins weigh more in Eretz Yisroel", "yi": "מצוות און עבירות וועגן מער אין ארץ ישראל" },
+      "summary": {
+        "en": "The Rav explains that a mitzvah in a chosen time or place is multiplied, so a mitzvah in Eretz Yisroel and Yerushalayim is greater and a sin worse; a tzaddik there grows greater and a rasha worse. He speaks of prayers rising there through a thin barrier, the holiness of its fruits, Esav's merit of living in the land, and the merit the land brings in judgment.",
+        "yi": "דער משגיח ערקלערט אז א מצוה אין א זמן מובחר אדער אין א מקום מובחר איז כפל כפליים, ממילא איז א מצוה אין ארץ ישראל און אין ירושלים גרעסער און אן עבירה ערגער; א צדיק ווערט דארט א גרעסערער צדיק און א רשע א גרעסערער רשע. ער רעדט פון די תפילות וואס גייען דארט ארויף דורך א דינעם מסך, פון דער קדושה פון די פירות, פונעם זכות פון עשו וואס האט געוואוינט אין ארץ ישראל, און פונעם זכות פון ארץ ישראל אין דין."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-sets-eretz-yisrael-02-ey-upurim-hisorerrus-5768",
+      "startSeg": 600, "endSeg": 656,
+      "title": { "en": "Feeling the holy ground anew", "yi": "שפירן די הייליגע ערד ווי ניי" },
+      "summary": {
+        "en": "The Rav contrasts the mesirus nefesh needed to reach the land before the war with the open doors of today. He brings the Chasam Sofer that the ground of Eretz Yisroel is holier than the heavens of chutz la'aretz, warns that long familiarity dulls the feeling, and says the land should feel new every day, as the Chasam Sofer writes of one who truly understands its holiness.",
+        "yi": "דער משגיח שטעלט אוועק די מסירות נפש וואס מ'האט געדארפט פאר דער מלחמה כדי צו קומען קיין ארץ ישראל, קעגן די אפענע טירן פון היינט. ער ברענגט דעם חתם סופר אז די קרקע פון ארץ ישראל איז הייליגער ווי דער הימל פון חוץ לארץ, ווארנט אז מ'פארלירט דאס געפיל ווען מ'וואוינט דארט לאנג, און זאגט אז מ'דארף עס שפירן יעדן טאג ווי ניי, אזוי ווי דער חתם סופר שרייבט פון איינעם וואס פארשטייט באמת קדושת ארץ ישראל."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-sets-eretz-yisrael-02-ey-upurim-hisorerrus-5768",
+      "startSeg": 657, "endSeg": 750,
+      "title": { "en": "Entering the land with awe and purity", "yi": "אריינגיין אין ארץ ישראל מיט יראה און טהרה" },
+      "summary": {
+        "en": "The Rav brings the Tanya's letter on awakening the old love and says a Jew should feel as if crossing the Yarden with Yehoshua. He brings Rav Hirsch on 'our feet stood' as the frozen awe of a pilgrim, speaks of Purim Meshulash thirty days before Pesach, and brings the Chareidim, from the Ramak, that the land is surrounded by water so one enters it in purity, seriously, as one enters Kol Nidrei.",
+        "yi": "דער משגיח ברענגט דעם אגרת פונעם תניא \"לעורר האהבה הישנה\" און זאגט אז א איד דארף שפירן ווי ער גייט אריבער דעם ירדן מיט יהושע. ער ברענגט רב הירש אויף \"עומדות היו רגלינו\", אז דער עולה רגל איז געבליבן שטיין פארגליווערט פון התפעלות, רעדט פון פורים המשולש דרייסיג טעג פאר פסח, און ברענגט דעם ספר חרדים פונעם רמ\"ק אז ארץ ישראל איז ארומגערינגלט מיט וואסער, כדי מ'זאל אריינגיין מיט טהרה און ערנסטקייט, ווי מ'גייט אריין צו כל נדרי."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-sets-eretz-yisrael-02-ey-upurim-hisorerrus-5768",
+      "startSeg": 751, "endSeg": 839,
+      "title": { "en": "No pictures, and visiting with menuchah", "yi": "נישט נעמען פיקטשערס, און זיין במנוחה" },
+      "summary": {
+        "en": "The Rav warns that taking pictures removes the seriousness of great moments, as at a chuppah, which the Divrei Chaim compared to Rosh Hashanah, and asks that none be taken in Eretz Yisroel. He brings that 'menuchah' refers to Yerushalayim and urges visiting holy places calmly rather than rushing from grave to grave.",
+        "yi": "דער משגיח ווארנט אז פיקטשערס נעמען צו די ערנסטקייט פון גרויסע מאמענטן, ווי ביי א חופה, וואס דער דברי חיים האט גלייכגעשטעלט צו ראש השנה, און בעט מ'זאל נישט נעמען פיקטשערס אין ארץ ישראל. ער ברענגט אז \"מנוחה\" מיינט ירושלים, און מאנט מ'זאל באזוכן די מקומות הקדושים במנוחה און נישט לויפן פון איין קבר צום אנדערן."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-sets-eretz-yisrael-02-ey-upurim-hisorerrus-5768",
+      "startSeg": 840, "endSeg": 905,
+      "title": { "en": "Working for the feeling, and kiddush Hashem", "yi": "ארבעטן אויפן געפיל, און קידוש השם" },
+      "summary": {
+        "en": "Bringing the Ba'al Shem Tov's teaching on davening with a closed heart, the Rav says that at a holy place one does not feel, one should work with emunah, avodah before the gift of feeling. He urges preparing in the coming weeks with Torah, tefillah and sefarim, rejoicing with friends, and asks bochurim to make a kiddush Hashem on the plane by courtesy and helping others.",
+        "yi": "מיט דער לערע פונעם בעש\"ט וועגן דאווענען ווען דאס הארץ איז פארשטאפט, זאגט דער משגיח אז ווען מ'שפירט נישט ביי א מקום קדוש דארף מען ארבעטן מיט אמונה, עבודת עבודה פאר עבודת מתנה. ער מאנט זיך צוצוגרייטן די קומענדיגע וואכן מיט תורה, תפילה און ספרים, זיך פרייען מיט חברים, און בעט די בחורים צו זיין א קידוש השם אויפן עראפלאן מיט דרך ארץ און מיט העלפן אנדערע."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-sets-eretz-yisrael-02-ey-upurim-hisorerrus-5768",
+      "startSeg": 906, "endSeg": 962,
+      "title": { "en": "Discipline, derech eretz and those who stay", "yi": "דיסציפלין, דרך ארץ, און די וואס בלייבן" },
+      "summary": {
+        "en": "The Rav asks the travelers to obey the organizers who work hard, since the trip's success depends on order, and to act with humility and derech eretz. He then turns to those who cannot go because of parents, livelihood or home circumstances, reminding them that Purim teaches nothing is chance and asking them not to cause anyone distress.",
+        "yi": "דער משגיח בעט די וואס פארן צו פאלגן די מסדרים וואס ארבעטן שווער, ווייל די הצלחה פון דער נסיעה הענגט אין סדר, און זיך פירן מיט הכנעה און דרך ארץ. דערנאך ווענדט ער זיך צו די וואס קענען נישט פארן צוליב די עלטערן, פרנסה אדער אומשטענדן אין שטוב, און דערמאנט אז פורים לערנט אז גארנישט איז קיין מקרה, און בעט מ'זאל קיינעם נישט מאכן קיין עגמת נפש."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-sets-eretz-yisrael-02-ey-upurim-hisorerrus-5768",
+      "startSeg": 963, "endSeg": 1026,
+      "title": { "en": "All is from Heaven; closing wishes", "yi": "אלץ איז מן השמים; ברכות צום סוף" },
+      "summary": {
+        "en": "The Rav explains that who goes and who stays is decreed in Heaven, recalling that the Ba'al Shem Tov, the Vilna Gaon and the Chofetz Chaim set out and had to turn back, and asks those who stay to be content with their mission. He closes with wishes to receive the lights of Purim wherever one is, and a short account of a gentile's letter to a Jew he sat beside on a flight.",
+        "yi": "דער משגיח ערקלערט אז ווער עס פארט און ווער עס בלייבט איז פארשריבן אין הימל; דער בעש\"ט, דער ווילנער גאון און דער חפץ חיים האבן זיך ארויסגעלאזט און האבן געמוזט צוריקקערן. ער בעט די וואס בלייבן זאלן זיין צופרידן מיט זייער שליחות, ענדיגט מיט ברכות צו מקבל זיין די אורות פון פורים וואו מ'געפינט זיך, און דערציילט קורץ פון א בריוו וואס א גוי האט געשריבן צו א איד וואס איז געזעסן לעבן אים אויפן עראפלאן."
+      },
+      "kind": "closing", "catalogTopicIdx": [0], "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "אזוי שטעט מען חתם סופר ... פלעגט זיין א מנהג",
+      "work": null, "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased",
+      "evidence": { "segs": [4, 6, 7], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער הערשטער דיבל ... צו אברהם אבינו, איז געוועזן לחלוחא",
+      "work": "Bereishis", "ref": "Bereishis 12:1", "sefariaRef": "Genesis 12:1",
+      "resolution": "inferred", "mention": "alluded",
+      "evidence": { "segs": [23, 24, 25, 26], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "מבעז מסעות",
+      "work": "Bamidbar", "ref": "Bamidbar 33", "sefariaRef": null,
+      "resolution": "inferred", "mention": "alluded",
+      "evidence": { "segs": [40, 103, 107], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "יסודי יוסף ברענגט א לונטער פון ארי הקדוש",
+      "work": "Yesod Yosef", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased",
+      "evidence": { "segs": [227, 228, 230], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "אזוי געשטעט אין ירושלמי ... מקום חומא ... ישוע בנון",
+      "work": "Talmud Yerushalmi", "ref": "Yerushalmi Megillah 1:1", "sefariaRef": null,
+      "resolution": "inferred", "mention": "paraphrased",
+      "evidence": { "segs": [262, 265, 267, 271], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ונו איילא ניום ה' חמת שש סביב",
+      "work": "Zechariah", "ref": "Zechariah 2:9", "sefariaRef": "Zechariah 2:9",
+      "resolution": "inferred", "mention": "quoted",
+      "evidence": { "segs": [298, 299, 300, 303], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער שפת סמות זאגט ... שנאה סכינה",
+      "work": "Sfas Emes", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased",
+      "evidence": { "segs": [339, 340, 341], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ונתתי לכם ארץ חמדה ... אין ירמיה",
+      "work": "Yirmiyahu", "ref": "Yirmiyahu 3:19", "sefariaRef": "Jeremiah 3:19",
+      "resolution": "inferred", "mention": "quoted",
+      "evidence": { "segs": [388, 389, 391], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "שכמדאו אבות העולם ... ער זאגט א תנחמה",
+      "work": "Midrash Tanchuma", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased",
+      "evidence": { "segs": [392, 403, 404], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "שטעט אין מדרש, ביי מאת הקייר השנה",
+      "work": "Midrash", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased",
+      "evidence": { "segs": [406, 407, 408, 415], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "מדרש ברענגט תוכת התנחמה משה רבינו, אברנא ביצחה, וירץ ארץ הטובה",
+      "work": "Midrash Tanchuma", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "quoted",
+      "evidence": { "segs": [449, 450], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "מה ידידות משכנותך השם אלוקים צבאות כל ס' נפשי",
+      "work": "Tehillim", "ref": "Tehillim 84:2-3", "sefariaRef": "Psalms 84:2-3",
+      "resolution": "resolved", "mention": "quoted",
+      "evidence": { "segs": [451, 453], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "כטוב יום באחוץ הרחם ויאלף",
+      "work": "Tehillim", "ref": "Tehillim 84:11", "sefariaRef": "Psalms 84:11",
+      "resolution": "inferred", "mention": "quoted",
+      "evidence": { "segs": [456, 457, 459], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "זאגט ראשי ויאטויזנט יא",
+      "work": "Rashi", "ref": "Rashi on Tehillim 84:11", "sefariaRef": null,
+      "resolution": "inferred", "mention": "paraphrased",
+      "evidence": { "segs": [460, 461], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ווי דער גמרא האט דערציילט ... רבי יא באהבה מנהשק קיפי דעכא ... רבי חי' אביגנדע",
+      "work": "Gemara Kesubos", "ref": "Kesubos 112a", "sefariaRef": "Ketubot 112a",
+      "resolution": "inferred", "mention": "paraphrased",
+      "evidence": { "segs": [462, 463, 465, 466], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "די בארימטע דרשה פון רמב״ן ... אין כתבי רמב״ן ... ראש השנה",
+      "work": "Kisvei Ramban", "ref": "Ramban, Derashah for Rosh Hashanah", "sefariaRef": null,
+      "resolution": "inferred", "mention": "quoted",
+      "evidence": { "segs": [472, 473, 475, 477, 481], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "כרצה אבדכס אבנהבת אפריך",
+      "work": "Tehillim", "ref": "Tehillim 102:15", "sefariaRef": "Psalms 102:15",
+      "resolution": "inferred", "mention": "quoted",
+      "evidence": { "segs": [488, 489], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "דאך שם סופר אין פרשת שלאך ... מסביר דעם מרגלים",
+      "work": "Chasam Sofer", "ref": "Chasam Sofer, Parshas Shelach", "sefariaRef": null,
+      "resolution": "inferred", "mention": "paraphrased",
+      "evidence": { "segs": [518, 519, 520, 522, 646], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ארץ ה' אלקיך דורי שאתה, די ענו ה' אלקיך",
+      "work": "Devarim", "ref": "Devarim 11:12", "sefariaRef": "Deuteronomy 11:12",
+      "resolution": "inferred", "mention": "quoted",
+      "evidence": { "segs": [526, 527], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "שער השמים, אזוי ווי רשע ברענגט אין חומש",
+      "work": "Rashi", "ref": "Rashi on Bereishis 28:17", "sefariaRef": null,
+      "resolution": "inferred", "mention": "paraphrased",
+      "evidence": { "segs": [529, 530, 531], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "אזוי ווי דער חתם ספר ברענגט פונעם מקובלום ... מסך",
+      "work": null, "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased",
+      "evidence": { "segs": [532, 537, 539, 542], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ווי דער רבי באח זאגט אין שולחן ערוך ונאכה מיפהער יא ונזמא מיטבה",
+      "work": "Bach", "ref": "Bach, Orach Chaim 208", "sefariaRef": null,
+      "resolution": "inferred", "mention": "quoted",
+      "evidence": { "segs": [547, 548], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די גמרא זאגט מלכות ... נגמר דיני ... אנטלויפט",
+      "work": "Gemara Makkos", "ref": "Makkos 7a", "sefariaRef": "Makkot 7a",
+      "resolution": "inferred", "mention": "paraphrased",
+      "evidence": { "segs": [567, 568, 569, 573, 575], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "זאגט רשע, אפשר וועט מען געפונען א סחוץ",
+      "work": "Rashi", "ref": "Rashi on Makkos 7a", "sefariaRef": null,
+      "resolution": "inferred", "mention": "paraphrased",
+      "evidence": { "segs": [577, 578], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "איך האב דא די מלשון פון דעם חרדים, וצוריך כל איש ישראל לחבי ואת ארץ ישראל",
+      "work": "Sefer Chareidim", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "quoted",
+      "evidence": { "segs": [589, 590, 591, 593], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער תחתם ספר שרייבט, אז די קהל כהל פון ארץ ישראל",
+      "work": null, "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased",
+      "evidence": { "segs": [620, 621, 623, 624], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אין די תפילין שטעט עס ... זאגט רשע, בכל יום ... כאילו א יום נבנה",
+      "work": "Rashi", "ref": "Rashi on Shemos 13:11", "sefariaRef": "Rashi on Exodus 13:11",
+      "resolution": "inferred", "mention": "paraphrased",
+      "evidence": { "segs": [637, 638, 639], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "פון די אייגערעס פונעם תניא ... לאוררת האהבה הישנה",
+      "work": "Tanya", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "quoted",
+      "evidence": { "segs": [658, 659], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "רבי שמשון רבי פאול הירש טייטשט אין תהלים אויפן פסק עמדת היללע",
+      "work": "Rav Hirsch on Tehillim", "ref": "Rav Hirsch on Tehillim 122:2", "sefariaRef": null,
+      "resolution": "inferred", "mention": "paraphrased",
+      "evidence": { "segs": [680, 681, 682, 697, 698], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "די חרדים זאגט עס, און ער ברענגט עס פון רמק",
+      "work": "Sefer Chareidim", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased",
+      "evidence": { "segs": [722, 723, 724, 725], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער סאנזער רב, דער דברי חיים, האט געזאגט",
+      "work": null, "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased",
+      "evidence": { "segs": [783, 784, 785], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ווי די גמרא זאגט ובמנחה זה ירושלים",
+      "work": "Gemara Zevachim", "ref": "Zevachim 119a", "sefariaRef": "Zevachim 119a",
+      "resolution": "inferred", "mention": "paraphrased",
+      "evidence": { "segs": [822, 824, 825], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "אזוי ווי שטעט אונז פונעם ספרים הקידושים פאר מדהי' בעש''ט ביים דאווענען",
+      "work": null, "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased",
+      "evidence": { "segs": [840, 841, 844, 846], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav reads the Rebbe Reb Elimelech's words to the penitent as showing that the hardship of the road itself does much of the work of teshuvah, before one even reaches the tzaddik.",
+        "yi": "דער משגיח לערנט פון די ווערטער פונעם רבי ר' אלימלך צום בעל תשובה, אז די טירחא פונעם וועג אליין טוט שוין אסאך פון דער תשובה, נאך איידער מ'קומט אן צום צדיק."
+      },
+      "evidence": { "segs": [61, 65, 69, 88, 89], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Guarding one's eyes on the plane is not only a defense; the Rav calls it a greater preparation, since one sees Tziyon according to the eyes one brings to it.",
+        "yi": "שמירת עינים אויפן עראפלאן איז נישט נאר א שמירה; דער משגיח רופט עס א גרעסערע הכנה, ווייל מ'זעט ציון לויט די אויגן וואס מ'ברענגט צו איר."
+      },
+      "evidence": { "segs": [197, 199, 210, 211, 213], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Walled-city Purim was tied to Yehoshua bin Nun precisely because Yerushalayim lay in ruins at the time of the miracle; the day was set to give it honor, so coming there for Purim reaches the day's true intent.",
+        "yi": "מוקפין חומה איז געבונדן אן יהושע בן נון דווקא ווייל ירושלים איז ביים נס געווען חרוב; דער טאג איז מתוקן געווארן צו געבן איר כבוד, ממילא ווער עס קומט אהין אויף פורים קומט צום אמת'ן כוונה פונעם טאג."
+      },
+      "evidence": { "segs": [269, 270, 271, 289, 292], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The geulah did not come through the great Tanna'im, Amora'im and Rishonim; for His own reasons Hashem wants it to come through small people, so perhaps the small efforts of those preparing for Yerushalayim will bring it.",
+        "yi": "די גאולה איז נישט געקומען דורך די גרויסע תנאים, אמוראים און ראשונים; דער אייבערשטער וויל, צוליב זיינע טעמים, אז זי זאל קומען דורך קליינע מענטשן, און אפשר וועלן די קליינע הכנות פון די וואס פארן קיין ירושלים זי ברענגען."
+      },
+      "evidence": { "segs": [366, 370, 374, 375, 386], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav compares the longing for Eretz Yisroel to a healthy appetite: the Avos' desire was healthy, so it went to the true good, and a Jew who lacks that longing has spoiled his desire, like one who ate something sour and lost his appetite.",
+        "yi": "דער משגיח גלייכט די חמדה צו ארץ ישראל צו א געזונטן אפעטיט: די אבות האבן געהאט א געזונטע חמדה, ממילא האט זי זיך געצויגן צום אמת'ן גוטס, און א איד וואס פעלט אים די חמדה האט זי מקלקל געווען, ווי איינער וואס האט געגעסן עפעס זויערס און פארלוירן דעם אפעטיט."
+      },
+      "evidence": { "segs": [394, 395, 400, 436, 441, 442], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Yerushalayim is the place of unity because it is the concentration of all Eretz Yisroel; therefore baseless hatred meant exile from it, and one without unity does not belong in Yerushalayim, just as he does not belong in Purim.",
+        "yi": "ירושלים איז דער ארט פון אחדות ווייל זי איז די קאנצענטראציע פון גאנץ ארץ ישראל; דערפאר האט שנאת חנם געברענגט גלות פון ירושלים, און ווער עס האט נישט קיין אחדות געהערט נישט צו ירושלים, אזוי ווי ער געהערט נישט צו פורים."
+      },
+      "evidence": { "segs": [335, 338, 340, 342, 345], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "When a holy place leaves one unmoved, the Rav applies the Ba'al Shem Tov's advice for a closed heart in davening: keep working with emunah, and the feeling will come as a gift after the toil.",
+        "yi": "ווען מ'שפירט גארנישט ביי א מקום קדוש, ווענדט דער משגיח אן די עצה פונעם בעש\"ט פאר א פארשטאפט הארץ ביים דאווענען: ווייטער ארבעטן מיט אמונה, און דאס געפיל וועט קומען ווי א מתנה נאך דער ארבעט."
+      },
+      "evidence": { "segs": [844, 846, 850, 863, 865, 868], "confidence": 0.8 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The penitent sent to the Rebbe Reb Elimelech", "yi": "דער בעל תשובה וואס מ'האט געשיקט צום רבי ר' אלימלך" },
+      "retelling": {
+        "en": "One of the great tzaddikim saw that a certain man who wished to do teshuvah needed a very great tikkun, and sent him to the Rebbe Reb Elimelech. The man wrote down his blemishes for the Rebbe to rectify. When he arrived, the Rebbe Reb Elimelech told him that he had already rectified almost everything through the journey.",
+        "yi": "איינער פון די גרויסע צדיקים האט געזען אז א געוויסער איד וואס וויל תשובה טאן דארף האבן א גאר גרויסן תיקון, און האט אים געשיקט צום רבי ר' אלימלך. דער איד האט אנגעשריבן זיינע פגמים, דער רבי זאל זיי מתקן זיין. ווען ער איז אנגעקומען, האט דער רבי ר' אלימלך געזאגט אז ער האט שוין כמעט אלץ מתקן געווען מיט דער נסיעה."
+      },
+      "people": ["the Rebbe Reb Elimelech"],
+      "evidence": { "segs": [58, 61, 63, 65, 67, 69], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "Two weeks by donkey to Meron", "yi": "צוויי וואכן אויף אייזלעך קיין מירון" },
+      "retelling": {
+        "en": "The Rav heard from old people how, before the war, Jews in Eretz Yisroel traveled to holy places, riding donkeys two weeks from Yerushalayim to Meron. They broke their bones rolling and dragging on hard benches, yet they went with great joy.",
+        "yi": "דער משגיח האט געהערט פון אלטע אידן ווי מ'פלעגט פאר דער מלחמה אין ארץ ישראל פארן צו די מקומות הקדושים, צוויי וואכן אויף אייזלעך פון ירושלים קיין מירון. מ'האט זיך צובראכן די ביינער, מ'האט זיך געקייקלט און געשלעפט אויף הארטע בענק, אבער מ'איז געפארן מיט א גרויסע שמחה."
+      },
+      "people": [],
+      "evidence": { "segs": [134, 135, 136, 145, 148, 154], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "Great men who could not reach Eretz Yisroel", "yi": "גרויסע אידן וואס האבן נישט געקענט אנקומען קיין ארץ ישראל" },
+      "retelling": {
+        "en": "The Rav recounts that great Jews wanted to go to Eretz Yisroel and Heaven did not let them. The Ba'al Shem Tov set out with mesirus nefesh and had to travel back; the same happened to the Vilna Gaon. The Chofetz Chaim had already packed his bags and the wagon was ready, and he had to unpack.",
+        "yi": "דער משגיח דערציילט אז גרויסע אידן האבן געוואלט גיין קיין ארץ ישראל און מן השמים האט מען זיי נישט געלאזט. דער בעש\"ט איז געפארן מיט מסירות נפש און האט געמוזט צוריקפארן; דאס זעלבע איז געווען מיטן ווילנער גאון. דער חפץ חיים האט שוין איינגעפאקט די רענצלעך און דער וואגן איז געווען פארטיג, און ער האט זיך געמוזט אויספאקן."
+      },
+      "people": ["the Ba'al Shem Tov", "the Vilna Gaon", "the Chofetz Chaim"],
+      "evidence": { "segs": [984, 985, 988, 990, 992, 994], "confidence": 0.85 }
+    },
+    {
+      "title": { "en": "The letter from a fellow passenger", "yi": "דער בריוו פון א מיטפאסאזשיר" },
+      "retelling": {
+        "en": "A Jew sat on an airplane returning from Yerushalayim. When he came home he found a letter that his gentile seatmate had written to him, saying that he was glad to have sat near him on the flight, that he was a keeper of the faith, and blessing him.",
+        "yi": "א איד איז געזעסן אויפן עראפלאן אויפן וועג צוריק פון ירושלים. ווען ער איז אהיימגעקומען האט ער געפונען א בריוו וואס דער גוי וואס איז געזעסן לעבן אים האט אים געשריבן, אז ער האט זיך געפרייט צו זיצן לעבן אים אויפן פלי, אז ער איז א היטער פון דער אמונה, און האט אים געבענטשט."
+      },
+      "people": [],
+      "evidence": { "segs": [1019, 1020, 1021, 1022, 1024, 1025], "confidence": 0.7 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "Why does the law of walled cities date from Yehoshua bin Nun and not from Shushan?", "yi": "פארוואס הייבט זיך אן דער דין פון מוקפין חומה פון יהושע בן נון און נישט פון שושן?" },
+      "answer": { "en": "Because at the time of the miracle Eretz Yisroel lay in ruins, and the day was set to give honor to Yerushalayim even though it was then destroyed.", "yi": "ווייל ביים נס איז ארץ ישראל געווען חרוב, און מ'האט מתקן געווען דעם טאג צו געבן כבוד צו ירושלים, כאטש זי איז דעמאלט געווען חרוב." },
+      "questionSegs": [263, 265, 266, 267], "answerSegs": [269, 270, 271, 273], "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why did the geulah not come through the Tanna'im, Amora'im and Rishonim?", "yi": "פארוואס איז די גאולה נישט געקומען דורך די תנאים, אמוראים און ראשונים?" },
+      "answer": { "en": "Hashem, for His own reasons, wants the geulah to come through small people rather than the great.", "yi": "דער אייבערשטער וויל, צוליב זיינע טעמים, אז די גאולה זאל קומען דורך די קליינע און נישט דורך די גרויסע." },
+      "questionSegs": [366, 367, 368, 370], "answerSegs": [374, 375, 376, 380], "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why did Yaakov fear Esav?", "yi": "פארוואס האט יעקב אבינו מורא געהאט פאר עשו?" },
+      "answer": { "en": "Because Esav had the merit of living in Eretz Yisroel during the twenty-two years Yaakov was away.", "yi": "ווייל עשו האט געהאט דעם זכות פון וואוינען אין ארץ ישראל די צוויי און צוואנציג יאר וואס יעקב איז געווען אוועק." },
+      "questionSegs": [561, 562], "answerSegs": [563, 564], "confidence": 0.75
+    },
+    {
+      "question": { "en": "What should one do when a holy place leaves him unmoved?", "yi": "וואס טוט מען ווען מ'שפירט גארנישט ביי א מקום קדוש?" },
+      "answer": { "en": "Work with emunah that the place is holy; first comes avodah of effort, and then Hashem gives the gift of feeling.", "yi": "ארבעטן מיט אמונה אז דא איז א מקום קדוש; פריער קומט עבודת עבודה, און דערנאך גיט דער אייבערשטער עבודת מתנה." },
+      "questionSegs": [862, 863], "answerSegs": [865, 867, 868, 869], "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says travelers must guard their eyes and thoughts at the airport and on the plane, where there are movies and other trials.",
+        "yi": "דער משגיח זאגט אז די וואס פארן דארפן אפהיטן די אויגן און די מחשבה אין עראפארט און אויפן עראפלאן, וואו ס'זענען דא מוביס און אנדערע נסיונות."
+      },
+      "evidence": { "segs": [172, 173, 184, 187, 190], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "He asks that no pictures be taken in Eretz Yisroel, so the seriousness of the moments is not lost.",
+        "yi": "ער בעט מ'זאל נישט נעמען קיין פיקטשערס אין ארץ ישראל, כדי מ'זאל נישט פארלירן די ערנסטקייט פון די מאמענטן."
+      },
+      "evidence": { "segs": [810, 812, 816, 818], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He advises visiting the holy places with menuchah, not rushing to every grave and moving on, but working on oneself at each place.",
+        "yi": "ער עצה'ט מ'זאל באזוכן די מקומות הקדושים במנוחה, נישט לויפן צו אלע קברים און גלייך ווייטער, נאר ארבעטן אויף זיך ביי יעדן ארט."
+      },
+      "evidence": { "segs": [826, 829, 830, 832, 839], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He asks the bochurim to make a kiddush Hashem on the way, behaving with seriousness and refinement, not blocking the aisles, and helping an older passenger with luggage.",
+        "yi": "ער בעט די בחורים צו זיין א קידוש השם אויפן וועג, זיך פירן מיט ערנסטקייט און איידלקייט, נישט פארשטעלן די דורכגאנגען, און ארויסהעלפן אן עלטערן מענטש מיט זיין באגאזש."
+      },
+      "evidence": { "segs": [883, 884, 889, 896, 897, 901], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He asks travelers to obey the organizers' instructions, since the trip cannot succeed without order.",
+        "yi": "ער בעט די וואס פארן זאלן פאלגן די מסדרים, ווייל אן סדר קען די נסיעה נישט געלינגען."
+      },
+      "evidence": { "segs": [918, 919, 923, 924, 928], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "journeys to tzaddikim and holy places",
+    "purim in yerushalayim",
+    "purim meshulash",
+    "longing for eretz yisroel",
+    "holiness of eretz yisroel",
+    "achdus",
+    "guarding the eyes while traveling",
+    "seriousness and photography",
+    "acceptance of divine decree",
+    "kiddush Hashem"
+  ],
+  "concepts": [
+    { "he": "תיקון הנפש", "heardAs": ["צוקון הנפש", "תוקן"] },
+    { "he": "נסיעה", "heardAs": ["נשיא", "נשיאה", "נשיאות"] },
+    { "he": "מ\"ב מסעות", "heardAs": ["מבעז מסעות", "מבעז נשיאות"] },
+    { "he": "מוקפין חומה מימות יהושע בן נון", "heardAs": ["מקום חומא", "מקום חומם ממות ישוע בנין"] },
+    { "he": "פורים המשולש", "heardAs": ["פרים משולש", "פורים המשולש"] },
+    { "he": "אחדות", "heardAs": ["אכדוס"] },
+    { "he": "שנאת חנם", "heardAs": ["שנאה סכינה"] },
+    { "he": "ארץ חמדה", "heardAs": ["ארץ חמדה"] },
+    { "he": "שמירת עינים", "heardAs": ["אפירטן די יוגן", "פארפיטן די יוגן"] },
+    { "he": "תפילת הדרך", "heardAs": ["תפילת הדרך"] },
+    { "he": "מסך", "heardAs": ["מסך"] },
+    { "he": "מקומות הקדושים", "heardAs": ["מלכים קדוש", "מלכים קודש"] },
+    { "he": "עבודת עבודה ועבודת מתנה", "heardAs": ["עבודת מתנה און עבודת עבודה"] },
+    { "he": "מנוחה", "heardAs": ["מנחה", "במנוחה"] },
+    { "he": "קידוש השם", "heardAs": ["קידוש השם", "מקדש שם שמים"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבי ישראל'ים", "רביה שלום", "רבינו שלום"] }
+  ],
+  "people": [
+    { "name": "the Chasam Sofer", "heardAs": ["חתם סופר", "שם סופר", "תחתם ספר", "חתם ספר"] },
+    { "name": "the Rebbe Reb Elimelech", "heardAs": ["רבי רבי מלך", "רבי ר' מלך"] },
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינו"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["בעש''ט"] },
+    { "name": "the Arizal", "heardAs": ["ארי הקדוש"] },
+    { "name": "Yehoshua bin Nun", "heardAs": ["ישוע בנון", "ישעי' בנין"] },
+    { "name": "Mordechai and Esther", "heardAs": ["מיין מרד, חייבי אסתר"] },
+    { "name": "the Sfas Emes", "heardAs": ["שפת סמות"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו"] },
+    { "name": "Dovid Hamelech", "heardAs": ["דוד המלוה", "דוד המלך"] },
+    { "name": "Rashi", "heardAs": ["רשע", "ראשי"] },
+    { "name": "Rabbi Abba", "heardAs": ["רבי יא באהבה"] },
+    { "name": "Rabbi Chiya bar Gamda", "heardAs": ["רבי חי' אביגנדע"] },
+    { "name": "the Ramban", "heardAs": ["רמב״ן"] },
+    { "name": "the Bach", "heardAs": ["רבי באח"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יעקב אבינא"] },
+    { "name": "Esav", "heardAs": ["אסאב"] },
+    { "name": "Rav Shimshon Refael Hirsch", "heardAs": ["רבי שמשון רבי פאול הירש", "ר' שמשון פאר'ל הערש"] },
+    { "name": "the Ramak", "heardAs": ["רמק"] },
+    { "name": "the Divrei Chaim of Sanz", "heardAs": ["סאנזער רב", "דברי חיים"] },
+    { "name": "the Vilna Gaon", "heardAs": ["ווילנער גיין"] },
+    { "name": "the Chofetz Chaim", "heardAs": ["חפץ חיים"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair to poor; most Hebrew quotations are badly garbled and were recovered only where the context made them clear. The source behind the multiplied value of a mitzvah in a chosen time or place (seg 495), the name of the person who told bochurim not to take pictures (seg 751), the gematria remark on Eretz Canaan (segs 929-936), and the opening story's sender (seg 58) could not be recovered. The closing segments 1016-1018 are partly garbled."
+}

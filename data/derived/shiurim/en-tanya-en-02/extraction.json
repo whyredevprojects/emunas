@@ -1,0 +1,633 @@
+{
+  "shiurId": "en-tanya-en-02",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains, through the opening questions of Tanya chapter one, that tzaddik, beinoni and rasha are defined by whether the yetzer hara still lives in a person, and then begins the teaching of the two souls of every Jew and the four klipos, the body of a Jew coming from klipas nogah.",
+      "yi": "דער משגיח ערקלערט, דורך די קשיות אינעם אנהייב פון תניא פרק א, אז צדיק, בינוני און רשע ווערן געמאסטן לויט צי דער יצר הרע לעבט נאך אין דעם מענטש, און הייבט אן לערנען אז יעדער איד האט צוויי נשמות און וועגן די פיר קליפות, וואו דער גוף פון א איד קומט פון קליפת נוגה."
+    },
+    "abstract": {
+      "en": "The Rav reads the Tanya's questions: how Iyov could say Hashem created tzaddikim and reshaim when the angel never announces it before birth; how anyone can be a beinoni if a sinner is a rasha at the moment he sins; and how Rabbah could call himself a beinoni. He shows that counting mitzvos and aveiros is only a label for judgment on Rosh Hashanah, like the 'tzaddik' and 'rasha' of a din Torah. The true definition is the three judges: a tzaddik has killed his yetzer hara, as David HaMelech said his heart was empty; a rasha hears only the yetzer hara; a beinoni hears both. He then speaks of the rare tzaddikim placed in each generation, of gilgulim, and tells the Yismach Moshe's memories. Finally he begins the two souls, explaining klipah through the four shells of a walnut, the fourth, nogah, being the body of a Jew that can become holy.",
+      "yi": "דער משגיח לערנט די קשיות פונעם תניא: ווי אזוי האט איוב געקענט זאגן אז דער אויבערשטער האט באשאפן צדיקים און רשעים, ווען דער מלאך זאגט עס נישט אן פאר דער געבורט; ווי אזוי קען איינער זיין א בינוני, אז ווער עס טוט אן עבירה איז אין יענעם מאמענט א רשע; און ווי אזוי האט רבה געקענט זאגן אויף זיך אז ער איז א בינוני. ער ווייזט אז דאס ציילן מצוות און עבירות איז נאר א נאמען פאר דעם דין פון ראש השנה, אזוי ווי דער \"צדיק\" און \"רשע\" ביי א דין תורה. דער אמת'ער פשט איז די דריי שופטים: א צדיק האט אויסגעהרגעט זיין יצר הרע, ווי דוד המלך האט געזאגט אז זיין הארץ איז ליידיג; א רשע הערט נאר דעם יצר הרע; א בינוני הערט ביידע. דערנאך רעדט ער פון די ווייניגע צדיקים אין יעדן דור, פון גלגולים, און דערציילט וואס דער ישמח משה האט געדענקט. צום סוף הייבט ער אן מיט די צוויי נשמות, און ערקלערט א קליפה מיט די פיר שאלעכץ פון א נוס, וואו די פערטע, נוגה, איז דער גוף פון א איד וואס קען ווערן הייליג."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Calling a person tzaddik, beinoni or rasha by his majority of mitzvos or aveiros is only a convenient label for how he is judged on Rosh Hashanah, not what he is in essence.",
+          "yi": "א מענטש רופן צדיק, בינוני אדער רשע לויט דעם רוב מצוות אדער עבירות איז נאר א נאמען פאר ווי אזוי מ'משפט אים ראש השנה, נישט וואס ער איז בעצם."
+        },
+        "evidence": { "segs": [198, 199, 210, 215, 217], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Every person has two judges in his heart, the yetzer tov and the yetzer hara, and Hashem decides; a tzaddik has rendered his yetzer hara powerless, a rasha hears only the yetzer hara, and a beinoni hears both and must choose.",
+          "yi": "יעדער מענטש האט צוויי שופטים אין הארצן, דעם יצר טוב און דעם יצר הרע, און דער אויבערשטער איז דער מכריע; א צדיק האט אויסגעהרגעט זיין יצר הרע, א רשע הערט נאר דעם יצר הרע, און א בינוני הערט ביידע און מוז אויסקלייבן."
+        },
+        "evidence": { "segs": [266, 275, 314, 319, 324, 329], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Rabbah knew he had never sinned, yet considered himself a beinoni because the yetzer hara was still there and he had to guard against it.",
+          "yi": "רבה האט געוואוסט אז ער האט קיינמאל נישט געטון קיין עבירה, פונדעסטוועגן האט ער זיך געהאלטן פאר א בינוני ווייל דער יצר הרע איז נאך געווען דארט און ער האט זיך געדארפט היטן דערפון."
+        },
+        "evidence": { "segs": [330, 331, 332, 335], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "True tzaddikim are few; Hashem placed them in every generation as its leaders, and some are sent down again not to repair anything but for the sake of their generation.",
+          "yi": "אמת'ע צדיקים זענען ווייניג; דער אויבערשטער האט זיי אוועקגעשטעלט אין יעדן דור ווי די מנהיגים, און טייל קומען אראפ נאכאמאל נישט כדי צו פארריכטן, נאר צוליב דעם דור."
+        },
+        "evidence": { "segs": [384, 386, 428, 430, 564], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Every Jew has two souls, one from the side of klipah and sitra achra, clothed in the blood, which is the animal life he shares with every creature.",
+          "yi": "יעדער איד האט צוויי נשמות, איינע פון דער זייט פון קליפה און סטרא אחרא, וואס איז אנגעטון אינעם בלוט, דאס איז דאס בהמה'שע לעבן וואס ער האט צוזאמען מיט יעדע באשעפעניש."
+        },
+        "evidence": { "segs": [603, 614, 803, 810, 812], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Of the four klipos, the fourth, klipas nogah, is like the edible skin of a walnut kernel; the body of a Jew comes from it and can be turned to holiness.",
+          "yi": "פון די פיר קליפות איז די פערטע, קליפת נוגה, אזוי ווי די דינע הייטל פונעם קערנדל פון א נוס וואס מ'עסט; דער גוף פון א איד קומט דערפון און קען ווערן איבערגעדרייט צו קדושה."
+        },
+        "evidence": { "segs": [769, 771, 776, 784, 785], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-english-sets-tanya-02-e-tanya",
+      "startSeg": 0,
+      "endSeg": 164,
+      "title": { "en": "The Tanya's questions on tzaddik and beinoni", "yi": "די קשיות פונעם תניא אויף צדיק און בינוני" },
+      "summary": {
+        "en": "The Rav reads the Tanya's questions: how Iyov could say Hashem created tzaddikim and reshaim when the angel does not announce it before birth, and how anyone can be a beinoni if a sinner is a rasha while sinning. He asks how Rabbah, whom the Angel of Death could not approach while he learned, could call himself a beinoni, and adds that even one who fails to rebuke others or neglects learning Torah is called a rasha.",
+        "yi": "דער משגיח לערנט די קשיות פונעם תניא: ווי אזוי האט איוב געקענט זאגן אז דער אויבערשטער האט באשאפן צדיקים און רשעים, ווען דער מלאך זאגט עס נישט אן פאר דער געבורט, און ווי אזוי קען איינער זיין א בינוני אז ווער עס זינדיגט איז א רשע. ער פרעגט ווי אזוי רבה, וואס דער מלאך המות האט נישט געקענט צוקומען צו אים ווען ער האט געלערנט, האט זיך גערופן א בינוני, און לייגט צו אז אפילו איינער וואס מאנט נישט אנדערע אדער איז מבטל תורה הייסט א רשע."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-02-e-tanya",
+      "startSeg": 165,
+      "endSeg": 257,
+      "title": { "en": "Counting mitzvos is only a label for judgment", "yi": "ציילן מצוות איז נאר א נאמען פארן דין" },
+      "summary": {
+        "en": "The Rav concludes that the childhood measure of mitzvos against aveiros cannot define these levels. He brings the Gemara in Rosh Hashanah about the three books and explains that the terms there are only for judgment, like the 'tzaddik' and 'rasha' of a din Torah, who are named only for that one case.",
+        "yi": "דער משגיח שליסט אז די חדר-מאס פון מצוות קעגן עבירות קען נישט באשטימען די מדרגות. ער ברענגט די גמרא אין ראש השנה וועגן די דריי ספרים און ערקלערט אז די נעמען דארט זענען נאר פארן דין, אזוי ווי דער \"צדיק\" און \"רשע\" ביי א דין תורה, וואס הייסן אזוי נאר פאר יענעם ענין."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-02-e-tanya",
+      "startSeg": 258,
+      "endSeg": 369,
+      "title": { "en": "Three judges: the true definitions", "yi": "דריי שופטים: דער אמת'ער פשט" },
+      "summary": {
+        "en": "The Rav brings the Gemara that the yetzer tov judges tzaddikim, the yetzer hara judges reshaim, and both judge beinonim, and builds the picture of three judges with Hashem deciding. A tzaddik like David HaMelech has killed his yetzer hara, a rasha like Pharaoh has lost his yetzer tov, and a beinoni hears both; this is why Rabbah thought himself a beinoni. He explains 'my heart is a chalal within me' as an empty chamber of the heart.",
+        "yi": "דער משגיח ברענגט די גמרא אז צדיקים שופטן דער יצר טוב, רשעים דער יצר הרע, און בינונים ביידע, און מאלט אויס דריי שופטים מיט דעם אויבערשטן ווי דער מכריע. א צדיק ווי דוד המלך האט אויסגעהרגעט דעם יצר הרע, א רשע ווי פרעה האט פארלוירן דעם יצר טוב, און א בינוני הערט ביידע; דערפאר האט רבה זיך געהאלטן פאר א בינוני. ער טייטשט \"ולבי חלל בקרבי\" אויף א ליידיגע קאמער אין הארצן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-02-e-tanya",
+      "startSeg": 370,
+      "endSeg": 442,
+      "title": { "en": "Few tzaddikim, beinonim and gilgulim", "yi": "ווייניג צדיקים, בינונים און גלגולים" },
+      "summary": {
+        "en": "The Rav explains that real tzaddikim are few, placed in every generation, the 'tzaddik yesod olam' with thirty-six beneath him, and they have no choice; most people are beinonim even if they count as tzaddikim on Rosh Hashanah. He speaks of souls returning in new gilgulim, brings the Lechovitcher's reading of 'one who sleeps in the cemetery', and explains that great tzaddikim come down for their generation and remember earlier lives, while others forget so that their choice remains.",
+        "yi": "דער משגיח ערקלערט אז אמת'ע צדיקים זענען ווייניג, אוועקגעשטעלט אין יעדן דור, דער \"צדיק יסוד עולם\" מיט זעקס און דרייסיג אונטער אים, און זיי האבן נישט קיין בחירה; רוב מענטשן זענען בינונים אפילו ווען זיי הייסן צדיקים ראש השנה. ער רעדט פון נשמות וואס קומען צוריק אין נייע גלגולים, ברענגט דעם לעכאוויטשער'ס פשט אויף \"הלן בבית הקברות\", און ערקלערט אז גרויסע צדיקים קומען אראפ פארן דור און געדענקען זייערע פריערדיגע גלגולים, בשעת אנדערע פארגעסן כדי די בחירה זאל בלייבן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-02-e-tanya",
+      "startSeg": 443,
+      "endSeg": 525,
+      "title": { "en": "The Yismach Moshe remembers his gilgulim", "yi": "דער ישמח משה געדענקט זיינע גלגולים" },
+      "summary": {
+        "en": "The Rav tells, as written by the Yitav Lev, that his grandfather the Yismach Moshe remembered being a sheep of Yaakov Avinu, showed a mark from his staff and remembered his niggun, and remembered being in the desert at the dispute of Korach, where he was neutral. He explains that Korach was a great tzaddik who made a small mistake, and that tzaddikim remember because they have no choice to lose.",
+        "yi": "דער משגיח דערציילט, ווי דער ייטב לב שרייבט, אז זיין זיידע דער ישמח משה האט געדענקט אז ער איז געווען א שעפעלע ביי יעקב אבינו, האט געוויזן א צייכן פון זיין שטעקן און געדענקט זיין ניגון, און געדענקט אז ער איז געווען אין מדבר ביי דער מחלוקת פון קרח, וואו ער האט נישט געהאלטן מיט קיין זייט. ער ערקלערט אז קרח איז געווען א גרויסער צדיק וואס האט געמאכט א קליינעם טעות, און אז צדיקים געדענקען ווייל זיי האבן סיי ווי נישט קיין בחירה."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-02-e-tanya",
+      "startSeg": 526,
+      "endSeg": 596,
+      "title": { "en": "Sent down without choice; a question on gilgulim", "yi": "אראפגעשיקט אן בחירה; א שאלה אויף גלגולים" },
+      "summary": {
+        "en": "The Rav tells that the Apter Rav remembered serving in the Beis HaMikdash, and says some are sent down as tzaddikim without choice and some as reshaim without choice, while the general population can go either way; the few tzaddikim are leaders for those who want to be honest Jews. He sums up that the Tanya's questions show the levels are not yet understood, and answers a listener's question about gilgulim and those without a share in the World to Come by recommending Takanas HaShavim.",
+        "yi": "דער משגיח דערציילט אז דער אפטער רב האט געדענקט ווי ער האט געדינט אינעם בית המקדש, און זאגט אז טייל ווערן אראפגעשיקט ווי צדיקים אן בחירה און טייל ווי רשעים אן בחירה, בשעת דער כלל קען זיין אהער אדער אהין; די ווייניגע צדיקים זענען מנהיגים פאר די וואס ווילן זיין ערליכע אידן. ער שליסט אז די קשיות פונעם תניא ווייזן אז מ'פארשטייט נאך נישט די מדרגות, און ענטפערט א שאלה פון א צוהערער וועגן גלגולים און די וואס האבן נישט קיין חלק לעולם הבא, און ראט צו לערנען דעם ספר תקנת השבין."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-02-e-tanya",
+      "startSeg": 597,
+      "endSeg": 700,
+      "title": { "en": "Two souls and the four shells of the walnut", "yi": "צוויי נשמות און די פיר שאלעכץ פון א נוס" },
+      "summary": {
+        "en": "The Rav reads that, following Rav Chaim Vital, every Jew has two souls, learned from the plural 'neshamos', the first from the side of klipah. He explains klipah through the walnut of 'el ginas egoz', with its four shells, and says the world, created through the four letters of Hashem's Name, has shells to break through, like the four barriers Yechezkel passed in his vision and the keruvim guarding the Tree of Life.",
+        "yi": "דער משגיח לערנט אז, לויט ר' חיים ויטאל, האט יעדער איד צוויי נשמות, ארויסגעלערנט פון דעם לשון רבים \"נשמות\", די ערשטע פון דער זייט פון קליפה. ער ערקלערט א קליפה דורך דעם נוס פון \"אל גנת אגוז\" מיט אירע פיר שאלעכץ, און זאגט אז די וועלט, באשאפן מיט די פיר אותיות פונעם שם הוי'ה, האט שאלעכץ וואס מ'מוז דורכברעכן, אזוי ווי די פיר מחיצות וואס יחזקאל איז דורכגעגאנגען אין זיין נבואה און די כרובים וואס היטן דעם עץ החיים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-02-e-tanya",
+      "startSeg": 701,
+      "endSeg": 767,
+      "title": { "en": "Kedushah and the other side", "yi": "קדושה און די אנדערע זייט" },
+      "summary": {
+        "en": "The Rav explains that the world has two sides, kedushah and tumah, and one cannot stand in both. He brings Rashi that kedoshim means separated, and 'al tigshu el isha' with Targum Onkelos's 'side', and the Kotzker's lesson that one indulging in desires cannot expect to understand Torah; therefore what is not holy is called the sitra achra, the other side.",
+        "yi": "דער משגיח ערקלערט אז די וועלט האט צוויי זייטן, קדושה און טומאה, און מ'קען נישט שטיין אויף ביידע. ער ברענגט רש\"י אז קדושים מיינט אפגעשיידט, און \"אל תגשו אל אשה\" מיט'ן תרגום אונקלוס'ס \"צד\", און דעם קאצקער'ס לימוד אז ווער עס איז משוקע אין תאוות קען נישט ערווארטן צו פארשטיין תורה; דערפאר רופט מען וואס איז נישט הייליג \"סטרא אחרא\", די אנדערע זייט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-02-e-tanya",
+      "startSeg": 768,
+      "endSeg": 824,
+      "title": { "en": "Klipas nogah, the blood and the animal soul", "yi": "קליפת נוגה, דאס בלוט און די נפש הבהמית" },
+      "summary": {
+        "en": "The Rav explains that the fourth klipah, nogah, is like the edible skin of the kernel and like the priah of the milah, a shell that can become holy, and the body of a Jew is from it. The first soul is clothed in the blood, which carries life as in every animal, with the four bad traits; he sums up that a Jew has a yetzer hara, his biological being, and a yetzer tov that lets him resist his desires, which no animal can do.",
+        "yi": "דער משגיח ערקלערט אז די פערטע קליפה, נוגה, איז ווי די הייטל פונעם קערנדל וואס מ'עסט, און ווי די פריעה ביי דער מילה, א קליפה וואס קען ווערן הייליג, און דער גוף פון א איד איז דערפון. די ערשטע נפש איז אנגעטון אינעם בלוט, וואס טראגט דאס לעבן ווי ביי יעדע בהמה, מיט די פיר שלעכטע מדות; ער שליסט אז א איד האט א יצר הרע, זיין בהמה'שער טייל, און א יצר טוב וואס לאזט אים זיך איינהאלטן פון זיינע תאוות, וואס קיין בהמה קען נישט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "Ma'sha Omer Iyev, it's a gemara by the Basra ... Barasa Tzadikim, Barasa Rishayim",
+      "work": "Gemara Bava Basra",
+      "ref": "Bava Basra 16a",
+      "sefariaRef": "Bava Batra 16a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1, 2, 3], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Gemara says in the Eidah that Abayam Yaim Ka'idim Yitziras HaVlad",
+      "work": "Gemara Niddah",
+      "ref": "Niddah 16b",
+      "sefariaRef": "Niddah 16b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [8, 9, 16], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Eichto Rabba B'yatsma Yolai Meshuhu Beinani",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 61b",
+      "sefariaRef": "Berakhot 61b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [38, 39, 40, 41], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "like the Gemara says his mouth never stopped learning ... the Malach Amavus had no rishus",
+      "work": "Gemara Bava Metzia",
+      "ref": "Bava Metzia 86a",
+      "sefariaRef": "Bava Metzia 86a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [55, 56, 63, 69], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the fedak vav deshavuas",
+      "work": "Gemara Shevuos",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [115, 116, 117], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "Dvar Hashem Baza Hikaris Hikaris",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 15:31",
+      "sefariaRef": "Numbers 15:31",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [148, 149, 158], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "there is a Gemara in Rosh Hashanah",
+      "work": "Gemara Rosh Hashanah",
+      "ref": "Rosh Hashanah 16b",
+      "sefariaRef": "Rosh Hashanah 16b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [183, 193, 196, 197], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "in Chumash we find that ... Deku is a Tzaddik, Vyashiyu is a Rasha",
+      "work": "Devarim",
+      "ref": "Devarim 25:1",
+      "sefariaRef": "Deuteronomy 25:1",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [222, 224, 225], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Tzadikim Yitzhah Tav Shayftam, Gishayim Yitzhah HaGha Shayftam, Beinenim Zevzeh Shayftam",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 61b",
+      "sefariaRef": "Berakhot 61b",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [260, 261, 262, 263, 345], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "V'li B'chalal B'keabi",
+      "work": "Tehillim",
+      "ref": "Tehillim 109:22",
+      "sefariaRef": "Psalms 109:22",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [285, 286, 347, 351], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "for Tzadik Yisait Eylem",
+      "work": "Mishlei",
+      "ref": "Mishlei 10:25",
+      "sefariaRef": "Proverbs 10:25",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [383, 384, 393], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Lechavitcher said, the Gemara says, who's a Shaita? if somebody goes to sleep in the Beisak Faris",
+      "work": "Gemara Chagigah",
+      "ref": "Chagigah 3b",
+      "sefariaRef": "Chagigah 3b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [416, 417, 418, 422], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Yatav Lev writes this in the",
+      "work": "Yitav Lev",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [445, 446, 447], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Mezuch says had 600,000 sheep",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [455, 456, 458], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "the Ariya Kaddish says tzaddik katama yifrach seyfer teyves Kairach",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [501, 502, 503, 504], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "tzaddik katama yifrach",
+      "work": "Tehillim",
+      "ref": "Tehillim 92:13",
+      "sefariaRef": "Psalms 92:13",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [502, 503], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Gemara for example in Sanhedrin has a whole list of people",
+      "work": "Mishnah Sanhedrin",
+      "ref": "Sanhedrin ch. 10 (Chelek)",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [580, 581, 586], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "Seifer Takanas Hashavim Prabh Tzedekah Kayin",
+      "work": "Takanas HaShavin",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [592, 594, 595], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Arpimash Akarsav Rab Chaim Vital V'Shaar HaGadoshah",
+      "work": "Shaar HaKedushah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [598, 599, 601], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "I, Rabbi Neshulaylam, have created the Neshamas",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 57:16",
+      "sefariaRef": "Isaiah 57:16",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [606, 607, 612], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "Sh'tein Sh'tein Nefashis Nefesh Achas Mutsad HaKlipa Besitcha Achra V'yam Isla Beshes B'Dam HaOdham",
+      "work": "Tanya",
+      "ref": "Tanya ch. 1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [603, 613, 614, 616], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "it says in pasach I have gone into my orchard where the nut trees grow",
+      "work": "Shir HaShirim",
+      "ref": "Shir HaShirim 6:11",
+      "sefariaRef": "Song of Songs 6:11",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [620, 621, 669], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "when Yechezkel Hanavi saw the Merkava you have that in Kapitol Aleph ... Ruach Sierra, Unencovered, Deish Mislakachas",
+      "work": "Yechezkel",
+      "ref": "Yechezkel 1:4",
+      "sefariaRef": "Ezekiel 1:4",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [670, 671, 673, 775], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Kruvim, Imlat, Acher, Vamisa, Perches, that stand by the way of the Eitzachayim",
+      "work": "Bereishis",
+      "ref": "Bereishis 3:24",
+      "sefariaRef": "Genesis 3:24",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [698, 699], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "like Rasha says in Kedoshim, Kedoshim T, Avipru Shem Meharayas",
+      "work": "Rashi",
+      "ref": "Rashi on Vayikra 19:2",
+      "sefariaRef": "Rashi on Leviticus 19:2",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [715, 716], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Al-Tikshu Al-Isha",
+      "work": "Shemos",
+      "ref": "Shemos 19:15",
+      "sefariaRef": "Exodus 19:15",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [728, 750], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "so the tagim unkula says let's add it's to the tzad of the isha",
+      "work": "Targum Onkelos",
+      "ref": "Targum Onkelos Shemos 19:15",
+      "sefariaRef": "Onkelos Exodus 19:15",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [750, 751], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "the Reb Mendelechatska said there are two sides",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [751, 752, 754], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "lach yesaguf vukitachsiv kinefesh ... the nefesh is in the dam",
+      "work": "Vayikra",
+      "ref": "Vayikra 17:11",
+      "sefariaRef": "Leviticus 17:11",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [801, 802, 803], "confidence": 0.65 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav compares the Rosh Hashanah categories to the 'tzaddik' and 'rasha' of a din Torah: the one who wins a case is called the tzaddik for that case, though in other ways he may be a complete rasha, so the labels describe the judgment, not the person.",
+        "yi": "דער משגיח גלייכט די נעמען פון ראש השנה צו דעם \"צדיק\" און \"רשע\" ביי א דין תורה: דער וואס געווינט הייסט דער צדיק פאר יענעם דין, כאטש אין אנדערע זאכן קען ער זיין א רשע גמור, ממילא באשרייבן די נעמען דעם דין, נישט דעם מענטש."
+      },
+      "evidence": { "segs": [224, 226, 233, 234, 239], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "He pictures every person as standing before a court of three judges: the yetzer tov and yetzer hara each issue a ruling in the heart, and Hashem gives the verdict.",
+        "yi": "ער מאלט אויס אז יעדער מענטש שטייט פאר א בית דין פון דריי שופטים: דער יצר טוב און דער יצר הרע פסק'נען יעדער זיינס אין הארצן, און דער אויבערשטער גיט ארויס דעם פסק."
+      },
+      "evidence": { "segs": [264, 266, 271, 281, 282], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He reads 'chalal' in David HaMelech's words as 'empty': the left chamber of the heart, the seat of the yetzer hara, stood spiritually empty, just as a corpse emptied of its soul is called a chalal.",
+        "yi": "ער טייטשט \"חלל\" ביי דוד המלך'ס ווערטער אויף \"ליידיג\": די לינקע קאמער פון הארצן, דער מקום פונעם יצר הרע, איז געשטאנען ליידיג ברוחניות, אזוי ווי א מת וואס די נשמה איז ארויס פון אים הייסט א חלל."
+      },
+      "evidence": { "segs": [353, 356, 359, 361, 363], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "According to the Rav, people do not remember their earlier gilgulim because the memory would remove their free choice; great tzaddikim, who have no free choice anyway, do remember.",
+        "yi": "לויט דעם משגיח געדענקען מענטשן נישט זייערע פריערדיגע גלגולים ווייל דאס וואלט אוועקגענומען די בחירה; גרויסע צדיקים, וואס האבן סיי ווי נישט קיין בחירה, געדענקען יא."
+      },
+      "evidence": { "segs": [437, 439, 441, 523, 525], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "He explains the four klipos with a walnut: three shells are peeled away, but the thin skin on the kernel is eaten with it and becomes part of the nut, which is klipas nogah, the shell that can be raised to holiness.",
+        "yi": "ער ערקלערט די פיר קליפות מיט א נוס: דריי שאלעכץ שיילט מען אראפ, אבער די דינע הייטל אויפן קערנדל עסט מען מיט און עס ווערט בטל צום נוס, און דאס איז קליפת נוגה, די קליפה וואס קען ווערן אויפגעהויבן צו קדושה."
+      },
+      "evidence": { "segs": [629, 632, 769, 771, 773], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He finds the same four layers in the milah: three layers are cut away, while the fourth, the priah, is not cut but pushed back, corresponding to nogah.",
+        "yi": "ער געפינט די זעלבע פיר שיכטן ביי דער מילה: דריי הייטלעך שניידט מען אראפ, און די פערטע, די פריעה, שניידט מען נישט נאר מ'שיבט זי ארויף, און דאס איז נוגה."
+      },
+      "evidence": { "segs": [781, 782, 783, 784], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Yismach Moshe remembers his gilgulim", "yi": "דער ישמח משה געדענקט זיינע גלגולים" },
+      "retelling": {
+        "en": "The Yitav Lev wrote that he heard from his grandfather, the Yismach Moshe, that he remembered all his gilgulim. He remembered being one of the sheep of Yaakov Avinu, could show a mark on his shoulder from Yaakov's staff, and remembered the niggun Yaakov played to gather the sheep, which chassidim still sing. He also remembered being in the desert at the dispute between Korach and Moshe Rabbeinu; when his grandson asked whether he had sided with Moshe, he said he had stayed neutral, and that had the grandson been there he would have sided with Korach.",
+        "yi": "דער ייטב לב שרייבט אז ער האט געהערט פון זיין זיידן, דעם ישמח משה, אז ער געדענקט אלע זיינע גלגולים. ער האט געדענקט אז ער איז געווען איינס פון די שעפעלעך פון יעקב אבינו, האט געקענט ווייזן א צייכן אויף זיין אקסל פון יעקב'ס שטעקן, און געדענקט דעם ניגון וואס יעקב האט געשפילט כדי צונויפצונעמען די שעפסן, וואס חסידים זינגען נאך היינט. ער האט אויך געדענקט אז ער איז געווען אין מדבר ביי דער מחלוקת פון קרח מיט משה רבינו; ווען דער אייניקל האט געפרעגט צי ער האט געהאלטן מיט משה, האט ער געענטפערט אז ער האט נישט געהאלטן מיט קיין זייט, און אז ווען דער אייניקל וואלט דארט געווען וואלט ער געהאלטן מיט קרח."
+      },
+      "people": ["the Yismach Moshe", "the Yitav Lev", "Yaakov Avinu", "Korach", "Moshe Rabbeinu"],
+      "evidence": { "segs": [446, 450, 452, 462, 474, 482, 485, 489], "confidence": 0.85 }
+    },
+    {
+      "title": { "en": "The Apter Rav remembers the Beis HaMikdash", "yi": "דער אפטער רב געדענקט דעם בית המקדש" },
+      "retelling": {
+        "en": "When the Apter Rav davened the Avodah of Yom Kippur and reached the description of what the Kohen Gadol did, he said out loud that he remembered it, from when he served in the Beis HaMikdash.",
+        "yi": "ווען דער אפטער רב האט געדאווענט די עבודה פון יום כיפור און איז אנגעקומען צו וואס דער כהן גדול האט געטון, האט ער געזאגט הויך אז ער געדענקט עס, פון ווען ער האט געדינט אינעם בית המקדש."
+      },
+      "people": ["the Apter Rav"],
+      "evidence": { "segs": [526, 528, 529, 531], "confidence": 0.65 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "How can anyone be a beinoni, if one who sins is called a complete rasha at that moment, and one who never sinned or did teshuvah is a tzaddik?",
+        "yi": "ווי אזוי קען איינער זיין א בינוני, אז ווער עס טוט אן עבירה הייסט אין יענעם מאמענט א רשע גמור, און ווער עס האט נישט געזינדיגט אדער האט תשובה געטון איז א צדיק?"
+      },
+      "answer": {
+        "en": "Counting mitzvos and aveiros only names how a person is judged on Rosh Hashanah; the real beinoni is one in whom both the yetzer tov and the yetzer hara are active.",
+        "yi": "דאס ציילן מצוות און עבירות איז נאר א נאמען ווי אזוי מ'משפט ראש השנה; דער אמת'ער בינוני איז דער וואס ביי אים זענען ביידע, דער יצר טוב און דער יצר הרע, טעטיג."
+      },
+      "questionSegs": [81, 85, 93, 107],
+      "answerSegs": [210, 215, 311, 324],
+      "confidence": 0.85
+    },
+    {
+      "question": {
+        "en": "How could Rabbah, whom the Angel of Death could not approach because he never stopped learning, think he was a beinoni?",
+        "yi": "ווי אזוי האט רבה, וואס דער מלאך המות האט נישט געקענט צוקומען צו אים ווייל ער האט קיינמאל נישט אויפגעהערט לערנען, געקענט האלטן אז ער איז א בינוני?"
+      },
+      "answer": {
+        "en": "He knew he had never sinned, but he knew the yetzer hara was still within him and he had to guard against it; his students held he had already made it powerless.",
+        "yi": "ער האט געוואוסט אז ער האט קיינמאל נישט געזינדיגט, אבער ער האט געוואוסט אז דער יצר הרע איז נאך אין אים און ער דארף זיך היטן; זיינע תלמידים האבן געהאלטן אז ער האט אים שוין אפגעשוואכט אינגאנצן."
+      },
+      "questionSegs": [57, 69, 74, 76],
+      "answerSegs": [330, 332, 333, 338],
+      "confidence": 0.85
+    },
+    {
+      "question": {
+        "en": "Why do people not remember their earlier gilgulim, while great tzaddikim do?",
+        "yi": "פארוואס געדענקען מענטשן נישט זייערע פריערדיגע גלגולים, און גרויסע צדיקים יא?"
+      },
+      "answer": {
+        "en": "If people remembered their past lives and their punishments, no one would commit even the slightest sin and there would be no free choice; tzaddikim have no free choice anyway, so they remember.",
+        "yi": "ווען מענטשן וואלטן געדענקט זייערע פריערדיגע גלגולים און זייערע שטראפן, וואלט קיינער נישט געטון די קלענסטע עבירה און עס וואלט נישט געווען קיין בחירה; צדיקים האבן סיי ווי נישט קיין בחירה, דערפאר געדענקען זיי."
+      },
+      "questionSegs": [436, 522],
+      "answerSegs": [437, 439, 440, 525],
+      "confidence": 0.85
+    },
+    {
+      "question": {
+        "en": "A listener asks: if some people listed in Sanhedrin as having no share in the World to Come later return in other gilgulim and succeed, what does it mean that they have no share?",
+        "yi": "א צוהערער פרעגט: אויב טייל פון די וואס ווערן אויסגערעכנט אין סנהדרין אז זיי האבן נישט קיין חלק לעולם הבא קומען שפעטער צוריק אין אנדערע גלגולים און זענען מצליח, וואס מיינט עס אז זיי האבן נישט קיין חלק?"
+      },
+      "answer": {
+        "en": "The Rav says one cannot ask the question before understanding what the Mishnah and the derashos really mean, and recommends Takanas HaShavin, in the recent edition with footnotes.",
+        "yi": "דער משגיח זאגט אז מ'קען נישט פרעגן די קשיא פאר מ'פארשטייט וואס די משנה און די דרשות מיינען באמת, און ראט צו לערנען דעם ספר תקנת השבין, אין דעם נייעם דרוק מיט הערות."
+      },
+      "questionSegs": [580, 581, 585, 586],
+      "answerSegs": [589, 591, 592, 595],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "For a good explanation of gilgulim and the Mishnah about those without a share in the World to Come, the Rav recommends reading Takanas HaShavin, in the recent edition with footnotes.",
+        "yi": "פאר א גוטע ערקלערונג אויף גלגולים און די משנה וועגן די וואס האבן נישט קיין חלק לעולם הבא, ראט דער משגיח צו לערנען דעם ספר תקנת השבין, אין דעם נייעם דרוק מיט הערות."
+      },
+      "evidence": { "segs": [592, 593, 595], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Citing the Kotzker, the Rav says one who indulges in desires should not expect to understand Torah and kedushah, since one cannot stand on both sides.",
+        "yi": "ער ברענגט פונעם קאצקער אז ווער עס איז משוקע אין תאוות זאל נישט ערווארטן צו פארשטיין תורה און קדושה, ווייל מ'קען נישט שטיין אויף ביידע זייטן."
+      },
+      "evidence": { "segs": [751, 752, 753, 754], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "Tanya chapter 1",
+    "tzaddik, beinoni and rasha",
+    "yetzer tov and yetzer hara",
+    "free will",
+    "reincarnation and gilgulim",
+    "the two souls of a Jew",
+    "the four klipos",
+    "klipas nogah",
+    "kedushah and sitra achra",
+    "judgment on Rosh Hashanah"
+  ],
+  "concepts": [
+    { "he": "צדיק", "heardAs": ["Tzadok", "tzadah gomor", "Tzaddik"] },
+    { "he": "רשע", "heardAs": ["Rasha", "Rishayim", "Roshayim", "Gishayim"] },
+    { "he": "בינוני", "heardAs": ["Beinani", "Abenani", "Benani", "bainani", "bane in thee", "Benali"] },
+    { "he": "יצר טוב", "heardAs": ["Yetzatayv", "Yitzhah Tav", "Yetzir Tev", "Yaitzotayv", "Yetzir HaTayv"] },
+    { "he": "יצר הרע", "heardAs": ["Yitzhah HaGha", "Yetzirah", "Yetzir HaGa", "Yai Tzahara", "yetzahara"] },
+    { "he": "מבטל תורה", "heardAs": ["Bin Mavaza", "m'valt o taira", "b'to taira"] },
+    { "he": "כרת", "heardAs": ["Hikaris", "kareis"] },
+    { "he": "חלל", "heardAs": ["Chalal", "Chalol"] },
+    { "he": "יסוד עולם", "heardAs": ["Yisait Eylem", "Yesaid Aayram", "Yusayit Eilem"] },
+    { "he": "בחירה", "heardAs": ["Pchira", "Bechir", "p'chirah", "abchire", "pzaddik"] },
+    { "he": "גלגול", "heardAs": ["Gildul", "Golgurim", "Vilgulim", "gurgurum", "Gilgulan"] },
+    { "he": "קליפה", "heardAs": ["Klipa", "Kli Pais", "Klippais", "clipper", "Klippe"] },
+    { "he": "קליפת נוגה", "heardAs": ["Noiga", "Naiga", "Klipa Snoiga"] },
+    { "he": "סטרא אחרא", "heardAs": ["Besitcha Achra", "Sitra Achra"] },
+    { "he": "קדושה", "heardAs": ["Kedosha", "Giddosha", "Kiddusha"] },
+    { "he": "טומאה", "heardAs": ["Tuma", "tumor"] },
+    { "he": "נפש הבהמית", "heardAs": ["Nefesh Abahamis"] },
+    { "he": "שם הוי'ה", "heardAs": ["Shem Havaya", "Yudke Vavke"] },
+    { "he": "אל גנת אגוז", "heardAs": ["Ginas Egois", "G'inas Egeis"] },
+    { "he": "כרובים", "heardAs": ["Kruvim"] }
+  ],
+  "people": [
+    { "name": "Iyov", "heardAs": ["Iyev", "Iev"] },
+    { "name": "Rabbah", "heardAs": ["Rabba", "Rabe", "rabbi"] },
+    { "name": "David HaMelech", "heardAs": ["David HaMelech", "David Amalek", "David Hamelech", "David Melech"] },
+    { "name": "Pharaoh", "heardAs": ["Pari"] },
+    { "name": "the Lechovitcher", "heardAs": ["Lechavitcher"] },
+    { "name": "the Yismach Moshe", "heardAs": ["Yismach Maisha", "Yismach Meisha", "Yesmah Vesha"] },
+    { "name": "the Yitav Lev", "heardAs": ["Yatav Lev", "Yaitav Lev"] },
+    { "name": "the Satmar Rebbe", "heardAs": ["Satmah HaRebek"] },
+    { "name": "Yaakov Avinu", "heardAs": ["Yank of Avinu", "Yankah Vavino"] },
+    { "name": "Korach", "heardAs": ["Kairach"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["Meisha Rabbeinu"] },
+    { "name": "the Arizal", "heardAs": ["Ariya Kaddish", "Ariya Kodesh"] },
+    { "name": "the Apter Rav", "heardAs": ["Abte Rav"] },
+    { "name": "Rav Tzadok HaKohen", "heardAs": ["Prabh Tzedekah Kayin"] },
+    { "name": "Rav Chaim Vital", "heardAs": ["Rab Chaim Vital"] },
+    { "name": "Yechezkel", "heardAs": ["Yechezkel Hanavi", "Yechasko"] },
+    { "name": "Rashi", "heardAs": ["Rasha says in Kedoshim"] },
+    { "name": "Onkelos", "heardAs": ["tagim unkula"] },
+    { "name": "Reb Mendel of Kotzk", "heardAs": ["Reb Mendelechatska"] },
+    { "name": "the Ba'al HaTanya", "heardAs": ["Balatanya"] }
+  ],
+  "asrNotes": "English ASR is fair; Hebrew and Aramaic quotations are heavily garbled but mostly recoverable from Tanya chapter 1. Segments 109-164 (rebuking others, neglecting Torah study) are fragmentary, and the reference 'perek vav of Shevuos' could not be pinned to a page. Around segments 377-382 and 405-408 sentences are cut off, and the Apter Rav story (526-531) is only partly audible. A stretch near segments 541-547 about a rasha sent down without choice is too fragmentary to report in detail."
+}

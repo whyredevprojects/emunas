@@ -1,0 +1,607 @@
+{
+  "shiurId": "yi-eretz-yisroel-unc-11-1",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "At Kever Rachel, the Rav explains that Rachel is the mother who carries the Jewish souls through exile until they are handed over to Yaakov, and that Jewish tears in exile carry great weight.",
+      "yi": "ביי קבר רחל ערקלערט דער משגיח אז רחל איז די מאמע וואס טראגט די אידישע נשמות דורכן גלות ביז מ'גיט זיי איבער צו יעקב, און אז אידישע טרערן אין גלות האבן א גרויסע חשיבות."
+    },
+    "abstract": {
+      "en": "The Rav opens with the passuk that Yaakov saw Rachel and the sheep of Lavan and rolled the stone off the well, and asks why the two are joined. Rachel, he explains, is the mother of the Jews in exile, who arouses mercy for them; Lavan's sheep were Jewish souls captive in Lavan's kelipah, and a Midrash counts Yaakov's six hundred thousand sheep as the souls he later refined in Mitzrayim. Seeing both, Yaakov wished to lighten their exile and rolled a stone off the heart of Knesses Yisrael. Since the souls were not yet ready, he worked seven years for Rachel and they stayed meanwhile with her. When Yaakov reached Eretz Yisrael her task ended, she died and was buried on the way, to resume it in later exiles. At Kever Rachel the Rav asks that the time come for Rachel to bring the flock to Yaakov, tells of the river of Jewish tears seen by the Sadigura Rebbe, and closes with a tefillah for the geulah.",
+      "yi": "דער משגיח עפנט מיטן פסוק אז יעקב האט געזען רחל און די צאן פון לבן און האט אראפגעקייקלט דעם שטיין פונעם באר, און ער פרעגט וואס די צוויי האבן צו טון איינס מיטן אנדערן. רחל, ערקלערט ער, איז די מאמע פון אידן אין גלות, וואס איז מעורר רחמים אויף זיי; די צאן פון לבן זענען געווען אידישע נשמות וואס זענען געווען געפאנגען אין דער קליפה פון לבן, און א מדרש זאגט אז יעקב האט געהאט זעקס הונדערט טויזנט שאף, די נשמות וואס זענען שפעטער מתברר געווארן אין מצרים. ווען יעקב האט דאס געזען, האט ער זיי געוואלט לייכטער מאכן דעם גלות, און האט אראפגעקייקלט א שטיין פונעם הארץ פון כנסת ישראל. ווייל די נשמות זענען נאך נישט געווען גרייט, האט ער געארבעט זיבן יאר פאר רחל, און דערווייל זענען זיי געבליבן ביי איר. ווען יעקב איז אנגעקומען אין ארץ ישראל האט זיך איר תפקיד געענדיגט, זי איז נפטר געווארן און באגראבן געווארן אויפן וועג, כדי צו צוריקנעמען דעם תפקיד אין די שפעטערדיגע גלותן. ביי קבר רחל בעט דער משגיח אז ס'זאל שוין קומען די צייט ווען רחל ברענגט די צאן צו יעקב, ער דערציילט וועגן דעם טייך פון אידישע טרערן וואס דער סאדיגערער רבי האט געזען, און ער ענדיגט מיט א תפילה אויף דער גאולה."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Yaakov rolled the stone because of two things together: Rachel and the sheep of Lavan.",
+          "yi": "יעקב האט אראפגעקייקלט דעם שטיין צוליב צוויי זאכן צוזאמען: צוליב רחל און צוליב די צאן פון לבן."
+        },
+        "evidence": {
+          "segs": [
+            7,
+            9,
+            10,
+            11
+          ],
+          "confidence": 0.8
+        }
+      },
+      {
+        "text": {
+          "en": "Rachel is the mother of the Jews in exile, whose task is to revive them, comfort them and weep for them.",
+          "yi": "רחל איז די מאמע פון אידן אין גלות, און איר תפקיד איז זיי מחיה צו זיין, זיי מנחם צו זיין און וויינען פאר זיי."
+        },
+        "evidence": {
+          "segs": [
+            12,
+            13,
+            14,
+            40,
+            41,
+            42
+          ],
+          "confidence": 0.85
+        }
+      },
+      {
+        "text": {
+          "en": "Lavan's sheep were Jewish souls held captive in Lavan's kelipah, which Yaakov would later refine into the six hundred thousand souls of Klal Yisrael.",
+          "yi": "די צאן פון לבן זענען געווען אידישע נשמות וואס זענען געווען געפאנגען אין דער קליפה פון לבן, און יעקב האט זיי שפעטער מתקן געווען אז זיי זאלן ווערן די זעקס הונדערט טויזנט נשמות פון כלל ישראל."
+        },
+        "evidence": {
+          "segs": [
+            23,
+            33,
+            35,
+            46
+          ],
+          "confidence": 0.8
+        }
+      },
+      {
+        "text": {
+          "en": "Because the souls were not yet ready, Yaakov worked seven years for Rachel, and meanwhile the flock stayed with her.",
+          "yi": "ווייל די נשמות זענען נאך נישט געווען גרייט, האט יעקב געארבעט זיבן יאר פאר רחל, און דערווייל זענען די צאן געבליבן ביי איר."
+        },
+        "evidence": {
+          "segs": [
+            62,
+            63,
+            66,
+            67,
+            69
+          ],
+          "confidence": 0.75
+        }
+      },
+      {
+        "text": {
+          "en": "Rachel died when Yaakov reached Eretz Yisrael and was buried on the way, so that she could resume her task when the Jews would go out again into exile.",
+          "yi": "רחל איז נפטר געווארן ווען יעקב איז געקומען קיין ארץ ישראל, און איז באגראבן געווארן אויפן וועג, כדי זי זאל קענען צוריקנעמען איר תפקיד ווען אידן וועלן נאכאמאל ארויסגיין אין גלות."
+        },
+        "evidence": {
+          "segs": [
+            74,
+            75,
+            76,
+            77,
+            78,
+            79
+          ],
+          "confidence": 0.85
+        }
+      },
+      {
+        "text": {
+          "en": "Jewish tears in exile have great importance; they are the tears of Rachel.",
+          "yi": "אידישע טרערן אין גלות האבן א גרויסע חשיבות; זיי זענען די טרערן פון רחל."
+        },
+        "evidence": {
+          "segs": [
+            109,
+            111,
+            112,
+            113
+          ],
+          "confidence": 0.75
+        }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-eretz-yisrael-11-1-ey-kever-rachel",
+      "startSeg": 0,
+      "endSeg": 49,
+      "title": {
+        "en": "Rachel and the sheep of Lavan",
+        "yi": "רחל און די צאן פון לבן"
+      },
+      "summary": {
+        "en": "The Rav asks why the passuk joins Rachel and Lavan's sheep as the reason Yaakov rolled the stone. He explains that Rachel is the mother of the Jews in exile, and that Lavan's sheep were Jewish souls captive in Lavan's kelipah, which Yaakov saw and wished to ease.",
+        "yi": "דער משגיח פרעגט פארוואס דער פסוק שטעלט צוזאמען רחל און די צאן פון לבן אלס די סיבה פארוואס יעקב האט אראפגעקייקלט דעם שטיין. ער ערקלערט אז רחל איז די מאמע פון אידן אין גלות, און די צאן פון לבן זענען געווען אידישע נשמות געפאנגען אין דער קליפה פון לבן, און יעקב האט זיי געוואלט לייכטער מאכן."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [
+        0
+      ],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-eretz-yisrael-11-1-ey-kever-rachel",
+      "startSeg": 50,
+      "endSeg": 95,
+      "title": {
+        "en": "Seven years with Rachel, then burial on the way",
+        "yi": "זיבן יאר ביי רחל, און דערנאך באגראבן אויפן וועג"
+      },
+      "summary": {
+        "en": "The Rav explains the rolled stone as easing the heart of Knesses Yisrael, and why Yaakov worked seven years for Rachel while the souls stayed with her. Her task ended when Yaakov reached Eretz Yisrael, so she died and was buried on the way for later exiles; the shepherds' words that Rachel comes with the sheep meant the time had come to hand them to Yaakov.",
+        "yi": "דער משגיח טייטשט דעם שטיין וואס יעקב האט אראפגעקייקלט אלס א פארלייכטערונג פאר דעם הארץ פון כנסת ישראל, און פארוואס יעקב האט געארבעט זיבן יאר פאר רחל בשעת די נשמות זענען געבליבן ביי איר. ווען יעקב איז געקומען קיין ארץ ישראל האט זיך איר תפקיד געענדיגט, איז זי נפטר געווארן און באגראבן געווארן אויפן וועג פאר די שפעטערדיגע גלותן; די רועים'ס ווערטער אז רחל קומט מיט די צאן האבן געמיינט אז ס'איז שוין געקומען די צייט זיי איבערצוגעבן צו יעקב."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [
+        0
+      ],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-eretz-yisrael-11-1-ey-kever-rachel",
+      "startSeg": 96,
+      "endSeg": 140,
+      "title": {
+        "en": "At Kever Rachel: tears and tefillah",
+        "yi": "ביי קבר רחל: טרערן און תפילה"
+      },
+      "summary": {
+        "en": "Standing at Kever Rachel, the Rav asks that the time come for Rachel to bring the flock to Yaakov and the Jews to Eretz Yisrael, stresses the worth of Jewish tears in exile with the story of the Sadigura Rebbe seeing the Ruzhiner at a river of tears, and closes with a tefillah for the geulah.",
+        "yi": "ביי קבר רחל בעט דער משגיח אז ס'זאל שוין קומען די צייט ווען רחל ברענגט די צאן צו יעקב און די אידן קיין ארץ ישראל, ער באטאנט די חשיבות פון אידישע טרערן אין גלות מיט דער מעשה ווי דער סאדיגערער רבי האט געזען דעם רוזשינער ביי א טייך פון טרערן, און ער ענדיגט מיט א תפילה אויף דער גאולה."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [
+        0
+      ],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-eretz-yisrael-11-1-ey-kever-rachel",
+      "startSeg": 141,
+      "endSeg": 143,
+      "title": {
+        "en": "Unusable audio",
+        "yi": "אומקלארער קול"
+      },
+      "summary": {
+        "en": "The rest of the recording is long flagged stretches with no recoverable speech.",
+        "yi": "דער רעשט פונעם קול איז לאנגע שטיקער אן קיין קלארע רייד."
+      },
+      "kind": "noise",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "ויחי כשרה יעקב את רחל ... ויגש יעקב ויגיל את האבן",
+      "work": "Bereishis",
+      "ref": "Bereishis 29:10",
+      "sefariaRef": "Genesis 29:10",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          0,
+          1,
+          11,
+          37
+        ],
+        "confidence": 0.85
+      }
+    },
+    {
+      "heardAs": "איז א בן מכבד את איומו ... משדדתי בדברים",
+      "work": "Gemara Kiddushin",
+      "ref": "Kiddushin 30b-31a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          16,
+          17,
+          18,
+          19
+        ],
+        "confidence": 0.65
+      }
+    },
+    {
+      "heardAs": "בכל ברמה נשמה",
+      "work": "Yirmiyahu",
+      "ref": "Yirmiyahu 31:14",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": {
+        "segs": [
+          21
+        ],
+        "confidence": 0.6
+      }
+    },
+    {
+      "heardAs": "אין מדרש אז מלאכים האבן ביינאכט גענומען די ציין פון לבן",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          28,
+          29
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "אין מדרש אז יענקוב האט געהאט זעקס הונדערט טויזנט שם",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          31,
+          32,
+          33
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "heardAs": "חשוב'ע שנם ברחל",
+      "work": "Bereishis",
+      "ref": "Bereishis 29:18",
+      "sefariaRef": "Genesis 29:18",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          66
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "heardAs": "אין מדרש אז זיי האבן געזאגט ... גרויסע ענינים",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": {
+        "segs": [
+          84,
+          85,
+          87
+        ],
+        "confidence": 0.65
+      }
+    },
+    {
+      "heardAs": "וינו רחל בתי בוהר מציין",
+      "work": "Bereishis",
+      "ref": "Bereishis 29:6",
+      "sefariaRef": "Genesis 29:6",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          92,
+          93
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "יעקב חבל נחלתו",
+      "work": "Devarim",
+      "ref": "Devarim 32:9",
+      "sefariaRef": "Deuteronomy 32:9",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          103
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "אזוי ווי עס שטעט אין מעטערש ... די פופצטן שיעורי מעדות",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          119,
+          121,
+          122
+        ],
+        "confidence": 0.65
+      }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Rachel and Lavan's sheep form one theme: the mother of the exiled souls and the souls themselves, so Yaakov's rolling the stone was an act of easing their exile.",
+        "yi": "רחל און די צאן פון לבן זענען איין ענין: די מאמע פון די נשמות אין גלות און די נשמות אליין, און דערפאר איז יעקב'ס אראפקייקלען דעם שטיין געווען א פארלייכטערונג פון זייער גלות."
+      },
+      "evidence": {
+        "segs": [
+          8,
+          10,
+          47,
+          48,
+          49
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "text": {
+        "en": "The well is Knesses Yisrael, and the stone Yaakov rolled off it is a weight lifted from the Jewish heart in exile.",
+        "yi": "דער באר איז כנסת ישראל, און דער שטיין וואס יעקב האט אראפגעקייקלט איז א שווערקייט וואס ער האט אראפגענומען פונעם אידישן הארץ אין גלות."
+      },
+      "evidence": {
+        "segs": [
+          51,
+          52,
+          53,
+          54
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "text": {
+        "en": "Yaakov's seven years of work for Rachel were the time the souls still needed in Lavan's captivity before they could pass from Rachel to Yaakov.",
+        "yi": "די זיבן יאר וואס יעקב האט געארבעט פאר רחל זענען געווען די צייט וואס די נשמות האבן נאך געדארפט זיין אין לבן'ס שביה איידער זיי האבן געקענט איבערגיין פון רחל צו יעקב."
+      },
+      "evidence": {
+        "segs": [
+          63,
+          64,
+          65,
+          66,
+          67
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "text": {
+        "en": "Rachel's death on reaching Eretz Yisrael marks the end of her task, and her burial on the road prepares her to take it up again in later exiles.",
+        "yi": "רחל'ס פטירה ווען מ'איז אנגעקומען קיין ארץ ישראל ווייזט אז איר תפקיד האט זיך געענדיגט, און איר קבורה אויפן וועג גרייט זי צו אים צוריקצונעמען אין די שפעטערדיגע גלותן."
+      },
+      "evidence": {
+        "segs": [
+          75,
+          76,
+          77,
+          78,
+          79,
+          80
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "text": {
+        "en": "The shepherds' words that Rachel comes with the sheep were a sign that the time had come for the souls to be handed to Yaakov and turned from sheep into six hundred thousand Jewish souls.",
+        "yi": "די ווערטער פון די רועים אז רחל קומט מיט די צאן זענען געווען א סימן אז ס'איז שוין געקומען די צייט אז די נשמות זאלן איבערגעגעבן ווערן צו יעקב, און פון שאף זאלן ווערן זעקס הונדערט טויזנט אידישע נשמות."
+      },
+      "evidence": {
+        "segs": [
+          89,
+          90,
+          92,
+          93,
+          94,
+          95
+        ],
+        "confidence": 0.75
+      }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "The river of Jewish tears",
+        "yi": "דער טייך פון אידישע טרערן"
+      },
+      "retelling": {
+        "en": "After the passing of the Ruzhiner Rebbe, the Sadigura Rebbe once saw the Ruzhiner standing by a great river, bent over it. He said that this is the river of Jewish tears, where all the tears of the Jews gather together and come to that place.",
+        "yi": "נאך דער פטירה פונעם רוזשינער רבי'ן האט דער סאדיגערער רבי אמאל געזען ווי דער רוזשינער שטייט ביי א גרויסן טייך, איינגעבויגן איבערן טייך. האט ער געזאגט אז דאס איז דער טייך פון אידישע טרערן, וואו אלע טרערן פון אידן זאמלען זיך צוזאמען און קומען אהין צו יענעם ארט."
+      },
+      "people": [
+        "the Ruzhiner Rebbe",
+        "the Sadigura Rebbe"
+      ],
+      "evidence": {
+        "segs": [
+          114,
+          115,
+          116,
+          117,
+          118
+        ],
+        "confidence": 0.8
+      }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why does the passuk mention both Rachel and the sheep of Lavan as the reason Yaakov rolled the stone?",
+        "yi": "פארוואס דערמאנט דער פסוק סיי רחל און סיי די צאן פון לבן אלס די סיבה פארוואס יעקב האט אראפגעקייקלט דעם שטיין?"
+      },
+      "answer": {
+        "en": "Rachel is the mother of the Jews in exile and the sheep were Jewish souls captive at Lavan; seeing both, Yaakov wanted to ease their exile.",
+        "yi": "רחל איז די מאמע פון אידן אין גלות, און די צאן זענען געווען אידישע נשמות געפאנגען ביי לבן; ווען יעקב האט ביידע געזען, האט ער געוואלט פארלייכטערן זייער גלות."
+      },
+      "questionSegs": [
+        7,
+        8,
+        9
+      ],
+      "answerSegs": [
+        12,
+        13,
+        38,
+        46,
+        47,
+        48
+      ],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why did Yaakov work seven years for Rachel rather than take the flock at once?",
+        "yi": "פארוואס האט יעקב געארבעט זיבן יאר פאר רחל און נישט גלייך צוגענומען די צאן?"
+      },
+      "answer": {
+        "en": "The souls were not yet ready to come under Yaakov; they still needed time in Lavan's captivity, and meanwhile they stayed with Rachel.",
+        "yi": "די נשמות זענען נאך נישט געווען גרייט צו קומען אונטער יעקב; זיי האבן נאך געדארפט זיין א צייט ביי לבן אין שביה, און דערווייל זענען זיי געבליבן ביי רחל."
+      },
+      "questionSegs": [
+        62
+      ],
+      "answerSegs": [
+        63,
+        64,
+        65,
+        66,
+        67,
+        69
+      ],
+      "confidence": 0.7
+    }
+  ],
+  "takeaways": [],
+  "candidateTopics": [
+    "Kever Rachel",
+    "Rachel Imeinu as mother of the Jews in exile",
+    "Yaakov and the sheep of Lavan",
+    "Jewish souls captive in Lavan's kelipah",
+    "the importance of Jewish tears in exile",
+    "Eretz Yisrael and galus",
+    "the Ruzhiner Rebbe",
+    "tefillah for the geulah"
+  ],
+  "concepts": [
+    {
+      "he": "קבר רחל",
+      "heardAs": [
+        "קובע רחל"
+      ]
+    },
+    {
+      "he": "צאן לבן אחי אמו",
+      "heardAs": [
+        "ציון לאווען אחי ימי",
+        "ציין לבן",
+        "צייט לאבים"
+      ]
+    },
+    {
+      "he": "קליפה",
+      "heardAs": [
+        "קליפה"
+      ]
+    },
+    {
+      "he": "שביה",
+      "heardAs": [
+        "שבעה",
+        "באשיווע"
+      ]
+    },
+    {
+      "he": "כנסת ישראל",
+      "heardAs": [
+        "כנסת ישראל"
+      ]
+    },
+    {
+      "he": "תחת כנפי השכינה",
+      "heardAs": [
+        "תחת כנפי השכונה",
+        "כנפי השכינה"
+      ]
+    },
+    {
+      "he": "תפקיד",
+      "heardAs": [
+        "תפקוד"
+      ]
+    },
+    {
+      "he": "רחל מבכה",
+      "heardAs": [
+        "רחל ווענט"
+      ]
+    },
+    {
+      "he": "שיר המעלות",
+      "heardAs": [
+        "שורי מעלותים",
+        "שיעורי מעדות"
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Yaakov Avinu",
+      "heardAs": [
+        "יעקב",
+        "יענקוב",
+        "יענקב"
+      ]
+    },
+    {
+      "name": "Rachel Imeinu",
+      "heardAs": [
+        "רחל",
+        "רחל ימינו"
+      ]
+    },
+    {
+      "name": "Lavan",
+      "heardAs": [
+        "לבן",
+        "לאווען"
+      ]
+    },
+    {
+      "name": "the Ruzhiner Rebbe",
+      "heardAs": [
+        "רוזשנא"
+      ]
+    },
+    {
+      "name": "the Sadigura Rebbe",
+      "heardAs": [
+        "סאדיגא"
+      ]
+    }
+  ],
+  "asrNotes": "Yiddish ASR fair to poor; the pesukim are badly garbled but recoverable from the context of Bereishis 29. Segments 57-61 and 108-110 are only partly intelligible, and the Gemara on kibud av va'em (16-19) is reconstructed tentatively. Segments 139-140 are a briefly chanted line, and from segment 141 to the end there are long flagged stretches with no recoverable speech. The catalog title is a filename guess; the whole talk was evidently given at Kever Rachel."
+}

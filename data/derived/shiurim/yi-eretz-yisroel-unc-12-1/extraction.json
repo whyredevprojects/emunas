@@ -1,0 +1,725 @@
+{
+  "shiurId": "yi-eretz-yisroel-unc-12-1",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "At Kever Rochel on the last day of Av, the Rav explains Elul as the month Yaakov 'grabbed' back from Esav, traces the power of grabbing to Rochel's self-giving and to Binyamin, and calls for grabbing oneself out of today's trials through Torah together with tefillah.",
+      "yi": "ביי קבר רחל, אינעם לעצטן טאג פון אב, ערקלערט דער משגיח אז אלול איז דער חודש וואס יעקב האט צוריקגעכאפט פון עשו, ער ברענגט ארויס אז דער כח פון כאפן קומט פון רחל'ס אוועקגעבן פון זיך און פון בנימין, און ער רופט זיך צו כאפן ארויס פון די היינטיגע נסיונות מיט תורה צוזאמען מיט תפילה."
+    },
+    "abstract": {
+      "en": "Speaking at Kever Rochel as Av ends, the Rav brings the Zohar that Yaakov 'grabbed' the month of Elul from Esav, and a Midrash about a maiden who grabbed an angel's wings and was set as Elul's mazal, Besulah. Since a mazal is the flow of influence on its month, Elul's influence is grabbing: a person should grab from the sitra achra, not be grabbed by it. He then turns to Rochel, whose soul left with Binyamin's birth, and to the Midrash where Hashem forgives Israel in the merit of her giving her signs to her sister. Binyamin, her quintessence, has the power to grab back, as on Tu B'Av when his tribe grabbed wives at Shiloh. Sitting at Rochel's grave, the Rav calls for a resolution not to be grabbed by the yetzer hara, laments young men caught by electronic devices, and insists that Torah and tefillah must go together, recommending Rebbe Elimelech's tefillah before Shabbos davening.",
+      "yi": "ביי קבר רחל, ווען אב גייט אוועק, ברענגט דער משגיח דעם זוהר אז יעקב האט צוגעכאפט דעם חודש אלול פון עשו, און א מדרש אז א בתולה האט צוגעכאפט די כנפיים פון א מלאך און איז קבוע געווארן אלס דער מזל פון אלול, בתולה. ווייל א מזל איז די השפעה וואס גיסט זיך אויף זיין חודש, איז די השפעה פון אלול כאפן: מען דארף כאפן פון דעם סטרא אחרא און זיך נישט לאזן כאפן. דערנאך רעדט ער וועגן רחל, וואס איר נשמה איז ארויס ביי דער געבורט פון בנימין, און דעם מדרש אז דער אויבערשטער איז מוחל געווען די אידן אין איר זכות, ווייל זי האט אוועקגעגעבן די סימנים צו איר שוועסטער. בנימין, איר תמצית, האט דעם כח צוריקצוכאפן, ווי ביי ט\"ו באב ווען שבט בנימין האט געכאפט ווייבער אין שילה. דער משגיח רופט צו מקבל זיין נישט צו לאזן דעם יצר הרע כאפן, קלאגט אויף יונגעלייט וואס זענען פארכאפט געווארן דורך עלעקטראנישע כלים, און זאגט אז תורה און תפילה מוזן גיין צוזאמען, און ער עצה'ט צו זאגן די תפילה פון רבי אלימלך שבת אינדערפרי פארן דאווענען."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Following the Zohar, the Rav explains that Elul is a month Yaakov grabbed for himself from Esav's portion.",
+          "yi": "לויט דעם זוהר ערקלערט דער משגיח אז אלול איז א חודש וואס יעקב האט זיך צוגעכאפט פון עשו'ס חלק."
+        },
+        "evidence": {
+          "segs": [
+            37,
+            38,
+            41,
+            63
+          ],
+          "confidence": 0.75
+        }
+      },
+      {
+        "text": {
+          "en": "A mazal is the source of influence that flows onto its month, so the influence of Elul is the power to grab: to take from the sitra achra rather than be taken by it.",
+          "yi": "א מזל איז דער מקור פון השפעה וואס גיסט זיך אויף זיין חודש, ממילא איז די השפעה פון אלול דער כח צו כאפן: צו כאפן פון דעם סטרא אחרא און זיך נישט לאזן כאפן."
+        },
+        "evidence": {
+          "segs": [
+            68,
+            71,
+            76,
+            77,
+            87,
+            88
+          ],
+          "confidence": 0.8
+        }
+      },
+      {
+        "text": {
+          "en": "Rochel's soul left together with Binyamin's birth, so Binyamin is the quintessence of his mother.",
+          "yi": "רחל'ס נשמה איז ארויס צוזאמען מיט בנימין'ס געבורט, ממילא איז בנימין דער תמצית פון זיין מאמע."
+        },
+        "evidence": {
+          "segs": [
+            91,
+            93,
+            95,
+            104
+          ],
+          "confidence": 0.8
+        }
+      },
+      {
+        "text": {
+          "en": "Tu B'Av became a day of grabbing through Binyamin, whose tribe grabbed wives at Shiloh, and from then on Yaakov's portion can be grabbed back.",
+          "yi": "ט\"ו באב איז דורך בנימין געווארן א טאג פון כאפן, ווייל שבט בנימין האט דארט געכאפט ווייבער אין שילה, און פון דעמאלט אן קען מען צוריקכאפן דעם חלק פון יעקב."
+        },
+        "evidence": {
+          "segs": [
+            188,
+            191,
+            199,
+            208,
+            211
+          ],
+          "confidence": 0.75
+        }
+      },
+      {
+        "text": {
+          "en": "The Rav says Torah and tefillah must go together, and that this is the only counsel for the trials of our time.",
+          "yi": "דער משגיח זאגט אז תורה און תפילה מוזן זיין צוזאמען, און אז דאס איז די איינציגע עצה פאר די נסיונות פון אונזער צייט."
+        },
+        "evidence": {
+          "segs": [
+            344,
+            346,
+            353,
+            399,
+            400
+          ],
+          "confidence": 0.85
+        }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-eretz-yisrael-12-01-kever-rochel",
+      "startSeg": 0,
+      "endSeg": 44,
+      "title": {
+        "en": "Kever Rochel and the grabbed month of Elul",
+        "yi": "קבר רחל און דער צוגעכאפטער חודש אלול"
+      },
+      "summary": {
+        "en": "The Rav opens at Kever Rochel, saying the whole area is Rochel's place, and speaks of Rochel as mother of the Jewish people. He brings the Zohar that the months were divided between Yaakov and Esav and that Yaakov went and grabbed Elul.",
+        "yi": "דער משגיח עפנט ביי קבר רחל, און זאגט אז דער גאנצער ארט איז דער ארט פון רחל אמנו, די מאמע פון כלל ישראל. ער ברענגט דעם זוהר אז די חדשים זענען צעטיילט צווישן יעקב און עשו, און יעקב איז געגאנגען און האט צוגעכאפט אלול."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [
+        0
+      ],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-eretz-yisrael-12-01-kever-rochel",
+      "startSeg": 45,
+      "endSeg": 89,
+      "title": {
+        "en": "The mazal of Elul and the power to grab",
+        "yi": "דער מזל פון אלול און דער כח פון כאפן"
+      },
+      "summary": {
+        "en": "The Rav brings a Midrash that a maiden grabbed the wings of one of the fallen angels, flew up to the Kisei HaKavod and was set as the mazal Besulah, the mazal of Elul. He explains that a mazal is the flow of influence on its month, so Elul's influence is grabbing: a person must grab from the sitra achra and not let himself be grabbed by the desires of the times.",
+        "yi": "דער משגיח ברענגט א מדרש אז א בתולה האט צוגעכאפט די כנפיים פון איינעם פון די נפילים, איז ארויפגעפלויגן צום כסא הכבוד, און איז קבוע געווארן אלס דער מזל בתולה, דער מזל פון אלול. ער ערקלערט אז א מזל איז די השפעה וואס רינט אויף יענעם חודש, ממילא איז די השפעה פון אלול כאפן: מען דארף כאפן פון דעם סטרא אחרא און זיך נישט לאזן פארכאפן ביי די תאוות פון די צייטן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-eretz-yisrael-12-01-kever-rochel",
+      "startSeg": 90,
+      "endSeg": 169,
+      "title": {
+        "en": "Rochel's passing, Binyamin and her plea",
+        "yi": "רחל'ס פטירה, בנימין און איר תפילה"
+      },
+      "summary": {
+        "en": "The Rav explains that Rochel's soul left as Binyamin was born, and since the moment of passing holds the essence of a whole life, Binyamin is her quintessence. He brings the Midrash in which the Avos and Moshe pleaded in vain and Hashem forgave Israel for Rochel, who gave her signs to her sister, and the passuk promising that her children will return. Because Binyamin carries her self-giving, he has the merit to grab back what Esav wants for himself, since all of creation belongs to Yisrael.",
+        "yi": "דער משגיח ערקלערט אז רחל'ס נשמה איז ארויס ווען בנימין איז געבוירן געווארן, און ווייל דער זמן הפטירה איז דער תמצית פונעם גאנצן לעבן, איז בנימין איר תמצית. ער ברענגט דעם מדרש אז די אבות און משה רבינו האבן געבעטן און נישט אויפגעטון, און דער אויבערשטער איז מוחל געווען צוליב רחל, וואס האט אוועקגעגעבן די סימנים צו איר שוועסטער, און דעם פסוק אז ושבו בנים לגבולם. ווייל בנימין טראגט איר אוועקגעבן פון זיך, האט ער דעם זכות צוריקצוכאפן דאס וואס עשו וויל האלטן פאר זיך, ווייל די גאנצע בריאה געהערט צו ישראל."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [
+        0
+      ],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-eretz-yisrael-12-01-kever-rochel",
+      "startSeg": 170,
+      "endSeg": 269,
+      "title": {
+        "en": "Binyamin grabs: Tu B'Av and Kislev",
+        "yi": "בנימין כאפט: ט\"ו באב און כסלו"
+      },
+      "summary": {
+        "en": "The Rav tells of the war with Binyamin, the oath not to give them wives, and the advice to grab the daughters dancing at Shiloh, as in Sefer Shoftim; this was on Tu B'Av, which the Gemara counts as a yom tov for this reason. He explains that from Tu B'Av on the portion is Yaakov's, that the day became a day of grabbing through Binyamin, and that Binyamin's month Kislev also grabs days of Teves for Chanukah.",
+        "yi": "דער משגיח דערציילט פון דער מלחמה מיט שבט בנימין, די שבועה נישט צו געבן זיי קיין טעכטער, און די עצה צו כאפן די בנות ישראל וואס טאנצן אין די כרמים אין שילה, ווי עס שטייט אין ספר שופטים; דאס איז געווען ט\"ו באב, וואס די גמרא רעכנט דערפאר פאר א יום טוב. ער ערקלערט אז פון ט\"ו באב אן איז שוין דער חלק פון יעקב, אז דער טאג איז דורך בנימין געווארן א טאג פון כאפן, און אז בנימין'ס חודש כסלו כאפט אויך צו טעג פון טבת פאר חנוכה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-eretz-yisrael-12-01-kever-rochel",
+      "startSeg": 270,
+      "endSeg": 333,
+      "title": {
+        "en": "A resolution at Rochel's grave as Av ends",
+        "yi": "א החלטה ביי רחל'ס קבר ווען אב ענדיגט זיך"
+      },
+      "summary": {
+        "en": "On the last day of Av, sitting at the grave of Rochel, the root of grabbing, the Rav calls for a resolution not to let the yetzer hara grab, which he calls the avodah of Elul that Yaakov began. He laments the fine young men who come to him caught by today's electronic devices, says breaking out takes real self-sacrifice, and that everyone is affected to some degree.",
+        "yi": "אינעם לעצטן טאג פון אב, זיצנדיג ביי רחל, דער שורש פון כאפן, רופט דער משגיח צו מאכן א החלטה זיך נישט צו לאזן ביים יצר הרע, און ער זאגט אז דאס איז די עבודה פון חודש אלול וואס יעקב האט אנגעהויבן. ער קלאגט אויף די וואוילע יונגעלייט וואס קומען צו אים, נעבעך פארכאפט ביי די היינטיגע עלעקטראנישע כלים, און זאגט אז זיך ארויסצורייסן דארף מען מסירות נפש, און אז יעדער איינער איז אין א געוויסער מאס נפגע געווארן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-eretz-yisrael-12-01-kever-rochel",
+      "startSeg": 334,
+      "endSeg": 420,
+      "title": {
+        "en": "Torah together with tefillah",
+        "yi": "תורה צוזאמען מיט תפילה"
+      },
+      "summary": {
+        "en": "The Rav says that one cannot have tefillah without Torah nor Torah without tefillah, and tells of a young man who came crying to the Satmar Rav that he could not rid himself of bad thoughts. He stresses that no one can be sure when a sudden trial will come, that Torah with tefillah is the only counsel, and calls on all to enter the grabbed month of Elul grabbing with Torah and good middos, not foolishness.",
+        "yi": "דער משגיח זאגט אז מען קען נישט האבן תפילה אן תורה און נישט תורה אן תפילה, און ער דערציילט פון א יונגערמאן וואס איז געקומען וויינענדיג צום סאטמארער רב אז ער קען זיך נישט אפטרייסלען פון שלעכטע מחשבות. ער שטרייכט אונטער אז קיינער קען נישט זיכער זיין ווען א פלוצלינגער נסיון וועט קומען, אז תורה מיט תפילה איז די איינציגע עצה, און ער רופט אלע אריינצוגיין אין דעם צוגעכאפטן חודש אלול און כאפן מיט תורה און גוטע מידות, נישט מיט נארישקייטן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-eretz-yisrael-12-01-kever-rochel",
+      "startSeg": 421,
+      "endSeg": 484,
+      "title": {
+        "en": "Good davening and Rebbe Elimelech's tefillah",
+        "yi": "גוט דאווענען און די תפילה פון רבי אלימלך"
+      },
+      "summary": {
+        "en": "The Rav calls good davening the best counsel and recalls great men who came to tefillah with deep seriousness, naming Rabbi Shlomo Heiman, Rabbi Yisrael Chaim Kaplan and Rabbi Reuven Grozovsky. He speaks of chevlei Moshiach, says Rebbe Elimelech nullified them through tefillah, and recommends saying Rebbe Elimelech's tefillah on Shabbos morning before davening, taking ten minutes to plead before Hashem.",
+        "yi": "דער משגיח זאגט אז גוט דאווענען איז די בעסטע עצה, און ער דערמאנט גרויסע אידן וואס זענען געקומען מיט א שטארקן ערנסט צו תפילה: רבי שלמה היימאן, רבי ישראל חיים קאפלאן און רבי ראובן גראזאווסקי. ער רעדט פון חבלי משיח, זאגט אז רבי אלימלך האט זיי מבטל געווען מיט תפילה, און עצה'ט צו זאגן די תפילה פון רבי אלימלך שבת אינדערפרי פארן דאווענען, און נעמען צען מינוט צו בעטן דעם רבונו של עולם."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "אזוי שטעט מזוהב הקודש, איז יעקב געגאנגען און צוגעכאפט דעם עוול",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          37,
+          38,
+          39,
+          41
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "ס'איז דא א מדרש ... אזוי שטעט אין די מדרש",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          45,
+          52,
+          55,
+          59,
+          61
+        ],
+        "confidence": 0.65
+      }
+    },
+    {
+      "heardAs": "היום מלא יום הישנית",
+      "work": "Rashi",
+      "ref": "Rashi on Devarim 31:2",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          98,
+          99
+        ],
+        "confidence": 0.65
+      }
+    },
+    {
+      "heardAs": "ווי אזוי עס שטעט אין מדרש ... איז געקומען רחל און זי האט געבעטן",
+      "work": "Eichah Rabbah",
+      "ref": "Eichah Rabbah, Pesichta 24",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          107,
+          109,
+          116,
+          126,
+          133
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "heardAs": "סא מנהיג כלך ... ושבל בנים לגבי",
+      "work": "Yirmiyahu",
+      "ref": "Yirmiyahu 31:15-16",
+      "sefariaRef": "Jeremiah 31:15-16",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          134,
+          136,
+          139
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "בראשית וואראלא כהן בשפה ישראל שנקרא ראשית",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 1:1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          162,
+          163,
+          164
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "ווי אזוי ווי שטעט דארט אין ספר שבטים",
+      "work": "Shoftim",
+      "ref": "Shoftim 21:18-23",
+      "sefariaRef": "Judges 21:18-23",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          175,
+          179,
+          184,
+          187
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "ווען דער גמרא פרעגט ... חמישה עשר ביום",
+      "work": "Gemara Taanis",
+      "ref": "Taanis 30b",
+      "sefariaRef": "Taanit 30b",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          204,
+          205,
+          207,
+          208
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "די תפילה פון איום אלימלך",
+      "work": "Tefillah Kodem HaTefillah of Rebbe Elimelech",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": {
+        "segs": [
+          476,
+          477,
+          478
+        ],
+        "confidence": 0.8
+      }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav joins the Zohar's statement that Yaakov grabbed Elul with the Midrash that Elul's mazal, Besulah, was itself a maiden who grabbed an angel's wings, so the month's very nature is grabbing.",
+        "yi": "דער משגיח שטעלט צוזאמען דעם זוהר אז יעקב האט צוגעכאפט אלול מיט דעם מדרש אז דער מזל פון אלול, בתולה, איז אליין א בתולה וואס האט צוגעכאפט די כנפיים פון א מלאך, ממילא איז דער גאנצער טבע פונעם חודש כאפן."
+      },
+      "evidence": {
+        "segs": [
+          61,
+          63,
+          64,
+          65
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "text": {
+        "en": "He reverses the usual fear: rather than the sitra achra grabbing a piece of a person, the person must grab a piece from the sitra achra for himself.",
+        "yi": "ער דרייט איבער דעם געווענליכן פחד: נישט דער סטרא אחרא זאל כאפן א שטיקל פון דעם מענטש, נאר דער מענטש דארף כאפן א שטיקל פון דעם סטרא אחרא פאר זיך."
+      },
+      "evidence": {
+        "segs": [
+          76,
+          77,
+          78
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "text": {
+        "en": "Because the moment of passing holds a whole life, and Rochel's soul left with Binyamin's birth, Binyamin carries his mother's essence of giving away her own, and that is what gives him the power to grab back.",
+        "yi": "ווייל דער זמן הפטירה איז דער תמצית פון א גאנץ לעבן, און רחל'ס נשמה איז ארויס מיט בנימין'ס געבורט, טראגט בנימין דעם עצם פון זיין מאמע'ס אוועקגעבן פון זיך, און דאס גיט אים דעם כח צוריקצוכאפן."
+      },
+      "evidence": {
+        "segs": [
+          95,
+          104,
+          142,
+          150,
+          152
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "text": {
+        "en": "Tu B'Av, when Binyamin's men grabbed wives at Shiloh, marks the point from which the season returns to Yaakov's portion, making it a day of grabbing.",
+        "yi": "ט\"ו באב, ווען די אנשי בנימין האבן געכאפט ווייבער אין שילה, איז דער פונקט פון וואנען די צייט קערט זיך צוריק צו יעקב'ס חלק, און דערפאר איז עס א טאג פון כאפן."
+      },
+      "evidence": {
+        "segs": [
+          191,
+          197,
+          199,
+          211
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "text": {
+        "en": "Sitting at Rochel's grave on the last day of Av, at the edge of the grabbed month, is for the Rav the moment to resolve not to be grabbed by the yetzer hara.",
+        "yi": "צו זיצן ביי רחל'ס קבר אינעם לעצטן טאג פון אב, ביים שוועל פונעם צוגעכאפטן חודש, איז לויט דעם משגיח דער מאמענט צו מקבל זיין זיך נישט צו לאזן כאפן ביים יצר הרע."
+      },
+      "evidence": {
+        "segs": [
+          273,
+          276,
+          281,
+          283
+        ],
+        "confidence": 0.8
+      }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "The young man who cried to the Satmar Rav",
+        "yi": "דער יונגערמאן וואס האט געוויינט פארן סאטמארער רב"
+      },
+      "retelling": {
+        "en": "A young man came to the Satmar Rav crying that he could not free himself from bad thoughts. The Rebbe paced back and forth for a while before answering him. The Rav brings the story to show that Torah alone is not enough and tefillah is needed; the details of the Rebbe's answer are not clear in the recording.",
+        "yi": "א יונגערמאן איז אריינגעקומען צום סאטמארער רב און האט געוויינט אז ער קען זיך נישט אפטרייסלען פון שלעכטע מחשבות. דער רבי איז א שטיק צייט געגאנגען הין און צוריק איידער ער האט אים געענטפערט. דער משגיח ברענגט די מעשה צו ווייזן אז תורה אליין איז נישט גענוג און מען דארף האבן תפילה; די פרטים פון דעם רבי'ס תשובה זענען נישט קלאר אין דער אויפנאמע."
+      },
+      "people": [
+        "the Satmar Rav"
+      ],
+      "evidence": {
+        "segs": [
+          355,
+          357,
+          358,
+          360,
+          365,
+          372
+        ],
+        "confidence": 0.65
+      }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Must one fear that the sitra achra will grab a piece of him?",
+        "yi": "צי דארף מען מורא האבן אז דער סטרא אחרא וועט כאפן א שטיקל פון אים?"
+      },
+      "answer": {
+        "en": "On the contrary: Elul's power is that a person grabs a piece from the sitra achra for himself.",
+        "yi": "אדרבה: דער כח פון אלול איז אז דער מענטש כאפט א שטיקל פון דעם סטרא אחרא פאר זיך."
+      },
+      "questionSegs": [
+        76
+      ],
+      "answerSegs": [
+        77,
+        78,
+        87
+      ],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why is Tu B'Av counted as a yom tov?",
+        "yi": "פארוואס ווערט ט\"ו באב גערעכנט פאר א יום טוב?"
+      },
+      "answer": {
+        "en": "Because on that day the men of Binyamin were permitted to marry, grabbing wives at Shiloh.",
+        "yi": "ווייל אין יענעם טאג איז געווארן מותר אז די אנשי בנימין זאלן קענען חתונה האבן, און זיי האבן געכאפט ווייבער אין שילה."
+      },
+      "questionSegs": [
+        204,
+        205
+      ],
+      "answerSegs": [
+        207,
+        208,
+        211
+      ],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav calls for a resolution at the end of Av not to let oneself be grabbed by the sitra achra and the yetzer hara, but to grab oneself.",
+        "yi": "דער משגיח רופט צו מאכן א החלטה ביים סוף פון אב זיך נישט צו לאזן כאפן ביים סטרא אחרא און ביים יצר הרע, נאר זיך אליין צו כאפן."
+      },
+      "evidence": {
+        "segs": [
+          281,
+          282,
+          283,
+          284
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "text": {
+        "en": "He says the only counsel is Torah with tefillah and tefillah with Torah.",
+        "yi": "ער זאגט אז די איינציגע עצה איז תורה מיט תפילה און תפילה מיט תורה."
+      },
+      "evidence": {
+        "segs": [
+          399,
+          400
+        ],
+        "confidence": 0.85
+      }
+    },
+    {
+      "text": {
+        "en": "He calls on everyone to enter Elul grabbing with Torah and work on good middos, not with foolishness.",
+        "yi": "ער רופט אלע אריינצוגיין אין אלול און כאפן מיט תורה און ארבעטן אויף גוטע מידות, נישט מיט נארישקייטן."
+      },
+      "evidence": {
+        "segs": [
+          408,
+          410,
+          411,
+          412
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "text": {
+        "en": "He recommends saying the tefillah of Rebbe Elimelech on Shabbos morning before davening, taking ten minutes to plead before Hashem.",
+        "yi": "ער עצה'ט צו זאגן די תפילה פון רבי אלימלך שבת אינדערפרי פארן דאווענען, און נעמען צען מינוט צו בעטן דעם רבונו של עולם."
+      },
+      "evidence": {
+        "segs": [
+          475,
+          476,
+          477
+        ],
+        "confidence": 0.85
+      }
+    }
+  ],
+  "candidateTopics": [
+    "kever rochel",
+    "month of Elul",
+    "Yaakov grabbing Elul from Esav",
+    "mazal of Elul",
+    "Rochel and Binyamin",
+    "Tu B'Av",
+    "Torah and tefillah together",
+    "spiritual dangers of electronic devices",
+    "chevlei Moshiach",
+    "tefillah of Rebbe Elimelech"
+  ],
+  "concepts": [
+    {
+      "he": "קבר רחל",
+      "heardAs": [
+        "קבר רחל"
+      ]
+    },
+    {
+      "he": "רחל אמנו",
+      "heardAs": [
+        "רחל ימינו",
+        "רחל ומנה",
+        "רחל ומנהל"
+      ]
+    },
+    {
+      "he": "אלול",
+      "heardAs": [
+        "עוול",
+        "עול",
+        "אביל",
+        "אלול"
+      ]
+    },
+    {
+      "he": "עשו",
+      "heardAs": [
+        "אסף",
+        "אסאב"
+      ]
+    },
+    {
+      "he": "מזל בתולה",
+      "heardAs": [
+        "צלה",
+        "מזל אלול וצלה"
+      ]
+    },
+    {
+      "he": "סטרא אחרא",
+      "heardAs": [
+        "סידכע אחר",
+        "סטחה אחת"
+      ]
+    },
+    {
+      "he": "כסא הכבוד",
+      "heardAs": [
+        "כיסא התעווה"
+      ]
+    },
+    {
+      "he": "ט\"ו באב",
+      "heardAs": [
+        "חמישי עשרה ויאב",
+        "חמישה אסאב ויאב",
+        "חמישי אסאביאב"
+      ]
+    },
+    {
+      "he": "חבלי משיח",
+      "heardAs": [
+        "חבלי משיח",
+        "חברי משיח"
+      ]
+    },
+    {
+      "he": "זמן הפטירה",
+      "heardAs": [
+        "זמן הפטירה"
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Rochel",
+      "heardAs": [
+        "רחל"
+      ]
+    },
+    {
+      "name": "Yaakov",
+      "heardAs": [
+        "יענקי דבינו",
+        "יעקב",
+        "יענק"
+      ]
+    },
+    {
+      "name": "Binyamin",
+      "heardAs": [
+        "בנימן",
+        "בנימין",
+        "בן יאמן"
+      ]
+    },
+    {
+      "name": "Esav",
+      "heardAs": [
+        "אסף"
+      ]
+    },
+    {
+      "name": "Moshe Rabbeinu",
+      "heardAs": [
+        "משה בענק",
+        "משה בן'"
+      ]
+    },
+    {
+      "name": "the Satmar Rav",
+      "heardAs": [
+        "דער דרודו פון סאטמאר"
+      ]
+    },
+    {
+      "name": "Rabbi Shlomo Heiman",
+      "heardAs": [
+        "שלמה היימל"
+      ]
+    },
+    {
+      "name": "Rabbi Yisrael Chaim Kaplan",
+      "heardAs": [
+        "רבי ישראל חיים קאפלאן"
+      ]
+    },
+    {
+      "name": "Rabbi Reuven Grozovsky",
+      "heardAs": [
+        "רבי ראוון גורזאווסקי"
+      ]
+    },
+    {
+      "name": "Rebbe Elimelech of Lizhensk",
+      "heardAs": [
+        "רבי מיילע",
+        "רבי אלימלך",
+        "איום אלימלך"
+      ]
+    }
+  ],
+  "asrNotes": "Yiddish ASR is poor; Hebrew quotations and month names are heavily garbled (Elul as 'עוול'/'אביל', Esav as 'אסף'). The opening (segs 12-26), the division of the months among the tribes (segs 29-36, 226-269), the Rav's remarks on Mordechai and Adar, and much of the last part (segs 413-420, 432-470) could not be recovered reliably and are left out. Segments 421 and 484 are flagged as sparse; their garbled text is not used. The catalog title is a filename guess, confirmed by the Rav's words at Kever Rochel."
+}
