@@ -1,0 +1,40 @@
+---
+/**
+ * The title page's indexes, one line each, in the order of Quiet C5: ענינים · ערכים · שמות ·
+ * מראי מקומות · מעשיות · לוח · שנים (lines from `indexesBlock()` in model.ts). The corpus indexes
+ * carry their counts from the layer and one AI label under the heading; the calendar and years are
+ * the catalog's own. The block is the target of the "Indexes" nav item (`#indexes`).
+ */
+import EntityLabel from "./EntityLabel.astro";
+import type { Ed } from "../../lib/edition.ts";
+import { INDEXES_ANCHOR } from "../../lib/nav.ts";
+import type { IndexLine } from "./model.ts";
+import "./corpus.css";
+
+interface Props {
+  ed: Ed;
+  heading: string;
+  lines: readonly IndexLine[];
+  /** Visible shiurim the corpus indexes are compiled from (0: no layer, no label). */
+  visibleShiurim: number;
+}
+
+const { ed, heading, lines, visibleShiurim } = Astro.props;
+const generated = lines.some((l) => l.generated) && visibleShiurim > 0;
+---
+<section class="indexes" id={INDEXES_ANCHOR} aria-labelledby="indexes-heading">
+  <h2 id="indexes-heading">{heading}</h2>
+  {generated && <EntityLabel ed={ed} variant="index" count={visibleShiurim} />}
+  <ul role="list" class="indexes-list">
+    {lines.map((l) => (
+      <li data-index={l.id}>
+        <a href={l.href}>{l.label}</a>
+        {l.sub.length > 0 && (
+          <span class="note">: {l.sub.map((s, i) => <>{i > 0 && <span aria-hidden="true"> · </span>}<a href={s.href}>{s.label}</a></>)}</span>
+        )}
+        {l.note !== "" && <span class="note">: {l.note}</span>}
+        {l.count !== null && <><span class="sep" aria-hidden="true"> · </span><span class="count">{l.count}</span></>}
+      </li>
+    ))}
+  </ul>
+</section>

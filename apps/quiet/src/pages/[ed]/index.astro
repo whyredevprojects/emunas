@@ -2,19 +2,20 @@
 /**
  * The title page, שער (concept-quiet §5.1, tech-quiet §2 `/{ed}/`): what this is, and the three ways
  * in. The name and one sentence; "this week" (parsha and nearest zman, computed at build time);
- * the contents in brief (sections with counts); the indexes, one line each (anchor `#indexes`,
- * the target of the "Indexes" nav item); and the standing coverage line. No featured, popular
- * or recently added.
+ * the contents in brief (sections with counts); the indexes, one line each, in the order of
+ * concept-quiet-corpus C5 with counts from the corpus layer (anchor `#indexes`, the target of the
+ * "Indexes" nav item); and the standing coverage line. No featured, popular or recently added.
  */
-import { formatQuiet } from "@emunas/links";
 import Base from "../../layouts/Base.astro";
 import ThisWeek from "../../components/catalog/ThisWeek.astro";
 import { loadCatalogCorpus } from "../../components/catalog/corpus.ts";
+import IndexesBlock from "../../components/corpus/IndexesBlock.astro";
+import { quietLayer } from "../../components/corpus/layer.ts";
+import { indexesBlock } from "../../components/corpus/model.ts";
 import { buildDate, contentsHref, contentsModel, corpusTotals, sectionHref, thisWeekModel } from "../../components/catalog/model.ts";
-import { useCatalogT, type CatalogKey } from "../../components/catalog/strings.ts";
+import { useCatalogT } from "../../components/catalog/strings.ts";
 import { runAttrs } from "../../lib/bidi.ts";
 import { EDS, type Ed } from "../../lib/edition.ts";
-import { INDEXES_ANCHOR } from "../../lib/nav.ts";
 import { useT } from "../../i18n/index.ts";
 
 export function getStaticPaths() {
@@ -32,16 +33,13 @@ const week = thisWeekModel(corpus, ed, buildDate(process.env));
 const sections = [...contents.yiddish, ...contents.english];
 const uncataloguedCount = contents.uncatalogued.reduce((a, s) => a + s.count, 0);
 
-const indexes: { key: CatalogKey; note: CatalogKey; href: string }[] = [
-  { key: "index.parsha", note: "index.parsha.note", href: formatQuiet({ kind: "index", ed, index: "calendar-parsha" }) },
-  { key: "index.zman", note: "index.zman.note", href: formatQuiet({ kind: "index", ed, index: "calendar-zman" }) },
-  { key: "index.years", note: "index.years.note", href: formatQuiet({ kind: "index", ed, index: "years" }) },
-  { key: "index.sources", note: "index.sources.note", href: formatQuiet({ kind: "index", ed, index: "sources" }) },
-  { key: "index.stories", note: "index.stories.note", href: formatQuiet({ kind: "index", ed, index: "stories" }) },
-  { key: "index.people", note: "index.people.note", href: formatQuiet({ kind: "index", ed, index: "people" }) },
-  { key: "index.inyanim", note: "index.inyanim.note", href: formatQuiet({ kind: "index", ed, index: "concepts" }) },
-  { key: "index.search", note: "index.search.note", href: formatQuiet({ kind: "search", ed }) },
-];
+// The index pages this build has (`<dir>/index.astro` beside this page): a line whose page is not
+// built yet is left out rather than linked to a 404.
+const builtDirs = new Set(
+  Object.keys(import.meta.glob("./*/index.astro")).map((f) => f.split("/").at(-2) ?? ""),
+);
+const layer = quietLayer();
+const indexLines = indexesBlock(ed, layer.enabled ? layer.counts : null, (href) => builtDirs.has(href.split("/")[2] ?? ""));
 ---
 <Base ed={ed} title={t("site.name")}>
   <header class="title-page">
@@ -75,14 +73,7 @@ const indexes: { key: CatalogKey; note: CatalogKey; href: string }[] = [
     <p><a href={contentsHref(ed)}>{c("home.contentsAll")}</a></p>
   </section>
 
-  <section class="indexes" id={INDEXES_ANCHOR} aria-labelledby="indexes-heading">
-    <h2 id="indexes-heading">{c("home.indexes")}</h2>
-    <ul role="list">
-      {indexes.map((i) => (
-        <li><a href={i.href}>{c(i.key)}</a><span class="note">: {c(i.note)}</span></li>
-      ))}
-    </ul>
-  </section>
+  <IndexesBlock ed={ed} heading={c("home.indexes")} lines={indexLines} visibleShiurim={layer.visibleShiurim} />
 </Base>
 
 <style>
@@ -103,8 +94,7 @@ const indexes: { key: CatalogKey; note: CatalogKey; href: string }[] = [
     color: var(--color-ink-muted);
   }
 
-  .brief > * + *,
-  .indexes > * + * {
+  .brief > * + * {
     margin-block-start: var(--space-s);
   }
 
@@ -120,12 +110,7 @@ const indexes: { key: CatalogKey; note: CatalogKey; href: string }[] = [
   }
 
   .count,
-  .sep,
-  .note {
+  .sep {
     color: var(--color-ink-muted);
-  }
-
-  .indexes li + li {
-    margin-block-start: var(--space-2xs);
   }
 </style>

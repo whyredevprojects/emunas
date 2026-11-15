@@ -193,10 +193,10 @@ describe.each(["yi", "en"] as const)("%s edition", (ed) => {
     await unc.context().close();
   });
 
-  it("series page: Tanya by perek, sibling link to the other language", async () => {
+  it("series page: Tanya by perek, no link pairing it with the other language", async () => {
     const page = await open(`/${ed}/series/tanya-yi/`, { js: false });
     expect(await page.locator("section.group h2").count()).toBeGreaterThan(10);
-    expect(await page.locator(`a[data-sibling="tanya-en"][href="/${ed}/series/tanya-en/"]`).count()).toBe(1);
+    expect(await page.locator(`a[data-sibling], a[href="/${ed}/series/tanya-en/"]`).count()).toBe(0);
     const parts = await page.locator("tbody .col-num").allInnerTexts();
     expect(parts.map((p) => Number(p.trim()))).toEqual(parts.map((_, i) => i + 1));
     await page.context().close();

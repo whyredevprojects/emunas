@@ -189,11 +189,12 @@ describe("catalog models on the mini corpus", () => {
     expect(sectionModel(corpus, "shonos", "yi")!.layout.kind).toBe("flat");
   });
 
-  it("builds series pages with parts in order, perek groups and the sibling link", () => {
+  it("builds series pages with parts in order and perek groups, never paired with the other language", () => {
     const tanya = seriesModel(corpus, "tanya-yi", "yi")!;
     expect(tanya.rows.map((r) => r.part)).toEqual([1, 2, 3, 4]);
     expect(tanya.groups!.map((g) => g.perek)).toEqual(["א", "ב", "י\"ב", "י\"ח"]);
-    expect(tanya.sibling).toMatchObject({ id: "tanya-en", href: "/yi/series/tanya-en/" });
+    // Yiddish and English shiurim are separate shiurim, never translations (C1.8 pairing removal).
+    expect("sibling" in tanya).toBe(false);
     expect(tanya.sections.map((s) => s.key)).toEqual(["pocket-guide-2012:tanya-1", "pocket-guide-2012:tanya-2"]);
     expect(seriesModel(corpus, "emunah-yi", "en")!.groups).toBeNull();
     expect(seriesModel(corpus, "no-such-series", "en")).toBeNull();
@@ -314,7 +315,7 @@ describe("catalog models on today's data", () => {
       expect(flat).toEqual(flat.map((_, i) => i + 1));
       for (const g of m.groups!) for (const r of g.rows) expect(r.perek?.replace(/[”"]/g, "") ?? null).toBe(g.perek?.replace(/[”"]/g, "") ?? null);
     }
-    expect(seriesModel(corpus, "tanya-yi", "en")!.sibling?.id).toBe("tanya-en");
+    expect("sibling" in seriesModel(corpus, "tanya-yi", "en")!).toBe(false);
   });
 
   it("catalog-only rows carry no AI text on any section or series page", () => {

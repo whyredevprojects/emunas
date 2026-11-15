@@ -1,0 +1,41 @@
+---
+/**
+ * The head of a corpus entry page: the headword, the Hebrew beside the English (`headword()` in
+ * model.ts), an optional line of counts, and the "ראה גם" line: cross-links to the same subject
+ * in another index (a topic and its concept, a person and his sefer). Data strings are isolates in
+ * their own script. The default slot follows (a description, a "throughout" note).
+ */
+import type { Ed } from "../../lib/edition.ts";
+import type { Run } from "../indexes/model.ts";
+import { useCorpusT } from "./strings.ts";
+import "./corpus.css";
+
+export interface SeeAlso {
+  readonly label: Run;
+  readonly href: string;
+}
+
+interface Props {
+  ed: Ed;
+  title: Run;
+  alt?: Run | null;
+  meta?: string | null;
+  seeAlso?: readonly SeeAlso[];
+}
+
+const { ed, title, alt = null, meta = null, seeAlso = [] } = Astro.props;
+const t = useCorpusT(ed);
+---
+<header class="entry-head">
+  <h1><bdi lang={title.lang} dir={title.dir}>{title.text}</bdi>{alt && <> <span class="alt-name"><bdi lang={alt.lang} dir={alt.dir}>{alt.text}</bdi></span></>}</h1>
+  {meta && <p class="entry-meta">{meta}</p>}
+  {seeAlso.length > 0 && (
+    <p class="see-also">
+      <span class="see-also-label">{t("entry.seeAlso")}:</span>{" "}
+      {seeAlso.map((s, i) => (
+        <>{i > 0 && <span class="sep" aria-hidden="true"> · </span>}<a href={s.href}><bdi lang={s.label.lang} dir={s.label.dir}>{s.label.text}</bdi></a></>
+      ))}
+    </p>
+  )}
+  <slot />
+</header>
