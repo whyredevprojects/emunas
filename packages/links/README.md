@@ -22,8 +22,41 @@ the other". Time is global seconds (C5), written as whole seconds.
 | Catalog section | `/{ed}/section/{slug}/` (`quietPaths().section(ed, {source, id})`; slug = id for the Pocket Guide, `unc-` + id otherwise) | none: maps to the UI home |
 | Series | `/{ed}/series/{id}/` | `/{ui}/series/{id}` |
 | Parsha / Zman | `/{ed}/calendar/{parsha,zman}/{key}/` | `/{ui}/o/{key}` |
-| Work / Person / Concept | `/{ed}/{sources,people,inyanim}/{key}/` (index anchor `/{ed}/people/#{key}` below threshold) | `/{ui}/{seforim,p,c}/{key}` |
+| Topic tree / topic | `/{ed}/inyanim/` · `/{ed}/inyanim/{topicId}/` (+ `all/`) | Explore map `/{ui}/explore` · `/{ui}/t/{topicId}` |
+| Glossary / concept | `/{ed}/erachim/` · `/{ed}/erachim/{conceptId}/` | `/{ui}/c/{conceptId}` |
+| Person | `/{ed}/people/{personId}/` (+ `all/`) | `/{ui}/p/{personId}` |
+| Work | `/{ed}/sources/{workId}/` | `/{ui}/seforim/{workId}` (+ `/{chapter}`) |
+| Story | `/{ed}/stories/{storyId}/` | `/{ui}/maasios/{storyId}` |
+| Thread | none in this cut → `/{ed}/#indexes` | `/{ui}/th/{threadId}` (noindex, D8) |
 | Search | `/{ed}/search/?q=` | `/{ui}/search?q=` |
+
+### Corpus entries (corpus-wave-plan §3.5, C1.4)
+
+Corpus-wide entities parse into `{ kind: "entry", entry: CorpusKind, id, all? }` and are addressed by
+corpus id. `ענינים` (`inyanim`) now names the topic tree; concepts are glossary entries under
+`erachim`. All of them are AI-generated and unreviewed: label them as the addenda say (the
+wording is in `@emunas/i18n`, `CORPUS_LABELS`).
+
+- **Pages** come from the layer's page flags: `pageLookupFromLayer({ topics, concepts, people,
+  works, stories, threads })` (the `.corpus/layer/*.json` files; each optional) gives
+  `LinkData.hasPage(site, kind, id)` and `conceptTopic(id)`. Without flags Quiet falls back to the
+  legacy shiur-count thresholds and anything else is assumed to have a page.
+- **Below threshold**: Quiet links the index anchor (`/{ed}/erachim/#{id}`); Live has no link
+  (`hrefFor("live", route)` and `equivalent()` return null).
+- **Merged concept**: a concept with `mergedIntoTopic` formats as its topic on both sites.
+- **Canonical**: a Live entry page points at its Quiet page when Quiet has one; otherwise
+  `canonicalFor` is null and `noindexFor` is true. Threads always: null and noindex.
+- **Old addresses**: `legacyPaths(site, kind, oldKey)` lists every address a normalize-keyed person,
+  work or concept had (Quiet `/people/`, `/sources/`, `/inyanim/{conceptKey}/`; Live `/p/`, `/c/`,
+  `/seforim/` + chapter). An old `/inyanim/{key}/` whose key is a topic id with a page *is* that
+  topic page and gets no redirect. `legacyRedirects(site, row)` turns a layer `redirects.json`
+  legacy row into from → to pairs (unmatched → the index); `corpusRedirects(site, kind, from, to)`
+  does the same for retired corpus ids.
+
+**Legacy, until C1.8/C2 move the pages (C3.1 removes it):** the `{ kind: "entity" }` route and
+`quietPaths().concept()` still format the normalize-keyed addresses (Quiet concepts at
+`/{ed}/inyanim/{key}/`, index `"concepts"` at `/{ed}/inyanim/`) so the pages that are not on
+the layer yet keep their links. No parser returns them any more.
 
 ## Use
 
@@ -42,7 +75,8 @@ const links = createLinks({
 });
 links.live.shiur("en", id, { t: player.currentTime }); // "Open in the listening app"
 links.equivalent(url);       // the same page on the other site (Live-only params dropped)
-links.canonicalFor(liveUrl); // always the Quiet origin, never a fragment
+links.canonicalFor(liveUrl); // the Quiet origin, never a fragment; null for threads and no-Quiet-page entries
+links.noindexFor(liveUrl);   // true exactly when a Live entry page has no canonical
 links.hreflangPair(path);    // yi + en + x-default (site root)
 links.withEdition(url, "yi"); // edition switch that keeps the place
 ```
@@ -51,7 +85,9 @@ links.withEdition(url, "yi"); // edition switch that keeps the place
 
 | Lookup | Needed for | Without it |
 |---|---|---|
-| `entityCount(kind, key)` | Quiet entity page vs index anchor (works/people ≥2, concepts ≥3) | the page is assumed to exist |
+| `hasPage(site, kind, id)` | corpus entry page vs index anchor (Quiet) or no link (Live); canonical/noindex | `entityCount`, else the page is assumed to exist |
+| `conceptTopic(id)` | concept merged into a topic → the topic | the concept's own address |
+| `entityCount(kind, key)` | legacy fallback: Quiet page vs index anchor (works/people ≥2, concepts ≥3) | the page is assumed to exist |
 | `occasionKind(key)` | Live `/o/{key}` → Quiet parsha or zman page | Quiet edition home |
 | `sectionStart(id, i)` | Quiet `#s{i}` → Live `?t=` | Live link carries only `m=` |
 
@@ -63,6 +99,6 @@ domain exists (O8) and on staging: `emunas-quiet[-staging].<subdomain>.workers.d
 workers.dev, localhost and IPs (send `X-Robots-Tag: noindex`). A Quiet origin on `listen.*`
 is rejected, so a canonical can never point at Live.
 
-Pages that exist on one site only map to the closest page on the other (Live Explore and
-shelf → Quiet edition home; Quiet contents, years, about → Live UI home; seforim ↔ sources,
+Pages that exist on one site only map to the closest page on the other (Live Explore → the
+Quiet topic tree; shelf → Quiet edition home; Quiet contents, years, about → Live UI home; seforim ↔ sources,
 maasios ↔ stories). Unknown paths fall back to the edition home, else the root.

@@ -3,16 +3,32 @@
  * Live paths have no trailing slash except the UI home `/{ui}/`.
  * Only `t` and `m` (shiur) and `q` (search) survive parsing; Live-only state such as
  * `audio`, `read`, `lens` and Explore facets is dropped (integration-plan §2.2).
+ *
+ * Corpus entries (corpus-wave-plan §3.5): `/{ui}/t/{topicId}`, `/{ui}/c/{conceptId}` (a concept
+ * merged into a topic goes to `/t/`), `/{ui}/p/{personId}`, `/{ui}/seforim/{workId}`,
+ * `/{ui}/maasios/{storyId}`, `/{ui}/th/{threadId}`. The topic tree is the Explore map.
  */
 import { momentId, parseMomentId } from "./moment.ts";
-import { isEd, type EntityKind, type IndexName, type LinkData, type Route } from "./types.ts";
+import { resolveEntry } from "./pages.ts";
+import { isEd, type CorpusKind, type EntityKind, type IndexName, type LinkData, type Route } from "./types.ts";
 import { buildQuery, formatSeconds, parseSeconds, pathSegments, queryGet, seg, splitUrl } from "./url.ts";
 
 const ENTITY_SEG: Readonly<Record<EntityKind, string>> = { work: "seforim", person: "p", concept: "c" };
-const SEG_ENTITY: ReadonlyMap<string, EntityKind> = new Map([
-  ["seforim", "work"],
-  ["p", "person"],
+
+/** Corpus entry segments. */
+export const LIVE_ENTRY_SEG: Readonly<Record<CorpusKind, string>> = {
+  topic: "t",
+  concept: "c",
+  person: "p",
+  work: "seforim",
+  story: "maasios",
+  thread: "th",
+};
+const SEG_ENTRY: ReadonlyMap<string, CorpusKind> = new Map([
+  ["t", "topic"],
   ["c", "concept"],
+  ["p", "person"],
+  ["th", "thread"],
 ]);
 
 const INDEX_PATH: Readonly<Record<IndexName, string | null>> = {
@@ -20,6 +36,7 @@ const INDEX_PATH: Readonly<Record<IndexName, string | null>> = {
   stories: "maasios",
   series: "series",
   explore: "explore",
+  topics: "explore", // the topic map is the front of Explore
   shelf: "shelf",
   // Quiet-only listings → UI home
   contents: null,
@@ -28,6 +45,7 @@ const INDEX_PATH: Readonly<Record<IndexName, string | null>> = {
   years: null,
   about: null,
   people: null,
+  glossary: null,
   concepts: null,
 };
 
@@ -51,6 +69,10 @@ export function formatLive(route: Route, data: LinkData = {}, opts: { readonly b
       return `/${route.ed}/o/${seg(route.key)}`;
     case "entity":
       return `/${route.ed}/${ENTITY_SEG[route.entity]}/${seg(route.key)}`;
+    case "entry": {
+      const r = resolveEntry(route, data);
+      return `/${r.ed}/${LIVE_ENTRY_SEG[r.entry]}/${seg(r.id)}`;
+    }
     case "index": {
       const p = INDEX_PATH[route.index];
       return p === null ? `/${route.ed}/` : `/${route.ed}/${p}`;
@@ -95,11 +117,13 @@ export function parseLive(url: string, data: LinkData = {}): Route | null {
     case "seforim":
       // `/seforim/:workId/:chapter` still names the work.
       if (s.length === 2) return { kind: "index", ed, index: "sources" };
-      return s.length <= 4 && b !== undefined ? { kind: "entity", ed, entity: "work", key: b } : null;
+      return s.length <= 4 && b !== undefined ? { kind: "entry", ed, entry: "work", id: b } : null;
     case "maasios":
-      return s.length === 2 ? { kind: "index", ed, index: "stories" } : null;
+      if (s.length === 2) return { kind: "index", ed, index: "stories" };
+      return s.length === 3 && b !== undefined ? { kind: "entry", ed, entry: "story", id: b } : null;
     case "explore":
-      return s.length === 2 ? { kind: "index", ed, index: "explore" } : null;
+      // Explore opens on the topic map (Live C.2); its lenses and facets are Live-only state.
+      return s.length === 2 ? { kind: "index", ed, index: "topics" } : null;
     case "shelf":
     case "pl":
       return { kind: "index", ed, index: "shelf" };
@@ -109,8 +133,8 @@ export function parseLive(url: string, data: LinkData = {}): Route | null {
       return q ? { kind: "search", ed, q } : { kind: "search", ed };
     }
     default: {
-      const entity = a === undefined ? undefined : SEG_ENTITY.get(a);
-      if (entity && s.length === 3 && b !== undefined) return { kind: "entity", ed, entity, key: b };
+      const entry = a === undefined ? undefined : SEG_ENTRY.get(a);
+      if (entry && s.length === 3 && b !== undefined) return { kind: "entry", ed, entry, id: b };
       return null;
     }
   }

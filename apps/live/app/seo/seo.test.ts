@@ -189,7 +189,7 @@ describe("head tags", () => {
     expect(c("/en/o/a-wedding")).toBe("https://example.org/en/"); // no Quiet page: edition home
     expect(c("/en/seforim/genesis")).toBe("https://example.org/en/sources/genesis/");
     expect(c("/en/p/achashverosh")).toBe("https://example.org/en/people/achashverosh/");
-    expect(c("/yi/c/emunah-1")).toBe("https://example.org/yi/inyanim/emunah-1/");
+    expect(c("/yi/c/emunah-1")).toBe("https://example.org/yi/erachim/emunah-1/"); // glossary entry (§3.5)
     expect(c("/en/")).toBe("https://example.org/en/");
   });
 

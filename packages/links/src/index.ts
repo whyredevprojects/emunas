@@ -3,8 +3,20 @@
  * hreflang helpers, host config (integration-plan §2). Pure and browser-safe: no Node
  * APIs, no DOM, no globals.
  */
-export type { Ed, Site, MomentKind, MomentRef, EntityKind, OccasionKind, IndexName, Route, LinkData } from "./types.ts";
-export { EDS, MOMENT_KINDS, isEd } from "./types.ts";
+export type {
+  Ed,
+  Site,
+  MomentKind,
+  MomentRef,
+  EntityKind,
+  LegacyKind,
+  CorpusKind,
+  OccasionKind,
+  IndexName,
+  Route,
+  LinkData,
+} from "./types.ts";
+export { EDS, MOMENT_KINDS, CORPUS_KINDS, isEd } from "./types.ts";
 export type { Hosts, HostEnv } from "./hosts.ts";
 export {
   hostsFromEnv,
@@ -19,8 +31,21 @@ export {
   LIVE_WORKER,
 } from "./hosts.ts";
 export { momentId, parseMomentId, type ParsedMomentId } from "./moment.ts";
-export { ENTITY_PAGE_THRESHOLD, quietHasEntityPage, formatQuiet, parseQuiet } from "./quiet.ts";
-export { formatLive, parseLive } from "./live.ts";
+export { ENTITY_PAGE_THRESHOLD, quietHasEntityPage, hasPageOn, resolveEntry, type EntryRoute } from "./pages.ts";
+export { formatQuiet, parseQuiet, QUIET_ENTRY_DIR, INDEXES_ANCHOR } from "./quiet.ts";
+export { formatLive, parseLive, LIVE_ENTRY_SEG } from "./live.ts";
+export {
+  pageLookupFromLayer,
+  hrefFor,
+  legacyPaths,
+  legacyRedirects,
+  corpusRedirects,
+  type LayerPagesInput,
+  type LayerLinkData,
+  type LegacyPath,
+  type LegacyRedirectInput,
+  type RedirectPair,
+} from "./corpus.ts";
 export {
   sectionSlug,
   quietSectionPath,
@@ -36,5 +61,6 @@ export {
   type QuietShiurOptions,
   type LiveShiurOptions,
   type EntityOptions,
+  type EntryOptions,
 } from "./builders.ts";
 export { createLinks, type Links, type HreflangLink, type ParsedSiteUrl } from "./links.ts";

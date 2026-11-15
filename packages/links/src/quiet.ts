@@ -1,20 +1,56 @@
 /**
  * Quiet (`<domain>`) paths: parse into and format from a site-neutral Route.
  * Every path ends in a slash (`html_handling: "auto-trailing-slash"`).
+ *
+ * Corpus entries (corpus-wave-plan §3.5): topics at `/{ed}/inyanim/{id}/`, glossary entries at
+ * `/{ed}/erachim/{id}/`, people at `/{ed}/people/{id}/`, works at `/{ed}/sources/{id}/`, stories
+ * at `/{ed}/stories/{id}/`; `all/` continues a topic or person. An entry without a Quiet page
+ * links to its index anchor. Threads have no Quiet page in this cut: the edition home's
+ * `#indexes`.
  */
-import { isEd, type Ed, type EntityKind, type IndexName, type LinkData, type Route } from "./types.ts";
+import { allowsAll, hasPageOn, quietHasEntityPage, resolveEntry, ENTITY_PAGE_THRESHOLD } from "./pages.ts";
+import {
+  isEd,
+  type CorpusKind,
+  type Ed,
+  type EntityKind,
+  type IndexName,
+  type LinkData,
+  type Route,
+} from "./types.ts";
 import { buildQuery, formatSeconds, parseSeconds, pathSegments, queryGet, seg, splitUrl } from "./url.ts";
 
-/** Quiet creates entity pages only at ≥2 shiurim (concepts ≥3), integration-plan §2.2. */
-export const ENTITY_PAGE_THRESHOLD: Readonly<Record<EntityKind, number>> = { work: 2, person: 2, concept: 3 };
+export { ENTITY_PAGE_THRESHOLD, quietHasEntityPage };
 
+/** Legacy entity directories (`{kind: "entity"}`): concepts were under `inyanim`. */
 const ENTITY_DIR: Readonly<Record<EntityKind, string>> = { work: "sources", person: "people", concept: "inyanim" };
-const DIR_ENTITY: ReadonlyMap<string, EntityKind> = new Map([
-  ["sources", "work"],
+
+/** Corpus entry directories; null: no Quiet page of this kind. */
+export const QUIET_ENTRY_DIR: Readonly<Record<CorpusKind, string | null>> = {
+  topic: "inyanim",
+  concept: "erachim",
+  person: "people",
+  work: "sources",
+  story: "stories",
+  thread: null,
+};
+const DIR_ENTRY: ReadonlyMap<string, CorpusKind> = new Map([
+  ["inyanim", "topic"],
+  ["erachim", "concept"],
   ["people", "person"],
-  ["inyanim", "concept"],
+  ["sources", "work"],
+  ["stories", "story"],
 ]);
-const ENTITY_INDEX: Readonly<Record<EntityKind, IndexName>> = { work: "sources", person: "people", concept: "concepts" };
+const ENTRY_INDEX: Readonly<Record<string, IndexName>> = {
+  inyanim: "topics",
+  erachim: "glossary",
+  people: "people",
+  sources: "sources",
+  stories: "stories",
+};
+
+/** The anchor on the edition home that lists the indexes (threads point here in this cut). */
+export const INDEXES_ANCHOR = "indexes";
 
 const INDEX_PATH: Readonly<Record<IndexName, string | null>> = {
   contents: "contents/",
@@ -25,16 +61,13 @@ const INDEX_PATH: Readonly<Record<IndexName, string | null>> = {
   sources: "sources/",
   stories: "stories/",
   people: "people/",
-  concepts: "inyanim/",
+  topics: "inyanim/",
+  glossary: "erachim/",
+  concepts: "inyanim/", // legacy concept index, until the glossary replaces it
   series: "contents/", // Quiet has no series index; series are listed in the contents
   explore: null, // Live only → edition home
   shelf: null, // Live only → edition home
 };
-
-/** True when Quiet has a page of its own for this entity (unknown count: assume yes). */
-export function quietHasEntityPage(entity: EntityKind, count: number | undefined): boolean {
-  return count === undefined || count >= ENTITY_PAGE_THRESHOLD[entity];
-}
 
 export interface FormatOptions {
   /** Drop fragments (`#s3`, `#t=…`, index anchors stay): for canonical and hreflang. */
@@ -68,6 +101,14 @@ export function formatQuiet(route: Route, data: LinkData = {}, opts: FormatOptio
       if (quietHasEntityPage(route.entity, count)) return `/${route.ed}/${dir}/${seg(route.key)}/`;
       return `/${route.ed}/${dir}/#${seg(route.key)}`;
     }
+    case "entry": {
+      const r = resolveEntry(route, data);
+      const dir = QUIET_ENTRY_DIR[r.entry];
+      if (dir === null) return opts.bare ? `/${r.ed}/` : `/${r.ed}/#${INDEXES_ANCHOR}`;
+      if (!hasPageOn("quiet", r.entry, r.id, data)) return `/${r.ed}/${dir}/#${seg(r.id)}`;
+      const all = r.all === true && allowsAll(r.entry) ? "all/" : "";
+      return `/${r.ed}/${dir}/${seg(r.id)}/${all}`;
+    }
     case "index": {
       const p = INDEX_PATH[route.index];
       return p === null ? `/${route.ed}/` : `/${route.ed}/${p}`;
@@ -100,24 +141,27 @@ export function parseQuiet(url: string): Route | null {
       if (a === "calendar" && b === "parsha") return { kind: "index", ed, index: "calendar-parsha" };
       if (a === "calendar" && b === "zman") return { kind: "index", ed, index: "calendar-zman" };
       {
-        const entity = DIR_ENTITY.get(a as string);
-        if (entity) return { kind: "entity", ed, entity, key: b as string };
+        const entry = DIR_ENTRY.get(a as string);
+        if (entry) return { kind: "entry", ed, entry, id: b as string };
       }
       return null;
-    case 4:
+    case 4: {
       if (a === "calendar" && (b === "parsha" || b === "zman")) return { kind: "occasion", ed, key: c as string, occasion: b };
+      const entry = DIR_ENTRY.get(a as string);
+      if (entry && allowsAll(entry) && c === "all") return { kind: "entry", ed, entry, id: b as string, all: true };
       return null;
+    }
     default:
       return null;
   }
 }
 
 function parseQuietTwo(ed: Ed, a: string, hash: string, query: Parameters<typeof queryGet>[0]): Route | null {
-  const entity = DIR_ENTITY.get(a);
-  if (entity) {
-    // `/{ed}/people/#{key}`: the index anchor for an entity below the page threshold.
-    const key = hash === "" ? null : decodeAnchor(hash);
-    return key ? { kind: "entity", ed, entity, key } : { kind: "index", ed, index: ENTITY_INDEX[entity] };
+  const entry = DIR_ENTRY.get(a);
+  if (entry) {
+    // `/{ed}/people/#{id}`: the index anchor of an entry without a page of its own.
+    const id = hash === "" ? null : decodeAnchor(hash);
+    return id ? { kind: "entry", ed, entry, id } : { kind: "index", ed, index: ENTRY_INDEX[a] as IndexName };
   }
   switch (a) {
     case "search": {
@@ -132,8 +176,6 @@ function parseQuietTwo(ed: Ed, a: string, hash: string, query: Parameters<typeof
       return { kind: "index", ed, index: "years" };
     case "about":
       return { kind: "index", ed, index: "about" };
-    case "stories":
-      return { kind: "index", ed, index: "stories" };
     default:
       return null;
   }

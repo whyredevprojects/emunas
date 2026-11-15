@@ -42,6 +42,11 @@ describe("canonicalFor", () => {
     ];
     for (const url of inputs) {
       const c = links.canonicalFor(url);
+      if (c === null) {
+        // no canonical: only for a Live corpus entry without a Quiet page, which is noindex
+        expect(links.noindexFor(url.startsWith("/") ? HOSTS.live + url : url), url).toBe(true);
+        continue;
+      }
       expect(c.startsWith(`${HOSTS.quiet}/`), url).toBe(true);
       expect(c, url).not.toMatch(/^https?:\/\/listen\./);
       expect(c, url).not.toContain("#");
@@ -51,7 +56,8 @@ describe("canonicalFor", () => {
   it("is the quiet equivalent without fragments", () => {
     expect(links.canonicalFor(`${HOSTS.live}/en/s/${ID}?t=754&m=${ID}~s2`)).toBe(`${HOSTS.quiet}/en/shiur/${ID}/`);
     expect(links.canonicalFor(`${HOSTS.live}/yi/o/noach`)).toBe(`${HOSTS.quiet}/yi/calendar/parsha/noach/`);
-    expect(links.canonicalFor(`${HOSTS.live}/yi/p/once-mentioned`)).toBe(`${HOSTS.quiet}/yi/people/`);
+    // below the Quiet threshold: no canonical (and noindex), never the index page
+    expect(links.canonicalFor(`${HOSTS.live}/yi/p/once-mentioned`)).toBeNull();
     expect(links.canonicalFor(`${HOSTS.live}/yi/p/dovid-hamelech`)).toBe(`${HOSTS.quiet}/yi/people/dovid-hamelech/`);
     expect(links.canonicalFor(`/en/series/tanya-1`)).toBe(`${HOSTS.quiet}/en/series/tanya-1/`);
   });

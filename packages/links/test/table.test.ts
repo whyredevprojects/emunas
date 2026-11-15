@@ -70,10 +70,34 @@ function rows(ed: Ed): Row[] {
       built: { quiet: Q.person(ed, "dovid-hamelech"), live: L.person(ed, "dovid-hamelech") },
     },
     {
-      name: "concept",
-      quiet: `/${ed}/inyanim/emunah/`,
+      name: "glossary entry (concept)",
+      quiet: `/${ed}/erachim/emunah/`,
       live: `/${ed}/c/emunah`,
-      built: { quiet: Q.concept(ed, "emunah"), live: L.concept(ed, "emunah") },
+      built: { quiet: Q.glossaryEntry(ed, "emunah"), live: L.concept(ed, "emunah") },
+    },
+    {
+      name: "topic",
+      quiet: `/${ed}/inyanim/hashgacha-pratis/`,
+      live: `/${ed}/t/hashgacha-pratis`,
+      built: { quiet: Q.topic(ed, "hashgacha-pratis"), live: L.topic(ed, "hashgacha-pratis") },
+    },
+    {
+      name: "story",
+      quiet: `/${ed}/stories/the-sugar-sled/`,
+      live: `/${ed}/maasios/the-sugar-sled`,
+      built: { quiet: Q.story(ed, "the-sugar-sled"), live: L.story(ed, "the-sugar-sled") },
+    },
+    {
+      name: "topic tree",
+      quiet: `/${ed}/inyanim/`,
+      live: `/${ed}/explore`,
+      built: { quiet: Q.topics(ed), live: L.explore(ed) },
+    },
+    {
+      name: "stories index",
+      quiet: `/${ed}/stories/`,
+      live: `/${ed}/maasios`,
+      built: { quiet: Q.stories(ed), live: L.stories(ed) },
     },
     {
       name: "search",

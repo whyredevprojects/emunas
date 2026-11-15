@@ -104,8 +104,8 @@ describe("root loader", () => {
       title: "Chanukah",
       canonical: `${QUIET}/en/calendar/zman/chanukah/`,
     });
-    // Below the Quiet person threshold: the people index, never a 404.
-    expect(seoDataFor(ctx, "/en/p/rabbi-x").seo.page?.canonical).toBe(`${QUIET}/en/people/`);
+    // Below the Quiet person threshold: no canonical (corpus-wave-plan §3.5; never a 404, never the index).
+    expect(seoDataFor(ctx, "/en/p/rabbi-x").seo.page?.canonical).toBeNull();
     expect(seoDataFor(ctx, "/en/search").seo.page).toBeNull();
   });
 

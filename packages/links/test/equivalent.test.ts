@@ -25,7 +25,9 @@ describe("equivalent(quiet → live → quiet) is identity", () => {
       occasion: [Q.parsha(ed, "bereishis"), Q.parsha(ed, "noach"), Q.zman(ed, "lag-baomer"), Q.zman(ed, "shavuos")],
       work: [Q.work(ed, "ramban"), Q.work(ed, "sfas-emes"), Q.work(ed, "rare-sefer")],
       person: [Q.person(ed, "dovid-hamelech"), Q.person(ed, "baal-shem-tov"), Q.person(ed, "once-mentioned")],
-      concept: [Q.concept(ed, "emunah"), Q.concept(ed, "hisbodedus"), Q.concept(ed, "two-only")],
+      "glossary entry": [Q.glossaryEntry(ed, "emunah"), Q.glossaryEntry(ed, "hisbodedus"), Q.glossaryEntry(ed, "two-only")],
+      topic: [Q.topic(ed, "emunah-topic"), Q.topic(ed, "hashgacha-pratis")],
+      story: [Q.story(ed, "the-sugar-sled")],
     };
     for (const [name, paths] of Object.entries(cases)) {
       it(`${name} (${ed})`, () => {
@@ -35,19 +37,22 @@ describe("equivalent(quiet → live → quiet) is identity", () => {
   }
 });
 
-describe("quiet entity fallback below the page threshold", () => {
+describe("quiet entity fallback below the page threshold (no layer flags: legacy counts)", () => {
   it("maps to the index anchor (people/works ≥2, concepts ≥3)", () => {
     expect(links.equivalent(`${HOSTS.live}/en/p/once-mentioned`)).toBe(`${HOSTS.quiet}/en/people/#once-mentioned`);
     expect(links.equivalent(`${HOSTS.live}/yi/seforim/rare-sefer`)).toBe(`${HOSTS.quiet}/yi/sources/#rare-sefer`);
-    expect(links.equivalent(`${HOSTS.live}/en/c/two-only`)).toBe(`${HOSTS.quiet}/en/inyanim/#two-only`);
+    expect(links.equivalent(`${HOSTS.live}/en/c/two-only`)).toBe(`${HOSTS.quiet}/en/erachim/#two-only`);
     // at the threshold: a page of its own
     expect(links.equivalent(`${HOSTS.live}/en/p/baal-shem-tov`)).toBe(`${HOSTS.quiet}/en/people/baal-shem-tov/`);
-    expect(links.equivalent(`${HOSTS.live}/en/c/hisbodedus`)).toBe(`${HOSTS.quiet}/en/inyanim/hisbodedus/`);
+    expect(links.equivalent(`${HOSTS.live}/en/c/hisbodedus`)).toBe(`${HOSTS.quiet}/en/erachim/hisbodedus/`);
   });
 
   it("builders use the count lookup, or an explicit count", () => {
     expect(Q.person("yi", "once-mentioned")).toBe("/yi/people/#once-mentioned");
     expect(quietPaths().person("yi", "x", { count: 1 })).toBe("/yi/people/#x");
+    expect(quietPaths().glossaryEntry("yi", "x", { count: 2 })).toBe("/yi/erachim/#x");
+    expect(quietPaths().glossaryEntry("yi", "x", { count: 3 })).toBe("/yi/erachim/x/");
+    // the legacy concept address (pages not on the corpus layer yet) is unchanged
     expect(quietPaths().concept("yi", "x", { count: 2 })).toBe("/yi/inyanim/#x");
     expect(quietPaths().concept("yi", "x", { count: 3 })).toBe("/yi/inyanim/x/");
     // unknown count: the page is assumed to exist
@@ -69,7 +74,8 @@ describe("live → quiet", () => {
     expect(links.equivalent(`${HOSTS.live}/yi/search?q=emunah&audio=yi&kind=section`)).toBe(
       `${HOSTS.quiet}/yi/search/?q=emunah`,
     );
-    expect(links.equivalent(`${HOSTS.live}/en/explore?lens=luach&unit=moments`)).toBe(`${HOSTS.quiet}/en/`);
+    // Explore opens on the topic map: the Quiet topic tree
+    expect(links.equivalent(`${HOSTS.live}/en/explore?lens=luach&unit=moments`)).toBe(`${HOSTS.quiet}/en/inyanim/`);
   });
 
   it("a section moment wins over t; other moments keep t", () => {

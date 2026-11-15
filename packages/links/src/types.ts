@@ -16,8 +16,24 @@ export interface MomentRef {
   readonly index: number;
 }
 
-/** Entities that have their own index pages on Quiet (sources, people, inyanim). */
+/**
+ * The site-derived (normalize-keyed) entities of the first waves: the **legacy** addresses.
+ * `{kind: "entity"}` routes still format as before (Quiet concepts under `/inyanim/`), so pages
+ * that have not moved to the corpus layer keep working; no parser produces them any more.
+ * C3.1 retires them. New code uses `{kind: "entry"}` with a `CorpusKind`.
+ */
 export type EntityKind = "work" | "person" | "concept";
+
+/** Old site keys that `legacyPaths` knows (the layer's `LegacyKind`). */
+export type LegacyKind = EntityKind;
+
+/**
+ * Corpus-wide entities (corpus-wave-plan §3.5), addressed by their corpus id, which the data
+ * contract promises is stable. Every one is AI-generated and unreviewed unless its layer record
+ * says `reviewed`.
+ */
+export type CorpusKind = "topic" | "concept" | "person" | "work" | "story" | "thread";
+export const CORPUS_KINDS: readonly CorpusKind[] = ["topic", "concept", "person", "work", "story", "thread"];
 
 export type OccasionKind = "parsha" | "zman";
 
@@ -34,6 +50,9 @@ export type IndexName =
   | "sources" // Quiet sources index, Live seforim shelf
   | "stories" // Quiet stories, Live maasios
   | "people"
+  | "topics" // Quiet topic tree (/inyanim/), Live Explore map
+  | "glossary" // Quiet glossary (/erachim/); Live has none
+  /** @deprecated The legacy Quiet concept index, still at /inyanim/ until C1.8/C2.1 move it. */
   | "concepts"
   | "series" // Live series index (Quiet has none: contents)
   | "explore" // Live only
@@ -53,7 +72,16 @@ export type Route =
     }
   | { readonly kind: "series"; readonly ed: Ed; readonly id: string }
   | { readonly kind: "occasion"; readonly ed: Ed; readonly key: string; readonly occasion?: OccasionKind }
+  /** Legacy normalize-keyed entity (see `EntityKind`). Formatted, never parsed. */
   | { readonly kind: "entity"; readonly ed: Ed; readonly entity: EntityKind; readonly key: string }
+  /** A corpus entity by corpus id. `all`: Quiet's continuation page (topics and people). */
+  | {
+      readonly kind: "entry";
+      readonly ed: Ed;
+      readonly entry: CorpusKind;
+      readonly id: string;
+      readonly all?: boolean;
+    }
   | { readonly kind: "index"; readonly ed: Ed; readonly index: IndexName }
   | { readonly kind: "search"; readonly ed: Ed; readonly q?: string };
 
@@ -62,7 +90,16 @@ export type Route =
  * mapping degrades (documented per function) and never throws.
  */
 export interface LinkData {
-  /** Number of shiurim an entity appears in (`.corpus/entities.json`). */
+  /**
+   * Whether a corpus entity has its own page on a site: the layer's page flags
+   * (`.corpus/layer/*.json` `pages` / thread `page`; `pageLookupFromLayer` builds this). Undefined
+   * means "not known": Quiet then falls back to `entityCount` for people, works and concepts, and
+   * otherwise assumes the page exists.
+   */
+  readonly hasPage?: (site: Site, kind: CorpusKind, id: string) => boolean | undefined;
+  /** The topic a concept is merged into (layer `concepts[].mergedIntoTopic`): links go to the topic. */
+  readonly conceptTopic?: (conceptId: string) => string | undefined;
+  /** Number of shiurim an entity appears in (`.corpus/entities.json`; legacy fallback). */
   readonly entityCount?: (entity: EntityKind, key: string) => number | undefined;
   /** Whether an occasion key is a parsha or a zman (`.corpus/occasions.json`). */
   readonly occasionKind?: (key: string) => OccasionKind | undefined;

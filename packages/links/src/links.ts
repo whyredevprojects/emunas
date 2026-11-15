@@ -2,10 +2,20 @@
  * Cross-site links, canonical and hreflang (integration-plan §2.2, §2.3).
  */
 import { livePaths, quietPaths, type LivePaths, type QuietPaths } from "./builders.ts";
+import {
+  corpusRedirects,
+  hrefFor,
+  legacyPaths,
+  legacyRedirects,
+  type LegacyPath,
+  type LegacyRedirectInput,
+  type RedirectPair,
+} from "./corpus.ts";
 import { validateHosts, type Hosts } from "./hosts.ts";
 import { formatLive, parseLive } from "./live.ts";
+import { hasPageOn, resolveEntry } from "./pages.ts";
 import { formatQuiet, parseQuiet } from "./quiet.ts";
-import { EDS, isEd, type Ed, type LinkData, type Route, type Site } from "./types.ts";
+import { EDS, isEd, type CorpusKind, type Ed, type LegacyKind, type LinkData, type Route, type Site } from "./types.ts";
 import { pathSegments, splitUrl } from "./url.ts";
 
 export interface HreflangLink {
@@ -35,16 +45,34 @@ export interface Links {
   parse(url: string, from?: Site): ParsedSiteUrl | null;
   /**
    * Maps any URL of one site to the equivalent absolute URL on the other. Live-only params
-   * are dropped; Quiet entities below the page threshold map to the index anchor; pages
-   * the other site lacks map to its closest listing or home. Null only when the site of
-   * `url` cannot be told (foreign origin, or a relative path without `from`).
+   * are dropped; corpus entries without a Quiet page map to the Quiet index anchor, a thread to
+   * the Quiet edition home's `#indexes`; a concept merged into a topic maps to the topic; pages
+   * the other site lacks map to its closest listing or home. Null when the site of `url` cannot
+   * be told (foreign origin, or a relative path without `from`), and when `url` is a corpus
+   * entry that has no Live page (no link).
    */
   equivalent(url: string, from?: Site): string | null;
   /**
-   * The canonical URL: always on the Quiet origin, never a fragment. For a Live URL it is
-   * the Quiet equivalent; a Quiet URL is self-canonical. Relative paths are read as Live.
+   * The canonical URL: always on the Quiet origin, never a fragment, never `listen.*`. A Quiet
+   * URL is self-canonical. For a Live URL it is the Quiet equivalent, except for corpus entries
+   * (topic, concept, person, work, story) without a Quiet page and for threads: null, no
+   * canonical, and the page is noindex (`noindexFor`). Relative paths are read as Live.
    */
-  canonicalFor(url: string): string;
+  canonicalFor(url: string): string | null;
+  /**
+   * True for a Live corpus-entry page that has no canonical (no Quiet equivalent page): threads
+   * always (D8), the rest when Quiet has no page for them. Pages that are noindex for other
+   * reasons (Explore, search, shelf) are the app's own policy and are not decided here.
+   */
+  noindexFor(url: string, from?: Site): boolean;
+  /** Absolute link to `route` on `site`, or null when it is a corpus entry without a Live page. */
+  hrefFor(site: Site, route: Route): string | null;
+  /** Old addresses of a legacy site key (root-relative), see `legacyPaths`. */
+  legacyPaths(site: Site, kind: LegacyKind, oldKey: string): LegacyPath[];
+  /** Root-relative redirects for one layer legacy row, see `legacyRedirects`. */
+  legacyRedirects(site: Site, row: LegacyRedirectInput): RedirectPair[];
+  /** Root-relative redirects for a retired corpus id, see `corpusRedirects`. */
+  corpusRedirects(site: Site, kind: CorpusKind, fromId: string, toId: string): RedirectPair[];
   /**
    * `<link rel="alternate" hreflang>` set for a page: both editions plus `x-default`
    * (the site root). Empty for paths that are not pages.
@@ -118,13 +146,34 @@ export function createLinks(options: { readonly hosts: Hosts; readonly data?: Li
       if (!site) return null;
       const other: Site = site === "quiet" ? "live" : "quiet";
       const route = parse(url, site)?.route ?? fallbackRoute(url);
-      return origin(other) + format(other, route);
+      const href = hrefFor(other, route, data);
+      return href === null ? null : origin(other) + href;
     },
     canonicalFor(url) {
       const site = resolveSite(url, "live") ?? "live";
       const route = parse(url, site)?.route ?? fallbackRoute(url);
+      if (site === "live" && route.kind === "entry") {
+        const r = resolveEntry(route, data);
+        if (!hasPageOn("quiet", r.entry, r.id, data)) return null;
+        return hosts.quiet + stripHash(formatQuiet(r, data, { bare: true }));
+      }
       return hosts.quiet + stripHash(formatQuiet(route, data, { bare: true }));
     },
+    noindexFor(url, from) {
+      const site = resolveSite(url, from ?? "live");
+      if (site !== "live") return false;
+      const route = parse(url, site)?.route;
+      if (route?.kind !== "entry") return false;
+      const r = resolveEntry(route, data);
+      return !hasPageOn("quiet", r.entry, r.id, data);
+    },
+    hrefFor(site, route) {
+      const href = hrefFor(site, route, data);
+      return href === null ? null : origin(site) + href;
+    },
+    legacyPaths: (site, kind, oldKey) => legacyPaths(site, kind, oldKey, data),
+    legacyRedirects: (site, row) => legacyRedirects(site, row, data),
+    corpusRedirects: (site, kind, fromId, toId) => corpusRedirects(site, kind, fromId, toId, data),
     hreflangPair(path, site = "quiet") {
       const route = parse(path, site)?.route;
       if (!route) return [];
