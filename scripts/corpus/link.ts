@@ -54,9 +54,9 @@ function main(): void {
     .sort((a, b) => a.e.order - b.e.order || a.i - b.i)
     .map(({ e }) => e.shiurId);
 
-  const conceptMap = readJson<Record<string, string>>(join(CORPUS_DIR, "concept-alias-map.json"));
-  const peopleMap = readJson<Record<string, string>>(join(CORPUS_DIR, "people-alias-map.json"));
-  const worksMap = readJson<Record<string, string>>(join(CORPUS_DIR, "works-alias-map.json"));
+  const conceptMap = readJson<Record<string, string>>(join(CORPUS_DIR, "raw", "concept-alias-map.json"));
+  const peopleMap = readJson<Record<string, string>>(join(CORPUS_DIR, "raw", "people-alias-map.json"));
+  const worksMap = readJson<Record<string, string>>(join(CORPUS_DIR, "raw", "works-alias-map.json"));
 
   const conceptsPath = join(CORPUS_DIR, "concepts.json");
   const peoplePath = join(CORPUS_DIR, "people.json");

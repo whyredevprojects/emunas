@@ -42,8 +42,8 @@ against this prose.
 |---|---|---|
 | `index.json` | `CorpusIndex` | `version` (integer, bumped when any shape changes), `generatedAt`, `shiurIds`, `counts` per file (incl. `shiurTags`), `files` list, `pendingDescriptions` (level-1/2 topic ids whose `description` is still null, filled by a later LLM pass). Load this first. |
 | `topics.json` | `Topic[]` | Taxonomy, max 3 levels; tree via `parentId` (null = level 1). Level 1 is seeded from the Pocket Guide sections. Sorted by level, then label. `shiurCount` includes descendants; `hubShiurIds` = representative shiurim for a topic page. |
-| `concepts.json` | `Concept[]` | Glossary. `shiurIds` = shiurim whose extraction lists the concept; `exampleRefs` point at sections. `asrVariants` are for search expansion only, never display. |
-| `people.json` | `Person[]` | Typed persons (`tanach`, `chazal`, `rishon`, `acharon`, `chassidic_rebbe`, `other`). `asrVariants` for search only. |
+| `concepts.json` | `Concept[]` | Glossary. `shiurIds` = shiurim whose extraction lists the concept; `exampleRefs` point at sections. |
+| `people.json` | `Person[]` | Typed persons (`tanach`, `chazal`, `rishon`, `acharon`, `chassidic_rebbe`, `other`). |
 | `works.json` | `Work[]` | Seforim cited. `sefariaIndexTitle` links to Sefaria when known; `authorPersonId` references `people.json`. |
 | `series/<seriesId>.json` | `SeriesSynthesis` | One per ingest series that has done shiurim. `arc` is in series order (`Series.shiurIds`), `part` 1-based. |
 | `stories.json` | `Story[]` | Deduplicated maasios; each `tellings[]` entry points at `extraction.stories[storyIndex]` of a shiur. `people` holds person ids where resolved, else the raw name. |
@@ -77,12 +77,19 @@ Written by `npm run corpus:aggregate` (`scripts/corpus/aggregate.ts`) from done 
 | `raw/insights.json` | `{shiurId, insightIndex, text:{en}}[]` |
 | `raw/digests/chunk-NN.json` | 40 shiurim each in manifest order: `{shiurId, lang, catalogTitle, seriesId, parsha, zman, oneLiner:{en}, abstract:{en}, keyPoints:{en[]}, candidateTopics, sections:{index, title:{en}, summary:{en}, kind}[]}` for topic tagging. |
 
+## Publishing rules
+
+- **No transcript text in the public files.** ASR spellings (`heardAs`, misspelling variants) live only under `raw/`: `raw/asr-variants.json` and the alias maps `raw/{concept,people,works,topic}-alias-map.json`, whose keys are raw extraction strings. The pipeline uses them for linking; the sites should not ship them.
+- **Voice.** Yiddish refers to the Rav as `דער משגיח` everywhere (per-shiur and corpus files); English says "the Rav" and spells "Moshiach".
+- **Retired ids.** `redirects.json` maps each retired id to the id it was merged into, per kind; `npm run corpus:assemble` checks every target exists.
+- **Another speaker.** `shiur-tags.otherSpeakerShare` is the share of a shiur's time in `other_speaker` sections; shiurim at 0.5 or more are left out of `hubShiurIds`.
+- **Topic = entity.** `topics[].sameAs` names a concept, person or work with the same id, so the sites can link or merge the pages.
+
 ## Known issues (from the independent audit, not yet fixed)
 
 All of this is `reviewStatus: "unreviewed"`; it's the list a human reviewer should start from.
 
 - Some concept definitions read as stitched-together usages rather than definitions (e.g. `olam-hazeh`, `sar-shel-maalah`); 23 concepts have empty `exampleRefs`.
-- Some `asrVariants` are generic or wrong (e.g. `עשה טוב` on `sur-mera-veaseh-tov`), and 9 variants are shared by two concepts. Use them for search expansion with low weight only.
 - The taxonomy has overlapping siblings (e.g. `avodas-hashem/simcha` vs `tanya-simcha`; `kedushah` vs `tumah-taharah` vs `kedushah-vekelipah`; `tefilah/tehillim` vs `nach`). `pidyon-haben` has 7 shiurim, below the 8 minimum.
 - Possible missed story merges: `avraham-fights-the-four-kings-on-erev-pesach` / `avrahams-dust-against-the-four-kings`; `answering-an-objector-with-a-baseball-game` / `the-bochur-and-the-baseball-game`.
 - Ambiguous people: `belzer-rav` overlaps the specific Belzer Rebbes; `chaggai-zechariah-malachi` is one entity for three prophets. 61 story people are unresolved raw names.
