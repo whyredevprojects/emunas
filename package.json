@@ -28,11 +28,15 @@
     "batch:pick-audit": "tsx scripts/batch.ts pick-audit",
     "batch:usage": "tsx scripts/batch.ts usage",
     "batch:reset-changed": "tsx scripts/reset-changed.ts",
-    "site:typecheck": "npm run typecheck --workspaces --if-present",
+    "site:typecheck": "npm run typecheck --workspaces --if-present && npm run site:typecheck:workers",
+    "site:typecheck:workers": "tsc --noEmit -p apps/quiet/worker/tsconfig.json && tsc --noEmit -p apps/live/worker/tsconfig.json",
     "site:lint": "eslint --config packages/config/eslint.config.js --max-warnings 0 apps packages workers && stylelint --config packages/config/stylelint.config.js --allow-empty-input \"apps/**/*.{css,astro}\" \"packages/**/*.css\"",
-    "site:test": "npm run test --workspaces --if-present",
+    "site:test": "npm run test --workspaces --if-present && npm run site:test:workers",
+    "site:test:workers": "vitest run --config apps/quiet/worker/vitest.config.ts && vitest run --config apps/live/worker/vitest.config.ts",
+    "site:e2e": "npm run test:e2e --workspaces --if-present",
     "site:build": "npm run build --workspaces --if-present",
-    "corpus:build": "npm run corpus:build --workspace=@emunas/corpus --"
+    "corpus:build": "npm run corpus:build --workspace=@emunas/corpus --",
+    "search:build": "npm run search:build --workspace=@emunas/search-core --"
   },
   "devDependencies": {
     "@types/node": "^26.6.6",
