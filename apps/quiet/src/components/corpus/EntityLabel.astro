@@ -1,0 +1,43 @@
+---
+/**
+ * The AI label of the corpus layer, once per page, plain, never on items (Quiet C6 "The label"):
+ *
+ * - `index`: under the heading of a generated index ("Compiled by AI from the notes on N shiurim.
+ *   Not reviewed by a person; entries may be wrongly joined or split.").
+ * - `entry`: at the foot of an entity page ("Notes prepared by AI; not reviewed. The recordings are
+ *   the source."). A reviewed entity (`reviewed`) drops the "not reviewed" clause and nothing else
+ *   changes: no "verified" mark. The default slot sits beside it (the report link).
+ * - `story`: under a merged retelling ("Retold here from N tellings…").
+ *
+ * The wording is shared with Live (`@emunas/i18n` corpus vocabulary, C1.4).
+ */
+import { corpusLabel } from "@emunas/i18n";
+import type { Ed } from "../../lib/edition.ts";
+import "./corpus.css";
+
+interface Props {
+  ed: Ed;
+  variant: "index" | "entry" | "story";
+  /** index: visible shiurim the index is compiled from; story: visible tellings. */
+  count?: number;
+  /** entry: the entity carries `reviewStatus: "reviewed"`. */
+  reviewed?: boolean;
+}
+
+const { ed, variant, count = 0, reviewed = false } = Astro.props;
+const text =
+  variant === "index"
+    ? corpusLabel("label.index", ed, { count })
+    : variant === "story"
+      ? corpusLabel("label.story", ed, { count })
+      : corpusLabel(reviewed ? "label.entry.reviewed" : "label.entry", ed);
+const slotted = Astro.slots.has("default");
+---
+{variant === "entry" ? (
+  <footer class="corpus-label-entry" data-reviewed={reviewed ? "true" : undefined}>
+    <p class="corpus-label" role="note">{text}</p>
+    {slotted && <slot />}
+  </footer>
+) : (
+  <p class={`corpus-label corpus-label-${variant}`} role="note">{text}</p>
+)}

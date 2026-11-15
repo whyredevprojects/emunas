@@ -1,0 +1,33 @@
+---
+/**
+ * "Report an error in this entry" (Quiet C6 "Reporting"): a plain mail link pre-filled with the
+ * kind and id of the entry and the three things that actually go wrong ("these are two different
+ * people or stories", "this is the same as another entry", "this shiur does not belong here").
+ * Works without script. Renders nothing when no report address is configured.
+ */
+import { corpusLabel } from "@emunas/i18n";
+import type { CorpusKind } from "@emunas/links";
+import type { Ed } from "../../lib/edition.ts";
+import { currentSiteEnv } from "../seo/site-env.ts";
+import { reportEntryHref } from "./model.ts";
+
+interface Props {
+  ed: Ed;
+  kind: CorpusKind;
+  id: string;
+  /** Absolute URL of the page (goes into the mail body). Default: this page on the Quiet host. */
+  pageUrl?: string;
+  /** Report address. Default: the build's `EMUNAS_FEEDBACK_EMAIL` (site env). */
+  address?: string | null;
+}
+
+const { ed, kind, id } = Astro.props;
+const needsEnv = Astro.props.address === undefined || Astro.props.pageUrl === undefined;
+const env = needsEnv ? currentSiteEnv() : null;
+const address = Astro.props.address === undefined ? (env?.feedbackEmail ?? null) : Astro.props.address;
+const pageUrl = Astro.props.pageUrl ?? `${env?.hosts.quiet ?? ""}${Astro.url.pathname}`;
+const href = reportEntryHref(address, ed, kind, id, pageUrl);
+---
+{href && (
+  <p class="report-entry" data-print="hide"><a href={href} data-report-kind={kind} data-report-id={id}>{corpusLabel("report.entry", ed)}</a></p>
+)}

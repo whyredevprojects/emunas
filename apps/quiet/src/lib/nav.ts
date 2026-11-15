@@ -1,6 +1,10 @@
 /**
  * The one-line global navigation (concept-quiet §4): Contents · Calendar · Indexes · Search ·
  * About. Paths come from `@emunas/links` so both sites agree on them.
+ *
+ * The Indexes item covers the back matter in the order of concept-quiet-corpus C5: ענינים (topics,
+ * `inyanim/`), ערכים (the glossary, `erachim/`), שמות (`people/`), מראי מקומות (`sources/`),
+ * מעשיות (`stories/`); the calendar and years keep their own item.
  */
 import { formatQuiet } from "@emunas/links";
 import type { UiKey } from "../i18n/index.ts";
@@ -31,7 +35,7 @@ export function navItems(ed: Ed): NavItem[] {
 const SECTION_OF: ReadonlyArray<readonly [RegExp, NavId]> = [
   [/^\/(?:yi|en)\/(?:contents|section|series|shiur)\//, "contents"],
   [/^\/(?:yi|en)\/(?:calendar|years)\//, "calendar"],
-  [/^\/(?:yi|en)\/(?:sources|stories|people|inyanim)\//, "indexes"],
+  [/^\/(?:yi|en)\/(?:inyanim|erachim|people|sources|stories)\//, "indexes"],
   [/^\/(?:yi|en)\/search\//, "search"],
   [/^\/(?:yi|en)\/about\//, "about"],
 ];

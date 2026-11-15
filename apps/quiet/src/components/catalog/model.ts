@@ -400,7 +400,6 @@ export interface SeriesModel {
   readonly rows: SeriesRow[];
   /** Tanya: consecutive runs of the same perek, in series order; null when the parts carry no perek. */
   readonly groups: PerekGroup[] | null;
-  readonly sibling: SeriesSummary | null;
   /** The catalog sections the set was printed in. */
   readonly sections: SectionSummary[];
   readonly anyNotes: boolean;
@@ -426,17 +425,6 @@ export function seriesModel(corpus: CatalogCorpus, id: string, ed: Ed): SeriesMo
         }))
         .filter((g) => g.rows.length > 0)
     : null;
-  const siblingEntry = entry.sibling ? corpus.series.series.find((s) => s.id === entry.sibling) : undefined;
-  const sibling =
-    siblingEntry && siblingEntry.parts.length > 0
-      ? {
-          id: siblingEntry.id,
-          href: seriesHref(ed, siblingEntry.id),
-          title: siblingEntry.title[ed],
-          lang: siblingEntry.lang,
-          count: siblingEntry.parts.length,
-        }
-      : null;
   const partIds = new Set(entry.parts.map((p) => p.id));
   const sections = sectionSummaries(corpus).filter((s) => s.shiurIds.some((x) => partIds.has(x)));
   const other: Ed = ed === "yi" ? "en" : "yi";
@@ -447,7 +435,6 @@ export function seriesModel(corpus: CatalogCorpus, id: string, ed: Ed): SeriesMo
     count,
     rows,
     groups,
-    sibling,
     sections,
     anyNotes: rows.some((r) => r.oneLiner !== null),
   };

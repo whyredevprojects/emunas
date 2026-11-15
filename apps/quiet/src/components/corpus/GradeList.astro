@@ -1,0 +1,47 @@
+---
+/**
+ * A topic's shiurim in three grades (Quiet C4.1 part 4), each under its name: the shiurim it is
+ * about (principal rows), those that discuss it (plain rows), and those that touch on it in one
+ * part (one line per shiur, with a time link to each tagged part on the shiur page). Grading is in
+ * words, not colour or icons. An empty grade is left out.
+ */
+import { topicGradeLabel, TOPIC_GRADES } from "@emunas/i18n";
+import CiteLink from "../indexes/CiteLink.astro";
+import type { Ed } from "../../lib/edition.ts";
+import type { GradeListModel } from "./model.ts";
+import "./corpus.css";
+
+interface Props {
+  ed: Ed;
+  model: GradeListModel;
+  /** Heading level of the grade names (default 2). */
+  level?: 2 | 3;
+  /** Prefix for the grade headings' ids (several lists on one page). */
+  idPrefix?: string;
+}
+
+const { ed, model, level = 2, idPrefix = "grade" } = Astro.props;
+const H = level === 3 ? "h3" : "h2";
+const sizes = { main: model.main.length, discussed: model.discussed.length, touched: model.touched.length };
+---
+{TOPIC_GRADES.filter((g) => sizes[g] > 0).map((g) => (
+  <section class={`grade grade-${g}`} aria-labelledby={`${idPrefix}-${g}`} data-grade={g}>
+    <H id={`${idPrefix}-${g}`}>{topicGradeLabel(g, ed)}</H>
+    <ul role="list" class="grade-rows">
+      {g === "main" && model.main.map((c) => (
+        <li class="grade-row principal" data-shiur={c.shiurId}><strong><CiteLink ed={ed} cite={c} /></strong></li>
+      ))}
+      {g === "discussed" && model.discussed.map((c) => (
+        <li class="grade-row" data-shiur={c.shiurId}><CiteLink ed={ed} cite={c} /></li>
+      ))}
+      {g === "touched" && model.touched.map((line) => (
+        <li class="grade-row touched" data-shiur={line.cite.shiurId}>
+          <CiteLink ed={ed} cite={line.cite} />
+          {line.parts.map((p) => (
+            <>{" "}<a class="time part-link" href={p.href} data-section={p.idx}><bdi dir="ltr">{p.time}</bdi></a></>
+          ))}
+        </li>
+      ))}
+    </ul>
+  </section>
+))}

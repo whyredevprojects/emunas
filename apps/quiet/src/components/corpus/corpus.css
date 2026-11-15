@@ -1,0 +1,71 @@
+/*
+ * Shared corpus-entry components (C1.8): the AI label, the report link, the entry head, the grade
+ * list and the title page's indexes block. Plain type, hairlines, grading in words; no badges, no
+ * icons, no colour coding. Logical properties only.
+ */
+@layer components {
+  .corpus-label,
+  .report-entry,
+  .entry-meta,
+  .see-also,
+  .entry-head .alt-name {
+    color: var(--color-ink-muted);
+  }
+
+  .corpus-label,
+  .report-entry,
+  .entry-meta,
+  .see-also {
+    font-size: var(--step-0);
+  }
+
+  .corpus-label-entry {
+    border-block-start: var(--rule-hairline) solid var(--color-rule);
+    margin-block-start: var(--space-l);
+    padding-block-start: var(--space-s);
+  }
+
+  .corpus-label-entry > * + * {
+    margin-block-start: var(--space-3xs);
+  }
+
+  .entry-head > * + * {
+    margin-block-start: var(--space-xs);
+  }
+
+  .entry-head .alt-name {
+    font-weight: var(--weight-regular);
+  }
+
+  .grade {
+    border-block-start: var(--rule-hairline) solid var(--color-rule);
+    padding-block-start: var(--space-s);
+  }
+
+  .grade + .grade {
+    margin-block-start: var(--space-m);
+  }
+
+  .grade > h2,
+  .grade > h3 {
+    margin-block-end: var(--space-xs);
+  }
+
+  .grade-row + .grade-row {
+    margin-block-start: var(--space-3xs);
+  }
+
+  .indexes > * + * {
+    margin-block-start: var(--space-s);
+  }
+
+  .indexes-list li + li {
+    margin-block-start: var(--space-2xs);
+  }
+
+  .indexes-list .note,
+  .indexes-list .sep,
+  .indexes-list .count {
+    color: var(--color-ink-muted);
+  }
+}
