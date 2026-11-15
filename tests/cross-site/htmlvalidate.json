@@ -1,0 +1,9 @@
+{
+  "$schema": "https://html-validate.org/schemas/config.json",
+  "root": true,
+  "extends": ["html-validate:standard"],
+  "rules": {
+    "no-redundant-role": ["error", { "exclude": ["list"] }],
+    "long-title": "off"
+  }
+}
