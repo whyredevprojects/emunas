@@ -578,11 +578,15 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
       ...new Set(arr(st.people).flatMap((p) => ("id" in p && typeof p.id === "string" && view.people.has(p.id) ? [p.id] : []))),
     ];
     for (const id of people) indexPeople.add(id);
+    // `names` is an alias-bearing position (corpus guard): only an entity's own display name may go
+    // there. People the story names by id but Live does not list give their display name; an
+    // unresolved raw extraction name may be an ASR spelling and is never published here.
     const names = [
       ...new Set(
         arr(st.people).flatMap((p) => {
-          const sp = storyPerson(p);
-          return sp && "name" in sp && sp.name !== "" ? [sp.name] : [];
+          if (!("id" in p && typeof p.id === "string") || view.people.has(p.id)) return [];
+          const name = nz(view.allPeople.get(p.id)?.nameEn);
+          return name ? [name] : [];
         }),
       ),
     ];

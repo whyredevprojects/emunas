@@ -63,7 +63,7 @@ corpus refs with labels). Neither requests `corpus.json`, `facets.json` or any c
 | `topic-shiurim/<id>.<n>.json` | further "all shiurim" rows of a topic, 200 per page |
 | `thread/<id>.json` | threads with a page (≥3 shiurim): label, summary, topics, members by year with the per-shiur insight |
 | `story/<id>.json` | stories with a page (≥2 tellings): title, retelling, people (linked or plain names), `attributionVaries` (the tellings credit it to different people), tellings with the chapter each sits in |
-| `stories-index.json` | every merged story without retellings: title, Live-listed people ids (labels in `people`), plain names (raw or unlisted people, never ids), most specific Live topics from the layer's section join, telling count, languages, page flag, first telling, and one telling to play per language (catalogued shiurim first, then layer order; with the story moment's end) |
+| `stories-index.json` | every merged story without retellings: title, Live-listed people ids (labels in `people`), plain names (the display name of a person Live does not list; never an id and never an unresolved raw extraction name, since `names` is an alias-bearing key the corpus guard checks), most specific Live topics from the layer's section join, telling count, languages, page flag, first telling, and one telling to play per language (catalogued shiurim first, then layer order; with the story moment's end) |
 | `glossary/<prefix>.json` | glossary cards by id prefix (`build.json` `glossaryShards`; `glossaryShardFor`), split until each fits 6 KiB br |
 | `explore/entities.json` | per summarized shiur: topic, person, concept, work ids (Explore's facets; `corpus.json` keeps the last three until C3.1) |
 

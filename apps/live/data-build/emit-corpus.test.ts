@@ -304,8 +304,13 @@ describe("corpus-layer files on the mini corpus", () => {
       // Every linked person has a label; a raw name or an unlisted person is a plain name, never an id.
       for (const id of row.people) expect(idx.people[id], id).toBeDefined();
       for (const n of row.names) expect(idx.people[n]).toBeUndefined();
-      const rawNames = st.people.flatMap((p) => ("name" in p ? [p.name] : []));
-      for (const n of rawNames) expect(row.names).toContain(n);
+      // Unresolved raw extraction names never go in `names` (an alias-bearing key the corpus guard
+      // checks against ASR variants); only the display name of a person Live does not list.
+      const byId = new Map(layer.people.map((p) => [p.id, p]));
+      const want = [
+        ...new Set(st.people.flatMap((p) => ("id" in p && !idx.people[p.id] && byId.get(p.id)?.nameEn ? [byId.get(p.id)!.nameEn] : []))),
+      ];
+      expect(row.names).toEqual(want);
       // Topics come from the layer's section join and each has a Live topic file.
       for (const t of row.topics) {
         expect(files.has(`topic/${t}.json`)).toBe(true);
