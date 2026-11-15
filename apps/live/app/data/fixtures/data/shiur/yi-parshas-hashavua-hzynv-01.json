@@ -1,7 +1,7 @@
 {
  "schemaVersion": 2,
  "id": "yi-parshas-hashavua-hzynv-01",
- "rev": "6ead82a5fce3",
+ "rev": "722946551226",
  "lang": "yi",
  "category": "parsha",
  "catalog": {
@@ -97,10 +97,6 @@
     "salience": 0.5
    },
    {
-    "id": "sefer-devarim",
-    "salience": 0.5
-   },
-   {
     "id": "hester-panim",
     "salience": 0.4
    },
@@ -113,22 +109,19 @@
    {
     "idx": 0,
     "topicIds": [
-     "sefer-devarim",
      "aseres-yemei-teshuvah"
     ]
    },
    {
     "idx": 1,
     "topicIds": [
-     "sefer-devarim",
      "netzach-yisroel"
     ]
    },
    {
     "idx": 2,
     "topicIds": [
-     "rosh-hashanah",
-     "sefer-devarim"
+     "rosh-hashanah"
     ]
    },
    {
@@ -156,15 +149,13 @@
    {
     "idx": 6,
     "topicIds": [
-     "niggun-shirah",
-     "sefer-devarim"
+     "niggun-shirah"
     ]
    },
    {
     "idx": 7,
     "topicIds": [
-     "yesodei-haemunah",
-     "sefer-devarim"
+     "yesodei-haemunah"
     ]
    },
    {
@@ -234,8 +225,8 @@
     "id": "churban-europa",
     "label": {
      "en": "The Churban of Europe and Persecutions",
-     "yi": "חורבן אייראפע און גזירות",
-     "he": "חורבן אירופה"
+     "yi": "חורבן אירופה און גזירות",
+     "he": "חורבן אירופה וגזירות"
     },
     "page": true
    },
@@ -333,14 +324,6 @@
     "label": {
      "en": "Rosh Hashanah",
      "yi": "ראש השנה"
-    },
-    "page": true
-   },
-   "sefer-devarim": {
-    "id": "sefer-devarim",
-    "label": {
-     "en": "Sefer Devarim",
-     "yi": "ספר דברים"
     },
     "page": true
    },

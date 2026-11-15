@@ -15,7 +15,7 @@
  "term": null,
  "person": null,
  "work": null,
- "count": 27,
+ "count": 25,
  "hubs": [
   {
    "id": "en-parsha-en-nch-01",
@@ -70,20 +70,6 @@
    "duration": 4596.52,
    "years": [
     5736
-   ],
-   "status": "full"
-  },
-  {
-   "id": "en-parsha-en-ky-sb-01",
-   "lang": "en",
-   "title": "ביכורים - Bringing the Fruit of ראשית to the Place of ראשית",
-   "oneLiner": {
-    "en": "The Rav explains that bikurim, the first-ripened fruit, is brought to the Beis HaMikdash, the place where creation began, and from there he builds a call to rise early in Elul and use the days of teshuvah before Rosh Hashanah.",
-    "yi": "דער משגיח ערקלערט אז ביכורים, די ערשטע צייטיגע פירות, ווערן געברענגט צום בית המקדש, דעם ארט וואו די בריאה האט זיך אנגעהויבן, און פון דארט מאנט ער מ'זאל זיך אויפכאפן אין אלול און אויסנוצן די ימי התשובה פאר ראש השנה."
-   },
-   "duration": 3534.655,
-   "years": [
-    5760
    ],
    "status": "full"
   },
@@ -154,6 +140,20 @@
     5742
    ],
    "status": "full"
+  },
+  {
+   "id": "yi-zmanim-shbs-chzvn-01",
+   "lang": "yi",
+   "title": "בשבת חזון נתגלה השמחה של ט' באב לעתיד וכל יהודי רואה בית השלישי בבנינה. ביאור ענין שמיטה",
+   "oneLiner": {
+    "en": "The Rav explains that the Three Weeks are the hidden, still-unconquered 'territory of Esav' in time, that Shabbos Chazon already lets every Jew see the future consolation, and that shemittah, like Shabbos and Yerushalayim, makes every Jew a kohen who lives on Hashem's blessing.",
+    "yi": "דער משגיח ערקלערט אז די דריי וואכן זענען די באהאלטענע גבול פון עשו אין זמן וואס מ'האט נאך נישט איינגענומען, אז שבת חזון זעט יעדער איד שוין די נחמה פון לעתיד, און אז שמיטה, אזוי ווי שבת און ירושלים, מאכט פון יעדן איד א כהן וואס לעבט פון דעם אייבערשטנס ברכה."
+   },
+   "duration": 5126.205,
+   "years": [
+    5746
+   ],
+   "status": "full"
   }
  ],
  "children": [
@@ -187,7 +187,7 @@
     "en": "Sefer Devarim",
     "yi": "ספר דברים"
    },
-   "count": 5
+   "count": 2
   },
   {
    "id": "sefer-shemos",
@@ -210,15 +210,6 @@
  "threads": [],
  "threadTotal": 0,
  "stories": [
-  {
-   "id": "a-listener-counts-the-pesukim-of-ki-savo",
-   "title": {
-    "en": "A listener counts the pesukim of Ki Savo",
-    "yi": "א צוהערער רעכנט די פסוקים פון כי תבא"
-   },
-   "tellings": 1,
-   "page": false
-  },
   {
    "id": "asnas-and-the-charm",
    "title": {
@@ -283,15 +274,6 @@
    "page": false
   },
   {
-   "id": "the-chassan-waiting-for-the-mechutan",
-   "title": {
-    "en": "The chassan waiting for the mechutan",
-    "yi": "דער חתן וואס ווארט אויפן מחותן"
-   },
-   "tellings": 1,
-   "page": false
-  },
-  {
    "id": "the-chiddushei-harim-declines-to-name-a-child",
    "title": {
     "en": "The Chiddushei HaRim declines to name a child",
@@ -317,18 +299,9 @@
    },
    "tellings": 1,
    "page": false
-  },
-  {
-   "id": "the-ramban-and-his-student-avner",
-   "title": {
-    "en": "The Ramban and his student Avner",
-    "yi": "דער רמב\"ן און זיין תלמיד אבנר"
-   },
-   "tellings": 1,
-   "page": false
   }
  ],
- "storyTotal": 13,
+ "storyTotal": 10,
  "occasions": [],
  "moments": [
   {
@@ -378,18 +351,6 @@
     "yi": "די בריאה פון חוה, יעדעס יאר אין תשרי"
    },
    "year": 5736
-  },
-  {
-   "id": "en-parsha-en-ky-sb-01~s2",
-   "shiurId": "en-parsha-en-ky-sb-01",
-   "t": 516.97,
-   "end": 805.14,
-   "lang": "en",
-   "title": {
-    "en": "Leket, shikchah and pe'ah fit the poor man",
-    "yi": "לקט, שכחה און פאה פאסן צום עני"
-   },
-   "year": 5760
   },
   {
    "id": "yi-parshas-hashavua-brshys-03~s6",
@@ -486,18 +447,6 @@
     "yi": "יוסף, אונקלוס און ניטל ביינאכט"
    },
    "year": 5764
-  },
-  {
-   "id": "yi-parshas-hashavua-hzynv-01~s1",
-   "shiurId": "yi-parshas-hashavua-hzynv-01",
-   "t": 271.78,
-   "end": 518.86,
-   "lang": "yi",
-   "title": {
-    "en": "The Ramban: a promise with no condition",
-    "yi": "דער רמב\"ן: א הבטחה אן א תנאי"
-   },
-   "year": 5732
   },
   {
    "id": "yi-zmanim-lvl-01~s5",
@@ -690,9 +639,33 @@
     "yi": "אירוסין און נישואין"
    },
    "year": 5736
+  },
+  {
+   "id": "yi-parshas-hashavua-vyshb-08~s6",
+   "shiurId": "yi-parshas-hashavua-vyshb-08",
+   "t": 1589.82,
+   "end": 2000.34,
+   "lang": "yi",
+   "title": {
+    "en": "Yehuda's desire, Yosef's refusal, and Asenath",
+    "yi": "יהודה'ס תאוה, יוסף'ס אפזאג, און אסנת"
+   },
+   "year": 5751
+  },
+  {
+   "id": "yi-shonos-10~s2",
+   "shiurId": "yi-shonos-10",
+   "t": 479.6,
+   "end": 870.96,
+   "lang": "yi",
+   "title": {
+    "en": "A house of slaves and the precious sigh",
+    "yi": "א בית עבדים און דער טייערער קרעכץ"
+   },
+   "year": null
   }
  ],
- "momentTotal": 79,
- "momentShiurim": 26,
+ "momentTotal": 72,
+ "momentShiurim": 24,
  "momentPages": 1
 }

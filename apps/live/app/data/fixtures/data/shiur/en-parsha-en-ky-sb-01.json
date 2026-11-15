@@ -1,7 +1,7 @@
 {
  "schemaVersion": 2,
  "id": "en-parsha-en-ky-sb-01",
- "rev": "60a9c926c681",
+ "rev": "a3e2979ba01f",
  "lang": "en",
  "category": "parsha",
  "catalog": {
@@ -63,10 +63,6 @@
  "corpus": {
   "topics": [
    {
-    "id": "sefer-devarim",
-    "salience": 0.9
-   },
-   {
     "id": "elul",
     "salience": 0.8
    },
@@ -99,7 +95,6 @@
    {
     "idx": 0,
     "topicIds": [
-     "sefer-devarim",
      "avodah-begashmiyus"
     ]
    },
@@ -114,8 +109,7 @@
    {
     "idx": 2,
     "topicIds": [
-     "tzedakah-chesed",
-     "sefer-devarim"
+     "tzedakah-chesed"
     ]
    },
    {
@@ -153,14 +147,12 @@
    {
     "idx": 7,
     "topicIds": [
-     "teshuvah",
-     "sefer-devarim"
+     "teshuvah"
     ]
    },
    {
     "idx": 8,
     "topicIds": [
-     "sefer-devarim",
      "teshuvah",
      "nisyonos-hador"
     ]
@@ -259,14 +251,6 @@
     },
     "page": true
    },
-   "sefer-devarim": {
-    "id": "sefer-devarim",
-    "label": {
-     "en": "Sefer Devarim",
-     "yi": "ספר דברים"
-    },
-    "page": true
-   },
    "teshuvah": {
     "id": "teshuvah",
     "label": {
@@ -303,6 +287,14 @@
    }
   },
   "terms": [
+   {
+    "id": "ahavas-yisrael",
+    "label": {
+     "en": "Ahavas Yisrael (love of a fellow Jew)",
+     "yi": "אהבת ישראל"
+    },
+    "page": false
+   },
    {
     "id": "beis-hamikdash",
     "label": {
@@ -416,7 +408,7 @@
    {
     "momentId": "en-parsha-en-ky-sb-01~src5",
     "workId": "rashi",
-    "page": true
+    "page": false
    },
    {
     "momentId": "en-parsha-en-ky-sb-01~src6",
@@ -466,7 +458,7 @@
    {
     "momentId": "en-parsha-en-ky-sb-01~src15",
     "workId": "rashi",
-    "page": true
+    "page": false
    },
    {
     "momentId": "en-parsha-en-ky-sb-01~src16",
