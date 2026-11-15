@@ -36,6 +36,7 @@ import {
   type SeriesFile,
   type SeriesFacetValue,
   type ShiurFile,
+  type ShiurRelated,
   type StoriesFile,
   type TodayFile,
   type WorkCitation,
@@ -65,6 +66,11 @@ export const EMIT_LIMITS = {
 export interface EmitOptions {
   /** ISO 8601; goes to build.json only. */
   generatedAt: string;
+  /**
+   * "Same idea elsewhere" lists from `neighbors.ts` (W4.4), computed before the emit because they
+   * need worker threads and the embedding cache. Absent: every `related.neighbors` is empty.
+   */
+  neighbors?: { byShiur: ReadonlyMap<string, ShiurRelated["neighbors"]>; fingerprint: string };
 }
 
 export type EmittedFiles = Map<string, DataFiles[keyof DataFiles]>;
@@ -363,7 +369,7 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
         sameOccasion: nb?.sameOccasion ?? [],
         prev: nav?.prev ?? null,
         next: nav?.next ?? null,
-        neighbors: [],
+        neighbors: (opts.neighbors?.byShiur.get(s.id) ?? []).map((n) => ({ ...n })),
       },
     };
     if (s.status === "full" && notes) {
@@ -580,7 +586,7 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
 
   // ------------------------------------------------------------------ build.json, corpus.json
   const buildId = createHash("sha256")
-    .update(JSON.stringify([info.buildId, EMITTER_VERSION, V]))
+    .update(JSON.stringify([info.buildId, EMITTER_VERSION, V, ...(opts.neighbors ? [opts.neighbors.fingerprint] : [])]))
     .digest("hex")
     .slice(0, 16);
   corpus.buildId = buildId;

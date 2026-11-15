@@ -3,12 +3,16 @@
  * `corpus:build`:
  *
  *   emit     [--corpus <dir>] [--out <dir>] [--generated-at <iso>]   .corpus/ → public/data/ (validated)
+ *            [--neighbors auto|embeddings|lexical|off] [--embeddings <dir>] [--embed-model <id>]
+ *            [--neighbor-threshold <x>] [--neighbor-workers <n>]           "same idea elsewhere" (W4.4)
  *   validate [--data <dir>]                                          every file against its contract schema
  *   budgets  [--data <dir>] [--client <dir>] [--public <dir>]        file counts and sizes (tech-live §3.3)
  *
  * Defaults: corpus `<repo>/.corpus`, data `apps/live/public/data`, client `apps/live/build/client`,
  * public `apps/live/public`. `--generated-at` defaults to SOURCE_DATE_EPOCH, else now.
  * Relative paths resolve against INIT_CWD (the directory npm was started from).
+ * Neighbours: `auto` (default) reads the embedding cache (`--embeddings`, else EMUNAS_EMBED_CACHE)
+ * when it covers ≥95% of moments, else uses the lexical fallback; see neighbors.ts and the README.
  * Exit codes: 0 ok, 1 invalid files or budget overrun or missing input, 2 usage.
  */
 import { readFileSync } from "node:fs";
@@ -19,6 +23,7 @@ import { walkFiles } from "@emunas/corpus-guard/budgets";
 import { checkLiveBudgets, describeFinding } from "./budgets.ts";
 import { readCorpusInput } from "./corpus-input.ts";
 import { emitLiveData } from "./emit.ts";
+import { buildNeighbors, DEFAULT_EMBED_MODEL, DirBlobReader, type BuildNeighborsOptions, type NeighborMode } from "./neighbors.ts";
 import { validateFile, type ValidationIssue } from "./schemas.ts";
 import { writeDataDir } from "./write.ts";
 
@@ -46,7 +51,9 @@ function printIssues(issues: ValidationIssue[]): void {
   if (issues.length > 20) console.error(`… and ${issues.length - 20} more invalid files`);
 }
 
-export function main(argv: string[]): number {
+const NEIGHBOR_MODES: readonly NeighborMode[] = ["auto", "embeddings", "lexical", "off"];
+
+export async function main(argv: string[]): Promise<number> {
   const [command, ...rest] = argv;
   let args;
   try {
@@ -59,6 +66,11 @@ export function main(argv: string[]): number {
         client: { type: "string" },
         public: { type: "string" },
         "generated-at": { type: "string" },
+        neighbors: { type: "string" },
+        embeddings: { type: "string" },
+        "embed-model": { type: "string" },
+        "neighbor-threshold": { type: "string" },
+        "neighbor-workers": { type: "string" },
       },
       strict: true,
       allowPositionals: false,
@@ -80,6 +92,17 @@ export function main(argv: string[]): number {
         console.error(`--generated-at is not a date: ${generatedAt}`);
         return 2;
       }
+      const mode = (v.neighbors ?? "auto") as NeighborMode;
+      if (!NEIGHBOR_MODES.includes(mode)) {
+        console.error(`--neighbors must be one of ${NEIGHBOR_MODES.join(", ")}`);
+        return 2;
+      }
+      const threshold = v["neighbor-threshold"] === undefined ? undefined : Number(v["neighbor-threshold"]);
+      const workers = v["neighbor-workers"] === undefined ? undefined : Number(v["neighbor-workers"]);
+      if ((threshold !== undefined && !(threshold >= -1 && threshold <= 1)) || (workers !== undefined && !(Number.isInteger(workers) && workers >= 0))) {
+        console.error("--neighbor-threshold must be in [-1, 1] and --neighbor-workers a whole number");
+        return 2;
+      }
       let input;
       try {
         input = readCorpusInput(corpusDir);
@@ -87,7 +110,26 @@ export function main(argv: string[]): number {
         console.error((e as Error).message);
         return 1;
       }
-      const files = emitLiveData(input, { generatedAt: new Date(generatedAt).toISOString() });
+      const cacheDir = v.embeddings ?? process.env["EMUNAS_EMBED_CACHE"];
+      const nopts: BuildNeighborsOptions = {
+        mode,
+        cache: cacheDir ? new DirBlobReader(resolve(BASE, cacheDir)) : null,
+        model: v["embed-model"] ?? process.env["EMUNAS_EMBED_MODEL"] ?? DEFAULT_EMBED_MODEL,
+        log: (m) => console.log(m),
+      };
+      if (threshold !== undefined) nopts.threshold = threshold;
+      if (workers !== undefined) nopts.workers = workers;
+      let neighbors;
+      try {
+        neighbors = await buildNeighbors(input.shiurim, nopts);
+      } catch (e) {
+        console.error((e as Error).message);
+        return 1;
+      }
+      const files = emitLiveData(input, {
+        generatedAt: new Date(generatedAt).toISOString(),
+        ...(mode === "off" ? {} : { neighbors: { byShiur: neighbors.byShiur, fingerprint: neighbors.fingerprint } }),
+      });
       const invalid = [...files].flatMap(([f, body]) => validateFile(f, body) ?? []);
       if (invalid.length > 0) {
         printIssues(invalid);
@@ -154,5 +196,7 @@ export function main(argv: string[]): number {
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  process.exitCode = main(process.argv.slice(2));
+  void main(process.argv.slice(2)).then((code) => {
+    process.exitCode = code;
+  });
 }

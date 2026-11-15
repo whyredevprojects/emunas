@@ -31,7 +31,7 @@ summarized"). Search documents come from `@emunas/search-core` (`buildSearchDoc`
 | `corpus.json` | `index.json` rows. `entities.concepts` keeps browse concepts only (≥2 shiurim, not stop-listed) |
 | `facets.json` | labels and row counts for every category, language, occasion (tables, the "other" bucket and file-name guesses), year, series, work, person and browse concept used in `corpus.json` |
 | `today.json` | `occasions.json` (parshiyos, zmanim with their sub-headings, "other"): shiurim by year and a pool of at most 12 timed insights/stories/questions per occasion, round-robin over the shiurim; `newlySummarized`: the 24 newest by manifest `updatedAt` |
-| `shiur/<id>.json` | the projected shiur without the write-up; `related` from `neighbours.json` (prev/next in series order, else catalog section order); `neighbors` empty until W4.4 |
+| `shiur/<id>.json` | the projected shiur without the write-up; `related` from `neighbours.json` (prev/next in series order, else catalog section order); `neighbors` from `neighbors.ts` (W4.4, below) |
 | `writeup/<id>.<en\|yi>.json` | the write-up blocks, full shiurim only |
 | `series/<id>.json` | `series.json` parts and perek groups |
 | `works.json`, `work/<key>.json` | `works.json`: shelf without the generic labels (`genre`); one file per cited work, locations in the work's order |
@@ -44,6 +44,62 @@ Every file is validated against a valibot schema before anything is written (`sc
 schemas are strict (an unknown key fails) and are checked at compile time to infer exactly the
 contract types, so a contract change that is not mirrored there fails `tsc`. Files are written only
 when their bytes change; files no longer emitted are removed.
+
+## "Same idea elsewhere" (`neighbors.ts`, W4.4)
+
+Before the emit, `data:build` computes `related.neighbors` for every summarized shiur: up to 5
+moments, each from a different *other* shiur, whose cosine similarity to one of this shiur's
+sections or insights is at or above a threshold, best first. Never a moment of the same shiur.
+The listening room shows them under "Same idea elsewhere", labelled as a suggestion.
+
+- **Units**: the `section` and `insight` moment rows (`buildMomentRows` of `@emunas/search-core`),
+  with exactly the texts the W3.10 Vectorize sync embeds (`toVectorUnits` in
+  `workers/api/sync/src/rows.ts`), so cache keys match. Generated text only; the output holds ids,
+  times and scores.
+- **Vectors** (`--neighbors auto|embeddings|lexical|off`, default `auto`):
+  - `embeddings`: the W3.10 cache `emb/<model>/<sha256(text)>.f16` in a folder (`--embeddings <dir>`
+    or `EMUNAS_EMBED_CACHE`; model `--embed-model` or `EMUNAS_EMBED_MODEL`, default
+    `@cf/baai/bge-m3`). A moment's vector is the normalized mean of its per-language vectors.
+    Nothing is embedded here; moments whose texts are not cached are left out and counted.
+  - `lexical`: deterministic fallback with no model or account: TF-IDF over `foldTokens` of the
+    same texts, feature-hashed into 1,024 dimensions (shared rare words; English and Yiddish both
+    count because every moment carries both languages).
+  - `auto`: the cache when one is given and covers ≥95% of moments, else lexical (logged).
+- **Thresholds**: lexical 0.3; embeddings 0.75 (a starting value for bge-m3, not yet calibrated:
+  see below). `--neighbor-threshold` overrides.
+- **Search**: brute force over all pairs, rows in groups of four, split over worker threads
+  (`--neighbor-workers`, default all cores up to 8). Every pair is scored once by the same code
+  whatever the split; ties break on sorted ids; scores are rounded to 3 decimals. An unchanged corpus
+  and cache give byte-identical files. The lists' sha256 is folded into `build.json` `buildId`.
+- **Time**: today (8,674 moments, lexical, 4 cores) about 11 s. At the plan's ceiling, 18,000
+  moments × 1,024 dims, about 40 s on 4 cores (~80 s on 2); `neighbors.test.ts` asserts the
+  projection stays under 3 minutes.
+
+### Plugging in the real embeddings (needs Cloudflare credentials; not done here)
+
+1. Run the W3.10 eval and sync (`workers/api/sync/README.md`), which fill R2 `emunas-site-build`
+   with `emb/<model>/*.f16` for every section and insight text.
+2. In the deploy job, mirror that model's prefix to a local folder before `data:build`, e.g. with
+   the R2 S3 endpoint and the sync's derived credentials:
+
+   ```sh
+   aws s3 sync --endpoint-url "https://$CLOUDFLARE_ACCOUNT_ID.r2.cloudflarestorage.com" \
+     s3://emunas-site-build/emb/baai--bge-m3/ .cache/embeddings/emb/baai--bge-m3/
+   npm run data:build -w @emunas/live -- --neighbors embeddings --embeddings .cache/embeddings
+   ```
+
+   (keep `.cache/embeddings` in `actions/cache` so only new blobs are fetched). Programmatically,
+   `buildNeighbors` takes any `BlobReader`, so the sync's `R2S3Store` can be passed directly.
+   Use `--neighbors embeddings` in CI so a missing cache fails loudly instead of silently falling
+   back.
+3. Locally the embeddings path can be exercised without an account: `npx tsx workers/api/sync/src/cli.ts --only vectors`
+   fills `workers/api/.wrangler/state/emunas-sync/cache` with the sync's deterministic stand-in
+   vectors; then `npm run data:build -w @emunas/live -- --neighbors embeddings --embeddings
+   workers/api/.wrangler/state/emunas-sync/cache --embed-model fake/hashing-trigram-1024
+   --neighbor-threshold 0.5` (full coverage, ~10 s, identical output with any worker count).
+4. Calibrate the threshold once on the real vectors: look at the score distribution of the lists
+   (median and the 20 lowest pairs) and set `NEIGHBOR_DEFAULTS.threshold.embeddings` so loose pairs
+   drop out; if qwen3 wins the eval, pass `--embed-model @cf/qwen/qwen3-embedding-0.6b`.
 
 ## Budgets (`budgets.ts`)
 
@@ -75,3 +131,8 @@ stories 54 KiB, quick index 255 KiB per language.
 - `real-data.test.ts`: the deploy order on the repo's data, with the guard pre-pass and the verbatim
   post-pass over the emitted tree (about 45 s); budgets pass.
 - `budgets.test.ts`: each budget check fires; the CLI end to end.
+- `neighbors.test.ts`: the kernel against a naive O(n²) reference (one thread and several), never a
+  same-shiur neighbour, one moment per other shiur, threshold and cap, tie-breaks independent of the
+  worker split, the cache reader on the W3.10 layout, the `auto` fallback, the emit wiring on the
+  mini corpus (schema-valid, real target moments and times, deterministic, build id), and the
+  3-minute budget projected to 18,000 × 1,024.
