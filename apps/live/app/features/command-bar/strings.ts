@@ -1,0 +1,128 @@
+/**
+ * UI strings of the command bar and the search page (W4.3). Kept with the feature (like
+ * `features/series/strings.ts`) and built with `createT` from `@emunas/i18n`, so a key missing in
+ * Yiddish fails `tsc`. Yiddish wording is unreviewed until W5.3.
+ */
+import { createT, type MessageTable, type TFunction, type UiLang } from "@emunas/i18n";
+
+export const searchEn = {
+  "cb.label": "Search or go to",
+  "cb.placeholder": "A parsha, a sefer, “Tanya 12”, a year…",
+  "cb.hint": "Press / to search from anywhere.",
+  "cb.goTo": "Go to",
+  "cb.moments": "Moments",
+  "cb.shiurim": "Shiurim",
+  "cb.all": "All results for “{q}”",
+  "cb.searching": "Searching…",
+  "cb.loadingIndex": "Loading…",
+  "cb.nothing": "Nothing found for “{q}”.",
+  "cb.count": { one: "{count} shiur", other: "{count} shiurim" },
+  "cb.type.occasion": "Parsha or occasion",
+  "cb.type.work": "Sefer",
+  "cb.type.person": "Person",
+  "cb.type.concept": "Inyan",
+  "cb.type.series": "Series",
+  "cb.type.year": "Year",
+  "cb.seriesPerek": "perek {n}",
+  "cb.seriesPart": "part {n}",
+  "cb.fallback": "Showing shiur-level results",
+  "cb.fallback.offline": "You are offline, so only shiur titles and summaries are searched.",
+  "cb.fallback.failed": "Full search is not available right now, so only shiur titles and summaries are searched.",
+
+  "search.lead": "Search the shiurim by their notes and catalog titles.",
+  "search.input": "Search",
+  "search.form": "Search the notes",
+  "search.submit": "Search",
+  "search.empty": "Type a word, a name or a place in a sefer. Hebrew, Yiddish and English spellings all work.",
+  "search.summary": { one: "{count} moment in {shiurim}", other: "{count} moments in {shiurim}" },
+  "search.shiurim": { one: "{count} shiur", other: "{count} shiurim" },
+  "search.groupMore": { one: "and {count} more in this shiur", other: "and {count} more in this shiur" },
+  "search.more": "More results",
+  "search.restart": "The notes were updated while you were searching. Search again to see current results.",
+  "search.matched": "Matched: {what}",
+  "search.matched.title": "{kind} title",
+  "search.matched.text": "{kind} text",
+  "search.matched.semantic": "{kind}, similar in meaning",
+  "search.kind.shiur": "Shiur summary",
+  "search.kind.section": "Chapter",
+  "search.kind.insight": "Insight",
+  "search.kind.question": "Question",
+  "search.kind.takeaway": "Takeaway",
+  "search.kind.story": "Story",
+  "search.kind.keypoint": "Key point",
+  "search.kind.writeup": "Write-up",
+  "search.field.title": "catalog title",
+  "search.field.occasion": "parsha or occasion",
+  "search.field.oneLiner": "summary",
+  "search.field.sections": "chapter titles",
+  "search.field.entities": "sources and people",
+  "search.play": "Play from {time}",
+  "search.open": "Open the shiur",
+  "search.noResults": "No results for “{q}”.",
+} as const;
+
+export type SearchKey = keyof typeof searchEn;
+
+export const searchYi: MessageTable<SearchKey> = {
+  "cb.label": "זוכן אדער גיין צו",
+  "cb.placeholder": "א פרשה, א ספר, „תניא 12“, א יאר…",
+  "cb.hint": "דריקט / צו זוכן פון יעדן ארט.",
+  "cb.goTo": "גיין צו",
+  "cb.moments": "מאמענטן",
+  "cb.shiurim": "שיעורים",
+  "cb.all": "אלע רעזולטאטן פאר „{q}“",
+  "cb.searching": "מען זוכט…",
+  "cb.loadingIndex": "לאדנט…",
+  "cb.nothing": "גארנישט געפונען פאר „{q}“.",
+  "cb.count": { one: "{count} שיעור", other: "{count} שיעורים" },
+  "cb.type.occasion": "פרשה אדער זמן",
+  "cb.type.work": "ספר",
+  "cb.type.person": "פערזאן",
+  "cb.type.concept": "ענין",
+  "cb.type.series": "סעריע",
+  "cb.type.year": "יאר",
+  "cb.seriesPerek": "פרק {n}",
+  "cb.seriesPart": "חלק {n}",
+  "cb.fallback": "מען ווייזט רעזולטאטן לויט שיעורים",
+  "cb.fallback.offline": "איר זענט נישט פארבונדן, דערפאר זוכט מען נאר אין די טיטלען און קיצורים פון די שיעורים.",
+  "cb.fallback.failed": "דאס פולע זוכן ארבעט נישט יעצט, דערפאר זוכט מען נאר אין די טיטלען און קיצורים פון די שיעורים.",
+
+  "search.lead": "זוכן אין די שיעורים לויט זייערע נאטיצן און קאטאלאג טיטלען.",
+  "search.input": "זוכן",
+  "search.form": "זוכן אין די נאטיצן",
+  "search.submit": "זוכן",
+  "search.empty": "שרייבט א ווארט, א נאמען אדער א מקום אין א ספר. לשון קודש, אידיש און ענגליש אויסלייגן ארבעטן אלע.",
+  "search.summary": { one: "{count} מאמענט אין {shiurim}", other: "{count} מאמענטן אין {shiurim}" },
+  "search.shiurim": { one: "{count} שיעור", other: "{count} שיעורים" },
+  "search.groupMore": { one: "און נאך {count} אין דעם שיעור", other: "און נאך {count} אין דעם שיעור" },
+  "search.more": "מער רעזולטאטן",
+  "search.restart": "די נאטיצן זענען דערנייערט געווארן בשעת׳ן זוכן. זוכט נאכאמאל צו זען די יעצטיגע רעזולטאטן.",
+  "search.matched": "געפונען: {what}",
+  "search.matched.title": "{kind} – טיטל",
+  "search.matched.text": "{kind} – טעקסט",
+  "search.matched.semantic": "{kind}, ענלעך אין באדייט",
+  "search.kind.shiur": "קיצור פונעם שיעור",
+  "search.kind.section": "קאפיטל",
+  "search.kind.insight": "חידוש",
+  "search.kind.question": "שאלה",
+  "search.kind.takeaway": "לקח",
+  "search.kind.story": "מעשה",
+  "search.kind.keypoint": "הויפט פונקט",
+  "search.kind.writeup": "אויסשרייב",
+  "search.field.title": "קאטאלאג טיטל",
+  "search.field.occasion": "פרשה אדער זמן",
+  "search.field.oneLiner": "קיצור",
+  "search.field.sections": "קאפיטל טיטלען",
+  "search.field.entities": "מקורות און פערזאנען",
+  "search.play": "שפילן פון {time}",
+  "search.open": "עפענען דעם שיעור",
+  "search.noResults": "קיין רעזולטאטן פאר „{q}“.",
+};
+
+export type SearchT = TFunction<SearchKey>;
+
+const cache: Partial<Record<UiLang, SearchT>> = {};
+
+export function searchT(ui: UiLang): SearchT {
+  return (cache[ui] ??= createT<SearchKey>({ en: searchEn, yi: searchYi }, ui));
+}

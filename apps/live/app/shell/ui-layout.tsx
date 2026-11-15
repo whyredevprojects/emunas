@@ -9,6 +9,7 @@
 import { UI_DIR, isUiLang } from "@emunas/i18n";
 import type { JSX } from "react";
 import { Link, Outlet, useParams } from "react-router";
+import { CommandBar } from "../features/command-bar/CommandBar.tsx";
 import { tFor } from "../i18n/index.ts";
 import { useFocusHeadingOnNavigate, useHtmlLang, useSettingsFromQuery } from "./behaviour.ts";
 import { DockSlot } from "./dock.tsx";
@@ -44,6 +45,7 @@ export default function UiLayout(): JSX.Element {
         <Link to={`/${ui}/`} className={styles.brand}>
           {t("site.short")}
         </Link>
+        <CommandBar ui={ui} />
         <LanguageMenu ui={ui} />
       </header>
       <Rail ui={ui} />

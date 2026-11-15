@@ -1,0 +1,241 @@
+/*
+ * Command bar (in the shell header) and the search page (concept-live §4.2, tech-live §4.4).
+ * Logical properties only; everything mirrors with `dir`. The input uses dir="auto", so Hebrew typed
+ * in the English interface (and English in the Yiddish one) runs in its own direction.
+ */
+@layer components {
+  /* ---------------------------------------------------------------- command bar */
+  .bar {
+    position: relative;
+    flex: 1 1 18rem;
+    max-inline-size: 36rem;
+    min-inline-size: 0;
+  }
+
+  .input {
+    inline-size: 100%;
+    min-block-size: var(--tap-min);
+    padding-inline: var(--space-s);
+    border: var(--rule-hairline) solid var(--color-rule-strong);
+    border-radius: var(--radius-m);
+    background: var(--color-surface);
+    color: var(--color-ink);
+    font: inherit;
+    text-align: start;
+  }
+
+  .input:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 1px;
+  }
+
+  .popup {
+    position: absolute;
+    inset-block-start: calc(100% + var(--space-3xs));
+    inset-inline: 0;
+    z-index: 20;
+    max-block-size: min(70dvh, 32rem);
+    overflow-y: auto;
+    margin: 0;
+    padding: var(--space-2xs) 0;
+    list-style: none;
+    background: var(--color-surface);
+    border: var(--rule-hairline) solid var(--color-rule-strong);
+    border-radius: var(--radius-m);
+    box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 0.12);
+  }
+
+  .groupLabel {
+    padding: var(--space-2xs) var(--space-s);
+    font-size: var(--step--1);
+    color: var(--color-ink-muted);
+    font-weight: var(--weight-semibold);
+  }
+
+  .groupList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .option {
+    display: grid;
+    gap: var(--space-3xs);
+    min-block-size: var(--tap-min);
+    align-content: center;
+    padding: var(--space-2xs) var(--space-s);
+    cursor: pointer;
+  }
+
+  .option[aria-selected="true"] {
+    background: var(--color-paper-sunk);
+    outline: 2px solid var(--color-focus);
+    outline-offset: -2px;
+  }
+
+  .optionMeta {
+    font-size: var(--step--1);
+    color: var(--color-ink-muted);
+  }
+
+  .status {
+    padding: var(--space-2xs) var(--space-s);
+    font-size: var(--step--1);
+    color: var(--color-ink-muted);
+  }
+
+  /* ---------------------------------------------------------------- search page */
+  .page {
+    max-inline-size: var(--measure-wide);
+    padding: var(--space-l) var(--space-m) var(--space-2xl);
+    display: grid;
+    gap: var(--space-m);
+  }
+
+  .title {
+    font-size: var(--step-4);
+    margin: 0;
+  }
+
+  .lead,
+  .muted {
+    margin: 0;
+    color: var(--color-ink-muted);
+  }
+
+  .form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-s);
+  }
+
+  .form .input {
+    flex: 1 1 16rem;
+    inline-size: auto;
+  }
+
+  .button {
+    min-block-size: var(--tap-min);
+    padding-inline: var(--space-m);
+    border: 0;
+    border-radius: var(--radius-m);
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    font: inherit;
+    font-weight: var(--weight-semibold);
+    cursor: pointer;
+  }
+
+  .button:hover {
+    background: var(--color-accent-hover);
+  }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .chip {
+    display: inline-flex;
+    gap: var(--space-2xs);
+    align-items: center;
+    min-block-size: var(--tap-min);
+    padding-inline: var(--space-s);
+    border: var(--rule-hairline) solid var(--color-rule);
+    border-radius: var(--radius-m);
+    background: var(--color-surface);
+  }
+
+  .notice {
+    margin: 0;
+    padding: var(--space-xs) var(--space-s);
+    border-inline-start: 3px solid var(--color-accent);
+    background: var(--color-paper-sunk);
+  }
+
+  .aiNote {
+    margin: 0;
+    font-size: var(--step--1);
+    color: var(--color-ink-muted);
+  }
+
+  .results {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-m);
+  }
+
+  .group {
+    display: grid;
+    gap: var(--space-2xs);
+    padding: var(--space-s) var(--space-m);
+    border: var(--rule-hairline) solid var(--color-rule);
+    border-radius: var(--radius-m);
+    background: var(--color-surface);
+  }
+
+  .groupTitle {
+    margin: 0;
+    font-size: var(--step-1);
+  }
+
+  .hits {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-s);
+  }
+
+  .hit {
+    display: grid;
+    gap: var(--space-3xs);
+    padding-block-start: var(--space-2xs);
+    border-block-start: var(--rule-hairline) solid var(--color-rule);
+  }
+
+  .hitLink {
+    display: inline-flex;
+    gap: var(--space-xs);
+    align-items: baseline;
+    min-block-size: var(--tap-min);
+    font-weight: var(--weight-semibold);
+  }
+
+  .time {
+    font-variant-numeric: tabular-nums;
+    color: var(--color-ink-muted);
+    font-weight: normal;
+  }
+
+  .matched {
+    font-size: var(--step--1);
+    color: var(--color-ink-muted);
+  }
+
+  .snippet {
+    margin: 0;
+  }
+
+  .snippet mark {
+    background: var(--color-highlight);
+    color: inherit;
+    padding-inline: 0.1em;
+    border-radius: 2px;
+  }
+
+  .visuallyHidden {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
