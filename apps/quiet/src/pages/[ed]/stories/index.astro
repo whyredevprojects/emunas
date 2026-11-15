@@ -1,62 +1,95 @@
 ---
 /**
- * Stories index, מעשיות (concept-quiet §5.8; tech-quiet §2 `/{ed}/stories/`): one page, story
- * titles grouped by the main person they are about (the story's first person), alphabetical, with
- * a jump list by letter; stories without a named person last. Each title points to its shiur at
- * the story's time. There is no page per story and no retelling here. Each telling is listed, so
- * repeats sit next to each other under their person.
+ * מעשיות, the stories index (Quiet C4.5), on the corpus layer's merged stories. Three parts:
+ * most retold (four or more tellings, the most often told first), by person in the groups of the
+ * index of names, and without a name (alphabetical). A story told in more than one shiur links to
+ * its own page; a story told once links to the place in the shiur. The AI label sits under the
+ * heading, once (Quiet C6). Built only when the layer is there; otherwise the title page leaves
+ * the line out.
  */
 import type { GetStaticPaths } from "astro";
+import { corpusLabel } from "@emunas/i18n";
 import Base from "../../../layouts/Base.astro";
-import IndexHead from "../../../components/indexes/IndexHead.astro";
-import JumpList from "../../../components/indexes/JumpList.astro";
-import StoryLink from "../../../components/indexes/StoryLink.astro";
-import { indexesData } from "../../../components/indexes/corpus.ts";
-import { indexCrumbs, indexTitle } from "../../../components/indexes/crumbs.ts";
-import { run, storiesIndex } from "../../../components/indexes/model.ts";
-import { useIndexesT } from "../../../components/indexes/strings.ts";
+import JumpList from "../../../components/catalog/JumpList.astro";
+import { loadCatalogCorpus } from "../../../components/catalog/corpus.ts";
+import { indexRows } from "../../../components/catalog/model.ts";
+import EntityLabel from "../../../components/corpus/EntityLabel.astro";
+import { quietLayer } from "../../../components/corpus/layer.ts";
+import StoryLine from "../../../components/stories/StoryLine.astro";
+import { MOST_RETOLD_MIN, STORIES_ANCHORS, storiesCrumbs, storiesIndexModel } from "../../../components/stories/model.ts";
+import { useStoriesT } from "../../../components/stories/strings.ts";
+import "../../../components/stories/stories.css";
 import { EDS, type Ed } from "../../../lib/edition.ts";
 
-export const getStaticPaths = (() => (indexesData() ? EDS.map((ed) => ({ params: { ed } })) : [])) satisfies GetStaticPaths;
+export const getStaticPaths = (() => (quietLayer().enabled ? EDS.map((ed) => ({ params: { ed } })) : [])) satisfies GetStaticPaths;
 
 const ed = Astro.params.ed as Ed;
-const data = indexesData()!;
-const t = useIndexesT(ed);
-const title = indexTitle(ed, "stories");
-const { letters, rest } = storiesIndex(data, ed);
+const layer = quietLayer();
+const t = useStoriesT(ed);
+const title = corpusLabel("index.stories", ed);
+const model = storiesIndexModel(ed, layer, indexRows(loadCatalogCorpus()));
 const jump = [
-  ...letters.map((b) => ({ id: b.id, label: b.letter })),
-  ...(rest ? [{ id: rest.id, label: rest.name.text }] : []),
+  ...(model.mostRetold.length > 0 ? [{ id: STORIES_ANCHORS.mostRetold, label: t("index.mostRetold"), count: model.mostRetold.length }] : []),
+  ...(model.groups.length > 0
+    ? [
+        {
+          id: STORIES_ANCHORS.byPerson,
+          label: t("index.byPerson"),
+          children: model.groups.map((g) => ({ id: g.anchor, label: g.label })),
+        },
+      ]
+    : []),
+  ...(model.withoutName.length > 0 ? [{ id: STORIES_ANCHORS.withoutName, label: t("index.withoutName"), count: model.withoutName.length }] : []),
 ];
 ---
-<Base ed={ed} title={title} crumbs={indexCrumbs(ed, "stories")}>
-  <IndexHead ed={ed} title={run(title, ed)} intro={t("stories.intro")} counts={data.build.counts} />
-  <JumpList ed={ed} items={jump} />
-  {letters.map((b) => (
-    <section class="index-block" id={b.id} aria-labelledby={`${b.id}-h`}>
-      <h2 id={`${b.id}-h`}><bdi>{b.letter}</bdi></h2>
-      {b.items.map((g) => (
-        <section class="story-group" id={g.id} aria-labelledby={`${g.id}-h`}>
-          <h3 id={`${g.id}-h`}>
-            {g.personHref ? (
-              <a href={g.personHref}><bdi lang={g.name.lang} dir={g.name.dir}>{g.name.text}</bdi></a>
-            ) : (
-              <bdi lang={g.name.lang} dir={g.name.dir}>{g.name.text}</bdi>
-            )}
-            <span class="entry-count">{t("count.stories", { count: g.stories.length })}</span>
-          </h3>
-          <ul class="entries" role="list">
-            {g.stories.map((s) => <li><StoryLink ed={ed} story={s} cite /></li>)}
-          </ul>
+<Base ed={ed} title={title} crumbs={storiesCrumbs(ed)}>
+  <header class="index-head">
+    <h1>{title}</h1>
+    <p class="stories-lead">{t("index.lead")}</p>
+    <EntityLabel ed={ed} variant="index" count={layer.visibleShiurim} />
+  </header>
+
+  {jump.length > 1 && <JumpList ed={ed} label={t("index.jump")} items={jump} />}
+
+  {model.mostRetold.length > 0 && (
+    <section class="stories-part" id={STORIES_ANCHORS.mostRetold} aria-labelledby={`${STORIES_ANCHORS.mostRetold}-h`}>
+      <h2 id={`${STORIES_ANCHORS.mostRetold}-h`}>{t("index.mostRetold")}</h2>
+      <p class="stories-lead">{t("index.mostRetoldLead", { min: MOST_RETOLD_MIN })}</p>
+      <ul class="story-lines" role="list">
+        {model.mostRetold.map((line) => <StoryLine ed={ed} line={line} />)}
+      </ul>
+    </section>
+  )}
+
+  {model.groups.length > 0 && (
+    <section class="stories-part" id={STORIES_ANCHORS.byPerson} aria-labelledby={`${STORIES_ANCHORS.byPerson}-h`}>
+      <h2 id={`${STORIES_ANCHORS.byPerson}-h`}>{t("index.byPerson")}</h2>
+      <p class="stories-lead">{t("index.byPersonLead")}</p>
+      {model.groups.map((g) => (
+        <section class="stories-group" id={g.anchor} aria-labelledby={`${g.anchor}-h`}>
+          <h3 id={`${g.anchor}-h`}>{g.label}</h3>
+          {g.people.map((p) => (
+            <section class="stories-person" id={p.anchor} aria-labelledby={`${p.anchor}-h`}>
+              <h4 id={`${p.anchor}-h`}>
+                <a href={p.href}><bdi lang={p.name.lang} dir={p.name.dir}>{p.name.text}</bdi></a>
+                {p.alt && <> <span class="alt-name"><bdi lang={p.alt.lang} dir={p.alt.dir}>{p.alt.text}</bdi></span></>}
+              </h4>
+              <ul class="story-lines" role="list">
+                {p.stories.map((line) => <StoryLine ed={ed} line={line} />)}
+              </ul>
+            </section>
+          ))}
         </section>
       ))}
     </section>
-  ))}
-  {rest && (
-    <section class="index-block" id={rest.id} aria-labelledby={`${rest.id}-h`}>
-      <h2 id={`${rest.id}-h`}>{rest.name.text}<span class="entry-count">{t("count.stories", { count: rest.stories.length })}</span></h2>
-      <ul class="entries" role="list">
-        {rest.stories.map((s) => <li><StoryLink ed={ed} story={s} cite /></li>)}
+  )}
+
+  {model.withoutName.length > 0 && (
+    <section class="stories-part" id={STORIES_ANCHORS.withoutName} aria-labelledby={`${STORIES_ANCHORS.withoutName}-h`}>
+      <h2 id={`${STORIES_ANCHORS.withoutName}-h`}>{t("index.withoutName")}</h2>
+      <p class="stories-lead">{t("index.withoutNameLead")}</p>
+      <ul class="story-lines" role="list">
+        {model.withoutName.map((line) => <StoryLine ed={ed} line={line} />)}
       </ul>
     </section>
   )}

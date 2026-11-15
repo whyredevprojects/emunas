@@ -5,7 +5,10 @@
  * of the same perek from series.json `groups`), so the page reads like the contents of a
  * commentary on the sefer. Nothing pairs a set with one in the other language: Yiddish and English
  * shiurim are separate shiurim, never translations (concept-quiet-corpus C4.1, corpus-wave-plan §1.6).
- * The introduction slot for a future series overview stays empty until such text exists.
+ * The introduction slot (Quiet C4.7) holds the layer's series synthesis when there is one: the
+ * generated title as a subtitle inside the notes area, the overview and the key themes; each part's
+ * line is then its arc one-liner, and a part without notes keeps its row with "notes not prepared
+ * yet". A series with no synthesis or no visible part stays a plain list, with no empty block.
  */
 import type { GetStaticPaths } from "astro";
 import { audioLanguageLabel, isolate } from "@emunas/i18n";
@@ -13,6 +16,8 @@ import Base from "../../../layouts/Base.astro";
 import NotesLabel from "../../../components/NotesLabel.astro";
 import CatalogTable from "../../../components/catalog/CatalogTable.astro";
 import JumpList, { type JumpItem } from "../../../components/catalog/JumpList.astro";
+import SeriesIntro from "../../../components/catalog/SeriesIntro.astro";
+import { quietLayer } from "../../../components/corpus/layer.ts";
 import { loadCatalogCorpus } from "../../../components/catalog/corpus.ts";
 import { contentsHref, perekIsNumeral, sectionHref, seriesModel, seriesSummaries } from "../../../components/catalog/model.ts";
 import { useCatalogT } from "../../../components/catalog/strings.ts";
@@ -27,7 +32,8 @@ export const getStaticPaths = (() => {
 
 const ed = Astro.params.ed as Ed;
 const corpus = loadCatalogCorpus();
-const model = seriesModel(corpus, Astro.params.series as string, ed);
+const seriesId = Astro.params.series as string;
+const model = seriesModel(corpus, seriesId, ed, quietLayer().series(seriesId));
 if (!model) throw new Error(`series page: unknown series ${Astro.params.series}`);
 const t = useT(ed);
 const c = useCatalogT(ed);
@@ -72,9 +78,9 @@ const caption = (label: string) => c("table.caption", { name: label });
     )}
   </header>
 
-  {/* Reserved: series overview (concept-quiet §5.3). Renders nothing until the synthesis exists. */}
-
   {model.anyNotes && <NotesLabel ed={ed} />}
+
+  {model.intro && <SeriesIntro ed={ed} intro={model.intro} />}
 
   {model.groups && model.groups.length > 1 && <JumpList ed={ed} label={c("series.jump")} items={jump} />}
 

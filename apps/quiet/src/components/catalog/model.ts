@@ -383,12 +383,32 @@ export function sectionModel(corpus: CatalogCorpus, slug: string, ed: Ed): Secti
 export interface SeriesRow extends CatalogRow {
   /** 1-based position in the series. */
   readonly part: number;
+  /**
+   * With a series introduction: this part is not visible (no notes yet), so it has no arc line and
+   * its row says "notes not prepared yet" (Quiet C4.7). Always false without an introduction.
+   */
+  readonly notPrepared: boolean;
 }
 
 export interface PerekGroup {
   readonly id: string;
   readonly perek: string | null;
   readonly rows: SeriesRow[];
+}
+
+/**
+ * The generated series introduction (Quiet C4.7, `.corpus/layer/series/<id>.json`), in the
+ * edition's language. AI wording: it sits inside the notes area, under the notes label, and the
+ * catalog name stays the page title.
+ */
+export interface SeriesIntro {
+  /** The generated title, shown as a subtitle (null when blank). */
+  readonly subtitle: string | null;
+  /** Null when blank (for example a field blanked by the verbatim scan). */
+  readonly overview: string | null;
+  /** Plain text, never links. */
+  readonly keyThemes: readonly string[];
+  readonly reviewed: boolean;
 }
 
 export interface SeriesModel {
@@ -403,18 +423,60 @@ export interface SeriesModel {
   /** The catalog sections the set was printed in. */
   readonly sections: SectionSummary[];
   readonly anyNotes: boolean;
+  /** The generated introduction; null for a series with no synthesis or no visible part (no synthesis UI). */
+  readonly intro: SeriesIntro | null;
 }
 
-export function seriesModel(corpus: CatalogCorpus, id: string, ed: Ed): SeriesModel | null {
+/** A generated text in both languages (separate texts: never a fallback from one to the other). */
+type Texts = { readonly en?: unknown; readonly yi?: unknown } | null | undefined;
+
+/**
+ * The parts of a layer series synthesis (`LayerSeries`) the page reads. Typed loosely: the
+ * pipeline's shapes keep changing, so every field is read defensively.
+ */
+export interface SeriesSynthesis {
+  readonly title?: Texts;
+  readonly overview?: Texts;
+  readonly keyThemes?: readonly Texts[] | null;
+  readonly arc?: readonly { readonly shiurId?: unknown; readonly oneLiner?: Texts }[] | null;
+  readonly reviewed?: boolean;
+}
+
+function textIn(t: Texts, ed: Ed): string | null {
+  const v = t?.[ed];
+  return typeof v === "string" && v.trim() !== "" ? v.trim() : null;
+}
+
+/**
+ * A series page. With `synthesis` (the layer's series file) naming at least one part of the set,
+ * the page gains the introduction, each visible part's line becomes its arc one-liner, and the
+ * parts without an arc line (not visible: no notes yet) keep their row and number, marked "notes
+ * not prepared yet". Without a synthesis the page is the plain catalog list, with no intro.
+ */
+export function seriesModel(corpus: CatalogCorpus, id: string, ed: Ed, synthesis: SeriesSynthesis | null = null): SeriesModel | null {
   const entry = corpus.series.series.find((s) => s.id === id);
   if (!entry || entry.parts.length === 0) return null;
   const count = entry.parts.length;
   const position = new Map(entry.parts.map((p, i) => [p.id, i + 1]));
+  const arcLine = new Map<string, string | null>();
+  for (const a of Array.isArray(synthesis?.arc) ? synthesis.arc : []) {
+    if (typeof a?.shiurId === "string" && position.has(a.shiurId) && !arcLine.has(a.shiurId)) {
+      arcLine.set(a.shiurId, textIn(a.oneLiner, ed));
+    }
+  }
+  // A synthesis that names no part of this set (no visible part): no synthesis UI at all.
+  const withIntro = synthesis !== null && arcLine.size > 0;
   const rows: SeriesRow[] = rowsOf(
     corpus,
     entry.parts.map((p) => p.id),
     ed,
-  ).map((r) => ({ ...r, part: position.get(r.id) ?? 0 }));
+  ).map((r) => {
+    const part = position.get(r.id) ?? 0;
+    if (!withIntro) return { ...r, part, notPrepared: false };
+    if (!arcLine.has(r.id)) return { ...r, part, oneLiner: null, notPrepared: true };
+    // A visible part whose arc line is blank keeps its own one-line summary.
+    return { ...r, part, oneLiner: arcLine.get(r.id) ?? r.oneLiner, notPrepared: false };
+  });
   const byId = new Map(rows.map((r) => [r.id, r]));
   const groups = entry.groups
     ? entry.groups
@@ -428,6 +490,17 @@ export function seriesModel(corpus: CatalogCorpus, id: string, ed: Ed): SeriesMo
   const partIds = new Set(entry.parts.map((p) => p.id));
   const sections = sectionSummaries(corpus).filter((s) => s.shiurIds.some((x) => partIds.has(x)));
   const other: Ed = ed === "yi" ? "en" : "yi";
+  const intro: SeriesIntro | null =
+    withIntro && synthesis !== null
+      ? {
+          subtitle: textIn(synthesis.title, ed),
+          overview: textIn(synthesis.overview, ed),
+          keyThemes: (Array.isArray(synthesis.keyThemes) ? synthesis.keyThemes : [])
+            .map((k) => textIn(k, ed))
+            .filter((k): k is string => k !== null),
+          reviewed: synthesis.reviewed === true,
+        }
+      : null;
   return {
     entry,
     title: entry.title[ed],
@@ -436,7 +509,8 @@ export function seriesModel(corpus: CatalogCorpus, id: string, ed: Ed): SeriesMo
     rows,
     groups,
     sections,
-    anyNotes: rows.some((r) => r.oneLiner !== null),
+    anyNotes: rows.some((r) => r.oneLiner !== null || r.notPrepared),
+    intro,
   };
 }
 

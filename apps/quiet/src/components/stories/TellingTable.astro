@@ -1,0 +1,48 @@
+---
+/**
+ * "Where he tells it" (Quiet C4.5): one row per visible telling, in order of year where known and
+ * the undated ones last. Each row gives the shiur (its catalog title, linking to the place in the
+ * shiur where the story is told), the occasion as catalogued, the year, the shiur's language and
+ * the time of the telling. Catalog strings are isolates in their own script; no script needed.
+ */
+import HebrewYear from "../HebrewYear.astro";
+import { NUMERIC_RUN } from "../../lib/bidi.ts";
+import type { Ed } from "../../lib/edition.ts";
+import type { TellingRow } from "./model.ts";
+import { useStoriesT } from "./strings.ts";
+import "./stories.css";
+
+interface Props {
+  ed: Ed;
+  rows: readonly TellingRow[];
+}
+
+const { ed, rows } = Astro.props;
+const t = useStoriesT(ed);
+---
+<table class="tellings">
+  <caption class="visually-hidden">{t("telling.caption")}</caption>
+  <thead>
+    <tr>
+      <th scope="col">{t("telling.shiur")}</th>
+      <th scope="col">{t("telling.occasion")}</th>
+      <th scope="col">{t("telling.year")}</th>
+      <th scope="col">{t("telling.lang")}</th>
+      <th scope="col">{t("telling.time")}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {rows.map((r) => (
+      <tr class="telling" data-moment={r.momentId} data-lang={r.lang}>
+        <th scope="row">
+          <a href={r.href}><bdi lang={r.title.lang} dir={r.title.dir}>{r.title.text}</bdi></a>
+          {r.n !== null && <> <span class="telling-n"><bdi {...NUMERIC_RUN}>{r.n}</bdi></span></>}
+        </th>
+        <td><bdi lang={r.occasion.lang} dir={r.occasion.dir}>{r.occasion.text}</bdi></td>
+        <td class="telling-year">{r.years.length > 0 ? <HebrewYear year={r.years} /> : <span class="muted">{t("telling.undated")}</span>}</td>
+        <td>{r.langName}</td>
+        <td class="telling-time">{r.time && <a href={r.href}><bdi {...NUMERIC_RUN}>{r.time}</bdi></a>}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>

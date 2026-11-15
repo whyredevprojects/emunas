@@ -9,10 +9,12 @@
  * - Rows of the uncatalogued guide carry a small mark with a spoken explanation.
  * - Rows whose recordings cannot be played from the media host are greyed and say so in words.
  * - Guide rows with no audio at all (catalog gaps) are greyed the same way and have no link (no page).
- * - Catalog-only rows show no AI text (the notes cell stays empty).
+ * - Catalog-only rows show no AI text (the notes cell stays empty). On a series page with an
+ *   introduction, the line is the part's arc one-liner, and a part without notes says "notes not
+ *   prepared yet" (Quiet C4.7).
  * - `<caption>` and `<th scope>` throughout; no script.
  */
-import { formatDuration } from "@emunas/i18n";
+import { corpusLabel, formatDuration } from "@emunas/i18n";
 import HebrewYear from "../HebrewYear.astro";
 import { NUMERIC_RUN, runAttrs } from "../../lib/bidi.ts";
 import type { Ed } from "../../lib/edition.ts";
@@ -105,7 +107,9 @@ const numberOf = (r: CatalogRow | SeriesRow): string => {
           {occasion && <td class="col-occasion">{occ && <bdi {...run(occ, r.lang)}>{occ}</bdi>}</td>}
           {anyYear && <td class="col-year">{r.years.length > 0 && <HebrewYear year={r.years} />}</td>}
           <td class="col-length">{length && <bdi {...NUMERIC_RUN}>{length}</bdi>}</td>
-          {notes && <td class="col-notes" lang={ed}>{r.oneLiner}</td>}
+          {notes && (
+            <td class="col-notes" lang={ed}>{"notPrepared" in r && r.notPrepared ? <span class="not-prepared">{corpusLabel("notesNotPrepared", ed)}</span> : r.oneLiner}</td>
+          )}
         </tr>
       );
     })}
@@ -172,6 +176,14 @@ const numberOf = (r: CatalogRow | SeriesRow): string => {
     color: var(--color-ink-muted);
     font-size: var(--step--1);
     inline-size: 40%;
+  }
+
+  .catalog-table .not-prepared {
+    font-style: italic;
+  }
+
+  .catalog-table .not-prepared:lang(yi) {
+    font-style: normal;
   }
 
   .catalog-table .no-recording,

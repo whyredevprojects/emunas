@@ -1,0 +1,75 @@
+---
+/**
+ * A story page (Quiet C4.5): only for a story the Rav told in two or more shiurim (the layer's
+ * Quiet page flag, counted from the visible set). In order: the title, the people (a name the
+ * pipeline could not resolve is plain text), the merged retelling under its own label ("Retold
+ * here from N tellings; details differ from one to another. Hear it in the shiur."), then where
+ * he tells it: one row per telling, by year where known and the undated ones last, each with the
+ * shiur, the occasion, the language and the time. The entry label and the report link close the
+ * page (Quiet C6). The retelling appears nowhere else on the page, not in the description either.
+ * Ids retired upstream by a merge have no page (the layer resolves them to the surviving story).
+ */
+import type { GetStaticPaths } from "astro";
+import { corpusLabel } from "@emunas/i18n";
+import Base from "../../../layouts/Base.astro";
+import { loadCatalogCorpus } from "../../../components/catalog/corpus.ts";
+import { indexRows } from "../../../components/catalog/model.ts";
+import EntityLabel from "../../../components/corpus/EntityLabel.astro";
+import EntryHead from "../../../components/corpus/EntryHead.astro";
+import ReportEntry from "../../../components/corpus/ReportEntry.astro";
+import { quietLayer } from "../../../components/corpus/layer.ts";
+import TellingTable from "../../../components/stories/TellingTable.astro";
+import { storiesCrumbs, storyPageModel } from "../../../components/stories/model.ts";
+import { useStoriesT } from "../../../components/stories/strings.ts";
+import "../../../components/stories/stories.css";
+import { EDS, type Ed } from "../../../lib/edition.ts";
+
+export const getStaticPaths = (() => {
+  const layer = quietLayer();
+  const ids = layer.stories.filter((s) => layer.hasPage("story", s.id)).map((s) => s.id);
+  return EDS.flatMap((ed) => ids.map((story) => ({ params: { ed, story } })));
+}) satisfies GetStaticPaths;
+
+const ed = Astro.params.ed as Ed;
+const layer = quietLayer();
+const story = layer.story(Astro.params.story as string);
+if (!story) throw new Error(`story page: unknown story ${Astro.params.story}`);
+const t = useStoriesT(ed);
+const model = storyPageModel(ed, story, layer, indexRows(loadCatalogCorpus()));
+---
+<Base ed={ed} title={model.title.text} crumbs={storiesCrumbs(ed, model.title)}>
+  <EntryHead ed={ed} title={model.title}>
+    {model.people.length > 0 && (
+      <p class="story-people">
+        <span class="story-people-label">{t("story.people")}:</span>{" "}
+        {model.people.map((p, i) => (
+          <>
+            {i > 0 && <span class="sep" aria-hidden="true"> · </span>}
+            {p.href ? (
+              <a href={p.href}><bdi lang={p.name.lang} dir={p.name.dir}>{p.name.text}</bdi></a>
+            ) : (
+              <bdi lang={p.name.lang} dir={p.name.dir}>{p.name.text}</bdi>
+            )}
+          </>
+        ))}
+      </p>
+    )}
+    {model.attributionVaries && <p class="story-attribution">{corpusLabel("story.attributionVaries", ed)}</p>}
+  </EntryHead>
+
+  <section class="story-retelling" aria-labelledby="story-retelling-h">
+    <h2 id="story-retelling-h" class="visually-hidden">{t("story.retelling")}</h2>
+    <EntityLabel ed={ed} variant="story" count={model.rows.length} />
+    {model.retelling && <p class="retelling" lang={ed} data-retelling>{model.retelling}</p>}
+  </section>
+
+  <section class="story-where" aria-labelledby="story-where-h">
+    <h2 id="story-where-h">{t("story.where")}</h2>
+    <p class="stories-lead">{t("story.whereLead")}</p>
+    <TellingTable ed={ed} rows={model.rows} />
+  </section>
+
+  <EntityLabel ed={ed} variant="entry" reviewed={model.reviewed}>
+    <ReportEntry ed={ed} kind="story" id={model.id} />
+  </EntityLabel>
+</Base>
