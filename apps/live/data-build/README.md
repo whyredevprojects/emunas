@@ -49,10 +49,9 @@ when their bytes change; files no longer emitted are removed.
 
 Before the emit, `data:build` computes `related.neighbors` for every summarized shiur: up to 5
 moments, each from a different *other* shiur, whose cosine similarity to one of this shiur's
-sections or insights is at or above a threshold, best first. Never a moment of the same shiur,
-and never one of its other-language twin (`twinShiurim`: the part of the same series in the other
-audio language, `<base>-yi` ↔ `<base>-en`, at the same perek where both parts have one, else at the
-same `seriesOrder`; the listening room already links that series).
+sections or insights is at or above a threshold, best first. Never a moment of the same shiur.
+Shiurim in the other language are candidates like any other: a Yiddish and an English shiur on the
+same perek or parsha are separate shiurim, not translations of each other.
 The listening room shows them under "Same idea elsewhere", labelled as a suggestion.
 
 - **Units**: the `section` and `insight` moment rows (`buildMomentRows` of `@emunas/search-core`),

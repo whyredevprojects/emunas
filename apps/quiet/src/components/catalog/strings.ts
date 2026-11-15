@@ -83,7 +83,7 @@ export const catalogEn = {
   "row.part": "Part {part} of {count}",
 
   "series.inGuide": "In the Pocket Guide:",
-  "series.sibling": "The same set in {lang}:",
+  "series.sibling": "A separate course on this subject, given in {lang}:",
   "series.lead": "{count} in order.",
   "series.perek": "Perek {perek}",
   "series.noPerek": "Without a perek",
@@ -172,7 +172,7 @@ export const catalogYi: MessageTable<CatalogKey> = {
   "row.part": "טייל {part} פון {count}",
 
   "series.inGuide": "אינעם פאקעט גייד:",
-  "series.sibling": "די זעלבע סדרה אויף {lang}:",
+  "series.sibling": "אויך געזאגט אויף {lang}, א באזונדערע סדרה:",
   "series.lead": "{count} לויטן סדר.",
   "series.perek": "פרק {perek}",
   "series.noPerek": "אן א פרק",

@@ -231,7 +231,7 @@ removed.
 | `section.alsoSeries` | אויך אויסגעשטעלט ווי א סדר: | אויך אויסגעשטעלט ווי א סדרה: | terminology: סדר → סדרה |
 | `table.scroll` | {name} (די טאבעלע רוקט זיך אויף דער זייט) | {name} (מען קען די טאבעלע רוקן אויף די זייט) | phrasing |
 | `row.noRecording` | קיין רעקארדירונג אויפן נעץ | קיין רעקארדירונג אויפן אינטערנעט | vocabulary (YIVO/Daytshmerish/coinage) |
-| `series.sibling` | דער זעלבער סדר אויף {lang}: | די זעלבע סדרה אויף {lang}: | terminology |
+| `series.sibling` | דער זעלבער סדר אויף {lang}: | אויך געזאגט אויף {lang}, א באזונדערע סדרה: | terminology; meaning (owner: the two languages are separate shiurim, not translations) |
 | `series.empty` | קיינער פון די שיעורים פון דעם סדר איז נישט אין דער זאמלונג אויפן נעץ. | קיינער פון די שיעורים פון דער סדרה איז נישט אין דער זאמלונג אויפן אינטערנעט. | terminology; vocabulary (YIVO/Daytshmerish/coinage) |
 
 #### `apps/quiet/src/components/shiur/strings.ts`

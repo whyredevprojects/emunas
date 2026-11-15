@@ -18,10 +18,6 @@
  * Only generated text is used (section titles/summaries and insights from the public contract);
  * the output holds ids, times and scores, never text.
  *
- * A shiur's other-language twin (`twinShiurim`: the part at the same place of the same series in
- * the other audio language) is never its neighbour either: the listening room already links that
- * series, and a near-translation would crowd out real "elsewhere" moments.
- *
  * Search is brute force (no index): rows are grouped in fours, each pair of moments is scored
  * once, and the work is split over worker threads. For each moment it keeps the best moment of
  * each other shiur and the top `perMoment` such shiurim; the per-shiur list (top `perShiur`
@@ -47,7 +43,7 @@ import type { ShiurRelated } from "../app/data/types.ts";
 export type Neighbor = ShiurRelated["neighbors"][number];
 
 /** Bump when the neighbour logic changes its output for the same input (part of the emit's buildId). */
-export const NEIGHBORS_VERSION = 2;
+export const NEIGHBORS_VERSION = 3;
 
 /** Moment kinds that get neighbours and can be neighbours (tech-live §5.4). */
 export const NEIGHBOR_KINDS: readonly MomentRow["kind"][] = ["section", "insight"];
@@ -94,71 +90,6 @@ export function neighborUnits(shiurim: readonly PublicShiur[]): NeighborUnit[] {
   }
   const cmp = (a: string, b: string) => (a < b ? -1 : a > b ? 1 : 0);
   return units.sort((a, b) => cmp(a.shiurId, b.shiurId) || cmp(a.momentId, b.momentId));
-}
-
-// ---------------------------------------------------------------------------------------------
-// Other-language twins
-
-/** The same series in the other audio language, by W2.1's pairing rule (`<base>-yi` ↔ `<base>-en`). */
-export function siblingSeriesId(seriesId: string): string | null {
-  const m = /^(.*)-(yi|en)$/u.exec(seriesId);
-  return m ? `${m[1]}-${m[2] === "yi" ? "en" : "yi"}` : null;
-}
-
-/** The pereks a part covers: `"א-ב"` → `["א", "ב"]` (quote marks and spaces dropped). */
-function perekParts(perek: string): string[] {
-  return perek
-    .split(/[-–—]/u)
-    .map((p) => p.replace(/["'״׳\s]/gu, ""))
-    .filter((p) => p.length > 0);
-}
-
-export type TwinInput = Pick<PublicShiur, "id" | "series" | "perek">;
-
-/**
- * Each shiur's other-language twins (symmetric): the parts of the sibling series (`siblingSeriesId`,
- * present in the input) at the same place. Where both parts carry a perek, "the same place" is a
- * shared perek (Tanya: `א-ב` meets `א` and `ב`); where neither does, the same `seriesOrder`; a part
- * with a perek never twins one without. Shiurim outside a series with a sibling have none.
- */
-export function twinShiurim(shiurim: readonly TwinInput[]): Map<string, Set<string>> {
-  const bySeries = new Map<string, TwinInput[]>();
-  for (const s of shiurim) {
-    if (!s.series) continue;
-    const xs = bySeries.get(s.series.id) ?? [];
-    xs.push(s);
-    bySeries.set(s.series.id, xs);
-  }
-  const out = new Map<string, Set<string>>();
-  const link = (a: string, b: string) => {
-    for (const [x, y] of [
-      [a, b],
-      [b, a],
-    ] as const) {
-      const set = out.get(x) ?? new Set<string>();
-      set.add(y);
-      out.set(x, set);
-    }
-  };
-  for (const [seriesId, parts] of bySeries) {
-    // Each pair of series once: the "-en" side looks at its "-yi" sibling.
-    const sibling = siblingSeriesId(seriesId);
-    if (sibling === null || !seriesId.endsWith("-en")) continue;
-    const others = bySeries.get(sibling);
-    if (!others) continue;
-    for (const a of parts) {
-      const pa = a.perek === null ? null : new Set(perekParts(a.perek));
-      for (const b of others) {
-        if (pa !== null && b.perek !== null) {
-          if (perekParts(b.perek).some((p) => pa.has(p))) link(a.id, b.id);
-        } else if (pa === null && b.perek === null) {
-          const oa = a.series?.order ?? null;
-          if (oa !== null && oa === (b.series?.order ?? null)) link(a.id, b.id);
-        }
-      }
-    }
-  }
-  return out;
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -322,8 +253,7 @@ export function lexicalVectors(units: readonly NeighborUnit[], dims: number = NE
 
 /**
  * Scores every pair of rows of `matrix` (rows padded to a multiple of 4; padding rows have group
- * -1) whose groups differ and are not twins (`twinGroup[twinStart[g] … twinStart[g + 1])` lists the
- * groups twinned with group `g`; both empty = no twins), for the row quads `first, first + stride, …`, and keeps per row the
+ * -1) whose groups differ, for the row quads `first, first + stride, …`, and keeps per row the
  * best row of each other group and the top `k` groups by (score desc, row asc). Pairs inside a
  * quad and pairs (quad row, later row) are each computed exactly once, always the same way.
  */
@@ -338,15 +268,8 @@ export function neighborKernel(
   outScore: Float64Array,
   outRow: Int32Array,
   outGroup: Int32Array,
-  twinStart: Int32Array,
-  twinGroup: Int32Array,
 ): void {
   const rows = group.length;
-  const twins = (gi: number, gj: number): boolean => {
-    const end = twinStart[gi + 1] as number;
-    for (let x = twinStart[gi] as number; x < end; x++) if (twinGroup[x] === gj) return true;
-    return false;
-  };
   const better = (s: number, j: number, s2: number, j2: number): boolean => s > s2 || (s === s2 && j2 >= 0 && j < j2);
   const insert = (row: number, s: number, j: number): void => {
     const base = row * k;
@@ -384,7 +307,6 @@ export function neighborKernel(
   };
   const pair = (i: number, j: number, s: number): void => {
     if (s < threshold) return;
-    if (twinGroup.length > 0 && twins(group[i] as number, group[j] as number)) return;
     insert(i, s, j);
     insert(j, s, i);
   };
@@ -463,7 +385,7 @@ const rows = group.length;
 const score = new Float64Array(rows * w.k).fill(-Infinity);
 const row = new Int32Array(rows * w.k).fill(-1);
 const grp = new Int32Array(rows * w.k).fill(-1);
-kernel(matrix, group, w.dims, w.k, w.threshold, w.first, w.stride, score, row, grp, w.twinStart, w.twinGroup);
+kernel(matrix, group, w.dims, w.k, w.threshold, w.first, w.stride, score, row, grp);
 parentPort.postMessage({ score, row, group: grp }, [score.buffer, row.buffer, grp.buffer]);
 `;
 
@@ -475,8 +397,6 @@ function runWorker(data: {
   threshold: number;
   first: number;
   stride: number;
-  twinStart: Int32Array;
-  twinGroup: Int32Array;
 }): Promise<KernelOut> {
   return new Promise((resolve, reject) => {
     const worker = new Worker(WORKER_SOURCE, { eval: true, workerData: data });
@@ -505,8 +425,6 @@ export interface NeighborOptions {
   perMoment?: number;
   /** Worker threads; 0 or 1 = run in this thread. Default: available cores, at most 8. */
   workers?: number;
-  /** shiurId → shiurim that must not be its neighbours (other-language twins, `twinShiurim`). */
-  twins?: ReadonlyMap<string, ReadonlySet<string>>;
 }
 
 export interface NeighborResult {
@@ -534,20 +452,6 @@ export async function computeNeighbors(v: VectorizedUnits, opts: NeighborOptions
     if (!shiurIdx.has(u.shiurId)) shiurIdx.set(u.shiurId, shiurIdx.size);
     group[i] = shiurIdx.get(u.shiurId) as number;
   });
-  // Twins as CSR over the group indices (only shiurim that have moments take part).
-  const groups = shiurIdx.size;
-  const twinStart = new Int32Array(groups + 1);
-  const twinList: number[] = [];
-  const idsByGroup = [...shiurIdx.keys()];
-  for (let g = 0; g < groups; g++) {
-    twinStart[g] = twinList.length;
-    for (const t of [...(opts.twins?.get(idsByGroup[g] as string) ?? [])].sort()) {
-      const tg = shiurIdx.get(t);
-      if (tg !== undefined) twinList.push(tg);
-    }
-  }
-  twinStart[groups] = twinList.length;
-  const twinGroup = Int32Array.from(twinList);
   const matrixShared = new SharedArrayBuffer(padded * v.dims * 4);
   new Float32Array(matrixShared).set(v.matrix);
   const matrix = new Float32Array(matrixShared);
@@ -557,7 +461,7 @@ export async function computeNeighbors(v: VectorizedUnits, opts: NeighborOptions
   let parts: KernelOut[];
   if (workers <= 1 || n === 0) {
     const out = emptyOut(padded, k);
-    neighborKernel(matrix, group, v.dims, k, opts.threshold, 0, 1, out.score, out.row, out.group, twinStart, twinGroup);
+    neighborKernel(matrix, group, v.dims, k, opts.threshold, 0, 1, out.score, out.row, out.group);
     parts = [out];
   } else {
     parts = await Promise.all(
@@ -570,8 +474,6 @@ export async function computeNeighbors(v: VectorizedUnits, opts: NeighborOptions
           threshold: opts.threshold,
           first: w,
           stride: workers,
-          twinStart,
-          twinGroup,
         }),
       ),
     );
@@ -663,8 +565,6 @@ export interface NeighborsReport {
   /** Units without a vector (ids only). */
   missing: number;
   shiurimWithNeighbors: number;
-  /** Shiurim with an other-language twin (never listed as each other's neighbour). */
-  shiurimWithTwins: number;
   ms: number;
   /** Why `auto` chose the lexical fallback, when it did. */
   fallbackReason?: string;
@@ -703,7 +603,6 @@ export async function buildNeighbors(shiurim: readonly PublicShiur[], opts: Buil
         vectors: 0,
         missing: 0,
         shiurimWithNeighbors: 0,
-        shiurimWithTwins: 0,
         ms: 0,
       },
     };
@@ -735,8 +634,7 @@ export async function buildNeighbors(shiurim: readonly PublicShiur[], opts: Buil
     vectors = lexicalVectors(units);
   }
   const threshold = opts.threshold ?? NEIGHBOR_DEFAULTS.threshold[vectors.source];
-  const twins = twinShiurim(shiurim);
-  const nopts: NeighborOptions = { threshold, twins };
+  const nopts: NeighborOptions = { threshold };
   if (opts.workers !== undefined) nopts.workers = opts.workers;
   const result = await computeNeighbors(vectors, nopts);
   const report: NeighborsReport = {
@@ -747,14 +645,12 @@ export async function buildNeighbors(shiurim: readonly PublicShiur[], opts: Buil
     vectors: vectors.units.length,
     missing: vectors.missing.length,
     shiurimWithNeighbors: result.byShiur.size,
-    shiurimWithTwins: twins.size,
     ms: Math.round(performance.now() - t0),
   };
   if (fallbackReason) report.fallbackReason = fallbackReason;
   log(
     `neighbours (${vectors.source}, ${vectors.model}, threshold ${threshold}): ${vectors.units.length} of ${units.length} moments, ` +
       `${result.byShiur.size} shiurim with neighbours in ${report.ms} ms` +
-      (twins.size > 0 ? `; ${twins.size} shiurim with an other-language twin excluded` : "") +
       (vectors.missing.length > 0 ? `; ${vectors.missing.length} moments without a vector` : ""),
   );
   return {

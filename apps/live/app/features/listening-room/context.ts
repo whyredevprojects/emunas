@@ -23,7 +23,7 @@ export interface RoomContext {
   skippedKinds: ReadonlySet<string>;
   /** Seek (loading the shiur when needed) and play; `end` pauses there (moments). */
   playAt(t: number, end?: number): void;
-  /** The same series in the other audio language (facets `sibling`), if any. */
+  /** The series on the same subject in the other audio language (facets `sibling`): separate shiurim, not translations. */
   siblingSeries: { id: string; title: { en: string; yi: string } | null } | null;
   /** Whether any recording of this shiur can be played. */
   playable: boolean;
