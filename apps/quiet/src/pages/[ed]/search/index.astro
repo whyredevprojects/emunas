@@ -1,0 +1,131 @@
+---
+/**
+ * `/{ed}/search/` (W3.5; tech-quiet §5, concept-quiet §7). Without script: one sentence and the
+ * list of indexes, which are the real way to look things up. With script (`scripts/search.ts`):
+ * the search form appears; results come from the Pagefind index built by `scripts/build-search.ts`
+ * and show title, citation and one-liner only (record meta; no excerpts).
+ */
+import type { GetStaticPaths } from "astro";
+import { formatQuiet } from "@emunas/links";
+import Base from "../../../layouts/Base.astro";
+import { EDS, type Ed } from "../../../lib/edition.ts";
+import { SEARCH_STRINGS } from "./_strings.ts";
+
+export const getStaticPaths = (() => EDS.map((ed) => ({ params: { ed } }))) satisfies GetStaticPaths;
+
+const ed = Astro.params.ed as Ed;
+const s = SEARCH_STRINGS[ed];
+const indexes = [
+  { label: s.contents, href: formatQuiet({ kind: "index", ed, index: "contents" }) },
+  { label: s.parsha, href: formatQuiet({ kind: "index", ed, index: "calendar-parsha" }) },
+  { label: s.zman, href: formatQuiet({ kind: "index", ed, index: "calendar-zman" }) },
+  { label: s.years, href: formatQuiet({ kind: "index", ed, index: "years" }) },
+  { label: s.sources, href: formatQuiet({ kind: "index", ed, index: "sources" }) },
+  { label: s.stories, href: formatQuiet({ kind: "index", ed, index: "stories" }) },
+  { label: s.people, href: formatQuiet({ kind: "index", ed, index: "people" }) },
+  { label: s.inyanim, href: formatQuiet({ kind: "index", ed, index: "concepts" }) },
+];
+---
+<Base ed={ed} title={s.title} crumbs={[{ label: s.title }]}>
+  <section
+    class="search"
+    aria-labelledby="search-title"
+    data-search
+    data-ed={ed}
+    data-msg-searching={s.searching}
+    data-msg-none={s.none}
+    data-msg-one={s.one}
+    data-msg-count={s.count}
+    data-msg-error={s.error}
+    data-msg-number={s.number}
+    data-msg-pending={s.pending}
+  >
+    <h1 id="search-title">{s.title}</h1>
+    <p>{s.lede}</p>
+    <p data-search-noscript>{s.noscript}</p>
+    <form class="search-form" role="search" action="" method="get" hidden>
+      <label for="search-q">{s.label}</label>
+      <div class="search-row">
+        <input id="search-q" name="q" type="search" dir="auto" autocomplete="off" spellcheck="false" maxlength="256" />
+        <button type="submit">{s.submit}</button>
+      </div>
+    </form>
+    <p class="search-status" role="status" aria-live="polite" data-search-status></p>
+    <ol class="search-results" role="list" aria-label={s.resultsLabel} data-search-results></ol>
+    <p class="search-note">{s.note}</p>
+  </section>
+  <section class="search-indexes" aria-labelledby="search-indexes">
+    <h2 id="search-indexes">{s.indexesHeading}</h2>
+    <ul role="list">
+      {indexes.map((i) => <li><a href={i.href}>{i.label}</a></li>)}
+    </ul>
+  </section>
+</Base>
+
+<script>
+  import { initSearch } from "../../../scripts/search.ts";
+  initSearch(document, location, history);
+</script>
+
+<style>
+  .search > * + * {
+    margin-block-start: var(--space-s);
+  }
+
+  .search-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    margin-block-start: var(--space-2xs);
+  }
+
+  .search-row input {
+    flex: 1 1 16rem;
+    min-inline-size: 0;
+    padding-block: var(--space-2xs);
+    padding-inline: var(--space-xs);
+    font: inherit;
+    color: var(--color-ink);
+    background: var(--color-surface);
+    border: var(--rule-hairline) solid var(--color-rule-strong);
+    border-radius: var(--radius-s);
+  }
+
+  .search-row button {
+    padding-block: var(--space-2xs);
+    padding-inline: var(--space-s);
+    font: inherit;
+    color: var(--color-ink);
+    background: var(--color-paper-sunk);
+    border: var(--rule-hairline) solid var(--color-rule-strong);
+    border-radius: var(--radius-s);
+    cursor: pointer;
+  }
+
+  .search-note {
+    font-size: var(--step--1);
+    color: var(--color-ink-muted);
+  }
+
+  .search-results :global(.search-result) {
+    padding-block: var(--space-xs);
+    border-block-end: var(--rule-hairline) solid var(--color-rule);
+  }
+
+  .search-results :global(.search-result > * + *) {
+    margin-block-start: var(--space-3xs);
+  }
+
+  .search-results :global(.search-pending) {
+    color: var(--color-ink-muted);
+    font-style: italic;
+  }
+
+  .search-indexes {
+    margin-block-start: var(--space-l);
+  }
+
+  .search-indexes li + li {
+    margin-block-start: var(--space-3xs);
+  }
+</style>
