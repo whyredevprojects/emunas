@@ -1,0 +1,96 @@
+{
+ "shiurId": "yi-current-unc-kayitz-5771-12",
+ "generatedAt": "2026-11-15T08:58:10.900Z",
+ "shiur": {
+  "id": "yi-current-unc-kayitz-5771-12",
+  "lang": "yi",
+  "category": "current",
+  "seriesId": "current-kayitz-5771",
+  "seriesOrder": 12,
+  "catalog": {
+   "source": "uncatalogued-guide",
+   "sectionId": "current",
+   "sectionTitle": "Y 05 Current",
+   "n": "12",
+   "page": null,
+   "titleOriginal": "Lechaim Belzer Rav",
+   "subTitle": null,
+   "derived": "filename",
+   "note": "year taken from the folder name \"Kayitz 5771\"; \"Kayitz\" in the folder name marks this as a summer series"
+  },
+  "parsha": null,
+  "zman": null,
+  "perek": null,
+  "hebrewYears": [5771],
+  "recordingIds": [
+   "y-current-kayitz-5771-12-lechaim-belzer-rav"
+  ],
+  "inScope": true,
+  "outOfScopeReason": null,
+  "pathNotes": []
+ },
+ "series": {
+  "id": "current-kayitz-5771",
+  "title": {
+   "en": "Summer 5771 (Kayitz)",
+   "yi": "קיץ תשע\"א"
+  },
+  "lang": "yi",
+  "catalogSectionIds": [
+   "current"
+  ],
+  "shiurIds": [
+   "yi-current-unc-kayitz-5771-01",
+   "yi-current-unc-kayitz-5771-02",
+   "yi-current-unc-kayitz-5771-03",
+   "yi-current-unc-kayitz-5771-04",
+   "yi-current-unc-kayitz-5771-05",
+   "yi-current-unc-kayitz-5771-06",
+   "yi-current-unc-kayitz-5771-07",
+   "yi-current-unc-kayitz-5771-08",
+   "yi-current-unc-kayitz-5771-09",
+   "yi-current-unc-kayitz-5771-10",
+   "yi-current-unc-kayitz-5771-11",
+   "yi-current-unc-kayitz-5771-12",
+   "yi-current-unc-kayitz-5771-13",
+   "yi-current-unc-kayitz-5771-14",
+   "yi-current-unc-kayitz-5771-15",
+   "yi-current-unc-kayitz-5771-16",
+   "yi-current-unc-kayitz-5771-17",
+   "yi-current-unc-kayitz-5771-18",
+   "yi-current-unc-kayitz-5771-19",
+   "yi-current-unc-kayitz-5771-20",
+   "yi-current-unc-kayitz-5771-21",
+   "yi-current-unc-kayitz-5771-22",
+   "yi-current-unc-kayitz-5771-23",
+   "yi-current-unc-kayitz-5771-24",
+   "yi-current-unc-kayitz-5771-25"
+  ]
+ },
+ "catalogTopics": [
+  "Lechaim Belzer Rav"
+ ],
+ "totalDurationSec": 276.52025,
+ "recordings": [
+  {
+   "recording": {
+    "id": "y-current-kayitz-5771-12-lechaim-belzer-rav",
+    "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/12 Lechaim Belzer Rav.mp3",
+    "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/12 Lechaim Belzer Rav",
+    "durationSec": 276.52,
+    "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+    "sizeBytes": 1659652,
+    "duplicateOf": null,
+    "partOf": null
+   },
+   "order": 0,
+   "transcriptLanguage": "yi",
+   "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+   "durationSec": 276.52025,
+   "segmentCount": 77,
+   "starts": [0.92,4.74,6.8,8.04,11.35,16.33,22.38,27.92,32.1,37.6,42.24,44.36,46.42,50.48,56.24,59.24,62.1,65.66,70,73.96,76.06,78.3,82.76,85.76,90.12,96.32,100.72,103.48,110.2,112.02,114.16,118.48,120.16,127.36,130.02,132.38,135.9,137.54,139,143.44,145.66,149.08,151.9,156.16,159.5,164.12,170.78,175.36,176.94,178.68,184.14,186.56,190.28,194.2,197.1,200.32,204.04,206.3,211.54,220.48,222.58,225.32,227.8,231.54,235.84,238.62,241.18,245.52,249.58,253.26,258.28,261.18,262.2,263.52,266.94,269.62,271.92],
+   "ends": [3.98,5.6,7.6,10.57,15.29,20.34,26.88,32.1,36.52,41.38,43.88,45.26,49.72,54.44,57.46,61.04,65.16,69.58,72.34,75.52,77.76,81.96,85.04,88.46,94.6,100.38,102.66,104.4,111.42,112.72,116.42,119.34,126.16,129.34,131.66,135.3,136.56,138.72,143.12,145.32,148.98,150.94,153.98,158.1,163.54,170.06,173.36,176.42,178.16,182.12,186.04,188.8,192.44,196.08,199.68,203.38,206.3,210.42,219.06,221.92,223.36,227.32,230.66,235.12,237.92,240.44,244.9,248.52,252.42,256.48,260.34,261.9,262.86,266.1,269.04,271.18,275.74],
+   "noise": []
+  }
+ ]
+}

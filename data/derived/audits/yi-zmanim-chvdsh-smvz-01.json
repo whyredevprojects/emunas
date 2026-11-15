@@ -1,0 +1,29 @@
+{
+  "shiurId": "yi-zmanim-chvdsh-smvz-01",
+  "promptVersion": "audit-v1",
+  "auditedAt": "2026-11-15T09:19:00Z",
+  "counts": {
+    "claimsChecked": 18,
+    "unsupported": 0,
+    "hallucinated": 0,
+    "sourcesChecked": 12,
+    "sourceErrors": 0,
+    "sourcesMissed": 1,
+    "boundariesChecked": 4,
+    "boundariesBad": 0,
+    "noiseMishandled": 0,
+    "termsChecked": 12,
+    "termErrors": 0,
+    "termsCopiedGarbled": 0,
+    "yiddishSentencesChecked": 20,
+    "yiddishBadSentences": 6,
+    "yiddishTranslationese": 3,
+    "flowBreaks": 0,
+    "paddingSentences": 0,
+    "contradictsExtraction": 0,
+    "ruleViolations": 0
+  },
+  "severity": "minor",
+  "needsReview": false,
+  "notes": "Claims checked across the shiur (Taanis 30-day Tamuz segs 13-15, Chicago glass 202-215, Bilaam blind eye 492-497, Pesach story 554-624, Calev/Yehoshua 629-650, Slavita printers 704-714, Rambam 722-730) all supported; Yiddish uses relative 'וועלכן' (Daytshmerish) in insights[1] and insights[5]; English words in Hebrew letters: writeup.yi[1].paragraphs[0] 'קארס, באסעס', 'סענסיטיווסטער' in keyPoints[3] and writeup.yi[4].paragraphs[0]; writeup.yi[6].paragraphs[1] ungrammatical 'וואס מ'האט געמוזט לויפן צווישן בייטשן'; translationese: writeup.yi[6].paragraphs[0] 'רופט דער דרויסן דעם בחור', insights[0] 'רייזעס וואס ווערן געטון', writeup.yi[4].paragraphs[1] 'מאכט זיך בלינד צו'; missed source: 'תכלת דומה לים... לכסא הכבוד' (Menachos 43b) at segs 735-736 not in sources[]"
+}

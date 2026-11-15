@@ -1,0 +1,96 @@
+{
+ "shiurId": "yi-current-unc-kayitz-5771-10",
+ "generatedAt": "2026-11-15T08:58:10.842Z",
+ "shiur": {
+  "id": "yi-current-unc-kayitz-5771-10",
+  "lang": "yi",
+  "category": "current",
+  "seriesId": "current-kayitz-5771",
+  "seriesOrder": 10,
+  "catalog": {
+   "source": "uncatalogued-guide",
+   "sectionId": "current",
+   "sectionTitle": "Y 05 Current",
+   "n": "10",
+   "page": null,
+   "titleOriginal": "Lechaim Torah Chadasha",
+   "subTitle": null,
+   "derived": "filename",
+   "note": "year taken from the folder name \"Kayitz 5771\"; \"Kayitz\" in the folder name marks this as a summer series"
+  },
+  "parsha": null,
+  "zman": null,
+  "perek": null,
+  "hebrewYears": [5771],
+  "recordingIds": [
+   "y-current-kayitz-5771-10-lechaim-torah-chadasha"
+  ],
+  "inScope": true,
+  "outOfScopeReason": null,
+  "pathNotes": []
+ },
+ "series": {
+  "id": "current-kayitz-5771",
+  "title": {
+   "en": "Summer 5771 (Kayitz)",
+   "yi": "קיץ תשע\"א"
+  },
+  "lang": "yi",
+  "catalogSectionIds": [
+   "current"
+  ],
+  "shiurIds": [
+   "yi-current-unc-kayitz-5771-01",
+   "yi-current-unc-kayitz-5771-02",
+   "yi-current-unc-kayitz-5771-03",
+   "yi-current-unc-kayitz-5771-04",
+   "yi-current-unc-kayitz-5771-05",
+   "yi-current-unc-kayitz-5771-06",
+   "yi-current-unc-kayitz-5771-07",
+   "yi-current-unc-kayitz-5771-08",
+   "yi-current-unc-kayitz-5771-09",
+   "yi-current-unc-kayitz-5771-10",
+   "yi-current-unc-kayitz-5771-11",
+   "yi-current-unc-kayitz-5771-12",
+   "yi-current-unc-kayitz-5771-13",
+   "yi-current-unc-kayitz-5771-14",
+   "yi-current-unc-kayitz-5771-15",
+   "yi-current-unc-kayitz-5771-16",
+   "yi-current-unc-kayitz-5771-17",
+   "yi-current-unc-kayitz-5771-18",
+   "yi-current-unc-kayitz-5771-19",
+   "yi-current-unc-kayitz-5771-20",
+   "yi-current-unc-kayitz-5771-21",
+   "yi-current-unc-kayitz-5771-22",
+   "yi-current-unc-kayitz-5771-23",
+   "yi-current-unc-kayitz-5771-24",
+   "yi-current-unc-kayitz-5771-25"
+  ]
+ },
+ "catalogTopics": [
+  "Lechaim Torah Chadasha"
+ ],
+ "totalDurationSec": 280.490875,
+ "recordings": [
+  {
+   "recording": {
+    "id": "y-current-kayitz-5771-10-lechaim-torah-chadasha",
+    "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/10 Lechaim Torah Chadasha.mp3",
+    "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/10 Lechaim Torah Chadasha",
+    "durationSec": 280.49,
+    "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+    "sizeBytes": 1683480,
+    "duplicateOf": null,
+    "partOf": null
+   },
+   "order": 0,
+   "transcriptLanguage": "yi",
+   "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+   "durationSec": 280.490875,
+   "segmentCount": 84,
+   "starts": [0,2.2,5.24,7.46,11.42,15.52,18.02,21.2,23.68,30.87,36.76,39.04,43.22,48.99,52.87,56.49,58.01,59.41,62.41,66.47,68.63,71.97,74.41,79.04,83.04,89.2,91.24,95.24,97.9,100.16,114.44,120.88,128.14,131.68,136,139.46,142.2,146.64,148.68,150.16,152.8,155.86,159,161.66,166.44,168.38,170.7,172.1,173.7,174.74,180.8,184.38,187.58,189.88,194.02,198.14,202.42,206.8,208.78,210.86,211.8,215.82,218.66,221.06,226.5,229,233.04,235.44,236.56,238.72,240.56,242.02,245.28,249.16,251.66,254.24,256.1,258.96,260.94,264.36,271.22,274.7,276.6,277.64],
+   "ends": [1.26,4.18,6.36,9.32,14.16,16.76,20.5,22.2,30.37,33.75,38.36,42.6,46.1,50.13,54.35,57.25,58.93,61.49,65.69,68.11,70.75,73.75,75.77,82.4,87.06,90.56,94.18,97.38,100.16,113.6,120.48,127.32,130.96,133.9,136.72,141,146.28,147.66,149.4,152.1,155.5,158,160.58,165.52,167.78,170.28,171.34,173.4,174.1,180.08,182.66,187.22,189.16,192.58,197.12,201.54,204.02,207.94,210.54,211.3,214.86,218.24,220.34,226.16,228.3,231.86,233.8,236.42,238.22,240.1,241.42,243.94,248.5,250.8,253.72,255.52,258.2,260.08,263.56,270.62,273.36,275.8,277.14,278.9],
+   "noise": []
+  }
+ ]
+}

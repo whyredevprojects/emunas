@@ -1,0 +1,96 @@
+{
+ "shiurId": "yi-current-unc-kayitz-5771-11",
+ "generatedAt": "2026-11-15T08:58:10.867Z",
+ "shiur": {
+  "id": "yi-current-unc-kayitz-5771-11",
+  "lang": "yi",
+  "category": "current",
+  "seriesId": "current-kayitz-5771",
+  "seriesOrder": 11,
+  "catalog": {
+   "source": "uncatalogued-guide",
+   "sectionId": "current",
+   "sectionTitle": "Y 05 Current",
+   "n": "11",
+   "page": null,
+   "titleOriginal": "Lechaim Yiras Shamayim",
+   "subTitle": null,
+   "derived": "filename",
+   "note": "year taken from the folder name \"Kayitz 5771\"; \"Kayitz\" in the folder name marks this as a summer series"
+  },
+  "parsha": null,
+  "zman": null,
+  "perek": null,
+  "hebrewYears": [5771],
+  "recordingIds": [
+   "y-current-kayitz-5771-11-lechaim-yiras-shamayim"
+  ],
+  "inScope": true,
+  "outOfScopeReason": null,
+  "pathNotes": []
+ },
+ "series": {
+  "id": "current-kayitz-5771",
+  "title": {
+   "en": "Summer 5771 (Kayitz)",
+   "yi": "קיץ תשע\"א"
+  },
+  "lang": "yi",
+  "catalogSectionIds": [
+   "current"
+  ],
+  "shiurIds": [
+   "yi-current-unc-kayitz-5771-01",
+   "yi-current-unc-kayitz-5771-02",
+   "yi-current-unc-kayitz-5771-03",
+   "yi-current-unc-kayitz-5771-04",
+   "yi-current-unc-kayitz-5771-05",
+   "yi-current-unc-kayitz-5771-06",
+   "yi-current-unc-kayitz-5771-07",
+   "yi-current-unc-kayitz-5771-08",
+   "yi-current-unc-kayitz-5771-09",
+   "yi-current-unc-kayitz-5771-10",
+   "yi-current-unc-kayitz-5771-11",
+   "yi-current-unc-kayitz-5771-12",
+   "yi-current-unc-kayitz-5771-13",
+   "yi-current-unc-kayitz-5771-14",
+   "yi-current-unc-kayitz-5771-15",
+   "yi-current-unc-kayitz-5771-16",
+   "yi-current-unc-kayitz-5771-17",
+   "yi-current-unc-kayitz-5771-18",
+   "yi-current-unc-kayitz-5771-19",
+   "yi-current-unc-kayitz-5771-20",
+   "yi-current-unc-kayitz-5771-21",
+   "yi-current-unc-kayitz-5771-22",
+   "yi-current-unc-kayitz-5771-23",
+   "yi-current-unc-kayitz-5771-24",
+   "yi-current-unc-kayitz-5771-25"
+  ]
+ },
+ "catalogTopics": [
+  "Lechaim Yiras Shamayim"
+ ],
+ "totalDurationSec": 264.5300625,
+ "recordings": [
+  {
+   "recording": {
+    "id": "y-current-kayitz-5771-11-lechaim-yiras-shamayim",
+    "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/11 Lechaim Yiras Shamayim.mp3",
+    "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/11 Lechaim Yiras Shamayim",
+    "durationSec": 264.53,
+    "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+    "sizeBytes": 1587715,
+    "duplicateOf": null,
+    "partOf": null
+   },
+   "order": 0,
+   "transcriptLanguage": "yi",
+   "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+   "durationSec": 264.5300625,
+   "segmentCount": 64,
+   "starts": [0.11,5.75,7.19,11.63,14.39,21.66,25,31.99,33.59,38.07,45.23,50.97,52.87,57.03,61.67,66.94,67.78,69.3,71.42,73.66,84.32,89.2,90.34,92.12,96.5,104.78,106.58,108.08,110.38,117.91,120.67,124.91,128.76,130.16,135.79,137.87,142.87,144.89,148.5,152.24,155.68,162.6,167.12,171.98,177.28,188.8,191.14,192.8,194.36,199.48,201.4,202.66,204.04,212.86,214.72,218.78,221.58,226.5,228.92,231.98,236.38,248.78,250.82,259.18],
+   "ends": [4.49,6.51,11.09,13.21,15.45,23.58,28.16,32.59,37.45,44.61,50.21,52.47,56.61,58.39,62.79,67.32,68.58,70.46,73.16,83,87.98,89.46,91.54,94.7,103.38,105.98,107.6,110.38,117.09,119.31,124.47,126.15,129.82,135.27,137.11,139.11,144.35,147.88,151.62,155.36,161.86,166.42,168.24,176.9,187.9,188.96,191.88,193.52,198.24,200.4,202.04,203.64,206.18,213.36,218.02,219.58,224.74,228.3,231.66,235.86,238.74,250.34,256.09,259.96],
+   "noise": []
+  }
+ ]
+}

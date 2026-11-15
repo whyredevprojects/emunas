@@ -1,0 +1,87 @@
+{
+  "shiurId": "en-simchos-en-unc-16",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4b-v2",
+  "extractionVariant": "extraction",
+  "en": [
+    {
+      "sectionIndex": 0,
+      "heading": "Chodesh, Shabbos and Milah",
+      "paragraphs": [
+        {
+          "text": "The Rav cites the Rambam (Hilchos Megillah v'Chanukah 4:12) that Chanukah is a very dear mitzvah: what one sacrifices for becomes dear, as milah was to Avraham Avinu through its pain. The Greeks decreed against Chodesh, Shabbos and Milah, the foundation of Klal Yisrael.",
+          "sourceIdx": [0],
+          "evidence": { "segs": [0, 1, 7, 13, 15, 23], "confidence": 0.8 }
+        },
+        {
+          "text": "Without Rosh Chodesh there are no Yamim Tovim, and the Rambam says this is why Eretz Yisrael was never empty of Jews. Shabbos, too, heads the Moadim (Vayikra 23:2-3).",
+          "sourceIdx": [1, 3],
+          "evidence": { "segs": [26, 28, 33, 49, 50], "confidence": 0.75 }
+        }
+      ]
+    },
+    {
+      "sectionIndex": 1,
+      "heading": "Milah as the gateway to heavenly Torah",
+      "paragraphs": [
+        {
+          "text": "The Greeks loved wisdom and would allow Torah judged by reason, but not Torah from Sinai accepted even when not understood; for that, milah is the precondition. So the Gemara tells of the Roman emperor's nephew, who said one cannot learn Torah without milah.",
+          "sourceIdx": [4],
+          "evidence": { "segs": [56, 71, 82, 88, 97, 110], "confidence": 0.8 }
+        }
+      ]
+    },
+    {
+      "sectionIndex": 2,
+      "heading": "Eliyahu at this bris",
+      "paragraphs": [
+        {
+          "text": "The sefarim say Eliyahu Hanavi comes in person only to important brisim; to this bris of parents moser nefesh for Torah he surely came. The Rav blesses the child, named Avraham Yaakov after Rav Avraham Yaakov Pam, to be worthy of the name.",
+          "sourceIdx": [6],
+          "evidence": { "segs": [131, 135, 140, 150, 161, 169], "confidence": 0.75 }
+        }
+      ]
+    }
+  ],
+  "yi": [
+    {
+      "sectionIndex": 0,
+      "heading": "חודש, שבת און מילה",
+      "paragraphs": [
+        {
+          "text": "דער משגיח ברענגט דעם רמב\"ם (הלכות מגילה וחנוכה ד, יב) אז מצות חנוכה איז זייער חביב: פאר וואס מ'איז מוסר נפש ווערט חביב, ווי מילה ביי אברהם אבינו צוליב דעם צער. די יוונים האבן געגוזרט אויף חודש, שבת און מילה, דער יסוד פון כלל ישראל.",
+          "sourceIdx": [0],
+          "evidence": { "segs": [0, 1, 7, 13, 15, 23], "confidence": 0.8 }
+        },
+        {
+          "text": "אן ראש חודש זענען נישטא קיין ימים טובים, און דערפאר, זאגט דער רמב\"ם, איז ארץ ישראל קיינמאל נישט געווען ליידיג פון אידן. שבת איז אויך דער ראש פון די מועדים (ויקרא כג, ב-ג).",
+          "sourceIdx": [1, 3],
+          "evidence": { "segs": [26, 28, 33, 49, 50], "confidence": 0.75 }
+        }
+      ]
+    },
+    {
+      "sectionIndex": 1,
+      "heading": "מילה אלס דער טויער צו תורה מן השמים",
+      "paragraphs": [
+        {
+          "text": "די יוונים האבן ליב געהאט חכמה און וואלטן דערלויבט תורה לויטן שכל, אבער נישט תורה מסיני וואס מ'נעמט אן אפילו ווען מ'פארשטייט נישט; דערצו איז מילה דער תנאי. אזוי דערציילט די גמרא פונעם רוימישן קייסער'ס פלימעניק, וואס האט געזאגט אז אן מילה קען מען נישט לערנען תורה.",
+          "sourceIdx": [4],
+          "evidence": { "segs": [56, 71, 82, 88, 97, 110], "confidence": 0.8 }
+        }
+      ]
+    },
+    {
+      "sectionIndex": 2,
+      "heading": "אליהו הנביא ביי דעם ברית",
+      "paragraphs": [
+        {
+          "text": "די ספרים זאגן אז אליהו הנביא קומט אליין נאר צו חשוב'ע בריתים; צו דעם ברית פון עלטערן וואס זענען מוסר נפש פאר תורה איז ער זיכער געקומען. דער משגיח בענטשט דאס קינד, וואס הייסט אברהם יעקב נאך הרב אברהם יעקב פאם, ער זאל זיין ווערט דעם נאמען.",
+          "sourceIdx": [6],
+          "evidence": { "segs": [131, 135, 140, 150, 161, 169], "confidence": 0.75 }
+        }
+      ]
+    }
+  ]
+}

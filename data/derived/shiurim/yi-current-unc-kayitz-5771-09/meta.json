@@ -1,0 +1,96 @@
+{
+ "shiurId": "yi-current-unc-kayitz-5771-09",
+ "generatedAt": "2026-11-15T08:58:10.820Z",
+ "shiur": {
+  "id": "yi-current-unc-kayitz-5771-09",
+  "lang": "yi",
+  "category": "current",
+  "seriesId": "current-kayitz-5771",
+  "seriesOrder": 9,
+  "catalog": {
+   "source": "uncatalogued-guide",
+   "sectionId": "current",
+   "sectionTitle": "Y 05 Current",
+   "n": "9",
+   "page": null,
+   "titleOriginal": "Lechaim chavivus EY",
+   "subTitle": null,
+   "derived": "filename",
+   "note": "year taken from the folder name \"Kayitz 5771\"; \"Kayitz\" in the folder name marks this as a summer series"
+  },
+  "parsha": null,
+  "zman": null,
+  "perek": null,
+  "hebrewYears": [5771],
+  "recordingIds": [
+   "y-current-kayitz-5771-09-lechaim-chavivus-ey"
+  ],
+  "inScope": true,
+  "outOfScopeReason": null,
+  "pathNotes": []
+ },
+ "series": {
+  "id": "current-kayitz-5771",
+  "title": {
+   "en": "Summer 5771 (Kayitz)",
+   "yi": "קיץ תשע\"א"
+  },
+  "lang": "yi",
+  "catalogSectionIds": [
+   "current"
+  ],
+  "shiurIds": [
+   "yi-current-unc-kayitz-5771-01",
+   "yi-current-unc-kayitz-5771-02",
+   "yi-current-unc-kayitz-5771-03",
+   "yi-current-unc-kayitz-5771-04",
+   "yi-current-unc-kayitz-5771-05",
+   "yi-current-unc-kayitz-5771-06",
+   "yi-current-unc-kayitz-5771-07",
+   "yi-current-unc-kayitz-5771-08",
+   "yi-current-unc-kayitz-5771-09",
+   "yi-current-unc-kayitz-5771-10",
+   "yi-current-unc-kayitz-5771-11",
+   "yi-current-unc-kayitz-5771-12",
+   "yi-current-unc-kayitz-5771-13",
+   "yi-current-unc-kayitz-5771-14",
+   "yi-current-unc-kayitz-5771-15",
+   "yi-current-unc-kayitz-5771-16",
+   "yi-current-unc-kayitz-5771-17",
+   "yi-current-unc-kayitz-5771-18",
+   "yi-current-unc-kayitz-5771-19",
+   "yi-current-unc-kayitz-5771-20",
+   "yi-current-unc-kayitz-5771-21",
+   "yi-current-unc-kayitz-5771-22",
+   "yi-current-unc-kayitz-5771-23",
+   "yi-current-unc-kayitz-5771-24",
+   "yi-current-unc-kayitz-5771-25"
+  ]
+ },
+ "catalogTopics": [
+  "Lechaim chavivus EY"
+ ],
+ "totalDurationSec": 350.995375,
+ "recordings": [
+  {
+   "recording": {
+    "id": "y-current-kayitz-5771-09-lechaim-chavivus-ey",
+    "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/09 Lechaim chavivus EY.mp3",
+    "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/09 Lechaim chavivus EY",
+    "durationSec": 351,
+    "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+    "sizeBytes": 2106504,
+    "duplicateOf": null,
+    "partOf": null
+   },
+   "order": 0,
+   "transcriptLanguage": "yi",
+   "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+   "durationSec": 350.995375,
+   "segmentCount": 50,
+   "starts": [0.69,5.45,11.82,14.26,16.64,17.66,19.82,23.46,33.46,35.26,38.86,45.42,50.82,53.3,56.56,60.14,64.24,67.7,68.76,74.06,77.84,83.7,86.54,90.7,94.02,96.5,100.72,106.5,108.42,110.96,113.96,116.24,118.7,123.8,130.54,132.72,138.28,141.74,143.9,150.72,151.86,161.46,163.86,166.26,171.24,174.66,182.4,193.45,211.02,228.14],
+   "ends": [3.65,10.8,13.66,15.82,17.08,17.84,22.36,32.78,35.26,38.26,43.86,46.98,52.62,55.7,59.18,62.74,66.98,68.76,73.2,75.52,81.32,85.94,89.88,92.08,95.76,99,105.92,107.44,110,112.12,115.4,117.76,122.7,129.6,131.38,133.34,140.4,143.22,145.9,151.86,159.62,162.7,165.02,170.06,174.06,182.4,189.29,205.52,221.18,229.78],
+   "noise": []
+  }
+ ]
+}

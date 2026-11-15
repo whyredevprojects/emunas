@@ -1,0 +1,433 @@
+{
+  "shiurId": "yi-current-unc-bachurim-09",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "Through stories of tzaddikim, the Rav shows the bachurim how great people went out of their way never to trouble or pain another Jew, even at a cost to themselves or to a mitzvah.",
+      "yi": "דורך סיפורי צדיקים ווייזט דער משגיח די בחורים ווי אזוי גדולים האבן זיך געהיטן קיינמאל נישט מטריח זיין און נישט וויי טון א צווייטן איד, אפילו ווען עס האט זיי געקאסט אדער עס איז אוועק א מצוה."
+    },
+    "abstract": {
+      "en": "The Rav tells the bachurim that this time he wants to speak about middos, and to do it through stories of tzaddikim. He tells how Rav Yosef Chaim Sonnenfeld asked each Yom Tov visitor whether he had been at the Kosel, so that a guest sitting with him would not feel slighted, and how he moved back to the Old City before his passing so that the Jews at his levayah would not have to walk far. He gave the Rosh Hashanah musaf to the son of the late chazzan for the widow's sake. The Chofetz Chaim skipped the na'anuim on the town's only esrog so as not to pain those who had none. Rav Moshe Kliers declared a broken eruv kosher to protect the honor of the Sefardi chacham, and Rav Chaim Ozer weighed a servant's trouble and kept a guest company in the sukkah. After taking leave of the bachurim for several weeks, the Rav ends with the Chofetz Chaim's rebuke of talmidim who laughed at a broken-hearted woman, and Rav Elchonon Wasserman's seriousness.",
+      "yi": "דער משגיח זאגט די בחורים אז דאסמאל וויל ער רעדן וועגן מידות, און דאס דורך סיפורי צדיקים. ער דערציילט ווי ר' יוסף חיים זאנענפעלד האט יום טוב געפרעגט יעדן וואס איז געקומען צו אים צי ער איז שוין געווען ביים כותל מערבי, כדי א גאסט וואס איז געזעסן ביי אים זאל זיך נישט פילן באליידיגט, און ווי ער איז פאר זיין פטירה צוריק אריבער אין דער אלטשטאט, כדי די אידן זאלן נישט דארפן גיין א לאנגן וועג צו דער לויה. ער האט געגעבן מוסף ראש השנה פארן זון פונעם נפטר'ס בעל מוסף צוליב דער אלמנה. דער חפץ חיים האט נישט געמאכט קיין נענועים מיטן איינציגן אתרוג אין שטאט, כדי נישט וויי צו טון די וואס האבן נישט געהאט. ר' משה קליערס האט געזאגט אז א צובראכענער עירוב איז כשר צוליב דעם כבוד פונעם ספרדישן חכם, און ר' חיים עוזר האט זיך גערעכנט מיט דער טירחא פון א משרתת און איז אראפ זיצן מיט א גאסט אין סוכה. נאכן זיך געזעגענען פון די בחורים אויף עטליכע וואכן, ענדיגט ער מיטן חפץ חיים'ס תוכחה צו תלמידים וואס האבן געלאכט פון א צובראכענער פרוי, און מיט ר' אלחנן וואסערמאן'ס ערנסטקייט."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The Rav says he is speaking to the bachurim about middos this time, through stories of how tzaddikim served Hashem.",
+          "yi": "דער משגיח זאגט אז דאסמאל רעדט ער מיט די בחורים וועגן מידות, דורך סיפורי צדיקים ווי אזוי זיי האבן געדינט דעם רבונו של עולם."
+        },
+        "evidence": { "segs": [2, 5, 6, 12, 13], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Rav Yosef Chaim Sonnenfeld returned to the Old City before his passing against his doctors' advice, so that Jews would not have to walk far to his burial on Har HaZeisim.",
+          "yi": "ר' יוסף חיים זאנענפעלד איז פאר זיין פטירה צוריק אריבער אין דער אלטשטאט קעגן די דאקטוירים, כדי אידן זאלן נישט דארפן גיין א לאנגן וועג צו זיין קבורה אויפן הר הזיתים."
+        },
+        "evidence": { "segs": [83, 102, 106, 110, 113], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Rav Yosef Chaim had the son of the late baal musaf lead musaf on Rosh Hashanah, so that the widow would not suffer hearing a stranger in her husband's place.",
+          "yi": "ר' יוסף חיים האט געהייסן דעם זון פונעם נפטר'ס בעל מוסף דאווענען מוסף ראש השנה, כדי די אלמנה זאל נישט האבן קיין עגמת נפש ווען א פרעמדער שטייט אויף איר מאנ'ס פלאץ."
+        },
+        "evidence": { "segs": [139, 141, 158, 166, 168, 184], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The Chofetz Chaim did not shake the only esrog in town during Hallel, so as not to cause pain to everyone who could not do so.",
+          "yi": "דער חפץ חיים האט נישט געמאכט קיין נענועים ביי הלל מיטן איינציגן אתרוג אין שטאט, כדי נישט צו מאכן קיין עגמת נפש פאר די וואס האבן נישט געקענט."
+        },
+        "evidence": { "segs": [211, 218, 223, 234, 244], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Rav Moshe Kliers explained that he called a broken eruv kosher because the honor of the Torah, embodied in the Sefardi chacham, outweighed an issur derabbanan.",
+          "yi": "ר' משה קליערס האט מסביר געווען אז ער האט געזאגט אז דער צובראכענער עירוב איז כשר, ווייל כבוד התורה פונעם ספרדישן חכם איז גרעסער ווי אן איסור דרבנן."
+        },
+        "evidence": { "segs": [282, 300, 307, 311, 312], "confidence": 0.7 }
+      },
+      {
+        "text": {
+          "en": "Rav Chaim Ozer considered the trouble of his household servant before taking a summer apartment, and, though exempt from sukkah, came down to keep a poor guest company because he was not exempt from hachnasas orchim.",
+          "yi": "ר' חיים עוזר האט זיך גערעכנט מיט דער טירחא פון זיין משרתת איידער ער האט גענומען א זומער דירה, און כאטש ער איז געווען פטור פון סוכה, איז ער אראפ זיצן מיט אן ארעמען גאסט, ווייל פון הכנסת אורחים איז ער נישט געווען פטור."
+        },
+        "evidence": { "segs": [344, 351, 361, 364, 407, 420], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "The Chofetz Chaim sharply rebuked talmidim who laughed at a simple woman's words, saying one may not laugh at a person with a heavy heart.",
+          "yi": "דער חפץ חיים האט שטארק מוסר געזאגט די תלמידים וואס האבן געלאכט פון א פשוטע פרוי'ס ווערטער, אז מ'טאר נישט לאכן פון א מענטש מיט א שווער הארץ."
+        },
+        "evidence": { "segs": [504, 509, 510, 514, 515], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-current-bachurim-09-bachurim-5773-vayechi",
+      "startSeg": 0,
+      "endSeg": 62,
+      "title": { "en": "Middos through stories; the visitors and the Kosel", "yi": "מידות דורך סיפורים; די געסט און דער כותל" },
+      "summary": {
+        "en": "The Rav says he will speak about middos through stories of tzaddikim. He tells how Rav Yosef Chaim Sonnenfeld asked each Yom Tov visitor whether he had been at the Kosel, so that the Lubliner Rav sitting with him would not feel slighted.",
+        "yi": "דער משגיח זאגט אז ער וועט רעדן וועגן מידות דורך סיפורי צדיקים. ער דערציילט ווי ר' יוסף חיים זאנענפעלד האט יום טוב געפרעגט יעדן גאסט צי ער איז שוין געווען ביים כותל, כדי דער לובלינער רב וואס איז געזעסן ביי אים זאל זיך נישט פילן באליידיגט."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-09-bachurim-5773-vayechi",
+      "startSeg": 63,
+      "endSeg": 117,
+      "title": { "en": "Returning to the Old City before his passing", "yi": "צוריק אין דער אלטשטאט פאר דער פטירה" },
+      "summary": {
+        "en": "Rav Yosef Chaim, sent by his doctors to the airier New City, moved back to the crowded Old City a few weeks before his passing. He explained that his burial would be on Har HaZeisim, and he did not want everyone to walk a long way from the New City.",
+        "yi": "ר' יוסף חיים, וואס די דאקטוירים האבן אים געשיקט וואוינען אין דער נייער שטאט צוליב דער לופט, איז אפאר וואכן פאר זיין פטירה צוריק אריבער אין דער אלטשטאט. ער האט מסביר געווען אז די קבורה וועט זיין אויפן הר הזיתים, און ער האט נישט געוואלט אז אלע זאלן דארפן גיין א לאנגן וועג פון דער נייער שטאט."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-09-bachurim-5773-vayechi",
+      "startSeg": 118,
+      "endSeg": 186,
+      "title": { "en": "The mourner who led musaf on Rosh Hashanah", "yi": "דער אבל וואס האט געדאוונט מוסף ראש השנה" },
+      "summary": {
+        "en": "When the baal musaf died days before Rosh Hashanah, Rav Yosef Chaim delayed the choice and then sent the deceased's son to the amud. Asked about the Shulchan Aruch's rule on a mourner leading the davening, he said the widow in the ezras nashim would otherwise suffer, and the Rav calls this the thinking of a tzaddik.",
+        "yi": "ווען דער בעל מוסף איז נפטר געווארן עטליכע טעג פאר ראש השנה, האט ר' יוסף חיים אפגעלייגט די החלטה, און דערנאך געשיקט דעם נפטר'ס זון צום עמוד. ווען מ'האט אים געפרעגט פונעם שולחן ערוך וועגן אן אבל וואס דאווענט פארן עמוד, האט ער געזאגט אז אנדערש וועט די אלמנה אין עזרת נשים האבן עגמת נפש, און דער משגיח רופט דאס דער געדאנק פון א צדיק."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-09-bachurim-5773-vayechi",
+      "startSeg": 187,
+      "endSeg": 246,
+      "title": { "en": "The Chofetz Chaim's esrog without na'anuim", "yi": "דעם חפץ חיים'ס אתרוג אן נענועים" },
+      "summary": {
+        "en": "During the First World War there was one esrog in Radin, brought for the Chofetz Chaim, and everyone made the brachah on it. At Hallel he did not shake it, explaining that the others could fulfil the mitzvah of taking it but could not do na'anuim, and he would not cause them pain.",
+        "yi": "אין דער ערשטער וועלט מלחמה איז אין ראדין געווען איין אתרוג, וואס מ'האט געברענגט פארן חפץ חיים, און יעדער האט דערויף געבענטשט. ביי הלל האט ער נישט געמאכט קיין נענועים, ווייל די אנדערע האבן געקענט מקיים זיין די מצוה פון נטילה אבער נישט קיין נענועים, און ער האט זיי נישט געוואלט מאכן קיין עגמת נפש."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-09-bachurim-5773-vayechi",
+      "startSeg": 247,
+      "endSeg": 319,
+      "title": { "en": "The eruv in Teveria and the chacham's honor", "yi": "דער עירוב אין טבריה און דעם חכם'ס כבוד" },
+      "summary": {
+        "en": "In Teveria the Sefardi chacham oversaw the eruv. When it broke on Shabbos, Rav Moshe Kliers declared it kosher; after Shabbos the Gemara showed it was pasul. Asked privately, he explained that announcing it would have shamed the chacham and the honor of the Torah, which outweighs an issur derabbanan.",
+        "yi": "אין טבריה האט דער ספרדישער חכם געהיט דעם עירוב. ווען ער איז צובראכן געווארן שבת, האט ר' משה קליערס געזאגט אז ער איז כשר; נאך שבת האט זיך ארויסגעוויזן פון דער גמרא אז ער איז פסול. ווען מ'האט אים געפרעגט בצנעה, האט ער מסביר געווען אז אויב ער וואלט עס געזאגט, וואלט מען מבזה געווען דעם חכם און דעם כבוד התורה, וואס איז גרעסער ווי אן איסור דרבנן."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-09-bachurim-5773-vayechi",
+      "startSeg": 320,
+      "endSeg": 433,
+      "title": { "en": "Rav Chaim Ozer: the servant and the guest in the sukkah", "yi": "ר' חיים עוזר: די משרתת און דער גאסט אין סוכה" },
+      "summary": {
+        "en": "Rav Chaim Ozer hesitated to take a spacious summer apartment until the servant agreed, since its kitchen was far from the dining room. Later, ill and exempt from sukkah, he sent a poor guest to eat in the sukkah and came down to sit with him, citing Avraham Avinu's hachnasas orchim.",
+        "yi": "ר' חיים עוזר האט זיך געקווענקלט צו נעמען א גרויסע זומער דירה ביז די משרתת האט מסכים געווען, ווייל די קיך איז געווען ווייט פונעם עסצימער. שפעטער, ווען ער איז געווען קראנק און פטור פון סוכה, האט ער געשיקט אן ארעמען גאסט עסן אין סוכה און איז אליין אראפ זיצן מיט אים, און האט געברענגט די הכנסת אורחים פון אברהם אבינו."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-09-bachurim-5773-vayechi",
+      "startSeg": 434,
+      "endSeg": 478,
+      "title": { "en": "Taking leave of the bachurim", "yi": "זיך געזעגענען מיט די בחורים" },
+      "summary": {
+        "en": "The Rav tells the bachurim that his doctors are urging him to spend several weeks in Miami for his health, so they will not meet for about four weeks. He says he will miss the davening here and asks that he return with better health.",
+        "yi": "דער משגיח זאגט די בחורים אז זיינע דאקטוירים דרינגען אז ער זאל פארן אויף עטליכע וואכן קיין מיאמי צוליב זיין געזונט, ממילא וועט מען זיך נישט טרעפן בערך פיר וואכן. ער זאגט אז דאס דאווענען דא וועט אים פעלן, און ער בעט אז ער זאל צוריקקומען מיט בעסערן געזונט."
+      },
+      "kind": "tangent",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-09-bachurim-5773-vayechi",
+      "startSeg": 479,
+      "endSeg": 548,
+      "title": { "en": "Not laughing at a heavy heart", "yi": "נישט לאכן פון א שווער הארץ" },
+      "summary": {
+        "en": "A simple woman told the Chofetz Chaim she could not pray at her parents' graves because they were alive; the talmidim laughed and he rebuked them sharply. The Rav adds that Rav Elchonon Wasserman, following Chazal on laughter in this world, was never seen smiling except once, and closes with a l'chaim.",
+        "yi": "א פשוטע פרוי האט געזאגט פארן חפץ חיים אז זי קען נישט גיין בעטן אויף די קברים פון אירע עלטערן ווייל זיי לעבן נאך; די תלמידים האבן געלאכט און ער האט זיי שטארק מוסר געזאגט. דער משגיח לייגט צו אז ר' אלחנן וואסערמאן, לויט חז\"ל וועגן לאכן אויף דער וועלט, האט מען קיינמאל נישט געזען שמייכלען אויסער איינמאל, און ער ענדיגט מיט א לחיים."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "עס שטעט דאך אין שולחן ערוך, אז א נאוועל זאל נישט דאווענען",
+      "work": "Shulchan Aruch",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [149, 150, 152], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "הודי השם כצב, כבערג ומחזדה",
+      "work": "Tehillim",
+      "ref": "Tehillim 118:1",
+      "sefariaRef": "Psalms 118:1",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [213], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די לקחת מלכים ביי יום הראשון",
+      "work": "Vayikra",
+      "ref": "Vayikra 23:40",
+      "sefariaRef": "Leviticus 23:40",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [222], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די מצוה איז דאך תשב''ט דורך רב",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [376, 381, 382], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אברהם אבינו ... כחום היום און געווארט פאר אורחים",
+      "work": "Bereishis",
+      "ref": "Bereishis 18:1",
+      "sefariaRef": "Genesis 18:1",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [421, 422, 423], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די מראה עשה לאדם למלאות פיוו סיוג בעולם הזה",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 31a",
+      "sefariaRef": "Berakhot 31a",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [519, 520], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Rav Yosef Chaim's question to every visitor about the Kosel was a way of protecting the honor of a guest: it showed that people came to Yerushalayim for the Kosel and only stopped by him on the way.",
+        "yi": "ר' יוסף חיים'ס פראגע צו יעדן גאסט וועגן כותל איז געווען א וועג צו היטן דעם כבוד פון א גאסט: עס האט געוויזן אז מ'קומט צום כותל, און צו אים קומט מען ערשט אויפן וועג."
+      },
+      "evidence": { "segs": [41, 48, 55, 56, 59], "confidence": 0.65 }
+    },
+    {
+      "text": {
+        "en": "The Rav contrasts the tzaddik with an ordinary person: the tzaddik's thought, even in his own illness, is not to trouble other Jews, while another thinks only of what he himself needs.",
+        "yi": "דער משגיח שטעלט אנטקעגן דעם צדיק מיט א געווענליכן מענטש: דער צדיק טראכט, אפילו אין זיין אייגענער קראנקייט, ווי נישט מטריח צו זיין קיין אידן, און אן אנדערער טראכט נאר וועגן זיך."
+      },
+      "evidence": { "segs": [111, 112, 113, 114, 117], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "In the musaf, na'anuim and eruv stories, a tzaddik sets aside a rule or a mitzvah derabbanan for another person's feelings or honor; the Rav presents each as the way a tzaddik weighs things.",
+        "yi": "ביי מוסף, ביי די נענועים און ביים עירוב לייגט א צדיק אוועק א דין אדער א מצוה דרבנן צוליב א צווייטנס געפילן אדער כבוד; דער משגיח ברענגט יעדעס איינס אלס דער חשבון פון א צדיק."
+      },
+      "evidence": { "segs": [178, 185, 237, 239, 311, 312], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Rav Chaim Ozer's answer distinguishes two obligations: illness exempted him from sukkah, but not from hachnasas orchim, just as Avraham Avinu sat waiting for guests while in pain after his milah.",
+        "yi": "ר' חיים עוזר'ס תירוץ מאכט א חילוק צווישן צוויי חיובים: די קראנקייט האט אים פטור געמאכט פון סוכה, אבער נישט פון הכנסת אורחים, אזוי ווי אברהם אבינו איז געזעסן ווארטן אויף אורחים כאטש ער איז געווען א מצטער נאך דער מילה."
+      },
+      "evidence": { "segs": [420, 421, 422, 423, 427], "confidence": 0.8 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "Rav Yosef Chaim and the Kosel question", "yi": "ר' יוסף חיים און די פראגע וועגן כותל" },
+      "retelling": {
+        "en": "On Yom Tov, Jews from the New City would come to the Old City and visit Rav Yosef Chaim Sonnenfeld. Once the Lubliner Rav, a great man, was sitting with him, and Rav Yosef Chaim asked every visitor whether he had already been at the Kosel. Asked later why, he explained that the guest might feel hurt that everyone came to greet Rav Yosef Chaim, so he wanted to show that people come for the Kosel and stop by him on the way.",
+        "yi": "יום טוב פלעגן אידן פון דער נייער שטאט קומען אין דער אלטשטאט און אריינקומען צו ר' יוסף חיים זאנענפעלד. איינמאל איז ביי אים געזעסן דער לובלינער רב, אן אדם גדול, און ר' יוסף חיים האט געפרעגט יעדן איד צי ער איז שוין געווען ביים כותל. ווען מ'האט אים שפעטער געפרעגט פארוואס, האט ער געזאגט אז דער גאסט קען זיך פילן באליידיגט אז יעדער קומט צו אים, ממילא האט ער געוואלט ווייזן אז מ'קומט צום כותל און צו אים קומט מען אויפן וועג."
+      },
+      "people": ["Rav Yosef Chaim Sonnenfeld", "the Lubliner Rav"],
+      "evidence": { "segs": [32, 41, 48, 55, 56, 59], "confidence": 0.65 }
+    },
+    {
+      "title": { "en": "Back to the Old City", "yi": "צוריק אין דער אלטשטאט" },
+      "retelling": {
+        "en": "The Old City was crowded and airless, so Rav Yosef Chaim's doctors had him move to the New City, which was still mostly empty fields. A few weeks before his passing, weak, he insisted on moving back. He explained that he knew his end was near, and since burial is on Har HaZeisim beside the Old City, from the New City everyone would have to walk a long way.",
+        "yi": "די אלטשטאט איז געווען געדיכט מיט דירות און אן לופט, האבן די דאקטוירים געהייסן ר' יוסף חיים וואוינען אין דער נייער שטאט, וואו עס זענען נאך געווען מערסטנס פעלדער. אפאר וואכן פאר זיין פטירה, ווען ער איז שוין געווען שוואך, האט ער זיך צוריקגעצויגן. ער האט מסביר געווען אז ער ווייסט אז דער סוף איז נאנט, און ווייל די קבורה איז אויפן הר הזיתים לעבן דער אלטשטאט, וואלטן אלע געדארפט גיין א לאנגן וועג פון דער נייער שטאט."
+      },
+      "people": ["Rav Yosef Chaim Sonnenfeld"],
+      "evidence": { "segs": [73, 80, 83, 94, 100, 110], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "The son of the baal musaf", "yi": "דער זון פונעם בעל מוסף" },
+      "retelling": {
+        "en": "The baal musaf for the Yamim Noraim died a few days before Rosh Hashanah, and the gabbaim asked Rav Yosef Chaim who should replace him; he said there was still time. At musaf he called the son of the deceased, who had a good voice, to the amud. Asked how a mourner could lead the davening, he said the widow, whose husband had led musaf for decades, would sit in the ezras nashim and suffer seeing a stranger in his place.",
+        "yi": "דער בעל מוסף פאר ימים נוראים איז נפטר געווארן עטליכע טעג פאר ראש השנה, און די גבאים האבן געפרעגט ר' יוסף חיים ווער זאל זיין אנשטאט אים; ער האט געזאגט אז ס'איז נאך צייט. ביי מוסף האט ער געהייסן דעם נפטר'ס זון, וואס האט געהאט א גוטע שטימע, צוגיין צום עמוד. ווען מ'האט אים געפרעגט ווי אזוי אן אבל דאווענט פארן עמוד, האט ער געזאגט אז די אלמנה, וואס איר מאן האט צענדליגער יארן געדאוונט מוסף, וועט זיצן אין עזרת נשים און האבן עגמת נפש ווען א פרעמדער שטייט אויף זיין פלאץ."
+      },
+      "people": ["Rav Yosef Chaim Sonnenfeld"],
+      "evidence": { "segs": [121, 126, 130, 139, 158, 168], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "The only esrog in Radin", "yi": "דער איינציגער אתרוג אין ראדין" },
+      "retelling": {
+        "en": "During the First World War no esrogim could reach Radin, but one man brought a single esrog for the Chofetz Chaim. On Sukkos morning everyone in town made the brachah on it. At Hallel the Chofetz Chaim did no na'anuim, and when asked why, he explained that everyone could fulfil the mitzvah of taking it, but in the middle of Hallel the others could not shake it, and he would not cause them pain.",
+        "yi": "אין דער ערשטער וועלט מלחמה האט מען נישט געקענט ברענגען קיין אתרוגים קיין ראדין, נאר איינער האט מיטגעברענגט איין אתרוג פארן חפץ חיים. סוכות אינדערפרי האט די גאנצע שטאט געבענטשט אויף דעם אתרוג. ביי הלל האט דער חפץ חיים נישט געמאכט קיין נענועים, און ווען מ'האט אים געפרעגט פארוואס, האט ער געזאגט אז די מצוה פון נטילה האט יעדער געקענט טון, אבער אינמיטן הלל האבן די אנדערע נישט געקענט שאקלען, און ער האט זיי נישט געוואלט מאכן קיין עגמת נפש."
+      },
+      "people": ["the Chofetz Chaim"],
+      "evidence": { "segs": [191, 201, 207, 211, 222, 234], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "The eruv in Teveria", "yi": "דער עירוב אין טבריה" },
+      "retelling": {
+        "en": "Teveria had a Sefardi and an Ashkenazi kehillah; the Sefardi chacham oversaw the eruv, and the Ashkenazim had Rav Moshe Kliers. When the eruv broke, Rav Moshe Kliers was asked on Shabbos and said it was kosher. After Shabbos he learned the Gemara with the chacham, it became clear the eruv had been pasul, and the chacham was deeply distressed. Asked privately why he had said it was kosher, he answered that publicizing the chacham's error would have harmed the honor of the Torah, which outweighs carrying with a pasul eruv, an issur derabbanan.",
+        "yi": "אין טבריה זענען געווען א ספרדישע און אן אשכנזישע קהילה; דער ספרדישער חכם האט געהיט דעם עירוב, און די אשכנזים האבן געהאט ר' משה קליערס. ווען דער עירוב איז צובראכן געווארן, האט מען שבת געפרעגט ר' משה קליערס און ער האט געזאגט אז ער איז כשר. נאך שבת האט ער געלערנט די גמרא מיטן חכם, און עס האט זיך ארויסגעשטעלט אז דער עירוב איז געווען פסול, און דער חכם איז געווען שטארק צובראכן. ווען מ'האט אים בצנעה געפרעגט פארוואס ער האט געזאגט כשר, האט ער געענטפערט אז צו פירסומען דעם חכם'ס טעות וואלט געווען א פגם אין כבוד התורה, וואס איז גרעסער ווי טראגן מיט א פסול'דיגן עירוב, אן איסור דרבנן."
+      },
+      "people": ["Rav Moshe Kliers"],
+      "evidence": { "segs": [252, 260, 282, 288, 300, 311], "confidence": 0.7 }
+    },
+    {
+      "title": { "en": "Rav Chaim Ozer's summer apartment", "yi": "ר' חיים עוזר'ס זומער דירה" },
+      "retelling": {
+        "en": "Rav Chaim Ozer Grodzensky went away in the summer for his health, and the rebbetzin asked to take a spacious, airy apartment. He hesitated and first asked the servant, provided by the community, whether she was satisfied; she said the kitchen was far from the dining room but the apartment was worth it. Only then did he agree, since his concern had been not to trouble her.",
+        "yi": "ר' חיים עוזר גראדזענסקי איז זומער אוועקגעפארן צוליב זיין געזונט, און די רביצין האט געבעטן מ'זאל נעמען א גרויסע לופטיגע דירה. ער האט זיך געקווענקלט און פריער געפרעגט די משרתת, וואס די קהלה האט צוגעשטעלט, צי זי איז צופרידן; זי האט געזאגט אז די קיך איז ווייט פונעם עסצימער אבער די דירה לוינט זיך. ערשט דאן האט ער מסכים געווען, ווייל זיין זארג איז געווען נישט מטריח צו זיין די משרתת."
+      },
+      "people": ["Rav Chaim Ozer Grodzensky"],
+      "evidence": { "segs": [329, 339, 351, 356, 358, 361], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "Keeping the guest company in the sukkah", "yi": "האלטן קאמפאני דעם גאסט אין סוכה" },
+      "retelling": {
+        "en": "Rav Chaim Ozer was ill on Sukkos and lived several floors up, so he did not eat in the sukkah, being a mitztaer. A poor Jew came with nothing to eat, the rebbetzin invited him, and Rav Chaim Ozer told him to eat in the sukkah downstairs. In the middle of the meal Rav Chaim Ozer came down and sat with him. When the man protested, he said he was exempt from sukkah but not from hachnasas orchim, like Avraham Avinu, and that it is not pleasant to eat alone.",
+        "yi": "ר' חיים עוזר איז געווען קראנק סוכות און האט געוואוינט עטליכע שטאק הויך, האט ער נישט געגעסן אין סוכה, ווייל ער איז געווען א מצטער. אן ארעמער איד איז געקומען אן עסן, די רביצין האט אים איינגעלאדנט, און ר' חיים עוזר האט אים געהייסן עסן אין דער סוכה אונטן. אינמיטן עסן איז ר' חיים עוזר אראפגעקומען און זיך אוועקגעזעצט מיט אים. ווען דער איד האט זיך געוואונדערט, האט ער געזאגט אז ער איז פטור פון סוכה אבער נישט פון הכנסת אורחים, אזוי ווי אברהם אבינו, און עס איז נישט אנגענעם צו עסן אליין."
+      },
+      "people": ["Rav Chaim Ozer Grodzensky", "Avraham Avinu"],
+      "evidence": { "segs": [367, 375, 389, 407, 414, 420], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The woman whose parents were alive", "yi": "די פרוי וועמענס עלטערן האבן נאך געלעבט" },
+      "retelling": {
+        "en": "A simple woman came to the Chofetz Chaim with a trouble and received a brachah. She then lamented that usually one who needs a yeshuah goes to the graves of his parents, but her parents were still alive and she could not. The talmidim laughed, and the Chofetz Chaim rebuked them sharply: a woman with a heavy heart comes with her troubles, and they laugh?",
+        "yi": "א פשוטע פרוי איז געקומען צום חפץ חיים מיט א צרה און באקומען א ברכה. דערנאך האט זי זיך באקלאגט אז געווענליך גייט א מענטש וואס דארף א ישועה צו די קברים פון זיינע עלטערן, נאר אירע עלטערן לעבן נאך און זי קען נישט גיין. די תלמידים האבן געלאכט, און דער חפץ חיים האט זיי שטארק מוסר געזאגט: א פרוי קומט מיט א שווער הארץ מיט אירע צרות, און מען לאכט?"
+      },
+      "people": ["the Chofetz Chaim"],
+      "evidence": { "segs": [480, 483, 491, 501, 504, 510], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "Rav Elchonon's single smile", "yi": "ר' אלחנן'ס איינציגער שמייכל" },
+      "retelling": {
+        "en": "Rav Elchonon Wasserman was never seen laughing or smiling, in line with Chazal's words about laughter in this world. Once, at a gathering of rabbonim, a foolish man came in and made a joke; no one laughed, but Rav Elchonon smiled, and that was the only time a smile was seen on his face.",
+        "yi": "ר' אלחנן וואסערמאן האט מען קיינמאל נישט געזען לאכן אדער שמייכלען, לויט די ווערטער פון חז\"ל וועגן לאכן אויף דער וועלט. איינמאל ביי אן אסיפה פון רבנים איז אריינגעקומען א נארישער איד און געמאכט א וויץ; קיינער האט נישט געלאכט, נאר ר' אלחנן האט געשמייכלט, און דאס איז געווען דאס איינציגע מאל וואס מ'האט געזען א שמייכל אויף זיין פנים."
+      },
+      "people": ["Rav Elchonon Wasserman"],
+      "evidence": { "segs": [517, 522, 525, 529, 534, 540], "confidence": 0.7 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "Why did Rav Yosef Chaim ask every visitor whether he had been at the Kosel?", "yi": "פארוואס האט ר' יוסף חיים געפרעגט יעדן גאסט צי ער איז שוין געווען ביים כותל?" },
+      "answer": { "en": "So that the Lubliner Rav sitting with him would see that people came for the Kosel and stopped by him only on the way, and not feel slighted.", "yi": "כדי דער לובלינער רב וואס איז געזעסן ביי אים זאל זען אז מ'קומט צום כותל און צו אים קומט מען נאר אויפן וועג, און זאל זיך נישט פילן באליידיגט." },
+      "questionSegs": [47],
+      "answerSegs": [48, 55, 56, 59],
+      "confidence": 0.65
+    },
+    {
+      "question": { "en": "Why did Rav Yosef Chaim leave the New City, against his doctors' advice, a few weeks before his passing?", "yi": "פארוואס איז ר' יוסף חיים אפאר וואכן פאר זיין פטירה ארויס פון דער נייער שטאט קעגן די דאקטוירים?" },
+      "answer": { "en": "His burial would be on Har HaZeisim near the Old City, and he did not want everyone to have to walk a long way from the New City.", "yi": "די קבורה וועט זיין אויפן הר הזיתים לעבן דער אלטשטאט, און ער האט נישט געוואלט אז אלע זאלן דארפן גיין א לאנגן וועג פון דער נייער שטאט." },
+      "questionSegs": [90, 91],
+      "answerSegs": [100, 102, 106, 110],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why did Rav Yosef Chaim send a mourner to lead musaf on Rosh Hashanah, although the Shulchan Aruch says a mourner should not lead the davening?", "yi": "פארוואס האט ר' יוסף חיים געשיקט אן אבל דאווענען מוסף ראש השנה, כאטש אין שולחן ערוך שטייט אז אן אבל זאל נישט דאווענען פארן עמוד?" },
+      "answer": { "en": "Because the widow would suffer seeing a stranger in her husband's place, and sparing her that pain came first.", "yi": "ווייל די אלמנה וואלט געהאט עגמת נפש ווען א פרעמדער שטייט אויף איר מאנ'ס פלאץ, און דאס איז געווען פריער." },
+      "questionSegs": [148, 149, 150],
+      "answerSegs": [158, 166, 168, 171, 184],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why did the Chofetz Chaim, who held the esrog, not do na'anuim at Hallel?", "yi": "פארוואס האט דער חפץ חיים, וואס האט געהאט דעם אתרוג, נישט געמאכט קיין נענועים ביי הלל?" },
+      "answer": { "en": "Everyone could fulfil the mitzvah of taking it, but not the na'anuim in the middle of Hallel, and he would not cause the others pain.", "yi": "די מצוה פון נטילה האט יעדער געקענט טון, אבער נישט די נענועים אינמיטן הלל, און ער האט נישט געוואלט מאכן קיין עגמת נפש פאר די אנדערע." },
+      "questionSegs": [215, 216, 218],
+      "answerSegs": [222, 223, 227, 234, 244],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why did Rav Moshe Kliers say the broken eruv was kosher?", "yi": "פארוואס האט ר' משה קליערס געזאגט אז דער צובראכענער עירוב איז כשר?" },
+      "answer": { "en": "To protect the honor of the Sefardi chacham, a talmid chacham, since a public error would harm the honor of the Torah, which outweighs an issur derabbanan.", "yi": "כדי צו היטן דעם כבוד פונעם ספרדישן חכם, א תלמיד חכם, ווייל א טעות בפרהסיא וואלט געווען א פגם אין כבוד התורה, וואס איז גרעסער ווי אן איסור דרבנן." },
+      "questionSegs": [295, 296],
+      "answerSegs": [300, 305, 307, 311, 312],
+      "confidence": 0.7
+    },
+    {
+      "question": { "en": "Why did Rav Chaim Ozer, exempt from sukkah, come down to the sukkah?", "yi": "פארוואס איז ר' חיים עוזר, וואס איז געווען פטור פון סוכה, אראפגעקומען אין סוכה?" },
+      "answer": { "en": "He was exempt from sukkah but not from hachnasas orchim, as Avraham Avinu waited for guests though in pain, and a guest should not eat alone.", "yi": "ער איז געווען פטור פון סוכה אבער נישט פון הכנסת אורחים, אזוי ווי אברהם אבינו האט געווארט אויף אורחים כאטש ער איז געווען א מצטער, און א גאסט זאל נישט עסן אליין." },
+      "questionSegs": [412, 414],
+      "answerSegs": [420, 421, 423, 427],
+      "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav holds up the tzaddik's way of thinking, never to trouble another Jew even when it is harder for oneself, as the middah the bachurim should learn from these stories.",
+        "yi": "דער משגיח שטעלט אוועק דעם צדיק'ס וועג פון טראכטן, קיינמאל נישט מטריח צו זיין א צווייטן איד אפילו ווען עס איז שווערער פאר זיך אליין, אלס די מידה וואס די בחורים זאלן לערנען פון די סיפורים."
+      },
+      "evidence": { "segs": [6, 111, 113, 117], "confidence": 0.7 }
+    }
+  ],
+  "candidateTopics": [
+    "middos",
+    "stories of tzaddikim",
+    "not troubling others",
+    "sensitivity to a widow's feelings",
+    "honor of the Torah",
+    "hachnasas orchim",
+    "Rav Yosef Chaim Sonnenfeld",
+    "the Chofetz Chaim",
+    "Rav Chaim Ozer Grodzensky",
+    "not laughing at another's pain"
+  ],
+  "concepts": [
+    { "he": "סיפורי צדיקים", "heardAs": ["סיפורי צדיקים"] },
+    { "he": "מטריח", "heardAs": ["מאסטריר", "מאטריאר", "מטריער", "מצריח"] },
+    { "he": "עגמת נפש", "heardAs": ["עגמת נפש", "עכמות נפש"] },
+    { "he": "אבל", "heardAs": ["נאוועל", "עבל", "נבל"] },
+    { "he": "נענועים", "heardAs": ["נאנעים", "עננים", "הנהים", "הנאים"] },
+    { "he": "אתרוג", "heardAs": ["אסחק", "עסחק", "נסרוג", "התרוגן"] },
+    { "he": "עירוב", "heardAs": ["עירב", "ערב", "ערוב"] },
+    { "he": "כבוד התורה", "heardAs": ["כבוד התורה", "כבוד הטייער"] },
+    { "he": "מצטער", "heardAs": ["מצטייער", "מצטייעל"] },
+    { "he": "הכנסת אורחים", "heardAs": ["הכנסת אורחים", "נסתר אורחם"] },
+    { "he": "משרתת", "heardAs": ["משורתות", "משורסת"] },
+    { "he": "הר הזיתים", "heardAs": ["הר הזיתים", "הרע זעהסים"] },
+    { "he": "כותל מערבי", "heardAs": ["כתר מרדי", "כתל מערבי", "כתר מאראוו"] }
+  ],
+  "people": [
+    { "name": "Rav Yosef Chaim Sonnenfeld", "heardAs": ["רבי יוסף חיים זאנענפעלד", "ר' יוסף חיים"] },
+    { "name": "the Lubliner Rav", "heardAs": ["דער ליובארלינער רב", "דער לובלינער רב", "דער בארלינער רב"] },
+    { "name": "the Chofetz Chaim", "heardAs": ["חפץ חיים", "חוף יצחק'ים", "רופאת חיים"] },
+    { "name": "Rav Moshe Kliers", "heardAs": ["רומשי הקלירות", "ר' משה קליעס", "ר' מאשי קלירס"] },
+    { "name": "Rav Chaim Ozer Grodzensky", "heardAs": ["רבי חיים מייזא קארדזשענסקי", "ר' חיים עזה", "ר' חיים עייזעלער", "ר' חיים עזראל"] },
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינו"] },
+    { "name": "Rav Elchonon Wasserman", "heardAs": ["רבי חנה וואסערמאן", "רבי חנא ווייסערמאן"] },
+    { "name": "the Shinever Rav", "heardAs": ["דער הייליגער שינאווער רב"] }
+  ],
+  "asrNotes": "Yiddish ASR fair for the narrative but heavily garbled in names and halachic terms (esrog, na'anuim, eruv, mourner), recovered from context. The Lubliner Rav's name (seg 32) and the explanation of Rav Elchonon's one smile (segs 535-540) could not be recovered, nor the closing source and remarks at segs 541-548. The catalog title 'bachurim vayechi' is a filename guess naming the series and parsha; no stretch addresses Vayechi, so no section carries that topic. Seg 366 is a short flagged gap of about 37 seconds."
+}

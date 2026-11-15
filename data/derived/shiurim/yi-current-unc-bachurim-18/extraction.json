@@ -1,0 +1,410 @@
+{
+  "shiurId": "yi-current-unc-bachurim-18",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "Learning Tanya chapter two with bachurim, the Rav uses the mashal of steam, water and ice to explain how all Jewish souls are one part of G-d above even though they stand on countless levels, down to the low souls of the generation before Moshiach.",
+      "yi": "ביים לערנען תניא פרק ב מיט בחורים ערקלערט דער משגיח מיט א משל פון פארע, וואסער און אייז ווי אזוי אלע אידישע נשמות זענען איין חלק אלוק ממעל, הגם זיי שטייען אויף אומצאליגע מדריגות, ביז די נידעריגע נשמות פון עקבתא דמשיחא."
+    },
+    "abstract": {
+      "en": "The Rav reviews that a Jew's body and animal soul come from klipas nogah, which can be raised to holiness, while a non-Jew's come from the three impure klipos. He illustrates this with a Midrash on 'uri tzafon uvo'i teiman': the nations can bring only olos, but a Jew can bring shelamim, which are eaten, because only a Jew can eat for the sake of Heaven. Turning to Tanya chapter two, he explains that the second soul is a part of G-d above, yet souls range from Atzilus down to Asiyah, and he brings the Ba'al HaTanya's question how such levels can exist if all come from the One. His answer is a long mashal of water in a boiling kettle: invisible vapor, visible steam, water and ice are all the same water, changed on the way down. He applies this to the four worlds, the extra souls of Shabbos, warm and cold davening, the souls rooted in Adam HaRishon's head, heart, hands and heel, and our generation, the 'heel' before Moshiach, whose efforts are precious to Hashem.",
+      "yi": "דער משגיח חזר'ט איבער אז דער גוף און די נפש הבהמית פון א איד קומען פון קליפת נוגה, וואס מ'קען מהפך זיין צו קדושה, און ביי א גוי קומען זיי פון די דריי קליפות הטמאות. ער ברענגט דערויף א מדרש אויפן פסוק \"עורי צפון ובואי תימן\": גוים קענען נאר ברענגען עולות, אבער א איד קען ברענגען שלמים וואס מ'עסט, ווייל נאר א איד קען עסן לשם שמים. דערנאך לערנט ער פרק ב פון תניא, אז די נפש השנית איז א חלק אלוק ממעל, און פונדעסטוועגן זענען דא נשמות פון אצילות ביז עשיה; ער ברענגט די קשיא פונעם בעל התניא ווי אזוי קען זיין מדריגות אז אלע קומען פון איינעם. דער תירוץ איז מיט א לאנגן משל פון וואסער אין א קאכנדיגן טשייניק: אומזעהבארע פארע, זעהבארע סטים, וואסער און אייז זענען אלע די זעלבע וואסער, נאר געטוישט אויפן וועג אראפ. דאס ווענדט ער אן אויף די פיר עולמות, די נשמה יתירה פון שבת, ווארעמע און קאלטע תפילה, נשמות פון קאפ, הארץ, הענט און עקב פון אדם הראשון, און אויף אונזער דור, די עקב פאר משיח, וועמענס מי איז זייער חשוב ביים אויבערשטן."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "A Jew can bring a shelamim, which is eaten, while a non-Jew can bring only an olah, because only a Jew, whose body comes from klipas nogah, can eat for the sake of Heaven.",
+          "yi": "א איד קען ברענגען א קרבן שלמים וואס מ'עסט, א גוי נאר א עולה, ווייל נאר א איד, וועמענס גוף קומט פון קליפת נוגה, קען עסן לשם שמים."
+        },
+        "evidence": { "segs": [67, 70, 81, 87, 89, 99], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The second soul of a Jew is a part of G-d above, yet souls stand on many levels, from Atzilus down to Asiyah.",
+          "yi": "די נפש השנית פון א איד איז א חלק אלוק ממעל, און פונדעסטוועגן זענען די נשמות אויף אסאך מדריגות, פון אצילות ביז עשיה."
+        },
+        "evidence": { "segs": [129, 132, 157, 164, 167, 171], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Vapor, steam, water and ice are all the same water; the hotter it is the more spiritual and the higher it rises, the colder the more physical and the lower it falls.",
+          "yi": "פארע, סטים, וואסער און אייז זענען אלע די זעלבע וואסער; וואס הייסער, אלץ מער רוחניותדיג און עס גייט ארויף, וואס קעלטער, אלץ מער גשמיותדיג און עס פאלט אראפ."
+        },
+        "evidence": { "segs": [335, 336, 351, 353, 354], "confidence": 0.9 }
+      },
+      {
+        "text": {
+          "en": "So too all souls come from one root and one place, and only on the way down do some become coarser.",
+          "yi": "אזוי אויך קומען אלע נשמות פון איין שורש און פון איין מקום, נאר אויפן וועג אראפ ווערן טייל מער מגושם."
+        },
+        "evidence": { "segs": [412, 413, 459, 460, 483, 484], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "All souls were once part of Adam HaRishon's soul, and each draws its nature from its place in him: head, heart, hands or heel.",
+          "yi": "אלע נשמות זענען אמאל געווען א טייל פון אדם הראשונס נשמה, און יעדע האט איר טבע לויט איר ארט אין אים: קאפ, הארץ, הענט אדער עקב."
+        },
+        "evidence": { "segs": [508, 510, 512, 529, 556, 564], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Our generation is the 'heel' before Moshiach, with low souls that cannot daven as earlier generations did, yet their struggle to serve Hashem is very precious to Him.",
+          "yi": "אונזער דור איז די עקב פאר משיח, מיט נידעריגע נשמות וואס קענען נישט דאווענען ווי פריערדיגע דורות, אבער זייער מי צו דינען דעם אויבערשטן איז ביי אים זייער חשוב."
+        },
+        "evidence": { "segs": [575, 577, 585, 635, 659, 660], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-current-bachurim-18-bachurim-5773-behaloischa",
+      "startSeg": 0,
+      "endSeg": 127,
+      "title": { "en": "Why a non-Jew cannot bring a shelamim", "yi": "פארוואס א גוי קען נישט ברענגען קיין שלמים" },
+      "summary": {
+        "en": "The Rav reviews that a Jew's animal soul comes from klipas nogah and a non-Jew's from the three impure klipos. He brings a Midrash on 'uri tzafon uvo'i teiman' and explains it: a non-Jew may bring only an olah, which is burned entirely, but not a shelamim, which is eaten, because only a Jew can eat for the sake of Heaven.",
+        "yi": "דער משגיח חזר'ט איבער אז די נפש הבהמית פון א איד קומט פון קליפת נוגה און פון א גוי פון די דריי קליפות הטמאות. ער ברענגט א מדרש אויף \"עורי צפון ובואי תימן\" און ערקלערט אז א גוי מעג ברענגען נאר א עולה וואס ווערט אינגאנצן פארברענט, נישט קיין שלמים וואס מ'עסט, ווייל נאר א איד קען עסן לשם שמים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-18-bachurim-5773-behaloischa",
+      "startSeg": 128,
+      "endSeg": 221,
+      "title": { "en": "A part of G-d above, on many levels", "yi": "א חלק אלוק ממעל אויף אסאך מדריגות" },
+      "summary": {
+        "en": "Opening Tanya chapter two, the Rav explains that the second soul is a part of G-d above, yet there are souls from Atzilus, Beriah, Yetzirah and Asiyah, as one sees in any beis medrash. He then brings the Ba'al HaTanya's question: if every soul is a part of the One G-d, how can there be levels?",
+        "yi": "ביים אנהייב פון תניא פרק ב ערקלערט דער משגיח אז די נפש השנית איז א חלק אלוק ממעל, און פונדעסטוועגן זענען דא נשמות פון אצילות, בריאה, יצירה און עשיה, ווי מ'זעהט אין יעדן בית המדרש. דערנאך ברענגט ער די קשיא פונעם בעל התניא: אויב יעדע נשמה איז א חלק פונעם איינעם אויבערשטן, ווי אזוי קען זיין מדריגות?"
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-18-bachurim-5773-behaloischa",
+      "startSeg": 222,
+      "endSeg": 354,
+      "title": { "en": "The mashal of the boiling kettle", "yi": "דער משל פונעם קאכנדיגן טשייניק" },
+      "summary": {
+        "en": "The Rav describes water boiling in a kettle: invisible vapor at the spout, white steam rising, water falling back, and ice in the freezer. All are the same water: the hotter, the more spiritual and higher; the colder, the more physical and lower.",
+        "yi": "דער משגיח באשרייבט וואסער וואס קאכט אין א טשייניק: אומזעהבארע פארע ביים שנאבל, ווייסע סטים וואס גייט ארויף, וואסער וואס פאלט צוריק אראפ, און אייז אין פריזער. אלעס איז די זעלבע וואסער: וואס הייסער, אלץ מער רוחניותדיג און העכער; וואס קעלטער, אלץ מער גשמיותדיג און נידעריגער."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-18-bachurim-5773-behaloischa",
+      "startSeg": 355,
+      "endSeg": 427,
+      "title": { "en": "Four worlds and the souls from each", "yi": "די פיר עולמות און די נשמות פון יעדן" },
+      "summary": {
+        "en": "The Rav applies the mashal to the worlds Atzilus, Beriah, Yetzirah and Asiyah and to the souls that come from each, from the Avos, Moshe Rabbeinu and the Ba'al Shem Tov down to the lowest souls. All come from one root and only change form on the way down; even Asiyah has nefesh, ruach and neshamah.",
+        "yi": "דער משגיח ווענדט אן דעם משל אויף די עולמות אצילות, בריאה, יצירה און עשיה און אויף די נשמות פון יעדן, פון די אבות, משה רבינו און דעם בעל שם טוב ביז די נידעריגסטע נשמות. אלע קומען פון איין שורש און טוישן זיך נאר אויפן וועג אראפ; אפילו אין עשיה איז דא נפש, רוח און נשמה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-18-bachurim-5773-behaloischa",
+      "startSeg": 428,
+      "endSeg": 484,
+      "title": { "en": "Extra souls of Shabbos; warm and cold Nishmas", "yi": "די נשמה יתירה פון שבת; א ווארעמע און א קאלטע נשמת" },
+      "summary": {
+        "en": "The Rav lists the points in the Shabbos davening where one receives the extra nefesh, ruach and neshamah. He then states the answer to the Tanya's question with the water mashal, and speaks of davening Nishmas cold like a snowball or warm like a hot glass of coffee.",
+        "yi": "דער משגיח רעכנט אויס ביי וועלכע ערטער אין דאווענען פון שבת מ'איז מקבל די נפש, רוח און נשמה יתירה. דערנאך זאגט ער דעם תירוץ אויף דער קשיא פונעם תניא מיטן משל פון וואסער, און רעדט וועגן זאגן נשמת קאלט ווי א שניבאל אדער ווארעם ווי א הייסע גלאז קאווע."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-18-bachurim-5773-behaloischa",
+      "startSeg": 485,
+      "endSeg": 570,
+      "title": { "en": "Souls from Adam HaRishon's head, heart, hands and heel", "yi": "נשמות פון קאפ, הארץ, הענט און עקב פון אדם הראשון" },
+      "summary": {
+        "en": "Reading the Tanya on the countless levels of souls, from the Avos and Moshe Rabbeinu to the generations of ikvesa dimeshicha, the Rav brings a Midrash that all souls were part of Adam HaRishon. Head souls are drawn to the mind, heart souls to song and poetry, hand souls to mitzvos and tzedakah, and the lowest come from the heel.",
+        "yi": "ביים לערנען דעם תניא וועגן די אומצאליגע מדריגות אין נשמות, פון די אבות און משה רבינו ביז די דורות פון עקבתא דמשיחא, ברענגט דער משגיח א מדרש אז אלע נשמות זענען געווען א טייל פון אדם הראשון. נשמות פונעם קאפ ציען זיך צום שכל, פון הארץ צו געזאנג און פאעזיע, פון די הענט צו מצוות און צדקה, און די נידעריגסטע קומען פונעם עקב."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-18-bachurim-5773-behaloischa",
+      "startSeg": 571,
+      "endSeg": 663,
+      "title": { "en": "The heel before Moshiach, and davening in Karlin", "yi": "די עקב פאר משיח, און דאס דאווענען אין קארלין" },
+      "summary": {
+        "en": "The Rav explains that our generation is the 'heel' of Moshiach and contrasts davening today with earlier generations, telling of a misnaged who davened in Karlin with Reb Aharon Karliner. He closes that the generation of the Exodus were head souls while we are heels, yet the struggle of such small souls is very precious to Hashem.",
+        "yi": "דער משגיח ערקלערט אז אונזער דור איז די עקב פון משיח, און שטעלט אקעגן דאס דאווענען היינט מיט פריערדיגע דורות, מיט א מעשה פון א מתנגד וואס האט געדאווענט אין קארלין ביי ר' אהרן קארלינער. ער שליסט אז דער דור פון יציאת מצרים זענען געווען נשמות פונעם קאפ און מיר זענען עקבים, אבער די מי פון אזעלכע קליינע נשמות איז זייער חשוב ביים אויבערשטן."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "אזוי ווי מ'האט געלערנט אין פריערדיגן פרק",
+      "work": "Tanya",
+      "ref": "Tanya ch. 1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [90, 91, 92, 93], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ערו צפים ובאי סימן",
+      "work": "Shir HaShirim",
+      "ref": "Shir HaShirim 4:16",
+      "sefariaRef": "Song of Songs 4:16",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [18, 19, 26, 108], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "עס שטייט אין מדרש אזא, ארי צפון",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [25, 28, 29, 31, 32], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער גמרא זאגט אין מקבלים בבני נח אלא אולות",
+      "work": "Gemara Menachos",
+      "ref": "Menachos 73b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [71, 72, 73], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "נפש השנות בישראל ... חלק אלוקיימי מעל",
+      "work": "Tanya",
+      "ref": "Tanya ch. 2",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [129, 130, 132, 135], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "ויפשע ישכו ובאות מנה חלקו מדריגות ונשמות; מנהיף דקות מדריגות בנשמות",
+      "work": "Tanya",
+      "ref": "Tanya ch. 2",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [148, 486, 490, 499, 504], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "יברו השם ... השבורה אלקימל העשיות",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 43:7",
+      "sefariaRef": "Isaiah 43:7",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [370, 372, 407], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ויצר עלקומת האדם",
+      "work": "Bereishis",
+      "ref": "Bereishis 2:7",
+      "sefariaRef": "Genesis 2:7",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [403, 404, 405], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "שטעט אז פרייטאג צונאכטס ביי בועה ושלום",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [429, 432, 435, 438], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "השם אלוקינו, השם אחד",
+      "work": "Devarim",
+      "ref": "Devarim 6:4",
+      "sefariaRef": "Deuteronomy 6:4",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [496, 497], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "שטעטן מדרש אלע נשמות זענען אמאל געוועזן אפאר פון אדם ראשון",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [506, 507, 508], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די גמרא רופטים ... עקבעת אדם-משיחא",
+      "work": "Gemara Sotah",
+      "ref": "Sotah 49b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [574, 575, 576, 577], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "מה יפה פי המח בני יואל",
+      "work": "Shir HaShirim",
+      "ref": "Shir HaShirim 7:2",
+      "sefariaRef": "Song of Songs 7:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [657, 658], "confidence": 0.7 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The difference between an olah and a shelamim is eating: since only a Jew can make eating itself an act for Heaven, only a Jew can bring an offering that its owner eats.",
+        "yi": "דער חילוק צווישן א עולה און א שלמים איז דאס עסן: ווייל נאר א איד קען מאכן דאס עסן אליין לשם שמים, דערפאר קען נאר א איד ברענגען א קרבן וואס דער בעלים עסט."
+      },
+      "evidence": { "segs": [78, 79, 81, 84, 99, 100], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The Midrash's 'north' and 'south' are the places of slaughter: the nations, who bring olos slaughtered in the north, will be uprooted, and Klal Yisrael, who bring shelamim, will come.",
+        "yi": "דער \"צפון\" און \"תימן\" פונעם מדרש זענען די ערטער פון שחיטה: די אומות וואס ברענגען עולות וואס מ'שחט'ט אין צפון וועלן אויסגעריסן ווערן, און כלל ישראל וואס ברענגען שלמים וועלן קומען."
+      },
+      "evidence": { "segs": [28, 29, 30, 31, 32, 115], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Steam, water and ice show how one essence can be invisible and spiritual at the top and solid and tangible at the bottom while remaining the very same thing; so the differences between souls do not contradict their being one part of G-d.",
+        "yi": "סטים, וואסער און אייז ווייזן ווי איין זאך קען זיין אומזעהבאר און רוחניותדיג אויבן און הארט און טאפבאר אונטן און בלייבן די זעלבע זאך; אזוי סותר'ן די חילוקים צווישן נשמות נישט אז זיי זענען איין חלק אלוק."
+      },
+      "evidence": { "segs": [335, 336, 458, 459, 461, 463], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The temperature of the mashal maps onto avodah: there are places where Nishmas is said cold like a snowball and places where it is a hot glass of coffee that wakes one up.",
+        "yi": "די טעמפעראטור פונעם משל פאסט אויף עבודה: ס'איז דא ערטער וואו נשמת ווערט געזאגט קאלט ווי א שניבאל, און ערטער וואו עס איז א הייסע גלאז קאווע וואס וועקט אויף."
+      },
+      "evidence": { "segs": [465, 468, 477, 478, 479], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "A soul's root in Adam HaRishon sets its strength but not its direction: a head soul that does not choose Torah becomes a professor or philosopher, and a heart soul that is not a tzaddik writes non-Jewish poetry.",
+        "yi": "דער שורש פון א נשמה אין אדם הראשון באשטימט איר כח, נישט וואו אהין זי ניצט אים: א נשמה פונעם קאפ וואס וויל נישט לערנען ווערט א פראפעסאר אדער א פילאסאף, און א נשמה פון הארץ וואס איז נישט קיין צדיק שרייבט גויאישע פאעזיע."
+      },
+      "evidence": { "segs": [522, 524, 525, 551, 553], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Adam is read as the initials of Adam, David, Moshiach, so the last generation before Moshiach is the heel of that one great soul.",
+        "yi": "אדם איז ראשי תיבות אדם, דוד, משיח, און דערפאר איז דער לעצטער דור פאר משיח די עקב פון יענער גרויסער נשמה."
+      },
+      "evidence": { "segs": [576, 577, 578, 581], "confidence": 0.7 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "A misnaged davens in Karlin", "yi": "א מתנגד דאווענט אין קארלין" },
+      "retelling": {
+        "en": "A misnaged came to Karlin, needed a minyan, and went to daven in the minyan of Reb Aharon Karliner. When they began Baruch She'amar the congregation burned with fervor and did not move on. Thinking the chazzan simply does not stop after each part, as in Litvish minyanim, he davened on by himself and finished the entire davening. All that time the congregation was still saying Baruch She'amar.",
+        "yi": "א מתנגד איז געקומען קיין קארלין, האט געדארפט א מנין, און איז געגאנגען דאווענען אינעם מנין פון ר' אהרן קארלינער. ווען מ'האט אנגעהויבן ברוך שאמר האט דער עולם געקאכט און מ'איז נישט ווייטער געגאנגען. ער האט געמיינט אז דער חזן שטעלט זיך נאר נישט אפ נאך יעדן חלק, ווי אין די ליטווישע מנינים, און ער האט ווייטער געדאווענט פאר זיך און אפגעדאווענט דאס גאנצע דאווענען. די גאנצע צייט האט דער עולם נאך אלץ געזאגט ברוך שאמר."
+      },
+      "people": ["Reb Aharon of Karlin"],
+      "evidence": { "segs": [604, 607, 611, 612, 624, 632], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why may a non-Jew bring an olah but not a shelamim?",
+        "yi": "פארוואס מעג א גוי ברענגען א עולה אבער נישט קיין שלמים?"
+      },
+      "answer": {
+        "en": "A shelamim is eaten, and eating is physical; a Jew can eat for the sake of Heaven, but a non-Jew, whose body comes from the three impure klipos, cannot.",
+        "yi": "א שלמים עסט מען, און עסן איז א גשמיותדיגע זאך; א איד קען עסן לשם שמים, א גוי, וועמענס גוף קומט פון די דריי קליפות הטמאות, קען נישט."
+      },
+      "questionSegs": [70, 72, 77],
+      "answerSegs": [78, 79, 81, 87, 89, 99],
+      "confidence": 0.85
+    },
+    {
+      "question": {
+        "en": "If every Jewish soul is a part of the One G-d, how can there be different levels of souls?",
+        "yi": "אויב יעדע אידישע נשמה איז א חלק פונעם איינעם אויבערשטן, ווי אזוי קען זיין פארשידענע מדריגות אין נשמות?"
+      },
+      "answer": {
+        "en": "It is one thing that becomes coarser and coarser on the way down, like water that becomes steam, water and ice and remains water.",
+        "yi": "ס'איז איין זאך וואס ווערט אלץ מער מגושם אויפן וועג אראפ, ווי וואסער וואס ווערט סטים, וואסער און אייז און בלייבט וואסער."
+      },
+      "questionSegs": [208, 209, 211, 216],
+      "answerSegs": [455, 459, 460, 463, 484],
+      "confidence": 0.85
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says bachurim should say Shir HaShirim on erev Shabbos.",
+        "yi": "דער משגיח זאגט אז בחורים זאלן זאגן שיר השירים ערב שבת."
+      },
+      "evidence": { "segs": [14, 16], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The Rav says it is good to have in mind receiving the extra nefesh, ruach and neshamah of Shabbos at their places in the davening.",
+        "yi": "דער משגיח זאגט אז ס'איז גוט צו האבן אין זינען צו מקבל זיין די נפש, רוח און נשמה יתירה פון שבת ביי זייערע ערטער אין דאווענען."
+      },
+      "evidence": { "segs": [432, 435, 438, 453], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "Tanya chapter 2",
+    "levels of souls",
+    "klipas nogah and the three impure klipos",
+    "olah and shelamim",
+    "eating for the sake of Heaven",
+    "the four worlds",
+    "neshamah yeseirah of Shabbos",
+    "souls rooted in Adam HaRishon",
+    "ikvesa dimeshicha",
+    "fervor in davening"
+  ],
+  "concepts": [
+    { "he": "נפש השנית", "heardAs": ["נפש השנות"] },
+    { "he": "חלק אלוק ממעל", "heardAs": ["חלק אלוקיימי מעל", "חלק אלוקים מן מהלך", "חלק אלוקם ומאהל"] },
+    { "he": "קליפת נוגה", "heardAs": ["כליפות נוגה", "תליפת נוגה"] },
+    { "he": "שלש קליפות הטמאות", "heardAs": ["שולש, כליפיות, עצמיות", "שלש תליפות עצמיות"] },
+    { "he": "קרבן שלמים", "heardAs": ["קרבן שלום'ים", "קרבן שלמה", "קרבן של עמים"] },
+    { "he": "לשם שמים", "heardAs": ["די שם שמים", "לשום שמים"] },
+    { "he": "עולם האצילות", "heardAs": ["עולם האצילות", "עולם העצילות"] },
+    { "he": "עולם העשיה", "heardAs": ["עולם האתוע", "עולם הרשיאה"] },
+    { "he": "נשמה יתירה", "heardAs": ["נשמה יסירה", "נשמה יסורה"] },
+    { "he": "עקבתא דמשיחא", "heardAs": ["עקבעת אדם-משיחא", "נקפות אדער משיח'ער", "עקוועס אדער משיחה"] },
+    { "he": "אדם הראשון", "heardAs": ["נאדים הראשון", "אדום הראשון", "אדם ראשון"] },
+    { "he": "ברוך שאמר", "heardAs": ["ברשי יאר מען", "בורש יאמען"] }
+  ],
+  "people": [
+    { "name": "Reb Shraga Feivel Mendlowitz", "heardAs": ["רבי פייגל מנדלאוויטש"] },
+    { "name": "the Ba'al HaTanya", "heardAs": ["הבעל לתניא"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["בעש''ט"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו"] },
+    { "name": "David HaMelech", "heardAs": ["דוד המלך"] },
+    { "name": "Rabbi Shimon bar Yochai", "heardAs": ["רבי שמעון בן יחוי"] },
+    { "name": "the Arizal", "heardAs": ["די מהריאה הקדוש"] },
+    { "name": "Adam HaRishon", "heardAs": ["נאדים הראשון", "אדום הראשון"] },
+    { "name": "the Sanzer Rav", "heardAs": ["צאנזער רוב"] },
+    { "name": "Reb Aharon of Karlin", "heardAs": ["ר' אהרן קאלינער", "רבי אהרן קאלינא"] }
+  ],
+  "asrNotes": "Yiddish ASR fair; Hebrew quotations (Tanya ch. 2, the Midrash on 'uri tzafon', the Shabbos davening points) heavily garbled but recoverable from context. The catalog title 'bachurim Behaloischa' is a filename-derived label naming the series and parsha, not a topic, so no section is tagged with it. Segments 445-446 (a Shacharis point for the ruach yeseirah), 597-598 (a second davening example after the Sanzer Rav) and 644-651 (a verse about the generation of the Exodus) could not be recovered."
+}

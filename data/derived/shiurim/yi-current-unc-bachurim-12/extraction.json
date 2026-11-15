@@ -1,0 +1,762 @@
+{
+  "shiurId": "yi-current-unc-bachurim-12",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "Opening the first chapter of Tanya for bachurim, the Rav explains that every Jew has two souls, a holy one and one from kelipah, and that the lifelong war between them is the very purpose of coming into the world.",
+      "yi": "ביים אנהייבן דעם ערשטן פרק תניא פאר בחורים ערקלערט דער משגיח אז יעדער איד האט צוויי נפשות, איינע פון קדושה און איינע פון קליפה, און די מלחמה צווישן זיי א גאנץ לעבן איז דער תכלית פארוואס מען איז אראפגעקומען אויף דער וועלט."
+    },
+    "abstract": {
+      "en": "The Rav introduces the Tanya's teaching, brought from the Arizal, that every Jew has two souls: one from holiness and one from kelipah, a word meaning a shell, like the shell of a nut. Foreign thoughts in davening do not mean something is wrong with a person; they come from the second soul, and the war against it is why souls that sang with the angels were sent down. Only rare tzaddikim finish the war. He then describes the four kelipos opposite the four letters of Hashem's Name through a rose among thorns and the walnut with its four shells, linking it to 'el ginas egoz yaradti' and to Yechezkel's vision, where the fourth, nogah, is light that passes through a barrier like a window shade. A Jew's body and yetzer come from nogah and can be elevated, chiefly by eating l'shem shamayim. Finally he reads the Tanya's text: Rabbi Chaim Vital's two souls, the sitra achra as the other side of a walled field, the animal soul in the blood, and the four elements.",
+      "yi": "דער משגיח עפנט מיט דעם וואס דער בעל התניא ברענגט פונעם אריז\"ל, אז יעדער איד האט צוויי נפשות: איינע פון קדושה און איינע פון קליפה, און קליפה מיינט א שאלעכץ, אזוי ווי ביי א נוס. ווען עס קומען פרעמדע מחשבות ביים דאווענען מיינט עס נישט אז עפעס איז נישט גוט מיט דעם מענטש; דאס קומט פונעם צווייטן נפש, און צוליב די מלחמה קעגן אים זענען די נשמות, וואס האבן געזונגען מיט די מלאכים, אראפגעשיקט געווארן. נאר זעלטענע צדיקים ענדיגן די מלחמה. דערנאך שילדערט ער די פיר קליפות קעגן די פיר אותיות פון שם הוי\"ה, מיט א רויז צווישן דערנער און מיט א וואלנאט מיט פיר שאלעכצן, און ער פארבינדט עס מיט \"אל גנת אגוז ירדתי\" און מיט דעם מראה פון יחזקאל, וואו די פערטע, נוגה, איז א ליכטיגקייט וואס גייט דורך א מחיצה, אזוי ווי דורך א פענסטער-שאטן. דער גוף און דער יצר פון א איד קומען פון נוגה און מען קען זיי דערהייבן, בפרט דורך עסן לשם שמים. צום סוף לערנט ער דעם לשון פונעם תניא: די צוויי נפשות פון רבי חיים וויטאל, די סטרא אחרא ווי די אנדערע זייט פון א פעלד מיט א וואנט, דער נפש הבהמית אין בלוט, און די פיר יסודות."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Every Jew has two souls, one from holiness and one from kelipah, a shell that covers the edible fruit.",
+          "yi": "יעדער איד האט צוויי נפשות, איינע פון קדושה און איינע פון קליפה, א שאלעכץ וואס דעקט צו דעם אוכל."
+        },
+        "evidence": {
+          "segs": [
+            9,
+            10,
+            12,
+            27,
+            28
+          ],
+          "confidence": 0.85
+        }
+      },
+      {
+        "text": {
+          "en": "Foreign thoughts during davening come from the second soul and are no sign that something is wrong with the person.",
+          "yi": "פרעמדע מחשבות ביים דאווענען קומען פונעם צווייטן נפש און זענען נישט קיין סימן אז עפעס איז נישט גוט מיט דעם מענטש."
+        },
+        "evidence": {
+          "segs": [
+            57,
+            59,
+            61,
+            74,
+            75,
+            76
+          ],
+          "confidence": 0.85
+        }
+      },
+      {
+        "text": {
+          "en": "Almost everyone is sent into the world to wage this war all his life; only rare tzaddikim finish it.",
+          "yi": "כמעט יעדער איינער ווערט אראפגעשיקט אויף דער וועלט צו פירן די מלחמה זיין גאנץ לעבן; נאר זעלטענע צדיקים ענדיגן זי."
+        },
+        "evidence": {
+          "segs": [
+            88,
+            90,
+            95,
+            97,
+            100,
+            146
+          ],
+          "confidence": 0.8
+        }
+      },
+      {
+        "text": {
+          "en": "There are four kelipos opposite the four letters of Hashem's Name, like the four shells around the walnut's four sections.",
+          "yi": "עס זענען דא פיר קליפות קעגן די פיר אותיות פון שם הוי\"ה, אזוי ווי די פיר שאלעכצן ארום די פיר חלקים פונעם וואלנאט."
+        },
+        "evidence": {
+          "segs": [
+            156,
+            157,
+            227,
+            238,
+            256
+          ],
+          "confidence": 0.8
+        }
+      },
+      {
+        "text": {
+          "en": "The fourth kelipah, nogah, can be elevated; a Jew's body and yetzer come from it, while the three impure kelipos cannot be.",
+          "yi": "די פערטע קליפה, נוגה, קען מען דערהייבן; דער גוף און דער יצר פון א איד קומען דערפון, משא\"כ די דריי טמאע קליפות."
+        },
+        "evidence": {
+          "segs": [
+            336,
+            358,
+            365,
+            449,
+            451,
+            454
+          ],
+          "confidence": 0.8
+        }
+      },
+      {
+        "text": {
+          "en": "The animal soul resides in the blood, and from it come all bad traits, built of the four elements opposite the four letters of Hashem's Name.",
+          "yi": "דער נפש הבהמית געפינט זיך אין בלוט, און דערפון קומען אלע שלעכטע מדות, וואס זענען געבויט פון די פיר יסודות קעגן די פיר אותיות פון שם הוי\"ה."
+        },
+        "evidence": {
+          "segs": [
+            525,
+            526,
+            536,
+            540
+          ],
+          "confidence": 0.75
+        }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-current-bachurim-12-bachurim-5773-ki-sisa",
+      "startSeg": 0,
+      "endSeg": 80,
+      "title": {
+        "en": "Two souls and thoughts in davening",
+        "yi": "צוויי נפשות און מחשבות ביים דאווענען"
+      },
+      "summary": {
+        "en": "The Rav begins the Tanya: every Jew has a soul from holiness and a soul from kelipah, explained through the shell of a nut. He then explains that stray thoughts during davening come from the second soul and do not mean something is wrong with the person.",
+        "yi": "דער משגיח הייבט אן דעם תניא: יעדער איד האט א נפש פון קדושה און א נפש פון קליפה, און ער טייטשט קליפה מיט דעם שאלעכץ פון א נוס. דערנאך ערקלערט ער אז פרעמדע מחשבות ביים דאווענען קומען פונעם צווייטן נפש און ווייזן נישט אז עפעס איז נישט גוט מיט דעם מענטש."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [
+        0
+      ],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-12-bachurim-5773-ki-sisa",
+      "startSeg": 81,
+      "endSeg": 155,
+      "title": {
+        "en": "Sent down for a lifelong war",
+        "yi": "אראפגעשיקט אויף א מלחמה א גאנץ לעבן"
+      },
+      "summary": {
+        "en": "The Rav explains that only rare tzaddikim finish the war with the yetzer hara, while almost everyone is sent down to wage it all his life. Souls that sang with the angels before the Throne were sent into the world for this war.",
+        "yi": "דער משגיח ערקלערט אז נאר זעלטענע צדיקים ענדיגן די מלחמה מיטן יצר הרע, בשעת כמעט יעדער איינער ווערט אראפגעשיקט זי צו פירן זיין גאנץ לעבן. די נשמות וואס האבן געזונגען מיט די מלאכים ביים כסא הכבוד זענען אראפגעשיקט געווארן אויף דער מלחמה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-12-bachurim-5773-ki-sisa",
+      "startSeg": 156,
+      "endSeg": 277,
+      "title": {
+        "en": "The rose, the walnut and four kelipos",
+        "yi": "די רויז, דער וואלנאט און פיר קליפות"
+      },
+      "summary": {
+        "en": "The Rav explains the four kelipos opposite the four letters of Hashem's Name with a rose among thorns and the walnut, which grows inside a green bitter shell, a hard shell and a soft skin, with four sections inside. He connects this to the passuk 'el ginas egoz yaradti': the Jewish soul is the garden of nuts.",
+        "yi": "דער משגיח ערקלערט די פיר קליפות קעגן די פיר אותיות פון שם הוי\"ה מיט א רויז צווישן דערנער און מיטן וואלנאט, וואס וואקסט אין א גרינעם ביטערן שאלעכץ, א הארטן שאלעכץ און א ווייכע הייטל, מיט פיר חלקים אינעווייניג. ער פארבינדט עס מיטן פסוק \"אל גנת אגוז ירדתי\": די אידישע נשמה איז דער גארטן פון ניס."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-12-bachurim-5773-ki-sisa",
+      "startSeg": 278,
+      "endSeg": 342,
+      "title": {
+        "en": "Yechezkel's vision and kelipas nogah",
+        "yi": "די מראה פון יחזקאל און קליפת נוגה"
+      },
+      "summary": {
+        "en": "The Rav brings the first chapter of Yechezkel, read as the haftarah of Shavuos: before seeing the Merkavah the navi passed four barriers, a storm wind, a great cloud, a flashing fire and nogah. He explains nogah as light that comes through a barrier, like sunlight through a window shade, and identifies it with the walnut's fourth skin, which is eaten with the nut.",
+        "yi": "דער משגיח ברענגט דעם ערשטן פרק יחזקאל, וואס מען ליינט אלס הפטרה פון שבועות: איידער דער נביא האט געזען די מרכבה איז ער דורכגעגאנגען פיר מחיצות, רוח סערה, ענן גדול, אש מתלקחת און נוגה. ער טייטשט נוגה אלס א ליכטיגקייט וואס גייט דורך א מחיצה, אזוי ווי די זון דורך א פענסטער-שאטן, און דאס איז די פערטע הייטל פונעם וואלנאט וואס מען עסט מיטן נוס."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-12-bachurim-5773-ki-sisa",
+      "startSeg": 343,
+      "endSeg": 456,
+      "title": {
+        "en": "Elevating nogah through eating",
+        "yi": "נוגה דערהייבן דורכן עסן"
+      },
+      "summary": {
+        "en": "The Rav explains that a gentile's soul and yetzer come from the three impure kelipos, while a Jew's body and yetzer come from nogah, which can be elevated. He shows how an honest Jew eats: netilas yadayim, hamotzi, salt, eating in moderation and with thanks to Hashem, so that he has strength to daven and learn; eaten carelessly, nogah becomes impure.",
+        "yi": "דער משגיח ערקלערט אז די נשמה און דער יצר פון א גוי קומען פון די דריי טמאע קליפות, און דער גוף און יצר פון א איד קומען פון נוגה, וואס מען קען דערהייבן. ער שילדערט וויאזוי אן ערליכער איד עסט: נטילת ידים, המוציא, זאלץ, עסן מיט מתינות און מיט א דאנק צום רבונו של עולם, כדי צו האבן כח צו דאווענען און לערנען; עסט מען אן דעם, ווערט נוגה טמא."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-12-bachurim-5773-ki-sisa",
+      "startSeg": 457,
+      "endSeg": 519,
+      "title": {
+        "en": "The Tanya's text: Rabbi Chaim Vital and the sitra achra",
+        "yi": "דער לשון התניא: רבי חיים וויטאל און די סטרא אחרא"
+      },
+      "summary": {
+        "en": "The Rav reads the Tanya's opening citation of Rabbi Chaim Vital, the Arizal's disciple, that every Jew has two souls, with the passuk 'u'neshamos ani asisi'. He explains 'sitra achra' as 'the other side' through a field divided by a wall, with fruit and good things on the right and snakes and hornets on the left.",
+        "yi": "דער משגיח לערנט דעם אנהייב פונעם תניא, וואס ברענגט פון רבי חיים וויטאל, דעם תלמיד פונעם אריז\"ל, אז יעדער איד האט צוויי נשמות, מיטן פסוק \"ונשמות אני עשיתי\". ער טייטשט \"סטרא אחרא\" אלס \"די אנדערע זייט\" מיט א משל פון א פעלד מיט א וואנט אינמיטן: אויף דער רעכטער זייט פירות און גוטע זאכן, אויף דער לינקער שלאנגען און ארנעטס."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-12-bachurim-5773-ki-sisa",
+      "startSeg": 520,
+      "endSeg": 583,
+      "title": {
+        "en": "The animal soul in the blood and the four elements",
+        "yi": "דער נפש הבהמית אין בלוט און די פיר יסודות"
+      },
+      "summary": {
+        "en": "The Rav explains that the second soul resides in the blood, and from it come all bad traits, from four elements of the sitra achra opposite the four holy letters of Hashem's Name. He describes the four elements, fire, air, water and earth, as energy, gas, liquid and solid, and ends that this will be explained further.",
+        "yi": "דער משגיח ערקלערט אז דער צווייטער נפש געפינט זיך אין בלוט, און דערפון קומען אלע שלעכטע מדות, פון פיר יסודות פון דער סטרא אחרא קעגן די פיר הייליגע אותיות פון שם הוי\"ה. ער שילדערט די פיר יסודות, אש, רוח, מים און עפר, אלס ענערגיע, גאז, פליסיגקייט און הארטע זאכן, און ער ענדיגט אז מען וועט עס ווייטער מסביר זיין."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "דער ספר התעניא ... א נפש וואס קומט פון קדושה, און א נפש וואס קומט פון קליפה",
+      "work": "Tanya",
+      "ref": "Tanya ch. 1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          5,
+          9,
+          10,
+          460
+        ],
+        "confidence": 0.85
+      }
+    },
+    {
+      "heardAs": "כל עם אברים, כל עם ברורים, כל עם גבעורים",
+      "work": "Siddur",
+      "ref": "Birchos Krias Shema, Yotzer Or",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          116,
+          117,
+          118
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "על גי נעת עגוז ירדתי",
+      "work": "Shir HaShirim",
+      "ref": "Shir HaShirim 6:11",
+      "sefariaRef": "Song of Songs 6:11",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          264,
+          266,
+          270,
+          272
+        ],
+        "confidence": 0.85
+      }
+    },
+    {
+      "heardAs": "רוח סיורי, אשמות לקחת, און ענין כבוד, ונוגה לא סובב",
+      "work": "Yechezkel",
+      "ref": "Yechezkel 1:4",
+      "sefariaRef": "Ezekiel 1:4",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          284,
+          298,
+          299,
+          300,
+          301
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "heardAs": "סעודי חכם קדש, ובאחרת השם",
+      "work": "Tehillim",
+      "ref": "Tehillim 134:2",
+      "sefariaRef": "Psalms 134:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          395,
+          397
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "הרב חיים ויטלזל בשערה הקדושה",
+      "work": "Shaarei Kedushah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          461,
+          468
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "heardAs": "ארי אצחיים שעה הנאה פרק ב'",
+      "work": "Etz Chaim",
+      "ref": "Etz Chaim, Shaar 50 ch. 2",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          469,
+          470,
+          471,
+          472
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "heardAs": "א נשמות אני אסיסי",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 57:16",
+      "sefariaRef": "Isaiah 57:16",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          474,
+          475
+        ],
+        "confidence": 0.7
+      }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Having bad thoughts in davening is not evidence of a bad soul: it would be, the Rav says, only if a person had just one soul; since there are two, the struggle itself is expected.",
+        "yi": "שלעכטע מחשבות ביים דאווענען זענען נישט קיין ראיה אויף א שלעכטע נשמה: דאס וואלט געווען, זאגט דער משגיח, נאר ווען דער מענטש וואלט געהאט איין נפש; וויבאלד עס זענען דא צוויי, איז די מלחמה גופא א זאך וואס דארף זיין."
+      },
+      "evidence": {
+        "segs": [
+          59,
+          60,
+          61,
+          69,
+          76
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "text": {
+        "en": "The soul left a carefree heaven where it sang with the angels; it was sent down precisely to fight, so the war is the purpose, not a failure.",
+        "yi": "די נשמה האט איבערגעלאזט דעם הימל, וואו זי האט געזונגען מיט די מלאכים אן קיין פראבלעמען; זי איז אראפגעשיקט געווארן דווקא צו קעמפן, ממילא איז די מלחמה דער תכלית און נישט קיין דורכפאל."
+      },
+      "evidence": {
+        "segs": [
+          113,
+          115,
+          125,
+          126,
+          132
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "text": {
+        "en": "The walnut's structure, three inedible shells and a fourth brown skin eaten with the nut around four sections, mirrors the three impure kelipos, nogah, and the four letters of Hashem's Name in the soul.",
+        "yi": "דער בנין פונעם וואלנאט, דריי שאלעכצן וואס מען עסט נישט און א פערטע ברוינע הייטל וואס מען עסט מיטן נוס ארום פיר חלקים, איז א משל אויף די דריי טמאע קליפות, אויף נוגה, און אויף די פיר אותיות פון שם הוי\"ה אין דער נשמה."
+      },
+      "evidence": {
+        "segs": [
+          252,
+          254,
+          256,
+          273,
+          274,
+          276
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "text": {
+        "en": "Nogah is like sunlight filtered through a window shade: there is some light, but not real light, which is why it can go either way.",
+        "yi": "נוגה איז ווי די זון וואס גייט דורך א פענסטער-שאטן: ס'איז עפעס ליכטיג, אבער נישט קיין אמת'ע ליכטיגקייט, און דערפאר קען עס גיין אהער אדער אהין."
+      },
+      "evidence": {
+        "segs": [
+          304,
+          309,
+          317,
+          330,
+          331
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "text": {
+        "en": "Salt, melach, has the same letters as bread, lechem, and the Rav connects it to three times Hashem's Name, which is why one dips the bread in salt three times.",
+        "yi": "מלח האט די זעלבע אותיות ווי לחם, און דער משגיח פארבינדט עס מיט דריי מאל שם הוי\"ה, דערפאר טונקט מען דריי מאל אין זאלץ."
+      },
+      "evidence": {
+        "segs": [
+          405,
+          406,
+          407
+        ],
+        "confidence": 0.65
+      }
+    },
+    {
+      "text": {
+        "en": "The same body that is a barrier to the soul can be elevated: the Jew's yetzer comes from nogah, and how he eats decides whether it turns to holiness or to impurity.",
+        "yi": "דער זעלבער גוף וואס איז א מחיצה פאר דער נשמה קען מען דערהייבן: דער יצר פון א איד קומט פון נוגה, און וויאזוי ער עסט באשטימט צי עס ווערט קדושה אדער טומאה."
+      },
+      "evidence": {
+        "segs": [
+          358,
+          365,
+          441,
+          443,
+          449,
+          454
+        ],
+        "confidence": 0.75
+      }
+    }
+  ],
+  "stories": [],
+  "questions": [
+    {
+      "question": {
+        "en": "If a person gets foreign thoughts in the middle of davening, is something wrong with him?",
+        "yi": "אז א מענטש באקומט פרעמדע מחשבות אינמיטן דאווענען, איז עפעס נישט גוט מיט אים?"
+      },
+      "answer": {
+        "en": "No. Those thoughts come from the second soul; the holy soul wants to daven, and man was created to wage this war.",
+        "yi": "ניין. די מחשבות קומען פונעם צווייטן נפש; דער הייליגער נפש וויל דאווענען, און דער מענטש איז באשאפן געווארן צו פירן די מלחמה."
+      },
+      "questionSegs": [
+        50,
+        51,
+        53,
+        57
+      ],
+      "answerSegs": [
+        59,
+        61,
+        72,
+        75,
+        81
+      ],
+      "confidence": 0.85
+    },
+    {
+      "question": {
+        "en": "If nogah is a kelipah, how can it be eaten?",
+        "yi": "אויב נוגה איז א קליפה, וויאזוי קען מען עס עסן?"
+      },
+      "answer": {
+        "en": "It depends on how one eats: eating for the sake of Heaven, with netilas yadayim, a brachah and thanks to Hashem, elevates it.",
+        "yi": "עס ווענדט זיך וויאזוי מען עסט: עסן לשם שמים, מיט נטילת ידים, א ברכה און א דאנק צום רבונו של עולם, דערהייבט עס."
+      },
+      "questionSegs": [
+        367
+      ],
+      "answerSegs": [
+        368,
+        381,
+        398,
+        399,
+        411
+      ],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why is it called sitra achra?",
+        "yi": "פארוואס הייסט עס סטרא אחרא?"
+      },
+      "answer": {
+        "en": "Because it is the other side of a divided field: holiness, Torah and mitzvos on the right, the snake and bad forces on the left, with a wall between.",
+        "yi": "ווייל ס'איז די אנדערע זייט פון א צעטיילטן פעלד: אויף דער רעכטער זייט קדושה, תורה און מצוות, אויף דער לינקער דער נחש מיט די שלעכטע כוחות, מיט א וואנט אינמיטן."
+      },
+      "questionSegs": [
+        515
+      ],
+      "answerSegs": [
+        504,
+        505,
+        506,
+        511,
+        513
+      ],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Where in a person is the second soul found?",
+        "yi": "וואו געפינט זיך דער צווייטער נפש אין דעם מענטש?"
+      },
+      "answer": {
+        "en": "In his blood; the physical, animal soul is in the blood, and from it come the bad traits.",
+        "yi": "אין זיין בלוט; דער גשמיות'דיגער נפש, דער נפש הבהמית, איז אין דעם דם, און דערפון קומען די שלעכטע מדות."
+      },
+      "questionSegs": [
+        523,
+        524
+      ],
+      "answerSegs": [
+        525,
+        526,
+        532,
+        536
+      ],
+      "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says a person who gets foreign thoughts in davening should not feel that he is no good; the thoughts come from the other soul.",
+        "yi": "דער משגיח זאגט אז ווער עס באקומט פרעמדע מחשבות ביים דאווענען זאל זיך נישט פילן אז ער איז נישט גוט; די מחשבות קומען פונעם אנדערן נפש."
+      },
+      "evidence": {
+        "segs": [
+          77,
+          78,
+          138,
+          139
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "text": {
+        "en": "The Rav says one must not let the kelipah soul take the upper hand, but must wage the war constantly.",
+        "yi": "דער משגיח זאגט אז מען טאר נישט לאזן דעם נפש פון קליפה זיין דער שטארקערער, נאר מען דארף כסדר פירן די מלחמה."
+      },
+      "evidence": {
+        "segs": [
+          107,
+          108,
+          109
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "text": {
+        "en": "The Rav says a Jew should eat l'shem shamayim, as much as he needs, with moderation and thanks to Hashem, so as to have strength to daven, learn and serve Hashem.",
+        "yi": "דער משגיח זאגט אז א איד זאל עסן לשם שמים, וויפיל ער דארף, מיט מתינות און מיט א דאנק צום רבונו של עולם, כדי צו האבן כח צו דאווענען, לערנען און טון עבודת השם."
+      },
+      "evidence": {
+        "segs": [
+          378,
+          411,
+          416,
+          421,
+          422
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "text": {
+        "en": "The Rav says every Jew must be on the right side, bound to Torah, mitzvos and good deeds.",
+        "yi": "דער משגיח זאגט אז יעדער איד דארף זיין אויף דער רעכטער זייט, מקושר צו תורה, מצוות און מעשים טובים."
+      },
+      "evidence": {
+        "segs": [
+          508,
+          511,
+          542
+        ],
+        "confidence": 0.75
+      }
+    }
+  ],
+  "candidateTopics": [
+    "Tanya chapter 1",
+    "two souls",
+    "kelipas nogah",
+    "foreign thoughts in davening",
+    "lifelong war with the yetzer hara",
+    "the walnut as a parable for the kelipos",
+    "Yechezkel's vision of the Merkavah",
+    "eating l'shem shamayim",
+    "sitra achra",
+    "four elements"
+  ],
+  "concepts": [
+    {
+      "he": "קליפה",
+      "heardAs": [
+        "קליפע",
+        "קליפ",
+        "קליפער"
+      ]
+    },
+    {
+      "he": "קליפת נוגה",
+      "heardAs": [
+        "נוגע",
+        "קליפת נוגע",
+        "נוגה"
+      ]
+    },
+    {
+      "he": "שלש קליפות הטמאות",
+      "heardAs": [
+        "די שולש קליפות התמעות"
+      ]
+    },
+    {
+      "he": "סטרא אחרא",
+      "heardAs": [
+        "סתחה אחתה",
+        "סטחה אחת",
+        "ספרדכי אחת",
+        "סתריכה"
+      ]
+    },
+    {
+      "he": "נפש האלקית",
+      "heardAs": [
+        "נפש אגדשה",
+        "דער געטליכער נפש"
+      ]
+    },
+    {
+      "he": "נפש הבהמית",
+      "heardAs": [
+        "נפש הבתה",
+        "דער בתה'דיגער נפש"
+      ]
+    },
+    {
+      "he": "שם הוי\"ה",
+      "heardAs": [
+        "שם הבעיה",
+        "שם הבאים"
+      ]
+    },
+    {
+      "he": "חלק אלוק ממעל",
+      "heardAs": [
+        "חלק אלקיימי מייל"
+      ]
+    },
+    {
+      "he": "יצר הרע",
+      "heardAs": [
+        "יצה״ה",
+        "יצחק",
+        "יצר הארן"
+      ]
+    },
+    {
+      "he": "מחיצה",
+      "heardAs": [
+        "מחוצה",
+        "מחוצות"
+      ]
+    },
+    {
+      "he": "ארבע יסודות",
+      "heardAs": [
+        "פיר יסודות",
+        "אייש, רוח, מאים און אפעל"
+      ]
+    },
+    {
+      "he": "מתינות",
+      "heardAs": [
+        "מסינות"
+      ]
+    },
+    {
+      "he": "כסא הכבוד",
+      "heardAs": [
+        "כיסא הקבד",
+        "כיסא יקבת"
+      ]
+    },
+    {
+      "he": "מרכבה",
+      "heardAs": [
+        "מקבא",
+        "מקבה"
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "the Alter Rebbe (Ba'al HaTanya)",
+      "heardAs": [
+        "דער בעל התעניא"
+      ]
+    },
+    {
+      "name": "the Arizal",
+      "heardAs": [
+        "ארי הקדש"
+      ]
+    },
+    {
+      "name": "Rabbi Chaim Vital",
+      "heardAs": [
+        "הרב חיים ויטלזל",
+        "רבי חיים ויטל"
+      ]
+    },
+    {
+      "name": "Shlomo HaMelech",
+      "heardAs": [
+        "שלמה מלך"
+      ]
+    },
+    {
+      "name": "Yechezkel HaNavi",
+      "heardAs": [
+        "יחזקאל הנביא",
+        "יחזקה"
+      ]
+    }
+  ],
+  "asrNotes": "Yiddish ASR fair, with frequent English words (the Rav speaks to bachurim with English examples); Hebrew quotations garbled but recoverable from Tanya ch. 1 and the pesukim. The catalog title is only a filename guess ('bachurim ki sisa'); the shiur itself is the opening of Tanya ch. 1. Segment 7 (0:42-1:18) is a long sparse segment; the stretch around segments 156-157 and 423-431 is partly unintelligible."
+}

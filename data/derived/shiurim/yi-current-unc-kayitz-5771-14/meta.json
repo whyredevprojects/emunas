@@ -1,0 +1,96 @@
+{
+ "shiurId": "yi-current-unc-kayitz-5771-14",
+ "generatedAt": "2026-11-15T08:58:10.934Z",
+ "shiur": {
+  "id": "yi-current-unc-kayitz-5771-14",
+  "lang": "yi",
+  "category": "current",
+  "seriesId": "current-kayitz-5771",
+  "seriesOrder": 14,
+  "catalog": {
+   "source": "uncatalogued-guide",
+   "sectionId": "current",
+   "sectionTitle": "Y 05 Current",
+   "n": "14",
+   "page": null,
+   "titleOriginal": "Lechaim Sekulen",
+   "subTitle": null,
+   "derived": "filename",
+   "note": "year taken from the folder name \"Kayitz 5771\"; \"Kayitz\" in the folder name marks this as a summer series"
+  },
+  "parsha": null,
+  "zman": null,
+  "perek": null,
+  "hebrewYears": [5771],
+  "recordingIds": [
+   "y-current-kayitz-5771-14-lechaim-sekulen"
+  ],
+  "inScope": true,
+  "outOfScopeReason": null,
+  "pathNotes": []
+ },
+ "series": {
+  "id": "current-kayitz-5771",
+  "title": {
+   "en": "Summer 5771 (Kayitz)",
+   "yi": "קיץ תשע\"א"
+  },
+  "lang": "yi",
+  "catalogSectionIds": [
+   "current"
+  ],
+  "shiurIds": [
+   "yi-current-unc-kayitz-5771-01",
+   "yi-current-unc-kayitz-5771-02",
+   "yi-current-unc-kayitz-5771-03",
+   "yi-current-unc-kayitz-5771-04",
+   "yi-current-unc-kayitz-5771-05",
+   "yi-current-unc-kayitz-5771-06",
+   "yi-current-unc-kayitz-5771-07",
+   "yi-current-unc-kayitz-5771-08",
+   "yi-current-unc-kayitz-5771-09",
+   "yi-current-unc-kayitz-5771-10",
+   "yi-current-unc-kayitz-5771-11",
+   "yi-current-unc-kayitz-5771-12",
+   "yi-current-unc-kayitz-5771-13",
+   "yi-current-unc-kayitz-5771-14",
+   "yi-current-unc-kayitz-5771-15",
+   "yi-current-unc-kayitz-5771-16",
+   "yi-current-unc-kayitz-5771-17",
+   "yi-current-unc-kayitz-5771-18",
+   "yi-current-unc-kayitz-5771-19",
+   "yi-current-unc-kayitz-5771-20",
+   "yi-current-unc-kayitz-5771-21",
+   "yi-current-unc-kayitz-5771-22",
+   "yi-current-unc-kayitz-5771-23",
+   "yi-current-unc-kayitz-5771-24",
+   "yi-current-unc-kayitz-5771-25"
+  ]
+ },
+ "catalogTopics": [
+  "Lechaim Sekulen"
+ ],
+ "totalDurationSec": 188.121875,
+ "recordings": [
+  {
+   "recording": {
+    "id": "y-current-kayitz-5771-14-lechaim-sekulen",
+    "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/14 Lechaim Sekulen.mp3",
+    "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/14 Lechaim Sekulen",
+    "durationSec": 188.12,
+    "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+    "sizeBytes": 1129259,
+    "duplicateOf": null,
+    "partOf": null
+   },
+   "order": 0,
+   "transcriptLanguage": "yi",
+   "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+   "durationSec": 188.121875,
+   "segmentCount": 46,
+   "starts": [1.78,15.66,21.26,25.8,29.16,31.52,37.23,42.51,50.27,56.27,59.09,64.41,67.45,82.5,85.54,86.88,89.12,91.1,97.52,102.98,106.2,107.54,112.02,114,116.2,119,121.36,124.72,128.28,133.08,135.08,137.72,140.8,144.66,145.58,154.02,155.86,159.08,171.04,172.38,173.72,176.72,178.12,179.78,183.08,185.54],
+   "ends": [14.24,20.72,25.4,28.36,30.64,37.23,41.63,45.45,55.53,58.55,62.11,67.45,82.12,84.98,86.18,87.86,90.4,96.94,101.94,105.88,107.08,111.48,113.4,115.3,117.98,120.52,123.98,127.76,132.44,133.94,137.12,140.08,143.66,145.58,153.24,155.16,158.4,170.26,171.58,173.38,176,177.42,178.84,182.7,184.64,186.56],
+   "noise": []
+  }
+ ]
+}
