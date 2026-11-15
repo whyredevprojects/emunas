@@ -21,8 +21,8 @@ describe("collectShiurItems", () => {
   });
 
   it("derives ids for summary, chapters, subsections and write-up paragraphs", () => {
-    expect(idsOf("notes.summary.oneLiner.en")).toEqual([`${SHIUR}~oneLiner`]);
-    expect(idsOf("notes.summary.abstract.yi")).toEqual([`${SHIUR}~abstract`]);
+    expect(idsOf("notes.summary.oneLiner.en")).toEqual([`${SHIUR}~ol0`]);
+    expect(idsOf("notes.summary.abstract.yi")).toEqual([`${SHIUR}~ab0`]);
     expect(idsOf("notes.chapters[].summary.en")).toEqual([`${SHIUR}~s0`]);
     expect(idsOf("notes.chapters[].sub[].summary.en")).toEqual([`${SHIUR}~s0.0`]);
     expect(idsOf("notes.writeup.en[].heading")).toEqual([`${SHIUR}~w-en-0-h`]);

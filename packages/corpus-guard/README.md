@@ -51,7 +51,7 @@ Shared with `corpus:build --suppress` (see `src/items.ts`):
 | PublicShiur location | Item id |
 |---|---|
 | objects with `id` (keyPoints, insights, takeaways, questions, stories) | that id, prefixed `<shiurId>~` if it has no `~` |
-| `notes.summary.oneLiner` / `abstract` | `<shiurId>~oneLiner` / `<shiurId>~abstract` |
+| `notes.summary.oneLiner` / `abstract` | `<shiurId>~ol0` / `<shiurId>~ab0` (the `@emunas/corpus` moment ids) |
 | `notes.chapters[i]`, `.sub[j]` | `<shiurId>~s<idx>`, `<shiurId>~s<idx>.<j>` |
 | `notes.sources[i]` | `<shiurId>~src<idx>` |
 | `notes.writeup.<ed>[b]` heading / `paragraphs[p]` | `<shiurId>~w-<ed>-<sectionIndex>-h` / `<shiurId>~w-<ed>-<sectionIndex>-p<p>` |

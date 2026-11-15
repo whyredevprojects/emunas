@@ -8,7 +8,7 @@
  * | Where in PublicShiur                       | Item id                                   |
  * |--------------------------------------------|-------------------------------------------|
  * | any object carrying a string `id` (moments: keyPoints, insights, takeaways, questions, stories) | that id, prefixed `<shiurId>~` unless it already contains `~` |
- * | notes.summary.oneLiner / abstract          | `<shiurId>~oneLiner` / `<shiurId>~abstract` |
+ * | notes.summary.oneLiner / abstract          | `<shiurId>~ol0` / `<shiurId>~ab0` (corpus moment ids) |
  * | notes.chapters[i]                          | `<shiurId>~s<idx>`                        |
  * | notes.chapters[i].sub[j]                   | `<shiurId>~s<idx>.<j>`                    |
  * | notes.sources[i]                           | `<shiurId>~src<idx>`                      |
@@ -57,7 +57,7 @@ export function qualifyId(shiurId: string, id: string): string {
 function childId(sid: string, parentPath: Path, key: string | number, child: unknown, current: string | null): string | null {
   const pattern = fieldOf(parentPath);
   if (isRecord(child) && typeof child.id === "string" && parentPath.length > 0) return qualifyId(sid, child.id);
-  if (pattern === "notes.summary" && (key === "oneLiner" || key === "abstract")) return `${sid}~${key}`;
+  if (pattern === "notes.summary" && (key === "oneLiner" || key === "abstract")) return `${sid}~${key === "oneLiner" ? "ol" : "ab"}0`;
   if (pattern === "notes.chapters" && typeof key === "number") {
     const idx = isRecord(child) && typeof child.idx === "number" ? child.idx : key;
     return `${sid}~s${idx}`;
