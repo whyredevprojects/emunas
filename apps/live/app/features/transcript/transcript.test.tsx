@@ -120,6 +120,6 @@ describe("TranscriptTab", () => {
 
   it("uses the Yiddish strings in the Yiddish UI", () => {
     render(<TranscriptTab room={roomOf({ ui: "yi", rt: roomT("yi") })} files={new Map()} />);
-    expect(screen.getByText("די ווערטער פֿון דער אויפֿנאַמע")).toBeTruthy();
+    expect(screen.getByText("די ווערטער פון דער רעקארדירונג")).toBeTruthy();
   });
 });

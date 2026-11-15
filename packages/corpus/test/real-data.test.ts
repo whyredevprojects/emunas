@@ -7,7 +7,9 @@ import { readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import type { IngestOutput } from "../../../src/types.ts";
+import { mp3SiblingKey } from "@emunas/audio";
 import { buildCorpus, projectCorpus } from "../src/build/build.ts";
+import { loadAudioTranscoded } from "../src/build/policy.ts";
 import type { PublicShiur } from "../src/public/types.ts";
 import { FORBIDDEN_KEYS, REAL_DATA, REAL_POLICY, allKeys, invariantViolations, readJson, tmp } from "./helpers.ts";
 
@@ -70,17 +72,25 @@ describe("real data", () => {
     for (const k of FORBIDDEN_KEYS) expect(keys.has(k), k).toBe(false);
   });
 
-  it("audio (Amendment A1): audioUrl for every playable recording, .WMA unplayable, no bucket key field", () => {
+  it("audio (Amendment A1): audioUrl for every playable recording, .WMA unplayable unless transcoded, no bucket key field", () => {
     const keyOf = new Map(ingest.recordings.map((r) => [r.id, r.audioKey]));
+    const transcoded = new Set(loadAudioTranscoded(REAL_POLICY));
     const origin = p.mediaOrigin;
+    const urlOf = (key: string) => `${origin}/${key.split("/").map(encodeURIComponent).join("/")}`;
     let playable = 0;
     const unplayable: string[] = [];
+    const viaSibling = new Set<string>();
     for (const s of p.shiurim) {
       for (const r of s.recordings) {
         const key = keyOf.get(r.id)!;
         if (/\.mp3$/i.test(key)) {
           expect(r.playable, r.id).toBe(true);
-          expect(r.audioUrl).toBe(`${origin}/${key.split("/").map(encodeURIComponent).join("/")}`);
+          expect(r.audioUrl).toBe(urlOf(key));
+          playable++;
+        } else if (transcoded.has(key)) {
+          expect(r.playable, r.id).toBe(true);
+          expect(r.audioUrl).toBe(urlOf(mp3SiblingKey(key)!));
+          viaSibling.add(r.id);
           playable++;
         } else {
           expect(r).toMatchObject({ playable: false, audioUrl: null });
@@ -89,10 +99,11 @@ describe("real data", () => {
       }
     }
     expect(unplayable.every((id) => /\.wma$/i.test(keyOf.get(id)!))).toBe(true);
-    expect(unplayable).toHaveLength(3);
+    // 3 .WMA recordings in the archive; those listed in site-policy/audio-transcoded.json play their MP3 sibling.
+    expect(new Set(unplayable).size + viaSibling.size).toBe(3);
     const tableIds = Object.keys(p.audioTable);
     expect(tableIds).toHaveLength(new Set(inScope.flatMap((s) => s.recordingIds)).size);
-    expect(Object.values(p.audioTable).filter((e) => e.playable)).toHaveLength(tableIds.length - 3);
+    expect(Object.values(p.audioTable).filter((e) => e.playable)).toHaveLength(tableIds.length - 3 + viaSibling.size);
     const text = JSON.stringify([p.shiurim, p.index, p.audioTable]);
     expect(text).not.toContain('"audioKey"');
     expect(text).not.toContain("transcripts/");

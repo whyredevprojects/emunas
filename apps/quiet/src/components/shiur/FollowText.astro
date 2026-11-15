@@ -24,6 +24,7 @@
 import type { PublicRecording } from "@emunas/corpus/public";
 import { readPublishedTranscripts } from "@emunas/corpus/transcript-gate";
 import { findCorpusDir } from "./corpus.ts";
+import { followTextEn, followTextYi } from "./follow-text-strings.ts";
 
 interface Props {
   recordings: readonly PublicRecording[];
@@ -36,26 +37,7 @@ const published = corpusDir ? readPublishedTranscripts(corpusDir) : new Map();
 const shown = recordings.filter((r) => published.has(r.id));
 const multi = recordings.length > 1;
 
-// UI copy (W5.3 reviews the Yiddish wording before the view is ever switched on).
-const COPY = {
-  en: {
-    heading: "Follow the text",
-    note: "The words of the recording, from a transcription a person approved for this recording. It can still contain mistakes.",
-    part: (n: number) => `Part ${n}`,
-    open: "Open the text",
-    loading: "Loading the text…",
-    failed: "The text could not be loaded.",
-  },
-  yi: {
-    heading: "דער טעקסט פֿון דער אויפֿנאַמע",
-    note: "די ווערטער פֿון דער אויפֿנאַמע, פֿון אַן איבערשרייבונג וואָס אַ מענטש האָט באַשטעטיקט פֿאַר דער אויפֿנאַמע. עס קען נאָך האָבן טעותים.",
-    part: (n: number) => `חלק ${n}`,
-    open: "עפֿן דעם טעקסט",
-    loading: "מען לאָדט דעם טעקסט…",
-    failed: "מען האָט נישט געקענט לאָדן דעם טעקסט.",
-  },
-} as const;
-const c = COPY[ed];
+const c = ed === "yi" ? followTextYi : followTextEn;
 ---
 {shown.length > 0 && (
   <section class="follow-text" id="follow-text" aria-labelledby="follow-text-heading" data-print="hide" data-follow-text data-loading={c.loading} data-failed={c.failed}>

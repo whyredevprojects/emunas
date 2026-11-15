@@ -8,6 +8,7 @@ import { describe, expect, it } from "vitest";
 import { calendarEn, calendarYi } from "../components/calendar/strings.ts";
 import { catalogEn, catalogYi } from "../components/catalog/strings.ts";
 import { indexesEn, indexesYi } from "../components/indexes/strings.ts";
+import { followTextEn, followTextYi } from "../components/shiur/follow-text-strings.ts";
 import { shiurEn, shiurYi } from "../components/shiur/strings.ts";
 import { tables as ui } from "../i18n/index.ts";
 import { ABOUT_STRINGS } from "../pages/[ed]/about/_strings.ts";
@@ -18,6 +19,7 @@ const PAIRS: Record<string, { en: object; yi: object }> = {
   i18n: ui,
   catalog: { en: catalogEn, yi: catalogYi },
   shiur: { en: shiurEn, yi: shiurYi },
+  followText: { en: followTextEn, yi: followTextYi },
   indexes: { en: indexesEn, yi: indexesYi },
   calendar: { en: calendarEn, yi: calendarYi },
   search: SEARCH_STRINGS,

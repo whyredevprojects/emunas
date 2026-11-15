@@ -14,6 +14,7 @@ import { roomEn, roomYi } from "../features/listening-room/strings.ts";
 import { seriesEn, seriesYi } from "../features/series/strings.ts";
 import { shelfEn, shelfYi } from "../features/shelf/strings.ts";
 import { todayEn, todayYi } from "../features/today/strings.ts";
+import { transcriptEn, transcriptYi } from "../features/transcript/strings.ts";
 import { UI_TABLES } from "../i18n/index.ts";
 import { seoStrings, type SeoStrings } from "../seo/strings.ts";
 
@@ -41,6 +42,7 @@ const PAIRS: Record<string, { en: object; yi: object }> = {
   series: { en: seriesEn, yi: seriesYi },
   shelf: { en: shelfEn, yi: shelfYi },
   today: { en: todayEn, yi: todayYi },
+  transcript: { en: transcriptEn, yi: transcriptYi },
   offline: { en: offlineEn, yi: offlineYi },
 };
 

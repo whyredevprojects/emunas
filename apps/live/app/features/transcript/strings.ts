@@ -1,6 +1,6 @@
 /**
  * UI strings of the Transcript tab (W5.2). Kept with the feature so that, with TRANSCRIPT_VIEW off,
- * none of them reaches the bundle. Yiddish wording is unreviewed until W5.3.
+ * none of them reaches the bundle. Yiddish wording follows the W5.3 glossary (docs/sites/copy-review.md); not yet signed off.
  */
 import { createT, type MessageTable, type TFunction, type UiLang } from "@emunas/i18n";
 
@@ -20,14 +20,14 @@ export type TranscriptKey = keyof typeof transcriptEn;
 
 export const transcriptYi: MessageTable<TranscriptKey> = {
   "tx.tab": "טעקסט",
-  "tx.heading": "די ווערטער פֿון דער אויפֿנאַמע",
-  "tx.note": "פֿון אַן איבערשרייבונג וואָס אַ מענטש האָט באַשטעטיקט פֿאַר דער אויפֿנאַמע. עס קען נאָך האָבן טעותים.",
+  "tx.heading": "די ווערטער פון דער רעקארדירונג",
+  "tx.note": "פון אן איבערשרייבונג וואס א מענטש האט באשטעטיגט פאר דער רעקארדירונג. עס קען נאך האבן טעותים.",
   "tx.reviewed": "איבערגעקוקטע איבערשרייבונג",
-  "tx.highAsr": "מאַשין־איבערשרייבונג, באַשטעטיקט",
-  "tx.loading": "מען לאָדט דעם טעקסט",
-  "tx.failed": "מען האָט נישט געקענט לאָדן דעם טעקסט.",
-  "tx.none": "עס איז נישטאָ קיין באַשטעטיקטער טעקסט פֿאַר דער אויפֿנאַמע.",
-  "tx.part": "חלק {n}",
+  "tx.highAsr": "מאשין־איבערשרייבונג, באשטעטיגט",
+  "tx.loading": "מ׳לאדט דעם טעקסט",
+  "tx.failed": "מ׳האט נישט געקענט לאדן דעם טעקסט.",
+  "tx.none": "עס איז נישטא קיין באשטעטיגטער טעקסט פאר דער רעקארדירונג.",
+  "tx.part": "טייל {n}",
 };
 
 export type TranscriptT = TFunction<TranscriptKey>;
