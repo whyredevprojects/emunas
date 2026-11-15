@@ -71,6 +71,13 @@ jobs:
           pre --corpus .corpus --out .corpus/suppress.json
       - name: Corpus rebuild with suppress list
         run: npm run corpus:build -- --suppress .corpus/suppress.json
+      # The same data steps as deploy.yml, so a PR that breaks them fails here and not on main.
+      # Both write only under .corpus/ and apps/live/public/data, which the post-pass scans.
+      - name: Search documents and moments (.corpus/search, read by Quiet search and search:sync)
+        run: npm run search:build
+      - name: Live static data (apps/live/public/data, from .corpus; lexical neighbours)
+        # No embedding cache in PR builds: --neighbors auto falls back to the lexical vectors.
+        run: npm run data:build --workspace=@emunas/live
 
       - name: Build Quiet
         run: npm run build --workspace=@emunas/quiet
@@ -103,6 +110,8 @@ jobs:
           --corpus .corpus --report guard-post.json
       - name: Budgets
         run: npm run guard --workspace=@emunas/corpus-guard -- budgets apps/quiet/dist apps/live/build/client
+      - name: Live data budgets (tech-live size targets; over-target is a warning)
+        run: npm run data:budgets --workspace=@emunas/live
 
       - name: Job summary
         if: always()

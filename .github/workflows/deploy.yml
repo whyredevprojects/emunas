@@ -65,6 +65,12 @@ jobs:
       EMUNAS_WORKERS_SUBDOMAIN: ${{ vars.EMUNAS_WORKERS_SUBDOMAIN }}
       EMUNAS_STAGE: ${{ (inputs.target || 'production') == 'staging' && 'staging' || '' }}
       EMUNAS_FEEDBACK_EMAIL: ${{ vars.EMUNAS_FEEDBACK_EMAIL }}
+      # Live "report a problem" (W4.7): the public Turnstile site key, baked into the Live build by
+      # Vite. Without it a non-localhost build hides the report control (a warning below).
+      VITE_TURNSTILE_SITE_KEY: ${{ vars.VITE_TURNSTILE_SITE_KEY }}
+      # "Same idea elsewhere" (W4.4): `auto` uses the real embeddings when the R2 cache can be
+      # mirrored, else the lexical fallback; `lexical` skips the mirror. See the ops runbook §4.
+      EMUNAS_NEIGHBORS: ${{ vars.EMUNAS_NEIGHBORS || 'auto' }}
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
     steps:
@@ -77,6 +83,13 @@ jobs:
           if [ -z "$EMUNAS_DOMAIN" ] && [ -z "$EMUNAS_WORKERS_SUBDOMAIN" ]; then
             echo "::error::neither EMUNAS_DOMAIN nor EMUNAS_WORKERS_SUBDOMAIN is set for environment ${TARGET}"; missing=1
           fi
+          if [ -z "$VITE_TURNSTILE_SITE_KEY" ]; then
+            echo "::warning::VITE_TURNSTILE_SITE_KEY is not set for environment ${TARGET}; the Live report control will be hidden"
+          fi
+          case "$EMUNAS_NEIGHBORS" in
+            auto|lexical) ;;
+            *) echo "::error::EMUNAS_NEIGHBORS must be auto or lexical (got '${EMUNAS_NEIGHBORS}')"; missing=1 ;;
+          esac
           exit "$missing"
 
       # The transcript folder is in git; only the guard steps below read it (from its default path).
@@ -131,8 +144,89 @@ jobs:
         run: npm run corpus:build -- --suppress .corpus/suppress.json
       - name: Search documents and moments (.corpus/search, read by Quiet search and search:sync)
         run: npm run search:build
+
+      # "Same idea elsewhere" on real embeddings (W4.4/W3.10). The W3.10 sync and the model eval
+      # fill R2 emunas-site-build with emb/<model-slug>/<sha256(text)>.f16; this mirrors the
+      # deployed model's prefix (EMBED_MODEL in workers/api/wrangler.jsonc) into .cache/embeddings.
+      # Skipped cleanly (lexical neighbours) when EMUNAS_NEIGHBORS=lexical, when the aws CLI or R2
+      # credentials are unavailable, or when the prefix is empty. Vectors only, never text.
+      - name: Restore embedding cache
+        if: env.EMUNAS_NEIGHBORS == 'auto'
+        uses: actions/cache@v4
+        with:
+          path: .cache/embeddings
+          key: emb-cache-${{ github.run_id }}
+          restore-keys: emb-cache-
+      - name: Mirror embedding cache from R2 (emb/<model>/)
+        id: emb
+        if: env.EMUNAS_NEIGHBORS == 'auto'
+        env:
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          EMUNAS_EMBED_BUCKET: ${{ vars.EMUNAS_EMBED_BUCKET || 'emunas-site-build' }}
+          AWS_REQUEST_CHECKSUM_CALCULATION: when_required
+          AWS_RESPONSE_CHECKSUM_VALIDATION: when_required
+        run: |
+          skip() { echo "::notice::embedding neighbours skipped: $1; data:build uses lexical neighbours"; echo "available=false" >> "$GITHUB_OUTPUT"; exit 0; }
+          model="$(node --input-type=module <<'JS'
+          import { readFileSync } from "node:fs";
+          const text = readFileSync("workers/api/wrangler.jsonc", "utf8");
+          const json = text
+            .replace(/"(?:[^"\\]|\\.)*"|\/\/[^\n]*|\/\*[\s\S]*?\*\//g, (m) => (m.startsWith('"') ? m : ""))
+            .replace(/,(\s*[}\]])/g, "$1");
+          const cfg = JSON.parse(json);
+          const env = process.env.WRANGLER_ENV;
+          const vars = (env ? cfg.env?.[env]?.vars : cfg.vars) ?? {};
+          process.stdout.write(String(vars.EMBED_MODEL ?? ""));
+          JS
+          )" || skip "could not read EMBED_MODEL from workers/api/wrangler.jsonc"
+          [ -n "$model" ] || skip "no EMBED_MODEL in workers/api/wrangler.jsonc for ${TARGET}"
+          # Same slug as modelSlug() in workers/api/sync/src/embed.ts.
+          slug="$(printf '%s' "$model" | sed -E 's#^@cf/##; s#/#--#g; s#[^A-Za-z0-9._-]#_#g')"
+          command -v aws > /dev/null || skip "the aws CLI is not installed on this runner"
+          key_id="$R2_ACCESS_KEY_ID"
+          secret="$R2_SECRET_ACCESS_KEY"
+          if [ -z "$key_id" ] || [ -z "$secret" ]; then
+            # As the sync does (workers/api/sync/src/cloudflare.ts): access key id = the API token's
+            # id, secret = sha256(token). User tokens verify at /user, account tokens per account.
+            key_id=""
+            for path in "user/tokens/verify" "accounts/${CLOUDFLARE_ACCOUNT_ID}/tokens/verify"; do
+              key_id="$(curl -fsS --max-time 20 -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+                "https://api.cloudflare.com/client/v4/${path}" | jq -r '.result.id // empty' 2> /dev/null)" || key_id=""
+              [ -n "$key_id" ] && break
+            done
+            [ -n "$key_id" ] || skip "could not derive R2 credentials from CLOUDFLARE_API_TOKEN"
+            secret="$(printf '%s' "$CLOUDFLARE_API_TOKEN" | sha256sum | cut -d' ' -f1)"
+          fi
+          echo "::add-mask::${secret}"
+          dest=".cache/embeddings/emb/${slug}"
+          mkdir -p "$dest"
+          if ! AWS_ACCESS_KEY_ID="$key_id" AWS_SECRET_ACCESS_KEY="$secret" AWS_DEFAULT_REGION=auto \
+            aws s3 sync --only-show-errors --no-progress \
+              --endpoint-url "https://${CLOUDFLARE_ACCOUNT_ID}.r2.cloudflarestorage.com" \
+              "s3://${EMUNAS_EMBED_BUCKET}/emb/${slug}/" "${dest}/"; then
+            skip "could not mirror s3://${EMUNAS_EMBED_BUCKET}/emb/${slug}/ (bucket or token scope missing?)"
+          fi
+          count="$(find "$dest" -name '*.f16' -type f | wc -l)"
+          [ "$count" -gt 0 ] || skip "R2 has no vectors under emb/${slug}/ yet (run the W3.10 eval or sync first)"
+          echo "mirrored ${count} vectors for ${model}"
+          {
+            echo "available=true"
+            echo "model=${model}"
+            echo "count=${count}"
+          } >> "$GITHUB_OUTPUT"
       - name: Live static data (apps/live/public/data, from .corpus)
-        run: npm run data:build --workspace=@emunas/live
+        env:
+          EMB_AVAILABLE: ${{ steps.emb.outputs.available }}
+          EMB_MODEL: ${{ steps.emb.outputs.model }}
+        run: |
+          if [ "$EMB_AVAILABLE" = "true" ]; then
+            # Fails loudly if the mirrored cache holds no vector for any moment.
+            npm run data:build --workspace=@emunas/live -- \
+              --neighbors embeddings --embeddings .cache/embeddings --embed-model "$EMB_MODEL"
+          else
+            npm run data:build --workspace=@emunas/live -- --neighbors lexical
+          fi
 
       - name: Build Quiet
         run: npm run build --workspace=@emunas/quiet
