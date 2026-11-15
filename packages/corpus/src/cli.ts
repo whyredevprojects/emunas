@@ -11,7 +11,7 @@
  */
 import { resolve } from "node:path";
 import { parseArgs } from "node:util";
-import { buildCorpus } from "./build/build.ts";
+import { buildCorpusWithAggregates } from "./aggregate/build.ts";
 
 function main(argv: string[]): number {
   let args;
@@ -44,7 +44,7 @@ function main(argv: string[]): number {
   const base = process.env["INIT_CWD"] ?? process.cwd();
   const abs = (p: string | undefined) => (p === undefined ? undefined : resolve(base, p));
   try {
-    const opts: Parameters<typeof buildCorpus>[0] = { force: v.force, log: (l) => console.log(l) };
+    const opts: Parameters<typeof buildCorpusWithAggregates>[0] = { force: v.force, log: (l) => console.log(l) };
     const dataDir = abs(v["data-dir"]);
     const outDir = abs(v.out);
     const suppressFile = abs(v.suppress);
@@ -54,7 +54,7 @@ function main(argv: string[]): number {
     if (suppressFile) opts.suppressFile = suppressFile;
     if (policyDir) opts.policyDir = policyDir;
     if (v["media-origin"] !== undefined) opts.mediaOrigin = v["media-origin"];
-    const r = buildCorpus(opts);
+    const r = buildCorpusWithAggregates(opts);
     const rep = r.report;
     console.log(`audio: media origin ${r.info.mediaOrigin}`);
     console.log(

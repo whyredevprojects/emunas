@@ -7,6 +7,8 @@
   "exports": {
     "./public": "./src/public/index.ts",
     "./build": "./src/build/index.ts",
+    "./build/aggregate": "./src/aggregate/build.ts",
+    "./aggregate": "./src/aggregate/index.ts",
     "./transcript-gate": "./src/transcript-gate.ts",
     "./package.json": "./package.json"
   },
@@ -18,6 +20,7 @@
   },
   "dependencies": {
     "@emunas/audio": "0.0.0",
+    "@emunas/normalize": "0.0.0",
     "valibot": "1.5.0"
   },
   "devDependencies": {

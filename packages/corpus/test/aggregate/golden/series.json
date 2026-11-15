@@ -1,0 +1,369 @@
+{
+ "series": [
+  {
+   "id": "emunah-yi",
+   "title": {
+    "en": "Emunah (Yiddish)",
+    "yi": "אמונה"
+   },
+   "lang": "yi",
+   "catalogSectionIds": [
+    "emunah-1",
+    "emunah-2"
+   ],
+   "count": 1,
+   "sibling": "emunah-en",
+   "parts": [
+    {
+     "id": "yi-emunah-1-16",
+     "order": 16,
+     "perek": null,
+     "lang": "yi",
+     "status": "catalog-only"
+    }
+   ],
+   "groups": null
+  },
+  {
+   "id": "tanya-yi",
+   "title": {
+    "en": "Tanya (Yiddish)",
+    "yi": "ספר התניא"
+   },
+   "lang": "yi",
+   "catalogSectionIds": [
+    "tanya-1",
+    "tanya-2"
+   ],
+   "count": 4,
+   "sibling": "tanya-en",
+   "parts": [
+    {
+     "id": "yi-tanya-1-01",
+     "order": 2,
+     "perek": "א",
+     "lang": "yi",
+     "status": "catalog-only"
+    },
+    {
+     "id": "yi-tanya-1-10",
+     "order": 11,
+     "perek": "ב",
+     "lang": "yi",
+     "status": "catalog-only"
+    },
+    {
+     "id": "yi-tanya-1-29",
+     "order": 30,
+     "perek": "י\"ב",
+     "lang": "yi",
+     "status": "catalog-only"
+    },
+    {
+     "id": "yi-tanya-2-02",
+     "order": 40,
+     "perek": "י\"ח",
+     "lang": "yi",
+     "status": "catalog-only"
+    }
+   ],
+   "groups": [
+    {
+     "perek": "א",
+     "shiurIds": [
+      "yi-tanya-1-01"
+     ]
+    },
+    {
+     "perek": "ב",
+     "shiurIds": [
+      "yi-tanya-1-10"
+     ]
+    },
+    {
+     "perek": "י\"ב",
+     "shiurIds": [
+      "yi-tanya-1-29"
+     ]
+    },
+    {
+     "perek": "י\"ח",
+     "shiurIds": [
+      "yi-tanya-2-02"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "tefila-yi",
+   "title": {
+    "en": "Tefilah (Yiddish)",
+    "yi": "תפילה"
+   },
+   "lang": "yi",
+   "catalogSectionIds": [
+    "tefila-heb"
+   ],
+   "count": 2,
+   "sibling": "tefila-en",
+   "parts": [
+    {
+     "id": "yi-tefila-heb-04",
+     "order": 4,
+     "perek": null,
+     "lang": "yi",
+     "status": "catalog-only"
+    },
+    {
+     "id": "yi-tefila-heb-23",
+     "order": 23,
+     "perek": null,
+     "lang": "yi",
+     "status": "catalog-only"
+    }
+   ],
+   "groups": null
+  },
+  {
+   "id": "eretz-yisroel-yi",
+   "title": {
+    "en": "Eretz Yisroel",
+    "yi": "ארץ ישראל"
+   },
+   "lang": "yi",
+   "catalogSectionIds": [
+    "eretz-yisroel"
+   ],
+   "count": 1,
+   "sibling": null,
+   "parts": [
+    {
+     "id": "yi-eretz-yisroel-08",
+     "order": 8,
+     "perek": null,
+     "lang": "yi",
+     "status": "catalog-only"
+    }
+   ],
+   "groups": null
+  },
+  {
+   "id": "shiurim-labachurim-yi",
+   "title": {
+    "en": "Shiurim LaBachurim: Hisorerus L'Avodas Hashem",
+    "yi": "שיעורים לבחורים"
+   },
+   "lang": "yi",
+   "catalogSectionIds": [
+    "shiurim-labachurim"
+   ],
+   "count": 1,
+   "sibling": null,
+   "parts": [
+    {
+     "id": "yi-shiurim-labachurim-13",
+     "order": 13,
+     "perek": null,
+     "lang": "yi",
+     "status": "catalog-only"
+    }
+   ],
+   "groups": null
+  },
+  {
+   "id": "shir-hashirim-yi",
+   "title": {
+    "en": "Shir Hashirim",
+    "yi": "שיר השירים"
+   },
+   "lang": "yi",
+   "catalogSectionIds": [
+    "shir-hashirim"
+   ],
+   "count": 1,
+   "sibling": null,
+   "parts": [
+    {
+     "id": "yi-shir-hashirim-unc-02",
+     "order": 2,
+     "perek": null,
+     "lang": "yi",
+     "status": "catalog-only"
+    }
+   ],
+   "groups": null
+  },
+  {
+   "id": "current-ey-bachurim-5769",
+   "title": {
+    "en": "Eretz Yisroel Bachurim 5769",
+    "yi": "שיעורים לבחורים בארץ ישראל תשס\"ט"
+   },
+   "lang": "yi",
+   "catalogSectionIds": [
+    "current"
+   ],
+   "count": 1,
+   "sibling": null,
+   "parts": [
+    {
+     "id": "yi-current-unc-ey-bachurim-5769-15",
+     "order": 10,
+     "perek": null,
+     "lang": "yi",
+     "status": "catalog-only"
+    }
+   ],
+   "groups": null
+  },
+  {
+   "id": "current-bachurim-5773",
+   "title": {
+    "en": "Bachurim 5773",
+    "yi": "שיעורים לבחורים תשע\"ג"
+   },
+   "lang": "yi",
+   "catalogSectionIds": [
+    "current"
+   ],
+   "count": 1,
+   "sibling": null,
+   "parts": [
+    {
+     "id": "yi-current-unc-bachurim-20",
+     "order": 19,
+     "perek": null,
+     "lang": "yi",
+     "status": "catalog-only"
+    }
+   ],
+   "groups": null
+  },
+  {
+   "id": "current-kayitz-5771",
+   "title": {
+    "en": "Summer 5771 (Kayitz)",
+    "yi": "קיץ תשע\"א"
+   },
+   "lang": "yi",
+   "catalogSectionIds": [
+    "current"
+   ],
+   "count": 2,
+   "sibling": null,
+   "parts": [
+    {
+     "id": "yi-current-unc-kayitz-5771-03",
+     "order": 3,
+     "perek": null,
+     "lang": "yi",
+     "status": "catalog-only"
+    },
+    {
+     "id": "yi-current-unc-kayitz-5771-22",
+     "order": 22,
+     "perek": null,
+     "lang": "yi",
+     "status": "catalog-only"
+    }
+   ],
+   "groups": null
+  },
+  {
+   "id": "emunah-en",
+   "title": {
+    "en": "Emunah (English)",
+    "yi": "אמונה"
+   },
+   "lang": "en",
+   "catalogSectionIds": [
+    "emunah-en"
+   ],
+   "count": 2,
+   "sibling": "emunah-yi",
+   "parts": [
+    {
+     "id": "en-emunah-en-01",
+     "order": 1,
+     "perek": null,
+     "lang": "en",
+     "status": "catalog-only"
+    },
+    {
+     "id": "en-emunah-en-16",
+     "order": 16,
+     "perek": null,
+     "lang": "en",
+     "status": "catalog-only"
+    }
+   ],
+   "groups": null
+  },
+  {
+   "id": "tanya-en",
+   "title": {
+    "en": "Tanya (English)",
+    "yi": "ספר התניא"
+   },
+   "lang": "en",
+   "catalogSectionIds": [
+    "tanya-en"
+   ],
+   "count": 2,
+   "sibling": "tanya-yi",
+   "parts": [
+    {
+     "id": "en-tanya-en-05",
+     "order": 5,
+     "perek": "ב",
+     "lang": "en",
+     "status": "catalog-only"
+    },
+    {
+     "id": "en-tanya-en-24",
+     "order": 24,
+     "perek": "י",
+     "lang": "en",
+     "status": "catalog-only"
+    }
+   ],
+   "groups": [
+    {
+     "perek": "ב",
+     "shiurIds": [
+      "en-tanya-en-05"
+     ]
+    },
+    {
+     "perek": "י",
+     "shiurIds": [
+      "en-tanya-en-24"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "tefila-en",
+   "title": {
+    "en": "Tefilah (English)",
+    "yi": "תפילה"
+   },
+   "lang": "en",
+   "catalogSectionIds": [
+    "tefila-en"
+   ],
+   "count": 1,
+   "sibling": "tefila-yi",
+   "parts": [
+    {
+     "id": "en-tefila-en-01",
+     "order": 1,
+     "perek": null,
+     "lang": "en",
+     "status": "catalog-only"
+    }
+   ],
+   "groups": null
+  }
+ ]
+}
