@@ -2,6 +2,11 @@
   "name": "emunas-data",
   "private": true,
   "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*",
+    "workers/*"
+  ],
   "scripts": {
     "typecheck": "tsc --noEmit",
     "pilot:prepare": "tsx scripts/prepare-pilot.ts",
@@ -22,7 +27,12 @@
     "batch:mark": "tsx scripts/batch.ts mark",
     "batch:pick-audit": "tsx scripts/batch.ts pick-audit",
     "batch:usage": "tsx scripts/batch.ts usage",
-    "batch:reset-changed": "tsx scripts/reset-changed.ts"
+    "batch:reset-changed": "tsx scripts/reset-changed.ts",
+    "site:typecheck": "npm run typecheck --workspaces --if-present",
+    "site:lint": "eslint --config packages/config/eslint.config.js --max-warnings 0 apps packages workers && stylelint --config packages/config/stylelint.config.js --allow-empty-input \"apps/**/*.{css,astro}\" \"packages/**/*.css\"",
+    "site:test": "npm run test --workspaces --if-present",
+    "site:build": "npm run build --workspaces --if-present",
+    "corpus:build": "npm run corpus:build --workspace=@emunas/corpus --"
   },
   "devDependencies": {
     "@types/node": "^26.6.6",

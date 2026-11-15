@@ -1,0 +1,39 @@
+name: ci
+
+# Skeleton (W1.1): install, typecheck (pipeline + sites), lint, unit tests.
+# Later waves add corpus:build, guard passes, app builds, budgets, smoke tests
+# and preview uploads (integration-plan §3.5).
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22.23.4
+          cache: npm
+      - name: Install
+        run: npm ci
+      - name: Typecheck (pipeline, unchanged)
+        run: npm run typecheck
+      - name: Typecheck (sites)
+        run: npm run site:typecheck
+      - name: Lint
+        run: npm run site:lint
+      - name: Unit tests
+        run: npm run site:test

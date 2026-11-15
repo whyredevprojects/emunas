@@ -1,0 +1,34 @@
+{
+  "name": "@emunas/config",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Shared tsconfig base, ESLint and Stylelint configs, and Vitest base for the site workspaces.",
+  "exports": {
+    "./tsconfig.base.json": "./tsconfig.base.json",
+    "./eslint": "./eslint.config.js",
+    "./stylelint": "./stylelint.config.js",
+    "./vitest": "./vitest.base.ts",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "typecheck": "node ../../node_modules/typescript/bin/tsc --noEmit -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@eslint/js": "10.0.1",
+    "astro-eslint-parser": "3.2.0",
+    "eslint": "10.14.0",
+    "eslint-plugin-astro": "3.2.1",
+    "globals": "17.13.0",
+    "postcss-html": "2.0.0",
+    "stylelint": "17.16.0",
+    "ts-api-utils": "2.4.0",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.72.1",
+    "vitest": "5.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.6"
+  }
+}

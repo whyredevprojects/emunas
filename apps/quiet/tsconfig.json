@@ -1,0 +1,9 @@
+{
+  "extends": "@emunas/config/tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "types": ["node"]
+  },
+  "include": ["astro.config.ts", "src/**/*.ts", ".astro/types.d.ts"],
+  "exclude": ["dist", "node_modules"]
+}

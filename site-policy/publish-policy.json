@@ -1,0 +1,23 @@
+{
+  "policyVersion": 1,
+  "confidence": {
+    "dropBelow": 0.6,
+    "softBelow": 0.75
+  },
+  "categoryVisibility": {
+    "current": {
+      "ownSection": true,
+      "generalBrowse": false,
+      "todayDefaults": false,
+      "exploreDefaults": false
+    },
+    "simcha": {
+      "ownSection": true,
+      "generalBrowse": false,
+      "todayDefaults": false,
+      "exploreDefaults": false
+    }
+  },
+  "suppress": [],
+  "allowVerbatim": []
+}
