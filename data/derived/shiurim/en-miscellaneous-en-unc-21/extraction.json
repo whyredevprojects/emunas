@@ -1,0 +1,416 @@
+{
+  "shiurId": "en-miscellaneous-en-unc-21",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains why dates given for Mashiach were real opportunities, brings the Ba'al HaTanya's hint of 5775 in the pasuk of the extra silver used for the vavim, and connects the missing vav of the alphabetical kapitlach of Tehillim to Yidden outside the camp whom Hashem redeems.",
+      "yi": "דער משגיח ערקלערט אז די צייטן וואס צדיקים האבן געגעבן אויף משיח זענען געווען אמת'ע עתים, ער ברענגט דעם בעל התניא'ס רמז אויף תשע\"ה אינעם פסוק פון די ווים לעמודים, און ער פארבינדט דעם פעלנדיקן וי\"ו אין די קאפיטלעך תהלים על סדר א\"ב מיט די אידן וואס זענען אינדרויסן פונעם מחנה, וואס דער אויבערשטער פירט צוריק."
+    },
+    "abstract": {
+      "en": "Speaking before Rosh Hashanah, the Rav notes that tzaddikim through the generations set dates for Mashiach, and asks why Ravina and Rav Ashi recorded in the Gemara a date that had already passed. He answers that every such date was truly an 'achishenah' time, ready for the geulah, but someone spoiled it; the final 'b'itah' date is fixed and unknown. He then tells how the Ba'al HaTanya, reading the Torah, read 'ha'elef' in the pasuk of the vavim as heh-elef, hinting at 5775. He asks why the vav is missing in the alphabetical kapitlach of Tehillim and replaced by a pei. His answer: the extra Yidden whose half-shekels went to the vavim, which protrude outside the Mishkan, are those outside the camp, like Bnei Dan whom Amalek attacked and the last pesukim of the Torah; Hashem does not forsake them, and 'Podeh Hashem' brings them back. He closes that our generation is at the end, and every small avodah is precious.",
+      "yi": "דער משגיח רעדט פאר ראש השנה, און ער דערמאנט אז צדיקים אין אלע דורות האבן געגעבן צייטן ווען משיח וועט קומען. ער פרעגט פארוואס רבינא און רב אשי האבן אריינגעשטעלט אין גמרא א צייט וואס איז שוין לאנג פארביי. דער תירוץ איז אז יעדע אזא צייט איז טאקע געווען אן \"אחישנה\", גרייט פאר דער גאולה, נאר איינער האט עס קאליע געמאכט; דער לעצטער \"בעתה\" איז באשטימט און קיינער ווייסט נישט ווען. דערנאך דערציילט ער ווי דער בעל התניא האט געליינט \"האלף\" אינעם פסוק פון די ווים ווי ה' אלף, א רמז אויף תשע\"ה. ער פרעגט פארוואס עס פעלט דער וי\"ו אין די קאפיטלעך תהלים על סדר א\"ב און א פ\"א קומט אויף זיין ארט. ער ענטפערט אז די איבעריקע אידן, וועמענס מחצית השקל איז געגאנגען אויף די ווים וואס שטעקן ארויס פונעם משכן, זענען די אידן אינדרויסן פונעם מחנה, ווי שבט דן וואס עמלק האט באפאלן און די לעצטע פסוקים פון דער תורה; דער אויבערשטער פארלאזט זיי נישט, און \"פודה ה'\" ברענגט זיי צוריק. צום סוף זאגט ער אז אונזער דור איז ביים סוף, און יעדע קליינע עבודה איז חשוב."
+    },
+    "keyPoints": [
+      {
+        "text": { "en": "Every date the tzaddikim set for Mashiach was a real 'achishenah' time when he was ready to come, but someone spoiled it.", "yi": "יעדע צייט וואס די צדיקים האבן באשטימט פאר משיח איז געווען אן אמת'ער \"אחישנה\" ווען ער איז געווען גרייט צו קומען, נאר איינער האט עס קאליע געמאכט." },
+        "evidence": { "segs": [76, 83, 87, 89, 112, 113], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "The final 'b'itah' date is fixed and unknown to anyone; Mashiach must come then.", "yi": "דער לעצטער \"בעתה\" איז באשטימט און קיינער ווייסט נישט ווען; משיח מוז דעמאלט קומען." },
+        "evidence": { "segs": [126, 129, 146, 156, 158], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "The Ba'al HaTanya read 'ha'elef' in the pasuk of the vavim as heh-elef and said the geulah is hinted there in 5775.", "yi": "דער בעל התניא האט געליינט \"האלף\" אינעם פסוק פון די ווים ווי ה' אלף, און געזאגט אז די גאולה איז דארט מרומז אויף תשע\"ה." },
+        "evidence": { "segs": [179, 215, 230, 231, 232], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "The missing vav of the alphabetical kapitlach stands for the Yidden outside the camp, whose silver went to the vavim that protrude outside the Mishkan.", "yi": "דער פעלנדיקער וי\"ו אין די קאפיטלעך על סדר א\"ב שטייט פאר די אידן אינדרויסן פונעם מחנה, וועמענס זילבער איז געגאנגען אויף די ווים וואס שטעקן ארויס פונעם משכן." },
+        "evidence": { "segs": [572, 577, 581, 668, 669], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "Hashem does not forsake those Yidden; with Mashiach they return, as the closing pei 'Podeh Hashem nefesh avadav' shows.", "yi": "דער אויבערשטער פארלאזט נישט די אידן; ביי משיח'ס קומען קומען זיי צוריק, ווי דער לעצטער פ\"א \"פודה ה' נפש עבדיו\" ווייזט." },
+        "evidence": { "segs": [673, 675, 677, 694, 695, 703], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "In our generation, at the end of the galus, Hashem does not expect much, and every small effort in learning and tefillah is precious to Him.", "yi": "אין אונזער דור, ביים סוף פונעם גלות, ערווארט דער אויבערשטער נישט קיין סך, און יעדע קליינע מי אין לערנען און תפילה איז ביי אים חשוב." },
+        "evidence": { "segs": [756, 758, 803, 808, 811], "confidence": 0.85 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-english-topics-21-mashiach-5775",
+      "startSeg": 0,
+      "endSeg": 176,
+      "title": { "en": "Dates for Mashiach that passed", "yi": "צייטן פאר משיח וואס זענען פארביי" },
+      "summary": {
+        "en": "Before Rosh Hashanah the Rav notes that tzaddikim gave dates for Mashiach, and asks why the Gemara records a date that had already passed. He answers that each was a real 'achishenah' time spoiled by sin, while the final 'b'itah' date is unknown.",
+        "yi": "פאר ראש השנה דערמאנט דער משגיח אז צדיקים האבן געגעבן צייטן פאר משיח, און ער פרעגט פארוואס די גמרא שרייבט א צייט וואס איז שוין געווען פארביי. ער ענטפערט אז יעדע איז געווען אן אמת'ער \"אחישנה\" וואס עבירות האבן קאליע געמאכט, בשעת דער לעצטער \"בעתה\" איז באהאלטן."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-topics-21-mashiach-5775",
+      "startSeg": 177,
+      "endSeg": 276,
+      "title": { "en": "The Ba'al HaTanya's hint of 5775", "yi": "דעם בעל התניא'ס רמז אויף תשע\"ה" },
+      "summary": {
+        "en": "The Rav tells how the Ba'al HaTanya, reading Parshas Pekudei, read 'ha'elef' as heh-elef and would not be corrected, saying the geulah is hinted in the pasuk in 5775, and how he heard this confirmed. He asks Yidden not to spoil the year and to take on resolutions before Yom Kippur.",
+        "yi": "דער משגיח דערציילט ווי דער בעל התניא האט געליינט פרשת פקודי און געזאגט \"האלף\" ווי ה' אלף, און נישט געלאזט זיך מתקן זיין, ווייל די גאולה איז מרומז אינעם פסוק אויף תשע\"ה, און ווי ער האט געהערט אז דאס איז אמת. ער בעט אז מ'זאל נישט קאליע מאכן דאס יאר און מקבל זיין קבלות פאר יום כיפור."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-topics-21-mashiach-5775",
+      "startSeg": 277,
+      "endSeg": 352,
+      "title": { "en": "The missing vav in Tehillim", "yi": "דער פעלנדיקער וי\"ו אין תהלים" },
+      "summary": {
+        "en": "The Rav shows that the alphabetical kapitlach 34 and 25 of Tehillim skip the vav and add an extra pei at the end, brings the Divrei Yechezkel that the pei replaces the vav through atbash, and asks why the vav must be missing at all.",
+        "yi": "דער משגיח ווייזט אז די קאפיטלעך תהלים ל\"ד און כ\"ה וואס גייען על סדר א\"ב לאזן אויס דעם וי\"ו און לייגן צו א פ\"א צום סוף. ער ברענגט דעם דברי יחזקאל אז דער פ\"א פארבייט דעם וי\"ו על פי את\"ב\"ש, און פרעגט פארוואס דער וי\"ו דארף בכלל פעלן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-topics-21-mashiach-5775",
+      "startSeg": 353,
+      "endSeg": 425,
+      "title": { "en": "Moshe forgets the vavim; Bnei Dan", "yi": "משה פארגעסט די ווים; שבט דן" },
+      "summary": {
+        "en": "Returning to the pasuk, the Rav explains that Moshe forgot what he did with the extra 1,775 shekels until he was reminded that they went to the vavim, the silver hooks on the amudim, and asks why Moshe forgot. He then speaks of Bnei Dan, expelled from the camp under the Ananei HaKavod, whom Amalek attacked.",
+        "yi": "צוריק צום פסוק, ערקלערט דער משגיח אז משה רבינו האט פארגעסן וואס ער האט געטון מיט די איבעריקע אלף ושבע מאות וחמשה ושבעים שקלים, ביז ער איז דערמאנט געווארן אז זיי זענען געגאנגען אויף די ווים, די זילבערנע נעגל אויף די עמודים. ער פרעגט פארוואס משה האט פארגעסן, און רעדט דערנאך פון שבט דן וואס זענען ארויסגעווארפן געווארן פון די ענני הכבוד און עמלק האט זיי באפאלן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-topics-21-mashiach-5775",
+      "startSeg": 426,
+      "endSeg": 503,
+      "title": { "en": "Every Yid a letter in the Torah", "yi": "יעדער איד א אות אין דער תורה" },
+      "summary": {
+        "en": "The Rav explains that the 600,000 letters of the Torah correspond to the 600,000 souls of Klal Yisrael, and how the Chachamim counted them. He suggests that the Yidden outside the camp are in the last eight pesukim of the Torah, which have a different status.",
+        "yi": "דער משגיח ערקלערט אז די ששים ריבוא אותיות פון דער תורה זענען קעגן די ששים ריבוא נשמות פון כלל ישראל, און ווי אזוי די חכמים האבן זיי געציילט. ער איז מחדש אז די אידן אינדרויסן פונעם מחנה זענען אין די לעצטע אכט פסוקים פון דער תורה, וואס האבן אן אנדער דין."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-topics-21-mashiach-5775",
+      "startSeg": 504,
+      "endSeg": 666,
+      "title": { "en": "The extra silver and the Yidden outside", "yi": "דאס איבעריקע זילבער און די אידן אינדרויסן" },
+      "summary": {
+        "en": "The Rav connects the forgetting at Moshe's passing and the last words of the Torah with the extra Yidden beyond 600,000, whose half-shekels went to the vavim that protrude outside the Mishkan's curtains. Hashem does not forsake them, and His anger at Amalek for attacking them still burns; he adds that Dovid HaMelech, in danger with Avimelech, composed the kapitel of the 22 letters.",
+        "yi": "דער משגיח פארבינדט די שכחה ביי משה רבינו'ס פטירה און די לעצטע ווערטער פון דער תורה מיט די איבעריקע אידן העכער ששים ריבוא, וועמענס מחצית השקל איז געגאנגען אויף די ווים וואס שטעקן ארויס פון די קלעים פונעם משכן. דער אויבערשטער פארלאזט זיי נישט, און זיין כעס אויף עמלק פארן באפאלן זיי ברענט נאך היינט; ער לייגט צו אז דוד המלך, אין סכנה ביי אבימלך, האט געזאגט דעם קאפיטל פון די כ\"ב אותיות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-topics-21-mashiach-5775",
+      "startSeg": 667,
+      "endSeg": 743,
+      "title": { "en": "Podeh Hashem: the vav returns", "yi": "פודה ה': דער וי\"ו קומט צוריק" },
+      "summary": {
+        "en": "The Rav answers his question: the vav is missing from the alphabet like the Yidden outside the camp, and the pei 'Podeh Hashem nefesh avadav' brings them back when Mashiach comes. He says our generation is the souls at the end of the Torah, and repeats that the Ba'al HaTanya's hint, also found in an earlier sefer, points to a time about 200 years after him.",
+        "yi": "דער משגיח ענטפערט זיין קשיא: דער וי\"ו פעלט פונעם א\"ב אזוי ווי די אידן אינדרויסן פונעם מחנה, און דער פ\"א \"פודה ה' נפש עבדיו\" ברענגט זיי צוריק ביי משיח'ס קומען. ער זאגט אז אונזער דור איז די נשמות ביים סוף פון דער תורה, און חזר'ט איבער אז דעם בעל התניא'ס רמז, וואס געפינט זיך אויך אין אן עלטערן ספר, ווייזט אויף א צייט ארום צוויי הונדערט יאר נאך אים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-topics-21-mashiach-5775",
+      "startSeg": 744,
+      "endSeg": 837,
+      "title": { "en": "Small avodah in the last generation", "yi": "קליינע עבודה אינעם לעצטן דור" },
+      "summary": {
+        "en": "The Rav says our generation needs emunah and teshuvah, brings the Arizal's words to Rav Chaim Vital that the later generations are smaller, and says that today any small, hard-won avodah is precious to Hashem. He urges using the remaining days before Yom Kippur, and closes with the hope of meeting next year in Yerushalayim.",
+        "yi": "דער משגיח זאגט אז אונזער דור דארף אמונה און תשובה, ער ברענגט דעם אריז\"ל'ס ווערטער צו רבי חיים וויטאל אז די שפעטערע דורות זענען קלענער, און זאגט אז היינט איז יעדע קליינע עבודה מיט מי חשוב ביים אויבערשטן. ער מאנט מ'זאל אויסנוצן די טעג וואס בלייבן פאר יום כיפור, און ענדיגט מיט דער האפענונג זיך צו טרעפן איבער א יאר אין ירושלים."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "we find in the Gemara of a Dazar ... a field worth a thousand dinerim for one dinner, don't buy it",
+      "work": "Gemara Avodah Zarah",
+      "ref": "Avodah Zarah 9b",
+      "sefariaRef": "Avodah Zarah 9b",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [36, 37, 39, 44, 45, 48], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Ani Hashem Beyita Achishana Zachu Achishana Lai Zachu Beyita",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 60:22",
+      "sefariaRef": "Isaiah 60:22",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [89, 90, 91, 92, 93, 94], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the Gemara says a person should always consider himself ... it tips the scale for the entire world",
+      "work": "Gemara Kiddushin",
+      "ref": "Kiddushin 40b",
+      "sefariaRef": "Kiddushin 40b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [116, 117, 118, 119, 120], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Mi Liba Lipuma Leidalia",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [130, 131], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "Ramban says in ... Mashiach must come at that date",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [152, 156, 157], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "Misha B'Shidim, Asa, Ravim, Malamudu; Yisrael left Asa Vavim al-Ramudin",
+      "work": "Shemos",
+      "ref": "Shemos 38:28",
+      "sefariaRef": "Exodus 38:28",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [215, 366, 367, 374], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "David B'Shanei site that we say every Shabbos ... pay da shem nefesh avadav",
+      "work": "Tehillim",
+      "ref": "Tehillim 34",
+      "sefariaRef": "Psalms 34",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [281, 282, 283, 304, 332], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Kapitol Chath A ... B'day Yalakimeth Yisrael Mikol Tzareisov",
+      "work": "Tehillim",
+      "ref": "Tehillim 25",
+      "sefariaRef": "Psalms 25",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [309, 310, 312, 316, 699, 700], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "In the Dever Yechasko from the Shinn of the Rav",
+      "work": "Divrei Yechezkel",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [317, 318, 326, 333, 335], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Al-Sheikh HaKadosh says over the yes or elef ... like an exclamation",
+      "work": "Alshich",
+      "ref": "Alshich on Shemos 38:28",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [391, 392, 395, 397], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "Yisrael is Rosh Tavos, Yes, Shishimri B'Eis Yisra Tavos",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [468, 469, 470, 471], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "there are eight psurkim and on the end of the Torah ... the Gemara says they have different dinam",
+      "work": "Gemara Menachos",
+      "ref": "Menachos 30a",
+      "sefariaRef": "Menachot 30a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [478, 479, 482, 483, 485], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "the Gemara says three thousand something halachis were forgotten in the Evala Sharmash",
+      "work": "Gemara Temurah",
+      "ref": "Temurah 16a",
+      "sefariaRef": "Temurah 16a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [508, 509, 511, 512], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Li'ay Niko Yisrael, Sarashe says Shashi Berasaluchis",
+      "work": "Rashi",
+      "ref": "Rashi on Devarim 34:12",
+      "sefariaRef": "Rashi on Deuteronomy 34:12:1",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [513, 515, 516, 517, 518], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Yeri HaKadosh told the Rav Chaim Vitao",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [759, 760, 765, 768, 770], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "Mansi of Schleisinger, his grandfather wrote a cipher ... from the Kadmainen this Remez on the Gaula",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [719, 720, 722, 725, 726], "confidence": 0.6 }
+    }
+  ],
+  "insights": [
+    {
+      "text": { "en": "The Rav explains that the Gemara records a date for Mashiach that passed because every date the tzaddikim gave was truly an 'achishenah' time; Mashiach was ready, and only sin held him back.", "yi": "דער משגיח ערקלערט אז די גמרא שרייבט א צייט פאר משיח וואס איז פארביי, ווייל יעדע צייט וואס די צדיקים האבן געגעבן איז באמת געווען אן \"אחישנה\"; משיח איז געווען גרייט, נאר עבירות האבן אים אפגעהאלטן." },
+      "evidence": { "segs": [57, 76, 83, 87, 113, 124], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Ba'al HaTanya read 'ha'elef' as heh-elef, since heh and ha are interchangeable, and so found 5775 in the pasuk of the vavim.", "yi": "דער בעל התניא האט געליינט \"האלף\" ווי ה' אלף, ווייל \"ה\" און \"הא\" זענען איינס, און אזוי געפונען תשע\"ה אינעם פסוק פון די ווים." },
+      "evidence": { "segs": [215, 232, 237, 241, 242], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "The silver of the Yidden beyond 600,000 went to the vavim, whose heads protrude outside the Mishkan's curtains; so they are the Yidden outside the camp, and the vav is missing from the alphabetical kapitlach.", "yi": "דאס זילבער פון די אידן העכער ששים ריבוא איז געגאנגען אויף די ווים, וועמענס קעפ שטעקן ארויס פון די קלעים פונעם משכן; ממילא זענען זיי די אידן אינדרויסן פונעם מחנה, און דער וי\"ו פעלט אין די קאפיטלעך על סדר א\"ב." },
+      "evidence": { "segs": [553, 567, 572, 574, 577, 669], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Yidden outside the camp are connected to the last letters of the Torah that came with the forgetting at Moshe's passing, and Moshe's forgetting the vavim belongs to the same idea.", "yi": "די אידן אינדרויסן פונעם מחנה זענען פארבונדן מיט די לעצטע אותיות פון דער תורה, וואס זענען געקומען מיט דער שכחה ביי משה רבינו'ס פטירה, און משה'ס פארגעסן די ווים געהערט צו דעם זעלבן ענין." },
+      "evidence": { "segs": [592, 593, 594, 597, 598], "confidence": 0.65 }
+    },
+    {
+      "text": { "en": "Hashem's anger at Amalek for attacking Bnei Dan, who were outside the camp, still burns thousands of years later, showing He does not give up on such Yidden.", "yi": "דעם אויבערשטנס כעס אויף עמלק פארן באפאלן שבט דן, וואס זענען געווען אינדרויסן פונעם מחנה, ברענט נאך טויזנטער יאר שפעטער, א סימן אז ער גיט נישט אויף אזעלכע אידן." },
+      "evidence": { "segs": [603, 608, 623, 626, 629, 630], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "The closing pei, 'Podeh Hashem nefesh avadav', is the redemption of the missing vav: the Yidden of the end of the Torah return with Mashiach.", "yi": "דער לעצטער פ\"א, \"פודה ה' נפש עבדיו\", איז די אויסלייזונג פונעם פעלנדיקן וי\"ו: די אידן פונעם סוף פון דער תורה קומען צוריק מיט משיח." },
+      "evidence": { "segs": [677, 678, 682, 694, 695, 703], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "Unlike other chachamim, whose dates were for their own days, the Ba'al HaTanya gave a sign close to 200 years after him, for our generation at the end of the Torah.", "yi": "נישט ווי אנדערע חכמים, וועמענס צייטן זענען געווען אין זייערע אייגענע טעג, האט דער בעל התניא געגעבן א סימן כמעט צוויי הונדערט יאר נאך אים, פאר אונזער דור ביים סוף פון דער תורה." },
+      "evidence": { "segs": [713, 738, 740, 742, 743], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Ba'al HaTanya reads 'heh-elef'", "yi": "דער בעל התניא ליינט \"ה' אלף\"" },
+      "retelling": {
+        "en": "The Rav relates a tradition guarded in Chabad: the Ba'al HaTanya once read the Torah in Parshas Pekudei, and at the pasuk of the extra silver used for the vavim he read 'ha'elef' as heh-elef. He was corrected but refused to be corrected and repeated it, saying the geulah is hinted in this pasuk in 5775. Though he was very exacting in reading the Torah, this is how he read it. The Rav heard from someone who was told by a person who once asked the Rebbe, before he became Rebbe, and was told that the story happened.",
+        "yi": "דער משגיח דערציילט א מסורה וואס מ'האט געהיטן אין חב\"ד: דער בעל התניא האט אמאל געליינט פרשת פקודי, און ביים פסוק פון דאס איבעריקע זילבער פאר די ווים האט ער געליינט \"האלף\" ווי ה' אלף. מ'האט אים געוואלט מתקן זיין, אבער ער האט נישט געלאזט און עס איבערגעזאגט, ווייל די גאולה איז מרומז אין דעם פסוק אויף תשע\"ה. הגם ער איז געווען זייער מדקדק אין קריאת התורה, האט ער עס אזוי געליינט. דער משגיח האט געהערט פון איינעם וואס א מענטש האט אים דערציילט אז ער האט אמאל געפרעגט דעם רבי'ן, איידער ער איז געווארן רבי, און דער האט געזאגט אז די מעשה איז געווען."
+      },
+      "people": ["the Ba'al HaTanya", "the Lubavitcher Rebbe"],
+      "evidence": { "segs": [178, 179, 212, 215, 226, 230], "confidence": 0.7 }
+    },
+    {
+      "title": { "en": "Bnei Dan outside the clouds", "yi": "שבט דן אינדרויסן פון די ענני הכבוד" },
+      "retelling": {
+        "en": "In the midbar the 600,000 Yidden traveled under the Ananei HaKavod, but some unfortunate Yidden, Bnei Dan, were expelled from the camp. Since they were outside the protection of the clouds, Amalek came and waged war with them. The Rav adds that Hashem's anger at Amalek for daring to attack these Yidden is still in full flame.",
+        "yi": "אין מדבר זענען די ששים ריבוא אידן געגאנגען אונטער די ענני הכבוד, אבער געוויסע אומגליקליכע אידן, שבט דן, זענען ארויסגעווארפן געווארן פונעם מחנה. ווייל זיי זענען נישט געווען אונטער דעם שוץ פון די וואלקנס, איז עמלק געקומען און מלחמה געהאלטן מיט זיי. דער משגיח לייגט צו אז דעם אויבערשטנס כעס אויף עמלק וואס האט זיך דערוואגט צו באפאלן די אידן ברענט נאך אלץ אין זיין פולן פלאם."
+      },
+      "people": ["Bnei Dan", "Amalek"],
+      "evidence": { "segs": [406, 407, 408, 416, 418, 626], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "Why did Ravina and Rav Ashi put into the Gemara a date for Mashiach that had long passed?", "yi": "פארוואס האבן רבינא און רב אשי אריינגעשטעלט אין גמרא א צייט פאר משיח וואס איז שוין לאנג געווען פארביי?" },
+      "answer": { "en": "Because that date was truly a time of 'achishenah' when Mashiach should have come; someone spoiled it.", "yi": "ווייל יענע צייט איז טאקע געווען אן \"אחישנה\" ווען משיח האט געדארפט קומען; איינער האט עס קאליע געמאכט." },
+      "questionSegs": [53, 56, 57, 71, 72],
+      "answerSegs": [76, 83, 87, 89, 123, 124],
+      "confidence": 0.85
+    },
+    {
+      "question": { "en": "Why must the vav be missing from the alphabetical kapitlach, and why must a pei replace it?", "yi": "פארוואס מוז דער וי\"ו פעלן אין די קאפיטלעך על סדר א\"ב, און פארוואס מוז א פ\"א קומען אויף זיין ארט?" },
+      "answer": { "en": "The vav stands for the Yidden outside the camp, whose silver went to the vavim; Hashem does not forsake them, and the pei 'Podeh Hashem' brings them back with Mashiach.", "yi": "דער וי\"ו שטייט פאר די אידן אינדרויסן פונעם מחנה, וועמענס זילבער איז געגאנגען אויף די ווים; דער אויבערשטער פארלאזט זיי נישט, און דער פ\"א \"פודה ה'\" ברענגט זיי צוריק מיט משיח." },
+      "questionSegs": [343, 344, 345, 346],
+      "answerSegs": [668, 669, 675, 677, 694, 695],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why do we say the Torah has 600,000 letters when there are only about half that many?", "yi": "פארוואס זאגט מען אז די תורה האט ששים ריבוא אותיות, ווען עס זענען בערך נאר האלב אזויפיל?" },
+      "answer": { "en": "The Chachamim knew how to count them, since some letters are made of several letters, like an aleph made of a vav and two yuds.", "yi": "די חכמים האבן געוואוסט ווי אזוי צו ציילן, ווייל געוויסע אותיות זענען געמאכט פון עטליכע אותיות, ווי אן אל\"ף וואס איז א וי\"ו מיט צוויי יודי\"ן." },
+      "questionSegs": [442, 444, 445],
+      "answerSegs": [449, 451, 452, 455, 458, 461],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Rav asks that before Yom Kippur one take on guards and resolutions to be careful in Yiddishkeit, Torah and mitzvos, so as not to spoil the year.", "yi": "דער משגיח בעט אז פאר יום כיפור זאל מען מקבל זיין שמירות און החלטות צו זיין אפגעהיטן אין אידישקייט, תורה און מצוות, כדי נישט קאליע צו מאכן דאס יאר." },
+      "evidence": { "segs": [265, 268, 271, 272, 273, 276], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Rav says one must use the few days left before Yom Kippur and do one's best to be what one is supposed to be.", "yi": "דער משגיח זאגט אז מ'דארף אויסנוצן די פאר טעג וואס בלייבן פאר יום כיפור און טון וואס מ'קען צו זיין ווי מ'דארף זיין." },
+      "evidence": { "segs": [791, 792, 794, 795, 796], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "According to the Rav, our generation needs emunah and teshuvah.", "yi": "לויט דעם משגיח דארף אונזער דור אמונה און תשובה." },
+      "evidence": { "segs": [746, 747], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": ["mashiach", "dates for the geulah", "ba'al hatanya and 5775", "missing vav in tehillim", "vavim of the mishkan", "jews outside the camp", "amalek and bnei dan", "600,000 letters and souls", "avodah of the last generation", "preparing for yom kippur"],
+  "concepts": [
+    { "he": "אחישנה", "heardAs": ["Achishana", "Ahishem"] },
+    { "he": "בעתה", "heardAs": ["Beyita", "Be'ita"] },
+    { "he": "ווים לעמודים", "heardAs": ["Asa Vavim al-Ramudin", "Asa, Ravim, Malamudu", "vavim b'la amudim"] },
+    { "he": "אדנים", "heardAs": ["Adonim"] },
+    { "he": "קלעים", "heardAs": ["Klayim"] },
+    { "he": "ענני הכבוד", "heardAs": ["Anani Kavit", "anonic haveites"] },
+    { "he": "מחנה", "heardAs": ["Makhna", "Machina", "machna", "Maqna"] },
+    { "he": "את\"ב\"ש", "heardAs": ["Adbash", "Adabas"] },
+    { "he": "פודה ה' נפש עבדיו", "heardAs": ["pay da shem nefesh avadav", "Pei Da Shem Nevi Shavadav", "pray to Hashem and Nefesh Abadav"] },
+    { "he": "יש ששים ריבוא אותיות לתורה", "heardAs": ["Yes, Shishimri B'Eis Yisra Tavos"] },
+    { "he": "עקבתא דמשיחא", "heardAs": ["Iqvus of the Nesheikh", "Vikvasat and Mashiach"] },
+    { "he": "מחצית השקל", "heardAs": ["machtas a shakal", "Mahsashashakos"] },
+    { "he": "שכחת התורה", "heardAs": ["Shikchas HaToyer", "Shikha Sateire", "Shikhas Atayra"] }
+  ],
+  "people": [
+    { "name": "the Rambam", "heardAs": ["Rambam"] },
+    { "name": "Ravina", "heardAs": ["Ravina"] },
+    { "name": "Rav Ashi", "heardAs": ["Ravashi"] },
+    { "name": "Yaakov Avinu", "heardAs": ["Yankah Bavina"] },
+    { "name": "the Ramban", "heardAs": ["Ramban"] },
+    { "name": "the Ba'al HaTanya", "heardAs": ["Balatanya", "Baratanya"] },
+    { "name": "the Lubavitcher Rebbe", "heardAs": ["Rabbah B'charebbe"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["Neish Rabbeinu", "Maish Rabbeinu", "Meshach Ben"] },
+    { "name": "the Shinover Rav", "heardAs": ["Shinn of the Rav", "Shinn of the Rev"] },
+    { "name": "the Alshich", "heardAs": ["Al-Sheikh HaKadosh"] },
+    { "name": "Dovid HaMelech", "heardAs": ["David"] },
+    { "name": "Avimelech", "heardAs": ["Abimelech"] },
+    { "name": "Rashi", "heardAs": ["Rasha", "Sarashe"] },
+    { "name": "the Arizal", "heardAs": ["Yeri HaKadosh"] },
+    { "name": "Rav Chaim Vital", "heardAs": ["Rav Chaim Vitao"] },
+    { "name": "the Chasam Sofer", "heardAs": ["Chesam Soifa"] }
+  ],
+  "asrNotes": "English ASR with many fragmentary segments; Hebrew quotations badly garbled but mostly recoverable from context (Yeshayahu 60:22, Shemos 38:28, Tehillim 34 and 25). The source of 'libi l'fumi lo galya', the Ramban's location, the sefer whose author's name sounds like Schlesinger, and the details of segments 403-405 and 421-425 (who said what about Amalek) could not be recovered. Segments 360, 613 and 614 flagged as noise are short repeats; the catalog title is a filename guess and fits the whole shiur."
+}

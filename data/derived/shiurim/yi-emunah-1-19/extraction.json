@@ -1,0 +1,468 @@
+{
+  "shiurId": "yi-emunah-1-19",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that before the geulah the Satan fights for his life against emunah, and that his two sharpest weapons today are bad friends and leitzanus, mockery.",
+      "yi": "דער משגיח ערקלערט אז פאר דער גאולה קעמפט דער שטן פאר זיין לעבן קעגן דער אמונה, און אז זיינע שארפסטע כלי זיין היינט זענען שלעכטע חברים און ליצנות."
+    },
+    "abstract": {
+      "en": "The Rav asks why the Jews in Mitzrayim believed Moshe at first but no longer listened to him shortly before the redemption. Answering in the name of the Satmar Rav, he explains that just before a geulah the Satan throws all his strength against emunah, the foundation of Yiddishkeit, since he knows Moshiach will end him; like anyone fighting for his life he gains new strength. The Mishnah's miracle that the Kohen Gadol never became tamei on Yom Kippur shows the same thing, as the Tosfos Yom Tov explains, and so does a candle that flares up before it goes out. Today's war is fought through bad friends: the Rambam says a person must flee even to the desert to escape them, and the Chazon Ish named the yeshiva as today's refuge. The Satan now bites with a kiss, like Esav, through friendship and assimilation. A story of the Lechovitcher Rebbe shows the power of good friends, and the Rav closes on leitzanus, which overturns logic and keeps a person from greeting the Shechinah.",
+      "yi": "דער משגיח פרעגט פארוואס די אידן אין מצרים האבן צום ערשט געגלייבט משה רבינו, און באלד פאר דער גאולה האבן זיי שוין נישט געהערט. ער ענטפערט בשם דעם סאטמאר רב אז פאר א גאולה לייגט זיך דער שטן מיט אלע כוחות אויף דער אמונה, דער יסוד פון אידישקייט, ווייל ער ווייסט אז משיח וועט אים מאכן א סוף; און ווי יעדער וואס קעמפט פאר'ן לעבן באקומט ער נייע כוחות. דאס זעט מען ביים נס פון דער משנה אז דער כהן גדול איז קיינמאל נישט טמא געווארן אום יום כיפור, ווי דער תוספות יום טוב ערקלערט, און ביי א ליכט וואס פלאקערט זיך אויף פאר'ן אויסגיין. די מלחמה היינט גייט דורך שלעכטע חברים: דער רמב\"ם זאגט אז מ'דארף אנטלויפן אפילו אין מדבר, און דער חזון איש האט געזאגט אז היינט אנטלויפט מען אין ישיבה. דער שטן בייסט היינט מיט א קוש, ווי עשו, דורך פריינטשאפט און אסימילאציע. א מעשה מיטן לעכאוויטשער רבי'ן ווייזט דעם כח פון גוטע חברים, און צום סוף רעדט ער וועגן ליצנות, וואס דרייט איבער דעם שכל און האלט א מענטש אפ פון מקבל פני השכינה זיין."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Just before a geulah the greatest test is in emunah, because the Satan, knowing his end is near, throws all his strength against it.",
+          "yi": "באלד פאר א גאולה איז דער גרעסטער נסיון אין אמונה, ווייל דער שטן ווייסט אז זיין סוף קומט, און ער לייגט זיך דערויף מיט אלע כוחות."
+        },
+        "evidence": { "segs": [23, 24, 26, 33, 35], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Whoever fights for his life gains new strength, and so the Satan fights hardest in the generation of Moshiach.",
+          "yi": "ווער עס קעמפט פאר'ן לעבן באקומט נייע כוחות, און דערפאר קעמפט דער שטן דאס שטארקסטע אינעם דור פון משיח."
+        },
+        "evidence": { "segs": [45, 48, 53, 59, 62, 110], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Among the greatest dangers to Yiddishkeit in this generation are bad friends, who reach even into the yeshiva.",
+          "yi": "איינע פון די גרעסטע סכנות פאר אידישקייט אין דעם דור זענען שלעכטע חברים, וואס קומען אריין אפילו אין ישיבה."
+        },
+        "evidence": { "segs": [151, 155, 157, 160], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The Satan's tactic today is friendship rather than hatred, biting with a kiss, and it has brought many Jews to assimilation.",
+          "yi": "דער שטן'ס טאקטיק היינט איז פריינטשאפט אנשטאט שנאה, ער בייסט מיט א קוש, און דאס האט געברענגט אסאך אידן צו אסימילאציע."
+        },
+        "evidence": { "segs": [208, 224, 225, 231, 246], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Good friends can accomplish what neither geonim nor rebbes can, so a person must choose his friends with care.",
+          "yi": "גוטע חברים קענען אויפטון וואס נישט קיין גאונים און נישט קיין רביים קענען, דערפאר דארף מען זיי אויסקלייבן מיט אכטונג."
+        },
+        "evidence": { "segs": [318, 319, 320, 322], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Leitzanus is the opposite of logic: one jest pushes away a hundred rebukes, and leitzim do not greet the Shechinah.",
+          "yi": "ליצנות איז דער היפוך פון שכל: איין ליצנות שטופט אוועק הונדערט תוכחות, און ליצים זענען נישט מקבל פני השכינה."
+        },
+        "evidence": { "segs": [336, 358, 366, 406, 407], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-emunah-10-a-emunah-yiddish",
+      "startSeg": 0,
+      "endSeg": 54,
+      "title": { "en": "Why the Jews stopped believing before the geulah", "yi": "פארוואס די אידן האבן אויפגעהערט גלייבן פאר דער גאולה" },
+      "summary": {
+        "en": "The Rav asks why the Jews who believed Moshe at first no longer listened to him shortly before leaving Mitzrayim. He answers in the name of the Satmar Rav that the greatest test of emunah comes just before a geulah, and adds that anyone fighting for his life gains new strength.",
+        "yi": "דער משגיח פרעגט פארוואס די אידן וואס האבן צום ערשט געגלייבט משה רבינו האבן אים שוין נישט געהערט באלד פאר יציאת מצרים. ער ענטפערט בשם דעם סאטמאר רב אז דער גרעסטער נסיון אין אמונה קומט פונקט פאר א גאולה, און לייגט צו אז ווער עס קעמפט פאר'ן לעבן באקומט נייע כוחות."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-10-a-emunah-yiddish",
+      "startSeg": 55,
+      "endSeg": 112,
+      "title": { "en": "The Satan's last stand and the Kohen Gadol", "yi": "דעם שטן'ס לעצטע מלחמה און דער כהן גדול" },
+      "summary": {
+        "en": "The Rav explains that the Satan knows he will be destroyed when Moshiach comes and so fights with all his strength now. He brings the Mishnah's miracle that the Kohen Gadol never became tamei on Yom Kippur, and the Tosfos Yom Tov's explanation that the Satan concentrated all his power on him.",
+        "yi": "דער משגיח ערקלערט אז דער שטן ווייסט אז ווען משיח קומט וועט מען אים אויסמעקן, דערפאר קעמפט ער יעצט מיט אלע כוחות. ער ברענגט דעם נס פון דער משנה אז דער כהן גדול איז קיינמאל נישט טמא געווארן אום יום כיפור, און דעם תוספות יום טוב'ס פשט אז דער שטן האט זיך געלייגט מיט זיין גאנצן כח אויף אים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-10-a-emunah-yiddish",
+      "startSeg": 113,
+      "endSeg": 188,
+      "title": { "en": "The flaring candle and the danger of bad friends", "yi": "די פלאקערנדיגע ליכט און די סכנה פון שלעכטע חברים" },
+      "summary": {
+        "en": "The Rav compares the Satan to a candle that flares up before it goes out, which is why it is so hard to be a Jew today. He names bad friends as one of the generation's greatest dangers, brings the Rambam that one must flee them even to the desert, and the Chazon Ish's answer to the Satmar Rav that today one flees to the yeshiva, which itself still needs guarding.",
+        "yi": "דער משגיח פארגלייכט דעם שטן צו א ליכט וואס פלאקערט זיך אויף פאר'ן אויסגיין, און דערפאר איז אזוי שווער היינט צו זיין א איד. ער רעכנט שלעכטע חברים פאר איינע פון די גרעסטע סכנות פונעם דור, ברענגט דעם רמב\"ם אז מ'דארף פון זיי אנטלויפן אפילו אין מדבר, און דעם חזון איש'ס ענטפער צום סאטמאר רב אז היינט אנטלויפט מען אין ישיבה, וואס דארף אליין אויך א שמירה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-10-a-emunah-yiddish",
+      "startSeg": 189,
+      "endSeg": 278,
+      "title": { "en": "Biting with a kiss: the Satan's tactic today", "yi": "בייסן מיט א קוש: דעם שטן'ס טאקטיק היינט" },
+      "summary": {
+        "en": "From the dotted word 'vayishakehu' and the Midrash that Esav meant to bite Yaakov, the Rav shows that the Satan now bites with a kiss. Where the nations once persecuted the Jews, today they offer friendship and interfaith gatherings, and assimilation reaches even observant homes through gentile books, newspapers and radio, poisoning emunah.",
+        "yi": "פונעם ווארט \"וישקהו\" מיט די נקודות און דעם מדרש אז עשו האט געוואלט בייסן יעקב'ן, ווייזט דער משגיח אז דער שטן בייסט היינט מיט א קוש. אמאל האבן די גוים גערודפט די אידן, היינט ווילן זיי זיין פריינט, און די אסימילאציע קומט אריין אפילו אין פרומע הייזער דורך גוי'אישע ביכער, צייטונגען און ראדיא, און פארסמט די אמונה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-10-a-emunah-yiddish",
+      "startSeg": 279,
+      "endSeg": 323,
+      "title": { "en": "The Lechovitcher chassid saved by his friends", "yi": "דער לעכאוויטשער חסיד וואס זיינע חברים האבן אים געראטעוועט" },
+      "summary": {
+        "en": "The Rav tells of a chassid of the Lechovitcher Rebbe who faced a great temptation on the road and was held back only by the thought that his fellow chassidim would drag him to the Rebbe. The Rebbe told him that good friends can accomplish what neither geonim nor rebbes can.",
+        "yi": "דער משגיח דערציילט פון א חסיד פונעם לעכאוויטשער רבי'ן וואס האט געהאט א שווערן נסיון אויפן וועג, און עס האט אים נאר אפגעהאלטן דער חשבון אז זיינע חברים וועלן אים שלעפן צום רבי'ן. דער רבי האט אים געזאגט אז גוטע חברים קענען אויפטון וואס נישט קיין גאונים און נישט קיין רביים קענען."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-10-a-emunah-yiddish",
+      "startSeg": 324,
+      "endSeg": 427,
+      "title": { "en": "Leitzanus, the opposite of logic", "yi": "ליצנות, דער היפוך פון שכל" },
+      "summary": {
+        "en": "The Rav calls leitzanus one of the great pitfalls: a jealous bochur mocks one who learns well, and one jest pushes away a hundred rebukes, as a child's quip once undid a whole talk of Reb Shraga Feivel Mendlowitz. He explains that a joke is the opposite of logic, so no argument can answer it, brings the Gemara that leitzim do not greet the Shechinah, and closes that whoever wants to see Moshiach needs good friends and must keep away from leitzim.",
+        "yi": "דער משגיח רופט ליצנות איינע פון די גרויסע סכנות: א בחור וואס איז מקנא א צווייטן וואס לערנט גוט מאכט פון אים חוזק, און איין ליצנות שטופט אוועק הונדערט תוכחות, ווי א קינד'ס ווערטל האט אמאל קאליע געמאכט א גאנצע שמועס פון רבי שרגא פייוול מענדלאוויטש. ער ערקלערט אז א וויץ איז דער היפוך פון שכל, דערפאר קען מען אים נישט ענטפערן מיט סברא, ברענגט די גמרא אז ליצים זענען נישט מקבל פני השכינה, און ענדיגט אז ווער עס וויל זען משיח דארף האבן גוטע חברים און זיך אפהאלטן פון ליצים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [1],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "וימן האם, און דאס פאלק האט געגלויבט",
+      "work": "Shemos",
+      "ref": "Shemos 4:31",
+      "sefariaRef": "Exodus 4:31",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [7, 8], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "לשמל על משה מקוצר רוח מיבדה קשה",
+      "work": "Shemos",
+      "ref": "Shemos 6:9",
+      "sefariaRef": "Exodus 6:9",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [11, 15, 32], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "די ארבע כוסות די צדתי, די גלתי, די לקחתי",
+      "work": "Shemos",
+      "ref": "Shemos 6:6-7",
+      "sefariaRef": "Exodus 6:6-7",
+      "resolution": "resolved",
+      "mention": "alluded",
+      "evidence": { "segs": [13, 14], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "פון סאטמאר רב זכנא לברכה",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [21, 22, 24], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "פרקי יבש ... עס שטעט אין די משנה ... להכנוג דול ביום הכי פרום",
+      "work": "Pirkei Avos",
+      "ref": "Avos 5:5",
+      "sefariaRef": "Pirkei Avot 5:5",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [67, 68, 69, 70], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "מפרישן כהנגדל אין ללשכת פהדרון ... אזוי ווי זיי שטעטן אין משנה",
+      "work": "Mishnah Yoma",
+      "ref": "Mishnah Yoma ch. 1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [73, 74, 75, 81, 84], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "תוספות יום טוב",
+      "work": "Tosfos Yom Tov",
+      "ref": "Tosfos Yom Tov on Avos 5:5",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [94, 95, 101, 102], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ובילא המבות לנצח",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 25:8",
+      "sefariaRef": "Isaiah 25:8",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [106], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "בשרח אתם האבן אין הארץ",
+      "work": "Zechariah",
+      "ref": "Zechariah 13:2",
+      "sefariaRef": "Zechariah 13:2",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [107, 108, 109], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "ווי דער רמב״ם זאגט ... דער רמב״ם אין הלכות דעות",
+      "work": "Rambam, Hilchos De'os",
+      "ref": "Hilchos De'os 6:1",
+      "sefariaRef": "Mishneh Torah, Human Dispositions 6:1",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [161, 163, 166, 168, 169, 171], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "מיוט נענו ביי מדבר מלון עורכים",
+      "work": "Yirmiyahu",
+      "ref": "Yirmiyahu 9:1",
+      "sefariaRef": "Jeremiah 9:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [171], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "האט ער באזאכט דעם חזן נישט",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [173, 177, 178], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "וישוקהו ... וישו כהא מיט פינטעלעך",
+      "work": "Bereishis",
+      "ref": "Bereishis 33:4",
+      "sefariaRef": "Genesis 33:4",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [190, 191, 193, 202], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "און אין מדרש שטעט עס בפירוש",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [194, 198, 201, 202], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "עס שטעט אין שלאר קודש . די ליצענות אחת דוחה מאה תוכחות",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [336, 337], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אזוי ווי עס שטייט אין אקדמות",
+      "work": "Akdamus",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [343, 345, 346], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די גמרא ... וישענים רואים פני השכינה",
+      "work": "Gemara Sotah",
+      "ref": "Sotah 42a",
+      "sefariaRef": "Sotah 42a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [406, 407, 408], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "מלך ביפה אתחזנה עיניך",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 33:17",
+      "sefariaRef": "Isaiah 33:17",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [421, 422], "confidence": 0.8 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Jews' loss of faith right before Yetzias Mitzrayim was not a decline in them but the Satan's last, strongest assault on emunah before a geulah, and the same pattern repeats before the final geulah.",
+        "yi": "דאס וואס די אידן האבן פארלוירן די אמונה פונקט פאר יציאת מצרים איז נישט געווען א ירידה ביי זיי, נאר דעם שטן'ס לעצטע און שטארקסטע אטאקע אויף אמונה פאר א גאולה, און די זעלבע זאך חזר'ט זיך איבער פאר דער לעצטער גאולה."
+      },
+      "evidence": { "segs": [24, 25, 31, 33, 34, 35], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The difficulty of being a Jew today is itself a sign that the Satan senses his end, like a candle that flares brightest as it is about to go out.",
+        "yi": "די שוועריגקייט היינט צו זיין א איד איז אליין א סימן אז דער שטן שפירט זיין סוף, ווי א ליכט וואס פלאקערט זיך אויף דאס שטארקסטע ווען עס האלט ביים אויסגיין."
+      },
+      "evidence": { "segs": [123, 124, 133, 134, 135], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Esav's dotted kiss is the model for modern exile: where open hatred failed, friendship and brotherhood draw far more Jews away from Yiddishkeit.",
+        "yi": "עשו'ס קוש מיט די נקודות איז דער משל פאר דעם היינטיגן גלות: וואו שנאה האט נישט געהאלפן, ציען פריינטשאפט און ברודערשאפט אוועק אסאך מער אידן פון אידישקייט."
+      },
+      "evidence": { "segs": [207, 208, 224, 231, 232], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "A joke cannot be answered by argument because it is by nature the opposite of logic; one can debate a philosopher, but not a leitz.",
+        "yi": "א וויץ קען מען נישט ענטפערן מיט סברא, ווייל ער איז פון זיין נאטור דער היפוך פון שכל; מיט א פילאזאף קען מען זיך דינגען, אבער נישט מיט א לץ."
+      },
+      "evidence": { "segs": [358, 359, 362, 364, 366], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "People pity someone with a broken leg or a sick heart but laugh at a madman, because laughter is aroused by whatever does not work with sense, and this is the power that leitzanus uses.",
+        "yi": "אויף א מענטש מיט א צובראכענעם פוס אדער א קראנק הארץ האט מען רחמנות, אבער פון א משוגענעם לאכט מען, ווייל געלעכטער ווערט אויפגעוועקט פון יעדע זאך וואס ארבעט נישט מיט שכל, און דאס איז דער כח פון ליצנות."
+      },
+      "evidence": { "segs": [392, 395, 397, 399, 403, 405], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Lechovitcher chassid and his friends", "yi": "דער לעכאוויטשער חסיד און זיינע חברים" },
+      "retelling": {
+        "en": "A chassid of the Lechovitcher Rebbe, travelling on the roads of Russia, faced a great temptation to sin. He thought that if he sinned the Rebbe would see it on his face, so he decided not to go to the Rebbe; then he realized his friends in the shtibel would drag him to the Rebbe, and even if he davened in another shul they would come and find him. Because of this reckoning he was saved from the sin. When he came to the Rebbe, the Rebbe told him that what good friends can accomplish, neither geonim nor rebbes can.",
+        "yi": "א חסיד פונעם לעכאוויטשער רבי'ן איז געפארן אויף די רוסישע וועגן און האט געהאט א גרויסן נסיון פון א תאוה. ער האט געטראכט אז אויב ער טוט די עבירה וועט דער רבי עס זען אויף זיין פנים, האט ער באשלאסן נישט צו פארן צום רבי'ן; דערנאך האט ער פארשטאנען אז זיינע חברים אין שטיבל וועלן אים שלעפן צום רבי'ן, און אפילו אויב ער וועט דאווענען אין אן אנדער שול וועלן זיי אים קומען זוכן. צוליב דעם חשבון איז ער ניצול געווארן פון דער עבירה. ווען ער איז געקומען צום רבי'ן האט אים דער רבי געזאגט אז וואס גוטע חברים קענען אויפטון, קענען נישט אויפטון נישט קיין גאונים און נישט קיין רביים."
+      },
+      "people": ["the Lechovitcher Rebbe"],
+      "evidence": { "segs": [281, 286, 297, 307, 314, 318], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "The boy who did not like fish", "yi": "דאס קינד וואס האט נישט ליב פיש" },
+      "retelling": {
+        "en": "Reb Shraga Feivel Mendlowitz told that when he began teaching in America, he once spoke to a class with great feeling about the Leviathan that is salted away for the tzaddikim, as mentioned in Akdamus. A child raised his hand and said, 'Rebbe, I don't like fish.' With that one sentence the whole talk went down the drain.",
+        "yi": "רבי שרגא פייוול מענדלאוויטש האט דערציילט אז ווען ער האט אנגעהויבן לערנען אין אמעריקע, האט ער אמאל גערעדט צו א קלאס מיט התלהבות וועגן דעם לויתן וואס איז איינגעזאלצן פאר די צדיקים, ווי עס שטייט אין אקדמות. האט א קינד אויפגעהויבן די האנט און געזאגט: רבי, איך האב נישט ליב קיין פיש. מיט דעם איין זאץ איז די גאנצע שמועס אראפ צום אפגרונט."
+      },
+      "people": ["Reb Shraga Feivel Mendlowitz"],
+      "evidence": { "segs": [338, 339, 343, 346, 348, 350], "confidence": 0.8 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why did the Jews, who believed Moshe at first, no longer listen to him shortly before the redemption?",
+        "yi": "פארוואס האבן די אידן, וואס האבן צום ערשט געגלייבט משה רבינו, אים שוין נישט געהערט באלד פאר דער גאולה?"
+      },
+      "answer": {
+        "en": "Right before a geulah the Satan throws all his strength against emunah, so faith was weakened just then.",
+        "yi": "פונקט פאר א גאולה לייגט זיך דער שטן מיט אלע כוחות אויף דער אמונה, דערפאר איז די אמונה דעמאלט אפגעשוואכט געווארן."
+      },
+      "questionSegs": [16, 17, 18],
+      "answerSegs": [23, 24, 31, 33],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why is it counted as a miracle that the Kohen Gadol never became tamei on Yom Kippur, given all the safeguards?",
+        "yi": "פארוואס ווערט עס גערעכנט פאר א נס אז דער כהן גדול איז נישט טמא געווארן אום יום כיפור, מיט אלע שמירות וואס מ'האט געמאכט?"
+      },
+      "answer": {
+        "en": "Since the atonement of all Klal Yisrael depended on his avodah, the Satan concentrated his whole power on him, and only a miracle could protect him.",
+        "yi": "ווייל די כפרה פון גאנץ כלל ישראל איז געהאנגען אין זיין עבודה, האט זיך דער שטן געלייגט מיט זיין גאנצן כח אויף אים, און נאר א נס האט אים געקענט היטן."
+      },
+      "questionSegs": [72, 90, 93],
+      "answerSegs": [94, 95, 99, 101],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why do people pity a sick person but laugh at a madman?",
+        "yi": "פארוואס האט מען רחמנות אויף א קראנקן, אבער פון א משוגענעם לאכט מען?"
+      },
+      "answer": {
+        "en": "Because whatever does not work with sense stirs laughter, and that is the power of leitzanus.",
+        "yi": "ווייל יעדע זאך וואס ארבעט נישט מיט שכל וועקט אויף געלעכטער, און דאס איז דער כח פון ליצנות."
+      },
+      "questionSegs": [399, 400],
+      "answerSegs": [401, 403, 404, 405],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says one must be a good soldier and fight, holding firmly to emunah against today's trials.",
+        "yi": "דער משגיח זאגט אז מ'דארף זיין א גוטער סאלדאט און קעמפן, און זיך פעסט האלטן ביי דער אמונה קעגן די היינטיגע נסיונות."
+      },
+      "evidence": { "segs": [139, 140, 142], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that even in yeshiva one must take care with whom one learns and with whom one spends time.",
+        "yi": "דער משגיח זאגט אז אפילו אין ישיבה דארף מען אכטונג געבן מיט וועמען מ'לערנט און מיט וועמען מ'פארברענגט."
+      },
+      "evidence": { "segs": [181, 182], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one must be choosy about friends and pick them carefully.",
+        "yi": "דער משגיח זאגט אז מ'דארף זיין איבערקלייבעריש מיט חברים און זיי אויסקלייבן מיט אכטונג."
+      },
+      "evidence": { "segs": [321, 322, 323], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The Rav says whoever wants to greet Moshiach must have good friends, keep away from leitzim and leitzanus, and daven to Hashem to be saved from what lies in wait on the right path.",
+        "yi": "דער משגיח זאגט אז ווער עס וויל מקבל פני משיח זיין דארף האבן גוטע חברים, זיך מרחיק זיין פון ליצים און פון ליצנות, און בעטן דעם רבונו של עולם אז ער זאל ניצול ווערן פון אלעם וואס לאקערט אויפן וועג."
+      },
+      "evidence": { "segs": [419, 424, 425, 426, 427], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "emunah before the geulah",
+    "the Satan's war against emunah",
+    "the Kohen Gadol on Yom Kippur",
+    "bad friends",
+    "the power of good friends",
+    "assimilation",
+    "Yaakov and Esav's kiss",
+    "leitzanus",
+    "the nature of laughter"
+  ],
+  "concepts": [
+    { "he": "שטן", "heardAs": ["סאטמאר", "סאטרין", "סאטענהאנד", "סתם"] },
+    { "he": "יצר הרע", "heardAs": ["יצחק", "יצה״ב"] },
+    { "he": "מלאך המות", "heardAs": ["מלאך המבות"] },
+    { "he": "אמונה", "heardAs": ["אמנה", "נאמנה"] },
+    { "he": "ליצנות", "heardAs": ["לצנות", "ליצענות", "אצענעות", "לצנית"] },
+    { "he": "לץ", "heardAs": ["לעצט", "לעצטן"] },
+    { "he": "כהן גדול", "heardAs": ["כהנגדל", "להכנוג דול"] },
+    { "he": "לשכת פלהדרין", "heardAs": ["ללשכת פהדרון"] },
+    { "he": "חברים", "heardAs": ["חברים", "חזרון"] },
+    { "he": "וישקהו", "heardAs": ["וישוקהו", "וישו כהא"] },
+    { "he": "מקבלי פני השכינה", "heardAs": ["רואים פני השכינה", "רואיג פני השכונה"] },
+    { "he": "יציאת נשמה", "heardAs": ["יציאת נשמה"] }
+  ],
+  "people": [
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו"] },
+    { "name": "the Satmar Rav", "heardAs": ["סאטמאר רב"] },
+    { "name": "the Chazon Ish", "heardAs": ["חזן נישט"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יעקב"] },
+    { "name": "Esav", "heardAs": ["עסב", "אסף"] },
+    { "name": "the Lechovitcher Rebbe", "heardAs": ["מלכאוויטשער", "לאכאוועזשער"] },
+    { "name": "Reb Shraga Feivel Mendlowitz", "heardAs": ["רבי פייווי מענדלאוויטש"] }
+  ],
+  "asrNotes": "Yiddish ASR fair, but 'Satan' is consistently transcribed as 'סאטמאר' and the yetzer hara as 'יצחק', recovered from context; the Chazon Ish appears as 'חזן נישט'. The example of extraordinary strength in a time of danger (segs 50-51) and the source of the Satan's slaughter at Moshiach's coming (segs 56-58) are too garbled to pin down. Seg 204 spans about 20 seconds with one word."
+}

@@ -1,0 +1,60 @@
+{
+ "shiurId": "yi-simchos-unc-bris-pidyon-haben-23",
+ "generatedAt": "2026-11-15T07:58:22.809Z",
+ "shiur": {
+  "id": "yi-simchos-unc-bris-pidyon-haben-23",
+  "lang": "yi",
+  "category": "simcha",
+  "seriesId": null,
+  "seriesOrder": null,
+  "catalog": {
+   "source": "uncatalogued-guide",
+   "sectionId": "simchos",
+   "sectionTitle": "Simchos",
+   "n": "23",
+   "page": null,
+   "titleOriginal": "Bris Milah - Beshalach",
+   "subTitle": null,
+   "heading": "ברית מילה",
+   "derived": "filename",
+   "note": "type of simcha read from the file name, inside the \"bris pidyon haben\" folder"
+  },
+  "parsha": "בשלח",
+  "zman": null,
+  "perek": null,
+  "hebrewYears": [],
+  "recordingIds": [
+   "y-simchos-bris-pidyon-haben-23-bris-milah-beshalach"
+  ],
+  "inScope": true,
+  "outOfScopeReason": null,
+  "pathNotes": []
+ },
+ "series": null,
+ "catalogTopics": [
+  "Bris Milah - Beshalach"
+ ],
+ "totalDurationSec": 316.371125,
+ "recordings": [
+  {
+   "recording": {
+    "id": "y-simchos-bris-pidyon-haben-23-bris-milah-beshalach",
+    "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Simchos/bris pidyon haben/23 Bris Milah - Beshalach.mp3",
+    "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Simchos/bris pidyon haben/23 Bris Milah - Beshalach",
+    "durationSec": 316.37,
+    "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+    "sizeBytes": 1575159,
+    "duplicateOf": null,
+    "partOf": null
+   },
+   "order": 0,
+   "transcriptLanguage": "yi",
+   "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+   "durationSec": 316.371125,
+   "segmentCount": 48,
+   "starts": [0.84,15.22,22.76,24.36,37.69,43.43,49.15,53.13,55.23,59.43,67.22,70.96,75.28,85.4,91.34,93.7,97.56,104.44,107.2,109.34,114.34,122.76,128.36,136.74,141.02,143.8,159.4,162.92,166.88,173.6,182.26,189.32,196.4,200.84,228.2,234,235.36,240.26,245.18,248.52,254.76,282.64,287.24,290.94,297.16,301.16,302.98,312.64],
+   "ends": [13.84,22.36,24.36,36.69,42.57,48.33,52.49,55.23,58.93,64.41,70.32,74.76,85.4,90.58,93.2,95.4,103.48,106.36,108.44,114.22,121.6,127.58,136.38,140.28,143.8,158.68,162.2,166.38,172.8,180.24,187.3,195.36,200.84,228.2,233.5,234.88,238.22,244.58,247.7,254.76,282.64,286.62,290.4,296.74,300.72,302.66,305.86,313.38],
+   "noise": []
+  }
+ ]
+}

@@ -1,0 +1,43 @@
+{
+  "shiurId": "yi-simchos-unc-bris-pidyon-haben-07",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4b-v2",
+  "extractionVariant": "extraction",
+  "en": [
+    {
+      "sectionIndex": 0,
+      "heading": "Shechem, the bris and Eretz Yisroel",
+      "paragraphs": [
+        {
+          "text": "The Rav asks why Hashem promised Avraham the land (Bereishis 12:6-7) only at Shechem. He answers that the bris belongs to Yosef, whose place is Shechem, and Eretz Yisroel is earned through the bris; so the blessing of the land mentions bris and Torah (Berachos 48b).",
+          "sourceIdx": [0, 1],
+          "evidence": { "segs": [14, 16, 19, 20, 26, 30], "confidence": 0.75 }
+        },
+        {
+          "text": "Lech Lecha is the parsha of the bris. Shechem is also where Yosef's sale began the first galus, so the promise there assures return. He blesses the family and prays for the geulah.",
+          "sourceIdx": [],
+          "evidence": { "segs": [44, 61, 62, 63, 67], "confidence": 0.7 }
+        }
+      ]
+    }
+  ],
+  "yi": [
+    {
+      "sectionIndex": 0,
+      "heading": "שכם, ברית מילה און ארץ ישראל",
+      "paragraphs": [
+        {
+          "text": "דער משגיח פרעגט פארוואס השם יתברך האט צוגעזאגט אברהם אבינו דאס לאנד (בראשית יב, ו-ז) ערשט אין שכם. ער ענטפערט אז ברית געהערט צו יוסף, וועמענס ארט איז שכם, און ארץ ישראל ווערט פארדינט דורך ברית; דערפאר דערמאנט מען ברית און תורה אין ברכת הארץ (ברכות מח, ב).",
+          "sourceIdx": [0, 1],
+          "evidence": { "segs": [14, 16, 19, 20, 26, 30], "confidence": 0.75 }
+        },
+        {
+          "text": "לך לך איז די פרשה פון ברית. אין שכם האט זיך אויך אנגעהויבן דער ערשטער גלות מיט מכירת יוסף, ממילא איז די הבטחה דארט א זיכערקייט אויף צוריקקומען. ער בענטשט די משפחה און בעט אויף דער גאולה.",
+          "sourceIdx": [],
+          "evidence": { "segs": [44, 61, 62, 63, 67], "confidence": 0.7 }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "shiurId": "yi-kedushas-hashabbos-unc-04",
+  "promptVersion": "audit-v1",
+  "auditedAt": "2026-11-15T12:00:00Z",
+  "counts": {
+    "claimsChecked": 20, "unsupported": 0, "hallucinated": 0,
+    "sourcesChecked": 17, "sourceErrors": 0, "sourcesMissed": 0,
+    "boundariesChecked": 4, "boundariesBad": 0, "noiseMishandled": 0,
+    "termsChecked": 12, "termErrors": 0, "termsCopiedGarbled": 0,
+    "yiddishSentencesChecked": 16, "yiddishBadSentences": 4, "yiddishTranslationese": 2,
+    "flowBreaks": 0, "paddingSentences": 0, "contradictsExtraction": 0,
+    "ruleViolations": 0
+  },
+  "severity": "minor",
+  "needsReview": false,
+  "notes": "Claims, story (Chida and Rebbe Reb Elimelech, segs 244-304) and sources all check out against the transcript; good recoveries (השקה seg 150, ירא בשת seg 500, אושפיזין seg 463, Chida from מחודד seg 297); writeup.yi[3].paragraphs[0]: 'רופט אים א גרויסער מלאך' wrong case (should be א גרויסן מלאך); writeup.yi[5].paragraphs[0]: 'די זעקסטע יאר ... טראגט ברכה' wrong gender and English calque ('carries blessing'); writeup.yi[5].paragraphs[0] and sections[5].summary.yi use Daytshmerish 'טאדלט'; takeaways[0].yi uses English 'דיפ'; writeup.yi[4].paragraphs[0] 'ברענגט ... פשט דורך א הלכה' reads as rendered English; sources[11] Bava Basra 64b-65a is a reasonable inferred ref, not verified"
+}

@@ -1,0 +1,60 @@
+{
+ "shiurId": "yi-simchos-unc-bris-pidyon-haben-21",
+ "generatedAt": "2026-11-15T08:58:10.733Z",
+ "shiur": {
+  "id": "yi-simchos-unc-bris-pidyon-haben-21",
+  "lang": "yi",
+  "category": "simcha",
+  "seriesId": null,
+  "seriesOrder": null,
+  "catalog": {
+   "source": "uncatalogued-guide",
+   "sectionId": "simchos",
+   "sectionTitle": "Simchos",
+   "n": "21",
+   "page": null,
+   "titleOriginal": "Bris Milah - Bo",
+   "subTitle": null,
+   "heading": "ברית מילה",
+   "derived": "filename",
+   "note": "type of simcha read from the file name, inside the \"bris pidyon haben\" folder"
+  },
+  "parsha": "בא",
+  "zman": null,
+  "perek": null,
+  "hebrewYears": [],
+  "recordingIds": [
+   "y-simchos-bris-pidyon-haben-21-bris-milah-bo"
+  ],
+  "inScope": true,
+  "outOfScopeReason": null,
+  "pathNotes": []
+ },
+ "series": null,
+ "catalogTopics": [
+  "Bris Milah - Bo"
+ ],
+ "totalDurationSec": 709.46175,
+ "recordings": [
+  {
+   "recording": {
+    "id": "y-simchos-bris-pidyon-haben-21-bris-milah-bo",
+    "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Simchos/bris pidyon haben/21 Bris Milah - Bo.mp3",
+    "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Simchos/bris pidyon haben/21 Bris Milah - Bo",
+    "durationSec": 709.46,
+    "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+    "sizeBytes": 3531233,
+    "duplicateOf": null,
+    "partOf": null
+   },
+   "order": 0,
+   "transcriptLanguage": "yi",
+   "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+   "durationSec": 709.46175,
+   "segmentCount": 6,
+   "starts": [0.62,3.16,6.43,11.36,15.47,23.36],
+   "ends": [1.88,3.66,7.75,12.14,21.86,35.15],
+   "noise": []
+  }
+ ]
+}

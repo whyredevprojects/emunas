@@ -1,0 +1,535 @@
+{
+  "shiurId": "yi-parshas-hashavua-unc-vyshb-09",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that Yosef's 'other dream', the ninth verse of Vayeshev, hides the light of Chanukah, the hidden good that comes down even to the lowest Jew, and draws from it the duty to love every Jew.",
+      "yi": "דער משגיח ערקלערט אז יוסף'ס \"חלום אחר\", דער ניינטער פסוק פון וישב, באהאלט אין זיך די ליכט פון חנוכה, דאס באהאלטענע גוטס וואס קומט אראפ אפילו צום נידעריגסטן איד, און ער לערנט דערפון אפ אז מ'דארף ליב האבן יעדן איד."
+    },
+    "abstract": {
+      "en": "The Rav opens with Tanya chapter 32: Hillel's call to love people and bring them close to Torah, even those far from avodas Hashem, because a hidden good lies in every Jew. A story of the Rebbe of Lublin, who said that a Jew named in a complaint shines in all worlds, ties this hidden good to the Chanukah lights and the hidden light (ohr haganuz). He then asks why Yosef's second dream is called 'another dream'. Two introductions follow: eleven is the number that fights the sitra achra, as in the ketores and the goat-hair curtains; and, from the Mei HaShiloach, the ninth verse of every sedra hides a secret, as the letter tes hides its good inside. The ninth verse of Vayeshev is Yosef's other dream, a dream of Chanukah, when the Shechinah descends below ten handbreadths to weekday Jews. He closes with loving Hashem and every Jew in all circumstances.",
+      "yi": "דער משגיח עפנט מיט תניא פרק ל\"ב: הלל'ס ווארט צו ליב האבן די בריות און זיי מקרב זיין צו תורה, אפילו די וואס זענען ווייט פון עבודת השם, ווייל אין יעדן איד ליגט באהאלטן א טוב. א מעשה מיטן רבי'ן פון לובלין, וואס האט געזאגט אז א איד וועגן וועמען מ'האט זיך באקלאגט לייכט אין אלע עולמות, פארבינדט דאס באהאלטענע גוטס מיט די חנוכה ליכט און מיטן אור הגנוז. דערנאך פרעגט ער פארוואס יוסף'ס צווייטער חלום הייסט \"חלום אחר\". ער שטעלט צוויי הקדמות: אז אחד עשר איז דער כח וואס באקעמפט די סטרא אחרא, ווי ביי די קטורת און די יריעות עזים; און פונעם מי השילוח, אז דער ניינטער פסוק פון יעדער סדרה באהאלט א סוד, אזוי ווי דער אות טית באהאלט זיין גוטס אינעווייניג. דער ניינטער פסוק פון וישב איז יוסף'ס חלום אחר, א חלום פון חנוכה, ווען די שכינה קומט אראפ למטה מעשרה צו וואכעדיגע אידן. ער ענדיגט מיט ליב האבן דעם אויבערשטן און יעדן איד אין אלע אומשטענדן."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Following Tanya chapter 32, the Rav teaches that even a Jew far from avodas Hashem has a hidden good inside him that can be uncovered by drawing him close with love.",
+          "yi": "לויט תניא פרק ל\"ב לערנט דער משגיח אז אפילו א איד וואס איז ווייט פון עבודת השם האט אין זיך א באהאלטענעם טוב, וואס מ'קען אויפדעקן דורך אים מקרב זיין מיט ליבשאפט."
+        },
+        "evidence": { "segs": [11, 15, 33, 36, 38, 39], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "The Chanukah lights reveal the hidden light (ohr haganuz) anew every year.",
+          "yi": "די חנוכה ליכט מאכן שיינען דעם אור הגנוז יעדעס יאר פון ניי."
+        },
+        "evidence": { "segs": [97, 102, 104, 108], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Eleven is the number of the power that fights the sitra achra, as seen in the eleven spices of the ketores.",
+          "yi": "אחד עשר איז דער מספר פונעם כח וואס באקעמפט די סטרא אחרא, ווי מ'זעט ביי די עלף סממנים פון די קטורת."
+        },
+        "evidence": { "segs": [148, 150, 164, 165, 171], "confidence": 0.7 }
+      },
+      {
+        "text": {
+          "en": "The ninth verse of every sedra hides a secret, and in Vayeshev that verse is Yosef's 'other dream'.",
+          "yi": "דער ניינטער פסוק פון יעדער סדרה באהאלט א סוד, און אין וישב איז דאס דער פסוק פון יוסף'ס \"חלום אחר\"."
+        },
+        "evidence": { "segs": [239, 241, 295, 296, 297], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "On Chanukah the Shechinah comes down below ten handbreadths, to reach even the weekday and darkened Jews.",
+          "yi": "חנוכה קומט די שכינה אראפ למטה מעשרה, כדי צו דערגרייכן אפילו די וואכעדיגע און פארפינסטערטע אידן."
+        },
+        "evidence": { "segs": [314, 317, 318, 320, 379], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "The Rav concludes that one must love Hashem and love every Jew in all circumstances, because every Jew has a G-dly soul.",
+          "yi": "דער משגיח ענדיגט אז מ'דארף ליב האבן דעם רבונו של עולם און ליב האבן יעדן איד אין אלע אומשטענדן, ווייל יעדער איד האט א נשמה."
+        },
+        "evidence": { "segs": [576, 579, 585, 591], "confidence": 0.75 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-parsha-sefer-bereishes-09-09-vayeshev",
+      "startSeg": 0,
+      "endSeg": 52,
+      "title": { "en": "Tanya 32: the hidden good in every Jew", "yi": "תניא ל\"ב: דאס באהאלטענע גוטס אין יעדן איד" },
+      "summary": {
+        "en": "The Rav brings Hillel's words as cited in Tanya chapter 32, to love people and draw them close to Torah even when they are far from avodas Hashem. He explains that the Ba'al HaTanya reveals a hidden good in every Jew, even the coarsest, which closeness can uncover.",
+        "yi": "דער משגיח ברענגט הלל'ס ווארט וואס דער תניא ברענגט אין פרק ל\"ב, צו ליב האבן די בריות און זיי מקרב זיין צו תורה אפילו ווען זיי זענען ווייט פון עבודת השם. ער ערקלערט אז דער בעל התניא איז מגלה א באהאלטענעם טוב אין יעדן איד, וואס מ'קען אויפדעקן דורך קירוב."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-09-09-vayeshev",
+      "startSeg": 53,
+      "endSeg": 108,
+      "title": { "en": "The Rebbe of Lublin and the kvitel", "yi": "דער רבי פון לובלין און דאס קוויטל" },
+      "summary": {
+        "en": "The Rav tells of Jews who brought the Rebbe of Lublin a kvitel against a man who caused their town great harm, and the Rebbe said that this Jew shines in all worlds. He explains that the Rebbe saw the hidden light that the Chanukah lights reveal every year.",
+        "yi": "דער משגיח דערציילט פון אידן וואס האבן געברענגט דעם רבי'ן פון לובלין א קוויטל קעגן א איד וואס האט געמאכט גרויסע צרות אין זייער שטעטל, און דער רבי האט געזאגט אז דער איד לייכט אין אלע עולמות. ער ערקלערט אז דער רבי האט געזען דעם אור הגנוז וואס די חנוכה ליכט מאכן שיינען יעדעס יאר."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-09-09-vayeshev",
+      "startSeg": 109,
+      "endSeg": 231,
+      "title": { "en": "Why 'another dream', and the power of eleven", "yi": "פארוואס \"חלום אחר\", און דער כח פון אחד עשר" },
+      "summary": {
+        "en": "The Rav asks why Yosef's second dream is called 'another dream', unlike Paroh's repeated dream, and why it took so long to be fulfilled. As a first introduction he explains that kedusha goes by ten while the sitra achra has eleven, so the power that fights it must also have eleven, as in the ketores and the eleven goat-hair curtains.",
+        "yi": "דער משגיח פרעגט פארוואס יוסף'ס צווייטער חלום הייסט \"חלום אחר\", נישט ווי פרעה'ס חלום וואס איז געווען א הישנות, און פארוואס עס האט אזוי לאנג געדויערט ביז ער איז מקוים געווארן. אלס ערשטע הקדמה ערקלערט ער אז קדושה גייט מיט צען און די סטרא אחרא האט עלף, ממילא מוז דער כח וואס באקעמפט זי אויך האבן עלף, ווי ביי די קטורת און די עלף יריעות עזים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-09-09-vayeshev",
+      "startSeg": 232,
+      "endSeg": 291,
+      "title": { "en": "The hidden ninth verse and the letter tes", "yi": "דער באהאלטענער ניינטער פסוק און דער אות טית" },
+      "summary": {
+        "en": "As a second introduction the Rav brings the Mei HaShiloach that the ninth verse of every sedra holds hidden secrets, corresponding to Yosef, the hidden one. He connects this to the letter tes, whose good is hidden inside, to the first 'tov' in the Torah, the hidden light, and to the Bnei Yissaschar that this light is hidden in the Chanukah lights.",
+        "yi": "אלס צווייטע הקדמה ברענגט דער משגיח דעם מי השילוח אז דער ניינטער פסוק פון יעדער סדרה האט באהאלטענע סודות, קעגן יוסף וואס איז באהאלטן. ער פארבינדט דאס מיטן אות טית וואס זיין גוטס איז באהאלטן אינעווייניג, מיטן ערשטן \"טוב\" אין דער תורה, דער אור הגנוז, און מיטן בני יששכר אז די ליכט איז באהאלטן אין די חנוכה ליכט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-09-09-vayeshev",
+      "startSeg": 292,
+      "endSeg": 406,
+      "title": { "en": "Yosef's other dream is a Chanukah dream", "yi": "יוסף'ס חלום אחר איז א חלום פון חנוכה" },
+      "summary": {
+        "en": "The Rav applies the introductions: 'he dreamed another dream' is the ninth verse of Vayeshev and speaks of Chanukah, when the Shechinah comes below ten handbreadths to the lowest Jews. The eleven stars are the power of eleven, and Yosef, the hidden soul whose name equals 'king of Yavan' according to the Shelah, carries the power of Chanukah.",
+        "yi": "דער משגיח ווענדט אן די הקדמות: \"ויחלם עוד חלום אחר\" איז דער ניינטער פסוק פון וישב און רעדט פון חנוכה, ווען די שכינה קומט אראפ למטה מעשרה צו די נידעריגסטע אידן. די אחד עשר כוכבים זענען דער כח פון עלף, און יוסף, די באהאלטענע נשמה וואס איז בגימטריא \"מלך יון\" לויטן של\"ה, טראגט דעם כח פון חנוכה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-09-09-vayeshev",
+      "startSeg": 407,
+      "endSeg": 494,
+      "title": { "en": "Yaakov's wonder and the ninth of everything", "yi": "יעקב'ס התפעלות און דאס ניינטע אין אלעם" },
+      "summary": {
+        "en": "The Rav reads Yaakov's 'what is this dream' as an exclamation of wonder at a dream of Chanukah, when the hidden lights come down to the lowest place. He shows that the light is revealed in the ninth month, Kislev, in the ninth sedra, Vayeshev, through the ninth verse and Yosef, and brings the Gemara that seeing a tes in a dream is a good sign.",
+        "yi": "דער משגיח טייטשט יעקב'ס \"מה החלום הזה\" אלס א התפעלות פון א חלום פון חנוכה, ווען די באהאלטענע ליכט קומען אראפ צום נידעריגסטן ארט. ער ווייזט אז די ליכט ווערט נתגלה אינעם ניינטן חודש כסלו, אין דער ניינטער סדרה וישב, דורכן ניינטן פסוק און דורך יוסף, און ברענגט די גמרא אז ווער עס זעט א טית אין חלום איז א גוטער סימן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-09-09-vayeshev",
+      "startSeg": 495,
+      "endSeg": 554,
+      "title": { "en": "Thirty-six lights and kedusha outside the wall", "yi": "זעקס און דרייסיג ליכט און קדושה חוץ לחומה" },
+      "summary": {
+        "en": "The Rav brings the Bnei Yissaschar that the first tes in the Torah, 'ki tov', is the hidden light, and that the thirty-six Chanukah lights correspond to it. He explains that Chanukah, a weekday festival, brings kedusha out beyond the wall to Jews in the lowest places, like a king who sends light to a lost prince.",
+        "yi": "דער משגיח ברענגט דעם בני יששכר אז דער ערשטער טית אין דער תורה, \"כי טוב\", איז דער אור הגנוז, און אז די זעקס און דרייסיג חנוכה ליכט זענען קעגן דעם. ער ערקלערט אז חנוכה, א וואכעדיגער יום טוב, ברענגט די קדושה ארויס חוץ לחומה צו אידן אין די נידעריגסטע ערטער, ווי א קעניג וואס שיקט ליכט צו א פארלוירענעם פרינץ."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-parsha-sefer-bereishes-09-09-vayeshev",
+      "startSeg": 555,
+      "endSeg": 608,
+      "title": { "en": "Loving Hashem and every Jew in all circumstances", "yi": "ליב האבן דעם אויבערשטן און יעדן איד אין אלע אומשטענדן" },
+      "summary": {
+        "en": "The Rav returns to Tanya chapter 32, the heart of the Tanya, and its call to draw close even distant Jews. From 'you shall love Hashem' and 'you shall love your fellow as yourself' he teaches that one must love Hashem even when things are hard, and love every Jew even when one has complaints, and closes with a blessing for Chanukah.",
+        "yi": "דער משגיח קומט צוריק צו תניא פרק ל\"ב, דאס הארץ פונעם תניא, און זיין רוף צו מקרב זיין אפילו ווייטע אידן. פון \"ואהבת את ה'\" און \"ואהבת לרעך כמוך\" לערנט ער אז מ'דארף ליב האבן דעם רבונו של עולם אפילו ווען עס איז שווער, און ליב האבן יעדן איד אפילו ווען מ'האט טענות אויף אים, און ער ענדיגט מיט א ברכה אויף חנוכה."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "פרק למבית פון תניא",
+      "work": "Tanya",
+      "ref": "Tanya ch. 32",
+      "sefariaRef": "Tanya, Part I; Likkutei Amarim 32",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [3, 4, 15, 33, 465], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "הילל א זאגן, א בן מיט תלמידי של ארם, אייב שלום",
+      "work": "Pirkei Avos",
+      "ref": "Avos 1:12",
+      "sefariaRef": "Pirkei Avot 1:12",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [5, 6, 7, 8], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ישנות א חלומה ... ממיאה האלה כמעט לעשות",
+      "work": "Bereishis",
+      "ref": "Bereishis 41:32",
+      "sefariaRef": "Genesis 41:32",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [129, 130, 131], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ויחלום חלומאכער ... ויחלם עוד חלום אחר",
+      "work": "Bereishis",
+      "ref": "Bereishis 37:9",
+      "sefariaRef": "Genesis 37:9",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [112, 295, 296, 332], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "שטעט אין זרע הקדש, אז קדושה איז תולה און די מספר אתרה",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [143, 144, 145, 150], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די ברייז וואס מ'זאגט ... י' אלף סימן",
+      "work": "Beraisa of Pittum HaKetores",
+      "ref": "Kerisos 6a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [171, 173, 174, 204], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "י' א' יריעות פון איזום",
+      "work": "Shemos",
+      "ref": "Shemos 26:7",
+      "sefariaRef": "Exodus 26:7",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [213, 214, 216, 217], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אחדת היום מחורם דרך את היום",
+      "work": "Devarim",
+      "ref": "Devarim 1:2",
+      "sefariaRef": "Deuteronomy 1:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [223, 224], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ספרים הקדושים אז משיח איז בגימטריא נאך איש",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [197, 198], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "מהשילח ... אין פרשת בארג",
+      "work": "Mei HaShiloach",
+      "ref": "Mei HaShiloach, Balak",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [232, 234, 238, 241], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ויאמר בילם אבו אלהים בולק מלך מוח",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 22:10",
+      "sefariaRef": "Numbers 22:10",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [235, 236, 237], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "זייער הקודש שטעט אז דער אות טית איז צבא סתם בגבי",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [254, 255], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אין מדרש שטעט ... דער ערשטער פסוק פון וואס דער ווארט טוב ווערט דערמאנט",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [266, 268, 269, 270], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "בני יששכר, א ספעציעלער ספר",
+      "work": "Bnei Yissaschar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [273, 275, 277, 278, 495], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "פון דעם רוקח",
+      "work": "Rokeach",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [276], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "פון מהר״ל",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [276], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די גמרא זאגט ... מיולם ליוד אין שכינה למטה מיוסף",
+      "work": "Gemara Sukkah",
+      "ref": "Sukkah 5a",
+      "sefariaRef": "Sukkah 5a",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [313, 314, 315], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "חנוכה איז למטה מיוסף",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 21b",
+      "sefariaRef": "Shabbat 21b",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [317, 318, 319], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "געשטעט אין מאור עיניים",
+      "work": "Me'or Einayim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [323, 324, 325, 326], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "עס שטעט שלה הקדוש, יוסף איז בגימטחו המלך יואל",
+      "work": "Shelah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [361, 362, 364], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "מה החלום הזה שהי'דעטך ... הבנה באנו",
+      "work": "Bereishis",
+      "ref": "Bereishis 37:10",
+      "sefariaRef": "Genesis 37:10",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [418, 426, 455], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "מה האפטו שירתך",
+      "work": "Tehillim",
+      "ref": "Tehillim 119:97",
+      "sefariaRef": "Psalms 119:97",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [419, 420, 422], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "די גמרא'ס וועטן ברכות, הרי יצאת מחלומו",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 57a",
+      "sefariaRef": "Berakhot 57a",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [485, 486, 487, 488], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ויפט את השם לככה",
+      "work": "Devarim",
+      "ref": "Devarim 6:5",
+      "sefariaRef": "Deuteronomy 6:5",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [565, 568], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ויפט אליך כמוך אני השם",
+      "work": "Vayikra",
+      "ref": "Vayikra 19:18",
+      "sefariaRef": "Leviticus 19:18",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [566, 598], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav reads the Rebbe of Lublin's praise of a man who harmed his town as a glimpse of the hidden good in him, the same hidden light that the Chanukah lights reveal.",
+        "yi": "דער משגיח טייטשט אז דער רבי פון לובלין'ס לויב אויף א איד וואס האט געשאדט זיין שטעטל איז געווען א בליק אויף דעם באהאלטענעם טוב אין אים, די זעלבע אור הגנוז וואס די חנוכה ליכט מאכן שיינען."
+      },
+      "evidence": { "segs": [67, 68, 97, 105, 106], "confidence": 0.65 }
+    },
+    {
+      "text": {
+        "en": "Since every power of kedusha has its counterpart in the sitra achra, the side of holiness that fights the sitra achra must itself carry the number eleven, which is why the ketores has eleven spices.",
+        "yi": "וויבאלד יעדער כח פון קדושה האט זיין קעגנזייט אין דער סטרא אחרא, מוז דער כח פון קדושה וואס באקעמפט די סטרא אחרא אליין טראגן דעם מספר עלף, און דערפאר האט די קטורת עלף סממנים."
+      },
+      "evidence": { "segs": [159, 160, 164, 165, 171], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Yosef's second dream is called 'another dream' because it is not a repetition of the first but a dream of a different kind: a dream of Chanukah and the hidden light.",
+        "yi": "יוסף'ס צווייטער חלום הייסט \"חלום אחר\" ווייל ער איז נישט קיין איבערחזרן פונעם ערשטן נאר א חלום פון אן אנדער סארט: א חלום פון חנוכה און פונעם אור הגנוז."
+      },
+      "evidence": { "segs": [300, 305, 306, 307, 309], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Chanukah's light is bound to the number nine: it appears in Kislev, the ninth month, during Vayeshev, the ninth sedra, through its ninth verse and Yosef, the ninth sefirah, all echoing the letter tes whose good is hidden inside.",
+        "yi": "די ליכט פון חנוכה איז פארבונדן מיטן מספר ניין: זי באווייזט זיך אין כסלו, דער ניינטער חודש, ביי וישב, דער ניינטער סדרה, דורך איר ניינטן פסוק און דורך יוסף, די ניינטע ספירה, אלעס קעגן דעם אות טית וואס זיין גוטס איז באהאלטן אינעווייניג."
+      },
+      "evidence": { "segs": [474, 475, 477, 479, 484], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Yosef, the hidden soul whose brothers did not recognize him and whose name Tzafnas means hidden, carries the power of Chanukah, and the Shelah's gematria of Yosef as 'king of Yavan' shows that he is the one who fights Yavan.",
+        "yi": "יוסף, די באהאלטענע נשמה וואס די שבטים האבן אים נישט דערקענט און וועמענס נאמען צפנת מיינט באהאלטן, טראגט דעם כח פון חנוכה, און דעם של\"ה'ס גימטריא אז יוסף איז \"מלך יון\" ווייזט אז ער איז דער וואס באקעמפט יון."
+      },
+      "evidence": { "segs": [355, 356, 357, 362, 364, 365], "confidence": 0.7 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The kvitel against the troublemaker", "yi": "דאס קוויטל קעגן דעם בעל מזיק" },
+      "retelling": {
+        "en": "Jews came to the Rebbe of Lublin and told him that in their town there was a man who caused Jews great troubles. They gave him a kvitel with the man's name, asking that he no longer be able to harm Jews. The Rebbe looked at the kvitel and said that the Jew whose name was written there shines in all worlds, which astonished them. The Rav connects what the Rebbe saw in this man, his hidden light, with the lighting of the Chanukah lights.",
+        "yi": "אידן זענען געקומען צום רבי'ן פון לובלין און דערציילט אז אין זייער שטעטל איז פאראן א איד וואס מאכט אידן גרויסע צרות. זיי האבן אים געגעבן א קוויטל מיטן נאמען פון דעם איד, אז ער זאל מער נישט קענען שאדן אידן. דער רבי האט איבערגעקוקט דאס קוויטל און געזאגט אז דער איד וואס זיין נאמען שטייט דא לייכט אין אלע עולמות, און זיי זענען געווען דערשטוינט. דער משגיח פארבינדט וואס דער רבי האט געזען ביי דעם איד, זיין באהאלטענע ליכט, מיטן צינדן די חנוכה ליכט."
+      },
+      "people": ["the Rebbe of Lublin"],
+      "evidence": { "segs": [55, 56, 60, 63, 67, 106], "confidence": 0.65 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why is Yosef's second dream called 'another dream', when Paroh's double dream is treated as a repetition that means the matter will happen soon, and Yosef's took twenty-two years?",
+        "yi": "פארוואס הייסט יוסף'ס צווייטער חלום \"חלום אחר\", ווען ביי פרעה איז דער צווייטער חלום א הישנות וואס ווייזט אז די זאך וועט באלד געשען, און ביי יוסף האט עס געדויערט צוויי און צוואנציג יאר?"
+      },
+      "answer": {
+        "en": "Because the second dream is not a repetition at all but a different dream, hidden in the ninth verse of the sedra: a dream of Chanukah and the hidden light.",
+        "yi": "ווייל דער צווייטער חלום איז בכלל נישט קיין הישנות נאר אן אנדער חלום, באהאלטן אינעם ניינטן פסוק פון דער סדרה: א חלום פון חנוכה און פונעם אור הגנוז."
+      },
+      "questionSegs": [121, 122, 129, 135, 137],
+      "answerSegs": [296, 297, 300, 305, 309],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "If eleven belongs to the sitra achra, why do we find eleven in kedusha, as in the ketores?",
+        "yi": "אויב עלף געהערט צו דער סטרא אחרא, פארוואס געפינט מען עלף אין קדושה, ווי ביי די קטורת?"
+      },
+      "answer": {
+        "en": "Because the power of kedusha that fights the sitra achra must itself have the number eleven.",
+        "yi": "ווייל דער כח פון קדושה וואס באקעמפט די סטרא אחרא מוז אליין האבן דעם מספר עלף."
+      },
+      "questionSegs": [152, 153, 154],
+      "answerSegs": [164, 165, 171],
+      "confidence": 0.7
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says one must love and draw close even Jews far from avodas Hashem, hating only the bad in them and loving the hidden good.",
+        "yi": "דער משגיח זאגט אז מ'דארף ליב האבן און מקרב זיין אפילו אידן וואס זענען ווייט פון עבודת השם, און פיינט האבן נאר דאס שלעכטס אין זיי און ליב האבן דעם באהאלטענעם טוב."
+      },
+      "evidence": { "segs": [11, 15, 28, 30, 285], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one must keep loving Hashem in all circumstances, even when things are hard, and know that everything is good.",
+        "yi": "דער משגיח זאגט אז מ'דארף ווייטער ליב האבן דעם רבונו של עולם אין אלע אומשטענדן, אפילו ווען עס איז שווער, און וויסן אז אלעס איז גוט."
+      },
+      "evidence": { "segs": [570, 575, 576, 579, 581], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one must love every Jew in all circumstances, even one against whom one has complaints, because he has a G-dly soul.",
+        "yi": "דער משגיח זאגט אז מ'דארף ליב האבן יעדן איד אין אלע אומשטענדן, אפילו איינעם אויף וועמען מ'האט טענות, ווייל ער האט א נשמה."
+      },
+      "evidence": { "segs": [585, 586, 590, 591], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "Chanukah",
+    "ohr haganuz (the hidden light)",
+    "Yosef's dreams",
+    "Tanya chapter 32",
+    "love of every Jew",
+    "the number eleven and the sitra achra",
+    "the letter tes and the ninth verse",
+    "the Rebbe of Lublin",
+    "Shechinah below ten handbreadths",
+    "parshas Vayeshev"
+  ],
+  "concepts": [
+    { "he": "אור הגנוז", "heardAs": ["אור הגנות", "אויער הגנות", "אייר האגנות", "עורר הגדולות"] },
+    { "he": "טוב הגנוז", "heardAs": ["טייוו הגדות", "בחונות התוק"] },
+    { "he": "סטרא אחרא", "heardAs": ["סדכא אחרא", "סכר אחרע", "סדקה אחלה", "סתרה אחה"] },
+    { "he": "קטורת", "heardAs": ["קטורת", "אקטוירות"] },
+    { "he": "עשתי עשר", "heardAs": ["י' א'", "יאר' אלף", "אחדסר"] },
+    { "he": "טית", "heardAs": ["טית", "טס", "טעת", "תס"] },
+    { "he": "יריעות עזים", "heardAs": ["ירועות איזים", "יריעות פון איזום"] },
+    { "he": "למטה מעשרה", "heardAs": ["למטה מיוסף", "למטה מיוט", "למטה מיט יוד"] },
+    { "he": "צפנת פענח", "heardAs": ["צפנת"] },
+    { "he": "חוץ לחומה", "heardAs": ["חוץ לחומה"] },
+    { "he": "מקרבן לתורה", "heardAs": ["מקבל לחור", "מקריבים לתורה"] }
+  ],
+  "people": [
+    { "name": "Hillel", "heardAs": ["הילל"] },
+    { "name": "Aharon", "heardAs": ["ארם"] },
+    { "name": "the Ba'al HaTanya", "heardAs": ["בעל התניא", "בעלי תניא", "בעלער טיימדער"] },
+    { "name": "the Rebbe of Lublin", "heardAs": ["רבי'ן פון לובלין"] },
+    { "name": "Yosef", "heardAs": ["יוסף"] },
+    { "name": "Yaakov", "heardAs": ["יעקב"] },
+    { "name": "Paroh", "heardAs": ["פרעה", "פארא"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו"] },
+    { "name": "Bilam", "heardAs": ["בילם"] },
+    { "name": "the Mei HaShiloach", "heardAs": ["מהשילח", "מהשאלח", "מאה שאליה"] },
+    { "name": "the Bnei Yissaschar", "heardAs": ["בני יששכר"] },
+    { "name": "the Rokeach", "heardAs": ["רוקח"] },
+    { "name": "the Maharal", "heardAs": ["מהר״ל"] },
+    { "name": "the Me'or Einayim", "heardAs": ["מאור עיניים"] },
+    { "name": "the Shelah", "heardAs": ["שלה הקדוש"] }
+  ],
+  "asrNotes": "Yiddish ASR is poor and Hebrew quotations are heavily garbled, but the line of the shiur is recoverable. The details of the Lublin story (segs 69-92), the numbers in the pittum haketores beraisa (segs 175-209), the stretch about the mabul (226-231), the letter breakdown of 'kochav' (339-349), the milui of Chanukah (371-374), the aside about Pesach night in Boro Park (390-401) and the parable of the prince (527-544) could not be fully recovered and are left out or kept general. The catalog title 'Vayeshev' is a derived guess and matches the content."
+}

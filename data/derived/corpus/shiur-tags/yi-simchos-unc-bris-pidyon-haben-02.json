@@ -1,0 +1,116 @@
+{
+ "shiurId": "yi-simchos-unc-bris-pidyon-haben-02",
+ "topics": [
+  {
+   "id": "bris-milah",
+   "salience": 1
+  },
+  {
+   "id": "elul",
+   "salience": 0.7
+  },
+  {
+   "id": "hester-panim",
+   "salience": 0.5
+  },
+  {
+   "id": "sefer-devarim",
+   "salience": 0.5
+  },
+  {
+   "id": "avraham-avinu",
+   "salience": 0.4
+  },
+  {
+   "id": "tammuz-av",
+   "salience": 0.3
+  },
+  {
+   "id": "chinuch-habanim",
+   "salience": 0.3
+  }
+ ],
+ "sections": [
+  {
+   "index": 0,
+   "topicIds": [
+    "sefer-devarim",
+    "hester-panim"
+   ]
+  },
+  {
+   "index": 1,
+   "topicIds": [
+    "hester-panim",
+    "elul",
+    "tammuz-av"
+   ]
+  },
+  {
+   "index": 2,
+   "topicIds": [
+    "bris-milah",
+    "avraham-avinu",
+    "sefer-devarim"
+   ]
+  },
+  {
+   "index": 3,
+   "topicIds": [
+    "bris-milah",
+    "chinuch-habanim"
+   ]
+  }
+ ],
+ "conceptIds": [
+  "klalos",
+  "lishmah",
+  "nekudah-hapnimis",
+  "orlah",
+  "priah",
+  "samael"
+ ],
+ "personIds": [
+  "avraham-avinu",
+  "avuyah",
+  "elisha-ben-avuyah",
+  "moshe-rabbeinu",
+  "rashi",
+  "yaakov-avinu"
+ ],
+ "workIds": [
+  "bereishis",
+  "devarim",
+  "kiddushin",
+  "megillah",
+  "midrash",
+  "rashi",
+  "shabbos",
+  "sotah",
+  "tosafos-zevachim",
+  "vayikra",
+  "yerushalmi-chagigah",
+  "yeshayahu",
+  "zera-kodesh"
+ ],
+ "sourceWorkIds": [
+  "zera-kodesh",
+  "vayikra",
+  "sotah",
+  "tosafos-zevachim",
+  "yeshayahu",
+  "devarim",
+  null,
+  null,
+  "bereishis",
+  "midrash",
+  "zera-kodesh",
+  "devarim",
+  "megillah",
+  "rashi",
+  "kiddushin",
+  "yerushalmi-chagigah",
+  null,
+  "shabbos"
+ ]
+}

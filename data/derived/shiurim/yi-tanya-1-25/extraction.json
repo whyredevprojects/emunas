@@ -1,0 +1,512 @@
+{
+  "shiurId": "yi-tanya-1-25",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "Opening Tanya chapter 10, the Rav explains the tzaddik gamur, who has turned his evil into good and hates this world's pleasures out of love of Hashem, the tzaddik she'eino gamur, whose evil is only subdued, and the bnei aliyah who raise the evil up and serve Hashem for the sake of the Shechinah.",
+      "yi": "ביים אנהייב פון תניא פרק י ערקלערט דער משגיח דעם צדיק גמור, וואס האט איבערגעקערט זיין רע צו טוב און האט פיינט די תענוגים פון עולם הזה פון גרויס אהבה צום אייבערשטן, דעם צדיק שאינו גמור, ביי וועמען דער רע איז נאר אונטערגעבויגן, און די בני עלייה וואס הייבן אויף דעם רע און דינען דעם אייבערשטן פאר דער שכינה."
+    },
+    "abstract": {
+      "en": "The Rav explains that until chapter 10 the Tanya laid down foundations; now the path of avodah begins, and the questions of chapter one on tzaddik v'tov lo and tzaddik v'ra lo will be answered. The tzaddik gamur and the rasha gamur are two extremes that have lost their bechirah: one has turned his evil into good, the other, like Pharaoh, his good into evil. He tells of tzaddikim who remembered earlier gilgulim. The tzaddik gamur hates this world's pleasures because they come from the sitra achra and are the opposite of his love of Hashem with delight, illustrated by stories of the Beis Aharon and the Berditchever. The tzaddik she'eino gamur hates evil only according to his level; his evil is subdued and nullified, not transformed. Finally he explains the bnei aliyah, who raise the evil up to holiness and serve Hashem for a need on High, to do kindness with the Shechinah in exile.",
+      "yi": "דער משגיח זאגט אז ביז פרק י האט דער בעל התניא אוועקגעלייגט יסודות, און יעצט הייבט זיך אן דער דרך העבודה, און די קשיות פון ערשטן פרק אויף צדיק וטוב לו און צדיק ורע לו ווערן פארענטפערט. דער צדיק גמור און דער רשע גמור זענען צוויי עקסטרעמען וואס האבן פארלוירן זייער בחירה: איינער האט איבערגעקערט דעם רע צו טוב, דער אנדערער, אזוי ווי פרעה, דעם טוב צו רע. ער דערציילט פון צדיקים וואס האבן געדענקט זייערע פריערדיגע גלגולים. דער צדיק גמור האט פיינט די תענוגים פון עולם הזה, ווייל זיי קומען פון דער סטרא אחרא און זענען דאס פארקערטע פון זיין אהבה בתענוגים צום אייבערשטן; דאס ברענגט ער מיט מעשיות פונעם בית אהרן און פונעם בארדיטשובער. דער צדיק שאינו גמור האט פיינט דעם רע נאר לויט זיין מדריגה; ביי אים איז דער רע אונטערגעבויגן און בטל, אבער נישט איבערגעקערט. צום סוף ערקלערט ער די בני עלייה, וואס הייבן אויף דעם רע צו קדושה און דינען דעם אייבערשטן לצורך גבוה, כדי צו טאן א חסד מיט דער שכינה אין גלות."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "From chapter 10 the Tanya moves from foundations to the path of avodah and begins answering the questions of chapter one.",
+          "yi": "פון פרק י אן גייט דער תניא איבער פון די יסודות צום דרך העבודה, און הייבט אן צו פארענטפערן די קשיות פון ערשטן פרק."
+        },
+        "evidence": { "segs": [17, 20, 25, 29], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The tzaddik gamur has transformed his evil into good, while the rasha gamur has transformed his good into evil; both extremes no longer have real bechirah.",
+          "yi": "דער צדיק גמור האט איבערגעקערט זיין רע צו טוב, און דער רשע גמור האט איבערגעקערט זיין טוב צו רע; ביי ביידע עקסטרעמען איז שוין נישטא קיין אמת'ע בחירה."
+        },
+        "evidence": { "segs": [55, 60, 75, 76, 85], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The tzaddik gamur hates the pleasures of this world because they come from the kelipah, the opposite of his love of Hashem with delight.",
+          "yi": "דער צדיק גמור האט פיינט די תענוגים פון עולם הזה ווייל זיי קומען פון דער קליפה, וואס איז דאס פארקערטע פון זיין אהבה בתענוגים צום אייבערשטן."
+        },
+        "evidence": { "segs": [199, 205, 208, 288, 289], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "In the tzaddik she'eino gamur the evil is subdued and nullified by the good, but it remains evil, so he is called tzaddik v'ra lo.",
+          "yi": "ביים צדיק שאינו גמור איז דער רע אונטערגעבויגן און בטל צום טוב, אבער ער בלייבט רע, דערפאר הייסט ער צדיק ורע לו."
+        },
+        "evidence": { "segs": [174, 178, 399, 402, 406], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Hatred of evil and love of Hashem go together: only one who hates evil completely can love Hashem completely.",
+          "yi": "שנאה צום רע און אהבה צום אייבערשטן גייען צוזאמען: נאר דער וואס האט פיינט דעם רע אינגאנצן קען האבן אן אהבה צום אייבערשטן אינגאנצן."
+        },
+        "evidence": { "segs": [294, 296, 414, 415, 416, 417], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The bnei aliyah raise the evil up to holiness, and they serve Hashem not to quench their own thirst for Him but to do kindness with the Shechinah in exile.",
+          "yi": "די בני עלייה הייבן אויף דעם רע צו קדושה, און זיי דינען דעם אייבערשטן נישט כדי צו שטילן זייער אייגענעם דורשט, נאר כדי צו טאן א חסד מיט דער שכינה אין גלות."
+        },
+        "evidence": { "segs": [462, 464, 491, 534, 541, 542], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-tanya-13-1-tanya",
+      "startSeg": 0,
+      "endSeg": 62,
+      "title": {
+        "en": "From foundations to the path of avodah",
+        "yi": "פון די יסודות צום דרך העבודה"
+      },
+      "summary": {
+        "en": "The Rav explains that until chapter 10 the Tanya laid down foundations, and from here the path of avodah begins and the questions of chapter one are answered. He reads the opening of the chapter and sets out the two extremes: the tzaddik gamur who has turned his yetzer hara into good, and the rasha who has turned his good into evil.",
+        "yi": "דער משגיח זאגט אז ביז פרק י האט דער תניא אוועקגעלייגט יסודות, און פון דא אן הייבט זיך אן דער דרך העבודה און די קשיות פון ערשטן פרק ווערן פארענטפערט. ער לערנט דעם אנהייב פונעם פרק און שטעלט אוועק די צוויי עקסטרעמען: דער צדיק גמור וואס האט איבערגעקערט זיין יצר הרע צו טוב, און דער רשע וואס האט איבערגעקערט זיין טוב צו רע."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-13-1-tanya",
+      "startSeg": 63,
+      "endSeg": 126,
+      "title": {
+        "en": "Pharaoh, and tzaddikim without bechirah",
+        "yi": "פרעה, און צדיקים אן בחירה"
+      },
+      "summary": {
+        "en": "Using Pharaoh, whose heart was turned to evil, the Rav shows that the two extremes have lost their bechirah. He tells of tzaddikim such as the Yismach Moshe and the Apter Rav who remembered their earlier gilgulim, and explains that Pharaoh let the Jews go not by free choice; until Matan Torah, he adds, non-Jews could still reach a high level, as the Ramchal discusses.",
+        "yi": "מיט פרעה, וואס זיין הארץ איז איבערגעקערט געווארן צו רע, ווייזט דער משגיח אז די צוויי עקסטרעמען האבן פארלוירן זייער בחירה. ער דערציילט פון צדיקים ווי דער ישמח משה און דער אפטער רב וואס האבן געדענקט זייערע פריערדיגע גלגולים, און ערקלערט אז פרעה האט ארויסגעלאזט די אידן נישט מיט בחירה; ביז מתן תורה, לייגט ער צו, האבן גוים נאך געקענט זיין הויך, אזוי ווי דער רמח\"ל רעדט דערפון."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-13-1-tanya",
+      "startSeg": 127,
+      "endSeg": 203,
+      "title": {
+        "en": "Tzaddik v'ra lo and tzaddik v'tov lo",
+        "yi": "צדיק ורע לו און צדיק וטוב לו"
+      },
+      "summary": {
+        "en": "After placing the beinoni between the extremes, the Rav reads the Tanya: one who drives out evil but has not transformed it is a tzaddik she'eino gamur, tzaddik v'ra lo, whose evil is only bent and suppressed. The tzaddik gamur has turned it fully to good, has removed the soiled garments, and despises the pleasures of this world.",
+        "yi": "נאכן אוועקשטעלן דעם בינוני צווישן די עקסטרעמען, לערנט דער משגיח דעם תניא: דער וואס טרייבט ארויס דעם רע אבער האט אים נישט איבערגעקערט איז א צדיק שאינו גמור, א צדיק ורע לו, ביי וועמען דער רע איז נאר כפוף און אונטערגעדריקט. דער צדיק גמור האט אים אינגאנצן איבערגעקערט צו טוב, האט אויסגעטון די צואה'דיגע בגדים, און האט מיאוס די תענוגים פון עולם הזה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-13-1-tanya",
+      "startSeg": 204,
+      "endSeg": 303,
+      "title": {
+        "en": "Love of Hashem with delight",
+        "yi": "אהבה בתענוגים צום אייבערשטן"
+      },
+      "summary": {
+        "en": "The Rav explains why the tzaddik gamur hates this world's pleasures: they come from the kelipah, while he serves Hashem with a love full of delight. He brings the Beis Aharon on the word 'kamah', his reply about a nobleman who went sledding on sugar in summer, a tzaddik who could not tear himself away from Shemoneh Esrei, and the Berditchever who rushed to learn Gemara Sukkah after Yom Kippur; the measure of the love is the measure of the hatred of the sitra achra.",
+        "yi": "דער משגיח ערקלערט פארוואס דער צדיק גמור האט פיינט די תענוגים פון עולם הזה: זיי קומען פון דער קליפה, און ער דינט דעם אייבערשטן מיט אן אהבה פול מיט תענוג. ער ברענגט דעם בית אהרן אויפן ווארט \"כמה\", זיין תשובה אויף א פריץ וואס איז געפארן מיט א שליטן אויף צוקער אין מיטן זומער, א צדיק וואס האט זיך נישט געקענט אפרייסן פון שמונה עשרה, און דעם בארדיטשובער וואס האט זיך געאיילט צו לערנען גמרא סוכה נאך יום כיפור; לויט די אהבה איז די שנאה צו דער סטרא אחרא."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-13-1-tanya",
+      "startSeg": 304,
+      "endSeg": 388,
+      "title": {
+        "en": "Why we must know what a tzaddik is",
+        "yi": "פארוואס מ'דארף וויסן וואס א צדיק איז"
+      },
+      "summary": {
+        "en": "The Rav asks why people who are not tzaddikim need to know this, and answers that one must love tzaddikim and know whose Torah one learns. The tzaddik she'eino gamur hates this world only according to his level, which he illustrates with the countless levels among people; one should not be shaken by still feeling an attraction to this world, since fighting it is our avodah. He returns to the tzaddikim who remembered earlier gilgulim and explains why others are not given that memory.",
+        "yi": "דער משגיח פרעגט פארוואס מענטשן וואס זענען נישט קיין צדיקים דארפן דאס וויסן, און ענטפערט אז מ'דארף ליב האבן צדיקים און וויסן וועמענס תורה מ'לערנט. דער צדיק שאינו גמור האט פיינט עולם הזה נאר לויט זיין מדריגה, וואס ער ווייזט מיט די אומצאליגע מדריגות צווישן מענטשן; מ'דארף נישט נתפעל ווערן ווען מ'שפירט נאך א צוציאונג צו עולם הזה, ווייל קעמפן דערקעגן איז אונזער עבודה. ער קערט זיך אום צו די צדיקים וואס האבן געדענקט זייערע גלגולים און ערקלערט פארוואס אנדערע באקומען נישט אזא זכרון."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-13-1-tanya",
+      "startSeg": 389,
+      "endSeg": 453,
+      "title": {
+        "en": "Evil nullified, and the levels of tzaddikim",
+        "yi": "דער רע בטל, און די מדריגות פון צדיקים"
+      },
+      "summary": {
+        "en": "The Rav explains that in the tzaddik she'eino gamur the evil is nullified by the strength of the good so that he never sins, yet it remains evil, and so he is tzaddik v'ra lo; one who does not hate evil completely does not love Hashem completely, except at high moments. This level divides into countless levels, from those whose evil is batel b'shishim, which he connects with the Gemara's numbers of 18,000, 36 and one tzaddik.",
+        "yi": "דער משגיח ערקלערט אז ביים צדיק שאינו גמור איז דער רע בטל ברוב פון דעם כח פונעם טוב, אזוי אז ער טוט קיינמאל נישט קיין עבירה, אבער ער בלייבט רע, און דערפאר איז ער א צדיק ורע לו; דער וואס האט נישט פיינט דעם רע אינגאנצן האט אויך נישט ליב דעם אייבערשטן אינגאנצן, חוץ אין הויכע מאמענטן. די מדריגה צוטיילט זיך אויף אומצאליגע מדריגות, ביז צו די וואס ביי זיי איז דער רע בטל בשישים, און ער פארבינדט דאס מיט די צאלן אין דער גמרא פון 18,000, 36 און איין צדיק."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-13-1-tanya",
+      "startSeg": 454,
+      "endSeg": 594,
+      "title": {
+        "en": "The bnei aliyah",
+        "yi": "די בני עלייה"
+      },
+      "summary": {
+        "en": "The Rav explains why the true tzaddikim gemurim are called bnei aliyah: they raise the evil up to holiness, as in the Zohar's story of R' Chiya at the heichal of R' Shimon bar Yochai, where darkness is turned to light. A second reason is that they serve Hashem for a need on High, not even to quench their own thirst for Him, but to do kindness with the Shechinah in exile, as the Tikkunim and the Ra'aya Mehemna describe.",
+        "yi": "דער משגיח ערקלערט פארוואס די אמת'ע צדיקים גמורים הייסן בני עלייה: זיי הייבן אויף דעם רע צו קדושה, אזוי ווי די מעשה אין זוהר מיט רבי חייא ביים היכל פון רבי שמעון בן יוחאי, וואו מ'קערט איבער חשוכא לנהורא. א צווייטער טעם איז אז זיי דינען דעם אייבערשטן לצורך גבוה, אפילו נישט כדי צו שטילן זייער אייגענעם דורשט, נאר כדי צו טאן א חסד מיט דער שכינה אין גלות, אזוי ווי די תיקונים און דער רעיא מהימנא ברענגען."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "תירוקיות והנה, כשער האט דערמאגט בנפשי העולה",
+      "work": "Tanya",
+      "ref": "Tanya ch. 10",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [33, 34, 139, 162, 187], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "די אלע קשיות וואס ער האט געפרעגט אין ערשטן פרק",
+      "work": "Tanya",
+      "ref": "Tanya ch. 1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [25, 46, 131], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "וביאת הרמביקי הבעכה",
+      "work": "Devarim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [37, 38, 39], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ויהאב איך לבף פרעה",
+      "work": "Shemos",
+      "ref": "Shemos 14:5",
+      "sefariaRef": "Exodus 14:5",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [78, 81, 148], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "עדמתי מיינתא לענית מפני",
+      "work": "Shemos",
+      "ref": "Shemos 10:3",
+      "sefariaRef": "Exodus 10:3",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [108], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "דער רבי משה חיים ליצאטא רעדט וועגן דעם",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [119, 120, 121], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "עס שטעט אין בית אהרן",
+      "work": "Beis Aharon",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [212, 215, 218, 220], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "צמר לחבד נפשי כמה לחבד שרי",
+      "work": "Tehillim",
+      "ref": "Tehillim 63:2",
+      "sefariaRef": "Psalms 63:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [213, 214], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "כתח סוף תכלת שנת נתם ... חוקחינו ודא לבבי",
+      "work": "Tehillim",
+      "ref": "Tehillim 139:22-23",
+      "sefariaRef": "Psalms 139:22-23",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [290, 291, 292], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "תימנות הארפי צדיקי ... ראיתי בני עלי' שמים ועתים",
+      "work": "Gemara Sukkah",
+      "ref": "Sukkah 45b",
+      "sefariaRef": "Sukkah 45b",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [437, 438, 441, 456, 458], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ריח נחח איז עול לאישה",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [465, 466], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די חשכה מהבכן אלא מהורא ... טעמן מרירה ומוסקה",
+      "work": "Zohar",
+      "ref": "Zohar I 4a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [476, 477, 480, 483], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "כמשה כתב, הוי קיין צמיר לך למים",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 55:1",
+      "sefariaRef": "Isaiah 55:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [508, 509, 510], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "נפשי מצמא' על ה' ... צמא נפשי כאיא תרגה ופיק מים",
+      "work": "Tehillim",
+      "ref": "Tehillim 42:2-3",
+      "sefariaRef": "Psalms 42:2-3",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [506, 523], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ה' אחר ימינו",
+      "work": "Eichah",
+      "ref": "Eichah 2:3",
+      "sefariaRef": "Lamentations 2:3",
+      "resolution": "resolved",
+      "mention": "alluded",
+      "evidence": { "segs": [536, 537, 538], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "כתב פרשת בתיקנים ... חסד א מתחסד עם קנא",
+      "work": "Tikkunei Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [547, 548, 549, 550], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ושכנתי בתוכם",
+      "work": "Shemos",
+      "ref": "Shemos 25:8",
+      "sefariaRef": "Exodus 25:8",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [555], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אזוי ווי שטעט ראיה מהמנה ... פרשת תצה, כברא די השתדל ואת האבו",
+      "work": "Zohar",
+      "ref": "Zohar, Ra'aya Mehemna, Tetzaveh",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [560, 561, 562, 563], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The verse about Pharaoh says his heart was 'turned over', not merely bent: in the rasha gamur the good itself has become evil, the mirror image of the tzaddik gamur.",
+        "yi": "דער פסוק ביי פרעה זאגט אז זיין הארץ איז געווען \"ויהפך\", איבערגעקערט, נישט נאר אונטערגעבויגן: ביים רשע גמור איז דער טוב אליין געווארן רע, דאס פארקערטע פונעם צדיק גמור."
+      },
+      "evidence": { "segs": [78, 79, 82, 83], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Tzaddikim gemurim could remember their earlier gilgulim because they have no bechirah left to lose; others are not given that memory, since remembering would take away their bechirah.",
+        "yi": "צדיקים גמורים האבן געקענט געדענקען זייערע פריערדיגע גלגולים ווייל זיי האבן נישט קיין בחירה צו פארלירן; אנדערע געדענקען נישט, ווייל דער זכרון וואלט צוגענומען זייער בחירה."
+      },
+      "evidence": { "segs": [367, 368, 383, 384, 387, 388], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Love of Hashem and hatred of evil are measured against each other: whoever does not hate evil completely cannot love Hashem completely, except in elevated moments of davening.",
+        "yi": "די אהבה צום אייבערשטן און די שנאה צום רע ווערן געמאסטן איינס קעגן דאס אנדערע: דער וואס האט נישט פיינט דעם רע אינגאנצן קען נישט האבן אן אהבה צום אייבערשטן אינגאנצן, חוץ אין הויכע מאמענטן ביים דאווענען."
+      },
+      "evidence": { "segs": [414, 416, 417, 419, 421], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Like the fragrance of a korban that rises up, the bnei aliyah take the evil itself and raise it to such a level that it ascends to Heaven, where no evil can exist.",
+        "yi": "אזוי ווי דער ריח ניחוח פון א קרבן וואס גייט ארויף, נעמען די בני עלייה דעם רע אליין און הייבן אים אויף צו אזא מדריגה אז ער גייט ארויף אין הימל, וואו ס'קען נישט זיין קיין רע."
+      },
+      "evidence": { "segs": [465, 468, 469, 470], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The greatest tzaddikim serve Hashem not even to quench their own thirst for Him, but to do kindness with the Shechinah in exile, like a son toiling to redeem his parents.",
+        "yi": "די גרעסטע צדיקים דינען דעם אייבערשטן אפילו נישט כדי צו שטילן זייער אייגענעם דורשט צו אים, נאר כדי צו טאן א חסד מיט דער שכינה אין גלות, אזוי ווי א זון וואס מוטשעט זיך אויסצולייזן זיינע עלטערן."
+      },
+      "evidence": { "segs": [531, 534, 535, 542, 563, 570], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "The nobleman's summer sled ride",
+        "yi": "דער פריץ'ס שליטן-פארט אין זומער"
+      },
+      "retelling": {
+        "en": "A nobleman wanted to go sledding in the middle of summer, so his servants spread hundreds of sacks of sugar on the road until it was covered with sugar, and he rode his sled on the sugar. People told the Beis Aharon of the pleasure such a man could have. The Beis Aharon answered: what does he know of pleasure, compared to the pleasure he himself has when he stands on Shabbos and says Nishmas kol chai.",
+        "yi": "א פריץ האט געוואלט פארן מיט א שליטן אין מיטן זומער, האבן זיינע קנעכט געבראכט הונדערטער זעק צוקער און עס צעשפרייט אויפן וועג ביז ער איז געווען פול מיט צוקער, און ער איז געפארן מיטן שליטן אויפן צוקער. מ'האט דערציילט פארן בית אהרן וואספארא תענוג אזא פריץ קען האבן. האט דער בית אהרן געענטפערט: וואס ווייסט ער פון תענוג, קעגן דעם תענוג וואס ער אליין האט ווען ער שטייט שבת און זאגט נשמת כל חי."
+      },
+      "people": ["the Beis Aharon"],
+      "evidence": { "segs": [224, 226, 231, 235, 237, 239], "confidence": 0.8 }
+    },
+    {
+      "title": {
+        "en": "The Berditchever's Gemara Sukkah after Yom Kippur",
+        "yi": "דער בארדיטשובער'ס גמרא סוכה נאך יום כיפור"
+      },
+      "retelling": {
+        "en": "On motza'ei Yom Kippur Reb Levi Yitzchak of Berditchev cried out that he must hurry and catch up. When they brought him something to eat, he refused, and asked for a Gemara Sukkah, sat down and learned it through. Before Sukkos one should learn Maseches Sukkah, and on Yom Kippur there had been no time to learn; this was his pleasure.",
+        "yi": "מוצאי יום כיפור האט רבי לוי יצחק פון בארדיטשוב אויסגעשריגן אז ער מוז זיך כאפן. ווען מ'האט אים געבראכט עפעס צו עסן, האט ער נישט געוואלט, נאר געבעטן מ'זאל אים דערלאנגען א גמרא סוכה, און ער האט זיך אוועקגעזעצט און זי דורכגעלערנט. פאר סוכות דארף מען לערנען מסכת סוכה, און יום כיפור איז נישט געווען קיין צייט צו לערנען; דאס איז געווען זיין תענוג."
+      },
+      "people": ["Reb Levi Yitzchak of Berditchev"],
+      "evidence": { "segs": [266, 271, 273, 274, 276, 279], "confidence": 0.7 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why must the tzaddik gamur hate the pleasures of this world?",
+        "yi": "פארוואס מוז דער צדיק גמור פיינט האבן די תענוגים פון עולם הזה?"
+      },
+      "answer": {
+        "en": "Because all the desires of this world come from the kelipos, the opposite of his great love of Hashem with delight.",
+        "yi": "ווייל אלע חמדות פון עולם הזה קומען פון די קליפות, וואס זענען דאס פארקערטע פון זיין גרויסע אהבה בתענוגים צום אייבערשטן."
+      },
+      "questionSegs": [204],
+      "answerSegs": [205, 208, 210, 289],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why do people who are not tzaddikim need to know what a tzaddik is?",
+        "yi": "פארוואס דארפן מענטשן וואס זענען נישט קיין צדיקים וויסן וואס א צדיק איז?"
+      },
+      "answer": {
+        "en": "Because one must love tzaddikim and be humble before them, and when learning Torah one should know whose Torah one is learning.",
+        "yi": "ווייל מ'דארף ליב האבן צדיקים און בטל זיין צו זיי, און ווען מ'לערנט דארף מען וויסן וועמענס תורה מ'לערנט."
+      },
+      "questionSegs": [304, 305],
+      "answerSegs": [306, 310, 320, 321],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why did certain tzaddikim remember their earlier gilgulim while others do not?",
+        "yi": "פארוואס האבן געוויסע צדיקים געדענקט זייערע פריערדיגע גלגולים און אנדערע נישט?"
+      },
+      "answer": {
+        "en": "They were tzaddikim gemurim who came down only for the sake of their generation with a guarantee to remain tzaddikim, so they no longer had bechirah; someone who still has bechirah would lose it if he remembered.",
+        "yi": "זיי זענען געווען צדיקים גמורים וואס זענען אראפגעקומען נאר פאר זייער דור מיט א גאראנטיע אז זיי וועלן בלייבן צדיקים, ממילא האבן זיי שוין נישט געהאט קיין בחירה; איינער וואס האט נאך בחירה וואלט זי פארלוירן ווען ער זאל געדענקען."
+      },
+      "questionSegs": [367],
+      "answerSegs": [371, 379, 381, 384, 388],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why are the true tzaddikim called bnei aliyah?",
+        "yi": "פארוואס הייסן די אמת'ע צדיקים בני עלייה?"
+      },
+      "answer": {
+        "en": "Because they turn the evil over and raise it up to holiness; and further, because all their mitzvos are for a need on High.",
+        "yi": "ווייל זיי קערן איבער דעם רע און הייבן אים אויף צו קדושה; און נאך, ווייל אלע זייערע מצוות זענען לצורך גבוה."
+      },
+      "questionSegs": [460],
+      "answerSegs": [462, 464, 491, 496, 500],
+      "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says that when one sits down to learn, one should truly know whose Torah one is learning, the Tanna'im, Rashi, or tzaddikim like the Chasam Sofer and the Chofetz Chaim who learned lishmah.",
+        "yi": "דער משגיח זאגט אז ווען מ'זעצט זיך אוועק לערנען, זאל מען באמת וויסן וועמענס תורה מ'לערנט, פון די תנאים, פון רש\"י, אדער פון צדיקים ווי דער חתם סופר און דער חפץ חיים וואס האבן געלערנט לשמה."
+      },
+      "evidence": { "segs": [311, 313, 316, 317, 321], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one should not be shaken or feel bad on seeing that one still has some attraction to this world; we came into the world to fight the yetzer hara, and that is our avodah.",
+        "yi": "דער משגיח זאגט אז מ'דארף נישט נתפעל ווערן און זיך נישט שלעכט פילן ווען מ'זעט אז מ'האט נאך א שטיקל צוציאונג צו עולם הזה; מ'איז געקומען אויף דער וועלט צו קעמפן קעגן דעם יצר הרע, און דאס איז אונזער עבודה."
+      },
+      "evidence": { "segs": [357, 358, 359, 362, 364, 366], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "Tanya chapter 10",
+    "tzaddik gamur and tzaddik she'eino gamur",
+    "love of Hashem with delight",
+    "hatred of the sitra achra",
+    "bnei aliyah",
+    "free will and earlier gilgulim",
+    "serving Hashem for the sake of the Shechinah",
+    "levels of tzaddikim"
+  ],
+  "concepts": [
+    { "he": "צדיק גמור", "heardAs": ["צדיק גמר", "צדיק גמל"] },
+    { "he": "צדיק שאינו גמור", "heardAs": ["צדיק שיינע גמר", "צדיק שני גמל", "צדיק שענו גמל"] },
+    { "he": "צדיק ורע לו", "heardAs": ["צדיק וראלו", "צדיק ורע לו"] },
+    { "he": "צדיק וטוב לו", "heardAs": ["צדיק וטוב עליה"] },
+    { "he": "בינוני", "heardAs": ["עלבענינו"] },
+    { "he": "כפוף", "heardAs": ["שכפף", "כפף"] },
+    { "he": "בטל בשישים", "heardAs": ["בטל בשושם", "בצלה במיטה בשושם"] },
+    { "he": "בני עלייה", "heardAs": ["בני עלי'", "בני עליה"] },
+    { "he": "סטרא אחרא", "heardAs": ["סטחי אחרא", "שטחי אחר", "ספרי אחרא"] },
+    { "he": "אהבה בתענוגים", "heardAs": ["אהבה בתענגים", "אברה בתנוג"] },
+    { "he": "לצורך גבוה", "heardAs": ["הלצרך גבוה"] },
+    { "he": "שכינה", "heardAs": ["שכונה", "שכונ'ע הקדושה"] },
+    { "he": "ובערת הרע מקרבך", "heardAs": ["וביאת הרמביקי הבעכה"] },
+    { "he": "גלגולים", "heardAs": ["גלגלים"] }
+  ],
+  "people": [
+    { "name": "Pharaoh", "heardAs": ["פרעה", "פרי"] },
+    { "name": "the Yismach Moshe", "heardAs": ["ישמח משה"] },
+    { "name": "the Apter Rav", "heardAs": ["אבטר", "עבדול"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יעקב אבינא"] },
+    { "name": "Ramchal (R' Moshe Chaim Luzzatto)", "heardAs": ["רבי משה חיים ליצאטא"] },
+    { "name": "the Beis Aharon", "heardAs": ["בית אהרן", "בית שרון"] },
+    { "name": "Reb Levi Yitzchak of Berditchev", "heardAs": ["רבי לייב יצחק באדידזשעווער", "ר' אליהו יצחק בעדינשוויל"] },
+    { "name": "the Chasam Sofer", "heardAs": ["חתם סופר"] },
+    { "name": "the Chofetz Chaim", "heardAs": ["חפץ חיים"] },
+    { "name": "R' Shimon bar Yochai", "heardAs": ["רבי שמעון בן יחא'", "ר' שמעון בן יוכא"] },
+    { "name": "R' Elazar", "heardAs": ["רבי יאלעזר"] },
+    { "name": "R' Chiya", "heardAs": ["ר' יחיא'", "רבי יחיא"] }
+  ],
+  "asrNotes": "Yiddish ASR fair to poor; the Tanya text read aloud (chapter 10) is heavily garbled but recoverable from context. The story of the tzaddikim who remembered gilgulim (segs 93-112) is partly garbled, and which tzaddik was said to be identified with Shlomo HaMelech is unclear, so it is left out. The name of the tzaddik who could not tear himself from Shemoneh Esrei (segs 246-255) and the sefer cited there could not be recovered; seg 582 is a garbled run-on of the Tanya text."
+}

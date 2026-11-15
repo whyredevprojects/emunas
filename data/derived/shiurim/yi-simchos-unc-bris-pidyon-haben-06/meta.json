@@ -1,0 +1,60 @@
+{
+ "shiurId": "yi-simchos-unc-bris-pidyon-haben-06",
+ "generatedAt": "2026-11-15T07:58:22.541Z",
+ "shiur": {
+  "id": "yi-simchos-unc-bris-pidyon-haben-06",
+  "lang": "yi",
+  "category": "simcha",
+  "seriesId": null,
+  "seriesOrder": null,
+  "catalog": {
+   "source": "uncatalogued-guide",
+   "sectionId": "simchos",
+   "sectionTitle": "Simchos",
+   "n": "6",
+   "page": null,
+   "titleOriginal": "Bris (Shemini Atzeres)",
+   "subTitle": null,
+   "heading": "ברית מילה",
+   "derived": "filename",
+   "note": "type of simcha read from the file name, inside the \"bris pidyon haben\" folder"
+  },
+  "parsha": null,
+  "zman": "שמיני עצרת",
+  "perek": null,
+  "hebrewYears": [],
+  "recordingIds": [
+   "y-simchos-bris-pidyon-haben-06-bris-shemini-atzeres"
+  ],
+  "inScope": true,
+  "outOfScopeReason": null,
+  "pathNotes": []
+ },
+ "series": null,
+ "catalogTopics": [
+  "Bris (Shemini Atzeres)"
+ ],
+ "totalDurationSec": 277.3180625,
+ "recordings": [
+  {
+   "recording": {
+    "id": "y-simchos-bris-pidyon-haben-06-bris-shemini-atzeres",
+    "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Simchos/bris pidyon haben/06 Bris (Shemini Atzeres).mp3",
+    "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Simchos/bris pidyon haben/06 Bris (Shemini Atzeres)",
+    "durationSec": 277.32,
+    "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+    "sizeBytes": 1380643,
+    "duplicateOf": null,
+    "partOf": null
+   },
+   "order": 0,
+   "transcriptLanguage": "yi",
+   "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+   "durationSec": 277.3180625,
+   "segmentCount": 68,
+   "starts": [0,3.18,8.24,10.26,17.98,26.18,30.42,33.84,37.58,40.44,44.48,47.56,51.78,55.24,60.16,63.6,67.58,74.68,78.46,84.24,85.92,88.84,99.86,101.5,104.26,107.82,109.74,111.76,114.08,114.54,122.24,127.32,130.66,135.82,143.8,146.94,148.9,157.96,162.82,163.84,173.08,174.04,175.96,178.64,180.92,183.12,193.54,201.42,204.3,206.44,208.84,211.6,214.24,218.64,220.82,225.22,227.44,228.88,242.32,249.26,251.54,255.1,257.8,261.04,266.66,269.48,272.64,274.92],
+   "ends": [1.46,5.72,9.12,16.84,25.16,28.44,32.48,36.04,39.6,42.36,46.28,51.46,53.46,58.82,63.1,66.02,68.98,75.2,82.88,85.18,88.02,99.26,101.06,103.86,106.72,108.78,110.4,112.74,114.54,121.14,125.6,130.1,134.7,143.04,146.58,148.04,157.4,160.06,162.86,172.14,173.3,175.14,177.34,180.14,182.78,193.24,200.66,203.82,205.66,208.26,211.12,213.54,216.32,220.46,224.44,227.02,228.88,241.14,248.88,250.52,254.78,257.68,260.52,264.4,268.62,271.92,274.28,275.3],
+   "noise": []
+  }
+ ]
+}

@@ -1,0 +1,524 @@
+{
+  "shiurId": "yi-tanya-1-03",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains the Tanya's opening teaching that every Jew has two souls, why the side of evil is called sitra achra and klipah, and how the four klipos parallel the four elements.",
+      "yi": "דער משגיח ערקלערט דעם תניא'ס יסוד אז יעדער איד האט צוויי נשמות, פארוואס די צד הרע הייסט סטרא אחרא און קליפה, און ווי אזוי די פיר קליפות זענען כנגד די פיר יסודות."
+    },
+    "abstract": {
+      "en": "The Rav begins Tanya chapter one: every Jew, tzaddik or rasha, has two souls. The animal soul gives the biological life a person shares with every creature and comes from the earth; the G-dly soul comes from above and longs to cleave to Hashem. The animal soul comes from the sitra achra, 'the other side', and one cannot stand on both sides of the fence, as the Kotzker's vort about dancing at two weddings shows. It is also called klipah, a shell: it guards the fruit, but it must be broken to reach it, and breaking it is a person's purpose. The Ba'al Shem Tov's parable of the king's seven walls and stories of Rabbi Levi Yitzchak of Berditchev and Rabbi Aharon of Karlin show the sweetness waiting beyond. He then explains why the animal soul dwells in the blood, and the four klipos parallel to the four elements, illustrated by the layers of a walnut.",
+      "yi": "דער משגיח הייבט אן תניא פרק א: יעדער איד, סיי א צדיק סיי א רשע, האט צוויי נשמות. דער נפש הבהמית גיט דאס לעבן וואס א מענטש האט בשותפות מיט יעדן בעל חי, און ער קומט פון דער ערד; דער נפש האלקית קומט פון אויבן און בענקט זיך צו דבק'ן אין השם יתברך. דער נפש הבהמית קומט פון דער סטרא אחרא, די אנדערע זייט, און מ'קען נישט שטיין אויף ביידע זייטן פונעם פלויט, ווי דער קאצקער'ס ווארט פון טאנצן אויף צוויי חתונות. מ'רופט עס אויך קליפה: א שאלעכץ וואס היט די פרוכט, אבער מ'מוז עס צוברעכן כדי צוצוקומען צו דער פרוכט, און דאס איז דער תכלית פון א מענטש. דער משל פונעם בעל שם טוב פון דעם מלך'ס זיבן ווענט, און מעשיות פון ר' לוי יצחק בארדיטשובער און ר' אהרן קארלינער, ווייזן די זיסקייט וואס ווארט אויף יענער זייט. דערנאך ערקלערט ער פארוואס דער נפש הבהמית וואוינט אין בלוט, און די פיר קליפות כנגד די פיר יסודות, מיט א משל פון די שאלעכצן פון א וואלנאט."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Every Jew, whether tzaddik or rasha, has two souls: an animal soul from the side of klipah and a G-dly soul that is a part of G-d above.",
+          "yi": "יעדער איד, סיי א צדיק סיי א רשע, האט צוויי נשמות: א נפש הבהמית פון דער צד הקליפה, און א נפש האלקית וואס איז א חלק אלוק ממעל."
+        },
+        "evidence": { "segs": [9, 11, 12, 39, 40, 45], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The animal soul is the life force a person shares with every living creature, and its seat is the blood.",
+          "yi": "דער נפש הבהמית איז דער כח החיים וואס א מענטש האט בשותפות מיט אלע בעלי חיים, און זיין מקום איז אינעם דם."
+        },
+        "evidence": { "segs": [30, 31, 35, 511, 512, 514], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The source of evil is called sitra achra, 'the other side', because one cannot be on both sides of the fence at once.",
+          "yi": "דער מקור פונעם שלעכטס הייסט סטרא אחרא, די אנדערע זייט, ווייל מ'קען נישט זיין אויף ביידע זייטן פונעם פלויט אויף איינמאל."
+        },
+        "evidence": { "segs": [107, 109, 114, 116], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "It is called klipah because, like a shell, it is needed only to guard the fruit, and because it must be broken through to reach the fruit; breaking it is a person's purpose in the world.",
+          "yi": "מ'רופט עס קליפה ווייל, אזוי ווי א שאלעכץ, דארף מען עס נאר כדי צו היטן די פרוכט, און ווייל מ'מוז עס דורכברעכן כדי צוצוקומען צו דער פרוכט; דאס צוברעכן איז דער תכלית פון א מענטש אויף דער וועלט."
+        },
+        "evidence": { "segs": [184, 185, 197, 205, 210, 242], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "There are four klipos, parallel to the four elements that come from the four letters of Hashem's Name; the finest, klipas nogah, lets light through and can be turned to holiness.",
+          "yi": "ס'זענען פארהאן פיר קליפות, כנגד די פיר יסודות וואס קומען פון די פיר אותיות פון שם הוי'; די איידלסטע, קליפת נוגה, לאזט דורך די ליכטיגקייט און קען ווערן איבערגעקערט צו קדושה."
+        },
+        "evidence": { "segs": [553, 561, 584, 585, 639, 643], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-tanya-02-1-tanya",
+      "startSeg": 0,
+      "endSeg": 103,
+      "title": { "en": "Every Jew has two souls", "yi": "יעדער איד האט צוויי נשמות" },
+      "summary": {
+        "en": "The Rav reads the opening of Tanya chapter one: every Jew, tzaddik or rasha, has two souls. He explains the animal soul that a person shares with every creature and the G-dly soul from above, mentions a third, intellectual soul that the Tanya does not discuss here, and describes what each of the two souls desires.",
+        "yi": "דער משגיח לערנט דעם אנהייב פון תניא פרק א, אז יעדער איד, סיי א צדיק סיי א רשע, האט צוויי נשמות. ער ערקלערט דעם נפש הבהמית וואס א מענטש האט בשותפות מיט יעדן בעל חי, און דעם נפש האלקית פון אויבן, דערמאנט א דריטע נפש השכלית וואס דער תניא רעדט נישט דא דערפון, און שילדערט וואס יעדע פון די צוויי נשמות גלוסט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-02-1-tanya",
+      "startSeg": 104,
+      "endSeg": 181,
+      "title": { "en": "Sitra achra: you cannot dance at two weddings", "yi": "סטרא אחרא: מ'קען נישט טאנצן אויף צוויי חתונות" },
+      "summary": {
+        "en": "The Rav explains that the animal soul comes from the sitra achra, Aramaic for 'the other side', and that one cannot stand on both sides of the fence. He brings a vort of the Kotzker about dancing at two weddings, notes that what people say has truth in it, and explains that 'eishes chayil' means either the Torah or a physical wife, but not both together.",
+        "yi": "דער משגיח ערקלערט אז דער נפש הבהמית קומט פון דער סטרא אחרא, א לשון תרגום פאר די אנדערע זייט, און אז מ'קען נישט שטיין אויף ביידע זייטן פונעם פלויט. ער ברענגט א ווארט פונעם קאצקער פון טאנצן אויף צוויי חתונות, מערקט אן אז אין דעם וואס מענטשן זאגן איז דא אמת, און ערקלערט אז אשת חיל מיינט אדער די תורה אדער א גשמיות'דיגע אשה, אבער נישט ביידע צוזאמען."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-02-1-tanya",
+      "startSeg": 182,
+      "endSeg": 261,
+      "title": { "en": "Why evil is called klipah", "yi": "פארוואס דאס שלעכטס הייסט קליפה" },
+      "summary": {
+        "en": "The Rav gives two reasons for the name klipah: a shell only guards the fruit and is thrown away once the fruit is taken, and one must break through the shell to reach the fruit. He ties this to the keruvim and the flaming sword guarding Gan Eden and says breaking the klipah is a person's purpose.",
+        "yi": "דער משגיח גיט צוויי טעמים אויפן נאמען קליפה: א שאלעכץ היט נאר די פרוכט און מ'ווארפט עס אוועק ווען מ'נעמט די פרוכט, און מ'מוז דורכברעכן די שאלעכץ כדי צוצוקומען צו דער פרוכט. ער פארבינדט דאס מיט די כרובים און דעם להט החרב וואס היטן דעם גן עדן, און זאגט אז צוברעכן די קליפה איז דער תכלית פון א מענטש."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-02-1-tanya",
+      "startSeg": 262,
+      "endSeg": 331,
+      "title": { "en": "The Ba'al Shem Tov's parable of seven walls", "yi": "דעם בעל שם טוב'ס משל פון זיבן ווענט" },
+      "summary": {
+        "en": "The Rav tells the Ba'al Shem Tov's parable of a king surrounded by seven guarded walls: soldiers stop after the gifts of the first walls, but the prince breaks through all seven to reach his father, who then shows him the walls were only an illusion.",
+        "yi": "דער משגיח דערציילט דעם בעל שם טוב'ס משל פון א מלך ארומגערינגלט מיט זיבן באוואכטע ווענט: די חיילים בלייבן שטיין נאך די מתנות פון די ערשטע ווענט, אבער דער בן מלך ברעכט דורך אלע זיבן ביז צום טאטן, און דער טאטע ווייזט אים אז די ווענט זענען געווען נאר אן אחיזת עינים."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-02-1-tanya",
+      "startSeg": 332,
+      "endSeg": 383,
+      "title": { "en": "Wanting the King Himself", "yi": "וועלן דעם מלך אליין" },
+      "summary": {
+        "en": "The Rav applies the parable: a person must break the seven walls of the bad middos, and the one who serves Hashem out of love wants only Hashem Himself, as the Ba'al HaTanya would say in his dveikus. He brings the Gemara that the yetzer hara will look to tzaddikim like a mountain and to reshaim like a hair, and Dovid HaMelech's words that Torah is sweeter than honey.",
+        "yi": "דער משגיח איז מסביר דעם נמשל: א מענטש דארף צוברעכן די זיבן ווענט פון די שלעכטע מידות, און דער וואס דינט דעם אויבערשטן מיט אהבה וויל נאר השם יתברך אליין, ווי דער בעל התניא פלעגט זאגן אין זיין דביקות. ער ברענגט די גמרא אז דער יצר הרע וועט אויסזען פאר צדיקים ווי א בארג און פאר רשעים ווי א האר, און דוד המלך'ס ווערטער אז תורה איז זיסער פון האניג."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-02-1-tanya",
+      "startSeg": 384,
+      "endSeg": 474,
+      "title": { "en": "The poritz's pleasures and a tzaddik's", "yi": "דעם פריץ'ס תענוגים און א צדיק'ס תענוג" },
+      "summary": {
+        "en": "The Rav tells how Rabbi Levi Yitzchak of Berditchev, about to light Chanukah candles, asked a man about the poritz's food and bed and concluded that the poritz is well off but he himself is better off, and how Rabbi Aharon of Karlin dismissed a poritz sledding on sugar in midsummer next to his own pleasure in Nishmas on Shabbos. Each person feels the sweetness according to how much klipah he has broken.",
+        "yi": "דער משגיח דערציילט ווי ר' לוי יצחק בארדיטשובער, פארן צינדן חנוכה ליכט, האט אויסגעפרעגט א איד וועגן דעם פריץ'ס עסן און בעט און האט געענדיגט אז דעם פריץ איז גוט אבער אים אליין איז בעסער, און ווי ר' אהרן קארלינער האט אפגעמאכט א פריץ וואס איז געפארן מיט א שליטן אויף צוקער אינמיטן זומער אקעגן זיין תענוג פון נשמת שבת אינדערפרי. יעדער שפירט די זיסקייט לויט וויפיל קליפה ער האט צובראכן."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-02-1-tanya",
+      "startSeg": 475,
+      "endSeg": 551,
+      "title": { "en": "The animal soul dwells in the blood", "yi": "דער נפש הבהמית וואוינט אינעם דם" },
+      "summary": {
+        "en": "The Rav notes that holiness is likened to a nut whose shell must be cracked, then returns to the Tanya's text and its source in Rabbi Chaim Vital. He explains that the animal soul is clothed in the blood, as the passuk says, while the G-dly soul is in the brain, and gives a simple reason why the Torah forbids eating blood.",
+        "yi": "דער משגיח מערקט אן אז קדושה ווערט אנגערופן אן אגוז וואס מ'מוז צוברעכן זיין שאלעכץ, און דערנאך קערט ער זיך אום צום לשון פונעם תניא און זיין מקור ביי ר' חיים ויטאל. ער ערקלערט אז דער נפש הבהמית איז מלובש אינעם דם, ווי דער פסוק זאגט, און דער נפש האלקית איז אינעם מוח, און גיט א פשוט'ן טעם פארוואס די תורה פארבאט צו עסן בלוט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-02-1-tanya",
+      "startSeg": 552,
+      "endSeg": 701,
+      "title": { "en": "Four elements, four klipos, and the walnut", "yi": "פיר יסודות, פיר קליפות און דער וואלנאט" },
+      "summary": {
+        "en": "The Rav explains that the four elements come from the four letters of Hashem's Name, and that the four klipos parallel them. He brings Yechezkel's vision of the four barriers before the Kisei HaKavod, explains klipas nogah as a translucent curtain that lets light through and can be turned to holiness, and illustrates the four klipos with the four coverings of a walnut.",
+        "yi": "דער משגיח ערקלערט אז די פיר יסודות קומען פון די פיר אותיות פון שם הוי', און אז די פיר קליפות זענען כנגד זיי. ער ברענגט דעם נביא יחזקאל'ס מראה פון די פיר מחיצות פארן כסא הכבוד, ערקלערט קליפת נוגה ווי א דורכזיכטיגער פארהאנג וואס לאזט דורך ליכט און קען ווערן איבערגעקערט צו קדושה, און ווייזט די פיר קליפות אויף די פיר שאלעכצן פון א וואלנאט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "לכל איש ישראל אחד צדיק ואחד רשע, יש שטענע שמות",
+      "work": "Tanya",
+      "ref": "Tanya ch. 1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [9, 10, 486, 488], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "תל זל בשער הקדושה",
+      "work": "Sha'ar HaKedushah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [7, 484, 485], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ובייץ חיים שם נרנבערג ב'",
+      "work": "Eitz Chaim",
+      "ref": "Eitz Chaim, Sha'ar 50 ch. 2",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [8, 484], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "כירח מלפני יד טוב, און נשמות עניות איתו",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 57:16",
+      "sefariaRef": "Isaiah 57:16",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [18, 19, 21, 23, 24], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "כי יפה עטה ועל עפה תשוב",
+      "work": "Bereishis",
+      "ref": "Bereishis 3:19",
+      "sefariaRef": "Genesis 3:19",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [66, 67], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "צדיקי און חסידי, עמות העולם, יישרים חלק לעולם הבא",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [77, 78], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "זאגט די תרגום לסתחה דמשקנה הימין",
+      "work": "Targum Onkelos",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [108, 111, 112], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ס'איז דא א ווארט פון קארצקען",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [117, 121, 129, 131], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער גמרא זאגט אזאך מול, היינו מדי אמרו אונשו",
+      "work": "Gemara",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [136, 137, 150], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אין א היינטיגער סדרה שטעט אז ל' האט געווענט",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 29:17",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [140, 142, 144, 145], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "האט שלמה מלך זייער משאביך געווייזן די אשת חייל",
+      "work": "Mishlei",
+      "ref": "Mishlei 31:10",
+      "sefariaRef": "Proverbs 31:10",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [154, 156, 158], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "דער גמרא זאגט אז דאס איז א שומר לפרי",
+      "work": "Gemara",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [190], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "עסקרבים ואת לד אחריו א מתה פחות",
+      "work": "Bereishis",
+      "ref": "Bereishis 3:24",
+      "sefariaRef": "Genesis 3:24",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [229, 237, 238], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער משא נפלא והפלא פון בעש''ט",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [262, 265, 267, 332], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "אזוי ווי דער אלגערמייס זאגט אין סוכה",
+      "work": "Gemara Sukkah",
+      "ref": "Sukkah 52a",
+      "sefariaRef": "Sukkah 52a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [353, 355, 358, 360], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "א נחמדה מוזאווה, מפזרעווה ... מדבשים, נפת ספים",
+      "work": "Tehillim",
+      "ref": "Tehillim 19:11",
+      "sefariaRef": "Psalms 19:11",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [375, 378, 379], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "עגונת עגוז ירדתי",
+      "work": "Shir HaShirim",
+      "ref": "Shir HaShirim 6:11",
+      "sefariaRef": "Song of Songs 6:11",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [477, 478], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "כי נפש הבשר בדם הוא",
+      "work": "Vayikra",
+      "ref": "Vayikra 17:11",
+      "sefariaRef": "Leviticus 17:11",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [494, 513, 542], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "מער זארג אין דעם ירא צום פאר תפילה'ן לעגען, שיין נשמה שבמח",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [518, 519, 520], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "ליעולם דברים השם, דברך הניצור, באשר מיום",
+      "work": "Tehillim",
+      "ref": "Tehillim 119:89",
+      "sefariaRef": "Psalms 119:89",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [565, 566], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "איז פאראן אין די הפטירה פון שבעות ... יחזקה האט געזעהן דעם כיסאי הכבוד",
+      "work": "Yechezkel",
+      "ref": "Yechezkel 1:4",
+      "sefariaRef": "Ezekiel 1:4",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [593, 594, 597, 598, 599], "confidence": 0.8 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Beyond guarding the fruit, the klipah is called a shell because it is a barrier that must be cracked to reach the fruit, and breaking it, like getting past the keruvim guarding Gan Eden, is the purpose of a person's life.",
+        "yi": "אחוץ דעם וואס זי היט די פרוכט, הייסט די קליפה א שאלעכץ ווייל זי איז א מחיצה וואס מ'מוז צוברעכן כדי צוצוקומען צו דער פרוכט, און דאס צוברעכן, אזוי ווי דורכגיין די כרובים וואס היטן דעם גן עדן, איז דער תכלית פון א מענטשנס לעבן."
+      },
+      "evidence": { "segs": [205, 210, 230, 242, 250], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Kotzker read 'eishes chayil' as either the Torah, to which a talmid chacham is wedded, or a physical wife: a person cannot dance at both weddings, just as one cannot stand on both sides of the fence of the sitra achra.",
+        "yi": "דער קאצקער האט געטייטשט אז אשת חיל מיינט אדער די תורה, וואס א תלמיד חכם האט מיט איר חתונה, אדער א גשמיות'דיגע אשה: מ'קען נישט טאנצן אויף ביידע חתונות, פונקט ווי מ'קען נישט שטיין אויף ביידע זייטן פונעם פלויט פון דער סטרא אחרא."
+      },
+      "evidence": { "segs": [165, 167, 168, 169, 170], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "In the Ba'al Shem Tov's parable the walls were never real; so too, the tzaddik who breaks through finds at the end that the klipah that looked like a mountain was no more than a hair.",
+        "yi": "אינעם בעל שם טוב'ס משל זענען די ווענט קיינמאל נישט געווען; אזוי אויך געפינט דער צדיק וואס ברעכט דורך, אז צום סוף איז די קליפה וואס האט אויסגעזען ווי א בארג נישט מער ווי א האר."
+      },
+      "evidence": { "segs": [323, 325, 351, 363, 364], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Eating meat makes it part of a person, but blood is the vessel of the animal's own animal soul, so eating it would strengthen his own animal soul; this, the Rav says, is why Hashem does not want it eaten.",
+        "yi": "ווען א מענטש עסט פלייש ווערט עס א חלק פון אים, אבער דער דם איז דער כלי פונעם נפש הבהמית פון דער בהמה, און דאס עסן וואלט געשטארקט זיין אייגענעם נפש הבהמית; דערפאר, זאגט דער משגיח, וויל דער אויבערשטער נישט מ'זאל עס עסן."
+      },
+      "evidence": { "segs": [529, 533, 536, 538, 540], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Even the klipos come from Hashem's four-letter Name, so there are four of them, parallel to the four elements; the four coverings of a walnut picture them, with the thin skin eaten together with the nut standing for klipas nogah, which can become part of holiness.",
+        "yi": "אפילו די קליפות קומען פון שם הוי' מיט זיינע פיר אותיות, דערפאר זענען זיי פיר, כנגד די פיר יסודות; די פיר שאלעכצן פון א וואלנאט ווייזן זיי אן, און די דינע הייטל וואס מ'עסט מיטן נוס צוזאמען איז כנגד קליפת נוגה, וואס קען ווערן א חלק פון קדושה."
+      },
+      "evidence": { "segs": [583, 584, 585, 697, 698, 699], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Klipas nogah is like a translucent curtain on a window: one does not see the sun clearly, but its light comes through, unlike the other klipos, which make only darkness.",
+        "yi": "קליפת נוגה איז ווי א דורכזיכטיגער פארהאנג אויף א פענסטער: מ'זעט נישט קלאר די זון, אבער איר ליכט קומט דורך, נישט אזוי ווי די אנדערע קליפות וואס מאכן נאר א פינסטערניש."
+      },
+      "evidence": { "segs": [625, 630, 631, 635, 639], "confidence": 0.8 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The king's seven walls", "yi": "דעם מלך'ס זיבן ווענט" },
+      "retelling": {
+        "en": "The Ba'al Shem Tov told of a king who surrounded himself with seven walls, each guarded by beasts on top and each harder than the one before, with gifts for every soldier who broke through. Soldiers who broke through the first walls received gold, silver and diamonds and went no further. The prince kept going, answered those who asked why he risked himself that he wanted the king himself, broke through all seven and embraced his father. When he asked why it was so hard to reach him, the father waved a handkerchief and the walls disappeared: they had only been an illusion.",
+        "yi": "דער בעל שם טוב האט דערציילט פון א מלך וואס האט ארום זיך געמאכט זיבן ווענט, יעדע באוואכט מיט חיות אויבן און יעדע שווערער ווי די פריערדיגע, מיט מתנות פאר יעדן חייל וואס ברעכט דורך. די חיילים וואס האבן דורכגעבראכן די ערשטע ווענט האבן באקומען גאלד, זילבער און דימענטן און זענען מער נישט געגאנגען. דער בן מלך איז ווייטער געגאנגען, האט געענטפערט די וואס האבן געפרעגט פארוואס ער שטעלט זיך אין סכנה אז ער וויל דעם מלך אליין, האט דורכגעבראכן אלע זיבן און ארומגעכאפט דעם טאטן. ווען ער האט געפרעגט פארוואס עס איז אזוי שווער צו קומען צו אים, האט דער טאטע געמאכט מיט א טיכל און די ווענט זענען פארשוואונדן: זיי זענען געווען נאר אן אחיזת עינים."
+      },
+      "people": ["the Ba'al Shem Tov"],
+      "evidence": { "segs": [267, 273, 297, 316, 321, 325], "confidence": 0.85 }
+    },
+    {
+      "title": { "en": "Rabbi Levi Yitzchak and the poritz's comforts", "yi": "ר' לוי יצחק און דעם פריץ'ס תענוגים" },
+      "retelling": {
+        "en": "Rabbi Levi Yitzchak of Berditchev stood holding the shamash, ready to light the Chanukah candles with his chassidim gathered, when a man named Chatzkel came in from working for the poritz. Instead of making the brachah, he asked how the poritz fares, and heard of golden vessels, fine dishes from cooks trained abroad, and a soft bed, while the Rebbe himself slept on straw. Then he asked whether the poritz had lit Chanukah candles; the man answered that he is a goy. Rabbi Levi Yitzchak said the poritz is well off, but he himself is better off, and lit the candles with great feeling, as if he were the luckiest man alive.",
+        "yi": "ר' לוי יצחק בארדיטשובער איז געשטאנען מיטן שמש אין דער האנט, גרייט צו צינדן חנוכה ליכט, און די חסידים זענען געווען צוזאמענגעקומען, ווען א איד מיטן נאמען חאצקל איז אריינגעקומען פון זיין ארבעט ביים פריץ. אנשטאט צו מאכן די ברכה האט ער אים געפרעגט ווי עס גייט דעם פריץ, און געהערט פון גאלדענע כלים, פיינע מאכלים פון קעכער וואס האבן געלערנט אין אויסלאנד, און א ווייכע בעט, בשעת דער רבי אליין האט געשלאפן אויף שטרוי. דערנאך האט ער געפרעגט צי דער פריץ האט געצינדן חנוכה ליכט; דער איד האט געענטפערט אז ער איז דאך א גוי. האט ר' לוי יצחק געזאגט אז דעם פריץ איז גוט, אבער אים איז בעסער, און ער האט געצינדן די ליכט מיט א גרויסער התלהבות, ווי ער וואלט געווען דער גליקלעכסטער מענטש אויף דער וועלט."
+      },
+      "people": ["Rabbi Levi Yitzchak of Berditchev", "Chatzkel"],
+      "evidence": { "segs": [387, 392, 405, 413, 425, 432], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The poritz who sledded on sugar", "yi": "דער פריץ וואס איז געפארן אויף צוקער" },
+      "retelling": {
+        "en": "People ran to Rabbi Aharon of Karlin to tell him that a poritz had gone mad from pleasures: in the middle of summer he wanted to ride a sled. Sugar was very expensive in Russia then, yet his workers spread hundreds of sacks of sugar over the field, and the poritz went sledding on it. Rabbi Aharon dismissed the poritz's pleasure, asking what connection it has to the pleasure he feels on Shabbos morning when he says Nishmas.",
+        "yi": "מ'איז געקומען לויפן צו ר' אהרן קארלינער דערציילן אז א פריץ איז משוגע געווארן פון תענוגים: אינמיטן זומער האט ער געוואלט פארן מיט א שליטן. צוקער איז דעמאלט געווען זייער טייער אין רוסלאנד, פונדעסטוועגן האבן זיינע ארבעטער צעשפרייט הונדערטער זעק צוקער איבערן פעלד, און דער פריץ איז געפארן דערויף. ר' אהרן האט אפגעמאכט דעם פריץ'ס תענוג, און געפרעגט וואס פאר א שייכות האט דאס צו דעם תענוג וואס ער שפירט שבת אינדערפרי ווען ער זאגט נשמת."
+      },
+      "people": ["Rabbi Aharon of Karlin"],
+      "evidence": { "segs": [434, 435, 438, 454, 458, 462], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "Why is the source of the animal soul called sitra achra?", "yi": "פארוואס הייסט דער מקור פונעם נפש הבהמית סטרא אחרא?" },
+      "answer": { "en": "It means 'the other side', as in the Targum's word for side; one cannot stand on both sides of the fence at once.", "yi": "עס מיינט די אנדערע זייט, ווי דער תרגום'ס לשון פאר זייט; מ'קען נישט שטיין אויף ביידע זייטן פונעם פלויט אויף איינמאל." },
+      "questionSegs": [107],
+      "answerSegs": [108, 109, 112, 116],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why is the sitra achra called klipah?", "yi": "פארוואס ווערט די סטרא אחרא אנגערופן קליפה?" },
+      "answer": { "en": "Like a shell, it is needed only to guard the fruit, and once the fruit is taken it is thrown away; it is not the purpose.", "yi": "אזוי ווי א שאלעכץ, דארף מען עס נאר כדי צו היטן די פרוכט, און אז מ'נעמט די פרוכט ווארפט מען עס אוועק; עס איז נישט דער תכלית." },
+      "questionSegs": [182],
+      "answerSegs": [183, 185, 190, 196, 197],
+      "confidence": 0.85
+    },
+    {
+      "question": { "en": "Is there a deeper reason for the name klipah?", "yi": "איז דא א טיפערער טעם אויפן נאמען קליפה?" },
+      "answer": { "en": "To reach the fruit one must break through the shell; the klipah is the barrier, the yetzer hara, that must be broken.", "yi": "כדי צוצוקומען צו דער פרוכט מוז מען דורכברעכן די שאלעכץ; די קליפה איז די מחיצה, דער יצר הרע, וואס מ'מוז צוברעכן." },
+      "questionSegs": [201, 204],
+      "answerSegs": [205, 210, 213, 214],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "After Adam was sent out, why could he not simply walk back into Gan Eden?", "yi": "נאכדעם וואס אדם הראשון איז ארויסגעשיקט געווארן, פארוואס האט ער נישט געקענט צוריקגיין אין גן עדן?" },
+      "answer": { "en": "Hashem placed the keruvim and the flaming sword around it, a guard like a hard shell around a nut.", "yi": "דער אויבערשטער האט ארומגעשטעלט די כרובים און דעם להט החרב, א שמירה ווי א הארטע שאלעכץ ארום א נוס." },
+      "questionSegs": [228],
+      "answerSegs": [229, 230, 231, 234],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why did the king make it so hard to reach him?", "yi": "פארוואס האט דער מלך געמאכט אזוי שווער צוצוקומען צו אים?" },
+      "answer": { "en": "The walls were never real, only an illusion; they showed who was content with gifts and who, like the prince, truly loved his father.", "yi": "די ווענט זענען קיינמאל נישט געווען, נאר אן אחיזת עינים; זיי האבן געוויזן ווער איז צופרידן מיט מתנות און ווער, ווי דער בן מלך, האט באמת ליב דעם טאטן." },
+      "questionSegs": [321],
+      "answerSegs": [323, 325, 326, 329],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why may one eat meat but not blood?", "yi": "פארוואס מעג מען עסן פלייש אבער נישט בלוט?" },
+      "answer": { "en": "The blood is the vessel of the animal soul, and eating it would draw the animal's animal soul into a person and strengthen his own.", "yi": "דער דם איז דער כלי פונעם נפש הבהמית, און דאס עסן וואלט אריינגעצויגן די בהמה'ס נפש הבהמית אין דעם מענטש און געשטארקט זיין אייגענעם." },
+      "questionSegs": [528],
+      "answerSegs": [529, 533, 536, 538, 540],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says a person's purpose in the world is to break through the klipah and reach Gan Eden.",
+        "yi": "דער משגיח זאגט אז דער תכלית פון א מענטש אויף דער וועלט איז דורכצוברעכן די קליפה און צוצוקומען צום גן עדן."
+      },
+      "evidence": { "segs": [242, 243, 250, 256], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one who serves Hashem out of love does not need the rewards; he wants Hashem Himself.",
+        "yi": "דער משגיח זאגט אז דער וואס דינט דעם אויבערשטן מיט אהבה דארף נישט די שכר; ער וויל השם יתברך אליין."
+      },
+      "evidence": { "segs": [340, 341, 342], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "Tanya chapter 1",
+    "two souls of a Jew",
+    "animal soul and G-dly soul",
+    "sitra achra",
+    "klipah as a shell",
+    "the Ba'al Shem Tov's parable of the seven walls",
+    "the soul in the blood",
+    "four elements and the four-letter Name",
+    "klipas nogah",
+    "pleasure in serving Hashem"
+  ],
+  "concepts": [
+    { "he": "נפש הבהמית", "heardAs": ["נפש הבאהאמי", "נפש הבאמי", "נפש הבני", "נפש הבהמות"] },
+    { "he": "נפש האלקית", "heardAs": ["נפש אלוקיה", "נפש האלקי", "נפש אלוקו"] },
+    { "he": "חלק אלוק ממעל", "heardAs": ["חלק אלוקם ימיו"] },
+    { "he": "נפש השכלית", "heardAs": ["נפש השכלי", "נפש של ליקוי"] },
+    { "he": "סטרא אחרא", "heardAs": ["סוד פאר אחרע", "סתחי אחרא", "סדכי אחרא", "סדרה אחת"] },
+    { "he": "קליפה", "heardAs": ["קליפע", "קליפער", "קריפה"] },
+    { "he": "קליפת נוגה", "heardAs": ["כליפת נוגע", "נוגע", "נייגע"] },
+    { "he": "שומר לפרי", "heardAs": ["שומר לפרי"] },
+    { "he": "כסא הכבוד", "heardAs": ["כיסאי הכבוד", "כתר הכבוד", "כיסא הכבוד"] },
+    { "he": "שם הוי'", "heardAs": ["שם הויא", "שם הויה"] },
+    { "he": "ארבע יסודות", "heardAs": ["פיר יסודות", "יסודות רעים"] },
+    { "he": "אחיזת עינים", "heardAs": ["אחוז את עיניים"] }
+  ],
+  "people": [
+    { "name": "the Alter Rebbe (Ba'al HaTanya)", "heardAs": ["דער בעל התניא"] },
+    { "name": "Rabbi Chaim Vital", "heardAs": ["רבי חיים ויטל", "רבי חיים וויטאלי"] },
+    { "name": "the Arizal", "heardAs": ["ארי קודש"] },
+    { "name": "the Kotzker Rebbe", "heardAs": ["קארצקען", "קארטסקער", "קוצקה"] },
+    { "name": "Leah", "heardAs": ["ל'"] },
+    { "name": "Shlomo HaMelech", "heardAs": ["שלמה מלך", "שלמה המלך"] },
+    { "name": "Adam HaRishon", "heardAs": ["אדם ראשון"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["בעש''ט", "הבאה שם טוב"] },
+    { "name": "Dovid HaMelech", "heardAs": ["דוד המלך"] },
+    { "name": "Rabbi Levi Yitzchak of Berditchev", "heardAs": ["אליהו יצחק באדיטשעוועל", "לוי יוסף בדיטשאווער", "רבא לייב יצחק בעדיטשאוועל"] },
+    { "name": "Rabbi Aharon of Karlin", "heardAs": ["רבי אהרן קאלינא", "ר' אהלן קאלינא"] },
+    { "name": "Yechezkel", "heardAs": ["יחזקה"] }
+  ],
+  "asrNotes": "Yiddish ASR fair for running speech but poor on quotations; the Tanya text, the Eitz Chaim reference and several pesukim were recovered from context. The Gemara on the value of a good wife (around segs 151-154) and the Targum verse on 'side' could not be pinned down. A short stretch around segs 528-529 is garbled, and the halachic remark about removing a walnut's husk on Shabbos (segs 651-669) is only partly intelligible."
+}

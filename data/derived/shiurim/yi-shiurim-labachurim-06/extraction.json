@@ -1,0 +1,386 @@
+{
+  "shiurId": "yi-shiurim-labachurim-06",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav learns the Ba'al HaTanya's letter protesting against those who push away a long davener, tells a true story of a dybbuk driven out by the Shinava Rav, and explains why Yehuda was sent ahead to Goshen and how the Melave Malka inaugurates the new week.",
+      "yi": "דער משגיח לערנט דעם בעל התניא'ס אגרת קעגן די וואס שטופן אפ א מאריך בתפילה, דערציילט אן אמת'ע מעשה פון א דיבוק וואס דער שינאווער רב האט ארויסגעטריבן, און ערקלערט פארוואס יעקב האט געשיקט יהודה קיין גושן און וויאזוי די מלוה מלכה איז מחנך די נייע וואך."
+    },
+    "abstract": {
+      "en": "The Rav opens with a letter of the Ba'al HaTanya in Iggeres HaKodesh, written when he heard that people would not let a man who davens at length lead the prayers. Chazal say that prolonging one's tefillah prolongs life, so the Rav calls the claim of having no time a false calculation. The letter explains that in earlier generations Torah was the main avodah, but in the time before Moshiach it is tefillah, which needs contemplation of each word, and it asks for orderly, unhurried davening together. The Rav then sets out the two conditions of a proper story, a known source and a lesson, and tells, through Rabbi Elazar Brizel, how the Shinava Rav freed a girl from a dybbuk, linking it to the Chofetz Chaim's words about our test of emunah. Finally he explains that Yehuda, the root of hodaah, inaugurated Goshen, just as the Melave Malka of Dovid HaMelech inaugurates the week.",
+      "yi": "דער משגיח עפנט מיט אן אגרת פונעם בעל התניא אין אגרת הקודש, וואס ער האט געשריבן ווען ער האט געהערט אז מען לאזט נישט צום עמוד א איד וואס איז מאריך אין דאווענען. חז\"ל זאגן אז דער וואס איז מאריך בתפילתו ווערט מאריך ימים, ממילא איז די טענה אז מ'האט נישט קיין צייט א פאלשער חשבון. די אגרת ערקלערט אז אין די פריערדיגע דורות איז דער עיקר עבודה געווען תורה, אבער אין עקבתא דמשיחא איז עס תפילה, וואס פאדערט התבוננות אין יעדן ווארט, און ער בעט מ'זאל דאווענען צוזאמען, אין סדר און נישט חאפנדיג. דערנאך שטעלט ער אוועק די צוויי תנאים פון א מעשה, א באקאנטער מקור און א לימוד, און דערציילט, פון רבי אלעזר בריזל, וויאזוי דער שינאווער רב האט באפרייט א מיידל פון א דיבוק, צוזאמען מיטן חפץ חיים'ס ווארט וועגן אונזער נסיון פון אמונה. צום סוף ערקלערט ער אז יהודה, דער שורש פון הודאה, האט מחנך געווען גושן, אזוי ווי די מלוה מלכה פון דוד המלך איז מחנך די וואך."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The Ba'al HaTanya was deeply pained to hear that a man who davens at length was kept from leading the prayers, since Chazal say that prolonging tefillah prolongs life.",
+          "yi": "דער בעל התניא איז געווען שטארק ברוגז ווען ער האט געהערט אז מען לאזט נישט צום עמוד א מאריך בתפילה, ווייל חז\"ל זאגן אז דער וואס איז מאריך בתפילתו ווערט מאריך ימים."
+        },
+        "evidence": { "segs": [16, 19, 21, 25], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "In earlier generations Torah was the main avodah; in the time before Moshiach the main avodah is tefillah.",
+          "yi": "אין די פריערדיגע דורות איז דער עיקר עבודה געווען תורה, אבער אין עקבתא דמשיחא איז דער עיקר עבודה תפילה."
+        },
+        "evidence": { "segs": [52, 55, 58, 61], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Davening means contemplating each word, which can only be done slowly, so as to awaken the hidden love in every Jew's heart before Shema.",
+          "yi": "דאווענען מיינט זיך מתבונן זיין אין יעדן ווארט, וואס מ'קען נאר טאן פאמעלעך, כדי צו מעורר זיין די אהבה מסותרת אין יעדן אידנס הארץ פאר קריאת שמע."
+        },
+        "evidence": { "segs": [73, 76, 77, 82, 84], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "A story worth telling needs two things: a known source, so one knows it is true, and a lesson one can take away.",
+          "yi": "א מעשה וואס מ'דערציילט דארף האבן צוויי זאכן: א באקאנטער מקור, אז מ'זאל וויסן אז ס'איז אמת, און א לימוד וואס מ'קען אוועקנעמען."
+        },
+        "evidence": { "segs": [140, 142, 148, 151, 156], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The Chofetz Chaim said there would be no more dybbukim, since the test of the last generation before Moshiach is to believe without seeing.",
+          "yi": "דער חפץ חיים האט געזאגט אז ס'וועט מער נישט זיין קיין דיבוקים, ווייל דער נסיון פונעם לעצטן דור פאר משיח איז צו גלייבן אן זען."
+        },
+        "evidence": { "segs": [219, 224, 230, 231, 238], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Yehuda, named for thanking Hashem, was sent to inaugurate Goshen, and the Melave Malka, the seudah of Dovid HaMelech, likewise inaugurates the new week with songs of praise.",
+          "yi": "יהודה, וואס הייסט אזוי פון הודאה, איז געשיקט געווארן מחנך צו זיין גושן, און אזוי איז די מלוה מלכה, די סעודה פון דוד המלך, מחנך די נייע וואך מיט שירות ותשבחות."
+        },
+        "evidence": { "segs": [313, 322, 342, 347, 351], "confidence": 0.75 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-06-hisorerus-beavodas-hashem",
+      "startSeg": 0,
+      "endSeg": 47,
+      "title": {
+        "en": "The Ba'al HaTanya's letter on long davening",
+        "yi": "דעם בעל התניא'ס אגרת וועגן לאנג דאווענען"
+      },
+      "summary": {
+        "en": "The Rav introduces the Iggeres HaKodesh, letters the Ba'al HaTanya sent his chassidim, and reads one written when he heard that a man who davens at length was kept from leading the prayers. He explains the letter's argument from Chazal that prolonging tefillah prolongs life, calls the claim of 'no time' a false calculation, and explains how the chazan's repetition covers one who must leave.",
+        "yi": "דער משגיח שטעלט פאר די אגרת הקודש, בריוו וואס דער בעל התניא האט געשיקט צו די חסידים, און לערנט איינס וואס ער האט געשריבן ווען ער האט געהערט אז מען לאזט נישט צום עמוד א מאריך בתפילה. ער ערקלערט די טענה פון חז\"ל אז דער מאריך בתפילתו ווערט מאריך ימים, זאגט אז דער \"איך האב נישט קיין צייט\" איז א פאלשער חשבון, און ווי אזוי דער שליח ציבור איז מוציא איינעם וואס מוז אוועקגיין."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-06-hisorerus-beavodas-hashem",
+      "startSeg": 48,
+      "endSeg": 134,
+      "title": {
+        "en": "Tefillah as the avodah before Moshiach",
+        "yi": "תפילה, די עבודה פון עקבתא דמשיחא"
+      },
+      "summary": {
+        "en": "Answering the complaint that the chassidim invented a new stringency, the letter explains that the early generations served mainly through Torah while in the time before Moshiach the main avodah is tefillah, requiring slow contemplation in Pesukei DeZimra and the blessings of Shema. The Rav adds that the early great souls could daven briefly because their minds were open and unclouded by sin, and he reads the letter's request for orderly davening together and its rules for choosing chazanim.",
+        "yi": "אויף דער טענה אז די חסידים האבן אויסגעטראכט א נייע חומרא, ערקלערט די אגרת אז די ערשטע דורות האבן געדינט מיט תורה, אבער אין עקבתא דמשיחא איז דער עיקר עבודה תפילה, מיט התבוננות אין פסוקי דזמרא און אין די ברכות פון קריאת שמע. דער משגיח לייגט צו אז די ערשטע גרויסע נשמות האבן געקענט דאווענען קורץ ווייל זייער קאפ איז געווען אפן און נישט פארפאטשקעט מיט עבירות, און ער לערנט דעם בעל התניא'ס בקשה מ'זאל דאווענען צוזאמען און אין סדר, און די כללים וויאזוי צו קלייבן חזנים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-06-hisorerus-beavodas-hashem",
+      "startSeg": 135,
+      "endSeg": 238,
+      "title": {
+        "en": "What makes a true story; dybbukim and emunah",
+        "yi": "וואס מאכט אן אמת'ע מעשה; דיבוקים און אמונה"
+      },
+      "summary": {
+        "en": "The Rav sets out two conditions for telling a story, a known source and a lesson, and presents the source of his story, Rabbi Elazar Brizel, who heard it from his father. He describes what was once seen of sinful souls fleeing the angels of destruction into a living person as a dybbuk, and brings the Chofetz Chaim's statement that there would be no more dybbukim because our generation's test is emunah amid hiddenness.",
+        "yi": "דער משגיח שטעלט אוועק צוויי תנאים פאר א מעשה, א באקאנטער מקור און א לימוד, און ער שטעלט פאר דעם מקור פון זיין מעשה, רבי אלעזר בריזל, וואס האט עס געהערט פון זיין טאטן. ער באשרייבט וואס מ'האט אמאל געזען, אז זינדיגע נשמות זענען אנטלאפן פון די מלאכי חבלה אריין אין א מענטש אלס דיבוק, און ער ברענגט דעם חפץ חיים'ס ווארט אז ס'וועט מער נישט זיין קיין דיבוקים, ווייל דער נסיון פון אונזער דור איז אמונה בשעת הסתר פנים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-06-hisorerus-beavodas-hashem",
+      "startSeg": 239,
+      "endSeg": 287,
+      "title": {
+        "en": "The Shinava Rav and the dybbuk",
+        "yi": "דער שינאווער רב און דער דיבוק"
+      },
+      "summary": {
+        "en": "The Rav tells how a girl possessed by a dybbuk was brought to the Shinava Rav's shalosh seudos, where the dybbuk cried out at his holy words, and after Havdalah the gabbai was sent to a certain grave and the girl was healed. He then applies it: many of us carry inner 'dybbukim', forces born of sins that keep us from learning and davening properly, which must be uprooted before Moshiach comes.",
+        "yi": "דער משגיח דערציילט וויאזוי מ'האט געבראכט א מיידל מיט א דיבוק צום שינאווער רב'ס שלש סעודות, וואו דער דיבוק האט געשריגן פון זיינע הייליגע ווערטער, און נאך הבדלה האט מען געשיקט דעם גבאי צו א געוויסע מצבה און דאס מיידל איז געזונט געווארן. דערנאך זאגט ער אז אסאך פון אונז טראגן אין זיך \"דיבוקים\", כוחות פון עבירות וואס לאזן נישט לערנען און דאווענען ווי עס דארף צו זיין, און מ'דארף זיי ארויסרייסן איידער משיח קומט."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-06-hisorerus-beavodas-hashem",
+      "startSeg": 288,
+      "endSeg": 367,
+      "title": {
+        "en": "Yehuda sent to Goshen and the Melave Malka",
+        "yi": "יהודה געשיקט קיין גושן, און מלוה מלכה"
+      },
+      "summary": {
+        "en": "The Rav asks why Yaakov sent Yehuda, and not Yissachar or Levi, ahead to Goshen, and explains it through the custom of chanukas habayis: a place is inaugurated with praise of Hashem, and Yehuda is the root of hodaah and of Dovid HaMelech. So too the Melave Malka, the seudah of Dovid HaMelech, inaugurates the coming week, and he closes with blessings that the coming days of darkness in Teves turn to joy.",
+        "yi": "דער משגיח פרעגט פארוואס יעקב האט געשיקט יהודה, און נישט יששכר אדער לוי, קיין גושן, און ערקלערט עס דורך דעם מנהג פון חנוכת הבית: מ'איז מחנך א פלאץ מיט לויבן דעם אייבערשטן, און יהודה איז דער שורש פון הודאה און פון דוד המלך. אזוי איז די מלוה מלכה, די סעודה פון דוד המלך, מחנך די קומענדיגע וואך, און ער ענדיגט מיט ברכות אז די ימי חושך פון טבת זאלן זיך איבערדרייען צו שמחה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [1],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "הנה לא טובה השמעה ... שמעתי",
+      "work": "Tanya",
+      "ref": "Tanya, Iggeres HaKodesh 1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [4, 10, 11, 12, 13], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "כמשה מרור הזל שלישה דבר מערוכים ים ... ויחד מיום המערך בתפלותי",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 54b",
+      "sefariaRef": "Berakhot 54b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [23, 24, 25], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אזוי ווי דער גמרא זאגט ... די וואס קענען נישט זיין אין בית הכנסת",
+      "work": "Gemara Rosh Hashanah",
+      "ref": "Rosh Hashanah 35a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [43, 44, 46], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "וואס יא די שאלח להורות לפניו גושין",
+      "work": "Bereishis",
+      "ref": "Bereishis 46:28",
+      "sefariaRef": "Genesis 46:28",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [290, 293, 294, 313], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "הפעם עדות ה'",
+      "work": "Bereishis",
+      "ref": "Bereishis 29:35",
+      "sefariaRef": "Genesis 29:35",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [322], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער לייער האט אנגעפאנגען מיט הודעה, אזוי זאגט איר געמארער",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 7b",
+      "sefariaRef": "Berakhot 7b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [332, 334, 335], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די פסוק אין זכי' ... דעם ציימא האסירי ... לתתן ולשמחה לבעש יהודה",
+      "work": "Zechariah",
+      "ref": "Zechariah 8:19",
+      "sefariaRef": "Zechariah 8:19",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [366], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav calls 'I have no time, so I daven quickly' a false calculation: since prolonging tefillah prolongs life, the one short of time is precisely the one who should daven at length.",
+        "yi": "דער משגיח רופט אן \"איך האב נישט קיין צייט, דערפאר דאווען איך שנעל\" א פאלשער חשבון: וויבאלד א מאריך בתפילה ווערט מאריך ימים, איז פארקערט, דער וואס האט נישט קיין צייט דארף דווקא דאווענען לאנג."
+      },
+      "evidence": { "segs": [26, 27], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "What allowed early generations to daven briefly was not the size of their minds but their openness: a mind not clouded by sins can daven in a moment.",
+        "yi": "וואס האט געמאכט אז די ערשטע דורות האבן געקענט דאווענען קורץ איז נישט ווי גרויס דער קאפ איז געווען, נאר אז ער איז געווען אפן: א קאפ וואס איז נישט פארפאטשקעט מיט עבירות קען מתפלל זיין אין א רגע."
+      },
+      "evidence": { "segs": [92, 93, 94, 95], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The end of dybbukim in the Chofetz Chaim's time fits the generation's task: when such things are seen, believing is easy, while the mitzvah of our generation is emunah amid hiddenness.",
+        "yi": "וואס די דיבוקים האבן אויפגעהערט אין חפץ חיים'ס צייטן פאסט צו דעם דור'ס תפקיד: ווען מ'זעט אזעלכע זאכן איז גרינג צו גלייבן, אבער די מצוה פון אונזער דור איז אמונה בשעת הסתר פנים."
+      },
+      "evidence": { "segs": [224, 230, 231, 235, 237], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Though outward dybbukim ceased, the Rav says many people carry inner ones: forces created by sins that block learning, davening and good middos.",
+        "yi": "הגם די דיבוקים פון אינדרויסן האבן אויפגעהערט, זאגט דער משגיח אז אסאך מענטשן טראגן אינעווייניג דיבוקים: כוחות פון עבירות וואס לאזן נישט לערנען, דאווענען און האבן גוטע מידות."
+      },
+      "evidence": { "segs": [278, 279, 280, 281, 282], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Yehuda rather than Yissachar or Levi was sent to prepare Goshen because a place is inaugurated with praise of Hashem, which drives out the opposing forces, and Yehuda's name comes from hodaah.",
+        "yi": "מ'האט געשיקט יהודה און נישט יששכר אדער לוי מחנך צו זיין גושן, ווייל מ'איז מחנך א פלאץ מיט לויבן דעם אייבערשטן, וואס פארטרייבט די כוחות הטומאה, און יהודה'ס נאמען קומט פון הודאה."
+      },
+      "evidence": { "segs": [318, 322, 326, 327], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The Melave Malka is the chanukas habayis of the week: as the seudah of Dovid HaMelech, a descendant of Yehuda, its songs of praise drive out the accusers of the weekday.",
+        "yi": "די מלוה מלכה איז דער חנוכת הבית פון דער וואך: אלס די סעודה פון דוד המלך, פון שבט יהודה, פארטרייבן אירע שירות ותשבחות די מקטריגים פון די וואכנדיגע טעג."
+      },
+      "evidence": { "segs": [344, 347, 348, 352], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "The Shinava Rav and the dybbuk at shalosh seudos",
+        "yi": "דער שינאווער רב און דער דיבוק ביי שלש סעודות"
+      },
+      "retelling": {
+        "en": "Rabbi Elazar Brizel's father was in Shinava for a Shabbos when a woman came with a daughter possessed by a dybbuk that spoke from her and made her suffer. She was told to bring her to the Shinava Rav's shalosh seudos, a time of great favor; Rabbi Brizel's father arrived late, found no seat in the dark, and sat on a window sill by the women's section. When the Shinava Rav began the zemiros, the dybbuk cried out that it burned and hurt, unable to bear his holy words. After Havdalah the Rav sent the gabbai with directions to a certain grave in the cemetery; there was such a scream that Rabbi Brizel's father fell from the window, and the girl became well. When another Rav later said he had heard the Shinava Rav drove out a dybbuk, the Shinava Rav answered that he had driven out no dybbuk, perhaps the gabbai had.",
+        "yi": "רבי אלעזר בריזל'ס טאטע איז געווען אין שינאווא אויף א שבת, ווען ס'איז געקומען א פרוי מיט א טאכטער וואס אין איר איז אריין א דיבוק, וואס האט ארויסגערעדט פון איר און איר געטון צרות. מ'האט געזאגט מ'זאל איר ברענגען צום שינאווער רב'ס שלש סעודות, וואס איז א גרויסע עת רצון; דער טאטע איז געקומען שפעט, האט אין דער פינסטער נישט געהאט וואו צו זיצן, און האט זיך אוועקגעזעצט אויף א פענסטער ביי דער עזרת נשים. ווען דער שינאווער רב האט אנגעהויבן די זמירות, האט דער דיבוק געשריגן אז עס ברענט און טוט וויי, ער האט נישט געקענט אויסהאלטן די הייליגע ווערטער. נאך הבדלה האט דער רב געשיקט דעם גבאי צום בית הקברות צו א געוויסע מצבה; ס'איז געווען אזא געשריי אז דער טאטע איז אראפגעפאלן פונעם פענסטער, און דאס מיידל איז געזונט געווארן. ווען א צווייטער רב האט שפעטער געזאגט אז ער האט געהערט אז דער שינאווער רב האט ארויסגעטריבן א דיבוק, האט ער געענטפערט אז ער האט קיין דיבוק נישט ארויסגעטריבן, אפשר דער גבאי."
+      },
+      "people": ["Rabbi Elazar Brizel", "the Shinava Rav"],
+      "evidence": { "segs": [240, 241, 250, 253, 261, 274], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why was the Ba'al HaTanya so pained that a long davener was kept from leading the prayers?",
+        "yi": "פארוואס איז דער בעל התניא אזוי ברוגז געווען אז מען לאזט נישט צום עמוד א מאריך בתפילה?"
+      },
+      "answer": {
+        "en": "Because Chazal say that prolonging tefillah prolongs life, so cutting short another's davening cuts short his life.",
+        "yi": "ווייל חז\"ל זאגן אז דער מאריך בתפילתו ווערט מאריך ימים, ממילא ווען מ'שטופט אים איז מען אים ממעט אין זיינע ימים."
+      },
+      "questionSegs": [21, 22],
+      "answerSegs": [23, 25, 36],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why do the chassidim daven at length, if the early generations did not make it their main avodah?",
+        "yi": "פארוואס דאווענען די חסידים לאנג, אז די ערשטע דורות האבן דאס נישט געמאכט פאר זייער עיקר עבודה?"
+      },
+      "answer": {
+        "en": "In earlier generations Torah was the main avodah, but in the time before Moshiach the main avodah is tefillah.",
+        "yi": "אין די ערשטע דורות איז דער עיקר געווען תורה, אבער אין עקבתא דמשיחא איז דער עיקר עבודה תפילה."
+      },
+      "questionSegs": [48, 49],
+      "answerSegs": [52, 55, 58, 61],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why did the Chofetz Chaim say there would be no more dybbukim?",
+        "yi": "פארוואס האט דער חפץ חיים געזאגט אז ס'וועט מער נישט זיין קיין דיבוקים?"
+      },
+      "answer": {
+        "en": "Seeing such things makes belief easy, while the test of the generation before Moshiach is to believe when nothing is seen.",
+        "yi": "ווען מ'זעט אזעלכע זאכן איז גרינג צו גלייבן, אבער דער נסיון פונעם דור פאר משיח איז צו גלייבן ווען מ'זעט גארנישט."
+      },
+      "questionSegs": [219, 222],
+      "answerSegs": [223, 224, 230, 238],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why did Yaakov send Yehuda to Goshen, and not Yissachar or Levi, who are more connected to Torah?",
+        "yi": "פארוואס האט יעקב געשיקט יהודה קיין גושן, און נישט יששכר אדער לוי, וואס האבן מער שייכות צו תורה?"
+      },
+      "answer": {
+        "en": "Because a place is inaugurated by praising Hashem with songs, and Yehuda is named for hodaah.",
+        "yi": "ווייל מ'איז מחנך א פלאץ מיט לויבן דעם אייבערשטן מיט שירות ותשבחות, און יהודה הייסט אזוי פון הודאה."
+      },
+      "questionSegs": [317, 318, 319],
+      "answerSegs": [322, 324, 326],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says a story should be told only when its source is known and one can take a lesson from it for one's own level.",
+        "yi": "דער משגיח זאגט אז מ'זאל דערציילן א מעשה נאר ווען מ'ווייסט איר מקור און מ'קען דערפון אוועקנעמען א לימוד לויט די אייגענע מדריגה."
+      },
+      "evidence": { "segs": [140, 142, 151, 155, 156], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one must strengthen oneself and uproot the inner 'dybbukim' so as not to greet Moshiach in shame.",
+        "yi": "דער משגיח זאגט אז מ'דארף זיך מחזק זיין און ארויסרייסן די אינעווייניגסטע \"דיבוקים\", כדי מ'זאל נישט דארפן אנטקעגן גיין משיח בבושת פנים."
+      },
+      "evidence": { "segs": [287], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says the new week should begin with the Melave Malka, with Torah, thanks and songs of praise to Hashem.",
+        "yi": "דער משגיח זאגט אז מ'דארף אנהייבן די נייע וואך מיט מלוה מלכה, מיט תורה, הודאה און שירות ותשבחות צום אייבערשטן."
+      },
+      "evidence": { "segs": [352, 353, 354, 360], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "Iggeres HaKodesh",
+    "lengthy tefillah and long life",
+    "tefillah as the avodah of ikvesa dimeshicha",
+    "contemplation in davening",
+    "conditions for telling a story",
+    "dybbuk",
+    "emunah in times of hiddenness",
+    "Yehuda and hodaah",
+    "chanukas habayis",
+    "Melave Malka"
+  ],
+  "concepts": [
+    { "he": "אגרת הקודש", "heardAs": ["ממורים", "מאמרים"] },
+    { "he": "עקבתא דמשיחא", "heardAs": ["ביקוואס משיחה", "ניקוו' למשיחה", "ביקוות משיחה"] },
+    { "he": "מאריך בתפילתו", "heardAs": ["המערך בתפלותי", "מעריך ביים דאווענען"] },
+    { "he": "שליח ציבור", "heardAs": ["שץ"] },
+    { "he": "אהבה מסותרת", "heardAs": ["האהבה המסורת"] },
+    { "he": "התבוננות", "heardAs": ["ההתבוננות", "מתבונן"] },
+    { "he": "פסוקי דזמרא", "heardAs": ["פסקי די זמרא"] },
+    { "he": "דיבוק", "heardAs": ["דיבוג", "דיבוקלע"] },
+    { "he": "מלאכי חבלה", "heardAs": ["מלאכה חבלה"] },
+    { "he": "שלש סעודות", "heardAs": ["שאלה שדות", "של השדות"] },
+    { "he": "הסתר פנים", "heardAs": ["סתר הספנים"] },
+    { "he": "הודאה", "heardAs": ["הודעה"] },
+    { "he": "חנוכת הבית", "heardAs": ["חנוכת הבית", "חינוך הבית"] },
+    { "he": "מלוה מלכה", "heardAs": ["רבי מלכה", "מלוה דמלכה"] },
+    { "he": "עשרה בטבת", "heardAs": ["שרה בטבעות", "עשרה בטבעות", "יסורי בטבעות"] },
+    { "he": "עזרת נשים", "heardAs": ["עזרת נשום"] }
+  ],
+  "people": [
+    { "name": "the Ba'al HaTanya", "heardAs": ["בעל לתניא", "בעל התניא"] },
+    { "name": "the Chofetz Chaim", "heardAs": ["חיפוש חיים", "חופצ חיים", "חפץ חיים"] },
+    { "name": "Rabbi Elchanan Wasserman", "heardAs": ["רבי יחנן וואסימאן", "רבי חנם ווייסערמאן"] },
+    { "name": "Rabbi Elazar Brizel", "heardAs": ["רבי יואל אלעזר בריזל", "ר' אליעזר ברוזיל", "רבי אלעזר ברוזל", "רבי אלעזר בביזעל"] },
+    { "name": "the Stoliner Rebbe", "heardAs": ["דער סטאלינער רבי"] },
+    { "name": "the Shinava Rav", "heardAs": ["שונאווער רב", "שינווא רב"] },
+    { "name": "Rabbi Shraga Feivel Mendlowitz", "heardAs": ["רבי פייוול מאנדלאוויטש"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יעקב"] },
+    { "name": "Yehuda", "heardAs": ["יהודה"] },
+    { "name": "Leah", "heardAs": ["לייער", "אליהו"] },
+    { "name": "Dovid HaMelech", "heardAs": ["דוד המלך"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair for the Rav's own speech, but the Hebrew of the Iggeres HaKodesh letter (segments 13-15, 23, 30, 43, 100-101, 117, 128-134) is badly garbled and only its general line is recoverable. Segments 135-138 (a remark about food) and the details around Rabbi Elchanan Wasserman (214-218) and the visiting Rav (272) are unclear. Segment 23 is a 22-second run and segment 134 covers about 30 seconds with little text."
+}

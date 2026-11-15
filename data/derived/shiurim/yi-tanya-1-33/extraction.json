@@ -1,0 +1,612 @@
+{
+  "shiurId": "yi-tanya-1-33",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "On Tanya chapter 16 the Rav explains that a beinoni who cannot feel love of Hashem must at least know it with his mind, and, by way of the dispute between Chabad and the Polish tzaddikim, that every Jew serves Hashem according to the root of his soul, like a letter in its exact place in the Sefer Torah.",
+      "yi": "אויף תניא פרק ט\"ז ערקלערט דער משגיח אז א בינוני וואס קען נישט שפירן קיין אהבת השם דארף עס על כל פנים וויסן מיטן מוח, און דורך דער מחלוקת צווישן חב\"ד און די פוילישע צדיקים ווייזט ער אז יעדער איד דינט דעם אייבערשטן לויט דעם שורש פון זיין נשמה, אזוי ווי אן אות וואס שטייט אויף איר גענוי ארט אין ספר תורה."
+    },
+    "abstract": {
+      "en": "The Rav opens Tanya chapter 16: the beinoni cannot rule his heart, so he must at least know with his mind that he was created to serve Hashem. A tzaddik feels love of Hashem; the beinoni is given a taste only at times of favor, such as Shabbos and Yom Tov. Since love and fear are the wings of every mitzvah, the Rav asks how the beinoni can serve with them, and brings the advice that outward motions awaken inner feeling. This leads to the dispute between Chabad, who served with the mind, and the Polish tzaddikim, who sought hislahavus. Both are right, since each Jew follows his soul's root. The Rav develops this through the counting of Bamidbar: every Jew is a letter of the Sefer Torah with an exact place, which explains why the son of the Israelite woman was refused a place in Dan's camp. He returns to chapter 16: understanding with the mind that one should love Hashem already counts.",
+      "yi": "דער משגיח עפנט תניא פרק ט\"ז: דער בינוני איז נישט קיין שליט איבער זיין הארץ, דערפאר דארף ער על כל פנים מיטן מוח וויסן אז ער איז באשאפן געווארן צו דינען דעם אייבערשטן. א צדיק שפירט אהבת השם; דער בינוני באקומט נאר א טעם אין א עת רצון, ווי שבת און יום טוב. ווייל אהבה און יראה זענען די פליגלען פון יעדע מצוה, פרעגט ער ווי אזוי א בינוני קען מקיים זיין זיינע מצוות מיט זיי, און ער ברענגט די עצה אז חיצוניות'דיגע תנועות וועקן אויף דאס אינערליכע. פון דעם קומט ער צו דער מחלוקת צווישן חב\"ד, וואס האבן געדינט מיטן מוח, און די פוילישע צדיקים, וואס האבן געזוכט התלהבות. ביידע זענען גערעכט, ווייל יעדער איד גייט לויט זיין שורש הנשמה. דאס ברענגט ער ארויס פון דעם ציילן אין פרשת במדבר: יעדער איד איז אן אות אין ספר תורה מיט א גענוי ארט, און דערמיט ערקלערט ער פארוואס מ'האט נישט געלאזט דעם בן האשה הישראלית אין מחנה דן. צום סוף קומט ער צוריק צום פרק: אז מ'פארשטייט מיטן מוח אז מ'דארף ליב האבן דעם אייבערשטן, איז מען שוין יוצא."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The beinoni cannot control his heart, but he can and must know with his mind that he was created to serve Hashem.",
+          "yi": "דער בינוני האט נישט קיין שליטה אויף זיין הארץ, אבער מיטן שכל קען ער און דארף ער וויסן אז ער איז באשאפן געווארן צו דינען דעם אייבערשטן."
+        },
+        "evidence": { "segs": [9, 12, 16, 18], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Love and fear are the two wings that carry every mitzvah upward, and outward motions such as raising the voice can awaken the inner feeling.",
+          "yi": "אהבה און יראה זענען די צוויי פליגלען וואס טראגן יעדע מצוה ארויף, און חיצוניות'דיגע תנועות, ווי הייבן דאס קול, קענען אויפוועקן דאס אינערליכע געפיל."
+        },
+        "evidence": { "segs": [68, 70, 105, 108], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Both Chabad's service with the mind and the Polish tzaddikim's hislahavus are true, because each Jew is drawn to the path of his soul's root.",
+          "yi": "סיי די עבודה במוח פון חב\"ד און סיי די התלהבות פון די פוילישע צדיקים זענען אמת, ווייל יעדער איד ווערט צוגעצויגן צום וועג פון זיין שורש הנשמה."
+        },
+        "evidence": { "segs": [209, 210, 219, 563, 565], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Every Jew is a letter of the Sefer Torah, which is why Jews were counted by name and arranged by banner, tribe and family in their exact place.",
+          "yi": "יעדער איד איז אן אות אין ספר תורה, און דערפאר האט מען געציילט אידן במספר שמות און זיי אויסגעשטעלט לויט דגל, שבט און משפחה, יעדן אויף זיין גענוי ארט."
+        },
+        "evidence": { "segs": [243, 255, 301, 312, 329], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Before Shavuos each Jew must see that his own letter in the Sefer Torah is kosher and beautiful.",
+          "yi": "פאר שבועות דארף יעדער איד זען אז זיין אייגענער אות אין ספר תורה זאל זיין כשר און שיין."
+        },
+        "evidence": { "segs": [497, 498, 517, 522], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "If contemplation does not kindle love in the heart, understanding with the mind that one ought to love Hashem already counts in Heaven.",
+          "yi": "אויב די התבוננות צינדט נישט אן קיין אהבה אין הארץ, איז דאס וואס מ'פארשטייט מיטן מוח אז מ'דארף ליב האבן דעם אייבערשטן שוין גערעכנט אין הימל."
+        },
+        "evidence": { "segs": [591, 592, 638, 640], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-tanya-17-1-tanya",
+      "startSeg": 0,
+      "endSeg": 65,
+      "title": {
+        "en": "The beinoni must know with his mind",
+        "yi": "דער בינוני דארף וויסן מיטן מוח"
+      },
+      "summary": {
+        "en": "The Rav reads the opening of Tanya chapter 16: the beinoni cannot rule his heart, so he must at least know with his mind that he was created to serve Hashem. A tzaddik feels love of Hashem, while the beinoni gets a taste only at times of favor, on Shabbos and Yom Tov, as King David asked to visit Hashem's palace.",
+        "yi": "דער משגיח לערנט דעם אנהייב פון תניא פרק ט\"ז: דער בינוני איז נישט קיין שליט איבער זיין הארץ, דערפאר דארף ער על כל פנים מיטן מוח וויסן אז ער איז באשאפן געווארן צו דינען דעם אייבערשטן. א צדיק שפירט אהבת השם, און א בינוני באקומט נאר א טעם אין א עת רצון, שבת און יום טוב, אזוי ווי דוד המלך האט געבעטן צו באזוכן אין היכל."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-17-1-tanya",
+      "startSeg": 66,
+      "endSeg": 156,
+      "title": {
+        "en": "Outward motions awaken the heart",
+        "yi": "חיצוניות וועקט אויף דאס הארץ"
+      },
+      "summary": {
+        "en": "The Rav explains that love and fear are the two wings of every mitzvah and asks how a beinoni can serve with them. He brings the Mesilas Yesharim's advice that outward motions arouse inner feeling, illustrating with the raised voice of an excited person and with what psychologists say, and warns against strange motions.",
+        "yi": "דער משגיח ערקלערט אז אהבה און יראה זענען די צוויי פליגלען פון יעדע מצוה, און פרעגט ווי אזוי א בינוני קען דינען מיט זיי. ער ברענגט די עצה פון מסילת ישרים אז חיצוניות'דיגע תנועות וועקן אויף דאס אינערליכע, מיט א משל פון א מענטש וואס איז אויפגעלייגט און הייבט זיין קול, און פון וואס די פסיכאלאגן זאגן, און ער ווארנט קעגן משונה'דיגע תנועות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-17-1-tanya",
+      "startSeg": 157,
+      "endSeg": 209,
+      "title": {
+        "en": "Chabad and the Polish tzaddikim",
+        "yi": "חב\"ד און די פוילישע צדיקים"
+      },
+      "summary": {
+        "en": "The Rav describes the dispute between the Chabad tzaddikim, who served with a cool mind, and the Polish tzaddikim, who sought hislahavus. He recalls an old Lubavitcher chassid who davened word by word with tears in the Stoliner shul in Williamsburg, mentions the Mitteler Rebbe's Kuntres HaHispa'alus, and asks who is right.",
+        "yi": "דער משגיח שילדערט די מחלוקת צווישן די חב\"ד צדיקים, וואס האבן געדינט מיט א קאלטן מוח, און די פוילישע צדיקים, וואס האבן געזוכט התלהבות. ער דערציילט פון אן אלטן ליובאוויטשער חסיד וואס האט געדאווענט ווארט ביי ווארט מיט טרערן אינעם סטאלינער שטיבל אין וויליאמסבורג, דערמאנט דעם קונטרס ההתפעלות פונעם מיטעלער רבי'ן, און פרעגט ווער איז גערעכט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-17-1-tanya",
+      "startSeg": 210,
+      "endSeg": 252,
+      "title": {
+        "en": "Each soul to its rebbe; Jews as letters",
+        "yi": "יעדע נשמה צו איר רבי; אידן ווי אותיות"
+      },
+      "summary": {
+        "en": "The Rav answers that both are the words of the living G-d, each by its root. Hashem matches every talmid to the rebbe of his soul's root, as the heavenly voice decrees matches, and as souls stood together at Sinai. Every Jew is a letter of the Sefer Torah, and a single missing letter invalidates it.",
+        "yi": "דער משגיח ענטפערט אז אלו ואלו דברי אלקים חיים, יעדער לויט זיין שורש. דער אייבערשטער איז מזווג יעדן תלמיד צום רבי'ן פון זיין שורש הנשמה, אזוי ווי די בת קול וואס רופט אויס שידוכים, און אזוי ווי די נשמות זענען געשטאנען צוזאמען ביי הר סיני. יעדער איד איז אן אות אין ספר תורה, און אז איין אות פעלט איז דער גאנצער ספר תורה פסול."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-17-1-tanya",
+      "startSeg": 253,
+      "endSeg": 317,
+      "title": {
+        "en": "Counted by names, not numbers",
+        "yi": "געציילט מיט נעמען, נישט מיט נומערן"
+      },
+      "summary": {
+        "en": "The Rav explains why Jews are counted in parshas Bamidbar before Shavuos: each Jew is a letter of the Torah, as the early sages were called soferim for counting its letters. They were counted 'by names', not numbers, like children who are called by name while cattle are branded with numbers, so that each Jew is set in his exact place.",
+        "yi": "דער משגיח ערקלערט פארוואס מ'ציילט אידן אין פרשת במדבר פאר שבועות: יעדער איד איז אן אות פון דער תורה, אזוי ווי די ראשונים האבן געהייסן סופרים ווייל זיי האבן געציילט אירע אותיות. מ'האט זיי געציילט במספר שמות און נישט מיט נומערן, אזוי ווי קינדער רופט מען מיטן נאמען און בהמות צייכנט מען מיט נומערן, כדי יעדער איד זאל שטיין אויף זיין גענוי ארט."
+      },
+      "kind": "tangent",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-17-1-tanya",
+      "startSeg": 318,
+      "endSeg": 364,
+      "title": {
+        "en": "The camps as the five books",
+        "yi": "די מחנות ווי די פינף חומשים"
+      },
+      "summary": {
+        "en": "The Rav explains the arrangement of the banners: the camps correspond to the five books of the Torah, with the Kohanim and Leviim in the middle corresponding to Vayikra. The Leviim numbered twenty-two thousand, matching the twenty-two letters of the alef-beis, and every Jew stood by his banner as his soul is placed in the Torah.",
+        "yi": "דער משגיח ערקלערט דעם סדר פון די דגלים: די מחנות זענען קעגן די פינף חומשי תורה, און די כהנים און לויים אינמיטן זענען קעגן ספר ויקרא. די לויים זענען געווען צוויי און צוואנציג טויזנט, קעגן די צוויי און צוואנציג אותיות פון אלף בית, און יעדער איד איז געשטאנען ביי זיין דגל אזוי ווי זיין נשמה איז מסודר אין דער תורה."
+      },
+      "kind": "tangent",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-17-1-tanya",
+      "startSeg": 365,
+      "endSeg": 491,
+      "title": {
+        "en": "The son of the Israelite woman",
+        "yi": "דער בן האשה הישראלית"
+      },
+      "summary": {
+        "en": "The Rav asks why the son of the Israelite woman was refused a place in Dan's camp when the desert was large, and answers that he was not a letter of the Sefer Torah. Even a ger can be a crown on the letters, as Rabbi Akiva, from a family of gerim, expounded the crowns, but according to the Gemara's other account this man mocked the lechem hapanim and was an apikores, so he had no connection at all.",
+        "yi": "דער משגיח פרעגט פארוואס מ'האט נישט געלאזט דעם בן האשה הישראלית אין מחנה דן, דער מדבר איז דאך גרויס, און ענטפערט אז ער איז נישט געווען קיין אות אין ספר תורה. אפילו א גר קען זיין א תג אויף די אותיות, אזוי ווי רבי עקיבא, וואס שטאמט פון גרים, האט געדרש'נט די תגין, אבער לויט דעם אנדערן פשט אין דער גמרא האט ער געשפעט פון לחם הפנים און איז געווען אן אפיקורס, האט ער קיין שום שייכות נישט געהאט."
+      },
+      "kind": "tangent",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-17-1-tanya",
+      "startSeg": 492,
+      "endSeg": 552,
+      "title": {
+        "en": "Each Jew in his place before Shavuos",
+        "yi": "יעדער איד אויף זיין ארט פאר שבועות"
+      },
+      "summary": {
+        "en": "The Rav concludes that before Shavuos each Jew must make his letter in the Sefer Torah kosher and beautiful, and returns to the dispute: every Jew belongs to his place, and Hashem arranges that each is drawn to Chabad, to Belz or to Rav Shach according to the family of letters his soul belongs to. Nothing is by chance.",
+        "yi": "דער משגיח שליסט אז פאר שבועות דארף יעדער איד מאכן זיין אות אין ספר תורה כשר און שיין, און קומט צוריק צו דער מחלוקת: יעדער איד געהערט צו זיין ארט, און דער אייבערשטער פירט אז איינער ווערט צוגעצויגן צו חב\"ד, איינער צו בעלזא, איינער צו רב שך, לויט דער משפחה פון אותיות וואס זיין נשמה געהערט צו. גארנישט איז במקרה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-17-1-tanya",
+      "startSeg": 553,
+      "endSeg": 640,
+      "title": {
+        "en": "Love of Hashem in the mind suffices",
+        "yi": "אהבת השם אין מוח איז גענוג"
+      },
+      "summary": {
+        "en": "The Rav explains that the Ba'al haTanya taught that the main thing is the mind, while others stressed the middos, and all are right. He reads Tanya chapter 16: one should contemplate Hashem's greatness in creation, which may kindle love and fear, and if it does not, understanding with the mind that it ought to be so is enough and is counted in Heaven as real love.",
+        "yi": "דער משגיח ערקלערט אז דער בעל התניא האט געלערנט אז די עיקר איז דער מוח, און אנדערע חסידים האבן געלייגט דעם טראפ אויף מידות, און אלע זענען גערעכט. ער לערנט פרק ט\"ז: מ'זאל זיך מתבונן זיין אין דער גרויסקייט פונעם אייבערשטן אין דער בריאה, און אפשר וועט דאס אנצינדן אהבה און יראה; און אויב נישט, איז גענוג וואס מ'פארשטייט מיטן מוח אז עס וואלט אזוי געדארפט זיין, און אין הימל רעכנט מען עס ווי א ממש'דיגע אהבה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "כלל גדול בבידת ה' לבננים ... לא שליט על הלב",
+      "work": "Tanya",
+      "ref": "Tanya ch. 16",
+      "sefariaRef": "Tanya, Part I; Likkutei Amarim 16",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [0, 1, 3, 596, 600], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "לך זאת בני ים ה' ולבכה בהכבל",
+      "work": "Tehillim",
+      "ref": "Tehillim 27:4",
+      "sefariaRef": "Psalms 27:4",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [41, 42, 43, 47], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ויבת את השם לככה",
+      "work": "Devarim",
+      "ref": "Devarim 6:5",
+      "sefariaRef": "Deuteronomy 6:5",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [66, 67], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "מסייעת אשרים; מסירת השורים גיט א עצה",
+      "work": "Mesilas Yesharim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [82, 107, 108], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "בראש גדול מתנתם",
+      "work": "Siddur",
+      "ref": "Shacharis, blessing of Yotzer Or before Shema",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [152, 153, 154], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "קונטחוס'ע התפיילות",
+      "work": "Kuntres HaHispa'alus",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [202, 203, 204, 205], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "עוודאי ווערו דברו עלקים חיים",
+      "work": "Gemara Eruvin",
+      "ref": "Eruvin 13b",
+      "sefariaRef": "Eruvin 13b",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [210], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אברהם יום קודם יצירת המלד ... בת פליני לפליני",
+      "work": "Gemara Sotah",
+      "ref": "Sotah 2a",
+      "sefariaRef": "Sotah 2a",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [212, 213], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ויתש הישנו פה, ויתש עננו פה",
+      "work": "Devarim",
+      "ref": "Devarim 29:14",
+      "sefariaRef": "Deuteronomy 29:14",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [224, 225, 226], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ישרים מאכט יישר רבי נשמות; שושי רבי עשית לתורה",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [231, 233, 234], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ויעקב משה את כל הדת בני ישראל, וימל זדד אלה הדברים",
+      "work": "Shemos",
+      "ref": "Shemos 35:1",
+      "sefariaRef": "Exodus 35:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [241], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "לפיקח נקרא ראשיינים ספרים שהיה ספרים כל עסות ... זאגט די גמרא'ע קדושין",
+      "work": "Gemara Kiddushin",
+      "ref": "Kiddushin 30a",
+      "sefariaRef": "Kiddushin 30a",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [258, 260, 264], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ומוספה שמש",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 1:2",
+      "sefariaRef": "Numbers 1:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [280, 281, 282], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אישא דגלי בעתות לבעת הבתים",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 2:2",
+      "sefariaRef": "Numbers 2:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [326, 360], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "שנים וישרים א' 22,000",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 3:39",
+      "sefariaRef": "Numbers 3:39",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [350, 351, 353], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "בשם אימו שלמה'ס ואת דברי במתי דן, איז וינתו במחנה",
+      "work": "Vayikra",
+      "ref": "Vayikra 24:10-11",
+      "sefariaRef": "Leviticus 24:10-11",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [376, 379, 380], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "זאגן חז״ל ראשו ברענגט עס",
+      "work": "Rashi",
+      "ref": "Rashi on Vayikra 24:10",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [381, 382, 383], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ונתפעל הבא הגאול ... ונסחר בית יענקוב",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 14:1",
+      "sefariaRef": "Isaiah 14:1",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [410, 411, 413], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ער זאגט די גמרא ... כשר גירום לישראל כספחת",
+      "work": "Gemara",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [411, 412, 415], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "טייסטערס ברענגט דארט אז רבי אברהם הגירוי האט געזאגט",
+      "work": "Tosafos",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [414, 416, 417], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די גמרא זאגט אין מנחת, קצות אויף תלתלים",
+      "work": "Gemara Menachos",
+      "ref": "Menachos 29b",
+      "sefariaRef": "Menachot 29b",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [426, 431, 432, 444], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "מ'דאן פארענטפארט דער מהר''ל",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [442, 445, 446], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "די אנדערע פשטים אין די גמרא ... לחם אפנים",
+      "work": "Gemara",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [453, 454, 458, 460], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די גמרא זאגט ... די שורות פון די ספר תורה דארף האבן דרייסיג אותיות ... דריי מאל למשפחה ישעיכון",
+      "work": "Gemara",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [507, 508, 509], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav reads King David's request to 'visit in His palace' as the plea of one who cannot always feel Hashem's sweetness to be at least an occasional guest, which Hashem grants every Jew at times of favor such as Shabbos and Yom Tov.",
+        "yi": "דער משגיח טייטשט די בקשה פון דוד המלך \"ולבקר בהיכלו\" אז ווער עס קען נישט אלעמאל שפירן דעם נועם השם בעט כאטש צו זיין אמאל א גאסט אינעם היכל, און דאס גיט דער אייבערשטער יעדן איד אין א עת רצון, ווי שבת און יום טוב."
+      },
+      "evidence": { "segs": [43, 44, 45, 49, 55], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav applies 'a daughter of so-and-so to so-and-so' to every giver and receiver, so that Hashem matches each talmid to the rebbe with whom his soul stood at Sinai.",
+        "yi": "דער משגיח לערנט אז \"בת פלוני לפלוני\" גייט אויף יעדן משפיע און מקבל, און ממילא איז דער אייבערשטער מזווג יעדן תלמיד מיט דעם רבי'ן מיט וועמען זיין נשמה איז געשטאנען ביי הר סיני."
+      },
+      "evidence": { "segs": [213, 214, 216, 218, 221], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Counting by 'names' rather than numbers shows that each Jew is an individual letter with its own place in the Torah, which is why Moshe and the Nesi'im, who knew what lies in each Jew, had to do the counting.",
+        "yi": "דאס וואס מ'ציילט \"במספר שמות\" און נישט מיט נומערן ווייזט אז יעדער איד איז אן אות פאר זיך מיט אן אייגן ארט אין דער תורה, און דערפאר האבן משה רבינו און די נשיאים, וואס האבן געוואוסט וואס ליגט אין יעדן איד, געמוזט ציילן."
+      },
+      "evidence": { "segs": [299, 301, 307, 312], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Gerim are the crowns on the Torah's letters: not letters themselves but attached to them, which is why Rabbi Akiva, from a family of gerim, expounded the crowns, while Moshe Rabbeinu, the root of the letters themselves, did not grasp his teaching.",
+        "yi": "גרים זענען די תגין אויף די אותיות פון דער תורה: נישט קיין אותיות אליין, נאר צוגעטשעפעט צו זיי, און דערפאר האט רבי עקיבא, וואס שטאמט פון גרים, געדרש'נט די תגין, און משה רבינו, דער שורש פון די אותיות אליין, האט נישט פארשטאנען זיין דרשה."
+      },
+      "evidence": { "segs": [422, 423, 436, 445, 446], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Gemara's rule that each line of a Sefer Torah holds thirty letters so 'lemishpechoseichem' fits three times hints that the Torah's letters are arranged in families, as Jewish souls are born into the family where their letter belongs.",
+        "yi": "דער דין פון דער גמרא אז יעדע שורה אין ספר תורה האט דרייסיג אותיות כדי \"למשפחותיכם\" זאל אריינגיין דריי מאל, איז א רמז אז די אותיות פון דער תורה זענען משפחות, אזוי ווי אידישע נשמות ווערן געבוירן אין דער משפחה וואו זייער אות געהערט."
+      },
+      "evidence": { "segs": [505, 507, 510, 511], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The Rav maps the dispute onto the sefiros: Chabad spoke of the higher faculties, chochmah, binah and da'as, while the other chassidim emphasized the middos, love, fear and tiferes, and each follows his root.",
+        "yi": "דער משגיח שטעלט די מחלוקת אויף די ספירות: חב\"ד האט גערעדט וועגן די העכערע כוחות, חכמה בינה דעת, און די אנדערע חסידים האבן געלייגט דעם טראפ אויף די מידות, אהבה, יראה און תפארת, און יעדער גייט לויט זיין שורש."
+      },
+      "evidence": { "segs": [556, 557, 561, 563], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "The Lubavitcher chassid in the Stoliner shul",
+        "yi": "דער ליובאוויטשער חסיד אינעם סטאלינער שטיבל"
+      },
+      "retelling": {
+        "en": "The Rav recalls an old Lubavitcher chassid, a sweet Jew learned in nistar, who used to come on Shabbos to the Stoliner shul in Williamsburg where the Rav davened. He sat bent over his siddur, and on a winter Shabbos, when the Rav came back for Minchah, he was still in the middle of Shacharis, having paused only to hear the Torah reading. He said each word separately, stopping between one word and the next, with two streams of tears flowing from his eyes, and so it was every Shabbos.",
+        "yi": "דער משגיח דערמאנט זיך אן אן אלטן ליובאוויטשער חסיד, א זיסער איד און א למדן אין נסתר, וואס פלעגט קומען שבת אינעם סטאלינער שטיבל אין וויליאמסבורג וואו דער משגיח האט געדאווענט. ער איז געזעסן איבערן סידור, און א ווינטער שבת, ווען דער משגיח איז צוריקגעקומען צו מנחה, האט ער נאך געהאלטן אינמיטן שחרית, און האט זיך נאר אפגעשטעלט צו הערן קריאת התורה. ער האט געזאגט ווארט ביי ווארט, זיך אפגעשטעלט צווישן איין ווארט און דאס צווייטע, און פון זיינע אויגן האבן געפלאסן טרערן, און אזוי איז געווען יעדן שבת."
+      },
+      "people": [],
+      "evidence": { "segs": [173, 177, 183, 184, 188, 189], "confidence": 0.8 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "How can a beinoni, whose heart is not in his control, fulfill the mitzvos of love and fear of Hashem?",
+        "yi": "ווי אזוי קען א בינוני, וואס זיין הארץ איז נישט ברשותו, מקיים זיין די מצוות פון אהבת השם און יראת השם?"
+      },
+      "answer": {
+        "en": "He must work on it with advice such as arousing the inner feeling through outward motions, and the Tanya adds that knowing with the mind that one ought to love Hashem already counts.",
+        "yi": "ער דארף ארבעטן דערויף מיט עצות, ווי אויפוועקן דאס אינערליכע דורך חיצוניות'דיגע תנועות, און דער תניא לייגט צו אז וויסן מיטן מוח אז מ'דארף ליב האבן דעם אייבערשטן איז שוין גערעכנט."
+      },
+      "questionSegs": [73, 75, 76],
+      "answerSegs": [79, 81, 107, 108, 592],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Who is right: the Chabad tzaddikim who served with the mind, or the Polish tzaddikim who sought hislahavus?",
+        "yi": "ווער איז גערעכט: די חב\"ד צדיקים וואס האבן געדינט מיטן מוח, אדער די פוילישע צדיקים וואס האבן געזוכט התלהבות?"
+      },
+      "answer": {
+        "en": "Both are the words of the living G-d; each Jew is drawn to the path that fits the root of his soul.",
+        "yi": "אלו ואלו דברי אלקים חיים; יעדער איד ווערט צוגעצויגן צום וועג וואס פאסט צום שורש פון זיין נשמה."
+      },
+      "questionSegs": [209],
+      "answerSegs": [210, 218, 219, 563, 565],
+      "confidence": 0.85
+    },
+    {
+      "question": {
+        "en": "Why were the Jews counted at all?",
+        "yi": "פארוואס האט מען בכלל געציילט אידן?"
+      },
+      "answer": {
+        "en": "Because every Jew is a letter of the Sefer Torah, and the letters of the Torah are counted.",
+        "yi": "ווייל יעדער איד איז אן אות אין ספר תורה, און די אותיות פון דער תורה ציילט מען."
+      },
+      "questionSegs": [254],
+      "answerSegs": [255, 256, 257, 278],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why did the tribe of Dan refuse the son of the Israelite woman a place among them, when the desert was large?",
+        "yi": "פארוואס האט שבט דן נישט געלאזט דעם בן האשה הישראלית וואוינען צווישן זיי, דער מדבר איז דאך גרויס?"
+      },
+      "answer": {
+        "en": "Because he was not a letter of the Sefer Torah and so did not belong in the camp; and since he was an apikores, he was not even attached as a crown.",
+        "yi": "ווייל ער איז נישט געווען קיין אות אין ספר תורה און האט נישט געהערט אין דער מחנה; און וויבאלד ער איז געווען אן אפיקורס, איז ער אפילו נישט צוגעטשעפעט געווען ווי א תג."
+      },
+      "questionSegs": [385, 386, 389],
+      "answerSegs": [390, 391, 392, 474, 491],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why did Moshe Rabbeinu not understand what Rabbi Akiva expounded?",
+        "yi": "פארוואס האט משה רבינו נישט פארשטאנען וואס רבי עקיבא האט געדרש'נט?"
+      },
+      "answer": {
+        "en": "Moshe is the root of the letters themselves, while Rabbi Akiva expounded the crowns, which are only attached to the letters.",
+        "yi": "משה רבינו איז דער שורש פון די אותיות אליין, און רבי עקיבא האט געדרש'נט די תגין, וואס זענען נאר צוגעטשעפעט צו די אותיות."
+      },
+      "questionSegs": [442, 443],
+      "answerSegs": [445, 446, 447],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav advises arousing kavanah through outward means, davening somewhat warmly and aloud, but without strange motions that make one a laughingstock.",
+        "yi": "דער משגיח גיט אן עצה צו אויפוועקן כוונה דורך חיצוניות, דאווענען א ביסל ווארעם און מיט א קול, אבער אן משונה'דיגע תנועות וואס מאכן פון אים א געלעכטער."
+      },
+      "evidence": { "segs": [108, 142, 143, 149, 150], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that before Shavuos every Jew must prepare himself to be a shining, beautiful letter in Hashem's Sefer Torah.",
+        "yi": "דער משגיח זאגט אז פאר שבועות דארף יעדער איד זיך גרייטן צו זיין א שיינענדיגער און מהודר'דיגער אות אין דעם אייבערשטנס ספר תורה."
+      },
+      "evidence": { "segs": [497, 498, 521, 522, 524], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that one who cannot feel a burning love for Hashem should at least know with his mind that he ought to love Him, by contemplating the wonders of creation.",
+        "yi": "דער משגיח זאגט אז ווער עס קען נישט שפירן א ברענענדיגע אהבה צום אייבערשטן, זאל על כל פנים וויסן מיטן קאפ אז מ'דארף אים ליב האבן, דורך זיך מתבונן זיין אין די נפלאות פון דער בריאה."
+      },
+      "evidence": { "segs": [570, 573, 577, 585], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "Tanya chapter 16",
+    "the beinoni",
+    "love and fear of Hashem",
+    "service with the mind versus hislahavus",
+    "Chabad and Polish chassidus",
+    "root of the soul",
+    "every Jew a letter in the Sefer Torah",
+    "counting of the Jews in Bamidbar",
+    "gerim as crowns on the letters",
+    "outward actions arousing inner feeling"
+  ],
+  "concepts": [
+    { "he": "בינוני", "heardAs": ["בננים", "בנני", "לבננים"] },
+    { "he": "אהבת השם", "heardAs": ["אבות השם", "אבת ה'", "אהבות הושם"] },
+    { "he": "יראת השם", "heardAs": ["יורות השם", "יאירת השם", "ירת ה'"] },
+    { "he": "עת רצון", "heardAs": ["נסרות ציין", "עשרה ציין", "נת רצון"] },
+    { "he": "התלהבות", "heardAs": ["התפיילות"] },
+    { "he": "התפעלות", "heardAs": ["התפיילות", "קונטחוס'ע התפיילות"] },
+    { "he": "שורש הנשמה", "heardAs": ["שורש הנפש", "שורש"] },
+    { "he": "אות", "heardAs": ["עוס", "עות", "עסן", "אויס"] },
+    { "he": "תגין", "heardAs": ["תגום", "טאגים", "תגים"] },
+    { "he": "מחנה", "heardAs": ["מחניה", "מאכנות", "מחנך"] },
+    { "he": "התבוננות", "heardAs": ["התבונענ'ס", "מתביינען"] },
+    { "he": "חיצוניות", "heardAs": ["חוצניות'דיגע", "חצוני'ס"] },
+    { "he": "לחם הפנים", "heardAs": ["לחם אפנים"] },
+    { "he": "גרים", "heardAs": ["גירום", "גורם"] }
+  ],
+  "people": [
+    { "name": "the Alter Rebbe (Ba'al haTanya)", "heardAs": ["בעל התניא", "בעל התניעה", "בעלת עניות"] },
+    { "name": "King David", "heardAs": ["דוד המלך"] },
+    { "name": "the Mitteler Rebbe", "heardAs": ["דער מיטלער רבי"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו", "משהו רבינו"] },
+    { "name": "Rabbi Akiva", "heardAs": ["ר' יקובע", "רבי יקיבא"] },
+    { "name": "Maharal", "heardAs": ["מהר''ל"] },
+    { "name": "Rabbi Avraham haGer", "heardAs": ["רבי אברהם הגירוי"] },
+    { "name": "Shlomis bas Divri", "heardAs": ["שלימות בת דן", "שלמה'ס ואת דברי"] },
+    { "name": "Rav Shach", "heardAs": ["רב שך"] }
+  ],
+  "asrNotes": "Yiddish ASR fair, with many English loanwords and heavy garbling of the Tanya text and pesukim. The name of the Lubavitcher chassid in the story (segs 174) and the source in seg 213 could not be recovered. The reading of the Tanya at segs 596-636 is badly garbled; only its general line is used. Seg 270 (on Rabbi Akiva and the soferim) and segs 459-472 (the lechem hapanim account) are partly unintelligible."
+}

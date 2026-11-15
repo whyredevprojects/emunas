@@ -1,0 +1,544 @@
+{
+  "shiurId": "en-tefila-en-14",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that a person is where his thoughts are, and that a Yid who wants to give Hashem nachas will seek purity in his tefillah and service even where it is not strictly required.",
+      "yi": "דער משגיח ערקלערט אז א מענטש איז דארט וואו זיין מחשבה איז, און אז א איד וואס וויל טון א נחת רוח פארן אייבערשטן זוכט טהרה ביי זיין תפילה און עבודה אפילו ווען ס'איז נישט קיין חיוב."
+    },
+    "abstract": {
+      "en": "The Rav opens with Shlomo HaMelech's tefillah that exiled Jews should turn toward Eretz Yisrael and the Beis Hamikdash, and explains how one in Boro Park should face, and above all have in mind that he stands in the Beis Hamikdash. He grounds this in the Ba'al Shem Tov's teaching that a person is where his thought is, which the Satmar Rav supported from the Gemara about a traveler who fixes his Shabbos place by a tree. He then turns to Ezra's takanah requiring immersion before davening, which was not accepted, and, through his rebbe's teaching from Mesillas Yesharim, contrasts Bilaam, who pressed Hashem to do his will, with Avraham Avinu, who went joyfully to the Akeidah. Hashem favors taharah, as seen in the Kohanim, the Rambam's own practice, the Kohen Gadol's immersions and immersion before Shabbos. A story of Rabbi Yosef Chaim Sonnenfeld, Rabbeinu Tam tefillin and the shofar sounds illustrate doing more than the minimum.",
+      "yi": "דער משגיח עפנט מיט דער תפילה פון שלמה המלך אז אידן אין גלות זאלן זיך ווענדן צו ארץ ישראל און צום בית המקדש, און ער ערקלערט ווי אזוי מ'שטעלט זיך אין בארא פארק, און בעיקר אז מ'זאל האבן אין זינען אז מ'שטייט אינעם בית המקדש. דאס בויט ער אויף דעם בעל שם טוב'ס יסוד אז א מענטש איז וואו זיין מחשבה איז, וואס דער סאטמארער רב האט מחזק געווען פון דער גמרא וועגן א מענטש וואס קובע זיין שביתה ביי א בוים. דערנאך ברענגט ער די תקנה פון עזרא צו טובלן פאר'ן דאווענען, וואס איז נישט אנגענומען געווארן, און לויט זיין רבי'ס לימוד פון מסילת ישרים שטעלט ער אנטקעגן בלעם, וואס האט געוואלט אז דער אייבערשטער זאל טון זיין רצון, מיט אברהם אבינו וואס איז מיט שמחה געגאנגען צו דער עקידה. דער אייבערשטער האט ליב טהרה, ווי מ'זעט ביי די כהנים, ביים רמב\"ם אליין, ביי די טבילות פונעם כהן גדול און ביי טבילה פאר שבת. א מעשה מיט רבי יוסף חיים זאנענפעלד, רבינו תם תפילין און די שופר קולות ווייזן וויאזוי מ'טוט מער ווי דאס מינימום."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "When davening one should face Eretz Yisrael and, above all, have in mind that one is standing in the Beis Hamikdash, and this is accepted as if one were there.",
+          "yi": "ביים דאווענען זאל מען זיך ווענדן צו ארץ ישראל, און דער עיקר האבן אין זינען אז מ'שטייט אינעם בית המקדש, און דאס ווערט אנגענומען אזוי ווי מ'וואלט דארט געווען."
+        },
+        "evidence": { "segs": [56, 58, 59, 61, 62], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Following the Ba'al Shem Tov, the Rav teaches that a person is where his thought is: thinking of Torah places him in Gan Eden, and improper thoughts place him in Gehinnom.",
+          "yi": "לויט דעם בעל שם טוב לערנט דער משגיח אז א מענטש איז וואו זיין מחשבה איז: טראכטן אין תורה שטעלט אים אין גן עדן, און שלעכטע מחשבות שטעלן אים אין גיהנום."
+        },
+        "evidence": { "segs": [63, 66, 68, 75, 117], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Like a devoted child, a Yid should seek to do what gives Hashem pleasure even when he is not commanded, unlike Bilaam who tried to bend Hashem to his own will.",
+          "yi": "אזוי ווי א געטריי קינד, זאל א איד זוכן צו טון וואס גיט דעם אייבערשטן הנאה אפילו ווען ער איז נישט באפוילן, נישט אזוי ווי בלעם וואס האט געוואלט בייגן דעם אייבערשטן צו זיין רצון."
+        },
+        "evidence": { "segs": [164, 178, 190, 248, 249], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Although Ezra's takanah to immerse before davening was not upheld, Hashem favors service done in taharah, so immersion remains a midas chassidus.",
+          "yi": "הגם די תקנה פון עזרא צו טובלן פאר'ן דאווענען איז בטל געווארן, האט דער אייבערשטער ליב עבודה מיט טהרה, און ממילא בלייבט טבילה א מדת חסידות."
+        },
+        "evidence": { "segs": [261, 262, 264, 266], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "A mikvah adds kedushah even to one who is not tamei, as seen from the Kohen Gadol's immersions on Yom Kippur and immersion before Shabbos.",
+          "yi": "א מקוה לייגט צו קדושה אפילו פאר איינעם וואס איז נישט טמא, ווי מ'זעט פון די טבילות פונעם כהן גדול אום יום כיפור און פון טבילה פאר שבת."
+        },
+        "evidence": { "segs": [286, 288, 289, 295], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Many customs beyond the letter of the law, such as Rabbeinu Tam tefillin, are ways to give Hashem nachas ruach.",
+          "yi": "אסאך מנהגים לפנים משורת הדין, ווי רבינו תם תפילין, זענען וועגן ווי אזוי צו טון א נחת רוח פארן אייבערשטן."
+        },
+        "evidence": { "segs": [356, 359, 360], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-english-sets-tefilah-07-2-tefilla",
+      "startSeg": 0,
+      "endSeg": 62,
+      "title": { "en": "Facing the Beis Hamikdash in tefillah", "yi": "זיך ווענדן צום בית המקדש ביי תפילה" },
+      "summary": {
+        "en": "The Rav brings Shlomo HaMelech's tefillah that exiled Jews should turn toward the Beis Hamikdash, and explains that in Boro Park facing east is not exact, so one should turn halfway to the south. Above all, one should have in mind that he stands in the Beis Hamikdash, and it is accepted as if he were there.",
+        "yi": "דער משגיח ברענגט די תפילה פון שלמה המלך אז אידן אין גלות זאלן זיך ווענדן צום בית המקדש, און ערקלערט אז אין בארא פארק איז מזרח נישט גענוי, און מ'זאל זיך דרייען האלב צו דרום. דער עיקר איז צו האבן אין זינען אז מ'שטייט אינעם בית המקדש, און דאס ווערט אנגענומען ווי מ'וואלט דארט געשטאנען."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tefilah-07-2-tefilla",
+      "startSeg": 63,
+      "endSeg": 120,
+      "title": { "en": "A person is where his thought is", "yi": "א מענטש איז וואו זיין מחשבה איז" },
+      "summary": {
+        "en": "The Rav brings the Ba'al Shem Tov's teaching that a person is where his thought is, and the Satmar Rav's support from the Gemara about a traveler on Erev Shabbos who fixes his place by a tree near the city. Since one who has the Beis Hamikdash in mind is truly there, he should present himself accordingly.",
+        "yi": "דער משגיח ברענגט דעם בעל שם טוב'ס לימוד אז א מענטש איז וואו זיין מחשבה איז, און דעם סאטמארער רב'ס ראיה פון דער גמרא וועגן א מענטש אויפן וועג ערב שבת וואס קובע זיין שביתה ביי א בוים נאנט צו דער שטאט. ווייל ווער עס האט דעם בית המקדש אין זינען איז טאקע דארט, דארף ער זיך אזוי אויפפירן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tefilah-07-2-tefilla",
+      "startSeg": 121,
+      "endSeg": 181,
+      "title": { "en": "Ezra's takanah and doing Hashem's will", "yi": "די תקנה פון עזרא און טון דעם אייבערשטנס רצון" },
+      "summary": {
+        "en": "The Rav tells of Ezra's takanah that one who is tamei from keri must immerse before davening and learning, which was not accepted and was annulled, and notes that some Rishonim keep it for davening. He then recalls his rebbe's teaching, from Mesillas Yesharim, that a devoted servant or child does what the master or parent would like even without being told.",
+        "yi": "דער משגיח דערציילט וועגן עזרא'ס תקנה אז א בעל קרי מוז טובלן פאר'ן דאווענען און לערנען, וואס איז נישט אנגענומען געווארן און איז בטל געווארן, און ער מערקט אן אז געוויסע ראשונים האלטן עס ביי דאווענען. דערנאך דערמאנט ער זיין רבי'ס לימוד פון מסילת ישרים, אז א געטריישער קנעכט אדער קינד טוט וואס דער האר אדער עלטערן ווילן אפילו אן א באפעל."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tefilah-07-2-tefilla",
+      "startSeg": 182,
+      "endSeg": 251,
+      "title": { "en": "Bilaam versus Avraham at the Akeidah", "yi": "בלעם אנטקעגן אברהם ביי דער עקידה" },
+      "summary": {
+        "en": "The Rav brings his rebbe's comparison between Bilaam, who claimed to follow Hashem's word yet tried three times to change His mind, and Avraham Avinu, who went with simcha to the Akeidah without one word of protest though it seemed to undo Hashem's promise. Rashi's reading of their walking together shows that both went with joy.",
+        "yi": "דער משגיח ברענגט זיין רבי'ס פארגלייך צווישן בלעם, וואס האט געזאגט אז ער פאלגט דעם אייבערשטנס ווארט און האט פונדעסטוועגן דריי מאל פרובירט איבערצוביטן זיין רצון, און אברהם אבינו, וואס איז מיט שמחה געגאנגען צו דער עקידה אן א ווארט, הגם עס האט אויסגעזען ווי מ'בטל'ט די הבטחה. רש\"י'ס פשט אין \"וילכו שניהם יחדו\" ווייזט אז ביידע זענען געגאנגען מיט שמחה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tefilah-07-2-tefilla",
+      "startSeg": 252,
+      "endSeg": 303,
+      "title": { "en": "Hashem favors taharah", "yi": "דער אייבערשטער האט ליב טהרה" },
+      "summary": {
+        "en": "The Rav shows that Hashem favors service in purity, from the Kohanim who may not serve when tamei, and concludes that immersion before davening is a midas chassidus. He brings the Rambam's letter that he himself always kept Ezra's takanah though he could not codify a chumrah as halachah, and adds the Kohen Gadol's five immersions, immersion before Shabbos, and the Arizal's immersion on Shabbos morning.",
+        "yi": "דער משגיח ווייזט אז דער אייבערשטער האט ליב עבודה מיט טהרה, פון די כהנים וואס טארן נישט טון די עבודה ווען זיי זענען טמא, און ער שליסט אז טבילה פאר'ן דאווענען איז א מדת חסידות. ער ברענגט דעם רמב\"ם'ס אגרת אז ער אליין האט אלעמאל מקיים געווען עזרא'ס תקנה, נאר ער קען נישט שרייבן א חומרא ווי א הלכה, און לייגט צו די פינף טבילות פונעם כהן גדול, טבילה פאר שבת, און דעם אריז\"ל'ס טבילה שבת אינדערפרי."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tefilah-07-2-tefilla",
+      "startSeg": 304,
+      "endSeg": 358,
+      "title": { "en": "Rabbi Yosef Chaim Sonnenfeld and the mikvah", "yi": "רבי יוסף חיים זאנענפעלד און די מקוה" },
+      "summary": {
+        "en": "The Rav tells how someone asked Rabbi Yosef Chaim Sonnenfeld whether going to the mikvah was not bittul Torah, and he answered that if a mikvah can make a goy into a Yid, it can make a Yid into a better Yid. The Rav stresses he is not telling anyone to go daily, only that a Yid should want to give Hashem nachas ruach like a child who brings his mother a gift unasked.",
+        "yi": "דער משגיח דערציילט אז איינער האט געפרעגט רבי יוסף חיים זאנענפעלד צי גיין אין מקוה איז נישט ביטול תורה, און ער האט געענטפערט אז אויב א מקוה קען מאכן פון א גוי א איד, קען זי מאכן פון א איד א בעסערן איד. דער משגיח באטאנט אז ער זאגט נישט אז יעדער זאל גיין יעדן טאג, נאר אז א איד זאל וועלן טון א נחת רוח פארן אייבערשטן ווי א קינד וואס ברענגט זיין מאמע א מתנה אן געבעטן."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tefilah-07-2-tefilla",
+      "startSeg": 359,
+      "endSeg": 433,
+      "title": { "en": "Rabbeinu Tam tefillin, shofar and purity", "yi": "רבינו תם תפילין, שופר און טהרה" },
+      "summary": {
+        "en": "The Rav explains the custom to put on Rabbeinu Tam tefillin after marriage as an extra nachas ruach: both ways of ordering the parshiyos were old practice, the psak followed Rashi, yet the Zohar says both are needed, and after marriage one can be in greater purity. He compares the doubt over shevarim and teruah in shofar, and closes that purity of the body leads to purity of the soul.",
+        "yi": "דער משגיח ערקלערט דעם מנהג צו לייגן רבינו תם תפילין נאך דער חתונה אלס א נחת רוח: ביידע סדרים פון די פרשיות זענען געווען אן אלטער מנהג, דער פסק איז ווי רש\"י, אבער דער זוהר זאגט אז מ'דארף ביידע, און נאך דער חתונה קען מען זיין מער בטהרה. ער פארגלייכט עס צום ספק פון שברים און תרועה ביים שופר, און שליסט אז טהרת הגוף ברענגט צו טהרת הנפש."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "psuchim, in the faith of Malacham, which, when my mother built the Beis Hamikdash",
+      "work": "Melachim I",
+      "ref": "Melachim I ch. 8",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1, 2, 9, 12, 17], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Gemara says, we have it in Shukamalaf",
+      "work": "Shulchan Aruch",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [18, 19], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "The B'Hashem Te'var Kaddish says that a person is where his machshad is",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [63, 66, 80], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Satme of Arav have fortified this Indian, the Bashantiv, with a Gemara",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [82, 83], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "The Gemara says ... if somebody is traveling on Shabbos ... affix his eyes on a certain tree",
+      "work": "Gemara Eruvin",
+      "ref": "Eruvin ch. 4",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [84, 93, 98, 99, 107], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Ezra Sefer made ten Takhanas",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [121, 122, 123, 125], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "There are Rishayinim that say that it became battle only for time",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [145, 146], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "a piece of Mesir HaSishon; That's what the series of Shosham says",
+      "work": "Mesillas Yesharim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [158, 248, 249, 251], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "I will not transgress the command of Yashonah",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 22:18",
+      "sefariaRef": "Numbers 22:18",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [185, 186, 188], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "He went with Simcha, like Rasha explains, that two times he had a Yahya Chusnayim Yartav",
+      "work": "Rashi on Bereishis",
+      "ref": "Rashi on Bereishis 22:6-8",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [235, 236, 238, 242], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "The Rambam wrote in the Sefer of Hezakeh",
+      "work": "Mishneh Torah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [268], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "There's a Igeris from the Rambam ... You have that in the Icarus of Rambam",
+      "work": "Igros HaRambam",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [267, 272, 274, 277], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "You see that on Yom Kippur. The Kaya Godel had to go five times to the mikveh",
+      "work": "Mishnah Yoma",
+      "ref": "Yoma 3:3",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [286, 287, 288], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Svarim say, the Chayyotin writes",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [290, 291, 292], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "the Aria Kaddish says ... tabling Shabbos in the morning also",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [299, 300], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "a Machlaikas between Rashi and Rabayi L'tan how the Seda of the Parshas",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [361, 365, 374, 376], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "If Elyan Nevi will come, the Gemara says",
+      "work": "Gemara",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [381, 382, 383], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "in the Zaya ... So the Isaiah says that both are necessary",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [390, 391, 394, 397], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "The Gemara says in Kaddushin ... whether to devote yourself in Taira before the Chasnah or after the Chasnah",
+      "work": "Gemara Kiddushin",
+      "ref": "Kiddushin 29b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [401, 403, 404], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "In the Gemara it seems to us that we don't know what a Shvarim is",
+      "work": "Gemara Rosh Hashanah",
+      "ref": "Rosh Hashanah 34a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [407, 408, 409], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "the Zaya says that both you need for the Tikkunim",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [412, 413, 417], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "Rabbeinu Hay He writes for Feirish",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [419, 420, 423], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "The Rambam says that. That's how he finishes off the Deen ... Taras Aguf stimulates Taras Anachish",
+      "work": "Mishneh Torah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [428, 429, 430, 431], "confidence": 0.65 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Since a person is where his thought is, one who davens with the Beis Hamikdash in mind is really standing there, and must therefore present himself as one who stands there.",
+        "yi": "ווייל א מענטש איז וואו זיין מחשבה איז, שטייט דער וואס דאוונט מיט'ן בית המקדש אין זינען טאקע דארט, און ממילא דארף ער זיך אזוי אויפפירן."
+      },
+      "evidence": { "segs": [119, 120], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Gemara's traveler who fixes his Shabbos place by a distant tree may then walk into the city, showing halachically that a person's place follows his thought.",
+        "yi": "דער מענטש אין דער גמרא וואס קובע זיין שביתה ביי א בוים פון דער ווייטנס מעג דערנאך אריינגיין אין שטאט, וואס ווייזט על פי הלכה אז א מענטשנס ארט גייט נאך זיין מחשבה."
+      },
+      "evidence": { "segs": [107, 112, 114, 115], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Bilaam also said he would not transgress Hashem's word, but he kept trying to change Hashem's will, while Avraham could have changed it with one word of tefillah and chose not to.",
+        "yi": "בלעם האט אויך געזאגט אז ער וועט נישט עובר זיין אויפן אייבערשטנס ווארט, אבער ער האט געזוכט איבערצוביטן דעם רצון, בשעת אברהם וואלט געקענט מיט איין ווארט תפילה עס איבערדרייען און האט עס נישט געוואלט."
+      },
+      "evidence": { "segs": [188, 190, 207, 246], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Hashem's insistence on purity in the Beis Hamikdash service reveals His desire, so even after Ezra's takanah lapsed, serving Him in taharah remains what He favors.",
+        "yi": "דאס וואס דער אייבערשטער פאדערט טהרה ביי דער עבודה אינעם בית המקדש ווייזט אויף זיין רצון, און ממילא, אפילו נאכדעם וואס עזרא'ס תקנה איז בטל געווארן, האט ער נאך אלץ ליב עבודה מיט טהרה."
+      },
+      "evidence": { "segs": [259, 261, 263, 264], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Rabbi Yosef Chaim Sonnenfeld reasoned that if a mikvah can turn a goy into a Yid, it can turn a Yid into a better Yid.",
+        "yi": "רבי יוסף חיים זאנענפעלד האט געזאגט אז אויב א מקוה קען מאכן פון א גוי א איד, קען זי מאכן פון א איד א בעסערן איד."
+      },
+      "evidence": { "segs": [326, 329, 331, 332], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "Rabbeinu Tam tefillin are begun after marriage for the same reason the Gemara prefers learning after marriage: one can then be in greater purity.",
+        "yi": "מ'הייבט אן לייגן רבינו תם תפילין נאך דער חתונה צוליב דעם זעלבן טעם פארוואס די גמרא האלט אז מ'לערנט בעסער נאך דער חתונה: דעמאלט קען מען זיין מער בטהרה."
+      },
+      "evidence": { "segs": [400, 404, 405, 406], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "Why Rabbi Yosef Chaim Sonnenfeld went to the mikvah", "yi": "פארוואס רבי יוסף חיים זאנענפעלד איז געגאנגען אין מקוה" },
+      "retelling": {
+        "en": "Someone walking in the morning saw Rabbi Yosef Chaim Sonnenfeld coming out of the mikvah, in a Litvish setting where the mikvah was not much stressed and Torah learning reigned. He asked whether the time was not bittul Torah, since he could have been learning. Rabbi Yosef Chaim answered that a goy becomes a Yid by immersing in a mikvah, drawing a Jewish neshamah upon himself; if a mikvah can make a Yid from a goy, it can make a better Yid from a Yid. From then on the questioner went to the mikvah daily before his shiur.",
+        "yi": "איינער וואס איז געגאנגען אינדערפרי האט געזען ווי רבי יוסף חיים זאנענפעלד גייט ארויס פון דער מקוה, ביי ליטווישע אידן וואו מ'האט נישט געמאכט קיין גרויסן חשבון פון מקוה און די תורה האט געהערשט. ער האט אים געפרעגט צי דאס איז נישט ביטול תורה, ווייל ער וואלט געקענט לערנען. רבי יוסף חיים האט געענטפערט אז א גוי ווערט א איד דורך טובלן זיך אין א מקוה, און ער ציט אויף זיך א אידישע נשמה; אויב א מקוה קען מאכן פון א גוי א איד, קען זי מאכן פון א איד א בעסערן איד. פון דעמאלט אן איז יענער געגאנגען יעדן טאג אין מקוה פאר זיין שיעור."
+      },
+      "people": ["Rabbi Yosef Chaim Sonnenfeld"],
+      "evidence": { "segs": [309, 312, 326, 332, 336], "confidence": 0.8 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "If Ezra's takanah to immerse before davening was annulled, why should one still immerse?",
+        "yi": "אויב עזרא'ס תקנה צו טובלן פאר'ן דאווענען איז בטל געווארן, פארוואס זאל מען נאך אלץ טובלן?"
+      },
+      "answer": {
+        "en": "Because Hashem favors service in taharah, as seen in the Beis Hamikdash, so it remains a midas chassidus though not an obligation.",
+        "yi": "ווייל דער אייבערשטער האט ליב עבודה מיט טהרה, ווי מ'זעט אינעם בית המקדש, און ממילא בלייבט עס א מדת חסידות, הגם ס'איז נישט קיין חיוב."
+      },
+      "questionSegs": [264],
+      "answerSegs": [261, 265, 266],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "If the Rambam himself always immersed before davening, why did he write that it is permitted to daven without immersing?",
+        "yi": "אויב דער רמב\"ם אליין האט אלעמאל געטובלט פאר'ן דאווענען, פארוואס האט ער געשריבן אז מ'מעג דאווענען אן טבילה?"
+      },
+      "answer": {
+        "en": "In his letter he explains that when writing halachah in his sefer he must write the halachah and cannot make a chumrah into halachah.",
+        "yi": "אין זיין אגרת ערקלערט ער אז ווען ער שרייבט הלכות אין זיין ספר מוז ער שרייבן די הלכה, און ער קען נישט מאכן פון א חומרא א הלכה."
+      },
+      "questionSegs": [270, 271],
+      "answerSegs": [274, 276, 277],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Is going to the mikvah not bittul Torah?",
+        "yi": "איז גיין אין מקוה נישט ביטול תורה?"
+      },
+      "answer": {
+        "en": "Rabbi Yosef Chaim Sonnenfeld answered that if a mikvah can make a Yid from a goy, it can make a better Yid from a Yid.",
+        "yi": "רבי יוסף חיים זאנענפעלד האט געענטפערט אז אויב א מקוה קען מאכן פון א גוי א איד, קען זי מאכן פון א איד א בעסערן איד."
+      },
+      "questionSegs": [312, 313],
+      "answerSegs": [329, 331, 332],
+      "confidence": 0.85
+    },
+    {
+      "question": {
+        "en": "Why does one begin wearing Rabbeinu Tam tefillin only after marriage?",
+        "yi": "פארוואס הייבט מען אן לייגן רבינו תם תפילין ערשט נאך דער חתונה?"
+      },
+      "answer": {
+        "en": "As the Gemara in Kiddushin prefers learning after marriage, when one can be in greater purity, so this chumrah is begun at a time when one can be more in taharah.",
+        "yi": "אזוי ווי די גמרא אין קידושין האלט אז מ'לערנט בעסער נאך דער חתונה ווען מ'קען זיין מער בטהרה, אזוי הייבט מען אן די חומרא אין א צייט ווען מ'קען זיין מער בטהרה."
+      },
+      "questionSegs": [400],
+      "answerSegs": [403, 404, 405, 406],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says that in Boro Park one should find east with a compass and turn halfway to the south in order to face Eretz Yisrael.",
+        "yi": "דער משגיח זאגט אז אין בארא פארק זאל מען געפינען מזרח מיט א קאמפאס און זיך דרייען האלב צו דרום כדי צו שטיין קעגן ארץ ישראל."
+      },
+      "evidence": { "segs": [24, 25, 54, 55], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that when davening one should have in mind that he is standing in the Beis Hamikdash, facing the center of the Kodesh HaKodashim.",
+        "yi": "דער משגיח זאגט אז ביים דאווענען זאל מען האבן אין זינען אז מ'שטייט אינעם בית המקדש, קעגן דער מיטן פונעם קודש הקדשים."
+      },
+      "evidence": { "segs": [58, 59, 60, 61], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says it is very important to guard one's thoughts, because where a person's thought is, that is where he is.",
+        "yi": "דער משגיח זאגט אז ס'איז זייער וויכטיג צו היטן די מחשבה, ווייל וואו א מענטשנס מחשבה איז, דארט איז ער."
+      },
+      "evidence": { "segs": [116], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The Rav says a Yid should try in every possible way to give Hashem nachas ruach, even by doing things beyond the letter of the law.",
+        "yi": "דער משגיח זאגט אז א איד זאל פרובירן אויף אלע אופנים צו טון א נחת רוח פארן אייבערשטן, אפילו מיט זאכן לפנים משורת הדין."
+      },
+      "evidence": { "segs": [346, 349, 354, 355], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "facing the beis hamikdash in tefillah",
+    "a person is where his thought is",
+    "Ezra's takanah of immersion",
+    "mikvah and taharah",
+    "doing Hashem's will beyond what is commanded",
+    "Bilaam and Avraham at the Akeidah",
+    "Rabbeinu Tam tefillin",
+    "midas chassidus",
+    "shofar sounds shevarim and teruah"
+  ],
+  "concepts": [
+    { "he": "בית המקדש", "heardAs": ["base of migdash", "base of English", "base of Miggurash", "base of marriage"] },
+    { "he": "קודש הקדשים", "heardAs": ["Kurdish Yagodashim"] },
+    { "he": "מחשבה", "heardAs": ["machshad", "makshava", "mashaba", "machsaba"] },
+    { "he": "תחום שבת", "heardAs": ["2,000 Amrits", "2000 diamonds", "2,000 dollars"] },
+    { "he": "שביתה", "heardAs": ["Shriza"] },
+    { "he": "תקנות עזרא", "heardAs": ["Ezra Sefer made ten Takhanas"] },
+    { "he": "טבילה", "heardAs": ["Tvila", "table", "tabling"] },
+    { "he": "טהרה", "heardAs": ["tahavah", "Taha'el", "Tara", "Tahrir", "Taha'u"] },
+    { "he": "מדת חסידות", "heardAs": ["Midas Fasidas"] },
+    { "he": "נחת רוח", "heardAs": ["Nachasruach", "nachaschurach", "achas luach"] },
+    { "he": "לפנים משורת הדין", "heardAs": ["lifnim eshoa sardin"] },
+    { "he": "רבונו של עולם", "heardAs": ["Rabbi Shalom", "Rabbani Sholeim", "rabbinia shavadam", "Rabbana Shveram", "Ravon Yisraelim"] },
+    { "he": "רבינו תם תפילין", "heardAs": ["Rabbeinu Tamstfu", "Rabenu Tam's Tfil-na"] },
+    { "he": "שברים", "heardAs": ["Shvarim", "Shvodim"] }
+  ],
+  "people": [
+    { "name": "Shlomo HaMelech", "heardAs": ["my mother"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["B'Hashem Te'var Kaddish", "Bha-Shamton", "Bashantiv"] },
+    { "name": "the Satmar Rav", "heardAs": ["Satme of Arav"] },
+    { "name": "Ezra HaSofer", "heardAs": ["Ezra Sefer"] },
+    { "name": "Bilaam", "heardAs": ["Bilam", "Bilaam"] },
+    { "name": "Avraham Avinu", "heardAs": ["Abram Avinu", "Avram Avinu"] },
+    { "name": "Yitzchak", "heardAs": ["Yitzhak", "Yitzchot"] },
+    { "name": "Rashi", "heardAs": ["Rasha", "Rashe"] },
+    { "name": "the Rambam", "heardAs": ["Rambam", "Ramban"] },
+    { "name": "the Arizal", "heardAs": ["Aria Kaddish"] },
+    { "name": "Rabbeinu Tam", "heardAs": ["Rabayi L'tan", "Rabenu Tam"] },
+    { "name": "Rav Hai Gaon", "heardAs": ["Rabbeinu Hay", "Rabbi Maha'i"] },
+    { "name": "Rabbi Yosef Chaim Sonnenfeld", "heardAs": ["Rabbi Yosef Chaim Zellenfeld", "Yassau Chaim Zanam"] }
+  ],
+  "asrNotes": "English ASR fair, with Hebrew terms badly mangled but mostly recoverable from context. The name of the Rav's rebbe (segs 154-155, 182) and of the man in the Sonnenfeld story (segs 308, 336) could not be recovered; the source heard as 'the Chayyotin writes' (seg 291) and the Rambam's closing words (segs 430-432) are unclear. Seg 143 covers about seven seconds with only one word."
+}

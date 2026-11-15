@@ -1,0 +1,130 @@
+{
+ "shiurId": "yi-zmanim-yyr-01",
+ "topics": [
+  {
+   "id": "sefiras-haomer",
+   "salience": 1
+  },
+  {
+   "id": "shemos-hakedoshim",
+   "salience": 0.8
+  },
+  {
+   "id": "maalas-hatorah",
+   "salience": 0.75
+  },
+  {
+   "id": "rosh-chodesh",
+   "salience": 0.5
+  },
+  {
+   "id": "kavanah-betefilah",
+   "salience": 0.45
+  },
+  {
+   "id": "dovid-hamelech",
+   "salience": 0.45
+  },
+  {
+   "id": "melave-malka",
+   "salience": 0.4
+  },
+  {
+   "id": "krias-yam-suf",
+   "salience": 0.35
+  }
+ ],
+ "sections": [
+  {
+   "index": 0,
+   "topicIds": [
+    "shemos-hakedoshim",
+    "sefiras-haomer",
+    "maalas-hatorah"
+   ]
+  },
+  {
+   "index": 1,
+   "topicIds": [
+    "kavanah-betefilah",
+    "krias-yam-suf",
+    "maalas-hatorah"
+   ]
+  },
+  {
+   "index": 2,
+   "topicIds": [
+    "sefiras-haomer",
+    "torah-lishmah",
+    "yeshivah-bachurim"
+   ]
+  },
+  {
+   "index": 3,
+   "topicIds": [
+    "rosh-chodesh",
+    "melave-malka",
+    "dovid-hamelech"
+   ]
+  }
+ ],
+ "conceptIds": [
+  "elokus",
+  "mann",
+  "melaveh-malkah",
+  "memaleh-kol-almin",
+  "midas-hadin",
+  "rosh-chodesh",
+  "sefiras-haomer",
+  "shem-havaya",
+  "tiferes",
+  "tikkun-chatzos",
+  "tziruf"
+ ],
+ "personIds": [
+  "arizal",
+  "bnei-yissaschar",
+  "dovid-hamelech",
+  "miriam",
+  "rabbeinu-tam",
+  "rabbi-chaim-vital",
+  "rabbi-pinchas-of-koretz",
+  "rabbi-tzadok-hakohen",
+  "rebbe-elimelech-of-lizhensk",
+  "yaakov-avinu",
+  "yeshayahu-hanavi"
+ ],
+ "workIds": [
+  "bnei-yissaschar",
+  "kiddush-levanah",
+  "mechilta",
+  "midrash",
+  "rashi-on-the-torah",
+  "shulchan-aruch",
+  "talmud-bavli",
+  "tanya",
+  "tehillim",
+  "tikkunei-zohar",
+  "yeshayahu",
+  "yirmiyahu"
+ ],
+ "sourceWorkIds": [
+  "bnei-yissaschar",
+  "yirmiyahu",
+  "tehillim",
+  "tikkunei-zohar",
+  "tanya",
+  null,
+  null,
+  "bnei-yissaschar",
+  "talmud-bavli",
+  "midrash",
+  "mechilta",
+  null,
+  "rashi-on-the-torah",
+  null,
+  "shulchan-aruch",
+  "kiddush-levanah",
+  "yeshayahu"
+ ]
+}

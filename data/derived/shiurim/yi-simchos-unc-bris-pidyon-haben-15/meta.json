@@ -1,0 +1,60 @@
+{
+ "shiurId": "yi-simchos-unc-bris-pidyon-haben-15",
+ "generatedAt": "2026-11-15T07:58:22.761Z",
+ "shiur": {
+  "id": "yi-simchos-unc-bris-pidyon-haben-15",
+  "lang": "yi",
+  "category": "simcha",
+  "seriesId": null,
+  "seriesOrder": null,
+  "catalog": {
+   "source": "uncatalogued-guide",
+   "sectionId": "simchos",
+   "sectionTitle": "Simchos",
+   "n": "15",
+   "page": null,
+   "titleOriginal": "Bris Milah (Chanukah)",
+   "subTitle": null,
+   "heading": "ברית מילה",
+   "derived": "filename",
+   "note": "type of simcha read from the file name, inside the \"bris pidyon haben\" folder"
+  },
+  "parsha": null,
+  "zman": "חנוכה",
+  "perek": null,
+  "hebrewYears": [],
+  "recordingIds": [
+   "y-simchos-bris-pidyon-haben-15-bris-milah-chanukah"
+  ],
+  "inScope": true,
+  "outOfScopeReason": null,
+  "pathNotes": []
+ },
+ "series": null,
+ "catalogTopics": [
+  "Bris Milah (Chanukah)"
+ ],
+ "totalDurationSec": 78.97025,
+ "recordings": [
+  {
+   "recording": {
+    "id": "y-simchos-bris-pidyon-haben-15-bris-milah-chanukah",
+    "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Simchos/bris pidyon haben/15 Bris Milah (Chanukah).mp3",
+    "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Simchos/bris pidyon haben/15 Bris Milah (Chanukah)",
+    "durationSec": 78.97,
+    "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+    "sizeBytes": 393719,
+    "duplicateOf": null,
+    "partOf": null
+   },
+   "order": 0,
+   "transcriptLanguage": "yi",
+   "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+   "durationSec": 78.97025,
+   "segmentCount": 19,
+   "starts": [0.16,3.22,6.12,11.66,14.72,18.61,20.97,28.65,31.25,41.57,44.67,47.41,49.57,51.71,58.23,61.07,63.15,65.01,69.17],
+   "ends": [1.08,4.74,10.56,13.86,15.98,19.53,27.85,29.87,40.25,43.53,46.85,48.43,50.11,57.45,60.51,62.61,64.51,66.97,75.65],
+   "noise": []
+  }
+ ]
+}

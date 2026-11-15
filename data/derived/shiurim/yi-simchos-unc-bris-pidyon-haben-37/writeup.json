@@ -1,0 +1,43 @@
+{
+  "shiurId": "yi-simchos-unc-bris-pidyon-haben-37",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4b-v2",
+  "extractionVariant": "extraction",
+  "en": [
+    {
+      "sectionIndex": 0,
+      "heading": "Shabbos as father and mother; joy of Kedoshim and the bris",
+      "paragraphs": [
+        {
+          "text": "The Rav brings the Chasam Sofer, honoring a descendant present at the bris: the first letters of the passuk on the festivals of Hashem spell 'my mother' and 'my father', for Shabbos and the festivals raise a Jew as parents raise a child.",
+          "sourceIdx": [1, 0],
+          "evidence": { "segs": [0, 1, 5, 6, 17], "confidence": 0.7 }
+        },
+        {
+          "text": "The companions of Rabbi Shimon bar Yochai, he recalls from the Zohar, rejoiced at Kedoshim, since a Jew rejoices in closeness to Hashem. A bris brings that closeness, and this one falls in Kedoshim, on a day of Sefirah tied to milah.",
+          "sourceIdx": [2],
+          "evidence": { "segs": [20, 24, 26, 29, 36, 38], "confidence": 0.7 }
+        }
+      ]
+    }
+  ],
+  "yi": [
+    {
+      "sectionIndex": 0,
+      "heading": "שבת ווי טאטע און מאמע; די שמחה פון קדושים און דעם ברית",
+      "paragraphs": [
+        {
+          "text": "לכבוד א אייניקל פונעם חתם סופר ביים ברית ברענגט דער משגיח זיין ווארט: די ראשי תיבות פונעם פסוק פון מועדי ה' זענען \"אמי\" און \"אבי\", ווייל שבת און די מועדים דערציען א איד ווי עלטערן א קינד.",
+          "sourceIdx": [1, 0],
+          "evidence": { "segs": [0, 1, 5, 6, 17], "confidence": 0.7 }
+        },
+        {
+          "text": "ער דערמאנט פונעם זוהר אז רבי שמעון בר יוחאיס חבריא האבן זיך געפרייט מיט קדושים, ווייל א איד פרייט זיך מיט א נאנטקייט צום אייבערשטן. א ברית ברענגט די נאנטקייט, און דער ברית פאלט אויס אין קדושים, אין א טאג פון ספירה וואס האט א שייכות מיט מילה.",
+          "sourceIdx": [2],
+          "evidence": { "segs": [20, 24, 26, 29, 36, 38], "confidence": 0.7 }
+        }
+      ]
+    }
+  ]
+}

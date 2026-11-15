@@ -1,0 +1,82 @@
+{
+ "shiurId": "yi-simchos-unc-bar-mitzvah-05",
+ "topics": [
+  {
+   "id": "bar-mitzvah",
+   "salience": 1
+  },
+  {
+   "id": "pesach",
+   "salience": 0.7
+  },
+  {
+   "id": "kedushas-shabbos",
+   "salience": 0.5
+  },
+  {
+   "id": "chodesh-nissan",
+   "salience": 0.5
+  },
+  {
+   "id": "leil-haseder",
+   "salience": 0.4
+  },
+  {
+   "id": "krias-shema",
+   "salience": 0.3
+  }
+ ],
+ "sections": [
+  {
+   "index": 0,
+   "topicIds": [
+    "bar-mitzvah",
+    "pesach",
+    "leil-haseder"
+   ]
+  },
+  {
+   "index": 1,
+   "topicIds": [
+    "kedushas-shabbos",
+    "bar-mitzvah",
+    "krias-shema"
+   ]
+  },
+  {
+   "index": 2,
+   "topicIds": [
+    "bar-mitzvah",
+    "pesach"
+   ]
+  }
+ ],
+ "conceptIds": [
+  "bas-kol",
+  "daas",
+  "gerim",
+  "halachah-lemoshe-misinai",
+  "kabbalas-ol-malchus-shamayim",
+  "revi-is",
+  "shabbos-hagadol"
+ ],
+ "personIds": [
+  "arizal",
+  "elyasaf-ben-deuel"
+ ],
+ "workIds": [
+  "bamidbar",
+  "shemos",
+  "talmud-bavli",
+  "tehillim"
+ ],
+ "sourceWorkIds": [
+  null,
+  null,
+  "bamidbar",
+  "bamidbar",
+  "shemos",
+  "tehillim",
+  "talmud-bavli"
+ ]
+}

@@ -1,0 +1,113 @@
+{
+ "shiurId": "yi-zmanim-chnvkh-04",
+ "topics": [
+  {
+   "id": "teshuvah",
+   "salience": 0.85
+  },
+  {
+   "id": "zos-chanukah",
+   "salience": 0.8
+  },
+  {
+   "id": "chodesh-kislev",
+   "salience": 0.7
+  },
+  {
+   "id": "elul",
+   "salience": 0.5
+  },
+  {
+   "id": "rosh-hashanah",
+   "salience": 0.4
+  },
+  {
+   "id": "sefer-devarim",
+   "salience": 0.4
+  },
+  {
+   "id": "krias-shema",
+   "salience": 0.4
+  },
+  {
+   "id": "otiyos-gematria",
+   "salience": 0.3
+  }
+ ],
+ "sections": [
+  {
+   "index": 0,
+   "topicIds": [
+    "chodesh-kislev",
+    "zos-chanukah",
+    "rosh-hashanah"
+   ]
+  },
+  {
+   "index": 1,
+   "topicIds": [
+    "teshuvah",
+    "sefer-devarim",
+    "elul"
+   ]
+  },
+  {
+   "index": 2,
+   "topicIds": [
+    "zos-chanukah",
+    "teshuvah",
+    "elul"
+   ]
+  },
+  {
+   "index": 3,
+   "topicIds": [
+    "sefer-devarim",
+    "teshuvah"
+   ]
+  },
+  {
+   "index": 4,
+   "topicIds": [
+    "chodesh-kislev",
+    "krias-shema",
+    "otiyos-gematria"
+   ]
+  }
+ ],
+ "conceptIds": [
+  "baruch-shem",
+  "beinoni",
+  "haazinu",
+  "kabbalas-ol-malchus-shamayim",
+  "klalos",
+  "krias-shema",
+  "shemini-atzeres",
+  "yom-kippur",
+  "zos-chanukah"
+ ],
+ "personIds": [
+  "bnei-yissaschar",
+  "chashmonaim"
+ ],
+ "workIds": [
+  "bnei-yissaschar",
+  "megillah",
+  "nazir",
+  "rosh-hashanah",
+  "shabbos",
+  "unesaneh-tokef",
+  "yeshayahu",
+  "zohar"
+ ],
+ "sourceWorkIds": [
+  "rosh-hashanah",
+  "unesaneh-tokef",
+  "yeshayahu",
+  "megillah",
+  "bnei-yissaschar",
+  "nazir",
+  "zohar",
+  "shabbos"
+ ]
+}

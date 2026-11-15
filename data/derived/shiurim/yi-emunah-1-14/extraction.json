@@ -1,0 +1,514 @@
+{
+  "shiurId": "yi-emunah-1-14",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that the Megillah teaches how to find Hashem, whose name is hidden in it, behind the natural events of the world and of one's own life.",
+      "yi": "דער משגיח ערקלערט אז די מגילה לערנט ווי אזוי צו געפינען דעם רבונו של עולם, וועמענס נאמען איז באהאלטן אין איר, הינטער די טבעיות'דיגע געשעענישן פון דער וועלט און פונעם אייגענעם לעבן."
+    },
+    "abstract": {
+      "en": "The Rav opens with the order of the months: Nissan brings open miracles, while Adar, from the word for a cloak, holds miracles covered by nature. A mashal from the Bnei Yissaschar, of a dying man saved when the medicine from the East and the only doctor from the West arrive at the same moment, shows such a hidden miracle. The Megillah is full of such exact timings, yet Hashem's name never appears in it, which raises the question of how one says the brachah on its miracles. The Rav brings the Midrash that 'the king' in the Megillah means Hashem: the erratic Achashverosh was only a puppet on strings. The name is not written openly because, as Rashi teaches, Hashem's name and throne are incomplete while Amalek, who brings doubt in emunah, exists. Still, the name is hidden in the verses, and learning the Megillah means searching for it. So too one must find Hashem in the news, in history and in one's own daily miracles; this is Purim.",
+      "yi": "דער משגיח עפנט מיטן סדר פון די חדשים: אין ניסן זענען די ניסים גלוים, און אדר, פונעם ווארט אדרת, א מאנטל, האט ניסים וואס זענען איבערגעדעקט מיט טבע. א משל פונעם בני יששכר, פון א קראנקן וואס ווערט געראטעוועט ווען די מעדיצין פון מזרח און דער איינציגער דאקטער פון מערב קומען אן אין דער זעלבער מינוט, ווייזט אזא באהאלטענעם נס. די מגילה איז פול מיט אזעלכע פונקטליכע צייטן, און פונדעסטוועגן שטייט נישט אין איר דער נאמען פונעם רבונו של עולם; ממילא פרעגט זיך ווי אזוי מ'מאכט א ברכה אויף אירע ניסים. דער משגיח ברענגט דעם מדרש אז \"המלך\" אין דער מגילה מיינט דעם רבונו של עולם: דער אומבאשטענדיגער אחשורוש איז געווען נאר א ליאלקע אויף שטריקלעך. דער נאמען שטייט נישט אפן ווייל, ווי רש\"י ברענגט, איז דער שם און דער כסא נישט שלם כל זמן עמלק, וואס ברענגט ספיקות אין אמונה, איז דא. פונדעסטוועגן איז דער נאמען באהאלטן אין די פסוקים, און לערנען די מגילה הייסט אים זוכן. אזוי אויך דארף מען געפינען דעם רבונו של עולם אין די צייטונגען, אין דער היסטאריע און אין די טעגליכע ניסים פונעם אייגענעם לעבן; דאס איז פורים."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Nissan is the month of open miracles, while the miracles of Adar are just as real but cloaked in nature.",
+          "yi": "ניסן איז דער חודש פון ניסים גלוים, און די ניסים פון אדר זענען פונקט אזוי ניסים, נאר זיי זענען איבערגעדעקט מיט טבע."
+        },
+        "evidence": { "segs": [4, 8, 10, 13, 16, 18], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The Megillah is built of exact timings, each adding a component to the miracle, which shows a guiding Hand rather than chance.",
+          "yi": "די מגילה איז געבויט פון פונקטליכע צייטן, וואס יעדע לייגט צו א חלק צום נס, און דאס ווייזט אז ס'איז דא א האנט וואס פירט, נישט קיין צופאל."
+        },
+        "evidence": { "segs": [75, 78, 84, 86], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Following the Midrash, 'the king' in the Megillah means Hashem, since Achashverosh was a puppet moved by strings from above.",
+          "yi": "לויטן מדרש מיינט \"המלך\" אין דער מגילה דעם רבונו של עולם, ווייל אחשורוש איז געווען א ליאלקע וואס מ'ציט מיט שטריקלעך פון אויבן."
+        },
+        "evidence": { "segs": [134, 185, 188, 193, 198], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Hashem's name is not openly in the Megillah because His name and throne are incomplete while Amalek, the source of doubt in emunah, exists.",
+          "yi": "דער נאמען פונעם רבונו של עולם שטייט נישט אפן אין דער מגילה ווייל זיין שם און כסא זענען נישט שלם כל זמן עמלק, דער מקור פון ספיקות אין אמונה, איז דא."
+        },
+        "evidence": { "segs": [200, 204, 229, 255, 258], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Learning the Megillah means searching for Hashem's name hidden between its lines, and then finding Him the same way in the news, in history and in one's own life.",
+          "yi": "לערנען די מגילה הייסט זוכן דעם רבונו של עולם'ס נאמען וואס איז באהאלטן צווישן אירע שורות, און דערנאך אים אזוי געפינען אין די נייעס, אין דער היסטאריע און אינעם אייגענעם לעבן."
+        },
+        "evidence": { "segs": [300, 305, 349, 350, 378], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The joy of Purim is the joy of finding Hashem in the midst of His hiddenness.",
+          "yi": "די שמחה פון פורים איז די שמחה פון געפינען דעם רבונו של עולם אינמיטן פון דער הסתרה."
+        },
+        "evidence": { "segs": [408, 412, 427], "confidence": 0.75 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-emunah-07-b-emunah-yiddish",
+      "startSeg": 0,
+      "endSeg": 66,
+      "title": {
+        "en": "Adar: miracles under a cloak",
+        "yi": "אדר: ניסים אונטער א מאנטל"
+      },
+      "summary": {
+        "en": "The Rav contrasts the open miracles of Nissan with those of Adar, a word he links to a cloak, which are covered by nature. He tells the Bnei Yissaschar's mashal of a dying man saved when a ship with the medicine from the East and a ship with the only doctor from the West arrive at once.",
+        "yi": "דער משגיח שטעלט אנקעגן די ניסים גלוים פון ניסן מיט די ניסים פון אדר, א ווארט וואס ער פארבינדט מיט אדרת, א מאנטל, וואס זענען איבערגעדעקט מיט טבע. ער דערציילט דעם משל פונעם בני יששכר פון א קראנקן וואס ווערט געראטעוועט ווען א שיף מיט דער מעדיצין פון מזרח און א שיף מיטן איינציגן דאקטער פון מערב קומען אן אויף איין מאל."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-07-b-emunah-yiddish",
+      "startSeg": 67,
+      "endSeg": 131,
+      "title": {
+        "en": "A Megillah of exact timings without Hashem's name",
+        "yi": "א מגילה פון פונקטליכע צייטן אן דעם שם"
+      },
+      "summary": {
+        "en": "The Rav shows that the Megillah is full of events falling at just the right moment, and ties Esther to the Gemara's hint of hester, hiddenness, at the end of the exile of Bavel. He then asks why Hashem's name is absent from the whole Megillah, where everything is natural, and how one can say the brachah on its miracles.",
+        "yi": "דער משגיח ווייזט אז די מגילה איז פול מיט געשעענישן וואס קומען פונקט אין דער ריכטיגער צייט, און ער פארבינדט אסתר מיטן רמז פון דער גמרא אויף הסתר, אינעם סוף פון גלות בבל. דערנאך פרעגט ער פארוואס דער שם שטייט נישט אין דער גאנצער מגילה, וואו אלעס איז טבעיות'דיג, און ווי אזוי מ'מאכט א ברכה אויף אירע ניסים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-07-b-emunah-yiddish",
+      "startSeg": 132,
+      "endSeg": 198,
+      "title": {
+        "en": "'The king' means Hashem: the puppet Achashverosh",
+        "yi": "\"המלך\" מיינט דעם רבונו של עולם: אחשורוש די ליאלקע"
+      },
+      "summary": {
+        "en": "The Rav brings the Midrash that 'the king' in the Megillah refers to Hashem, and shows from Achashverosh's swings, with his wives, his advisors and his taxes, that he had no will of his own. He compares him to a marionette whose strings are pulled from above.",
+        "yi": "דער משגיח ברענגט דעם מדרש אז \"המלך\" אין דער מגילה מיינט דעם רבונו של עולם, און ער ווייזט פון אחשורוש'ס איבערדרייענישן, מיט זיינע ווייבער, זיינע שרים און זיינע שטייערן, אז ער האט נישט געהאט קיין אייגענעם ווילן. ער גלייכט אים צו א מאריאנעט וואס מ'ציט אירע שטריקלעך פון אויבן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-07-b-emunah-yiddish",
+      "startSeg": 199,
+      "endSeg": 273,
+      "title": {
+        "en": "Amalek, doubt, and the incomplete name",
+        "yi": "עמלק, ספיקות, און דער שם וואס איז נישט שלם"
+      },
+      "summary": {
+        "en": "The Rav answers with Rashi at the end of Parshas Beshalach that Hashem's name and throne are incomplete while Amalek exists. He explains how each person's deeds affect all creation, that Amalek, equal in gematria to safek, brings doubts in emunah, and that this is why the Megillah says 'the king' and not the name.",
+        "yi": "דער משגיח ענטפערט מיט רש\"י אינעם סוף פון פרשת בשלח אז דער שם און דער כסא זענען נישט שלם כל זמן עמלק איז דא. ער ערקלערט ווי יעדן מענטשנס מעשים ווירקן אויף דער גאנצער בריאה, אז עמלק, בגימטריא ספק, ברענגט ספיקות אין אמונה, און אז דערפאר שטייט אין דער מגילה \"המלך\" און נישט דער שם."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-07-b-emunah-yiddish",
+      "startSeg": 274,
+      "endSeg": 368,
+      "title": {
+        "en": "Searching for the hidden name, in the Megillah and in the news",
+        "yi": "זוכן דעם באהאלטענעם שם, אין דער מגילה און אין די נייעס"
+      },
+      "summary": {
+        "en": "The Rav shows Hashem's name hidden in the verses, at the roshei teivos of 'yavo hamelech veHaman hayom' and backwards in 'zeh einenu shoveh li', and says learning the Megillah means searching for it. He applies this to world leaders as puppets, to an x-ray that only a specialist can read, and to the fall of communism, telling what the Stoliner Rebbe said about it decades earlier.",
+        "yi": "דער משגיח ווייזט ווי דער שם איז באהאלטן אין די פסוקים, אין די ראשי תיבות פון \"יבוא המלך והמן היום\" און למפרע אין \"זה איננו שוה לי\", און זאגט אז לערנען די מגילה הייסט אים זוכן. ער ווענדט עס אן אויף די פירער פון דער וועלט וואס זענען ליאלקעס, אויף א רענטגען וואס נאר א מומחה קען ליינען, און אויפן אונטערגאנג פונעם קאמוניזם, און דערציילט וואס דער סטאלינער רבי האט דערויף געזאגט מיט יארן פריער."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-07-b-emunah-yiddish",
+      "startSeg": 369,
+      "endSeg": 428,
+      "title": {
+        "en": "The whole world is a Megillah: the joy of finding Hashem",
+        "yi": "די גאנצע וועלט איז א מגילה: די שמחה פון געפינען דעם רבונו של עולם"
+      },
+      "summary": {
+        "en": "The Rav concludes that the whole world, history and one's own life are a Megillah in which Hashem must be found, as the daily thanks in Modim says. With the picture of a disguised guest at the Purim seudah and the Ba'al Shem Tov's hide-and-seek, he describes the joy of finding Hashem inside the hiddenness, which is Purim.",
+        "yi": "דער משגיח שליסט אז די גאנצע וועלט, די היסטאריע און דאס אייגענע לעבן זענען א מגילה וואו מ'דארף געפינען דעם רבונו של עולם, ווי מ'דאנקט יעדן טאג אין מודים. מיטן בילד פון אן איבערגעטוענעם גאסט ביי דער פורים סעודה און מיטן באהאלטן-שפיל פונעם בעל שם טוב, שילדערט ער די שמחה פון געפינען דעם רבונו של עולם אינמיטן פון דער הסתרה, און דאס איז פורים."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "דער בני יששכר האט געהערט א משה לויך דעם",
+      "work": "Bnei Yissaschar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [19, 25, 26], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "ויציא ראשון אדמיני, כאלו כי אדירת סעיר",
+      "work": "Bereishis",
+      "ref": "Bereishis 25:25",
+      "sefariaRef": "Genesis 25:25",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [9, 10], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "די מהר''ל האט גאנצען ספר אויף די מגלה",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [80], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער גמרא זאגט נכון, אין אסתר מן התורה מן עים",
+      "work": "Gemara Chullin",
+      "ref": "Chullin 139b",
+      "sefariaRef": "Chullin 139b",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [89, 90], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "וייטל עס פארמען אלייתא שהכן ומרדכי, וחמת המלך שכחר",
+      "work": "Esther",
+      "ref": "Esther 7:10",
+      "sefariaRef": "Esther 7:10",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [116, 117], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ואמרת היתמל לפני המלך, ולבש מלכות תחילת וחרן",
+      "work": "Esther",
+      "ref": "Esther 8:15",
+      "sefariaRef": "Esther 8:15",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [118], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אין די מדרש שטעט עסקאה שטעט המלך",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [134], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "לב מלאכים וirected ביד ה’ה",
+      "work": "Mishlei",
+      "ref": "Mishlei 21:1",
+      "sefariaRef": "Proverbs 21:1",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [141, 310], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ויוטן ונחל המדינות עשה",
+      "work": "Esther",
+      "ref": "Esther 2:18",
+      "sefariaRef": "Esther 2:18",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [165, 166], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ויוסף המלך החשבור'ש, מעשה על עולות",
+      "work": "Esther",
+      "ref": "Esther 10:1",
+      "sefariaRef": "Esther 10:1",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [174, 175], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "סוף פרשת פשט. כי יודע על כס קיין",
+      "work": "Rashi",
+      "ref": "Rashi on Shemos 17:16",
+      "sefariaRef": "Rashi on Exodus 17:16",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [200, 201, 204, 205, 206], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "הישש שם בקבענו רמאי'ין, ויבאוי מלוק",
+      "work": "Shemos",
+      "ref": "Shemos 17:7-8",
+      "sefariaRef": "Exodus 17:7-8",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [233, 235], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "מקובל ... פון עריע הקודש, און אלע זהרע הקודש",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [282, 283], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "דער רבי יעקב וועמדין אין סידור",
+      "work": "Siddur of Rav Yaakov Emden",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [283, 284], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "יד כהוואב כהוי המלך והאמן היום",
+      "work": "Esther",
+      "ref": "Esther 5:4",
+      "sefariaRef": "Esther 5:4",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [286], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "זענענו שובע לי, זע-ענע-נו שובע לי",
+      "work": "Esther",
+      "ref": "Esther 5:13",
+      "sefariaRef": "Esther 5:13",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [290, 291, 293], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "משגיח מן החלונות מעשיות מן החרקים",
+      "work": "Shir HaShirim",
+      "ref": "Shir HaShirim 2:9",
+      "sefariaRef": "Song of Songs 2:9",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [342], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "על חיינו המסורים בידך",
+      "work": "Shemoneh Esrei",
+      "ref": "Shemoneh Esrei, Modim",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [379, 380, 419, 423], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער בעש''ט הקודש האט געזאגט",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [402, 404, 405, 406], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ווערט ליהדים הייסע אורים",
+      "work": "Esther",
+      "ref": "Esther 8:16",
+      "sefariaRef": "Esther 8:16",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [428], "confidence": 0.8 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Adar is read as 'cloak': its miracles are the same as Nissan's, only wrapped in nature, as the fish of the mazal of Adar live hidden under the water.",
+        "yi": "אדר איז פון לשון אדרת: אירע ניסים זענען די זעלבע ווי די פון ניסן, נאר איינגעוויקלט אין טבע, אזוי ווי די דגים פונעם מזל פון אדר וואס לעבן באהאלטן אונטערן וואסער."
+      },
+      "evidence": { "segs": [8, 10, 15, 102, 103], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Achashverosh's swings from one extreme to the other, in his marriages and in his taxes, prove he had no character of his own and was only moved from above.",
+        "yi": "אחשורוש'ס שפרינגען פון איין עק צום אנדערן, מיט זיינע ווייבער און מיט זיינע שטייערן, באווייזט אז ער האט נישט געהאט קיין אייגענעם כאראקטער און מ'האט אים נאר געפירט פון אויבן."
+      },
+      "evidence": { "segs": [143, 145, 146, 173, 177], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The absence of Hashem's name from the Megillah reflects the incompleteness of the name while Amalek, whose gematria equals safek, spreads doubt in the world.",
+        "yi": "וואס דער שם שטייט נישט אין דער מגילה שפיגלט אפ אז דער שם איז נישט שלם כל זמן עמלק, וואס איז בגימטריא ספק, פארשפרייט ספיקות אויף דער וועלט."
+      },
+      "evidence": { "segs": [229, 230, 255, 258, 259], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Reading the world is like reading an x-ray: to the layman it is meaningless splashes, while the specialist, like the man of emunah, sees exactly what is there.",
+        "yi": "די וועלט ליינען איז ווי ליינען א רענטגען: פארן פשוטן מענטש איז עס גארנישט ווי שפריצן פארב, אבער דער מומחה, אזוי ווי דער בעל אמונה, זעט פונקטליך וואס ס'איז דארט."
+      },
+      "evidence": { "segs": [332, 334, 336, 337, 339], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Learning the Megillah is an exercise: once one can find Hashem's name between its lines, one can do the same with the New York Times.",
+        "yi": "לערנען די מגילה איז אן איבונג: ווען מ'קען שוין געפינען דעם שם צווישן אירע שורות, קען מען דאס זעלבע טאן מיט דער ניו יארק טיימס."
+      },
+      "evidence": { "segs": [345, 347, 349, 350], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Once Hashem is found, as in the Ba'al Shem Tov's hide-and-seek, He no longer needs to hide, and the finding itself is the joy of Purim.",
+        "yi": "ווען מ'געפינט דעם רבונו של עולם, אזוי ווי ביים באהאלטן-שפיל פונעם בעל שם טוב, דארף ער זיך מער נישט באהאלטן, און דאס געפינען אליין איז די שמחה פון פורים."
+      },
+      "evidence": { "segs": [402, 404, 406, 408, 412], "confidence": 0.7 }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "The Stoliner Rebbe on communism",
+        "yi": "דער סטאלינער רבי וועגן קאמוניזם"
+      },
+      "retelling": {
+        "en": "The Rav recalls that in his younger years he davened in the Stoliner shul in Williamsburg, by the Stoliner Rebbe, a tzaddik who said wondrous things. Some thirty years earlier, when people spoke with him about communism, the Rebbe said it had come for a fixed number of years. The Rav says that now one sees with one's own eyes that it is falling apart exactly on time.",
+        "yi": "דער משגיח דערמאנט אז ער האט אין זיינע יונגע יארן געדאווענט אין דער סטאלינער שול אין וויליאמסבורג, ביים סטאלינער רבי'ן, א צדיק וואס האט געזאגט וואונדערליכע זאכן. מיט דרייסיג יאר צוריק, ווען מ'האט מיט אים גערעדט וועגן קאמוניזם, האט דער רבי געזאגט אז עס איז געקומען אויף א באשטימטע צאל יארן. דער משגיח זאגט אז היינט זעט מען בחוש אז עס פאלט אוועק פונקט אין דער צייט."
+      },
+      "people": ["the Stoliner Rebbe"],
+      "evidence": { "segs": [361, 363, 364, 365, 368], "confidence": 0.7 }
+    },
+    {
+      "title": {
+        "en": "The disguised guest at the Purim seudah",
+        "yi": "דער איבערגעטוענער גאסט ביי דער פורים סעודה"
+      },
+      "retelling": {
+        "en": "The Rav describes sitting at the Purim seudah with the candles burning and challah on the table, when someone walks in dressed as a rasha in red pants and an orange blouse. He asks him which yeshivah he is collecting for, because he knows the guest is no rasha, only dressed up. This, he says, is what it is to be frum: to know that everything is a disguise.",
+        "yi": "דער משגיח שילדערט ווי מ'זיצט ביי דער פורים סעודה, די ליכט ברענען און א חלה ליגט אויפן טיש, און עס קומט אריין איינער איבערגעטון ווי א רשע מיט רויטע הויזן און אן אראנזש בלוזקע. ער פרעגט אים פאר וועלכע ישיבה ער זאמלט, ווייל ער ווייסט אז דער גאסט איז נישט קיין רשע, נאר איבערגעטון. דאס, זאגט ער, הייסט פרום: וויסן אז אלעס איז אן איבערטועניש."
+      },
+      "people": [],
+      "evidence": { "segs": [388, 391, 393, 394, 396, 397], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "If the Megillah is entirely natural, what miracles does the brachah 'she'asah nissim' refer to?",
+        "yi": "אויב אין דער מגילה איז אלעס טבעיות'דיג, אויף וועלכע ניסים מאכט מען די ברכה \"שעשה ניסים\"?"
+      },
+      "answer": {
+        "en": "They are hidden miracles; one who knows that Hashem runs everything sees them, and can then make the brachah.",
+        "yi": "ס'זענען ניסים נסתרים; דער וואס ווייסט אז דער רבונו של עולם פירט אלעס זעט זיי, און ער קען דעמאלט מאכן די ברכה."
+      },
+      "questionSegs": [129, 130],
+      "answerSegs": [319, 321, 326, 344],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "If 'the king' in the Megillah means Hashem, why does it not write His name?",
+        "yi": "אויב \"המלך\" אין דער מגילה מיינט דעם רבונו של עולם, פארוואס שטייט נישט זיין נאמען?"
+      },
+      "answer": {
+        "en": "Because Hashem's name and throne are incomplete as long as Amalek and Haman exist in the world.",
+        "yi": "ווייל דער שם און דער כסא זענען נישט שלם כל זמן עמלק און המן זענען דא אויף דער וועלט."
+      },
+      "questionSegs": [135, 199],
+      "answerSegs": [200, 204, 255, 258],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "How can 'the king' mean Hashem when the simple meaning is Achashverosh?",
+        "yi": "ווי אזוי קען \"המלך\" מיינען דעם רבונו של עולם, ווען דער פשט איז אחשורוש?"
+      },
+      "answer": {
+        "en": "Achashverosh was only a puppet whose every movement was pulled by strings from above, so the true king is Hashem.",
+        "yi": "אחשורוש איז געווען נאר א ליאלקע וואס יעדע באוועגונג זיינע האט מען געצויגן מיט שטריקלעך פון אויבן, ממילא איז דער אמת'ער מלך דער רבונו של עולם."
+      },
+      "questionSegs": [137, 139],
+      "answerSegs": [188, 193, 194, 196],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says that after learning to find Hashem's name in the Megillah, one should practice finding Him between the lines of the newspaper and in current events.",
+        "yi": "דער משגיח זאגט אז נאכדעם וואס מ'לערנט זיך אויס געפינען דעם שם אין דער מגילה, זאל מען זיך איבן אים צו געפינען צווישן די שורות פון דער צייטונג און אין די היינטיגע געשעענישן."
+      },
+      "evidence": { "segs": [347, 349, 350, 351], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He says one who knows how to read the Megillah sees the miracles of his own life, the daily miracles for which one thanks Hashem in Modim.",
+        "yi": "ער זאגט אז דער וואס ווייסט ווי אזוי צו ליינען די מגילה זעט די ניסים פון זיין אייגענעם לעבן, די טעגליכע ניסים וואס מ'דאנקט אויף זיי אין מודים."
+      },
+      "evidence": { "segs": [378, 379, 380], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "He says one who knows Hashem is hidden behind everything need not be frightened by the rasha who comes in.",
+        "yi": "ער זאגט אז דער וואס ווייסט אז דער רבונו של עולם איז באהאלטן הינטער אלעס דארף נישט דערשרעקן ווערן פונעם רשע וואס קומט אריין."
+      },
+      "evidence": { "segs": [400, 401], "confidence": 0.7 }
+    }
+  ],
+  "candidateTopics": [
+    "Purim",
+    "Megillas Esther",
+    "hidden miracles",
+    "hashgachah pratis",
+    "Amalek and doubt in emunah",
+    "Hashem's name hidden in the Megillah",
+    "the month of Adar",
+    "seeing Hashem in current events",
+    "hester panim"
+  ],
+  "concepts": [
+    { "he": "ניסים נסתרים", "heardAs": ["נסים נסתרים", "ניסים נסתרים", "נסים נתפתלים"] },
+    { "he": "ניסים גלוים", "heardAs": ["נסים גלוים", "ניסים און ניגלים"] },
+    { "he": "אדרת", "heardAs": ["אדירות", "אדירת"] },
+    { "he": "הסתר", "heardAs": ["האסתא", "ראסתא", "הסתרה"] },
+    { "he": "עמלק", "heardAs": ["מילק", "מלוק", "א מלוק"] },
+    { "he": "אחשורוש", "heardAs": ["חשבור'ש", "החשבור'ש", "חש ורש"] },
+    { "he": "רבונו של עולם", "heardAs": ["רביה שלום", "רבינו שלמה", "רביה'נע שלעה'ן", "רבנו ישראלים"] },
+    { "he": "שם הוי'ה", "heardAs": ["שם הויה", "עקיסי הויה"] },
+    { "he": "בגימטריא", "heardAs": ["במטחי", "גמ''כ"] },
+    { "he": "ספק", "heardAs": ["ספק", "ספקת נאמנע"] },
+    { "he": "מזל דגים", "heardAs": ["מזל אדא דגים"] },
+    { "he": "שעשה ניסים", "heardAs": ["שעשה ניסים לב אסרנו", "ששת ניסים לב ושנא"] }
+  ],
+  "people": [
+    { "name": "the Bnei Yissaschar", "heardAs": ["בני יששכר"] },
+    { "name": "the Maharal", "heardAs": ["מהר''ל"] },
+    { "name": "Esther", "heardAs": ["אסתר", "עסטע"] },
+    { "name": "Mordechai", "heardAs": ["מרדכי"] },
+    { "name": "Achashverosh", "heardAs": ["חשבור'ש", "החשבור'ש"] },
+    { "name": "Haman", "heardAs": ["האמען", "האמן", "המן"] },
+    { "name": "Vashti", "heardAs": ["וואשני", "ושתי"] },
+    { "name": "Rashi", "heardAs": ["אברהם זאגט"] },
+    { "name": "the Arizal", "heardAs": ["עריע הקודש"] },
+    { "name": "Rav Yaakov Emden", "heardAs": ["רבי יעקב וועמדין"] },
+    { "name": "the Stoliner Rebbe", "heardAs": ["סטאלינער רבי'ן"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["בעש''ט הקודש"] }
+  ],
+  "asrNotes": "Yiddish ASR fair for the Rav's narrative and his English asides, but most Hebrew quotations (pesukim of the Megillah, Rashi, Modim) are badly garbled and were recovered only from context. The commentary he mentions after the Maharal (seg 81) and the Ba'al Shem Tov's wording (seg 403) could not be recovered, and the number of years in the Stoliner Rebbe story (segs 365-368) is unclear. Segs 224-225 and 260-261 are partly unintelligible."
+}

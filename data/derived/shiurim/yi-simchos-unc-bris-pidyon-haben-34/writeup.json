@@ -1,0 +1,43 @@
+{
+  "shiurId": "yi-simchos-unc-bris-pidyon-haben-34",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4b-v2",
+  "extractionVariant": "extraction",
+  "en": [
+    {
+      "sectionIndex": 0,
+      "heading": "Pesach and milah as a double bond",
+      "paragraphs": [
+        {
+          "text": "The Rav brings the Rambam in Sefer Hamitzvos: the Yamim Tovim depend on sanctifying the month in Eretz Yisrael, so they are the existence of Klal Yisrael, and Pesach heads them. Citing the Chiddushei HaRim, he notes that Pesach alone carries kareis, a sign that its mitzvos bind Jews to Hashem, and the Korban Pesach requires milah.",
+          "sourceIdx": [0, 1, 2],
+          "evidence": { "segs": [0, 12, 17, 19, 21, 35], "confidence": 0.7 }
+        },
+        {
+          "text": "Milah also carries kareis, so a bris on Pesach is a bond upon a bond. Eliyahu Hanavi comes to both, and the Rav calls it a time to bind oneself to Hashem anew.",
+          "sourceIdx": [],
+          "evidence": { "segs": [44, 46, 47, 53, 63, 65], "confidence": 0.75 }
+        }
+      ]
+    }
+  ],
+  "yi": [
+    {
+      "sectionIndex": 0,
+      "heading": "פסח און מילה, א קשר אויף א קשר",
+      "paragraphs": [
+        {
+          "text": "דער משגיח ברענגט דעם רמב\"ם אין ספר המצוות אז די מועדים הענגען אין קידוש החודש אין ארץ ישראל, ממילא זענען זיי דער קיום פון כלל ישראל, און פסח איז זייער ראש. ער ברענגט פון חידושי הרי\"ם אז נאר פסח האט כרת, א סימן אז זיינע מצוות זענען מקשר אידן מיט'ן אייבערשטן, און צום קרבן פסח דארף מען זיין א נימול.",
+          "sourceIdx": [0, 1, 2],
+          "evidence": { "segs": [0, 12, 17, 19, 21, 35], "confidence": 0.7 }
+        },
+        {
+          "text": "מילה האט אויך כרת, ממילא איז א ברית אום פסח א קשר אויף א קשר. אליהו הנביא קומט צו ביידע, און דער משגיח זאגט אז ס'איז א צייט זיך מקשר צו זיין מחדש מיט'ן רבונו של עולם.",
+          "sourceIdx": [],
+          "evidence": { "segs": [44, 46, 47, 53, 63, 65], "confidence": 0.75 }
+        }
+      ]
+    }
+  ]
+}

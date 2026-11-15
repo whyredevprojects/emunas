@@ -1,0 +1,369 @@
+{
+  "shiurId": "yi-current-unc-bachurim-04",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav speaks to bachurim about the danger of jealousy and of shaming another person, through Rebbe Elimelech's tefillah, the story of Kayin and a series of stories of tzaddikim.",
+      "yi": "דער משגיח רעדט צו בחורים וועגן דער סכנה פון קנאה און פון פארשעמען א צווייטן, דורך רבי אלימלך'ס תפילה, די פרשה פון קין, און א רייע מעשיות פון צדיקים."
+    },
+    "abstract": {
+      "en": "The Rav opens with the line in Rebbe Elimelech's tefillah asking to be saved from jealousy, which he calls the hardest thing in the world and common at every age. He traces kinah from creation: the moon envied the sun, the nachash envied Adam, and Kayin, a great man to whom Hashem spoke, killed Hevel out of envy. Through the Midrash on 'Am I my brother's keeper?' he shows Kayin blaming Hashem for the trait. Kinah led to the sale of Yosef and the churban. He tells bachurim to say that part of the tefillah many times. He then turns to bein adam lachaveiro: the Chernobyler who protected a thief from shame, the Berditchever on the matzah bakers' widows, and the Chasam Sofer's responsum about reburying Reb Mordechai Banet, who was penalized for shaming a kallah though he was right. Reb Shlomo Bloch's story of a young ilui who shamed a rav, and Reb Hershele Rimanover's story with the Yeshuos Yaakov, close the shiur.",
+      "yi": "דער משגיח עפנט מיט דעם שטיקל אין רבי אלימלך'ס תפילה וואו מ'בעט אז מ'זאל געראטעוועט ווערן פון קנאה, וואס ער רופט די שווערסטע זאך אויף דער וועלט, און וואס מ'געפינט ביי יעדן עלטער. ער ווייזט ווי קנאה גייט פון בריאת העולם: די לבנה האט מקנא געווען די חמה, דער נחש האט מקנא געווען אדם הראשון, און קין, א גרויסער מענטש מיט וועמען השם יתברך האט גערעדט, האט צוליב קנאה דערהרגעט הבל. מיטן מדרש אויף \"השומר אחי אנכי\" ווייזט ער אז קין האט געטענהט צום רבונו של עולם פארוואס ער האט אים געגעבן אזא מידה. קנאה האט געברענגט מכירת יוסף און דעם חורבן. ער הייסט בחורים זאגן דאס שטיקל תפילה אסאך מאל. דערנאך גייט ער איבער צו בין אדם לחבירו: דער טשערנאבילער וואס האט געהיטן א גנב פון בושה, דער בארדיטשובער מיט די אלמנות אין דער מצה בעקעריי, און דעם חתם סופר'ס תשובה וועגן איבערטראגן ר' מרדכי בנעט, וואס איז געשטראפט געווארן פארן פארשעמען א כלה כאטש ער איז געווען גערעכט. ר' שלמה בלאך'ס מעשה מיט א יונגן עילוי וואס האט פארשעמט א רב, און ר' הערשעלע רימאנאווער'ס מעשה מיטן ישועות יעקב, שליסן דעם שיעור."
+    },
+    "keyPoints": [
+      {
+        "text": { "en": "Kinah is the hardest trait in the world; it is found at every age and even among tzaddikim, and it goes back to creation.", "yi": "קנאה איז די שווערסטע מידה אויף דער וועלט; מ'געפינט עס ביי יעדן עלטער און אפילו ביי צדיקים, און עס גייט צוריק ביז בריאת העולם." },
+        "evidence": { "segs": [13, 20, 23, 24, 27], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "Kayin was a great man, yet jealousy brought him to kill his brother; jealousy also caused the sale of Yosef and, with sinas chinam, the churban.", "yi": "קין איז געווען א גרויסער מענטש, און פונדעסטוועגן האט די קנאה אים געברענגט צו הרגענען זיין ברודער; קנאה האט אויך גורם געווען מכירת יוסף, און צוזאמען מיט שנאת חנם, דעם חורבן." },
+        "evidence": { "segs": [90, 91, 92, 94, 95, 96], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "Rebbe Elimelech's tefillah asks to see the virtues of one's friends and not their faults, and the Rav tells a bachur struggling with jealousy to say it many times.", "yi": "רבי אלימלך'ס תפילה בעט אז מ'זאל זען די מעלות פון די חברים און נישט זייערע חסרונות, און דער משגיח הייסט א בחור וואס קעמפט מיט קנאה זאגן דאס אסאך מאל." },
+        "evidence": { "segs": [107, 111, 112, 118, 119], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "Good middos between man and his fellow include taking great care never to shame another person.", "yi": "גוטע מידות בין אדם לחבירו מיינט אויך זיך שטארק היטן קיינמאל נישט צו פארשעמען א צווייטן." },
+        "evidence": { "segs": [149, 150, 184, 193], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "Even when a person is right, shaming someone carries a heavy price, as with Reb Mordechai Banet and the young ilui.", "yi": "אפילו ווען מ'איז גערעכט, קאסט פארשעמען א צווייטן א שווערן פרייז, אזוי ווי ביי ר' מרדכי בנעט און ביים יונגן עילוי." },
+        "evidence": { "segs": [348, 349, 352, 419, 420], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "One who is careful with the honor of others merits all the blessings.", "yi": "ווער עס היט זיך מיט כבוד הבריות איז זוכה צו אלע ברכות." },
+        "evidence": { "segs": [429, 431, 432, 433], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-current-bachurim-04-bachurim-5773-toldos",
+      "startSeg": 0,
+      "endSeg": 71,
+      "title": { "en": "Kinah from creation to Kayin", "yi": "קנאה פון בריאת העולם ביז קין" },
+      "summary": {
+        "en": "The Rav opens with the plea against jealousy in Rebbe Elimelech's tefillah, calls kinah the hardest thing in the world, and traces it from the moon and the sun through the nachash to Kayin, a great man to whom Hashem spoke before and after he killed Hevel.",
+        "yi": "דער משגיח עפנט מיט דער בקשה קעגן קנאה אין רבי אלימלך'ס תפילה, רופט קנאה די שווערסטע זאך אויף דער וועלט, און ווייזט ווי זי גייט פון דער לבנה און דער חמה, דורכן נחש, ביז קין, א גרויסער מענטש מיט וועמען השם יתברך האט גערעדט פאר און נאכן הרגענען הבל."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-04-bachurim-5773-toldos",
+      "startSeg": 72,
+      "endSeg": 147,
+      "title": { "en": "Kayin's complaint and Rebbe Elimelech's tefillah", "yi": "קין'ס טענה און רבי אלימלך'ס תפילה" },
+      "summary": {
+        "en": "The Rav contrasts the cheder translation of 'Am I my brother's keeper?' with the Midrash, where Kayin asks Hashem why He gave him such jealousy. He shows kinah behind the sale of Yosef and the churban, explains Rebbe Elimelech's plea to see others' virtues, tells bachurim to say it many times, and tells how Reb Aharon Roth praised the Vizhnitzer Rebbe for being free of jealousy.",
+        "yi": "דער משגיח שטעלט אוועק דעם חדר טייטש פון \"השומר אחי אנכי\" קעגן דעם מדרש, וואו קין פרעגט דעם רבונו של עולם פארוואס ער האט אים געגעבן אזא קנאה. ער ווייזט אז קנאה איז געווען הינטער מכירת יוסף און דעם חורבן, ערקלערט רבי אלימלך'ס בקשה צו זען די מעלות פון א צווייטן, הייסט בחורים עס זאגן אסאך מאל, און דערציילט ווי ר' אהרן ראטה האט געלויבט דעם וויזשניצער רבי'ן אז ער האט נישט קיין קנאה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-04-bachurim-5773-toldos",
+      "startSeg": 148,
+      "endSeg": 215,
+      "title": { "en": "The Chernobyler's spoon and the Berditchever's matzos", "yi": "דעם טשערנאבילער'ס לעפל און דעם בארדיטשובער'ס מצות" },
+      "summary": {
+        "en": "Turning to good middos between man and his fellow, the Rav tells how the Chernobyler said he gave a stolen silver spoon to a poor man rather than shame him, and how the Berditchever Rav warned the matzah bakers not to put the blood of the overworked widows into their matzos.",
+        "yi": "ביים איבערגיין צו גוטע מידות בין אדם לחבירו, דערציילט דער משגיח ווי דער טשערנאבילער האט געזאגט אז ער האט אליין געגעבן א גנב דעם זילבערנעם לעפל כדי אים נישט צו פארשעמען, און ווי דער בארדיטשובער רב האט געווארנט די מצה בעקער נישט אריינצולייגן אין די מצות דאס בלוט פון די אלמנות וואס מ'יאגט זיי ביי דער ארבעט."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-04-bachurim-5773-toldos",
+      "startSeg": 216,
+      "endSeg": 353,
+      "title": { "en": "The Chasam Sofer and Reb Mordechai Banet's grave", "yi": "דער חתם סופר און ר' מרדכי בנעט'ס קבר" },
+      "summary": {
+        "en": "The Rav tells the story behind a responsum of the Chasam Sofer about reburying Reb Mordechai Banet, the Rav of Nikolsburg. The ruling waited six months because Reb Mordechai Banet came to him in a dream: he had to lie six months beside a kallah he had shamed by breaking off a shidduch, though he had been right al pi halachah.",
+        "yi": "דער משגיח דערציילט די מעשה הינטער א תשובה פונעם חתם סופר וועגן איבערטראגן ר' מרדכי בנעט, דער רב פון ניקאלשבורג. דער פסק האט געווארט זעקס חדשים ווייל ר' מרדכי בנעט איז צו אים געקומען אין חלום: ער האט געמוזט ליגן זעקס חדשים לעבן א כלה וואס ער האט פארשעמט מיטן אפלאזן א שידוך, כאטש על פי הלכה איז ער געווען גערעכט."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-04-bachurim-5773-toldos",
+      "startSeg": 354,
+      "endSeg": 440,
+      "title": { "en": "The ilui who shamed a rav", "yi": "דער עילוי וואס האט פארשעמט א רב" },
+      "summary": {
+        "en": "The Rav tells Reb Shlomo Bloch's story of a seventeen-year-old ilui who refuted a visiting rav's pilpul in public and shamed him; he grew into a gadol but never had children, which Reb Shlomo Bloch called his punishment. The Rav concludes that care for the honor of others brings all blessings.",
+        "yi": "דער משגיח דערציילט ר' שלמה בלאך'ס מעשה פון א זיבעצן יעריגן עילוי וואס האט ברבים אפגעפרעגט דעם פלפול פון א גאסט רב און אים פארשעמט; ער איז געווארן א גדול, אבער ער האט קיינמאל נישט געהאט קיין קינדער, און ר' שלמה בלאך האט געזאגט אז דאס איז געווען זיין עונש. דער משגיח ענדיגט אז ווער עס היט זיך מיט כבוד הבריות איז זוכה צו אלע ברכות."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-04-bachurim-5773-toldos",
+      "startSeg": 441,
+      "endSeg": 540,
+      "title": { "en": "Reb Hershele Rimanover and the Yeshuos Yaakov", "yi": "ר' הערשעלע רימאנאווער און דער ישועות יעקב" },
+      "summary": {
+        "en": "The Rav tells how Reb Hershele, a tailor's son, became the shamash and then the successor of Reb Mendel of Rimanov, and how the Yeshuos Yaakov, who would not honor him, removed the chairs, until Reb Hershele stopped at the doorway and the mezuzah was found to be pasul.",
+        "yi": "דער משגיח דערציילט ווי ר' הערשעלע, א שניידער'ס זון, איז געווארן דער שמש און דערנאך דער ממלא מקום פון ר' מענדעלע רימאנאווער, און ווי דער ישועות יעקב, וואס האט אים נישט געוואלט מכבד זיין, האט ארויסגענומען די בענקלעך, ביז ר' הערשעלע איז געבליבן שטיין ביי דער טיר און מ'האט געפונען אז די מזוזה איז פסול."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "די תפילה פון רבי מרדכי מלך",
+      "work": "Tefillah Kodem HaTefillah (Rebbe Elimelech of Lizhensk)",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [2, 3, 97, 98, 104, 105], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "אין שני מלאכים מ'שטעם שם בכתר רחד",
+      "work": "Gemara Chullin",
+      "ref": "Chullin 60b",
+      "sefariaRef": "Chullin 60b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [29, 30, 31, 32], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "הלאה סעדת את דעם לא סעדת לכתב חטיף רבצת",
+      "work": "Bereishis",
+      "ref": "Bereishis 4:7",
+      "sefariaRef": "Genesis 4:7",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [56, 58, 59, 60], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "א יעה העוועל אחיכה ... השיימן רחי ענכי",
+      "work": "Bereishis",
+      "ref": "Bereishis 4:9",
+      "sefariaRef": "Genesis 4:9",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [67, 68, 74, 76], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "קדמי אחיכה צעקה מלמנה האדמה",
+      "work": "Bereishis",
+      "ref": "Bereishis 4:10",
+      "sefariaRef": "Genesis 4:10",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [70], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער מדרש טייטשט",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [81, 82, 86, 87, 89], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "צדיק קארטן פון רבי ר' מלך",
+      "work": "Tzetel Katan (Rebbe Elimelech of Lizhensk)",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [139, 140], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "א תשובה, אן אינטערעסאנטע תשובה, אין חתם סופר",
+      "work": "Shu\"t Chasam Sofer",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [216, 261, 263, 265], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "בעל אחתו בצאתך",
+      "work": "Devarim",
+      "ref": "Devarim 28:6",
+      "sefariaRef": "Deuteronomy 28:6",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [404, 409, 410], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "ער האט געשריבן אויפן שכן עורך דעם ישובות יעקב",
+      "work": "Yeshuos Yaakov",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [484, 485], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": { "en": "Kinah is the first flaw in creation itself: before any human sin, the moon's envy of the sun caused it to be diminished.", "yi": "קנאה איז דער ערשטער פגם אין דער בריאה אליין: נאך פאר א מענטש האט געזינדיגט, האט די לבנה'ס קנאה אויף דער חמה געמאכט אז זי ווערט פארקלענערט." },
+      "evidence": { "segs": [27, 29, 32], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "The Rav stresses that Kayin's murder is no newspaper item about ordinary people: Kayin was a great man, a son of Adam, to whom Hashem spoke, and this shows how far kinah can drag even a great person.", "yi": "דער משגיח לייגט אונטער אז קין'ס רציחה איז נישט קיין נייעס פון א צייטונג וועגן פשוט'ע מענטשן: קין איז געווען א גרויסער מענטש, א זון פון אדם הראשון, מיט וועמען השם יתברך האט גערעדט, און דאס ווייזט ווי ווייט קנאה קען שלעפן אפילו א גרויסן מענטש." },
+      "evidence": { "segs": [42, 45, 47, 49, 52, 90], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "According to the Midrash Kayin's 'Am I my brother's keeper?' is a complaint against Hashem, the Keeper of the world, for not holding him back and for giving him such jealousy.", "yi": "לויטן מדרש איז קין'ס \"השומר אחי אנכי\" א טענה צום רבונו של עולם, דער שומר פון דער וועלט, פארוואס ער האט אים נישט אפגעהאלטן און אים געגעבן אזא מידה פון קנאה." },
+      "evidence": { "segs": [82, 85, 86, 87, 88, 89], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Berditchever turned the blood libel around: the 'blood' that must not go into matzos is the suffering of the widows rushed in the bakery.", "yi": "דער בארדיטשובער האט איבערגעדרייט דעם בלוט בילבול: דאס \"בלוט\" וואס טאר נישט אריין אין די מצות איז די צער פון די אלמנות וואס מ'יאגט זיי אין דער בעקעריי." },
+      "evidence": { "segs": [205, 207, 208, 211, 214], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "Heaven judges the shame caused to another even when the act was permitted: Reb Mordechai Banet was right al pi halachah to end the shidduch, yet he was penalized for shaming the kallah.", "yi": "אין הימל ווערט געמשפט די בושה פון א צווייטן אפילו ווען די מעשה איז געווען מותר: ר' מרדכי בנעט איז על פי הלכה געווען גערעכט צו מבטל זיין דעם שידוך, און פונדעסטוועגן איז ער געשטראפט געווארן פארן פארשעמען די כלה." },
+      "evidence": { "segs": [314, 316, 317, 340, 348, 349], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "The Rav notes that the young ilui is held responsible even though at seventeen he had not yet had time to work on his middos.", "yi": "דער משגיח מערקט אן אז דער יונגער עילוי ווערט פאראנטווארטליך געהאלטן כאטש מיט זיבעצן יאר האט ער נאך נישט געהאט קיין צייט זיך אויסצוארבעטן אין מידות." },
+      "evidence": { "segs": [421, 422, 424, 425], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "Reb Aharon Roth visits the Vizhnitzer Rebbe", "yi": "ר' אהרן ראטה פארט צום וויזשניצער רבי'ן" },
+      "retelling": {
+        "en": "Reb Aharon Roth traveled from Yerushalayim to Vizhnitz, to Reb Yisroel of Vizhnitz. He said afterwards that the Rebbe was an awesome tzaddik with a virtue no other tzaddik had: he had worked the trait of jealousy out of himself and was not jealous at all. The Rav calls it a wondrous thing for a person not to be jealous.",
+        "yi": "ר' אהרן ראטה איז געפארן פון ירושלים קיין וויזשניץ, צו ר' ישראל וויזשניצער. ער האט דערנאך געזאגט אז דער רבי איז א מורא'דיגער צדיק מיט א מעלה וואס קיין אנדער צדיק האט נישט: ער האט זיך אויסגעארבעט די מידה פון קנאה און איז בכלל נישט מקנא. דער משגיח זאגט אז ס'איז א דבר פלא אז א מענטש זאל נישט מקנא זיין."
+      },
+      "people": ["Reb Aharon Roth", "Reb Yisroel of Vizhnitz"],
+      "evidence": { "segs": [125, 129, 131, 134, 135, 137], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "The silver spoon", "yi": "דער זילבערנער לעפל" },
+      "retelling": {
+        "en": "A poor man came to the Chernobyler for tzedakah and received a generous gift, and on his way out he took a silver spoon from the table. The household noticed, ran after him, found the spoon, and were about to beat him, when he claimed the Rebbe had given it to him. They brought him to the Rebbe, who said he had indeed given him the spoon, so as not to shame him. The poor man then demanded payment for the shame he had suffered, and the Rebbe gave him another fine gift and asked his forgiveness.",
+        "yi": "אן ארעמאן איז געקומען צום טשערנאבילער בעטן א נדבה און באקומען א שיינע נדבה, און ביים ארויסגיין האט ער צוגענומען א זילבערנעם לעפל פונעם טיש. די בני בית האבן באמערקט, אים נאכגעלאפן, געפונען דעם לעפל, און געוואלט אים געבן קלעפ, האט ער געזאגט אז דער רבי האט אים דאס געגעבן. מ'האט אים געברענגט צום רבי'ן, און דער רבי האט געזאגט אז ער האט אים טאקע געגעבן דעם לעפל, כדי אים נישט צו פארשעמען. דער ארעמאן האט דערנאך געמאנט באצאלט ווערן פאר די בושה, און דער רבי האט אים געגעבן נאך א שיינע מתנה און אים געבעטן מחילה."
+      },
+      "people": ["Reb Nachum of Chernobyl"],
+      "evidence": { "segs": [155, 161, 174, 182, 184, 191], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The Berditchever and the matzah bakers", "yi": "דער בארדיטשובער און די מצה בעקער" },
+      "retelling": {
+        "en": "When the Kedushas Levi became Rav of Berditchev, the communal leaders asked for takanos in the matzah bakery because the women worked slowly. He gathered the bakers and told them that the goyim say Jews put blood in matzos, and he asked them not to put blood in the matzos: the blood of the widows who work hard all day and are rushed. A Jew should not eat matzos for which the widows' blood was spilled.",
+        "yi": "ווען דער קדושת לוי איז געווארן רב אין בארדיטשוב, זענען די עסקנים געקומען בעטן תקנות אין דער מצה בעקעריי ווייל די פרויען ארבעטן פאמעלעך. האט ער צוזאמגערופן די בעקער און געזאגט אז די גוים זאגן אז אידן טוען אריין בלוט אין די מצות, און ער בעט אז מ'זאל נישט אריינטון בלוט אין די מצות: דאס בלוט פון די אלמנות וואס ארבעטן שווער א גאנצן טאג און מ'יאגט זיי. א איד זאל נישט עסן מצות וואס צוליב זיי איז פארגאסן געווארן דאס בלוט פון די אלמנות."
+      },
+      "people": ["Reb Levi Yitzchak of Berditchev"],
+      "evidence": { "segs": [195, 199, 202, 205, 207, 214], "confidence": 0.85 }
+    },
+    {
+      "title": { "en": "Reb Mordechai Banet's six months in Lichtenstadt", "yi": "ר' מרדכי בנעט'ס זעקס חדשים אין ליכטנשטאט" },
+      "retelling": {
+        "en": "Reb Mordechai Banet, the Rav of Nikolsburg, died while away in Karlsbad and was buried in nearby Lichtenstadt. The people of Nikolsburg demanded that he be brought to their city, and the question went to the Chasam Sofer, who wrote that he should be moved but ended that the matter was not yet clear to him. Six months later he sent word to move him. The secret was that Reb Mordechai Banet came to him in a dream: as a bachur he had broken off a shidduch because he would not have been able to sit and learn, which was permitted, but since he had shamed the kallah, Heaven decreed he must lie six months in Lichtenstadt, right next to her grave.",
+        "yi": "ר' מרדכי בנעט, דער רב פון ניקאלשבורג, איז נפטר געווארן אין קארלסבאד און מ'האט אים באגראבן אין ליכטנשטאט דערנעבן. די אידן פון ניקאלשבורג האבן געמאנט אים איבערצוברענגען אין זייער שטאט, און די שאלה איז אנגעקומען צום חתם סופר, וואס האט געשריבן אז מ'דארף אים איבערטראגן, אבער געענדיגט אז די זאך איז נאך נישט קלאר ביי אים. זעקס חדשים שפעטער האט ער געשיקט אז מ'זאל אים איבערטראגן. דער סוד איז געווען אז ר' מרדכי בנעט איז צו אים געקומען אין חלום: אלס בחור האט ער אפגעלאזט א שידוך ווייל ער וואלט נישט געקענט זיצן און לערנען, וואס איז געווען מותר, אבער ווייל ער האט פארשעמט די כלה, האט מען אין הימל גע'פסק'נט אז ער מוז ליגן זעקס חדשים אין ליכטנשטאט, גלייך לעבן איר קבר."
+      },
+      "people": ["Reb Mordechai Banet", "the Chasam Sofer"],
+      "evidence": { "segs": [225, 236, 261, 277, 295, 317], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "The young ilui and the visiting rav", "yi": "דער יונגער עילוי און דער גאסט רב" },
+      "retelling": {
+        "en": "Reb Shlomo Bloch, a talmid of the Chofetz Chaim, told of a seventeen-year-old ilui in the yeshiva who later became one of the gedolei hador, whose name is not told. When a distinguished rav came to town and gave a pilpul in public, the ilui asked a strong question that toppled it, refused the rav's answer, and a heated debate followed. When the rav would not concede, the ilui told him he could leave town. The ilui grew into a great talmid chacham but never had children, and Reb Shlomo Bloch said this was his punishment for shaming the rav.",
+        "yi": "ר' שלמה בלאך, א תלמיד פונעם חפץ חיים, האט דערציילט פון א זיבעצן יעריגן עילוי אין ישיבה וואס איז שפעטער געווארן איינער פון די גדולי הדור, און מ'זאגט נישט זיין נאמען. ווען א חשוב'ער רב איז געקומען אין שטאט און געזאגט א פלפול ברבים, האט דער עילוי געפרעגט א שטארקע קשיא וואס האט אוועקגעווארפן דעם גאנצן פלפול, נישט אנגענומען דעם רב'ס תירוץ, און ס'איז געווארן א היציגער ויכוח. ווען דער רב האט נישט געוואלט מודה זיין, האט אים דער עילוי געזאגט אז ער קען שוין ארויספארן פון שטאט. דער עילוי איז געווארן א גרויסער תלמיד חכם, אבער ער האט קיינמאל נישט געהאט קיין קינדער, און ר' שלמה בלאך האט געזאגט אז דאס איז געווען זיין עונש פארן פארשעמען דעם רב."
+      },
+      "people": ["Reb Shlomo Bloch", "the Chofetz Chaim"],
+      "evidence": { "segs": [356, 377, 389, 409, 412, 419], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "Reb Hershele Rimanover and the mezuzah", "yi": "ר' הערשעלע רימאנאווער און די מזוזה" },
+      "retelling": {
+        "en": "Reb Hershele, a tailor's son who learned Torah with great strength, came to Reb Mendel of Rimanov and became his shamash; once he made the Rebbe's bed in place of the gabbai, and the Rebbe felt such kedushah that he told him to make it every night, and Reb Hershele later became his successor. When he came to the city of the Yeshuos Yaakov, who did not want to honor him, the Yeshuos Yaakov had all the chairs removed. Reb Hershele put his hand on the mezuzah and would not enter; the mezuzah was taken down and found pasul, because the nail had been driven through its letters when the sofer put it back. The Yeshuos Yaakov then honored him, and Reb Hershele said it was not ruach hakodesh but that a kosher Jew can recognize such a mezuzah.",
+        "yi": "ר' הערשעלע, א שניידער'ס זון וואס האט שטארק געלערנט תורה, איז געקומען צו ר' מענדעלע רימאנאווער און געווארן זיין שמש; איינמאל האט ער אנשטאט דעם גבאי צוגעגרייט דעם רבי'נס בעט, און דער רבי האט געפילט אזא קדושה אז ער האט אים געהייסן עס מאכן יעדע נאכט, און ר' הערשעלע איז שפעטער געווארן זיין ממלא מקום. ווען ער איז געקומען אין דער שטאט פונעם ישועות יעקב, וואס האט אים נישט געוואלט מכבד זיין, האט דער ישועות יעקב ארויסגענומען אלע בענקלעך. ר' הערשעלע האט אנגעטאפט די מזוזה און איז נישט אריינגעגאנגען; מ'האט אראפגענומען די מזוזה און געפונען אז זי איז פסול, ווייל דער נאגל איז אריינגעגאנגען אין די אותיות ווען דער סופר האט זי צוריק צוגעקלאפט. דערנאך האט אים דער ישועות יעקב מכבד געווען, און ר' הערשעלע האט געזאגט אז ס'איז נישט רוח הקודש, נאר א כשר'ער איד קען דערקענען אזא מזוזה."
+      },
+      "people": ["Reb Hershele of Rimanov", "Reb Mendel of Rimanov", "the Yeshuos Yaakov"],
+      "evidence": { "segs": [442, 470, 475, 496, 504, 524], "confidence": 0.7 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "What did Kayin mean when he answered Hashem, 'Am I my brother's keeper?'", "yi": "וואס האט קין געמיינט ווען ער האט געענטפערט \"השומר אחי אנכי\"?" },
+      "answer": { "en": "The cheder translation reads it as a denial, but the Midrash explains that he was complaining to Hashem, the Keeper of the world, for letting him kill and for giving him such jealousy.", "yi": "אין חדר טייטשט מען עס ווי אן אפלייקענען, אבער דער מדרש טייטשט אז ער האט געטענהט צום רבונו של עולם, דער שומר פון דער וועלט, פארוואס ער האט אים געלאזט הרגענען און אים געגעבן אזא קנאה." },
+      "questionSegs": [72, 73, 76],
+      "answerSegs": [80, 82, 86, 87, 89],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why did the Chasam Sofer end his responsum saying the matter was not yet clear to him, and only six months later rule to move Reb Mordechai Banet?", "yi": "פארוואס האט דער חתם סופר געענדיגט זיין תשובה אז די זאך איז נאך נישט קלאר ביי אים, און ערשט זעקס חדשים שפעטער גע'פסק'נט צו איבערטראגן ר' מרדכי בנעט?" },
+      "answer": { "en": "Reb Mordechai Banet came to him in a dream and said the ruling was right, but he had to lie six months beside the kallah he had shamed.", "yi": "ר' מרדכי בנעט איז צו אים געקומען אין חלום און געזאגט אז די תשובה איז גערעכט, אבער ער מוז ליגן זעקס חדשים לעבן דער כלה וואס ער האט פארשעמט." },
+      "questionSegs": [273, 277, 279, 289],
+      "answerSegs": [293, 295, 298, 300, 317],
+      "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Rav says a bachur in yeshiva who struggles with jealousy should say that passage of Rebbe Elimelech's tefillah many times, until Hashem helps cool the trait.", "yi": "דער משגיח זאגט אז א בחור אין ישיבה וואס קעמפט מיט קנאה זאל זאגן דאס שטיקל פון רבי אלימלך'ס תפילה אסאך מאל, ביז השם יתברך העלפט אים אז די מידה ווערט אפגעקילט." },
+      "evidence": { "segs": [116, 118, 119, 120], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Rav says that even when one is right, one must take care not to shame another person.", "yi": "דער משגיח זאגט אז אפילו ווען מ'איז גערעכט, דארף מען אכטונג געבן נישט צו פארשעמען א צווייטן." },
+      "evidence": { "segs": [350, 351, 352], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "The Rav says that one who is careful with the honor of others merits all the blessings.", "yi": "דער משגיח זאגט אז ווער עס גיט אכטונג אויף כבוד הבריות איז זוכה צו אלע ברכות." },
+      "evidence": { "segs": [429, 431, 432, 433], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "jealousy",
+    "Kayin and Hevel",
+    "tefillah of Rebbe Elimelech",
+    "shaming another person",
+    "bein adam lachaveiro",
+    "honor of others",
+    "stories of tzaddikim",
+    "Chasam Sofer and Reb Mordechai Banet",
+    "Reb Hershele of Rimanov"
+  ],
+  "concepts": [
+    { "he": "קנאה", "heardAs": ["כינע", "כינה", "קנאה"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבינו שלעולם", "רבינו שלום", "רבי ישעׂל"] },
+    { "he": "השומר אחי אנכי", "heardAs": ["השיימן רחי ענכי", "א שומר אחי אנכי"] },
+    { "he": "שנאת חנם", "heardAs": ["פסונת חנם"] },
+    { "he": "מעלות", "heardAs": ["מילות", "מילה"] },
+    { "he": "בין אדם לחבירו", "heardAs": ["בנאדם לחברי"] },
+    { "he": "כבוד הבריות", "heardAs": ["כח דבריות"] },
+    { "he": "פינוי עצמות", "heardAs": ["פינו יצמי"] },
+    { "he": "מזוזה", "heardAs": ["מזרזע", "מזרזא", "מזעזר"] },
+    { "he": "עילוי", "heardAs": ["עילו", "אילוי", "אהלה"] }
+  ],
+  "people": [
+    { "name": "Rebbe Elimelech of Lizhensk", "heardAs": ["רבי מרדכי מלך", "רבי ר' מלך", "רבי מלך"] },
+    { "name": "Kayin", "heardAs": ["קיין", "בקען"] },
+    { "name": "Hevel", "heardAs": ["העוועל", "העביל", "העוול"] },
+    { "name": "Yosef", "heardAs": ["יוסף"] },
+    { "name": "Reb Aharon Roth", "heardAs": ["רבי אהרן ראט"] },
+    { "name": "Reb Yisroel of Vizhnitz", "heardAs": ["רבי ישראל וויזשניצער"] },
+    { "name": "Reb Nachum of Chernobyl", "heardAs": ["רבי נחמן טשערנאבילער", "נחמן שנארבולא"] },
+    { "name": "Reb Levi Yitzchak of Berditchev", "heardAs": ["באדיטשאווער רב", "קדושת לוי", "רבי אליבו בעדיטשווער"] },
+    { "name": "the Chasam Sofer", "heardAs": ["חתם סופר", "חתם ספר", "כסמת סופר"] },
+    { "name": "Reb Mordechai Banet", "heardAs": ["ר' מאדכי בן נרן", "ר' מרדכי באנעץ", "רבי מרדכי בנאץ"] },
+    { "name": "the Chofetz Chaim", "heardAs": ["חפץ חיים"] },
+    { "name": "Reb Elchanan Wasserman", "heardAs": ["רבי חנן וואסערמאן"] },
+    { "name": "Reb Shlomo Bloch", "heardAs": ["רבי שלמה בלאך"] },
+    { "name": "Reb Hershele of Rimanov", "heardAs": ["רבי הערש'לער", "ר' העשע'לע רימאנאווער", "ר' יושעלע רימאן האבער"] },
+    { "name": "Reb Mendel of Rimanov", "heardAs": ["רבי מענדיל'ער רימאנאווער"] },
+    { "name": "the Yeshuos Yaakov", "heardAs": ["ישיבת יעקב", "ישובות יעקב", "ישועות יעקב"] },
+    { "name": "the Sanzer Rav", "heardAs": ["דער סאנזארוב"] }
+  ],
+  "asrNotes": "Yiddish ASR fair for narrative, poor for quotations; the lines of Rebbe Elimelech's tefillah and the pesukim in Bereishis 4 are garbled but recognizable. The catalog title 'bachurim toldos' is a filename guess (series and parsha), not a topic, so no section is mapped to it. Segment 441 (29:18-31:24) is a long sparse stretch flagged as noise, absorbed into the last section; the Chofetz Chaim dybbuk story is only mentioned in passing, and the end of Reb Hershele's reply about the mezuzah (segs 534-539) is partly unclear."
+}

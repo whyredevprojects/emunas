@@ -1,0 +1,96 @@
+{
+ "shiurId": "yi-current-unc-kayitz-5771-24",
+ "generatedAt": "2026-11-15T08:58:11.648Z",
+ "shiur": {
+  "id": "yi-current-unc-kayitz-5771-24",
+  "lang": "yi",
+  "category": "current",
+  "seriesId": "current-kayitz-5771",
+  "seriesOrder": 24,
+  "catalog": {
+   "source": "uncatalogued-guide",
+   "sectionId": "current",
+   "sectionTitle": "Y 05 Current",
+   "n": "24",
+   "page": null,
+   "titleOriginal": "Bachurim Eretz Yisrael",
+   "subTitle": null,
+   "derived": "filename",
+   "note": "year taken from the folder name \"Kayitz 5771\"; \"Kayitz\" in the folder name marks this as a summer series"
+  },
+  "parsha": null,
+  "zman": null,
+  "perek": null,
+  "hebrewYears": [5771],
+  "recordingIds": [
+   "y-current-kayitz-5771-24-bachurim-eretz-yisrael"
+  ],
+  "inScope": true,
+  "outOfScopeReason": null,
+  "pathNotes": []
+ },
+ "series": {
+  "id": "current-kayitz-5771",
+  "title": {
+   "en": "Summer 5771 (Kayitz)",
+   "yi": "קיץ תשע\"א"
+  },
+  "lang": "yi",
+  "catalogSectionIds": [
+   "current"
+  ],
+  "shiurIds": [
+   "yi-current-unc-kayitz-5771-01",
+   "yi-current-unc-kayitz-5771-02",
+   "yi-current-unc-kayitz-5771-03",
+   "yi-current-unc-kayitz-5771-04",
+   "yi-current-unc-kayitz-5771-05",
+   "yi-current-unc-kayitz-5771-06",
+   "yi-current-unc-kayitz-5771-07",
+   "yi-current-unc-kayitz-5771-08",
+   "yi-current-unc-kayitz-5771-09",
+   "yi-current-unc-kayitz-5771-10",
+   "yi-current-unc-kayitz-5771-11",
+   "yi-current-unc-kayitz-5771-12",
+   "yi-current-unc-kayitz-5771-13",
+   "yi-current-unc-kayitz-5771-14",
+   "yi-current-unc-kayitz-5771-15",
+   "yi-current-unc-kayitz-5771-16",
+   "yi-current-unc-kayitz-5771-17",
+   "yi-current-unc-kayitz-5771-18",
+   "yi-current-unc-kayitz-5771-19",
+   "yi-current-unc-kayitz-5771-20",
+   "yi-current-unc-kayitz-5771-21",
+   "yi-current-unc-kayitz-5771-22",
+   "yi-current-unc-kayitz-5771-23",
+   "yi-current-unc-kayitz-5771-24",
+   "yi-current-unc-kayitz-5771-25"
+  ]
+ },
+ "catalogTopics": [
+  "Bachurim Eretz Yisrael"
+ ],
+ "totalDurationSec": 537.3006875,
+ "recordings": [
+  {
+   "recording": {
+    "id": "y-current-kayitz-5771-24-bachurim-eretz-yisrael",
+    "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/24 Bachurim Eretz Yisrael.mp3",
+    "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 05 Current/Kayitz 5771/24 Bachurim Eretz Yisrael",
+    "durationSec": 537.3,
+    "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+    "sizeBytes": 3224339,
+    "duplicateOf": null,
+    "partOf": null
+   },
+   "order": 0,
+   "transcriptLanguage": "yi",
+   "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+   "durationSec": 537.3006875,
+   "segmentCount": 135,
+   "starts": [0.41,27.29,30.97,34.19,37.85,41.37,46.13,47.81,51.78,54.2,57.1,58.34,60.16,62.64,66.1,71.02,77.46,80.6,83.38,83.94,88.38,93.34,97.08,99.24,104.66,110.94,112.68,116.8,121.26,126.32,132.52,136.66,139.66,141.66,145.7,150.64,155.6,159.56,164.42,168.48,170.98,175.7,180.7,182.9,186.64,189.2,191.24,200.24,205.88,211.58,222.84,224.68,227.66,230.82,240.68,248.64,250.88,253.36,254.34,258.54,265.19,267.75,272.33,275.13,278.77,279.59,280.13,281.11,285.87,288.31,295.05,298.41,299.95,303.41,304.59,305.69,308.37,311.73,317.51,319.87,321.73,326.27,329.93,334.75,339.43,342.69,344.91,353.55,356.09,358.29,364.41,369.13,371.73,376.01,378.83,382.19,386.09,389.33,391.65,395.37,399.27,402.03,405.15,406.97,408.63,410.11,419.03,421.69,423.43,441.42,444.5,447.3,461.62,467.52,471.8,473.88,476.14,481.98,486.26,490.2,494.3,497.02,503.6,506.42,508.66,512.34,516.5,520.28,523.32,524.92,525.74,528.84,530.38,532.02,535.58],
+   "ends": [25.99,29.57,32.59,36.69,39.97,45.09,47.09,49.31,53.34,56.62,57.92,59.58,61.44,65.74,69.06,76.74,78.6,81.92,83.94,84.74,90.4,96.9,98.94,104.02,109.16,112.1,116.02,119.14,125.42,132.12,135.7,138.88,141.24,144.46,149.72,154.96,158.5,163.4,167.98,170.24,174.66,180.2,182.24,186.04,188.64,190.16,195.04,204.84,210.76,222.18,223.68,226.74,230.08,239.36,246.46,250.3,252.8,254.34,257.8,262.9,267.27,271.47,274.19,277.45,279.21,279.77,280.59,282.55,286.07,294.25,297.61,299.19,302.37,304.13,305.07,307.37,311.13,316.37,319.43,320.53,325.87,329.51,334.31,338.45,341.01,343.89,352.41,355.73,357.49,362.07,368.53,371.11,374.89,378.27,381.51,385.57,388.77,391.29,394.81,397.39,400.61,403.63,406.11,407.91,409.45,418.09,420.87,422.85,440.54,442.92,446.68,454.44,466.66,470.44,472.8,475.32,481.4,485.58,489.36,493.16,495.72,502.8,505.58,508.34,511.4,515.68,519.4,522.88,524.2,525.2,527.82,529.64,531.14,532.64,535.68],
+   "noise": []
+  }
+ ]
+}

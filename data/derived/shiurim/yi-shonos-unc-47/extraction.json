@@ -1,0 +1,542 @@
+{
+  "shiurId": "yi-shonos-unc-47",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav strengthens his listeners in tefillah: davening is the service of the heart and a meeting with the King, to be done slowly, together, aloud, and without talking, especially during chazaras hashatz.",
+      "yi": "דער משגיח שטארקט דעם עולם אין תפילה: דאווענען איז די עבודה שבלב און א טרעפן זיך מיטן מלך, און מ'דארף עס טון פאמעלעך, צוזאמען, הויך, און אן רעדן, בפרט ביי חזרת הש\"ץ."
+    },
+    "abstract": {
+      "en": "The Rav opens with the Ba'al Shem Tov's reading of 'make a light for the teivah': the teivah is the word, and each word of davening must be lit up with one's whole strength. His rebbe, Reb Shraga Feivel Mendlowitz, explained that the world is a flood of apikorsus and desires, and the Jew is saved by entering the teivah of tefillah. The Rav recalls how loud, joyful davening by bachurim led to the founding of the Chevra Emunas Yisroel, and says davening needs constant chizuk because people treat it lightly. Tefillah is the service of the heart: it is a meeting with the King, which the Gemara calls pegiah. He tells of a simple Jew whose heartfelt Tehillim saved him from an informer. He then speaks sharply about leaving the room during chazaras hashatz and about talking in davening, and closes by asking for tefillah for the Jewish people in hard times.",
+      "yi": "דער משגיח עפנט מיטן בעל שם טוב'ס טייטש אויף \"צהר תעשה לתיבה\": די תיבה איז דאס ווארט, און יעדעס ווארט פון דאווענען דארף מען אנצינדן מיטן גאנצן כח. זיין רבי, ר' שרגא פייוול מענדלאוויטש, האט מסביר געווען אז די וועלט איז א מבול פון אפיקורסות און תאוות, און א איד ראטעוועט זיך דורך אריינגיין אין דער תיבה פון תפילה. דער משגיח דערציילט ווי א הויך און געשמאק דאווענען פון בחורים האט געפירט צו דער חברה אמונת ישראל, און זאגט אז דאווענען דארף כסדר חיזוק ווייל מ'איז עס מזלזל. תפילה איז די עבודה שבלב, און זי איז א טרעפן זיך מיטן מלך, וואס די גמרא רופט פגיעה. ער דערציילט א מעשה פון א פשוט'ן איד וועמענס תהלים פון הארצן האט אים געראטעוועט פון א מוסר. דערנאך רעדט ער שארף קעגן ארויסגיין ביי חזרת הש\"ץ און קעגן רעדן אינמיטן דאווענען, און ער ענדיגט מיט א בקשה מ'זאל מתפלל זיין פאר כלל ישראל אין שווערע צייטן."
+    },
+    "keyPoints": [
+      {
+        "text": { "en": "Following the Ba'al Shem Tov, the teivah of Noach is the word of tefillah, and one must put one's whole strength into each word.", "yi": "לויטן בעל שם טוב איז די תיבה פון נח דאס ווארט פון תפילה, און אין יעדעס ווארט דארף מען אריינגעבן דעם גאנצן כח." },
+        "evidence": { "segs": [2, 3, 9, 13, 15], "confidence": 0.75 }
+      },
+      {
+        "text": { "en": "Tefillah is the service of the heart; its essence is the heart's longing and kavanah, not only the spoken words or their translation.", "yi": "תפילה איז די עבודה שבלב; דער עיקר איז די כוונה און די כיסופים פונעם הארצן, נישט נאר די ווערטער אדער זייער טייטש." },
+        "evidence": { "segs": [122, 124, 130, 156, 164], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "Davening is speaking directly to Hashem and meeting Him; the Gemara's word pegiah means an appointment with the King.", "yi": "דאווענען איז רעדן גלייך צום רבונו של עולם און זיך טרעפן מיט אים; דאס ווארט פגיעה אין דער גמרא מיינט אן אפוינטמענט מיטן מלך." },
+        "evidence": { "segs": [206, 207, 224, 309, 321], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "To daven well one must daven slowly, so that the heart understands each word, and together with others who want to daven.", "yi": "כדי צו דאווענען גוט דארף מען דאווענען פאמעלעך, אז דאס הארץ זאל פארשטיין יעדעס ווארט, און צוזאמען מיט אנדערע וואס ווילן דאווענען." },
+        "evidence": { "segs": [326, 327, 333, 338, 344], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "Chazaras hashatz, instituted by the Anshei Knesses HaGedolah, is a great opportunity, and walking out to chat during it is not fitting.", "yi": "חזרת הש\"ץ, וואס די אנשי כנסת הגדולה האבן מתקן געווען, איז א גרויסע געלעגנהייט, און ארויסגיין שמועסן דערביי פאסט נישט." },
+        "evidence": { "segs": [529, 531, 533, 557, 558], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "Talking during davening brings destruction, while not talking brings protection and blessing.", "yi": "רעדן אינמיטן דאווענען ברענגט א חורבן, און נישט רעדן ברענגט שמירה און ברכה." },
+        "evidence": { "segs": [574, 585, 587, 589], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-shoinos-47-chizuk-tefila-chesvan-5780",
+      "startSeg": 0,
+      "endSeg": 57,
+      "title": { "en": "The teivah of the word of tefillah", "yi": "די תיבה פונעם ווארט פון תפילה" },
+      "summary": {
+        "en": "The Rav brings the Ba'al Shem Tov's reading of 'make a light for the teivah' as lighting up each word of davening. He cites Reb Shraga Feivel Mendlowitz that the world is a flood of apikorsus and desires, and a Jew is saved by entering the teivah of tefillah; he adds that davening strengthens one against Amalek.",
+        "yi": "דער משגיח ברענגט דעם בעל שם טוב'ס טייטש אויף \"צהר תעשה לתיבה\", אז מ'דארף אנצינדן יעדעס ווארט פון דאווענען. ער ברענגט פון ר' שרגא פייוול מענדלאוויטש אז די וועלט איז א מבול פון אפיקורסות און תאוות, און א איד ראטעוועט זיך דורך אריינגיין אין דער תיבה פון תפילה; ער לייגט צו אז מיטן דאווענען שטארקט מען זיך קעגן עמלק."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-47-chizuk-tefila-chesvan-5780",
+      "startSeg": 58,
+      "endSeg": 116,
+      "title": { "en": "How the Chevra Emunas Yisroel began", "yi": "ווי אזוי די חברה אמונת ישראל האט זיך אנגעהויבן" },
+      "summary": {
+        "en": "The Rav tells how bachurim davening loudly and with joy in a summer season led to a minyan in a store front in Boro Park, the start of the Chevra Emunas Yisroel. He says davening needs chizuk every few years, and brings the Gemara that people treat lightly the things that stand at the height of the world, which is tefillah.",
+        "yi": "דער משגיח דערציילט ווי בחורים וואס האבן געדאווענט הויך און מיט א געשמאק אין א זומער סעזאן האבן געפירט צו א מנין אין א סטאר אין בארא פארק, דער אנהייב פון דער חברה אמונת ישראל. ער זאגט אז דאווענען דארף חיזוק אלע פאר יאר, און ברענגט די גמרא אז מענטשן זענען מזלזל אין די זאכן וואס שטייען ברומו של עולם, דאס איז תפילה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-47-chizuk-tefila-chesvan-5780",
+      "startSeg": 117,
+      "endSeg": 190,
+      "title": { "en": "Tefillah as the service of the heart", "yi": "תפילה איז די עבודה שבלב" },
+      "summary": {
+        "en": "From the Slonimer sefarim the Rav brings that the mitzvah of tefillah is 'to serve Him with all your heart', the service of the heart, while Torah is the service of the mind. The essence of tefillah is the heart, not speech; with the Chovos HaLevavos he defines it as the soul's longing for G-d, more than knowing the meaning of the words.",
+        "yi": "פון די סלאנימער ספרים ברענגט דער משגיח אז די מצוה פון תפילה איז \"ולעבדו בכל לבבכם\", די עבודה שבלב, און תורה איז אן עבודה שבמוח. דער עיקר פון תפילה איז דאס הארץ, נישט דער דיבור; מיטן חובות הלבבות איז ער מסביר אז תפילה איז די כיסופים פון דער נשמה צום אייבערשטן, מער ווי וויסן דעם פירוש המילות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-47-chizuk-tefila-chesvan-5780",
+      "startSeg": 191,
+      "endSeg": 264,
+      "title": { "en": "Standing before the King", "yi": "שטיין פארן מלך" },
+      "summary": {
+        "en": "The Rav brings the Gemara in Berachos that tefillah three times a day comes from a passuk in Tehillim whose word he reads as the heart pouring out. Shemoneh Esrei is in the second person, spoken straight to Hashem; he cites the Rambam and Reb Chaim on knowing one stands before the King. He tells of one who davened mincha gedolah because his heart could not wait, and brings the words of Yedid Nefesh.",
+        "yi": "דער משגיח ברענגט די גמרא אין ברכות אז תפילה דריי מאל א טאג קומט פון א פסוק אין תהלים, וואס זיין ווארט טייטשט ער אז דאס הארץ גיסט זיך אויס. שמונה עשרה איז בלשון נוכח, מ'רעדט גלייך צום רבונו של עולם; ער ברענגט דעם רמב\"ם און ר' חיים אז מ'דארף וויסן אז מ'שטייט פארן מלך. ער דערציילט פון איינעם וואס האט געדאווענט מנחה גדולה ווייל דאס הארץ האט נישט געקענט ווארטן, און ברענגט די ווערטער פון ידיד נפש."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-47-chizuk-tefila-chesvan-5780",
+      "startSeg": 265,
+      "endSeg": 357,
+      "title": { "en": "Moments of hispashtus and an appointment with the King", "yi": "רגעים פון התפשטות הגשמיות און אן אפוינטמענט מיטן מלך" },
+      "summary": {
+        "en": "The Rav brings the Shulchan Aruch that early chassidim reached hispashtus hagashmiyus in davening, and says simple people today can still merit moments of it. Pegiah means an appointment with the King of kings. He then explains how to work on it: davening slowly so the heart understands each word, and davening together with others, as Jews once used to.",
+        "yi": "דער משגיח ברענגט דעם שולחן ערוך אז די חסידים הראשונים האבן דערגרייכט התפשטות הגשמיות ביים דאווענען, און זאגט אז פשוט'ע אידן היינט קענען זוכה זיין כאטש צו רגעים דערפון. פגיעה מיינט אן אפוינטמענט מיטן מלך מלכי המלכים. דערנאך איז ער מסביר ווי אזוי מ'ארבעט זיך אויס: דאווענען פאמעלעך אז דאס הארץ זאל פארשטיין יעדעס ווארט, און דאווענען צוזאמען מיט אנדערע, אזוי ווי אידן האבן אמאל געדאווענט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-47-chizuk-tefila-chesvan-5780",
+      "startSeg": 358,
+      "endSeg": 463,
+      "title": { "en": "The simple Jew and 'Tzam'ah nafshi'", "yi": "דער פשוט'ער איד און \"צמאה נפשי\"" },
+      "summary": {
+        "en": "The Rav tells a story told by the Beis Avraham of Slonim: a simple Jew named Ephraim, threatened by an informer for selling brandy without a permit, went to shul to say Tehillim, and at 'Tzam'ah nafshi l'Elokim' forgot his trouble and longed only for Hashem; when the police came they found nothing. He concludes that davening together with achdus lets the heart pour out.",
+        "yi": "דער משגיח דערציילט א מעשה וואס דער בית אברהם פון סלאנים האט דערציילט: א פשוט'ער איד מיטן נאמען אפרים, וואס א מוסר האט אים געסטראשעט ווייל ער האט פארקויפט בראנפן אן א פערמיט, איז געגאנגען אין שול זאגן תהלים, און ביי \"צמאה נפשי לאלקים\" האט ער פארגעסן פון זיין צרה און זיך נאר געבענקט נאכן אייבערשטן; ווען די פאליציי איז געקומען האבן זיי גארנישט געטראפן. ער ענדיגט אז דאווענען צוזאמען מיט אחדות לאזט דאס הארץ זיך אויסגיסן."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-47-chizuk-tefila-chesvan-5780",
+      "startSeg": 464,
+      "endSeg": 517,
+      "title": { "en": "Ramban on davening aloud; an hour and a half", "yi": "דער רמב\"ן אויף הויך דאווענען; א שעה און א האלב" },
+      "summary": {
+        "en": "The Rav brings the Ramban at the end of Parshas Bo: the purpose of creation and of the mitzvos is that people acknowledge the Creator, and this is the purpose of raising the voice in tefillah and of the batei knesios. He then brings the Tanya in Iggeres HaKodesh that even working people should spend at least an hour and a half on shacharis.",
+        "yi": "דער משגיח ברענגט דעם רמב\"ן אין סוף פרשת בא: די תכלית פון דער בריאה און פון די מצוות איז אז מענטשן זאלן מודה זיין צום באשעפער, און דאס איז די כוונה פון הויבן דאס קול אין תפילה און פון די בתי כנסיות. דערנאך ברענגט ער דעם תניא אין אגרת הקודש אז אפילו בעלי עסקים זאלן דאווענען שחרית כאטש א שעה און א האלב."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-47-chizuk-tefila-chesvan-5780",
+      "startSeg": 518,
+      "endSeg": 575,
+      "title": { "en": "Chazaras hashatz is not a break", "yi": "חזרת הש\"ץ איז נישט קיין הפסקה" },
+      "summary": {
+        "en": "The Rav addresses a new problem: young men walk out into the hall to chat during chazaras hashatz. He explains its greatness, instituted by the Anshei Knesses HaGedolah, brings the Mishnah Berurah about following in an open siddur, and says the coffee room is part of the beis medrash; he brings the Tosfos Yom Tov that the decrees of Tach v'Tat came because of talking during davening.",
+        "yi": "דער משגיח רעדט וועגן א נייע פראבלעם: יונגעלייט גייען ארויס אין הויל שמועסן ביי חזרת הש\"ץ. ער איז מסביר איר גרויסקייט, וואס די אנשי כנסת הגדולה האבן מתקן געווען, ברענגט די משנה ברורה אז מ'זאל נאכקוקן אין אן אפענעם סידור, און זאגט אז דער צימער וואו מ'טרינקט קאווע איז א חלק פונעם בית המדרש; ער ברענגט דעם תוספות יום טוב אז די גזירות ת\"ח ות\"ט זענען געקומען צוליב רעדן אינמיטן דאווענען."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-47-chizuk-tefila-chesvan-5780",
+      "startSeg": 576,
+      "endSeg": 658,
+      "title": { "en": "The Skverer fire, the late soul, and a closing plea", "yi": "דער פייער אין סקווירא, די נשמה וואס איז געקומען שפעט, און א בקשה צום סוף" },
+      "summary": {
+        "en": "The Rav tells that when the Skverer Rebbe's beis medrash burned, only the room where no one talked during davening remained, and speaks of the Tosfos Yom Tov's Mi Sheberach. He tells of a soul that came too late for a tikkun because in life it came late to davening and learning. He closes saying the tzibur davens well, and asks for tefillah for the Jewish people and the world in a time of trouble, and for Moshiach.",
+        "yi": "דער משגיח דערציילט אז ווען דער בית המדרש פונעם סקווירער רבי'ן איז פארברענט געווארן, איז נאר געבליבן דער צימער וואו מ'האט נישט גערעדט אינמיטן דאווענען, און רעדט וועגן דעם מי שברך פונעם תוספות יום טוב. ער דערציילט פון א נשמה וואס איז געקומען צו שפעט פאר א תיקון, ווייל אין איר לעבן איז זי געקומען שפעט צום דאווענען און צום לערנען. צום סוף זאגט ער אז דער עולם דאווענט פיין, און בעט מ'זאל מתפלל זיין פאר אידן און פאר דער וועלט אין א צייט פון צרות, און אויף משיח."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "צו התעשה לטיבה",
+      "work": "Bereishis",
+      "ref": "Bereishis 6:16",
+      "sefariaRef": "Genesis 6:16",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [2, 6], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "וידועה וואס שטעגט מען בעש''ט בקודש",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [0, 9, 21], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "קרומזלות לבני אדם – עה' דברים שעמדים ברמי שעורים",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 6b",
+      "sefariaRef": "Berakhot 6b",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [104, 105, 106, 107], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די סלאנימע ספרים",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [118, 119], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "וליובדו בכל לבבכם",
+      "work": "Devarim",
+      "ref": "Devarim 11:13",
+      "sefariaRef": "Deuteronomy 11:13",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [121, 148], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "עזה עבידה שבלב, זי תפילה",
+      "work": "Gemara Taanis",
+      "ref": "Taanis 2a",
+      "sefariaRef": "Taanit 2a",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [122, 123], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "הגמ' שטעט אין תניא",
+      "work": "Tanya",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [134, 135, 137], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "שטעט אין חובות הלבבות, כבנתנו בתפילה, ענע קיום קלות הנפש",
+      "work": "Chovos HaLevavos",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [152, 153, 154, 157], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די גמרא זאגט אין ברכות, די חיובת התפילה איז דריי מאל א טאג",
+      "work": "Gemara Berachos",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [191, 192, 193], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ערב בבוקר בצהרים א שיחה ויהמ'",
+      "work": "Tehillim",
+      "ref": "Tehillim 55:18",
+      "sefariaRef": "Psalms 55:18",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [195, 196], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "אזוי געשטעט מרמבים ... כי עומד לפני המלך",
+      "work": "Rambam",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [217, 219], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "און אזוי ווי רבי חיים",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [220, 222, 223], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ואני קרבז אלהי' ליטב",
+      "work": "Tehillim",
+      "ref": "Tehillim 73:28",
+      "sefariaRef": "Psalms 73:28",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [229], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אין ידיד נפש, ירבע ליהו, ידידי סכן ... מניפה צפה וחלטה אים",
+      "work": "Yedid Nefesh",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [256, 258, 259, 263], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "איש רחון ערוך ... ככה אסאך חסידים הראשונים ... התפשטות הגשמיות",
+      "work": "Shulchan Aruch",
+      "ref": "Shulchan Aruch, Orach Chaim 98:1",
+      "sefariaRef": "Shulchan Arukh, Orach Chayim 98:1",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [265, 271, 275, 282], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אין בגיעה אלא תפילה",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 26b",
+      "sefariaRef": "Berakhot 26b",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [307, 308, 320, 321], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "צא מנבשי לאלקים",
+      "work": "Tehillim",
+      "ref": "Tehillim 42:3",
+      "sefariaRef": "Psalms 42:3",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [404, 407, 418], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ער רעדט אין רמב״ן אין סוף פרשת בוי",
+      "work": "Ramban",
+      "ref": "Ramban, Shemos 13:16",
+      "sefariaRef": "Ramban on Exodus 13:16",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [468, 469, 473, 487, 490], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די שטעט אין ירושלמ' איז מגיין א תלמיד שתפילה זכוכה כולל",
+      "work": "Yerushalmi",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [498, 499], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "תניא'ן גירות הקודש ... שיכולים להעריך בתפילת השאכים ערך שעה ומחצה",
+      "work": "Tanya",
+      "ref": "Tanya, Iggeres HaKodesh 1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [504, 512, 513], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די משנה ברורה ברענגט",
+      "work": "Mishnah Berurah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [554], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "תוספות יום טוב זאגט",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [570, 573, 574, 588], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ווי עס שטעט אין רמב״ם",
+      "work": "Rambam",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [646, 648], "confidence": 0.6 }
+    }
+  ],
+  "insights": [
+    {
+      "text": { "en": "Reb Shraga Feivel Mendlowitz read the Ba'al Shem Tov's teivah as the ark against today's flood: apikorsus, desire, envy and honor drown most of the world, and the word of tefillah is where a Jew is saved.", "yi": "ר' שרגא פייוול מענדלאוויטש האט געטייטשט דעם בעל שם טוב'ס תיבה אלס די תיבה קעגן דעם היינטיגן מבול: אפיקורסות, תאוה, קנאה און כבוד דערטרינקען רוב פון דער וועלט, און דאס ווארט פון תפילה איז וואו א איד ראטעוועט זיך." },
+      "evidence": { "segs": [25, 26, 30, 31, 33, 34], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Rav explains that saying the words of tefillah is a rabbinic mitzvah, while davening with the heart is the mitzvah of the Torah, 'to serve Him with all your heart'.", "yi": "דער משגיח איז מסביר אז זאגן די ווערטער פון תפילה איז א מצוה דרבנן, און דאווענען מיטן הארץ איז די מצוה מן התורה, \"ולעבדו בכל לבבכם\"." },
+      "evidence": { "segs": [143, 144, 145, 146, 147, 148], "confidence": 0.7 }
+    },
+    {
+      "text": { "en": "The Rav notes that the Shulchan Aruch normally says what to do, yet here it narrates how early chassidim davened, because every person can reach hispashtus hagashmiyus in his own measure.", "yi": "דער משגיח מערקט אן אז דער שולחן ערוך זאגט געווענליך וואס מ'דארף טון, און דא דערציילט ער ווי אזוי די חסידים הראשונים האבן געדאווענט, ווייל יעדער איינער קען צוקומען צו התפשטות הגשמיות לויט זיין מדרגה." },
+      "evidence": { "segs": [279, 281, 282, 284, 285], "confidence": 0.7 }
+    },
+    {
+      "text": { "en": "Pegiah means an appointment: if a non-Jew treats an appointment with a president as a great event, a Jew at the times of tefillah has an appointment with the King of kings.", "yi": "פגיעה מיינט אן אפוינטמענט: אויב א גוי האלט אן אפוינטמענט מיט א פרעזידענט פאר א גרויסע זאך, האט א איד אין די זמני תפילה אן אפוינטמענט מיטן מלך מלכי המלכים." },
+      "evidence": { "segs": [310, 313, 316, 317, 318, 321], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "In the story of the simple Jew, his prayer reached so deep that at 'Tzam'ah nafshi' he forgot to ask to be saved and longed only for Hashem, and he was saved.", "yi": "אין דער מעשה פונעם פשוט'ן איד איז זיין תפילה געגאנגען אזוי טיף, אז ביי \"צמאה נפשי\" האט ער פארגעסן צו בעטן אז ער זאל ניצול ווערן און זיך נאר געבענקט נאכן אייבערשטן, און ער איז ניצול געווארן." },
+      "evidence": { "segs": [418, 419, 420, 453, 454], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "A soul that came too late for its tikkun was measured middah k'neged middah: in its lifetime it used to come late to davening and learning.", "yi": "א נשמה וואס איז געקומען צו שפעט פאר איר תיקון איז געמאסטן געווארן מדה כנגד מדה: אין איר לעבן איז זי געקומען שפעט צום דאווענען און צום לערנען." },
+      "evidence": { "segs": [609, 610, 612, 613, 615], "confidence": 0.7 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The bachurim's davening and the Chevra Emunas Yisroel", "yi": "דאס דאווענען פון די בחורים און די חברה אמונת ישראל" },
+      "retelling": {
+        "en": "The Rav introduced that bachurim should daven with geshmak, saying the words aloud and together, and the people around delighted in their davening. After a summer season they asked why they should have it only in the summer and not in town, in Boro Park. So the Chevra Emunas Yisroel was founded, with about forty fine bachurim with yiras Shamayim, beginning as a minyan in a store front, with fiery davening.",
+        "yi": "דער משגיח האט איינגעפירט אז בחורים זאלן דאווענען מיט א געשמאק, זאגן הויך און אלע צוזאמען, און דער עולם האט געקוועלט פון זייער דאווענען. נאך א זומער סעזאן האבן זיי געפרעגט פארוואס זאל מען עס האבן נאר אין זומער, לאמיר עס האבן אין שטאט, אין בארא פארק. אזוי איז געגרינדעט געווארן די חברה אמונת ישראל, מיט ארום פערציג עדעלע בחורים מיט יראת שמים, וואס האט זיך אנגעהויבן מיט א מנין אין א סטאר, מיט א פייערדיג דאווענען."
+      },
+      "people": [],
+      "evidence": { "segs": [61, 62, 65, 71, 72, 73, 78], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "Davening mincha gedolah", "yi": "דאווענען מנחה גדולה" },
+      "retelling": {
+        "en": "Someone used to daven mincha gedolah, at about half past twelve, with a private minyan. He was asked why, since many hold that mincha ketanah is preferable. He answered that once the time of mincha comes and he can already speak to the Creator, he cannot hold himself back; his heart pulls him to it.",
+        "yi": "איינער פלעגט דאווענען מנחה גדולה, ארום האלב איינס, מיט א פריוואטן מנין. מ'האט אים געפרעגט פארוואס, אז מ'האלט דאך אז מנחה קטנה איז בעסער. האט ער געענטפערט אז ווען ס'קומט די צייט פון מנחה און ער קען שוין רעדן צום באשעפער, קען ער זיך נישט איינהאלטן; דאס הארץ ציט אים דערצו."
+      },
+      "people": [],
+      "evidence": { "segs": [237, 239, 245, 249, 253, 255], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "Ephraim, the brandy and 'Tzam'ah nafshi'", "yi": "אפרים, דער בראנפן און \"צמאה נפשי\"" },
+      "retelling": {
+        "en": "As the Beis Avraham told it, a simple Jew named Ephraim sold brandy without a permit to avoid heavy taxes, a serious crime in Russia. An informer threatened to report him. He went to shul, opened the aron kodesh and began saying Tehillim; Reb Yehuda Leib, passing by, heard him cry out 'Tzam'ah nafshi l'Elokim' again and again with great feeling. Asked about it, Ephraim said he had come to pray to be saved, but at that passuk he forgot why he came and longed only for Hashem. His wife had laid straw where the brandy was made, and when the police came, the officer, told that no brandy could be made near straw, left, and Ephraim was saved by a miracle.",
+        "yi": "ווי דער בית אברהם האט דערציילט, האט א פשוט'ער איד מיטן נאמען אפרים פארקויפט בראנפן אן א פערמיט, כדי נישט צו צאלן גרויסע טעקסעס, א גרויסע עבירה אין רוסלאנד. א מוסר האט אים געסטראשעט אז ער וועט אים מסר'ן. ער איז געגאנגען אין שול, געעפנט דעם ארון קודש און אנגעהויבן זאגן תהלים; ר' יהודה לייב איז דורכגעגאנגען און געהערט ווי ער שרייט מיט א ברען כסדר \"צמאה נפשי לאלקים\". ווען מ'האט אים געפרעגט, האט אפרים געזאגט אז ער איז געקומען בעטן אז ער זאל ניצול ווערן, נאר ביי דעם פסוק האט ער אינגאנצן פארגעסן פארוואס ער איז געקומען און זיך נאר געבענקט נאכן אייבערשטן. זיין ווייב האט אוועקגעלייגט שטרוי וואו מ'האט געמאכט דעם בראנפן, און ווען די פאליציי איז געקומען, איז דער אפיציר, ווען מ'האט אים געזאגט אז ביי שטרוי קען מען נישט מאכן בראנפן, אוועקגעגאנגען, און אפרים איז ניצול געווארן מיט א נס."
+      },
+      "people": ["Ephraim", "the Beis Avraham of Slonim", "Reb Yehuda Leib", "Reb Mottel Slonimer"],
+      "evidence": { "segs": [366, 370, 372, 398, 404, 419, 426, 453], "confidence": 0.7 }
+    },
+    {
+      "title": { "en": "The fire in Skver", "yi": "דער פייער אין סקווירא" },
+      "retelling": {
+        "en": "A fire broke out in the Skverer Rebbe's beis medrash in Skver and it burned down. One thing remained: the small room where the Rebbe davened stayed whole. It was said that this was because in that room no one talked during davening.",
+        "yi": "ס'איז אויסגעבראכן א פייער אינעם בית המדרש פונעם סקווירער רבי'ן אין סקווירא, און ער איז פארברענט געווארן. איין זאך איז געבליבן: דאס קליינע צימערל וואו דער רבי האט געדאווענט איז געבליבן גאנץ. מ'האט געזאגט אז דאס איז ווייל אין יענעם צימער רעדט מען נישט אינמיטן דאווענען."
+      },
+      "people": ["the Skverer Rebbe"],
+      "evidence": { "segs": [576, 578, 580, 582, 584, 585], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "The soul that came late", "yi": "די נשמה וואס איז געקומען שפעט" },
+      "retelling": {
+        "en": "On an Erev Shabbos souls would come to a tzaddik for a tikkun. One soul merited to come, but arrived late, and was told that nothing more could be done for it because Shabbos had already begun. It came late because in its lifetime it used to come late to davening and learning, middah k'neged middah.",
+        "yi": "ערב שבת פלעגן נשמות קומען צו א צדיק פאר א תיקון. איין נשמה איז זוכה געווען צו קומען, נאר זי איז געקומען שפעט, און מ'האט איר געזאגט אז מ'קען שוין גארנישט טון, ווייל ס'איז שוין שבת. זי איז געקומען שפעט ווייל אין איר לעבן איז זי געקומען שפעט צום דאווענען און צום לערנען, מדה כנגד מדה."
+      },
+      "people": [],
+      "evidence": { "segs": [601, 602, 604, 606, 612, 613], "confidence": 0.65 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "How can a Jew save himself from the flood of apikorsus and desires that drowns most of the world?", "yi": "ווי אזוי קען א איד זיך ראטעווען פונעם מבול פון אפיקורסות און תאוות וואס דערטרינקט רוב פון דער וועלט?" },
+      "answer": { "en": "By entering the teivah, the word of davening, pouring out his heart to Hashem.", "yi": "דורך אריינגיין אין דער תיבה, דאס ווארט פון דאווענען, און אויסגיסן דאס הארץ צום רבונו של עולם." },
+      "questionSegs": [29, 30, 31],
+      "answerSegs": [33, 34, 35, 36],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why do people praise bachurim who learn but mock a group that works on davening?", "yi": "פארוואס לויבט מען בחורים וואס לערנען, און א חברה וואס מוטשעט זיך מיטן דאווענען לאכט מען אויס?" },
+      "answer": { "en": "The Gemara says that people treat lightly the things that stand at the height of the world, and that is tefillah.", "yi": "די גמרא זאגט אז מענטשן זענען מזלזל אין די זאכן וואס שטייען ברומו של עולם, און דאס איז תפילה." },
+      "questionSegs": [97, 99, 101, 103],
+      "answerSegs": [104, 105, 106, 107, 108],
+      "confidence": 0.7
+    },
+    {
+      "question": { "en": "Why daven mincha gedolah when many hold mincha ketanah is preferable?", "yi": "פארוואס דאווענען מנחה גדולה, אז מ'האלט דאך אז מנחה קטנה איז בעסער?" },
+      "answer": { "en": "Once the time comes when he may speak to the Creator, his heart pulls him and he cannot wait.", "yi": "ווען ס'קומט די צייט ווען ער מעג רעדן צום באשעפער, ציט אים דאס הארץ און ער קען נישט ווארטן." },
+      "questionSegs": [243, 245, 246],
+      "answerSegs": [249, 252, 253, 255],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why did the Skverer Rebbe's small room survive the fire?", "yi": "פארוואס איז דאס צימערל פונעם סקווירער רבי'ן געבליבן גאנץ אינעם פייער?" },
+      "answer": { "en": "Because in that room no one talked during davening.", "yi": "ווייל אין יענעם צימער האט מען נישט גערעדט אינמיטן דאווענען." },
+      "questionSegs": [584],
+      "answerSegs": [585, 586, 587],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why did the soul come too late for its tikkun?", "yi": "פארוואס איז די נשמה געקומען צו שפעט פאר איר תיקון?" },
+      "answer": { "en": "Because in its lifetime it used to come late to davening and learning, middah k'neged middah.", "yi": "ווייל אין איר לעבן איז זי געקומען שפעט צום דאווענען און צום לערנען, מדה כנגד מדה." },
+      "questionSegs": [610, 611],
+      "answerSegs": [612, 613],
+      "confidence": 0.7
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Rav says one should daven slowly and not rush, so that the heart, not only the mind, understands each word.", "yi": "דער משגיח זאגט אז מ'זאל דאווענען פאמעלעך און נישט לויפן, אז דאס הארץ, נישט נאר דער מוח, זאל פארשטיין יעדעס ווארט." },
+      "evidence": { "segs": [326, 327, 328, 332, 333], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "The Rav says davening together with other upright friends who want to daven lifts a person's davening.", "yi": "דער משגיח זאגט אז דאווענען צוזאמען מיט ערליכע חברים וואס ווילן דאווענען הויבט אויף דאס דאווענען." },
+      "evidence": { "segs": [338, 339, 340, 344, 457], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Rav asks the young men not to walk out to chat during chazaras hashatz, and brings the Mishnah Berurah that one should follow it in an open siddur.", "yi": "דער משגיח בעט די יונגעלייט זיי זאלן נישט ארויסגיין שמועסן ביי חזרת הש\"ץ, און ברענגט די משנה ברורה אז מ'זאל נאכקוקן אין אן אפענעם סידור." },
+      "evidence": { "segs": [531, 554, 557, 558, 560], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Rav says one may not talk during davening, including in the coffee room, which is part of the beis medrash.", "yi": "דער משגיח זאגט אז מ'טאר נישט רעדן אינמיטן דאווענען, אויך נישט אין דעם צימער וואו מ'טרינקט קאווע, וואס איז א חלק פונעם בית המדרש." },
+      "evidence": { "segs": [567, 568, 569, 575], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Rav asks that people daven for themselves, their families, the Jewish people and even for the nations, and for Moshiach to come.", "yi": "דער משגיח בעט מ'זאל מתפלל זיין פאר זיך, פאר דער משפחה, פאר אידן און אפילו פאר די גוים, און אז משיח זאל שוין קומען." },
+      "evidence": { "segs": [645, 653, 654, 655], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "tefillah",
+    "service of the heart",
+    "chazaras hashatz",
+    "talking during davening",
+    "standing before the King",
+    "hispashtus hagashmiyus",
+    "Chevra Emunas Yisroel",
+    "davening together with achdus",
+    "Ba'al Shem Tov on the teivah"
+  ],
+  "concepts": [
+    { "he": "צהר תעשה לתיבה", "heardAs": ["צו התעשה לטיבה", "צוהטתא"] },
+    { "he": "מבול", "heardAs": ["מבעל", "מעבל", "מבער"] },
+    { "he": "עבודה שבלב", "heardAs": ["עבידה שבלב"] },
+    { "he": "כיסופי הנפש", "heardAs": ["קלות הנפש", "כלס הנפש"] },
+    { "he": "לשון נוכח", "heardAs": ["בלשון נוכח"] },
+    { "he": "התפשטות הגשמיות", "heardAs": ["פשטות הגשמיות", "תפשטות הגשמיות"] },
+    { "he": "פגיעה", "heardAs": ["בגיעה", "בגיאה"] },
+    { "he": "חזרת הש\"ץ", "heardAs": ["חזרת השץ"] },
+    { "he": "שמונה עשרה", "heardAs": ["שמעון עשרה", "שמע נסתה", "שמעון עסקא"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבונו שלאים", "רבונו שלילים", "רבי'נ'ער שלעך", "רבי יושע לעל"] },
+    { "he": "מנחה גדולה", "heardAs": ["מנחה גדולה"] },
+    { "he": "מנחה קטנה", "heardAs": ["מנחת קטנה", "מנחת כתנא"] },
+    { "he": "אפיקורסות", "heardAs": ["אפיקורסות", "פיקורתות"] }
+  ],
+  "people": [
+    { "name": "the Ba'al Shem Tov", "heardAs": ["בעש''ט", "בעל שם טוב"] },
+    { "name": "Reb Shraga Feivel Mendlowitz", "heardAs": ["רבי שלגור פייגל מענדלאוויטש"] },
+    { "name": "Reb Chaim", "heardAs": ["רבי חיים"] },
+    { "name": "the Beis Avraham of Slonim", "heardAs": ["דער בית אברהם", "עסוונימער רבי"] },
+    { "name": "Reb Yehuda Leib", "heardAs": ["רבי יהודה לייב", "רבי יהודה לב"] },
+    { "name": "Reb Mottel Slonimer", "heardAs": ["ר' מאטל סלאנימער"] },
+    { "name": "Ephraim", "heardAs": ["אפרים שמוחץ", "רבי אפרים"] },
+    { "name": "the Ramban", "heardAs": ["רמב״ן"] },
+    { "name": "the Rambam", "heardAs": ["מרמבים", "רמב״ם"] },
+    { "name": "the Tosfos Yom Tov", "heardAs": ["תוספות יום טוב"] },
+    { "name": "the Skverer Rebbe", "heardAs": ["דער סקווירער רבי"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair for the Rav's own speech but badly garbles Hebrew quotations. The passage on Moshiach, Dan and Amalek (segs 39-54) is mostly unrecoverable and only its gist is used. The 'homeh libi' passage (175-190), the Yerushalmi on raising the voice (498-502), the explanation of the quiet versus loud Shemoneh Esrei (535-553), the person in the mincha gedolah story and the tzaddik in the story of the late soul could not be identified with confidence. The catalog title is a filename guess ('Chizuk Tefila Chesvan') and fits the whole shiur."
+}

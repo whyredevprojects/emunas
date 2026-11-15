@@ -1,0 +1,288 @@
+{
+  "shiurId": "yi-tefila-heb-01",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that in Mizmor shir l'yom haShabbos it is Shabbos itself that sings to Hashem, and that our weekly Shabbos sings to the great Shabbos of the future, when all of history will be heard as one harmony.",
+      "yi": "דער משגיח ערקלערט אז אין \"מזמור שיר ליום השבת\" זינגט דער שבת אליין צום רבונו של עולם, און אונזער שבת זינגט צו דעם גרויסן שבת לעתיד לבוא, ווען די גאנצע היסטאריע וועט זיך הערן ווי איין הארמאניע."
+    },
+    "abstract": {
+      "en": "The Rav opens a series on the meaning of the tefillos, saying that knowing what the words mean can bring warmth into davening, and begins with Shabbos and the chapter Mizmor shir l'yom haShabbos. Every chapter of Tehillim has one theme running through it like a string through pearls; here the theme is that Shabbos itself sings. Creation was made in seven days like the seven notes of music, and only when the seventh day completes the seven-stringed harp can there be song; so too the seventh sea, the seventh land and King David are singers. From a Midrash that Adam said this chapter after learning the power of teshuvah, the Rav explains Shabbos and yovel as the return of everything to its root. Our Shabbos sings to the great Shabbos of the future, when the world will see that all of history, even the suffering of tzaddikim and of Klal Yisrael, was one harmony.",
+      "yi": "דער משגיח עפנט א סעריע שיעורים איבער פירוש המילות פון דאווענען, ווייל אז מ'ווייסט דעם טייטש קען עס אריינברענגען א ווארעמקייט אין דאווענען, און ער הייבט אן מיטן שבת'דיגן דאווענען און מיטן קאפיטל \"מזמור שיר ליום השבת\". יעדער קאפיטל תהלים האט איין תוכן וואס גייט דורך אלע פסוקים ווי א שנור דורך פערל, און דא איז דער תוכן אז דער שבת אליין זינגט. די וועלט איז באשאפן געווארן אין זיבן טעג ווי די זיבן נאטן פון מוזיק, און ערשט ווען דער זיבעטער טאג מאכט פארטיג דעם כנור של שבעה נימין קען מען זינגען; אזוי אויך זענען דער זיבעטער ים, דאס זיבעטע לאנד און דוד המלך די זינגער. פון א מדרש אז אדם הראשון האט געזאגט דעם קאפיטל ווען ער האט געהערט דעם כח פון תשובה, ערקלערט ער אז שבת און יובל מיינען אז אלץ קומט צוריק צו זיין שורש. אונזער שבת זינגט צום גרויסן שבת פון לעתיד, ווען די וועלט וועט זען אז די גאנצע היסטאריע, אפילו די יסורים פון צדיקים און פון כלל ישראל, איז געווען איין הארמאניע."
+    },
+    "keyPoints": [
+      {
+        "text": { "en": "Every chapter of Tehillim has one theme threaded through all its verses, so the Rav first states a chapter's theme before translating its verses.", "yi": "יעדער קאפיטל תהלים האט איין תוכן וואס גייט דורך אלע פסוקים, דערפאר זאגט דער משגיח קודם דעם תוכן פונעם קאפיטל איידער ער טייטשט די פסוקים." },
+        "evidence": { "segs": [117, 121, 123, 139], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "Mizmor shir l'yom haShabbos does not mean a song about Shabbos but a song that Shabbos itself sings to Hashem.", "yi": "\"מזמור שיר ליום השבת\" מיינט נישט א שיר וועגן שבת, נאר א שיר וואס דער שבת אליין זינגט צום רבונו של עולם." },
+        "evidence": { "segs": [142, 147, 157, 158, 159], "confidence": 0.9 }
+      },
+      {
+        "text": { "en": "Music needs all seven notes; the world, created in seven days, has its song only once Shabbos completes the seven-stringed harp.", "yi": "מוזיק דארף האבן אלע זיבן נאטן; די וועלט, וואס איז באשאפן אין זיבן טעג, האט ערשט א שירה ווען שבת מאכט פארטיג דעם כנור של שבעה נימין." },
+        "evidence": { "segs": [186, 189, 234, 237, 243], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "Shabbos, like yovel, means the return of everything to its root, which is why the Midrash ties this chapter to teshuvah.", "yi": "שבת, אזוי ווי יובל, מיינט אז אלץ קומט צוריק צו זיין שורש, און דערפאר פארבינדט דער מדרש דעם קאפיטל מיט תשובה." },
+        "evidence": { "segs": [365, 380, 399, 403, 407], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "Our weekly Shabbos is a small Shabbos singing to the great Shabbos of the future, the day that is entirely Shabbos.", "yi": "אונזער וואכעדיגער שבת איז א קלענערער שבת וואס זינגט צום גרויסן שבת פון לעתיד, דעם יום שכולו שבת." },
+        "evidence": { "segs": [478, 479, 492, 493, 494], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "People cannot see how the suffering of tzaddikim and the success of the wicked fit together, but from Hashem's height it is all one harmony.", "yi": "מענטשן קענען נישט זען וויאזוי די יסורים פון צדיקים און די הצלחה פון רשעים פאסן זיך צוזאמען, אבער פון דעם רבונו של עולם'ס הויך איז אלץ איין הארמאניע." },
+        "evidence": { "segs": [658, 669, 670, 685, 687], "confidence": 0.85 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-teffilah-01-tefilah", "startSeg": 0, "endSeg": 69,
+      "title": { "en": "Why learn the meaning of the tefillos", "yi": "פארוואס לערנען דעם טייטש פון דאווענען" },
+      "summary": {
+        "en": "The Rav explains that the Torah's mitzvah is to daven with the heart, and that in weak generations knowing the meaning of the words can bring warmth into davening. He begins with the Shabbos davening, notes that Lecha Dodi is a later custom, and that the Shulchan Aruch speaks of accepting Shabbos with Mizmor shir l'yom haShabbos.",
+        "yi": "דער משגיח ערקלערט אז די מצוה פון דער תורה איז צו דאווענען מיטן הארץ, און אין שוואכע דורות קען דער פירוש המילות אריינברענגען א ווארעמקייט אין דאווענען. ער הייבט אן מיטן שבת'דיגן דאווענען, און ברענגט אז לכה דודי איז א שפעטערדיגער מנהג און אז אין שולחן ערוך שטייט אז מ'איז מקבל שבת מיט מזמור שיר ליום השבת."
+      },
+      "kind": "intro", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-01-tefilah", "startSeg": 70, "endSeg": 140,
+      "title": { "en": "Tehillim as King David's portion in Torah", "yi": "תהלים איז דוד המלכ'ס חלק אין דער תורה" },
+      "summary": {
+        "en": "The Rav explains that every person has his own portion in the Torah, and the whole book of Tehillim is King David's portion, even chapters that Adam or Moshe said. He then explains that each chapter has one theme running through it like a string through pearls, so he will first give each chapter's content.",
+        "yi": "דער משגיח ערקלערט אז יעדער איינער האט זיין חלק אין דער תורה, און דער גאנצער ספר תהלים איז דער חלק פון דוד המלך, אפילו די קאפיטלעך וואס אדם הראשון אדער משה רבינו האבן געזאגט. דערנאך זאגט ער אז יעדער קאפיטל האט איין תוכן וואס גייט דורך ווי א שנור דורך פערל, און דערפאר וועט ער קודם זאגן דעם תוכן."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-01-tefilah", "startSeg": 141, "endSeg": 250,
+      "title": { "en": "Shabbos sings: the seven notes of creation", "yi": "דער שבת זינגט: די זיבן נאטן פון דער בריאה" },
+      "summary": {
+        "en": "The Rav asks why the chapter is called a song of Shabbos when it says nothing about Shabbos, and answers that Shabbos itself sings. Through the seven 'kol' of Mizmor l'Dovid, the seven-stringed harp of the Beis Hamikdash and the seven notes of music, he explains that the world's harmony becomes song only when Shabbos completes the seven days.",
+        "yi": "דער משגיח פרעגט פארוואס דער קאפיטל הייסט א שיר פון שבת ווען ס'שטייט נישט דערין גארנישט וועגן שבת, און ענטפערט אז דער שבת אליין זינגט. מיט די זיבן מאל \"קול\" אין מזמור לדוד, דעם כנור פון בית המקדש מיט זיבן נימין און די זיבן נאטן פון מוזיק, ערקלערט ער אז די הארמאניע פון דער וועלט ווערט א שירה ערשט ווען שבת מאכט פארטיג די זיבן טעג."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-01-tefilah", "startSeg": 251, "endSeg": 349,
+      "title": { "en": "The seventh is always the singer", "yi": "דער זיבעטער איז אלעמאל דער זינגער" },
+      "summary": {
+        "en": "From a Midrash on the seventh day, the seventh sea and the seventh land, the Rav shows that the seventh always sings: the Kinneret, Eretz Yisrael, the zemer among the animals, and King David as the seventh of the ushpizin. He brings the Lechovitcher's saying about a Jew who can sing and does not sing on Shabbos, and the custom to sing Kel Adon with a tune.",
+        "yi": "פון א מדרש וועגן דעם זיבעטן טאג, דעם זיבעטן ים און דאס זיבעטע לאנד, ווייזט דער משגיח אז דער זיבעטער זינגט אלעמאל: דער כנרת, ארץ ישראל, דער זמר צווישן די חיות, און דוד המלך וואס איז דער זיבעטער פון די אושפיזין. ער ברענגט דעם לעכאוויטשער'ס ווארט וועגן א איד וואס קען זינגען און זינגט נישט שבת, און דעם מנהג צו זינגען קל אדון מיט א ניגון."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-01-tefilah", "startSeg": 350, "endSeg": 438,
+      "title": { "en": "Shabbos, teshuvah and yovel: return to the root", "yi": "שבת, תשובה און יובל: צוריקקומען צום שורש" },
+      "summary": {
+        "en": "The Rav brings the Midrash that Adam said this chapter when he heard from Kayin the power of teshuvah, and asks what Shabbos has to do with teshuvah. He explains that everything must return to its root, as in Koheles, the Maharal and the Ramban on yovel, and that Shabbos and above all the yovel bring back even the furthest Jew.",
+        "yi": "דער משגיח ברענגט דעם מדרש אז אדם הראשון האט געזאגט דעם קאפיטל ווען ער האט געהערט פון קין דעם כח פון תשובה, און פרעגט וואס פאר א שייכות שבת האט מיט תשובה. ער ערקלערט אז אלץ מוז צוריקקומען צו זיין שורש, ווי אין קהלת, ביים מהר\"ל און ביים רמב\"ן אויף יובל, און אז שבת, און בפרט דער יובל, ברענגט צוריק אפילו דעם ווייטסטן איד."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-01-tefilah", "startSeg": 439, "endSeg": 520,
+      "title": { "en": "This year's yovel and the Shabbos of the future", "yi": "דאס יאר פון יובל און דער שבת פון לעתיד" },
+      "summary": {
+        "en": "In passing, the Rav says that by the accepted reckoning this year, 5755, is a yovel year, discusses how the fiftieth year is counted, and mentions kavanos of the mekubalim for it. He then explains that in Mizmor shir l'yom haShabbos the lower Shabbos sings to the higher one, the day that is entirely Shabbos, and expresses the hope that this year will be a time of favor for the redemption.",
+        "yi": "אגב דערציילט דער משגיח אז לויט די חשבונות איז דאס יאר, תשנ\"ה, א יאר פון יובל, ער רעדט ווי אזוי מ'רעכנט דאס פופציגסטע יאר, און דערמאנט כוונות פון די מקובלים דערויף. דערנאך ערקלערט ער אז אין \"מזמור שיר ליום השבת\" זינגט דער אונטערשטער שבת צום אויבערשטן שבת, דעם יום שכולו שבת, און ער האפט אז דאס יאר זאל זיין אן עת רצון פאר דער גאולה."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-01-tefilah", "startSeg": 521, "endSeg": 651,
+      "title": { "en": "The questions of history and their tikkun", "yi": "די קשיות פון דער היסטאריע און זייער תיקון" },
+      "summary": {
+        "en": "The Rav describes the questions people ask on Hashem because of the suffering of Jews, from the Churban through the Crusades, the Inquisition and the six million, and says that we cannot answer but justify Hashem's judgment. He brings what the sefarim reveal: the martyrs of Tach v'Tat and the Asarah Harugei Malchus as rectifications of earlier sins, that Hashem never forgives a Jew's blood, and that before Moshiach souls are gathered into one generation for their tikkun.",
+        "yi": "דער משגיח שילדערט די קשיות וואס מענטשן פרעגן אויפן רבונו של עולם צוליב די צרות פון אידן, פונעם חורבן ביז די קרייצצוגן, די אינקוויזיציע און די זעקס מיליאן, און זאגט אז מ'קען נישט ענטפערן נאר מ'איז מצדיק דעם דין. ער ברענגט וואס די ספרים האבן מגלה געווען: די הרוגים פון ת\"ח ות\"ט און די עשרה הרוגי מלכות זענען געווען א תיקון פאר פריערדיגע חטאים, דער רבונו של עולם איז קיינמאל נישט מוחל א אידיש בלוט, און פאר משיח ווערן נשמות צוזאמענגענומען אין איין דור פאר זייער תיקון."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-01-tefilah", "startSeg": 652, "endSeg": 770,
+      "title": { "en": "Seeing the whole picture: the chapter's message", "yi": "זען דאס גאנצע בילד: דער תוכן פונעם קאפיטל" },
+      "summary": {
+        "en": "The Rav reads the chapter's verses on Hashem's deep thoughts and His being on high, and gives the mashal of a fly on a Rembrandt painting that sees only a black spot. He tells his listeners to sing with Shabbos at the Shabbos table as a taste of the future Shabbos, and sums up the chapter with its last verse, explaining a word written without a vav as the hidden connection that is missing from our sight.",
+        "yi": "דער משגיח לערנט די פסוקים פונעם קאפיטל וועגן די טיפע מחשבות פונעם רבונו של עולם און אז ער איז הויך, און ברענגט א משל פון א פליג אויף א בילד פון רעמבראנדט וואס זעט נאר א שווארצן פלעק. ער זאגט מ'זאל זינגען מיטן שבת ביים שבת'דיגן טיש ווי א טעם פונעם שבת פון לעתיד, און ער פאסט צוזאם דעם קאפיטל מיטן לעצטן פסוק, וואו א ווארט איז געשריבן אן א וי\"ו, וואס ער טייטשט אלס דעם באהאלטענעם חיבור וואס מיר זעען נישט."
+      },
+      "kind": "closing", "catalogTopicIdx": [0], "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "עול יעבדי בכל לבבכם", "work": "Devarim", "ref": "Devarim 11:13", "sefariaRef": "Deuteronomy 11:13", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [1, 12], "confidence": 0.85 } },
+    { "heardAs": "ווי אן חכמה מ'מדינט די גמרא ... מכוון זיין באהובות", "work": "Gemara Berachos", "ref": "Berachos 34b", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [11, 13, 14], "confidence": 0.7 } },
+    { "heardAs": "אין הלכה אין שולחן עורר שטעט אז מען איז מקבל שבת מיט מזמור שיר", "work": "Shulchan Aruch", "ref": "Shulchan Aruch Orach Chaim 261:4", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [53, 68], "confidence": 0.75 } },
+    { "heardAs": "מזרח שעלי המשבת שטעטן מדרש לויט איין שיטה אז דאס האט אדם הראשון געזאגט", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [77, 78], "confidence": 0.8 } },
+    { "heardAs": "דער אשך הקדוש מהסביר", "work": "Alshich", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [79, 80], "confidence": 0.7 } },
+    { "heardAs": "מזמיר השיעור ליום השבת", "work": "Tehillim", "ref": "Tehillim 92:1", "sefariaRef": "Psalms 92:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [114, 142, 149], "confidence": 0.9 } },
+    { "heardAs": "מזמור לדבוד, האבו עלי דשם בני איומים", "work": "Tehillim", "ref": "Tehillim 29", "sefariaRef": "Psalms 29", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [164, 165, 166], "confidence": 0.85 } },
+    { "heardAs": "די גמרא זאגט אין עורכן אז די כינע פון בית המקדש האט געהאט שבע נימים", "work": "Gemara Arachin", "ref": "Arachin 13b", "sefariaRef": "Arakhin 13b", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [184, 186], "confidence": 0.8 } },
+    { "heardAs": "עס שטעט אין מדרש, אז טרעביש האט באשאפן זעקס טעג", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [251, 252, 255, 257], "confidence": 0.8 } },
+    { "heardAs": "כחמי זמרת הארץ האט יעקב אבינא געזאגט", "work": "Bereishis", "ref": "Bereishis 43:11", "sefariaRef": "Genesis 43:11", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [282, 283], "confidence": 0.8 } },
+    { "heardAs": "זיבן חיות וואס ווערן אויסגערעכנט אין פרשת ראי ... ושוי וזמר", "work": "Devarim", "ref": "Devarim 14:5", "sefariaRef": "Deuteronomy 14:5", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [288, 290, 292, 293], "confidence": 0.8 } },
+    { "heardAs": "עס איז א פסוק אין מלאכים ... נום זמירת ישראל", "work": "Shmuel II", "ref": "Shmuel II 23:1", "sefariaRef": null, "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [297, 300, 301], "confidence": 0.75 } },
+    { "heardAs": "ומחר ונוסף הגבוה ומחר כסף ים כנרת", "work": "Bamidbar", "ref": "Bamidbar 34:11", "sefariaRef": "Numbers 34:11", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [309, 311, 312], "confidence": 0.8 } },
+    { "heardAs": "ר' מרדכי אלאכאוויטש האט געזאגט", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [320, 321, 323], "confidence": 0.75 } },
+    { "heardAs": "כלה ד' הכל המצים, דאס איז די א'", "work": "Kel Adon", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [334, 336, 341, 347], "confidence": 0.75 } },
+    { "heardAs": "אין מדרשים איז געשטעט אז אדא מרושן האט דאס געמאכט", "work": "Bereishis Rabbah", "ref": "Bereishis Rabbah 22:13", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [352, 357, 361], "confidence": 0.75 } },
+    { "heardAs": "טוב להודות ולשם", "work": "Tehillim", "ref": "Tehillim 92:2", "sefariaRef": "Psalms 92:2", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [364, 690], "confidence": 0.85 } },
+    { "heardAs": "אל-אף-א תשוב אין קהלת", "work": "Koheles", "ref": "Koheles 1:7", "sefariaRef": "Ecclesiastes 1:7", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [383, 384, 387], "confidence": 0.7 } },
+    { "heardAs": "דער אנפאנג פונעם סוף פון נצח ישראל פון מהר''ל", "work": "Netzach Yisrael", "ref": "Netzach Yisrael, final chapter", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [389, 390], "confidence": 0.75 } },
+    { "heardAs": "ישאל אחוזות, ווי ישאל משפחתו תושבו", "work": "Vayikra", "ref": "Vayikra 25:10", "sefariaRef": "Leviticus 25:10", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [400], "confidence": 0.75 } },
+    { "heardAs": "דער רמב״ן זאגט אין פרשת אין בהל, אז וואס מיינט יובל", "work": "Ramban", "ref": "Ramban on Vayikra 25:10", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [401, 402, 403], "confidence": 0.7 } },
+    { "heardAs": "ר' צדיק רעדט פאר איגענומען אין זיין ספר", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [428, 429, 431], "confidence": 0.7 } },
+    { "heardAs": "דער גמרא זאגט ... פון מוציאה שבועות, וועט משיח קומען", "work": "Gemara Sanhedrin", "ref": "Sanhedrin 97a", "sefariaRef": "Sanhedrin 97a", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [443], "confidence": 0.65 } },
+    { "heardAs": "עס שטעט אין שך ... אויפן רמב״ם ... מחלוקת צווישן רבי יודען ורבנים", "work": "Rambam", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [455, 456, 457], "confidence": 0.65 } },
+    { "heardAs": "נוצט מען דעם מלאשון פון חז״ל ... מזמיר שיעור ליום שכולי שבת למנחה לחיי העילונים", "work": "Mishnah Tamid", "ref": "Mishnah Tamid 7:4", "sefariaRef": "Mishnah Tamid 7:4", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [486, 487], "confidence": 0.8 } },
+    { "heardAs": "צדיק ויושר און א צדיק ולוי", "work": "Devarim", "ref": "Devarim 32:4", "sefariaRef": "Deuteronomy 32:4", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [553, 554, 555], "confidence": 0.7 } },
+    { "heardAs": "צום ביישפיל דאס שטעט אין די ספרים", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [580, 582, 583, 600], "confidence": 0.75 } },
+    { "heardAs": "ונקסי דמה מלונקסי ... וישום שכן בציון", "work": "Yoel", "ref": "Yoel 4:21", "sefariaRef": "Joel 4:21", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [628, 629, 637, 638], "confidence": 0.8 } },
+    { "heardAs": "מרבה מסכה ה' מיד עמפה מחשבי סכה ה'", "work": "Tehillim", "ref": "Tehillim 92:6", "sefariaRef": "Psalms 92:6", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [657, 716], "confidence": 0.8 } },
+    { "heardAs": "ויאתם מורם ליולם השם", "work": "Tehillim", "ref": "Tehillim 92:9", "sefariaRef": "Psalms 92:9", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [667, 682, 713], "confidence": 0.8 } },
+    { "heardAs": "ער חליל לא יבן את זה", "work": "Tehillim", "ref": "Tehillim 92:7", "sefariaRef": "Psalms 92:7", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [698, 701, 703], "confidence": 0.75 } },
+    { "heardAs": "פארוואס די ראשים האבן הצלחה", "work": "Tehillim", "ref": "Tehillim 92:8", "sefariaRef": "Psalms 92:8", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [705, 706, 708], "confidence": 0.7 } },
+    { "heardAs": "להגיב תרעושה השם ... ולא עוולה עושה ביי", "work": "Tehillim", "ref": "Tehillim 92:16", "sefariaRef": "Psalms 92:16", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [753, 755, 760, 761], "confidence": 0.75 } }
+  ],
+  "insights": [
+    {
+      "text": { "en": "The heading 'a song for the Shabbos day' is read as Shabbos being the singer, not the subject: no other day of the week has its own song because only Shabbos sings.", "yi": "\"מזמור שיר ליום השבת\" ווערט געטייטשט אז דער שבת איז דער זינגער און נישט דער נושא: קיין אנדער טאג אין דער וואך האט נישט קיין שיר, ווייל נאר דער שבת זינגט." },
+      "evidence": { "segs": [143, 145, 147, 158, 159], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "Creation in seven days is like music built from seven notes: each note alone is mere noise, the six weekdays alone are not yet music, and Shabbos completes the harp of seven strings so that the world's harmony can be sung.", "yi": "די בריאה אין זיבן טעג איז ווי מוזיק וואס איז געבויט פון זיבן נאטן: יעדע נאט אליין איז נאר א טומל, די זעקס וואכנטעג אליין זענען נאך נישט קיין מוזיק, און שבת מאכט פארטיג דעם כנור פון זיבן נימין אז מ'זאל קענען זינגען די הארמאניע פון דער וועלט." },
+      "evidence": { "segs": [206, 207, 225, 234, 237, 243], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "The seventh of any series is its singer: the Kinneret as the seventh sea, Eretz Yisrael as the seventh land and 'chazan' of the world, the zemer as the seventh animal, and King David as the seventh of the ushpizin and 'sweet singer of Israel'.", "yi": "דער זיבעטער פון יעדער סדר איז דער זינגער: דער כנרת אלס דער זיבעטער ים, ארץ ישראל אלס דאס זיבעטע לאנד און דער חזן פון דער וועלט, דער זמר אלס די זיבעטע חיה, און דוד המלך אלס דער זיבעטער פון די אושפיזין און נעים זמירות ישראל." },
+      "evidence": { "segs": [259, 263, 281, 293, 296, 304], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The border of Eretz Yisrael touching the 'shoulder' of the Kinneret is read as a pat on the shoulder, the way one is praised after davening well, because the Kinneret sings the Shabbos songs.", "yi": "דער גבול פון ארץ ישראל וואס רירט אן \"כתף ים כנרת\" ווערט געטייטשט ווי א קלאפ אויף די פלייצעס, אזוי ווי מ'לויבט איינעם נאך א גוטן דאווענען, ווייל דער כנרת זינגט די שבת'דיגע זמירות." },
+      "evidence": { "segs": [312, 315, 318, 319], "confidence": 0.7 }
+    },
+    {
+      "text": { "en": "Shabbos is tied to teshuvah because both mean returning to the root; the yovel, the 'Shabbos of Shabbosos', draws back even those too far to return on an ordinary Shabbos, like the shofar of Moshiach.", "yi": "שבת איז פארבונדן מיט תשובה ווייל ביידע מיינען צוריקקומען צום שורש; דער יובל, דער שבת שבתים, שלעפט צוריק אפילו די וואס זענען צו ווייט צוריקצוקומען מיט א געווענליכן שבת, ווי דער שופר של משיח." },
+      "evidence": { "segs": [407, 409, 418, 421, 433, 435], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "Our Shabbos is a small Shabbos that sings to the great Shabbos of the future, and a person who sees only a piece of history is like a fly on a black spot in a masterpiece, unable to see the whole picture.", "yi": "אונזער שבת איז א קלענערער שבת וואס זינגט צום גרויסן שבת פון לעתיד, און א מענטש וואס זעט נאר א שטיקל היסטאריע איז ווי א פליג אויף א שווארצן פלעק אין א שיין בילד, וואס קען נישט זען דאס גאנצע בילד." },
+      "evidence": { "segs": [492, 493, 676, 679, 680], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "A word in the chapter's last verse is written without a vav; since vav means connection, the missing letter shows that people do not see the connection and harmony in Hashem's ways.", "yi": "א ווארט אין לעצטן פסוק פונעם קאפיטל איז געשריבן אן א וי\"ו; ווייל א וי\"ו מיינט חיבור, ווייזט דער פעלנדיגער אות אז מענטשן זעען נישט דעם חיבור און די הארמאניע אין די דרכים פונעם רבונו של עולם." },
+      "evidence": { "segs": [757, 761, 762, 764, 766], "confidence": 0.7 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "Adam meets Kayin and learns the power of teshuvah", "yi": "אדם הראשון טרעפט קין און לערנט דעם כח פון תשובה" },
+      "retelling": {
+        "en": "The Rav brings the Midrash that Adam met Kayin after Hashem had judged him for killing Hevel. Adam asked what had come of his judgment, and Kayin answered that he had done teshuvah. Although his teshuvah was not complete, his punishment was eased. Adam was astonished at how great the power of teshuvah is, and said the chapter Mizmor shir l'yom haShabbos.",
+        "yi": "דער משגיח ברענגט דעם מדרש אז אדם הראשון האט געטראפן קין נאכדעם וואס דער רבונו של עולם האט אים גע'משפט פארן הרג'ענען הבל. אדם האט געפרעגט וואס איז געווארן פון זיין דין, און קין האט געענטפערט אז ער האט תשובה געטאן. כאטש די תשובה איז נישט געווען קיין גאנצע תשובה, איז זיין עונש פארגרינגערט געווארן. אדם האט זיך געחידושט ווי גרויס דער כח פון תשובה איז, און האט געזאגט מזמור שיר ליום השבת."
+      },
+      "people": ["Adam", "Kayin", "Hevel"],
+      "evidence": { "segs": [352, 355, 357, 359, 361, 363], "confidence": 0.7 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "Why is the chapter called a song of the Shabbos day when nothing in it mentions Shabbos, melachah or kiddush?", "yi": "פארוואס הייסט דער קאפיטל א שיר פון שבת ווען ס'שטייט נישט דערין גארנישט וועגן שבת, מלאכה אדער קידוש?" },
+      "answer": { "en": "Because it is not a song to Shabbos but the song Shabbos itself sings to Hashem.", "yi": "ווייל ס'איז נישט קיין שיר צום שבת, נאר דער שיר וואס דער שבת אליין זינגט צום רבונו של עולם." },
+      "questionSegs": [152, 153, 154, 157], "answerSegs": [158, 159, 147], "confidence": 0.9
+    },
+    {
+      "question": { "en": "Why does only Shabbos have a song, and not the first or second day?", "yi": "פארוואס האט נאר שבת א שיר, און נישט דער ערשטער אדער צווייטער טאג?" },
+      "answer": { "en": "Music needs all seven notes; only when the seventh day completes the seven-stringed harp can the world sing.", "yi": "מוזיק דארף האבן אלע זיבן נאטן; ערשט ווען דער זיבעטער טאג מאכט פארטיג דעם כנור פון זיבן נימין קען די וועלט זינגען." },
+      "questionSegs": [144, 145, 146], "answerSegs": [234, 237, 240, 243], "confidence": 0.8
+    },
+    {
+      "question": { "en": "What connection does Shabbos have with teshuvah, that Adam said this chapter on learning the power of teshuvah?", "yi": "וואס פאר א שייכות האט שבת מיט תשובה, אז אדם הראשון האט געזאגט דעם קאפיטל ווען ער האט געהערט דעם כח פון תשובה?" },
+      "answer": { "en": "Shabbos means returning; everything must come back to its root, as teshuvah is a return to Hashem.", "yi": "שבת מיינט צוריקקומען; אלץ מוז צוריקקומען צו זיין שורש, אזוי ווי תשובה איז א צוריקקומען צום רבונו של עולם." },
+      "questionSegs": [365, 366], "answerSegs": [380, 395, 407, 415], "confidence": 0.8
+    },
+    {
+      "question": { "en": "How can one understand the terrible suffering of the Jewish people and of tzaddikim, which leads people to ask questions on Hashem?", "yi": "וויאזוי קען מען פארשטיין די שרעקליכע יסורים פון כלל ישראל און פון צדיקים, וואס ברענגען מענטשן צו פרעגן קשיות אויפן רבונו של עולם?" },
+      "answer": { "en": "People cannot fully understand, but the sefarim reveal that such suffering is a tikkun for earlier sins and brings the redemption closer, and Hashem never forgives the blood of a Jew.", "yi": "מענטשן קענען עס נישט אינגאנצן פארשטיין, אבער די ספרים האבן מגלה געווען אז אזעלכע יסורים זענען א תיקון פאר פריערדיגע חטאים און ברענגען נענטער די גאולה, און דער רבונו של עולם איז קיינמאל נישט מוחל א אידיש בלוט." },
+      "questionSegs": [562, 563, 568], "answerSegs": [575, 579, 601, 627, 636], "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why do the wicked flourish?", "yi": "פארוואס האבן די רשעים הצלחה?" },
+      "answer": { "en": "Their success is for their own end: in the end they will be destroyed forever, while the tzaddikim are brought to their tikkun.", "yi": "זייער הצלחה איז צו זייער אייגענעם סוף: צום סוף וועלן זיי פארטיליגט ווערן אויף אייביג, און די צדיקים ווערן געברענגט צו זייער תיקון." },
+      "questionSegs": [704, 705], "answerSegs": [706, 708, 709, 711], "confidence": 0.7
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Rav says that knowing the meaning of the words of davening, with some explanation, can bring warmth into one's davening.", "yi": "דער משגיח זאגט אז ווען מ'ווייסט דעם טייטש פון די ווערטער פון דאווענען מיט אביסל ביאורים, קען עס אריינברענגען א ווארעמקייט אין דאווענען." },
+      "evidence": { "segs": [21, 23, 26], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "He says Kel Adon should be sung with a tune, or at least said with a pleasant nusach, to join the Shabbos that sings.", "yi": "ער זאגט אז קל אדון זאל מען זינגען מיט א ניגון, אדער כאטש זאגן מיט א שיינעם נוסח, כדי זיך מצרף צו זיין מיטן שבת וואס זינגט." },
+      "evidence": { "segs": [346, 347, 348, 349], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "He tells his listeners that when they sit down at the Shabbos table and accept Shabbos, they should sing together with the Shabbos, which is a small taste of the great Shabbos of the future.", "yi": "ער זאגט אז ווען מ'זעצט זיך אוועק צום שבת'דיגן טיש און מ'איז מקבל שבת, זאל מען זינגען צוזאמען מיטן שבת, וואס איז א קליין טעם פונעם גרויסן שבת פון לעתיד." },
+      "evidence": { "segs": [722, 723, 725, 726, 727], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "He says one must contemplate that everything that happens in the world is Hashem's song, even when it cannot be understood from below.", "yi": "ער זאגט אז מ'דארף זיך אריינטראכטן אז אלץ וואס פאסירט אויף דער וועלט איז דער שיר פונעם רבונו של עולם, אפילו ווען מ'קען עס פון אונטן נישט פארשטיין." },
+      "evidence": { "segs": [658, 664, 665, 669, 670], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "mizmor shir l'yom haShabbos",
+    "kavanah in tefillah",
+    "Shabbos as song",
+    "seven and music",
+    "Kinneret and Eretz Yisrael",
+    "teshuvah and return to the root",
+    "yovel",
+    "suffering and Divine providence",
+    "Tehillim 92"
+  ],
+  "concepts": [
+    { "he": "כוונה", "heardAs": ["כוונה", "מכוון זיין"] },
+    { "he": "פירוש המילות", "heardAs": ["פירוש המילות"] },
+    { "he": "קבלת שבת", "heardAs": ["קבלת שבת", "קבלה שבת"] },
+    { "he": "לכה דודי", "heardAs": ["לכה נורא נענע", "לכהנים רנננה", "לחודידי"] },
+    { "he": "מזמור שיר ליום השבת", "heardAs": ["מוזמאשיה ליום השבת", "מזמיר השיעור ליום השבת", "מזמור שיעור לימי שבת"] },
+    { "he": "כנור של שבעה נימין", "heardAs": ["כינע של שבע נעמען", "כינע פון בית המקדש האט געהאט שבע נימים"] },
+    { "he": "ים כנרת", "heardAs": ["כינרת", "כינערית", "קינערעס"] },
+    { "he": "אושפיזין", "heardAs": ["שפוזן", "ישפיזן"] },
+    { "he": "נעים זמירות ישראל", "heardAs": ["נעום זמירות ישראל", "נעום זמירי ישראל"] },
+    { "he": "יובל", "heardAs": ["יואל", "יעוול", "יוואל"] },
+    { "he": "שבת שבתים", "heardAs": ["שבת שבתים"] },
+    { "he": "מוצאי שביעית", "heardAs": ["מוציאה שבועות", "מוצאי שבועות"] },
+    { "he": "יום שכולו שבת", "heardAs": ["יום שכלה שבת", "יום שכולי שבת", "יום שקלה שבת"] },
+    { "he": "עולם התיקון", "heardAs": ["עולם עצוקים", "עולם עטוקים", "עולם התוקן"] },
+    { "he": "עשרה הרוגי מלכות", "heardAs": ["עשרה הרגים הלכה", "עשרה האראגע מלכה"] },
+    { "he": "גזירות ת\"ח ות\"ט", "heardAs": ["גזירות טאכטע טאט", "שנת תך די טאט"] },
+    { "he": "מכירת יוסף", "heardAs": ["בחירת יוסף"] },
+    { "he": "קרי וכתיב", "heardAs": ["די קריע ... די כתוב"] }
+  ],
+  "people": [
+    { "name": "King David", "heardAs": ["דוד המלך"] },
+    { "name": "Adam", "heardAs": ["אדם הראשון", "אדא מרושן", "אדם ורושם"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו", "משה הבנה"] },
+    { "name": "the Alshich", "heardAs": ["אשך הקדוש"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יעקב אבינא"] },
+    { "name": "R' Mordechai of Lechovitch", "heardAs": ["אלאכאוויטשער", "ר' מרדכי אלאכאוויטש", "דייללעכעוויטש"] },
+    { "name": "Kayin", "heardAs": ["קיינעם"] },
+    { "name": "the Maharal", "heardAs": ["מהר''ל"] },
+    { "name": "the Ramban", "heardAs": ["רמב״ן"] },
+    { "name": "R' Tzadok HaKohen", "heardAs": ["ר' צדיק"] },
+    { "name": "R' Yochanan ben Zakkai", "heardAs": ["רבי יוחנן בן זאקי"] },
+    { "name": "R' Akiva", "heardAs": ["רבי יקיבא"] },
+    { "name": "R' Yishmael", "heardAs": ["רבי ישמעאל"] },
+    { "name": "R' Yehuda ben Bava", "heardAs": ["רבי יהודה בן ווארווער"] },
+    { "name": "R' Chutzpis HaMeturgeman", "heardAs": ["רבי יחוץ וואסער מטורגמן"] },
+    { "name": "Yosef", "heardAs": ["יוסף"] },
+    { "name": "Rembrandt", "heardAs": ["ראמברענד"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair overall but Hebrew quotations are heavily garbled; the verses of Tehillim 92 and Bamidbar 34:11 were recovered from context. The sefer in which the Lechovitcher's saying appears, the source the Rav cites for yovel bringing shefa (around seg 423-424), the Gemara on a Jew humiliated by a gentile (seg 603-604) and the gematria remazim around segs 509-516 and 718 could not be recovered. No long noise stretches."
+}

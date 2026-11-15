@@ -1,0 +1,345 @@
+{
+  "shiurId": "en-miscellaneous-en-09",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "From Parshas Chayei Sarah the Rav shows that a Jewish marriage is a union of kedushah and eternity, and that a Jewish home, its clothing and its toil for chesed are an extension of the Beis HaMikdash.",
+      "yi": "פון פרשת חיי שרה ווייזט דער משגיח אז א אידישע חתונה איז א פאראייניגונג פון קדושה און נצחיות, און אז א אידישע שטוב, איר לבוש און איר מיה פאר חסד זענען א המשך פונעם בית המקדש."
+    },
+    "abstract": {
+      "en": "The Rav opens by explaining why he speaks in English, with the Chazon Ish's parable that the battlefront moves, and the teaching that the Torah was explained in seventy languages. He then asks why a sedra that opens with Sarah's passing is called Chayei Sarah, and why the word for Avraham's weeping has a small kaf. His answer: a Jewish shidduch is decreed before birth, a reunion of souls, and death does not end it. Avraham prepared the Me'aras HaMachpelah as a home where the couple stays united, so Sarah remains alive as his wife. In a personal note he thanks the community for the home they built him, whose soul is the love put into it, like the Beis HaMikdash. Through Tehillim 128 and Rav Hirsch he teaches that every Jewish home is an extension of Tziyon, with a dress code like the Kohanim. He ends with Rivka's chesed and two stories showing that toil for chesed redeems a person from other toil.",
+      "yi": "דער משגיח הייבט אן מיט ערקלערן פארוואס ער רעדט אויף ענגליש, מיט דעם משל פונעם חזון איש אז דער פראנט פון דער מלחמה רוקט זיך, און מיט דעם אז די תורה איז מבואר געווארן אין שבעים לשון. דערנאך פרעגט ער פארוואס א סדרה וואס הייבט אן מיט שרה'ס פטירה הייסט חיי שרה, און פארוואס דער כ\"ף אין \"ולבכותה\" איז קליין. זיין תירוץ: א אידישער שידוך איז באשטימט פאר די געבורט, עס איז א צוריק-פאראייניגונג פון נשמות, און דער טויט מאכט עס נישט בטל. אברהם אבינו האט צוגעגרייט די מערת המכפלה ווי א שטוב וואו זיי בלייבן צוזאמען, ממילא לעבט שרה ווייטער אלס זיין ווייב. אין א פערזענליכן ווארט דאנקט ער דעם עולם פאר דער דירה וואס זיי האבן אים צוגעגרייט, וועמענס נשמה איז די אהבה וואס מ'האט אריינגעלייגט, אזוי ווי ביים בית המקדש. דורך תהלים קכ\"ח און רב הירש לערנט ער אז יעדע אידישע שטוב איז א המשך פון ציון, מיט א לבוש-סדר ווי די כהנים. ער ענדיגט מיט רבקה'ס חסד און צוויי מעשיות אז מיה פאר חסד פטרט א מענטש פון אנדערע מיה."
+    },
+    "keyPoints": [
+      {
+        "text": { "en": "A Jewish shidduch is decreed before birth; it is a reunion of souls that were already united.", "yi": "א אידישער שידוך איז באשטימט נאך פאר די געבורט; עס איז א צוריק-פאראייניגונג פון נשמות וואס זענען שוין געווען פאראייניגט." },
+        "evidence": { "segs": [154, 169, 171, 172, 173], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "A Jewish marriage is netzach: death separates bodies but not souls, and the couple remains united.", "yi": "א אידישע חתונה איז נצח: דער טויט צעשיידט די גופים אבער נישט די נשמות, און דאס פארל בלייבט פאראייניגט." },
+        "evidence": { "segs": [175, 180, 182, 221, 223], "confidence": 0.9 }
+      },
+      {
+        "text": { "en": "The sedra is called Chayei Sarah because Sarah remains alive as Avraham's wife; her levayah is the introduction to the shidduch of Yitzchak and Rivka.", "yi": "די סדרה הייסט חיי שרה ווייל שרה בלייבט לעבעדיג אלס אברהם'ס ווייב; איר לויה איז די הקדמה צום שידוך פון יצחק און רבקה." },
+        "evidence": { "segs": [253, 254, 255, 277, 279], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "What counts in a building, like the Beis HaMikdash, is its inner soul: the love with which it was built.", "yi": "וואס עס רעכנט זיך ביי א בנין, אזוי ווי ביים בית המקדש, איז זיין אינערליכע נשמה: די אהבה וואס מ'האט אים מיט איר געבויט." },
+        "evidence": { "segs": [326, 327, 328, 329, 330], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "Every Jewish home, wherever it is, can be an extension of Tziyon, with its family as Kohanim and its meals bearing the holiness of korbanos.", "yi": "יעדע אידישע שטוב, וואו זי זאל נאר זיין, קען זיין א המשך פון ציון, מיט איר משפחה ווי כהנים און אירע סעודות מיט דער קדושה פון קרבנות." },
+        "evidence": { "segs": [415, 416, 418, 421, 426], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "The clothing and jewelry of a Jewish man and woman, like the Kohanim's garments, must radiate Torah.", "yi": "די קליידער און די צירונג פון א אידישן מאן און פרוי, אזוי ווי די בגדי כהונה, דארפן ארויסשיינען תורה." },
+        "evidence": { "segs": [434, 451, 478, 481, 488], "confidence": 0.8 }
+      },
+      {
+        "text": { "en": "Each person is allotted a measure of toil; toil spent on chesed redeems him from other toil.", "yi": "יעדער מענטש באקומט א געוויסע מאס מיה; מיה וואס מ'גיט אוועק פאר חסד פטרט אים פון אנדערע מיה." },
+        "evidence": { "segs": [536, 566, 576, 583, 585], "confidence": 0.85 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-english-topics-09-e-misc", "startSeg": 0, "endSeg": 88,
+      "title": { "en": "Why the Rav speaks in English", "yi": "פארוואס דער משגיח רעדט אויף ענגליש" },
+      "summary": {
+        "en": "Asked to speak in English, the Rav explains that Yiddish once united Jews but is now spoken only in isolated communities. He tells how the Chazon Ish answered a complaint about a cheder taught in Ivrit with a parable of an old soldier at a battlefront that has moved, and brings the teaching that the Torah was explained in seventy languages: what matters is that it be understood.",
+        "yi": "דער משגיח ערקלערט פארוואס ער רעדט אויף ענגליש: אמאל האט אידיש פאראייניגט אידן, היינט רעדט מען עס נאר אין אפגעזונדערטע קהילות. ער דערציילט ווי דער חזון איש האט געענטפערט א טענה אויף א חדר וואס לערנט אויף עברית, מיט א משל פון אן אלטן סאלדאט ביי א פראנט וואס האט זיך שוין גערוקט, און ער ברענגט אז די תורה איז מבואר געווארן אין שבעים לשון: דער עיקר איז אז מ'זאל פארשטיין."
+      },
+      "kind": "intro", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-english-topics-09-e-misc", "startSeg": 89, "endSeg": 173,
+      "title": { "en": "Chayei Sarah: mourning or wedding?", "yi": "חיי שרה: אבילות אדער חתונה?" },
+      "summary": {
+        "en": "The Rav asks why a sedra that opens with Sarah's passing is called Chayei Sarah, and why the kaf of Avraham's weeping is small; he finds the Ba'al HaTurim's answer difficult. Noting that the sedra moves straight from the levayah to the shidduch of Yitzchak and Rivka, he asks whether one should mourn or rejoice with it, and answers that the whole sedra is really a wedding, since a shidduch is decreed before birth and is a reunion of souls.",
+        "yi": "דער משגיח פרעגט פארוואס א סדרה וואס הייבט אן מיט שרה'ס פטירה הייסט חיי שרה, און פארוואס דער כ\"ף פון \"ולבכותה\" איז קליין; דעם בעל הטורים'ס תירוץ איז אים שווער. ער ווייזט אן אז די סדרה גייט גלייך פון דער לויה צום שידוך פון יצחק און רבקה, און פרעגט צי מ'זאל וויינען אדער זיך פרייען, און ענטפערט אז די גאנצע סדרה איז באמת א חתונה, ווייל א שידוך איז באשטימט פאר די געבורט און איז א צוריק-פאראייניגונג פון נשמות."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-english-topics-09-e-misc", "startSeg": 174, "endSeg": 300,
+      "title": { "en": "A marriage that death does not end", "yi": "א חתונה וואס דער טויט ענדיגט נישט" },
+      "summary": {
+        "en": "The Rav explains that a Jewish marriage is netzach: the couple is united before birth and after death. Avraham at once prepared the Me'aras HaMachpelah, where each couple lies side by side, as a home where he and Sarah remain united; this explains the small kaf, and why the sedra is called Chayei Sarah. He ties this to kiddushin, to the kesubah's commitment in life and beyond, and calls Sarah's levayah the introduction to the first shidduch in the Torah: kedushah and eternity.",
+        "yi": "דער משגיח ערקלערט אז א אידישע חתונה איז נצח: דאס פארל איז פאראייניגט פאר די געבורט און נאכן טויט. אברהם אבינו האט גלייך צוגעגרייט די מערת המכפלה, וואו יעדעס פארל ליגט זייט ביי זייט, ווי א שטוב וואו ער און שרה בלייבן צוזאמען; דאס איז דער פשט פונעם קליינעם כ\"ף און פארוואס די סדרה הייסט חיי שרה. ער פארבינדט דאס מיט קידושין און מיט דער כתובה, און רופט שרה'ס לויה די הקדמה צום ערשטן שידוך אין דער תורה: קדושה און נצחיות."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-english-topics-09-e-misc", "startSeg": 301, "endSeg": 366,
+      "title": { "en": "A personal note: a home with a soul", "yi": "א פערזענליך ווארט: א שטוב מיט א נשמה" },
+      "summary": {
+        "en": "The Rav brings the passuk in Shir HaShirim about the apiryon of Shlomo HaMelech and the Alshich's explanation that the gold and silver of the Beis HaMikdash were only its body, while its soul was the flaming love with which it was built. He then thanks the men and boys of Emunas Yisroel, through their wives, for the residence they prepared for him and his wife with so much warmth, and notes that it opens onto the beis medrash.",
+        "yi": "דער משגיח ברענגט דעם פסוק אין שיר השירים וועגן דעם אפריון פון שלמה המלך, און דעם אלשיך'ס פשט אז דאס גאלד און זילבער פונעם בית המקדש איז נאר געווען דער גוף, און די נשמה איז געווען די ברענענדיגע אהבה וואס מ'האט עס מיט איר געבויט. דערנאך דאנקט ער די מענער און בחורים פון אמונת ישראל, דורך זייערע ווייבער, פאר דער דירה וואס זיי האבן צוגעגרייט פאר אים און זיין רביצין מיט אזויפיל ווארעמקייט, און מערקט אן אז זי עפנט זיך צום בית המדרש."
+      },
+      "kind": "tangent", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-english-topics-09-e-misc", "startSeg": 367, "endSeg": 458,
+      "title": { "en": "Every home an extension of Tziyon", "yi": "יעדע שטוב א המשך פון ציון" },
+      "summary": {
+        "en": "Through Tehillim 128 the Rav visits the home of the one who fears Hashem and asks where Tziyon comes in. He reads Rav Samson Raphael Hirsch: such a person sees his home as a branch of the sphere whose center is Yerushalayim. Every home can therefore be an extension of Tziyon, its family Kohanim, and like the Kohanim it has a dress code set by the Torah.",
+        "yi": "דורך תהלים קכ\"ח באזוכט דער משגיח די שטוב פונעם ירא השם און פרעגט וואו קומט דא אריין ציון. ער לייענט פון רב שמשון רפאל הירש: אזא איד זעט זיין שטוב ווי א צווייג פון א קרייז וועמענס צענטער איז ירושלים. ממילא קען יעדע שטוב זיין א המשך פון ציון, די משפחה זענען כהנים, און אזוי ווי די כהנים האט זי א סדר אין לבוש וואס די תורה שטעלט אוועק."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-english-topics-09-e-misc", "startSeg": 459, "endSeg": 519,
+      "title": { "en": "Rivka's jewelry and her test of chesed", "yi": "רבקה'ס צירונג און איר נסיון פון חסד" },
+      "summary": {
+        "en": "The Rav says that the bracelets Eliezer gave Rivka, like her home, had a soul: Torah and the Luchos, which the jewelry radiated. Using what he read about how much water a camel stores, he calculates that watering ten camels meant drawing about four hundred gallons: the demanding test of chesed that showed she was fit for the house of Avraham.",
+        "yi": "דער משגיח זאגט אז די צמידים וואס אליעזר האט געגעבן רבקה'ן האבן, אזוי ווי איר שטוב, געהאט א נשמה: תורה און די לוחות, וואס די צירונג האט ארויסגעשיינט. לויט דעם וואס ער האט געלייענט וויפיל וואסער א קעמל האלט, רעכנט ער אויס אז צו טרינקען צען קעמלען האט מען געדארפט שעפן ארום פיר הונדערט גאלאן: דאס איז געווען דער שווערער נסיון פון חסד וואס האט באוויזן אז זי פאסט פארן הויז פון אברהם."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-english-topics-09-e-misc", "startSeg": 520, "endSeg": 660,
+      "title": { "en": "Toil for chesed redeems other toil", "yi": "מיה פאר חסד פטרט פון אנדערע מיה" },
+      "summary": {
+        "en": "Addressing the women of Emunas Yisroel gathered to help kallahs set up their homes, the Rav says such work demands toil, and that each year's toil is decreed on Rosh Hashanah. He tells of Rav Shlomke of Zvhil and the lost gold watch, brings the Gemara that man is born to toil, and tells of a chassid of Rav Aharon of Karlin who suffered in the street what he would not suffer at home. Toil for hachnasas kallah redeems a person from other toil, and he closes with blessings.",
+        "yi": "דער משגיח רעדט צו די פרויען פון אמונת ישראל וואס האבן זיך פארזאמלט צו העלפן כלות אויפשטעלן זייערע שטובער, און זאגט אז אזא ארבעט פאדערט מיה, און אז די מיה פון יעדן יאר ווערט באשטימט ראש השנה. ער דערציילט פון רב שלמה'קע זוויעהלער און דעם פארלוירענעם גאלדענעם זייגער, ברענגט די גמרא אז אדם לעמל יולד, און דערציילט פון א חסיד פון רב אהרן קארלינער וואס האט געליטן אויף דער גאס וואס ער האט נישט געוואלט ליידן אינדערהיים. מיה פאר הכנסת כלה פטרט פון אנדערע מיה, און ער ענדיגט מיט ברכות."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "Beya Hei Teif ... in 70 languages",
+      "work": "Devarim", "ref": "Devarim 27:8", "sefariaRef": "Deuteronomy 27:8",
+      "resolution": "inferred", "mention": "alluded",
+      "evidence": { "segs": [63, 73, 85, 87], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "B'yari Avram Lispay to the Sara B'Lif Kaysa",
+      "work": "Bereishis", "ref": "Bereishis 23:2", "sefariaRef": "Genesis 23:2",
+      "resolution": "resolved", "mention": "quoted",
+      "evidence": { "segs": [101, 102, 103, 108], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Balatulim",
+      "work": "Ba'al HaTurim", "ref": "Ba'al HaTurim on Bereishis 23:2", "sefariaRef": null,
+      "resolution": "inferred", "mention": "paraphrased",
+      "evidence": { "segs": [110, 111, 112, 116], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the meddash says Shekeh B'nai Yodam Kazah B'nai Yish",
+      "work": "Midrash", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased",
+      "evidence": { "segs": [159, 160, 161, 169], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "So the Yad B'Troveni tells us Seicher means the Ganeidim",
+      "work": null, "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased",
+      "evidence": { "segs": [247, 249, 251, 252], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "in the ksubah which is read at the chuppah ... v'chayay u v'bosah chayay",
+      "work": "Kesubah", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "quoted",
+      "evidence": { "segs": [267, 268, 270, 271], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Sheer Hashirim HaPir Yen Asolai HaMelech Shlai ... Amud HaVas HaChesach",
+      "work": "Shir HaShirim", "ref": "Shir HaShirim 3:9-10", "sefariaRef": "Song of Songs 3:9-10",
+      "resolution": "resolved", "mention": "quoted",
+      "evidence": { "segs": [303, 304, 305, 313, 321], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Al Shech HaKadosh explains",
+      "work": "Alshich on Shir HaShirim", "ref": "Alshich on Shir HaShirim 3:9-10", "sefariaRef": null,
+      "resolution": "inferred", "mention": "paraphrased",
+      "evidence": { "segs": [323, 326, 327, 328], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Pairik Kuf Chav Ches of Tehelech",
+      "work": "Tehillim", "ref": "Tehillim 128", "sefariaRef": "Psalms 128",
+      "resolution": "resolved", "mention": "paraphrased",
+      "evidence": { "segs": [366, 367, 369, 372, 373], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the Tehillim of Rav Shem Shun Rufayel Hirsh",
+      "work": "Rav Samson Raphael Hirsch on Tehillim", "ref": "Rav Hirsch on Tehillim 128", "sefariaRef": null,
+      "resolution": "inferred", "mention": "quoted",
+      "evidence": { "segs": [381, 382, 383, 398, 401], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "An entire parasha, the Tzavah ... deals with the design of the clothing of the Kayanim",
+      "work": "Shemos", "ref": "Shemos 28 (Parshas Tetzaveh)", "sefariaRef": "Exodus 28",
+      "resolution": "inferred", "mention": "alluded",
+      "evidence": { "segs": [436, 437, 438, 439], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Eliezer presented with jewelry two bracelets which were worth ten gold pieces",
+      "work": "Bereishis", "ref": "Bereishis 24:22", "sefariaRef": "Genesis 24:22",
+      "resolution": "resolved", "mention": "paraphrased",
+      "evidence": { "segs": [461, 463, 464, 466], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "when Rivka gave the camels to drink",
+      "work": "Bereishis", "ref": "Bereishis 24:19-20", "sefariaRef": "Genesis 24:19-20",
+      "resolution": "inferred", "mention": "alluded",
+      "evidence": { "segs": [502, 503, 504, 505], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "in the biography of Rav Shlom Kizvilel",
+      "work": null, "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased",
+      "evidence": { "segs": [540, 541, 542], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "The Gemara says, Adam la'amor yulat ... Kule almediftere ninu",
+      "work": "Gemara Sanhedrin", "ref": "Sanhedrin 99b", "sefariaRef": "Sanhedrin 99b",
+      "resolution": "resolved", "mention": "quoted",
+      "evidence": { "segs": [567, 568, 569, 570, 571], "confidence": 0.8 }
+    }
+  ],
+  "insights": [
+    {
+      "text": { "en": "The Chazon Ish's parable: what matters is not holding one's old post but standing where the battle is now, so if children understand Ivrit they must be taught in it.", "yi": "דעם חזון איש'ס משל: דער עיקר איז נישט צו האלטן די אלטע פאזיציע נאר צו שטיין וואו די מלחמה איז היינט, ממילא אויב די קינדער פארשטייען עברית דארף מען זיי לערנען אויף עברית." },
+      "evidence": { "segs": [47, 49, 53, 59, 61], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The small kaf in Avraham's weeping means that Sarah did not truly die for him: separated in body, they remain united in soul.", "yi": "דער קליינער כ\"ף ביי אברהם'ס געוויין מיינט אז שרה איז פאר אים נישט באמת געשטארבן: צעשיידט אין גוף, בלייבן זיי פאראייניגט אין נשמה." },
+      "evidence": { "segs": [218, 222, 223, 231, 233, 234], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "Sarah's levayah, the first in the Torah, is placed before the first shidduch in the Torah to teach what a Jewish marriage is: kedushah and eternity.", "yi": "שרה'ס לויה, די ערשטע אין דער תורה, שטייט פארן ערשטן שידוך אין דער תורה כדי צו לערנען וואס א אידישע חתונה איז: קדושה און נצחיות." },
+      "evidence": { "segs": [256, 277, 279, 293, 297, 299], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "Avraham buying the Me'aras HaMachpelah was preparing a home for his continuing marriage, a passageway to Gan Eden where each couple lies side by side.", "yi": "אברהם'ס קויפן די מערת המכפלה איז געווען צוגרייטן א שטוב פאר זיין ווייטערדיגע חתונה, א דורכגאנג צום גן עדן וואו יעדעס פארל ליגט זייט ביי זייט." },
+      "evidence": { "segs": [185, 186, 196, 202, 228, 251], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "Rivka's jewelry, like a Jewish home, has a soul: the bracelets radiated Torah and the Luchos.", "yi": "רבקה'ס צירונג, אזוי ווי א אידישע שטוב, האט א נשמה: די צמידים האבן ארויסגעשיינט תורה און די לוחות." },
+      "evidence": { "segs": [476, 477, 478, 481, 482, 483], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "A person has a fixed allotment of toil and pleasure; he can choose to spend the toil on chesed and be spared it elsewhere.", "yi": "א מענטש האט א באשטימטע מאס מיה און הנאה; ער קען אויסוועלן אוועקצוגעבן די מיה אויף חסד און ווערן פטור דערפון אנדערשוואו." },
+      "evidence": { "segs": [559, 560, 576, 579, 583, 585], "confidence": 0.85 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Chazon Ish and the old soldier", "yi": "דער חזון איש און דער אלטער סאלדאט" },
+      "retelling": {
+        "en": "Zealots from Yerushalayim complained to the Chazon Ish that he supported a cheder taught in Ivrit, though the Rav of Yerushalayim a century earlier had put a cherem on using Ivrit in chadarim. He answered with a parable of an old decorated soldier who, when a new war broke out against the same enemy, took his rusty rifle to the position he had held forty years earlier, and was told that the battlefront was now elsewhere. A hundred years ago the battle was to preserve Yiddish; that battle was lost, and now, the Chazon Ish said, if the children understand Ivrit they must be taught in Ivrit.",
+        "yi": "קנאים פון ירושלים זענען געקומען צום חזון איש מיט א טענה פארוואס ער שטיצט א חדר וואו מ'לערנט אויף עברית, כאטש דער רב פון ירושלים מיט מער ווי הונדערט יאר צוריק האט ארויפגעלייגט א חרם אויף עברית אין די חדרים. ער האט זיי געענטפערט מיט א משל פון אן אלטן באערטן סאלדאט וואס, ווען עס האט אויסגעבראכן א נייע מלחמה קעגן דעם זעלבן שונא, האט ער גענומען זיין פאררוסטע ביקס און זיך געשטעלט אויפן ארט וואו ער איז געשטאנען מיט פערציג יאר צוריק, און מ'האט אים געזאגט אז דער פראנט איז שוין ערגעץ אנדערש. מיט הונדערט יאר צוריק איז די מלחמה געווען צו היטן אידיש; די מלחמה איז פארלוירן, און היינט, האט דער חזון איש געזאגט, אויב די קינדער פארשטייען עברית דארף מען זיי לערנען אויף עברית."
+      },
+      "people": ["the Chazon Ish"],
+      "evidence": { "segs": [7, 10, 19, 31, 49, 61], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "Rav Shlomke of Zvhil and the lost gold watch", "yi": "רב שלמה'קע זוויעהלער און דער פארלוירענער זייגער" },
+      "retelling": {
+        "en": "A man came to Rav Shlomke of Zvhil in Yerushalayim complaining that he had lost a gold watch dear to him. Rav Shlomke asked whether he had recently acquired something that gave him much pleasure, and the man said he had bought a pair of beautiful curtains for his windows. Rav Shlomke told him that everyone has a ration of pleasure and satisfaction: having had the satisfaction of the curtains, he lost that of the watch.",
+        "yi": "א מענטש איז געקומען צו רב שלמה'קע זוויעהלער אין ירושלים און זיך באקלאגט אז ער האט פארלוירן א גאלדענעם זייגער וואס איז אים געווען זייער טייער. רב שלמה'קע האט אים געפרעגט צי ער האט לעצטנס באקומען עפעס וואס האט אים געגעבן אסאך פרייד, און ער האט געזאגט אז ער האט געקויפט שיינע פארהאנגען פאר די פענסטער. האט רב שלמה'קע אים געזאגט אז יעדער האט א באשטימטע מאס הנאה און צופרידנקייט: ווייל ער האט געהאט די הנאה פון די פארהאנגען, האט ער פארלוירן די הנאה פונעם זייגער."
+      },
+      "people": ["Rav Shlomke of Zvhil"],
+      "evidence": { "segs": [541, 549, 551, 557, 559, 560], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "Rav Aharon of Karlin and the chassid's arrest", "yi": "רב אהרן קארלינער און דעם חסיד'ס ארעסט" },
+      "retelling": {
+        "en": "A chassid repeatedly complained to Rav Aharon of Karlin that his wife insulted and cursed him, and the Rebbe kept quiet. Once, after a particularly bad episode, the chassid ran to the Rebbe saying he could not take it anymore; the Rebbe told him to go home and she would be good. He came home to a sumptuous supper and kindness, but on his way out the police handcuffed him before everyone and held him in jail for hours, until the captain apologized that they had found the real thief. The Rebbe told him: you did not want it at home, so you had it in the street.",
+        "yi": "א חסיד האט זיך כסדר באקלאגט ביי רב אהרן קארלינער אז זיין ווייב באליידיגט און שילט אים, און דער רבי האט געשוויגן. איינמאל, נאך א באזונדער שווערער מעשה, איז ער געלאפן צום רבי'ן אז ער קען שוין מער נישט אויסהאלטן; דער רבי האט אים געזאגט ער זאל גיין אהיים און זי וועט זיין גוט. ער איז אהיימגעקומען צו א רייכע וועטשערע מיט פיל גוטסקייט, אבער אויפן וועג ארויס האט די פאליציי אים ארויפגעלייגט קייטן פאר אלעמען און אים געהאלטן אין תפיסה פאר א פאר שעה, ביז דער קאפיטאן האט זיך אנטשולדיגט אז מ'האט געכאפט דעם אמתן גנב. האט דער רבי אים געזאגט: דו האסט עס נישט געוואלט אינדערהיים, האסטו עס געהאט אויף דער גאס."
+      },
+      "people": ["Rav Aharon of Karlin"],
+      "evidence": { "segs": [590, 596, 609, 611, 622, 639], "confidence": 0.8 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "How could the Chazon Ish support a cheder taught in Ivrit after a cherem was placed on it?", "yi": "ווי אזוי האט דער חזון איש געקענט שטיצן א חדר וואו מ'לערנט אויף עברית, נאכן חרם דערויף?" },
+      "answer": { "en": "The battlefront has moved: the battle for Yiddish was lost, and now children must be taught in the language they understand.", "yi": "דער פראנט האט זיך גערוקט: די מלחמה פאר אידיש איז פארלוירן, און היינט דארף מען לערנען די קינדער אין דער שפראך וואס זיי פארשטייען." },
+      "questionSegs": [19, 23, 25, 26], "answerSegs": [49, 53, 58, 59, 61], "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why is a sedra that opens with Sarah's passing called Chayei Sarah?", "yi": "פארוואס הייסט א סדרה וואס הייבט אן מיט שרה'ס פטירה חיי שרה?" },
+      "answer": { "en": "Because Sarah remains alive as a wife to Avraham; a Jewish marriage does not end with death.", "yi": "ווייל שרה בלייבט לעבעדיג אלס ווייב צו אברהם; א אידישע חתונה ענדיגט זיך נישט מיטן טויט." },
+      "questionSegs": [89, 97, 98, 99], "answerSegs": [253, 254, 255, 285, 288], "confidence": 0.85
+    },
+    {
+      "question": { "en": "Why is the kaf of Avraham's weeping written small?", "yi": "פארוואס איז דער כ\"ף פון \"ולבכותה\" קליין?" },
+      "answer": { "en": "Not, as the Ba'al HaTurim says, because she lived long, which the Rav finds difficult, but because she did not really die for him: they remain united.", "yi": "נישט ווי דער בעל הטורים זאגט, ווייל זי האט לאנג געלעבט, וואס איז דעם משגיח שווער, נאר ווייל זי איז פאר אים נישט באמת געשטארבן: זיי בלייבן פאראייניגט." },
+      "questionSegs": [107, 108, 109], "answerSegs": [231, 232, 233, 234], "confidence": 0.85
+    },
+    {
+      "question": { "en": "Living with the sedra, should one mourn Sarah or rejoice at the wedding of Yitzchak and Rivka?", "yi": "לעבנדיג מיט דער סדרה, זאל מען וויינען אויף שרה'ן אדער זיך פרייען ביי דער חתונה פון יצחק און רבקה?" },
+      "answer": { "en": "The whole sedra is really a wedding, for a Jewish shidduch is eternal.", "yi": "די גאנצע סדרה איז באמת א חתונה, ווייל א אידישער שידוך איז אייביג." },
+      "questionSegs": [142, 146, 149, 150], "answerSegs": [151, 152, 175], "confidence": 0.8
+    },
+    {
+      "question": { "en": "Where does Tziyon come into Tehillim 128, a chapter about a man's home and family?", "yi": "וואו קומט אריין ציון אין תהלים קכ\"ח, א קאפיטל וועגן א מענטשנס שטוב און משפחה?" },
+      "answer": { "en": "As Rav Hirsch explains, the one who fears Hashem sees his home as a branch of the sphere centered in Yerushalayim, an extension of Tziyon.", "yi": "ווי רב הירש ערקלערט, זעט דער ירא השם זיין שטוב ווי א צווייג פון דעם קרייז וואס זיין צענטער איז אין ירושלים, א המשך פון ציון." },
+      "questionSegs": [376, 377, 378], "answerSegs": [397, 398, 401, 415, 416], "confidence": 0.85
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Rav says that wherever one lives, one's home can be an extension of Tziyon, with the family serving as Kohanim.", "yi": "דער משגיח זאגט אז וואו מ'זאל נאר וואוינען, קען די שטוב זיין א המשך פון ציון, מיט דער משפחה וואס דינט ווי כהנים." },
+      "evidence": { "segs": [416, 418, 426, 429], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "The Rav says the family, like Kohanim, must keep the Torah's guidelines in dress, and that clothing and jewelry must radiate Torah.", "yi": "דער משגיח זאגט אז די משפחה, אזוי ווי כהנים, דארף היטן די תורה'ס גדרים אין לבוש, און אז קליידער און צירונג דארפן ארויסשיינען תורה." },
+      "evidence": { "segs": [448, 452, 454, 486, 488], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Rav tells the women that their toil for hachnasas kallah redeems them from other toil, and that it is better to toil for this.", "yi": "דער משגיח זאגט די פרויען אז זייער מיה פאר הכנסת כלה פטרט זיי פון אנדערע מיה, און אז ס'איז בעסער זיך צו מוטשען דערפאר." },
+      "evidence": { "segs": [565, 566, 646, 649, 650], "confidence": 0.85 }
+    }
+  ],
+  "candidateTopics": [
+    "eternity of jewish marriage",
+    "Parshas Chayei Sarah",
+    "shidduch decreed before birth",
+    "Me'aras HaMachpelah",
+    "the jewish home as an extension of the Beis HaMikdash",
+    "tznius and the garments of the Kohanim",
+    "Rivka's chesed",
+    "toil for chesed",
+    "hachnasas kallah",
+    "teaching in the language children understand"
+  ],
+  "concepts": [
+    { "he": "קדושה", "heardAs": ["Kiddusha", "Kedush", "Kedushah"] },
+    { "he": "נצחיות", "heardAs": ["Nitzchitz", "netzach"] },
+    { "he": "חיי שרה", "heardAs": ["Chaye Soda", "Chayyesa", "Chayasera", "Chaya Yisara"] },
+    { "he": "ולבכותה", "heardAs": ["B'Lif Kaysa", "levkaysa", "Levkaises"] },
+    { "he": "מערת המכפלה", "heardAs": ["Mara Samach Talil", "Mara Samachpaila", "Maras HaMachpele", "Maras HaMachpela"] },
+    { "he": "גן עדן", "heardAs": ["Ganeidim"] },
+    { "he": "הרי את מקודשת לי", "heardAs": ["Harei Atmi Kudoshesli"] },
+    { "he": "אפריון", "heardAs": ["HaPir Yen"] },
+    { "he": "רצוף אהבה", "heardAs": ["Ratz of Ahav", "Ratzif Ahav"] },
+    { "he": "נדבת הלב", "heardAs": ["Nid Vassalev"] },
+    { "he": "בגדי כהונה", "heardAs": ["begadim"] },
+    { "he": "הכנסת כלה", "heardAs": ["Achnas' Kala"] },
+    { "he": "עברית", "heardAs": ["Ivrit", "Hivrit", "Vrit"] },
+    { "he": "באר היטב", "heardAs": ["Beya Hei Teif", "Hei Teif"] },
+    { "he": "מיה", "heardAs": ["toil", "mutchanish"] }
+  ],
+  "people": [
+    { "name": "the Chazon Ish", "heardAs": ["Chazaynish", "Chazanesh"] },
+    { "name": "Avraham Avinu", "heardAs": ["Avram", "Avraham Avinu", "Abraham"] },
+    { "name": "Sarah Imeinu", "heardAs": ["Soda", "Sara", "Sada"] },
+    { "name": "Yitzchak", "heardAs": ["Yitzchak", "Yitzhak"] },
+    { "name": "Rivka", "heardAs": ["Lifka", "Rivka", "Rivkin"] },
+    { "name": "Adam and Chava", "heardAs": ["Adam and Chavah", "Adam and Chava"] },
+    { "name": "the Ba'al HaTurim", "heardAs": ["Balatulim"] },
+    { "name": "Shlomo HaMelech", "heardAs": ["HaMelech Shlai"] },
+    { "name": "the Alshich", "heardAs": ["Al Shech HaKadosh"] },
+    { "name": "Dovid HaMelech", "heardAs": ["David the Melech"] },
+    { "name": "Rav Samson Raphael Hirsch", "heardAs": ["Rav Shem Shun Rufayel Hirsh"] },
+    { "name": "Eliezer", "heardAs": ["Eliezer"] },
+    { "name": "Rav Shlomke of Zvhil", "heardAs": ["Rav Shlom Kizvilel", "Rav Shlomka", "Apshalom Kippur"] },
+    { "name": "Rav Aharon of Karlin", "heardAs": ["Rabbi Aaron Kalino", "Baanthalina"] }
+  ],
+  "asrNotes": "English ASR fair, with Hebrew quotations badly garbled. The midrash on the predestined shidduch (segs 159-168), the source cited as 'Yad B'Troveni' (seg 247), the gematria of the seventy languages (segs 73-84) and the calculation at seg 469 could not be fully recovered. Seg 174's 'as Zohar and Akeidah' and seg 210's 'the Zaya tells us' may name sources but are too garbled to identify. No [NOISE?] stretches."
+}

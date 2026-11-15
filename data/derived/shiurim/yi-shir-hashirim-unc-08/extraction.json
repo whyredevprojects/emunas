@@ -1,0 +1,653 @@
+{
+  "shiurId": "yi-shir-hashirim-unc-08",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that both burning chametz and immersing in a mikvah bring a person back to the root of creation, where all judgments are sweetened, and that a mikvah is an 'embassy' of the heavens made of fire and water.",
+      "yi": "דער משגיח ערקלערט אז סיי דאס פארברענען דעם חמץ און סיי דאס טובל זיין זיך אין א מקוה ברענגען א מענטש צוריק צום שורש פון דער בריאה, וואו אלע דינים ווערן געמילדערט, און אז די מקוה איז ווי אן \"עמבאסי\" פונעם הימל וואס איז געמאכט פון אש און מים."
+    },
+    "abstract": {
+      "en": "The Rav opens by calling the reading of Shir Hashirim a preparation for Shabbos, a day of love, and says the same is true of immersing in a mikvah. Turning to the ten plagues, which struck Egypt and healed Israel, he asks why Rabbi Yehuda, who gave the plagues their simanim, also holds that chametz may only be destroyed by burning. Everything is built of four elements; removing one undoes the rest, but fire is the root of all four, and returning to the root uproots the evil and sweetens the judgments, as teshuvah does and as Noach's offering did. He ties this to the Haggadah, which draws down the salvations of the plagues. He then explains the mikvah: the heavenly mikvah is a river of fire, the earthly mikvah is its embassy, and a person who immerses, curled up and not breathing, is nullified and emerges reborn, with bitachon in Hashem.",
+      "yi": "דער משגיח עפנט מיט דעם אז דאס זאגן שיר השירים איז א הכנה צו שבת, וואס איז א טאג פון אהבה, און אזוי אויך דאס טובל זיין זיך אין א מקוה. דערנאך רעדט ער וועגן די עשר מכות, וואס זענען געווען א מגפה פאר די מצריים און א רפואה פאר אידן, און פרעגט פארוואס רבי יהודה, וואס האט געגעבן די סימנים פון די מכות, האלט אויך אז ביעור חמץ איז נאר מיט שריפה. יעדע זאך באשטייט פון פיר יסודות; נעמט מען ארויס איינס, פאלט אוועק די גאנצע זאך, אבער אש איז דער שורש פון אלע פיר, און ווען מען גייט צוריק צום שורש ווערט דאס רע אויסגעווארצלט און די דינים ווערן געמילדערט, אזוי ווי ביי תשובה און ביים קרבן פון נח. דאס פארבינדט ער מיט דער הגדה, וואס איז ממשיך די ישועות פון די מכות. דערנאך ערקלערט ער די מקוה: די מקוה אין הימל איז א טייך פון פייער, די מקוה אויף דער וועלט איז איר עמבאסי, און א איד וואס טובלט זיך, איינגעבויגן און אן אטעמען, ווערט בטל און קומט ארויס ווי א נייער מענטש, מיט בטחון אין השם יתברך."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Reading Shir Hashirim and immersing in a mikvah on Erev Shabbos are both preparations for Shabbos, a day of love.",
+          "yi": "דאס זאגן שיר השירים און דאס טובל זיין זיך ערב שבת זענען ביידע א הכנה צו שבת, וואס איז א טאג פון אהבה."
+        },
+        "evidence": { "segs": [15, 18, 20, 21, 25, 27], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Every thing is composed of the four elements, and removing one of them undoes the whole; but fire is the root of the other three.",
+          "yi": "יעדע זאך באשטייט פון די פיר יסודות, און אז מען נעמט ארויס איינס פון זיי פאלט די גאנצע זאך אוועק; אבער אש איז דער שורש פון די אנדערע דריי."
+        },
+        "evidence": { "segs": [102, 107, 113, 326, 346], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Going back to the root of creation, before the sin, sweetens all judgments; this is the essence of teshuvah.",
+          "yi": "ווען מען גייט צוריק צום שורש פון דער בריאה, פאר דעם חטא, ווערן אלע דינים געמילדערט, און דאס איז דער עיקר פון תשובה."
+        },
+        "evidence": { "segs": [156, 165, 167, 249, 254, 256], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The Haggadah is not merely telling a story; it draws down the same lights and salvations that came at the Exodus.",
+          "yi": "די הגדה איז נישט סתם דערציילן א מעשה; זי איז ממשיך די זעלבע אורות און ישועות וואס זענען אראפגעקומען ביי יציאת מצרים."
+        },
+        "evidence": { "segs": [359, 369, 370, 371, 372], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The mikvah on earth is the 'embassy' of the heavens, which are made of fire and water, so one who immerses enters the heavens and the fiery river.",
+          "yi": "די מקוה אויף דער וועלט איז די \"עמבאסי\" פונעם הימל, וואס איז געמאכט פון אש און מים, און ווער עס טובלט זיך גייט אריין אין הימל און אין דעם טייך פון פייער."
+        },
+        "evidence": { "segs": [489, 493, 499, 503, 504], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The core of the mikvah is bitul: one gives up breath and self like an unborn child and emerges a new person.",
+          "yi": "דער עיקר פון מקוה איז ביטול: מען גיט אוועק דעם אטעם און זיך אליין ווי א קינד אין מוטערס לייב, און מען קומט ארויס א נייער מענטש."
+        },
+        "evidence": { "segs": [514, 601, 614, 646, 665], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-shir-hashirim-08-shir-hashirim",
+      "startSeg": 0,
+      "endSeg": 48,
+      "title": {
+        "en": "Shir Hashirim, mikvah and the ten plagues",
+        "yi": "שיר השירים, מקוה און די עשר מכות"
+      },
+      "summary": {
+        "en": "The Rav explains that Shir Hashirim is said as a preparation for Shabbos, a day of love, and that immersing in a mikvah on Erev Shabbos belongs to the same preparation; he announces he will speak about the mikvah. He then turns to the ten plagues as great revelations that struck Egypt and healed Israel.",
+        "yi": "דער משגיח ערקלערט אז מען זאגט שיר השירים אלס הכנה צו שבת, א טאג פון אהבה, און אז דאס טובל זיין זיך ערב שבת געהערט צו דער זעלבער הכנה; ער זאגט אן אז ער וועט רעדן וועגן מקוה. דערנאך גייט ער איבער צו די עשר מכות, גרויסע גילויים וואס האבן געשלאגן די מצריים און געהיילט די אידן."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-shir-hashirim-08-shir-hashirim",
+      "startSeg": 49,
+      "endSeg": 138,
+      "title": {
+        "en": "Chametz and the four elements",
+        "yi": "חמץ און די פיר יסודות"
+      },
+      "summary": {
+        "en": "The Rav asks why Rabbi Yehuda, who gave the simanim of the plagues, is involved with how chametz is destroyed, and explains that chametz is the klipah. Since everything is made of the four elements, chametz can be undone through any one of them: crumbling into the wind, casting into water, or burning.",
+        "yi": "דער משגיח פרעגט וואס האט רבי יהודה, וואס האט געגעבן די סימנים פון די מכות, צו טאן מיט ביעור חמץ, און ערקלערט אז חמץ איז די קליפה. וויבאלד יעדע זאך באשטייט פון די פיר יסודות, קען מען מבטל זיין דעם חמץ דורך יעדן פון זיי: צערייבן אין ווינט, ווארפן אין וואסער, אדער פארברענען."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-shir-hashirim-08-shir-hashirim",
+      "startSeg": 139,
+      "endSeg": 222,
+      "title": {
+        "en": "Sweetening judgment at its root",
+        "yi": "ממתיק זיין די דינים אין זייער שורש"
+      },
+      "summary": {
+        "en": "The Rav explains that Rabbi Yehuda requires burning because the way to neutralize judgments is to go up to their root, where all is good. He brings a teaching of the Ba'al HaTanya: the same reason given for bringing the Flood is given for never bringing it again, because Noach's offering brought him back to the root of creation before the sin.",
+        "yi": "דער משגיח ערקלערט אז רבי יהודה פאדערט שריפה ווייל דער וועג צו ממתיק זיין די דינים איז ארויפגיין צו זייער שורש, וואו אלעס איז גוט. ער ברענגט א ווארט פונעם בעל התניא: דער זעלבער טעם וואס איז געזאגט געווארן אויף ברענגען דעם מבול, ווערט געזאגט אויף נישט מער ברענגען קיין מבול, ווייל דער קרבן פון נח האט אים צוריקגעברענגט צום שורש פון דער בריאה פאר דעם חטא."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-shir-hashirim-08-shir-hashirim",
+      "startSeg": 223,
+      "endSeg": 312,
+      "title": {
+        "en": "Teshuvah, the first Rosh Hashanah, Tishrei and Nissan",
+        "yi": "תשובה, דער ערשטער ראש השנה, תשרי און ניסן"
+      },
+      "summary": {
+        "en": "The Rav brings the Yerushalmi in which Wisdom, Torah and Hashem each answer what the sinner's punishment is, and explains that teshuvah goes back to the first Rosh Hashanah, before any sin. He contrasts the two beginnings of the world, Tishrei with the attribute of judgment and Nissan with mercy, and says that in Nissan burning the chametz nullifies the judgments and reaches the four letters of Hashem's Name, the root of the four elements.",
+        "yi": "דער משגיח ברענגט דעם ירושלמי וואו די חכמה, די תורה און דער רבונו של עולם ענטפערן יעדער וואס דער זינדיגער זאל האבן, און ערקלערט אז תשובה גייט צוריק צום ערשטן ראש השנה, פאר יעדן חטא. ער שטעלט אוועק די צוויי אנפאנגען פון דער וועלט, תשרי מיט מדת הדין און ניסן מיט מדת הרחמים, און זאגט אז אין ניסן איז מען דורכן פארברענען דעם חמץ מבטל די דינים און מען קומט צו די פיר אותיות פון שם הוי\"ה, דער שורש פון די פיר יסודות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-shir-hashirim-08-shir-hashirim",
+      "startSeg": 313,
+      "endSeg": 419,
+      "title": {
+        "en": "Yehuda, fire and the Haggadah",
+        "yi": "יהודה, אש און די הגדה"
+      },
+      "summary": {
+        "en": "The Rav links the four elements to the four camps in the desert, with Yehuda at the head corresponding to fire, and explains that Rabbi Yehuda, of the soul of Yehuda, insists on burning to uproot evil at its root. He explains that the Haggadah draws down the salvations of the plagues, which is why the Tanna'im multiply the plagues, and that Rabbi Yehuda's simanim, initials that contain the whole word, reach deeper still.",
+        "yi": "דער משגיח פארבינדט די פיר יסודות מיט די פיר דגלים אין מדבר, וואו יהודה שטייט בראש און איז קעגן אש, און ערקלערט אז רבי יהודה, פון דער נשמה פון יהודה, פאדערט שריפה כדי אויסצורייסן דאס רע פון שורש. ער ערקלערט אז די הגדה איז ממשיך די ישועות פון די מכות, דערפאר מערן די תנאים די צאל מכות, און די סימנים פון רבי יהודה, ראשי תיבות וואס נעמען ארום דאס גאנצע ווארט, גייען נאך טיפער."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-shir-hashirim-08-shir-hashirim",
+      "startSeg": 420,
+      "endSeg": 505,
+      "title": {
+        "en": "The heavenly mikvah of fire",
+        "yi": "די מקוה פון פייער אין הימל"
+      },
+      "summary": {
+        "en": "The Rav explains that there is a mikvah in heaven made not of water but of fire, the fiery river formed from the sweat of the singing angels, in which souls and angels immerse. A kosher mikvah on earth contains that fire within its water; since the heavens are fire and water, the mikvah is the heavens' 'embassy', and one who immerses enters the heavens.",
+        "yi": "דער משגיח ערקלערט אז עס איז דא א מקוה אין הימל וואס איז נישט געמאכט פון וואסער נאר פון פייער, דער נהר דינור וואס ווערט געמאכט פונעם שווייס פון די מלאכים וואס זינגען שירה, און אין אים טובלען זיך די נשמות און די מלאכים. א כשר'ע מקוה אויף דער וועלט טראגט אין איר וואסער דעם פייער; וויבאלד דער הימל איז אש און מים, איז די מקוה די \"עמבאסי\" פונעם הימל, און ווער עס טובלט זיך גייט אריין אין הימל."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-shir-hashirim-08-shir-hashirim",
+      "startSeg": 506,
+      "endSeg": 626,
+      "title": {
+        "en": "Immersing in the Name of Hashem",
+        "yi": "זיך טובלען אין שם הוי\"ה"
+      },
+      "summary": {
+        "en": "The Rav explains that in the mikvah a person surrenders his breath and life and enters the heavens and the Name of Hashem, whose letters he describes as four by ten, like a reshus hayachid, giving the forty se'ah of a mikvah. He brings that the Ba'al Shem Tov would immerse when he needed a salvation, and the kavanah to curl up like an unborn child and emerge reborn.",
+        "yi": "דער משגיח ערקלערט אז אין דער מקוה גיט א מענטש אוועק זיין אטעם און זיין חיות און גייט אריין אין הימל און אין שם הוי\"ה, וועמענס אותיות ער באשרייבט ווי פיר אויף צען, אזוי ווי א רשות היחיד, וואס גיט די ארבעים סאה פון א מקוה. ער ברענגט אז דער בעל שם טוב פלעגט זיך טובלען ווען ער האט געדארפט א ישועה, און די כוונה זיך איינצובויגן ווי א קינד אין מוטערס לייב און ארויסקומען ווי נייגעבוירן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-shir-hashirim-08-shir-hashirim",
+      "startSeg": 627,
+      "endSeg": 743,
+      "title": {
+        "en": "Bitul, rebirth and bitachon",
+        "yi": "ביטול, נייגעבוירן און בטחון"
+      },
+      "summary": {
+        "en": "The Rav tells of a man who tried to make 310 immersions by dipping a finger, and says the point of the mikvah is bitul, not counting. He brings the Rambam that purity comes on emerging, the Arizal's mikvah kavanos, and that mikvah and the word 'rachitz' both mean trust in Hashem; he closes with the Reishis Chochmah that one's soul immerses above when one immerses below.",
+        "yi": "דער משגיח דערציילט פון איינעם וואס האט געוואלט מאכן שי\"ת טבילות מיטן אריינשטעקן א פינגער, און זאגט אז דער ענין פון מקוה איז ביטול, נישט ציילן. ער ברענגט דעם רמב\"ם אז די טהרה קומט ביים ארויסגיין, די כוונות פונעם אריז\"ל, און אז מקוה און דאס ווארט \"רחיץ\" מיינען ביידע בטחון אין השם; ער ענדיגט מיטן ראשית חכמה אז ווען מען טובלט זיך דא טובלט זיך די נשמה אויבן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "אין זוה' האט כאטש געשטעט",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [43, 44, 46, 47], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "נאר געפעלע מצריים און רפאל'ע ישראלים",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 19:22",
+      "sefariaRef": "Isaiah 19:22",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [44, 45, 390], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "רבי יהודה אין עצם ביים סימנים דצי חדש ביחד",
+      "work": "Haggadah",
+      "ref": "Haggadah, Magid: Rabbi Yehuda's simanim for the ten plagues",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [51, 52, 414, 416], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "תספות און הערשען תספות און סכום פרעגט",
+      "work": "Tosafos",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [58, 59, 60], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "רבי יא דומה רבי ביהם חמץ אלעס רפא",
+      "work": "Mishnah Pesachim",
+      "ref": "Pesachim 2:1",
+      "sefariaRef": "Mishnah Pesachim 2:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [79, 80, 139, 140, 356], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ארי הקודש",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [620, 672, 694, 696], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "חיים הקודש אין פרשת חיות שורה",
+      "work": "Ohr HaChaim",
+      "ref": "Ohr HaChaim, Bereishis 23:2",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [114, 115, 117, 119], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ותמוז שורה בקרית אהל בהוא חברון",
+      "work": "Bereishis",
+      "ref": "Bereishis 23:2",
+      "sefariaRef": "Genesis 23:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [115, 117], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "פון בעל התניא",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [168, 169, 191, 194], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "וכו' יצר מפשעוות ליבו, רק רא כל היום",
+      "work": "Bereishis",
+      "ref": "Bereishis 6:5",
+      "sefariaRef": "Genesis 6:5",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [180, 181, 183], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "כי יצא לב ארדעם רע מנהגת",
+      "work": "Bereishis",
+      "ref": "Bereishis 8:21",
+      "sefariaRef": "Genesis 8:21",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [186, 188, 189], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "עס שטעט אין ירושלמ'ס שאולה לחכמה",
+      "work": "Yerushalmi Makkos",
+      "ref": "Yerushalmi Makkos 2:6",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [223, 224, 229, 230, 233, 234], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "בניסן נברא עולם, זאגט דער גמרא אין ראש השנה",
+      "work": "Gemara Rosh Hashanah",
+      "ref": "Rosh Hashanah 10b",
+      "sefariaRef": "Rosh Hashanah 10b",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [276, 277, 280, 281], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אזוי ווי ס'טעט אין פרשת במסיבה",
+      "work": "Bamidbar",
+      "ref": "Bamidbar ch. 2",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [315, 316, 319, 320], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "שטעט רבינו רבי חיים",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [333, 334, 335], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "עס שטעט אין ספרים הקדושים",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [337, 340, 341], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "דער וואס איז מבטל אבודת זרה צריך לשרש אחרעה",
+      "work": "Gemara Avodah Zarah",
+      "ref": "Avodah Zarah 45b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [352, 353, 354, 355], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אין די הגדה, וויפיל מכות דאס איז געוועגן",
+      "work": "Haggadah",
+      "ref": "Haggadah, Magid: the count of the plagues",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [381, 383, 384, 386], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער דברי חיים האט געזאגט",
+      "work": "Divrei Chaim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [398, 399], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "די למד ב' מידות פון רבי יוסי הגלילי",
+      "work": "Baraisa of 32 Middos",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [406, 407], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אזוי ווי די מדרשים זאגן ... די נהר די נועה",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [439, 440, 444, 447], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "כי השי''ל לככם איש אוכל עלה וכאילו קנאה",
+      "work": "Devarim",
+      "ref": "Devarim 4:24",
+      "sefariaRef": "Deuteronomy 4:24",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [567, 568], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "מסכתא מקווא",
+      "work": "Mishnah Mikvaos",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [475, 476], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "סימנים אין שולחן ערוך. הלכות מקווא",
+      "work": "Shulchan Aruch",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [477, 478], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "זאגט רשע שמים איז אש מיט מים",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 1:8",
+      "sefariaRef": "Rashi on Genesis 1:8",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [488, 489], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "כל הנשמה תהלה לכל, כל נשומה נשומה",
+      "work": "Tehillim",
+      "ref": "Tehillim 150:6",
+      "sefariaRef": "Psalms 150:6",
+      "resolution": "resolved",
+      "mention": "alluded",
+      "evidence": { "segs": [516], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "יהי רוקע בתוך המים, והוא מבדיל בין מים למים",
+      "work": "Bereishis",
+      "ref": "Bereishis 1:6",
+      "sefariaRef": "Genesis 1:6",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [571, 572, 590], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "אזוי פלעגט א באשם צפון; די כוונות פון באשמטים פון די מקוה",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [582, 583, 602, 603], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "לבטא הברואלי אלקים ברוך נאכן חדש בקרדי",
+      "work": "Tehillim",
+      "ref": "Tehillim 51:12",
+      "sefariaRef": "Psalms 51:12",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [621, 730], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "דער רמב״ם זאגט",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [652, 653, 654, 663], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אזוי ווי מ'זאגט אין ברוך שמי בי אנא רכב",
+      "work": "Zohar",
+      "ref": "Zohar, Vayakhel (Berich Shmei)",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [698, 699, 701], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "מ'לערנט חבעת העלבבות וועגן בתחם",
+      "work": "Chovos HaLevavos",
+      "ref": "Chovos HaLevavos, Sha'ar HaBitachon",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [703, 704], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "יקבל המאה מתחת השמים",
+      "work": "Bereishis",
+      "ref": "Bereishis 1:9",
+      "sefariaRef": "Genesis 1:9",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [721, 724], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "שטעט אין ראשית חכמה",
+      "work": "Reishis Chochmah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [731, 732, 733], "confidence": 0.7 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Rabbi Yehuda, who gave the plagues their simanim, is the same Tanna who holds chametz may only be destroyed by burning: as the soul of Yehuda, head of the camps and of fire, he always reaches for the root.",
+        "yi": "רבי יהודה, וואס האט געגעבן די סימנים פון די מכות, איז דער זעלבער תנא וואס האלט אז ביעור חמץ איז נאר מיט שריפה: אלס די נשמה פון יהודה, דער ראש פון די דגלים און פון אש, גייט ער אלעמאל צום שורש."
+      },
+      "evidence": { "segs": [340, 342, 344, 348, 355, 416], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Following the Ba'al HaTanya, the very reason the Torah gives for the Flood becomes the reason for never bringing another, because returning to the root transforms the cause of judgment into a cause of merit.",
+        "yi": "לויטן בעל התניא ווערט דער זעלבער טעם וואס די תורה גיט אויפן מבול דער טעם פארוואס עס וועט מער נישט זיין קיין מבול, ווייל ווען מען גייט צוריק צום שורש ווערט די סיבה פון דין א סיבה פון זכות."
+      },
+      "evidence": { "segs": [192, 194, 200, 207, 209], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "A mikvah is an 'embassy' of the heavens: just as a country's embassy counts as its own soil, the mikvah, made of fire and water like the heavens, places the one who immerses inside the heavens.",
+        "yi": "א מקוה איז אן \"עמבאסי\" פונעם הימל: אזוי ווי די עמבאסי פון א מלוכה ווערט גערעכנט ווי איר אייגענע לאנד, אזוי שטעלט די מקוה, געמאכט פון אש און מים ווי דער הימל, דעם וואס טובלט זיך אריין אין הימל."
+      },
+      "evidence": { "segs": [492, 493, 495, 499, 503], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The letters of Hashem's Name form a space four by ten, the measure of a reshus hayachid, and four times ten gives the forty se'ah of a mikvah, so immersion is immersion in the Name itself.",
+        "yi": "די אותיות פון שם הוי\"ה מאכן א שטח פון פיר אויף צען, די מאס פון א רשות היחיד, און פיר מאל צען איז פערציג, די ארבעים סאה פון א מקוה; ממילא איז טבילה א טבילה אין שם הוי\"ה אליין."
+      },
+      "evidence": { "segs": [532, 535, 544, 560, 563, 566], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The Haggadah draws down the salvations of the plagues, which is why the Tanna'im compete to count more plagues: each one counted brings more salvation.",
+        "yi": "די הגדה איז ממשיך די ישועות פון די מכות, און דערפאר מערן די תנאים די צאל מכות: יעדע מכה וואס מען ציילט ברענגט מער ישועה."
+      },
+      "evidence": { "segs": [384, 386, 389, 390], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Both mikvah and 'rachitz' mean bitachon: immersing is giving oneself over to Hashem.",
+        "yi": "סיי מקוה און סיי \"רחיץ\" מיינען בטחון: זיך טובלען הייסט זיך איבערגעבן צום רבונו של עולם."
+      },
+      "evidence": { "segs": [701, 704, 705, 713, 714], "confidence": 0.7 }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "The man who counted 310 immersions with a finger",
+        "yi": "דער וואס האט געציילט שי\"ת טבילות מיט א פינגער"
+      },
+      "retelling": {
+        "en": "The Rav recounts seeing someone, a great man among the ba'alei mussar, who wanted to immerse 310 times but did not want to spend the time. He stayed in the mikvah and pushed a finger out and back in again and again, counting each time as an immersion. The Rav says that this is not the point of the mikvah, since the whole person must be in the water and its essence is bitul.",
+        "yi": "דער משגיח דערציילט אז ער האט געזען איינעם, א גרויסן מענטש פון די בעלי מוסר, וואס האט געוואלט זיך טובלען שי\"ת מאל, אבער נישט פארלירן די צייט. ער איז געבליבן אין דער מקוה און ארויסגעשטעקט און אריינגעשטעקט א פינגער נאכאמאל און נאכאמאל, און יעדעס מאל גערעכנט פאר א טבילה. דער משגיח זאגט אז דאס איז נישט דער ענין פון מקוה, ווייל דער גאנצער מענטש דארף זיין אין וואסער, און דער עיקר איז ביטול."
+      },
+      "people": [],
+      "evidence": { "segs": [630, 634, 636, 639, 641, 645], "confidence": 0.7 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why does Rabbi Yehuda, who gave the simanim of the plagues, hold that chametz may only be destroyed by burning?",
+        "yi": "פארוואס האלט רבי יהודה, וואס האט געגעבן די סימנים פון די מכות, אז ביעור חמץ איז נאר מיט שריפה?"
+      },
+      "answer": {
+        "en": "Fire is the root of the four elements; destroying chametz through another element removes it but leaves the root, while burning uproots the evil at its source.",
+        "yi": "אש איז דער שורש פון די פיר יסודות; ווען מען איז מבטל דעם חמץ מיט אן אנדער יסוד בלייבט דער שורש, אבער שריפה רייסט אויס דאס רע פון שורש."
+      },
+      "questionSegs": [53, 139, 142],
+      "answerSegs": [345, 346, 354, 355, 356],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "How can the same reason, that man's heart inclines to evil, be given both for the Flood and for never bringing it again?",
+        "yi": "ווי קען דער זעלבער טעם, אז דאס הארץ פונעם מענטש איז נוטה צום רע, זיין סיי דער טעם אויפן מבול און סיי דער טעם אויף נישט מער ברענגען קיין מבול?"
+      },
+      "answer": {
+        "en": "Noach's offering brought him to the root of creation before the sin, where what had made him liable becomes the very ground for merit.",
+        "yi": "דער קרבן פון נח האט אים געברענגט צום שורש פון דער בריאה פאר דעם חטא, וואו דאס וואס האט אים מחייב געווען ווערט אליין דער יסוד פאר זכות."
+      },
+      "questionSegs": [192, 193, 194],
+      "answerSegs": [198, 200, 207, 209, 216],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why does the Rambam say purity comes only when one emerges from the mikvah?",
+        "yi": "פארוואס זאגט דער רמב\"ם אז די טהרה קומט ערשט ווען מען גייט ארויס פון דער מקוה?"
+      },
+      "answer": {
+        "en": "Because the mikvah is rebirth: inside one is nullified like an unborn child, and on emerging one is born anew.",
+        "yi": "ווייל די מקוה איז א נייע געבורט: אינעווייניג איז מען בטל ווי א קינד אין מוטערס לייב, און ביים ארויסגיין ווערט מען פריש געבוירן."
+      },
+      "questionSegs": [652, 654],
+      "answerSegs": [663, 665, 666],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says that one who lacks desire for holiness or for learning should escape to heaven by immersing in the mikvah.",
+        "yi": "דער משגיח זאגט אז ווער עס האט נישט קיין חשק צו קדושה אדער צו לערנען, זאל אנטלויפן אין הימל דורכן זיך טובלען אין מקוה."
+      },
+      "evidence": { "segs": [577, 578, 580, 581], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one should bend into the mikvah curled up like a child in its mother's womb and nullify oneself completely.",
+        "yi": "דער משגיח זאגט אז מען זאל זיך איינבויגן אין דער מקוה ווי א קינד אין מוטערס לייב און זיך אינגאנצן מבטל זיין."
+      },
+      "evidence": { "segs": [609, 610, 614, 668], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "mikvah",
+    "biur chametz by burning",
+    "the four elements",
+    "sweetening judgments at their root",
+    "teshuvah",
+    "the ten plagues and the Haggadah",
+    "Nahar Dinur",
+    "bitul",
+    "bitachon",
+    "preparation for Shabbos"
+  ],
+  "concepts": [
+    { "he": "מקוה", "heardAs": ["מקווא", "מקוה"] },
+    { "he": "ביעור חמץ", "heardAs": ["ביוחמת", "ביהם חמץ", "ביור חנץ"] },
+    { "he": "ארבע יסודות", "heardAs": ["ארבע יסודות", "אבער יסודות", "הבאות סעודות"] },
+    { "he": "המתקת הדינים", "heardAs": ["המצוקת הדינים", "ממת'ע זיין דעם דין"] },
+    { "he": "נהר דינור", "heardAs": ["נהר די נועה", "נאהא דינא", "נהר דינאי", "מהר דנאה"] },
+    { "he": "שם הוי\"ה", "heardAs": ["שם הבעיה", "שם הויה"] },
+    { "he": "רשות היחיד", "heardAs": ["רשות היוחד", "רשית היחד"] },
+    { "he": "ביטול", "heardAs": ["ביטול"] },
+    { "he": "בטחון", "heardAs": ["ביטחן", "בתחם"] },
+    { "he": "ראשי תיבות", "heardAs": ["ראשי טבע", "ראשי תיבות"] },
+    { "he": "מדת הדין", "heardAs": ["מידת הדין", "חמידת הדין"] },
+    { "he": "רקיע", "heardAs": ["רוקע", "רוקיא"] }
+  ],
+  "people": [
+    { "name": "Rabbi Yehuda", "heardAs": ["רבי יהודה", "ר' יהודה"] },
+    { "name": "Noach", "heardAs": ["נחת רות"] },
+    { "name": "the Ba'al HaTanya", "heardAs": ["בעל התניא"] },
+    { "name": "Yehuda son of Yaakov Avinu", "heardAs": ["יהודה, דער זון פון יעקב אבינו"] },
+    { "name": "Rabbi Yossi HaGelili", "heardAs": ["רבי יוסי הגלילי"] },
+    { "name": "the Divrei Chaim", "heardAs": ["דברי חיים"] },
+    { "name": "Rashi", "heardAs": ["רשע"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["באשם צפון", "בעש''ט"] },
+    { "name": "the Arizal", "heardAs": ["ארי הקודש", "אורי הקודש"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "Gavriel", "heardAs": ["גבריאל"] }
+  ],
+  "asrNotes": "Yiddish ASR fair, with many English words in Hebrew letters; quotations of pesukim and Chazal are badly garbled but mostly recoverable. The catalog title 'Shir Hashirim' is a filename guess: Shir Hashirim is mentioned only in the opening, and the shiur is about chametz, the plagues and the mikvah. Not recovered: the Ramban reference at 22-24, the Mussaf kedushah remark at 420-428, the 'four tefachim' Arizal detail at 694-696, and the chalitzah mashal and closing at 738-743."
+}

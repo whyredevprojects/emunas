@@ -1,0 +1,87 @@
+{
+  "shiurId": "yi-simchos-unc-bris-pidyon-haben-43",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4b-v2",
+  "extractionVariant": "extraction",
+  "en": [
+    {
+      "sectionIndex": 0,
+      "heading": "Oved's bris and the souls of Machlon and Er",
+      "paragraphs": [
+        {
+          "text": "The Rav opens with the blessing 'vayikarei shemo b'Yisrael' in Rus 4:14, which the Targum reads as a wish that the child be among the tzaddikim of Israel. A Midrash says the megillah's closing eight pesukim correspond to milah on the eighth day.",
+          "sourceIdx": [0, 1, 2],
+          "evidence": { "segs": [1, 2, 4, 5, 13, 14], "confidence": 0.75 }
+        },
+        {
+          "text": "He asks why the genealogy is repeated from Peretz, and brings the Arizal that Machlon's soul returned in Oved through yibum, while Er stood behind Peretz.",
+          "sourceIdx": [6],
+          "evidence": { "segs": [30, 36, 45, 48, 59], "confidence": 0.65 }
+        }
+      ]
+    },
+    {
+      "sectionIndex": 1,
+      "heading": "Why he was called Oved",
+      "paragraphs": [
+        {
+          "text": "The Targum says Oved served Hashem with a whole heart, yet many did so without that name. The Rav answers that Machlon's and Peretz's histories merged in this child, so he had to toil hard on himself, unlike a tzaddik who serves easily out of a good heart. Through that work he fathered Yishai, who died only through the serpent's counsel.",
+          "sourceIdx": [8, 9],
+          "evidence": { "segs": [73, 79, 94, 104, 105, 113], "confidence": 0.7 }
+        }
+      ]
+    },
+    {
+      "sectionIndex": 2,
+      "heading": "Rus, the neighbors' name, and the eighth day",
+      "paragraphs": [
+        {
+          "text": "Rus, a daughter of Moav's king, labored all her life on her traits and, remembering her past, would not name the child. The neighbors comforted her and named him, blessing him to be an oved. Milah on the eighth day, the Rav adds, is above nature, linked to the Torah given as the eighth week begins; he closes with blessings for the child.",
+          "sourceIdx": [10],
+          "evidence": { "segs": [128, 131, 136, 141, 143, 153], "confidence": 0.6 }
+        }
+      ]
+    }
+  ],
+  "yi": [
+    {
+      "sectionIndex": 0,
+      "heading": "עובד'ס ברית און די נשמות פון מחלון און ער",
+      "paragraphs": [
+        {
+          "text": "דער משגיח עפנט מיט דער ברכה \"ויקרא שמו בישראל\" אין רות ד' י\"ד, וואס דער תרגום טייטשט אז דאס קינד זאל זיין צווישן די צדיקי ישראל. אין מדרש שטייט אז די לעצטע אכט פסוקים פון דער מגילה זענען קעגן דער מילה בשמיני.",
+          "sourceIdx": [0, 1, 2],
+          "evidence": { "segs": [1, 2, 4, 5, 13, 14], "confidence": 0.75 }
+        },
+        {
+          "text": "ער פרעגט פארוואס מ'חזר'ט איבער דעם ייחוס פון פרץ, און ברענגט דעם אריז\"ל אז מחלון'ס נשמה איז צוריקגעקומען אין עובד דורך יבום, און הינטער פרץ איז געשטאנען ער.",
+          "sourceIdx": [6],
+          "evidence": { "segs": [30, 36, 45, 48, 59], "confidence": 0.65 }
+        }
+      ]
+    },
+    {
+      "sectionIndex": 1,
+      "heading": "פארוואס ער האט געהייסן עובד",
+      "paragraphs": [
+        {
+          "text": "דער תרגום זאגט אז עובד האט געדינט דעם רבונו של עולם מיט א גאנץ הארץ, אבער אסאך האבן אזוי געדינט אן דעם נאמען. דער משגיח ענטפערט אז די געשיכטעס פון מחלון און פרץ האבן זיך צוזאמענגעגאסן אין דעם קינד, ממילא האט ער געמוזט שטארק הארעווען אויף זיך, נישט ווי א צדיק וואס דינט גרינג פון א גוט הארץ. דורך דער ארבעט איז פון אים ארויס ישי, וואס איז נסתלק געווארן נאר בעטיו של נחש.",
+          "sourceIdx": [8, 9],
+          "evidence": { "segs": [73, 79, 94, 104, 105, 113], "confidence": 0.7 }
+        }
+      ]
+    },
+    {
+      "sectionIndex": 2,
+      "heading": "רות, דער נאמען פון די שכנות, און דער אכטער טאג",
+      "paragraphs": [
+        {
+          "text": "רות, א טאכטער פונעם מלך מואב, האט געהארעוועט איר גאנץ לעבן אויף אירע מידות, און ווייל זי האט געדענקט איר פארגאנגענהייט האט זי נישט געוואלט געבן א נאמען. די שכנות האבן זי געטרייסט און אים געבענטשט ער זאל זיין אן עובד. דער משגיח לייגט צו אז מילה בשמיני איז העכער פון טבע, פארבונדן מיט דער תורה וואס איז געגעבן געווארן ביים אנהייב פון דער אכטער וואך, און ער ענדיגט מיט ברכות פארן קינד.",
+          "sourceIdx": [10],
+          "evidence": { "segs": [128, 131, 136, 141, 143, 153], "confidence": 0.6 }
+        }
+      ]
+    }
+  ]
+}

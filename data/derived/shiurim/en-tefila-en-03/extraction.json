@@ -1,0 +1,295 @@
+{
+  "shiurId": "en-tefila-en-03",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "Going through Mizmor Shir L'yom HaShabbos verse by verse, the Rav explains that the psalm is the song of the future eternal Shabbos, when all the questions of history will be answered and it will be clear that everything Hashem did was for the good.",
+      "yi": "דער משגיח גייט דורך מזמור שיר ליום השבת פסוק נאך פסוק, און ערקלערט אז דאס איז דאס ליד פונעם אייביגן שבת פון דער צוקונפט, ווען אלע קשיות פון דער היסטאריע וועלן זיין פארענטפערט און מ'וועט זען אז אלעס וואס דער אויבערשטער האט געטון איז געווען צום גוטן."
+    },
+    "abstract": {
+      "en": "The Rav opens with the Mishnah that calls Mizmor Shir L'yom HaShabbos the song of the day that is entirely Shabbos: the seventh millennium after six thousand years. Menucha, he explains, does not mean rest but satisfaction, the feeling of lacking nothing, and our weekly Shabbos is a small taste of it. In that future time the questions that plague people today will dissolve. He lists the suffering of Jewish history, from the Churban and the Ten Martyrs to the Crusades, the Spanish expulsion and the Holocaust, and shows that tzaddikim knew hidden reasons for some of it. Moshe Rabbeinu himself was not shown why the righteous suffer. The Rav then explains each verse: thanking Hashem also means agreeing with Him, daytime understanding versus nighttime emunah, the happy and sad tunes of history, the flourishing of the wicked, the tzaddik like the palm and cedar, and the missing vav of 'avlasa', the connection we will only see later.",
+      "yi": "דער משגיח עפנט מיט דער משנה וואס רופט מזמור שיר ליום השבת דאס ליד פונעם טאג וואס איז גאנץ שבת: דאס זיבעטע טויזנט נאך די זעקס טויזנט יאר. מנוחה, ערקלערט ער, מיינט נישט רוען נאר צופרידנקייט, דאס געפיל אז מ'פעלט גארנישט, און אונזער שבת יעדע וואך איז א קליינער טעם דערפון. אין יענער צייט וועלן אלע קשיות וואס פלאגן היינט די מענטשן פארשווינדן. ער רעכנט אויס די צרות פון אידישע היסטאריע, פונעם חורבן און די עשרה הרוגי מלכות ביז די קרייצצוגן, דעם גירוש שפאניע און דעם חורבן אייראפע, און ווייזט אז צדיקים האבן געוואוסט באהאלטענע טעמים פאר א טייל דערפון. משה רבינו אליין האט מען נישט געוויזן פארוואס א צדיק ליידט. דערנאך טייטשט ער יעדן פסוק: הודאה מיינט אויך מודה זיין, דאס פארשטיין בייטאג קעגן אמונה ביינאכט, די פריידיגע און טרויעריגע ניגונים פון דער היסטאריע, ווי די רשעים בליען, דער צדיק ווי א תמר און א ארז, און דער פעלנדיקער וואו פון \"עולתה\", דער קשר וואס מ'וועט ערשט שפעטער זען."
+    },
+    "keyPoints": [
+      {
+        "text": { "en": "Our weekly Shabbos is a small glimpse of the seventh millennium, the 'day that is entirely Shabbos'.", "yi": "אונזער שבת יעדע וואך איז א קליינער בליק אין דעם זיבעטן טויזנט, דעם \"יום שכולו שבת\"." },
+        "evidence": { "segs": [17, 21, 23, 29, 32], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "Menucha means satisfaction and gratification, the feeling of lacking nothing, not mere rest.", "yi": "מנוחה מיינט צופרידנקייט, דאס געפיל אז מ'פעלט גארנישט, נישט סתם רוען." },
+        "evidence": { "segs": [37, 40, 41, 81, 83], "confidence": 0.9 }
+      },
+      {
+        "text": { "en": "The suffering of tzaddikim throughout history has reasons that Hashem knows, even when the greatest tzaddikim do not, and in the seventh millennium they will be understood.", "yi": "די יסורים פון צדיקים דורכאויס דער היסטאריע האבן טעמים וואס דער אויבערשטער ווייסט, אפילו ווען די גרעסטע צדיקים ווייסן נישט, און אינעם זיבעטן טויזנט וועט מען זיי פארשטיין." },
+        "evidence": { "segs": [374, 375, 379, 381, 401], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "When things are clear one thanks Hashem from understanding; in the dark times one must rely on emunah.", "yi": "ווען די זאכן זענען קלאר דאנקט מען דעם אויבערשטן מיטן פארשטאנד; אין די פינצטערע צייטן דארף מען זיך פארלאזן אויף אמונה." },
+        "evidence": { "segs": [517, 522, 526, 534], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "Knowing that Hashem is the One doing everything, and that nothing is chance, is itself a source of joy whatever the tune.", "yi": "צו וויסן אז דער אויבערשטער טוט אלעס, און גארנישט איז א מקרה, איז אליין א מקור פון שמחה, אפגעזען וועלכן ניגון מ'הערט." },
+        "evidence": { "segs": [636, 640, 644, 648, 653], "confidence": 0.85 }
+      },
+      {
+        "text": { "en": "In the future the connection between all the events of history will be seen, like the pieces of a puzzle put together.", "yi": "אין דער צוקונפט וועט מען זען דעם קשר צווישן אלע געשעענישן פון דער היסטאריע, ווי שטיקלעך פון א פאזל וואס ווערן צוזאמענגעשטעלט." },
+        "evidence": { "segs": [917, 921, 926, 929, 935], "confidence": 0.85 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-english-sets-tefilah-02-1-tefilla", "startSeg": 0, "endSeg": 137,
+      "title": { "en": "Shabbos as a taste of the eternal Shabbos", "yi": "שבת ווי א טעם פונעם אייביגן שבת" },
+      "summary": {
+        "en": "The Rav brings the Mishnah that Mizmor Shir L'yom HaShabbos is the song for the day that is entirely Shabbos, the seventh millennium, and explains that menucha means satisfaction, not rest, bringing Naomi's words to Ruth and Rashi on the creation's completion. A true Shabbos is kept as if all one's work were done.",
+        "yi": "דער משגיח ברענגט די משנה אז מזמור שיר ליום השבת איז דאס ליד פאר דעם יום שכולו שבת, דאס זיבעטע טויזנט, און ערקלערט אז מנוחה מיינט צופרידנקייט און נישט רוען, מיט נעמי'ס ווערטער צו רות און רש\"י אויף דער בריאה. א אמת'ער שבת היט מען ווי אלע ארבעט וואלט שוין געווען פארטיג."
+      },
+      "kind": "intro", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tefilah-02-1-tefilla", "startSeg": 138, "endSeg": 253,
+      "title": { "en": "The questions of Jewish suffering", "yi": "די קשיות פון אידישע יסורים" },
+      "summary": {
+        "en": "In the seventh millennium, the Rav says, there will be no more questions. He lists the troubles that raise questions in emunah: the Churban, the Crusades, the Spanish expulsion and the Holocaust, where precisely tzaddikim suffered, and he tells of the Ten Martyrs and Rabbi Yishmael, who asked Heaven whether to accept the decree.",
+        "yi": "אינעם זיבעטן טויזנט, זאגט דער משגיח, וועלן מער נישט זיין קיין קשיות. ער רעכנט אויס די צרות וואס ברענגען קשיות אין אמונה: דעם חורבן, די קרייצצוגן, דעם גירוש שפאניע און דעם חורבן אייראפע וואו דווקא צדיקים האבן געליטן, און ער דערציילט וועגן די עשרה הרוגי מלכות און רבי ישמעאל, וואס האט געפרעגט אין הימל צי ער זאל מקבל זיין די גזירה."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tefilah-02-1-tefilla", "startSeg": 254, "endSeg": 382,
+      "title": { "en": "Hidden reasons behind the decrees", "yi": "באהאלטענע טעמים הינטער די גזירות" },
+      "summary": {
+        "en": "The Rav explains that the Ten Martyrs were a gilgul of the ten tribes, atoning for the sale of Yosef, and that tzaddikim of a later generation said those killed then were a gilgul of the rebels in the Gemara in Gittin who refused Rabbi Yochanan ben Zakkai's surrender to Rome. For the Holocaust no one today can give the reason, but Hashem knows it.",
+        "yi": "דער משגיח ערקלערט אז די עשרה הרוגי מלכות זענען געווען א גלגול פון די צען שבטים, א כפרה פאר מכירת יוסף, און אז צדיקים פון א שפעטערן דור האבן געזאגט אז די וואס זענען דעמאלט אומגעקומען זענען געווען א גלגול פון די בריונים אין דער גמרא אין גיטין, וואס האבן נישט געוואלט נאכגעבן צו רבי יוחנן בן זכאי זיך אונטערצוגעבן פאר רוים. ביים חורבן אייראפע קען היינט קיינער נישט זאגן דעם טעם, אבער דער אויבערשטער ווייסט."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tefilah-02-1-tefilla", "startSeg": 383, "endSeg": 482,
+      "title": { "en": "Tov l'hodos: thanking and agreeing", "yi": "טוב להודות: דאנקען און מודה זיין" },
+      "summary": {
+        "en": "The Rav brings the Gemara that Moshe Rabbeinu asked why the righteous suffer and was not told, and says that in the seventh millennium we will thank Hashem even for the suffering, as Yeshayahu says. He explains 'tov l'hodos' as both thanking and agreeing that Hashem's ways are just, and gives the parable of the fly on a painting.",
+        "yi": "דער משגיח ברענגט די גמרא אז משה רבינו האט געפרעגט פארוואס א צדיק ליידט און מ'האט אים נישט געענטפערט, און זאגט אז אינעם זיבעטן טויזנט וועט מען דאנקען דעם אויבערשטן אפילו פאר די יסורים, ווי ישעיה הנביא זאגט. ער טייטשט \"טוב להודות\" סיי אלס דאנקען און סיי אלס מודה זיין אז דעם אויבערשטנס וועגן זענען גערעכט, און ברענגט דעם משל פון א פליג אויף א בילד."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tefilah-02-1-tefilla", "startSeg": 483, "endSeg": 592,
+      "title": { "en": "Morning understanding, nighttime emunah", "yi": "פארשטאנד אינדערפרי, אמונה ביינאכט" },
+      "summary": {
+        "en": "The Rav explains 'l'hagid baboker chasdecha ve'emunascha baleilos': in times of light one can examine and understand Hashem's kindness, while in the dark times, when tzaddikim suffer and the wicked prosper, one needs emunah. He then explains 'alei asor va'alei navel' as rich and sad tunes, and brings Rav Nachman of Breslov that every person's life is a niggun.",
+        "yi": "דער משגיח טייטשט \"להגיד בבוקר חסדך ואמונתך בלילות\": אין ליכטיגע צייטן קען מען מבקר זיין און פארשטיין דעם אויבערשטנס חסד, און אין די פינצטערע צייטן, ווען צדיקים ליידן און רשעים האבן הצלחה, דארף מען אמונה. דערנאך טייטשט ער \"עלי עשור ועלי נבל\" אלס רייכע און טרויעריגע ניגונים, און ברענגט פון רבי נחמן מברסלב אז יעדן מענטשנס לעבן איז א ניגון."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tefilah-02-1-tefilla", "startSeg": 593, "endSeg": 699,
+      "title": { "en": "The song of history and the tailor", "yi": "דער ניגון פון היסטאריע און דער שניידער" },
+      "summary": {
+        "en": "The Rav says the whole world sings a niggun through the seven millennia, and one must think into the tune history plays. Whatever Hashem does is for our good, like painful surgery, and knowing that He is doing it brings joy. On 'ma gadlu ma'asecha' he tells how someone answered a question after the Holocaust with the parable of a tailor cutting silk.",
+        "yi": "דער משגיח זאגט אז די גאנצע וועלט זינגט א ניגון דורך די זיבן טויזנט יאר, און מ'דארף זיך טראכטן אין דעם ניגון וואס די היסטאריע שפילט. אלעס וואס דער אויבערשטער טוט איז צום גוטן, ווי א ווייטאגליכע אפעראציע, און דאס וויסן אז ער טוט עס ברענגט שמחה. ביי \"מה גדלו מעשיך\" דערציילט ער ווי איינער האט נאך דעם חורבן געענטפערט א קשיא מיטן משל פון א שניידער וואס שניידט זייד."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tefilah-02-1-tefilla", "startSeg": 700, "endSeg": 789,
+      "title": { "en": "Why the wicked flourish", "yi": "פארוואס די רשעים בליען" },
+      "summary": {
+        "en": "On 'ish ba'ar lo yeida' the Rav explains that a mortal cannot understand the Creator, like a watch that cannot understand the watchmaker, and does not even understand that he cannot understand. The wicked flourish only to be destroyed forever, like a turkey being fattened, while Hashem is above and His enemies will be lost.",
+        "yi": "ביי \"איש בער לא ידע\" ערקלערט דער משגיח אז א בשר ודם קען נישט פארשטיין דעם בורא, ווי א זייגער וואס קען נישט פארשטיין דעם זייגערמאכער, און ער פארשטייט אפילו נישט אז ער פארשטייט נישט. די רשעים בליען נאר כדי צו ווערן פארטיליגט אויף אייביג, ווי א אינדיק וואס מ'שטאפט, און דער אויבערשטער איז אויבן און זיינע שונאים וועלן פארלוירן ווערן."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tefilah-02-1-tefilla", "startSeg": 790, "endSeg": 945,
+      "title": { "en": "The tzaddik's flourishing and the missing vav", "yi": "דעם צדיקס בליען און דער פעלנדיקער וואו" },
+      "summary": {
+        "en": "The Rav explains that the tzaddik will be like both the palm, which gives fruit, and the cedar, which grows tall, and will bear fruit even in old age. The psalm's last verse declares that Hashem is just; the missing vav in 'avlasa', the vav of connection, shows that now we do not see how events connect, but in the future everything will fit together like the Megillah or a puzzle.",
+        "yi": "דער משגיח ערקלערט אז דער צדיק וועט זיין סיי ווי א תמר וואס גיט פרוכט, סיי ווי א ארז וואס וואקסט הויך, און וועט גיבן פרוכט אפילו אויף דער עלטער. דער לעצטער פסוק זאגט אויס אז דער אויבערשטער איז ישר; דער פעלנדיקער וואו אין \"עולתה\", דער וואו החיבור, ווייזט אז היינט זעט מען נישט ווי די געשעענישן הענגען צוזאמען, אבער אין דער צוקונפט וועט אלעס צוזאמענפאסן ווי די מגילה אדער א פאזל."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "Mizmashia, Liyam HaShabbos", "work": "Tehillim", "ref": "Tehillim 92:1", "sefariaRef": "Psalms 92:1", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [0, 425, 426], "confidence": 0.85 } },
+    { "heardAs": "Liyam Shekulo Shabbos, Menucha, L'cha Yehoi Lame", "work": "Mishnah Tamid", "ref": "Mishnah Tamid 7:4", "sefariaRef": "Mishnah Tamid 7:4", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [0, 23, 26], "confidence": 0.75 } },
+    { "heardAs": "the Ramban talks about it several times ... especially in Parshish Breshis", "work": "Ramban", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [14, 16, 17], "confidence": 0.85 } },
+    { "heardAs": "Naimi told this ... Menucha Isha Bais Isha", "work": "Rus", "ref": "Rus 1:9", "sefariaRef": "Ruth 1:9", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [57, 61, 62], "confidence": 0.75 } },
+    { "heardAs": "Rasha says Baichala Lekim Baim HaShviyya ... Ma ha-ya-eram chaseya Minucha", "work": "Rashi", "ref": "Rashi on Bereishis 2:2", "sefariaRef": "Rashi on Genesis 2:2", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [64, 66, 70, 73, 75], "confidence": 0.8 } },
+    { "heardAs": "the Yimura says you should keep a Shabbos as if all your work is done", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [88, 89, 90], "confidence": 0.7 } },
+    { "heardAs": "the period that we say in Kippur also on Tisha B'Av", "work": "Eileh Ezkerah (kinah of the Ten Martyrs)", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [212, 213], "confidence": 0.65 } },
+    { "heardAs": "the Israel HaKadosh and the Riyah HaKadosh ... the Gilgul and the Aserah HaShvatan", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [255, 257, 261, 263], "confidence": 0.65 } },
+    { "heardAs": "the Gemara talks about in the Gemara Gitan", "work": "Gemara Gittin", "ref": "Gittin 56a", "sefariaRef": "Gittin 56a", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [303, 311, 329, 347], "confidence": 0.8 } },
+    { "heardAs": "the Gemara says Maish Rabbeinu asked ... tzadik v'rallai rasha v'tayvallai ... haren yinos kveitzecha", "work": "Gemara Berachos", "ref": "Berachos 7a", "sefariaRef": "Berakhot 7a", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [383, 384, 386, 388], "confidence": 0.8 } },
+    { "heardAs": "like Yishayi HaNavi said ... I thank you ... that you scorned on me", "work": "Yeshayahu", "ref": "Yeshayahu 12:1", "sefariaRef": "Isaiah 12:1", "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [415, 418, 419], "confidence": 0.75 } },
+    { "heardAs": "it's good to thank the Rabbin ... sing to your name, Eliyam", "work": "Tehillim", "ref": "Tehillim 92:2", "sefariaRef": "Psalms 92:2", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [446, 448, 459, 460], "confidence": 0.85 } },
+    { "heardAs": "Maidach HaChemem and Rabbi Meir", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [451, 452], "confidence": 0.7 } },
+    { "heardAs": "l'haget b'abreka chasdecha ... the munasfa balaylis", "work": "Tehillim", "ref": "Tehillim 92:3", "sefariaRef": "Psalms 92:3", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [500, 501, 535], "confidence": 0.85 } },
+    { "heardAs": "Alei Aser ... valei naval ... alei higayen b'khina", "work": "Tehillim", "ref": "Tehillim 92:4", "sefariaRef": "Psalms 92:4", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [545, 556, 562], "confidence": 0.85 } },
+    { "heardAs": "Rav Nachman Braslava in his poetic way says", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [581, 582, 586, 587], "confidence": 0.85 } },
+    { "heardAs": "before Alecha ... but my seyedacha ... aranim", "work": "Tehillim", "ref": "Tehillim 92:5", "sefariaRef": "Psalms 92:5", "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [638, 649, 651], "confidence": 0.7 } },
+    { "heardAs": "magadolum ha-secha Hashem ... your machsavos are so deep", "work": "Tehillim", "ref": "Tehillim 92:6", "sefariaRef": "Psalms 92:6", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [656, 658, 700], "confidence": 0.8 } },
+    { "heardAs": "Ish Baal La Yeda", "work": "Tehillim", "ref": "Tehillim 92:7", "sefariaRef": "Psalms 92:7", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [706, 710, 712], "confidence": 0.85 } },
+    { "heardAs": "the Rishayim, they bloom like grass ... Lishamdam Hedayat", "work": "Tehillim", "ref": "Tehillim 92:8", "sefariaRef": "Psalms 92:8", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [739, 740, 743, 756], "confidence": 0.8 } },
+    { "heardAs": "V'yat Amarim L'Yaylam Hashem", "work": "Tehillim", "ref": "Tehillim 92:9", "sefariaRef": "Psalms 92:9", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [762, 763], "confidence": 0.8 } },
+    { "heardAs": "they will get lost ... my horn will be raised like the ra'em ... you smear me with shem and afreshness", "work": "Tehillim", "ref": "Tehillim 92:10-11", "sefariaRef": "Psalms 92:10-11", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [767, 768, 774, 777], "confidence": 0.8 } },
+    { "heardAs": "my eyes will see those that looked at me ... my ears will hear", "work": "Tehillim", "ref": "Tehillim 92:12", "sefariaRef": "Psalms 92:12", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [783, 786, 788], "confidence": 0.8 } },
+    { "heardAs": "The tzaddik, he will blossom like the tamal ... katama yevchach ... like the Erez", "work": "Tehillim", "ref": "Tehillim 92:13", "sefariaRef": "Psalms 92:13", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [790, 809, 817, 818], "confidence": 0.85 } },
+    { "heardAs": "will be planted in the house of the Rabbani Shiladim", "work": "Tehillim", "ref": "Tehillim 92:14", "sefariaRef": "Psalms 92:14", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [820, 821, 822], "confidence": 0.8 } },
+    { "heardAs": "in their old days they will give fruit ... and fresh", "work": "Tehillim", "ref": "Tehillim 92:15", "sefariaRef": "Psalms 92:15", "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [834, 835, 837], "confidence": 0.8 } },
+    { "heardAs": "we read Avlasa but it says Alasa ... ke yosheh Hashem v'loi yavlo sabay", "work": "Tehillim", "ref": "Tehillim 92:16", "sefariaRef": "Psalms 92:16", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [872, 887, 888, 941], "confidence": 0.85 } },
+    { "heardAs": "like it says in Hasinu tzadik v'yoshahu", "work": "Devarim", "ref": "Devarim 32:4", "sefariaRef": "Deuteronomy 32:4", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [943, 944], "confidence": 0.8 } },
+    { "heardAs": "just like when we read the Megillah", "work": "Megillas Esther", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [899, 908, 910], "confidence": 0.85 } }
+  ],
+  "insights": [
+    {
+      "text": { "en": "Menucha is not rest but gratification, like a worker whose exhausting Sunday soccer game is his menucha; Shabbos menucha is the feeling of having reached one's goal and lacking nothing.", "yi": "מנוחה איז נישט רוען נאר צופרידנקייט, ווי א ארבעטער וואס זיין מידנדיגע שפיל זונטאג איז זיין מנוחה; די מנוחה פון שבת איז דאס געפיל אז מ'האט דערגרייכט דעם תכלית און מ'פעלט גארנישט." },
+      "evidence": { "segs": [40, 47, 49, 52, 132, 135], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "'L'hodos' means both to thank and to agree, as in 'the Chachamim agree with Rabbi Meir': in the future we will agree that whatever Hashem did was right.", "yi": "\"להודות\" מיינט סיי דאנקען און סיי מודה זיין, ווי \"מודים חכמים לרבי מאיר\": אין דער צוקונפט וועט מען מודה זיין אז אלעס וואס דער אויבערשטער האט געטון איז געווען גערעכט." },
+      "evidence": { "segs": [449, 450, 451, 453, 457], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "'Boker' is related to 'bikur', examining: in the light one can inspect and understand, while 'layla' is related to 'yelala', wailing, the time when only emunah helps.", "yi": "\"בוקר\" איז פארבונדן מיט \"ביקור\", אונטערזוכן: אין ליכט קען מען אונטערזוכן און פארשטיין, און \"לילה\" איז פארבונדן מיט \"יללה\", קלאגן, די צייט ווען נאר אמונה העלפט." },
+      "evidence": { "segs": [502, 503, 513, 515, 537, 538], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "'Asor' comes from 'ashirus', rich and gratifying tunes, and 'navel' means wretched tunes; 'higayon b'chinor' means to think into the tune Hashem is playing, whichever it is.", "yi": "\"עשור\" קומט פון \"עשירות\", רייכע און צופרידנשטעלנדע ניגונים, און \"נבל\" מיינט עלנטע ניגונים; \"הגיון בכנור\" מיינט זיך צו טראכטן אין דעם ניגון וואס דער אויבערשטער שפילט, וועלכער עס זאל נאר זיין." },
+      "evidence": { "segs": [549, 553, 557, 570, 573], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The joy of 'simachtani' does not depend on the tune: it comes from knowing that Hashem's attention is focused on me, whether He grants happiness or surgical pain.", "yi": "די שמחה פון \"שמחתני\" הענגט נישט אפ אינעם ניגון: זי קומט פון וויסן אז דעם אויבערשטנס אויפמערקזאמקייט איז אויף מיר, סיי ווען ער גיט גליק סיי ווען ער גיט א ווייטאג ווי ביי אן אפעראציע." },
+      "evidence": { "segs": [619, 621, 622, 625, 627], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "Fruit trees do not grow tall because they put their strength into fruit, while tall trees give no fruit; the tzaddik will have both, like the palm and the cedar together.", "yi": "פרוכט ביימער וואקסן נישט הויך ווייל זיי לייגן אריין זייער כח אין די פרוכט, און הויכע ביימער גיבן נישט קיין פרוכט; דער צדיק וועט האבן ביידע, ווי א תמר און א ארז צוזאמען." },
+      "evidence": { "segs": [791, 795, 805, 807, 816], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "The vav missing in the written 'avlasa' is the vav of connection: today we do not see how events connect, but in the future the vav will be read and all of history will fit together.", "yi": "דער וואו וואס פעלט אינעם כתיב פון \"עולתה\" איז דער וואו החיבור: היינט זעט מען נישט ווי די געשעענישן הענגען צוזאמען, אבער אין דער צוקונפט וועט מען לייענען דעם וואו און די גאנצע היסטאריע וועט צוזאמענפאסן." },
+      "evidence": { "segs": [884, 891, 892, 898, 918, 920], "confidence": 0.85 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "Rabbi Yishmael asks Heaven about the decree", "yi": "רבי ישמעאל פרעגט אין הימל וועגן דער גזירה" },
+      "retelling": {
+        "en": "When the Roman emperor decreed death on ten Tannaim, Rabbi Yishmael Kohen Gadol, one of the ten, said he would ask Heaven. He wanted to know whether they must accept the decree, since otherwise he could save himself. The Rav adds that these Tannaim, Rabbi Akiva, Rabbi Yehuda ben Bava, Rabbi Chanina ben Tradyon and the others, could have destroyed Rome with one curse, but a tzaddik does what Hashem wants, and they were killed.",
+        "yi": "ווען דער רוימישער קייסער האט געגוזרט מיתה אויף צען תנאים, האט רבי ישמעאל כהן גדול, איינער פון די צען, געזאגט אז ער וועט פרעגן אין הימל. ער האט געוואלט וויסן צי מ'דארף מקבל זיין די גזירה, ווייל אויב נישט קען ער זיך ראטעווען. דער משגיח לייגט צו אז די תנאים, רבי עקיבא, רבי יהודה בן בבא, רבי חנינא בן תרדיון און די אנדערע, האבן געקענט חרוב מאכן רוים מיט איין קללה, אבער א צדיק טוט וואס דער אויבערשטער וויל, און זיי זענען אומגעקומען."
+      },
+      "people": ["Rabbi Yishmael Kohen Gadol", "Rabbi Akiva", "Rabbi Yehuda ben Bava", "Rabbi Chanina ben Tradyon"],
+      "evidence": { "segs": [219, 235, 241, 245, 252, 253], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "Rabbi Yochanan ben Zakkai smuggled out of Yerushalayim", "yi": "רבי יוחנן בן זכאי ווערט ארויסגעשמוגלט פון ירושלים" },
+      "retelling": {
+        "en": "Rabbi Yochanan ben Zakkai wanted to make peace with the Romans so that the Beis HaMikdash and Yerushalayim would be spared, but the rebels, the biryonim, refused to surrender. He was carried out of Yerushalayim while people were told he had passed away, and then he could speak to the Romans and ask for favors: to save the Sanhedrin and to give Yavneh for their yeshiva so Torah would continue. He could not ask for Yerushalayim, as Titus would not have granted it.",
+        "yi": "רבי יוחנן בן זכאי האט געוואלט מאכן שלום מיט די רוימער כדי דער בית המקדש און ירושלים זאלן בלייבן, אבער די בריונים האבן נישט געוואלט זיך אונטערגעבן. מ'האט אים ארויסגעטראגן פון ירושלים און געזאגט אז ער איז נפטר געווארן, און דערנאך האט ער געקענט רעדן מיט די רוימער און בעטן טובות: מ'זאל ראטעווען דעם סנהדרין און געבן יבנה פאר זייער ישיבה כדי די תורה זאל ווייטער גיין. ירושלים האט ער נישט געקענט בעטן, ווייל טיטוס וואלט עס נישט געגעבן."
+      },
+      "people": ["Rabbi Yochanan ben Zakkai", "Titus"],
+      "evidence": { "segs": [310, 312, 330, 334, 338, 344], "confidence": 0.85 }
+    },
+    {
+      "title": { "en": "The tailor cutting silk", "yi": "דער שניידער וואס שניידט זייד" },
+      "retelling": {
+        "en": "Right after the Holocaust someone asked why Hashem had done this. The answer given was a parable: one who enters a tailor's shop and sees him cut pieces from a precious roll of silk might ask why he is ruining it. But the tailor is making a garment that is not ready yet, and when the garment is seen, one will understand why he cut.",
+        "yi": "גלייך נאך דעם חורבן אייראפע האט איינער געפרעגט פארוואס דער אויבערשטער האט דאס געטון. דער ענטפער איז געווען א משל: איינער וואס קומט אריין צו א שניידער און זעט ווי ער שניידט שטיקער פון א טייערן ראל זייד, קען פרעגן פארוואס ער פארדארבט עס. אבער דער שניידער מאכט א בגד וואס איז נאך נישט פארטיג, און ווען מ'וועט זען דעם בגד וועט מען פארשטיין פארוואס ער האט געשניטן."
+      },
+      "people": [],
+      "evidence": { "segs": [680, 681, 685, 691, 695, 699], "confidence": 0.8 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "Why did Rashi say something was created on Shabbos, if the world was finished on the sixth day?", "yi": "פארוואס זאגט רש\"י אז אויף שבת איז אויך עפעס באשאפן געווארן, ווען די וועלט איז שוין פארטיג געווען דעם זעקסטן טאג?" },
+      "answer": { "en": "What the world lacked was menucha; with Shabbos came menucha, and the work was completed.", "yi": "וואס די וועלט האט געפעלט איז מנוחה; מיט שבת איז געקומען מנוחה, און די מלאכה איז געווען פארענדיגט." },
+      "questionSegs": [67, 69, 70, 72], "answerSegs": [73, 74, 75, 76], "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why did the emperor care that Rabbi Yishmael was asking Heaven?", "yi": "פארוואס האט דעם קייסער אינטערעסירט אז רבי ישמעאל פרעגט אין הימל?" },
+      "answer": { "en": "He asked to know whether to accept the decree; had Heaven said no, he could have saved himself, for these Tannaim could have destroyed Rome.", "yi": "ער האט געפרעגט צי ער דארף מקבל זיין די גזירה; ווען דער הימל וואלט געזאגט ניין, וואלט ער זיך געקענט ראטעווען, ווייל די תנאים האבן געקענט חרוב מאכן רוים." },
+      "questionSegs": [236, 237], "answerSegs": [240, 241, 245, 252], "confidence": 0.7
+    },
+    {
+      "question": { "en": "Why did precisely tzaddikim suffer so much at the hands of the Nazis?", "yi": "פארוואס האבן דווקא צדיקים אזוי שטארק געליטן פון די נאציס?" },
+      "answer": { "en": "Everything has a reason that Hashem knows, even when the greatest tzaddikim do not; the time has not come to reveal it, and in the seventh millennium it will be understood.", "yi": "אלעס האט א טעם וואס דער אויבערשטער ווייסט, אפילו ווען די גרעסטע צדיקים ווייסן נישט; די צייט איז נאך נישט געקומען עס מגלה צו זיין, און אינעם זיבעטן טויזנט וועט מען עס פארשטיין." },
+      "questionSegs": [202, 203, 204], "answerSegs": [374, 375, 379, 381, 401], "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why do the wicked flourish like grass?", "yi": "פארוואס בליען די רשעים ווי גראז?" },
+      "answer": { "en": "In order to be destroyed forever, like the turkey a farmer stuffs before Thanksgiving.", "yi": "כדי זיי זאלן ווערן פארטיליגט אויף אייביג, ווי דער אינדיק וואס א פויער שטאפט פאר זיין יום טוב." },
+      "questionSegs": [739, 745], "answerSegs": [746, 747, 749, 753], "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why is the vav missing from the written word 'avlasa'?", "yi": "פארוואס פעלט דער וואו אינעם כתיב פון \"עולתה\"?" },
+      "answer": { "en": "The vav is the letter of connection; now we do not see how events connect, but when Mashiach comes the connection will be understood.", "yi": "דער וואו איז דער אות פון חיבור; היינט זעט מען נישט ווי די געשעענישן הענגען צוזאמען, אבער ווען משיח וועט קומען וועט מען פארשטיין דעם קשר." },
+      "questionSegs": [884, 888, 889], "answerSegs": [891, 892, 898, 917, 920], "confidence": 0.85
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Rav says one should keep Shabbos as if all one's work were done, not thinking about business or financial responsibilities, and enjoying being with Hashem.", "yi": "דער משגיח זאגט אז מ'זאל היטן שבת ווי אלע ארבעט וואלט געווען פארטיג, נישט טראכטן פון געשעפט און געלט פליכטן, און הנאה האבן פון זיין מיטן אויבערשטן." },
+      "evidence": { "segs": [89, 90, 107, 111, 114, 115], "confidence": 0.85 }
+    },
+    {
+      "text": { "en": "The Rav says that a Shabbos limited to not doing the melachos, without feeling the menucha, is not the real Shabbos.", "yi": "דער משגיח זאגט אז א שבת וואס איז נאר נישט טון די מלאכות, אן פילן די מנוחה, איז נישט דער אמת'ער שבת." },
+      "evidence": { "segs": [121, 122, 123, 126, 130], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Rav urges thinking into the tune that history is playing and knowing that whatever Hashem does is for our good.", "yi": "דער משגיח מאנט מ'זאל זיך טראכטן אין דעם ניגון וואס די היסטאריע שפילט, און וויסן אז אלעס וואס דער אויבערשטער טוט איז צו אונזער טובה." },
+      "evidence": { "segs": [609, 610, 611, 613, 614], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "mizmor shir l'yom haShabbos",
+    "menucha as satisfaction",
+    "the seventh millennium",
+    "suffering of tzaddikim",
+    "hester panim",
+    "emunah in dark times",
+    "the Holocaust",
+    "Divine providence in history",
+    "tzaddik v'ra lo",
+    "gilgul"
+  ],
+  "concepts": [
+    { "he": "מנוחה", "heardAs": ["Menucha", "menuche", "Minucha", "menuka"] },
+    { "he": "יום שכולו שבת", "heardAs": ["Liyam Shekulo Shabbos", "Yom Shekulay Shabbos", "Yen Shekudo Shabbos", "young Shekulei Shabbos"] },
+    { "he": "אלף השביעי", "heardAs": ["Elif Hashvili", "Elif Hashviyi"] },
+    { "he": "רבונו של עולם", "heardAs": ["rabbinu shulaylam", "Rabbi Nishleil", "Rabbani Shalem", "Rabbeinu Shredem", "Rabbi Neshulayim"] },
+    { "he": "הסתר פנים", "heardAs": ["Hester Panem"] },
+    { "he": "עשרה הרוגי מלכות", "heardAs": ["Asar Sarugim Malchus"] },
+    { "he": "גלגול", "heardAs": ["Gilgul", "Gilgal"] },
+    { "he": "מכירת יוסף", "heardAs": ["Mechiras Yosef"] },
+    { "he": "בריונים", "heardAs": ["Beryanim", "Bilyan"] },
+    { "he": "צדיק ורע לו רשע וטוב לו", "heardAs": ["tzadik v'rallai rasha v'tayvallai", "saddik v'tayvulay"] },
+    { "he": "קרי וכתיב", "heardAs": ["Kri in Iksil"] },
+    { "he": "וו החיבור", "heardAs": ["Vav Achebo"] },
+    { "he": "מקרה", "heardAs": ["Mikcha"] }
+  ],
+  "people": [
+    { "name": "Ramban", "heardAs": ["Ramban"] },
+    { "name": "Naomi", "heardAs": ["Naimi"] },
+    { "name": "Rashi", "heardAs": ["Rasha"] },
+    { "name": "Rabbi Yishmael Kohen Gadol", "heardAs": ["Rabbi Shmuel", "Rabbi Shemayel", "Abishmao Kain-Gado"] },
+    { "name": "Rabbi Akiva", "heardAs": ["Rabbi Akiva"] },
+    { "name": "Rabbi Yehuda ben Bava", "heardAs": ["Rabbi Iyuda ben Bava"] },
+    { "name": "Rabbi Chanina ben Tradyon", "heardAs": ["Rabbi Nina ben Tradian"] },
+    { "name": "Yosef", "heardAs": ["Yosef"] },
+    { "name": "Rabbi Yochanan ben Zakkai", "heardAs": ["Rabbi Eichanan ben Zakkai", "Rabbi Yochanan and Zaki"] },
+    { "name": "Titus", "heardAs": ["Titus"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["Maish Rabbeinu", "Meshulayim"] },
+    { "name": "Yeshayahu HaNavi", "heardAs": ["Yishayi HaNavi"] },
+    { "name": "Rabbi Meir", "heardAs": ["Rabbi Meir"] },
+    { "name": "Rabbi Nachman of Breslov", "heardAs": ["Rav Nachman Braslava", "Natan Braslava"] },
+    { "name": "Dovid HaMelech", "heardAs": ["Debeda Melech"] },
+    { "name": "Avraham Avinu", "heardAs": ["Abram Avinu"] },
+    { "name": "Vashti", "heardAs": ["Vashti"] },
+    { "name": "Esther", "heardAs": ["Esther"] }
+  ],
+  "asrNotes": "English ASR is fair; Hebrew terms and verse quotations are heavily garbled but recoverable from the psalm the shiur follows (Tehillim 92). The account of Rabbi Yishmael's question to Heaven (segs 216-228) is fragmentary, the authority named for the gilgul of the ten tribes ('the Israel HaKadosh and the Riyah HaKadosh') and the source of 'keep Shabbos as if all work is done' ('the Yimura') could not be identified, and the teacher the Rav names before Rav Nachman of Breslov (segs 583-584) is unrecoverable. The stretch on light and dark periods of galus (segs 483-497) has gaps."
+}

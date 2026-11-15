@@ -1,0 +1,566 @@
+{
+  "shiurId": "yi-tanya-1-32",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains how a beinoni, who cannot choose to be a true tzaddik, can still fulfill the oath 'be a tzaddik': through moments of real joy in Hashem, through habit that becomes second nature, and through the soul of a tzaddik that comes into him (ibbur).",
+      "yi": "דער משגיח ערקלערט ווי אזוי א בינוני, וואס האט נישט קיין בחירה צו זיין א צדיק גמור, קען דאך מקיים זיין די שבועה \"תהי צדיק\": דורך צייטן פון אמת'ע שמחה מיטן אייבערשטן, דורך הרגל וואס ווערט א טבע שני, און דורך א נשמה פון א צדיק וואס קומט אריין אין אים בבחינת עיבור."
+    },
+    "abstract": {
+      "en": "The Rav reviews the Tanya's distinction: a beinoni wages a constant war with the yetzer hara and every Jew can reach that, but being a tzaddik needs a special soul. This explains the double oath, 'be a tzaddik and do not be a rasha': not being a rasha is in everyone's hands, while 'be a tzaddik' means to strive for it. Still, the Tanya says, a person should set times to contemplate that worldly pleasures are worthless and to rejoice in Hashem; even if passing, at his level it counts. Habit also becomes second nature, as with a brachah said with thought. With the parable of Dovid's harp and a tuned piano string he shows that joy below arouses joy above. Perhaps a spark of a tzaddik's soul will come into him, as in the story of Rav Chaim Vital. A Jew's small mitzvah is multiplied above, which he illustrates with Haman and the omer.",
+      "yi": "דער משגיח חזר'ט איבער דעם חילוק אין תניא: א בינוני האט א כסדר'דיגע מלחמה מיטן יצר הרע, און דאס קען יעדער איד, אבער צו זיין א צדיק דארף מען האבן א ספעציעלע נשמה. דערמיט איז מתורץ די כפל לשון פון דער שבועה \"תהי צדיק ואל תהי רשע\": נישט זיין קיין רשע איז אין יעדנס הענט, און \"תהי צדיק\" מיינט מ'זאל זיך אנשטרענגען. פון דעסטוועגן, זאגט דער תניא, זאל מען אפשטעלן צייטן זיך מתבונן צו זיין אז די תענוגים פון עולם הזה זענען גארנישט, און זיך פרייען מיטן אייבערשטן; כאטש עס גייט אוועק, לויט זיין מדריגה איז עס חשוב. א הרגל ווערט א טבע שני, ווי ביי א ברכה מיט התבוננות. מיטן משל פון דוד המלך'ס כינור און א פיאנא-סטרונע ווייזט ער אז שמחה למטה איז מעורר שמחה למעלה. אפשר וועט אריינקומען אין אים א ניצוץ פון א נשמה פון א צדיק, ווי די מעשה מיט רבי חיים וויטאל. א קליינע מצוה פון א איד ווערט פארמערט אויבן, וואס ער ווייזט מיט המן און דעם עומר."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Being a beinoni, who never sins though the yetzer hara still fights him, is within every Jew's choice; being a tzaddik is not, since it needs a special soul.",
+          "yi": "צו זיין א בינוני, וואס זינדיגט קיינמאל נישט כאטש דער יצר הרע קעמפט נאך מיט אים, איז אין יעדנס בחירה; צו זיין א צדיק איז נישט, ווייל דערצו דארף מען א ספעציעלע נשמה."
+        },
+        "evidence": { "segs": [10, 12, 13, 21, 22, 31], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "This explains why the oath is doubled: 'do not be a rasha' is an absolute obligation, while 'be a tzaddik' means to strive toward it.",
+          "yi": "דערמיט איז מתורץ פארוואס די שבועה איז כפל לשון: \"אל תהי רשע\" איז א פולער חיוב, און \"תהי צדיק\" מיינט מ'זאל זיך אנשטרענגען דערצו."
+        },
+        "evidence": { "segs": [72, 74, 76, 89, 90], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Moments of joy in Hashem that a beinoni reaches through contemplation are not absolute truth, yet relative to his level he fulfills 'be a tzaddik' through them.",
+          "yi": "די מינוטן פון שמחה מיטן אייבערשטן וואס א בינוני דערגרייכט דורך התבוננות זענען נישט אמת לאמיתו, אבער לויט זיין מדריגה איז ער דערמיט מקיים \"תהי צדיק\"."
+        },
+        "evidence": { "segs": [123, 124, 143, 144, 146], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Habit rules a person and becomes second nature, so repeated contemplation can make loathing evil and rejoicing in Hashem his nature.",
+          "yi": "א הרגל הערשט איבער א מענטש און ווערט א טבע שני, ממילא קען כסדר'דיגע התבוננות מאכן אז מאוס ברע און שמחה מיטן אייבערשטן ווערן זיין טבע."
+        },
+        "evidence": { "segs": [158, 163, 166, 169, 171], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "A Jew's joy in serving Hashem below arouses a matching joy above, like two strings tuned to the same note.",
+          "yi": "די שמחה פון א איד אין עבודת השם למטה איז מעורר א גלייכע שמחה אויבן, אזוי ווי צוויי סטרונעס וואס זענען געשטימט אויף איין טאן."
+        },
+        "evidence": { "segs": [283, 294, 296, 299, 305], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Through his own effort the beinoni may merit that the soul of a tzaddik enters him (ibbur), and with its help he serves Hashem with true joy.",
+          "yi": "דורך זיין אייגענע עבודה קען דער בינוני זוכה זיין אז א נשמה פון א צדיק קומט אריין אין אים בבחינת עיבור, און מיט איר הילף דינט ער דעם אייבערשטן מיט אן אמת'ע שמחה."
+        },
+        "evidence": { "segs": [453, 455, 469, 470, 472], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "A Jew's small mitzvah is multiplied as it rises through the worlds, unlike the deeds of a non-Jew, which stay below.",
+          "yi": "א קליינע מצוה פון א איד ווערט פארמערט ווען זי גייט ארויף דורך די עולמות, נישט אזוי ווי די מעשים פון א גוי וואס בלייבן אונטן."
+        },
+        "evidence": { "segs": [481, 497, 546, 547, 565, 567], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-tanya-16-2-tanya",
+      "startSeg": 0,
+      "endSeg": 91,
+      "title": {
+        "en": "Why the oath is doubled",
+        "yi": "פארוואס די שבועה איז כפל לשון"
+      },
+      "summary": {
+        "en": "The Rav reviews the difference between a tzaddik, who needs a special soul, and a beinoni, whose constant war with the yetzer hara is in every Jew's hands. He uses it to explain the double oath 'be a tzaddik and do not be a rasha', and notes that a Jew can taste joy in Hashem on Shabbos, Yom Tov or during learning, though it does not last.",
+        "yi": "דער משגיח חזר'ט איבער דעם חילוק צווישן א צדיק, וואס דארף האבן א ספעציעלע נשמה, און א בינוני, וועמענס כסדר'דיגע מלחמה מיטן יצר הרע איז אין יעדן אידנס הענט. דערמיט ערקלערט ער די כפל לשון פון דער שבועה \"תהי צדיק ואל תהי רשע\", און ער לייגט צו אז א איד קען שמעקן א תענוג אין השם יתברך שבת, יום טוב אדער ביים לערנען, נאר עס בלייבט נישט."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-16-2-tanya",
+      "startSeg": 92,
+      "endSeg": 171,
+      "title": {
+        "en": "Contemplation and habit as second nature",
+        "yi": "התבוננות און א הרגל וואס ווערט א טבע שני"
+      },
+      "summary": {
+        "en": "The Rav reads the Tanya's 'nevertheless': a person should set times to contemplate that worldly pleasures are worthless and to rejoice in Hashem. Even if this is not absolute truth for a beinoni, at his level he fulfills 'be a tzaddik'; and since habit becomes second nature, the feeling can become truly his.",
+        "yi": "דער משגיח לערנט דעם \"אף על פי כן\" אין תניא: מ'זאל אפשטעלן צייטן זיך מתבונן צו זיין אז די תענוגים פון עולם הזה זענען גארנישט ווערט, און זיך מתענג זיין אין השם. כאטש ביי א בינוני איז דאס נישט אמת לאמיתו, איז ער לויט זיין מדריגה מקיים \"תהי צדיק\"; און ווייל א הרגל ווערט א טבע שני, קען דאס געפיל טאקע ווערן זיינס."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-16-2-tanya",
+      "startSeg": 172,
+      "endSeg": 226,
+      "title": {
+        "en": "A brachah and learning said with thought",
+        "yi": "א ברכה און לערנען מיט התבוננות"
+      },
+      "summary": {
+        "en": "The Rav gives examples of building the habit: pausing a few seconds before a brachah to think for Whom and why one makes it, and before learning to think that Torah is the wisdom of Hashem. Done regularly, this becomes nature, and an awakening below brings an awakening above.",
+        "yi": "דער משגיח ברענגט ביישפילן ווי אזוי מ'בויט אזא הרגל: זיך אפשטעלן עטליכע סעקונדעס פאר א ברכה און טראכטן פאר וועמען און פארוואס מ'מאכט זי, און פארן לערנען טראכטן אז די תורה איז חכמת אלקים. אז מ'טוט עס כסדר ווערט עס א טבע, און אן אתערותא דלתתא ברענגט אן אתערותא דלעילא."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-16-2-tanya",
+      "startSeg": 227,
+      "endSeg": 311,
+      "title": {
+        "en": "Dovid's harp and the tuned string",
+        "yi": "דוד המלך'ס כינור און די געשטימטע סטרונע"
+      },
+      "summary": {
+        "en": "The Rav brings the Gemara that a harp hung over Dovid's bed and played at midnight, and explains it with a piano tuner's fork: a string tuned to the same note vibrates by itself. Dovid was tuned to Gan Eden; likewise a Jew who rejoices in Hashem arouses Hashem's joy in him, as in 'yismach Yisrael' and 'yismach Hashem'.",
+        "yi": "דער משגיח ברענגט די גמרא אז א כינור איז געהאנגען איבער דוד המלך'ס בעט און האט געשפילט חצות לילה, און ער ערקלערט עס מיט דעם גאבל פון א פיאנא-שטימער: א סטרונע וואס איז געשטימט אויף דעם זעלבן טאן הייבט אן שפילן פון זיך אליין. דוד המלך איז געווען געשטימט צום גן עדן; אזוי אויך א איד וואס פרייט זיך מיטן אייבערשטן איז מעורר אז דער אייבערשטער פרייט זיך מיט אים, ווי \"ישמח ישראל\" און \"ישמח ה'\"."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-16-2-tanya",
+      "startSeg": 312,
+      "endSeg": 435,
+      "title": {
+        "en": "Gilgul, ibbur and Rav Chaim Vital's story",
+        "yi": "גלגול, עיבור און די מעשה מיט רבי חיים וויטאל"
+      },
+      "summary": {
+        "en": "The Rav explains that a soul which failed through negligence to fulfill mitzvos returns in a full gilgul, while one that missed a mitzvah not by its fault, or a lofty soul that longs for mitzvos, comes into a living Jew for a while as an ibbur and helps him do the mitzvah. He describes unexplained times of great love and closeness as such an ibbur, and tells how Rav Chaim Vital sat on the grave of Benayahu ben Yehoyada and the Arizal stood up for him.",
+        "yi": "דער משגיח ערקלערט אז א נשמה וואס האט בפשיעה נישט מקיים געווען מצוות קומט צוריק אין א פולן גלגול, אבער איינע וואס האט א מצוה נישט געקענט מקיים זיין שלא בפשיעה, אדער א הויכע נשמה וואס האט א חשק צו מצוות, קומט אריין אין א לעבעדיגן איד אויף א וויילע בבחינת עיבור און העלפט אים טאן די מצוה. ער שילדערט צייטן פון א גרויסע אהבה און דביקות וואס מ'ווייסט נישט פון וואנעט, אלס אזא עיבור, און דערציילט ווי רבי חיים וויטאל האט זיך געזעצט אויפן קבר פון בניהו בן יהוידע און דער אריז\"ל איז פאר אים אויפגעשטאנען."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-16-2-tanya",
+      "startSeg": 436,
+      "endSeg": 499,
+      "title": {
+        "en": "A tzaddik's soul enters him; the sundial",
+        "yi": "א נשמה פון א צדיק קומט אריין; דער זונען-זייגער"
+      },
+      "summary": {
+        "en": "The Rav returns to the Tanya: one who accustoms himself to rejoice in Hashem will play the music of joy on his soul, and perhaps a spirit from above, a spark of a tzaddik's soul, will come into him so that he serves with true joy. This is a third way to fulfill 'be a tzaddik', and the joy he causes above is far greater than what he feels, like a sundial's shadow moving an inch while the sun moves millions of miles.",
+        "yi": "דער משגיח קערט זיך אום צום תניא: ווער עס געוואוינט זיך איין צו זיין שמח בה', וועט שפילן די טענער פון שמחה אויף זיין נשמה, און אפשר וועט אויף אים אויסגעגאסן ווערן א רוח ממרום, א ניצוץ פון א נשמה פון א צדיק, אז ער זאל דינען מיט אן אמת'ע שמחה. דאס איז א דריטער אופן ווי אזוי מקיים צו זיין \"תהי צדיק\", און די שמחה וואס ער מאכט אויבן איז אסאך גרעסער ווי וואס ער שפירט, אזוי ווי דער שאטן פון א זונען-זייגער רוקט זיך א אינטש ווען די זון רוקט זיך מיליאנען מייל."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-16-2-tanya",
+      "startSeg": 500,
+      "endSeg": 597,
+      "title": {
+        "en": "Haman's ten thousand talents and the omer",
+        "yi": "המן'ס עשרת אלפים ככר כסף און דער עומר"
+      },
+      "summary": {
+        "en": "The Rav repeats a thought he said at the Pesach seudah: the Gemara tells that Haman found Mordechai teaching the laws of the omer's handful and said it outweighed his ten thousand talents. He explains that a Jew's mitzvah rises and is multiplied through the worlds while a non-Jew's deed stays below, and he distinguishes 'aseres' (a collective, a multiplication) from 'isaron' (a division, as in 'ishon', a small person in the eye).",
+        "yi": "דער משגיח חזר'ט איבער א ווארט וואס ער האט געזאגט ביי דער סעודה פון פסח: די גמרא דערציילט אז המן האט געטראפן מרדכי לערנען די הלכות פון קמיצת העומר, און האט געזאגט אז דאס האט איבערגעשטיגן זיינע עשרת אלפים ככר כסף. ער ערקלערט אז א מצוה פון א איד גייט ארויף און ווערט פארמערט דורך די עולמות, און די מעשה פון א גוי בלייבט אונטן, און ער טייטשט דעם חילוק צווישן \"עשרת\" (א קיבוץ, א פארמערונג) און \"עשרון\" (א טיילונג, ווי \"אישון\", א קליין מענטשל אין אויג)."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-16-2-tanya",
+      "startSeg": 598,
+      "endSeg": 657,
+      "title": {
+        "en": "The barley omer is lifted up",
+        "yi": "דער עומר פון שעורים ווערט אויפגעהויבן"
+      },
+      "summary": {
+        "en": "The Rav explains that the omer, brought of barley, animal food, like the minchas sotah, is the cheapest offering, yet it is called the omer of waving because it is lifted up and turns from animal into man, raising the Jews day by day until Shavuos. He concludes that the beinoni's small joy below arouses great joy above, and with the help of the soul that comes into him he fulfills 'be a tzaddik' in truth.",
+        "yi": "דער משגיח ערקלערט אז דער עומר, געבראכט פון שעורים, מאכל בהמה, ווי די מנחת סוטה, איז דער ביליגסטער קרבן, און פון דעסטוועגן הייסט ער עומר התנופה ווייל ער ווערט אויפגעהויבן און ווערט פון בהמה צו אדם, און הייבט אויף די אידן טאג נאך טאג ביז שבועות. ער ענדיגט אז די קליינע שמחה פון א בינוני למטה איז מעורר א גרויסע שמחה למעלה, און מיט דער הילף פון דער נשמה וואס קומט אריין אין אים איז ער באמת מקיים \"תהי צדיק\"."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "ובזה יא וואן כיפה לשון השוואה",
+      "work": "Tanya",
+      "ref": "Tanya ch. 14",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [1, 2, 23, 24], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "משביעים אותו תהי צדיק ואל תהי רשע",
+      "work": "Gemara Niddah",
+      "ref": "Niddah 30b",
+      "sefariaRef": "Niddah 30b",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [27, 72, 73, 74], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "די קשיאות וואס ער האט געפרעגט אין דעם ערשטן פרק",
+      "work": "Tanya",
+      "ref": "Tanya ch. 1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [24, 25], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אך אף אפעל פי קיין ... כמת מלוציאה",
+      "work": "Tanya",
+      "ref": "Tanya ch. 14",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [92, 93, 106, 110], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "יעקב אבינה א בריח איז התיחה און א מבריח מן הקצה לכצה",
+      "work": "Tanya",
+      "ref": "Tanya ch. 13",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [136, 137, 138], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "ועוד שההרגל הכל דבר שולט אים ... טבע שני",
+      "work": "Tanya",
+      "ref": "Tanya ch. 14",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [158, 165, 167, 172], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "בסורתו לטאטע וסורתו לילה",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [222, 224, 285], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "כינע הוילה מלם ראש אסאב של דוד",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 3b",
+      "sefariaRef": "Berakhot 3b",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [227, 228, 230], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "מרב טוב וכשר צפונתו",
+      "work": "Tehillim",
+      "ref": "Tehillim 31:20",
+      "sefariaRef": "Psalms 31:20",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [267, 273], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "יתמיך ישראל ביוסף",
+      "work": "Tehillim",
+      "ref": "Tehillim 149:2",
+      "sefariaRef": "Psalms 149:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [300], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "יתמיך השם באמעסף",
+      "work": "Tehillim",
+      "ref": "Tehillim 104:31",
+      "sefariaRef": "Psalms 104:31",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [301], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "רבי חיים וויטל ברענגט אין זיין ספר הגלגלים",
+      "work": "Sefer HaGilgulim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [409, 415, 427], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "בני יואל בן יואדא בן ישכר רב פולמים, די קאפ סעל",
+      "work": "Shmuel II",
+      "ref": "Shmuel II 23:20",
+      "sefariaRef": "II Samuel 23:20",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [430, 431], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אפשר וועט עס כזכר זיין אז יעירא עליב רוח מי מרים",
+      "work": "Tanya",
+      "ref": "Tanya ch. 14",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [437, 448, 451, 454], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "שמחה צדיקים ביישם",
+      "work": "Tehillim",
+      "ref": "Tehillim 97:12",
+      "sefariaRef": "Psalms 97:12",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [457, 458, 460], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "שטעט אין די גמרא אז פון האמען איז געקומען צו מרדכי ... עשו מלא קמצא",
+      "work": "Gemara Megillah",
+      "ref": "Megillah 16a",
+      "sefariaRef": "Megillah 16a",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [502, 506, 507, 513], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "ווערט אנגערופן אין די משנה יום הנאת",
+      "work": "Mishnah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [522], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "דער ר' משה חיים ליצענטאל",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [558, 560, 565], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "זאגט רשת פרשת בוי ספטענע של ימים",
+      "work": "Rashi",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [581, 582, 583], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "יצרנו כאישון עיני",
+      "work": "Tehillim",
+      "ref": "Tehillim 17:8",
+      "sefariaRef": "Psalms 17:8",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [594, 595], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ביי די ברכה פון ספירת עומר ... בגימטך אדם",
+      "work": "Siddur",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [649], "confidence": 0.6 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The oath's two halves are not of equal weight: 'do not be a rasha' is fully in a person's hands, while 'be a tzaddik' is a charge to strive, since being a tzaddik is not given to free choice.",
+        "yi": "די צוויי העלפטן פון דער שבועה זענען נישט פון גלייכע וואג: \"אל תהי רשע\" איז אינגאנצן אין מענטשנס הענט, און \"תהי צדיק\" איז א הוראה זיך אנצושטרענגען, ווייל צו זיין א צדיק איז נישט אין דער בחירה."
+      },
+      "evidence": { "segs": [21, 22, 89, 90, 91], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "Truth is measured by the person's level: a passing feeling of loathing for worldly pleasure is not truth for a complete tzaddik, but for the beinoni it is his truth, since he can renew it tomorrow at davening or next Shabbos.",
+        "yi": "אמת ווערט געמאסטן לויט דער מדריגה פונעם מענטש: א פארבייגייענדיגע הרגשה פון מאוס זיין אין תענוגי עולם הזה איז נישט אמת ביי א צדיק גמור, אבער ביים בינוני איז דאס זיין אמת, ווייל ער קען עס באנייען מארגן ביים דאווענען אדער קומענדיגן שבת."
+      },
+      "evidence": { "segs": [140, 141, 142, 155, 156], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Dovid's harp played at midnight like a piano string vibrating in response to a tuning fork: Dovid's heart was tuned to the song of the tzaddikim in Gan Eden, so it awoke by itself, with no alarm clock.",
+        "yi": "דוד המלך'ס כינור האט געשפילט חצות לילה אזוי ווי א פיאנא-סטרונע וואס ציטערט ווען מ'קלאפט דעם גאבל: דוד'ס הארץ איז געווען געשטימט צו דער שירה פון די צדיקים אין גן עדן, ממילא איז עס אויפגעוואכט פון זיך אליין, אן א וועקער."
+      },
+      "evidence": { "segs": [248, 260, 270, 276, 278], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "An ibbur benefits both souls: the Jew can serve with a love and joy beyond his own level, and the departed tzaddik gets to do once more the mitzvah he longed for or was missing.",
+        "yi": "אן עיבור איז א תיקון פאר ביידע נשמות: דער איד קען דינען מיט אן אהבה און שמחה העכער פון זיין מדריגה, און דער צדיק וואס איז שוין אוועק קען נאכאמאל טאן די מצוה וואס ער האט געגליסט אדער וואס האט אים געפעלט."
+      },
+      "evidence": { "segs": [392, 393, 404, 405, 406, 408], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Haman's ten thousand talents of charity lost to the barley omer because a non-Jew's deed stays below, while a Jew's cheapest offering is lifted (tenufah) and multiplied in the upper worlds.",
+        "yi": "המן'ס עשרת אלפים ככר כסף צדקה האבן פארלוירן קעגן דעם עומר פון שעורים, ווייל די מעשה פון א גוי בלייבט אונטן, און דער ביליגסטער קרבן פון א איד ווערט אויפגעהויבן, עומר התנופה, און פארמערט אין די עולמות העליונים."
+      },
+      "evidence": { "segs": [617, 618, 622, 625, 632, 633], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "'Aseres' denotes a collective and multiplication while 'isaron' denotes division, as 'ishon' (the pupil) means a small person reflected in the eye.",
+        "yi": "\"עשרת\" באדייט א קיבוץ און א פארמערונג, און \"עשרון\" א טיילונג, אזוי ווי \"אישון\" מיינט א קליין מענטשל וואס מ'זעט אין אויג."
+      },
+      "evidence": { "segs": [578, 587, 591, 593, 597], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "Rav Chaim Vital at the grave of Benayahu ben Yehoyada",
+        "yi": "רבי חיים וויטאל אויפן קבר פון בניהו בן יהוידע"
+      },
+      "retelling": {
+        "en": "Rav Chaim Vital records in his Sefer HaGilgulim that he once came to his Rebbe, the Arizal, and the Arizal stood up for him. Without knowing it, Rav Chaim Vital had sat on the grave of Benayahu ben Yehoyada, one of the forgotten graves of tzaddikim the Arizal had revealed around Tzfas, and had concentrated on certain kavanos there. The Arizal told him that the soul of Benayahu ben Yehoyada was now with him as an ibbur. The Rav adds that the sefarim say the Ben Ish Chai also merited this, which is why his sefarim are named after that passuk.",
+        "yi": "רבי חיים וויטאל ברענגט אין זיין ספר הגלגולים אז ער איז אמאל געקומען צו זיין רבי'ן, דעם אריז\"ל, און דער אריז\"ל איז פאר אים אויפגעשטאנען. נישט וויסנדיג האט רבי חיים וויטאל זיך געזעצט אויפן קבר פון בניהו בן יהוידע, איינער פון די פארגעסענע קברי צדיקים וואס דער אריז\"ל האט מגלה געווען ארום צפת, און האט דארט מכוון געווען געוויסע כוונות. דער אריז\"ל האט אים געזאגט אז יעצט איז ביי אים בבחינת עיבור די נשמה פון בניהו בן יהוידע. דער משגיח לייגט צו אז אין ספרים שטייט אז דער בן איש חי איז אויך זוכה געווען דערצו, און דערפאר הייסן זיינע ספרים נאך יענעם פסוק."
+      },
+      "people": ["Rav Chaim Vital", "the Arizal", "Benayahu ben Yehoyada", "the Ben Ish Chai"],
+      "evidence": { "segs": [409, 411, 415, 421, 427, 428], "confidence": 0.8 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why is the oath given before birth doubled, 'be a tzaddik' and also 'do not be a rasha'?",
+        "yi": "פארוואס איז די שבועה פאר דער געבורט כפל לשון, \"תהי צדיק\" און אויך \"אל תהי רשע\"?"
+      },
+      "answer": {
+        "en": "Because being a tzaddik is not in a person's choice, so 'be a tzaddik' means to strive for it, while not being a rasha is in everyone's choice.",
+        "yi": "ווייל צו זיין א צדיק איז נישט אין מענטשנס בחירה, ממילא מיינט \"תהי צדיק\" מ'זאל זיך אנשטרענגען, און נישט זיין קיין רשע איז אין יעדנס בחירה."
+      },
+      "questionSegs": [23, 24, 27],
+      "answerSegs": [70, 72, 76, 89, 90],
+      "confidence": 0.85
+    },
+    {
+      "question": {
+        "en": "If a beinoni has no choice to truly loathe evil and rejoice in Hashem, how does he fulfill 'be a tzaddik' at all?",
+        "yi": "אויב א בינוני האט נישט קיין בחירה באמת מאוס צו זיין ברע און זיך פרייען מיטן אייבערשטן, ווי אזוי איז ער בכלל מקיים \"תהי צדיק\"?"
+      },
+      "answer": {
+        "en": "Through contemplation he reaches moments that are true at his level; through habit it becomes second nature; and he may merit a tzaddik's soul entering him, with whose help his joy is true.",
+        "yi": "דורך התבוננות דערגרייכט ער מינוטן וואס זענען אמת לויט זיין מדריגה; דורך הרגל ווערט עס א טבע שני; און ער קען זוכה זיין אז א נשמה פון א צדיק קומט אריין אין אים, און מיט איר הילף איז זיין שמחה אמת."
+      },
+      "questionSegs": [64, 70],
+      "answerSegs": [143, 146, 166, 471, 475],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why did Haman say the omer's handful outweighed his ten thousand talents of silver?",
+        "yi": "פארוואס האט המן געזאגט אז דער קומץ פונעם עומר האט איבערגעשטיגן זיינע עשרת אלפים ככר כסף?"
+      },
+      "answer": {
+        "en": "Because a non-Jew's deed stays below, while a Jew's mitzvah, even the cheapest offering, is lifted up and multiplied in the upper worlds.",
+        "yi": "ווייל די מעשה פון א גוי בלייבט אונטן, און א מצוה פון א איד, אפילו דער ביליגסטער קרבן, ווערט אויפגעהויבן און פארמערט אין די עולמות העליונים."
+      },
+      "questionSegs": [513, 617],
+      "answerSegs": [618, 622, 625, 633],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why was the omer brought of barley rather than fine wheat flour?",
+        "yi": "פארוואס האט מען געבראכט דעם עומר פון שעורים און נישט פון סולת חיטים?"
+      },
+      "answer": {
+        "en": "Barley is animal food, making it the lowliest offering, like the minchas sotah; yet it is lifted up and turns from animal into man, raising the Jews until on Shavuos they bring the two loaves of wheat, food of man.",
+        "yi": "שעורים איז מאכל בהמה, ממילא איז עס דער נידריגסטער קרבן, ווי די מנחת סוטה; פון דעסטוועגן ווערט עס אויפגעהויבן און ווערט פון בהמה צו אדם, און הייבט אויף די אידן ביז שבועות ברענגט מען די שתי הלחם פון חיטים, מאכל אדם."
+      },
+      "questionSegs": [598, 601],
+      "answerSegs": [605, 608, 648, 653],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says a person should set times for a cheshbon hanefesh, contemplating why man was created and that worldly pleasures have no substance.",
+        "yi": "דער משגיח זאגט אז א מענטש דארף אפשטעלן געוויסע צייטן פאר א חשבון הנפש, זיך מתבונן צו זיין צוליב וואס א מענטש איז באשאפן און אז די תענוגים פון דער וועלט האבן נישט קיין ממשות."
+      },
+      "evidence": { "segs": [99, 100, 102, 104], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that before a brachah one should take a few seconds to think for Whom and why he makes it, until it becomes his nature.",
+        "yi": "דער משגיח זאגט אז פאר א ברכה זאל מען זיך נעמען עטליכע סעקונדעס צו טראכטן פאר וועמען און פארוואס מ'מאכט זי, ביז עס ווערט א טבע."
+      },
+      "evidence": { "segs": [186, 187, 188, 189, 203, 208], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that before learning one should pause and think why and before Whom he learns, that the Torah is the wisdom of Hashem.",
+        "yi": "דער משגיח זאגט אז פארן לערנען זאל מען זיך מיישב זיין פארוואס און פאר וועמען מ'לערנט, אז די תורה איז חכמת אלקים."
+      },
+      "evidence": { "segs": [211, 212, 214, 217], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "Tanya chapter 14",
+    "beinoni and tzaddik",
+    "the oath before birth",
+    "habit as second nature",
+    "joy in serving Hashem",
+    "ibbur neshamah",
+    "Dovid's harp at midnight",
+    "awakening below and above",
+    "the omer offering",
+    "Haman and Mordechai"
+  ],
+  "concepts": [
+    { "he": "בינוני", "heardAs": ["בעניני", "בענינו", "בנין ובדם", "בןינו", "דברינו"] },
+    { "he": "כפל לשון השבועה", "heardAs": ["כיפה לשון השוואה", "כפל לשון השוואה"] },
+    { "he": "תהי צדיק ואל תהי רשע", "heardAs": ["תהי צדיק וואלט והוא רשע", "אל תהיר רשע"] },
+    { "he": "חלל השמאלי", "heardAs": ["חלל התמאלי"] },
+    { "he": "מאוס ברע", "heardAs": ["מועס ברע", "מהי' ברעה"] },
+    { "he": "התענגות על ה'", "heardAs": ["התאנגות על השם", "מתנוג על השם"] },
+    { "he": "הרגל נעשה טבע שני", "heardAs": ["ההרגל הכל דבר שולט", "טבע שני", "טוב השני"] },
+    { "he": "אתערותא דלתתא אתערותא דלעילא", "heardAs": ["בסורתו לטאטע וסורתו לילה", "בסורתא דא לצייטא"] },
+    { "he": "עיבור נשמה", "heardAs": ["איבערנשמה", "איבער די נשמה", "בעיבר'ן נשמה"] },
+    { "he": "גלגול", "heardAs": ["מגלגל"] },
+    { "he": "רוח ממרום", "heardAs": ["רוח מי מרים"] },
+    { "he": "עומר התנופה", "heardAs": ["אמת התנפה", "עומר התנפה", "אומל"] },
+    { "he": "עשרון", "heardAs": ["איסורון"] },
+    { "he": "קמיצה", "heardAs": ["קמוצא", "קמצא"] }
+  ],
+  "people": [
+    { "name": "the Alter Rebbe (Ba'al HaTanya)", "heardAs": ["בעל התניא", "בארא טניא"] },
+    { "name": "Dovid HaMelech", "heardAs": ["דוד המלך", "דוד"] },
+    { "name": "Rav Chaim Vital", "heardAs": ["רבי חיים וויטל", "רבי חיים ויטל"] },
+    { "name": "the Arizal", "heardAs": ["אריזל", "אריה קדיש", "ארי הקדוש"] },
+    { "name": "Benayahu ben Yehoyada", "heardAs": ["בני יואל בני ידע", "בני יואל בן יואדא"] },
+    { "name": "the Ben Ish Chai", "heardAs": ["בן נשחי"] },
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינו"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יעקב אבינה"] },
+    { "name": "Haman", "heardAs": ["האמען", "המן"] },
+    { "name": "Mordechai", "heardAs": ["מרדכי"] },
+    { "name": "Rav Moshe Chaim Luzzatto", "heardAs": ["ר' משה חיים ליצענטאל"] },
+    { "name": "Rashi", "heardAs": ["רשת"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair to poor; the Tanya and Gemara quotations are heavily garbled but recoverable from context (the text read is the end of Tanya ch. 14, although the header gives perek 15). The quotation at seg 106-111 and the Gemara about the minchas sotah at segs 603-606 could only be partly recovered; segs 637-641 on 'milui' are unintelligible. Seg 232-233 skips about 13 seconds of audio."
+}

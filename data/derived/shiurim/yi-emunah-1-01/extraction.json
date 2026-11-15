@@ -1,0 +1,437 @@
+{
+  "shiurId": "yi-emunah-1-01",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains why emunah, the first mitzvah of the heart, is not just one mitzvah among the 613 but the foundation on which all of them stand.",
+      "yi": "דער משגיח ערקלערט פארוואס אמונה, די ערשטע מצוה פונעם הארץ, איז נישט סתם איינע פון די תרי\"ג מצוות נאר דער יסוד אויף וואס זיי אלע שטייען."
+    },
+    "abstract": {
+      "en": "The Rav opens with the order of the Sefer Chareidim, which arranges the mitzvos by the limbs of the body and begins with the heart; its first mitzvah is emunah, from the verse 'Anochi Hashem Elokecha'. The 613 mitzvos build the body with which a person will rise at techiyas hameisim, so one who lacks emunah, a mitzvah of the heart, cannot rise at all. Yaakov's request for bread and a garment hints at Torah as the soul's food and mitzvos as its garments in the next world. He discusses gilgul and how learning about a mitzvah one cannot keep counts for it. He brings the Gemara in Makkos that Chavakuk based all the mitzvos on emunah, then the dispute whether emunah is counted among the 613: the Ramban compares it to a building's basement. Every mitzvah is a command, but 'Anochi' is a statement, and it names the exodus from Egypt, which the whole people saw.",
+      "yi": "דער משגיח עפנט מיטן סדר פונעם ספר חרדים, וואס שטעלט אוועק די מצוות לויט די אברים פונעם גוף און הייבט אן מיטן הארץ; די ערשטע מצוה דארט איז אמונה, פונעם פסוק \"אנכי ה' אלקיך\". די תרי\"ג מצוות בויען דעם גוף מיט וואס א מענטש וועט אויפשטיין ביי תחיית המתים, און ממילא קען איינער וואס פעלט אים אמונה, א מצוה פונעם הארץ, אינגאנצן נישט אויפשטיין. יעקב אבינו'ס בקשה אויף לחם און בגד איז א רמז אויף תורה ווי די שפייז פון דער נשמה און מצוות ווי אירע מלבושים אין עולם הבא. ער רעדט וועגן גלגול, און אז לערנען וועגן א מצוה וואס מ'קען נישט מקיים זיין ווערט גערעכנט. ער ברענגט די גמרא אין מכות אז חבקוק האט אוועקגעשטעלט אלע מצוות אויף אמונה, און דערנאך די מחלוקת צי אמונה ווערט גערעכנט צווישן די תרי\"ג: דער רמב\"ן גלייכט עס צום בעיסמענט פון א געביידע. יעדע מצוה איז א ציווי, אבער \"אנכי\" איז א מאמר, און עס דערמאנט יציאת מצרים וואס דאס גאנצע פאלק האט געזען."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The Sefer Chareidim orders the mitzvos by the limbs, beginning with the heart, and the first mitzvah of the heart is emunah.",
+          "yi": "דער ספר חרדים שטעלט אוועק די מצוות לויט די אברים, ער הייבט אן מיטן הארץ, און די ערשטע מצוה פונעם הארץ איז אמונה."
+        },
+        "evidence": { "segs": [13, 14, 16, 21, 22], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Each limb is built for techiyas hameisim by the mitzvah connected to it, and without emunah, a mitzvah of the heart, a person cannot rise at all.",
+          "yi": "יעדער אבר ווערט צוגעגרייט פאר תחיית המתים דורך דער מצוה וואס האט א שייכות מיט אים, און אן אמונה, א מצוה פונעם הארץ, קען א מענטש בכלל נישט אויפשטיין."
+        },
+        "evidence": { "segs": [44, 45, 53, 54, 55], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Torah is the soul's food in Gan Eden and the mitzvos are its garments.",
+          "yi": "די תורה איז די שפייז פון דער נשמה אין גן עדן, און די מצוות זענען אירע מלבושים."
+        },
+        "evidence": { "segs": [84, 85, 89, 90, 92], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The Rishonim dispute whether emunah is counted among the 613; the Ramban holds it is not, because it is their foundation, like the basement of a building.",
+          "yi": "די ראשונים קריגן זיך צי אמונה ווערט גערעכנט צווישן די תרי\"ג מצוות; לויטן רמב\"ן ווערט עס נישט גערעכנט, ווייל עס איז דער יסוד פון זיי, ווי דער בעיסמענט פון א געביידע."
+        },
+        "evidence": { "segs": [209, 210, 211, 229, 230, 231], "confidence": 0.7 }
+      },
+      {
+        "text": {
+          "en": "Every mitzvah, even those of the heart, is given as a command, but 'Anochi Hashem Elokecha' is worded as a statement.",
+          "yi": "יעדע מצוה, אפילו די מצוות התלויות בלב, איז געגעבן געווארן אלס א ציווי, אבער \"אנכי ה' אלקיך\" שטייט ווי א מאמר."
+        },
+        "evidence": { "segs": [261, 264, 265, 297, 302], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Jewish emunah is based on the exodus from Egypt, where the whole people saw that Hashem controls nature.",
+          "yi": "די אמונה פון אידן איז געבויט אויף יציאת מצרים, וואו דאס גאנצע אידישע פאלק האט געזען אז דער רבונו של עולם פירט די טבע."
+        },
+        "evidence": { "segs": [320, 321, 322, 324, 326], "confidence": 0.7 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-emunah-01-a-emunah-yiddish",
+      "startSeg": 0,
+      "endSeg": 59,
+      "title": {
+        "en": "Sefer Chareidim: the heart and the first mitzvah",
+        "yi": "ספר חרדים: דאס הארץ און די ערשטע מצוה"
+      },
+      "summary": {
+        "en": "The Rav explains that the Sefer Chareidim orders the mitzvos by the limbs, starting with the heart, whose first mitzvah is emunah. He explains that the 613 mitzvos build the body for techiyas hameisim, so a person without emunah cannot rise, and mentions the garment made of the mitzvos.",
+        "yi": "דער משגיח ערקלערט אז דער ספר חרדים שטעלט אוועק די מצוות לויט די אברים און הייבט אן מיטן הארץ, וואס זיין ערשטע מצוה איז אמונה. ער איז מסביר אז די תרי\"ג מצוות בויען דעם גוף פאר תחיית המתים, ממילא קען א איד אן אמונה נישט אויפשטיין, און ער דערמאנט דעם מלבוש וואס איז געמאכט פון די מצוות."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-01-a-emunah-yiddish",
+      "startSeg": 60,
+      "endSeg": 146,
+      "title": {
+        "en": "Bread and garment: Torah and mitzvos",
+        "yi": "לחם און בגד: תורה און מצוות"
+      },
+      "summary": {
+        "en": "The Rav asks why Yaakov, in danger, asked only for bread and a garment, and answers that in the next world Torah is the soul's food and mitzvos its garments. He discusses gilgul for a mitzvah not yet kept, the mitzvos that cannot be kept in galus, and how learning about a mitzvah counts for it.",
+        "yi": "דער משגיח פרעגט פארוואס יעקב אבינו, אין א סכנה, האט נאר געבעטן לחם און בגד, און ענטפערט אז אויף יענער וועלט איז די תורה די שפייז פון דער נשמה און די מצוות אירע מלבושים. ער רעדט וועגן גלגול פאר א מצוה וואס מ'האט נישט מקיים געווען, וועגן די מצוות וואס מ'קען נישט מקיים זיין אין גלות, און אז לערנען וועגן א מצוה ווערט גערעכנט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-01-a-emunah-yiddish",
+      "startSeg": 147,
+      "endSeg": 197,
+      "title": {
+        "en": "Why learn emunah; Chavakuk's one mitzvah",
+        "yi": "פארוואס לערנען אמונה; חבקוק'ס איין מצוה"
+      },
+      "summary": {
+        "en": "Returning to emunah, the Rav says that without it a Jew has no connection to the World to Come, and explains why the shiurim came to focus on this one mitzvah. He brings the Gemara in Makkos that Chavakuk based all the mitzvos on 'tzaddik be'emunaso yichyeh', and explains it means concentrating on one mitzvah through which all are kept.",
+        "yi": "צוריקגייענדיג צו אמונה זאגט דער משגיח אז אן איר האט א איד קיין שייכות נישט מיט עולם הבא, און ערקלערט פארוואס די שיעורים זענען געבליבן ביי דער איינער מצוה. ער ברענגט די גמרא אין מכות אז חבקוק האט אוועקגעשטעלט אלע מצוות אויף \"צדיק באמונתו יחיה\", און איז מסביר אז דאס מיינט זיך קאנצענטרירן אויף איין מצוה דורך וועלכע מ'איז מקיים אלע."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-01-a-emunah-yiddish",
+      "startSeg": 198,
+      "endSeg": 263,
+      "title": {
+        "en": "Is emunah one of the 613? The basement",
+        "yi": "איז אמונה איינע פון די תרי\"ג? דער בעיסמענט"
+      },
+      "summary": {
+        "en": "The Rav explains that the Gemara does not list the 613, so the Rishonim counted them and disagree on some, emunah among them. The Rambam counts it; the Ramban does not, because it is the foundation of the mitzvos, like a basement that is not counted as a room yet holds the whole building. He adds that every mitzvah in the Torah is worded as a command.",
+        "yi": "דער משגיח ערקלערט אז די גמרא רעכנט נישט אויס די תרי\"ג מצוות, ממילא האבן די ראשונים זיי גערעכנט און זיך געקריגט אויף געוויסע, צווישן זיי אמונה. דער רמב\"ם רעכנט עס; דער רמב\"ן רעכנט עס נישט, ווייל עס איז דער יסוד פון די מצוות, ווי א בעיסמענט וואס ווערט נישט גערעכנט פאר א צימער און האלט דאך די גאנצע געביידע. ער לייגט צו אז יעדע מצוה אין דער תורה שטייט אין א לשון פון ציווי."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-emunah-01-a-emunah-yiddish",
+      "startSeg": 264,
+      "endSeg": 349,
+      "title": {
+        "en": "A command to love; 'Anochi' and the exodus",
+        "yi": "א ציווי צו ליב האבן; \"אנכי\" און יציאת מצרים"
+      },
+      "summary": {
+        "en": "The Rav explains that even love and fear of Hashem are commanded, since every Jew already loves Hashem and must only reveal it, whereas 'Anochi' is a statement, not a command. He asks why it mentions the exodus rather than creation, and answers that our emunah rests on the exodus, which the whole people saw; the end of the recording is badly garbled.",
+        "yi": "דער משגיח ערקלערט אז אפילו אהבת ה' און יראת ה' זענען א ציווי, ווייל יעדער איד האט שוין ליב דעם רבונו של עולם און דארף עס נאר ברענגען לידי גילוי, אבער \"אנכי\" איז א מאמר, נישט קיין ציווי. ער פרעגט פארוואס עס דערמאנט יציאת מצרים און נישט בריאת העולם, און ענטפערט אז אונזער אמונה איז געבויט אויף יציאת מצרים וואס דאס גאנצע פאלק האט געזען; דער סוף פון דער אויפנאמע איז שטארק צעמישט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "ספר חרדים",
+      "work": "Sefer Chareidim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [7, 8, 13, 16], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "אנחי ה' אלהיך השרי'תו חמירת מצרים",
+      "work": "Shemos",
+      "ref": "Shemos 20:2",
+      "sefariaRef": "Exodus 20:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [21, 171, 172, 299], "confidence": 0.9 }
+    },
+    {
+      "heardAs": "ונתן לי לחם ולחל, הבגד וללבוש",
+      "work": "Bereishis",
+      "ref": "Bereishis 28:20",
+      "sefariaRef": "Genesis 28:20",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [61, 74], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "ויהו גל ולשתלי לחם וסימל",
+      "work": "Devarim",
+      "ref": "Devarim 10:18",
+      "sefariaRef": "Deuteronomy 10:18",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [66, 67, 68], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "רשע ברענגט א שטיפל פונעם מדרש אויפן ארט",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [69, 70, 71, 73], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די חפץ חיים ברענגט עס אין זיין ספר אויף מצוות",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [126], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "דער גמרא זאגט מלכות אז תי-יאג מצוות ניתן למשה רבינו בהסיני",
+      "work": "Gemara Makkos",
+      "ref": "Makkos 23b-24a",
+      "sefariaRef": "Makkot 23b",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [180, 183, 190, 198], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער צדיק באמונה יחיד",
+      "work": "Chavakuk",
+      "ref": "Chavakuk 2:4",
+      "sefariaRef": "Habakkuk 2:4",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [186, 187], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "דער רמב״ם רעכנט עס אלס א מצוה",
+      "work": "Sefer HaMitzvos of the Rambam",
+      "ref": "Sefer HaMitzvos, positive commandment 1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [211, 212, 295], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "זאגט אריין באן",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [176, 177, 228, 229, 230], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "די שמעג",
+      "work": "Halachos Gedolos",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [202], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "זכרות יום השבת מקדש",
+      "work": "Shemos",
+      "ref": "Shemos 20:8",
+      "sefariaRef": "Exodus 20:8",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [249, 250], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "שבט באהבת את השם",
+      "work": "Devarim",
+      "ref": "Devarim 6:5",
+      "sefariaRef": "Deuteronomy 6:5",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [269, 270], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "את השם אלוקח את שירה",
+      "work": "Devarim",
+      "ref": "Devarim 6:13",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [289, 291, 292], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Because emunah belongs to the heart, and the heart and mind are life itself, a person who lacks emunah does not merely lack one limb at techiyas hameisim but cannot rise at all.",
+        "yi": "ווייל אמונה געהערט צום הארץ, און דאס הארץ און דער מוח זענען דאס לעבן אליין, פעלט ביי א מענטש אן אמונה נישט נאר איין אבר ביי תחיית המתים, נאר ער קען בכלל נישט אויפשטיין."
+      },
+      "evidence": { "segs": [51, 52, 53, 54, 55], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Yaakov, fleeing danger, asked only for bread and a garment because he meant the soul's needs in the next world: Torah as its food and mitzvos as its garments.",
+        "yi": "יעקב אבינו, אנטלויפנדיג פון א סכנה, האט נאר געבעטן לחם און בגד, ווייל ער האט געמיינט די באדערפענישן פון דער נשמה אויף יענער וועלט: תורה אלס שפייז און מצוות אלס מלבושים."
+      },
+      "evidence": { "segs": [75, 79, 80, 83, 92], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Just as clothing costs more than food, mitzvos cost more than Torah: anyone can learn, but a mezuzah or tefillin costs money.",
+        "yi": "אזוי ווי מלבושים קאסטן מער ווי שפייז, אזוי קאסטן מצוות מער ווי תורה: לערנען קען יעדער, אבער א מזוזה אדער תפילין קאסט געלט."
+      },
+      "evidence": { "segs": [94, 96, 97, 100], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Chavakuk basing all the mitzvos on emunah does not free anyone from the others; it means concentrating on one mitzvah through which all the others are kept.",
+        "yi": "וואס חבקוק האט אוועקגעשטעלט אלע מצוות אויף אמונה מיינט נישט אז מ'איז פטור פון די אנדערע; עס מיינט זיך קאנצענטרירן אויף איין מצוה, און דורך איר מקיים זיין אלע."
+      },
+      "evidence": { "segs": [191, 192, 193, 194, 195], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Emunah is like a building's basement: no one counts it as a room, yet it holds the furnace and boiler that make the whole building livable.",
+        "yi": "אמונה איז ווי דער בעיסמענט פון א געביידע: קיינער רעכנט אים נישט פאר א צימער, און פונדעסטוועגן געפינט זיך דארט דער אויוון און דער בוילער וואס מאכן די גאנצע געביידע באוואוינבאר."
+      },
+      "evidence": { "segs": [220, 222, 223, 224, 230, 231], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Love of Hashem can be commanded, unlike loving a food, because every Jew already loves Hashem inwardly; the mitzvah is to bring it out into the open.",
+        "yi": "מ'קען באפעלן ליב צו האבן דעם רבונו של עולם, נישט ווי ליב צו האבן א מאכל, ווייל יעדער איד האט אים שוין ליב אינעווייניג; די מצוה איז עס צו ברענגען לידי גילוי."
+      },
+      "evidence": { "segs": [278, 281, 282, 283, 287], "confidence": 0.75 }
+    }
+  ],
+  "stories": [],
+  "questions": [
+    {
+      "question": {
+        "en": "Why did Yaakov, fleeing into danger, ask only for bread to eat and a garment to wear?",
+        "yi": "פארוואס האט יעקב אבינו, אנטלויפנדיג אין א סכנה, נאר געבעטן לחם לאכול און בגד ללבוש?"
+      },
+      "answer": {
+        "en": "He meant the soul's needs in the next world: Torah is its food and mitzvos are its garments.",
+        "yi": "ער האט געמיינט די באדערפענישן פון דער נשמה אויף יענער וועלט: די תורה איז די שפייז און די מצוות זענען די מלבושים."
+      },
+      "questionSegs": [75, 76, 77, 79],
+      "answerSegs": [80, 83, 85, 90, 92],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Does Chavakuk's basing everything on one mitzvah mean a Jew need keep only one?",
+        "yi": "מיינט דאס וואס חבקוק האט אוועקגעשטעלט אלעס אויף איין מצוה, אז א איד דארף נאר מקיים זיין איין מצוה?"
+      },
+      "answer": {
+        "en": "No; a Jew must keep all of them, but by concentrating on the one central mitzvah, emunah, he will come to keep them all.",
+        "yi": "ניין; א איד מוז מקיים זיין אלע מצוות, נאר אז ער קאנצענטרירט זיך אויף דער הויפט מצוה, אמונה, וועט ער ממילא מקיים זיין אלע."
+      },
+      "questionSegs": [191],
+      "answerSegs": [192, 193, 194, 195],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why does the Ramban not count emunah among the 613 mitzvos?",
+        "yi": "פארוואס רעכנט דער רמב\"ן נישט אמונה צווישן די תרי\"ג מצוות?"
+      },
+      "answer": {
+        "en": "Because it is the foundation of all the mitzvos, like a basement, which is not counted as a room but holds up and serves the whole building.",
+        "yi": "ווייל עס איז דער יסוד פון אלע מצוות, ווי א בעיסמענט וואס ווערט נישט גערעכנט פאר א צימער אבער טראגט און באדינט די גאנצע געביידע."
+      },
+      "questionSegs": [210, 213, 214],
+      "answerSegs": [215, 223, 230, 231],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "How can the Torah command a person to love Hashem, when love cannot be ordered?",
+        "yi": "ווי אזוי קען די תורה באפעלן ליב צו האבן דעם רבונו של עולם, אז ליבשאפט לאזט זיך נישט באפעלן?"
+      },
+      "answer": {
+        "en": "Every Jew already loves Hashem inwardly; the command is to bring that hidden love out into the open.",
+        "yi": "יעדער איד האט שוין ליב דעם רבונו של עולם אינעווייניג; דער ציווי איז ארויסצוברענגען די באהאלטענע ליבשאפט לידי גילוי."
+      },
+      "questionSegs": [276, 278, 281],
+      "answerSegs": [282, 283, 284, 287],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why does 'Anochi Hashem Elokecha' mention the exodus from Egypt rather than creation?",
+        "yi": "פארוואס דערמאנט \"אנכי ה' אלקיך\" יציאת מצרים און נישט בריאת העולם?"
+      },
+      "answer": {
+        "en": "Because our emunah is built on the exodus: we did not see creation, but the whole Jewish people saw at the exodus that Hashem controls nature.",
+        "yi": "ווייל אונזער אמונה איז געבויט אויף יציאת מצרים: בריאת העולם האבן מיר נישט געזען, אבער ביי יציאת מצרים האט דאס גאנצע אידישע פאלק געזען אז דער רבונו של עולם פירט די טבע."
+      },
+      "questionSegs": [314],
+      "answerSegs": [320, 321, 322, 324, 326],
+      "confidence": 0.7
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says that when a person cannot fulfil a mitzvah, he should at least learn about it, or help another Jew fulfil it, as with pidyon haben.",
+        "yi": "דער משגיח זאגט אז ווען א מענטש קען נישט מקיים זיין א מצוה, זאל ער כאטש לערנען וועגן איר, אדער העלפן אן אנדער איד זי מקיים זיין, ווי ביי פדיון הבן."
+      },
+      "evidence": { "segs": [134, 143, 144, 145], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says a Jew must bring his inner love of Hashem out into the open.",
+        "yi": "דער משגיח זאגט אז א איד דארף ארויסברענגען זיין אינעווייניגסטע אהבת ה' לידי גילוי."
+      },
+      "evidence": { "segs": [273, 286, 287], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "emunah as the foundation of the mitzvos",
+    "Sefer Chareidim order of mitzvos",
+    "mitzvos and the limbs of the body",
+    "techiyas hameisim",
+    "Torah as food and mitzvos as garments",
+    "gilgul",
+    "counting the 613 mitzvos",
+    "Anochi Hashem Elokecha",
+    "love of Hashem",
+    "exodus from Egypt as basis of emunah"
+  ],
+  "concepts": [
+    { "he": "אמונה", "heardAs": ["אמנה", "נאמנה", "אמאנע", "עמנה", "אמנות"] },
+    { "he": "ספר חרדים", "heardAs": ["ספר חרדים", "חרדים"] },
+    { "he": "רמ\"ח אברים ושס\"ה גידים", "heardAs": ["צרמך עברים און שגידים", "רמי חיבורים און יששכר גדולים"] },
+    { "he": "מצוות התלויות בלב", "heardAs": ["מצוות הצלילת בלב", "מצוות התלויות בלב"] },
+    { "he": "תחיית המתים", "heardAs": ["תחיות המתים", "חיות ומתים", "דחיית המתים", "תחיית הנתן"] },
+    { "he": "חלוקא דרבנן", "heardAs": ["חלקת רבנים"] },
+    { "he": "גלגול", "heardAs": ["גולגול", "מגולגול"] },
+    { "he": "מחשבה דיבור ומעשה", "heardAs": ["מחשבה דברו מעמדתא", "מחשב און דברי"] },
+    { "he": "תרי\"ג מצוות", "heardAs": ["תי יג מצוות", "צייג מצוות", "תיאור'גע מצוות", "תייג מצוות"] },
+    { "he": "לשון ציווי", "heardAs": ["בלשם ציווי"] },
+    { "he": "יוצא מן הכלל", "heardAs": ["יצר מן הכלל", "יצר מקלל"] },
+    { "he": "לידי גילוי", "heardAs": ["לידי גילוי"] },
+    { "he": "יציאת מצרים", "heardAs": ["חמירת מצרים", "יציאת מצרים", "יציאת מסריעים"] },
+    { "he": "טבע", "heardAs": ["צבא"] }
+  ],
+  "people": [
+    { "name": "Yaakov Avinu", "heardAs": ["יעקב אבינא"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו"] },
+    { "name": "Dovid HaMelech", "heardAs": ["דוד המלך"] },
+    { "name": "Chavakuk", "heardAs": ["חב''ק"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "the Ramban", "heardAs": ["רמב״ן", "אריין באן"] },
+    { "name": "the Chofetz Chaim", "heardAs": ["חפץ חיים"] },
+    { "name": "Rashi", "heardAs": ["רשע"] }
+  ],
+  "asrNotes": "Yiddish ASR fair to poor; Hebrew quotations heavily garbled but mostly recoverable. The ASR confuses Rambam and Ramban in the counting dispute (segs 176-178, 211-215), so attributions there are partly reconstructed from context; the Chofetz Chaim's hint about the mitzvos kept in galus (segs 126-127) could not be recovered. Segments 327-349 (ten utterances of creation and the end of the recording) are largely unintelligible and were not used."
+}

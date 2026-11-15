@@ -1,0 +1,43 @@
+{
+  "shiurId": "yi-simchos-unc-bris-pidyon-haben-06",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4b-v2",
+  "extractionVariant": "extraction",
+  "en": [
+    {
+      "sectionIndex": 0,
+      "heading": "Seven and eight: Shemini Atzeres and milah",
+      "paragraphs": [
+        {
+          "text": "The Rav brings the Midrash on 'give a portion to seven and also to eight' (Koheles 11:2): seven is Sukkos, eight is Shemini Atzeres, and also milah on the eighth day. The Sefas Emes says both are one idea.",
+          "sourceIdx": [0, 1, 2],
+          "evidence": { "segs": [3, 4, 5], "confidence": 0.8 }
+        },
+        {
+          "text": "Sukkos's bulls are for the nations, but Shemini Atzeres and milah are the Jews' private bond with Hashem. Since nothing is chance, a bris on Shemini Atzeres marks a higher child. He blesses the family and prays for the geulah.",
+          "sourceIdx": [],
+          "evidence": { "segs": [21, 29, 32, 36, 49], "confidence": 0.75 }
+        }
+      ]
+    }
+  ],
+  "yi": [
+    {
+      "sectionIndex": 0,
+      "heading": "שבעה און שמונה: שמיני עצרת און מילה",
+      "paragraphs": [
+        {
+          "text": "דער משגיח ברענגט דעם מדרש אויף \"תן חלק לשבעה וגם לשמונה\" (קהלת יא, ב): שבעה איז סוכות, שמונה איז שמיני עצרת, און אויך מילה בשמיני. דער שפת אמת זאגט אז ביידע איז איין זאך.",
+          "sourceIdx": [0, 1, 2],
+          "evidence": { "segs": [3, 4, 5], "confidence": 0.8 }
+        },
+        {
+          "text": "די פרים פון סוכות זענען קעגן די אומות העולם, אבער שמיני עצרת און מילה זענען דער יחוד פון אידן מיטן רבונו של עולם. ווייל גארנישט איז במקרה, איז א ברית אום שמיני עצרת א סימן פאר א העכערן קינד. ער בענטשט די משפחה און בעט אויף דער גאולה.",
+          "sourceIdx": [],
+          "evidence": { "segs": [21, 29, 32, 36, 49], "confidence": 0.75 }
+        }
+      ]
+    }
+  ]
+}

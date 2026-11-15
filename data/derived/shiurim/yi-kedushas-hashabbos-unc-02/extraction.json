@@ -1,0 +1,507 @@
+{
+  "shiurId": "yi-kedushas-hashabbos-unc-02",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that melachah is the product of the curse after Adam's sin while Shabbos is pure blessing, so Shabbos is kept not as a day of rest from labor but as a holy day whose kedushah enters even its simple foods.",
+      "yi": "דער משגיח ערקלערט אז מלאכה איז געקומען פון די קללות נאכן חטא פון אדם הראשון, און שבת איז לויטער ברכה, דערפאר האלט מען שבת נישט ווי א טאג פון אפרוען נאר ווי א הייליגער טאג, וואס זיין קדושה גייט אריין אפילו אין די פשוטע שבת'דיגע מאכלים."
+    },
+    "abstract": {
+      "en": "The Rav opens by contrasting melachah with blessing. In Gan Eden bread and garments grew ready on the trees; only after the sin did bread and clothing require long chains of labor, and the thirty-nine melachos correspond to the curses given to Adam, Chavah, the earth and the serpent. Shabbos, which Hashem blessed, is therefore free of melachah, and lesser holy days allow correspondingly more work; in the future, when everything is blessing, every day will be Shabbos. The rest of Shabbos must be for Heaven's sake: Moshe won a weekly day off for the slaves in Egypt on practical grounds, but at Sinai Hashem commanded Shabbos as holiness. Through the Beis Aharon's three levels in Yismechu, stories of tzaddikim and their Shabbos food, and the Shabbos lights, the Rav shows that the kedushah of Shabbos enters its simple foods, and closes that oneg Shabbos is joy in that kedushah.",
+      "yi": "דער משגיח עפנט מיט דעם חילוק צווישן מלאכה און ברכה. אין גן עדן איז ברויט און בגדים געוואקסן גרייט אויף די ביימער; ערשט נאכן חטא האט מען געדארפט אסאך מלאכות ביז מ'האט א שטיקל ברויט אדער א בגד, און די ניין און דרייסיג מלאכות זענען קעגן די קללות וואס אדם, חוה, די ערד און דער נחש האבן באקומען. שבת, וואס דער אייבערשטער האט געבענטשט, האט דערפאר נישט קיין מלאכה, און א יום טוב מיט ווינציגער קדושה האט מער מלאכה; לעתיד לבוא, ווען אלעס וועט זיין ברכה, וועט זיין א יום שכולו שבת. דאס אפרוען פון שבת דארף זיין לשם שמים: משה רבינו האט אין מצרים אויסגעפועלט א טאג רו פאר די פארמאטערטע אידן, אבער ביי מתן תורה האט דער אייבערשטער באפוילן שבת אלס קדושה. דורך די דריי מדריגות פונעם בית אהרן אין \"ישמחו\", מעשיות פון צדיקים מיט זייער שבת'דיגע מאכלים, און די שבת ליכט, ווייזט דער משגיח אז די קדושה פון שבת גייט אריין אין די פשוטע מאכלים, און ער שליסט אז עונג שבת איז די פרייד מיט דער קדושה."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Melachah came into the world through the curse after Adam's sin; before it, bread and garments grew ready on the trees of Gan Eden.",
+          "yi": "מלאכה איז געקומען אויף דער וועלט דורך די קללה נאכן חטא; פריער איז ברויט און בגדים געוואקסן גרייט אויף די ביימער אין גן עדן."
+        },
+        "evidence": { "segs": [4, 5, 8, 9, 51, 52], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Shabbos is a time of blessing, which is why no melachah is done on it; the more blessing a day holds, the less melachah it allows.",
+          "yi": "שבת איז א צייט פון ברכה, דערפאר טוט מען נישט קיין מלאכה; וואס מער ברכה א טאג האט, אלץ ווינציגער מלאכה איז דא."
+        },
+        "evidence": { "segs": [105, 109, 112, 133, 139], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Resting on Shabbos must be for Heaven's sake, not in order to recover from the week's work.",
+          "yi": "דאס אפרוען שבת דארף זיין לשם שמים, נישט כדי זיך אפצוכאפן פון דער ארבעט פון דער וואך."
+        },
+        "evidence": { "segs": [168, 169, 173, 175, 178], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The Jews kept a day of rest in Egypt as weary slaves, but the Torah commands Shabbos because it is a holy day through which Hashem sanctifies them.",
+          "yi": "אין מצרים האבן די אידן געהאלטן א טאג רו ווי פארמאטערטע קנעכט, אבער די תורה באפעלט שבת ווייל ס'איז א הייליגער טאג וואס דורך אים איז דער אייבערשטער זיי מקדש."
+        },
+        "evidence": { "segs": [245, 249, 251, 253, 255, 257], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "The kedushah of Shabbos enters its lights and its foods, so that even simple Shabbos dishes have a heavenly taste.",
+          "yi": "די קדושה פון שבת גייט אריין אין די שבת ליכט און אין די מאכלים, אזוי אז אפילו פשוטע שבת'דיגע מאכלים האבן א הימלישן טעם."
+        },
+        "evidence": { "segs": [406, 408, 429, 430, 462, 463], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Oneg Shabbos is joy with the kedushah of Shabbos, not merely enjoying more food.",
+          "yi": "עונג שבת איז א פרייד מיט דער קדושה פון שבת, נישט סתם עסן נאך א שטיקל קוגל."
+        },
+        "evidence": { "segs": [542, 543, 551, 553, 559], "confidence": 0.75 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-kedushas-hashabbos-02-kedushas-hashabbos",
+      "startSeg": 0,
+      "endSeg": 104,
+      "title": { "en": "Melachah as the opposite of blessing", "yi": "מלאכה איז דער היפך פון ברכה" },
+      "summary": {
+        "en": "The Rav explains that in Gan Eden Adam needed no work, since bread and garments grew on the trees, and that Adam stayed in Gan Eden over Shabbos after the sin. After the curse, bread and clothing require long chains of melachos, and the thirty-nine melachos correspond to the curses received after the sin.",
+        "yi": "דער משגיח ערקלערט אז אין גן עדן האט אדם הראשון נישט געדארפט קיין מלאכה, ווייל ברויט און בגדים זענען געוואקסן אויף די ביימער, און אז נאכן חטא איז ער געבליבן אין גן עדן איבער שבת. נאך דער קללה דארף מען אסאך מלאכות פאר ברויט און פאר א בגד, און די ניין און דרייסיג מלאכות זענען קעגן די קללות נאכן חטא."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-kedushas-hashabbos-02-kedushas-hashabbos",
+      "startSeg": 105,
+      "endSeg": 179,
+      "title": { "en": "Shabbos is blessing, so no melachah", "yi": "שבת איז ברכה, דערפאר קיין מלאכה" },
+      "summary": {
+        "en": "The Rav explains that because Hashem blessed Shabbos it has no melachah, while Yom Tov, Chol Hamoed and Rosh Chodesh, with less kedushah, allow progressively more work. In the future everything will grow as blessing and it will be a day that is all Shabbos; meanwhile the rest of Shabbos must be for Heaven's sake, not for recovering from the week.",
+        "yi": "דער משגיח ערקלערט אז ווייל דער אייבערשטער האט געבענטשט דעם שבת איז נישטא קיין מלאכה, און יום טוב, חול המועד און ראש חודש, וואס האבן ווינציגער קדושה, האבן מער מלאכה. לעתיד לבוא וועט אלעס וואקסן אלס ברכה און ס'וועט זיין א יום שכולו שבת; ביז דערווייל דארף די מנוחה פון שבת זיין לשם שמים, נישט כדי זיך אפצורוען פון דער וואך."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-kedushas-hashabbos-02-kedushas-hashabbos",
+      "startSeg": 180,
+      "endSeg": 263,
+      "title": { "en": "Moshe's day of rest in Egypt", "yi": "משה רבינו'ס טאג רו אין מצרים" },
+      "summary": {
+        "en": "The Rav brings the Midrash that Moshe persuaded Pharaoh to give the exhausted Jews a weekly day off so they would work better, which he compares to the modern law of diminishing returns, and Moshe chose Shabbos. He then explains the pasuk 'Ach es Shabsosai tishmoru': no longer a slave's day off as in Egypt, but Shabbos kept as a holy day.",
+        "yi": "דער משגיח ברענגט דעם מדרש אז משה רבינו האט איינגערעדט פרעה צו געבן די פארמאטערטע אידן א טאג א וואך, אז זיי זאלן בעסער ארבעטן, און ער פארגלייכט עס צום \"law of diminishing returns\" פון די היינטיגע חכמים; משה האט אויסגעקליבן שבת. דערנאך טייטשט ער דעם פסוק \"אך את שבתתי תשמרו\": נישט מער א טאג רו פון קנעכט ווי אין מצרים, נאר שבת אלס א הייליגער טאג."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-kedushas-hashabbos-02-kedushas-hashabbos",
+      "startSeg": 264,
+      "endSeg": 322,
+      "title": { "en": "Three levels of keeping Shabbos", "yi": "דריי מדריגות אין האלטן שבת" },
+      "summary": {
+        "en": "The Rav brings the Beis Aharon on the three groups named in Yismechu: shomrei Shabbos who rest, korei oneg who make Shabbos a delight, and mekadshei shevi'i who make it holy, the level Hashem desires. He applies this to rising early to learn, leaving time to learn on Shabbos afternoon, and davening better on Shabbos.",
+        "yi": "דער משגיח ברענגט דעם בית אהרן אויף די דריי מדריגות אין \"ישמחו\": שומרי שבת וואס רוען זיך אפ, קוראי עונג וואס מאכן שבת פאר א תענוג, און מקדשי שביעי וואס מאכן אים הייליג, די מדריגה וואס דער אייבערשטער האט ליב. ער ווענדט עס אן אויף פרי אויפשטיין לערנען, לאזן צייט צו לערנען שבת נאכמיטאג, און דאווענען בעסער שבת."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-kedushas-hashabbos-02-kedushas-hashabbos",
+      "startSeg": 323,
+      "endSeg": 405,
+      "title": { "en": "Stories of the taste of Shabbos", "yi": "מעשיות פונעם טעם פון שבת" },
+      "summary": {
+        "en": "The Rav tells of a poor chassid who asked Hashem to give him Shabbos for his challah, brings the Midrash about the gentile who asked a Tanna what gave his food its taste and was answered 'Shabbos', and tells the story of the cholent of Reb Yechezkel of Kuzmir, whose secret was that he put in a handful himself with the words 'l'kavod Shabbos'.",
+        "yi": "דער משגיח דערציילט פון א ארעמען חסיד וואס האט געבעטן דעם רבונו של עולם ער זאל אים געבן שבת צו זיין חלה, ער ברענגט דעם מדרש פון א גוי וואס האט געפרעגט א תנא פון וואו זיין מאכל האט אזא טעם און האט באקומען דעם ענטפער \"שבת\", און ער דערציילט די מעשה מיטן טשאלנט פון ר' יחזקאל'ע קוזמירער, וואס זיין סוד איז געווען אז ער האט אליין אריינגעווארפן א הויפן מיט די ווערטער \"לכבוד שבת\"."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-kedushas-hashabbos-02-kedushas-hashabbos",
+      "startSeg": 406,
+      "endSeg": 490,
+      "title": { "en": "Shabbos lights and simple Shabbos foods", "yi": "שבת ליכט און פשוטע שבת'דיגע מאכלים" },
+      "summary": {
+        "en": "The Rav explains that Shabbos light and Shabbos food differ from those of the week, bringing the Midrash that Hashem blessed Shabbos with the light, and says the purer a Jew is from sin the more kedushah shines in them. The Shabbos dishes are simple, yet have a heavenly taste, and he tells how a chassid of Reb Aharon of Karlin said Nishmas while preparing the fish, and the Rebbe sensed Nishmas in it.",
+        "yi": "דער משגיח ערקלערט אז שבת'דיגע ליכט און שבת'דיגע מאכלים זענען אנדערש ווי די וואכעדיגע, ער ברענגט דעם מדרש אז דער אייבערשטער האט געבענטשט שבת מיט די ליכט, און זאגט אז וואס ריינער א איד איז פון עבירות אלץ מער קדושה שיינט אין זיי. די שבת'דיגע מאכלים זענען פשוט, אבער האבן א הימלישן טעם, און ער דערציילט ווי א חסיד פון ר' אהרן קארלינער האט געזאגט נשמת ביים צוגרייטן די פיש, און דער רבי האט געשפירט נשמת אין די פיש."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-kedushas-hashabbos-02-kedushas-hashabbos",
+      "startSeg": 491,
+      "endSeg": 563,
+      "title": { "en": "A Shabbosdik kugel, not a kugeldik Shabbos", "yi": "א שבת'דיגער קוגל, נישט א קוגל'דיגער שבת" },
+      "summary": {
+        "en": "The Rav notes that Jews eat the same Shabbos foods in a set order because of the secrets in them, and explains the zemer Menuchah v'Simchah's line 'Nishmas kol chai… echol b'simchah' as eating the Nishmas that was said over the fish. He closes with a tzaddik's saying that some have a Shabbosdik kugel and others a kugeldik Shabbos: oneg Shabbos is joy with its kedushah, kept for Heaven's sake.",
+        "yi": "דער משגיח מערקט אן אז אידן עסן די זעלבע שבת'דיגע מאכלים אין א געוויסן סדר, ווייל ס'ליגן סודות אין זיי, און ער טייטשט אין זמר \"מנוחה ושמחה\" די ווערטער \"נשמת כל חי... אכול בשמחה\", אז מ'עסט דעם נשמת וואס מ'האט געזאגט ביי די פיש. ער שליסט מיט א ווארט פון א צדיק, אז איינער האט א שבת'דיגן קוגל און א צווייטער א קוגל'דיגן שבת: עונג שבת איז א פרייד מיט דער קדושה, לשם שמים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "בזה את הפחות תוך הלחם",
+      "work": "Bereishis",
+      "ref": "Bereishis 3:19",
+      "sefariaRef": "Genesis 3:19",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [51, 52, 53], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "לברכה לכמת יום השבועי / ובארכא ליקומת יום השבועי",
+      "work": "Bereishis",
+      "ref": "Bereishis 2:3",
+      "sefariaRef": "Genesis 2:3",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [106, 135, 418], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "עלי' ברך השם'ת יום שבת / קיין ברך ה' יום שבת",
+      "work": "Shemos",
+      "ref": "Shemos 20:11",
+      "sefariaRef": "Exodus 20:11",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [107, 136], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "שטייט אויך אין חז״ל, אז ס'וועלן וואקסן",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 30b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [142, 143, 144, 145], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "שטעט אין מדרש אז משה רבינו איז אויפגעוואקסן אין די הויז פון פריי",
+      "work": "Shemos Rabbah",
+      "ref": "Shemos Rabbah 1:28",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [180, 181, 188, 192, 222], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "יתמך משה במתן את חלקו",
+      "work": "Siddur",
+      "ref": "Shabbos Shacharis Amidah, Yismach Moshe",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [226, 227, 228], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "שתבייטה דדה ברב בני ישראל ... אחת שבתי סייטה שמורא ... כי אני ה' מקדשך",
+      "work": "Shemos",
+      "ref": "Shemos 31:13",
+      "sefariaRef": "Exodus 31:13",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [235, 241, 243, 252, 253], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ער זאגט איירועק קדוש פשט",
+      "work": "Ohr HaChaim",
+      "ref": "Ohr HaChaim on Shemos 31:13",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [244, 245, 255], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "כששת ימים עשה השם ושמים ושארץ, אבער ימי שבועי שבת וינפש",
+      "work": "Shemos",
+      "ref": "Shemos 31:17",
+      "sefariaRef": "Exodus 31:17",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [258, 259], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "בית אהרן לדבריו קאלינא",
+      "work": "Beis Aharon",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [264, 288, 291], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "יתמוך במלכותך ... שומרי שבת ... וכורי יונג ... עם מקדש השבוע",
+      "work": "Siddur",
+      "ref": "Shabbos Musaf Amidah, Yismechu",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [267, 276, 280, 294, 297], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "שבועי רציסה בו וקדשתי",
+      "work": "Siddur",
+      "ref": "Shabbos Amidah, V'hashevi'i ratzisa bo",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [299], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "שטייגט אין מדרש, אז א גוי האט געפרעגט איינע פון די תנאים",
+      "work": "Bereishis Rabbah",
+      "ref": "Bereishis Rabbah 11:4",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [356, 357, 361, 364], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "בערכא בנרעס ... איני דומה נער הדלק בחייל ונער הדלק בשבת",
+      "work": "Bereishis Rabbah",
+      "ref": "Bereishis Rabbah 11:2",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [420, 422, 423], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "מנחה ושמחה ... נשמעת כל חי וגמ'ן ארצך ... א חלה וצומחה ככל הרצח",
+      "work": "Zemiros",
+      "ref": "Menuchah v'Simchah, stanza 'Nishmas kol chai'",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [512, 513, 521, 528], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "די זמירות פון שבת ... ביי ברורים אין סלב ודגים",
+      "work": "Zemiros",
+      "ref": "Mah Yedidus, 'barburim u'slav v'dagim'",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [554, 556, 557], "confidence": 0.65 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The thirty-nine melachos of Shabbos correspond to the curses that Adam, Chavah, the earth and the serpent received after the sin, so refraining from them on Shabbos is a return to a state of pure blessing.",
+        "yi": "די ניין און דרייסיג מלאכות פון שבת זענען קעגן די קללות וואס אדם, חוה, די ערד און דער נחש האבן באקומען נאכן חטא, ממילא איז אפהאלטן זיך פון זיי שבת א צוריקקער צו א מצב פון לויטער ברכה."
+      },
+      "evidence": { "segs": [93, 97, 98, 101, 103, 104], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The amount of melachah permitted on a day is the inverse of the blessing it holds: Shabbos none, Yom Tov somewhat more, Chol Hamoed more, Rosh Chodesh more still.",
+        "yi": "וויפיל מלאכה מ'טאר טאן אין א טאג גייט פארקערט מיט דער ברכה וואס ער האט: שבת גארנישט, יום טוב אביסל מער, חול המועד מער, ראש חודש נאך מער."
+      },
+      "evidence": { "segs": [114, 117, 120, 128, 133], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Moshe's argument to Pharaoh that rested workers produce more is what modern scientists call the law of diminishing returns, yet the Torah's Shabbos is the opposite of such a practical day off.",
+        "yi": "משה רבינו'ס טענה פאר פרעה, אז אפגערוטע ארבעטער טוען מער, איז דאס וואס די היינטיגע חכמים רופן \"law of diminishing returns\", אבער דער שבת פון דער תורה איז דער היפך פון אזא פראקטישער טאג רו."
+      },
+      "evidence": { "segs": [189, 194, 216, 219, 251, 255], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Moshe's joy in 'Yismach Moshe b'matnas chelko' is that the day he had chosen in Egypt turned out to be the very day Hashem gave as Shabbos.",
+        "yi": "די שמחה פון \"ישמח משה במתנת חלקו\" איז געווען אז דער טאג וואס משה האט אויסגעקליבן אין מצרים איז געווען פונקט דער טאג וואס דער אייבערשטער האט געגעבן אלס שבת."
+      },
+      "evidence": { "segs": [222, 223, 227, 228, 230], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Food prepared with words of tefillah carries them: the fish over which Nishmas was said had Nishmas in it, which is the meaning of 'echol b'simchah' after 'Nishmas kol chai' in Menuchah v'Simchah.",
+        "yi": "א מאכל וואס מ'האט צוגעגרייט מיט ווערטער פון תפילה טראגט זיי אין זיך: אין די פיש וואס מ'האט ביי זיי געזאגט נשמת איז געלעגן נשמת, און דאס איז דער פשט אין \"אכול בשמחה\" נאך \"נשמת כל חי\" אין \"מנוחה ושמחה\"."
+      },
+      "evidence": { "segs": [479, 483, 523, 524, 526, 527], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Some have a Shabbosdik kugel, a kugel infused with Shabbos, and others a kugeldik Shabbos, a Shabbos that amounts to another piece of kugel.",
+        "yi": "ס'איז דא וואס האבן א שבת'דיגן קוגל, א קוגל וואס איז דורכגענומען מיט שבת, און ס'איז דא וואס האבן א קוגל'דיגן שבת, א שבת וואס באשטייט פון נאך א שטיקל קוגל."
+      },
+      "evidence": { "segs": [541, 542, 543, 546, 548, 551], "confidence": 0.85 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "Adam's Shabbos in Gan Eden", "yi": "אדם הראשון'ס שבת אין גן עדן" },
+      "retelling": {
+        "en": "After the sin Adam was to be sent out of Gan Eden, but it was already erev Shabbos, and he was allowed to remain there until after Shabbos. Since this was already after the sin, he needed garments, and he took special garments for Shabbos from the trees.",
+        "yi": "נאכן חטא האט מען געדארפט ארויסווארפן אדם הראשון פון גן עדן, אבער ס'איז שוין געווען ערב שבת, און מ'האט אים געלאזט בלייבן אין גן עדן ביז נאך שבת. וויבאלד ס'איז שוין געווען נאכן חטא, האט ער געדארפט האבן בגדים, און ער האט גענומען פון די ביימער באזונדערע בגדים אויף שבת."
+      },
+      "people": ["Adam HaRishon"],
+      "evidence": { "segs": [27, 29, 33, 38, 42, 46], "confidence": 0.65 }
+    },
+    {
+      "title": { "en": "Moshe asks Pharaoh for a day of rest", "yi": "משה בעט פרעה א טאג רו" },
+      "retelling": {
+        "en": "Moshe grew up in Pharaoh's house, adopted by Pharaoh's daughter. He went out to the field and saw how hard the Jews worked, and told Pharaoh that they were so exhausted they could hardly work; if they were given one day a week of rest they would work much better all week. Pharaoh agreed to a set day, and Moshe chose Shabbos.",
+        "yi": "משה רבינו איז אויפגעוואקסן אין פרעה'ס הויז, ווייל בת פרעה האט אים גענומען פאר א זון. ער איז ארויסגעגאנגען אויפן פעלד און געזען ווי שווער די אידן ארבעטן, און ער האט געזאגט צו פרעה אז זיי זענען אזוי פארמאטערט אז זיי קענען שוין נישט ארבעטן; אז מ'וועט זיי געבן איין טאג א וואך מנוחה, וועלן זיי די גאנצע וואך ארבעטן אסאך בעסער. פרעה האט מסכים געווען אויף א באשטימטן טאג, און משה האט אויסגעקליבן שבת."
+      },
+      "people": ["Moshe Rabbeinu", "Pharaoh"],
+      "evidence": { "segs": [182, 184, 187, 189, 194, 222], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "Give me Shabbos for the challah", "yi": "גיב מיר שבת צו דער חלה" },
+      "retelling": {
+        "en": "One of the great chassidim worked all week in poverty so that he would have enough to buy a little challah and fish for Shabbos. At last he had it; he made kiddush, washed, ate a piece of challah, and said: Ribono shel Olam, You gave me challah for Shabbos; I ask You, give me Shabbos for the challah.",
+        "yi": "איינער פון די גרויסע חסידים האט געארבעט א גאנצע וואך אין ארעמקייט, כדי ער זאל האבן גענוג צו קויפן א שטיקל חלה און א שטיקל פיש אויף שבת. צום סוף האט ער עס געהאט; ער האט געמאכט קידוש, זיך געוואשן און געגעסן א שטיקל חלה, און ער האט געזאגט: רבונו של עולם, דו האסט מיר געגעבן חלה אויף שבת, איך בעט דיך, גיב מיר שבת צו דער חלה."
+      },
+      "people": [],
+      "evidence": { "segs": [324, 326, 328, 333, 334, 337], "confidence": 0.85 }
+    },
+    {
+      "title": { "en": "The cholent of Reb Yechezkel of Kuzmir", "yi": "דער טשאלנט פון ר' יחזקאל'ע קוזמירער" },
+      "retelling": {
+        "en": "A rav who spent Shabbos with Reb Yechezkel of Kuzmir ate from the Rebbe's cholent and had never tasted such a cholent. After Shabbos he asked the Rebbetzin for the recipe, and she wrote down everything that goes into it, but when his wife cooked it exactly so, it was an ordinary cholent. The next time he came he asked again, and the Rebbetzin told him that every erev Shabbos her holy husband comes in, throws a handful into the cholent and says 'l'kavod Shabbos', and that he did not have at home.",
+        "yi": "א רב וואס איז געווען אויף שבת ביי ר' יחזקאל'ע קוזמירער האט געגעסן פונעם רבי'נס טשאלנט און האט קיינמאל נישט געגעסן אזא טשאלנט. נאך שבת האט ער געבעטן ביי דער רביצין דעם רעצעפט, און זי האט אים אויפגעשריבן אלעס וואס מ'טוט אריין, אבער ווען זיין ווייב האט עס געקאכט פונקט אזוי, איז עס געווען א טשאלנט ווי יעדן שבת. דאס צווייטע מאל האט ער ווידער געפרעגט, און די רביצין האט געזאגט אז יעדן ערב שבת קומט אריין איר הייליגער מאן, ווארפט אריין א הויפן אין טשאלנט און זאגט \"לכבוד שבת\", און דאס האט ער נישט אינדערהיים."
+      },
+      "people": ["Reb Yechezkel of Kuzmir"],
+      "evidence": { "segs": [367, 370, 376, 384, 397, 400], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "Nishmas in the fish at Karlin", "yi": "נשמת אין די פיש אין קארלין" },
+      "retelling": {
+        "en": "At Reb Aharon of Karlin the chassidim used to prepare the Shabbos food. A chassid in the kitchen salting and preparing the fish remembered that on Shabbos morning one says Nishmas, and he began to say Nishmas while preparing the fish. Friday night, when the fish was served to Reb Aharon, he remarked that there is a piece of Nishmas in the fish.",
+        "yi": "ביי ר' אהרן קארלינער פלעגן די חסידים צוגרייטן די שבת'דיגע מאכלים. א חסיד אין קיך האט געזאלצן און צוגעגרייט די פיש, און ער האט זיך דערמאנט אז שבת אינדערפרי זאגט מען נשמת, און ער האט אנגעהויבן זאגן נשמת בשעת ער האט געמאכט די פיש. פרייטאג צונאכטס, ווען מ'האט דערלאנגט די פיש צו ר' אהרן, האט ער זיך אנגערופן אז ס'ליגט א שטיק נשמת אין די פיש."
+      },
+      "people": ["Reb Aharon of Karlin"],
+      "evidence": { "segs": [470, 473, 477, 479, 481, 483], "confidence": 0.8 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why is melachah forbidden on Shabbos?",
+        "yi": "פארוואס טאר מען נישט טאן קיין מלאכה שבת?"
+      },
+      "answer": {
+        "en": "Because melachah is the opposite of blessing, stemming from the curse after the sin, while Shabbos is the day Hashem blessed and is all blessing.",
+        "yi": "ווייל מלאכה איז דער היפך פון ברכה, זי קומט פון דער קללה נאכן חטא, און שבת איז דער טאג וואס דער אייבערשטער האט געבענטשט און איז אינגאנצן ברכה."
+      },
+      "questionSegs": [0, 111],
+      "answerSegs": [4, 105, 109, 112],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why did Moshe rejoice in 'his portion' when Shabbos was given?",
+        "yi": "פארוואס האט משה רבינו זיך געפרייט מיט \"מתנת חלקו\" ווען מ'האט געגעבן שבת?"
+      },
+      "answer": {
+        "en": "Because the day he had chosen in Egypt for the Jews' rest was exactly the day Hashem gave as Shabbos, so he saw that he had aligned himself with Hashem's will.",
+        "yi": "ווייל דער טאג וואס ער האט אויסגעקליבן אין מצרים פאר די אידן צו רוען איז געווען פונקט דער טאג וואס דער אייבערשטער האט געגעבן אלס שבת, און ער האט געזען אז ער האט מכוון געווען צום רצון פונעם רבונו של עולם."
+      },
+      "questionSegs": [227],
+      "answerSegs": [223, 228, 229, 230],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why does the pasuk say 'Ach es Shabsosai tishmoru' to a people that already kept a day of rest?",
+        "yi": "פארוואס זאגט דער פסוק \"אך את שבתתי תשמרו\" צו אידן וואס האבן שוין געהאלטן א טאג רו?"
+      },
+      "answer": {
+        "en": "In Egypt they rested as exhausted slaves for a day off; now they are to keep Shabbos as a holy day, 'to know that I am Hashem who sanctifies you'.",
+        "yi": "אין מצרים האבן זיי זיך אפגערוט ווי פארמאטערטע קנעכט פאר א טאג פריי; יעצט זאלן זיי האלטן שבת אלס א הייליגער טאג, \"לדעת כי אני ה' מקדשכם\"."
+      },
+      "questionSegs": [236, 241],
+      "answerSegs": [245, 249, 251, 253, 255, 257],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "What did Reb Yechezkel of Kuzmir's cholent have that the recipe lacked?",
+        "yi": "וואס האט ר' יחזקאל'ע קוזמירער'ס טשאלנט געהאט וואס איז נישט געשטאנען אינעם רעצעפט?"
+      },
+      "answer": {
+        "en": "The handful he put in himself every erev Shabbos with the words 'l'kavod Shabbos'.",
+        "yi": "דעם הויפן וואס ער האט אליין אריינגעווארפן יעדן ערב שבת מיט די ווערטער \"לכבוד שבת\"."
+      },
+      "questionSegs": [387, 389],
+      "answerSegs": [397, 399, 400, 402],
+      "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says a person should not think of Shabbos as a chance to recover from the week's work, but as a day of blessing that Hashem gave, refraining from melachah for the honor of Shabbos.",
+        "yi": "דער משגיח זאגט אז א מענטש טאר נישט טראכטן אז שבת איז א געלעגנהייט זיך אפצוכאפן פון דער ארבעט פון דער וואך, נאר אז ס'איז א יום ברכה וואס דער רבונו של עולם האט געגעבן, און מ'טוט נישט קיין מלאכה לכבוד שבת."
+      },
+      "evidence": { "segs": [172, 173, 175, 176, 177, 178], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one may rest a little after the cholent, but should leave time to learn on Shabbos afternoon, even on a short winter Shabbos, and daven on Shabbos better than during the week.",
+        "yi": "דער משגיח זאגט אז מ'קען זיך אביסל אפרוען נאכן טשאלנט, אבער מ'דארף איבערלאזן צייט צו לערנען שבת נאכמיטאג, אפילו אין א קורצן ווינטער'דיגן שבת, און דאווענען שבת בעסער ווי אינמיטן וואך."
+      },
+      "evidence": { "segs": [305, 306, 308, 310, 314, 316], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The Rav says a Jew should eat the Shabbos challah and food with kedushah, sing zemiros and look at the Shabbos lights, not eat as one eats when merely hungry.",
+        "yi": "דער משגיח זאגט אז א איד דארף עסן די שבת'דיגע חלה און מאכלים מיט קדושה, זינגען זמירות און קוקן אין די שבת ליכט, נישט עסן ווי מ'עסט סתם ווען מ'איז הונגעריג."
+      },
+      "evidence": { "segs": [340, 341, 344, 530, 532, 534], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "kedushas haShabbos",
+    "melachah and the curse after the sin",
+    "Shabbos as the source of blessing",
+    "the thirty-nine melachos",
+    "Moshe Rabbeinu and Shabbos in Egypt",
+    "levels of keeping Shabbos",
+    "Shabbos food and its kedushah",
+    "Shabbos candles",
+    "oneg Shabbos",
+    "zemiros"
+  ],
+  "concepts": [
+    { "he": "מלאכה", "heardAs": ["מלכה", "מלאך", "שם ומלכה"] },
+    { "he": "ברכה", "heardAs": ["ווארכה", "בוכה"] },
+    { "he": "גן עדן", "heardAs": ["עודן", "גנגדן", "גנאידן", "גענעדן"] },
+    { "he": "ל\"ט מלאכות", "heardAs": ["ניין און דרייסיג מלאכות", "39 כלבות"] },
+    { "he": "קללות", "heardAs": ["כללות", "כלבות", "כללה"] },
+    { "he": "חול המועד", "heardAs": ["חול המועד"] },
+    { "he": "מעין עולם הבא", "heardAs": ["מעין עולם הבא"] },
+    { "he": "יום שכולו שבת", "heardAs": ["יום שקאה לא שבת"] },
+    { "he": "לשם שמים", "heardAs": ["בשם שמים", "שם שמים"] },
+    { "he": "ישמח משה", "heardAs": ["יתמך משה"] },
+    { "he": "ישמחו במלכותך", "heardAs": ["יתמוך במלכותך"] },
+    { "he": "קוראי עונג", "heardAs": ["וכורי יונג", "כוחי עונג"] },
+    { "he": "מקדשי שביעי", "heardAs": ["מקדש השבוע", "מקדשי שבועי"] },
+    { "he": "לכבוד שבת", "heardAs": ["לכבוד שבת"] },
+    { "he": "נשמת כל חי", "heardAs": ["נשמעת כל חי", "נשמת כחי"] },
+    { "he": "עונג שבת", "heardAs": ["תעניג", "אייניג שבת"] }
+  ],
+  "people": [
+    { "name": "Adam HaRishon", "heardAs": ["אדם ראשון", "אדם הרי'"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו", "משה רביהם"] },
+    { "name": "Pharaoh", "heardAs": ["פריי", "פאראי", "פארער", "פרעה"] },
+    { "name": "Pharaoh's daughter", "heardAs": ["בת פריי", "באס פאראי"] },
+    { "name": "the Ohr HaChaim", "heardAs": ["איירועק קדוש"] },
+    { "name": "Reb Aharon of Karlin (Beis Aharon)", "heardAs": ["בית אהרן", "ר' אהרן קאלדינאו", "ר' אהרן קאלווינער"] },
+    { "name": "Reb Yechezkel of Kuzmir", "heardAs": ["ר' יחזקאלע קוזמאן", "ר' חזקאלע קוזמער"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair for narrative and poor for loshon-hakodesh quotations, which were recovered from context (Bereishis 2:3, Shemos 31:13, Yismechu, Menuchah v'Simchah). Segments 22-25 and 47-48 (on Adam's garments) are garbled and left out, as is the Beis Aharon's saying about a blatt Gemara before davening (289-290) and segments 318-322. The catalog title is only a filename guess; the whole shiur is on kedushas haShabbos."
+}

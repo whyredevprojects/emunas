@@ -1,0 +1,580 @@
+{
+  "shiurId": "yi-tanya-1-26",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains how the Godly soul and the animal soul fight like two kings over the 'small city' of the body, each wanting the other to be subdued to it, and what this war asks of an ordinary person.",
+      "yi": "דער משגיח ערקלערט ווי אזוי די נפש האלקית און די נפש הבהמית קריגן זיך ווי צוויי מלכים איבער דער \"עיר קטנה\" פונעם גוף, יעדער וויל אז דער אנדערער זאל זיין בטל צו אים, און וואס די מלחמה פאדערט פון א פשוט'ן מענטש."
+    },
+    "abstract": {
+      "en": "Learning Tanya chapter 9, the Rav explains that the animal soul of a Jew, from kelipas nogah, dwells in the blood-filled left chamber of the heart, while the Godly soul dwells in the brain and the right chamber. The heart's blood even drives the brain to scheme for the heart's desires; the liver, all blood, is lower still, and a Midrash reads Pharaoh's 'heavy heart' as a heart that was really a liver. Contemplation of Hashem's greatness gives birth to love, as Birchas Yotzer leads to Ahavah Rabbah. The body is a small city over which the yetzer tov and the yetzer hara wage constant war, each wanting the other subdued. The yetzer tov wants its love to overflow into the left chamber until even appetite serves Hashem, as with matzah eaten with appetite. Only a tzaddik gamur transforms his evil; for most people the avodah is to subdue it, and the Zohar's parable shows the yetzer hara itself serves the King.",
+      "yi": "ביים לערנען תניא פרק ט ערקלערט דער משגיח אז די נפש הבהמית פון א איד, פון קליפת נוגה, וואוינט אינעם חלל השמאלי פונעם הארץ וואס איז פול מיט דם, און די נפש האלקית וואוינט אינעם מוח און אינעם חלל הימני. דער דם פונעם הארץ טרייבט אפילו דעם מוח צו טראכטן עצות פאר די תאוות פונעם הארץ; די כבד, וואס איז אינגאנצן דם, איז נאך נידעריגער, און א מדרש טייטשט אז פרעה'ס \"כבד לב\" מיינט אז זיין הארץ איז געווען א כבד. די התבוננות אין דער גדולה פונעם בורא איז מוליד אהבה, אזוי ווי ברכת יוצר ברענגט צו אהבה רבה. דער גוף איז א עיר קטנה וואו דער יצר טוב און דער יצר הרע פירן א כסדר'דיגע מלחמה, יעדער וויל אז דער אנדערער זאל זיך אונטערווארפן. דער יצר טוב וויל אז זיין אהבה זאל זיך איבערגיסן אינעם חלל השמאלי, ביז אפילו דער אפעטיט זאל דינען דעם אייבערשטן, אזוי ווי ביי מצה וואס מ'עסט מיט אפעטיט. נאר א צדיק גמור איז מהפך זיין רע; ביי רוב מענטשן איז די עבודה צו מכניע זיין דעם יצר הרע, און דער משל פונעם זוהר ווייזט אז אפילו דער יצר הרע דינט דעם מלך."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The animal soul dwells in the blood-filled left chamber of the heart, and the Godly soul dwells in the brain and spreads to the right chamber, where there is hardly any blood.",
+          "yi": "די נפש הבהמית וואוינט אינעם חלל השמאלי פונעם הארץ וואס איז פול מיט דם, און די נפש האלקית וואוינט אינעם מוח און פארשפרייט זיך צום חלל הימני, וואו ס'איז כמעט נישטא קיין דם."
+        },
+        "evidence": { "segs": [7, 9, 35, 94, 104, 106], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The desires of the heart rise to the brain and drive it to scheme how to fulfil them, because the heart sends its blood to the brain.",
+          "yi": "די תאוות פונעם הארץ גייען ארויף צום מוח און טרייבן אים צו טראכטן עצות ווי אזוי זיי צו דערגרייכן, ווייל דער הארץ שיקט זיין דם צום מוח."
+        },
+        "evidence": { "segs": [57, 61, 81, 85], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The body is a small city over which the Godly soul and the animal soul wage a lifelong war, each wanting the whole body subjugated to it alone.",
+          "yi": "דער גוף איז א עיר קטנה וואו די נפש האלקית און די נפש הבהמית פירן א מלחמה דאס גאנצע לעבן, יעדער וויל אז דער גאנצער גוף זאל זיך אונטערווארפן נאר צו אים."
+        },
+        "evidence": { "segs": [301, 303, 313, 326, 333, 336], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The yetzer tov wants the love born of contemplation to fill the right chamber and overflow into the left, so that even the bad inclinations are subdued and used for good.",
+          "yi": "דער יצר טוב וויל אז די אהבה וואס ווערט געבוירן פון דער התבוננות זאל אנפילן דעם חלל הימני און זיך איבערגיסן אינעם חלל השמאלי, אז אפילו די שלעכטע נטיות זאלן ווערן מכניע און גענוצט ווערן פאר גוטס."
+        },
+        "evidence": { "segs": [382, 384, 393, 395, 398], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Only a tzaddik gamur transforms his yetzer hara into good; for the vast majority of people the avodah is to subdue it, like a king who imprisons the enemy king.",
+          "yi": "נאר א צדיק גמור איז מהפך זיין יצר הרע צו גוטס; ביי די רוב מענטשן איז די עבודה אים צו מכניע זיין, אזוי ווי א מלך וואס זעצט איין דעם שונא-מלך אין תפיסה."
+        },
+        "evidence": { "segs": [527, 529, 545, 554, 557, 561], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The yetzer hara itself is there for a person's good: like the harlot in the Zohar's parable, its true wish is that the person withstand it.",
+          "yi": "דער יצר הרע אליין איז דא לטובת האדם: אזוי ווי די זונה אינעם משל פונעם זוהר, איז זיין אמת'ער רצון אז דער מענטש זאל אים איבערשטארקן."
+        },
+        "evidence": { "segs": [608, 611, 617, 620, 622], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-tanya-13-2-tanya",
+      "startSeg": 0,
+      "endSeg": 50,
+      "title": {
+        "en": "The animal soul in the left chamber of the heart",
+        "yi": "די נפש הבהמית אינעם חלל השמאלי פונעם הארץ"
+      },
+      "summary": {
+        "en": "The Rav reads the Tanya's words that the animal soul of a Jew, from kelipas nogah, dwells in the blood-filled left chamber of the heart. He explains the two chambers, the blood as the vehicle of the vital soul, and why a Jew's animal soul can be transformed to good.",
+        "yi": "דער משגיח לערנט די ווערטער פונעם תניא אז די נפש הבהמית פון א איד, פון קליפת נוגה, וואוינט אינעם חלל השמאלי וואס איז פול מיט דם. ער ערקלערט די צוויי חללים, אז דער דם איז דער כלי פון דער נפש החיונית, און פארוואס מ'קען די נפש הבהמית פון א איד מהפך זיין צו גוטס."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-13-2-tanya",
+      "startSeg": 51,
+      "endSeg": 108,
+      "title": {
+        "en": "Desires rise to the brain; the Godly soul's seat",
+        "yi": "די תאוות גייען ארויף צום מוח; דער מקום פון דער נפש האלקית"
+      },
+      "summary": {
+        "en": "The Rav explains how the desires of the heart spread through the body and rise to the brain, which plans how to fulfil them because the heart's blood drives it. He then reads that the Godly soul dwells in the brain and in the right chamber, 'the heart of the wise is on his right'.",
+        "yi": "דער משגיח ערקלערט ווי אזוי די תאוות פונעם הארץ פארשפרייטן זיך אינעם גוף און גייען ארויף צום מוח, וואס טראכט עצות ווי זיי צו דערגרייכן ווייל דער דם פונעם הארץ טרייבט אים. דערנאך לערנט ער אז די נפש האלקית וואוינט אינעם מוח און אינעם חלל הימני, \"לב חכם לימינו\"."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-13-2-tanya",
+      "startSeg": 109,
+      "endSeg": 175,
+      "title": {
+        "en": "The liver, and Pharaoh's heart",
+        "yi": "די כבד, און פרעה'ס הארץ"
+      },
+      "summary": {
+        "en": "The Rav explains that the liver, lower than heart and brain, is full of blood, which is why the poskim say it cannot be salted but must be roasted. He tells the Midrash of the lion, the donkey that had 'no heart' and the fox, and the Midrash's reading of 'Pharaoh's heart is heavy' as a heart that was a liver.",
+        "yi": "דער משגיח ערקלערט אז די כבד, נידעריגער פון הארץ און מוח, איז פול מיט דם, און דערפאר זאגן די פוסקים אז מ'קען זי נישט זאלצן נאר מ'דארף זי בראטן. ער דערציילט דעם מדרש פונעם לייב, דעם אייזל וואס האט \"נישט געהאט קיין הארץ\" און דעם פוקס, און ווי דער מדרש טייטשט \"כבד לב פרעה\" אז זיין הארץ איז געווען א כבד."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-13-2-tanya",
+      "startSeg": 176,
+      "endSeg": 283,
+      "title": {
+        "en": "The heart of the wise is on his right",
+        "yi": "לב חכם לימינו"
+      },
+      "summary": {
+        "en": "The Rav explains that good middos come from the right chamber and bad ones from the left, and that the wise man's contemplation of Hashem's greatness arouses love of Hashem in the right chamber. He shows this in the order of tefillah, where Birchas Yotzer's contemplation gives birth to the love of Ahavah Rabbah.",
+        "yi": "דער משגיח ערקלערט אז די גוטע מידות קומען פונעם חלל הימני און די שלעכטע פונעם חלל השמאלי, און אז די התבוננות פונעם חכם אין דער גדולה פונעם בורא איז מעורר אהבת ה' אינעם חלל הימני. ער ווייזט עס אויף אין סדר התפילה, וואו די התבוננות פון ברכת יוצר איז מוליד די אהבה פון אהבה רבה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-13-2-tanya",
+      "startSeg": 284,
+      "endSeg": 353,
+      "title": {
+        "en": "Two kings fighting over the small city",
+        "yi": "צוויי מלכים קריגן זיך איבער דער עיר קטנה"
+      },
+      "summary": {
+        "en": "The Rav brings 'one nation shall overpower the other' about Yaakov and Esav as the constant war of the yetzer tov and the yetzer hara, and the Tanya's image of the body as a small city two kings fight over. He explains that the Godly soul wants to rule the body alone, with all its limbs, powers and garments subjugated to it.",
+        "yi": "דער משגיח ברענגט \"ולאום מלאום יאמץ\" ביי יעקב און עשו אלס די כסדר'דיגע מלחמה צווישן יצר טוב און יצר הרע, און דעם משל פונעם תניא אז דער גוף איז א עיר קטנה וואס צוויי מלכים קריגן זיך דערויף. ער ערקלערט אז די נפש האלקית וויל אליין הערשן איבערן גוף, אז אלע אברים, כחות און לבושים זאלן זיך אונטערווארפן צו איר."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-13-2-tanya",
+      "startSeg": 354,
+      "endSeg": 398,
+      "title": {
+        "en": "Chabad gives birth to love that overflows",
+        "yi": "חב\"ד איז מוליד אן אהבה וואס גיסט זיך איבער"
+      },
+      "summary": {
+        "en": "The Rav explains what the yetzer tov wants: chochmah, binah and daas of the Godly soul filling the mind, giving birth to fear and love like a father and mother give birth to children. The love is to fill the right chamber until it spills into the left and subdues the sitra achra there.",
+        "yi": "דער משגיח ערקלערט וואס דער יצר טוב וויל: אז חכמה, בינה און דעת פון דער נפש האלקית זאלן אנפילן דעם מוח, און מוליד זיין יראה און אהבה אזוי ווי א טאטע און א מאמע זענען מוליד קינדער. די אהבה זאל אנפילן דעם חלל הימני ביז זי גיסט זיך איבער אינעם חלל השמאלי און איז מכניע די סטרא אחרא דארט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-13-2-tanya",
+      "startSeg": 399,
+      "endSeg": 459,
+      "title": {
+        "en": "Matzah with appetite: serving with both inclinations",
+        "yi": "מצה מיט אפעטיט: דינען מיט ביידע יצרים"
+      },
+      "summary": {
+        "en": "The Rav asks why the Mishnah wants matzah eaten with appetite if a mitzvah should be done only for Hashem's will, and answers that the yetzer hara must serve the yetzer tov. The appetite gives the mitzvah its fire, and this is 'with all your heart, with both your inclinations'.",
+        "yi": "דער משגיח פרעגט פארוואס די משנה וויל אז מ'זאל עסן מצה מיט אפעטיט, ווען א מצוה דארף מען טון נאר צוליב רצון ה', און ער ענטפערט אז דער יצר הרע דארף דינען דעם יצר טוב. דער אפעטיט גיט דער מצוה איר פייער, און דאס איז \"בכל לבבך, בשני יצריך\"."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-13-2-tanya",
+      "startSeg": 460,
+      "endSeg": 516,
+      "title": {
+        "en": "Love with delight and avodas matanah",
+        "yi": "אהבה בתענוגים און עבודת מתנה"
+      },
+      "summary": {
+        "en": "The Rav explains that the yetzer tov wants the 'evil waters', the drive for pleasure, transformed into love of Hashem, up to love with delight that even simple people taste at high moments such as Shabbos. He distinguishes 'avodas avodah', service by toil, from 'avodas matanah', service as a gift.",
+        "yi": "דער משגיח ערקלערט אז דער יצר טוב וויל אז די \"מים הרעים\", דער דראנג צו תענוגים, זאל ווערן איבערגעדרייט צו אהבת ה', ביז אהבה בתענוגים וואס אפילו פשוט'ע מענטשן טועמען ביי הויכע מינוטן ווי שבת. ער מאכט א חילוק צווישן \"עבודת עבודה\", דינען מיט מי, און \"עבודת מתנה\", דינען אלס א מתנה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-13-2-tanya",
+      "startSeg": 517,
+      "endSeg": 623,
+      "title": {
+        "en": "Not a tzaddik gamur; the Zohar's parable",
+        "yi": "נישט קיין צדיק גמור; דער משל פונעם זוהר"
+      },
+      "summary": {
+        "en": "Anticipating the next chapter, the Rav explains that only a tzaddik gamur transforms his yetzer hara, while most people's avodah is to subdue it, so no one should despair. He finishes the chapter: the yetzer tov wants thought, speech and action for Hashem alone, the animal soul wants the opposite, yet it too serves man's good, as the Zohar's parable of the king's son and the harlot shows.",
+        "yi": "פאר'ן קומענדיגן פרק ערקלערט דער משגיח אז נאר א צדיק גמור איז מהפך זיין יצר הרע, און ביי רוב מענטשן איז די עבודה אים צו מכניע זיין, דערפאר זאל זיך קיינער נישט מייאש זיין. ער ענדיגט דעם פרק: דער יצר טוב וויל מחשבה, דיבור און מעשה נאר פאר'ן אייבערשטן, די נפש הבהמית וויל פארקערט, און פונדעסטוועגן איז עס לטובת האדם, אזוי ווי דער משל פונעם זוהר פון דעם בן מלך און דער זונה ווייזט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "והנה מקיימים נישט קיין נפש הבאמת ... הבא לב בחלל השמאלי",
+      "work": "Tanya",
+      "ref": "Tanya ch. 9",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [7, 9, 94, 183, 301], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "כי הדם האט א נפש / איך סוף כי א דם האט א נפש",
+      "work": "Devarim",
+      "ref": "Devarim 12:23",
+      "sefariaRef": "Deuteronomy 12:23",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [22, 39, 40], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ולב חכם לימינו / לב חכם אליהו מינו",
+      "work": "Koheles",
+      "ref": "Koheles 10:2",
+      "sefariaRef": "Ecclesiastes 10:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [107, 188, 215, 216], "confidence": 0.9 }
+    },
+    {
+      "heardAs": "שטעט איך אין שולחן ערוך אז דער כבוד קען נישט העלפן קיין אויסזאלצן",
+      "work": "Shulchan Aruch",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [120, 121, 123, 124], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "כבוד הלב פאלא איז מיון ושלח האם",
+      "work": "Shemos",
+      "ref": "Shemos 7:14",
+      "sefariaRef": "Exodus 7:14",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [127, 128, 170, 172], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "שטעט אין היינטיגע פרשה אין מדרש",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [126, 129, 133, 170], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ברכת יצר ... אהבת עולם ... וכי אפתנה מהקנא לשמך הגדול",
+      "work": "Siddur",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [246, 247, 256, 258], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "וליאמר מלאם ימות",
+      "work": "Bereishis",
+      "ref": "Bereishis 25:23",
+      "sefariaRef": "Genesis 25:23",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [285, 286, 289, 292], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "הוא הקצנה ונשים במועד ... קהלת",
+      "work": "Koheles",
+      "ref": "Koheles 9:14",
+      "sefariaRef": "Ecclesiastes 9:14",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [301, 305, 306, 309], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "עס שטעט אין די משנה אז ערב פתח זאל מען נישט עסן",
+      "work": "Mishnah Pesachim",
+      "ref": "Mishnah Pesachim 10:1",
+      "sefariaRef": "Mishnah Pesachim 10:1",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [399, 401], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "שפיאתות לשם לכחר ולכל לבבך / ולהבכה ... בכל לבבך",
+      "work": "Devarim",
+      "ref": "Devarim 6:5",
+      "sefariaRef": "Deuteronomy 6:5",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [440, 471], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "און חזר דרשן בשני יצרך / לשבשני יצרכך",
+      "work": "Mishnah Berachos",
+      "ref": "Mishnah Berachos 9:5",
+      "sefariaRef": "Mishnah Berakhot 9:5",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [441, 442, 472], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "וכמשה כוסף ביצחים שאנן פר' ג' ... פון ארי הק' בשם הזי'",
+      "work": "Etz Chaim",
+      "ref": "Etz Chaim, Shaar 50, ch. 3",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [490, 491, 492], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "שטעט עבדת מתנה את אין עסקן השכן",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 18:7",
+      "sefariaRef": "Numbers 18:7",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [499, 501], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "עובדת משפחות בני הגרשוני – לעובד על המעשה",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 4:24",
+      "sefariaRef": "Numbers 4:24",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [502, 504, 505], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "יתמוך לב מבקשי השם",
+      "work": "Tehillim",
+      "ref": "Tehillim 105:3",
+      "sefariaRef": "Psalms 105:3",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [513], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די קשיות וואס ער האט געפרעגט אין הערשטען פרעג וועגן צדיק ותובל און צדיק ועלה",
+      "work": "Tanya",
+      "ref": "Tanya ch. 1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [518, 519, 520], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דוד המלאכה האט געזאגט בליבי חלל וקייבא",
+      "work": "Tehillim",
+      "ref": "Tehillim 109:22",
+      "sefariaRef": "Psalms 109:22",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [524, 525], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "יעדער דור זפן א למד וואף צדיקים",
+      "work": "Gemara Sanhedrin",
+      "ref": "Sanhedrin 97b",
+      "sefariaRef": "Sanhedrin 97b",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [542], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "כמשה הזיינישה בזוהרקדש",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [612, 613, 616, 617], "confidence": 0.85 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The brain, though the seat of the Godly soul, is driven by the heart: the blood the heart sends up activates the brain to devise ways of fulfilling the heart's wishes.",
+        "yi": "דער מוח, הגם ער איז דער מקום פון דער נפש האלקית, ווערט געטריבן פונעם הארץ: דער דם וואס דער הארץ שיקט ארויף איז מעורר דעם מוח צו טראכטן עצות ווי אזוי צו דערגרייכן דעם הארצ'נס רצונות."
+      },
+      "evidence": { "segs": [79, 81, 83, 85], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Following the Midrash, Pharaoh's 'heavy heart' means his heart was a liver, all blood: he could admit his sin but had no heart to fear Hashem and send the people out.",
+        "yi": "לויט'ן מדרש מיינט פרעה'ס \"כבד לב\" אז זיין הארץ איז געווען א כבד, אינגאנצן דם: ער האט געקענט מודה זיין אז ער האט געזינדיגט, אבער ער האט נישט געהאט קיין הארץ מורא צו האבן פאר'ן אייבערשטן און ארויסשיקן דאס פאלק."
+      },
+      "evidence": { "segs": [170, 172, 173, 174, 175], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The order of the morning blessings embodies the Tanya's teaching: Birchas Yotzer's contemplation of the luminaries and the angels gives birth to the love of Ahavah Rabbah, as intellect gives birth to emotion.",
+        "yi": "דער סדר פון די ברכות קריאת שמע איז דער לימוד פונעם תניא: די התבוננות פון ברכת יוצר אין די מאורות און די מלאכים איז מוליד די אהבה פון אהבה רבה, אזוי ווי דער שכל איז מוליד די מידות."
+      },
+      "evidence": { "segs": [245, 246, 256, 260, 262, 264], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Eating matzah with appetite is 'stealing' the yetzer hara's drive for the mitzvah; without it the mitzvah would lack its fire and completeness, which is the meaning of serving 'with both your inclinations'.",
+        "yi": "מצה עסן מיט אפעטיט הייסט \"גנב'ענען\" דעם יצר הרע'ס כח פאר דער מצוה; אן דעם וואלט די מצוה נישט געווען מיט אזא פייער און שלימות, און דאס איז דער טייטש פון דינען \"בשני יצריך\"."
+      },
+      "evidence": { "segs": [432, 434, 437, 438, 441], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Beyond 'avodas avodah', service by toil, there is 'avodas matanah', a gifted delight in serving Hashem that even a simple person can be granted at high moments.",
+        "yi": "אחוץ \"עבודת עבודה\", דינען מיט מי, איז דא \"עבודת מתנה\", א געשאנקענער תענוג אין עבודת ה' וואס אפילו א פשוט'ער מענטש קען זוכה זיין דערצו ביי הויכע מינוטן."
+      },
+      "evidence": { "segs": [499, 503, 504, 507, 510], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Subduing the yetzer hara is like a conquering king who has not made the defeated king his friend but holds him as a prisoner, and this every Jew can achieve.",
+        "yi": "מכניע זיין דעם יצר הרע איז ווי א מלך וואס האט איינגענומען די שטאט, און האט נאך נישט געמאכט דעם אנדערן מלך פאר זיין פריינט, נאר ער האלט אים אין תפיסה, און דאס קען יעדער איד דערגרייכן."
+      },
+      "evidence": { "segs": [557, 558, 559, 561, 562], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The yetzer hara's own joy, like the harlot in the Zohar's parable, is that the person not be seduced, so that even the yetzer hara is subservient to Hashem.",
+        "yi": "דעם יצר הרע'ס אייגענע שמחה, אזוי ווי די זונה אינעם משל פונעם זוהר, איז אז דער מענטש זאל זיך נישט לאזן מפתה זיין, אזוי אז אפילו דער יצר הרע איז משועבד צום אייבערשטן."
+      },
+      "evidence": { "segs": [619, 620, 621, 622, 623], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "The lion, the donkey and the fox",
+        "yi": "דער לייב, דער אייזל און דער פוקס"
+      },
+      "retelling": {
+        "en": "In the Midrash the Rav tells, the lion went traveling with his entourage of animals and came to a bridge over a stream where a donkey collected the toll. The donkey demanded that the lion pay too; the lion said the toll's income goes to him, but the donkey insisted that everyone who crosses must pay. The angry lion tore the donkey apart and told the fox to prepare it as a meal for their return, and meanwhile the fox ate the donkey's heart. When the king asked where the heart was, the fox answered that the donkey had none: had it had a heart, would it have dared speak with such chutzpah to the king?",
+        "yi": "אינעם מדרש וואס דער משגיח דערציילט, איז דער לייב געגאנגען שפאצירן מיט זיין פמליא פון חיות און איז געקומען צו א בריק איבער א טייכל, וואו א אייזל האט איינגעזאמלט דעם צאל. דער אייזל האט געפאדערט אז דער לייב זאל אויך באצאלן; דער לייב האט געזאגט אז די הכנסה פונעם צאל קומט דאך צו אים, אבער דער אייזל האט זיך איינגעשפארט אז יעדער וואס גייט אריבער דארף באצאלן. דער לייב איז געווארן אין כעס, האט צעריסן דעם אייזל און געהייסן דעם פוקס אנגרייטן א סעודה פאר ווען זיי קומען צוריק, און דערווייל האט דער פוקס אויפגעגעסן דעם אייזלס הארץ. ווען דער מלך האט געפרעגט וואו איז דאס הארץ, האט דער פוקס געענטפערט אז דער אייזל האט נישט געהאט קיין הארץ: ווען ער וואלט געהאט א הארץ, וואלט ער זיך דערוועגט צו רעדן מיט אזא חוצפה צום מלך?"
+      },
+      "people": [],
+      "evidence": { "segs": [133, 138, 147, 152, 158, 168], "confidence": 0.75 }
+    },
+    {
+      "title": {
+        "en": "The king who tested his son",
+        "yi": "דער מלך וואס האט געפרואווט זיין זון"
+      },
+      "retelling": {
+        "en": "From the Zohar the Rav tells of a king who wanted to test whether his son was upright, and instructed a harlot to try to seduce him. The son, being a prince, did not let himself be seduced. The Zohar says the harlot is the yetzer hara, and her real joy is that the son not be enticed, for that fulfils the king's will.",
+        "yi": "פונעם זוהר דערציילט דער משגיח פון א מלך וואס האט געוואלט פרובירן צי זיין זון איז ערליך, און האט געהייסן א זונה זי זאל אים פרובירן מפתה זיין. דער בן מלך, ווייל ער איז א בן מלך, האט זיך נישט געלאזט מפתה זיין. דער זוהר זאגט אז די זונה איז דער יצר הרע, און איר אמת'ע שמחה איז אז דער זון זאל זיך נישט לאזן מפתה זיין, ווייל דאס איז דעם מלך'ס רצון."
+      },
+      "people": [],
+      "evidence": { "segs": [612, 613, 615, 617, 622], "confidence": 0.8 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why does the brain, seat of the Godly soul, plan how to fulfil the heart's physical desires?",
+        "yi": "פארוואס טראכט דער מוח, דער מקום פון דער נפש האלקית, עצות ווי אזוי צו דערגרייכן דעם הארצ'נס גשמיות'דיגע תאוות?"
+      },
+      "answer": {
+        "en": "Because the heart sends its blood to the brain, and that blood activates the brain to think of ways to fulfil the heart's wishes.",
+        "yi": "ווייל דער הארץ שיקט זיין דם צום מוח, און דער דם איז מעורר דעם מוח צו טראכטן עצות ווי אזוי אויסצופירן דעם הארצ'נס רצונות."
+      },
+      "questionSegs": [79],
+      "answerSegs": [81, 83, 85],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why can the liver not be koshered by salting like other organs?",
+        "yi": "פארוואס קען מען די כבד נישט כשר'ן מיט זאלצן ווי אנדערע אברים?"
+      },
+      "answer": {
+        "en": "Because, as the poskim say, the liver is entirely blood, so it must be roasted.",
+        "yi": "ווייל, אזוי ווי די פוסקים זאגן, איז די כבד אינגאנצן דם, דערפאר מוז מען זי בראטן."
+      },
+      "questionSegs": [120, 121],
+      "answerSegs": [123, 124, 125],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "If matzah is a mitzvah, why should it be eaten with appetite rather than purely for Hashem's will?",
+        "yi": "אויב מצה איז א מצוה, פארוואס זאל מען זי עסן מיט אפעטיט און נישט נאר צוליב רצון ה'?"
+      },
+      "answer": {
+        "en": "Because the yetzer hara must serve the yetzer tov: its drive gives the mitzvah fire and completeness, which is serving 'with both your inclinations'.",
+        "yi": "ווייל דער יצר הרע דארף דינען דעם יצר טוב: זיין דראנג גיט דער מצוה פייער און שלימות, און דאס איז דינען \"בשני יצריך\"."
+      },
+      "questionSegs": [401, 402, 404, 405],
+      "answerSegs": [406, 407, 437, 441],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why does the Rav speak now about the tzaddik gamur, before the Ba'al HaTanya explains it in later chapters?",
+        "yi": "פארוואס רעדט דער משגיח שוין יעצט פונעם צדיק גמור, פאר דער בעל התניא ערקלערט עס אין די שפעטערע פרקים?"
+      },
+      "answer": {
+        "en": "Because learning about such levels can frighten a person into thinking he will never reach them, and the Ba'al HaTanya does not demand this of us.",
+        "yi": "ווייל ווען מ'לערנט פון אזעלכע מדריגות קען א מענטש באפאלן ווערן מיט א פחד אז ער וועט עס קיינמאל נישט דערגרייכן, און דער בעל התניא פאדערט דאס נישט פון אונז."
+      },
+      "questionSegs": [565, 566],
+      "answerSegs": [567, 570, 571],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says that for most people the avodah is to subdue the yetzer hara, not to destroy it, and this every Jew can achieve.",
+        "yi": "דער משגיח זאגט אז ביי רוב מענטשן איז די עבודה מכניע צו זיין דעם יצר הרע, נישט אים צו פארניכטן, און דאס קען יעדער איד דערגרייכן."
+      },
+      "evidence": { "segs": [554, 555, 562, 563], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one should not be frightened or despair on learning of the tzaddik gamur, since the Ba'al HaTanya does not demand that level of us.",
+        "yi": "דער משגיח זאגט אז מ'זאל נישט דערשרעקן ווערן און זיך נישט מייאש זיין ווען מ'לערנט פונעם צדיק גמור, ווייל דער בעל התניא פאדערט נישט די מדריגה פון אונז."
+      },
+      "evidence": { "segs": [567, 568, 570, 571], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says a person should take the physical drive, like the appetite for eating matzah, and use it with kavanah for Hashem.",
+        "yi": "דער משגיח זאגט אז א מענטש זאל נעמען דעם גשמיות'דיגן דראנג, ווי דעם אפעטיט ביים עסן מצה, און אים נוצן מיט כוונה פאר'ן אייבערשטן."
+      },
+      "evidence": { "segs": [425, 434, 435, 439], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "Tanya chapter 9",
+    "the war of the two souls",
+    "the body as a small city",
+    "left and right chambers of the heart",
+    "contemplation giving birth to love of Hashem",
+    "serving Hashem with both inclinations",
+    "tzaddik gamur and the ordinary person",
+    "subduing the yetzer hara",
+    "love with delight",
+    "Pharaoh's heavy heart"
+  ],
+  "concepts": [
+    { "he": "נפש הבהמית", "heardAs": ["נפש הבאמת", "נפש הבעמות", "נפש הבענות", "נפש הבית"] },
+    { "he": "נפש האלקית", "heardAs": ["נפש אלוקות", "נפש של לוקות", "נפש האלקות"] },
+    { "he": "קליפת נוגה", "heardAs": ["קליפת נוגה", "מקליב התנוגה"] },
+    { "he": "חלל השמאלי", "heardAs": ["חלל התמאה", "חלל השמואל", "חלל התמאלי", "חלל התמול"] },
+    { "he": "חלל הימני", "heardAs": ["חלל הימין", "חלל הימנ'", "חלל היומונשעווער"] },
+    { "he": "יצר טוב", "heardAs": ["יצה טוב", "יצר תיב", "יצר צפון", "יצה״ט"] },
+    { "he": "סטרא אחרא", "heardAs": ["צדך אחרע", "סטחה אחרוה"] },
+    { "he": "עיר קטנה", "heardAs": ["נקחה איהו קטנה", "הוא הקצנה"] },
+    { "he": "רשפי אש", "heardAs": ["כרשפער של האבת", "כרשפש על הבת", "כרשפה אש"] },
+    { "he": "יסוד המים", "heardAs": ["יסוד המים הרעים", "מיום הריום"] },
+    { "he": "אהבה בתענוגים", "heardAs": ["אבה בתענגגים"] },
+    { "he": "עבודת מתנה", "heardAs": ["עבדת מתנה", "עבידת מתנה"] },
+    { "he": "צדיק גמור", "heardAs": ["צדיק גמר", "צדיק גורם", "צדיק גנב"] },
+    { "he": "מיכלא דמהימנותא", "heardAs": ["מיכלא דמהימנותא"] },
+    { "he": "חכמה בינה דעת", "heardAs": ["חכמה בינם, ודעת", "חכמיין בינען דעת", "חבד"] }
+  ],
+  "people": [
+    { "name": "the Ba'al HaTanya", "heardAs": ["בעל התניא", "בעל לטניא"] },
+    { "name": "Pharaoh", "heardAs": ["פאלא", "פרד"] },
+    { "name": "Yaakov", "heardAs": ["יענקא", "יעקב"] },
+    { "name": "Esav", "heardAs": ["ונסף", "אסף"] },
+    { "name": "King David", "heardAs": ["דוד המלאכה"] },
+    { "name": "the Arizal", "heardAs": ["ארי הק'"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair to poor; the Tanya text and most pesukim are badly garbled but recoverable from context. The text studied is Tanya chapter 9 (the header lists perek 10), with a preview of the tzaddik gamur discussion. The opening (segs 0-6), segs 408-413 and 420-424 on the joy of Torah, and the animal names in the Midrash fable could not be fully recovered."
+}

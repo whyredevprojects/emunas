@@ -1,0 +1,17 @@
+{
+  "shiurId": "en-parsha-en-shmyny-02",
+  "promptVersion": "audit-v1",
+  "auditedAt": "2026-11-15T12:00:00Z",
+  "counts": {
+    "claimsChecked": 22, "unsupported": 0, "hallucinated": 0,
+    "sourcesChecked": 12, "sourceErrors": 0, "sourcesMissed": 0,
+    "boundariesChecked": 4, "boundariesBad": 1, "noiseMishandled": 0,
+    "termsChecked": 12, "termErrors": 0, "termsCopiedGarbled": 0,
+    "yiddishSentencesChecked": 16, "yiddishBadSentences": 3, "yiddishTranslationese": 0,
+    "flowBreaks": 0, "paddingSentences": 0, "contradictsExtraction": 0,
+    "ruleViolations": 0
+  },
+  "severity": "minor",
+  "needsReview": false,
+  "notes": "sections[1]/[2] boundary at seg 77/78 splits the 'tzaraas includes all, like Edom' argument (begins seg 73, continues to 88); the real turn is at seg 89/90 (Sefirah); writeup.yi[1].paragraphs[0] gender errors 'א דינע הייטל', 'די ברוינע הייטל' (neuter הייטל); writeup.yi[6].paragraphs[0] and sections[6].summary.yi 'דער ראיה' for 'די ראיה'; writeup.yi[2].paragraphs[0] 'יחזקאל איז דורכגעבראכן די פיר קליפות' should take האט; writeup.en[9].paragraphs[0] 'keep away from them' is a bare imperative paraphrasing the Rav's derasha (segs 576-579), borderline second-person; sources (Menachos 45a, Gittin 6b, Shabbos 132b, Yechezkel 1:4, 44:31, Devarim 12:28) all check out"
+}

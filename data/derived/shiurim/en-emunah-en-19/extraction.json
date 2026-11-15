@@ -1,0 +1,478 @@
+{
+  "shiurId": "en-emunah-en-19",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that Pesach, the Yom Tov of Avraham Avinu and of Yetzias Mitzrayim, is the source of emunah, and that its matzah and its springtime newness let a Jew absorb that emunah and renew himself.",
+      "yi": "דער משגיח ערקלערט אז פסח, דער יום טוב פון אברהם אבינו און פון יציאת מצרים, איז דער מקור פון אמונה, און אז די מצה און די נייקייט פונעם פרילינג געבן א איד די כח צו אריינעמען די אמונה און זיך מחדש זיין."
+    },
+    "abstract": {
+      "en": "The Rav opens with the first of the Ten Commandments, which ties emunah to Yetzias Mitzrayim, and explains that Pesach is the Yom Tov of Avraham Avinu, the root of emunah. At Yetzias Mitzrayim Hashem showed that He created the world: the ten utterances of creation, which no one saw, were revealed in the ten plagues, and the last plague, of the firstborn, matches the first utterance, Bereishis. Hashem therefore wants the story told to the children and also eaten, through matzah. The Rav shows by gematria that bread holds the Divine Name three times, and matzah the Name with its filling three times. Matzah, baked fast, is above time and place, while chametz is bound to them; it is the food of emunah. Pesach and milah alone carry kareis because they bind a Jew to Avraham, his root. Nisan, the spring, is a new beginning and the month of chesed, and the Rav calls on each person to renew himself with it.",
+      "yi": "דער משגיח עפנט מיטן ערשטן פון די עשרת הדברות, וואס בינדט צוזאמען אמונה מיט יציאת מצרים, און ערקלערט אז פסח איז דער יום טוב פון אברהם אבינו, דער שורש פון אמונה. ביי יציאת מצרים האט דער רבונו של עולם געוויזן אז ער האט באשאפן די וועלט: די עשרה מאמרות, וואס קיינער האט נישט געזען, זענען אנטפלעקט געווארן אין די עשר מכות, און די לעצטע מכה, מכת בכורות, איז קעגן דעם ערשטן מאמר, בראשית. דערפאר וויל דער אייבערשטער אז מ'זאל עס דערציילן די קינדער, און אויך עסן, דורך דער מצה. מיט גימטריאות ווייזט ער אז לחם איז דריי מאל דער שם הוי'ה, און מצה דריי מאל דער שם מיטן מילוי. מצה, וואס מ'באקט שנעל, איז העכער פון זמן און מקום, און חמץ איז געבונדן צו זיי; מצה איז דער מאכל פון אמונה. נאר פסח און מילה האבן כרת, ווייל זיי בינדן א איד צו אברהם אבינו, זיין שורש. ניסן, דער פרילינג, איז א נייער אנהייב און דער חודש פון חסד, און דער משגיח רופט אז יעדער זאל זיך מחדש זיין דערמיט."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Pesach is the Yom Tov of Avraham Avinu, the root of emunah, and therefore it is the Yom Tov of emunah.",
+          "yi": "פסח איז דער יום טוב פון אברהם אבינו, דער שורש פון אמונה, און ממילא איז עס דער יום טוב פון אמונה."
+        },
+        "evidence": { "segs": [20, 32, 34, 37, 38], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "At Yetzias Mitzrayim Hashem revealed, through the ten plagues, the ten utterances with which He created the world.",
+          "yi": "ביי יציאת מצרים האט דער אייבערשטער אנטפלעקט, דורך די עשר מכות, די עשרה מאמרות מיט וואס ער האט באשאפן די וועלט."
+        },
+        "evidence": { "segs": [52, 56, 64, 67, 69], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Hashem wants Yetzias Mitzrayim not only told to the children but eaten, so that through the matzah it becomes part of a person.",
+          "yi": "דער רבונו של עולם וויל אז מ'זאל יציאת מצרים נישט נאר דערציילן די קינדער, נאר אויך עסן, אז דורך דער מצה זאל עס ווערן א טייל פונעם מענטש."
+        },
+        "evidence": { "segs": [143, 184, 190, 192, 209, 212], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Matzah is above time and place, while chametz is bound to them, so matzah is the food of emunah.",
+          "yi": "מצה איז העכער פון זמן און מקום, און חמץ איז געבונדן צו זיי, דערפאר איז מצה דער מאכל פון אמונה."
+        },
+        "evidence": { "segs": [420, 437, 444, 451, 459], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Pesach and milah are the only positive mitzvos that carry kareis, because both bind a Jew to Avraham Avinu, his root.",
+          "yi": "פסח און מילה זענען די איינציגע מצוות עשה וואס האבן כרת, ווייל ביידע בינדן א איד צו אברהם אבינו, זיין שורש."
+        },
+        "evidence": { "segs": [522, 525, 529, 536, 540], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Nisan, the spring, is a new beginning and the month of chesed, and a person must renew himself together with all of creation.",
+          "yi": "ניסן, דער פרילינג, איז א נייער אנהייב און דער חודש פון חסד, און א מענטש דארף זיך מחדש זיין צוזאמען מיט דער גאנצער בריאה."
+        },
+        "evidence": { "segs": [575, 579, 708, 724, 730], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-english-sets-emunah-english-19-emunah-english",
+      "startSeg": 0,
+      "endSeg": 127,
+      "title": {
+        "en": "Pesach, Avraham Avinu and the ten plagues",
+        "yi": "פסח, אברהם אבינו און די עשר מכות"
+      },
+      "summary": {
+        "en": "The Rav shows that the first commandment ties emunah to Yetzias Mitzrayim, that Pesach is the Yom Tov of Avraham Avinu, and that the ten plagues revealed the ten utterances of creation, with the plague of the firstborn matching Bereishis.",
+        "yi": "דער משגיח ווייזט אז דער ערשטער דיבור בינדט אמונה מיט יציאת מצרים, אז פסח איז דער יום טוב פון אברהם אבינו, און אז די עשר מכות האבן אנטפלעקט די עשרה מאמרות, און מכת בכורות איז קעגן בראשית."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-emunah-english-19-emunah-english",
+      "startSeg": 128,
+      "endSeg": 234,
+      "title": {
+        "en": "Telling the children and eating the story",
+        "yi": "דערציילן די קינדער און עסן די מעשה"
+      },
+      "summary": {
+        "en": "The Rav explains why Hashem wants Yetzias Mitzrayim passed down to every kind of child, and why He also wants it eaten: matzah baked and eaten with intent absorbs the story and makes emunah part of a person.",
+        "yi": "דער משגיח ערקלערט פארוואס דער אייבערשטער וויל אז מ'זאל איבערגעבן יציאת מצרים צו אלע סארט קינדער, און פארוואס ער וויל אויך אז מ'זאל עס עסן: א מצה וואס מ'באקט און מ'עסט לשמה נעמט אריין די מעשה און מאכט די אמונה א טייל פונעם מענטש."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-emunah-english-19-emunah-english",
+      "startSeg": 235,
+      "endSeg": 358,
+      "title": {
+        "en": "Lechem, matzah and the Divine Name",
+        "yi": "לחם, מצה און דער שם הוי'ה"
+      },
+      "summary": {
+        "en": "The Rav explains the special standing of bread and the hidden powers Hashem placed in it, then shows by gematria that bread is three times the Name Havaya, while matzah is three times the Name with its filling, a higher bread.",
+        "yi": "דער משגיח ערקלערט די חשיבות פון לחם און די באהאלטענע כוחות וואס דער אייבערשטער האט אריינגעלייגט אין אים, און ווייזט מיט גימטריא אז לחם איז דריי מאל דער שם הוי'ה, און מצה דריי מאל דער שם מיטן מילוי, א העכערע מדריגה פון לחם."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-emunah-english-19-emunah-english",
+      "startSeg": 359,
+      "endSeg": 495,
+      "title": {
+        "en": "Matzah above time and place",
+        "yi": "מצה איז העכער פון זמן און מקום"
+      },
+      "summary": {
+        "en": "The Rav explains that everything in this world exists in time and place, that chametz rises through time and takes up space, and that matzah, baked in haste, stays above both; it is the food of emunah, and the Haggadah is said over it so it absorbs the story.",
+        "yi": "דער משגיח ערקלערט אז אלעס אויף דער וועלט איז אין זמן און מקום, אז חמץ הייבט זיך אויף דורך זמן און נעמט מער מקום, און אז מצה, וואס מ'באקט בחפזון, בלייבט העכער פון ביידע; זי איז דער מאכל פון אמונה, און מ'זאגט די הגדה איבער איר כדי זי זאל אריינעמען די מעשה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-emunah-english-19-emunah-english",
+      "startSeg": 496,
+      "endSeg": 622,
+      "title": {
+        "en": "Kareis, milah and the spring",
+        "yi": "כרת, מילה און דער פרילינג"
+      },
+      "summary": {
+        "en": "The Rav asks why only Pesach and milah among the positive mitzvos carry kareis, and answers that both bind a Jew to Avraham Avinu, his root. He then describes Pesach as the spring, a new beginning for the whole world.",
+        "yi": "דער משגיח פרעגט פארוואס פון אלע מצוות עשה האבן נאר פסח און מילה כרת, און ענטפערט אז ביידע בינדן א איד צו אברהם אבינו, זיין שורש. דערנאך שילדערט ער פסח אלס דער פרילינג, א נייער אנהייב פאר דער גאנצער וועלט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-emunah-english-19-emunah-english",
+      "startSeg": 623,
+      "endSeg": 782,
+      "title": {
+        "en": "Nisan, chesed and renewing oneself",
+        "yi": "ניסן, חסד און זיך מחדש זיין"
+      },
+      "summary": {
+        "en": "The Rav brings the dispute whether the world was created in Tishrei or Nisan, explains Nisan as the month of chesed, the right side, and Tishrei as din, and calls on each person to renew himself with the spring; he closes with the haftarah of the dry bones and a brachah for the Yom Tov.",
+        "yi": "דער משגיח ברענגט די מחלוקת צי די וועלט איז באשאפן געווארן אין תשרי אדער אין ניסן, ערקלערט אז ניסן איז דער חודש פון חסד, די רעכטע זייט, און תשרי איז דין, און רופט אז יעדער זאל זיך מחדש זיין מיטן פרילינג; ער ענדיגט מיט דער הפטרה פון די טרוקענע ביינער און מיט א ברכה פארן יום טוב."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "Anoichi Hashem Aleichecha, Ashar Yitzicham Eretz Mitzchayim",
+      "work": "Shemos",
+      "ref": "Shemos 20:2",
+      "sefariaRef": "Exodus 20:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [2, 3, 44, 45], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Avramen B'Hashem V'Yachshver Le Tzedakah",
+      "work": "Bereishis",
+      "ref": "Bereishis 15:6",
+      "sefariaRef": "Genesis 15:6",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [35, 36], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the Gemara says that 10 times it says by Yoimel ... Reish is also a Maima",
+      "work": "Gemara Rosh Hashanah",
+      "ref": "Rosh Hashanah 32a",
+      "sefariaRef": "Rosh Hashanah 32a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [86, 87, 90, 92], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "what the Kuzari says",
+      "work": "Kuzari",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [146, 148], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "what the Rambam says",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [147, 148], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "like the Medrash says, that there are ten mitzvahs",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [243, 244, 246], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "everything in the Tehra is multiplied by Fri, like the Gemara says in Shabbos",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 88a",
+      "sefariaRef": "Shabbat 88a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [254, 255, 257], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Lechem is not the Lechem Levada ... there's a Maitze Pi Hashem",
+      "work": "Devarim",
+      "ref": "Devarim 8:3",
+      "sefariaRef": "Deuteronomy 8:3",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [275, 276, 277], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the zaya tells us that there's even a bigger madriga in the Shem Havaya",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [297, 298, 299], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "Ki b'chipazan yitzhase mi mitzrayim",
+      "work": "Devarim",
+      "ref": "Devarim 16:3",
+      "sefariaRef": "Deuteronomy 16:3",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [365, 366], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "this the maral says",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [444, 446, 447], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "a meichel of lechem abiram that malachim eats",
+      "work": "Tehillim",
+      "ref": "Tehillim 78:25",
+      "sefariaRef": "Psalms 78:25",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [453, 454], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the zayah kaddish calls it a food of Amunah",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [458, 459, 460], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Levincha, b'zman sh'yish Matzah umara monachim lefanecha",
+      "work": "Haggadah",
+      "ref": "Haggadah, Yachol me-Rosh Chodesh",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [479, 480, 481], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "so the Maral explains that because in the Himmel there's a new beginning",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [600, 602, 606], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "there is a Mechleikis in the Gemara when the world was created in Tishrei or in Nisan",
+      "work": "Gemara Rosh Hashanah",
+      "ref": "Rosh Hashanah 10b-11a",
+      "sefariaRef": "Rosh Hashanah 10b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [623, 624, 625, 626], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Tesis makes a Pshare",
+      "work": "Tosafos",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [630, 632, 633], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "the Gemara says ... the right sleeve comes first ... the right shoe first",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 61a",
+      "sefariaRef": "Shabbat 61a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [645, 648, 651], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "on Chalamayit Pesach we lane the Aftar of Tchiyas HaMesem",
+      "work": "Yechezkel",
+      "ref": "Yechezkel 37",
+      "sefariaRef": "Ezekiel 37:1-14",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [736, 737, 738, 740], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Ramah brings on ... the Tchiyas HaMesem will be on Pesach",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [744, 746], "confidence": 0.6 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The ten utterances of creation were hidden, but at Yetzias Mitzrayim they were turned into the ten plagues that six hundred thousand Jews saw, so the Exodus is the visible proof that Hashem created the world; this is why the first commandment mentions the Exodus and not creation.",
+        "yi": "די עשרה מאמרות פון בריאת העולם זענען געווען באהאלטן, אבער ביי יציאת מצרים זענען זיי פארוואנדלט געווארן אין די עשר מכות וואס זעקס הונדערט טויזנט אידן האבן געזען; ממילא איז יציאת מצרים דער קלארער באווייז אז דער אייבערשטער האט באשאפן די וועלט, און דערפאר דערמאנט דער ערשטער דיבור יציאת מצרים און נישט בריאת העולם."
+      },
+      "evidence": { "segs": [56, 58, 70, 75, 78], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The plagues run backwards against the utterances: Bereishis, the first and most important utterance, is the beginning, and so the last plague, the firstborn, struck the beginning of Mitzrayim and was the most important plague.",
+        "yi": "די מכות גייען צוריק קעגן די מאמרות: בראשית, דער ערשטער און וויכטיגסטער מאמר, איז דער אנהייב, און דערפאר האט די לעצטע מכה, מכת בכורות, געשלאגן דעם אנהייב פון מצרים און איז געווען די וויכטיגסטע מכה."
+      },
+      "evidence": { "segs": [81, 104, 110, 113, 115], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Bereishis has no 'and He said' because it came before speech existed; it created the very power of speech, so only from the second utterance on can the Torah say 'and G-d said'.",
+        "yi": "ביי בראשית שטייט נישט \"ויאמר\", ווייל עס איז געווען פאר די אמירה איז נאך באשאפן געווארן; בראשית האט באשאפן דעם כח פון אמירה, און ערשט פונעם צווייטן מאמר און ווייטער קען שטיין \"ויאמר\"."
+      },
+      "evidence": { "segs": [95, 97, 99, 101], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Bread is three times the Name Havaya (78), the salt it is dipped in is again 78, and matzah equals three times the Name with its filled-in letters (135), so matzah is a higher bread.",
+        "yi": "לחם איז דריי מאל דער שם הוי'ה (78), דאס זאלץ וואס מ'טונקט עס איין איז אויך 78, און מצה איז די גימטריא פון דריי מאל דער שם מיטן מילוי (135), ממילא איז מצה א העכערע מדריגה פון לחם."
+      },
+      "evidence": { "segs": [282, 286, 289, 335, 337], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Chametz is flour plus time plus place: time makes it rise and it takes up more space, while matzah, baked fast, is not ruled by time and place and so belongs above this world.",
+        "yi": "חמץ איז מעל מיט זמן און מקום: דער זמן מאכט עס אויפהייבן און עס נעמט מער מקום, און מצה, וואס מ'באקט שנעל, ווערט נישט באהערשט פון זמן און מקום און געהערט ממילא העכער פון דער וועלט."
+      },
+      "evidence": { "segs": [423, 427, 432, 436, 444], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Hebrew is written from right to left because Yidden start from the right side, chesed, while Esav's nations write from left to right, din; Nisan's letters run forward through the alef-beis and Tishrei's run backwards.",
+        "yi": "אידן שרייבן פון רעכטס צו לינקס ווייל זיי הייבן אן פון דער רעכטער זייט, חסד, און די אומות פון עשו שרייבן פון לינקס צו רעכטס, דין; די אותיות פון ניסן גייען פאראויס אינעם אלף בית, און די פון תשרי גייען צוריק."
+      },
+      "evidence": { "segs": [661, 667, 684, 685, 699], "confidence": 0.7 }
+    }
+  ],
+  "stories": [],
+  "questions": [
+    {
+      "question": {
+        "en": "Why does the first commandment speak of Yetzias Mitzrayim and not of creation?",
+        "yi": "פארוואס רעדט דער ערשטער דיבור פון יציאת מצרים און נישט פון בריאת העולם?"
+      },
+      "answer": {
+        "en": "Because no one saw creation, but six hundred thousand Jews saw the ten utterances revealed in the plagues at Yetzias Mitzrayim.",
+        "yi": "ווייל קיינער האט נישט געזען די בריאה, אבער זעקס הונדערט טויזנט אידן האבן געזען די עשרה מאמרות אנטפלעקט אין די מכות ביי יציאת מצרים."
+      },
+      "questionSegs": [70, 71, 72, 74],
+      "answerSegs": [75, 77, 78, 79],
+      "confidence": 0.7
+    },
+    {
+      "question": {
+        "en": "The Gemara counts only nine times 'and He said' in creation; where is the tenth utterance?",
+        "yi": "די גמרא ציילט נאר ניין מאל \"ויאמר\" ביי דער בריאה; וואו איז דער צענטער מאמר?"
+      },
+      "answer": {
+        "en": "Bereishis is also an utterance; it cannot say 'and He said' because it created speech itself.",
+        "yi": "בראשית איז אויך א מאמר; ביי אים קען נישט שטיין \"ויאמר\" ווייל ער האט באשאפן די אמירה גופא."
+      },
+      "questionSegs": [87, 88, 90],
+      "answerSegs": [92, 95, 97, 99],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why do Pesach and milah, though only positive commandments, carry kareis, when the most stringent mitzvos of Shavuos and Sukkos do not?",
+        "yi": "פארוואס האבן פסח און מילה כרת, הגם זיי זענען נאר מצוות עשה, ווען די חמורע מצוות פון שבועות און סוכות האבן נישט קיין כרת?"
+      },
+      "answer": {
+        "en": "Because they both belong to Avraham Avinu and bind a Jew to his root; one who is not bound to the root is cut off like a tree from its roots.",
+        "yi": "ווייל ביידע געהערן צו אברהם אבינו און בינדן א איד צו זיין שורש; ווער ס'איז נישט מקושר צום שורש איז אפגעשניטן ווי א בוים פון זיינע ווארצלען."
+      },
+      "questionSegs": [496, 498, 503, 504],
+      "answerSegs": [529, 533, 535, 541],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says one should tell Yetzias Mitzrayim to the children, that Hashem created the world and alone controls it.",
+        "yi": "דער משגיח זאגט אז מ'זאל דערציילן די קינדער פון יציאת מצרים, אז דער אייבערשטער האט באשאפן די וועלט און ער אליין פירט זי."
+      },
+      "evidence": { "segs": [143, 171, 172, 176, 178], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav calls on each person to renew himself on Pesach together with all of creation, and to become a new person.",
+        "yi": "דער משגיח רופט אז יעדער זאל זיך מחדש זיין אויף פסח צוזאמען מיט דער גאנצער בריאה, און ווערן א נייער מענטש."
+      },
+      "evidence": { "segs": [724, 726, 727, 730, 732], "confidence": 0.85 }
+    }
+  ],
+  "candidateTopics": [
+    "Pesach as the Yom Tov of emunah",
+    "Avraham Avinu and Pesach",
+    "ten utterances and ten plagues",
+    "matzah as the food of emunah",
+    "gematria of lechem and matzah",
+    "chametz, time and place",
+    "kareis for Pesach and milah",
+    "Nisan and spring as renewal",
+    "chesed and din, right and left"
+  ],
+  "concepts": [
+    { "he": "יציאת מצרים", "heardAs": ["Yitzias Mitzrayim", "Yetzirah Mitzrayim", "Yitzhiya Mitzchayim"] },
+    { "he": "עשרה מאמרות", "heardAs": ["Asara Ma'amareis", "Asara Mamareis"] },
+    { "he": "עשר מכות", "heardAs": ["Asara Makas"] },
+    { "he": "מכת בכורות", "heardAs": ["Makas B'chayris"] },
+    { "he": "רבונו של עולם", "heardAs": ["Rabbeinu Sholeilam", "Rabbani Shredim", "Rabbi Yisraelim", "Trabani Shlodim"] },
+    { "he": "שם הוי'ה", "heardAs": ["shame of vayah", "Shem Havaya", "shame of aya"] },
+    { "he": "מילוי", "heardAs": ["milui", "milly"] },
+    { "he": "בחפזון", "heardAs": ["b'chipazan"] },
+    { "he": "מקום וזמן", "heardAs": ["Makaim and Zman", "makim and zman"] },
+    { "he": "כרת", "heardAs": ["kareis", "Karis"] },
+    { "he": "קרבן פסח", "heardAs": ["Karpon Pesach", "karein Pesach"] },
+    { "he": "ערל", "heardAs": ["Aurel"] },
+    { "he": "תחיית המתים", "heardAs": ["Tiyas HaMesem", "Tchiyas HaMesem"] },
+    { "he": "מדת החסד", "heardAs": ["Mitas HaChesed"] },
+    { "he": "מדת הדין", "heardAs": ["Mitas HaDin", "Midas Adin"] },
+    { "he": "מוציא", "heardAs": ["maitzi", "Hamaiti"] }
+  ],
+  "people": [
+    { "name": "Avraham Avinu", "heardAs": ["Avram Avino", "Avraham Avinu"] },
+    { "name": "Rabbi Yehoshua", "heardAs": ["Rabbi Yeshua"] },
+    { "name": "the Maharal", "heardAs": ["maral", "Maral"] },
+    { "name": "Rambam", "heardAs": ["Rambam"] }
+  ],
+  "asrNotes": "English ASR fair, with Hebrew terms heavily garbled (Ribono shel Olam appears in many forms). No segments were flagged as noise. The Torah-in-threes passage (segs 256-268) and several short stretches (e.g. 165-167, 397-404, 599, 704, 744) could not be fully recovered and were left out; 'the Ramah' in seg 744 could not be identified."
+}

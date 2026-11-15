@@ -1,0 +1,491 @@
+{
+  "shiurId": "yi-current-unc-bachurim-5771-08",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav teaches the bachurim that every day and every tefillah is a new creation with its own tikkunim, so the beginning of the day, of davening and of learning must be sanctified, down to a person's first word, thought, sight and even his Jewish name.",
+      "yi": "דער משגיח לערנט די בחורים אז יעדער טאג און יעדע תפילה איז א נייע בריאה מיט אירע אייגענע תיקונים, און דערפאר דארף מען מקדש זיין דעם אנהייב פונעם טאג, פונעם דאווענען און פונעם לערנען, ביז דעם ערשטן דיבור, מחשבה און ראיה, און אפילו דעם אידישן נאמען."
+    },
+    "abstract": {
+      "en": "The Rav returns to his warning against talking before davening, allowing only kind and holy words, and tells the bachurim to daven slowly and with their yeshiva. He describes davening as an ascent through the worlds of Asiyah, Yetzirah and Beriah up to Shemoneh Esrei before the King, and a descent that brings the shefa down, each step marked by a Kaddish, so parts should not be skipped as a habit. He speaks of the higher Shabbos davening and of a chazzan who must lift the tzibbur, with a story of the Sanzer Rav. Every day, he explains, is a new world with new tikkunim, so a missed tefillah cannot be made up. The beginning carries the whole act, as with writing a Sefer Torah lishmah, learning and davening. Therefore Modeh Ani is said at once, the first sight should be holy, and a Jew should be called by his Jewish name, which holds his shlichus.",
+      "yi": "דער משגיח קומט צוריק צו זיין ווארענונג נישט צו רעדן פארן דאווענען, חוץ גוטע און הייליגע דיבורים, און זאגט די בחורים צו דאווענען פאמעלעך און מיט זייער ישיבה. ער שילדערט דאס דאווענען ווי א ארויפגיין דורך די עולמות עשיה, יצירה און בריאה ביז שמונה עשרה פארן מלך, און דערנאך א אראפגיין וואס ברענגט אראפ די שפע, און ביי יעדן שטאפל זאגט מען א קדיש; דערפאר טאר מען נישט איבערהיפן מיט א קביעות. ער רעדט וועגן דעם העכערן שבת'דיגן דאווענען און אז א בעל תפילה דארף הויבן דעם עולם, מיט א מעשה פונעם צאנזער רב. יעדער טאג, ערקלערט ער, איז א נייע וועלט מיט נייע תיקונים, ממילא קען מען א פארפעלטע תפילה נישט מתקן זיין. דער אנהייב טראגט די גאנצע זאך, אזוי ווי ביים שרייבן א ספר תורה לשמה, ביים לערנען און ביים דאווענען. דערפאר זאגט מען מודה אני באלד, די ערשטע ראיה זאל זיין הייליג, און א איד זאל גערופן ווערן ביי זיין אידישן נאמען וואס האלט אין זיך זיין שליחות."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The Rav says the first words of the day should be words before Hashem, and talking before Shacharis takes away the help from Heaven to daven well.",
+          "yi": "דער משגיח זאגט אז די ערשטע דיבורים פונעם טאג זאלן זיין פארן רבונו של עולם, און ווער עס רעדט פאר שחרית פארלירט די סייעתא דשמיא צו דאווענען גוט."
+        },
+        "evidence": { "segs": [2, 17, 19, 26, 28], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Davening rises through the worlds up to Shemoneh Esrei and then brings the shefa down; each passage is marked by a Kaddish, so one should not skip parts as a habit.",
+          "yi": "דאס דאווענען גייט ארויף דורך די עולמות ביז שמונה עשרה און דערנאך ברענגט עס אראפ די שפע; יעדער איבערגאנג ווערט באצייכנט מיט א קדיש, און דערפאר זאל מען נישט איבערהיפן מיט א קביעות."
+        },
+        "evidence": { "segs": [80, 101, 117, 143, 180, 191], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Every day is a new creation with its own task, so every tefillah does tikkunim that no other tefillah can do, and a missed davening cannot be made up.",
+          "yi": "יעדער טאג איז א נייע בריאה מיט אן אייגענעם תפקיד, ממילא טוט יעדע תפילה תיקונים וואס קיין אנדערע תפילה קען נישט אויפטאן, און א פארפעלטע דאווענען קען מען נישט מתקן זיין."
+        },
+        "evidence": { "segs": [273, 277, 312, 334, 354, 355], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The intention stated at the beginning carries through the whole act, as with writing a Sefer Torah, learning and davening, so one should say at the start that he is doing it for the mitzvah.",
+          "yi": "די כוונה וואס מ'זאגט ביים אנהייב גייט מיט אויף דער גאנצער זאך, אזוי ווי ביים שרייבן א ספר תורה, ביים לערנען און ביים דאווענען, דערפאר זאל מען זאגן ביים אנהייב אז מ'טוט עס צוליב דער מצוה."
+        },
+        "evidence": { "segs": [372, 379, 401, 409, 421, 453], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "On waking, the first word, thought, act and sight should be devoted to Hashem: Modeh Ani at once, before washing, and a look at the tzitzis or mezuzah.",
+          "yi": "ווען מ'שטייט אויף, זאל דער ערשטער דיבור, מחשבה, מעשה און ראיה זיין פארן רבונו של עולם: באלד מודה אני, נאך פארן נעגל וואסער, און א קוק אויף די ציצית אדער די מזוזה."
+        },
+        "evidence": { "segs": [523, 539, 563, 566, 576, 584], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Each Jew has his own shlichus, alluded to in his name, so he should be called by his Jewish name, which strengthens his soul, and not by a non-Jewish name, which strengthens the sitra achra.",
+          "yi": "יעדער איד האט זיין אייגענע שליחות וואס איז מרומז אין זיין נאמען, ממילא זאל מען אים רופן ביים אידישן נאמען וואס שטארקט די נשמה, און נישט ביים גוי'אישן נאמען וואס שטארקט די סטרא אחרא."
+        },
+        "evidence": { "segs": [598, 603, 641, 653, 668, 684], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-current-bachurim-5771-08-03-toldos",
+      "startSeg": 0,
+      "endSeg": 76,
+      "title": { "en": "No talking before davening", "yi": "נישט רעדן פארן דאווענען" },
+      "summary": {
+        "en": "The Rav repeats that the first words of the day should be before Hashem and that talking before Shacharis costs the help from Heaven, while allowing short, kind words and holy words that prepare for davening. He tells the bachurim to daven slowly, rise earlier, and daven with their yeshiva as its rules require.",
+        "yi": "דער משגיח חזר'ט איבער אז די ערשטע דיבורים פונעם טאג זאלן זיין פארן רבונו של עולם און אז רעדן פאר שחרית נעמט אוועק די סייעתא דשמיא, אבער קורצע פריינטלעכע ווערטער און הייליגע דיבורים זענען א הכנה צום דאווענען. ער הייסט די בחורים דאווענען פאמעלעך, אויפשטיין פריער, און דאווענען מיט דער ישיבה ווי איר תקנה פארלאנגט."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-5771-08-03-toldos",
+      "startSeg": 77,
+      "endSeg": 196,
+      "title": { "en": "The worlds of davening and the Kaddeishim", "yi": "די עולמות פונעם דאווענען און די קדישים" },
+      "summary": {
+        "en": "The Rav maps davening onto the worlds: korbanos in Asiyah, Pesukei d'Zimrah in Yetzirah, the brachos of Krias Shema in Beriah, and Shemoneh Esrei before the King, then the descent that brings the shefa down, with a Kaddish at each passage. He concludes that although halachah permits a latecomer to skip, by pnimiyus one should not make a habit of it.",
+        "yi": "דער משגיח שטעלט אוועק דאס דאווענען לויט די עולמות: קרבנות אין עשיה, פסוקי דזמרה אין יצירה, ברכות קריאת שמע אין בריאה, און שמונה עשרה פארן מלך, און דערנאך דאס אראפגיין וואס ברענגט אראפ די שפע, מיט א קדיש ביי יעדן איבערגאנג. ער ענדיגט אז כאטש על פי הלכה מעג א שפעטיגער איבערהיפן, על פי פנימיות זאל מען דאס נישט טאן מיט א קביעות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-5771-08-03-toldos",
+      "startSeg": 197,
+      "endSeg": 267,
+      "title": { "en": "Shabbos davening and the baal tefillah", "yi": "דאס שבת'דיגע דאווענען און דער בעל תפילה" },
+      "summary": {
+        "en": "The Rav says coming late on Shabbos loses diamonds, since the Shabbos davening is far higher, and asks those who cannot sing well to daven quietly. A baal tefillah must lift the tzibbur and not rush, as shown by a story of the Sanzer Rav leading a hasty chazzan away from the amud.",
+        "yi": "דער משגיח זאגט אז ווער עס קומט שפעט שבת פארלירט בריליאנטן, ווייל דאס שבת'דיגע דאווענען איז פיל העכער, און בעט אז די וואס קענען נישט גוט זינגען זאלן דאווענען שטיל. א בעל תפילה דארף הויבן דעם עולם און נישט יאגן, ווי מ'זעט פון א מעשה מיטן צאנזער רב וואס האט אוועקגעפירט א חזן וואס האט געיאגט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-5771-08-03-toldos",
+      "startSeg": 268,
+      "endSeg": 366,
+      "title": { "en": "Every day a new world, every tefillah new tikkunim", "yi": "יעדער טאג א נייע וועלט, יעדע תפילה נייע תיקונים" },
+      "summary": {
+        "en": "The Rav explains that since creation no day has had the same task, so although the words of davening repeat, their inner kavanos differ, and the words composed with ruach hakodesh effect tikkunim even unknowingly. Each morning one makes a new covenant with Hashem like Adam on his first day, each Krias Shema is a new kabbalas ol, and a lost tefillah cannot be repaired the next day.",
+        "yi": "דער משגיח ערקלערט אז זינט מעשה בראשית האט קיין טאג נישט געהאט דעם זעלבן תפקיד, און כאטש די ווערטער פונעם דאווענען חזר'ן זיך איבער, זענען די פנימיות'דיגע כוונות אנדערש, און די ווערטער וואס זענען מחובר געווארן ברוח הקודש טוען תיקונים אפילו אן וויסן. יעדן אינדערפרי שליסט מען א נייעם ברית מיטן רבונו של עולם ווי אדם הראשון, יעדע קריאת שמע איז א נייע קבלת עול, און א פארפעלטע תפילה קען מען מארגן נישט מתקן זיין."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-5771-08-03-toldos",
+      "startSeg": 367,
+      "endSeg": 490,
+      "title": { "en": "The beginning carries the whole act", "yi": "דער אנהייב טראגט די גאנצע זאך" },
+      "summary": {
+        "en": "The Rav brings the halachah that a sofer must say at the start that he writes for the sanctity of the Sefer Torah, and that this beginning holds even when his mind is later absorbed. He applies it to learning, bringing the Tanya on saying it each hour because of the changing combinations of the Name, to davening for the mitzvah of serving Hashem with the heart, and to living in Eretz Yisroel.",
+        "yi": "דער משגיח ברענגט די הלכה אז א סופר דארף זאגן ביים אנהייב אז ער שרייבט לשם קדושת ספר תורה, און דער אנהייב האלט אן אפילו ווען ער איז שפעטער פארטיפט. ער שטעלט דאס צו צום לערנען, מיטן תניא אז מ'זאל עס זאגן יעדע שעה צוליב די צירופים פונעם שם, צום דאווענען צוליב דער מצוה פון ולעבדו בכל לבבכם, און צו וואוינען אין ארץ ישראל."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-5771-08-03-toldos",
+      "startSeg": 491,
+      "endSeg": 585,
+      "title": { "en": "Modeh Ani and the first moments of the day", "yi": "מודה אני און די ערשטע רגעים פונעם טאג" },
+      "summary": {
+        "en": "The Rav compares waking to a new birth: just as the yetzer hara comes to a child before the yetzer tov, it rushes in each morning, so Modeh Ani must be said the moment one opens his eyes, which is why it contains no Name of Hashem. The first word, thought, act and sight of the day should be with kabbalas ol malchus shamayim, such as looking at the tzitzis or the mezuzah.",
+        "yi": "דער משגיח פארגלייכט דאס אויפשטיין צו א נייע געבורט: אזוי ווי ביי א קינד קומט דער יצר הרע פאר דעם יצר טוב, אזוי לויפט ער אריין יעדן אינדערפרי, דערפאר דארף מען זאגן מודה אני באלד ווען מ'עפנט די אויגן, און דערפאר איז נישט דא קיין שם אין מודה אני. דער ערשטער דיבור, מחשבה, מעשה און ראיה פונעם טאג זאלן זיין מיט קבלת עול מלכות שמים, למשל א קוק אויף די ציצית אדער די מזוזה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-5771-08-03-toldos",
+      "startSeg": 586,
+      "endSeg": 702,
+      "title": { "en": "A Jewish name and its shlichus", "yi": "דער אידישער נאמען און זיין שליחות" },
+      "summary": {
+        "en": "The Rav teaches that each Jew is sent with his own shlichus, alluded to in his name, bringing Yaakov's question to the angel and Rashi's comment, and suggests combining the letters of one's name with the Name Havayah on waking. He warns against being called by a non-Jewish name, telling of a heretic named Eliezer whose name helped him do teshuvah, and closes by recalling the yahrzeit of Reb Yankele of Pshevorsk.",
+        "yi": "דער משגיח לערנט אז יעדער איד ווערט געשיקט מיט זיין אייגענער שליחות וואס איז מרומז אין זיין נאמען, ער ברענגט יעקב אבינו'ס פראגע צום מלאך מיט רש\"י, און זאגט אז ביים אויפשטיין זאל מען צוזאמשטעלן די אותיות פונעם נאמען מיטן שם הוי'ה. ער ווארנט קעגן רופן זיך ביי א גוי'אישן נאמען, דערציילט פון אן אפיקורס וואס האט געהייסן אליעזר און דער נאמען האט אים געהאלפן תשובה טאן, און ענדיגט מיטן דערמאנען דעם יארצייט פון רבי יענקעלע פשעווארסקער."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "דער לשון פון רמב״מ'ס קיעמת לפני המלך",
+      "work": "Rambam",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [101, 102], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אפי הלכה וועט ער געפונען אין שולחן ערוך",
+      "work": "Shulchan Aruch",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [168, 170], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ניים זמירי את ישראל",
+      "work": "Shmuel II",
+      "ref": "Shmuel II 23:1",
+      "sefariaRef": "II Samuel 23:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [261, 262], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "חדשים מלפי קרן",
+      "work": "Eichah",
+      "ref": "Eichah 3:23",
+      "sefariaRef": "Lamentations 3:23",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [270], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "קדש לי כל בחייה",
+      "work": "Shemos",
+      "ref": "Shemos 13:2",
+      "sefariaRef": "Exodus 13:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [322, 323, 324], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "א מחדש בטובה בכל יום תמיד מעשי בראשית",
+      "work": "Siddur",
+      "ref": "Siddur, Shacharis, blessing of Yotzer Or",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [325, 326, 327], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "דאס לשון פון זייער, בני נשא די מתחדשין לכל יום",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [358, 359, 360], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "אזוי ווי שטעט אין פוסקים, ווען איינער שרייבט א ספר תורה",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [373, 374, 379, 398], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "שט ולמדו תמיתם את בניכם",
+      "work": "Devarim",
+      "ref": "Devarim 11:19",
+      "sefariaRef": "Deuteronomy 11:19",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [411, 412], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "שטעט הדבר פעולה אין תניא",
+      "work": "Tanya",
+      "ref": "Tanya ch. 41",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [427, 428, 435, 436], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "פון עולי עובדי בכלל לבבכם",
+      "work": "Devarim",
+      "ref": "Devarim 11:13",
+      "sefariaRef": "Deuteronomy 11:13",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [456, 457], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "מיידע אנו לפונעם נחה שכזייטה בי נשמתי בחמלה, רבי אמונת זכר",
+      "work": "Siddur",
+      "ref": "Siddur, Modeh Ani",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [535, 540, 541], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אלוקיה נשמה שבתי תבואה, טהורי",
+      "work": "Siddur",
+      "ref": "Siddur, Birchos HaShachar, Elokai Neshamah",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [546, 550, 551], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "מה שם, מה זייער שמחה? הגידה נולי",
+      "work": "Bereishis",
+      "ref": "Bereishis 32:30",
+      "sefariaRef": "Genesis 32:30",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [604, 606, 608, 610], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "זאגט רשע, אונזער נאמען בייצע חלמל, לויט אונזער שליחות",
+      "work": "Rashi on Bereishis",
+      "ref": "Rashi on Bereishis 32:30",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [611, 612, 613], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אלקיאוי ביאזרין",
+      "work": "Shemos",
+      "ref": "Shemos 18:4",
+      "sefariaRef": "Exodus 18:4",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [661, 662, 663], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אברהם אברהם ... עטי דטי כי יראה לכם עטי",
+      "work": "Bereishis",
+      "ref": "Bereishis 22:11-12",
+      "sefariaRef": "Genesis 22:12",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [675, 678, 679], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אידן זענען ארויסגעגאנגען פון מצרים, שאהשינו את שממה",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [695, 696], "confidence": 0.7 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav reads the Kaddeishim of Shacharis as markers between the worlds: a Kaddish is said each time one passes from one world to another, going up and coming down.",
+        "yi": "דער משגיח טייטשט די קדישים פון שחרית ווי סימנים צווישן די עולמות: מ'זאגט א קדיש יעדעס מאל ווען מ'גייט אריבער פון איין עולם צום צווייטן, סיי ארויף סיי אראפ."
+      },
+      "evidence": { "segs": [141, 143, 146, 149, 154], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The second half of davening, after Shemoneh Esrei, is the bringing down of the shefa that was asked for; like paying in a store and leaving the goods on the counter, one who neglects it brings nothing home.",
+        "yi": "די צווייטע העלפט פונעם דאווענען, נאך שמונה עשרה, איז דאס אראפברענגען די שפע וואס מ'האט געבעטן; אזוי ווי איינער וואס באצאלט אין א געשעפט און לאזט די סחורה איבער, ברענגט דער וואס פארנאכלעסיגט עס גארנישט אהיים."
+      },
+      "evidence": { "segs": [117, 123, 133, 136, 137, 138], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Because the words of davening were composed with ruach hakodesh, they effect great tikkunim even when the one davening does not know the kavanos, provided he davens properly.",
+        "yi": "ווייל די ווערטער פונעם דאווענען זענען מחובר געווארן ברוח הקודש, טוען זיי גרויסע תיקונים אפילו ווען דער וואס דאוונט ווייסט נישט די כוונות, אבי ער דאוונט געהעריג."
+      },
+      "evidence": { "segs": [291, 299, 301, 302, 305, 307], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Waking each morning is like birth: as the yetzer hara reaches a child years before the yetzer tov, it reaches a person first each morning, which is why Modeh Ani must come at once.",
+        "yi": "דאס אויפשטיין יעדן אינדערפרי איז ווי א געבורט: אזוי ווי דער יצר הרע קומט צו א קינד יארן פארן יצר טוב, אזוי קומט ער צום מענטש ערשט יעדן אינדערפרי, און דערפאר מוז מודה אני קומען באלד."
+      },
+      "evidence": { "segs": [495, 503, 504, 509, 512, 521], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Modeh Ani was composed without a Name of Hashem precisely so that it could be said before washing, letting the very first word and thought of the day be thanks to Hashem.",
+        "yi": "מודה אני איז מתוקן געווארן אן א שם, כדי מ'זאל עס קענען זאגן נאך פארן נעגל וואסער, אז דער ערשטער דיבור און די ערשטע מחשבה פונעם טאג זאלן זיין א דאנק צום רבונו של עולם."
+      },
+      "evidence": { "segs": [535, 536, 538, 539], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Just as no day repeats another's task, no Jew was created to do what another does; Hashem guides the parents to choose a name that fits the soul's shlichus, and every Jew also has a name from the sitra achra that must be nullified.",
+        "yi": "אזוי ווי קיין טאג חזר'ט נישט איבער דעם תפקיד פון אן אנדער טאג, אזוי איז קיין איד נישט באשאפן געווארן צו טאן וואס אן אנדער איד טוט; דער רבונו של עולם גיט די עלטערן א דעת צו טרעפן א נאמען לויט דער שליחות פון דער נשמה, און יעדער איד האט אויך א נאמען פון דער סטרא אחרא וואס מ'דארף מבטל זיין."
+      },
+      "evidence": { "segs": [593, 596, 598, 616, 622, 637], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Sanzer Rav and the hasty chazzan", "yi": "דער צאנזער רב און דער חזן וואס האט געיאגט" },
+      "retelling": {
+        "en": "Someone went up to the amud and began Hodu. The Sanzer Rav came over to him and led him away from the amud. He said that a chazzan has to lift the tzibbur, and this is not how one lifts the tzibbur.",
+        "yi": "איינער איז צוגעגאנגען צום עמוד און האט אנגעהויבן הודו. דער צאנזער רב איז צוגעגאנגען צו אים און האט אים אוועקגעפירט פונעם עמוד. ער האט געזאגט אז א חזן דארף הויבן דעם עולם, און אזוי הויבט מען נישט דעם עולם."
+      },
+      "people": ["the Sanzer Rav"],
+      "evidence": { "segs": [240, 241, 244, 245, 246, 247], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The heretic named Eliezer", "yi": "דער אפיקורס וואס האט געהייסן אליעזר" },
+      "retelling": {
+        "en": "A Jew became a heretic, but in the end he did teshuvah. It was said that what helped him merit teshuvah was his name, Eliezer, which means that Hashem is the helper, as in the verse of the G-d of my father being my help. His name caused his return.",
+        "yi": "א איד איז געווארן אן אפיקורס, אבער צום סוף האט ער תשובה געטאן. מ'האט געזאגט אז דאס וואס האט אים געהאלפן צו תשובה איז געווען זיין נאמען אליעזר, וואס מיינט אז דער אייבערשטער העלפט, ווי דער פסוק אלקי אבי בעזרי. זיין נאמען האט גורם געווען אז ער האט תשובה געטאן."
+      },
+      "people": ["Eliezer"],
+      "evidence": { "segs": [654, 655, 657, 661, 662, 664], "confidence": 0.7 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why does Modeh Ani not mention the Name of Hashem?",
+        "yi": "פארוואס דערמאנט מען נישט דעם שם אין מודה אני?"
+      },
+      "answer": {
+        "en": "So that it can be said immediately on waking, before washing the hands, and the first word of the day can be thanks to Hashem.",
+        "yi": "כדי מ'זאל עס קענען זאגן באלד ביים אויפוואכן, נאך פארן נעגל וואסער, און דער ערשטער ווארט פונעם טאג זאל זיין א דאנק צום רבונו של עולם."
+      },
+      "questionSegs": [535, 536],
+      "answerSegs": [538, 539],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why can a missed davening not be made up the next day?",
+        "yi": "פארוואס קען מען נישט מתקן זיין א פארפעלטע דאווענען מארגן?"
+      },
+      "answer": {
+        "en": "Because tomorrow's davening has its own tikkunim, different from today's; each day's task is new.",
+        "yi": "ווייל דאס מארגנדיגע דאווענען האט אירע אייגענע תיקונים, אנדערע ווי היינט; יעדן טאג איז דער תפקיד א נייער."
+      },
+      "questionSegs": [353, 354],
+      "answerSegs": [355, 357],
+      "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says one should not talk before davening, apart from brief kind words or holy words that prepare for it.",
+        "yi": "דער משגיח זאגט אז מ'זאל נישט רעדן פארן דאווענען, חוץ קורצע פריינטלעכע ווערטער אדער הייליגע דיבורים וואס זענען א הכנה דערצו."
+      },
+      "evidence": { "segs": [2, 37, 41, 48, 53], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one may skip parts of davening when it happens occasionally, but not as a fixed habit, and should leave enough time to daven with kavanah.",
+        "yi": "דער משגיח זאגט אז מ'מעג איבערהיפן חלקים פונעם דאווענען ווען ס'טרעפט זיך אמאל, אבער נישט מיט א קביעות, און מ'זאל זיך איבערלאזן גענוג צייט צו דאווענען מיט כוונה."
+      },
+      "evidence": { "segs": [183, 186, 191, 194, 196], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that before learning and before davening one should say with his mouth that he is now going to fulfill the mitzvah.",
+        "yi": "דער משגיח זאגט אז פארן לערנען און פארן דאווענען זאל מען זאגן מיטן מויל אז מ'גייט יעצט מקיים זיין די מצוה."
+      },
+      "evidence": { "segs": [406, 409, 410, 453, 454], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says Modeh Ani should be said the moment one opens his eyes, and the first sight of the day should be the tzitzis or the mezuzah.",
+        "yi": "דער משגיח זאגט אז מ'זאל זאגן מודה אני באלד ווען מ'עפנט די אויגן, און די ערשטע ראיה פונעם טאג זאל זיין אויף די ציצית אדער די מזוזה."
+      },
+      "evidence": { "segs": [523, 525, 526, 576, 578], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one should be called by his Jewish name and use a non-Jewish name only where necessary, such as with the government, and as little as possible.",
+        "yi": "דער משגיח זאגט אז מ'זאל זיך רופן ביים אידישן נאמען, און דעם גוי'אישן נאמען נוצן נאר ווען מ'מוז, ווי למשל מיט דער רעגירונג, און וואס ווינציגער."
+      },
+      "evidence": { "segs": [684, 686, 688, 689, 694], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "talking before davening",
+    "worlds ascended in tefillah",
+    "kaddish between sections of davening",
+    "skipping parts of davening",
+    "baal tefillah and the tzibbur",
+    "every day a new creation",
+    "intention at the beginning of a mitzvah",
+    "modeh ani on waking",
+    "jewish names and shlichus",
+    "Sanzer Rav"
+  ],
+  "concepts": [
+    { "he": "קרבנות", "heardAs": ["קרבנות התפוגה", "קרבנות"] },
+    { "he": "עולם העשיה", "heardAs": ["עולם העשי'"] },
+    { "he": "עולם היצירה", "heardAs": ["עולם היצורי"] },
+    { "he": "עולם הבריאה", "heardAs": ["עולם הבריאה"] },
+    { "he": "אצילות", "heardAs": ["הצלה'ס"] },
+    { "he": "ירידת השפע", "heardAs": ["ירידת השפע"] },
+    { "he": "ישתבח", "heardAs": ["ישטבי'ך", "ישטאביץ"] },
+    { "he": "שמונה עשרה", "heardAs": ["שמנתך", "שמונעס", "שמעון עשרת", "שמעון ישראל"] },
+    { "he": "קדיש", "heardAs": ["קדש", "הקדש"] },
+    { "he": "פסוקי דזמרה", "heardAs": ["את די זמרות"] },
+    { "he": "אנשי כנסת הגדולה", "heardAs": ["אנשי כנסת הגדולה"] },
+    { "he": "קריאת שמע", "heardAs": ["קרשמה"] },
+    { "he": "לשם קדושת ספר תורה", "heardAs": ["לשם קדוש את ספר טובה", "ארעיני כסף", "אריין יקיסב"] },
+    { "he": "צירופי שם הוי'ה", "heardAs": ["צירוף פונעם שם הבעיה"] },
+    { "he": "שם אדנות", "heardAs": ["שם עדנה", "שם אדמו"] },
+    { "he": "מודה אני", "heardAs": ["מיידע אני", "מיידע אנו", "מודה נעילה"] },
+    { "he": "נעגל וואסער", "heardAs": ["עגל וואסער", "נגל וואסער"] },
+    { "he": "סטרא אחרא", "heardAs": ["סטרה אחרע", "סטר אחרא"] },
+    { "he": "שליחות", "heardAs": ["שליחות"] },
+    { "he": "בעל תפילה", "heardAs": ["בעל תפילה"] }
+  ],
+  "people": [
+    { "name": "the Sanzer Rav", "heardAs": ["סענדזער רב"] },
+    { "name": "Dovid HaMelech", "heardAs": ["דוד המלך"] },
+    { "name": "Adam HaRishon", "heardAs": ["אדם הראשון"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יעקב אבינו"] },
+    { "name": "Rashi", "heardAs": ["רשע"] },
+    { "name": "Avraham Avinu", "heardAs": ["אברהם"] },
+    { "name": "the Rambam", "heardAs": ["רמב״מ'ס"] },
+    { "name": "Reb Yankele of Pshevorsk", "heardAs": ["רבי יענקעלע פשעווארסקייס"] }
+  ],
+  "asrNotes": "Yiddish ASR fair for the Yiddish speech but poor on liturgical and Hebrew quotations (e.g. Modeh Ani, the sofer's declaration, Yaakov and the angel). The catalog title 'Toldos' is a filename guess and no discussion of Parshas Toldos was found in the transcript, so no section carries it. Segments 486-490, 513-519 and 591-592 are largely unintelligible and were not used; the source of the Eliezer story (seg 654) and the sefer named at seg 672 could not be recovered."
+}

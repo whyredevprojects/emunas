@@ -1,0 +1,614 @@
+{
+  "shiurId": "yi-tanya-1-30",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains that truth has many levels, so the beinoni's prayer is true by his own measure, and that a beinoni should not be saddened by bad thoughts but fight them through the hidden love every Jew has for Hashem.",
+      "yi": "דער משגיח ערקלערט אז אמת האט אסאך מדריגות, און דאס דאווענען פון א בינוני איז אמת לויט זיין מדריגה, און אז א בינוני דארף נישט זיין צובראכן פון שלעכטע מחשבות נאר זיך שטארקן קעגן זיי מיט דער אהבה מסותרת וואס יעדער איד האט צום רבונו של עולם."
+    },
+    "abstract": {
+      "en": "Continuing Tanya chapter 13, the Rav explains why a beinoni's love in prayer is not called 'avodas emes' compared to tzaddikim: truth is lasting, as 'sfas emes tikon la'ad', and a fervor that gives way to desire after davening shows it lacked truth. Yet truth has levels. Yaakov, the attribute of truth, is the middle bar running through all the boards of the Mishkan, each board a level of Jews, so what is falsehood for a higher person is truth for a lower one. He brings the Yismach Moshe's answer to the Rema: every Jew has his own reading of the Torah by his level. Moving to chapter 14, he teaches that a beinoni must not feel bad about bad thoughts; he should rejoice at the chance to fulfil 'lo sasuru', strengthen himself with the hidden love that makes even simple Jews give their lives, and fight every sin.",
+      "yi": "דער משגיח לערנט ווייטער תניא פרק י\"ג און ערקלערט פארוואס די אהבה פון א בינוני ביים דאווענען הייסט נישט קיין עבודת אמת לגבי צדיקים: אמת איז א זאך וואס בלייבט, \"שפת אמת תכון לעד\", און א התלהבות וואס פארגייט נאכן דאווענען ווייזט אז ס'האט געפעלט אמת. אבער אמת האט מדריגות. יעקב אבינו, די מדת אמת, איז דער בריח התיכון וואס גייט דורך אלע קרשים פונעם משכן, און יעדער קרש איז א מדריגה ביי אידן; ממילא וואס ביי א העכערן איד איז שקר, איז ביי א נידריגערן אמת. ער ברענגט דעם תירוץ פונעם ישמח משה אויפן רמ\"א, אז יעדער איד האט זיין פשט אין דער תורה לויט זיין מדריגה. דערנאך, אין פרק י\"ד, לערנט ער אז א בינוני דארף זיך נישט פילן שלעכט ווען עס קומען שלעכטע מחשבות; אדרבה, ער זאל זיך פרייען מיט דער מצוה פון \"ולא תתורו\", זיך שטארקן מיט דער אהבה מסותרת וואס ברענגט אפילו פשוט'ע אידן צו מסירות נפש, און זיך שלאגן קעגן יעדער עבירה."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Truth is what endures: a tzaddik's fervor in prayer that gives way to desire for this world afterward shows that it lacked truth.",
+          "yi": "אמת איז א זאך וואס בלייבט: ווען ביי א צדיק קומט צוריק א חשק צו עולם הזה נאכן דאווענען, איז דאס א סימן אז זיין דאווענען האט געפעלט אמת."
+        },
+        "evidence": { "segs": [37, 38, 39, 54, 72, 75], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Truth has levels: what would be falsehood for a higher person is true service for a lower one, according to his level.",
+          "yi": "אמת האט מדריגות: וואס ביי א העכערן איד וואלט געהייסן שקר, איז ביי א נידריגערן איד א עבודה פון אמת לויט זיין מדריגה."
+        },
+        "evidence": { "segs": [139, 140, 166, 167, 351, 352], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Every Jew has his own reading of the Torah according to his level, as the Yismach Moshe answers the question on the Rema.",
+          "yi": "יעדער איד האט זיין פשט אין דער תורה לויט זיין מדריגה, אזוי ווי דער ישמח משה ענטפערט אויפן רמ\"א."
+        },
+        "evidence": { "segs": [237, 258, 286, 295], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "A beinoni should not feel bad when bad thoughts come to him even after good preparation for davening; this is how he was created and his mission in the world.",
+          "yi": "א בינוני דארף זיך נישט פילן שלעכט ווען עס קומען אים שלעכטע מחשבות אפילו נאך גוטע הכנות צום דאווענען; אזוי איז ער באשאפן געווארן, און דאס איז זיין שליחות אויף דער וועלט."
+        },
+        "evidence": { "segs": [389, 391, 392, 393, 395], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "When a bad thought comes he should rejoice, since pushing it away fulfils the mitzvah of 'lo sasuru' and breaks the sitra achra.",
+          "yi": "ווען א שלעכטע מחשבה קומט, זאל ער זיך פרייען, ווייל ווען ער שטופט זי אוועק איז ער מקיים די מצוה פון \"ולא תתורו\" און צוברעכט דעם סטרא אחרא."
+        },
+        "evidence": { "segs": [449, 450, 451, 456, 458], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Every Jew, even the worst, has a hidden love for Hashem that would make him give his life rather than serve idols; he sins only because a spirit of folly makes him forget it.",
+          "yi": "יעדער איד, אפילו דער ערגסטער, האט אן אהבה מסותרת צום רבונו של עולם וואס וואלט אים געבראכט צו מסירות נפש אנשטאט צו דינען עבודה זרה; ער טוט עבירות נאר ווייל א רוח שטות מאכט אים עס פארגעסן."
+        },
+        "evidence": { "segs": [490, 492, 524, 534, 551, 558], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-tanya-15-2-tanya",
+      "startSeg": 0,
+      "endSeg": 75,
+      "title": { "en": "Why the beinoni's prayer is not called truth", "yi": "פארוואס דאס דאווענען פון א בינוני הייסט נישט אמת" },
+      "summary": {
+        "en": "Continuing Tanya chapter 13, the Rav explains that the beinoni subdues evil only during prayer, and that relative to tzaddikim this is not 'avodas emes'. Truth, he explains from 'sfas emes tikon la'ad', is lasting, while falsehood and the pleasures of this world are momentary and leave a person empty.",
+        "yi": "דער משגיח לערנט ווייטער תניא פרק י\"ג און ערקלערט אז א בינוני איז מכניע דאס רע נאר בשעת'ן דאווענען, און לגבי צדיקים הייסט דאס נישט קיין עבודת אמת. פון \"שפת אמת תכון לעד\" ערקלערט ער אז אמת בלייבט אויף אייביג, און שקר און די תאוות פון עולם הזה זענען נאר פאר א רגע און לאזן איבער א ליידיגקייט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-15-2-tanya",
+      "startSeg": 76,
+      "endSeg": 130,
+      "title": { "en": "Yaakov, the middle bar of the Mishkan", "yi": "יעקב אבינו, דער בריח התיכון פונעם משכן" },
+      "summary": {
+        "en": "The Rav explains that Yaakov, the attribute of tiferes, is the middle bar that runs from end to end through the boards of the Mishkan, each board being a level among Jews. He reads the names Yisrael and Yaakov as spanning head to heel, and brings the Yerushalmi that the boards had a fixed order, marked by writing, which may not be changed.",
+        "yi": "דער משגיח ערקלערט אז יעקב אבינו, די מדה פון תפארת, איז דער בריח התיכון וואס איז מבריח מן הקצה אל הקצה דורך די קרשים פונעם משכן, און יעדער קרש איז א מדריגה ביי אידן. ער טייטשט די נעמען ישראל און יעקב, פונעם ראש ביזן עקב, און ברענגט דעם ירושלמי אז די קרשים האבן געהאט א קביעות'דיגן סדר, אנגעצייכנט מיט כתיבה, וואס מ'טאר נישט טוישן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-15-2-tanya",
+      "startSeg": 131,
+      "endSeg": 189,
+      "title": { "en": "Each level has its own truth", "yi": "יעדע מדריגה האט איר אייגענעם אמת" },
+      "summary": {
+        "en": "Since Yaakov's attribute of truth passes through every board, the Rav concludes that each Jew has his own level of truth. For a tzaddik, desire returning after prayer shows the prayer was falsehood; for a beinoni, being cleaved to Hashem during prayer alone is the truth of his level, as the Tanya says.",
+        "yi": "וויבאלד די מדת אמת פון יעקב גייט דורך אלע קרשים, שליסט דער משגיח אז יעדער איד האט זיין אייגענע מדריגה פון אמת. ביי א צדיק ווייזט א חשק נאכן דאווענען אז דאס דאווענען איז געווען שקר; ביי א בינוני איז דאס וואס ער איז דבוק בשעת'ן דאווענען אליין דער אמת פון זיין מדריגה, אזוי ווי דער תניא זאגט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-15-2-tanya",
+      "startSeg": 190,
+      "endSeg": 294,
+      "title": { "en": "Every Jew's own reading of the Torah", "yi": "יעדער איד האט זיין פשט אין דער תורה" },
+      "summary": {
+        "en": "From 'darosh darash', the middle of the Torah in the week's parsha, the Rav learns that every Jew has his own interpretation of the Torah by his level. He illustrates it with the Rema that one who is 'mafleg bachasidus' may give his life even for other mitzvos, and the Yismach Moshe's answer to how this fits 'vachai bahem'.",
+        "yi": "פון \"דרש דרש\", דער אמצע פון דער תורה אין דער סדרה פון דער וואך, לערנט דער משגיח ארויס אז יעדער איד האט זיין פשט אין דער תורה לויט זיין מדריגה. ער ברענגט דערויף דעם רמ\"א אז א מופלג בחסידות מעג זיך מוסר נפש זיין אפילו פאר אנדערע מצוות, און דעם תירוץ פונעם ישמח משה ווי אזוי דאס גייט צוזאמען מיט \"וחי בהם\"."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-15-2-tanya",
+      "startSeg": 295,
+      "endSeg": 362,
+      "title": { "en": "Two readings of 'sfas emes tikon la'ad'", "yi": "צוויי פשטים אין \"שפת אמת תכון לעד\"" },
+      "summary": {
+        "en": "The Rav applies this to the passuk 'sfas emes tikon la'ad': for the great tzaddik it means truth that never fades, while for the beinoni it means truth that is stored away until his next prayer. He reads the Tanya's words that the attribute of truth is Yaakov's, the middle bar and a 'heritage without bounds', reaching every level, and illustrates with how a twelve-hour learning day is judged differently for the Chofetz Chaim and for a young bochur.",
+        "yi": "דער משגיח טייטשט לויט דעם דעם פסוק \"שפת אמת תכון לעד\": ביי א גרויסן צדיק מיינט עס אן אמת וואס פארגייט קיינמאל נישט, און ביי א בינוני מיינט עס אן אמת וואס ווארט איינגעפאקט ביז דער קומענדיגער תפילה. ער לערנט די ווערטער פונעם תניא אז די מדת אמת איז די מדה פון יעקב, דער בריח התיכון און א \"נחלה בלי מצרים\", וואס דערגרייכט יעדע מדריגה, און ער ברענגט א משל: צוועלף שעה לערנען א טאג ווערט אנדערש געמאסטן ביים חפץ חיים און ביי א יונגן בחור."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-15-2-tanya",
+      "startSeg": 363,
+      "endSeg": 435,
+      "title": { "en": "Chapter 14: the beinoni and free choice", "yi": "פרק י\"ד: דער בינוני און די בחירה" },
+      "summary": {
+        "en": "Having finished the Tanya's foundations, the Rav begins chapter 14: the beinoni never acts on the yetzer hara's words though he hears them, and he should not feel bad that bad thoughts come after davening, since this is how he was created. Being repulsed by evil is not always in a person's power, but his thought, speech and action always are.",
+        "yi": "נאכדעם וואס ער האט פארענדיגט די הקדמות פונעם בעל התניא, הייבט דער משגיח אן פרק י\"ד: דער בינוני פאלגט קיינמאל נישט דעם יצר הרע הגם ער הערט זיין קול, און ער דארף זיך נישט פילן שלעכט ווען עס קומען אים שלעכטע מחשבות נאכן דאווענען, ווייל אזוי איז ער באשאפן געווארן. צו זיין מואס ברע איז נישט אלעמאל אין דער מענטשנס בחירה, אבער מחשבה, דיבור און מעשה זענען אלעמאל אין זיין רשות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-15-2-tanya",
+      "startSeg": 436,
+      "endSeg": 487,
+      "title": { "en": "Rejoicing at the mitzvah of 'lo sasuru'", "yi": "זיך פרייען מיט דער מצוה פון \"ולא תתורו\"" },
+      "summary": {
+        "en": "The Rav teaches that the first bad thought is not in a person's control and he need not feel bad about it; on the contrary, he should rejoice, since pushing it out fulfils 'lo sasuru acharei levavchem', one of the greatest mitzvos, which breaks the sitra achra. He then reads the Tanya's declaration that one does not want to be separated from Hashem but to cleave to Him with thought, speech and action.",
+        "yi": "דער משגיח לערנט אז די ערשטע שלעכטע מחשבה איז נישט אין דער מענטשנס בחירה און ער דארף זיך נישט פילן שלעכט דערפאר; אדרבה, ער זאל זיך פרייען, ווייל ווען ער טרייבט זי ארויס איז ער מקיים \"ולא תתורו אחרי לבבכם\", איינע פון די גרעסטע מצוות, וואס צוברעכט דעם סטרא אחרא. דערנאך לערנט ער די ווערטער פונעם תניא אז מ'וויל נישט זיין אפגעשיידט פונעם רבונו של עולם נאר דבוק זיין אין אים מיט מחשבה, דיבור און מעשה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-15-2-tanya",
+      "startSeg": 488,
+      "endSeg": 571,
+      "title": { "en": "The hidden love and the spirit of folly", "yi": "די אהבה מסותרת און דער רוח שטות" },
+      "summary": {
+        "en": "The Rav explains the hidden love, mentioned here for the first time in the Tanya: every Jew, even a wicked one, has it, and at a time of decree to serve idols simple Jews gave their lives. He asks why such a Jew commits other sins, and answers with the Tanya that a spirit of folly makes him think other sins do not cut him off, so the beinoni resolves to fight the yetzer hara over every sin.",
+        "yi": "דער משגיח ערקלערט די אהבה מסותרת, וואס דער בעל התניא דערמאנט דא דאס ערשטע מאל: יעדער איד, אפילו א רשע, האט זי, און אין א צייט פון שמד האבן פשוט'ע אידן זיך געלאזט הרג'ענען כדי נישט צו דינען עבודה זרה. ער פרעגט פארוואס אזא איד טוט אנדערע עבירות, און ענטפערט מיטן תניא אז א רוח שטות מאכט אים מיינען אז אנדערע עבירות רייסן אים נישט אפ, ממילא נעמט זיך דער בינוני פאר זיך צו שלאגן מיטן יצר הרע ביי יעדער עבירה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-tanya-15-2-tanya",
+      "startSeg": 572,
+      "endSeg": 627,
+      "title": { "en": "Love with delight, and the beinoni's work", "yi": "אהבה בתענוגים, און די עבודה פונעם בינוני" },
+      "summary": {
+        "en": "The Rav explains that truly despising evil comes only from 'ahavah betaanugim', which the tzaddik has constantly and the beinoni only at moments, especially on Shabbos and Yom Tov, a gift like 'avodas matanah'. When it is absent, desire for this world fills the void; this answers the question of Iyov 'You created tzaddikim', and the beinoni's work is never to obey the yetzer hara.",
+        "yi": "דער משגיח ערקלערט אז צו האבן א שנאה צום רע באמת קומט נאר פון \"אהבה בתענוגים\", וואס דער צדיק האט כסדר און דער בינוני נאר אין געוויסע מאמענטן, בפרט שבת און יום טוב, א מתנה ווי \"עבודת מתנה\". ווען זי פעלט, פילט די תאוה פון עולם הזה אן דעם ליידיגן ארט; דערמיט איז מתורץ וואס איוב האט געזאגט \"בראת צדיקים\", און די עבודה פונעם בינוני איז קיינמאל נישט צו פאלגן דעם יצר הרע."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "והנה מידת אבות זא האמרה בבנין און בשעת התפילה",
+      "work": "Tanya",
+      "ref": "Tanya ch. 13",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [21, 22, 23, 24, 25], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "וכתוב שפת אמת תיקון לעד. ועד הגיול לשן שקר",
+      "work": "Mishlei",
+      "ref": "Mishlei 12:19",
+      "sefariaRef": "Proverbs 12:19",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [26, 27, 39], "confidence": 0.9 }
+    },
+    {
+      "heardAs": "וליבו חלל בקרבי",
+      "work": "Tehillim",
+      "ref": "Tehillim 109:22",
+      "sefariaRef": "Psalms 109:22",
+      "resolution": "resolved",
+      "mention": "alluded",
+      "evidence": { "segs": [29, 151], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "די בריח התוכים וואס איז מבריח מן הקצה על הקצה",
+      "work": "Shemos",
+      "ref": "Shemos 26:28",
+      "sefariaRef": "Exodus 26:28",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [79, 80, 86], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "והכמעסת המשכן כמשפטי כפי השרת אריתה לבארהא",
+      "work": "Shemos",
+      "ref": "Shemos 26:30",
+      "sefariaRef": "Exodus 26:30",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [115, 126], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "איז אין ירושלמ'ס שטעט פאר חייש משפט לכה השם",
+      "work": "Yerushalmi",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [116, 117, 118, 119], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "טיטן אמת ליעקב",
+      "work": "Michah",
+      "ref": "Michah 7:20",
+      "sefariaRef": "Micah 7:20",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [133, 136], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "לגבי מדריגת הבנים, נקחת עבודה תמוה באמת, למעטה שלהם",
+      "work": "Tanya",
+      "ref": "Tanya ch. 13",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [177, 178, 179, 181], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ושרחת דרש דרש משה ועיני שרף",
+      "work": "Vayikra",
+      "ref": "Vayikra 10:16",
+      "sefariaRef": "Leviticus 10:16",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [193, 221, 226], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "ווי דער גמרא זאגט ... רבי יואל אלעזר אז בתשרי נברא עולם",
+      "work": "Gemara Rosh Hashanah",
+      "ref": "Rosh Hashanah 10b-11a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [215, 217, 219], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "עס שטייט אין רמא אין ירדעא ביי די דינים פון קידוש השם",
+      "work": "Shulchan Aruch Yoreh De'ah (Rema)",
+      "ref": "Shulchan Aruch Yoreh De'ah 157:1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [238, 239, 246, 247, 248], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ער פסק'נט ווי דער רמב״ם",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [241], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער ישמח משה פרעגט דער עקשא",
+      "work": "Yismach Moshe",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [250, 258, 287], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "ווייל ס'שטעט אין די תורה וחי בהם",
+      "work": "Vayikra",
+      "ref": "Vayikra 18:5",
+      "sefariaRef": "Leviticus 18:5",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [254, 260, 276], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "כהונה מידת אמת, ומידתו של יענקב. א נקרא ברוח התוכן",
+      "work": "Tanya",
+      "ref": "Tanya ch. 13",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [329, 330, 331, 333], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "וקדמה צפונה ונגבה הנחל לבלי מצרים",
+      "work": "Bereishis",
+      "ref": "Bereishis 28:14",
+      "sefariaRef": "Genesis 28:14",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [336, 338, 339], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "פרק יד ד והנה מידת הבנה, והנה מידת כל אדם",
+      "work": "Tanya",
+      "ref": "Tanya ch. 14",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [372, 373, 374, 403, 404], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אלא סאור מרוב עשה טוב",
+      "work": "Tehillim",
+      "ref": "Tehillim 34:15",
+      "sefariaRef": "Psalms 34:15",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [420, 423], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "שטח לעשות שורה אחרי לבבכם",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 15:39",
+      "sefariaRef": "Numbers 15:39",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [440, 450, 472], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די בני יששכר טייטשן",
+      "work": "Bnei Yissaschar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [440], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "אחר לבבך ומזל מינות ואחר יניכם ומזל הזנות",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 12b",
+      "sefariaRef": "Berakhot 12b",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [448], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "מיט מלוא יא לך אלהים אחרים על פני",
+      "work": "Shemos",
+      "ref": "Shemos 20:3",
+      "sefariaRef": "Exodus 20:3",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [457], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "כתר סוף אבן אתכם הבדילים ביי בי' השם ובי' נחם",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 59:2",
+      "sefariaRef": "Isaiah 59:2",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [478, 479], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "שנכנס בי רוח שטות ... ונדמה לו",
+      "work": "Tanya",
+      "ref": "Tanya ch. 14",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [550, 552, 561, 562], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אבהל בתנגים ווי עס ווערט אנגערופן אין שיעור השיעורים",
+      "work": "Shir HaShirim",
+      "ref": "Shir HaShirim 7:7",
+      "sefariaRef": "Song of Songs 7:7",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [579, 582], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "האבן די חכמים געזאגט אלא מחצירה בחיותיך",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 17a",
+      "sefariaRef": "Berakhot 17a",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [592, 593, 594], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "סיב עבידת מתנה את הנס כוון עצכם",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 18:7",
+      "sefariaRef": "Numbers 18:7",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [602, 603, 606], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ולכן אומר איוב ... בראסע צדיקים",
+      "work": "Gemara Bava Basra",
+      "ref": "Bava Basra 16a",
+      "sefariaRef": "Bava Batra 16a",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [612, 613, 614, 615], "confidence": 0.8 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav defines truth by permanence: worldly pleasure is like a 'chalal', one slain, empty of content, and leaves a void, while joy in a Yom Tov, a mitzvah or a blatt Gemara remains even afterward.",
+        "yi": "דער משגיח מעסט אמת מיט קיום: א תאוה פון עולם הזה איז ווי א \"חלל\", א געהרג'עטער, ליידיג פון תוכן, און לאזט איבער א ליידיגקייט, אבער די שמחה פון א יום טוב, א מצוה אדער א בלאט גמרא פרייט אים נאך דערנאך."
+      },
+      "evidence": { "segs": [55, 57, 58, 59, 60, 62], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Yisrael begins with the letters that make it 'li rosh', a head, and Yaakov is 'akev', the heel, with the small yud as its point; so Yaakov binds all Jews from the highest to the lowest, who has nothing but the point of a Jew.",
+        "yi": "ישראל איז אותיות \"לי ראש\", א בחינה פון ראש, און יעקב איז \"עקב\", מיט דער קליינער יו\"ד ווי א נקודה; ממילא איז יעקב מקשר אלע אידן פונעם העכסטן ביזן נידריגסטן, וואס האט גארנישט נאר די נקודה פון א איד."
+      },
+      "evidence": { "segs": [89, 91, 93, 98, 102, 104], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Because each board of the Mishkan is a level of Jews and Yaakov's attribute of truth passes through all of them, the same service can be falsehood for a higher person and truth for a lower one.",
+        "yi": "וויבאלד יעדער קרש פונעם משכן איז א מדריגה ביי אידן און די מדת אמת פון יעקב גייט דורך אלע, קען די זעלבע עבודה זיין שקר ביי א העכערן און אמת ביי א נידריגערן."
+      },
+      "evidence": { "segs": [123, 134, 135, 139, 140], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Following the Yismach Moshe, for a great servant of Hashem 'vachai bahem' means the life of the soul in Torah, so for him losing a mitzvah is death, and he may give his life for it.",
+        "yi": "לויטן ישמח משה מיינט \"וחי בהם\" ביי א גרויסן עובד השם דאס לעבן פון דער נשמה אין דער תורה, ממילא איז ביי אים א מצוה פארלירן ווי טויט, און ער מעג זיך מוסר נפש זיין דערויף."
+      },
+      "evidence": { "segs": [269, 270, 271, 279, 282, 284], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "For the beinoni, 'sfas emes tikon la'ad' means a truth that is packed away and waits for the next prayer, when with true preparation he can again keep the yetzer hara from disturbing him.",
+        "yi": "ביי א בינוני מיינט \"שפת אמת תכון לעד\" אן אמת וואס ליגט איינגעפאקט און ווארט ביז דער קומענדיגער תפילה, ווען ער קען מיט אמת'ע הכנות נאכאמאל נישט לאזן דעם יצר הרע אים שטערן."
+      },
+      "evidence": { "segs": [309, 310, 313, 318, 320, 322], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Without a bad thought the beinoni could not fulfil 'lo sasuru', so its coming is a chance for one of the Torah's greatest mitzvos, and pushing out a thought of idolatry breaks the root of the sitra achra.",
+        "yi": "אן א שלעכטע מחשבה וואלט דער בינוני נישט געקענט מקיים זיין \"ולא תתורו\", ממילא איז זי א געלעגנהייט צו איינע פון די גרעסטע מצוות פון דער תורה, און ווען ער טרייבט ארויס א מחשבה פון עבודה זרה צוברעכט ער דעם שורש פונעם סטרא אחרא."
+      },
+      "evidence": { "segs": [450, 451, 453, 455, 456], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The beinoni has 'ahavah betaanugim' only at moments, so when it is absent the desire for this world fills the place, since there is no vacuum.",
+        "yi": "דער בינוני האט \"אהבה בתענוגים\" נאר אין געוויסע מאמענטן, און ווען זי פעלט קומט אריין אין איר ארט די תאוה פון עולם הזה, ווייל ס'איז נישטא קיין ליידיגער ארט."
+      },
+      "evidence": { "segs": [585, 589, 609, 610, 611], "confidence": 0.75 }
+    }
+  ],
+  "stories": [],
+  "questions": [
+    {
+      "question": {
+        "en": "If the tzaddik truly cleaved to Hashem in prayer, why does desire for this world come back afterward?",
+        "yi": "אויב דער צדיק איז באמת געווען דבוק צום רבונו של עולם ביים דאווענען, פארוואס קומט צוריק א חשק צו עולם הזה נאכן דאווענען?"
+      },
+      "answer": {
+        "en": "Truth is lasting, as 'sfas emes tikon la'ad'; if the desire returns, it is a sign that the prayer lacked truth.",
+        "yi": "אמת איז א זאך וואס בלייבט, \"שפת אמת תכון לעד\"; אויב דער חשק קומט צוריק, איז דאס א סימן אז דאס דאווענען האט געפעלט אמת."
+      },
+      "questionSegs": [35, 37, 38],
+      "answerSegs": [39, 40, 72, 75],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "How can the Rema say that one who is 'mafleg bachasidus' may give his life for any mitzvah, when the Torah says 'vachai bahem'?",
+        "yi": "ווי אזוי קען דער רמ\"א זאגן אז א מופלג בחסידות מעג זיך מוסר נפש זיין פאר יעדע מצוה, ווען די תורה זאגט \"וחי בהם\"?"
+      },
+      "answer": {
+        "en": "The Yismach Moshe answers that every Jew has his own reading by his level: for a great servant of Hashem, 'life' means the soul's life in Torah, which is lost by transgressing.",
+        "yi": "דער ישמח משה ענטפערט אז יעדער איד האט זיין פשט לויט זיין מדריגה: ביי א גרויסן עובד השם מיינט \"לעבן\" דאס לעבן פון דער נשמה אין דער תורה, וואס מ'פארלירט דורך אן עבירה."
+      },
+      "questionSegs": [250, 251, 254, 256],
+      "answerSegs": [258, 269, 276, 282],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why, after all his preparation for davening, do bad thoughts come to the beinoni afterward?",
+        "yi": "פארוואס קומען צום בינוני שלעכטע מחשבות נאכן דאווענען, נאך אלע זיינע הכנות?"
+      },
+      "answer": {
+        "en": "This is how he was created and his mission in the world; he need not feel bad about it.",
+        "yi": "אזוי איז ער באשאפן געווארן, און דאס איז זיין שליחות אויף דער וועלט; ער דארף זיך נישט פילן שלעכט דערפאר."
+      },
+      "questionSegs": [390, 391],
+      "answerSegs": [392, 393, 395],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "If even a simple Jew has a hidden love that would make him give his life, why does he commit other sins?",
+        "yi": "אויב אפילו א פשוט'ער איד האט אן אהבה מסותרת וואס וואלט אים געבראכט צו מסירות נפש, פארוואס טוט ער אנדערע עבירות?"
+      },
+      "answer": {
+        "en": "A spirit of folly enters him and makes him think that other sins do not cut him off from his Judaism, so he forgets his hidden love.",
+        "yi": "א רוח שטות גייט אריין אין אים און ער מיינט אז אנדערע עבירות רייסן אים נישט אפ פון זיין אידישקייט, און ער פארגעסט זיין אהבה מסותרת."
+      },
+      "questionSegs": [545, 548],
+      "answerSegs": [550, 551, 558, 564],
+      "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says the beinoni should not feel bad when bad thoughts come to him after davening.",
+        "yi": "דער משגיח זאגט אז דער בינוני דארף זיך נישט פילן שלעכט ווען עס קומען אים שלעכטע מחשבות נאכן דאווענען."
+      },
+      "evidence": { "segs": [389, 392, 445], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "He says that when a bad thought comes one should rather rejoice at the chance to fulfil 'lo sasuru'.",
+        "yi": "ער זאגט אז ווען א שלעכטע מחשבה קומט, זאל מען זיך אדרבה פרייען מיט דער געלעגנהייט צו מקיים זיין \"ולא תתורו\"."
+      },
+      "evidence": { "segs": [449, 450, 458], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "He explains that when the first thought comes, a person can drive it away by turning his mind to words of Torah.",
+        "yi": "ער ערקלערט אז ווען די ערשטע מחשבה קומט, קען מען זי פארטרייבן דורכדעם וואס מ'הייבט אן טראכטן אין דברי תורה."
+      },
+      "evidence": { "segs": [430, 431, 432], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "He says the beinoni's work is always to strive not to obey the yetzer hara, and to fight it over every sin.",
+        "yi": "ער זאגט אז די עבודה פונעם בינוני איז זיך אלעמאל מטריח צו זיין נישט צו פאלגן דעם יצר הרע, און זיך שלאגן מיט אים ביי יעדער עבירה."
+      },
+      "evidence": { "segs": [570, 571, 625, 626], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "Tanya chapter 13",
+    "Tanya chapter 14",
+    "levels of truth",
+    "the beinoni",
+    "bad thoughts and free choice",
+    "ahavah mesuteres (hidden love)",
+    "Yaakov as the attribute of truth",
+    "boards and middle bar of the Mishkan",
+    "mesirus nefesh",
+    "ahavah betaanugim"
+  ],
+  "concepts": [
+    { "he": "בינוני", "heardAs": ["בן ענין", "בענינו", "בעניני", "הבעננו"] },
+    { "he": "צדיק גמור", "heardAs": ["צדיק גמל", "צד הגמל", "צד גמר"] },
+    { "he": "מדת אמת", "heardAs": ["מידת אמת", "מידת האמת"] },
+    { "he": "שפת אמת תכון לעד", "heardAs": ["שפת אמת תיקון לעד", "ספס המס תיקון לעד"] },
+    { "he": "בריח התיכון", "heardAs": ["בריח התוכים", "ברוח התוכן", "בריאה חטיכים"] },
+    { "he": "מבריח מן הקצה אל הקצה", "heardAs": ["מבריח מן הקצה על הקצה", "מבריאך מן הקצה על הקצה"] },
+    { "he": "קרשים", "heardAs": ["קרשים", "קראשים", "ממחות קרושים"] },
+    { "he": "אהבה מסותרת", "heardAs": ["יאווה מסתרת", "אייווע מסתרת", "חנבה און מסורות"] },
+    { "he": "אהבה בתענוגים", "heardAs": ["אבהל בתנגים", "אבהב בתנגים", "מרדכי בתנגים"] },
+    { "he": "מואס ברע", "heardAs": ["מאיז ברא", "מועז ברע"] },
+    { "he": "רוח שטות", "heardAs": ["רוח שטות"] },
+    { "he": "יצר הרע", "heardAs": ["יצחק'ער", "יצה״ר", "יצר העתים"] },
+    { "he": "מסירות נפש", "heardAs": ["מוסן נפש", "מייסע נפש", "מתן אפשר"] },
+    { "he": "עבודה זרה", "heardAs": ["עובדי זרע", "עף וידא זרע", "עבודה זולת"] },
+    { "he": "עבודת מתנה", "heardAs": ["עבידת מתנה", "וועדת מתנה"] },
+    { "he": "נחלה בלי מצרים", "heardAs": ["נחלה בלי מצרים", "הנחל לבלי מצרים"] }
+  ],
+  "people": [
+    { "name": "the Alter Rebbe (Ba'al HaTanya)", "heardAs": ["בעל התניא", "באהטניע"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יעקב אבינא", "יעקב אבינר", "יענקב"] },
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינו"] },
+    { "name": "Yitzchak Avinu", "heardAs": ["יצחק"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["דרש משה"] },
+    { "name": "Rabbi Eliezer", "heardAs": ["רבי יואל אלעזר"] },
+    { "name": "the Rema", "heardAs": ["רמא", "אמרא"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "the Yismach Moshe", "heardAs": ["ישמח משה"] },
+    { "name": "the Bnei Yissaschar", "heardAs": ["בני יששכר"] },
+    { "name": "the Chofetz Chaim", "heardAs": ["חפץ חיים"] },
+    { "name": "Iyov", "heardAs": ["איוב"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair; the Tanya and passuk quotations are heavily garbled but mostly recoverable from Tanya chapters 13-14. The recording starts mid-thought in chapter 13. Segments 345 (a long run through the sefiros of the worlds) and 338 (the promises to the Avos) are only partly intelligible, and the Yerushalmi on the boards of the Mishkan and the Rosh Hashanah dispute on Tishrei and Nissan could not be pinned down precisely; the remark on the cantillation of 'lo sasuru' (seg 472) is unclear."
+}

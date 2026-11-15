@@ -1,0 +1,95 @@
+{
+ "shiurId": "yi-zmanim-psch-05",
+ "topics": [
+  {
+   "id": "pesach",
+   "salience": 1
+  },
+  {
+   "id": "avraham-avinu",
+   "salience": 0.9
+  },
+  {
+   "id": "matzah",
+   "salience": 0.8
+  },
+  {
+   "id": "emunah-peshutah",
+   "salience": 0.75
+  },
+  {
+   "id": "bitachon",
+   "salience": 0.6
+  },
+  {
+   "id": "chinuch-habanim",
+   "salience": 0.55
+  },
+  {
+   "id": "yiras-shamayim",
+   "salience": 0.45
+  },
+  {
+   "id": "moshiach",
+   "salience": 0.3
+  }
+ ],
+ "sections": [
+  {
+   "index": 0,
+   "topicIds": [
+    "pesach",
+    "avraham-avinu",
+    "matzah"
+   ]
+  },
+  {
+   "index": 1,
+   "topicIds": [
+    "emunah-peshutah",
+    "bitachon",
+    "yiras-shamayim"
+   ]
+  },
+  {
+   "index": 2,
+   "topicIds": [
+    "moshiach",
+    "chinuch-habanim",
+    "pesach"
+   ]
+  }
+ ],
+ "conceptIds": [
+  "bitachon",
+  "michla-dimheimnusa",
+  "ribono-shel-olam",
+  "shabbos-shirah"
+ ],
+ "personIds": [
+  "avraham-avinu",
+  "moshiach",
+  "pharaoh",
+  "sarah-imeinu",
+  "yechezkel-hanavi"
+ ],
+ "workIds": [
+  "bereishis",
+  "midrash",
+  "shemos",
+  "yechezkel",
+  "zohar"
+ ],
+ "sourceWorkIds": [
+  "shemos",
+  "bereishis",
+  "bereishis",
+  "zohar",
+  "bereishis",
+  "midrash",
+  null,
+  "bereishis",
+  null,
+  "yechezkel"
+ ]
+}

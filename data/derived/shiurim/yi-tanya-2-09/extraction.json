@@ -1,0 +1,451 @@
+{
+  "shiurId": "yi-tanya-2-09",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "Learning Tanya chapter 19, the Rav explains that a sinning Jew drags his G-dly soul into exile, yet the very root of its chochmah stays untouched and wakes up in a test of emunah, which is why even a sinner gives his life for kiddush Hashem.",
+      "yi": "ביים לערנען תניא פרק י\"ט ערקלערט דער משגיח אז א איד וואס זינדיגט שלעפט זיין נפש האלקית אריין אין גלות, אבער דער עיקר פון דער חכמה בלייבט נישט אנגערירט און וועקט זיך אויף ביי א נסיון פון אמונה, און דערפאר גיט אפילו א פושע ישראל אוועק זיין לעבן על קידוש השם."
+    },
+    "abstract": {
+      "en": "The Rav opens with the reading of the sefarim that 'the stranger in your midst' of the tochachah is the goy inside every Jew, and cites a student of the Ba'al Shem Tov that one must do teshuvah for it before Shabbos; he tells of a Breslover ger who would roar at night to cut the goy out of himself. Following Tanya chapter 19, he explains that the sinner submits to the yetzer hara and forces his G-dly soul into exile, which is galus haShechinah, like a captured prince forced to fight his own father. The hidden love inherited from Avraham Avinu is only covered. He then resolves a contradiction: the essence of chochmah is never touched by sin, but its spreading into the heart is, and that essence sleeps until a test of emunah wakes it. He illustrates this with a story of the Czar and a Jewish soldier, and, on the yahrzeit of the Rayatz, with stories of his mesiras nefesh and his holiness.",
+      "yi": "דער משגיח עפנט מיט דעם וואס ספרים טייטשן אז \"הגר אשר בקרבך\" אין דער תוכחה מיינט דעם גוי וואס איז אין יעדן איד, און ער ברענגט פון א תלמיד פונעם בעל שם טוב אז ערב שבת דארף מען תשובה טון אויף דעם; ער דערציילט פון א ברסלאווער גר וואס פלעגט ביינאכט ברילן כדי ארויסצוהאקן דעם גוי פון זיך. לויט תניא פרק י\"ט ערקלערט ער אז דער פושע איז נכנע צום יצר הרע און צווינגט זיין נפש האלקית אין גלות, וואס דאס איז גלות השכינה, ווי א בן מלך וואס מ'צווינגט צו מלחמה האלטן קעגן זיין טאטן. די אהבה מסותרת פון אברהם אבינו איז נאר צוגעדעקט. דערנאך פארענטפערט ער א סתירה: דער עצם פון דער חכמה ווערט נישט אנגערירט פון א עבירה, נאר איר התפשטות אין לב, און דער עצם שלאפט ביז א נסיון פון אמונה וועקט אים אויף. ער ברענגט א מעשה מיט דעם קיסר און א אידישן סאלדאט, און ווייל ס'איז דער יארצייט פונעם ריי\"ץ, מעשיות פון זיין מסירת נפש און זיין קדושה."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The Rav explains that 'the stranger in your midst' refers to the aspect of a goy inside a Jew, and that one must do teshuvah for it before entering Shabbos.",
+          "yi": "דער משגיח ערקלערט אז \"הגר אשר בקרבך\" מיינט די בחינה פון א גוי וואס איז אינעווייניג אין א איד, און אז מ'דארף תשובה טון דערויף איידער מ'גייט אריין אין שבת."
+        },
+        "evidence": { "segs": [15, 16, 17, 20, 21, 23], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "When a Jew sins, even an otherwise upright Jew, his G-dly soul is in exile and is forced to take part in the sin; this is galus haShechinah.",
+          "yi": "ווען א איד זינדיגט, אפילו אן ערליכער איד, איז זיין נפש האלקית אין גלות און ווערט געצוואונגען צו זיין א שותף אין דער עבירה; דאס איז גלות השכינה."
+        },
+        "evidence": { "segs": [102, 105, 107, 118, 119, 121], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Every Jew has a hidden love for Hashem, an inheritance from Avraham Avinu, which in a sinner is covered by a garment of klipah but never lost.",
+          "yi": "יעדער איד האט אן אהבה מסותרת צום אייבערשטן, א ירושה פון אברהם אבינו, וואס ביי א פושע איז זי צוגעדעקט מיט א לבוש פון קליפה, אבער זי ווערט קיינמאל נישט פארלוירן."
+        },
+        "evidence": { "segs": [145, 146, 149, 163, 169, 171], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The essence of chochmah in the soul is not blemished by sin; only its spreading into the heart and the whole person is.",
+          "yi": "דער עצם פון דער חכמה אין דער נשמה ווערט נישט פוגם דורך א עבירה; נאר איר התפשטות אין לב און אין דעם גאנצן מענטש."
+        },
+        "evidence": { "segs": [207, 211, 212, 223, 226, 234], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "In ordinary sins the chochmah sleeps, but a test of emunah reaches it and wakes it, so even the lowest Jew gives his life rather than deny Hashem.",
+          "yi": "ביי געווענליכע עבירות שלאפט די חכמה, אבער א נסיון פון אמונה דערגרייכט ביז איר און וועקט זי אויף, און דערפאר לאזט זיך אפילו דער קל שבקלים מוסר נפש זיין און לייקנט נישט אין השם."
+        },
+        "evidence": { "segs": [238, 243, 253, 257, 259, 265], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-new-tanya-09-tanya-new",
+      "startSeg": 0,
+      "endSeg": 55,
+      "title": { "en": "The goy within every Jew", "yi": "דער גוי וואס איז אין יעדן איד" },
+      "summary": {
+        "en": "The Rav brings the reading of the sefarim that 'the stranger in your midst' is the goy inside a Jew, and a student of the Ba'al Shem Tov who said one must do teshuvah for it before Shabbos. He tells of a ger among the Breslover chassidim who would roar at night to cut the goy out of himself.",
+        "yi": "דער משגיח ברענגט וואס ספרים טייטשן אז \"הגר אשר בקרבך\" איז דער גוי אין א איד, און א תלמיד פונעם בעל שם טוב וואס האט געזאגט אז ערב שבת דארף מען תשובה טון דערויף. ער דערציילט פון א גר ביי די ברסלאווער וואס פלעגט ביינאכט ברילן כדי ארויסצוהאקן דעם גוי פון זיך."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-09-tanya-new",
+      "startSeg": 56,
+      "endSeg": 121,
+      "title": { "en": "The G-dly soul in exile: galus haShechinah", "yi": "די נפש האלקית אין גלות: גלות השכינה" },
+      "summary": {
+        "en": "The Rav explains that the sinner submits to the yetzer hara in the left side of the heart rather than to his G-dly soul, yet before the test of emunah of the first two commandments he gives his life. He reads the Tanya that the sinner's G-dly soul is in exile and is forced into the sin, which is galus haShechinah, and stresses this applies to any Jew when he sins.",
+        "yi": "דער משגיח ערקלערט אז דער פושע איז נכנע צום יצר הרע אין חלל השמאלי און נישט צו זיין נפש האלקית, אבער ביי א נסיון פון אמונה פון אנכי און לא יהיה לך גיט ער אוועק זיין לעבן. ער לערנט אינעם תניא אז די נפש האלקית פונעם פושע איז אין גלות און ווערט געצוואונגען אין דער עבירה, וואס דאס איז גלות השכינה, און ער באטאנט אז דאס איז ביי יעדן איד ווען ער זינדיגט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-09-tanya-new",
+      "startSeg": 122,
+      "endSeg": 177,
+      "title": { "en": "The captive prince and the hidden love", "yi": "דער געפאנגענער בן מלך און די אהבה מסותרת" },
+      "summary": {
+        "en": "The Rav gives the mashal of a prince captured by his father's enemies and forced to fight against his father, and explains the Tanya's 'hidden love' through the passuk in Mishlei: an inheritance from Avraham Avinu that in a sinner is covered by klipah. He then reads that a spirit of folly enters through this covering, and that the exile reaches only the spreading of chochmah.",
+        "yi": "דער משגיח ברענגט דעם משל פון א בן מלך וואס די שונאים פונעם מלך האבן געפאנגען און צווינגען אים צו מלחמה האלטן קעגן זיין טאטן, און ער ערקלערט די \"אהבה מסותרת\" פונעם תניא מיטן פסוק אין משלי: א ירושה פון אברהם אבינו וואס ביי א פושע איז צוגעדעקט מיט קליפה. דערנאך לערנט ער אז דורך דעם קומט אריין א רוח שטות, און אז דער גלות איז נאר ביי דער התפשטות פון דער חכמה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-09-tanya-new",
+      "startSeg": 178,
+      "endSeg": 234,
+      "title": { "en": "Essence of chochmah versus its spreading", "yi": "דער עצם פון חכמה און איר התפשטות" },
+      "summary": {
+        "en": "The Rav raises a contradiction: earlier the Tanya said sin does not reach the chochmah, yet here the sinner drags it into exile. He answers that the essence of chochmah, the emunah, cannot be touched, but its spreading into the heart and the whole body, like the sun's rays, is blemished; the root stays in the brain.",
+        "yi": "דער משגיח פרעגט א סתירה: פריער האט דער תניא געזאגט אז א עבירה דערגרייכט נישט ביז דער חכמה, און דא שלעפט דער פושע זי אריין אין גלות. ער ענטפערט אז דער עצם פון דער חכמה, די אמונה, קען נישט אנגערירט ווערן, אבער איר התפשטות אין לב און אין גאנצן גוף, ווי די שטראלן פון דער זון, ווערט פוגם; דער שורש בלייבט אין מוח."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-09-tanya-new",
+      "startSeg": 235,
+      "endSeg": 301,
+      "title": { "en": "The sleeping chochmah wakes at a test of emunah", "yi": "די שלאפנדיגע חכמה וועקט זיך ביי א נסיון פון אמונה" },
+      "summary": {
+        "en": "The Rav explains that during sin the chochmah in the brain sleeps, but a test of emunah, which is above reason, wakes it, so even the worst sinner refuses to separate from Hashem. He contrasts the tzaddik who rules his heart with the rasha ruled by it, and brings pesukim that before Hashem all the klipos melt away.",
+        "yi": "דער משגיח ערקלערט אז ביי א עבירה שלאפט די חכמה אין מוח, אבער א נסיון פון אמונה, וואס איז למעלה מן הדעת, וועקט זי אויף, און דערפאר וויל אפילו דער ערגסטער רשע זיך נישט אפשיידן פונעם אייבערשטן. ער שטעלט אוועק א צדיק וואס איז בעל הבית אויף זיין הארץ קעגן א רשע וואס דאס הארץ הערשט איבער אים, און ברענגט פסוקים אז פארן אייבערשטן צעגייען אלע קליפות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-09-tanya-new",
+      "startSeg": 302,
+      "endSeg": 436,
+      "title": { "en": "The Czar and the Jewish soldier", "yi": "דער קיסר און דער אידישער סאלדאט" },
+      "summary": {
+        "en": "The Rav tells a story known among Russian chassidim: a Czar in disguise drinks with a Jewish soldier who pawns his sword for drink, escapes the Czar's trap with a wooden sword, and rises to general. When ordered to convert, the soldier, who had committed every sin, leaps from a bridge into the water, and the Czar remarks that a Jew gives his life when it comes to mesiras nefesh.",
+        "yi": "דער משגיח דערציילט א מעשה וואס איז מקובל ביי רוסישע חסידים: א פארשטעלטער קיסר טרינקט מיט א אידישן סאלדאט וואס פארזעצט זיין שווערד פאר בראנפן, ער ראטעוועט זיך פון דעם קיסר'ס פאסטקע מיט א הילצערנער שווערד און ווערט א גענעראל. ווען מ'הייסט אים זיך שמד'ן, שפרינגט דער סאלדאט, וואס האט געטון אלע עבירות, פון א בריק אין וואסער, און דער קיסר זאגט אז א איד לאזט זיך מוסר נפש זיין ווען עס קומט צו מסירת נפש."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-09-tanya-new",
+      "startSeg": 437,
+      "endSeg": 517,
+      "title": { "en": "The Rayatz's mesiras nefesh in Soviet Russia", "yi": "די מסירת נפש פונעם ריי\"ץ אין רוסלאנד" },
+      "summary": {
+        "en": "Noting the yahrzeit of the Lubavitcher Rebbe Rabbi Yosef Yitzchak, the Rav tells how he kept up hidden chadarim, yeshivos, davening and mikva'os under the Communists, was arrested, and answered the commissar's revolver that he has one G-d and two worlds. He adds the Machnovker Rebbe's words that only Breslover and Lubavitcher chassidim came to him in Russia, and that hundreds of Lubavitcher chassidim were killed for their mesiras nefesh.",
+        "yi": "ווייל ס'איז דער יארצייט פונעם ליובאוויטשער רבי ר' יוסף יצחק, דערציילט דער משגיח ווי ער האט אונטער די קאמוניסטן געהאלטן באהאלטענע חדרים, ישיבות, דאווענען און מקוואות, איז ארעסטירט געווארן, און האט געענטפערט דעם קאמיסאר מיטן רעוואלווער אז ער האט איין גאט מיט צוויי וועלטן. ער לייגט צו דעם מאכנאווקער רבי'ס ווערטער אז אין רוסלאנד זענען נאר די ברסלאווער און ליובאוויטשער געקומען צו אים, און אז הונדערטער ליובאוויטשער חסידים זענען געהרג'עט געווארן פאר זייער מסירת נפש."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-09-tanya-new",
+      "startSeg": 518,
+      "endSeg": 592,
+      "title": { "en": "The Chofetz Chaim's granddaughter", "yi": "דעם חפץ חיים'ס אייניקל" },
+      "summary": {
+        "en": "The Rav retells what Rabbi Shimshon Pincus heard from a granddaughter of the Chofetz Chaim: as a young woman leaving Yiddishkeit she boasted to her grandfather of telephones, radio and bombs, and he foretold flights across the Atlantic, flight to the moon and a bomb that destroys a whole city, yet she stayed as she was. He contrasts this with the Yiddishkeit the Rayatz and his chassidim kept alive in Russia through mesiras nefesh.",
+        "yi": "דער משגיח דערציילט וואס ר' שמשון פינקוס האט געהערט פון אן אייניקל פונעם חפץ חיים: ווען זי האט אלס יונג מיידל אוועקגעווארפן אידישקייט, האט זי זיך באריימט פארן זיידן מיט טעלעפאן, ראדיא און באמבעס, און ער האט פאראויסגעזאגט אז מ'וועט פליען איבערן אטלאנטיק, צו דער לבנה, און א באמבע וועט חרוב מאכן א גאנצע שטאט, און דאך איז זי געבליבן וואס זי איז געווען. דערקעגן שטעלט ער די אידישקייט וואס דער ריי\"ץ און זיינע חסידים האבן אויפגעהאלטן אין רוסלאנד מיט מסירת נפש."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-new-tanya-09-tanya-new",
+      "startSeg": 593,
+      "endSeg": 709,
+      "title": { "en": "Stories of the young Rayatz", "yi": "מעשיות פונעם יונגן ריי\"ץ" },
+      "summary": {
+        "en": "The Rav tells how the young Rayatz, working as secretary for a wealthy chassid, sensed which of a dealer's vessels truly belonged to a tzaddik, lifting each twice after doing teshuvah in case a sin dulled his sense. He then tells how Reb Peretz Chaim, bending down to pick up a coin the Rebbe's son had dropped while juggling by a window, escaped a Communist's bullet, and the shiur ends with l'chaim.",
+        "yi": "דער משגיח דערציילט ווי דער יונגער ריי\"ץ, ווען ער איז געווען סעקרעטאר ביי א רייכן חסיד, האט געשפירט וועלכע כלים פון א הענדלער האבן באמת באלאנגט צו א צדיק, און יעדע כלי האט ער אויפגעהויבן צוויי מאל, נאכן תשובה טון אויב אן עבירה האט אים פארשטעלט. דערנאך דערציילט ער ווי ר' פרץ חיים האט זיך אראפגעבויגן אויפצוהייבן א מטבע וואס דעם רבי'נס זון איז אראפגעפאלן ביים שפילן ביים פענסטער, און איז ניצול געווארן פון א קויל פון א קאמוניסט; דער שיעור ענדיגט זיך מיט לחיים."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "בחנך השם מפשע ישראל, קודם שבו לדן נסיון, לקדש השם",
+      "work": "Tanya",
+      "ref": "Tanya ch. 19",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [86, 87, 93, 108, 177, 229], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "הגוי השבק הערבכה יעלה עליכה מעלה מולה",
+      "work": "Devarim",
+      "ref": "Devarim 28:43",
+      "sefariaRef": "Deuteronomy 28:43",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [12, 13, 15], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "גוי השבט חייב מועסע",
+      "work": "Gemara Sanhedrin",
+      "ref": "Sanhedrin 58b",
+      "sefariaRef": "Sanhedrin 58b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [22, 23], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אנכי ולא ירחק",
+      "work": "Shemos",
+      "ref": "Shemos 20:2-3",
+      "sefariaRef": "Exodus 20:2-3",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [72, 73], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "טובא אבא מסתרת",
+      "work": "Mishlei",
+      "ref": "Mishlei 27:5",
+      "sefariaRef": "Proverbs 27:5",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [139, 140, 141, 142], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אינא דמחטה אלום כנחמת ביי רוח שטות",
+      "work": "Gemara Sotah",
+      "ref": "Sotah 3a",
+      "sefariaRef": "Sotah 3a",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [173, 174, 175], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ויקץ קיושין ה'",
+      "work": "Tehillim",
+      "ref": "Tehillim 78:65",
+      "sefariaRef": "Psalms 78:65",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [255], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "וואס שרושה מען ברשות ליבום",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [274, 275, 277], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "כדי סוף כל הגיום קי איין נגדי",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 40:17",
+      "sefariaRef": "Isaiah 40:17",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [290, 291], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "כהומת דינוק מפני יש",
+      "work": "Tehillim",
+      "ref": "Tehillim 68:3",
+      "sefariaRef": "Psalms 68:3",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [295], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "הארום כדי נדערמאסל",
+      "work": "Tehillim",
+      "ref": "Tehillim 97:5",
+      "sefariaRef": "Psalms 97:5",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [296, 297], "confidence": 0.7 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav reads 'the stranger in your midst will rise above you' not only as foreign rulers in exile but as the goy inside a Jew, and connects it to a goy who keeps Shabbos, so one must remove it through teshuvah before Shabbos.",
+        "yi": "דער משגיח טייטשט \"הגר אשר בקרבך יעלה עליך\" נישט נאר אויף גוים אין גלות, נאר אויף דעם גוי אינעווייניג אין א איד, און פארבינדט עס מיט א גוי וואס היט שבת, אז מ'דארף אים ארויסנעמען דורך תשובה פאר שבת."
+      },
+      "evidence": { "segs": [14, 15, 21, 22, 23], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The Rav stresses that the Tanya's 'sinner of Israel' whose soul is in exile is not only a Shabbos desecrator but any upright Jew at the moment he sins.",
+        "yi": "דער משגיח באטאנט אז דער \"פושע ישראל\" פונעם תניא, וואס זיין נשמה איז אין גלות, מיינט נישט נאר א מחלל שבת, נאר אפילו אן ערליכן איד אין דעם מאמענט וואס ער זינדיגט."
+      },
+      "evidence": { "segs": [116, 117, 118, 119, 120], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Using the sun and its rays, the Rav resolves how a sin can both fail to reach the chochmah and drag it into exile: the essence stays whole in the brain while its spreading into the heart is blemished.",
+        "yi": "מיטן משל פון דער זון און אירע שטראלן פארענטפערט דער משגיח ווי אזוי א עבירה קען סיי נישט דערגרייכן די חכמה און סיי זי אריינשלעפן אין גלות: דער עצם בלייבט גאנץ אין מוח, און איר התפשטות אין לב ווערט פוגם."
+      },
+      "evidence": { "segs": [205, 207, 214, 219, 226, 234], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav explains that some sinners are so steeped in sin that they almost lose their free choice and want to be good but must sin, yet even they are moser nefesh when emunah is at stake.",
+        "yi": "דער משגיח ערקלערט אז ס'זענען דא רשעים וואס זענען אזוי שטארק אריינגעזונקען אין חטא אז זיי פארלירן כמעט די בחירה, זיי ווילן זיין גוט אבער מוזן זינדיגן, און דאך זענען זיי מוסר נפש ווען עס קומט צו אמונה."
+      },
+      "evidence": { "segs": [270, 271, 272, 287, 289], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "In the story of the Rayatz and the vessels, the Rav brings that he lifted each vessel a second time after doing teshuvah, reasoning that if he felt no holiness perhaps a sin had dulled his sense.",
+        "yi": "אין דער מעשה מיטן ריי\"ץ און די כלים ברענגט דער משגיח אז ער האט יעדע כלי אויפגעהויבן א צווייטן מאל נאכן תשובה טון, ווייל אויב ער האט נישט געשפירט קיין קדושה, איז אפשר אן עבירה האט אים פארשטעלט."
+      },
+      "evidence": { "segs": [651, 655, 659, 661, 664, 666], "confidence": 0.7 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Breslover ger who roared at night", "yi": "דער ברסלאווער גר וואס האט ביינאכט געבריליעט" },
+      "retelling": {
+        "en": "Among the Breslover chassidim there was a convert who became a great oved Hashem and would spend whole nights alone in the beis medrash. Old thoughts from his earlier life still stirred in him. People heard him through the window walking around and singing, and then letting out a lion's roar to cut the goy out of his head.",
+        "yi": "ביי די ברסלאווער איז געווען א גר וואס איז געווארן א גרויסער עובד השם, און פלעגט זיצן גאנצע נעכט אליין אין בית המדרש. די אלטע מחשבות פון זיינע פריערדיגע צייטן האבן זיך נאך גערירט אין אים. מ'האט אים געהערט דורכן פענסטער ווי ער גייט ארום און זינגט, און דערנאך גיט ער א שאגת ארי כדי ארויסצוהאקן דעם גוי פון קאפ."
+      },
+      "people": [],
+      "evidence": { "segs": [34, 35, 42, 50, 54, 55], "confidence": 0.65 }
+    },
+    {
+      "title": { "en": "The Czar and the Jewish soldier", "yi": "דער קיסר און דער אידישער סאלדאט" },
+      "retelling": {
+        "en": "A Czar, thought to be Nikolai, liked to disguise himself as a simple man and sat in a tavern among soldiers, next to a Jewish soldier who made him drink and then, out of money, pawned his sword, the Czar's own, for more vodka. The next day the Czar ordered him to cut off the head of an innocent soldier beside him; the Jew, who had guessed who the stranger was and carved a wooden sword overnight, declared that if the man was innocent a miracle would turn the sword to wood. Impressed, the Czar promoted him until he became a general, then demanded he convert. The soldier, who had already done every kind of sin, agreed, but on the way, riding between the Czar and the queen, asked to stop on a bridge and jumped into the water. The Czar said that a Jew, when it comes to mesiras nefesh, gives his life.",
+        "yi": "א קיסר, מ'מיינט ניקאלאי, האט ליב געהאט זיך פארשטעלן פאר א פשוט'ן מענטש, און איז געזעסן אין א שענק צווישן סאלדאטן, לעבן א אידישן סאלדאט וואס האט אים געגעבן טרינקען, און ווען ער האט נישט געהאט קיין געלט, האט ער פארזעצט זיין שווערד, וואס באלאנגט צום קיסר, פאר נאך בראנפן. אויפן צווייטן טאג האט דער קיסר אים געהייסן אפהאקן דעם קאפ פון אן אומשולדיגן סאלדאט לעבן אים; דער איד, וואס האט פארשטאנען ווער דער פרעמדער איז געווען און האט איבער נאכט אויסגעשניצט א הילצערנע שווערד, האט מודיע געווען אז אויב יענער איז אומשולדיג, וועט א נס מאכן די שווערד פאר האלץ. דער קיסר האט אים געגעבן אלץ העכערע מדריגות ביז ער איז געווארן א גענעראל, און דערנאך פארלאנגט אז ער זאל זיך שמד'ן. דער סאלדאט, וואס האט שוין געטון אלע סארטן עבירות, האט מסכים געווען, אבער אויפן וועג, זיצנדיג צווישן דעם קיסר און דער מלכה, האט ער געבעטן אפשטעלן ביי א בריק און איז אריינגעשפרונגען אין וואסער. דער קיסר האט געזאגט אז א איד, ווען עס קומט צו מסירת נפש, לאזט זיך מוסר נפש זיין."
+      },
+      "people": ["Czar Nikolai"],
+      "evidence": { "segs": [302, 308, 347, 393, 410, 431], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The Rayatz before the commissar", "yi": "דער ריי\"ץ פארן קאמיסאר" },
+      "retelling": {
+        "en": "Under the Communists the Rayatz set up hidden chadarim and yeshivos, arranged davening and built mikva'os, and he was arrested. Asked who ran the yeshivos and chadarim, he refused to tell. The commissar pointed a revolver at him and said it had made many mute people talk; unmoved, he answered that such a weapon frightens people who have many gods and one world, but he has one G-d and two worlds. After protests from American Jews he was released and continued his mesiras nefesh.",
+        "yi": "אונטער די קאמוניסטן האט דער ריי\"ץ איינגעפירט באהאלטענע חדרים און ישיבות, ער האט געזארגט אז מ'זאל דאווענען און האט געבויט מקוואות, און מ'האט אים ארעסטירט. מ'האט אים געפרעגט ווער עס פירט די ישיבות און חדרים, און ער האט נישט געוואלט זאגן. דער קאמיסאר האט אויף אים אנגעצילט א רעוואלווער און געזאגט אז ער האט שוין אסאך שטומע מענטשן געמאכט רעדן; ער איז נישט נתפעל געווארן און האט געענטפערט אז פאר דעם האבן מורא מענטשן וואס האבן אסאך געטער מיט איין וועלט, אבער ער האט איין גאט מיט צוויי וועלטן. נאך פראטעסטן פון אמעריקאנער אידן האט מען אים באפרייט, און ער איז ווייטער געגאנגען מיט זיין מסירת נפש."
+      },
+      "people": ["Rabbi Yosef Yitzchak of Lubavitch"],
+      "evidence": { "segs": [451, 453, 460, 466, 470, 471], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The Machnovker Rebbe on who came to him in Russia", "yi": "דער מאכנאווקער רבי ווער ס'איז געקומען צו אים אין רוסלאנד" },
+      "retelling": {
+        "en": "The Machnovker Rebbe, of the Chernobyl dynasty, was so great that the Skverer Rebbe bowed before him when he came to Eretz Yisrael. He said that in Russia, when the Communists decreed against being a Jew, nobody came to him except the Breslover and Lubavitcher chassidim, and from then on he drew them close. The Rav adds that hundreds of the Rayatz's chassidim were caught and never returned.",
+        "yi": "דער מאכנאווקער רבי פון טשערנאבילער שטאם איז געווען אזוי גרויס אז דער סקווירער רבי האט זיך פאר אים געבויגן ווען ער איז געקומען קיין ארץ ישראל. ער האט געזאגט אז אין רוסלאנד, ווען די קאמוניסטן האבן געמאכט גזירות אז מ'טאר נישט זיין קיין איד, איז קיינער נישט געקומען צו אים חוץ די ברסלאווער און די ליובאוויטשער, און פון דעמאלט אן האט ער זיי מקרב געווען. דער משגיח לייגט צו אז הונדערטער חסידים פונעם ריי\"ץ זענען געכאפט געווארן און זענען קיינמאל נישט צוריקגעקומען."
+      },
+      "people": ["the Machnovker Rebbe", "the Skverer Rebbe"],
+      "evidence": { "segs": [485, 490, 499, 502, 503, 508], "confidence": 0.65 }
+    },
+    {
+      "title": { "en": "The Chofetz Chaim foretells the future", "yi": "דער חפץ חיים זאגט פאראויס" },
+      "retelling": {
+        "en": "Rabbi Shimshon Pincus told that he and his friend Hillel Zaks, a grandson of the Chofetz Chaim, visited Hillel's cousin, a granddaughter of the Chofetz Chaim. She told them that at about twenty she had thrown off Yiddishkeit and wanted to study at university, and told her grandfather that he sat in a corner and did not know about science, progress, the telephone, the radio and bombs that destroy a house. He answered that it was true, and that a time would come when one would cross the Atlantic by plane in a few hours, fly to the moon, and make a bomb that destroys a whole city. Yet, the Rav notes, she remained as she was.",
+        "yi": "ר' שמשון פינקוס האט דערציילט אז ער מיט זיין חבר הלל זקס, אן אייניקל פונעם חפץ חיים, זענען געגאנגען באזוכן הלל'ס קוזינע, אן אייניקל פונעם חפץ חיים. זי האט דערציילט אז ווען זי איז געווען בערך צוואנציג יאר האט זי אוועקגעווארפן אידישקייט און געוואלט שטודירן אין אוניווערסיטעט, און זי האט געזאגט צום זיידן אז ער זיצט אין א ווינקל און ווייסט נישט פון וויסנשאפט, פראגרעס, טעלעפאן, ראדיא און באמבעס וואס קענען חרוב מאכן א הויז. ער האט געענטפערט אז דאס איז אמת, און אז ס'וועט קומען א צייט וואס מ'וועט פליען איבערן אטלאנטיק אין א פאר שעה, פליען צו דער לבנה, און מאכן א באמבע וואס וועט חרוב מאכן א גאנצע שטאט. און דאך, מערקט אן דער משגיח, איז זי געבליבן וואס זי איז געווען."
+      },
+      "people": ["Rabbi Shimshon Pincus", "Hillel Zaks", "the Chofetz Chaim"],
+      "evidence": { "segs": [520, 532, 545, 554, 571, 578], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The Rayatz senses the vessels of tzaddikim", "yi": "דער ריי\"ץ שפירט די כלים פון צדיקים" },
+      "retelling": {
+        "en": "After his wedding the Rayatz needed a livelihood, and a wealthy chassid, Reb Shmuel Gurary, hired him as a secretary for three hours a day so he could learn the rest. A dealer brought silver vessels and antiques said to belong to tzaddikim; the Rayatz lifted each one, called the others ordinary, and picked out a single vessel that held kedushah, the same one his father the Rebbe had picked when asked before. Seeing he was no simple man, the chassid let him learn while still paying him, and asked why he lifted each vessel twice; he answered that when he felt nothing he feared a sin was blocking his sense, did teshuvah, and lifted it again.",
+        "yi": "נאך דער חתונה האט דער ריי\"ץ געדארפט פרנסה, און א רייכער חסיד, ר' שמואל גוראריע, האט אים אנגענומען פאר א סעקרעטאר דריי שעה א טאג, כדי ער זאל קענען לערנען די איבריגע צייט. א הענדלער האט געברענגט זילבערנע כלים און אנטיקן וואס האבן געזאלט באלאנגען צו צדיקים; דער ריי\"ץ האט יעדע כלי אויפגעהויבן, געזאגט אז די אנדערע זענען פראסט, און ארויסגעקליבן איין כלי וואס האט אין זיך קדושה, די זעלבע וואס זיין טאטע דער רבי האט ארויסגעקליבן ווען מ'האט אים פריער געפרעגט. ווען דער חסיד האט געזען אז ער איז נישט קיין פשוט'ער מענטש, האט ער אים געלאזט לערנען און ווייטער באצאלט, און געפרעגט פארוואס ער האט יעדע כלי אויפגעהויבן צוויי מאל; ער האט געענטפערט אז ווען ער האט גארנישט געשפירט, האט ער מורא געהאט אז אן עבירה שטערט, האט ער תשובה געטון און עס נאכאמאל אויפגעהויבן."
+      },
+      "people": ["Rabbi Yosef Yitzchak of Lubavitch", "Reb Shmuel Gurary", "Rabbi Sholom Dovber of Lubavitch"],
+      "evidence": { "segs": [608, 624, 632, 641, 648, 664], "confidence": 0.7 }
+    },
+    {
+      "title": { "en": "The juggled coin that saved a life", "yi": "די מטבע וואס האט געראטעוועט א לעבן" },
+      "retelling": {
+        "en": "Reb Peretz Chaim, later one of the great rabbanim in Russia, came as a young man to talk with the Rayatz, then the Rebbe's son. The Rayatz juggled a coin by the window, which Reb Peretz Chaim thought unbecoming, and when it fell he hesitated to pick it up because of his own honor, but bent down anyway. At that moment a bullet flew through the window from a Communist who took him for the Rebbe's son; had he not bent down he would have been shot, and he understood that the Rebbe's son had not simply been playing but had saved his life.",
+        "yi": "ר' פרץ חיים, שפעטער פון די גרויסע רבנים אין רוסלאנד, איז אלס יונגערמאן געקומען שמועסן מיטן ריי\"ץ, דעמאלט דעם רבי'נס זון. דער ריי\"ץ האט געשפילט מיט א מטבע ביים פענסטער, ווארפן און כאפן, און ר' פרץ חיים האט געהאלטן אז דאס פאסט נישט; ווען זי איז אראפגעפאלן, האט ער זיך געקווענקלט צי עס פאסט פאר זיין כבוד זי אויפצוהייבן, אבער ער האט זיך דאך אראפגעבויגן. אין דעם מאמענט איז א קויל דורכגעפלויגן דורכן פענסטער פון א קאמוניסט וואס האט אים געהאלטן פאר דעם רבי'נס זון; ווען ער וואלט זיך נישט אראפגעבויגן, וואלט מען אים דערשאסן, און ער האט פארשטאנען אז דעם רבי'נס זון האט זיך נישט סתם געשפילט, נאר האט געראטעוועט זיין לעבן."
+      },
+      "people": ["Reb Peretz Chaim", "Rabbi Yosef Yitzchak of Lubavitch"],
+      "evidence": { "segs": [675, 681, 693, 698, 703, 707], "confidence": 0.7 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "How can the Tanya say a sin does not reach the chochmah of the soul, and also that the sinner drags his G-dly soul and its chochmah into exile?",
+        "yi": "ווי אזוי קען דער תניא זאגן אז אן עבירה דערגרייכט נישט ביז דער חכמה פון דער נשמה, און אויך אז דער פושע שלעפט זיין נפש האלקית מיט איר חכמה אריין אין גלות?"
+      },
+      "answer": {
+        "en": "The essence of chochmah, the emunah, is never touched; only its spreading into the heart and the whole person, like the sun's rays, is blemished, while the root stays in the brain.",
+        "yi": "דער עצם פון דער חכמה, די אמונה, ווערט קיינמאל נישט אנגערירט; נאר איר התפשטות אין לב און אין גאנצן מענטש, ווי די שטראלן פון דער זון, ווערט פוגם, און דער שורש בלייבט אין מוח."
+      },
+      "questionSegs": [178, 202, 205, 206],
+      "answerSegs": [207, 212, 214, 226, 234],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why does even a sinner of Israel give his life for kiddush Hashem?",
+        "yi": "פארוואס גיט אפילו א פושע ישראל אוועק זיין לעבן על קידוש השם?"
+      },
+      "answer": {
+        "en": "Because a test of emunah, which is above reason, reaches the chochmah of the G-dly soul and wakes it from its sleep, and then the klipos are nullified.",
+        "yi": "ווייל א נסיון פון אמונה, וואס איז למעלה מן הדעת, דערגרייכט ביז דער חכמה פון דער נפש האלקית און וועקט זי אויף פונעם שלאף, און דעמאלט ווערן די קליפות בטל."
+      },
+      "questionSegs": [86, 87, 88],
+      "answerSegs": [195, 250, 253, 259, 288],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav cites one of the great students of the Ba'al Shem Tov that on Erev Shabbos one must do teshuvah, since every person may have some aspect of a goy within him and must not enter Shabbos with it.",
+        "yi": "דער משגיח ברענגט פון איינעם פון די גרויסע תלמידי הבעש\"ט אז ערב שבת דארף מען תשובה טון, ווייל יעדער מענטש קען האבן אין זיך א בחינה פון א גוי, און מ'טאר נישט אריינגיין דערמיט אין שבת."
+      },
+      "evidence": { "segs": [19, 20, 21, 23, 24], "confidence": 0.7 }
+    }
+  ],
+  "candidateTopics": [
+    "Tanya chapter 19",
+    "the goy within a Jew",
+    "galus haShechinah",
+    "hidden love inherited from Avraham Avinu",
+    "chochmah and emunah above reason",
+    "mesiras nefesh for kiddush Hashem",
+    "teshuvah before Shabbos",
+    "the Rayatz",
+    "Yiddishkeit under Communism"
+  ],
+  "concepts": [
+    { "he": "פושע ישראל", "heardAs": ["פשע ישראל", "פשי ישראל", "פרשה ישראל", "פשע יצחק"] },
+    { "he": "נפש האלקית", "heardAs": ["נפש אלוקות", "נפש של עקיז", "נפש עולה כת", "נפש הלקות"] },
+    { "he": "נפש הבהמית", "heardAs": ["נפש הבאנות", "נפש הבאמת"] },
+    { "he": "גלות השכינה", "heardAs": ["גדות השכונה", "גבות השכינה", "גלות השכונה"] },
+    { "he": "אהבה מסותרת", "heardAs": ["אבא מסתרת", "אבא מסעותרת", "אהבה מסרט סערות"] },
+    { "he": "רוח שטות", "heardAs": ["רוח שטות"] },
+    { "he": "התפשטות החכמה", "heardAs": ["התפשטות שווער חכמה", "יתפשטות"] },
+    { "he": "קידוש השם", "heardAs": ["קדש השם", "לקדש השם"] },
+    { "he": "מסירת נפש", "heardAs": ["מעשה נפש", "מייסער נפש", "נסירת נחש", "מייסע נחש"] },
+    { "he": "חלל השמאלי", "heardAs": ["חלל השמאלי", "חללת"] },
+    { "he": "למעלה מן הדעת", "heardAs": ["למעלה מן השכל וידת", "שלא מעלה מידעת"] }
+  ],
+  "people": [
+    { "name": "the Ba'al Shem Tov", "heardAs": ["תלמידי בעש''ט"] },
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינא", "אברהם אבינו"] },
+    { "name": "Czar Nikolai", "heardAs": ["צהר ניקאליי"] },
+    { "name": "Rabbi Yosef Yitzchak of Lubavitch", "heardAs": ["ראיאץ", "רבי יוסף יוצנק", "ראאץ", "יוסף יצחק"] },
+    { "name": "Rabbi Sholom Dovber of Lubavitch", "heardAs": ["דעם עלשייב דעם טאטע פון דעם ראאץ"] },
+    { "name": "the Machnovker Rebbe", "heardAs": ["מחנך קאל", "מחנך קריאל"] },
+    { "name": "the Skverer Rebbe", "heardAs": ["סקווערער רבי", "סקווירער רבי"] },
+    { "name": "Rabbi Shimshon Pincus", "heardAs": ["רבי שמשון פינקערס"] },
+    { "name": "Hillel Zaks", "heardAs": ["הילה זאגס", "הילול זאגט"] },
+    { "name": "the Chofetz Chaim", "heardAs": ["חפץ חיים", "חטיץ חיים", "מחפץ חיים"] },
+    { "name": "Reb Shmuel Gurary", "heardAs": ["רבי שמעון גורליה", "ר' שמואל גורעניע", "רבי שמעון גורי"] },
+    { "name": "Reb Peretz Chaim", "heardAs": ["פערץ חיים", "רבי פערווייטס חיים", "רבי פריעץ חיים"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair for the stories and poor for the Tanya quotations, which are recovered from the perek. The gematria of 'ahavah mesuteres' (segs 154-157), the Slonim-related remark about the Rayatz (segs 440-446) and a saying about the Chashmonaim and mesiras nefesh (segs 512-517) could not be recovered reliably and are left out. The identity of the man in seg 512 and some names (Gurary, Reb Peretz Chaim) are uncertain in the ASR."
+}

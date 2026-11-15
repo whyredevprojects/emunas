@@ -1,0 +1,616 @@
+{
+  "shiurId": "yi-tefila-heb-15",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "On the words of Ashrei, 'Gadol Hashem… v'ligdulaso ein cheker', the Rav explains that Hashem cannot be grasped by investigation but is known through the neshamah, the mesorah of Sinai, the tzaddikim of every generation and the beauty of His world.",
+      "yi": "אויף די ווערטער פון אשרי, \"גדול ה' ומהלל מאד ולגדולתו אין חקר\", ערקלערט דער משגיח אז דעם רבונו של עולם כאפט מען נישט מיט חקירה, נאר מ'ווייסט פון אים דורך דער נשמה, דורך דער מסורה פון הר סיני, דורך די צדיקים פון יעדן דור און דורך דער שיינקייט פון זיין וועלט."
+    },
+    "abstract": {
+      "en": "The Rav opens with the verse 'Gadol Hashem u'mehulal me'od, v'ligdulaso ein cheker' and explains that each sense grasps its own kind of thing, and the intellect is not the faculty that grasps Hashem. Every Jew has a neshamah and a measure of ruach hakodesh, blocked only by sin; Klal Yisroel as a whole has it, which is why its minhagim are true, as the Binas Adam and Rav Moshe Feinstein show. The human mind was made for the physical world; Hashem is felt through Torah, mitzvos and kedushah. The Torah never proves the ikkarim by investigation: they rest on what an entire nation saw at Sinai, as the Yismach Moshe writes. On 'dor l'dor yeshabach ma'asecha' he explains that the tzaddikim of each generation reveal Hashem, with stories of Lechovitch, Belz and the Satmar Rav's megillah, and that later generations understand Hashem's ways. He ends with 'hadar kevod hodecha': the grace and beauty of creation.",
+      "yi": "דער משגיח עפנט מיטן פסוק \"גדול ה' ומהלל מאד ולגדולתו אין חקר\" און ערקלערט אז יעדער חוש כאפט זיין אייגענע סארט זאך, און דער קאפ איז נישט דער כלי מיט וואס מ'כאפט דעם רבונו של עולם. יעדער איד האט א נשמה און א שטיקל רוח הקודש, נאר עבירות שיידן אפ; כלל ישראל אלס כלל האט רוח הקודש, דערפאר זענען זייערע מנהגים אמת, ווי מ'זעט ביים בינת אדם און ביי ר' משה פיינשטיין. דער מענטשלעכער מח איז באשאפן פאר דער גשמיות'דיגער וועלט; דעם רבונו של עולם שפירט מען דורך תורה, מצוות און קדושה. אין דער גאנצער תורה ברענגט מען נישט קיין ראיות פון חקירה אויף די עיקרים: זיי שטייען אויף דעם וואס א גאנץ פאלק האט געזען ביי הר סיני, ווי דער ישמח משה שרייבט. ביי \"דור לדור ישבח מעשיך\" ערקלערט ער אז די צדיקים פון יעדן דור אנטפלעקן דעם רבונו של עולם, מיט מעשיות פון לעכאוויטש, בעלזא און דעם סאטמאר רב'ס מגילה, און אז שפעטערדיגע דורות פארשטייען דעם אייבערשטנס הנהגה. ער ענדיגט מיט \"הדר כבוד הודך\": דער חן און די שיינקייט פון דער בריאה."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Each sense grasps its own kind of thing, and the intellect with its investigation is not the faculty through which a person grasps Hashem.",
+          "yi": "יעדער חוש כאפט זיין אייגענע סארט זאך, און דער קאפ מיט זיין חקירה איז נישט דער כלי מיט וואס מ'כאפט דעם רבונו של עולם."
+        },
+        "evidence": { "segs": [33, 34, 35, 55, 58], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Every Jew has a neshamah that is a part of G-d and a potential for ruach hakodesh; sin insulates him from it, and Klal Yisroel as a whole has ruach hakodesh, so its minhagim are true.",
+          "yi": "יעדער איד האט א נשמה וואס איז א חלק אלוק ממעל און א כח צו רוח הקודש; עבירות שיידן אים אפ דערפון, און כלל ישראל אלס כלל האט רוח הקודש, דערפאר זענען זייערע מנהגים אמת."
+        },
+        "evidence": { "segs": [67, 69, 75, 98, 100, 132], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The human mind was made only for the physical world; Hashem is felt through Torah, mitzvos, honesty and kedushah, not through calculation.",
+          "yi": "דער מענטשלעכער מח איז באשאפן נאר פאר דער גשמיות'דיגער וועלט; דעם רבונו של עולם שפירט מען דורך תורה, מצוות, ערליכקייט און קדושה, נישט מיט חשבונות."
+        },
+        "evidence": { "segs": [172, 173, 188, 211, 223, 228], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The Torah never brings proofs from investigation for its foundations; Jewish belief rests on the experience of an entire nation at Yetzias Mitzrayim and Sinai, handed down from generation to generation.",
+          "yi": "אין דער גאנצער תורה ברענגט מען נישט קיין ראיות פון חקירה אויף אירע יסודות; די אמונה פון אידן שטייט אויף דעם וואס א גאנץ פאלק האט מיטגעלעבט ביי יציאת מצרים און הר סיני, און עס איז איבערגעגעבן געווארן פון דור צו דור."
+        },
+        "evidence": { "segs": [253, 256, 271, 273, 294, 299], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "'Dor l'dor yeshabach ma'asecha': the tzaddikim of each generation are Hashem's handiwork, through whom His praise is told.",
+          "yi": "\"דור לדור ישבח מעשיך\": די צדיקים פון יעדן דור זענען דעם אייבערשטנס מעשה ידיו, און דורך זיי ווערט זיין שבח דערציילט."
+        },
+        "evidence": { "segs": [414, 432, 446, 463, 464], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "What one generation cannot understand of Hashem's ways becomes clear to later generations, as with the rebuilding of Torah after the destruction in Europe.",
+          "yi": "וואס איין דור פארשטייט נישט פון דעם אייבערשטנס הנהגה, ווערט קלאר פאר שפעטערדיגע דורות, אזוי ווי דער אויפבוי פון תורה נאכן חורבן אין אייראפע."
+        },
+        "evidence": { "segs": [585, 588, 620, 622, 628], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "'Hadar kevod hodecha': Hashem made the world with grace and beauty beyond what was needed, and for this one must thank and praise Him.",
+          "yi": "\"הדר כבוד הודך\": דער אייבערשטער האט געמאכט די וועלט מיט חן און שיינקייט מער ווי מ'דארף, און דערפאר דארף מען אים דאנקען און לויבן."
+        },
+        "evidence": { "segs": [629, 660, 706, 708, 710], "confidence": 0.85 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-teffilah-08-b-tefilah",
+      "startSeg": 0,
+      "endSeg": 58,
+      "title": {
+        "en": "Gadol Hashem: no investigating His greatness",
+        "yi": "גדול ה': אויף זיין גדולה איז נישטא קיין חקר"
+      },
+      "summary": {
+        "en": "After a few words on the nusach of tefillah set by the Anshei Knesses Hagedolah, the Rav takes up the verse 'Gadol Hashem… v'ligdulaso ein cheker'. He explains that each sense grasps its own kind of thing, a picture with the eyes and a symphony with the ears, and that the intellect is not the faculty for grasping Hashem.",
+        "yi": "נאך א פאר ווערטער וועגן דעם נוסח התפילה וואס די אנשי כנסת הגדולה האבן מתקן געווען, נעמט דער משגיח דעם פסוק \"גדול ה' ומהלל מאד ולגדולתו אין חקר\". ער ערקלערט אז יעדער חוש כאפט זיין סארט זאך, א בילד מיט די אויגן און א סימפאניע מיט די אויערן, און דער קאפ איז נישט דער כלי צו כאפן דעם רבונו של עולם."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-08-b-tefilah",
+      "startSeg": 59,
+      "endSeg": 160,
+      "title": {
+        "en": "The neshamah and the ruach hakodesh of Klal Yisroel",
+        "yi": "די נשמה און דער רוח הקודש פון כלל ישראל"
+      },
+      "summary": {
+        "en": "Citing the Kuzari, the Rav explains that every Jew has a neshamah and a measure of ruach hakodesh, and only sin insulates him from it; the neshamah knows what lies beyond walls and time. Klal Yisroel as a whole has ruach hakodesh, which is why its minhagim are true, as he shows from the Binas Adam and a teshuvah of Rav Moshe Feinstein.",
+        "yi": "מיטן כוזרי ערקלערט דער משגיח אז יעדער איד האט א נשמה און א שטיקל רוח הקודש, נאר די עבירות שיידן אים אפ; די נשמה ווייסט וואס טוט זיך הינטער דער וואנט און מארגן. כלל ישראל אלס כלל האט רוח הקודש, דערפאר זענען זייערע מנהגים אמת, ווי ער ברענגט פונעם בינת אדם און פון א תשובה פון ר' משה פיינשטיין."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-08-b-tefilah",
+      "startSeg": 161,
+      "endSeg": 270,
+      "title": {
+        "en": "The mind cannot reach Hashem; emunah through Torah and mitzvos",
+        "yi": "מיטן מח דערגרייכט מען נישט; אמונה דורך תורה און מצוות"
+      },
+      "summary": {
+        "en": "The Rav explains that the human mind was made for the physical world and breaks down on questions of infinite time and space; Hashem is felt through Torah, mitzvos and kedushah. He discusses the old dispute over chakirah, says that today one should not engage in it, and stresses that the Torah never proves its ikkarim by investigation, unlike religions that believe 'because he said so'.",
+        "yi": "דער משגיח ערקלערט אז דער מענטשלעכער מח איז באשאפן פאר דער גשמיות'דיגער וועלט און ער קען נישט כאפן קיין אומענדלעכע צייט און קיין אומענדלעכן ארט; דעם רבונו של עולם שפירט מען דורך תורה, מצוות און קדושה. ער רעדט וועגן דער אלטער מחלוקת איבער חקירה, זאגט אז היינט טאר מען זיך נישט פארנעמען דערמיט, און ער באטאנט אז די תורה ברענגט קיינמאל נישט קיין ראיות פון חקירה אויף די עיקרים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-08-b-tefilah",
+      "startSeg": 271,
+      "endSeg": 399,
+      "title": {
+        "en": "A whole nation saw: the mesorah of Sinai",
+        "yi": "א גאנץ פאלק האט געזען: די מסורה פון הר סיני"
+      },
+      "summary": {
+        "en": "The Rav brings the pesukim in Devarim that no nation ever heard Hashem speak from the fire, and explains that something an entire people witnessed and handed down cannot be denied. He reads a teshuvah of the Yismach Moshe on doubts in emunah, compares denial of Sinai to denying the Holocaust or Julius Caesar, and explains that the nations too accept the Torah's miracles.",
+        "yi": "דער משגיח ברענגט די פסוקים אין דברים אז קיין פאלק האט קיינמאל נישט געהערט דעם אייבערשטן רעדן פון פייער, און ערקלערט אז א זאך וואס א גאנץ פאלק האט געזען און איבערגעגעבן קען מען נישט אפלייקענען. ער לערנט א תשובה פונעם ישמח משה וועגן ספקות אין אמונה, פארגלייכט עס צו די וואס לייקענען דעם חורבן אדער יוליוס קיסר, און ערקלערט אז אפילו די אומות גלייבן אין די ניסים פון דער תורה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-08-b-tefilah",
+      "startSeg": 400,
+      "endSeg": 471,
+      "title": {
+        "en": "Dor l'dor: the tzaddikim as Hashem's handiwork",
+        "yi": "דור לדור: די צדיקים זענען מעשה ידיו"
+      },
+      "summary": {
+        "en": "Returning to the verse, the Rav explains that Hashem's greatness is known not through philosophy but through the mesorah, 'dor l'dor yeshabach ma'asecha', and warns that every Jew must guard his emunah. He brings the Zohar on Shavuos night that 'ma'asecha' and 'ma'aseh yadav' are the tzaddikim, and describes Jews whose avodah radiates onto others.",
+        "yi": "צוריק צום פסוק, ערקלערט דער משגיח אז מ'ווייסט פון דעם רבונו של עולם'ס גדולה נישט דורך פילאסאפיע נאר דורך דער מסורה, \"דור לדור ישבח מעשיך\", און ער זאגט אז יעדער איד דארף היטן זיין אמונה. ער ברענגט דעם זוהר וועגן שבועות ביינאכט אז \"מעשיך\" און \"מעשה ידיו\" זענען די צדיקים, און באשרייבט אידן וואס זייער עבודה שיינט אויף אנדערע."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-08-b-tefilah",
+      "startSeg": 472,
+      "endSeg": 544,
+      "title": {
+        "en": "Lechovitch, Belz and the Satmar Rav's megillah",
+        "yi": "לעכאוויטש, בעלזא און דעם סאטמאר רב'ס מגילה"
+      },
+      "summary": {
+        "en": "The Rav tells how a poritz listening to the Lechovitcher daven said that his love for his wife was nothing next to the Jew's love for Hashem, and how the young R' Shalom of Belz told the megillah in Lublin. He describes hearing the Satmar Rav read the megillah for two hours, brings the Chasam Sofer and Kedushas Levi on the light of the megillah, and his shout at 'hakerovim v'harechokim'.",
+        "yi": "דער משגיח דערציילט ווי א פריץ האט געהערט דעם לעכאוויטשער דאווענען און געזאגט אז זיין ליבשאפט צו זיין ווייב איז גארנישט קעגן דעם אידנס ליבשאפט צום רבונו של עולם, און ווי דער יונגער ר' שלום בעלזער האט דערציילט די מגילה אין לובלין. ער באשרייבט ווי ער האט געהערט דעם סאטמאר רב ליינען די מגילה צוויי שעה, ברענגט דעם חתם סופר און דעם קדושת לוי וועגן דעם אור פון דער מגילה, און דעם געשריי ביי \"הקרובים והרחוקים\"."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-08-b-tefilah",
+      "startSeg": 545,
+      "endSeg": 628,
+      "title": {
+        "en": "The falling generations, and what later generations understand",
+        "yi": "די פאלנדיגע דורות, און וואס שפעטערדיגע דורות פארשטייען"
+      },
+      "summary": {
+        "en": "With the example of a falling stone that speeds up as it drops, the Rav explains that the decline between generations grows ever greater, so earlier tzaddikim are beyond compare. Then, with other meforshim, he reads 'dor l'dor' as later generations understanding what Hashem did, bringing the Chazon Ish's mashal of the tailor cutting silk after the destruction in Europe.",
+        "yi": "מיטן משל פון א שטיין וואס פאלט אלץ גיכער, ערקלערט דער משגיח אז דער חילוק צווישן די דורות ווערט אלץ גרעסער, און די פריערדיגע צדיקים קען מען נישט פארגלייכן. דערנאך, לויט אנדערע מפרשים, טייטשט ער \"דור לדור\" אז שפעטערדיגע דורות פארשטייען וואס דער אייבערשטער האט געטאן, און ברענגט דעם חזון איש'ס משל פונעם שניידער וואס צושניידט זייד נאכן חורבן אין אייראפע."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-08-b-tefilah",
+      "startSeg": 629,
+      "endSeg": 733,
+      "title": {
+        "en": "Hadar kevod hodecha: the beauty of creation",
+        "yi": "הדר כבוד הודך: די שיינקייט פון דער בריאה"
+      },
+      "summary": {
+        "en": "On 'hadar kevod hodecha', the Rav describes the beauty of the countryside that the city hides, and explains 'hazan es ha'olam… b'chen' : Hashem could have fed people like a car with fuel, but made food beautiful, varied and tasty, for which one must thank and praise Him. He ends with the ever-changing clouds and his love of speaking about Hashem's wonders.",
+        "yi": "ביי \"הדר כבוד הודך\" באשרייבט דער משגיח די שיינקייט פון די פעלדער און וועלדער וואס די שטאט פארשטעלט, און טייטשט \"הזן את העולם כולו בטובו בחן\": דער אייבערשטער האט געקענט שפייזן מענטשן ווי מ'גיסט ברענשטאף אין אן אויטא, נאר ער האט געמאכט עסן שיין, באטאמט און פון אסאך סארטן, און דערפאר דארף מען אים דאנקען און לויבן. ער ענדיגט מיט די וואלקנס וואס בייטן זיך אלעמאל און מיט זיין ליבשאפט צו רעדן פון די נפלאות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "גדעי אדוני ומהלל מיד, ובגדולה ס'אין חקר",
+      "work": "Tehillim",
+      "ref": "Tehillim 145:3",
+      "sefariaRef": "Psalms 145:3",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [18, 19, 26, 165, 403], "confidence": 0.9 }
+    },
+    {
+      "heardAs": "אזוי שטעט אין כזרי",
+      "work": "Kuzari",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [61, 62, 64, 316], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אבונתיכם הבדולים בן השם לבנכם",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 59:2",
+      "sefariaRef": "Isaiah 59:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [74, 75], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "וארץ ה' ישוב הכיסו רם ונתן",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 6:1",
+      "sefariaRef": "Isaiah 6:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [102], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "חכמת אדם אין בינת אדם",
+      "work": "Binas Adam",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [116, 123, 127, 130], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "תשובה פון בניגרס משה ... ר' משה פיינשוין",
+      "work": "Igros Moshe",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [139, 140, 152, 154, 158], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "כדאי בער איש על ראיהו",
+      "work": "Shemos",
+      "ref": "Shemos 33:11",
+      "sefariaRef": "Exodus 33:11",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [223], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "דער רמב״ם, וואס ער האט ... געשריבן ספרים אין חקירה",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [234, 235], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "פנים בפנים דברי ה' עליכם מצייכי אש",
+      "work": "Devarim",
+      "ref": "Devarim 5:4",
+      "sefariaRef": "Deuteronomy 5:4",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [276], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "לבא לכחות לגאו מקרב גאו ... השמע עם כל אלוקים מדבר מתוכה אש כאשר שמעת אטה ויחי",
+      "work": "Devarim",
+      "ref": "Devarim 4:32-34",
+      "sefariaRef": "Deuteronomy 4:32-34",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [279, 280, 281, 282, 283, 285], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער ישמח משה ... דעם דריטן חלק",
+      "work": "Yismach Moshe",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [314, 318, 319, 320, 334, 337], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "רמב״ם ... פרקראתי סעודי התורה",
+      "work": "Rambam, Hilchos Yesodei HaTorah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [315], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "דור לדור ישבח מסכר ... גברותך יגידים",
+      "work": "Tehillim",
+      "ref": "Tehillim 145:4",
+      "sefariaRef": "Psalms 145:4",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [414, 429, 576, 580], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "אזוי שטעט אין אזוי ... שבעות ביינאכט",
+      "work": "Zohar",
+      "ref": "Zohar, Hakdamah 8a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [433, 437, 438], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "השמים ומספרים כבוד דעהל ... ומעשה ידיו",
+      "work": "Tehillim",
+      "ref": "Tehillim 19:2",
+      "sefariaRef": "Psalms 19:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [439, 443, 445, 447], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "דער חתם ספר שרייבט עס",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [512, 515, 518, 519], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "שטעט אין קדושת הלוי",
+      "work": "Kedushas Levi",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [521], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "וישלח ספרים הכל היהדים ... עקבן ורחוקים",
+      "work": "Esther",
+      "ref": "Esther 9:20",
+      "sefariaRef": "Esther 9:20",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [533], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "הדר כבוד הודכה ודברי נפלאי סכה",
+      "work": "Tehillim",
+      "ref": "Tehillim 145:5",
+      "sefariaRef": "Psalms 145:5",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [629, 630, 636, 724], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "א נסעולם כולו בטובו בחן עובד חסד עובד רחמים",
+      "work": "Birkas Hamazon",
+      "ref": "Birkas Hamazon, first berachah",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [662, 665, 667], "confidence": 0.8 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Trying to grasp Hashem with the intellect is like trying to hear a painting or see a symphony: each faculty has its own object, and the intellect is not the one for Hashem.",
+        "yi": "פרובירן כאפן דעם רבונו של עולם מיטן שכל איז אזוי ווי הערן א בילד אדער זען א סימפאניע: יעדער כח האט זיין אייגענע זאך, און דער שכל איז נישט דער כח פאר דעם אייבערשטן."
+      },
+      "evidence": { "segs": [45, 47, 55, 58], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The neshamah is not bound by space and time; a person cannot see beyond the wall or into tomorrow only because sin insulates him from his own neshamah, while tzaddikim who purify the body 'crystal clear' have ruach hakodesh.",
+        "yi": "די נשמה איז נישט געבינדן אין ארט און צייט; א מענטש זעט נישט הינטער דער וואנט אדער מארגן נאר ווייל עבירות שיידן אים אפ פון זיין אייגענער נשמה, און צדיקים וואס רייניגן דעם גוף ווי קריסטאל האבן רוח הקודש."
+      },
+      "evidence": { "segs": [76, 83, 87, 92, 93, 95], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The minhag of Klal Yisroel serves as a proof in halachah because Klal Yisroel as a collective has ruach hakodesh even today.",
+        "yi": "דער מנהג פון כלל ישראל איז א ראיה אין הלכה, ווייל כלל ישראל אלס כלל האט רוח הקודש אפילו היינט."
+      },
+      "evidence": { "segs": [126, 127, 130, 131, 132], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Unlike other faiths built on one man's word, Jewish emunah rests on an event an entire nation witnessed; a fabricated claim of national revelation would have been exposed at once, as Holocaust denial is absurd.",
+        "yi": "נישט אזוי ווי אנדערע אמונות וואס שטייען אויף איין מענטשנס ווארט, שטייט די אמונה פון אידן אויף א געשעעניש וואס א גאנץ פאלק האט געזען; א ליגן וועגן אן התגלות פאר א גאנץ פאלק וואלט מען גלייך אנטפלעקט, אזוי ווי לייקענען דעם חורבן איז א נארישקייט."
+      },
+      "evidence": { "segs": [264, 270, 309, 311, 340, 342], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Like a falling stone that gathers speed, the spiritual decline between generations accelerates, so the gap between our generation and the one before it is greater than between Yehoshua and Moshe.",
+        "yi": "אזוי ווי א שטיין וואס פאלט אלץ גיכער, ווערט די ירידה פון די דורות אלץ שנעלער, און דער חילוק צווישן אונזער דור און דעם פריערדיגן איז גרעסער ווי פון יהושע ביז משה."
+      },
+      "evidence": { "segs": [548, 555, 556, 557, 560], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "'Dor l'dor yeshabach ma'asecha' means that what Hashem's middas hadin did in one generation is understood in a later one, when it is revealed retroactively as part of Klal Yisroel's tikkun.",
+        "yi": "\"דור לדור ישבח מעשיך\" מיינט אז וואס דער אייבערשטער האט געטאן מיט מדת הדין אין איין דור, פארשטייט מען אין א שפעטערדיגן דור, ווען עס ווערט אנטפלעקט למפרע אז ס'איז געווען א טייל פונעם תיקון פון כלל ישראל."
+      },
+      "evidence": { "segs": [582, 588, 627, 628], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "'B'chen' in Birkas Hamazon: Hashem could have sustained man with a plain nutrient fuel, like a car, but chose to feed him with beauty, taste and variety.",
+        "yi": "\"בחן\" אין בענטשן: דער אייבערשטער האט געקענט שפייזן דעם מענטש מיט א פשוט'ע שווארצע פליסיגקייט, אזוי ווי אן אויטא, נאר ער שפייזט אים מיט שיינקייט, טעם און אסאך סארטן."
+      },
+      "evidence": { "segs": [662, 670, 680, 687, 706], "confidence": 0.8 }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "The poritz who heard the Lechovitcher daven",
+        "yi": "דער פריץ וואס האט געהערט דעם לעכאוויטשער דאווענען"
+      },
+      "retelling": {
+        "en": "The Rav relates, in the name of the Slonimer Rebbe, that R' Mordechai of Lechovitch once stood davening when the local poritz and his wife passed by. They stopped to listen. The poritz turned to his wife and said that although he loves her very much, his love is nothing compared to how this Jew loves the Ribono shel Olam.",
+        "yi": "דער משגיח דערציילט אין נאמען פונעם סלאנימער רבי'ן אז ר' מרדכי לעכאוויטשער איז אמאל געשטאנען און געדאוונט, און דער פריץ מיט זיין ווייב זענען פארביי געגאנגען. זיי האבן זיך אפגעשטעלט און צוגעהערט. האט דער פריץ געזאגט צו זיין ווייב אז הגם ער האט זי זייער ליב, איז דאס גארנישט קעגן ווי דער איד האט ליב דעם רבונו של עולם."
+      },
+      "people": ["R' Mordechai of Lechovitch", "the Slonimer Rebbe"],
+      "evidence": { "segs": [472, 474, 475, 479, 481, 483], "confidence": 0.8 }
+    },
+    {
+      "title": {
+        "en": "Young R' Shalom of Belz tells the megillah",
+        "yi": "דער יונגער ר' שלום בעלזער דערציילט די מגילה"
+      },
+      "retelling": {
+        "en": "When R' Shalom of Belz was young, he was once with the Lubliner and was asked to tell over the megillah. Afterwards it was said, the Rav is not sure whether by R' Shalom or by the Lubliner, that the story had been heard many times but never told as beautifully as this young man told it. The Rav adds that he put strength into it.",
+        "yi": "ווען ר' שלום בעלזער איז געווען יונג, איז ער אמאל געווען ביים לובלינער, און מ'האט אים געהייסן דערציילן די מגילה. נאכדעם האט מען געזאגט, דער משגיח איז נישט זיכער צי ר' שלום אדער דער לובלינער, אז די מעשה האט מען שוין אסאך מאל געהערט, אבער אזוי שיין ווי דער יונגערמאן האט זי דערציילט נאך קיינמאל נישט. דער משגיח לייגט צו אז ער האט אריינגעלייגט א כח."
+      },
+      "people": ["R' Shalom of Belz", "the Chozeh of Lublin"],
+      "evidence": { "segs": [492, 493, 494, 496, 497, 498], "confidence": 0.7 }
+    },
+    {
+      "title": {
+        "en": "Hearing the Satmar Rav read the megillah",
+        "yi": "הערן דעם סאטמאר רב ליינען די מגילה"
+      },
+      "retelling": {
+        "en": "The Rav recalls that he merited hearing the Satmar Rav read the megillah, which took him two hours. Everyone who heard him did not know what was happening to himself, and new explanations of the megillah were revealed through his reading. Once, at the words 'hakerovim v'harechokim', he gave a shout, and everyone understood that each year Mordechai sends his letter to the most distant Jews, since the megillah can bring even the lowest Jew close to Hashem.",
+        "yi": "דער משגיח געדענקט אז ער האט זוכה געווען צו הערן דעם סאטמאר רב ליינען די מגילה, און עס האט אים גענומען צוויי שעה. יעדער וואס האט אים געהערט האט נישט געוואוסט וואס טוט זיך מיט אים, און ס'זענען נתחדש געווארן פשטים אין דער מגילה דורך זיין ליינען. איינמאל ביי די ווערטער \"הקרובים והרחוקים\" האט ער געגעבן א געשריי, און יעדער האט פארשטאנען אז יעדעס יאר שיקט מרדכי זיין בריוו צו די ווייטסטע אידן, ווייל די מגילה קען מקרב זיין אפילו דעם נידעריגסטן איד צום רבונו של עולם."
+      },
+      "people": ["the Satmar Rav", "Mordechai"],
+      "evidence": { "segs": [506, 508, 525, 529, 533, 534], "confidence": 0.75 }
+    },
+    {
+      "title": {
+        "en": "The Chazon Ish and the tailor's silk",
+        "yi": "דער חזון איש און דעם שניידערס זייד"
+      },
+      "retelling": {
+        "en": "After the destruction in Europe someone asked the Chazon Ish why Hashem brought such a churban. He answered with a mashal: a man who knows nothing of tailoring walks into a tailor's shop and sees him cutting a gorgeous piece of silk into pieces, and asks why he ruins it. The tailor answers that one does not show half-finished work to a fool; once it is sewn, a magnificent garment will come out.",
+        "yi": "נאכן חורבן אין אייראפע האט איינער געפרעגט דעם חזון איש פארוואס דער אייבערשטער האט געמאכט אזא חורבן. האט ער געענטפערט מיט א משל: א מענטש וואס ווייסט גארנישט פון שניידעריי קומט אריין צו א שניידער און זעט ווי ער צושניידט א שיין שטיק זייד, און ער פרעגט פארוואס ער צעשטערט עס. ענטפערט דער שניידער אז א נאר ווייזט מען נישט קיין האלבע ארבעט; ווען מ'וועט עס צונייען, וועט ארויסקומען א פרעכטיג בגד."
+      },
+      "people": ["the Chazon Ish"],
+      "evidence": { "segs": [591, 593, 595, 603, 607, 609], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "If the neshamah is beyond space and time, why can a person not see beyond the wall or know what will happen tomorrow?",
+        "yi": "אויב די נשמה איז העכער פון ארט און צייט, פארוואס קען א מענטש נישט זען הינטער דער וואנט אדער וויסן וואס וועט זיין מארגן?"
+      },
+      "answer": {
+        "en": "The neshamah does know, but a person has no contact with it; those who purify their body so that nothing interposes have nevuah and ruach hakodesh.",
+        "yi": "די נשמה ווייסט טאקע, נאר מ'האט נישט קיין שייכות מיט איר; די וואס רייניגן דעם גוף אז ס'זאל נישט זיין קיין חציצה, האבן נבואה און רוח הקודש."
+      },
+      "questionSegs": [83, 84, 87, 91],
+      "answerSegs": [92, 93, 95, 97],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "If the Torah brings no proofs from investigation for the ikkarei emunah, from where do we know them?",
+        "yi": "אויב די תורה ברענגט נישט קיין ראיות פון חקירה אויף די עיקרי אמונה, פון וואנעט ווייסן מיר זיי?"
+      },
+      "answer": {
+        "en": "From the mesorah of the avos: an entire nation experienced Yetzias Mitzrayim and heard Hashem speak at Sinai, and passed it on from generation to generation.",
+        "yi": "פון דער מסורה פון די אבות: א גאנץ פאלק האט מיטגעלעבט יציאת מצרים און געהערט דעם אייבערשטן רעדן ביי הר סיני, און האט עס איבערגעגעבן פון דור צו דור."
+      },
+      "questionSegs": [253, 256, 258],
+      "answerSegs": [259, 271, 273, 274, 294],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Could someone in a later generation have invented the claim that the whole nation stood at Sinai?",
+        "yi": "קען זיין אז איינער אין א שפעטערן דור האט אויסגעטראכט אז דאס גאנצע פאלק איז געשטאנען ביי הר סיני?"
+      },
+      "answer": {
+        "en": "No: everyone would have asked why their own fathers never told them; something a whole people saw cannot be falsified, just as no one can deny Julius Caesar.",
+        "yi": "ניין: יעדער וואלט געפרעגט פארוואס זיין טאטע האט אים דאס קיינמאל נישט געזאגט; א זאך וואס א גאנץ פאלק האט געזען קען מען נישט פארפעלשן, אזוי ווי מ'קען נישט אפלייקענען יוליוס קיסר."
+      },
+      "questionSegs": [306, 307, 308],
+      "answerSegs": [309, 311, 312, 344, 348],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why did Hashem bring the destruction in Europe?",
+        "yi": "פארוואס האט דער אייבערשטער געמאכט דעם חורבן אין אייראפע?"
+      },
+      "answer": {
+        "en": "Through the Chazon Ish's mashal of the tailor: half-finished work cannot be judged; in later generations, and when Moshiach comes, it will be seen, and already one sees an unprecedented rebuilding of Torah.",
+        "yi": "מיטן חזון איש'ס משל פונעם שניידער: א האלבע ארבעט קען מען נישט אפשאצן; אין שפעטערדיגע דורות, און ווען משיח וועט קומען, וועט מען עס זען, און שוין יעצט זעט מען אן אויפבוי פון תורה וואס איז קיינמאל נישט געווען."
+      },
+      "questionSegs": [593, 594, 595],
+      "answerSegs": [609, 612, 619, 620, 621],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says that the more a Jew learns Torah, keeps mitzvos, acts with temimus, is honest in business and careful about kashrus and kedushah, the more he will feel the Ribono shel Olam in davening and learning.",
+        "yi": "דער משגיח זאגט אז וואס מער א איד לערנט תורה, מקיים איז מצוות, פירט זיך מיט תמימות, איז ערליך אין מסחר און היט זיך אין כשרות און קדושה, אלץ מער וועט ער שפירן דעם רבונו של עולם ביים דאווענען און ביים לערנען."
+      },
+      "evidence": { "segs": [209, 211, 214, 215, 217, 225], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that today one should not engage in philosophical investigation of emunah, since it can only confuse the mind; one must accept with temimus.",
+        "yi": "דער משגיח זאגט אז היינט טאר מען זיך נישט פארנעמען מיט חקירה אין אמונה, ווייל דאס קען נאר פארדרייען דעם קאפ; מ'דארף עס אננעמען מיט תמימות."
+      },
+      "evidence": { "segs": [243, 244, 248], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says every Jew must guard his emunah so that it does not become sick with nonsense.",
+        "yi": "דער משגיח זאגט אז יעדער איד דארף אפהיטן זיין אמונה, אז זי זאל נישט קראנק ווערן פון שטותים."
+      },
+      "evidence": { "segs": [424, 425, 426], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one must thank and praise the Ribono shel Olam for the grace and beauty with which He made all of creation.",
+        "yi": "דער משגיח זאגט אז מ'דארף דאנקען און לויבן דעם רבונו של עולם פאר דעם חן און דער שיינקייט מיט וואס ער האט באשאפן די גאנצע בריאה."
+      },
+      "evidence": { "segs": [706, 707, 708], "confidence": 0.85 }
+    }
+  ],
+  "candidateTopics": [
+    "ashrei",
+    "limits of the intellect in knowing Hashem",
+    "ruach hakodesh of Klal Yisroel",
+    "authority of minhag Yisroel",
+    "mesorah of Sinai and national revelation",
+    "philosophical investigation (chakirah)",
+    "tzaddikim as Hashem's handiwork",
+    "decline of the generations",
+    "Hashem's ways understood in later generations",
+    "beauty of creation"
+  ],
+  "concepts": [
+    { "he": "אין חקר", "heardAs": ["ס'אין חקר", "סיי איין חקל", "ער דא לאזט עה איין חוקר"] },
+    { "he": "חקירה", "heardAs": ["חקר'נען", "חקירה"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבינו השללים", "רבי שליל'עם", "רבונו שבו", "רבינו שלום", "רבי בנה של עולם"] },
+    { "he": "רוח הקודש", "heardAs": ["רוח הקדוש", "רוח הקידוש"] },
+    { "he": "חלק אלוק ממעל", "heardAs": ["חלק אלקם ומאהל", "חלק אלוקם ומאהל"] },
+    { "he": "מסורה", "heardAs": ["מסורה"] },
+    { "he": "מעשיך", "heardAs": ["מסכר", "מסכה", "מהצרחה"] },
+    { "he": "גבורותיך", "heardAs": ["גברותך"] },
+    { "he": "הדר כבוד הודך", "heardAs": ["הדר כבוד הודכה", "הדעה כבודו דעכע", "הדקה וידער דכא"] },
+    { "he": "נפלאותיך", "heardAs": ["נפלאי סכה", "נפלו אתך", "נפלי ישכר"] },
+    { "he": "יציאת מצרים", "heardAs": ["יציאת מצחים"] },
+    { "he": "מעמד הר סיני", "heardAs": ["הר סיני", "הייל סיני"] },
+    { "he": "תקופה", "heardAs": ["תקופה"] },
+    { "he": "עיקרים", "heardAs": ["י' ג' עקרן"] },
+    { "he": "תמימות", "heardAs": ["תמימות"] },
+    { "he": "הזן את העולם כולו בטובו בחן בחסד וברחמים", "heardAs": ["א נסעולם כולו בטובו בחן עובד חסד עובד רחמים"] }
+  ],
+  "people": [
+    { "name": "Dovid Hamelech", "heardAs": ["דוד המלך"] },
+    { "name": "Yeshayahu Hanavi", "heardAs": ["ישעיה הנביא"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם", "רמב״כ"] },
+    { "name": "Rav Moshe Feinstein", "heardAs": ["ר' משה פיינשוין", "בניגרס משה"] },
+    { "name": "Shmuel", "heardAs": ["שמואר"] },
+    { "name": "the Yismach Moshe", "heardAs": ["ישמח משה", "ישמח"] },
+    { "name": "Julius Caesar", "heardAs": ["דזשוליע סעזער"] },
+    { "name": "the Slonimer Rebbe", "heardAs": ["סאלאנימ'ער רבי"] },
+    { "name": "R' Mordechai of Lechovitch", "heardAs": ["לאכאוועיטשער", "רבי מרדכי לאכאוועיטשער", "לוחאוויטשער"] },
+    { "name": "R' Shalom of Belz", "heardAs": ["רבי שלום בעלזא"] },
+    { "name": "the Chozeh of Lublin", "heardAs": ["לובלינע", "לובלינער"] },
+    { "name": "the Satmar Rav", "heardAs": ["סאטמאר רב"] },
+    { "name": "the Chasam Sofer", "heardAs": ["חתם ספר"] },
+    { "name": "Mordechai", "heardAs": ["מרדכי"] },
+    { "name": "R' Hershele of Rimanov", "heardAs": ["ר' הערשל'ע רימאנאווער"] },
+    { "name": "the Rebbe Reb Melech", "heardAs": ["רבי רבי מלך"] },
+    { "name": "the Chazon Ish", "heardAs": ["כזין"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה"] },
+    { "name": "Yehoshua", "heardAs": ["ישועי"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair to poor; Hebrew quotations (Devarim 4, the Yismach Moshe's teshuvah, the list of miracles at segs 378-388) are heavily garbled and only partly recoverable. Segs 22-25 are a brief aside to someone present (partly in English) and are not used. The Yismach Moshe's exact location, the Binas Adam's siman and the Igros Moshe teshuvah could not be pinned down; the remark at seg 240 ('דער גרוי') is unclear and was left out. The single catalog topic is the verse the whole shiur expounds."
+}

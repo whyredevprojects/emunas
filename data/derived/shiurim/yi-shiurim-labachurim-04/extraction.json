@@ -1,0 +1,900 @@
+{
+  "shiurId": "yi-shiurim-labachurim-04",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav teaches bachurim that davening together, with love between friends, strengthens the tefillah, and that coming on time to davening and learning is no small matter, as the closed window of the mishmar of Bilgah and a story of the Chiddushei HaRim show.",
+      "yi": "דער משגיח לערנט די בחורים אז דאווענען צוזאמען, מיט אהבה צווישן חברים, שטארקט די תפילה, און אז קומען אין צייט צו דאווענען און צו לערנען איז נישט קיין קלייניגקייט, ווי מ'זעט פונעם פארמאכטן חלון פון משמר בלגה און פון א מעשה מיטן חידושי הרי\"ם."
+    },
+    "abstract": {
+      "en": "The Rav opens with beginning davening together: Pesukei d'Zimra opens with words all say together, the Shirah at the sea was said together, and the angels praise Hashem 'together'. Like roped mountain climbers, one who slips is held by the others. Togetherness rests on love: the angels speak together because 'all are beloved'. He brings the Radbaz, who let a son daven with his friends against his mother's wish, and the friendship the Ba'al Shem Tov and the Arizal built among their disciples. Davening and learning carry each other, so a bachur cannot learn well without davening well. Turning to coming on time, he brings the window of the mishmar of Bilgah, closed by one opinion for coming late, as a closed window of heavenly blessing. A soul that came too late to the Chiddushei HaRim lost its tikkun, measure for measure. One must correct oneself before Moshiach comes.",
+      "yi": "דער משגיח עפנט מיט אנהייבן דאווענען צוזאמען: פסוקי דזמרה הייבט זיך אן מיט ווערטער וואס אלע זאגן צוזאמען, די שירה ביים ים האט מען געזאגט צוזאמען, און די מלאכים לויבן \"יחד\". אזוי ווי צוגעבונדענע בארג-קריכער ווערט דער וואס גליטשט זיך אויפגעהאלטן דורך די אנדערע. צוזאמענזיין איז געבויט אויף אהבה: די מלאכים רעדן צוזאמען ווייל \"כולם אהובים\". ער ברענגט דעם רדב\"ז וואס האט ערלויבט א זון צו דאווענען מיט זיינע חברים קעגן זיין מאמעס רצון, און די אהבת חברים ביי די תלמידים פונעם בעל שם טוב און פונעם אריז\"ל. דאווענען און לערנען טראגן איינס דאס אנדערע, ממילא קען א בחור נישט גוט לערנען אן גוט דאווענען. דערנאך ברענגט ער דעם חלון פון משמר בלגה, וואס לויט איין שיטה איז פארמאכט געווארן פאר קומען שפעט, און ערקלערט עס אלס א פארמאכטער חלון פון שפע אין הימל. א נשמה וואס איז געקומען צו שפעט צום חידושי הרי\"ם האט פארלוירן איר תיקון, מדה כנגד מדה. מ'דארף זיך מתקן זיין איידער משיח קומט."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Beginning davening together is a great matter: the Shirah at the sea and the praise of the angels were said together, and those who daven together hold each other up like roped climbers.",
+          "yi": "אנהייבן דאווענען צוזאמען איז א גרויסער ענין: די שירה ביים ים און דאס לויב פון די מלאכים איז געזאגט געווארן צוזאמען, און די וואס דאווענען צוזאמען האלטן זיך אויף איינער דעם אנדערן ווי צוגעבונדענע בארג-קריכער."
+        },
+        "evidence": {
+          "segs": [
+            0,
+            11,
+            21,
+            37,
+            42
+          ],
+          "confidence": 0.8
+        }
+      },
+      {
+        "text": {
+          "en": "Davening together rests on love between friends; the angels say their praise together because they all love one another.",
+          "yi": "דאווענען צוזאמען איז געבויט אויף אהבה צווישן חברים; די מלאכים זאגן זייער לויב צוזאמען ווייל זיי האבן זיך אלע ליב."
+        },
+        "evidence": {
+          "segs": [
+            56,
+            61,
+            63,
+            80,
+            81
+          ],
+          "confidence": 0.8
+        }
+      },
+      {
+        "text": {
+          "en": "Davening well and learning well depend on each other like two feet; a bachur whose main task is learning still cannot learn well without davening well.",
+          "yi": "גוט דאווענען און גוט לערנען הענגען איינס אין אנדערן ווי צוויי פיס; א בחור וועמענס עיקר עבודה איז לערנען קען פונדעסטוועגן נישט גוט לערנען אן גוט דאווענען."
+        },
+        "evidence": {
+          "segs": [
+            114,
+            115,
+            118,
+            130,
+            137
+          ],
+          "confidence": 0.8
+        }
+      },
+      {
+        "text": {
+          "en": "Coming late is no small thing: by one opinion in the Gemara the mishmar of Bilgah had its window closed for generations because it once came late.",
+          "yi": "קומען שפעט איז נישט קיין קלייניגקייט: לויט איין שיטה אין דער גמרא האט מען פארמאכט דעם חלון פון משמר בלגה אויף דורות, ווייל זיי זענען איינמאל געקומען שפעט."
+        },
+        "evidence": {
+          "segs": [
+            215,
+            217,
+            223,
+            225,
+            268
+          ],
+          "confidence": 0.8
+        }
+      },
+      {
+        "text": {
+          "en": "A soul that came too late to the Chiddushei HaRim lost its tikkun, measure for measure for having come late to davening and learning in its lifetime.",
+          "yi": "א נשמה וואס איז געקומען צו שפעט צום חידושי הרי\"ם האט פארלוירן איר תיקון, מדה כנגד מדה פאר דעם וואס זי איז אין איר לעבן געקומען שפעט צו דאווענען און צו לערנען."
+        },
+        "evidence": {
+          "segs": [
+            313,
+            320,
+            324,
+            333,
+            335
+          ],
+          "confidence": 0.75
+        }
+      },
+      {
+        "text": {
+          "en": "One must correct oneself before Moshiach comes, because when he comes it will already be too late.",
+          "yi": "מ'דארף זיך מתקן זיין איידער משיח קומט, ווייל ווען ער קומט איז שוין צו שפעט."
+        },
+        "evidence": {
+          "segs": [
+            363,
+            364
+          ],
+          "confidence": 0.8
+        }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-04-hisorerus-beavodas-hashem",
+      "startSeg": 0,
+      "endSeg": 42,
+      "title": {
+        "en": "Beginning davening together",
+        "yi": "אנהייבן דאווענען צוזאמען"
+      },
+      "summary": {
+        "en": "The Rav shows from the opening of Pesukei d'Zimra in both nuschaos, from the Shirah at the sea and from the angels' praise 'together' that davening together is a great matter. He compares those davening together to mountain climbers roped to one another.",
+        "yi": "דער משגיח ווייזט פונעם אנהייב פון פסוקי דזמרה אין ביידע נוסחאות, פון דער שירה ביים ים און פונעם לויב פון די מלאכים \"יחד\" אז דאווענען צוזאמען איז א גרויסער ענין. ער פארגלייכט די וואס דאווענען צוזאמען צו בארג-קריכער וואס זענען צוגעבונדן איינער צום אנדערן."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [
+        0
+      ],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-04-hisorerus-beavodas-hashem",
+      "startSeg": 43,
+      "endSeg": 105,
+      "title": {
+        "en": "Love between friends makes the davening",
+        "yi": "אהבת חברים שטארקט די תפילה"
+      },
+      "summary": {
+        "en": "The Rav says a special angel tries to keep people from coming on time to begin together, and explains that togetherness rests on love, as with the angels who are 'all beloved' and the singers at the sea. He brings the Radbaz on davening with friends against a mother's wish, and the love the Ba'al Shem Tov and the Arizal fostered among their disciples.",
+        "yi": "דער משגיח זאגט אז א באזונדערער מלאך פרובירט אז מ'זאל נישט קומען אין צייט אנצוהייבן צוזאמען, און ער ערקלערט אז צוזאמענזיין איז געבויט אויף אהבה, ווי ביי די מלאכים וואס זענען \"כולם אהובים\" און ביי די וואס האבן געזאגט שירה ביים ים. ער ברענגט דעם רדב\"ז וועגן דאווענען מיט חברים קעגן דעם רצון פון א מאמע, און די אהבה וואס דער בעל שם טוב און דער אריז\"ל האבן אויפגעבויט צווישן זייערע תלמידים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [
+        0
+      ],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-04-hisorerus-beavodas-hashem",
+      "startSeg": 106,
+      "endSeg": 171,
+      "title": {
+        "en": "Davening and learning carry each other",
+        "yi": "דאווענען און לערנען טראגן איינס דאס אנדערע"
+      },
+      "summary": {
+        "en": "The Rav explains that good davening brings good learning and the reverse, like two feet, and that only Rabbi Shimon bar Yochai and his companions could learn without stopping to daven. He brings the Chasam Sofer's answer about his long Shemoneh Esrei and explains why he stresses davening to yeshivah bachurim.",
+        "yi": "דער משגיח ערקלערט אז גוט דאווענען ברענגט גוט לערנען און פארקערט, ווי צוויי פיס, און אז נאר רבי שמעון בר יוחאי און זיינע חברים האבן געקענט לערנען אן אויפהערן צום דאווענען. ער ברענגט דעם תירוץ פונעם חתם סופר אויף זיין לאנגע שמונה עשרה, און ערקלערט פארוואס ער לייגט א דגוש אויף דאווענען פאר ישיבה בחורים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-04-hisorerus-beavodas-hashem",
+      "startSeg": 172,
+      "endSeg": 283,
+      "title": {
+        "en": "The closed window of Bilgah",
+        "yi": "דער פארמאכטער חלון פון בלגה"
+      },
+      "summary": {
+        "en": "The Rav brings the Gemara at the end of Sukkah about Miriam bas Bilgah and the window of the mishmar of Bilgah that was closed, and the other opinion that it was closed because the mishmar once came late. He explains the 24 windows as rooted in heavenly windows of blessing, so that coming late closes a person's flow of blessing, and adds that coming late on the first day of the Beis HaMikdash led to its destruction.",
+        "yi": "דער משגיח ברענגט די גמרא סוף מסכת סוכה וועגן מרים בת בלגה און דעם חלון פון משמר בלגה וואס מ'האט פארמאכט, און די אנדערע שיטה אז מ'האט אים פארמאכט ווייל דער משמר איז איינמאל געקומען שפעט. ער ערקלערט אז די פיר און צוואנציג חלונות האבן א שורש אין חלונות פון שפע אין הימל, אזוי אז קומען שפעט פארמאכט א מענטשנס שפע, און לייגט צו אז קומען שפעט דעם ערשטן טאג פונעם בית המקדש האט געברענגט צום חורבן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-04-hisorerus-beavodas-hashem",
+      "startSeg": 284,
+      "endSeg": 331,
+      "title": {
+        "en": "The soul that came too late",
+        "yi": "די נשמה וואס איז געקומען צו שפעט"
+      },
+      "summary": {
+        "en": "The Rav tells, from a reliable sefer of stories of tzaddikim, how the Chiddushei HaRim, who worked to bring tikkun to souls, told one soul on his last erev Shabbos that it had come too late, and asks why the soul came late.",
+        "yi": "דער משגיח דערציילט, פון א נאמנות'דיגן ספר מיט מעשיות פון צדיקים, ווי דער חידושי הרי\"ם, וואס האט מתקן געווען נשמות, האט זיין לעצטן ערב שבת געזאגט פאר א נשמה אז זי איז געקומען צו שפעט, און ער פרעגט פארוואס די נשמה איז געקומען שפעט."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-04-hisorerus-beavodas-hashem",
+      "startSeg": 332,
+      "endSeg": 370,
+      "title": {
+        "en": "Measure for measure; come on time",
+        "yi": "מדה כנגד מדה; קומען אין צייט"
+      },
+      "summary": {
+        "en": "The Rav answers that the soul came late measure for measure, for coming late to davening and learning in its lifetime, and calls coming late the work of a great yetzer hara. Especially now, with the world in turmoil, one must correct oneself before Moshiach comes, for then it will be too late; he then leads last week's niggun.",
+        "yi": "דער משגיח ענטפערט אז די נשמה איז געקומען שפעט מדה כנגד מדה, פאר דעם וואס זי איז אין איר לעבן געקומען שפעט צו דאווענען און צו לערנען, און ער רופט קומען שפעט די ארבעט פון א גרויסן יצר הרע. בפרט היינט, ווען די וועלט קאכט, דארף מען זיך מתקן זיין איידער משיח קומט, ווייל דאן וועט זיין צו שפעט; דערנאך זינגט ער דעם ניגון פון לעצטע וואך."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [
+        0
+      ],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "הודל ועדה השם כי רב",
+      "work": "Divrei HaYamim",
+      "ref": "Divrei HaYamim I 16:8",
+      "sefariaRef": "I Chronicles 16:8",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": {
+        "segs": [
+          4,
+          5
+        ],
+        "confidence": 0.65
+      }
+    },
+    {
+      "heardAs": "מיט די גמרא זעהמען שבח דעם שירת הים",
+      "work": "Gemara Sotah",
+      "ref": "Sotah 30b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          10,
+          11
+        ],
+        "confidence": 0.65
+      }
+    },
+    {
+      "heardAs": "יא משמיעו בירא יחד בקול דברי אלקים חיים מלך עולם",
+      "work": "Siddur",
+      "ref": "Shacharis, berachah of Yotzer Or",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          17,
+          19,
+          20,
+          59,
+          61,
+          97
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "heardAs": "ברכת גל ישראל ... ונוסן ידידים",
+      "work": "Siddur",
+      "ref": "Shacharis, berachah of Ga'al Yisrael",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          67,
+          70,
+          72
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "heardAs": "ווייטל רעכה כמחה",
+      "work": "Vayikra",
+      "ref": "Vayikra 19:18",
+      "sefariaRef": "Leviticus 19:18",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": {
+        "segs": [
+          57
+        ],
+        "confidence": 0.65
+      }
+    },
+    {
+      "heardAs": "די תשובה פון רד בעת",
+      "work": "Shu\"t Radbaz",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          82,
+          84,
+          85,
+          87,
+          89
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "שבטית ה'תשמרע",
+      "work": "Vayikra",
+      "ref": "Vayikra 19:3",
+      "sefariaRef": "Leviticus 19:3",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": {
+        "segs": [
+          95
+        ],
+        "confidence": 0.6
+      }
+    },
+    {
+      "heardAs": "רבי חיים וויטל שרייבט",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          104,
+          105
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "heardAs": "און משנה ברורה ברענגט עס",
+      "work": "Mishnah Berurah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          109,
+          110
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "heardAs": "רבי יהושע בן יחואם וחבריו",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 11a",
+      "sefariaRef": "Shabbat 11a",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": {
+        "segs": [
+          124,
+          125
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "heardAs": "די ביאגראפיע פון חתם ספר",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          144
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "heardAs": "כל המערך בתפילתו מרוחם ליימה ושנתה",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 54b",
+      "sefariaRef": "Berakhot 54b",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          152
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "heardAs": "קרום זלות לבני ידים",
+      "work": "Tehillim",
+      "ref": "Tehillim 12:9",
+      "sefariaRef": "Psalms 12:9",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": {
+        "segs": [
+          164,
+          165
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "heardAs": "סייפע מסאך תסוקה",
+      "work": "Gemara Sukkah",
+      "ref": "Sukkah 56b",
+      "sefariaRef": "Sukkah 56b",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          172,
+          173,
+          176,
+          215,
+          216
+        ],
+        "confidence": 0.85
+      }
+    },
+    {
+      "heardAs": "דער מאיר עניאל גילא / די מערעניה הגאולה",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": {
+        "segs": [
+          284,
+          291,
+          294,
+          295
+        ],
+        "confidence": 0.6
+      }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Those who daven together are like mountain climbers roped together: when one slips he does not fall, because the others hold him.",
+        "yi": "די וואס דאווענען צוזאמען זענען ווי בארג-קריכער וואס זענען צוגעבונדן: ווען איינער גליטשט זיך פאלט ער נישט, ווייל די אנדערע האלטן אים."
+      },
+      "evidence": {
+        "segs": [
+          32,
+          37,
+          39,
+          40,
+          42
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "text": {
+        "en": "The angels can say their praise 'together' only because 'all are beloved', each one loving the other; so too the singers at the sea are called 'yedidim', friends.",
+        "yi": "די מלאכים קענען זאגן זייער לויב \"יחד\" נאר ווייל \"כולם אהובים\", איינער האט ליב דעם אנדערן; אזוי אויך ווערן די וואס האבן געזאגט שירה ביים ים אנגערופן \"ידידים\"."
+      },
+      "evidence": {
+        "segs": [
+          59,
+          61,
+          63,
+          72,
+          75
+        ],
+        "confidence": 0.75
+      }
+    },
+    {
+      "text": {
+        "en": "A bachur's young years parallel the young years of Klal Yisrael, and just as at the end of the galus the emphasis falls on davening, so a bachur cannot neglect davening even though learning is his main task.",
+        "yi": "די יונגע יארן פון א בחור זענען גלייך צו די יונגע יארן פון כלל ישראל, און אזוי ווי סוף הגלות ליגט דער דגוש אויף דאווענען, אזוי קען א בחור נישט אפלאזן דאס דאווענען כאטש זיין עיקר עבודה איז לערנען."
+      },
+      "evidence": {
+        "segs": [
+          131,
+          133,
+          134,
+          135,
+          137
+        ],
+        "confidence": 0.65
+      }
+    },
+    {
+      "text": {
+        "en": "The 24 windows of the mishmaros in the Beis HaMikdash correspond to 24 windows of blessing in heaven, linked to the 24 combinations of the Name Adnus; coming late closes a person's window of chochmah, health, simchah and parnassah.",
+        "yi": "די פיר און צוואנציג חלונות פון די משמרות אין בית המקדש זענען קעגן פיר און צוואנציג חלונות פון שפע אין הימל, וואס זענען פארבונדן מיט די פיר און צוואנציג צירופים פונעם שם אדנות; קומען שפעט פארמאכט א מענטשנס חלון פון חכמה, געזונט, שמחה און פרנסה."
+      },
+      "evidence": {
+        "segs": [
+          229,
+          233,
+          237,
+          247,
+          248,
+          254
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "text": {
+        "en": "Everything is measured and counted, measure for measure: a soul that came late to davening and learning in its lifetime comes too late to its own tikkun.",
+        "yi": "אלעס איז מיט א מאס און מיט א חשבון, מדה כנגד מדה: א נשמה וואס איז אין איר לעבן געקומען שפעט צו דאווענען און צו לערנען, קומט צו שפעט צו איר אייגענעם תיקון."
+      },
+      "evidence": {
+        "segs": [
+          332,
+          333,
+          335,
+          339,
+          340
+        ],
+        "confidence": 0.7
+      }
+    },
+    {
+      "text": {
+        "en": "One who comes early to davening and learning helps build the Beis HaMikdash, the reverse of the lateness that contributed to its destruction.",
+        "yi": "דער וואס קומט פריער צום דאווענען און צום לערנען בויט דעם בית המקדש, פארקערט פון דעם שפעט קומען וואס האט געברענגט צום חורבן."
+      },
+      "evidence": {
+        "segs": [
+          269,
+          280,
+          281,
+          282
+        ],
+        "confidence": 0.6
+      }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "Roped mountain climbers",
+        "yi": "צוגעבונדענע בארג-קריכער"
+      },
+      "retelling": {
+        "en": "The Rav tells that he once passed through the country and saw people climbing a straight wall as a sport. Since one could slip and fall, they were all tied to one another. When one slipped he did not fall, because he was bound to the others and caught hold again.",
+        "yi": "דער משגיח דערציילט אז ער איז אמאל דורכגעפארן אין קאנטרי און געזען מענטשן קריכן ארויף אויף א גלייכע וואנט, אלס א ספארט. ווייל מ'קען זיך גליטשן און אראפפאלן, זענען זיי אלע געווען צוגעבונדן איינער צום אנדערן. ווען איינער האט זיך געגליטשט איז ער נישט געפאלן, ווייל ער איז געווען צוגעבונדן צו די אנדערע און האט זיך ווידער אנגעכאפט."
+      },
+      "people": [],
+      "evidence": {
+        "segs": [
+          30,
+          31,
+          32,
+          37,
+          40,
+          41
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "title": {
+        "en": "The Chasam Sofer's long Shemoneh Esrei",
+        "yi": "דעם חתם סופרס לאנגע שמונה עשרה"
+      },
+      "retelling": {
+        "en": "In his youth the Chasam Sofer learned with friends and davened a long Shemoneh Esrei. A friend told him that in the time he davened, another bachur davened Shemoneh Esrei and also learned through a siman of Shulchan Aruch with the Magen Avraham. The Chasam Sofer answered that the Gemara says one who lengthens his tefillah has his days lengthened, so he would live long and have time to make it up.",
+        "yi": "ווען דער חתם סופר איז געווען א בחור האט ער געלערנט מיט חברים און געדאוונט א לאנגע שמונה עשרה. א חבר האט אים געזאגט אז אין דער צייט וואס ער האט געדאוונט, האט א צווייטער געדאוונט שמונה עשרה און נאך דורכגעלערנט א סימן שולחן ערוך מיטן מגן אברהם. דער חתם סופר האט געענטפערט אז די גמרא זאגט אז ווער עס איז מאריך אין זיין תפילה ווערט מאריך ימים, וועט ער לעבן לאנג און האבן צייט עס נאכצוכאפן."
+      },
+      "people": [
+        "the Chasam Sofer"
+      ],
+      "evidence": {
+        "segs": [
+          144,
+          146,
+          147,
+          149,
+          150,
+          152
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "title": {
+        "en": "Miriam bas Bilgah and the closed window",
+        "yi": "מרים בת בלגה און דער פארמאכטער חלון"
+      },
+      "retelling": {
+        "en": "In the time of the Greeks, a daughter of the kohanic family of Bilgah married a Greek officer. When the Greeks entered the Beis HaMikdash she went with them, kicked the mizbe'ach and called out against it that it consumes the money of Yisrael and does not help them in their trouble. The Chachamim said she would not have acted so had her parents been in order, and as a penalty, when the Chashmona'im won, the window of the mishmar of Bilgah was closed, so that they had to take their supplies from another mishmar's window. Others in the Gemara say it was closed because the mishmar once came late and another had to do the avodah for them.",
+        "yi": "אין די צייטן פון די יוונים האט א טאכטער פון דער כהנים-משפחה בלגה חתונה געהאט מיט א גריכישן באאמטן. ווען די גריכן זענען אריין אין בית המקדש איז זי מיטגעגאנגען, האט געגעבן א בריק מיט די פיס אינעם מזבח און געשריגן אז ער פרעסט אויף דאס געלט פון אידן און העלפט זיי נישט אין זייער צרה. די חכמים האבן געזאגט אז ווען אירע עלטערן וואלטן געווען אין ארדענונג וואלט זי אזוי נישט געטאן, און אלס א קנס, ווען די חשמונאים האבן מנצח געווען, האט מען פארמאכט דעם חלון פון משמר בלגה, אז זיי זאלן דארפן נעמען זייערע כלים פונעם חלון פון א פרעמדן משמר. אנדערע אין דער גמרא זאגן אז מ'האט עס פארמאכט ווייל דער משמר איז איינמאל געקומען שפעט און אן אנדער משמר האט געמוזט טאן די עבודה פאר זיי."
+      },
+      "people": [
+        "Miriam bas Bilgah"
+      ],
+      "evidence": {
+        "segs": [
+          176,
+          179,
+          182,
+          191,
+          197,
+          216
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "title": {
+        "en": "The Chiddushei HaRim and the late soul",
+        "yi": "דער חידושי הרי\"ם און די שפעטע נשמה"
+      },
+      "retelling": {
+        "en": "The Chiddushei HaRim used to bring tikkun to souls, and thousands of souls came to him. Once, sitting on erev Shabbos, he was heard telling a soul that it was too late, the Rebbetzin had already lit candles. It was the last Shabbos of his life, and he passed away that Shabbos toward evening, around the time of shalosh seudos, so the soul lost its chance for a tikkun, since it needed a tzaddik of its own root.",
+        "yi": "דער חידושי הרי\"ם פלעגט מתקן זיין נשמות, און טויזנטער נשמות פלעגן קומען צו אים. איינמאל, ווען ער איז געזעסן ערב שבת, האט מען געהערט ווי ער זאגט פאר א נשמה אז ס'איז צו שפעט, די רביצין האט שוין געבענטשט ליכט. דאס איז געווען דער לעצטער שבת פון זיין לעבן, און ער איז נפטר געווארן יענעם שבת פארנאכט, ארום שלש סעודות צייט, אזוי אז די נשמה האט פארלוירן איר געלעגנהייט צו א תיקון, ווייל זי האט געדארפט א צדיק פון איר שורש."
+      },
+      "people": [
+        "the Chiddushei HaRim"
+      ],
+      "evidence": {
+        "segs": [
+          297,
+          310,
+          311,
+          315,
+          316,
+          324
+        ],
+        "confidence": 0.8
+      }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "How can the angels all speak 'together' in one voice?",
+        "yi": "וויאזוי קענען די מלאכים אלע רעדן \"יחד\" מיט איין קול?"
+      },
+      "answer": {
+        "en": "Because 'all are beloved': each loves the other, and therefore they say it together.",
+        "yi": "ווייל \"כולם אהובים\": איינער האט ליב דעם אנדערן, און ממילא זאגן זיי עס צוזאמען."
+      },
+      "questionSegs": [
+        59,
+        60,
+        61
+      ],
+      "answerSegs": [
+        61,
+        63,
+        64
+      ],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why did the soul come to the Chiddushei HaRim too late?",
+        "yi": "פארוואס איז די נשמה געקומען צו שפעט צום חידושי הרי\"ם?"
+      },
+      "answer": {
+        "en": "Measure for measure: in its lifetime it used to come late to davening and learning.",
+        "yi": "מדה כנגד מדה: אין איר לעבן פלעגט זי קומען שפעט צו דאווענען און צו לערנען."
+      },
+      "questionSegs": [
+        330
+      ],
+      "answerSegs": [
+        333,
+        335,
+        339
+      ],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav urges coming on time so as to begin davening together with the tzibbur.",
+        "yi": "דער משגיח מאנט צו קומען אין צייט כדי אנצוהייבן דאווענען צוזאמען מיטן ציבור."
+      },
+      "evidence": {
+        "segs": [
+          43,
+          47,
+          155
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "text": {
+        "en": "He says one must come on time both to learning and to davening.",
+        "yi": "ער זאגט אז מ'דארף קומען אין צייט סיי צום לערנען און סיי צום דאווענען."
+      },
+      "evidence": {
+        "segs": [
+          171,
+          348,
+          352
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "text": {
+        "en": "He says one must correct oneself now, before Moshiach comes.",
+        "yi": "ער זאגט אז מ'דארף זיך יעצט מתקן זיין, איידער משיח קומט."
+      },
+      "evidence": {
+        "segs": [
+          363,
+          364
+        ],
+        "confidence": 0.8
+      }
+    }
+  ],
+  "candidateTopics": [
+    "davening with the tzibbur",
+    "ahavas chaveirim",
+    "tefillah and Torah learning",
+    "coming on time",
+    "mishmar of Bilgah",
+    "Chiddushei HaRim",
+    "tikkun of souls",
+    "preparing for Moshiach",
+    "chizuk for bachurim"
+  ],
+  "concepts": [
+    {
+      "he": "יחד",
+      "heardAs": [
+        "יחד"
+      ]
+    },
+    {
+      "he": "כולם אהובים",
+      "heardAs": [
+        "כולם אהבים",
+        "כלים אהבים"
+      ]
+    },
+    {
+      "he": "ידידים",
+      "heardAs": [
+        "ונוסן ידידים"
+      ]
+    },
+    {
+      "he": "משמר",
+      "heardAs": [
+        "משה",
+        "משמר"
+      ]
+    },
+    {
+      "he": "בלגה",
+      "heardAs": [
+        "בילגא",
+        "בילגער",
+        "בולגע",
+        "בילג"
+      ]
+    },
+    {
+      "he": "חלון",
+      "heardAs": [
+        "חלונה",
+        "חלנות",
+        "וואונדאוי"
+      ]
+    },
+    {
+      "he": "שפע",
+      "heardAs": [
+        "שפע",
+        "שאפע",
+        "שפויס"
+      ]
+    },
+    {
+      "he": "שם אדנות",
+      "heardAs": [
+        "שם אדמת"
+      ]
+    },
+    {
+      "he": "צירופים",
+      "heardAs": [
+        "צערפען",
+        "צורכים"
+      ]
+    },
+    {
+      "he": "מדה כנגד מדה",
+      "heardAs": [
+        "מידה קנעגעט מידה",
+        "מידי קנעגען מידי"
+      ]
+    },
+    {
+      "he": "תיקון",
+      "heardAs": [
+        "תיקון"
+      ]
+    },
+    {
+      "he": "שמונה עשרה",
+      "heardAs": [
+        "שמנתך"
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "the Radbaz",
+      "heardAs": [
+        "רד בעת"
+      ]
+    },
+    {
+      "name": "the Ba'al Shem Tov",
+      "heardAs": [
+        "בעש''ט"
+      ]
+    },
+    {
+      "name": "the Arizal",
+      "heardAs": [
+        "ארי הקודש",
+        "ארי הקדוש"
+      ]
+    },
+    {
+      "name": "Rabbi Chaim Vital",
+      "heardAs": [
+        "רבי חיים וויטל"
+      ]
+    },
+    {
+      "name": "Rabbi Shimon bar Yochai",
+      "heardAs": [
+        "רבי יהושע בן יחואם"
+      ]
+    },
+    {
+      "name": "the Chasam Sofer",
+      "heardAs": [
+        "חתם ספר",
+        "חתמות שטח"
+      ]
+    },
+    {
+      "name": "Miriam bas Bilgah",
+      "heardAs": [
+        "א טאכטעל ... פון די משפחה פון בילגא"
+      ]
+    },
+    {
+      "name": "Dovid HaMelech",
+      "heardAs": [
+        "דוד המלאך"
+      ]
+    },
+    {
+      "name": "Shlomo HaMelech",
+      "heardAs": [
+        "שלמה המלך"
+      ]
+    },
+    {
+      "name": "the Chiddushei HaRim",
+      "heardAs": [
+        "חידושי רום",
+        "חדש ארום",
+        "פדושי ארום",
+        "דשי רום"
+      ]
+    },
+    {
+      "name": "the Imrei Emes",
+      "heardAs": [
+        "אמרי אמת, פון גורי רבי"
+      ]
+    }
+  ],
+  "asrNotes": "Yiddish ASR fair to poor; Hebrew quotations from the siddur are badly garbled but recoverable from context. Segments 112-113 (a phrase about learning and davening) and 262-263 could not be recovered. The passage on Shlomo HaMelech and the founding of Rome (269-279) is heavily garbled and only its outline is used; the title of the sefer of stories (284, 294) could not be recovered. The niggun at the end (366-370) is short and is absorbed into the closing section."
+}

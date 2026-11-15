@@ -266,7 +266,10 @@ function validateExtraction(x: Extraction, meta: PilotMeta, r: Report): void {
     if (s.startSeg > s.endSeg) return void err(`${p}: startSeg > endSeg`);
     const dur = secOf(rec, s.startSeg, s.endSeg);
     const tag = `${p} "${s.title.en}" [${mmss(rec.starts[s.startSeg] ?? 0)}–${mmss(rec.ends[s.endSeg] ?? 0)}]`;
-    if (dur < MIN_SECTION_SEC && rec.durationSec >= MIN_SECTION_SEC) err(`${tag}: ${Math.round(dur)}s < ${MIN_SECTION_SEC}s minimum`);
+    // Minimum length applies to content sections only (singing/noise/other speaker may be short), and is capped at
+    // a third of the recording so very short recordings can still hold more than one section.
+    const minSec = Math.min(MIN_SECTION_SEC, rec.durationSec / 3);
+    if (!NON_CONTENT_KINDS.has(s.kind) && dur < minSec) err(`${tag}: ${Math.round(dur)}s < ${Math.round(minSec)}s minimum`);
 
     // subsections
     if (s.subsections.length) {

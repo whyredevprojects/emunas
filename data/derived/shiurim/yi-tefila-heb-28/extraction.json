@@ -1,0 +1,684 @@
+{
+  "shiurId": "yi-tefila-heb-28",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "Learning the first two Shir Hamaalos (Tehillim 120 and 121), the Rav explains that the galus is a climb up to Yerushalayim, that a Jew must pray for the Shechinah's pain and guard his mouth from every trace of falsehood, and that when no help remains in this world, help comes from above nature.",
+      "yi": "דער משגיח לערנט די ערשטע צוויי שיר המעלות (תהלים ק\"כ און קכ\"א) און ערקלערט אז דער גלות איז א ארויפגיין קיין ירושלים, אז א איד דארף בעטן פאר דעם צער פון דער שכינה און אפהיטן זיין מויל פון יעדן שמץ שקר, און אז ווען ס'איז נישטא מער קיין הילף אין עולם הזה, קומט די הילף פון למעלה מן הטבע."
+    },
+    "abstract": {
+      "en": "Having finished Pesukei d'Zimra, the Rav turns to the fifteen Shir Hamaalos, which the Gemara links to David HaMelech's digging of the foundations of the mizbe'ach and to the fifteen steps on which the Levi'im sang; they form an ascent from galus to the Beis HaMikdash. On 'el Hashem batzarasa li' he explains that the troubles of galus are steps upward, and brings the Bnei Yissaschar, based on the Ba'al Shem Tov, that one should pray for the Shechinah, which suffers in every Jewish pain. A parable about animals blaming a sheep shows how the world blames all Jews for one Jew's sin. He then explains 'sfas sheker' and 'lashon remiya', the holiness and power of the mouth, Meshech and Kedar, and the enemies who talk peace and mean war. On Tehillim 121 he teaches that help comes 'me'ayin', from above nature, when nothing else is left, illustrated by a story of the Ruzhiner, and closes with the Midrash on Yaakov Avinu robbed by Eliphaz.",
+      "yi": "נאכן ענדיגן פסוקי דזמרה נעמט דער משגיח פאר די פופצן שיר המעלות. די גמרא דערציילט אז זיי זענען פארבונדן מיט דוד המלך'ס גראבן די שיתין פונעם מזבח און מיט די פופצן טרעפ וואו די לוים האבן געזונגען, און זיי זענען א סדר פון ארויפגיין פונעם גלות צום בית המקדש. אויף \"אל ה' בצרתה לי\" ערקלערט ער אז די צרות פונעם גלות זענען טרעפ ארויף, און ער ברענגט דעם בני יששכר על פי דעם בעל שם טוב אז מען זאל בעטן פאר די שכינה, וואס ליידט מיט אין יעדן צער פון א איד. א משל פון חיות וואס באשולדיגן א שעפסעלע ווייזט ווי די וועלט באשולדיגט אלע אידן פאר איין איד'ס עבירה. דערנאך ערקלערט ער \"שפת שקר\" און \"לשון רמיה\", די קדושה און דעם כח פונעם מויל, משך און קדר, און די שונאים וואס רעדן שלום און מיינען מלחמה. אויף קאפיטל קכ\"א לערנט ער אז די הילף קומט \"מאין\", פון למעלה מן הטבע, ווען ס'איז נישטא קיין אנדערע הילף, מיט א מעשה פונעם רוזשינער, און ער שליסט מיט'ן מדרש וועגן יעקב אבינו וואס אליפז האט אים צוגענומען אלעס."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The fifteen Shir Hamaalos are a sequence of ascent: the whole galus is a march up to Yerushalayim, and its troubles are steps toward the Beis HaMikdash.",
+          "yi": "די פופצן שיר המעלות זענען א סדר פון ארויפגיין: דער גאנצער גלות איז א מארש ארויף קיין ירושלים, און די צרות זענען טרעפ צום בית המקדש."
+        },
+        "evidence": { "segs": [50, 53, 80, 83, 87], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Following the Bnei Yissaschar based on the Ba'al Shem Tov, the Rav teaches that in every pain of a Jew the Shechinah suffers with him, so one should pray for the Shechinah and then he too is helped.",
+          "yi": "על פי דעם בני יששכר בשם דעם בעל שם טוב לערנט דער משגיח אז אין יעדן צער פון א איד ליידט די שכינה מיט, ממילא זאל מען בעטן פאר די שכינה, און דאן ווערט מען אליין אויך געהאלפן."
+        },
+        "evidence": { "segs": [94, 105, 106, 108, 110], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "'Sfas sheker' means even the edge of falsehood and 'lashon remiya' is deceit dressed up as kosher; the Rav says one must keep far even from the border of a lie.",
+          "yi": "\"שפת שקר\" מיינט אפילו דער ברעג פון שקר, און \"לשון רמיה\" איז א פאלשקייט וואס זעט אויס כשר; דער משגיח זאגט אז מען דארף זיך דערווייטערן אפילו פונעם גרעניץ פון שקר."
+        },
+        "evidence": { "segs": [205, 206, 214, 216, 218], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Speech is what raises man above the animals; one who guards his mouth has great power in tefillah, while a mouth that is misused loses its power and makes a person worse than an animal.",
+          "yi": "די רייד איז וואס הייבט דעם מענטש איבער די בעלי חיים; ווער עס היט אפ זיין מויל האט א מורא'דיגן כח אין תפילה, אבער א מויל וואס מ'באנוצט שלעכט פארלירט זיין כח און מאכט דעם מענטש ערגער פון א בעל חי."
+        },
+        "evidence": { "segs": [254, 257, 276, 295, 308], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The Rav reads 'me'ayin yavo ezri' as help that comes from 'nothing', from above nature: when a Jew sees there is no help left in this world, then Hashem's help comes.",
+          "yi": "דער משגיח טייטשט \"מאין יבוא עזרי\" אז די הילף קומט פון \"אין\", פון למעלה מן הטבע: ווען א איד זעט אז ס'איז נישטא קיין הילף אין עולם הזה, דעמאלט קומט די הילף פון השם."
+        },
+        "evidence": { "segs": [476, 479, 488, 491, 494], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The mountains to which one raises his eyes are the powers of this world, which cannot help; help is only from Hashem, Maker of heaven and earth, who is higher than them.",
+          "yi": "די בערג וואו מען הייבט אויף די אויגן צו זיי זענען די כוחות פון עולם הזה, וואס קענען נישט העלפן; די הילף איז נאר פון השם, עושה שמים וארץ, וואס איז העכער פון זיי."
+        },
+        "evidence": { "segs": [443, 449, 458, 464, 467], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-teffilah-15-a-tefilah",
+      "startSeg": 0,
+      "endSeg": 57,
+      "title": { "en": "The fifteen Shir Hamaalos as an ascent", "yi": "די פופצן שיר המעלות אלס א ארויפגאנג" },
+      "summary": {
+        "en": "After finishing Pesukei d'Zimra the Rav turns to the Shir Hamaalos, some of which are said on Shabbos. He brings the Gemara that David HaMelech said them when the waters rose from the foundations of the mizbe'ach, and that they correspond to the fifteen steps where the Levi'im sang, forming a sequence of ascent to the Beis HaMikdash.",
+        "yi": "נאכן ענדיגן פסוקי דזמרה נעמט דער משגיח פאר די שיר המעלות, וואס א טייל דערפון זאגט מען שבת. ער ברענגט די גמרא אז דוד המלך האט זיי געזאגט ווען די וואסער פון די שיתין האבן זיך אויפגעהויבן, און אז זיי זענען קעגן די פופצן טרעפ וואו די לוים האבן געזונגען, א סדר פון ארויפגיין צום בית המקדש."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-15-a-tefilah",
+      "startSeg": 58,
+      "endSeg": 121,
+      "title": { "en": "Troubles of galus as steps upward", "yi": "די צרות פונעם גלות זענען טרעפ ארויף" },
+      "summary": {
+        "en": "On 'el Hashem batzarasa li karasi vaya'aneni' the Rav explains that galus is a march to Yerushalayim and its troubles are stepping stones. He brings the Bnei Yissaschar, based on the Ba'al Shem Tov, that the Shechinah shares every Jewish pain, so one should pray for the Shechinah, and notes how low the honor of Klal Yisrael has fallen today.",
+        "yi": "אויף \"אל ה' בצרתה לי קראתי ויענני\" ערקלערט דער משגיח אז דער גלות איז א מארש קיין ירושלים און די צרות זענען טרעפ ארויף. ער ברענגט דעם בני יששכר על פי דעם בעל שם טוב אז די שכינה ליידט מיט אין יעדן צער פון א איד, ממילא זאל מען בעטן פאר די שכינה, און ער מערקט אן ווי נידעריג דער כבוד פון כלל ישראל איז היינט געפאלן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-15-a-tefilah",
+      "startSeg": 122,
+      "endSeg": 181,
+      "title": { "en": "The parable of the sheep and the straw", "yi": "דער משל פונעם שעפסעלע מיט'ן שטרוי" },
+      "summary": {
+        "en": "The Rav tells a humorous reading of the last passuk of Tehillim 119: in a plague among the animals the judges acquit the tiger and the wolf but convict the sheep that ate straw from a shoe. He applies it to the world, which excuses every sin of the nations but blames all Jews for the sin of one, and says the honor of Heaven has fallen very low.",
+        "yi": "דער משגיח דערציילט א גלייכווערטל אויפן לעצטן פסוק פון קאפיטל קי\"ט: ביי א מגיפה צווישן די חיות פטרן די ריכטער דעם טייגער און דעם וואלף, און מאכן חייב דאס שעפסעלע וואס האט אויפגעגעסן שטרוי פון א שיך. ער ווענדט עס אן אויף דער וועלט, וואס פארגיט אלע עבירות פון די אומות און באשולדיגט אלע אידן פאר איין איד, און זאגט אז דער כבוד שמים איז זייער געפאלן."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-15-a-tefilah",
+      "startSeg": 182,
+      "endSeg": 252,
+      "title": { "en": "Sfas sheker and lashon remiya", "yi": "שפת שקר און לשון רמיה" },
+      "summary": {
+        "en": "The Rav says that a prayer for the Shechinah is answered only when it is sincere, and explains the next passuk: 'sfas sheker' is even the edge of a lie and 'lashon remiya' is deceit made to look kosher. He brings 'midvar sheker tirchak' and the Midrash that Hashem set guards on the mouth, and that Rabbi Shimon bar Yochai wished man had two mouths.",
+        "yi": "דער משגיח זאגט אז א תפילה פאר די שכינה ווערט נאר אנגענומען ווען זי איז ערליך, און ערקלערט דעם קומענדיגן פסוק: \"שפת שקר\" איז אפילו דער ברעג פון שקר, און \"לשון רמיה\" איז א פאלשקייט וואס מ'מאכט אויס כשר. ער ברענגט \"מדבר שקר תרחק\", און דעם מדרש אז השם האט געמאכט שמירות אויפן מויל, און אז רבי שמעון בן יוחאי האט געוואלט אז א מענטש זאל האבן צוויי מיילער."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-15-a-tefilah",
+      "startSeg": 253,
+      "endSeg": 310,
+      "title": { "en": "The holiness and power of the mouth", "yi": "די קדושה און דער כח פונעם מויל" },
+      "summary": {
+        "en": "The Rav explains that one who guards his holy mouth has great power, so that his word is fulfilled and his tefillos answered, while a defiled mouth loses its power. Speech, the 'ruach memalela' given to Adam, is man's whole advantage over animals, so one who misuses it is worse than them.",
+        "yi": "דער משגיח ערקלערט אז ווער עס היט אפ זיין הייליג מויל האט א מורא'דיגן כח, אז זיין ווארט ווערט מקוים און זיינע תפילות ווערן געענטפערט, און א מויל וואס איז נתחלל געווארן פארלירט דעם כח. די רייד, די \"רוח ממללא\" וואס אדם הראשון האט באקומען, איז די גאנצע מעלה פונעם מענטש איבער די בעלי חיים, ממילא איז דער וואס באנוצט עס שלעכט ערגער פון זיי."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-15-a-tefilah",
+      "startSeg": 311,
+      "endSeg": 356,
+      "title": { "en": "Arrows of a warrior, and Meshech", "yi": "חצי גבור, און משך" },
+      "summary": {
+        "en": "The Rav explains 'chitzei gibor shenunim im gachalei resamim': bad speech harms from far away like arrows, and lasts a long time like the coals of the broom tree. He then explains 'oya li ki garti meshech', identifying Meshech with the wild people of Russia.",
+        "yi": "דער משגיח ערקלערט \"חצי גבור שנונים עם גחלי רתמים\": שלעכטע רייד שאט פון דער ווייטנס ווי פיילן, און עס האלט אן א לאנגע צייט ווי די קוילן פון רתמים. דערנאך ערקלערט ער \"אויה לי כי גרתי משך\", און זאגט אז משך זענען די ווילדע מענטשן פון רוסלאנד."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-15-a-tefilah",
+      "startSeg": 357,
+      "endSeg": 411,
+      "title": { "en": "Kedar and those who hate peace", "yi": "קדר און די שונאי שלום" },
+      "summary": {
+        "en": "The Rav explains that Kedar are the Arabs, whom the Rambam calls the greatest liars, and that worse than dwelling with them is dwelling with a deceitful Jew. On 'ani shalom vechi adaber hemah lamilchamah' he describes leaders who speak peace to the Jews and war to their own people, and says David HaMelech is speaking of our times.",
+        "yi": "דער משגיח ערקלערט אז קדר זענען די אראבער, וואס דער רמב\"ם רופט זיי די גרעסטע שקרנים, און אז ערגער פון וואוינען מיט זיי איז וואוינען מיט א איד מיט א לשון רמיה. אויף \"אני שלום וכי אדבר המה למלחמה\" שילדערט ער פירער וואס רעדן שלום מיט אידן און מלחמה צווישן זייערע אייגענע, און זאגט אז דוד המלך רעדט פון אונזער צייט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-15-a-tefilah",
+      "startSeg": 412,
+      "endSeg": 494,
+      "title": { "en": "Shir lamaalos: help from 'ayin'", "yi": "שיר למעלות: די הילף פון \"אין\"" },
+      "summary": {
+        "en": "The Rav notes that Tehillim 121 alone says 'shir lamaalos': it is a song to Hashem who goes with a Jew and lifts him up the steps. The mountains are the world's powers on which people rely, but help is only from Hashem; and through a Midrash on the word 'ayin' he explains that help comes from above nature when no other help remains.",
+        "yi": "דער משגיח מערקט אן אז נאר קאפיטל קכ\"א זאגט \"שיר למעלות\": עס איז א שיר צום רבונו של עולם וואס גייט מיט מיט א איד און הייבט אים ארויף אויף די טרעפ. די בערג זענען די כוחות פון דער וועלט וואס מ'פארלאזט זיך אויף זיי, אבער די הילף איז נאר פון השם; און דורך א מדרש אויפן ווארט \"אין\" ערקלערט ער אז די הילף קומט פון למעלה מן הטבע ווען ס'איז נישטא קיין אנדערע הילף."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-15-a-tefilah",
+      "startSeg": 495,
+      "endSeg": 633,
+      "title": { "en": "The Ruzhiner and the turning wheel", "yi": "דער רוזשינער און דאס דרייענדיגע ראד" },
+      "summary": {
+        "en": "The Rav tells a story from the sefarim of Ruzhin: a chassid in deep trouble came weeping to the Ruzhiner, who told him of a merchant who wept when his lost money was found and danced when he had nothing left, because a wheel at the top must go down and at the bottom must rise. He ties it to 'me'ayin yavo ezri' and brings the Chesed L'Avraham that the geulah comes when Klal Yisrael can fall no lower.",
+        "yi": "דער משגיח דערציילט א מעשה פון די ספרים פון רוזשין: א חסיד אין א גרויסע צרה איז געקומען וויינען צום רוזשינער, און דער רוזשינער האט אים דערציילט פון א סוחר וואס האט געוויינט ווען ער האט געפונען זיין פארלוירן געלט, און געטאנצט ווען ער איז געבליבן אן גארנישט, ווייל א ראד וואס איז אויבן מוז גיין אראפ, און אונטן מוז עס זיך אויפהייבן. ער פארבינדט עס מיט \"מאין יבוא עזרי\", און ברענגט דעם חסד לאברהם אז די גאולה קומט ווען כלל ישראל קען שוין נישט פאלן נידעריגער."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-teffilah-15-a-tefilah",
+      "startSeg": 634,
+      "endSeg": 710,
+      "title": { "en": "The holy mountains and Yaakov's journey", "yi": "די הייליגע בערג און יעקב אבינו'ס וועג" },
+      "summary": {
+        "en": "The Rav brings explanations that the mountains are the holy mountains of Yerushalayim, and that without Yerushalayim a Jew can still be helped by turning to the Maker of heaven and earth. He brings the Midrash that Yaakov Avinu said this Shir Hamaalos when Eliphaz took all his money, reading 'harim' as the Avos, and explains that the Avos' levels were taken from them so that they would hold on to Hashem from a low state and teach this to their children.",
+        "yi": "דער משגיח ברענגט מפרשים אז די בערג זענען די הייליגע בערג פון ירושלים, און אז אן ירושלים קען א איד אויך געהאלפן ווערן ווען ער ווענדט זיך צום עושה שמים וארץ. ער ברענגט דעם מדרש אז יעקב אבינו האט געזאגט דעם שיר המעלות ווען אליפז האט אים צוגענומען זיין געלט, און טייטשט \"הרים\" אויף די אבות, און ערקלערט אז מ'האט צוגענומען פון די אבות זייערע מדריגות כדי זיי זאלן זיך האלטן ביים רבונו של עולם פון א נידעריגן מצב און דאס איבערגעבן זייערע קינדער."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "עס שטייט אין די גמרא, האט דוד המלך מתקן געווען ... געגראבן די שיטים",
+      "work": "Gemara Sukkah",
+      "ref": "Sukkah 53a-b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [30, 31, 32, 36, 37], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אין די גמרא שטעט אז די פופצן שורים מעדתים ... כנגעץ די פופצן ... טרעפ",
+      "work": "Gemara Sukkah",
+      "ref": "Sukkah 51b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [42, 43, 46, 47], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "על ה' בצורתנו כורתו ועל עינינו",
+      "work": "Tehillim",
+      "ref": "Tehillim 120:1",
+      "sefariaRef": "Psalms 120:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [59, 90, 193, 196], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "ווארט פון בני יששכר ... באזירט אויפן בעש''ט",
+      "work": "Bnei Yissaschar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [94, 95, 182, 183], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אימא ונחי וצורה",
+      "work": "Tehillim",
+      "ref": "Tehillim 91:15",
+      "sefariaRef": "Psalms 91:15",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [104, 105, 106], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "בשעת שעדים מצטיל מה שכינו מרת כולנו מזרחו כולנו מראשי",
+      "work": "Mishnah Sanhedrin",
+      "ref": "Mishnah Sanhedrin 6:5",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [107], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "טעותי כתר עובד בקש ... כי מצוותך לא שכחתי",
+      "work": "Tehillim",
+      "ref": "Tehillim 119:176",
+      "sefariaRef": "Psalms 119:176",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [127, 131, 132, 171], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "השם הצלה נפשי מספת שקל מלשון רבי מאיר",
+      "work": "Tehillim",
+      "ref": "Tehillim 120:2",
+      "sefariaRef": "Psalms 120:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [199, 200, 205, 206], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "מיט ווארש שקל תרחק",
+      "work": "Shemos",
+      "ref": "Shemos 23:7",
+      "sefariaRef": "Exodus 23:7",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [219, 220, 221], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "מה איטליכע ... ומייספליך ... לשון רמיה",
+      "work": "Tehillim",
+      "ref": "Tehillim 120:3",
+      "sefariaRef": "Psalms 120:3",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [228, 229, 280, 283], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "שטעט אין מדרש, טרעבישטער האט געמאכט שמירות אויף די ... מייל",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [230, 231, 232, 234], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "שטעטן מדרש רבי שמעון בן יוחאי האט געזאגט ... צוויי מיילער",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [236, 237, 243, 247], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "אין אנפאנג מטות ... כאלא יוצא מפיוו יענתא",
+      "work": "Bamidbar",
+      "ref": "Bamidbar 30:3",
+      "sefariaRef": "Numbers 30:3",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [261, 266, 267, 272], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "והוא אדם לנפש חי'",
+      "work": "Bereishis",
+      "ref": "Bereishis 2:7",
+      "sefariaRef": "Genesis 2:7",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [288, 290], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "זאגט דער טייגמאל ... לרעך ממלאו",
+      "work": "Targum Onkelos",
+      "ref": "Onkelos Bereishis 2:7",
+      "sefariaRef": "Onkelos Genesis 2:7",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [289, 290, 293, 294], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "זאגט שלמה המלך מה יוסף לבעלי לשון",
+      "work": "Koheles",
+      "ref": "Koheles 10:11",
+      "sefariaRef": "Ecclesiastes 10:11",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [300, 301], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "חוץ יגיד ביושננים ... גאכלי רסמים",
+      "work": "Tehillim",
+      "ref": "Tehillim 120:4",
+      "sefariaRef": "Psalms 120:4",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [310, 320, 322, 335], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אויאלי קגעטו משך ... שכנתי ... קדר",
+      "work": "Tehillim",
+      "ref": "Tehillim 120:5",
+      "sefariaRef": "Psalms 120:5",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [338, 343, 357, 358], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ביי די נבואה פון יחזקאל פון מלחמת גגל-מגג, אז זיי וועלן קומען פון משך",
+      "work": "Yechezkel",
+      "ref": "Yechezkel ch. 38-39",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [347, 348], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער רמב״ם זאגט",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [362, 364, 366], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ראבת ... שכנה לנפשי ... שונא שלום ... אני שלום וכי הדבר ... הימל המלחמה",
+      "work": "Tehillim",
+      "ref": "Tehillim 120:6-7",
+      "sefariaRef": "Psalms 120:6-7",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [380, 382, 400, 401, 402], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "שיעור לא מעלות ... ועל עשה עיני על הארם ... מייעין יבא יזרי",
+      "work": "Tehillim",
+      "ref": "Tehillim 121:1",
+      "sefariaRef": "Psalms 121:1",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [421, 422, 435, 456], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "אזוי ווי שטעט טאקע אין זייער הקודש, די עהרסטע גלות פון אלע גלות איז גלות ישמעיל",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [430, 431], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "עזרא מיום ה' ... עשה שמים ואוחות",
+      "work": "Tehillim",
+      "ref": "Tehillim 121:2",
+      "sefariaRef": "Psalms 121:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [464, 465, 651], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "עס שטעט אין מדרש ... עין לא ועלעד",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [468, 469, 471, 472], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "שרה ... עין לא ועלעד",
+      "work": "Bereishis",
+      "ref": "Bereishis 11:30",
+      "sefariaRef": "Genesis 11:30",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [470, 471], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אין די ספרים פון די רוזשינער ברענגען זיי א מעשה",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [495, 496], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "עס שטעט אין חסיד אברהם פון אזעלעי",
+      "work": "Chesed L'Avraham",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [623, 624, 626], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ירושלים הרי ומסביב לו",
+      "work": "Tehillim",
+      "ref": "Tehillim 125:2",
+      "sefariaRef": "Psalms 125:2",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [636, 645], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אזוי ווי די תפילה פון שלמה המלך",
+      "work": "Melachim I",
+      "ref": "Melachim I ch. 8",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [641, 642, 643], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "שטעט אין מדרש, אז יעקב אבינא ... ער האט געזאגט די פופצן שיעורי מעלות",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [659, 660, 662, 668, 694], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ביי יראת המקום ורחק",
+      "work": "Bereishis",
+      "ref": "Bereishis 22:4",
+      "sefariaRef": "Genesis 22:4",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [703, 704, 705], "confidence": 0.7 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Galus is not a place where Jews are stuck but a journey on the way up to Yerushalayim, so the troubles David HaMelech speaks of are stepping stones toward the Beis HaMikdash.",
+        "yi": "דער גלות איז נישט קיין ארט וואו אידן זענען אנגעשטעקט, נאר א וועג ארויף קיין ירושלים, ממילא זענען די צרות וואס דוד המלך רעדט דערפון טרעפ צום בית המקדש."
+      },
+      "evidence": { "segs": [80, 82, 83, 86, 87], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "'Sfas sheker' is read as the edge of falsehood, like the bank of a river: one must be saved even from something on the border of a lie, in line with 'midvar sheker tirchak'.",
+        "yi": "\"שפת שקר\" ווערט געטייטשט ווי דער ברעג פון א טייך: מען דארף געראטעוועט ווערן אפילו פון א זאך וואס איז אויפן גרעניץ פון שקר, אזוי ווי \"מדבר שקר תרחק\"."
+      },
+      "evidence": { "segs": [212, 214, 216, 218, 221], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "'Lashon remiya' is what the Rav calls 'politics': deceit arranged to look kosher, as one soaks and salts meat to make it kosher.",
+        "yi": "\"לשון רמיה\" רופט דער משגיח \"פאליטיק\": א פאלשקייט וואס מ'שטעלט אויס אז זי זאל אויסזען כשר, אזוי ווי מ'ווייקט און מ'זאלצט פלייש כדי עס זאל זיין כשר."
+      },
+      "evidence": { "segs": [206, 207, 208, 209], "confidence": 0.65 }
+    },
+    {
+      "text": {
+        "en": "On 'mah yosif l'ba'al halashon': since speech is man's whole advantage over animals, and every animal does exactly what Hashem made it for, one who misuses speech is worse than an animal.",
+        "yi": "אויף \"מה יתרון לבעל הלשון\": ווייל די רייד איז דעם מענטשנס גאנצע מעלה איבער די בעלי חיים, און יעדער בעל חי טוט פונקט וואס השם האט אים באשאפן, איז דער וואס באנוצט שלעכט זיין רייד ערגער פון א בעל חי."
+      },
+      "evidence": { "segs": [295, 299, 301, 308, 309], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Tehillim 121 is the only one of the fifteen that says 'lamaalos' rather than 'hamaalos': it is a song to Hashem, who goes along with a Jew and lifts him up the steps.",
+        "yi": "קאפיטל קכ\"א איז דער איינציגער פון די פופצן וואס זאגט \"למעלות\" און נישט \"המעלות\": עס איז א שיר צום רבונו של עולם, וואס גייט מיט מיט א איד און הייבט אים ארויף אויף די טרעפ."
+      },
+      "evidence": { "segs": [422, 423, 427, 428, 434], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Help comes 'from ayin', from nothing: when a person reaches rock bottom and can fall no lower, that itself is the sign that his salvation is coming, as the Ruzhiner's wheel parable and the Chesed L'Avraham show.",
+        "yi": "די הילף קומט \"פון אין\", פון גארנישט: ווען א מענטש קומט אן צום סאמע דנאו און קען שוין נישט פאלן נידעריגער, איז דאס אליין א סימן אז זיין ישועה קומט, אזוי ווי דער משל פונעם רוזשינער מיט'ן ראד און דער חסד לאברהם ווייזן."
+      },
+      "evidence": { "segs": [595, 609, 616, 619, 631, 633], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Reading 'harim' as 'horim', the Avos: Yaakov looked to his parents, who had traveled with wealth, and when he saw he had nothing, he held on to Hashem alone; the Avos' levels were taken from them so that they could set an example for their children in a fallen state.",
+        "yi": "\"הרים\" ווערט געטייטשט \"הורים\", די אבות: יעקב האט געקוקט אויף זיינע עלטערן וואס זענען געפארן מיט עשירות, און ווען ער האט געזען אז ער האט גארנישט, האט ער זיך געהאלטן נאר ביים רבונו של עולם; מ'האט צוגענומען פון די אבות זייערע מדריגות כדי זיי זאלן זיין א ביישפיל פאר זייערע קינדער אין א נידעריגן מצב."
+      },
+      "evidence": { "segs": [689, 691, 693, 699, 709, 710], "confidence": 0.7 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The animals' trial over a plague", "yi": "דער משפט פון די חיות איבער א מגיפה" },
+      "retelling": {
+        "en": "As a humorous reading of 'ta'isi k'seh oved', the Rav tells that a plague broke out among the animals of the forest, and they set up a court to find who had sinned. One animal testified that the tiger had torn apart a man, and the judges ruled that a tiger was created to do so; another testified that the wolf had stolen a farmer's chicken, and they excused the wolf too. Then one told that a poor shepherd had stuffed straw into his torn shoe and a little sheep ate it, and the judges declared the sheep guilty of the plague.",
+        "yi": "אלס גלייכווערטל אויף \"תעיתי כשה אובד\" דערציילט דער משגיח אז ס'איז געווען א מגיפה צווישן די חיות אינעם וואלד, און זיי האבן אוועקגעזעצט א בית דין צו זוכן ווער עס האט געזינדיגט. איינע האט עדות געזאגט אז דער טייגער האט צוריסן א מענטש, און די ריכטער האבן גע'פסק'נט אז א טייגער איז באשאפן דערויף; א צווייטע האט געזאגט אז דער וואלף האט גע'גנב'עט א הון פון א פויער, און מ'האט אים אויך פטור געמאכט. דערנאך האט איינע דערציילט אז א נעבעכדיגער פאסטעך האט אריינגעשטופט שטרוי אין זיין צוריסענעם שיך און א שעפסעלע האט עס אויפגעגעסן, און די ריכטער האבן מחייב געווען דאס שעפסעלע אין דער מגיפה."
+      },
+      "people": [],
+      "evidence": { "segs": [137, 148, 156, 163, 168, 169], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "The Ruzhiner and the merchant who danced", "yi": "דער רוזשינער און דער סוחר וואס האט געטאנצט" },
+      "retelling": {
+        "en": "A wealthy, clever chassid of the Ruzhiner from the Halpern family, who traded with the Russian government, fell into great trouble and came weeping to the Ruzhiner. The Ruzhiner told him of a merchant who forgot his box of money under a tree in a park and found it untouched two weeks later, and wept; afterwards his business went downhill until he wandered with beggars, and when his clothes were stolen while he bathed in a river, he danced and sang in the forest, and his host, thinking him mad, gave him clothes and money with which he became rich again. Asked by his servant, he explained that a wheel at the top must turn down and at the bottom must rise. The Ruzhiner told the chassid that he too was now at the bottom and would rise, and so it was.",
+        "yi": "א רייכער, קלוגער חסיד פונעם רוזשינער פון דער משפחה האלפערין, וואס האט געהאנדלט מיט דער רוסישער מלוכה, איז אריינגעפאלן אין א גרויסע צרה און איז געקומען וויינען צום רוזשינער. דער רוזשינער האט אים דערציילט פון א סוחר וואס האט פארגעסן זיין קעסטל געלט אונטער א בוים אין א פארק, און ווען ער האט עס געפונען נאך צוויי וואכן אומבארירט, האט ער געוויינט; דערנאך איז זיין ביזנעס געגאנגען בארג אראפ ביז ער איז ארומגעגאנגען מיט שנארערס, און ווען מ'האט אים צוגעגנב'עט די קליידער ביים באדן אין טייך, האט ער געטאנצט און געזונגען אין וואלד, און דער בעל הבית האט געמיינט אז ער איז משוגע און אים געגעבן קליידער און געלט, און דערמיט איז ער ווידער געווארן רייך. ווען זיין משרת האט אים געפרעגט, האט ער ערקלערט אז א ראד וואס איז אויבן מוז זיך דרייען אראפ און אונטן מוז עס זיך אויפהייבן. דער רוזשינער האט געזאגט דעם חסיד אז ער איז יעצט אויך אונטן און וועט זיך אויפהייבן, און אזוי איז געווען."
+      },
+      "people": ["the Ruzhiner Rebbe", "Halpern"],
+      "evidence": { "segs": [496, 497, 508, 548, 595, 614], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "Why did Hashem not give man two mouths, one for Torah and tefillah and one for mundane talk, as Rabbi Shimon bar Yochai wished?",
+        "yi": "פארוואס האט השם נישט באשאפן א מענטש מיט צוויי מיילער, איינס פאר תורה און תפילה און איינס פאר דברי הרשות, אזוי ווי רבי שמעון בן יוחאי האט געוואלט?"
+      },
+      "answer": {
+        "en": "Because with two mouths people would use both for foolishness; so man has one holy mouth, and whoever guards it has great power.",
+        "yi": "ווייל מיט צוויי מיילער וואלט מען מיט ביידע גערעדט נארישקייטן; דערפאר האט א מענטש איין הייליג מויל, און ווער עס היט עס אפ האט א מורא'דיגן כח."
+      },
+      "questionSegs": [237, 243, 244, 246],
+      "answerSegs": [247, 253, 254, 255],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "What advantage does the 'ba'al halashon', the one who can speak, have over the animals?",
+        "yi": "וואס איז די מעלה פונעם \"בעל הלשון\", דער וואס קען רעדן, איבער די אנדערע בעלי חיים?"
+      },
+      "answer": {
+        "en": "If he uses his speech for falsehood and deceit, none at all: he is worse than them, since every animal does exactly what Hashem intended, while he ruins his mouth.",
+        "yi": "אויב ער באנוצט די רייד אויף שקר און רמיה, גארנישט: ער איז ערגער פון זיי, ווייל יעדער בעל חי טוט פונקט וואס השם האט געוואלט, און ער איז מקלקל זיין מויל."
+      },
+      "questionSegs": [300, 301, 307],
+      "answerSegs": [302, 308, 309],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why does Tehillim 121 alone open 'shir lamaalos' rather than 'shir hamaalos'?",
+        "yi": "פארוואס הייבט זיך נאר קאפיטל קכ\"א אן \"שיר למעלות\" און נישט \"שיר המעלות\"?"
+      },
+      "answer": {
+        "en": "Because on the hard road of the final galus a Jew sings to Hashem who goes with him and lifts him up the steps.",
+        "yi": "ווייל אויפן שווערן וועג פונעם לעצטן גלות זינגט א איד צום רבונו של עולם וואס גייט מיט מיט אים און הייבט אים ארויף אויף די טרעפ."
+      },
+      "questionSegs": [421, 422, 423],
+      "answerSegs": [427, 428, 433, 434],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why did the merchant weep when he found his lost money and dance when he had lost everything?",
+        "yi": "פארוואס האט דער סוחר געוויינט ווען ער האט געפונען זיין פארלוירן געלט, און געטאנצט ווען ער האט פארלוירן אלעס?"
+      },
+      "answer": {
+        "en": "Like a wheel: at the height of success he knew he would now go down, and at rock bottom he knew he would now rise.",
+        "yi": "אזוי ווי א ראד: ביים העכסטן פון הצלחה האט ער געוואוסט אז יעצט וועט ער גיין אראפ, און ביים סאמע דנאו האט ער געוואוסט אז יעצט וועט ער זיך אויפהייבן."
+      },
+      "questionSegs": [589, 590, 591, 592],
+      "answerSegs": [595, 600, 604, 609],
+      "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says that in every trouble a Jew should pray for the Shechinah, which suffers with him, and then he will surely be helped.",
+        "yi": "דער משגיח זאגט אז אין יעדער צרה זאל א איד בעטן פאר די שכינה, וואס ליידט מיט אים, און דאן וועט ער זיכער געהאלפן ווערן."
+      },
+      "evidence": { "segs": [108, 110, 184, 186, 187], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says such a prayer must come with the whole heart and not be fake.",
+        "yi": "דער משגיח זאגט אז אזא תפילה דארף קומען מיט'ן גאנצן הארץ און נישט זיין געמאכט."
+      },
+      "evidence": { "segs": [188, 189], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one must distance himself even from the edge of falsehood, not only from an outright lie.",
+        "yi": "דער משגיח זאגט אז מען דארף זיך דערווייטערן אפילו פונעם ברעג פון שקר, נישט נאר פון א קלארן ליגן."
+      },
+      "evidence": { "segs": [214, 218, 222], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one should rely on Hashem, the Maker of heaven and earth, and not on the powers of the nations.",
+        "yi": "דער משגיח זאגט אז מען זאל זיך פארלאזן אויפן רבונו של עולם, עושה שמים וארץ, און נישט אויף די כוחות פון די אומות."
+      },
+      "evidence": { "segs": [449, 463, 464, 467], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "shir hamaalos",
+    "Tehillim 120",
+    "Tehillim 121",
+    "galus as an ascent to Yerushalayim",
+    "praying for the Shechinah",
+    "falsehood and deceptive speech",
+    "power of speech",
+    "reliance on Hashem rather than the nations",
+    "salvation from above nature",
+    "the Ruzhiner Rebbe"
+  ],
+  "concepts": [
+    { "he": "שיר המעלות", "heardAs": ["שיעור המעלות", "שיעור המהלות", "שורי מעלות", "שיעור המילות'ן"] },
+    { "he": "שיר למעלות", "heardAs": ["שיעור לא מעלות", "שיעור למעלה", "שיעה למעלה"] },
+    { "he": "שכינה", "heardAs": ["שכינה", "שכינו"] },
+    { "he": "שפת שקר", "heardAs": ["ספס שקל", "ספת שקל", "שפץ שקל", "ספס שקר"] },
+    { "he": "לשון רמיה", "heardAs": ["לשון רמוע", "לאשן רמועה", "לשון רעמי"] },
+    { "he": "רוח ממללא", "heardAs": ["לרעך ממלאו", "רוח ממלא'לה"] },
+    { "he": "גחלי רתמים", "heardAs": ["גאכלי רסמים", "גחלי רסומים"] },
+    { "he": "שונא שלום", "heardAs": ["שונא שלום"] },
+    { "he": "למעלה מן הטבע", "heardAs": ["למעלה מי הטבע"] },
+    { "he": "גלות ישמעאל", "heardAs": ["גלות ישמעיל"] },
+    { "he": "כבוד שמים", "heardAs": ["כבוד שמים"] }
+  ],
+  "people": [
+    { "name": "David HaMelech", "heardAs": ["דוד המלך"] },
+    { "name": "Shlomo HaMelech", "heardAs": ["שלמה המלך"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["בעש''ט", "בעש''ה"] },
+    { "name": "the Bnei Yissaschar", "heardAs": ["בני יששכר"] },
+    { "name": "Rabbi Shimon bar Yochai", "heardAs": ["רבי שמעון בן יוחאי"] },
+    { "name": "Adam HaRishon", "heardAs": ["אדם הראשון"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "Arafat", "heardAs": ["אראפאט"] },
+    { "name": "the Ruzhiner Rebbe", "heardAs": ["רוזשינער"] },
+    { "name": "Halpern", "heardAs": ["האלפורין"] },
+    { "name": "Rabbi Avraham Azulai", "heardAs": ["אברהם פון אזעלעי"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יעקב אבינא", "יענקע בבינו"] },
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינה", "אברהם אבינו"] },
+    { "name": "Yitzchak Avinu", "heardAs": ["יצחק"] },
+    { "name": "Rivkah", "heardAs": ["רבקה"] },
+    { "name": "Eliezer", "heardAs": ["לילי עזר"] },
+    { "name": "Eliphaz", "heardAs": ["אליפס", "א לופא"] },
+    { "name": "Esav", "heardAs": ["אסאב"] },
+    { "name": "Sarah", "heardAs": ["שרה"] }
+  ],
+  "asrNotes": "Yiddish ASR fair for running speech, poor for the pesukim of Tehillim 120-121, which are recoverable from context. The source the Rav names before the Rambam about the Yishmaelim (seg 363) and the Gemara and Chazal on the broom-tree coals (segs 325, 336-337) are too garbled to identify; the opening source on adding mizmorim before Borchi Nafshi (seg 10) is unclear. Seg 392 is a repeated-word line; segs 120-121 and parts of the Yaakov and Eliphaz Midrash (681-693) are garbled."
+}

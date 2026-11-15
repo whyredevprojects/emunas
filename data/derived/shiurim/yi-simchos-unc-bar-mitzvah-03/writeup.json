@@ -1,0 +1,77 @@
+{
+  "shiurId": "yi-simchos-unc-bar-mitzvah-03",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4b-v2",
+  "extractionVariant": "extraction",
+  "en": [
+    {
+      "sectionIndex": 0,
+      "heading": "Two kinds of 'today'",
+      "paragraphs": [
+        {
+          "text": "From Yaakov's 'sell me as of today your birthright', the Rav contrasts two 'todays'. The upright Jew's is 'today to do them, tomorrow their reward'; the rasha's is 'eat and drink, for tomorrow we die'. Yaakov told Esav their todays differ. The bar mitzvah boy now accepts the yoke of Torah and mitzvos.",
+          "sourceIdx": [0, 1, 2],
+          "evidence": { "segs": [0, 7, 13, 26, 27, 47], "confidence": 0.75 }
+        }
+      ]
+    },
+    {
+      "sectionIndex": 1,
+      "heading": "A wedding with the Torah",
+      "paragraphs": [
+        {
+          "text": "The Rav brings the Zohar that a father must celebrate a bar mitzvah like a wedding, since the boy becomes a chassan to the Torah, his kallah. The holy sefarim add that parents and grandparents come from Gan Eden to a child's simcha, so this is a holy occasion, not merely a party.",
+          "sourceIdx": [4, 5],
+          "evidence": { "segs": [51, 53, 56, 57, 65, 82], "confidence": 0.7 }
+        }
+      ]
+    },
+    {
+      "sectionIndex": 2,
+      "heading": "Gifts from Hashem and a sedra of brachos",
+      "paragraphs": [
+        {
+          "text": "Above all, the Rav says, Hashem should give the boy purity of soul and a desire for mitzvos. Toldos, the sixth sedra, is full of brachos, a good sign for a bar mitzvah, and he blesses the boy to become a masmid and a gadol baTorah.",
+          "sourceIdx": [],
+          "evidence": { "segs": [103, 105, 114, 126, 143], "confidence": 0.7 }
+        }
+      ]
+    }
+  ],
+  "yi": [
+    {
+      "sectionIndex": 0,
+      "heading": "צוויי סארטן \"היום\"",
+      "paragraphs": [
+        {
+          "text": "פון יעקב'ס \"מכרה כיום את בכורתך\" שטעלט דער משגיח אוועק צוויי סארטן \"היום\". ביים ערליכן איד איז \"היום לעשותם ומחר לקבל שכרם\"; ביים רשע איז \"אכול ושתו כי מחר נמות\". יעקב האט געזאגט צו עשו אז זייערע היום'ס זענען נישט די זעלבע. דער בר מצוה בחור נעמט יעצט אויף זיך עול תורה ומצוות.",
+          "sourceIdx": [0, 1, 2],
+          "evidence": { "segs": [0, 7, 13, 26, 27, 47], "confidence": 0.75 }
+        }
+      ]
+    },
+    {
+      "sectionIndex": 1,
+      "heading": "א חתונה מיט דער תורה",
+      "paragraphs": [
+        {
+          "text": "דער משגיח ברענגט דעם זוהר אז א טאטע דארף פראווען א בר מצוה ווי א חתונה, ווייל דער בחור ווערט א חתן צו דער תורה, זיין כלה. די ספרים הקדושים זאגן אז עלטערן און זיידעס קומען פון גן עדן צו א קינד'ס שמחה, ממילא איז עס א הייליגע זאך, נישט סתם א מסיבה.",
+          "sourceIdx": [4, 5],
+          "evidence": { "segs": [51, 53, 56, 57, 65, 82], "confidence": 0.7 }
+        }
+      ]
+    },
+    {
+      "sectionIndex": 2,
+      "heading": "מתנות פונעם אויבערשטן און א סדרה פון ברכות",
+      "paragraphs": [
+        {
+          "text": "דער עיקר, זאגט דער משגיח, זאל דער רבונו של עולם געבן דעם בחור א ריינקייט פון דער נשמה און א חשק צו מצוות. תולדות, די זעקסטע סדרה, איז פול מיט ברכות, א סימן טוב פאר א בר מצוה, און ער בענטשט אים ער זאל ווערן א מתמיד און א גדול בתורה.",
+          "sourceIdx": [],
+          "evidence": { "segs": [103, 105, 114, 126, 143], "confidence": 0.7 }
+        }
+      ]
+    }
+  ]
+}

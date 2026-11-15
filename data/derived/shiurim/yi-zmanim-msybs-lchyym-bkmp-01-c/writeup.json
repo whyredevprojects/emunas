@@ -1,0 +1,43 @@
+{
+  "shiurId": "yi-zmanim-msybs-lchyym-bkmp-01-c",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4b-v2",
+  "extractionVariant": "extraction",
+  "en": [
+    {
+      "sectionIndex": 0,
+      "heading": "Holy words from Bilaam's impure mouth",
+      "paragraphs": [
+        {
+          "text": "The Rav asks how Bilaam's impure mouth could speak holy blessings and prophecies of the days of Moshiach. From the Gemara he explains that Hashem placed a hook in Bilaam's mouth as a barrier, so the words came from it, not from him.",
+          "sourceIdx": [1],
+          "evidence": { "segs": [2, 4, 5, 8, 11, 12], "confidence": 0.75 }
+        },
+        {
+          "text": "Rashi reads Bilaam's eye as blinded, the Targum as seeing sharply. The Ba'al Shem Tov explains that Hashem blinded one eye so he could not harm with it.",
+          "sourceIdx": [2, 3, 4],
+          "evidence": { "segs": [14, 15, 17, 22, 23], "confidence": 0.65 }
+        }
+      ]
+    }
+  ],
+  "yi": [
+    {
+      "sectionIndex": 0,
+      "heading": "הייליגע ווערטער פון בלעמ'ס טמא'נע מויל",
+      "paragraphs": [
+        {
+          "text": "דער משגיח פרעגט ווי אזוי בלעמ'ס טמא'נע מויל האט געקענט רעדן די הייליגע ברכות און נבואות פון ימות המשיח. ער ברענגט די גמרא אז דער אייבערשטער האט אים אריינגעטון א חכה אין מויל אלס א חציצה, און די ווערטער זענען ארויסגעקומען דערפון, נישט פון זיין מויל.",
+          "sourceIdx": [1],
+          "evidence": { "segs": [2, 4, 5, 8, 11, 12], "confidence": 0.75 }
+        },
+        {
+          "text": "לויט רש\"י איז בלעמ'ס אויג געווען בלינד, לויטן תרגום האט ער שארף געזען. דער בעל שם טוב איז מסביר אז דער אייבערשטער האט בלינד געמאכט איין אויג, כדי ער זאל דערמיט נישט קענען שעדיגן.",
+          "sourceIdx": [2, 3, 4],
+          "evidence": { "segs": [14, 15, 17, 22, 23], "confidence": 0.65 }
+        }
+      ]
+    }
+  ]
+}

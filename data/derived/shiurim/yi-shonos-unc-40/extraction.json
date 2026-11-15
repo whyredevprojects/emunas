@@ -1,0 +1,301 @@
+{
+  "shiurId": "yi-shonos-unc-40",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains the three ascending stages of Shabbos, culminating in Shabbos mincha and shalosh seudos, a time of yichud beyond place and time, and says one must want and pray to truly feel Shabbos.",
+      "yi": "דער משגיח ערקלערט די דריי מדריגות פון שבת, וואס גייען ארויף ביז מנחה און שלש סעודות, א צייט פון יחוד וואס איז העכער פון מקום און זמן, און ער זאגט אז מ'דארף וועלן און בעטן צו שפירן דעם שבת."
+    },
+    "abstract": {
+      "en": "The Rav opens with the three parts of Shabbos: Friday night, Shabbos morning and Shabbos mincha, which parallel the three parts of the Beis Hamikdash and the stages of kiddushin, nisuin and yichud. Each part has its tefillah and its seudah, and the Avos come as guests to our seudos, so the table should be run to please them. Mincha is the highest point: its Amidah has no pesukim, its seudah is simple, and it is a 'nachalah without boundaries'. Through a question of the Avnei Nezer about the manna kept in the Kodesh Hakodashim, he shows that what is beyond place is beyond time, and so is shalosh seudos. The time itself is a mikveh, Moshe Rabbeinu passed away then, and the Ba'al Shem Tov had it eaten together. He ends with the mashal of the weary traveler, the story of R' Shlomo of Karlin's sock, and the call to want to feel Shabbos.",
+      "yi": "דער משגיח עפנט מיט די דריי חלקים פון שבת: פרייטאג צונאכטס, שבת אינדערפרי און שבת מנחה, וואס זענען אנטקעגן די דריי חלקים פון בית המקדש און די מדריגות פון קידושין, נישואין און יחוד. יעדער חלק האט זיין תפילה און זיין סעודה, און די אבות קומען ווי געסט צו אונזערע סעודות, ממילא דארף דער טיש זיין לויט זייער כבוד. מנחה איז די העכסטע מדריגה: די שמונה עשרה האט נישט קיין פסוקים, די סעודה איז פשוט, און עס איז א נחלה בלי מצרים. מיט א קשיא פונעם אבני נזר וועגן דעם מן אין קודש הקדשים ווייזט ער אז וואס איז העכער פון מקום איז העכער פון זמן, און אזוי איז שלש סעודות. די צייט אליין איז א מקוה, משה רבינו איז דעמאלט נסתלק געווארן, און דער בעל שם טוב האט מתקן געווען עס צו עסן בציבור. ער ענדיגט מיטן משל פונעם מידן וואנדערער, די מעשה מיטן זאק פון ר' שלמה קארלינער, און אז מ'דארף וועלן שפירן דעם שבת."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Shabbos has three stages, Friday night, Shabbos morning and Shabbos mincha, like the courtyard, the Heichal and the Kodesh Hakodashim, and like kiddushin, nisuin and yichud.",
+          "yi": "שבת האט דריי מדריגות, פרייטאג צונאכטס, שבת אינדערפרי און שבת מנחה, אזוי ווי די עזרה, דער היכל און דער קודש הקדשים, און אזוי ווי קידושין, נישואין און יחוד."
+        },
+        "evidence": { "segs": [7, 13, 14, 37, 41, 45], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The Avos come as guests to the three seudos, so the seudah should be conducted to please the guests, with divrei Torah, joy and warmth.",
+          "yi": "די אבות קומען ווי געסט צו די דריי סעודות, דערפאר דארף די סעודה געפירט ווערן לויט די געסט, מיט דברי תורה, שמחה און ווארעמקייט."
+        },
+        "evidence": { "segs": [104, 108, 112, 114, 117], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Shabbos mincha and shalosh seudos are beyond place and time, the yichud of Hashem and Klal Yisrael, like the Kodesh Hakodashim.",
+          "yi": "שבת מנחה און שלש סעודות זענען העכער פון מקום און זמן, דער יחוד פון הקב\"ה מיט כנסת ישראל, אזוי ווי דער קודש הקדשים."
+        },
+        "evidence": { "segs": [248, 249, 251, 262, 264], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The higher the kedushah of Shabbos, the less it is felt, so Friday night is felt most and mincha least.",
+          "yi": "וואס העכער די קדושה פון שבת, אלץ ווייניגער שפירט מען זי, דערפאר שפירט מען פרייטאג צונאכטס די מערסטע און ביי מנחה די ווייניגסטע."
+        },
+        "evidence": { "segs": [439, 446, 447, 452, 454], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "One must want to feel Shabbos and ask Hashem for it; keeping Shabbos without trying to feel it leaves a person like a wooden bench in Gan Eden.",
+          "yi": "מ'דארף וועלן שפירן דעם שבת און בעטן דעם רבונו של עולם דערויף; ווער עס היט שבת אן זיך משתדל זיין עס צו שפירן, וועט זיין אין גן עדן ווי א הילצערנע באנק."
+        },
+        "evidence": { "segs": [534, 536, 572, 578, 583], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-shoinos-40-kedushas-hashabbos", "startSeg": 0, "endSeg": 70,
+      "title": { "en": "The three stages of Shabbos", "yi": "די דריי מדריגות פון שבת" },
+      "summary": {
+        "en": "Citing the Nesivos Shalom, the Rav divides Shabbos into Friday night, Shabbos morning and Shabbos mincha, compares them to the three parts of the Beis Hamikdash and to kiddushin, nisuin and yichud, and explains that each tefillah prepares for its seudah.",
+        "yi": "דער משגיח ברענגט פונעם נתיבות שלום אז שבת האט דריי חלקים, פרייטאג צונאכטס, שבת אינדערפרי און מנחה, אנטקעגן די דריי חלקים פון בית המקדש און קידושין, נישואין און יחוד, און ער ערקלערט אז יעדע תפילה איז א הכנה צו איר סעודה."
+      },
+      "kind": "intro", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-40-kedushas-hashabbos", "startSeg": 71, "endSeg": 127,
+      "title": { "en": "The Avos as guests at the seudos", "yi": "די אבות ווי געסט ביי די סעודות" },
+      "summary": {
+        "en": "From the Zohar the Rav links the three seudos to Yitzchak, Avraham and Yaakov, who come as guests, and says the table should be run for the guests: divrei Torah, simcha, and a warm, relaxed atmosphere the children can enjoy.",
+        "yi": "פונעם זוהר פארבינדט דער משגיח די דריי סעודות מיט יצחק, אברהם און יעקב, וואס קומען ווי געסט, און ער זאגט אז דער טיש דארף זיין לויט די געסט: דברי תורה, שמחה, און א געמיטליכקייט וואס די קינדער זאלן הנאה האבן."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-40-kedushas-hashabbos", "startSeg": 128, "endSeg": 198,
+      "title": { "en": "Mincha without pesukim, a portion without bounds", "yi": "מנחה אן פסוקים, א נחלה בלי מצרים" },
+      "summary": {
+        "en": "The Rav notes that the three Shabbos Amidos differ: Friday night and morning contain pesukim, but mincha is short and has none, because it is above pesukim; shalosh seudos is likewise a simple meal, and the Zohar ties it to the 'portion of Yaakov', a portion without boundaries.",
+        "yi": "דער משגיח ווייזט אן אז די דריי שמונה עשרה'ס פון שבת זענען אנדערש: פרייטאג צונאכטס און אינדערפרי זענען דא פסוקים, אבער מנחה איז קורץ אן פסוקים, ווייל עס איז העכער פון פסוקים; אזוי איז שלש סעודות א פשוטע סעודה, און דער זוהר פארבינדט עס מיט נחלת יעקב, א נחלה בלי מצרים."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-40-kedushas-hashabbos", "startSeg": 199, "endSeg": 258,
+      "title": { "en": "The Avnei Nezer on the manna: beyond place and time", "yi": "דער אבני נזר אויפן מן: העכער פון מקום און זמן" },
+      "summary": {
+        "en": "The Rav brings the Avnei Nezer's question how the jar of manna could be kept before Hashem when manna may not be left over till morning, and his answer that place and time are one: the Kodesh Hakodashim, where the Aron took no space, was beyond time too. Shalosh seudos is likewise beyond time until bentching.",
+        "yi": "דער משגיח ברענגט די קשיא פונעם אבני נזר ווי אזוי מ'האט געקענט היטן די צנצנת המן לפני ה' אז מן טאר מען נישט איבערלאזן ביז אינדערפרי, און זיין תירוץ אז מקום און זמן זענען איין זאך: דער קודש הקדשים, וואו דער ארון האט נישט פארנומען קיין ארט, איז אויך העכער פון זמן. אזוי איז שלש סעודות העכער פון זמן ביז מ'בענטשט."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-40-kedushas-hashabbos", "startSeg": 259, "endSeg": 359,
+      "title": { "en": "Yichud, the Kodesh Hakodashim and the mikveh of time", "yi": "יחוד, קודש הקדשים און די מקוה פון זמן" },
+      "summary": {
+        "en": "Shalosh seudos is the yichud of Hashem and Klal Yisrael, like the Keruvim in the Kodesh Hakodashim where no one else may be. The Rav asks why no tevilah is mentioned before Shabbos mincha and answers that the time itself is the mikveh, as on Yom Kippur; Jews together are a mikveh, which is why the Ba'al Shem Tov had shalosh seudos eaten together. Mincha is the chosen time of Shabbos and an eis ratzon.",
+        "yi": "שלש סעודות איז דער יחוד פון הקב\"ה מיט כנסת ישראל, אזוי ווי די כרובים אינעם קודש הקדשים וואו קיינער טאר נישט זיין. דער משגיח פרעגט פארוואס מ'געפינט נישט קיין טבילה פאר שבת מנחה, און ענטפערט אז דער זמן אליין איז די מקוה, אזוי ווי יום כיפור; אידן צוזאמען זענען א מקוה, דערפאר האט דער בעל שם טוב מתקן געווען צו עסן שלש סעודות בציבור. מנחה איז דער בחיר פון שבת און אן עת רצון."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-40-kedushas-hashabbos", "startSeg": 360, "endSeg": 460,
+      "title": { "en": "Brich Shmei, Moshe's passing, and feeling the kedushah", "yi": "בריך שמיה, משה רבינו'ס הסתלקות, און שפירן די קדושה" },
+      "summary": {
+        "en": "The Rav explains that the heavens open when the Aron is opened, above all at Shabbos mincha, and that Moshe Rabbeinu passed away at Shabbos mincha, a place beyond human measure, so no one knows his burial place. He brings the Toldos Yaakov Yosef that shalosh seudos alone is like weekday, and explains why the higher kedushah of the morning and of mincha is felt less than Friday night.",
+        "yi": "דער משגיח ערקלערט אז ווען מ'עפנט דעם ארון הקודש עפענען זיך די שערי שמים, בפרט ביי שבת מנחה, און אז משה רבינו איז נסתלק געווארן שבת מנחה, אין אן ארט וואס מ'קען נישט מעסטן, דערפאר ווייסט קיינער נישט זיין קבר. ער ברענגט פונעם תולדות יעקב יוסף אז שלש סעודות ביחידות איז ווי וואכעדיג, און ערקלערט פארוואס די העכערע קדושה פון אינדערפרי און מנחה שפירט מען ווייניגער ווי פרייטאג צונאכטס."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-40-kedushas-hashabbos", "startSeg": 461, "endSeg": 537,
+      "title": { "en": "The taste of Shabbos and the weary traveler", "yi": "דער טעם פון שבת און דער מידער וואנדערער" },
+      "summary": {
+        "en": "Like the manna, Shabbos tastes according to one's desire for it. The Rav brings the Slonimer tzaddikim's mashal of a soaked, freezing traveler who reaches a warm inn to regain strength, as Shabbos restores a person for the week's avodah, and explains that time and place set the worth of a mitzvah, so Torah and mitzvos on Shabbos are of another order.",
+        "yi": "אזוי ווי ביים מן, האט שבת א טעם לויט דעם חשק וואס מ'האט צו אים. דער משגיח ברענגט דעם משל פון די סלאנימער צדיקים פון א דורכגענעצטן פארפרוירענעם וואנדערער וואס קומט אן אין א ווארעמע אכסניא כדי צו כאפן כח, אזוי ווי שבת גיט כח אויף דער עבודה פון דער וואך, און ער ערקלערט אז זמן און מקום באשטימען די חשיבות פון א מצוה, ממילא איז תורה און מצוות שבת גאר אן אנדער סארט."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "y-shoinos-40-kedushas-hashabbos", "startSeg": 538, "endSeg": 671,
+      "title": { "en": "R' Shlomo of Karlin's sock, and wanting to feel Shabbos", "yi": "ר' שלמה קארלינער'ס זאק, און וועלן שפירן שבת" },
+      "summary": {
+        "en": "The Rav tells how R' Shlomo of Karlin felt that his foot in a weekday sock did not feel Shabbos, and his warning that one who keeps Shabbos without trying to feel it will be like a wooden bench in Gan Eden. He speaks of gathering on Friday night to sing, of Klal Yisrael as the partner of Shabbos, of the difference between oneg and simcha on Shabbos, and closes with a tefillah before Shabbos Chazon.",
+        "yi": "דער משגיח דערציילט ווי ר' שלמה קארלינער האט געשפירט אז זיין פוס אין א וואכעדיגן זאק שפירט נישט דעם שבת, און זיין ווארענונג אז ווער עס היט שבת אן זיך משתדל זיין עס צו שפירן וועט זיין אין גן עדן ווי א הילצערנע באנק. ער רעדט וועגן זיך צוזאמקומען פרייטאג צונאכטס צו זינגען, אז כנסת ישראל איז דער בן זוג פון שבת, דעם חילוק צווישן עונג און שמחה שבת, און ענדיגט מיט א תפילה פאר שבת חזון."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "אין נתיבת שלום", "work": "Nesivos Shalom", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [1, 2], "confidence": 0.75 } },
+    { "heardAs": "עתה עכד ושמחה עכד, מי קמך כי ישראל גוי יעכד", "work": "Siddur", "ref": "Shabbos Mincha Amidah (Atah Echad)", "sefariaRef": null, "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [47, 48, 350], "confidence": 0.85 } },
+    { "heardAs": "זרע הקדש ... חקר תפחון קדושין", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [72, 74, 77, 94], "confidence": 0.75 } },
+    { "heardAs": "ושם רבינו יסודו את השבת", "work": "Shemos", "ref": "Shemos 31:16", "sefariaRef": "Exodus 31:16", "resolution": "resolved", "mention": "alluded", "evidence": { "segs": [153, 154], "confidence": 0.7 } },
+    { "heardAs": "עס שטעט אין זיירה הקודש אז עס גייט רייסער א באסט קול עם א קרוז", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [175, 179, 183], "confidence": 0.7 } },
+    { "heardAs": "והחלטוכה נחלה את יענקי בבוכה; אסתר סנוג על ה'", "work": "Yeshayahu", "ref": "Yeshayahu 58:14", "sefariaRef": "Isaiah 58:14", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [184, 186, 261, 636], "confidence": 0.8 } },
+    { "heardAs": "אבנונזער", "work": "Avnei Nezer", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [199, 200], "confidence": 0.75 } },
+    { "heardAs": "כח צונצענות אחת וששם ממלא אומר מן, ונהנך את לפני השם", "work": "Shemos", "ref": "Shemos 16:33", "sefariaRef": "Exodus 16:33", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [202, 203], "confidence": 0.85 } },
+    { "heardAs": "ולעתת שרה את בוקר", "work": "Shemos", "ref": "Shemos 16:19", "sefariaRef": "Exodus 16:19", "resolution": "resolved", "mention": "alluded", "evidence": { "segs": [207, 208], "confidence": 0.7 } },
+    { "heardAs": "מרקם א אור אינאיינעם אין עמידה", "work": "Gemara Megillah", "ref": "Megillah 10b", "sefariaRef": null, "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [215, 231, 232], "confidence": 0.75 } },
+    { "heardAs": "וכו' אדמה'לעיה ביאור מייד", "work": "Vayikra", "ref": "Vayikra 16:17", "sefariaRef": "Leviticus 16:17", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [275, 283], "confidence": 0.75 } },
+    { "heardAs": "אזוי שטעט אין יחושעמי, אפילו נישט די וואס פנעים כפני אדם", "work": "Talmud Yerushalmi", "ref": "Yerushalmi Yoma 1:5", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [277, 278, 279], "confidence": 0.7 } },
+    { "heardAs": "ראי הקדוש; וארוא הקדוש", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [290, 321, 322], "confidence": 0.7 } },
+    { "heardAs": "מקוה ישראל ה' ... ענדיגט זיך די מסכת פון יום כיפה", "work": "Gemara Yoma", "ref": "Yoma 85b", "sefariaRef": "Yoma 85b", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [302, 303, 304], "confidence": 0.8 } },
+    { "heardAs": "ויעקב דך בחור שבו יבאות", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "quoted", "evidence": { "segs": [344, 345], "confidence": 0.7 } },
+    { "heardAs": "ונתפעלתו לך ה' עת רצון; ברוב חסידיך ענינו באמת ישעך", "work": "Tehillim", "ref": "Tehillim 69:14", "sefariaRef": "Psalms 69:14", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [358, 381], "confidence": 0.8 } },
+    { "heardAs": "ברוך שמי", "work": "Zohar", "ref": "Zohar, Vayakhel (Brich Shmei)", "sefariaRef": null, "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [360, 362, 376], "confidence": 0.75 } },
+    { "heardAs": "שטעט אין זיירה קודש", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [386, 389, 390], "confidence": 0.75 } },
+    { "heardAs": "ויאדא איש התקווה ראשיו; ולא יודע איש התקרותה", "work": "Devarim", "ref": "Devarim 34:6", "sefariaRef": "Deuteronomy 34:6", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [404, 412], "confidence": 0.8 } },
+    { "heardAs": "אין תורת יעקב יוסף", "work": "Toldos Yaakov Yosef", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [426, 427, 428], "confidence": 0.75 } },
+    { "heardAs": "און דערשען אין חז״ל ... ביי די מון איז לידם חשק", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [462, 464, 466], "confidence": 0.7 } },
+    { "heardAs": "פון די סאלאנער מועל צדיקים; פון די סלאנימער צדיקים", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [475, 611], "confidence": 0.75 } },
+    { "heardAs": "שט פון ר' אהרן קאלינא", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [522, 523], "confidence": 0.65 } },
+    { "heardAs": "כנסת ישראל, יהוא בן זגוך", "work": "Bereishis Rabbah", "ref": "Bereishis Rabbah 11:8", "sefariaRef": "Bereshit Rabbah 11:8", "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [617, 620, 621], "confidence": 0.8 } },
+    { "heardAs": "אין רמב״ם שטעט אז שבת איז דא א מצוה פון עונג און כובד", "work": "Rambam, Mishneh Torah", "ref": "Rambam, Hilchos Shabbos ch. 30", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [648, 649], "confidence": 0.8 } }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The three parts of Shabbos parallel the stages of a marriage: Friday night is kiddushin, Shabbos morning is nisuin, and Shabbos mincha is yichud, when one says 'Atah Echad'.",
+        "yi": "די דריי חלקים פון שבת זענען אנטקעגן די מדריגות פון א חתונה: פרייטאג צונאכטס איז קידושין, שבת אינדערפרי נישואין, און שבת מנחה יחוד, ווען מ'זאגט \"אתה אחד\"."
+      },
+      "evidence": { "segs": [37, 38, 40, 41, 45, 47], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Shabbos seudah is even greater than the Shabbos Amidah; the tefillah is the preparation for the seudah.",
+        "yi": "די סעודה פון שבת איז נאך גרעסער ווי די שמונה עשרה; די תפילה איז די הכנה צו דער סעודה."
+      },
+      "evidence": { "segs": [57, 58, 59, 61], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The mincha Amidah of Shabbos has no pesukim because it is above pesukim, like the tip of the yud, and so shalosh seudos is a short, simple meal of challah and herring.",
+        "yi": "די מנחה שמונה עשרה פון שבת האט נישט קיין פסוקים ווייל זי איז העכער פון פסוקים, ווי דער קוצו של יו\"ד, און דערפאר איז שלש סעודות א קורצע פשוטע סעודה פון חלה מיט הערינג."
+      },
+      "evidence": { "segs": [146, 147, 155, 157, 158, 165], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "What is beyond place is beyond time: the manna in the Kodesh Hakodashim was not 'left over till morning', and shalosh seudos has no time until bentching.",
+        "yi": "וואס איז העכער פון מקום איז העכער פון זמן: דער מן אינעם קודש הקדשים איז נישט געווען איבערגעלאזט ביז אינדערפרי, און ביי שלש סעודות איז נישטא קיין זמן ביז מ'בענטשט."
+      },
+      "evidence": { "segs": [234, 235, 236, 251, 256, 257], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "No tevilah is required before Shabbos mincha because the time itself is the mikveh, as Yom Kippur is, and Jews gathered together are a mikveh.",
+        "yi": "מ'דארף זיך נישט טובל זיין פאר שבת מנחה ווייל דער זמן אליין איז די מקוה, אזוי ווי יום כיפור, און אידן צוזאמען זענען א מקוה."
+      },
+      "evidence": { "segs": [298, 299, 301, 320, 336], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Moshe Rabbeinu passed away at Shabbos mincha, rising to a place beyond human measure, and therefore no one knows his burial place.",
+        "yi": "משה רבינו איז נסתלק געווארן שבת מנחה, ער איז ארויף אין אן ארט וואס מ'קען נישט מעסטן, און דערפאר ווייסט קיינער נישט זיין קבר."
+      },
+      "evidence": { "segs": [389, 392, 405, 406, 413, 414], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Shabbos morning is felt less than Friday night precisely because its kedushah is higher, and mincha even more so.",
+        "yi": "שבת אינדערפרי שפירט מען ווייניגער ווי פרייטאג צונאכטס פונקט ווייל די קדושה איז העכער, און ביי מנחה נאך מער."
+      },
+      "evidence": { "segs": [446, 447, 452, 453, 454], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "R' Shlomo of Karlin's foot did not feel Shabbos", "yi": "ר' שלמה קארלינער'ס פוס האט נישט געשפירט שבת" },
+      "retelling": {
+        "en": "R' Mordechai of Slonim used to tell that R' Shlomo of Karlin went to the mikveh with his gabbai, who brought his Shabbos clothes. One Shabbos sock fell into the water, so the gabbai gave him his weekday sock. When Friday night came, the Rebbe began to cry out that his left foot did not feel Shabbos, and the gabbai told him it was not the Rebbe but the sock. R' Shlomo then said he had heard proclaimed in Heaven that a Jew who is busy on Shabbos with tefillah, Torah and the seudos, but does not try to feel Shabbos, will be in Gan Eden like a wooden bench.",
+        "yi": "ר' מרדכי סלאנימער פלעגט דערציילן אז ר' שלמה קארלינער איז געגאנגען מיט זיין גבאי אין מקוה, און דער גבאי האט מיטגעברענגט די שבת'דיגע בגדים. איינער פון די שבת'דיגע זאקן איז אריינגעפאלן אין וואסער, האט אים דער גבאי געגעבן דעם וואכעדיגן זאק. ווען עס איז געקומען פרייטאג צונאכטס האט דער רבי אנגעהויבן שרייען אז זיין לינקע פוס שפירט נישט דעם שבת, און דער גבאי האט אים געזאגט אז ס'איז נישט דער רבי נאר דער זאק. האט ר' שלמה געזאגט אז ער האט געהערט אויסרופן אין הימל, אז א איד וואס איז שבת פארנומען מיט תפילה, תורה און סעודות, אבער איז זיך נישט משתדל צו שפירן דעם שבת, וועט זיין אין גן עדן ווי א הילצערנע באנק."
+      },
+      "people": ["R' Shlomo of Karlin", "R' Mordechai of Slonim"],
+      "evidence": { "segs": [538, 540, 545, 553, 566, 578], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "The tzaddik who could not go to the mikveh", "yi": "דער צדיק וואס האט נישט געקענט טובל זיין" },
+      "retelling": {
+        "en": "The Rav tells that one of the early tzaddikim, who could not immerse, came into the crowd, bent down among them and said 'Mikveh Yisrael Hashem': Jews are a mikveh.",
+        "yi": "דער משגיח דערציילט אז איינער פון די אלטע צדיקים, וואס האט זיך נישט געקענט טובל זיין, איז אריינגעקומען צום עולם, האט זיך דארט אראפגעבויגן און געזאגט \"מקוה ישראל ה'\": אידן זענען א מקוה."
+      },
+      "people": [],
+      "evidence": { "segs": [333, 334, 335, 336], "confidence": 0.7 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "How could the jar of manna be kept before Hashem, when manna may not be left over until morning?", "yi": "ווי אזוי האט מען געקענט איבערלאזן די צנצנת המן לפני ה', אז מן טאר מען נישט איבערלאזן ביז אינדערפרי?" },
+      "answer": { "en": "Place and time are one; the Kodesh Hakodashim, where the Aron took up no space, is beyond time, so nothing there was 'left until morning'.", "yi": "מקום און זמן זענען איין זאך; דער קודש הקדשים, וואו דער ארון האט נישט פארנומען קיין ארט, איז העכער פון זמן, ממילא איז דארט גארנישט איבערגעלאזט ביז אינדערפרי." },
+      "questionSegs": [200, 202, 208, 212], "answerSegs": [214, 231, 234, 235, 236], "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why does the Shabbos mincha Amidah, unlike Friday night and morning, have no pesukim?", "yi": "פארוואס האט די שבת מנחה שמונה עשרה נישט קיין פסוקים, נישט אזוי ווי פרייטאג צונאכטס און אינדערפרי?" },
+      "answer": { "en": "Mincha is higher than pesukim, like the tip of the yud that cannot be grasped.", "yi": "מנחה איז העכער פון פסוקים, אזוי ווי דער קוצו של יו\"ד וואס מ'קען נישט באגרייפן." },
+      "questionSegs": [151, 153, 155], "answerSegs": [142, 146, 147, 157], "confidence": 0.7
+    },
+    {
+      "question": { "en": "Why do the sefarim speak of tevilah before Shabbos and on Shabbos morning, but not before Shabbos mincha, a higher kedushah?", "yi": "פארוואס שטייט אין ספרים צו טובל זיין ערב שבת און שבת אינדערפרי, אבער נישט פאר שבת מנחה, וואס איז א העכערע קדושה?" },
+      "answer": { "en": "The time itself is the mikveh, as Yom Kippur is a mikveh.", "yi": "דער זמן אליין איז די מקוה, אזוי ווי יום כיפור איז א מקוה." },
+      "questionSegs": [294, 295, 296], "answerSegs": [298, 299, 301, 302], "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why is Shabbos felt strongly on Friday night but less on Shabbos morning?", "yi": "פארוואס שפירט מען שבת שטארק פרייטאג צונאכטס און ווייניגער שבת אינדערפרי?" },
+      "answer": { "en": "The morning's kedushah is greater, and one must be on a higher level for the body to feel it.", "yi": "די קדושה פון אינדערפרי איז גרעסער, און מ'דארף זיין אויף א העכערער מדריגה אז דער גוף זאל עס שפירן." },
+      "questionSegs": [439, 444, 446], "answerSegs": [447, 448, 450, 452], "confidence": 0.7
+    },
+    {
+      "question": { "en": "There is no mitzvah of simcha on Shabbos, only oneg and kavod; so what is the joy of Shabbos?", "yi": "מ'געפינט נישט קיין מצוה פון שמחה שבת, נאר עונג און כבוד; וואס איז דען די שמחה פון שבת?" },
+      "answer": { "en": "Oneg and simcha are different; there is no mitzvah to rejoice, but a Jew rejoices simply because it is Shabbos.", "yi": "עונג און שמחה זענען צוויי זאכן; ס'איז נישט קיין מצוה זיך צו פרייען, אבער א איד פרייט זיך ווייל ס'איז שבת." },
+      "questionSegs": [645, 647, 648, 649], "answerSegs": [651, 654, 656, 657], "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Rav says the Shabbos table should be run for the Avos who come as guests: divrei Torah, simcha and oneg Shabbos, warmth instead of strictness, so the children enjoy it and see the parents' shining faces.", "yi": "דער משגיח זאגט אז דער שבת טיש דארף זיין לויט די אבות וואס קומען ווי געסט: דברי תורה, שמחה און עונג שבת, א געמיטליכקייט אנשטאט שטרענגקייט, אז די קינדער זאלן הנאה האבן און זען ביים טאטן און מאמען א ליכטיג פנים." },
+      "evidence": { "segs": [112, 114, 117, 120, 122, 125], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "According to the Rav, shalosh seudos should be eaten together with the tzibbur, as the Ba'al Shem Tov instituted.", "yi": "לויט דעם משגיח דארף מען עסן שלש סעודות בציבור, אזוי ווי דער בעל שם טוב האט מתקן געווען." },
+      "evidence": { "segs": [339, 423, 425, 435], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "The Rav says one must want to feel Shabbos and ask Hashem to merit feeling its kedushah.", "yi": "דער משגיח זאגט אז מ'דארף וועלן שפירן דעם שבת און בעטן דעם רבונו של עולם מ'זאל זוכה זיין צו שפירן די קדושת שבת." },
+      "evidence": { "segs": [534, 535, 536, 583, 584], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "The Rav says it is a great loss to miss the Friday night gathering to sing zemiros, and a greater pity not to feel the loss.", "yi": "דער משגיח זאגט אז ס'איז א גרויסער הפסד נישט צו קומען צום צוזאמקום פרייטאג צונאכטס צו זינגען זמירות, און נאך א גרעסערע רחמנות אז מ'שפירט נישט אז עס פעלט." },
+      "evidence": { "segs": [592, 594, 595, 596, 597], "confidence": 0.7 }
+    }
+  ],
+  "candidateTopics": ["kedushas Shabbos", "shalosh seudos", "three stages of Shabbos", "Shabbos mincha", "the Avos as guests at the Shabbos table", "beyond place and time", "Kodesh Hakodashim", "mikveh", "feeling the taste of Shabbos", "oneg and simcha on Shabbos"],
+  "concepts": [
+    { "he": "חקל תפוחין קדישין", "heardAs": ["חקר תפחון קדושין", "חלקת הפרחים קדושה"] },
+    { "he": "עתיקא קדישא", "heardAs": ["עתיקה קדושה", "ועתיקה קדושה"] },
+    { "he": "רעוא דרעוין", "heardAs": ["רבי דער רבי'ן", "רב אדער רבי", "רבה דהרבה"] },
+    { "he": "שלש סעודות", "heardAs": ["שאלה שעדות", "שלשדות", "שלא שדות", "שאלה שעודות"] },
+    { "he": "קודש הקדשים", "heardAs": ["קידוש הגדושה", "קידוש הקדשים", "קדוש הקדשים"] },
+    { "he": "נחלה בלי מצרים", "heardAs": ["נחלה בלו מיט שרים", "אן מצורים", "בלי מצרים"] },
+    { "he": "מקום ארון אינו מן המדה", "heardAs": ["מרקם א אור אינאיינעם אין עמידה", "מורקם אור אינעם אין עמידה"] },
+    { "he": "צנצנת המן", "heardAs": ["צונצענות", "צונצענות המן"] },
+    { "he": "מקוה ישראל ה'", "heardAs": ["מקוה ישראל ה'", "מקוה ישראל השם"] },
+    { "he": "בריך שמיה", "heardAs": ["ברוך שמי"] },
+    { "he": "עת רצון", "heardAs": ["עת רצון", "היות רצון", "התרצון"] },
+    { "he": "יחוד", "heardAs": ["יחוד", "ייחוד", "יחיד"] },
+    { "he": "בן זוג", "heardAs": ["בן זאג", "בן זגוך"] },
+    { "he": "שבת חזון", "heardAs": ["שבת חזיון"] },
+    { "he": "פסוקים", "heardAs": ["פסקים"] }
+  ],
+  "people": [
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינו"] },
+    { "name": "Yitzchak Avinu", "heardAs": ["יצחק"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יעקב אבינו", "יענקאוו", "יעין קוב"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו"] },
+    { "name": "the Avnei Nezer", "heardAs": ["אבנונזער"] },
+    { "name": "the Arizal", "heardAs": ["ראי הקדוש", "ארוא הקדוש"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["בעש''ט", "באשם טוב"] },
+    { "name": "R' Aharon of Karlin", "heardAs": ["ר' אהרן קאלינא", "רבי אהרן הגדול"] },
+    { "name": "R' Shlomo of Karlin", "heardAs": ["רבי שלמה קאלינא"] },
+    { "name": "R' Mordechai of Slonim", "heardAs": ["רבי מרדכי סלאנימער"] }
+  ],
+  "asrNotes": "Yiddish ASR is fair for the Rav's own speech but badly garbled in quotations. The pasuk cited from the Nesivos Shalom at the opening (segs 2-6, 18-31) could not be identified, nor the source he attributes the tefillah/seudah parallel to (seg 56), the question attributed to a sefer at seg 642, or R' Aharon of Karlin's exact statement (segs 522-526). The remark around segs 598-606 about not coming is unclear and was left out."
+}

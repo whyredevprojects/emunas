@@ -1,0 +1,389 @@
+{
+  "shiurId": "en-emunah-en-11",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains, from the Rambam, that our emunah in the Torah rests not on Moshe Rabbeinu's miracles but on the whole nation hearing Hashem appoint him at Har Sinai, so that every mitzvah and every other navi is believed only through Moshe Rabbeinu.",
+      "yi": "דער משגיח ערקלערט פונעם רמב\"ם אז אונזער אמונה אין דער תורה שטייט נישט אויף די אותות פון משה רבינו, נאר דערויף וואס דער גאנצער כלל ישראל האט געהערט ווי דער אייבערשטער באשטימט אים ביי הר סיני, און ממילא גלייבן מיר יעדע מצוה און יעדן נביא נאר צוליב משה רבינו."
+    },
+    "abstract": {
+      "en": "Continuing from last week, the Rav reads the Rambam in Hilchos Yesodei HaTorah chapter 8: Klal Yisroel did not believe in Moshe Rabbeinu because of his signs, since a sign can always leave a doubt that it was a trick; the signs in the midbar were done because they were needed. They believed because at Har Sinai every Jew was a navi and heard Hashem speak to Moshe and appoint him. Therefore a navi who performs wonders to contradict Moshe is not heard, like witnesses who claim it is night when the beis din sees it is day. Listening to any other navi is a mitzvah, like listening to two witnesses, and not proof. The Rav reads a letter in the Igros Moshe on why a tradition seen by a multitude cannot be false. He closes by answering Rashi's question on the first mitzvah, and explains the Ani Maamin that Moshe is the father of all the nevi'im.",
+      "yi": "דער משגיח גייט ווייטער פון לעצטע וואך און לערנט דעם רמב\"ם אין הלכות יסודי התורה פרק ח: כלל ישראל האבן נישט געגלייבט אין משה רבינו צוליב די אותות, ווייל ביי אן אות בלייבט אלעמאל א ספק אפשר איז עס געווען א קונץ; די אותות אין מדבר זענען געמאכט געווארן ווייל מ'האט זיי געדארפט. מ'האט געגלייבט ווייל ביי הר סיני איז יעדער איד געווען א נביא און האט געהערט ווי דער אייבערשטער רעדט מיט משה און באשטימט אים. דערפאר, אויב א נביא מאכט מופתים כדי צו לייקענען משה'ס נבואה, הערט מען אים נישט, אזוי ווי עדים וואס זאגן אז ס'איז נאכט ווען דער בית דין זעט אז ס'איז טאג. צו הערן אן אנדערן נביא איז א מצוה, אזוי ווי צו הערן צוויי עדים, און נישט א ראיה. דער משגיח לייענט א בריוו אין אגרות משה פארוואס א קבלה וואס א המון האט געזען קען נישט זיין פאלש. צום סוף פארענטפערט ער די קשיא פון רש\"י וועגן דער ערשטער מצוה, און ערקלערט דעם אני מאמין אז משה איז דער אב פון אלע נביאים."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "According to the Rambam, Klal Yisroel's belief in Moshe Rabbeinu was not based on his signs, because a sign always leaves a small doubt that it was a trick.",
+          "yi": "לויטן רמב\"ם האט כלל ישראל'ס אמונה אין משה רבינו זיך נישט געשטיצט אויף זיינע אותות, ווייל ביי אן אות בלייבט אלעמאל א קליינער ספק אפשר איז עס א קונץ."
+        },
+        "evidence": { "segs": [32, 35, 55, 58, 60], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "At Har Sinai every Jew was a navi and heard Hashem speak to Moshe and appoint him to give the rest of the Torah; this is the basis of believing in him.",
+          "yi": "ביי הר סיני איז יעדער איד געווען א נביא און האט געהערט ווי דער אייבערשטער רעדט מיט משה און באשטימט אים צו געבן די איבעריגע תורה; דאס איז דער יסוד פון דער אמונה אין אים."
+        },
+        "evidence": { "segs": [75, 92, 108, 111, 112], "confidence": 0.9 }
+      },
+      {
+        "text": {
+          "en": "A navi who shows wonders in order to contradict Moshe Rabbeinu's nevuah is not listened to, just as two witnesses who say it is night are not believed when the beis din sees it is day.",
+          "yi": "א נביא וואס ווייזט מופתים כדי צו לייקענען די נבואה פון משה רבינו הערט מען נישט, אזוי ווי מ'גלייבט נישט צוויי עדים וואס זאגן אז ס'איז נאכט ווען דער בית דין ווייסט אז ס'איז טאג."
+        },
+        "evidence": { "segs": [125, 126, 146, 151, 157], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Listening to any other navi is a mitzvah under the Torah's conditions, like listening to witnesses, not a certainty; only Moshe Rabbeinu's nevuah is beyond doubt.",
+          "yi": "צו הערן אן אנדערן נביא איז א מצוה לויט די תנאים פון דער תורה, אזוי ווי צו הערן עדים, אבער נישט קיין זיכערקייט; נאר די נבואה פון משה רבינו איז אן א ספק."
+        },
+        "evidence": { "segs": [200, 202, 236, 238, 255], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "A tradition that a multitude saw with their own eyes cannot be false, since a lie about something that hundreds of thousands witnessed would be exposed at once.",
+          "yi": "א קבלה וואס א גרויסער המון האט געזען מיט די אייגענע אויגן קען נישט זיין פאלש, ווייל א שקר אויף א זאך וואס הונדערטער טויזנטער האבן געזען וואלט זיך גלייך ארויסגעוויזן."
+        },
+        "evidence": { "segs": [320, 323, 327, 346, 361], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Every mitzvah, even milah, and every navi before or after Moshe is accepted only because Moshe Rabbeinu transmitted it, which is why he is called the father of all the nevi'im.",
+          "yi": "יעדע מצוה, אפילו מילה, און יעדער נביא פאר משה'ן אדער נאך אים, ווערט אנגענומען נאר ווייל משה רבינו האט עס איבערגעגעבן, און דערפאר הייסט ער דער אב פון אלע נביאים."
+        },
+        "evidence": { "segs": [436, 460, 468, 474, 477], "confidence": 0.85 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-english-sets-emunah-english-11-emunah-english",
+      "startSeg": 0,
+      "endSeg": 73,
+      "title": {
+        "en": "Not belief through signs",
+        "yi": "נישט קיין אמונה צוליב אותות"
+      },
+      "summary": {
+        "en": "The Rav recalls that our emunah rests on a mesorah the whole nation saw, and reads the Rambam in Hilchos Yesodei HaTorah chapter 8 that Klal Yisroel did not believe in Moshe Rabbeinu because of his signs. He compares a sign to a magician's trick that still leaves a doubt, and explains that the signs in the midbar were done because they were needed.",
+        "yi": "דער משגיח דערמאנט אז אונזער אמונה שטייט אויף א מסורה וואס דער גאנצער כלל האט געזען, און לערנט דעם רמב\"ם אין הלכות יסודי התורה פרק ח אז כלל ישראל האבן נישט געגלייבט אין משה רבינו צוליב זיינע אותות. ער גלייכט אן אות צו א קונץ פון א כישוף-מאכער וואס לאזט נאך איבער א ספק, און ערקלערט אז די אותות אין מדבר זענען געמאכט געווארן ווייל מ'האט זיי געדארפט."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-emunah-english-11-emunah-english",
+      "startSeg": 74,
+      "endSeg": 169,
+      "title": {
+        "en": "All Yidden were nevi'im at Sinai",
+        "yi": "אלע אידן זענען געווען נביאים ביי סיני"
+      },
+      "summary": {
+        "en": "The Rav explains that at Matan Torah every Jew was a navi and heard Hashem speak to Moshe and appoint him, as the pesukim in Shemos promise. Therefore a navi who performs wonders to refute Moshe Rabbeinu is not heard, like witnesses who say it is night while the beis din sees it is day.",
+        "yi": "דער משגיח ערקלערט אז ביי מתן תורה איז יעדער איד געווען א נביא און האט געהערט ווי דער אייבערשטער רעדט מיט משה און באשטימט אים, אזוי ווי די פסוקים אין שמות זאגן צו. דערפאר הערט מען נישט א נביא וואס מאכט מופתים כדי צו לייקענען משה רבינו, אזוי ווי עדים וואס זאגן אז ס'איז נאכט בשעת דער בית דין זעט אז ס'איז טאג."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-emunah-english-11-emunah-english",
+      "startSeg": 170,
+      "endSeg": 275,
+      "title": {
+        "en": "Listening to a navi is like listening to witnesses",
+        "yi": "א נביא הערט מען ווי מ'הערט עדים"
+      },
+      "summary": {
+        "en": "The Rav explains that a navi may command a temporary deviation, as Eliyahu offered korbanos on Har Hakarmel, but never avodah zarah. Listening to such a navi is a mitzvah like accepting two witnesses, which is not foolproof, as the case of Navos shows; only Moshe Rabbeinu's nevuah, which the whole nation saw and heard, is certain.",
+        "yi": "דער משגיח ערקלערט אז א נביא מעג הייסן א זאך לפי שעה, אזוי ווי אליהו האט מקריב געווען קרבנות אויפן הר הכרמל, אבער קיינמאל נישט עבודה זרה. צו הערן אזא נביא איז א מצוה ווי מ'נעמט אן צוויי עדים, וואס איז נישט הונדערט פראצענט זיכער, ווי מ'זעט ביי נבות; נאר די נבואה פון משה רבינו, וואס דער גאנצער פאלק האט געזען און געהערט, איז זיכער."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-emunah-english-11-emunah-english",
+      "startSeg": 276,
+      "endSeg": 395,
+      "title": {
+        "en": "A letter on proving the Torah true",
+        "yi": "א בריוו ווי אזוי מ'ווייסט אז די תורה איז אמת"
+      },
+      "summary": {
+        "en": "The Rav sums up the Rambam and reads a letter from the Igros Moshe to someone troubled by doubts about the truth of the Torah. The answer is not philosophy but the mesorah of a multitude: a father cannot tell his son he saw something together with 600,000 people if nobody else saw it, and even the nations accept the miracles of Mitzrayim and the midbar.",
+        "yi": "דער משגיח פאסט צוזאם דעם רמב\"ם און לייענט א בריוו אין אגרות משה צו איינעם וואס דער יצר הרע האט אים געפלאגט מיט ספיקות צי די תורה איז אמת. דער תירוץ איז נישט קיין פילאסאפיע נאר די מסורה פון א המון: א טאטע קען נישט זאגן זיין זון אז ער האט עפעס געזען מיט זעקס הונדערט טויזנט מענטשן אויב קיינער אנדערש האט עס נישט געזען, און אפילו די אומות נעמען אן די נסים פון מצרים און פונעם מדבר."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-emunah-english-11-emunah-english",
+      "startSeg": 396,
+      "endSeg": 486,
+      "title": {
+        "en": "The first mitzvah and Moshe av lanevi'im",
+        "yi": "די ערשטע מצוה און משה אב לנביאים"
+      },
+      "summary": {
+        "en": "The Rav returns to Rashi's question why the Torah did not begin with HaChodesh hazeh lachem, the first mitzvah, though milah and gid hanasheh came earlier. He answers that those mitzvos are known only because Moshe told us about them, so HaChodesh hazeh is the first mitzvah heard from Moshe, and explains the Ani Maamin that Moshe is the father of all nevi'im before and after him.",
+        "yi": "דער משגיח קומט צוריק צו דער קשיא פון רש\"י פארוואס די תורה הייבט נישט אן מיט החודש הזה לכם, די ערשטע מצוה, כאטש מילה און גיד הנשה זענען געווען פריער. ער פארענטפערט אז יענע מצוות ווייסן מיר נאר ווייל משה האט אונז דערציילט, ממילא איז החודש הזה די ערשטע מצוה וואס מ'האט געהערט פון משה'ן, און ער ערקלערט דעם אני מאמין אז משה איז דער אב פון אלע נביאים פאר אים און נאך אים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "Peirek Shemini of Hilchas Yisoy Deyatayra",
+      "work": "Rambam, Mishneh Torah",
+      "ref": "Hilchos Yesodei HaTorah ch. 8",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [26, 27, 28, 29, 30, 31], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Tarei Bishar says I'm coming to you through the cloud",
+      "work": "Shemos",
+      "ref": "Shemos 19:9",
+      "sefariaRef": "Exodus 19:9",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [86, 88, 89, 90, 91], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "on this very mountain ... Mikhabu de Taira on this mountain",
+      "work": "Shemos",
+      "ref": "Shemos 3:12",
+      "sefariaRef": "Exodus 3:12",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [113, 115, 116, 119, 120], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Melachim Eliyahu on the hara karmel",
+      "work": "Melachim I",
+      "ref": "Melachim I ch. 18",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [182, 183, 184, 185, 186], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Pesukim tells us in Parashas Re'e",
+      "work": "Devarim",
+      "ref": "Devarim ch. 13 (Parashas Re'eh)",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [195, 196, 197, 198], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Eilav Tishmalim",
+      "work": "Devarim",
+      "ref": "Devarim 18:15",
+      "sefariaRef": "Deuteronomy 18:15",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [200, 201], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "by Ahav, which is the story of Navais a Yisraeli",
+      "work": "Melachim I",
+      "ref": "Melachim I ch. 21",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [208, 209, 211, 213], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Abishnahim Edim Yagim Dover",
+      "work": "Devarim",
+      "ref": "Devarim 19:15",
+      "sefariaRef": "Deuteronomy 19:15",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [220, 221], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "like the Gemara says in Sanhedrin",
+      "work": "Gemara Sanhedrin",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [226, 231, 233], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ask from all days ... an entire nation should hear the voice",
+      "work": "Devarim",
+      "ref": "Devarim 4:32-33",
+      "sefariaRef": "Deuteronomy 4:32-33",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [264, 265, 266, 269, 270], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Yitzmah Meishah",
+      "work": "Igros Moshe",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [294, 295, 302], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "Rasha in the beginning of the Torah, the first piece of Rasha",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 1:1",
+      "sefariaRef": "Rashi on Genesis 1:1",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [398, 399, 401, 405], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Achay Deshazalachem",
+      "work": "Shemos",
+      "ref": "Shemos 12:2",
+      "sefariaRef": "Exodus 12:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [414, 446, 448], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Lashen of the Ekel, of one of the Yud-Gemalekim ... sh'mayish rabbeinu haya'av la'neviyim",
+      "work": "Ani Maamin (Thirteen Principles of Faith)",
+      "ref": "Seventh principle",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [466, 467, 468], "confidence": 0.85 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav explains that Moshe Rabbeinu's miracles in the midbar were not done to prove anything; each was done because it was needed, such as drowning the Mitzrim or the earth swallowing the rebels.",
+        "yi": "דער משגיח ערקלערט אז די אותות פון משה רבינו אין מדבר זענען נישט געמאכט געווארן אלס ראיה; יעדע איז געווען ווייל מ'האט זי געדארפט, אזוי ווי צו דערטרינקען די מצריים אדער אז די ערד זאל איינשלינגען די בעלי מחלוקת."
+      },
+      "evidence": { "segs": [61, 64, 66, 67, 68], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Since every Jew heard Hashem appoint Moshe, the nevuah of Moshe is for us as clear as daylight, so no wonder can compete with it; the question is never who shows bigger miracles.",
+        "yi": "וויבאלד יעדער איד האט געהערט ווי דער אייבערשטער באשטימט משה'ן, איז משה'ס נבואה ביי אונז קלאר ווי דער טאג, און קיין מופת קען זיך דערמיט נישט מעסטן; די שאלה איז קיינמאל נישט ווער ס'ווייזט גרעסערע מופתים."
+      },
+      "evidence": { "segs": [134, 137, 140, 157, 159], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Obeying any later navi is itself a mitzvah from Moshe Rabbeinu's Torah, like obeying witnesses, and not a matter of being convinced by his miracles.",
+        "yi": "צו פאלגן א שפעטערדיגן נביא איז אליין א מצוה פון משה רבינו'ס תורה, אזוי ווי צו פאלגן עדים, און נישט ווייל מ'איז איבערצייגט פון זיינע מופתים."
+      },
+      "evidence": { "segs": [200, 236, 237, 238, 244], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The Rav answers Rashi's question by explaining that milah and gid hanasheh are known only because Moshe told us of them, so HaChodesh hazeh lachem is the first mitzvah heard from Moshe Rabbeinu.",
+        "yi": "דער משגיח פארענטפערט רש\"י'ס קשיא, אז מילה און גיד הנשה ווייסן מיר נאר ווייל משה האט אונז דערפון דערציילט, ממילא איז החודש הזה לכם די ערשטע מצוה וואס מ'האט געהערט פון משה רבינו."
+      },
+      "evidence": { "segs": [423, 427, 436, 445, 450], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "He reads 'Moshe av lanevi'im' as meaning that even the nevi'im before Moshe, like Avraham and Yaakov, are known through him, and those after him are believed because he commanded us to listen to them.",
+        "yi": "ער טייטשט \"משה אב לנביאים\" אז אפילו די נביאים פאר משה'ן, ווי אברהם און יעקב, ווייסן מיר דורך אים, און די נאך אים גלייבט מען ווייל ער האט אונז געהייסן זיי צו הערן."
+      },
+      "evidence": { "segs": [469, 470, 474, 475, 476], "confidence": 0.85 }
+    }
+  ],
+  "stories": [],
+  "questions": [
+    {
+      "question": {
+        "en": "If Klal Yisroel saw Moshe Rabbeinu's signs, why is that not the basis of their emunah in him?",
+        "yi": "אויב כלל ישראל האבן געזען משה רבינו'ס אותות, פארוואס איז דאס נישט דער יסוד פון זייער אמונה אין אים?"
+      },
+      "answer": {
+        "en": "A sign always leaves a doubt that it was a trick; the emunah rests on the whole nation hearing Hashem speak to Moshe at Har Sinai.",
+        "yi": "ביי אן אות בלייבט אלעמאל א ספק אפשר איז עס א קונץ; די אמונה שטייט דערויף וואס דער גאנצער פאלק האט געהערט ווי דער אייבערשטער רעדט מיט משה'ן ביי הר סיני."
+      },
+      "questionSegs": [32, 35],
+      "answerSegs": [58, 60, 92, 93, 111],
+      "confidence": 0.85
+    },
+    {
+      "question": {
+        "en": "If a navi performs great wonders and says Hashem told him something against Moshe Rabbeinu, why is he not listened to?",
+        "yi": "אויב א נביא מאכט גרויסע מופתים און זאגט אז דער אייבערשטער האט אים געזאגט עפעס קעגן משה רבינו, פארוואס הערט מען אים נישט?"
+      },
+      "answer": {
+        "en": "Because Moshe's nevuah is as clear to us as daylight, having heard it ourselves, just as witnesses saying it is night are not believed when the beis din sees it is day.",
+        "yi": "ווייל משה'ס נבואה איז ביי אונז קלאר ווי דער טאג, וויבאלד מיר האבן עס אליין געהערט, אזוי ווי מ'גלייבט נישט עדים וואס זאגן אז ס'איז נאכט ווען דער בית דין זעט אז ס'איז טאג."
+      },
+      "questionSegs": [123, 125, 126],
+      "answerSegs": [146, 151, 157, 159, 161],
+      "confidence": 0.85
+    },
+    {
+      "question": {
+        "en": "Rashi asks why the Torah did not begin with HaChodesh hazeh lachem, the first mitzvah; but milah and gid hanasheh were given earlier.",
+        "yi": "רש\"י פרעגט פארוואס די תורה הייבט נישט אן מיט החודש הזה לכם, די ערשטע מצוה; אבער מילה און גיד הנשה זענען דאך געגעבן געווארן פריער."
+      },
+      "answer": {
+        "en": "Those earlier mitzvos are known only because Moshe Rabbeinu told us of them, so HaChodesh hazeh is the first mitzvah heard from Moshe himself.",
+        "yi": "יענע פריערדיגע מצוות ווייסן מיר נאר ווייל משה רבינו האט אונז דערפון דערציילט, ממילא איז החודש הזה די ערשטע מצוה וואס מ'האט געהערט פון משה אליין."
+      },
+      "questionSegs": [401, 405, 409, 410, 412],
+      "answerSegs": [431, 436, 445, 450],
+      "confidence": 0.85
+    }
+  ],
+  "takeaways": [],
+  "candidateTopics": [
+    "mesorah of Matan Torah",
+    "nevuah of Moshe Rabbeinu",
+    "miracles as proof of prophecy",
+    "false prophet",
+    "testimony of witnesses",
+    "Rambam Hilchos Yesodei HaTorah chapter 8",
+    "first mitzvah of the Torah",
+    "Moshe av lanevi'im",
+    "national revelation at Sinai"
+  ],
+  "concepts": [
+    { "he": "מסורה", "heardAs": ["Maseirah", "Messiah"] },
+    { "he": "אותות", "heardAs": ["Isis", "ice ice", "Yisaitas"] },
+    { "he": "יסודי התורה", "heardAs": ["Yisoy Deyatayra"] },
+    { "he": "נביאים", "heardAs": ["Nevi'im", "Neviim", "neviyim"] },
+    { "he": "נבואה", "heardAs": ["Nevoah", "Nebuah", "Nevuah"] },
+    { "he": "רבונו של עולם", "heardAs": ["Rabbi Yishladim", "Rabbani Shalom", "Rabbeinu Shalaylam", "Rabbi Nishleil", "Rabbi Yisraelim"] },
+    { "he": "מתן תורה", "heardAs": ["Mat and Teireh", "Matan Teir"] },
+    { "he": "עדים", "heardAs": ["Ediths", "Aedas", "Adas", "Yadis"] },
+    { "he": "חקירות ודרישות", "heardAs": ["Chakirahs and the Drishahs"] },
+    { "he": "הוראת שעה", "heardAs": ["hara asha", "temporary eifin"] },
+    { "he": "החודש הזה לכם", "heardAs": ["Achay Deshazalachem", "Achay Yisheh Zalachem", "Chay Desherzalachem"] },
+    { "he": "גיד הנשה", "heardAs": ["Gid Anasha"] },
+    { "he": "משה רבינו היה אב לנביאים", "heardAs": ["sh'mayish rabbeinu haya'av la'neviyim"] },
+    { "he": "יציאת מצרים", "heardAs": ["Yetzirah Mitzrayim", "Yetzias Mitzrayim"] }
+  ],
+  "people": [
+    { "name": "Moshe Rabbeinu", "heardAs": ["Maisha Rabbeinu", "Meish Rabbeinu", "Meshach Rabbeinu", "Mesh Rabbeinu"] },
+    { "name": "Avraham Avinu", "heardAs": ["Avraham Avinu", "Avram Avinu"] },
+    { "name": "Yaakov Avinu", "heardAs": ["Yankah Avinu", "Yankav Avinu"] },
+    { "name": "Eliyahu HaNavi", "heardAs": ["Eli Hanavi", "Elia Navi"] },
+    { "name": "Achav", "heardAs": ["Ahav"] },
+    { "name": "Navos HaYizre'eli", "heardAs": ["Navais a Yisraeli"] },
+    { "name": "Yehoshua", "heardAs": ["Yeshua"] },
+    { "name": "the Rambam", "heardAs": ["Rambam"] },
+    { "name": "Rashi", "heardAs": ["Rasha"] }
+  ],
+  "asrNotes": "English ASR with heavy garbling of Hebrew terms (Ribono shel Olam, Moshe Rabbeinu, osos, edim all mangled) but meaning mostly recoverable. The Rambam's text (segs 28-31) and the quoted letter's Hebrew lines (segs 363-378) are badly garbled; the letter is identified as the Igros Moshe only from 'Yitzmah Meishah' and left unresolved. Seg 69 spans about 30 seconds with little text, and segs 125 and 168-170 have gaps where speech was not transcribed."
+}

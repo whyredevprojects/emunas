@@ -1,0 +1,94 @@
+{
+ "shiurId": "en-simchos-en-unc-16",
+ "topics": [
+  {
+   "id": "bris-milah",
+   "salience": 1
+  },
+  {
+   "id": "nes-chanukah",
+   "salience": 0.8
+  },
+  {
+   "id": "torah-min-hashamayim",
+   "salience": 0.6
+  },
+  {
+   "id": "kisei-eliyahu",
+   "salience": 0.5
+  },
+  {
+   "id": "rosh-chodesh",
+   "salience": 0.4
+  },
+  {
+   "id": "mesiras-nefesh",
+   "salience": 0.4
+  },
+  {
+   "id": "kedushas-shabbos",
+   "salience": 0.3
+  },
+  {
+   "id": "kriyas-shem",
+   "salience": 0.3
+  }
+ ],
+ "sections": [
+  {
+   "index": 0,
+   "topicIds": [
+    "nes-chanukah",
+    "bris-milah",
+    "rosh-chodesh"
+   ]
+  },
+  {
+   "index": 1,
+   "topicIds": [
+    "bris-milah",
+    "torah-min-hashamayim",
+    "nes-chanukah"
+   ]
+  },
+  {
+   "index": 2,
+   "topicIds": [
+    "kisei-eliyahu",
+    "kriyas-shem"
+   ]
+  }
+ ],
+ "conceptIds": [
+  "eliyahu-hanavi",
+  "kiddush-hachodesh",
+  "mesiras-nefesh",
+  "moed",
+  "ribono-shel-olam",
+  "torah-min-hashamayim",
+  "yevanim"
+ ],
+ "personIds": [
+  "avraham-avinu",
+  "eliyahu-hanavi",
+  "rambam",
+  "rav-avraham-yaakov-pam"
+ ],
+ "workIds": [
+  "bereishis-rabbah",
+  "mishneh-torah",
+  "rambam",
+  "talmud-bavli",
+  "vayikra",
+  "yeshayahu"
+ ],
+ "sourceWorkIds": [
+  "mishneh-torah",
+  "rambam",
+  "yeshayahu",
+  "vayikra",
+  "talmud-bavli",
+  "bereishis-rabbah",
+  null
+ ]
+}

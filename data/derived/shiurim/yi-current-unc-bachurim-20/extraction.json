@@ -1,0 +1,407 @@
+{
+  "shiurId": "yi-current-unc-bachurim-20",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains to bachurim the ten sefiros, showing how the ten makkos in Egypt revealed the ten utterances of creation and illustrating each middah with examples from life and from the Avos.",
+      "yi": "דער משגיח ערקלערט פאר בחורים די עשר ספירות, ווי די עשר מכות אין מצרים האבן אנטפלעקט די עשרה מאמרות פון בריאת העולם, און ער מאכט יעדע מידה קלאר מיט משלים פון לעבן און פון די אבות."
+    },
+    "abstract": {
+      "en": "The Rav opens with the Mishnah that the world was created with ten utterances, which come in two sets, the mind and the middos. Since no one saw creation, Hashem showed its ten powers through the ten makkos, which is why the first of the Ten Commandments speaks of the Exodus. The makkos match the utterances in reverse: the plague of the firstborn matches Bereishis, the beginning, which the Gemara counts as an utterance although it has no 'vayomer'; darkness matches 'let there be light'. He then explains chochmah, binah and daas through a student working out a Gemara, and chesed and gevurah through love and restraint, with daas as the link between mind and middos. Tiferes is a beautiful blend, seen in Yaakov, whose children were all holy, unlike Avraham's pure chesed and Yitzchak's pure gevurah. Netzach and hod are the two legs, fighting or fleeing; yesod is continuity and malchus is bittul. The shiur ends with a seudah, l'chaim and a niggun.",
+      "yi": "דער משגיח עפנט מיט דער משנה אז די וועלט איז באשאפן געווארן מיט צען מאמרות, וואס קומען אין צוויי סעטן: מוחין און מידות. ווייל קיינער האט נישט געזען די בריאה, האט דער אויבערשטער געוויזן אירע צען כחות דורך די עשר מכות, און דערפאר שטייט אין \"אנכי\" \"אשר הוצאתיך מארץ מצרים\". די מכות גייען קעגן די מאמרות פון הינטן: מכת בכורות קעגן בראשית, דער אנהייב, וואס די גמרא רעכנט אלס א מאמר כאטש ס'שטייט נישט \"ויאמר\"; חושך קעגן \"יהי אור\". דערנאך ערקלערט ער חכמה, בינה און דעת דורך א בחור וואס טראכט איבער א קשיא אין גמרא, און חסד און גבורה דורך אהבה און איינהאלטן, און דעת איז דער קשר צווישן מוח און מידות. תפארת איז א שיינע מישונג, וואס מ'זעט ביי יעקב, פון וועמען ס'איז ארויס נאר הייליגע שבטים, נישט ווי דער ריינער חסד פון אברהם און די ריינע גבורה פון יצחק. נצח און הוד זענען די צוויי פיס: מלחמה האלטן אדער אנטלויפן; יסוד איז המשך, און מלכות איז ביטול. דער שיעור ענדיגט זיך מיט א סעודה, לחיים און א ניגון."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The world was created with ten utterances, which divide into two sets: the mind (mochin) and the middos.",
+          "yi": "די וועלט איז באשאפן געווארן מיט עשרה מאמרות, וואס טיילן זיך אין צוויי סעטן: מוחין און מידות."
+        },
+        "evidence": { "segs": [12, 13, 17, 19, 22], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Since no one saw creation, Hashem displayed its ten powers through the ten makkos, which correspond to the ten utterances in reverse order.",
+          "yi": "ווייל קיינער האט נישט געזען די בריאה, האט דער אויבערשטער געוויזן אירע צען כחות דורך די עשר מכות, וואס גייען קעגן די עשרה מאמרות פון הינטן."
+        },
+        "evidence": { "segs": [28, 30, 57, 58, 124], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Chochmah is the first flash of an idea, binah builds it into a full structure, and daas connects the mind to the middos.",
+          "yi": "חכמה איז דער ערשטער בליץ פון א געדאנק, בינה בויט דערפון א גאנצן בנין, און דעת פארבינדט דעם מוח מיט די מידות."
+        },
+        "evidence": { "segs": [161, 165, 166, 171, 172], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Chesed and gevurah are opposite middos, and daas is knowing when to use each.",
+          "yi": "חסד און גבורה זענען פארקערטע מידות, און דעת מיינט צו וויסן ווען צו נוצן יעדע איינע."
+        },
+        "evidence": { "segs": [181, 185, 197, 198, 199], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Tiferes is a beautiful blend of chesed and gevurah, which is why only holy children came from Yaakov.",
+          "yi": "תפארת איז א שיינע מישונג פון חסד מיט גבורה, און דערפאר זענען פון יעקב ארויס נאר הייליגע קינדער."
+        },
+        "evidence": { "segs": [267, 270, 359, 362, 366], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Netzach and hod are the two legs a person stands on, two opposite ways to survive: winning the fight or yielding and fleeing.",
+          "yi": "נצח און הוד זענען די צוויי פיס וואס א מענטש שטייט דערויף, צוויי פארקערטע וועגן ווי צו בלייבן עקזיסטירן: געווינען די מלחמה אדער זיך אונטערגעבן און אנטלויפן."
+        },
+        "evidence": { "segs": [397, 398, 405, 428, 431], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Yesod is continuation through the generations, and malchus is bittul, accepting the yoke of Heaven.",
+          "yi": "יסוד איז דאס ווייטערגיין פון דור צו דור, און מלכות איז ביטול, קבלת עול מלכות שמים."
+        },
+        "evidence": { "segs": [448, 449, 450, 454, 455], "confidence": 0.7 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-current-bachurim-20-bachurim-5773-balak",
+      "startSeg": 0,
+      "endSeg": 57,
+      "title": { "en": "Ten utterances shown through ten makkos", "yi": "די עשרה מאמרות געוויזן דורך די עשר מכות" },
+      "summary": {
+        "en": "The Rav introduces the ten sefiros, explained in the Tanya, through the Mishnah that the world was created with ten utterances in two sets, mind and middos. He asks why the first commandment mentions the Exodus rather than creation, and answers that no one saw creation, while all of Israel saw the ten makkos, which revealed its ten powers.",
+        "yi": "דער משגיח הייבט אן די עשר ספירות, וואס דער תניא איז מבאר, מיט דער משנה אז די וועלט איז באשאפן מיט צען מאמרות אין צוויי סעטן, מוחין און מידות. ער פרעגט פארוואס אין \"אנכי\" שטייט יציאת מצרים און נישט די בריאה, און ענטפערט אז די בריאה האט קיינער נישט געזען, אבער די עשר מכות האבן אלע אידן געזען, און זיי האבן אנטפלעקט אירע צען כחות."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-20-bachurim-5773-balak",
+      "startSeg": 58,
+      "endSeg": 133,
+      "title": { "en": "The makkos match the utterances in reverse", "yi": "די מכות גייען קעגן די מאמרות פון הינטן" },
+      "summary": {
+        "en": "The Rav shows that the makkos correspond to the utterances backwards. Bereishis counts as the tenth utterance, the beginning before any speech existed, and matches the plague of the firstborn; 'let there be light' matches darkness, and the third utterance, the heavens, matches the locusts that came from the sky. He adds that the Bnei Yissaschar works out every pair.",
+        "yi": "דער משגיח ווייזט אז די מכות גייען קעגן די מאמרות פון הינטן. בראשית איז דער צענטער מאמר, דער אנהייב ווען ס'איז נאך נישט געווען קיין רייד, און דאס גייט קעגן מכת בכורות; \"יהי אור\" גייט קעגן חושך, און דער דריטער מאמר, דער רקיע, גייט קעגן ארבה וואס איז געקומען פון הימל. ער לייגט צו אז דער בני יששכר גייט דורך אלע פארן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-20-bachurim-5773-balak",
+      "startSeg": 134,
+      "endSeg": 243,
+      "title": { "en": "Chochmah, binah, daas; chesed and gevurah", "yi": "חכמה, בינה, דעת; חסד און גבורה" },
+      "summary": {
+        "en": "The Rav explains chochmah as the first flash of an answer to a Gemara question, binah as building it into a full structure, and daas as connecting the mind to the middos. He defines chesed as love and giving and gevurah as restraint, and shows with the example of eating twenty cookies and of insulting a friend in anger what happens when a middah is used without daas.",
+        "yi": "דער משגיח ערקלערט חכמה אלס דער ערשטער בליץ פון א תירוץ אויף א קשיא אין גמרא, בינה אלס דאס אויסבויען דערפון א גאנצן בנין, און דעת אלס דער קשר פונעם מוח צו די מידות. ער טייטשט חסד אלס אהבה און געבן, און גבורה אלס איינהאלטן זיך, און ווייזט מיט א משל פון איינעם וואס עסט צוואנציג קוקיס, און פון איינעם וואס באליידיגט א חבר אין כעס, וואס עס ווערט ווען מ'נוצט א מידה אן דעת."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-20-bachurim-5773-balak",
+      "startSeg": 244,
+      "endSeg": 370,
+      "title": { "en": "Tiferes, the blend, and the Avos", "yi": "תפארת, די מישונג, און די אבות" },
+      "summary": {
+        "en": "The Rav explains tiferes as a blend, like many colors in a beautiful picture, and as a rebbe's love for a talmid mixed with fear. He links the seven middos to the seven ushpizin: Avraham's pure chesed produced Yishmael, Yitzchak's pure gevurah produced Esav, while Yaakov's tiferes produced only the twelve holy shevatim.",
+        "yi": "דער משגיח ערקלערט תפארת אלס א מישונג, אזוי ווי אסאך פארבן אין א שיין בילד, און ווי א רבי'ס אהבה צו א תלמיד וואס מוז זיין געמישט מיט יראה. ער פארבינדט די זיבן מידות מיט די זיבן אושפיזין: פון אברהם'ס ריינעם חסד איז ארויס ישמעאל, פון יצחק'ס ריינער גבורה איז ארויס עשו, און פון יעקב'ס תפארת זענען ארויס נאר די צוועלף הייליגע שבטים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-20-bachurim-5773-balak",
+      "startSeg": 371,
+      "endSeg": 456,
+      "title": { "en": "Netzach and hod, yesod and malchus", "yi": "נצח און הוד, יסוד און מלכות" },
+      "summary": {
+        "en": "The Rav brings Pesach Eliyahu, printed in the siddur, that the sefiros correspond to the limbs of the body, and explains netzach and hod as the two legs a person stands on. With a mashal of a dog on a country road he shows them as opposite ways to survive, overcoming or fleeing, and ties hod to bowing at Modim; he ends briefly with yesod as continuity and malchus as bittul.",
+        "yi": "דער משגיח ברענגט פתח אליהו, וואס שטייט אין סידור, אז די ספירות זענען קעגן די אברים פונעם גוף, און ערקלערט נצח און הוד אלס די צוויי פיס וואס א מענטש שטייט דערויף. מיט א משל פון א הונט אויפן וועג ווייזט ער אז זיי זענען צוויי פארקערטע וועגן צו בלייבן לעבן, געווינען אדער אנטלויפן, און ער פארבינדט הוד מיט זיך בויגן ביי מודים; צום סוף זאגט ער קורץ אז יסוד איז המשך און מלכות איז ביטול."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-20-bachurim-5773-balak",
+      "startSeg": 457,
+      "endSeg": 508,
+      "title": { "en": "Yahrzeit seudah, l'chaim and niggun", "yi": "סעודה פון יארצייט, לחיים און ניגון" },
+      "summary": {
+        "en": "The Rav mentions that it is a yahrzeit that night and makes a seudah with l'chaim, blessing the bachurim with health and success in ruchniyus and gashmiyus. The recording ends with the song chassidim sang when parting from their rebbe after Yom Tov.",
+        "yi": "דער משגיח דערמאנט אז היינט ביינאכט איז א יארצייט, און מאכט א סעודה מיט לחיים, און בענטשט די בחורים מיט געזונט און הצלחה אין רוחניות און אין גשמיות. די הקלטה ענדיגט זיך מיטן ליד וואס חסידים פלעגן זינגען ווען זיי האבן זיך געזעגנט נאך יום טוב ביים רבי'ן."
+      },
+      "kind": "brachah",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "טרויבוש האט באשאפן די וועלט מיט אסורים הממוראות, אזוי שטעט אין די משנה און פרקי יבות",
+      "work": "Pirkei Avos",
+      "ref": "Pirkei Avos 5:1",
+      "sefariaRef": "Pirkei Avot 5:1",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [12, 13, 14, 60], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "אין הוכי ה' אלקחר,א שלשתיכו מהירץ מצרים",
+      "work": "Shemos",
+      "ref": "Shemos 20:2",
+      "sefariaRef": "Exodus 20:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [24, 125, 126], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "און פון די גמרא, בראשית נאמי מימע",
+      "work": "Gemara Rosh Hashanah",
+      "ref": "Rosh Hashanah 32a",
+      "sefariaRef": "Rosh Hashanah 32a",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [65, 66, 67, 68], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ביי יאמר אלקים יהוה אויער",
+      "work": "Bereishis",
+      "ref": "Bereishis 1:3",
+      "sefariaRef": "Genesis 1:3",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [103], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "הויער ביי מושבותים",
+      "work": "Shemos",
+      "ref": "Shemos 10:23",
+      "sefariaRef": "Exodus 10:23",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [110], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "דער רבי יששכר האט דערוועל בזייב איבער דעם",
+      "work": "Bnei Yissaschar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [129, 130, 131], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "דער גמרא זאגט צן מות עשרה קבן זנות ... תשעה נטלה ישמעאלים",
+      "work": "Gemara Kiddushin",
+      "ref": "Kiddushin 49b",
+      "sefariaRef": "Kiddushin 49b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [340, 341], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ווען א סטרעביש האט געווארט געבן די תורה צו ישמעו ... ס'איז שטעטער ווי סינאף",
+      "work": "Sifrei Devarim",
+      "ref": "Sifrei Devarim 343",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [346, 347, 348, 350], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "אין די ערשטע ברכה פון שמעון ישחק ... גבורא עת הגיבה לעולם השם",
+      "work": "Shemoneh Esrei",
+      "ref": "Shemoneh Esrei, first and second brachos",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [314, 316, 318, 320], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אין די סידרים איז פארן דאווענען שטעט א שטיקל זויער וואס פאנגט זיך אן פתח עלי'",
+      "work": "Tikkunei Zohar",
+      "ref": "Tikkunei Zohar, introduction (Pesach Eliyahu)",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [378, 380, 381, 383], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "און די תניא איז מבאר די עשרה ספירות",
+      "work": "Tanya",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [2, 3, 5], "confidence": 0.7 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The first commandment names the Exodus rather than creation because no one witnessed creation, while all of Israel saw the ten makkos, which displayed the same ten powers.",
+        "yi": "אין \"אנכי\" שטייט יציאת מצרים און נישט די בריאה, ווייל די בריאה האט קיינער נישט געזען, אבער די עשר מכות, וואס האבן געוויזן די זעלבע צען כחות, האבן אלע אידן געזען."
+      },
+      "evidence": { "segs": [24, 28, 30, 57, 124], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The makkos run backwards against the utterances: the plague of the firstborn, the 'reishis' of Egypt, corresponds to Bereishis, and darkness to 'let there be light'.",
+        "yi": "די מכות גייען פון הינטן קעגן די מאמרות: מכת בכורות, דער \"ראשית\" פון מצרים, גייט קעגן בראשית, און חושך קעגן \"יהי אור\"."
+      },
+      "evidence": { "segs": [96, 97, 98, 103, 106], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Bereishis has no 'vayomer' because it is the first beginning, before there was any speech; only after it could the other nine utterances be said.",
+        "yi": "ביי בראשית שטייט נישט \"ויאמר\" ווייל דאס איז דער ערשטער אנהייב, ווען ס'איז נאך נישט געווען קיין רייד; ערשט נאך דעם האבן געקענט קומען די אנדערע ניין מאמרות."
+      },
+      "evidence": { "segs": [73, 74, 82, 84, 88], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "A middah used without daas harms: a person who loves cookies and keeps taking more ends with a stomachache, because his chesed was not guided by his mind.",
+        "yi": "א מידה אן דעת שאדט: איינער וואס האט ליב קוקיס און נעמט נאך און נאך, באקומט א בויכווייטאג, ווייל זיין חסד איז נישט געפירט געווארן פונעם מוח."
+      },
+      "evidence": { "segs": [206, 214, 217, 219, 220], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Because Avraham's chesed and Yitzchak's gevurah were each pure and unblended, Yishmael and Esav came from them, while Yaakov's blended tiferes produced only holy shevatim.",
+        "yi": "ווייל אברהם'ס חסד און יצחק'ס גבורה זענען יעדע געווען ריין און נישט געמישט, זענען פון זיי ארויס ישמעאל און עשו, און פון יעקב'ס תפארת, וואס איז א מישונג, זענען ארויס נאר הייליגע שבטים."
+      },
+      "evidence": { "segs": [336, 344, 355, 362, 364, 365], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Netzach and hod are opposite strategies with one goal, to keep standing: hod, from hoda'ah, is yielding, like bowing at Modim or running from a danger one cannot beat.",
+        "yi": "נצח און הוד זענען פארקערטע וועגן מיט איין תכלית, צו בלייבן שטיין: הוד, פון הודאה, איז זיך אונטערגעבן, אזוי ווי מ'בויגט זיך ביי מודים אדער מ'אנטלויפט פון א סכנה וואס מ'קען נישט באזיגן."
+      },
+      "evidence": { "segs": [428, 429, 433, 434, 437], "confidence": 0.75 }
+    }
+  ],
+  "stories": [],
+  "questions": [
+    {
+      "question": {
+        "en": "Why does the first commandment say 'who took you out of Egypt' and not 'who created the world'?",
+        "yi": "פארוואס שטייט אין \"אנכי\" \"אשר הוצאתיך מארץ מצרים\" און נישט אז ער האט באשאפן די וועלט?"
+      },
+      "answer": {
+        "en": "No one saw creation, but Israel saw the ten makkos, which showed the ten powers of creation.",
+        "yi": "די בריאה האט קיינער נישט געזען, אבער די עשר מכות, וואס האבן געוויזן די צען כחות פון בריאה, האבן אידן געזען."
+      },
+      "questionSegs": [24, 25],
+      "answerSegs": [28, 30, 32, 57],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "The Mishnah speaks of ten utterances, yet 'vayomer' appears only nine times in the creation account.",
+        "yi": "די משנה זאגט צען מאמרות, און אין מעשה בראשית שטייט \"ויאמר\" נאר ניין מאל."
+      },
+      "answer": {
+        "en": "As the Gemara says, Bereishis is also an utterance; it has no 'vayomer' because it is the beginning, before speech existed.",
+        "yi": "ווי די גמרא זאגט, בראשית איז אויך א מאמר; ס'שטייט נישט \"ויאמר\" ווייל דאס איז דער אנהייב, ווען ס'איז נאך נישט געווען קיין רייד."
+      },
+      "questionSegs": [61, 63, 64],
+      "answerSegs": [66, 73, 74, 88],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "Why did Yishmael come from Avraham and Esav from Yitzchak, while from Yaakov came only holy shevatim?",
+        "yi": "פארוואס איז פון אברהם ארויס ישמעאל און פון יצחק עשו, און פון יעקב נאר הייליגע שבטים?"
+      },
+      "answer": {
+        "en": "Avraham's chesed and Yitzchak's gevurah were pure, unblended middos; Yaakov was tiferes, a beautiful blend.",
+        "yi": "אברהם'ס חסד און יצחק'ס גבורה זענען געווען ריינע מידות, נישט געמישט; יעקב איז געווען תפארת, א שיינע מישונג."
+      },
+      "questionSegs": [336, 337, 365],
+      "answerSegs": [344, 355, 359, 362],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says a person must use chochmah and binah to know when to act with chesed and when with gevurah.",
+        "yi": "דער משגיח זאגט אז מ'דארף נוצן חכמה און בינה צו וויסן ווען צו גיין מיט חסד און ווען מיט גבורה."
+      },
+      "evidence": { "segs": [196, 197, 198], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one must connect the mind to the middos and not act on a middah without daas.",
+        "yi": "דער משגיח זאגט אז מ'דארף מקשר זיין דעם מוח מיט די מידות, און נישט נוצן א מידה אן דעת."
+      },
+      "evidence": { "segs": [219, 220, 242, 243], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says a rebbe's love for his talmid must not be shown in excess, but blended with fear.",
+        "yi": "דער משגיח זאגט אז א רבי טאר נישט ווייזן צופיל אהבה צו זיין תלמיד, נאר זי דארף זיין געמישט מיט יראה."
+      },
+      "evidence": { "segs": [274, 277, 278, 279], "confidence": 0.7 }
+    }
+  ],
+  "candidateTopics": [
+    "ten sefiros",
+    "ten utterances of creation",
+    "ten makkos and creation",
+    "chochmah binah daas",
+    "chesed and gevurah",
+    "tiferes as a blend",
+    "the Avos and the middos",
+    "netzach and hod",
+    "daas connecting mind and middos"
+  ],
+  "concepts": [
+    { "he": "עשרה מאמרות", "heardAs": ["אסורים הממוראות", "אסורים אמורות", "אסורים ממוראות"] },
+    { "he": "עשר מכות", "heardAs": ["צען מאקעס", "עשר מכות"] },
+    { "he": "עשר ספירות", "heardAs": ["עשרה ספירות", "צען ספירות"] },
+    { "he": "מוחין", "heardAs": ["מוח", "מוחן"] },
+    { "he": "מידות", "heardAs": ["מידות", "מודעות"] },
+    { "he": "חכמה", "heardAs": ["חכמה"] },
+    { "he": "בינה", "heardAs": ["בינע", "בינא", "ביני"] },
+    { "he": "דעת", "heardAs": ["דעת"] },
+    { "he": "כתר", "heardAs": ["כתר"] },
+    { "he": "חסד", "heardAs": ["חסד", "חסיד"] },
+    { "he": "גבורה", "heardAs": ["גברא", "גברה", "גבורא", "געווארער", "גברי"] },
+    { "he": "תפארת", "heardAs": ["תפארת", "צפרת", "סתפרת"] },
+    { "he": "נצח", "heardAs": ["נצח", "הצחון"] },
+    { "he": "הוד", "heardAs": ["הוידז", "הויד", "היוט", "חוד"] },
+    { "he": "יסוד", "heardAs": ["יסוד"] },
+    { "he": "מלכות", "heardAs": ["מלכות"] },
+    { "he": "אושפיזין", "heardAs": ["זיבן רוים"] },
+    { "he": "פתח אליהו", "heardAs": ["פתח עלי'"] },
+    { "he": "מכת בכורות", "heardAs": ["בכורות", "בכורת"] },
+    { "he": "ראשית", "heardAs": ["רשת"] },
+    { "he": "מודים", "heardAs": ["מודים", "מועדים"] },
+    { "he": "קבלת עול מלכות שמים", "heardAs": ["תעשית עול מלכות שמים", "אור מלכות שמים"] },
+    { "he": "ביטול", "heardAs": ["ביטול"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבינו שלום", "רבוש׳ן לעולם"] }
+  ],
+  "people": [
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינו", "אברהם אבינא"] },
+    { "name": "Yitzchak", "heardAs": ["יצחק", "ישחק"] },
+    { "name": "Yaakov", "heardAs": ["יעקב", "יעקב אבינא"] },
+    { "name": "Moshe", "heardAs": ["משה"] },
+    { "name": "Aharon", "heardAs": ["אהרן"] },
+    { "name": "Yosef", "heardAs": ["יוסף"] },
+    { "name": "Dovid", "heardAs": ["דוד"] },
+    { "name": "Yishmael", "heardAs": ["ישמאל", "ישמעול", "ישמעו"] },
+    { "name": "Esav", "heardAs": ["עסק"] },
+    { "name": "the Bnei Yissaschar", "heardAs": ["דער רבי יששכר"] }
+  ],
+  "asrNotes": "Yiddish ASR fair for the explanations, poor for Hebrew quotations (pesukim and Chazal heavily garbled but recoverable from context). The catalog title 'bachurim balak' is only a file name; the shiur is about the ten sefiros, not Parshas Balak, so no section is tied to it. The closing stretch (from seg 457) is a yahrzeit seudah, l'chaim and a niggun; the name of the person whose yahrzeit it is (segs 459, 466) could not be recovered, and seg 483 is a long flagged stretch of singing. Seg 391 (a phrase about a person's legs) could not be identified."
+}

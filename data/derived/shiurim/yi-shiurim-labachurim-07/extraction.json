@@ -1,0 +1,420 @@
+{
+  "shiurId": "yi-shiurim-labachurim-07",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav teaches a series of practices for avodas Hashem: davening without haste, purity in the mikveh, brachos and amen, the hazmanah of leshem yichud, tefillah b'tzibbur and binding oneself to Klal Yisrael, and closes with two stories of Rabbi Moshe of Lelov.",
+      "yi": "דער משגיח לערנט א ריי הנהגות אין עבודת השם: דאווענען אן יאגעניש, טהרה במקוה, ברכות און אמן, די הזמנה פון לשם יחוד, תפילה בציבור און זיך מקשר זיין מיט כלל ישראל, און ער ענדיגט מיט צוויי מעשיות פון רבי משה לעלובער."
+    },
+    "abstract": {
+      "en": "The Rav opens with a letter of the Ba'al HaTanya about ba'alei tefillah: one who has business and will rush should not go to the amud, weekday Shacharis should take at least an hour and a half, and on Shabbos busy people must daven at greater length. He turns to purity in the mikveh, how to conduct oneself there, and the advice to immerse with the intention of receiving the kedushah of Moshiach. He then speaks about brachos, which bring shefa to the world and are completed by amen, and about leshem yichud as hazmanah, preparation that brings kedushah to every mitzvah. He discusses starting Baruch She'amar with the tzibbur, and explains that saying a mitzvah is done in the name of all Israel protects it from any accuser. He closes with the yahrzeit of Rabbi Moshe of Lelov, his attempt to reach the Kosel and bring the geulah, and a story of a chassid saved by the Rebbe's glass.",
+      "yi": "דער משגיח עפנט מיט א בריוו פונעם בעל התניא וועגן בעלי תפילה: דער וואס האט געשעפטן און וועט זיך יאגן זאל נישט גיין צום עמוד, שחרית אין דער וואך זאל נישט נעמען ווינציגער ווי אנדערהאלב שעה, און שבת דארפן בעלי עסקים דאווענען לענגער. דערנאך רעדט ער וועגן טהרה במקוה, ווי אזוי זיך צו פירן אין מקוה, און די עצה זיך צו טובלען כדי מקבל צו זיין די קדושה פון משיח. דערנאך רעדט ער וועגן ברכות, וואס ברענגען שפע אויף דער וועלט און ווערן שלם דורך אמן, און וועגן לשם יחוד אלס הזמנה וואס ברענגט קדושה אין יעדע מצוה. ער רעדט וועגן אנפאנגען ברוך שאמר מיטן ציבור, און ער ערקלערט אז ווען מען זאגט אז די מצוה איז בשם כל ישראל, קען קיין מקטרג איר נישט שאטן. צום סוף דערציילט ער פונעם יארצייט פון רבי משה לעלובער, וויאזוי ער האט געוואלט צוקומען צום כותל און ברענגען די גאולה, און א מעשה פון א חסיד וואס איז געראטעוועט געווארן דורכן רבי'נס גלעזל."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Following the Ba'al HaTanya, one who will rush should not go to the amud, and weekday Shacharis should take at least an hour and a half.",
+          "yi": "לויטן בעל התניא זאל דער וואס וועט זיך יאגן נישט גיין צום עמוד, און שחרית אין דער וואך זאל נעמען כאטש אנדערהאלב שעה."
+        },
+        "evidence": { "segs": [16, 19, 20, 34, 35], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "In the mikveh one should guard one's eyes, go in and out quickly, and not talk, because it has its own kedushah.",
+          "yi": "אין מקוה דארף מען היטן די אויגן, גיין שנעל אריין און ארויס, און נישט רעדן, ווייל ס'איז דא אן עקסטערע קדושה."
+        },
+        "evidence": { "segs": [90, 94, 99, 101], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "A brachah draws shefa onto the whole world, and it is completed only when someone answers amen.",
+          "yi": "א ברכה ברענגט שפע אויף דער גאנצער וועלט, און זי ווערט ערשט שלם ווען מען ענטפערט אמן."
+        },
+        "evidence": { "segs": [140, 142, 152, 153], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Leshem yichud is a hazmanah, a preparation, and preparing for a mitzvah brings kedushah to the person and to the object of the mitzvah.",
+          "yi": "לשם יחוד איז א הזמנה, און די הכנה צו א מצוה ברענגט קדושה סיי אויפן מענטש און סיי אויפן חפץ פון דער מצוה."
+        },
+        "evidence": { "segs": [162, 164, 182, 184, 185], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "One who davens at length in a fast minyan should begin Baruch She'amar with the congregation, and this counts as tefillah b'tzibbur.",
+          "yi": "דער וואס דאווענט לאנג אין א מנין וואס דאווענט שנעל זאל אנפאנגען ברוך שאמר מיטן עולם, און דאס הייסט תפילה בציבור."
+        },
+        "evidence": { "segs": [194, 195, 196, 199], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Doing a mitzvah in the name of all Israel binds a person to Klal Yisrael, on whom no accuser can find a blemish.",
+          "yi": "ווען מען טוט א מצוה בשם כל ישראל ווערט מען מקושר מיט כלל ישראל, וואו קיין מקטרג קען נישט געפינען קיין פגם."
+        },
+        "evidence": { "segs": [303, 305, 306, 308, 310], "confidence": 0.75 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-07-hisorerus-beavodas-hashem",
+      "startSeg": 0,
+      "endSeg": 66,
+      "title": {
+        "en": "The Ba'al HaTanya on davening without haste",
+        "yi": "דער בעל התניא וועגן דאווענען אן יאגעניש"
+      },
+      "summary": {
+        "en": "The Rav reads from a letter of the Ba'al HaTanya about ba'alei tefillah: a busy person who will rush should not go to the amud, weekday Shacharis should last at least an hour and a half, and on Shabbos those who lack time during the week must daven longer.",
+        "yi": "דער משגיח לערנט פון א בריוו פונעם בעל התניא וועגן בעלי תפילה: א מענטש מיט געשעפטן וואס וועט זיך יאגן זאל נישט גיין צום עמוד, שחרית אין דער וואך זאל נעמען כאטש אנדערהאלב שעה, און שבת דארפן די וואס האבן נישט קיין צייט אין דער וואך דאווענען לענגער."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-07-hisorerus-beavodas-hashem",
+      "startSeg": 67,
+      "endSeg": 128,
+      "title": {
+        "en": "Purity in the mikveh and hoping for Moshiach",
+        "yi": "טהרה במקוה און ווארטן אויף משיח"
+      },
+      "summary": {
+        "en": "The Rav speaks about the customs of going to the mikveh and how to behave there: guarding the eyes, going in and out quickly, and not talking. He then says one must hope for Moshiach every day and advises immersing with the intention of preparing to receive the kedushah of Moshiach.",
+        "yi": "דער משגיח רעדט וועגן די מנהגים פון גיין אין מקוה און ווי אזוי זיך צו פירן דארט: היטן די אויגן, גיין שנעל אריין און ארויס, און נישט רעדן. דערנאך זאגט ער אז מען דארף ווארטן יעדן טאג אויף משיח, און ער גיט אן עצה זיך צו טובלען כדי זיך צוצוגרייטן מקבל צו זיין די קדושה פון משיח."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-07-hisorerus-beavodas-hashem",
+      "startSeg": 129,
+      "endSeg": 185,
+      "title": {
+        "en": "Brachos, amen and leshem yichud",
+        "yi": "ברכות, אמן און לשם יחוד"
+      },
+      "summary": {
+        "en": "The Rav explains that a brachah draws shefa onto the world, that one must remember the Ribono shel Olam when saying it, and that amen completes it. He then explains leshem yichud as a hazmanah that brings kedushah into every mitzvah, using the examples of writing tefillin and tying tzitzis.",
+        "yi": "דער משגיח ערקלערט אז א ברכה ברענגט שפע אויף דער וועלט, אז מען דארף געדענקען דעם רבונו של עולם ביים מאכן די ברכה, און אז אמן מאכט זי שלם. דערנאך ערקלערט ער לשם יחוד אלס א הזמנה וואס ברענגט קדושה אין יעדע מצוה, מיט די משלים פון שרייבן תפילין און אנקניפן ציצית."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-07-hisorerus-beavodas-hashem",
+      "startSeg": 186,
+      "endSeg": 271,
+      "title": {
+        "en": "Starting Baruch She'amar with the tzibbur",
+        "yi": "אנפאנגען ברוך שאמר מיטן ציבור"
+      },
+      "summary": {
+        "en": "The Rav brings that one who davens at length should begin Baruch She'amar together with the congregation, which counts as tefillah b'tzibbur. He mentions that chassidim follow the Shulchan Aruch of the Ba'al HaTanya, written at the Maggid's request, discusses where it differs from the Mishnah Berurah, and adds that saying Tehillim together after davening also belongs to the tefillah b'tzibbur.",
+        "yi": "דער משגיח ברענגט אז דער וואס דאווענט לאנג זאל אנפאנגען ברוך שאמר צוזאמען מיטן עולם, און דאס הייסט תפילה בציבור. ער דערמאנט אז חסידים פירן זיך לויטן שולחן ערוך פונעם בעל התניא, וואס ער האט געשריבן אויפן הייסן פונעם מגיד, רעדט וועגן וואו ער איז חולק מיטן משנה ברורה, און לייגט צו אז תהלים וואס מען זאגט צוזאמען נאכן דאווענען געהערט אויך צו דער תפילה בציבור."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-07-hisorerus-beavodas-hashem",
+      "startSeg": 272,
+      "endSeg": 312,
+      "title": {
+        "en": "In the name of all Israel",
+        "yi": "בשם כל ישראל"
+      },
+      "summary": {
+        "en": "The Rav explains that leshem yichud ends with the words 'in the name of all Israel', and that before davening one should accept the mitzvah of loving a fellow Jew. A mitzvah of a private person can be lost to accusers, but one done in the name of all Israel cannot be harmed, and he calls this an insurance policy for every mitzvah.",
+        "yi": "דער משגיח ערקלערט אז דער לשם יחוד ענדיגט זיך מיט די ווערטער \"בשם כל ישראל\", און אז פארן דאווענען זאל מען מקבל זיין די מצוה פון ואהבת לרעך כמוך. א מצוה פון א יחיד קען פארלוירן ווערן דורך מקטרגים, אבער א מצוה בשם כל ישראל קען מען נישט שאטן, און ער רופט עס אן אינשורענס פאר יעדע מצוה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-07-hisorerus-beavodas-hashem",
+      "startSeg": 313,
+      "endSeg": 382,
+      "title": {
+        "en": "Rabbi Moshe of Lelov and the Kosel",
+        "yi": "רבי משה לעלובער און דער כותל"
+      },
+      "summary": {
+        "en": "For the yahrzeit of Rabbi Moshe of Lelov, the Rav tells how he travelled to Eretz Yisrael to bring the geulah by reaching the Kosel, lost the Lubliner kiddush cup on the way, fell ill in Yerushalayim, was turned back by stone-throwing Arabs and passed away. He adds that one must daven for the great yeshuah for Klal Yisrael without harm to any Jew.",
+        "yi": "צום יארצייט פון רבי משה לעלובער דערציילט דער משגיח ווי ער איז געפארן קיין ארץ ישראל צו ברענגען די גאולה דורך צוקומען צום כותל, ווי דאס לובלינער קידוש גלעזל איז צובראכן געווארן אויפן וועג, ווי ער איז קראנק געווארן אין ירושלים, ווי אראבער מיט שטיינער האבן אים נישט דורכגעלאזט, און ווי ער איז נפטר געווארן. ער לייגט צו אז מען דארף בעטן דעם רבונו של עולם אויף דער גרויסער ישועה פאר כלל ישראל אן קיין שאדן פאר קיין איד."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-07-hisorerus-beavodas-hashem",
+      "startSeg": 383,
+      "endSeg": 455,
+      "title": {
+        "en": "The chassid, the robber and the Rebbe's glass",
+        "yi": "דער חסיד, דער גזלן און דעם רבי'נס גלעזל"
+      },
+      "summary": {
+        "en": "The Rav tells of a chassid of Rabbi Moshe of Lelov who needed a yeshuah in parnasah and received a glass from the Rebbe as a segulah for parnasah and protection. When a robber in a forest took his borrowed money, the glass became the means of his rescue and of a large reward, and the Rav closes with a blessing.",
+        "yi": "דער משגיח דערציילט פון א חסיד פון רבי משה לעלובער וואס האט געדארפט א ישועה אין פרנסה, און דער רבי האט אים געגעבן א גלעזל אלס סגולה פאר פרנסה און שמירה. ווען א גזלן אין א וואלד האט אים צוגענומען זיין געבארגט געלט, איז דאס גלעזל געווארן די סיבה פון זיין ישועה און פון א גרויסן שכר, און דער משגיח ענדיגט מיט א ברכה."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "דער בעל התניא שייבת ... פתאה לתניא כל אנשי שלומים",
+      "work": "Igros Kodesh of the Ba'al HaTanya",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [11, 13, 14, 37], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "פון בני יששכר, שטעט מען זאל גיין",
+      "work": "Bnei Yissaschar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [73], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "פון בעש''ט ... מער ווי דריי צעהג אן מקוה",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [75, 76, 77], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די ערשטע שאלות ... צו פיסל ישוע",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 31a",
+      "sefariaRef": "Shabbat 31a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [110], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער עובד הלשון פון חז״ל ... ווייל ער רויבט",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 35b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [132, 139, 140], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "רוסלאנד מלכאוויטש שטעט",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [193, 194], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "דער בעל התניא עס זאל שרייבן א שולחן ערוך",
+      "work": "Shulchan Aruch HaRav",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [211, 212, 231], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "נשנה ברורה; משנה ברורה",
+      "work": "Mishnah Berurah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [211, 249, 255], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אמר רבי יקיבא זקרא על גדול ... פרשת קדושים ... כמחה",
+      "work": "Sifra",
+      "ref": "Sifra, Kedoshim, on Vayikra 19:18",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [282, 284], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "כולך יפך היותו ימין עמבך",
+      "work": "Shir HaShirim",
+      "ref": "Shir HaShirim 4:7",
+      "sefariaRef": "Song of Songs 4:7",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [306, 307], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Since the coming of Moshiach will reveal lights far greater than at the Exodus, the Rav advises using each immersion in the mikveh to prepare oneself to receive the kedushah of Moshiach.",
+        "yi": "וויבאלד ביאת המשיח וועט ארויסברענגען אורות א סך גרעסער ווי ביי יציאת מצרים, גיט דער משגיח אן עצה צו נוצן יעדע טבילה אין מקוה זיך צוצוגרייטן מקבל צו זיין די קדושה פון משיח."
+      },
+      "evidence": { "segs": [113, 115, 125, 126], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Eating without a brachah withholds blessing from the world, because the brachah is what draws shefa onto all of creation and all Jews.",
+        "yi": "ווער עס עסט אן א ברכה פארהאלט די ברכה פון דער וועלט, ווייל די ברכה איז דאס וואס ברענגט שפע אויף דער גאנצער בריאה און אויף אלע אידן."
+      },
+      "evidence": { "segs": [139, 140, 142, 143], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "A brachah by itself is only half a brachah; its completion is the amen answered to it, so one should say it aloud for others to answer.",
+        "yi": "א ברכה אליין איז א האלבע ברכה; איר שלימות איז דער אמן וואס מען ענטפערט דערויף, דערפאר זאל מען זי זאגן הויך אז אנדערע זאלן ענטפערן."
+      },
+      "evidence": { "segs": [152, 153, 154, 155], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Even for mitzvos where the Torah does not require lishmah, declaring one's intent beforehand brings kedushah into both the person and the object, as with tefillin and tzitzis.",
+        "yi": "אפילו ביי מצוות וואו די תורה פאדערט נישט לשמה, ברענגט די הזמנה פארדעם קדושה סיי אין מענטש און סיי אין חפץ, אזוי ווי ביי תפילין און ציצית."
+      },
+      "evidence": { "segs": [167, 170, 181, 184, 185], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Saying 'in the name of all Israel' is an insurance policy for a mitzvah: accusers can attack a private person's deed, but not one bound to all of Klal Yisrael, of whom it says there is no blemish.",
+        "yi": "דאס זאגן \"בשם כל ישראל\" איז אן אינשורענס פאר א מצוה: מקטרגים קענען זיך אנכאפן אין א יחיד'ס מעשה, אבער נישט אין א מצוה וואס איז געבונדן מיט גאנץ כלל ישראל, וואו ס'שטייט אז מום אין בך."
+      },
+      "evidence": { "segs": [299, 303, 307, 308, 310], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Beginning Baruch She'amar with the congregation makes one's whole tefillah count as tefillah b'tzibbur, even if the congregation has left before one reaches Shemoneh Esrei.",
+        "yi": "ווען מען הייבט אן ברוך שאמר מיטן עולם, הייסט די גאנצע תפילה תפילה בציבור, אפילו ווען דער עולם איז שוין אוועק ביז מען קומט צו שמונה עשרה."
+      },
+      "evidence": { "segs": [196, 199, 200, 201], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": {
+        "en": "Rabbi Moshe of Lelov tries to reach the Kosel",
+        "yi": "רבי משה לעלובער וויל צוקומען צום כותל"
+      },
+      "retelling": {
+        "en": "Rabbi Moshe of Lelov, son of Rabbi Dovid of Lelov, travelled to Eretz Yisrael to bring the geulah, believing that if he reached the Kosel he would bring it. He came to Tzfas but did not stay, and set out for Yerushalayim with great difficulty; on the way the kiddush cup from Lublin fell and broke, but he went on. In Yerushalayim he fell gravely ill and asked to be carried in his bed to the Kosel, but Arabs threw stones in the alleys and he had to be brought back, and he passed away.",
+        "yi": "רבי משה לעלובער, א זון פון רבי דוד לעלובער, איז געפארן קיין ארץ ישראל צו ברענגען די גאולה, און ער האט געהאלטן אז ווען ער וועט צוקומען צום כותל וועט ער זי ברענגען. ער איז אנגעקומען קיין צפת אבער נישט געבליבן, און מיט שוועריגקייטן איז ער געפארן קיין ירושלים; אויפן וועג איז דאס לובלינער קידוש גלעזל אראפגעפאלן און צובראכן געווארן, אבער ער איז ווייטער געפארן. אין ירושלים איז ער שטארק קראנק געווארן און געבעטן מען זאל אים טראגן מיטן בעט צום כותל, אבער אראבער האבן געווארפן שטיינער אין די געסלעך, מען האט אים געמוזט צוריקברענגען, און ער איז נפטר געווארן."
+      },
+      "people": ["Rabbi Moshe of Lelov", "Rabbi Dovid of Lelov"],
+      "evidence": { "segs": [314, 315, 325, 333, 346, 349], "confidence": 0.75 }
+    },
+    {
+      "title": {
+        "en": "The chassid, the robber and the Rebbe's glass",
+        "yi": "דער חסיד, דער גזלן און דעם רבי'נס גלעזל"
+      },
+      "retelling": {
+        "en": "A chassid of Rabbi Moshe of Lelov needed a yeshuah in parnasah and wanted to travel to another country; the Rebbe gave him a glass as a segulah for parnasah and protection, and he wondered what a glass could help. In a forest a robber stopped him and he had to hand over the money he had borrowed for his business. He asked to take a drink of brandy to calm himself, and in the struggle that followed he struck the glass into the robber's mouth with all his strength, and the robber died within seconds. The robber turned out to be a notorious criminal with a large reward on his head; the chassid also found gold and diamonds in his pockets, went to the police and received the reward.",
+        "yi": "א חסיד פון רבי משה לעלובער האט געדארפט א ישועה אין פרנסה און געוואלט פארן אין אן אנדער מדינה; דער רבי האט אים געגעבן א גלעזל אלס סגולה פאר פרנסה און שמירה, און ער האט זיך געוואונדערט וואס א גלעזל קען העלפן. אין א וואלד האט אים א גזלן אפגעשטעלט, און ער האט געמוזט אוועקגעבן דאס געלט וואס ער האט געבארגט פאר זיין געשעפט. ער האט געבעטן ער זאל מעגן נעמען א טרונק בראנפן זיך צו בארואיגן, און אין דעם געראנגל וואס איז געקומען דערנאך האט ער מיט זיין גאנצן כח אריינגעשטופט דאס גלעזל אין גזלנ'ס מויל, און דער גזלן איז אין עטליכע סעקונדעס געשטארבן. עס האט זיך ארויסגעשטעלט אז דאס איז געווען א באוואוסטער רוצח מיט א גרויסן שכר אויף זיין קאפ; דער חסיד האט אויך געפונען גאלד און בריליאנטן אין זיינע קעשענעס, איז געגאנגען צו דער פאליציי און באקומען דעם שכר."
+      },
+      "people": ["Rabbi Moshe of Lelov"],
+      "evidence": { "segs": [385, 393, 405, 429, 430, 442], "confidence": 0.7 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "How can a person protect his mitzvos and tefillos from accusers who could cause them to be lost?",
+        "yi": "ווי אזוי קען א מענטש באשיצן זיינע מצוות און תפילות פון מקטרגים וואס קענען זיי פארלירן?"
+      },
+      "answer": {
+        "en": "By doing them in the name of all Israel, binding himself to Klal Yisrael, on whom no blemish can rest.",
+        "yi": "דורך טון זיי בשם כל ישראל, וואס דורך דעם ווערט ער מקושר מיט כלל ישראל, אויף וועמען קען קיין פגם נישט חל זיין."
+      },
+      "questionSegs": [298, 299, 300],
+      "answerSegs": [303, 305, 306, 310],
+      "confidence": 0.7
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says that in the mikveh one should guard one's eyes, go in and out quickly, and not talk there.",
+        "yi": "דער משגיח זאגט אז אין מקוה זאל מען היטן די אויגן, גיין שנעל אריין און ארויס, און נישט רעדן דארט."
+      },
+      "evidence": { "segs": [90, 94, 97, 99, 103], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav advises that when immersing in the mikveh one should have in mind to prepare to receive the kedushah of Moshiach.",
+        "yi": "דער משגיח גיט אן עצה אז ביים טובלען זיך אין מקוה זאל מען אין זינען האבן זיך צוצוגרייטן מקבל צו זיין די קדושה פון משיח."
+      },
+      "evidence": { "segs": [125, 126], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one should say a brachah aloud so that another person can answer amen.",
+        "yi": "דער משגיח זאגט אז מען זאל זאגן א ברכה הויך כדי אן אנדערער זאל קענען ענטפערן אמן."
+      },
+      "evidence": { "segs": [154, 155], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that before davening one should accept the mitzvah of loving a fellow Jew and do one's mitzvos in the name of all Israel.",
+        "yi": "דער משגיח זאגט אז פארן דאווענען זאל מען מקבל זיין די מצוה פון ואהבת לרעך כמוך און טון די מצוות בשם כל ישראל."
+      },
+      "evidence": { "segs": [282, 303, 310], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "davening without haste",
+    "ba'alei tefillah",
+    "purity and the mikveh",
+    "anticipating Moshiach",
+    "brachos and amen",
+    "leshem yichud",
+    "tefillah b'tzibbur",
+    "love of fellow Jews",
+    "Klal Yisrael",
+    "Rabbi Moshe of Lelov"
+  ],
+  "concepts": [
+    { "he": "מתינות", "heardAs": ["המתנאי"] },
+    { "he": "בעלי עסקים", "heardAs": ["בעלי את סוכים"] },
+    { "he": "טהרה במקוה", "heardAs": ["טהרה במקוה"] },
+    { "he": "ביאת המשיח", "heardAs": ["ביעת המשיח"] },
+    { "he": "צפית לישועה", "heardAs": ["צו פיסל ישוע"] },
+    { "he": "שפע", "heardAs": ["שפע", "השפעה"] },
+    { "he": "לשם יחוד", "heardAs": ["לשם יחד", "לשון יחוס", "לשון יחיד", "שיין יחיד"] },
+    { "he": "הזמנה", "heardAs": ["הזמנה", "זמנה"] },
+    { "he": "ברוך שאמר", "heardAs": ["בור שימע", "בראש ימי'", "בארש יאמאר"] },
+    { "he": "פסוקי דזמרה", "heardAs": ["פרקודי זומער"] },
+    { "he": "תפילה בציבור", "heardAs": ["ספולה בציבור", "סעולה בן ציבור", "תפילה בתריבה"] },
+    { "he": "ואהבת לרעך כמוך", "heardAs": ["ווייטל רעכער כמו יחד"] },
+    { "he": "כותל המערבי", "heardAs": ["כתר מערבי", "כתל מרבי", "כתר מרבי"] },
+    { "he": "שמירה", "heardAs": ["שמירה"] }
+  ],
+  "people": [
+    { "name": "the Ba'al HaTanya", "heardAs": ["בעל התניא"] },
+    { "name": "the Bnei Yissaschar", "heardAs": ["בני יששכר"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["בעש''ט"] },
+    { "name": "the Maggid of Mezeritch", "heardAs": ["מגיד", "מזריט'א מגיד"] },
+    { "name": "Rabbi Akiva", "heardAs": ["רבי יקיבא"] },
+    { "name": "Rabbi Moshe of Lelov", "heardAs": ["רבי משה לעלובער", "ר' משה לעליבער", "ר' משה לעלעווער"] },
+    { "name": "Rabbi Dovid of Lelov", "heardAs": ["רבי דוד לעלובער"] },
+    { "name": "the Chozeh of Lublin", "heardAs": ["לובלינער"] }
+  ],
+  "asrNotes": "Yiddish ASR is poor throughout, and the Baal HaTanya's letter read in segs 11-15 and 36-58 is largely unrecoverable Hebrew; only its main points (no rushing at the amud, an hour and a half for Shacharis, longer davening on Shabbos) are used. The halachic discussion in segs 217-248 and 252-270, including the name of a sefer cited there, could not be recovered with confidence. The opening attribution of seg 67 and parts of both closing stories (segs 318-323, 412-427) are garbled; only clear story details are kept."
+}

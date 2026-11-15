@@ -1,0 +1,408 @@
+{
+  "shiurId": "yi-current-unc-bachurim-13",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "Learning the opening of Tanya with bachurim, the Rav explains the two souls in every Jew, the animal soul that dwells in the blood, and how the four elements give rise to the bad middos: anger and pride, lust for pleasure, frivolity and jokes, and sadness and laziness.",
+      "yi": "דער משגיח לערנט מיט בחורים דעם אנהייב פונעם תניא, און ערקלערט די צוויי נשמות וואס יעדער איד האט, די נפש הבהמית וואס וואוינט אינעם דם, און ווי אזוי פון די פיר יסודות קומען די מדות רעות: כעס און גאוה, תאות התענוגים, הוללות און ליצנות, און עצבות און עצלות."
+    },
+    "abstract": {
+      "en": "The Rav reads that, according to R' Chaim Vital, every Jew has two souls, the yetzer tov from holiness and the yetzer hara from the kelipah, and the person himself must choose which to listen to, since, as Eliyahu told the people, one cannot stand on two sides. The soul of the kelipah dwells in the blood, as the passuk says that the soul of flesh is in the blood; it is the animal soul, which seeks only its desires, and this is why eating blood is forbidden. He explains the four kelipos of Yechezkel's vision and kelipas nogah. A long digression links colors to the sefiros: red is blood and gevurah, white is chesed, green is life, which is why red means stop. He then shows the four elements behind the bad middos: fire brings anger and pride, water brings pleasures, wind brings frivolity and jokes, with stories of the Ropshitzer and the Belzer Rav, and earth brings sadness and laziness.",
+      "yi": "דער משגיח לערנט אז לויט ר' חיים וויטאל האט יעדער איד צוויי נשמות, דעם יצר טוב פון קדושה און דעם יצר הרע פון דער קליפה, און דער מענטש אליין דארף קלייבן צו וועמען צו הערן, ווייל ווי אליהו הנביא האט געזאגט, מ'קען נישט שטיין אויף צוויי זייטן. די נשמה פון דער קליפה וואוינט אינעם דם, ווי דער פסוק זאגט אז די נפש פונעם בשר איז אינעם דם; דאס איז די נפש הבהמית, וואס וויל נאר אירע תאוות, און דערפאר איז אסור צו עסן דם. ער ערקלערט די פיר קליפות פונעם מראה פון יחזקאל און די קליפת נוגה. אין א לענגערן אויסגאנג פארבינדט ער די קאלירן מיט די ספירות: רויט איז דם און גבורה, ווייס איז חסד, גרין איז חיים, און דערפאר מיינט רויט סטאפ. דערנאך ווייזט ער ווי די פיר יסודות ברענגען די מדות רעות: פון אש קומט כעס און גאוה, פון מים תענוגים, פון רוח הוללות און ליצנות, מיט מעשיות פונעם ראפשיצער און פונעם בעלזער רב, און פון עפר עצבות און עצלות."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Every person has two souls, the yetzer tov from holiness and the yetzer hara from the kelipah, and the person must choose which one to listen to.",
+          "yi": "יעדער מענטש האט צוויי נשמות, דעם יצר טוב פון קדושה און דעם יצר הרע פון דער קליפה, און דער מענטש דארף קלייבן צו וועלכן ער הערט זיך צו."
+        },
+        "evidence": { "segs": [15, 18, 20, 23, 27], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The animal soul dwells in the blood and seeks only its desires; therefore the Torah forbade eating blood, which would strengthen it.",
+          "yi": "די נפש הבהמית וואוינט אינעם דם און זוכט נאר אירע תאוות; דערפאר האט די תורה אסור געמאכט צו עסן דם, וואס וואלט זי געשטארקט."
+        },
+        "evidence": { "segs": [59, 60, 122, 138, 147], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Each color reflects one of the ten sayings and sefiros: red is gevurah and blood, white is chesed, green is life.",
+          "yi": "יעדער קאליר שטאמט פון איינע פון די עשרה מאמרות און ספירות: רויט איז גבורה און דם, ווייס איז חסד, גרין איז חיים."
+        },
+        "evidence": { "segs": [239, 242, 259, 264, 267], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Everything in the world is made of the four elements, fire, wind, water and earth, and the bad middos come from them.",
+          "yi": "יעדע זאך אויף דער וועלט איז געמאכט פון די פיר יסודות, אש, רוח, מים און עפר, און פון זיי קומען די מדות רעות."
+        },
+        "evidence": { "segs": [367, 392, 396, 436, 710], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Anger and pride both come from fire, which always rises; anger comes from a person's sense that everything must go as he wants.",
+          "yi": "כעס און גאוה קומען ביידע פון אש, וואס הייבט זיך אלעמאל אויף; כעס קומט פון דעם וואס א מענטש מיינט אז אלעס דארף גיין ווי ער וויל."
+        },
+        "evidence": { "segs": [479, 483, 493, 500, 502], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Frivolity, jokes and idle talk come from wind: one leaves them with nothing, while sadness and laziness come from earth, which sinks down.",
+          "yi": "הוללות, ליצנות און דברים בטלים קומען פון רוח: מ'גייט דערפון אוועק מיט גארנישט; און עצבות און עצלות קומען פון עפר, וואס פאלט אראפ."
+        },
+        "evidence": { "segs": [567, 572, 575, 684, 704], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-current-bachurim-13-bachurim-5773-vypekudei",
+      "startSeg": 0,
+      "endSeg": 57,
+      "title": { "en": "Two souls in every person", "yi": "צוויי נשמות אין יעדן מענטש" },
+      "summary": {
+        "en": "The Rav reads from R' Chaim Vital that every Jew, tzaddik or rasha, has two souls, the yetzer tov from holiness and the yetzer hara from the kelipah, and a third, the person himself, must choose between them. He brings Eliyahu's words that one cannot stand on two sides.",
+        "yi": "דער משגיח לערנט פון ר' חיים וויטאל אז יעדער איד, צדיק אדער רשע, האט צוויי נשמות, דעם יצר טוב פון קדושה און דעם יצר הרע פון דער קליפה, און דער דריטער, דער מענטש אליין, דארף קלייבן. ער ברענגט די ווערטער פון אליהו הנביא אז מ'קען נישט שטיין אויף צוויי זייטן."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-13-bachurim-5773-vypekudei",
+      "startSeg": 58,
+      "endSeg": 198,
+      "title": { "en": "The animal soul in the blood", "yi": "די נפש הבהמית אינעם דם" },
+      "summary": {
+        "en": "The Rav explains that the soul of the kelipah is clothed in the blood and is the animal soul, which wants only food, drink and desires. He describes the four kelipos and kelipas nogah, and explains why eating blood is forbidden and why the lifeblood leaves at shechitah.",
+        "yi": "דער משגיח ערקלערט אז די נשמה פון דער קליפה איז מלובש אינעם דם און איז די נפש הבהמית, וואס וויל נאר עסן, טרינקען און תאוות. ער שילדערט די פיר קליפות און קליפת נוגה, און ערקלערט פארוואס עס איז אסור צו עסן דם און פארוואס דער דם הנפש גייט ארויס ביי דער שחיטה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-13-bachurim-5773-vypekudei",
+      "startSeg": 199,
+      "endSeg": 361,
+      "title": { "en": "Colors, sefiros and the traffic light", "yi": "קאלירן, ספירות און דער טראפיק לייט" },
+      "summary": {
+        "en": "The Rav explains that the nations kept things from Noach without knowing why: red means stop because red is blood and gevurah, green means go because green is life, and white is chesed. This is why doctors, bakers and those wearing a kittel on Yom Kippur dress in white.",
+        "yi": "דער משגיח ערקלערט אז די גוים האבן מקבל געווען זאכן פון נח אן צו וויסן פארוואס: רויט מיינט סטאפ ווייל רויט איז דם און גבורה, גרין מיינט גיין ווייל גרין איז חיים, און ווייס איז חסד. דערפאר גייען דאקטוירים, בעקער און די וואס טראגן א קיטל יום כיפור אנגעטון אין ווייס."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-13-bachurim-5773-vypekudei",
+      "startSeg": 362,
+      "endSeg": 477,
+      "title": { "en": "The four elements and the fire of anger", "yi": "די פיר יסודות און דער אש פון כעס" },
+      "summary": {
+        "en": "Returning to the text, the Rav explains the four elements and compares them to solid, liquid, gas and energy, shows how a burning table releases fire, wind and water while earth remains, and links them to the four letters of Hashem's name. Anger comes from the element of fire, which is why an angry man turns red, like the rising and setting sun.",
+        "yi": "צוריק צום ספר ערקלערט דער משגיח די פיר יסודות און גלייכט זיי צו סאליד, ליקוויד, גאז און ענערגיע, ווייזט ווי א טיש וואס ברענט לאזט ארויס אש, רוח און מים, און עפר בלייבט, און פארבינדט זיי מיט די פיר אותיות פונעם שם הוי\"ה. כעס קומט פונעם יסוד האש, און דערפאר ווערט א מענטש אין כעס רויט, אזוי ווי די זון ביים אויפגיין און ביים אונטערגיין."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-13-bachurim-5773-vypekudei",
+      "startSeg": 478,
+      "endSeg": 556,
+      "title": { "en": "Pride rises like fire; pleasure from water", "yi": "גאוה הייבט זיך ווי אש; תענוג פון וואסער" },
+      "summary": {
+        "en": "The Rav explains that anger and pride are one thing: a man gets angry because things did not go as he wants, while a humble man never gets angry; both come from fire, which always rises. The desire for pleasures comes from water, and this is why people drink tasteless water with relish.",
+        "yi": "דער משגיח ערקלערט אז כעס און גאוה זענען איין זאך: א מענטש ווערט אין כעס ווייל ס'איז נישט געגאנגען ווי ער וויל, און אן עניו ווערט קיינמאל נישט אין כעס; ביידע קומען פון אש, וואס הייבט זיך אלעמאל אויף. די תאוה צו תענוגים קומט פון וואסער, און דערפאר טרינקען מענטשן וואסער אן קיין טעם מיט א געשמאק."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-13-bachurim-5773-vypekudei",
+      "startSeg": 557,
+      "endSeg": 649,
+      "title": { "en": "Wind: frivolity, jokes and the Ropshitzer", "yi": "רוח: הוללות, ליצנות און דער ראפשיצער" },
+      "summary": {
+        "en": "The Rav explains that frivolity, jokes and idle talk come from wind: they hold nothing, and after a wedding full of a badchan's jokes one leaves with nothing and no more yiras Shamayim. He contrasts the jests of great tzaddikim, telling how the Linsker Rav listened to his son the Ropshitzer's wedding rhymes and found Kabbalah in every word.",
+        "yi": "דער משגיח ערקלערט אז הוללות, ליצנות און דברים בטלים קומען פון רוח: ס'איז גארנישטא אין זיי, און נאך א חתונה פול מיט א בדחנ'ס וויצן גייט מען אוועק מיט גארנישט און נישט מיט מער יראת שמים. לאידך גיסא ברענגט ער ווי דער לינסקער רב האט זיך צוגעהערט צו די גראמען פון זיין זון דעם ראפשיצער אויף א חתונה און געפונען קבלה אין יעדן ווארט."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-current-bachurim-13-bachurim-5773-vypekudei",
+      "startSeg": 650,
+      "endSeg": 714,
+      "title": { "en": "Tzaddikim's speech; sadness and laziness from earth", "yi": "צדיקים'ס רייד; עצבות און עצלות פון עפר" },
+      "summary": {
+        "en": "The Rav tells how R' Aharon of Belz heard holy matters in his father's talk about politics, showing that a tzaddik's simple words hold yichudim. He then explains that sadness and laziness come from earth, which sinks down, and describes people who greet a new day without joy or desire, and closes that good natural middos also come from the four elements.",
+        "yi": "דער משגיח דערציילט ווי ר' אהרן פון בעלז האט געהערט הייליגע זאכן אין זיין טאטנ'ס רייד וועגן פאליטיק, א ראיה אז א צדיק'ס פשוטע ווערטער האבן אין זיך יחודים. דערנאך ערקלערט ער אז עצבות און עצלות קומען פון עפר, וואס גייט אראפ, שילדערט מענטשן וואס באגעגענען א נייעם טאג אן שמחה און אן חשק, און ענדיגט אז אויך די גוטע מדות שבטבע קומען פון די פיר יסודות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "ר' חיים ביטאל זאל בשער הקדושה",
+      "work": "Shaar HaKedushah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [5, 6], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "ר' יצחק'ים שעה נהן פרק ב'",
+      "work": "Etz Chaim",
+      "ref": "Etz Chaim, Shaar 50, ch. 2",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [7, 8, 9], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "יש שטען און שמות ... נפש שחר את מצד הקליפה וסדכי אחרא",
+      "work": "Tanya",
+      "ref": "Tanya ch. 1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [10, 11, 39, 40, 58], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "שמות עכדכציבן א נשמות עניות אתי",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 57:16",
+      "sefariaRef": "Isaiah 57:16",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [35, 36, 37], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "סעורי הנביא געזאגט מסע, את מסע יעדתם פסחים השתי ישיב",
+      "work": "Melachim I",
+      "ref": "Melachim I 18:21",
+      "sefariaRef": "I Kings 18:21",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [47, 48, 49, 50], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "כנפש אהדים בדם; כנפש א בשר בדמל",
+      "work": "Vayikra",
+      "ref": "Vayikra 17:11",
+      "sefariaRef": "Leviticus 17:11",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [141, 142, 193, 194], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ונוגה לא סובב ... נביאי חסקא",
+      "work": "Yechezkel",
+      "ref": "Yechezkel 1:4",
+      "sefariaRef": "Ezekiel 1:4",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [99, 100, 101, 107], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "בתסורי מאמרות ... משנה נובעות",
+      "work": "Pirkei Avos",
+      "ref": "Avos 5:1",
+      "sefariaRef": "Pirkei Avot 5:1",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [224, 225, 227, 228], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "א פארקארט יו לא חזי, מזלה יא חזי",
+      "work": "Gemara Megillah",
+      "ref": "Megillah 3a",
+      "sefariaRef": "Megillah 3a",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [322, 323, 324], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ויואפע ליעולם אמדות ... א פסוק אין קהלת",
+      "work": "Koheles",
+      "ref": "Koheles 1:4",
+      "sefariaRef": "Ecclesiastes 1:4",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [431, 433, 434], "confidence": 0.7 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav explains that the nations kept customs from Noach whose reasons they forgot: red for stop and green for go reflect blood as gevurah and green as life.",
+        "yi": "דער משגיח ערקלערט אז די גוים האבן אפגעהיט מנהגים פון נח וואס זייער טעם האבן זיי פארגעסן: רויט פאר סטאפ און גרין פאר גיין שטאמען פון דעם אז דם איז גבורה און גרין איז חיים."
+      },
+      "evidence": { "segs": [205, 206, 297, 299, 301, 303], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Doctors and bakers wear white, an impractical color, because they bestow chesed; their mazal sees what they themselves do not know.",
+        "yi": "דאקטוירים און בעקער גייען אנגעטון אין ווייס, א קאליר וואס איז נישט פראקטיש, ווייל זיי זענען משפיע חסד; זייער מזל זעט וואס זיי אליין ווייסן נישט."
+      },
+      "evidence": { "segs": [322, 326, 334, 337, 340], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Water has no taste, color or smell, yet people drink it with relish, because water itself is pleasure and all pleasures come from it.",
+        "yi": "וואסער האט נישט קיין טעם, קיין קאליר און קיין ריח, און פונדעסטוועגן טרינקען מענטשן עס מיט א געשמאק, ווייל וואסער אליין איז תענוג און אלע תענוגים קומען דערפון."
+      },
+      "evidence": { "segs": [541, 547, 552, 554, 556], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Anger is a form of pride: a person who has worked on his pride will never get angry, since he does not demand that everything go as he wants.",
+        "yi": "כעס איז א סארט גאוה: א מענטש וואס האט אויסגעארבעט זיין גאוה וועט קיינמאל נישט ווערן אין כעס, ווייל ער פארלאנגט נישט אז אלעס זאל גיין ווי ער וויל."
+      },
+      "evidence": { "segs": [479, 482, 483, 493, 499], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "When a tzaddik speaks simple words, even jests or talk of politics, they can contain great yichudim through gematrios and initials.",
+        "yi": "ווען א צדיק רעדט פשוטע ווערטער, אפילו גראמען אדער רייד וועגן פאליטיק, קענען זיי באהאלטן גרויסע יחודים דורך גימטריאות און ראשי תיבות."
+      },
+      "evidence": { "segs": [652, 653, 668, 670, 671], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Earth is the element that can never be nullified and always sinks downward; from it come sadness and laziness, a life without energy or will.",
+        "yi": "עפר איז דער יסוד וואס קען קיינמאל נישט בטל ווערן און גייט אלעמאל אראפ; פון אים קומען עצבות און עצלות, א לעבן אן ענערגיע און אן ווילן."
+      },
+      "evidence": { "segs": [426, 684, 704, 705, 708], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Ropshitzer's wedding rhymes", "yi": "די חתונה-גראמען פונעם ראפשיצער" },
+      "retelling": {
+        "en": "As a young man, R' Naftali of Ropshitz used to act as a wedding jester and say rhymes. His father-in-law was very upset that he busied himself with jokes and complained to the Linsker Rav, his father. The Linsker Rav suggested they go together and hear what he says; they stood by the window and listened. The Linsker Rav said that until now every word his son had said was according to Kabbalah, but now he no longer understood.",
+        "yi": "ר' נפתלי פון ראפשיץ, ווען ער איז געווען א יונגערמאן, פלעגט ער משמח זיין חתן וכלה און זאגן גראמען ביי חתונות. זיין שווער האט עס שטארק פארדראסן אז ער פארנעמט זיך מיט ליצנות, און ער האט זיך באקלאגט פארן לינסקער רב, זיין טאטע. דער לינסקער רב האט געזאגט מ'זאל צוזאמען גיין הערן וואס ער זאגט, און זיי זענען געשטאנען ביים פענצטער און זיך צוגעהערט. דער לינסקער רב האט געזאגט אז ביז יעצט איז יעדעס ווארט פון זיין זון געווען לויט הקבלה, אבער יעצט פארשטייט ער שוין נישט מער."
+      },
+      "people": ["R' Naftali of Ropshitz", "the Linsker Rav"],
+      "evidence": { "segs": [621, 625, 634, 637, 644, 649], "confidence": 0.7 }
+    },
+    {
+      "title": { "en": "R' Aharon of Belz and his father's talk of politics", "yi": "ר' אהרן פון בעלז און זיין טאטנ'ס רייד וועגן פאליטיק" },
+      "retelling": {
+        "en": "Someone wanted to speak with R' Aharon of Belz, but he was always busy learning and davening. Once, when his father, the Belzer Rebbe R' Yissachar Dov, was talking with people about the politics of the day and R' Aharon stood listening, the man thought he could now approach him, but R' Aharon hushed him. Later he told him that these were holy words of his father; he understood what his father was saying, while the others thought he was speaking about politics.",
+        "yi": "איינער האט געוואלט רעדן מיט ר' אהרן פון בעלז, אבער ער איז אלעמאל געווען פארנומען מיט לערנען און דאווענען. איינמאל, ווען זיין טאטע, דער בעלזער רבי ר' יששכר דוב, האט גערעדט מיט מענטשן וועגן די פאליטיק פונעם טאג און ר' אהרן איז געשטאנען און זיך צוגעהערט, האט יענער געמיינט אז יעצט קען ער צוגיין, אבער ר' אהרן האט אים אנגעשטילט. שפעטער האט ער אים געזאגט אז דאס זענען געווען הייליגע ווערטער פון זיין טאטן; ער האט פארשטאנען וואס דער טאטע רעדט, און די אנדערע האבן געמיינט אז ער רעדט פאליטיק."
+      },
+      "people": ["R' Aharon of Belz", "R' Yissachar Dov of Belz"],
+      "evidence": { "segs": [654, 656, 660, 663, 665, 667], "confidence": 0.7 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "Why did the Torah forbid eating an animal's blood?", "yi": "פארוואס האט די תורה אסור געמאכט צו עסן דעם דם פון א בהמה?" },
+      "answer": { "en": "Because the animal soul is in the blood, and eating it would strengthen one's own animal soul, while the meat gives strength for serving Hashem.", "yi": "ווייל די נפש הבהמית איז אינעם דם, און עסן אים וואלט געשטארקט די אייגענע נפש הבהמית, בשעת דאס פלייש גיט כח צו עבודת השם." },
+      "questionSegs": [138],
+      "answerSegs": [139, 140, 146, 147],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why does a red light mean stop and a green light mean go?", "yi": "פארוואס מיינט א רויטע לייט סטאפ און א גרינע לייט גיין?" },
+      "answer": { "en": "Red is blood and gevurah, which holds back; green is life.", "yi": "רויט איז דם און גבורה, וואס האלט צוריק; גרין איז חיים." },
+      "questionSegs": [213, 217, 293, 294],
+      "answerSegs": [301, 303, 305, 309],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why do doctors and bakers dress in white, though it soils easily?", "yi": "פארוואס גייען דאקטוירים און בעקער אנגעטון אין ווייס, כאטש עס ווערט גרינג שמוציג?" },
+      "answer": { "en": "Because white is chesed, and they bestow kindness: healing and bread.", "yi": "ווייל ווייס איז חסד, און זיי זענען משפיע חסד: רפואה און ברויט." },
+      "questionSegs": [317, 333, 337],
+      "answerSegs": [326, 334, 335],
+      "confidence": 0.7
+    },
+    {
+      "question": { "en": "Why does a person become angry?", "yi": "פארוואס ווערט א מענטש אין כעס?" },
+      "answer": { "en": "Out of pride: he feels everything must go exactly as he wants, and anger comes from the element of fire.", "yi": "פון גאוה: ער שפירט אז אלעס מוז גיין פונקט ווי ער וויל, און כעס קומט פונעם יסוד האש." },
+      "questionSegs": [480],
+      "answerSegs": [481, 483, 493, 500],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why do people drink water with relish though it has no taste?", "yi": "פארוואס טרינקען מענטשן וואסער מיט א געשמאק כאטש עס האט נישט קיין טעם?" },
+      "answer": { "en": "Because water itself is pleasure, and all kinds of pleasures come from water.", "yi": "ווייל וואסער אליין איז תענוג, און אלע מינים תענוגים קומען פון וואסער." },
+      "questionSegs": [541, 552, 553],
+      "answerSegs": [554, 555, 556],
+      "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says that one must be serious, rather than seek to let loose and free oneself of restraint through jokes.",
+        "yi": "דער משגיח זאגט אז מ'דארף זיין ערנסט, און נישט זוכן זיך צו באפרייען פון אלע באגרענעצונגען דורך וויצן."
+      },
+      "evidence": { "segs": [612, 613, 615, 616], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that one who has worked on his pride will not come to anger.",
+        "yi": "דער משגיח זאגט אז ווער עס האט אויסגעארבעט זיין גאוה וועט נישט קומען צו כעס."
+      },
+      "evidence": { "segs": [482, 491, 492], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav describes the proper way to greet a new day: with alertness and joy, beginning with learning and then davening.",
+        "yi": "דער משגיח שילדערט ווי מ'דארף מקבל זיין א נייעם טאג: מיט א מונטערקייט און א פרייליכקייט, אנהייבן מיט לערנען און דערנאך דאווענען."
+      },
+      "evidence": { "segs": [696, 697], "confidence": 0.7 }
+    }
+  ],
+  "candidateTopics": [
+    "Tanya chapter 1",
+    "two souls in a Jew",
+    "animal soul and blood",
+    "four elements and middos",
+    "colors and the sefiros",
+    "anger and pride",
+    "frivolity and jokes",
+    "sadness and laziness",
+    "kelipas nogah"
+  ],
+  "concepts": [
+    { "he": "נפש הבהמית", "heardAs": ["נפש הבאמת", "נפש הבאהמי", "א בהימש און נשמה", "בהמ'ישע נשמה"] },
+    { "he": "קליפה", "heardAs": ["קליפה", "קליפעס"] },
+    { "he": "סטרא אחרא", "heardAs": ["וסדכי אחרא", "רבי אכסיארא"] },
+    { "he": "קליפת נוגה", "heardAs": ["ונוגה לא סובב", "נוגע"] },
+    { "he": "יצר הרע", "heardAs": ["יצר הרע"] },
+    { "he": "יצר טוב", "heardAs": ["יצר טוב"] },
+    { "he": "גבורה", "heardAs": ["גברה", "מידת הגבור"] },
+    { "he": "חסד", "heardAs": ["חסד", "חסיד"] },
+    { "he": "עשרה מאמרות", "heardAs": ["תסורי מאמרות", "עסקרים ממוראות"] },
+    { "he": "ארבע יסודות", "heardAs": ["פיר יסודות", "פיר יסידות"] },
+    { "he": "עפר", "heardAs": ["אפע", "אפעל", "עפער"] },
+    { "he": "הוללות", "heardAs": ["הוללות", "העוללות"] },
+    { "he": "ליצנות", "heardAs": ["ליצנות", "ליצענות"] },
+    { "he": "עצלות", "heardAs": ["אצלות"] },
+    { "he": "תענוגים", "heardAs": ["התענגים", "תינוק", "תנוגים"] },
+    { "he": "דם הנפש", "heardAs": ["די דם הנפש"] }
+  ],
+  "people": [
+    { "name": "R' Chaim Vital", "heardAs": ["ר' חיים ביטאל"] },
+    { "name": "Eliyahu HaNavi", "heardAs": ["סעורי הנביא"] },
+    { "name": "Noach", "heardAs": ["נח", "נייעך"] },
+    { "name": "R' Naftali of Ropshitz", "heardAs": ["דער ראפשיצער רב", "ר' נפתלי' ראפשיצער", "רשעות הרב"] },
+    { "name": "the Linsker Rav", "heardAs": ["דער לינסקי'ער רב"] },
+    { "name": "R' Aharon of Belz", "heardAs": ["דער רבי אהר'לע בעלזאוו", "ר' אהרל'"] },
+    { "name": "R' Yissachar Dov of Belz", "heardAs": ["דער רבי ר' יצחק דוב בעלזאוו"] }
+  ],
+  "asrNotes": "Yiddish ASR fair for the Rav's explanations but very poor on the quoted text of Tanya ch. 1 and on pesukim, which were recovered from context. The catalog title is only a filename (bachurim, Vayakhel-Pekudei) and names no topic, so no section is mapped to it. The opening segments 0-4 and parts of the color digression (segs 218-219, 349-350) are unintelligible; the father of R' Aharon of Belz is heard as 'R' Yitzchak Dov' and identified from context."
+}

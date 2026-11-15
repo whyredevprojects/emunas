@@ -1,0 +1,91 @@
+{
+ "shiurId": "en-simchos-en-unc-10",
+ "topics": [
+  {
+   "id": "bar-mitzvah",
+   "salience": 1
+  },
+  {
+   "id": "netzach-yisroel",
+   "salience": 0.6
+  },
+  {
+   "id": "chodesh-adar",
+   "salience": 0.5
+  },
+  {
+   "id": "koach-hatefilah",
+   "salience": 0.4
+  },
+  {
+   "id": "yiras-shamayim",
+   "salience": 0.4
+  },
+  {
+   "id": "dovid-hamelech",
+   "salience": 0.3
+  },
+  {
+   "id": "ahavas-yisroel",
+   "salience": 0.3
+  },
+  {
+   "id": "tzedakah-chesed",
+   "salience": 0.3
+  }
+ ],
+ "sections": [
+  {
+   "index": 0,
+   "topicIds": [
+    "bar-mitzvah",
+    "dovid-hamelech",
+    "koach-hatefilah"
+   ]
+  },
+  {
+   "index": 1,
+   "topicIds": [
+    "netzach-yisroel",
+    "chodesh-adar",
+    "emunah-safek-amalek"
+   ]
+  },
+  {
+   "index": 2,
+   "topicIds": [
+    "bar-mitzvah",
+    "netzach-yisroel"
+   ]
+  }
+ ],
+ "conceptIds": [
+  "ahavas-yisrael",
+  "klal-yisrael",
+  "kvitel",
+  "ribono-shel-olam",
+  "ruchniyus"
+ ],
+ "personIds": [
+  "dovid-hamelech",
+  "haman",
+  "moshe-rabbeinu"
+ ],
+ "workIds": [
+  "berachos",
+  "megillah",
+  "tehillim",
+  "zohar"
+ ],
+ "sourceWorkIds": [
+  "tehillim",
+  "zohar",
+  "tehillim",
+  null,
+  "berachos",
+  "megillah",
+  null,
+  "zohar",
+  "tehillim"
+ ]
+}

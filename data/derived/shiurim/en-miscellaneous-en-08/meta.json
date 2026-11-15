@@ -1,0 +1,67 @@
+{
+ "shiurId": "en-miscellaneous-en-08",
+ "generatedAt": "2026-11-15T04:53:46.350Z",
+ "shiur": {
+  "id": "en-miscellaneous-en-08",
+  "lang": "en",
+  "category": "misc",
+  "seriesId": null,
+  "seriesOrder": null,
+  "catalog": {
+   "source": "pocket-guide-2012",
+   "sectionId": "miscellaneous-en",
+   "sectionTitle": "MISCELLANEOUS (English)",
+   "n": "8",
+   "page": 69,
+   "titleOriginal": "על האדמו”ר מסאטמאר זצ”ל",
+   "subTitle": null,
+   "heading": "הספד",
+   "derived": "catalog",
+   "note": null
+  },
+  "parsha": null,
+  "zman": null,
+  "perek": null,
+  "hebrewYears": [5739],
+  "recordingIds": [
+   "e-english-topics-08-e-misc-satmar"
+  ],
+  "inScope": true,
+  "outOfScopeReason": null,
+  "pathNotes": []
+ },
+ "series": null,
+ "catalogTopics": [
+  "על האדמו”ר מסאטמאר זצ”ל"
+ ],
+ "totalDurationSec": 685.792653,
+ "recordings": [
+  {
+   "recording": {
+    "id": "e-english-topics-08-e-misc-satmar",
+    "audioKey": "02 Harav Moshe Wolfson - English Shiurim/English Topics/08 E. Misc Satmar.mp3",
+    "transcriptKey": "transcripts/02 Harav Moshe Wolfson - English Shiurim/English Topics/08 E. Misc Satmar",
+    "durationSec": 685.79,
+    "asrModel": "@cf/openai/whisper-large-v3-turbo",
+    "sizeBytes": 2743626,
+    "duplicateOf": null,
+    "partOf": null
+   },
+   "order": 0,
+   "transcriptLanguage": null,
+   "asrModel": "@cf/openai/whisper-large-v3-turbo",
+   "durationSec": 685.792653,
+   "segmentCount": 83,
+   "starts": [1.68,35.71,53.24,68.6,75.42,89.51,97.97,106.98,112.76,117.28,123.28,129.59,136.05,151.04,159.26,169.29,176.82,186.96,188.24,194.61,206.13,211.76,222.7,244.72,257.45,271.18,283.26,298.94,335.62,345.7,353.37,361.31,372.18,381.04,393.01,399.59,417.78,425.36,428.36,432.6,438.16,439.42,441.06,446.56,448.3,450.5,454.38,458.62,461.82,470.98,474.84,480.3,482.34,486.02,487.98,492.12,496.08,497.84,500.22,502.18,503.7,507.42,511.18,515.58,520.82,524.3,527.44,535.84,540.4,544.94,554.34,564.13,575.83,578.65,583.09,589.95,598.06,599.16,601.17,632.38,643.72,652.92,660.42],
+   "ends": [33.88,51.23,59.95,74.72,86.91,97.29,106.98,110.92,116.32,123.28,127.76,136.05,149.2,157.47,168.19,175.92,186.96,187.82,191.04,206.13,206.77,219.36,237.96,257.45,271.18,282.34,298.94,335.62,345.7,351.9,361.31,369.99,381.04,393.01,399.59,417.38,425.36,427.68,432.6,433.92,439.42,441.06,443.1,448.3,450.5,451.56,458.16,461.32,468.02,473.38,478.4,482.34,484.52,487.98,492.12,493.74,497.84,498.84,502.18,503.7,505.46,509.6,513.34,518.3,523.38,527.14,534.5,538.8,544.14,554.34,564.13,573.83,577.95,582.43,589.95,598.06,598.72,599.54,631.42,643,652.44,659.62,679.28],
+   "noise": [
+    {
+     "idx": 27,
+     "types": [
+      "long_sparse"
+     ]
+    }
+   ]
+  }
+ ]
+}

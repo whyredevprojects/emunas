@@ -1,0 +1,101 @@
+{
+ "shiurId": "en-simchos-en-unc-09",
+ "topics": [
+  {
+   "id": "bar-mitzvah",
+   "salience": 1
+  },
+  {
+   "id": "sefiras-haomer",
+   "salience": 0.6
+  },
+  {
+   "id": "hachanah-lekabbalas-hatorah",
+   "salience": 0.6
+  },
+  {
+   "id": "madreigos-haneshamah",
+   "salience": 0.5
+  },
+  {
+   "id": "avodah-begashmiyus",
+   "salience": 0.5
+  },
+  {
+   "id": "lag-baomer",
+   "salience": 0.3
+  },
+  {
+   "id": "shidduchim-chasunah",
+   "salience": 0.3
+  }
+ ],
+ "sections": [
+  {
+   "index": 0,
+   "topicIds": [
+    "bar-mitzvah",
+    "sefiras-haomer",
+    "lag-baomer"
+   ]
+  },
+  {
+   "index": 1,
+   "topicIds": [
+    "bar-mitzvah",
+    "madreigos-haneshamah",
+    "shidduchim-chasunah"
+   ]
+  },
+  {
+   "index": 2,
+   "topicIds": [
+    "bar-mitzvah",
+    "hachanah-lekabbalas-hatorah",
+    "korbanos"
+   ]
+  },
+  {
+   "index": 3,
+   "topicIds": [
+    "avodah-begashmiyus",
+    "kashrus",
+    "bar-mitzvah"
+   ]
+  }
+ ],
+ "conceptIds": [
+  "michla-dimheimnusa",
+  "nefesh-ruach-neshamah",
+  "neshamah-yeseirah",
+  "ribono-shel-olam",
+  "sefiras-haomer"
+ ],
+ "personIds": [
+  "avnei-nezer",
+  "avraham-avinu",
+  "rabbi-elazar",
+  "rabbi-shimon-bar-yochai",
+  "rabbi-yossi-ben-lakunya"
+ ],
+ "workIds": [
+  "avnei-nezer",
+  "machzor",
+  "mishlei",
+  "shemos",
+  "vayikra",
+  "zohar"
+ ],
+ "sourceWorkIds": [
+  "avnei-nezer",
+  "zohar",
+  "zohar",
+  null,
+  "mishlei",
+  "vayikra",
+  null,
+  "shemos",
+  "zohar",
+  "machzor"
+ ]
+}

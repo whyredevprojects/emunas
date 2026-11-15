@@ -1,0 +1,513 @@
+{
+  "shiurId": "yi-shiurim-labachurim-02",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav tells bachurim that the signs of Moshiach are all around, and that by sanctifying the beginning of each day with zeal, guarded speech before davening, tevilah with hope for the geulah and learning Torah with reverence, they hasten their own tikkun and the redemption.",
+      "yi": "דער משגיח זאגט פאר בחורים אז די סימנים פון משיח זענען היינט קלאר צו זען, און אז מיט מקדש זיין דעם אנהייב פונעם טאג, מיט זריזות, מיט נישט רעדן פארן דאווענען, מיט טבילה מיט צפיה צו דער גאולה און מיט לערנען תורה מיט כובד ראש, ברענגען זיי גיכער זייער אייגענעם תיקון און די ישועה."
+    },
+    "abstract": {
+      "en": "The Rav opens with the signs Chazal give for the coming of Moshiach, comparing the present state of the world to heavy clouds with thunder and lightning before rain. There are set times when the redemption is more likely, and a final time when it must come; by every sign this period is especially ripe. Mishnayos, tefillah, tzedakah and teshuvah bring Moshiach, and since Hashem acts measure for measure, a bachur who hurries to davening and learning awakens Heaven to bring the yeshuah early. Each soul is sent down for its tikkun, and one who comes early is rectified early. The Sanzer Rav's story of the torn bekeshe shows how a garment of mitzvos riddled with excuses falls apart. The beginning must be holy: the first words of the morning, no idle talk before davening, tevilah with hope for Moshiach, and Torah learned with reverence.",
+      "yi": "דער משגיח עפנט מיט די סימנים וואס חז\"ל געבן אויף ביאת המשיח, און ער פארגלייכט דעם היינטיגן מצב פון דער וועלט צו שווערע וואלקנס מיט בליצן און דונערן פאר א רעגן. עס זענען דא זמנים ווען די גאולה איז מער שייך, און א לעצטער זמן ווען זי מוז קומען, און לויט אלע סימנים איז היינט זייער שייך. משניות, תפילה, צדקה און תשובה ברענגען משיח, און ווייל דער רבונו של עולם פירט מדה כנגד מדה, איז א בחור וואס יאגט זיך צום דאווענען און צום לערנען מעורר אז די ישועה זאל קומען פרי. יעדע נשמה קומט אראפ צוליב איר תיקון, און ווער עס קומט פריער ווערט פריער מתוקן. די מעשה פונעם צאנזער רב מיט דער צעריסענער בעקעשע ווייזט ווי א מלבוש פון מצוות פול מיט תירוצים פאלט צו שטיקער. דער אנהייב דארף זיין הייליג: די ערשטע ווערטער אינדערפרי, נישט רעדן דברים בטלים פארן דאווענען, טבילה מיט האפן אויף משיח, און לערנען תורה מיט כובד ראש."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Chazal gave signs of Moshiach so that when people see them fulfilled they know the redemption is very near, and the Rav compares the world's present turmoil to heavy clouds with thunder and lightning before rain.",
+          "yi": "חז\"ל האבן געגעבן סימנים אויף ביאת המשיח כדי מ'זאל וויסן ווען זיי ווערן מקוים אז די גאולה איז זייער נאנט, און דער משגיח פארגלייכט דעם היינטיגן טומל אין דער וועלט צו שווערע וואלקנס מיט בליצן און דונערן פאר א רעגן."
+        },
+        "evidence": { "segs": [23, 43, 45, 62, 63, 68], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Hashem runs the world measure for measure, so one who hurries to davening and learning without postponing awakens Heaven to bring the yeshuah early and not delay it.",
+          "yi": "דער רבונו של עולם פירט די וועלט מדה כנגד מדה, ממילא איז דער וואס יאגט זיך צום דאווענען און צום לערנען און לייגט נישט אפ מעורר אין הימל אז די ישועה זאל קומען פרי און נישט פארשפעטיגט ווערן."
+        },
+        "evidence": { "segs": [132, 135, 141, 142, 143, 149], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Every soul is sent into the world to complete its tikkun, and one who comes early to davening and learning reaches his tikkun early, while one who is late delays it.",
+          "yi": "יעדע נשמה ווערט אראפגעשיקט אויף דער וועלט כדי צו פארענדיגן איר תיקון, און דער וואס קומט פריער צום דאווענען און צום לערנען קומט פריער צו זיין תיקון, און דער וואס פארשפעטיגט, פארשפעטיגט ער אויך זיין תיקון."
+        },
+        "evidence": { "segs": [152, 154, 155, 173, 174, 176], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Every beginning must be sanctified, as Hashem sanctified the firstborn and the first fruits, because everything that follows is drawn after the beginning; the morning is like Rosh Hashanah of the day.",
+          "yi": "יעדער אנהייב דארף ווערן מקודש, אזוי ווי דער אייבערשטער האט מקדש געווען די בכורות און די ראשית, ווייל אלעס וואס קומט דערנאך ציט זיך נאכן ראשית; דער פרימארגן איז ווי דער ראש השנה פונעם טאג."
+        },
+        "evidence": { "segs": [275, 277, 288, 293, 294, 311], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Idle talk before davening, over coffee or in the mikvah, spoils the davening, while words of chesed and chizuk to another Jew are a form of tzedakah.",
+          "yi": "דברים בטלים פארן דאווענען, ביים קאווע אדער אין מקוה, צעשטערן דאס דאווענען, אבער רעדן כדי צו טון א חסד אדער מחזק זיין א אידן איז א סארט צדקה."
+        },
+        "evidence": { "segs": [346, 349, 353, 371, 375, 378], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Torah must be learned with reverence, aware whose Torah it is, and not casually or with levity, since the blessing over Torah says that Hashem sanctified us through it.",
+          "yi": "תורה דארף מען לערנען מיט כובד ראש און מיט'ן וויסן וועמענס תורה מ'לערנט, נישט מיט קלות ראש, ווייל ברכת התורה זאגט אז דער אייבערשטער האט אונז דערמיט געהייליגט."
+        },
+        "evidence": { "segs": [504, 505, 514, 535, 538, 539], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-02-hisorerus-beavodas-hashem",
+      "startSeg": 0,
+      "endSeg": 68,
+      "title": { "en": "Clouds and thunder before the rain of geulah", "yi": "וואלקנס און דונער פארן רעגן פון גאולה" },
+      "summary": {
+        "en": "The Rav says the world is in turmoil and brings Chazal's signs of Moshiach, such as kingdoms provoking one another. He explains why the signs were given, that tzaddikim were shown propitious times for the redemption, and compares the present to heavy clouds with thunder and lightning before rain.",
+        "yi": "דער משגיח זאגט אז די וועלט ציטערט, און ער ברענגט די סימנים פון חז\"ל אויף ביאת המשיח, ווי למשל ווען מלכיות שטרייטן זיך איינע מיט די אנדערע. ער ערקלערט פארוואס מ'האט געגעבן די סימנים, אז די צדיקים האבן געוואוסט פון זמנים וואס זענען מסוגל פאר דער גאולה, און ער פארגלייכט דעם היינטיגן מצב צו שווערע וואלקנס מיט דונער און בליץ פאר א רעגן."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-02-hisorerus-beavodas-hashem",
+      "startSeg": 69,
+      "endSeg": 125,
+      "title": { "en": "The final time and what brings Moshiach", "yi": "דער לעצטער קץ און וואס ברענגט משיח" },
+      "summary": {
+        "en": "The Rav distinguishes the final time of 'be'itah', when Moshiach must come, from earlier times of 'achishenah', and says by all the signs this period is especially ripe. He lists the merits that bring Moshiach: Mishnayos and Gemara, tefillah, and tzedakah, which for a bachur means time and encouragement for a downcast friend.",
+        "yi": "דער משגיח מאכט א חילוק צווישן דעם לעצטן זמן פון \"בעתה\", ווען משיח מוז קומען, און די פריערדיגע זמנים פון \"אחישנה\", און זאגט אז לויט אלע סימנים איז היינט ספעציעל שייך. ער רעכנט אויס די זכותים וואס ברענגען משיח: משניות און גמרא, תפילה, און צדקה, וואס ביי א בחור מיינט עס צייט און חיזוק פאר א חבר וואס איז צובראכן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-02-hisorerus-beavodas-hashem",
+      "startSeg": 126,
+      "endSeg": 199,
+      "title": { "en": "Coming early: measure for measure and the soul's tikkun", "yi": "פרי קומען: מדה כנגד מדה און דער תיקון פון דער נשמה" },
+      "summary": {
+        "en": "After teshuvah, the Rav explains that Hashem acts measure for measure, so hurrying to davening and learning awakens an early redemption. Each soul comes down for its tikkun, and one who comes early is rectified early; Hashem is one's shadow, and real bachurim do not live on excuses.",
+        "yi": "נאך תשובה ערקלערט דער משגיח אז דער רבונו של עולם פירט מדה כנגד מדה, ממילא איז זיך יאגן צום דאווענען און לערנען מעורר א פריע גאולה. יעדע נשמה קומט אראפ פאר איר תיקון, און ווער עס קומט פריער ווערט פריער מתוקן; השם איז דער מענטשנס שאטן, און אמת'ע בחורים לעבן נישט פון תירוצים."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-02-hisorerus-beavodas-hashem",
+      "startSeg": 200,
+      "endSeg": 272,
+      "title": { "en": "The Sanzer Rav and the rotten bekeshe", "yi": "דער צאנזער רב און די פארפוילטע בעקעשע" },
+      "summary": {
+        "en": "The Rav tells of a man who came to the Sanzer Rav for Yom Tov in a new bekeshe of cheap rotten silk that tore at every touch, and of the Sanzer Rav's remark that this is how a person looks in the next world. He explains that the mitzvos weave the soul's garment in Gan Eden and Torah is its food, so excuses leave the garment in tatters.",
+        "yi": "דער משגיח דערציילט פון א איד וואס איז געקומען קיין צאנז אויף יום טוב אין א נייער בעקעשע פון ביליגע פארפוילטע זייד וואס איז צעפלאצט ביי יעדן אנרירן, און וואס דער צאנזער רב האט געזאגט אז אזא פנים האט א מענטש אויף יענער וועלט. ער ערקלערט אז פון די מצוות ווערט געוועבט דער מלבוש פון דער נשמה אין גן עדן און די תורה איז איר שפייז, און תירוצים לאזן דעם מלבוש צעריסן."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-02-hisorerus-beavodas-hashem",
+      "startSeg": 273,
+      "endSeg": 341,
+      "title": { "en": "Sanctifying every beginning", "yi": "מקדש זיין יעדן ראשית" },
+      "summary": {
+        "en": "The Rav explains that Hashem sanctified the first in many mitzvos, the firstborn and the first fruits, and called Yisroel 'reishis', because all that follows is drawn after the beginning. So the beginning of the day, week, year and zman must be holy: the first words in the morning are Modeh Ani, and the morning is the Rosh Hashanah of the day, not a time for idle chatter.",
+        "yi": "דער משגיח ערקלערט אז דער אייבערשטער האט מקדש געווען דעם ראשית אין אסאך מצוות, בכורות און ביכורים, און האט אנגערופן כלל ישראל \"ראשית\", ווייל אלעס וואס קומט דערנאך ציט זיך נאכן ראשית. דערפאר דארף דער אנהייב פון טאג, פון וואך, פון יאר און פון זמן זיין הייליג: די ערשטע ווערטער אינדערפרי זענען מודה אני, און דער פרימארגן איז דער ראש השנה פונעם טאג, נישט קיין צייט פאר פלוידערן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-02-hisorerus-beavodas-hashem",
+      "startSeg": 342,
+      "endSeg": 405,
+      "title": { "en": "No idle talk before davening", "yi": "נישט רעדן דברים בטלים פארן דאווענען" },
+      "summary": {
+        "en": "The Rav describes the habit of chatting over coffee and in the mikvah before davening, which the Toldos and other sefarim say spoils the davening, and urges the bachurim to try not speaking. Speech for chesed or chizuk is different; it is a form of tzedakah, and the mikvah should be brief and a real preparation for tefillah.",
+        "yi": "דער משגיח שילדערט דעם מנהג פון פלוידערן ביים קאווע און אין מקוה פארן דאווענען, וואס די תולדות און אנדערע ספרים זאגן אז דאס צעשטערט דאס דאווענען, און ער רופט די בחורים עס פרובירן נישט צו רעדן. רעדן כדי צו טון א חסד אדער מחזק זיין א אידן איז אנדערש, דאס איז א סארט צדקה, און די מקוה דארף זיין קורץ און א אמת'ע הכנה צו תפילה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-02-hisorerus-beavodas-hashem",
+      "startSeg": 406,
+      "endSeg": 473,
+      "title": { "en": "Tevilah in honor of Moshiach; purifying all creation", "yi": "טבילה לכבוד ביאת המשיח; מטהר זיין די גאנצע בריאה" },
+      "summary": {
+        "en": "The Rav brings that hoping for the yeshuah is a foundation of faith according to the Rambam, and recommends immersing once in the morning in honor of Moshiach's coming, as one immerses in honor of Shabbos. He explains that a tevilah below purifies the root of the soul above, and that washing negel vasser, as the Derech Hashem writes, purifies all creation, since all Jews are bound together.",
+        "yi": "דער משגיח ברענגט אז האפן אויף דער ישועה איז לויט'ן רמב\"ם פון די יסודות פון אמונה, און ער ברענגט א הנהגה פון צדיקים זיך איינמאל אינדערפרי טובל זיין לכבוד ביאת המשיח, אזוי ווי מ'טובלט זיך לכבוד שבת. ער ערקלערט אז א טבילה דא אונטן איז מטהר דעם שורש הנשמה אויבן, און אז נעגל וואסער גיסן, ווי עס שטייט אין דרך ה', איז מטהר די גאנצע בריאה, ווייל אלע אידן זענען פארבונדן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-sets-hisorerus-liavodas-hashem-02-hisorerus-beavodas-hashem",
+      "startSeg": 474,
+      "endSeg": 573,
+      "title": { "en": "Learning Torah with reverence", "yi": "לערנען תורה מיט כובד ראש" },
+      "summary": {
+        "en": "The Rav says Heaven watches how bachurim learn, and that one should strive for the highest quality of learning. He decries scratching one's head or touching shoes mid-learning without washing, jokes and disrespect toward Rishonim such as Rabbeinu Tam, and learning sprawled with feet on the table, explaining from the blessing over Torah that Torah must sanctify a person. He closes that the same hour of learning and davening can be worth vastly more when done as an eved Hashem.",
+        "yi": "דער משגיח זאגט אז אין הימל קוקט מען וויאזוי בחורים לערנען, און אז מ'דארף שטרעבן צו דער בעסטער סארט לערנען. ער שמועסט קעגן זיך קראצן אין קאפ אדער אנרירן די שיך אינמיטן לערנען אן וואשן די הענט, קעגן חכמות און קעגן רעדן מיט זלזול אויף ראשונים ווי רבינו תם, און קעגן לערנען אנגעלענט מיט די פיס אויפ'ן טיש, און ער ערקלערט פון ברכת התורה אז די תורה דארף מקדש זיין דעם מענטש. ער ענדיגט אז די זעלבע שעה לערנען און דאווענען קען זיין אסאך מער ווערט ווען מ'טוט עס ווי אן עובד השם."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "מלכו יעצט מסגורת זא ביז זא ... ראגלי משיח",
+      "work": "Bereishis Rabbah",
+      "ref": "Bereishis Rabbah 42:4",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [16, 17, 18], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "די גמרא זאגט מסוטה און אין סנהדרין אסאך סימנים",
+      "work": "Gemara Sotah and Sanhedrin",
+      "ref": "Sotah 49b; Sanhedrin 97a-98a",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [20], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אחאקע לבך על יום שאו; אחאקולי בכל יום שאיבאי ... דער רמב״ם זאגט עס",
+      "work": "Rambam, Thirteen Principles of Faith",
+      "ref": "Twelfth principle of faith",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [24, 412, 413, 414], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "שמואל הנביא",
+      "work": "Shmuel I",
+      "ref": "I Samuel 12:17-18",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [47, 49], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "איתר; אחי שמע; בעיתה",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 60:22",
+      "sefariaRef": "Isaiah 60:22",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [73, 74, 75], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "יעקב אבינו ... מגלה זיין צו די שווארטים, איז נעלם ימעניו",
+      "work": "Rashi on Bereishis",
+      "ref": "Rashi, Bereishis 49:1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [77, 78, 79], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "איז א מדרש, אינעם זכות פון משניות קומט משיח",
+      "work": "Vayikra Rabbah",
+      "ref": "Vayikra Rabbah 7:3",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [101, 102, 103], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ציון במשפט ציון פאר דבר שווער בצדקה",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 1:27",
+      "sefariaRef": "Isaiah 1:27",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [106, 107, 125], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "וואלו ציון גוי אלא צוועמען, אלא שבאי פשר ביעקב",
+      "work": "Yeshayahu",
+      "ref": "Yeshayahu 59:20",
+      "sefariaRef": "Isaiah 59:20",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [126, 128, 129], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "השם צלחה",
+      "work": "Tehillim",
+      "ref": "Tehillim 121:5",
+      "sefariaRef": "Psalms 121:5",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [179, 182, 190], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "כך עסקל החלקה דרבנה נא לתלות נא לעולם הבא בגן עדן",
+      "work": "Siddur",
+      "ref": "Prayer before donning the tallis",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [255, 256, 257], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "קדש ליקל בכל; קדש לו כל worthwhile",
+      "work": "Shemos",
+      "ref": "Shemos 13:2",
+      "sefariaRef": "Exodus 13:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [275, 287], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "יקלל ישראל איז דער רשות ... רשות תפאתי",
+      "work": "Yirmiyahu",
+      "ref": "Yirmiyahu 2:3",
+      "sefariaRef": "Jeremiah 2:3",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [283, 284], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "מולי נראה לפינחר מלך חייב הקיים, שאו זייטה בנשמותי בחם הלב",
+      "work": "Siddur",
+      "ref": "Modeh Ani, upon waking",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [296, 304, 305], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "די תולדות ברענגט עס",
+      "work": "Toldos Yaakov Yosef",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [351, 352, 353], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דורך ה' פון בעל מסורת ישורים",
+      "work": "Derech Hashem",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [449, 450, 451], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "שטעט פון רואי הקדוש זאל מקבל זיין די מצוה פון וכתל רעכה כמחה",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [471], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "וכתל רעכה כמחה",
+      "work": "Vayikra",
+      "ref": "Vayikra 19:18",
+      "sefariaRef": "Leviticus 19:18",
+      "resolution": "resolved",
+      "mention": "alluded",
+      "evidence": { "segs": [471], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אין שולחן עורר שטעט ... מ'דארף גיין וואשן די הענט",
+      "work": "Shulchan Aruch",
+      "ref": "Shulchan Aruch Orach Chaim 4",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [501, 502], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אשר כדושנה במצוותיו וספנה לעצטיג בדברי תורה",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 11b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [533, 535, 536, 537], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Rav reads the signs of Moshiach like weather: heavy clouds with thunder and lightning make rain likely but not certain, and so the world's present turmoil makes the redemption very near without promising it.",
+        "yi": "דער משגיח לערנט די סימנים פון משיח ווי דאס וועטער: שווערע וואלקנס מיט דונער און בליץ מאכן א רעגן שייך אבער נישט זיכער, און אזוי מאכט דער היינטיגער טומל אין דער וועלט די גאולה זייער נאנט, אן א הבטחה."
+      },
+      "evidence": { "segs": [43, 45, 52, 56, 60, 63], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "A bachur's zeal in coming on time to davening and seder is, measure for measure, an awakening above that the redemption should come early and not be postponed.",
+        "yi": "די זריזות פון א בחור צו קומען צו דער צייט צום דאווענען און צום סדר איז, מדה כנגד מדה, מעורר אויבן אז די גאולה זאל קומען פרי און נישט אפגעלייגט ווערן."
+      },
+      "evidence": { "segs": [137, 141, 142, 143, 144], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "For a bachur without money, tzedakah can be giving time to a downcast friend, encouraging him and cheering him up, and this too hastens Moshiach.",
+        "yi": "פאר א בחור וואס האט נישט קיין געלט קען צדקה זיין צייט אוועקגעבן פאר א חבר וואס איז צובראכן, אים מחזק זיין און אים אויפמונטערן, און דאס איז אויך מקרב משיח."
+      },
+      "evidence": { "segs": [108, 112, 116, 119, 122, 124], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Sanzer Rav's remark on the rotten bekeshe teaches that a garment of mitzvos done with excuses looks whole but tears at every touch in the next world.",
+        "yi": "דער צאנזער רב'ס ווארט אויף דער פארפוילטער בעקעשע לערנט אז א מלבוש פון מצוות וואס זענען געטון מיט תירוצים קוקט אויס גאנץ, אבער אויף יענער וועלט פלאצט עס ביי יעדן אנרירן."
+      },
+      "evidence": { "segs": [242, 243, 244, 246, 271], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Immersing in the morning in honor of Moshiach's coming, as one immerses in honor of Shabbos to receive its light in purity, is a way of fulfilling the mitzvah of hoping for the redemption.",
+        "yi": "זיך טובל זיין אינדערפרי לכבוד ביאת המשיח, אזוי ווי מ'טובלט זיך לכבוד שבת כדי מקבל צו זיין איר ליכטיגקייט בטהרה, איז א וועג מקיים צו זיין די מצוה פון האפן אויף דער גאולה."
+      },
+      "evidence": { "segs": [419, 423, 424, 426, 428], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Because all Jews are bound together, a small act of purity such as washing negel vasser purifies not only the person but his friends, Klal Yisroel and the whole creation, the reverse of how the generation of the Flood corrupted it.",
+        "yi": "ווייל אלע אידן זענען פארבונדן איינער מיט'ן אנדערן, איז א קליינע זאך פון טהרה, ווי נעגל וואסער גיסן, מטהר נישט נאר דעם מענטש נאר אויך זיינע חברים, כלל ישראל און די גאנצע בריאה, פונקט פארקערט ווי דער דור המבול האט זי מקלקל געווען."
+      },
+      "evidence": { "segs": [451, 453, 454, 469, 470], "confidence": 0.8 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Sanzer Rav and the torn bekeshe", "yi": "דער צאנזער רב און די צעפלאצטע בעקעשע" },
+      "retelling": {
+        "en": "A man wanted a new bekeshe cheaply and bought silk that had lain in a damp basement and rotted through, though it looked new. He came to Sanz for Yom Tov, and when people touched the fine new bekeshe it tore; jokers in the crowd kept touching it, tearing more holes, and he began to shout. The Sanzer Rav asked what the commotion was, and the man explained that his new bekeshe was rotten and tore at every touch. The Sanzer Rav said that this is the face a person has when he comes to the next world.",
+        "yi": "א איד האט געוואלט האבן א נייע בעקעשע ביליג, און ער האט געקויפט זייד וואס איז געלעגן אין א נאסן קעלער און איז אינגאנצן פארפוילט געווארן, הגם עס האט אויסגעזען ניי. ער איז געקומען קיין צאנז אויף יום טוב, און ווען מ'האט אנגערירט די שיינע נייע בעקעשע איז זי צעפלאצט; לצים אינעם עולם האבן ווייטער אנגערירט און געמאכט נאך לעכער, און ער האט גענומען שרייען. דער צאנזער רב האט געפרעגט וואס איז דער טומל, און דער איד האט דערציילט אז זיין נייע בעקעשע איז פארפוילט און פלאצט ביי יעדן אנרירן. האט דער צאנזער רב געזאגט אז אזא פנים האט א מענטש ווען ער קומט אויף יענער וועלט."
+      },
+      "people": ["the Sanzer Rav (Divrei Chaim)"],
+      "evidence": { "segs": [200, 202, 210, 214, 231, 243], "confidence": 0.75 }
+    },
+    {
+      "title": { "en": "The bachur who belittled Rabbeinu Tam", "yi": "דער בחור וואס האט גערעדט מיט זלזול אויף רבינו תם" },
+      "retelling": {
+        "en": "The Rav recounts that he once heard someone learning Gemara who came to a Rabbeinu Tam he did not understand and spoke about him dismissively. The Rav asks whether this is how one speaks about Rabbeinu Tam and whether this is respect for the Torah.",
+        "yi": "דער משגיח דערציילט אז ער האט אמאל געהערט ווי איינער האט געלערנט גמרא און איז געקומען צו א רבינו תם וואס ער האט נישט פארשטאנען, און ער האט גערעדט אויף אים מיט זלזול. דער משגיח פרעגט צי אזוי רעדט מען וועגן רבינו תם, און צי דאס הייסט מכבד זיין די תורה."
+      },
+      "people": ["Rabbeinu Tam"],
+      "evidence": { "segs": [518, 521, 522, 523, 526, 527], "confidence": 0.65 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "Why does the Gemara give signs of Moshiach's coming if no one knows when he will come?", "yi": "פארוואס געבט די גמרא סימנים אויף ביאת המשיח, אויב קיינער ווייסט נישט ווען משיח קומט?" },
+      "answer": { "en": "So that when people see the signs fulfilled they know the redemption is very near.", "yi": "כדי ווען מ'זעט אז די סימנים ווערן מקוים זאל מען וויסן אז די גאולה איז זייער שייך." },
+      "questionSegs": [20, 21, 22],
+      "answerSegs": [23],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "What can bachurim do to help bring Moshiach?", "yi": "וואס קענען בחורים טון צו העלפן ברענגען משיח?" },
+      "answer": { "en": "Learn Mishnayos and Gemara, daven, give tzedakah, including time and encouragement to a friend, and do teshuvah.", "yi": "לערנען משניות און גמרא, דאווענען, געבן צדקה, אריינגערעכנט צייט און חיזוק פאר א חבר, און טון תשובה." },
+      "questionSegs": [96, 97, 99],
+      "answerSegs": [102, 105, 106, 108, 126],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "Why immerse in the mikvah in honor of Moshiach's coming?", "yi": "פארוואס זיך טובל זיין לכבוד ביאת המשיח?" },
+      "answer": { "en": "Just as one immerses for Shabbos to receive its great light in purity, Moshiach will bring an even greater light, and immersing for it fulfills the mitzvah of hoping for him.", "yi": "אזוי ווי מ'טובלט זיך לכבוד שבת כדי מקבל צו זיין איר גרויסע ליכטיגקייט בטהרה, וועט משיח ברענגען א נאך גרעסערע ליכטיגקייט, און מיט זיך טובל זיין לכבודו איז מען מקיים די מצוה פון האפן אויף משיח." },
+      "questionSegs": [419, 420],
+      "answerSegs": [421, 423, 424, 426, 428],
+      "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says a bachur should hurry to davening and seder on time and not push off a mitzvah for later.",
+        "yi": "דער משגיח זאגט אז א בחור זאל זיך יאגן צו קומען צו דער צייט צום דאווענען און צום סדר, און נישט אפלייגן א מצוה אויף שפעטער."
+      },
+      "evidence": { "segs": [137, 138, 141, 146, 147, 148], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav tells the bachurim to try not speaking idle words before davening, and says they will see their davening improve.",
+        "yi": "דער משגיח הייסט די בחורים פרובירן נישט צו רעדן קיין דברים בטלים פארן דאווענען, און זאגט אז זיי וועלן זען אז דאס דאווענען ווערט בעסער."
+      },
+      "evidence": { "segs": [354, 355, 356, 357, 358], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The Rav recommends, as a practice of tzaddikim, immersing once each morning in honor of Moshiach's coming.",
+        "yi": "דער משגיח ברענגט ווי א הנהגה פון צדיקים זיך איינמאל אינדערפרי טובל זיין לכבוד ביאת המשיח."
+      },
+      "evidence": { "segs": [417, 418, 419, 427], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one should learn Torah with reverence, washing hands after scratching one's head, without jokes, and not sprawled with feet on the table.",
+        "yi": "דער משגיח זאגט אז מ'זאל לערנען תורה מיט כובד ראש, וואשן די הענט נאכן זיך קראצן אין קאפ, אן חכמות, און נישט אנגעלענט מיט די פיס אויפ'ן טיש."
+      },
+      "evidence": { "segs": [502, 504, 514, 515, 542], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Rav says a bachur can give tzedakah with his time, helping and encouraging a friend who is downcast or embarrassed.",
+        "yi": "דער משגיח זאגט אז א בחור קען געבן צדקה מיט זיין צייט, צו העלפן און מחזק זיין א חבר וואס איז צובראכן אדער פארשעמט."
+      },
+      "evidence": { "segs": [108, 112, 116, 118, 119, 122], "confidence": 0.8 }
+    }
+  ],
+  "candidateTopics": [
+    "signs of Moshiach",
+    "hastening the redemption",
+    "sanctifying beginnings",
+    "zerizus in davening and learning",
+    "tikkun of the soul",
+    "speech before davening",
+    "tevilah in honor of Moshiach",
+    "kavod haTorah",
+    "the Sanzer Rav",
+    "the garment of mitzvos in Gan Eden"
+  ],
+  "concepts": [
+    { "he": "ראשית", "heardAs": ["רשות", "מראשות"] },
+    { "he": "ביאת המשיח", "heardAs": ["ביאת המשיח", "ראגלי משיח"] },
+    { "he": "בעתה אחישנה", "heardAs": ["איתר", "אחי שמע", "בעיתה"] },
+    { "he": "עת פקודה", "heardAs": ["זמן פון פקודא"] },
+    { "he": "מדה כנגד מדה", "heardAs": ["מידה קיין עגד מידה"] },
+    { "he": "מעורר", "heardAs": ["מאורע", "ממירה"] },
+    { "he": "תיקון", "heardAs": ["תיקון"] },
+    { "he": "גמילות חסדים", "heardAs": ["גמילת חסיד", "גמילת חסד"] },
+    { "he": "דברים בטלים", "heardAs": ["ווארן בטלים", "דברים בטיילים"] },
+    { "he": "נהר דינור", "heardAs": ["נהרדי נור"] },
+    { "he": "נטילת ידים", "heardAs": ["נעגל וואסער", "עגל וואסער"] },
+    { "he": "כובד ראש", "heardAs": ["כבוד ראש", "כבד ראש"] },
+    { "he": "ברכת התורה", "heardAs": ["ברכת התורה"] },
+    { "he": "רבונו של עולם", "heardAs": ["רבי בן ישראלים", "רביה של אלים", "רבינו שלום", "רבי ישעך"] }
+  ],
+  "people": [
+    { "name": "the Sanzer Rav (Divrei Chaim)", "heardAs": ["סאנזער רב", "דברי חיים", "שם'ס רב"] },
+    { "name": "Yaakov Avinu", "heardAs": ["יעקב אבינו"] },
+    { "name": "Shmuel HaNavi", "heardAs": ["שמואל הנביא"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "the Chasam Sofer", "heardAs": ["חתם סופר"] },
+    { "name": "the Arizal", "heardAs": ["ארי הק'", "רואי הקדוש"] },
+    { "name": "the Ramchal", "heardAs": ["בעל מסורת ישורים"] },
+    { "name": "the Toldos (Rabbi Yaakov Yosef of Polonne)", "heardAs": ["תולדות"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["בשם"] },
+    { "name": "Rabbeinu Tam", "heardAs": ["רבינו תם"] }
+  ],
+  "asrNotes": "Yiddish ASR is poor throughout, with many Hebrew phrases badly garbled; Ribono shel Olam appears in many distorted forms and 'reishis' is heard as 'רשות'. The catalog phrase 'reishis arisoseichem' is not heard verbatim; its theme of sanctifying beginnings is located at segments 273-305. The passage on the custom of wearing black on Shabbos and a sefer cited there (segments 321-341) could not be recovered and is omitted, as is the exact wording of the remark about Rabbeinu Tam (segments 524-526) and the closing plans (567-573)."
+}

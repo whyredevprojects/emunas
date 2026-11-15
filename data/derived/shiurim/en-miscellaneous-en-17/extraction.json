@@ -1,0 +1,497 @@
+{
+  "shiurId": "en-miscellaneous-en-17",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "Speaking to a chassan and kallah during their sheva brachos, the Rav explains that marriage, like Shabbos the bride of Knesses Yisrael, is built on giving, and that the ring of kiddushin is the first act of that giving.",
+      "yi": "דער משגיח רעדט צו א חתן און כלה אין די שבעת ימי המשתה, און ערקלערט אז נשואין, אזוי ווי שבת די כלה פון כנסת ישראל, איז געבויט אויף געבן, און אז דער רינג פון קידושין איז דער ערשטער מעשה פון דעם געבן."
+    },
+    "abstract": {
+      "en": "The Rav opens with Adam and Chava, created as one and then separated, and explains that every chassan finds the kallah he was once one with. Shabbos too is a bride: Hashem gave her Knesses Yisrael as her partner, and since Shabbos is pure neshamah, souls can unite with her. The seven days of sheva brachos are the couple's own Shabbos, and the seventh bracha unites the chassan and kallah with Yerushalayim, the bereaved kallah. Turning to kiddushin, he asks why Beis Hillel allows a mere perutah, and answers that kiddushin is the start of a life of giving: what counts is not what one gives but how, with respect. Nesuin itself means giving. The kallah, silent and passive, gives the greatest gift, herself, just as Shabbos seems to take yet gives all brachos. He brings the Rambam's directions for husband and wife, describes how mutual giving builds happiness, and closes by urging the couple to learn their two heritages together, reading from Rav Hirsch on Shabbos.",
+      "yi": "דער משגיח עפנט מיט אדם און חוה, וואס זענען באשאפן געווארן ווי איין מענטש און דערנאך צעטיילט, און ער ערקלערט אז יעדער חתן געפינט די כלה מיט וועלכער ער איז אמאל געווען איינס. שבת איז אויך א כלה: דער אויבערשטער האט איר געגעבן כנסת ישראל פאר א בן זוג, און ווייל שבת איז לויטער נשמה, קענען נשמות זיך מיט איר פאראייניגן. די שבעת ימי המשתה זענען דעם פארפאלק'ס אייגענער שבת, און די זיבעטע ברכה פאראייניגט דעם חתן און כלה מיט ירושלים, די פארוואלגערטע כלה. דערנאך פרעגט ער פארוואס בית הלל לאזט מקדש זיין מיט א פרוטה, און ענטפערט אז קידושין איז דער אנהייב פון א לעבן פון געבן: נישט וויפיל מ'גיט נאר ווי אזוי, מיט כבוד. נשואין אליין מיינט געבן. די כלה, וואס שווייגט און טוט גארנישט, גיט די גרעסטע מתנה, זיך אליין, אזוי ווי שבת וואס זעט אויס צו נעמען און גיט אלע ברכות. ער ברענגט דעם רמב\"ם וועגן מאן און ווייב, באשרייבט ווי דאס געבן פון ביידע זייטן בויט א גליקליכע שטוב, און ענדיגט מיט א בקשה אז דער פארפאלק זאל צוזאמען לערנען פון זייערע צוויי ירושות, און ער לייענט פון רב הירש וועגן שבת."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Every chassan and kallah were one in Adam and Chava, and Hashem reunites them in one house.",
+          "yi": "יעדער חתן און כלה זענען געווען איינס אין אדם און חוה, און דער אויבערשטער פאראייניגט זיי ווידער אין איין שטוב."
+        },
+        "evidence": { "segs": [5, 10, 11, 12, 15], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Shabbos is the kallah of Knesses Yisrael, and the seven days of sheva brachos are the couple's own Shabbos.",
+          "yi": "שבת איז די כלה פון כנסת ישראל, און די שבעת ימי המשתה זענען דעם חתן און כלה'ס אייגענער שבת."
+        },
+        "evidence": { "segs": [29, 30, 78, 79, 107], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Kiddushin is the first act of giving, and what counts is not how much one gives but how, with respect.",
+          "yi": "קידושין איז דער ערשטער מעשה פון געבן, און עס קומט נישט אן וויפיל מ'גיט נאר ווי אזוי מ'גיט, מיט כבוד."
+        },
+        "evidence": { "segs": [237, 238, 263, 308], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Nesuin means giving: the husband commits himself to give all his life without thinking of taking.",
+          "yi": "נשואין מיינט געבן: דער מאן נעמט אויף זיך צו געבן א גאנץ לעבן אן טראכטן פון נעמען."
+        },
+        "evidence": { "segs": [289, 293, 294, 301], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The kallah's silent passivity at kiddushin is the highest giving: she gives her very self.",
+          "yi": "דאס וואס די כלה שווייגט און טוט גארנישט ביי די קידושין איז דאס העכסטע געבן: זי גיט זיך אליין אוועק."
+        },
+        "evidence": { "segs": [342, 347, 349, 350], "confidence": 0.9 }
+      },
+      {
+        "text": {
+          "en": "Following the Rambam's directions, each spouse's giving draws out the other's, and that is the secret of a happy home.",
+          "yi": "ווען מ'פירט זיך לויט דעם רמב\"ם, רופט ארויס דאס געבן פון איין זייט דאס געבן פון דער אנדערער זייט, און דאס איז דער סוד פון א גליקליכע שטוב."
+        },
+        "evidence": { "segs": [440, 445, 450, 451, 452], "confidence": 0.85 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-english-topics-17-misc-marriage",
+      "startSeg": 0,
+      "endSeg": 49,
+      "title": { "en": "Adam, Chava and Shabbos the bride", "yi": "אדם, חוה און שבת די כלה" },
+      "summary": {
+        "en": "The Rav describes Adam and Chava, created as one person and then separated, as the roots of every chassan and kallah. He then brings the Midrash that Shabbos complained it had no partner and was given Knesses Yisrael, so that the Jewish people are joined to Shabbos and separated from it each week.",
+        "yi": "דער משגיח באשרייבט אדם און חוה, וואס זענען באשאפן געווארן ווי איין מענטש און דערנאך צעטיילט, אלס דער שורש פון יעדן חתן און כלה. דערנאך ברענגט ער דעם מדרש אז שבת האט זיך באקלאגט אז זי האט נישט קיין בן זוג, און האט באקומען כנסת ישראל, אזוי אז אידן ווערן יעדע וואך פאראייניגט מיט שבת און צעשיידט פון איר."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-topics-17-misc-marriage",
+      "startSeg": 50,
+      "endSeg": 130,
+      "title": { "en": "The seven days as the couple's Shabbos", "yi": "די זיבן טעג אלס דעם פארפאלק'ס שבת" },
+      "summary": {
+        "en": "The Rav asks how human beings can be wed to Shabbos, a unit of time, and answers that Shabbos is pure neshamah, the soul of Knesses Yisrael. He explains that the seven days of sheva brachos are a private Shabbos given to the chassan and kallah, with song, rest and seven brachos, and that the seventh day is a double Shabbos.",
+        "yi": "דער משגיח פרעגט ווי אזוי קענען מענטשן חתונה האבן מיט שבת, וואס איז א צייט, און ענטפערט אז שבת איז לויטער נשמה, די נשמה פון כנסת ישראל. ער ערקלערט אז די שבעת ימי המשתה זענען א פריוואטער שבת פאר דעם חתן און כלה, מיט געזאנג, מנוחה און זיבן ברכות, און אז דער זיבעטער טאג איז א טאפלטער שבת."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-topics-17-misc-marriage",
+      "startSeg": 131,
+      "endSeg": 192,
+      "title": { "en": "Yerushalayim, the waiting kallah", "yi": "ירושלים, די ווארטנדיגע כלה" },
+      "summary": {
+        "en": "The Rav describes Yerushalayim as a kallah with a heavy heart, waiting for the redemption, and explains that the sheva brachos give her her own bracha before the bracha for the new chassan and kallah. The seventh bracha, the Shabbos of the brachos, unites them all, as they will all be united in the day that is entirely Shabbos.",
+        "yi": "דער משגיח באשרייבט ירושלים ווי א כלה מיט א שווער הארץ, וואס ווארט אויף דער גאולה, און ערקלערט אז אין די שבע ברכות באקומט זי איר אייגענע ברכה פאר דער ברכה פאר דעם נייעם חתן און כלה. די זיבעטע ברכה, דער שבת פון די ברכות, פאראייניגט זיי אלע, אזוי ווי זיי וועלן אלע ווערן פאראייניגט אין יום שכולו שבת."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-topics-17-misc-marriage",
+      "startSeg": 193,
+      "endSeg": 236,
+      "title": { "en": "Dinar or perutah: what kiddushin is", "yi": "דינר אדער פרוטה: וואס איז קידושין" },
+      "summary": {
+        "en": "Turning to the moment of kiddushin, the Rav brings the dispute of Beis Shammai, who require a dinar for the dignity of a Jewish daughter, and Beis Hillel, who allow a perutah, and asks why Beis Hillel would disagree. He rejects seeing kiddushin as a purchase and brings an essay that a person is perfect when he gives, and that a marriage succeeds only while both are conscious that they married in order to give.",
+        "yi": "דער משגיח גייט איבער צום מאמענט פון קידושין און ברענגט די מחלוקת פון בית שמאי, וואס פאדערט א דינר צוליב דעם כבוד פון א בת ישראל, און בית הלל, וואס לאזט מיט א פרוטה, און פרעגט פארוואס בית הלל זאל נישט מסכים זיין. ער שטויסט אפ דעם געדאנק אז קידושין איז א קויף, און ברענגט א מאמר אז א מענטש איז שלם ווען ער גיט, און אז א שידוך געלינגט נאר ווען ביידע געדענקען אז זיי האבן חתונה געהאט כדי צו געבן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-topics-17-misc-marriage",
+      "startSeg": 237,
+      "endSeg": 308,
+      "title": { "en": "Not what he gives but how", "yi": "נישט וואס ער גיט נאר ווי אזוי" },
+      "summary": {
+        "en": "The Rav explains that kiddushin opens married life with an act of giving. Beis Shammai want the giving to cost, while Beis Hillel teach that it is not what one gives but how: a perutah given with the awareness that the kallah is Shabbos and Yerushalayim is worth more than all treasures. The kesubah's promise of respect and the word nesuin, which he reads as giving, carry the same idea.",
+        "yi": "דער משגיח ערקלערט אז קידושין עפנט דאס לעבן צוזאמען מיט א מעשה פון געבן. בית שמאי ווילן אז דאס געבן זאל קאסטן, און בית הלל לערנען אז עס קומט נישט אן וואס מ'גיט נאר ווי אזוי: א פרוטה וואס ווערט געגעבן מיט דעם באוואוסטזיין אז די כלה איז שבת און ירושלים איז מער ווערט ווי אלע אוצרות. די הבטחה פון כבוד אין דער כתובה און דאס ווארט נשואין, וואס ער טייטשט אלס געבן, טראגן דעם זעלבן געדאנק."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-topics-17-misc-marriage",
+      "startSeg": 309,
+      "endSeg": 401,
+      "title": { "en": "The kallah gives herself", "yi": "די כלה גיט זיך אליין" },
+      "summary": {
+        "en": "The Rav asks why the kallah gives nothing and says nothing at kiddushin, and explains that by making herself passive she gives her very self, the highest giving. To the question whether this is slavery he answers from Shabbos, which seems only to take yet is the source of all brachos, and explains that a woman, bound to the Shechinah, can give in a way a man cannot; Jewishness itself comes from the mother.",
+        "yi": "דער משגיח פרעגט פארוואס די כלה גיט גארנישט און זאגט גארנישט ביי די קידושין, און ערקלערט אז דורך דעם וואס זי מאכט זיך פאסיוו גיט זי זיך אליין אוועק, דאס העכסטע געבן. אויף דער שאלה צי דאס איז נישט קנעכטשאפט ענטפערט ער פון שבת, וואס זעט אויס נאר צו נעמען און איז דער מקור פון אלע ברכות, און ערקלערט אז א אשה, וואס איז צוגעבינדן צו דער שכינה, קען געבן ווי א מאן קען נישט; דאס אידישקייט אליין קומט פון דער מוטער."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-topics-17-misc-marriage",
+      "startSeg": 402,
+      "endSeg": 457,
+      "title": { "en": "The Rambam's plan for a happy home", "yi": "דעם רמב\"ם'ס סדר פאר א גליקליכע שטוב" },
+      "summary": {
+        "en": "Answering those who oppose this view, the Rav reads the Rambam in Hilchos Ishus: the husband honors his wife more than himself, provides for her and comes home cheerfully, and the wife honors her husband greatly. He explains that each side's giving naturally draws out the other's, and that those who seek to 'liberate' the woman destroy the structure of the family.",
+        "yi": "קעגן די וואס זענען נישט מסכים, לייענט דער משגיח דעם רמב\"ם אין הלכות אישות: דער מאן זאל מכבד זיין זיין ווייב מער ווי זיך אליין, איר געבן לויט זיינע מעגליכקייטן און אריינקומען אין שטוב מיט פרייד, און די ווייב זאל מכבד זיין איר מאן זייער. ער ערקלערט אז דאס געבן פון איין זייט רופט נאטורליך ארויס דאס געבן פון דער אנדערער, און אז די וואס ווילן 'באפרייען' די פרוי צעשטערן דעם בנין פון דער משפחה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-topics-17-misc-marriage",
+      "startSeg": 458,
+      "endSeg": 519,
+      "title": { "en": "Two heritages: the Ba'al Shem Tov and Rav Hirsch", "yi": "צוויי ירושות: דער בעל שם טוב און רב הירש" },
+      "summary": {
+        "en": "The Rav turns to the chassan and kallah, descendants of a talmid of the Ba'al Shem Tov and of Rav Samson Raphael Hirsch, and describes what each brought: the Ba'al Shem Tov to Eastern European Jewry and Rav Hirsch to Western European Jewry. He suggests that they learn together each day from both heritages, to strengthen them against outside influences and continue both golden chains.",
+        "yi": "דער משגיח ווענדט זיך צום חתן און כלה, אייניקלעך פון א תלמיד פונעם בעל שם טוב און פון רב שמשון רפאל הירש, און באשרייבט וואס יעדער האט געבראכט: דער בעל שם טוב פאר די אידן אין מזרח אייראפע און רב הירש פאר די אידן אין מערב אייראפע. ער שלאגט פאר אז זיי זאלן יעדן טאג צוזאמען לערנען פון ביידע ירושות, כדי זיך צו שטארקן קעגן די פרעמדע השפעות און ממשיך זיין ביידע גאלדענע קייטן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-topics-17-misc-marriage",
+      "startSeg": 520,
+      "endSeg": 547,
+      "title": { "en": "Rav Hirsch on Shabbos, and a brachah", "yi": "רב הירש וועגן שבת, און א ברכה" },
+      "summary": {
+        "en": "To start their learning, the Rav reads a passage of Rav Hirsch describing Shabbos as the Jew's richest jewel and most loyal companion. He blesses the new couple to treasure Shabbos as their purest diamond and to fill their weekdays with avodas Hashem according to their ancestors' teachings.",
+        "yi": "כדי אנצוהייבן זייער לערנען, לייענט דער משגיח א שטיקל פון רב הירש וואס באשרייבט שבת אלס דעם אידנס טייערסטן אוצר און געטריישטן חבר. ער בענטשט דעם נייעם פארפאלק אז זיי זאלן שעצן שבת ווי זייער לויטערסטן דימענט און אנפילן זייערע וואכנטעג מיט עבודת השם לויט די לערנונגען פון זייערע עלטערן."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "as the Gemara says in Niza, they were the shayrish",
+      "work": "Gemara",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [3, 4], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "L'chulam Nesata Ben Zud ... Knessus Yisrael Yiyah Ben Zudcha",
+      "work": "Bereishis Rabbah",
+      "ref": "Bereishis Rabbah 11:8",
+      "sefariaRef": "Bereshit Rabbah 11:8",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [21, 24, 27, 29], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "Bayi Chala Shabbos Kavamal",
+      "work": "Lecha Dodi",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [47, 49], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Chazal tell us, Shabbos is Yaimad HaNishmatah",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [54, 55], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Nusachs found immediately after we say ... the secret of Shabbos ... rather the Yathen",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [66, 69, 70, 71], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "the Ebed Ivri has his own private Shemitah",
+      "work": "Shemos",
+      "ref": "Shemos 21:2",
+      "sefariaRef": "Exodus 21:2",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [80, 81], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Tanya says he talks about it by Pesach in the Siddurl",
+      "work": "Siddur of the Alter Rebbe",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [91, 94, 101, 102], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "Yepheil knife ... Like the Gemara says ... naif means a kalaf",
+      "work": "Tehillim",
+      "ref": "Tehillim 48:3",
+      "sefariaRef": "Psalms 48:3",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [150, 151, 152], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "Like the Gemara says, ... that naif means a kalaf",
+      "work": "Gemara Rosh Hashanah",
+      "ref": "Rosh Hashanah 26a",
+      "sefariaRef": "Rosh Hashanah 26a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [145, 146, 147], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "M'samayach Chosam B'Kanah ... the seventh Bracha, the Bracha Achriti",
+      "work": "Sheva Brachos",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [162, 166, 185], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Lakhlaikas between Bishamai and Bishirai ... A dinner ... with a pulpa",
+      "work": "Mishnah Kiddushin",
+      "ref": "Mishnah Kiddushin 1:1",
+      "sefariaRef": "Mishnah Kiddushin 1:1",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [197, 198, 199, 201], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "So the Gummara says, why does B'Shamay say that you must have a dinner",
+      "work": "Gemara Kiddushin",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [202, 203, 206], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "In the myth of Leung Leung Leung, he has a very wonderful essay",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [222, 223, 224, 227], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "he writes in the syllabus ... I will provide you, and I will respect you",
+      "work": "Kesubah",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [283, 284, 285], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "It says, this is the Rosh Hashanah Bezaya, All the brachas of above and below are all tolly in the bracha of Shabbos",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [362, 363], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "the Russian Abba Rambam in Perek Tesbab of Hilchai Stishis",
+      "work": "Mishneh Torah",
+      "ref": "Rambam, Hilchos Ishus 15:19-20",
+      "sefariaRef": "Mishneh Torah, Marriage 15:19",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [404, 407, 412, 417, 432], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "I will read a very small piece of Abshamsim of the Shabbos, his description of the Shabbos",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [521, 522, 523, 525], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Since Shabbos is pure neshamah, the soul of Knesses Yisrael, a human being can truly be wed to it: soul joins with soul.",
+        "yi": "ווייל שבת איז לויטער נשמה, די נשמה פון כנסת ישראל, קען א מענטש טאקע חתונה האבן מיט איר: נשמה פאראייניגט זיך מיט נשמה."
+      },
+      "evidence": { "segs": [52, 54, 55, 61, 62], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The seven days of sheva brachos are the couple's private Shabbos, as the eved ivri has a private shemitah, and their seventh day is a Shabbos of Shabbosos.",
+        "yi": "די שבעת ימי המשתה זענען דעם פארפאלק'ס פריוואטער שבת, אזוי ווי א עבד עברי האט א פריוואטע שמיטה, און זייער זיבעטער טאג איז א שבת שבתות."
+      },
+      "evidence": { "segs": [78, 80, 81, 111, 112, 113], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Beis Hillel's perutah does not lessen the kallah's dignity: it teaches that the value lies not in what is given but in how, with full awareness of who she is.",
+        "yi": "בית הלל'ס פרוטה פארמינערט נישט דעם כבוד פון דער כלה: זי לערנט אז דער ווערט ליגט נישט אין וואס מ'גיט נאר ווי אזוי, מיט א פולן באוואוסטזיין ווער זי איז."
+      },
+      "evidence": { "segs": [241, 242, 262, 263, 278], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The kallah's total passivity at kiddushin, which seems to be not giving, is in fact the highest giving: she gives her very self, not something of herself.",
+        "yi": "דאס וואס די כלה איז אינגאנצן פאסיוו ביי קידושין, וואס זעט אויס ווי נישט געבן, איז באמת דאס העכסטע געבן: זי גיט זיך אליין, נישט עפעס פון זיך."
+      },
+      "evidence": { "segs": [341, 342, 347, 349, 350], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "Shabbos, like the kallah, seems only to take, since everything must be prepared for it, yet it is the greatest giver, the source of all brachos for the week.",
+        "yi": "שבת, אזוי ווי די כלה, זעט אויס נאר צו נעמען, ווייל מ'מוז אלעס פאר איר צוגרייטן, און דאך איז זי דער גרעסטער געבער, דער מקור פון אלע ברכות פאר דער וואך."
+      },
+      "evidence": { "segs": [356, 357, 363, 364, 366, 381], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Being a Jew means surrendering oneself to Hashem, and that is why Jewishness is inherited from the mother, whose nature is to give herself totally.",
+        "yi": "א איד זיין מיינט זיך אוועקגעבן צום אויבערשטן, און דערפאר ירשנט מען אידישקייט פון דער מוטער, וועמענס טבע איז זיך אינגאנצן אוועקצוגעבן."
+      },
+      "evidence": { "segs": [396, 397, 398, 399], "confidence": 0.75 }
+    }
+  ],
+  "stories": [],
+  "questions": [
+    {
+      "question": {
+        "en": "How can human beings of flesh and blood be wed to Shabbos, which is a unit of time?",
+        "yi": "ווי אזוי קענען מענטשן פון פלייש און בלוט חתונה האבן מיט שבת, וואס איז א צייט?"
+      },
+      "answer": {
+        "en": "Shabbos is pure neshamah, the soul of Knesses Yisrael, and soul unites with soul.",
+        "yi": "שבת איז לויטער נשמה, די נשמה פון כנסת ישראל, און נשמה פאראייניגט זיך מיט נשמה."
+      },
+      "questionSegs": [51, 52],
+      "answerSegs": [54, 55, 61, 62],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why does Beis Hillel allow kiddushin with a mere perutah, if a Jewish daughter deserves dignity?",
+        "yi": "פארוואס לאזט בית הלל מקדש זיין מיט בלויז א פרוטה, אויב א בת ישראל פארדינט כבוד?"
+      },
+      "answer": {
+        "en": "Kiddushin is the start of a life of giving, and what matters is not what is given but how, with respect and awareness.",
+        "yi": "קידושין איז דער אנהייב פון א לעבן פון געבן, און עס קומט נישט אן וואס מ'גיט נאר ווי אזוי, מיט כבוד און באוואוסטזיין."
+      },
+      "questionSegs": [209, 210, 211, 212],
+      "answerSegs": [237, 238, 242, 263],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "If marriage is giving, why does the kallah give nothing and say nothing at kiddushin?",
+        "yi": "אויב נשואין איז געבן, פארוואס גיט די כלה גארנישט און זאגט גארנישט ביי קידושין?"
+      },
+      "answer": {
+        "en": "By making herself passive she gives her very self, which is the highest giving.",
+        "yi": "דורך דעם וואס זי מאכט זיך פאסיוו גיט זי זיך אליין אוועק, וואס איז דאס העכסטע געבן."
+      },
+      "questionSegs": [314, 317, 328, 329],
+      "answerSegs": [342, 347, 349, 350],
+      "confidence": 0.85
+    },
+    {
+      "question": {
+        "en": "Is the wife's self-surrender then a kind of slavery?",
+        "yi": "איז דען דאס זיך אוועקגעבן פון דער ווייב א סארט קנעכטשאפט?"
+      },
+      "answer": {
+        "en": "No: like Shabbos, which seems to take but gives all brachos, hers is the highest giving, and when the husband gives as the Rambam directs she gives with joy, not as a slave.",
+        "yi": "ניין: אזוי ווי שבת, וואס זעט אויס צו נעמען און גיט אלע ברכות, איז איר געבן דאס העכסטע, און ווען דער מאן גיט ווי דער רמב\"ם הייסט, גיט זי מיט פרייד, נישט ווי א קנעכט."
+      },
+      "questionSegs": [355],
+      "answerSegs": [356, 364, 382, 446, 447],
+      "confidence": 0.75
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says a marriage succeeds only while both partners remain conscious that they married in order to give, not to ask what they are getting.",
+        "yi": "דער משגיח זאגט אז א שידוך געלינגט נאר ווען ביידע געדענקען אז זיי האבן חתונה געהאט כדי צו געבן, נישט צו פרעגן וואס זיי באקומען."
+      },
+      "evidence": { "segs": [228, 229, 230, 231, 235], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The Rav suggests that a husband pause for a moment before entering his home and think how grateful he is for his home, so that he comes in cheerful.",
+        "yi": "דער משגיח שלאגט פאר אז א מאן זאל זיך אפשטעלן א רגע איידער ער גייט אריין אין שטוב און טראכטן וויפיל ער דארף דאנקבאר זיין פאר זיין היים, כדי ער זאל אריינקומען פרייליך."
+      },
+      "evidence": { "segs": [425, 426, 427, 428, 429], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The Rav suggests that the chassan and kallah set a daily time to learn together from the teachings of both their ancestors.",
+        "yi": "דער משגיח שלאגט פאר אז דער חתן און כלה זאלן יעדן טאג קובע זיין א צייט צוצאמען צו לערנען פון די לערנונגען פון זייערע ביידע עלטערן."
+      },
+      "evidence": { "segs": [504, 506, 507, 509, 512], "confidence": 0.85 }
+    }
+  ],
+  "candidateTopics": [
+    "kiddushin and the wedding ring",
+    "marriage as giving",
+    "Shabbos as kallah",
+    "sheva brachos",
+    "Yerushalayim as the waiting kallah",
+    "Beis Shammai and Beis Hillel on kiddushin",
+    "Rambam on husband and wife",
+    "Adam and Chava",
+    "the Ba'al Shem Tov and Rabbi Samson Raphael Hirsch"
+  ],
+  "concepts": [
+    { "he": "קידושין", "heardAs": ["Kedoshin", "Kedushin", "Kiddushin", "Katsav Kedushan"] },
+    { "he": "נשואין", "heardAs": ["Nesuvan", "Nesuin", "Nessuan"] },
+    { "he": "שבעת ימי המשתה", "heardAs": ["Shabbos yamei ha-mishteh", "Shabbos Yimei HaMishter", "Shiva Simei HaMeshta"] },
+    { "he": "שבע ברכות", "heardAs": ["Sheva brachah", "Sheva Brachas", "Sheva Brachet"] },
+    { "he": "כנסת ישראל", "heardAs": ["Knessus Yisrael", "Nessus Yisroel", "Knesset Yisrael"] },
+    { "he": "שבת המלכה", "heardAs": ["Shabbos HaMalkeh", "Shabbos Khamer Maltesim"] },
+    { "he": "בן זוג", "heardAs": ["Ben Zud", "Ben Zudcha", "zivr"] },
+    { "he": "יומא דנשמתא", "heardAs": ["Yaimad HaNishmatah"] },
+    { "he": "רזא דיחודא", "heardAs": ["rather the Yathen", "raza b'echev", "Reza the Yechus"] },
+    { "he": "עבד עברי", "heardAs": ["Ebed Ivri"] },
+    { "he": "פרוטה", "heardAs": ["pulpa", "Puta"] },
+    { "he": "דינר", "heardAs": ["dinner"] },
+    { "he": "כתובה", "heardAs": ["syllabus", "excerpt"] },
+    { "he": "מבטל", "heardAs": ["mevato", "mabattled", "embattled", "buffled"] },
+    { "he": "שכינה", "heardAs": ["Shekhinah Hagdashah"] },
+    { "he": "יום שכולו שבת", "heardAs": ["Yom Shekulei Shabbos", "Yem Shekulei Shabbos"] },
+    { "he": "רבונו של עולם", "heardAs": ["Rabbani Shalai Ram", "Rabbi Nishleilam", "Rabbeinu Shleilam", "Ravai Yisroel"] }
+  ],
+  "people": [
+    { "name": "Adam", "heardAs": ["Azam", "Adam", "Odom"] },
+    { "name": "Chava", "heardAs": ["Chabot", "Chavah", "v'chadah"] },
+    { "name": "Beis Shammai", "heardAs": ["Bishamai", "B'Shamay", "Bashami"] },
+    { "name": "Beis Hillel", "heardAs": ["Bishirai", "Hilo", "Bacillam", "Basile"] },
+    { "name": "the Rambam", "heardAs": ["Abba Rambam", "Rabbim", "Ramban"] },
+    { "name": "the Alter Rebbe", "heardAs": ["the Tanya"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["Tavasham Tavakadosh"] },
+    { "name": "Rabbi Samson Raphael Hirsch", "heardAs": ["Kepsham Shem Ressal Hirsch", "Ksham Shem Rathau Hez", "Abshamsim"] }
+  ],
+  "asrNotes": "English ASR of fair quality for the Rav's English but Hebrew terms are heavily garbled (Ribono shel Olam appears as 'Rabbani Shalai Ram', 'Rabbi Nishleilam' and similar). The author of the essay on giving and taking (seg 222, 'Leung Leung Leung') and the source of the kiddushin mechanics (segs 330-333, 'the Ram over there in Pachyabadi ... Varan') could not be identified. Segments 133-135 on the seder plate and Malchus, and 243-262 on the setting of the kiddushin, are only partly recoverable. The single catalog topic (the ring as symbol of marriage) spans sections 3-5."
+}
