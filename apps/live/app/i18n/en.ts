@@ -26,7 +26,7 @@ export const en = {
   "lang.button": "Language",
   "lang.dialog": "Language settings",
   "lang.ui": "Interface language",
-  "lang.uiSwitch": "ייִדיש",
+  "lang.uiSwitch": "אידיש",
   "lang.audio": "Shiurim to hear",
   "lang.audio.both": "Yiddish and English",
   "lang.audio.yi": "Yiddish only",
@@ -39,7 +39,7 @@ export const en = {
   "home.title": "Choose a language",
   "home.redirecting": "Opening the site in your language…",
   "home.en": "English",
-  "home.yi": "ייִדיש",
+  "home.yi": "אידיש",
 
   "stub.note": "This page is being built.",
   "page.today": "Today",

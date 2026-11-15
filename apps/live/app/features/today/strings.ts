@@ -42,8 +42,8 @@ export type TodayKey = keyof typeof todayEn;
 
 export const todayYi: MessageTable<TodayKey> = {
   "today.heading": "היינט",
-  "today.loading": "לאדנט…",
-  "today.error": "מען האט נישט געקענט לאדן דעם בלאט. קוקט איבער די פארבינדונג און לאדנט איבער.",
+  "today.loading": "מ׳לאדט…",
+  "today.error": "מען האט נישט געקענט לאדן דעם בלאט. קוקט איבער די פארבינדונג און לאדט איבער דעם בלאט.",
   "today.week": "די וואך",
   "today.parsha": "פרשת {name}",
   "today.parsha.deferred": "מען ליינט זי שבת {date}, נאך יום טוב.",
@@ -53,7 +53,7 @@ export const todayYi: MessageTable<TodayKey> = {
   "today.occasion.soon": { one: "אין {count} טאג", other: "אין {count} טעג" },
   "today.outOfRange": "דער לוח פאר דעם טאג איז נישט פאראן.",
   "today.israel": "סדר פון ארץ ישראל",
-  "today.moment": "א רגע פאר היינט",
+  "today.moment": "א נקודה פאר היינט",
   "today.moment.play": "הערן פון {time}",
   "today.moment.from": "פון: {title}",
   "today.moment.kind.i": "געדאנק",
@@ -63,15 +63,15 @@ export const todayYi: MessageTable<TodayKey> = {
   "today.moment.kind.tk": "לימוד",
   "today.moment.kind.s": "חלק",
   "today.continue": "ווייטער הערן",
-  "today.continue.empty": "שיעורים וואס איר הייבט אן וועלן זיך באווייזן דא, כדי איר זאלט קענען ממשיך זיין.",
+  "today.continue.empty": "שיעורים וואס איר הייבט אן וועלן זיך דא ווייזן, כדי איר זאלט קענען ווייטער הערן.",
   "today.continue.resume": "ווייטער פון {time}",
-  "today.continue.next": "דער נעקסטער אין דער סעריע",
+  "today.continue.next": "דער קומענדיגער אין דער סדרה",
   "today.newly": "נייע נאטיצן",
   "today.newly.lead": "נאטיצן פאר די שיעורים זענען לעצטנס צוגעלייגט געווארן.",
   "today.counter": "{full} פון {total} שיעורים האבן שוין נאטיצן.",
   "card.year.unknown": "יאר נישט באקאנט",
   "card.notesPending": "נאטיצן נאך נישט צוגעגרייט",
-  "card.part": "חלק {n}",
+  "card.part": "טייל {n}",
 };
 
 export type TodayT = TFunction<TodayKey>;

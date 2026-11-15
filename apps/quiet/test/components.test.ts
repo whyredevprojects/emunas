@@ -51,7 +51,7 @@ describe("TimeLink", () => {
 
   it("names the action in the edition's language", async () => {
     const html = await render(TimeLink, { ed: "yi", recordings: single, t: 754 });
-    expect(attrs(html, "a")[0]).toMatchObject({ href: `${single[0]!.audioUrl}#t=754`, "aria-label": "שפּיל פון 12:34" });
+    expect(attrs(html, "a")[0]).toMatchObject({ href: `${single[0]!.audioUrl}#t=754`, "aria-label": "שפילן פון 12:34" });
   });
 
   it("renders plain text, not a dead link, when the recording is unavailable", async () => {
@@ -81,7 +81,7 @@ describe("Listen", () => {
   it("says the recording is not available when there is no URL", async () => {
     const html = await render(Listen, { ed: "yi", recordings: [{ ...single[0]!, audioUrl: null }] });
     expect(html).not.toContain("<audio");
-    expect(html).toContain("די רעקארדירונג איז נאך נישט צוגעשטעלט אויפן נעץ.");
+    expect(html).toContain("די רעקארדירונג איז נאך נישט צוגעשטעלט אויפן אינטערנעט.");
   });
 
   it("treats a non-mp3 source as unavailable", async () => {
@@ -138,7 +138,7 @@ describe("NotesLabel and Coverage", () => {
   it("links the standing AI label to About", async () => {
     const html = await render(NotesLabel, { ed: "en" });
     expect(html).toContain('href="/en/about/#notes"');
-    expect(html).toContain("Notes prepared by AI from the recording; not reviewed. The recording is the source.");
+    expect(html).toContain("Notes prepared by AI from the recording; not reviewed, and not the Rav&#39;s words. The recording is the source.");
   });
 
   it("states coverage with ordinary digits", async () => {

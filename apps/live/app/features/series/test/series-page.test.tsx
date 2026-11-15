@@ -116,7 +116,7 @@ describe("series index", () => {
   it("renders in Yiddish", async () => {
     const { container } = await renderAt("/yi/series", "[data-testid=series-index]");
     expect(container.querySelector('[data-series="tanya-yi"] a bdi')!.getAttribute("lang")).toBe("yi");
-    expect(container.textContent).toContain("27 חלקים");
+    expect(container.textContent).toContain("27 טיילן");
     await noAxeViolations();
   });
 });

@@ -13,7 +13,7 @@ export const yi: MessageTable<UiKey> = {
   "site.nameShort": "שיעורים",
   "site.description": "די רעקארדירטע שיעורים פון הרב משה וואלפסאן זצ\"ל, אויסגעשטעלט ווי א קאטאלאג.",
 
-  "skip.toMain": "גיי צום טעקסט",
+  "skip.toMain": "גייט צום טעקסט",
 
   "nav.label": "זייטל",
   "nav.contents": "תוכן",
@@ -27,34 +27,34 @@ export const yi: MessageTable<UiKey> = {
   "edition.other": "English",
   "edition.otherName": "ענגלישע אויסגאבע",
 
-  "breadcrumb.label": "דא ביסטו",
+  "breadcrumb.label": "דא זענט איר",
 
-  "footer.recordingIsSource": "דער מקור איז די רעקארדירונגען. די קעפלעך זענען ווי געדרוקט אינעם פּאָקעט גייד פון 2012.",
-  "footer.otherEdition": "דאס זייטל אויף ענגליש",
+  "footer.recordingIsSource": "דער מקור איז די רעקארדירונגען. די קעפלעך זענען ווי געדרוקט אינעם פאקעט גייד פון 2012.",
+  "footer.otherEdition": "דער בלאט אויף ענגליש",
 
-  "time.playFrom": "שפּיל פון {time}",
-  "time.playFromPart": "שפּיל פון {time} (טייל {part})",
+  "time.playFrom": "שפילן פון {time}",
+  "time.playFromPart": "שפילן פון {time} (טייל {part})",
 
   "listen.heading": "הערן",
   "listen.part": "טייל {part} פון {count}",
-  "listen.download": "אראפּנעמען",
-  "listen.downloadPart": "אראפּנעמען טייל {part}",
-  "listen.unavailable": "די רעקארדירונג איז נאך נישט צוגעשטעלט אויפן נעץ.",
-  "listen.unavailablePart": "טייל {part}: נאך נישט צוגעשטעלט אויפן נעץ.",
-  "listen.noSupport": "דער בלעטערער קען דא נישט שפּילן די רעקארדירונג. נוצט דעם לינק צום אראפּנעמען.",
+  "listen.download": "אראפלאדן",
+  "listen.downloadPart": "אראפלאדן טייל {part}",
+  "listen.unavailable": "די רעקארדירונג איז נאך נישט צוגעשטעלט אויפן אינטערנעט.",
+  "listen.unavailablePart": "טייל {part}: נאך נישט צוגעשטעלט אויפן אינטערנעט.",
+  "listen.noSupport": "דער בראוזער קען דא נישט שפילן די רעקארדירונג. נוצט דעם לינק צום אראפלאדן.",
   "listen.duration": "לענג {duration}",
 
   "citation.label": "קאטאלאג",
   "citation.number": "נומ׳ {n}",
-  "citation.guidePage": "פּאָקעט גייד ז׳ {page}",
-  "citation.series": "סעריע",
+  "citation.guidePage": "פאקעט גייד ז׳ {page}",
+  "citation.series": "סדרה",
 
-  "catalog.derived.filename": "שטייט נישט אינעם פּאָקעט גייד פון 2012; דער קעפּל איז גענומען פונעם נאמען פון דער טעקע.",
-  "catalog.derived.dirPrefix": "שטייט נישט אינעם פּאָקעט גייד פון 2012; דער קעפּל איז גענומען פונעם פאלדער און פונעם נאמען פון דער טעקע.",
+  "catalog.derived.filename": "שטייט נישט אינעם פאקעט גייד פון 2012; דער קעפל איז גענומען פונעם נאמען פונעם פייל.",
+  "catalog.derived.dirPrefix": "שטייט נישט אינעם פאקעט גייד פון 2012; דער קעפל איז גענומען פונעם פאלדער און פונעם נאמען פונעם פייל.",
 
   "notes.label": "נאטיצן",
 
   "chooser.title": "קלייבט אן אויסגאבע",
   "chooser.enter": "אידישע אויסגאבע",
-  "chooser.enterNote": "דער אינטערפייס און די נאטיצן אויף אידיש. אלע שיעורים, אויף אידיש און ענגליש.",
+  "chooser.enterNote": "דער זייטל און די נאטיצן אויף אידיש. אלע שיעורים, סיי אויף אידיש סיי אויף ענגליש.",
 };

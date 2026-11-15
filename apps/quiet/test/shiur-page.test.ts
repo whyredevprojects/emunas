@@ -209,7 +209,7 @@ describe("full page details", () => {
     const late = shiur.notes!.chapters.find((c) => c.t >= second.offset)!;
     const local = Math.floor(round3(late.t - second.offset));
     expect(html).toContain(`href="${second.audioUrl}#t=${local}" data-g="${late.t}"`);
-    expect(html).toContain("שפּיל פון");
+    expect(html).toContain("שפילן פון");
     expect(html.match(/<audio\b/g)?.length).toBe(2);
   });
 
