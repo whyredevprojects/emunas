@@ -10,7 +10,6 @@
  * Entries whose shiur cannot be loaded or has no playable audio are marked failed and skipped.
  */
 import { createStore, useStore, type StoreApi } from "zustand";
-// eslint-disable-next-line no-restricted-imports -- app/data is the Live data contract (W2.4), not the pipeline data folder
 import { loadShiur } from "../data/index.ts";
 import type { PlayerEngine, PlayerShiur } from "../player-engine/index.ts";
 import { getEngine } from "../player-ui/engine.ts";

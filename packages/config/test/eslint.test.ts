@@ -2,7 +2,7 @@ import { ESLint } from "eslint";
 import { spawnSync } from "node:child_process";
 import { resolve } from "node:path";
 import { beforeAll, describe, expect, it } from "vitest";
-import config from "../eslint.config.js";
+import config, { importsPipelineData } from "../eslint.config.js";
 import { AUDITS, INPUT_TXT, TRANSCRIPTS_PATH, configDir, repoRoot } from "./helpers.ts";
 
 let eslint: ESLint;
@@ -19,6 +19,8 @@ async function lint(filePath: string, code: string) {
   return result.messages;
 }
 
+const PIPELINE_DATA = "emunas/no-pipeline-data-import";
+
 const ruleIds = (msgs: { ruleId: string | null }[]) => msgs.map((m) => m.ruleId);
 
 describe("restricted imports (apps may not read the pipeline data folder)", () => {
@@ -28,6 +30,23 @@ describe("restricted imports (apps may not read the pipeline data folder)", () =
       `import ingest from "../../../../data/derived/ingest.json";\nexport default ingest;\n`,
     );
     expect(ruleIds(msgs)).toContain("no-restricted-imports");
+    expect(ruleIds(msgs)).toContain(PIPELINE_DATA);
+  });
+
+  it("fails a relative climb into the repo-root data folder, whatever the subfolder", async () => {
+    const msgs = await lint(
+      "apps/live/app/features/shelf/leak.ts",
+      `import m from "../../../../../data/derived/manifest.json";\nexport { x } from "../../../../../data";\nexport const y = () => import("../../../../../data/whatever.json");\nexport default m;\n`,
+    );
+    expect(ruleIds(msgs).filter((r) => r === PIPELINE_DATA)).toHaveLength(3);
+  });
+
+  it("allows the Live app's own data module (apps/live/app/data) from any depth", async () => {
+    const msgs = await lint(
+      "apps/live/app/features/today/test/fixtures.ts",
+      `export { fixtureFetch } from "../../../data/fixtures/fetch.ts";\nexport * from "../../../data/index.ts";\nimport { loadShiur } from "../../data/index.ts";\nexport const l = loadShiur;\n`,
+    );
+    expect(msgs).toEqual([]);
   });
 
   it("fails an apps/live/app file importing a data path", async () => {
@@ -60,6 +79,19 @@ describe("restricted imports (apps may not read the pipeline data folder)", () =
       `import type { PublicShiur } from "@emunas/corpus/public";\nexport type S = PublicShiur;\n`,
     );
     expect(msgs).toEqual([]);
+  });
+});
+
+describe("importsPipelineData", () => {
+  const root = "/repo";
+  it("resolves the specifier against the importing file", () => {
+    expect(importsPipelineData("/repo/apps/live/app/x/y.ts", "../../../../data/a.json", root)).toBe(true);
+    expect(importsPipelineData("/repo/apps/live/app/x/y.ts", "../../../../data", root)).toBe(true);
+    expect(importsPipelineData("/repo/apps/live/app/x/y.ts", "../../data/index.ts", root)).toBe(false);
+    expect(importsPipelineData("/repo/apps/live/app/x/y.ts", "../../../../database/a.ts", root)).toBe(false);
+    expect(importsPipelineData("/repo/apps/live/app/x/y.ts", "@emunas/data", root)).toBe(false);
+    expect(importsPipelineData("/repo/x.ts", "./data/derived/ingest.json?raw", root)).toBe(true);
+    expect(importsPipelineData("<text>", "../data", root)).toBe(false);
   });
 });
 

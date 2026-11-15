@@ -6,7 +6,6 @@
 import { formatClock, type UiLang } from "@emunas/i18n";
 import { useMemo, useState, type FormEvent, type JSX, type ReactNode } from "react";
 import { Link } from "react-router";
-// eslint-disable-next-line no-restricted-imports -- app/data is the Live data contract (W2.4), not the pipeline data folder
 import type { CorpusRow } from "../../data/index.ts";
 import {
   continueListening,
