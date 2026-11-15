@@ -1,0 +1,117 @@
+{
+  "$comment": "Input for scripts/subset_fonts.py. Each face is cut from a pinned npm package (Fontsource builds of the OFL Google Fonts releases) and re-subset to the code points the sites need. Regenerate with `npm run fonts:subset -w @emunas/tokens` (needs Python 3.12+ and network access to registry.npmjs.org). The woff2 files, manifest.json and licenses/ are committed.",
+  "packages": {
+    "frank-ruhl-libre": "@fontsource-variable/frank-ruhl-libre@5.3.0",
+    "noto-serif-hebrew": "@fontsource-variable/noto-serif-hebrew@5.3.0",
+    "source-serif-4": "@fontsource-variable/source-serif-4@5.3.1",
+    "noto-sans-hebrew": "@fontsource-variable/noto-sans-hebrew@5.3.0",
+    "noto-sans": "@fontsource-variable/noto-sans@5.3.0"
+  },
+  "ranges": {
+    "hebrew": "U+0591-05C7,U+05D0-05EA,U+05EF-05F4,U+FB1D-FB4F,U+200C-200F,U+25CC",
+    "punct": "U+0020-0040,U+005B-0060,U+007B-007E,U+00A0,U+00B7,U+2013-2014,U+2018-201E,U+2026,U+2032-2033,U+2066-2069",
+    "latin": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+2000-206F,U+20AC,U+2122,U+2212,U+FFFD",
+    "translit": "U+0100-0101,U+0112-0113,U+012A-012B,U+014C-014D,U+015A-015B,U+0160-0161,U+016A-016B,U+017D-017E,U+02BE-02BF,U+1E24-1E25,U+1E32-1E33,U+1E62-1E63,U+1E6C-1E6D,U+1E92-1E93,U+1E96"
+  },
+  "faces": [
+    {
+      "id": "frank-ruhl-libre-hebrew",
+      "family": "Frank Ruhl Libre",
+      "package": "frank-ruhl-libre",
+      "file": "files/frank-ruhl-libre-hebrew-wght-normal.woff2",
+      "range": "hebrew",
+      "style": "normal",
+      "wght": [400, 700]
+    },
+    {
+      "id": "frank-ruhl-libre-punct",
+      "family": "Frank Ruhl Libre",
+      "package": "frank-ruhl-libre",
+      "file": "files/frank-ruhl-libre-latin-wght-normal.woff2",
+      "range": "punct",
+      "style": "normal",
+      "wght": [400, 700]
+    },
+    {
+      "id": "hebrew-marks",
+      "family": "Emunas Hebrew Marks",
+      "package": "noto-serif-hebrew",
+      "file": "files/noto-serif-hebrew-hebrew-wght-normal.woff2",
+      "range": "hebrew",
+      "style": "normal",
+      "wght": [400, 400]
+    },
+    {
+      "id": "source-serif-4-latin",
+      "family": "Source Serif 4",
+      "package": "source-serif-4",
+      "file": "files/source-serif-4-latin-wght-normal.woff2",
+      "range": "latin",
+      "style": "normal",
+      "wght": [400, 700]
+    },
+    {
+      "id": "source-serif-4-latin-italic",
+      "family": "Source Serif 4",
+      "package": "source-serif-4",
+      "file": "files/source-serif-4-latin-wght-italic.woff2",
+      "range": "latin",
+      "style": "italic",
+      "wght": [400, 400]
+    },
+    {
+      "id": "source-serif-4-translit",
+      "family": "Source Serif 4",
+      "package": "source-serif-4",
+      "file": "files/source-serif-4-latin-ext-wght-normal.woff2",
+      "range": "translit",
+      "style": "normal",
+      "wght": [400, 700]
+    },
+    {
+      "id": "source-serif-4-translit-italic",
+      "family": "Source Serif 4",
+      "package": "source-serif-4",
+      "file": "files/source-serif-4-latin-ext-wght-italic.woff2",
+      "range": "translit",
+      "style": "italic",
+      "wght": [400, 400]
+    },
+    {
+      "id": "noto-sans-hebrew-hebrew",
+      "family": "Noto Sans Hebrew",
+      "package": "noto-sans-hebrew",
+      "file": "files/noto-sans-hebrew-hebrew-wght-normal.woff2",
+      "range": "hebrew",
+      "style": "normal",
+      "wght": [400, 700]
+    },
+    {
+      "id": "noto-sans-hebrew-punct",
+      "family": "Noto Sans Hebrew",
+      "package": "noto-sans-hebrew",
+      "file": "files/noto-sans-hebrew-latin-wght-normal.woff2",
+      "range": "punct",
+      "style": "normal",
+      "wght": [400, 700]
+    },
+    {
+      "id": "noto-sans-latin",
+      "family": "Noto Sans",
+      "package": "noto-sans",
+      "file": "files/noto-sans-latin-wght-normal.woff2",
+      "range": "latin",
+      "style": "normal",
+      "wght": [400, 700]
+    },
+    {
+      "id": "noto-sans-translit",
+      "family": "Noto Sans",
+      "package": "noto-sans",
+      "file": "files/noto-sans-latin-ext-wght-normal.woff2",
+      "range": "translit",
+      "style": "normal",
+      "wght": [400, 700]
+    }
+  ]
+}
