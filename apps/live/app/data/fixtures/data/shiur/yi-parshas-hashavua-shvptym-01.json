@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "yi-parshas-hashavua-shvptym-01",
  "rev": "f8a94fce6b46",
  "lang": "yi",
@@ -55,7 +55,583 @@
     "t": 2972.72,
     "score": 0.317
    }
-  ]
+  ],
+  "titles": {
+   "yi-parshas-hashavua-hzynv-01": {
+    "title": "פרשה של אמונה. עשי\"ת - זמן לנקות חציצות האמונה",
+    "lang": "yi",
+    "years": [
+     5732
+    ]
+   },
+   "yi-parshas-hashavua-vschnn-01": {
+    "title": "משה רבינו מלמד איך להתפלל. נחיצות וחשיבות פסוקי דזמרה",
+    "lang": "yi",
+    "years": [
+     5734
+    ]
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "anavah-bittul",
+    "salience": 1
+   },
+   {
+    "id": "rosh-hashanah",
+    "salience": 0.8
+   },
+   {
+    "id": "hiskashrus-tzaddikim",
+    "salience": 0.7
+   },
+   {
+    "id": "dovid-hamelech",
+    "salience": 0.6
+   },
+   {
+    "id": "elul",
+    "salience": 0.5
+   },
+   {
+    "id": "yerushalayim",
+    "salience": 0.5
+   },
+   {
+    "id": "bitachon",
+    "salience": 0.4
+   },
+   {
+    "id": "korbanos",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "korbanos",
+     "anavah-bittul"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "hiskashrus-tzaddikim",
+     "avraham-avinu",
+     "anavah-bittul"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "dovid-hamelech",
+     "anavah-bittul",
+     "kedushas-shabbos"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "yerushalayim",
+     "kedushas-shabbos"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "rosh-hashanah",
+     "yerushalayim"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "avraham-avinu",
+     "anavah-bittul"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "dovid-hamelech",
+     "talmidei-chachamim"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "dovid-hamelech",
+     "beis-hamikdash-churban",
+     "yerushalayim"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "anavah-bittul",
+     "dovid-hamelech",
+     "avraham-avinu"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "dovid-hamelech",
+     "beis-hamikdash-churban"
+    ]
+   },
+   {
+    "idx": 10,
+    "topicIds": [
+     "elul",
+     "anavah-bittul",
+     "bitachon"
+    ]
+   },
+   {
+    "idx": 11,
+    "topicIds": [
+     "bitachon"
+    ]
+   },
+   {
+    "idx": 12,
+    "topicIds": [
+     "anavah-bittul",
+     "hiskashrus-tzaddikim"
+    ]
+   },
+   {
+    "idx": 13,
+    "topicIds": [
+     "korbanos",
+     "anavah-bittul"
+    ]
+   },
+   {
+    "idx": 14,
+    "topicIds": [
+     "rosh-hashanah",
+     "moshiach"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "anavah-bittul": {
+    "id": "anavah-bittul",
+    "label": {
+     "en": "Anavah and Bittul",
+     "yi": "ענוה און ביטול",
+     "he": "ענוה וביטול"
+    },
+    "page": true
+   },
+   "avraham-avinu": {
+    "id": "avraham-avinu",
+    "label": {
+     "en": "Avraham Avinu",
+     "yi": "אברהם אבינו"
+    },
+    "page": true
+   },
+   "beis-hamikdash-churban": {
+    "id": "beis-hamikdash-churban",
+    "label": {
+     "en": "The Beis HaMikdash and Its Churban",
+     "yi": "דער בית המקדש און דער חורבן",
+     "he": "בית המקדש וחורבנו"
+    },
+    "page": true
+   },
+   "bitachon": {
+    "id": "bitachon",
+    "label": {
+     "en": "Bitachon",
+     "yi": "בטחון"
+    },
+    "page": true
+   },
+   "dovid-hamelech": {
+    "id": "dovid-hamelech",
+    "label": {
+     "en": "Dovid HaMelech and Malchus Beis Dovid",
+     "yi": "דוד המלך און מלכות בית דוד",
+     "he": "דוד המלך ומלכות בית דוד"
+    },
+    "page": true
+   },
+   "elul": {
+    "id": "elul",
+    "label": {
+     "en": "Chodesh Elul",
+     "yi": "חודש אלול"
+    },
+    "page": true
+   },
+   "hiskashrus-tzaddikim": {
+    "id": "hiskashrus-tzaddikim",
+    "label": {
+     "en": "Hiskashrus to Tzaddikim and Emunas Chachamim",
+     "yi": "התקשרות צו צדיקים און אמונת חכמים",
+     "he": "התקשרות לצדיקים"
+    },
+    "page": true
+   },
+   "kedushas-shabbos": {
+    "id": "kedushas-shabbos",
+    "label": {
+     "en": "Kedushas Shabbos",
+     "yi": "קדושת שבת"
+    },
+    "page": true
+   },
+   "korbanos": {
+    "id": "korbanos",
+    "label": {
+     "en": "Korbanos and Avodas HaMikdash",
+     "yi": "קרבנות און עבודת בית המקדש",
+     "he": "קרבנות"
+    },
+    "page": true
+   },
+   "moshiach": {
+    "id": "moshiach",
+    "label": {
+     "en": "Moshiach and the Days of Moshiach",
+     "yi": "משיח און ימות המשיח",
+     "he": "ימות המשיח"
+    },
+    "page": true
+   },
+   "rosh-hashanah": {
+    "id": "rosh-hashanah",
+    "label": {
+     "en": "Rosh Hashanah",
+     "yi": "ראש השנה"
+    },
+    "page": true
+   },
+   "talmidei-chachamim": {
+    "id": "talmidei-chachamim",
+    "label": {
+     "en": "Kavod HaTorah and Talmidei Chachamim",
+     "yi": "כבוד התורה און תלמידי חכמים",
+     "he": "כבוד התורה"
+    },
+    "page": true
+   },
+   "yerushalayim": {
+    "id": "yerushalayim",
+    "label": {
+     "en": "Yerushalayim and the Kosel",
+     "yi": "ירושלים און דער כותל",
+     "he": "ירושלים עיר הקודש"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "bitachon",
+    "label": {
+     "en": "Bitachon (trust in Hashem)",
+     "yi": "בטחון"
+    },
+    "page": false
+   },
+   {
+    "id": "bittul",
+    "label": {
+     "en": "Bittul (self-nullification)",
+     "yi": "ביטול"
+    },
+    "page": false
+   },
+   {
+    "id": "elul",
+    "label": {
+     "en": "Elul (the month of Elul)",
+     "yi": "אלול"
+    },
+    "page": false
+   },
+   {
+    "id": "kabbalas-ol-malchus-shamayim",
+    "label": {
+     "en": "Kabbalas ol malchus Shamayim (accepting the yoke of Heaven's kingship)",
+     "yi": "קבלת עול מלכות שמים"
+    },
+    "page": false
+   },
+   {
+    "id": "malchus-beis-david",
+    "label": {
+     "en": "Malchus Beis David (the kingship of David's house)",
+     "yi": "מלכות בית דוד"
+    },
+    "page": false
+   },
+   {
+    "id": "mashpia-umekabel",
+    "label": {
+     "en": "Mashpia u'mekabel (giver and receiver)",
+     "yi": "משפיע ומקבל"
+    },
+    "page": false
+   },
+   {
+    "id": "ribono-shel-olam",
+    "label": {
+     "en": "Ribono shel Olam (Master of the World)",
+     "yi": "רבונו של עולם"
+    },
+    "page": true
+   },
+   {
+    "id": "ushpizin",
+    "label": {
+     "en": "Ushpizin (the holy guests of the Sukkah)",
+     "yi": "אושפיזין"
+    },
+    "page": false
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src0",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src1",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src2",
+    "workId": "talmud-bavli",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src3",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src4",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src5",
+    "workId": "sanhedrin",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src6",
+    "workId": "shmuel-i",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src7",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src8",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src9",
+    "workId": "nedarim",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src10",
+    "workId": "berachos",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src11",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src12",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src13",
+    "workId": "yeshayahu",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src14",
+    "workId": "zohar",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src15",
+    "workId": "avodah-zarah",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src16",
+    "workId": "shemos",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src17",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src18",
+    "workId": "rosh-hashanah",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src19",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src20",
+    "workId": "zechariah",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src22",
+    "workId": "pirkei-avos",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src23",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src24",
+    "workId": "divrei-hayamim-i",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src25",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src26",
+    "workId": "vayikra",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src27",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src28",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src29",
+    "workId": "sanhedrin",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src30",
+    "workId": "talmud-bavli",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src31",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src32",
+    "workId": "shmuel-ii",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src33",
+    "workId": "mishneh-lamelech",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src34",
+    "workId": "shmuel-i",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src36",
+    "workId": "bnei-yissaschar",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src37",
+    "workId": "tanya",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src39",
+    "workId": "sanhedrin",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src40",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src41",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src42",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src43",
+    "workId": "chovos-halevavos",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src44",
+    "workId": "mishneh-torah",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~src45",
+    "workId": "yeshayahu",
+    "page": true
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~st0",
+    "storyId": "r-naftali-amsterdams-sefer",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-shvptym-01~st1",
+    "storyId": "king-yannai-and-the-sanhedrin",
+    "tellings": 1,
+    "page": false
+   }
+  ],
+  "insights": []
  },
  "notes": {
   "summary": {

@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "yi-zmanim-lvl-01",
  "rev": "e794bff85dc2",
  "lang": "yi",
@@ -50,7 +50,410 @@
   ],
   "prev": null,
   "next": "yi-zmanim-lvl-02",
-  "neighbors": []
+  "neighbors": [],
+  "titles": {
+   "yi-zmanim-lvl-02": {
+    "title": "לדוד ה' אורי - בבטחון תלוי הכל",
+    "lang": "yi",
+    "years": [
+     5740
+    ]
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "elul",
+    "salience": 1
+   },
+   {
+    "id": "emunah-safek-amalek",
+    "salience": 0.7
+   },
+   {
+    "id": "bein-adam-lachaveiro",
+    "salience": 0.6
+   },
+   {
+    "id": "shemitah-yovel",
+    "salience": 0.6
+   },
+   {
+    "id": "galus-mitzrayim-makkos",
+    "salience": 0.5
+   },
+   {
+    "id": "kavanah-betefilah",
+    "salience": 0.4
+   },
+   {
+    "id": "rosh-hashanah",
+    "salience": 0.4
+   },
+   {
+    "id": "cheit-haegel",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "elul",
+     "cheit-haegel"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "shemitah-yovel"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "shemitah-yovel",
+     "bein-adam-lachaveiro",
+     "rosh-hashanah"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "emunah-safek-amalek",
+     "chaveirim-sevivah"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "emunah-safek-amalek",
+     "kavanah-betefilah"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "galus-mitzrayim-makkos",
+     "emunah-safek-amalek"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "galus-mitzrayim-makkos"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "rosh-hashanah"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "elul",
+     "ahavas-hashem-leyisroel",
+     "cheit-haegel"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "ahavas-hashem-leyisroel": {
+    "id": "ahavas-hashem-leyisroel",
+    "label": {
+     "en": "Hashem's Love for Klal Yisroel",
+     "yi": "דעם אייבערשטנס אהבה צו כלל ישראל",
+     "he": "אהבת השם לישראל"
+    },
+    "page": true
+   },
+   "bein-adam-lachaveiro": {
+    "id": "bein-adam-lachaveiro",
+    "label": {
+     "en": "Bein Adam LaChaveiro",
+     "yi": "בין אדם לחבירו"
+    },
+    "page": true
+   },
+   "chaveirim-sevivah": {
+    "id": "chaveirim-sevivah",
+    "label": {
+     "en": "Friends and Environment",
+     "yi": "חברים און די סביבה",
+     "he": "השפעת הסביבה"
+    },
+    "page": true
+   },
+   "cheit-haegel": {
+    "id": "cheit-haegel",
+    "label": {
+     "en": "The Golden Calf and the Thirteen Middos",
+     "yi": "חטא העגל און די י\"ג מידות",
+     "he": "חטא העגל"
+    },
+    "page": true
+   },
+   "elul": {
+    "id": "elul",
+    "label": {
+     "en": "Chodesh Elul",
+     "yi": "חודש אלול"
+    },
+    "page": true
+   },
+   "emunah-safek-amalek": {
+    "id": "emunah-safek-amalek",
+    "label": {
+     "en": "Doubts in Emunah and Amalek",
+     "yi": "ספיקות אין אמונה און עמלק",
+     "he": "ספק ועמלק"
+    },
+    "page": true
+   },
+   "galus-mitzrayim-makkos": {
+    "id": "galus-mitzrayim-makkos",
+    "label": {
+     "en": "Galus Mitzrayim and the Makkos",
+     "yi": "גלות מצרים און די מכות",
+     "he": "גלות מצרים והמכות"
+    },
+    "page": true
+   },
+   "kavanah-betefilah": {
+    "id": "kavanah-betefilah",
+    "label": {
+     "en": "Kavanah in Davening",
+     "yi": "כוונה אין דאווענען",
+     "he": "כוונת התפילה"
+    },
+    "page": true
+   },
+   "rosh-hashanah": {
+    "id": "rosh-hashanah",
+    "label": {
+     "en": "Rosh Hashanah",
+     "yi": "ראש השנה"
+    },
+    "page": true
+   },
+   "shemitah-yovel": {
+    "id": "shemitah-yovel",
+    "label": {
+     "en": "Shemitah and Yovel",
+     "yi": "שמיטה און יובל",
+     "he": "שמיטה ויובל"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "ahavas-yisrael",
+    "label": {
+     "en": "Ahavas Yisrael (love of a fellow Jew)",
+     "yi": "אהבת ישראל"
+    },
+    "page": false
+   },
+   {
+    "id": "baal-teshuvah",
+    "label": {
+     "en": "Ba'al teshuvah (a penitent)",
+     "yi": "בעלי תשובה"
+    },
+    "page": false
+   },
+   {
+    "id": "eis-ratzon",
+    "label": {
+     "en": "Eis ratzon (a time of Divine favor)",
+     "yi": "עת רצון"
+    },
+    "page": false
+   },
+   {
+    "id": "emunah",
+    "label": {
+     "en": "Emunah (faith)",
+     "yi": "אמונה"
+    },
+    "page": false
+   },
+   {
+    "id": "leitzanus",
+    "label": {
+     "en": "Leitzanus (scoffing)",
+     "yi": "ליצנות"
+    },
+    "page": false
+   },
+   {
+    "id": "midah-keneged-midah",
+    "label": {
+     "en": "Midah keneged midah (measure for measure)",
+     "yi": "מדה כנגד מדה"
+    },
+    "page": false
+   },
+   {
+    "id": "ribono-shel-olam",
+    "label": {
+     "en": "Ribono shel Olam (Master of the World)",
+     "yi": "רבונו של עולם"
+    },
+    "page": true
+   },
+   {
+    "id": "satan",
+    "label": {
+     "en": "Satan (the accuser)",
+     "yi": "שטן"
+    },
+    "page": true
+   },
+   {
+    "id": "shemitah",
+    "label": {
+     "en": "Shemitah (the Sabbatical year)",
+     "yi": "שמיטה"
+    },
+    "page": false
+   },
+   {
+    "id": "shviras-haluchos",
+    "label": {
+     "en": "Shviras haLuchos (the breaking of the Tablets)",
+     "yi": "שבירת הלוחות"
+    },
+    "page": false
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "yi-zmanim-lvl-01~src2",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src3",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src4",
+    "workId": "midrash",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src5",
+    "workId": "midrash",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src6",
+    "workId": "yoma",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src7",
+    "workId": "shulchan-aruch",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src8",
+    "workId": "vayikra",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src9",
+    "workId": "tzidkas-hatzaddik",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src10",
+    "workId": "shemos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src11",
+    "workId": "shabbos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src12",
+    "workId": "mishlei",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src13",
+    "workId": "midrash",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src14",
+    "workId": "sotah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src15",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src17",
+    "workId": "mishlei",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src18",
+    "workId": "mesilas-yesharim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src19",
+    "workId": "shemos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src20",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src21",
+    "workId": "machzor-rosh-hashanah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src22",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~src23",
+    "workId": "shir-hashirim",
+    "page": true
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "yi-zmanim-lvl-01~st0",
+    "storyId": "the-baal-shem-tov-and-the-man-from-danzig",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-lvl-01~st1",
+    "storyId": "rebbi-i-dont-like-fish",
+    "tellings": 1,
+    "page": false
+   }
+  ],
+  "insights": []
  },
  "notes": {
   "summary": {

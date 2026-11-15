@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "yi-zmanim-tv-bb-04",
  "rev": "10730a4a33af",
  "lang": "yi",
@@ -59,7 +59,431 @@
   "sameOccasion": [],
   "prev": "yi-zmanim-msybs-lchyym-bkmp-01-c",
   "next": null,
-  "neighbors": []
+  "neighbors": [],
+  "titles": {
+   "yi-zmanim-msybs-lchyym-bkmp-01-c": {
+    "title": "ג - ט\"ו תמוז יארצייט האוה\"ח הק' - תורה על הפרשה.",
+    "lang": "yi",
+    "years": []
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "tu-bav-nechamah",
+    "salience": 0.95
+   },
+   {
+    "id": "yiras-shamayim",
+    "salience": 0.8
+   },
+   {
+    "id": "tachlis-hagalus",
+    "salience": 0.6
+   },
+   {
+    "id": "teshuvah",
+    "salience": 0.6
+   },
+   {
+    "id": "shidduchim-chasunah",
+    "salience": 0.5
+   },
+   {
+    "id": "yom-kippur",
+    "salience": 0.5
+   },
+   {
+    "id": "torah-lishmah",
+    "salience": 0.4
+   },
+   {
+    "id": "yerushalayim",
+    "salience": 0.4
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "yiras-shamayim",
+     "sefer-devarim",
+     "teshuvah"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "ahavas-hashem-leyisroel",
+     "shidduchim-chasunah",
+     "yiras-shamayim"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "shidduchim-chasunah",
+     "yom-kippur",
+     "maasios"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "yom-kippur",
+     "teshuvah",
+     "tu-bav-nechamah"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "yerushalayim",
+     "yiras-shamayim",
+     "tammuz-av"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "tachlis-hagalus"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "tisha-bav",
+     "tachlis-hagalus"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "tachlis-hagalus",
+     "teshuvah"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "torah-lishmah",
+     "hester-panim"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "ahavas-hashem-leyisroel": {
+    "id": "ahavas-hashem-leyisroel",
+    "label": {
+     "en": "Hashem's Love for Klal Yisroel",
+     "yi": "דעם אייבערשטנס אהבה צו כלל ישראל",
+     "he": "אהבת השם לישראל"
+    },
+    "page": true
+   },
+   "hester-panim": {
+    "id": "hester-panim",
+    "label": {
+     "en": "Hester Panim and Suffering",
+     "yi": "הסתר פנים און יסורים",
+     "he": "הסתר פנים"
+    },
+    "page": true
+   },
+   "maasios": {
+    "id": "maasios",
+    "label": {
+     "en": "Stories of Tzaddikim",
+     "yi": "מעשיות פון צדיקים",
+     "he": "מעשיות"
+    },
+    "page": true
+   },
+   "sefer-devarim": {
+    "id": "sefer-devarim",
+    "label": {
+     "en": "Sefer Devarim",
+     "yi": "ספר דברים"
+    },
+    "page": true
+   },
+   "shidduchim-chasunah": {
+    "id": "shidduchim-chasunah",
+    "label": {
+     "en": "Shidduchim and Chasunah",
+     "yi": "שידוכים און חתונה",
+     "he": "שידוכים וחתונה"
+    },
+    "page": true
+   },
+   "tachlis-hagalus": {
+    "id": "tachlis-hagalus",
+    "label": {
+     "en": "Galus as Preparation for Geulah",
+     "yi": "גלות אלס הכנה צו גאולה",
+     "he": "תכלית הגלות"
+    },
+    "page": true
+   },
+   "tammuz-av": {
+    "id": "tammuz-av",
+    "label": {
+     "en": "Chodashim Tammuz and Av",
+     "yi": "די חדשים תמוז און אב",
+     "he": "תמוז ואב"
+    },
+    "page": true
+   },
+   "teshuvah": {
+    "id": "teshuvah",
+    "label": {
+     "en": "Teshuvah",
+     "yi": "תשובה"
+    },
+    "page": true
+   },
+   "tisha-bav": {
+    "id": "tisha-bav",
+    "label": {
+     "en": "Tisha B'Av",
+     "yi": "תשעה באב"
+    },
+    "page": true
+   },
+   "torah-lishmah": {
+    "id": "torah-lishmah",
+    "label": {
+     "en": "Torah Lishmah and Hasmadah",
+     "yi": "תורה לשמה און התמדה",
+     "he": "תורה לשמה והתמדה"
+    },
+    "page": true
+   },
+   "tu-bav-nechamah": {
+    "id": "tu-bav-nechamah",
+    "label": {
+     "en": "Tu B'Av and the Weeks of Nechamah",
+     "yi": "ט\"ו באב און די שבעה דנחמתא",
+     "he": "ט\"ו באב"
+    },
+    "page": true
+   },
+   "yerushalayim": {
+    "id": "yerushalayim",
+    "label": {
+     "en": "Yerushalayim and the Kosel",
+     "yi": "ירושלים און דער כותל",
+     "he": "ירושלים עיר הקודש"
+    },
+    "page": true
+   },
+   "yiras-shamayim": {
+    "id": "yiras-shamayim",
+    "label": {
+     "en": "Yiras Shamayim",
+     "yi": "יראת שמים"
+    },
+    "page": true
+   },
+   "yom-kippur": {
+    "id": "yom-kippur",
+    "label": {
+     "en": "Yom Kippur",
+     "yi": "יום כיפור",
+     "he": "יום הכיפורים"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "bechirah",
+    "label": {
+     "en": "Bechirah (free choice)",
+     "yi": "בחירה"
+    },
+    "page": false
+   },
+   {
+    "id": "hester-panim",
+    "label": {
+     "en": "Hester panim (the hiding of Hashem's face)",
+     "yi": "הסתר פנים"
+    },
+    "page": false
+   },
+   {
+    "id": "nachas-ruach",
+    "label": {
+     "en": "Nachas ruach (satisfaction, pleasure)",
+     "yi": "נחת רוח"
+    },
+    "page": false
+   },
+   {
+    "id": "nechamah",
+    "label": {
+     "en": "Nechamah (consolation)",
+     "yi": "נחמה"
+    },
+    "page": false
+   },
+   {
+    "id": "ribono-shel-olam",
+    "label": {
+     "en": "Ribono shel Olam (Master of the World)",
+     "yi": "רבונו של עולם"
+    },
+    "page": true
+   },
+   {
+    "id": "shidduch",
+    "label": {
+     "en": "Shidduch (a match; matchmaker)",
+     "yi": "שידוך"
+    },
+    "page": false
+   },
+   {
+    "id": "tu-bav",
+    "label": {
+     "en": "Tu B'Av (the fifteenth of Av)",
+     "yi": "חמשה עשר באב"
+    },
+    "page": false
+   },
+   {
+    "id": "yiras-shamayim",
+    "label": {
+     "en": "Yiras Shamayim (fear of Heaven)",
+     "yi": "יראת שמים"
+    },
+    "page": false
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src0",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src1",
+    "workId": "yeshayahu",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src2",
+    "workId": "mishnah-taanis",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src4",
+    "workId": "shir-hashirim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src5",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src6",
+    "workId": "sotah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src7",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src8",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src9",
+    "workId": "mishnah-taanis",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src10",
+    "workId": "bereishis-rabbah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src11",
+    "workId": "taanis",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src14",
+    "workId": "yeshayahu",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src15",
+    "workId": "pesikta",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src17",
+    "workId": "chiddushei-harim",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src18",
+    "workId": "taanis",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src19",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src20",
+    "workId": "yerushalmi-yoma",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src21",
+    "workId": "chasam-sofer",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src22",
+    "workId": "chasam-sofer",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src23",
+    "workId": "shabbos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src24",
+    "workId": "yeshayahu",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-tv-bb-04~src25",
+    "workId": "shloshah-asar-ikkarim",
+    "page": false
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "yi-zmanim-tv-bb-04~st0",
+    "storyId": "the-man-from-biala-who-chose-right-after-yom-kippur",
+    "tellings": 1,
+    "page": false
+   }
+  ],
+  "insights": []
  },
  "notes": {
   "summary": {

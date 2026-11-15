@@ -47,6 +47,26 @@ describe("checkLiveBudgets", () => {
     expect(r.dataFiles).toBe(4);
   });
 
+  it("fires for each corpus-layer budget (plan §4) and for today.json", () => {
+    const targets = {
+      "topics.json": "topics",
+      "topic/hester-panim.json": "topic",
+      "topic/hester-panim.moments-1.json": "topicMoments",
+      "thread/akeidah.json": "thread",
+      "story/sugar-sled.json": "story",
+      "stories-index.json": "storiesIndex",
+      "glossary/ha.json": "glossary",
+      "today.json": "today",
+    } as const;
+    const expected = { topics: 8, topic: 24, topicMoments: 24, thread: 6, story: 6, storiesIndex: 120, glossary: 8, today: 30 };
+    for (const [kind, kib] of Object.entries(expected)) expect(BR_TARGETS[kind as keyof typeof BR_TARGETS], kind).toBe(kib * 1024);
+    const over = tree(Object.fromEntries(Object.entries(targets).map(([f, k]) => [f, noise(BR_TARGETS[k]! + 2048)])));
+    const r = checkLiveBudgets({ dataDir: over.data, clientDir: null });
+    expect(r.findings.filter((f) => f.kind === "br-size").map((f) => ("file" in f ? f.file : "")).sort()).toEqual(Object.keys(targets).sort());
+    const under = tree(Object.fromEntries(Object.entries(targets).map(([f, k]) => [f, noise(BR_TARGETS[k]! / 2)])));
+    expect(checkLiveBudgets({ dataDir: under.data, clientDir: null }).findings.filter((f) => f.kind === "br-size")).toEqual([]);
+  });
+
   it("corpus.json over its target is a warning; over the hard limit it fails", () => {
     const soft = tree({ "corpus.json": noise(BR_TARGETS.corpus! + 8192) });
     const a = checkLiveBudgets({ dataDir: soft.data, clientDir: null });
@@ -111,6 +131,34 @@ describe("checkLiveBudgets", () => {
     });
     // Today + shiurim a, b + series + genesis + x + noach, per UI language.
     expect(projectedPrerender(files, sets)).toBe(2 * (1 + 2 + 1 + 1 + 1 + 1));
+  });
+
+  it("projects the corpus-layer routes: topics, threads, stories with a page; moment pages are data", () => {
+    const files = [
+      "topics.json",
+      "topic/a.json",
+      "topic/a.moments-1.json",
+      "topic/b.json",
+      "thread/t.json",
+      "story/s.json",
+      "story/u.json",
+      "glossary/a.json",
+      "stories-index.json",
+      "redirects.json",
+      "explore/entities.json",
+    ];
+    // Today + 2 topics + 1 thread + 2 stories, per UI language.
+    expect(projectedPrerender(files)).toBe(2 * (1 + 2 + 1 + 2));
+    const sets = {
+      works: new Set<string>(),
+      people: new Set<string>(),
+      concepts: new Set<string>(),
+      occasions: new Set<string>(),
+      topics: new Set(["a"]),
+      threads: new Set<string>(),
+      stories: new Set(["s"]),
+    };
+    expect(projectedPrerender(files, sets)).toBe(2 * (1 + 1 + 0 + 1));
   });
 });
 

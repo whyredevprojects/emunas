@@ -10,8 +10,9 @@ import { existsSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { DEFAULT_TRANSCRIPTS_DIR, createLeakScanner, runPrePass } from "@emunas/corpus-guard";
-import { checkLiveBudgets, describeFinding } from "./budgets.ts";
-import { readCorpusInput } from "./corpus-input.ts";
+import type { ShiurFile } from "../app/data/types.ts";
+import { brotliSize, checkLiveBudgets, describeFinding, prerenderSetsFromCorpus } from "./budgets.ts";
+import { readCorpusInput, readFeaturedPolicy } from "./corpus-input.ts";
 import { emitLiveData } from "./emit.ts";
 import { validateFile } from "./schemas.ts";
 import { GENERATED_AT, REAL_DATA, REAL_POLICY, REPO, buildCorpusTo, tmp } from "./test-helpers.ts";
@@ -34,7 +35,7 @@ describe.runIf(haveRealData)("Live data emit on real data", () => {
       corpusDir = buildCorpusTo(REAL_DATA, REAL_POLICY, { suppressFile: suppress });
     }
     const input = readCorpusInput(corpusDir);
-    const files = emitLiveData(input, { generatedAt: GENERATED_AT });
+    const files = emitLiveData(input, { generatedAt: GENERATED_AT, featured: readFeaturedPolicy(REAL_POLICY) });
 
     // Every file validates against its contract schema.
     const invalid = [...files].flatMap(([f, body]) => validateFile(f, body) ?? []);
@@ -46,9 +47,27 @@ describe.runIf(haveRealData)("Live data emit on real data", () => {
     const root = join(tmp(), "public");
     const dataDir = join(root, "data");
     writeDataDir(dataDir, files);
-    const b = checkLiveBudgets({ dataDir, publicDir: root, clientDir: null });
+    const b = checkLiveBudgets({ dataDir, publicDir: root, clientDir: null, prerender: prerenderSetsFromCorpus(corpusDir) });
     expect(b.findings.map(describeFinding)).toEqual([]);
     expect(b.projectedFiles).toBeLessThanOrEqual(18_000);
+    // The corpus layer is on: its files exist (plan §4 budgets are in BR_TARGETS, checked above).
+    for (const kind of ["topics", "topic", "thread", "story", "storiesIndex", "glossary", "redirects", "exploreEntities"] as const) {
+      expect(b.byKind[kind]?.files ?? 0, kind).toBeGreaterThan(0);
+    }
+
+    // A shiur file grows by at most 2 KiB br at the median with its self-contained additions (G.1:
+    // related titles, series title, corpus-layer refs with labels), max 40 KiB (BR_TARGETS).
+    const growth = [...files]
+      .filter(([f]) => f.startsWith("shiur/"))
+      .map(([, body]) => {
+        const s = body as ShiurFile;
+        const { corpus: _c, seriesTitle: _t, related, ...rest } = s;
+        const { titles: _x, ...relatedRest } = related;
+        return brotliSize(JSON.stringify(s)) - brotliSize(JSON.stringify({ ...rest, related: relatedRest }));
+      })
+      .sort((x, y) => x - y);
+    const median = growth[Math.floor(growth.length / 2)]!;
+    expect(median).toBeLessThanOrEqual(2 * 1024);
 
     // Guard post-pass over the emitted tree.
     const scanner = createLeakScanner({
@@ -63,6 +82,7 @@ describe.runIf(haveRealData)("Live data emit on real data", () => {
     console.log(
       `[live data-build] real data: ${files.size} files, ${b.projectedFiles} projected with prerender, ` +
         `corpus.json ${b.byKind.corpus?.brBytes} B br (${b.warnings.length} soft-target warnings); ` +
+        `today.json ${b.byKind.today?.brBytes} B br, topics.json ${b.byKind.topics?.brBytes} B br, shiur growth median ${median} B br; ` +
         `pre-pass suppressed ${suppressed}; post-pass ${post.counts.textUnits} units, verbatim ${post.verbatimChecked}, ` +
         `${post.findings.length} findings in ${((performance.now() - t0) / 1000).toFixed(1)} s`,
     );

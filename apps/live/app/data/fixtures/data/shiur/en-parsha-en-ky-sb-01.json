@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "en-parsha-en-ky-sb-01",
  "rev": "60a9c926c681",
  "lang": "en",
@@ -48,7 +48,497 @@
   "sameOccasion": [],
   "prev": "en-parsha-en-vyshlch-01",
   "next": null,
-  "neighbors": []
+  "neighbors": [],
+  "titles": {
+   "en-parsha-en-vyshlch-01": {
+    "title": "A Deeper Understanding of יעקב's Present to עשו",
+    "lang": "en",
+    "years": [
+     5749
+    ]
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "sefer-devarim",
+    "salience": 0.9
+   },
+   {
+    "id": "elul",
+    "salience": 0.8
+   },
+   {
+    "id": "teshuvah",
+    "salience": 0.8
+   },
+   {
+    "id": "avodah-begashmiyus",
+    "salience": 0.6
+   },
+   {
+    "id": "zerizus",
+    "salience": 0.6
+   },
+   {
+    "id": "rosh-hashanah",
+    "salience": 0.5
+   },
+   {
+    "id": "tzedakah-chesed",
+    "salience": 0.35
+   },
+   {
+    "id": "korbanos",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "sefer-devarim",
+     "avodah-begashmiyus"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "avodah-begashmiyus",
+     "brachos",
+     "baal-shem-tov-talmidim"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "tzedakah-chesed",
+     "sefer-devarim"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "korbanos",
+     "zerizus",
+     "maaseh-bereishis"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "rosh-hashanah",
+     "elul",
+     "zerizus"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "elul",
+     "aseres-yemei-teshuvah",
+     "koach-hatefilah"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "teshuvah",
+     "aseres-yemei-teshuvah",
+     "zos-chanukah"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "teshuvah",
+     "sefer-devarim"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "sefer-devarim",
+     "teshuvah",
+     "nisyonos-hador"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "zerizus",
+     "elul"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "aseres-yemei-teshuvah": {
+    "id": "aseres-yemei-teshuvah",
+    "label": {
+     "en": "Aseres Yemei Teshuvah",
+     "yi": "עשרת ימי תשובה"
+    },
+    "page": true
+   },
+   "avodah-begashmiyus": {
+    "id": "avodah-begashmiyus",
+    "label": {
+     "en": "Serving Hashem in Physical Life",
+     "yi": "עבודה בגשמיות"
+    },
+    "page": true
+   },
+   "baal-shem-tov-talmidim": {
+    "id": "baal-shem-tov-talmidim",
+    "label": {
+     "en": "The Baal Shem Tov and His Talmidim",
+     "yi": "דער בעל שם טוב און זיינע תלמידים",
+     "he": "הבעל שם טוב ותלמידיו"
+    },
+    "page": true
+   },
+   "brachos": {
+    "id": "brachos",
+    "label": {
+     "en": "Brachos",
+     "yi": "ברכות"
+    },
+    "page": true
+   },
+   "elul": {
+    "id": "elul",
+    "label": {
+     "en": "Chodesh Elul",
+     "yi": "חודש אלול"
+    },
+    "page": true
+   },
+   "koach-hatefilah": {
+    "id": "koach-hatefilah",
+    "label": {
+     "en": "The Power of Tefilah",
+     "yi": "דער כח פון תפילה",
+     "he": "כח התפילה"
+    },
+    "page": true
+   },
+   "korbanos": {
+    "id": "korbanos",
+    "label": {
+     "en": "Korbanos and Avodas HaMikdash",
+     "yi": "קרבנות און עבודת בית המקדש",
+     "he": "קרבנות"
+    },
+    "page": true
+   },
+   "maaseh-bereishis": {
+    "id": "maaseh-bereishis",
+    "label": {
+     "en": "Creation and Its Wonders",
+     "yi": "מעשה בראשית און די נפלאות הבריאה",
+     "he": "מעשה בראשית"
+    },
+    "page": true
+   },
+   "nisyonos-hador": {
+    "id": "nisyonos-hador",
+    "label": {
+     "en": "Challenges of Our Generation",
+     "yi": "די נסיונות פונעם דור",
+     "he": "נסיונות הדור"
+    },
+    "page": true
+   },
+   "rosh-hashanah": {
+    "id": "rosh-hashanah",
+    "label": {
+     "en": "Rosh Hashanah",
+     "yi": "ראש השנה"
+    },
+    "page": true
+   },
+   "sefer-devarim": {
+    "id": "sefer-devarim",
+    "label": {
+     "en": "Sefer Devarim",
+     "yi": "ספר דברים"
+    },
+    "page": true
+   },
+   "teshuvah": {
+    "id": "teshuvah",
+    "label": {
+     "en": "Teshuvah",
+     "yi": "תשובה"
+    },
+    "page": true
+   },
+   "tzedakah-chesed": {
+    "id": "tzedakah-chesed",
+    "label": {
+     "en": "Tzedakah, Chesed and Hachnasas Orchim",
+     "yi": "צדקה, חסד און הכנסת אורחים",
+     "he": "צדקה וחסד"
+    },
+    "page": true
+   },
+   "zerizus": {
+    "id": "zerizus",
+    "label": {
+     "en": "Zerizus and the Value of Time",
+     "yi": "זריזות און די ווערט פון צייט",
+     "he": "זריזות"
+    },
+    "page": true
+   },
+   "zos-chanukah": {
+    "id": "zos-chanukah",
+    "label": {
+     "en": "Zos Chanukah",
+     "yi": "זאת חנוכה"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "beis-hamikdash",
+    "label": {
+     "en": "Beis HaMikdash (the Holy Temple)",
+     "yi": "בית המקדש"
+    },
+    "page": false
+   },
+   {
+    "id": "bikkurim",
+    "label": {
+     "en": "Bikkurim (first fruits)",
+     "yi": "ביכורים"
+    },
+    "page": false
+   },
+   {
+    "id": "even-hashesiyah",
+    "label": {
+     "en": "Even HaShesiyah (the Foundation Stone)",
+     "yi": "אבן שתיה"
+    },
+    "page": false
+   },
+   {
+    "id": "hashkamah",
+    "label": {
+     "en": "Hashkamah (rising early)",
+     "yi": "השכמה"
+    },
+    "page": false
+   },
+   {
+    "id": "hoshana-rabbah",
+    "label": {
+     "en": "Hoshana Rabbah (the seventh day of Sukkos)",
+     "yi": "הושענא רבה"
+    },
+    "page": false
+   },
+   {
+    "id": "nitzotzos",
+    "label": {
+     "en": "Nitzotzos (holy sparks)",
+     "yi": "ניצוצות"
+    },
+    "page": false
+   },
+   {
+    "id": "reishis",
+    "label": {
+     "en": "Reishis (the beginning, the first)",
+     "yi": "ראשית"
+    },
+    "page": false
+   },
+   {
+    "id": "ribono-shel-olam",
+    "label": {
+     "en": "Ribono shel Olam (Master of the World)",
+     "yi": "רבונו של עולם"
+    },
+    "page": true
+   },
+   {
+    "id": "teshuvah",
+    "label": {
+     "en": "Teshuvah (repentance, return)",
+     "yi": "תשובה"
+    },
+    "page": false
+   },
+   {
+    "id": "tochachah",
+    "label": {
+     "en": "Tochachah (rebuke)",
+     "yi": "תוכחה"
+    },
+    "page": false
+   },
+   {
+    "id": "zos-chanukah",
+    "label": {
+     "en": "Zos Chanukah (the eighth day of Chanukah)",
+     "yi": "זאת חנוכה"
+    },
+    "page": false
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src0",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src2",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src3",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src4",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src5",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src6",
+    "workId": "taanis",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src7",
+    "workId": "talmud-bavli",
+    "page": false
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src8",
+    "workId": "talmud-bavli",
+    "page": false
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src9",
+    "workId": "shulchan-aruch",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src10",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src11",
+    "workId": "talmud-bavli",
+    "page": false
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src12",
+    "workId": "shulchan-aruch",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src13",
+    "workId": "mishneh-torah",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src14",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src15",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src16",
+    "workId": "baal-haturim",
+    "page": false
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src17",
+    "workId": "berachos",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src18",
+    "workId": "bamidbar",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src19",
+    "workId": "rosh-hashanah",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src20",
+    "workId": "zohar",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src22",
+    "workId": "talmud-bavli",
+    "page": false
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src23",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src24",
+    "workId": "zohar",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src25",
+    "workId": "megillah",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src26",
+    "workId": "mishlei",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~src27",
+    "workId": "talmud-bavli",
+    "page": false
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "en-parsha-en-ky-sb-01~st0",
+    "storyId": "yaakov-wakes-at-the-place-of-the-beis-hamikdash",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "en-parsha-en-ky-sb-01~st1",
+    "storyId": "a-listener-counts-the-pesukim-of-ki-savo",
+    "tellings": 1,
+    "page": false
+   }
+  ],
+  "insights": []
  },
  "notes": {
   "summary": {

@@ -5,8 +5,6 @@ export const SERIES_CLASSES = [
   "aiNote",
   "bar",
   "column",
-  "columnTitle",
-  "columns",
   "continue",
   "controls",
   "group",

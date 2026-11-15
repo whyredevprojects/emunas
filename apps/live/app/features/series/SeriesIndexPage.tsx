@@ -1,5 +1,5 @@
 /**
- * `/:ui/series`: every series (facets.json), a course and its other-language counterpart on one row.
+ * `/:ui/series`: every series (facets.json), one per row; courses in the two languages are never paired.
  */
 import { languageName, type UiLang } from "@emunas/i18n";
 import { livePaths } from "@emunas/links";

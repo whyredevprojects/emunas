@@ -1,10 +1,11 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "kind": "p",
  "key": "chasam-sofer",
  "label": {
   "en": "the Chasam Sofer",
-  "yi": "החתם סופר"
+  "yi": "דער חתם סופר",
+  "he": "חתם סופר"
  },
  "shiurIds": [
   "en-miscellaneous-en-02",
@@ -39,18 +40,18 @@
  },
  "moments": [
   {
-   "id": "yi-zmanim-lvl-02~st1",
-   "shiurId": "yi-zmanim-lvl-02",
-   "kind": "st",
-   "t": 2697.19,
-   "end": 2791.71
-  },
-  {
    "id": "en-miscellaneous-en-02~st0",
    "shiurId": "en-miscellaneous-en-02",
    "kind": "st",
    "t": 870.66,
    "end": 1108.44
+  },
+  {
+   "id": "yi-zmanim-lvl-02~st1",
+   "shiurId": "yi-zmanim-lvl-02",
+   "kind": "st",
+   "t": 2697.19,
+   "end": 2791.71
   }
  ],
  "related": [

@@ -14,6 +14,7 @@ function page(over: Partial<SeoPage>): SeoPage {
     canonical: null,
     alternates: [],
     url: null,
+    noindex: false,
     ...over,
   };
 }

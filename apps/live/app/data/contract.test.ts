@@ -14,7 +14,18 @@ import {
   loadBuild,
   loadCorpus,
   loadEntity,
+  loadExploreEntities,
   loadFacets,
+  loadGlossaryShard,
+  loadRedirects,
+  loadStoriesIndex,
+  loadStory,
+  loadThread,
+  loadTopic,
+  loadTopicMoments,
+  loadTopics,
+  glossaryShardFor,
+  topicNodes,
   loadMomentShard,
   loadQuickIndex,
   loadSeries,
@@ -68,19 +79,28 @@ function walkKeys(v: unknown, out: Set<string>): void {
 
 /** Required top-level fields per file kind, checked against the types at compile time. */
 const REQUIRED: { [K in keyof DataFiles]: readonly (keyof DataFiles[K])[] } = {
-  build: ["schemaVersion", "corpusSchemaVersion", "buildId", "dataSha", "generatedAt", "counts", "momentShards"],
+  build: ["schemaVersion", "corpusSchemaVersion", "buildId", "dataSha", "generatedAt", "counts", "momentShards", "glossaryShards"],
   corpus: ["schemaVersion", "buildId", "counts", "shiurim"],
   facets: ["schemaVersion", "category", "lang", "occasion", "year", "series", "work", "person", "concept"],
-  today: ["schemaVersion", "occasions", "newlySummarized"],
-  shiur: ["schemaVersion", "id", "rev", "lang", "category", "catalog", "recordings", "status", "related", "duration"],
+  today: ["schemaVersion", "counts", "occasions", "newlySummarized", "cards"],
+  shiur: ["schemaVersion", "id", "rev", "lang", "category", "catalog", "recordings", "status", "related", "duration", "seriesTitle"],
   writeup: ["schemaVersion", "shiurId", "rev", "lang", "blocks"],
-  series: ["schemaVersion", "id", "title", "lang", "sibling", "parts", "perekGroups"],
+  series: ["schemaVersion", "id", "title", "lang", "parts", "perekGroups"],
   works: ["schemaVersion", "works"],
   work: ["schemaVersion", "key", "name", "label", "locations", "unlocated"],
   entity: ["schemaVersion", "kind", "key", "label", "shiurIds", "years", "moments", "related"],
   stories: ["schemaVersion", "stories"],
   moments: ["schemaVersion", "lang", "shard", "moments"],
   quickIndex: ["schemaVersion", "lang", "options", "index"],
+  topics: ["schemaVersion", "topics"],
+  topic: ["schemaVersion", "id", "label", "description", "reviewed", "hubs", "moments", "momentPages"],
+  topicMoments: ["schemaVersion", "topicId", "page", "moments"],
+  thread: ["schemaVersion", "id", "label", "summary", "reviewed", "members"],
+  story: ["schemaVersion", "id", "title", "retelling", "reviewed", "tellings"],
+  storiesIndex: ["schemaVersion", "stories"],
+  glossary: ["schemaVersion", "shard", "concepts"],
+  redirects: ["schemaVersion", "routes"],
+  exploreEntities: ["schemaVersion", "shiurim"],
 };
 
 function kindOf(file: string): keyof DataFiles {
@@ -90,9 +110,19 @@ function kindOf(file: string): keyof DataFiles {
   if (file === "today.json") return "today";
   if (file === "works.json") return "works";
   if (file === "stories.json") return "stories";
+  if (file === "topics.json") return "topics";
+  if (file === "stories-index.json") return "storiesIndex";
+  if (file === "redirects.json") return "redirects";
+  if (file === "explore/entities.json") return "exploreEntities";
   if (file.startsWith("quick-index.")) return "quickIndex";
+  if (/^topic\/[^/]+\.moments-\d+\.json$/.test(file)) return "topicMoments";
   const dir = file.split("/")[0];
   switch (dir) {
+    case "topic":
+    case "thread":
+    case "story":
+    case "glossary":
+      return dir;
     case "shiur":
     case "writeup":
     case "series":
@@ -156,11 +186,15 @@ describe("data contract", () => {
     const facets = await loadFacets();
     expect(Object.keys(facets.occasion).length).toBeGreaterThan(0);
     const today = await loadToday();
-    // An occasion has a page exactly when facets.json says so (≥2 listed shiurim).
+    // An occasion has a page exactly when facets.json says so (≥2 listed shiurim); Today's row is a
+    // few of them per language, the page lists all.
     for (const key of Object.keys(today.occasions)) {
+      const o = today.occasions[key]!;
+      for (const id of o.shiurIds) expect(today.cards[id], id).toBeDefined();
       if (facets.occasion[key]?.hasPage) {
         const e = await loadEntity("o", key);
-        expect(e.shiurIds).toEqual(today.occasions[key]!.shiurIds);
+        expect(e.shiurIds).toHaveLength(o.total);
+        expect(e.shiurIds).toEqual(expect.arrayContaining(o.shiurIds));
       } else {
         await expect(loadEntity("o", key)).rejects.toMatchObject({ status: 404 });
       }
@@ -176,11 +210,26 @@ describe("data contract", () => {
     // Every mention is one citation, grouped by place (the W3.6 emit groups a place's citations).
     expect(work.locations.reduce((n, l) => n + l.citations.length, 0) + work.unlocated.length).toBe(first.mentions);
 
-    // Entity files exist from 2 shiurim on (W3.6 `entityFileMin`).
-    const person = Object.keys(facets.person).find((k) => facets.person[k]!.count >= 2)!;
+    // People and concepts listed in the facets (corpus ids, Live pages) have an entity file.
+    const person = Object.keys(facets.person)[0]!;
     expect((await loadEntity("p", person)).kind).toBe("p");
-    const concept = Object.keys(facets.concept).find((k) => facets.concept[k]!.count >= 2)!;
+    const concept = Object.keys(facets.concept)[0]!;
     expect((await loadEntity("c", concept)).key).toBe(concept);
+
+    // Corpus layer (C1.7).
+    const tree = topicNodes(await loadTopics());
+    expect(tree.length).toBeGreaterThan(0);
+    const topic = await loadTopic(tree[0]!.id);
+    expect(topic.label).toEqual(tree[0]!.label);
+    if (topic.momentPages > 0) expect((await loadTopicMoments(topic.id, 1)).topicId).toBe(topic.id);
+    const index = await loadStoriesIndex();
+    const paged = index.stories.find((st) => st.page)!;
+    expect((await loadStory(paged.id)).tellings).toHaveLength(paged.tellings);
+    await expect(loadThread("no-such-thread")).rejects.toMatchObject({ status: 404 });
+    const shard = glossaryShardFor(concept, build.glossaryShards)!;
+    expect((await loadGlossaryShard(shard)).concepts.map((c) => c.id)).toContain(concept);
+    expect(Object.keys((await loadRedirects()).routes).sort()).toEqual(["c", "maasios", "p", "seforim", "t", "th"]);
+    expect(Object.keys((await loadExploreEntities()).shiurim).length).toBeGreaterThan(0);
 
     expect((await loadStories()).stories.length).toBeGreaterThan(0);
     for (const lang of ["en", "yi"] as const) {
@@ -240,5 +289,40 @@ describe("data contract", () => {
     expect(() => dataPaths.shiur("")).toThrow();
     expect(() => dataPaths.moments("en", -1)).toThrow();
     expect(() => dataPaths.entity("x" as "p", "k")).toThrow();
+    expect(dataPaths.topic("hester-panim")).toBe("/data/topic/hester-panim.json");
+    expect(dataPaths.topicMoments("hester-panim", 2)).toBe("/data/topic/hester-panim.moments-2.json");
+    expect(() => dataPaths.topicMoments("x", 0)).toThrow();
+    expect(dataPaths.thread("a")).toBe("/data/thread/a.json");
+    expect(dataPaths.story("a")).toBe("/data/story/a.json");
+    expect(dataPaths.glossary("ha")).toBe("/data/glossary/ha.json");
+    expect(() => dataPaths.glossary("../x")).toThrow();
+    expect(dataPaths.exploreEntities()).toBe("/data/explore/entities.json");
+  });
+
+  it("finds a concept's glossary shard by the longest prefix", () => {
+    const shards = ["a", "ha", "hav", "s"];
+    expect(glossaryShardFor("havdalah", shards)).toBe("hav");
+    expect(glossaryShardFor("hashgacha", shards)).toBe("ha");
+    expect(glossaryShardFor("shabbos", shards)).toBe("s");
+    expect(glossaryShardFor("zman", shards)).toBeNull();
+  });
+
+  it("expands the topic tree rows with levels", () => {
+    const nodes = topicNodes({
+      topics: [
+        ["a", null, "A", "א", null, 10],
+        ["b", "a", "B", "ב", "בּ", 4],
+        ["c", "b", "C", "ג", null, 2],
+        ["d", "missing", "D", "ד", null, 1],
+      ],
+    });
+    expect(nodes.map((n) => [n.id, n.parentId, n.level])).toEqual([
+      ["a", null, 1],
+      ["b", "a", 2],
+      ["c", "b", 3],
+      ["d", null, 1],
+    ]);
+    expect(nodes[1]!.label).toEqual({ en: "B", yi: "ב", he: "בּ" });
+    expect(nodes[0]!.label).toEqual({ en: "A", yi: "א" });
   });
 });

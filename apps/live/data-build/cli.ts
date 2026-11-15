@@ -3,11 +3,12 @@
  * `corpus:build`:
  *
  *   emit     [--corpus <dir>] [--out <dir>] [--generated-at <iso>]   .corpus/ → public/data/ (validated)
+ *            [--policy <dir>]                                        site-policy (corpus-policy `featured`, D7)
  *            [--neighbors auto|embeddings|lexical|off] [--embeddings <dir>] [--embed-model <id>]
  *            [--neighbor-threshold <x>] [--neighbor-workers <n>]           "same idea elsewhere" (W4.4)
  *   validate [--data <dir>]                                          every file against its contract schema
  *   budgets  [--data <dir>] [--client <dir>] [--public <dir>]        file counts and sizes (tech-live §3.3)
- *            [--corpus <dir>]                                        (entities.json: which routes prerender)
+ *            [--corpus <dir>]                                        (layer page flags: which routes prerender)
  *
  * Defaults: corpus `<repo>/.corpus`, data `apps/live/public/data`, client `apps/live/build/client`,
  * public `apps/live/public`. `--generated-at` defaults to SOURCE_DATE_EPOCH, else now.
@@ -22,7 +23,7 @@ import { fileURLToPath } from "node:url";
 import { parseArgs } from "node:util";
 import { walkFiles } from "@emunas/corpus-guard/budgets";
 import { checkLiveBudgets, describeFinding, prerenderSetsFromCorpus } from "./budgets.ts";
-import { readCorpusInput } from "./corpus-input.ts";
+import { readCorpusInput, readFeaturedPolicy } from "./corpus-input.ts";
 import { emitLiveData } from "./emit.ts";
 import { buildNeighbors, DEFAULT_EMBED_MODEL, DirBlobReader, type BuildNeighborsOptions, type NeighborMode } from "./neighbors.ts";
 import { validateFile, type ValidationIssue } from "./schemas.ts";
@@ -36,6 +37,7 @@ const BASE = process.env["INIT_CWD"] ?? process.cwd();
 
 export const DEFAULTS = {
   corpus: resolve(REPO, ".corpus"),
+  policy: resolve(REPO, "site-policy"),
   data: resolve(APP, "public/data"),
   public: resolve(APP, "public"),
   client: resolve(APP, "build/client"),
@@ -64,6 +66,7 @@ export async function main(argv: string[]): Promise<number> {
       args: rest,
       options: {
         corpus: { type: "string" },
+        policy: { type: "string" },
         out: { type: "string" },
         data: { type: "string" },
         client: { type: "string" },
@@ -107,8 +110,10 @@ export async function main(argv: string[]): Promise<number> {
         return 2;
       }
       let input;
+      let featured;
       try {
         input = readCorpusInput(corpusDir);
+        featured = readFeaturedPolicy(abs(v.policy, DEFAULTS.policy));
       } catch (e) {
         console.error((e as Error).message);
         return 1;
@@ -131,6 +136,7 @@ export async function main(argv: string[]): Promise<number> {
       }
       const files = emitLiveData(input, {
         generatedAt: new Date(generatedAt).toISOString(),
+        featured,
         ...(mode === "off" ? {} : { neighbors: { byShiur: neighbors.byShiur, fingerprint: neighbors.fingerprint } }),
       });
       const invalid = [...files].flatMap(([f, body]) => validateFile(f, body) ?? []);

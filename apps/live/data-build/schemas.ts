@@ -14,7 +14,16 @@ import {
   type DataFiles,
   type DataKind,
   type EntityFile,
+  type ExploreEntitiesFile,
   type FacetsFile,
+  type GlossaryShardFile,
+  type RedirectsFile,
+  type StoriesIndexFile,
+  type StoryFile,
+  type ThreadFile,
+  type TopicFile,
+  type TopicMomentsFile,
+  type TopicsFile,
   type MomentShardFile,
   type QuickIndexFile,
   type SeriesFile,
@@ -150,6 +159,7 @@ export const BuildSchema = v.strictObject({
   generatedAt: v.pipe(str, v.isoTimestamp()),
   counts,
   momentShards: v.strictObject({ en: int, yi: int }),
+  glossaryShards: v.array(str),
 });
 
 export const CorpusSchema = v.strictObject({
@@ -197,16 +207,52 @@ export const FacetsSchema = v.strictObject({
   lang: v.strictObject({ en: facetValue, yi: facetValue }),
   occasion: v.record(str, v.strictObject({ label: facetLabel, count: int, type: v.picklist(["parsha", "zman"]), hasPage: v.boolean() })),
   year: facetRecord,
-  series: v.record(str, v.strictObject({ label: facetLabel, count: int, lang: ed, sibling: nstr })),
+  series: v.record(str, v.strictObject({ label: facetLabel, count: int, lang: ed })),
   work: facetRecord,
   person: facetRecord,
   concept: facetRecord,
 });
 
+const yearSpan = v.nullable(v.tuple([int, int]));
+const level = v.picklist([1, 2, 3]);
+const chip = v.strictObject({ id: str, label: facetLabel, page: v.boolean() });
+const card = v.strictObject({
+  id: str,
+  lang: ed,
+  title: str,
+  oneLiner: v.nullable(L),
+  duration: num,
+  years: v.array(int),
+  status,
+});
+const mixItemEntries = { id: str, shiurId: str, t: num, end: num, lang: ed, title: L };
+
 export const TodaySchema = v.strictObject({
   schemaVersion: version,
-  occasions: v.record(str, v.strictObject({ shiurIds: v.array(str), moments: v.array(momentRef) })),
+  counts,
+  occasions: v.record(
+    str,
+    v.strictObject({
+      label: v.exactOptional(facetLabel),
+      shiurIds: v.array(str),
+      total: int,
+      moments: v.array(v.strictObject({ id: str, t: num })),
+      mix: v.nullable(
+        v.strictObject({
+          topicId: str,
+          label: facetLabel,
+          sections: int,
+          shiurim: int,
+          first: v.array(v.strictObject({ id: str, t: num, end: num, title: L })),
+        }),
+      ),
+    }),
+  ),
   newlySummarized: v.array(v.strictObject({ shiurId: str, updatedAt: str })),
+  cards: v.record(
+    str,
+    v.strictObject({ lang: ed, title: str, duration: num, years: v.array(int), status, oneLiner: v.exactOptional(L) }),
+  ),
 });
 
 export const ShiurSchema = v.strictObject({
@@ -231,7 +277,31 @@ export const ShiurSchema = v.strictObject({
     prev: nstr,
     next: nstr,
     neighbors: v.array(v.strictObject({ momentId: str, shiurId: str, t: num, score: num })),
+    titles: v.record(str, v.strictObject({ title: str, lang: ed, years: v.array(int) })),
   }),
+  seriesTitle: v.nullable(L),
+  corpus: v.exactOptional(
+    v.strictObject({
+      topics: v.array(v.strictObject({ id: str, salience: num })),
+      chapters: v.array(v.strictObject({ idx: int, topicIds: v.array(str) })),
+      topicLabels: v.record(str, chip),
+      terms: v.array(chip),
+      sources: v.array(v.strictObject({ momentId: str, workId: str, page: v.boolean() })),
+      stories: v.array(v.strictObject({ momentId: str, storyId: str, tellings: int, page: v.boolean() })),
+      insights: v.array(
+        v.strictObject({
+          momentId: str,
+          threadId: str,
+          shiurCount: int,
+          years: yearSpan,
+          page: v.boolean(),
+          other: v.exactOptional(
+            v.strictObject({ shiurId: str, momentId: str, t: nnum, year: v.nullable(int), lang: ed }),
+          ),
+        }),
+      ),
+    }),
+  ),
 });
 
 export const WriteupSchema = v.strictObject({
@@ -247,7 +317,6 @@ export const SeriesSchema = v.strictObject({
   id: str,
   title: L,
   lang: ed,
-  sibling: nstr,
   parts: v.array(
     v.strictObject({
       shiurId: str,
@@ -261,6 +330,15 @@ export const SeriesSchema = v.strictObject({
     }),
   ),
   perekGroups: v.array(v.strictObject({ perek: str, shiurIds: v.array(str) })),
+  synthesis: v.exactOptional(
+    v.strictObject({
+      title: L,
+      overview: L,
+      keyThemes: v.array(L),
+      arc: v.array(v.strictObject({ shiurId: str, oneLiner: L })),
+      reviewed: v.boolean(),
+    }),
+  ),
 });
 
 export const WorksSchema = v.strictObject({
@@ -319,6 +397,136 @@ export const QuickIndexSchema = v.strictObject({
   index: v.unknown(),
 });
 
+// ---------------------------------------------------------------- corpus layer (C1.7)
+
+export const TopicsSchema = v.strictObject({
+  schemaVersion: version,
+  topics: v.array(v.tuple([str, nstr, str, str, nstr, int])),
+});
+
+const labelled = v.strictObject({ id: str, label: facetLabel });
+
+export const TopicSchema = v.strictObject({
+  schemaVersion: version,
+  id: str,
+  level,
+  label: facetLabel,
+  breadcrumb: v.array(labelled),
+  description: v.nullable(L),
+  reviewed: v.boolean(),
+  term: v.nullable(v.strictObject({ conceptId: str, he: str, definition: L })),
+  person: v.nullable(chip),
+  work: v.nullable(chip),
+  count: int,
+  hubs: v.array(card),
+  children: v.array(v.strictObject({ id: str, label: facetLabel, count: int })),
+  coTopics: v.array(v.strictObject({ id: str, label: facetLabel, sections: int })),
+  threads: v.array(v.strictObject({ id: str, label: L, shiurCount: int, page: v.boolean() })),
+  threadTotal: int,
+  stories: v.array(v.strictObject({ id: str, title: L, tellings: int, page: v.boolean() })),
+  storyTotal: int,
+  occasions: v.array(str),
+  moments: v.array(v.strictObject({ ...mixItemEntries, year: v.nullable(int) })),
+  momentTotal: int,
+  momentShiurim: int,
+  momentPages: int,
+});
+
+export const TopicMomentsSchema = v.strictObject({
+  schemaVersion: version,
+  topicId: str,
+  page: int,
+  moments: v.array(v.strictObject({ id: str, shiurId: str, t: num, end: num, lang: ed })),
+});
+
+const memberEntries = {
+  shiurId: str,
+  momentId: str,
+  t: nnum,
+  year: v.nullable(int),
+  lang: ed,
+  title: str,
+  chapterTitle: v.nullable(L),
+};
+
+export const ThreadSchema = v.strictObject({
+  schemaVersion: version,
+  id: str,
+  label: L,
+  summary: L,
+  reviewed: v.boolean(),
+  topics: v.array(labelled),
+  members: v.array(v.strictObject({ ...memberEntries, text: v.nullable(L) })),
+  shiurCount: int,
+  datedCount: int,
+  years: yearSpan,
+  timeline: v.boolean(),
+});
+
+export const StorySchema = v.strictObject({
+  schemaVersion: version,
+  id: str,
+  title: L,
+  retelling: L,
+  reviewed: v.boolean(),
+  people: v.array(v.union([chip, v.strictObject({ name: str })])),
+  tellings: v.array(v.strictObject(memberEntries)),
+});
+
+export const StoriesIndexSchema = v.strictObject({
+  schemaVersion: version,
+  stories: v.array(
+    v.strictObject({
+      id: str,
+      title: L,
+      people: v.array(str),
+      tellings: int,
+      langs: v.array(ed),
+      page: v.boolean(),
+      first: v.strictObject({ shiurId: str, momentId: str, t: nnum }),
+    }),
+  ),
+});
+
+export const GlossarySchema = v.strictObject({
+  schemaVersion: version,
+  shard: str,
+  concepts: v.array(
+    v.strictObject({
+      id: str,
+      he: str,
+      label: L,
+      definition: L,
+      count: int,
+      page: v.boolean(),
+      topicId: nstr,
+      examples: v.array(v.strictObject({ shiurId: str, momentId: str, t: num })),
+    }),
+  ),
+});
+
+const routeKind = v.picklist(["t", "c", "p", "seforim", "maasios", "th"]);
+const redirectMap = v.record(str, v.nullable(v.strictObject({ kind: routeKind, id: str })));
+export const RedirectsSchema = v.strictObject({
+  schemaVersion: version,
+  routes: v.strictObject({
+    t: redirectMap,
+    c: redirectMap,
+    p: redirectMap,
+    seforim: redirectMap,
+    maasios: redirectMap,
+    th: redirectMap,
+  }),
+});
+
+export const ExploreEntitiesSchema = v.strictObject({
+  schemaVersion: version,
+  shiurim: v.record(
+    str,
+    v.strictObject({ topics: v.array(str), people: v.array(str), concepts: v.array(str), works: v.array(str) }),
+  ),
+});
+
 export const DATA_SCHEMAS = {
   build: BuildSchema,
   corpus: CorpusSchema,
@@ -333,6 +541,15 @@ export const DATA_SCHEMAS = {
   stories: StoriesSchema,
   moments: MomentShardSchema,
   quickIndex: QuickIndexSchema,
+  topics: TopicsSchema,
+  topic: TopicSchema,
+  topicMoments: TopicMomentsSchema,
+  thread: ThreadSchema,
+  story: StorySchema,
+  storiesIndex: StoriesIndexSchema,
+  glossary: GlossarySchema,
+  redirects: RedirectsSchema,
+  exploreEntities: ExploreEntitiesSchema,
 } as const satisfies Record<DataKind, v.GenericSchema>;
 
 // ---------------------------------------------------------------- compile-time equality with the contract
@@ -355,6 +572,15 @@ export const _typeChecks: {
   stories: Same<Out<"stories">, StoriesFile>;
   moments: Same<Out<"moments">, MomentShardFile>;
   quickIndex: Same<Out<"quickIndex">, QuickIndexFile>;
+  topics: Same<Out<"topics">, TopicsFile>;
+  topic: Same<Out<"topic">, TopicFile>;
+  topicMoments: Same<Out<"topicMoments">, TopicMomentsFile>;
+  thread: Same<Out<"thread">, ThreadFile>;
+  story: Same<Out<"story">, StoryFile>;
+  storiesIndex: Same<Out<"storiesIndex">, StoriesIndexFile>;
+  glossary: Same<Out<"glossary">, GlossaryShardFile>;
+  redirects: Same<Out<"redirects">, RedirectsFile>;
+  exploreEntities: Same<Out<"exploreEntities">, ExploreEntitiesFile>;
 } = {
   build: true,
   corpus: true,
@@ -369,6 +595,15 @@ export const _typeChecks: {
   stories: true,
   moments: true,
   quickIndex: true,
+  topics: true,
+  topic: true,
+  topicMoments: true,
+  thread: true,
+  story: true,
+  storiesIndex: true,
+  glossary: true,
+  redirects: true,
+  exploreEntities: true,
 };
 export type _AllKinds = Same<keyof typeof _typeChecks, keyof DataFiles>;
 export const _allKinds: _AllKinds = true;
@@ -383,6 +618,15 @@ export function kindOfFile(file: string): DataKind | null {
   if (file === "today.json") return "today";
   if (file === "works.json") return "works";
   if (file === "stories.json") return "stories";
+  if (file === "topics.json") return "topics";
+  if (file === "stories-index.json") return "storiesIndex";
+  if (file === "redirects.json") return "redirects";
+  if (file === "explore/entities.json") return "exploreEntities";
+  if (/^topic\/[^/]+\.moments-[1-9]\d*\.json$/.test(file)) return "topicMoments";
+  if (/^topic\/[^/]+\.json$/.test(file)) return "topic";
+  if (/^thread\/[^/]+\.json$/.test(file)) return "thread";
+  if (/^story\/[^/]+\.json$/.test(file)) return "story";
+  if (/^glossary\/[^/]+\.json$/.test(file)) return "glossary";
   if (/^quick-index\.(en|yi)\.json$/.test(file)) return "quickIndex";
   if (/^shiur\/[^/]+\.json$/.test(file)) return "shiur";
   if (/^writeup\/[^/]+\.(en|yi)\.json$/.test(file)) return "writeup";

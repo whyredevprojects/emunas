@@ -1,8 +1,8 @@
 /**
  * Series (concept-live §5.6) as pure functions:
  *
- * - the index of all series, a series and its other-language sibling on one row (parallel courses,
- *   not translations);
+ * - the index of all series, one row each: a course given in the other language is a separate
+ *   course and is never paired with this one (concept-live-corpus F.1);
  * - parts in catalog `seriesOrder` (parts without an order last, otherwise stable);
  * - Tanya by perek: each part filed under every perek it covers (`ו-ז`, `י"א וי"ב`), so whoever is
  *   learning perek 12 finds every part on it, in either language;
@@ -21,30 +21,13 @@ export interface SeriesEntry extends SeriesFacetValue {
 }
 
 export interface SeriesIndexRow {
-  /** One or two entries; with two, the first is the one listed first in the facets. */
+  /** Exactly one series: nothing pairs a course with one in the other language. */
   entries: SeriesEntry[];
 }
 
-/**
- * Every series in `facets.json` (W3.6 lists them in corpus order), siblings paired on the row of
- * whichever comes first. A sibling id that is not in the facets is ignored.
- */
+/** Every series in `facets.json` (W3.6 lists them in corpus order), one per row. */
 export function seriesIndex(facets: Pick<FacetsFile, "series">): SeriesIndexRow[] {
-  const rows: SeriesIndexRow[] = [];
-  const rowOf = new Map<string, SeriesIndexRow>();
-  for (const [id, v] of Object.entries(facets.series)) {
-    const entry: SeriesEntry = { id, ...v };
-    const partnerRow = v.sibling !== null ? rowOf.get(v.sibling) : undefined;
-    if (partnerRow && partnerRow.entries.length === 1) {
-      partnerRow.entries.push(entry);
-      rowOf.set(id, partnerRow);
-      continue;
-    }
-    const row: SeriesIndexRow = { entries: [entry] };
-    rows.push(row);
-    rowOf.set(id, row);
-  }
-  return rows;
+  return Object.entries(facets.series).map(([id, v]) => ({ entries: [{ id, ...v }] }));
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -176,13 +159,12 @@ export function seriesProgress(parts: readonly SeriesPart[], progress: readonly 
   return { total: ordered.length, completed, started, next };
 }
 
-export type SeriesView = "order" | "perek" | "both";
+export type SeriesView = "order" | "perek";
 
-/** `?view=` → a view the series supports; defaults to in order. */
-export function viewFromQuery(search: string | URLSearchParams, opts: { hasPerek: boolean; hasSibling: boolean }): SeriesView {
+/** `?view=` → a view the series supports; defaults to in order (an old `?view=both` too). */
+export function viewFromQuery(search: string | URLSearchParams, opts: { hasPerek: boolean }): SeriesView {
   const q = typeof search === "string" ? new URLSearchParams(search) : search;
   const v = q.get("view");
   if (v === "perek" && opts.hasPerek) return "perek";
-  if (v === "both" && opts.hasSibling) return "both";
   return "order";
 }

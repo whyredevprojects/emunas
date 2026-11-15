@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "en-zmanim-en-psch-06",
  "rev": "acc1da8e1c45",
  "lang": "en",
@@ -55,7 +55,476 @@
     "t": 1661.64,
     "score": 0.368
    }
-  ]
+  ],
+  "titles": {
+   "en-zmanim-en-tv-bshbt-01": {
+    "title": "ט”ו בשבט Ushers in the Months of חסד (A Deeper Understanding of the צירופי החודש)",
+    "lang": "en",
+    "years": [
+     5756
+    ]
+   },
+   "yi-zmanim-nysn-05": {
+    "title": "לעזור בבית בהכנה לפסח; להתחדש עצמו בזמן התחדשות",
+    "lang": "yi",
+    "years": []
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "matzah",
+    "salience": 0.9
+   },
+   {
+    "id": "ahavas-hashem-leyisroel",
+    "salience": 0.8
+   },
+   {
+    "id": "chodesh-nissan",
+    "salience": 0.6
+   },
+   {
+    "id": "hischadshus",
+    "salience": 0.6
+   },
+   {
+    "id": "chametz",
+    "salience": 0.5
+   },
+   {
+    "id": "otiyos-gematria",
+    "salience": 0.4
+   },
+   {
+    "id": "schar-veonesh",
+    "salience": 0.4
+   },
+   {
+    "id": "leil-haseder",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "ahavas-hashem-leyisroel",
+     "chametz"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "hischadshus",
+     "chodesh-nissan"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "schar-veonesh",
+     "hischadshus"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "maaseh-bereishis",
+     "brachos"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "maasios",
+     "avodah-begashmiyus"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "matzah",
+     "otiyos-gematria",
+     "shemos-hakedoshim"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "galus-mitzrayim-makkos",
+     "schar-veonesh"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "matzah",
+     "otiyos-gematria"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "koach-hatefilah",
+     "moshiach",
+     "chodesh-nissan"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "ahavas-hashem-leyisroel": {
+    "id": "ahavas-hashem-leyisroel",
+    "label": {
+     "en": "Hashem's Love for Klal Yisroel",
+     "yi": "דעם אייבערשטנס אהבה צו כלל ישראל",
+     "he": "אהבת השם לישראל"
+    },
+    "page": true
+   },
+   "avodah-begashmiyus": {
+    "id": "avodah-begashmiyus",
+    "label": {
+     "en": "Serving Hashem in Physical Life",
+     "yi": "עבודה בגשמיות"
+    },
+    "page": true
+   },
+   "brachos": {
+    "id": "brachos",
+    "label": {
+     "en": "Brachos",
+     "yi": "ברכות"
+    },
+    "page": true
+   },
+   "chametz": {
+    "id": "chametz",
+    "label": {
+     "en": "Chametz and Preparing for Pesach",
+     "yi": "חמץ און די הכנה צו פסח",
+     "he": "ביעור חמץ"
+    },
+    "page": true
+   },
+   "chodesh-nissan": {
+    "id": "chodesh-nissan",
+    "label": {
+     "en": "Chodesh Nissan",
+     "yi": "חודש ניסן"
+    },
+    "page": true
+   },
+   "galus-mitzrayim-makkos": {
+    "id": "galus-mitzrayim-makkos",
+    "label": {
+     "en": "Galus Mitzrayim and the Makkos",
+     "yi": "גלות מצרים און די מכות",
+     "he": "גלות מצרים והמכות"
+    },
+    "page": true
+   },
+   "hischadshus": {
+    "id": "hischadshus",
+    "label": {
+     "en": "Renewal in Avodas Hashem",
+     "yi": "התחדשות אין עבודת השם",
+     "he": "התחדשות"
+    },
+    "page": true
+   },
+   "koach-hatefilah": {
+    "id": "koach-hatefilah",
+    "label": {
+     "en": "The Power of Tefilah",
+     "yi": "דער כח פון תפילה",
+     "he": "כח התפילה"
+    },
+    "page": true
+   },
+   "leil-haseder": {
+    "id": "leil-haseder",
+    "label": {
+     "en": "The Seder Night",
+     "yi": "ליל הסדר"
+    },
+    "page": true
+   },
+   "maaseh-bereishis": {
+    "id": "maaseh-bereishis",
+    "label": {
+     "en": "Creation and Its Wonders",
+     "yi": "מעשה בראשית און די נפלאות הבריאה",
+     "he": "מעשה בראשית"
+    },
+    "page": true
+   },
+   "maasios": {
+    "id": "maasios",
+    "label": {
+     "en": "Stories of Tzaddikim",
+     "yi": "מעשיות פון צדיקים",
+     "he": "מעשיות"
+    },
+    "page": true
+   },
+   "matzah": {
+    "id": "matzah",
+    "label": {
+     "en": "Matzah, the Food of Emunah",
+     "yi": "מצה, מיכלא דמהימנותא",
+     "he": "מצה"
+    },
+    "page": true
+   },
+   "moshiach": {
+    "id": "moshiach",
+    "label": {
+     "en": "Moshiach and the Days of Moshiach",
+     "yi": "משיח און ימות המשיח",
+     "he": "ימות המשיח"
+    },
+    "page": true
+   },
+   "otiyos-gematria": {
+    "id": "otiyos-gematria",
+    "label": {
+     "en": "Letters, Gematria and Lashon HaKodesh",
+     "yi": "אותיות, גימטריא און לשון הקודש",
+     "he": "אותיות וגימטריאות"
+    },
+    "page": true
+   },
+   "schar-veonesh": {
+    "id": "schar-veonesh",
+    "label": {
+     "en": "Reward, Olam HaBa and Techiyas HaMeisim",
+     "yi": "שכר ועונש, עולם הבא און תחיית המתים",
+     "he": "שכר ועונש"
+    },
+    "page": true
+   },
+   "shemos-hakedoshim": {
+    "id": "shemos-hakedoshim",
+    "label": {
+     "en": "The Holy Names of Hashem",
+     "yi": "די שמות הקדושים",
+     "he": "שמות הקדושים"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "asarah-maamaros",
+    "label": {
+     "en": "Asarah maamaros (the ten utterances of creation)",
+     "yi": "עשרה מאמרות"
+    },
+    "page": true
+   },
+   {
+    "id": "hamotzi",
+    "label": {
+     "en": "HaMotzi (the blessing over bread)",
+     "yi": "המוציא"
+    },
+    "page": false
+   },
+   {
+    "id": "hiskashrus",
+    "label": {
+     "en": "Hiskashrus (bonding)",
+     "yi": "התקשרות"
+    },
+    "page": false
+   },
+   {
+    "id": "kares",
+    "label": {
+     "en": "Kares (spiritual excision)",
+     "yi": "כרת"
+    },
+    "page": false
+   },
+   {
+    "id": "klipah",
+    "label": {
+     "en": "Klipah (husk, a shell of impurity)",
+     "yi": "קליפה"
+    },
+    "page": true
+   },
+   {
+    "id": "knesses-yisrael",
+    "label": {
+     "en": "Knesses Yisrael (the collective soul of the Jewish people)",
+     "yi": "כנסת ישראל"
+    },
+    "page": true
+   },
+   {
+    "id": "milui",
+    "label": {
+     "en": "Milui (the spelled-out fullness of a Name or letter)",
+     "yi": "מילוי"
+    },
+    "page": false
+   },
+   {
+    "id": "reishis",
+    "label": {
+     "en": "Reishis (the beginning, the first)",
+     "yi": "ראשית"
+    },
+    "page": false
+   },
+   {
+    "id": "ribono-shel-olam",
+    "label": {
+     "en": "Ribono shel Olam (Master of the World)",
+     "yi": "רבונו של עולם"
+    },
+    "page": true
+   },
+   {
+    "id": "shem-havaya",
+    "label": {
+     "en": "Shem Havaya (the Tetragrammaton, Hashem's essential Name)",
+     "yi": "שם הוי\"ה"
+    },
+    "page": true
+   },
+   {
+    "id": "techiyas-hameisim",
+    "label": {
+     "en": "Techiyas hameisim (the resurrection of the dead)",
+     "yi": "תחיית המתים"
+    },
+    "page": true
+   },
+   {
+    "id": "yetzias-mitzrayim",
+    "label": {
+     "en": "Yetzias Mitzrayim (the Exodus from Egypt)",
+     "yi": "יציאת מצרים"
+    },
+    "page": false
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "en-zmanim-en-psch-06~src0",
+    "workId": "zohar",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src1",
+    "workId": "tanya",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src3",
+    "workId": "mishnah-rosh-hashanah",
+    "page": false
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src4",
+    "workId": "shemos",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src5",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src6",
+    "workId": "shir-hashirim",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src8",
+    "workId": "shulchan-aruch",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src9",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src10",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src12",
+    "workId": "shabbos",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src14",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src15",
+    "workId": "taanis",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src16",
+    "workId": "shemos",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src17",
+    "workId": "targum-onkelos",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src18",
+    "workId": "zohar",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src19",
+    "workId": "shir-hashirim",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src21",
+    "workId": "avnei-nezer",
+    "page": false
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src22",
+    "workId": "chagigah",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src23",
+    "workId": "midrash",
+    "page": false
+   },
+   {
+    "momentId": "en-zmanim-en-psch-06~src24",
+    "workId": "machzor",
+    "page": false
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "en-zmanim-en-psch-06~st0",
+    "storyId": "the-malbim-and-the-cookie",
+    "tellings": 1,
+    "page": false
+   }
+  ],
+  "insights": []
  },
  "notes": {
   "summary": {

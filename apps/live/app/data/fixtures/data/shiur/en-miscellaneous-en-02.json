@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "en-miscellaneous-en-02",
  "rev": "1064213a819c",
  "lang": "en",
@@ -52,6 +52,414 @@
     "shiurId": "en-miscellaneous-en-01",
     "t": 1074.87,
     "score": 0.523
+   }
+  ],
+  "titles": {
+   "en-miscellaneous-en-01": {
+    "title": "פרק ששי: The קדושה of צדיקים and the חשיבות of Learning תורה",
+    "lang": "en",
+    "years": [
+     5738
+    ]
+   },
+   "en-miscellaneous-en-14": {
+    "title": "The Recession - Give צדקה with שמחה. The קדושים of the Mumbai Massacre",
+    "lang": "en",
+    "years": [
+     5769
+    ]
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "pirkei-avos",
+    "salience": 0.9
+   },
+   {
+    "id": "talmidei-chachamim",
+    "salience": 0.75
+   },
+   {
+    "id": "kriyas-shem",
+    "salience": 0.65
+   },
+   {
+    "id": "machshavah-dibur",
+    "salience": 0.6
+   },
+   {
+    "id": "torah-lishmah",
+    "salience": 0.5
+   },
+   {
+    "id": "schar-veonesh",
+    "salience": 0.4
+   },
+   {
+    "id": "kedushah-vekelipah",
+    "salience": 0.3
+   },
+   {
+    "id": "maasios",
+    "salience": 0.25
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "pirkei-avos"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "pirkei-avos",
+     "talmidei-chachamim"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "machshavah-dibur"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "maasios",
+     "talmidei-chachamim"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "kriyas-shem",
+     "mekomos-hakedoshim"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "kriyas-shem",
+     "adam-harishon",
+     "madreigos-haneshamah"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "torah-lishmah",
+     "schar-veonesh",
+     "pirkei-avos"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "kedushah-vekelipah"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "adam-harishon": {
+    "id": "adam-harishon",
+    "label": {
+     "en": "Adam HaRishon and Gan Eden",
+     "yi": "אדם הראשון און גן עדן",
+     "he": "אדם הראשון"
+    },
+    "page": true
+   },
+   "kedushah-vekelipah": {
+    "id": "kedushah-vekelipah",
+    "label": {
+     "en": "Kedushah and Kelipah",
+     "yi": "קדושה און קליפה",
+     "he": "קדושה וקליפה"
+    },
+    "page": true
+   },
+   "kriyas-shem": {
+    "id": "kriyas-shem",
+    "label": {
+     "en": "Naming a Child",
+     "yi": "קריאת שם פאר א קינד",
+     "he": "קריאת השם"
+    },
+    "page": true
+   },
+   "maasios": {
+    "id": "maasios",
+    "label": {
+     "en": "Stories of Tzaddikim",
+     "yi": "מעשיות פון צדיקים",
+     "he": "מעשיות"
+    },
+    "page": true
+   },
+   "machshavah-dibur": {
+    "id": "machshavah-dibur",
+    "label": {
+     "en": "Thought and the Power of Speech",
+     "yi": "מחשבה און דער כח הדיבור",
+     "he": "מחשבה ודיבור"
+    },
+    "page": true
+   },
+   "madreigos-haneshamah": {
+    "id": "madreigos-haneshamah",
+    "label": {
+     "en": "Levels and Root of the Soul",
+     "yi": "די מדריגות און דער שורש פון דער נשמה",
+     "he": "שורש הנשמה ומדרגותיה"
+    },
+    "page": true
+   },
+   "mekomos-hakedoshim": {
+    "id": "mekomos-hakedoshim",
+    "label": {
+     "en": "The Holy Places",
+     "yi": "די מקומות הקדושים",
+     "he": "מקומות הקדושים"
+    },
+    "page": true
+   },
+   "pirkei-avos": {
+    "id": "pirkei-avos",
+    "label": {
+     "en": "Pirkei Avos",
+     "yi": "פרקי אבות"
+    },
+    "page": true
+   },
+   "schar-veonesh": {
+    "id": "schar-veonesh",
+    "label": {
+     "en": "Reward, Olam HaBa and Techiyas HaMeisim",
+     "yi": "שכר ועונש, עולם הבא און תחיית המתים",
+     "he": "שכר ועונש"
+    },
+    "page": true
+   },
+   "talmidei-chachamim": {
+    "id": "talmidei-chachamim",
+    "label": {
+     "en": "Kavod HaTorah and Talmidei Chachamim",
+     "yi": "כבוד התורה און תלמידי חכמים",
+     "he": "כבוד התורה"
+    },
+    "page": true
+   },
+   "torah-lishmah": {
+    "id": "torah-lishmah",
+    "label": {
+     "en": "Torah Lishmah and Hasmadah",
+     "yi": "תורה לשמה און התמדה",
+     "he": "תורה לשמה והתמדה"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "dibur",
+    "label": {
+     "en": "Dibur (speech)",
+     "yi": "דיבור"
+    },
+    "page": false
+   },
+   {
+    "id": "lashon-hakodesh",
+    "label": {
+     "en": "Lashon hakodesh (the holy tongue)",
+     "yi": "לשון הקודש"
+    },
+    "page": false
+   },
+   {
+    "id": "midas-harachamim",
+    "label": {
+     "en": "Midas harachamim (the attribute of mercy)",
+     "yi": "מדת הרחמים"
+    },
+    "page": false
+   },
+   {
+    "id": "olam-haba",
+    "label": {
+     "en": "Olam Haba (the World to Come)",
+     "yi": "עולם הבא"
+    },
+    "page": true
+   },
+   {
+    "id": "osiyos",
+    "label": {
+     "en": "Osiyos (letters)",
+     "yi": "אותיות"
+    },
+    "page": false
+   },
+   {
+    "id": "ruach-hakodesh",
+    "label": {
+     "en": "Ruach hakodesh (Divine inspiration)",
+     "yi": "רוח הקודש"
+    },
+    "page": true
+   },
+   {
+    "id": "torah-lishmah",
+    "label": {
+     "en": "Torah lishmah (Torah study for its own sake)",
+     "yi": "תורה לשמה"
+    },
+    "page": false
+   },
+   {
+    "id": "yayin-hameshumar",
+    "label": {
+     "en": "Yayin hameshumar (the preserved wine)",
+     "yi": "יין המשומר"
+    },
+    "page": false
+   },
+   {
+    "id": "yayin-nesech",
+    "label": {
+     "en": "Yayin nesech (wine of idolatry)",
+     "yi": "יין נסך"
+    },
+    "page": false
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "en-miscellaneous-en-02~src0",
+    "workId": "pirkei-avos",
+    "page": true
+   },
+   {
+    "momentId": "en-miscellaneous-en-02~src1",
+    "workId": "siddur",
+    "page": false
+   },
+   {
+    "momentId": "en-miscellaneous-en-02~src2",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "en-miscellaneous-en-02~src3",
+    "workId": "tikkunei-zohar",
+    "page": true
+   },
+   {
+    "momentId": "en-miscellaneous-en-02~src4",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "en-miscellaneous-en-02~src5",
+    "workId": "rashi-on-tehillim",
+    "page": false
+   },
+   {
+    "momentId": "en-miscellaneous-en-02~src7",
+    "workId": "mishnah-yoma",
+    "page": false
+   },
+   {
+    "momentId": "en-miscellaneous-en-02~src8",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "en-miscellaneous-en-02~src9",
+    "workId": "yoma",
+    "page": true
+   },
+   {
+    "momentId": "en-miscellaneous-en-02~src10",
+    "workId": "pirkei-avos",
+    "page": true
+   },
+   {
+    "momentId": "en-miscellaneous-en-02~src11",
+    "workId": "berachos",
+    "page": true
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "en-miscellaneous-en-02~st0",
+    "storyId": "rav-shimon-sofer-and-the-factory-on-shabbos",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "en-miscellaneous-en-02~st1",
+    "storyId": "the-chiddushei-harim-declines-to-name-a-child",
+    "tellings": 1,
+    "page": false
+   }
+  ],
+  "insights": [
+   {
+    "momentId": "en-miscellaneous-en-02~i1",
+    "threadId": "torah-chacham-name-is-torah",
+    "shiurCount": 2,
+    "years": [
+     5735,
+     5738
+    ],
+    "page": false,
+    "other": {
+     "shiurId": "en-miscellaneous-en-01",
+     "momentId": "en-miscellaneous-en-01~i0",
+     "t": 189.76,
+     "year": 5738,
+     "lang": "en"
+    }
+   },
+   {
+    "momentId": "en-miscellaneous-en-02~i3",
+    "threadId": "torah-hebrew-name-is-essence",
+    "shiurCount": 2,
+    "years": [
+     5735,
+     5738
+    ],
+    "page": false,
+    "other": {
+     "shiurId": "en-miscellaneous-en-01",
+     "momentId": "en-miscellaneous-en-01~i1",
+     "t": 625.97,
+     "year": 5738,
+     "lang": "en"
+    }
+   },
+   {
+    "momentId": "en-miscellaneous-en-02~i5",
+    "threadId": "torah-holier-more-easily-spoiled",
+    "shiurCount": 2,
+    "years": [
+     5735,
+     5738
+    ],
+    "page": false,
+    "other": {
+     "shiurId": "en-miscellaneous-en-01",
+     "momentId": "en-miscellaneous-en-01~i2",
+     "t": 1237.76,
+     "year": 5738,
+     "lang": "en"
+    }
    }
   ]
  },

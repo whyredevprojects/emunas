@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "yi-parshas-hashavua-hzynv-01",
  "rev": "6ead82a5fce3",
  "lang": "yi",
@@ -54,6 +54,599 @@
     "shiurId": "yi-parshas-hashavua-shvptym-01",
     "t": 4961,
     "score": 0.317
+   }
+  ],
+  "titles": {
+   "yi-parshas-hashavua-shvptym-01": {
+    "title": "שופטים ושוטרים - עשה לך רב כדי שתהיה בטל להקב\"ה (שייכות לימים נוראים)",
+    "lang": "yi",
+    "years": [
+     5740
+    ]
+   },
+   "yi-shonos-31": {
+    "title": "חשיבות מסירת נפש בזמננו",
+    "lang": "yi",
+    "years": [
+     5771
+    ]
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "yesodei-haemunah",
+    "salience": 1
+   },
+   {
+    "id": "aseres-yemei-teshuvah",
+    "salience": 0.9
+   },
+   {
+    "id": "churban-europa",
+    "salience": 0.6
+   },
+   {
+    "id": "simanei-ikvesa",
+    "salience": 0.6
+   },
+   {
+    "id": "rosh-hashanah",
+    "salience": 0.5
+   },
+   {
+    "id": "sefer-devarim",
+    "salience": 0.5
+   },
+   {
+    "id": "hester-panim",
+    "salience": 0.4
+   },
+   {
+    "id": "tefilah-betzibbur",
+    "salience": 0.4
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "sefer-devarim",
+     "aseres-yemei-teshuvah"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "sefer-devarim",
+     "netzach-yisroel"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "rosh-hashanah",
+     "sefer-devarim"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "churban-europa",
+     "hester-panim"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "simanei-ikvesa",
+     "maasios"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "simanei-ikvesa",
+     "nissim-beretz-yisroel",
+     "moshiach"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "niggun-shirah",
+     "sefer-devarim"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "yesodei-haemunah",
+     "sefer-devarim"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "rosh-hashanah",
+     "yiras-shamayim"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "aseres-yemei-teshuvah",
+     "tefilah-betzibbur",
+     "yesodei-haemunah"
+    ]
+   },
+   {
+    "idx": 10,
+    "topicIds": [
+     "rosh-hashanah",
+     "hiskashrus-tzaddikim"
+    ]
+   },
+   {
+    "idx": 11,
+    "topicIds": [
+     "madreigos-haneshamah",
+     "rosh-hashanah"
+    ]
+   },
+   {
+    "idx": 12,
+    "topicIds": [
+     "maasios",
+     "gedolei-yisroel"
+    ]
+   },
+   {
+    "idx": 13,
+    "topicIds": [
+     "koach-hatefilah",
+     "ahavas-yisroel",
+     "aseres-yemei-teshuvah"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "ahavas-yisroel": {
+    "id": "ahavas-yisroel",
+    "label": {
+     "en": "Ahavas Yisroel and Achdus",
+     "yi": "אהבת ישראל און אחדות",
+     "he": "אהבת ישראל ואחדות"
+    },
+    "page": true
+   },
+   "aseres-yemei-teshuvah": {
+    "id": "aseres-yemei-teshuvah",
+    "label": {
+     "en": "Aseres Yemei Teshuvah",
+     "yi": "עשרת ימי תשובה"
+    },
+    "page": true
+   },
+   "churban-europa": {
+    "id": "churban-europa",
+    "label": {
+     "en": "The Churban of Europe and Persecutions",
+     "yi": "חורבן אייראפע און גזירות",
+     "he": "חורבן אירופה"
+    },
+    "page": true
+   },
+   "gedolei-yisroel": {
+    "id": "gedolei-yisroel",
+    "label": {
+     "en": "Chazal and Gedolei Yisroel",
+     "yi": "חז\"ל און גדולי ישראל",
+     "he": "חז\"ל וגדולי ישראל"
+    },
+    "page": true
+   },
+   "hester-panim": {
+    "id": "hester-panim",
+    "label": {
+     "en": "Hester Panim and Suffering",
+     "yi": "הסתר פנים און יסורים",
+     "he": "הסתר פנים"
+    },
+    "page": true
+   },
+   "hiskashrus-tzaddikim": {
+    "id": "hiskashrus-tzaddikim",
+    "label": {
+     "en": "Hiskashrus to Tzaddikim and Emunas Chachamim",
+     "yi": "התקשרות צו צדיקים און אמונת חכמים",
+     "he": "התקשרות לצדיקים"
+    },
+    "page": true
+   },
+   "koach-hatefilah": {
+    "id": "koach-hatefilah",
+    "label": {
+     "en": "The Power of Tefilah",
+     "yi": "דער כח פון תפילה",
+     "he": "כח התפילה"
+    },
+    "page": true
+   },
+   "maasios": {
+    "id": "maasios",
+    "label": {
+     "en": "Stories of Tzaddikim",
+     "yi": "מעשיות פון צדיקים",
+     "he": "מעשיות"
+    },
+    "page": true
+   },
+   "madreigos-haneshamah": {
+    "id": "madreigos-haneshamah",
+    "label": {
+     "en": "Levels and Root of the Soul",
+     "yi": "די מדריגות און דער שורש פון דער נשמה",
+     "he": "שורש הנשמה ומדרגותיה"
+    },
+    "page": true
+   },
+   "moshiach": {
+    "id": "moshiach",
+    "label": {
+     "en": "Moshiach and the Days of Moshiach",
+     "yi": "משיח און ימות המשיח",
+     "he": "ימות המשיח"
+    },
+    "page": true
+   },
+   "netzach-yisroel": {
+    "id": "netzach-yisroel",
+    "label": {
+     "en": "Netzach Yisroel",
+     "yi": "נצח ישראל"
+    },
+    "page": true
+   },
+   "niggun-shirah": {
+    "id": "niggun-shirah",
+    "label": {
+     "en": "Niggun and Shirah",
+     "yi": "ניגון און שירה",
+     "he": "ניגון ושירה"
+    },
+    "page": true
+   },
+   "nissim-beretz-yisroel": {
+    "id": "nissim-beretz-yisroel",
+    "label": {
+     "en": "Miracles and Wars in Eretz Yisroel",
+     "yi": "ניסים און מלחמות אין ארץ ישראל",
+     "he": "ניסים בארץ ישראל"
+    },
+    "page": true
+   },
+   "rosh-hashanah": {
+    "id": "rosh-hashanah",
+    "label": {
+     "en": "Rosh Hashanah",
+     "yi": "ראש השנה"
+    },
+    "page": true
+   },
+   "sefer-devarim": {
+    "id": "sefer-devarim",
+    "label": {
+     "en": "Sefer Devarim",
+     "yi": "ספר דברים"
+    },
+    "page": true
+   },
+   "simanei-ikvesa": {
+    "id": "simanei-ikvesa",
+    "label": {
+     "en": "Signs of the Generation Before Moshiach",
+     "yi": "די סימנים פונעם דור פאר משיח",
+     "he": "סימני עקבתא דמשיחא"
+    },
+    "page": true
+   },
+   "tefilah-betzibbur": {
+    "id": "tefilah-betzibbur",
+    "label": {
+     "en": "Davening with the Tzibbur and the Beis HaKnesses",
+     "yi": "דאווענען מיט'ן ציבור און דער בית הכנסת",
+     "he": "תפילה בציבור"
+    },
+    "page": true
+   },
+   "yesodei-haemunah": {
+    "id": "yesodei-haemunah",
+    "label": {
+     "en": "Foundations of Emunah",
+     "yi": "יסודי האמונה"
+    },
+    "page": true
+   },
+   "yiras-shamayim": {
+    "id": "yiras-shamayim",
+    "label": {
+     "en": "Yiras Shamayim",
+     "yi": "יראת שמים"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "asarah-maamaros",
+    "label": {
+     "en": "Asarah maamaros (the ten utterances of creation)",
+     "yi": "עשרה מאמרות"
+    },
+    "page": true
+   },
+   {
+    "id": "aseres-yemei-teshuvah",
+    "label": {
+     "en": "Aseres Yemei Teshuvah (the Ten Days of Repentance)",
+     "yi": "עשרת ימי תשובה"
+    },
+    "page": false
+   },
+   {
+    "id": "chazaras-hashatz",
+    "label": {
+     "en": "Chazaras hashatz (the chazzan's repetition)",
+     "yi": "חזרת הש\"ץ"
+    },
+    "page": false
+   },
+   {
+    "id": "emunah",
+    "label": {
+     "en": "Emunah (faith)",
+     "yi": "אמונה"
+    },
+    "page": false
+   },
+   {
+    "id": "haazinu",
+    "label": {
+     "en": "Ha'azinu (the song of Ha'azinu)",
+     "yi": "האזינו"
+    },
+    "page": false
+   },
+   {
+    "id": "ribono-shel-olam",
+    "label": {
+     "en": "Ribono shel Olam (Master of the World)",
+     "yi": "רבונו של עולם"
+    },
+    "page": true
+   },
+   {
+    "id": "rosh-hashanah",
+    "label": {
+     "en": "Rosh Hashanah (the New Year)",
+     "yi": "ראש השנה"
+    },
+    "page": false
+   },
+   {
+    "id": "shirah",
+    "label": {
+     "en": "Shirah (song)",
+     "yi": "שירה"
+    },
+    "page": false
+   },
+   {
+    "id": "shofar",
+    "label": {
+     "en": "Shofar (the ram's horn)",
+     "yi": "שופר"
+    },
+    "page": false
+   },
+   {
+    "id": "yechidah",
+    "label": {
+     "en": "Yechidah (the highest level of the soul)",
+     "yi": "יחידה"
+    },
+    "page": false
+   },
+   {
+    "id": "yom-hadin",
+    "label": {
+     "en": "Yom hadin (the Day of Judgment)",
+     "yi": "יום הדין"
+    },
+    "page": false
+   },
+   {
+    "id": "yom-kippur",
+    "label": {
+     "en": "Yom Kippur (the Day of Atonement)",
+     "yi": "יום הכפורים"
+    },
+    "page": false
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src0",
+    "workId": "ramban-on-the-torah",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src1",
+    "workId": "ramban-on-the-torah",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src2",
+    "workId": "sifrei",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src3",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src4",
+    "workId": "yeshayahu",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src5",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src6",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src7",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src8",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src9",
+    "workId": "vayikra",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src10",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src11",
+    "workId": "mishneh-torah",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src12",
+    "workId": "sfas-emes",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src13",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src14",
+    "workId": "igros-harambam",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src15",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src16",
+    "workId": "midrash",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src17",
+    "workId": "shulchan-aruch",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src18",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src20",
+    "workId": "bamidbar",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src21",
+    "workId": "sefer-yetzirah",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src22",
+    "workId": "yeshayahu",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src23",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src24",
+    "workId": "bava-metzia",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~src25",
+    "workId": "vayikra",
+    "page": true
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~st0",
+    "storyId": "the-ramban-and-his-student-avner",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~st1",
+    "storyId": "the-chassan-waiting-for-the-mechutan",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~st2",
+    "storyId": "the-lechovitcher-chassid-who-heard-hamelech",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~st3",
+    "storyId": "rebbi-the-calf-and-the-mouse",
+    "tellings": 1,
+    "page": false
+   }
+  ],
+  "insights": [
+   {
+    "momentId": "yi-parshas-hashavua-hzynv-01~i4",
+    "threadId": "avodas-hashem-the-hundred-and-first-time",
+    "shiurCount": 2,
+    "years": [
+     5732,
+     5771
+    ],
+    "page": false,
+    "other": {
+     "shiurId": "yi-shonos-31",
+     "momentId": "yi-shonos-31~i6",
+     "t": 2014.07,
+     "year": 5771,
+     "lang": "yi"
+    }
    }
   ]
  },

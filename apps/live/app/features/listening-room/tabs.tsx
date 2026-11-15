@@ -19,7 +19,7 @@ import { activeParagraphId, groupSources, sefariaUrl } from "./model.ts";
 import { AiLabel, Report, TimeButton, isActive } from "./parts.tsx";
 import type { RoomKey } from "./strings.ts";
 import { roomStyles as s } from "./styles.ts";
-import { useCorpusRows, useWriteup } from "./use-room-data.ts";
+import { relatedTitles, useWriteup, type RelatedTitle } from "./use-room-data.ts";
 import { TRANSCRIPT_VIEW } from "../../config/feature-flags.ts";
 import { TRANSCRIPT_TAB, TranscriptTab, transcriptT, useTranscripts } from "../transcript/index.ts";
 
@@ -404,8 +404,8 @@ function StoriesTab({ room }: { room: RoomContext }): JSX.Element {
 
 // ---- Related ---------------------------------------------------------------------------------
 
-function ShiurLink({ room, id, t, rows }: { room: RoomContext; id: string; t?: number; rows: ReturnType<typeof useCorpusRows> }): JSX.Element {
-  const row = rows?.get(id);
+function ShiurLink({ room, id, t, rows }: { room: RoomContext; id: string; t?: number; rows: ReadonlyMap<string, RelatedTitle> }): JSX.Element {
+  const row = rows.get(id);
   const href = paths.shiur(room.ui, id, t === undefined ? {} : { t });
   return (
     <Link to={href} className={s.relatedLink}>
@@ -418,10 +418,10 @@ function ShiurLink({ room, id, t, rows }: { room: RoomContext; id: string; t?: n
 function RelatedTab({ room }: { room: RoomContext }): JSX.Element {
   const { rt, shiur, ui } = room;
   const r = shiur.related;
-  const rows = useCorpusRows(true);
+  // Titles come with the shiur file (G.1): no corpus-wide file is loaded for Related.
+  const rows = relatedTitles(shiur);
   const same = r.sameOccasion.filter((id) => id !== shiur.id);
   const empty = same.length === 0 && !r.prev && !r.next && r.neighbors.length === 0 && !shiur.series;
-  const sibling = room.siblingSeries;
   return (
     <div>
       {empty ? <p className={s.note}>{rt("related.none")}</p> : null}
@@ -460,14 +460,6 @@ function RelatedTab({ room }: { room: RoomContext }): JSX.Element {
                 </Link>
               </li>
             ) : null}
-            {sibling ? (
-              <li>
-                <span className={s.kind}>{rt("related.otherLanguage")}: </span>
-                <Link to={paths.series(ui, sibling.id)} className={s.relatedLink}>
-                  {sibling.title ? sibling.title[ui] : <Text value={sibling.id} lang="en" />}
-                </Link>
-              </li>
-            ) : null}
           </ul>
         </section>
       ) : null}
@@ -486,7 +478,6 @@ function RelatedTab({ room }: { room: RoomContext }): JSX.Element {
           </ul>
         </section>
       ) : null}
-      {rows === null && !empty ? <p className={s.note}>{rt("related.loading")}</p> : null}
     </div>
   );
 }

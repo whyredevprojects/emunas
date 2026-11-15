@@ -8,7 +8,8 @@
  * ```
  *
  * - One in-flight request per path; small shared files (`build`, `corpus`, `facets`, `today`, `works`,
- *   `stories`) are memoized for the session, per-item files are not (the HTTP cache handles those:
+ *   `stories`, `topics`, `stories-index`, glossary shards, `redirects`, `explore/entities`) are
+ *   memoized for the session, per-item files are not (the HTTP cache handles those:
  *   `/data/*` is `max-age=300, stale-while-revalidate`).
  * - A 404 becomes a `DataError` with `status: 404`; `notFoundToNull` turns it into `null` for pages that
  *   render "not found" themselves.
@@ -23,6 +24,15 @@ import {
   type CorpusFile,
   type EntityFile,
   type EntityKind,
+  type ExploreEntitiesFile,
+  type GlossaryShardFile,
+  type RedirectsFile,
+  type StoriesIndexFile,
+  type StoryFile,
+  type ThreadFile,
+  type TopicFile,
+  type TopicMomentsFile,
+  type TopicsFile,
   type FacetsFile,
   type MomentShardFile,
   type QuickIndexFile,
@@ -155,6 +165,21 @@ export const loadMomentShard = (lang: Ed, shard: number, o: LoadOptions = {}) =>
   fetchData<MomentShardFile>(dataPaths.moments(lang, shard), o);
 export const loadQuickIndex = (lang: Ed, o: LoadOptions = {}) =>
   fetchData<QuickIndexFile>(dataPaths.quickIndex(lang), o);
+
+// Corpus layer (C1.7). None of these is needed for the first paint of Today or a shiur (plan §4).
+export const loadTopics = (o: LoadOptions = {}) => memoized<TopicsFile>(dataPaths.topics(), o);
+export const loadTopic = (id: string, o: LoadOptions = {}) => fetchData<TopicFile>(dataPaths.topic(id), o);
+export const loadTopicMoments = (id: string, page: number, o: LoadOptions = {}) =>
+  fetchData<TopicMomentsFile>(dataPaths.topicMoments(id, page), o);
+export const loadThread = (id: string, o: LoadOptions = {}) => fetchData<ThreadFile>(dataPaths.thread(id), o);
+export const loadStory = (id: string, o: LoadOptions = {}) => fetchData<StoryFile>(dataPaths.story(id), o);
+export const loadStoriesIndex = (o: LoadOptions = {}) => memoized<StoriesIndexFile>(dataPaths.storiesIndex(), o);
+export const loadGlossaryShard = (shard: string, o: LoadOptions = {}) =>
+  memoized<GlossaryShardFile>(dataPaths.glossary(shard), o);
+/** Lazy: only after an entity file 404s (plan §5). */
+export const loadRedirects = (o: LoadOptions = {}) => memoized<RedirectsFile>(dataPaths.redirects(), o);
+export const loadExploreEntities = (o: LoadOptions = {}) =>
+  memoized<ExploreEntitiesFile>(dataPaths.exploreEntities(), o);
 
 /** `null` for a 404, the value otherwise; other errors propagate. */
 export async function notFoundToNull<T>(p: Promise<T>): Promise<T | null> {

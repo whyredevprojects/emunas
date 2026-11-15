@@ -1,10 +1,11 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "kind": "p",
  "key": "rambam",
  "label": {
   "en": "the Rambam",
-  "yi": "הרמב\"ם"
+  "yi": "דער רמב\"ם",
+  "he": "רמב\"ם"
  },
  "shiurIds": [
   "yi-parshas-hashavua-hzynv-01",
@@ -56,6 +57,11 @@
    "kind": "p",
    "key": "rashi",
    "shared": 6
+  },
+  {
+   "kind": "c",
+   "key": "ribono-shel-olam",
+   "shared": 5
   },
   {
    "kind": "p",

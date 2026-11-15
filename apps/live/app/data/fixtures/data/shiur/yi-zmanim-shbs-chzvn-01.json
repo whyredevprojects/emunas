@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "yi-zmanim-shbs-chzvn-01",
  "rev": "910c1eb79d95",
  "lang": "yi",
@@ -48,7 +48,728 @@
   "sameOccasion": [],
   "prev": "yi-zmanim-spyrh-01",
   "next": "yi-zmanim-msybs-lchyym-bkmp-01-c",
-  "neighbors": []
+  "neighbors": [],
+  "titles": {
+   "yi-zmanim-msybs-lchyym-bkmp-01-c": {
+    "title": "ג - ט\"ו תמוז יארצייט האוה\"ח הק' - תורה על הפרשה.",
+    "lang": "yi",
+    "years": []
+   },
+   "yi-zmanim-spyrh-01": {
+    "title": "בימי ספירה צריכים לעשות תשובה על שורש העבירות - המדות (שייכות לפרשת קדושים)",
+    "lang": "yi",
+    "years": [
+     5742
+    ]
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "shemitah-yovel",
+    "salience": 0.9
+   },
+   {
+    "id": "tisha-bav",
+    "salience": 0.9
+   },
+   {
+    "id": "kedushas-shabbos",
+    "salience": 0.7
+   },
+   {
+    "id": "yerushalayim",
+    "salience": 0.7
+   },
+   {
+    "id": "beis-hamikdash-churban",
+    "salience": 0.6
+   },
+   {
+    "id": "sefer-devarim",
+    "salience": 0.6
+   },
+   {
+    "id": "tammuz-av",
+    "salience": 0.5
+   },
+   {
+    "id": "yaakov-veesav",
+    "salience": 0.4
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "sefer-devarim",
+     "krias-yam-suf"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "sefer-devarim",
+     "yaakov-veesav"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "sefer-devarim",
+     "pardes",
+     "ikvesa-dimeshicha"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "leil-haseder",
+     "moshiach",
+     "tammuz-av"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "yaakov-veesav",
+     "tammuz-av"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "kedushas-shabbos",
+     "beis-hamikdash-churban",
+     "tisha-bav"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "kedushas-shabbos",
+     "tisha-bav",
+     "shoresh-moshiach"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "kedushas-eretz-yisroel",
+     "bris-milah",
+     "maalas-hatorah"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "sefer-devarim",
+     "torah-min-hashamayim"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "shemitah-yovel",
+     "yerushalayim",
+     "kedushas-shabbos"
+    ]
+   },
+   {
+    "idx": 10,
+    "topicIds": [
+     "shemitah-yovel",
+     "yerushalayim"
+    ]
+   },
+   {
+    "idx": 11,
+    "topicIds": [
+     "yerushalayim",
+     "vayechi-shevatim"
+    ]
+   },
+   {
+    "idx": 12,
+    "topicIds": [
+     "shemitah-yovel",
+     "oneg-shabbos"
+    ]
+   },
+   {
+    "idx": 13,
+    "topicIds": [
+     "eliyahu-hanavi"
+    ]
+   },
+   {
+    "idx": 14,
+    "topicIds": [
+     "tisha-bav",
+     "neviim"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "beis-hamikdash-churban": {
+    "id": "beis-hamikdash-churban",
+    "label": {
+     "en": "The Beis HaMikdash and Its Churban",
+     "yi": "דער בית המקדש און דער חורבן",
+     "he": "בית המקדש וחורבנו"
+    },
+    "page": true
+   },
+   "bris-milah": {
+    "id": "bris-milah",
+    "label": {
+     "en": "Bris Milah",
+     "yi": "ברית מילה"
+    },
+    "page": true
+   },
+   "eliyahu-hanavi": {
+    "id": "eliyahu-hanavi",
+    "label": {
+     "en": "Eliyahu HaNavi",
+     "yi": "אליהו הנביא"
+    },
+    "page": true
+   },
+   "ikvesa-dimeshicha": {
+    "id": "ikvesa-dimeshicha",
+    "label": {
+     "en": "Ikvesa DiMeshicha",
+     "yi": "עקבתא דמשיחא"
+    },
+    "page": true
+   },
+   "kedushas-eretz-yisroel": {
+    "id": "kedushas-eretz-yisroel",
+    "label": {
+     "en": "Kedushas Eretz Yisroel",
+     "yi": "קדושת ארץ ישראל"
+    },
+    "page": true
+   },
+   "kedushas-shabbos": {
+    "id": "kedushas-shabbos",
+    "label": {
+     "en": "Kedushas Shabbos",
+     "yi": "קדושת שבת"
+    },
+    "page": true
+   },
+   "krias-yam-suf": {
+    "id": "krias-yam-suf",
+    "label": {
+     "en": "Krias Yam Suf and the Mann",
+     "yi": "קריעת ים סוף און דער מן",
+     "he": "קריעת ים סוף"
+    },
+    "page": true
+   },
+   "leil-haseder": {
+    "id": "leil-haseder",
+    "label": {
+     "en": "The Seder Night",
+     "yi": "ליל הסדר"
+    },
+    "page": true
+   },
+   "maalas-hatorah": {
+    "id": "maalas-hatorah",
+    "label": {
+     "en": "The Power and Greatness of Torah",
+     "yi": "דער כח און די מעלה פון תורה",
+     "he": "מעלת התורה"
+    },
+    "page": true
+   },
+   "moshiach": {
+    "id": "moshiach",
+    "label": {
+     "en": "Moshiach and the Days of Moshiach",
+     "yi": "משיח און ימות המשיח",
+     "he": "ימות המשיח"
+    },
+    "page": true
+   },
+   "neviim": {
+    "id": "neviim",
+    "label": {
+     "en": "The Neviim and Their Times",
+     "yi": "די נביאים און זייערע צייטן",
+     "he": "נביאים"
+    },
+    "page": true
+   },
+   "oneg-shabbos": {
+    "id": "oneg-shabbos",
+    "label": {
+     "en": "Oneg Shabbos and Kavod Shabbos",
+     "yi": "עונג שבת און כבוד שבת",
+     "he": "עונג שבת"
+    },
+    "page": true
+   },
+   "pardes": {
+    "id": "pardes",
+    "label": {
+     "en": "Pshat, Remez, Drush and Sod",
+     "yi": "פשט, רמז, דרש און סוד",
+     "he": "פרד\"ס"
+    },
+    "page": true
+   },
+   "sefer-devarim": {
+    "id": "sefer-devarim",
+    "label": {
+     "en": "Sefer Devarim",
+     "yi": "ספר דברים"
+    },
+    "page": true
+   },
+   "shemitah-yovel": {
+    "id": "shemitah-yovel",
+    "label": {
+     "en": "Shemitah and Yovel",
+     "yi": "שמיטה און יובל",
+     "he": "שמיטה ויובל"
+    },
+    "page": true
+   },
+   "shoresh-moshiach": {
+    "id": "shoresh-moshiach",
+    "label": {
+     "en": "The Hidden Roots of Moshiach",
+     "yi": "דער באהאלטענער שורש פון משיח",
+     "he": "שורש נשמת משיח"
+    },
+    "page": true
+   },
+   "tammuz-av": {
+    "id": "tammuz-av",
+    "label": {
+     "en": "Chodashim Tammuz and Av",
+     "yi": "די חדשים תמוז און אב",
+     "he": "תמוז ואב"
+    },
+    "page": true
+   },
+   "tisha-bav": {
+    "id": "tisha-bav",
+    "label": {
+     "en": "Tisha B'Av",
+     "yi": "תשעה באב"
+    },
+    "page": true
+   },
+   "torah-min-hashamayim": {
+    "id": "torah-min-hashamayim",
+    "label": {
+     "en": "Torah Min HaShamayim and the Mesorah",
+     "yi": "תורה מן השמים און די מסורה",
+     "he": "תורה מן השמים"
+    },
+    "page": true
+   },
+   "vayechi-shevatim": {
+    "id": "vayechi-shevatim",
+    "label": {
+     "en": "Vayechi and the Shevatim",
+     "yi": "ויחי און די שבטים",
+     "he": "ויחי והשבטים"
+    },
+    "page": true
+   },
+   "yaakov-veesav": {
+    "id": "yaakov-veesav",
+    "label": {
+     "en": "Yitzchak, Yaakov and Esav",
+     "yi": "יצחק, יעקב און עשו",
+     "he": "יעקב ועשו"
+    },
+    "page": true
+   },
+   "yerushalayim": {
+    "id": "yerushalayim",
+    "label": {
+     "en": "Yerushalayim and the Kosel",
+     "yi": "ירושלים און דער כותל",
+     "he": "ירושלים עיר הקודש"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "atika-kadisha",
+    "label": {
+     "en": "Atika Kadisha (the Holy Ancient One)",
+     "yi": "עתיקא קדישא"
+    },
+    "page": false
+   },
+   {
+    "id": "esav",
+    "label": {
+     "en": "Esav (Esav)",
+     "yi": "עשו"
+    },
+    "page": false
+   },
+   {
+    "id": "keini-knizi-kadmoni",
+    "label": {
+     "en": "Keini, Knizi v'Kadmoni (the three future lands)",
+     "yi": "קיני קניזי וקדמוני"
+    },
+    "page": false
+   },
+   {
+    "id": "midas-hadin",
+    "label": {
+     "en": "Midas hadin (the attribute of strict judgment)",
+     "yi": "מדת הדין"
+    },
+    "page": false
+   },
+   {
+    "id": "orlah",
+    "label": {
+     "en": "Orlah (the foreskin; a covering that blocks holiness)",
+     "yi": "ערלה"
+    },
+    "page": false
+   },
+   {
+    "id": "shemitah",
+    "label": {
+     "en": "Shemitah (the Sabbatical year)",
+     "yi": "שמיטה"
+    },
+    "page": false
+   },
+   {
+    "id": "yom-shekulo-shabbos",
+    "label": {
+     "en": "Yom shekulo Shabbos (the day that is entirely Shabbos)",
+     "yi": "יום שכולו שבת"
+    },
+    "page": false
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src0",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src1",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src2",
+    "workId": "zohar",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src3",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src4",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src5",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src6",
+    "workId": "yeshayahu",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src7",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src8",
+    "workId": "mishlei",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src9",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src10",
+    "workId": "ovadiah",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src11",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src14",
+    "workId": "yirmiyahu",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src15",
+    "workId": "yeshayahu",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src16",
+    "workId": "zohar",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src17",
+    "workId": "kedushas-levi",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src18",
+    "workId": "pri-tzaddik",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src19",
+    "workId": "eichah-rabbah",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src20",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src21",
+    "workId": "zohar",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src22",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src23",
+    "workId": "yehoshua",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src24",
+    "workId": "temurah",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src26",
+    "workId": "yismach-moshe",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src27",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src28",
+    "workId": "pri-tzaddik",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src29",
+    "workId": "megillah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src30",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src31",
+    "workId": "shabbos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src32",
+    "workId": "ramban",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src33",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src34",
+    "workId": "vayikra",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src35",
+    "workId": "vayikra",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src36",
+    "workId": "bava-kamma",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src37",
+    "workId": "vayikra",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src38",
+    "workId": "shemos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src39",
+    "workId": "yoma",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src40",
+    "workId": "shemos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src41",
+    "workId": "yirmiyahu",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src42",
+    "workId": "yeshayahu",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src43",
+    "workId": "yeshayahu",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src44",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src45",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src46",
+    "workId": "shemos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src47",
+    "workId": "vayikra",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src48",
+    "workId": "targum-onkelos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src49",
+    "workId": "zohar",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src50",
+    "workId": "berachos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src51",
+    "workId": "seder-hadoros",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src52",
+    "workId": "rambam",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src53",
+    "workId": "bava-metzia",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src54",
+    "workId": "tanna-devei-eliyahu",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src55",
+    "workId": "tosafos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src56",
+    "workId": "eichah-rabbah",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src57",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src58",
+    "workId": "yeshayahu",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~src59",
+    "workId": "yeshayahu",
+    "page": true
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~st0",
+    "storyId": "the-father-and-the-third-garment",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~st1",
+    "storyId": "the-beis-aharon-and-the-simple-jews-shir-hashirim",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-shbs-chzvn-01~st2",
+    "storyId": "eliyahu-in-the-non-jewish-cemetery",
+    "tellings": 1,
+    "page": false
+   }
+  ],
+  "insights": []
  },
  "notes": {
   "summary": {

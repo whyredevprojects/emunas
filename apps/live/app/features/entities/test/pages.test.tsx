@@ -97,7 +97,9 @@ describe("seforim", () => {
     const { container } = await renderAt("/en/seforim");
     const groups = [...container.querySelectorAll("section[data-group]")].map((s) => s.getAttribute("data-group"));
     expect(groups[0]).toBe("torah");
-    expect(groups).toContain("bavli");
+    // C1.7: the shelf holds corpus works with a Live page (≥3 shiurim); the mini corpus cites no
+    // tractate that often, so the groups are the Tanach ones and later.
+    expect(groups.length).toBeGreaterThan(1);
     const shelved = [...container.querySelectorAll("[data-work]")].map((e) => e.getAttribute("data-work"));
     const listed = get<WorksFile>("works.json").works.map((w) => w.key);
     expect(new Set(shelved)).toEqual(new Set(listed.filter((k) => !isGenreWork(k))));

@@ -18,8 +18,23 @@ contract in `@emunas/corpus/public` (integration-plan §5.2). W3.6 emits files t
 | `/data/stories.json` | `StoriesFile` (no retelling) | `loadStories()` (memoized) |
 | `/data/moments/<lang>-<n>.json` | `MomentShardFile` (1,000 per shard) | `loadMomentShard(lang, n)` |
 | `/data/quick-index.<lang>.json` | `QuickIndexFile` (serialized MiniSearch) | `loadQuickIndex(lang)` |
+| `/data/topics.json` | `TopicsFile` (tree rows; `topicNodes()`) | `loadTopics()` (memoized) |
+| `/data/topic/<id>.json`, `.moments-<n>.json` | `TopicFile`, `TopicMomentsFile` | `loadTopic(id)`, `loadTopicMoments(id, n)` |
+| `/data/thread/<id>.json` | `ThreadFile` (threads with a page; noindex) | `loadThread(id)` |
+| `/data/story/<id>.json` | `StoryFile` (stories told at least twice) | `loadStory(id)` |
+| `/data/stories-index.json` | `StoriesIndexFile` (no retellings) | `loadStoriesIndex()` (memoized) |
+| `/data/glossary/<prefix>.json` | `GlossaryShardFile` (`glossaryShardFor(id, build.glossaryShards)`) | `loadGlossaryShard(prefix)` (memoized) |
+| `/data/redirects.json` | `RedirectsFile` (lazy: only after a 404; `findRedirect`) | `loadRedirects()` (memoized) |
+| `/data/explore/entities.json` | `ExploreEntitiesFile` (corpus ids per shiur, for Explore) | `loadExploreEntities()` (memoized) |
 
-Every file has `schemaVersion === LIVE_DATA_SCHEMA_VERSION`; the client rejects anything else.
+**Loading rules (corpus-wave-plan §4, C1.7).** Today renders from `today.json` alone and the
+listening room from `shiur/<id>.json` alone: neither loads `corpus.json`, `facets.json` or any
+corpus-layer file other than its own (`loading.test.tsx` spies on the fetches). `corpus.json` is for
+Explore, search and the shelf. Every corpus entity is AI-generated and unreviewed: an entity page
+shows `<CorpusLabel>` (app/components) once. Entity ids are corpus ids; which entities have a Live
+page is `live-pages.ts`, shared by the emit and the prerender list.
+
+Every file has `schemaVersion === LIVE_DATA_SCHEMA_VERSION` (2 since C1.7); the client rejects anything else.
 Errors are `DataError` (`status` 404 for a missing file; `notFoundToNull()` maps that to `null`).
 
 **Audio (Amendment A1).** `ShiurFile.recordings[].audioUrl` is the media-host URL

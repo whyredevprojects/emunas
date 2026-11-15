@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "en-parsha-en-nch-01",
  "rev": "357327fcb7db",
  "lang": "en",
@@ -48,7 +48,468 @@
   "sameOccasion": [],
   "prev": null,
   "next": "en-parsha-en-svldvs-01",
-  "neighbors": []
+  "neighbors": [],
+  "titles": {
+   "en-parsha-en-svldvs-01": {
+    "title": "Explaining יצחק's Fondness of עשו and the meaning of ויגדלו הנערים",
+    "lang": "en",
+    "years": [
+     5749
+    ]
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "noach-mabul",
+    "salience": 1
+   },
+   {
+    "id": "adam-harishon",
+    "salience": 0.5
+   },
+   {
+    "id": "moshiach",
+    "salience": 0.5
+   },
+   {
+    "id": "rosh-chodesh",
+    "salience": 0.4
+   },
+   {
+    "id": "rosh-hashanah",
+    "salience": 0.4
+   },
+   {
+    "id": "shemos-hakedoshim",
+    "salience": 0.4
+   },
+   {
+    "id": "shlichus-hanefesh",
+    "salience": 0.4
+   },
+   {
+    "id": "avraham-avinu",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "noach-mabul",
+     "rosh-chodesh"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "shemos-hakedoshim",
+     "rosh-chodesh"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "rosh-chodesh",
+     "otiyos-gematria"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "rosh-hashanah",
+     "noach-mabul"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "noach-mabul"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "noach-mabul"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "moshiach",
+     "noach-mabul"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "shlichus-hanefesh",
+     "noach-mabul"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "noach-mabul",
+     "adam-harishon",
+     "moshiach"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "noach-mabul",
+     "avodah-begashmiyus"
+    ]
+   },
+   {
+    "idx": 10,
+    "topicIds": [
+     "noach-mabul"
+    ]
+   },
+   {
+    "idx": 11,
+    "topicIds": [
+     "noach-mabul",
+     "avraham-avinu"
+    ]
+   },
+   {
+    "idx": 12,
+    "topicIds": [
+     "noach-mabul",
+     "rosh-chodesh"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "adam-harishon": {
+    "id": "adam-harishon",
+    "label": {
+     "en": "Adam HaRishon and Gan Eden",
+     "yi": "אדם הראשון און גן עדן",
+     "he": "אדם הראשון"
+    },
+    "page": true
+   },
+   "avodah-begashmiyus": {
+    "id": "avodah-begashmiyus",
+    "label": {
+     "en": "Serving Hashem in Physical Life",
+     "yi": "עבודה בגשמיות"
+    },
+    "page": true
+   },
+   "avraham-avinu": {
+    "id": "avraham-avinu",
+    "label": {
+     "en": "Avraham Avinu",
+     "yi": "אברהם אבינו"
+    },
+    "page": true
+   },
+   "moshiach": {
+    "id": "moshiach",
+    "label": {
+     "en": "Moshiach and the Days of Moshiach",
+     "yi": "משיח און ימות המשיח",
+     "he": "ימות המשיח"
+    },
+    "page": true
+   },
+   "noach-mabul": {
+    "id": "noach-mabul",
+    "label": {
+     "en": "Noach and the Mabul",
+     "yi": "נח און דער מבול",
+     "he": "נח והמבול"
+    },
+    "page": true
+   },
+   "otiyos-gematria": {
+    "id": "otiyos-gematria",
+    "label": {
+     "en": "Letters, Gematria and Lashon HaKodesh",
+     "yi": "אותיות, גימטריא און לשון הקודש",
+     "he": "אותיות וגימטריאות"
+    },
+    "page": true
+   },
+   "rosh-chodesh": {
+    "id": "rosh-chodesh",
+    "label": {
+     "en": "Rosh Chodesh and the Months",
+     "yi": "ראש חודש און די חדשים",
+     "he": "ראש חודש"
+    },
+    "page": true
+   },
+   "rosh-hashanah": {
+    "id": "rosh-hashanah",
+    "label": {
+     "en": "Rosh Hashanah",
+     "yi": "ראש השנה"
+    },
+    "page": true
+   },
+   "shemos-hakedoshim": {
+    "id": "shemos-hakedoshim",
+    "label": {
+     "en": "The Holy Names of Hashem",
+     "yi": "די שמות הקדושים",
+     "he": "שמות הקדושים"
+    },
+    "page": true
+   },
+   "shlichus-hanefesh": {
+    "id": "shlichus-hanefesh",
+    "label": {
+     "en": "A Person's Mission in the World",
+     "yi": "דער תפקיד פון א מענטש אויף דער וועלט",
+     "he": "שליחות"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "etz-hadaas",
+    "label": {
+     "en": "Etz HaDaas (the Tree of Knowledge)",
+     "yi": "עץ הדעת"
+    },
+    "page": false
+   },
+   {
+    "id": "hischadshus",
+    "label": {
+     "en": "Hischadshus (renewal)",
+     "yi": "התחדשות"
+    },
+    "page": false
+   },
+   {
+    "id": "kedushah",
+    "label": {
+     "en": "Kedushah (holiness)",
+     "yi": "קדושה"
+    },
+    "page": false
+   },
+   {
+    "id": "mabul",
+    "label": {
+     "en": "Mabul (the Flood)",
+     "yi": "מבול"
+    },
+    "page": false
+   },
+   {
+    "id": "shem-havaya",
+    "label": {
+     "en": "Shem Havaya (the Tetragrammaton, Hashem's essential Name)",
+     "yi": "שם הוי\"ה"
+    },
+    "page": true
+   },
+   {
+    "id": "siyata-dishmaya",
+    "label": {
+     "en": "Siyata dishmaya (help from Heaven)",
+     "yi": "סייעתא דשמיא"
+    },
+    "page": false
+   },
+   {
+    "id": "teivah",
+    "label": {
+     "en": "Teivah (Noach's ark; also a word)",
+     "yi": "תיבה"
+    },
+    "page": false
+   },
+   {
+    "id": "tziruf",
+    "label": {
+     "en": "Tziruf (letter combination; refinement)",
+     "yi": "צירוף"
+    },
+    "page": false
+   },
+   {
+    "id": "zichronos",
+    "label": {
+     "en": "Zichronos (the remembrances of Rosh Hashanah)",
+     "yi": "זכרונות"
+    },
+    "page": false
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "en-parsha-en-nch-01~src0",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src1",
+    "workId": "midrash",
+    "page": false
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src2",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src3",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src4",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src5",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src6",
+    "workId": "machzor",
+    "page": false
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src8",
+    "workId": "melachim-i",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src9",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src10",
+    "workId": "machzor-rosh-hashanah",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src11",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src12",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src13",
+    "workId": "ramban",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src14",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src16",
+    "workId": "ibn-ezra",
+    "page": false
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src17",
+    "workId": "sanhedrin",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src18",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src19",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src20",
+    "workId": "yeshayahu",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src21",
+    "workId": "ramban",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src22",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src23",
+    "workId": "midrash",
+    "page": false
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src24",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src26",
+    "workId": "zevachim",
+    "page": false
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src27",
+    "workId": "vayikra",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src28",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src29",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src30",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src32",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-nch-01~src33",
+    "workId": "bereishis",
+    "page": true
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "en-parsha-en-nch-01~st0",
+    "storyId": "rav-nachum-of-chernobyl-and-his-little-bread",
+    "tellings": 1,
+    "page": false
+   }
+  ],
+  "insights": []
  },
  "notes": {
   "summary": {

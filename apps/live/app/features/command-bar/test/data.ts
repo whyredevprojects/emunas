@@ -118,7 +118,7 @@ export const FACETS: FacetsFile = {
     "lag-baomer": { ...fv("Lag BaOmer", "ל\"ג בעומר", 1, "ל\"ג בעומר"), type: "zman", hasPage: false },
   },
   year: { "5736": fv("5736", "תשל\"ו", 1), "5738": fv("5738", "תשל\"ח", 1), "5743": fv("5743", "תשמ\"ג", 1), unknown: fv("?", "?", 3) },
-  series: { "tanya-yi": { ...fv("Tanya", "תניא", 3), lang: "yi", sibling: null } },
+  series: { "tanya-yi": { ...fv("Tanya", "תניא", 3), lang: "yi" } },
   work: { rambam: fv("Rambam", "רמב\"ם", 1, "רמב\"ם") },
   person: { noach: fv("Noach", "נח", 1, "נח"), "rabbi-shimon": fv("Rabbi Shimon bar Yochai", "רבי שמעון בר יוחאי", 1) },
   concept: { "קדושה": fv("קדושה", "קדושה", 1, "קדושה") },

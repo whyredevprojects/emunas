@@ -1,10 +1,10 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "key": "rashi",
  "name": "Rashi",
  "label": {
   "en": "Rashi",
-  "yi": "רש\"י"
+  "yi": "רש״י"
  },
  "locations": [
   {
@@ -67,19 +67,6 @@
    ]
   },
   {
-   "ref": "Bereishis 31:17",
-   "sefariaRef": "Rashi on Genesis 31:17",
-   "citations": [
-    {
-     "shiurId": "en-zmanim-en-tv-bshbt-01",
-     "sourceId": "en-zmanim-en-tv-bshbt-01~src1",
-     "t": 598.95,
-     "mention": "paraphrased",
-     "resolution": "resolved"
-    }
-   ]
-  },
-  {
    "ref": "Bereishis 38:30",
    "sefariaRef": "Rashi on Genesis 38:30",
    "citations": [
@@ -133,19 +120,6 @@
      "shiurId": "en-zmanim-en-chvdsh-tbs-02",
      "sourceId": "en-zmanim-en-chvdsh-tbs-02~src22",
      "t": 2409.86,
-     "mention": "paraphrased",
-     "resolution": "resolved"
-    }
-   ]
-  },
-  {
-   "ref": "Vayikra 26:4",
-   "sefariaRef": "Rashi on Leviticus 26:4",
-   "citations": [
-    {
-     "shiurId": "en-zmanim-en-tv-bshbt-01",
-     "sourceId": "en-zmanim-en-tv-bshbt-01~src19",
-     "t": 2979,
      "mention": "paraphrased",
      "resolution": "resolved"
     }
@@ -239,13 +213,6 @@
    "resolution": "inferred"
   },
   {
-   "shiurId": "en-miscellaneous-en-02",
-   "sourceId": "en-miscellaneous-en-02~src5",
-   "t": 811.72,
-   "mention": "paraphrased",
-   "resolution": "inferred"
-  },
-  {
    "shiurId": "yi-parshas-hashavua-mvr-01",
    "sourceId": "yi-parshas-hashavua-mvr-01~src1",
    "t": 51.31,
@@ -263,13 +230,6 @@
    "shiurId": "yi-parshas-hashavua-mvr-01",
    "sourceId": "yi-parshas-hashavua-mvr-01~src17",
    "t": 3630.78,
-   "mention": "paraphrased",
-   "resolution": "inferred"
-  },
-  {
-   "shiurId": "en-miscellaneous-en-01",
-   "sourceId": "en-miscellaneous-en-01~src17",
-   "t": 2542.96,
    "mention": "paraphrased",
    "resolution": "inferred"
   },
@@ -398,27 +358,6 @@
    "t": 396.84,
    "mention": "paraphrased",
    "resolution": "unresolved"
-  },
-  {
-   "shiurId": "en-zmanim-en-tv-bshbt-01",
-   "sourceId": "en-zmanim-en-tv-bshbt-01~src13",
-   "t": 2695.19,
-   "mention": "quoted",
-   "resolution": "inferred"
-  },
-  {
-   "shiurId": "yi-zmanim-svkvs-08",
-   "sourceId": "yi-zmanim-svkvs-08~src24",
-   "t": 1595.3,
-   "mention": "paraphrased",
-   "resolution": "unresolved"
-  },
-  {
-   "shiurId": "yi-zmanim-svkvs-08",
-   "sourceId": "yi-zmanim-svkvs-08~src8",
-   "t": 305.6,
-   "mention": "paraphrased",
-   "resolution": "inferred"
   },
   {
    "shiurId": "yi-zmanim-svds-pvrym-ktn-03",

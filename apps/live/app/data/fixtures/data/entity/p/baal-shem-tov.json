@@ -1,10 +1,11 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "kind": "p",
  "key": "baal-shem-tov",
  "label": {
-  "en": "the Ba'al Shem Tov",
-  "yi": "הבעל שם טוב"
+  "en": "the Baal Shem Tov",
+  "yi": "דער הייליגער בעל שם טוב",
+  "he": "רבי ישראל בעל שם טוב"
  },
  "shiurIds": [
   "yi-zmanim-lvl-01",
@@ -29,18 +30,18 @@
  },
  "moments": [
   {
-   "id": "yi-zmanim-lvl-01~st0",
-   "shiurId": "yi-zmanim-lvl-01",
-   "kind": "st",
-   "t": 1296.67,
-   "end": 1312.91
-  },
-  {
    "id": "en-parsha-en-nch-01~st0",
    "shiurId": "en-parsha-en-nch-01",
    "kind": "st",
    "t": 3171.06,
    "end": 3186.78
+  },
+  {
+   "id": "yi-zmanim-lvl-01~st0",
+   "shiurId": "yi-zmanim-lvl-01",
+   "kind": "st",
+   "t": 1296.67,
+   "end": 1312.91
   }
  ],
  "related": [

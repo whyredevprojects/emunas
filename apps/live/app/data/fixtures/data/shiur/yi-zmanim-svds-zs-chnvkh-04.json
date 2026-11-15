@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "yi-zmanim-svds-zs-chnvkh-04",
  "rev": "9a3d8070140a",
  "lang": "yi",
@@ -49,7 +49,359 @@
   "sameOccasion": [],
   "prev": "yi-zmanim-chnvkh-11",
   "next": "yi-zmanim-svds-pvrym-ktn-03",
-  "neighbors": []
+  "neighbors": [],
+  "titles": {
+   "yi-zmanim-chnvkh-11": {
+    "title": "דרוש בנס חנוכה - נס הנרות מגלים נס המלחמה",
+    "lang": "yi",
+    "years": [
+     5749
+    ]
+   },
+   "yi-zmanim-svds-pvrym-ktn-03": {
+    "title": "האור של מגילת אסתר יותר נעלה מאור של תורת משה (חתם סופר)",
+    "lang": "yi",
+    "years": [
+     5765
+    ]
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "zos-chanukah",
+    "salience": 0.85
+   },
+   {
+    "id": "tzipisa-liyeshua",
+    "salience": 0.8
+   },
+   {
+    "id": "neros-chanukah",
+    "salience": 0.7
+   },
+   {
+    "id": "hodaah",
+    "salience": 0.6
+   },
+   {
+    "id": "mishkan",
+    "salience": 0.5
+   },
+   {
+    "id": "moshiach",
+    "salience": 0.45
+   },
+   {
+    "id": "ahavas-yisroel",
+    "salience": 0.35
+   },
+   {
+    "id": "sefiros",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "mishkan",
+     "neros-chanukah"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "tzipisa-liyeshua",
+     "zos-chanukah"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "hodaah",
+     "sefiros",
+     "mishkan"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "neros-chanukah",
+     "moshiach",
+     "beis-hamikdash-churban"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "moshiach",
+     "neros-chanukah",
+     "shoresh-moshiach"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "zos-chanukah",
+     "ahavas-yisroel",
+     "tanya-shtei-nefashos"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "ahavas-yisroel": {
+    "id": "ahavas-yisroel",
+    "label": {
+     "en": "Ahavas Yisroel and Achdus",
+     "yi": "אהבת ישראל און אחדות",
+     "he": "אהבת ישראל ואחדות"
+    },
+    "page": true
+   },
+   "beis-hamikdash-churban": {
+    "id": "beis-hamikdash-churban",
+    "label": {
+     "en": "The Beis HaMikdash and Its Churban",
+     "yi": "דער בית המקדש און דער חורבן",
+     "he": "בית המקדש וחורבנו"
+    },
+    "page": true
+   },
+   "hodaah": {
+    "id": "hodaah",
+    "label": {
+     "en": "Thanks and Praise to Hashem",
+     "yi": "הודאה און שבח צום אייבערשטן",
+     "he": "הודאה"
+    },
+    "page": true
+   },
+   "mishkan": {
+    "id": "mishkan",
+    "label": {
+     "en": "The Mishkan and the Kohanim",
+     "yi": "דער משכן און די כהנים",
+     "he": "המשכן"
+    },
+    "page": true
+   },
+   "moshiach": {
+    "id": "moshiach",
+    "label": {
+     "en": "Moshiach and the Days of Moshiach",
+     "yi": "משיח און ימות המשיח",
+     "he": "ימות המשיח"
+    },
+    "page": true
+   },
+   "neros-chanukah": {
+    "id": "neros-chanukah",
+    "label": {
+     "en": "The Chanukah Lights",
+     "yi": "די חנוכה ליכט",
+     "he": "נר חנוכה"
+    },
+    "page": true
+   },
+   "sefiros": {
+    "id": "sefiros",
+    "label": {
+     "en": "The Sefiros",
+     "yi": "די ספירות",
+     "he": "עשר ספירות"
+    },
+    "page": true
+   },
+   "shoresh-moshiach": {
+    "id": "shoresh-moshiach",
+    "label": {
+     "en": "The Hidden Roots of Moshiach",
+     "yi": "דער באהאלטענער שורש פון משיח",
+     "he": "שורש נשמת משיח"
+    },
+    "page": true
+   },
+   "tanya-shtei-nefashos": {
+    "id": "tanya-shtei-nefashos",
+    "label": {
+     "en": "The Two Souls (Tanya ch. 1-8)",
+     "yi": "די צוויי נפשות (תניא פרקים א-ח)",
+     "he": "שתי הנפשות"
+    },
+    "page": true
+   },
+   "tzipisa-liyeshua": {
+    "id": "tzipisa-liyeshua",
+    "label": {
+     "en": "Awaiting Moshiach",
+     "yi": "ווארטן אויף משיח",
+     "he": "ציפית לישועה"
+    },
+    "page": true
+   },
+   "zos-chanukah": {
+    "id": "zos-chanukah",
+    "label": {
+     "en": "Zos Chanukah",
+     "yi": "זאת חנוכה"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "chasimah",
+    "label": {
+     "en": "Chasimah (sealing)",
+     "yi": "חתימה"
+    },
+    "page": false
+   },
+   {
+    "id": "hod",
+    "label": {
+     "en": "Hod (the sefirah of splendor)",
+     "yi": "הוד"
+    },
+    "page": false
+   },
+   {
+    "id": "nesiim",
+    "label": {
+     "en": "Nesi'im (the tribal princes)",
+     "yi": "נשיאים"
+    },
+    "page": false
+   },
+   {
+    "id": "oro-shel-mashiach",
+    "label": {
+     "en": "Oro shel Moshiach (the light of Moshiach)",
+     "yi": "אורו של משיח"
+    },
+    "page": false
+   },
+   {
+    "id": "zos-chanukah",
+    "label": {
+     "en": "Zos Chanukah (the eighth day of Chanukah)",
+     "yi": "זאת חנוכה"
+    },
+    "page": false
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src0",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src1",
+    "workId": "ramban",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src2",
+    "workId": "sfas-emes",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src3",
+    "workId": "rabbeinu-bachya",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src4",
+    "workId": "bnei-yissaschar",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src5",
+    "workId": "smag",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src6",
+    "workId": "daniel",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src7",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src8",
+    "workId": "berachos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src9",
+    "workId": "mishneh-torah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src10",
+    "workId": "bamidbar",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src11",
+    "workId": "talmud-yerushalmi",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src12",
+    "workId": "megaleh-amukos",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src13",
+    "workId": "zechariah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src14",
+    "workId": "or-hachaim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src15",
+    "workId": "shelah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src16",
+    "workId": "tanya",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src17",
+    "workId": "noam-elimelech",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src18",
+    "workId": "bamidbar",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src19",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-zs-chnvkh-04~src20",
+    "workId": "unesaneh-tokef",
+    "page": false
+   }
+  ],
+  "stories": [],
+  "insights": []
  },
  "notes": {
   "summary": {

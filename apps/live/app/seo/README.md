@@ -23,8 +23,15 @@ listings, unknown paths and the SPA fallback) are `noindex`. `robots.txt` allows
 ## Prerendered routes
 
 Per UI language: Today (`/en`, `/yi`), every shiur (`/s/<id>`), series, occasion with ≥2 shiurim
-(the ones with a data file), work and person/concept with `livePrerender` (≥3 shiurim, no genre
-labels) from `.corpus/entities.json`. When `public/data/` exists, routes whose data file was not
+(the ones with a data file), and from the corpus layer's Live page flags (C1.7; `app/data/live-pages.ts`)
+every topic (`/t/`), thread of ≥3 shiurim (`/th/`), story told at least twice (`/maasios/<id>`), and
+work, person and concept with a Live page, by corpus id. Without a layer the entity routes come from
+`.corpus/entities.json` (`livePrerender`).
+
+Corpus entries (topic, story, person, concept, sefer) canonicalize to their Quiet page when Quiet
+has one; otherwise the page has no canonical and is `noindex` (`@emunas/links` `canonicalFor` /
+`noindexFor` over the layer's page flags). Thread pages are always `noindex` with no canonical
+(D8), and their share description never quotes the generated summary (E.5). When `public/data/` exists, routes whose data file was not
 emitted are skipped. On the real data (2026-11-15): 4,570 pages, 8,881 files in `build/client`
 (budget 18,000).
 

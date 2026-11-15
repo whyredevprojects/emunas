@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "yi-parshas-hashavua-vschnn-01",
  "rev": "5e318d4533b9",
  "lang": "yi",
@@ -48,7 +48,495 @@
   "sameOccasion": [],
   "prev": "yi-parshas-hashavua-mvr-01",
   "next": "yi-parshas-hashavua-shvptym-01",
-  "neighbors": []
+  "neighbors": [],
+  "titles": {
+   "yi-parshas-hashavua-mvr-01": {
+    "title": "אהרן והכהנים הם בחינת מדת הוד - קודש הקדשים - בחינת רשב\"י",
+    "lang": "yi",
+    "years": [
+     5736
+    ]
+   },
+   "yi-parshas-hashavua-shvptym-01": {
+    "title": "שופטים ושוטרים - עשה לך רב כדי שתהיה בטל להקב\"ה (שייכות לימים נוראים)",
+    "lang": "yi",
+    "years": [
+     5740
+    ]
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "pesukei-dezimra",
+    "salience": 1
+   },
+   {
+    "id": "tefilah-betzibbur",
+    "salience": 0.7
+   },
+   {
+    "id": "kavanah-betefilah",
+    "salience": 0.6
+   },
+   {
+    "id": "moshe-rabbeinu",
+    "salience": 0.6
+   },
+   {
+    "id": "kedushas-shabbos",
+    "salience": 0.4
+   },
+   {
+    "id": "yetzer-hara",
+    "salience": 0.4
+   },
+   {
+    "id": "sefer-devarim",
+    "salience": 0.3
+   },
+   {
+    "id": "zerizus",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "moshe-rabbeinu",
+     "koach-hatefilah",
+     "sefer-devarim"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "pesukei-dezimra",
+     "koach-hatefilah",
+     "dovid-hamelech"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "pesukei-dezimra"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "pesukei-dezimra",
+     "taamei-hamitzvos"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "pesukei-dezimra",
+     "tefilah-betzibbur",
+     "kedushas-shabbos"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "pesukei-dezimra",
+     "kedushas-shabbos"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "kedushas-shabbos",
+     "pesukei-dezimra",
+     "moshe-rabbeinu"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "tefilah-betzibbur"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "tefilah-betzibbur",
+     "torah"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "hashgacha-pratis",
+     "shlichus-hanefesh"
+    ]
+   },
+   {
+    "idx": 10,
+    "topicIds": [
+     "maasios",
+     "yetzer-hara",
+     "baal-shem-tov-talmidim"
+    ]
+   },
+   {
+    "idx": 11,
+    "topicIds": [
+     "yetzer-hara"
+    ]
+   },
+   {
+    "idx": 12,
+    "topicIds": [
+     "kavanah-betefilah"
+    ]
+   },
+   {
+    "idx": 13,
+    "topicIds": [
+     "zerizus",
+     "yetzer-hara"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "baal-shem-tov-talmidim": {
+    "id": "baal-shem-tov-talmidim",
+    "label": {
+     "en": "The Baal Shem Tov and His Talmidim",
+     "yi": "דער בעל שם טוב און זיינע תלמידים",
+     "he": "הבעל שם טוב ותלמידיו"
+    },
+    "page": true
+   },
+   "dovid-hamelech": {
+    "id": "dovid-hamelech",
+    "label": {
+     "en": "Dovid HaMelech and Malchus Beis Dovid",
+     "yi": "דוד המלך און מלכות בית דוד",
+     "he": "דוד המלך ומלכות בית דוד"
+    },
+    "page": true
+   },
+   "hashgacha-pratis": {
+    "id": "hashgacha-pratis",
+    "label": {
+     "en": "Hashgacha Pratis",
+     "yi": "השגחה פרטית"
+    },
+    "page": true
+   },
+   "kavanah-betefilah": {
+    "id": "kavanah-betefilah",
+    "label": {
+     "en": "Kavanah in Davening",
+     "yi": "כוונה אין דאווענען",
+     "he": "כוונת התפילה"
+    },
+    "page": true
+   },
+   "kedushas-shabbos": {
+    "id": "kedushas-shabbos",
+    "label": {
+     "en": "Kedushas Shabbos",
+     "yi": "קדושת שבת"
+    },
+    "page": true
+   },
+   "koach-hatefilah": {
+    "id": "koach-hatefilah",
+    "label": {
+     "en": "The Power of Tefilah",
+     "yi": "דער כח פון תפילה",
+     "he": "כח התפילה"
+    },
+    "page": true
+   },
+   "maasios": {
+    "id": "maasios",
+    "label": {
+     "en": "Stories of Tzaddikim",
+     "yi": "מעשיות פון צדיקים",
+     "he": "מעשיות"
+    },
+    "page": true
+   },
+   "moshe-rabbeinu": {
+    "id": "moshe-rabbeinu",
+    "label": {
+     "en": "Moshe Rabbeinu",
+     "yi": "משה רבינו"
+    },
+    "page": true
+   },
+   "pesukei-dezimra": {
+    "id": "pesukei-dezimra",
+    "label": {
+     "en": "Pesukei DeZimra",
+     "yi": "פסוקי דזמרה"
+    },
+    "page": true
+   },
+   "sefer-devarim": {
+    "id": "sefer-devarim",
+    "label": {
+     "en": "Sefer Devarim",
+     "yi": "ספר דברים"
+    },
+    "page": true
+   },
+   "shlichus-hanefesh": {
+    "id": "shlichus-hanefesh",
+    "label": {
+     "en": "A Person's Mission in the World",
+     "yi": "דער תפקיד פון א מענטש אויף דער וועלט",
+     "he": "שליחות"
+    },
+    "page": true
+   },
+   "taamei-hamitzvos": {
+    "id": "taamei-hamitzvos",
+    "label": {
+     "en": "The Reasons and Power of the Mitzvos",
+     "yi": "טעמי המצוות און דער כח פון א מצוה",
+     "he": "טעמי המצוות"
+    },
+    "page": true
+   },
+   "tefilah-betzibbur": {
+    "id": "tefilah-betzibbur",
+    "label": {
+     "en": "Davening with the Tzibbur and the Beis HaKnesses",
+     "yi": "דאווענען מיט'ן ציבור און דער בית הכנסת",
+     "he": "תפילה בציבור"
+    },
+    "page": true
+   },
+   "torah": {
+    "id": "torah",
+    "label": {
+     "en": "Torah and Limud HaTorah",
+     "yi": "תורה און לימוד התורה",
+     "he": "תלמוד תורה"
+    },
+    "page": true
+   },
+   "yetzer-hara": {
+    "id": "yetzer-hara",
+    "label": {
+     "en": "The Yetzer Hara and Nisyonos",
+     "yi": "דער יצר הרע און נסיונות",
+     "he": "יצר הרע ונסיונות"
+    },
+    "page": true
+   },
+   "zerizus": {
+    "id": "zerizus",
+    "label": {
+     "en": "Zerizus and the Value of Time",
+     "yi": "זריזות און די ווערט פון צייט",
+     "he": "זריזות"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "avodah-shebalev",
+    "label": {
+     "en": "Avodah shebalev (the service of the heart, prayer)",
+     "yi": "עבודה שבלב"
+    },
+    "page": false
+   },
+   {
+    "id": "azus-dikdushah",
+    "label": {
+     "en": "Azus d'kedushah (holy boldness)",
+     "yi": "עזות דקדושה"
+    },
+    "page": false
+   },
+   {
+    "id": "hisbonenus",
+    "label": {
+     "en": "Hisbonenus (contemplation)",
+     "yi": "התבוננות"
+    },
+    "page": false
+   },
+   {
+    "id": "hislahavus",
+    "label": {
+     "en": "Hislahavus (fervor)",
+     "yi": "התלהבות"
+    },
+    "page": false
+   },
+   {
+    "id": "kol-ram",
+    "label": {
+     "en": "Kol ram (a loud voice)",
+     "yi": "קול רם"
+    },
+    "page": false
+   },
+   {
+    "id": "korbanos",
+    "label": {
+     "en": "Korbanos (offerings)",
+     "yi": "קרבנות"
+    },
+    "page": false
+   },
+   {
+    "id": "mehadrin",
+    "label": {
+     "en": "Mehadrin (the more exacting)",
+     "yi": "מהדרין"
+    },
+    "page": false
+   },
+   {
+    "id": "neshamah-yeseirah",
+    "label": {
+     "en": "Neshamah yeseirah (the additional soul of Shabbos)",
+     "yi": "נשמה יתירה"
+    },
+    "page": false
+   },
+   {
+    "id": "pesukei-dezimra",
+    "label": {
+     "en": "Pesukei DeZimrah (the verses of song in Shacharis)",
+     "yi": "פסוקי דזמרה"
+    },
+    "page": false
+   },
+   {
+    "id": "pidyon-shvuyim",
+    "label": {
+     "en": "Pidyon shvuyim (redeeming captives)",
+     "yi": "פדיון שבויים"
+    },
+    "page": false
+   },
+   {
+    "id": "ribono-shel-olam",
+    "label": {
+     "en": "Ribono shel Olam (Master of the World)",
+     "yi": "רבונו של עולם"
+    },
+    "page": true
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src0",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src1",
+    "workId": "yeshayahu",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src2",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src3",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src4",
+    "workId": "shmuel-i",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src5",
+    "workId": "berachos",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src6",
+    "workId": "chullin",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src7",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src8",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src10",
+    "workId": "mishnah-uktzin",
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src11",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src12",
+    "workId": "shulchan-aruch",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src13",
+    "workId": "mesilas-yesharim",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src14",
+    "workId": "taanis",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src15",
+    "workId": "tanya",
+    "page": true
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~src16",
+    "workId": "yechezkel",
+    "page": true
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~st0",
+    "storyId": "reb-moshe-leib-of-sassov-at-the-poritzs-feast",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~st1",
+    "storyId": "the-lost-chassids-blessings",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "yi-parshas-hashavua-vschnn-01~st2",
+    "storyId": "the-melamed-and-his-uncle",
+    "tellings": 1,
+    "page": false
+   }
+  ],
+  "insights": []
  },
  "notes": {
   "summary": {

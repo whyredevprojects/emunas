@@ -1,10 +1,10 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "key": "machzor-rosh-hashanah",
  "name": "Machzor Rosh Hashanah",
  "label": {
   "en": "Machzor Rosh Hashanah",
-  "yi": "מחזור ראש השנה"
+  "yi": "מחזור לראש השנה"
  },
  "locations": [],
  "unlocated": [
@@ -28,6 +28,20 @@
    "t": 339.42,
    "mention": "alluded",
    "resolution": "inferred"
+  },
+  {
+   "shiurId": "en-zmanim-en-rsh-hshnh-03",
+   "sourceId": "en-zmanim-en-rsh-hshnh-03~src4",
+   "t": 304.91,
+   "mention": "quoted",
+   "resolution": "inferred"
+  },
+  {
+   "shiurId": "en-zmanim-en-rsh-hshnh-03",
+   "sourceId": "en-zmanim-en-rsh-hshnh-03~src10",
+   "t": 1148.7,
+   "mention": "quoted",
+   "resolution": "unresolved"
   }
  ]
 }

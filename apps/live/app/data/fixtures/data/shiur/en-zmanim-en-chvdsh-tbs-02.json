@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "en-zmanim-en-chvdsh-tbs-02",
  "rev": "3dd7cc5d080e",
  "lang": "en",
@@ -54,6 +54,566 @@
     "shiurId": "yi-parshas-hashavua-vyshb-08",
     "t": 2000.34,
     "score": 0.377
+   }
+  ],
+  "titles": {
+   "en-zmanim-en-rsh-hshnh-03": {
+    "title": "The Theme of the Day - Proclaiming Hashem as King",
+    "lang": "en",
+    "years": [
+     5757
+    ]
+   },
+   "en-zmanim-en-tv-bshbt-01": {
+    "title": "ט”ו בשבט Ushers in the Months of חסד (A Deeper Understanding of the צירופי החודש)",
+    "lang": "en",
+    "years": [
+     5756
+    ]
+   },
+   "yi-parshas-hashavua-vyshb-08": {
+    "title": "בפרשה זו נטמן משיח בן יוסף ומשיח בן דוד. שייכות לחנוכה",
+    "lang": "yi",
+    "years": [
+     5751
+    ]
+   },
+   "yi-zmanim-svds-pvrym-ktn-03": {
+    "title": "האור של מגילת אסתר יותר נעלה מאור של תורת משה (חתם סופר)",
+    "lang": "yi",
+    "years": [
+     5765
+    ]
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "chodesh-teves",
+    "salience": 0.95
+   },
+   {
+    "id": "hiskashrus-tzaddikim",
+    "salience": 0.75
+   },
+   {
+    "id": "tachlis-hagalus",
+    "salience": 0.6
+   },
+   {
+    "id": "umos-haolam",
+    "salience": 0.55
+   },
+   {
+    "id": "yosef-veechav",
+    "salience": 0.55
+   },
+   {
+    "id": "ahavas-hashem-leyisroel",
+    "salience": 0.45
+   },
+   {
+    "id": "ketz-hageulah",
+    "salience": 0.45
+   },
+   {
+    "id": "vayechi-shevatim",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "chodesh-teves",
+     "vayechi-shevatim",
+     "chodesh-adar"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "ketz-hageulah",
+     "teshuvah",
+     "ahavas-hashem-leyisroel"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "chodesh-teves",
+     "umos-haolam",
+     "neros-chanukah"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "yosef-veechav",
+     "umos-haolam",
+     "maalas-hatorah"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "umos-haolam",
+     "gedolei-yisroel",
+     "chodesh-teves"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "chodesh-teves",
+     "vayechi-shevatim",
+     "sefiras-haomer"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "ahavas-hashem-leyisroel",
+     "tachlis-hagalus",
+     "yosef-veechav"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "chodesh-teves",
+     "hiskashrus-tzaddikim",
+     "yerushalayim"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "hiskashrus-tzaddikim",
+     "yosef-veechav"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "ahavas-hashem-leyisroel": {
+    "id": "ahavas-hashem-leyisroel",
+    "label": {
+     "en": "Hashem's Love for Klal Yisroel",
+     "yi": "דעם אייבערשטנס אהבה צו כלל ישראל",
+     "he": "אהבת השם לישראל"
+    },
+    "page": true
+   },
+   "chodesh-adar": {
+    "id": "chodesh-adar",
+    "label": {
+     "en": "Chodesh Adar",
+     "yi": "חודש אדר"
+    },
+    "page": true
+   },
+   "chodesh-teves": {
+    "id": "chodesh-teves",
+    "label": {
+     "en": "Chodesh Teves and Asarah B'Teves",
+     "yi": "חודש טבת און עשרה בטבת",
+     "he": "חודש טבת"
+    },
+    "page": true
+   },
+   "gedolei-yisroel": {
+    "id": "gedolei-yisroel",
+    "label": {
+     "en": "Chazal and Gedolei Yisroel",
+     "yi": "חז\"ל און גדולי ישראל",
+     "he": "חז\"ל וגדולי ישראל"
+    },
+    "page": true
+   },
+   "hiskashrus-tzaddikim": {
+    "id": "hiskashrus-tzaddikim",
+    "label": {
+     "en": "Hiskashrus to Tzaddikim and Emunas Chachamim",
+     "yi": "התקשרות צו צדיקים און אמונת חכמים",
+     "he": "התקשרות לצדיקים"
+    },
+    "page": true
+   },
+   "ketz-hageulah": {
+    "id": "ketz-hageulah",
+    "label": {
+     "en": "The Time of the Geulah and the Ketz",
+     "yi": "די צייט פון דער גאולה און דער קץ",
+     "he": "קץ הגאולה"
+    },
+    "page": true
+   },
+   "maalas-hatorah": {
+    "id": "maalas-hatorah",
+    "label": {
+     "en": "The Power and Greatness of Torah",
+     "yi": "דער כח און די מעלה פון תורה",
+     "he": "מעלת התורה"
+    },
+    "page": true
+   },
+   "neros-chanukah": {
+    "id": "neros-chanukah",
+    "label": {
+     "en": "The Chanukah Lights",
+     "yi": "די חנוכה ליכט",
+     "he": "נר חנוכה"
+    },
+    "page": true
+   },
+   "sefiras-haomer": {
+    "id": "sefiras-haomer",
+    "label": {
+     "en": "Sefiras HaOmer",
+     "yi": "ספירת העומר"
+    },
+    "page": true
+   },
+   "tachlis-hagalus": {
+    "id": "tachlis-hagalus",
+    "label": {
+     "en": "Galus as Preparation for Geulah",
+     "yi": "גלות אלס הכנה צו גאולה",
+     "he": "תכלית הגלות"
+    },
+    "page": true
+   },
+   "teshuvah": {
+    "id": "teshuvah",
+    "label": {
+     "en": "Teshuvah",
+     "yi": "תשובה"
+    },
+    "page": true
+   },
+   "umos-haolam": {
+    "id": "umos-haolam",
+    "label": {
+     "en": "Yisroel and the Nations",
+     "yi": "אידן און די אומות העולם",
+     "he": "ישראל והעמים"
+    },
+    "page": true
+   },
+   "vayechi-shevatim": {
+    "id": "vayechi-shevatim",
+    "label": {
+     "en": "Vayechi and the Shevatim",
+     "yi": "ויחי און די שבטים",
+     "he": "ויחי והשבטים"
+    },
+    "page": true
+   },
+   "yerushalayim": {
+    "id": "yerushalayim",
+    "label": {
+     "en": "Yerushalayim and the Kosel",
+     "yi": "ירושלים און דער כותל",
+     "he": "ירושלים עיר הקודש"
+    },
+    "page": true
+   },
+   "yosef-veechav": {
+    "id": "yosef-veechav",
+    "label": {
+     "en": "Yosef and His Brothers",
+     "yi": "יוסף און זיינע ברידער",
+     "he": "יוסף ואחיו"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "asarah-bteves",
+    "label": {
+     "en": "Asarah B'Teves (the tenth of Teves)",
+     "yi": "עשרה בטבת"
+    },
+    "page": false
+   },
+   {
+    "id": "degalim",
+    "label": {
+     "en": "Degalim (the banners of the tribes)",
+     "yi": "דגלים"
+    },
+    "page": false
+   },
+   {
+    "id": "geulah",
+    "label": {
+     "en": "Geulah (redemption)",
+     "yi": "גאולה"
+    },
+    "page": false
+   },
+   {
+    "id": "hester-panim",
+    "label": {
+     "en": "Hester panim (the hiding of Hashem's face)",
+     "yi": "הסתר פנים"
+    },
+    "page": false
+   },
+   {
+    "id": "klipah",
+    "label": {
+     "en": "Klipah (husk, a shell of impurity)",
+     "yi": "קליפה"
+    },
+    "page": true
+   },
+   {
+    "id": "knesses-yisrael",
+    "label": {
+     "en": "Knesses Yisrael (the collective soul of the Jewish people)",
+     "yi": "כנסת ישראל"
+    },
+    "page": true
+   },
+   {
+    "id": "lashon-chibah",
+    "label": {
+     "en": "Lashon chibah (a term of endearment)",
+     "yi": "לשון חיבה"
+    },
+    "page": false
+   },
+   {
+    "id": "minhag-yisrael-torah",
+    "label": {
+     "en": "Minhag Yisrael Torah hi (a Jewish custom is Torah)",
+     "yi": "מנהג ישראל תורה"
+    },
+    "page": false
+   },
+   {
+    "id": "nittel",
+    "label": {
+     "en": "Nittel (Nittel night)",
+     "yi": "ניטל"
+    },
+    "page": false
+   },
+   {
+    "id": "olam-shanah-nefesh",
+    "label": {
+     "en": "Olam, shanah, nefesh (world, year, soul: holiness in place, time and person)",
+     "yi": "עולם שנה נפש"
+    },
+    "page": false
+   },
+   {
+    "id": "ribono-shel-olam",
+    "label": {
+     "en": "Ribono shel Olam (Master of the World)",
+     "yi": "רבונו של עולם"
+    },
+    "page": true
+   },
+   {
+    "id": "shoresh-haneshamah",
+    "label": {
+     "en": "Shoresh haneshamah (the root of the soul)",
+     "yi": "שורש הנשמה"
+    },
+    "page": false
+   },
+   {
+    "id": "talmid-chacham",
+    "label": {
+     "en": "Talmid chacham (a Torah scholar)",
+     "yi": "תלמיד חכם"
+    },
+    "page": false
+   },
+   {
+    "id": "tekufas-teves",
+    "label": {
+     "en": "Tekufas Teves (the winter solstice season)",
+     "yi": "תקופת טבת"
+    },
+    "page": false
+   },
+   {
+    "id": "teshuvah",
+    "label": {
+     "en": "Teshuvah (repentance, return)",
+     "yi": "תשובה"
+    },
+    "page": false
+   },
+   {
+    "id": "teves",
+    "label": {
+     "en": "Teves (the month of Teves)",
+     "yi": "טבת"
+    },
+    "page": false
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src0",
+    "workId": "megaleh-amukos",
+    "page": false
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src1",
+    "workId": "chullin",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src2",
+    "workId": "michah",
+    "page": false
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src4",
+    "workId": "amos",
+    "page": false
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src5",
+    "workId": "malachi",
+    "page": false
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src6",
+    "workId": "eichah",
+    "page": false
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src7",
+    "workId": "ramban",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src8",
+    "workId": "eruvin",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src9",
+    "workId": "avodah-zarah",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src10",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src11",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src12",
+    "workId": "targum-onkelos",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src13",
+    "workId": "kiddushin",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src14",
+    "workId": "gittin",
+    "page": false
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src18",
+    "workId": "sefer-yetzirah",
+    "page": false
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src19",
+    "workId": "vayikra",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src21",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src22",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src24",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src25",
+    "workId": "yechezkel",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src26",
+    "workId": "abudraham",
+    "page": false
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src27",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~src28",
+    "workId": "sotah",
+    "page": true
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~st0",
+    "storyId": "adam-harishon-and-the-shortening-days",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~st1",
+    "storyId": "onkelos-consults-the-dead",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~st2",
+    "storyId": "rabbi-yonasan-eybeshutz-answers-the-priests",
+    "tellings": 1,
+    "page": false
+   }
+  ],
+  "insights": [
+   {
+    "momentId": "en-zmanim-en-chvdsh-tbs-02~i3",
+    "threadId": "zmanim-small-avodah-today-precious",
+    "shiurCount": 2,
+    "years": [
+     5764,
+     5765
+    ],
+    "page": false,
+    "other": {
+     "shiurId": "yi-zmanim-svds-pvrym-ktn-03",
+     "momentId": "yi-zmanim-svds-pvrym-ktn-03~i5",
+     "t": 1761.78,
+     "year": 5765,
+     "lang": "yi"
+    }
    }
   ]
  },

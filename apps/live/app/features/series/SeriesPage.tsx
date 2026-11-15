@@ -1,8 +1,9 @@
 /**
  * `/:ui/series/:seriesId` (concept-live §5.6): the parts in `seriesOrder` with their one-liners,
- * progress and "continue"; Tanya also by perek (both languages under each perek); where the course
- * exists in the other language, the two side by side. Series overviews (pipeline P10) do not exist
- * yet, so the page uses catalog titles and per-part one-liners only.
+ * progress and "continue"; Tanya also by perek. A course given in the other language is a separate
+ * course, never paired with this one (concept-live-corpus F.1): no side-by-side view and no
+ * "also in" link. The series synthesis (overview, arc) is C3.5's; the page still uses catalog
+ * titles and per-part one-liners.
  */
 import type { Ed } from "@emunas/corpus/public";
 import { formatNumber, hebrewNumeral, languageName, notice, type UiLang } from "@emunas/i18n";
@@ -24,15 +25,11 @@ const paths = livePaths();
 
 interface Loaded {
   series: SeriesFile;
-  sibling: SeriesFile | null;
 }
 
-async function loadWithSibling(id: string): Promise<Loaded | null> {
+async function loadOne(id: string): Promise<Loaded | null> {
   const series = await notFoundToNull(loadSeries(id));
-  if (!series) return null;
-  // The sibling is extra: a missing or failing file just means no side-by-side view.
-  const sibling = series.sibling ? await loadSeries(series.sibling).catch(() => null) : null;
-  return { series, sibling };
+  return series ? { series } : null;
 }
 
 function cardOf(p: SeriesPart, lang: Ed): CardData {
@@ -49,7 +46,7 @@ export function SeriesPage(): JSX.Element {
   const { seriesId = "" } = useParams();
   const location = useLocation();
   const read = readingLang({ read: useSettings((x) => x.read) }, ui);
-  const loaded = useLoad(() => loadWithSibling(seriesId), [seriesId]);
+  const loaded = useLoad(() => loadOne(seriesId), [seriesId]);
   const version = useProgressSourceVersion();
   const progress = useLoad(readProgress, [version]);
   const records = progress.status === "ok" ? progress.data : [];
@@ -92,26 +89,20 @@ function SeriesBody({
   records: readonly ProgressRecord[];
 }): JSX.Element {
   const st = seriesT(ui);
-  const { series, sibling } = data;
-  const groups = perekGroups(sibling ? [series, sibling] : [series]);
-  const view = viewFromQuery(search, { hasPerek: groups.length > 0, hasSibling: sibling !== null });
+  const { series } = data;
+  const groups = perekGroups([series]);
+  const view = viewFromQuery(search, { hasPerek: groups.length > 0 });
   const parts = orderParts(series.parts);
   const prog = seriesProgress(series.parts, records);
   const heard = new Map(records.map((r) => [r.shiurId, r]));
-  const anyNotes = [...series.parts, ...(sibling?.parts ?? [])].some((p) => p.oneLiner !== null);
+  const anyNotes = series.parts.some((p) => p.oneLiner !== null);
 
-  const views: SeriesView[] = ["order", ...(groups.length > 0 ? (["perek"] as const) : []), ...(sibling ? (["both"] as const) : [])];
+  const views: SeriesView[] = ["order", ...(groups.length > 0 ? (["perek"] as const) : [])];
 
   return (
     <>
       <p className={s.meta}>
         {st("series.lang", { lang: languageName(series.lang, ui) })} · {st("series.parts", { count: parts.length })}
-        {sibling ? (
-          <>
-            {" · "}
-            <Link to={paths.series(ui, sibling.id)}>{st("series.alsoIn", { lang: languageName(sibling.lang, ui) })}</Link>
-          </>
-        ) : null}
       </p>
       <p className={s.lead}>{st("series.overviewGap")}</p>
 
@@ -131,20 +122,6 @@ function SeriesBody({
         <p className={s.muted}>{st("series.noParts")}</p>
       ) : view === "perek" ? (
         <PerekView groups={groups} ui={ui} read={read} heard={heard} />
-      ) : view === "both" && sibling ? (
-        <div className={s.columns}>
-          {[series, sibling].map((x) => (
-            <section key={x.id} className={s.column} aria-labelledby={`col-${x.id}`} data-column={x.lang}>
-              <h2 id={`col-${x.id}`} className={s.columnTitle}>
-                <Link to={paths.series(ui, x.id)}>
-                  <Text value={x.title} lang={ui} />
-                </Link>{" "}
-                <span className={s.meta}>({languageName(x.lang, ui)})</span>
-              </h2>
-              <PartList parts={orderParts(x.parts)} lang={x.lang} ui={ui} read={read} heard={heard} label={x.title[ui]} />
-            </section>
-          ))}
-        </div>
       ) : (
         <PartList parts={parts} lang={series.lang} ui={ui} read={read} heard={heard} label={series.title[ui]} />
       )}

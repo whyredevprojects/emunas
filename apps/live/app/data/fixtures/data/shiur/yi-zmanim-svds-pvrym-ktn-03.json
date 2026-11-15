@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "yi-zmanim-svds-pvrym-ktn-03",
  "rev": "bea16dcb7e33",
  "lang": "yi",
@@ -48,7 +48,318 @@
   "sameOccasion": [],
   "prev": "yi-zmanim-svds-zs-chnvkh-04",
   "next": "yi-zmanim-pvrym-07",
-  "neighbors": []
+  "neighbors": [],
+  "titles": {
+   "en-zmanim-en-chvdsh-tbs-02": {
+    "title": "An Explanation of ניטל and the Month of טבת",
+    "lang": "en",
+    "years": [
+     5764
+    ]
+   },
+   "yi-zmanim-pvrym-07": {
+    "title": "גודל כח היום; הדרכה איך לנהוג בו",
+    "lang": "yi",
+    "years": [
+     5767
+    ]
+   },
+   "yi-zmanim-svds-zs-chnvkh-04": {
+    "title": "סעודה של המחכים לבנין ביהמ\"ק; חנוכה - להודות ולהלל - יו\"ט של הוד",
+    "lang": "yi",
+    "years": [
+     5751
+    ]
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "megillas-esther",
+    "salience": 0.95
+   },
+   {
+    "id": "ahavas-hashem-leyisroel",
+    "salience": 0.75
+   },
+   {
+    "id": "purim",
+    "salience": 0.7
+   },
+   {
+    "id": "purim-katan",
+    "salience": 0.5
+   },
+   {
+    "id": "shidduchim-chasunah",
+    "salience": 0.4
+   },
+   {
+    "id": "neviim",
+    "salience": 0.35
+   },
+   {
+    "id": "maalas-hatorah",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "megillas-esther",
+     "neviim"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "megillas-esther",
+     "maalas-hatorah"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "megillas-esther",
+     "purim"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "ahavas-hashem-leyisroel",
+     "purim"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "megillas-esther",
+     "ahavas-hashem-leyisroel"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "purim-katan"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "shidduchim-chasunah",
+     "ahavas-hashem-leyisroel"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "ahavas-hashem-leyisroel": {
+    "id": "ahavas-hashem-leyisroel",
+    "label": {
+     "en": "Hashem's Love for Klal Yisroel",
+     "yi": "דעם אייבערשטנס אהבה צו כלל ישראל",
+     "he": "אהבת השם לישראל"
+    },
+    "page": true
+   },
+   "maalas-hatorah": {
+    "id": "maalas-hatorah",
+    "label": {
+     "en": "The Power and Greatness of Torah",
+     "yi": "דער כח און די מעלה פון תורה",
+     "he": "מעלת התורה"
+    },
+    "page": true
+   },
+   "megillas-esther": {
+    "id": "megillas-esther",
+    "label": {
+     "en": "Megillas Esther",
+     "yi": "מגילת אסתר"
+    },
+    "page": true
+   },
+   "neviim": {
+    "id": "neviim",
+    "label": {
+     "en": "The Neviim and Their Times",
+     "yi": "די נביאים און זייערע צייטן",
+     "he": "נביאים"
+    },
+    "page": true
+   },
+   "purim": {
+    "id": "purim",
+    "label": {
+     "en": "Purim",
+     "yi": "פורים"
+    },
+    "page": true
+   },
+   "purim-katan": {
+    "id": "purim-katan",
+    "label": {
+     "en": "Purim Katan and the Leap Year",
+     "yi": "פורים קטן און שנת העיבור",
+     "he": "פורים קטן"
+    },
+    "page": true
+   },
+   "shidduchim-chasunah": {
+    "id": "shidduchim-chasunah",
+    "label": {
+     "en": "Shidduchim and Chasunah",
+     "yi": "שידוכים און חתונה",
+     "he": "שידוכים וחתונה"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "aseres-hadibros",
+    "label": {
+     "en": "Aseres HaDibros (the Ten Commandments)",
+     "yi": "עשרת הדברות"
+    },
+    "page": false
+   },
+   {
+    "id": "chassan-kallah",
+    "label": {
+     "en": "Chassan v'kallah (groom and bride)",
+     "yi": "חתן וכלה"
+    },
+    "page": false
+   },
+   {
+    "id": "knesses-yisrael",
+    "label": {
+     "en": "Knesses Yisrael (the collective soul of the Jewish people)",
+     "yi": "כנסת ישראל"
+    },
+    "page": true
+   },
+   {
+    "id": "michutz-lamachaneh",
+    "label": {
+     "en": "Michutz lamachaneh (outside the camp)",
+     "yi": "מחוץ למחנה"
+    },
+    "page": false
+   },
+   {
+    "id": "purim-katan",
+    "label": {
+     "en": "Purim Katan (the \"small Purim\" of Adar I)",
+     "yi": "פורים קטן"
+    },
+    "page": false
+   },
+   {
+    "id": "ruach-hakodesh",
+    "label": {
+     "en": "Ruach hakodesh (Divine inspiration)",
+     "yi": "רוח הקודש"
+    },
+    "page": true
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "yi-zmanim-svds-pvrym-ktn-03~src0",
+    "workId": "megillah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-pvrym-ktn-03~src1",
+    "workId": "megillah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-pvrym-ktn-03~src2",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-pvrym-ktn-03~src3",
+    "workId": "yerushalmi-megillah",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svds-pvrym-ktn-03~src4",
+    "workId": "tanya",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-pvrym-ktn-03~src5",
+    "workId": "shmuel-ii",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-svds-pvrym-ktn-03~src6",
+    "workId": "chasam-sofer",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-pvrym-ktn-03~src7",
+    "workId": "megillah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-pvrym-ktn-03~src8",
+    "workId": "esther",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-pvrym-ktn-03~src9",
+    "workId": "shir-hashirim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-pvrym-ktn-03~src10",
+    "workId": "megillah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-pvrym-ktn-03~src11",
+    "workId": "megillah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-pvrym-ktn-03~src13",
+    "workId": "esther",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-svds-pvrym-ktn-03~src14",
+    "workId": "mishlei",
+    "page": true
+   }
+  ],
+  "stories": [],
+  "insights": [
+   {
+    "momentId": "yi-zmanim-svds-pvrym-ktn-03~i5",
+    "threadId": "zmanim-small-avodah-today-precious",
+    "shiurCount": 2,
+    "years": [
+     5764,
+     5765
+    ],
+    "page": false,
+    "other": {
+     "shiurId": "en-zmanim-en-chvdsh-tbs-02",
+     "momentId": "en-zmanim-en-chvdsh-tbs-02~i3",
+     "t": 2454.48,
+     "year": 5764,
+     "lang": "en"
+    }
+   }
+  ]
  },
  "notes": {
   "summary": {

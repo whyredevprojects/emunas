@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "en-zmanim-en-tv-bshbt-01",
  "rev": "cd72484f2c2c",
  "lang": "en",
@@ -55,7 +55,544 @@
     "t": 696.22,
     "score": 0.315
    }
-  ]
+  ],
+  "titles": {
+   "en-parsha-en-vyshlch-01": {
+    "title": "A Deeper Understanding of יעקב's Present to עשו",
+    "lang": "en",
+    "years": [
+     5749
+    ]
+   },
+   "en-zmanim-en-chvdsh-tbs-02": {
+    "title": "An Explanation of ניטל and the Month of טבת",
+    "lang": "en",
+    "years": [
+     5764
+    ]
+   },
+   "en-zmanim-en-psch-06": {
+    "title": "The Beginning of our Nuptials with Hashem",
+    "lang": "en",
+    "years": [
+     5765
+    ]
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "tu-bishvat",
+    "salience": 0.95
+   },
+   {
+    "id": "shemos-hakedoshim",
+    "salience": 0.9
+   },
+   {
+    "id": "sefiros",
+    "salience": 0.6
+   },
+   {
+    "id": "rosh-chodesh",
+    "salience": 0.55
+   },
+   {
+    "id": "kedushah-vekelipah",
+    "salience": 0.5
+   },
+   {
+    "id": "kavanah-betefilah",
+    "salience": 0.45
+   },
+   {
+    "id": "otiyos-gematria",
+    "salience": 0.45
+   },
+   {
+    "id": "sukkos",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "pardes",
+     "shemos-hakedoshim"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "sefiros",
+     "shidduchim-chasunah"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "sefiros",
+     "yaakov-veesav"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "shemos-hakedoshim",
+     "chodesh-nissan",
+     "rosh-hashanah"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "shemos-hakedoshim",
+     "tammuz-av",
+     "chodesh-teves"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "kavanah-betefilah",
+     "shemos-hakedoshim"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "tu-bishvat",
+     "sefiras-haomer",
+     "shavuos"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "shemos-hakedoshim",
+     "shechinah",
+     "mishkan"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "kedushah-vekelipah",
+     "otiyos-gematria"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "tu-bishvat",
+     "kedushah-vekelipah",
+     "sukkos"
+    ]
+   },
+   {
+    "idx": 10,
+    "topicIds": [
+     "tu-bishvat",
+     "adam-harishon"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "adam-harishon": {
+    "id": "adam-harishon",
+    "label": {
+     "en": "Adam HaRishon and Gan Eden",
+     "yi": "אדם הראשון און גן עדן",
+     "he": "אדם הראשון"
+    },
+    "page": true
+   },
+   "chodesh-nissan": {
+    "id": "chodesh-nissan",
+    "label": {
+     "en": "Chodesh Nissan",
+     "yi": "חודש ניסן"
+    },
+    "page": true
+   },
+   "chodesh-teves": {
+    "id": "chodesh-teves",
+    "label": {
+     "en": "Chodesh Teves and Asarah B'Teves",
+     "yi": "חודש טבת און עשרה בטבת",
+     "he": "חודש טבת"
+    },
+    "page": true
+   },
+   "kavanah-betefilah": {
+    "id": "kavanah-betefilah",
+    "label": {
+     "en": "Kavanah in Davening",
+     "yi": "כוונה אין דאווענען",
+     "he": "כוונת התפילה"
+    },
+    "page": true
+   },
+   "kedushah-vekelipah": {
+    "id": "kedushah-vekelipah",
+    "label": {
+     "en": "Kedushah and Kelipah",
+     "yi": "קדושה און קליפה",
+     "he": "קדושה וקליפה"
+    },
+    "page": true
+   },
+   "mishkan": {
+    "id": "mishkan",
+    "label": {
+     "en": "The Mishkan and the Kohanim",
+     "yi": "דער משכן און די כהנים",
+     "he": "המשכן"
+    },
+    "page": true
+   },
+   "otiyos-gematria": {
+    "id": "otiyos-gematria",
+    "label": {
+     "en": "Letters, Gematria and Lashon HaKodesh",
+     "yi": "אותיות, גימטריא און לשון הקודש",
+     "he": "אותיות וגימטריאות"
+    },
+    "page": true
+   },
+   "pardes": {
+    "id": "pardes",
+    "label": {
+     "en": "Pshat, Remez, Drush and Sod",
+     "yi": "פשט, רמז, דרש און סוד",
+     "he": "פרד\"ס"
+    },
+    "page": true
+   },
+   "rosh-chodesh": {
+    "id": "rosh-chodesh",
+    "label": {
+     "en": "Rosh Chodesh and the Months",
+     "yi": "ראש חודש און די חדשים",
+     "he": "ראש חודש"
+    },
+    "page": true
+   },
+   "rosh-hashanah": {
+    "id": "rosh-hashanah",
+    "label": {
+     "en": "Rosh Hashanah",
+     "yi": "ראש השנה"
+    },
+    "page": true
+   },
+   "sefiras-haomer": {
+    "id": "sefiras-haomer",
+    "label": {
+     "en": "Sefiras HaOmer",
+     "yi": "ספירת העומר"
+    },
+    "page": true
+   },
+   "sefiros": {
+    "id": "sefiros",
+    "label": {
+     "en": "The Sefiros",
+     "yi": "די ספירות",
+     "he": "עשר ספירות"
+    },
+    "page": true
+   },
+   "shavuos": {
+    "id": "shavuos",
+    "label": {
+     "en": "Shavuos and Matan Torah",
+     "yi": "שבועות און מתן תורה",
+     "he": "שבועות"
+    },
+    "page": true
+   },
+   "shechinah": {
+    "id": "shechinah",
+    "label": {
+     "en": "The Shechinah and Galus HaShechinah",
+     "yi": "די שכינה און גלות השכינה",
+     "he": "שכינה וגלות השכינה"
+    },
+    "page": true
+   },
+   "shemos-hakedoshim": {
+    "id": "shemos-hakedoshim",
+    "label": {
+     "en": "The Holy Names of Hashem",
+     "yi": "די שמות הקדושים",
+     "he": "שמות הקדושים"
+    },
+    "page": true
+   },
+   "shidduchim-chasunah": {
+    "id": "shidduchim-chasunah",
+    "label": {
+     "en": "Shidduchim and Chasunah",
+     "yi": "שידוכים און חתונה",
+     "he": "שידוכים וחתונה"
+    },
+    "page": true
+   },
+   "sukkos": {
+    "id": "sukkos",
+    "label": {
+     "en": "Sukkos",
+     "yi": "סוכות",
+     "he": "חג הסוכות"
+    },
+    "page": true
+   },
+   "tammuz-av": {
+    "id": "tammuz-av",
+    "label": {
+     "en": "Chodashim Tammuz and Av",
+     "yi": "די חדשים תמוז און אב",
+     "he": "תמוז ואב"
+    },
+    "page": true
+   },
+   "tu-bishvat": {
+    "id": "tu-bishvat",
+    "label": {
+     "en": "Tu B'Shvat",
+     "yi": "ט\"ו בשבט"
+    },
+    "page": true
+   },
+   "yaakov-veesav": {
+    "id": "yaakov-veesav",
+    "label": {
+     "en": "Yitzchak, Yaakov and Esav",
+     "yi": "יצחק, יעקב און עשו",
+     "he": "יעקב ועשו"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "esrog",
+    "label": {
+     "en": "Esrog (the citron)",
+     "yi": "אתרוג"
+    },
+    "page": false
+   },
+   {
+    "id": "ilan",
+    "label": {
+     "en": "Ilan (a tree)",
+     "yi": "אילן"
+    },
+    "page": false
+   },
+   {
+    "id": "ilanei-serak",
+    "label": {
+     "en": "Ilanei serak (fruitless trees)",
+     "yi": "אילני סרק"
+    },
+    "page": false
+   },
+   {
+    "id": "knesses-yisrael",
+    "label": {
+     "en": "Knesses Yisrael (the collective soul of the Jewish people)",
+     "yi": "כנסת ישראל"
+    },
+    "page": true
+   },
+   {
+    "id": "mashpia-umekabel",
+    "label": {
+     "en": "Mashpia u'mekabel (giver and receiver)",
+     "yi": "משפיע ומקבל"
+    },
+    "page": false
+   },
+   {
+    "id": "midas-hachesed",
+    "label": {
+     "en": "Midas hachesed (the attribute of kindness)",
+     "yi": "מדת החסד"
+    },
+    "page": false
+   },
+   {
+    "id": "midas-hadin",
+    "label": {
+     "en": "Midas hadin (the attribute of strict judgment)",
+     "yi": "מדת הדין"
+    },
+    "page": false
+   },
+   {
+    "id": "rashei-teivos",
+    "label": {
+     "en": "Rashei teivos (initials)",
+     "yi": "ראשי תיבות"
+    },
+    "page": false
+   },
+   {
+    "id": "shem-adnus",
+    "label": {
+     "en": "Shem Adnus (the Name Ad-nai)",
+     "yi": "שם אדנות"
+    },
+    "page": false
+   },
+   {
+    "id": "shem-havaya",
+    "label": {
+     "en": "Shem Havaya (the Tetragrammaton, Hashem's essential Name)",
+     "yi": "שם הוי\"ה"
+    },
+    "page": true
+   },
+   {
+    "id": "sitra-achra",
+    "label": {
+     "en": "Sitra Achra (the \"other side\", the realm of evil)",
+     "yi": "סטרא אחרא"
+    },
+    "page": true
+   },
+   {
+    "id": "sofei-teivos",
+    "label": {
+     "en": "Sofei teivos (final letters)",
+     "yi": "סופי תיבות"
+    },
+    "page": false
+   },
+   {
+    "id": "tu-bishvat",
+    "label": {
+     "en": "Tu BiShvat (the New Year for Trees)",
+     "yi": "ט\"ו בשבט"
+    },
+    "page": false
+   },
+   {
+    "id": "tumah",
+    "label": {
+     "en": "Tumah (impurity)",
+     "yi": "טומאה"
+    },
+    "page": false
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src0",
+    "workId": "tanya",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src1",
+    "workId": "rashi-on-bereishis",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src2",
+    "workId": "talmud-bavli",
+    "page": false
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src4",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src5",
+    "workId": "shemos",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src6",
+    "workId": "esther",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src8",
+    "workId": "divrei-chaim",
+    "page": false
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src9",
+    "workId": "shemos",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src10",
+    "workId": "or-hachaim",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src11",
+    "workId": "iyov",
+    "page": false
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src12",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src13",
+    "workId": "rashi-on-rosh-hashanah",
+    "page": false
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src14",
+    "workId": "bnei-yissaschar",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src15",
+    "workId": "shulchan-aruch",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src16",
+    "workId": "magen-avraham",
+    "page": false
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src17",
+    "workId": "midrash",
+    "page": false
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src18",
+    "workId": "vayikra",
+    "page": true
+   },
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~src19",
+    "workId": "rashi-on-vayikra",
+    "page": false
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "en-zmanim-en-tv-bshbt-01~st0",
+    "storyId": "the-ohr-hachaim-and-the-two-dogs",
+    "tellings": 1,
+    "page": false
+   }
+  ],
+  "insights": []
  },
  "notes": {
   "summary": {

@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "yi-shonos-31",
  "rev": "ec87fedd3407",
  "lang": "yi",
@@ -46,7 +46,380 @@
   "sameOccasion": [],
   "prev": "yi-shonos-10",
   "next": null,
-  "neighbors": []
+  "neighbors": [],
+  "titles": {
+   "yi-parshas-hashavua-hzynv-01": {
+    "title": "פרשה של אמונה. עשי\"ת - זמן לנקות חציצות האמונה",
+    "lang": "yi",
+    "years": [
+     5732
+    ]
+   },
+   "yi-shonos-10": {
+    "title": "בענין קליפת \"תכבד העבודה\" בזמן הזה",
+    "lang": "yi",
+    "years": []
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "mesiras-nefesh",
+    "salience": 0.9
+   },
+   {
+    "id": "tzedakah-chesed",
+    "salience": 0.7
+   },
+   {
+    "id": "yehuda-vetamar",
+    "salience": 0.6
+   },
+   {
+    "id": "shoresh-moshiach",
+    "salience": 0.55
+   },
+   {
+    "id": "shidduchim-chasunah",
+    "salience": 0.45
+   },
+   {
+    "id": "tzipisa-liyeshua",
+    "salience": 0.4
+   },
+   {
+    "id": "umos-haolam",
+    "salience": 0.35
+   },
+   {
+    "id": "galus-mitzrayim-makkos",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "galus-mitzrayim-makkos",
+     "tzedakah-chesed"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "purim",
+     "umos-haolam",
+     "hashgacha-pratis"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "yehuda-vetamar",
+     "mesiras-nefesh"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "shoresh-moshiach",
+     "yehuda-vetamar"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "tzedakah-chesed",
+     "mesiras-nefesh",
+     "tzipisa-liyeshua"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "mesiras-nefesh"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "galus-mitzrayim-makkos": {
+    "id": "galus-mitzrayim-makkos",
+    "label": {
+     "en": "Galus Mitzrayim and the Makkos",
+     "yi": "גלות מצרים און די מכות",
+     "he": "גלות מצרים והמכות"
+    },
+    "page": true
+   },
+   "hashgacha-pratis": {
+    "id": "hashgacha-pratis",
+    "label": {
+     "en": "Hashgacha Pratis",
+     "yi": "השגחה פרטית"
+    },
+    "page": true
+   },
+   "mesiras-nefesh": {
+    "id": "mesiras-nefesh",
+    "label": {
+     "en": "Mesiras Nefesh",
+     "yi": "מסירת נפש"
+    },
+    "page": true
+   },
+   "purim": {
+    "id": "purim",
+    "label": {
+     "en": "Purim",
+     "yi": "פורים"
+    },
+    "page": true
+   },
+   "shidduchim-chasunah": {
+    "id": "shidduchim-chasunah",
+    "label": {
+     "en": "Shidduchim and Chasunah",
+     "yi": "שידוכים און חתונה",
+     "he": "שידוכים וחתונה"
+    },
+    "page": true
+   },
+   "shoresh-moshiach": {
+    "id": "shoresh-moshiach",
+    "label": {
+     "en": "The Hidden Roots of Moshiach",
+     "yi": "דער באהאלטענער שורש פון משיח",
+     "he": "שורש נשמת משיח"
+    },
+    "page": true
+   },
+   "tzedakah-chesed": {
+    "id": "tzedakah-chesed",
+    "label": {
+     "en": "Tzedakah, Chesed and Hachnasas Orchim",
+     "yi": "צדקה, חסד און הכנסת אורחים",
+     "he": "צדקה וחסד"
+    },
+    "page": true
+   },
+   "tzipisa-liyeshua": {
+    "id": "tzipisa-liyeshua",
+    "label": {
+     "en": "Awaiting Moshiach",
+     "yi": "ווארטן אויף משיח",
+     "he": "ציפית לישועה"
+    },
+    "page": true
+   },
+   "umos-haolam": {
+    "id": "umos-haolam",
+    "label": {
+     "en": "Yisroel and the Nations",
+     "yi": "אידן און די אומות העולם",
+     "he": "ישראל והעמים"
+    },
+    "page": true
+   },
+   "yehuda-vetamar": {
+    "id": "yehuda-vetamar",
+    "label": {
+     "en": "Yehuda and Tamar",
+     "yi": "יהודה און תמר",
+     "he": "יהודה ותמר"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "hachnasas-kallah",
+    "label": {
+     "en": "Hachnasas kallah (bringing in the bride)",
+     "yi": "הכנסת כלה"
+    },
+    "page": false
+   },
+   {
+    "id": "hachnasas-orchim",
+    "label": {
+     "en": "Hachnasas orchim (hospitality)",
+     "yi": "הכנסת אורחים"
+    },
+    "page": false
+   },
+   {
+    "id": "hashgacha-pratis",
+    "label": {
+     "en": "Hashgacha pratis (individual Divine providence)",
+     "yi": "השגחה פרטית"
+    },
+    "page": false
+   },
+   {
+    "id": "mesiras-nefesh",
+    "label": {
+     "en": "Mesiras nefesh (self-sacrifice)",
+     "yi": "מסירות נפש"
+    },
+    "page": false
+   },
+   {
+    "id": "oved-hashem",
+    "label": {
+     "en": "Oved Hashem (a servant of Hashem)",
+     "yi": "עובד השם"
+    },
+    "page": false
+   },
+   {
+    "id": "ribono-shel-olam",
+    "label": {
+     "en": "Ribono shel Olam (Master of the World)",
+     "yi": "רבונו של עולם"
+    },
+    "page": true
+   },
+   {
+    "id": "satan",
+    "label": {
+     "en": "Satan (the accuser)",
+     "yi": "שטן"
+    },
+    "page": true
+   },
+   {
+    "id": "yeiush",
+    "label": {
+     "en": "Yei'ush (despair)",
+     "yi": "יאוש"
+    },
+    "page": false
+   },
+   {
+    "id": "yetzias-mitzrayim",
+    "label": {
+     "en": "Yetzias Mitzrayim (the Exodus from Egypt)",
+     "yi": "יציאת מצרים"
+    },
+    "page": false
+   },
+   {
+    "id": "yibum",
+    "label": {
+     "en": "Yibum (levirate marriage)",
+     "yi": "יבום"
+    },
+    "page": false
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "yi-shonos-31~src0",
+    "workId": "esther",
+    "page": true
+   },
+   {
+    "momentId": "yi-shonos-31~src1",
+    "workId": "berachos",
+    "page": true
+   },
+   {
+    "momentId": "yi-shonos-31~src2",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-shonos-31~src3",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-shonos-31~src4",
+    "workId": "midrash",
+    "page": false
+   },
+   {
+    "momentId": "yi-shonos-31~src5",
+    "workId": "midrash",
+    "page": false
+   },
+   {
+    "momentId": "yi-shonos-31~src7",
+    "workId": "talmud-bavli",
+    "page": false
+   },
+   {
+    "momentId": "yi-shonos-31~src8",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-shonos-31~src9",
+    "workId": "midrash",
+    "page": false
+   },
+   {
+    "momentId": "yi-shonos-31~src10",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-shonos-31~src11",
+    "workId": "pirkei-avos",
+    "page": true
+   },
+   {
+    "momentId": "yi-shonos-31~src12",
+    "workId": "malachi",
+    "page": false
+   },
+   {
+    "momentId": "yi-shonos-31~src13",
+    "workId": "chagigah",
+    "page": true
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "yi-shonos-31~st0",
+    "storyId": "the-author-of-unesaneh-tokef-asks-for-three-days",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "yi-shonos-31~st1",
+    "storyId": "the-girl-of-sedom-who-fed-a-poor-man",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "yi-shonos-31~st2",
+    "storyId": "a-spoonful-every-hour",
+    "tellings": 1,
+    "page": false
+   }
+  ],
+  "insights": [
+   {
+    "momentId": "yi-shonos-31~i6",
+    "threadId": "avodas-hashem-the-hundred-and-first-time",
+    "shiurCount": 2,
+    "years": [
+     5732,
+     5771
+    ],
+    "page": false,
+    "other": {
+     "shiurId": "yi-parshas-hashavua-hzynv-01",
+     "momentId": "yi-parshas-hashavua-hzynv-01~i4",
+     "t": 2528.94,
+     "year": 5732,
+     "lang": "yi"
+    }
+   }
+  ]
  },
  "notes": {
   "summary": {

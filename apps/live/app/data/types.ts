@@ -33,7 +33,7 @@ import type {
 
 export type { Ed, L, Moment, ShiurStatus };
 
-export const LIVE_DATA_SCHEMA_VERSION = 1;
+export const LIVE_DATA_SCHEMA_VERSION = 2;
 
 // ---------------------------------------------------------------------------------------------
 // Shared pieces
@@ -75,6 +75,11 @@ export interface BuildFile {
   counts: BuildCounts;
   /** Number of `/data/moments/<lang>-<n>.json` shards per reading language (n = 0 … count-1). */
   momentShards: Record<Ed, number>;
+  /**
+   * Glossary shard prefixes (`/data/glossary/<prefix>.json`). A concept's card is in the shard whose
+   * prefix is the longest one its id starts with (`glossaryShardFor`).
+   */
+  glossaryShards: string[];
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -93,7 +98,10 @@ export interface CorpusRow extends Pick<
   parsha: string | null;
   zman: string | null;
   series: { id: string; order: number | null } | null;
-  /** Ids only; labels are in `facets.json`. */
+  /**
+   * Corpus ids (corpus layer, C1.7) of the entities listed in `facets.json`; labels are there.
+   * Explore's own copy, with topics, is `explore/entities.json`; this one goes in C3.1.
+   */
   entities: IndexRow["entities"];
   counts: Pick<IndexRow["counts"], "chapters" | "stories" | "questions" | "insights">;
 }
@@ -116,8 +124,6 @@ export interface FacetValue {
 
 export interface SeriesFacetValue extends FacetValue {
   lang: Ed;
-  /** The same series in the other audio language, if any. */
-  sibling: string | null;
 }
 
 export interface OccasionFacetValue extends FacetValue {
@@ -138,26 +144,112 @@ export interface FacetsFile {
   /** Hebrew year (as a string key) → count; `unknown` = shiurim without a year. */
   year: Record<string, FacetValue>;
   series: Record<string, SeriesFacetValue>;
+  /** Corpus work ids with a Live page (never a generic label). */
   work: Record<string, FacetValue>;
+  /** Corpus person ids with a Live page (never type `other`, never excluded). */
   person: Record<string, FacetValue>;
+  /** Corpus concept ids with a Live page (merged-into-topic concepts are reached through the topic). */
   concept: Record<string, FacetValue>;
 }
 
 // ---------------------------------------------------------------------------------------------
 // /data/today.json
 
+/** A shiur card (topic hubs): what a card renders without the shiur file. */
+export interface ShiurCard {
+  id: string;
+  lang: Ed;
+  /** `catalog.titleOriginal`, as written. */
+  title: string;
+  oneLiner: L | null;
+  duration: number;
+  years: number[];
+  status: ShiurStatus;
+}
+
+/** A section of a mix: the moment id of the chapter (`<shiur>~s<idx>`), its times and title. */
+export interface MixItem {
+  id: string;
+  shiurId: string;
+  t: number;
+  end: number;
+  lang: Ed;
+  title: L;
+}
+
+/**
+ * A card in today.json, keyed by shiur id. Compact on purpose (today.json ≤ 30 KiB br, plan §4):
+ * the one-liner only on the newly-summarized cards, the duration in whole seconds.
+ */
+export interface TodayCard {
+  lang: Ed;
+  title: string;
+  duration: number;
+  years: number[];
+  status: ShiurStatus;
+  oneLiner?: L;
+}
+
+/** A "moment for today" candidate; the shiur is the moment id's prefix (`<shiurId>~<kind><n>`). */
+export interface TodayMoment {
+  id: string;
+  t: number;
+}
+
+/** A mix section in today.json; the shiur is the id's prefix, its language is on the shiur's card. */
+export interface TodayMixItem {
+  id: string;
+  t: number;
+  end: number;
+  title: L;
+}
+
+/**
+ * The occasion mix (concept-live C.3): sections tagged with the occasion's topic (occasion-topics
+ * of the corpus layer), best first, one per shiur until the pool runs out. Featured: shiurim mostly
+ * by another speaker and the owner's excluded topics never appear (D7). Assembled by AI tags; the
+ * rest of the mix is in the topic's file and moment pages.
+ */
+export interface TodayMix {
+  topicId: string;
+  label: FacetLabel;
+  /** Sections and distinct shiurim in the whole mix. */
+  sections: number;
+  shiurim: number;
+  /** The first items, ready to queue. */
+  first: TodayMixItem[];
+}
+
+/** Shiurim per audio language in an occasion's row (the occasion page lists all of them). */
+export const TODAY_ROW_PER_LANG = 3;
+
 export interface TodayOccasion {
-  /** Shiurim for this occasion, ordered by Hebrew year (undated last). Both audio languages. */
+  /**
+   * Present only when it differs from the shared parsha/occasion tables (`@emunas/normalize`
+   * PARSHIYOS, OCCASIONS), which the client reads by key: the "other" bucket and unmapped keys.
+   */
+  label?: FacetLabel;
+  /**
+   * The row: up to `TODAY_ROW_PER_LANG` shiurim per audio language, ordered by Hebrew year (undated
+   * last). `total` counts all of the occasion's shiurim.
+   */
   shiurIds: string[];
+  total: number;
   /** Candidate pool for "a moment for today" (insights, stories, questions); chosen per date client-side. */
-  moments: MomentRef[];
+  moments: TodayMoment[];
+  /** Null when the occasion has no topic (or no featured section). */
+  mix: TodayMix | null;
 }
 
 export interface TodayFile {
   schemaVersion: typeof LIVE_DATA_SCHEMA_VERSION;
+  /** The corpus counter. */
+  counts: BuildCounts;
   occasions: Record<string, TodayOccasion>;
   /** Shiurim whose notes landed recently (manifest `updatedAt`), newest first. */
   newlySummarized: { shiurId: string; updatedAt: string }[];
+  /** A card for every shiur named above (rows, moment pools, mixes, newly summarized). */
+  cards: Record<string, TodayCard>;
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -183,6 +275,46 @@ export interface ShiurRelated {
   next: string | null;
   /** "Same idea elsewhere" (W4.4); empty until neighbours are computed. */
   neighbors: { momentId: string; shiurId: string; t: number; score: number }[];
+  /** Title and audio language of every other shiur this file names (above, and thread pointers). */
+  titles: Record<string, { title: string; lang: Ed; years: number[] }>;
+}
+
+/** A topic, concept, person or work as a chip: corpus id, labels, whether Live has its page. */
+export interface EntityChip {
+  id: string;
+  label: FacetLabel;
+  page: boolean;
+}
+
+/**
+ * The shiur's corpus-layer refs, self-contained (concept-live G.1): every label the room shows is
+ * here, so the room never needs a corpus-wide file. Generated and unreviewed (label once per page).
+ */
+export interface ShiurCorpus {
+  /** Shiur-level topics, highest salience first. */
+  topics: { id: string; salience: number }[];
+  /** Section topic chips (other-speaker chapters have none). */
+  chapters: { idx: number; topicIds: string[] }[];
+  /** Every topic named above. */
+  topicLabels: Record<string, EntityChip>;
+  /** "Terms in this shiur": the concepts, with their glossary labels. */
+  terms: EntityChip[];
+  /** Resolved work per source moment. */
+  sources: { momentId: string; workId: string; page: boolean }[];
+  /** Story moments that belong to a merged story: visible tellings (this one included) and page flag. */
+  stories: { momentId: string; storyId: string; tellings: number; page: boolean }[];
+  /**
+   * Insight moments in a thread: distinct shiurim, year span, page flag; a two-shiur thread carries
+   * the other member instead (one line at the insight, never a headline).
+   */
+  insights: {
+    momentId: string;
+    threadId: string;
+    shiurCount: number;
+    years: [number, number] | null;
+    page: boolean;
+    other?: { shiurId: string; momentId: string; t: number | null; year: number | null; lang: Ed };
+  }[];
 }
 
 export interface ShiurFile extends Omit<PublicShiur, "recordings" | "notes"> {
@@ -191,6 +323,10 @@ export interface ShiurFile extends Omit<PublicShiur, "recordings" | "notes"> {
   /** Present only when `status === "full"`. */
   notes?: LiveNotes;
   related: ShiurRelated;
+  /** The series title (catalog), so the room needs no other file. */
+  seriesTitle: L | null;
+  /** Present for full shiurim in the corpus layer's visible set. */
+  corpus?: ShiurCorpus;
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -219,21 +355,33 @@ export interface SeriesPart {
   perek: string | null;
 }
 
+/** The series synthesis (concept-live C.6): generated, unreviewed. Absent when there is none. */
+export interface SeriesSynthesis {
+  title: L;
+  overview: L;
+  /** Plain text, not topic ids. */
+  keyThemes: L[];
+  /** Position-aware one-liners for the visible parts. */
+  arc: { shiurId: string; oneLiner: L }[];
+  reviewed: boolean;
+}
+
 export interface SeriesFile {
   schemaVersion: typeof LIVE_DATA_SCHEMA_VERSION;
   id: string;
   title: L;
   lang: Ed;
-  sibling: string | null;
   parts: SeriesPart[];
   /** Tanya: parts grouped by perek, in order. Empty for series without perakim. */
   perekGroups: { perek: string; shiurIds: string[] }[];
+  synthesis?: SeriesSynthesis;
 }
 
 // ---------------------------------------------------------------------------------------------
 // /data/works.json and /data/work/<key>.json
 
 export interface WorkSummary {
+  /** Corpus work id. */
   key: string;
   /** The work's name as cited (first spelling seen; normalize supplies canonical names in W2.1). */
   name: string;
@@ -282,6 +430,7 @@ export interface WorkFile {
 export interface EntityFile {
   schemaVersion: typeof LIVE_DATA_SCHEMA_VERSION;
   kind: EntityKind;
+  /** Corpus id for `p` and `c`; occasion key for `o`. */
   key: string;
   label: FacetLabel;
   /** Shiurim, by year. */
@@ -300,6 +449,7 @@ export interface StoryRow {
   id: string;
   shiurId: string;
   title: L;
+  /** Corpus person ids with a Live page (from the merged story the telling belongs to). */
   peopleKeys: string[];
   t: number | null;
   end: number | null;
@@ -344,6 +494,203 @@ export interface QuickIndexFile {
 }
 
 // ---------------------------------------------------------------------------------------------
+// Corpus layer (C1.7). Every entity here is AI-generated and unreviewed unless `reviewed` is true;
+// pages carry the label once (concept-live E.3). Counts are the visible recounts of the layer.
+
+/** A topic of the tree, as `topicNodes()` expands it. */
+export interface TopicNode {
+  id: string;
+  parentId: string | null;
+  level: number;
+  label: FacetLabel;
+  /** Visible shiurim tagged with the topic or a descendant. */
+  count: number;
+}
+
+/**
+ * One row of the topic tree: `[id, parentId, label.en, label.yi, label.he (null: same as yi), count]`.
+ * Rows rather than objects keep the whole tree under its 8 KiB br budget (plan §4) with the Hebrew
+ * names the map shows; `topicNodes()` (app/data/topics.ts) expands them.
+ */
+export type TopicRow = [id: string, parentId: string | null, en: string, yi: string, he: string | null, count: number];
+
+/** /data/topics.json: the topic tree only (no descriptions, aliases or hubs). Explore / idle. */
+export interface TopicsFile {
+  schemaVersion: typeof LIVE_DATA_SCHEMA_VERSION;
+  /** Taxonomy order: a parent always comes before its children. */
+  topics: TopicRow[];
+}
+
+/** A section in a topic's moment list (first page, with titles). */
+export interface TopicMoment extends MixItem {
+  year: number | null;
+}
+
+/** A section in a later moments page: ids and times only. */
+export interface TopicMomentRef {
+  id: string;
+  shiurId: string;
+  t: number;
+  end: number;
+  lang: Ed;
+}
+
+/** /data/topic/<id>.json: one file per topic page. */
+export interface TopicFile {
+  schemaVersion: typeof LIVE_DATA_SCHEMA_VERSION;
+  id: string;
+  level: 1 | 2 | 3;
+  label: FacetLabel;
+  /** Ancestors, root first. */
+  breadcrumb: { id: string; label: FacetLabel }[];
+  /** Generated; null when the label stands alone. */
+  description: L | null;
+  reviewed: boolean;
+  /** The concept with the same subject: its definition is shown as "the term" (concept-live C.2). */
+  term: { conceptId: string; he: string; definition: L } | null;
+  /** Same-subject person or sefer pages (cross-links only). */
+  person: EntityChip | null;
+  work: EntityChip | null;
+  /** Visible shiurim (with descendants). */
+  count: number;
+  /** "Start here". */
+  hubs: ShiurCard[];
+  children: { id: string; label: FacetLabel; count: number }[];
+  /** "Often together with" (section co-tagging). */
+  coTopics: { id: string; label: FacetLabel; sections: number }[];
+  /** Largest first; `page: false` threads are shown as a line, never a link. */
+  threads: { id: string; label: L; shiurCount: number; page: boolean }[];
+  threadTotal: number;
+  /** Stories with a telling inside a tagged section, most told first. */
+  stories: { id: string; title: L; tellings: number; page: boolean }[];
+  storyTotal: number;
+  /** Occasion keys this topic is the calendar topic of. */
+  occasions: string[];
+  /** The mix: the first sections with titles, best first (one per shiur first). */
+  moments: TopicMoment[];
+  /** All sections and distinct shiurim in the mix. */
+  momentTotal: number;
+  momentShiurim: number;
+  /** Further sections in `topic/<id>.moments-<n>.json`, n = 1 … momentPages. */
+  momentPages: number;
+}
+
+export const TOPIC_FIRST_MOMENTS = 30;
+export const TOPIC_MOMENTS_PAGE_SIZE = 300;
+
+/** /data/topic/<id>.moments-<n>.json */
+export interface TopicMomentsFile {
+  schemaVersion: typeof LIVE_DATA_SCHEMA_VERSION;
+  topicId: string;
+  page: number;
+  moments: TopicMomentRef[];
+}
+
+/** A visible member of a thread or telling of a story, with what its row shows. */
+export interface CorpusMember {
+  shiurId: string;
+  momentId: string;
+  t: number | null;
+  /** Earliest Hebrew year of the shiur (null: undated). */
+  year: number | null;
+  lang: Ed;
+  /** The shiur's catalog title, as written. */
+  title: string;
+  /** The chapter the moment sits in. */
+  chapterTitle: L | null;
+}
+
+/** /data/thread/<id>.json: threads with a page (≥3 shiurim). Always noindex (D8). */
+export interface ThreadFile {
+  schemaVersion: typeof LIVE_DATA_SCHEMA_VERSION;
+  id: string;
+  label: L;
+  summary: L;
+  reviewed: boolean;
+  topics: { id: string; label: FacetLabel }[];
+  /** By year (undated last); `text` is the per-shiur insight. */
+  members: (CorpusMember & { text: L | null })[];
+  shiurCount: number;
+  datedCount: number;
+  years: [number, number] | null;
+  /** Show the year line as a timeline. */
+  timeline: boolean;
+}
+
+/** A person on a story: a linked person, or a name printed as plain text. */
+export type StoryPerson = { id: string; label: FacetLabel; page: boolean } | { name: string };
+
+/** /data/story/<id>.json: stories with a page (≥2 tellings). */
+export interface StoryFile {
+  schemaVersion: typeof LIVE_DATA_SCHEMA_VERSION;
+  id: string;
+  title: L;
+  retelling: L;
+  reviewed: boolean;
+  people: StoryPerson[];
+  tellings: CorpusMember[];
+}
+
+/** /data/stories-index.json: every merged story, without retellings (Maasios). */
+export interface StoryIndexRow {
+  id: string;
+  title: L;
+  /** Linked people with a Live listing. */
+  people: string[];
+  tellings: number;
+  langs: Ed[];
+  page: boolean;
+  /** The first telling: where a story without a page links. */
+  first: { shiurId: string; momentId: string; t: number | null };
+}
+
+export interface StoriesIndexFile {
+  schemaVersion: typeof LIVE_DATA_SCHEMA_VERSION;
+  stories: StoryIndexRow[];
+}
+
+/** A glossary card ("as the term is used in these shiurim"). */
+export interface GlossaryCard {
+  id: string;
+  he: string;
+  label: L;
+  definition: L;
+  count: number;
+  /** Live concept page. */
+  page: boolean;
+  /** Merged into this topic: the topic page is the entry. */
+  topicId: string | null;
+  /** "Hear it explained": up to three example sections. */
+  examples: { shiurId: string; momentId: string; t: number }[];
+}
+
+/** /data/glossary/<prefix>.json */
+export interface GlossaryShardFile {
+  schemaVersion: typeof LIVE_DATA_SCHEMA_VERSION;
+  shard: string;
+  concepts: GlossaryCard[];
+}
+
+/** Live route kinds that can redirect: topic, concept, person, sefer, story, thread. */
+export type RedirectRouteKind = "t" | "c" | "p" | "seforim" | "maasios" | "th";
+export const REDIRECT_ROUTE_KINDS: readonly RedirectRouteKind[] = ["t", "c", "p", "seforim", "maasios", "th"];
+
+/**
+ * /data/redirects.json (lazy: only after an entity file 404s). Per route kind, an old id or legacy
+ * key → the page to go to in one hop, or null for the index page.
+ */
+export interface RedirectsFile {
+  schemaVersion: typeof LIVE_DATA_SCHEMA_VERSION;
+  routes: Record<RedirectRouteKind, Record<string, { kind: RedirectRouteKind; id: string } | null>>;
+}
+
+/** /data/explore/entities.json: entity id arrays per summarized shiur, for Explore's facets. */
+export interface ExploreEntitiesFile {
+  schemaVersion: typeof LIVE_DATA_SCHEMA_VERSION;
+  shiurim: Record<string, { topics: string[]; people: string[]; concepts: string[]; works: string[] }>;
+}
+
+// ---------------------------------------------------------------------------------------------
 // Map of every data path to its file type
 
 export interface DataFiles {
@@ -360,6 +707,15 @@ export interface DataFiles {
   stories: StoriesFile;
   moments: MomentShardFile;
   quickIndex: QuickIndexFile;
+  topics: TopicsFile;
+  topic: TopicFile;
+  topicMoments: TopicMomentsFile;
+  thread: ThreadFile;
+  story: StoryFile;
+  storiesIndex: StoriesIndexFile;
+  glossary: GlossaryShardFile;
+  redirects: RedirectsFile;
+  exploreEntities: ExploreEntitiesFile;
 }
 
 export type DataKind = keyof DataFiles;

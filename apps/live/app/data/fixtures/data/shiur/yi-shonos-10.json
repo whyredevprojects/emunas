@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "yi-shonos-10",
  "rev": "c1149f4210c0",
  "lang": "yi",
@@ -44,7 +44,312 @@
   "sameOccasion": [],
   "prev": null,
   "next": "yi-shonos-31",
-  "neighbors": []
+  "neighbors": [],
+  "titles": {
+   "yi-shonos-31": {
+    "title": "חשיבות מסירת נפש בזמננו",
+    "lang": "yi",
+    "years": [
+     5771
+    ]
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "technology",
+    "salience": 0.95
+   },
+   {
+    "id": "galus-mitzrayim-makkos",
+    "salience": 0.7
+   },
+   {
+    "id": "zerizus",
+    "salience": 0.6
+   },
+   {
+    "id": "nisyonos-hador",
+    "salience": 0.5
+   },
+   {
+    "id": "bayis-neeman",
+    "salience": 0.4
+   },
+   {
+    "id": "shidduchim-chasunah",
+    "salience": 0.4
+   },
+   {
+    "id": "tefilah-betzibbur",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "galus-mitzrayim-makkos",
+     "nisyonos-hador"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "galus-mitzrayim-makkos",
+     "zerizus"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "galus-mitzrayim-makkos",
+     "nisyonos-hador"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "nisyonos-hador",
+     "galus-mitzrayim-makkos"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "technology",
+     "zerizus"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "technology",
+     "tefilah-betzibbur"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "shidduchim-chasunah",
+     "bar-mitzvah",
+     "nisyonos-hador"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "zerizus",
+     "bayis-neeman"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "bar-mitzvah": {
+    "id": "bar-mitzvah",
+    "label": {
+     "en": "Bar Mitzvah",
+     "yi": "בר מצוה"
+    },
+    "page": true
+   },
+   "bayis-neeman": {
+    "id": "bayis-neeman",
+    "label": {
+     "en": "The Jewish Home and Shalom Bayis",
+     "yi": "א אידישע שטוב און שלום בית",
+     "he": "בית נאמן בישראל"
+    },
+    "page": true
+   },
+   "galus-mitzrayim-makkos": {
+    "id": "galus-mitzrayim-makkos",
+    "label": {
+     "en": "Galus Mitzrayim and the Makkos",
+     "yi": "גלות מצרים און די מכות",
+     "he": "גלות מצרים והמכות"
+    },
+    "page": true
+   },
+   "nisyonos-hador": {
+    "id": "nisyonos-hador",
+    "label": {
+     "en": "Challenges of Our Generation",
+     "yi": "די נסיונות פונעם דור",
+     "he": "נסיונות הדור"
+    },
+    "page": true
+   },
+   "shidduchim-chasunah": {
+    "id": "shidduchim-chasunah",
+    "label": {
+     "en": "Shidduchim and Chasunah",
+     "yi": "שידוכים און חתונה",
+     "he": "שידוכים וחתונה"
+    },
+    "page": true
+   },
+   "technology": {
+    "id": "technology",
+    "label": {
+     "en": "Technology and the Internet",
+     "yi": "טעכנאלאגיע און דער אינטערנעט",
+     "he": "טכנולוגיה"
+    },
+    "page": true
+   },
+   "tefilah-betzibbur": {
+    "id": "tefilah-betzibbur",
+    "label": {
+     "en": "Davening with the Tzibbur and the Beis HaKnesses",
+     "yi": "דאווענען מיט'ן ציבור און דער בית הכנסת",
+     "he": "תפילה בציבור"
+    },
+    "page": true
+   },
+   "zerizus": {
+    "id": "zerizus",
+    "label": {
+     "en": "Zerizus and the Value of Time",
+     "yi": "זריזות און די ווערט פון צייט",
+     "he": "זריזות"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "cheshbon-hanefesh",
+    "label": {
+     "en": "Cheshbon hanefesh (soul-accounting)",
+     "yi": "חשבון הנפש"
+    },
+    "page": true
+   },
+   {
+    "id": "klipah",
+    "label": {
+     "en": "Klipah (husk, a shell of impurity)",
+     "yi": "קליפה"
+    },
+    "page": true
+   },
+   {
+    "id": "sheva-brachos",
+    "label": {
+     "en": "Sheva brachos (the seven blessings)",
+     "yi": "שבע ברכות"
+    },
+    "page": false
+   },
+   {
+    "id": "sitra-achra",
+    "label": {
+     "en": "Sitra Achra (the \"other side\", the realm of evil)",
+     "yi": "סטרא אחרא"
+    },
+    "page": true
+   },
+   {
+    "id": "yishuv-hadaas",
+    "label": {
+     "en": "Yishuv hada'as (composure)",
+     "yi": "ישוב הדעת"
+    },
+    "page": false
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "yi-shonos-10~src0",
+    "workId": "mesilas-yesharim",
+    "page": true
+   },
+   {
+    "momentId": "yi-shonos-10~src2",
+    "workId": "shemos",
+    "page": true
+   },
+   {
+    "momentId": "yi-shonos-10~src3",
+    "workId": "shemos",
+    "page": true
+   },
+   {
+    "momentId": "yi-shonos-10~src4",
+    "workId": "midrash",
+    "page": false
+   },
+   {
+    "momentId": "yi-shonos-10~src5",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-shonos-10~src6",
+    "workId": "mesilas-yesharim",
+    "page": true
+   },
+   {
+    "momentId": "yi-shonos-10~src7",
+    "workId": "shemos",
+    "page": true
+   },
+   {
+    "momentId": "yi-shonos-10~src8",
+    "workId": "magen-avraham-trisk",
+    "page": false
+   },
+   {
+    "momentId": "yi-shonos-10~src9",
+    "workId": "bamidbar",
+    "page": true
+   },
+   {
+    "momentId": "yi-shonos-10~src10",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-shonos-10~src11",
+    "workId": "tosafos",
+    "page": true
+   },
+   {
+    "momentId": "yi-shonos-10~src12",
+    "workId": "koheles",
+    "page": false
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "yi-shonos-10~st0",
+    "storyId": "the-baal-hatanya-and-the-minister-where-are-you",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "yi-shonos-10~st1",
+    "storyId": "the-ravs-first-telephone",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "yi-shonos-10~st2",
+    "storyId": "the-man-who-wanted-his-cell-phone-in-the-beis-medrash",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "yi-shonos-10~st3",
+    "storyId": "the-skverer-rebbe-and-the-young-mans-mikveh",
+    "tellings": 1,
+    "page": false
+   }
+  ],
+  "insights": []
  },
  "notes": {
   "summary": {

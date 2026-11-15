@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "yi-zmanim-chnvkh-11",
  "rev": "cf034441d25e",
  "lang": "yi",
@@ -48,7 +48,382 @@
   "sameOccasion": [],
   "prev": "yi-zmanim-svkvs-08",
   "next": "yi-zmanim-svds-zs-chnvkh-04",
-  "neighbors": []
+  "neighbors": [],
+  "titles": {
+   "yi-zmanim-svds-zs-chnvkh-04": {
+    "title": "סעודה של המחכים לבנין ביהמ\"ק; חנוכה - להודות ולהלל - יו\"ט של הוד",
+    "lang": "yi",
+    "years": [
+     5751
+    ]
+   },
+   "yi-zmanim-svkvs-08": {
+    "title": "גודל מעלת קדושת הסוכה",
+    "lang": "yi",
+    "years": [
+     5758
+    ]
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "nes-chanukah",
+    "salience": 0.9
+   },
+   {
+    "id": "nissim-veteva",
+    "salience": 0.85
+   },
+   {
+    "id": "maalas-hatorah",
+    "salience": 0.7
+   },
+   {
+    "id": "tefilah-betzibbur",
+    "salience": 0.5
+   },
+   {
+    "id": "koach-hatefilah",
+    "salience": 0.4
+   },
+   {
+    "id": "shemos-hakedoshim",
+    "salience": 0.35
+   },
+   {
+    "id": "neviim",
+    "salience": 0.3
+   },
+   {
+    "id": "moshe-rabbeinu",
+    "salience": 0.2
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "nes-chanukah"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "tefilah-betzibbur",
+     "maalas-hatorah"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "neviim",
+     "koach-hatefilah",
+     "shemos-hakedoshim"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "maalas-hatorah",
+     "nissim-veteva"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "nissim-veteva",
+     "moshe-rabbeinu"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "nes-chanukah",
+     "maalas-hatorah",
+     "nissim-veteva"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "tefilah-betzibbur",
+     "maalas-hatorah"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "koach-hatefilah": {
+    "id": "koach-hatefilah",
+    "label": {
+     "en": "The Power of Tefilah",
+     "yi": "דער כח פון תפילה",
+     "he": "כח התפילה"
+    },
+    "page": true
+   },
+   "maalas-hatorah": {
+    "id": "maalas-hatorah",
+    "label": {
+     "en": "The Power and Greatness of Torah",
+     "yi": "דער כח און די מעלה פון תורה",
+     "he": "מעלת התורה"
+    },
+    "page": true
+   },
+   "moshe-rabbeinu": {
+    "id": "moshe-rabbeinu",
+    "label": {
+     "en": "Moshe Rabbeinu",
+     "yi": "משה רבינו"
+    },
+    "page": true
+   },
+   "nes-chanukah": {
+    "id": "nes-chanukah",
+    "label": {
+     "en": "The Miracle of Chanukah and the Greeks",
+     "yi": "דער נס חנוכה און די יוונים",
+     "he": "נס חנוכה"
+    },
+    "page": true
+   },
+   "neviim": {
+    "id": "neviim",
+    "label": {
+     "en": "The Neviim and Their Times",
+     "yi": "די נביאים און זייערע צייטן",
+     "he": "נביאים"
+    },
+    "page": true
+   },
+   "nissim-veteva": {
+    "id": "nissim-veteva",
+    "label": {
+     "en": "Miracles and Nature",
+     "yi": "ניסים און טבע",
+     "he": "נס וטבע"
+    },
+    "page": true
+   },
+   "shemos-hakedoshim": {
+    "id": "shemos-hakedoshim",
+    "label": {
+     "en": "The Holy Names of Hashem",
+     "yi": "די שמות הקדושים",
+     "he": "שמות הקדושים"
+    },
+    "page": true
+   },
+   "tefilah-betzibbur": {
+    "id": "tefilah-betzibbur",
+    "label": {
+     "en": "Davening with the Tzibbur and the Beis HaKnesses",
+     "yi": "דאווענען מיט'ן ציבור און דער בית הכנסת",
+     "he": "תפילה בציבור"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "al-hanissim",
+    "label": {
+     "en": "Al HaNissim (the Chanukah-Purim insertion)",
+     "yi": "על הניסים"
+    },
+    "page": false
+   },
+   {
+    "id": "chanukas-hamizbeach",
+    "label": {
+     "en": "Chanukas HaMizbeach (the dedication of the Altar)",
+     "yi": "חנוכת המזבח"
+    },
+    "page": false
+   },
+   {
+    "id": "maaseh-bereishis",
+    "label": {
+     "en": "Ma'aseh Bereishis (the work of creation)",
+     "yi": "מעשה בראשית"
+    },
+    "page": false
+   },
+   {
+    "id": "mekom-hamikdash",
+    "label": {
+     "en": "Mekom haMikdash (the site of the Temple)",
+     "yi": "מקום המקדש"
+    },
+    "page": false
+   },
+   {
+    "id": "miut-hamachzik-es-hamerubeh",
+    "label": {
+     "en": "Mu'at hamachzik es hamerubeh (the small holding the great)",
+     "yi": "מועט המחזיק את המרובה"
+    },
+    "page": false
+   },
+   {
+    "id": "ner-chanukah",
+    "label": {
+     "en": "Ner Chanukah (the Chanukah lights)",
+     "yi": "נר חנוכה"
+    },
+    "page": false
+   },
+   {
+    "id": "shemos-hakedoshim",
+    "label": {
+     "en": "Shemos hakedoshim (the holy Names)",
+     "yi": "שמות הקדושים"
+    },
+    "page": false
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src0",
+    "workId": "al-hanissim",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src1",
+    "workId": "haneiros-halalu",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src2",
+    "workId": "bach",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src3",
+    "workId": "tanya",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src4",
+    "workId": "megillah",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src5",
+    "workId": "melachim-ii",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src6",
+    "workId": "yeshayahu",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src7",
+    "workId": "melachim-ii",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src8",
+    "workId": "mishnah-peah",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src9",
+    "workId": "berachos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src10",
+    "workId": "melachim-i",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src11",
+    "workId": "shut-chasam-sofer",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src12",
+    "workId": "kiddushin",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src13",
+    "workId": "talmud-yerushalmi",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src14",
+    "workId": "berachos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src15",
+    "workId": "sanhedrin",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src16",
+    "workId": "tzidkas-hatzaddik",
+    "page": false
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src17",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src18",
+    "workId": "zohar",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src19",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src20",
+    "workId": "shabbos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src21",
+    "workId": "shemos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src22",
+    "workId": "pirkei-avos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src23",
+    "workId": "tehillim",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src24",
+    "workId": "shabbos",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src25",
+    "workId": "yirmiyahu",
+    "page": true
+   },
+   {
+    "momentId": "yi-zmanim-chnvkh-11~src26",
+    "workId": "tehillim",
+    "page": true
+   }
+  ],
+  "stories": [],
+  "insights": []
  },
  "notes": {
   "summary": {

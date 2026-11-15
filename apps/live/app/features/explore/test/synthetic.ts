@@ -189,6 +189,7 @@ export function buildFile(rows: CorpusRow[], shards: { en: number; yi: number })
     generatedAt: "2026-11-15T00:00:00.000Z",
     counts: { total: rows.length, full, catalogOnly: rows.length - full, downgraded: 0 },
     momentShards: shards,
+    glossaryShards: [],
   };
 }
 

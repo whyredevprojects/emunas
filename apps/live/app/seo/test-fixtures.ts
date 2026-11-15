@@ -50,6 +50,40 @@ export const corpusFixture: SeoCorpus = {
     { key: "emunah-1", label: { en: "אמונה", yi: "אמונה" }, count: 9, prerender: true },
     { key: "bitachon-2", label: { en: "בטחון", yi: "בטחון" }, count: 2, prerender: false },
   ],
+  topics: [],
+  stories: [],
+  threads: [],
+  layer: false,
+};
+
+/**
+ * The same corpus with a corpus layer (C1.7): corpus ids, page flags per site, topics, stories and
+ * threads. `hester-panim` has a Quiet page; `rare-topic` and the thread do not.
+ */
+export const layerCorpusFixture: SeoCorpus = {
+  ...corpusFixture,
+  layer: true,
+  works: [{ key: "bereishis", label: { en: "Bereishis", yi: "בראשית" }, count: 40, prerender: true, quietPage: true }],
+  people: [
+    { key: "moshe-rabbeinu", label: { en: "Moshe Rabbeinu", yi: "משה רבינו" }, count: 30, prerender: true, quietPage: true },
+    { key: "a-local", label: { en: "A local", yi: "A local" }, count: 1, prerender: false, quietPage: false },
+  ],
+  concepts: [
+    { key: "tzimtzum", label: { en: "Tzimtzum", yi: "צמצום" }, count: 9, prerender: true, quietPage: true, topicId: null },
+    { key: "hester-panim", label: { en: "Hester panim", yi: "הסתר פנים" }, count: 50, prerender: false, quietPage: false, topicId: "hester-panim" },
+  ],
+  topics: [
+    { key: "hester-panim", label: { en: "Hester Panim", yi: "הסתר פנים" }, count: 112, prerender: true, quietPage: true },
+    { key: "rare-topic", label: { en: "Rare", yi: "זעלטן" }, count: 8, prerender: true, quietPage: false },
+  ],
+  stories: [
+    { key: "sugar-sled", label: { en: "The sugar sled", yi: "דער צוקער שליטן" }, count: 14, prerender: true, quietPage: true },
+    { key: "told-once", label: { en: "Once", yi: "איינמאל" }, count: 1, prerender: false, quietPage: false },
+  ],
+  threads: [
+    { key: "akeidah-last-generation", label: { en: "At the Akeidah", yi: "ביי דער עקידה" }, count: 8, prerender: true, quietPage: false },
+    { key: "two-member", label: { en: "Two", yi: "צוויי" }, count: 2, prerender: false, quietPage: false },
+  ],
 };
 
 const write = (dir: string, file: string, value: unknown) => writeFileSync(join(dir, file), JSON.stringify(value));

@@ -1,8 +1,8 @@
 // @vitest-environment jsdom
 /**
- * The series pages in the real route tree. Data: the W2.4 fixture files, with `tanya-yi` given an
- * English sibling and a few more (shuffled) parts so ordering, the perek view and the side-by-side
- * view have something to show.
+ * The series pages in the real route tree. Data: the W2.4 fixture files, with `tanya-yi` given a few
+ * more (shuffled) parts so ordering and the perek view have something to show. The English Tanya is
+ * a separate course (concept-live-corpus F.1): the Yiddish page never shows, pairs or links it.
  */
 import { act, cleanup, render, screen, waitFor } from "@testing-library/react";
 import axe from "axe-core";
@@ -32,7 +32,6 @@ const TANYA_YI: SeriesFile = {
   id: "tanya-yi",
   title: { en: "Tanya (Yiddish)", yi: "ספר התניא" },
   lang: "yi",
-  sibling: "tanya-en",
   // deliberately out of order
   parts: [part("yi-tanya-1-03", 3, "י\"א וי\"ב"), part("yi-tanya-1-01", 1, "הקדמה", false), part("yi-tanya-1-02", 2, "א")],
   perekGroups: [],
@@ -43,7 +42,6 @@ const TANYA_EN: SeriesFile = {
   id: "tanya-en",
   title: { en: "Tanya (English)", yi: "ספר התניא" },
   lang: "en",
-  sibling: "tanya-yi",
   parts: [part("en-tanya-02", 2, "י\"ב"), part("en-tanya-01", 1, "א"), part("en-tanya-03", 3, null)],
   perekGroups: [],
 };
@@ -51,9 +49,9 @@ const TANYA_EN: SeriesFile = {
 const FACETS: FacetsFile = {
   ...(facetsFixture as unknown as FacetsFile),
   series: {
-    "tanya-yi": { label: { en: "Tanya (Yiddish)", yi: "ספר התניא" }, count: 3, lang: "yi", sibling: "tanya-en" },
-    "emunah-yi": { label: { en: "Emunah (Yiddish)", yi: "אמונה" }, count: 27, lang: "yi", sibling: null },
-    "tanya-en": { label: { en: "Tanya (English)", yi: "ספר התניא" }, count: 3, lang: "en", sibling: "tanya-yi" },
+    "tanya-yi": { label: { en: "Tanya (Yiddish)", yi: "ספר התניא" }, count: 3, lang: "yi" },
+    "emunah-yi": { label: { en: "Emunah (Yiddish)", yi: "אמונה" }, count: 27, lang: "yi" },
+    "tanya-en": { label: { en: "Tanya (English)", yi: "ספר התניא" }, count: 3, lang: "en" },
   },
 };
 
@@ -101,12 +99,13 @@ async function noAxeViolations(): Promise<void> {
 }
 
 describe("series index", () => {
-  it("lists every series, siblings on one row", async () => {
+  it("lists every series, one per row (courses in the two languages are never paired)", async () => {
     const { container } = await renderAt("/en/series", "[data-testid=series-index]");
     const rows = [...container.querySelectorAll("[data-testid=series-index] > li")];
     expect(rows.map((r) => [...r.querySelectorAll("[data-series]")].map((e) => e.getAttribute("data-series")))).toEqual([
-      ["tanya-yi", "tanya-en"],
+      ["tanya-yi"],
       ["emunah-yi"],
+      ["tanya-en"],
     ]);
     expect(container.querySelector('[data-series="emunah-yi"] a')!.getAttribute("href")).toBe("/en/series/emunah-yi");
     expect(container.textContent).toContain("27 parts");
@@ -132,7 +131,9 @@ describe("series page", () => {
     expect(items[0]!.textContent).toContain("Notes not prepared yet");
     expect(items[1]!.textContent).toContain("About yi-tanya-1-02");
     expect(container.textContent).toContain("Parts you hear are marked here.");
-    expect(container.querySelector('a[href="/en/series/tanya-en"]')).not.toBeNull();
+    // No "also given in" link to the other-language course.
+    expect(container.querySelector('a[href="/en/series/tanya-en"]')).toBeNull();
+    expect(container.textContent).not.toContain("Also given in");
     await noAxeViolations();
   });
 
@@ -157,47 +158,50 @@ describe("series page", () => {
     await noAxeViolations();
   });
 
-  it("lays Tanya out by perek, both languages under each perek", async () => {
+  it("lays Tanya out by perek, this course's parts only", async () => {
     const { container } = await renderAt("/en/series/tanya-yi?view=perek", "[data-perek]");
     const groups = [...container.querySelectorAll("section[data-perek]")];
-    expect(groups.map((g) => g.getAttribute("data-perek"))).toEqual(["0", "1", "11", "12", "other"]);
-    expect(groups.map((g) => g.querySelector("h2")!.textContent)).toEqual([
-      "Introduction",
-      "Perek א׳",
-      "Perek י״א",
-      "Perek י״ב",
-      "Other parts",
-    ]);
+    expect(groups.map((g) => g.getAttribute("data-perek"))).toEqual(["0", "1", "11", "12"]);
+    expect(groups.map((g) => g.querySelector("h2")!.textContent)).toEqual(["Introduction", "Perek א׳", "Perek י״א", "Perek י״ב"]);
     const p12 = groups[3]!;
-    expect(shiurIds(p12)).toEqual(["yi-tanya-1-03", "en-tanya-02"]);
-    expect([...p12.querySelectorAll("li")].map((li) => li.getAttribute("data-lang"))).toEqual(["yi", "en"]);
-    expect(shiurIds(groups[1]!)).toEqual(["yi-tanya-1-02", "en-tanya-01"]);
+    expect(shiurIds(p12)).toEqual(["yi-tanya-1-03"]);
+    expect([...p12.querySelectorAll("li")].map((li) => li.getAttribute("data-lang"))).toEqual(["yi"]);
+    expect(shiurIds(groups[1]!)).toEqual(["yi-tanya-1-02"]);
+    expect(container.querySelector('a[data-shiur^="en-"]')).toBeNull();
     const current = container.querySelector('nav a[aria-current="true"]')!;
     expect(current.textContent).toBe("By perek");
     await noAxeViolations();
   });
 
-  it("shows both languages side by side, each in its own order", async () => {
-    const { container } = await renderAt("/en/series/tanya-yi?view=both", "[data-column]");
-    const cols = [...container.querySelectorAll("[data-column]")];
-    expect(cols.map((c) => c.getAttribute("data-column"))).toEqual(["yi", "en"]);
-    expect(shiurIds(cols[0]!)).toEqual(["yi-tanya-1-01", "yi-tanya-1-02", "yi-tanya-1-03"]);
-    expect(shiurIds(cols[1]!)).toEqual(["en-tanya-01", "en-tanya-02", "en-tanya-03"]);
+  it("renders no 'both' view: an old ?view=both link shows this course in order, never the other language", async () => {
+    const requested: string[] = [];
+    configureData({
+      fetch: (input, init) => {
+        requested.push(new URL(input, "http://x.invalid").pathname);
+        return dataFetch(input, init);
+      },
+    });
+    const { container } = await renderAt("/en/series/tanya-yi?view=both", "ol");
+    expect(container.querySelector("[data-column]")).toBeNull();
+    expect(shiurIds(container.querySelector("ol")!)).toEqual(["yi-tanya-1-01", "yi-tanya-1-02", "yi-tanya-1-03"]);
+    expect(container.querySelector('a[data-shiur^="en-"]')).toBeNull();
+    expect(container.textContent).not.toContain("side by side");
+    expect(requested).not.toContain("/data/series/tanya-en.json");
     await noAxeViolations();
   });
 
   it("view links keep other query parameters", async () => {
     const { container } = await renderAt("/en/series/tanya-yi?audio=yi", "nav[aria-label=Show]");
     const hrefs = [...container.querySelectorAll("nav[aria-label=Show] a")].map((a) => a.getAttribute("href"));
-    expect(hrefs).toEqual(["/en/series/tanya-yi?audio=yi", "/en/series/tanya-yi?audio=yi&view=perek", "/en/series/tanya-yi?audio=yi&view=both"]);
+    expect(hrefs).toEqual(["/en/series/tanya-yi?audio=yi", "/en/series/tanya-yi?audio=yi&view=perek"]);
   });
 
-  it("a series without perakim or sibling has no view switch (fixture series)", async () => {
+  it("a series without perakim has no view switch (fixture series)", async () => {
     configureData({
       fetch: async (input, init) => {
         const path = new URL(input, "http://x.invalid").pathname;
         if (path === "/data/series/emunah-yi.json") {
-          return json({ ...TANYA_YI, id: "emunah-yi", sibling: null, parts: TANYA_YI.parts.map((p) => ({ ...p, perek: null })) });
+          return json({ ...TANYA_YI, id: "emunah-yi", parts: TANYA_YI.parts.map((p) => ({ ...p, perek: null })) });
         }
         return dataFetch(input, init);
       },

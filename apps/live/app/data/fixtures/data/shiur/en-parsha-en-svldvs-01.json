@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "en-parsha-en-svldvs-01",
  "rev": "838c6b10c699",
  "lang": "en",
@@ -55,7 +55,443 @@
     "t": 4633.36,
     "score": 0.658
    }
-  ]
+  ],
+  "titles": {
+   "en-miscellaneous-en-01": {
+    "title": "פרק ששי: The קדושה of צדיקים and the חשיבות of Learning תורה",
+    "lang": "en",
+    "years": [
+     5738
+    ]
+   },
+   "en-parsha-en-nch-01": {
+    "title": "The Special Holiness of נח תיבת: a Microcosm of the עולם התיקון",
+    "lang": "en",
+    "years": [
+     5749
+    ]
+   },
+   "en-parsha-en-vyshlch-01": {
+    "title": "A Deeper Understanding of יעקב's Present to עשו",
+    "lang": "en",
+    "years": [
+     5749
+    ]
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "yaakov-veesav",
+    "salience": 1
+   },
+   {
+    "id": "histalkus-tzaddik",
+    "salience": 0.6
+   },
+   {
+    "id": "kashrus",
+    "salience": 0.6
+   },
+   {
+    "id": "avodah-begashmiyus",
+    "salience": 0.4
+   },
+   {
+    "id": "kedushah-vekelipah",
+    "salience": 0.4
+   },
+   {
+    "id": "eliyahu-hanavi",
+    "salience": 0.3
+   },
+   {
+    "id": "maasios",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "yaakov-veesav"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "yaakov-veesav",
+     "kashrus"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "yaakov-veesav",
+     "histalkus-tzaddik"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "yaakov-veesav"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "histalkus-tzaddik"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "kedushah-vekelipah",
+     "yaakov-veesav"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "histalkus-tzaddik",
+     "kedushah-vekelipah"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "yaakov-veesav"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "kashrus",
+     "avodah-begashmiyus"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "maasios",
+     "kashrus"
+    ]
+   },
+   {
+    "idx": 10,
+    "topicIds": [
+     "yaakov-veesav"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "avodah-begashmiyus": {
+    "id": "avodah-begashmiyus",
+    "label": {
+     "en": "Serving Hashem in Physical Life",
+     "yi": "עבודה בגשמיות"
+    },
+    "page": true
+   },
+   "eliyahu-hanavi": {
+    "id": "eliyahu-hanavi",
+    "label": {
+     "en": "Eliyahu HaNavi",
+     "yi": "אליהו הנביא"
+    },
+    "page": true
+   },
+   "histalkus-tzaddik": {
+    "id": "histalkus-tzaddik",
+    "label": {
+     "en": "The Passing of a Tzaddik",
+     "yi": "די הסתלקות פון א צדיק",
+     "he": "הסתלקות הצדיק"
+    },
+    "page": true
+   },
+   "kashrus": {
+    "id": "kashrus",
+    "label": {
+     "en": "Kashrus and Kedushas HaAchilah",
+     "yi": "כשרות און קדושת האכילה",
+     "he": "כשרות"
+    },
+    "page": true
+   },
+   "kedushah-vekelipah": {
+    "id": "kedushah-vekelipah",
+    "label": {
+     "en": "Kedushah and Kelipah",
+     "yi": "קדושה און קליפה",
+     "he": "קדושה וקליפה"
+    },
+    "page": true
+   },
+   "maasios": {
+    "id": "maasios",
+    "label": {
+     "en": "Stories of Tzaddikim",
+     "yi": "מעשיות פון צדיקים",
+     "he": "מעשיות"
+    },
+    "page": true
+   },
+   "yaakov-veesav": {
+    "id": "yaakov-veesav",
+    "label": {
+     "en": "Yitzchak, Yaakov and Esav",
+     "yi": "יצחק, יעקב און עשו",
+     "he": "יעקב ועשו"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "apikores",
+    "label": {
+     "en": "Apikores (a heretic; heresy)",
+     "yi": "אפיקורס"
+    },
+    "page": false
+   },
+   {
+    "id": "bechorah",
+    "label": {
+     "en": "Bechorah (the birthright)",
+     "yi": "בכורה"
+    },
+    "page": false
+   },
+   {
+    "id": "brachah",
+    "label": {
+     "en": "Brachah (blessing)",
+     "yi": "ברכה"
+    },
+    "page": false
+   },
+   {
+    "id": "kedushah",
+    "label": {
+     "en": "Kedushah (holiness)",
+     "yi": "קדושה"
+    },
+    "page": false
+   },
+   {
+    "id": "mearas-hamachpelah",
+    "label": {
+     "en": "Me'aras HaMachpelah (the Cave of Machpelah)",
+     "yi": "מערת המכפלה"
+    },
+    "page": false
+   },
+   {
+    "id": "pi-shnayim",
+    "label": {
+     "en": "Pi shnayim (a double portion)",
+     "yi": "פי שנים"
+    },
+    "page": false
+   },
+   {
+    "id": "techiyas-hameisim",
+    "label": {
+     "en": "Techiyas hameisim (the resurrection of the dead)",
+     "yi": "תחיית המתים"
+    },
+    "page": true
+   },
+   {
+    "id": "tumah",
+    "label": {
+     "en": "Tumah (impurity)",
+     "yi": "טומאה"
+    },
+    "page": false
+   },
+   {
+    "id": "tzaddik-nistar",
+    "label": {
+     "en": "Tzaddik nistar (a hidden tzaddik)",
+     "yi": "צדיק נסתר"
+    },
+    "page": false
+   },
+   {
+    "id": "ushpizin",
+    "label": {
+     "en": "Ushpizin (the holy guests of the Sukkah)",
+     "yi": "אושפיזין"
+    },
+    "page": false
+   },
+   {
+    "id": "yud-gimmel-ikarim",
+    "label": {
+     "en": "Yud-Gimmel Ikarim (the Thirteen Principles of Faith)",
+     "yi": "י\"ג עיקרים"
+    },
+    "page": false
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "en-parsha-en-svldvs-01~src0",
+    "workId": "mishnah-uktzin",
+    "page": false
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src1",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src2",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src3",
+    "workId": "targum-onkelos",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src4",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src5",
+    "workId": "shloshah-asar-ikkarim",
+    "page": false
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src6",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src7",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src8",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src9",
+    "workId": "melachim-ii",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src10",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src11",
+    "workId": "agra-dekallah",
+    "page": false
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src12",
+    "workId": "bnei-yissaschar",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src13",
+    "workId": "zohar",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src14",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src15",
+    "workId": "derashos-chasam-sofer",
+    "page": false
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src16",
+    "workId": "chagigah",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src17",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src18",
+    "workId": "sotah",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src19",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src20",
+    "workId": "devarim",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src21",
+    "workId": "yeshayahu",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src22",
+    "workId": "talmud-bavli",
+    "page": false
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src23",
+    "workId": "targum-onkelos",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src24",
+    "workId": "rashi",
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~src25",
+    "workId": "targum-yonasan",
+    "page": false
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "en-parsha-en-svldvs-01~st0",
+    "storyId": "the-yismach-moshe-eats-the-dish-rag",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~st1",
+    "storyId": "the-slonimer-rebbe-and-the-unimmersed-plates",
+    "tellings": 2,
+    "page": true
+   },
+   {
+    "momentId": "en-parsha-en-svldvs-01~st2",
+    "storyId": "the-cholent-of-reb-yechezkel-of-kuzmir",
+    "tellings": 1,
+    "page": false
+   }
+  ],
+  "insights": []
  },
  "notes": {
   "summary": {

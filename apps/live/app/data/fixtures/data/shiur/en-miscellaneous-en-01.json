@@ -1,5 +1,5 @@
 {
- "schemaVersion": 1,
+ "schemaVersion": 2,
  "id": "en-miscellaneous-en-01",
  "rev": "3a34d2f2ed92",
  "lang": "en",
@@ -58,6 +58,673 @@
     "shiurId": "en-miscellaneous-en-02",
     "t": 1669.81,
     "score": 0.523
+   }
+  ],
+  "titles": {
+   "en-miscellaneous-en-02": {
+    "title": "The Greatness of the חכמי התורה and the קדושה that Exists in their names",
+    "lang": "en",
+    "years": [
+     5735
+    ]
+   },
+   "en-parsha-en-svldvs-01": {
+    "title": "Explaining יצחק's Fondness of עשו and the meaning of ויגדלו הנערים",
+    "lang": "en",
+    "years": [
+     5749
+    ]
+   }
+  }
+ },
+ "seriesTitle": null,
+ "corpus": {
+  "topics": [
+   {
+    "id": "pirkei-avos",
+    "salience": 0.9
+   },
+   {
+    "id": "torah-lishmah",
+    "salience": 0.85
+   },
+   {
+    "id": "kriyas-shem",
+    "salience": 0.6
+   },
+   {
+    "id": "maasios",
+    "salience": 0.6
+   },
+   {
+    "id": "gedolei-yisroel",
+    "salience": 0.4
+   },
+   {
+    "id": "schar-veonesh",
+    "salience": 0.4
+   },
+   {
+    "id": "rebbes-hador",
+    "salience": 0.35
+   },
+   {
+    "id": "baal-shem-tov-talmidim",
+    "salience": 0.3
+   }
+  ],
+  "chapters": [
+   {
+    "idx": 0,
+    "topicIds": [
+     "pirkei-avos",
+     "sefiras-haomer"
+    ]
+   },
+   {
+    "idx": 1,
+    "topicIds": [
+     "kriyas-shem",
+     "baal-shem-tov-talmidim"
+    ]
+   },
+   {
+    "idx": 2,
+    "topicIds": [
+     "kriyas-shem",
+     "adam-harishon"
+    ]
+   },
+   {
+    "idx": 3,
+    "topicIds": [
+     "kriyas-shem",
+     "balak-pinchas"
+    ]
+   },
+   {
+    "idx": 4,
+    "topicIds": [
+     "torah-lishmah",
+     "pirkei-avos"
+    ]
+   },
+   {
+    "idx": 5,
+    "topicIds": [
+     "schar-veonesh"
+    ]
+   },
+   {
+    "idx": 6,
+    "topicIds": [
+     "torah-lishmah",
+     "shlichus-hanefesh"
+    ]
+   },
+   {
+    "idx": 7,
+    "topicIds": [
+     "maasios",
+     "hashgacha-pratis"
+    ]
+   },
+   {
+    "idx": 8,
+    "topicIds": [
+     "taamei-hamitzvos",
+     "torah-lishmah"
+    ]
+   },
+   {
+    "idx": 9,
+    "topicIds": [
+     "ahavas-hashem",
+     "ahavas-yisroel"
+    ]
+   },
+   {
+    "idx": 10,
+    "topicIds": [
+     "bein-adam-lachaveiro",
+     "moshiach"
+    ]
+   },
+   {
+    "idx": 11,
+    "topicIds": [
+     "maasios",
+     "gedolei-yisroel",
+     "torah-lishmah"
+    ]
+   },
+   {
+    "idx": 12,
+    "topicIds": [
+     "maasios",
+     "baal-shem-tov-talmidim",
+     "yishuv-eretz-yisroel"
+    ]
+   },
+   {
+    "idx": 13,
+    "topicIds": [
+     "maasios",
+     "rebbes-hador",
+     "kashrus"
+    ]
+   },
+   {
+    "idx": 14,
+    "topicIds": [
+     "maasios",
+     "rebbes-hador"
+    ]
+   },
+   {
+    "idx": 15,
+    "topicIds": [
+     "maasios",
+     "rebbes-hador"
+    ]
+   }
+  ],
+  "topicLabels": {
+   "adam-harishon": {
+    "id": "adam-harishon",
+    "label": {
+     "en": "Adam HaRishon and Gan Eden",
+     "yi": "אדם הראשון און גן עדן",
+     "he": "אדם הראשון"
+    },
+    "page": true
+   },
+   "ahavas-hashem": {
+    "id": "ahavas-hashem",
+    "label": {
+     "en": "Ahavas Hashem and Dveikus",
+     "yi": "אהבת השם און דביקות",
+     "he": "אהבת השם ודביקות"
+    },
+    "page": true
+   },
+   "ahavas-yisroel": {
+    "id": "ahavas-yisroel",
+    "label": {
+     "en": "Ahavas Yisroel and Achdus",
+     "yi": "אהבת ישראל און אחדות",
+     "he": "אהבת ישראל ואחדות"
+    },
+    "page": true
+   },
+   "baal-shem-tov-talmidim": {
+    "id": "baal-shem-tov-talmidim",
+    "label": {
+     "en": "The Baal Shem Tov and His Talmidim",
+     "yi": "דער בעל שם טוב און זיינע תלמידים",
+     "he": "הבעל שם טוב ותלמידיו"
+    },
+    "page": true
+   },
+   "balak-pinchas": {
+    "id": "balak-pinchas",
+    "label": {
+     "en": "Balak, Bilam and Pinchas",
+     "yi": "בלק, בלעם און פנחס",
+     "he": "בלק ופנחס"
+    },
+    "page": true
+   },
+   "bein-adam-lachaveiro": {
+    "id": "bein-adam-lachaveiro",
+    "label": {
+     "en": "Bein Adam LaChaveiro",
+     "yi": "בין אדם לחבירו"
+    },
+    "page": true
+   },
+   "gedolei-yisroel": {
+    "id": "gedolei-yisroel",
+    "label": {
+     "en": "Chazal and Gedolei Yisroel",
+     "yi": "חז\"ל און גדולי ישראל",
+     "he": "חז\"ל וגדולי ישראל"
+    },
+    "page": true
+   },
+   "hashgacha-pratis": {
+    "id": "hashgacha-pratis",
+    "label": {
+     "en": "Hashgacha Pratis",
+     "yi": "השגחה פרטית"
+    },
+    "page": true
+   },
+   "kashrus": {
+    "id": "kashrus",
+    "label": {
+     "en": "Kashrus and Kedushas HaAchilah",
+     "yi": "כשרות און קדושת האכילה",
+     "he": "כשרות"
+    },
+    "page": true
+   },
+   "kriyas-shem": {
+    "id": "kriyas-shem",
+    "label": {
+     "en": "Naming a Child",
+     "yi": "קריאת שם פאר א קינד",
+     "he": "קריאת השם"
+    },
+    "page": true
+   },
+   "maasios": {
+    "id": "maasios",
+    "label": {
+     "en": "Stories of Tzaddikim",
+     "yi": "מעשיות פון צדיקים",
+     "he": "מעשיות"
+    },
+    "page": true
+   },
+   "moshiach": {
+    "id": "moshiach",
+    "label": {
+     "en": "Moshiach and the Days of Moshiach",
+     "yi": "משיח און ימות המשיח",
+     "he": "ימות המשיח"
+    },
+    "page": true
+   },
+   "pirkei-avos": {
+    "id": "pirkei-avos",
+    "label": {
+     "en": "Pirkei Avos",
+     "yi": "פרקי אבות"
+    },
+    "page": true
+   },
+   "rebbes-hador": {
+    "id": "rebbes-hador",
+    "label": {
+     "en": "The Rebbes of Later Generations",
+     "yi": "די רביים פון שפעטערדיגע דורות",
+     "he": "צדיקי הדורות"
+    },
+    "page": true
+   },
+   "schar-veonesh": {
+    "id": "schar-veonesh",
+    "label": {
+     "en": "Reward, Olam HaBa and Techiyas HaMeisim",
+     "yi": "שכר ועונש, עולם הבא און תחיית המתים",
+     "he": "שכר ועונש"
+    },
+    "page": true
+   },
+   "sefiras-haomer": {
+    "id": "sefiras-haomer",
+    "label": {
+     "en": "Sefiras HaOmer",
+     "yi": "ספירת העומר"
+    },
+    "page": true
+   },
+   "shlichus-hanefesh": {
+    "id": "shlichus-hanefesh",
+    "label": {
+     "en": "A Person's Mission in the World",
+     "yi": "דער תפקיד פון א מענטש אויף דער וועלט",
+     "he": "שליחות"
+    },
+    "page": true
+   },
+   "taamei-hamitzvos": {
+    "id": "taamei-hamitzvos",
+    "label": {
+     "en": "The Reasons and Power of the Mitzvos",
+     "yi": "טעמי המצוות און דער כח פון א מצוה",
+     "he": "טעמי המצוות"
+    },
+    "page": true
+   },
+   "torah-lishmah": {
+    "id": "torah-lishmah",
+    "label": {
+     "en": "Torah Lishmah and Hasmadah",
+     "yi": "תורה לשמה און התמדה",
+     "he": "תורה לשמה והתמדה"
+    },
+    "page": true
+   },
+   "yishuv-eretz-yisroel": {
+    "id": "yishuv-eretz-yisroel",
+    "label": {
+     "en": "Traveling to and Living in Eretz Yisroel",
+     "yi": "פארן קיין ארץ ישראל און וואוינען דארט",
+     "he": "ישוב ארץ ישראל"
+    },
+    "page": true
+   }
+  },
+  "terms": [
+   {
+    "id": "chelek-eloka-mimaal",
+    "label": {
+     "en": "Chelek Eloka mima'al (a part of Hashem above)",
+     "yi": "חלק אלוק ממעל"
+    },
+    "page": false
+   },
+   {
+    "id": "hashpaah",
+    "label": {
+     "en": "Hashpa'ah (influence, bestowal)",
+     "yi": "השפעה"
+    },
+    "page": false
+   },
+   {
+    "id": "hava-amina",
+    "label": {
+     "en": "Hava amina (the initial assumption)",
+     "yi": "הוה אמינא"
+    },
+    "page": false
+   },
+   {
+    "id": "kedushah",
+    "label": {
+     "en": "Kedushah (holiness)",
+     "yi": "קדושה"
+    },
+    "page": false
+   },
+   {
+    "id": "kinyan-torah",
+    "label": {
+     "en": "Kinyan Torah (acquiring Torah)",
+     "yi": "קנין תורה"
+    },
+    "page": false
+   },
+   {
+    "id": "machlokes",
+    "label": {
+     "en": "Machlokes (dispute)",
+     "yi": "מחלוקת"
+    },
+    "page": false
+   },
+   {
+    "id": "olam-haba",
+    "label": {
+     "en": "Olam Haba (the World to Come)",
+     "yi": "עולם הבא"
+    },
+    "page": true
+   },
+   {
+    "id": "ribono-shel-olam",
+    "label": {
+     "en": "Ribono shel Olam (Master of the World)",
+     "yi": "רבונו של עולם"
+    },
+    "page": true
+   },
+   {
+    "id": "ruach-hatumah",
+    "label": {
+     "en": "Ruach hatumah (the spirit of impurity)",
+     "yi": "רוח הטומאה"
+    },
+    "page": false
+   },
+   {
+    "id": "sefer-torah",
+    "label": {
+     "en": "Sefer Torah (a Torah scroll)",
+     "yi": "ספר תורה"
+    },
+    "page": false
+   },
+   {
+    "id": "torah-lishmah",
+    "label": {
+     "en": "Torah lishmah (Torah study for its own sake)",
+     "yi": "תורה לשמה"
+    },
+    "page": false
+   },
+   {
+    "id": "yayin-hameshumar",
+    "label": {
+     "en": "Yayin hameshumar (the preserved wine)",
+     "yi": "יין המשומר"
+    },
+    "page": false
+   },
+   {
+    "id": "yeshuah",
+    "label": {
+     "en": "Yeshuah (salvation)",
+     "yi": "ישועה"
+    },
+    "page": false
+   }
+  ],
+  "sources": [
+   {
+    "momentId": "en-miscellaneous-en-01~src0",
+    "workId": "pirkei-avos",
+    "page": true
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src1",
+    "workId": "pirkei-avos",
+    "page": true
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src4",
+    "workId": "yoma",
+    "page": true
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src5",
+    "workId": "bereishis",
+    "page": true
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src6",
+    "workId": "shelah",
+    "page": true
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src7",
+    "workId": "bamidbar",
+    "page": true
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src8",
+    "workId": "bamidbar",
+    "page": true
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src10",
+    "workId": "berachos",
+    "page": true
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src11",
+    "workId": "berachos",
+    "page": true
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src12",
+    "workId": "ramban-on-the-torah",
+    "page": false
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src13",
+    "workId": "berachos",
+    "page": true
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src14",
+    "workId": "mishlei",
+    "page": true
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src15",
+    "workId": "avodah-zarah",
+    "page": true
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src16",
+    "workId": "derech-hashem",
+    "page": false
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src17",
+    "workId": "rashi-on-bereishis",
+    "page": true
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src18",
+    "workId": "pirkei-avos",
+    "page": true
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src19",
+    "workId": "pirkei-avos",
+    "page": true
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src20",
+    "workId": "midrash",
+    "page": false
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src21",
+    "workId": "shir-hashirim",
+    "page": true
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src22",
+    "workId": "vayikra",
+    "page": true
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src23",
+    "workId": "chullin",
+    "page": true
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src24",
+    "workId": "pirkei-avos",
+    "page": true
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~src25",
+    "workId": "devarim",
+    "page": true
+   }
+  ],
+  "stories": [
+   {
+    "momentId": "en-miscellaneous-en-01~st0",
+    "storyId": "the-shoemaker-who-said-tzaddikims-names",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~st1",
+    "storyId": "the-baal-shem-tov-smiles-at-a-fallen-building",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~st2",
+    "storyId": "the-beis-halevi-and-the-chicken-for-the-road",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~st3",
+    "storyId": "the-yeshuos-yaakov-and-the-pancake",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~st4",
+    "storyId": "the-vitebskers-fish-and-the-voices-of-tzfas",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~st5",
+    "storyId": "the-chiddushei-harim-and-the-shaylah",
+    "tellings": 1,
+    "page": false
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~st6",
+    "storyId": "the-slonimer-rebbe-and-the-unimmersed-plates",
+    "tellings": 2,
+    "page": true
+   }
+  ],
+  "insights": [
+   {
+    "momentId": "en-miscellaneous-en-01~i0",
+    "threadId": "torah-chacham-name-is-torah",
+    "shiurCount": 2,
+    "years": [
+     5735,
+     5738
+    ],
+    "page": false,
+    "other": {
+     "shiurId": "en-miscellaneous-en-02",
+     "momentId": "en-miscellaneous-en-02~i1",
+     "t": 555.04,
+     "year": 5735,
+     "lang": "en"
+    }
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~i1",
+    "threadId": "torah-hebrew-name-is-essence",
+    "shiurCount": 2,
+    "years": [
+     5735,
+     5738
+    ],
+    "page": false,
+    "other": {
+     "shiurId": "en-miscellaneous-en-02",
+     "momentId": "en-miscellaneous-en-02~i3",
+     "t": 1464.27,
+     "year": 5735,
+     "lang": "en"
+    }
+   },
+   {
+    "momentId": "en-miscellaneous-en-01~i2",
+    "threadId": "torah-holier-more-easily-spoiled",
+    "shiurCount": 2,
+    "years": [
+     5735,
+     5738
+    ],
+    "page": false,
+    "other": {
+     "shiurId": "en-miscellaneous-en-02",
+     "momentId": "en-miscellaneous-en-02~i5",
+     "t": 1882.66,
+     "year": 5735,
+     "lang": "en"
+    }
    }
   ]
  },
