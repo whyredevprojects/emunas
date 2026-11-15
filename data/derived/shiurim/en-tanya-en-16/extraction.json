@@ -1,0 +1,587 @@
+{
+  "shiurId": "en-tanya-en-16",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav explains klipas nogah, the middle layer that a Jew can elevate by using permitted things l'shem shamayim, and shows the same pattern in milah and priyah, which he connects to Yishmael's claim on Eretz Yisrael.",
+      "yi": "דער משגיח ערקלערט די קליפת נוגה, די מיטלסטע מדריגה וואס א איד קען אויפהייבן ווען ער נוצט מותר'דיגע זאכן לשם שמים, און ער ווייזט דעם זעלבן כלל ביי מילה און פריעה, וואס ער פארבינדט מיט ישמעאל'ס טענה אויף ארץ ישראל."
+    },
+    "abstract": {
+      "en": "The Rav contrasts the three wholly impure klipos, which can never be elevated, with klipas nogah, a scale that tips toward kedushah or tumah depending on intent. Kosher food is nogah: eaten l'shem shamayim it rises like a korban, eaten in excess it sinks. Citing the Ramban on 'kedoshim tihyu' and a psychologist's view that enjoyment is a real human need, he sets two conditions: no excess, and l'shem shamayim. Reading Tanya chapter seven, he explains that nogah is all good above but mixed below, and that meat and wine taken for an expanded mind for Torah, or for oneg Shabbos, are elevated. He finds the same rule in milah, where three layers are cut off and the fourth, priyah, is pulled up. This leads to Yishmael's 'empty' milah, Chevron as the place of milah, Shechem as the place of priyah, and the Shaagas Aryeh's chiddush that Bnei Yishmael are not obligated in priyah.",
+      "yi": "דער משגיח שטעלט אנטקעגן די שלש קליפות הטמאות, וואס קענען קיינמאל נישט אויפגעהויבן ווערן, מיט דער קליפת נוגה, וואס איז ווי א וואג וואס נייגט זיך צו קדושה אדער צו טומאה לויט די כוונה. כשר'ע מאכלים זענען נוגה: אז מ'עסט זיי לשם שמים גייען זיי ארויף ווי א קרבן, און אז מ'עסט מער ווי מ'דארף פאלן זיי אראפ. ער ברענגט דעם רמב\"ן אויף \"קדושים תהיו\" און א פסיכאלאג וואס האט געזאגט אז הנאה איז א באמת'ע באדערפעניש פונעם מענטש, און שטעלט צוויי תנאים: נישט צופיל, און לשם שמים. ער לערנט פרק ז אין תניא, אז נוגה איז אויבן כולו טוב און דא אונטן געמישט, און אז פלייש און וויין וואס מ'עסט כדי צו האבן א הרחבת הדעת צו תורה, אדער לכבוד עונג שבת, ווערן אויפגעהויבן. דעם זעלבן כלל געפינט ער ביי מילה: דריי הייטלעך שניידט מען אפ, און די פערטע, די פריעה, ציט מען ארויף. פון דעם קומט ער צו ישמעאל'ס \"ריקע\" מילה, צו חברון אלס דער ארט פון מילה, צו שכם אלס דער ארט פון פריעה, און צום חידוש פונעם שאגת אריה אז בני ישמעאל זענען נישט מחויב אין פריעה."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "The three impure klipos can never be elevated, while klipas nogah is like a scale that tips toward kedushah or tumah depending on how it is used.",
+          "yi": "די שלש קליפות הטמאות קענען קיינמאל נישט אויפגעהויבן ווערן, אבער די קליפת נוגה איז ווי א וואג וואס נייגט זיך צו קדושה אדער צו טומאה, לויט ווי מ'נוצט זי."
+        },
+        "evidence": { "segs": [36, 37, 39, 46, 48], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Kosher food eaten l'shem shamayim rises like a korban; eaten without need it is drawn into tumah until teshuvah lifts it.",
+          "yi": "כשר'ע מאכלים וואס מ'עסט לשם שמים גייען ארויף ווי א קרבן; אז מ'עסט זיי אן א צורך ווערן זיי אריינגעצויגן אין טומאה ביז תשובה הייבט זיי אויף."
+        },
+        "evidence": { "segs": [50, 57, 61, 67, 73, 75], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Enjoyment is a real human need, but it must not be in excess and must be for the sake of serving Hashem.",
+          "yi": "הנאה איז א באמת'ע באדערפעניש פונעם מענטש, אבער זי טאר נישט זיין צופיל און זי דארף זיין כדי צו קענען דינען דעם אייבערשטן."
+        },
+        "evidence": { "segs": [137, 139, 144, 146, 147], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Nogah is entirely good above but mixed with bad in this world; using it for good separates the good and raises it.",
+          "yi": "נוגה איז אויבן כולו טוב, אבער אין דער וועלט איז עס געמישט מיט רע; ווען מ'נוצט עס פאר גוטס ווערט דאס גוטע אפגעשיידט און גייט ארויף."
+        },
+        "evidence": { "segs": [289, 300, 301, 325, 327], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "In milah the three layers cut off correspond to the three impure klipos, and priyah, the fourth layer pulled upward, corresponds to klipas nogah.",
+          "yi": "ביי מילה זענען די דריי הייטלעך וואס מ'שניידט אפ קעגן די שלש קליפות הטמאות, און די פריעה, די פערטע הייטל וואס מ'ציט ארויף, איז קעגן קליפת נוגה."
+        },
+        "evidence": { "segs": [401, 404, 407, 408, 409], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Bnei Yishmael, whose body stems from the three impure klipos, can repair only through milah and have no share in priyah, which corresponds to nogah.",
+          "yi": "בני ישמעאל, וועמענס גוף שטאמט פון די שלש קליפות הטמאות, קענען נאר מתקן זיין דורך מילה, און האבן נישט קיין שייכות צו פריעה, וואס איז קעגן נוגה."
+        },
+        "evidence": { "segs": [726, 729, 745, 749, 751], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-english-sets-tanya-16-e-tanya",
+      "startSeg": 0,
+      "endSeg": 49,
+      "title": { "en": "Two extremes and the middle of klipas nogah", "yi": "צוויי עקסטרעמען און די קליפת נוגה אין מיטן" },
+      "summary": {
+        "en": "The Rav reviews the previous chapters: through mitzvos a person becomes a seat for kedushah, through aveiros a seat for the three wholly impure klipos. He introduces klipas nogah as a middle layer, like a scale that can tip either way, unlike forbidden food, which can never be elevated.",
+        "yi": "דער משגיח חזר'ט איבער די פריערדיגע פרקים: דורך מצוות ווערט א מענטש א כסא פאר קדושה, און דורך עבירות פאר די שלש קליפות הטמאות. ער שטעלט פאר די קליפת נוגה אלס א מיטלסטע מדריגה, ווי א וואג וואס קען זיך נייגן אהער אדער אהין, נישט אזוי ווי טריפה'נע מאכלים וואס קענען קיינמאל נישט אויפגעהויבן ווערן."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-16-e-tanya",
+      "startSeg": 50,
+      "endSeg": 127,
+      "title": { "en": "Kosher food tips up or down; the Ramban on kedoshim tihyu", "yi": "כשר'ע מאכלים נייגן זיך ארויף אדער אראפ; דער רמב\"ן אויף קדושים תהיו" },
+      "summary": {
+        "en": "Kosher food, bound up with the body, is klipas nogah: eaten l'shem shamayim it rises like a korban, eaten without need it is drawn into tumah until teshuvah lifts it again, while the harm of forbidden food stays even after teshuvah. He brings the Ramban on 'kedoshim tihyu' that even permitted pleasures must be sanctified, or a person becomes a degenerate with the Torah's license.",
+        "yi": "כשר'ע מאכלים, וואס זענען פארבונדן מיטן גוף, זענען קליפת נוגה: אז מ'עסט זיי לשם שמים גייען זיי ארויף ווי א קרבן, און אן א צורך פאלן זיי אריין אין טומאה ביז תשובה הייבט זיי ווידער אויף, כאטש דער שאדן פון טריפה בלייבט אפילו נאך תשובה. ער ברענגט דעם רמב\"ן אויף \"קדושים תהיו\" אז אפילו די מותר'דיגע הנאות דארפן זיין מיט קדושה, אנדערש ווערט מען א נבל ברשות התורה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-16-e-tanya",
+      "startSeg": 128,
+      "endSeg": 198,
+      "title": { "en": "Why a person needs enjoyment, and its limits", "yi": "פארוואס א מענטש דארף הנאה, און וואו די גרעניץ איז" },
+      "summary": {
+        "en": "The Rav relates a psychologist's point that a person fed without tasting would break down, so enjoyment is a real need; but it must not be in excess and must be l'shem shamayim. A cookie to perk up one's learning is fine, a cookie because of a pleasant aroma is excess, and he cites his rebbe Rav Mendlowitz on a Midrash about the Leviasan's belly being in America.",
+        "yi": "דער משגיח דערציילט וואס א פסיכאלאג האט געזאגט, אז א מענטש וואס באקומט עסן אן טועם זיין וואלט צוברעכן ווערן, ממילא איז הנאה א באמת'ע באדערפעניש; אבער זי טאר נישט זיין צופיל און זי דארף זיין לשם שמים. א קיכל כדי זיך אויפצומונטערן צום לערנען איז גוט, א קיכל ווייל ס'שמעקט גוט איז מותרות, און ער ברענגט פון זיין רבי'ן רב מענדלאוויטש א מדרש אז דער לויתן'ס בויך איז אין אמעריקע."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-16-e-tanya",
+      "startSeg": 199,
+      "endSeg": 299,
+      "title": { "en": "Tanya ch. 7: the vital soul and permitted things", "yi": "תניא פרק ז: די נפש החיונית און מותר'דיגע זאכן" },
+      "summary": {
+        "en": "The Rav reads the opening of chapter seven: the vital soul of a Jew, the life of kosher animals, birds and fish, permitted produce, and permitted deeds and words draw from klipas nogah, not from the three impure klipos. He illustrates with someone talking about a ball game, which is no aveirah, and explains that nogah in its source above, the brightness around Hashem in Yechezkel, is entirely good.",
+        "yi": "דער משגיח לערנט דעם אנהייב פון פרק ז: די נפש החיונית פון א איד, די חיות פון כשר'ע בהמות, עופות און פיש, מותר'דיגע געוויקסן, און מותר'דיגע מעשים און דיבורים, באקומען זייער יניקה פון קליפת נוגה און נישט פון די שלש קליפות הטמאות. ער ברענגט א משל פון איינעם וואס רעדט וועגן א שפיל, וואס איז נישט קיין עבירה, און ערקלערט אז נוגה אין איר שורש אויבן, דער נוגה וואס יחזקאל זאגט ארום דעם אייבערשטן, איז כולו טוב."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-16-e-tanya",
+      "startSeg": 300,
+      "endSeg": 399,
+      "title": { "en": "Elevating nogah: meat, wine and oneg Shabbos", "yi": "אויפהייבן נוגה: פלייש, וויין און עונג שבת" },
+      "summary": {
+        "en": "In this world nogah is a mixture of good and bad on the borderline between the impure klipos and kedushah; used for good, the good separates and rises. He brings the example of fat meat and fragrant wine taken to gain an expanded mind for Torah, citing Rava, and distinguishes this preparation for a mitzvah from oneg Shabbos and Yom Tov, which is a mitzvah in itself.",
+        "yi": "אין דער וועלט איז נוגה א געמיש פון טוב און רע, אויפן גרעניץ צווישן די קליפות הטמאות און קדושה; ווען מ'נוצט עס פאר גוטס ווערט דאס גוטע אפגעשיידט און גייט ארויף. ער ברענגט דעם משל פון פעטע פלייש און שמעקנדיגע וויין וואס מ'נעמט כדי צו האבן א הרחבת הדעת צו תורה, מיט די ווערטער פון רבא, און מאכט א חילוק צווישן דעם, וואס איז א הכשר מצוה, און עונג שבת און יום טוב, וואס איז א מצוה פאר זיך."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-16-e-tanya",
+      "startSeg": 400,
+      "endSeg": 483,
+      "title": { "en": "Milah and priyah; Yishmael's empty milah", "yi": "מילה און פריעה; ישמעאל'ס ריקע מילה" },
+      "summary": {
+        "en": "The Rav shows the same rule in milah: the three layers cut off correspond to the three impure klipos, while the thin fourth layer of priyah is pulled up and elevated, like klipas nogah, and similarly the fourth year of a newly planted tree. He turns to Bnei Yishmael, circumcised at thirteen, and the Zohar that Eretz Yisrael was given to them for their empty milah and stays barren in their hands; the Gemara calls its renewed fruitfulness the clearest sign of the geulah.",
+        "yi": "דער משגיח ווייזט דעם זעלבן כלל ביי מילה: די דריי הייטלעך וואס מ'שניידט אפ זענען קעגן די שלש קליפות הטמאות, און די דינע פערטע הייטל, די פריעה, ציט מען ארויף און מ'הייבט זי אויף, ווי קליפת נוגה; אזוי אויך דאס פערטע יאר פון א נייעם בוים. ער גייט איבער צו בני ישמעאל, וואס מלען זיך ביי דרייצן יאר, און צום זוהר אז ארץ ישראל איז זיי געגעבן געווארן פאר זייער ריקע מילה און בלייבט וויסט ביי זיי; די גמרא זאגט אז ווען ארץ ישראל גיט ווידער פירות איז דאס דער קלארסטער סימן פון דער גאולה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-16-e-tanya",
+      "startSeg": 484,
+      "endSeg": 543,
+      "title": { "en": "Every place in Eretz Yisrael is a halachah", "yi": "יעדער ארט אין ארץ ישראל איז א הלכה" },
+      "summary": {
+        "en": "The Rav brings the Gemara in Temurah about the halachos forgotten after Moshe Rabbeinu's passing, which Osniel ben Kenaz restored through his pilpul, and an explanation that every place in Eretz Yisrael corresponds to a part of the Torah. Kiryas Sefer held those halachos, so mastering them let Osniel conquer the place; the plain meaning and the drash are both true.",
+        "yi": "דער משגיח ברענגט די גמרא אין תמורה וועגן די הלכות וואס זענען פארגעסן געווארן נאך משה רבינו'ס פטירה, און עתניאל בן קנז האט זיי צוריקגעבראכט מיט זיין פלפול, און א פשט אז יעדער ארט אין ארץ ישראל איז קעגן א חלק פון דער תורה. קרית ספר האט אנטהאלטן יענע הלכות, ממילא ווען עתניאל איז געווארן א בעל הבית אויף זיי האט ער אויך איינגענומען דעם ארט; דער פשט און דער דרוש זענען ביידע אמת."
+      },
+      "kind": "tangent",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-16-e-tanya",
+      "startSeg": 544,
+      "endSeg": 621,
+      "title": { "en": "Chevron, the place of milah", "yi": "חברון, דער ארט פון מילה" },
+      "summary": {
+        "en": "The Rav explains that Chevron is the territory of the mitzvah of milah, Avraham Avinu's own mitzvah, which is why he bought the Me'aras HaMachpelah with money. The Arabs, who claim Eretz Yisrael through their milah, fight hardest over Chevron, but he says Hashem will shake them out of the land like a sheet, since their milah is only an imitation.",
+        "yi": "דער משגיח ערקלערט אז חברון איז דער שטח פון דער מצוה פון מילה, אברהם אבינו'ס אייגענע מצוה, און דערפאר האט ער געקויפט די מערת המכפלה מיט א קנין כסף. די אראבער, וואס טענה'ן אויף ארץ ישראל צוליב זייער מילה, קעמפן מערסטנס אויף חברון, אבער ער זאגט אז דער אייבערשטער וועט זיי ארויסטרייסלען פונעם לאנד ווי א לייללעך, ווייל זייער מילה איז נאר א נאכמאך."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-16-e-tanya",
+      "startSeg": 622,
+      "endSeg": 705,
+      "title": { "en": "The imitation and the genuine son of Avraham", "yi": "דער נאכגעמאכטער און דער אמת'ער בן אברהם" },
+      "summary": {
+        "en": "Responding to a listener, the Rav brings the Ba'al HaTurim on the passage of Yishmael's end followed by the offspring of Yitzchak ben Avraham: Yishmael claims to be the son of Avraham, while Yitzchak is the genuine one. He says each generation has a rasha who embodies Yishmael's accusation, in his time Arafat, whose name he shows equals 'Yishmael ben Avraham' in gematria.",
+        "yi": "אויף א שאלה פון א צוהערער ברענגט דער משגיח דעם בעל הטורים אויף דער פרשה פון ישמעאל'ס סוף, וואס נאך איר קומט \"תולדות יצחק בן אברהם\": ישמעאל טענה'ט אז ער איז דער בן אברהם, אבער יצחק איז דער אמת'ער. ער זאגט אז אין יעדן דור איז דא א רשע וואס איז א מרכבה פאר ישמעאל'ס קטרוג, און אין זיין דור איז דאס ערפאת, וועמענס נאמען איז בגימטריא \"ישמעאל בן אברהם\"."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-16-e-tanya",
+      "startSeg": 706,
+      "endSeg": 843,
+      "title": { "en": "Shaagas Aryeh: milah without priyah", "yi": "שאגת אריה: מילה אן פריעה" },
+      "summary": {
+        "en": "The Rav brings the Shaagas Aryeh's chiddush that Bnei Yishmael are obligated only in milah, not priyah, and confirms it from Kabbalah: their body stems from the three impure klipos, so they cannot repair nogah. He adds a gematria on 'tachlis', a Midrash he heard from Rav Mendlowitz, and the halachah that a gentile may bring only an olah, not a shelamim, since only a Jew can make eating into avodah.",
+        "yi": "דער משגיח ברענגט דעם חידוש פונעם שאגת אריה אז בני ישמעאל זענען מחויב נאר אין מילה און נישט אין פריעה, און באשטעטיגט עס על פי קבלה: זייער גוף שטאמט פון די שלש קליפות הטמאות, ממילא קענען זיי נישט מתקן זיין נוגה. ער לייגט צו א גימטריא אויף \"תכלית\", א מדרש וואס ער האט געהערט פון רב מענדלאוויטש, און די הלכה אז פון א גוי נעמט מען נאר אן עולה און נישט קיין שלמים, ווייל נאר א איד קען מאכן פון עסן אן עבודה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-16-e-tanya",
+      "startSeg": 844,
+      "endSeg": 936,
+      "title": { "en": "Shechem, the place of priyah, and the closing", "yi": "שכם, דער ארט פון פריעה, און דער סיום" },
+      "summary": {
+        "en": "The Rav explains that priyah was given in Yehoshua's time, and Yehoshua comes from Yosef, whose purchased portion is Shechem, so Shechem is the place of priyah as Chevron is the place of milah. He closes that the work of klipas nogah is harnessing bodily pleasure to Hashem's will, like fourth-year fruit, and ends with a story of a seminary professor who spent his whole hour on the root of one word.",
+        "yi": "דער משגיח ערקלערט אז פריעה איז געגעבן געווארן אין יהושע'ס צייטן, און יהושע שטאמט פון יוסף, וועמענס געקויפטער חלק איז שכם, ממילא איז שכם דער ארט פון פריעה אזוי ווי חברון איז דער ארט פון מילה. ער ענדיגט אז די עבודה פון קליפת נוגה איז איינשפאנען די הנאות פונעם גוף צום רצון פונעם אייבערשטן, ווי נטע רבעי, און ענדיגט מיט א מעשה פון א פראפעסאר אין א סעמינאר וואס האט פארבראכט זיין גאנצע שעה אויפן שורש פון איין ווארט."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "Perik Zion Ach nefeshachiyun asa baham asha b'Yisrael",
+      "work": "Tanya",
+      "ref": "Tanya ch. 7",
+      "sefariaRef": "Tanya, Part I; Likkutei Amarim 7",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [199, 200, 201], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "the Ramban it says in the beginning of Kaddishim a person can be a novel",
+      "work": "Ramban on the Torah",
+      "ref": "Ramban, Vayikra 19:2",
+      "sefariaRef": "Ramban on Leviticus 19:2",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [106, 108, 122, 123, 126], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "it says in the Madrash that the Vyasan circles the entire world",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [180, 182, 183, 184, 185], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "in Cheskel, there's Noiga around the Rabbana Shalaylam",
+      "work": "Yechezkel",
+      "ref": "Yechezkel ch. 1",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [291, 293, 294], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "like Rava said wine and a good aroma made me smart",
+      "work": "Gemara Yoma",
+      "ref": "Yoma 76b",
+      "sefariaRef": "Yoma 76b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [363, 364, 365, 366, 367], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Zayah says that because Yishma'el is Mekai, Mitzvah, Smila",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [428, 429, 430, 434, 435], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Gemara says in Sanhedrin, when you're going to see that Eret Yisrael starts becoming fruitful",
+      "work": "Gemara Sanhedrin",
+      "ref": "Sanhedrin 98a",
+      "sefariaRef": "Sanhedrin 98a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [452, 453], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Gemara says right after the Berches Hashanim is the Brach of Tkabesha",
+      "work": "Gemara Megillah",
+      "ref": "Megillah 17b",
+      "sefariaRef": "Megillah 17b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [454, 455, 458, 459, 460], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "a puzzling piece of Gemara in Tmura",
+      "work": "Gemara Temurah",
+      "ref": "Temurah 16a",
+      "sefariaRef": "Temurah 16a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [488, 496, 503, 505, 506], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "bringing the Pasek in Yeshua and it's also repeated in the beginning of Shaiften",
+      "work": "Yehoshua",
+      "ref": "Yehoshua 15:15-17; Shoftim 1:11-13",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [489, 490, 494], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the Avinachal explains wonderfully a piece of Gemara",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [487, 514, 517], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "l'naiya reshoi mimin ha'aretz",
+      "work": "Iyov",
+      "ref": "Iyov 38:13",
+      "sefariaRef": "Job 38:13",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [599, 600, 602], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "the Gemar says a person would sometimes do a thing he even though he does not know the reason",
+      "work": "Gemara Megillah",
+      "ref": "Megillah 3a",
+      "sefariaRef": "Megillah 3a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [607, 608, 609], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "the Baloturim says",
+      "work": "Baal HaTurim",
+      "ref": "Baal HaTurim, Bereishis 25:18-19",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [629, 630, 631, 646, 664], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Hashem Melech Avdugayim Eyerzai",
+      "work": "Tehillim",
+      "ref": "Tehillim 10:16",
+      "sefariaRef": "Psalms 10:16",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [694, 695, 700, 701, 702], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the Shagas Arya says a Bik Chiddosh",
+      "work": "Shaagas Aryeh",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [724, 725, 726, 729, 732], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "it says in the Madrash Uri Tzafein",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [785, 787, 788, 798], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "the Alacha is Ain Mekablim Mibnei Nayach",
+      "work": "Gemara Menachos",
+      "ref": "Menachos 73b",
+      "sefariaRef": "Menachot 73b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [800, 801, 802, 805, 806], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Kayinam oichlim abalim is kapkim",
+      "work": "Gemara Pesachim",
+      "ref": "Pesachim 59b",
+      "sefariaRef": "Pesachim 59b",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [826, 827], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "Kodesh Yilulam L'Hat Hashem",
+      "work": "Vayikra",
+      "ref": "Vayikra 19:24",
+      "sefariaRef": "Leviticus 19:24",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [905, 906, 907, 908], "confidence": 0.75 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Enjoyment itself is a human need, like air or food, so enjoying needed food is not a fall into klipah; only excess and the absence of l'shem shamayim tip it down.",
+        "yi": "הנאה אליין איז א באדערפעניש פונעם מענטש, ווי לופט אדער עסן, ממילא איז הנאה פון נויטיגע עסן נישט קיין פאל אין קליפה; נאר מותרות און דער מאנגל פון לשם שמים נייגן עס אראפ."
+      },
+      "evidence": { "segs": [135, 137, 142, 143, 145, 146], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Priyah is not removed but torn and pulled upward, which is exactly how klipas nogah is treated: not discarded, but elevated into kedushah.",
+        "yi": "די פריעה ווערט נישט אוועקגענומען נאר צוריסן און ארויפגעצויגן, פונקט ווי מ'באהאנדלט קליפת נוגה: מ'ווארפט עס נישט אוועק, נאר מ'הייבט עס אויף אין קדושה."
+      },
+      "evidence": { "segs": [404, 406, 407, 408, 409], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The Shaagas Aryeh's halachic chiddush that Bnei Yishmael are not obligated in priyah is confirmed by Kabbalah: a body rooted in the three impure klipos cannot repair nogah.",
+        "yi": "דער הלכה'דיגער חידוש פונעם שאגת אריה, אז בני ישמעאל זענען נישט מחויב אין פריעה, ווערט באשטעטיגט על פי קבלה: א גוף וואס שטאמט פון די שלש קליפות הטמאות קען נישט מתקן זיין נוגה."
+      },
+      "evidence": { "segs": [713, 723, 741, 745, 749, 751], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Each place in Eretz Yisrael corresponds to a part of the Torah, so Osniel ben Kenaz, by recovering the halachos of Kiryas Sefer, became master of the place itself.",
+        "yi": "יעדער ארט אין ארץ ישראל איז קעגן א חלק פון דער תורה, ממילא ווען עתניאל בן קנז האט צוריקגעבראכט די הלכות פון קרית ספר איז ער געווארן א בעל הבית אויפן ארט אליין."
+      },
+      "evidence": { "segs": [514, 521, 523, 529, 531, 539], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Chevron, bought by Avraham, is the place of milah, and Shechem, bought by Yaakov and given to Yosef, is the place of priyah; this is why the Yishmaelim make the most trouble in those two places.",
+        "yi": "חברון, וואס אברהם האט געקויפט, איז דער ארט פון מילה, און שכם, וואס יעקב האט געקויפט און געגעבן צו יוסף, איז דער ארט פון פריעה; דערפאר מאכן די ישמעאלים דעם מערסטן צרות אין די צוויי ערטער."
+      },
+      "evidence": { "segs": [576, 579, 860, 862, 864, 872], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "A gentile may bring only an olah and not a shelamim because eating as avodah means elevating nogah, which only a Jew can do.",
+        "yi": "פון א גוי נעמט מען נאר אן עולה און נישט קיין שלמים, ווייל עסן אלס עבודה מיינט אויפהייבן נוגה, און דאס קען נאר א איד."
+      },
+      "evidence": { "segs": [805, 806, 824, 828, 831], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The psychologist and the zipper", "yi": "דער פסיכאלאג און דער זיפער" },
+      "retelling": {
+        "en": "The Rav relates that he once spoke to a psychologist. The psychologist told him that if a person had a slit made in his stomach with a zipper, and every day food was put in that way, giving him all the nutrients he needs, after a while he would have a nervous breakdown. The Rav explains that just as a person needs food and air, he needs a certain gratification for his health.",
+        "yi": "דער משגיח דערציילט אז ער האט אמאל גערעדט מיט א פסיכאלאג. דער פסיכאלאג האט אים געזאגט אז אויב מ'וואלט געמאכט א שניט אין א מענטשנס מאגן מיט א זיפער, און יעדן טאג אריינגעלייגט דורך דעם עסן מיט אלע נויטיגע שטאפן, וואלט ער נאך א צייט צוברעכן געווארן אין די נערוון. דער משגיח ערקלערט אז אזוי ווי א מענטש דארף עסן און לופט, דארף ער אויך א געוויסע הנאה פאר זיין געזונט."
+      },
+      "people": [],
+      "evidence": { "segs": [130, 131, 132, 133, 134, 137], "confidence": 0.85 }
+    },
+    {
+      "title": { "en": "The professor and the word 'kordiakos'", "yi": "דער פראפעסאר און דאס ווארט \"קורדיקוס\"" },
+      "retelling": {
+        "en": "The Rav tells of a professor at a seminary who came to give an hour-long lecture in Talmud. They were learning a Gemara with the word for a certain malady of the heart, and he spent the whole hour explaining the word's Latin and Greek roots. When the hour was up he looked at his watch and said they had already learned for an hour.",
+        "yi": "דער משגיח דערציילט פון א פראפעסאר אין א סעמינאר וואס איז געקומען געבן א שעה'דיגע לעקציע אין גמרא. מ'האט געלערנט א גמרא מיט א ווארט פאר א געוויסע קרענק פונעם הארץ, און ער האט פארבראכט די גאנצע שעה צו ערקלערן דעם שורש פון דעם ווארט אין לאטייניש און גריכיש. ווען די שעה איז אריבער האט ער א קוק געטון אויפן זייגער און געזאגט אז מ'האט שוין געלערנט א שעה."
+      },
+      "people": [],
+      "evidence": { "segs": [913, 916, 919, 924, 927, 935], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "en": "If a person enjoys his food, does that enjoyment go into klipas nogah's bad side?",
+        "yi": "אז א מענטש האט הנאה פון זיין עסן, גייט די הנאה אריין אין דער שלעכטער זייט פון קליפת נוגה?"
+      },
+      "answer": {
+        "en": "Not when he needs it for his health, provided it is not in excess and is l'shem shamayim.",
+        "yi": "נישט ווען ער דארף עס פאר זיין געזונט, בתנאי אז ס'איז נישט צופיל און ס'איז לשם שמים."
+      },
+      "questionSegs": [141, 142],
+      "answerSegs": [143, 144, 146, 147],
+      "confidence": 0.85
+    },
+    {
+      "question": {
+        "en": "Why do the Arabs fight over Chevron more than any other place?",
+        "yi": "פארוואס קעמפן די אראבער אויף חברון מער ווי אויף יעדן אנדערן ארט?"
+      },
+      "answer": {
+        "en": "Because Chevron is the place of milah, which they feel gives them the deed to Eretz Yisrael.",
+        "yi": "ווייל חברון איז דער ארט פון מילה, וואס לויט זייער געפיל גיט זיי דעם שטר אויף ארץ ישראל."
+      },
+      "questionSegs": [611, 612],
+      "answerSegs": [613, 614, 615, 618],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why are Bnei Yishmael obligated in milah but not in priyah?",
+        "yi": "פארוואס זענען בני ישמעאל מחויב אין מילה און נישט אין פריעה?"
+      },
+      "answer": {
+        "en": "Halachically, Avraham was commanded only milah and priyah came in Yehoshua's time; in Kabbalah, their body stems from the three impure klipos, so they can repair only that and not nogah.",
+        "yi": "על פי הלכה, אברהם האט באקומען נאר מילה און פריעה איז געגעבן געווארן ביי יהושע; על פי קבלה שטאמט זייער גוף פון די שלש קליפות הטמאות, ממילא קענען זיי נאר דאס מתקן זיין און נישט נוגה."
+      },
+      "questionSegs": [726, 729],
+      "answerSegs": [730, 732, 745, 749, 751],
+      "confidence": 0.8
+    },
+    {
+      "question": {
+        "en": "Why may a gentile bring only an olah and not a shelamim?",
+        "yi": "פארוואס מעג א גוי ברענגען נאר אן עולה און נישט קיין שלמים?"
+      },
+      "answer": {
+        "en": "A shelamim is eaten, and eating as avodah means elevating nogah, which a gentile cannot do.",
+        "yi": "א שלמים עסט מען, און עסן אלס עבודה מיינט אויפהייבן נוגה, וואס א גוי קען נישט."
+      },
+      "questionSegs": [801, 805, 806],
+      "answerSegs": [824, 828, 830, 831],
+      "confidence": 0.75
+    },
+    {
+      "question": {
+        "en": "How is Shechem specifically the place of priyah?",
+        "yi": "ווי אזוי איז שכם דווקא דער ארט פון פריעה?"
+      },
+      "answer": {
+        "en": "Priyah came through Yehoshua, a descendant of Yosef, and Yosef's purchased portion is Shechem, just as Avraham's is Chevron, the place of milah.",
+        "yi": "פריעה איז געקומען דורך יהושע, פון יוסף'ס קינדער, און יוסף'ס קנין כסף איז שכם, אזוי ווי אברהם'ס איז חברון, דער ארט פון מילה."
+      },
+      "questionSegs": [876],
+      "answerSegs": [847, 849, 862, 891, 893],
+      "confidence": 0.7
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says a person should eat what he needs to be healthy, even enjoy it, but should know that he eats in order to be able to serve Hashem.",
+        "yi": "דער משגיח זאגט אז א מענטש זאל עסן וואס ער דארף כדי צו זיין געזונט, און אפילו הנאה האבן, אבער ער זאל וויסן אז ער עסט כדי צו קענען זיין אן עובד השם."
+      },
+      "evidence": { "segs": [147, 152, 153, 155], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one should eat only as much as one needs and stop, unlike eating merely because something smells good.",
+        "yi": "דער משגיח זאגט אז מ'זאל עסן נאר וויפיל מ'דארף און אויפהערן, נישט עסן נאר ווייל עפעס שמעקט גוט."
+      },
+      "evidence": { "segs": [157, 159, 173, 175], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says there is nothing wrong with taking a cookie or ice cream to lift one's mood so as to learn and daven with more vigor.",
+        "yi": "דער משגיח זאגט אז ס'איז גארנישט שלעכט צו נעמען א קיכל אדער אייז קרים כדי זיך אויפצומונטערן צו לערנען און דאווענען מיט מער חיות."
+      },
+      "evidence": { "segs": [161, 162, 163, 164], "confidence": 0.85 }
+    }
+  ],
+  "candidateTopics": [
+    "klipas nogah",
+    "Tanya chapter 7",
+    "eating l'shem shamayim",
+    "kedoshim tihyu and permitted pleasures",
+    "milah and priyah",
+    "Yishmael and Eretz Yisrael",
+    "Chevron and Shechem",
+    "oneg Shabbos",
+    "korbanos of gentiles"
+  ],
+  "concepts": [
+    { "he": "קליפת נוגה", "heardAs": ["klipas naiga", "Klippas Naiga", "Kripas Naiga", "klipasnaiga", "Philippus Naiga"] },
+    { "he": "שלש קליפות הטמאות", "heardAs": ["shalish klipas atmayas", "Shodesh Klipas Atmeyas", "sholish kripis at mayas", "Shoresh Klipe Satmayas"] },
+    { "he": "נפש החיונית", "heardAs": ["nefeshachiyun"] },
+    { "he": "לשם שמים", "heardAs": ["l'shem shemayim", "Lishem Shemayim", "L'Shem Shema Yema"] },
+    { "he": "נבל ברשות התורה", "heardAs": ["a novel", "with the green light from the Tire"] },
+    { "he": "קדש עצמך במותר לך", "heardAs": ["Kaddish Asmacha B'motalach"] },
+    { "he": "פריעה", "heardAs": ["Pkhia", "Priya"] },
+    { "he": "מילה", "heardAs": ["Mila", "Mitzvah Smila", "Mitzvah Smele", "Milah"] },
+    { "he": "עונג שבת", "heardAs": ["Oynik Shabbos"] },
+    { "he": "הכשר מצוה", "heardAs": ["Hechshar Mitzvah"] },
+    { "he": "קנין כסף", "heardAs": ["kenyan kasef", "Kinyan Kesef"] },
+    { "he": "מערת המכפלה", "heardAs": ["Maras HaMachpela"] },
+    { "he": "תכלית", "heardAs": ["Tachlis"] },
+    { "he": "נתעלה", "heardAs": ["Nisala"] },
+    { "he": "שלמים", "heardAs": ["Shlomim", "shalamim"] }
+  ],
+  "people": [
+    { "name": "the Ramban", "heardAs": ["Ramban"] },
+    { "name": "Rava", "heardAs": ["Rava"] },
+    { "name": "Rav Shraga Feivel Mendlowitz", "heardAs": ["Rav Mandelovich", "Rav Mendeleev"] },
+    { "name": "the Shaagas Aryeh", "heardAs": ["Shagas Arya", "Shagas Aria"] },
+    { "name": "the Ba'al HaTurim", "heardAs": ["Baloturim"] },
+    { "name": "Osniel ben Kenaz", "heardAs": ["Esnil ben Knaz", "Osnir Ben Knaz", "Osniel ben Knaz"] },
+    { "name": "Kalev", "heardAs": ["Kalev"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["Meshavayna"] },
+    { "name": "Avraham Avinu", "heardAs": ["Avraham Avinu", "Avram Avinu", "Avraham Avinah"] },
+    { "name": "Yishmael", "heardAs": ["Yishma'il", "Yishmael", "Yishmoyah"] },
+    { "name": "Yitzchak", "heardAs": ["Yitzchak"] },
+    { "name": "Yaakov Avinu", "heardAs": ["Yankav Avinu", "Yankov"] },
+    { "name": "Yosef", "heardAs": ["Yasef", "Yisaf"] },
+    { "name": "Yehoshua", "heardAs": ["Yahshua", "Yeshua"] },
+    { "name": "Yasser Arafat", "heardAs": ["Arafat"] }
+  ],
+  "asrNotes": "English ASR fair for the Rav's English but Hebrew terms and quotations are heavily garbled (e.g. 'klipas naiga', 'Rabbana Shalaylam'). Many short fragments in segs 255-299, 409-417 and 755-765 are incomplete and were not used; the work named as 'the Avinachal' and the tzaddik who gave the cookie mashal could not be recovered. A listener's question around segs 622-626 is only partly audible."
+}

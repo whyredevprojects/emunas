@@ -1,0 +1,55 @@
+{
+  "shiurId": "yi-simchos-unc-bris-pidyon-haben-54",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4b-v2",
+  "extractionVariant": "extraction",
+  "en": [
+    {
+      "sectionIndex": 0,
+      "heading": "Milah: Avraham's emunah above daas",
+      "paragraphs": [
+        {
+          "text": "The Rav ties milah to Avraham Avinu, the first of the believers, who left every Jewish child an inheritance of emunah, which is higher than daas. One might ask why milah is not delayed until the child understands; the Rav answers that milah is entirely emunah, so it comes before daas.",
+          "sourceIdx": [],
+          "evidence": { "segs": [5, 8, 31, 40, 42, 44], "confidence": 0.8 }
+        }
+      ]
+    },
+    {
+      "sectionIndex": 1,
+      "heading": "Sasson and yekar: milah with tefillin",
+      "paragraphs": [
+        {
+          "text": "Even Jews who keep nothing else keep milah, the Rav says, since one chooses to be righteous or wicked but not to be a Jew. Bringing Chazal that sasson is milah and yekar is tefillin, he says this family of Torah joins emunah above daas with the peak of daas.",
+          "sourceIdx": [4, 5],
+          "evidence": { "segs": [51, 54, 56, 73, 76, 84], "confidence": 0.75 }
+        }
+      ]
+    }
+  ],
+  "yi": [
+    {
+      "sectionIndex": 0,
+      "heading": "מילה: די אמונה פון אברהם אבינו",
+      "paragraphs": [
+        {
+          "text": "דער משגיח פארבינדט מילה מיט אברהם אבינו, דער ראש המאמינים, וואס האט איבערגעלאזט פאר יעדן אידיש קינד א ירושה פון אמונה, וואס איז העכער פון דעת. מ'קען פרעגן פארוואס מ'ווארט נישט ביז דאס קינד פארשטייט; ער ענטפערט אז מילה איז אינגאנצן אמונה, דערפאר קומט זי פאר דעת.",
+          "sourceIdx": [],
+          "evidence": { "segs": [5, 8, 31, 40, 42, 44], "confidence": 0.8 }
+        }
+      ]
+    },
+    {
+      "sectionIndex": 1,
+      "heading": "ששון און יקר: מילה מיט תפילין",
+      "paragraphs": [
+        {
+          "text": "אפילו אידן וואס האלטן גארנישט האלטן מילה, זאגט דער משגיח, ווייל מ'קען וועלן צו זיין א צדיק אדער א רשע, אבער נישט צי צו זיין א איד. ער ברענגט חז\"ל אז ששון איז מילה און יקר איז תפילין, און זאגט אז די משפחה פון תורה פארבינדט אמונה למעלה מן הדעת מיטן שפיץ פון דעת.",
+          "sourceIdx": [4, 5],
+          "evidence": { "segs": [51, 54, 56, 73, 76, 84], "confidence": 0.75 }
+        }
+      ]
+    }
+  ]
+}

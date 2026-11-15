@@ -1,0 +1,17 @@
+{
+  "shiurId": "en-parsha-en-bshlch-03",
+  "promptVersion": "audit-v1",
+  "auditedAt": "2026-11-15T12:00:00Z",
+  "counts": {
+    "claimsChecked": 22, "unsupported": 0, "hallucinated": 0,
+    "sourcesChecked": 12, "sourceErrors": 0, "sourcesMissed": 0,
+    "boundariesChecked": 5, "boundariesBad": 0, "noiseMishandled": 0,
+    "termsChecked": 14, "termErrors": 0, "termsCopiedGarbled": 0,
+    "yiddishSentencesChecked": 16, "yiddishBadSentences": 6, "yiddishTranslationese": 3,
+    "flowBreaks": 0, "paddingSentences": 0, "contradictsExtraction": 0,
+    "ruleViolations": 0
+  },
+  "severity": "minor",
+  "needsReview": false,
+  "notes": "writeup.yi[1].paragraphs[0]: 'מ'טאר נישט מאכן די שפאצירן' uses שפאצירן (walks) for the extra spaces of the Shirah layout (segs 146-147); Daytshmerish relative 'וועלכן/וועלכער' in sections[5].summary.yi and writeup.yi[5].paragraphs[0]; summary.keyPoints[4].yi 'פולשטענדיג' (Daytshmerish) and keyPoints[0].yi 'דעם דנא פונעם ים' (unnatural for ocean bed); writeup.yi[9].paragraphs[2] 'מחלוקת-מענטשן' is a calque of 'quarrelsome people'; translationese elliptical 'ווען די מכות האבן נישט' in abstract.yi and writeup.yi[0].paragraphs[1], and takeaways[0].yi 'דער קלארסטער אויסדרוק פון נישט האבן קיין השתדלות'; English content, sources, boundaries and term recovery all check out against the transcript (e.g. Heichal HaBrachah seg 338, Tiferes Shlomo seg 641-650, Megillah 11a segs 748-778)."
+}

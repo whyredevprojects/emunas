@@ -1,0 +1,524 @@
+{
+  "shiurId": "en-tanya-en-42",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav learns Tanya chapter 26: the yetzer hara can only be overpowered with the alertness that comes from simcha, the only true sadness is remorse over aveiros at set times, and worldly suffering is relieved by knowing it comes from the hidden world.",
+      "yi": "דער משגיח לערנט תניא פרק כ\"ו: דעם יצר הרע קען מען נאר איבערשטארקן מיט די זריזות וואס קומט פון שמחה, די איינציגע אמת'דיגע עצבות איז חרטה אויף עבירות אין באשטימטע צייטן, און יסורים פון עולם הזה ווערן גרינגער ווען מ'ווייסט אז זיי קומען פונעם עלמא דאתכסיא."
+    },
+    "abstract": {
+      "en": "The Rav reviews how chapter 25 made serving Hashem seem easy, then turns to chapter 26: like a wrestler, or an ox against a lion, the lazy side loses, so the yetzer hara can only be overcome with alertness born of simcha, while sadness itself breeds craving. Sadness has an advantage only when it is remorse over aveiros, and only for its product, teshuvah and the joy of reconciliation, felt at set times such as Tikkun Chatzos, which the Rav explains at length. Sadness over livelihood or other worldly matters, by the Tanya's standard, is nothing. The remedy is to know that hardships come from the hidden world, too high for this world to bear, and to accept them with simcha, as the stories of the Ger Tzedek Graf Potocki and of the Alter Rebbe's arrest show. The Rav admits this level is very hard for our generation.",
+      "yi": "דער משגיח חזר'ט ווי פרק כ\"ה האט געמאכט עבודת השם זעהן גרינג, און גייט אריבער צו פרק כ\"ו: אזוי ווי ביי צוויי וואס ראנגלען זיך, אדער א אקס קעגן א לייב, פארלירט דער וואס איז פויל און שווער; ממילא קען מען דעם יצר הרע נאר באזיגן מיט זריזות וואס קומט פון שמחה, און עצבות אליין ברענגט תאוות. עצבות האט נאר א מעלה ווען זי איז חרטה אויף עבירות, און די מעלה איז נאר וואס זי ברענגט: תשובה און די שמחה פון זיך איבערבעטן, אין באשטימטע צייטן ווי תיקון חצות, וואס דער משגיח איז מסביר מיט א ברייטקייט. עצבות אויף פרנסה און אנדערע עניני עולם הזה איז לויטן תניא גארנישט. די עצה איז צו וויסן אז יסורים קומען פונעם עלמא דאתכסיא, וואס איז צו הויך פאר דער וועלט, און זיי מקבל זיין בשמחה, ווי די מעשיות פונעם גר צדק גראף פאטאצקי און פונעם אלטן רבי'נס ארעסט ווייזן. דער משגיח זאגט אז די מדריגה איז זייער שווער פאר אונזער דור."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Like a wrestler who loses when he is lazy and heavy even if he is stronger, a person can only overpower the yetzer hara with alertness that comes from simcha and an open heart.",
+          "yi": "אזוי ווי א ראנגלער וואס פארלירט ווען ער איז פויל און שווער, אפילו ער איז שטארקער, קען מען דעם יצר הרע נאר איבערשטארקן מיט זריזות וואס קומט פון שמחה און א אפן הארץ."
+        },
+        "evidence": { "segs": [26, 27, 43, 44, 45], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Sadness itself feeds the yetzer hara, because an unhappy person seeks gratification elsewhere.",
+          "yi": "עצבות אליין שטארקט דעם יצר הרע, ווייל א מענטש וואס איז נישט צופרידן זוכט הנאה אנדערשוואו."
+        },
+        "evidence": { "segs": [75, 84, 88], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The only true sadness is remorse over aveiros, and its value lies only in what it produces: teshuvah and the simcha that follows it.",
+          "yi": "די איינציגע אמת'דיגע עצבות איז חרטה אויף עבירות, און איר מעלה איז נאר וואס זי ברענגט ארויס: תשובה און די שמחה וואס קומט דערנאך."
+        },
+        "evidence": { "segs": [153, 155, 156, 162], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Even this remorse belongs only to set times, such as before sleep or Rosh Hashanah, and not all day.",
+          "yi": "אפילו די חרטה געהערט נאר צו באשטימטע צייטן, ווי פארן שלאפן אדער ראש השנה, און נישט דעם גאנצן טאג."
+        },
+        "evidence": { "segs": [187, 196, 205, 212], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Sadness over children, health or livelihood has no place by the Tanya's standard, since Hashem's hashgachah pratis puts a person where it is best for him.",
+          "yi": "עצבות אויף בני חיי ומזוני האט לויטן תניא קיין ארט נישט, ווייל השם יתברך פירט דעם מענטש מיט השגחה פרטית און שטעלט אים וואו עס איז אים בעסטער."
+        },
+        "evidence": { "segs": [384, 386, 388, 421], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Hardships come from the hidden world, which is higher than the revealed one; one who accepts them with simcha will see them transformed into revealed kindness.",
+          "yi": "יסורים קומען פונעם עלמא דאתכסיא, וואס איז העכער פונעם עלמא דאתגליא; ווער עס נעמט זיי אן בשמחה וועט זעהן ווי זיי ווערן פארוואנדלט אין נגלה'דיגע חסדים."
+        },
+        "evidence": { "segs": [442, 469, 509, 512, 516], "confidence": 0.8 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-english-sets-tanya-42-e-tanya",
+      "startSeg": 0,
+      "endSeg": 41,
+      "title": { "en": "Is it a cinch? The wrestler and the lion", "yi": "איז עס גרינג? דער ראנגלער און דער לייב" },
+      "summary": {
+        "en": "The Rav reviews chapter 25, that every aveirah separates a person from Hashem like avodah zarah, which seems to make being a tzaddik easy. He then opens chapter 26 with the wrestling analogy: a stronger fighter who is lazy and heavy loses, as an ox loses to a lion.",
+        "yi": "דער משגיח חזר'ט פרק כ\"ה, אז יעדע עבירה רייסט אפ דעם מענטש פון השם יתברך ווי עבודה זרה, וואס מאכט אויס אז צו זיין א צדיק איז גרינג. דערנאך עפנט ער פרק כ\"ו מיטן משל פון ראנגלען: א שטארקערער וואס איז פויל און שווער פארלירט, ווי א אקס פארלירט קעגן א לייב."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-42-e-tanya",
+      "startSeg": 42,
+      "endSeg": 125,
+      "title": { "en": "Overpowering the yetzer hara with simcha", "yi": "דעם יצר הרע באזיגן מיט שמחה" },
+      "summary": {
+        "en": "The Rav explains that laziness comes from sadness and a stone-like heart, while alertness comes from simcha in knowing one has a Provider in heaven. He shows how sadness itself drives a person to seek gratification, and says the Tanya's demand for a heart free of worry applies, to our degree, even in our generation.",
+        "yi": "דער משגיח ערקלערט אז פוילקייט קומט פון עצבות און א פארשטאפט הארץ, און זריזות קומט פון שמחה וואס א מענטש ווייסט אז ער האט א פאטרון אין הימל. ער ווייזט ווי עצבות אליין טרייבט א מענטש צו זוכן הנאות, און זאגט אז דעם תניא'ס פאדערונג פון א הארץ אן דאגות גילט, לויט אונזער מדריגה, אויך אין אונזער דור."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-42-e-tanya",
+      "startSeg": 126,
+      "endSeg": 252,
+      "title": { "en": "The one true sadness: remorse over aveiros", "yi": "די איינציגע אמת'דיגע עצבות: חרטה אויף עבירות" },
+      "summary": {
+        "en": "The Rav explains the passuk that every sorrow has an advantage: not that sadness is good, but that remorse over aveiros leads to teshuvah and the simcha of reconciliation, like two friends who make up. This sadness belongs only at set times, and he reads it into the pesukim of Tehillim 51 about a broken spirit leading to joy.",
+        "yi": "דער משגיח טייטשט דעם פסוק אז אין יעדן צער איז דא א מעלה: נישט אז עצבות איז גוט, נאר אז חרטה אויף עבירות ברענגט צו תשובה און צו די שמחה פון זיך איבערבעטן, ווי צוויי חברים וואס מאכן שלום. די עצבות געהערט נאר אין באשטימטע צייטן, און ער ווייזט עס אין די פסוקים פון תהלים נ\"א פון א רוח נשברה וואס ברענגט צו שמחה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-42-e-tanya",
+      "startSeg": 253,
+      "endSeg": 347,
+      "title": { "en": "Tikkun Chatzos and the seudah of Dovid HaMelech", "yi": "תיקון חצות און די סעודה פון דוד המלך" },
+      "summary": {
+        "en": "The Rav explains Tikkun Chatzos, Dovid HaMelech's midnight tefillah, and parallels the tefillos of the Avos and of Dovid to the Shabbos seudos and Melaveh Malkah. Tehillim 51 is part of Tikkun Chatzos, where a person laments the churban and, more deeply, his own inner Beis HaMikdash ruined by his aveiros, and then rises to simcha.",
+        "yi": "דער משגיח ערקלערט תיקון חצות, דוד המלך'ס תפילה אין מיטן נאכט, און שטעלט די תפילות פון די אבות און פון דוד המלך קעגן די סעודות פון שבת און מלוה מלכה. תהלים נ\"א איז א חלק פון תיקון חצות, וואו א מענטש קלאגט אויפן חורבן, און טיפער אויף זיין אייגענעם בית המקדש וואס ער האט חרוב געמאכט מיט זיינע עבירות, און דערנאך הייבט ער זיך אויף צו שמחה."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-42-e-tanya",
+      "startSeg": 348,
+      "endSeg": 418,
+      "title": { "en": "Light after darkness; worldly sadness is nothing", "yi": "ליכט נאך חושך; עצבות פון עולם הזה איז גארנישט" },
+      "summary": {
+        "en": "The Rav explains that joy after sadness is like light after darkness, and brings the curse for not serving Hashem with simcha. By the Tanya's standard, sadness over income or other worldly matters is a child's complaint over a broken house of blocks; he asks whether a person is sad over his aveiros or over his income, and admits this chapter demands more than we can offer.",
+        "yi": "דער משגיח ערקלערט אז שמחה נאך עצבות איז ווי ליכט נאך חושך, און ברענגט דעם פסוק פון די קללות פאר נישט דינען השם בשמחה. לויטן תניא איז עצבות אויף פרנסה און אנדערע זאכן פון עולם הזה ווי א קינד וואס וויינט אז מ'האט אים צעבראכן זיין הייזל פון קלעצלעך; ער פרעגט צי מ'איז טרויעריג אויף די עבירות אדער אויף די פרנסה, און זאגט אז דער פרק פאדערט מער ווי מיר קענען געבן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-42-e-tanya",
+      "startSeg": 419,
+      "endSeg": 509,
+      "title": { "en": "Bnei, chayei, mezonei and the hidden world", "yi": "בני חיי ומזוני און דער עלמא דאתכסיא" },
+      "summary": {
+        "en": "The Rav asks how a person can free himself from sadness over children, life and sustenance, and brings Chazal that one must bless and accept the bad with simcha as the good. He explains the two halves of the Shem Havayah, the hidden world and the revealed world: hardships come from the higher, hidden world, which this world cannot bear, and they bring a person closer to Hashem.",
+        "yi": "דער משגיח פרעגט ווי אזוי א מענטש קען זיך באפרייען פון עצבות אויף בני חיי ומזוני, און ברענגט חז\"ל אז מ'דארף מקבל זיין דאס שלעכטע בשמחה אזוי ווי דאס גוטע. ער ערקלערט די צוויי העלפטן פונעם שם הוי\"ה, עלמא דאתכסיא און עלמא דאתגליא: יסורים קומען פונעם העכערן באהאלטענעם עולם, וואס די וועלט קען נישט אויסהאלטן, און זיי ברענגען דעם מענטש נענטער צו השם יתברך."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-42-e-tanya",
+      "startSeg": 510,
+      "endSeg": 561,
+      "title": { "en": "Those who rejoice in suffering", "yi": "די וואס פרייען זיך מיט יסורים" },
+      "summary": {
+        "en": "The Rav explains that accepting hardship with simcha turns the hidden into revealed kindness, and that a person should say even of undesirable things that they are for the good. He brings the Gemara about those who accept suffering with love, and the passuk that those who love Hashem are like the sun going out in its strength: the tzaddik feels the pressure like a tight shoe but disregards it in his joy of closeness to Hashem.",
+        "yi": "דער משגיח ערקלערט אז ווען מ'נעמט אן יסורים בשמחה ווערט דאס באהאלטענע פארוואנדלט אין נגלה'דיגע חסדים, און א מענטש זאל זאגן אפילו אויף נישט-געוואונטשענע זאכן אז זיי זענען לטובה. ער ברענגט די גמרא וועגן די וואס נעמען אן יסורים מיט אהבה, און דעם פסוק אז די וואס האבן ליב השם זענען ווי די זון וואס גייט ארויס מיט איר כח: דער צדיק שפירט דעם דרוק ווי א ענגער שוך, אבער ער קוקט נישט דערויף ווייל ער פרייט זיך מיט זיין קירבת השם."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-42-e-tanya",
+      "startSeg": 562,
+      "endSeg": 640,
+      "title": { "en": "The Ger Tzedek and the house of blocks", "yi": "דער גר צדק און דאס הייזל פון קלעצלעך" },
+      "summary": {
+        "en": "The Rav tells briefly of Graf Potocki, a great Polish lord who became a Jew and was condemned to be burned. When the executioner asked whether he would take revenge, he answered with a parable of children's houses of blocks: this world is worth nothing to him, and he is going to a better world.",
+        "yi": "דער משגיח דערציילט בקיצור פון גראף פאטאצקי, א גרויסער פוילישער פריץ וואס איז געווארן א איד און מ'האט אים געמשפט צו פארברענען. ווען דער וואס האט אים געדארפט ווארפן אין פייער האט אים געפרעגט צי ער וועט זיך נוקם זיין, האט ער געענטפערט מיט א משל פון קינדער'ס הייזלעך פון קלעצלעך: די וועלט איז ביי אים גארנישט ווערט, און ער גייט צו א בעסערע וועלט."
+      },
+      "kind": "story",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-42-e-tanya",
+      "startSeg": 641,
+      "endSeg": 717,
+      "title": { "en": "The sun drawn from its sheath", "yi": "די זון ארויסגענומען פון איר שייד" },
+      "summary": {
+        "en": "The Rav explains that for such tzaddikim all suffering is suffering of love, and that the spiritual sun will be uncovered from its sheath, so the hidden world will shine in this world on those who take refuge in Hashem's shadow. He sums up the Tanya's remedy: realize that worldly hardships are nothing and be happy with Hashem who is hidden in them.",
+        "yi": "דער משגיח ערקלערט אז ביי אזעלכע צדיקים זענען אלע יסורים יסורים של אהבה, און אז די רוחניות'דיגע זון וועט ארויסגענומען ווערן פון איר שייד, אזוי אז דער עלמא דאתכסיא וועט שיינען אין דער וועלט פאר די וואס זוכן שוץ אין השם'ס שאטן. ער פאסט צוזאם דעם תניא'ס עצה: צו פארשטיין אז די יסורים פון עולם הזה זענען גארנישט, און זיך פרייען מיט השם יתברך וואס איז באהאלטן אין זיי."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tanya-42-e-tanya",
+      "startSeg": 718,
+      "endSeg": 778,
+      "title": { "en": "Reb Shmuel Munkes and the Alter Rebbe's arrest", "yi": "ר' שמואל מונקעס און דעם אלטן רבי'נס ארעסט" },
+      "summary": {
+        "en": "The Rav admits this level is not for everybody, then tells how Reb Shmuel Munkes told the Alter Rebbe not to hide from arrest: if he is a Rebbe he need fear nothing, and if not, by what right did he take away thousands of Jews' appreciation of this world. He concludes that this paragraph may not be for our generation, and that other aids to simcha must be found.",
+        "yi": "דער משגיח זאגט אז די מדריגה איז נישט פאר יעדן, און דערציילט ווי ר' שמואל מונקעס האט געזאגט דעם אלטן רבי'ן ער זאל זיך נישט באהאלטן פונעם ארעסט: אויב ער איז א רבי האט ער פאר קיינעם נישט מורא, און אויב נישט, מיט וועלכן רעכט האט ער צוגענומען פון טויזנטער אידן זייער חשיבות פון עולם הזה. ער שליסט אז דער שטיקל איז אפשר נישט פאר אונזער דור, און מ'וועט דארפן זוכן אנדערע עצות צו שמחה."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "Titania just finished saying",
+      "work": "Tanya",
+      "ref": "Tanya ch. 25",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [1, 7, 8, 10], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Kekarevelech Adava Miyad, Befiecha, Belvavchala Sayisai",
+      "work": "Devarim",
+      "ref": "Devarim 30:14",
+      "sefariaRef": "Deuteronomy 30:14",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [3, 5], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "I have to tell you a big cloud",
+      "work": "Tanya",
+      "ref": "Tanya ch. 26",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [21, 24, 26, 43, 45], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "It says in the Pesach, every sorrow has an advantage",
+      "work": "Mishlei",
+      "ref": "Mishlei 14:23",
+      "sefariaRef": "Proverbs 14:23",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [126, 127, 128, 135], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Zivchi Alekim Ruach Nishbara",
+      "work": "Tehillim",
+      "ref": "Tehillim 51:19",
+      "sefariaRef": "Psalms 51:19",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [223, 226, 231, 237], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "you're going to give me joy and happiness ... return me the happiness",
+      "work": "Tehillim",
+      "ref": "Tehillim 51:10, 51:14",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [243, 244, 246, 250], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "Tikhan Chatsais ... Tigme Chatzais",
+      "work": "Tikkun Chatzos",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [253, 254, 260, 261], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "his Tfilah is Arashus and that's how the Gemara passed",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 27b",
+      "sefariaRef": "Berakhot 27b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [279, 280, 281], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "as Ramchal, or Meishakhaim Lutzatek calls it, at filah of Tzadikim",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [285, 286, 287], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Kapitol Nun Aleph in Tehillim, the Kapitol of Tehillim of Tshuva",
+      "work": "Tehillim",
+      "ref": "Tehillim 51",
+      "sefariaRef": "Psalms 51",
+      "resolution": "resolved",
+      "mention": "alluded",
+      "evidence": { "segs": [310, 311, 313, 316], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "advantage of Chachma over Shichlus, over stupidity, like the advantage of light over Chachach",
+      "work": "Koheles",
+      "ref": "Koheles 2:13",
+      "sefariaRef": "Ecclesiastes 2:13",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [350, 352, 353], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the teichacha the odi klalas ... because you didn't serve the rabbi nishleil",
+      "work": "Devarim",
+      "ref": "Devarim 28:47",
+      "sefariaRef": "Deuteronomy 28:47",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [369, 370, 371, 374], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "what pshat the iri akadosh said on this",
+      "work": null,
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [372, 373, 374], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "Like Bigamara says, When somebody learns the tale of a Tzaddik, he says it along with you",
+      "work": "Gemara",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [378, 379, 380], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the same way that a person makes a bracha tova ... the gemara says he has to be macabalate with simcha",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 60b",
+      "sefariaRef": "Berakhot 60b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [427, 428, 431, 432, 511], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the gemara and brachas and those who are metabal yisur and b'yahava",
+      "work": "Gemara",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [535, 536, 538], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "those who love the rabbi nashleilam is like the sun goes out with all his strength",
+      "work": "Shoftim",
+      "ref": "Shoftim 5:31",
+      "sefariaRef": "Judges 5:31",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [540, 541], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Your chesed, Rabbi Nishleilam, is better and sweeter than me than life",
+      "work": "Tehillim",
+      "ref": "Tehillim 63:4",
+      "sefariaRef": "Psalms 63:4",
+      "resolution": "resolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [542], "confidence": 0.8 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Physical strength does not decide a wrestling match, energy does: an ox is stronger than a lion yet loses, and so too a person with greater spiritual strength loses to the yetzer hara if he is heavy with sadness.",
+        "yi": "ביים ראנגלען באשטימט נישט דער כח נאר די זריזות: א אקס איז שטארקער פון א לייב און פארלירט פונדעסטוועגן, און אזוי אויך פארלירט א מענטש מיט מער כח צום יצר הרע אויב ער איז שווער פון עצבות."
+      },
+      "evidence": { "segs": [27, 28, 29, 30, 425], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Sadness is not only a weakness but a cause of sin: deprived of happiness, a person reaches for gratification, as an unhappy person reaches for another slice of cake.",
+        "yi": "עצבות איז נישט נאר א חסרון נאר א סיבה פאר עבירות: א מענטש וואס האט נישט קיין שמחה כאפט נאך הנאות, ווי א אומגליקלעכער מענטש וואס נעמט נאך א שטיקל קוכן."
+      },
+      "evidence": { "segs": [75, 78, 81, 84, 88], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The advantage the passuk finds in sorrow is not in the sadness itself but in its product, teshuvah, and the simcha after it is like the joy of two close friends who reconcile after a quarrel.",
+        "yi": "די מעלה וואס דער פסוק געפינט אין צער איז נישט אין דער עצבות אליין נאר אין וואס זי ברענגט, תשובה, און די שמחה דערנאך איז ווי די פרייד פון צוויי נאנטע חברים וואס מאכן שלום נאך א מחלוקת."
+      },
+      "evidence": { "segs": [156, 162, 170, 173, 175], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "In its deepest sense, mourning the churban at Tikkun Chatzos is mourning one's own private Beis HaMikdash, which a person ruined through his aveiros.",
+        "yi": "אין טיפערן זין איז דאס קלאגן אויפן חורבן ביי תיקון חצות א קלאגן אויף זיין אייגענעם בית המקדש, וואס דער מענטש האט חרוב געמאכט מיט זיינע עבירות."
+      },
+      "evidence": { "segs": [329, 330, 331, 332], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "Suffering comes from the higher, hidden half of the Shem Havayah; it is a closer contact with Hashem that a person is not yet conditioned to receive, so it arrives as pain.",
+        "yi": "יסורים קומען פון דער העכערער באהאלטענער העלפט פונעם שם הוי\"ה; זיי זענען א נענטערער קשר מיט השם יתברך וואס דער מענטש איז נאך נישט גרייט צו מקבל זיין, און דערפאר קומען זיי ווי ווייטאג."
+      },
+      "evidence": { "segs": [461, 463, 468, 469, 509], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The Alter Rebbe's power, which made him a target, was that he immunized his chassidim against anything this world has to offer, and that power is contained in the words of this chapter.",
+        "yi": "דעם אלטן רבי'נס כח, וואס האט אים געמאכט פאר א ציל פון די קעגנער, איז געווען אז ער האט אפגעהיטן זיינע חסידים קעגן אלעס וואס עולם הזה האט צו געבן, און דער כח ליגט אין די ווערטער פון דעם פרק."
+      },
+      "evidence": { "segs": [758, 761, 763, 765, 769], "confidence": 0.75 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "Graf Potocki and the house of blocks", "yi": "גראף פאטאצקי און דאס הייזל פון קלעצלעך" },
+      "retelling": {
+        "en": "Graf Potocki, one of the greatest lords in Poland, became a Jew at a time when this was punishable by death. He was found and was to be thrown into the fire. The man charged with throwing him in sensed he stood before a holy man and asked him, by then called Avraham, whether he would take revenge on him in the world to come. He answered: of course not; when one child destroys another's house of blocks and the child cries to his father, the adult father laughs; what is life in this world to him that he should avenge his death, he is going to a better world.",
+        "yi": "גראף פאטאצקי, איינער פון די גרעסטע פריצים אין פוילן, איז געווארן א איד אין א צייט ווען מ'האט דערפאר געמשפט צום טויט. מ'האט אים געפונען און געוואלט ווארפן אין פייער. דער וואס האט אים געדארפט אריינווארפן האט געשפירט אז א הייליגער מענטש שטייט פאר אים, און האט אים, וואס האט שוין געהייסן אברהם, געפרעגט צי ער וועט זיך אויף אים נוקם זיין אויף יענער וועלט. ער האט געענטפערט: פארשטייט זיך נישט; ווען איין קינד צעברעכט דעם אנדערנ'ס הייזל פון קלעצלעך און דאס קינד לויפט וויינענדיג צום טאטן, לאכט דער טאטע; וואס איז ביי אים דאס לעבן אויף דער וועלט אז ער זאל נוקם זיין זיין טויט, ער גייט צו א בעסערע וועלט."
+      },
+      "people": ["Graf Potocki"],
+      "evidence": { "segs": [563, 565, 570, 581, 590, 606], "confidence": 0.85 }
+    },
+    {
+      "title": { "en": "Reb Shmuel Munkes and the Alter Rebbe's arrest", "yi": "ר' שמואל מונקעס און דעם אלטן רבי'נס ארעסט" },
+      "retelling": {
+        "en": "When the Tsar's soldiers came to take the Alter Rebbe to prison, in the episode that ended with his release and Yud-Tes Kislev, he wanted to hide. The great chassid Reb Shmuel Munkes told him there was no use hiding, they would find him. The danger was real, the Rav explains, because the opposing forces had concentrated against the Alter Rebbe, whose teaching was spreading too much for the sitra achra, clothed in the Russian authorities. Reb Shmuel said: if you are a Rebbe, what are you afraid of; and if you are not a Rebbe, by what right did you deprive thousands of Jews of their appreciation of this world?",
+        "yi": "ווען די סאלדאטן פונעם צאר זענען געקומען נעמען דעם אלטן רבי'ן אין תפיסה, די מעשה וואס האט זיך געענדיגט מיט זיין באפרייאונג און י\"ט כסלו, האט ער זיך געוואלט באהאלטן. דער גרויסער חסיד ר' שמואל מונקעס האט אים געזאגט אז ס'איז נישט כדאי זיך צו באהאלטן, מ'וועט אים געפינען. די סכנה איז געווען אמת, ערקלערט דער משגיח, ווייל די קעגנערישע כוחות האבן זיך קאנצענטרירט קעגן דעם אלטן רבי'ן, וועמענס תורה האט זיך צו פיל פארשפרייט פאר דער סטרא אחרא, אנגעטון אין די רוסישע מאכט. ר' שמואל האט געזאגט: אויב איר זענט א רבי, פאר וואס האט איר מורא; און אויב איר זענט נישט קיין רבי, מיט וועלכן רעכט האט איר צוגענומען פון טויזנטער אידן זייער חשיבות פון עולם הזה?"
+      },
+      "people": ["the Alter Rebbe", "Reb Shmuel Munkes"],
+      "evidence": { "segs": [722, 723, 724, 733, 748, 753], "confidence": 0.8 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "If every aveirah is like avodah zarah, is it then a cinch to be a tzaddik?", "yi": "אויב יעדע עבירה איז ווי עבודה זרה, איז דען גרינג צו זיין א צדיק?" },
+      "answer": { "en": "The yetzer hara resists, and it can only be overpowered with alertness that comes from simcha, not with heaviness born of sadness.", "yi": "דער יצר הרע שטעלט זיך אנטקעגן, און מ'קען אים נאר איבערשטארקן מיט זריזות וואס קומט פון שמחה, נישט מיט שווערקייט וואס קומט פון עצבות." },
+      "questionSegs": [14, 15, 16],
+      "answerSegs": [18, 43, 44, 45],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "If the passuk says every sorrow has an advantage, does Shlomo HaMelech advocate sadness?", "yi": "אויב דער פסוק זאגט אז אין יעדן צער איז דא א מעלה, הייסט עס אז שלמה המלך הייסט זיין בעצבות?" },
+      "answer": { "en": "No; sadness is no good, but true sadness, remorse over aveiros, has an advantage in its product: teshuvah and the simcha that follows.", "yi": "ניין; עצבות איז נישט גוט, נאר אמת'דיגע עצבות, חרטה אויף עבירות, האט א מעלה אין וואס זי ברענגט: תשובה און די שמחה דערנאך." },
+      "questionSegs": [134, 135, 136],
+      "answerSegs": [148, 153, 156, 162],
+      "confidence": 0.85
+    },
+    {
+      "question": { "en": "Why should a person lament a Beis HaMikdash that is thousands of miles away?", "yi": "פארוואס זאל א מענטש קלאגן אויף א בית המקדש וואס איז טויזנטער מייל אוועק?" },
+      "answer": { "en": "Because his own private Beis HaMikdash, his neshamah, was ruined through his aveiros; the essence of Tikkun Chatzos is lamenting them.", "yi": "ווייל זיין אייגענער בית המקדש, זיין נשמה, איז חרוב געווארן דורך זיינע עבירות; דער עיקר פון תיקון חצות איז צו קלאגן אויף זיי." },
+      "questionSegs": [330, 331],
+      "answerSegs": [329, 331, 332],
+      "confidence": 0.85
+    },
+    {
+      "question": { "en": "When a person is sad, is it over his aveiros or over his insufficient income?", "yi": "ווען א מענטש איז טרויעריג, איז עס אויף זיינע עבירות אדער אויף זיין פרנסה וואס קלעקט נישט?" },
+      "answer": { "en": "Honestly it is usually the income, and by the Tanya's standard such sadness is complaining over nothing, since Hashem knows what is best for him.", "yi": "באמת איז עס געווענליך די פרנסה, און לויטן תניא איז אזא עצבות א טענה אויף גארנישט, ווייל השם יתברך ווייסט וואס איז אים בעסטער." },
+      "questionSegs": [400, 403],
+      "answerSegs": [384, 388, 390],
+      "confidence": 0.75
+    },
+    {
+      "question": { "en": "How can a person free himself from sadness over children, life and sustenance?", "yi": "ווי אזוי קען א מענטש זיך באפרייען פון עצבות אויף בני חיי ומזוני?" },
+      "answer": { "en": "By knowing that what happens comes from the hidden world, higher than the revealed one, and accepting it with simcha, as one blesses over the good.", "yi": "דורך וויסן אז וואס עס טרעפט קומט פונעם עלמא דאתכסיא, העכער פונעם עלמא דאתגליא, און עס מקבל זיין בשמחה, אזוי ווי מ'בענטשט אויף דאס גוטע." },
+      "questionSegs": [419, 421, 423],
+      "answerSegs": [432, 442, 469, 512],
+      "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says that, to the degree we can reach, we must try to look at things this way and be besimcha.",
+        "yi": "דער משגיח זאגט אז לויט די מדריגה וואס מיר קענען דערגרייכן, דארף מען פרובירן אזוי צו קוקן אויף די זאכן און זיין בשמחה."
+      },
+      "evidence": { "segs": [104, 105, 122, 124, 125], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says one should not go around all day sad over aveiros, but feel it only at set times, such as before sleep or Rosh Hashanah.",
+        "yi": "דער משגיח זאגט אז מ'זאל נישט ארומגיין א גאנצן טאג בעצבות אויף עבירות, נאר עס שפירן אין באשטימטע צייטן, ווי פארן שלאפן אדער ראש השנה."
+      },
+      "evidence": { "segs": [187, 192, 196, 205, 212], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says a person should say even of undesirable things that this too is for the good, though his mortal eyes cannot see it.",
+        "yi": "דער משגיח זאגט אז א מענטש זאל זאגן אפילו אויף נישט-געוואונטשענע זאכן אז דאס איז אויך לטובה, הגם זיינע אויגן פון בשר ודם קענען דאס נישט זעהן."
+      },
+      "evidence": { "segs": [523, 526, 530, 531], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "Tanya chapter 26",
+    "simcha and the yetzer hara",
+    "sadness and depression",
+    "remorse and teshuvah",
+    "Tikkun Chatzos",
+    "accepting suffering with love",
+    "alma de'iskasya and alma de'isgalya",
+    "bnei chayei umezonei",
+    "Graf Potocki the Ger Tzedek",
+    "the Alter Rebbe's arrest"
+  ],
+  "concepts": [
+    { "he": "עצבות", "heardAs": ["atzviz", "Atsvis", "atsas", "atzvos", "Atlas"] },
+    { "he": "שמחה", "heardAs": ["simcha", "Simecha", "besimcha"] },
+    { "he": "זריזות", "heardAs": ["zhigur"] },
+    { "he": "יצר הרע", "heardAs": ["Yetzirah", "Yitzhahara", "Echahara", "yetzahara"] },
+    { "he": "רבונו של עולם", "heardAs": ["rabbi nashlela", "Rabbi Nishleilam", "Rabbani Shleilam", "Rabbi Yisraelim"] },
+    { "he": "סטרא אחרא", "heardAs": ["sitra acha", "Sitra Akra"] },
+    { "he": "עבודה זרה", "heardAs": ["avayda zara", "Abayda Zara", "Aveida Zara"] },
+    { "he": "עצבות של אמת", "heardAs": ["atsas or aniti", "atzvos wa amiti"] },
+    { "he": "רוח נשברה", "heardAs": ["Ruach Nishbara"] },
+    { "he": "תיקון חצות", "heardAs": ["Tikhan Chatsais", "Tigme Chatzais", "Tikna Chatzva'is"] },
+    { "he": "מלוה מלכה", "heardAs": ["Malava Malka"] },
+    { "he": "השגחה פרטית", "heardAs": ["Hashgah HaPchatas"] },
+    { "he": "בני חיי ומזוני", "heardAs": ["bani chayim zayni"] },
+    { "he": "עלמא דאתכסיא", "heardAs": ["al-ma-di-askasya", "alma discastia", "Armadi Eschatia"] },
+    { "he": "עלמא דאתגליא", "heardAs": ["Almadi is Galya", "alma isgalia"] },
+    { "he": "שם הוי\"ה", "heardAs": ["Sha'im Habayah", "Shem Avaya"] },
+    { "he": "יסורים", "heardAs": ["Yisurim", "Yisugam", "Yeshulism", "Yusudan"] },
+    { "he": "יסורים של אהבה", "heardAs": ["Yisuram Shalav"] },
+    { "he": "גר צדק", "heardAs": ["Ger Tzedek"] }
+  ],
+  "people": [
+    { "name": "the Alter Rebbe (Ba'al HaTanya)", "heardAs": ["Titania", "Balatanya", "Balotanya", "the Tanya"] },
+    { "name": "Shlomo HaMelech", "heardAs": ["Shleimah Melech"] },
+    { "name": "Dovid HaMelech", "heardAs": ["David the Melech", "David HaMelech"] },
+    { "name": "Yaakov Avinu", "heardAs": ["Yankiv Avina"] },
+    { "name": "the Ramchal (Rabbi Moshe Chaim Luzzatto)", "heardAs": ["Ramchal", "Meishakhaim Lutzatek"] },
+    { "name": "the Arizal", "heardAs": ["iri akadosh"] },
+    { "name": "Graf Potocki", "heardAs": ["Graf Potocki", "Graf Petrotsky"] },
+    { "name": "Reb Shmuel Munkes", "heardAs": ["Shmuel Munkas"] }
+  ],
+  "asrNotes": "English ASR is fair, but Hebrew terms and pesukim are heavily garbled and many stretches are fragmentary single-word segments. Segments 264-281 (the Shabbos seudos and the tefillos of the Avos), 354-366 (a commentator, possibly heard as 'Isaiah', on light after darkness), 614-660 (after the Graf Potocki story) and 443-458 are partly unrecoverable. The catalog's phrases 'bateil retzoncha mipnei retzono' and 'al ta'asok bo harbeh' are not clearly audible; the catalog topic as a whole matches sections 2-8."
+}

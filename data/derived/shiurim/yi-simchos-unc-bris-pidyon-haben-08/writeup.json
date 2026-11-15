@@ -1,0 +1,55 @@
+{
+  "shiurId": "yi-simchos-unc-bris-pidyon-haben-08",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4b-v2",
+  "extractionVariant": "extraction",
+  "en": [
+    {
+      "sectionIndex": 0,
+      "heading": "Hashem comes to every bris twice",
+      "paragraphs": [
+        {
+          "text": "The Rav starts from Rashi: on the third day after Avraham's milah, Hashem came to ask after his welfare. Since what is said of milah is eternal, Hashem comes to every bris twice. At the bris itself, as with Avraham, who feared he might not do it properly, Hashem holds the mohel's hand. Because a signature must come from its owner, Hashem Himself signs, as the blessing says 'chasam b'os bris kodesh'.",
+          "sourceIdx": [0, 1],
+          "evidence": { "segs": [2, 11, 13, 19, 27, 31], "confidence": 0.75 }
+        }
+      ]
+    },
+    {
+      "sectionIndex": 1,
+      "heading": "Chevron, a share for all, and blessings",
+      "paragraphs": [
+        {
+          "text": "Turning to Parshas Chayei Sarah, the Rav notes that the Chevron Avraham bought was the place of his bris. At a bris, he says, everyone present has a share, unlike other simchos. He closes with blessings that the parents and family have much nachas and that the child grow into a talmid chacham and a tzaddik.",
+          "sourceIdx": [],
+          "evidence": { "segs": [54, 62, 69, 74, 99, 100], "confidence": 0.75 }
+        }
+      ]
+    }
+  ],
+  "yi": [
+    {
+      "sectionIndex": 0,
+      "heading": "דער אייבערשטער קומט צו יעדן ברית צוויי מאל",
+      "paragraphs": [
+        {
+          "text": "דער משגיח הייבט אן מיט רש\"י, אז אום דעם דריטן טאג נאך אברהם אבינו'ס מילה איז דער אייבערשטער געקומען פרעגן אויף זיין שלום. ווייל ביי מילה איז אלעס נצחי, קומט דער רבונו של עולם צו יעדן ברית צוויי מאל. ביים ברית אליין האלט ער די האנט פונעם מוהל, אזוי ווי ביי אברהם אבינו וואס האט מורא געהאט אז ער וועט עס נישט מאכן ריכטיג. און ווייל א חתימה מוז זיין פונעם בעל החתימה אליין, חותם'ט דער אייבערשטער אליין, ווי די ברכה זאגט \"חתם באות ברית קודש\".",
+          "sourceIdx": [0, 1],
+          "evidence": { "segs": [2, 11, 13, 19, 27, 31], "confidence": 0.75 }
+        }
+      ]
+    },
+    {
+      "sectionIndex": 1,
+      "heading": "חברון, א חלק פאר אלעמען, און ברכות",
+      "paragraphs": [
+        {
+          "text": "אין פרשת חיי שרה, זאגט דער משגיח, האט אברהם אבינו געקויפט חברון, דעם ארט פון זיין ברית. ביי א ברית האט יעדער איינער א חלק, נישט אזוי ווי ביי אנדערע שמחות. ער ענדיגט מיט ברכות אז די עלטערן און די משפחה זאלן האבן אסאך נחת, און דאס קינד זאל אויסוואקסן א תלמיד חכם און א צדיק.",
+          "sourceIdx": [],
+          "evidence": { "segs": [54, 62, 69, 74, 99, 100], "confidence": 0.75 }
+        }
+      ]
+    }
+  ]
+}

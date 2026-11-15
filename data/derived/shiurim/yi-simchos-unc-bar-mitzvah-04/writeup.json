@@ -1,0 +1,65 @@
+{
+  "shiurId": "yi-simchos-unc-bar-mitzvah-04",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4b-v2",
+  "extractionVariant": "extraction",
+  "en": [
+    {
+      "sectionIndex": 0,
+      "heading": "Why \"a new king\" arose when milah was neglected",
+      "paragraphs": [
+        {
+          "text": "The Shem MiShmuel asks why the Jews' neglect of milah in Egypt brought \"a new king\". He first brings the Avnei Nezer on a Midrash on the Megillah: Shabbos is a gift from Hashem, and when the Jews did not keep it, the sitra achra seized its oneg, which became Achashverosh's feast. So too, milah brings chiyus and freshness; once it was neglected, Pharaoh seized the newness.",
+          "sourceIdx": [0, 1, 2, 3],
+          "evidence": { "segs": [7, 24, 26, 36, 38, 43], "confidence": 0.75 }
+        }
+      ]
+    },
+    {
+      "sectionIndex": 1,
+      "heading": "Tefillin and renewal at a bar mitzvah",
+      "paragraphs": [
+        {
+          "text": "A bar mitzvah receives tefillin, which open with \"kadesh li kol bechor\". A bechor is something that was never before, so tefillin should renew a person's avodas Hashem every day. Weekday tefillin are kabbalas ol even in darkness; Shabbos tefillin bring chiyus and kabbalas ol out of love.",
+          "sourceIdx": [5],
+          "evidence": { "segs": [53, 54, 56, 61, 103, 106], "confidence": 0.7 }
+        },
+        {
+          "text": "The guests, the Rav says, recall their own bar mitzvah and gain renewal, taking back what the new king seized. He blesses the boy to grow into a talmid chacham and chassid.",
+          "sourceIdx": [],
+          "evidence": { "segs": [120, 125, 127, 128, 131], "confidence": 0.75 }
+        }
+      ]
+    }
+  ],
+  "yi": [
+    {
+      "sectionIndex": 0,
+      "heading": "פארוואס א \"מלך חדש\" ווען מ'האט פארלאזט מילה",
+      "paragraphs": [
+        {
+          "text": "דער שם משמואל פרעגט פארוואס דאס וואס אידן אין מצרים האבן נישט געהאלטן מילה האט געבראכט א \"מלך חדש\". פריער ברענגט ער דעם אבני נזר אויף א מדרש אין דער מגילה: שבת איז א מתנה פון השם יתברך, און ווען אידן האבן עס נישט געהאלטן, האט די סטרא אחרא צוגעכאפט דעם עונג, און דאס איז געווען אחשורוש'ס סעודה. אזוי אויך ברענגט מילה חיות און פרישקייט; ווען מ'האט עס פארלאזט, האט פרעה צוגעכאפט די נייקייט.",
+          "sourceIdx": [0, 1, 2, 3],
+          "evidence": { "segs": [7, 24, 26, 36, 38, 43], "confidence": 0.75 }
+        }
+      ]
+    },
+    {
+      "sectionIndex": 1,
+      "heading": "תפילין און התחדשות ביי א בר מצוה",
+      "paragraphs": [
+        {
+          "text": "א בר מצוה באקומט תפילין, וואס הייבן זיך אן מיט \"קדש לי כל בכור\". א בכור איז עפעס וואס איז פריער נישט געווען, ממילא דארפן די תפילין יעדן טאג באנייען די עבודת ה'. די וואכעדיגע תפילין זענען קבלת עול אפילו אין א חושך; די שבת'דיגע ברענגען חיות און קבלת עול מאהבה.",
+          "sourceIdx": [5],
+          "evidence": { "segs": [53, 54, 56, 61, 103, 106], "confidence": 0.7 }
+        },
+        {
+          "text": "די געסט, זאגט דער משגיח, דערמאנען זיך אין זייער בר מצוה און באקומען התחדשות, און כאפן צוריק וואס דער מלך חדש האט צוגעכאפט. ער בענטשט דעם בחור ער זאל אויסוואקסן א תלמיד חכם און א חסיד.",
+          "sourceIdx": [],
+          "evidence": { "segs": [120, 125, 127, 128, 131], "confidence": 0.75 }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "shiurId": "yi-simchos-unc-bris-pidyon-haben-30",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4b-v2",
+  "extractionVariant": "extraction",
+  "en": [
+    {
+      "sectionIndex": 0,
+      "heading": "The son who asks and Eliyahu HaNavi",
+      "paragraphs": [
+        {
+          "text": "Speaking at a bris in Nissan, the Rav opens with the Haggadah's words about the son who asks. He speaks of Eliyahu HaNavi, who comes to the bris, in connection with questions and with the great time of freedom. Much of this opening is too garbled to follow.",
+          "sourceIdx": [0],
+          "evidence": { "segs": [1, 2, 4, 12, 13], "confidence": 0.6 }
+        }
+      ]
+    },
+    {
+      "sectionIndex": 1,
+      "heading": "Chametz, the yetzer hara and milah",
+      "paragraphs": [
+        {
+          "text": "The Rav explains that chametz has many names, all pointing to the yetzer hara. Milah, he says, carries the theme of Aleinu, removing impurity from the land. Since this bris falls during biur chametz, he asks that Hashem clear the chametz from the world, and blesses the family with a joyous Pesach.",
+          "sourceIdx": [1],
+          "evidence": { "segs": [45, 49, 52, 55, 61, 82], "confidence": 0.7 }
+        }
+      ]
+    }
+  ],
+  "yi": [
+    {
+      "sectionIndex": 0,
+      "heading": "וכאן הבן שואל און אליהו הנביא",
+      "paragraphs": [
+        {
+          "text": "ביי א ברית אין חודש ניסן עפנט דער משגיח מיט די ווערטער פון דער הגדה, \"וכאן הבן שואל\". ער רעדט וועגן אליהו הנביא, וואס קומט צום ברית, אין שייכות מיט קשיות און מיט דער גרויסער צייט פון חירות. א סך פון דעם אנהייב איז צו צומישט כדי צו פארשטיין.",
+          "sourceIdx": [0],
+          "evidence": { "segs": [1, 2, 4, 12, 13], "confidence": 0.6 }
+        }
+      ]
+    },
+    {
+      "sectionIndex": 1,
+      "heading": "חמץ, דער יצר הרע און די מילה",
+      "paragraphs": [
+        {
+          "text": "דער משגיח ערקלערט אז חמץ האט אסאך נעמען, אבער אלע מיינען זיי דעם יצר הרע. די מילה, זאגט ער, טראגט דעם ענין פון עלינו, להעביר גלולים מן הארץ. ווייל דער ברית קומט בשעת ביעור חמץ, בעט ער אז השם יתברך זאל אויסרוימען דעם חמץ פון דער וועלט, און בענטשט די משפחה מיט א פרייליכן פסח.",
+          "sourceIdx": [1],
+          "evidence": { "segs": [45, 49, 52, 55, 61, 82], "confidence": 0.7 }
+        }
+      ]
+    }
+  ]
+}

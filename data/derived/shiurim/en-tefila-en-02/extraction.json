@@ -1,0 +1,440 @@
+{
+  "shiurId": "en-tefila-en-02",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "The Rav introduces Mizmor Shir L'yom HaShabbos as the song Shabbos itself sings: the harmony of all of creation, which will be seen in full on the day that is entirely Shabbos.",
+      "yi": "דער משגיח לערנט אריין אין \"מזמור שיר ליום השבת\" אלס דאס ליד וואס דער שבת אליין זינגט: די הארמאניע פון דער גאנצער בריאה, וואס מ'וועט זען אינגאנצן אין דעם יום שכולו שבת."
+    },
+    "abstract": {
+      "en": "The Rav opens with the ten authors of Sefer Tehillim, all included in David HaMelech, the harp of seven strings that will have eight and then ten. He ties ten to the ten utterances of creation and explains that the tenth creation is menuchah, satisfaction, created on Shabbos and also found by a chassan and kallah. He then explains that Mizmor Shir L'yom HaShabbos was David's portion in Torah, sung first by Adam HaRishon when Shabbos pleaded for him, and why Tehillim opens the way for tefillah in Pesukei D'zimra. Asking why the song of Shabbos never mentions Shabbos, he explains that the world was created with seven middos, seven notes; music is their harmonious arrangement. History is such a harmony, though a person sees only a dark patch, like a fly on a painting. Mizmor Shir sings of the day that is entirely Shabbos, when everyone will see the whole picture and have menuchah.",
+      "yi": "דער משגיח עפנט מיט די צען מחברים פון ספר תהלים, וואס זענען אלע אריינגערעכנט אין דוד המלך, דער כנור מיט זיבן סטרונעס וואס וועט האבן אכט און דערנאך צען. ער בינדט צען צו די עשרה מאמרות, און ערקלערט אז די צענטע בריאה איז מנוחה, א געפיל פון צופרידנקייט, וואס איז באשאפן געווארן אום שבת און געפינט זיך אויך ביי א חתן און כלה. דערנאך ערקלערט ער אז \"מזמור שיר ליום השבת\" איז געווען דוד המלכ'ס חלק אין תורה, וואס אדם הראשון האט שוין געזאגט ווען דער שבת האט זיך פאר אים איינגעשטעלט, און פארוואס תהלים עפנט דעם וועג פאר תפילה אין פסוקי דזמרה. ער פרעגט פארוואס דאס ליד פון שבת דערמאנט נישט שבת, און ערקלערט אז די וועלט איז באשאפן מיט זיבן מדות, זיבן קולות; ניגון איז ווען זיי זענען צוזאמגעשטעלט אין הארמאניע. די היסטאריע איז אזא הארמאניע, נאר א מענטש זעט בלויז א שווארצן פלעק, ווי א פליג אויף א בילד. \"מזמור שיר\" זינגט וועגן דעם יום שכולו שבת, ווען מ'וועט זען דאס גאנצע בילד און האבן מנוחה."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Sefer Tehillim has ten authors, matching the ten utterances of creation, yet all of it belongs to David HaMelech, the harp whose strings grow from seven to eight to ten.",
+          "yi": "ספר תהלים האט צען מחברים, קעגן די עשרה מאמרות, אבער אלעס געהערט צו דוד המלך, דער כנור וועמענס סטרונעס וואקסן פון זיבן צו אכט צו צען."
+        },
+        "evidence": { "segs": [1, 5, 10, 12, 17, 213], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The Rav explains that menuchah, the satisfaction of lacking nothing, was itself a creation made on Shabbos, and the bond of chassan and kallah is that same creation.",
+          "yi": "דער משגיח ערקלערט אז מנוחה, דאס געפיל אז מ'פעלט גארנישט, איז אליין א בריאה וואס איז באשאפן געווארן אום שבת, און דער קשר פון חתן און כלה איז די זעלבע בריאה."
+        },
+        "evidence": { "segs": [61, 72, 120, 123, 136, 140], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Mizmor Shir L'yom HaShabbos is David HaMelech's portion in Torah, which Adam HaRishon brought out first, with David's permission, after Shabbos pleaded for him.",
+          "yi": "\"מזמור שיר ליום השבת\" איז דוד המלכ'ס חלק אין תורה, וואס אדם הראשון האט ארויסגעברענגט פריער, מיט דוד המלכ'ס רשות, נאכדעם וואס דער שבת האט זיך פאר אים איינגעשטעלט."
+        },
+        "evidence": { "segs": [260, 302, 319, 326, 329, 331], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Pesukei D'zimra, saying David's Tehillim before davening, cuts a path through the accusers, since David says his words together with the one who says them.",
+          "yi": "פסוקי דזמרה, וואס מ'זאגט דוד המלכ'ס תהלים פאר'ן דאווענען, שניידט א וועג דורך די מקטרגים, ווייל דוד זאגט זיינע ווערטער מיט צוזאמען מיט דעם וואס זאגט זיי."
+        },
+        "evidence": { "segs": [423, 444, 450, 454, 469, 499], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "The world was created with seven middos, seven notes, and every event is one of them or a combination; music is their harmonious arrangement, not a random striking of keys.",
+          "yi": "די וועלט איז באשאפן געווארן מיט זיבן מדות, זיבן קולות, און יעדע געשעעניש איז איינס פון זיי אדער א צוזאמשטעל; ניגון איז ווען זיי זענען צוזאמגעשטעלט אין הארמאניע, נישט סתם געקלאפט אויף קלאווישן."
+        },
+        "evidence": { "segs": [564, 567, 614, 634, 668, 692], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Mizmor Shir L'yom HaShabbos sings of the day that is entirely Shabbos, when the whole design of history will be seen and the world will have menuchah; the weekly Shabbos is a small taste of it.",
+          "yi": "\"מזמור שיר ליום השבת\" זינגט וועגן דעם יום שכולו שבת, ווען מ'וועט זען דעם גאנצן פלאן פון דער היסטאריע און די וועלט וועט האבן מנוחה; דער וועכנטליכער שבת איז א קליינער טעם דערפון."
+        },
+        "evidence": { "segs": [806, 814, 862, 871, 878, 898], "confidence": 0.85 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "e-english-sets-tefilah-01-2-tefilla",
+      "startSeg": 0,
+      "endSeg": 54,
+      "title": { "en": "Ten authors, one harp, ten utterances", "yi": "צען מחברים, איין כנור, עשרה מאמרות" },
+      "summary": {
+        "en": "The Rav lists the ten authors of Tehillim and says all of it is David HaMelech's, the harp of seven strings that will have eight with Mashiach and ten later. He links ten to the ten utterances of creation, and brings the Gemara that Bereishis itself is the first utterance containing all the others.",
+        "yi": "דער משגיח רעכנט אויס די צען מחברים פון תהלים און זאגט אז אלעס איז דוד המלכ'ס, דער כנור פון זיבן סטרונעס וואס וועט האבן אכט ביי משיח און צען שפעטער. ער בינדט צען צו די עשרה מאמרות, און ברענגט די גמרא אז \"בראשית\" אליין איז דער ערשטער מאמר וואס כולל אלע אנדערע."
+      },
+      "kind": "intro",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tefilah-01-2-tefilla",
+      "startSeg": 55,
+      "endSeg": 204,
+      "title": { "en": "Menuchah: the creation of Shabbos", "yi": "מנוחה: די בריאה פון שבת" },
+      "summary": {
+        "en": "The Rav explains that the bond of chassan and kallah is a creation called Shabbos, and brings Rashi that what the world lacked was menuchah, which was created on Shabbos. Menuchah means satisfaction; he then explains that Kabbalas Shabbos is made with Bo'i Kallah, and describes its three phases.",
+        "yi": "דער משגיח ערקלערט אז דער קשר פון חתן און כלה איז א בריאה וואס הייסט שבת, און ברענגט רש\"י אז וואס די וועלט האט געפעלט איז מנוחה, וואס איז באשאפן געווארן אום שבת. מנוחה מיינט צופרידנקייט; דערנאך ערקלערט ער אז מ'מקבל שבת ביי \"בואי כלה\", און באשרייבט די דריי שטאפלען פון קבלת שבת."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tefilah-01-2-tefilla",
+      "startSeg": 205,
+      "endSeg": 347,
+      "title": { "en": "David's portion, sung first by Adam", "yi": "דוד המלכ'ס חלק, וואס אדם הראשון האט געזונגען" },
+      "summary": {
+        "en": "The Rav explains that every Jew has his portion of chiddushim in Torah, which someone earlier may bring out before its time. Tehillim is David HaMelech's portion, and Adam HaRishon, saved from expulsion when Shabbos pleaded for him, sang Mizmor Shir L'yom HaShabbos with David's permission.",
+        "yi": "דער משגיח ערקלערט אז יעדער איד האט זיין חלק חידושים אין תורה, וואס איינער פריער קען ארויסברענגען פאר דער צייט. תהלים איז דוד המלכ'ס חלק, און אדם הראשון, וואס איז געראטעוועט געווארן פון ווערן פארטריבן ווען דער שבת האט זיך פאר אים איינגעשטעלט, האט געזונגען \"מזמור שיר ליום השבת\" מיט דוד המלכ'ס רשות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tefilah-01-2-tefilla",
+      "startSeg": 348,
+      "endSeg": 512,
+      "title": { "en": "Why Tehillim clears the way for tefillah", "yi": "פארוואס תהלים עפנט דעם וועג פאר תפילה" },
+      "summary": {
+        "en": "The Rav says all yeshuos are in Sefer Tehillim, and explains that Pesukei D'zimra cuts away the accusers who block tefillos from rising. Since David says his words together with the one who says them, his name works like a royal stamp on a letter that the guards must let through.",
+        "yi": "דער משגיח זאגט אז אלע ישועות ליגן אין ספר תהלים, און ערקלערט אז פסוקי דזמרה שניידט אפ די מקטרגים וואס לאזן נישט די תפילות ארויפגיין. ווייל דוד זאגט מיט זיינע ווערטער צוזאמען, ארבעט זיין נאמען ווי דעם קעניגס חתימה אויף א בריוו וואס די וועכטער מוזן דורכלאזן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tefilah-01-2-tefilla",
+      "startSeg": 513,
+      "endSeg": 653,
+      "title": { "en": "The song Shabbos sings, and seven notes", "yi": "דאס ליד וואס שבת זינגט, און זיבן קולות" },
+      "summary": {
+        "en": "The Rav contrasts the Levi'im's daily songs with Shabbos, where the day itself sings, since Shabbos completes the seven strings. He asks why this song never mentions Shabbos, and begins to answer: the world was created with seven middos, one per day, and every event and every sound is one of seven notes.",
+        "yi": "דער משגיח שטעלט אקעגן די לוים'ס שיר של יום פון יעדן טאג מיט שבת, ווען דער טאג אליין זינגט, ווייל שבת פארענדיקט די זיבן סטרונעס. ער פרעגט פארוואס דאס ליד דערמאנט נישט שבת, און הייבט אן ענטפערן: די וועלט איז באשאפן מיט זיבן מדות, איינע יעדן טאג, און יעדע געשעעניש און יעדער קול איז איינס פון זיבן קולות."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tefilah-01-2-tefilla",
+      "startSeg": 654,
+      "endSeg": 758,
+      "title": { "en": "Music is harmony; so is history", "yi": "ניגון איז הארמאניע, אזוי אויך די היסטאריע" },
+      "summary": {
+        "en": "The Rav explains that music is not random notes, like a cat on a piano, but notes arranged to match, which is why a chassan and kallah have music. The world is such a symphony: history fits together toward one purpose, and one who knows everything is for his good feels satisfied.",
+        "yi": "דער משגיח ערקלערט אז ניגון איז נישט סתם קולות, ווי א קאץ וואס גייט אויף א פיאנא, נאר קולות וואס פאסן צוזאמען, און דערפאר האט מען מוזיק ביי א חתן און כלה. די וועלט איז אזא סימפאניע: די היסטאריע פאסט צוזאמען צו איין תכלית, און ווער עס ווייסט אז אלעס איז פאר זיין גוטן איז צופרידן."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "e-english-sets-tefilah-01-2-tefilla",
+      "startSeg": 759,
+      "endSeg": 923,
+      "title": { "en": "The fly on the painting and the great Shabbos", "yi": "די פליג אויפ'ן בילד און דער גרויסער שבת" },
+      "summary": {
+        "en": "The Rav explains that Mizmor Shir speaks of the past, present and future of the world. Like a fly on a black patch of a masterpiece, people see only the dark part; when Mashiach comes, on the day that is entirely Shabbos, everyone will see the whole design and have menuchah, and the weekly Shabbos is a small reflection of it.",
+        "yi": "דער משגיח ערקלערט אז \"מזמור שיר\" רעדט וועגן דעם עבר, הוה און עתיד פון דער וועלט. ווי א פליג אויף א שווארצן פלעק פון א שיין בילד, זעען מענטשן נאר דעם פינצטערן טייל; ווען משיח וועט קומען, אין דעם יום שכולו שבת, וועט יעדער זען דעם גאנצן פלאן און האבן מנוחה, און דער וועכנטליכער שבת איז א קליינע אפשפיגלונג דערפון."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "Like the Gemara says in Erechem / There were seven strings on the harp",
+      "work": "Gemara Arachin",
+      "ref": "Arachin 13b",
+      "sefariaRef": "Arakhin 13b",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [9, 10, 12, 17], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "the gemara asks there is only nine times ... Barashas Nami Maimah",
+      "work": "Gemara Rosh Hashanah",
+      "ref": "Rosh Hashanah 32a",
+      "sefariaRef": "Rosh Hashanah 32a",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [29, 30, 32, 33], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "in the Zaya there is another Sheet",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [51, 53, 54], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "Bechus Chasanim, Ashabara, Chasun and Simcha, Chasun and Kala",
+      "work": "Sheva Brachos",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "quoted",
+      "evidence": { "segs": [59, 60], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Rasha answers the Teret ... Ma hai ha'ilam chaseya Minucha Ba Shabbos Ba Minucha",
+      "work": "Rashi",
+      "ref": "Rashi on Bereishis 2:2",
+      "sefariaRef": "Rashi on Genesis 2:2",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [84, 93, 103, 105, 107], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Naomi parted with Rus ... when Naomi was looking for a chas and for Rus",
+      "work": "Megillas Rus",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [125, 129, 130], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "the Shulchan Aruch says we are Mechabal Shabbos",
+      "work": "Shulchan Aruch",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [150, 151, 152], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "Hav Shloymer Al-Kabbat composed the Shira Vlachadaydi",
+      "work": "Lecha Dodi",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [159, 160, 167, 170], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "in the Gemara it says that in Tanoim and Amayroim when Mikabur Shabbos by saying Bayi Echala",
+      "work": "Gemara Shabbos",
+      "ref": "Shabbos 119a",
+      "sefariaRef": "Shabbat 119a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [174, 175, 176, 177], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "the madrash tells us that Rabbi Ishiya in Pashat Vayishlech said over a chiddush which he heard from Anamaret",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [225, 226, 227, 229], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "the Gemara says when I say a piece of Torah from somebody his lips repeat that piece of Torah in his kava",
+      "work": "Gemara Yevamos",
+      "ref": "Yevamos 97a",
+      "sefariaRef": "Yevamot 97a",
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [461, 462, 464, 465], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "Kisizma Yakamacha",
+      "work": "Vayikra",
+      "ref": "Vayikra 25:3",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [446, 447], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "Mizmashiyah Yayim HaShabbos / Mizmah Shia Liayma Shabbos",
+      "work": "Tehillim",
+      "ref": "Tehillim 92",
+      "sefariaRef": "Psalms 92",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [146, 205, 332, 519, 528], "confidence": 0.9 }
+    },
+    {
+      "heardAs": "Ledaud, Mizma, Gel Shem Harat Simalaya",
+      "work": "Tehillim",
+      "ref": "Tehillim 24",
+      "sefariaRef": "Psalms 24",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [515, 516], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "Shein Mizma ... On Monday",
+      "work": "Tehillim",
+      "ref": "Tehillim 48",
+      "sefariaRef": "Psalms 48",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [517], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "it doesn't say Kitoiv ... B'Namayim Hashem Mayal O'Rekiyah ... Mitachas O'Rekiyah",
+      "work": "Bereishis",
+      "ref": "Bereishis 1:6-8",
+      "sefariaRef": "Genesis 1:7",
+      "resolution": "inferred",
+      "mention": "alluded",
+      "evidence": { "segs": [573, 574, 585, 587], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "The Kaum HaDi Avot, Achmana, the Tavavot",
+      "work": "Gemara Berachos",
+      "ref": "Berachos 60b",
+      "sefariaRef": "Berakhot 60b",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [905, 906], "confidence": 0.7 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "Bereishis counts as the first of the ten utterances because it created speech itself, before any utterance existed, and like every beginning it contains all that follows.",
+        "yi": "\"בראשית\" ווערט גערעכנט פאר'ן ערשטן פון די עשרה מאמרות ווייל עס האט באשאפן די רייד אליין, פאר עס איז געווען א מאמר, און ווי יעדער אנהייב כולל עס אלעס וואס קומט נאכדעם."
+      },
+      "evidence": { "segs": [36, 39, 43, 45, 48], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "Menuchah is not merely the absence of creating; the fact that Hashem rested was itself a creation, the satisfaction of lacking nothing, and that is why people sing 'Shabbos' when dancing before a chassan and kallah even on a weekday.",
+        "yi": "מנוחה איז נישט בלויז אז מ'האט אויפגעהערט באשאפן; דאס וואס דער אויבערשטער האט גערוט איז אליין א בריאה, די צופרידנקייט אז מ'פעלט גארנישט, און דערפאר זינגט מען \"שבת\" ביים טאנצן פאר א חתן און כלה אפילו אינמיטן דער וואך."
+      },
+      "evidence": { "segs": [77, 115, 118, 120, 136, 140], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Pesukei D'zimra comes from the word for pruning, as in cutting the branches of a vineyard: the verses cut away the accusers who block the tefillos.",
+        "yi": "פסוקי דזמרה איז פונעם לשון פון שניידן, ווי מ'שניידט די צווייגן אין א וויינגארטן: די פסוקים שניידן אפ די מקטרגים וואס פארשטעלן די תפילות."
+      },
+      "evidence": { "segs": [442, 444, 448, 450, 452], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "Saying David's Tehillim is like carrying a letter stamped by the king's minister: the guards must let it through, and once the way is cleared, one's own tefillos rise after it.",
+        "yi": "ווען מ'זאגט דוד המלכ'ס תהלים איז עס ווי מ'טראגט א בריוו מיט דעם קעניגס חתימה: די וועכטער מוזן עס דורכלאזן, און אז דער וועג איז אפגעראמט גייען די אייגענע תפילות אויך ארויף."
+      },
+      "evidence": { "segs": [480, 487, 490, 499, 510, 512], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "On weekdays the Levi'im sang for the day, but on Shabbos the day itself sings, because Shabbos is the completion of the harp's seven strings.",
+        "yi": "אין דער וואכן האבן די לוים געזונגען פאר'ן טאג, אבער אום שבת זינגט דער טאג אליין, ווייל שבת איז די פארענדיקונג פון די זיבן סטרונעס פונעם כנור."
+      },
+      "evidence": { "segs": [523, 524, 527, 532, 537], "confidence": 0.85 }
+    },
+    {
+      "text": {
+        "en": "The song of Shabbos does not mention Shabbos because it sings of history's harmony and its purpose, the day that is entirely Shabbos, of which the weekly Shabbos is a miniature.",
+        "yi": "דאס ליד פון שבת דערמאנט נישט שבת, ווייל עס זינגט וועגן דער הארמאניע פון דער היסטאריע און איר תכלית, דעם יום שכולו שבת, און דער וועכנטליכער שבת איז א מיניאטור דערפון."
+      },
+      "evidence": { "segs": [760, 767, 862, 864, 878], "confidence": 0.8 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "Shabbos pleads for Adam HaRishon", "yi": "דער שבת שטעלט זיך איין פאר אדם הראשון" },
+      "retelling": {
+        "en": "Adam HaRishon was sentenced to be sent out of Gan Eden on Erev Shabbos in the afternoon. Shabbos came before Hashem and pleaded that Adam be allowed to stay over Shabbos, and he stayed. Later, after Kayin killed Hevel and did teshuvah, Adam learned of the power of teshuvah, and the Rav says this is the power of Shabbos. Adam then sang Mizmor Shir L'yom HaShabbos, David HaMelech's song, with his permission.",
+        "yi": "אדם הראשון איז געווען פאראורטיילט צו ווערן ארויסגעטריבן פון גן עדן ערב שבת נאכמיטאג. דער שבת איז געקומען פאר'ן רבונו של עולם און זיך איינגעשטעלט אז אדם זאל בלייבן איבער שבת, און ער איז געבליבן. שפעטער, נאכדעם וואס קין האט געהרגעט הבל און תשובה געטון, האט אדם זיך דערוואוסט פון דעם כח פון תשובה, און דער משגיח זאגט אז דאס איז דער כח פון שבת. דאן האט אדם געזונגען \"מזמור שיר ליום השבת\", דוד המלכ'ס ליד, מיט זיין רשות."
+      },
+      "people": ["Adam HaRishon", "Kayin", "Hevel", "David HaMelech"],
+      "evidence": { "segs": [286, 289, 298, 302, 306, 317], "confidence": 0.7 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "There are ten utterances of creation, yet 'and He said' appears only nine times.", "yi": "עס זענען דא עשרה מאמרות, און \"ויאמר\" שטייט נאר ניין מאל." },
+      "answer": { "en": "Bereishis is also an utterance; it created speech itself and contains all the others.", "yi": "\"בראשית\" איז אויך א מאמר; עס האט באשאפן די רייד אליין און כולל אלע אנדערע." },
+      "questionSegs": [28, 29, 30],
+      "answerSegs": [32, 34, 36, 45],
+      "confidence": 0.8
+    },
+    {
+      "question": { "en": "If creation was finished on the sixth day, what was created on Shabbos?", "yi": "אויב די בריאה איז פארענדיקט געווארן דעם זעקסטן טאג, וואס איז באשאפן געווארן אום שבת?" },
+      "answer": { "en": "Through Rashi: the world lacked menuchah, and menuchah itself was created on Shabbos.", "yi": "לויט רש\"י: די וועלט האט געפעלט מנוחה, און מנוחה אליין איז באשאפן געווארן אום שבת." },
+      "questionSegs": [79, 82],
+      "answerSegs": [103, 105, 109, 121],
+      "confidence": 0.7
+    },
+    {
+      "question": { "en": "Why does Mizmor Shir L'yom HaShabbos say nothing about Shabbos, only about tzaddikim and resha'im?", "yi": "פארוואס דערמאנט \"מזמור שיר ליום השבת\" גארנישט פון שבת, נאר פון צדיקים און רשעים?" },
+      "answer": { "en": "It sings of the harmony and purpose of history, which will be seen on the day that is entirely Shabbos.", "yi": "עס זינגט וועגן דער הארמאניע און דעם תכלית פון דער היסטאריע, וואס מ'וועט זען אין דעם יום שכולו שבת." },
+      "questionSegs": [547, 550, 552, 558],
+      "answerSegs": [760, 767, 862, 878],
+      "confidence": 0.8
+    }
+  ],
+  "takeaways": [
+    {
+      "text": {
+        "en": "The Rav says that Klal Yisrael has a tradition that when someone needs a yeshuah, Tehillim is said.",
+        "yi": "דער משגיח זאגט אז כלל ישראל האט א קבלה אז ווען איינער דארף א ישועה זאגט מען תהלים."
+      },
+      "evidence": { "segs": [356, 358, 360, 362], "confidence": 0.8 }
+    },
+    {
+      "text": {
+        "en": "The Rav says that to understand the world one has to study it in the light of Torah, the way Hashem tells us to understand it.",
+        "yi": "דער משגיח זאגט אז כדי צו פארשטיין די וועלט דארף מען זי לערנען אין דעם ליכט פון דער תורה, ווי דער רבונו של עולם זאגט אונז זי צו פארשטיין."
+      },
+      "evidence": { "segs": [701, 703, 705, 707], "confidence": 0.85 }
+    }
+  ],
+  "candidateTopics": [
+    "mizmor shir l'yom haShabbos",
+    "Shabbos as menuchah and satisfaction",
+    "ten utterances of creation",
+    "pesukei d'zimra",
+    "power of Tehillim",
+    "seven middos of creation",
+    "harmony of history",
+    "yom shekulo Shabbos",
+    "kabbalas Shabbos"
+  ],
+  "concepts": [
+    { "he": "עשרה מאמרות", "heardAs": ["asara ma'amaris", "Aseram Amaris", "Maimah", "mamorim"] },
+    { "he": "בראשית נמי מאמר הוא", "heardAs": ["Barashas Nami Maimah"] },
+    { "he": "מנוחה", "heardAs": ["Manukha", "Minucha", "Menuche", "Menuhah"] },
+    { "he": "חתן וכלה", "heardAs": ["Chasun and Kala", "Achas and Akala", "chas and the khala"] },
+    { "he": "קבלת שבת", "heardAs": ["Mechabal Shabbos", "Mikabur Shabbos", "Kabbalah Shabbos"] },
+    { "he": "בואי כלה", "heardAs": ["Ba Yechala", "Bayi Echala"] },
+    { "he": "נשמה יתירה", "heardAs": ["Neshama Yaseira", "Nefesh Yaseira", "Ruach Yaseira"] },
+    { "he": "פסוקי דזמרה", "heardAs": ["psukit azimrah", "Psukita Zimra", "Psukit Izimra"] },
+    { "he": "מקטרגים", "heardAs": ["mekatrigim", "Mekatregim"] },
+    { "he": "שיר של יום", "heardAs": ["Shia Shal Yom"] },
+    { "he": "יום שכולו שבת", "heardAs": ["Yom Shekul Hay Shabbos", "Yim Shekul HaShabbos", "Yom Shikur HaShabbos"] },
+    { "he": "רבונו של עולם", "heardAs": ["Bani Shaleelam", "Rabbi Yisholem", "Rabbani Shalom", "Rabbi Yashleilam"] },
+    { "he": "נעים זמירות ישראל", "heardAs": ["Im Zmir Eis Yisrael", "Im Zemira"] }
+  ],
+  "people": [
+    { "name": "David HaMelech", "heardAs": ["Zebedah Melech", "Zebed HaMelech", "David HaMalach", "David Amalek"] },
+    { "name": "Adam HaRishon", "heardAs": ["Odomarishan", "Adam HaRishan", "Adam Elisha", "Odomerishim"] },
+    { "name": "Rashi", "heardAs": ["Rasha"] },
+    { "name": "Naomi", "heardAs": ["Naomi"] },
+    { "name": "Rus", "heardAs": ["Rus"] },
+    { "name": "Rabbi Shlomo Alkabetz", "heardAs": ["Hav Shloymer Al-Kabbat"] },
+    { "name": "Rabbi Hoshaya", "heardAs": ["Rabbi Ishiya"] },
+    { "name": "Kayin", "heardAs": ["Kayin"] },
+    { "name": "Hevel", "heardAs": ["Hevel"] }
+  ],
+  "asrNotes": "English ASR is fair for the English speech; Hebrew terms and quotations are heavily garbled but mostly recoverable from context. The source the Rav attributes to 'the Yerushach HaKadosh' (segs 216-217) and the phrases at segs 540-542 and 848-850 could not be identified. The Zohar reference at segs 51-54 is unclear. The middle of the Adam HaRishon story (segs 305-317) is fragmentary."
+}

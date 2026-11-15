@@ -1,0 +1,43 @@
+{
+  "shiurId": "yi-simchos-unc-bris-pidyon-haben-23",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4b-v2",
+  "extractionVariant": "extraction",
+  "en": [
+    {
+      "sectionIndex": 0,
+      "heading": "Hardened heart and circumcised heart",
+      "paragraphs": [
+        {
+          "text": "The Rav describes how the plagues of Egypt were made heavier by the hardening of the heart, while all of it became a salvation for the Jews. Since the Torah is a Torah of life, the week of Beshalach, in the weeks of Shovavim, gives strength against that hardness.",
+          "sourceIdx": [1],
+          "evidence": { "segs": [0, 1, 14, 21], "confidence": 0.65 }
+        },
+        {
+          "text": "A bris of the flesh, he explains, awakens in Heaven the verse that Hashem will circumcise the heart. He blesses the child to grow into an upright Jew.",
+          "sourceIdx": [0],
+          "evidence": { "segs": [28, 33, 38], "confidence": 0.7 }
+        }
+      ]
+    }
+  ],
+  "yi": [
+    {
+      "sectionIndex": 0,
+      "heading": "כבדות הלב און מילת הלב",
+      "paragraphs": [
+        {
+          "text": "דער משגיח שילדערט ווי די מכות פון מצרים זענען געווארן שווערער דורך דער כבדות הלב, און פון דעם אלעם איז געווארן א ישועה פאר אידן. ווייל די תורה איז א תורת חיים, גיט די וואך פון בשלח, אין די וואכן פון שובבים, כח קעגן דער כבדות.",
+          "sourceIdx": [1],
+          "evidence": { "segs": [0, 1, 14, 21], "confidence": 0.65 }
+        },
+        {
+          "text": "א מילה פונעם בשר, ערקלערט ער, איז מעורר אין הימל דעם פסוק \"ומל ה' אלקיך את לבבך\". ער בענטשט אז דאס קינד זאל אויסוואקסן אן ערליכער איד.",
+          "sourceIdx": [0],
+          "evidence": { "segs": [28, 33, 38], "confidence": 0.7 }
+        }
+      ]
+    }
+  ]
+}

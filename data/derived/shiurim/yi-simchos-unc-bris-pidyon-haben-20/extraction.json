@@ -1,0 +1,202 @@
+{
+  "shiurId": "yi-simchos-unc-bris-pidyon-haben-20",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "At a bris during Shovevim, the Rav explains that milah both draws chassadim onto Klal Yisroel and brings judgment on the nations, and that a bris on a Friday of Shovevim is an especially great tikkun.",
+      "yi": "ביי א ברית אין שובבי\"ם ערקלערט דער משגיח אז מילה איז ממשיך חסדים אויף כלל ישראל און דין אויף די אומות העולם, און אז א ברית אויף א פרייטאג אין שובבי\"ם איז א ספעציעל גרויסער תיקון."
+    },
+    "abstract": {
+      "en": "The Rav opens with a passuk whose first letters and last letters both spell milah, which is rarely found. First letters, he explains, stand for chessed, drawing good onto Klal Yisroel, and last letters for din on the wicked. He shows the same pair in the Exodus, where the plagues struck Mitzrayim and healed the Jews, and in the Megillah: the first letters of Esther's words 'yavo hamelech veHaman hayom' draw chassadim onto Klal Yisroel, while the last letters of Haman's words draw din onto the nations. Milah has both sides: removing the orlah, and drawing chassadim from Avraham Avinu, which is why it was given as the Jews went into exile. In Shovevim, the time of tikkun, a bris is a great tikkun, since Eliyahu Hanavi is present; on Friday, the main day of Shovevim, all the more. He applies this to the dangers facing Jews today and closes with brachos for the child and family.",
+      "yi": "דער משגיח עפנט מיט א פסוק וואו סיי די ראשי תיבות און סיי די סופי תיבות זענען \"מילה\", א זאך וואס מ'געפינט נישט געוויינלעך. ראשי תיבות, ערקלערט ער, איז מידת החסד, משפיע זיין גוטס אויף כלל ישראל, און סופי תיבות איז מידת הדין אויף די רשעים. דאס זעט מען ביי יציאת מצרים, וואו די מכות זענען געווען א מכה פאר די מצריים און א רפואה פאר די אידן, און אין דער מגילה: \"יבוא המלך והמן היום\" אין די ראשי תיבות איז ממשיך חסדים אויף כלל ישראל, און המן'ס ווערטער אין די סופי תיבות ברענגען דין אויף די אומות העולם. ביי מילה זענען דא ביידע ענינים: מ'נעמט אראפ די ערלה, און מ'איז ממשיך חסדים פון אברהם אבינו; דערפאר האט מען עס געגעבן ווען אידן זענען אראפ אין גלות. אין שובבי\"ם, די צייט פון תיקון, איז א ברית א גרויסער תיקון, ווייל אליהו הנביא איז דארט; אויף א פרייטאג, דער עיקר טאג פון שובבי\"ם, נאך מער. ער ווענדט עס צו צו די סכנות פון אידן היינט, און ענדיגט מיט ברכות פארן קינד און די משפחה."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "First letters (rashei teivos) stand for the attribute of chessed toward Klal Yisroel, and last letters (sofei teivos) for the attribute of din on the wicked.",
+          "yi": "ראשי תיבות איז מידת החסד צו משפיע זיין גוטס אויף כלל ישראל, און סופי תיבות איז מידת הדין אויף די רשעים."
+        },
+        "evidence": { "segs": [14, 15, 16, 17, 18, 19], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "In the Megillah, Esther's words carry Hashem's name in their first letters, drawing chassadim on Klal Yisroel, while Haman's words carry it in their last letters, drawing din on the nations.",
+          "yi": "אין דער מגילה זענען אסתר'ס ווערטער \"יבוא המלך והמן היום\" ראשי תיבות, ממשיך חסדים אויף כלל ישראל, און המן'ס ווערטער סופי תיבות, ממשיך דין אויף די אומות העולם."
+        },
+        "evidence": { "segs": [31, 33, 34, 35, 36, 39], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Milah contains both aspects: it removes the orlah, and it draws chassadim from Avraham Avinu, the head of chessed, onto the Jews.",
+          "yi": "ביי מילה זענען דא ביידע ענינים: מ'נעמט אראפ די ערלה, און מ'איז ממשיך חסדים פון אברהם אבינו, דער ראש החסד, אויף די אידן."
+        },
+        "evidence": { "segs": [48, 49, 51, 55, 56], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Shovevim is a time of tikkun, and a bris is a great tikkun, since Eliyahu Hanavi is present at it.",
+          "yi": "שובבי\"ם איז א צייט פון תיקון, און א ברית איז א גרויסער תיקון, ווייל אליהו הנביא איז דארט."
+        },
+        "evidence": { "segs": [75, 76, 77, 79, 81], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Friday, the sixth day, is the main day of tikkun in Shovevim, so a bris on a Friday of Shovevim is all the more precious.",
+          "yi": "פרייטאג, דער זעקסטער טאג, איז דער עיקר תיקון פון שובבי\"ם, ממילא איז א ברית אויף א פרייטאג אין שובבי\"ם נאך מער חביב."
+        },
+        "evidence": { "segs": [86, 87, 88, 89, 109, 111], "confidence": 0.75 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "y-simchos-bris-pidyon-haben-20-bris-milah-shovevim",
+      "startSeg": 0,
+      "endSeg": 92,
+      "title": {
+        "en": "Milah in first and last letters",
+        "yi": "מילה אין ראשי תיבות און סופי תיבות"
+      },
+      "summary": {
+        "en": "The Rav explains that first letters stand for chessed and last letters for din, shows both in the Exodus and the Megillah, and explains that milah removes the orlah and draws chassadim. He then explains why a bris in Shovevim, and especially on a Friday, is a great tikkun.",
+        "yi": "דער משגיח ערקלערט אז ראשי תיבות איז חסד און סופי תיבות איז דין, ווייזט עס ביי יציאת מצרים און אין דער מגילה, און ערקלערט אז מילה נעמט אראפ די ערלה און איז ממשיך חסדים. דערנאך ערקלערט ער פארוואס א ברית אין שובבי\"ם, בפרט אויף א פרייטאג, איז א גרויסער תיקון."
+      },
+      "kind": "main",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    },
+    {
+      "recordingId": "y-simchos-bris-pidyon-haben-20-bris-milah-shovevim",
+      "startSeg": 93,
+      "endSeg": 147,
+      "title": {
+        "en": "Today's need and brachos for the family",
+        "yi": "וואס מ'דארף היינט, און ברכות פאר דער משפחה"
+      },
+      "summary": {
+        "en": "The Rav says that Jews today, threatened by the nations and surrounded in Eretz Yisroel, need both sides of milah, and that this bris on a Friday of Shovevim, in a family of Torah, avodah and chessed, draws great chassadim. He blesses the parents and grandparents and recalls the man the child is named after.",
+        "yi": "דער משגיח זאגט אז אידן היינט, וואס זענען באדראעט פון די אומות און ארומגערינגלט אין ארץ ישראל, דארפן ביידע ענינים פון מילה, און אז דער ברית אויף א פרייטאג אין שובבי\"ם, ביי א משפחה פון תורה, עבודה און חסד, איז משפיע גרויסע חסדים. ער בענטשט די עלטערן און די זיידעס און באבעס, און דערמאנט דעם איד וועמענס נאמען דאס קינד באקומט."
+      },
+      "kind": "closing",
+      "catalogTopicIdx": [0],
+      "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "וואס דער בעל הציון זאגט",
+      "work": "Ba'al HaTurim",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [2, 4, 9], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "יציאת מצרים שטעט אין זיירה קודש",
+      "work": "Zohar",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "paraphrased",
+      "evidence": { "segs": [20, 21, 23, 24], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "יבא המלך והאמן היום",
+      "work": "Esther",
+      "ref": "Esther 5:4",
+      "sefariaRef": "Esther 5:4",
+      "resolution": "resolved",
+      "mention": "quoted",
+      "evidence": { "segs": [31, 33, 34], "confidence": 0.85 }
+    },
+    {
+      "heardAs": "זה נגה שבעה לי",
+      "work": "Esther",
+      "ref": "Esther 5:13",
+      "sefariaRef": "Esther 5:13",
+      "resolution": "inferred",
+      "mention": "quoted",
+      "evidence": { "segs": [35, 36, 37], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אורי ושמחה ושושן, זאל מילא",
+      "work": "Gemara Megillah",
+      "ref": "Megillah 16b",
+      "sefariaRef": null,
+      "resolution": "inferred",
+      "mention": "paraphrased",
+      "evidence": { "segs": [45, 47], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אזוי ווי רבי שלמה קאליה דבוריהם דער מדרש",
+      "work": "Midrash",
+      "ref": null,
+      "sefariaRef": null,
+      "resolution": "unresolved",
+      "mention": "alluded",
+      "evidence": { "segs": [82, 83], "confidence": 0.6 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "A passuk whose first and last letters both spell milah is unusual, and it shows that milah carries both chessed for Klal Yisroel and din on the wicked.",
+        "yi": "א פסוק וואו סיי די ראשי תיבות און סיי די סופי תיבות זענען \"מילה\" איז נישט געוויינלעך, און עס ווייזט אז מילה האט אין זיך סיי חסד פאר כלל ישראל און סיי דין אויף די רשעים."
+      },
+      "evidence": { "segs": [4, 9, 10, 11, 63], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "In the Megillah, Esther's words that carry Hashem's name in the first letters drew chassadim on Klal Yisroel, while Haman's own words, with the name in the last letters, drew din on the nations.",
+        "yi": "אין דער מגילה האבן אסתר'ס ווערטער, מיטן שם אין די ראשי תיבות, ממשיך געווען חסדים אויף כלל ישראל, און המן'ס אייגענע ווערטער, מיטן שם אין די סופי תיבות, האבן ממשיך געווען דין אויף די אומות העולם."
+      },
+      "evidence": { "segs": [30, 31, 34, 36, 37, 39], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Milah was given to the Jews as they went down into the exile of Mitzrayim, because exile requires both sides of milah: protection against the nations and the flow of chessed.",
+        "yi": "מילה איז געגעבן געווארן ווען אידן זענען אראפ אין גלות מצרים, ווייל אין גלות דארף מען ביידע ענינים פון מילה: שוץ קעגן די אומות און השפעת חסד."
+      },
+      "evidence": { "segs": [60, 62, 69, 70, 71, 72], "confidence": 0.65 }
+    },
+    {
+      "text": {
+        "en": "Since the main tikkun of Shovevim is on Friday, the sixth day, a bris that falls on a Friday of Shovevim joins the tikkun of milah with the day's own tikkun.",
+        "yi": "ווייל דער עיקר תיקון פון שובבי\"ם איז אויף פרייטאג, דער זעקסטער טאג, פארבינדט א ברית אויף א פרייטאג אין שובבי\"ם דעם תיקון פון מילה מיטן תיקון פונעם טאג."
+      },
+      "evidence": { "segs": [86, 88, 89, 109, 110, 111], "confidence": 0.7 }
+    }
+  ],
+  "stories": [],
+  "questions": [],
+  "takeaways": [],
+  "candidateTopics": [
+    "bris milah",
+    "shovevim",
+    "rashei teivos and sofei teivos",
+    "chessed and din",
+    "purim and the megillah",
+    "eliyahu hanavi at the bris",
+    "exile and protection from the nations"
+  ],
+  "concepts": [
+    { "he": "ראשי תיבות", "heardAs": ["ראשי טובות", "ראשי תלמיד"] },
+    { "he": "סופי תיבות", "heardAs": ["ספר תיבות", "ספר טובות", "סופר תלמיד"] },
+    { "he": "שובבי\"ם", "heardAs": ["שבבים", "שובע בין"] },
+    { "he": "תיקון", "heardAs": ["צוקן", "תקנים"] },
+    { "he": "ערלה", "heardAs": ["ארלע"] },
+    { "he": "מידת החסד", "heardAs": ["מידת החסד"] },
+    { "he": "מידת הדין", "heardAs": ["מיטת הדין"] },
+    { "he": "נגוף ורפוא", "heardAs": ["גוב ורקי"] },
+    { "he": "אומות העולם", "heardAs": ["ימות העולם", "שבע מלמות העולם"] }
+  ],
+  "people": [
+    { "name": "Avraham Avinu", "heardAs": ["אברהם אבינו"] },
+    { "name": "Eliyahu Hanavi", "heardAs": ["אליה נביא", "עלי הנביא"] },
+    { "name": "Haman", "heardAs": ["האמן"] }
+  ],
+  "asrNotes": "Yiddish ASR fair to poor; the opening passuk whose first and last letters both spell milah is badly garbled and could not be identified, nor could the exact Midrash about Eliyahu at the bris (segs 82-83). The catalog title is a filename guess; the shiur is a bris derashah in Shovevim on a Friday. The stretch on the seventy nations and the letter mem (segs 64-68) and the name of the man the child is named after (seg 136) are unclear."
+}

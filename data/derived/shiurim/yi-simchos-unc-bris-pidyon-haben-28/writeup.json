@@ -1,0 +1,65 @@
+{
+  "shiurId": "yi-simchos-unc-bris-pidyon-haben-28",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4b-v2",
+  "extractionVariant": "extraction",
+  "en": [
+    {
+      "sectionIndex": 0,
+      "heading": "Purim and the unquenchable point of Avraham",
+      "paragraphs": [
+        {
+          "text": "The Rav opens with the Gemara that 'sasson' is milah and 'yikar' is tefillin. A Jew has free choice, he explains, yet every Jew holds a pintele Yid from the Avos that cannot be extinguished. This point is above intellect, which is why Jews give their lives for emunah and reach 'ad delo yada' on Purim.",
+          "sourceIdx": [1, 5],
+          "evidence": { "segs": [3, 5, 18, 21, 22, 43], "confidence": 0.75 }
+        }
+      ]
+    },
+    {
+      "sectionIndex": 1,
+      "heading": "Milah above daas, tefillin with daas",
+      "paragraphs": [
+        {
+          "text": "Why, the Rav asks, is the great mitzvah of milah done on an infant without understanding, rather than later with daas and joy like Avraham Avinu? Because milah, the bris of Avraham, is above daas. Tefillin, by contrast, is a mitzvah of daas.",
+          "sourceIdx": [],
+          "evidence": { "segs": [52, 53, 56, 61, 62, 75], "confidence": 0.7 }
+        },
+        {
+          "text": "He closes with blessings for the child and the family.",
+          "sourceIdx": [],
+          "evidence": { "segs": [94, 95, 97], "confidence": 0.7 }
+        }
+      ]
+    }
+  ],
+  "yi": [
+    {
+      "sectionIndex": 0,
+      "heading": "פורים און די נקודה פון אברהם",
+      "paragraphs": [
+        {
+          "text": "דער משגיח עפנט מיט דער גמרא אז \"ששון\" איז מילה און \"יקר\" איז תפילין. א איד האט בחירה, ערקלערט ער, אבער יעדער איד האט א פינטעלע איד פון די אבות הקדושים וואס קען נישט אויסגעלאשן ווערן. די נקודה איז למעלה מן השכל; דערפאר זענען אידן מוסר נפש פאר אמונה, און פורים קומען זיי צו \"עד דלא ידע\".",
+          "sourceIdx": [1, 5],
+          "evidence": { "segs": [3, 5, 18, 21, 22, 43], "confidence": 0.75 }
+        }
+      ]
+    },
+    {
+      "sectionIndex": 1,
+      "heading": "מילה למעלה מן הדעת, תפילין מיט דעת",
+      "paragraphs": [
+        {
+          "text": "דער משגיח פרעגט: פארוואס טוט מען די גרויסע מצוה פון מילה ביי א קינד אן דעת, און מ'ווארט נישט ביז ער קען עס טון מיט דעת און מיט שמחה ווי אברהם אבינו? ווייל מילה, דער ברית פון אברהם, איז למעלה מן הדעת. תפילין, לאידך גיסא, איז א מצוה פון דעת.",
+          "sourceIdx": [],
+          "evidence": { "segs": [52, 53, 56, 61, 62, 75], "confidence": 0.7 }
+        },
+        {
+          "text": "ער ענדיגט מיט ברכות פארן קינד און פאר דער משפחה.",
+          "sourceIdx": [],
+          "evidence": { "segs": [94, 95, 97], "confidence": 0.7 }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "shiurId": "yi-simchos-unc-bris-pidyon-haben-01",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4b-v2",
+  "extractionVariant": "extraction",
+  "en": [
+    {
+      "sectionIndex": 0,
+      "heading": "The bris in the week of Ki Savo",
+      "paragraphs": [
+        {
+          "text": "The Rav notes that the tochachah of Ki Savo is called 'the words of the covenant'. Its curses are vessels of blessing; one only has to uncover the blessing, and that is bris milah: removing the orlah that covers the good in every Jew.",
+          "sourceIdx": [0],
+          "evidence": { "segs": [0, 3, 6, 8, 11], "confidence": 0.75 }
+        },
+        {
+          "text": "Ki Savo, the sixth week of consolation, is the week of yesod, and its avodah is revealing that good. So is Elul's, hinted in 'u'mal Hashem es levavcha', whose initials spell Elul.",
+          "sourceIdx": [2],
+          "evidence": { "segs": [16, 17, 19, 33, 34], "confidence": 0.75 }
+        },
+        {
+          "text": "The haftorah ends with 've'ameich kulam tzaddikim', so a bris this week is a good sign that the child will be a tzaddik.",
+          "sourceIdx": [5],
+          "evidence": { "segs": [61, 71, 74, 77, 78], "confidence": 0.75 }
+        }
+      ]
+    }
+  ],
+  "yi": [
+    {
+      "sectionIndex": 0,
+      "heading": "דער ברית אין דער וואך פון כי תבוא",
+      "paragraphs": [
+        {
+          "text": "דער משגיח מערקט אן אז די תוכחה פון כי תבוא הייסט \"דברי הברית\". די קללות זענען כלי ברכות, נאר מ'דארף אנטפלעקן די ברכה, און דאס איז ברית מילה: ארונטערנעמען די ערלה וואס דעקט צו דעם טוב אין יעדן איד.",
+          "sourceIdx": [0],
+          "evidence": { "segs": [0, 3, 6, 8, 11], "confidence": 0.75 }
+        },
+        {
+          "text": "כי תבוא, די זעקסטע וואך פון נחמה, איז די וואך פון יסוד, און איר עבודה איז מגלה צו זיין דעם טוב. אזוי אויך די עבודה פון אלול, וואס איז ראשי תיבות פון \"ומל ה' אלקיך את לבבך ואת לבב\".",
+          "sourceIdx": [2],
+          "evidence": { "segs": [16, 17, 19, 33, 34], "confidence": 0.75 }
+        },
+        {
+          "text": "די הפטרה ענדיגט זיך מיט \"ועמך כולם צדיקים\", ממילא איז א ברית אין דער וואך א סימן טוב אז דאס קינד זאל זיין א צדיק.",
+          "sourceIdx": [5],
+          "evidence": { "segs": [61, 71, 74, 77, 78], "confidence": 0.75 }
+        }
+      ]
+    }
+  ]
+}
