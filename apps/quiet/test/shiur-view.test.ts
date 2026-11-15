@@ -11,7 +11,6 @@ import { shiurEn, shiurYi } from "../src/components/shiur/strings.ts";
 import {
   buildSources,
   catalogPlace,
-  entityHref,
   pageParts,
   reportHref,
   sourceLetter,
@@ -97,15 +96,26 @@ describe("buildSources", () => {
     expect(b.citedBy).toEqual([]);
   });
 
-  it("links each source to the index (page or index anchor by shiur count)", () => {
-    const counts = (_k: string, key: string) => (key === "devarim" ? 5 : 1);
-    const v = buildSources(notes, "yi", counts);
-    const devarim = [...v.byIdx.values()].find((s) => s.workKey === "devarim");
-    expect(devarim?.indexHref).toBe("/yi/sources/devarim/");
-    const other = [...v.byIdx.values()].find((s) => s.workKey && s.workKey !== "devarim");
-    expect(other?.indexHref).toBe(`/yi/sources/#${other?.workKey}`);
-    expect(entityHref("en", "concept", "יראת-שמים", () => 3)).toBe("/en/inyanim/יראת-שמים/");
-    expect(entityHref("en", "concept", "a b", () => 1)).toBe("/en/inyanim/#a%20b");
+  it("links each source to its work entry by corpus work id (layer refs), and nothing else", () => {
+    const [first, second] = notes.sources;
+    const works = new Map([
+      [first!.id, { workId: "devarim", href: "/yi/sources/devarim/", orderGroup: "torah" }],
+      [second!.id, { workId: "some-work", href: null, orderGroup: null }],
+    ]);
+    const v = buildSources(notes, "yi", works);
+    const a = v.byIdx.get(first!.idx)!;
+    expect(a.workId).toBe("devarim");
+    expect(a.indexHref).toBe("/yi/sources/devarim/");
+    expect(a.group).toBe("torah");
+    const b = v.byIdx.get(second!.idx)!;
+    expect(b.workId).toBe("some-work");
+    expect(b.indexHref).toBeNull();
+    expect(b.group).toBe("other");
+    // Without layer refs a source has no work link at all (never a guessed key).
+    for (const s of buildSources(notes, "yi").byIdx.values()) {
+      expect(s.indexHref).toBeNull();
+      expect(s.workId).toBeNull();
+    }
   });
 
   it("every citation in the write-up points at a listed source", () => {
@@ -118,7 +128,8 @@ describe("buildSources", () => {
 
 describe("pageParts", () => {
   it("lists the parts present, in page order", () => {
-    expect(pageParts(load("yi-zmanim-tv-bb-04"), "en")).toEqual([
+    const mentioned = { people: [{ id: "x", name: "X", href: null, hebrew: false }], concepts: [] };
+    expect(pageParts(load("yi-zmanim-tv-bb-04"), "en", undefined, mentioned)).toEqual([
       "about",
       "outline",
       "writeup",

@@ -1,45 +1,36 @@
 ---
 /**
- * Mentioned in this shiur (concept-quiet §5.4 part 8): a compact comma-separated line of links into
- * the indexes, people (`people[].name`) and concepts (`concepts[].he`). No tag cloud. An entity
- * with its own index page links there; one below the page threshold links to its line on the
- * index page (`@emunas/links`). A concept that is not on the inyanim index at all (below its
- * minimum, `concepts.json`) is named without a link.
+ * Mentioned in this shiur (concept-quiet §5.4 part 8, concept-quiet-corpus C4.8, C4.2): a compact
+ * comma-separated line of people and one of glossary terms, by corpus id with the names from the
+ * layer (`refs.ts` `mentionedView`), so "the Sanzer Rav" and "the Divrei Chaim" land on one page.
+ * An entry with its own page links there; one listed in its index without a page links to its
+ * line there; one in no index is named without a link. No tag cloud.
  */
-import type { PublicNotes } from "@emunas/corpus/public";
-import { runAttrs } from "../../lib/bidi.ts";
 import type { Ed } from "../../lib/edition.ts";
+import type { MentionedView, NamedLink } from "./refs.ts";
 import { useShiurT } from "./strings.ts";
-import { entityHref, type EntityCounts } from "./view.ts";
 
 interface Props {
   ed: Ed;
-  notes: Pick<PublicNotes, "people" | "concepts">;
-  counts?: EntityCounts;
-  personName?: (key: string, ed: Ed, fallback: string) => string;
-  /** Whether a concept has a line on the inyanim index; unlisted concepts are not linked. */
-  conceptListed?: (key: string) => boolean;
+  mentioned: MentionedView;
 }
 
-const { ed, notes, counts, personName = (_k: string, _e: Ed, name: string) => name, conceptListed = () => true } = Astro.props;
+const { ed, mentioned } = Astro.props;
 const t = useShiurT(ed);
-const people = notes.people.map((p) => ({ name: personName(p.key, ed, p.name), href: entityHref(ed, "person", p.key, counts) }));
-const concepts = notes.concepts.map((c) => ({ name: c.he, href: conceptListed(c.key) ? entityHref(ed, "concept", c.key, counts) : null }));
+const attrs = (n: NamedLink) => (n.hebrew ? { lang: ed === "yi" ? "yi" : "he", dir: "rtl" } : { lang: "en", dir: "ltr" });
+const lines = [
+  { label: t("mentioned.people"), items: mentioned.people },
+  { label: t("mentioned.concepts"), items: mentioned.concepts },
+].filter((l) => l.items.length > 0);
 ---
-{(people.length > 0 || concepts.length > 0) && (
+{lines.length > 0 && (
   <section class="mentioned" id="mentioned" aria-labelledby="mentioned-heading">
     <h2 id="mentioned-heading">{t("mentioned.heading")}</h2>
-    {people.length > 0 && (
+    {lines.map((l) => (
       <p class="mentioned-line">
-        <span class="label">{t("mentioned.people")}</span>{" "}
-        {people.map((p, i) => <>{i > 0 && ", "}<a href={p.href}><bdi {...runAttrs(p.name, ed)}>{p.name}</bdi></a></>)}
+        <span class="label">{l.label}</span>{" "}
+        {l.items.map((n, i) => <>{i > 0 && ", "}{n.href ? <a href={n.href}><bdi {...attrs(n)}>{n.name}</bdi></a> : <bdi {...attrs(n)}>{n.name}</bdi>}</>)}
       </p>
-    )}
-    {concepts.length > 0 && (
-      <p class="mentioned-line">
-        <span class="label">{t("mentioned.concepts")}</span>{" "}
-        {concepts.map((c, i) => <>{i > 0 && ", "}{c.href ? <a href={c.href}><bdi lang="he" dir="rtl">{c.name}</bdi></a> : <bdi lang="he" dir="rtl">{c.name}</bdi>}</>)}
-      </p>
-    )}
+    ))}
   </section>
 )}

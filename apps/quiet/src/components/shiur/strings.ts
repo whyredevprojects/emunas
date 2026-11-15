@@ -44,7 +44,7 @@ export const shiurEn = {
 
   "mentioned.heading": "Mentioned in this shiur",
   "mentioned.people": "People",
-  "mentioned.concepts": "Inyanim",
+  "mentioned.concepts": "Terms",
 
   "catalog.heading": "Place in the catalog",
   "catalog.prev": "Previous",
@@ -98,7 +98,7 @@ export const shiurYi: MessageTable<ShiurKey> = {
 
   "mentioned.heading": "דערמאנט אין דעם שיעור",
   "mentioned.people": "פערזאנען",
-  "mentioned.concepts": "ענינים",
+  "mentioned.concepts": "ערכים",
 
   "catalog.heading": "ארט אינעם קאטאלאג",
   "catalog.prev": "פריערדיגער",

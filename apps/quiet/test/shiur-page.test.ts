@@ -84,7 +84,7 @@ afterAll(() => {
 async function renderPage(ed: Ed, shiur: PublicShiur, extra: Record<string, unknown> = {}): Promise<string> {
   const place = catalogPlace(ed, shiur, corpus.neighbours[shiur.id], corpus.rows, (id) => corpus.seriesTitle(id, ed));
   return container.renderToString(ShiurPage, {
-    props: { ed, shiur, place, counts: corpus.entityCounts, personName: corpus.personName, ...extra },
+    props: { ed, shiur, place, layer: corpus.layer, refs: shiur.status === "full" ? corpus.refs(shiur.id) : null, ...extra },
   });
 }
 

@@ -1,8 +1,9 @@
 /**
  * Build-time reader for the shiur pages (Node only; used in page frontmatter and
  * `getStaticPaths`, never shipped to a browser). Reads `.corpus/` only (integration-plan C3):
- * `index.json`, `shiurim/<id>.json`, `neighbours.json`, `entities.json`, `people.json`,
- * `series.json`, `concepts.json`, `build.json`. Never `data/`.
+ * `index.json`, `shiurim/<id>.json`, `neighbours.json`, `series.json`, `build.json`, and the
+ * corpus layer `layer/` (topics, people, glossary, works, stories and the per-shiur refs
+ * `layer/shiur/<id>.json`) through the Quiet layer reader. Never `data/`.
  *
  * Where `.corpus/` is: `EMUNAS_CORPUS_DIR`, else the first `.corpus/` with a `build.json` found
  * walking up from the working directory (`astro build` runs in `apps/quiet`). Without a corpus the
@@ -11,10 +12,11 @@
 import { existsSync, readFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import type { BuildInfo, CorpusIndex, IndexRow, PublicShiur } from "@emunas/corpus/public";
-import type { ConceptsFile, EntitiesFile, NeighboursFile, PeopleFile, SeriesFile } from "@emunas/corpus/aggregate";
-import type { EntityKind } from "@emunas/links";
+import type { LayerShiurRefs } from "@emunas/corpus/public";
+import type { NeighboursFile, SeriesFile } from "@emunas/corpus/aggregate";
 import type { Ed } from "../../lib/edition.ts";
-import type { EntityCounts, RowLookup } from "./view.ts";
+import { findLayerDir, loadQuietLayer, type QuietLayer } from "../corpus/layer.ts";
+import type { RowLookup } from "./view.ts";
 
 export function findCorpusDir(env: Readonly<Record<string, string | undefined>> = process.env, from = process.cwd()): string | null {
   const explicit = env["EMUNAS_CORPUS_DIR"]?.trim();
@@ -43,12 +45,11 @@ export interface ShiurCorpus {
   readonly index: CorpusIndex;
   readonly rows: RowLookup;
   readonly neighbours: NeighboursFile;
-  readonly entityCounts: EntityCounts;
-  /** Display name of a person key in an edition (Hebrew spelling in the Yiddish edition when known). */
-  readonly personName: (key: string, ed: Ed, fallback: string) => string;
   readonly seriesTitle: (id: string, ed: Ed) => string | undefined;
-  /** True when a concept has a line on the inyanim index (`concepts.json`), so it can be linked. */
-  readonly conceptListed: (key: string) => boolean;
+  /** The corpus layer (empty, with a warning, when the corpus has none). */
+  readonly layer: QuietLayer;
+  /** The shiur's layer refs (null: not in the visible set, or no layer). */
+  refs(id: string): LayerShiurRefs | null;
   shiur(id: string): PublicShiur;
 }
 
@@ -61,28 +62,11 @@ export function loadShiurCorpus(dir: string): ShiurCorpus {
   const build = readJson<BuildInfo>(dir, "build.json");
   const index = readJson<CorpusIndex>(dir, "index.json");
   const neighbours = readOptional<NeighboursFile>(dir, "neighbours.json") ?? {};
-  const entities = readOptional<EntitiesFile>(dir, "entities.json");
-  const people = readOptional<PeopleFile>(dir, "people.json");
   const series = readOptional<SeriesFile>(dir, "series.json");
-  const concepts = readOptional<ConceptsFile>(dir, "concepts.json");
-  const listedConcepts = concepts ? new Set(concepts.concepts.map((c) => c.key)) : null;
+  const layer = loadQuietLayer(findLayerDir(dir));
+  if (layer.warnings.length > 0) console.warn(`[quiet shiur] ${layer.warnings.join("; ")}`);
 
   const rowMap = new Map<string, IndexRow>(index.shiurim.map((r) => [r.id, r]));
-  const counts = new Map<string, number>();
-  const kinds: [EntityKind, keyof Pick<EntitiesFile, "works" | "people" | "concepts">][] = [
-    ["work", "works"],
-    ["person", "people"],
-    ["concept", "concepts"],
-  ];
-  for (const [kind, field] of kinds) {
-    for (const e of entities?.[field] ?? []) {
-      // Only entities.json's quietPage decides whether a page exists (generic works never get one,
-      // whatever their count), so an entity without a page, or not listed, is passed as count 0.
-      counts.set(`${kind}:${e.key}`, e.quietPage ? e.shiurim : 0);
-    }
-  }
-  const heName = new Map<string, string>();
-  for (const p of people?.people ?? []) if (p.he) heName.set(p.key, p.he);
   const seriesTitles = new Map((series?.series ?? []).map((s) => [s.id, s.title] as const));
   const shiurim = new Map<string, PublicShiur>();
 
@@ -92,10 +76,10 @@ export function loadShiurCorpus(dir: string): ShiurCorpus {
     index,
     rows: (id) => rowMap.get(id),
     neighbours,
-    entityCounts: entities ? (kind, key) => counts.get(`${kind}:${key}`) ?? 0 : () => undefined,
-    personName: (key, ed, fallback) => (ed === "yi" ? (heName.get(key) ?? fallback) : fallback),
     seriesTitle: (id, ed) => seriesTitles.get(id)?.[ed],
-    conceptListed: (key) => listedConcepts === null || listedConcepts.has(key),
+    layer,
+    // Only a shiur in the corpus index can have refs; a catalog-only shiur never does.
+    refs: (id) => (rowMap.get(id) ? layer.shiurRefs(id) : null),
     shiur(id) {
       let s = shiurim.get(id);
       if (!s) {

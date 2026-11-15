@@ -1,0 +1,26 @@
+---
+/**
+ * The one line of ענינים under the abstract (concept-quiet-corpus C4.8): the shiur's topics with
+ * salience of 0.6 or more, at most five, each linked to its topic entry (`refs.ts` `topicLine`).
+ * The weaker tags are not shown here, and section-level topics are never printed on the shiur
+ * page. Nothing renders when the shiur has no such topic (or is not in the corpus layer).
+ */
+import { corpusLabel } from "@emunas/i18n";
+import type { Ed } from "../../lib/edition.ts";
+import type { NamedLink } from "./refs.ts";
+
+interface Props {
+  ed: Ed;
+  topics: readonly NamedLink[];
+}
+
+const { ed, topics } = Astro.props;
+---
+{topics.length > 0 && (
+  <p class="topic-line" data-corpus="topics">
+    <span class="label">{corpusLabel("index.topics", ed)}:</span>{" "}
+    {topics.map((tp, i) => (
+      <>{i > 0 && " · "}{tp.href ? <a href={tp.href}><bdi {...(tp.hebrew ? { lang: ed === "yi" ? "yi" : "he", dir: "rtl" } : { lang: "en", dir: "ltr" })}>{tp.name}</bdi></a> : <bdi>{tp.name}</bdi>}</>
+    ))}
+  </p>
+)}
