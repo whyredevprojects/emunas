@@ -1,0 +1,84 @@
+---
+/**
+ * The jump list at the top of a long, sub-grouped page (concept-quiet §5.2: "sub-groups are
+ * headings on one long page with a jump list at the top, not separate filter states"). Plain
+ * in-page links; an item may hold a second level (chumash → parshiyos).
+ */
+import type { Ed } from "../../lib/edition.ts";
+
+export interface JumpItem {
+  readonly id: string;
+  readonly label: string;
+  readonly lang?: string | undefined;
+  readonly count?: number | undefined;
+  readonly children?: readonly JumpItem[] | undefined;
+}
+
+interface Props {
+  ed: Ed;
+  label: string;
+  items: readonly JumpItem[];
+  /** id of the list's heading (one jump list per page). */
+  id?: string;
+}
+
+const { label, items, id: navId = "jump" } = Astro.props;
+---
+<nav class="jump-list" aria-labelledby={navId}>
+  <h2 class="label" id={navId}>{label}</h2>
+  <ul role="list" class:list={[{ "jump-inline": items.every((i) => !i.children || i.children.length === 0) }]}>
+    {items.map((item) => (
+      <li>
+        <a href={`#${item.id}`}><bdi lang={item.lang}>{item.label}</bdi></a>
+        {item.count !== undefined && <span class="jump-count"> <bdi dir="ltr">({item.count})</bdi></span>}
+        {item.children && item.children.length > 0 && (
+          <ul role="list" class="jump-children">
+            {item.children.map((child) => (
+              <li>
+                <a href={`#${child.id}`}><bdi lang={child.lang}>{child.label}</bdi></a>
+                {child.count !== undefined && <span class="jump-count"> <bdi dir="ltr">({child.count})</bdi></span>}
+              </li>
+            ))}
+          </ul>
+        )}
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<style>
+  .jump-list {
+    font-size: var(--step-0);
+    border-block: var(--rule-hairline) solid var(--color-rule);
+    padding-block: var(--space-s);
+  }
+
+  .jump-list > ul {
+    margin-block-start: var(--space-xs);
+  }
+
+  .jump-list > ul > li + li {
+    margin-block-start: var(--space-2xs);
+  }
+
+  .jump-list > ul.jump-inline > li + li {
+    margin-block-start: 0;
+  }
+
+  .jump-inline,
+  .jump-children {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: var(--space-s);
+    row-gap: var(--space-3xs);
+  }
+
+  .jump-children {
+    padding-inline-start: var(--space-m);
+  }
+
+  .jump-count {
+    color: var(--color-ink-muted);
+    font-size: var(--step--1);
+  }
+</style>

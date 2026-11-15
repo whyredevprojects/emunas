@@ -1,0 +1,122 @@
+---
+/**
+ * A series page (concept-quiet §5.3, tech-quiet §2 `/{ed}/series/{seriesId}/`): an ordered set
+ * presented as a course. Parts in series order, numbered; Tanya grouped by perek (consecutive runs
+ * of the same perek from series.json `groups`), so the page reads like the contents of a
+ * commentary on the sefer. A set that exists in both languages links to the other one (not merged).
+ * The introduction slot for a future series overview stays empty until such text exists.
+ */
+import type { GetStaticPaths } from "astro";
+import { audioLanguageLabel, isolate, languageName } from "@emunas/i18n";
+import Base from "../../../layouts/Base.astro";
+import NotesLabel from "../../../components/NotesLabel.astro";
+import CatalogTable from "../../../components/catalog/CatalogTable.astro";
+import JumpList, { type JumpItem } from "../../../components/catalog/JumpList.astro";
+import { loadCatalogCorpus } from "../../../components/catalog/corpus.ts";
+import { contentsHref, perekIsNumeral, sectionHref, seriesModel, seriesSummaries } from "../../../components/catalog/model.ts";
+import { useCatalogT } from "../../../components/catalog/strings.ts";
+import { runAttrs } from "../../../lib/bidi.ts";
+import { EDS, type Ed } from "../../../lib/edition.ts";
+import { useT } from "../../../i18n/index.ts";
+
+export const getStaticPaths = (() => {
+  const corpus = loadCatalogCorpus();
+  return EDS.flatMap((ed) => seriesSummaries(corpus, ed).map((s) => ({ params: { ed, series: s.id } })));
+}) satisfies GetStaticPaths;
+
+const ed = Astro.params.ed as Ed;
+const corpus = loadCatalogCorpus();
+const model = seriesModel(corpus, Astro.params.series as string, ed);
+if (!model) throw new Error(`series page: unknown series ${Astro.params.series}`);
+const t = useT(ed);
+const c = useCatalogT(ed);
+const lang = model.entry.lang;
+// The perek is printed Hebrew: an RTL isolate inside the English "Perek …".
+const perekLabel = (perek: string | null) =>
+  perek === null ? c("series.noPerek") : perekIsNumeral(perek) ? c("series.perek", { perek: isolate(perek, "rtl") }) : perek;
+const isWord = (perek: string | null) => perek !== null && !perekIsNumeral(perek);
+const jump: JumpItem[] = (model.groups ?? []).map((g) => ({
+  id: g.id,
+  label: perekLabel(g.perek),
+  lang: isWord(g.perek) ? runAttrs(g.perek ?? "", lang).lang : undefined,
+  count: g.rows.length,
+}));
+const caption = (label: string) => c("table.caption", { name: label });
+---
+<Base
+  ed={ed}
+  title={model.title}
+  crumbs={[
+    { label: t("nav.contents"), href: contentsHref(ed) },
+    { label: model.title },
+  ]}
+>
+  <header class="series-head">
+    <h1>{model.title}</h1>
+    {model.otherTitle !== model.title && (
+      <p class="series-other-title" lang={ed === "yi" ? "en" : "yi"} dir={ed === "yi" ? "ltr" : "rtl"}>{model.otherTitle}</p>
+    )}
+    <p class="series-meta">
+      <span>{audioLanguageLabel(lang, ed)}</span>
+      <span aria-hidden="true"> · </span>
+      <span>{c("series.lead", { count: c("count.shiurim", { count: model.count }) })}</span>
+    </p>
+    {model.sections.length > 0 && (
+      <p class="series-meta">
+        {c("series.inGuide")}{" "}
+        {model.sections.map((s, i) => (
+          <>{i > 0 && ", "}<a href={sectionHref(ed, s)}><bdi {...runAttrs(s.title, s.lang)}>{s.title}</bdi></a></>
+        ))}
+      </p>
+    )}
+    {model.sibling && (
+      <p class="series-sibling">
+        {c("series.sibling", { lang: languageName(model.sibling.lang, ed) })}{" "}
+        <a href={model.sibling.href} data-sibling={model.sibling.id}>{model.sibling.title}</a>
+        {" "}<span class="muted">({c("count.shiurim", { count: model.sibling.count })})</span>
+      </p>
+    )}
+  </header>
+
+  {/* Reserved: series overview (concept-quiet §5.3). Renders nothing until the synthesis exists. */}
+
+  {model.anyNotes && <NotesLabel ed={ed} />}
+
+  {model.groups && model.groups.length > 1 && <JumpList ed={ed} label={c("series.jump")} items={jump} />}
+
+  {model.groups ? (
+    model.groups.map((g) => (
+      <section class="group" aria-labelledby={g.id}>
+        <h2 id={g.id}>{isWord(g.perek) ? <bdi {...runAttrs(g.perek ?? "", lang)}>{g.perek}</bdi> : perekLabel(g.perek)}</h2>
+        <CatalogTable ed={ed} rows={g.rows} caption={caption(perekLabel(g.perek))} number="part" partsOf={model.count} notes={model.anyNotes} />
+      </section>
+    ))
+  ) : (
+    <CatalogTable ed={ed} rows={model.rows} caption={caption(model.title)} number="part" partsOf={model.count} notes={model.anyNotes} />
+  )}
+</Base>
+
+<style>
+  .series-head > * + * {
+    margin-block-start: var(--space-xs);
+  }
+
+  .series-other-title {
+    font-size: var(--step-2);
+    color: var(--color-ink-muted);
+  }
+
+  .series-meta,
+  .series-sibling {
+    font-size: var(--step-0);
+    color: var(--color-ink-muted);
+  }
+
+  .muted {
+    color: var(--color-ink-muted);
+  }
+
+  .group > * + * {
+    margin-block-start: var(--space-xs);
+  }
+</style>

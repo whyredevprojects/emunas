@@ -1,0 +1,212 @@
+/**
+ * UI strings of the catalog pages (W3.1): title page, contents, sections, series. Kept next to the
+ * pages that use them (integration-plan §1.3: UI strings stay in each app); typed with `createT`
+ * like `src/i18n/`, so a missing Yiddish key fails `tsc`.
+ *
+ * Wording status: unreviewed; the Yiddish needs a native reader (W5.3). Plain voice, no "content"
+ * vocabulary (concept-quiet §8, §11).
+ */
+import { createT, isolate, type MessageTable, type TFunction } from "@emunas/i18n";
+import type { Ed } from "../../lib/edition.ts";
+
+export const catalogEn = {
+  "home.lead":
+    "The recorded shiurim of Harav Moshe Wolfson zt\"l, set out like a sefer: the contents in the order of the 2012 Pocket Guide, a page for every shiur, and indexes at the back.",
+  "home.standing":
+    "{total} shiurim, about {hours} hours. Notes are available for {full} so far and are being added.",
+  "home.thisWeek": "This week",
+  "home.thisWeekLead": "The parsha of the week and the nearest zman, as of {date}.",
+  "home.parsha": "Parshas {name}",
+  "home.zmanNow": "Now: {name}",
+  "home.zmanSoon": "Coming: {name}",
+  "home.allOn": { one: "The {count} shiur on {name}", other: "All {count} shiurim on {name}" },
+  "home.contents": "The contents in brief",
+  "home.contentsAll": "The full contents",
+  "home.indexes": "Indexes",
+
+  "index.parsha": "By parsha",
+  "index.parsha.note": "every parsha, with the shiurim in both languages",
+  "index.zman": "By zman",
+  "index.zman.note": "the occasions of the year, from Elul",
+  "index.years": "By year",
+  "index.years.note": "the year each shiur was given, where it is known",
+  "index.sources": "Sources cited",
+  "index.sources.note": "seforim and places cited in the notes, in traditional order",
+  "index.stories": "Stories",
+  "index.stories.note": "the maasios told in the shiurim, by person",
+  "index.people": "People",
+  "index.people.note": "people named in the shiurim",
+  "index.inyanim": "Inyanim",
+  "index.inyanim.note": "concepts, by their Hebrew headword",
+  "index.search": "Search",
+  "index.search.note": "titles and notes",
+
+  "count.shiurim": { one: "{count} shiur", other: "{count} shiurim" },
+  "coverage.withNotes": "{full} of {total} shiurim have notes so far.",
+
+  "contents.title": "Contents",
+  "contents.lead": "The sections of the 2012 Pocket Guide, in the guide's own order: the Yiddish shiurim, then the English.",
+  "contents.yiddish": "Shiurim in Yiddish",
+  "contents.english": "Shiurim in English",
+  "contents.uncatalogued": "Not in the 2012 guide",
+  "contents.uncataloguedLead":
+    "Recordings in the collection that the 2012 Pocket Guide does not list. Their titles are taken from the file and folder names.",
+  "contents.series": "Series",
+  "contents.seriesLead": "Sets of shiurim given as a course, to be heard in order.",
+  "contents.pages": "pp. {pages}",
+  "contents.page": "p. {pages}",
+  "contents.sectionsLabel": "Sections",
+
+  "section.guidePages": "Pocket Guide, pp. {pages}.",
+  "section.guidePage": "Pocket Guide, p. {pages}.",
+  "section.uncataloguedLead":
+    "None of these shiurim is in the 2012 Pocket Guide; their titles are taken from the file names. Each such row carries the mark {mark}.",
+  "section.alsoSeries": "Also set out as a series:",
+  "section.jump": "In this section",
+  "section.other": "Other",
+  "section.otherZman": "Other occasions",
+  "section.otherParsha": "Without a parsha",
+
+  "table.caption": "{name}: the shiurim in catalog order",
+  "table.no": "No.",
+  "table.part": "Part",
+  "table.title": "Title as catalogued",
+  "table.parsha": "Parsha",
+  "table.zman": "Zman",
+  "table.occasion": "Parsha / zman",
+  "table.year": "Year",
+  "table.length": "Length",
+  "table.notes": "In brief (notes)",
+  "table.scroll": "{name} (the table scrolls sideways)",
+  "row.noRecording": "no recording online",
+  "row.uncatalogued": "not in the 2012 guide",
+  "row.part": "Part {part} of {count}",
+
+  "series.inGuide": "In the Pocket Guide:",
+  "series.sibling": "The same set in {lang}:",
+  "series.lead": "{count} in order.",
+  "series.perek": "Perek {perek}",
+  "series.noPerek": "Without a perek",
+  "series.jump": "Perakim",
+  "series.empty": "None of the shiurim of this set is in the collection online.",
+
+  "chumash.bereishis": "Sefer Bereishis",
+  "chumash.shemos": "Sefer Shemos",
+  "chumash.vayikra": "Sefer Vayikra",
+  "chumash.bamidbar": "Sefer Bamidbar",
+  "chumash.devarim": "Sefer Devarim",
+} as const;
+
+export type CatalogKey = keyof typeof catalogEn;
+
+export const catalogYi: MessageTable<CatalogKey> = {
+  "home.lead":
+    "די רעקארדירטע שיעורים פון הרב משה וואלפסאן זצ\"ל, אויסגעשטעלט ווי א ספר: דער תוכן לויטן סדר פונעם פּאָקעט גייד פון 2012, א בלאט פאר יעדן שיעור, און מפתחות אינעם סוף.",
+  "home.standing": "{total} שיעורים, בערך {hours} שעה. נאטיצן זענען דא ביז איצט פאר {full}, און מען לייגט צו.",
+  "home.thisWeek": "די וואך",
+  "home.thisWeekLead": "די פרשה פון דער וואך און דער נאענטסטער זמן, לויט {date}.",
+  "home.parsha": "פרשת {name}",
+  "home.zmanNow": "איצט: {name}",
+  "home.zmanSoon": "עס קומט: {name}",
+  "home.allOn": { one: "דער שיעור אויף {name}", other: "אלע {count} שיעורים אויף {name}" },
+  "home.contents": "דער תוכן בקיצור",
+  "home.contentsAll": "דער גאנצער תוכן",
+  "home.indexes": "מפתחות",
+
+  "index.parsha": "לויט פרשה",
+  "index.parsha.note": "יעדע פרשה, מיט די שיעורים אויף ביידע שפראכן",
+  "index.zman": "לויט זמן",
+  "index.zman.note": "די זמנים פונעם יאר, פון אלול אן",
+  "index.years": "לויט יאר",
+  "index.years.note": "דאס יאר ווען יעדער שיעור איז געזאגט געווארן, וואו מען ווייסט",
+  "index.sources": "מראי מקומות",
+  "index.sources.note": "ספרים און מקומות וואס ווערן געברענגט אין די נאטיצן, לויטן סדר",
+  "index.stories": "מעשיות",
+  "index.stories.note": "די מעשיות וואס ווערן דערציילט אין די שיעורים, לויט פערזאן",
+  "index.people": "שמות",
+  "index.people.note": "מענטשן וואס ווערן דערמאנט אין די שיעורים",
+  "index.inyanim": "ענינים",
+  "index.inyanim.note": "ענינים, לויט זייער לשון־קודש ווארט",
+  "index.search": "זוכן",
+  "index.search.note": "קעפּלעך און נאטיצן",
+
+  "count.shiurim": { one: "{count} שיעור", other: "{count} שיעורים" },
+  "coverage.withNotes": "{full} פון {total} שיעורים האבן שוין נאטיצן.",
+
+  "contents.title": "תוכן",
+  "contents.lead": "די אפטיילונגען פונעם פּאָקעט גייד פון 2012, לויטן סדר פונעם גייד אליין: די אידישע שיעורים, און דערנאך די ענגלישע.",
+  "contents.yiddish": "שיעורים אויף אידיש",
+  "contents.english": "שיעורים אויף ענגליש",
+  "contents.uncatalogued": "נישט אינעם גייד פון 2012",
+  "contents.uncataloguedLead":
+    "רעקארדירונגען אין דער זאמלונג וואס דער פּאָקעט גייד פון 2012 רעכנט נישט אויס. די קעפּלעך זענען גענומען פון די נעמען פון די טעקעס און פאלדערס.",
+  "contents.series": "סדרות",
+  "contents.seriesLead": "סדרות פון שיעורים וואס זענען געזאגט געווארן נאכאנאנד, צו הערן לויטן סדר.",
+  "contents.pages": "ז׳ {pages}",
+  "contents.page": "ז׳ {pages}",
+  "contents.sectionsLabel": "אפטיילונגען",
+
+  "section.guidePages": "פּאָקעט גייד, ז׳ {pages}.",
+  "section.guidePage": "פּאָקעט גייד, ז׳ {pages}.",
+  "section.uncataloguedLead":
+    "קיינער פון די שיעורים שטייט נישט אינעם פּאָקעט גייד פון 2012; די קעפּלעך זענען גענומען פון די נעמען פון די טעקעס. יעדע אזא שורה האט דעם צייכן {mark}.",
+  "section.alsoSeries": "אויך אויסגעשטעלט ווי א סדר:",
+  "section.jump": "אין דער אפטיילונג",
+  "section.other": "אנדערע",
+  "section.otherZman": "אנדערע זמנים",
+  "section.otherParsha": "אן א פרשה",
+
+  "table.caption": "{name}: די שיעורים לויטן סדר פונעם קאטאלאג",
+  "table.no": "נומ׳",
+  "table.part": "טייל",
+  "table.title": "דער קעפּל ווי אינעם קאטאלאג",
+  "table.parsha": "פרשה",
+  "table.zman": "זמן",
+  "table.occasion": "פרשה / זמן",
+  "table.year": "יאר",
+  "table.length": "לענג",
+  "table.notes": "בקיצור (נאטיצן)",
+  "table.scroll": "{name} (די טאבעלע רוקט זיך אויף דער זייט)",
+  "row.noRecording": "קיין רעקארדירונג אויפן נעץ",
+  "row.uncatalogued": "נישט אינעם גייד פון 2012",
+  "row.part": "טייל {part} פון {count}",
+
+  "series.inGuide": "אינעם פּאָקעט גייד:",
+  "series.sibling": "דער זעלבער סדר אויף {lang}:",
+  "series.lead": "{count} לויטן סדר.",
+  "series.perek": "פרק {perek}",
+  "series.noPerek": "אן א פרק",
+  "series.jump": "פרקים",
+  "series.empty": "קיינער פון די שיעורים פון דעם סדר איז נישט אין דער זאמלונג אויפן נעץ.",
+
+  "chumash.bereishis": "ספר בראשית",
+  "chumash.shemos": "ספר שמות",
+  "chumash.vayikra": "ספר ויקרא",
+  "chumash.bamidbar": "ספר במדבר",
+  "chumash.devarim": "ספר דברים",
+};
+
+const cache = new Map<Ed, TFunction<CatalogKey>>();
+
+/** The typed `t()` of the catalog pages for an edition. */
+export function useCatalogT(ed: Ed): TFunction<CatalogKey> {
+  let t = cache.get(ed);
+  if (!t) {
+    t = createT<CatalogKey>({ en: catalogEn, yi: catalogYi }, ed);
+    cache.set(ed, t);
+  }
+  return t;
+}
+
+/**
+ * Pocket Guide pages as printed ("pp. 15–33" / "ז׳ 15–33"): the numbers are an LTR isolate, so the
+ * range keeps its order inside Yiddish text.
+ */
+export function guidePages(ed: Ed, pages: readonly [number, number] | null, where: "contents" | "section"): string | null {
+  if (pages === null) return null;
+  const c = useCatalogT(ed);
+  const single = pages[0] === pages[1];
+  const text = isolate(single ? String(pages[0]) : `${pages[0]}–${pages[1]}`, "ltr");
+  if (where === "contents") return c(single ? "contents.page" : "contents.pages", { pages: text });
+  return c(single ? "section.guidePage" : "section.guidePages", { pages: text });
+}

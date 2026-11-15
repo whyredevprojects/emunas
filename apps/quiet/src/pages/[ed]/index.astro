@@ -1,0 +1,131 @@
+---
+/**
+ * The title page, שער (concept-quiet §5.1, tech-quiet §2 `/{ed}/`): what this is, and the three ways
+ * in. The name and one sentence; "this week" (parsha and nearest zman, computed at build time);
+ * the contents in brief (sections with counts); the indexes, one line each (anchor `#indexes`,
+ * the target of the "Indexes" nav item); and the standing coverage line. No featured, popular
+ * or recently added.
+ */
+import { formatQuiet } from "@emunas/links";
+import Base from "../../layouts/Base.astro";
+import ThisWeek from "../../components/catalog/ThisWeek.astro";
+import { loadCatalogCorpus } from "../../components/catalog/corpus.ts";
+import { buildDate, contentsHref, contentsModel, corpusTotals, sectionHref, thisWeekModel } from "../../components/catalog/model.ts";
+import { useCatalogT, type CatalogKey } from "../../components/catalog/strings.ts";
+import { runAttrs } from "../../lib/bidi.ts";
+import { EDS, type Ed } from "../../lib/edition.ts";
+import { INDEXES_ANCHOR } from "../../lib/nav.ts";
+import { useT } from "../../i18n/index.ts";
+
+export function getStaticPaths() {
+  return EDS.map((ed) => ({ params: { ed } }));
+}
+
+const ed = Astro.params.ed as Ed;
+const corpus = loadCatalogCorpus();
+const t = useT(ed);
+const c = useCatalogT(ed);
+const totals = corpusTotals(corpus);
+const contents = contentsModel(corpus, ed);
+const week = thisWeekModel(corpus, ed, buildDate(process.env));
+// Guide sections by name; the uncatalogued ones (whose titles repeat the guide's) as one line.
+const sections = [...contents.yiddish, ...contents.english];
+const uncataloguedCount = contents.uncatalogued.reduce((a, s) => a + s.count, 0);
+
+const indexes: { key: CatalogKey; note: CatalogKey; href: string }[] = [
+  { key: "index.parsha", note: "index.parsha.note", href: formatQuiet({ kind: "index", ed, index: "calendar-parsha" }) },
+  { key: "index.zman", note: "index.zman.note", href: formatQuiet({ kind: "index", ed, index: "calendar-zman" }) },
+  { key: "index.years", note: "index.years.note", href: formatQuiet({ kind: "index", ed, index: "years" }) },
+  { key: "index.sources", note: "index.sources.note", href: formatQuiet({ kind: "index", ed, index: "sources" }) },
+  { key: "index.stories", note: "index.stories.note", href: formatQuiet({ kind: "index", ed, index: "stories" }) },
+  { key: "index.people", note: "index.people.note", href: formatQuiet({ kind: "index", ed, index: "people" }) },
+  { key: "index.inyanim", note: "index.inyanim.note", href: formatQuiet({ kind: "index", ed, index: "concepts" }) },
+  { key: "index.search", note: "index.search.note", href: formatQuiet({ kind: "search", ed }) },
+];
+---
+<Base ed={ed} title={t("site.name")}>
+  <header class="title-page">
+    <h1>{t("site.name")}</h1>
+    <p class="title-lead">{c("home.lead")}</p>
+    <p class="standing" data-coverage>
+      {c("home.standing", { total: totals.total, hours: totals.hoursAbout, full: totals.full })}
+    </p>
+  </header>
+
+  <ThisWeek ed={ed} week={week} />
+
+  <section class="brief" aria-labelledby="contents-brief">
+    <h2 id="contents-brief">{c("home.contents")}</h2>
+    <ul role="list" class="brief-list">
+      {sections.map((s) => (
+        <li data-section={s.key}>
+          <a href={sectionHref(ed, s)}><bdi {...runAttrs(s.title, s.lang)}>{s.title}</bdi></a>
+          <span class="sep" aria-hidden="true"> · </span>
+          <span class="count">{c("count.shiurim", { count: s.count })}</span>
+        </li>
+      ))}
+      {uncataloguedCount > 0 && (
+        <li data-section="uncatalogued">
+          <a href={`${contentsHref(ed)}#uncatalogued`}>{c("contents.uncatalogued")}</a>
+          <span class="sep" aria-hidden="true"> · </span>
+          <span class="count">{c("count.shiurim", { count: uncataloguedCount })}</span>
+        </li>
+      )}
+    </ul>
+    <p><a href={contentsHref(ed)}>{c("home.contentsAll")}</a></p>
+  </section>
+
+  <section class="indexes" id={INDEXES_ANCHOR} aria-labelledby="indexes-heading">
+    <h2 id="indexes-heading">{c("home.indexes")}</h2>
+    <ul role="list">
+      {indexes.map((i) => (
+        <li><a href={i.href}>{c(i.key)}</a><span class="note">: {c(i.note)}</span></li>
+      ))}
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .title-page > * + * {
+    margin-block-start: var(--space-s);
+  }
+
+  .title-page h1 {
+    font-size: var(--step-5);
+  }
+
+  .title-lead {
+    font-size: var(--step-2);
+  }
+
+  .standing {
+    font-size: var(--step-0);
+    color: var(--color-ink-muted);
+  }
+
+  .brief > * + *,
+  .indexes > * + * {
+    margin-block-start: var(--space-s);
+  }
+
+  .brief-list {
+    columns: 2 16rem;
+    column-gap: var(--space-xl);
+    font-size: var(--step-0);
+  }
+
+  .brief-list li {
+    break-inside: avoid;
+    padding-block: var(--space-3xs);
+  }
+
+  .count,
+  .sep,
+  .note {
+    color: var(--color-ink-muted);
+  }
+
+  .indexes li + li {
+    margin-block-start: var(--space-2xs);
+  }
+</style>
