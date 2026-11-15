@@ -55,3 +55,4 @@ export {
   type SourceRefInput,
   type SourceRefParts,
 } from "./vocabulary.ts";
+export { AI_LABEL, AI_LABEL_STATUS } from "./vocab/ai-label.ts";

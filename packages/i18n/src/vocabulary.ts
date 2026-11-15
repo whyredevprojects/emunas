@@ -1,5 +1,6 @@
 import type { UiLang } from "./lang.ts";
 import { formatNumber } from "./numbers.ts";
+import { AI_LABEL } from "./vocab/ai-label.ts";
 
 /**
  * Data vocabulary shared by both sites (integration-plan §1.3): labels for values
@@ -85,15 +86,12 @@ export type NoticeKey = "aiNotes" | "aiNotesShort" | "notesPending" | "uncatalog
 
 export const NOTICES: Labels<NoticeKey> = {
   /** The standing label over the notes area, once per page (concept-quiet §5.4 part 4). */
-  aiNotes: {
-    en: "Notes prepared by AI from the recording; not reviewed. The recording is the source.",
-    yi: "די נאטיצן זענען צוגעגרייט דורך AI פון דער רעקארדירונג, און זענען נישט איבערגעקוקט. דער מקור איז די רעקארדירונג.",
-  },
-  /** The constant small label on generated text surfaces (concept-live §2). */
-  aiNotesShort: {
-    en: "Summary written by AI from the recording, not the Rav's words.",
-    yi: "א קיצור געשריבן דורך AI פון דער רעקארדירונג, נישט דעם משגיח׳ס ווערטער.",
-  },
+  aiNotes: AI_LABEL,
+  /**
+   * The constant small label on generated text surfaces (concept-live §2). The same object as
+   * `aiNotes`: the label is identical in both sites (W5.3, ./vocab/ai-label.ts).
+   */
+  aiNotesShort: AI_LABEL,
   /** A shiur without derived data (concept-quiet §5.4 "when notes are pending"). */
   notesPending: {
     en: "Notes for this shiur have not been prepared yet.",
@@ -102,7 +100,7 @@ export const NOTICES: Labels<NoticeKey> = {
   /** A shiur that is not in the 2012 Pocket Guide (catalog.source "uncatalogued-guide"). */
   uncatalogued: {
     en: "Not listed in the 2012 Pocket Guide; its details are taken from the recording.",
-    yi: "שטייט נישט אינעם פּאָקעט גייד פון 2012; די פרטים זענען גענומען פון דער רעקארדירונג.",
+    yi: "שטייט נישט אינעם פאקעט גייד פון 2012; די פרטים זענען גענומען פון דער רעקארדירונג.",
   },
   /** A section the catalog title anticipated (`catalogTopicIdx`). */
   listedInGuide: { en: "listed in the guide", yi: "שטייט אינעם קאטאלאג" },

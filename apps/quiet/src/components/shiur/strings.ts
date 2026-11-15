@@ -83,7 +83,7 @@ export const shiurYi: MessageTable<ShiurKey> = {
   "writeup.cite": "מקור {letter}",
 
   "sources.heading": "מראי מקומות",
-  "sources.inNotes": "אינעם טעקסט:",
+  "sources.inNotes": "אינעם אויסשרייב:",
   "sources.index": "מפתח",
   "sources.sefaria": "טעקסט",
 
@@ -93,11 +93,11 @@ export const shiurYi: MessageTable<ShiurKey> = {
   "questions.a": "תירוץ",
   "stories.heading": "מעשיות",
   "stories.people": "אין דער מעשה:",
-  "insights.heading": "חידושים",
+  "insights.heading": "געדאנקען",
   "takeaways.heading": "וואס דער משגיח זאגט מ׳זאל ארויסנעמען",
 
   "mentioned.heading": "דערמאנט אין דעם שיעור",
-  "mentioned.people": "פּערזאנען",
+  "mentioned.people": "פערזאנען",
   "mentioned.concepts": "ענינים",
 
   "catalog.heading": "ארט אינעם קאטאלאג",
@@ -105,11 +105,11 @@ export const shiurYi: MessageTable<ShiurKey> = {
   "catalog.next": "קומענדיגער",
   "catalog.inSection": "{section}: נומ׳ {pos} פון {count}",
   "catalog.inSeries": "{series}: טייל {pos} פון {count}",
-  "catalog.seriesFallback": "סעריע",
+  "catalog.seriesFallback": "סדרה",
   "catalog.sameOccasion": "אויך אויף {occasion}",
-  "catalog.noTitle": "אן א קעפּל",
+  "catalog.noTitle": "אן א קעפל",
 
-  "live.open": "עפענען אין דער הער־אפּליקאציע",
+  "live.open": "עפענען אין דער אפליקאציע צום הערן",
   "report.link": "מעלדן א טעות אויף דעם בלאט",
   "report.subject": "א טעות: {id}",
   "report.body": "שיעור: {id}\nבלאט: {url}\n\nוואס איז נישט ריכטיג:\n",

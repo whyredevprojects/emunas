@@ -21,7 +21,7 @@ export const en = {
 
   "edition.label": "Edition",
   "edition.current": "English edition",
-  "edition.other": "ייִדיש",
+  "edition.other": "אידיש",
   "edition.otherName": "Yiddish edition",
 
   "breadcrumb.label": "You are here",

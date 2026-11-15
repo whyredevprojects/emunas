@@ -135,7 +135,7 @@ describe("catalog notice", () => {
     expect(catalogNotice({ source: "pocket-guide-2012", derived: "catalog" }, "en")).toBeNull();
     expect(catalogNotice({ source: "uncatalogued-guide", derived: "filename" }, "en")).toMatch(/file name/);
     expect(catalogNotice({ source: "uncatalogued-guide", derived: "dir-prefix" }, "en")).toMatch(/folder/);
-    expect(catalogNotice({ source: "uncatalogued-guide", derived: "pocket-guide" }, "yi")).toMatch(/פּאָקעט גייד/);
+    expect(catalogNotice({ source: "uncatalogued-guide", derived: "pocket-guide" }, "yi")).toMatch(/פאקעט גייד/);
   });
 });
 

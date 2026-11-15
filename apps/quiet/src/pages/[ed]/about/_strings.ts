@@ -45,7 +45,7 @@ export const ABOUT_STRINGS: Readonly<Record<Ed, AboutStrings>> = {
       report: "ווי אזוי צו מעלדן א טעות",
       excluded: "וואס איז נישט אריינגענומען",
     },
-    placeholderLabel: "ארט־האלטער",
+    placeholderLabel: "נאך נישט דא",
     placeholder: "דער טייל וועט געשריבן ווערן פון א מענטש; ער איז נאך נישט צוגעשטעלט.",
     reportAddress: "אדרעס פאר מעלדונגען:",
     reportPlaceholderAddress: "(א צייטווייליגער אדרעס; דער ריכטיגער ווערט באשטימט ווען דער זייטל ווערט ארויסגעגעבן)",

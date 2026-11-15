@@ -61,7 +61,7 @@ export type CalendarKey = keyof typeof calendarEn;
 
 export const calendarYi: MessageTable<CalendarKey> = {
   "cal.label": "לוח",
-  "cal.views": "וועגן אריין אין לוח",
+  "cal.views": "דער לוח לויט",
   "cal.byParsha": "לויט די פרשיות",
   "cal.byZman": "לויט די זמנים",
   "cal.byYear": "לויט די יארן",
@@ -69,7 +69,7 @@ export const calendarYi: MessageTable<CalendarKey> = {
   "cal.parsha.title": "שיעורים לויט די פרשיות",
   "cal.parsha.intro": "יעדער שיעור אויף יעדער פרשה, אידיש און ענגליש צוזאמען, לויט די יארן.",
   "cal.zman.title": "שיעורים לויט די זמנים",
-  "cal.zman.intro": "ארום דעם יאר פון אלול. יעדער שיעור אויף יעדן זמן, אידיש און ענגליש צוזאמען, לויט די יארן.",
+  "cal.zman.intro": "דורכאויס דעם יאר, פון אלול אן. יעדער שיעור אויף יעדן זמן, אידיש און ענגליש צוזאמען, לויט די יארן.",
 
   "cal.chumash.bereishis": "ספר בראשית",
   "cal.chumash.shemos": "ספר שמות",
@@ -78,7 +78,7 @@ export const calendarYi: MessageTable<CalendarKey> = {
   "cal.chumash.devarim": "ספר דברים",
 
   "cal.count": { one: "{count} שיעור", other: "{count} שיעורים" },
-  "cal.countNone": "קיינע",
+  "cal.countNone": "קיין שיעורים",
   "cal.parsha.pageIntro": "יעדער שיעור אויף דער פרשה אינעם קאטאלאג, אויף אידיש און אויף ענגליש, לויט די יארן.",
   "cal.zman.pageIntro": "יעדער שיעור אויף דעם זמן אינעם קאטאלאג, אויף אידיש און אויף ענגליש, לויט די יארן.",
   "cal.parsha.empty": "אינעם קאטאלאג איז נישטא קיין שיעור אויף דער פרשה.",
@@ -104,7 +104,7 @@ export const calendarYi: MessageTable<CalendarKey> = {
     other: "דער קאטאלאג גיט נישט קיין יאר פאר די {count} שיעורים.",
   },
   "years.unknown.why":
-    "די סדרות און די שמחות זענען נישט דאטירט אינעם פּאָקעט גייד פון 2012, און רוב רעקארדירונגען אויסער דעם גייד האבן נישט קיין יאר. זיי שטייען דא לויט די אפטיילונגען, אינעם סדר פון קאטאלאג.",
+    "די סדרות און די שמחות זענען נישט דאטירט אינעם פאקעט גייד פון 2012, און רוב רעקארדירונגען אויסער דעם גייד האבן נישט קיין יאר. זיי שטייען דא לויט די אפטיילונגען, אינעם סדר פון קאטאלאג.",
 };
 
 const cache = new Map<Ed, TFunction<CalendarKey>>();

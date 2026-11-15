@@ -25,16 +25,16 @@ export type OfflineKey = keyof typeof offlineEn;
 
 export const offlineYi: MessageTable<OfflineKey> = {
   "offline.download": "אראפלאדן צו הערן אן אינטערנעט",
-  "offline.resume": "ענדיקן דאס אראפלאדן",
+  "offline.resume": "ענדיגן דאס אראפלאדן",
   "offline.downloading": "מען לאדט אראפ… {percent}%",
   "offline.downloadingUnknown": "מען לאדט אראפ… {mb} MB",
   "offline.cancel": "אפשטעלן דאס אראפלאדן",
   "offline.downloaded": "אראפגעלאדן",
   "offline.remove": "אויסמעקן דאס אראפגעלאדענע",
   "offline.partial": "א טייל אראפגעלאדן",
-  "offline.error.network": "דאס אראפלאדן האט זיך אפגעשטעלט. קוקט אויף דער פארבינדונג און פרובירט נאכאמאל.",
+  "offline.error.network": "דאס אראפלאדן האט זיך אפגעשטעלט. קוקט איבער די פארבינדונג און פרובירט נאכאמאל.",
   "offline.error.quota": "עס איז נישטא גענוג פלאץ אויף דעם מכשיר.",
-  "offline.error.unavailable": "דער בלעטערער קען נישט אפהיטן שיעורים צו הערן אן אינטערנעט.",
+  "offline.error.unavailable": "דער בראוזער קען נישט אפהיטן שיעורים צו הערן אן אינטערנעט.",
   "offline.error.aborted": "דאס אראפלאדן איז אפגעשטעלט געווארן.",
   "offline.error.unplayable": "דער שיעור האט נישט קיין רעקארדירונג וואס מען קען אראפלאדן.",
 };

@@ -399,7 +399,7 @@ describe("CatalogTable", () => {
     });
     expect(html).toMatch(/<td class="col-notes" lang="yi"><\/td>/);
     expect(html).toContain("no-recording");
-    expect(html).toContain("קיין רעקארדירונג אויפן נעץ");
+    expect(html).toContain("קיין רעקארדירונג אויפן אינטערנעט");
     expect(html).toContain('class="unc-mark"');
     expect(html).toContain("נישט אינעם גייד פון 2012");
   });

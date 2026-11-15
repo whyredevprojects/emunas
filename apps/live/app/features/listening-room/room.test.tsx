@@ -117,7 +117,7 @@ describe("header, chapters and tabs", () => {
       await settle();
       const panel = screen.getByRole("tabpanel");
       expect(panel.querySelector("[data-ai-label]"), name).not.toBeNull();
-      expect(panel.textContent).toContain("Summary written by AI");
+      expect(panel.textContent).toContain("Notes prepared by AI");
     }
   });
 

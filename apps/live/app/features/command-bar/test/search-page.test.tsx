@@ -74,7 +74,7 @@ describe("search page", () => {
     expect(yiTitle.getAttribute("lang")).toBe("yi");
     expect(container.querySelector(`[data-moment="${LAG}~i2"]`)!.textContent).toContain("Insight, similar in meaning");
     expect(screen.getByTestId("search-status").textContent).toBe("3 moments in 2 shiurim");
-    expect(container.textContent).toContain("Summary written by AI");
+    expect(container.textContent).toContain("Notes prepared by AI");
     await noAxeViolations();
 
     // paging
@@ -172,7 +172,7 @@ describe("search page", () => {
     const { container } = await renderAt("/yi/search?q=lion");
     await waitForSelector(container, "[data-testid=search-results][data-source=api]");
     expect(screen.getByRole("heading", { level: 1 }).textContent).toBe("זוכן");
-    expect(container.querySelector(`[data-moment="${LAG}~i2"]`)!.textContent).toContain("ענלעך אין באדייט");
+    expect(container.querySelector(`[data-moment="${LAG}~i2"]`)!.textContent).toContain("ענליך אין באדייט");
     // Yiddish reading language prefers the yi title
     expect(container.querySelector(`[data-moment="${NOACH}~s0"] bdi`)!.textContent).toBe("דער לייב האט געגעסן גראז");
     await noAxeViolations();
