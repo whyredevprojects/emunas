@@ -26,6 +26,18 @@ import { normalizeHe } from "@emunas/normalize/fold";
 export type Lang = "en" | "yi";
 export const LANGS: readonly Lang[] = ["en", "yi"];
 
+/** `moment_entities.type`; mirrors `ENTITY_TYPES` in src/contract.ts (sync/test/rows.test.ts checks). */
+export const ENTITY_TYPES = ["work", "person", "concept", "topic"] as const;
+export type EntityType = (typeof ENTITY_TYPES)[number];
+
+/** MomentRow.entities field (corpus ids) → `moment_entities.type`. */
+export const ENTITY_FIELD_TYPES = {
+  works: "work",
+  people: "person",
+  concepts: "concept",
+  topics: "topic",
+} as const satisfies Record<(typeof MOMENT_ENTITY_FIELDS)[number], EntityType>;
+
 /** Vectorize id limit (bytes); mirrors `VECTOR_ID_MAX_BYTES` in src/contract.ts. */
 export const VECTOR_ID_MAX_BYTES = 64;
 
@@ -80,7 +92,8 @@ export interface MomentRecord {
     title_yi: string | null;
     hash: string;
   };
-  entities: { type: "work" | "person" | "concept"; entityId: string }[];
+  /** `moment_entities` rows: corpus ids per type. */
+  entities: { type: EntityType; entityId: string }[];
   /** Display text per language (moment_text). */
   texts: { lang: Lang; title: string | null; body: string }[];
   /** Search-form text per language (fts_words, fts_tri). */
@@ -215,11 +228,9 @@ export function toMomentRecord(row: MomentRow): MomentRecord {
     const s = momentSearchText(row, lang);
     if (s !== null) fts.push({ lang, title: s.title, body: s.body });
   }
-  const entities: MomentRecord["entities"] = [
-    ...row.entities.works.map((entityId) => ({ type: "work" as const, entityId })),
-    ...row.entities.people.map((entityId) => ({ type: "person" as const, entityId })),
-    ...row.entities.concepts.map((entityId) => ({ type: "concept" as const, entityId })),
-  ];
+  const entities: MomentRecord["entities"] = MOMENT_ENTITY_FIELDS.flatMap((field) =>
+    row.entities[field].map((entityId) => ({ type: ENTITY_FIELD_TYPES[field], entityId })),
+  );
   // PRIMARY KEY (moment_id, type, entity_id): drop duplicates.
   const seen = new Set<string>();
   const uniqueEntities = entities.filter((e) => {

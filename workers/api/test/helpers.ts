@@ -3,7 +3,7 @@ import { applyD1Migrations } from "cloudflare:test";
 import { foldTokens } from "@emunas/normalize/fold";
 import worker from "../src/index.ts";
 import type { EmbeddingModel, Env, VectorIndex } from "../src/env.ts";
-import { vectorIdFor, type Kind, type Lang } from "../src/contract.ts";
+import { vectorIdFor, type EntityType, type Kind, type Lang } from "../src/contract.ts";
 
 export const ctx = {
   waitUntil: (p: Promise<unknown>) => {
@@ -126,7 +126,7 @@ export interface SeedMoment {
   text: Partial<Record<Lang, { title?: string; body: string }>>;
   /** Extra search-form text written only to the FTS rows (never displayed). */
   ftsExtra?: string;
-  entities?: { type: "work" | "person" | "concept"; id: string }[];
+  entities?: { type: EntityType; id: string }[];
   /** Write vectors for this moment (default true). */
   vector?: boolean;
   vectorMeta?: Meta;
@@ -152,7 +152,7 @@ export const MOMENTS: SeedMoment[] = [
       en: { title: "The Flood and trust", body: "Noach built the ark with complete trust in Hashem while the world laughed." },
       yi: { title: "דער מבול און בטחון", body: "נח האט געבויט די תבה מיט פולן בטחון אין השם." },
     },
-    entities: [{ type: "work", id: "bereishis" }],
+    entities: [{ type: "work", id: "bereishis" }, { type: "topic", id: "emunah" }],
   },
   {
     id: "yi-parsha-noach-01~i0",
@@ -171,7 +171,7 @@ export const MOMENTS: SeedMoment[] = [
       yi: { body: "מען דארף זיך האלטן בתורה אפילו ווען די וועלט איז א מבול." },
       en: { body: "One must hold on to Torah even when the world is a flood." },
     },
-    entities: [{ type: "work", id: "bereishis" }, { type: "concept", id: "bitachon" }],
+    entities: [{ type: "work", id: "bereishis" }, { type: "concept", id: "bitachon" }, { type: "topic", id: "emunah" }, { type: "topic", id: "torah-study" }],
   },
   {
     id: "en-zman-lag-baomer-01~s0",
@@ -190,7 +190,7 @@ export const MOMENTS: SeedMoment[] = [
       en: { title: "Lag BaOmer and the Zohar", body: "On Lag BaOmer we celebrate Rabbi Shimon bar Yochai and the light of the Zohar." },
       yi: { title: "ל\"ג בעומר און דער זוהר", body: "ל\"ג בעומר פייערט מען רבי שמעון בר יוחאי און דאס ליכט פון זוהר." },
     },
-    entities: [{ type: "person", id: "rashbi" }, { type: "concept", id: "simcha" }],
+    entities: [{ type: "person", id: "rashbi" }, { type: "concept", id: "simcha" }, { type: "topic", id: "simcha" }, { type: "topic", id: "lag-baomer" }],
   },
   {
     id: "en-zman-lag-baomer-01~st0",

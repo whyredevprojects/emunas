@@ -48,7 +48,8 @@ function satisfies(momentId: string, filters: string): boolean {
     (yt === null || (m.year !== undefined && m.year <= Number(yt))) &&
     hasEntity("work") &&
     hasEntity("person") &&
-    hasEntity("concept")
+    hasEntity("concept") &&
+    hasEntity("topic")
   );
 }
 
@@ -145,6 +146,16 @@ describe("GET /api/search: filters", () => {
     ["person=rashbi&audio=yi", "q=zohar", []],
     ["series=tanya", "q=trust", []],
     ["work=bereishis&yearFrom=5744", "q=flood", []],
+    // topic: corpus topic ids, a type of its own (a concept with the same id is not a topic hit)
+    ["topic=emunah", "q=flood", ["yi-parsha-noach-01~i0", "yi-parsha-noach-01~s0"]],
+    ["topic=torah-study", "q=flood", ["yi-parsha-noach-01~i0"]],
+    ["topic=emunah,lag-baomer", "q=trust", ["yi-parsha-noach-01~s0"]],
+    ["topic=lag-baomer", "q=zohar", ["en-zman-lag-baomer-01~s0"]],
+    ["topic=simcha&concept=simcha&person=rashbi", "q=zohar", ["en-zman-lag-baomer-01~s0"]],
+    ["topic=bitachon", "q=flood", []],
+    ["concept=emunah", "q=flood", []],
+    ["topic=emunah&audio=en", "q=flood", []],
+    ["topic=emunah&work=bereishis&kind=insight", "q=flood", ["yi-parsha-noach-01~i0"]],
   ];
 
   for (const mode of ["lexical", "hybrid"] as const) {
@@ -165,6 +176,8 @@ describe("GET /api/search: filters", () => {
     for (const x of r.results) expect(x.shiurId).toBe("yi-parsha-noach-01");
     const w = await search("q=trust&mode=semantic&work=bereishis");
     for (const x of w.results) expect(x.shiurId).toBe("yi-parsha-noach-01");
+    const tp = await search("q=trust&mode=semantic&topic=lag-baomer");
+    for (const x of tp.results) expect(x.momentId).toBe("en-zman-lag-baomer-01~s0");
   });
 
   it("passes declared metadata filters to Vectorize", async () => {
@@ -192,6 +205,8 @@ describe("GET /api/search: filters", () => {
       "q=a&limit=51",
       "q=a&yearFrom=5800&yearTo=5700",
       "q=a&work=Not%20A%20Key",
+      "q=a&topic=Not%20A%20Key",
+      "q=a&topics=emunah",
       "q=a&heardAs=1",
       "q=a&q=b",
       "q=a&cursor=***",

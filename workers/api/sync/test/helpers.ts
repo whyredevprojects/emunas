@@ -4,7 +4,7 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { afterAll } from "vitest";
 import { buildCorpusWithAggregates as buildCorpus } from "@emunas/corpus/build/aggregate";
-import { buildSearchOutputs, contentHash, readCorpusShiurim, writeSearchOutputs } from "@emunas/search-core/build";
+import { buildSearchOutputs, contentHash, readCorpusShiurim, readSearchLayerInput, writeSearchOutputs } from "@emunas/search-core/build";
 import type { MomentRow } from "@emunas/search-core";
 import { MiniflareD1Target } from "../src/local.ts";
 
@@ -36,12 +36,18 @@ export function buildMiniCorpus(dataDir = MINI_DATA): string {
   return outDir;
 }
 
+/** MomentRows of a built `.corpus/` with its corpus layer (corpus ids, topics), as search:build emits them. */
+export function corpusMoments(corpus: string): MomentRow[] {
+  const shiurim = readCorpusShiurim(corpus);
+  return buildSearchOutputs(shiurim, readSearchLayerInput(corpus, shiurim)).moments;
+}
+
 let miniRows: MomentRow[] | null = null;
 /** MomentRows of the mini corpus (built once per test file). */
 export function miniMoments(): MomentRow[] {
   if (miniRows === null) {
     const corpus = buildMiniCorpus();
-    miniRows = buildSearchOutputs(readCorpusShiurim(corpus)).moments;
+    miniRows = corpusMoments(corpus);
   }
   return miniRows.map((r) => structuredClone(r));
 }

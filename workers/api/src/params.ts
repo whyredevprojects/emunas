@@ -1,6 +1,6 @@
 /** Strict parsing of /api/search and /api/similar query strings. Unknown parameters are rejected. */
 import { BadRequest, UNKNOWN_PARAMETER } from "./http.ts";
-import { isKind, isLang, MODES, type Kind, type Lang, type Mode } from "./contract.ts";
+import { ENTITY_TYPES, isKind, isLang, MODES, type EntityType, type Kind, type Lang, type Mode } from "./contract.ts";
 
 export const MAX_Q_LENGTH = 200;
 export const DEFAULT_LIMIT = 20;
@@ -12,15 +12,15 @@ const KEY_RE = /^[a-z0-9][a-z0-9-]{0,119}$/;
 /** Moment ids: <shiurId>~<kind><idx>[.<n>...][.<lang>] */
 const MOMENT_RE = /^[a-z0-9][a-z0-9-]{0,119}~[a-z]{1,3}[0-9]{1,5}(\.[0-9]{1,5}){0,3}(\.(en|yi))?$/;
 
-export interface SearchFilters {
+/** One list of corpus ids per entity type (`work`, `person`, `concept`, `topic`). */
+export type EntityFilters = Record<EntityType, string[]>;
+
+export interface SearchFilters extends EntityFilters {
   audio: Lang[];
   kind: Kind[];
   category: string[];
   occasion: string[];
   series: string[];
-  work: string[];
-  person: string[];
-  concept: string[];
   yearFrom: number | null;
   yearTo: number | null;
 }
@@ -36,7 +36,7 @@ export interface SearchParams {
 
 const SEARCH_KEYS = new Set([
   "q", "ui", "audio", "kind", "category", "occasion", "series", "yearFrom", "yearTo",
-  "work", "person", "concept", "mode", "limit", "cursor",
+  ...ENTITY_TYPES, "mode", "limit", "cursor",
 ]);
 
 function single(sp: URLSearchParams, name: string): string | null {
@@ -104,6 +104,7 @@ export function parseSearchParams(sp: URLSearchParams): SearchParams {
       work: list(sp, "work", isKey),
       person: list(sp, "person", isKey),
       concept: list(sp, "concept", isKey),
+      topic: list(sp, "topic", isKey),
       yearFrom,
       yearTo,
     },
@@ -140,6 +141,7 @@ export function canonicalSearchKey(p: SearchParams): string {
     ["work", f.work.join(",")],
     ["person", f.person.join(",")],
     ["concept", f.concept.join(",")],
+    ["topic", f.topic.join(",")],
     ["yearFrom", f.yearFrom === null ? "" : String(f.yearFrom)],
     ["yearTo", f.yearTo === null ? "" : String(f.yearTo)],
   ];

@@ -6,13 +6,12 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { afterEach, describe, expect, it } from "vitest";
-import { buildSearchOutputs, readCorpusShiurim } from "@emunas/search-core/build";
 import { syncD1, SchemaError } from "../src/d1-sync.ts";
 import { MiniflareD1Target } from "../src/local.ts";
 import { corpusRevOf, ftsRowid, rowLangs } from "../src/rows.ts";
 import { normalizeQuery } from "../../src/query.ts";
 import { trigramMatch, wordsMatch } from "../../src/fts.ts";
-import { buildMiniCorpus, freshD1, miniDataCopy, miniMoments, tableCounts } from "./helpers.ts";
+import { buildMiniCorpus, corpusMoments, freshD1, miniDataCopy, miniMoments, rehash, tableCounts } from "./helpers.ts";
 
 const open: MiniflareD1Target[] = [];
 afterEach(async () => {
@@ -34,7 +33,20 @@ describe("D1 sync: first run, idempotence, incremental", () => {
     expect(r.updated + r.deleted).toBe(0);
     expect(r.revWritten).toBe(true);
     const units = rows.reduce((n, row) => n + rowLangs(row).length, 0);
-    const entities = rows.reduce((n, row) => n + new Set([...row.entities.works.map((x) => `w${x}`), ...row.entities.people.map((x) => `p${x}`), ...row.entities.concepts.map((x) => `c${x}`)]).size, 0);
+    const entities = rows.reduce(
+      (n, row) =>
+        n +
+        new Set([
+          ...row.entities.works.map((x) => `w${x}`),
+          ...row.entities.people.map((x) => `p${x}`),
+          ...row.entities.concepts.map((x) => `c${x}`),
+          ...row.entities.topics.map((x) => `t${x}`),
+        ]).size,
+      0,
+    );
+    const topicRows = rows.reduce((n, row) => n + new Set(row.entities.topics).size, 0);
+    expect(topicRows).toBeGreaterThan(0);
+    expect(await t.all("SELECT count(*) AS n FROM moment_entities WHERE type = 'topic'")).toEqual([{ n: topicRows }]);
     expect(await tableCounts(t)).toEqual({
       moments: rows.length,
       moment_entities: entities,
@@ -70,7 +82,7 @@ describe("D1 sync: first run, idempotence, incremental", () => {
     (w.en[0] as { paragraphs: { text: string }[] }).paragraphs[0]!.text += " The Rav adds a closing remark about humility.";
     writeFileSync(file, JSON.stringify(w));
     const corpus = buildMiniCorpus(data);
-    const second = buildSearchOutputs(readCorpusShiurim(corpus)).moments;
+    const second = corpusMoments(corpus);
 
     const oldHash = new Map(first.map((r) => [r.id, r.hash]));
     const changed = second.filter((r) => oldHash.get(r.id) !== r.hash);
@@ -93,6 +105,28 @@ describe("D1 sync: first run, idempotence, incremental", () => {
     expect(hits.map((h) => h.id)).toEqual([id]);
     // Exactly one FTS row per language survived the replacement.
     expect(await t.all("SELECT count(*) AS n FROM fts_tri WHERE id = ?", [id])).toEqual([{ n: 1 }]);
+  });
+
+  it("a topic change re-writes only that moment and replaces its topic rows", async () => {
+    const t = await db();
+    const rows = miniMoments();
+    await syncD1(t, rows);
+    const i = rows.findIndex((r) => r.entities.topics.length > 0);
+    expect(i).toBeGreaterThanOrEqual(0);
+    const target = rows[i]!;
+    const topicsOf = async (id: string) =>
+      (await t.all<{ entity_id: string }>("SELECT entity_id FROM moment_entities WHERE moment_id = ? AND type = 'topic' ORDER BY entity_id", [id])).map((r) => r.entity_id);
+    expect(await topicsOf(target.id)).toEqual([...new Set(target.entities.topics)].sort());
+
+    const edited = rows.map((r, j) => (j === i ? rehash({ ...r, entities: { ...r.entities, topics: ["zz-new-topic"] } }) : r));
+    const before = await t.all("SELECT id, hash FROM moments WHERE id != ? ORDER BY id", [target.id]);
+    const r = await syncD1(t, edited);
+    expect(r).toMatchObject({ inserted: 0, updated: 1, deleted: 0, shiurim: [target.shiurId], revWritten: true });
+    expect(await topicsOf(target.id)).toEqual(["zz-new-topic"]);
+    expect(await t.all("SELECT id, hash FROM moments WHERE id != ? ORDER BY id", [target.id])).toEqual(before);
+
+    // And it is idempotent again.
+    expect(await syncD1(t, edited)).toMatchObject({ inserted: 0, updated: 0, deleted: 0, statements: 0 });
   });
 
   it("a removed shiur's rows are deleted from every table", async () => {

@@ -15,7 +15,12 @@ export type Lang = (typeof LANGS)[number];
 export const MODES = ["hybrid", "lexical", "semantic"] as const;
 export type Mode = (typeof MODES)[number];
 
-export const ENTITY_TYPES = ["work", "person", "concept"] as const;
+/**
+ * `moment_entities.type` values, which are also the search filter parameter names. Entity ids are
+ * corpus ids (`data/derived/corpus`, via the search-core MomentRow); `topic` is the corpus topic
+ * tree (section rows: the chapter's topics; other rows: the shiur's topics at salience >= 0.6).
+ */
+export const ENTITY_TYPES = ["work", "person", "concept", "topic"] as const;
 export type EntityType = (typeof ENTITY_TYPES)[number];
 
 /** How a result matched: words in its generated title, words in its generated text, or meaning only. */

@@ -1,7 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { MOMENT_ROW_FIELDS, momentSearchText } from "@emunas/search-core";
+import { MOMENT_ENTITY_FIELDS, MOMENT_ROW_FIELDS, momentSearchText } from "@emunas/search-core";
 import {
   corpusRevOf,
+  ENTITY_FIELD_TYPES,
+  ENTITY_TYPES,
   parseMomentsNdjson,
   RowError,
   rowLangs,
@@ -12,7 +14,7 @@ import {
   VECTOR_ID_MAX_BYTES,
   VECTOR_METADATA_KEYS,
 } from "../src/rows.ts";
-import { parseVectorId, vectorIdFor as workerVectorIdFor } from "../../src/contract.ts";
+import { ENTITY_TYPES as WORKER_ENTITY_TYPES, parseVectorId, vectorIdFor as workerVectorIdFor } from "../../src/contract.ts";
 import { splitSql } from "../src/sql.ts";
 import { miniMoments } from "./helpers.ts";
 
@@ -32,6 +34,18 @@ describe("moments.ndjson validation", () => {
     expect(() => parseMomentsNdjson(line({ ...good, extra: 1 }))).toThrow(/unknown key "extra"/);
     expect(() => parseMomentsNdjson(line({ ...good, facets: { ...good.facets, segs: [1] } }))).toThrow(/forbidden key "segs"/);
     expect(() => parseMomentsNdjson(line({ ...good, entities: { ...good.entities, transcript: [] } }))).toThrow(RowError);
+  });
+
+  it("entities carry corpus topics: required, string lists only", () => {
+    expect(Object.keys(good.entities).sort()).toEqual([...MOMENT_ENTITY_FIELDS].sort());
+    expect(MOMENT_ENTITY_FIELDS).toContain("topics");
+    const withTopics = { ...good, entities: { ...good.entities, topics: ["emunah", "hester-panim"] } };
+    expect(parseMomentsNdjson(line(withTopics))[0]!.entities.topics).toEqual(["emunah", "hester-panim"]);
+    const { topics: _t, ...noTopics } = good.entities;
+    expect(() => parseMomentsNdjson(line({ ...good, entities: noTopics }))).toThrow(/missing key "topics"/);
+    expect(() => parseMomentsNdjson(line({ ...good, entities: { ...good.entities, topics: "emunah" } }))).toThrow(/bad entities\.topics/);
+    expect(() => parseMomentsNdjson(line({ ...good, entities: { ...good.entities, topics: [1] } }))).toThrow(/bad entities\.topics/);
+    expect(() => parseMomentsNdjson(line({ ...good, entities: { ...good.entities, asrVariants: [] } }))).toThrow(/forbidden key "asrVariants"|unknown key "asrVariants"/);
   });
 
   it("rejects bad types, ids and duplicates", () => {
@@ -61,6 +75,35 @@ describe("row mapping", () => {
     for (const f of rec.fts) expect(f).toEqual({ lang: f.lang, ...momentSearchText(r, f.lang)! });
     expect(rec.texts.find((x) => x.lang === "en")).toEqual({ lang: "en", title: r.title_en, body: r.body_en });
     expect(rec.moment.catalogued).toBe(r.facets.catalogued ? 1 : 0);
+  });
+
+  it("entities: every MomentRow entity list becomes moment_entities rows, topics as type topic, deduplicated", () => {
+    expect([...ENTITY_TYPES]).toEqual([...WORKER_ENTITY_TYPES]);
+    expect(Object.keys(ENTITY_FIELD_TYPES).sort()).toEqual([...MOMENT_ENTITY_FIELDS].sort());
+    const base = rows.find((r) => r.kind === "section")!;
+    const row = {
+      ...base,
+      entities: { works: ["bereishis"], people: ["divrei-chaim"], concepts: ["bitachon"], topics: ["emunah", "hester-panim", "emunah"] },
+    };
+    expect(toMomentRecord(row).entities).toEqual([
+      { type: "work", entityId: "bereishis" },
+      { type: "person", entityId: "divrei-chaim" },
+      { type: "concept", entityId: "bitachon" },
+      { type: "topic", entityId: "emunah" },
+      { type: "topic", entityId: "hester-panim" },
+    ]);
+    // The same id under two types stays two rows (the key is (moment, type, id)).
+    const both = toMomentRecord({ ...base, entities: { works: [], people: [], concepts: ["hester-panim"], topics: ["hester-panim"] } });
+    expect(both.entities.map((e) => e.type)).toEqual(["concept", "topic"]);
+  });
+
+  it("the mini corpus emits topics on moments, and they reach the records", () => {
+    const withTopics = rows.filter((r) => r.entities.topics.length > 0);
+    expect(withTopics.length).toBeGreaterThan(0);
+    for (const r of withTopics.slice(0, 50)) {
+      const topics = toMomentRecord(r).entities.filter((e) => e.type === "topic").map((e) => e.entityId);
+      expect(topics).toEqual([...new Set(r.entities.topics)]);
+    }
   });
 
   it("vectors: no write-up paragraphs, ids within 64 bytes, metadata exactly the contract keys", () => {

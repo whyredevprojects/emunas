@@ -2,6 +2,7 @@ import { env } from "cloudflare:workers";
 import { applyD1Migrations } from "cloudflare:test";
 import { beforeAll, describe, expect, it } from "vitest";
 import { migrate } from "./helpers.ts";
+import { ENTITY_TYPES } from "../src/contract.ts";
 
 async function names(db: D1Database): Promise<string[]> {
   const { results } = await db
@@ -21,6 +22,16 @@ describe("D1 migrations on a fresh local database", () => {
     const sql = await env.DB_SEARCH.prepare("SELECT sql FROM sqlite_master WHERE name IN ('fts_words', 'fts_tri') ORDER BY name").all<{ sql: string }>();
     expect(sql.results[0]?.sql).toContain("trigram");
     expect(sql.results[1]?.sql).toContain("unicode61 remove_diacritics 2");
+  });
+
+  it("moment_entities.type is unconstrained TEXT: every ENTITY_TYPES value (incl. topic) is storable without a migration", async () => {
+    const { results } = await env.DB_SEARCH.prepare("SELECT sql FROM sqlite_master WHERE name = 'moment_entities'").all<{ sql: string }>();
+    expect(results[0]?.sql).not.toMatch(/CHECK/i);
+    const db = env.DB_SEARCH;
+    await db.batch(ENTITY_TYPES.map((type) => db.prepare("INSERT INTO moment_entities (moment_id, type, entity_id) VALUES ('mig-x~s0', ?, 'emunah')").bind(type)));
+    const rows = await db.prepare("SELECT type FROM moment_entities WHERE moment_id = 'mig-x~s0' ORDER BY type").all<{ type: string }>();
+    expect(rows.results.map((r) => r.type)).toEqual([...ENTITY_TYPES].sort());
+    await db.prepare("DELETE FROM moment_entities WHERE moment_id = 'mig-x~s0'").run();
   });
 
   it("seeds meta with schema_version and an empty corpus_rev", async () => {

@@ -18,8 +18,16 @@ client address; the address is the rate-limit key only and is never stored).
 
 `q` (required, ≤200 chars) · `ui=en|yi` (snippet language preference) · `mode=hybrid|lexical|semantic`
 · `audio=en,yi` · `kind=section,insight,…` · `category=` · `occasion=` · `series=` · `work=` ·
-`person=` · `concept=` · `yearFrom=` · `yearTo=` · `limit` (1–50, default 20) · `cursor`.
-Lists are comma-separated (≤10 values), keys are `@emunas/normalize` slugs. Unknown parameters → 400.
+`person=` · `concept=` · `topic=` · `yearFrom=` · `yearTo=` · `limit` (1–50, default 20) · `cursor`.
+Lists are comma-separated (≤10 values) of slugs. Unknown parameters → 400.
+
+Entity filters (`work`, `person`, `concept`, `topic`; `ENTITY_TYPES` in `src/contract.ts`) take
+**corpus ids** (`data/derived/corpus`, through the corpus layer and search-core's `MomentRow`), the
+same ids the sites' entity pages use. Each type is its own namespace: `topic=hester-panim` and
+`concept=hester-panim` are different filters. Several values of one type match any of them; several
+types must all match. `topic` matches section moments by their chapter's topics and every other
+moment by its shiur's topics at salience ≥ 0.6 (search-core C1.5). Entity filters are D1-only, so
+semantic hits that fail one are dropped at hydration.
 
 Response (exact keys, see `src/contract.ts` `ALLOWED_KEYS`):
 
@@ -39,7 +47,8 @@ client renders `<mark>`. No HTML is ever returned. A cursor from another `corpus
 Schema: `migrations/search/0001_init.sql`.
 
 - `moments`: one row per moment, facets copied from the shiur, `hash` for diffing.
-- `moment_entities`: `(moment_id, type ∈ work|person|concept, entity_id)`.
+- `moment_entities`: `(moment_id, type ∈ work|person|concept|topic, entity_id)`, corpus ids. `type` is
+  plain TEXT (no CHECK), so `topic` needed no migration.
 - `moment_text(id, lang, title, body)`: the generated title/body **as displayed** (after `normalizeHe`).
   Snippets come only from here.
 - `fts_words` / `fts_tri(id, lang, title, body)`: the same text in **search form**, i.e. `fold()` tokens
