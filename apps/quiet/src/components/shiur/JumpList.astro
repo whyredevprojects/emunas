@@ -1,0 +1,33 @@
+---
+/**
+ * The short jump list under the header (concept-quiet §5.4: "A short jump list under the header
+ * names these parts"). Only parts present on this page are listed.
+ */
+import type { Ed } from "../../lib/edition.ts";
+import { useShiurT, type ShiurKey } from "./strings.ts";
+import type { PagePart } from "./view.ts";
+
+interface Props {
+  ed: Ed;
+  parts: readonly PagePart[];
+}
+
+const { ed, parts } = Astro.props;
+const t = useShiurT(ed);
+const LABEL: Record<PagePart, ShiurKey> = {
+  about: "jump.about",
+  outline: "jump.outline",
+  writeup: "jump.writeup",
+  sources: "jump.sources",
+  apparatus: "jump.apparatus",
+  mentioned: "jump.mentioned",
+  catalog: "jump.catalog",
+};
+---
+{parts.length > 1 && (
+  <nav class="jump-list" aria-label={t("jump.label")} data-print="hide">
+    <ul role="list">
+      {parts.map((part) => <li><a href={`#${part}`}>{t(LABEL[part])}</a></li>)}
+    </ul>
+  </nav>
+)}
