@@ -173,7 +173,7 @@ describe("series page", () => {
     await noAxeViolations();
   });
 
-  it("renders no 'both' view: an old ?view=both link shows this course in order, never the other language", async () => {
+  it("has no 'both' view: ?view=both shows this course in order, never the other language", async () => {
     const requested: string[] = [];
     configureData({
       fetch: (input, init) => {

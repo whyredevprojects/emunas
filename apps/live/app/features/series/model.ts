@@ -6,10 +6,12 @@
  * - parts in catalog `seriesOrder` (parts without an order last, otherwise stable);
  * - Tanya by perek: each part filed under every perek it covers (`ו-ז`, `י"א וי"ב`), so whoever is
  *   learning perek 12 finds every part on it, in either language;
- * - progress over the parts from the personal store.
+ * - progress over the parts from the personal store;
+ * - the series synthesis (concept-live-corpus C.6): generated title, overview, key themes and the
+ *   position-aware arc line of each visible part, which replaces the part's own one-liner.
  */
 import { numeralValue } from "@emunas/i18n";
-import type { Ed } from "@emunas/corpus/public";
+import type { Ed, L } from "@emunas/corpus/public";
 import type { FacetsFile, SeriesFacetValue, SeriesFile, SeriesPart } from "../today/live-data.ts";
 import type { ProgressRecord } from "../today/personal.ts";
 
@@ -161,10 +163,83 @@ export function seriesProgress(parts: readonly SeriesPart[], progress: readonly 
 
 export type SeriesView = "order" | "perek";
 
-/** `?view=` → a view the series supports; defaults to in order (an old `?view=both` too). */
+/** `?view=` → a view the series supports; anything else is the default, in order. */
 export function viewFromQuery(search: string | URLSearchParams, opts: { hasPerek: boolean }): SeriesView {
   const q = typeof search === "string" ? new URLSearchParams(search) : search;
   const v = q.get("view");
   if (v === "perek" && opts.hasPerek) return "perek";
   return "order";
+}
+
+// ---------------------------------------------------------------------------------------------
+// Synthesis (concept-live-corpus C.6)
+
+/** The generated introduction of a series in one reading language; blank fields are left out. */
+export interface SeriesIntro {
+  title: string | null;
+  overview: string | null;
+  /** Plain text: these are not topic ids and are never linked. */
+  keyThemes: string[];
+  reviewed: boolean;
+}
+
+function clean(l: L | null | undefined, lang: Ed): string | null {
+  const v: unknown = l?.[lang];
+  return typeof v === "string" && v.trim() !== "" ? v.trim() : null;
+}
+
+/**
+ * The synthesis of a series in the reading language, or null when the series has none (the page
+ * then shows no synthesis UI at all). A field the guard suppressed arrives blank and is left out;
+ * the synthesis itself, and so its label, stays.
+ */
+export function seriesIntro(series: Pick<SeriesFile, "synthesis">, read: Ed): SeriesIntro | null {
+  const x = series.synthesis;
+  if (!x) return null;
+  return {
+    title: clean(x.title, read),
+    overview: clean(x.overview, read),
+    keyThemes: (Array.isArray(x.keyThemes) ? x.keyThemes : []).flatMap((k) => {
+      const v = clean(k, read);
+      return v === null ? [] : [v];
+    }),
+    reviewed: x.reviewed === true,
+  };
+}
+
+/** What a part row shows under its title. */
+export type PartLine =
+  /** A generated line: the arc line (with a synthesis) or the part's own one-liner. */
+  | { kind: "line"; text: L; source: "arc" | "part" }
+  /** No synthesis and no notes yet: the card says notes are pending, as every shiur card does. */
+  | { kind: "pending" }
+  /** A part of a synthesized series that is not visible (catalog-only): the row, with no line. */
+  | { kind: "none" };
+
+/**
+ * The line of each part, by shiur id. With a synthesis the ordered path reads as a course: each
+ * visible part shows its arc line, written with its position in mind, in place of its standalone
+ * one-liner; a visible part the arc does not cover keeps its own one-liner; a part that is not
+ * visible shows its row without a line. Without a synthesis each part shows its own one-liner.
+ */
+export function partLines(series: Pick<SeriesFile, "parts" | "synthesis">): Map<string, PartLine> {
+  const out = new Map<string, PartLine>();
+  const x = series.synthesis;
+  const arc = new Map<string, L>();
+  for (const a of x && Array.isArray(x.arc) ? x.arc : []) {
+    if (!arc.has(a.shiurId) && (clean(a.oneLiner, "en") !== null || clean(a.oneLiner, "yi") !== null)) arc.set(a.shiurId, a.oneLiner);
+  }
+  for (const p of series.parts) {
+    const own = p.oneLiner;
+    if (!x) {
+      out.set(p.shiurId, own ? { kind: "line", text: own, source: "part" } : { kind: "pending" });
+      continue;
+    }
+    const visible = p.status === "full";
+    const a = visible ? arc.get(p.shiurId) : undefined;
+    if (a) out.set(p.shiurId, { kind: "line", text: a, source: "arc" });
+    else if (visible && own) out.set(p.shiurId, { kind: "line", text: own, source: "part" });
+    else out.set(p.shiurId, { kind: "none" });
+  }
+  return out;
 }

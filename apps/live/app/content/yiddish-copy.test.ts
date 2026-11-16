@@ -11,9 +11,11 @@ import { browseEn, browseYi } from "../features/entities/strings.ts";
 import { exploreEn, exploreYi } from "../features/explore/strings.ts";
 import { feedbackEn, feedbackYi } from "../features/feedback/strings.ts";
 import { roomEn, roomYi } from "../features/listening-room/strings.ts";
+import { mixEn, mixYi } from "../features/mix/strings.ts";
 import { seriesEn, seriesYi } from "../features/series/strings.ts";
 import { shelfEn, shelfYi } from "../features/shelf/strings.ts";
 import { todayEn, todayYi } from "../features/today/strings.ts";
+import { topicsEn, topicsYi } from "../features/topics/strings.ts";
 import { transcriptEn, transcriptYi } from "../features/transcript/strings.ts";
 import { UI_TABLES } from "../i18n/index.ts";
 import { seoStrings, type SeoStrings } from "../seo/strings.ts";
@@ -39,9 +41,11 @@ const PAIRS: Record<string, { en: object; yi: object }> = {
   explore: { en: exploreEn, yi: exploreYi },
   feedback: { en: feedbackEn, yi: feedbackYi },
   room: { en: roomEn, yi: roomYi },
+  mix: { en: mixEn, yi: mixYi },
   series: { en: seriesEn, yi: seriesYi },
   shelf: { en: shelfEn, yi: shelfYi },
   today: { en: todayEn, yi: todayYi },
+  topics: { en: topicsEn, yi: topicsYi },
   transcript: { en: transcriptEn, yi: transcriptYi },
   offline: { en: offlineEn, yi: offlineYi },
 };

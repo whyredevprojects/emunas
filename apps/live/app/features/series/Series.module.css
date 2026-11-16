@@ -147,4 +147,40 @@
     font-size: var(--step--2);
     color: var(--color-ink-muted);
   }
+
+  .label {
+    margin: 0;
+    font-size: var(--step--2);
+    color: var(--color-ink-muted);
+  }
+
+  .synthesis {
+    display: grid;
+    gap: var(--space-xs);
+    max-inline-size: var(--measure-text);
+  }
+
+  .subtitle {
+    margin: 0;
+    font-size: var(--step-1);
+    font-weight: var(--weight-semibold);
+  }
+
+  .overview {
+    margin: 0;
+  }
+
+  .themesTitle {
+    margin: 0;
+    font-size: var(--step-0);
+    font-weight: var(--weight-regular);
+    color: var(--color-ink-muted);
+  }
+
+  .themes {
+    margin: 0;
+    padding-inline-start: var(--space-m);
+    display: grid;
+    gap: var(--space-3xs);
+  }
 }
