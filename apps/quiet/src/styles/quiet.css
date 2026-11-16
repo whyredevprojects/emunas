@@ -481,6 +481,20 @@
       grid-template-columns: 1fr 1fr;
     }
   }
+
+  /* The new-tab mark (components/NewTabIcon.astro, components/new-tab-icon.ts). Mirrors in RTL so
+     the arrow leaves on the reading side. */
+  .new-tab-icon {
+    display: inline-block;
+    inline-size: 0.8em;
+    block-size: 0.8em;
+    margin-inline-start: 0.25em;
+    vertical-align: baseline;
+  }
+
+  [dir="rtl"] .new-tab-icon {
+    transform: scaleX(-1);
+  }
 }
 
 @layer utilities {
