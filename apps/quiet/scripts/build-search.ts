@@ -380,6 +380,8 @@ function describeFinding(f: Finding): string {
       return `transcript file ${f.recordingId}`;
     case "alias":
       return `alias ${f.rule} ×${f.count}${f.entity ? ` of ${f.entity}` : ""} at ${f.field}`;
+    case "meta-comment":
+      return `remark on the audio or transcript "${f.term}" ×${f.count}${f.field ? ` at ${f.field}` : ""}: ${f.context}`;
     case "unreadable":
       return `unreadable: ${f.reason}`;
   }

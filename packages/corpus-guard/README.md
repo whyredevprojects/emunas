@@ -43,10 +43,27 @@ The pre-pass also reads `.corpus/layer/` when present (no flag).
 | Verbatim runs of corpus-layer text (`corpus:` item ids, below) | each unit vs. the transcripts of all its member shiurim; ≥12 reported, ≥20 suppressed | in `.corpus/layer/` files: each unit vs. its member shiurim (by attribution in the JSON); the same text elsewhere (HTML pages) vs. every transcript; ≥12 reported, ≥20 fails |
 | `…/transcript/<recordingId>.json` |  | finding unless the id is in `site-policy/transcript-eligibility.json` **and** `EMUNAS_TRANSCRIPT_VIEW=on` |
 | Verbatim runs vs. transcripts | each item vs. its own shiur's recordings; ≥12 reported, ≥20 suppressed | each text unit vs. its shiur (by `shiurId`/`id` in JSON, else a path segment equal to a shiur id), otherwise vs. every transcript; ≥12 reported, ≥20 fails |
+| Remarks on the audio or the transcript (`src/meta-comment.ts`) |  | every string value of a JSON/NDJSON file (bare paths and URLs aside), the text, attributes and inline payloads of an HTML page, and `.txt`/`.xml`/`.md` files; JS bundles are not read for it |
 
 Tokenizer (`src/tokenize.ts`): NFC, strip U+0591–U+05C7 (maqaf/paseq/sof pasuq split words),
 unify quote marks and drop them between letters (`חז״ל` = `חז"ל` = `חזל`), runs of Unicode
 letters/digits, lowercase. Runs may cross ASR segment boundaries, not recording boundaries.
+
+### Remarks on the audio or the transcript
+
+Owner rule: published text never comments on the audio or the transcript ("garbled", "inaudible",
+"the recording breaks off", "the transcript", ASR, "צעמישט", "נישט קלאר", …). Such a line reads as if
+the Mashgiach spoke unclearly. `META_COMMENT_TERMS` in `src/meta-comment.ts` is the one curated list
+(English and Yiddish). Both sides are folded with `foldBasic` (@emunas/normalize) and compared as whole
+words; a trailing `*` lets the last word run on (`garbl*`, `transcri*`). A finding (`meta-comment`)
+names the file, the field (JSON), the term, a count and about 60 characters of folded context on each
+side. This is the one finding that carries published text, never transcript text: the check reads only
+the built output.
+
+A legitimate use passes only through `site-policy/meta-comment-allow.json`
+(`[{ file, term, reason, reviewedBy, reviewedAt }]`, `file` as the report prints it without an NDJSON
+`:line`, `term` exactly as listed). It ships empty: prefer rewording the text. The sites' copy tests
+(`yiddish-copy.test.ts` in both apps, `about-drafts.test.ts`) run the same list over every string table.
 
 ### Alias positions
 

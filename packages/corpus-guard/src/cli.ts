@@ -100,6 +100,8 @@ function describe(f: Finding): string {
       return `transcript file not accepted for recording ${f.recordingId} (${f.reason}): ${f.source}`;
     case "verbatim":
       return `verbatim run of ${f.runLength} tokens in ${f.source}${f.itemId ? ` item ${f.itemId}` : ""}${f.field ? ` field ${f.field}` : ""}`;
+    case "meta-comment":
+      return `remark on the audio or transcript "${f.term}" ×${f.count}${f.field ? ` at ${f.field}` : ""} in ${f.source}: ${f.context}`;
     case "unreadable":
       return `unreadable file ${f.source} (${f.reason})`;
     case "alias":
@@ -165,6 +167,7 @@ function post(args: ParsedArgs, log: (s: string) => void): number {
     log("guard post: verbatim scan DISABLED (--no-verbatim)");
   }
   log(`guard post: corpus-layer text units compared with their member shiurim ${c.corpusUnits}`);
+  log(`guard post: published strings checked for remarks on the audio or transcript ${c.metaCommentUnits} (allow-listed hits ${c.metaCommentAllowed})`);
   if (result.aliasesChecked) log(`guard post: alias terms checked (raw ban + display fields) ${c.aliasTermsChecked}; story names checked ${c.storyNamesChecked}; other names checked ${c.namesChecked}`);
   else log(`guard post: alias checks DISABLED (${args.flags.has("no-aliases") ? "--no-aliases" : `no corpus data at ${defaultData}`})`);
   for (const f of result.findings) log(`  FAIL ${describe(f)}`);

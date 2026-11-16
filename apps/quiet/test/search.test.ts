@@ -486,7 +486,8 @@ describe("corpus-guard on the records", () => {
       meta: { ...base.meta, ...({ heardAs: "secret words" } as object) },
     };
     const g = guardRecords([{ record: bad, shiurId: records[0]!.shiurId }], new LeakScanner({}));
-    expect(g.findings.map((f) => f.kind).sort()).toEqual(["key", "substring"]);
+    // "transcripts/" is also a remark on the transcript (meta-comment); its context is shipped text, never the planted value.
+    expect(g.findings.map((f) => f.kind).sort()).toEqual(["key", "meta-comment", "substring"]);
     expect(JSON.stringify(g)).not.toContain("secret words");
   });
 });

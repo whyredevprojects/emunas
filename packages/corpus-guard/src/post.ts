@@ -5,6 +5,9 @@
  * Any finding fails the deploy. Findings and reports carry file paths, ids, field paths,
  * key names, counts and run lengths, never transcript or shipped text.
  *
+ * Remarks on the audio or the transcript (meta-comment.ts) fail in built pages and published data;
+ * those findings carry the listed term and a short folded excerpt of the published text around it.
+ *
  * Corpus-layer text (`.corpus/layer/` stories, threads, topics, concepts, series) is compared with
  * the transcripts of its member shiurim, under its `corpus:` item id; those comparisons run when the
  * result is taken, grouped by shiur, so each shiur's index is built once.
@@ -12,7 +15,7 @@
 import { readFileSync, statSync } from "node:fs";
 import { basename, extname, relative, sep } from "node:path";
 import { walkFiles } from "./budgets.ts";
-import { decodeHtmlEntities, decodeJsEscapes, htmlProse } from "./extract.ts";
+import { decodeHtmlEntities, decodeJsEscapes, htmlProse, htmlToText } from "./extract.ts";
 import { collectShiurItems, fieldOf } from "./items.ts";
 import {
   ALIAS_KEYS,
@@ -34,6 +37,7 @@ import {
 import { layerFileOf, layerFileUnits, pathKey, type CorpusUnit } from "./layer.ts";
 import { findKeysInText, findSubstrings, isForbiddenKey } from "./rules.ts";
 import { NO_RUN, mergeScans, type ScanResult, type VerbatimMatcher } from "./verbatim.ts";
+import { findMetaComments, isMetaCommentAllowed, type CompiledAllow } from "./meta-comment.ts";
 import { NO_TRANSCRIPTS, checkTranscriptFile, type TranscriptEligibility, type TranscriptRejection } from "./eligible.ts";
 
 export type Finding =
@@ -43,6 +47,8 @@ export type Finding =
   | { kind: "verbatim"; source: string; itemId?: string; shiurId?: string; field?: string; runLength: number }
   /** An alias-bearing string that is an ASR variant or not a display field of its entity (`entity` = `kind:id`). */
   | { kind: "alias"; source: string; rule: AliasRule; entity?: string; field: string; count: number }
+  /** Published text remarking on the audio or the transcript (`term` as listed in meta-comment.ts). */
+  | { kind: "meta-comment"; source: string; term: string; field?: string; context: string; count: number }
   | { kind: "unreadable"; source: string; reason: string };
 
 export interface VerbatimReportEntry {
@@ -76,6 +82,10 @@ export interface PostCounts {
    * `labels`, and `data-person` names on pages, checked against the corpus entities' display names.
    */
   namesChecked: number;
+  /** Published strings (data values, page text) checked for remarks on the audio or the transcript. */
+  metaCommentUnits: number;
+  /** Hits of a listed term passed by `site-policy/meta-comment-allow.json`. */
+  metaCommentAllowed: number;
   findings: number;
 }
 
@@ -103,6 +113,8 @@ export interface ScannerOptions {
   aliases?: AliasRules | null;
   /** Extra alias-bearing JSON keys (e.g. a minified quick-index field) on top of ALIAS_KEYS. */
   aliasKeys?: readonly string[];
+  /** Reviewed exceptions for the audio/transcript remark check (`site-policy/meta-comment-allow.json`). */
+  metaCommentAllow?: readonly CompiledAllow[];
 }
 
 /** Context for scanning one parsed value. */
@@ -160,6 +172,8 @@ export class LeakScanner {
     aliasTermsChecked: 0,
     storyNamesChecked: 0,
     namesChecked: 0,
+    metaCommentUnits: 0,
+    metaCommentAllowed: 0,
     findings: 0,
   };
   private readonly matcher: VerbatimMatcher | null;
@@ -170,6 +184,7 @@ export class LeakScanner {
   private readonly allow: ReadonlySet<string>;
   private readonly transcripts: TranscriptEligibility;
   private readonly baseDir: string;
+  private readonly metaCommentAllow: readonly CompiledAllow[];
 
   constructor(opts: ScannerOptions = {}) {
     this.matcher = opts.matcher ?? null;
@@ -178,6 +193,45 @@ export class LeakScanner {
     this.baseDir = opts.baseDir ?? process.cwd();
     this.aliases = opts.aliases ?? null;
     this.aliasKeys = new Set<string>([...ALIAS_KEYS, ...(opts.aliasKeys ?? [])]);
+    this.metaCommentAllow = opts.metaCommentAllow ?? [];
+  }
+
+  // ---- remarks on the audio or the transcript ------------------------------------
+
+  /** Check published texts of one source; one finding per term (first field and context, total count). */
+  private checkMetaComments(texts: Iterable<{ text: string; field?: string }>, source: string): void {
+    const acc = new Map<string, Extract<Finding, { kind: "meta-comment" }>>();
+    for (const { text, field } of texts) {
+      this.counts.metaCommentUnits++;
+      for (const hit of findMetaComments(text)) {
+        if (isMetaCommentAllowed(this.metaCommentAllow, source, hit)) {
+          this.counts.metaCommentAllowed++;
+          continue;
+        }
+        const prev = acc.get(hit.term);
+        if (prev) prev.count++;
+        else acc.set(hit.term, { kind: "meta-comment", source, term: hit.term, ...(field !== undefined ? { field } : {}), context: hit.context, count: 1 });
+      }
+    }
+    for (const f of acc.values()) this.add(f);
+  }
+
+  /**
+   * Every string value of a parsed value, except identifiers: bare paths and URLs (no spaces, with
+   * `/` or `:`) and slugs (`yi-simchos-…-03`), which are not prose.
+   */
+  private *metaCommentTexts(value: unknown): Generator<{ text: string; field: string }> {
+    const stack: { node: unknown; path: (string | number)[] }[] = [{ node: value, path: [] }];
+    while (stack.length > 0) {
+      const { node, path } = stack.pop()!;
+      if (typeof node === "string") {
+        if (!/^\S*[/:]\S*$/.test(node) && !/^[a-z0-9]+(?:[-_.~][a-z0-9]+)+$/.test(node)) yield { text: node, field: fieldOf(path) };
+      } else if (Array.isArray(node)) {
+        for (let i = node.length - 1; i >= 0; i--) stack.push({ node: node[i], path: [...path, i] });
+      } else if (isRecord(node)) {
+        for (const [k, c] of Object.entries(node).reverse()) stack.push({ node: c, path: [...path, k] });
+      }
+    }
   }
 
   private add(f: Finding): void {
@@ -440,6 +494,7 @@ export class LeakScanner {
     const keyCounts = new Map<string, { count: number; field: string }>();
     const subCounts = new Map<string, number>();
     const fallbackShiur = pathHint;
+    this.checkMetaComments(this.metaCommentTexts(value), source);
     this.walkAliases(value, source, vctx);
     this.walkNames(value, source, vctx);
     const layerUnits = new Map<string, CorpusUnit>();
@@ -639,6 +694,7 @@ export class LeakScanner {
       return;
     }
     if (HTML_EXT.has(ext)) {
+      this.checkMetaComments([{ text: htmlToText(raw) }], source);
       this.checkMarkedNames(raw, source);
       this.checkMarkedPersons(raw, source);
       this.scanText(raw, source, htmlProse(raw), hint);
@@ -648,6 +704,7 @@ export class LeakScanner {
       this.scanText(raw, source, decodeJsEscapes(raw), hint);
       return;
     }
+    if (PROSE_TEXT_EXT.has(ext)) this.checkMetaComments([{ text: raw }], source);
     this.scanText(raw, source, PROSE_TEXT_EXT.has(ext) || !isText ? raw : null, hint);
   }
 

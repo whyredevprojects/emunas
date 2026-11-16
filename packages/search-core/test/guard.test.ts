@@ -86,6 +86,7 @@ describe("corpus-guard post-pass on the search NDJSON", () => {
     writeFileSync(f, `${JSON.stringify({ id: "x", heardAs: ["y"] })}\n${JSON.stringify({ id: "z", body_en: "see transcripts/abc" })}\n`);
     const s = new LeakScanner({ baseDir: dir });
     s.scanPaths([f]);
-    expect(s.result().findings.map((x) => x.kind).sort()).toEqual(["key", "substring"]);
+    // "transcripts/" in prose is also a remark on the transcript (meta-comment).
+    expect(s.result().findings.map((x) => x.kind).sort()).toEqual(["key", "meta-comment", "substring"]);
   });
 });

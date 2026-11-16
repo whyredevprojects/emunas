@@ -3,7 +3,8 @@
  *
  *  - pre-pass:  `.corpus/` text vs. each shiur's transcripts → `.corpus/suppress.json` (ids only)
  *  - post-pass: built output → forbidden keys, substrings, transcript files, verbatim runs,
- *               aliases that are ASR variants or not display fields → fail
+ *               aliases that are ASR variants or not display fields, remarks on the audio or
+ *               the transcript → fail
  *  - Pagefind record checker and budget helpers for the app builds
  */
 import { existsSync } from "node:fs";
@@ -12,6 +13,7 @@ import { readVerbatimAllow } from "./policy.ts";
 import { readTranscriptEligibility } from "./eligible.ts";
 import { AliasRules } from "./aliases.ts";
 import { LeakScanner } from "./post.ts";
+import { readMetaCommentAllow } from "./meta-comment.ts";
 import { VerbatimMatcher, type Thresholds } from "./verbatim.ts";
 
 export { tokenize, normalizeForGuard } from "./tokenize.ts";
@@ -77,6 +79,17 @@ export {
   type ScannerOptions,
   type ValueContext,
 } from "./post.ts";
+export {
+  META_COMMENT_TERMS,
+  META_COMMENT_ALLOW_FILE,
+  findMetaComments,
+  readMetaCommentAllow,
+  compileMetaCommentAllow,
+  isMetaCommentAllowed,
+  type CompiledAllow,
+  type MetaCommentHit,
+  type MetaCommentAllow,
+} from "./meta-comment.ts";
 export { FORBIDDEN_KEYS, FORBIDDEN_SUBSTRINGS, DISTINCTIVE_KEYS, findKeysInText, findSubstrings } from "./rules.ts";
 export { htmlToText, htmlProse, decodeHtmlEntities, decodeJsEscapes } from "./extract.ts";
 export { checkPagefindRecord, createPagefindChecker, type PagefindRecordLike } from "./pagefind.ts";
@@ -121,7 +134,8 @@ export function createLeakScanner(opts: GuardContextOptions): LeakScanner {
     matcher = new VerbatimMatcher(matcherOpts);
   }
   const aliases = opts.corpusDataDir ? AliasRules.read(opts.corpusDataDir) : null;
-  const scannerOpts: ConstructorParameters<typeof LeakScanner>[0] = { matcher, allow, transcripts, aliases };
+  const metaCommentAllow = readMetaCommentAllow(opts.siteDir);
+  const scannerOpts: ConstructorParameters<typeof LeakScanner>[0] = { matcher, allow, transcripts, aliases, metaCommentAllow };
   if (opts.aliasKeys !== undefined) scannerOpts.aliasKeys = opts.aliasKeys;
   if (opts.baseDir !== undefined) scannerOpts.baseDir = opts.baseDir;
   return new LeakScanner(scannerOpts);
