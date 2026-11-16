@@ -13,12 +13,16 @@
  * nothing named concepts.json, people.json, stories.json, threads.json, teaching-clusters.json,
  * synonyms.json, nothing under /layer/ and nothing from the pipeline's raw folder.
  *
- * Sizes on the wire (the e2e server compresses with brotli as Cloudflare does): `today.json` ≤ 30 KiB
- * and the shiur file ≤ 40 KiB (§4). Lighthouse budgets stay as W5.1 (tests/cross-site/lighthouse).
+ * Sizes on the wire, brotli-compressed as Cloudflare serves them over HTTPS: `today.json` ≤ 30 KiB
+ * and the shiur file ≤ 40 KiB (§4). The e2e server compresses with brotli when the browser asks for
+ * it, but WebKit (like Safari) only offers `br` over HTTPS: on the plain-HTTP test server it asks for
+ * `gzip, deflate` and gets the larger gzip body. So the size counts what the browser received when
+ * it negotiated brotli, and otherwise the brotli response the server gives the same file (what Safari
+ * gets in production). Lighthouse budgets stay as W5.1 (tests/cross-site/lighthouse).
  *
  * `@data`: runs on the contract fixtures and on a real-data build (`LIVE_E2E_DATA=build`).
  */
-import { expect, test, type Page } from "@playwright/test";
+import { expect, test, type APIRequestContext, type Page } from "@playwright/test";
 import { dataJson, NO_SERVICE_WORKER } from "./helpers.ts";
 
 test.use(NO_SERVICE_WORKER);
@@ -79,13 +83,19 @@ async function markPaint(page: Page): Promise<void> {
 }
 
 /** Cold-loads `path`, waits for first paint and a few idle seconds; returns the paint time and requests. */
-async function coldLoad(page: Page, path: string): Promise<{ paint: number; before: Timed[]; all: Timed[]; sizes: Map<string, number> }> {
+async function coldLoad(page: Page, path: string): Promise<{ paint: number; before: Timed[]; all: Timed[]; sizes: Map<string, Received> }> {
   await markPaint(page);
-  const sizes = new Map<string, number>();
+  const sizes = new Map<string, Received>();
   page.on("requestfinished", (req) => {
     const u = new URL(req.url());
     if (!u.pathname.startsWith("/data/")) return;
-    void req.sizes().then((s) => sizes.set(u.pathname.slice("/data/".length), s.responseBodySize));
+    void Promise.all([req.sizes(), req.response()]).then(([s, res]) =>
+      sizes.set(u.pathname.slice("/data/".length), {
+        path: u.pathname,
+        bytes: s.responseBodySize,
+        encoding: res?.headers()["content-encoding"] ?? null,
+      }),
+    );
   });
   await page.goto(path);
   await page.waitForFunction(() => (window as unknown as { __content?: number }).__content !== undefined, null, { timeout: 20_000 });
@@ -100,6 +110,27 @@ async function coldLoad(page: Page, path: string): Promise<{ paint: number; befo
   return { paint, before: all.filter((e) => e.start < paint), all, sizes };
 }
 
+/** A `/data/` response as the browser received it. */
+interface Received {
+  path: string;
+  /** Body bytes on the wire (encoded). */
+  bytes: number;
+  encoding: string | null;
+}
+
+/**
+ * The file's brotli size on the wire: what the browser received when it negotiated brotli, else
+ * the brotli response the server sends for the same path (WebKit asks for `br` only over HTTPS).
+ */
+async function brotliBytes(request: APIRequestContext, got: Received): Promise<number> {
+  if (got.encoding === "br") return got.bytes;
+  const res = await request.get(got.path, { headers: { "accept-encoding": "br" } });
+  expect(res.status(), got.path).toBe(200);
+  const headers = res.headers();
+  expect(headers["content-encoding"], `${got.path} served with brotli`).toBe("br");
+  return Number(headers["content-length"]);
+}
+
 function forbiddenBeforePaint(rows: readonly Timed[]): string[] {
   return rows
     .filter((r) => r.path.startsWith("/data/"))
@@ -112,7 +143,7 @@ function everForbidden(rows: readonly Timed[]): string[] {
 }
 
 test.describe("@data first-load gate", () => {
-  test("cold Today: no corpus-layer or catalog-wide file before first paint; today.json ≤ 30 KiB", async ({ page }) => {
+  test("cold Today: no corpus-layer or catalog-wide file before first paint; today.json ≤ 30 KiB", async ({ page, request }) => {
     const r = await coldLoad(page, "/en");
     const data = r.before.filter((x) => x.path.startsWith("/data/")).map((x) => x.path);
     expect(data, "Today paints from today.json").toContain("/data/today.json");
@@ -120,7 +151,7 @@ test.describe("@data first-load gate", () => {
     expect(everForbidden(r.all)).toEqual([]);
     const today = r.sizes.get("today.json");
     expect(today, "today.json transfer size").toBeDefined();
-    expect(today!).toBeLessThanOrEqual(30 * KIB);
+    expect(await brotliBytes(request, today!)).toBeLessThanOrEqual(30 * KIB);
   });
 
   test("cold listening room: only the shiur file before first paint; shiur file ≤ 40 KiB", async ({ page, request }) => {
@@ -137,7 +168,7 @@ test.describe("@data first-load gate", () => {
     expect(everForbidden(r.all)).toEqual([]);
     const size = r.sizes.get(rel) ?? r.sizes.get(`shiur/${encodeURIComponent(id)}.json`);
     expect(size, "shiur file transfer size").toBeDefined();
-    expect(size!).toBeLessThanOrEqual(40 * KIB);
+    expect(await brotliBytes(request, size!)).toBeLessThanOrEqual(40 * KIB);
   });
 });
 
