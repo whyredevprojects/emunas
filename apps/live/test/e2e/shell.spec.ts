@@ -97,7 +97,7 @@ test.describe("mirroring", () => {
       // Hide glyphs and page content: what remains is the shell chrome (rail, header, dock, rules).
       await page.addStyleTag({
         content:
-          "* { color: transparent !important; text-decoration: none !important; } main > * { visibility: hidden; }",
+          "*, *::placeholder { color: transparent !important; text-decoration: none !important; } main > * { visibility: hidden; }",
       });
       const png = await page.screenshot();
       await info.attach(`chrome-${ui}.png`, { body: png, contentType: "image/png" });
