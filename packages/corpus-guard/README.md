@@ -71,6 +71,25 @@ pages the text of every element marked `data-story-person`, must be a display na
 entity (`AliasRules.checkName`): `asr-variant` when it is an ASR spelling, else `not-entity-name`.
 An unresolved raw extraction name is never published. Counted as `storyNamesChecked`.
 
+Names (F.1): the extraction's raw person names may be ASR mishearings, so names reach the sites
+only through the corpus layer. Each of these must be a display name of a corpus entity (any
+entity's: `not-entity-name` / `asr-variant`; of the named entity where the position names one:
+`not-display-field` / `unknown-entity` / `asr-variant`):
+
+- shiur files (`.corpus/shiurim/<id>.json`, Live `shiur/<id>.json`; not the layer's
+  `layer/shiur/<id>.json`, ids only): every string in a `people` list, every `people[].name` and
+  `people[].label.*`, every `concepts[].he` (or string);
+- search docs (an NDJSON/JSON value with `kind` "shiur" and a `titleOriginal`): every `people` and
+  `concepts` string (facets hold ids and are not names);
+- Pagefind records (`checkPagefindRecord`): meta/filter keys `people`, `person`, `names`,
+  `concepts`; an entity record's `labelHe/En/Yi` against its entity;
+- entity rows (an object with an entity `kind` and `id`: Live quick-index `entities`, EntityDocs):
+  every `labels.*` against that entity;
+- built pages: every element marked `data-person="<person id>"` (its first `<bdi>`, else its
+  text) against that person (any entity when the value is empty).
+
+Counted as `namesChecked`.
+
 Allow-list: item ids in `site-policy/verbatim-allow.json` and `publish-policy.json`
 `allowVerbatim[]` (shiur item ids and `corpus:` ids alike). In the post-pass an allowed item passes by id (JSON) and by its text
 (a run fully inside an allowed item's text, e.g. on an HTML page, passes too).

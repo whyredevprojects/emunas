@@ -25,7 +25,17 @@ export interface BuildReport {
   downgraded: DowngradeEntry[];
   /** Not `done` in the manifest but files exist (pipeline mid-flight); informational. */
   notDoneWithFiles: string[];
-  dropped: { lowConfidence: number; unresolvedSourcesWithoutWork: number; suppressed: number; writeupRefsToDroppedSources: number };
+  dropped: {
+    lowConfidence: number;
+    unresolvedSourcesWithoutWork: number;
+    suppressed: number;
+    writeupRefsToDroppedSources: number;
+    /**
+     * Raw extraction person names left out of the projection (F.1): every `people[].name` and story
+     * `people[]` entry of the projected notes. Names reach the sites only through the corpus layer.
+     */
+    rawPersonNames: number;
+  };
   soft: number;
   timeWarnings: TimeWarning[];
   /** Distinct values the keyer could not map, with how many shiurim use each. */
@@ -40,7 +50,7 @@ export interface BuildReport {
 export class ReportCollector {
   readonly downgraded: DowngradeEntry[] = [];
   readonly notDoneWithFiles: string[] = [];
-  readonly dropped = { lowConfidence: 0, unresolvedSourcesWithoutWork: 0, suppressed: 0, writeupRefsToDroppedSources: 0 };
+  readonly dropped = { lowConfidence: 0, unresolvedSourcesWithoutWork: 0, suppressed: 0, writeupRefsToDroppedSources: 0, rawPersonNames: 0 };
   soft = 0;
   readonly timeWarnings: TimeWarning[] = [];
   readonly suppressedApplied = new Set<string>();

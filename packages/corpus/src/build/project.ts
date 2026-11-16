@@ -347,6 +347,7 @@ function buildNotes(
       ...time(mid, tm.span(st.evidence.recordingId, st.evidence.segs)),
     };
     if (soft) out.soft = true;
+    report.dropped.rawPersonNames += st.people.length;
     stories.push(out);
   });
 
@@ -381,6 +382,8 @@ function buildNotes(
       return { sectionIndex: b.sectionIndex, heading: b.heading, paragraphs };
     });
 
+  // The extraction's people list (raw names) is never projected (F.1).
+  report.dropped.rawPersonNames += ex.people.length;
   return {
     summary: { oneLiner, abstract, keyPoints: moments("kp", ex.summary.keyPoints) },
     chapters,

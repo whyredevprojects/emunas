@@ -68,8 +68,6 @@ export function shiurJson(
       takeaways: [{ id: `${sid}~tk0`, text: { en: overrides.takeaway ?? FILLER, yi: "" }, t: 6, end: 7 }],
       questions: [],
       stories: [],
-      people: [],
-      concepts: [],
       writeup: {
         en: [{ sectionIndex: 0, heading: "Heading", paragraphs: [{ text: overrides.paragraph ?? FILLER, src: [], t: 0, end: 10 }] }],
         yi: [{ sectionIndex: 0, heading: null, paragraphs: [{ text: "א פאראגראף", src: [], t: 0, end: 10 }] }],

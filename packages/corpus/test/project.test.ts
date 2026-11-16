@@ -87,6 +87,17 @@ describe("mini corpus projection", () => {
     }
     expect(stories).toBeGreaterThan(0);
     for (const row of p.index.shiurim) expect(Object.keys(row)).not.toContain("entities");
+    // The report counts the raw names left out: every extraction people entry of a full shiur, and
+    // every story people entry of a published story.
+    let want = 0;
+    for (const s of p.shiurim) {
+      if (!s.notes) continue;
+      const ex = readJson<Extraction>(shiurFile(MINI_DATA, s.id, "extraction"));
+      const kept = new Set(s.notes.stories.map((x) => x.id));
+      want += ex.people.length + ex.stories.reduce((a, x, i) => a + (kept.has(`${s.id}~st${i}`) ? x.people.length : 0), 0);
+    }
+    expect(want).toBeGreaterThan(0);
+    expect(p.report.dropped.rawPersonNames).toBe(want);
   });
 
   it("keeps the partial directory and the not-yet-processed shiur catalog-only", () => {

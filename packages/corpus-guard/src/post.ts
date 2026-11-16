@@ -19,8 +19,13 @@ import {
   aliasTerms,
   entityKindOfFile,
   isEntityKind,
+  isShiurNamesFile,
   isStoryNamesFile,
+  markedPersonNames,
   markedStoryNames,
+  PAGEFIND_LABEL_KEYS,
+  PAGEFIND_NAME_KEYS,
+  PERSON_ATTR,
   STORY_PERSON_ATTR,
   type AliasRule,
   type AliasRules,
@@ -66,6 +71,11 @@ export interface PostCounts {
   aliasTermsChecked: number;
   /** Person names on stories (story files and `data-story-person` on pages) checked against every entity's display names. */
   storyNamesChecked: number;
+  /**
+   * Other name fields (F.1): names in shiur files, search docs, Pagefind records and entity rows'
+   * `labels`, and `data-person` names on pages, checked against the corpus entities' display names.
+   */
+  namesChecked: number;
   findings: number;
 }
 
@@ -108,6 +118,10 @@ export interface ValueContext {
    * (there and in `names`) must be some corpus entity's display name (`AliasRules.checkName`).
    */
   storyNames?: boolean;
+  /** A shiur file (`isShiurNamesFile`): every person and concept name in it is checked (F.1). */
+  shiurNames?: boolean;
+  /** A Pagefind record: its name-bearing meta/filter keys are checked (F.1). */
+  pagefind?: boolean;
 }
 
 const JSON_EXT = new Set([".json", ".map", ".webmanifest"]);
@@ -145,6 +159,7 @@ export class LeakScanner {
     corpusUnits: 0,
     aliasTermsChecked: 0,
     storyNamesChecked: 0,
+    namesChecked: 0,
     findings: 0,
   };
   private readonly matcher: VerbatimMatcher | null;
@@ -299,6 +314,21 @@ export class LeakScanner {
       else if (ctx.fileKind && typeof node.id === "string") e = { kind: ctx.fileKind, id: node.id };
       // A person on a story: `{ name }` inside a `people` list.
       const storyPerson = ctx.storyNames === true && path.at(-2) === "people" && typeof path.at(-1) === "number";
+      // An entity row (quick-index entity, EntityDoc): its labels are that entity's display names (F.1).
+      if (isEntityKind(node.kind) && typeof node.id === "string" && isRecord(node.labels)) {
+        const field = fieldOf([...path, "labels"]);
+        for (const term of Object.values(node.labels)) {
+          if (typeof term !== "string" || term.trim() === "") continue;
+          this.counts.namesChecked++;
+          const v = rules.check({ kind: node.kind, id: node.id }, term);
+          if (!v) continue;
+          const entityKey = `${node.kind}:${node.id}`;
+          const key = `${v.rule}\u0000${entityKey}\u0000${field}`;
+          const prev = acc.get(key);
+          if (prev) prev.count++;
+          else acc.set(key, { rule: v.rule, entity: entityKey, field, count: 1 });
+        }
+      }
       for (const [k, c] of Object.entries(node)) {
         const asName = storyPerson && k === "name";
         if (this.aliasKeys.has(k) || asName) {
@@ -323,6 +353,77 @@ export class LeakScanner {
     for (const a of acc.values()) this.add({ kind: "alias", source, ...a });
   }
 
+  /**
+   * Name fields (F.1): in a shiur file every person name (a string in a `people` list, a
+   * `people[].name`, `people[].label.*`) and concept name (`concepts[].he`); in a search doc
+   * (`kind` "shiur" with a `titleOriginal`) its `people`/`concepts` strings; in a Pagefind record
+   * its name-bearing meta/filter keys (entity labels against the record's entity). Each must be a
+   * display name of a corpus entity: raw extraction names (possible ASR mishearings) never ship.
+   */
+  private walkNames(value: unknown, source: string, ctx: ValueContext): void {
+    const rules = this.aliases;
+    if (!rules) return;
+    const acc = new Map<string, { rule: AliasRule; entity?: string; field: string; count: number }>();
+    const check = (term: unknown, path: (string | number)[], entity: { kind: EntityKind; id: string } | null = null) => {
+      if (typeof term !== "string" || term.trim() === "") return;
+      this.counts.namesChecked++;
+      const v = entity ? rules.check(entity, term) : rules.checkName(term);
+      if (!v) return;
+      const field = fieldOf(path);
+      const entityKey = entity ? `${entity.kind}:${entity.id}` : undefined;
+      const key = `${v.rule}\u0000${entityKey ?? ""}\u0000${field}`;
+      const prev = acc.get(key);
+      if (prev) prev.count++;
+      else acc.set(key, entityKey === undefined ? { rule: v.rule, field, count: 1 } : { rule: v.rule, entity: entityKey, field, count: 1 });
+    };
+    const shiurWalk = (node: unknown, path: (string | number)[]): void => {
+      if (Array.isArray(node)) {
+        node.forEach((c, i) => shiurWalk(c, [...path, i]));
+        return;
+      }
+      if (!isRecord(node)) return;
+      for (const [k, c] of Object.entries(node)) {
+        if (k === "people" && Array.isArray(c)) {
+          c.forEach((p, i) => {
+            const at = [...path, k, i];
+            if (typeof p === "string") check(p, at);
+            else if (isRecord(p)) {
+              check(p.name, [...at, "name"]);
+              if (isRecord(p.label)) for (const [lk, lv] of Object.entries(p.label)) check(lv, [...at, "label", lk]);
+            }
+          });
+        } else if (k === "concepts" && Array.isArray(c)) {
+          c.forEach((x, i) => {
+            if (typeof x === "string") check(x, [...path, k, i]);
+            else if (isRecord(x)) check(x.he, [...path, k, i, "he"]);
+          });
+        }
+        if (typeof c === "object" && c !== null) shiurWalk(c, [...path, k]);
+      }
+    };
+    if (ctx.shiurNames === true) shiurWalk(value, []);
+    else if (isRecord(value) && value.kind === "shiur" && typeof value.titleOriginal === "string") {
+      // A SearchDoc: its top-level name lists (facets hold ids, not names).
+      for (const k of ["people", "concepts"] as const) {
+        const list = value[k];
+        if (Array.isArray(list)) list.forEach((x, i) => check(x, [k, i]));
+      }
+    }
+    if (ctx.pagefind === true && isRecord(value)) {
+      for (const part of ["meta", "filters"] as const) {
+        const o = value[part];
+        if (!isRecord(o)) continue;
+        for (const [k, c] of Object.entries(o)) {
+          const asLabel = (PAGEFIND_LABEL_KEYS as readonly string[]).includes(k);
+          if (!asLabel && !(PAGEFIND_NAME_KEYS as readonly string[]).includes(k)) continue;
+          const entity = asLabel ? (ctx.entity ?? null) : null;
+          for (const term of aliasTerms(c)) check(term, [part, k], entity);
+        }
+      }
+    }
+    for (const a of acc.values()) this.add({ kind: "alias", source, ...a });
+  }
+
   /** Alias check for terms an emitter publishes for one entity (search docs, quick index rows). */
   checkEntityAliases(entity: { kind: EntityKind; id: string } | null, terms: readonly string[], source: string): void {
     this.walkAliases({ terms: [...terms] }, source, { entity });
@@ -340,6 +441,7 @@ export class LeakScanner {
     const subCounts = new Map<string, number>();
     const fallbackShiur = pathHint;
     this.walkAliases(value, source, vctx);
+    this.walkNames(value, source, vctx);
     const layerUnits = new Map<string, CorpusUnit>();
     if (vctx.layerFile) for (const u of layerFileUnits(vctx.layerFile, value)) layerUnits.set(pathKey(u.path), u);
 
@@ -423,6 +525,28 @@ export class LeakScanner {
     for (const [rule, count] of acc) this.add({ kind: "alias", source, rule, field: `[${STORY_PERSON_ATTR}]`, count });
   }
 
+  /**
+   * Person names marked on a built page (`data-person="<id>"`, F.1): each must be a display name
+   * of that person (any corpus entity's when the id is empty).
+   */
+  private checkMarkedPersons(html: string, source: string): void {
+    const rules = this.aliases;
+    if (!rules || !html.includes(PERSON_ATTR)) return;
+    const acc = new Map<string, { rule: AliasRule; entity?: string; count: number }>();
+    for (const { id, name } of markedPersonNames(html)) {
+      this.counts.namesChecked++;
+      const entity = id !== "" ? { kind: "person" as const, id } : null;
+      const term = decodeHtmlEntities(name);
+      const v = entity ? rules.check(entity, term) : rules.checkName(term);
+      if (!v) continue;
+      const key = `${v.rule}\u0000${id}`;
+      const prev = acc.get(key);
+      if (prev) prev.count++;
+      else acc.set(key, entity ? { rule: v.rule, entity: `person:${id}`, count: 1 } : { rule: v.rule, count: 1 });
+    }
+    for (const a of acc.values()) this.add({ kind: "alias", source, field: `[${PERSON_ATTR}]`, ...a });
+  }
+
   /** Scan free text (HTML text, a JS bundle): keys by pattern, substrings, one verbatim unit. */
   scanText(raw: string, source: string, prose: string | null, pathHint: string | null): void {
     const decoded = decodeJsEscapes(raw);
@@ -494,7 +618,12 @@ export class LeakScanner {
         this.scanText(raw, source, decodeJsEscapes(raw), hint);
         return;
       }
-      this.scanValue(parsed, source, hint, { layerFile: layerFileOf(file), fileKind: entityKindOfFile(file), storyNames: isStoryNamesFile(file) });
+      this.scanValue(parsed, source, hint, {
+        layerFile: layerFileOf(file),
+        fileKind: entityKindOfFile(file),
+        storyNames: isStoryNamesFile(file),
+        shiurNames: isShiurNamesFile(file),
+      });
       return;
     }
     if (NDJSON_EXT.has(ext)) {
@@ -511,6 +640,7 @@ export class LeakScanner {
     }
     if (HTML_EXT.has(ext)) {
       this.checkMarkedNames(raw, source);
+      this.checkMarkedPersons(raw, source);
       this.scanText(raw, source, htmlProse(raw), hint);
       return;
     }

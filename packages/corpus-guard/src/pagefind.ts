@@ -29,6 +29,10 @@ export interface PagefindCheckOptions extends ScannerOptions {
  * Entity records (Quiet headword results): pass `entity`, and the alias-bearing meta/filter keys
  * (`synonyms`, `aliases`, …; a meta string may join terms with `|` or newlines) are checked with
  * the raw ban and the alias-key assertion when the scanner has the corpus data.
+ *
+ * Names (F.1): the name-bearing meta/filter keys (`people`, `person`, `names`, `concepts`) must be
+ * display names of corpus entities, and an entity record's `labelHe/En/Yi` display names of its
+ * entity. A raw extraction name never reaches a record.
  */
 export function checkPagefindRecord(
   record: PagefindRecordLike,
@@ -38,7 +42,7 @@ export function checkPagefindRecord(
 ): Finding[] {
   const before = scanner.findings.length;
   const hint = shiurId ?? scanner.shiurFromPath(record.url);
-  scanner.scanValue(record, `pagefind:${record.url}`, hint, { entity: entity ?? null });
+  scanner.scanValue(record, `pagefind:${record.url}`, hint, { entity: entity ?? null, pagefind: true });
   return scanner.findings.slice(before);
 }
 
