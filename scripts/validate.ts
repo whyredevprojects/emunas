@@ -34,6 +34,15 @@ const YI_MIN_HEBREW = 0.8;        // below: warning; below YI_HARD_MIN: error
 const YI_HARD_MIN = 0.5;
 const EN_MAX_HEBREW = 0.25;       // English text that is mostly Hebrew script is suspicious
 const EVIDENCE_SLACK_SEGS = 3;    // "near" the section
+// Published prose must not comment on the audio, recording, transcript or intelligibility (it reads as if
+// the Mashgiach spoke unclearly). Such notes belong only in asrNotes. Soft check: a warning, since a few
+// matches are legitimate content ("the inaudible instrument"); judge each hit by meaning.
+const META_COMMENT_RE =
+  /garbl|inaudib|unintelligib|transcri|\bASR\b|recording (breaks|cuts|ends)|too (garbled|unclear)|cannot be made out|צעמישט|צומישט|טראנסקריפט/i;
+function checkMetaComment(text: string, path: string, warn: (m: string) => void): void {
+  const m = META_COMMENT_RE.exec(text);
+  if (m) warn(`${path}: "${m[0]}" looks like a comment on the audio/transcript; published text says only what the Mashgiach teaches (keep such notes in asrNotes)`);
+}
 
 // ---------------- report ----------------
 type Kind = "extraction" | "writeup";
@@ -250,6 +259,8 @@ function validateExtraction(x: Extraction, meta: PilotMeta, r: Report): void {
     const er = hebrewRatio(l.en);
     if (er > EN_MAX_HEBREW) warn(`${p}.en: ${(er * 100).toFixed(0)}% Hebrew script (transliterate in English)`);
     if (l.en.trim() === l.yi.trim()) err(`${p}: en and yi are identical`);
+    checkMetaComment(l.en, `${p}.en`, warn);
+    checkMetaComment(l.yi, `${p}.yi`, warn);
   };
 
   // --- sections: shape-level per section
@@ -476,6 +487,7 @@ function validateWriteup(w: Writeup, file: string, meta: PilotMeta, metaOverride
         const hr = hebrewRatio(b.heading);
         if (lang === "yi" && hr < YI_HARD_MIN) err(`${p}.heading: not Hebrew script`);
         if (lang === "en" && hr > EN_MAX_HEBREW) warn(`${p}.heading: Hebrew script in English heading`);
+        checkMetaComment(b.heading, `${p}.heading`, warn);
       }
       const secRec = recs.get(sec.recordingId);
       let blockWords = 0;
@@ -486,6 +498,7 @@ function validateWriteup(w: Writeup, file: string, meta: PilotMeta, metaOverride
         if (lang === "yi" && hr < YI_HARD_MIN) err(`${q}.text: only ${(hr * 100).toFixed(0)}% Hebrew script`);
         else if (lang === "yi" && hr < YI_MIN_HEBREW) warn(`${q}.text: only ${(hr * 100).toFixed(0)}% Hebrew script`);
         if (lang === "en" && hr > EN_MAX_HEBREW) warn(`${q}.text: ${(hr * 100).toFixed(0)}% Hebrew script`);
+        checkMetaComment(para.text, `${q}.text`, warn);
         for (const si of para.sourceIdx) if (si < 0 || si >= x.sources.length) err(`${q}.sourceIdx: ${si} out of range 0..${x.sources.length - 1}`);
         if (multi && para.evidence.recordingId === undefined) warn(`${q}.evidence: no recordingId (multi-recording shiur; defaulting to the section's)`);
         const rec = checkEvidence(para.evidence, `${q}.evidence`, secRec);

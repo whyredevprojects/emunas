@@ -56,10 +56,11 @@ Learning vocabulary is welcome and natural: `ער פרעגט א קשיא`, `דע
 | `ער ברענגט ארויף א פונקט` ("brings up a point") | `ער ברענגט א נקודה`, `ער מאכט אויפמערקזאם` |
 | `עס איז וויכטיג צו באמערקן אז ...` | (filler; leave it out) |
 | `רעקארדינג`, `סעקשן`, `פאינט` (English words) | `שיעור`, `חלק`, `נקודה`; `צווייטע טייל פונעם שיעור` |
+| `דא איז דער טעקסט שטארק צעמישט`, `ס'איז נישט קלאר וואס ער זאגט` (any remark on the audio or transcript) | leave it out; say only what the Mashgiach teaches |
 | `ער פרעגט די קשיא: וואס איז ...?` with English word order | `ער פרעגט: פארוואס זשע ...?`, `ער פרעגט א קשיא, אז ...` |
 
 The verb goes in second position (`דערנאך ברענגט ער...`, not `דערנאך ער ברענגט...`). Use `אז` freely to introduce reported speech (`ער זאגט אז ...`). Short, connected sentences, as a reporter of a shiur writes them; not one long sentence translated from English.
 
 ## 4. Self-check
 
-Before writing a `yi` field, reread it once and ask: would a Chassidish reader of *Der Yid* write it this way? Any nikud, dotted or ligature letter, `ניט`, `וועלכע(ר)` as "which", `עטוואס`, an English word in Hebrew letters, or an English idiom carried over means: rewrite the sentence.
+Before writing a `yi` field, reread it once and ask: would a Chassidish reader of *Der Yid* write it this way? Any nikud, dotted or ligature letter, `ניט`, `וועלכע(ר)` as "which", `עטוואס`, an English word in Hebrew letters, or an English idiom carried over means: rewrite the sentence. Any remark about the audio, the recording or the transcript (`צעמישט`, `צומישט`, `נישט קלאר`, `נישט צו הערן`, `טראנסקריפט`, `אויפנאמע`, `רעקארדירונג`), or calling the Mashgiach's words unclear, means: take it out.
