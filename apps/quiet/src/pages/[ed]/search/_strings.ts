@@ -8,7 +8,7 @@ import type { Ed } from "../../../lib/edition.ts";
 export const SEARCH_STRINGS = {
   en: {
     title: "Search",
-    lede: "Search the catalog and the notes: titles, parsha and zman, years, summaries, sources, people and stories. Hebrew, Yiddish and English all work in both editions.",
+    lede: "Search the catalog and the notes: titles, parsha and zman, years, summaries, topics, sources, people and stories. Hebrew, Yiddish and English all work in both editions.",
     noscript: "Search needs JavaScript. The indexes below are the way to look things up without it.",
     label: "Search the shiurim",
     submit: "Search",
@@ -29,11 +29,18 @@ export const SEARCH_STRINGS = {
     sources: "Sources",
     stories: "Stories",
     people: "People",
-    inyanim: "Inyanim (concepts)",
+    inyanim: "Topics",
+    erachim: "Glossary",
+    entriesLabel: "Index entries",
+    entriesNote: "Index entries are compiled by AI from the notes and not reviewed by a person.",
+    kindTopic: "Topic",
+    kindConcept: "Glossary entry",
+    kindPerson: "Person",
+    kindWork: "Sefer",
   },
   yi: {
     title: "זוכן",
-    lede: "זוכט אינעם קאטאלאג און אין די נאטיצן: קעפלעך, פרשה און זמן, יארן, קיצורים, מראי מקומות, פערזאנען און מעשיות. לשון קודש, אידיש און ענגליש ארבעטן אין ביידע אויסגאבעס.",
+    lede: "זוכט אינעם קאטאלאג און אין די נאטיצן: קעפלעך, פרשה און זמן, יארן, קיצורים, ענינים, מראי מקומות, פערזאנען און מעשיות. לשון קודש, אידיש און ענגליש ארבעטן אין ביידע אויסגאבעס.",
     noscript: "צום זוכן דארף מען JavaScript. אן דעם קען מען נוצן די מפתחות אונטן.",
     label: "זוכט די שיעורים",
     submit: "זוכן",
@@ -55,6 +62,13 @@ export const SEARCH_STRINGS = {
     stories: "מעשיות",
     people: "פערזאנען",
     inyanim: "ענינים",
+    erachim: "ערכים",
+    entriesLabel: "ערכים אין די מפתחות",
+    entriesNote: "די ערכים אין די מפתחות זענען צוזאמגעשטעלט דורך AI פון די נאטיצן, נישט איבערגעקוקט דורך א מענטש.",
+    kindTopic: "ענין",
+    kindConcept: "ערך",
+    kindPerson: "פערזאן",
+    kindWork: "ספר",
   },
 } as const satisfies Record<Ed, Record<string, string>>;
 

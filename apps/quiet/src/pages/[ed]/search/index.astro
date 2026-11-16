@@ -2,8 +2,9 @@
 /**
  * `/{ed}/search/` (W3.5; tech-quiet §5, concept-quiet §7). Without script: one sentence and the
  * list of indexes, which are the real way to look things up. With script (`scripts/search.ts`):
- * the search form appears; results come from the Pagefind index built by `scripts/build-search.ts`
- * and show title, citation and one-liner only (record meta; no excerpts).
+ * the search form appears; results come from the Pagefind index built by `scripts/build-search.ts`:
+ * headword entries first ("Topic: … · n shiurim", AI-compiled, labelled once), then shiurim with
+ * title, citation and one-liner only (record meta; no excerpts).
  */
 import type { GetStaticPaths } from "astro";
 import { formatQuiet } from "@emunas/links";
@@ -24,6 +25,7 @@ const indexes = [
   { label: s.stories, href: formatQuiet({ kind: "index", ed, index: "stories" }) },
   { label: s.people, href: formatQuiet({ kind: "index", ed, index: "people" }) },
   { label: s.inyanim, href: formatQuiet({ kind: "index", ed, index: "topics" }) },
+  { label: s.erachim, href: formatQuiet({ kind: "index", ed, index: "glossary" }) },
 ];
 ---
 <Base ed={ed} title={s.title} crumbs={[{ label: s.title }]}>
@@ -39,6 +41,10 @@ const indexes = [
     data-msg-error={s.error}
     data-msg-number={s.number}
     data-msg-pending={s.pending}
+    data-msg-kind-topic={s.kindTopic}
+    data-msg-kind-concept={s.kindConcept}
+    data-msg-kind-person={s.kindPerson}
+    data-msg-kind-work={s.kindWork}
   >
     <h1 id="search-title">{s.title}</h1>
     <p>{s.lede}</p>
@@ -51,6 +57,10 @@ const indexes = [
       </div>
     </form>
     <p class="search-status" role="status" aria-live="polite" data-search-status></p>
+    <div class="search-entries" data-search-entries hidden>
+      <ol class="search-results" role="list" aria-label={s.entriesLabel}></ol>
+      <p class="search-note">{s.entriesNote}</p>
+    </div>
     <ol class="search-results" role="list" aria-label={s.resultsLabel} data-search-results></ol>
     <p class="search-note">{s.note}</p>
   </section>
@@ -107,13 +117,23 @@ const indexes = [
     color: var(--color-ink-muted);
   }
 
-  .search-results :global(.search-result) {
+  .search-results :global(.search-result),
+  .search-results :global(.search-entry) {
     padding-block: var(--space-xs);
     border-block-end: var(--rule-hairline) solid var(--color-rule);
   }
 
   .search-results :global(.search-result > * + *) {
     margin-block-start: var(--space-3xs);
+  }
+
+  .search-entries {
+    padding-block-end: var(--space-xs);
+    border-block-end: var(--rule-hairline) solid var(--color-rule-strong);
+  }
+
+  .search-results :global(.search-entry-kind) {
+    color: var(--color-ink-muted);
   }
 
   .search-results :global(.search-pending) {
