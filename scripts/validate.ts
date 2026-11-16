@@ -34,14 +34,15 @@ const YI_MIN_HEBREW = 0.8;        // below: warning; below YI_HARD_MIN: error
 const YI_HARD_MIN = 0.5;
 const EN_MAX_HEBREW = 0.25;       // English text that is mostly Hebrew script is suspicious
 const EVIDENCE_SLACK_SEGS = 3;    // "near" the section
-// Published prose must not comment on the audio, recording, transcript or intelligibility (it reads as if
-// the Mashgiach spoke unclearly). Such notes belong only in asrNotes. Soft check: a warning, since a few
+// Published prose must not mention the transcript/ASR or judge the shiur as garbled/unclear (it reads as if
+// the Mashgiach spoke unclearly). Factual remarks about the sound or recording are allowed. Transcript notes
+// belong only in asrNotes. Soft check: a warning, since a few
 // matches are legitimate content ("the inaudible instrument"); judge each hit by meaning.
 const META_COMMENT_RE =
-  /garbl|inaudib|unintelligib|transcri|\bASR\b|recording (breaks|cuts|ends)|too (garbled|unclear)|cannot be made out|צעמישט|צומישט|טראנסקריפט/i;
+  /garbl|unintelligib|transcri|\bASR\b|too (garbled|unclear)|cannot be made out|hard to follow|צעמישט|צומישט|טראנסקריפט/i;
 function checkMetaComment(text: string, path: string, warn: (m: string) => void): void {
   const m = META_COMMENT_RE.exec(text);
-  if (m) warn(`${path}: "${m[0]}" looks like a comment on the audio/transcript; published text says only what the Mashgiach teaches (keep such notes in asrNotes)`);
+  if (m) warn(`${path}: "${m[0]}" looks like a transcript mention or a judgment of the shiur's clarity; say only what the Mashgiach teaches (sound/recording remarks are fine; transcript notes go in asrNotes)`);
 }
 
 // ---------------- report ----------------

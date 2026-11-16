@@ -13,7 +13,7 @@ Shiurim of Harav Moshe Wolfson zt"l: a data pipeline (`data/`, `scripts/`, `src/
 - The transcripts, and anything derived from them verbatim, must never reach any public output. That covers ASR text, `heardAs`, `asrNotes`, `asrVariants`, segment text, `data/derived/corpus/raw/`, and unresolved raw extraction names.
 - Only `packages/corpus/src/transcript-gate.ts` and `packages/corpus-guard` may read `data/transcripts`.
 - The guard post-pass over every build output must report 0 findings.
-- Published text never comments on the audio or the transcript (no 'garbled', 'inaudible', 'the recording breaks off', etc.); non-content sections get neutral titles with no reason.
+- Published text never mentions the transcript (or ASR) and never judges the shiur itself ("the shiur is garbled/unclear", "a garbled stretch"). Remarks on the sound or the recording are fine ("poor sound quality", "the recording cuts off").
 
 ## No backwards compatibility
 

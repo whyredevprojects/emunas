@@ -29,7 +29,7 @@ describe("site-policy", () => {
     expect(read("verbatim-allow.json")).toStrictEqual([]);
   });
 
-  it("keeps the audio/transcript remark allow-list small, reviewed and phrase-specific", () => {
+  it("keeps the transcript/shiur remark allow-list small, reviewed and phrase-specific", () => {
     const list = read("meta-comment-allow.json") as Record<string, unknown>[];
     expect(Array.isArray(list)).toBe(true);
     expect(list.length).toBeLessThanOrEqual(12);

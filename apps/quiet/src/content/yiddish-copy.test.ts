@@ -121,7 +121,7 @@ describe("Yiddish UI copy (Quiet)", () => {
     }
   });
 
-  it("never remarks on the audio or the transcript, in either language (the guard's term list)", () => {
+  it("never remarks on the transcript or the shiur itself, in either language (the guard's term list)", () => {
     // The follow-text view is designed and OFF (EMUNAS_TRANSCRIPT_VIEW); its strings name what it shows.
     const tables = Object.entries(PAIRS).filter(([name]) => name !== "followText");
     const all = [

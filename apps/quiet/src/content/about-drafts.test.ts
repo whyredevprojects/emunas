@@ -81,7 +81,7 @@ describe("About drafts", () => {
     }
   });
 
-  it("never remark on the audio or the transcript (the guard's term list)", () => {
+  it("never remark on the transcript or the shiur itself (the guard's term list)", () => {
     for (const ed of EDS) {
       for (const part of ABOUT_PARTS) {
         const text = body(readFileSync(join(drafts, ed, `${part}.md`), "utf8"));
