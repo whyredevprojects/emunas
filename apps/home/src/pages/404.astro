@@ -1,0 +1,15 @@
+---
+/** Not found (`dist/404.html`, served for unknown addresses by `not_found_handling: "404-page"`). Never indexed. */
+import Base from "../layouts/Base.astro";
+---
+<Base title="Page not found" description="There is no page at this address." path="/404.html" noindex>
+  <div class="wrap">
+    <div class="page-head">
+      <span class="label">Not found</span>
+      <h1>Page not found</h1>
+      <p class="intro">There is no page at this address. The essays are on the <a href="/essays/">essays page</a>, and
+      everything else starts on the <a href="/">home page</a>.</p>
+    </div>
+    <div class="page-body"></div>
+  </div>
+</Base>

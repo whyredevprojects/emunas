@@ -1,7 +1,7 @@
 name: ci
 
 # integration-plan §3.5: typecheck (pipeline + sites) → lint → unit tests → corpus:build on
-# the real data → guard pre-pass → rebuild with the suppress list → both app builds →
+# the real data → guard pre-pass → rebuild with the suppress list → the three app builds →
 # guard post-pass (layer-aware) → budgets → PR preview uploads (staging Workers, `pr-<n>` alias).
 # The build steps run in the order of `npm run site:chain` (tests/chain/site-chain.ts, corpus-wave-
 # plan §6); tests/chain/site-chain.test.ts fails when this file and the script disagree, and the
@@ -95,16 +95,22 @@ jobs:
         run: npm run build --workspace=@emunas/quiet
       - name: Build Live
         run: npm run build --workspace=@emunas/live
+      - name: Build Home
+        run: npm run build --workspace=@emunas/home
+      # Home's public/_headers has no media origin to fill in (its files are same-origin /files/*),
+      # so it ships as built.
       - name: Render _headers (media origin into CSP)
         run: |
           npx tsx apps/quiet/worker/render-headers.ts apps/quiet/dist/_headers
           npx tsx apps/live/worker/render-headers.ts apps/live/build/client/_headers
-      - name: Validate wrangler configs and bundle the Live Worker (dry run)
+      - name: Validate wrangler configs and bundle the Live and Home Workers (dry run)
         run: |
           (cd apps/quiet && npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --env="")
           (cd apps/quiet && npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --env=staging)
           (cd apps/live && npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --env="" --outdir ../../.wrangler/bundles/live)
           (cd apps/live && npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --env=staging)
+          (cd apps/home && npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --env="" --outdir ../../.wrangler/bundles/home)
+          (cd apps/home && npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --env=staging)
 
       - name: Guard self-test (a planted leak must fail)
         run: |
@@ -118,10 +124,10 @@ jobs:
       - name: Guard post-pass (all outputs and the Worker bundle)
         run: >-
           npm run guard --workspace=@emunas/corpus-guard --
-          post --scan .corpus apps/quiet/dist apps/live/build/client .wrangler/bundles
+          post --scan .corpus apps/quiet/dist apps/live/build/client apps/home/dist .wrangler/bundles
           --corpus .corpus --corpus-data data/derived/corpus --report guard-post.json
       - name: Budgets
-        run: npm run guard --workspace=@emunas/corpus-guard -- budgets apps/quiet/dist apps/live/build/client
+        run: npm run guard --workspace=@emunas/corpus-guard -- budgets apps/quiet/dist apps/live/build/client apps/home/dist
       - name: Live data budgets (tech-live size targets; over-target is a warning)
         run: npm run data:budgets --workspace=@emunas/live
       - name: Chain self-tests (a planted asrVariants key and a planted ASR synonym must fail guard post)
@@ -169,6 +175,7 @@ jobs:
           path: |
             apps/quiet/dist
             apps/live/build/client
+            apps/home/dist
           include-hidden-files: true
           retention-days: 3
           if-no-files-found: error
@@ -299,6 +306,8 @@ jobs:
             apps/quiet/wrangler.jsonc
             apps/live/wrangler.jsonc
             apps/live/worker
+            apps/home/wrangler.jsonc
+            apps/home/worker
           sparse-checkout-cone-mode: false
       - uses: actions/setup-node@v5
         with:
@@ -313,7 +322,7 @@ jobs:
             echo "::notice::Cloudflare secrets are not configured; skipping preview upload."
             exit 0
           fi
-          for app in quiet live; do
+          for app in quiet live home; do
             (cd "apps/${app}" && npx --yes "wrangler@${WRANGLER_VERSION}" versions upload --env=staging \
               --preview-alias "pr-${PR_NUMBER}" --message "PR #${PR_NUMBER} ${HEAD_SHA:0:12}" \
               | tee "../../preview-${app}.log")

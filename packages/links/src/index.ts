@@ -15,16 +15,20 @@ export type {
   LinkData,
 } from "./types.ts";
 export { EDS, MOMENT_KINDS, CORPUS_KINDS, isEd } from "./types.ts";
-export type { Hosts, HostEnv } from "./hosts.ts";
+export type { Hosts, HostEnv, SiteHosts } from "./hosts.ts";
 export {
   hostsFromEnv,
+  siteHostsFromEnv,
   productionHosts,
   workersDevHosts,
   normalizeOrigin,
   validateHosts,
   isIndexableOrigin,
   hostOf,
+  QUIET_SUBDOMAIN,
   LIVE_SUBDOMAIN,
+  MEDIA_SUBDOMAIN,
+  HOME_WORKER,
   QUIET_WORKER,
   LIVE_WORKER,
 } from "./hosts.ts";

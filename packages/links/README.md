@@ -63,7 +63,7 @@ q.person("en", "baal-shem-tov");      // page, or "/en/people/#baal-shem-tov" wi
 
 // Cross-site, canonical, hreflang: absolute URLs.
 const links = createLinks({
-  hosts: hostsFromEnv(env), // EMUNAS_DOMAIN | EMUNAS_WORKERS_SUBDOMAIN (+ EMUNAS_STAGE) | EMUNAS_{QUIET,LIVE}_ORIGIN
+  hosts: hostsFromEnv(env), // EMUNAS_DOMAIN | EMUNAS_WORKERS_SUBDOMAIN (+ EMUNAS_STAGE) | EMUNAS_{HOME,QUIET,LIVE}_ORIGIN
   data: { ...pageLookupFromLayer(layerFiles), occasionKind, sectionStart }, // all optional lookups from .corpus/
 });
 links.live.shiur("en", id, { t: player.currentTime }); // "Open in the listening app"
@@ -85,11 +85,28 @@ links.withEdition(url, "yi"); // edition switch that keeps the place
 
 ### Hosts
 
-Production: Quiet on the apex `https://<domain>`, Live on `https://listen.<domain>`. Before the
-domain exists (O8) and on staging: `emunas-quiet[-staging].<subdomain>.workers.dev` and
-`emunas-live[-staging].<subdomain>.workers.dev`. `isIndexableOrigin()` is false for
-workers.dev, localhost and IPs (send `X-Robots-Tag: noindex`). A Quiet origin on `listen.*`
-is rejected, so a canonical can never point at Live.
+Three sites, one domain `<d>` (`EMUNAS_DOMAIN`):
+
+| Site | Production | workers.dev (before the domain, and staging) |
+|---|---|---|
+| home (landing site, essays, files) | `https://<d>` | `emunas-home[-staging].<subdomain>.workers.dev` |
+| Quiet (library, canonical) | `https://library.<d>` | `emunas-quiet[-staging].<subdomain>.workers.dev` |
+| Live (listening app) | `https://listen.<d>` | `emunas-live[-staging].<subdomain>.workers.dev` |
+
+Media (R2) is `media.<d>`, set separately as `EMUNAS_MEDIA_ORIGIN`. Every host derives from
+`EMUNAS_DOMAIN`, so moving to another domain is a config change only.
+
+- `hostsFromEnv(env)` gives all three (`Hosts`). Explicit origins (`EMUNAS_HOME_ORIGIN`,
+  `EMUNAS_QUIET_ORIGIN`, `EMUNAS_LIVE_ORIGIN`) override the derived ones; without a domain or
+  subdomain all three must be set.
+- `siteHostsFromEnv(env)` gives only Quiet and Live (`SiteHosts`), for code that never links to
+  home; it does not need `EMUNAS_HOME_ORIGIN`.
+- `createLinks` takes `SiteHosts` (a full `Hosts` works too): cross-site links, canonical and
+  hreflang are between Quiet and Live only.
+- `validateHosts` requires every origin it is given to be distinct and rejects a Quiet origin on
+  `listen.*`, so a canonical can never point at Live. `productionHosts` rejects a domain that
+  starts with `library.`, `listen.` or `media.` (it must be the apex).
+- `isIndexableOrigin()` is false for workers.dev, localhost and IPs (send `X-Robots-Tag: noindex`).
 
 Pages that exist on one site only map to the closest page on the other (Live Explore → the
 Quiet topic tree; shelf → Quiet edition home; Quiet contents, years, about → Live UI home; seforim ↔ sources,

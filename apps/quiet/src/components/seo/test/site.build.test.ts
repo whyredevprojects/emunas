@@ -24,7 +24,8 @@ import { ABOUT_PARTS } from "../../../pages/[ed]/about/_strings.ts";
 const app = resolve(dirname(fileURLToPath(import.meta.url)), "../../../..");
 const repo = resolve(app, "../..");
 const DOMAIN = "emunas.example";
-const QUIET = `https://${DOMAIN}`;
+const HOME = `https://${DOMAIN}`;
+const QUIET = `https://library.${DOMAIN}`;
 const LIVE = `https://listen.${DOMAIN}`;
 const MEDIA = "https://media.example.org";
 const FEEDBACK = "errors@emunas.example";
@@ -45,6 +46,7 @@ beforeAll(() => {
     EMUNAS_DOMAIN: DOMAIN,
     EMUNAS_FEEDBACK_EMAIL: FEEDBACK,
     // Never let a caller's own host settings leak into this build.
+    EMUNAS_HOME_ORIGIN: "",
     EMUNAS_QUIET_ORIGIN: "",
     EMUNAS_LIVE_ORIGIN: "",
     EMUNAS_WORKERS_SUBDOMAIN: "",
@@ -260,6 +262,8 @@ describe("link checker", () => {
           else if (!exists(back.slice(QUIET.length).replace(/[?#].*$/, ""))) bad(`maps back to a missing page ${back}`);
           continue;
         }
+        // The footer's link to the home site (apex), on every page.
+        if (href === `${HOME}/`) continue;
         if (href.startsWith(`${MEDIA}/`) || /^https:\/\/(?:www\.)?sefaria\.org\//.test(href)) continue;
         let local = href;
         if (href.startsWith(`${QUIET}/`)) local = href.slice(QUIET.length);

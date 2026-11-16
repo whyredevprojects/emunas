@@ -3,7 +3,7 @@
  *
  *   corpus:build → guard pre → corpus:build --suppress → search:build → live data:build (lexical
  *   neighbours, as in ci.yml)
- *   → quiet build → live build → guard post (0 findings) → budgets
+ *   → quiet build → live build → home build → guard post (0 findings) → budgets
  *
  *   npm run site:chain [-- options]
  *
@@ -39,6 +39,7 @@ export const STEP_IDS = [
   "live-data",
   "quiet-build",
   "live-build",
+  "home-build",
   "guard-post",
   "budgets",
 ] as const;
@@ -70,11 +71,12 @@ export const SUPPRESS_FILE = ".corpus/suppress.json";
 export const CORPUS_DATA_DIR = "data/derived/corpus";
 export const QUIET_DIST = "apps/quiet/dist";
 export const LIVE_CLIENT = "apps/live/build/client";
+export const HOME_DIST = "apps/home/dist";
 export const BUNDLES_DIR = ".wrangler/bundles";
 
 /** The chain's steps. `bundles`: scan the Worker bundles too (when a dry run has written them). */
 export function chainSteps(opts: { report: string; bundles: boolean }): Step[] {
-  const scan = [CORPUS_DIR, QUIET_DIST, LIVE_CLIENT, ...(opts.bundles ? [BUNDLES_DIR] : [])];
+  const scan = [CORPUS_DIR, QUIET_DIST, LIVE_CLIENT, HOME_DIST, ...(opts.bundles ? [BUNDLES_DIR] : [])];
   return [
     { id: "corpus-build", title: "corpus:build", commands: [["npm", "run", "corpus:build"]] },
     {
@@ -95,6 +97,7 @@ export function chainSteps(opts: { report: string; bundles: boolean }): Step[] {
     },
     { id: "quiet-build", title: "quiet build", commands: [["npm", "run", "build", "--workspace=@emunas/quiet"]] },
     { id: "live-build", title: "live build", commands: [["npm", "run", "build", "--workspace=@emunas/live"]] },
+    { id: "home-build", title: "home build", commands: [["npm", "run", "build", "--workspace=@emunas/home"]] },
     {
       id: "guard-post",
       title: "guard post (layer-aware; 0 findings)",
@@ -117,7 +120,7 @@ export function chainSteps(opts: { report: string; bundles: boolean }): Step[] {
       id: "budgets",
       title: "budgets",
       commands: [
-        [...GUARD, "budgets", QUIET_DIST, LIVE_CLIENT],
+        [...GUARD, "budgets", QUIET_DIST, LIVE_CLIENT, HOME_DIST],
         ["npm", "run", "data:budgets", "--workspace=@emunas/live"],
       ],
     },

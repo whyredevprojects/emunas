@@ -31,8 +31,9 @@ interface EventSource {
 }
 
 /**
- * Runs in <head> before any stylesheet. Kept byte-constant: Quiet's CSP allows it by its sha256
- * (apps/quiet/public/_headers), and the Quiet tests recompute that hash from this string.
+ * Runs in <head> before any stylesheet. Kept byte-constant: the Quiet and home CSPs allow it by its
+ * sha256 (apps/quiet/public/_headers, apps/home/public/_headers), and each app's tests recompute
+ * that hash from this string.
  */
 export const THEME_INIT_SCRIPT =
   '(function(){try{if(/(?:^|;\\s*)emunas_theme=dark(?:;|$)/.test(document.cookie))document.documentElement.dataset.theme="dark"}catch(e){}})()';

@@ -126,18 +126,20 @@ All packages are `"private": true`, named `@emunas/<dir>`, ESM, TypeScript sourc
 
 ## 2. Domains, URLs, SEO
 
-### 2.1 Decision: two hostnames on one registrable domain
+### 2.1 Decision: one registrable domain, a hostname per site
 
-- **Quiet is primary and canonical**: `https://<domain>/` (apex; `www` redirects to apex). It pre-renders every shiur in both editions, works without JS, and is the copy search engines should index.
-- **Live**: `https://listen.<domain>/`.
+- **Home** (the landing site, essays and files): `https://<domain>/` (apex; `www` redirects to apex).
+- **Quiet is primary and canonical**: `https://library.<domain>/`. It pre-renders every shiur in both editions, works without JS, and is the copy search engines should index.
+- **Live**: `https://listen.<domain>/`. **Media** (R2): `https://media.<domain>/`.
+- `<domain>` is `EMUNAS_DOMAIN` (`emunas.torahlearningtools.com` now, `emunas.com` later); every host derives from it, so moving domains is config only (ops-runbook §3 "Domains and cutover").
 - Rejected: **subpaths** (`<domain>/listen/…`) — two frameworks and two Workers on one host means one Worker fronting the other, colliding `/_astro` vs `/assets`, a service-worker scope fight, and Live's SPA fallback swallowing Quiet's 404s. Rejected: **separate registrable domains** — two names for one collection confuses people and splits trust; nothing needs separate cookies.
-- The domain name itself is an owner decision (O8). Until then: `emunas-quiet.<account>.workers.dev` and `emunas-live.<account>.workers.dev`, both `noindex` (header `X-Robots-Tag: noindex` on `*.workers.dev` hosts, set by the site Workers).
+- Without a domain (and on staging): `emunas-{home,quiet,live}[-staging].<account>.workers.dev`, all `noindex` (header `X-Robots-Tag: noindex` on `*.workers.dev` hosts, set by the site Workers).
 
 ### 2.2 Equivalent deep links (`@emunas/links`)
 
 Edition/UI language is the first path segment on both sites (`yi` | `en`). Time is always **global seconds** (C5). Moment ids: `<shiurId>~<kind><index>` (`s3`, `i2`, `q0`, `st1`, `tk4`, `kp0`).
 
-| Thing | Quiet (`<domain>`) | Live (`listen.<domain>`) |
+| Thing | Quiet (`library.<domain>`) | Live (`listen.<domain>`) |
 |---|---|---|
 | Home | `/{ed}/` | `/{ui}/` |
 | Shiur | `/{ed}/shiur/{shiurId}/` | `/{ui}/s/{shiurId}` |
@@ -176,7 +178,7 @@ Moving between sites: Quiet shiur page has "Open in the listening app" (`links.l
 |---|---|---|---|
 | R2 | `emunas` (exists) | pipeline (write); browsers (read, via `media.<domain>`) | **public custom domain `media.<domain>` with CORS for both site origins (A1); never bound to any Worker.** Holds mp3s and `transcripts/…`; the transcripts are reachable but never linked (accepted by the owner until they are removed from the bucket). |
 | R2 | `emunas-site-build` | CI only | embedding cache `emb/<model>/<hash>.f16`; private |
-| Worker | `emunas-quiet` | `<domain>` | static assets (`dist/`); no audio route (A1) |
+| Worker | `emunas-quiet` | `library.<domain>` | static assets (`dist/`); no audio route (A1) |
 | Worker | `emunas-live` | `listen.<domain>` | static assets (`build/client`), `not_found_handling: "single-page-application"`, `run_worker_first: ["/", "/api/*", "/admin/*"]`, service binding `API` → `emunas-api` |
 | Worker | `emunas-api` | via service binding only (`workers_dev: false`, no route) | `/api/search`, `/api/similar`, `/api/feedback`, `/api/health`, `/admin/feedback` |
 | D1 | `emunas-search`, `emunas-feedback` (+ `-staging`) | api | separate DBs: rebuildable index vs. user reports that must never be wiped |
@@ -215,7 +217,7 @@ Per Amendment A1 (owner decision): audio is served straight from the `emunas` bu
 
 | Env | Deployed from | Sites | api bindings |
 |---|---|---|---|
-| production | `main` (push, daily cron, dispatch) | `<domain>`, `listen.<domain>` | prod D1/Vectorize |
+| production | `main` (push, daily cron, dispatch) | `<domain>`, `library.<domain>`, `listen.<domain>` | prod D1/Vectorize |
 | staging | manual dispatch (api schema changes, search tuning) | `*-staging` workers.dev | `-staging` D1/Vectorize, `emunas-api-staging` |
 | preview | every same-repo PR: `wrangler versions upload --preview-alias pr-<n>` | per-PR preview URL, `noindex` | staging bindings (so a PR can never write prod D1) |
 
@@ -223,7 +225,7 @@ Each `wrangler.jsonc` has a top-level (production) config and `env.staging`. `co
 
 ### 3.5 CI/CD (GitHub Actions)
 
-- `ci.yml` (PRs): `npm ci` → typecheck (pipeline `npm run typecheck` too) → lint → unit tests → `corpus:build` on the real `data/` → guard pre-pass → both app builds → guard post-pass → budgets → Playwright smoke (`wrangler dev`) → preview uploads.
+- `ci.yml` (PRs): `npm ci` → typecheck (pipeline `npm run typecheck` too) → lint → unit tests → `corpus:build` on the real `data/` → guard pre-pass → the three app builds (Quiet, Live, Home) → guard post-pass → budgets → Playwright smoke (`wrangler dev`) → preview uploads.
 - `deploy.yml` (push to `main` touching `data/derived/**`, `data/catalog/**`, `apps/**`, `packages/**`, `workers/**`, `site-policy/**`; dispatch): same build (with `EMUNAS_MEDIA_ORIGIN` set) → D1 migrations → D1 incremental sync → Vectorize incremental sync → deploy `emunas-api` → deploy `emunas-quiet` → deploy `emunas-live`. `concurrency: deploy-production, cancel-in-progress: true` (syncs are hash-diffed and idempotent, so cancelling is safe). Caches: `actions/cache` for `.corpus/` fingerprints, `.astro`, embedding cache is in R2.
 - `refresh-quiet.yml` (every second day at 05:17 UTC; dispatch): Quiet only, from `main`: corpus build → guard pre → rebuild with suppress → search build → Quiet build → `_headers` → guard post over `.corpus` and `apps/quiet/dist` → budgets → deploy `emunas-quiet`. It keeps the title page's "this week" window current. It shares the `deploy-production` concurrency group without cancelling, so a full deploy cancels a refresh and never the other way round.
 - `data-sync.yml`: see §4.
@@ -344,7 +346,7 @@ Never present (type test + guard): `heardAs`, `asrNotes`, `segs`, `startSeg`, `e
 | O5 | Accounts / sync for Live | **Local-only** first |
 | O6 | `@hebcal/core` GPL-2.0 at build time only | **Accept** (generates a data table; no code shipped); fallback hand-made table |
 | O7 | `current` (79) and `simcha` (72) in general browse | Own sections; excluded from Today/Explore defaults (`publish-policy.json`) |
-| O8 | Domain name | `<domain>` apex = Quiet, `listen.<domain>` = Live |
+| O8 | Domain name | `<domain>` apex = home, `library.<domain>` = Quiet, `listen.<domain>` = Live, `media.<domain>` = R2 |
 | O9 | Pipeline branch vs `main` | **`data-sync.yml`** merging data-only commits |
 | O10 | Embedding model | bge-m3 unless the Yiddish eval says otherwise |
 
@@ -579,7 +581,7 @@ Same ids as the wave lists in §7 and the structured plan. Paths are the only fi
 
 - **Owns:** `(no repo files; Cloudflare account resources)`
 - **Depends on:** W1.5, W2.7
-- **Brief (inputs, deliverables):** A person with Cloudflare credentials attaches the custom domain media.<domain> to the existing emunas bucket (A1) and sets its CORS rules (AllowedOrigins: https://<domain>, https://listen.<domain>, plus staging/preview origins as needed; methods GET, HEAD; Range allowed as a request header), sets EMUNAS_MEDIA_ORIGIN for deploy builds, and creates emunas-site-build, D1 emunas-search/-staging and emunas-feedback/-staging, Vectorize emunas-moments/-staging (1024, cosine, metadata indexes audio_lang, kind, category, year), Turnstile widget, Access app. No emunas-audio bucket and no copy step.
+- **Brief (inputs, deliverables):** A person with Cloudflare credentials attaches the custom domain media.<domain> to the existing emunas bucket (A1) and sets its CORS rules (AllowedOrigins: https://library.<domain>, https://listen.<domain>, plus staging/preview origins as needed; methods GET, HEAD; Range allowed as a request header), sets EMUNAS_MEDIA_ORIGIN for deploy builds, and creates emunas-site-build, D1 emunas-search/-staging and emunas-feedback/-staging, Vectorize emunas-moments/-staging (1024, cosine, metadata indexes audio_lang, kind, category, year), Turnstile widget, Access app. No emunas-audio bucket and no copy step.
 - **Acceptance:** a manual iOS Safari and Android Chrome check plays and seeks an audioUrl from a staging page (Range → 206); a CORS fetch() from both site origins succeeds; a recording with a Hebrew/space/# key plays; the 3 .WMA recordings show as unavailable.
 
 ### Wave 4

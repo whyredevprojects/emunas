@@ -34,7 +34,7 @@ function tmp(): string {
 const ENV = { EMUNAS_DOMAIN: "example.org" };
 /** The body every built page ends with (root layout): the dedication footer (F.3). */
 const DEDICATED_BODY = `<body><main></main><footer class="f"><p class="l" dir="rtl" lang="he" data-dedication="">${DEDICATION}</p></footer></body>`;
-const QUIET = "https://example.org";
+const QUIET = "https://library.example.org";
 
 /**
  * Renders the SeoHead for `path` with the given root loader data, as the prerender does, plus the

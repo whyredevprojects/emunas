@@ -1,0 +1,121 @@
+---
+/**
+ * Home: a framed title page, "Start here", the Library and Listen doorways with the offline ways
+ * to hear the shiurim, a few covers from the archive, About + Sefarim, and supporting the sefarim.
+ */
+import Base from "../layouts/Base.astro";
+import DocCard from "../components/DocCard.astro";
+import Shelf from "../components/Shelf.astro";
+import { ARTICLES, ESSAYS, fileAt } from "../lib/legacy-files.ts";
+import { CONTACT, EXTERNAL, FEATURED_ESSAYS, QUOTE } from "../lib/content.ts";
+import { bareHost, currentSiteEnv, siteLinks } from "../lib/site-env.ts";
+
+const env = currentSiteEnv();
+const links = siteLinks(env.hosts);
+const featured = [...FEATURED_ESSAYS.map(fileAt), ...ARTICLES];
+const firstEssay = fileAt("/files/essays/bereishis.pdf");
+const spines = Array.from({ length: 10 });
+const bars = Array.from({ length: 19 });
+---
+<Base>
+  <section class="hero" aria-labelledby="h1">
+    <div class="wrap">
+      <div class="titlepage">
+        <span class="label">Our souls yearn to be lifted higher</span>
+        <h1 id="h1"><span class="tp-yi" lang="yi" dir="rtl">דער משגיח</span><span class="tp-en">The Mashgiach</span></h1>
+        <p class="tp-name">Harav Moshe Wolfson zt"l, Mashgiach Ruchani of Mesivta Torah Vodaath</p>
+        <hr class="ornament" />
+        <blockquote class="tp-quote">
+          <p>{QUOTE.text}</p>
+          <footer>{QUOTE.by}</footer>
+        </blockquote>
+      </div>
+      <div class="hero-side">
+        <p class="lede">The Mashgiach connected us to a deeper level of Torah, giving us new perceptions of a pulsating
+        Judaism. Here are his shiurim, to read and to hear, with essays and sefarim drawn from his teaching.</p>
+        <nav class="start" aria-labelledby="start-h">
+          <h2 id="start-h">Start here <span class="yi-aside" lang="yi" dir="rtl">אנהייבן דא</span></h2>
+          <ol>
+            <li><a href="/about/"><span class="t">Who was the Mashgiach</span><span class="d">A short introduction, and two magazine features to read next.</span></a></li>
+            <li><a href={firstEssay.path}><span class="t">Read one essay</span><span class="d">{firstEssay.title} (PDF)</span></a></li>
+            <li><a href={links.listen}><span class="t">Hear a shiur</span><span class="d">The shiurim in your browser, by parsha, Yom Tov and series.</span></a></li>
+            <li><a href={links.library}><span class="t">Find a topic in the Library</span><span class="d">Search by parsha, Yom Tov, sefer or idea.</span></a></li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <section class="doors" aria-label="The two shiur sites">
+    <div class="wrap">
+      <div class="grid">
+        <article class="door door--library">
+          <div class="door-head">
+            <div>
+              <span class="label">Read &amp; study &middot; <span lang="yi" dir="rtl">לערנען</span></span>
+              <h2><a href={links.library}>Library</a></h2>
+              <p class="yi-name" lang="yi" dir="rtl">די שיעורים פון דעם משגיח</p>
+            </div>
+            <div class="door-art" aria-hidden="true">{spines.map(() => <i />)}</div>
+          </div>
+          <p class="blurb">The recorded shiurim, each with a written summary in English and Yiddish, the sources he
+          brought, and the topics he returned to. Arranged by parsha, Yom Tov and series.</p>
+          <div class="foot"><span class="cta">Open the Library &rarr;</span><span class="host">{bareHost(env.hosts.quiet)}</span></div>
+        </article>
+        <article class="door door--listen">
+          <div class="door-head">
+            <div>
+              <span class="label">Listen &middot; <span lang="yi" dir="rtl">הערן</span></span>
+              <h2><a href={links.listen}>Listen</a></h2>
+              <p class="yi-name" lang="yi" dir="rtl">אמונת &mdash; הערן</p>
+            </div>
+            <div class="door-art" aria-hidden="true">{bars.map(() => <i />)}</div>
+          </div>
+          <p class="blurb">Play the shiurim in your browser, in the Mashgiach&rsquo;s own voice. Browse by parsha and
+          Yom Tov, and follow a series from beginning to end.</p>
+          <div class="foot"><span class="cta">Start listening &rarr;</span><span class="host">{bareHost(env.hosts.live)}</span></div>
+        </article>
+      </div>
+      <p class="door-note">No internet at home? Hear the shiurim by phone at
+      <strong><a href={CONTACT.phoneHref}>{CONTACT.phone}</a></strong>, or <a href="/contact/">ask for recordings by mail</a>.
+      Audio shiurim in English and Yiddish are also on <a href={EXTERNAL.torahAnytime}>TorahAnytime</a>.</p>
+    </div>
+  </section>
+
+  <section class="section section--ruled" aria-labelledby="docs-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="docs-h">From the archive <span class="yi-aside" lang="yi" dir="rtl">פונעם ארכיוו</span></h2>
+        <a class="more" href="/essays/">All {ESSAYS.length} essays &rarr;</a>
+      </div>
+      <ul class="docs-grid">
+        {featured.map((f) => <DocCard file={f} />)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--ruled" aria-labelledby="about-h">
+    <div class="wrap two-col">
+      <div class="about-block">
+        <span class="num">About &middot; <span lang="yi" dir="rtl">וועגן</span></span>
+        <h2 id="about-h">The Mashgiach</h2>
+        <p class="dropcap">Harav Moshe Wolfson zt"l, Mashgiach Ruchani of Mesivta Torah Vodaath, led Beis Medrash
+        Emunas Yisrael in Brooklyn and was one of the most revered rabbinic figures of our time.</p>
+        <p>The name <em>Emunas</em> was chosen for the Mashgiach&rsquo;s teaching on the singular importance of
+        emunah in our times.</p>
+        <p><a href="/about/">More about the Mashgiach &rarr;</a></p>
+        <div class="support" id="support">
+          <h3>Support</h3>
+          <p>The shiurim are free. You can <a href={EXTERNAL.support}>support the printing of the Mashgiach&rsquo;s sefarim</a>.</p>
+        </div>
+      </div>
+      <div>
+        <div class="shelf-head">
+          <h3>Sefarim in English</h3>
+          <p>Books based on the Mashgiach&rsquo;s teachings, available from their publishers.</p>
+        </div>
+        <Shelf />
+      </div>
+    </div>
+  </section>
+</Base>
