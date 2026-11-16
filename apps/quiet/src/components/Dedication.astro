@@ -1,0 +1,23 @@
+---
+/**
+ * The dedication line (corpus-wave-plan F.3): Hebrew in every edition, centered, small, in the
+ * footer's muted colour, with no border, icon, link or decoration. Always the footer's last child.
+ */
+import { DEDICATION } from "./dedication.ts";
+---
+<p class="dedication" dir="rtl" lang="he" data-dedication>{DEDICATION}</p>
+
+<style>
+  .dedication {
+    margin-block-start: var(--space-m);
+    text-align: center;
+    font-size: var(--step--1);
+    color: var(--color-ink-muted);
+  }
+
+  @media print {
+    .dedication {
+      font-size: 8pt;
+    }
+  }
+</style>

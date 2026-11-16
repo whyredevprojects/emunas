@@ -10,6 +10,7 @@ import {
   useLocation,
   useRouteError,
 } from "react-router";
+import { Dedication } from "./components/Dedication.tsx";
 import { tFor } from "./i18n/index.ts";
 import { seoLoader } from "./seo/loader.server.ts";
 import { SeoHead } from "./seo/SeoHead.tsx";
@@ -49,6 +50,7 @@ export function Layout({ children }: { children: ReactNode }): JSX.Element {
       </head>
       <body>
         {children}
+        <Dedication />
         <ScrollRestoration />
         <Scripts />
       </body>

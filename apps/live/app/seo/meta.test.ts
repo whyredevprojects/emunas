@@ -1,7 +1,7 @@
 /** Route titles from the W4.5 root loader data (W5.4 `meta.ts`). */
 import { describe, expect, it } from "vitest";
 import type { RootSeoData, SeoPage } from "./head.ts";
-import { contentTitle, kindTitle, seoMeta, seoPageFor } from "./meta.ts";
+import { contentTitle, kindTitle, seoMeta } from "./meta.ts";
 
 function page(over: Partial<SeoPage>): SeoPage {
   return {
@@ -33,11 +33,6 @@ describe("seoMeta", () => {
     const [t] = seoMeta("page.shiur")(args("/yi/s/x/", root(shiur)));
     expect(t!.title.startsWith("דרוש — חלק א · ")).toBe(true);
     expect(t!.title.endsWith("אמונת — הערן")).toBe(true);
-  });
-
-  it("reads the deprecated `data` field too", () => {
-    const m = [{ id: "root", data: root(page({})) }];
-    expect(seoPageFor("/en/c/emunah", m)?.title).toBe("אמונה");
   });
 
   it("falls back to the page kind after client navigation, without data, and on non-content pages", () => {

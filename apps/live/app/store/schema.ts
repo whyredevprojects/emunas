@@ -7,8 +7,7 @@
  * unchanged.
  *
  * The schema version is the IndexedDB database version. Raising it means appending a migration to
- * `MIGRATIONS` (`idb-backend.ts`) and, if record shapes change, a record upgrade for imported files
- * (`transfer.ts`).
+ * `MIGRATIONS` (`idb-backend.ts`); version 1 creates the stores.
  */
 
 export const PERSONAL_DB_NAME = "emunas-live-personal";

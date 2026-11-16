@@ -259,7 +259,7 @@ describe("moment of the day", () => {
   it("skips moments without a time and falls back through the priority list", () => {
     const byId = rowsById(today);
     const noTimes = structuredClone(today);
-    // A pool whose moments have no time (an older file) is skipped like an empty one.
+    // A pool whose moments have no time is skipped like an empty one.
     for (const m of noTimes.occasions["chanukah"]!.moments) (m as { t: number | null }).t = null;
     const m = momentOfTheDay("2026-12-08", [["chanukah"], ["mikeitz"]], noTimes, byId, "both");
     expect(m?.occasionKey).toBe("mikeitz");

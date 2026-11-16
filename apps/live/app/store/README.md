@@ -19,8 +19,8 @@ Every record has `updatedAt` (for import merge now and sync later, decision D4).
 
 **Schema changes.** The database version is `PERSONAL_SCHEMA_VERSION`. Append a migration to
 `MIGRATIONS` in `idb-backend.ts` (it runs inside the `versionchange` transaction; a throw rolls the
-upgrade back), raise the version, and if record shapes change add a `RECORD_UPGRADES` step in
-`transfer.ts` so older export files still import. `idb-backend.test.ts` shows the pattern.
+upgrade back) and raise the version. `idb-backend.test.ts` shows the pattern. Nothing has been
+published yet, so version 1 is the only shape: there are no upgrades for older export files.
 
 **Storage unavailable.** `openBestBackend` falls back to memory when IndexedDB is missing, throws
 (private windows, blocked site data), is newer than this build, or stays blocked by another tab; a

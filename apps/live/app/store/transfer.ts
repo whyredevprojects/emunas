@@ -66,12 +66,6 @@ const CAP: { [S in StoreName]: number } = {
   downloads: 10_000,
 };
 
-/**
- * Upgrades for export files written by older schema versions: `RECORD_UPGRADES[v]` turns a version
- * `v` data object into version `v + 1`. Empty while the schema is at version 1.
- */
-const RECORD_UPGRADES: Readonly<Record<number, (data: Record<string, unknown>) => Record<string, unknown>>> = {};
-
 function readStore<S extends StoreName>(store: S, raw: unknown, out: PersonalDump): { ok: number; bad: number } {
   if (raw === undefined) return { ok: 0, bad: 0 };
   if (!Array.isArray(raw)) return { ok: 0, bad: 1 };
@@ -112,12 +106,8 @@ export function parseImport(text: string): ParsedImport {
   const version = o["schemaVersion"];
   if (typeof version !== "number" || !Number.isInteger(version) || version < 1) throw new ImportError("wrong-format");
   if (version > PERSONAL_SCHEMA_VERSION) throw new ImportError("newer-version");
-  let data = o["data"];
+  const data = o["data"];
   if (typeof data !== "object" || data === null || Array.isArray(data)) throw new ImportError("wrong-format");
-  for (let v = version; v < PERSONAL_SCHEMA_VERSION; v++) {
-    const up = RECORD_UPGRADES[v];
-    if (up) data = up(data as Record<string, unknown>);
-  }
   const d = data as Record<string, unknown>;
   const dump = emptyDump();
   let accepted = 0;
