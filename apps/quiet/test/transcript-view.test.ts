@@ -139,7 +139,9 @@ describe("Quiet transcript view (W5.2)", () => {
     expect(g.counts.transcriptFilesAllowed).toBe(1);
     // Checked as a default build, the same output fails.
     const off = guard(dist, corpus, f.policy, f.transcripts, {});
-    expect(off.findings).toEqual([{ kind: "transcript-file", source: `transcript/${REC}.json`, recordingId: REC, reason: "flag-off" }]);
+    // (The slot's own wording, which names the transcription, is then a remark on the transcript too.)
+    expect(off.findings.filter((x) => x.kind !== "meta-comment")).toEqual([{ kind: "transcript-file", source: `transcript/${REC}.json`, recordingId: REC, reason: "flag-off" }]);
+    expect(off.findings.filter((x) => x.kind === "meta-comment").map((x) => x.source).sort()).toEqual([`en/shiur/${SHIUR}/index.html`, `yi/shiur/${SHIUR}/index.html`]);
   }, 300_000);
 
   it("identity mismatch (re-transcribed recording): nothing emitted", () => {
