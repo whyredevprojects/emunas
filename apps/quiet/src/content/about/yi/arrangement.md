@@ -1,8 +1,8 @@
 ---
-status: DRAFT
-approvedBy: null
-approvedAt: null
-note: "W5.3 draft for the owner. Not published. The Yiddish needs a named reviewer."
+status: approved
+approvedBy: owner (in the session chat)
+approvedAt: 2026-11-16
+yiddishReview: pending (no named reviewer yet)
 ---
 
 דער זייטל איז אויסגעשטעלט ווי א ספר. דער תוכן גייט לויטן סדר פונעם פאקעט גייד פון 2012: קודם

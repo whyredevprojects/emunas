@@ -1,8 +1,8 @@
 ---
-status: DRAFT
-approvedBy: null
-approvedAt: null
-note: "W5.3 draft for the owner. Not published. Same content as en/notes.md. The Yiddish needs a named reviewer."
+status: approved
+approvedBy: owner (in the session chat)
+approvedAt: 2026-11-16
+yiddishReview: pending (no named reviewer yet)
 ---
 
 די נאטיצן וואס שטייען ביי יעדן שיעור האט אן AI מאדעל געשריבן פונעם שיעור: דעם קיצור, דעם סדר

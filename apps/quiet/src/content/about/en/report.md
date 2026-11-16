@@ -1,8 +1,7 @@
 ---
-status: DRAFT
-approvedBy: null
-approvedAt: null
-note: "W5.3 draft for the owner. Not published. The page itself adds the report address below this text."
+status: approved
+approvedBy: owner (in the session chat)
+approvedAt: 2026-11-16
 ---
 
 If you find a mistake in the notes, such as a wrong source, a wrong name, a wrong time, or a
@@ -11,5 +10,3 @@ there is a link, "Report an error on this page"; it opens an email that already 
 and the page. In the listening app, every item has a "Something's wrong here" button.
 
 Please say what is wrong and, if you can, at which minute of the recording.
-
-[[OWNER: what happens to a report, and how soon.]]

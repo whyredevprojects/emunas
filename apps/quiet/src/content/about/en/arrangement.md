@@ -1,8 +1,7 @@
 ---
-status: DRAFT
-approvedBy: null
-approvedAt: null
-note: "W5.3 draft for the owner. Not published."
+status: approved
+approvedBy: owner (in the session chat)
+approvedAt: 2026-11-16
 ---
 
 The site is set out like a sefer. The contents follow the order of the 2012 Pocket Guide: first

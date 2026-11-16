@@ -1,8 +1,7 @@
 ---
-status: DRAFT
-approvedBy: null
-approvedAt: null
-note: "W5.3 draft for the owner. Not published. States what concept-quiet §5.11 requires: written by AI, not reviewed, may contain mistakes, does not quote the Mashgiach, the recording is the authority. Says nothing about any machine text (owner rule: published text never comments on the transcript or judges the shiur itself)."
+status: approved
+approvedBy: owner (in the session chat)
+approvedAt: 2026-11-16
 ---
 
 The notes on each shiur page were written by an AI model from the shiur: the summary, the order
