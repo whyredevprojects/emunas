@@ -19,13 +19,12 @@ import { EDS, type Ed } from "../../../lib/edition.ts";
 
 export const getStaticPaths = (() => {
   const data = entryData();
-  if (!data) return [];
   const ids = conceptPageIds(data);
   return EDS.flatMap((ed) => ids.map((concept) => ({ params: { ed, concept } })));
 }) satisfies GetStaticPaths;
 
 const ed = Astro.params.ed as Ed;
-const data = entryData()!;
+const data = entryData();
 const concept = data.layer.concept(Astro.params.concept as string)!;
 const t = useIndexesT(ed);
 const page = conceptPage(data, ed, concept);

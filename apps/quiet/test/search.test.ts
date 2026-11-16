@@ -335,7 +335,7 @@ describe("entity records", () => {
     expect(parseSynonymRows([row, { kind: "story", id: "x" }, null, { kind: "topic" }])).toHaveLength(1);
   });
 
-  it("readEntities reads defensively: unknown kinds, missing ids and missing fields", () => {
+  it("readEntities reads defensively (unknown kinds, missing ids and fields); a missing file fails", () => {
     const f = join(tmp(), "entities.ndjson");
     writeFileSync(
       f,
@@ -349,7 +349,7 @@ describe("entity records", () => {
     const got = readEntities(f);
     expect(got).toHaveLength(1);
     expect(got[0]).toMatchObject({ kind: "topic", id: "t", labels: { he: null, en: "T", yi: null }, synonyms: [], count: 0, listed: { quiet: false, live: false }, mergedInto: null });
-    expect(readEntities(join(tmp(), "missing.ndjson"))).toEqual([]);
+    expect(() => readEntities(join(tmp(), "missing.ndjson"))).toThrow(/the corpus layer is required/);
   });
 });
 
@@ -525,13 +525,14 @@ describe("buildSearch", () => {
     expect(existsSync(out)).toBe(false);
   });
 
-  it("without a corpus layer: shiur records only, an empty synonym table", async () => {
+  it("fails without the corpus layer (it is required): nothing written", async () => {
     const c = join(tmp(), ".corpus");
     buildCorpus({ dataDir: MINI_DATA, outDir: c, policyDir: join(MINI, "site-policy"), dataSha: null });
     const out = join(tmp(), "pagefind");
-    const r = await buildSearch({ corpusDir: c, outDir: out, transcriptsDir: null, siteDir: SITE_POLICY, dataDir: null, corpusDataDir: null, env: {} });
-    expect(r).toMatchObject({ records: docs.length, entityRecords: 0, written: true });
-    expect(JSON.parse(readFileSync(join(out, SYNONYMS_FILE), "utf8"))).toEqual([]);
+    await expect(
+      buildSearch({ corpusDir: c, outDir: out, transcriptsDir: null, siteDir: SITE_POLICY, dataDir: null, corpusDataDir: null, env: {} }),
+    ).rejects.toThrow(/the corpus layer is required/);
+    expect(existsSync(out)).toBe(false);
   }, 60_000);
 
   it("writes nothing when the guard finds a leak", async () => {

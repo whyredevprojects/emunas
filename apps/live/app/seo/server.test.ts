@@ -71,12 +71,21 @@ describe(".corpus reader", () => {
     expect(corpus.concepts).toEqual(corpusFixture.concepts);
   });
 
-  it("has no entity pages without a corpus layer (the site-derived aggregates are retired, C3.1)", () => {
+  it("fails without the corpus layer (it is required)", () => {
     const bare = writeCorpusFixture(join(tmp(), ".corpus"));
     rmSync(join(bare, "layer"), { recursive: true });
-    const c = readSeoCorpus(bare);
-    expect([c.works, c.people, c.concepts, c.topics, c.stories, c.threads].every((x) => x.length === 0)).toBe(true);
-    expect(c.occasions).toEqual(corpusFixture.occasions);
+    expect(() => readSeoCorpus(bare)).toThrow(/the corpus layer is required/);
+  });
+
+  it("gives a series with no parts no route (the emit writes no data file for it)", () => {
+    const d = writeCorpusFixture(join(tmp(), ".corpus"));
+    const file = join(d, "series.json");
+    const s = JSON.parse(readFileSync(file, "utf8")) as { series: { id: string; count: number }[] };
+    s.series.push({ ...s.series[0]!, id: "empty-en", count: 0 });
+    writeFileSync(file, JSON.stringify(s));
+    const c = readSeoCorpus(d);
+    expect(c.series.map((x) => x.id)).toEqual(corpusFixture.series.map((x) => x.id));
+    expect(prerenderPaths(c).paths.some((p) => p.includes("/series/empty-en"))).toBe(false);
   });
 
   it("finds .corpus by EMUNAS_CORPUS_DIR or walking up", () => {

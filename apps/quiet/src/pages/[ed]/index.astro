@@ -39,7 +39,7 @@ const builtDirs = new Set(
   Object.keys(import.meta.glob("./*/index.astro")).map((f) => f.split("/").at(-2) ?? ""),
 );
 const layer = quietLayer();
-const indexLines = indexesBlock(ed, layer.enabled ? layer.counts : null, (href) => builtDirs.has(href.split("/")[2] ?? ""));
+const indexLines = indexesBlock(ed, layer.counts, (href) => builtDirs.has(href.split("/")[2] ?? ""));
 ---
 <Base ed={ed} title={t("site.name")}>
   <header class="title-page">

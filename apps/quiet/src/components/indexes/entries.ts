@@ -14,11 +14,11 @@
  * data folder.
  */
 import { existsSync, readFileSync } from "node:fs";
-import { join } from "node:path";
+import { dirname, join } from "node:path";
 import type { MentionRef, WorkEntry, WorksFile } from "@emunas/corpus/aggregate";
 import type { CorpusIndex, IndexRow, PublicShiur } from "@emunas/corpus/public";
 import { findLayerDir, loadQuietLayer, quietLayer, type QuietLayer } from "../corpus/layer.ts";
-import { findCorpusDir, type ChapterRef } from "./corpus.ts";
+import type { ChapterRef } from "./corpus.ts";
 
 export interface EntryData {
   readonly layer: QuietLayer;
@@ -51,8 +51,8 @@ function visibleEntry(w: WorkEntry, visible: (id: string) => boolean): WorkEntry
 }
 
 /** Loads the entry data of a corpus directory and its layer. */
-export function loadEntryData(corpusDir: string | null, layer: QuietLayer): EntryData {
-  const index = corpusDir === null ? null : readJson<CorpusIndex>(join(corpusDir, "index.json"));
+export function loadEntryData(corpusDir: string, layer: QuietLayer): EntryData {
+  const index = readJson<CorpusIndex>(join(corpusDir, "index.json"));
   const list = Array.isArray(index?.shiurim) ? index.shiurim : [];
   const rows = new Map(list.filter((r) => typeof r?.id === "string").map((r) => [r.id, r]));
   const order = new Map([...rows.keys()].map((id, i) => [id, i]));
@@ -67,7 +67,7 @@ export function loadEntryData(corpusDir: string | null, layer: QuietLayer): Entr
   };
   const chapterCache = new Map<string, ReadonlyMap<number, ChapterRef>>();
   const empty: ReadonlyMap<number, ChapterRef> = new Map();
-  const works = corpusDir === null ? null : readJson<WorksFile>(join(corpusDir, "works.json"));
+  const works = readJson<WorksFile>(join(corpusDir, "works.json"));
   const byWork = new Map<string, WorkEntry[]>();
   for (const w of Array.isArray(works?.works) ? works.works : []) {
     if (typeof w?.workId !== "string" || w.workId === "") continue;
@@ -85,7 +85,7 @@ export function loadEntryData(corpusDir: string | null, layer: QuietLayer): Entr
     chapters(shiurId) {
       const hit = chapterCache.get(shiurId);
       if (hit) return hit;
-      if (corpusDir === null || !SAFE_ID.test(shiurId) || !visible(shiurId)) return empty;
+      if (!SAFE_ID.test(shiurId) || !visible(shiurId)) return empty;
       const shiur = readJson<Pick<PublicShiur, "notes">>(join(corpusDir, "shiurim", `${shiurId}.json`));
       const chapters = Array.isArray(shiur?.notes?.chapters) ? shiur.notes.chapters : [];
       const map = new Map<number, ChapterRef>(chapters.map((c) => [c.idx, { idx: c.idx, t: c.t, title: c.title }]));
@@ -101,17 +101,13 @@ export function loadEntryDataFrom(corpusDir: string): EntryData {
   return loadEntryData(corpusDir, loadQuietLayer(findLayerDir(corpusDir)));
 }
 
-let cached: { key: string; data: EntryData | null } | null = null;
+let cached: { key: string; data: EntryData } | null = null;
 
-/**
- * The entry data of this build, or null without a layer (the index routes then build nothing; the
- * layer reader has printed why). Memoised per corpus directory.
- */
-export function entryData(): EntryData | null {
-  const dir = findCorpusDir();
-  const key = dir ?? "";
-  if (cached && cached.key === key) return cached.data;
+/** The entry data of this build (the layer is required). Memoised per corpus directory. */
+export function entryData(): EntryData {
   const layer = quietLayer();
-  cached = { key, data: layer.enabled ? loadEntryData(dir, layer) : null };
+  const dir = dirname(layer.dir);
+  if (cached && cached.key === dir) return cached.data;
+  cached = { key: dir, data: loadEntryData(dir, layer) };
   return cached.data;
 }

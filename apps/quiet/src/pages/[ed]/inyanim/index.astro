@@ -19,10 +19,10 @@ import { INDEXES_ANCHOR } from "../../../lib/nav.ts";
 import { useT } from "../../../i18n/index.ts";
 import { formatQuiet } from "@emunas/links";
 
-export const getStaticPaths = (() => (topicsSource() ? EDS.map((ed) => ({ params: { ed } })) : [])) satisfies GetStaticPaths;
+export const getStaticPaths = (() => EDS.map((ed) => ({ params: { ed } }))) satisfies GetStaticPaths;
 
 const ed = Astro.params.ed as Ed;
-const src = topicsSource()!;
+const src = topicsSource();
 const layer = topicsLayer();
 const t = useTopicsT(ed);
 const ui = useT(ed);

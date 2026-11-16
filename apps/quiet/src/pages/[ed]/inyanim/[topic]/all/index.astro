@@ -19,14 +19,13 @@ import { EDS, type Ed } from "../../../../../lib/edition.ts";
 
 export const getStaticPaths = (() => {
   const src = topicsSource();
-  if (!src) return [];
   const { all } = topicPageIds(src);
   return EDS.flatMap((ed) => all.map((topic) => ({ params: { ed, topic } })));
 }) satisfies GetStaticPaths;
 
 const ed = Astro.params.ed as Ed;
 const id = Astro.params.topic as string;
-const src = topicsSource()!;
+const src = topicsSource();
 const page = topicPage(ed, src, id);
 if (!page) throw new Error(`inyanim: unknown topic ${id}`);
 const t = useTopicsT(ed);

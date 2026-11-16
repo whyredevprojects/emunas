@@ -136,8 +136,8 @@ const OCCASION_PRERENDER_MIN = 2;
 
 /**
  * The prerender sets of `<corpusDir>`, read as the prerender list reads them (`readSeoCorpus`):
- * occasions from the catalog aggregates, entity routes from the corpus layer's Live page flags (none
- * without a layer). Null without a corpus.
+ * occasions from the catalog aggregates, entity routes from the corpus layer's Live page flags. Null
+ * without a corpus.
  */
 export function prerenderSetsFromCorpus(corpusDir: string | null | undefined): PrerenderSets | null {
   if (!corpusDir || !existsSync(join(corpusDir, "occasions.json"))) return null;

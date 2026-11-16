@@ -59,7 +59,7 @@ export interface SeoCorpus {
   shiurim: SeoShiur[];
   series: SeoSeries[];
   occasions: SeoOccasion[];
-  /** Corpus layer entities (C1.7); all empty without a layer. */
+  /** Corpus layer entities (C1.7). */
   works: SeoEntity[];
   people: SeoEntity[];
   concepts: SeoEntity[];

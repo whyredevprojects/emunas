@@ -171,7 +171,6 @@ describe("the shiur page on the mini corpus layer", () => {
   }, 120_000);
 
   it("reads the layer refs only for shiurim in the visible set", () => {
-    expect(corpus.layer.enabled).toBe(true);
     for (const row of corpus.index.shiurim) {
       const s = corpus.shiur(row.id);
       if (s.status !== "full") expect(corpus.refs(row.id), row.id).toBeNull();

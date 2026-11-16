@@ -264,7 +264,7 @@ describe("stories index", () => {
     expect(line.moments).toHaveLength(2);
   });
 
-  it("is empty without a layer", () => {
+  it("is empty with no stories", () => {
     expect(storiesIndexModel("yi", source([], []), ROWS)).toEqual({ mostRetold: [], groups: [], withoutName: [], total: 0 });
   });
 });

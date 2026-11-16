@@ -91,7 +91,6 @@ const descendants = (id: string): Set<string> => {
 
 describe("the tree", () => {
   it("has every listed gate as a heading, its topics beneath, deeper topics run in", () => {
-    expect(layer.enabled).toBe(true);
     for (const ed of ["yi", "en"] as const) {
       const gates = topicTree(ed, src);
       const roots = src.topics.filter((t) => t.parentId === null && t.count > 0);

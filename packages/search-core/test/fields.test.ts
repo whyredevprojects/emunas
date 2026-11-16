@@ -72,7 +72,6 @@ describe("search outputs on the corpus layer (mini corpus)", () => {
   const topicLabels = new Map(topicTree.map((t) => [t.id, [t.label.en, t.label.yi, t.label.he ?? ""].map(fold)]));
 
   it("used the layer and checked its synonyms", () => {
-    expect(result.layer).toBe(true);
     expect(result.synonymsChecked).toBe(true);
     expect(result.entities).toBeGreaterThan(50);
     expect(result.keywordsFrom).toBeGreaterThan(10);

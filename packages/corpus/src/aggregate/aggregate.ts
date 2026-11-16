@@ -46,8 +46,8 @@ import type {
 export interface AggregateInput {
   shiurim: readonly PublicShiur[];
   index: CorpusIndex;
-  /** Source moment id → merged corpus work id (corpus layer, C1.2); absent → every `workId` is null. */
-  sourceWorkIds?: ReadonlyMap<string, string>;
+  /** Source moment id → merged corpus work id (corpus layer, C1.2). */
+  sourceWorkIds: ReadonlyMap<string, string>;
 }
 
 export interface AggregateResult {
@@ -287,8 +287,7 @@ function mostUsed(names: Map<string, number>): string {
 }
 
 /** The corpus work most of an entry's mentions resolve to (ties: the smaller id). */
-function corpusWorkOf(w: WorkAcc, sourceWorkIds: ReadonlyMap<string, string> | undefined): string | null {
-  if (!sourceWorkIds) return null;
+function corpusWorkOf(w: WorkAcc, sourceWorkIds: ReadonlyMap<string, string>): string | null {
   const tally = new Map<string, number>();
   for (const m of [...[...w.refs.values()].flatMap((r) => r.mentions), ...w.unlocated]) {
     const id = sourceWorkIds.get(m.id);

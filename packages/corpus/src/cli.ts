@@ -99,16 +99,14 @@ function main(argv: string[]): number {
     );
     for (const d of rep.downgraded) console.log(`  downgraded ${d.id}: ${d.reasons.join("; ")}`);
     const layer = r.layer.info;
-    if (layer.enabled) {
-      const q = layer.counts.pages.quiet;
-      const l = layer.counts.pages.live;
-      console.log(
-        `layer: pages quiet ${q.topics} topics, ${q.concepts} concepts, ${q.people} people, ${q.works} works, ${q.stories} stories; ` +
-          `live ${l.topics} topics, ${l.concepts} concepts, ${l.people} people, ${l.works} works, ${l.stories} stories, ${l.threads} threads; ` +
-          `${r.layer.files.length} files, ${r.layer.removed.length} removed`,
-      );
-      for (const w of layer.warnings) console.log(`  layer: ${w}`);
-    }
+    const q = layer.counts.pages.quiet;
+    const l = layer.counts.pages.live;
+    console.log(
+      `layer: pages quiet ${q.topics} topics, ${q.concepts} concepts, ${q.people} people, ${q.works} works, ${q.stories} stories; ` +
+        `live ${l.topics} topics, ${l.concepts} concepts, ${l.people} people, ${l.works} works, ${l.stories} stories, ${l.threads} threads; ` +
+        `${r.layer.files.length} files, ${r.layer.removed.length} removed`,
+    );
+    for (const w of layer.warnings) console.log(`  layer: ${w}`);
     return 0;
   } catch (e) {
     console.error(`corpus:build failed: ${(e as Error).message}`);

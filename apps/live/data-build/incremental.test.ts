@@ -34,7 +34,7 @@ function setStatus(dataDir: string, status: string, updatedAt?: string): void {
  * member shiurim's refs), its concepts' glossary shards.
  */
 function expectedFiles(s: PublicShiur, occasionKeys: string[], input: CorpusInput, build: BuildFile): Set<string> {
-  const layer = input.layer!;
+  const layer = input.layer;
   const refs = layer.refs.get(s.id)!;
   const set = new Set<string>([
     "build.json",

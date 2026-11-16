@@ -53,7 +53,7 @@ These are presented to the owner in the wave-6 launch checklist next to O1–O10
 - **Allowed:** `data/derived/corpus/{index,topics,concepts,people,works,stories,teaching-clusters,redirects}.json`, `series/<seriesId>.json`, `shiur-tags/<shiurId>.json`. Nothing else.
 - **Denied before the allow-list:** `raw/**` (alias maps, `asr-variants.json`, digests), any name containing `alias-map`, `asr`, `heard` or `variant`, the agents' working directories `topic-tags/` and `teaching-clusters/`, and `search/sections.jsonl`.
 - **Shape changes tolerated:** loose schemas that ignore unknown fields. These are read when present: `reviewStatus`, `sameAs`, `otherSpeakerShare`, `mergedInto`, `kind` (work, story), `parsha`/`zman` on topics, `private`/`family`/`contemporary` on people. A future split of display aliases into a separate file is read only after someone adds its exact name to the allow-list (rule 2). A key named `asrVariants`/`heardAs*` is dropped on read and counted.
-- **Failure policy:** corpus dir absent → layer off, with a warning. Core file malformed → fatal. Optional file missing or invalid → that feature off, with a report entry. Bad record → dropped and reported. Unknown `files` entries → listed by name as "not read".
+- **Failure policy:** corpus dir absent → fatal: the corpus layer is required, and every reader of `.corpus/layer/` (search:build, the Live emit and SEO, Quiet) fails without it. Core file malformed → fatal. Optional file missing or invalid → that feature off, with a report entry. Bad record → dropped and reported. Unknown `files` entries → listed by name as "not read".
 
 ### 3.2 The visible set
 

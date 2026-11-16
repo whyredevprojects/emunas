@@ -292,11 +292,12 @@ const flags = (f: unknown): { quiet: boolean; live: boolean } => {
 };
 
 /**
- * Parse `entities.ndjson`, read defensively (the shape may grow): a missing file (no corpus layer)
- * gives none; a row of an unknown kind or without an id is skipped; missing fields read as empty.
+ * Parse `entities.ndjson`, read defensively (the shape may grow): a row of an unknown kind or
+ * without an id is skipped; missing fields read as empty. A missing file fails: the corpus layer is
+ * required.
  */
 export function readEntities(file: string): EntityDoc[] {
-  if (!existsSync(file)) return [];
+  if (!existsSync(file)) throw new Error(`${file} is missing: the corpus layer is required (run npm run corpus:build and search:build)`);
   const kinds: readonly string[] = ENTITY_DOC_KINDS;
   return readNdjson(file).flatMap((row): EntityDoc[] => {
     if (row === null || typeof row !== "object") return [];

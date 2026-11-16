@@ -52,21 +52,19 @@ export function loadLayerInput(opts: { dataDir: string; policyDir: string }): La
 
 export interface PreparedLayer {
   sources: LayerSources;
-  /** null when the corpus is absent (layer off). */
   state: {
     ctx: LayerContext;
     tags: TagIndex;
     links: SameAsLinks;
     people: Map<string, PersonBase>;
     works: LayerWorksFile;
-  } | null;
-  /** Source moment id → corpus work id (empty when the layer is off); for the aggregate's works.json. */
+  };
+  /** Source moment id → corpus work id; for the aggregate's works.json. */
   sourceWorkIds: Map<string, string>;
 }
 
 export function prepareLayer(sources: LayerSources, projected: { shiurim: readonly PublicShiur[]; index: CorpusIndex }): PreparedLayer {
   const input = sources.corpus.input;
-  if (input === null) return { sources, state: null, sourceWorkIds: new Map() };
   const visible = buildVisibleSet({
     shiurim: projected.shiurim,
     corpusShiurIds: input.index.shiurIds,
@@ -115,7 +113,6 @@ function baseInfo(p: PreparedLayer): LayerInfo {
   if (r.notReadDenied > 0) warnings.push(`${r.notReadDenied} index.json files entries on the deny list (not read)`);
   return {
     layerSchemaVersion: LAYER_SCHEMA_VERSION,
-    enabled: i !== null,
     corpusVersion: r.version,
     knownCorpusVersion: r.knownVersion,
     generatedAt: r.generatedAt,
@@ -124,9 +121,9 @@ function baseInfo(p: PreparedLayer): LayerInfo {
       concepts: r.read.includes("concepts.json"),
       people: r.read.includes("people.json"),
       works: r.read.includes("works.json"),
-      stories: i?.stories !== null && i !== null,
-      teachingClusters: i?.teachingClusters !== null && i !== null,
-      redirects: i?.redirects !== null && i !== null,
+      stories: i.stories !== null,
+      teachingClusters: i.teachingClusters !== null,
+      redirects: i.redirects !== null,
       series: r.seriesRead,
       shiurTags: r.shiurTagsRead,
     },
@@ -146,7 +143,6 @@ function baseInfo(p: PreparedLayer): LayerInfo {
 
 export function finishLayer(p: PreparedLayer): LayerOutput {
   const info = baseInfo(p);
-  if (p.state === null) return { files: { [LAYER_FILES.layer]: info }, info };
   const { ctx, tags, links, people: base, works } = p.state;
 
   const concepts = buildConcepts(ctx, links);

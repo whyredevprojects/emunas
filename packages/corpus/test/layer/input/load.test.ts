@@ -27,8 +27,6 @@ describe("mini fixture read", () => {
   const picks = readMiniCorpusPicks();
 
   it("reads every public file and every listed series and shiur-tags file", () => {
-    expect(input).not.toBeNull();
-    expect(report.present).toBe(true);
     expect(report.read).toEqual([
       "index.json",
       "topics.json",
@@ -41,20 +39,20 @@ describe("mini fixture read", () => {
     ]);
     const idx = readJson<{ files: string[]; shiurIds: string[] }>(corpusFile(MINI_DATA, "index.json"));
     expect(report.seriesRead).toBe(idx.files.filter((f) => f.startsWith("series/")).length);
-    expect(input!.shiurTags.size).toBe(idx.shiurIds.length);
+    expect(input.shiurTags.size).toBe(idx.shiurIds.length);
     expect(report.disabled).toEqual([]);
     expect(report.warnings).toEqual([]);
   });
 
   it("ignores unknown fields and never copies them", () => {
-    const t = input!.topics[S.unknownFieldTopicIndex]!;
+    const t = input.topics[S.unknownFieldTopicIndex]!;
     expect(t).not.toHaveProperty(S.unknownField);
     expect(t).not.toHaveProperty("shiurCount");
   });
 
   it("drops asrVariants / heardAs* keys on read and counts them", () => {
     expect(report.droppedKeys).toEqual({ "concepts.json": { asrVariants: 1 }, "works.json": { heardAsSamples: 1 } });
-    const all = JSON.stringify({ ...input, series: [...input!.series], shiurTags: [...input!.shiurTags] });
+    const all = JSON.stringify({ ...input, series: [...input.series], shiurTags: [...input.shiurTags] });
     expect(all).not.toContain(POISON_CANARY);
     expect(all).not.toMatch(/"asrVariants"|"heardAs/);
   });
@@ -129,11 +127,11 @@ describe("failure policy", () => {
     const d = miniCopy();
     rmSync(corpusFile(d, "stories.json"));
     const r = read(d);
-    expect(r.input!.stories).toBeNull();
+    expect(r.input.stories).toBeNull();
     expect(r.report.disabled).toEqual([{ file: "stories.json", reason: "missing" }]);
-    expect(r.input!.teachingClusters!.length).toBeGreaterThan(0);
-    expect(r.input!.topics.length).toBeGreaterThan(0);
-    expect(r.input!.redirects).not.toBeNull();
+    expect(r.input.teachingClusters!.length).toBeGreaterThan(0);
+    expect(r.input.topics.length).toBeGreaterThan(0);
+    expect(r.input.redirects).not.toBeNull();
   });
 
   it("an invalid optional file turns that feature off", () => {
@@ -141,10 +139,10 @@ describe("failure policy", () => {
     writeFileSync(corpusFile(d, "teaching-clusters.json"), JSON.stringify({ not: "an array" }));
     writeFileSync(corpusFile(d, "redirects.json"), JSON.stringify({ concepts: ["x"] }));
     const r = read(d);
-    expect(r.input!.teachingClusters).toBeNull();
-    expect(r.input!.redirects).toBeNull();
+    expect(r.input.teachingClusters).toBeNull();
+    expect(r.input.redirects).toBeNull();
     expect(r.report.disabled.map((x) => x.file)).toEqual(["teaching-clusters.json", "redirects.json"]);
-    expect(r.input!.stories).not.toBeNull();
+    expect(r.input.stories).not.toBeNull();
   });
 
   it("a broken topics.json is fatal", () => {
@@ -175,10 +173,10 @@ describe("failure policy", () => {
       dupId = String(xs[2]!["id"]);
       xs.push({ ...xs[2]! });
     });
-    const before = read(MINI_DATA).input!.concepts.length;
+    const before = read(MINI_DATA).input.concepts.length;
     const r = read(d);
-    expect(r.input!.concepts.length).toBe(before - 1);
-    expect(r.input!.concepts.some((c) => c.id === dropId)).toBe(false);
+    expect(r.input.concepts.length).toBe(before - 1);
+    expect(r.input.concepts.some((c) => c.id === dropId)).toBe(false);
     expect(r.report.droppedRecords).toEqual([
       { file: "concepts.json", ref: dropId, reason: expect.stringMatching(/canonicalHe/) },
       { file: "concepts.json", ref: dupId, reason: expect.stringMatching(/duplicate/) },
@@ -203,8 +201,8 @@ describe("failure policy", () => {
       xs[3]!["type"] = "individual";
     });
     const r = read(d);
-    expect(r.input!.people.find((p) => p.id === id)?.type).toBe("other");
-    expect(r.input!.people.slice(1, 4).map((p) => p.type)).toEqual(["malach", "ruler", "individual"]);
+    expect(r.input.people.find((p) => p.id === id)?.type).toBe("other");
+    expect(r.input.people.slice(1, 4).map((p) => p.type)).toEqual(["malach", "ruler", "individual"]);
     expect(r.report.coercedPersonTypes).toEqual([{ id, type: "angel" }]);
   });
 
@@ -230,13 +228,13 @@ describe("failure policy", () => {
       xs[1]!["family"] = true;
     });
     const { input } = read(d);
-    expect(input!.topics[0]!.parsha).toEqual(["נח"]);
-    expect(input!.topics[1]!.zman).toEqual(["פסח", "שבועות"]);
-    expect(input!.topics[2]!.parsha).toEqual([]);
-    expect(input!.topics[3]!.reviewStatus).toBe("reviewed");
-    expect(input!.topics[4]!.parsha).toEqual([]);
-    expect(input!.people[0]).toMatchObject({ private: true, contemporary: true });
-    expect(input!.people[1]!.family).toBe(true);
+    expect(input.topics[0]!.parsha).toEqual(["נח"]);
+    expect(input.topics[1]!.zman).toEqual(["פסח", "שבועות"]);
+    expect(input.topics[2]!.parsha).toEqual([]);
+    expect(input.topics[3]!.reviewStatus).toBe("reviewed");
+    expect(input.topics[4]!.parsha).toEqual([]);
+    expect(input.people[0]).toMatchObject({ private: true, contemporary: true });
+    expect(input.people[1]!.family).toBe(true);
   });
 
   it("forbidden keys are dropped at any depth, even inside nested objects", () => {
@@ -247,7 +245,7 @@ describe("failure policy", () => {
     });
     const { input, report } = read(d);
     expect(report.droppedKeys["stories.json"]).toEqual({ heardAs: 1, asrVariants: 1 });
-    expect(JSON.stringify(input!.stories)).not.toContain(POISON_CANARY);
+    expect(JSON.stringify(input.stories)).not.toContain(POISON_CANARY);
     expect(isForbiddenInputKey("heardAsSamples")).toBe(true);
     expect(isForbiddenInputKey("aliases")).toBe(false);
   });
@@ -259,10 +257,10 @@ describe("failure policy", () => {
     editJson<Json>(corpusFile(d, `shiur-tags/${ids[1]}.json`), (x) => void (x["shiurId"] = ids[2]));
     writeFileSync(corpusFile(d, `shiur-tags/${ids[2]}.json`), JSON.stringify({ shiurId: ids[2], topics: [{ id: "x", salience: 7 }] }));
     const { input, report } = read(d);
-    expect(input!.shiurTags.has(ids[0]!)).toBe(false);
-    expect(input!.shiurTags.has(ids[1]!)).toBe(false);
-    expect(input!.shiurTags.has(ids[2]!)).toBe(false);
-    expect(input!.shiurTags.size).toBe(ids.length - 3);
+    expect(input.shiurTags.has(ids[0]!)).toBe(false);
+    expect(input.shiurTags.has(ids[1]!)).toBe(false);
+    expect(input.shiurTags.has(ids[2]!)).toBe(false);
+    expect(input.shiurTags.size).toBe(ids.length - 3);
     expect(report.untagged.map((u) => u.shiurId)).toEqual(ids.slice(0, 3));
     expect(report.untagged[0]!.reason).toBe("missing");
   });
@@ -273,7 +271,7 @@ describe("failure policy", () => {
     editJson<Json>(corpusFile(d, f), (x) => void delete x["overview"]);
     const { input, report } = read(d);
     expect(report.disabled).toEqual([{ file: f, reason: expect.stringMatching(/overview/) }]);
-    expect(input!.series.has(f.slice("series/".length, -".json".length))).toBe(false);
+    expect(input.series.has(f.slice("series/".length, -".json".length))).toBe(false);
   });
 
   it("redirects: unknown kinds, self-redirects, non-slug ids and unknown target kinds are dropped; cross-kind targets are kept", () => {
@@ -290,8 +288,8 @@ describe("failure policy", () => {
       };
     });
     const { input, report } = read(d);
-    expect(input!.redirects!.works).toEqual({ "old-work": { kind: "works", id: "tanya" }, "to-concept": { kind: "concepts", id: "emunah" } });
-    expect(input!.redirects).not.toHaveProperty("widgets");
+    expect(input.redirects!.works).toEqual({ "old-work": { kind: "works", id: "tanya" }, "to-concept": { kind: "concepts", id: "emunah" } });
+    expect(input.redirects).not.toHaveProperty("widgets");
     expect(report.droppedRecords.map((r) => r.ref)).toEqual(["works:same-id", "works:#invalid", "works:to-gadget", "works:no-id", "widgets"]);
     expect(JSON.stringify(report)).not.toContain("Bad Id");
   });

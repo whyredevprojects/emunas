@@ -46,15 +46,16 @@ export function topicsSourceOf(layer: QuietLayer, calendar: CalendarData, corpus
   };
 }
 
-let cached: { key: string; source: TopicsSource | null } | null = null;
+let cached: { key: string; source: TopicsSource } | null = null;
 
-/** The topics source for this build (memoised), or null without a layer or a catalog. */
-export function topicsSource(): TopicsSource | null {
+/** The topics source for this build (memoised). The layer, and so the corpus, is required. */
+export function topicsSource(): TopicsSource {
   const layer = quietLayer();
-  const key = layer.dir ?? "";
+  const key = layer.dir;
   if (cached && cached.key === key) return cached.source;
-  const calendar = layer.enabled ? loadCalendarData() : null;
-  const source = layer.enabled && calendar ? topicsSourceOf(layer, calendar, layer.dir ? dirname(layer.dir) : null) : null;
+  const calendar = loadCalendarData();
+  if (calendar === null) throw new Error("topics: no .corpus/ calendar data (run npm run corpus:build)");
+  const source = topicsSourceOf(layer, calendar, dirname(layer.dir));
   cached = { key, source };
   return source;
 }

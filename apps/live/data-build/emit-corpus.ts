@@ -119,7 +119,7 @@ export interface ShiurEntityIds {
 }
 
 export interface CorpusView {
-  layer: LayerInput | null;
+  layer: LayerInput;
   topics: Map<string, LayerTopicNode>;
   /** Live-listed (= Live page) entities. */
   people: Map<string, LayerPerson>;
@@ -137,7 +137,7 @@ export interface CorpusView {
   entitiesOf(shiurId: string): ShiurEntityIds;
 }
 
-export function corpusView(layer: LayerInput | null): CorpusView {
+export function corpusView(layer: LayerInput): CorpusView {
   const topics = new Map<string, LayerTopicNode>();
   const people = new Map<string, LayerPerson>();
   const concepts = new Map<string, LayerConcept>();
@@ -164,7 +164,7 @@ export function corpusView(layer: LayerInput | null): CorpusView {
     const x = m.get(id);
     return x ? f(x) : { en: id, yi: id };
   };
-  const topicLabel = labelOf(new Map(layer?.topics.map((t) => [t.id, t]) ?? []), (t) =>
+  const topicLabel = labelOf(new Map(layer.topics.map((t) => [t.id, t])), (t) =>
     facetLabel(nz(t.label?.en), nz(t.label?.yi), t.label?.he),
   );
   const personLabel = labelOf(allPeople, (p) => facetLabel(nz(p.nameEn), nz(p.nameYi) || nz(p.nameHe), p.nameHe));
@@ -187,7 +187,7 @@ export function corpusView(layer: LayerInput | null): CorpusView {
     conceptLabel,
     workLabel,
     entitiesOf(shiurId) {
-      const r = layer?.refs.get(shiurId);
+      const r = layer.refs.get(shiurId);
       if (!r) return { topics: [], people: [], concepts: [], works: [] };
       return {
         topics: sortedIds([...arr(r.topics).map((t) => t.id), ...arr(r.chapters).flatMap((c) => arr(c.topicIds))], topics),
@@ -279,7 +279,7 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
   const visible = (id: string) => byId.get(id)?.status === "full";
 
   // ------------------------------------------------------------------ topics.json
-  const allTopics = layer?.topics ?? [];
+  const allTopics = layer.topics;
   const parentOf = new Map(allTopics.map((t) => [t.id, t.parentId ?? null]));
   const chain = (id: string): string[] => {
     const out: string[] = [];
@@ -305,7 +305,7 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
   const SECTION_ONLY = 0.05;
   const perTopic = new Map<string, Map<string, { sal: number; secs: Section[] }>>();
   for (const s of ctx.input.shiurim) {
-    const r = layer?.refs.get(s.id);
+    const r = layer.refs.get(s.id);
     if (!r || s.status !== "full" || !s.notes) continue;
     const sal = new Map<string, number>();
     for (const t of arr(r.topics)) for (const a of chain(t.id)) sal.set(a, Math.max(sal.get(a) ?? 0, t.salience));
@@ -354,8 +354,8 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
   const toMix = (x: Section): MixItem => ({ id: x.id, shiurId: x.shiurId, t: x.t, end: x.end, lang: x.lang, title: x.title });
 
   // ------------------------------------------------------------------ topic/<id>.json
-  const threadById = new Map((layer?.threads ?? []).map((t) => [t.id, t]));
-  const storyById = new Map((layer?.stories ?? []).map((s) => [s.id, s]));
+  const threadById = new Map(layer.threads.map((t) => [t.id, t]));
+  const storyById = new Map(layer.stories.map((s) => [s.id, s]));
   const chipFor = (kind: "person" | "work", id: string | undefined | null): EntityChip | null => {
     if (!id) return null;
     if (kind === "person") {
@@ -409,7 +409,7 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
   };
   for (const t of allTopics) {
     if (!view.topics.has(t.id)) continue;
-    const d = layer?.topicDetail.get(t.id);
+    const d = layer.topicDetail.get(t.id);
     const secs = ordered(perTopic.get(t.id));
     const rows = shiurRows(d);
     const shiurRest = rows.slice(TOPIC_FIRST_SHIURIM);
@@ -490,7 +490,7 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
   // ------------------------------------------------------------------ featured mixes (today.json)
   const excluded = new Set(ctx.featured.excludeTopicIds);
   const otherSpeaker = (shiurId: string): boolean => {
-    const share = layer?.refs.get(shiurId)?.otherSpeakerShare;
+    const share = layer.refs.get(shiurId)?.otherSpeakerShare;
     return typeof share === "number" && share >= ctx.featured.maxOtherSpeakerShare;
   };
   const featuredMix = (topicId: string): FeaturedMix | null => {
@@ -514,14 +514,14 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
     };
   };
   const occasionTopic = new Map<string, string>();
-  for (const o of layer?.occasionTopics ?? []) if (view.topics.has(o.topicId) && !occasionTopic.has(o.key)) occasionTopic.set(o.key, o.topicId);
+  for (const o of layer.occasionTopics) if (view.topics.has(o.topicId) && !occasionTopic.has(o.key)) occasionTopic.set(o.key, o.topicId);
 
   // ------------------------------------------------------------------ thread/<id>.json
   const insightText = (shiurId: string, momentId: string): L | null => {
     const i = byId.get(shiurId)?.notes?.insights.find((x) => x.id === momentId);
     return i ? lcopy(i.text) : null;
   };
-  for (const th of layer?.threads ?? []) {
+  for (const th of layer.threads) {
     if (!liveThreadPage(th)) continue;
     const file: ThreadFile = {
       schemaVersion: V,
@@ -561,7 +561,7 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
   const topicsOfStory = new Map<string, string[]>();
   for (const t of allTopics) {
     if (!view.topics.has(t.id)) continue;
-    for (const id of arr(layer?.topicDetail.get(t.id)?.storyIds)) {
+    for (const id of arr(layer.topicDetail.get(t.id)?.storyIds)) {
       const list = topicsOfStory.get(id) ?? [];
       if (!list.includes(t.id)) list.push(t.id);
       topicsOfStory.set(id, list);
@@ -581,7 +581,7 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
     byId.get(shiurId)?.notes?.stories.find((x) => x.id === momentId)?.end ?? null;
   const storiesIndex: StoriesIndexFile = { schemaVersion: V, stories: [], people: {} };
   const indexPeople = new Set<string>();
-  for (const st of layer?.stories ?? []) {
+  for (const st of layer.stories) {
     const tellings = arr(st.tellings).filter((t) => visible(t.shiurId));
     const first = tellings[0];
     if (!first) continue;
@@ -659,7 +659,7 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
   // ------------------------------------------------------------------ explore/entities.json
   const explore: ExploreEntitiesFile = { schemaVersion: V, shiurim: {} };
   for (const s of ctx.input.shiurim) {
-    if (s.status !== "full" || !layer?.refs.has(s.id)) continue;
+    if (s.status !== "full" || !layer.refs.has(s.id)) continue;
     const e = view.entitiesOf(s.id);
     if (e.topics.length + e.people.length + e.concepts.length + e.works.length === 0) continue;
     explore.shiurim[s.id] = e;
@@ -669,7 +669,7 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
 
   // ------------------------------------------------------------------ per-shiur corpus block (G.1)
   const shiurCorpus = (shiurId: string): ShiurCorpus | undefined => {
-    const r: LayerShiurRefs | undefined = layer?.refs.get(shiurId);
+    const r: LayerShiurRefs | undefined = layer.refs.get(shiurId);
     if (!r || !visible(shiurId)) return undefined;
     const topics = arr(r.topics)
       .filter((t) => view.topics.has(t.id))
@@ -713,14 +713,14 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
     };
   };
   const shiurPointers = (shiurId: string): string[] =>
-    arr(layer?.refs.get(shiurId)?.insights).flatMap((x) => (x.other && visible(x.other.shiurId) ? [x.other.shiurId] : []));
+    arr(layer.refs.get(shiurId)?.insights).flatMap((x) => (x.other && visible(x.other.shiurId) ? [x.other.shiurId] : []));
 
   return { glossaryShards: glossaryShards.map(([s]) => s), featuredMix, occasionTopic, shiurCorpus, shiurPointers };
 }
 
 /** The series synthesis for a series file, or undefined (concept-live C.6). */
-export function seriesSynthesis(layer: LayerInput | null, seriesId: string, visibleIds: ReadonlySet<string>): SeriesSynthesis | undefined {
-  const x = layer?.series.get(seriesId);
+export function seriesSynthesis(layer: LayerInput, seriesId: string, visibleIds: ReadonlySet<string>): SeriesSynthesis | undefined {
+  const x = layer.series.get(seriesId);
   if (!x) return undefined;
   return {
     title: lcopy(x.title),

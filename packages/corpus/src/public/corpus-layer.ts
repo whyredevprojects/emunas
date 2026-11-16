@@ -15,7 +15,7 @@
 import type { Ed, L } from "./types.ts";
 
 /** Bump when the shape of anything in `.corpus/layer/` changes. Separate from SCHEMA_VERSION. */
-export const LAYER_SCHEMA_VERSION = 2;
+export const LAYER_SCHEMA_VERSION = 3;
 
 /** The layer folder inside `.corpus/`. */
 export const LAYER_DIR = "layer";
@@ -109,8 +109,6 @@ export interface LayerCountLint {
 /** `layer.json`. Ids, counts and file names only; never item text. */
 export interface LayerInfo {
   layerSchemaVersion: number;
-  /** False when `data/derived/corpus/` is absent: no other layer file exists. */
-  enabled: boolean;
   corpusVersion: number | null;
   knownCorpusVersion: boolean;
   /** `index.json` `generatedAt` of the corpus (null when absent). */

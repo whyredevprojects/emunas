@@ -21,7 +21,7 @@ import { useStoriesT } from "../../../components/stories/strings.ts";
 import "../../../components/stories/stories.css";
 import { EDS, type Ed } from "../../../lib/edition.ts";
 
-export const getStaticPaths = (() => (quietLayer().enabled ? EDS.map((ed) => ({ params: { ed } })) : [])) satisfies GetStaticPaths;
+export const getStaticPaths = (() => EDS.map((ed) => ({ params: { ed } }))) satisfies GetStaticPaths;
 
 const ed = Astro.params.ed as Ed;
 const layer = quietLayer();

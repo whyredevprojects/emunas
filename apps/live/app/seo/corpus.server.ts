@@ -55,15 +55,13 @@ interface LayerLists {
   threads: SeoEntity[];
 }
 
-/** The corpus layer's entities with their page flags, or null when `.corpus/layer/` is off or absent. */
-export function readLayerLists(corpusDir: string): LayerLists | null {
+/** The corpus layer's entities with their page flags. Throws when a `.corpus/layer/` file is missing. */
+export function readLayerLists(corpusDir: string): LayerLists {
   const dir = join(corpusDir, LAYER_DIR);
-  const info = join(dir, LAYER_FILES.layer);
-  if (!existsSync(info)) return null;
-  if ((JSON.parse(readFileSync(info, "utf8")) as { enabled?: unknown }).enabled === false) return null;
   const read = (file: string): Record<string, unknown> => {
     const p = join(dir, file);
-    return existsSync(p) ? (JSON.parse(readFileSync(p, "utf8")) as Record<string, unknown>) : {};
+    if (!existsSync(p)) throw new Error(`${LAYER_DIR}/${file} is missing in ${corpusDir}: the corpus layer is required (run npm run corpus:build)`);
+    return JSON.parse(readFileSync(p, "utf8")) as Record<string, unknown>;
   };
   const quiet = (x: { pages?: { quiet?: unknown } | null }) => x.pages?.quiet === true;
   return {
@@ -128,7 +126,8 @@ export function readSeoCorpus(corpusDir: string): SeoCorpus {
     oneLiner: r.oneLiner,
   }));
 
-  const series = seriesFile.series.map((s) => ({ id: s.id, title: s.title, count: s.count }));
+  // A series with no parts has no data file (the Live emit writes none), so it has no route.
+  const series = seriesFile.series.filter((s) => s.count > 0).map((s) => ({ id: s.id, title: s.title, count: s.count }));
 
   // Occasions: every table parsha and zman with its catalog count (occasions.json lists them all),
   // then the keys of the "other" bucket (one-off events, values outside the tables), grouped by the
@@ -149,9 +148,7 @@ export function readSeoCorpus(corpusDir: string): SeoCorpus {
   }
   occasions.push(...other.values());
 
-  const layer = readLayerLists(corpusDir);
-  if (layer) return { shiurim, series, occasions, ...layer };
-  return { shiurim, series, occasions, topics: [], concepts: [], people: [], works: [], stories: [], threads: [] };
+  return { shiurim, series, occasions, ...readLayerLists(corpusDir) };
 }
 
 /** Relative paths of every file under the emitted `/data/` tree (`shiur/x.json`), or null without one. */

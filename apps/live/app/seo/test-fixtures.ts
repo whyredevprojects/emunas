@@ -134,7 +134,10 @@ export function writeCorpusFixture(dir: string): string {
   const layer = join(dir, "layer");
   mkdirSync(layer, { recursive: true });
   const flags = (e: SeoCorpus["works"][number]) => ({ count: e.count, pages: { quiet: e.quietPage === true, live: e.prerender } });
-  write(layer, "layer.json", { enabled: true });
+  write(layer, "layer.json", { counts: { visibleShiurim: c.shiurim.length } });
+  write(layer, "topics.json", { tree: [], detail: [] });
+  write(layer, "stories.json", { stories: [] });
+  write(layer, "threads.json", { threads: [] });
   write(layer, "works.json", {
     works: c.works.map((e) => ({ id: e.key, titleEn: e.label.en, titleHe: e.label.yi, generic: e.key === "midrash", ...flags(e) })),
   });

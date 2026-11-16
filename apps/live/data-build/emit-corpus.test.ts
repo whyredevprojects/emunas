@@ -37,7 +37,7 @@ import { GENERATED_AT, MINI_DATA, MINI_POLICY, allKeys, buildCorpusTo } from "./
 
 const corpusDir = buildCorpusTo(MINI_DATA, MINI_POLICY);
 const input = readCorpusInput(corpusDir);
-const layer = input.layer!;
+const layer = input.layer;
 const files = emitLiveData(input, { generatedAt: GENERATED_AT });
 const get = <T>(f: string, from: EmittedFiles = files): T => {
   const x = from.get(f);
@@ -48,7 +48,7 @@ const under = (prefix: string, from: EmittedFiles = files) => [...from.keys()].f
 const clone = <T>(x: T): T => structuredClone(x);
 
 /** The mini input with a changed layer (thread pages, an occasion topic), for cases the mini corpus lacks. */
-function withLayer(edit: (l: NonNullable<CorpusInput["layer"]>) => void): CorpusInput {
+function withLayer(edit: (l: CorpusInput["layer"]) => void): CorpusInput {
   const copy = { ...input, layer: clone(layer) };
   edit(copy.layer);
   return copy;
@@ -64,7 +64,7 @@ describe("corpus-layer files on the mini corpus", () => {
   });
 
   it("schemas are strict for every new file: an unknown key fails", () => {
-    const thread = emitLiveData(withLayer((l) => (l.threads![0]!.page = true)), { generatedAt: GENERATED_AT });
+    const thread = emitLiveData(withLayer((l) => (l.threads[0]!.page = true)), { generatedAt: GENERATED_AT });
     const samples: [string, unknown][] = [
       ["topics.json", files.get("topics.json")],
       [under("topic/").find((f) => !f.includes(".moments-"))!, null],
@@ -101,10 +101,10 @@ describe("corpus-layer files on the mini corpus", () => {
     expect((layer.threads ?? []).some((t) => t.page)).toBe(false);
     // With thread pages in the layer, exactly those threads get a file.
     const flipped = withLayer((l) => {
-      for (const t of l.threads!.slice(0, 2)) t.page = true;
+      for (const t of l.threads.slice(0, 2)) t.page = true;
     });
     const out = emitLiveData(flipped, { generatedAt: GENERATED_AT });
-    expect(new Set(under("thread/", out))).toEqual(new Set(flipped.layer!.threads!.filter((t) => t.page).map((t) => `thread/${t.id}.json`)));
+    expect(new Set(under("thread/", out))).toEqual(new Set(flipped.layer.threads.filter((t) => t.page).map((t) => `thread/${t.id}.json`)));
     for (const f of under("thread/", out)) {
       const t = get<ThreadFile>(f, out);
       expect(t.members.length).toBeGreaterThan(0);
@@ -320,11 +320,11 @@ describe("corpus-layer files on the mini corpus", () => {
     for (const st of out) expect(st.attributionVaries).toBe(stories.get(st.id)!.attributionVaries);
     // A layer story with attributionVaries keeps it on its page file.
     const flipped = withLayer((l) => {
-      const s = l.stories!.find((x) => x.pages.live)!;
+      const s = l.stories.find((x) => x.pages.live)!;
       s.attributionVaries = true;
     });
     const again = emitLiveData(flipped, { generatedAt: GENERATED_AT });
-    const id = flipped.layer!.stories!.find((x) => x.attributionVaries && x.pages.live)!.id;
+    const id = flipped.layer.stories.find((x) => x.attributionVaries && x.pages.live)!.id;
     expect(get<StoryFile>(`story/${id}.json`, again).attributionVaries).toBe(true);
   });
 
@@ -399,7 +399,7 @@ describe("corpus-layer files on the mini corpus", () => {
     const ref = refs.stories[0]!;
     const other = input.shiurim.find((s) => s.status === "full" && s.id !== refs.shiurId && s.notes!.stories.length > 0)!;
     const edited = withLayer((l) => {
-      const st = l.stories!.find((x) => x.id === ref.storyId)!;
+      const st = l.stories.find((x) => x.id === ref.storyId)!;
       const t0 = st.tellings.find((t) => t.shiurId === refs.shiurId)!;
       st.tellings = [
         { ...t0 },
@@ -414,7 +414,7 @@ describe("corpus-layer files on the mini corpus", () => {
     // With only this shiur's two tellings there is no other shiur: no line.
     const alone = emitLiveData(
       withLayer((l) => {
-        const st = l.stories!.find((x) => x.id === ref.storyId)!;
+        const st = l.stories.find((x) => x.id === ref.storyId)!;
         const t0 = st.tellings.find((t) => t.shiurId === refs.shiurId)!;
         st.tellings = [{ ...t0 }, { ...t0, momentId: `${refs.shiurId}~st99` }];
       }),
@@ -458,7 +458,7 @@ describe("corpus-layer files on the mini corpus", () => {
 
     // Catalogued shiurim come before uncatalogued ones when picking the telling to play.
     const flipped = clone(input);
-    const st = flipped.layer!.stories!.find((x) => x.tellings.length > 1)!;
+    const st = flipped.layer.stories.find((x) => x.tellings.length > 1)!;
     const [a, b] = st.tellings;
     b!.lang = a!.lang;
     const shiurA = flipped.shiurim.find((s) => s.id === a!.shiurId)!;
@@ -482,17 +482,6 @@ describe("corpus-layer files on the mini corpus", () => {
     }
     // No type-other person and no below-threshold entity is a facet.
     for (const p of layer.people) if (p.type === "other" || !p.pages.live) expect(facets.person[p.id], p.id).toBeUndefined();
-  });
-
-  it("no layer: the emit still works, with empty corpus-layer files", () => {
-    const out = emitLiveData({ ...input, layer: null }, { generatedAt: GENERATED_AT });
-    for (const [f, body] of out) expect(validateFile(f, body), f).toBeNull();
-    expect(get<TopicsFile>("topics.json", out).topics).toEqual([]);
-    expect(get<StoriesIndexFile>("stories-index.json", out).stories).toEqual([]);
-    expect(get<BuildFile>("build.json", out).glossaryShards).toEqual([]);
-    expect(Object.keys(get<FacetsFile>("facets.json", out).person)).toEqual([]);
-    expect(under("entity/p/", out)).toEqual([]);
-    expect(under("shiur/", out).every((f) => get<ShiurFile>(f, out).corpus === undefined)).toBe(true);
   });
 });
 

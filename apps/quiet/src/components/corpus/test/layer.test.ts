@@ -52,7 +52,6 @@ const layerJson = <T,>(name: string): T => JSON.parse(readFileSync(join(corpus, 
 describe("quiet layer reader on the mini corpus", () => {
   it("finds the layer inside the corpus and reads it", () => {
     expect(findLayerDir(corpus)).toBe(join(corpus, "layer"));
-    expect(layer.enabled).toBe(true);
     const info = layerJson<LayerInfo>("layer.json");
     expect(layer.visibleShiurim).toBe(info.counts.visibleShiurim);
     expect(layer.visibleShiurim).toBeGreaterThan(0);
@@ -122,46 +121,33 @@ describe("quiet layer reader on the mini corpus", () => {
   });
 });
 
-describe("quiet layer reader without a layer, or with odd records", () => {
-  it("gives empty indexes and one warning without a layer", () => {
-    expect(findLayerDir(null)).toBeNull();
-    expect(findLayerDir(join(work, "nowhere"))).toBeNull();
-    const empty = loadQuietLayer(null);
-    expect(empty.enabled).toBe(false);
-    expect(empty.topics).toEqual([]);
-    expect(empty.counts).toEqual({ topics: 0, glossary: 0, names: 0, sources: 0, stories: 0 });
-    expect(empty.visibleShiurim).toBe(0);
-    expect(empty.hasPage("topic", "emunah")).toBe(false);
-    expect(empty.shiurRefs("x")).toBeNull();
-    expect(empty.warnings).toHaveLength(1);
-  });
-
-  it("treats a layer built without the corpus as empty", () => {
-    const dir = join(work, "off", "layer");
+describe("quiet layer reader: the layer is required; odd records are skipped", () => {
+  it("fails without a layer", () => {
+    expect(() => findLayerDir(join(work, "nowhere"))).toThrow(/the corpus layer is required/);
+    const dir = join(work, "partial", "layer");
     mkdirSync(dir, { recursive: true });
-    writeFileSync(join(dir, "layer.json"), JSON.stringify({ layerSchemaVersion: 1, enabled: false }));
-    const off = loadQuietLayer(dir);
-    expect(off.enabled).toBe(false);
-    expect(off.topics).toEqual([]);
+    writeFileSync(join(dir, "layer.json"), JSON.stringify({ counts: { visibleShiurim: 3 } }));
+    expect(() => loadQuietLayer(dir)).toThrow(/topics\.json is missing: the corpus layer is required/);
   });
 
-  it("skips records without an id, tolerates missing files and unknown fields", () => {
+  it("skips records without an id and tolerates unknown fields", () => {
     const dir = join(work, "odd", "layer");
     mkdirSync(dir, { recursive: true });
-    writeFileSync(join(dir, "layer.json"), JSON.stringify({ enabled: true, counts: { visibleShiurim: 3 }, futureField: 1 }));
+    writeFileSync(join(dir, "layer.json"), JSON.stringify({ counts: { visibleShiurim: 3 }, futureField: 1 }));
     writeFileSync(
       join(dir, "topics.json"),
       JSON.stringify({ tree: [{ id: "emunah", pages: { quiet: true }, extra: "x" }, { label: "no id" }, null], detail: [] }),
     );
     writeFileSync(join(dir, "people.json"), JSON.stringify({ persons: [] }));
+    for (const name of ["concepts.json", "works.json", "stories.json", "threads.json", "synonyms.json", "occasion-topics.json"]) {
+      writeFileSync(join(dir, name), "{}");
+    }
     const odd = loadQuietLayer(dir);
-    expect(odd.enabled).toBe(true);
     expect(odd.visibleShiurim).toBe(3);
     expect(odd.topics.map((t) => t.id)).toEqual(["emunah"]);
     expect(odd.hasPage("topic", "emunah")).toBe(true);
     expect(odd.people).toEqual([]);
     expect(odd.concepts).toEqual([]);
-    expect(odd.warnings.join("\n")).toMatch(/concepts\.json missing/);
     expect(odd.warnings.join("\n")).toMatch(/people\.json: no "people" list/);
     expect(odd.warnings.join("\n")).toMatch(/2 records without an id/);
   });
@@ -169,7 +155,7 @@ describe("quiet layer reader without a layer, or with odd records", () => {
   it("fails on a layer file that is not JSON (a broken corpus build)", () => {
     const dir = join(work, "broken", "layer");
     mkdirSync(dir, { recursive: true });
-    writeFileSync(join(dir, "layer.json"), JSON.stringify({ enabled: true }));
+    writeFileSync(join(dir, "layer.json"), JSON.stringify({ counts: { visibleShiurim: 3 } }));
     writeFileSync(join(dir, "topics.json"), "{ not json");
     expect(() => loadQuietLayer(dir)).toThrow(/not valid JSON/);
   });

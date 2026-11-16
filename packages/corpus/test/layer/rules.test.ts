@@ -284,17 +284,12 @@ describe("build files", () => {
     expect(existsSync(join(layerDir, "shiur/stale-shiur.json"))).toBe(false);
   });
 
-  it("with the corpus absent the layer is off: only layer.json, enabled false", () => {
+  it("with the corpus absent the build fails: the layer is required", () => {
     const out = join(tmp(), "out");
-    buildCorpusWithAggregates({ dataDir: MINI_DATA, policyDir: MINI_POLICY, outDir: out, dataSha: null });
     const d = miniCopy();
     rmSync(join(d, CORPUS), { recursive: true, force: true });
-    const r = buildCorpusWithAggregates({ dataDir: d, policyDir: MINI_POLICY, outDir: out, dataSha: null });
-    expect(r.layer.info.enabled).toBe(false);
-    expect(r.layer.files).toEqual(["layer.json"]);
-    expect(readdirSync(join(out, "layer"))).toEqual(["layer.json"]);
-    const info = readJson<LayerInfo>(join(out, "layer/layer.json"));
-    expect(info.warnings.join(" ")).toMatch(/absent/);
-    expect(r.layer.removed.length).toBeGreaterThan(10);
+    expect(() => buildCorpusWithAggregates({ dataDir: d, policyDir: MINI_POLICY, outDir: out, dataSha: null })).toThrow(
+      /the corpus layer is required/,
+    );
   });
 });

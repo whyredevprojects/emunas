@@ -16,10 +16,10 @@ import { useIndexesT } from "../../../components/indexes/strings.ts";
 import { worksIndex } from "../../../components/indexes/works.ts";
 import { EDS, type Ed } from "../../../lib/edition.ts";
 
-export const getStaticPaths = (() => (entryData() ? EDS.map((ed) => ({ params: { ed } })) : [])) satisfies GetStaticPaths;
+export const getStaticPaths = (() => EDS.map((ed) => ({ params: { ed } }))) satisfies GetStaticPaths;
 
 const ed = Astro.params.ed as Ed;
-const data = entryData()!;
+const data = entryData();
 const t = useIndexesT(ed);
 const title = entryIndexTitle(ed, "sources");
 const blocks = worksIndex(data, ed);

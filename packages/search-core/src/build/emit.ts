@@ -35,19 +35,18 @@ export interface SearchLayerInput {
   files: LayerFiles;
 }
 
-/** Read `.corpus/layer/` for these shiurim, or null when the layer is absent or off. */
-export function readSearchLayerInput(corpusDir: string, shiurim: readonly PublicShiur[]): SearchLayerInput | null {
+/** Read `.corpus/layer/` for these shiurim (required: throws when it is missing). */
+export function readSearchLayerInput(corpusDir: string, shiurim: readonly PublicShiur[]): SearchLayerInput {
   const files = readLayerFiles(corpusDir);
-  if (files === null) return null;
   return { files, layer: readSearchLayer(corpusDir, files, shiurim.filter((s) => s.status === "full").map((s) => s.id)) };
 }
 
-/** Docs, rows and entity docs for a set of shiurim, sorted by id. Without a layer: no keywords, no entity ids, no entity docs. */
-export function buildSearchOutputs(shiurim: readonly PublicShiur[], layer: SearchLayerInput | null = null): SearchOutputs {
+/** Docs, rows and entity docs for a set of shiurim, sorted by id. */
+export function buildSearchOutputs(shiurim: readonly PublicShiur[], layer: SearchLayerInput): SearchOutputs {
   const sorted = [...shiurim].sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
-  const docs = sorted.map((shiur) => buildSearchDoc({ shiur, layer: layer?.layer ?? null }));
-  const moments = sorted.flatMap((s) => buildMomentRows(s, layer?.layer ?? null));
-  const entities = layer ? buildEntityDocs(layer.files) : [];
+  const docs = sorted.map((shiur) => buildSearchDoc({ shiur, layer: layer.layer }));
+  const moments = sorted.flatMap((s) => buildMomentRows(s, layer.layer));
+  const entities = buildEntityDocs(layer.files);
   return { docs, moments, entities };
 }
 
@@ -80,8 +79,6 @@ export interface WriteSearchResult {
   entities: number;
   /** Docs with topic keywords. */
   keywordsFrom: number;
-  /** Whether `.corpus/layer/` was used. */
-  layer: boolean;
   /** Whether the synonyms were checked against the display fields. */
   synonymsChecked: boolean;
   /** Files whose content changed. */
@@ -94,10 +91,8 @@ export function writeSearchOutputs(opts: WriteSearchOptions): WriteSearchResult 
   let synonymsChecked = false;
   if (opts.dataDir !== null) {
     const display = loadDisplaySets(opts.dataDir, opts.policyDir ?? defaultPolicyDir());
-    if (layer !== null && display !== null) {
-      verifyDisplaySynonyms(layer.files.synonyms.synonyms, display);
-      synonymsChecked = true;
-    }
+    verifyDisplaySynonyms(layer.files.synonyms.synonyms, display);
+    synonymsChecked = true;
   }
   const out = buildSearchOutputs(shiurim, layer);
   const dir = join(opts.corpusDir, "search");
@@ -110,7 +105,7 @@ export function writeSearchOutputs(opts: WriteSearchOptions): WriteSearchResult 
     [
       "search.json",
       `${JSON.stringify(
-        { schemaVersion: SEARCH_SCHEMA_VERSION, layer: layer !== null, docs: out.docs.length, moments: out.moments.length, entities: out.entities.length },
+        { schemaVersion: SEARCH_SCHEMA_VERSION, docs: out.docs.length, moments: out.moments.length, entities: out.entities.length },
         null,
         1,
       )}\n`,
@@ -122,7 +117,6 @@ export function writeSearchOutputs(opts: WriteSearchOptions): WriteSearchResult 
     moments: out.moments.length,
     entities: out.entities.length,
     keywordsFrom: out.docs.filter((d) => d.keywords.length > 0).length,
-    layer: layer !== null,
     synonymsChecked,
     written,
   };

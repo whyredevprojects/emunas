@@ -84,7 +84,6 @@ describe("corpus layer on the mini corpus", () => {
 
   it("layer.json states the version, inputs and counts", () => {
     expect(info.layerSchemaVersion).toBe(LAYER_SCHEMA_VERSION);
-    expect(info.enabled).toBe(true);
     expect(info.inputs).toMatchObject({ topics: true, concepts: true, people: true, works: true, stories: true, teachingClusters: true, redirects: true });
     expect(info.counts.visibleShiurim).toBe(visible.size);
     expect(info.counts.shiurRefs).toBe(visible.size);

@@ -153,12 +153,12 @@ describe("emitLiveData on the mini corpus", () => {
       expect(years).toBeGreaterThanOrEqual(e.shiurIds.length);
     }
     // People: a file exactly for a Live page (≥3 shiurim, listed, never type other or excluded).
-    for (const p of input.layer!.people) {
+    for (const p of input.layer.people) {
       const page = p.pages.live && p.listed.live && p.type !== "other" && p.excluded === null && p.count > 0;
       expect(files.has(`entity/p/${p.id}.json`), p.id).toBe(page);
     }
     // Concepts: a file exactly for a Live page; a concept merged into a topic has none.
-    for (const c of input.layer!.concepts) {
+    for (const c of input.layer.concepts) {
       expect(files.has(`entity/c/${c.id}.json`), c.id).toBe(c.pages.live && !c.mergedIntoTopic && c.count > 0);
     }
     // Every entity id in explore/entities.json is a corpus id with a page.
@@ -213,7 +213,7 @@ describe("emitLiveData on the mini corpus", () => {
     // Works: the shelf lists every non-generic work with shiurim in the layer's shelf order (C2.6);
     // a file for each with a Live page, never generic.
     const works = get<WorksFile>("works.json");
-    const shelf = input.layer!.works.filter((w) => !w.generic && w.count > 0);
+    const shelf = input.layer.works.filter((w) => !w.generic && w.count > 0);
     expect(works.works.map((w) => w.key)).toEqual(shelf.map((w) => w.id));
     const live = shelf.filter((w) => w.pages.live);
     expect(works.works.filter((w) => w.page).map((w) => w.key)).toEqual(live.map((w) => w.id));

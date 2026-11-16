@@ -526,7 +526,7 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
   // source goes to the work its moment resolves to in the layer refs, else to its aggregate entry's
   // work; locations keep the reference order of the aggregate (W2.1).
   const sourceWork = new Map<string, string>();
-  for (const r of input.layer?.refs.values() ?? []) for (const x of r.sources ?? []) sourceWork.set(x.momentId, x.workId);
+  for (const r of input.layer.refs.values()) for (const x of r.sources ?? []) sourceWork.set(x.momentId, x.workId);
   type Loc = { ref: WorkRef; citations: WorkCitation[] };
   const locs = new Map<string, Map<string, Loc>>();
   const unloc = new Map<string, WorkCitation[]>();
@@ -652,8 +652,8 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
   const entityMin = EMIT_LIMITS.entityFileMin;
   // People and concepts: corpus ids with a Live page (C1.7). A person's moments are the tellings
   // of the merged stories that name him; a concept's are its example sections.
-  const storyTellings = new Map((input.layer?.stories ?? []).map((st) => [st.id, st.tellings ?? []]));
-  const storyById = new Map((input.layer?.stories ?? []).map((st) => [st.id, st]));
+  const storyTellings = new Map(input.layer.stories.map((st) => [st.id, st.tellings ?? []]));
+  const storyById = new Map(input.layer.stories.map((st) => [st.id, st]));
   for (const p of view.people.values()) {
     const ids = sortByYear(p.shiurIds ?? []);
     if (ids.length === 0) continue;
@@ -866,13 +866,12 @@ type QuickDoc = { id: string; name: string; lang: Ed } & Record<(typeof QUICK_IN
 function entityNames(view: CorpusView): Map<string, string[]> {
   const out = new Map<string, string[]>();
   const layer = view.layer;
-  if (!layer) return out;
   const docs = buildEntityDocs({
     topics: { tree: layer.topics, detail: [...layer.topicDetail.values()] },
     concepts: { concepts: layer.concepts },
     people: { people: layer.people },
     works: { works: layer.works },
-    stories: layer.stories ? { stories: layer.stories } : null,
+    stories: { stories: layer.stories },
     synonyms: { synonyms: [] },
   });
   for (const d of docs) {
@@ -890,13 +889,12 @@ function entityNames(view: CorpusView): Map<string, string[]> {
  */
 export function quickEntities(view: CorpusView): QuickEntity[] {
   const layer = view.layer;
-  if (!layer) return [];
   const docs = buildEntityDocs({
     topics: { tree: layer.topics, detail: [...layer.topicDetail.values()] },
     concepts: { concepts: layer.concepts },
     people: { people: layer.people },
     works: { works: layer.works },
-    stories: layer.stories ? { stories: layer.stories } : null,
+    stories: { stories: layer.stories },
     synonyms: { synonyms: layer.synonyms },
   });
   const live = { topic: view.topics, concept: view.concepts, person: view.people, work: view.works } as const;
