@@ -793,7 +793,6 @@ function recordingId(audioKey: string): string {
 }
 
 const PATH_NOTES: [RegExp, string][] = [
-  [/imperfect\s+sound(\s+quality)?/i, "imperfect sound quality"],
   [/\bkids\b/i, "for children (per file name)"],
 ];
 function pathNotes(audioKey: string): string[] {
