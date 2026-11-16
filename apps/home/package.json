@@ -1,0 +1,27 @@
+{
+  "name": "@emunas/home",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "preview": "astro preview",
+    "typecheck": "ASTRO_TELEMETRY_DISABLED=1 astro sync && node ../../node_modules/typescript/bin/tsc --noEmit -p tsconfig.json && ASTRO_TELEMETRY_DISABLED=1 astro check",
+    "test": "vitest run",
+    "fonts:sync": "tsx src/lib/fonts-sync.ts"
+  },
+  "dependencies": {
+    "@emunas/links": "0.0.0",
+    "@emunas/tokens": "0.0.0",
+    "astro": "7.4.4"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.12",
+    "@emunas/config": "0.0.0",
+    "@types/node": "26.6.6",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3",
+    "vitest": "5.0.5"
+  }
+}

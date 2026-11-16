@@ -38,15 +38,16 @@ describe("chain order", () => {
       "live-data",
       "quiet-build",
       "live-build",
+      "home-build",
       "guard-post",
       "budgets",
     ]);
   });
 
-  it("guard post is layer-aware: scans the layer and both outputs with the corpus data folder", () => {
+  it("guard post is layer-aware: scans the layer and every site output with the corpus data folder", () => {
     const post = chainSteps({ report: REPORT, bundles: true }).find((s) => s.id === "guard-post")!;
     const argv = post.commands[0]!.join(" ");
-    expect(argv).toContain("post --scan .corpus apps/quiet/dist apps/live/build/client .wrangler/bundles");
+    expect(argv).toContain("post --scan .corpus apps/quiet/dist apps/live/build/client apps/home/dist .wrangler/bundles");
     expect(argv).toContain("--corpus .corpus");
     expect(argv).toContain("--corpus-data data/derived/corpus");
     expect(argv).toContain(`--report ${REPORT}`);
@@ -81,8 +82,9 @@ const SIGNATURES: Record<StepId, RegExp> = {
   "live-data": /npm run data:build --workspace=@emunas\/live/u,
   "quiet-build": /run: npm run build --workspace=@emunas\/quiet/u,
   "live-build": /run: npm run build --workspace=@emunas\/live/u,
-  "guard-post": /^\s*post --scan \.corpus apps\/quiet\/dist apps\/live\/build\/client/mu,
-  budgets: /guard --workspace=@emunas\/corpus-guard -- budgets apps\/quiet\/dist apps\/live\/build\/client/u,
+  "home-build": /run: npm run build --workspace=@emunas\/home/u,
+  "guard-post": /^\s*post --scan \.corpus apps\/quiet\/dist apps\/live\/build\/client apps\/home\/dist/mu,
+  budgets: /guard --workspace=@emunas\/corpus-guard -- budgets apps\/quiet\/dist apps\/live\/build\/client apps\/home\/dist/u,
 };
 
 function workflowOrder(text: string): { id: StepId; at: number }[] {

@@ -37,6 +37,7 @@ export const yi: MessageTable<UiKey> = {
 
   "footer.recordingIsSource": "דער מקור איז די רעקארדירונגען. די קעפלעך זענען ווי געדרוקט אינעם פאקעט גייד פון 2012.",
   "footer.otherEdition": "דער בלאט אויף ענגליש",
+  "footer.home": "אמונת",
 
   "time.playFrom": "שפילן פון {time}",
   "time.playFromPart": "שפילן פון {time} (טייל {part})",

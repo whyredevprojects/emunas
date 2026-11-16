@@ -15,7 +15,7 @@
  */
 import { existsSync, readFileSync, readdirSync, renameSync, rmSync, rmdirSync, statSync, writeFileSync } from "node:fs";
 import { dirname, join, relative, sep } from "node:path";
-import { LIVE_SUBDOMAIN, hostOf, type Hosts } from "@emunas/links";
+import { LIVE_SUBDOMAIN, hostOf, type SiteHosts } from "@emunas/links";
 import { dedicationProblems } from "../components/dedication-text.ts";
 import { TITLE_SEPARATOR } from "./meta.ts";
 import { APP_ONLY_KINDS, ENTRY_KINDS, classifyLivePath, isIndexable, normalizeLivePath } from "./policy.ts";
@@ -132,7 +132,7 @@ export function flattenPages(clientDir: string): number {
 }
 
 /** Checks one prerendered page. `hosts` null: canonical/hreflang are not required (no hosts configured). */
-export function checkPage(file: string, html: string, hosts: Hosts | null): SeoFinding[] {
+export function checkPage(file: string, html: string, hosts: SiteHosts | null): SeoFinding[] {
   const f: SeoFinding[] = [];
   const bad = (problem: string) => f.push({ file, problem });
   const head = parseHead(html);
@@ -194,7 +194,7 @@ export function exportsServerLoader(source: string): boolean {
 
 export interface PostBuildOptions {
   clientDir: string;
-  hosts: Hosts | null;
+  hosts: SiteHosts | null;
   /** Route module files other than root (absolute paths), to refuse `.data` removal when one has a loader. */
   routeFiles: readonly string[];
   maxFiles?: number;

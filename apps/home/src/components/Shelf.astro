@@ -1,0 +1,13 @@
+---
+/** The English sefarim, each linking to its publisher's page. */
+import { SEFARIM } from "../lib/content.ts";
+---
+<ul class="shelf">
+  {SEFARIM.map((s) => (
+    <li>
+      <span class="bt"><a href={s.href}>{s.title}</a></span>
+      {s.subtitle && <span class="bs">{s.subtitle}</span>}
+      <span class="by">{s.author} &middot; {s.publisher}, {s.year}</span>
+    </li>
+  ))}
+</ul>

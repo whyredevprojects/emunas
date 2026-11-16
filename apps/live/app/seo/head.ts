@@ -8,7 +8,7 @@
  * canonical and hreflang from the path alone.
  */
 import type { UiLang } from "@emunas/i18n";
-import { createLinks, type HreflangLink, type Hosts, type Links } from "@emunas/links";
+import { createLinks, type HreflangLink, type SiteHosts, type Links } from "@emunas/links";
 import { tFor } from "../i18n/index.ts";
 import type { PageText } from "./model.ts";
 import { classifyLivePath, isIndexable, normalizeLivePath, type LivePageKind } from "./policy.ts";
@@ -38,7 +38,7 @@ export interface SeoPage {
 /** What the root loader returns (serialized into every prerendered page). */
 export interface RootSeoData {
   seo: {
-    hosts: Hosts | null;
+    hosts: SiteHosts | null;
     page: SeoPage | null;
     /**
      * Rendered for the SPA fallback (`index.html`), which the host serves for every path without a
@@ -54,8 +54,8 @@ export type HeadTag =
   | { tag: "link"; rel: "canonical"; href: string }
   | { tag: "link"; rel: "alternate"; hrefLang: string; href: string };
 
-const linksCache = new WeakMap<Hosts, Links>();
-function linksFor(hosts: Hosts): Links | null {
+const linksCache = new WeakMap<SiteHosts, Links>();
+function linksFor(hosts: SiteHosts): Links | null {
   let l = linksCache.get(hosts);
   if (!l) {
     try {

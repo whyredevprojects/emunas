@@ -1,0 +1,149 @@
+---
+/**
+ * Layout of every home page: masthead (brand, primary nav, the light/dark switch, Library and
+ * Listen pills), `main`, the internet notice, and the footer whose last line is the dedication,
+ * alone. Light is the default; components/ThemeHead.astro applies a dark choice before paint, and
+ * the sun and moon switch (lib/theme.client.ts) is hidden until script shows it.
+ * Canonical and Open Graph tags point at the home origin from the build environment
+ * (lib/site-env.ts); with placeholder hosts the page is `noindex`.
+ */
+import "../styles/fonts.css";
+import "@emunas/tokens/tokens.css";
+import "../styles/home.css";
+import Dedication from "../components/Dedication.astro";
+import ThemeHead from "../components/ThemeHead.astro";
+import { CONTACT, EXTERNAL, INSTITUTION, INTERNET_NOTICE, SITE_DESCRIPTION, SITE_NAME, SITE_NAME_YI } from "../lib/content.ts";
+import { fontPreloads } from "../lib/fonts.ts";
+import { NAV } from "../lib/nav.ts";
+import { headTags } from "../lib/seo.ts";
+import { currentSiteEnv, siteLinks } from "../lib/site-env.ts";
+
+interface Props {
+  /** Page title without the site name; omitted on the home page. */
+  title?: string;
+  description?: string;
+  /** Root-relative path (default: `Astro.url.pathname`). */
+  path?: string;
+  noindex?: boolean;
+}
+
+const { title, description = SITE_DESCRIPTION, noindex = false } = Astro.props;
+const path = Astro.props.path ?? Astro.url.pathname;
+const env = currentSiteEnv();
+const links = siteLinks(env.hosts);
+const fullTitle = title === undefined ? `${SITE_NAME} · The Mashgiach, Harav Moshe Wolfson zt"l` : `${title} · ${SITE_NAME}`;
+const tags = headTags(
+  { path, title: title ?? SITE_NAME, description, siteName: SITE_NAME, noindex },
+  env.hosts.home,
+  { placeholder: env.placeholder },
+);
+---
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <ThemeHead />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    {fontPreloads().map((href) => <link rel="preload" href={href} as="font" type="font/woff2" crossorigin />)}
+    {tags.robots && <meta name="robots" content={tags.robots} />}
+    {tags.canonical && <link rel="canonical" href={tags.canonical} />}
+    {tags.og.map((m) => <meta property={m.property} content={m.content} />)}
+    <meta name="twitter:card" content="summary" />
+    {/* A module script runs once the document is parsed; in <head> so nothing follows the footer. */}
+    <script>
+      import { themeSwitch } from "../lib/theme.client.ts";
+      themeSwitch(document, location, window);
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header>
+      <div class="topbar">
+        <div class="wrap">
+          <p class="inst">{INSTITUTION} &middot; Brooklyn</p>
+          <p>Shiurim by phone: <a href={CONTACT.phoneHref}>{CONTACT.phone}</a></p>
+        </div>
+      </div>
+      <div class="bar">
+        <div class="wrap">
+          <a class="brand" href="/" aria-label={`${SITE_NAME}, home`} aria-current={path === "/" ? "page" : undefined}>
+            <span class="brand-yi" lang="yi" dir="rtl" aria-hidden="true">{SITE_NAME_YI}</span>
+            <span class="brand-en">{SITE_NAME}</span>
+          </a>
+          <nav class="primary" aria-label="Main">
+            <ul>
+              {NAV.map((item) => (
+                <li><a href={item.href} aria-current={item.href === path ? "page" : undefined}>{item.label}</a></li>
+              ))}
+            </ul>
+          </nav>
+          <div class="sitelinks">
+            <a class="pill" href={links.library}>Library <span class="arr" aria-hidden="true">&#8599;</span></a>
+            <a class="pill pill--ink" href={links.listen}>Listen <span class="arr" aria-hidden="true">&#8599;</span></a>
+          </div>
+          <div class="theme-switch" role="group" aria-label="Colours" hidden data-theme-switch>
+            <button type="button" data-theme-value="light" aria-pressed="true" aria-label="Light" title="Light">
+              <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
+                <circle cx="12" cy="12" r="4.5" fill="currentColor" />
+                <path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.58 4.58l2.12 2.12M17.3 17.3l2.12 2.12M4.58 19.42l2.12-2.12M17.3 6.7l2.12-2.12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </button>
+            <button type="button" data-theme-value="dark" aria-pressed="false" aria-label="Dark" title="Dark">
+              <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
+                <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.39 5.39 0 0 1-4.4 2.26 5.4 5.4 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z" fill="currentColor" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <aside class="notice" aria-labelledby="notice-h">
+      <div class="wrap">
+        <h2 id="notice-h">A word about the internet</h2>
+        <div>
+          <p>{INTERNET_NOTICE.body}</p>
+          <p>{INTERNET_NOTICE.asked}</p>
+          <p class="q">{INTERNET_NOTICE.quote}</p>
+        </div>
+      </div>
+    </aside>
+    <footer class="site-foot">
+      <div class="wrap cols">
+        <div class="f-about">
+          <a class="brand" href="/"><span class="brand-yi" lang="yi" dir="rtl" aria-hidden="true">{SITE_NAME_YI}</span><span class="brand-en">{SITE_NAME}</span></a>
+          <p>The shiurim, essays and sefarim of Harav Moshe Wolfson zt"l, the Mashgiach. The shiurim are free.</p>
+          <p><a href={EXTERNAL.support}>Support the printing of the Mashgiach&rsquo;s sefarim</a></p>
+        </div>
+        <nav aria-labelledby="f-site">
+          <h2 id="f-site">This site</h2>
+          <ul>
+            {NAV.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+          </ul>
+        </nav>
+        <nav aria-labelledby="f-shiur">
+          <h2 id="f-shiur">The shiurim</h2>
+          <ul>
+            <li><a href={links.library}>Library</a></li>
+            <li><a href={links.listen}>Listen</a></li>
+            <li><a href={EXTERNAL.torahAnytime}>TorahAnytime</a></li>
+            <li>By phone: <a href={CONTACT.phoneHref}>{CONTACT.phone}</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2>Contact</h2>
+          <address>
+            {CONTACT.address.map((line) => <>{line}<br /></>)}
+            <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
+          </address>
+        </div>
+      </div>
+      <Dedication />
+    </footer>
+  </body>
+</html>

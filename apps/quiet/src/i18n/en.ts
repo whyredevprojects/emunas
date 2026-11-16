@@ -34,6 +34,7 @@ export const en = {
 
   "footer.recordingIsSource": "The recordings are the source. Titles are as printed in the 2012 Pocket Guide.",
   "footer.otherEdition": "This page in Yiddish",
+  "footer.home": "Emunas home",
 
   "time.playFrom": "Play from {time}",
   "time.playFromPart": "Play from {time} (part {part})",
