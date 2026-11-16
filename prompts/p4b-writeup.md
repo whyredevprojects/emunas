@@ -77,7 +77,7 @@ The ASR is budget-quality Whisper. Yiddish comes out in Hebrew script with heavy
 - **When you cannot recover a stretch with reasonable confidence, leave it out.** Do not guess a name, a number, a story detail or a chiddush. A shorter honest write-up beats a fuller invented one.
 - **Never fill in from your own knowledge** what the Mashgiach "probably" said. Your knowledge may help you *recognize* a garbled term; it may never *supply content* that is not audible in the transcript. Every sentence must be traceable to the segments in its paragraph's evidence.
 - Repeated identical lines and generic phrases ("תודה רבה", "Thank you for watching") over silence or singing are hallucinations, not speech.
-- **Never comment on the audio in the write-up.** Every sentence says what the Mashgiach teaches or relates. Saying a stretch is "garbled" or "unclear" reads as if *he* spoke that way, which is untrue and disrespectful. Never write about the audio, the recording, the transcript, the ASR or what could or couldn't be heard or made out (no "In a badly garbled stretch, the Mashgiach…", "though most of this is hard to follow", "the rest cannot be made out", "the recording breaks off", "heard as X", `דא איז דער טעקסט שטארק צעמישט`, `ס'איז נישט קלאר`), not even neutral remarks about sound quality, and never call his words garbled, unclear, confused, fragmentary or trailing off. Where part of a stretch can't be recovered, write what can be as a plain statement and don't mention the gap; don't write a sentence whose only content is such a remark. Content uses are fine, judged by meaning ("cuts off from Hashem", "confusion of the mind", a story in which someone could not hear something). Headings follow the same rule. Notes on the audio belong only in the extraction's `asrNotes`, never here.
+- **Never mention the transcript, and never judge the shiur's clarity.** Every sentence says what the Mashgiach teaches or relates. Saying a stretch is "garbled" or "unclear" reads as if *he* spoke that way, which is untrue and disrespectful. Never mention the transcript, transcription or ASR ("the transcript did not capture", "heard as X"), and never judge the shiur or his words ("In a badly garbled stretch, the Mashgiach…", "though most of this is hard to follow", "his words are unclear", `דער חלק איז צעמישט`, `דער שיעור איז נישט קלאר`). A plain, factual remark about the sound or the recording is allowed when useful ("the sound is poor here", "the recording cuts off"; `די אויפנאמע ברעכט זיך איבער`), never about him. Where part of a stretch can't be recovered, write what can be as a plain statement. Content uses are fine, judged by meaning ("cuts off from Hashem", "confusion of the mind"). Headings follow the same rule. Transcript notes belong only in the extraction's `asrNotes`.
 
 ## 4. What to write
 
@@ -113,7 +113,7 @@ Two arrays, `en` and `yi`, each a list of blocks: `{ "sectionIndex": <index into
 7. **No source text from memory.** Cite sources by name and ref only. Do not quote a passuk, Gemara, Zohar or Tanya passage beyond the few words the Mashgiach himself is clearly heard discussing, and never complete or correct a quote from memory.
 8. **No biography, no dates, no occasions** beyond what the header gives or the Mashgiach says. No claims about the Mashgiach's life, teachers or influence.
 9. Refer to him as "the Mashgiach" in English and "דער משגיח" in Yiddish.
-10. **No comments on the audio, recording, transcript or intelligibility**, in either language (section 3). Yiddish too: no `צעמישט`, `נישט קלאר`, `נישט צו הערן`, `טראנסקריפט`, `אויפנאמע`, `רעקארדירונג` about the audio.
+10. **No mention of the transcript or ASR, and no judgment of the shiur's clarity**, in either language (section 3). Yiddish too: no `צעמישט`, `נישט קלאר`, `טראנסקריפט` about the shiur. Factual sound/recording remarks are allowed.
 
 ## 6. Exact output shape
 
@@ -182,6 +182,6 @@ Shape example for a hypothetical single-recording 20-minute shiur whose extracti
    - [ ] no content or evidence from `[NOISE?]` garbage
    - [ ] `yi` natural Chassidish Yiddish per `yiddish-style.md` (no YIVO letters, no Daytshmerish, no calques), loshon-hakodesh spelling for Hebrew words; `en` without Hebrew script
    - [ ] third person throughout; no psak, no own advice, no quotes from memory, no biography
-   - [ ] no sentence or heading mentions the audio, recording, transcript or what couldn't be heard, or calls his words garbled/unclear
+   - [ ] no sentence or heading mentions the transcript/ASR or calls the shiur or his words garbled/unclear (sound/recording remarks are allowed)
    - [ ] every sentence traceable to the transcript
 6. Write the JSON object, and only it, to the output path.
