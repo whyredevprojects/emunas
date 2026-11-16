@@ -49,7 +49,9 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-24.04
-    timeout-minutes: 45
+    # A first fill of an empty Vectorize index embeds ~58k texts at ~14/s (~70 min); later
+    # deploys only embed changed moments. Keep headroom for that first run per index.
+    timeout-minutes: 120
     # GitHub environments hold the protection rules and the Cloudflare secrets/variables.
     environment: ${{ inputs.target || 'production' }}
     env:

@@ -3,8 +3,8 @@
 // no workers.dev URL, no preview URLs, no routes.
 //
 // Secrets (wrangler secret put, per environment): TURNSTILE_SECRET, FEEDBACK_HASH_SALT.
-// The database_id values are placeholders until the resources are provisioned
-// (docs/sites/ops-runbook.md, W2.7); replace them with the ids `wrangler d1 create` prints.
+// The database_id values are the real ids, provisioned 2026-11-15
+// (docs/sites/ops-runbook.md §3, W2.7).
 {
   "$schema": "../../node_modules/wrangler/config-schema.json",
   "name": "emunas-api",
@@ -17,13 +17,13 @@
     {
       "binding": "DB_SEARCH",
       "database_name": "emunas-search",
-      "database_id": "00000000-0000-4000-8000-000000000001",
+      "database_id": "b5a6f500-a4fa-4ddc-b56e-9c77672161cd",
       "migrations_dir": "migrations/search"
     },
     {
       "binding": "DB_FEEDBACK",
       "database_name": "emunas-feedback",
-      "database_id": "00000000-0000-4000-8000-000000000002",
+      "database_id": "4b1ed3b5-05c4-448c-bd27-3ea481a1c51e",
       "migrations_dir": "migrations/feedback"
     }
   ],
@@ -45,13 +45,13 @@
         {
           "binding": "DB_SEARCH",
           "database_name": "emunas-search-staging",
-          "database_id": "00000000-0000-4000-8000-000000000011",
+          "database_id": "7a3a4127-d6f5-4e50-be7d-faf1edfca8cd",
           "migrations_dir": "migrations/search"
         },
         {
           "binding": "DB_FEEDBACK",
           "database_name": "emunas-feedback-staging",
-          "database_id": "00000000-0000-4000-8000-000000000012",
+          "database_id": "62ffda8f-00ab-439b-b254-f136712e5452",
           "migrations_dir": "migrations/feedback"
         }
       ],
