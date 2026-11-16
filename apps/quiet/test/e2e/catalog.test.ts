@@ -119,9 +119,10 @@ async function axe(page: Page): Promise<AxeViolation[]> {
 async function open(path: string, opts: { js?: boolean; dark?: boolean; width?: number } = {}): Promise<Page> {
   const context = await browser.newContext({
     javaScriptEnabled: opts.js ?? true,
-    colorScheme: opts.dark ? "dark" : "light",
     viewport: { width: opts.width ?? 1100, height: 900 },
   });
+  // Dark is opt-in (the shared theme cookie), not the OS setting.
+  if (opts.dark) await context.addCookies([{ name: "emunas_theme", value: "dark", url: origin }]);
   const page = await context.newPage();
   const res = await page.goto(origin + path, { waitUntil: "load" });
   expect(res?.status(), path).toBe(200);

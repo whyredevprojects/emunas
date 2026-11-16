@@ -8,6 +8,7 @@ import { tmpdir } from "node:os";
 import { dirname, join, relative, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
+import { THEME_INIT_SCRIPT } from "@emunas/tokens";
 import { DEDICATION } from "../src/components/dedication.ts";
 import { checkFiles } from "../src/lib/check-files.ts";
 import { SITEMAP_PATHS } from "../src/lib/seo.ts";
@@ -112,11 +113,16 @@ describe("the built home site", () => {
     }
   });
 
-  it("loads nothing from outside the site and has no inline scripts or styles", () => {
+  it("loads nothing from outside the site and has no inline styles or scripts but the theme init", () => {
+    const init = `<script>${THEME_INIT_SCRIPT}</script>`;
     for (const f of htmlFiles()) {
       const html = read(f);
       expect(html, f).not.toMatch(/<link(?![^>]*rel="canonical")[^>]+href="https?:/);
-      expect(html, f).not.toMatch(/<script\b(?![^>]*\bsrc=)/);
+      // Exactly one inline script, the colour-theme init, byte for byte (the CSP allows its hash),
+      // in <head> before any stylesheet.
+      expect(html.split(init).length - 1, f).toBe(1);
+      expect(html.indexOf(init), f).toBeLessThan(html.indexOf('rel="stylesheet"'));
+      expect(html.replace(init, ""), f).not.toMatch(/<script\b(?![^>]*\bsrc=)/);
       expect(html, f).not.toMatch(/<style\b/);
       expect(html, f).not.toMatch(/\sstyle=/);
       expect(html, f).not.toMatch(/fonts\.googleapis|fonts\.gstatic/);

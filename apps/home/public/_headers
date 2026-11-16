@@ -1,9 +1,11 @@
 # Home site (emunas-home): headers for static asset responses. `/files/*` is answered by the
 # Worker (worker/index.ts sets its own headers); these rules do not apply there.
-# The site ships no inline scripts or styles (astro.config.ts), so the CSP allows only 'self'.
+# No inline scripts or styles (astro.config.ts), with one exception: the colour-theme init script
+# (THEME_INIT_SCRIPT in @emunas/tokens, components/ThemeHead.astro), allowed by its sha256 below.
+# Changing that script means changing this hash (a test checks).
 
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-Fi76lzGQR/8odRrMH1G21Mcsrp0gna3lNdJ2IFAzE70='; style-src 'self'; font-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
   Referrer-Policy: strict-origin-when-cross-origin
   X-Content-Type-Options: nosniff
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()

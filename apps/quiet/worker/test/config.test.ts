@@ -1,5 +1,7 @@
+import { createHash } from "node:crypto";
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
+import { THEME_INIT_SCRIPT } from "@emunas/tokens";
 import { describe, expect, it } from "vitest";
 import { parseHeaders, renderHeaders } from "../render-headers.ts";
 import { readJsonc } from "./jsonc.ts";
@@ -20,6 +22,7 @@ interface WranglerConfig {
 const cfg = readJsonc(`${APP}wrangler.jsonc`) as WranglerConfig;
 const raw = readFileSync(`${APP}wrangler.jsonc`, "utf8");
 const template = readFileSync(`${APP}public/_headers`, "utf8");
+const themeHash = `'sha256-${createHash("sha256").update(THEME_INIT_SCRIPT).digest("base64")}'`;
 
 describe("apps/quiet/wrangler.jsonc", () => {
   it("is an assets-only Worker over dist/ (no Worker script, Amendment A1)", () => {
@@ -81,7 +84,8 @@ describe("apps/quiet/public/_headers", () => {
   it("has the tech-quiet CSP with the media origin in media-src", () => {
     const d = cspOf(renderHeaders(template, { mediaOrigin: "https://media.example.org" }));
     expect(d.get("default-src")).toEqual(["'self'"]);
-    expect(d.get("script-src")).toEqual(["'self'", "'wasm-unsafe-eval'"]);
+    // The one inline script, the colour-theme init, is allowed by its hash; nothing else inline.
+    expect(d.get("script-src")).toEqual(["'self'", "'wasm-unsafe-eval'", themeHash]);
     expect(d.get("style-src")).toEqual(["'self'"]);
     expect(d.get("media-src")).toEqual(["'self'", "https://media.example.org"]);
     expect(d.get("connect-src")).toEqual(["'self'"]);

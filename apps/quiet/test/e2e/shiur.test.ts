@@ -192,9 +192,10 @@ const errors = new WeakMap<Page, string[]>();
 async function open(path: string, opts: { js?: boolean; dark?: boolean; width?: number } = {}): Promise<Page> {
   const context = await browser.newContext({
     javaScriptEnabled: opts.js ?? true,
-    colorScheme: opts.dark ? "dark" : "light",
     viewport: { width: opts.width ?? 1100, height: 900 },
   });
+  // Dark is opt-in (the shared theme cookie), not the OS setting.
+  if (opts.dark) await context.addCookies([{ name: "emunas_theme", value: "dark", url: origin }]);
   const page = await context.newPage();
   const list: string[] = [];
   errors.set(page, list);

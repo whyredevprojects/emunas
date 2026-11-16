@@ -1,8 +1,9 @@
 # Live app shell (`app/shell`)
 
 `ui-layout.tsx` is the route module for `/:ui/*` (`ui` ∈ `en` | `yi`). It renders the skip link,
-the header (site name, language control), the rail, `<main id="main">` with the page, and the dock
-slot. It stays mounted for every page under `/en/` and `/yi/`, including a switch between them.
+the header (site name, command bar, language control, dark-colours toggle), the rail,
+`<main id="main">` with the page, and the dock slot. It stays mounted for every page under `/en/`
+and `/yi/`, including a switch between them.
 
 For page authors (waves 3–4):
 
@@ -23,3 +24,7 @@ For page authors (waves 3–4):
 `/` (`routes/home.tsx`) is the static fallback of the Worker's language redirect. The shell stores
 the last interface language in localStorage and in the cookie `emunas_ui` (`ui-preference.ts`), which
 the site Worker (W2.7) can read for its `/` redirect.
+
+Colours are light (paper) by default whatever the OS prefers. `ThemeToggle.tsx` opts into dark: it
+sets `<html data-theme="dark">` and the cookie `emunas_theme`, shared with the Quiet site
+(`@emunas/tokens` `theme.ts`). The inline script in `root.tsx` applies a dark choice before paint.

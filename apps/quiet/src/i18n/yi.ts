@@ -27,6 +27,10 @@ export const yi: MessageTable<UiKey> = {
   "edition.other": "English",
   "edition.otherName": "ענגלישע אויסגאבע",
 
+  "theme.label": "פארבן",
+  "theme.light": "העל",
+  "theme.dark": "טונקל",
+
   "link.newTab": "(עפנט זיך אין א נייעם טאב)",
 
   "breadcrumb.label": "דא זענט איר",

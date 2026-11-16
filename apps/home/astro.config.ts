@@ -9,7 +9,8 @@ export default defineConfig({
   trailingSlash: "always",
   build: {
     format: "directory",
-    // CSP `style-src 'self'` / `script-src 'self'` (public/_headers): never inline CSS or scripts.
+    // CSP `style-src 'self'` / `script-src 'self'` (public/_headers): never inline CSS or scripts. The one
+    // exception is the theme init script (components/ThemeHead.astro), allowed by its hash in public/_headers.
     inlineStylesheets: "never",
   },
   vite: {

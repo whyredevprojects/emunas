@@ -1,6 +1,8 @@
 /* Emunas home: Direction B, "Editorial archive".
    Colour roles come from @emunas/tokens (paper, ink, oxblood; light and dark), so the three sites
-   share them. Added here: the archival cover cloths, the Listen panel, and a display type scale. */
+   share them. Light is the default; `<html data-theme="dark">` (the header's sun and moon switch,
+   lib/theme.client.ts) opts into dark. Added here: the archival cover cloths, the Listen panel,
+   and a display type scale. */
 
 :root {
   --paper: var(--color-paper);
@@ -47,14 +49,6 @@
   --d3: clamp(1.75rem, 1.4rem + 1.5vw, 2.6rem);
   --d4: clamp(2.2rem, 1.6rem + 2.8vw, 3.9rem);
   --d5: clamp(2.6rem, 1.6rem + 4.6vw, 5.6rem);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --panel: #2a2620;
-    --cloth-paper: #3a352b;
-    --foil: #ead9ae;
-  }
 }
 
 :root[data-theme="dark"] {
@@ -259,6 +253,7 @@ a:hover {
 
 .sitelinks {
   display: flex;
+  align-items: center;
   gap: 8px;
 }
 
@@ -295,6 +290,42 @@ a:hover {
   font-weight: 400;
 }
 
+/* Light and dark: a sun and a moon, as on the Library. Each button is named (aria-label) and has
+   a 44px tap target; the chosen one is in ink with an icon-wide hairline under it. Beside the
+   pills on wide screens, at the end of the nav row on narrow ones. */
+.theme-switch:not([hidden]) {
+  display: flex;
+  grid-column: 4;
+  grid-row: 1;
+  margin-inline-start: -20px;
+}
+
+.theme-switch button {
+  display: inline-grid;
+  place-items: center;
+  inline-size: 2.75rem;
+  block-size: 2.75rem;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: var(--ink-muted);
+  cursor: pointer;
+}
+
+.theme-switch svg {
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+}
+
+.theme-switch button:hover {
+  color: var(--ink);
+}
+
+.theme-switch button[aria-pressed="true"] {
+  color: var(--ink);
+  background: linear-gradient(currentColor, currentColor) no-repeat center bottom 0.4rem / 1.25rem 1px;
+}
+
 @media (max-width: 900px) {
   .bar .wrap {
     grid-template-columns: 1fr auto;
@@ -305,13 +336,27 @@ a:hover {
     grid-row: 2;
   }
 
+  /* The theme switch, once script shows it, takes the end of the nav row. */
+  .bar .wrap:has(> .theme-switch:not([hidden])) .primary {
+    grid-column: 1;
+  }
+
+  .theme-switch:not([hidden]) {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+    justify-self: end;
+    margin-block-start: -8px;
+    margin-inline: 0;
+  }
+
   .primary ul {
     justify-content: flex-start;
     gap: 2px 18px;
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 440px) {
   .bar .wrap {
     column-gap: 10px;
   }
@@ -1250,6 +1295,24 @@ a:hover {
   }
 }
 
+@media (max-width: 340px) {
+  .bar .wrap {
+    column-gap: 8px;
+  }
+
+  .brand-en {
+    font-size: 1.1rem;
+  }
+
+  .brand-yi {
+    font-size: 1.2rem;
+  }
+
+  .pill {
+    padding: 6px 10px;
+  }
+}
+
 @media (max-width: 420px) {
   .site-foot .cols {
     grid-template-columns: minmax(0, 1fr);
@@ -1728,6 +1791,7 @@ a:hover {
 
 @media print {
   .topbar,
+  .theme-switch,
   .bar,
   .facets,
   .site-foot .cols,

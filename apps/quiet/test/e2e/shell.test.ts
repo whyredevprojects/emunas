@@ -2,21 +2,26 @@
  * W2.3 acceptance, in a real browser:
  * - the sample page renders in both editions (lang/dir, layout) and is screenshotted;
  * - axe: zero violations (WCAG 2.0–2.2 A/AA + best practices), light and dark;
- * - print media hides nav, edition switch, breadcrumb and player, keeps times as text;
- * - the edition switch keeps the path, and with script the hash and query.
+ * - print media hides nav, edition and theme switches, breadcrumb and player, keeps times as text;
+ * - the edition switch keeps the path, and with script the hash and query;
+ * - light by default whatever the OS prefers; the light/dark switch (sun and moon) (hidden without script) stores
+ *   the shared cookie, and the inline init script is the build's only inline script and passes the CSP.
  *
  * Builds the site with EMUNAS_SHELL_SAMPLE=1 into a temporary directory, serves it with a tiny
  * static server, drives Chrome through playwright-core.
  */
 import { spawnSync } from "node:child_process";
-import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, statSync } from "node:fs";
+import { createHash } from "node:crypto";
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, statSync } from "node:fs";
 import { createServer, type Server } from "node:http";
 import { createRequire } from "node:module";
 import { tmpdir } from "node:os";
 import { dirname, extname, join, normalize } from "node:path";
 import { fileURLToPath } from "node:url";
+import { THEME_INIT_SCRIPT, colors } from "@emunas/tokens";
 import { chromium, type Browser, type Page } from "playwright-core";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
+import { parseHeaders, renderHeaders } from "../../worker/render-headers.ts";
 
 const app = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const require = createRequire(import.meta.url);
@@ -27,6 +32,13 @@ let outDir = "";
 let server: Server;
 let origin = "";
 let browser: Browser;
+
+const headersTemplate = readFileSync(join(app, "public", "_headers"), "utf8");
+/** The production CSP (with the sample's media host), sent only to requests that ask for it (`x-test-csp`). */
+const csp =
+  parseHeaders(renderHeaders(headersTemplate, { mediaOrigin: "https://media.example.org" }))
+    .find((r) => r.pattern === "/*")
+    ?.headers.find(([n]) => n === "Content-Security-Policy")?.[1] ?? "";
 
 const TYPES: Record<string, string> = {
   ".html": "text/html; charset=utf-8",
@@ -66,7 +78,10 @@ beforeAll(async () => {
     if (!file.startsWith(outDir)) return void res.writeHead(403).end();
     if (existsSync(file) && statSync(file).isDirectory()) file = join(file, "index.html");
     if (!existsSync(file)) return void res.writeHead(404, { "content-type": "text/plain" }).end("not found");
-    res.writeHead(200, { "content-type": TYPES[extname(file)] ?? "application/octet-stream" });
+    res.writeHead(200, {
+      "content-type": TYPES[extname(file)] ?? "application/octet-stream",
+      ...(req.headers["x-test-csp"] ? { "content-security-policy": csp } : {}),
+    });
     res.end(readFileSync(file));
   });
   await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", resolve));
@@ -108,12 +123,18 @@ async function axe(page: Page): Promise<AxeViolation[]> {
   });
 }
 
-async function open(path: string, opts: { js?: boolean; dark?: boolean; width?: number } = {}): Promise<Page> {
+async function open(
+  path: string,
+  opts: { js?: boolean; dark?: boolean; width?: number; os?: "light" | "dark"; csp?: boolean } = {},
+): Promise<Page> {
   const context = await browser.newContext({
     javaScriptEnabled: opts.js ?? true,
-    colorScheme: opts.dark ? "dark" : "light",
+    colorScheme: opts.os ?? "light",
+    ...(opts.csp ? { extraHTTPHeaders: { "x-test-csp": "1" } } : {}),
     viewport: { width: opts.width ?? 1100, height: 900 },
   });
+  // Dark is opt-in (the shared theme cookie), not the OS setting.
+  if (opts.dark) await context.addCookies([{ name: "emunas_theme", value: "dark", url: origin }]);
   const page = await context.newPage();
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(String(e)));
@@ -178,6 +199,8 @@ describe.each(["yi", "en"] as const)("sample page, %s edition", (ed) => {
   it("has zero axe violations (light and dark)", async () => {
     for (const dark of [false, true]) {
       const page = await open(path, { dark });
+      expect(await page.getAttribute("html", "data-theme")).toBe(dark ? "dark" : null);
+      expect(await page.locator(".theme-switch").isVisible()).toBe(true);
       const violations = await axe(page);
       expect(violations, JSON.stringify(violations, null, 2)).toEqual([]);
       if (dark) await page.screenshot({ path: join(shotDir, `shell-sample-${ed}-dark.png`), fullPage: true });
@@ -186,12 +209,12 @@ describe.each(["yi", "en"] as const)("sample page, %s edition", (ed) => {
     }
   });
 
-  it("print media hides nav, edition switch, breadcrumb and player; times stay as text", async () => {
+  it("print media hides nav, edition and theme switches, breadcrumb and player; times stay as text", async () => {
     const page = await open(path);
     await page.emulateMedia({ media: "print" });
     const display = (sel: string) =>
       page.$$eval(sel, (els) => els.map((e) => getComputedStyle(e).display));
-    for (const sel of [".site-nav", ".edition-switch", ".breadcrumb", ".listen", "audio", ".skip-link", ".footer-links"]) {
+    for (const sel of [".site-nav", ".edition-switch", ".theme-switch", ".breadcrumb", ".listen", "audio", ".skip-link", ".footer-links"]) {
       const values = await display(sel);
       expect(values.length, sel).toBeGreaterThan(0);
       expect(new Set(values), sel).toEqual(new Set(["none"]));
@@ -244,6 +267,108 @@ describe("edition switch", () => {
     await page.waitForURL(`${origin}/en/shell-sample/#s0`);
     expect(errorsOf(page)).toEqual([]);
     await page.context().close();
+  });
+});
+
+const rgb = (hex: string): string => {
+  const n = Number.parseInt(hex.slice(1), 16);
+  return `rgb(${(n >> 16) & 255}, ${(n >> 8) & 255}, ${n & 255})`;
+};
+const pageBackground = (page: Page) =>
+  page.evaluate(() => getComputedStyle(document.documentElement).backgroundColor);
+
+describe("colour theme", () => {
+  it("is light paper by default, even when the OS prefers dark", async () => {
+    const page = await open("/en/shell-sample/", { os: "dark" });
+    expect(await page.getAttribute("html", "data-theme")).toBeNull();
+    expect(await pageBackground(page)).toBe(rgb(colors.light.paper));
+    expect(await page.evaluate(() => getComputedStyle(document.documentElement).colorScheme)).toBe("light");
+    await page.context().close();
+  });
+
+  it("keeps the switch hidden without script", async () => {
+    const page = await open("/en/shell-sample/", { js: false });
+    expect(await page.locator(".theme-switch").count()).toBe(1);
+    expect(await page.locator(".theme-switch").isHidden()).toBe(true);
+    await page.context().close();
+  });
+
+  it.each(["en", "yi"] as const)("switches to dark and back, stored in the shared cookie (%s)", async (ed) => {
+    const page = await open(`/${ed}/shell-sample/`);
+    const pressed = () =>
+      page.$$eval(".theme-switch button", (bs) => bs.map((b) => [b.dataset["themeValue"], b.getAttribute("aria-pressed")]));
+    const cookie = async () => (await page.context().cookies()).find((c) => c.name === "emunas_theme");
+    const dark = page.locator('.theme-switch button[data-theme-value="dark"]');
+    const light = page.locator('.theme-switch button[data-theme-value="light"]');
+
+    expect(await page.locator(".theme-switch").isVisible()).toBe(true);
+    expect(await pressed()).toEqual([["light", "true"], ["dark", "false"]]);
+    expect(await cookie()).toBeUndefined();
+
+    await dark.click();
+    expect(await page.getAttribute("html", "data-theme")).toBe("dark");
+    expect(await pressed()).toEqual([["light", "false"], ["dark", "true"]]);
+    expect(await pageBackground(page)).toBe(rgb(colors.dark.paper));
+    const saved = await cookie();
+    expect(saved?.value).toBe("dark");
+    expect(saved?.path).toBe("/");
+    expect(saved?.sameSite).toBe("Lax");
+    // host-only on 127.0.0.1; about a year
+    expect(saved?.domain).toBe("127.0.0.1");
+    expect(saved!.expires - Date.now() / 1000).toBeGreaterThan(364 * 86400);
+
+    await page.reload({ waitUntil: "load" });
+    expect(await page.getAttribute("html", "data-theme")).toBe("dark");
+    expect(await pressed()).toEqual([["light", "false"], ["dark", "true"]]);
+    expect(await axe(page)).toEqual([]);
+    await page.screenshot({ path: join(shotDir, `theme-${ed}-dark.png`), fullPage: true });
+
+    await light.click();
+    expect(await page.getAttribute("html", "data-theme")).toBeNull();
+    expect((await cookie())?.value).toBe("light");
+    await page.reload({ waitUntil: "load" });
+    expect(await page.getAttribute("html", "data-theme")).toBeNull();
+    expect(await pressed()).toEqual([["light", "true"], ["dark", "false"]]);
+    expect(errorsOf(page)).toEqual([]);
+    await page.context().close();
+  });
+
+  it("follows a choice made elsewhere when the page is shown again", async () => {
+    const page = await open("/en/shell-sample/");
+    await page.context().addCookies([{ name: "emunas_theme", value: "dark", url: origin }]);
+    await page.evaluate(() => window.dispatchEvent(new Event("pageshow")));
+    expect(await page.getAttribute("html", "data-theme")).toBe("dark");
+    expect(await page.getAttribute('.theme-switch button[data-theme-value="dark"]', "aria-pressed")).toBe("true");
+    await page.context().close();
+  });
+
+  it("runs the init script under the production CSP", async () => {
+    const page = await open("/en/shell-sample/", { dark: true, csp: true });
+    expect(await page.getAttribute("html", "data-theme")).toBe("dark");
+    expect(await page.locator(".theme-switch").isVisible()).toBe(true);
+    expect(errorsOf(page).filter((e) => /Content Security Policy/i.test(e))).toEqual([]);
+    await page.context().close();
+  });
+
+  it("is the only inline script in the build, and its hash is in public/_headers", () => {
+    const html = (dir: string): string[] =>
+      readdirSync(dir, { withFileTypes: true }).flatMap((e) => {
+        const p = join(dir, e.name);
+        return e.isDirectory() ? html(p) : e.name.endsWith(".html") ? [p] : [];
+      });
+    const files = html(outDir);
+    expect(files.length).toBeGreaterThan(10);
+    const hashes = new Set<string>();
+    for (const file of files) {
+      const text = readFileSync(file, "utf8");
+      const inline = [...text.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)]
+        .filter(([, attrs = ""]) => !/\bsrc=/.test(attrs) && !/type="?application\/(ld\+)?json/.test(attrs))
+        .map(([, , body = ""]) => body);
+      expect(inline, file).toEqual([THEME_INIT_SCRIPT]);
+      hashes.add(createHash("sha256").update(inline[0] ?? "").digest("base64"));
+    }
+    expect(hashes.size).toBe(1);
+    expect(headersTemplate).toContain(`'sha256-${[...hashes][0]}'`);
   });
 });
 

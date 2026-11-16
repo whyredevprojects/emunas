@@ -1,6 +1,8 @@
+import { createHash } from "node:crypto";
 import { existsSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { productionHosts } from "@emunas/links";
+import { THEME_INIT_SCRIPT } from "@emunas/tokens";
 import { describe, expect, it } from "vitest";
 import { readJsonc } from "./jsonc.ts";
 
@@ -26,6 +28,7 @@ interface WranglerConfig {
 
 const cfg = readJsonc(`${APP}wrangler.jsonc`) as WranglerConfig;
 const headers = readFileSync(`${APP}public/_headers`, "utf8");
+const themeHash = `'sha256-${createHash("sha256").update(THEME_INIT_SCRIPT).digest("base64")}'`;
 
 describe("apps/home/wrangler.jsonc", () => {
   it("serves dist/ with the Worker first only for /files/*", () => {
@@ -78,11 +81,12 @@ describe("apps/home/public/_headers", () => {
     return undefined;
   };
 
-  it("has a strict CSP with no inline scripts or styles and no outside origins", () => {
+  it("has a strict CSP with no inline styles, only the theme init script inline, and no outside origins", () => {
     const csp = value("/*", "Content-Security-Policy") ?? "";
     const d = new Map(csp.split(";").map((x) => { const [k = "", ...v] = x.trim().split(/\s+/); return [k, v] as const; }));
     expect(d.get("default-src")).toEqual(["'self'"]);
-    expect(d.get("script-src")).toEqual(["'self'"]);
+    // The one inline script, the colour-theme init, is allowed by its hash; nothing else inline.
+    expect(d.get("script-src")).toEqual(["'self'", themeHash]);
     expect(d.get("style-src")).toEqual(["'self'"]);
     expect(d.get("font-src")).toEqual(["'self'"]);
     expect(d.get("frame-ancestors")).toEqual(["'none'"]);
