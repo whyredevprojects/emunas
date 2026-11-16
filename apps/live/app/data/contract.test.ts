@@ -88,7 +88,7 @@ const REQUIRED: { [K in keyof DataFiles]: readonly (keyof DataFiles[K])[] } = {
   work: ["schemaVersion", "key", "name", "label", "locations", "unlocated"],
   entity: ["schemaVersion", "kind", "key", "label", "shiurIds", "years", "moments", "related"],
   moments: ["schemaVersion", "lang", "shard", "moments"],
-  quickIndex: ["schemaVersion", "lang", "options", "index"],
+  quickIndex: ["schemaVersion", "lang", "options", "index", "entities"],
   topics: ["schemaVersion", "topics"],
   topic: ["schemaVersion", "id", "label", "description", "reviewed", "hubs", "moments", "momentPages"],
   topicMoments: ["schemaVersion", "topicId", "page", "moments"],

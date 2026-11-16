@@ -34,6 +34,7 @@ import {
   type MomentShardFile,
   type OccasionFacetValue,
   type PersonChip,
+  type QuickEntity,
   type QuickIndexFile,
   type SeriesFile,
   type SeriesFacetValue,
@@ -815,7 +816,8 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
     const keys = [...e.works.map((x) => `work:${x}`), ...e.people.map((x) => `person:${x}`), ...e.concepts.map((x) => `concept:${x}`)];
     return keys.flatMap((k) => names.get(k) ?? []);
   };
-  for (const lang of EDS) put<"quickIndex">(dataPaths.quickIndex(lang), quickIndex(docs, lang, entityText));
+  const suggestible = quickEntities(view);
+  for (const lang of EDS) put<"quickIndex">(dataPaths.quickIndex(lang), quickIndex(docs, lang, entityText, suggestible));
 
   // ------------------------------------------------------------------ build.json, corpus.json
   const buildId = createHash("sha256")
@@ -848,10 +850,10 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
  * lower-casing; no custom `processTerm` needs to survive serialization.
  */
 export const QUICK_INDEX_FIELDS = ["title", "occasion", "oneLiner", "sections", "entities"] as const;
-/** Stored for display without loading corpus.json: the catalog title as written. */
-export const QUICK_INDEX_STORE_FIELDS = ["name"] as const;
+/** Stored for display without loading corpus.json: the catalog title as written and the audio language. */
+export const QUICK_INDEX_STORE_FIELDS = ["name", "lang"] as const;
 
-type QuickDoc = { id: string; name: string } & Record<(typeof QUICK_INDEX_FIELDS)[number], string>;
+type QuickDoc = { id: string; name: string; lang: Ed } & Record<(typeof QUICK_INDEX_FIELDS)[number], string>;
 
 /**
  * Entity names for the quick index, from the search-core EntityDocs (labels only: the entity's own
@@ -876,6 +878,35 @@ function entityNames(view: CorpusView): Map<string, string[]> {
   return out;
 }
 
+/**
+ * The command bar's entity suggestions (C3.6): the search-core EntityDocs (labels + clean synonyms
+ * from the layer's synonyms.json) of the entities with a Live page (`live-pages.ts`, as in
+ * `corpusView`): topics, concepts not merged into a topic, people ≥3 never of the `other` group,
+ * works ≥3 never generic. No ASR variant has an input path here.
+ */
+export function quickEntities(view: CorpusView): QuickEntity[] {
+  const layer = view.layer;
+  if (!layer) return [];
+  const docs = buildEntityDocs({
+    topics: { tree: layer.topics, detail: [...layer.topicDetail.values()] },
+    concepts: { concepts: layer.concepts },
+    people: { people: layer.people },
+    works: { works: layer.works },
+    stories: layer.stories ? { stories: layer.stories } : null,
+    synonyms: { synonyms: layer.synonyms },
+  });
+  const live = { topic: view.topics, concept: view.concepts, person: view.people, work: view.works } as const;
+  return docs
+    .filter((d) => live[d.kind].has(d.id) && d.count > 0)
+    .map((d) => ({
+      kind: d.kind,
+      id: d.id,
+      labels: { he: d.labels.he, en: d.labels.en, yi: d.labels.yi },
+      synonyms: [...d.synonyms],
+      count: d.count,
+    }));
+}
+
 function quickDoc(d: SearchDoc, lang: Ed, entityText: (shiurId: string) => readonly string[]): QuickDoc {
   const f = (xs: readonly (string | null | undefined)[]) =>
     xs
@@ -885,6 +916,7 @@ function quickDoc(d: SearchDoc, lang: Ed, entityText: (shiurId: string) => reado
   return {
     id: d.id,
     name: d.titleOriginal,
+    lang: d.lang,
     title: f([d.titleOriginal, d.heading, d.subTitle]),
     occasion: f([...d.parsha, ...d.zman]),
     oneLiner: f([d.oneLiner?.[lang]]),
@@ -897,6 +929,7 @@ export function quickIndex(
   docs: readonly SearchDoc[],
   lang: Ed,
   entityText: (shiurId: string) => readonly string[] = () => [],
+  entities: readonly QuickEntity[] = [],
 ): QuickIndexFile {
   const options = {
     fields: [...QUICK_INDEX_FIELDS],
@@ -905,5 +938,5 @@ export function quickIndex(
   };
   const ms = new MiniSearch<QuickDoc>(options);
   ms.addAll([...docs].sort((a, b) => cmp(a.id, b.id)).map((d) => quickDoc(d, lang, entityText)));
-  return { schemaVersion: V, lang, options, index: ms.toJSON() };
+  return { schemaVersion: V, lang, options, index: ms.toJSON(), entities: [...entities] };
 }

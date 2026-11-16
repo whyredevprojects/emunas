@@ -19,6 +19,7 @@ import {
   type LayerSeries,
   type LayerShiurRefs,
   type LayerStory,
+  type LayerSynonyms,
   type LayerThread,
   type LayerTopicDetail,
   type LayerTopicNode,
@@ -41,6 +42,11 @@ export interface LayerInput {
   series: Map<string, LayerSeries>;
   /** Per-shiur refs of the visible shiurim. */
   refs: Map<string, LayerShiurRefs>;
+  /**
+   * synonyms.json: per entity, search-folded terms from its own display fields only (plan §1 rule 1).
+   * Empty when the file is absent. Used for the command bar's query expansion, never displayed.
+   */
+  synonyms: LayerSynonyms[];
 }
 
 function readJson<T>(path: string): T {
@@ -97,5 +103,10 @@ export function readLayerInput(corpusDir: string, shiurIds: Iterable<string>): L
     ),
     series,
     refs,
+    synonyms: arr<unknown>(opt<{ synonyms?: unknown }>(LAYER_FILES.synonyms)?.synonyms).flatMap((x): LayerSynonyms[] => {
+      if (!isObj(x) || typeof x["id"] !== "string" || typeof x["kind"] !== "string") return [];
+      const terms = arr<unknown>(x["terms"]).filter((t): t is string => typeof t === "string" && t.trim() !== "");
+      return [{ kind: x["kind"] as LayerSynonyms["kind"], id: x["id"], terms }];
+    }),
   };
 }

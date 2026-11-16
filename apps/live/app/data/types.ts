@@ -548,6 +548,29 @@ export interface QuickIndexFile {
   options: { fields: string[]; storeFields: string[]; idField: string };
   /** `JSON.stringify(miniSearch)`; opaque to the contract. */
   index: unknown;
+  /**
+   * The command bar's entity suggestions (C3.6): the search-core EntityDocs of the topics, concepts,
+   * people and works that have a Live page (`live-pages.ts`), sorted by kind then id.
+   */
+  entities: QuickEntity[];
+}
+
+/** Entity kinds the command bar suggests (search-core `EntityDocKind`). */
+export type QuickEntityKind = "topic" | "concept" | "person" | "work";
+
+/**
+ * One entity suggestion, from its search-core EntityDoc. `synonyms` are search-folded terms from the
+ * entity's own display fields (layer synonyms.json; never an ASR variant or alias-map key): query
+ * expansion only, never displayed. AI-generated and unreviewed like every corpus entity.
+ */
+export interface QuickEntity {
+  kind: QuickEntityKind;
+  /** Corpus id (the Live route key). */
+  id: string;
+  labels: { he: string | null; en: string | null; yi: string | null };
+  synonyms: string[];
+  /** Visible shiurim. */
+  count: number;
 }
 
 // ---------------------------------------------------------------------------------------------

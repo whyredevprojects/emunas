@@ -16,7 +16,7 @@ contract in `@emunas/corpus/public` (integration-plan §5.2). W3.6 emits files t
 | `/data/works.json`, `/data/work/<key>.json` | `WorksFile`, `WorkFile` (locations, unlocated) | `loadWorks()`, `loadWork(key)` |
 | `/data/entity/{p,c,o}/<key>.json` | `EntityFile` | `loadEntity(kind, key)` |
 | `/data/moments/<lang>-<n>.json` | `MomentShardFile` (1,000 per shard) | `loadMomentShard(lang, n)` |
-| `/data/quick-index.<lang>.json` | `QuickIndexFile` (serialized MiniSearch) | `loadQuickIndex(lang)` |
+| `/data/quick-index.<lang>.json` | `QuickIndexFile` (serialized MiniSearch + the Live-page entities for suggestions) | `loadQuickIndex(lang)` |
 | `/data/topics.json` | `TopicsFile` (tree rows; `topicNodes()`) | `loadTopics()` (memoized) |
 | `/data/topic/<id>.json`, `.moments-<n>.json` | `TopicFile`, `TopicMomentsFile` | `loadTopic(id)`, `loadTopicMoments(id, n)` |
 | `/data/topic-shiurim/<id>.<n>.json` | `TopicShiurimFile` (rows after the topic file's first `TOPIC_FIRST_SHIURIM`) | `loadTopicShiurim(id, n)` |

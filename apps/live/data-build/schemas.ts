@@ -423,6 +423,15 @@ export const QuickIndexSchema = v.strictObject({
   lang: ed,
   options: v.strictObject({ fields: v.array(str), storeFields: v.array(str), idField: str }),
   index: v.unknown(),
+  entities: v.array(
+    v.strictObject({
+      kind: v.picklist(["topic", "concept", "person", "work"]),
+      id: str,
+      labels: v.strictObject({ he: nstr, en: nstr, yi: nstr }),
+      synonyms: v.array(str),
+      count: int,
+    }),
+  ),
 });
 
 // ---------------------------------------------------------------- corpus layer (C1.7)
