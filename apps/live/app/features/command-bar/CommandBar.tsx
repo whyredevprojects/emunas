@@ -2,9 +2,10 @@
  * The command bar (concept-live §4.2, tech-live §4.4): one field in the shell header, reachable from
  * anywhere with `/`.
  *
- * 1. On first focus it lazy-loads the client engine (`quick-index.<ui>.json` + the entity dictionary).
- *    Each keystroke then gives instant suggestions (occasions, sefarim, people, inyanim, series,
- *    "Tanya 12", a year) with no network.
+ * 1. On first focus it lazy-loads the client engine (`quick-index.<ui>.json` with its corpus entities,
+ *    and `facets.json`; never `corpus.json`). Each keystroke then gives instant suggestions (topics,
+ *    glossary entries, people and sefarim with a Live page, by corpus id; occasions, series, a year)
+ *    with no network; "Tanya 12" fetches that series' file once.
  * 2. After 250 ms of idle with ≥ 3 characters it asks `/api/search` for the top moments. If that fails
  *    or the browser is offline, the list shows the engine's shiur-level matches instead, labelled
  *    "Showing shiur-level results".
@@ -25,7 +26,7 @@ import { SuggestionLabel } from "./SuggestionLabel.tsx";
 import { groupByShiur, hitHref, hitTitle, IDLE_MS, MIN_IDLE_CHARS, searchHref, shiurHref, suggestionHref, suggestionId } from "./model.ts";
 import { searchT } from "./strings.ts";
 import { searchStyles as s } from "./styles.ts";
-import { useFullSearch, useQuickSearch } from "./use-search.ts";
+import { useFullSearch, useQuickSearch, useSuggestions } from "./use-search.ts";
 
 type BarOption =
   | { kind: "suggestion"; id: string; href: string; sg: Suggestion }
@@ -33,6 +34,7 @@ type BarOption =
   | { kind: "shiur"; id: string; href: string; hit: ShiurHit }
   | { kind: "all"; id: string; href: string };
 
+const MAX_SUGGESTIONS = 8;
 const MAX_MOMENTS = 5;
 const MAX_SHIURIM = 5;
 
@@ -96,7 +98,7 @@ export function CommandBar({ ui }: { ui: UiLang }): JSX.Element {
   }, []);
 
   const q = value.trim();
-  const suggestions = useMemo(() => (quick.engine && q ? quick.engine.suggest(q) : []), [quick.engine, q]);
+  const suggestions = useSuggestions(quick.engine, q, MAX_SUGGESTIONS);
 
   const options = useMemo<BarOption[]>(() => {
     if (!q) return [];

@@ -123,6 +123,7 @@ export function FallbackList(props: {
     <ol className={s.results} data-testid="search-results" data-source="fallback">
       {hits.map((h) => {
         const row = rows.get(h.shiurId);
+        const oneLiner = row?.oneLiner?.[read] ?? null;
         return (
           <li key={h.shiurId} className={s.group} data-shiur={h.shiurId}>
             <h2 className={s.groupTitle}>
@@ -131,7 +132,7 @@ export function FallbackList(props: {
               </Link>
             </h2>
             <ShiurMeta row={row} ui={ui} />
-            {h.oneLiner ? <Text as="p" className={s.snippet} value={h.oneLiner} lang={read} /> : null}
+            {oneLiner ? <Text as="p" className={s.snippet} value={oneLiner} lang={read} /> : null}
             {h.fields.length > 0 ? (
               <span className={s.matched}>{t("search.matched", { what: fieldsLabel(h.fields, ui) })}</span>
             ) : null}

@@ -147,6 +147,38 @@ describe("command bar", () => {
     await waitFor(() => expect(optionTexts("suggestion")[0]).toContain("תשל\"ו (1975–76)"));
   });
 
+  it("suggests corpus entities by id and links to their Live routes", async () => {
+    setup(apiMock(() => jsonResponse(apiResponse([]))));
+    await renderAt("/en/");
+    await act(async () => bar().focus());
+    await type("hester");
+    await waitFor(() => expect(optionTexts("suggestion")).toHaveLength(1));
+    const option = document.querySelector("[data-kind=suggestion]")!;
+    expect(option.getAttribute("data-href")).toBe("/en/t/hester-panim");
+    expect(option.textContent).toContain("Hester Panim and Suffering");
+    expect(option.textContent).toContain("Topic · 2 shiurim");
+    await type("the besht");
+    await waitFor(() => expect(document.querySelector("[data-kind=suggestion]")?.getAttribute("data-href")).toBe("/en/p/baal-shem-tov"));
+    // An ASR mishearing names nobody.
+    await type("hashem tov");
+    await sleep(20);
+    expect(optionTexts("suggestion")).toEqual([]);
+  });
+
+  it("never loads corpus.json: the bar works from the quick index, facets and series files", async () => {
+    const data = setup(apiMock(() => jsonResponse(apiResponse([]))));
+    setOnline(false);
+    await renderAt("/en/");
+    await act(async () => bar().focus());
+    await type("Tanya 12");
+    await waitFor(() => expect(optionTexts("suggestion")[0]).toContain("perek 12"));
+    await type("teivah");
+    await waitFor(() => expect(optionTexts("shiur")).toEqual(["The Holiness of the Teivah"]));
+    expect(data.requests).toContain("/data/quick-index.en.json");
+    expect(data.requests).toContain("/data/series/tanya-yi.json");
+    expect(data.requests).not.toContain("/data/corpus.json");
+  });
+
   it("'/' focuses the bar, except while typing in another field", async () => {
     setup(apiMock(() => jsonResponse(apiResponse([]))));
     await renderAt("/en/search");

@@ -1,14 +1,25 @@
-/** How a suggestion reads: its name (from the facet dictionary) and a small type line. */
+/**
+ * How a suggestion reads: its name and a small type line. Entity names are the corpus entity's own
+ * display labels from the quick index (never a synonym, which is for matching only).
+ */
 import { formatHebrewYear, type UiLang } from "@emunas/i18n";
 import type { JSX } from "react";
 import { Text } from "../../components/Text.tsx";
-import type { FacetLabel } from "./live-data.ts";
+import type { FacetLabel, QuickEntity } from "./live-data.ts";
 import type { Suggestion } from "./engine.ts";
 import { searchT } from "./strings.ts";
 import { searchStyles as s } from "./styles.ts";
 
 function labelIn(label: FacetLabel, ui: UiLang): string {
   return label[ui] || label.he || label.en;
+}
+
+/**
+ * An entity's name in the interface language: Yiddish falls back to the Hebrew label (works have no
+ * Yiddish title), English to the Hebrew, then the other language.
+ */
+export function entityName(labels: QuickEntity["labels"], ui: UiLang): string {
+  return (ui === "yi" ? (labels.yi ?? labels.he ?? labels.en) : (labels.en ?? labels.he ?? labels.yi)) ?? "";
 }
 
 export function suggestionMeta(sg: Suggestion, ui: UiLang): string {
@@ -18,6 +29,8 @@ export function suggestionMeta(sg: Suggestion, ui: UiLang): string {
       return t("cb.type.series");
     case "year":
       return `${t("cb.type.year")} · ${t("cb.count", { count: sg.count })}`;
+    case "entity":
+      return `${t(`cb.type.${sg.kind}`)} · ${t("cb.count", { count: sg.count })}`;
     default:
       return `${t(`cb.type.${sg.type}`)} · ${t("cb.count", { count: sg.count })}`;
   }
@@ -31,6 +44,8 @@ export function suggestionName(sg: Suggestion, ui: UiLang): string {
       return `${labelIn(sg.label, ui)}, ${t(sg.how === "perek" ? "cb.seriesPerek" : "cb.seriesPart", { n: sg.n })}`;
     case "year":
       return formatHebrewYear(sg.year, ui);
+    case "entity":
+      return entityName(sg.labels, ui);
     default:
       return labelIn(sg.label, ui);
   }
@@ -50,7 +65,7 @@ export function SuggestionLabel({ sg, ui }: { sg: Suggestion; ui: UiLang }): JSX
   } else if (sg.type === "year") {
     name = <span>{formatHebrewYear(sg.year, ui)}</span>;
   } else {
-    name = <Text value={labelIn(sg.label, ui)} shiurLang={ui} />;
+    name = <Text value={suggestionName(sg, ui)} shiurLang={ui} />;
   }
   return (
     <>

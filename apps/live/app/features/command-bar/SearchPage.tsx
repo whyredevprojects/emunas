@@ -6,21 +6,31 @@
  *
  * When the API cannot be reached (offline, error, timeout, bad response) the page shows the client
  * engine's shiur-level matches with a visible "Showing shiur-level results" notice.
+ *
+ * Entity filters (C3.6) are corpus ids in the URL under the Worker's own parameter names
+ * (`&topic=hester-panim&person=baal-shem-tov`). An entity suggestion offers "Search within"; each
+ * active filter is a removable chip labelled from the quick index. The corpus-entity label (concept-live
+ * E.3) appears once on the page whenever an entity is shown.
+ *
+ * This page is the only command-bar code that loads `corpus.json` (shiur titles and summaries for the
+ * result rows), so it is fetched on the search route only (corpus-wave-plan §4).
  */
 import type { Ed } from "@emunas/corpus/public";
-import { notice, type UiLang } from "@emunas/i18n";
+import { corpusLabel, notice, type UiLang } from "@emunas/i18n";
 import { useEffect, useMemo, useRef, useState, type FormEvent, type JSX } from "react";
 import { Link, useSearchParams } from "react-router";
 import { loadCorpus, type CorpusRow } from "./live-data.ts";
 import { tFor, useUi } from "../../i18n/index.ts";
 import { audioAllows, readingLang, useSettings } from "../../shell/settings.ts";
 import { useLoad } from "../today/use-data.ts";
+import { ENTITY_FILTER_KINDS, type EntityFilterKind } from "./api.ts";
+import type { QuickSearch } from "./engine.ts";
 import { ApiGroups, FallbackList } from "./Results.tsx";
-import { SuggestionLabel } from "./SuggestionLabel.tsx";
-import { groupByShiur, IDLE_MS, MIN_IDLE_CHARS, suggestionHref, suggestionId } from "./model.ts";
+import { entityName, SuggestionLabel } from "./SuggestionLabel.tsx";
+import { filtersFromParams, filtersKey, groupByShiur, parseFiltersKey, IDLE_MS, MIN_IDLE_CHARS, suggestionHref, suggestionId, withFilter } from "./model.ts";
 import { searchT } from "./strings.ts";
 import { searchStyles as s } from "./styles.ts";
-import { useFullSearch, useQuickSearch, type FullState } from "./use-search.ts";
+import { useFullSearch, useQuickSearch, useSuggestions, type FullState } from "./use-search.ts";
 
 const PAGE_SIZE = 20;
 
@@ -43,9 +53,12 @@ export function SearchPage(): JSX.Element {
   const read = useSettings((st) => readingLang(st, ui));
   const rows = useCorpusRows();
   const quick = useQuickSearch(ui, true);
+  const fKey = filtersKey(filtersFromParams(params));
+  const filters = useMemo(() => parseFiltersKey(fKey), [fKey]);
   const full = useFullSearch(urlQ || null, {
     ui,
     limit: PAGE_SIZE,
+    filters,
     ...(audioFilter === "both" ? {} : { audio: [audioFilter] }),
   });
 
@@ -80,8 +93,14 @@ export function SearchPage(): JSX.Element {
     setQuery(value, false);
   }
 
+  function setFilter(kind: EntityFilterKind, id: string, on: boolean) {
+    setParams(withFilter(params, kind, id, on), { preventScrollReset: true });
+  }
+
   const typed = value.trim();
-  const suggestions = quick.engine && typed ? quick.engine.suggest(typed, 6) : [];
+  const suggestions = useSuggestions(quick.engine, typed, 6);
+  const active = ENTITY_FILTER_KINDS.flatMap((kind) => (filters[kind] ?? []).map((id) => ({ kind, id })));
+  const showsEntity = active.length > 0 || suggestions.some((sg) => sg.type === "entity");
 
   return (
     <article className={s.page} aria-busy={full.state.phase === "loading"}>
@@ -110,18 +129,77 @@ export function SearchPage(): JSX.Element {
       {suggestions.length > 0 ? (
         <nav aria-label={t("cb.goTo")}>
           <ul className={s.chips} data-testid="search-suggestions">
-            {suggestions.map((sg) => (
-              <li key={suggestionId(sg)}>
-                <Link className={s.chip} to={suggestionHref(ui, sg)}>
-                  <SuggestionLabel sg={sg} ui={ui} />
-                </Link>
-              </li>
-            ))}
+            {suggestions.map((sg) => {
+              const filterable =
+                sg.type === "entity" && !(filters[sg.kind] ?? []).includes(sg.id) ? { kind: sg.kind, id: sg.id, name: entityName(sg.labels, ui) } : null;
+              return (
+                <li key={suggestionId(sg)}>
+                  <Link className={s.chip} to={suggestionHref(ui, sg)}>
+                    <SuggestionLabel sg={sg} ui={ui} />
+                  </Link>
+                  {filterable ? (
+                    <button
+                      className={s.chipAction}
+                      type="button"
+                      data-filter={`${filterable.kind}:${filterable.id}`}
+                      onClick={() => setFilter(filterable.kind, filterable.id, true)}
+                    >
+                      {t("search.filter.add", { name: filterable.name })}
+                    </button>
+                  ) : null}
+                </li>
+              );
+            })}
           </ul>
         </nav>
       ) : null}
+      {active.length > 0 ? (
+        <ActiveFilters active={active} engine={quick.engine} ui={ui} onRemove={(kind, id) => setFilter(kind, id, false)} />
+      ) : null}
+      {showsEntity ? (
+        <p className={s.aiNote} data-testid="entity-label">
+          {corpusLabel("label.grouped", ui)}
+        </p>
+      ) : null}
       <Body state={full.state} more={full.more} ui={ui} read={read} rows={rows} audioFilter={audioFilter} />
     </article>
+  );
+}
+
+function ActiveFilters(props: {
+  active: { kind: EntityFilterKind; id: string }[];
+  engine: QuickSearch | null;
+  ui: UiLang;
+  onRemove: (kind: EntityFilterKind, id: string) => void;
+}): JSX.Element {
+  const { active, engine, ui, onRemove } = props;
+  const t = searchT(ui);
+  return (
+    <div className={s.filters} data-testid="search-filters">
+      <span className={s.muted}>{t("search.filters")}</span>
+      <ul className={s.chips}>
+        {active.map(({ kind, id }) => {
+          const e = engine?.entity(kind, id);
+          // Until the engine has loaded (or for an id without a Live page), the id stands in.
+          const name = e ? entityName(e.labels, ui) : id;
+          return (
+            <li key={`${kind}:${id}`} className={s.chip} data-active-filter={`${kind}:${id}`}>
+              <span>
+                {t(`cb.type.${kind}`)}: {name}
+              </span>
+              <button
+                className={s.chipAction}
+                type="button"
+                aria-label={t("search.filter.remove", { name })}
+                onClick={() => onRemove(kind, id)}
+              >
+                ×
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
   );
 }
 
