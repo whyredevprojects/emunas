@@ -31,11 +31,11 @@ Budget Whisper ASR. Yiddish in Hebrew script with heavy errors; Hebrew/Aramaic q
 
 **F. Write-up.** `flowBreaks` (steps out of the Mashgiach's order, missing links, answer before its question, a list where he builds an argument); `paddingSentences` (restatement, generic praise, filler, moralizing); `contradictsExtraction`.
 
-**G. Rules.** `ruleViolations`: first person as the Mashgiach, direct quotes of his words, second-person preaching, psak, long quotes from memory, biography or dates not in header/transcript, Hebrew script in English text.
+**G. Rules.** `ruleViolations`: first person as the Mashgiach, direct quotes of his words, second-person preaching, psak, long quotes from memory, biography or dates not in header/transcript, Hebrew script in English text. Also count every published sentence, title or heading (either language, extraction or write-up; not `asrNotes`, `heardAs`, `concepts`, `people`, `candidateTopics`) that comments on the audio, recording, transcript or intelligibility ("in a garbled stretch", "hard to follow", "cannot be made out", "the recording breaks off", "heard as", `צעמישט`, `נישט קלאר`), calls the Mashgiach's words garbled, unclear or fragmentary, or gives a non-content section a title or summary with a reason ("Unintelligible opening", "Bad audio") instead of a neutral one ("Opening", "Singing", "Another speaker"). Search both files for `garbl`, `unclear`, `inaudib`, `unintelligib`, `transcri`, `recording`, `צעמישט`, `צומישט`, `קלאר`, `טראנסקריפט`, `אויפנאמע` and judge each hit by meaning ("confusion of the mind" or a story about not hearing is content, not a violation). Name each in `notes`.
 
 ## 4. Verdict
 
-- `severity`: `"ok"` (no hallucination, at most 1 unsupported claim per 10 checked, no rule violation), `"minor"` (some tier-2 issues: unsupported claims, term or source errors, a bad boundary, several bad Yiddish sentences), or `"serious"` (any hallucination shown to the public, a contradiction, a rule violation, or a pattern of errors a reader would notice).
+- `severity`: `"ok"` (no hallucination, at most 1 unsupported claim per 10 checked, no rule violation), `"minor"` (some tier-2 issues: unsupported claims, term or source errors, a bad boundary, several bad Yiddish sentences), or `"serious"` (any hallucination shown to the public, a contradiction, a rule violation (including a comment on the audio in published text), or a pattern of errors a reader would notice).
 - `needsReview`: `true` when severity is `"serious"`.
 - `notes`: the worst concrete issues with locations (`insights[2]`, `writeup.yi[3].paragraphs[1]`) and segment numbers; 2–8 short items separated by "; ".
 

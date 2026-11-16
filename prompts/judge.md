@@ -65,7 +65,7 @@ For extractions: check every entry of `sources[]` if there are ≤ 12, otherwise
 - `missingBlocks`: `main` sections of the extraction with no block in one language.
 
 ### H. Rule violations (both kinds)
-`ruleViolations`: first person as the Mashgiach, direct quotes of his words, second-person preaching, a halachic ruling stated as psak, a passuk/Gemara quoted at length from memory, biographical claims or dates not in the header or transcript, Hebrew script in English text.
+`ruleViolations`: first person as the Mashgiach, direct quotes of his words, second-person preaching, a halachic ruling stated as psak, a passuk/Gemara quoted at length from memory, biographical claims or dates not in the header or transcript, Hebrew script in English text, published text that comments on the audio, recording, transcript or intelligibility, or calls the Mashgiach's words garbled or unclear (notes in `asrNotes` are fine).
 
 ## 4. Deciding
 
