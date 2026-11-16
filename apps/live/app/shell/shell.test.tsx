@@ -60,6 +60,8 @@ afterEach(() => {
   restoreDock();
   document.documentElement.removeAttribute("lang");
   document.documentElement.removeAttribute("dir");
+  document.documentElement.removeAttribute("data-theme");
+  document.cookie = "emunas_theme=; Path=/; Max-Age=0";
 });
 
 async function renderAt(path: string) {
@@ -257,6 +259,40 @@ describe("language settings", () => {
     expect(switchUiHref({ pathname: "/en/s/abc", search: "?t=5", hash: "#x" }, "yi")).toBe("/yi/s/abc?t=5#x");
     expect(switchUiHref({ pathname: "/yi/", search: "", hash: "" }, "en")).toBe("/en/");
     expect(switchUiHref({ pathname: "/yi", search: "", hash: "" }, "en")).toBe("/en/");
+  });
+});
+
+describe("dark colours toggle", () => {
+  it("is off by default, and toggles data-theme and the shared cookie", async () => {
+    await renderAt("/en/explore");
+    const button = screen.getByRole("button", { name: "Dark colours" });
+    expect(button.getAttribute("aria-pressed")).toBe("false");
+    expect(document.documentElement.dataset["theme"]).toBeUndefined();
+
+    await act(async () => {
+      fireEvent.click(button);
+    });
+    expect(button.getAttribute("aria-pressed")).toBe("true");
+    expect(document.documentElement.dataset["theme"]).toBe("dark");
+    expect(document.cookie).toContain("emunas_theme=dark");
+
+    await act(async () => {
+      fireEvent.click(button);
+    });
+    expect(button.getAttribute("aria-pressed")).toBe("false");
+    expect(document.documentElement.dataset["theme"]).toBeUndefined();
+    expect(document.cookie).toContain("emunas_theme=light");
+  });
+
+  it("reflects a theme applied before mount and changes made elsewhere", async () => {
+    document.documentElement.dataset["theme"] = "dark";
+    await renderAt("/yi/");
+    const button = screen.getByRole("button", { name: "טונקעלע פארבן" });
+    expect(button.getAttribute("aria-pressed")).toBe("true");
+    await act(async () => {
+      delete document.documentElement.dataset["theme"];
+    });
+    expect(button.getAttribute("aria-pressed")).toBe("false");
   });
 });
 

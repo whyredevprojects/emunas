@@ -13,6 +13,7 @@ export const SHELL_CLASSES = [
   "dock",
   "dockIdle",
   "header",
+  "headerTools",
   "lang",
   "langButton",
   "langSwitch",
@@ -32,6 +33,7 @@ export const SHELL_CLASSES = [
   "shell",
   "skip",
   "stubNote",
+  "themeButton",
 ] as const;
 
 export type ShellClass = (typeof SHELL_CLASSES)[number];

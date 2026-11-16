@@ -1,7 +1,8 @@
 /**
  * W2.4 acceptance in a real browser: en and yi render mirrored (geometry diff of the shell, plus
  * screenshots attached to the report), axe is clean on every stub in both languages, client navigation
- * between all stubs keeps the very same dock element, and focus moves to the h1.
+ * between all stubs keeps the very same dock element, and focus moves to the h1. Light by default
+ * whatever the OS prefers; the dark-colours toggle stores the shared cookie and survives a reload.
  */
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test, type Page } from "@playwright/test";
@@ -44,6 +45,7 @@ test.describe("mirroring", () => {
     const selectors = [
       "header a[href$='/']",
       "header button",
+      "header button[aria-pressed]",
       "nav",
       "nav li:first-child a",
       "main",
@@ -176,6 +178,63 @@ test.describe("accessibility", () => {
     const result = await new AxeBuilder({ page }).analyze();
     expect(result.violations.map((v) => `${v.id}: ${v.nodes.map((n) => n.html).join(" | ")}`)).toEqual([]);
   });
+});
+
+test.describe("colour theme", () => {
+  test.use({ colorScheme: "dark" });
+
+  test("light by default even when the OS prefers dark; the toggle persists dark across reloads", async ({
+    page,
+    context,
+  }) => {
+    await page.goto("/en/explore");
+    await ready(page);
+    const html = page.locator("html");
+    const toggle = page.getByRole("button", { name: "Dark colours" });
+    const paper = () => page.evaluate(() => getComputedStyle(document.body).backgroundColor);
+    await expect(html).not.toHaveAttribute("data-theme");
+    await expect(toggle).toHaveAttribute("aria-pressed", "false");
+    const light = await paper();
+
+    await toggle.click();
+    await expect(html).toHaveAttribute("data-theme", "dark");
+    await expect(toggle).toHaveAttribute("aria-pressed", "true");
+    expect(await paper()).not.toBe(light);
+    const cookie = (await context.cookies()).find((c) => c.name === "emunas_theme");
+    expect(cookie).toMatchObject({ value: "dark", path: "/", sameSite: "Lax", domain: "127.0.0.1" });
+
+    await page.reload();
+    await ready(page);
+    await expect(html).toHaveAttribute("data-theme", "dark");
+    await expect(toggle).toHaveAttribute("aria-pressed", "true");
+
+    // The cookie is shared: a dark choice reaches every page, also in the other language.
+    await page.goto("/yi/");
+    await ready(page);
+    await expect(html).toHaveAttribute("data-theme", "dark");
+    await page.getByRole("button", { name: "טונקעלע פארבן" }).click();
+    await expect(html).not.toHaveAttribute("data-theme");
+    expect((await context.cookies()).find((c) => c.name === "emunas_theme")?.value).toBe("light");
+    await page.reload();
+    await ready(page);
+    await expect(html).not.toHaveAttribute("data-theme");
+  });
+
+  for (const ui of ["en", "yi"] as const) {
+    test(`axe finds no violations in dark colours (${ui})`, async ({ page, context, baseURL }) => {
+      await context.addCookies([{ name: "emunas_theme", value: "dark", url: baseURL! }]);
+      for (const p of ["", "explore", "search?q=teshuvah", "shelf"]) {
+        await page.goto(`/${ui}/${p}`);
+        await ready(page);
+        await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+        const result = await new AxeBuilder({ page }).analyze();
+        expect(
+          result.violations.map((v) => `${v.id}: ${v.nodes.map((n) => n.target.join(" ")).join(", ")}`),
+          `${ui}/${p} (dark)`,
+        ).toEqual([]);
+      }
+    });
+  }
 });
 
 test.describe("client navigation", () => {
