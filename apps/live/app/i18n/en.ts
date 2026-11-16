@@ -25,6 +25,8 @@ export const en = {
   "nav.newTab": "(opens in a new tab)",
   "nav.search": "Search",
 
+  "theme.dark": "Dark colours",
+
   "lang.button": "Language",
   "lang.dialog": "Language settings",
   "lang.ui": "Interface language",

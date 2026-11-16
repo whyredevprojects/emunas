@@ -11,6 +11,7 @@ import { formatQuiet } from "@emunas/links";
 import { useT } from "../i18n/index.ts";
 import Seo from "../components/seo/Seo.astro";
 import Dedication from "../components/Dedication.astro";
+import ThemeHead from "../components/ThemeHead.astro";
 
 const en = useT("en");
 const yi = useT("yi");
@@ -19,8 +20,8 @@ const yi = useT("yi");
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
+    <ThemeHead />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light dark" />
     <title>{en("site.name")}</title>
     <meta name="description" content={en("site.description")} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />

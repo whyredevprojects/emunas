@@ -25,6 +25,8 @@ export const yi: MessageTable<UiKey> = {
   "nav.newTab": "(עפנט זיך אין א נייעם טאב)",
   "nav.search": "זוכן",
 
+  "theme.dark": "טונקעלע פארבן",
+
   "lang.button": "שפראך",
   "lang.dialog": "שפראך איינשטעלונגען",
   "lang.ui": "שפראך פון דעם זייטל",

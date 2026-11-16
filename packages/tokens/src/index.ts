@@ -25,3 +25,18 @@ export {
   type FontMetrics,
   type FontRole,
 } from "./fonts.ts";
+export {
+  SHARED_COOKIE_DOMAIN,
+  THEME_COOKIE,
+  THEME_INIT_SCRIPT,
+  applyTheme,
+  currentTheme,
+  readThemeCookie,
+  refreshThemeCookie,
+  resyncTheme,
+  saveTheme,
+  themeCookie,
+  type Theme,
+  type ThemeDocument,
+  type ThemeLocation,
+} from "./theme.ts";

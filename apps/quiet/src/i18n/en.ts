@@ -24,6 +24,10 @@ export const en = {
   "edition.other": "אידיש",
   "edition.otherName": "Yiddish edition",
 
+  "theme.label": "Colours",
+  "theme.light": "Light",
+  "theme.dark": "Dark",
+
   "link.newTab": "(opens in a new tab)",
 
   "breadcrumb.label": "You are here",

@@ -159,9 +159,10 @@ async function axe(page: Page): Promise<AxeViolation[]> {
 async function open(path: string, opts: { js?: boolean; dark?: boolean; width?: number } = {}): Promise<Page> {
   const context = await browser.newContext({
     javaScriptEnabled: opts.js ?? true,
-    colorScheme: opts.dark ? "dark" : "light",
     viewport: { width: opts.width ?? 1100, height: 900 },
   });
+  // Dark is opt-in (the shared theme cookie), not the OS setting.
+  if (opts.dark) await context.addCookies([{ name: "emunas_theme", value: "dark", url: origin }]);
   // Audio is preload="none"; nothing should reach the media host, but never let it hang a test.
   await context.route(/^https:\/\/media\./u, (r) => r.abort());
   const page = await context.newPage();

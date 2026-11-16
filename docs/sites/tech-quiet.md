@@ -289,7 +289,7 @@ One Worker, `quiet-site` (`apps/quiet/worker/index.ts`):
 API surface (the whole backend): `GET|HEAD /audio/{recordingId}.mp3[?download=1]`. No database, KV, D1 or Vectorize. Error reports are a `mailto:` link prefilled with the shiur id (concept §5.4.10). If the owner later wants a form, that is a small `POST /report` → Email Workers or D1, out of scope here.
 
 `dist/_headers`:
-- `/*`: `Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self'; font-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'` (Pagefind needs `wasm-unsafe-eval`), `Referrer-Policy: strict-origin-when-cross-origin`, `X-Content-Type-Options: nosniff`, `Permissions-Policy` minimal
+- `/*`: `Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval' 'sha256-…'; style-src 'self'; font-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'` (Pagefind needs `wasm-unsafe-eval`; the hash allows the one inline script, the colour-theme init `THEME_INIT_SCRIPT` from `@emunas/tokens`), `Referrer-Policy: strict-origin-when-cross-origin`, `X-Content-Type-Options: nosniff`, `Permissions-Policy` minimal
 - `/_astro/*`, `/fonts/*`: `Cache-Control: public, max-age=31536000, immutable`
 - HTML: the platform default (revalidating); pages change daily.
 
