@@ -299,8 +299,10 @@ export function createQuickSearch(inputs: QuickInputs): QuickSearch {
   const index = loadShipped(inputs.quick);
   const entities = readEntities(inputs.quick);
   const byKey = new Map(entities.map((e) => [`${e.kind}:${e.id}`, e]));
-  // The clean synonym table: display-field terms only (asrVariants may only be false, D1).
-  const table: SynonymTable = buildSynonymTable(entities, { asrVariants: false });
+  // The clean synonym table: display-field terms only (D1: the default never takes ASR variants).
+  // No option object is passed: the policy key would otherwise land in the client bundle, where
+  // the guard post-pass rightly flags it as a forbidden key.
+  const table: SynonymTable = buildSynonymTable(entities);
   const dict = dictionary(entities, facets);
   const normalize = (q: string) => normalizeQuery(q, table);
 
