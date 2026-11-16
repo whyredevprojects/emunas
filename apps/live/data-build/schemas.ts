@@ -242,6 +242,7 @@ export const TodaySchema = v.strictObject({
           sections: int,
           shiurim: int,
           first: v.array(v.strictObject({ id: str, t: num, end: num, title: L })),
+          skip: v.exactOptional(v.array(str)),
         }),
       ),
     }),

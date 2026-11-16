@@ -216,6 +216,12 @@ export interface FeaturedMix {
   sections: number;
   shiurim: number;
   first: MixItem[];
+  /**
+   * What the topic's moment list holds that may not be featured (D7), so the client can assemble the
+   * rest of the occasion mix from the topic file: shiur ids mostly by another speaker, then section
+   * ids tagged with an excluded topic. Sorted; empty when everything is eligible.
+   */
+  skip: string[];
 }
 
 export interface CorpusEmitResult {
@@ -492,12 +498,19 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
     const keep = (x: Section) => !otherSpeaker(x.shiurId) && !x.topicIds.some((id) => chain(id).some((a) => excluded.has(a)));
     const secs = ordered(perTopic.get(topicId), keep);
     if (secs.length === 0) return null;
+    const skipShiurim = new Set<string>();
+    const skipSections = new Set<string>();
+    for (const x of ordered(perTopic.get(topicId), (x) => !keep(x))) {
+      if (otherSpeaker(x.shiurId)) skipShiurim.add(x.shiurId);
+      else skipSections.add(x.id);
+    }
     return {
       topicId,
       label: view.topicLabel(topicId),
       sections: secs.length,
       shiurim: new Set(secs.map((x) => x.shiurId)).size,
       first: secs.slice(0, CORPUS_LIMITS.mixFirst).map(toMix),
+      skip: [...[...skipShiurim].sort(cmp), ...[...skipSections].sort(cmp)],
     };
   };
   const occasionTopic = new Map<string, string>();

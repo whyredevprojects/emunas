@@ -426,6 +426,31 @@ describe("the occasion mix in today.json (D7)", () => {
     });
     const mix = get<TodayFile>("today.json", emitLiveData(speaker, { generatedAt: GENERATED_AT })).occasions["noach"]!.mix;
     for (const m of mix?.first ?? []) expect(m.id.startsWith(`${firstShiur}~`)).toBe(false);
+    // The client fills the rest of the mix from the topic file and drops what `skip` names.
+    expect(mix?.skip).toEqual([firstShiur]);
+    expect(base.skip).toBeUndefined();
+  });
+
+  it("skip names the sections tagged with an excluded topic, not the whole shiur", () => {
+    const today = get<TodayFile>("today.json", emitLiveData(mapped, { generatedAt: GENERATED_AT })).occasions["noach"]!.mix!;
+    const topicFile = get<TopicFile>(`topic/${topicId}.json`, emitLiveData(mapped, { generatedAt: GENERATED_AT }));
+    // Exclude a topic co-tagged on one of the topic's sections (not the mix topic or an ancestor).
+    const parent = new Map(layer.topics.map((t) => [t.id, t.parentId]));
+    const ancestors = new Set<string>();
+    for (let id: string | null | undefined = topicId; id; id = parent.get(id)) ancestors.add(id);
+    const coTag = (m: { id: string; shiurId: string }): string | undefined =>
+      layer.refs
+        .get(m.shiurId)
+        ?.chapters.find((c) => m.id === `${m.shiurId}~s${c.idx}`)
+        ?.topicIds.find((t) => !ancestors.has(t));
+    const first = topicFile.moments.find((m) => coTag(m) !== undefined)!;
+    expect(first).toBeDefined();
+    const co = coTag(first)!;
+    const out = emitLiveData(mapped, { generatedAt: GENERATED_AT, featured: { maxOtherSpeakerShare: 0.5, excludeTopicIds: [co] } });
+    const mix = get<TodayFile>("today.json", out).occasions["noach"]!.mix!;
+    expect(mix.skip ?? []).toContain(first.id);
+    expect(mix.skip ?? []).not.toContain(first.shiurId);
+    expect(mix.sections).toBeLessThan(today.sections);
   });
 });
 

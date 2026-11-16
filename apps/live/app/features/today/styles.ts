@@ -13,6 +13,8 @@ export const TODAY_CLASSES = [
   "counter",
   "date",
   "header",
+  "mix",
+  "mixPlay",
   "moment",
   "momentKind",
   "momentText",

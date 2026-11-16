@@ -195,6 +195,35 @@
     color: var(--color-on-accent);
   }
 
+  .mix {
+    display: grid;
+    gap: var(--space-2xs);
+    justify-items: start;
+  }
+
+  .mixPlay {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: var(--tap-min);
+    padding-inline: var(--space-m);
+    border: 0;
+    border-radius: var(--radius-pill);
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    font: inherit;
+    font-weight: var(--weight-semibold);
+    cursor: pointer;
+  }
+
+  .mixPlay:hover:not(:disabled) {
+    background: var(--color-accent-hover);
+  }
+
+  .mixPlay:disabled {
+    cursor: progress;
+    opacity: 0.7;
+  }
+
   .muted {
     margin: 0;
     color: var(--color-ink-muted);
