@@ -149,7 +149,7 @@ describe("Yiddish UI copy (Live)", () => {
     }
   });
 
-  it("never remarks on the audio or the transcript, in either language (the guard's term list)", () => {
+  it("never remarks on the transcript or the shiur itself, in either language (the guard's term list)", () => {
     // The transcript tab is designed and OFF (TRANSCRIPT_VIEW); its strings name what it shows.
     const tables = Object.entries(PAIRS).filter(([name]) => name !== "transcript");
     const all = [

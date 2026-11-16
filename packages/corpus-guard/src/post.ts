@@ -5,7 +5,7 @@
  * Any finding fails the deploy. Findings and reports carry file paths, ids, field paths,
  * key names, counts and run lengths, never transcript or shipped text.
  *
- * Remarks on the audio or the transcript (meta-comment.ts) fail in built pages and published data;
+ * Remarks on the transcript or the shiur itself (meta-comment.ts) fail in built pages and published data;
  * those findings carry the listed term and a short folded excerpt of the published text around it.
  *
  * Corpus-layer text (`.corpus/layer/` stories, threads, topics, concepts, series) is compared with
@@ -47,7 +47,7 @@ export type Finding =
   | { kind: "verbatim"; source: string; itemId?: string; shiurId?: string; field?: string; runLength: number }
   /** An alias-bearing string that is an ASR variant or not a display field of its entity (`entity` = `kind:id`). */
   | { kind: "alias"; source: string; rule: AliasRule; entity?: string; field: string; count: number }
-  /** Published text remarking on the audio or the transcript (`term` as listed in meta-comment.ts). */
+  /** Published text remarking on the transcript or the shiur itself (`term` as listed in meta-comment.ts). */
   | { kind: "meta-comment"; source: string; term: string; field?: string; context: string; count: number }
   | { kind: "unreadable"; source: string; reason: string };
 
@@ -82,7 +82,7 @@ export interface PostCounts {
    * `labels`, and `data-person` names on pages, checked against the corpus entities' display names.
    */
   namesChecked: number;
-  /** Published strings (data values, page text) checked for remarks on the audio or the transcript. */
+  /** Published strings (data values, page text) checked for remarks on the transcript or the shiur itself. */
   metaCommentUnits: number;
   /** Hits of a listed term passed by `site-policy/meta-comment-allow.json`. */
   metaCommentAllowed: number;
@@ -196,7 +196,7 @@ export class LeakScanner {
     this.metaCommentAllow = opts.metaCommentAllow ?? [];
   }
 
-  // ---- remarks on the audio or the transcript ------------------------------------
+  // ---- remarks on the transcript or the shiur itself ------------------------------------
 
   /** Check published texts of one source; one finding per term (first field and context, total count). */
   private checkMetaComments(texts: Iterable<{ text: string; field?: string }>, source: string): void {

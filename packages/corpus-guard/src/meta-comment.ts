@@ -1,18 +1,17 @@
 /**
- * Remarks on the audio or the transcript (owner rule, CLAUDE.md "Transcripts are never published"):
- * published text says only what the Mashgiach teaches. A line such as "in a badly garbled stretch"
- * or "די אויפנאמע איז שטארק צעמישט" reads as if he spoke unclearly, and a mention of the transcript
- * or ASR points at material that is never published. The post-pass reports every such phrase in a
- * built page (its visible text, attributes and inline payloads) or a published data file (every
- * string value).
+ * Remarks on the transcript or on the shiur itself (owner rule, CLAUDE.md "Transcripts are never
+ * published"): published text never mentions the transcript or ASR, which point at material that is
+ * never published, and never judges the shiur or its words as garbled or unclear ("the shiur is X").
+ * Remarks on the sound or the recording are allowed ("poor sound quality", "the recording cuts
+ * off"). The post-pass reports every listed phrase in a built page (its visible text and prose
+ * attributes; ids and URLs are skipped) or a published data file (every string value but ids).
  *
- * This file is the one place the term list lives. Terms are curated, not generated: each is a word
- * or phrase that describes the recording or its transcription. Matching folds both sides with
- * `foldBasic` (@emunas/normalize: lowercase, no niqqud or diacritics, quotes dropped, punctuation to
- * spaces) and compares whole words; a word ending in `*` may run on (`garbl*` covers garble, garbled,
- * garbling). Words that are ordinary in the Mashgiach's teaching (Yiddish "נישט קלאר", "not clear",
- * and "צעמישט", "confused": "the shofar confuses the Satan") are listed only in the phrases that tie
- * them to the recording ("הערט מען נישט קלאר", "א צעמישטע אויפנאמע"), so the teaching passes.
+ * This file is the one place the term list lives. Terms are curated, not generated. Matching folds
+ * both sides with `foldBasic` (@emunas/normalize: lowercase, no niqqud or diacritics, quotes dropped,
+ * punctuation to spaces) and compares whole words; a word ending in `*` may run on (`garbl*` covers
+ * garble, garbled, garbling). Words that are ordinary in the Mashgiach's teaching (Yiddish "נישט
+ * קלאר", "not clear", and "צעמישט", "confused": "the shofar confuses the Satan") are listed only in
+ * the phrases that tie them to the shiur's own words ("א צעמישטער חלק"), so the teaching passes.
  *
  * A legitimate use passes only through the reviewed allow-list, `site-policy/meta-comment-allow.json`,
  * keyed by file (a glob) and phrase (the published words around the hit). Prefer rewording the text.
@@ -28,64 +27,20 @@ export const META_COMMENT_TERMS: readonly string[] = [
   "untranscrib*",
   "asr",
   "speech recognition",
-  // English: the audio itself
+  // English: the shiur or its words judged garbled or unclear
   "garbl*",
-  "inaudib*",
   "unintelligib*",
-  "unclear audio",
-  "audio is unclear",
-  "audio was unclear",
-  "unusable audio",
-  "unrecoverable audio",
-  "audio quality",
-  "sound quality",
-  "poor audio",
-  "poorly recorded",
-  "badly recorded",
-  "unclear in the recording",
-  "unclear on the recording",
-  "not clear in the recording",
-  "not clear on the recording",
-  "hard to hear",
-  "difficult to hear",
-  "hard to make out",
-  "cannot be made out",
-  "cant be made out",
+  "shiur is unclear",
+  "shiur is not clear",
+  "shiur is incoherent",
   "hard to follow in the recording",
-  "recording breaks off",
-  "recording cuts off",
-  "recording cuts out",
-  "recording is cut",
-  "recording was cut",
-  "recording ends mid",
-  "recording begins mid",
-  "recording opens mid",
-  "gap in the recording",
-  "gaps in the recording",
-  "lost in the recording",
   // Yiddish: the transcript
   "טראנסקריפ*",
   "טראנסקריבי*",
-  // Yiddish: "not clear" on the recording (נישט קלאר alone is ordinary teaching)
-  "הערט מען נישט קלאר",
-  "מהערט נישט קלאר",
-  "נישט קלאר צו הערן",
-  "נישט קלאר אויפגענומען",
-  "ניט קלאר אויפגענומען",
-  "נישט קלאר אויפגעכאפט",
-  "נישט קלאר אין דער אויפנאמע",
-  "נישט קלאר אויף דער אויפנאמע",
-  "נישט קלאר אין דער רעקארדירונג",
-  "נישט קלאר אויף דער רעקארדירונג",
+  // Yiddish: the shiur or its words judged unclear (נישט קלאר alone is ordinary teaching)
   "נישט קלאר אויפן שיעור",
-  "אויפנאמע איז נישט קלאר",
-  "רעקארדירונג איז נישט קלאר",
-  // Yiddish: "garbled" (צעמישט alone is ordinary teaching: confused)
-  "צעמישט* אויפנאמע",
-  "צעמישט* רעקארדירונג",
-  "צעמישט* אויף דער אויפנאמע",
-  "אויפנאמע איז צעמישט*",
-  "אויפנאמע איז שטארק צעמישט*",
+  "שיעור איז נישט קלאר",
+  // Yiddish: the shiur or its words judged garbled (צעמישט alone is ordinary teaching: confused)
   "צעמישט* חלק",
   "צעמישט* שטיק",
   "צעמישט* אנהייב",
@@ -94,28 +49,14 @@ export const META_COMMENT_TERMS: readonly string[] = [
   "חלק איז צעמישט*",
   "חלק איז שטארק צעמישט*",
   "שטיק איז שטארק צעמישט*",
+  "שיעור איז צעמישט*",
   "שיעור איז שטארק צעמישט*",
+  "ווערטער זענען צעמישט*",
   "זענען שטארק צעמישט*",
   "מערסטנס צעמישט*",
   "צומישט* חלק",
   "צו צומישט* צו פארשטיין",
   "צו צומישט* כדי צו פארשטיין",
-  // Yiddish: poorly recorded, hard to hear, the recording stops
-  "שוואך אויפגענומען*",
-  "שלעכט אויפגענומען*",
-  "מהערט כמעט נישט",
-  "הערט מען כמעט נישט",
-  "שווער צו הערן",
-  "שלעכט צו הערן",
-  "מקען נישט אויסהערן",
-  "קען מען נישט אויסהערן",
-  "אויפנאמע ברעכט*",
-  "רעקארדירונג ברעכט*",
-  "אויפנאמע הערט זיך אויף",
-  "רעקארדירונג הערט זיך אויף",
-  "אויפנאמע ווערט איבערגעריסן",
-  "רעקארדירונג ווערט איבערגעריסן",
-  "פארלוירן אין דער אויפנאמע",
 ];
 
 /** Hebrew final letters as their medial forms, so a run-on stem (`אויפגענומען*`) matches `אויפגענומענעם`. */

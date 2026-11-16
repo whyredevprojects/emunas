@@ -1,6 +1,6 @@
 /**
- * Remarks on the audio or the transcript (meta-comment.ts): the term list matches whole folded
- * words in English and Yiddish, the post-pass fails on a planted remark in a built page and in a
+ * Remarks on the transcript or on the shiur itself (meta-comment.ts): the term list matches whole
+ * folded words in English and Yiddish, remarks on the sound or the recording pass, the post-pass fails on a planted remark in a built page and in a
  * published data file, and the reviewed allow-list passes exactly the file and term it names.
  */
 import { writeFileSync } from "node:fs";
@@ -22,21 +22,21 @@ const terms = (text: string) => findMetaComments(text).map((h) => h.term);
 describe("findMetaComments", () => {
   it("finds the listed remarks in English and Yiddish, folded", () => {
     expect(terms("In a badly GARBLED stretch, the Mashgiach speaks of joy.")).toEqual(["garbl*"]);
-    expect(terms("Part of it is inaudible; the rest is unintelligible.")).toEqual(["inaudib*", "unintelligib*"]);
-    expect(terms("The name is not clear on the recording.")).toEqual(["not clear on the recording"]);
-    expect(terms("The recording breaks off here, and the transcript ends.")).toEqual(["recording breaks off", "transcri*"]);
+    expect(terms("The rest is unintelligible.")).toEqual(["unintelligib*"]);
+    expect(terms("Here the shiur is unclear, and the transcript ends.")).toEqual(["shiur is unclear", "transcri*"]);
     expect(terms("A long untranscribed stretch")).toEqual(["untranscrib*"]);
-    expect(terms("What the ASR caught is hard to hear.")).toEqual(["asr", "hard to hear"]);
-    expect(terms("The recording is cut before the story ends.")).toEqual(["recording is cut"]);
-    expect(terms("די אויפנאמע איז שטארק צעמישט.")).toEqual(["אויפנאמע איז שטארק צעמישט*"]);
+    expect(terms("What the ASR caught")).toEqual(["asr"]);
     expect(terms("אין א שטארק צעמישטן אנהייב רעדט דער משגיח")).toEqual(["צעמישט* אנהייב"]);
-    expect(terms("זיין נאמען הערט מען נישט קלאר.")).toEqual(["הערט מען נישט קלאר"]);
-    expect(terms("די מעשה איז נישט קלאר אין דער אויפנאמע")).toEqual(["נישט קלאר אין דער אויפנאמע"]);
+    expect(terms("דער חלק איז שטארק צעמישט.")).toEqual(["חלק איז שטארק צעמישט*"]);
+    expect(terms("דער שיעור איז נישט קלאר")).toEqual(["שיעור איז נישט קלאר"]);
     expect(terms("דער טראנסקריפט האט נישט אויפגעכאפט.")).toEqual(["טראנסקריפ*"]);
-    expect(terms("א שטיק וואס איז שווער צו הערן")).toEqual(["שווער צו הערן"]);
-    expect(terms("ווען מ'קען נישט אויסהערן")).toEqual(["מקען נישט אויסהערן"]);
-    expect(terms("אין א שוואך אויפגענומענעם סוף זאגט דער משגיח")).toEqual(["שוואך אויפגענומען*"]);
-    expect(terms("נאך א לאנגן שטיק וואס מ'הערט כמעט נישט")).toEqual(["מהערט כמעט נישט"]);
+  });
+
+  it("lets remarks on the sound or the recording pass", () => {
+    expect(terms("Bris (Nitzavim Elul), imperfect sound quality")).toEqual([]);
+    expect(terms("The closing is poorly recorded, and the recording cuts off.")).toEqual([]);
+    expect(terms("Part of it is inaudible and hard to hear; unclear audio.")).toEqual([]);
+    expect(terms("אין א שוואך אויפגענומענעם סוף; די אויפנאמע ברעכט זיך, מ'הערט כמעט נישט")).toEqual([]);
   });
 
   it("matches whole words only and leaves ordinary words alone", () => {
@@ -64,7 +64,7 @@ describe("findMetaComments", () => {
 
   it("keeps one curated list with no duplicates, every entry matching itself", () => {
     expect(new Set(META_COMMENT_TERMS).size).toBe(META_COMMENT_TERMS.length);
-    for (const t of ["garbl*", "inaudib*", "unintelligib*", "unclear audio", "recording breaks off", "recording cuts off", "recording is cut", "transcri*", "asr", "not clear on the recording", "hard to hear"]) {
+    for (const t of ["garbl*", "unintelligib*", "shiur is unclear", "transcri*", "asr", "speech recognition"]) {
       expect(META_COMMENT_TERMS, t).toContain(t);
     }
     for (const t of META_COMMENT_TERMS) expect(terms(t.replaceAll("*", "")), t).toContain(t);
@@ -73,7 +73,7 @@ describe("findMetaComments", () => {
   });
 });
 
-describe("post-pass: remarks on the audio or the transcript", () => {
+describe("post-pass: remarks on the transcript or the shiur", () => {
   function dist(f: Fixture): string {
     const d = join(f.root, "dist");
     writeFile(join(d, "en", "index.html"), `<html><head><meta name="description" content="Shiurim of the Mashgiach"></head><body><p>Opening</p><p>Interlude</p></body></html>`);
@@ -95,26 +95,26 @@ describe("post-pass: remarks on the audio or the transcript", () => {
     expect(r.counts.metaCommentUnits).toBeGreaterThan(20);
   });
 
-  it("leaves recording ids and media URLs in a page's attributes out, but not its text", () => {
+  it("leaves ids and URLs in a page's attributes out, but not its text", () => {
     fx = makeFixture();
     const d = dist(fx);
-    const url = "https://media.example.invalid/Simchos/03%20Bris%20(Nitzavim%20Elul)%20imperfect%20sound%20quality.mp3";
-    writeFile(join(d, "en", "rec", "index.html"), `<html><body><li data-rec="y-bris-03-nitzavim-elul-imperfect-sound-quality"><audio src="${url}"></audio><a href="${url}#t=0">0:00</a></li></body></html>`);
+    const url = "https://media.example.invalid/Simchos/03%20Bris%20garbled%20transcript.mp3";
+    writeFile(join(d, "en", "rec", "index.html"), `<html><body><li data-rec="y-bris-03-garbled-transcript"><audio src="${url}"></audio><a href="${url}#t=0">0:00</a></li></body></html>`);
     expect(scan(fx, d).findings).toEqual([]);
-    writeFile(join(d, "en", "rec", "index.html"), `<html><body><li data-rec="y-bris-03"><p>Bris, imperfect sound quality</p></li></body></html>`);
-    expect(scan(fx, d).findings.map((f) => f.kind === "meta-comment" && f.term)).toEqual(["sound quality"]);
+    writeFile(join(d, "en", "rec", "index.html"), `<html><body><li data-rec="y-bris-03"><p>Bris, a garbled stretch</p></li></body></html>`);
+    expect(scan(fx, d).findings.map((f) => f.kind === "meta-comment" && f.term)).toEqual(["garbl*"]);
   });
 
   it("fails on a remark planted in a built page (text and attributes)", () => {
     fx = makeFixture();
     const d = dist(fx);
-    writeFile(join(d, "en", "shiur", SHIUR, "index.html"), `<html><body><ol><li><span class="chapter-title">Opening</span><span class="chapter-kind"> (Unclear audio)</span></li></ol></body></html>`);
-    writeFile(join(d, "yi", "about", "index.html"), `<html><body><p aria-label="די רעקארדירונג">טיילן וואו מ'הערט נישט קלאר</p></body></html>`);
+    writeFile(join(d, "en", "shiur", SHIUR, "index.html"), `<html><body><ol><li><span class="chapter-title">Opening</span><span class="chapter-kind"> (garbled)</span></li></ol></body></html>`);
+    writeFile(join(d, "yi", "about", "index.html"), `<html><body><p aria-label="דער חלק איז צעמישט">טיילן וואו מ'הערט נישט קלאר</p></body></html>`);
     writeFile(join(d, "yi", "teaching", "index.html"), `<html><body><p>די שיעורים זענען נישט קלאר, און דער שופר צעמישט דעם שטן.</p></body></html>`);
     const r = scan(fx, d);
     expect(r.findings).toEqual([
-      { kind: "meta-comment", source: `dist/en/shiur/${SHIUR}/index.html`, term: "unclear audio", context: "opening [unclear audio]", count: 1 },
-      { kind: "meta-comment", source: "dist/yi/about/index.html", term: "מהערט נישט קלאר", context: "טיילן וואו [מהערט נישט קלאר] די רעקארדירונג", count: 1 },
+      { kind: "meta-comment", source: `dist/en/shiur/${SHIUR}/index.html`, term: "garbl*", context: "opening [garbled]", count: 1 },
+      { kind: "meta-comment", source: "dist/yi/about/index.html", term: "חלק איז צעמישט*", context: "טיילן וואו מהערט נישט קלאר דער [חלק איז צעמישט]", count: 1 },
     ]);
   });
 
@@ -138,20 +138,20 @@ describe("post-pass: remarks on the audio or the transcript", () => {
   it("an allow-list entry passes exactly the hits inside its phrase, in the files its glob names", () => {
     fx = makeFixture();
     const d = dist(fx);
-    writeFile(join(d, "en", "shiur", "a", "index.html"), `<html><body><p>Last comes the neshama, the inaudible instrument.</p><p>Part is inaudible.</p></body></html>`);
-    writeFile(join(d, "data", "shiur", "a.json"), JSON.stringify({ summary: "the neshama, the INAUDIBLE instrument" }));
-    writeFile(join(d, "search", "docs.ndjson"), `${JSON.stringify({ text: "the neshama, the inaudible instrument" })}
+    writeFile(join(d, "en", "shiur", "a", "index.html"), `<html><body><p>Last comes the neshama, the unintelligible instrument.</p><p>Part is unintelligible.</p></body></html>`);
+    writeFile(join(d, "data", "shiur", "a.json"), JSON.stringify({ summary: "the neshama, the UNINTELLIGIBLE instrument" }));
+    writeFile(join(d, "search", "docs.ndjson"), `${JSON.stringify({ text: "the neshama, the unintelligible instrument" })}
 `);
-    writeFile(join(d, "en", "other", "index.html"), `<html><body><p>the neshama, the inaudible instrument</p></body></html>`);
+    writeFile(join(d, "en", "other", "index.html"), `<html><body><p>the neshama, the unintelligible instrument</p></body></html>`);
     writeFileSync(join(fx.site, "meta-comment-allow.json"), JSON.stringify([
-      { file: "dist/en/shiur/**", phrase: "the inaudible instrument", reason: "the neshama is the instrument without sound", reviewedBy: "t", reviewedAt: "2026-11-16" },
-      { file: "dist/data/shiur/*.json", phrase: "the inaudible instrument", reason: "same", reviewedBy: "t", reviewedAt: "2026-11-16" },
-      { file: "dist/search/docs.ndjson", phrase: "the inaudible instrument", reason: "same", reviewedBy: "t", reviewedAt: "2026-11-16" },
+      { file: "dist/en/shiur/**", phrase: "the unintelligible instrument", reason: "the neshama is the instrument no one understands", reviewedBy: "t", reviewedAt: "2026-11-16" },
+      { file: "dist/data/shiur/*.json", phrase: "the unintelligible instrument", reason: "same", reviewedBy: "t", reviewedAt: "2026-11-16" },
+      { file: "dist/search/docs.ndjson", phrase: "the unintelligible instrument", reason: "same", reviewedBy: "t", reviewedAt: "2026-11-16" },
     ]));
     const r = scan(fx, d);
     expect(r.findings.map((f) => (f.kind === "meta-comment" ? `${f.source} ${f.term} ${f.context}` : f.kind)).sort()).toEqual([
-      "dist/en/other/index.html inaudib* the neshama the [inaudible] instrument",
-      "dist/en/shiur/a/index.html inaudib* last comes the neshama the inaudible instrument part is [inaudible]",
+      "dist/en/other/index.html unintelligib* the neshama the [unintelligible] instrument",
+      "dist/en/shiur/a/index.html unintelligib* …ast comes the neshama the unintelligible instrument part is [unintelligible]",
     ]);
     expect(r.counts.metaCommentAllowed).toBe(3);
   });
@@ -178,10 +178,10 @@ describe("post-pass: remarks on the audio or the transcript", () => {
   it("CLI exits non-zero and names the file, term and context", () => {
     fx = makeFixture();
     const d = dist(fx);
-    writeFile(join(d, "en", "x", "index.html"), `<html><body><p>The recording cuts off as he returns to the parsha.</p></body></html>`);
+    writeFile(join(d, "en", "x", "index.html"), `<html><body><p>The shiur is unclear as he returns to the parsha.</p></body></html>`);
     const lines: string[] = [];
     const code = main(["post", "--scan", d, "--no-verbatim", "--no-aliases", "--site-policy", fx.site], (l) => lines.push(l));
     expect(code).toBe(1);
-    expect(lines.some((l) => l.includes('FAIL remark on the audio or transcript "recording cuts off"') && l.includes("en/x/index.html") && l.includes("the [recording cuts off] as he returns"))).toBe(true);
+    expect(lines.some((l) => l.includes('FAIL remark on the transcript or the shiur "shiur is unclear"') && l.includes("en/x/index.html") && l.includes("the [shiur is unclear] as he returns"))).toBe(true);
   });
 });

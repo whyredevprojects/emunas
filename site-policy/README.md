@@ -45,7 +45,7 @@ file carry ids only, never transcript text.
 ## meta-comment-allow.json
 
 An array of `{ "file": "<post-pass source path>", "term": "<term as listed>", "reason": "…", "reviewedBy": "…", "reviewedAt": "YYYY-MM-DD" }`:
-reviewed exceptions to the guard's check for remarks on the audio or the transcript
+reviewed exceptions to the guard's check for remarks on the transcript or the shiur itself
 (`packages/corpus-guard/src/meta-comment.ts`). `file` is the path as the guard report prints it
 (for NDJSON, without `:line`). A term not on the list or an incomplete entry is fatal. Ships empty:
 reword the text instead wherever possible.
