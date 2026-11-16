@@ -2,7 +2,7 @@
 status: DRAFT
 approvedBy: null
 approvedAt: null
-note: "W5.3 draft for the owner. Not published. The first and last paragraphs must come from the owner or the Rav's family and talmidim. The Yiddish needs a named reviewer."
+note: "W5.3 draft for the owner. Not published. The first and last paragraphs must come from the owner or the Mashgiach's family and talmidim. The Yiddish needs a named reviewer."
 ---
 
 [[OWNER: דעם משגיח'ס נאמען מיט אלע זיינע טיטלען, אזוי ווי די משפחה און די תלמידים שרייבן עס.]]

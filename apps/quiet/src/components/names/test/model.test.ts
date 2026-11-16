@@ -28,7 +28,7 @@ describe("names index (שמות)", () => {
     for (const ed of ["yi", "en"] as const) expect(personLines(ed).map((l) => l.id).sort()).toEqual(want);
   });
 
-  it("leaves out type-other people below 3 shiurim and excluded people (the Rav's family)", () => {
+  it("leaves out type-other people below 3 shiurim and excluded people (the Mashgiach's family)", () => {
     const ids = new Set(personLines("en").map((l) => l.id));
     const other = d.layer.people.filter((p) => p.group === "other");
     expect(other.some((p) => p.count < 3)).toBe(true);

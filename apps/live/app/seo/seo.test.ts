@@ -133,7 +133,7 @@ describe("page text", () => {
     const full = text(`/en/s/${SHIUR_FULL}`)!;
     expect(full.title).toBe("ולאדם לא מצא עזר כנגדו");
     expect(full.titleLang).toBe("yi");
-    expect(full.description).toBe("The Rav explains the bond of Hashem and Knesses Yisrael.");
+    expect(full.description).toBe("The Mashgiach explains the bond of Hashem and Knesses Yisrael.");
     expect(text(`/yi/s/${SHIUR_FULL}`)!.description).toBe("דער משגיח ערקלערט.");
     const cat = text(`/en/s/${SHIUR_CATALOG}`)!;
     expect(cat.title).toBe("Emunah — The Everlasting Essence");

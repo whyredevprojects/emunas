@@ -56,11 +56,12 @@ describe("corpus vocabulary: every key exists in en and yi", () => {
     });
   }
 
-  it("names the Rav as דער משגיח in Yiddish wherever English says the Rav", () => {
+  it("names the Mashgiach as דער משגיח in Yiddish wherever English says the Mashgiach", () => {
     for (const key of KEYS) {
       const en = forms(CORPUS_LABELS.en[key]).join(" ");
       const yi = forms(CORPUS_LABELS.yi[key]).join(" ");
-      if (/\bthe Rav\b/.test(en)) expect(yi, key).toContain("דער משגיח");
+      if (/\bthe Mashgiach\b/.test(en)) expect(yi, key).toContain("דער משגיח");
+      expect(en, key).not.toMatch(/\bthe R[ao]v\b/i);
       expect(yi, key).not.toMatch(/\bRav\b|רב'ס|דעם רב\b/);
     }
   });
@@ -91,7 +92,7 @@ describe("corpus labels", () => {
     expect(corpusEntryLabel("live", false, "en")).toBe("Grouped and named by AI across all the shiurim. Not reviewed by a person.");
     expect(corpusEntryLabel("live", true, "en")).toBe("Reviewed");
     expect(corpusEntryLabel("live", true, "yi")).toBe("איבערגעקוקט");
-    expect(corpusLabel("thread.heading", "en")).toBe("A teaching the Rav returns to");
+    expect(corpusLabel("thread.heading", "en")).toBe("A teaching the Mashgiach returns to");
   });
 
   it("counts pick plural forms and fill placeholders", () => {

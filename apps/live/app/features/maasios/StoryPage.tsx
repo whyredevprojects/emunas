@@ -2,7 +2,7 @@
  * `/:ui/maasios/:storyId` (concept-live-corpus C.4): a story told at least twice, from
  * `story/<id>.json`. The merged retelling is shown once at the top, under the AI label. Below it the
  * telling switcher: every telling with year, language, shiur title and the title of the section it
- * sits in (what the Rav used the story for each time), a button that plays that telling, and the
+ * sits in (what the Mashgiach used the story for each time), a button that plays that telling, and the
  * telling's own retelling, collapsed and loaded from its shiur file only when opened.
  *
  * Language is a property of each telling (F.1); the language filter only decides which telling the

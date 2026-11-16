@@ -659,7 +659,7 @@ Same ids as the wave lists in §7 and the structured plan. Paths are the only fi
 
 - **Owns:** `apps/quiet/src/content/**`, `apps/live/app/content/**`, `packages/i18n/src/vocab/**`
 - **Depends on:** W4.6, W4.5
-- **Brief (inputs, deliverables):** Human-supplied About texts (the Rav and the collection, how the notes were made, how to report an error, what is excluded) in en and yi; final wording of the standing AI label; review of Yiddish UI strings by a Yiddish reader. Placeholders stay clearly marked until text arrives.
+- **Brief (inputs, deliverables):** Human-supplied About texts (the Mashgiach and the collection, how the notes were made, how to report an error, what is excluded) in en and yi; final wording of the standing AI label; review of Yiddish UI strings by a Yiddish reader. Placeholders stay clearly marked until text arrives.
 - **Acceptance:** No generated text in About; Yiddish copy signed off by a named reviewer; label identical in both sites.
 
 ### Wave 6

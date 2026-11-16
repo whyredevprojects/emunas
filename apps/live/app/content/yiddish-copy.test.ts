@@ -16,7 +16,10 @@ import { seriesEn, seriesYi } from "../features/series/strings.ts";
 import { shelfEn, shelfYi } from "../features/shelf/strings.ts";
 import { todayEn, todayYi } from "../features/today/strings.ts";
 import { topicsEn, topicsYi } from "../features/topics/strings.ts";
+import { maasiosEn } from "../features/maasios/strings.ts";
+import { threadsEn } from "../features/threads/strings.ts";
 import { transcriptEn, transcriptYi } from "../features/transcript/strings.ts";
+import { AI_LABEL, corpusLabelsEn } from "@emunas/i18n";
 import { UI_TABLES } from "../i18n/index.ts";
 import { seoStrings, type SeoStrings } from "../seo/strings.ts";
 
@@ -30,6 +33,9 @@ function seoSamples(s: SeoStrings): Record<string, string> {
     work: s.work("{title}", "{count}"),
     person: s.person("{name}", "{count}"),
     concept: s.concept("{term}", "{count}"),
+    topic: s.topic("{title}", "{count}"),
+    story: s.story("{title}", 2),
+    thread: s.thread("{count}"),
   };
 }
 
@@ -113,8 +119,22 @@ describe("Yiddish UI copy (Live)", () => {
     });
   }
 
-  it("never speaks of the Rav as דער רב (he is דער משגיח, or by name)", () => {
+  it("never speaks of the Mashgiach as דער רב (he is דער משגיח, or by name)", () => {
     expect(ALL.filter(([, s]) => /דער רב(?![\u05D0-\u05EA])|דעם רב(?![\u05D0-\u05EA])/u.test(s))).toEqual([]);
+  });
+
+  it("calls him the Mashgiach in English, never the Rav or the Rov", () => {
+    const en = [
+      ...Object.entries(PAIRS).flatMap(([name, pair]) => strings(pair.en, name)),
+      ...strings(seoSamples(seoStrings.en), "seo"),
+      ...strings(threadsEn, "threads"),
+      ...strings(maasiosEn, "maasios"),
+      ...strings(corpusLabelsEn, "corpus"),
+      ...strings(AI_LABEL.en, "aiLabel"),
+    ];
+    expect(en.length).toBeGreaterThan(200);
+    expect(en.filter(([, s]) => /\bthe R[ao]v\b(?! of\b)|\bR[ao]v['’]s\b/i.test(s))).toEqual([]);
+    expect(en.some(([, s]) => s.includes("the Mashgiach"))).toBe(true);
   });
 
   it("has the same keys and {placeholders} as English (wording changes only)", () => {

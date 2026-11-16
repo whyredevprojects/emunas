@@ -377,7 +377,7 @@ describe("CatalogTable", () => {
     years: [5743],
     duration: 2700,
     playable: true,
-    oneLiner: "The Rav explains the lights.",
+    oneLiner: "The Mashgiach explains the lights.",
   };
 
   it("renders a captioned table with scoped headers, the title as a bdi run, and the notes cell", async () => {
@@ -388,7 +388,7 @@ describe("CatalogTable", () => {
     expect(html).toMatch(/<th scope="col"[^>]*>No\.<\/th>/);
     expect(html).toMatch(/<th scope="row"/);
     expect(html).toContain('<a href="/en/shiur/yi-x-01/"><bdi lang="yi" dir="rtl">זמן התחלת התנוצצות</bdi></a>');
-    expect(html).toContain("The Rav explains the lights.");
+    expect(html).toContain("The Mashgiach explains the lights.");
     expect(html).toContain('data-year="5743"');
     expect(html).not.toContain("no-recording");
   });

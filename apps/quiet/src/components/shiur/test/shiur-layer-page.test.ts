@@ -218,7 +218,7 @@ describe("the shiur page on the mini corpus layer", () => {
     }
   });
 
-  it("names the Rav's family nowhere and links a type-other person below the line threshold nowhere", async () => {
+  it("names the Mashgiach's family nowhere and links a type-other person below the line threshold nowhere", async () => {
     const family = corpus.layer.person("eliyahu-shalom-wolfson")!;
     expect(family.excluded).toBe("family");
     const shiur = corpus.shiur("en-miscellaneous-en-01");

@@ -234,7 +234,7 @@ describe("mentionedView", () => {
       ["divrei-chaim", "The Divrei Chaim", "/en/people/divrei-chaim/"],
       ["unlisted-other", "unlisted-other-en", null],
     ]);
-    // the Rav's family is not printed at all
+    // the Mashgiach's family is not printed at all
     expect(v.people.some((p) => p.id === "ravs-father")).toBe(false);
     expect(v.concepts.map((c) => [c.id, c.name, c.href])).toEqual([
       ["ahavas-yisrael", "אהבת ישראל", "/en/erachim/ahavas-yisrael/"],

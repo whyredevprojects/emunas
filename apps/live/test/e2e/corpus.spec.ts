@@ -174,7 +174,7 @@ test.describe("@data threads and stories", () => {
     const main = page.locator("main");
     await expect(main.locator(`article[data-thread="${f.id}"]`)).toHaveCount(1);
 
-    // Heading ("A teaching the Rav returns to"), the cluster label, the AI label once, the summary.
+    // Heading ("A teaching the Mashgiach returns to"), the cluster label, the AI label once, the summary.
     await expect(page.getByTestId("thread-heading")).toBeVisible();
     await expect(main.locator("h1")).toHaveCount(1);
     await expect(main.locator("h1")).toContainText(en(f.label));

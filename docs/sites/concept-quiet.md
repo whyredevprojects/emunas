@@ -4,7 +4,7 @@ Status: concept only. High-level design, no implementation. Nothing here touches
 
 ## 1. The idea in one paragraph
 
-The site is the 2012 Pocket Guide grown into a full library catalog. It is organised the way a sefer is: a title page, a table of contents in the order the guide's editors chose, one page per shiur, and a set of **mafteichos** (indexes) at the back: by parsha, by zman, by year, by sefer cited, by story, by person, by inyan. Every page is a pre-rendered document with a permanent address. You can read it, print it, link to it and listen from it with JavaScript switched off. The AI-generated material is presented as what it is, a study aid prepared from the recordings ("notes on the shiur"), set apart from the two things that carry authority: the Rav's voice in the audio and the human-written catalog entry.
+The site is the 2012 Pocket Guide grown into a full library catalog. It is organised the way a sefer is: a title page, a table of contents in the order the guide's editors chose, one page per shiur, and a set of **mafteichos** (indexes) at the back: by parsha, by zman, by year, by sefer cited, by story, by person, by inyan. Every page is a pre-rendered document with a permanent address. You can read it, print it, link to it and listen from it with JavaScript switched off. The AI-generated material is presented as what it is, a study aid prepared from the recordings ("notes on the shiur"), set apart from the two things that carry authority: the Mashgiach's voice in the audio and the human-written catalog entry.
 
 What the site is not: an app, a feed, a recommendation engine, a place with accounts, or a transcript reader.
 
@@ -27,12 +27,12 @@ Design decisions below lean on these facts, so they are stated once here.
 | Concepts: 3,044 distinct Hebrew terms (רבונו של עולם 218, עקבתא דמשיחא 85, הסתר פנים 47, …) | `Extraction.concepts[].he` | Usable as a plain alphabetical index once trivial terms are filtered |
 | Segment start/end times are in `meta.json` (`recordings[].starts[]`, `ends[]`), with no text | `data/derived/shiurim/<id>/meta.json` | **Every timestamp on the site can be computed without opening a transcript file** |
 | Several fields contain raw ASR text: `SourceMention.heardAs`, `concepts[].heardAs`, `people[].heardAs`, `asrNotes`, and the whole of `input.txt` | `extraction.json`, shiur directory | These are transcript in disguise and are never published (§9) |
-| The Yiddish text calls him "דער משגיח", the English "the Rav" | `summary.*.yi` / `.en` | The two editions keep their own voice; neither is a translation of the other (plan rule 8) |
+| The Yiddish text calls him "דער משגיח", the English "the Mashgiach" | `summary.*.yi` / `.en` | The two editions keep their own voice; neither is a translation of the other (plan rule 8) |
 
 ## 3. Design principles
 
 1. **The catalog is the spine.** Navigation follows fields a person wrote in 2012 (`sectionTitle`, `n`, `page`, `parsha`, `zman`, `perek`, `shana`). AI-derived indexes sit behind it, like the mafteichos at the back of a sefer.
-2. **Three voices, never blended.** (a) The Rav: audio only. (b) The catalog: titles exactly as printed, in their original mixed Hebrew/Yiddish/English. (c) Notes: everything generated, always in reported speech, always under a "notes" label. Typography, placement and labels keep the three apart on every page.
+2. **Three voices, never blended.** (a) The Mashgiach: audio only. (b) The catalog: titles exactly as printed, in their original mixed Hebrew/Yiddish/English. (c) Notes: everything generated, always in reported speech, always under a "notes" label. Typography, placement and labels keep the three apart on every page.
 3. **A page is a document.** Each has one job, one URL, a printed-page layout, and reads top to bottom. No tabs that hide content, no infinite lists, no modal windows.
 4. **Works with nothing.** No JavaScript, a filtered connection, a slow phone, a printer. Scripts only add convenience on top of a page that already works.
 5. **Nothing pretends to be finished.** Pending shiurim, unresolved sources, guessed catalog rows and unreviewed AI output are each stated plainly and briefly, once, where they apply.
@@ -60,7 +60,7 @@ Two parallel editions with identical structure: `/yi/…` (Yiddish interface, ri
 │     └── ענינים: concepts and inyanim
 │
 ├── Search ......................... one page, optional script, catalog + notes only
-└── About ......................... the Rav and the collection, how the notes were made, how to report an error
+└── About ......................... the Mashgiach and the collection, how the notes were made, how to report an error
 ```
 
 The global navigation is one line and never changes: **Contents · Calendar · Indexes · Search · About**, plus the edition switch. Every page carries a breadcrumb that mirrors the catalog ("Contents › זמנים › חנוכה › no. 12"), and a shiur page always has previous/next links in catalog order.
@@ -143,7 +143,7 @@ This is the page the whole site exists for. It is laid out like a page of a sefe
 - `writeup.<lang>` in full, in section order, with `heading` per block. This is the stand-in for the transcript the site does not show, and it gets the best typography on the site: a single measured column, generous leading, proper Hebrew and Yiddish type.
 - In the margin beside each paragraph, its time (from the first of `paragraph.evidence.segs` via `meta.starts`), as a link like the ones in the outline. This is the one moving part: with script, the paragraph currently being heard gets a quiet margin mark. No auto-scroll, no highlight sweeping the page.
 - Source citations inside a paragraph (`sourceIdx`) appear as small superscript letters pointing to the list at the foot, as footnotes do in a printed sefer.
-- The write-up is in reported speech by construction ("The Rav explains…", "דער משגיח זאגט…"); the design keeps it that way by never using quotation styling, pull quotes or drop-quotes anywhere on the site.
+- The write-up is in reported speech by construction ("The Mashgiach explains…", "דער משגיח זאגט…"); the design keeps it that way by never using quotation styling, pull quotes or drop-quotes anywhere on the site.
 
 **6. Sources (מראי מקומות).**
 - `sources[]`, grouped by kind of work (Tanach, Chazal, Rishonim, sifrei Chassidus and so on) and listed with `ref`, each linking to the place in the shiur where it comes up and to its page in the sources index.
@@ -160,7 +160,7 @@ This is the page the whole site exists for. It is laid out like a page of a sefe
 - **Questions and answers** (`questions[]`, up to 6): the kushya, then the teretz, set as a pair.
 - **Stories** (`stories[]`): `title` and `retelling`, with the people named.
 - **Insights** (`insights[]`, 3–7).
-- **Takeaways** (`takeaways[]`, up to 5), headed in a way that makes clear these are things the Rav said, not the site's advice.
+- **Takeaways** (`takeaways[]`, up to 5), headed in a way that makes clear these are things the Mashgiach said, not the site's advice.
 
 On a long page this is a lot. The order above is deliberate: the page front-loads what helps someone decide to listen (abstract, outline), then gives the full reading text, then the reference lists. A short jump list under the header names these parts.
 
@@ -194,7 +194,7 @@ Data notes: `zman` values need normalising at build time ("ל"ג בעומר" and
 
 A single page with a row per year from תשכ"ד to תש"פ and its count, each leading to a year page that lists that year's shiurim in calendar order (parsha and zman sequence, since there are no dates beyond the year). A final entry, "Year not recorded", holds the 386 shiurim without one and explains that the sets and simchos were not dated in the guide.
 
-This index is modest on purpose. It lets someone hear the Rav in the 1970s beside the 2000s, and that is all it claims.
+This index is modest on purpose. It lets someone hear the Mashgiach in the 1970s beside the 2000s, and that is all it claims.
 
 ### 5.7 Sources index (מראי מקומות)
 
@@ -212,7 +212,7 @@ Gaps: `work` names are model-normalised, not checked against a canonical list (t
 About a thousand stories so far (`stories[]`), each with a bilingual `title`, a `retelling` and `people[]`.
 
 - The index is a list of story titles grouped by the main person they are about (the Ba'al Shem Tov, the Chasam Sofer, the Satmar Rav …), each line pointing to its shiur and time.
-- There is no page per story. The retelling lives on the shiur page; the index points there. This keeps the story inside the shiur where the Rav used it, and avoids presenting an AI retelling as a standalone text.
+- There is no page per story. The retelling lives on the shiur page; the index points there. This keeps the story inside the shiur where the Mashgiach used it, and avoids presenting an AI retelling as a standalone text.
 
 Gap: the same story told in several shiurim appears several times; the plan's deduplication pass (P9) has not run. The index lists each telling. Sorting by person puts likely repeats next to each other, which is good enough and honest.
 
@@ -230,7 +230,7 @@ Not at launch: a topic hierarchy. `candidateTopics` is 3,873 free phrases with n
 
 ### 5.11 About
 
-Three short sections: the Rav and the collection (written by a person, to be supplied); how the site is arranged; and how the notes were made, stated without hedging or salesmanship: they were prepared by an AI model from automatic transcriptions of the recordings, they have not been reviewed by talmidim, they may contain errors of hearing and of understanding, they do not quote the Rav, and the recording is always the authority. Then how to report an error, and what is not included (Purim seudos and the other out-of-scope items in `outOfScopeReason`).
+Three short sections: the Mashgiach and the collection (written by a person, to be supplied); how the site is arranged; and how the notes were made, stated without hedging or salesmanship: they were prepared by an AI model from automatic transcriptions of the recordings, they have not been reviewed by talmidim, they may contain errors of hearing and of understanding, they do not quote the Mashgiach, and the recording is always the authority. Then how to report an error, and what is not included (Purim seudos and the other out-of-scope items in `outOfScopeReason`).
 
 ## 6. Listening and discovery flows
 
@@ -269,7 +269,7 @@ Spelling is the practical problem: Yiddish and transliterated Hebrew have many s
 - **Mixed text is the norm, not the exception.** Catalog titles mix scripts within a line ("המקוה והתיבה הם כמו embassy של שמים על הארץ"; "The קדושה of צדיקים and the חשיבות of Learning תורה"), and the English notes are full of transliterated terms. Every catalog title is treated as its own run with its own direction, set by its dominant script, so punctuation and numbers do not jump. Times, daf and pasuk numbers are isolated the same way.
 - **Type.** A serious Hebrew text face for Hebrew and Yiddish (with proper Yiddish digraphs and nikud support for the occasional pointed word) and a matching book face for English. Hebrew type is set somewhat larger than the Latin beside it so the two read at equal weight.
 - **Numbers and dates.** Years shown as Hebrew years with the civil pair in parentheses. Catalog numbers as printed. Durations and times in ordinary digits in both editions.
-- **Voice.** Yiddish notes say "דער משגיח", English notes say "the Rav"; the interface copy follows the same usage in each edition. Interface wording is heimish and plain in Yiddish (סדר השיעור, מראי מקומות, מעשיות, מפתחות) and plain in English; no marketing language in either.
+- **Voice.** Yiddish notes say "דער משגיח", English notes say "the Mashgiach"; the interface copy follows the same usage in each edition. Interface wording is heimish and plain in Yiddish (סדר השיעור, מראי מקומות, מעשיות, מפתחות) and plain in English; no marketing language in either.
 - `Localized.he` is optional in the types and absent in practice; there is no Hebrew edition.
 
 ## 9. Keeping the transcript out, and leaving the door open
@@ -299,7 +299,7 @@ The future door: each recording gets a site-owned eligibility setting, default "
 
 A printed catalog from a careful publisher. Paper-coloured background, near-black text, one restrained accent used for links and the "now playing" mark. Rules and small caps (or their Hebrew equivalent, spaced lettering) for labels. Tables with hairlines. No icons where a word will do, no photographs in the browsing pages, no cards with shadows, no badges, no counters that animate. The only motion on the site is the audio progress and the margin mark that follows it.
 
-Respect shows in restraint: the Rav's name with its proper titles and זצ"ל on the title page and About, shem Hashem written as the data writes it, and no "content" vocabulary (no "episodes", "tracks", "posts").
+Respect shows in restraint: the Mashgiach's name with its proper titles and זצ"ל on the title page and About, shem Hashem written as the data writes it, and no "content" vocabulary (no "episodes", "tracks", "posts").
 
 Performance is part of the tone. Pages are small, there are no third-party scripts, fonts or embeds, and nothing loads from outside the site except the audio and outbound source links. This also matters practically for readers on filtered connections, where external resources are often blocked.
 
@@ -314,7 +314,7 @@ Performance is part of the tone. Pages are small, there are no third-party scrip
 | 5 | Link resolved sources out to Sefaria? | Yes for `resolved` only. Alternative: no outbound links at all, references as plain text. |
 | 6 | Display `inferred` sources? | Yes, worded as "apparently". Alternative: fold them into "place not identified". |
 | 7 | Uncatalogued parsha/zman guesses in the calendar? | Left out until confirmed. |
-| 8 | Who writes the About text and supplies the Rav's proper titles? | A person from the community; not generated. |
+| 8 | Who writes the About text and supplies the Mashgiach's proper titles? | A person from the community; not generated. |
 
 ## 13. Gaps in the data, summarised
 

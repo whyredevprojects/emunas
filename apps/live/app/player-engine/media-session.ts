@@ -7,7 +7,7 @@ import type { DescribeContext, MediaSessionEnv, MetadataInit, PlayerChapter, Pla
 
 export const RAV_NAME = { en: 'Harav Moshe Wolfson zt"l', yi: 'הרב משה וואלפסאן זצ"ל' } as const;
 
-/** Default metadata: title = chapter title in the reading language, artist = the Rav, album = catalog title. */
+/** Default metadata: title = chapter title in the reading language, artist = the Mashgiach, album = catalog title. */
 export function defaultDescribe({ shiur, chapter, readingLang }: DescribeContext): MediaMetadataInit {
   const album = shiur.catalog.heading ?? shiur.catalog.titleOriginal;
   const chapterTitle = chapter ? chapter.title[readingLang] || chapter.title[readingLang === "en" ? "yi" : "en"] : "";

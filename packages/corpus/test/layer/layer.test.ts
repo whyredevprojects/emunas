@@ -164,7 +164,7 @@ describe("corpus layer on the mini corpus", () => {
     expect(people.people.filter((p) => p.description === null).length).toBeGreaterThan(0);
   });
 
-  it("excludes the Rav's family by rule and keeps `other` people with one shiur out of every index", () => {
+  it("excludes the Mashgiach's family by rule and keeps `other` people with one shiur out of every index", () => {
     const fam = people.people.find((p) => p.id === S.familyPersonId)!;
     expect(fam.excluded).toBe("family");
     expect(fam.listed).toEqual({ quiet: false, live: false });

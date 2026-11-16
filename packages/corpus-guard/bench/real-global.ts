@@ -14,6 +14,6 @@ console.log(
   `global index: ${idx.size} shingles, ${((performance.now() - t0) / 1000).toFixed(1)} s, rss ${Math.round(process.memoryUsage().rss / 1e6)} MB`,
 );
 const t1 = performance.now();
-const probe = "the rav explains this idea at length with care and warmth for everyone listening and so on for a while";
+const probe = "the mashgiach explains this idea at length with care and warmth for everyone listening and so on for a while";
 for (let i = 0; i < 2000; i++) m.scan(probe, null);
 console.log(`2000 unattributed scans: ${((performance.now() - t1) / 1000).toFixed(2)} s`);

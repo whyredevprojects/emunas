@@ -1,5 +1,5 @@
 /**
- * `/:ui/th/:threadId` (concept-live-corpus C.1, corpus-wave-plan C3.3): "A teaching the Rav returns
+ * `/:ui/th/:threadId` (concept-live-corpus C.1, corpus-wave-plan C3.3): "A teaching the Mashgiach returns
  * to", from `thread/<id>.json` (clusters with a page: three or more visible shiurim by default).
  *
  * At the top the heading, the cluster label and the AI label once, then the generated summary. Under

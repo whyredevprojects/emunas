@@ -4,7 +4,7 @@
  * wording is here. `yi` is typed against the English keys, so a missing key fails `tsc`.
  *
  * Wording status: unreviewed (proposed; the Yiddish needs a native reader). Yiddish speaks of the
- * Rav as "דער משגיח".
+ * Mashgiach as "דער משגיח".
  */
 import { createT, type MessageTable, type TFunction } from "@emunas/i18n";
 import type { Ed } from "../../lib/edition.ts";

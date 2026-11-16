@@ -29,13 +29,13 @@ One wording for both sites, in `packages/i18n/src/vocab/ai-label.ts` (`AI_LABEL`
 
 | | Before | After (proposed) |
 |---|---|---|
-| Quiet, en | Notes prepared by AI from the recording; not reviewed. The recording is the source. | Notes prepared by AI from the recording; not reviewed, and not the Rav's words. The recording is the source. |
-| Live, en | Summary written by AI from the recording, not the Rav's words. | (same as above) |
+| Quiet, en | Notes prepared by AI from the recording; not reviewed. The recording is the source. | Notes prepared by AI from the recording; not reviewed, and not the Mashgiach's words. The recording is the source. |
+| Live, en | Summary written by AI from the recording, not the Mashgiach's words. | (same as above) |
 | Quiet, yi | די נאטיצן זענען צוגעגרייט דורך AI פון דער רעקארדירונג, און זענען נישט איבערגעקוקט. דער מקור איז די רעקארדירונג. | נאטיצן צוגעגרייט דורך AI פון דער רעקארדירונג; נישט איבערגעקוקט, און נישט דעם משגיח׳ס ווערטער. דער מקור איז די רעקארדירונג. |
 | Live, yi | א קיצור געשריבן דורך AI פון דער רעקארדירונג, נישט דעם משגיח׳ס ווערטער. | (same as above) |
 
 Why: the brief requires the label to be identical in both sites. The merged wording keeps all four
-statements the two concepts asked for: made by AI, from the recording, not reviewed, not the Rav's
+statements the two concepts asked for: made by AI, from the recording, not reviewed, not the Mashgiach's
 words, and the recording is the source. It is longer than Live's old short label; see open question
 Q1.
 
@@ -52,13 +52,13 @@ What the drafts say:
 
 - **rav**: only a neutral paragraph about the collection (2012 Pocket Guide plus recordings it does
   not list, Yiddish and English, parshiyos, zmanim, series such as Tanya and Emunah, simchos). The
-  Rav's name with his titles, a few lines about him, and who recorded and kept the shiurim are
-  `[[OWNER: …]]` marks. Nothing about the Rav was written by the copy pass.
+  Mashgiach's name with his titles, a few lines about him, and who recorded and kept the shiurim are
+  `[[OWNER: …]]` marks. Nothing about the Mashgiach was written by the copy pass.
 - **arrangement**: the contents in Pocket Guide order, one page per shiur (catalog entry, recording,
   then the notes under a rule; every time plays the recording), calendar, indexes, search, two
   editions with the same shiurim.
 - **notes**: automatic speech recognition, then an AI model wrote the notes; no person reviewed
-  them; two kinds of error (mishearing, misunderstanding); not the Rav's words, reported speech, no
+  them; two kinds of error (mishearing, misunderstanding); not the Mashgiach's words, reported speech, no
   quotes; the recording is right where they differ; the machine text is not published and not
   searched; uncertain items left out; "apparently" / "place not identified"; shiurim without notes
   still have catalog entry and audio. This is the "AI notes caveat" and "audio is the source of
@@ -80,7 +80,7 @@ should get one, it can link to Quiet's About (`@emunas/links`); see Q9.
 
 | Thing | Yiddish now | Was also | Notes |
 |---|---|---|---|
-| the Rav | דער משגיח | | unchanged; Live tables name him only as הרב משה וואלפסאן זצ"ל |
+| the Mashgiach | דער משגיח | | unchanged; Live tables name him only as הרב משה וואלפסאן זצ"ל |
 | AI notes | נאטיצן | הערות (Live feedback) | |
 | the reader's own private notes (Live shelf) | הערה / הערות | נאטיץ / נאטיצן | so they are not confused with the AI notes |
 | write-up | אויסשרייב; heading "דער שיעור, אויסגעשריבן" | באשרייבונג, טעקסט | |
@@ -121,7 +121,7 @@ and on any change of keys or `{placeholders}` against English.
 - **Q1. Label length in Live.** The one label is now about 110 characters and appears on every text
   surface in Live (cards, search results, chapters). If that is too heavy, the owner can approve a
   shorter wording for both sites, for example "AI notes from the recording, not reviewed and not the
-  Rav's words." The label must stay identical in both sites.
+  Mashgiach's words." The label must stay identical in both sites.
 - **Q2. רעקארדירונג or הקלטה?** Kept רעקארדירונג (already used everywhere). Many Chassidish readers
   say and write הקלטה / הקלטות. A one-word swap across all tables if preferred.
 - **Q3. Insight and question names.** Chose געדאנק (neutral; חידוש claims novelty the AI cannot
@@ -138,7 +138,7 @@ and on any change of keys or `{placeholders}` against English.
   collection's public name in Yiddish (and whether Quiet's "די שיעורים פון דעם משגיח" should match)
   is the owner's call.
 - **Q9. About in Live.** Live has no About page. Should its label or menu link to Quiet's About?
-- **Q10. About drafts.** Everything marked `[[OWNER: …]]`: the Rav's titles and biography, who
+- **Q10. About drafts.** Everything marked `[[OWNER: …]]`: the Mashgiach's titles and biography, who
   recorded and kept the shiurim and with whose permission they are published, what happens to a
   report, and whether to give a reason for excluding the Purim seudos.
 - **Q11. Smaller calls a native reader should glance at:** "דער לוח לויט" (`cal.views`, an aria

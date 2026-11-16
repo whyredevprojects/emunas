@@ -62,7 +62,7 @@ describe("label tables", () => {
     expect(sectionKindLabel("story", "en")).toBe("Story");
     expect(audioLanguageLabel("yi", "en")).toBe("Shiur in Yiddish");
     expect(notice("aiNotes", "en")).toBe(
-      "Notes prepared by AI from the recording; not reviewed, and not the Rav's words. The recording is the source.",
+      "Notes prepared by AI from the recording; not reviewed, and not the Mashgiach's words. The recording is the source.",
     );
     expect(notice("notesPending", "en")).toBe("Notes for this shiur have not been prepared yet.");
     expect(RESOLUTION_LABELS.inferred).toEqual({ en: "apparently", yi: "לכאורה" });
@@ -75,10 +75,10 @@ describe("label tables", () => {
       expect(notice("aiNotes", lang)).toBe(AI_LABEL[lang]);
     }
     expect(NOTICES.aiNotesShort).toBe(NOTICES.aiNotes);
-    // It names the source, the lack of review and that it is not the Rav's words.
+    // It names the source, the lack of review and that it is not the Mashgiach's words.
     expect(AI_LABEL.en).toMatch(/AI/);
     expect(AI_LABEL.en).toMatch(/not reviewed/);
-    expect(AI_LABEL.en).toMatch(/not the Rav's words/);
+    expect(AI_LABEL.en).toMatch(/not the Mashgiach's words/);
     expect(AI_LABEL.en).toMatch(/recording is the source/);
     expect(AI_LABEL.yi).toContain("נישט איבערגעקוקט");
     expect(AI_LABEL.yi).toContain("דער מקור איז די רעקארדירונג");

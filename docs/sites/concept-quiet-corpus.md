@@ -16,7 +16,7 @@ One principle is added to the six in §3:
 |---|---|---|
 | `topics.json` | 17 level-1, 128 level-2, 62 level-3. Level 1 follows the Pocket Guide sections plus thematic gates (אמונה 539 shiurim, גלות וגאולה 553, עבודת השם 636). Smallest leaf 8 (פדיון הבן), largest level-2 ספר בראשית 445. Level 1–2 have a 2–3 sentence description; level 3 has none. Every topic but one (`technology`) has a Hebrew label. | Good enough to be the main new index. Descriptions read well (השגחה פרטית mentions the "Seven Wonders of History" and shidduchim, which matches its hub shiurim). |
 | `shiur-tags/` | 8 topics per shiur in most cases, salience 0.2–1.0, plus up to 3 topics per section. For עקבתא דמשיחא: 201 shiurim, of which 80 at salience ≥ 0.6, 83 lower, 38 tagged only on a section. | Salience is the difference between a principal reference and a passing one. It is shown as typography, never as a number. |
-| `concepts.json` | 759, none with fewer than 2 shiurim, 164 with fewer than 5. Definitions are 1–2 sentences "as the Rav uses the term" (תיבה: "a holy island built by exact measurements; like the sukkah and the mikveh it is a piece of heaven on earth"). Some are stitched usages, not definitions (`olam-hazeh`). רבונו של עולם is in 428 shiurim. | A glossary, not just an index. Needs a "passim" rule and a way to hide weak definitions. |
+| `concepts.json` | 759, none with fewer than 2 shiurim, 164 with fewer than 5. Definitions are 1–2 sentences "as the Mashgiach uses the term" (תיבה: "a holy island built by exact measurements; like the sukkah and the mikveh it is a piece of heaven on earth"). Some are stitched usages, not definitions (`olam-hazeh`). רבונו של עולם is in 428 shiurim. | A glossary, not just an index. Needs a "passim" rule and a way to hide weak definitions. |
 | `people.json` | 847: תנ"ך 271, chassidic rebbes 166, acharonim 136, other 129, chazal 109, rishonim 36. 265 appear in one shiur, 126 in two; 24 appear in 100 or more. | Replaces the site's own list. The typed grouping is exactly how a sefer's index of names is arranged. |
 | `works.json` | 545; 157 cited in one shiur; 303 with a Sefaria title; 261 with an author link. No category or order field. | Replaces the site's alias table. The site keeps its ordering table. |
 | `stories.json` | 1,107 stories from 1,752 tellings. 795 told once, 312 told twice or more, one told 14 times. Merged retellings of 140–770 characters, in reported speech. 262 have no person; 61 names unresolved. | Makes a per-story entry worth having, but only for stories told more than once. |
@@ -52,12 +52,12 @@ One principle is added to the six in §3:
 > **גלות וגאולה** · 553
 > עקבתא דמשיחא 201 — עבודת הדור האחרון 134, סימני עקבתא דמשיחא 87 · ימות המשיח 181 · נסיונות הדור 87 · …
 
-The Hebrew label is the headword in both editions; the English edition puts "Hashgacha Pratis" beside it and sorts by that. The whole tree prints on three or four sheets, and it is the best single picture of what the Rav spoke about. It deserves a place on the title page as one line: "ענינים: 207".
+The Hebrew label is the headword in both editions; the English edition puts "Hashgacha Pratis" beside it and sorts by that. The whole tree prints on three or four sheets, and it is the best single picture of what the Mashgiach spoke about. It deserves a place on the title page as one line: "ענינים: 207".
 
 **A topic page** (example: השגחה פרטית, under אמונה):
 
 1. Headword, its place in the tree ("אמונה › השגחה פרטית"), and "ראה גם" links to parent, children and siblings.
-2. The description, as notes: "The Rav teaches that Hashem watches every Jew with hashgacha pratis, hidden everywhere behind nature, rulers and events, and that the Megillah trains a Jew to find Him peeking through the cracks…"
+2. The description, as notes: "The Mashgiach teaches that Hashem watches every Jew with hashgacha pratis, hidden everywhere behind nature, rulers and events, and that the Megillah trains a Jew to find Him peeking through the cracks…"
 3. **Begin here** (`hubShiurIds`, at most ten): "ועזוז נוראותיך" (תפילה), "The Finger of Hashem in World History; Introducing The Seven Wonders" (Emunah, English), "The Lesson of the מגילה: Find 'ה Peeking Through the Cracks" (Purim תשמ"ט), חיי שרה תש"ס on shidduchim. Catalog titles, citation line, one-liner.
 4. **The shiurim, in three grades**, which is how a careful index distinguishes a main treatment from a mention:
    - *The shiur is about this* (salience ≥ 0.6; 40 here). Full rows, set in the heavier weight a printed index gives a principal reference.
@@ -75,7 +75,7 @@ The Hebrew label is the headword in both editions; the English edition puts "Has
 
 In the original, "ענינים" meant concept terms because no taxonomy existed. Now the name ענינים goes to the topic tree, where it belongs, and the concepts become **ערכים**, a glossary.
 
-- **One long page, aleph to tav**, each entry: Hebrew headword, the English or Yiddish gloss from `label`, the definition, and a count. It reads and prints as a kuntres of ערכים. Example entry: **אור הגנוז** "The light of the first day, hidden away for tzaddikim; the Rav, following the Zohar and Baal Shem Tov, says it is hidden in the Torah and shines on Shabbos, Chanukah and in the 'eighth'." · 39 shiurim.
+- **One long page, aleph to tav**, each entry: Hebrew headword, the English or Yiddish gloss from `label`, the definition, and a count. It reads and prints as a kuntres of ערכים. Example entry: **אור הגנוז** "The light of the first day, hidden away for tzaddikim; the Mashgiach, following the Zohar and Baal Shem Tov, says it is hidden in the Torah and shines on Shabbos, Chanukah and in the 'eighth'." · 39 shiurim.
 - **An entry page** for terms in five or more shiurim (595 of 759): definition, "well illustrated in" (`exampleRefs`, each a section title with its time), then the shiurim. Terms in 2–4 shiurim have no page; their shiurim are linked directly in the glossary line.
 - **Passim.** A term found in more than about one shiur in seven (רבונו של עולם 428, עקבתא דמשיחא 148) is vocabulary. Its entry gives the definition and the word "throughout" in place of a list. עקבתא דמשיחא is also a topic, and the topic page is where its graded list lives.
 - **On the shiur page**, the "mentioned in this shiur" line links each term to its entry. In print, the shiur's kuntres ends with a short ערכים box giving the definitions of that shiur's terms (later cut). For the English reader of a Yiddish shiur this is the most useful thing the glossary does.
@@ -94,7 +94,7 @@ Unchanged in shape; better in substance. Headword is `titleHe`; the page names t
 
 ### C4.5 מעשיות — stories
 
-The original said: no page per story, the retelling lives in the shiur. That stays true for the 795 stories told once. For the 312 told more than once, the entry itself is the news, because it shows something no single shiur page can: **how often and where the Rav came back to it.**
+The original said: no page per story, the retelling lives in the shiur. That stays true for the 795 stories told once. For the 312 told more than once, the entry itself is the news, because it shows something no single shiur page can: **how often and where the Mashgiach came back to it.**
 
 A story page (example: "דער בית אהרן און דעם פריץ'ס צוקער-שליטן", the poretz who had sugar spread on a field in Tammuz to go sledding):
 
@@ -111,11 +111,11 @@ Teaching clusters are the most original thing in the data and the easiest to ove
 
 - **On the shiur page**, an insight that belongs to a cluster gets one line under it. For the two-shiur clusters (518 of 768) that is the entire feature: "עיין: Tanya (English) no. 19", with the time. Example: the Yiddish Tanya shiur's point that permitted pleasure leaves a stain that needs washing points to the English Tanya shiur that uses the same mashal with a mattress. They are two separate shiurim that share a teaching, and the line says only that.
 - **A teaching page** exists for clusters spanning three or more shiurim (250). Example: "לחם איז דריי מאל הוי"ה, מצה דריי מאל דעם שם במילוי", twelve places from ניסן תשנ"ב to תשע"א, eight English and four Yiddish. The page gives the label, the summary ("…the tellings draw different lessons from the 45: that it is 'Mah'… that it is 'adam'… or that it is 'geulah'"), and the places in order of year, each linking to the minute. Another: at the Akeidah Avraham was lowered into the state of the last generation, eight places, תשמ"א–תשס"ט.
-- **Where they are listed:** on topic pages (C4.1 part 5) and on a plain index, "חזרות / Teachings the Rav returned to", grouped by the 17 gates. There is no ranking by size beyond putting the larger ones first within a gate.
+- **Where they are listed:** on topic pages (C4.1 part 5) and on a plain index, "חזרות / Teachings the Mashgiach returned to", grouped by the 17 gates. There is no ranking by size beyond putting the larger ones first within a gate.
 
 ### C4.7 Series pages
 
-The reserved introduction slot (§5.3) is filled. The catalog name stays the page title ("תניא"); the generated title becomes a subtitle inside the notes area ("The Two Souls, the Beinoni and the Hidden Love"), because it is the AI's wording and not the guide's. Then the overview, the key themes as a short list, and the table of parts, where each row's line is now the `arc` one-liner. Those were written in sequence and read like a syllabus: "Starting the sefer itself, the Rav introduces its author and the first question of chapter one…".
+The reserved introduction slot (§5.3) is filled. The catalog name stays the page title ("תניא"); the generated title becomes a subtitle inside the notes area ("The Two Souls, the Beinoni and the Hidden Love"), because it is the AI's wording and not the guide's. Then the overview, the key themes as a short list, and the table of parts, where each row's line is now the `arc` one-liner. Those were written in sequence and read like a syllabus: "Starting the sefer itself, the Mashgiach introduces its author and the first question of chapter one…".
 
 The summer תשע"א set shows what this adds to a series that was only file names: "twenty-five talks from Shabbos Balak through the Three Weeks into Elul… several given at holy places in Eretz Yisrael: the resting place of Shimon HaTzaddik, Kever Rochel…". The page prints as a course outline.
 
@@ -166,7 +166,7 @@ Thresholds are counted at build time from what exists, after the confidence filt
 
 **Filters applied before anything is counted.**
 - A telling or cluster member whose underlying story or insight has confidence below 0.6 is dropped; a cluster left with one shiur disappears.
-- Sections of kind `other_speaker` never appear on a topic or entity page, and a shiur made up of them is never a "begin here" shiur. This matters today: the hub of `technology` includes "Mamed Technology 02 R'Tauber" and "03 R'Langer", whose own notes say "not by the Rav".
+- Sections of kind `other_speaker` never appear on a topic or entity page, and a shiur made up of them is never a "begin here" shiur. This matters today: the hub of `technology` includes "Mamed Technology 02 R'Tauber" and "03 R'Langer", whose own notes say "not by the Mashgiach".
 - Type `other` people with one or two mentions are not listed at all. That group is where the private individuals and passing politicians are (`r-langer`, `hillel-zaks`, `al-gore`, `hosni-mubarak`). Hitler, Napoleon and Alexander stay as index lines.
 - A name in a story that did not resolve to a person id is printed as plain text, not linked.
 
@@ -183,7 +183,7 @@ Thresholds are counted at build time from what exists, after the confidence filt
 
 | Field | Handling |
 |---|---|
-| `asrVariants` on concepts, people, works | Raw `heardAs` strings. Never read by the public build, never in the search index, whatever the contract says about "search expansion". One of them is a first-person phrase about the Rav's father. |
+| `asrVariants` on concepts, people, works | Raw `heardAs` strings. Never read by the public build, never in the search index, whatever the contract says about "search expansion". One of them is a first-person phrase about the Mashgiach's father. |
 | `*-alias-map.json` | Mixed: of 16,093 concept alias keys, 15,102 are ASR variants. The build uses only keys that also appear in `aliases`, `transliterations` or a canonical name; everything else is discarded. |
 | `corpus/raw/**` | Internal (contains `heardAs`). Never opened. |
 | `search/sections.jsonl` `startSeg`, `endSeg` | Not text, but not published; seconds only. |
@@ -213,18 +213,18 @@ The public build continues to work from an allow-list of fields.
 Ordered by how much they limit the site.
 
 1. **ASR text in public-facing files.** `asrVariants` and the alias maps put `heardAs` strings beside legitimate aliases, and the contract invites using them for search. Please split the alias maps into publishable aliases and internal ASR variants, or flag each key.
-2. **Yiddish voice is inconsistent.** Topic descriptions and cluster summaries say "דער רב" (133 and 769 times; "דער משגיח" once and never). Concept definitions say "דער משגיח" (112, never "דער רב"). Stories mix them (698 against 178). The per-shiur notes say "דער משגיח". One usage, please.
+2. **Yiddish voice is inconsistent.** Topic descriptions and cluster summaries say "דער רב" (133 and 769 times; "דער משגיח" once and never). Concept definitions say "דער משגיח" (112, never "דער רב"). Stories mix them (698 against 178). The per-shiur notes say "דער משגיח". One usage, please. (Resolved upstream: "דער משגיח" in Yiddish and "the Mashgiach" in English throughout.)
 3. **Cluster summaries bake in things that go stale or mislead.** Counts in prose ("in five shiurim") will be wrong after the next batch. "The English telling… the Yiddish one adds…" reads as if one were a version of the other; they are separate shiurim and the wording should say "one shiur… another".
 4. **No tombstones.** Ids are promised stable, but duplicates will be merged (the audit already lists the baseball and four-kings stories). The site needs a `mergedInto` record for retired ids so old addresses redirect.
 5. **Other speakers.** Shiurim and sections by another speaker are tagged, clustered and chosen as hub shiurim like any other. A shiur-level flag would be cleaner than inferring it from section kinds.
 6. **People.**
-   - `rav` (the Amora, 15 shiurim) is probably polluted by "the Rav".
+   - `rav` (the Amora, 15 shiurim) was probably polluted by references to the Mashgiach (which the data then wrote as "the Rav").
    - Compound entries: `chaggai-zechariah-malachi`, `shem-and-yefes`, `four-malachim`, and `kamtza-and-bar-kamtza` beside `kamtza` and `bar-kamtza`.
    - `moshiach` and `kohen-gadol` are roles, not people.
    - `belzer-rav` is ambiguous across the five named Belzer Rebbes.
    - The sugar-sled story lists both `beis-aharon` and `rabbi-aharon-of-karlin`, who are different people.
    - Type `other` mixes malachim, historical figures and private individuals; a `private` or `contemporary` marker would let the site decide properly.
-   - The Rav's own family (`eliyahu-shalom-wolfson`, a father-in-law in a story title) needs an owner decision on whether they are index entries.
+   - The Mashgiach's own family (`eliyahu-shalom-wolfson`, a father-in-law in a story title) needs an owner decision on whether they are index entries.
 7. **Works.**
    - No category or order field.
    - Rashi is split into `rashi` (467 shiurim) and fourteen `rashi-on-…` works.
@@ -251,5 +251,5 @@ Ordered by how much they limit the site.
 | 9 | Show merged story retellings as standalone entries? | Yes, only for stories told twice or more, with the "retold from N tellings" label. |
 | 10 | Show AI-derived links between shiurim? | Yes, only with a stated reason (shared story or teaching). |
 | 11 | List non-Jewish and contemporary figures in שמות? | Lines only, from three shiurim up; no private individuals. Owner may prefer to drop the group. |
-| 12 | The Rav's family members as index entries? | Not until the owner says so. |
+| 12 | The Mashgiach's family members as index entries? | Not until the owner says so. |
 | 13 | Rename the concept index from ענינים to ערכים and give ענינים to topics? | Yes, with redirects. |

@@ -63,38 +63,36 @@ describe("mini fixture read", () => {
   });
 
   it("reads the optional fields when present", () => {
-    expect(input!.topics.filter((t) => t.sameAs).length).toBeGreaterThan(0);
-    expect(input!.works.find((w) => w.id === picks.unknownKindWorkId)?.kind).toBe("sefer");
+    expect(input.topics.filter((t) => t.sameAs).length).toBeGreaterThan(0);
+    expect(input.works.find((w) => w.id === picks.unknownKindWorkId)?.kind).toBe("sefer");
     expect(report.coercedWorkKinds).toEqual([{ id: picks.unknownKindWorkId, kind: "future-kind" }]);
-    expect(input!.works.find((w) => w.id === picks.childWorkId)?.parentWorkId).toEqual(expect.any(String));
-    expect(input!.works.filter((w) => w.order !== null).length).toBeGreaterThan(0);
-    expect(input!.stories!.find((s) => s.id === picks.attributionVariesStoryId)?.attributionVaries).toBe(true);
-    expect(input!.people.find((p) => p.id === S.individualId)).toMatchObject({ type: "individual", description: { en: expect.any(String) } });
-    expect(input!.topics.some((t) => t.parsha.length > 0) && input!.topics.some((t) => t.zman.length > 0)).toBe(true);
-    expect(input!.people.find((p) => p.id === S.mergedPersonId)?.mergedInto).toBe(picks.mergedIntoPersonId);
-    expect(input!.people.find((p) => p.id === S.otherOneShiurId)).toMatchObject({ type: "other", shiurIds: [expect.any(String)] });
-    expect(input!.people.find((p) => p.id === S.familyPersonId)?.nameEn).toMatch(/the Rav's father/);
+    expect(input.works.find((w) => w.id === picks.childWorkId)?.parentWorkId).toEqual(expect.any(String));
+    expect(input.works.filter((w) => w.order !== null).length).toBeGreaterThan(0);
+    expect(input.stories!.find((s) => s.id === picks.attributionVariesStoryId)?.attributionVaries).toBe(true);
+    expect(input.people.find((p) => p.id === S.individualId)).toMatchObject({ type: "individual", description: { en: expect.any(String) } });
+    expect(input.topics.some((t) => t.parsha.length > 0) && input.topics.some((t) => t.zman.length > 0)).toBe(true);
+    expect(input.people.find((p) => p.id === S.mergedPersonId)?.mergedInto).toBe(picks.mergedIntoPersonId);
+    expect(input.people.find((p) => p.id === S.otherOneShiurId)).toMatchObject({ type: "other", shiurIds: [expect.any(String)] });
+    expect(input.people.find((p) => p.id === S.familyPersonId)?.nameEn).toMatch(/the Mashgiach's father/);
     const c = (id: string) => ({ kind: "concepts", id });
-    expect(input!.redirects?.concepts).toEqual({ "syn-chain-a": c("syn-chain-b"), "syn-chain-b": c(picks.chainTargetConceptId) });
-    expect(input!.redirects?.people).toMatchObject({
+    expect(input.redirects?.concepts).toEqual({ "syn-chain-a": c("syn-chain-b"), "syn-chain-b": c(picks.chainTargetConceptId) });
+    expect(input.redirects?.people).toMatchObject({
       "syn-cycle-x": { kind: "people", id: "syn-cycle-y" },
       "syn-cycle-y": { kind: "people", id: "syn-cycle-x" },
       [S.crossKindPersonId]: c(picks.chainTargetConceptId),
       moshiach: c("mashiach"),
     });
-    expect(input!.redirects?.stories).toBeDefined();
-    for (const t of input!.shiurTags.values()) expect(typeof t.otherSpeakerShare).toBe("number");
+    expect(input.redirects?.stories).toBeDefined();
+    for (const t of input.shiurTags.values()) expect(typeof t.otherSpeakerShare).toBe("number");
   });
 });
 
 describe("failure policy", () => {
-  it("corpus absent → layer off with a warning", () => {
+  it("corpus absent → fatal: the corpus layer is required", () => {
     const d = miniCopy();
     rmSync(join(d, CORPUS), { recursive: true });
-    const r = read(d);
-    expect(r.input).toBeNull();
-    expect(r.report.present).toBe(false);
-    expect(r.report.warnings.join(" ")).toMatch(/absent/);
+    expect(() => read(d)).toThrow(FatalDataError);
+    expect(() => read(d)).toThrow(/index\.json is missing: the corpus layer is required/);
   });
 
   it("index missing while core files exist → fatal", () => {

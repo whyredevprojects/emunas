@@ -61,7 +61,7 @@ describe("About drafts", () => {
       const count = (ed: string) => (body(readFileSync(join(drafts, ed, `${part}.md`), "utf8")).match(/\[\[OWNER:/g) ?? []).length;
       expect(count("yi"), part).toBe(count("en"));
     }
-    expect(body(readFileSync(join(drafts, "en", "rav.md"), "utf8"))).toContain("[[OWNER: the Rav's name with his full titles");
+    expect(body(readFileSync(join(drafts, "en", "mashgiach.md"), "utf8"))).toContain("[[OWNER: the Mashgiach's name with his full titles");
   });
 
   it("are written in the edition's script; the Yiddish has no nikud or ligatures", () => {

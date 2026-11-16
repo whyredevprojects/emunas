@@ -254,7 +254,7 @@ describe("small helpers (unit)", () => {
   it("statedShiurCounts reads numbers of shiurim in summaries", () => {
     expect(statedShiurCounts("Taught in five shiurim over the years.")).toEqual([5]);
     expect(statedShiurCounts("in 3 talks; two other shiurim add")).toEqual([3, 3]);
-    expect(statedShiurCounts("The Rav teaches two ideas.")).toEqual([]);
+    expect(statedShiurCounts("The Mashgiach teaches two ideas.")).toEqual([]);
   });
 
   it("foldTerms folds, drops empties and deduplicates", () => {

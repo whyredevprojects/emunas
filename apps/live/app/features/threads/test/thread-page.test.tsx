@@ -4,7 +4,7 @@
  * corpus has no thread of three shiurim, so two thread files are served beside the fixtures; their
  * members are real fixture insights, so playing them reads real ends from the shiur files.
  *
- * - heading "A teaching the Rav returns to", the label, the AI label once, the summary, topic links;
+ * - heading "A teaching the Mashgiach returns to", the label, the AI label once, the summary, topic links;
  * - timeline vs plain list (the build's flag), year order, the undated group last;
  * - each row: year, audio language, catalog title linking to the moment, section title, insight text;
  *   tapping the insight plays that moment;
@@ -214,7 +214,7 @@ describe("the thread page", () => {
   it("shows the heading, the label, the AI label once, the summary and the topics, from its own file only", async () => {
     const { container } = await renderAt(`/en/th/${TIMELINE_ID}`);
     const article = container.querySelector("article")!;
-    expect(article.querySelector("[data-testid=thread-heading]")!.textContent).toBe("A teaching the Rav returns to");
+    expect(article.querySelector("[data-testid=thread-heading]")!.textContent).toBe("A teaching the Mashgiach returns to");
     expect(article.querySelectorAll("h1")).toHaveLength(1);
     expect(article.querySelector("h1")!.textContent).toBe("A name is the essence");
     expect(article.querySelectorAll("[data-corpus-label]")).toHaveLength(1);
@@ -364,7 +364,7 @@ describe("addresses", () => {
 // ---------------------------------------------------------------------------------- wording
 
 describe("wording", () => {
-  it("never claims the wording is the same, that the Rav always says it, or pairs languages", () => {
+  it("never claims the wording is the same, that the Mashgiach always says it, or pairs languages", () => {
     const all = JSON.stringify([threadsEn, threadsYi]);
     expect(all).not.toMatch(/same words|same wording|word for word|always says|counterpart|translation|other language/iu);
   });

@@ -10,7 +10,11 @@ import { catalogEn, catalogYi } from "../components/catalog/strings.ts";
 import { indexesEn, indexesYi } from "../components/indexes/strings.ts";
 import { followTextEn, followTextYi } from "../components/shiur/follow-text-strings.ts";
 import { shiurEn, shiurYi } from "../components/shiur/strings.ts";
+import { corpusEn } from "../components/corpus/strings.ts";
+import { storiesEn } from "../components/stories/strings.ts";
+import { topicsEn } from "../components/topics/strings.ts";
 import { tables as ui } from "../i18n/index.ts";
+import { AI_LABEL, corpusLabelsEn } from "@emunas/i18n";
 import { ABOUT_STRINGS } from "../pages/[ed]/about/_strings.ts";
 import { SEARCH_STRINGS } from "../pages/[ed]/search/_strings.ts";
 
@@ -86,9 +90,23 @@ describe("Yiddish UI copy (Quiet)", () => {
     });
   }
 
-  it("speaks of the Rav as דער משגיח, never as דער רב", () => {
+  it("speaks of the Mashgiach as דער משגיח, never as דער רב", () => {
     expect(ALL.filter(([, s]) => /דער רב(?![\u05D0-\u05EA])|דעם רב(?![\u05D0-\u05EA])/u.test(s))).toEqual([]);
     expect(ALL.some(([, s]) => s.includes("דער משגיח"))).toBe(true);
+  });
+
+  it("calls him the Mashgiach in English, never the Rav or the Rov", () => {
+    const en = [
+      ...Object.entries(PAIRS).flatMap(([name, pair]) => strings(pair.en, name)),
+      ...strings(corpusEn, "corpus"),
+      ...strings(storiesEn, "stories"),
+      ...strings(topicsEn, "topics"),
+      ...strings(corpusLabelsEn, "corpusLabels"),
+      ...strings(AI_LABEL.en, "aiLabel"),
+    ];
+    expect(en.length).toBeGreaterThan(200);
+    expect(en.filter(([, s]) => /\bthe R[ao]v\b(?! of\b)|\bR[ao]v['’]s\b/i.test(s))).toEqual([]);
+    expect(en.some(([, s]) => s.includes("the Mashgiach"))).toBe(true);
   });
 
   it("has the same keys and {placeholders} as English (wording changes only)", () => {

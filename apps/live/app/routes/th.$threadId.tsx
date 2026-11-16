@@ -1,4 +1,4 @@
-// A thread page, "A teaching the Rav returns to" (concept-live-corpus C.1, C3.3), over
+// A thread page, "A teaching the Mashgiach returns to" (concept-live-corpus C.1, C3.3), over
 // `/data/thread/<id>.json` (clusters of three or more visible shiurim). An id with no thread file is a
 // 404. Thread pages are always noindex with no canonical (D8): `app/seo` classifies `/:ui/th/:id` as
 // a thread and never makes it indexable.

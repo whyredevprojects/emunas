@@ -5,9 +5,9 @@ not on the site. The About page (`src/pages/[ed]/about/`) reads only
 `src/content/about/{ed}/{part}.md`; this folder is outside that path, so every part keeps its marked
 placeholder until a person approves a text (integration-plan §8 W5.3: "No generated text in About").
 
-Parts, in page order: `rav`, `arrangement`, `notes`, `report`, `excluded`.
+Parts, in page order: `mashgiach`, `arrangement`, `notes`, `report`, `excluded`.
 
-`[[OWNER: …]]` marks text only the owner or the Rav's family and talmidim can supply (his titles,
+`[[OWNER: …]]` marks text only the owner or the Mashgiach's family and talmidim can supply (his titles,
 his biography, who recorded the shiurim, what happens to a report). Nothing there is to be guessed.
 
 To publish a part:

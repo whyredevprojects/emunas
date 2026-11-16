@@ -64,7 +64,7 @@ beforeAll(() => {
 
 const SYNTH: SeriesSynthesis = {
   title: { en: "Tanya: The Two Souls", yi: "תניא: די צוויי נפשות" },
-  overview: { en: "The Rav learns through the first part of the Tanya.", yi: "דער משגיח לערנט דורך דעם ערשטן חלק." },
+  overview: { en: "The Mashgiach learns through the first part of the Tanya.", yi: "דער משגיח לערנט דורך דעם ערשטן חלק." },
   keyThemes: [{ en: "The two souls", yi: "די צוויי נפשות" }, { en: "  ", yi: "" }, { en: "The beinoni", yi: "דער בינוני" }],
   arc: [
     { shiurId: "yi-tanya-1-01", oneLiner: { en: "Opening the Tanya.", yi: "עפענען דעם תניא." } },
@@ -90,7 +90,7 @@ describe("series model with a synthesis (mini catalog)", () => {
     expect(m.title).toBe(mini.series.series.find((s) => s.id === "tanya-yi")!.title.en);
     expect(m.intro).toEqual({
       subtitle: "Tanya: The Two Souls",
-      overview: "The Rav learns through the first part of the Tanya.",
+      overview: "The Mashgiach learns through the first part of the Tanya.",
       keyThemes: ["The two souls", "The beinoni"],
       reviewed: false,
     });

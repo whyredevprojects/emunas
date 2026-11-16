@@ -13,7 +13,7 @@ describe("scriptOf", () => {
     expect(scriptOf("װאָס ײדיש ױ")).toBe("he");
     expect(scriptOf("בְּרֵאשִׁ֖ית")).toBe("he");
     expect(scriptOf("שׁ")).toBe("he"); // U+FB2A presentation form
-    expect(scriptOf("The Rav on Chanukah")).toBe("latin");
+    expect(scriptOf("The Mashgiach on Chanukah")).toBe("latin");
     expect(scriptOf("Ḥasidut")).toBe("latin");
   });
 
@@ -48,7 +48,7 @@ describe("langFor", () => {
   it("uses the shiur language to tell Yiddish from Hebrew in Hebrew script", () => {
     expect(langFor("ענין חנוכה", "yi")).toEqual({ lang: "yi", dir: "rtl", script: "he" });
     expect(langFor("צדיקים", "en")).toEqual({ lang: "he", dir: "rtl", script: "he" });
-    expect(langFor("The Rav on Chanukah", "yi")).toEqual({ lang: "en", dir: "ltr", script: "latin" });
+    expect(langFor("The Mashgiach on Chanukah", "yi")).toEqual({ lang: "en", dir: "ltr", script: "latin" });
   });
 });
 

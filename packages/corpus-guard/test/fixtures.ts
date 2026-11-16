@@ -27,7 +27,7 @@ export function words(from: number, n: number): string {
   return SENTENCE.slice(from, from + n).join(" ");
 }
 
-export const FILLER = "the rav explains this idea at length with care and warmth for everyone listening";
+export const FILLER = "the mashgiach explains this idea at length with care and warmth for everyone listening";
 
 export interface Fixture {
   root: string;

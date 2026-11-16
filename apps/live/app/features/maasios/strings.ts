@@ -10,7 +10,7 @@ export const maasiosEn = {
   "loading": "Loading…",
   "error": "This page could not be loaded. Check your connection and reload.",
   "more": "Show more ({count} left)",
-  "lead": "The stories told in the shiurim. A story the Rav told more than once is one entry, with every telling.",
+  "lead": "The stories told in the shiurim. A story the Mashgiach told more than once is one entry, with every telling.",
   "facet.people": "Stories about",
   "facet.people.all": "Everyone",
   "facet.people.more": "More people",

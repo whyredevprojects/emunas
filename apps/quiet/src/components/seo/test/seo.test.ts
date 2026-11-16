@@ -202,7 +202,7 @@ describe("sitemaps", () => {
 
 describe("About", () => {
   it("has the five parts of concept-quiet §5.11, notes among them, in both editions", () => {
-    expect(ABOUT_PARTS).toEqual(["rav", "arrangement", "notes", "report", "excluded"]);
+    expect(ABOUT_PARTS).toEqual(["mashgiach", "arrangement", "notes", "report", "excluded"]);
     for (const ed of ["yi", "en"] as const) {
       for (const p of ABOUT_PARTS) expect(ABOUT_STRINGS[ed].headings[p].trim(), `${ed} ${p}`).not.toBe("");
     }
@@ -211,8 +211,8 @@ describe("About", () => {
 
   it("reads human texts only from content/about/{ed}/{part}.md", () => {
     expect(aboutFileKey("../../../content/about/en/notes.md")).toEqual({ ed: "en", part: "notes" });
-    expect(aboutFileKey("../../../content/about/yi/rav.md")).toEqual({ ed: "yi", part: "rav" });
-    expect(aboutFileKey("../../../content/about/de/rav.md")).toBeNull();
+    expect(aboutFileKey("../../../content/about/yi/mashgiach.md")).toEqual({ ed: "yi", part: "mashgiach" });
+    expect(aboutFileKey("../../../content/about/de/mashgiach.md")).toBeNull();
     expect(aboutFileKey("../../../content/about/en/other.md")).toBeNull();
   });
 });

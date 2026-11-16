@@ -1,10 +1,10 @@
 /**
  * UI strings for the thread page (C3.3). Kept with the feature, same `createT` contract as the app's
- * table: `yi` provides every key, placeholders survive translation. The heading ("A teaching the Rav
+ * table: `yi` provides every key, placeholders survive translation. The heading ("A teaching the Mashgiach
  * returns to") and the AI label come from the shared corpus vocabulary in `@emunas/i18n`.
  *
  * Wording rules (concept-live-corpus C.1): never claim the wording is the same across members, never
- * "the Rav always says", never call a member another member's counterpart in the other language.
+ * "the Mashgiach always says", never call a member another member's counterpart in the other language.
  */
 import { createT, type MessageTable, type TFunction, type UiLang } from "@emunas/i18n";
 

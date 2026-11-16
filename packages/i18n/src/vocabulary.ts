@@ -9,7 +9,7 @@ import { AI_LABEL } from "./vocab/ai-label.ts";
  * copy (navigation, buttons) stays in each app.
  *
  * Wording follows concept-quiet §5.4/§8/§11 and concept-live §2/§7/§9: plain,
- * no marketing voice; Yiddish speaks of "דער משגיח", English of "the Rav".
+ * no marketing voice; Yiddish speaks of "דער משגיח", English of "the Mashgiach".
  * All wording is unreviewed (reviewStatus below) until the owner signs it off.
  */
 export const VOCABULARY_REVIEW_STATUS = "unreviewed" as const;

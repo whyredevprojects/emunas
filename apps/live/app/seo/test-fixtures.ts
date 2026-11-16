@@ -21,7 +21,7 @@ export const corpusFixture: SeoCorpus = {
       subTitle: null,
       sectionTitle: "פרשת השבוע",
       years: [5736],
-      oneLiner: { en: "The Rav explains the bond of Hashem and Knesses Yisrael.", yi: "דער משגיח ערקלערט." },
+      oneLiner: { en: "The Mashgiach explains the bond of Hashem and Knesses Yisrael.", yi: "דער משגיח ערקלערט." },
     },
     {
       id: SHIUR_CATALOG,

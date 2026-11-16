@@ -144,7 +144,7 @@ describe("NotesLabel and Coverage", () => {
   it("links the standing AI label to About", async () => {
     const html = await render(NotesLabel, { ed: "en" });
     expect(html).toContain('href="/en/about/#notes"');
-    expect(html).toContain("Notes prepared by AI from the recording; not reviewed, and not the Rav&#39;s words. The recording is the source.");
+    expect(html).toContain("Notes prepared by AI from the recording; not reviewed, and not the Mashgiach&#39;s words. The recording is the source.");
   });
 
   it("states coverage with ordinary digits", async () => {

@@ -87,7 +87,7 @@ const PEOPLE = [
   person("avraham-avinu", { nameEn: "Avraham Avinu", nameHe: "אברהם אבינו", type: "tanach", group: "tanach" }),
   person("chofetz-chaim", { nameEn: "the Chofetz Chaim", nameHe: "החפץ חיים", type: "acharon", group: "acharon", pages: { quiet: false, live: false } }),
   person("a-politician", { nameEn: "A Politician", type: "other", group: "other", listed: { quiet: false, live: false }, pages: { quiet: false, live: false } }),
-  person("the-ravs-father", { nameEn: "the Rav's father", type: "individual", group: "other", excluded: "family", listed: { quiet: false, live: false } }),
+  person("the-mashgiachs-father", { nameEn: "the Mashgiach's father", type: "individual", group: "other", excluded: "family", listed: { quiet: false, live: false } }),
 ];
 
 const STORIES: LayerStory[] = [
@@ -102,7 +102,7 @@ const STORIES: LayerStory[] = [
   // told once, about the Chofetz Chaim (listed, no page)
   story("the-chofetz-chaim-and-the-wagon", [telling("yi-a-02", 3, 5750, 615.4)], { people: [{ id: "chofetz-chaim" }] }),
   // told once, nobody listed: only an unresolved name, an unlisted and an excluded person
-  story("the-cook", [telling("en-b-02", 1, 5770, null, 4)], { people: [{ name: "the Rav's grandfather", linked: false }, { id: "a-politician" }, { id: "the-ravs-father" }] }),
+  story("the-cook", [telling("en-b-02", 1, 5770, null, 4)], { people: [{ name: "the Mashgiach's grandfather", linked: false }, { id: "a-politician" }, { id: "the-mashgiachs-father" }] }),
   // told once with no time and no chapter
   story("a-boy-at-the-kosel", [telling("en-b-01", 2, null, null, null)], { title: { en: "A boy at the Kosel", yi: "" } }),
   // nothing citable: dropped from the index
@@ -129,7 +129,7 @@ describe("story strings", () => {
     }
   });
 
-  it("speak of the Rav as דער משגיח in Yiddish", () => {
+  it("speak of the Mashgiach as דער משגיח in Yiddish", () => {
     expect(storiesYi["index.lead"]).toContain("דער משגיח");
   });
 });
@@ -183,9 +183,9 @@ describe("story page", () => {
   it("prints unlisted and excluded people as plain names, never linked", () => {
     const people = storyPeople("en", STORIES[3]!, source());
     expect(people.map((p) => [p.name.text, p.href])).toEqual([
-      ["the Rav's grandfather", null],
+      ["the Mashgiach's grandfather", null],
       ["A Politician", null],
-      ["the Rav's father", null],
+      ["the Mashgiach's father", null],
     ]);
   });
 
@@ -228,7 +228,7 @@ describe("stories index", () => {
     expect(m.groups[0]!.people[0]!.stories.map((s) => s.id)).toEqual(["avraham-and-the-guests"]);
     const names = m.groups.flatMap((g) => g.people.map((p) => p.id));
     expect(names).not.toContain("a-politician");
-    expect(names).not.toContain("the-ravs-father");
+    expect(names).not.toContain("the-mashgiachs-father");
   });
 
   it("puts every story not under a listed person in 'without a name', alphabetically", () => {

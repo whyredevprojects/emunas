@@ -33,7 +33,7 @@ import type {
 
 export type { Ed, L, Moment, ShiurStatus };
 
-export const LIVE_DATA_SCHEMA_VERSION = 5;
+export const LIVE_DATA_SCHEMA_VERSION = 6;
 
 // ---------------------------------------------------------------------------------------------
 // Shared pieces

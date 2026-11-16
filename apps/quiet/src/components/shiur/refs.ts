@@ -174,7 +174,7 @@ function sortByName(list: NamedLink[], ed: Ed): NamedLink[] {
 /**
  * People and glossary terms named in the shiur, by corpus id (the layer has already followed
  * retired ids to the surviving entity, and duplicates are dropped here). Excluded people (the
- * Rav's family, private persons, the owner's list) are not printed at all; anyone else without an
+ * Mashgiach's family, private persons, the owner's list) are not printed at all; anyone else without an
  * index line is printed without a link. Each list is in alphabetical order of the printed name.
  */
 export function mentionedView(ed: Ed, layer: ShiurLayer, refs: Pick<LayerShiurRefs, "personIds" | "conceptIds"> | null | undefined): MentionedView {

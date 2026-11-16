@@ -2,7 +2,7 @@
 status: DRAFT
 approvedBy: null
 approvedAt: null
-note: "W5.3 draft for the owner. Not published. States what concept-quiet §5.11 requires: AI from automatic speech recognition, not reviewed, may contain errors of hearing and understanding, does not quote the Rav, the recording is the authority."
+note: "W5.3 draft for the owner. Not published. States what concept-quiet §5.11 requires: AI from automatic speech recognition, not reviewed, may contain errors of hearing and understanding, does not quote the Mashgiach, the recording is the authority."
 ---
 
 The recordings were first turned into rough text by automatic speech recognition, a machine that
@@ -12,9 +12,9 @@ the sources, the stories and the other points.
 
 No person has reviewed the notes. They can go wrong in two ways: the machine can mishear a word,
 and the model can misunderstand what was said. A name, a source or a time can therefore be wrong,
-and a point can come out stronger or weaker than the Rav said it.
+and a point can come out stronger or weaker than the Mashgiach said it.
 
-The notes are not the Rav's words. They report what he says and do not quote him. Where the notes
+The notes are not the Mashgiach's words. They report what he says and do not quote him. Where the notes
 and the recording differ, the recording is right.
 
 The machine text of the recordings is used only to prepare the notes. It is not published on this
