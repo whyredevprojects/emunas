@@ -15,7 +15,7 @@ Ignore `model` and `promptVersion` fields: judge only what is on the page.
 
 ## 2. About the transcript
 
-Budget Whisper ASR. Yiddish in Hebrew script with heavy errors; Hebrew/Aramaic quotations worst. English shiurim have Hebrew terms mangled phonetically ("Rabbi Yisraelim" = Ribono shel Olam). Recovering a garbled term from context is good; inventing content that is not audible is bad. A claim is **supported** if a careful reader of the cited segments (allowing for ASR garbling, and a couple of segments of slack) would agree the Rav says that there.
+Budget Whisper ASR. Yiddish in Hebrew script with heavy errors; Hebrew/Aramaic quotations worst. English shiurim have Hebrew terms mangled phonetically ("Rabbi Yisraelim" = Ribono shel Olam). Recovering a garbled term from context is good; inventing content that is not audible is bad. A claim is **supported** if a careful reader of the cited segments (allowing for ASR garbling, and a couple of segments of slack) would agree the Mashgiach says that there.
 
 ## 3. Checks (sample across the whole shiur: beginning, middle, end)
 
@@ -29,9 +29,9 @@ Budget Whisper ASR. Yiddish in Hebrew script with heavy errors; Hebrew/Aramaic q
 
 **E. Yiddish quality.** Read at least **10 Yiddish sentences** (extraction and write-up, several sections). Count `yiddishBadSentences`: YIVO spelling, nikud or dotted/ligature letters (`וווּ`, `אַ`, `פֿ`, `ײ`), `ניט` for `נישט`; Daytshmerish (`וועלכער` as "which", `עטוואס`, `ווירקליך`); English calques (`נעמט פלאץ`, `מאכט זינען`) or English words in Hebrew letters; phonetic spelling of loshon-hakodesh words; ungrammatical or unnatural. Also `yiddishTranslationese`: sentences that only make sense as a rendering of the English.
 
-**F. Write-up.** `flowBreaks` (steps out of the Rav's order, missing links, answer before its question, a list where he builds an argument); `paddingSentences` (restatement, generic praise, filler, moralizing); `contradictsExtraction`.
+**F. Write-up.** `flowBreaks` (steps out of the Mashgiach's order, missing links, answer before its question, a list where he builds an argument); `paddingSentences` (restatement, generic praise, filler, moralizing); `contradictsExtraction`.
 
-**G. Rules.** `ruleViolations`: first person as the Rav, direct quotes of his words, second-person preaching, psak, long quotes from memory, biography or dates not in header/transcript, Hebrew script in English text.
+**G. Rules.** `ruleViolations`: first person as the Mashgiach, direct quotes of his words, second-person preaching, psak, long quotes from memory, biography or dates not in header/transcript, Hebrew script in English text.
 
 ## 4. Verdict
 

@@ -2,7 +2,7 @@
 
 You are writing the long-form write-up of one Torah shiur (class) given by Harav Moshe Wolfson zt"l, the Mashgiach of Mesivta Torah Vodaath and Rav of Bais Medrash Emunas Yisroel. The shiur is in Yiddish or English. You have four things: this file; the shiur's **input file** (catalog metadata and its machine transcript); its **extraction**, a JSON file another pass already produced and a validator already checked (the shiur's sections, summaries and sources); and its **word budget** per section (section 4). You produce one **JSON file**, a `Writeup`, in two languages.
 
-The transcript itself will never be shown to the public. The write-up replaces it: a reader should be able to learn the shiur from it without listening, and each paragraph links to the place in the audio where it is said. It must be faithful to what the Rav actually said, and it must never put words in his mouth.
+The transcript itself will never be shown to the public. The write-up replaces it: a reader should be able to learn the shiur from it without listening, and each paragraph links to the place in the audio where it is said. It must be faithful to what the Mashgiach actually said, and it must never put words in his mouth.
 
 **Output:** write ONLY valid JSON (no Markdown fences, no comments, no trailing commas, nothing before or after the object) to the output path given in your task message. Use the `model`, `variant` and `extractionVariant` values given in the task message. If none are given, use `"model": "unknown"`, `"variant": "raw"`, and for `extractionVariant` the extraction's file name without `.json` (for `data/derived/shiurim/x/extraction.json` that is `"extraction"`). Always set `"promptVersion": "p4b-v2"` (this prompt's version). Do not write any other files.
 
@@ -51,14 +51,14 @@ recordings (in playback order):
 The extraction JSON has, among other fields:
 
 - `sections[]`: `{ recordingId, startSeg, endSeg, title: {en, yi}, summary: {en, yi}, kind, catalogTopicIdx, subsections }`. They tile the recordings in order. `kind` is one of `intro`, `main`, `story`, `tangent`, `closing`, `brachah`, `singing`, `other_speaker`, `noise`.
-- `sources[]`: `{ heardAs, work, ref, sefariaRef, resolution, mention, evidence }`: every source the Rav cites, already identified.
+- `sources[]`: `{ heardAs, work, ref, sefariaRef, resolution, mention, evidence }`: every source the Mashgiach cites, already identified.
 - `summary`, `insights`, `stories`, `questions`, `takeaways`: useful for orientation.
 
 Rules:
 
 1. **Do not re-section.** Your blocks map one-to-one onto the extraction's sections by `sectionIndex` (the 0-based index into `sections[]`). Don't merge, split, reorder or move boundaries. A paragraph about section *i* is supported by segments in section *i*.
 2. **Do not contradict the extraction.** The extraction's section summaries, source identifications and stories are the agreed reading of the shiur. Your job is to write it out at length from the transcript, with more detail and the logical connections. If, reading the transcript, you think the extraction got something wrong, do not write the opposite: leave that point out of the write-up.
-3. **Sources only from `sources[]`.** When a paragraph names a source, it must be one of the extraction's `sources[]`, and its index goes in that paragraph's `sourceIdx`. If the Rav cites something that is not in `sources[]`, describe the idea without naming the source. Use the extraction's identification (`work`, `ref`) for the name; don't re-identify it.
+3. **Sources only from `sources[]`.** When a paragraph names a source, it must be one of the extraction's `sources[]`, and its index goes in that paragraph's `sourceIdx`. If the Mashgiach cites something that is not in `sources[]`, describe the idea without naming the source. Use the extraction's identification (`work`, `ref`) for the name; don't re-identify it.
 4. **The transcript is your source for content.** The extraction is short; the detail of the write-up comes from reading the section's segments yourself. Read the whole transcript, then each section's stretch again as you write its block.
 
 ## 3. The transcript is bad. Recover meaning, don't invent it
@@ -75,7 +75,7 @@ The ASR is budget-quality Whisper. Yiddish comes out in Hebrew script with heavy
 
 - Use context (catalog title, parsha, perek, the extraction's `concepts`, `people` and `sources`, and the surrounding words) to recover garbled terms.
 - **When you cannot recover a stretch with reasonable confidence, leave it out.** Do not guess a name, a number, a story detail or a chiddush. A shorter honest write-up beats a fuller invented one.
-- **Never fill in from your own knowledge** what the Rav "probably" said. Your knowledge may help you *recognize* a garbled term; it may never *supply content* that is not audible in the transcript. Every sentence must be traceable to the segments in its paragraph's evidence.
+- **Never fill in from your own knowledge** what the Mashgiach "probably" said. Your knowledge may help you *recognize* a garbled term; it may never *supply content* that is not audible in the transcript. Every sentence must be traceable to the segments in its paragraph's evidence.
 - Repeated identical lines and generic phrases ("תודה רבה", "Thank you for watching") over silence or singing are hallucinations, not speech.
 
 ## 4. What to write
@@ -91,13 +91,13 @@ Two arrays, `en` and `yi`, each a list of blocks: `{ "sectionIndex": <index into
 - Earlier drafts by this model ran 1.5–3× over target. Expect that tendency and correct for it while writing, not afterwards: prefer one precise sentence over two that restate.
 - Yiddish length similar to English. **Do not pad.** If the ASR leaves a section thin, write less than its budget; never fill with general Torah thoughts, restatements or praise.
 
-**Follow the argument.** Write the shiur as the Rav builds it: the question → the sources he brings → his chiddush → the story → the application. Keep his order. Make the logical links explicit ("To answer this, the Rav brings…", "From here he explains…", "This explains the question he opened with…"). A reader should see why each step follows. A list of disconnected statements is a bad write-up even if each statement is true.
+**Follow the argument.** Write the shiur as the Mashgiach builds it: the question → the sources he brings → his chiddush → the story → the application. Keep his order. Make the logical links explicit ("To answer this, the Mashgiach brings…", "From here he explains…", "This explains the question he opened with…"). A reader should see why each step follows. A list of disconnected statements is a bad write-up even if each statement is true.
 
 **Paragraphs.** 2–5 sentences each, usually 1–3 per block. Each paragraph has:
 
 - `text`: the paragraph, in third-person reported speech (section 5).
 - `sourceIdx`: indices into the extraction's `sources[]` of every source the paragraph names (`[]` if none). Every source named must be listed; every listed source must be named.
-- `evidence`: `{ "segs": [...], "confidence": 0..1 }`. `segs`: 1–6 segment indices **inside this block's section** (a couple of segments past its edges at most) where the Rav says what the paragraph reports; the most direct ones, not a whole range. `confidence`: 0.9+ clear speech and meaning; 0.7–0.85 meaning clear from context despite garbling; 0.6–0.7 plausible reconstruction; below 0.6, leave the paragraph out. **Multi-recording shiurim** (more than one recording in the header): segment indices restart at 0 in each recording, so every `evidence` must also carry `"recordingId": "<the section's recordingId>"`. In a single-recording shiur omit `recordingId`.
+- `evidence`: `{ "segs": [...], "confidence": 0..1 }`. `segs`: 1–6 segment indices **inside this block's section** (a couple of segments past its edges at most) where the Mashgiach says what the paragraph reports; the most direct ones, not a whole range. `confidence`: 0.9+ clear speech and meaning; 0.7–0.85 meaning clear from context despite garbling; 0.6–0.7 plausible reconstruction; below 0.6, leave the paragraph out. **Multi-recording shiurim** (more than one recording in the header): segment indices restart at 0 in each recording, so every `evidence` must also carry `"recordingId": "<the section's recordingId>"`. In a single-recording shiur omit `recordingId`.
 
 **Heading.** The section's title in that language (from the extraction) or a short variant of it, or `null`.
 
@@ -106,12 +106,12 @@ Two arrays, `en` and `yi`, each a list of blocks: `{ "sectionIndex": <index into
 1. **Write each language from the shiur itself.** Write the Yiddish from the transcript and the English from the transcript. Do not write one and translate it into the other. Each should read as if a native writer of that language wrote up the shiur. They must agree in content, but sentence structure, idiom and emphasis are each language's own.
 2. **Yiddish**: natural Chassidish Yiddish; follow **`prompts/yiddish-style.md`** exactly: Chassidish orthography as in *Der Yid* / *Der Blatt* (`נישט`, `וואס`, `וואו`, `אזוי`, `פארוואס`, `ווייל`, `אידן`), **no YIVO spelling, no nikud, no dotted or ligature letters** (`וווּ`, `אַ`, `פֿ`, `ײ` are all wrong), no Daytshmerish (`וועלכער` as "which", `עטוואס`, `ווירקליך`, `בעזאנדערס`), no English calques (`נעמט פלאץ`, `מאכט זינען`, `אין סדר צו`) and no English words in Hebrew letters (`רעקארדינג`). Hebrew and Aramaic words keep their **loshon-hakodesh spelling** (`שבת`, `אמונה`, `תפילה`, `צדיק`, `רבונו של עולם`, `נפש השנית`, `חז"ל`, `רש"י`), not phonetic Yiddish spellings (`שאבעס`, `צאדיק`). Essentially all Hebrew script; at most an occasional unavoidable Latin name.
 3. **English**: plain, clear English for a frum reader. Hebrew terms transliterated the Ashkenazi/Chassidish way (Shabbos, Hashem, Ribono shel Olam, emunah, bitachon, tzaddik, Chazal, Rashi, the Ba'al Shem Tov), with a short gloss the first time if the term is not common. **No Hebrew script in `en`.** Use "Hashem" or "G-d".
-4. **Third-person reported speech, always.** English: "The Rav explains…", "He asks…", "He brings the Zohar…". Yiddish: "דער משגיח ערקלערט…", "ער פרעגט…", "ער ברענגט דעם זוהר…". Never first person as the Rav ("I want to tell you…", "מיר דארפן…"), never direct quotes of his words, never second-person preaching to the reader ("You must…", "מען דארף…" in the writer's own voice). If he says "one must…", write "The Rav says one must…".
+4. **Third-person reported speech, always.** English: "The Mashgiach explains…", "He asks…", "He brings the Zohar…". Yiddish: "דער משגיח ערקלערט…", "ער פרעגט…", "ער ברענגט דעם זוהר…". Never first person as the Mashgiach ("I want to tell you…", "מיר דארפן…"), never direct quotes of his words, never second-person preaching to the reader ("You must…", "מען דארף…" in the writer's own voice). If he says "one must…", write "The Mashgiach says one must…".
 5. **No psak.** Do not state halachic rulings; describe what he explains.
 6. **No advice he didn't give.** No moral lessons, applications or encouragement of your own.
-7. **No source text from memory.** Cite sources by name and ref only. Do not quote a passuk, Gemara, Zohar or Tanya passage beyond the few words the Rav himself is clearly heard discussing, and never complete or correct a quote from memory.
-8. **No biography, no dates, no occasions** beyond what the header gives or the Rav says. No claims about the Rav's life, teachers or influence.
-9. Refer to him as "the Rav" in English and "דער משגיח" in Yiddish.
+7. **No source text from memory.** Cite sources by name and ref only. Do not quote a passuk, Gemara, Zohar or Tanya passage beyond the few words the Mashgiach himself is clearly heard discussing, and never complete or correct a quote from memory.
+8. **No biography, no dates, no occasions** beyond what the header gives or the Mashgiach says. No claims about the Mashgiach's life, teachers or influence.
+9. Refer to him as "the Mashgiach" in English and "דער משגיח" in Yiddish.
 
 ## 6. Exact output shape
 
@@ -146,7 +146,7 @@ Shape example for a hypothetical single-recording 20-minute shiur whose extracti
   "en": [
     { "sectionIndex": 0, "heading": "What 'mamash' adds",
       "paragraphs": [
-        { "text": "The Rav opens with the Tanya's words in chapter two, that the soul of a Jew is 'truly a part of G-d above', and asks what the word 'mamash' adds. A part of something, he points out, can also mean a creation that came from it and now stands on its own.", "sourceIdx": [0], "evidence": { "segs": [3, 4, 9], "confidence": 0.8 } },
+        { "text": "The Mashgiach opens with the Tanya's words in chapter two, that the soul of a Jew is 'truly a part of G-d above', and asks what the word 'mamash' adds. A part of something, he points out, can also mean a creation that came from it and now stands on its own.", "sourceIdx": [0], "evidence": { "segs": [3, 4, 9], "confidence": 0.8 } },
         { "text": "He answers that the soul never stands on its own. Like a child's mind that comes from the father's mind, it stays bound to its Source, and this is what 'mamash' teaches.", "sourceIdx": [0], "evidence": { "segs": [12, 14], "confidence": 0.75 } }
       ] },
     { "sectionIndex": 1, "heading": null, "paragraphs": [ { "text": "...", "sourceIdx": [], "evidence": { "segs": [40, 45], "confidence": 0.75 } } ] },

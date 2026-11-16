@@ -20,17 +20,17 @@ Ignore any `model`, `variant` or `extractionVariant` values and file names: do n
 
 It is budget Whisper ASR. Yiddish comes out in Hebrew script with heavy errors; Hebrew and Aramaic quotations are the worst. English shiurim have Hebrew terms mangled phonetically ("Rabbi Yisraelim" = Ribono shel Olam; "Nefesh Hashanah" = nefesh haSheniyah). Recovering a garbled term from context is good; inventing content that is not audible is bad. Repeated identical lines or "Thank you for watching" over silence are hallucinations by the ASR.
 
-A claim is **supported** if a careful reader of the cited segments (allowing for ASR garbling) would agree the Rav says that there. Allow a couple of segments of slack around the cited ones.
+A claim is **supported** if a careful reader of the cited segments (allowing for ASR garbling) would agree the Mashgiach says that there. Allow a couple of segments of slack around the cited ones.
 
 ## 3. Checks. Do each one, for X and for Y, and count
 
 Apply the same procedure to both sides. Where a check samples, sample the same way on both (spread across the whole shiur: beginning, middle, end; not just the first items).
 
 ### A. Unsupported and hallucinated claims (both kinds)
-Sample **at least 10 claims per side** (more if the output is long; aim for ~1 per 3 minutes of audio). A claim is one factual statement about what the Rav says: a sentence of a summary, key point, insight, story detail, Q&A, takeaway, or write-up paragraph. For each, read the segments its item cites and decide:
+Sample **at least 10 claims per side** (more if the output is long; aim for ~1 per 3 minutes of audio). A claim is one factual statement about what the Mashgiach says: a sentence of a summary, key point, insight, story detail, Q&A, takeaway, or write-up paragraph. For each, read the segments its item cites and decide:
 - `supported`: the cited segments say it.
 - `unsupported`: not in the cited segments, but it is somewhere else in the transcript (bad evidence), or it overstates/sharpens what is there.
-- `hallucinated`: not in the transcript at all: invented detail, a name, number or source that isn't audible, content filled in from general Torah knowledge, or advice/lessons the Rav never gives.
+- `hallucinated`: not in the transcript at all: invented detail, a name, number or source that isn't audible, content filled in from general Torah knowledge, or advice/lessons the Mashgiach never gives.
 Count `claimsChecked`, `unsupported`, `hallucinated`. Record 1–3 of the worst examples in `notes` with their location (e.g. `insights[2]`, `en[3].paragraphs[1]`) and segment numbers.
 
 ### B. Garbled-term recovery (both kinds)
@@ -56,16 +56,16 @@ Also count `yiddishNotFromShiur`: places where the Yiddish carries content or st
 
 ### F. Source identification (both kinds)
 For extractions: check every entry of `sources[]` if there are ≤ 12, otherwise a sample of 12, against the transcript. For write-ups: check every source the text names.
-- `sourceErrors`: wrong work or wrong ref, a source marked `resolved` that is really a guess, a source named that the Rav doesn't cite.
+- `sourceErrors`: wrong work or wrong ref, a source marked `resolved` that is really a guess, a source named that the Mashgiach doesn't cite.
 - `sourcesMissed` (extractions only; `null` for write-ups): clear citations in the transcript (a named sefer, a passuk he recites, "the Gemara says…", "Rashi brings…") that are not in `sources[]`. Count what you notice while doing checks A–E; you don't need to sweep the whole transcript.
 
 ### G. Write-up only (for extractions use `null`)
-- `flowBreaks`: places where the write-up loses the Rav's line of argument: steps out of his order, a missing link that makes the next step unintelligible, an answer given before its question, a list of disconnected statements where he builds an argument.
+- `flowBreaks`: places where the write-up loses the Mashgiach's line of argument: steps out of his order, a missing link that makes the next step unintelligible, an answer given before its question, a list of disconnected statements where he builds an argument.
 - `paddingSentences`: sentences that carry no content from the shiur: restatements, generic praise, general Torah thoughts, filler transitions, moralizing.
 - `missingBlocks`: `main` sections of the extraction with no block in one language.
 
 ### H. Rule violations (both kinds)
-`ruleViolations`: first person as the Rav, direct quotes of his words, second-person preaching, a halachic ruling stated as psak, a passuk/Gemara quoted at length from memory, biographical claims or dates not in the header or transcript, Hebrew script in English text.
+`ruleViolations`: first person as the Mashgiach, direct quotes of his words, second-person preaching, a halachic ruling stated as psak, a passuk/Gemara quoted at length from memory, biographical claims or dates not in the header or transcript, Hebrew script in English text.
 
 ## 4. Deciding
 

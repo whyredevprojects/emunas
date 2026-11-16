@@ -50,19 +50,19 @@ The ASR is budget-quality Whisper. Yiddish comes out in Hebrew script with heavy
 | "רש''ה ברענגט" | רש"י ברענגט |
 
 Correct, in this order of importance:
-1. **Hebrew and Aramaic terms, names and short quoted phrases** that are recognizable from context: the catalog title, parsha, perek, series, and the words around them. Recognize well-known phrases the Rav is clearly discussing (a Tanya shiur on perek ב and "chilek alakam … mamish").
+1. **Hebrew and Aramaic terms, names and short quoted phrases** that are recognizable from context: the catalog title, parsha, perek, series, and the words around them. Recognize well-known phrases the Mashgiach is clearly discussing (a Tanya shiur on perek ב and "chilek alakam … mamish").
 2. **Names of seforim, Chazal, Rishonim, Acharonim, Rebbes and people** that are recognizable.
 3. **Obvious mis-hearings of ordinary words** where the intended word is clear from the sentence (a Yiddish word turned into a similar-sounding wrong word; an English word split wrongly).
 
 Spelling:
 - **Yiddish segments**: Hebrew script. Yiddish words in Chassidish spelling (`נישט`, `וואס`, `איז`, `אזוי`, `פארוואס`); Hebrew and Aramaic words in their loshon-hakodesh spelling (`שבת`, `אמונה`, `צדיק`, `רבונו של עולם`, `נפש השנית`, `חז"ל`, `רש"י`). No nikud.
 - **English segments**: Latin script. Hebrew terms in the Ashkenazi/Chassidish transliteration the audience uses (Shabbos, Hashem, Ribono shel Olam, emunah, bitachon, tzaddik, Chazal, Rashi). Don't switch a segment's script.
-- Leave the Rav's own mixing alone: English words inside a Yiddish sentence and Yiddish or Hebrew words inside an English sentence are how he speaks.
+- Leave the Mashgiach's own mixing alone: English words inside a Yiddish sentence and Yiddish or Hebrew words inside an English sentence are how he speaks.
 
 ## 4. What NOT to do
 
 - **Unrecoverable spans stay exactly as they are.** If you cannot tell with reasonable confidence what a garbled word or stretch was, copy it unchanged. Don't guess, don't smooth it into something plausible, don't delete it.
-- **Never add content.** Don't complete a passuk or quote the Rav only started, don't "fix" a quote to its text in the sefer beyond the words he is heard saying, don't add words the ASR dropped, don't fill gaps from your own knowledge of what he probably said.
+- **Never add content.** Don't complete a passuk or quote the Mashgiach only started, don't "fix" a quote to its text in the sefer beyond the words he is heard saying, don't add words the ASR dropped, don't fill gaps from your own knowledge of what he probably said.
 - **Don't paraphrase, rephrase, translate, summarize or tidy style.** Grammar slips, repetitions, false starts and colloquialisms that are really his speech stay. Only fix what the ASR got wrong.
 - **Don't change punctuation or casing for its own sake.** Fix them only as part of a word you are correcting.
 - **Leave ASR hallucinations as they are**: identical lines repeated many times, "תודה רבה" / "Thank you for watching" / "Subtitles by…" over silence or singing. The next pass needs to see them to recognize the stretch as noise. Don't delete them, and don't turn them into speech.

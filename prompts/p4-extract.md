@@ -2,7 +2,7 @@
 
 You are building the structured record of one Torah shiur (class) given by Harav Moshe Wolfson zt"l, the Mashgiach of Mesivta Torah Vodaath and Rav of Bais Medrash Emunas Yisroel. The shiur is in Yiddish or English. You have two things: this file, and one **input file** containing the shiur's catalog metadata and its machine transcript. You produce one **JSON file** that follows the `Extraction` contract below exactly.
 
-The transcript itself will never be shown to the public. What you write *is* what people will read: chapter markers in the audio player, bilingual summaries, sources, insights and stories. It must be faithful to what the Rav actually said, and it must never put words in his mouth. (A long-form write-up is produced later, in a separate pass, on top of your sections and sources. You do **not** write it, but your sections and sources must be accurate enough to build it on.)
+The transcript itself will never be shown to the public. What you write *is* what people will read: chapter markers in the audio player, bilingual summaries, sources, insights and stories. It must be faithful to what the Mashgiach actually said, and it must never put words in his mouth. (A long-form write-up is produced later, in a separate pass, on top of your sections and sources. You do **not** write it, but your sections and sources must be accurate enough to build it on.)
 
 **Output:** write ONLY valid JSON (no Markdown fences, no comments, no trailing commas, nothing before or after the object) to the output path given in your task message. Use the `model` and `variant` values given in the task message; if none are given use `"model": "unknown"`, `"variant": "raw"`. Always set `"promptVersion": "p4-v3"` (this prompt's version). Do not write any other files.
 
@@ -62,9 +62,9 @@ The ASR is budget-quality Whisper. Yiddish comes out in Hebrew script with heavy
 
 How to work:
 1. **Read the whole transcript first.** Then decide what each stretch is about.
-2. **Use context to recover terms**: the catalog title, parsha, perek, series, and what the Rav says around the garbled words. A garbled phrase that matches a well-known source the shiur is clearly about (e.g. a Tanya shiur on perek ב and "chilek alakam … mamish") can be recovered.
+2. **Use context to recover terms**: the catalog title, parsha, perek, series, and what the Mashgiach says around the garbled words. A garbled phrase that matches a well-known source the shiur is clearly about (e.g. a Tanya shiur on perek ב and "chilek alakam … mamish") can be recovered.
 3. **When you cannot recover something with reasonable confidence, leave it out.** Do not guess a name, a source, a number, a story detail or a chiddush from a garbled stretch. A shorter honest record beats a fuller invented one. Mention unrecoverable stretches in `asrNotes`.
-4. **Never fill in from your own knowledge** what the Rav "probably" said. Your knowledge may help you *recognize* a garbled term or source; it may never *supply content* that is not audible in the transcript. Everything you state must be traceable to specific segments.
+4. **Never fill in from your own knowledge** what the Mashgiach "probably" said. Your knowledge may help you *recognize* a garbled term or source; it may never *supply content* that is not audible in the transcript. Everything you state must be traceable to specific segments.
 5. Typical Whisper failures to watch for: the same sentence repeated many times, or generic phrases ("תודה רבה", "Thank you for watching", "Subtitles by…") during silence, singing or a niggun: that is hallucination, not speech. Another person speaking (a question from the audience, an introduction by someone else) is `other_speaker`.
 6. **`[NOISE?]` segments**: treat them as noise unless the words are clearly coherent speech that fits what comes before and after. In particular, a long segment with little text often does hold real speech: Whisper transcribed a sentence or two and skipped the rest (a niggun, silence, or audio it lost). Use its coherent words like any other line; what the flag tells you is that most of its time is not transcribed, which matters for section kinds and for how much the stretch can support. Never cite a `[NOISE?]` segment as `evidence` for repeated or filler text, and never build a claim on its garbage. A run of flagged segments lasting **3:00 or more** becomes its own `noise` section (or `singing` when the context shows a niggun); a shorter run is absorbed into the neighbouring section and simply ignored. Mention long flagged stretches in `asrNotes`. Code may also miss noise: the same judgment applies to unflagged lines.
 
@@ -88,9 +88,9 @@ Sections are chapter markers in the player. Each is `{ recordingId, startSeg, en
 - **Subsections** only inside a section longer than **12:00**, and then 2–4 of them, each at least **1:30**, in the same recording, tiling the parent exactly (first subsection starts at the parent's `startSeg`, last ends at its `endSeg`, no gaps or overlaps). Sections of 12:00 or less have `"subsections": []`. Use subsections when a long section has real internal steps (the question, then the sources, then the chiddush), not just to fill the slot.
 - Cut at **turns in the argument**: a new question, a new source, the move to a story, the move to the application. Not at arbitrary time intervals.
 
-**Kinds:** `intro` (opening words, setting the question), `main` (the body of the teaching), `story` (a maaseh is the main content of the stretch), `tangent` (a real digression from the shiur's line), `closing` (summary, final message), `brachah` (blessings, wishes for a simcha, closing tefilah), `singing` (niggun, zemiros), `other_speaker` (someone other than the Rav), `noise` (silence, hallucinated or unusable audio). Most of a shiur is `main`. `singing`, `other_speaker` and `noise` sections are excluded from summaries, key points and insights (and from the later write-up).
+**Kinds:** `intro` (opening words, setting the question), `main` (the body of the teaching), `story` (a maaseh is the main content of the stretch), `tangent` (a real digression from the shiur's line), `closing` (summary, final message), `brachah` (blessings, wishes for a simcha, closing tefilah), `singing` (niggun, zemiros), `other_speaker` (someone other than the Mashgiach), `noise` (silence, hallucinated or unusable audio). Most of a shiur is `main`. `singing`, `other_speaker` and `noise` sections are excluded from summaries, key points and insights (and from the later write-up).
 
-**Titles**: short (2–8 words), specific to what is said in that stretch, in both languages. **Summaries**: 1–3 sentences per language, saying what the Rav does there (asks, brings, explains, concludes), concrete enough that a listener could decide whether to jump to this point.
+**Titles**: short (2–8 words), specific to what is said in that stretch, in both languages. **Summaries**: 1–3 sentences per language, saying what the Mashgiach does there (asks, brings, explains, concludes), concrete enough that a listener could decide whether to jump to this point.
 
 ### Good section vs bad section
 
@@ -98,7 +98,7 @@ Bad:
 ```json
 { "recordingId": "y-tanya-1-02", "startSeg": 0, "endSeg": 9,
   "title": { "en": "Introduction", "yi": "Introduction" },
-  "summary": { "en": "The Rav speaks about Rabbi Yisraelim and many important things. He says we must always be happy and strengthen our emunah.", "yi": "דער רבי רעדט וועגן אסאך זאכן." },
+  "summary": { "en": "The Mashgiach speaks about Rabbi Yisraelim and many important things. He says we must always be happy and strengthen our emunah.", "yi": "דער רבי רעדט וועגן אסאך זאכן." },
   "kind": "main", "catalogTopicIdx": [0, 1, 2], "subsections": [] }
 ```
 Why it's bad: the title is generic and the yi title is English; the garbled "Rabbi Yisraelim" was copied instead of recovered (Ribono shel Olam); "must always be happy" is advice nobody can trace to the segments; the yi summary is empty of content and not written from the shiur; it claims all three catalog topics; and 10 segments here last only 1:40, under the 3:00 minimum.
@@ -107,23 +107,23 @@ Good:
 ```json
 { "recordingId": "y-tanya-1-02", "startSeg": 0, "endSeg": 41,
   "title": { "en": "Why mazal seems to decide a person's life", "yi": "פארוואס עס זעט אויס אז מזל באשטימט א מענטשנס לעבן" },
-  "summary": { "en": "The Rav opens with the Gemara's statement that children, life and sustenance depend on mazal, and asks how this fits with a person's free choice and his tefillos.", "yi": "דער משגיח עפנט מיט דעם מאמר חז\"ל אז בני חיי ומזוני תלוי במזל, און פרעגט ווי אזוי דאס גייט צוזאמען מיט בחירה און מיט תפילה." },
+  "summary": { "en": "The Mashgiach opens with the Gemara's statement that children, life and sustenance depend on mazal, and asks how this fits with a person's free choice and his tefillos.", "yi": "דער משגיח עפנט מיט דעם מאמר חז\"ל אז בני חיי ומזוני תלוי במזל, און פרעגט ווי אזוי דאס גייט צוזאמען מיט בחירה און מיט תפילה." },
   "kind": "intro", "catalogTopicIdx": [0], "subsections": [] }
 ```
 (The good example's content is illustrative only; your content comes from your transcript.)
 
 ## 5. The other fields
 
-**Evidence.** Almost every item carries `evidence: { segs, confidence }`. `segs` is a non-empty list of the segment indices where the Rav actually says the thing (1–6 indices, the most direct ones, not a whole range). `confidence` is how sure you are that the item is what he said, given the ASR: 0.9+ clear speech and clear meaning; 0.7–0.85 meaning clear from context despite garbling; 0.6–0.7 plausible reconstruction; below 0.6 you should usually leave the item out (items under 0.6 are hidden anyway).
+**Evidence.** Almost every item carries `evidence: { segs, confidence }`. `segs` is a non-empty list of the segment indices where the Mashgiach actually says the thing (1–6 indices, the most direct ones, not a whole range). `confidence` is how sure you are that the item is what he said, given the ASR: 0.9+ clear speech and clear meaning; 0.7–0.85 meaning clear from context despite garbling; 0.6–0.7 plausible reconstruction; below 0.6 you should usually leave the item out (items under 0.6 are hidden anyway).
 **Multi-recording shiurim:** segment indices restart at 0 in each recording, so when the shiur has more than one recording every `evidence` object, and every `questions[]` item, must also carry `"recordingId": "<the recording its segs are in>"`, and all segs of one item must come from that one recording. In a single-recording shiur omit `recordingId` from evidence (it is allowed but not needed).
 
 - `summary.oneLiner`: one sentence per language, the heart of the shiur.
 - `summary.abstract`: the shiur's line of thought in order: **80–150 words in English, 80–180 words in Yiddish** (Yiddish runs longer for the same content).
 - `summary.keyPoints`: **3–7** main teachings, one sentence each.
-- `insights`: **3–7** chiddushim: the non-obvious ideas, distinctive readings or connections the Rav makes. Not a repeat of the key points in other words; an insight is something a learned listener would not have said himself.
+- `insights`: **3–7** chiddushim: the non-obvious ideas, distinctive readings or connections the Mashgiach makes. Not a repeat of the key points in other words; an insight is something a learned listener would not have said himself.
 - `stories`: every maaseh he tells, with `title`, a `retelling` (2–6 sentences per language, only details audible in the transcript), and `people` (names in English transliteration, only if recoverable). **Empty is valid.** Never add a story he didn't tell.
-- `questions`: **at most 6** kushya/teretz pairs the Rav himself raises and answers. `questionSegs` and `answerSegs` both non-empty. **Empty is valid.**
-- `takeaways`: **at most 5** practical applications **the Rav himself states** (what to do, how to daven, how to look at something). **Empty is valid**, and better than a takeaway you inferred.
+- `questions`: **at most 6** kushya/teretz pairs the Mashgiach himself raises and answers. `questionSegs` and `answerSegs` both non-empty. **Empty is valid.**
+- `takeaways`: **at most 5** practical applications **the Mashgiach himself states** (what to do, how to daven, how to look at something). **Empty is valid**, and better than a takeaway you inferred.
 - `sources`: every sefer, passuk, Chazal, Rishon, Acharon or Rebbe he cites or clearly alludes to. Uncapped, but each must be evidenced. (The later write-up refers to them by their index in this array.)
   - `heardAs`: the ASR text as it appears (copy the garbled form; short).
   - `work`: canonical English name of the work ("Tanya", "Bereishis", "Bnei Yissaschar", "Gemara Shabbos", "Zohar"), or `null` if only an author is named.
@@ -146,12 +146,12 @@ Every `Localized` field is `{ "en": "...", "yi": "..." }`; both are required and
 1. **Write each language from the shiur itself.** Do not write the English and then translate it into Yiddish, or the reverse. Each should read as if a native writer of that language summarized the shiur. They must agree in content.
 2. **Yiddish**: follow **`prompts/yiddish-style.md`** exactly: Chassidish orthography as in *Der Yid* / *Der Blatt* (`נישט`, `וואס`, `וואו`, `אזוי`, `פארוואס`, `ווייל`, `אידן`), **no YIVO spelling, no nikud, no dotted or ligature letters** (`וווּ`, `אַ`, `פֿ`, `ײ` are all wrong), no Daytshmerish (`וועלכער` as "which", `עטוואס`, `ווירקליך`), no English calques (`נעמט פלאץ`, `מאכט זינען`) and no English words in Hebrew letters (`רעקארדינג`). Hebrew and Aramaic words keep their **loshon-hakodesh spelling** (`שבת`, `אמונה`, `תפילה`, `צדיק`, `רבונו של עולם`, `נפש השנית`, `חז"ל`, `רש"י`), not phonetic Yiddish spellings (`שאבעס`, `צאדיק`). The `yi` text must be essentially all Hebrew script; at most an occasional unavoidable Latin name.
 3. **English**: plain, clear English for a frum reader. Hebrew terms transliterated in the Ashkenazi/Chassidish way the audience uses (Shabbos, Hashem, Ribono shel Olam, emunah, bitachon, tzaddik, Chazal, Rashi, the Ba'al Shem Tov), with a short gloss the first time if the term is not common. **No Hebrew script in `en` fields.** Use "Hashem" or "G-d".
-4. **Third-person reported speech, always.** English: "The Rav explains…", "He asks…", "He brings the Zohar…", "According to the Rav…". Yiddish: "דער משגיח ערקלערט…", "ער פרעגט…", "ער ברענגט דעם זוהר…". Never first person as the Rav ("I want to tell you…", "מיר דארפן…"), never direct quotes of his words, never second-person preaching to the reader ("You must…", "מען דארף…" as the writer's own voice). If he says "one must…", write "The Rav says one must…".
-5. **No psak.** Do not state halachic rulings, even if he discusses halacha; describe what he explains ("The Rav discusses why…").
+4. **Third-person reported speech, always.** English: "The Mashgiach explains…", "He asks…", "He brings the Zohar…", "According to the Mashgiach…". Yiddish: "דער משגיח ערקלערט…", "ער פרעגט…", "ער ברענגט דעם זוהר…". Never first person as the Mashgiach ("I want to tell you…", "מיר דארפן…"), never direct quotes of his words, never second-person preaching to the reader ("You must…", "מען דארף…" as the writer's own voice). If he says "one must…", write "The Mashgiach says one must…".
+5. **No psak.** Do not state halachic rulings, even if he discusses halacha; describe what he explains ("The Mashgiach discusses why…").
 6. **No advice he didn't give.** No moral lessons, applications or encouragement of your own.
-7. **No source text from memory.** Cite sources by name and ref only. Do not quote a passuk, Gemara, Zohar or Tanya passage beyond the few words of the phrase the Rav himself is clearly heard discussing, and never complete or correct a quote from memory.
-8. **No biography, no dates, no occasions** beyond what the header gives or the Rav says in the evidence. Don't call the shiur "a Shabbos shiur", "delivered at a wedding", etc. unless the header or transcript shows it. No claims about the Rav's life, teachers or influence.
-9. Refer to him as "the Rav" in English and "דער משגיח" in Yiddish. Don't add titles or epithets beyond that.
+7. **No source text from memory.** Cite sources by name and ref only. Do not quote a passuk, Gemara, Zohar or Tanya passage beyond the few words of the phrase the Mashgiach himself is clearly heard discussing, and never complete or correct a quote from memory.
+8. **No biography, no dates, no occasions** beyond what the header gives or the Mashgiach says in the evidence. Don't call the shiur "a Shabbos shiur", "delivered at a wedding", etc. unless the header or transcript shows it. No claims about the Mashgiach's life, teachers or influence.
+9. Refer to him as "the Mashgiach" in English and "דער משגיח" in Yiddish. Don't add titles or epithets beyond that.
 
 ## 7. Exact output shape
 
@@ -193,7 +193,7 @@ Compact example for a hypothetical single-recording 20-minute shiur (segments 0.
   "variant": "raw",
   "promptVersion": "p4-v3",
   "summary": {
-    "oneLiner": { "en": "The Rav explains what it means that the Jewish soul is 'truly a part of G-d above'.", "yi": "דער משגיח ערקלערט וואס עס מיינט אז די אידישע נשמה איז \"חלק אלוק ממעל ממש\"." },
+    "oneLiner": { "en": "The Mashgiach explains what it means that the Jewish soul is 'truly a part of G-d above'.", "yi": "דער משגיח ערקלערט וואס עס מיינט אז די אידישע נשמה איז \"חלק אלוק ממעל ממש\"." },
     "abstract": { "en": "(80-150 words)", "yi": "(80-180 ווערטער)" },
     "keyPoints": [
       { "text": { "en": "The word 'mamash' teaches that the soul stays bound to its Source.", "yi": "דאס ווארט \"ממש\" לערנט אז די נשמה בלייבט צוגעבינדן צו איר מקור." }, "evidence": { "segs": [12, 14], "confidence": 0.8 } },
@@ -204,7 +204,7 @@ Compact example for a hypothetical single-recording 20-minute shiur (segments 0.
   "sections": [
     { "recordingId": "y-tanya-1-02", "startSeg": 0, "endSeg": 33,
       "title": { "en": "What 'mamash' adds", "yi": "וואס \"ממש\" לייגט צו" },
-      "summary": { "en": "The Rav reads the opening of Tanya chapter two and asks what the word 'mamash' adds.", "yi": "דער משגיח לערנט דעם אנהייב פון תניא פרק ב און פרעגט וואס דאס ווארט \"ממש\" לייגט צו." },
+      "summary": { "en": "The Mashgiach reads the opening of Tanya chapter two and asks what the word 'mamash' adds.", "yi": "דער משגיח לערנט דעם אנהייב פון תניא פרק ב און פרעגט וואס דאס ווארט \"ממש\" לייגט צו." },
       "kind": "intro", "catalogTopicIdx": [0], "subsections": [] },
     { "recordingId": "y-tanya-1-02", "startSeg": 34, "endSeg": 70,
       "title": { "en": "...", "yi": "..." }, "summary": { "en": "...", "yi": "..." },

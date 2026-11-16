@@ -55,7 +55,7 @@ export interface Topic {
   reviewStatus?: ReviewStatus;
 }
 
-/** A glossary entry: a Torah/Chassidus concept as the Rav uses it. Doubles as the ASR correction list. */
+/** A glossary entry: a Torah/Chassidus concept as the Mashgiach uses it. Doubles as the ASR correction list. */
 export interface Concept {
   /** Stable ASCII kebab slug from the transliteration, e.g. "bitachon", "tzimtzum". */
   id: string;
@@ -64,7 +64,7 @@ export interface Concept {
   label: Bilingual;
   /** Latin-script spellings, e.g. ["bitachon", "bitochon"]. */
   transliterations: string[];
-  /** Definition as the Rav uses the term, grounded in the shiurim that mention it. */
+  /** Definition as the Mashgiach uses the term, grounded in the shiurim that mention it. */
   definition: Bilingual;
   /** Shiurim whose extraction lists this concept. */
   shiurIds: string[];
@@ -80,7 +80,7 @@ export interface Concept {
  * chassidic_rebbe: chassidic rebbes.
  * malach: malachim and other non-human spiritual beings (e.g. Samael, Ashmedai).
  * ruler: kings, emperors, heads of state, political and military leaders outside Tanach (e.g. Titus, Napoleon, Yannai HaMelech).
- * individual: private persons known from stories or the Rav's own life (Kamtza, Dama ben Nesina, chassidim, acquaintances, gabbaim).
+ * individual: private persons known from stories or the Mashgiach's own life (Kamtza, Dama ben Nesina, chassidim, acquaintances, gabbaim).
  * other: everyone else (thinkers, writers, scientists, public figures, founders of other religions, named groups).
  */
 export type PersonType =
@@ -109,7 +109,7 @@ export interface Person {
   type: PersonType;
   /**
    * Disambiguation note: who this entry is and how it differs from similarly named persons
-   * (e.g. the Amora Rav vs "the Rav"; the unspecified Belzer Rav; the Beis Aharon vs Rabbi Aharon HaGadol of Karlin).
+   * (e.g. the Amora Rav vs "the Mashgiach"; the unspecified Belzer Rav; the Beis Aharon vs Rabbi Aharon HaGadol of Karlin).
    */
   description?: Bilingual;
   /** Other names/titles, e.g. "the Besht", "Reb Yisroel Baal Shem Tov". */
