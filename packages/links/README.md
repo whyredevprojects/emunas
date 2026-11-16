@@ -11,7 +11,7 @@ the media host (Amendment A1). There is no `/audio/*` route on either site.
 
 Both sites' paths parse into one site-neutral `Route` (`parseQuiet`, `parseLive`) and format
 back (`formatQuiet`, `formatLive`). Every cross-site mapping is "parse on one site, format on
-the other". Time is global seconds (C5), written as whole seconds.
+the other". Time is global seconds (C5), written to the millisecond (`582.12`) in both Quiet's `#t=` and Live's `?t=`.
 
 | Thing | Quiet | Live |
 |---|---|---|

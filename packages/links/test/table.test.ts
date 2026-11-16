@@ -140,18 +140,27 @@ describe.each(EDS)("§2.2 table, edition %s", (ed) => {
 
 describe("absolute builders", () => {
   it("cross-site links carry the other host", () => {
-    expect(links.live.shiur("en", ID, { t: 754.4 })).toBe(`${HOSTS.live}/en/s/${ID}?t=754`);
+    expect(links.live.shiur("en", ID, { t: 754.4 })).toBe(`${HOSTS.live}/en/s/${ID}?t=754.4`);
     expect(links.quiet.shiur("yi", ID, { section: 3 })).toBe(`${HOSTS.quiet}/yi/shiur/${ID}/#s3`);
   });
 });
 
-describe("Quiet #t= keeps fractional seconds (F.2)", () => {
-  it("formats and parses the page hash to the millisecond; Live ?t= stays whole", () => {
+describe("time links keep fractional seconds (Quiet #t=, Live ?t=)", () => {
+  it("formats and parses Quiet's page hash to the millisecond", () => {
     expect(quietPaths().shiur("en", ID, { t: 582.12 })).toBe(`/en/shiur/${ID}/#t=582.12`);
     expect(quietPaths().shiur("en", ID, { t: 1855.5444 })).toBe(`/en/shiur/${ID}/#t=1855.544`);
     expect(quietPaths().shiur("en", ID, { t: 754 })).toBe(`/en/shiur/${ID}/#t=754`);
     expect(parseQuiet(`/en/shiur/${ID}/#t=582.12`)).toMatchObject({ kind: "shiur", id: ID, t: 582.12 });
-    expect(livePaths().shiur("en", ID, { t: 582.12 })).toBe(`/en/s/${ID}?t=582`);
+  });
+
+  it("formats and parses Live's ?t= to the millisecond", () => {
+    expect(livePaths().shiur("en", ID, { t: 582.12 })).toBe(`/en/s/${ID}?t=582.12`);
+    expect(livePaths().shiur("en", ID, { t: 1855.5444 })).toBe(`/en/s/${ID}?t=1855.544`);
+    expect(livePaths().shiur("en", ID, { t: 754 })).toBe(`/en/s/${ID}?t=754`);
+    expect(parseLive(`/en/s/${ID}?t=582.12`)).toMatchObject({ kind: "shiur", id: ID, t: 582.12 });
+    expect(parseLive(`/en/s/${ID}?t=1855.5444`)).toMatchObject({ kind: "shiur", id: ID, t: 1855.544 });
+    expect(links.equivalent(`${HOSTS.live}/en/s/${ID}?t=582.12`)).toBe(`${HOSTS.quiet}/en/shiur/${ID}/#t=582.12`);
+    expect(links.equivalent(`${HOSTS.quiet}/en/shiur/${ID}/#t=582.12`)).toBe(`${HOSTS.live}/en/s/${ID}?t=582.12`);
   });
 });
 

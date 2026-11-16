@@ -23,6 +23,9 @@ describe("deep links", () => {
   it("parses ?t= values", () => {
     expect(parseTimeParam("754")).toBe(754);
     expect(parseTimeParam("754.5")).toBe(754.5);
+    expect(parseTimeParam("582.12")).toBe(582.12);
+    expect(parseTimeParam("1855.5444")).toBe(1855.544);
+    expect(parseTimeParam("12m34.25s")).toBe(754.25);
     expect(parseTimeParam("12m34s")).toBe(754);
     expect(parseTimeParam("1h")).toBe(3600);
     expect(parseTimeParam("")).toBeNull();

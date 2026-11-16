@@ -18,17 +18,19 @@ export interface TimeSpan {
 }
 
 /**
- * Seconds from a `?t=` value: a non-negative number (`754`, `754.5`). `h/m/s` forms (`12m34s`) are
- * accepted too because people type them. Anything else is null.
+ * Seconds from a `?t=` value: a non-negative number (`754`, `582.12`), kept to the millisecond like
+ * Quiet's `#t=`. `h/m/s` forms (`12m34s`) are accepted too because people type them. Anything else
+ * is null.
  */
 export function parseTimeParam(raw: string | null): number | null {
   if (raw === null) return null;
   const v = raw.trim();
-  if (/^\d+(?:\.\d+)?$/.test(v)) return Number(v);
+  const ms = (x: number) => Math.round(x * 1000) / 1000;
+  if (/^\d+(?:\.\d+)?$/.test(v)) return ms(Number(v));
   const m = /^(?:(\d+)h)?(?:(\d+)m)?(?:(\d+(?:\.\d+)?)s)?$/.exec(v);
   if (!m || v === "") return null;
   const [, h, min, s] = m;
-  return Number(h ?? 0) * 3600 + Number(min ?? 0) * 60 + Number(s ?? 0);
+  return ms(Number(h ?? 0) * 3600 + Number(min ?? 0) * 60 + Number(s ?? 0));
 }
 
 /** The time span of a moment of this shiur by id (`<shiurId>~<kind><n>`), null when unknown or untimed. */

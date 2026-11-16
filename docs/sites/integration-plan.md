@@ -311,8 +311,10 @@ interface PublicShiur {
                resolution: "resolved" | "inferred" | "unresolved"; mention: "quoted" | "paraphrased" | "alluded"; t: number }[];
     insights: Moment[]; takeaways: Moment[];
     questions: { id: string; q: L; a: L; tq: number; ta: number; soft?: true }[];
-    stories: { id: string; title: L; retelling: L; people: string[]; peopleKeys: string[]; t: number; end: number }[];
-    people: { name: string; key: string }[]; concepts: { he: string; key: string }[];
+    stories: { id: string; title: L; retelling: L; t: number | null; end: number | null; soft?: true }[];
+    // No people or concept names, and no story people: raw extraction names may be ASR mishearings.
+    // People, concepts, works and a story's people come from the corpus layer: the shiur's refs in
+    // `.corpus/layer/shiur/<id>.json` (personIds, conceptIds, merged story ids) and the entity files.
     writeup: Record<Ed, { sectionIndex: number; heading: string | null;
                           paragraphs: { text: string; src: number[]; t: number; end: number }[] }[]>;
   };

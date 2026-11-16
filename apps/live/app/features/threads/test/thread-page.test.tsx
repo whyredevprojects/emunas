@@ -257,7 +257,7 @@ describe("the thread page", () => {
     expect(row.querySelector("[data-lang-mark]")!.textContent).toBe("Yiddish");
     const link = row.querySelector("a[data-moment]")!;
     expect(link.textContent).toBe(PARSHA.title);
-    expect(link.getAttribute("href")).toBe(`/en/s/${PARSHA.shiurId}?t=2529&m=${PARSHA.momentId}`);
+    expect(link.getAttribute("href")).toBe(`/en/s/${PARSHA.shiurId}?t=2528.94&m=${PARSHA.momentId}`);
     expect(row.textContent).toContain("The shofar's hundred sounds");
     expect(row.querySelector("button[data-action=play-member]")!.textContent).toContain("The hundred sounds of the shofar.");
     const undated = container.querySelector<HTMLElement>(`li[data-member="${UNDATED.momentId}"]`)!;

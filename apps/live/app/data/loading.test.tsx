@@ -157,7 +157,7 @@ describe("corpus-entry route stubs", () => {
     await waitFor(() => expect(container.querySelector("[data-testid=story-tellings]")).not.toBeNull());
     const links = [...container.querySelectorAll("[data-testid=story-tellings] a")].map((a) => a.getAttribute("href"));
     expect(links).toHaveLength(story.tellings);
-    for (const h of links) expect(h).toMatch(/^\/yi\/s\/[^?]+\?t=\d+&m=.+~st\d+$/u);
+    for (const h of links) expect(h).toMatch(/^\/yi\/s\/[^?]+\?t=\d+(?:\.\d{1,3})?&m=.+~st\d+$/u);
     expect(container.querySelectorAll("[data-corpus-label]")).toHaveLength(1);
     expect(requested).toEqual([`/data/story/${story.id}.json`]);
   });

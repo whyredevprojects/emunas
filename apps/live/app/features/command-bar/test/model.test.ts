@@ -61,7 +61,7 @@ describe("grouping", () => {
 
 describe("links", () => {
   it("moment links carry ?t= and &m= for page moment ids, ?t= only otherwise", () => {
-    expect(hitHref("en", { shiurId: "x-01", momentId: "x-01~s3", t: 754.4 })).toBe("/en/s/x-01?t=754&m=x-01~s3");
+    expect(hitHref("en", { shiurId: "x-01", momentId: "x-01~s3", t: 754.4 })).toBe("/en/s/x-01?t=754.4&m=x-01~s3");
     expect(hitHref("yi", { shiurId: "x-01", momentId: "x-01~wen2.1", t: 10 })).toBe("/yi/s/x-01?t=10");
     expect(hitHref("en", { shiurId: "x-01", momentId: "other~s1", t: 0 })).toBe("/en/s/x-01?t=0");
   });

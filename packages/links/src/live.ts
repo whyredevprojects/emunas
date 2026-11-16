@@ -11,7 +11,7 @@
 import { momentId, parseMomentId } from "./moment.ts";
 import { resolveEntry } from "./pages.ts";
 import { isEd, type CorpusKind, type IndexName, type LinkData, type Route } from "./types.ts";
-import { buildQuery, formatSeconds, parseSeconds, pathSegments, queryGet, seg, splitUrl } from "./url.ts";
+import { buildQuery, formatExactSeconds, parseExactSeconds, pathSegments, queryGet, seg, splitUrl } from "./url.ts";
 
 
 /** Corpus entry segments. */
@@ -59,7 +59,7 @@ export function formatLive(route: Route, data: LinkData = {}, opts: { readonly b
       let t = route.t;
       if (route.moment?.kind === "s") t = data.sectionStart?.(route.id, route.moment.index) ?? t;
       const m = route.moment ? momentId(route.id, route.moment.kind, route.moment.index) : undefined;
-      return base + buildQuery([["t", formatSeconds(t)], ["m", m]]);
+      return base + buildQuery([["t", formatExactSeconds(t)], ["m", m]]);
     }
     case "series":
       return `/${route.ed}/series/${seg(route.id)}`;
@@ -91,7 +91,7 @@ export function parseLive(url: string, data: LinkData = {}): Route | null {
   switch (a) {
     case "s": {
       if (s.length !== 3 || b === undefined) return null;
-      const t = parseSeconds(queryGet(u.query, "t"));
+      const t = parseExactSeconds(queryGet(u.query, "t"));
       const parsed = parseMomentId(queryGet(u.query, "m") ?? "");
       const moment = parsed && parsed.shiurId === b ? { kind: parsed.kind, index: parsed.index } : undefined;
       return {

@@ -77,7 +77,7 @@ describe("Today page", () => {
     const content = momentContent(shiurNoach as unknown as ShiurFile, id)!;
     expect(box.textContent).toContain(content.text.en);
     const play = [...box.querySelectorAll("a")].find((a) => a.getAttribute("href")?.startsWith("/en/s/"))!;
-    expect(play.getAttribute("href")).toMatch(new RegExp(`^/en/s/en-parsha-en-nch-01\\?t=\\d+&m=${id.replace("~", "~")}$`));
+    expect(play.getAttribute("href")).toMatch(new RegExp(`^/en/s/en-parsha-en-nch-01\\?t=\\d+(?:\\.\\d{1,3})?&m=${id.replace("~", "~")}$`));
     cleanup();
     const second = await renderAt(`/en/?date=${NOACH_WEEK}`);
     await waitFor(() => expect(second.container.querySelector("[data-moment]")?.getAttribute("data-moment")).toBe(id));

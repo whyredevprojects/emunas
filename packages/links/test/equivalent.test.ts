@@ -158,6 +158,6 @@ describe("builders reject bad input", () => {
   it("ignores unusable times", () => {
     expect(livePaths().shiur("en", "a", { t: Number.NaN })).toBe("/en/s/a");
     expect(quietPaths().shiur("en", "a", { t: -1 })).toBe("/en/shiur/a/");
-    expect(livePaths().shiur("en", "a", { t: 12.6, m: { kind: "kp", index: 0 } })).toBe("/en/s/a?t=13&m=a~kp0");
+    expect(livePaths().shiur("en", "a", { t: 12.6, m: { kind: "kp", index: 0 } })).toBe("/en/s/a?t=12.6&m=a~kp0");
   });
 });

@@ -33,7 +33,7 @@ export interface QuietShiurOptions {
 }
 
 export interface LiveShiurOptions {
-  /** Global seconds → `?t=` (rounded; ignored if not a finite non-negative number). */
+  /** Global seconds → `?t=` (kept to the millisecond; ignored if not a finite non-negative number). */
   readonly t?: number | undefined;
   /** Moment to focus: a moment id `<shiurId>~<kind><index>` or `{kind, index}` → `&m=`. */
   readonly m?: string | MomentRef | undefined;

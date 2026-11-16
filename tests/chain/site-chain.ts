@@ -1,7 +1,8 @@
 /**
  * The real-data site chain (corpus-wave-plan §6, C3.8), in the order deploy.yml and ci.yml run it:
  *
- *   corpus:build → guard pre → corpus:build --suppress → search:build → live data:build
+ *   corpus:build → guard pre → corpus:build --suppress → search:build → live data:build (lexical
+ *   neighbours, as in ci.yml)
  *   → quiet build → live build → guard post (0 findings) → budgets
  *
  *   npm run site:chain [-- options]
@@ -87,7 +88,11 @@ export function chainSteps(opts: { report: string; bundles: boolean }): Step[] {
       commands: [["npm", "run", "corpus:build", "--", "--suppress", SUPPRESS_FILE]],
     },
     { id: "search-build", title: "search:build", commands: [["npm", "run", "search:build"]] },
-    { id: "live-data", title: "live data:build", commands: [["npm", "run", "data:build", "--workspace=@emunas/live"]] },
+    {
+      id: "live-data",
+      title: "live data:build --neighbors lexical",
+      commands: [["npm", "run", "data:build", "--workspace=@emunas/live", "--", "--neighbors", "lexical"]],
+    },
     { id: "quiet-build", title: "quiet build", commands: [["npm", "run", "build", "--workspace=@emunas/quiet"]] },
     { id: "live-build", title: "live build", commands: [["npm", "run", "build", "--workspace=@emunas/live"]] },
     {

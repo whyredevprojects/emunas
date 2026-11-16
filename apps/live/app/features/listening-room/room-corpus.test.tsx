@@ -192,7 +192,7 @@ describe("insights: thread marks", () => {
     expect(line.textContent).toContain("Also taught in");
     expect(line.textContent).toContain('תשל"ה');
     const link = within(line).getByRole("link");
-    expect(link.getAttribute("href")).toBe("/en/s/en-miscellaneous-en-02?t=555&m=en-miscellaneous-en-02~i1");
+    expect(link.getAttribute("href")).toBe("/en/s/en-miscellaneous-en-02?t=555.04&m=en-miscellaneous-en-02~i1");
     expect(link.textContent).toBe(misc01.related.titles["en-miscellaneous-en-02"]!.title);
 
     // Play loads the other shiur's file on the tap and plays its insight there.
