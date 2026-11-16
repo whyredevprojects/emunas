@@ -12,7 +12,7 @@
 //   repeat_prev  exact repeat (after whitespace/punctuation normalization) of the previous segment, when
 //                it has >= 25 letters or is the 3rd+ line of a chain of identical lines (the 2nd line of
 //                that chain is flagged too). A single short repeat ("for hundreds of years") is usually
-//                the Rav repeating for emphasis and is not flagged; the content is in the previous line.
+//                the Mashgiach repeating for emphasis and is not flagged; the content is in the previous line.
 //   near_empty   no letters at all and no digits (".", "...", "♪"), or <= 3 letters over >= 5 s.
 //   stock_phrase a known Whisper filler: "Thank you for watching", "Subtitles by...", a segment that is
 //                only "תודה רבה" (in Yiddish shiurim) or a repeated "שבת שלום".
