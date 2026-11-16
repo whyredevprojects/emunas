@@ -1,7 +1,8 @@
 ---
 /**
  * The title page, שער (concept-quiet §5.1, tech-quiet §2 `/{ed}/`): what this is, and the three ways
- * in. The name and one sentence; "this week" (parsha and nearest zman, computed at build time);
+ * in. The name and one sentence; "this week" (parsha and nearest zman, built for the days around the
+ * build and showing the visitor's own day with script);
  * the contents in brief (sections with counts); the indexes, one line each, in the order of
  * concept-quiet-corpus C5 with counts from the corpus layer (anchor `#indexes`, the target of the
  * "Indexes" nav item); and the standing coverage line. No featured, popular or recently added.
@@ -12,7 +13,7 @@ import { loadCatalogCorpus } from "../../components/catalog/corpus.ts";
 import IndexesBlock from "../../components/corpus/IndexesBlock.astro";
 import { quietLayer } from "../../components/corpus/layer.ts";
 import { indexesBlock } from "../../components/corpus/model.ts";
-import { buildDate, contentsHref, contentsModel, corpusTotals, pocketGuideUrl, sectionHref, thisWeekModel } from "../../components/catalog/model.ts";
+import { buildDate, contentsHref, contentsModel, corpusTotals, pocketGuideUrl, sectionHref, thisWeekWindow } from "../../components/catalog/model.ts";
 import { catalogSlot, useCatalogT } from "../../components/catalog/strings.ts";
 import NewTabLink from "../../components/NewTabLink.astro";
 import { currentSiteEnv } from "../../components/seo/site-env.ts";
@@ -30,7 +31,7 @@ const t = useT(ed);
 const c = useCatalogT(ed);
 const totals = corpusTotals(corpus);
 const contents = contentsModel(corpus, ed);
-const week = thisWeekModel(corpus, ed, buildDate(process.env));
+const week = thisWeekWindow(corpus, ed, buildDate(process.env));
 // Guide sections by name; the uncatalogued ones (whose titles repeat the guide's) as one line.
 const sections = [...contents.yiddish, ...contents.english];
 const uncataloguedCount = contents.uncatalogued.reduce((a, s) => a + s.count, 0);

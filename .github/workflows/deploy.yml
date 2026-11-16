@@ -6,8 +6,8 @@ name: deploy
 # → deploy emunas-api → emunas-quiet → emunas-live → job summary.
 # The build and guard steps run in the order of `npm run site:chain` (tests/chain/site-chain.ts);
 # tests/chain/site-chain.test.ts fails when this file and the script disagree.
-# Production from main (push touching site inputs, daily 05:17 UTC, dispatch);
-# staging by dispatch only. See docs/sites/ops-runbook.md.
+# Production from main (push touching site inputs, dispatch); staging by dispatch only.
+# The scheduled Quiet-only rebuild for "this week" is refresh-quiet.yml. See docs/sites/ops-runbook.md.
 
 on:
   push:
@@ -19,8 +19,6 @@ on:
       - "packages/**"
       - "workers/**"
       - "site-policy/**"
-  schedule:
-    - cron: "17 5 * * *"
   workflow_dispatch:
     inputs:
       target:

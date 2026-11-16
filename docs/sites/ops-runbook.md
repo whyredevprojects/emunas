@@ -269,7 +269,7 @@ builds and previews, exactly as deploys do. Same-repo PRs then get `preview`: `w
 secrets the preview step logs a notice and passes.
 
 **deploy.yml** (push to main touching `data/derived`, `data/catalog`, `apps`, `packages`,
-`workers`, `site-policy`; daily 05:17 UTC; manual dispatch with `target: production|staging`):
+`workers`, `site-policy`; manual dispatch with `target: production|staging`):
 configuration check (`EMUNAS_MEDIA_ORIGIN` and the Cloudflare secrets) → provisioning check (§3)
 → corpus:build (with `EMUNAS_DEPLOY=1`) → guard pre → corpus:build --suppress →
 `npm run search:build` → embedding cache mirror (below) → `npm run data:build --workspace=@emunas/live` → Quiet and Live builds →
@@ -278,6 +278,16 @@ render `_headers` → Worker bundles (dry run) → guard post (covers the api bu
 `npm run search:sync --workspace=@emunas/api -- --env <target>` when that script exists (W3.10) →
 deploy `emunas-api` → `emunas-quiet` → `emunas-live` → job summary (full/total, newly full ids, downgrades with reasons, unmapped
 counts, suppressed ids; never text). `concurrency: deploy-<target>`, cancel in progress.
+
+**refresh-quiet.yml** (every second day at 05:17 UTC; manual dispatch): rebuilds and deploys Quiet
+alone from `main`, so the title page's "this week" window stays current: build day −1…+3, with
+the build day taken in America/New_York. Steps: configuration check → corpus:build → guard pre →
+corpus:build --suppress → search:build → Quiet build → render `_headers` → guard post over
+`.corpus` and `apps/quiet/dist` → budgets → deploy `emunas-quiet`. It skips the tests (main has
+passed them), Live, D1/Vectorize and emunas-api. It shares the `deploy-production` concurrency
+group without cancelling: a full deploy cancels a refresh, and a refresh waits for a full deploy.
+If GitHub's schedule runs late or one run fails, the window still covers the next day. If runs
+keep failing, dispatch it by hand or push to `main`.
 
 The data steps between the corpus build and the app builds:
 

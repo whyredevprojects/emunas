@@ -3,6 +3,7 @@
  * - the title page, contents, section and series pages render with JavaScript switched off;
  * - axe: zero violations (WCAG 2.0–2.2 A/AA + best practices) in both editions;
  * - the title page carries "this week", the contents in brief and `#indexes`;
+ * - with script, "this week" shows the visitor's own day from the built window, under the site CSP;
  * - in-page jump links and links between catalog pages resolve.
  *
  * Builds .corpus/ from data/ with buildCorpusWithAggregates into a temporary directory, builds the
@@ -30,6 +31,11 @@ let outDir = "";
 let server: Server;
 let origin = "";
 let browser: Browser;
+
+// The site CSP from public/_headers, sent with every HTML response; contexts bypass it unless
+// they ask for it (axe is injected as an inline script).
+const CSP = (/^\s*Content-Security-Policy: (.+)$/m.exec(readFileSync(join(app, "public/_headers"), "utf8"))?.[1] ?? "")
+  .replace("{{EMUNAS_MEDIA_ORIGIN}}", "https://media.example.org");
 
 const TYPES: Record<string, string> = {
   ".html": "text/html; charset=utf-8",
@@ -80,7 +86,8 @@ beforeAll(async () => {
     if (!file.startsWith(outDir)) return void res.writeHead(403).end();
     if (existsSync(file) && statSync(file).isDirectory()) file = join(file, "index.html");
     if (!existsSync(file)) return void res.writeHead(404, { "content-type": "text/plain" }).end("not found");
-    res.writeHead(200, { "content-type": TYPES[extname(file)] ?? "application/octet-stream" });
+    const type = TYPES[extname(file)] ?? "application/octet-stream";
+    res.writeHead(200, { "content-type": type, ...(extname(file) === ".html" ? { "content-security-policy": CSP } : {}) });
     res.end(readFileSync(file));
   });
   await new Promise<void>((r) => server.listen(0, "127.0.0.1", r));
@@ -116,13 +123,27 @@ async function axe(page: Page): Promise<AxeViolation[]> {
   });
 }
 
-async function open(path: string, opts: { js?: boolean; dark?: boolean; width?: number } = {}): Promise<Page> {
+interface OpenOpts {
+  js?: boolean;
+  dark?: boolean;
+  width?: number;
+  /** Enforce the site CSP (otherwise bypassed). */
+  csp?: boolean;
+  /** The browser clock and time zone. */
+  time?: Date;
+  timezoneId?: string;
+}
+
+async function open(path: string, opts: OpenOpts = {}): Promise<Page> {
   const context = await browser.newContext({
     javaScriptEnabled: opts.js ?? true,
     colorScheme: opts.dark ? "dark" : "light",
     viewport: { width: opts.width ?? 1100, height: 900 },
+    bypassCSP: !opts.csp,
+    ...(opts.timezoneId ? { timezoneId: opts.timezoneId } : {}),
   });
   const page = await context.newPage();
+  if (opts.time) await page.clock.install({ time: opts.time });
   const res = await page.goto(origin + path, { waitUntil: "load" });
   expect(res?.status(), path).toBe(200);
   return page;
@@ -170,6 +191,68 @@ describe.each(["yi", "en"] as const)("%s edition", (ed) => {
     expect(await page.locator('[data-occasion="chanukah"] li').count()).toBe(5);
     expect(await page.locator("[data-section]").count()).toBeGreaterThan(10);
     expect(await page.locator("[data-coverage]").innerText()).toContain("997");
+    await page.context().close();
+  });
+
+  it("this week: carries the build day −1…+3, each referenced block once", async () => {
+    const page = await open(`/${ed}/`, { js: false });
+    const built = await page.locator("[data-this-week]").evaluate((root) => {
+      const days = (root.querySelector("template[data-week-days]") as HTMLTemplateElement).content.querySelectorAll<HTMLElement>("[data-day]");
+      const blocks = Array.from(root.querySelectorAll<HTMLTemplateElement>("template[data-week-block]"), (t) => t.dataset["weekBlock"]);
+      return { date: (root as HTMLElement).dataset["weekDate"], days: Array.from(days, (d) => [d.dataset["day"], d.dataset["blocks"]]), blocks };
+    });
+    expect(built.date).toBe("2026-11-15");
+    expect(built.days.map(([d]) => d)).toEqual(["2026-11-14", "2026-11-15", "2026-11-16", "2026-11-17", "2026-11-18"]);
+    const referenced = new Set(built.days.flatMap(([, b]) => (b ?? "").split(" ").filter(Boolean)));
+    expect(new Set(built.blocks)).toEqual(referenced);
+    expect(built.blocks).toHaveLength(referenced.size);
+    await page.context().close();
+  });
+
+  it("this week: shows the visitor's own day under the site CSP, else the build day", async () => {
+    const shown = async (time: Date, timezoneId = "America/New_York") => {
+      const page = await open(`/${ed}/`, { csp: true, time, timezoneId });
+      const errors: string[] = [];
+      page.on("pageerror", (e) => errors.push(e.message));
+      page.on("console", (m) => { if (m.type() === "error") errors.push(m.text()); });
+      await page.reload({ waitUntil: "load" }); // module scripts have run by load
+      const out = {
+        date: await page.locator("[data-this-week]").getAttribute("data-week-date"),
+        lead: await page.locator("[data-week-lead]").innerText(),
+        occasions: await page.locator("[data-week-grid] [data-occasion]").evaluateAll((els) => els.map((e) => (e as HTMLElement).dataset["occasion"])),
+        errors,
+      };
+      await page.context().close();
+      return out;
+    };
+    const yiDay: Record<number, string> = { 4: "ד'", 5: "ה'", 6: "ו'", 7: "ז'" };
+    const kislev = (day: number) => (ed === "en" ? `${day} Kislev 5787` : `${yiDay[day]} כסלו תשפ"ז`);
+
+    // Motzei Shabbos 4 Kislev (the day before the build day): Toldos is still the parsha of the week.
+    const sat = await shown(new Date("2026-11-14T22:00:00-05:00"));
+    expect(sat).toMatchObject({ date: "2026-11-14", occasions: ["toldos", "chanukah"], errors: [] });
+    expect(sat.lead).toContain(kislev(4));
+
+    const tue = await shown(new Date("2026-11-17T09:00:00-05:00"));
+    expect(tue).toMatchObject({ date: "2026-11-17", occasions: ["vayeitzei", "chanukah"], errors: [] });
+    expect(tue.lead).toContain(kislev(7));
+
+    // Already the 16th in Jerusalem while it is still the 15th in New York.
+    const jlm = await shown(new Date("2026-11-15T22:30:00Z"), "Asia/Jerusalem");
+    expect(jlm).toMatchObject({ date: "2026-11-16", errors: [] });
+    expect(jlm.lead).toContain(kislev(6));
+
+    // Outside the window: the build day stays.
+    const later = await shown(new Date("2026-12-01T09:00:00-05:00"));
+    expect(later).toMatchObject({ date: "2026-11-15", occasions: ["vayeitzei", "chanukah"], errors: [] });
+    expect(later.lead).toContain(kislev(5));
+  }, 60_000);
+
+  it("this week: axe finds no violations after the swap", async () => {
+    const page = await open(`/${ed}/`, { time: new Date("2026-11-17T09:00:00-05:00"), timezoneId: "America/New_York" });
+    expect(await page.locator("[data-this-week]").getAttribute("data-week-date")).toBe("2026-11-17");
+    const v = await axe(page);
+    expect(v, JSON.stringify(v, null, 1)).toEqual([]);
     await page.context().close();
   });
 
@@ -230,6 +313,17 @@ describe("built output", () => {
       }
     }
     expect(missing).toEqual([]);
+  });
+
+  it("has no inline script or style for the CSP to block", () => {
+    const bad: string[] = [];
+    for (const f of files()) {
+      const text = readFileSync(f, "utf8");
+      for (const m of text.matchAll(/<script\b([^>]*)>/g)) if (!/\bsrc=/.test(m[1]!)) bad.push(`${f.slice(outDir.length)}: <script${m[1]}>`);
+      if (/<style\b/.test(text)) bad.push(`${f.slice(outDir.length)}: <style>`);
+      if (/\sstyle="/.test(text)) bad.push(`${f.slice(outDir.length)}: style=""`);
+    }
+    expect(bad).toEqual([]);
   });
 
   it("carries no transcript-derived field names or paths", () => {

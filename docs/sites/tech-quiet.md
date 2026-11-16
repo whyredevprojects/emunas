@@ -24,7 +24,7 @@ Verified against the repo on 15 Nov 2026: 997 in-scope shiurim in `data/derived/
 |---|---|---|
 | Language | TypeScript, `strict: true`, `noUncheckedIndexedAccess`, `exactOptionalPropertyTypes` | The data has a lot of optional and nullable fields (`work`, `ref`, `recordingId?`); these flags make them visible. |
 | Site framework | **Astro** (current major at start, exact version pinned), `output: "static"` | Zero JS by default, `.astro` components are close to plain HTML, and `getStaticPaths` fits 997 × 2 pages. No UI framework runtime (no React, no Preact). |
-| Client scripts | Vanilla TS modules bundled by Astro/Vite, attached with `<script>` and progressive enhancement | Only the player (§7) and search (§5) run any script. The page works without either. |
+| Client scripts | Vanilla TS modules bundled by Astro/Vite, attached with `<script>` and progressive enhancement | The player (§7), search (§5), the edition switch and "this week" on the title page run script. Every page works without it. |
 | Styling | One hand-written CSS system: custom properties for tokens, **logical properties only** (`margin-inline-start`, `inset-inline-end`), `@layer` for base/layout/components/print; Stylelint with a logical-properties rule | RTL and LTR from the same CSS. No Tailwind, so print and RTL behave predictably. |
 | Fonts | Self-hosted woff2, subset at build time with `fonttools`/`glyphhanger`: a Hebrew text face (candidate: Frank Ruhl Libre, OFL) and a Latin book face (candidate: Source Serif 4, OFL) | Concept rule: no third-party resources. Yiddish needs U+05F0–U+05F2 (װ ױ ײ), U+FB1D–FB4F and nikud. A test checks that coverage (§11). |
 | i18n | Two editions as a route parameter `[ed]` ∈ {`yi`,`en`}, typed string tables `src/i18n/yi.ts` and `en.ts` sharing one `UiKey` union (a missing key fails `tsc`); `<html lang dir>` set per edition | Astro's i18n routing isn't needed. The two editions have identical structure (concept §8). |
@@ -163,6 +163,7 @@ Nothing named `heardAs`, `asrNotes`, `segs`, `audioKey` or `transcriptKey` exist
 | Pending shiur page | ≤ 15 KB raw | catalog + audio + neighbours |
 | CSS (all) | ≤ 12 KB br | |
 | JS on a shiur page | ≤ 6 KB br (player) | |
+| JS on the title page | ≤ 1.5 KB br (edition switch, "this week") | the "this week" days ride in the HTML as templates, about 2 KB br |
 | JS on search page | Pagefind UI-less API + our 3 KB glue | Pagefind loads index chunks lazily |
 | Fonts | ≤ 140 KB total woff2; only the edition's body face preloaded | |
 | Static asset files | ≤ 18,000 (CI fails above; Free plan limit is 20,000 per version, Paid 100,000) | ~2,000 shiur + ~4,000 index pages at full corpus + ~1,500 Pagefind files + ~30 assets |
@@ -293,7 +294,7 @@ API surface (the whole backend): `GET|HEAD /audio/{recordingId}.mp3[?download=1]
 - HTML: the platform default (revalidating); pages change daily.
 
 **Deploy and rebuild** (`.github/workflows/quiet.yml`; the reconciler may merge it into shared CI):
-- triggers: push to the main branch touching `data/derived/**`, `data/catalog/**`, `apps/quiet/**`, `packages/**`; schedule daily at 05:17 UTC (about 00:17 US Eastern; picks up data and refreshes "this week"); manual dispatch
+- triggers: push to the main branch touching `data/derived/**`, `data/catalog/**`, `apps/quiet/**`, `packages/**`; manual dispatch. `refresh-quiet.yml` rebuilds and deploys Quiet alone every second day at 05:17 UTC, so the "this week" window (build day −1…+3, the build day in America/New_York) stays current.
 - `concurrency: quiet-deploy, cancel-in-progress: true`, since data commits arrive in bursts
 - steps: install → `build-data` → `astro build` → `build-search` → guards (§11) → `wrangler deploy` (secrets `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`)
 - PRs: `wrangler versions upload` gives a preview URL, no promotion
