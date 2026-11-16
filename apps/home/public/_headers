@@ -1,0 +1,23 @@
+# Home site (emunas-home): headers for static asset responses. `/files/*` is answered by the
+# Worker (worker/index.ts sets its own headers); these rules do not apply there.
+# The site ships no inline scripts or styles (astro.config.ts), so the CSP allows only 'self'.
+
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Content-Type-Options: nosniff
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()
+  Cross-Origin-Opener-Policy: same-origin
+
+# Hashed build output.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Font files keep stable names (copied from @emunas/tokens), so they are not immutable.
+/fonts/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+# Only the custom domain is indexable. Covers <worker>.<account>.workers.dev and preview hosts
+# (<alias>-<worker>.<account>.workers.dev).
+https://:worker.:subdomain.workers.dev/*
+  X-Robots-Tag: noindex

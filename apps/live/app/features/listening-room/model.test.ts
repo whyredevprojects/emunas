@@ -117,11 +117,11 @@ describe("sources", () => {
 describe("printable page link (Quiet)", () => {
   it("uses the configured origin", () => {
     expect(quietOrigin({ VITE_EMUNAS_QUIET_ORIGIN: "https://example.org/" }, null)).toBe("https://example.org");
-    expect(quietOrigin({ VITE_EMUNAS_DOMAIN: "example.org" }, null)).toBe("https://example.org");
+    expect(quietOrigin({ VITE_EMUNAS_DOMAIN: "example.org" }, null)).toBe("https://library.example.org");
   });
 
   it("derives Quiet from the Live host", () => {
-    expect(quietOrigin({}, { protocol: "https:", host: "listen.example.org" })).toBe("https://example.org");
+    expect(quietOrigin({}, { protocol: "https:", host: "listen.example.org" })).toBe("https://library.example.org");
     expect(quietOrigin({}, { protocol: "https:", host: "emunas-live.acct.workers.dev" })).toBe(
       "https://emunas-quiet.acct.workers.dev",
     );

@@ -154,6 +154,7 @@ beforeAll(async () => {
     ...process.env,
     ASTRO_TELEMETRY_DISABLED: "1",
     EMUNAS_CORPUS_DIR: corpusDir,
+    EMUNAS_HOME_ORIGIN: "http://localhost:4322",
     EMUNAS_QUIET_ORIGIN: origin,
     EMUNAS_LIVE_ORIGIN: "http://localhost:5173",
     EMUNAS_FEEDBACK_EMAIL: "errors@example.org",

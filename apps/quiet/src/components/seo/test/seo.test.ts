@@ -45,27 +45,38 @@ describe("site env", () => {
     expect(env.feedbackEmail).toBe(PLACEHOLDER_FEEDBACK_EMAIL);
     expect(env.placeholder).toEqual({ hosts: true, feedbackEmail: true });
     expect(env.links.live.shiur("en", "x")).toBe("https://listen.example.invalid/en/s/x");
+    expect(env.hosts.quiet).toBe("https://library.example.invalid");
   });
 
   it("reads EMUNAS_DOMAIN, the workers.dev subdomain and explicit origins", () => {
     const prod = siteEnv({ EMUNAS_DOMAIN: "Emunas.Example", EMUNAS_FEEDBACK_EMAIL: " errors@emunas.example " });
-    expect(prod.hosts).toEqual({ quiet: "https://emunas.example", live: "https://listen.emunas.example" });
+    expect(prod.hosts).toEqual({
+      home: "https://emunas.example",
+      quiet: "https://library.emunas.example",
+      live: "https://listen.emunas.example",
+    });
     expect(prod.feedbackEmail).toBe("errors@emunas.example");
     expect(prod.placeholder).toEqual({ hosts: false, feedbackEmail: false });
 
     const staging = siteEnv({ EMUNAS_WORKERS_SUBDOMAIN: "acct", EMUNAS_STAGE: "staging" });
     expect(staging.hosts).toEqual({
+      home: "https://emunas-home-staging.acct.workers.dev",
       quiet: "https://emunas-quiet-staging.acct.workers.dev",
       live: "https://emunas-live-staging.acct.workers.dev",
     });
 
-    const local = siteEnv({ EMUNAS_QUIET_ORIGIN: "http://localhost:4321", EMUNAS_LIVE_ORIGIN: "http://localhost:5173" });
+    const local = siteEnv({
+      EMUNAS_HOME_ORIGIN: "http://localhost:4322",
+      EMUNAS_QUIET_ORIGIN: "http://localhost:4321",
+      EMUNAS_LIVE_ORIGIN: "http://localhost:5173",
+    });
     expect(local.links.quiet.home("yi")).toBe("http://localhost:4321/yi/");
   });
 
   it("fails on malformed or half-set values, deploy or not", () => {
     expect(() => siteEnv({ EMUNAS_LIVE_ORIGIN: "http://localhost:5173" })).toThrow(/no hosts configured/);
     expect(() => siteEnv({ EMUNAS_DOMAIN: "listen.emunas.example" })).toThrow();
+    expect(() => siteEnv({ EMUNAS_DOMAIN: "library.emunas.example" })).toThrow();
     expect(() => siteEnv({ EMUNAS_DOMAIN: "not a domain" })).toThrow();
     expect(() => siteEnv({ EMUNAS_FEEDBACK_EMAIL: "nobody" })).toThrow(/EMUNAS_FEEDBACK_EMAIL/);
     expect(() => parseFeedbackEmail("a@b.c?subject=x")).toThrow();

@@ -3,7 +3,7 @@ name: deploy
 # integration-plan §3.5 and §4 (as amended by A1: no audio bucket, no audio routes):
 # typecheck, lint and unit tests (any failure = nothing deploys) → corpus:build → guard pre → corpus:build --suppress → app builds → _headers → Worker bundles
 # → guard post (FAIL = nothing deploys) → budgets → D1 migrations → D1/Vectorize sync
-# → deploy emunas-api → emunas-quiet → emunas-live → job summary.
+# → deploy emunas-api → emunas-quiet → emunas-live → emunas-home → job summary.
 # The build and guard steps run in the order of `npm run site:chain` (tests/chain/site-chain.ts);
 # tests/chain/site-chain.test.ts fails when this file and the script disagree.
 # Production from main (push touching site inputs, daily 05:17 UTC, dispatch);
@@ -64,7 +64,7 @@ jobs:
       EMUNAS_DEPLOY: "1"
       # Site hosts (canonical, hreflang, sitemaps, cross-site links; integration-plan §2.1) and the
       # Quiet "report an error" address. Set EMUNAS_DOMAIN once the domain exists (O8); until then
-      # EMUNAS_WORKERS_SUBDOMAIN gives the workers.dev hosts. The Quiet build fails without them.
+      # EMUNAS_WORKERS_SUBDOMAIN gives the workers.dev hosts. The Quiet and Home builds fail without them.
       EMUNAS_DOMAIN: ${{ vars.EMUNAS_DOMAIN }}
       EMUNAS_WORKERS_SUBDOMAIN: ${{ vars.EMUNAS_WORKERS_SUBDOMAIN }}
       EMUNAS_STAGE: ${{ (inputs.target || 'production') == 'staging' && 'staging' || '' }}
@@ -137,6 +137,7 @@ jobs:
           path: |
             .corpus
             apps/quiet/node_modules/.astro
+            apps/home/node_modules/.astro
             node_modules/.astro
           key: site-build-${{ env.TARGET }}-${{ github.sha }}
           restore-keys: site-build-${{ env.TARGET }}-
@@ -243,6 +244,10 @@ jobs:
         run: npm run build --workspace=@emunas/quiet
       - name: Build Live
         run: npm run build --workspace=@emunas/live
+      - name: Build Home
+        run: npm run build --workspace=@emunas/home
+      # Home's public/_headers has no media origin to fill in (its files are same-origin /files/*,
+      # served by its Worker from R2), so it ships as built.
       - name: Render _headers (media origin into CSP; fails without it)
         run: |
           npx tsx apps/quiet/worker/render-headers.ts apps/quiet/dist/_headers
@@ -251,6 +256,7 @@ jobs:
         run: |
           (cd apps/quiet && npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --env="${WRANGLER_ENV}")
           (cd apps/live && npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --env="${WRANGLER_ENV}" --outdir ../../.wrangler/bundles/live)
+          (cd apps/home && npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --env="${WRANGLER_ENV}" --outdir ../../.wrangler/bundles/home)
           npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --config workers/api/wrangler.jsonc --env="${WRANGLER_ENV}" --outdir .wrangler/bundles/api
 
       - name: Plant a leak fixture (dispatch test only)
@@ -259,10 +265,10 @@ jobs:
       - name: Guard post-pass (all outputs and Worker bundles; any finding stops the deploy)
         run: >-
           npm run guard --workspace=@emunas/corpus-guard --
-          post --scan .corpus apps/quiet/dist apps/live/build/client .wrangler/bundles
+          post --scan .corpus apps/quiet/dist apps/live/build/client apps/home/dist .wrangler/bundles
           --corpus .corpus --corpus-data data/derived/corpus --report "$RUNNER_TEMP/guard-post.json"
       - name: Budgets
-        run: npm run guard --workspace=@emunas/corpus-guard -- budgets apps/quiet/dist apps/live/build/client
+        run: npm run guard --workspace=@emunas/corpus-guard -- budgets apps/quiet/dist apps/live/build/client apps/home/dist
       - name: Live data budgets (tech-live size targets; over-target is a warning)
         run: npm run data:budgets --workspace=@emunas/live
 
@@ -294,6 +300,9 @@ jobs:
         run: npx --yes "wrangler@${WRANGLER_VERSION}" deploy --env="${WRANGLER_ENV}" --message "deploy ${GITHUB_SHA:0:12}"
       - name: Deploy emunas-live
         working-directory: apps/live
+        run: npx --yes "wrangler@${WRANGLER_VERSION}" deploy --env="${WRANGLER_ENV}" --message "deploy ${GITHUB_SHA:0:12}"
+      - name: Deploy emunas-home
+        working-directory: apps/home
         run: npx --yes "wrangler@${WRANGLER_VERSION}" deploy --env="${WRANGLER_ENV}" --message "deploy ${GITHUB_SHA:0:12}"
 
       - name: Job summary (ids, counts and catalog strings only; never transcript text)

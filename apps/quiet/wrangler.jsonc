@@ -3,8 +3,9 @@
 // "/" is a static edition chooser, and workers.dev noindex is a `_headers` rule.
 // Build first (`npm run build --workspace=@emunas/quiet`), then render dist/_headers
 // (worker/render-headers.ts). Deploy: `wrangler deploy` (production) or `--env staging`.
-// Custom domain (owner decision O8: root emunas.torahlearningtools.com). Staging sets
-// "routes": [] because routes are inherited and a staging deploy must not claim it.
+// Custom domain library.<domain> (home is on the apex, Live on listen.<domain>; the hostname
+// must equal productionHosts(EMUNAS_DOMAIN).quiet, checked by worker/test/site-routes.test.ts).
+// Staging sets "routes": [] because routes are inherited and a staging deploy must not claim it.
 // See docs/sites/ops-runbook.md.
 {
   "name": "emunas-quiet",
@@ -14,7 +15,7 @@
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page"
   },
-  "routes": [{ "pattern": "emunas.torahlearningtools.com", "custom_domain": true }],
+  "routes": [{ "pattern": "library.emunas.torahlearningtools.com", "custom_domain": true }],
   "workers_dev": true,
   "preview_urls": true,
   "env": {
