@@ -4,6 +4,9 @@
  * chosen by `partLines` (concept-live-corpus C.6): the arc line of a visible part, its own
  * one-liner, "notes not prepared yet" without a synthesis, or nothing for a part that is not
  * visible in a synthesized series. Same classes as `ShiurCard`, so the rows look alike.
+ *
+ * Only a visible part (`status: "full"`) is a link. A part that is not visible keeps its row in the
+ * course, as plain text with the same content, and links nowhere (corpus-wave-plan F.2).
  */
 import type { Ed } from "@emunas/corpus/public";
 import { formatDuration, languageName, type UiLang } from "@emunas/i18n";
@@ -15,7 +18,7 @@ import { yearLabel } from "../today/format.ts";
 import { shiurHref } from "../today/ShiurCard.tsx";
 import { todayT } from "../today/strings.ts";
 import { todayStyles as c } from "../today/styles.ts";
-import type { PartLine } from "./model.ts";
+import { partVisible, type PartLine } from "./model.ts";
 
 export interface PartCardProps {
   part: SeriesPart;
@@ -32,8 +35,9 @@ export interface PartCardProps {
 export function PartCard({ part, lang, line, ui, read, t, kicker }: PartCardProps): JSX.Element {
   const tt = todayT(ui);
   const year = yearLabel(part.years);
-  return (
-    <Link className={c.card} to={shiurHref(ui, part.shiurId, t)} data-shiur={part.shiurId} data-line={line.kind === "line" ? line.source : line.kind}>
+  const dataLine = line.kind === "line" ? line.source : line.kind;
+  const body = (
+    <>
       {kicker ? <span className={c.cardMeta}>{kicker}</span> : null}
       <Text as="span" className={c.cardTitle} value={part.title} shiurLang={lang} />
       <span className={c.cardMeta}>
@@ -58,6 +62,18 @@ export function PartCard({ part, lang, line, ui, read, t, kicker }: PartCardProp
       ) : line.kind === "pending" ? (
         <span className={c.pending}>{tt("card.notesPending")}</span>
       ) : null}
+    </>
+  );
+  if (!partVisible(part)) {
+    return (
+      <div className={c.card} data-shiur={part.shiurId} data-line={dataLine} data-unlinked="">
+        {body}
+      </div>
+    );
+  }
+  return (
+    <Link className={c.card} to={shiurHref(ui, part.shiurId, t)} data-shiur={part.shiurId} data-line={dataLine}>
+      {body}
     </Link>
   );
 }

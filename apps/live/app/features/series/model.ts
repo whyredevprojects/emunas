@@ -207,6 +207,14 @@ export function seriesIntro(series: Pick<SeriesFile, "synthesis">, read: Ed): Se
   };
 }
 
+/**
+ * A part is visible (has notes on the site and may be linked) only when its shiur is `full`. Any
+ * other status, including one a later data shape adds, is shown as plain text and never linked.
+ */
+export function partVisible(part: Pick<SeriesPart, "status">): boolean {
+  return part.status === "full";
+}
+
 /** What a part row shows under its title. */
 export type PartLine =
   /** A generated line: the arc line (with a synthesis) or the part's own one-liner. */
@@ -235,7 +243,7 @@ export function partLines(series: Pick<SeriesFile, "parts" | "synthesis">): Map<
       out.set(p.shiurId, own ? { kind: "line", text: own, source: "part" } : { kind: "pending" });
       continue;
     }
-    const visible = p.status === "full";
+    const visible = partVisible(p);
     const a = visible ? arc.get(p.shiurId) : undefined;
     if (a) out.set(p.shiurId, { kind: "line", text: a, source: "arc" });
     else if (visible && own) out.set(p.shiurId, { kind: "line", text: own, source: "part" });
