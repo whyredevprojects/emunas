@@ -227,7 +227,7 @@ export class LeakScanner {
   }
 
   /**
-   * Every string value of a parsed value, except identifiers: bare paths and URLs (no spaces, with
+   * Every string value of a parsed value, except identifiers (see `isIdentifier`): bare paths and URLs (no spaces, with
    * `/` or `:`) and slugs (`yi-simchos-…-03`), which are not prose.
    */
   private *metaCommentTexts(value: unknown): Generator<{ text: string; field: string }> {
@@ -235,7 +235,7 @@ export class LeakScanner {
     while (stack.length > 0) {
       const { node, path } = stack.pop()!;
       if (typeof node === "string") {
-        if (!/^\S*[/:]\S*$/.test(node) && !/^[a-z0-9]+(?:[-_.~][a-z0-9]+)+$/.test(node)) yield { text: node, field: fieldOf(path) };
+        if (!isIdentifier(node)) yield { text: node, field: fieldOf(path) };
       } else if (Array.isArray(node)) {
         for (let i = node.length - 1; i >= 0; i--) stack.push({ node: node[i], path: [...path, i] });
       } else if (isRecord(node)) {
@@ -704,7 +704,7 @@ export class LeakScanner {
       return;
     }
     if (HTML_EXT.has(ext)) {
-      this.checkMetaComments([{ text: htmlToText(this.withoutApprovedTranscriptView(raw)) }], source);
+      this.checkMetaComments([{ text: htmlToText(withoutIdentifierAttributes(this.withoutApprovedTranscriptView(raw))) }], source);
       this.checkMarkedNames(raw, source);
       this.checkMarkedPersons(raw, source);
       this.scanText(raw, source, htmlProse(raw), hint);
@@ -739,4 +739,22 @@ export class LeakScanner {
       verbatim: [...this.verbatim],
     };
   }
+}
+
+/**
+ * Identifiers, not prose: bare paths and URLs (no spaces, with `/` or `:`) and slugs
+ * (`yi-simchos-…-03`). Recording ids and media keys come from archive file names and are
+ * not published text, so the remark check leaves them out.
+ */
+function isIdentifier(value: string): boolean {
+  return /^\S*[/:]\S*$/.test(value) || /^[a-z0-9]+(?:[-_.~][a-z0-9]+)+$/.test(value);
+}
+
+/** Blank attribute values that are identifiers (`href`, `src`, `data-rec`, …) inside the tags of a page. */
+function withoutIdentifierAttributes(html: string): string {
+  return html.replace(/<[a-zA-Z][^<>]*>/g, (tag) =>
+    tag.replace(/(=\s*)(?:"([^"]*)"|'([^']*)')/g, (m, eq: string, dq?: string, sq?: string) =>
+      isIdentifier(dq ?? sq ?? "") ? `${eq}""` : m,
+    ),
+  );
 }

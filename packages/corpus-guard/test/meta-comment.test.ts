@@ -95,6 +95,16 @@ describe("post-pass: remarks on the audio or the transcript", () => {
     expect(r.counts.metaCommentUnits).toBeGreaterThan(20);
   });
 
+  it("leaves recording ids and media URLs in a page's attributes out, but not its text", () => {
+    fx = makeFixture();
+    const d = dist(fx);
+    const url = "https://media.example.invalid/Simchos/03%20Bris%20(Nitzavim%20Elul)%20imperfect%20sound%20quality.mp3";
+    writeFile(join(d, "en", "rec", "index.html"), `<html><body><li data-rec="y-bris-03-nitzavim-elul-imperfect-sound-quality"><audio src="${url}"></audio><a href="${url}#t=0">0:00</a></li></body></html>`);
+    expect(scan(fx, d).findings).toEqual([]);
+    writeFile(join(d, "en", "rec", "index.html"), `<html><body><li data-rec="y-bris-03"><p>Bris, imperfect sound quality</p></li></body></html>`);
+    expect(scan(fx, d).findings.map((f) => f.kind === "meta-comment" && f.term)).toEqual(["sound quality"]);
+  });
+
   it("fails on a remark planted in a built page (text and attributes)", () => {
     fx = makeFixture();
     const d = dist(fx);
@@ -103,7 +113,7 @@ describe("post-pass: remarks on the audio or the transcript", () => {
     writeFile(join(d, "yi", "teaching", "index.html"), `<html><body><p>די שיעורים זענען נישט קלאר, און דער שופר צעמישט דעם שטן.</p></body></html>`);
     const r = scan(fx, d);
     expect(r.findings).toEqual([
-      { kind: "meta-comment", source: `dist/en/shiur/${SHIUR}/index.html`, term: "unclear audio", context: "opening [unclear audio] chapter title chapter kind", count: 1 },
+      { kind: "meta-comment", source: `dist/en/shiur/${SHIUR}/index.html`, term: "unclear audio", context: "opening [unclear audio]", count: 1 },
       { kind: "meta-comment", source: "dist/yi/about/index.html", term: "מהערט נישט קלאר", context: "טיילן וואו [מהערט נישט קלאר] די רעקארדירונג", count: 1 },
     ]);
   });
