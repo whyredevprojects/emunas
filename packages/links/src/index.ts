@@ -8,7 +8,6 @@ export type {
   Site,
   MomentKind,
   MomentRef,
-  EntityKind,
   CorpusKind,
   OccasionKind,
   IndexName,
@@ -30,7 +29,7 @@ export {
   LIVE_WORKER,
 } from "./hosts.ts";
 export { momentId, parseMomentId, type ParsedMomentId } from "./moment.ts";
-export { ENTITY_PAGE_THRESHOLD, quietHasEntityPage, hasPageOn, resolveEntry, type EntryRoute } from "./pages.ts";
+export { hasPageOn, resolveEntry, type EntryRoute } from "./pages.ts";
 export { formatQuiet, parseQuiet, QUIET_ENTRY_DIR, INDEXES_ANCHOR } from "./quiet.ts";
 export { formatLive, parseLive, LIVE_ENTRY_SEG } from "./live.ts";
 export {
@@ -53,7 +52,6 @@ export {
   type LivePaths,
   type QuietShiurOptions,
   type LiveShiurOptions,
-  type EntityOptions,
   type EntryOptions,
 } from "./builders.ts";
 export { createLinks, type Links, type HreflangLink, type ParsedSiteUrl } from "./links.ts";

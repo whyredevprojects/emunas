@@ -10,10 +10,9 @@
  */
 import { momentId, parseMomentId } from "./moment.ts";
 import { resolveEntry } from "./pages.ts";
-import { isEd, type CorpusKind, type EntityKind, type IndexName, type LinkData, type Route } from "./types.ts";
+import { isEd, type CorpusKind, type IndexName, type LinkData, type Route } from "./types.ts";
 import { buildQuery, formatSeconds, parseSeconds, pathSegments, queryGet, seg, splitUrl } from "./url.ts";
 
-const ENTITY_SEG: Readonly<Record<EntityKind, string>> = { work: "seforim", person: "p", concept: "c" };
 
 /** Corpus entry segments. */
 export const LIVE_ENTRY_SEG: Readonly<Record<CorpusKind, string>> = {
@@ -46,7 +45,6 @@ const INDEX_PATH: Readonly<Record<IndexName, string | null>> = {
   about: null,
   people: null,
   glossary: null,
-  concepts: null,
 };
 
 export function formatLive(route: Route, data: LinkData = {}, opts: { readonly bare?: boolean } = {}): string {
@@ -67,8 +65,6 @@ export function formatLive(route: Route, data: LinkData = {}, opts: { readonly b
       return `/${route.ed}/series/${seg(route.id)}`;
     case "occasion":
       return `/${route.ed}/o/${seg(route.key)}`;
-    case "entity":
-      return `/${route.ed}/${ENTITY_SEG[route.entity]}/${seg(route.key)}`;
     case "entry": {
       const r = resolveEntry(route, data);
       return `/${r.ed}/${LIVE_ENTRY_SEG[r.entry]}/${seg(r.id)}`;

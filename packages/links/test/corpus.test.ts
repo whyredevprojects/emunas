@@ -271,12 +271,9 @@ describe("pageLookupFromLayer", () => {
     expect(d.hasPage("live", "person", "y")).toBe(false);
   });
 
-  it("layer flags win over legacy counts; an explicit builder count wins over both", () => {
-    const counts = { entityCount: () => 50 };
-    const data = { ...counts, ...pageLookupFromLayer(LAYER) };
-    expect(quietPaths(data).person("en", "hitler")).toBe("/en/people/#hitler");
-    expect(quietPaths(data).person("en", "hitler", { count: 50 })).toBe("/en/people/hitler/");
-    expect(quietPaths(counts).person("en", "hitler")).toBe("/en/people/hitler/");
+  it("layer flags decide; without them the page is assumed to exist", () => {
+    expect(quietPaths(pageLookupFromLayer(LAYER)).person("en", "hitler")).toBe("/en/people/#hitler");
+    expect(quietPaths().person("en", "hitler")).toBe("/en/people/hitler/");
   });
 });
 

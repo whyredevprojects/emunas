@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { createLinks, EDS, livePaths, quietPaths } from "../src/index.ts";
+import { createLinks, EDS, formatQuiet, livePaths, quietPaths } from "../src/index.ts";
 import { DATA, HOSTS, links } from "./fixtures.ts";
 
 const Q = quietPaths(DATA);
@@ -37,26 +37,26 @@ describe("equivalent(quiet → live → quiet) is identity", () => {
   }
 });
 
-describe("quiet entity fallback below the page threshold (no layer flags: legacy counts)", () => {
-  it("maps to the index anchor (people/works ≥2, concepts ≥3)", () => {
+describe("quiet entries without a page of their own (layer page flags)", () => {
+  it("map to the index anchor", () => {
     expect(links.equivalent(`${HOSTS.live}/en/p/once-mentioned`)).toBe(`${HOSTS.quiet}/en/people/#once-mentioned`);
     expect(links.equivalent(`${HOSTS.live}/yi/seforim/rare-sefer`)).toBe(`${HOSTS.quiet}/yi/sources/#rare-sefer`);
     expect(links.equivalent(`${HOSTS.live}/en/c/two-only`)).toBe(`${HOSTS.quiet}/en/erachim/#two-only`);
-    // at the threshold: a page of its own
+    // with a page of its own
     expect(links.equivalent(`${HOSTS.live}/en/p/baal-shem-tov`)).toBe(`${HOSTS.quiet}/en/people/baal-shem-tov/`);
     expect(links.equivalent(`${HOSTS.live}/en/c/hisbodedus`)).toBe(`${HOSTS.quiet}/en/erachim/hisbodedus/`);
   });
 
-  it("builders use the count lookup, or an explicit count", () => {
+  it("builders use the page flags; without a flag the page is assumed to exist", () => {
     expect(Q.person("yi", "once-mentioned")).toBe("/yi/people/#once-mentioned");
-    expect(quietPaths().person("yi", "x", { count: 1 })).toBe("/yi/people/#x");
-    expect(quietPaths().glossaryEntry("yi", "x", { count: 2 })).toBe("/yi/erachim/#x");
-    expect(quietPaths().glossaryEntry("yi", "x", { count: 3 })).toBe("/yi/erachim/x/");
-    // the legacy concept address (pages not on the corpus layer yet) is unchanged
-    expect(quietPaths().concept("yi", "x", { count: 2 })).toBe("/yi/inyanim/#x");
-    expect(quietPaths().concept("yi", "x", { count: 3 })).toBe("/yi/inyanim/x/");
-    // unknown count: the page is assumed to exist
+    expect(Q.glossaryEntry("yi", "two-only")).toBe("/yi/erachim/#two-only");
+    expect(Q.glossaryEntry("yi", "hisbodedus")).toBe("/yi/erachim/hisbodedus/");
     expect(quietPaths().work("en", "unknown")).toBe("/en/sources/unknown/");
+  });
+
+  it("has no legacy normalize-keyed entity address (C3.1)", () => {
+    expect(quietPaths()).not.toHaveProperty("concept");
+    expect(formatQuiet({ kind: "index", ed: "yi", index: "topics" })).toBe("/yi/inyanim/");
   });
 
   it("an index anchor parses back to the entity", () => {

@@ -1,4 +1,4 @@
-import { createLinks, type EntityKind, type LinkData, type OccasionKind } from "../src/index.ts";
+import { createLinks, type CorpusKind, type LinkData, type OccasionKind } from "../src/index.ts";
 
 export const HOSTS = { quiet: "https://emunas.example", live: "https://listen.emunas.example" } as const;
 
@@ -14,16 +14,17 @@ export const OCCASIONS: Record<string, OccasionKind> = {
   "shavuos": "zman",
 };
 
-export const COUNTS: Record<EntityKind, Record<string, number>> = {
-  work: { ramban: 40, "sfas-emes": 2, "rare-sefer": 1 },
-  person: { "dovid-hamelech": 12, "baal-shem-tov": 2, "once-mentioned": 1 },
-  concept: { emunah: 90, "hisbodedus": 3, "two-only": 2 },
+/** Quiet page flags of a few entities (as the corpus layer gives them); `false`: no page of its own. */
+export const QUIET_PAGES: Partial<Record<CorpusKind, Record<string, boolean>>> = {
+  work: { ramban: true, "sfas-emes": true, "rare-sefer": false },
+  person: { "dovid-hamelech": true, "baal-shem-tov": true, "once-mentioned": false },
+  concept: { emunah: true, "hisbodedus": true, "two-only": false },
 };
 
 export const DATA: LinkData = {
   sectionStart: (id, i) => SECTION_STARTS[id]?.[i],
   occasionKind: (k) => OCCASIONS[k],
-  entityCount: (e, k) => COUNTS[e][k],
+  hasPage: (site, kind, id) => (site === "quiet" ? QUIET_PAGES[kind]?.[id] : undefined),
 };
 
 export const links = createLinks({ hosts: HOSTS, data: DATA });

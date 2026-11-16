@@ -39,8 +39,8 @@ wording is in `@emunas/i18n`, `CORPUS_LABELS`).
 
 - **Pages** come from the layer's page flags: `pageLookupFromLayer({ topics, concepts, people,
   works, stories, threads })` (the `.corpus/layer/*.json` files; each optional) gives
-  `LinkData.hasPage(site, kind, id)` and `conceptTopic(id)`. Without flags Quiet falls back to the
-  legacy shiur-count thresholds and anything else is assumed to have a page.
+  `LinkData.hasPage(site, kind, id)` and `conceptTopic(id)`. Without flags an entry is assumed to
+  have a page.
 - **Below threshold**: Quiet links the index anchor (`/{ed}/erachim/#{id}`); Live has no link
   (`hrefFor("live", route)` and `equivalent()` return null).
 - **Merged concept**: a concept with `mergedIntoTopic` formats as its topic on both sites.
@@ -48,26 +48,23 @@ wording is in `@emunas/i18n`, `CORPUS_LABELS`).
   `canonicalFor` is null and `noindexFor` is true. Threads always: null and noindex.
 - **No old addresses**: the sites have never been published, so there are no redirects, legacy
   paths or retired-id mappings here.
-
-**Still used by current pages, until the C2 page wave replaces them:** the `{ kind: "entity" }` route and
-`quietPaths().concept()` still format the normalize-keyed addresses (Quiet concepts at
-`/{ed}/inyanim/{key}/`, index `"concepts"` at `/{ed}/inyanim/`) so the pages that are not on
-the layer yet keep their links. No parser returns them any more.
+  The normalize-keyed `{ kind: "entity" }` route, `quietPaths().concept()` and the `entityCount`
+  fallback were retired in C3.1.
 
 ## Use
 
 ```ts
-import { createLinks, hostsFromEnv, quietPaths, livePaths } from "@emunas/links";
+import { createLinks, hostsFromEnv, pageLookupFromLayer, quietPaths, livePaths } from "@emunas/links";
 
 // Same-site links: root-relative paths.
-const q = quietPaths({ entityCount }); // entityCount from .corpus/entities.json
+const q = quietPaths(pageLookupFromLayer(layerFiles)); // page flags from .corpus/layer/
 q.shiur("yi", id, { section: 2 });     // "/yi/shiur/<id>/#s2"
-q.person("en", "baal-shem-tov");      // page, or "/en/people/#baal-shem-tov" below 2 shiurim
+q.person("en", "baal-shem-tov");      // page, or "/en/people/#baal-shem-tov" without a Quiet page
 
 // Cross-site, canonical, hreflang: absolute URLs.
 const links = createLinks({
   hosts: hostsFromEnv(env), // EMUNAS_DOMAIN | EMUNAS_WORKERS_SUBDOMAIN (+ EMUNAS_STAGE) | EMUNAS_{QUIET,LIVE}_ORIGIN
-  data: { entityCount, occasionKind, sectionStart }, // all optional lookups from .corpus/
+  data: { ...pageLookupFromLayer(layerFiles), occasionKind, sectionStart }, // all optional lookups from .corpus/
 });
 links.live.shiur("en", id, { t: player.currentTime }); // "Open in the listening app"
 links.equivalent(url);       // the same page on the other site (Live-only params dropped)
@@ -81,9 +78,8 @@ links.withEdition(url, "yi"); // edition switch that keeps the place
 
 | Lookup | Needed for | Without it |
 |---|---|---|
-| `hasPage(site, kind, id)` | corpus entry page vs index anchor (Quiet) or no link (Live); canonical/noindex | `entityCount`, else the page is assumed to exist |
+| `hasPage(site, kind, id)` | corpus entry page vs index anchor (Quiet) or no link (Live); canonical/noindex | the page is assumed to exist |
 | `conceptTopic(id)` | concept merged into a topic → the topic | the concept's own address |
-| `entityCount(kind, key)` | legacy fallback: Quiet page vs index anchor (works/people ≥2, concepts ≥3) | the page is assumed to exist |
 | `occasionKind(key)` | Live `/o/{key}` → Quiet parsha or zman page | Quiet edition home |
 | `sectionStart(id, i)` | Quiet `#s{i}` → Live `?t=` | Live link carries only `m=` |
 
