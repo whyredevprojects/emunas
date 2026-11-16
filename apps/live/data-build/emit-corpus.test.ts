@@ -5,6 +5,8 @@
  * glossary shards resolve, nothing pairs shiurim across languages, and the featured
  * mix follows the owner policy (D7).
  */
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { glossaryShardFor } from "../app/data/paths.ts";
 import type {
@@ -295,13 +297,37 @@ describe("corpus-layer files on the mini corpus", () => {
     expect(get<StoryFile>(`story/${id}.json`, again).attributionVaries).toBe(true);
   });
 
+  it("story files publish no unresolved raw name: linked people and corpus display names only (C3.1)", () => {
+    const raw = JSON.parse(readFileSync(join(MINI_DATA, "derived", "corpus", "stories.json"), "utf8")) as { id: string; people: string[] }[];
+    const rawPeople = JSON.parse(readFileSync(join(MINI_DATA, "derived", "corpus", "people.json"), "utf8")) as { id: string; nameEn: string }[];
+    const rawConcepts = JSON.parse(readFileSync(join(MINI_DATA, "derived", "corpus", "concepts.json"), "utf8")) as { label: { en: string } }[];
+    const ids = new Set(rawPeople.map((p) => p.id));
+    const display = new Set([...rawPeople.map((p) => p.nameEn), ...rawConcepts.map((c) => c.label.en)]);
+    const unresolved = raw.flatMap((s) => s.people.filter((p) => !ids.has(p) && !p.startsWith("syn-")));
+    expect(unresolved.length).toBeGreaterThan(0);
+    let named = 0;
+    for (const f of [...under("story/"), "stories-index.json"]) {
+      const text = JSON.stringify(files.get(f));
+      for (const n of unresolved) expect(text, f).not.toContain(JSON.stringify(n));
+    }
+    for (const f of under("story/")) {
+      for (const p of get<StoryFile>(f).people) {
+        if (!("name" in p)) continue;
+        named++;
+        expect(display.has(p.name), `${f}: ${p.name}`).toBe(true);
+      }
+    }
+    for (const row of get<StoriesIndexFile>("stories-index.json").stories) for (const n of row.names) expect(display.has(n), n).toBe(true);
+    expect(named).toBeGreaterThan(0);
+  });
+
   it("stories-index.json (C2.7): labelled people, plain names, the topic join and one telling to play per language", () => {
     const idx = get<StoriesIndexFile>("stories-index.json");
     const stories = new Map((layer.stories ?? []).map((st) => [st.id, st]));
     const topicFiles = new Map(under("topic/").filter((f) => !f.includes(".moments-")).map((f) => [f, get<TopicFile>(f)]));
     for (const row of idx.stories) {
       const st = stories.get(row.id)!;
-      // Every linked person has a label; a raw name or an unlisted person is a plain name, never an id.
+      // Every linked person has a label; an unlisted person is a plain name, never an id.
       for (const id of row.people) expect(idx.people[id], id).toBeDefined();
       for (const n of row.names) expect(idx.people[n]).toBeUndefined();
       // Unresolved raw extraction names never go in `names` (an alias-bearing key the corpus guard
@@ -340,7 +366,7 @@ describe("corpus-layer files on the mini corpus", () => {
     expect(row.plays.find((p) => p.lang === a!.lang)!.momentId).toBe(b!.momentId);
   });
 
-  it("explore/entities.json holds corpus-id arrays per summarized shiur; corpus.json keeps them until C3.1", () => {
+  it("explore/entities.json holds corpus-id arrays per summarized shiur; corpus.json has none (C3.1)", () => {
     const ex = get<{ shiurim: Record<string, { topics: string[]; people: string[]; concepts: string[]; works: string[] }> }>("explore/entities.json");
     const facets = get<FacetsFile>("facets.json");
     const corpus = get<CorpusFile>("corpus.json");
@@ -350,8 +376,7 @@ describe("corpus-layer files on the mini corpus", () => {
       for (const p of e.people) expect(facets.person[p]).toBeDefined();
       for (const c of e.concepts) expect(facets.concept[c]).toBeDefined();
       for (const w of e.works) expect(facets.work[w]).toBeDefined();
-      const row = corpus.shiurim.find((r) => r.id === id)!;
-      expect(row.entities).toEqual({ works: e.works, people: e.people, concepts: e.concepts });
+      expect(corpus.shiurim.find((r) => r.id === id)).not.toHaveProperty("entities");
     }
     // No type-other person and no below-threshold entity is a facet.
     for (const p of layer.people) if (p.type === "other" || !p.pages.live) expect(facets.person[p.id], p.id).toBeUndefined();

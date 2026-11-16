@@ -33,7 +33,7 @@ import type {
 
 export type { Ed, L, Moment, ShiurStatus };
 
-export const LIVE_DATA_SCHEMA_VERSION = 3;
+export const LIVE_DATA_SCHEMA_VERSION = 4;
 
 // ---------------------------------------------------------------------------------------------
 // Shared pieces
@@ -98,11 +98,6 @@ export interface CorpusRow extends Pick<
   parsha: string | null;
   zman: string | null;
   series: { id: string; order: number | null } | null;
-  /**
-   * Corpus ids (corpus layer, C1.7) of the entities listed in `facets.json`; labels are there.
-   * Explore's own copy, with topics, is `explore/entities.json`; this one goes in C3.1.
-   */
-  entities: IndexRow["entities"];
   counts: Pick<IndexRow["counts"], "chapters" | "stories" | "questions" | "insights">;
 }
 
@@ -525,26 +520,6 @@ export interface ConceptDetail {
 }
 
 // ---------------------------------------------------------------------------------------------
-// /data/stories.json — all stories, without the retelling
-
-export interface StoryRow {
-  id: string;
-  shiurId: string;
-  title: L;
-  /** Corpus person ids with a Live page (from the merged story the telling belongs to). */
-  peopleKeys: string[];
-  t: number | null;
-  end: number | null;
-  year: number | null;
-  lang: Ed;
-}
-
-export interface StoriesFile {
-  schemaVersion: typeof LIVE_DATA_SCHEMA_VERSION;
-  stories: StoryRow[];
-}
-
-// ---------------------------------------------------------------------------------------------
 // /data/moments/<lang>-<n>.json — Explore "moments" unit, sharded by 1,000
 
 export const MOMENT_SHARD_SIZE = 1000;
@@ -831,7 +806,6 @@ export interface DataFiles {
   works: WorksFile;
   work: WorkFile;
   entity: EntityFile;
-  stories: StoriesFile;
   moments: MomentShardFile;
   quickIndex: QuickIndexFile;
   topics: TopicsFile;

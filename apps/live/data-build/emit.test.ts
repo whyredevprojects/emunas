@@ -7,7 +7,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import MiniSearch from "minisearch";
 import { describe, expect, it } from "vitest";
-import { LeakScanner } from "@emunas/corpus-guard";
+import { AliasRules, LeakScanner } from "@emunas/corpus-guard";
 import { normalizeQuery } from "@emunas/search-core";
 import type {
   BuildFile,
@@ -17,7 +17,7 @@ import type {
   QuickIndexFile,
   SeriesFile,
   ShiurFile,
-  StoriesFile,
+  ExploreEntitiesFile,
   TodayFile,
   WorkFile,
   WorksFile,
@@ -108,13 +108,18 @@ describe("emitLiveData on the mini corpus", () => {
     }
   });
 
-  it("facets label every key used in corpus.json and count rows", () => {
+  it("facets label every key used in corpus.json and explore/entities.json, and count rows", () => {
     const corpus = get<CorpusFile>("corpus.json");
     const facets = get<FacetsFile>("facets.json");
+    const ex = get<ExploreEntitiesFile>("explore/entities.json").shiurim;
+    const none: ExploreEntitiesFile["shiurim"][string] = { topics: [], works: [], people: [], concepts: [] };
+    const entitiesOf = (id: string) => (Object.hasOwn(ex, id) ? ex[id]! : none);
     for (const r of corpus.shiurim) {
-      for (const k of r.entities.works) expect(facets.work[k], k).toBeDefined();
-      for (const k of r.entities.people) expect(facets.person[k], k).toBeDefined();
-      for (const k of r.entities.concepts) expect(facets.concept[k], k).toBeDefined();
+      expect(r).not.toHaveProperty("entities");
+      const e = entitiesOf(r.id);
+      for (const k of e.works) expect(facets.work[k], k).toBeDefined();
+      for (const k of e.people) expect(facets.person[k], k).toBeDefined();
+      for (const k of e.concepts) expect(facets.concept[k], k).toBeDefined();
       for (const k of [r.parsha, r.zman]) if (k !== null) expect(facets.occasion[k], k).toBeDefined();
       for (const y of r.years) expect(facets.year[String(y)]).toBeDefined();
       if (r.series) expect(facets.series[r.series.id]).toBeDefined();
@@ -124,7 +129,7 @@ describe("emitLiveData on the mini corpus", () => {
     const cats = Object.values(facets.category).reduce((a, b) => a + (b?.count ?? 0), 0);
     expect(cats).toBe(corpus.shiurim.length);
     for (const [k, v] of Object.entries(facets.person)) {
-      expect(v.count, k).toBe(corpus.shiurim.filter((r) => r.entities.people.includes(k)).length);
+      expect(v.count, k).toBe(corpus.shiurim.filter((r) => entitiesOf(r.id).people.includes(k)).length);
     }
   });
 
@@ -156,11 +161,11 @@ describe("emitLiveData on the mini corpus", () => {
     for (const c of input.layer!.concepts) {
       expect(files.has(`entity/c/${c.id}.json`), c.id).toBe(c.pages.live && !c.mergedIntoTopic && c.count > 0);
     }
-    // Every entity id in corpus.json is a corpus id with a page.
-    for (const r of get<CorpusFile>("corpus.json").shiurim) {
-      for (const k of r.entities.concepts) expect(files.has(`entity/c/${k}.json`), k).toBe(true);
-      for (const k of r.entities.people) expect(files.has(`entity/p/${k}.json`), k).toBe(true);
-      for (const k of r.entities.works) expect(files.has(`work/${k}.json`), k).toBe(true);
+    // Every entity id in explore/entities.json is a corpus id with a page.
+    for (const e of Object.values(get<ExploreEntitiesFile>("explore/entities.json").shiurim)) {
+      for (const k of e.concepts) expect(files.has(`entity/c/${k}.json`), k).toBe(true);
+      for (const k of e.people) expect(files.has(`entity/p/${k}.json`), k).toBe(true);
+      for (const k of e.works) expect(files.has(`work/${k}.json`), k).toBe(true);
     }
   });
 
@@ -223,12 +228,8 @@ describe("emitLiveData on the mini corpus", () => {
     const ber = get<WorkFile>("work/bereishis.json");
     const agg = input.aggregates.works.works.find((w) => w.key === "bereishis")!;
     expect(ber.locations.map((l) => l.sefariaRef)).toEqual(agg.refs.filter((r) => ber.locations.some((l) => l.sefariaRef === r.ref)).map((r) => r.ref));
-    const stories = get<StoriesFile>("stories.json");
-    expect(stories.stories.map((s) => s.id)).toEqual(input.aggregates.stories.stories.map((s) => s.id));
-    expect(allKeys(stories).has("retelling")).toBe(false);
-    // peopleKeys are corpus person ids with a Live page.
-    for (const st of stories.stories) for (const k of st.peopleKeys) expect(files.has(`entity/p/${k}.json`), k).toBe(true);
-    expect(stories.stories.some((st) => st.peopleKeys.length > 0)).toBe(true);
+    // The per-telling stories.json is retired (C3.1): Maasios reads stories-index.json.
+    expect(files.has("stories.json")).toBe(false);
   });
 
   it("moment shards cover every timed item once, in both languages, and build.json counts them", () => {
@@ -295,6 +296,13 @@ describe("emitLiveData on the mini corpus", () => {
     const scanner = new LeakScanner({ baseDir: out });
     scanner.scanPaths([out]);
     expect(scanner.result().findings).toEqual([]);
+    // With the corpus data's display fields: aliases are display fields and every story name
+    // (story files, stories-index) is some corpus entity's display name (C3.1).
+    const strict = new LeakScanner({ baseDir: out, aliases: AliasRules.read(join(MINI_DATA, "derived", "corpus")) });
+    strict.scanPaths([out]);
+    const r = strict.result();
+    expect(r.findings).toEqual([]);
+    expect(r.counts.storyNamesChecked).toBeGreaterThan(0);
   });
 
   it("is deterministic", () => {
@@ -331,7 +339,7 @@ describe("validateFile", () => {
   it("accepts the committed W2.4 fixtures (the emitter and the fixtures share one contract)", () => {
     const dir = join(import.meta.dirname, "../app/data/fixtures/data");
     const fixtureFiles: EmittedFiles = new Map();
-    for (const f of ["corpus.json", "facets.json", "today.json", "stories.json", "works.json", "build.json"]) {
+    for (const f of ["corpus.json", "facets.json", "today.json", "stories-index.json", "works.json", "build.json"]) {
       fixtureFiles.set(f, JSON.parse(readFileSync(join(dir, f), "utf8")) as never);
     }
     for (const [f, body] of fixtureFiles) expect(validateFile(f, body), f).toBeNull();

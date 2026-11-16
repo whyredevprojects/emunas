@@ -22,8 +22,8 @@ interface WorkFile {
   locations: { ref: string; sefariaRef: string | null; citations: { shiurId: string; sourceId: string; t: number }[] }[];
   unlocated: unknown[];
 }
-interface StoriesFile {
-  stories: { id: string; shiurId: string; t: number; end: number; lang: "en" | "yi"; peopleKeys: string[] }[];
+interface StoriesIndexFile {
+  stories: { id: string; plays: { lang: "en" | "yi"; shiurId: string; momentId: string; t: number | null; end: number | null }[] }[];
 }
 interface EntityRef {
   kind: "p" | "c" | "o";
@@ -119,7 +119,7 @@ test.describe("@data seforim", () => {
 
 test.describe("@data maasios", () => {
   test("stories only: the listed stories queue back to back, and the next plays when one ends", async ({ page, request, browserName }) => {
-    const stories = (await dataJson<StoriesFile>(request, "stories.json")).stories;
+    const stories = (await dataJson<StoriesIndexFile>(request, "stories-index.json")).stories;
     test.skip(stories.length < 2, "fewer than two stories in this data");
     await serveSilentMedia(page);
     // The player engine plays through `new Audio()` (not in the DOM); keep a handle on each element.
@@ -158,8 +158,10 @@ test.describe("@data maasios", () => {
     // listening-room spec sees the same), so playback itself is checked in Chromium only.
     if (browserName === "webkit") return;
     await expect(items.nth(0)).toHaveAttribute("aria-current", "true", { timeout: 10_000 });
-    // Jump to just before the first story's end: the second story takes over.
-    const firstStory = stories.find((s) => s.id === listed[0])!;
+    // Jump to just before the end of the first story's telling (both audio languages: the first
+    // play): the second story takes over.
+    const firstEnd = stories.find((s) => s.id === listed[0])?.plays[0]?.end ?? null;
+    expect(firstEnd, "the first story's telling has an end").not.toBeNull();
     await expect(dock(page)).toHaveAttribute("data-player-status", "playing", { timeout: 10_000 });
     const seeked = await page.evaluate((t) => {
       const audios = (window as unknown as { __audios: HTMLAudioElement[] }).__audios;
@@ -167,7 +169,7 @@ test.describe("@data maasios", () => {
       if (!a) return false;
       a.currentTime = t;
       return true;
-    }, firstStory.end - 1.5);
+    }, (firstEnd ?? 0) - 1.5);
     expect(seeked, "the engine's audio element").toBe(true);
     await expect(items.nth(1)).toHaveAttribute("aria-current", "true", { timeout: 15_000 });
     expect(errors).toEqual([]);

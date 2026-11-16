@@ -18,7 +18,7 @@ Deploy order (integration-plan §4): `corpus:build` → guard pre-pass → `corp
 ## Inputs
 
 Only `.corpus/`: `build.json`, `index.json`, `shiurim/<id>.json`, the W2.1 aggregates (`sections`,
-`neighbours`, `series`, `occasions`, `years`, `works`, `people`, `concepts`, `stories`, `entities`),
+`neighbours`, `series`, `occasions`, `years`, `works`),
 `updated.json` (manifest `updatedAt` of the full shiurim, added to `corpus:build` for "newly
 summarized") and the corpus layer `.corpus/layer/` (C1.2; `layer-input.ts`). Search documents come
 from `@emunas/search-core` (`buildSearchDoc`; the quick index's entity names come from its
@@ -47,7 +47,7 @@ corpus refs with labels). Neither requests `corpus.json`, `facets.json` or any c
 | File | From |
 |---|---|
 | `build.json` | corpus `build.json` counts and data sha; `buildId` = hash(corpus buildId, emitter version, schema version); moment shard counts |
-| `corpus.json` | `index.json` rows; `entities` are the shiur's Live-listed corpus ids (works, people, concepts) |
+| `corpus.json` | `index.json` rows, catalog fields only (the entity ids are in `explore/entities.json`) |
 | `facets.json` | labels and row counts for every category, language, occasion (tables, the "other" bucket and file-name guesses), year, series, and the Live-listed works, people and concepts (corpus ids, layer labels) |
 | `today.json` | the corpus counter; `occasions.json` (parshiyos, zmanim with their sub-headings, "other"): a row of up to 3 shiurim per language by year with the total, a pool of at most 4 timed insights/stories/questions from the row, the label where it differs from the shared tables, and the occasion mix (occasion-topics of the layer; D7 filters); `newlySummarized`: the 12 newest by manifest `updatedAt`; a compact card for every shiur named (one-liners only on the newly summarized) |
 | `shiur/<id>.json` | the projected shiur without the write-up; `related` from `neighbours.json` (prev/next in series order, else catalog section order) with the `titles` of every shiur named; `neighbors` from `neighbors.ts` (W4.4, below); `seriesTitle`; `corpus`: topics with salience, section topic chips, labels, terms, sources' work ids, story counts and thread marks with page flags (G.1) |
@@ -55,17 +55,16 @@ corpus refs with labels). Neither requests `corpus.json`, `facets.json` or any c
 | `series/<id>.json` | `series.json` parts and perek groups; `synthesis` (overview, key themes, arc one-liners for visible parts) when the layer has one |
 | `works.json`, `work/<id>.json` | Live-page works by corpus id, in the layer's shelf order; each cited source goes to the work its moment resolves to, locations in the work's order |
 | `entity/{p,c,o}/<key>.json` | people and concepts with a Live page (corpus ids), occasions with ≥2 shiurim: shiurim by year, year histogram, moments (the tellings of a person's stories, a concept's example sections, an occasion's insights/stories/questions), up to 12 entities sharing ≥5 shiurim |
-| `stories.json` | `stories.json` without retellings; `peopleKeys` are the merged story's Live-listed person ids (kept for the current Maasios page until C2.7) |
 | `moments/<lang>-<n>.json` | every timed item of every full shiur, 1,000 per shard, catalog order |
 | `quick-index.<lang>.json` | serialized MiniSearch (`fields` title, occasion, oneLiner, sections, entities; stores `name`). `entities` holds the EntityDoc labels of the shiur's Live-listed works, people and concepts (no aliases). Values are folded with search-core's `foldForIndex`; the client searches `normalizeQuery(q).tokens` |
 | `topics.json` | the topic tree as rows `[id, parentId, en, yi, he, count]`, parents first (`topicNodes()` expands them) |
 | `topic/<id>.json`, `topic/<id>.moments-<n>.json` | description, term, hubs as cards, children, co-topics, threads and stories (with page flags), the first 30 mix sections with titles; further sections 300 per page, ids and times only; mix totals per audio language; the first 40 rows of "all shiurim" (grade, salience, year; a `touched` row carries its first tagged section) |
 | `topic-shiurim/<id>.<n>.json` | further "all shiurim" rows of a topic, 200 per page |
 | `thread/<id>.json` | threads with a page (≥3 shiurim): label, summary, topics, members by year with the per-shiur insight |
-| `story/<id>.json` | stories with a page (≥2 tellings): title, retelling, people (linked or plain names), `attributionVaries` (the tellings credit it to different people), tellings with the chapter each sits in |
+| `story/<id>.json` | stories with a page (≥2 tellings): title, retelling, people (linked, or the display name of a corpus entity Live does not list; never an unresolved raw extraction name, C3.1), `attributionVaries` (the tellings credit it to different people), tellings with the chapter each sits in |
 | `stories-index.json` | every merged story without retellings: title, Live-listed people ids (labels in `people`), plain names (the display name of a person Live does not list; never an id and never an unresolved raw extraction name, since `names` is an alias-bearing key the corpus guard checks), most specific Live topics from the layer's section join, telling count, languages, page flag, first telling, and one telling to play per language (catalogued shiurim first, then layer order; with the story moment's end) |
 | `glossary/<prefix>.json` | glossary cards by id prefix (`build.json` `glossaryShards`; `glossaryShardFor`), split until each fits 6 KiB br |
-| `explore/entities.json` | per summarized shiur: topic, person, concept, work ids (Explore's facets; `corpus.json` keeps the last three until C3.1) |
+| `explore/entities.json` | per summarized shiur: topic, person, concept, work ids (Explore's facets) |
 
 Every file is validated against a valibot schema before anything is written (`schemas.ts`). The
 schemas are strict (an unknown key fails) and are checked at compile time to infer exactly the
@@ -136,18 +135,19 @@ The listening room shows them under "Same idea elsewhere", labelled as a suggest
   files + the projected prerender + `APP_BUILD_FILES` (120: JS/CSS chunks, the SPA fallback,
   `robots.txt`, `sw.js`). The prerender projection follows W4.5's `prerenderPaths` exactly: per UI
   language Today, every shiur and series with a file, occasions with ≥2 shiurim, and the works,
-  people and concepts with `livePrerender` in `.corpus/entities.json` (`--corpus`, default
-  `<repo>/.corpus`; without it every work and entity file counts, an upper bound). On the real data
+  people and concepts with a Live page flag in `.corpus/layer/` (`--corpus`, default
+  `<repo>/.corpus`, read through `readSeoCorpus`; without it every work and entity file counts, an
+  upper bound). On the real data
   that is 4,570 pages, the number the build writes;
 - at most 25 MiB per file; at most 1,000 work files;
 - brotli (quality 5) targets: corpus 150 KiB, facets 90 KiB, today 30 KiB, shiur 40 KiB, write-up
-  8 KiB, stories 120 KiB, quick index 600 KiB; corpus layer (plan §4): topic tree 8 KiB, topic file
+  8 KiB, quick index 600 KiB; corpus layer (plan §4): topic tree 8 KiB, topic file
   and moment page 24 KiB, thread and story 6 KiB, stories index 120 KiB, glossary shard 8 KiB. The
   shiur file's growth (≤ 2 KiB br at the median) is checked by `real-data.test.ts`.
 
 The prerender projection counts topics, threads (≥3 shiurim) and stories (≥2 tellings) by the
-layer's Live page flags (`prerenderSetsFromCorpus` reads them, occasions still from
-`entities.json`); topic moment pages are data, not routes.
+layer's Live page flags (`prerenderSetsFromCorpus` reads them, and the occasions from
+`occasions.json`, as the prerender list does); topic moment pages are data, not routes.
 
 `corpus.json` is a soft target: with the W2.4 contract every row carries both one-liners, so the
 file is about 205 KiB br at 518 summarized shiurim and will be about 330 KiB at 997. It is reported

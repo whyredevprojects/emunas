@@ -42,7 +42,6 @@ export const dataPaths = {
     if (kind !== "p" && kind !== "c" && kind !== "o") throw new DataPathError(`invalid entity kind: ${String(kind)}`);
     return `${DATA_ROOT}/entity/${kind}/${segment("entity key", key)}.json`;
   },
-  stories: () => `${DATA_ROOT}/stories.json`,
   moments: (l: Ed, shard: number) => {
     if (!Number.isInteger(shard) || shard < 0) throw new DataPathError(`invalid shard: ${shard}`);
     return `${DATA_ROOT}/moments/${lang(l)}-${shard}.json`;

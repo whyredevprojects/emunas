@@ -41,7 +41,6 @@ function expectedFiles(s: PublicShiur, occasionKeys: string[], input: CorpusInpu
     "corpus.json",
     "facets.json",
     "today.json",
-    "stories.json",
     "works.json",
     "quick-index.en.json",
     "quick-index.yi.json",

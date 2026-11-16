@@ -133,8 +133,6 @@ export interface CorpusView {
   personLabel(id: string): FacetLabel;
   conceptLabel(id: string): FacetLabel;
   workLabel(id: string): FacetLabel;
-  /** Story moment id (a telling) → its merged story. */
-  storyOfMoment: Map<string, LayerStory>;
   /** Live-listed entity ids of a summarized shiur (empty without layer refs). */
   entitiesOf(shiurId: string): ShiurEntityIds;
 }
@@ -147,7 +145,6 @@ export function corpusView(layer: LayerInput | null): CorpusView {
   const allConcepts = new Map<string, LayerConcept>();
   const allPeople = new Map<string, LayerPerson>();
   const allWorks = new Map<string, LayerWork>();
-  const storyOfMoment = new Map<string, LayerStory>();
   if (layer) {
     for (const t of layer.topics) if (liveTopicPage(t)) topics.set(t.id, t);
     for (const p of layer.people) {
@@ -162,7 +159,6 @@ export function corpusView(layer: LayerInput | null): CorpusView {
       allWorks.set(w.id, w);
       if (liveWorkPage(w)) works.set(w.id, w);
     }
-    for (const st of layer.stories ?? []) for (const t of arr(st.tellings)) storyOfMoment.set(t.momentId, st);
   }
   const labelOf = <T>(m: Map<string, T>, f: (x: T) => FacetLabel) => (id: string): FacetLabel => {
     const x = m.get(id);
@@ -190,7 +186,6 @@ export function corpusView(layer: LayerInput | null): CorpusView {
     personLabel,
     conceptLabel,
     workLabel,
-    storyOfMoment,
     entitiesOf(shiurId) {
       const r = layer?.refs.get(shiurId);
       if (!r) return { topics: [], people: [], concepts: [], works: [] };
@@ -536,15 +531,18 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
   }
 
   // ------------------------------------------------------------------ story/<id>.json, stories-index.json
+  // A plain `{ name }` from the layer is a corpus entity's own display name (a person no index
+  // lists, or a "person" that is now a concept): the layer leaves unresolved raw extraction names
+  // out (C3.1), and the guard checks every published story name.
   const storyPerson = (p: LayerStory["people"][number]): StoryPerson | null => {
     if ("id" in p && typeof p.id === "string") {
       const listed = view.people.get(p.id);
       if (listed) return { id: p.id, label: view.personLabel(p.id), page: true };
-      const any = view.allPeople.get(p.id);
-      // Not listed on Live (type other, excluded, below the line): the name as plain text.
-      return any ? { name: nz(any.nameEn) || p.id } : null;
+      // Not listed on Live (type other, excluded, below the line): the display name as plain text.
+      const name = nz(view.allPeople.get(p.id)?.nameEn);
+      return name ? { name } : null;
     }
-    return "name" in p && typeof p.name === "string" && p.name !== "" ? { name: p.name } : null;
+    return "name" in p && typeof p.name === "string" && p.name.trim() !== "" ? { name: p.name } : null;
   };
   // The section join (layer topics' storyIds), restricted to topics Live lists.
   const topicsOfStory = new Map<string, string[]>();

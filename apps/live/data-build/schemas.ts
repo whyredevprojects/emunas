@@ -28,7 +28,6 @@ import {
   type QuickIndexFile,
   type SeriesFile,
   type ShiurFile,
-  type StoriesFile,
   type TodayFile,
   type WorkFile,
   type WorksFile,
@@ -184,7 +183,6 @@ export const CorpusSchema = v.strictObject({
       parsha: nstr,
       zman: nstr,
       series: v.nullable(v.strictObject({ id: str, order: v.nullable(num) })),
-      entities: v.strictObject({ works: v.array(str), people: v.array(str), concepts: v.array(str) }),
       counts: v.strictObject({ chapters: int, stories: int, questions: int, insights: int }),
     }),
   ),
@@ -413,22 +411,6 @@ export const EntitySchema = v.strictObject({
   concept: v.exactOptional(v.strictObject({ he: str, label: L, definition: L })),
 });
 
-export const StoriesSchema = v.strictObject({
-  schemaVersion: version,
-  stories: v.array(
-    v.strictObject({
-      id: str,
-      shiurId: str,
-      title: L,
-      peopleKeys: v.array(str),
-      t: nnum,
-      end: nnum,
-      year: v.nullable(int),
-      lang: ed,
-    }),
-  ),
-});
-
 export const MomentShardSchema = v.strictObject({
   schemaVersion: version,
   lang: ed,
@@ -599,7 +581,6 @@ export const DATA_SCHEMAS = {
   works: WorksSchema,
   work: WorkSchema,
   entity: EntitySchema,
-  stories: StoriesSchema,
   moments: MomentShardSchema,
   quickIndex: QuickIndexSchema,
   topics: TopicsSchema,
@@ -630,7 +611,6 @@ export const _typeChecks: {
   works: Same<Out<"works">, WorksFile>;
   work: Same<Out<"work">, WorkFile>;
   entity: Same<Out<"entity">, EntityFile>;
-  stories: Same<Out<"stories">, StoriesFile>;
   moments: Same<Out<"moments">, MomentShardFile>;
   quickIndex: Same<Out<"quickIndex">, QuickIndexFile>;
   topics: Same<Out<"topics">, TopicsFile>;
@@ -653,7 +633,6 @@ export const _typeChecks: {
   works: true,
   work: true,
   entity: true,
-  stories: true,
   moments: true,
   quickIndex: true,
   topics: true,
@@ -678,7 +657,6 @@ export function kindOfFile(file: string): DataKind | null {
   if (file === "facets.json") return "facets";
   if (file === "today.json") return "today";
   if (file === "works.json") return "works";
-  if (file === "stories.json") return "stories";
   if (file === "topics.json") return "topics";
   if (file === "stories-index.json") return "storiesIndex";
   if (file === "explore/entities.json") return "exploreEntities";

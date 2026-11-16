@@ -8,7 +8,7 @@
  * ```
  *
  * - One in-flight request per path; small shared files (`build`, `corpus`, `facets`, `today`, `works`,
- *   `stories`, `topics`, `stories-index`, glossary shards, `explore/entities`) are
+ *   `topics`, `stories-index`, glossary shards, `explore/entities`) are
  *   memoized for the session, per-item files are not (the HTTP cache handles those:
  *   `/data/*` is `max-age=300, stale-while-revalidate`).
  * - A 404 becomes a `DataError` with `status: 404`; `notFoundToNull` turns it into `null` for pages that
@@ -38,7 +38,6 @@ import {
   type QuickIndexFile,
   type SeriesFile,
   type ShiurFile,
-  type StoriesFile,
   type TodayFile,
   type WorkFile,
   type WorksFile,
@@ -153,7 +152,6 @@ export const loadCorpus = (o: LoadOptions = {}) => memoized<CorpusFile>(dataPath
 export const loadFacets = (o: LoadOptions = {}) => memoized<FacetsFile>(dataPaths.facets(), o);
 export const loadToday = (o: LoadOptions = {}) => memoized<TodayFile>(dataPaths.today(), o);
 export const loadWorks = (o: LoadOptions = {}) => memoized<WorksFile>(dataPaths.works(), o);
-export const loadStories = (o: LoadOptions = {}) => memoized<StoriesFile>(dataPaths.stories(), o);
 export const loadShiur = (id: string, o: LoadOptions = {}) => fetchData<ShiurFile>(dataPaths.shiur(id), o);
 export const loadWriteup = (id: string, lang: Ed, o: LoadOptions = {}) =>
   fetchData<WriteupFile>(dataPaths.writeup(id, lang), o);

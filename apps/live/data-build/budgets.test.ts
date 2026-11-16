@@ -8,8 +8,8 @@ import {
   BR_TARGETS,
   SOFT_TARGETS,
   checkLiveBudgets,
-  prerenderSetsFromEntities,
   projectedPrerender,
+  type PrerenderSets,
 } from "./budgets.ts";
 import { main } from "./cli.ts";
 import { GENERATED_AT, MINI_DATA, MINI_POLICY, buildCorpusTo, tmp } from "./test-helpers.ts";
@@ -113,23 +113,12 @@ describe("checkLiveBudgets", () => {
       "moments/en-0.json",
     ];
     expect(projectedPrerender(files)).toBe(2 * (1 + 2 + 1 + 2 + 2 + 1 + 2));
-    const sets = prerenderSetsFromEntities({
-      thresholds: { quiet: { work: 2, person: 2, concept: 3 }, live: { prerender: 3 } },
-      works: [
-        { key: "genesis", shiurim: 9, quietPage: true, livePrerender: true },
-        { key: "rare", shiurim: 2, quietPage: true, livePrerender: false },
-      ],
-      people: [
-        { key: "x", shiurim: 3, quietPage: true, livePrerender: true },
-        { key: "y", shiurim: 2, quietPage: true, livePrerender: false },
-      ],
-      concepts: [{ key: "k", shiurim: 2, quietPage: false, livePrerender: false }],
-      occasions: [
-        { key: "noach", shiurim: 4 },
-        { key: "once", shiurim: 1 },
-        { key: "no-file", shiurim: 9 },
-      ],
-    });
+    const sets: PrerenderSets = {
+      works: new Set(["genesis"]),
+      people: new Set(["x"]),
+      concepts: new Set(),
+      occasions: new Set(["noach", "no-file"]),
+    };
     // Today + shiurim a, b + series + genesis + x + noach, per UI language.
     expect(projectedPrerender(files, sets)).toBe(2 * (1 + 2 + 1 + 1 + 1 + 1));
   });

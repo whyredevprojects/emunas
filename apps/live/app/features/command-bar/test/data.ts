@@ -49,7 +49,6 @@ function row(r: RowInput): CorpusRow {
     parsha: r.parsha ?? null,
     zman: r.zman ?? null,
     series: r.series ?? null,
-    entities: { works: r.works ?? [], people: r.people ?? [], concepts: [] },
     counts: { chapters: 0, stories: 0, questions: 0, insights: 0 },
   };
 }

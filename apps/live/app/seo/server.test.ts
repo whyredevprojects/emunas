@@ -13,7 +13,7 @@ import { createSeoContext, resetSeoContext, seoDataFor, seoLoader, SPA_MODE_HEAD
 import { seoMeta } from "./meta.ts";
 import { prerenderPaths } from "./model.ts";
 import { SeoHead } from "./SeoHead.tsx";
-import { corpusFixture, SHIUR_CATALOG, SHIUR_FULL, writeCorpusFixture } from "./test-fixtures.ts";
+import { corpusFixture, OTHER_IDS, SHIUR_CATALOG, SHIUR_FULL, writeCorpusFixture } from "./test-fixtures.ts";
 import { prerenderSetsFromCorpus, projectedPrerender } from "../../data-build/budgets.ts";
 import { readCorpusInput } from "../../data-build/corpus-input.ts";
 import { emitLiveData } from "../../data-build/emit.ts";
@@ -59,15 +59,21 @@ describe(".corpus reader", () => {
   const corpus = readSeoCorpus(dir);
 
   it("reads shiurim, series, occasions and entities with labels and prerender flags", () => {
-    expect(corpus.shiurim.map((s) => s.id)).toEqual([SHIUR_FULL, SHIUR_CATALOG, "yi-other-01"]);
+    expect(corpus.shiurim.map((s) => s.id)).toEqual([SHIUR_FULL, SHIUR_CATALOG, ...OTHER_IDS]);
     expect(corpus.shiurim[0]!.oneLiner?.en).toContain("Knesses Yisrael");
     expect(corpus.series).toEqual(corpusFixture.series);
     expect(corpus.occasions).toEqual(corpusFixture.occasions);
     expect(corpus.works).toEqual(corpusFixture.works);
     expect(corpus.people).toEqual(corpusFixture.people);
-    expect(corpus.concepts[0]).toEqual(corpusFixture.concepts[0]);
-    // A concept below the listing threshold has no concepts.json row: labelled by its key.
-    expect(corpus.concepts[1]!.label.en).toBe("bitachon-2");
+    expect(corpus.concepts).toEqual(corpusFixture.concepts);
+  });
+
+  it("has no entity pages without a corpus layer (the site-derived aggregates are retired, C3.1)", () => {
+    const bare = writeCorpusFixture(join(tmp(), ".corpus"));
+    rmSync(join(bare, "layer"), { recursive: true });
+    const c = readSeoCorpus(bare);
+    expect([c.works, c.people, c.concepts, c.topics, c.stories, c.threads].every((x) => x.length === 0)).toBe(true);
+    expect(c.occasions).toEqual(corpusFixture.occasions);
   });
 
   it("finds .corpus by EMUNAS_CORPUS_DIR or walking up", () => {
@@ -348,7 +354,6 @@ describe(".corpus reader with the corpus layer (C1.7)", () => {
   it("reads corpus ids and the Live and Quiet page flags, as the data emit does", () => {
     const corpusDir = buildCorpusTo(MINI_DATA, MINI_POLICY);
     const c = readSeoCorpus(corpusDir);
-    expect(c.layer).toBe(true);
     expect(c.topics.length).toBeGreaterThan(100);
     const files = emitLiveData(readCorpusInput(corpusDir), { generatedAt: "2026-11-15T00:00:00.000Z" });
     const pages = (xs: { key: string; prerender: boolean }[]) => xs.filter((x) => x.prerender).map((x) => x.key).sort();

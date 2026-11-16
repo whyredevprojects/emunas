@@ -39,7 +39,6 @@ import {
   type SeriesFacetValue,
   type ShiurFile,
   type ShiurRelated,
-  type StoriesFile,
   type TodayCard,
   type TodayFile,
   type TodayOccasion,
@@ -191,8 +190,7 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
 
   // ------------------------------------------------------------------ corpus.json
   const counts = { ...info.counts };
-  // Entities are corpus ids listed on Live (people/concepts/works with a Live page); Explore's own
-  // copy with topics is explore/entities.json, this one stays until C3.1.
+  // Catalog fields only: the entity ids of each shiur are Explore's own file, explore/entities.json.
   const corpusRows: CorpusRow[] = index.shiurim.map((r) => ({
     id: r.id,
     rev: r.rev,
@@ -210,10 +208,6 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
     series: r.series ? { id: r.series.id, order: r.series.order } : null,
     duration: r.duration,
     oneLiner: r.oneLiner,
-    entities: (() => {
-      const e = view.entitiesOf(r.id);
-      return { works: e.works, people: e.people, concepts: e.concepts };
-    })(),
     counts: {
       chapters: r.counts.chapters,
       stories: r.counts.stories,
@@ -272,6 +266,9 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
     for (const r of corpusRows) for (const k of uniq(pick(r))) m.set(k, (m.get(k) ?? 0) + 1);
     return m;
   };
+  // Entity facets: corpus ids Live lists, counted over the shiurim tagged with them (corpus layer).
+  const entityTally = (pick: (e: ReturnType<CorpusView["entitiesOf"]>) => readonly string[]) =>
+    tally((r) => pick(view.entitiesOf(r.id)));
   const fv = (l: FacetLabel, count: number): FacetValue => ({ label: l, count });
   const categoryCounts = tally((r) => [r.category]);
   const category: FacetsFile["category"] = {};
@@ -312,9 +309,9 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
     occasion: sortedRecord(occasionFacet),
     year: sortedRecord([...yearCounts].map(([k, n]) => [k, fv(yearLabel(k), n)])),
     series: sortedRecord(seriesFacet),
-    work: sortedRecord([...tally((r) => r.entities.works)].map(([k, n]) => [k, fv(workLabel(k), n)])),
-    person: sortedRecord([...tally((r) => r.entities.people)].map(([k, n]) => [k, fv(personLabel(k), n)])),
-    concept: sortedRecord([...tally((r) => r.entities.concepts)].map(([k, n]) => [k, fv(conceptLabel(k), n)])),
+    work: sortedRecord([...entityTally((e) => e.works)].map(([k, n]) => [k, fv(workLabel(k), n)])),
+    person: sortedRecord([...entityTally((e) => e.people)].map(([k, n]) => [k, fv(personLabel(k), n)])),
+    concept: sortedRecord([...entityTally((e) => e.concepts)].map(([k, n]) => [k, fv(conceptLabel(k), n)])),
   };
   put<"facets">(dataPaths.facets(), facets);
 
@@ -774,27 +771,6 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
     };
     put<"entity">(dataPaths.entity(e.kind, e.key), file);
   });
-
-  // ------------------------------------------------------------------ stories.json
-  const stories: StoriesFile = {
-    schemaVersion: V,
-    stories: agg.stories.stories.map((st) => ({
-      id: st.id,
-      shiurId: st.shiurId,
-      title: { en: st.title.en, yi: st.title.yi },
-      // Corpus person ids (Live-listed) of the merged story this telling belongs to.
-      peopleKeys: [
-        ...new Set(
-          (view.storyOfMoment.get(st.id)?.people ?? []).flatMap((p) => ("id" in p && view.people.has(p.id) ? [p.id] : [])),
-        ),
-      ],
-      t: st.t,
-      end: st.end,
-      year: st.years[0] ?? null,
-      lang: st.lang,
-    })),
-  };
-  put<"stories">(dataPaths.stories(), stories);
 
   // ------------------------------------------------------------------ moments/<lang>-<n>.json
   const momentShards: Record<Ed, number> = { en: 0, yi: 0 };

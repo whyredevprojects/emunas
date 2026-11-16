@@ -93,7 +93,7 @@ function labelNames(l: FacetLabel | undefined): string[] {
   return l ? [l.en, l.yi, l.he].filter((x): x is string => typeof x === "string") : [];
 }
 
-/** The fallback index: the same fields, from the files the shell already uses. */
+/** The fallback index: the same fields, from the files the shell already uses (no sections or entities). */
 function buildFromCorpus(corpus: CorpusFile, facets: FacetsFile | null, ui: Ed): MiniSearch<QuickDoc> {
   const ms = new MiniSearch<QuickDoc>({ fields: [...QUICK_FIELDS], storeFields: ["name"], idField: "id" });
   const occ = (k: string | null) => (k && facets ? labelNames(facets.occasion[k]?.label) : k ? [k] : []);
@@ -104,12 +104,9 @@ function buildFromCorpus(corpus: CorpusFile, facets: FacetsFile | null, ui: Ed):
       title: fold([r.title, r.heading]),
       occasion: fold([...occ(r.parsha), ...occ(r.zman)]),
       oneLiner: fold([r.oneLiner?.[ui]]),
+      // corpus.json carries no entity ids (C3.1): the fallback matches catalog fields only.
       sections: "",
-      entities: fold([
-        ...r.entities.works.flatMap((k) => labelNames(facets?.work[k]?.label)),
-        ...r.entities.people.flatMap((k) => labelNames(facets?.person[k]?.label)),
-        ...r.entities.concepts.flatMap((k) => labelNames(facets?.concept[k]?.label)),
-      ]),
+      entities: "",
     })),
   );
   return ms;
