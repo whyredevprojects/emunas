@@ -56,7 +56,7 @@ Learning vocabulary is welcome and natural: `ער פרעגט א קשיא`, `דע
 | `ער ברענגט ארויף א פונקט` ("brings up a point") | `ער ברענגט א נקודה`, `ער מאכט אויפמערקזאם` |
 | `עס איז וויכטיג צו באמערקן אז ...` | (filler; leave it out) |
 | `רעקארדינג`, `סעקשן`, `פאינט` (English words) | `שיעור`, `חלק`, `נקודה`; `צווייטע טייל פונעם שיעור` |
-| `דא איז דער טעקסט שטארק צעמישט`, `ס'איז נישט קלאר וואס ער זאגט` (any remark on the audio or transcript) | leave it out; say only what the Mashgiach teaches |
+| `דא איז דער טעקסט שטארק צעמישט`, `ס'איז נישט קלאר וואס ער זאגט` (any mention of the transcript, or judgment of the shiur's clarity) | leave it out; say only what the Mashgiach teaches (a factual sound note like `די אויפנאמע ברעכט זיך איבער` is allowed) |
 | `ער פרעגט די קשיא: וואס איז ...?` with English word order | `ער פרעגט: פארוואס זשע ...?`, `ער פרעגט א קשיא, אז ...` |
 
 The verb goes in second position (`דערנאך ברענגט ער...`, not `דערנאך ער ברענגט...`). Use `אז` freely to introduce reported speech (`ער זאגט אז ...`). Short, connected sentences, as a reporter of a shiur writes them; not one long sentence translated from English.
