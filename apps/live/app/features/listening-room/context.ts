@@ -1,6 +1,6 @@
 /** What every part of the listening room needs: the shiur, languages, the play position and actions. */
 import type { UiLang } from "@emunas/i18n";
-import type { Ed, ShiurFile } from "./data.ts";
+import type { Ed, EntityChip, ShiurFile } from "./data.ts";
 import type { PlayingInfo } from "../../player-ui/index.ts";
 import type { RoomT } from "./strings.ts";
 
@@ -25,4 +25,9 @@ export interface RoomContext {
   playAt(t: number, end?: number): void;
   /** Whether any recording of this shiur can be played. */
   playable: boolean;
+  /**
+   * Opens a topic in the side pane (a sheet on a phone); the audio keeps playing. Absent where no
+   * pane is mounted (a part rendered on its own): topic chips are then plain links to the topic page.
+   */
+  openTopic?: ((topic: EntityChip) => void) | undefined;
 }

@@ -443,4 +443,134 @@
     clip-path: inset(50%);
     white-space: nowrap;
   }
+  /* Corpus layer (concept-live-corpus D): header topic line, chapter topic chips, thread and story
+     marks, the topic side pane (a sheet on a phone) and the end-of-shiur offer. */
+  .topicLine {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-3xs) var(--space-2xs);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: var(--step--1);
+  }
+
+  .topicLine li + li::before {
+    content: "·";
+    margin-inline-end: var(--space-2xs);
+    color: var(--color-ink-muted);
+  }
+
+  .corpusLabel {
+    margin-block: var(--space-3xs) var(--space-s);
+    font-size: var(--step--2);
+    color: var(--color-ink-muted);
+  }
+
+  .topicChips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3xs);
+    margin: var(--space-2xs) 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .topicChip {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: var(--tap-min);
+    padding-inline: var(--space-xs);
+    border: var(--rule-hairline) solid var(--color-rule-strong);
+    border-radius: var(--radius-pill);
+    background: transparent;
+    color: var(--color-ink);
+    font: inherit;
+    font-size: var(--step--1);
+    cursor: pointer;
+  }
+
+  .topicChip:hover {
+    border-color: var(--color-accent);
+  }
+
+  .topicChip:focus-visible {
+    outline: var(--rule-focus) solid var(--color-focus);
+    outline-offset: 2px;
+  }
+
+  .topicLine .topicChip {
+    border: 0;
+    padding-inline: 0;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+
+  .mark {
+    flex-basis: 100%;
+    font-size: var(--step--1);
+    color: var(--color-ink-muted);
+  }
+
+  .mark a {
+    color: var(--color-accent);
+  }
+
+  .paneOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    background: rgb(0 0 0 / 0.25);
+  }
+
+  .pane {
+    position: fixed;
+    inset-block: 0;
+    inset-inline-end: 0;
+    inline-size: min(34rem, 100vw);
+    overflow: auto;
+    background: var(--color-surface);
+    color: var(--color-ink);
+    border-inline-start: var(--rule-hairline) solid var(--color-rule-strong);
+    box-shadow: 0 0 1.5rem rgb(0 0 0 / 0.15);
+  }
+
+  @media (max-width: 40rem) {
+    .pane {
+      inset-block: auto 0;
+      inset-inline: 0;
+      inline-size: 100vw;
+      max-block-size: 85vh;
+      border-inline-start: 0;
+      border-block-start: var(--rule-hairline) solid var(--color-rule-strong);
+      border-start-start-radius: var(--radius-m);
+      border-start-end-radius: var(--radius-m);
+    }
+  }
+
+  .paneDialog {
+    padding: var(--space-m);
+    outline: none;
+  }
+
+  .paneHead {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-xs);
+    margin-block-end: var(--space-s);
+  }
+
+  .endPanel {
+    margin-block: var(--space-m);
+    padding: var(--space-s) var(--space-m);
+    border-inline-start: var(--rule-thick) solid var(--color-accent);
+    background: var(--color-paper-sunk);
+  }
+
+  .endPanel p {
+    margin-block: 0 var(--space-2xs);
+  }
 }

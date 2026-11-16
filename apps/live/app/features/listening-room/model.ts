@@ -1,6 +1,7 @@
 /**
  * Pure helpers of the listening room (no React, no DOM): deep links (`?t=` and `&m=`), moment lookup,
- * clickable catalog topics, the active write-up paragraph, source grouping and Sefaria links.
+ * clickable catalog topics, the active write-up paragraph and Sefaria links (source grouping by merged
+ * work is in `corpus.ts`).
  */
 import type { PublicSource, PublicWriteupBlock, SectionKind } from "@emunas/corpus/public";
 import { parseMomentId } from "@emunas/links";
@@ -121,29 +122,6 @@ export function chapterAt(chapters: readonly { t: number }[], t: number): number
     else break;
   }
   return found;
-}
-
-export interface SourceGroup {
-  /** `workKey` (or the work's name, or "" for unnamed). */
-  key: string;
-  work: string | null;
-  sources: PublicSource[];
-}
-
-/** Sources in order of first appearance, grouped by work (concept-live §5.3 Sources tab). */
-export function groupSources(sources: readonly PublicSource[]): SourceGroup[] {
-  const byKey = new Map<string, SourceGroup>();
-  const ordered = [...sources].sort((a, b) => (a.t ?? Infinity) - (b.t ?? Infinity) || a.idx - b.idx);
-  for (const s of ordered) {
-    const key = s.workKey ?? s.work ?? "";
-    let g = byKey.get(key);
-    if (!g) {
-      g = { key, work: s.work, sources: [] };
-      byKey.set(key, g);
-    }
-    g.sources.push(s);
-  }
-  return [...byKey.values()];
 }
 
 /**

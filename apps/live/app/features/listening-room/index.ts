@@ -6,7 +6,6 @@ export {
   SKIPPED_KINDS,
   activeParagraphId,
   chapterAt,
-  groupSources,
   hasPlayableAudio,
   momentSpan,
   parseTimeParam,
@@ -14,8 +13,22 @@ export {
   sefariaUrl,
   topicTargets,
   type DeepLink,
-  type SourceGroup,
   type TimeSpan,
 } from "./model.ts";
+export {
+  MAIN_TOPIC_SALIENCE,
+  chapterTopics,
+  endOfShiur,
+  groupSourcesByWork,
+  insightMark,
+  mainTopics,
+  storyMark,
+  threadsThrough,
+  type EndOfShiur,
+  type InsightMark,
+  type StoryMark,
+  type ThreadThrough,
+  type WorkGroup,
+} from "./corpus.ts";
 export { printableUrl, quietOrigin } from "./quiet-link.ts";
 export { roomT, type RoomKey, type RoomT } from "./strings.ts";

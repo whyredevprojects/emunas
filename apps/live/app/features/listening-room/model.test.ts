@@ -4,7 +4,6 @@ import { TRANSCRIPT_VIEW } from "./flags.ts";
 import {
   activeParagraphId,
   chapterAt,
-  groupSources,
   hasPlayableAudio,
   momentSpan,
   parseTimeParam,
@@ -102,14 +101,6 @@ describe("time helpers", () => {
 });
 
 describe("sources", () => {
-  it("groups by work in order of appearance", () => {
-    const groups = groupSources(notes.sources);
-    expect(groups.map((g) => g.sources.length).reduce((a, b) => a + b, 0)).toBe(notes.sources.length);
-    expect(groups[0]!.key).toBe(notes.sources[0]!.workKey);
-    const keys = groups.map((g) => g.key);
-    expect(new Set(keys).size).toBe(keys.length);
-  });
-
   it("links only resolved sources to Sefaria", () => {
     expect(sefariaUrl({ resolution: "resolved", sefariaRef: "Deuteronomy 10:12" })).toBe("https://www.sefaria.org/Deuteronomy.10.12");
     expect(sefariaUrl({ resolution: "resolved", sefariaRef: "Song of Songs 1:6" })).toBe("https://www.sefaria.org/Song_of_Songs.1.6");
