@@ -1,5 +1,5 @@
 /**
- * Browser side of the Light · Dark switch in the header. The switch is rendered `hidden` and shown
+ * Browser side of the light/dark switch (sun and moon) in the header. The switch is rendered `hidden` and shown
  * here, so there are no dead buttons without script. The choice is the shared `emunas_theme` cookie
  * (@emunas/tokens), which the Live site reads too; the inline head script applied it before paint.
  */

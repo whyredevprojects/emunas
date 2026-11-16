@@ -1,7 +1,8 @@
 /*
  * Quiet: a printed catalog from a careful publisher (concept-quiet §11). Paper background,
  * near-black text, one restrained accent for links and the "now playing" mark, hairline rules,
- * spaced lettering for labels. No icons, shadows, badges or animation.
+ * spaced lettering for labels. No icons where a word will do (the exceptions: the new-tab mark and
+ * the sun and moon of the theme switch), no shadows, badges or animation.
  *
  * Logical properties only (Stylelint enforces it), so the Yiddish (rtl) and English (ltr)
  * editions share every rule. No quotation styling anywhere: there is no blockquote or q.
@@ -247,30 +248,38 @@
     flex: 0 0 auto;
   }
 
-  /* Light · Dark: two plain text buttons; the chosen one reads like the current nav item. */
-  .theme-switch {
-    flex: 0 0 auto;
-    color: var(--color-ink-muted);
+  /* Light and dark: a sun and a moon, the icon exception to "a word will do". Each button is named
+     (aria-label); the chosen one is in ink with a hairline under it, the other muted. */
+  .theme-switch:not([hidden]) {
+    display: flex;
+    gap: var(--space-2xs);
   }
 
   .theme-switch button {
-    font: inherit;
+    display: inline-grid;
+    place-items: center;
+    inline-size: 2.75rem;
+    block-size: 2.75rem;
+    padding: 0;
     background: none;
     border: 0;
-    padding-block: var(--space-2xs);
-    padding-inline: 0;
     color: var(--color-ink-muted);
     cursor: pointer;
   }
 
-  .theme-switch button:hover {
-    text-decoration-line: underline;
+  .theme-switch svg {
+    inline-size: 1.25rem;
+    block-size: 1.25rem;
   }
 
+  .theme-switch button:hover {
+    color: var(--color-ink);
+  }
+
+  /* The hairline is as wide as the icon, not the 44px tap target. */
   .theme-switch button[aria-pressed="true"] {
     color: var(--color-ink);
-    font-weight: var(--weight-semibold);
-    text-decoration-line: underline;
+    background: linear-gradient(currentColor, currentColor) no-repeat center bottom 0.4rem / 1.25rem 1px;
   }
 
   .breadcrumb {

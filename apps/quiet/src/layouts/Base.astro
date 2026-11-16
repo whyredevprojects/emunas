@@ -4,7 +4,7 @@
  * - `<html lang dir>` per edition (yi → rtl, en → ltr);
  * - skip link, the one-line nav (Contents · Calendar · Indexes · Search · About) and the edition
  *   switch, which goes to the same path in the other edition and keeps the hash;
- * - the Light · Dark switch (lib/theme.client.ts; hidden until script shows it). Light is the
+ * - the light/dark switch, a sun and a moon (lib/theme.client.ts; hidden until script shows it). Light is the
  *   default; components/ThemeHead.astro applies a dark choice before paint;
  * - optional breadcrumb that mirrors the catalog;
  * - `main#main`, footer (its last line is the dedication), and the print layer (styles/print.css: nav, switches and player hidden).
@@ -91,9 +91,17 @@ const otherDir = dirOf(other);
         <a href={switchHref} hreflang={other} lang={other} dir={otherDir} data-edition-switch>{t("edition.other")}</a>
       </p>
       <div class="theme-switch" role="group" aria-label={t("theme.label")} hidden data-theme-switch>
-        <button type="button" data-theme-value="light" aria-pressed="true">{t("theme.light")}</button>
-        <span aria-hidden="true"> · </span>
-        <button type="button" data-theme-value="dark" aria-pressed="false">{t("theme.dark")}</button>
+        <button type="button" data-theme-value="light" aria-pressed="true" aria-label={t("theme.light")} title={t("theme.light")}>
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4.5" fill="currentColor" />
+            <path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.58 4.58l2.12 2.12M17.3 17.3l2.12 2.12M4.58 19.42l2.12-2.12M17.3 6.7l2.12-2.12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+        <button type="button" data-theme-value="dark" aria-pressed="false" aria-label={t("theme.dark")} title={t("theme.dark")}>
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
+            <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.39 5.39 0 0 1-4.4 2.26 5.4 5.4 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z" fill="currentColor" />
+          </svg>
+        </button>
       </div>
     </header>
     {crumbs && crumbs.length > 0 && (

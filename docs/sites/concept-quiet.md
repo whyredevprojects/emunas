@@ -297,7 +297,7 @@ The future door: each recording gets a site-owned eligibility setting, default "
 
 ## 11. Tone and visual character
 
-A printed catalog from a careful publisher. Paper-coloured background, near-black text, one restrained accent used for links and the "now playing" mark. Rules and small caps (or their Hebrew equivalent, spaced lettering) for labels. Tables with hairlines. No icons where a word will do, no photographs in the browsing pages, no cards with shadows, no badges, no counters that animate. The only motion on the site is the audio progress and the margin mark that follows it.
+A printed catalog from a careful publisher. Paper-coloured background, near-black text, one restrained accent used for links and the "now playing" mark. Rules and small caps (or their Hebrew equivalent, spaced lettering) for labels. Tables with hairlines. No icons where a word will do (the exceptions are the new-tab mark and the sun and moon of the light/dark switch), no photographs in the browsing pages, no cards with shadows, no badges, no counters that animate. The only motion on the site is the audio progress and the margin mark that follows it.
 
 Respect shows in restraint: the Mashgiach's name with its proper titles and זצ"ל on the title page and About, shem Hashem written as the data writes it, and no "content" vocabulary (no "episodes", "tracks", "posts").
 

@@ -4,7 +4,7 @@
  * - axe: zero violations (WCAG 2.0–2.2 A/AA + best practices), light and dark;
  * - print media hides nav, edition and theme switches, breadcrumb and player, keeps times as text;
  * - the edition switch keeps the path, and with script the hash and query;
- * - light by default whatever the OS prefers; the Light · Dark switch (hidden without script) stores
+ * - light by default whatever the OS prefers; the light/dark switch (sun and moon) (hidden without script) stores
  *   the shared cookie, and the inline init script is the build's only inline script and passes the CSP.
  *
  * Builds the site with EMUNAS_SHELL_SAMPLE=1 into a temporary directory, serves it with a tiny
