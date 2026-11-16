@@ -2,10 +2,15 @@ name: ci
 
 # integration-plan §3.5: typecheck (pipeline + sites) → lint → unit tests → corpus:build on
 # the real data → guard pre-pass → rebuild with the suppress list → both app builds →
-# guard post-pass → budgets → PR preview uploads (staging Workers, `pr-<n>` alias).
-# The e2e job (W5.1) builds both sites from the real data again for the browser gates: Playwright
-# (Chromium + WebKit, desktop + mobile, JS off for Quiet), axe on every route type, cross-site
-# equivalence and link checks, html-validate, the search eval regression gate and Lighthouse budgets.
+# guard post-pass (layer-aware) → budgets → PR preview uploads (staging Workers, `pr-<n>` alias).
+# The build steps run in the order of `npm run site:chain` (tests/chain/site-chain.ts, corpus-wave-
+# plan §6); tests/chain/site-chain.test.ts fails when this file and the script disagree, and the
+# chain's planted self-tests (an asrVariants key, an ASR synonym) must fail guard post.
+# The e2e job (W5.1, C3.8) builds both sites from the real data again for the browser gates:
+# Playwright (Chromium + WebKit, desktop + mobile, JS off for Quiet; the corpus pages of both sites
+# and Live's first-load request gate), axe on every route type, cross-site equivalence (incl. topic,
+# concept and story) and link checks, html-validate, the search eval regression gate and Lighthouse
+# budgets.
 
 on:
   pull_request:
@@ -47,6 +52,11 @@ jobs:
         run: npm run site:lint
       - name: Unit tests (sites, site Workers, eval suite)
         run: npm run site:test
+      - name: Chain script (typecheck, lint, unit tests; the order below must match it)
+        run: |
+          npx tsc --noEmit -p tests/chain/tsconfig.json
+          npx eslint --config packages/config/eslint.config.js --max-warnings 0 tests/chain
+          npx vitest run --config tests/chain/vitest.config.ts
 
   build:
     runs-on: ubuntu-24.04
@@ -109,11 +119,19 @@ jobs:
         run: >-
           npm run guard --workspace=@emunas/corpus-guard --
           post --scan .corpus apps/quiet/dist apps/live/build/client .wrangler/bundles
-          --corpus .corpus --report guard-post.json
+          --corpus .corpus --corpus-data data/derived/corpus --report guard-post.json
       - name: Budgets
         run: npm run guard --workspace=@emunas/corpus-guard -- budgets apps/quiet/dist apps/live/build/client
       - name: Live data budgets (tech-live size targets; over-target is a warning)
         run: npm run data:budgets --workspace=@emunas/live
+      - name: Chain self-tests (a planted asrVariants key and a planted ASR synonym must fail guard post)
+        # tests/chain/site-chain.ts plants into the built layer, runs guard post, restores the file;
+        # --expect-fail-at makes the step pass only when the chain fails exactly at guard post.
+        run: |
+          for plant in asr-key asr-synonym; do
+            npm run --silent site:chain -- --from guard-post --to guard-post --plant "$plant" \
+              --expect-fail-at guard-post --report "$RUNNER_TEMP/planted-$plant.json"
+          done
 
       - name: Job summary
         if: always()
@@ -129,6 +147,18 @@ jobs:
             console.log(`- ${c.full} of ${c.total} shiurim with notes; ${c.catalogOnly} catalog-only; ${c.downgraded} downgraded`);
           }
           if (sup) console.log(`- verbatim: ${sup.suppress.length} suppressed, ${sup.report.length} reported (ids only)`);
+          const corpusIds = (sup?.suppress ?? []).map((s) => s.id).filter((id) => id.startsWith("corpus:"));
+          if (corpusIds.length) console.log(`- suppressed corpus ids: ${corpusIds.join(", ")}`);
+          const guard = read("guard-post.json");
+          if (guard) console.log(`- guard post: ${guard.counts.findings} finding(s), ${guard.counts.filesScanned} files, alias terms checked ${guard.counts.aliasTermsChecked}`);
+          // Corpus layer counts (corpus-wave-plan §6): visible recounts, pages per site, files not read.
+          const layer = read(".corpus/layer/layer.json");
+          if (layer?.counts) {
+            const c = layer.counts;
+            console.log(`- layer: ${c.visibleShiurim} visible shiurim; topics ${c.topics}, concepts ${c.concepts}, people ${c.people}, works ${c.works}, stories ${c.stories}, threads ${c.threads}, series ${c.series}`);
+            for (const [site, p] of Object.entries(c.pages ?? {})) console.log(`- ${site} pages: ${Object.entries(p).map(([k, v]) => `${k} ${v}`).join(", ")}`);
+            console.log(`- files not read: ${(layer.notRead ?? []).join(", ") || "none"}`);
+          }
           JS
 
       - name: Keep build output for the preview job
@@ -167,15 +197,10 @@ jobs:
       - name: Install Playwright browsers (Chromium, WebKit)
         run: npx playwright install --with-deps chromium webkit
 
-      - name: Corpus, search rows and Live data (real data)
-        run: |
-          npm run corpus:build
-          npm run search:build
-          npm run data:build --workspace=@emunas/live
-      - name: Build Quiet and Live (test domain)
-        run: |
-          npm run build --workspace=@emunas/quiet
-          npm run build --workspace=@emunas/live
+      - name: Corpus, guard pre, suppress rebuild, search rows, Live data, both builds (real data, test domain)
+        # The chain's build steps (tests/chain/site-chain.ts), so the browser gates see the same
+        # outputs the deploy ships; the build job above runs guard post and the budgets.
+        run: npm run site:chain -- --to live-build
 
       - name: Typecheck and lint the cross-site suite
         run: |

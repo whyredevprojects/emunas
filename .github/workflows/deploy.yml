@@ -4,6 +4,8 @@ name: deploy
 # corpus:build → guard pre → corpus:build --suppress → app builds → _headers → Worker bundles
 # → guard post (FAIL = nothing deploys) → budgets → D1 migrations → D1/Vectorize sync
 # → deploy emunas-api → emunas-quiet → emunas-live → job summary.
+# The build and guard steps run in the order of `npm run site:chain` (tests/chain/site-chain.ts);
+# tests/chain/site-chain.test.ts fails when this file and the script disagree.
 # Production from main (push touching site inputs, daily 05:17 UTC, dispatch);
 # staging by dispatch only. See docs/sites/ops-runbook.md.
 
@@ -249,7 +251,7 @@ jobs:
         run: >-
           npm run guard --workspace=@emunas/corpus-guard --
           post --scan .corpus apps/quiet/dist apps/live/build/client .wrangler/bundles
-          --corpus .corpus --report "$RUNNER_TEMP/guard-post.json"
+          --corpus .corpus --corpus-data data/derived/corpus --report "$RUNNER_TEMP/guard-post.json"
       - name: Budgets
         run: npm run guard --workspace=@emunas/corpus-guard -- budgets apps/quiet/dist apps/live/build/client
       - name: Live data budgets (tech-live size targets; over-target is a warning)
@@ -317,6 +319,16 @@ jobs:
             const un = report.unmapped ?? {};
             out.push("", "### Unmapped catalog/derived strings");
             for (const [k, rows] of Object.entries(un)) out.push(`- ${k}: ${rows.length}`);
+          }
+          // Corpus layer counts (corpus-wave-plan §6): visible recounts, pages per site, files not read.
+          const layer = read(".corpus/layer/layer.json");
+          if (layer?.counts) {
+            const c = layer.counts;
+            out.push("", "### Corpus layer", `- ${c.visibleShiurim} visible shiurim; topics ${c.topics}, concepts ${c.concepts}, people ${c.people}, works ${c.works}, stories ${c.stories}, threads ${c.threads}, series ${c.series}`);
+            for (const [site, p] of Object.entries(c.pages ?? {})) out.push(`- ${site} pages: ${Object.entries(p).map(([k, v]) => `${k} ${v}`).join(", ")}`);
+            out.push(`- files not read: ${(layer.notRead ?? []).join(", ") || "none"}`);
+            const corpusIds = (sup?.suppress ?? []).map((s) => s.id).filter((id) => id.startsWith("corpus:"));
+            out.push(`- suppressed corpus ids: ${corpusIds.join(", ") || "none"}`);
           }
           if (sup) {
             out.push("", `### Verbatim suppressed (${sup.suppress.length}), reported ${sup.report.length}`);

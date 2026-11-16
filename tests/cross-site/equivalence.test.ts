@@ -54,7 +54,9 @@ interface Samples {
   zman: { key: string; en: string; yi: string };
   work: string;
   person: string;
-  concept: string;
+  concept: { id: string; he: string };
+  topic: { id: string; label: { en?: string; yi?: string; he?: string } };
+  story: { id: string; title: { en: string; yi: string } };
 }
 
 let facts: CorpusFacts;
@@ -83,19 +85,39 @@ function pickSamples(f: CorpusFacts): Samples {
   const series = f.series.filter((x) => x.count >= 3 && liveHas(`series/${x.id}.json`)).sort((a, b) => b.count - a.count)[0];
   if (!series) throw new Error("no series");
   const top = (xs: { key: string; count: number; en: string; yi: string }[]) => [...xs].sort((a, b) => b.count - a.count)[0]!;
-  const entity = (rows: { key: string; shiurim: number }[], kind: "p" | "c" | null, min: number) =>
-    [...rows]
-      .filter((r) => r.shiurim >= min)
-      .sort((a, b) => b.shiurim - a.shiurim || a.key.localeCompare(b.key))
-      .find((r) => (kind ? liveHas(`entity/${kind}/${r.key}.json`) : liveHas(`work/${r.key}.json`)))!.key;
+  // Corpus entities (by corpus id, from the layer): a page on both sites, most shiurim first.
+  const both = (x: { pages?: { quiet?: boolean; live?: boolean } }) => x.pages?.quiet === true && x.pages.live === true;
+  const largest = <T extends { id: string }>(xs: T[], size: (x: T) => number, what: string): T => {
+    const hit = [...xs].sort((a, b) => size(b) - size(a) || a.id.localeCompare(b.id))[0];
+    if (!hit) throw new Error(`no ${what} with a page on both sites`);
+    return hit;
+  };
+  const L = f.layer;
+  const topic = largest(
+    L.topics.filter((t) => both(t) && t.gateway !== true && liveHas(`topic/${t.id}.json`)),
+    (t) => t.count,
+    "topic",
+  );
+  const concept = largest(
+    L.concepts.filter((c) => both(c) && !c.mergedIntoTopic && c.passim !== true && liveHas(`entity/c/${c.id}.json`)),
+    (c) => c.shiurIds?.length ?? 0,
+    "concept",
+  );
+  const story = largest(
+    L.stories.filter((x) => both(x) && liveHas(`story/${x.id}.json`)),
+    (x) => x.tellings?.length ?? 0,
+    "story",
+  );
   return {
     shiur,
     series: { id: series.id, title: series.title },
     parsha: top(f.occasions.parshiyos),
     zman: top(f.occasions.zmanim),
-    work: entity(f.entities.works, null, 2),
-    person: entity(f.entities.people, "p", 2),
-    concept: entity(f.entities.concepts, "c", 3),
+    work: largest(L.works.filter((w) => both(w) && liveHas(`work/${w.id}.json`)), (w) => w.count ?? 0, "work").id,
+    person: largest(L.people.filter((x) => both(x) && liveHas(`entity/p/${x.id}.json`)), (x) => x.count ?? 0, "person").id,
+    concept: { id: concept.id, he: concept.canonicalHe ?? "" },
+    topic: { id: topic.id, label: topic.label },
+    story: { id: story.id, title: story.title },
   };
 }
 
@@ -120,7 +142,9 @@ describe.skipIf(missing !== null)("cross-site links (built outputs)", () => {
       ["zman", links.quiet.zman(ed, s.zman.key), links.live.occasion(ed, s.zman.key)],
       ["work", links.quiet.work(ed, s.work), links.live.work(ed, s.work)],
       ["person", links.quiet.person(ed, s.person), links.live.person(ed, s.person)],
-      ["concept", links.quiet.concept(ed, s.concept), links.live.concept(ed, s.concept)],
+      ["concept", links.quiet.glossaryEntry(ed, s.concept.id), links.live.concept(ed, s.concept.id)],
+      ["topic", links.quiet.topic(ed, s.topic.id), links.live.topic(ed, s.topic.id)],
+      ["story", links.quiet.story(ed, s.story.id), links.live.story(ed, s.story.id)],
     ];
   };
 
@@ -396,7 +420,7 @@ describe.skipIf(missing !== null)("equivalent pages show the same thing (browser
       await live.close();
     });
 
-    for (const what of ["parsha", "zman", "work", "person", "concept"] as const) {
+    for (const what of ["parsha", "zman", "work", "person", "concept", "topic", "story"] as const) {
       it(`${what}: both sites list the same shiurim (${ed})`, async () => {
         const [q, l] =
           what === "parsha"
@@ -407,11 +431,22 @@ describe.skipIf(missing !== null)("equivalent pages show the same thing (browser
                 ? [links.quiet.work(ed, s.work), links.live.work(ed, s.work)]
                 : what === "person"
                   ? [links.quiet.person(ed, s.person), links.live.person(ed, s.person)]
-                  : [links.quiet.concept(ed, s.concept), links.live.concept(ed, s.concept)];
+                  : what === "concept"
+                    ? [links.quiet.glossaryEntry(ed, s.concept.id), links.live.concept(ed, s.concept.id)]
+                    : what === "topic"
+                      ? [links.quiet.topic(ed, s.topic.id), links.live.topic(ed, s.topic.id)]
+                      : [links.quiet.story(ed, s.story.id), links.live.story(ed, s.story.id)];
         const quiet = await open(q);
         const live = await open(l);
         await expandAll(live);
         const qi = await shiurIds(quiet, "quiet");
+        // A long Quiet entry lists every shiur on its `all/` page (Quiet C4.2, C4.3).
+        const allPath = `${new URL(q).pathname}all/`;
+        if (quietFile(paths.quietDist, allPath)) {
+          const all = await open(`${QUIET}${allPath}`);
+          for (const id of await shiurIds(all, "quiet")) qi.add(id);
+          await all.close();
+        }
         const li = await shiurIds(live, "live");
         expect(qi.size, `${what} on Quiet: ${q}`).toBeGreaterThan(0);
         expect(li.size, `${what} on Live: ${l}`).toBeGreaterThan(0);
@@ -422,6 +457,26 @@ describe.skipIf(missing !== null)("equivalent pages show the same thing (browser
           const label = norm(occ[ed]);
           expect(norm(await h1(quiet))).toContain(label);
           expect(norm(await h1(live))).toContain(label);
+        }
+        // Corpus entries: both pages name the same entity (Quiet heads with the Hebrew name).
+        if (what === "topic") {
+          const names = [s.topic.label.he, s.topic.label.yi, s.topic.label.en].map((x) => norm(x ?? "")).filter(Boolean);
+          expect(names.length, "topic names").toBeGreaterThan(0);
+          const qh = norm(await h1(quiet));
+          const lh = norm(await h1(live));
+          expect(names.some((n) => qh.includes(n)), `Quiet h1 ${qh}`).toBe(true);
+          expect(names.some((n) => lh.includes(n)), `Live h1 ${lh}`).toBe(true);
+        }
+        if (what === "concept" && s.concept.he) {
+          expect(norm(await h1(quiet))).toContain(norm(s.concept.he));
+          expect(norm(await live.locator("main").innerText())).toContain(norm(s.concept.he));
+        }
+        if (what === "story") {
+          const titles = [s.story.title[ed], s.story.title.en, s.story.title.yi].map(norm).filter(Boolean);
+          const qh = norm(await h1(quiet));
+          const lh = norm(await h1(live));
+          expect(titles.some((t) => qh.includes(t)), `Quiet h1 ${qh}`).toBe(true);
+          expect(titles.some((t) => lh.includes(t)), `Live h1 ${lh}`).toBe(true);
         }
         await quiet.close();
         await live.close();

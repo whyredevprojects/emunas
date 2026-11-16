@@ -37,6 +37,7 @@
     "site:test:eval": "vitest run --config apps/live/tests/eval/vitest.config.ts",
     "site:e2e": "npm run test:e2e --workspaces --if-present",
     "site:build": "npm run build --workspaces --if-present",
+    "site:chain": "tsx tests/chain/site-chain.ts",
     "corpus:build": "npm run corpus:build --workspace=@emunas/corpus --",
     "search:build": "npm run search:build --workspace=@emunas/search-core --",
     "corpus:aggregate": "tsx scripts/corpus/aggregate.ts",

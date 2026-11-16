@@ -76,8 +76,12 @@ async function shownCounts(page: Page, facet: string): Promise<Map<string, numbe
   return new Map(items);
 }
 
+/**
+ * Opens Explore's facet view. Explore opens on the topic map (C.2 "The map"); the facets, lenses and
+ * results are one tap behind it (`view=browse`, implied by any filter, lens or list setting).
+ */
 async function openExplore(page: Page, query = "", ui = "en"): Promise<void> {
-  await page.goto(`/${ui}/explore${query}`);
+  await page.goto(`/${ui}/explore${query === "" ? "?view=browse" : query}`);
   await ready(page);
   await expect(page.getByTestId("explore-status")).not.toHaveText("", { timeout: 15_000 });
 }
@@ -130,7 +134,7 @@ test.describe("@data facets", () => {
     const rows = await corpusRows(request);
     const langs = [...new Set(rows.map((r) => r.lang))].sort();
     const cats = [...referenceCounts(rows, "category", {}).keys()].sort();
-    const queries = ["", `?kind=${cats[0]}`, `?kind=${cats[0]}&ai=full`, `?audio=${langs[0]}&dur=gte90`, "?y=undated", "?stories=yes"];
+    const queries = ["?view=browse", `?kind=${cats[0]}`, `?kind=${cats[0]}&ai=full`, `?audio=${langs[0]}&dur=gte90`, "?y=undated", "?stories=yes"];
     const times: number[] = [];
     await openExplore(page);
     // Three passes: the first warms the worker's JIT (and is not measured); each query's time is the
@@ -286,6 +290,11 @@ test.describe("keyboard", () => {
 test.describe("accessibility", () => {
   for (const ui of UIS) {
     test(`axe is clean on every lens and the moments unit (${ui})`, async ({ page }) => {
+      // The topic map Explore opens on.
+      await page.goto(`/${ui}/explore`);
+      await ready(page);
+      await expect(page.getByTestId("topic-map")).toBeVisible({ timeout: 15_000 });
+      expect(await axeViolations(page), `${ui}/explore (map)`).toEqual([]);
       for (const q of ["", "?lens=luach", "?lens=years", "?lens=connections", "?unit=moments"]) {
         await openExplore(page, q, ui);
         if (q === "?unit=moments") await expect(page.getByTestId("moments-progress")).toHaveCount(0, { timeout: 15_000 });

@@ -16,7 +16,7 @@
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { createLinks, type EntityKind, type LinkData, type Links, type OccasionKind } from "@emunas/links";
+import { createLinks, pageLookupFromLayer, type LayerPagesInput, type LinkData, type Links, type OccasionKind } from "@emunas/links";
 
 export const REPO = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
 export const DOMAIN = "emunas.example";
@@ -42,6 +42,7 @@ export function sitePaths(env: Readonly<Record<string, string | undefined>> = pr
 export function missingOutputs(p: SitePaths): string | null {
   const need: [string, string][] = [
     [join(p.corpus, "build.json"), "run `npm run corpus:build`"],
+    [join(p.corpus, "layer", "layer.json"), "run `npm run corpus:build` (the corpus layer)"],
     [join(p.quietDist, "en", "index.html"), "build Quiet with EMUNAS_DOMAIN=emunas.example"],
     [join(p.liveClient, "data", "build.json"), "run `npm run data:build -w @emunas/live` and build Live with EMUNAS_DOMAIN=emunas.example"],
   ];
@@ -54,17 +55,9 @@ function readJson<T>(file: string): T {
 }
 
 // ---------------------------------------------------------------------------------------------
-// The corpus facts the link builders need (same sources as the apps: .corpus aggregates)
+// The corpus facts the link builders need (same sources as the apps: the corpus layer for entity
+// pages, the catalog aggregates for occasions and series)
 
-interface EntityCountRow {
-  key: string;
-  shiurim: number;
-}
-interface EntitiesFile {
-  works: EntityCountRow[];
-  people: EntityCountRow[];
-  concepts: EntityCountRow[];
-}
 interface OccasionRow {
   key: string;
   en: string;
@@ -90,34 +83,77 @@ export interface IndexRow {
   catalog: { titleOriginal: string };
 }
 
+interface LayerPages {
+  quiet?: boolean;
+  live?: boolean;
+}
+interface LayerLabel {
+  en?: string;
+  yi?: string;
+  he?: string;
+}
+/** The parts of the corpus layer (`.corpus/layer/*.json`) the cross-site suite reads. */
+export interface LayerFacts {
+  topics: { id: string; parentId: string | null; label: LayerLabel; count: number; pages?: LayerPages; gateway?: boolean }[];
+  concepts: {
+    id: string;
+    canonicalHe?: string;
+    label?: LayerLabel;
+    shiurIds?: string[];
+    pages?: LayerPages;
+    mergedIntoTopic?: string | null;
+    /** "Throughout": the Quiet page shows examples, not every shiur. */
+    passim?: boolean;
+  }[];
+  people: { id: string; nameHe?: string | null; nameEn?: string | null; nameYi?: string | null; count?: number; pages?: LayerPages }[];
+  works: { id: string; titleHe?: string | null; titleEn?: string | null; count?: number; pages?: LayerPages }[];
+  stories: { id: string; title: { en: string; yi: string }; tellings?: { shiurId: string }[]; pages?: LayerPages }[];
+}
+
 export interface CorpusFacts {
-  entities: EntitiesFile;
+  layer: LayerFacts;
   occasions: OccasionsFile;
   series: SeriesRow[];
   index: IndexRow[];
   data: LinkData;
 }
 
+function readLayer(corpus: string): { facts: LayerFacts; input: LayerPagesInput } {
+  const dir = join(corpus, "layer");
+  const opt = <T>(name: string): T | null => (existsSync(join(dir, name)) ? readJson<T>(join(dir, name)) : null);
+  const topics = opt<{ tree: LayerFacts["topics"] }>("topics.json");
+  const concepts = opt<{ concepts: LayerFacts["concepts"] }>("concepts.json");
+  const people = opt<{ people: LayerFacts["people"] }>("people.json");
+  const works = opt<{ works: LayerFacts["works"] }>("works.json");
+  const stories = opt<{ stories: LayerFacts["stories"] }>("stories.json");
+  const threads = opt<{ threads: { id: string; page?: boolean }[] }>("threads.json");
+  return {
+    facts: {
+      topics: topics?.tree ?? [],
+      concepts: concepts?.concepts ?? [],
+      people: people?.people ?? [],
+      works: works?.works ?? [],
+      stories: stories?.stories ?? [],
+    },
+    input: { topics, concepts, people, works, stories, threads },
+  };
+}
+
 export function readCorpusFacts(corpus: string): CorpusFacts {
-  const entities = readJson<EntitiesFile>(join(corpus, "entities.json"));
   const occasions = readJson<OccasionsFile>(join(corpus, "occasions.json"));
   const series = readJson<{ series: SeriesRow[] }>(join(corpus, "series.json")).series;
   const index = readJson<{ shiurim: IndexRow[] }>(join(corpus, "index.json")).shiurim;
-  const counts: Record<EntityKind, Map<string, number>> = {
-    work: new Map(entities.works.map((e) => [e.key, e.shiurim])),
-    person: new Map(entities.people.map((e) => [e.key, e.shiurim])),
-    concept: new Map(entities.concepts.map((e) => [e.key, e.shiurim])),
-  };
+  const layer = readLayer(corpus);
   const kinds = new Map<string, OccasionKind>();
   for (const o of occasions.parshiyos) kinds.set(o.key, "parsha");
   for (const o of occasions.zmanim) kinds.set(o.key, "zman");
   return {
-    entities,
+    layer: layer.facts,
     occasions,
     series,
     index,
     data: {
-      entityCount: (e, k) => counts[e].get(k) ?? 0,
+      ...pageLookupFromLayer(layer.input),
       occasionKind: (k) => kinds.get(k),
     },
   };
@@ -207,6 +243,13 @@ export function checkLiveUrl(client: string, url: string): string | null {
         : `no Live work data for ${u.pathname}`;
     case "series":
       return parts.length === 3 && has(`series/${key}.json`) ? null : `no Live series data for ${u.pathname}`;
+    // Corpus layer (corpus-wave-plan §3.5): topic, thread and story pages render their own file.
+    case "t":
+      return parts.length === 3 && has(`topic/${key}.json`) ? null : `no Live topic data for ${u.pathname}`;
+    case "th":
+      return parts.length === 3 && has(`thread/${key}.json`) ? null : `no Live thread data for ${u.pathname}`;
+    case "maasios":
+      return parts.length === 3 && has(`story/${key}.json`) ? null : `no Live story data for ${u.pathname}`;
     default:
       return `not a Live route: ${u.pathname}`;
   }
