@@ -2,13 +2,16 @@
  * Chapters (concept-live §5.3): titles and summaries, the active one highlighted while it plays.
  * `kind` drives behaviour: noise / singing / other_speaker are greyed and marked as skipped (when the
  * skip setting covers them); `story` carries a marker; intro / closing / brachah are collapsed.
+ * Each chapter shows its topic chips from the corpus layer (none on other-speaker chapters); a chip
+ * opens the topic beside the shiur while the audio continues (concept-live-corpus D).
  */
 import { formatClock, sectionKindLabel } from "@emunas/i18n";
 import type { JSX } from "react";
 import { Text } from "../../components/Text.tsx";
 import type { RoomContext } from "./context.ts";
+import { chapterTopics } from "./corpus.ts";
 import { COLLAPSED_KINDS, SKIPPED_KINDS, chapterAt } from "./model.ts";
-import { AiLabel, Report, TimeButton } from "./parts.tsx";
+import { AiLabel, Report, TimeButton, TopicChipButton } from "./parts.tsx";
 import { roomStyles as s } from "./styles.ts";
 
 export function Chapters({ room }: { room: RoomContext }): JSX.Element | null {
@@ -45,6 +48,7 @@ export function Chapters({ room }: { room: RoomContext }): JSX.Element | null {
             </button>
           );
           const summary = <Text as="p" className={s.chapterSummary} value={c.summary} lang={reading} />;
+          const topics = c.kind === "other_speaker" ? [] : chapterTopics(shiur, c.idx);
           return (
             <li
               key={c.id}
@@ -71,6 +75,15 @@ export function Chapters({ room }: { room: RoomContext }): JSX.Element | null {
               ) : (
                 summary
               )}
+              {topics.length > 0 ? (
+                <ul className={s.topicChips} aria-label={rt("corpus.chapterTopics")} data-chapter-topics={c.idx}>
+                  {topics.map((topic) => (
+                    <li key={topic.id}>
+                      <TopicChipButton room={room} topic={topic} />
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
               {c.sub.length > 0 && !collapsed ? (
                 <ul className={s.subList}>
                   {c.sub.map((sub) => (

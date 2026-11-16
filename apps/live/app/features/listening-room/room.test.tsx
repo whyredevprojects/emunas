@@ -137,7 +137,10 @@ describe("header, chapters and tabs", () => {
     await openAt("/en/s/yi-zmanim-tv-bb-04");
     fireEvent.click(screen.getByRole("tab", { name: "Sources" }));
     await settle();
-    const links = within(screen.getByRole("tabpanel")).getAllByRole("link");
+    // Merged-work page links (Live `/seforim/<id>`) stay inside the site; only Sefaria goes out.
+    const links = within(screen.getByRole("tabpanel"))
+      .getAllByRole("link")
+      .filter((a) => !a.getAttribute("href")!.startsWith("/"));
     const resolved = tvbb.notes!.sources.filter((s) => s.resolution === "resolved" && s.sefariaRef);
     expect(links).toHaveLength(resolved.length);
     expect(links[0]!.getAttribute("href")).toBe("https://www.sefaria.org/Deuteronomy.10.12");

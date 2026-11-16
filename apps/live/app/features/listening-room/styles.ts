@@ -59,6 +59,16 @@ export const ROOM_CLASSES = [
   "topicList",
   "topics",
   "visuallyHidden",
+  "topicLine",
+  "corpusLabel",
+  "topicChip",
+  "mark",
+  "paneOverlay",
+  "pane",
+  "paneDialog",
+  "paneHead",
+  "endPanel",
+  "topicChips",
 ] as const;
 
 export type RoomClass = (typeof ROOM_CLASSES)[number];
