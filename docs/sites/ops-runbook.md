@@ -293,21 +293,36 @@ open pull requests.
 
 ## 5. Workflows
 
-**ci.yml** (PRs, pushes to main): `check` (pipeline typecheck; `site:typecheck`, which also
-covers the site Workers and the Live search eval suite; lint; `site:test`, which also runs the
-Worker/config/`_headers` tests and the eval suite) and `build` (corpus:build → guard pre →
-corpus:build --suppress → `search:build` → Live `data:build` (lexical neighbours; no embedding
-cache in PRs) → Quiet and Live builds → render `_headers` → `wrangler deploy --dry-run`
-for both Workers and both environments, bundling the Live Worker → guard self-test (a planted
-`heardAs` file must fail) → guard post-pass over `.corpus`, both outputs and the Worker bundle
-→ budgets → Live `data:budgets`). The Live build therefore ships the real `public/data` in PR
-builds and previews, exactly as deploys do. Same-repo PRs then get `preview`: `wrangler versions upload --env=staging
---preview-alias pr-<n>` for both sites; the URLs land in the job summary. Without Cloudflare
-secrets the preview step logs a notice and passes.
+**ci.yml** (PRs, merge queue, pushes to main). Jobs run in parallel where they can:
+
+- `check`: pipeline typecheck; `site:typecheck`, which also covers the site Workers and the Live
+  search eval suite; lint; the chain script's own tests.
+- `unit (api|quiet|live|rest)`: `npm run site:test:<group>`, the four parts of `site:test`
+  (Worker/config/`_headers` tests and the eval suite included).
+- `build`: corpus:build → guard pre → corpus:build --suppress → `search:build` → Live `data:build`
+  (lexical neighbours; no embedding cache in PRs) → Quiet, Live and Home builds → render
+  `_headers` → `wrangler deploy --dry-run` for the Workers in both environments, bundling Live and
+  Home → guard self-test (a planted `heardAs` file must fail) → guard post-pass over `.corpus`,
+  the outputs and the Worker bundles → budgets → Live `data:budgets`. Its outputs go to
+  `chain self-test (asr-key|asr-synonym)` (each plant must fail guard post) and to `preview`.
+  The Live build therefore ships the real `public/data` in PR builds and previews, exactly as
+  deploys do.
+- `build-test`: the same chain to the Live build, with the test domain `emunas.example`; its
+  outputs feed `live e2e (chromium|webkit)`, `quiet-e2e`, `cross-site` (equivalence, link check,
+  html-validate, search eval gate) and `lighthouse`.
+- `passed`: needs every job above and fails unless all succeeded; this is the check to require
+  on `main`. It then uploads a `ci-passed-<git tree id>` marker, which deploy.yml reads.
+- `preview` (same-repo PRs): `wrangler versions upload --env=staging --preview-alias pr-<n>` for
+  the sites; the URLs land in the job summary. Without Cloudflare secrets it logs a notice and passes.
+
+`node_modules` and Playwright browsers come from the Actions cache (`.github/actions/setup`,
+`.github/actions/playwright`), saved from `main` only.
 
 **deploy.yml** (push to main touching `data/derived`, `data/catalog`, `apps`, `packages`,
 `workers`, `site-policy`; manual dispatch with `target: production|staging`):
-configuration check (`EMUNAS_MEDIA_ORIGIN` and the Cloudflare secrets) → provisioning check (§3)
+configuration check (`EMUNAS_MEDIA_ORIGIN` and the Cloudflare secrets) → typecheck, lint and
+`site:test`, skipped when ci.yml already uploaded a `ci-passed-<tree id>` marker for this exact
+tree → provisioning check (§3)
 → corpus:build (with `EMUNAS_DEPLOY=1`) → guard pre → corpus:build --suppress →
 `npm run search:build` → embedding cache mirror (below) → `npm run data:build --workspace=@emunas/live` → Quiet and Live builds →
 render `_headers` → Worker bundles (dry run) → guard post (covers the api bundle too) → budgets →
