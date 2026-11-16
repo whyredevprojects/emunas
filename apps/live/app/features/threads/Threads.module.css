@@ -1,0 +1,173 @@
+/*
+ * The thread page (concept-live-corpus C.1): members on a vertical year line, or a plain list.
+ * Logical properties only, so the line, the dots and every row mirror with `dir`.
+ */
+@layer components {
+  .page {
+    max-inline-size: var(--measure-wide);
+    padding: var(--space-l) var(--space-m) var(--space-2xl);
+    display: grid;
+    gap: var(--space-l);
+  }
+
+  .kicker {
+    margin: 0;
+    font-size: var(--step--1);
+    color: var(--color-ink-muted);
+  }
+
+  .title {
+    font-size: var(--step-4);
+    margin: 0;
+  }
+
+  .summary {
+    margin: 0;
+    max-inline-size: var(--measure-text);
+  }
+
+  .muted {
+    margin: 0;
+    color: var(--color-ink-muted);
+  }
+
+  .status {
+    margin: 0;
+    font-size: var(--step--1);
+    color: var(--color-ink-muted);
+  }
+
+  .meta {
+    font-size: var(--step--1);
+    color: var(--color-ink-muted);
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+  }
+
+  .section {
+    display: grid;
+    gap: var(--space-s);
+  }
+
+  .groupTitle {
+    font-size: var(--step-1);
+    margin: 0;
+  }
+
+  .chips {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: var(--tap-min);
+    padding-inline: var(--space-s);
+    border: var(--rule-hairline) solid var(--color-rule-strong);
+    border-radius: var(--radius-pill);
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    align-items: center;
+  }
+
+  .button {
+    min-block-size: var(--tap-min);
+    padding-inline: var(--space-m);
+    border: var(--rule-hairline) solid var(--color-rule-strong);
+    border-radius: var(--radius-pill);
+    background: var(--color-surface);
+    color: var(--color-ink);
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .primary {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+
+  .list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-s);
+  }
+
+  /* The year line: a rule down the start edge, a dot per year. */
+  .timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-m);
+    border-inline-start: var(--rule-hairline) solid var(--color-rule-strong);
+  }
+
+  .year {
+    position: relative;
+    display: grid;
+    gap: var(--space-xs);
+    padding-inline-start: var(--space-m);
+  }
+
+  .year::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: -0.3125rem;
+    inset-block-start: 0.5em;
+    inline-size: 0.5625rem;
+    block-size: 0.5625rem;
+    border-radius: 50%;
+    background: var(--color-accent);
+  }
+
+  .yearLabel {
+    margin: 0;
+    font-size: var(--step-0);
+    font-weight: var(--weight-semibold);
+  }
+
+  .member {
+    display: grid;
+    gap: var(--space-2xs);
+    padding-block: var(--space-xs);
+    border-block-end: var(--rule-hairline) solid var(--color-rule);
+  }
+
+  .member[aria-current="true"] {
+    border-block-end-color: var(--color-accent);
+  }
+
+  .insight {
+    margin: 0;
+    max-inline-size: var(--measure-text);
+  }
+
+  /* The insight itself is the tap target that plays it. */
+  .insightButton {
+    display: block;
+    inline-size: 100%;
+    min-block-size: var(--tap-min);
+    padding: var(--space-2xs) 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    text-align: start;
+    cursor: pointer;
+  }
+}
