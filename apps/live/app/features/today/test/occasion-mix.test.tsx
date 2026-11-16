@@ -129,6 +129,9 @@ describe("Today: the occasion mix", () => {
 
   it("pressing play starts the inline head at once, then appends the rest from the topic file", async () => {
     const { container } = await renderAt(`/en/?date=${NOACH_WEEK}`);
+    // The moment of the day loads its shiur file on its own; let that request land first so it is
+    // not counted as one that pressing play made (on a slow runner it can come after first paint).
+    await waitFor(() => expect(requested.some((p) => p.startsWith("/data/shiur/"))).toBe(true));
     const before = requested.length;
     await act(async () => {
       playButton(container).click();
