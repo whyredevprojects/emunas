@@ -23,7 +23,7 @@ import { fileURLToPath } from "node:url";
 import { brotliCompressSync } from "node:zlib";
 import { chromium, type Browser, type Page } from "playwright-core";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import type { PublicShiur } from "@emunas/corpus/public";
+import { round3, type PublicShiur } from "@emunas/corpus/public";
 
 const app = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const repo = join(app, "..", "..");
@@ -263,13 +263,13 @@ describe.each(["yi", "en"] as const)("the 7 sample shiurim, %s edition", (ed) =>
 });
 
 describe("without script", () => {
-  it("time links open the recording at the local second on the media host", async () => {
+  it("time links open the recording at the exact local time (fractional seconds) on the media host", async () => {
     const page = await open(`/en/shiur/${MULTI}/`, { js: false });
     const shiur = shiurJson(MULTI);
     const [p1, p2] = shiur.recordings;
     expect(await page.locator("#s0 a.time").getAttribute("href")).toBe(`${p1!.audioUrl}#t=0`);
     const late = shiur.notes!.chapters.find((c) => c.t >= p2!.offset)!;
-    expect(await page.locator(`#s${late.idx} a.time`).getAttribute("href")).toBe(`${p2!.audioUrl}#t=${Math.floor(late.t - p2!.offset)}`);
+    expect(await page.locator(`#s${late.idx} a.time`).getAttribute("href")).toBe(`${p2!.audioUrl}#t=${round3(late.t - p2!.offset)}`);
     expect(await page.locator("audio[preload=none]").count()).toBe(2);
     expect(await page.locator(".listen[data-docked]").count()).toBe(0);
     await page.context().close();
@@ -287,9 +287,10 @@ describe("player", () => {
       return a !== null && !a.paused && a.currentTime > 0;
     });
     const [first] = await audioState(page);
-    expect(first!.t).toBeGreaterThanOrEqual(Math.floor(chapter.t) - 0.5);
+    // the seek keeps the fractional second: playback starts at the item, not the whole second before it
+    expect(first!.t).toBeGreaterThanOrEqual(chapter.t - 0.05);
     expect(first!.t).toBeLessThan(chapter.t + 5);
-    expect(new URL(page.url()).hash).toBe(`#t=${Math.round(chapter.t)}`);
+    expect(new URL(page.url()).hash).toBe(`#t=${round3(chapter.t)}`);
     expect(await page.locator(".listen[data-docked]").count()).toBe(1);
     expect(await page.$eval(".listen", (el) => getComputedStyle(el).position)).toBe("sticky");
     expect(await page.locator(`#s${chapter.idx} a.time[aria-current="time"]`).count()).toBe(1);

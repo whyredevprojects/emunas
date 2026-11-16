@@ -287,7 +287,7 @@ describe("link checker", () => {
           bad("no such page or file");
           continue;
         }
-        if (frag === undefined || frag === "" || /^t=\d+$/.test(frag)) continue;
+        if (frag === undefined || frag === "" || /^t=\d+(?:\.\d+)?$/.test(frag)) continue;
         if (!pages().has(path) || !idsOf(path).has(decodeURIComponent(frag))) bad("no such anchor");
       }
     }

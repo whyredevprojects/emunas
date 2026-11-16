@@ -51,7 +51,7 @@ export const ENTRY_FILTER: PagefindSearchOptions = { filters: { type: "entry" } 
 
 let pagefind: Promise<Pagefind> | undefined;
 const loadPagefind = (): Promise<Pagefind> => (pagefind ??= import(/* @vite-ignore */ PAGEFIND_URL) as Promise<Pagefind>);
-const loadSearchCore = () => import("@emunas/search-core");
+const loadSearchCore = () => import("./search-core.ts");
 
 let synonyms: Promise<SynonymTable | null> | undefined;
 /** The synonym table, or null when it cannot be loaded (search still works without it). */

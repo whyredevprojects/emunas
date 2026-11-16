@@ -28,7 +28,7 @@ function sectionIndex(i: number): number {
 export interface QuietShiurOptions {
   /** Section index → `#s{i}`. Wins over `t` (a page has one fragment). */
   readonly section?: number | undefined;
-  /** Global seconds → `#t={t}` (rounded; ignored if not a finite non-negative number). */
+  /** Global seconds → `#t={t}` (kept to the millisecond; ignored if not a finite non-negative number). */
   readonly t?: number | undefined;
 }
 

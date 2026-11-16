@@ -6,8 +6,9 @@
  * - a topic page shows the topic's label, its visible count and the AI label once, and every link on
  *   it resolves;
  * - the topic mix starts playback (the dock reaches "playing");
- * - a thread page shows its label and summary under the AI label, lists its members linking to their
- *   shiurim, and is noindex with no canonical (D8);
+ * - a thread page (C3.3) shows its heading, label and summary under the AI label, the count of its
+ *   shiurim and its topic links, every member once on the year line (or a plain list) linking to its
+ *   moment, plays the thread, and is noindex with no canonical (D8);
  * - a story page's telling switcher plays the telling chosen, and marks it as the current one;
  * - an unknown topic, thread, story, concept or person id is "not found", with no page error.
  *
@@ -41,7 +42,9 @@ interface ThreadFile {
   label: L;
   summary: L;
   reviewed: boolean;
-  members: { shiurId: string; momentId: string }[];
+  topics: { id: string; label: L }[];
+  members: { shiurId: string; momentId: string; t: number | null; year: number | null; lang: "en" | "yi" }[];
+  timeline: boolean;
 }
 interface StoryFile {
   id: string;
@@ -150,7 +153,11 @@ test.describe("@data topic map and topic pages", () => {
 });
 
 test.describe("@data threads and stories", () => {
-  test("a thread page: label, summary and members under the AI label; noindex, no canonical", async ({ page, request }) => {
+  test("a thread page (C3.3): heading, label, AI label, summary, count, topics, members on the year line, play; noindex", async ({
+    page,
+    request,
+    browserName,
+  }) => {
     let thread: ThreadFile | null = null;
     for (const t of await bigTopics(request, 12)) {
       const th = t.threads.find((x) => x.page);
@@ -161,20 +168,68 @@ test.describe("@data threads and stories", () => {
     test.skip(thread === null, "no thread page in this data (the contract fixtures have none)");
     const f = thread!;
     const errors = pageErrors(page);
+    await serveSilentMedia(page);
     const path = `/en/th/${encodeURIComponent(f.id)}`;
     await open(page, path);
-    await expect(page.locator("main h1")).toContainText(en(f.label));
-    if (!f.reviewed) await expect(page.locator("main [data-corpus-label]")).toHaveCount(1);
-    const members = new Set(f.members.map((m) => m.shiurId));
-    expect(members.size).toBeGreaterThanOrEqual(3);
-    const linked = new Set(
-      await page.locator("main a[href*='/s/']").evaluateAll((as) =>
-        as.map((a) => decodeURIComponent(new URL((a as HTMLAnchorElement).href).pathname.split("/")[3] ?? "")),
-      ),
-    );
-    for (const id of members) expect(linked.has(id), `member ${id} linked`).toBe(true);
+    const main = page.locator("main");
+    await expect(main.locator(`article[data-thread="${f.id}"]`)).toHaveCount(1);
+
+    // Heading ("A teaching the Rav returns to"), the cluster label, the AI label once, the summary.
+    await expect(page.getByTestId("thread-heading")).toBeVisible();
+    await expect(main.locator("h1")).toHaveCount(1);
+    await expect(main.locator("h1")).toContainText(en(f.label));
+    await expect(main.locator("[data-corpus-label]")).toHaveCount(f.reviewed ? 0 : 1);
+    if (en(f.summary) !== "") await expect(main).toContainText(en(f.summary).slice(0, 60));
+
+    // "In N shiurim": distinct member shiurim.
+    const members = f.members;
+    const shiurim = new Set(members.map((m) => m.shiurId));
+    expect(shiurim.size).toBeGreaterThanOrEqual(3);
+    await expect(page.getByTestId("thread-count")).toContainText(`In ${shiurim.size} shiurim`);
+
+    // Its topics link to their topic pages.
+    for (const t of f.topics) {
+      await expect(page.getByTestId("thread-topics").locator(`a[data-topic-link="${t.id}"]`)).toHaveAttribute(
+        "href",
+        `/en/t/${encodeURIComponent(t.id)}`,
+      );
+    }
+
+    // Every member is one row, on the year line (timeline) or a plain list as the build says; a row
+    // links to its moment in the shiur, and its language is its own (never paired with another).
+    const rows = page.getByTestId("thread-members").locator("li[data-member]");
+    await expect(rows).toHaveCount(members.length);
+    await expect(page.getByTestId("thread-members")).toHaveAttribute("data-layout", f.timeline ? "timeline" : "list");
+    if (f.timeline) {
+      const years = await page
+        .getByTestId("thread-members")
+        .locator("li[data-year]")
+        .evaluateAll((els) => els.map((e) => Number(e.getAttribute("data-year"))));
+      expect(years.length).toBeGreaterThan(0);
+      expect(years, "the year line runs earliest first").toEqual([...years].sort((a, b) => a - b));
+    }
+    for (const m of members) {
+      const row = page.locator(`li[data-member="${m.momentId}"]`);
+      await expect(row, m.momentId).toHaveCount(1);
+      await expect(row).toHaveAttribute("data-lang", m.lang);
+      const href = await row.locator(`a[data-moment="${m.momentId}"]`).getAttribute("href");
+      const url = new URL(href!, "http://x.invalid");
+      expect(decodeURIComponent(url.pathname), m.momentId).toBe(`/en/s/${m.shiurId}`);
+      expect(url.searchParams.get("m"), m.momentId).toBe(m.momentId);
+    }
+    if (members.some((m) => m.year === null)) await expect(page.getByTestId("thread-undated")).toBeVisible();
+
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/u);
     await expect(page.locator('link[rel="canonical"]')).toHaveCount(0);
+
+    // "Play the thread" queues the timed members and starts playing.
+    if (members.some((m) => m.t !== null)) {
+      const play = page.getByTestId("thread-play").locator("button[data-action=play-thread]");
+      await expect(play).toContainText(/Play the thread \(\d+ shiur(im)?\)/u);
+      await play.click();
+      await expect(page.getByTestId("thread-play").getByRole("status")).toContainText(/Playing \d+ parts? in the queue/u);
+      if (browserName !== "webkit") await expect(dock(page)).toHaveAttribute("data-player-status", "playing", { timeout: 15_000 });
+    }
     expect(errors).toEqual([]);
   });
 

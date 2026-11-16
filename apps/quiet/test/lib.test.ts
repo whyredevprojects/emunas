@@ -94,16 +94,19 @@ describe("audio (Amendment A1)", () => {
       recordingId: "a",
       part: 1,
       parts: 2,
-      local: 75,
+      local: 75.4,
       global: 75.4,
-      href: `${media}/x/A%20one.mp3#t=75`,
+      href: `${media}/x/A%20one.mp3#t=75.4`,
     });
     const second = timeTarget(two, 130.9);
-    expect(second).toMatchObject({ recordingId: "b", part: 2, local: 30, href: `${media}/x/b.MP3#t=30` });
+    expect(second).toMatchObject({ recordingId: "b", part: 2, local: 30.9, href: `${media}/x/b.MP3#t=30.9` });
+    // fractional seconds survive to the millisecond, never floored to the whole second
+    expect(timeTarget(two, 682.12 - 600)).toMatchObject({ recordingId: "a", local: 82.12, href: `${media}/x/A%20one.mp3#t=82.12` });
+    expect(timeTarget(two, 100.0004)).toMatchObject({ recordingId: "b", local: 0, href: `${media}/x/b.MP3#t=0` });
     // a boundary belongs to the later recording
     expect(timeTarget(two, 100)).toMatchObject({ recordingId: "b", local: 0 });
     // past the end clamps to the last recording's end
-    expect(timeTarget(two, 9999)).toMatchObject({ recordingId: "b", local: 50 });
+    expect(timeTarget(two, 9999)).toMatchObject({ recordingId: "b", local: 50.5 });
     expect(timeTarget(two, Number.NaN)).toBeNull();
     expect(timeTarget([], 10)).toBeNull();
   });

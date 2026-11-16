@@ -1,6 +1,6 @@
 /** Pure parts of the player script (W3.2): hash parsing, the margin-mark search, chapter-back rule. */
 import { describe, expect, it } from "vitest";
-import { currentIndex, parseTimeHash, previousStart } from "../src/scripts/player.ts";
+import { currentIndex, markIndex, parseTimeHash, previousStart, timeHash } from "../src/scripts/player.ts";
 
 describe("parseTimeHash", () => {
   it("reads #t=<seconds> and nothing else", () => {
@@ -8,6 +8,28 @@ describe("parseTimeHash", () => {
     expect(parseTimeHash("#t=754.5")).toBe(754.5);
     expect(parseTimeHash("#t=0")).toBe(0);
     for (const h of ["", "#s3", "#t=", "#t=-4", "#t=1:02", "#t=12abc", "#src2", "#t=12345678"]) expect(parseTimeHash(h), h).toBeNull();
+  });
+});
+
+describe("timeHash", () => {
+  it("keeps fractional seconds (to the millisecond) and round-trips through parseTimeHash", () => {
+    expect(timeHash(582.12)).toBe("#t=582.12");
+    expect(timeHash(754)).toBe("#t=754");
+    expect(timeHash(1855.5444)).toBe("#t=1855.544");
+    expect(timeHash(-3)).toBe("#t=0");
+    expect(timeHash(Number.NaN)).toBe("#t=0");
+    for (const g of [0, 0.5, 30.05, 582.12, 1855.544, 9999.999]) expect(parseTimeHash(timeHash(g))).toBe(g);
+  });
+});
+
+describe("markIndex", () => {
+  it("marks the item a seek asked for even when the reported position is a frame early", () => {
+    const starts = [0, 30.05, 582.12, 600];
+    expect(markIndex(starts, 582.12)).toBe(2);
+    expect(markIndex(starts, 582.12 - 0.026)).toBe(2);
+    expect(markIndex(starts, 582.0)).toBe(1);
+    expect(markIndex(starts, 599.99)).toBe(3);
+    expect(markIndex(starts, -1)).toBe(-1);
   });
 });
 

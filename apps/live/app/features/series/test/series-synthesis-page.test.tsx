@@ -95,7 +95,8 @@ async function noAxeViolations(): Promise<void> {
   expect(result.violations.map((v) => `${v.id}: ${v.nodes.map((n) => n.target.join(" ")).join(", ")}`)).toEqual([]);
 }
 
-const rowOf = (root: Element, id: string) => root.querySelector(`a[data-shiur="${id}"]`)!;
+/** A part row, linked (visible) or plain text (not visible). */
+const rowOf = (root: Element, id: string) => root.querySelector(`[data-shiur="${id}"]`)!;
 const lineText = (a: Element) => a.querySelector("p")?.textContent ?? null;
 
 /** No pairing UI: no link to another series, no other-language part, no side-by-side column. */
@@ -134,7 +135,9 @@ describe("series page with a synthesis", () => {
     serve(WITH);
     const { container } = await renderAt("/en/series/tanya-yi", "ol");
     const ol = container.querySelector("ol")!;
-    expect([...ol.querySelectorAll("a[data-shiur]")].map((a) => a.getAttribute("data-shiur"))).toEqual(["yi-tanya-2-01", "yi-tanya-2-02", "yi-tanya-2-03"]);
+    expect([...ol.querySelectorAll("[data-shiur]")].map((a) => a.getAttribute("data-shiur"))).toEqual(["yi-tanya-2-01", "yi-tanya-2-02", "yi-tanya-2-03"]);
+    // only the visible parts are links
+    expect([...ol.querySelectorAll("a[data-shiur]")].map((a) => a.getAttribute("data-shiur"))).toEqual(["yi-tanya-2-01", "yi-tanya-2-03"]);
     expect(lineText(rowOf(ol, "yi-tanya-2-01"))).toBe("The series opens with the oath.");
     expect(lineText(rowOf(ol, "yi-tanya-2-03"))).toBe("Then the beinoni.");
     expect(container.textContent).not.toContain("Own line");
@@ -144,6 +147,8 @@ describe("series page with a synthesis", () => {
     expect(missing.textContent).toContain("Title yi-tanya-2-02");
     expect(lineText(missing)).toBeNull();
     expect(missing.textContent).not.toContain("Notes not prepared yet");
+    expect(missing.tagName).toBe("DIV");
+    expect(missing.closest("a")).toBeNull();
   });
 
   it("the perek view uses the arc lines too", async () => {
@@ -206,12 +211,20 @@ describe("the real tanya-yi series", () => {
     const { container } = await renderAt("/en/series/tanya-yi", "ol");
     const synth = screen.getByTestId("series-synthesis");
     const rows = [...container.querySelectorAll("ol > li")].map((li) => {
-      const a = li.querySelector("a[data-shiur]")!;
-      return { order: li.getAttribute("data-order"), shiur: a.getAttribute("data-shiur"), line: a.getAttribute("data-line"), text: lineText(a) };
+      const a = li.querySelector("[data-shiur]")!;
+      return {
+        order: li.getAttribute("data-order"),
+        shiur: a.getAttribute("data-shiur"),
+        linked: a.tagName === "A",
+        line: a.getAttribute("data-line"),
+        text: lineText(a),
+      };
     });
     expect(rows).toHaveLength(REAL.parts.length);
     // the visible parts read their arc lines; the part that is not visible has none
     expect(rows.filter((r) => r.line === "none").map((r) => r.shiur)).toEqual(REAL.parts.filter((p) => p.status !== "full").map((p) => p.shiurId));
+    // and only the visible parts are links
+    expect(rows.filter((r) => !r.linked).map((r) => r.shiur)).toEqual(REAL.parts.filter((p) => p.status !== "full").map((p) => p.shiurId));
     expect(screen.getByTestId("series-themes").querySelector("a")).toBeNull();
     expectNoPairing(container);
     expect(requested.filter((p) => p.startsWith("/data/series/"))).toEqual(["/data/series/tanya-yi.json"]);

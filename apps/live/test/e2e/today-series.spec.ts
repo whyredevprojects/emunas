@@ -32,7 +32,7 @@ interface SeriesFile {
   id: string;
   title: { en: string; yi: string };
   lang: "en" | "yi";
-  parts: { shiurId: string; order: number | null; perek: string | null }[];
+  parts: { shiurId: string; order: number | null; perek: string | null; status: "full" | "catalog-only" }[];
 }
 
 async function openToday(page: Page, ui: string, date: string): Promise<void> {
@@ -125,8 +125,14 @@ test.describe("@data series", () => {
       expect(orders.length, id).toBe(file.parts.length);
       const numeric = orders.filter((o) => o !== "").map(Number);
       expect(numeric, `${id}: parts in order`).toEqual([...numeric].sort((a, b) => a - b));
-      const shown = await page.locator("main ol > li[data-order] a[data-shiur]").evaluateAll((as) => as.map((a) => a.getAttribute("data-shiur")!));
+      const shown = await page.locator("main ol > li[data-order] [data-shiur]").evaluateAll((as) => as.map((a) => a.getAttribute("data-shiur")!));
       expect(new Set(shown), id).toEqual(new Set(file.parts.map((p) => p.shiurId)));
+      // Only visible parts link to their shiur; a part that is not visible is plain text (F.2).
+      const linked = await page.locator("main ol > li[data-order] a[data-shiur]").evaluateAll((as) => as.map((a) => a.getAttribute("data-shiur")!));
+      expect(new Set(linked), `${id}: linked parts`).toEqual(new Set(file.parts.filter((p) => p.status === "full").map((p) => p.shiurId)));
+      for (const p of file.parts.filter((x) => x.status !== "full")) {
+        await expect(page.locator(`main a[href*="/s/${p.shiurId}"]`), `${id}: ${p.shiurId} not linked`).toHaveCount(0);
+      }
 
       if (file.parts.some((p) => p.perek !== null)) {
         // One group per perek of this series.
@@ -139,7 +145,7 @@ test.describe("@data series", () => {
         expect(nums, `${id}: perek order`).toEqual([...nums].sort((a, b) => a - b));
         expect(new Set(nums).size, `${id}: one group per perek`).toBe(nums.length);
         if (keys.includes("other")) expect(keys.at(-1)).toBe("other");
-        const inGroups = await page.locator("main section[data-perek] a[data-shiur]").evaluateAll((as) => as.map((a) => a.getAttribute("data-shiur")!));
+        const inGroups = await page.locator("main section[data-perek] [data-shiur]").evaluateAll((as) => as.map((a) => a.getAttribute("data-shiur")!));
         expect(new Set(inGroups), id).toEqual(new Set(file.parts.map((p) => p.shiurId)));
       }
       const other = id.replace(/-(yi|en)$/u, (_m, l: string) => (l === "yi" ? "-en" : "-yi"));

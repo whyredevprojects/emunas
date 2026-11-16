@@ -25,6 +25,7 @@ import {
   INTRO_PEREK,
   orderParts,
   partLines,
+  partVisible,
   perekGroups,
   seriesIntro,
   seriesProgress,
@@ -188,7 +189,7 @@ function Progress({ ui, done, total, next }: { ui: UiLang; done: number; total: 
     <div className={s.progress} data-testid="series-progress">
       <span id="series-progress-label">{label}</span>
       <progress className={s.bar} max={total} value={done} aria-labelledby="series-progress-label" />
-      {next ? (
+      {next && partVisible(next) ? (
         <Link className={s.continue} to={paths.shiur(ui, next.shiurId)}>
           {st("series.continue", { n: next.order ?? "" })}
         </Link>

@@ -145,6 +145,16 @@ describe("absolute builders", () => {
   });
 });
 
+describe("Quiet #t= keeps fractional seconds (F.2)", () => {
+  it("formats and parses the page hash to the millisecond; Live ?t= stays whole", () => {
+    expect(quietPaths().shiur("en", ID, { t: 582.12 })).toBe(`/en/shiur/${ID}/#t=582.12`);
+    expect(quietPaths().shiur("en", ID, { t: 1855.5444 })).toBe(`/en/shiur/${ID}/#t=1855.544`);
+    expect(quietPaths().shiur("en", ID, { t: 754 })).toBe(`/en/shiur/${ID}/#t=754`);
+    expect(parseQuiet(`/en/shiur/${ID}/#t=582.12`)).toMatchObject({ kind: "shiur", id: ID, t: 582.12 });
+    expect(livePaths().shiur("en", ID, { t: 582.12 })).toBe(`/en/s/${ID}?t=582`);
+  });
+});
+
 describe("no audio builders (Amendment A1: audio lives on the media host)", () => {
   it("exposes no audio builder on paths or links", () => {
     expect("audio" in quietPaths()).toBe(false);
