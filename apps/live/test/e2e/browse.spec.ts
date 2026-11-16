@@ -22,8 +22,9 @@ interface WorkFile {
   locations: { ref: string; sefariaRef: string | null; citations: { shiurId: string; sourceId: string; t: number }[] }[];
   unlocated: unknown[];
 }
-interface StoriesFile {
-  stories: { id: string; shiurId: string; t: number; end: number; lang: "en" | "yi"; peopleKeys: string[] }[];
+/** `stories-index.json` (C2.7): every merged story, with the tellings its play buttons play (best first). */
+interface StoriesIndexFile {
+  stories: { id: string; plays: { lang: "en" | "yi"; shiurId: string; t: number | null; end: number | null }[] }[];
 }
 interface EntityRef {
   kind: "p" | "c" | "o";
@@ -119,7 +120,7 @@ test.describe("@data seforim", () => {
 
 test.describe("@data maasios", () => {
   test("stories only: the listed stories queue back to back, and the next plays when one ends", async ({ page, request, browserName }) => {
-    const stories = (await dataJson<StoriesFile>(request, "stories.json")).stories;
+    const stories = (await dataJson<StoriesIndexFile>(request, "stories-index.json")).stories;
     test.skip(stories.length < 2, "fewer than two stories in this data");
     await serveSilentMedia(page);
     // The player engine plays through `new Audio()` (not in the DOM); keep a handle on each element.
@@ -142,10 +143,10 @@ test.describe("@data maasios", () => {
     const known = new Set(stories.map((s) => s.id));
     for (const id of listed) expect(known.has(id), id).toBe(true);
 
-    const play = page.locator("main [data-action=play-all]").first();
-    await expect(play).toContainText("back to back");
+    const play = page.locator("main [data-action=stories-only]").first();
+    await expect(play).toContainText(/^Play [\d,]+ stor(y|ies)$/u);
     await play.click();
-    await expect(page.locator("main")).toContainText(/Playing \d+ in the queue/u);
+    await expect(page.locator("main")).toContainText(/Playing [\d,]+ stor(y|ies) in the queue/u);
 
     // The queue holds the stories in page order; the first is playing.
     await page.getByRole("navigation").getByRole("link", { name: "My Shelf" }).click();
@@ -159,7 +160,9 @@ test.describe("@data maasios", () => {
     if (browserName === "webkit") return;
     await expect(items.nth(0)).toHaveAttribute("aria-current", "true", { timeout: 10_000 });
     // Jump to just before the first story's end: the second story takes over.
-    const firstStory = stories.find((s) => s.id === listed[0])!;
+    // The audio filter is "both" by default, so each story plays its overall best telling.
+    const firstEnd = stories.find((s) => s.id === listed[0])!.plays[0]?.end;
+    expect(firstEnd, "the first story's telling has an end").toEqual(expect.any(Number));
     await expect(dock(page)).toHaveAttribute("data-player-status", "playing", { timeout: 10_000 });
     const seeked = await page.evaluate((t) => {
       const audios = (window as unknown as { __audios: HTMLAudioElement[] }).__audios;
@@ -167,7 +170,7 @@ test.describe("@data maasios", () => {
       if (!a) return false;
       a.currentTime = t;
       return true;
-    }, firstStory.end - 1.5);
+    }, firstEnd! - 1.5);
     expect(seeked, "the engine's audio element").toBe(true);
     await expect(items.nth(1)).toHaveAttribute("aria-current", "true", { timeout: 15_000 });
     expect(errors).toEqual([]);

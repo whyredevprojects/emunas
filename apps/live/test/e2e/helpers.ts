@@ -128,6 +128,13 @@ export class LinkResolver {
         return (await this.exists(`work/${enc}.json`)) ? null : `no work file ${key} (${href})`;
       case "series":
         return (await this.exists(`series/${enc}.json`)) ? null : `no series file ${key} (${href})`;
+      // Corpus layer (corpus-wave-plan §3.5): each page renders its own file; an id without one is a 404.
+      case "t":
+        return parts.length === 3 && (await this.exists(`topic/${enc}.json`)) ? null : `no topic file ${key} (${href})`;
+      case "th":
+        return parts.length === 3 && (await this.exists(`thread/${enc}.json`)) ? null : `no thread file ${key} (${href})`;
+      case "maasios":
+        return parts.length === 3 && (await this.exists(`story/${enc}.json`)) ? null : `no story file ${key} (${href})`;
       default:
         return `unknown page ${href}`;
     }
