@@ -260,6 +260,11 @@ describe("post-pass: raw ban and alias-key assertion", () => {
     expect(rules.check({ kind: "person", id: "nobody" }, "x")).toEqual({ rule: "unknown-entity" });
     expect(rules.check(null, VARIANT)).toEqual({ rule: "asr-variant" });
     expect(rules.check(null, "Besht of Mezhibuzh")).toBeNull();
+    // Story names: any entity's display name passes; anything else is not published.
+    expect(rules.checkName("the  besht")).toBeNull();
+    expect(rules.checkName("Bitachon")).toBeNull();
+    expect(rules.checkName(VARIANT)).toEqual({ rule: "asr-variant" });
+    expect(rules.checkName("Besht of Mezhibuzh")).toEqual({ rule: "not-entity-name" });
     expect(aliasTerms("a|b\nc")).toEqual(["a", "b", "c"]);
     const missing = join(fx.root, "missing");
     expect(() => AliasRules.read(missing)).toThrow(/not found/);
@@ -308,23 +313,72 @@ describe("post-pass: raw ban and alias-key assertion", () => {
     ].join("\n"));
     // An app's own index row without kind: the raw ban still applies (any entity's display names pass).
     writeFile(join(d, "quick.json"), JSON.stringify([{ k: "p:baal-shem-tov", aliases: ["Tania", "Tanya"] }]));
-    // The legacy site-derived aggregate: its names are extraction spellings, not corpus aliases.
+    // A file at the top of `.corpus/` has no exemption (the site-derived aggregates are gone, C3.1).
     writeFile(join(fx.corpus, "people.json"), JSON.stringify({ people: [{ key: "x", names: [VARIANT] }] }));
     const s = scanner(fx, false);
     s.scanPaths([d, join(fx.corpus, "people.json")]);
     const r = s.result();
     expect(r.findings.map((f) => (f.kind === "alias" ? `${f.source} ${f.rule} ${f.entity ?? "-"} ${f.field}` : f.kind)).sort()).toEqual([
+      ".corpus/people.json asr-variant - people[].names",
       "out/layer/people.json asr-variant person:baal-shem-tov people[].aliases",
       "out/quick.json asr-variant - [].aliases",
       "out/search/entities.ndjson:1 asr-variant concept:bitachon synonyms",
     ]);
-    expect(r.counts.aliasTermsLegacy).toBe(1);
 
     const check = createPagefindChecker({ aliases: AliasRules.read(fx.data) });
     const rec = (syn: string) => ({ url: "/en/people/baal-shem-tov/", content: "Baal Shem Tov", meta: { title: "Baal Shem Tov", synonyms: syn } });
     expect(check(rec("the Besht|Reb Yisroel Baal Shem Tov"), { kind: "person", id: "baal-shem-tov" })).toEqual([]);
     expect(check(rec(`the Besht|${VARIANT}`), { kind: "person", id: "baal-shem-tov" }).map((f) => (f.kind === "alias" ? f.rule : f.kind))).toEqual(["asr-variant"]);
     expect(check(rec("Mezhibuzh"), { kind: "person", id: "baal-shem-tov" }).map((f) => (f.kind === "alias" ? f.rule : f.kind))).toEqual(["not-display-field"]);
+  });
+
+  it("story names: a planted raw name in the layer's story people fails post (C3.1)", () => {
+    fx = makeLayerFixture();
+    const file = join(fx.layer, "stories.json");
+    const stories = JSON.parse(readFileSync(file, "utf8")) as { stories: { people: unknown[] }[] };
+    // A display name of a corpus entity the sites do not link is fine; raw spellings are not.
+    stories.stories[0]!.people.push({ name: "Bitachon", linked: false }, { name: "Reb Chaim Yankel", linked: false }, { name: VARIANT, linked: false });
+    writeFile(file, JSON.stringify(stories));
+    const s = scanner(fx, false);
+    s.scanPaths([file]);
+    const r = s.result();
+    expect(r.findings).toEqual([
+      { kind: "alias", source: ".corpus/layer/stories.json", rule: "not-entity-name", field: "stories[].people[].name", count: 1 },
+      { kind: "alias", source: ".corpus/layer/stories.json", rule: "asr-variant", field: "stories[].people[].name", count: 1 },
+    ]);
+    expect(r.counts.storyNamesChecked).toBe(3);
+    expectClean(JSON.stringify(r));
+  });
+
+  it("story names: Live story files and the stories index are checked; other files' `name` keys are not", () => {
+    fx = makeLayerFixture();
+    const d = join(fx.root, "build", "client", "data");
+    writeFile(join(d, "story", `${STORY}.json`), JSON.stringify({
+      id: STORY, people: [{ id: "baal-shem-tov", label: { en: "Baal Shem Tov", yi: "בעל שם טוב" }, page: true }, { name: "Baal Shem Tov" }, { name: "a wagon driver" }],
+    }));
+    writeFile(join(d, "stories-index.json"), JSON.stringify({ stories: [{ id: STORY, people: ["baal-shem-tov"], names: ["the Besht", "Reb Meirel"] }], people: {} }));
+    writeFile(join(d, "manifest.json"), JSON.stringify({ name: "Some app", people: [{ name: "not a story" }] }));
+    const s = scanner(fx, false);
+    s.scanPaths([d]);
+    expect(s.result().findings.map((f) => (f.kind === "alias" ? `${f.source} ${f.rule} ${f.field}` : f.kind)).sort()).toEqual([
+      "build/client/data/stories-index.json not-entity-name stories[].names",
+      `build/client/data/story/${STORY}.json not-entity-name people[].name`,
+    ]);
+  });
+
+  it("story names: names marked data-story-person on a built page are checked", () => {
+    fx = makeLayerFixture();
+    const d = join(fx.root, "dist");
+    writeFile(join(d, "en", "stories", STORY, "index.html"), `<p class="story-people"><a href="/en/people/baal-shem-tov/"><bdi lang="en" data-story-person>Baal Shem Tov</bdi></a> · <bdi data-story-person="">Bitachon</bdi></p>`);
+    writeFile(join(d, "yi", "stories", STORY, "index.html"), `<p><bdi lang="yi" dir="rtl" data-story-person>בעל שם טוב</bdi> · <bdi data-story-person>Reb&#32;Chaim Yankel</bdi> · <span data-story-person>${VARIANT}</span></p><p data-story-personx>Reb Meirel</p>`);
+    const s = scanner(fx, false);
+    s.scanPaths([d]);
+    const r = s.result();
+    expect(r.findings.map((f) => (f.kind === "alias" ? `${f.source} ${f.rule} ${f.field} ${f.count}` : f.kind)).sort()).toEqual([
+      `dist/yi/stories/${STORY}/index.html asr-variant [data-story-person] 1`,
+      `dist/yi/stories/${STORY}/index.html not-entity-name [data-story-person] 1`,
+    ]);
+    expect(r.counts.storyNamesChecked).toBe(5);
   });
 
   it("checkEntityAliases checks an emitter's terms directly", () => {

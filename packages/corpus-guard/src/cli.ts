@@ -165,7 +165,7 @@ function post(args: ParsedArgs, log: (s: string) => void): number {
     log("guard post: verbatim scan DISABLED (--no-verbatim)");
   }
   log(`guard post: corpus-layer text units compared with their member shiurim ${c.corpusUnits}`);
-  if (result.aliasesChecked) log(`guard post: alias terms checked (raw ban + display fields) ${c.aliasTermsChecked}; legacy aggregate names not checked ${c.aliasTermsLegacy}`);
+  if (result.aliasesChecked) log(`guard post: alias terms checked (raw ban + display fields) ${c.aliasTermsChecked}; story names checked ${c.storyNamesChecked}`);
   else log(`guard post: alias checks DISABLED (${args.flags.has("no-aliases") ? "--no-aliases" : `no corpus data at ${defaultData}`})`);
   for (const f of result.findings) log(`  FAIL ${describe(f)}`);
   log(`guard post: ${result.findings.length} finding(s) in ${secs.toFixed(1)} s${report ? `; report ${report}` : ""}`);

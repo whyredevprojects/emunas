@@ -65,10 +65,11 @@ Display fields: topic `label.{en,yi,he}`, `aliases` · concept `canonicalHe`, `l
 `transliterations` · person `nameHe`, `nameEn`, `nameYi`, `aliases` · work `titleHe`, `titleEn`,
 `sefariaIndexTitle`, `aliases`.
 
-Exemption while current pages still read them (the C2 page wave removes them): the site-derived aggregates at the top of `.corpus/`
-(`people.json`, `concepts.json`, `works.json`, `stories.json`, `entities.json`) carry extraction
-spellings in `names`, which are not corpus-entity aliases; their entity-less positions are counted
-(`aliasTermsLegacy`) but not checked. Remove the exemption with the files.
+Story names (C3.1): in story files (`.corpus/layer/stories.json`, Live `story/<id>.json` and
+`stories-index.json`) every `people[].name` and every entity-less `names` term, and on built HTML
+pages the text of every element marked `data-story-person`, must be a display name of some corpus
+entity (`AliasRules.checkName`): `asr-variant` when it is an ASR spelling, else `not-entity-name`.
+An unresolved raw extraction name is never published. Counted as `storyNamesChecked`.
 
 Allow-list: item ids in `site-policy/verbatim-allow.json` and `publish-policy.json`
 `allowVerbatim[]` (shiur item ids and `corpus:` ids alike). In the post-pass an allowed item passes by id (JSON) and by its text

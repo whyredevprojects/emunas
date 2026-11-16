@@ -12,9 +12,20 @@
 import { readFileSync, statSync } from "node:fs";
 import { basename, extname, relative, sep } from "node:path";
 import { walkFiles } from "./budgets.ts";
-import { decodeJsEscapes, htmlProse } from "./extract.ts";
+import { decodeHtmlEntities, decodeJsEscapes, htmlProse } from "./extract.ts";
 import { collectShiurItems, fieldOf } from "./items.ts";
-import { ALIAS_KEYS, entityKindOfFile, isLegacyAggregateFile, aliasTerms, isEntityKind, type AliasRule, type AliasRules, type EntityKind } from "./aliases.ts";
+import {
+  ALIAS_KEYS,
+  aliasTerms,
+  entityKindOfFile,
+  isEntityKind,
+  isStoryNamesFile,
+  markedStoryNames,
+  STORY_PERSON_ATTR,
+  type AliasRule,
+  type AliasRules,
+  type EntityKind,
+} from "./aliases.ts";
 import { layerFileOf, layerFileUnits, pathKey, type CorpusUnit } from "./layer.ts";
 import { findKeysInText, findSubstrings, isForbiddenKey } from "./rules.ts";
 import { NO_RUN, mergeScans, type ScanResult, type VerbatimMatcher } from "./verbatim.ts";
@@ -53,8 +64,8 @@ export interface PostCounts {
   corpusUnits: number;
   /** Strings in alias-bearing positions checked against the display fields and ASR variants. */
   aliasTermsChecked: number;
-  /** Strings in alias-bearing positions of the legacy `.corpus/` aggregates (not checked; C3.1 retires them). */
-  aliasTermsLegacy: number;
+  /** Person names on stories (story files and `data-story-person` on pages) checked against every entity's display names. */
+  storyNamesChecked: number;
   findings: number;
 }
 
@@ -92,8 +103,11 @@ export interface ValueContext {
   fileKind?: EntityKind | null;
   /** Entity the alias-bearing fields of this value belong to when the value itself does not say (Pagefind entity records). */
   entity?: { kind: EntityKind; id: string } | null;
-  /** A legacy `.corpus/` aggregate: its alias positions name no corpus entity and are not checked. */
-  legacyAggregate?: boolean;
+  /**
+   * A story file (`isStoryNamesFile`): `people[].name` is checked too, and every entity-less name
+   * (there and in `names`) must be some corpus entity's display name (`AliasRules.checkName`).
+   */
+  storyNames?: boolean;
 }
 
 const JSON_EXT = new Set([".json", ".map", ".webmanifest"]);
@@ -130,7 +144,7 @@ export class LeakScanner {
     verbatimReported: 0,
     corpusUnits: 0,
     aliasTermsChecked: 0,
-    aliasTermsLegacy: 0,
+    storyNamesChecked: 0,
     findings: 0,
   };
   private readonly matcher: VerbatimMatcher | null;
@@ -283,16 +297,17 @@ export class LeakScanner {
       let e = entity;
       if (isEntityKind(node.kind) && typeof node.id === "string") e = { kind: node.kind, id: node.id };
       else if (ctx.fileKind && typeof node.id === "string") e = { kind: ctx.fileKind, id: node.id };
+      // A person on a story: `{ name }` inside a `people` list.
+      const storyPerson = ctx.storyNames === true && path.at(-2) === "people" && typeof path.at(-1) === "number";
       for (const [k, c] of Object.entries(node)) {
-        if (this.aliasKeys.has(k)) {
+        const asName = storyPerson && k === "name";
+        if (this.aliasKeys.has(k) || asName) {
           const field = fieldOf([...path, k]);
-          for (const term of aliasTerms(c)) {
-            if (e === null && ctx.legacyAggregate) {
-              this.counts.aliasTermsLegacy++;
-              continue;
-            }
-            this.counts.aliasTermsChecked++;
-            const v = rules.check(e, term);
+          for (const term of asName ? (typeof c === "string" ? [c] : []) : aliasTerms(c)) {
+            const strict = ctx.storyNames === true && (asName || e === null);
+            if (strict) this.counts.storyNamesChecked++;
+            else this.counts.aliasTermsChecked++;
+            const v = strict ? rules.checkName(term) : rules.check(e, term);
             if (!v) continue;
             const entityKey = e ? `${e.kind}:${e.id}` : undefined;
             const key = `${v.rule}\u0000${entityKey ?? ""}\u0000${field}`;
@@ -395,6 +410,19 @@ export class LeakScanner {
     for (const [substring, count] of subs) this.add({ kind: "substring", source, substring, count });
   }
 
+  /** Story names marked on a built page (`data-story-person`): each must be a corpus entity's display name. */
+  private checkMarkedNames(html: string, source: string): void {
+    const rules = this.aliases;
+    if (!rules || !html.includes(STORY_PERSON_ATTR)) return;
+    const acc = new Map<AliasRule, number>();
+    for (const name of markedStoryNames(html)) {
+      this.counts.storyNamesChecked++;
+      const v = rules.checkName(decodeHtmlEntities(name));
+      if (v) acc.set(v.rule, (acc.get(v.rule) ?? 0) + 1);
+    }
+    for (const [rule, count] of acc) this.add({ kind: "alias", source, rule, field: `[${STORY_PERSON_ATTR}]`, count });
+  }
+
   /** Scan free text (HTML text, a JS bundle): keys by pattern, substrings, one verbatim unit. */
   scanText(raw: string, source: string, prose: string | null, pathHint: string | null): void {
     const decoded = decodeJsEscapes(raw);
@@ -466,7 +494,7 @@ export class LeakScanner {
         this.scanText(raw, source, decodeJsEscapes(raw), hint);
         return;
       }
-      this.scanValue(parsed, source, hint, { layerFile: layerFileOf(file), fileKind: entityKindOfFile(file), legacyAggregate: isLegacyAggregateFile(file) });
+      this.scanValue(parsed, source, hint, { layerFile: layerFileOf(file), fileKind: entityKindOfFile(file), storyNames: isStoryNamesFile(file) });
       return;
     }
     if (NDJSON_EXT.has(ext)) {
@@ -482,6 +510,7 @@ export class LeakScanner {
       return;
     }
     if (HTML_EXT.has(ext)) {
+      this.checkMarkedNames(raw, source);
       this.scanText(raw, source, htmlProse(raw), hint);
       return;
     }
