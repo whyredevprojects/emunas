@@ -90,6 +90,12 @@ export class FakeAudio implements MediaElementLike {
   ended = false;
   readyState = 0;
   mediaDuration = NaN;
+  /**
+   * WebKit's behaviour: a seek is applied when the element gets to it, so reading `currentTime` right
+   * after setting it still returns the old position (until `seeked`). Off: the spec's behaviour.
+   */
+  seekLag = false;
+  private seeks = 0;
   readonly srcHistory: string[] = [];
   readonly log: string[] = [];
   private listeners = new Map<string, Set<(ev: Event) => void>>();
@@ -134,10 +140,20 @@ export class FakeAudio implements MediaElementLike {
   }
   set currentTime(v: number) {
     const max = Number.isFinite(this.mediaDuration) ? this.mediaDuration : Infinity;
-    this._currentTime = Math.min(Math.max(0, v), max);
+    const target = Math.min(Math.max(0, v), max);
     this.ended = false;
+    if (!this.seekLag) this._currentTime = target;
     this.queue(() => this.fire("seeking"));
-    this.queue(() => this.fire("seeked"));
+    const src = this._src;
+    const seek = ++this.seeks;
+    this.queue(() => {
+      if (this.seekLag) {
+        // A newer seek or a new src aborts this one, as in the browser.
+        if (this._src !== src || seek !== this.seeks) return;
+        this._currentTime = target;
+      }
+      this.fire("seeked");
+    });
   }
 
   get playbackRate(): number {
