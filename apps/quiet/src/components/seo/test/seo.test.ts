@@ -31,7 +31,7 @@ import {
   SITEMAP_URL_LIMIT,
   xmlEscape,
 } from "../sitemap.ts";
-import { aboutFileKey } from "../../../pages/[ed]/about/_content.ts";
+import { aboutFileKey, resolveAboutLinks } from "../../../pages/[ed]/about/_content.ts";
 import { ABOUT_PARTS, ABOUT_STRINGS } from "../../../pages/[ed]/about/_strings.ts";
 
 const repo = resolve(dirname(fileURLToPath(import.meta.url)), "../../../../../..");
@@ -214,6 +214,17 @@ describe("About", () => {
     expect(aboutFileKey("../../../content/about/yi/mashgiach.md")).toEqual({ ed: "yi", part: "mashgiach" });
     expect(aboutFileKey("../../../content/about/de/mashgiach.md")).toBeNull();
     expect(aboutFileKey("../../../content/about/en/other.md")).toBeNull();
+  });
+
+  it("resolves the About texts' live: and guide: links into new-tab links and leaves site links alone", () => {
+    const t = { ed: "yi", live: "https://listen.example.invalid/yi/", guide: "https://media.example.invalid/g.pdf", newTab: "(new tab)" } as const;
+    const out = resolveAboutLinks('<p><a href="live:">app</a>, <a href="guide:">guide</a>, <a href="/yi/calendar/">lu\'ach</a>, <a href="#notes">n</a></p>', t);
+    expect(out).toContain('<a href="https://listen.example.invalid/yi/" hreflang="yi" target="_blank" rel="noopener">app<svg class="new-tab-icon"');
+    expect(out).toContain('<a href="https://media.example.invalid/g.pdf" target="_blank" rel="noopener">guide<svg');
+    expect(out).toContain('<span class="visually-hidden"> (new tab)</span></a>');
+    expect(out).toContain('<a href="/yi/calendar/">lu\'ach</a>, <a href="#notes">n</a>');
+    expect(() => resolveAboutLinks('<a href="lve:">x</a>', t)).toThrow(/unknown link "lve:"/);
+    expect(() => resolveAboutLinks('<a href="https://example.com/">x</a>', t)).toThrow(/unknown link/);
   });
 });
 
