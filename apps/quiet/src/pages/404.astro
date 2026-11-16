@@ -1,0 +1,53 @@
+---
+/**
+ * Not found (`dist/404.html`, served for every unknown address by `not_found_handling: "404-page"`
+ * in wrangler.jsonc). One page for both editions, laid out like the root chooser: Yiddish on the
+ * right, English on the left, each with a link to its edition's home. Never indexed.
+ */
+import "../styles/fonts.css";
+import "@emunas/tokens/tokens.css";
+import "../styles/quiet.css";
+import "../styles/print.css";
+import { formatQuiet } from "@emunas/links";
+import { useT } from "../i18n/index.ts";
+import Seo from "../components/seo/Seo.astro";
+import Dedication from "../components/Dedication.astro";
+
+const en = useT("en");
+const yi = useT("yi");
+const TEXT = {
+  en: { title: "Page not found", lead: "There is no page at this address." },
+  yi: { title: "דער בלאט איז נישט געפונען", lead: "ביי דער אדרעס איז נישטא קיין בלאט." },
+} as const;
+---
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>{`${TEXT.en.title} · ${en("site.name")}`}</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <Seo path="/404.html" title={TEXT.en.title} description={TEXT.en.lead} siteName={en("site.name")} noindex />
+  </head>
+  <body>
+    <main id="main">
+      <h1 class="visually-hidden">{TEXT.en.title}</h1>
+      <div class="chooser" dir="rtl">
+        <section lang="yi" dir="rtl" aria-labelledby="not-found-yi">
+          <h2 id="not-found-yi">{TEXT.yi.title}</h2>
+          <p>{TEXT.yi.lead}</p>
+          <p><a href={formatQuiet({ kind: "home", ed: "yi" })}>{yi("site.name")}</a></p>
+        </section>
+        <section lang="en" dir="ltr" aria-labelledby="not-found-en">
+          <h2 id="not-found-en">{TEXT.en.title}</h2>
+          <p>{TEXT.en.lead}</p>
+          <p><a href={formatQuiet({ kind: "home", ed: "en" })}>{en("site.name")}</a></p>
+        </section>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <Dedication />
+    </footer>
+  </body>
+</html>

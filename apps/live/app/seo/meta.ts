@@ -24,13 +24,13 @@ export const TITLE_MAX = 120;
 export interface SeoMetaArgs {
   params: Readonly<Record<string, string | undefined>>;
   location: { pathname: string };
-  matches: readonly ({ id: string; loaderData?: unknown; data?: unknown } | undefined)[];
+  matches: readonly ({ id: string; loaderData?: unknown } | undefined)[];
 }
 
 /** The root loader's page data, when it was computed for `pathname`. */
 export function seoPageFor(pathname: string, matches: SeoMetaArgs["matches"]): SeoPage | null {
   const root = matches.find((m) => m?.id === "root");
-  const data = (root?.loaderData ?? root?.data) as RootSeoData | undefined;
+  const data = root?.loaderData as RootSeoData | undefined;
   const page = data?.seo?.page ?? null;
   return page && page.path === normalizeLivePath(pathname) ? page : null;
 }

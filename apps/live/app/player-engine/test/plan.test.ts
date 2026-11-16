@@ -9,7 +9,7 @@ import {
   prevChapterTarget,
   recordingAudioUrl,
 } from "../plan.ts";
-import type { PlayerChapter, PlayerRecording, PlayerShiur, SkipRange } from "../types.ts";
+import type { PlayerChapter, PlayerShiur, SkipRange } from "../types.ts";
 
 const l = { en: "", yi: "" };
 
@@ -108,11 +108,5 @@ describe("misc", () => {
     expect(recordingAudioUrl({ id: "a", offset: 0, duration: 1, audioUrl: "https://m/a.mp3" })).toBe("https://m/a.mp3");
     expect(recordingAudioUrl({ id: "a", offset: 0, duration: 1, audioUrl: null })).toBeNull();
     expect(recordingAudioUrl({ id: "a", offset: 0, duration: 1, audioUrl: "" })).toBeNull();
-  });
-
-  it("ignores a legacy same-origin audio field", () => {
-    // Pre-A1 data: no `audioUrl`, only the old same-origin `audio` path (no longer in the type).
-    const legacy = { id: "a", offset: 0, duration: 1, audio: "/audio/a.mp3" } as unknown as PlayerRecording;
-    expect(recordingAudioUrl(legacy)).toBeNull();
   });
 });

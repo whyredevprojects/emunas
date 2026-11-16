@@ -5,6 +5,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { createElement } from "react";
 import { createMemoryRouter, RouterProvider } from "react-router";
 import { afterAll, describe, expect, it } from "vitest";
+import { DEDICATION } from "../components/dedication-text.ts";
 import { checkFallback, checkPage, exportsServerLoader, flattenPages, pagePathOf, parseHead, postBuild } from "./check.server.ts";
 import { liveBuildEnd, livePrerenderPaths } from "./config.server.ts";
 import { findCorpusDir, readDataFileSet, readSeoCorpus } from "./corpus.server.ts";
@@ -31,6 +32,8 @@ function tmp(): string {
 }
 
 const ENV = { EMUNAS_DOMAIN: "example.org" };
+/** The body every built page ends with (root layout): the dedication footer (F.3). */
+const DEDICATED_BODY = `<body><main></main><footer class="f"><p class="l" dir="rtl" lang="he" data-dedication="">${DEDICATION}</p></footer></body>`;
 const QUIET = "https://example.org";
 
 /**
@@ -251,7 +254,7 @@ describe("post-build checks", () => {
     const c = join(tmp(), "client");
     const put = (file: string, body: string) => {
       mkdirSync(dirname(join(c, file)), { recursive: true });
-      writeFileSync(join(c, file), body);
+      writeFileSync(join(c, file), file.endsWith(".html") ? body.replace(/(<\/html>)$/u, `${DEDICATED_BODY}$1`) : body);
     };
     put("index.html", '<html><head><meta name="robots" content="noindex"/></head></html>');
     put("en/index.html", `<html><head><meta name="robots" content="noindex"/><link rel="canonical" href="${QUIET}/en/"/><meta property="og:title" content="t"/></head></html>`);
@@ -290,9 +293,29 @@ describe("post-build checks", () => {
 
   it("flags an SPA fallback that is indexable", () => {
     const c = fakeClient();
-    writeFileSync(join(c, "index.html"), `<html><head><link rel="canonical" href="${QUIET}/"/></head></html>`);
+    writeFileSync(join(c, "index.html"), `<html><head><link rel="canonical" href="${QUIET}/"/></head>${DEDICATED_BODY}</html>`);
     const r = postBuild({ clientDir: c, hosts, routeFiles: [] });
     expect(r.findings.map((f) => f.problem)).toEqual(["SPA fallback without noindex", "SPA fallback carries a canonical link"]);
+  });
+
+  it("flags an HTML file whose dedication is missing, doubled or not the footer's last line (F.3)", () => {
+    const run = (html: string) => {
+      const c = fakeClient();
+      writeFileSync(join(c, "en/index.html"), html);
+      return postBuild({ clientDir: c, hosts, routeFiles: [] }).findings.filter((f) => f.file === "en/index.html").map((f) => f.problem);
+    };
+    const head = `<head><meta name="robots" content="noindex"/><link rel="canonical" href="${QUIET}/en/"/><meta property="og:title" content="t"/></head>`;
+    expect(run(`<html>${head}${DEDICATED_BODY}</html>`)).toEqual([]);
+    expect(run(`<html>${head}<body></body></html>`)).toEqual(["no dedication line"]);
+    expect(run(`<html>${head}${DEDICATED_BODY}${DEDICATED_BODY}</html>`)).toEqual(["the dedication appears 2 times"]);
+    const notLast = `<body><footer><p dir="rtl" lang="he">${DEDICATION}</p><p>more</p></footer></body>`;
+    expect(run(`<html>${head}${notLast}</html>`)).toEqual(["the dedication is not the last line of a <footer>"]);
+    const noLang = `<body><footer><p dir="rtl">${DEDICATION}</p></footer></body>`;
+    expect(run(`<html>${head}${noLang}</html>`)).toEqual(['the dedication is not marked lang="he"']);
+    // The SPA fallback is checked too.
+    const c = fakeClient();
+    writeFileSync(join(c, "index.html"), '<html><head><meta name="robots" content="noindex"/></head></html>');
+    expect(postBuild({ clientDir: c, hosts, routeFiles: [] }).findings).toEqual([{ file: "index.html", problem: "no dedication line" }]);
   });
 
   it("flattenPages leaves the UI homes and existing targets alone", () => {
@@ -342,7 +365,7 @@ describe("react-router config hooks", () => {
     expect(() => liveBuildEnd(args, ENV, () => {})).toThrow(/app-only page \(today\) without noindex/u);
     writeFileSync(
       join(client, "en", "index.html"),
-      `<html><head><meta name="robots" content="noindex"/><link rel="canonical" href="${QUIET}/en/"/><meta property="og:title" content="t"/></head></html>`,
+      `<html><head><meta name="robots" content="noindex"/><link rel="canonical" href="${QUIET}/en/"/><meta property="og:title" content="t"/></head>${DEDICATED_BODY}</html>`,
     );
     const logs: string[] = [];
     liveBuildEnd(args, ENV, (m) => logs.push(m));

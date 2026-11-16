@@ -10,6 +10,7 @@ import "../styles/print.css";
 import { formatQuiet } from "@emunas/links";
 import { useT } from "../i18n/index.ts";
 import Seo from "../components/seo/Seo.astro";
+import Dedication from "../components/Dedication.astro";
 
 const en = useT("en");
 const yi = useT("yi");
@@ -43,5 +44,8 @@ const yi = useT("yi");
         </section>
       </div>
     </main>
+    <footer class="site-footer">
+      <Dedication />
+    </footer>
   </body>
 </html>

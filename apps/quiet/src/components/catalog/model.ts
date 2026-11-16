@@ -121,9 +121,9 @@ export function gapRow(g: CatalogGap): CatalogRow {
   };
 }
 
-/** The catalog gaps of a section key, in catalog order (older `.corpus/` builds have none). */
+/** The catalog gaps of a section key, in catalog order. */
 export function sectionGaps(corpus: CatalogCorpus, key: string): CatalogGap[] {
-  return (corpus.index.gaps ?? []).filter((g) => g.sectionKey === key);
+  return corpus.index.gaps.filter((g) => g.sectionKey === key);
 }
 
 /**

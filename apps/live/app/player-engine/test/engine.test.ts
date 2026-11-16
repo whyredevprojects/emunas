@@ -10,7 +10,6 @@ import type {
   MediaSessionLike,
   PlayerEngineOptions,
   PlayerEvents,
-  PlayerRecording,
   PlayerShiur,
 } from "../types.ts";
 import { FakeAudio, FakeClock, FakeLifecycle, fakeMediaSession } from "./fakes.ts";
@@ -459,19 +458,6 @@ describe("speed, sleep, availability", () => {
     engine.load(shiur, { start: 95, autoplay: true });
     clock.tick(6000);
     expect(events.ended).toHaveLength(1);
-  });
-
-  it("never falls back to a legacy same-origin audio path", () => {
-    // Pre-A1 data: no `audioUrl`, only the old same-origin `audio` path (no longer in the type).
-    const legacy = [
-      { id: "a", offset: 0, duration: 100, audio: "/audio/a.mp3" },
-      { id: "b", offset: 100, duration: 60, audio: "/audio/b.mp3" },
-    ] as unknown as PlayerRecording[];
-    const shiur = twoRecordings({ recordings: legacy });
-    const { audio, engine } = setup(shiur);
-    engine.load(shiur);
-    expect(engine.getState().status).toBe("unavailable");
-    expect(audio.srcHistory).toEqual([]);
   });
 
   it("reports a media error", () => {

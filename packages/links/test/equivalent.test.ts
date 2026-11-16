@@ -131,10 +131,6 @@ describe("quiet → live", () => {
     expect(links.equivalent(`${HOSTS.quiet}/en/shiur/${ID}`)).toBe(`${HOSTS.live}/en/s/${ID}`);
     expect(links.equivalent(`${HOSTS.quiet}/en/people/a%20b/`)).toBe(`${HOSTS.live}/en/p/a%20b`);
   });
-
-  it("a legacy /audio/ path is not a page: it maps to the other site's root", () => {
-    expect(links.equivalent(`${HOSTS.quiet}/audio/r1.mp3?dl=1`)).toBe(`${HOSTS.live}/`);
-  });
 });
 
 describe("site detection", () => {

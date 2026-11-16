@@ -11,10 +11,7 @@
  */
 import { toLocal } from "@emunas/corpus/public";
 
-/**
- * What the shell needs of a recording. `PublicRecording` from `@emunas/corpus/public` fits once
- * the corpus build emits `audioUrl` (A1); until then pages map it in.
- */
+/** What the shell needs of a recording (`PublicRecording` from `@emunas/corpus/public` fits). */
 export interface AudioRecording {
   readonly id: string;
   /** Global seconds at which this recording starts. */

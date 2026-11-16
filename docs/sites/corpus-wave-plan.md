@@ -355,24 +355,21 @@ Owner rules for this wave, on top of §1: nothing transcript-derived may be publ
 
 ## 9. Pending upstream: read defensively
 
-Most of these come from the coordinator's note on e7680a2, the rest from Quiet C8 and Live H:
+Updated in F.3, after C3.1 and the wave-F sweep. Most of these come from the coordinator's note on e7680a2, the rest from Quiet C8 and Live H. All of them are read defensively at build time; none needs a site change when the pipeline settles it.
 
 - Cluster prose may still carry stale counts or translation wording. It is shown under the AI label, and C1.2's report-only lint lists mismatched counts.
-- Corpus v2 (pipeline 2866b54, `index.json` version 2, the only version the reader knows) split compound people and moved roles to concepts (`moshiach` → `mashiach`, `kohen-gadol`); the layer follows the retired ids, across kinds (§5). `belzer-rav` stays as the pipeline gives it, with its `description`.
+- Corpus v2 (pipeline 2866b54, `index.json` version 2, the only entry in `KNOWN_CORPUS_VERSIONS`) split compound people and moved roles to concepts (`moshiach` → `mashiach`, `kohen-gadol`); the layer follows the retired ids, across kinds (§5). `belzer-rav` stays as the pipeline gives it, with its `description`. A new version is warned about and validated by shape (D9).
 - Person types `malach`, `ruler` and `individual` map to index groups (malachim after Tanach, rulers before the others; `individual` joins `other` and follows D2). `description` is published as generated text (guard unit `corpus:person:<id>#description.<lang>`).
 - Work `kind` decides `generic` (`genre`); `order` and `parentWorkId` give the shelf order and nesting (the Rashi tree). The normalize ordering table only supplies shelf groups the data does not (rishonim, acharonim, midrash …).
 - Topic `parsha`/`zman` keys win over the derived rule (D11), the most specific topic first. A sefer-like container (a topic whose descendants list parshiyos) lists every parsha of its sefer as a calendar join, so its parsha keys give no occasion link; its zman keys do.
 - Stories carry `attributionVaries`; the story pages say that the tellings differ on the attribution (`story.attributionVaries` in the vocabulary).
 - Possible missed story merges are not merged by the site. When the pipeline merges them, the retired id is followed inside the layer and has no address.
-- `shabbos-tefilah-en` has no visible shiurim, so it gets no synthesis UI.
+- `shabbos-tefilah-en` had no visible shiurim at C3, so it gets no synthesis UI; the rule is "no visible part, no series layer file", not a list.
 - Yiddish voice is consistent upstream now ("דער משגיח"). Site strings that mention the Rav in Yiddish (C1.4 vocab) follow it.
+- Optional fields (`reviewStatus`, `sameAs`, `otherSpeakerShare`, `mergedInto`, `kind`, `parsha`/`zman`, `private`/`family`/`contemporary`) are still read only when present (§3.1). A field the pipeline adds stays unpublished until it is mapped on purpose (rule 2).
 
-### Site-derived aggregates still read by current pages (C2 replaces these, C3.1 deletes the files)
+### Done: no site-derived entity layer, no compatibility code
 
-After the owner's no-compatibility decision (rule 10) the redirect and legacy-key machinery is gone, but these current pages still render from the site-derived `.corpus` aggregates, so the files stay until the C2 pages replace them:
-
-- Quiet `apps/quiet/src/components/indexes/corpus.ts` (and the index pages built from it: people, sources, inyanim/concepts, stories) reads `people.json`, `concepts.json`, `stories.json`, `entities.json`.
-- Quiet `apps/quiet/src/components/shiur/corpus.ts` (shiur page "mentioned" links) reads `entities.json`, `people.json`, `concepts.json`, through `@emunas/links` `{kind: "entity"}` routes and `entityCount`.
-- Live `apps/live/app/seo/corpus.server.ts` (prerender list and SEO labels) reads `people.json`, `concepts.json`, `entities.json`.
-- Live `apps/live/data-build/emit.ts` legacy `stories.json` and the entity arrays in `corpus.json`; `apps/live/data-build/budgets.ts` reads `entities.json` for occasions and as the prerender fallback without a layer.
-- `@emunas/corpus-guard` keeps the `aliasTermsLegacy` exemption for the aggregates' `names` until the files go.
+- **C3.1** retired the site-derived `.corpus` aggregates (`people.json`, `concepts.json`, `stories.json`, `entities.json`), the `{kind: "entity"}` route and `entityCount`, the concept stop-list and threshold, the guard's `aliasTermsLegacy` exemption, Live's per-telling `stories.json` and the entity arrays in `corpus.json`. Every entity page on both sites reads the corpus layer only; `packages/corpus/test/aggregate/retired.test.ts` keeps it that way.
+- **F.3** swept the rest of the repository for backwards-compatibility code (rule 10): React Router's deprecated `match.data` in Live's SEO meta, the export-file record-upgrade path in Live's personal store (schema version 1 is the only shape; the IndexedDB `MIGRATIONS` list stays, since version 1 creates the stores, as the D1 migration files create the API schema), the `gaps ?? []` fallback for older `.corpus/` builds in Quiet's catalog, and tests that fed pre-A1 same-origin `/audio/` paths to the player and the link helpers. The corpus-absent policy (§3.1: layer off, sites build without the corpus indexes) is a failure policy, not compatibility, and stays.
+- The dedication `לעילוי נשמת אשר בן ישראל` is the last line of the footer on every page of both sites (Quiet: every edition page, the edition chooser and the new `404.html`; Live: the root layout, so every prerendered page and the SPA fallback). Quiet checks it on a built site (`apps/quiet/src/components/test/dedication.build.test.ts`); Live's post-build step fails the build on any HTML file without it exactly once (`apps/live/app/seo/check.server.ts`).
