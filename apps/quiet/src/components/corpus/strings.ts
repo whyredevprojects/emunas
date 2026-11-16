@@ -13,7 +13,7 @@ import type { Ed } from "../../lib/edition.ts";
 
 export const corpusEn = {
   // ---- the indexes block on the title page (Quiet C5, in order)
-  "indexes.topics.note": "the subjects of the shiurim, as a tree",
+  "indexes.topics.note": "the subjects of the shiurim, by gate",
   "indexes.glossary.note": "terms as they are used in the shiurim, by the Hebrew headword",
   "indexes.names.note": "people named in the shiurim, by era",
   "indexes.sources.note": "seforim cited, in the order of a mafteach",
@@ -40,7 +40,7 @@ export const corpusEn = {
 export type CorpusKey = keyof typeof corpusEn;
 
 export const corpusYi: MessageTable<CorpusKey> = {
-  "indexes.topics.note": "די ענינים פון די שיעורים, ווי א בוים",
+  "indexes.topics.note": "די ענינים פון די שיעורים, לויט די שערים",
   "indexes.glossary.note": "ווערטער ווי זיי ווערן גענוצט אין די שיעורים, לויטן לשון הקודש ערך",
   "indexes.names.note": "מענטשן וואס ווערן דערמאנט אין די שיעורים, לויט די דורות",
   "indexes.sources.note": "ספרים וואס ווערן געברענגט, אין סדר פון א מפתח",

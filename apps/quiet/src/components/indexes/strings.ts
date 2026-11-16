@@ -37,7 +37,7 @@ export const indexesEn = {
   "work.onSefariaLabel": "{ref} on Sefaria (external site)",
 
   // ---- corpus entries (C2.1): names, works, glossary
-  "names.intro": "People named in the shiurim, arranged as a sefer arranges them: Tanach, Chazal, Rishonim, Acharonim, tzaddikim of Chassidus, then others. Someone named in one or two shiurim is listed with those shiurim; anyone else has a page.",
+  "names.intro": "People named in the shiurim, by era: Tanach, Chazal, Rishonim, Acharonim, tzaddikim of Chassidus, then others. Someone named in one or two shiurim is listed with those shiurim; anyone else has a page.",
   "names.also": "also:",
   "names.see": "see",
   "names.seforim": "Seforim cited",
@@ -89,7 +89,7 @@ export const indexesYi: MessageTable<IndexesKey> = {
   "work.onSefaria": "ספריא",
   "work.onSefariaLabel": "{ref} אויף ספריא (אן אנדער זייטל)",
 
-  "names.intro": "פערזאנען וואס ווערן דערמאנט אין די שיעורים, אויסגעשטעלט ווי אין א ספר: תנ\"ך, חז\"ל, ראשונים, אחרונים, צדיקי החסידות, און דערנאך אנדערע. ווער עס ווערט דערמאנט אין איין אדער צוויי שיעורים שטייט מיט די שיעורים; יעדער אנדערער האט א בלאט.",
+  "names.intro": "פערזאנען וואס ווערן דערמאנט אין די שיעורים, לויט די דורות: תנ\"ך, חז\"ל, ראשונים, אחרונים, צדיקי החסידות, און דערנאך אנדערע. ווער עס ווערט דערמאנט אין איין אדער צוויי שיעורים שטייט מיט די שיעורים; יעדער אנדערער האט א בלאט.",
   "names.also": "אויך:",
   "names.see": "ראה",
   "names.seforim": "ספרים וואס ווערן געברענגט",

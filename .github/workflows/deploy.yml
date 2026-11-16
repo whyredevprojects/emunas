@@ -1,7 +1,7 @@
 name: deploy
 
 # integration-plan §3.5 and §4 (as amended by A1: no audio bucket, no audio routes):
-# corpus:build → guard pre → corpus:build --suppress → app builds → _headers → Worker bundles
+# typecheck, lint and unit tests (any failure = nothing deploys) → corpus:build → guard pre → corpus:build --suppress → app builds → _headers → Worker bundles
 # → guard post (FAIL = nothing deploys) → budgets → D1 migrations → D1/Vectorize sync
 # → deploy emunas-api → emunas-quiet → emunas-live → job summary.
 # The build and guard steps run in the order of `npm run site:chain` (tests/chain/site-chain.ts);
@@ -104,6 +104,13 @@ jobs:
           cache: npm
       - name: Install
         run: npm ci
+      # The same checks as ci.yml's quality job: a red typecheck, lint or unit test deploys nothing.
+      - name: Typecheck (sites, site Workers, eval suite)
+        run: npm run site:typecheck
+      - name: Lint
+        run: npm run site:lint
+      - name: Unit tests (sites, site Workers, eval suite)
+        run: npm run site:test
       - name: Check emunas-api resources are provisioned
         # wrangler.jsonc ships placeholder D1 ids (00000000-0000-4000-8000-…) until the resources
         # are created (ops-runbook); deploying with them would fail half-way, after the site builds.

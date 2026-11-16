@@ -39,7 +39,7 @@ export const maasiosEn = {
   "story.tellings": "The tellings",
   "story.tellings.lead": "Each time it was told, with the section of the shiur it sits in.",
   "only.title": "Stories only",
-  "only.lead": "Plays the stories below one after another, one telling each, each from its start to its end.",
+  "only.lead": "Plays the stories below one after another, one telling of each.",
   "only.play": { one: "Play {count} story", other: "Play {count} stories" },
   "only.skipped": {
     one: "{count} story you heard in this visit is skipped.",
@@ -86,7 +86,7 @@ export const maasiosYi: MessageTable<MaasiosKey> = {
   "story.tellings": "די מאל וואס זי ווערט דערציילט",
   "story.tellings.lead": "יעדעס מאל וואס זי ווערט דערציילט, מיטן חלק פונעם שיעור וואו זי שטייט.",
   "only.title": "נאר מעשיות",
-  "only.lead": "שפילט די מעשיות אונטן איינע נאך די אנדערע, איין מאל פון יעדער, יעדע פון אנהייב ביזן סוף.",
+  "only.lead": "שפילט די מעשיות אונטן איינע נאך די אנדערע, איין מאל פון יעדער.",
   "only.play": { one: "שפילט {count} מעשה", other: "שפילט {count} מעשיות" },
   "only.skipped": {
     one: "{count} מעשה וואס איר האט שוין געהערט דאס מאל ווערט איבערגעשפרונגען.",

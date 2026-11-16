@@ -8,8 +8,9 @@
  */
 import Base from "../../../layouts/Base.astro";
 import { loadCatalogCorpus } from "../../../components/catalog/corpus.ts";
-import { contentsModel, corpusTotals, sectionHref, type SectionSummary, type SeriesSummary } from "../../../components/catalog/model.ts";
-import { guidePages, useCatalogT } from "../../../components/catalog/strings.ts";
+import { contentsModel, corpusTotals, pocketGuideUrl, sectionHref, type SectionSummary, type SeriesSummary } from "../../../components/catalog/model.ts";
+import { catalogSlot, guidePages, useCatalogT } from "../../../components/catalog/strings.ts";
+import NewTabLink from "../../../components/NewTabLink.astro";
 import { runAttrs } from "../../../lib/bidi.ts";
 import { EDS, type Ed } from "../../../lib/edition.ts";
 
@@ -19,6 +20,7 @@ export function getStaticPaths() {
 
 const ed = Astro.params.ed as Ed;
 const corpus = loadCatalogCorpus();
+const [leadBefore, leadAfter] = catalogSlot(ed, "contents.lead", "guide");
 const model = contentsModel(corpus, ed);
 const totals = corpusTotals(corpus);
 const c = useCatalogT(ed);
@@ -35,7 +37,7 @@ const series: { id: string; title: string; list: SeriesSummary[] }[] = [
 ---
 <Base ed={ed} title={c("contents.title")}>
   <h1>{c("contents.title")}</h1>
-  <p class="lead">{c("contents.lead")}</p>
+  <p class="lead">{leadBefore}<NewTabLink ed={ed} href={pocketGuideUrl(corpus)}>{c("guide.link")}</NewTabLink>{leadAfter}</p>
   <p class="coverage" data-coverage>{c("coverage.withNotes", { full: totals.full, total: totals.total })}</p>
 
   {groups.map((g) => (

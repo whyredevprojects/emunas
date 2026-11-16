@@ -639,3 +639,8 @@ export function corpusTotals(corpus: CatalogCorpus): CorpusTotals {
     hoursAbout: Math.round(seconds / 36000) * 10,
   };
 }
+
+/** The 2012 Pocket Guide as a PDF at the root of the media host. */
+export function pocketGuideUrl(corpus: { readonly build: { readonly mediaOrigin: string } }): string {
+  return `${corpus.build.mediaOrigin}/pocket-guide-2012.pdf`;
+}

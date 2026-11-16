@@ -33,6 +33,8 @@ describe("findMetaComments", () => {
     expect(terms("זיין נאמען הערט מען נישט קלאר.")).toEqual(["הערט מען נישט קלאר"]);
     expect(terms("די מעשה איז נישט קלאר אין דער אויפנאמע")).toEqual(["נישט קלאר אין דער אויפנאמע"]);
     expect(terms("דער טראנסקריפט האט נישט אויפגעכאפט.")).toEqual(["טראנסקריפ*"]);
+    expect(terms("פון אן איבערשרייבונג וואס א מענטש האט באשטעטיגט")).toEqual(["איבערשרייבונג*"]);
+    expect(terms("מאשין־איבערשרייבונגען")).toEqual(["איבערשרייבונג*"]);
     expect(terms("א שטיק וואס איז שווער צו הערן")).toEqual(["שווער צו הערן"]);
     expect(terms("ווען מ'קען נישט אויסהערן")).toEqual(["מקען נישט אויסהערן"]);
     expect(terms("אין א שוואך אויפגענומענעם סוף זאגט דער משגיח")).toEqual(["שוואך אויפגענומען*"]);
@@ -49,6 +51,7 @@ describe("findMetaComments", () => {
     // The teaching's own "not clear" and "confused" pass.
     expect(terms("די תורה האט איבערגעלאזט די שיעורים נישט קלאר כדי א איד זאל גיין צום רב")).toEqual([]);
     expect(terms("דער שופר צעמישט דעם שטן; די וועלט איז צעמישט")).toEqual([]);
+    expect(terms("דאס איבערשרייבן ביי האנט האט געברענגט א שטארקע הבנה")).toEqual([]);
   });
 
   it("gives the term and a short folded context", () => {

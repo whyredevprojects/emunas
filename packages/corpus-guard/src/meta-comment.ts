@@ -63,9 +63,11 @@ export const META_COMMENT_TERMS: readonly string[] = [
   "gap in the recording",
   "gaps in the recording",
   "lost in the recording",
-  // Yiddish: the transcript
+  // Yiddish: the transcript ("איבערשרייבונג" is the W5.3 glossary word for a transcription; the verb
+  // "איבערשרייבן", to copy out by hand, is ordinary teaching and is not listed)
   "טראנסקריפ*",
   "טראנסקריבי*",
+  "איבערשרייבונג*",
   // Yiddish: "not clear" on the recording (נישט קלאר alone is ordinary teaching)
   "הערט מען נישט קלאר",
   "מהערט נישט קלאר",

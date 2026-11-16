@@ -12,8 +12,10 @@ import { loadCatalogCorpus } from "../../components/catalog/corpus.ts";
 import IndexesBlock from "../../components/corpus/IndexesBlock.astro";
 import { quietLayer } from "../../components/corpus/layer.ts";
 import { indexesBlock } from "../../components/corpus/model.ts";
-import { buildDate, contentsHref, contentsModel, corpusTotals, sectionHref, thisWeekModel } from "../../components/catalog/model.ts";
-import { useCatalogT } from "../../components/catalog/strings.ts";
+import { buildDate, contentsHref, contentsModel, corpusTotals, pocketGuideUrl, sectionHref, thisWeekModel } from "../../components/catalog/model.ts";
+import { catalogSlot, useCatalogT } from "../../components/catalog/strings.ts";
+import NewTabLink from "../../components/NewTabLink.astro";
+import { currentSiteEnv } from "../../components/seo/site-env.ts";
 import { runAttrs } from "../../lib/bidi.ts";
 import { EDS, type Ed } from "../../lib/edition.ts";
 import { useT } from "../../i18n/index.ts";
@@ -39,14 +41,21 @@ const builtDirs = new Set(
   Object.keys(import.meta.glob("./*/index.astro")).map((f) => f.split("/").at(-2) ?? ""),
 );
 const layer = quietLayer();
+// The Live site's home in this edition, opened in a new tab; the lead's `{link}` is the link.
+const liveHome = currentSiteEnv().links.live.home(ed);
+const [liveBefore, liveAfter] = catalogSlot(ed, "home.liveLead", "link");
+const [leadBefore, leadAfter] = catalogSlot(ed, "home.lead", "guide");
 const indexLines = indexesBlock(ed, layer.counts, (href) => builtDirs.has(href.split("/")[2] ?? ""));
 ---
 <Base ed={ed} title={t("site.name")}>
   <header class="title-page">
     <h1>{t("site.name")}</h1>
-    <p class="title-lead">{c("home.lead")}</p>
+    <p class="title-lead">{leadBefore}<NewTabLink ed={ed} href={pocketGuideUrl(corpus)}>{c("guide.link")}</NewTabLink>{leadAfter}</p>
     <p class="standing" data-coverage>
       {c("home.standing", { total: totals.total, hours: totals.hoursAbout, full: totals.full })}
+    </p>
+    <p class="live-lead" data-print="hide">
+      {liveBefore}<NewTabLink ed={ed} href={liveHome} hreflang={ed}>{c("home.liveLink")}</NewTabLink>{liveAfter}
     </p>
   </header>
 
@@ -87,6 +96,10 @@ const indexLines = indexesBlock(ed, layer.counts, (href) => builtDirs.has(href.s
 
   .title-lead {
     font-size: var(--step-2);
+  }
+
+  .live-lead {
+    font-size: var(--step-1);
   }
 
   .standing {

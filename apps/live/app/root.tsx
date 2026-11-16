@@ -1,3 +1,7 @@
+// First, so the bundle opens with global.css's `@layer` order statement. A layer's rank is fixed
+// where its name first appears: a CSS module earlier in the bundle would put `components` below
+// `base`, and the base `a` colour would then override every link-styled button.
+import "./styles/global.css";
 import { UI_DIR, isUiLang, type UiLang } from "@emunas/i18n";
 import { useEffect, type JSX, type ReactNode } from "react";
 import {
@@ -17,7 +21,6 @@ import { SeoHead } from "./seo/SeoHead.tsx";
 import { registerServiceWorker } from "../sw/client/register.ts";
 import { NotFound } from "./shell/PageStub.tsx";
 import { connectPersonal } from "./store/connect.ts";
-import "./styles/global.css";
 
 /** Interface language from the first path segment (`/yi/…`); English for `/` and unknown paths. */
 export function uiFromPath(pathname: string): UiLang {
