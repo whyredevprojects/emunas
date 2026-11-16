@@ -21,7 +21,7 @@ import { fileURLToPath } from "node:url";
 import { brotliCompressSync, constants as zc } from "node:zlib";
 import { chromium, type Browser, type Page } from "playwright-core";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import { buildCorpus } from "@emunas/corpus/build";
+import { buildCorpusWithAggregates } from "@emunas/corpus/build/aggregate";
 import { DEFAULT_TRANSCRIPTS_DIR } from "@emunas/corpus-guard";
 import { buildSearch } from "../../scripts/build-search.ts";
 
@@ -68,7 +68,7 @@ beforeAll(async () => {
   const corpusDir = join(work, ".corpus");
   const mini = join(repo, "packages/corpus/test/fixtures/mini");
   const dataDir = realData ? join(repo, "data") : join(mini, "data");
-  buildCorpus({ dataDir, outDir: corpusDir, policyDir: realData ? join(repo, "site-policy") : join(mini, "site-policy"), dataSha: null });
+  buildCorpusWithAggregates({ dataDir, outDir: corpusDir, policyDir: realData ? join(repo, "site-policy") : join(mini, "site-policy"), dataSha: null });
 
   const build = spawnSync(process.execPath, [join(dirname(require.resolve("astro/package.json")), "bin", "astro.mjs"), "build", "--outDir", outDir], {
     cwd: app,
