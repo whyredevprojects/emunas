@@ -6,6 +6,7 @@
  */
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test, type Page } from "@playwright/test";
+import { axeBudget } from "./helpers.ts";
 
 const STUB_PATHS = [
   "",
@@ -158,6 +159,7 @@ test.describe("layout", () => {
 test.describe("accessibility", () => {
   for (const ui of ["en", "yi"] as const) {
     test(`axe finds no violations on any stub (${ui})`, async ({ page }) => {
+      axeBudget(STUB_PATHS.length);
       for (const p of STUB_PATHS) {
         await page.goto(`/${ui}/${p}`);
         await ready(page);

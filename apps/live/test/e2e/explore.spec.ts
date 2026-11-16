@@ -12,7 +12,7 @@
  * `@data`: every expectation comes from the served `/data/*`, so this also runs on a real-data build.
  */
 import { expect, test, type Page } from "@playwright/test";
-import { axeViolations, corpusRows, dataJson, entityRows, NO_SERVICE_WORKER, pageErrors, ready, UIS, type EntityRow } from "./helpers.ts";
+import { axeBudget, axeViolations, corpusRows, dataJson, entityRows, NO_SERVICE_WORKER, pageErrors, ready, UIS, type EntityRow } from "./helpers.ts";
 
 test.use(NO_SERVICE_WORKER);
 
@@ -290,12 +290,14 @@ test.describe("keyboard", () => {
 test.describe("accessibility", () => {
   for (const ui of UIS) {
     test(`axe is clean on every lens and the moments unit (${ui})`, async ({ page }) => {
+      const lenses = ["", "?lens=luach", "?lens=years", "?lens=connections", "?unit=moments"];
+      axeBudget(1 + lenses.length);
       // The topic map Explore opens on.
       await page.goto(`/${ui}/explore`);
       await ready(page);
       await expect(page.getByTestId("topic-map")).toBeVisible({ timeout: 15_000 });
       expect(await axeViolations(page), `${ui}/explore (map)`).toEqual([]);
-      for (const q of ["", "?lens=luach", "?lens=years", "?lens=connections", "?unit=moments"]) {
+      for (const q of lenses) {
         await openExplore(page, q, ui);
         if (q === "?unit=moments") await expect(page.getByTestId("moments-progress")).toHaveCount(0, { timeout: 15_000 });
         expect(await axeViolations(page), `${ui}/explore${q}`).toEqual([]);
