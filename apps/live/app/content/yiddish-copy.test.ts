@@ -5,6 +5,8 @@
  * here. Wording itself is reviewed by a person; this only guards the decisions already made.
  */
 import { describe, expect, it } from "vitest";
+import { findMetaComments } from "@emunas/corpus-guard";
+import { CORPUS_LABELS, NOTICES, SECTION_KIND_LABELS } from "@emunas/i18n";
 import { offlineEn, offlineYi } from "../../sw/client/strings.ts";
 import { searchEn, searchYi } from "../features/command-bar/strings.ts";
 import { browseEn, browseYi } from "../features/entities/strings.ts";
@@ -145,5 +147,23 @@ describe("Yiddish UI copy (Live)", () => {
         expect(placeholders(yiValue), `${name}.${key}`).toEqual(placeholders(en));
       }
     }
+  });
+
+  it("never remarks on the audio or the transcript, in either language (the guard's term list)", () => {
+    // The transcript tab is designed and OFF (TRANSCRIPT_VIEW); its strings name what it shows.
+    const tables = Object.entries(PAIRS).filter(([name]) => name !== "transcript");
+    const all = [
+      ...tables.flatMap(([name, pair]) => [...strings(pair.en, `${name}.en`), ...strings(pair.yi, `${name}.yi`)]),
+      ...strings(seoSamples(seoStrings.en), "seo.en"),
+      ...strings(seoSamples(seoStrings.yi), "seo.yi"),
+      ...strings(threadsEn, "threads"),
+      ...strings(maasiosEn, "maasios"),
+      ...strings(CORPUS_LABELS, "corpus"),
+      ...strings(SECTION_KIND_LABELS, "sectionKinds"),
+      ...strings(NOTICES, "notices"),
+      ...strings(AI_LABEL, "aiLabel"),
+    ];
+    expect(all.length).toBeGreaterThan(400);
+    expect(all.flatMap(([path, s]) => findMetaComments(s).map((h) => `${path}: ${h.term}`))).toEqual([]);
   });
 });

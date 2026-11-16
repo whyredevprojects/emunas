@@ -259,10 +259,10 @@ function buildNotes(
   }
   const skipChapters = chapters.filter((c) => SKIP_KINDS.has(c.kind)).map((c): SkipRange => [c.t, c.end, c.kind]);
   const skip: SkipRange[] = [
-    // ASR-noise ranges already inside a skippable chapter add nothing.
+    // Pause ranges (segments flagged as noise in meta.json) already inside a skippable chapter add nothing.
     ...mergeRanges(noise)
       .filter(([a, b]) => !skipChapters.some(([s, e]) => a >= s && b <= e))
-      .map(([a, b]): SkipRange => [a, b, "asr-noise"]),
+      .map(([a, b]): SkipRange => [a, b, "pause"]),
     ...skipChapters,
   ].sort((x, y) => x[0] - y[0] || x[1] - y[1]);
 

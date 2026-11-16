@@ -6,6 +6,7 @@
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
+import { findMetaComments } from "@emunas/corpus-guard";
 import { describe, expect, it } from "vitest";
 import { ABOUT_PARTS } from "../pages/[ed]/about/_strings.ts";
 
@@ -77,6 +78,15 @@ describe("About drafts", () => {
   it("never mention a transcript path or field", () => {
     for (const file of walk(drafts)) {
       expect(readFileSync(file, "utf8"), relative(here, file)).not.toMatch(/transcripts\/|heardAs|asrNotes|audioKey|transcriptKey/);
+    }
+  });
+
+  it("never remark on the audio or the transcript (the guard's term list)", () => {
+    for (const ed of EDS) {
+      for (const part of ABOUT_PARTS) {
+        const text = body(readFileSync(join(drafts, ed, `${part}.md`), "utf8"));
+        expect(findMetaComments(text).map((h) => h.term), `${ed}/${part}`).toEqual([]);
+      }
     }
   });
 

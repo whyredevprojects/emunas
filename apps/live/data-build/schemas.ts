@@ -115,7 +115,7 @@ const notes = v.strictObject({
       sub: v.array(v.strictObject({ title: L, summary: L, t: num })),
     }),
   ),
-  skip: v.array(v.tuple([num, num, v.picklist([...sectionKind.options, "asr-noise"])])),
+  skip: v.array(v.tuple([num, num, v.picklist([...sectionKind.options, "pause"])])),
   sources: v.array(
     v.strictObject({
       idx: int,

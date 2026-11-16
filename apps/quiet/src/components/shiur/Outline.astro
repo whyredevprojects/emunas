@@ -4,8 +4,9 @@
  * time (a link that seeks the player, or opens the recording at that second without script), the
  * title and the 1–3 sentence summary; subsections indented. Anchors `#s{idx}`.
  *
- * `story` chapters get a small "מעשה" mark; singing, another speaker, unclear audio and brachah
- * are listed in a lighter weight with their kind and no summary. Chapters the catalog title
+ * `story` chapters get a small "מעשה" mark; singing, another speaker, interludes (`noise`) and
+ * brachah are listed in a lighter weight with no summary, with their kind after the title (an
+ * interlude's neutral title from the data stands alone). Chapters the catalog title
  * anticipated (`catalogTopicIdx`) are marked "listed in the guide".
  *
  * The list is a margin-mark group (`data-marks`): with script, the chapter being heard gets
@@ -40,7 +41,7 @@ const t = useShiurT(ed);
             <Time ed={ed} recordings={recordings} t={c.t} />
             {" "}
             <span class="chapter-title">{quiet && title === "" ? sectionKindLabel(c.kind, ed) : title}</span>
-            {quiet && title !== "" && <span class="chapter-kind"> ({sectionKindLabel(c.kind, ed)})</span>}
+            {quiet && title !== "" && c.kind !== "noise" && <span class="chapter-kind"> ({sectionKindLabel(c.kind, ed)})</span>}
             {c.kind === "story" && <span class="chapter-mark">{sectionKindLabel("story", ed)}</span>}
             {c.catalogTopicIdx.length > 0 && <span class="chapter-mark">{t("outline.listedInGuide")}</span>}
           </p>

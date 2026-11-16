@@ -306,7 +306,7 @@ interface PublicShiur {
     summary: { oneLiner: L; abstract: L; keyPoints: Moment[] };
     chapters: { idx: number; t: number; end: number; title: L; summary: L; kind: SectionKind;
                 catalogTopicIdx: number[]; sub: { title: L; summary: L; t: number }[]; soft?: true }[];
-    skip: [number, number, SectionKind | "asr-noise"][];      // seconds only
+    skip: [number, number, SectionKind | "pause"][];      // seconds only
     sources: { idx: number; work: string | null; workKey: string | null; ref: string | null; sefariaRef: string | null;
                resolution: "resolved" | "inferred" | "unresolved"; mention: "quoted" | "paraphrased" | "alluded"; t: number }[];
     insights: Moment[]; takeaways: Moment[];
@@ -485,7 +485,7 @@ Same ids as the wave lists in §7 and the structured plan. Paths are the only fi
 
 - **Owns:** `apps/live/app/player-engine/**`
 - **Depends on:** W1.2
-- **Brief (inputs, deliverables):** Inputs: tech-live §4.1; PublicShiur recordings/chapters/skip from @emunas/corpus/public. Framework-free engine with one HTMLAudioElement created outside React, getState/subscribe, global timeline over recordings with src swap at boundaries, chapter next/prev (restart if >3 s), skip rules (default noise/singing/other_speaker/asr-noise ≥20 s) scheduled from currentTime and playbackRate with undo event, moment queue items {shiurId,start,end?} pausing at end, Media Session (metadata, position state, prev/next = chapters, seek ±15 s, seekto), speed 0.75–2, sleep timer, progress callback every 5 s/pause/pagehide. Audio URLs from recordings[].audioUrl (media host, A1); playable:false recordings are skipped with an "unavailable" state.
+- **Brief (inputs, deliverables):** Inputs: tech-live §4.1; PublicShiur recordings/chapters/skip from @emunas/corpus/public. Framework-free engine with one HTMLAudioElement created outside React, getState/subscribe, global timeline over recordings with src swap at boundaries, chapter next/prev (restart if >3 s), skip rules (default noise/singing/other_speaker/pause ≥20 s) scheduled from currentTime and playbackRate with undo event, moment queue items {shiurId,start,end?} pausing at end, Media Session (metadata, position state, prev/next = chapters, seek ±15 s, seekto), speed 0.75–2, sleep timer, progress callback every 5 s/pause/pagehide. Audio URLs from recordings[].audioUrl (media host, A1); playable:false recordings are skipped with an "unavailable" state.
 - **Acceptance:** Vitest with a fake media element: timeline math across 2 recordings, skip scheduling at 1×/1.5×/2×, recording swap, moment end pause, chapter prev rule; no React import in the engine.
 
 #### W2.6 — emunas-api Worker: D1 schema, search API, feedback API

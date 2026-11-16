@@ -5,6 +5,8 @@
  * here. Wording itself is reviewed by a person; this only guards the decisions already made.
  */
 import { describe, expect, it } from "vitest";
+import { findMetaComments } from "@emunas/corpus-guard";
+import { CORPUS_LABELS, NOTICES, SECTION_KIND_LABELS } from "@emunas/i18n";
 import { calendarEn, calendarYi } from "../components/calendar/strings.ts";
 import { catalogEn, catalogYi } from "../components/catalog/strings.ts";
 import { indexesEn, indexesYi } from "../components/indexes/strings.ts";
@@ -117,5 +119,22 @@ describe("Yiddish UI copy (Quiet)", () => {
         expect(placeholders(yiValue), `${name}.${key}`).toEqual(placeholders(en));
       }
     }
+  });
+
+  it("never remarks on the audio or the transcript, in either language (the guard's term list)", () => {
+    // The follow-text view is designed and OFF (EMUNAS_TRANSCRIPT_VIEW); its strings name what it shows.
+    const tables = Object.entries(PAIRS).filter(([name]) => name !== "followText");
+    const all = [
+      ...tables.flatMap(([name, pair]) => [...strings(pair.en, `${name}.en`), ...strings(pair.yi, `${name}.yi`)]),
+      ...strings(corpusEn, "corpus"),
+      ...strings(storiesEn, "stories"),
+      ...strings(topicsEn, "topics"),
+      ...strings(CORPUS_LABELS, "corpusLabels"),
+      ...strings(SECTION_KIND_LABELS, "sectionKinds"),
+      ...strings(NOTICES, "notices"),
+      ...strings(AI_LABEL, "aiLabel"),
+    ];
+    expect(all.length).toBeGreaterThan(400);
+    expect(all.flatMap(([path, s]) => findMetaComments(s).map((h) => `${path}: ${h.term}`))).toEqual([]);
   });
 });

@@ -73,7 +73,7 @@ export interface PublicChapter {
   sub: { title: L; summary: L; t: number }[];
 }
 
-export type SkipKind = SectionKind | "asr-noise";
+export type SkipKind = SectionKind | "pause";
 /** [startSec, endSec, kind] in global seconds. */
 export type SkipRange = [number, number, SkipKind];
 

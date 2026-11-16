@@ -20,13 +20,13 @@ describe("planSkips", () => {
       [100, 130, "singing"],
       [200, 260, "main"],
       [300, 325, "other_speaker"],
-      [400, 419.9, "asr-noise"],
-      [500, 520, "asr-noise"],
+      [400, 419.9, "pause"],
+      [500, 520, "pause"],
     ];
     expect(planSkips(ranges, DEFAULT_SKIP, 1000).map((p) => [p.start, p.end, p.kind])).toEqual([
       [100, 130, "singing"],
       [300, 325, "other_speaker"],
-      [500, 520, "asr-noise"],
+      [500, 520, "pause"],
     ]);
   });
 

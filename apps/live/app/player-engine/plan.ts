@@ -16,7 +16,7 @@ export const PREV_RESTART_SECONDS = 3;
 
 export const DEFAULT_SKIP: SkipSettings = {
   enabled: true,
-  kinds: ["noise", "singing", "other_speaker", "asr-noise"],
+  kinds: ["noise", "singing", "other_speaker", "pause"],
   minSeconds: 20,
 };
 

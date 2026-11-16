@@ -182,7 +182,7 @@ interface PublicShiur {
   summary?: { oneLiner: L; abstract: L; keyPoints: Moment[] };
   chapters?: { idx: number; t: number; end: number; title: L; summary: L; kind: SectionKind;
                catalogTopicIdx: number[]; soft?: true }[];
-  skip?: [number, number, SectionKind | "asr-noise"][];
+  skip?: [number, number, SectionKind | "pause"][];
   sources?: { idx: number; work: string | null; workId?: string; ref: string | null;
               sefariaRef: string | null; resolution: "resolved" | "inferred" | "unresolved";
               mention: "quoted" | "paraphrased" | "alluded"; t: number }[];
@@ -276,7 +276,7 @@ Recommend handing these to the pipeline as seed data for its glossary pass (conc
 - A single `HTMLAudioElement`, created once, outside React. The engine exposes `getState()/subscribe()` for `useSyncExternalStore`.
 - **Timeline**: a shiur is `recordings[]` with offsets. Global `t` maps to (recording, local t). At a recording boundary the engine swaps `src` and continues, so 4 multi-recording shiurim play as one timeline.
 - **Chapters**: `[t, end)` from `chapters`. Next/previous go by chapter, and previous restarts the current chapter if more than 3 s have played.
-- **Skip rules**: `skip` ranges filtered by user settings (default: skip `noise`, `singing`, `other_speaker`, `asr-noise` ≥ 20 s). Scheduled with a timer computed from `currentTime` and `playbackRate`, re-armed on `seeking`, `ratechange` and `play`, with `timeupdate` only as a backstop. On a skip the engine emits an event and the dock shows "skipped 2:10 of singing" with an undo action.
+- **Skip rules**: `skip` ranges filtered by user settings (default: skip `noise`, `singing`, `other_speaker`, `pause` ≥ 20 s). Scheduled with a timer computed from `currentTime` and `playbackRate`, re-armed on `seeking`, `ratechange` and `play`, with `timeupdate` only as a backstop. On a skip the engine emits an event and the dock shows "skipped 2:10 of singing" with an undo action.
 - **Moments**: a queue item is `{ shiurId, start, end? }`. At `end` the engine pauses and offers "keep listening".
 - **Media Session**: `MediaMetadata` (title = chapter title in reading language; artist = "Harav Moshe Wolfson zt"l"; album = catalog title or series), `setPositionState`. Actions: `previoustrack/nexttrack` → chapters (the car and lock-screen behaviour the concept wants), `seekbackward/seekforward` (15 s), `seekto`. `chapterInfo` is set where supported, as progressive enhancement.
 - Speed (0.75–2), sleep timer (end of chapter, end of shiur, N minutes).

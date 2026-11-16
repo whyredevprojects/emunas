@@ -1,7 +1,8 @@
 /**
  * Chapters (concept-live §5.3): titles and summaries, the active one highlighted while it plays.
  * `kind` drives behaviour: noise / singing / other_speaker are greyed and marked as skipped (when the
- * skip setting covers them); `story` carries a marker; intro / closing / brachah are collapsed.
+ * skip setting covers them); `story` carries a marker; intro / closing / brachah are collapsed. An
+ * interlude (`noise`) shows its neutral title from the data with no kind label.
  * Each chapter shows its topic chips from the corpus layer (none on other-speaker chapters); a chip
  * opens the topic beside the shiur while the audio continues (concept-live-corpus D).
  */
@@ -61,7 +62,7 @@ export function Chapters({ room }: { room: RoomContext }): JSX.Element | null {
               <div className={s.chapterHead}>
                 {title}
                 {c.kind === "story" ? <span className={s.badge}>{rt("room.storyMarker")}</span> : null}
-                {c.kind !== "story" && c.kind !== "main" ? (
+                {c.kind !== "story" && c.kind !== "main" && c.kind !== "noise" ? (
                   <span className={s.kind}>{sectionKindLabel(c.kind, ui)}</span>
                 ) : null}
                 {skipped ? <span className={s.kind}>{rt("room.chapterSkipped")}</span> : null}

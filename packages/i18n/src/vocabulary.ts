@@ -57,7 +57,7 @@ export const SECTION_KIND_LABELS: Labels<SectionKind> = {
   brachah: { en: "Brachah", yi: "ברכה" },
   singing: { en: "Singing", yi: "ניגון" },
   other_speaker: { en: "Another speaker", yi: "אן אנדער רעדנער" },
-  noise: { en: "Unclear audio", yi: "נישט קלאר אויפגענומען" },
+  noise: { en: "Interlude", yi: "הפסקה" },
 };
 
 /**

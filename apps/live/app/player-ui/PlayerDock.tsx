@@ -33,7 +33,7 @@ export function formatRate(rate: number): string {
 }
 
 function skipKindLabel(kind: SkipKind, ui: UiLang): string {
-  return sectionKindLabel(kind === "asr-noise" ? "noise" : kind, ui);
+  return sectionKindLabel(kind === "pause" ? "noise" : kind, ui);
 }
 
 type SleepChoice = "off" | "running" | "15" | "30" | "60" | "chapter" | "shiur";
