@@ -78,7 +78,7 @@ The global navigation is one line and never changes: **Contents · Calendar · I
 Responsibility: say what this is and offer the three ways in.
 
 - The name of the collection and one sentence about it. No hero imagery, no carousel.
-- **This week**: the current parsha and the nearest zman, each as a short list of links (titles only) into the calendar index. Computed at build time; the site is rebuilt daily (§10), so this needs no script.
+- **This week**: the current parsha and the nearest zman, each as a short list of links (titles only) into the calendar index. Computed at build time for the build day (US Eastern) and the days around it: one before and three after. A small script shows the visitor's own day, rolling over at their local midnight as in Live. Without script, or outside those days, the page shows the build day and its lead says which day that is. The Quiet-only rebuild every second day (§10) keeps the window current.
 - **The contents in brief**: the guide's sections with counts ("זמנים · 223 שיעורים").
 - **The indexes**, one line each.
 - A small standing line: "997 shiurim, about 770 hours. Notes are available for 518 so far and are being added." The numbers come from the manifest at build time.
@@ -289,7 +289,7 @@ The future door: each recording gets a site-owned eligibility setting, default "
 ## 10. Growing while the data arrives
 
 - The build takes whatever is in `data/` at that moment. A shiur is "with notes" when its manifest entry is `done` and both `extraction.json` and `writeup.json` are present; otherwise it renders in the pending state. No list of shiurim is maintained by hand.
-- A scheduled daily rebuild serves two purposes: it picks up newly committed derived data, and it keeps "this week" on the title page current.
+- Newly committed derived data reaches the site through the deploy that every push to `main` runs. A separate scheduled rebuild of Quiet alone, every second day, keeps the "this week" window on the title page current.
 - Indexes are honest about coverage. Each AI-derived index carries one line under its heading: "Compiled from the 518 shiurim that have notes so far, of 997." The catalog-derived pages (contents, calendar, years) are complete from day one and say nothing.
 - Addresses never change. They are built from `Shiur.id`, `sectionId`, `Series.id` and normalised parsha/zman names, all of which exist before any AI data does.
 - If a shiur is reprocessed (new `promptVersion`), its page simply changes. No version history is shown.

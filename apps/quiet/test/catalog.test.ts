@@ -15,6 +15,7 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import CatalogTable from "../src/components/catalog/CatalogTable.astro";
 import { findCorpusDir, loadCatalogCorpus, type CatalogCorpus } from "../src/components/catalog/corpus.ts";
 import {
+  addIsoDays,
   buildDate,
   catalogRow,
   contentsModel,
@@ -28,6 +29,9 @@ import {
   seriesModel,
   seriesSummaries,
   thisWeekModel,
+  thisWeekWindow,
+  WEEK_DAYS_AFTER,
+  WEEK_DAYS_BEFORE,
   THIS_WEEK_LIMIT,
   type CatalogRow,
 } from "../src/components/catalog/model.ts";
@@ -97,9 +101,19 @@ describe("addresses and helpers", () => {
     expect(perekIsNumeral("")).toBe(false);
   });
 
-  it("takes the build date from EMUNAS_BUILD_DATE, else today (UTC)", () => {
-    expect(buildDate({ EMUNAS_BUILD_DATE: "2027-03-01" })).toBe("2027-03-01");
-    expect(buildDate({ EMUNAS_BUILD_DATE: "soon" }, new Date("2026-11-15T23:30:00Z"))).toBe("2026-11-15");
+  it("takes the build date from EMUNAS_BUILD_DATE, else today in New York", () => {
+    expect(buildDate({ EMUNAS_BUILD_DATE: "2027-03-01" }, new Date("2026-11-15T12:00:00Z"))).toBe("2027-03-01");
+    expect(buildDate({ EMUNAS_BUILD_DATE: "soon" }, new Date("2026-11-16T04:30:00Z"))).toBe("2026-11-15");
+    expect(buildDate({}, new Date("2026-11-16T05:30:00Z"))).toBe("2026-11-16");
+    // EDT: midnight is 04:00 UTC
+    expect(buildDate({}, new Date("2026-07-01T03:59:00Z"))).toBe("2026-06-30");
+    expect(buildDate({}, new Date("2026-07-01T04:01:00Z"))).toBe("2026-07-01");
+  });
+
+  it("adds civil days across month and year ends", () => {
+    expect(addIsoDays("2026-11-30", 1)).toBe("2026-12-01");
+    expect(addIsoDays("2027-01-01", -1)).toBe("2026-12-31");
+    expect(addIsoDays("2027-03-14", 3)).toBe("2027-03-17");
   });
 
   it("finds .corpus/ by walking up, or via EMUNAS_CORPUS_DIR", () => {
@@ -243,6 +257,32 @@ describe("this week", () => {
     const w = thisWeekModel(corpus, "en", "2026-11-15", empty);
     expect(w.parsha).toBeNull();
     expect(w.zman).toBeNull();
+    const win = thisWeekWindow(corpus, "en", "2026-11-15", empty);
+    expect(win.blocks.size).toBe(0);
+    expect(win.days.every((d) => d.blocks.length === 0)).toBe(true);
+  });
+
+  it("carries the days around the build day, each occasion block once", () => {
+    // Thursday 9 Kislev: the window runs to Sunday, when the parsha turns to Vayishlach.
+    const w = thisWeekWindow(corpus, "en", "2026-11-19");
+    expect(w.days.map((d) => d.date)).toEqual(["2026-11-18", "2026-11-19", "2026-11-20", "2026-11-21", "2026-11-22"]);
+    expect(w.days).toHaveLength(WEEK_DAYS_BEFORE + 1 + WEEK_DAYS_AFTER);
+    expect(w.today.date).toBe("2026-11-19");
+    expect(w.today.blocks).toEqual(["parsha:vayeitzei", "zman:chanukah:soon"]);
+    expect(w.days.at(-1)!.blocks).toEqual(["parsha:vayishlach", "zman:chanukah:soon"]);
+    expect([...w.blocks.keys()].sort()).toEqual(["parsha:vayeitzei", "parsha:vayishlach", "zman:chanukah:soon"]);
+    for (const d of w.days) for (const k of d.blocks) expect(w.blocks.has(k), `${d.date} ${k}`).toBe(true);
+    for (const ed of ["en", "yi"] as const) {
+      const labels = thisWeekWindow(corpus, ed, "2026-11-19").days.map((d) => d.hebrewDate);
+      expect(new Set(labels).size, ed).toBe(labels.length);
+    }
+  });
+
+  it("keys a zman that is on apart from one that is coming", () => {
+    const start = calendar.occasionWindows("chanukah")[0]!.start;
+    const w = thisWeekWindow(corpus, "en", start);
+    expect(w.days[0]!.blocks).toContain("zman:chanukah:soon");
+    expect(w.today.blocks).toContain("zman:chanukah:now");
   });
 });
 
