@@ -70,12 +70,37 @@ export interface Row {
   series: { id: string; order: number } | null;
   duration: number;
   derived: string;
-  entities: { works: string[]; people: string[]; concepts: string[] };
   counts: { chapters: number; stories: number; questions: number; insights: number };
 }
 
 export async function corpusRows(request: APIRequestContext): Promise<Row[]> {
   return (await dataJson<{ shiurim: Row[] }>(request, "corpus.json")).shiurim;
+}
+
+/** A `corpus.json` row with its entity ids, as Explore's entity facets see them. */
+export type EntityRow = Row & { entities: { works: string[]; people: string[]; concepts: string[] } };
+
+/**
+ * `corpus.json` rows joined with `explore/entities.json` (corpus.json carries no entity ids), an
+ * independent reference for Explore's entity facets: a person, concept or work counts only when
+ * `facets.json` lists it (Live lists it); a shiur without an entry has none.
+ */
+export async function entityRows(request: APIRequestContext): Promise<EntityRow[]> {
+  type Ids = { people?: unknown; concepts?: unknown; works?: unknown };
+  const [rows, file, facets] = await Promise.all([
+    corpusRows(request),
+    dataJson<{ shiurim: Record<string, Ids> }>(request, "explore/entities.json"),
+    dataJson<Record<"person" | "concept" | "work", Record<string, unknown>>>(request, "facets.json"),
+  ]);
+  const ids = (x: unknown, listed: Record<string, unknown>): string[] =>
+    Array.isArray(x) ? [...new Set(x.filter((v): v is string => typeof v === "string" && Object.hasOwn(listed, v)))] : [];
+  return rows.map((r) => {
+    const e: Ids = Object.hasOwn(file.shiurim, r.id) ? file.shiurim[r.id]! : {};
+    return {
+      ...r,
+      entities: { people: ids(e.people, facets.person), concepts: ids(e.concepts, facets.concept), works: ids(e.works, facets.work) },
+    };
+  });
 }
 
 /** App pages that need no data file to exist (the rail, indexes, personal pages). */
