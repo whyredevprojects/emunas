@@ -16,6 +16,7 @@ import type {
   DataKind,
   FacetsFile,
   GlossaryShardFile,
+  QuickIndexFile,
   ShiurFile,
   StoriesIndexFile,
   StoryFile,
@@ -244,10 +245,40 @@ describe("corpus-layer files on the mini corpus", () => {
       // C2.6: a person page shows the person's own display aliases ("also called"), and only those.
       const person = /^entity\/p\//.test(f) ? (body as EntityFile).person : undefined;
       if (person) expect(person.aliases.every((a) => people.get(person.id)!.aliases.includes(a)), f).toBe(true);
+      // C3.6: the quick index carries the clean synonyms (layer synonyms.json) of its suggestible entities.
+      const quick = /^quick-index\./.test(f) ? (body as QuickIndexFile) : undefined;
+      if (quick) {
+        const own = new Map(layer.synonyms.map((x) => [`${x.kind}:${x.id}`, new Set(x.terms)]));
+        for (const e of quick.entities) {
+          const terms = own.get(`${e.kind}:${e.id}`) ?? new Set<string>();
+          expect(e.synonyms.every((t) => terms.has(t)), `${f} ${e.kind}:${e.id}`).toBe(true);
+        }
+      }
       for (const k of ["aliases", "synonyms", "transliterations", "terms_", "asrVariants", "heardAsSamples", "sibling", "counterpart"]) {
         if (k === "aliases" && person) continue;
+        if (k === "synonyms" && quick) continue;
         expect(keys.has(k), `${f}: ${k}`).toBe(false);
       }
+    }
+  });
+
+  it("the quick index suggests exactly the entities with a Live page, with clean synonyms (C3.6)", () => {
+    for (const lang of ["en", "yi"] as const) {
+      const quick = get<QuickIndexFile>(`quick-index.${lang}.json`);
+      const has = (kind: string, id: string) => quick.entities.some((e) => e.kind === kind && e.id === id);
+      expect(has("topic", "hester-panim")).toBe(true);
+      expect(has("person", "baal-shem-tov")).toBe(true);
+      // Every person suggestion has a page; no `other`-group person is ever suggested (E.1, D2).
+      for (const p of layer.people) {
+        const page = files.has(`entity/p/${p.id}.json`);
+        expect(has("person", p.id), p.id).toBe(page);
+        if (p.type === "other" || p.group === "other") expect(has("person", p.id), p.id).toBe(false);
+      }
+      for (const c of layer.concepts) expect(has("concept", c.id), c.id).toBe(files.has(`entity/c/${c.id}.json`));
+      for (const w of layer.works) expect(has("work", w.id), w.id).toBe(files.has(`work/${w.id}.json`));
+      for (const t of layer.topics) expect(has("topic", t.id), t.id).toBe(files.has(`topic/${t.id}.json`));
+      // An ASR mishearing of the Baal Shem Tov is not a synonym of anything.
+      expect(quick.entities.flatMap((e) => e.synonyms)).not.toContain("hashem tov");
     }
   });
 

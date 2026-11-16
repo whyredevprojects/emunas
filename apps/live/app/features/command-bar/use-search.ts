@@ -1,14 +1,18 @@
 /**
  * React state for the two search paths (tech-live §4.4):
  * - `useQuickSearch`: the lazily loaded client engine (suggestions; shiur-level matching).
- * - `useFullSearch`: `/api/search` for a committed query, falling back to the client engine's
- *   shiur-level results when the browser is offline or the request fails ("showing shiur-level results").
+ * - `useSuggestions`: the engine's suggestions plus "Tanya 12" jumps from the named series' files.
+ * - `useFullSearch`: `/api/search` for a committed query (with corpus-id entity filters), falling back
+ *   to the client engine's shiur-level results when the browser is offline or the request fails
+ *   ("showing shiur-level results").
  */
 import type { Ed } from "@emunas/corpus/public";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { fetchSearch, SearchApiError, type ApiResponse } from "./api.ts";
-import type { QuickSearch, ShiurHit } from "./engine.ts";
-import { loadQuickSearch } from "./load.ts";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { fetchSearch, SearchApiError, type ApiResponse, type EntityFilters } from "./api.ts";
+import { seriesPartSuggestions, type QuickSearch, type ShiurHit, type Suggestion } from "./engine.ts";
+import { loadExploreEntities } from "./live-data.ts";
+import { loadQuickSearch, loadSeriesParts } from "./load.ts";
+import { filtersKey, hasFilters, parseFiltersKey } from "./model.ts";
 
 export type QuickStatus = "idle" | "loading" | "ready" | "error";
 
@@ -62,6 +66,35 @@ export function useQuickSearch(ui: Ed, eager = false): QuickState {
   return { status: state.status, engine: state.engine, ensure };
 }
 
+/**
+ * Suggestions for `q`: "Tanya 12" jumps first (from the named series' files, fetched on demand and
+ * cached), then the engine's years, occasions, series and corpus entities. Capped at `limit`.
+ */
+export function useSuggestions(engine: QuickSearch | null, q: string, limit: number): Suggestion[] {
+  const query = q.trim();
+  const base = useMemo(() => (engine && query ? engine.suggest(query, limit) : []), [engine, query, limit]);
+  const [parts, setParts] = useState<{ q: string; list: Suggestion[] }>({ q: "", list: [] });
+  useEffect(() => {
+    const targets = engine && query ? engine.seriesTargets(query) : [];
+    if (targets.length === 0) return;
+    let live = true;
+    void Promise.all(
+      targets.map((tg) =>
+        loadSeriesParts(tg.seriesKey).then(
+          (file) => seriesPartSuggestions(file, tg),
+          () => [] as Suggestion[],
+        ),
+      ),
+    ).then((lists) => {
+      if (live) setParts({ q: query, list: lists.flat() });
+    });
+    return () => {
+      live = false;
+    };
+  }, [engine, query]);
+  return useMemo(() => [...(parts.q === query ? parts.list : []), ...base].slice(0, limit), [parts, query, base, limit]);
+}
+
 export type FallbackReason = "offline" | "failed";
 
 export type FullState =
@@ -79,6 +112,21 @@ export interface FullSearchOptions {
   ui: Ed;
   audio?: Ed[];
   limit?: number;
+  /** Corpus-id entity filters (topic, concept, person, work); sent to the API as they are. */
+  filters?: EntityFilters;
+}
+
+const PLURAL = { topic: "topics", concept: "concepts", person: "people", work: "works" } as const;
+
+/** Shiur-level hits restricted to shiurim carrying every filtered entity (Explore's corpus ids per shiur). */
+async function filterHits(hits: ShiurHit[], filters: EntityFilters): Promise<ShiurHit[]> {
+  if (!hasFilters(filters)) return hits;
+  const file = await loadExploreEntities();
+  const kinds = Object.keys(PLURAL) as (keyof typeof PLURAL)[];
+  return hits.filter((h) => {
+    const e = file.shiurim[h.shiurId];
+    return e !== undefined && kinds.every((k) => (filters[k] ?? []).every((id) => (e[PLURAL[k]] ?? []).includes(id)));
+  });
 }
 
 function reasonOf(e: unknown): FallbackReason {
@@ -93,6 +141,7 @@ function isAbort(e: unknown): boolean {
 export function useFullSearch(q: string | null, opts: FullSearchOptions): FullSearch {
   const { ui, limit } = opts;
   const audioKey = (opts.audio ?? []).join(",");
+  const fKey = filtersKey(opts.filters ?? {});
   const [state, setState] = useState<FullState>({ phase: "idle" });
   const stateRef = useRef(state);
   stateRef.current = state;
@@ -102,16 +151,18 @@ export function useFullSearch(q: string | null, opts: FullSearchOptions): FullSe
   const fallback = useCallback(
     (fq: string, reason: FallbackReason, isCurrent: () => boolean) => {
       setState({ phase: "fallback", q: fq, reason, hits: null, error: false });
-      loadQuickSearch(ui).then(
-        (engine) => {
-          if (isCurrent()) setState({ phase: "fallback", q: fq, reason, hits: engine.shiurs(fq, 30), error: false });
-        },
-        () => {
-          if (isCurrent()) setState({ phase: "fallback", q: fq, reason, hits: [], error: true });
-        },
-      );
+      loadQuickSearch(ui)
+        .then((engine) => filterHits(engine.shiurs(fq, 30), parseFiltersKey(fKey)))
+        .then(
+          (hits) => {
+            if (isCurrent()) setState({ phase: "fallback", q: fq, reason, hits, error: false });
+          },
+          () => {
+            if (isCurrent()) setState({ phase: "fallback", q: fq, reason, hits: [], error: true });
+          },
+        );
     },
-    [ui],
+    [ui, fKey],
   );
 
   useEffect(() => {
@@ -124,7 +175,8 @@ export function useFullSearch(q: string | null, opts: FullSearchOptions): FullSe
     const isCurrent = () => !ctrl.signal.aborted;
     setState({ phase: "loading", q: query });
     const audio = audioKey ? (audioKey.split(",") as Ed[]) : undefined;
-    fetchSearch({ q: query, ui, ...(audio ? { audio } : {}), ...(limit ? { limit } : {}) }, { signal: ctrl.signal }).then(
+    const filters = parseFiltersKey(fKey);
+    fetchSearch({ q: query, ui, filters, ...(audio ? { audio } : {}), ...(limit ? { limit } : {}) }, { signal: ctrl.signal }).then(
       (res) => {
         if (isCurrent()) setState({ phase: "api", q: query, pages: [res], next: res.next, loadingMore: false, stale: false });
       },
@@ -134,7 +186,7 @@ export function useFullSearch(q: string | null, opts: FullSearchOptions): FullSe
       },
     );
     return () => ctrl.abort();
-  }, [query, ui, audioKey, limit, fallback]);
+  }, [query, ui, audioKey, fKey, limit, fallback]);
 
   const more = useCallback(() => {
     const s = stateRef.current;
@@ -144,7 +196,7 @@ export function useFullSearch(q: string | null, opts: FullSearchOptions): FullSe
     setState({ ...s, loadingMore: true });
     const audio = audioKey ? (audioKey.split(",") as Ed[]) : undefined;
     fetchSearch(
-      { q: s.q, ui, cursor: s.next, ...(audio ? { audio } : {}), ...(limit ? { limit } : {}) },
+      { q: s.q, ui, cursor: s.next, filters: parseFiltersKey(fKey), ...(audio ? { audio } : {}), ...(limit ? { limit } : {}) },
       { signal: ctrl.signal },
     ).then(
       (res) => {
@@ -162,7 +214,7 @@ export function useFullSearch(q: string | null, opts: FullSearchOptions): FullSe
         setState((cur) => (cur.phase === "api" && cur.q === s.q ? { ...cur, next: null, loadingMore: false, stale } : cur));
       },
     );
-  }, [ui, audioKey, limit]);
+  }, [ui, audioKey, fKey, limit]);
 
   useEffect(() => () => moreCtrl.current?.abort(), []);
 

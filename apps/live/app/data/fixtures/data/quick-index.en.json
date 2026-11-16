@@ -10,7 +10,8 @@
    "entities"
   ],
   "storeFields": [
-   "name"
+   "name",
+   "lang"
   ],
   "idField": "id"
  },
@@ -517,184 +518,244 @@
   ],
   "storedFields": {
    "0": {
-    "name": "Emunah - The Everlasting Essence of a Jewish Heart"
+    "name": "Emunah - The Everlasting Essence of a Jewish Heart",
+    "lang": "en"
    },
    "1": {
-    "name": "Purim - Hashem Behind the Cloak of עשו"
+    "name": "Purim - Hashem Behind the Cloak of עשו",
+    "lang": "en"
    },
    "2": {
-    "name": "פרק ששי: The קדושה of צדיקים and the חשיבות of Learning תורה"
+    "name": "פרק ששי: The קדושה of צדיקים and the חשיבות of Learning תורה",
+    "lang": "en"
    },
    "3": {
-    "name": "The Greatness of the חכמי התורה and the קדושה that Exists in their names"
+    "name": "The Greatness of the חכמי התורה and the קדושה that Exists in their names",
+    "lang": "en"
    },
    "4": {
-    "name": "The Recession - Give צדקה with שמחה. The קדושים of the Mumbai Massacre"
+    "name": "The Recession - Give צדקה with שמחה. The קדושים of the Mumbai Massacre",
+    "lang": "en"
    },
    "5": {
-    "name": "ביכורים - Bringing the Fruit of ראשית to the Place of ראשית"
+    "name": "ביכורים - Bringing the Fruit of ראשית to the Place of ראשית",
+    "lang": "en"
    },
    "6": {
-    "name": "The Special Holiness of נח תיבת: a Microcosm of the עולם התיקון"
+    "name": "The Special Holiness of נח תיבת: a Microcosm of the עולם התיקון",
+    "lang": "en"
    },
    "7": {
-    "name": "Explaining יצחק's Fondness of עשו and the meaning of ויגדלו הנערים"
+    "name": "Explaining יצחק's Fondness of עשו and the meaning of ויגדלו הנערים",
+    "lang": "en"
    },
    "8": {
-    "name": "A Deeper Understanding of יעקב's Present to עשו"
+    "name": "A Deeper Understanding of יעקב's Present to עשו",
+    "lang": "en"
    },
    "9": {
-    "name": "אפ' נשמות של שערות וצפרנים הם מקושר בקשר נפלא ועצום בעצמותו ומהותו הראשון."
+    "name": "אפ' נשמות של שערות וצפרנים הם מקושר בקשר נפלא ועצום בעצמותו ומהותו הראשון.",
+    "lang": "en"
    },
    "10": {
-    "name": "צדיק ורע לו - עוד יש לו שייכות אל הרע. “ראיתי בני עליה והמה מועטים” - זה צדיק וטוב לו. ביאור ענין יחוד קובהו\"ש."
+    "name": "צדיק ורע לו - עוד יש לו שייכות אל הרע. “ראיתי בני עליה והמה מועטים” - זה צדיק וטוב לו. ביאור ענין יחוד קובהו\"ש.",
+    "lang": "en"
    },
    "11": {
-    "name": "Shabbos - A Day That Sings For Itself"
+    "name": "Shabbos - A Day That Sings For Itself",
+    "lang": "en"
    },
    "12": {
-    "name": "An Explanation of ניטל and the Month of טבת"
+    "name": "An Explanation of ניטל and the Month of טבת",
+    "lang": "en"
    },
    "13": {
-    "name": "The Beginning of our Nuptials with Hashem"
+    "name": "The Beginning of our Nuptials with Hashem",
+    "lang": "en"
    },
    "14": {
-    "name": "The Theme of the Day - Proclaiming Hashem as King"
+    "name": "The Theme of the Day - Proclaiming Hashem as King",
+    "lang": "en"
    },
    "15": {
-    "name": "ט”ו בשבט Ushers in the Months of חסד (A Deeper Understanding of the צירופי החודש)"
+    "name": "ט”ו בשבט Ushers in the Months of חסד (A Deeper Understanding of the צירופי החודש)",
+    "lang": "en"
    },
    "16": {
-    "name": "Aseres Yemei Teshuvah"
+    "name": "Aseres Yemei Teshuvah",
+    "lang": "en"
    },
    "17": {
-    "name": "bachurim balak"
+    "name": "bachurim balak",
+    "lang": "yi"
    },
    "18": {
-    "name": "Bo"
+    "name": "Bo",
+    "lang": "yi"
    },
    "19": {
-    "name": "Erev Shabbos Matos"
+    "name": "Erev Shabbos Matos",
+    "lang": "yi"
    },
    "20": {
-    "name": "Elul BeYeshiva Kinyan Torah"
+    "name": "Elul BeYeshiva Kinyan Torah",
+    "lang": "yi"
    },
    "21": {
-    "name": "ע\"י אמונה מקרבין הגאולה"
+    "name": "ע\"י אמונה מקרבין הגאולה",
+    "lang": "yi"
    },
    "22": {
-    "name": "שמשון הגיבור - הוא נוקם כנגד הפאליסטינער בגלל יהודים שבעיקבתא דמשיחא (יארצייט של סקולענר רבי זצ”ל) שמעון הצדיק - שיריים של אנשי כנה\"ג. קבר רחל - ווי לאנג וועט זי וויינען!?"
+    "name": "שמשון הגיבור - הוא נוקם כנגד הפאליסטינער בגלל יהודים שבעיקבתא דמשיחא (יארצייט של סקולענר רבי זצ”ל) שמעון הצדיק - שיריים של אנשי כנה\"ג. קבר רחל - ווי לאנג וועט זי וויינען!?",
+    "lang": "yi"
    },
    "23": {
-    "name": "“ולאדם לא מצא עזר כנגדו” - זה קוב\"ה וכנסת ישראל"
+    "name": "“ולאדם לא מצא עזר כנגדו” - זה קוב\"ה וכנסת ישראל",
+    "lang": "yi"
    },
    "24": {
-    "name": "לימוד משידוך הראשון - שנעשה בלי השתתפות של מעשי אדם"
+    "name": "לימוד משידוך הראשון - שנעשה בלי השתתפות של מעשי אדם",
+    "lang": "yi"
    },
    "25": {
-    "name": "פרשה של אמונה. עשי\"ת - זמן לנקות חציצות האמונה"
+    "name": "פרשה של אמונה. עשי\"ת - זמן לנקות חציצות האמונה",
+    "lang": "yi"
    },
    "26": {
-    "name": "אהרן והכהנים הם בחינת מדת הוד - קודש הקדשים - בחינת רשב\"י"
+    "name": "אהרן והכהנים הם בחינת מדת הוד - קודש הקדשים - בחינת רשב\"י",
+    "lang": "yi"
    },
    "27": {
-    "name": "שופטים ושוטרים - עשה לך רב כדי שתהיה בטל להקב\"ה (שייכות לימים נוראים)"
+    "name": "שופטים ושוטרים - עשה לך רב כדי שתהיה בטל להקב\"ה (שייכות לימים נוראים)",
+    "lang": "yi"
    },
    "28": {
-    "name": "משה רבינו מלמד איך להתפלל. נחיצות וחשיבות פסוקי דזמרה"
+    "name": "משה רבינו מלמד איך להתפלל. נחיצות וחשיבות פסוקי דזמרה",
+    "lang": "yi"
    },
    "29": {
-    "name": "בפרשה זו נטמן משיח בן יוסף ומשיח בן דוד. שייכות לחנוכה"
+    "name": "בפרשה זו נטמן משיח בן יוסף ומשיח בן דוד. שייכות לחנוכה",
+    "lang": "yi"
    },
    "30": {
-    "name": "Shir Hashirim"
+    "name": "Shir Hashirim",
+    "lang": "yi"
    },
    "31": {
-    "name": "בהירות בזמנינו כשיש הרבה בלבולי הדעת"
+    "name": "בהירות בזמנינו כשיש הרבה בלבולי הדעת",
+    "lang": "yi"
    },
    "32": {
-    "name": "בענין קליפת \"תכבד העבודה\" בזמן הזה"
+    "name": "בענין קליפת \"תכבד העבודה\" בזמן הזה",
+    "lang": "yi"
    },
    "33": {
-    "name": "חשיבות מסירת נפש בזמננו"
+    "name": "חשיבות מסירת נפש בזמננו",
+    "lang": "yi"
    },
    "34": {
-    "name": "Mamed Technology neshei"
+    "name": "Mamed Technology neshei",
+    "lang": "yi"
    },
    "35": {
-    "name": "Bris Milah (Vayetzei)"
+    "name": "Bris Milah (Vayetzei)",
+    "lang": "yi"
    },
    "36": {
-    "name": "Bris Milah - Yisro"
+    "name": "Bris Milah - Yisro",
+    "lang": "yi"
    },
    "37": {
-    "name": "Bris Milah - RCH Nissan"
+    "name": "Bris Milah - RCH Nissan",
+    "lang": "yi"
    },
    "38": {
-    "name": "Bris Milah"
+    "name": "Bris Milah",
+    "lang": "yi"
    },
    "39": {
-    "name": "Bris Milah"
+    "name": "Bris Milah",
+    "lang": "yi"
    },
    "40": {
-    "name": "הקדמה; ביאור קושיא הראשונה שבספר; ביאור כחו של שבועה."
+    "name": "הקדמה; ביאור קושיא הראשונה שבספר; ביאור כחו של שבועה.",
+    "lang": "yi"
    },
    "41": {
-    "name": "חלקי הנשמה הם מעשר ספירות. ביאור עשר ספירות."
+    "name": "חלקי הנשמה הם מעשר ספירות. ביאור עשר ספירות.",
+    "lang": "yi"
    },
    "42": {
-    "name": "בינוני - זה וזה שופטן וה' מכריע. תשובה על הקושיא על המילים - תהא בעיניך כרשע."
+    "name": "בינוני - זה וזה שופטן וה' מכריע. תשובה על הקושיא על המילים - תהא בעיניך כרשע.",
+    "lang": "yi"
    },
    "43": {
-    "name": "שורש ומהות של אהבה מסותרת. הם ירושה מהאבות' האבות הם המרכבה' יראת ה' ואהבת ה' נתאחדו בגופם ונמשכו לבניהם."
+    "name": "שורש ומהות של אהבה מסותרת. הם ירושה מהאבות' האבות הם המרכבה' יראת ה' ואהבת ה' נתאחדו בגופם ונמשכו לבניהם.",
+    "lang": "yi"
    },
    "44": {
-    "name": "צדיק כתמר וכו'"
+    "name": "צדיק כתמר וכו'",
+    "lang": "yi"
    },
    "45": {
-    "name": "מונה מספר לכוכבים"
+    "name": "מונה מספר לכוכבים",
+    "lang": "yi"
    },
    "46": {
-    "name": "דרוש בנס חנוכה - נס הנרות מגלים נס המלחמה"
+    "name": "דרוש בנס חנוכה - נס הנרות מגלים נס המלחמה",
+    "lang": "yi"
    },
    "47": {
-    "name": "דיבורים המעוררים את הלב"
+    "name": "דיבורים המעוררים את הלב",
+    "lang": "yi"
    },
    "48": {
-    "name": "לדוד ה' אורי - בבטחון תלוי הכל"
+    "name": "לדוד ה' אורי - בבטחון תלוי הכל",
+    "lang": "yi"
    },
    "49": {
-    "name": "ג - ט\"ו תמוז יארצייט האוה\"ח הק' - תורה על הפרשה."
+    "name": "ג - ט\"ו תמוז יארצייט האוה\"ח הק' - תורה על הפרשה.",
+    "lang": "yi"
    },
    "50": {
-    "name": "לעזור בבית בהכנה לפסח; להתחדש עצמו בזמן התחדשות"
+    "name": "לעזור בבית בהכנה לפסח; להתחדש עצמו בזמן התחדשות",
+    "lang": "yi"
    },
    "51": {
-    "name": "גודל כח היום; הדרכה איך לנהוג בו"
+    "name": "גודל כח היום; הדרכה איך לנהוג בו",
+    "lang": "yi"
    },
    "52": {
-    "name": "בשבת חזון נתגלה השמחה של ט' באב לעתיד וכל יהודי רואה בית השלישי בבנינה. ביאור ענין שמיטה"
+    "name": "בשבת חזון נתגלה השמחה של ט' באב לעתיד וכל יהודי רואה בית השלישי בבנינה. ביאור ענין שמיטה",
+    "lang": "yi"
    },
    "53": {
-    "name": "בימי ספירה צריכים לעשות תשובה על שורש העבירות - המדות (שייכות לפרשת קדושים)"
+    "name": "בימי ספירה צריכים לעשות תשובה על שורש העבירות - המדות (שייכות לפרשת קדושים)",
+    "lang": "yi"
    },
    "54": {
-    "name": "האור של מגילת אסתר יותר נעלה מאור של תורת משה (חתם סופר)"
+    "name": "האור של מגילת אסתר יותר נעלה מאור של תורת משה (חתם סופר)",
+    "lang": "yi"
    },
    "55": {
-    "name": "יו\"ט ליהודים בעלי מדריגה' ומרדכי לא יכרע- היה בטוח בה'' יו\"ט של לעתיד לבא' פעמונים בשולי המעיל- דור אחרון"
+    "name": "יו\"ט ליהודים בעלי מדריגה' ומרדכי לא יכרע- היה בטוח בה'' יו\"ט של לעתיד לבא' פעמונים בשולי המעיל- דור אחרון",
+    "lang": "yi"
    },
    "56": {
-    "name": "סעודה של המחכים לבנין ביהמ\"ק; חנוכה - להודות ולהלל - יו\"ט של הוד"
+    "name": "סעודה של המחכים לבנין ביהמ\"ק; חנוכה - להודות ולהלל - יו\"ט של הוד",
+    "lang": "yi"
    },
    "57": {
-    "name": "גודל מעלת קדושת הסוכה"
+    "name": "גודל מעלת קדושת הסוכה",
+    "lang": "yi"
    },
    "58": {
-    "name": "זמן לשאוב יראת שמים בעד הכנה לר\"ה' זמן של שידוכים' ז' ימים אחר היו\"ט הגדול של ט' באב לעתיד."
+    "name": "זמן לשאוב יראת שמים בעד הכנה לר\"ה' זמן של שידוכים' ז' ימים אחר היו\"ט הגדול של ט' באב לעתיד.",
+    "lang": "yi"
    },
    "59": {
-    "name": "chanukah L'Avreichim"
+    "name": "chanukah L'Avreichim",
+    "lang": "yi"
    }
   },
   "dirtCount": 0,
@@ -19184,5 +19245,5088 @@
    ]
   ],
   "serializationVersion": 2
- }
+ },
+ "entities": [
+  {
+   "kind": "concept",
+   "id": "asarah-maamaros",
+   "labels": {
+    "he": "עשרה מאמרות",
+    "en": "Asarah maamaros (the ten utterances of creation)",
+    "yi": "עשרה מאמרות"
+   },
+   "synonyms": [
+    "עשרה מאמרות",
+    "asarah maamaros the ten utterances of creation",
+    "asarah maamaros"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "concept",
+   "id": "cheshbon-hanefesh",
+   "labels": {
+    "he": "חשבון הנפש",
+    "en": "Cheshbon hanefesh (soul-accounting)",
+    "yi": "חשבון הנפש"
+   },
+   "synonyms": [
+    "חשבון הנפש",
+    "cheshbon hanefesh soul accounting",
+    "cheshbon hanefesh"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "concept",
+   "id": "klipah",
+   "labels": {
+    "he": "קליפה",
+    "en": "Klipah (husk, a shell of impurity)",
+    "yi": "קליפה"
+   },
+   "synonyms": [
+    "קליפה",
+    "klipah husk a shell of impurity",
+    "klipah",
+    "klipa",
+    "klipos"
+   ],
+   "count": 5
+  },
+  {
+   "kind": "concept",
+   "id": "knesses-yisrael",
+   "labels": {
+    "he": "כנסת ישראל",
+    "en": "Knesses Yisrael (the collective soul of the Jewish people)",
+    "yi": "כנסת ישראל"
+   },
+   "synonyms": [
+    "כנסת ישראל",
+    "knesses yisrael the collective soul of the jewish people",
+    "knesses yisrael"
+   ],
+   "count": 5
+  },
+  {
+   "kind": "concept",
+   "id": "olam-haba",
+   "labels": {
+    "he": "עולם הבא",
+    "en": "Olam Haba (the World to Come)",
+    "yi": "עולם הבא"
+   },
+   "synonyms": [
+    "עולם הבא",
+    "olam haba the world to come",
+    "olam haba"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "concept",
+   "id": "ribono-shel-olam",
+   "labels": {
+    "he": "רבונו של עולם",
+    "en": "Ribono shel Olam (Master of the World)",
+    "yi": "רבונו של עולם"
+   },
+   "synonyms": [
+    "רבונו של עולם",
+    "ribono shel olam master of the world",
+    "ribono shel olam",
+    "ribbono shel olam"
+   ],
+   "count": 12
+  },
+  {
+   "kind": "concept",
+   "id": "ruach-hakodesh",
+   "labels": {
+    "he": "רוח הקודש",
+    "en": "Ruach hakodesh (Divine inspiration)",
+    "yi": "רוח הקודש"
+   },
+   "synonyms": [
+    "רוח הקודש",
+    "ruach hakodesh divine inspiration",
+    "ruach hakodesh"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "concept",
+   "id": "satan",
+   "labels": {
+    "he": "שטן",
+    "en": "Satan (the accuser)",
+    "yi": "שטן"
+   },
+   "synonyms": [
+    "שטן",
+    "satan the accuser",
+    "satan"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "concept",
+   "id": "shem-havaya",
+   "labels": {
+    "he": "שם הוי\"ה",
+    "en": "Shem Havaya (the Tetragrammaton, Hashem's essential Name)",
+    "yi": "שם הוי\"ה"
+   },
+   "synonyms": [
+    "שם הויה",
+    "shem havaya the tetragrammaton hashems essential name",
+    "shem havaya",
+    "havaya"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "concept",
+   "id": "sitra-achra",
+   "labels": {
+    "he": "סטרא אחרא",
+    "en": "Sitra Achra (the \"other side\", the realm of evil)",
+    "yi": "סטרא אחרא"
+   },
+   "synonyms": [
+    "סטרא אחרא",
+    "sitra achra the other side the realm of evil",
+    "sitra achra"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "concept",
+   "id": "sukkah",
+   "labels": {
+    "he": "סוכה",
+    "en": "Sukkah (the sukkah)",
+    "yi": "סוכה"
+   },
+   "synonyms": [
+    "סוכה",
+    "sukkah the sukkah",
+    "sukkah"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "concept",
+   "id": "techiyas-hameisim",
+   "labels": {
+    "he": "תחיית המתים",
+    "en": "Techiyas hameisim (the resurrection of the dead)",
+    "yi": "תחיית המתים"
+   },
+   "synonyms": [
+    "תחיית המתים",
+    "techiyas hameisim the resurrection of the dead",
+    "techiyas hameisim"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "person",
+   "id": "achashverosh",
+   "labels": {
+    "he": "אחשורוש",
+    "en": "Achashverosh",
+    "yi": "אחשורוש"
+   },
+   "synonyms": [
+    "אחשורוש",
+    "achashverosh",
+    "achashveirosh"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "person",
+   "id": "adam-harishon",
+   "labels": {
+    "he": "אדם הראשון",
+    "en": "Adam HaRishon",
+    "yi": "אדם הראשון"
+   },
+   "synonyms": [
+    "אדם הראשון",
+    "adam harishon",
+    "adam"
+   ],
+   "count": 14
+  },
+  {
+   "kind": "person",
+   "id": "aharon-hakohen",
+   "labels": {
+    "he": "אהרן הכהן",
+    "en": "Aharon HaKohen",
+    "yi": "אהרן הכהן"
+   },
+   "synonyms": [
+    "אהרן הכהן",
+    "aharon hakohen",
+    "aharon",
+    "aaron"
+   ],
+   "count": 6
+  },
+  {
+   "kind": "person",
+   "id": "arizal",
+   "labels": {
+    "he": "האר\"י הקדוש",
+    "en": "the Arizal",
+    "yi": "דער הייליגער אר\"י"
+   },
+   "synonyms": [
+    "הארי הקדוש",
+    "the arizal",
+    "דער הייליגער ארי",
+    "the ari hakadosh",
+    "rabbi yitzchak luria"
+   ],
+   "count": 7
+  },
+  {
+   "kind": "person",
+   "id": "avraham-avinu",
+   "labels": {
+    "he": "אברהם אבינו",
+    "en": "Avraham Avinu",
+    "yi": "אברהם אבינו"
+   },
+   "synonyms": [
+    "אברהם אבינו",
+    "avraham avinu",
+    "avraham",
+    "abraham"
+   ],
+   "count": 13
+  },
+  {
+   "kind": "person",
+   "id": "baal-hatanya",
+   "labels": {
+    "he": "רבי שניאור זלמן מלאדי",
+    "en": "the Baal HaTanya (Rabbi Shneur Zalman of Liadi)",
+    "yi": "דער בעל התניא"
+   },
+   "synonyms": [
+    "רבי שניאור זלמן מלאדי",
+    "the baal hatanya rabbi shneur zalman of liadi",
+    "דער בעל התניא",
+    "the alter rebbe",
+    "rabbi shneur zalman of liadi"
+   ],
+   "count": 6
+  },
+  {
+   "kind": "person",
+   "id": "baal-shem-tov",
+   "labels": {
+    "he": "רבי ישראל בעל שם טוב",
+    "en": "the Baal Shem Tov",
+    "yi": "דער הייליגער בעל שם טוב"
+   },
+   "synonyms": [
+    "רבי ישראל בעל שם טוב",
+    "the baal shem tov",
+    "דער הייליגער בעל שם טוב",
+    "the besht",
+    "rabbi yisrael baal shem tov"
+   ],
+   "count": 8
+  },
+  {
+   "kind": "person",
+   "id": "bnei-yissaschar",
+   "labels": {
+    "he": "רבי צבי אלימלך מדינוב",
+    "en": "the Bnei Yissaschar (Rabbi Tzvi Elimelech of Dinov)",
+    "yi": "דער בני יששכר"
+   },
+   "synonyms": [
+    "רבי צבי אלימלך מדינוב",
+    "the bnei yissaschar rabbi tzvi elimelech of dinov",
+    "דער בני יששכר"
+   ],
+   "count": 5
+  },
+  {
+   "kind": "person",
+   "id": "chasam-sofer",
+   "labels": {
+    "he": "חתם סופר",
+    "en": "the Chasam Sofer",
+    "yi": "דער חתם סופר"
+   },
+   "synonyms": [
+    "חתם סופר",
+    "the chasam sofer",
+    "דער חתם סופר",
+    "rabbi moshe sofer"
+   ],
+   "count": 13
+  },
+  {
+   "kind": "person",
+   "id": "chiddushei-harim",
+   "labels": {
+    "he": "רבי יצחק מאיר מגור",
+    "en": "the Chiddushei HaRim",
+    "yi": "דער חידושי הרי\"ם"
+   },
+   "synonyms": [
+    "רבי יצחק מאיר מגור",
+    "the chiddushei harim",
+    "דער חידושי הרים",
+    "the chidushei harim"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "person",
+   "id": "dovid-hamelech",
+   "labels": {
+    "he": "דוד המלך",
+    "en": "Dovid HaMelech",
+    "yi": "דוד המלך"
+   },
+   "synonyms": [
+    "דוד המלך",
+    "dovid hamelech",
+    "king dovid",
+    "dovid"
+   ],
+   "count": 11
+  },
+  {
+   "kind": "person",
+   "id": "eliyahu-hanavi",
+   "labels": {
+    "he": "אליהו הנביא",
+    "en": "Eliyahu HaNavi",
+    "yi": "אליהו הנביא"
+   },
+   "synonyms": [
+    "אליהו הנביא",
+    "eliyahu hanavi",
+    "eliyahu",
+    "elijah"
+   ],
+   "count": 6
+  },
+  {
+   "kind": "person",
+   "id": "esav",
+   "labels": {
+    "he": "עשו",
+    "en": "Esav",
+    "yi": "עשו"
+   },
+   "synonyms": [
+    "עשו",
+    "esav"
+   ],
+   "count": 7
+  },
+  {
+   "kind": "person",
+   "id": "esther",
+   "labels": {
+    "he": "אסתר המלכה",
+    "en": "Esther HaMalkah",
+    "yi": "אסתר המלכה"
+   },
+   "synonyms": [
+    "אסתר המלכה",
+    "esther hamalkah",
+    "esther"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "person",
+   "id": "haman",
+   "labels": {
+    "he": "המן",
+    "en": "Haman",
+    "yi": "המן"
+   },
+   "synonyms": [
+    "המן",
+    "haman"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "person",
+   "id": "maharal",
+   "labels": {
+    "he": "מהר\"ל מפראג",
+    "en": "the Maharal of Prague",
+    "yi": "דער מהר\"ל פון פראג"
+   },
+   "synonyms": [
+    "מהרל מפראג",
+    "the maharal of prague",
+    "דער מהרל פון פראג",
+    "the maharal"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "person",
+   "id": "mordechai",
+   "labels": {
+    "he": "מרדכי הצדיק",
+    "en": "Mordechai HaTzaddik",
+    "yi": "מרדכי הצדיק"
+   },
+   "synonyms": [
+    "מרדכי הצדיק",
+    "mordechai hatzaddik",
+    "mordechai"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "person",
+   "id": "moshe-rabbeinu",
+   "labels": {
+    "he": "משה רבינו",
+    "en": "Moshe Rabbeinu",
+    "yi": "משה רבינו"
+   },
+   "synonyms": [
+    "משה רבינו",
+    "moshe rabbeinu",
+    "moshe",
+    "moses"
+   ],
+   "count": 14
+  },
+  {
+   "kind": "person",
+   "id": "noach",
+   "labels": {
+    "he": "נח",
+    "en": "Noach",
+    "yi": "נח"
+   },
+   "synonyms": [
+    "נח",
+    "noach",
+    "noah"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "person",
+   "id": "peretz",
+   "labels": {
+    "he": "פרץ",
+    "en": "Peretz",
+    "yi": "פרץ"
+   },
+   "synonyms": [
+    "פרץ",
+    "peretz"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "person",
+   "id": "pharaoh",
+   "labels": {
+    "he": "פרעה",
+    "en": "Pharaoh",
+    "yi": "פרעה"
+   },
+   "synonyms": [
+    "פרעה",
+    "pharaoh",
+    "paroh"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "person",
+   "id": "rabban-yochanan-ben-zakkai",
+   "labels": {
+    "he": "רבן יוחנן בן זכאי",
+    "en": "Rabban Yochanan ben Zakkai",
+    "yi": "רבן יוחנן בן זכאי"
+   },
+   "synonyms": [
+    "רבן יוחנן בן זכאי",
+    "rabban yochanan ben zakkai",
+    "rabbi yochanan ben zakai"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "person",
+   "id": "rabbeinu-bachya",
+   "labels": {
+    "he": "רבינו בחיי",
+    "en": "Rabbeinu Bachya",
+    "yi": "רבינו בחיי"
+   },
+   "synonyms": [
+    "רבינו בחיי",
+    "rabbeinu bachya",
+    "rabbeinu bechaye"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "person",
+   "id": "rabbi-akiva",
+   "labels": {
+    "he": "רבי עקיבא",
+    "en": "Rabbi Akiva",
+    "yi": "רבי עקיבא"
+   },
+   "synonyms": [
+    "רבי עקיבא",
+    "rabbi akiva"
+   ],
+   "count": 6
+  },
+  {
+   "kind": "person",
+   "id": "rabbi-chaim-vital",
+   "labels": {
+    "he": "רבי חיים ויטאל",
+    "en": "Rabbi Chaim Vital",
+    "yi": "רבי חיים ויטאל"
+   },
+   "synonyms": [
+    "רבי חיים ויטאל",
+    "rabbi chaim vital"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "person",
+   "id": "rabbi-eliezer",
+   "labels": {
+    "he": "רבי אליעזר בן הורקנוס",
+    "en": "Rabbi Eliezer (ben Hurkenos)",
+    "yi": "רבי אליעזר בן הורקנוס"
+   },
+   "synonyms": [
+    "רבי אליעזר בן הורקנוס",
+    "rabbi eliezer ben hurkenos",
+    "rabbi eliezer the great",
+    "rabbi eliezer hagadol"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "person",
+   "id": "rabbi-pinchas-of-koretz",
+   "labels": {
+    "he": "רבי פינחס מקאריץ",
+    "en": "Rabbi Pinchas of Koretz",
+    "yi": "רבי פינחס קאריצער"
+   },
+   "synonyms": [
+    "רבי פינחס מקאריץ",
+    "rabbi pinchas of koretz",
+    "רבי פינחס קאריצער",
+    "the koritzer",
+    "r pinchasl",
+    "rabbi pinchas of koritz"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "person",
+   "id": "rabbi-tzadok-hakohen",
+   "labels": {
+    "he": "רבי צדוק הכהן מלובלין",
+    "en": "Rabbi Tzadok HaKohen of Lublin",
+    "yi": "רבי צדוק הכהן פון לובלין"
+   },
+   "synonyms": [
+    "רבי צדוק הכהן מלובלין",
+    "rabbi tzadok hakohen of lublin",
+    "רבי צדוק הכהן פון לובלין",
+    "the pri tzaddik",
+    "rav tzadok hakohen",
+    "rav tzadok"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "person",
+   "id": "rabbi-yehoshua-ben-chananya",
+   "labels": {
+    "he": "רבי יהושע בן חנניה",
+    "en": "Rabbi Yehoshua ben Chananya",
+    "yi": "רבי יהושע בן חנניה"
+   },
+   "synonyms": [
+    "רבי יהושע בן חנניה",
+    "rabbi yehoshua ben chananya",
+    "rabbi yehoshua"
+   ],
+   "count": 5
+  },
+  {
+   "kind": "person",
+   "id": "rambam",
+   "labels": {
+    "he": "רמב\"ם",
+    "en": "the Rambam",
+    "yi": "דער רמב\"ם"
+   },
+   "synonyms": [
+    "רמבם",
+    "the rambam",
+    "דער רמבם",
+    "rabbi moshe ben maimon",
+    "maimonides"
+   ],
+   "count": 12
+  },
+  {
+   "kind": "person",
+   "id": "ramban",
+   "labels": {
+    "he": "רמב\"ן",
+    "en": "the Ramban",
+    "yi": "דער רמב\"ן"
+   },
+   "synonyms": [
+    "רמבן",
+    "the ramban",
+    "דער רמבן",
+    "rabbi moshe ben nachman",
+    "nachmanides"
+   ],
+   "count": 8
+  },
+  {
+   "kind": "person",
+   "id": "rashi",
+   "labels": {
+    "he": "רש\"י",
+    "en": "Rashi",
+    "yi": "רש\"י"
+   },
+   "synonyms": [
+    "רשי",
+    "rashi",
+    "rabbi shlomo yitzchaki"
+   ],
+   "count": 16
+  },
+  {
+   "kind": "person",
+   "id": "shlomo-hamelech",
+   "labels": {
+    "he": "שלמה המלך",
+    "en": "Shlomo HaMelech",
+    "yi": "שלמה המלך"
+   },
+   "synonyms": [
+    "שלמה המלך",
+    "shlomo hamelech",
+    "shlomo",
+    "king solomon"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "person",
+   "id": "tamar",
+   "labels": {
+    "he": "תמר",
+    "en": "Tamar",
+    "yi": "תמר"
+   },
+   "synonyms": [
+    "תמר",
+    "tamar"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "person",
+   "id": "yaakov-avinu",
+   "labels": {
+    "he": "יעקב אבינו",
+    "en": "Yaakov Avinu",
+    "yi": "יעקב אבינו"
+   },
+   "synonyms": [
+    "יעקב אבינו",
+    "yaakov avinu",
+    "yaakov",
+    "jacob"
+   ],
+   "count": 11
+  },
+  {
+   "kind": "person",
+   "id": "yehoshua-bin-nun",
+   "labels": {
+    "he": "יהושע בן נון",
+    "en": "Yehoshua bin Nun",
+    "yi": "יהושע בן נון"
+   },
+   "synonyms": [
+    "יהושע בן נון",
+    "yehoshua bin nun",
+    "yehoshua",
+    "joshua"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "person",
+   "id": "yehudah-ben-yaakov",
+   "labels": {
+    "he": "יהודה",
+    "en": "Yehudah (son of Yaakov)",
+    "yi": "יהודה"
+   },
+   "synonyms": [
+    "יהודה",
+    "yehudah son of yaakov",
+    "yehudah son of yaakov avinu"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "person",
+   "id": "yeshayahu-hanavi",
+   "labels": {
+    "he": "ישעיהו הנביא",
+    "en": "Yeshayahu HaNavi",
+    "yi": "ישעיהו הנביא"
+   },
+   "synonyms": [
+    "ישעיהו הנביא",
+    "yeshayahu hanavi",
+    "yeshayahu",
+    "isaiah"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "person",
+   "id": "yosef-hatzaddik",
+   "labels": {
+    "he": "יוסף הצדיק",
+    "en": "Yosef HaTzaddik",
+    "yi": "יוסף הצדיק"
+   },
+   "synonyms": [
+    "יוסף הצדיק",
+    "yosef hatzaddik",
+    "yosef"
+   ],
+   "count": 6
+  },
+  {
+   "kind": "topic",
+   "id": "adam-harishon",
+   "labels": {
+    "he": "אדם הראשון",
+    "en": "Adam HaRishon and Gan Eden",
+    "yi": "אדם הראשון און גן עדן"
+   },
+   "synonyms": [
+    "אדם הראשון",
+    "adam harishon and gan eden",
+    "אדם הראשון און גן עדן",
+    "parshas bereishis",
+    "eitz hadaas",
+    "tree of knowledge",
+    "sin of adam harishon",
+    "rashi on bereishis 1 1",
+    "sin of the eitz hadaas"
+   ],
+   "count": 7
+  },
+  {
+   "kind": "topic",
+   "id": "ahavas-hashem",
+   "labels": {
+    "he": "אהבת השם ודביקות",
+    "en": "Ahavas Hashem and Dveikus",
+    "yi": "אהבת השם און דביקות"
+   },
+   "synonyms": [
+    "אהבת השם ודביקות",
+    "ahavas hashem and dveikus",
+    "אהבת השם און דביקות",
+    "love of hashem",
+    "dveikus",
+    "love of hashem and love of jews",
+    "ratzo vashov",
+    "ahavah rabbah",
+    "deveikus"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "ahavas-hashem-leyisroel",
+   "labels": {
+    "he": "אהבת השם לישראל",
+    "en": "Hashem's Love for Klal Yisroel",
+    "yi": "דעם אייבערשטנס אהבה צו כלל ישראל"
+   },
+   "synonyms": [
+    "אהבת השם לישראל",
+    "hashems love for klal yisrael",
+    "דעם אייבערשטנס אהבה צו כלל ישראל",
+    "hashems love for the jewish people",
+    "children of hashem",
+    "jews as children of hashem",
+    "hashem and knesses yisrael",
+    "israel as hashems firstborn"
+   ],
+   "count": 7
+  },
+  {
+   "kind": "topic",
+   "id": "ahavas-yisroel",
+   "labels": {
+    "he": "אהבת ישראל ואחדות",
+    "en": "Ahavas Yisroel and Achdus",
+    "yi": "אהבת ישראל און אחדות"
+   },
+   "synonyms": [
+    "אהבת ישראל ואחדות",
+    "ahavas yisrael and achdus",
+    "אהבת ישראל און אחדות",
+    "ahavas yisrael",
+    "unity of klal yisrael",
+    "lifnim mishuras hadin",
+    "davening together with the tzibbur",
+    "achdus"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "topic",
+   "id": "anavah-bittul",
+   "labels": {
+    "he": "ענוה וביטול",
+    "en": "Anavah and Bittul",
+    "yi": "ענוה און ביטול"
+   },
+   "synonyms": [
+    "ענוה וביטול",
+    "anavah and bittul",
+    "ענוה און ביטול",
+    "humility",
+    "bittul",
+    "bittul to hashem",
+    "bitul",
+    "true humility",
+    "anger and pride"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "aseres-yemei-teshuvah",
+   "labels": {
+    "he": "עשרת ימי תשובה",
+    "en": "Aseres Yemei Teshuvah",
+    "yi": "עשרת ימי תשובה"
+   },
+   "synonyms": [
+    "עשרת ימי תשובה",
+    "aseres yemei teshuvah",
+    "ten days of teshuvah",
+    "shabbos shuvah",
+    "avinu malkeinu",
+    "malchus and the ten days of teshuvah"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "avodah-begashmiyus",
+   "labels": {
+    "he": "עבודה בגשמיות",
+    "en": "Serving Hashem in Physical Life",
+    "yi": "עבודה בגשמיות"
+   },
+   "synonyms": [
+    "עבודה בגשמיות",
+    "serving hashem in physical life",
+    "eating lshem shamayim",
+    "raising sparks",
+    "birurim",
+    "tikkun chatzos",
+    "brachos on food",
+    "elevating the physical"
+   ],
+   "count": 6
+  },
+  {
+   "kind": "topic",
+   "id": "avodas-dor-haacharon",
+   "labels": {
+    "he": "עבודת הדור האחרון",
+    "en": "Avodah of the Last Generation",
+    "yi": "די עבודה פונעם לעצטן דור"
+   },
+   "synonyms": [
+    "עבודת הדור האחרון",
+    "avodah of the last generation",
+    "די עבודה פונעם לעצטן דור",
+    "emunah in the generation before moshiach",
+    "tefillah before moshiach",
+    "emunah in ikvesa dmeshicha",
+    "tests before moshiach",
+    "avodah before moshiach"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "avodas-hashem",
+   "labels": {
+    "he": "עבודת השם",
+    "en": "Avodas Hashem",
+    "yi": "עבודת השם"
+   },
+   "synonyms": [
+    "עבודת השם",
+    "avodas hashem",
+    "serving hashem",
+    "tefillah as service of the heart",
+    "service of the heart",
+    "mesilas yesharim chapter 1",
+    "avodah tamah",
+    "avodah in galus"
+   ],
+   "count": 23
+  },
+  {
+   "kind": "topic",
+   "id": "avraham-avinu",
+   "labels": {
+    "he": "אברהם אבינו",
+    "en": "Avraham Avinu",
+    "yi": "אברהם אבינו"
+   },
+   "synonyms": [
+    "אברהם אבינו",
+    "avraham avinu",
+    "parshas lech lecha",
+    "parshas vayeira",
+    "avraham avinu and פסח",
+    "magen avraham",
+    "avraham avinu as a new creation",
+    "פסח and avraham avinu"
+   ],
+   "count": 5
+  },
+  {
+   "kind": "topic",
+   "id": "baal-shem-tov-talmidim",
+   "labels": {
+    "he": "הבעל שם טוב ותלמידיו",
+    "en": "The Baal Shem Tov and His Talmidim",
+    "yi": "דער בעל שם טוב און זיינע תלמידים"
+   },
+   "synonyms": [
+    "הבעל שם טוב ותלמידיו",
+    "the baal shem tov and his talmidim",
+    "דער בעל שם טוב און זיינע תלמידים",
+    "the baal shem tov",
+    "the maggid of mezritch",
+    "the alter rebbe",
+    "the chozeh of lublin",
+    "chassidim and misnagdim"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "balak-pinchas",
+   "labels": {
+    "he": "בלק ופנחס",
+    "en": "Balak, Bilam and Pinchas",
+    "yi": "בלק, בלעם און פנחס"
+   },
+   "synonyms": [
+    "בלק ופנחס",
+    "balak bilaam and pinchas",
+    "בלק בלעם און פנחס",
+    "parshas balak",
+    "parshas pinchas",
+    "zimri",
+    "zimri and pinchas",
+    "chofni and pinchas",
+    "pinchas and zealotry"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "bar-mitzvah",
+   "labels": {
+    "he": "בר מצוה",
+    "en": "Bar Mitzvah",
+    "yi": "בר מצוה"
+   },
+   "synonyms": [
+    "בר מצוה",
+    "bar mitzvah",
+    "bar mitzvah gifts",
+    "bar mitzvah as a wedding with the torah",
+    "age of thirteen",
+    "bar mitzvah as a wedding",
+    "bar mitzvah as a wedding day",
+    "bar mitzvah as spiritual rebirth"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "bayis-neeman",
+   "labels": {
+    "he": "בית נאמן בישראל",
+    "en": "The Jewish Home and Shalom Bayis",
+    "yi": "א אידישע שטוב און שלום בית"
+   },
+   "synonyms": [
+    "בית נאמן בישראל",
+    "the jewish home and shalom bayis",
+    "א אידישע שטוב און שלום בית",
+    "shalom bayis",
+    "the jewish home",
+    "chanukas habayis",
+    "yosef and potiphars wife",
+    "jewishness through the mother",
+    "shlomo hamelech and the kings wives"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "bein-adam-lachaveiro",
+   "labels": {
+    "he": "בין אדם לחבירו",
+    "en": "Bein Adam LaChaveiro",
+    "yi": "בין אדם לחבירו"
+   },
+   "synonyms": [
+    "בין אדם לחבירו",
+    "bein adam lachaveiro",
+    "kavod habriyos",
+    "machlokes",
+    "kamtza and bar kamtza",
+    "not shaming others",
+    "shaming another in public",
+    "sensitivity to others feelings"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "bein-hametzarim",
+   "labels": {
+    "he": "בין המצרים",
+    "en": "The Three Weeks and Tisha B'Av",
+    "yi": "בין המצרים און תשעה באב"
+   },
+   "synonyms": [
+    "בין המצרים",
+    "the בין המצרים and תשעה באב",
+    "בין המצרים און תשעה באב",
+    "the בין המצרים"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "beis-hamikdash-churban",
+   "labels": {
+    "he": "בית המקדש וחורבנו",
+    "en": "The Beis HaMikdash and Its Churban",
+    "yi": "דער בית המקדש און דער חורבן"
+   },
+   "synonyms": [
+    "בית המקדש וחורבנו",
+    "the beis hamikdash and its churban",
+    "דער בית המקדש און דער חורבן",
+    "churban",
+    "beis hamikdash",
+    "place of the beis hamikdash",
+    "the home as a mikdash",
+    "building the beis hamikdash",
+    "lashon hara and the churban"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "topic",
+   "id": "bitachon",
+   "labels": {
+    "he": "בטחון",
+    "en": "Bitachon",
+    "yi": "בטחון"
+   },
+   "synonyms": [
+    "בטחון",
+    "bitachon",
+    "trust in hashem",
+    "emunah and bitachon",
+    "bitachon in times of fear",
+    "siyata dishmaya",
+    "bitachon and safety"
+   ],
+   "count": 5
+  },
+  {
+   "kind": "topic",
+   "id": "brachos",
+   "labels": {
+    "he": "ברכות",
+    "en": "Brachos",
+    "yi": "ברכות"
+   },
+   "synonyms": [
+    "ברכות",
+    "brachos",
+    "berachos",
+    "blessings",
+    "shabbos as the source of blessing",
+    "brachos with kavanah",
+    "berachos with kavanah",
+    "blessing for a newborn"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "bris-milah",
+   "labels": {
+    "he": "ברית מילה",
+    "en": "Bris Milah",
+    "yi": "ברית מילה"
+   },
+   "synonyms": [
+    "ברית מילה",
+    "bris milah",
+    "milah",
+    "bris",
+    "milah and tefillin",
+    "milah on the eighth day",
+    "orlah and milah",
+    "blessings at a bris"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "chametz",
+   "labels": {
+    "he": "ביעור חמץ",
+    "en": "Chametz and Preparing for Pesach",
+    "yi": "חמץ און די הכנה צו פסח"
+   },
+   "synonyms": [
+    "ביעור חמץ",
+    "chametz and preparing for פסח",
+    "חמץ און די הכנה צו פסח",
+    "bedikas chametz",
+    "chametz and the yetzer hara",
+    "chametz as the yetzer hara",
+    "biur chametz",
+    "preparing for פסח",
+    "bittul chametz"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "chanukah",
+   "labels": {
+    "he": "חנוכה",
+    "en": "Chanukah",
+    "yi": "חנוכה"
+   },
+   "synonyms": [
+    "חנוכה",
+    "hallel on חנוכה",
+    "חנוכה and moshiach",
+    "sfas emes on חנוכה",
+    "seudas mitzvah on חנוכה",
+    "shabbos and חנוכה compared"
+   ],
+   "count": 5
+  },
+  {
+   "kind": "topic",
+   "id": "chassidus",
+   "labels": {
+    "he": "תניא וחסידות",
+    "en": "Tanya and Chassidus",
+    "yi": "תניא און חסידות"
+   },
+   "synonyms": [
+    "תניא וחסידות",
+    "tanya and chassidus",
+    "תניא און חסידות",
+    "chassidus",
+    "kabbalah",
+    "midas chassidus",
+    "roots and branches of chassidus",
+    "politics and rivalry in chassidus"
+   ],
+   "count": 15
+  },
+  {
+   "kind": "topic",
+   "id": "chaveirim-sevivah",
+   "labels": {
+    "he": "השפעת הסביבה",
+    "en": "Friends and Environment",
+    "yi": "חברים און די סביבה"
+   },
+   "synonyms": [
+    "השפעת הסביבה",
+    "friends and environment",
+    "חברים און די סביבה",
+    "influence of friends",
+    "influence of friends and environment",
+    "bad friends",
+    "dibuk chaverim",
+    "ahavas chaveirim",
+    "love among friends"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "cheit-haegel",
+   "labels": {
+    "he": "חטא העגל",
+    "en": "The Golden Calf and the Thirteen Middos",
+    "yi": "חטא העגל און די י\"ג מידות"
+   },
+   "synonyms": [
+    "חטא העגל",
+    "the golden calf and the thirteen middos",
+    "חטא העגל און די יג מידות",
+    "parshas ki sisa",
+    "thirteen attributes of mercy",
+    "sin of the golden calf",
+    "first and second luchos",
+    "the sin of the golden calf",
+    "thirteen middos of rachamim"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "chinuch",
+   "labels": {
+    "he": "חינוך",
+    "en": "Chinuch and Bachurim",
+    "yi": "חינוך און בחורים"
+   },
+   "synonyms": [
+    "חינוך",
+    "chinuch and bachurim",
+    "חינוך און בחורים",
+    "education",
+    "bachurim"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "topic",
+   "id": "chinuch-habanim",
+   "labels": {
+    "he": "חינוך הבנים",
+    "en": "Chinuch HaBanim",
+    "yi": "חינוך הבנים"
+   },
+   "synonyms": [
+    "חינוך הבנים",
+    "chinuch habanim",
+    "chinuch of children",
+    "talks to children",
+    "talks for children",
+    "chinuch",
+    "a childs emunah",
+    "the value of youth"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "chodesh-adar",
+   "labels": {
+    "he": "חודש אדר",
+    "en": "Chodesh Adar",
+    "yi": "חודש אדר"
+   },
+   "synonyms": [
+    "חודש אדר",
+    "chodesh adar",
+    "adar",
+    "month of adar",
+    "nisan and adar",
+    "adar and nissan",
+    "the month of adar",
+    "adar and hester panim"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "chodesh-nissan",
+   "labels": {
+    "he": "חודש ניסן",
+    "en": "Chodesh Nissan",
+    "yi": "חודש ניסן"
+   },
+   "synonyms": [
+    "חודש ניסן",
+    "chodesh nissan",
+    "nisan",
+    "rosh chodesh nissan",
+    "chodesh nisan",
+    "rosh chodesh nisan",
+    "first twelve days of nissan",
+    "nissan and av"
+   ],
+   "count": 5
+  },
+  {
+   "kind": "topic",
+   "id": "chodesh-teves",
+   "labels": {
+    "he": "חודש טבת",
+    "en": "Chodesh Teves and Asarah B'Teves",
+    "yi": "חודש טבת און עשרה בטבת"
+   },
+   "synonyms": [
+    "חודש טבת",
+    "chodesh teves and asarah bteves",
+    "חודש טבת און עשרה בטבת",
+    "asarah bteves",
+    "tekufas teves",
+    "nittel",
+    "month of teves",
+    "the month of teves",
+    "tekufas teves and nittel"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "choref",
+   "labels": {
+    "he": "שובבי\"ם, טבת ושבט",
+    "en": "Shovavim, Teves and Shevat",
+    "yi": "שובבי\"ם, טבת און שבט"
+   },
+   "synonyms": [
+    "שובבים טבת ושבט",
+    "שובבים teves and shevat",
+    "שובבים טבת און שבט"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "churban-europa",
+   "labels": {
+    "he": "חורבן אירופה וגזירות",
+    "en": "The Churban of Europe and Persecutions",
+    "yi": "חורבן אירופה און גזירות"
+   },
+   "synonyms": [
+    "חורבן אירופה וגזירות",
+    "the churban of europe and persecutions",
+    "חורבן אירופה און גזירות",
+    "the holocaust",
+    "persecutions",
+    "expulsion from spain",
+    "the holocaust and hester panim",
+    "antisemitism",
+    "stalins downfall"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "dovid-hamelech",
+   "labels": {
+    "he": "דוד המלך ומלכות בית דוד",
+    "en": "Dovid HaMelech and Malchus Beis Dovid",
+    "yi": "דוד המלך און מלכות בית דוד"
+   },
+   "synonyms": [
+    "דוד המלך ומלכות בית דוד",
+    "dovid hamelech and malchus beis dovid",
+    "דוד המלך און מלכות בית דוד",
+    "dovid hamelech",
+    "malchus",
+    "malchus beis dovid",
+    "dovid hamelech and malchus",
+    "avigail and naval",
+    "adam harishon and dovid hamelech"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "eliyahu-hanavi",
+   "labels": {
+    "he": "אליהו הנביא",
+    "en": "Eliyahu HaNavi",
+    "yi": "אליהו הנביא"
+   },
+   "synonyms": [
+    "אליהו הנביא",
+    "eliyahu hanavi",
+    "elijah",
+    "eliyahu and elisha",
+    "elisha and naaman",
+    "elishas miracles",
+    "naaman and elisha",
+    "gechazi and naaman"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "topic",
+   "id": "elul",
+   "labels": {
+    "he": "חודש אלול",
+    "en": "Chodesh Elul",
+    "yi": "חודש אלול"
+   },
+   "synonyms": [
+    "חודש אלול",
+    "chodesh אלול",
+    "אלול",
+    "teshuvah in אלול",
+    "month of אלול",
+    "אלול as a city of refuge",
+    "twenty fifth of אלול and creation",
+    "mazal of אלול"
+   ],
+   "count": 5
+  },
+  {
+   "kind": "topic",
+   "id": "emunah",
+   "labels": {
+    "he": "אמונה",
+    "en": "Emunah",
+    "yi": "אמונה"
+   },
+   "synonyms": [
+    "אמונה",
+    "emunah",
+    "faith",
+    "belief in hashem",
+    "פסח as the yom tov of emunah",
+    "פסח and emunah",
+    "kingship of hashem",
+    "emunah as faithfulness"
+   ],
+   "count": 21
+  },
+  {
+   "kind": "topic",
+   "id": "emunah-safek-amalek",
+   "labels": {
+    "he": "ספק ועמלק",
+    "en": "Doubts in Emunah and Amalek",
+    "yi": "ספיקות אין אמונה און עמלק"
+   },
+   "synonyms": [
+    "ספק ועמלק",
+    "doubts in emunah and amalek",
+    "ספיקות אין אמונה און עמלק",
+    "doubt",
+    "amalek and doubt",
+    "doubts in emunah",
+    "war against amalek",
+    "amalek and doubt in emunah",
+    "amalek"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "eretz-yisroel",
+   "labels": {
+    "he": "ארץ ישראל",
+    "en": "Eretz Yisroel",
+    "yi": "ארץ ישראל"
+   },
+   "synonyms": [
+    "ארץ ישראל",
+    "eretz yisrael",
+    "land of israel"
+   ],
+   "count": 12
+  },
+  {
+   "kind": "topic",
+   "id": "galus-mitzrayim-makkos",
+   "labels": {
+    "he": "גלות מצרים והמכות",
+    "en": "Galus Mitzrayim and the Makkos",
+    "yi": "גלות מצרים און די מכות"
+   },
+   "synonyms": [
+    "גלות מצרים והמכות",
+    "galus mitzrayim and the makkos",
+    "גלות מצרים און די מכות",
+    "parshas shemos",
+    "parshas vaeira",
+    "parshas bo",
+    "ten plagues",
+    "makkas barad",
+    "makas bechoros"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "topic",
+   "id": "gedolei-yisroel",
+   "labels": {
+    "he": "חז\"ל וגדולי ישראל",
+    "en": "Chazal and Gedolei Yisroel",
+    "yi": "חז\"ל און גדולי ישראל"
+   },
+   "synonyms": [
+    "חזל וגדולי ישראל",
+    "chazal and gedolei yisrael",
+    "חזל און גדולי ישראל",
+    "the chofetz chaim",
+    "the chasam sofer",
+    "rabbi akiva",
+    "chasam sofer",
+    "anshei knesses hagedolah",
+    "maharal"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "topic",
+   "id": "geulah",
+   "labels": {
+    "he": "גלות וגאולה",
+    "en": "Galus and Geulah",
+    "yi": "גלות און גאולה"
+   },
+   "synonyms": [
+    "גלות וגאולה",
+    "galus and geulah",
+    "גלות און גאולה",
+    "redemption",
+    "exile"
+   ],
+   "count": 19
+  },
+  {
+   "kind": "topic",
+   "id": "gilgulim",
+   "labels": {
+    "he": "גלגולים ותיקון הנשמות",
+    "en": "Gilgulim and Tikkun HaNeshamos",
+    "yi": "גלגולים און תיקון הנשמות"
+   },
+   "synonyms": [
+    "גלגולים ותיקון הנשמות",
+    "gilgulim and tikkun haneshamos",
+    "גלגולים און תיקון הנשמות",
+    "gilgul",
+    "reincarnation",
+    "ibbur",
+    "gilgulim",
+    "gilgulim and tikkun",
+    "dibbuk"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "hachanah-lekabbalas-hatorah",
+   "labels": {
+    "he": "הכנה לקבלת התורה",
+    "en": "Preparing for Kabbalas HaTorah",
+    "yi": "הכנה צו קבלת התורה"
+   },
+   "synonyms": [
+    "הכנה לקבלת התורה",
+    "preparing for kabbalas hatorah",
+    "הכנה צו קבלת התורה",
+    "preparation for שבועות",
+    "preparation for matan torah",
+    "rosh chodesh sivan",
+    "preparing for שבועות",
+    "shabbos before שבועות",
+    "teshuvah before שבועות"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "hashgacha-pratis",
+   "labels": {
+    "he": "השגחה פרטית",
+    "en": "Hashgacha Pratis",
+    "yi": "השגחה פרטית"
+   },
+   "synonyms": [
+    "השגחה פרטית",
+    "hashgacha pratis",
+    "hashgachah pratis",
+    "divine providence",
+    "amalek and chance",
+    "hidden divine providence",
+    "divine providence in history",
+    "personal hashgachah"
+   ],
+   "count": 6
+  },
+  {
+   "kind": "topic",
+   "id": "hester-panim",
+   "labels": {
+    "he": "הסתר פנים",
+    "en": "Hester Panim and Suffering",
+    "yi": "הסתר פנים און יסורים"
+   },
+   "synonyms": [
+    "הסתר פנים",
+    "hester panim and suffering",
+    "הסתר פנים און יסורים",
+    "hiding of the face",
+    "hester panim",
+    "light and darkness",
+    "emunah in dark times",
+    "hester panim in galus",
+    "emunah in hester panim"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "hischadshus",
+   "labels": {
+    "he": "התחדשות",
+    "en": "Renewal in Avodas Hashem",
+    "yi": "התחדשות אין עבודת השם"
+   },
+   "synonyms": [
+    "התחדשות",
+    "renewal in avodas hashem",
+    "התחדשות אין עבודת השם",
+    "renewal",
+    "freshness in avodas hashem",
+    "mosif vholech",
+    "growth in exile",
+    "renewal in torah",
+    "renewal and habit"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "topic",
+   "id": "hiskashrus-tzaddikim",
+   "labels": {
+    "he": "התקשרות לצדיקים",
+    "en": "Hiskashrus to Tzaddikim and Emunas Chachamim",
+    "yi": "התקשרות צו צדיקים און אמונת חכמים"
+   },
+   "synonyms": [
+    "התקשרות לצדיקים",
+    "hiskashrus to tzaddikim and emunas chachamim",
+    "התקשרות צו צדיקים און אמונת חכמים",
+    "emunas chachamim",
+    "daas torah",
+    "cleaving to talmidei chachamim",
+    "hidden tzaddik",
+    "attachment to tzaddikim",
+    "tzaddik of the generation"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "topic",
+   "id": "histalkus-tzaddik",
+   "labels": {
+    "he": "הסתלקות הצדיק",
+    "en": "The Passing of a Tzaddik",
+    "yi": "די הסתלקות פון א צדיק"
+   },
+   "synonyms": [
+    "הסתלקות הצדיק",
+    "the passing of a tzaddik",
+    "די הסתלקות פון א צדיק",
+    "yahrzeit",
+    "hilula",
+    "the day of a tzaddiks passing",
+    "hesped",
+    "mourning and joy",
+    "yahrtzeit hesped"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "hodaah",
+   "labels": {
+    "he": "הודאה",
+    "en": "Thanks and Praise to Hashem",
+    "yi": "הודאה און שבח צום אייבערשטן"
+   },
+   "synonyms": [
+    "הודאה",
+    "thanks and praise to hashem",
+    "הודאה און שבח צום אייבערשטן",
+    "gratitude to hashem",
+    "hakaras hatov",
+    "thanking hashem",
+    "seudas hodaah",
+    "hodaah",
+    "gratitude"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "hoshana-rabbah",
+   "labels": {
+    "he": "הושענא רבה",
+    "en": "Hoshana Rabbah",
+    "yi": "הושענא רבה"
+   },
+   "synonyms": [
+    "הושענא רבה",
+    "the aravah",
+    "aravah",
+    "the aravah and tefillah",
+    "teshuvah of הושענא רבה",
+    "הושענא רבה and the moon"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "ikvesa-dimeshicha",
+   "labels": {
+    "he": "עקבתא דמשיחא",
+    "en": "Ikvesa DiMeshicha",
+    "yi": "עקבתא דמשיחא"
+   },
+   "synonyms": [
+    "עקבתא דמשיחא",
+    "ikvesa dimeshicha",
+    "ikvesa dmeshicha",
+    "footsteps of moshiach",
+    "ikvesa demeshicha",
+    "ikvesa demeshicha generation"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "kashrus",
+   "labels": {
+    "he": "כשרות",
+    "en": "Kashrus and Kedushas HaAchilah",
+    "yi": "כשרות און קדושת האכילה"
+   },
+   "synonyms": [
+    "כשרות",
+    "kashrus and kedushas haachilah",
+    "כשרות און קדושת האכילה",
+    "forbidden foods",
+    "kashrus",
+    "chalav akum",
+    "blood clotting",
+    "kedushah in food",
+    "the soul in the blood"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "kavanah-betefilah",
+   "labels": {
+    "he": "כוונת התפילה",
+    "en": "Kavanah in Davening",
+    "yi": "כוונה אין דאווענען"
+   },
+   "synonyms": [
+    "כוונת התפילה",
+    "kavanah in davening",
+    "כוונה אין דאווענען",
+    "kavanah in tefillah",
+    "avodah shebalev",
+    "davening aloud",
+    "kavanah in prayer",
+    "davening slowly",
+    "fervor in davening"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "kedushah",
+   "labels": {
+    "he": "קדושה וטהרה",
+    "en": "Kedushah and Taharah",
+    "yi": "קדושה און טהרה"
+   },
+   "synonyms": [
+    "קדושה וטהרה",
+    "kedushah and taharah",
+    "קדושה און טהרה",
+    "holiness",
+    "purity",
+    "hidden holiness",
+    "kedushas einayim",
+    "flax and separation",
+    "kedushah and kitrug"
+   ],
+   "count": 5
+  },
+  {
+   "kind": "topic",
+   "id": "kedushah-vekelipah",
+   "labels": {
+    "he": "קדושה וקליפה",
+    "en": "Kedushah and Kelipah",
+    "yi": "קדושה און קליפה"
+   },
+   "synonyms": [
+    "קדושה וקליפה",
+    "kedushah and kelipah",
+    "קדושה און קליפה",
+    "kelipas nogah",
+    "sitra achra",
+    "klipas nogah",
+    "mixture of good and evil",
+    "klipas nogah and the three impure klipos",
+    "kelipas noga"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "kedushas-eretz-yisroel",
+   "labels": {
+    "he": "קדושת ארץ ישראל",
+    "en": "Kedushas Eretz Yisroel",
+    "yi": "קדושת ארץ ישראל"
+   },
+   "synonyms": [
+    "קדושת ארץ ישראל",
+    "kedushas eretz yisrael",
+    "holiness of eretz yisrael",
+    "eretz yisrael",
+    "bikkurim",
+    "keini kenizi and kadmoni",
+    "tefillah in eretz yisrael"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "topic",
+   "id": "kedushas-shabbos",
+   "labels": {
+    "he": "קדושת שבת",
+    "en": "Kedushas Shabbos",
+    "yi": "קדושת שבת"
+   },
+   "synonyms": [
+    "קדושת שבת",
+    "kedushas shabbos",
+    "neshamah yeseirah",
+    "kedushas hashabbos",
+    "shabbos hagadol",
+    "yom shekulo shabbos",
+    "shabbos as a gift",
+    "shabbos as malchus"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "topic",
+   "id": "ketz-hageulah",
+   "labels": {
+    "he": "קץ הגאולה",
+    "en": "The Time of the Geulah and the Ketz",
+    "yi": "די צייט פון דער גאולה און דער קץ"
+   },
+   "synonyms": [
+    "קץ הגאולה",
+    "the time of the geulah and the ketz",
+    "די צייט פון דער גאולה און דער קץ",
+    "calculating the ketz",
+    "end of days",
+    "calculating the end of days",
+    "ketz of 5748",
+    "dates of the ketz",
+    "times of the ketz"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "klal-yisroel",
+   "labels": {
+    "he": "כלל ישראל",
+    "en": "Klal Yisroel",
+    "yi": "כלל ישראל"
+   },
+   "synonyms": [
+    "כלל ישראל",
+    "klal yisrael",
+    "the jewish people",
+    "jewish minhagim",
+    "minhagei yisrael",
+    "israel as reishis",
+    "the jewish apikorus",
+    "the goy within a jew"
+   ],
+   "count": 16
+  },
+  {
+   "kind": "topic",
+   "id": "koach-hatefilah",
+   "labels": {
+    "he": "כח התפילה",
+    "en": "The Power of Tefilah",
+    "yi": "דער כח פון תפילה"
+   },
+   "synonyms": [
+    "כח התפילה",
+    "the power of tefillah",
+    "דער כח פון תפילה",
+    "power of tefillah",
+    "crying out to hashem",
+    "eis ratzon",
+    "pekidas akaros",
+    "tefillah as a weapon",
+    "remembering the barren"
+   ],
+   "count": 7
+  },
+  {
+   "kind": "topic",
+   "id": "korbanos",
+   "labels": {
+    "he": "קרבנות",
+    "en": "Korbanos and Avodas HaMikdash",
+    "yi": "קרבנות און עבודת בית המקדש"
+   },
+   "synonyms": [
+    "קרבנות",
+    "korbanos and avodas hamikdash",
+    "קרבנות און עבודת בית המקדש",
+    "kohen gadol",
+    "ketores",
+    "lechem hapanim",
+    "olah and shelamim",
+    "korban todah",
+    "every jew a kohen"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "topic",
+   "id": "krias-yam-suf",
+   "labels": {
+    "he": "קריעת ים סוף",
+    "en": "Krias Yam Suf and the Mann",
+    "yi": "קריעת ים סוף און דער מן"
+   },
+   "synonyms": [
+    "קריעת ים סוף",
+    "krias yam suf and the mann",
+    "קריעת ים סוף און דער מן",
+    "parshas beshalach",
+    "splitting of the sea",
+    "shiras hayam",
+    "shabbos shirah",
+    "perek shirah",
+    "the manna"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "kriyas-shem",
+   "labels": {
+    "he": "קריאת השם",
+    "en": "Naming a Child",
+    "yi": "קריאת שם פאר א קינד"
+   },
+   "synonyms": [
+    "קריאת השם",
+    "naming a child",
+    "קריאת שם פאר א קינד",
+    "a persons name",
+    "naming",
+    "the name yisrael",
+    "naming a child at the bris",
+    "names and a persons mission",
+    "naming a child after a tzaddik"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "lag-baomer",
+   "labels": {
+    "he": "ל\"ג בעומר",
+    "en": "Lag BaOmer and Rabbi Shimon bar Yochai",
+    "yi": "ל\"ג בעומר און רבי שמעון בר יוחאי"
+   },
+   "synonyms": [
+    "לג בעומר",
+    "לג בעומר and rabbi shimon bar yochai",
+    "לג בעומר און רבי שמעון בר יוחאי",
+    "rabbi shimon bar yochai",
+    "rashbi",
+    "rabbi shimon bar yochai and לג בעומר",
+    "tikunei zohar in אלול"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "leil-haseder",
+   "labels": {
+    "he": "ליל הסדר",
+    "en": "The Seder Night",
+    "yi": "ליל הסדר"
+   },
+   "synonyms": [
+    "ליל הסדר",
+    "the seder night",
+    "seder",
+    "four cups",
+    "haggadah",
+    "korban פסח",
+    "ha lachma anya",
+    "three matzos and four cups"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "maalas-hatorah",
+   "labels": {
+    "he": "מעלת התורה",
+    "en": "The Power and Greatness of Torah",
+    "yi": "דער כח און די מעלה פון תורה"
+   },
+   "synonyms": [
+    "מעלת התורה",
+    "the power and greatness of torah",
+    "דער כח און די מעלה פון תורה",
+    "power of torah",
+    "torah as protection",
+    "torah and tefillah",
+    "torah compared to water",
+    "torah and tefillah as weapons",
+    "torah study as union with hashem"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "topic",
+   "id": "maalas-yisroel",
+   "labels": {
+    "he": "מעלת ישראל",
+    "en": "The Greatness of Every Jew",
+    "yi": "די מעלה פון יעדן איד"
+   },
+   "synonyms": [
+    "מעלת ישראל",
+    "the greatness of every jew",
+    "די מעלה פון יעדן איד",
+    "hashems love for every jew",
+    "maaminim bnei maaminim",
+    "the forgotten jew",
+    "jews outside the camp",
+    "simple jews",
+    "klal yisrael"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "maaseh-bereishis",
+   "labels": {
+    "he": "מעשה בראשית",
+    "en": "Creation and Its Wonders",
+    "yi": "מעשה בראשית און די נפלאות הבריאה"
+   },
+   "synonyms": [
+    "מעשה בראשית",
+    "creation and its wonders",
+    "מעשה בראשית און די נפלאות הבריאה",
+    "creation",
+    "ten utterances of creation",
+    "wonders of the human body",
+    "man as a microcosm",
+    "continuous creation",
+    "argument from design"
+   ],
+   "count": 7
+  },
+  {
+   "kind": "topic",
+   "id": "maasios",
+   "labels": {
+    "he": "מעשיות",
+    "en": "Stories of Tzaddikim",
+    "yi": "מעשיות פון צדיקים"
+   },
+   "synonyms": [
+    "מעשיות",
+    "stories of tzaddikim",
+    "מעשיות פון צדיקים",
+    "chassidic stories",
+    "maaseh avos siman labanim",
+    "stories of gedolim",
+    "ruach hakodesh stories",
+    "tevilas keilim stories",
+    "maaseh avos siman lebanim"
+   ],
+   "count": 10
+  },
+  {
+   "kind": "topic",
+   "id": "machshavah-dibur",
+   "labels": {
+    "he": "מחשבה ודיבור",
+    "en": "Thought and the Power of Speech",
+    "yi": "מחשבה און דער כח הדיבור"
+   },
+   "synonyms": [
+    "מחשבה ודיבור",
+    "thought and the power of speech",
+    "מחשבה און דער כח הדיבור",
+    "power of speech",
+    "lashon hara",
+    "shmiras halashon",
+    "idle talk",
+    "leitzanus",
+    "emes vyatziv"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "madreigos-haneshamah",
+   "labels": {
+    "he": "שורש הנשמה ומדרגותיה",
+    "en": "Levels and Root of the Soul",
+    "yi": "די מדריגות און דער שורש פון דער נשמה"
+   },
+   "synonyms": [
+    "שורש הנשמה ומדרגותיה",
+    "levels and root of the soul",
+    "די מדריגות און דער שורש פון דער נשמה",
+    "root of the soul",
+    "nefesh ruach neshamah",
+    "levels of souls",
+    "levels of the soul",
+    "nefesh as will",
+    "nefesh ruach and neshamah"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "topic",
+   "id": "matan-torah",
+   "labels": {
+    "he": "מתן תורה",
+    "en": "Matan Torah at Har Sinai",
+    "yi": "מתן תורה ביי הר סיני"
+   },
+   "synonyms": [
+    "מתן תורה",
+    "matan torah at har sinai",
+    "מתן תורה ביי הר סיני",
+    "kabbalas hatorah",
+    "har sinai",
+    "naaseh vnishma",
+    "aseres hadibros",
+    "mesorah from sinai",
+    "mesorah of har sinai"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "matzah",
+   "labels": {
+    "he": "מצה",
+    "en": "Matzah, the Food of Emunah",
+    "yi": "מצה, מיכלא דמהימנותא"
+   },
+   "synonyms": [
+    "מצה",
+    "matzah the food of emunah",
+    "מצה מיכלא דמהימנותא",
+    "matzah as the food of emunah",
+    "gematria of lechem and matzah",
+    "matzah as the food of faith",
+    "matzah and emunah",
+    "matzah as food of emunah",
+    "matzah"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "megillas-esther",
+   "labels": {
+    "he": "מגילת אסתר",
+    "en": "Megillas Esther",
+    "yi": "מגילת אסתר"
+   },
+   "synonyms": [
+    "מגילת אסתר",
+    "megillas esther",
+    "the megillah",
+    "mordechai and esther",
+    "achashveroshs feast",
+    "פורים and the megillah",
+    "reading of the megillah",
+    "ad dlo yada"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "mekomos-hakedoshim",
+   "labels": {
+    "he": "מקומות הקדושים",
+    "en": "The Holy Places",
+    "yi": "די מקומות הקדושים"
+   },
+   "synonyms": [
+    "מקומות הקדושים",
+    "the holy places",
+    "די מקומות הקדושים",
+    "kever rachel",
+    "meron",
+    "chevron",
+    "mearas hamachpelah",
+    "kever rochel",
+    "mearas hamachpela"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "mesiras-nefesh",
+   "labels": {
+    "he": "מסירת נפש",
+    "en": "Mesiras Nefesh",
+    "yi": "מסירת נפש"
+   },
+   "synonyms": [
+    "מסירת נפש",
+    "mesiras nefesh",
+    "mesirus nefesh",
+    "self sacrifice",
+    "kiddush hashem",
+    "chillul hashem",
+    "daily mesiras nefesh",
+    "mesirus nefesh in exile"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "middos",
+   "labels": {
+    "he": "תיקון המידות",
+    "en": "Middos Tovos",
+    "yi": "מידות טובות"
+   },
+   "synonyms": [
+    "תיקון המידות",
+    "middos tovos",
+    "מידות טובות",
+    "good middos",
+    "anger",
+    "jealousy",
+    "seven middos",
+    "hatred of the nations",
+    "middos"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "topic",
+   "id": "mishkan",
+   "labels": {
+    "he": "המשכן",
+    "en": "The Mishkan and the Kohanim",
+    "yi": "דער משכן און די כהנים"
+   },
+   "synonyms": [
+    "המשכן",
+    "the mishkan and the kohanim",
+    "דער משכן און די כהנים",
+    "parshas terumah",
+    "parshas tetzaveh",
+    "bigdei kehunah",
+    "parshas pekudei",
+    "shulchan aruch harav",
+    "betzalel"
+   ],
+   "count": 6
+  },
+  {
+   "kind": "topic",
+   "id": "mitzvos",
+   "labels": {
+    "he": "תרי\"ג מצוות",
+    "en": "Mitzvos",
+    "yi": "מצוות"
+   },
+   "synonyms": [
+    "תריג מצוות",
+    "mitzvos",
+    "מצוות",
+    "613 mitzvos"
+   ],
+   "count": 8
+  },
+  {
+   "kind": "topic",
+   "id": "moshe-rabbeinu",
+   "labels": {
+    "he": "משה רבינו",
+    "en": "Moshe Rabbeinu",
+    "yi": "משה רבינו"
+   },
+   "synonyms": [
+    "משה רבינו",
+    "moshe rabbeinu",
+    "moshe",
+    "moshe rabbeinus prayer",
+    "humility of moshe rabbeinu",
+    "yismach moshe",
+    "aharon hakohen",
+    "years of aharon"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "moshiach",
+   "labels": {
+    "he": "ימות המשיח",
+    "en": "Moshiach and the Days of Moshiach",
+    "yi": "משיח און ימות המשיח"
+   },
+   "synonyms": [
+    "ימות המשיח",
+    "moshiach and the days of moshiach",
+    "משיח און ימות המשיח",
+    "moshiach",
+    "days of moshiach",
+    "light of moshiach",
+    "geulah"
+   ],
+   "count": 9
+  },
+  {
+   "kind": "topic",
+   "id": "moshiach-ben-yosef",
+   "labels": {
+    "he": "משיח בן יוסף ומשיח בן דוד",
+    "en": "Moshiach ben Yosef and Moshiach ben Dovid",
+    "yi": "משיח בן יוסף און משיח בן דוד"
+   },
+   "synonyms": [
+    "משיח בן יוסף ומשיח בן דוד",
+    "moshiach ben yosef and moshiach ben dovid",
+    "משיח בן יוסף און משיח בן דוד",
+    "moshiach ben yosef",
+    "moshiach ben dovid and moshiach ben yosef",
+    "moshiach ben dovid"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "nach",
+   "labels": {
+    "he": "נ\"ך",
+    "en": "Neviim and Kesuvim",
+    "yi": "נביאים און כתובים"
+   },
+   "synonyms": [
+    "נך",
+    "neviim and kesuvim",
+    "נביאים און כתובים",
+    "nach",
+    "tanach"
+   ],
+   "count": 10
+  },
+  {
+   "kind": "topic",
+   "id": "neros-chanukah",
+   "labels": {
+    "he": "נר חנוכה",
+    "en": "The Chanukah Lights",
+    "yi": "די חנוכה ליכט"
+   },
+   "synonyms": [
+    "נר חנוכה",
+    "the חנוכה lights",
+    "די חנוכה ליכט",
+    "חנוכה lights",
+    "menorah",
+    "חנוכה lights below ten tefachim",
+    "pirsumei nisa",
+    "חנוכה and the light of moshiach",
+    "חנוכה lights and the light of moshiach"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "nes-chanukah",
+   "labels": {
+    "he": "נס חנוכה",
+    "en": "The Miracle of Chanukah and the Greeks",
+    "yi": "דער נס חנוכה און די יוונים"
+   },
+   "synonyms": [
+    "נס חנוכה",
+    "the miracle of חנוכה and the greeks",
+    "דער נס חנוכה און די יוונים",
+    "chashmonaim",
+    "greek wisdom",
+    "yavan",
+    "the chashmonaim",
+    "klipas yavan",
+    "חנוכה and yavan"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "neshamos",
+   "labels": {
+    "he": "נשמות וגלגולים",
+    "en": "Neshamos and Gilgulim",
+    "yi": "נשמות און גלגולים"
+   },
+   "synonyms": [
+    "נשמות וגלגולים",
+    "neshamos and gilgulim",
+    "נשמות און גלגולים",
+    "souls"
+   ],
+   "count": 5
+  },
+  {
+   "kind": "topic",
+   "id": "netzach-yisroel",
+   "labels": {
+    "he": "נצח ישראל",
+    "en": "Netzach Yisroel",
+    "yi": "נצח ישראל"
+   },
+   "synonyms": [
+    "נצח ישראל",
+    "netzach yisrael",
+    "eternity of the jewish people",
+    "eternity of israel",
+    "no jew is lost forever",
+    "survival of the jewish people",
+    "eternity of torah",
+    "eternity of tzaddikim"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "neviim",
+   "labels": {
+    "he": "נביאים",
+    "en": "The Neviim and Their Times",
+    "yi": "די נביאים און זייערע צייטן"
+   },
+   "synonyms": [
+    "נביאים",
+    "the neviim and their times",
+    "די נביאים און זייערע צייטן",
+    "yirmiyahu",
+    "shmuel hanavi",
+    "shimshon",
+    "parshas shoftim",
+    "chanas prayer",
+    "shaul and agag"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "topic",
+   "id": "niggun-shirah",
+   "labels": {
+    "he": "ניגון ושירה",
+    "en": "Niggun and Shirah",
+    "yi": "ניגון און שירה"
+   },
+   "synonyms": [
+    "ניגון ושירה",
+    "niggun and shirah",
+    "ניגון און שירה",
+    "niggunim",
+    "song",
+    "music",
+    "shabbos shira",
+    "the ten songs",
+    "seven and music"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "nissim-beretz-yisroel",
+   "labels": {
+    "he": "ניסים בארץ ישראל",
+    "en": "Miracles and Wars in Eretz Yisroel",
+    "yi": "ניסים און מלחמות אין ארץ ישראל"
+   },
+   "synonyms": [
+    "ניסים בארץ ישראל",
+    "miracles and wars in eretz yisrael",
+    "ניסים און מלחמות אין ארץ ישראל",
+    "six day war",
+    "miracles in eretz yisrael",
+    "miracles of the six day war",
+    "the gulf war",
+    "gulf war miracles",
+    "the army of dovid"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "nissim-veteva",
+   "labels": {
+    "he": "נס וטבע",
+    "en": "Miracles and Nature",
+    "yi": "ניסים און טבע"
+   },
+   "synonyms": [
+    "נס וטבע",
+    "miracles and nature",
+    "ניסים און טבע",
+    "hidden miracles",
+    "above nature",
+    "hidden daily miracles",
+    "habit as second nature",
+    "miracles within nature",
+    "seeing hashem in nature"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "nisyonos-hador",
+   "labels": {
+    "he": "נסיונות הדור",
+    "en": "Challenges of Our Generation",
+    "yi": "די נסיונות פונעם דור"
+   },
+   "synonyms": [
+    "נסיונות הדור",
+    "challenges of our generation",
+    "די נסיונות פונעם דור",
+    "assimilation",
+    "haskalah",
+    "zionism",
+    "evolution",
+    "secular wisdom",
+    "chakirah and philosophy"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "noach-mabul",
+   "labels": {
+    "he": "נח והמבול",
+    "en": "Noach and the Mabul",
+    "yi": "נח און דער מבול"
+   },
+   "synonyms": [
+    "נח והמבול",
+    "noach and the mabul",
+    "נח און דער מבול",
+    "parshas noach",
+    "the flood",
+    "noach and moshe rabbeinu",
+    "the mabul",
+    "noach and moshe",
+    "noach and the flood"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "olamos-tzimtzum",
+   "labels": {
+    "he": "צמצום ועולמות",
+    "en": "Tzimtzum, the Worlds and the Merkavah",
+    "yi": "צמצום, עולמות און די מרכבה"
+   },
+   "synonyms": [
+    "צמצום ועולמות",
+    "tzimtzum the worlds and the merkavah",
+    "צמצום עולמות און די מרכבה",
+    "four worlds",
+    "tzimtzum",
+    "sheviras hakeilim",
+    "kings of edom",
+    "place time and soul",
+    "olam shanah nefesh"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "oneg-shabbos",
+   "labels": {
+    "he": "עונג שבת",
+    "en": "Oneg Shabbos and Kavod Shabbos",
+    "yi": "עונג שבת און כבוד שבת"
+   },
+   "synonyms": [
+    "עונג שבת",
+    "oneg shabbos and kavod shabbos",
+    "עונג שבת און כבוד שבת",
+    "oneg shabbos",
+    "kavod shabbos",
+    "zemiros shabbos",
+    "zemiros",
+    "nega and oneg",
+    "shabbos cholent"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "otiyos-gematria",
+   "labels": {
+    "he": "אותיות וגימטריאות",
+    "en": "Letters, Gematria and Lashon HaKodesh",
+    "yi": "אותיות, גימטריא און לשון הקודש"
+   },
+   "synonyms": [
+    "אותיות וגימטריאות",
+    "letters gematria and lashon hakodesh",
+    "אותיות גימטריא און לשון הקודש",
+    "gematria",
+    "lashon hakodesh",
+    "masorah count of pesukim",
+    "beis shammai and beis hillel",
+    "every jew as a letter in the sefer torah",
+    "writing a sefer torah"
+   ],
+   "count": 5
+  },
+  {
+   "kind": "topic",
+   "id": "pardes",
+   "labels": {
+    "he": "פרד\"ס",
+    "en": "Pshat, Remez, Drush and Sod",
+    "yi": "פשט, רמז, דרש און סוד"
+   },
+   "synonyms": [
+    "פרדס",
+    "pshat remez drush and sod",
+    "פשט רמז דרש און סוד",
+    "pnimiyus hatorah",
+    "secrets of the torah",
+    "pshat and sod",
+    "pardes",
+    "drash and sod",
+    "pardes of torah"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "parsha",
+   "labels": {
+    "he": "פרשת השבוע",
+    "en": "Parshas HaShavua",
+    "yi": "פרשת השבוע"
+   },
+   "synonyms": [
+    "פרשת השבוע",
+    "parshas hashavua",
+    "weekly parsha",
+    "sedra",
+    "combined sedras",
+    "joined parshiyos",
+    "parsha stumah",
+    "living the parsha"
+   ],
+   "count": 25
+  },
+  {
+   "kind": "topic",
+   "id": "pesach",
+   "labels": {
+    "he": "פסח וחודש ניסן",
+    "en": "Pesach and Chodesh Nissan",
+    "yi": "פסח און חודש ניסן"
+   },
+   "synonyms": [
+    "פסח וחודש ניסן",
+    "פסח and chodesh nissan",
+    "פסח און חודש ניסן",
+    "פסח",
+    "shvii shel פסח",
+    "chumros of פסח",
+    "פסח as revival",
+    "acharon shel פסח"
+   ],
+   "count": 6
+  },
+  {
+   "kind": "topic",
+   "id": "pesach-sheni",
+   "labels": {
+    "he": "פסח שני",
+    "en": "Pesach Sheni",
+    "yi": "פסח שני"
+   },
+   "synonyms": [
+    "פסח שני",
+    "פסח sheni",
+    "פסח sheini",
+    "פסח sheni and vayehi binsoa out of place"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "pesukei-dezimra",
+   "labels": {
+    "he": "פסוקי דזמרה",
+    "en": "Pesukei DeZimra",
+    "yi": "פסוקי דזמרה"
+   },
+   "synonyms": [
+    "פסוקי דזמרה",
+    "pesukei dezimra",
+    "pesukei dzimra",
+    "pesukei dezimrah",
+    "baruch sheamar",
+    "pesukei dzimrah",
+    "hodu before shabbos"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "pintele-yid",
+   "labels": {
+    "he": "הנקודה הפנימית שבכל יהודי",
+    "en": "The Pintele Yid: The Inner Point of Every Jew",
+    "yi": "דער פינטעלע איד: די פנימיות'דיגע נקודה פון יעדן איד"
+   },
+   "synonyms": [
+    "הנקודה הפנימית שבכל יהודי",
+    "the pintele yid the inner point of every jew",
+    "דער פינטעלע איד די פנימיותדיגע נקודה פון יעדן איד",
+    "pintele yid",
+    "inner point",
+    "the hidden point in every jew",
+    "the pintele yid",
+    "the inner point of the jewish heart",
+    "inner point of a jew"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "pirkei-avos",
+   "labels": {
+    "he": "פרקי אבות",
+    "en": "Pirkei Avos",
+    "yi": "פרקי אבות"
+   },
+   "synonyms": [
+    "פרקי אבות",
+    "pirkei avos",
+    "avos",
+    "pirkei avos chapter 6",
+    "pirkei avos 6 1",
+    "pirkei avos chapter 1",
+    "pirkei avos and derech eretz"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "purim",
+   "labels": {
+    "he": "פורים",
+    "en": "Purim",
+    "yi": "פורים"
+   },
+   "synonyms": [
+    "פורים",
+    "drinking on פורים",
+    "matanos laevyonim",
+    "פורים and יום כפור",
+    "יום כפור and פורים",
+    "פורים and the month of adar",
+    "לג בעומר and פורים"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "purim-adar",
+   "labels": {
+    "he": "פורים וחודש אדר",
+    "en": "Purim and Chodesh Adar",
+    "yi": "פורים און חודש אדר"
+   },
+   "synonyms": [
+    "פורים וחודש אדר",
+    "פורים and chodesh adar",
+    "פורים און חודש אדר"
+   ],
+   "count": 5
+  },
+  {
+   "kind": "topic",
+   "id": "purim-katan",
+   "labels": {
+    "he": "פורים קטן",
+    "en": "Purim Katan and the Leap Year",
+    "yi": "פורים קטן און שנת העיבור"
+   },
+   "synonyms": [
+    "פורים קטן",
+    "פורים קטן and the leap year",
+    "פורים קטן און שנת העיבור",
+    "adar rishon",
+    "leap year",
+    "adar sheni",
+    "adar rishon and adar sheni",
+    "פורים and adar sheni"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "rebbes-hador",
+   "labels": {
+    "he": "צדיקי הדורות",
+    "en": "The Rebbes of Later Generations",
+    "yi": "די רביים פון שפעטערדיגע דורות"
+   },
+   "synonyms": [
+    "צדיקי הדורות",
+    "the rebbes of later generations",
+    "די רביים פון שפעטערדיגע דורות",
+    "the sanzer rav",
+    "the satmar rav",
+    "the ruzhiner rebbe",
+    "sanzer rav",
+    "imrei emes",
+    "satmar rebbe"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "rosh-chodesh",
+   "labels": {
+    "he": "ראש חודש",
+    "en": "Rosh Chodesh and the Months",
+    "yi": "ראש חודש און די חדשים"
+   },
+   "synonyms": [
+    "ראש חודש",
+    "rosh chodesh and the months",
+    "ראש חודש און די חדשים",
+    "kiddush hachodesh",
+    "the moon",
+    "the jewish calendar",
+    "birkas hachamah",
+    "the diminished moon",
+    "diminution of the moon"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "rosh-hashanah",
+   "labels": {
+    "he": "ראש השנה",
+    "en": "Rosh Hashanah",
+    "yi": "ראש השנה"
+   },
+   "synonyms": [
+    "ראש השנה",
+    "shofar",
+    "אלול and ראש השנה",
+    "zichronos of ראש השנה",
+    "ראש השנה on shabbos",
+    "tekias shofar"
+   ],
+   "count": 7
+  },
+  {
+   "kind": "topic",
+   "id": "schar-veonesh",
+   "labels": {
+    "he": "שכר ועונש",
+    "en": "Reward, Olam HaBa and Techiyas HaMeisim",
+    "yi": "שכר ועונש, עולם הבא און תחיית המתים"
+   },
+   "synonyms": [
+    "שכר ועונש",
+    "reward olam haba and techiyas hameisim",
+    "שכר ועונש עולם הבא און תחיית המתים",
+    "olam haba",
+    "techiyas hameisim",
+    "shabbos as a taste of olam haba",
+    "kareis",
+    "chibut hakever",
+    "techiyas hameisim and tal"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "topic",
+   "id": "seder-hatefilah",
+   "labels": {
+    "he": "סדר התפילה",
+    "en": "The Order of Davening",
+    "yi": "סדר התפילה"
+   },
+   "synonyms": [
+    "סדר התפילה",
+    "the order of davening",
+    "siddur",
+    "lshem yichud",
+    "modeh ani",
+    "negel vasser",
+    "leshem yichud",
+    "netilas yadayim"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "sefer-bamidbar",
+   "labels": {
+    "he": "ספר במדבר",
+    "en": "Sefer Bamidbar",
+    "yi": "ספר במדבר"
+   },
+   "synonyms": [
+    "ספר במדבר",
+    "sefer bamidbar",
+    "numbers",
+    "parshas behaaloscha",
+    "mei merivah",
+    "parshas masei",
+    "cities of refuge",
+    "sotah 49b"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "sefer-bereishis",
+   "labels": {
+    "he": "ספר בראשית",
+    "en": "Sefer Bereishis",
+    "yi": "ספר בראשית"
+   },
+   "synonyms": [
+    "ספר בראשית",
+    "sefer bereishis",
+    "genesis",
+    "parshas vayeitzei"
+   ],
+   "count": 17
+  },
+  {
+   "kind": "topic",
+   "id": "sefer-devarim",
+   "labels": {
+    "he": "ספר דברים",
+    "en": "Sefer Devarim",
+    "yi": "ספר דברים"
+   },
+   "synonyms": [
+    "ספר דברים",
+    "sefer devarim",
+    "deuteronomy",
+    "mishneh torah",
+    "parshas ki savo",
+    "parshas haazinu",
+    "parshas nitzavim",
+    "zaken mamrei"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "sefer-shemos",
+   "labels": {
+    "he": "ספר שמות",
+    "en": "Sefer Shemos",
+    "yi": "ספר שמות"
+   },
+   "synonyms": [
+    "ספר שמות",
+    "sefer shemos",
+    "exodus",
+    "parshas yisro",
+    "parshas vaeira",
+    "shabbos parshas yisro",
+    "ramban end of parshas bo"
+   ],
+   "count": 11
+  },
+  {
+   "kind": "topic",
+   "id": "sefer-vayikra",
+   "labels": {
+    "he": "ספר ויקרא",
+    "en": "Sefer Vayikra",
+    "yi": "ספר ויקרא"
+   },
+   "synonyms": [
+    "ספר ויקרא",
+    "sefer vayikra",
+    "leviticus",
+    "parshas emor",
+    "parshas shemini",
+    "the megadef",
+    "ben ish mitzri",
+    "kedoshim tihyu"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "sefirah-lag-baomer",
+   "labels": {
+    "he": "ספירת העומר ול\"ג בעומר",
+    "en": "Sefiras HaOmer and Lag BaOmer",
+    "yi": "ספירת העומר און ל\"ג בעומר"
+   },
+   "synonyms": [
+    "ספירת העומר ולג בעומר",
+    "ספירה and לג בעומר",
+    "ספירת העומר און לג בעומר"
+   ],
+   "count": 5
+  },
+  {
+   "kind": "topic",
+   "id": "sefiras-haomer",
+   "labels": {
+    "he": "ספירת העומר",
+    "en": "Sefiras HaOmer",
+    "yi": "ספירת העומר"
+   },
+   "synonyms": [
+    "ספירת העומר",
+    "ספירה",
+    "omer",
+    "ספירה and שבועות",
+    "students of rabbi akiva",
+    "month of iyar"
+   ],
+   "count": 5
+  },
+  {
+   "kind": "topic",
+   "id": "sefiros",
+   "labels": {
+    "he": "עשר ספירות",
+    "en": "The Sefiros",
+    "yi": "די ספירות"
+   },
+   "synonyms": [
+    "עשר ספירות",
+    "the sefiros",
+    "די ספירות",
+    "ten sefiros",
+    "middos elyonos",
+    "chesed and gevurah",
+    "chochmah and binah",
+    "chesed and din",
+    "netzach and hod"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "topic",
+   "id": "shabbos",
+   "labels": {
+    "he": "שבת קודש",
+    "en": "Shabbos Kodesh",
+    "yi": "שבת קודש"
+   },
+   "synonyms": [
+    "שבת קודש",
+    "shabbos kodesh",
+    "shabbos"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "topic",
+   "id": "shavuos",
+   "labels": {
+    "he": "שבועות",
+    "en": "Shavuos and Matan Torah",
+    "yi": "שבועות און מתן תורה"
+   },
+   "synonyms": [
+    "שבועות",
+    "שבועות and matan torah",
+    "שבועות און מתן תורה",
+    "akdamus",
+    "שבועות as yovel",
+    "שבועות night",
+    "tikkun leil שבועות"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "topic",
+   "id": "shechinah",
+   "labels": {
+    "he": "שכינה וגלות השכינה",
+    "en": "The Shechinah and Galus HaShechinah",
+    "yi": "די שכינה און גלות השכינה"
+   },
+   "synonyms": [
+    "שכינה וגלות השכינה",
+    "the shechinah and galus hashechinah",
+    "די שכינה און גלות השכינה",
+    "shechinah in exile",
+    "galus hashechinah",
+    "shechinah in galus",
+    "exile of the shechinah",
+    "naomi as the shechinah",
+    "descent of the shechinah"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "shemini-atzeres",
+   "labels": {
+    "he": "שמיני עצרת ושמחת תורה",
+    "en": "Shemini Atzeres and Simchas Torah",
+    "yi": "שמיני עצרת און שמחת תורה"
+   },
+   "synonyms": [
+    "שמיני עצרת ושמחת תורה",
+    "שמיני עצרת and שמחת תורה",
+    "שמיני עצרת און שמחת תורה",
+    "שמחת תורה",
+    "שמיני עצרת",
+    "sukkah and שמחת תורה",
+    "סוכות and שמיני עצרת",
+    "dancing with awe on שמחת תורה",
+    "שמיני עצרת and tefilas geshem"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "shemitah-yovel",
+   "labels": {
+    "he": "שמיטה ויובל",
+    "en": "Shemitah and Yovel",
+    "yi": "שמיטה און יובל"
+   },
+   "synonyms": [
+    "שמיטה ויובל",
+    "shemitah and yovel",
+    "שמיטה און יובל",
+    "shemittah",
+    "jubilee",
+    "shemitah",
+    "yovel",
+    "yovel and shemitah",
+    "the year after shemittah"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "shemoneh-esrei",
+   "labels": {
+    "he": "שמונה עשרה",
+    "en": "Shemoneh Esrei",
+    "yi": "שמונה עשרה"
+   },
+   "synonyms": [
+    "שמונה עשרה",
+    "shemoneh esrei",
+    "amidah",
+    "modim drabbanan",
+    "birkas hagomel",
+    "shabbos mincha",
+    "mincha chadashah",
+    "daily miracles in modim"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "shemos-hakedoshim",
+   "labels": {
+    "he": "שמות הקדושים",
+    "en": "The Holy Names of Hashem",
+    "yi": "די שמות הקדושים"
+   },
+   "synonyms": [
+    "שמות הקדושים",
+    "the holy names of hashem",
+    "די שמות הקדושים",
+    "names of hashem",
+    "shem havayah",
+    "hashems name hidden in the megillah",
+    "tzelem elokim",
+    "tzelem elokim and wild animals",
+    "hidden names of hashem in the megillah"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "topic",
+   "id": "shidduchim-chasunah",
+   "labels": {
+    "he": "שידוכים וחתונה",
+    "en": "Shidduchim and Chasunah",
+    "yi": "שידוכים און חתונה"
+   },
+   "synonyms": [
+    "שידוכים וחתונה",
+    "shidduchim and chasunah",
+    "שידוכים און חתונה",
+    "hachnasas kallah",
+    "wedding",
+    "shidduchim",
+    "paying the shadchan",
+    "hashem and klal yisrael as chassan and kallah",
+    "zivugim"
+   ],
+   "count": 7
+  },
+  {
+   "kind": "topic",
+   "id": "shir-hashirim",
+   "labels": {
+    "he": "שיר השירים",
+    "en": "Shir HaShirim",
+    "yi": "שיר השירים"
+   },
+   "synonyms": [
+    "שיר השירים",
+    "shir hashirim",
+    "song of songs",
+    "shir hashirim 1 3",
+    "shir hashirim 1 4",
+    "shir hashirim 1 2 3",
+    "shir hashirim 1 5 6",
+    "shir hashirim chapter 1"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "shlichus-hanefesh",
+   "labels": {
+    "he": "שליחות",
+    "en": "A Person's Mission in the World",
+    "yi": "דער תפקיד פון א מענטש אויף דער וועלט"
+   },
+   "synonyms": [
+    "שליחות",
+    "a persons mission in the world",
+    "דער תפקיד פון א מענטש אויף דער וועלט",
+    "shlichus",
+    "a persons mission",
+    "shlichus of every jew",
+    "purpose of creation",
+    "every jew as hashems messenger",
+    "purpose of galus"
+   ],
+   "count": 5
+  },
+  {
+   "kind": "topic",
+   "id": "shmiras-einayim",
+   "labels": {
+    "he": "שמירת עינים",
+    "en": "Shmiras Einayim",
+    "yi": "שמירת עינים"
+   },
+   "synonyms": [
+    "שמירת עינים",
+    "shmiras einayim",
+    "guarding the eyes",
+    "shemiras einayim",
+    "be in your eyes like a rasha",
+    "kedushah and guarding the eyes",
+    "guarding the eyes while traveling",
+    "yosef hatzaddik and guarding the eyes"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "shoresh-moshiach",
+   "labels": {
+    "he": "שורש נשמת משיח",
+    "en": "The Hidden Roots of Moshiach",
+    "yi": "דער באהאלטענער שורש פון משיח"
+   },
+   "synonyms": [
+    "שורש נשמת משיח",
+    "the hidden roots of moshiach",
+    "דער באהאלטענער שורש פון משיח",
+    "lineage of moshiach",
+    "sparks of moshiach",
+    "lineage of dovid",
+    "birth of moshiach",
+    "the soul of moshiach"
+   ],
+   "count": 5
+  },
+  {
+   "kind": "topic",
+   "id": "shovavim",
+   "labels": {
+    "he": "שובבי\"ם",
+    "en": "Shovavim",
+    "yi": "שובבי\"ם"
+   },
+   "synonyms": [
+    "שובבים",
+    "שובבים and adar",
+    "שובבים and tikkun habris",
+    "kedushas habris and שובבים",
+    "שובבים and tikkun hanefesh"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "shushan-purim",
+   "labels": {
+    "he": "שושן פורים",
+    "en": "Shushan Purim",
+    "yi": "שושן פורים"
+   },
+   "synonyms": [
+    "שושן פורים",
+    "פורים meshulash",
+    "פורים meshulash in yerushalayim",
+    "שושן פורים in yerushalayim",
+    "שושן פורים seudah",
+    "שושן פורים and yerushalayim"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "simanei-ikvesa",
+   "labels": {
+    "he": "סימני עקבתא דמשיחא",
+    "en": "Signs of the Generation Before Moshiach",
+    "yi": "די סימנים פונעם דור פאר משיח"
+   },
+   "synonyms": [
+    "סימני עקבתא דמשיחא",
+    "signs of the generation before moshiach",
+    "די סימנים פונעם דור פאר משיח",
+    "chevlei moshiach",
+    "signs of moshiach",
+    "birth pangs of moshiach",
+    "decline of the generations",
+    "erev rav"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "simcha",
+   "labels": {
+    "he": "שמחה",
+    "en": "Serving Hashem with Simcha",
+    "yi": "עבודת השם בשמחה"
+   },
+   "synonyms": [
+    "שמחה",
+    "serving hashem with simcha",
+    "עבודת השם בשמחה",
+    "joy",
+    "serving hashem with joy",
+    "joy and zerizus",
+    "joy in davening",
+    "simcha and emunah",
+    "simcha and bitachon"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "simchos",
+   "labels": {
+    "he": "ברית מילה ושמחות",
+    "en": "Bris Milah and Simchos",
+    "yi": "ברית מילה און שמחות"
+   },
+   "synonyms": [
+    "ברית מילה ושמחות",
+    "bris milah and simchos",
+    "ברית מילה און שמחות",
+    "lifecycle",
+    "pidyon haben",
+    "firstborn",
+    "seudah of pidyon haben",
+    "פדיון הבן"
+   ],
+   "count": 12
+  },
+  {
+   "kind": "topic",
+   "id": "sukkos",
+   "labels": {
+    "he": "חג הסוכות",
+    "en": "Sukkos",
+    "yi": "סוכות"
+   },
+   "synonyms": [
+    "חג הסוכות",
+    "סוכות",
+    "sukkah",
+    "ushpizin",
+    "arba minim",
+    "clouds of glory",
+    "hakhel",
+    "sukkah and the beis hamikdash"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "topic",
+   "id": "sukkos-shemini-atzeres",
+   "labels": {
+    "he": "סוכות ושמיני עצרת",
+    "en": "Sukkos and Shemini Atzeres",
+    "yi": "סוכות און שמיני עצרת"
+   },
+   "synonyms": [
+    "סוכות ושמיני עצרת",
+    "סוכות and שמיני עצרת",
+    "סוכות און שמיני עצרת"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "topic",
+   "id": "taamei-hamitzvos",
+   "labels": {
+    "he": "טעמי המצוות",
+    "en": "The Reasons and Power of the Mitzvos",
+    "yi": "טעמי המצוות און דער כח פון א מצוה"
+   },
+   "synonyms": [
+    "טעמי המצוות",
+    "the reasons and power of the mitzvos",
+    "טעמי המצוות און דער כח פון א מצוה",
+    "reasons for mitzvos",
+    "torah as food and mitzvos as garments",
+    "sefer chareidim",
+    "mitzvah of emunah",
+    "zerizus in mitzvos",
+    "eternity of mitzvos and aveiros"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "tachlis-hagalus",
+   "labels": {
+    "he": "תכלית הגלות",
+    "en": "Galus as Preparation for Geulah",
+    "yi": "גלות אלס הכנה צו גאולה"
+   },
+   "synonyms": [
+    "תכלית הגלות",
+    "galus as preparation for geulah",
+    "גלות אלס הכנה צו גאולה",
+    "purpose of galus",
+    "galus rooted in geulah",
+    "galus and geulah",
+    "galus as a shlichus",
+    "galus and redemption"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "talmidei-chachamim",
+   "labels": {
+    "he": "כבוד התורה",
+    "en": "Kavod HaTorah and Talmidei Chachamim",
+    "yi": "כבוד התורה און תלמידי חכמים"
+   },
+   "synonyms": [
+    "כבוד התורה",
+    "kavod hatorah and talmidei chachamim",
+    "כבוד התורה און תלמידי חכמים",
+    "talmidei chachamim",
+    "kavod hatorah",
+    "parnassah of talmidei chachamim",
+    "supporting torah",
+    "honor of the torah",
+    "honoring the torah"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "tammuz-av",
+   "labels": {
+    "he": "תמוז ואב",
+    "en": "Chodashim Tammuz and Av",
+    "yi": "די חדשים תמוז און אב"
+   },
+   "synonyms": [
+    "תמוז ואב",
+    "chodashim tammuz and av",
+    "די חדשים תמוז און אב",
+    "shiva asar btammuz",
+    "the nine days",
+    "tammuz and av",
+    "בין המצרים",
+    "tamuz and av",
+    "the months of tamuz and av"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "tanya",
+   "labels": {
+    "he": "ספר התניא",
+    "en": "Sefer HaTanya",
+    "yi": "ספר התניא"
+   },
+   "synonyms": [
+    "ספר התניא",
+    "sefer hatanya",
+    "tanya",
+    "likutei amarim",
+    "iggeres hakodesh",
+    "introduction to tanya",
+    "igeres hakodesh letter 11",
+    "bachurims conduct in a dirah"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "tanya-shtei-nefashos",
+   "labels": {
+    "he": "שתי הנפשות",
+    "en": "The Two Souls (Tanya ch. 1-8)",
+    "yi": "די צוויי נפשות (תניא פרקים א-ח)"
+   },
+   "synonyms": [
+    "שתי הנפשות",
+    "the two souls tanya ch 1 8",
+    "די צוויי נפשות תניא פרקים א ח",
+    "two souls",
+    "nefesh habahamis",
+    "nefesh elokis",
+    "tanya chapter 1",
+    "tanya chapter 2",
+    "tanya chapter 3"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "tanya-tzaddik-beinoni-rasha",
+   "labels": {
+    "he": "צדיק בינוני ורשע",
+    "en": "Tzaddik, Beinoni and Rasha (Tanya ch. 9-17)",
+    "yi": "צדיק, בינוני און רשע (תניא פרקים ט-יז)"
+   },
+   "synonyms": [
+    "צדיק בינוני ורשע",
+    "tzaddik beinoni and rasha tanya ch 9 17",
+    "צדיק בינוני און רשע תניא פרקים ט יז",
+    "the beinoni",
+    "mind ruling the heart",
+    "tanya chapter 12",
+    "tanya chapter 13",
+    "tanya chapter 14",
+    "tanya chapter 16"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "technology",
+   "labels": {
+    "he": "טכנולוגיה",
+    "en": "Technology and the Internet",
+    "yi": "טעכנאלאגיע און דער אינטערנעט"
+   },
+   "synonyms": [
+    "טכנולוגיה",
+    "technology and the internet",
+    "טעכנאלאגיע און דער אינטערנעט",
+    "smartphones",
+    "internet",
+    "smartphones and technology",
+    "cell phones",
+    "kosher phones",
+    "modern technology"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "tefilah",
+   "labels": {
+    "he": "תפילה",
+    "en": "Tefilah",
+    "yi": "תפילה"
+   },
+   "synonyms": [
+    "תפילה",
+    "tefillah",
+    "davening",
+    "prayer",
+    "tefillah as emunah",
+    "long davening",
+    "slow davening"
+   ],
+   "count": 15
+  },
+  {
+   "kind": "topic",
+   "id": "tefilah-betzibbur",
+   "labels": {
+    "he": "תפילה בציבור",
+    "en": "Davening with the Tzibbur and the Beis HaKnesses",
+    "yi": "דאווענען מיט'ן ציבור און דער בית הכנסת"
+   },
+   "synonyms": [
+    "תפילה בציבור",
+    "davening with the tzibbur and the beis haknesses",
+    "דאווענען מיטן ציבור און דער בית הכנסת",
+    "minyan",
+    "talking in shul",
+    "davening with the tzibbur",
+    "answering amen",
+    "minyan and davar shebikdusha",
+    "amen and emunah"
+   ],
+   "count": 6
+  },
+  {
+   "kind": "topic",
+   "id": "tehillim",
+   "labels": {
+    "he": "תהלים",
+    "en": "Tehillim",
+    "yi": "תהלים"
+   },
+   "synonyms": [
+    "תהלים",
+    "tehillim",
+    "psalms",
+    "ashrei",
+    "tehillim 128",
+    "hallel and hodaah",
+    "tehillim 147",
+    "mizmor lesodah"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "teshuvah",
+   "labels": {
+    "he": "תשובה",
+    "en": "Teshuvah",
+    "yi": "תשובה"
+   },
+   "synonyms": [
+    "תשובה",
+    "teshuvah",
+    "repentance",
+    "baalei teshuvah",
+    "cheshbon hanefesh",
+    "segulos for atonement",
+    "not despairing",
+    "thoughts of sin"
+   ],
+   "count": 7
+  },
+  {
+   "kind": "topic",
+   "id": "tisha-bav",
+   "labels": {
+    "he": "תשעה באב",
+    "en": "Tisha B'Av",
+    "yi": "תשעה באב"
+   },
+   "synonyms": [
+    "תשעה באב",
+    "shabbos chazon",
+    "תשעה באב as a moed",
+    "פסח and תשעה באב",
+    "תשעה באב on shabbos",
+    "תשעה באב and the churban"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "torah",
+   "labels": {
+    "he": "תלמוד תורה",
+    "en": "Torah and Limud HaTorah",
+    "yi": "תורה און לימוד התורה"
+   },
+   "synonyms": [
+    "תלמוד תורה",
+    "torah and limud hatorah",
+    "תורה און לימוד התורה",
+    "torah study",
+    "learning torah",
+    "torah codes",
+    "rain as torah",
+    "depth of torah",
+    "torah umesorah"
+   ],
+   "count": 16
+  },
+  {
+   "kind": "topic",
+   "id": "torah-lishmah",
+   "labels": {
+    "he": "תורה לשמה והתמדה",
+    "en": "Torah Lishmah and Hasmadah",
+    "yi": "תורה לשמה און התמדה"
+   },
+   "synonyms": [
+    "תורה לשמה והתמדה",
+    "torah lishmah and hasmadah",
+    "תורה לשמה און התמדה",
+    "learning lishmah",
+    "toil in torah",
+    "bittul torah",
+    "torah lishmah",
+    "masechta yevamos",
+    "aveirah lishmah"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "torah-min-hashamayim",
+   "labels": {
+    "he": "תורה מן השמים",
+    "en": "Torah Min HaShamayim and the Mesorah",
+    "yi": "תורה מן השמים און די מסורה"
+   },
+   "synonyms": [
+    "תורה מן השמים",
+    "torah min hashamayim and the mesorah",
+    "תורה מן השמים און די מסורה",
+    "mesorah",
+    "oral torah",
+    "torah from heaven",
+    "eternity of the torah",
+    "truth of the torah",
+    "leniency in psak"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "tu-bav-nechamah",
+   "labels": {
+    "he": "ט\"ו באב",
+    "en": "Tu B'Av and the Weeks of Nechamah",
+    "yi": "ט\"ו באב און די שבעה דנחמתא"
+   },
+   "synonyms": [
+    "טו באב",
+    "טו באב and the weeks of nechamah",
+    "טו באב און די שבעה דנחמתא",
+    "shabbos nachamu",
+    "fifteenth of av",
+    "seven weeks of consolation",
+    "chamishah asar bav",
+    "consolation within mourning"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "tu-bishvat",
+   "labels": {
+    "he": "ט\"ו בשבט",
+    "en": "Tu B'Shvat",
+    "yi": "ט\"ו בשבט"
+   },
+   "synonyms": [
+    "טו בשבט",
+    "ראש השנה for trees",
+    "rosh chodesh shevat",
+    "shiurim of the seven species",
+    "seven species",
+    "chodesh shevat"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "tumah-taharah",
+   "labels": {
+    "he": "טומאה וטהרה",
+    "en": "Tumah, Taharah and Mikveh",
+    "yi": "טומאה, טהרה און מקוה"
+   },
+   "synonyms": [
+    "טומאה וטהרה",
+    "tumah taharah and mikveh",
+    "טומאה טהרה און מקוה",
+    "mikveh",
+    "mikvah",
+    "tevilas ezra",
+    "seder taharos",
+    "tumas yoledes",
+    "tumah and taharah"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "tzaddikim",
+   "labels": {
+    "he": "צדיקים",
+    "en": "Tzaddikim and Maasios",
+    "yi": "צדיקים און מעשיות"
+   },
+   "synonyms": [
+    "צדיקים",
+    "tzaddikim and maasios",
+    "צדיקים און מעשיות",
+    "tzaddikim",
+    "levels of tzaddikim",
+    "tzaddik katamar yifrach",
+    "being a chassid",
+    "merit of tzaddikim",
+    "names of tzaddikim"
+   ],
+   "count": 14
+  },
+  {
+   "kind": "topic",
+   "id": "tzedakah-chesed",
+   "labels": {
+    "he": "צדקה וחסד",
+    "en": "Tzedakah, Chesed and Hachnasas Orchim",
+    "yi": "צדקה, חסד און הכנסת אורחים"
+   },
+   "synonyms": [
+    "צדקה וחסד",
+    "tzedakah chesed and hachnasas orchim",
+    "צדקה חסד און הכנסת אורחים",
+    "tzedakah",
+    "hachnasas orchim",
+    "hashavas aveidah",
+    "kindness of the nations",
+    "avraham avinus hospitality",
+    "rivkas chesed"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "tzipisa-liyeshua",
+   "labels": {
+    "he": "ציפית לישועה",
+    "en": "Awaiting Moshiach",
+    "yi": "ווארטן אויף משיח"
+   },
+   "synonyms": [
+    "ציפית לישועה",
+    "awaiting moshiach",
+    "ווארטן אויף משיח",
+    "waiting for moshiach",
+    "hope for moshiach",
+    "tzipisa liyeshua",
+    "waiting for the geulah",
+    "machlokes delaying moshiach"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "umos-haolam",
+   "labels": {
+    "he": "ישראל והעמים",
+    "en": "Yisroel and the Nations",
+    "yi": "אידן און די אומות העולם"
+   },
+   "synonyms": [
+    "ישראל והעמים",
+    "yisrael and the nations",
+    "אידן און די אומות העולם",
+    "the nations",
+    "seventy nations",
+    "light to the nations",
+    "separation from the nations",
+    "seventy souls and seventy nations",
+    "ger tzedek"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "vayechi-shevatim",
+   "labels": {
+    "he": "ויחי והשבטים",
+    "en": "Vayechi and the Shevatim",
+    "yi": "ויחי און די שבטים"
+   },
+   "synonyms": [
+    "ויחי והשבטים",
+    "vayechi and the shevatim",
+    "ויחי און די שבטים",
+    "parshas vayechi",
+    "the tribes",
+    "tribe of dan",
+    "serach bas asher",
+    "shevet levi",
+    "shimon and levi"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "yaakov-veesav",
+   "labels": {
+    "he": "יעקב ועשו",
+    "en": "Yitzchak, Yaakov and Esav",
+    "yi": "יצחק, יעקב און עשו"
+   },
+   "synonyms": [
+    "יעקב ועשו",
+    "yitzchak yaakov and esav",
+    "יצחק יעקב און עשו",
+    "parshas toldos",
+    "sale of the bechorah",
+    "yitzchaks wells",
+    "vayigdelu hanearim",
+    "esav and the brachos",
+    "chushim ben dan and esav"
+   ],
+   "count": 5
+  },
+  {
+   "kind": "topic",
+   "id": "yamim-noraim",
+   "labels": {
+    "he": "ימים נוראים",
+    "en": "Elul and the Yomim Noraim",
+    "yi": "אלול און ימים נוראים"
+   },
+   "synonyms": [
+    "ימים נוראים",
+    "אלול and the yomim noraim",
+    "אלול און ימים נוראים",
+    "high holidays"
+   ],
+   "count": 11
+  },
+  {
+   "kind": "topic",
+   "id": "yehuda-vetamar",
+   "labels": {
+    "he": "יהודה ותמר",
+    "en": "Yehuda and Tamar",
+    "yi": "יהודה און תמר"
+   },
+   "synonyms": [
+    "יהודה ותמר",
+    "yehudah and tamar",
+    "יהודה און תמר",
+    "yosef and tamar",
+    "tamar and yehudah"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "yerushalayim",
+   "labels": {
+    "he": "ירושלים עיר הקודש",
+    "en": "Yerushalayim and the Kosel",
+    "yi": "ירושלים און דער כותל"
+   },
+   "synonyms": [
+    "ירושלים עיר הקודש",
+    "yerushalayim and the kosel",
+    "ירושלים און דער כותל",
+    "jerusalem",
+    "kosel maaravi",
+    "yerushalayim",
+    "even shesiyah",
+    "yerushalayim and rome",
+    "shabbos and yerushalayim"
+   ],
+   "count": 5
+  },
+  {
+   "kind": "topic",
+   "id": "yeshivah-bachurim",
+   "labels": {
+    "he": "ישיבה",
+    "en": "Bachurim in Yeshivah",
+    "yi": "בחורים אין ישיבה"
+   },
+   "synonyms": [
+    "ישיבה",
+    "bachurim in yeshivah",
+    "בחורים אין ישיבה",
+    "yeshiva",
+    "chizuk for bachurim",
+    "zman and eis",
+    "telzer yeshiva",
+    "nefesh and zman",
+    "years of yeshiva"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "yesodei-haemunah",
+   "labels": {
+    "he": "יסודי האמונה",
+    "en": "Foundations of Emunah",
+    "yi": "יסודי האמונה"
+   },
+   "synonyms": [
+    "יסודי האמונה",
+    "foundations of emunah",
+    "rambam hilchos yesodei hatorah chapter 8",
+    "moreh nevuchim",
+    "rambam hilchos yesodei hatorah",
+    "ani maamin",
+    "ein od milvado",
+    "accepting hashem as king"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "yetzer-hara",
+   "labels": {
+    "he": "יצר הרע ונסיונות",
+    "en": "The Yetzer Hara and Nisyonos",
+    "yi": "דער יצר הרע און נסיונות"
+   },
+   "synonyms": [
+    "יצר הרע ונסיונות",
+    "the yetzer hara and nisyonos",
+    "דער יצר הרע און נסיונות",
+    "yetzer hara",
+    "nisyonos",
+    "bechirah",
+    "yetzer tov and yetzer hara",
+    "nisayon as elevation",
+    "rationalization and denial"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "yiras-shamayim",
+   "labels": {
+    "he": "יראת שמים",
+    "en": "Yiras Shamayim",
+    "yi": "יראת שמים"
+   },
+   "synonyms": [
+    "יראת שמים",
+    "yiras shamayim",
+    "fear of heaven",
+    "yiras hashem",
+    "love and fear of hashem",
+    "intellectual love and fear of hashem",
+    "fear of the king",
+    "standing before the king"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "yishuv-eretz-yisroel",
+   "labels": {
+    "he": "ישוב ארץ ישראל",
+    "en": "Traveling to and Living in Eretz Yisroel",
+    "yi": "פארן קיין ארץ ישראל און וואוינען דארט"
+   },
+   "synonyms": [
+    "ישוב ארץ ישראל",
+    "traveling to and living in eretz yisrael",
+    "פארן קיין ארץ ישראל און וואוינען דארט",
+    "aliyah",
+    "love of eretz yisrael",
+    "bnei aliyah",
+    "burial in eretz yisrael",
+    "longing for eretz yisrael",
+    "preparing for a trip to eretz yisrael"
+   ],
+   "count": 1
+  },
+  {
+   "kind": "topic",
+   "id": "yom-kippur",
+   "labels": {
+    "he": "יום הכיפורים",
+    "en": "Yom Kippur",
+    "yi": "יום כיפור"
+   },
+   "synonyms": [
+    "יום כפור",
+    "kodesh hakodashim",
+    "יום כפור on shabbos",
+    "יום כפור as a mikveh",
+    "the kohen gadol on יום כפור",
+    "erev יום כפור"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "yosef-veechav",
+   "labels": {
+    "he": "יוסף ואחיו",
+    "en": "Yosef and His Brothers",
+    "yi": "יוסף און זיינע ברידער"
+   },
+   "synonyms": [
+    "יוסף ואחיו",
+    "yosef and his brothers",
+    "יוסף און זיינע ברידער",
+    "parshas vayeishev",
+    "parshas mikeitz",
+    "parshas vayigash",
+    "yosef hatzaddik",
+    "yosef in egypt",
+    "yosefs dreams"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "topic",
+   "id": "zerizus",
+   "labels": {
+    "he": "זריזות",
+    "en": "Zerizus and the Value of Time",
+    "yi": "זריזות און די ווערט פון צייט"
+   },
+   "synonyms": [
+    "זריזות",
+    "zerizus and the value of time",
+    "זריזות און די ווערט פון צייט",
+    "value of time",
+    "zerizus",
+    "the value of time",
+    "zrizus",
+    "zrizus in torah",
+    "davening without haste"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "topic",
+   "id": "zmanim",
+   "labels": {
+    "he": "מועדים וזמנים",
+    "en": "Yomim Tovim and Zmanim",
+    "yi": "ימים טובים און זמנים"
+   },
+   "synonyms": [
+    "מועדים וזמנים",
+    "yomim tovim and zmanim",
+    "ימים טובים און זמנים",
+    "yomim tovim",
+    "moadim",
+    "yom tov foods",
+    "the three regalim",
+    "fasts becoming festivals",
+    "the three festivals and the avos"
+   ],
+   "count": 26
+  },
+  {
+   "kind": "topic",
+   "id": "zos-chanukah",
+   "labels": {
+    "he": "זאת חנוכה",
+    "en": "Zos Chanukah",
+    "yi": "זאת חנוכה"
+   },
+   "synonyms": [
+    "זאת חנוכה",
+    "זאת חנוכה as the final sealing",
+    "chasimah of זאת חנוכה",
+    "זאת חנוכה and the gmar chasimah",
+    "from rosh chodesh אלול to זאת חנוכה",
+    "the days of judgment until זאת חנוכה",
+    "122 days from rosh chodesh אלול to זאת חנוכה"
+   ],
+   "count": 2
+  },
+  {
+   "kind": "work",
+   "id": "avodah-zarah",
+   "labels": {
+    "he": "גמרא עבודה זרה",
+    "en": "Gemara Avodah Zarah",
+    "yi": null
+   },
+   "synonyms": [
+    "גמרא עבודה זרה",
+    "gemara avodah zarah",
+    "avodah zarah"
+   ],
+   "count": 6
+  },
+  {
+   "kind": "work",
+   "id": "bamidbar",
+   "labels": {
+    "he": "במדבר",
+    "en": "Bamidbar",
+    "yi": null
+   },
+   "synonyms": [
+    "במדבר",
+    "bamidbar",
+    "numbers"
+   ],
+   "count": 8
+  },
+  {
+   "kind": "work",
+   "id": "bava-metzia",
+   "labels": {
+    "he": "גמרא בבא מציעא",
+    "en": "Gemara Bava Metzia",
+    "yi": null
+   },
+   "synonyms": [
+    "גמרא בבא מציעא",
+    "gemara bava metzia",
+    "bava metzia"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "work",
+   "id": "berachos",
+   "labels": {
+    "he": "גמרא ברכות",
+    "en": "Gemara Berachos",
+    "yi": null
+   },
+   "synonyms": [
+    "גמרא ברכות",
+    "gemara berachos",
+    "berakhot"
+   ],
+   "count": 15
+  },
+  {
+   "kind": "work",
+   "id": "bereishis",
+   "labels": {
+    "he": "בראשית",
+    "en": "Bereishis",
+    "yi": null
+   },
+   "synonyms": [
+    "בראשית",
+    "bereishis",
+    "genesis"
+   ],
+   "count": 24
+  },
+  {
+   "kind": "work",
+   "id": "bereishis-rabbah",
+   "labels": {
+    "he": "בראשית רבה",
+    "en": "Bereishis Rabbah",
+    "yi": null
+   },
+   "synonyms": [
+    "בראשית רבה",
+    "bereishis rabbah",
+    "midrash bereishis rabbah"
+   ],
+   "count": 5
+  },
+  {
+   "kind": "work",
+   "id": "bnei-yissaschar",
+   "labels": {
+    "he": "בני יששכר",
+    "en": "Bnei Yissaschar",
+    "yi": null
+   },
+   "synonyms": [
+    "בני יששכר",
+    "bnei yissaschar"
+   ],
+   "count": 9
+  },
+  {
+   "kind": "work",
+   "id": "chagigah",
+   "labels": {
+    "he": "גמרא חגיגה",
+    "en": "Gemara Chagigah",
+    "yi": null
+   },
+   "synonyms": [
+    "גמרא חגיגה",
+    "gemara chagigah",
+    "chagigah"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "work",
+   "id": "chasam-sofer",
+   "labels": {
+    "he": "חתם סופר",
+    "en": "Chasam Sofer",
+    "yi": null
+   },
+   "synonyms": [
+    "חתם סופר",
+    "chasam sofer"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "work",
+   "id": "chullin",
+   "labels": {
+    "he": "גמרא חולין",
+    "en": "Gemara Chullin",
+    "yi": null
+   },
+   "synonyms": [
+    "גמרא חולין",
+    "gemara chullin",
+    "chullin"
+   ],
+   "count": 5
+  },
+  {
+   "kind": "work",
+   "id": "devarim",
+   "labels": {
+    "he": "דברים",
+    "en": "Devarim",
+    "yi": null
+   },
+   "synonyms": [
+    "דברים",
+    "devarim",
+    "deuteronomy"
+   ],
+   "count": 18
+  },
+  {
+   "kind": "work",
+   "id": "eruvin",
+   "labels": {
+    "he": "גמרא עירובין",
+    "en": "Gemara Eruvin",
+    "yi": null
+   },
+   "synonyms": [
+    "גמרא עירובין",
+    "gemara eruvin",
+    "eruvin"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "work",
+   "id": "esther",
+   "labels": {
+    "he": "אסתר",
+    "en": "Esther",
+    "yi": null
+   },
+   "synonyms": [
+    "אסתר",
+    "esther",
+    "megillas esther"
+   ],
+   "count": 6
+  },
+  {
+   "kind": "work",
+   "id": "kiddushin",
+   "labels": {
+    "he": "גמרא קידושין",
+    "en": "Gemara Kiddushin",
+    "yi": null
+   },
+   "synonyms": [
+    "גמרא קידושין",
+    "gemara kiddushin",
+    "kiddushin"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "work",
+   "id": "machzor-rosh-hashanah",
+   "labels": {
+    "he": "מחזור לראש השנה",
+    "en": "Machzor Rosh Hashanah",
+    "yi": null
+   },
+   "synonyms": [
+    "מחזור לראש השנה",
+    "machzor ראש השנה",
+    "ראש השנה prayers",
+    "ראש השנה liturgy"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "work",
+   "id": "megillah",
+   "labels": {
+    "he": "גמרא מגילה",
+    "en": "Gemara Megillah",
+    "yi": null
+   },
+   "synonyms": [
+    "גמרא מגילה",
+    "gemara megillah",
+    "megillah"
+   ],
+   "count": 8
+  },
+  {
+   "kind": "work",
+   "id": "melachim-i",
+   "labels": {
+    "he": "מלכים א",
+    "en": "Melachim I",
+    "yi": null
+   },
+   "synonyms": [
+    "מלכים א",
+    "melachim i",
+    "i kings"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "work",
+   "id": "melachim-ii",
+   "labels": {
+    "he": "מלכים ב",
+    "en": "Melachim II",
+    "yi": null
+   },
+   "synonyms": [
+    "מלכים ב",
+    "melachim ii",
+    "ii kings"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "work",
+   "id": "mesilas-yesharim",
+   "labels": {
+    "he": "מסילת ישרים",
+    "en": "Mesilas Yesharim",
+    "yi": null
+   },
+   "synonyms": [
+    "מסילת ישרים",
+    "mesilas yesharim",
+    "mesillat yesharim",
+    "mesillas yesharim"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "work",
+   "id": "mishlei",
+   "labels": {
+    "he": "משלי",
+    "en": "Mishlei",
+    "yi": null
+   },
+   "synonyms": [
+    "משלי",
+    "mishlei",
+    "proverbs"
+   ],
+   "count": 8
+  },
+  {
+   "kind": "work",
+   "id": "mishnah-sukkah",
+   "labels": {
+    "he": "משנה סוכה",
+    "en": "Mishnah Sukkah",
+    "yi": null
+   },
+   "synonyms": [
+    "משנה סוכה",
+    "mishnah sukkah"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "work",
+   "id": "mishneh-torah",
+   "labels": {
+    "he": "משנה תורה",
+    "en": "Mishneh Torah",
+    "yi": null
+   },
+   "synonyms": [
+    "משנה תורה",
+    "mishneh torah",
+    "rambam mishneh torah"
+   ],
+   "count": 10
+  },
+  {
+   "kind": "work",
+   "id": "or-hachaim",
+   "labels": {
+    "he": "אור החיים",
+    "en": "Ohr HaChaim",
+    "yi": null
+   },
+   "synonyms": [
+    "אור החיים",
+    "ohr hachaim",
+    "or hachaim"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "work",
+   "id": "pirkei-avos",
+   "labels": {
+    "he": "פרקי אבות",
+    "en": "Pirkei Avos",
+    "yi": null
+   },
+   "synonyms": [
+    "פרקי אבות",
+    "pirkei avos",
+    "pirkei avot",
+    "mishnah avos"
+   ],
+   "count": 7
+  },
+  {
+   "kind": "work",
+   "id": "ramban",
+   "labels": {
+    "he": "רמב״ן",
+    "en": "Ramban",
+    "yi": null
+   },
+   "synonyms": [
+    "רמבן",
+    "ramban"
+   ],
+   "count": 6
+  },
+  {
+   "kind": "work",
+   "id": "rashi",
+   "labels": {
+    "he": "רש״י",
+    "en": "Rashi",
+    "yi": null
+   },
+   "synonyms": [
+    "רשי",
+    "rashi"
+   ],
+   "count": 18
+  },
+  {
+   "kind": "work",
+   "id": "rashi-on-bereishis",
+   "labels": {
+    "he": "רש״י על בראשית",
+    "en": "Rashi on Bereishis",
+    "yi": null
+   },
+   "synonyms": [
+    "רשי על בראשית",
+    "rashi on bereishis",
+    "rashi on genesis"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "work",
+   "id": "rosh-hashanah",
+   "labels": {
+    "he": "גמרא ראש השנה",
+    "en": "Gemara Rosh Hashanah",
+    "yi": null
+   },
+   "synonyms": [
+    "גמרא ראש השנה",
+    "gemara ראש השנה",
+    "ראש השנה"
+   ],
+   "count": 6
+  },
+  {
+   "kind": "work",
+   "id": "sanhedrin",
+   "labels": {
+    "he": "גמרא סנהדרין",
+    "en": "Gemara Sanhedrin",
+    "yi": null
+   },
+   "synonyms": [
+    "גמרא סנהדרין",
+    "gemara sanhedrin",
+    "sanhedrin"
+   ],
+   "count": 6
+  },
+  {
+   "kind": "work",
+   "id": "shabbos",
+   "labels": {
+    "he": "גמרא שבת",
+    "en": "Gemara Shabbos",
+    "yi": null
+   },
+   "synonyms": [
+    "גמרא שבת",
+    "gemara shabbos",
+    "shabbos"
+   ],
+   "count": 10
+  },
+  {
+   "kind": "work",
+   "id": "shelah",
+   "labels": {
+    "he": "של״ה הקדוש",
+    "en": "Shelah (Shnei Luchos HaBris)",
+    "yi": null
+   },
+   "synonyms": [
+    "שלה הקדוש",
+    "shelah shnei luchos habris",
+    "shenei luchot haberit",
+    "shelah",
+    "shnei luchos habris"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "work",
+   "id": "shemos",
+   "labels": {
+    "he": "שמות",
+    "en": "Shemos",
+    "yi": null
+   },
+   "synonyms": [
+    "שמות",
+    "shemos",
+    "exodus"
+   ],
+   "count": 14
+  },
+  {
+   "kind": "work",
+   "id": "shir-hashirim",
+   "labels": {
+    "he": "שיר השירים",
+    "en": "Shir HaShirim",
+    "yi": null
+   },
+   "synonyms": [
+    "שיר השירים",
+    "shir hashirim",
+    "song of songs"
+   ],
+   "count": 8
+  },
+  {
+   "kind": "work",
+   "id": "shmuel-i",
+   "labels": {
+    "he": "שמואל א",
+    "en": "Shmuel I",
+    "yi": null
+   },
+   "synonyms": [
+    "שמואל א",
+    "shmuel i",
+    "i samuel"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "work",
+   "id": "shulchan-aruch",
+   "labels": {
+    "he": "שולחן ערוך",
+    "en": "Shulchan Aruch",
+    "yi": null
+   },
+   "synonyms": [
+    "שולחן ערוך",
+    "shulchan aruch"
+   ],
+   "count": 7
+  },
+  {
+   "kind": "work",
+   "id": "siddur",
+   "labels": {
+    "he": "סידור",
+    "en": "Siddur",
+    "yi": null
+   },
+   "synonyms": [
+    "סידור",
+    "siddur"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "work",
+   "id": "sotah",
+   "labels": {
+    "he": "גמרא סוטה",
+    "en": "Gemara Sotah",
+    "yi": null
+   },
+   "synonyms": [
+    "גמרא סוטה",
+    "gemara sotah",
+    "sotah"
+   ],
+   "count": 5
+  },
+  {
+   "kind": "work",
+   "id": "sukkah",
+   "labels": {
+    "he": "גמרא סוכה",
+    "en": "Gemara Sukkah",
+    "yi": null
+   },
+   "synonyms": [
+    "גמרא סוכה",
+    "gemara sukkah",
+    "sukkah",
+    "gemara succah"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "work",
+   "id": "taanis",
+   "labels": {
+    "he": "גמרא תענית",
+    "en": "Gemara Taanis",
+    "yi": null
+   },
+   "synonyms": [
+    "גמרא תענית",
+    "gemara taanis",
+    "taanit"
+   ],
+   "count": 5
+  },
+  {
+   "kind": "work",
+   "id": "talmud-bavli",
+   "labels": {
+    "he": "תלמוד בבלי",
+    "en": "Gemara (Talmud Bavli)",
+    "yi": null
+   },
+   "synonyms": [
+    "תלמוד בבלי",
+    "gemara talmud bavli",
+    "gemara"
+   ],
+   "count": 11
+  },
+  {
+   "kind": "work",
+   "id": "talmud-yerushalmi",
+   "labels": {
+    "he": "תלמוד ירושלמי",
+    "en": "Talmud Yerushalmi",
+    "yi": null
+   },
+   "synonyms": [
+    "תלמוד ירושלמי",
+    "talmud yerushalmi",
+    "yerushalmi"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "work",
+   "id": "tanya",
+   "labels": {
+    "he": "תניא",
+    "en": "Tanya",
+    "yi": null
+   },
+   "synonyms": [
+    "תניא",
+    "tanya",
+    "tanya igeres hakodesh",
+    "tanya iggeres hakodesh"
+   ],
+   "count": 8
+  },
+  {
+   "kind": "work",
+   "id": "targum-onkelos",
+   "labels": {
+    "he": "תרגום אונקלוס",
+    "en": "Targum Onkelos",
+    "yi": null
+   },
+   "synonyms": [
+    "תרגום אונקלוס",
+    "targum onkelos",
+    "onkelos"
+   ],
+   "count": 6
+  },
+  {
+   "kind": "work",
+   "id": "tehillim",
+   "labels": {
+    "he": "תהלים",
+    "en": "Tehillim",
+    "yi": null
+   },
+   "synonyms": [
+    "תהלים",
+    "tehillim",
+    "psalms"
+   ],
+   "count": 21
+  },
+  {
+   "kind": "work",
+   "id": "tikkunei-zohar",
+   "labels": {
+    "he": "תיקוני זוהר",
+    "en": "Tikkunei Zohar",
+    "yi": null
+   },
+   "synonyms": [
+    "תיקוני זוהר",
+    "tikkunei zohar",
+    "tikunei zohar"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "work",
+   "id": "vayikra",
+   "labels": {
+    "he": "ויקרא",
+    "en": "Vayikra",
+    "yi": null
+   },
+   "synonyms": [
+    "ויקרא",
+    "vayikra",
+    "leviticus"
+   ],
+   "count": 13
+  },
+  {
+   "kind": "work",
+   "id": "yechezkel",
+   "labels": {
+    "he": "יחזקאל",
+    "en": "Yechezkel",
+    "yi": null
+   },
+   "synonyms": [
+    "יחזקאל",
+    "yechezkel",
+    "ezekiel"
+   ],
+   "count": 4
+  },
+  {
+   "kind": "work",
+   "id": "yeshayahu",
+   "labels": {
+    "he": "ישעיהו",
+    "en": "Yeshayahu",
+    "yi": null
+   },
+   "synonyms": [
+    "ישעיהו",
+    "yeshayahu",
+    "isaiah"
+   ],
+   "count": 12
+  },
+  {
+   "kind": "work",
+   "id": "yirmiyahu",
+   "labels": {
+    "he": "ירמיהו",
+    "en": "Yirmiyahu",
+    "yi": null
+   },
+   "synonyms": [
+    "ירמיהו",
+    "yirmiyahu",
+    "jeremiah",
+    "yirmiyah"
+   ],
+   "count": 5
+  },
+  {
+   "kind": "work",
+   "id": "yoma",
+   "labels": {
+    "he": "גמרא יומא",
+    "en": "Gemara Yoma",
+    "yi": null
+   },
+   "synonyms": [
+    "גמרא יומא",
+    "gemara yoma",
+    "yoma"
+   ],
+   "count": 7
+  },
+  {
+   "kind": "work",
+   "id": "zechariah",
+   "labels": {
+    "he": "זכריה",
+    "en": "Zechariah",
+    "yi": null
+   },
+   "synonyms": [
+    "זכריה",
+    "zechariah",
+    "zecharyah",
+    "zecharia"
+   ],
+   "count": 3
+  },
+  {
+   "kind": "work",
+   "id": "zohar",
+   "labels": {
+    "he": "זוהר",
+    "en": "Zohar",
+    "yi": null
+   },
+   "synonyms": [
+    "זוהר",
+    "zohar",
+    "zohar raaya mehemna"
+   ],
+   "count": 11
+  }
+ ]
 }

@@ -167,6 +167,71 @@ describe("search page", () => {
     );
   });
 
+  it("loads corpus.json on the search route (shiur rows), and only there", async () => {
+    const elsewhere = setup(apiMock(() => jsonResponse(apiResponse([]))));
+    await renderAt("/en/");
+    await sleep(30);
+    expect(elsewhere.requests).not.toContain("/data/corpus.json");
+    teardown();
+    const data = setup(apiMock(() => jsonResponse(page1)));
+    await renderAt("/en/search?q=lion");
+    await waitFor(() => expect(data.requests).toContain("/data/corpus.json"));
+  });
+
+  it("entity suggestions link to the corpus routes and offer 'Search within'; filters use corpus ids", async () => {
+    const api = apiMock(() => jsonResponse(apiResponse([])));
+    setup(api);
+    const { container, router } = await renderAt("/en/search?q=hester");
+    const chips = await waitForSelector(container, "[data-testid=search-suggestions]");
+    expect([...chips.querySelectorAll("a")].map((a) => a.getAttribute("href"))).toEqual(["/en/t/hester-panim"]);
+    // the corpus label, once
+    expect(container.querySelectorAll("[data-testid=entity-label]")).toHaveLength(1);
+    expect(screen.getByTestId("entity-label").textContent).toBe("Grouped and named by AI across all the shiurim. Not reviewed by a person.");
+    const within = chips.querySelector("[data-filter='topic:hester-panim']") as HTMLButtonElement;
+    expect(within.textContent).toBe("Search within Hester Panim and Suffering");
+    await act(async () => {
+      fireEvent.click(within);
+    });
+    await waitFor(() => expect(new URLSearchParams(router.state.location.search).get("topic")).toBe("hester-panim"));
+    await waitFor(() => expect(api.calls.at(-1)!.searchParams.get("topic")).toBe("hester-panim"));
+    expect(api.calls.at(-1)!.searchParams.get("q")).toBe("hester");
+    // the active filter is a chip labelled from the quick index, and the offer is gone
+    const active = await waitForSelector(container, "[data-active-filter='topic:hester-panim']");
+    expect(active.textContent).toContain("Topic: Hester Panim and Suffering");
+    expect(chips.querySelector("[data-filter]")).toBeNull();
+    await noAxeViolations();
+    await act(async () => {
+      fireEvent.click(screen.getByRole("button", { name: "Remove the filter Hester Panim and Suffering" }));
+    });
+    await waitFor(() => expect(new URLSearchParams(router.state.location.search).has("topic")).toBe(false));
+    await waitFor(() => expect(api.calls.at(-1)!.searchParams.has("topic")).toBe(false));
+  });
+
+  it("filters from the URL go to the API; invalid ids are dropped", async () => {
+    const api = apiMock(() => jsonResponse(apiResponse([])));
+    setup(api);
+    const { container } = await renderAt("/en/search?q=emunah&person=baal-shem-tov&work=Bad%20Id");
+    await waitFor(() => expect(api.calls.length).toBeGreaterThan(0));
+    const sp = api.calls.at(-1)!.searchParams;
+    expect(sp.get("person")).toBe("baal-shem-tov");
+    expect(sp.has("work")).toBe(false);
+    const chip = await waitForSelector(container, "[data-active-filter='person:baal-shem-tov']");
+    await waitFor(() => expect(chip.textContent).toContain("Person: the Baal Shem Tov"));
+  });
+
+  it("offline with a filter: the shiur-level fallback keeps only shiurim carrying the entity", async () => {
+    setup(apiMock(() => jsonResponse(apiResponse([]))));
+    setOnline(false);
+    const { container } = await renderAt("/en/search?q=teivah&topic=hester-panim");
+    await waitForSelector(container, "[data-testid=search-results][data-source=fallback]");
+    expect(groups().map(([id]) => id)).toEqual([NOACH]);
+    teardown();
+    setup(apiMock(() => jsonResponse(apiResponse([]))));
+    setOnline(false);
+    const other = await renderAt("/en/search?q=tzaddikim&topic=hester-panim");
+    await waitFor(() => expect(other.container.textContent).toContain("No results for “tzaddikim”."));
+  });
+
   it("renders in Yiddish", async () => {
     setup(apiMock(() => jsonResponse(page1)));
     const { container } = await renderAt("/yi/search?q=lion");

@@ -3,7 +3,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 import { normalizeMarks, splitMarks } from "../highlight.ts";
-import { groupByShiur, hitHref, hitTitle, suggestionHref } from "../model.ts";
+import { filtersFromParams, filtersKey, groupByShiur, hasFilters, hitHref, hitTitle, parseFiltersKey, suggestionHref, withFilter } from "../model.ts";
 import { searchEn, searchYi } from "../strings.ts";
 import { SEARCH_CLASSES } from "../styles.ts";
 import { apiResponse, apiResult } from "./data.ts";
@@ -66,17 +66,45 @@ describe("links", () => {
     expect(hitHref("en", { shiurId: "x-01", momentId: "other~s1", t: 0 })).toBe("/en/s/x-01?t=0");
   });
 
-  it("suggestions link to entity, series, shiur and Explore pages", () => {
+  it("suggestions link to the corpus entity routes, series, shiur and Explore pages", () => {
     const label = { en: "L", yi: "L" };
+    const labels = { he: null, en: "L", yi: null };
     expect(suggestionHref("en", { type: "occasion", key: "noach", label, count: 1 })).toBe("/en/o/noach");
-    expect(suggestionHref("en", { type: "work", key: "rambam", label, count: 1 })).toBe("/en/seforim/rambam");
-    expect(suggestionHref("yi", { type: "person", key: "noach", label, count: 1 })).toBe("/yi/p/noach");
-    expect(suggestionHref("en", { type: "concept", key: "קדושה", label, count: 1 })).toBe(`/en/c/${encodeURIComponent("קדושה")}`);
+    expect(suggestionHref("en", { type: "entity", kind: "topic", id: "hester-panim", labels, count: 1 })).toBe("/en/t/hester-panim");
+    expect(suggestionHref("en", { type: "entity", kind: "work", id: "mishneh-torah", labels, count: 1 })).toBe("/en/seforim/mishneh-torah");
+    expect(suggestionHref("yi", { type: "entity", kind: "person", id: "noach", labels, count: 1 })).toBe("/yi/p/noach");
+    expect(suggestionHref("en", { type: "entity", kind: "concept", id: "kedushah", labels, count: 1 })).toBe("/en/c/kedushah");
     expect(suggestionHref("en", { type: "series", key: "tanya-yi", label, count: 1 })).toBe("/en/series/tanya-yi");
     expect(suggestionHref("en", { type: "series-part", seriesKey: "tanya-yi", label, how: "perek", n: 12, shiurId: "yi-tanya-1-03" })).toBe(
       "/en/s/yi-tanya-1-03",
     );
     expect(suggestionHref("yi", { type: "year", year: 5736, count: 1 })).toBe("/yi/explore?y=5736");
+  });
+});
+
+describe("entity filters in the URL", () => {
+  it("reads valid corpus ids per kind, deduplicated", () => {
+    const f = filtersFromParams(new URLSearchParams("q=x&topic=hester-panim,geulah,hester-panim&person=Bad%20Id&work=&concept=kedushah"));
+    expect(f).toEqual({ topic: ["hester-panim", "geulah"], concept: ["kedushah"] });
+    expect(hasFilters(f)).toBe(true);
+    expect(hasFilters(filtersFromParams(new URLSearchParams("q=x")))).toBe(false);
+  });
+
+  it("adds and removes one filter, keeping the query and other params", () => {
+    const on = withFilter(new URLSearchParams("q=emunah&audio=yi"), "topic", "hester-panim", true);
+    expect(on.toString()).toBe("q=emunah&audio=yi&topic=hester-panim");
+    const two = withFilter(on, "topic", "geulah", true);
+    expect(two.get("topic")).toBe("hester-panim,geulah");
+    expect(withFilter(two, "topic", "hester-panim", true).get("topic")).toBe("hester-panim,geulah");
+    const off = withFilter(withFilter(two, "topic", "geulah", false), "topic", "hester-panim", false);
+    expect(off.toString()).toBe("q=emunah&audio=yi");
+  });
+
+  it("a stable key round-trips", () => {
+    const f = { person: ["baal-shem-tov"], topic: ["hester-panim"] };
+    expect(filtersKey(f)).toBe("topic=hester-panim&person=baal-shem-tov");
+    expect(parseFiltersKey(filtersKey(f))).toEqual({ topic: ["hester-panim"], person: ["baal-shem-tov"] });
+    expect(filtersKey({})).toBe("");
   });
 });
 

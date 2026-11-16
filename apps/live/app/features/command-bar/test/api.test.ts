@@ -114,6 +114,30 @@ describe("request", () => {
     expect(sp.has("audio")).toBe(false);
     expect(parseSearchParams(sp).q.length).toBe(200);
   });
+
+  it("sends corpus-id entity filters under the Worker's own names, which its parser accepts", () => {
+    const url = searchUrl(
+      {
+        q: "emunah",
+        ui: "en",
+        filters: { topic: ["hester-panim", "hester-panim", "geulah"], person: ["baal-shem-tov"], concept: [], work: ["Not An Id", "tanya"] },
+      },
+      "",
+    );
+    const sp = new URL(url, "http://x.invalid").searchParams;
+    expect(sp.get("topic")).toBe("hester-panim,geulah");
+    expect(sp.get("person")).toBe("baal-shem-tov");
+    expect(sp.has("concept")).toBe(false);
+    expect(sp.get("work")).toBe("tanya");
+    const p = parseSearchParams(sp);
+    expect(p.filters).toMatchObject({ topic: ["geulah", "hester-panim"], person: ["baal-shem-tov"], concept: [], work: ["tanya"] });
+  });
+
+  it("caps each filter list at the Worker's limit", () => {
+    const ids = Array.from({ length: 15 }, (_, i) => `t-${i}`);
+    const sp = new URL(searchUrl({ q: "x", ui: "en", filters: { topic: ids } }, ""), "http://x.invalid").searchParams;
+    expect(parseSearchParams(sp).filters.topic).toHaveLength(10);
+  });
 });
 
 describe("failures → fallback reasons", () => {
