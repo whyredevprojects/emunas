@@ -39,14 +39,20 @@ describe("TimeLink", () => {
     const [a] = attrs(html, "a");
     expect(a).toMatchObject({
       class: "time",
-      href: "https://media.example.org/Sample%20Folder/Part%202.mp3#t=269",
+      href: "https://media.example.org/Sample%20Folder/Part%202.mp3#t=269.5",
       "data-rec": "sample-part-2",
-      "data-t": "269",
+      "data-t": "269.5",
       "data-g": "2100",
       "aria-label": "Play from 35:00 (part 2)",
     });
     expect(html).toContain('<bdi dir="ltr">35:00</bdi>');
     expect(html).not.toContain("/audio/");
+  });
+
+  it("keeps fractional seconds in the link and the player data (582.12, not 582)", async () => {
+    const html = await render(TimeLink, { ed: "en", recordings: single, t: 582.12 });
+    expect(attrs(html, "a")[0]).toMatchObject({ href: `${single[0]!.audioUrl}#t=582.12`, "data-t": "582.12", "data-g": "582.12" });
+    expect(html).toContain('<bdi dir="ltr">9:42</bdi>');
   });
 
   it("names the action in the edition's language", async () => {

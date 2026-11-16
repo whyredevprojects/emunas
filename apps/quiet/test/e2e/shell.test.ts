@@ -217,9 +217,9 @@ describe("edition switch", () => {
     const page = await open("/en/shell-sample/#s2", { js: false });
     const hrefs = await page.$$eval("a[data-edition-switch]", (as) => as.map((a) => a.getAttribute("href")));
     expect(hrefs).toEqual(["/yi/shell-sample/", "/yi/shell-sample/"]);
-    // the no-JS time link opens the media file at the recording-local second
+    // the no-JS time link opens the media file at the recording-local time, fractional seconds kept
     expect(await page.locator("#s2 a.time").getAttribute("href")).toBe(
-      "https://media.example.org/Sample%20Folder/Part%202.mp3#t=269",
+      "https://media.example.org/Sample%20Folder/Part%202.mp3#t=269.5",
     );
     await page.context().close();
   });

@@ -147,7 +147,7 @@ describe("tellings", () => {
   });
 
   it("links to the time, else the chapter, else the shiur", () => {
-    expect(tellingHref("yi", { shiurId: "x", t: 61.5, chapterIdx: 3 })).toBe("/yi/shiur/x/#t=62");
+    expect(tellingHref("yi", { shiurId: "x", t: 61.5, chapterIdx: 3 })).toBe("/yi/shiur/x/#t=61.5");
     expect(tellingHref("yi", { shiurId: "x", t: null, chapterIdx: 3 })).toBe("/yi/shiur/x/#s3");
     expect(tellingHref("yi", { shiurId: "x", t: null, chapterIdx: null })).toBe("/yi/shiur/x/");
   });
@@ -239,7 +239,7 @@ describe("stories index", () => {
     const once = m.groups[1]!.people[0]!.stories[0]!;
     expect(once.id).toBe("the-chofetz-chaim-and-the-wagon");
     expect(once.href).toBeNull();
-    expect(once.moments.map((x) => [x.href, x.time, x.langName])).toEqual([["/en/shiur/yi-a-02/#t=615", "10:15", "Yiddish"]]);
+    expect(once.moments.map((x) => [x.href, x.time, x.langName])).toEqual([["/en/shiur/yi-a-02/#t=615.4", "10:15", "Yiddish"]]);
     const cook = m.withoutName.find((l) => l.id === "the-cook")!;
     expect(cook.moments[0]!.href).toBe("/en/shiur/en-b-02/#s4");
   });

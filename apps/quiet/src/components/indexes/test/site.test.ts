@@ -211,7 +211,7 @@ describe("C2.1 names, works and glossary on the real corpus", () => {
           }
           if (!visible.has(id) || row.status !== "full") bad(`shiur not in the visible set (${row.status})`);
           if (frag === undefined) continue;
-          const t = /^t=(\d+)$/.exec(frag);
+          const t = /^t=(\d+(?:\.\d+)?)$/.exec(frag);
           const s = /^s(\d+)$/.exec(frag);
           if (t) {
             if (Number(t[1]) > Math.ceil(row.duration)) bad(`time beyond the shiur (${row.duration}s)`);

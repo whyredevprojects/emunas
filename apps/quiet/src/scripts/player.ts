@@ -26,6 +26,15 @@ export function parseTimeHash(hash: string): number | null {
 }
 
 /**
+ * The page hash for global seconds, fractional kept to the millisecond (`#t=582.12`, `#t=754`), so
+ * a reload or a shared address seeks to the same place the link did.
+ */
+export function timeHash(g: number): string {
+  const t = Number.isFinite(g) ? Math.max(0, Math.round(g * 1000) / 1000) : 0;
+  return `#t=${t}`;
+}
+
+/**
  * Index of the last start ≤ `now` in ascending `starts` (binary search), or -1 when `now` is
  * before the first start.
  */
@@ -145,7 +154,7 @@ export function initPlayer(doc: Document, win: Window): Player | null {
 
   function setHash(g: number): void {
     try {
-      win.history.replaceState(win.history.state, "", `#t=${Math.round(g)}`);
+      win.history.replaceState(win.history.state, "", timeHash(g));
     } catch {
       /* a sandboxed or file: page: the seek still works */
     }
@@ -161,8 +170,8 @@ export function initPlayer(doc: Document, win: Window): Player | null {
     const a = d["rec"] ? audios.find((x) => x.dataset["rec"] === d["rec"]) : Number.isFinite(g) ? audioAt(g) : undefined;
     if (!a) return;
     e.preventDefault();
-    // `data-t` is the whole second of the no-JS fragment; seek to the exact global time instead,
-    // so the mark lands on the item that was clicked, not the one before it.
+    // Seek to the exact global time (fractional), so playback and the mark land on the item that
+    // was clicked, not the second before it. `data-t` (also fractional) is the fallback.
     const local = Number.isFinite(g) ? g - offset(a) : Number(d["t"]) || 0;
     seek(a, local, true);
     setHash(offset(a) + local);

@@ -135,15 +135,15 @@ describe.each(EDS)("the 7 sample shiurim, %s edition", (ed) => {
     const present = ids(html);
     for (const h of hrefs(html).filter((x) => x.startsWith("#"))) expect(present.has(h.slice(1)), h).toBe(true);
 
-    // Every time link works without script: the recording's media URL at a whole second.
+    // Every time link works without script: the recording's media URL at the exact (fractional) second.
     const times = [...html.matchAll(/<a class="time" dir="ltr" href="([^"]+)" data-g="([\d.]+)"/g)];
     if (shiur.status === "full") expect(times.length).toBeGreaterThan(5);
     for (const [, href, g] of times) {
       const global = Number(g);
-      // the recording the global time falls in, and the whole second inside it
+      // the recording the global time falls in, and the exact time inside it (never floored)
       const recording = [...shiur.recordings].reverse().find((r) => r.offset <= global)!;
       expect(recording.audioUrl).toBeTruthy();
-      expect(href).toBe(`${recording.audioUrl}#t=${Math.floor(round3(global - recording.offset))}`);
+      expect(href).toBe(`${recording.audioUrl}#t=${round3(global - recording.offset)}`);
       expect(href!.startsWith(`${MEDIA}/`)).toBe(true);
     }
 
@@ -207,7 +207,7 @@ describe("full page details", () => {
     const html = await renderPage("yi", shiur);
     const second = shiur.recordings[1]!;
     const late = shiur.notes!.chapters.find((c) => c.t >= second.offset)!;
-    const local = Math.floor(round3(late.t - second.offset));
+    const local = round3(late.t - second.offset);
     expect(html).toContain(`href="${second.audioUrl}#t=${local}" data-g="${late.t}"`);
     expect(html).toContain("שפילן פון");
     expect(html.match(/<audio\b/g)?.length).toBe(2);

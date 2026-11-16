@@ -10,7 +10,7 @@
  */
 import { allowsAll, hasPageOn, resolveEntry } from "./pages.ts";
 import { isEd, type CorpusKind, type Ed, type IndexName, type LinkData, type Route } from "./types.ts";
-import { buildQuery, formatSeconds, parseSeconds, pathSegments, queryGet, seg, splitUrl } from "./url.ts";
+import { buildQuery, formatExactSeconds, parseExactSeconds, pathSegments, queryGet, seg, splitUrl } from "./url.ts";
 
 /** Corpus entry directories; null: no Quiet page of this kind. */
 export const QUIET_ENTRY_DIR: Readonly<Record<CorpusKind, string | null>> = {
@@ -70,7 +70,7 @@ export function formatQuiet(route: Route, data: LinkData = {}, opts: FormatOptio
       const base = `/${route.ed}/shiur/${seg(route.id)}/`;
       if (opts.bare) return base;
       if (route.moment?.kind === "s") return `${base}#s${route.moment.index}`;
-      const t = formatSeconds(route.t);
+      const t = formatExactSeconds(route.t);
       return t === undefined ? base : `${base}#t=${t}`;
     }
     case "series":
@@ -174,6 +174,6 @@ function shiurFromHash(ed: Ed, id: string, hash: string): Route {
   const sec = /^s(\d{1,5})$/.exec(hash);
   if (sec) return { kind: "shiur", ed, id, moment: { kind: "s", index: Number(sec[1]) } };
   const tm = /^t=(.*)$/.exec(hash);
-  const t = tm ? parseSeconds(tm[1]) : undefined;
+  const t = tm ? parseExactSeconds(tm[1]) : undefined;
   return t === undefined ? { kind: "shiur", ed, id } : { kind: "shiur", ed, id, t };
 }

@@ -220,7 +220,7 @@ describe("C2.3 stories on the real corpus", () => {
             const row = rows.get(decodeURIComponent(shiur[2]!));
             if (!row) bad("unknown shiur");
             else if (frag !== undefined) {
-              const t = /^t=(\d+)$/.exec(frag);
+              const t = /^t=(\d+(?:\.\d+)?)$/.exec(frag);
               const s = /^s(\d+)$/.exec(frag);
               if (t) {
                 if (Number(t[1]) > Math.ceil(row.duration)) bad("time beyond the shiur");
