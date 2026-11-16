@@ -50,7 +50,7 @@ the tool are identical apart from their header comment (a test enforces it).
 
 | | Quiet | Live |
 |---|---|---|
-| CSP | `default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self'; media-src 'self' <media>; connect-src 'self'; frame-ancestors 'none'; …` | as Quiet, plus `connect-src 'self' <media>` (service-worker offline downloads), Turnstile in `script-src`/`frame-src`, `worker-src 'self'`; `script-src`/`style-src` also allow `'unsafe-inline'` because React Router's prerendered HTML carries per-page inline bootstrap scripts |
+| CSP | `default-src 'self'; script-src 'self' 'wasm-unsafe-eval' 'sha256-…' (theme init script); style-src 'self'; media-src 'self' <media>; connect-src 'self'; frame-ancestors 'none'; …` | as Quiet, plus `connect-src 'self' <media>` (service-worker offline downloads), Turnstile in `script-src`/`frame-src`, `worker-src 'self'`; `script-src`/`style-src` also allow `'unsafe-inline'` because React Router's prerendered HTML carries per-page inline bootstrap scripts |
 | immutable | `/_astro/*` | `/assets/*` |
 | other caching | `/fonts/*` one day + SWR (font names are not hashed), `/pagefind/*` 1 h | `/data/*` 5 min + SWR 1 day, `/sw.js` no-cache |
 | noindex | `https://:worker.:subdomain.workers.dev/*` | same, plus the Worker (above) |

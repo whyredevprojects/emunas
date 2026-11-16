@@ -1,8 +1,8 @@
 /*
- * Print layer: the page as a kuntres (tech-quiet §4, §11). Navigation, the edition switch, the
- * skip link, the breadcrumb trail and the player are hidden; times stay as plain text; the text is
- * black on white in a single column with the page's path at the foot so a printout can be found
- * again. Logical properties only.
+ * Print layer: the page as a kuntres (tech-quiet §4, §11). Navigation, the edition and theme
+ * switches, the skip link, the breadcrumb trail and the player are hidden; times stay as plain
+ * text; the text is black on white in a single column with the page's path at the foot so a
+ * printout can be found again. Logical properties only.
  */
 @page {
   size: auto;
@@ -39,6 +39,7 @@
     .skip-link,
     .site-nav,
     .edition-switch,
+    .theme-switch,
     .breadcrumb,
     .listen,
     audio,

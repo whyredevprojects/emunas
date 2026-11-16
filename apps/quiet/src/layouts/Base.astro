@@ -4,8 +4,10 @@
  * - `<html lang dir>` per edition (yi → rtl, en → ltr);
  * - skip link, the one-line nav (Contents · Calendar · Indexes · Search · About) and the edition
  *   switch, which goes to the same path in the other edition and keeps the hash;
+ * - the Light · Dark switch (lib/theme.client.ts; hidden until script shows it). Light is the
+ *   default; components/ThemeHead.astro applies a dark choice before paint;
  * - optional breadcrumb that mirrors the catalog;
- * - `main#main`, footer (its last line is the dedication), and the print layer (styles/print.css: nav, switch and player hidden).
+ * - `main#main`, footer (its last line is the dedication), and the print layer (styles/print.css: nav, switches and player hidden).
  *
  * Slots: default (page body), `head` (extra head tags). Canonical, hreflang, OG and robots come
  * from components/seo/Seo.astro (W4.6).
@@ -23,6 +25,7 @@ import { navItems, navSectionOf, type Crumb } from "../lib/nav.ts";
 import { useT } from "../i18n/index.ts";
 import Seo from "../components/seo/Seo.astro";
 import Dedication from "../components/Dedication.astro";
+import ThemeHead from "../components/ThemeHead.astro";
 
 interface Props {
   ed: Ed;
@@ -52,8 +55,8 @@ const otherDir = dirOf(other);
 <html lang={ed} dir={dir}>
   <head>
     <meta charset="utf-8" />
+    <ThemeHead />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light dark" />
     <title>{fullTitle}</title>
     <meta name="description" content={description ?? t("site.description")} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -87,6 +90,11 @@ const otherDir = dirOf(other);
         <span class="visually-hidden">{t("edition.label")}: </span>
         <a href={switchHref} hreflang={other} lang={other} dir={otherDir} data-edition-switch>{t("edition.other")}</a>
       </p>
+      <div class="theme-switch" role="group" aria-label={t("theme.label")} hidden data-theme-switch>
+        <button type="button" data-theme-value="light" aria-pressed="true">{t("theme.light")}</button>
+        <span aria-hidden="true"> · </span>
+        <button type="button" data-theme-value="dark" aria-pressed="false">{t("theme.dark")}</button>
+      </div>
     </header>
     {crumbs && crumbs.length > 0 && (
       <nav class="breadcrumb" aria-label={t("breadcrumb.label")}>
@@ -118,7 +126,9 @@ const otherDir = dirOf(other);
     </footer>
     <script>
       import { keepPlace } from "../lib/edition-switch.client.ts";
+      import { themeSwitch } from "../lib/theme.client.ts";
       keepPlace(document, location, window);
+      themeSwitch(document, location, window);
     </script>
   </body>
 </html>

@@ -1,0 +1,10 @@
+---
+/**
+ * The colour-theme init script, inline in <head> before any stylesheet so a dark choice paints
+ * dark from the first frame (light is the default). It is the site's one inline script: the CSP in
+ * public/_headers allows it by its sha256, which worker/test/config.test.ts recomputes from
+ * THEME_INIT_SCRIPT.
+ */
+import { THEME_INIT_SCRIPT } from "@emunas/tokens";
+---
+<script is:inline set:html={THEME_INIT_SCRIPT} />

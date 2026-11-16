@@ -247,6 +247,32 @@
     flex: 0 0 auto;
   }
 
+  /* Light · Dark: two plain text buttons; the chosen one reads like the current nav item. */
+  .theme-switch {
+    flex: 0 0 auto;
+    color: var(--color-ink-muted);
+  }
+
+  .theme-switch button {
+    font: inherit;
+    background: none;
+    border: 0;
+    padding-block: var(--space-2xs);
+    padding-inline: 0;
+    color: var(--color-ink-muted);
+    cursor: pointer;
+  }
+
+  .theme-switch button:hover {
+    text-decoration-line: underline;
+  }
+
+  .theme-switch button[aria-pressed="true"] {
+    color: var(--color-ink);
+    font-weight: var(--weight-semibold);
+    text-decoration-line: underline;
+  }
+
   .breadcrumb {
     padding-block: var(--space-s) 0;
     font-size: var(--step-0);
