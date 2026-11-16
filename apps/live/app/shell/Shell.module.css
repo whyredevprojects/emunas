@@ -142,6 +142,12 @@
     font-size: var(--step--1);
   }
 
+  .headerTools {
+    display: flex;
+    align-items: center;
+    gap: var(--space-s);
+  }
+
   .lang {
     display: flex;
     align-items: center;
@@ -172,6 +178,31 @@
   }
 
   .langButton[data-focus-visible] {
+    outline: var(--rule-focus) solid var(--color-focus);
+    outline-offset: 2px;
+  }
+
+  /* Dark-colours toggle: the language button's frame around a crescent; accent when on. */
+  .themeButton {
+    min-block-size: var(--tap-min);
+    min-inline-size: var(--tap-min);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: var(--rule-hairline) solid var(--color-rule-strong);
+    border-radius: var(--radius-m);
+    background: var(--color-surface);
+    color: var(--color-ink);
+    cursor: pointer;
+  }
+
+  .themeButton[data-selected] {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .themeButton[data-focus-visible] {
     outline: var(--rule-focus) solid var(--color-focus);
     outline-offset: 2px;
   }
@@ -306,6 +337,31 @@
 
     .main {
       padding: var(--space-m);
+    }
+  }
+
+  /* Phones: the header tools (language, dark colours) leave too little room for the command bar
+     beside them, so the bar takes a row of its own under the site name and the tools. */
+  @media (max-width: 36rem) {
+    .shell {
+      grid-template-rows: auto 1fr;
+    }
+
+    .header {
+      flex-wrap: wrap;
+      gap: var(--space-xs) var(--space-s);
+      padding-block: var(--space-2xs) var(--space-xs);
+    }
+
+    .headerTools,
+    .lang {
+      gap: var(--space-xs);
+    }
+
+    .header > :not(.brand, .headerTools) {
+      order: 1;
+      flex-basis: 100%;
+      max-inline-size: none;
     }
   }
 }

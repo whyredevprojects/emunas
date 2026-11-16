@@ -22,9 +22,9 @@ preloadFonts("serif", "yi"); // ["frank-ruhl-libre-hebrew.woff2"]: only the edit
 
 Colour roles `--color-{paper, paper-sunk, surface, ink, ink-muted, ink-faint, rule, rule-strong,
 accent, accent-hover, on-accent, focus, highlight, now-playing, danger, success}` for light and dark:
-dark follows `prefers-color-scheme` unless `<html data-theme="light">`; `data-theme="dark"` forces
-dark. `test/contrast.test.ts` holds ink to 7:1 (AAA), other text roles to 4.5:1 and focus to 3:1 in
-both themes. `ink-faint` and `rule*` are not for text.
+light is the default whatever the OS prefers; `<html data-theme="dark">` switches to dark. The
+choice is the `emunas_theme` cookie, shared by both sites (`src/theme.ts`). `test/contrast.test.ts`
+holds ink to 7:1 (AAA), other text roles to 4.5:1 and focus to 3:1 in both themes. `ink-faint` and `rule*` are not for text.
 
 `src/` is the source of truth. After changing it run `npm run css -w @emunas/tokens`;
 `test/css.test.ts` fails when the committed CSS is stale.

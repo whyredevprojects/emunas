@@ -2,10 +2,12 @@
 # Template: the media-origin placeholder is filled in after `astro build` by
 # apps/quiet/worker/render-headers.ts (dist/_headers), from the EMUNAS_MEDIA_ORIGIN
 # build variable (Amendment A1: <audio src> points at media.<domain>).
-# Pagefind needs 'wasm-unsafe-eval'. No inline scripts or styles (astro.config).
+# Pagefind needs 'wasm-unsafe-eval'. No inline scripts or styles (astro.config), with one exception:
+# the colour-theme init script (THEME_INIT_SCRIPT in @emunas/tokens, components/ThemeHead.astro),
+# allowed by its sha256 below. Changing that script means changing this hash (a test checks).
 
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self'; font-src 'self'; img-src 'self' data:; media-src 'self' {{EMUNAS_MEDIA_ORIGIN}}; connect-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval' 'sha256-Fi76lzGQR/8odRrMH1G21Mcsrp0gna3lNdJ2IFAzE70='; style-src 'self'; font-src 'self'; img-src 'self' data:; media-src 'self' {{EMUNAS_MEDIA_ORIGIN}}; connect-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
   Referrer-Policy: strict-origin-when-cross-origin
   X-Content-Type-Options: nosniff
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()

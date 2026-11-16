@@ -37,10 +37,10 @@ function colorVars(theme: "light" | "dark"): string[] {
   return (Object.entries(colors[theme]) as [ColorRole, string][]).map(([k, v]) => `--color-${k}: ${v};`);
 }
 
-/** css/tokens.css: every token as a custom property, colour roles for light and dark. */
+/** css/tokens.css: every token as a custom property; light colour roles on :root, dark under data-theme="dark". */
 export function tokensCss(): string {
   const root = [
-    "color-scheme: light dark;",
+    "color-scheme: light;",
     // integer-like keys ("0", "1") would otherwise come before "-2", "-1"
     ...vars("step", Object.entries(typeScale).sort(([a], [b]) => Number(a) - Number(b))),
     ...vars("leading", lineHeight),
@@ -70,13 +70,8 @@ export function tokensCss(): string {
     "  /* Yiddish and Hebrew runs take the Hebrew stacks; the custom properties inherit. */",
     block(":lang(yi), :lang(he)", hebrew, "  "),
     "",
-    "  @media (prefers-color-scheme: dark) {",
-    block(':root:not([data-theme="light"])', colorVars("dark"), "    "),
-    "  }",
-    "",
+    "  /* Light (paper) is the default whatever the OS prefers; the theme toggle opts into dark. */",
     block(':root[data-theme="dark"]', ["color-scheme: dark;", ...colorVars("dark")], "  "),
-    "",
-    block(':root[data-theme="light"]', ["color-scheme: light;"], "  "),
     "}",
     "",
   ].join("\n");

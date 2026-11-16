@@ -3,6 +3,7 @@
 // `base`, and the base `a` colour would then override every link-styled button.
 import "./styles/global.css";
 import { UI_DIR, isUiLang, type UiLang } from "@emunas/i18n";
+import { THEME_INIT_SCRIPT } from "@emunas/tokens";
 import { useEffect, type JSX, type ReactNode } from "react";
 import {
   Links,
@@ -39,9 +40,12 @@ export function loader({ request }: { request: Request }) {
 export function Layout({ children }: { children: ReactNode }): JSX.Element {
   const ui = uiFromPath(useLocation().pathname);
   return (
-    <html lang={ui} dir={UI_DIR[ui]}>
+    // The init script may set data-theme before hydration.
+    <html lang={ui} dir={UI_DIR[ui]} suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
+        {/* Light by default; a dark choice (shared cookie) is applied before first paint. */}
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
