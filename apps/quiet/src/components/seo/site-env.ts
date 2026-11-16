@@ -3,9 +3,10 @@
  * robots.txt, "Open in the listening app") and for "report an error" (integration-plan §2.1, §2.3,
  * C18). Read from the build environment:
  *
- * - hosts, as `@emunas/links` `hostsFromEnv` reads them: `EMUNAS_DOMAIN` (production apex; Live on
- *   `listen.` + it), or `EMUNAS_WORKERS_SUBDOMAIN` (+ `EMUNAS_STAGE=staging`) for the workers.dev
- *   hosts, or explicit `EMUNAS_QUIET_ORIGIN` + `EMUNAS_LIVE_ORIGIN`;
+ * - hosts, as `@emunas/links` `hostsFromEnv` reads them: `EMUNAS_DOMAIN` (the apex: home on it,
+ *   Quiet on `library.`, Live on `listen.`), or `EMUNAS_WORKERS_SUBDOMAIN` (+ `EMUNAS_STAGE=staging`)
+ *   for the workers.dev hosts, or explicit `EMUNAS_HOME_ORIGIN` + `EMUNAS_QUIET_ORIGIN` +
+ *   `EMUNAS_LIVE_ORIGIN`;
  * - `EMUNAS_FEEDBACK_EMAIL`: the address error reports go to (plain `mailto:`, C18).
  *
  * Outside a deploy build, a missing value is replaced by a placeholder (`example.invalid`, a name
@@ -14,16 +15,22 @@
  * value fails the build: a published site must never carry placeholder canonicals or addresses.
  * Values that are set but malformed always fail.
  */
-import { createLinks, hostsFromEnv, type Hosts, type Links } from "@emunas/links";
+import { createLinks, hostsFromEnv, productionHosts, type Hosts, type Links } from "@emunas/links";
 
 export type SiteEnvVars = Readonly<Record<string, string | undefined>>;
 
 /** Dev placeholder domain: `.invalid` is reserved (RFC 2606) and never resolves. */
 export const PLACEHOLDER_DOMAIN = "example.invalid";
-export const PLACEHOLDER_HOSTS: Hosts = { quiet: `https://${PLACEHOLDER_DOMAIN}`, live: `https://listen.${PLACEHOLDER_DOMAIN}` };
+export const PLACEHOLDER_HOSTS: Hosts = productionHosts(PLACEHOLDER_DOMAIN);
 export const PLACEHOLDER_FEEDBACK_EMAIL = `feedback@${PLACEHOLDER_DOMAIN}`;
 
-const HOST_VARS = ["EMUNAS_DOMAIN", "EMUNAS_WORKERS_SUBDOMAIN", "EMUNAS_QUIET_ORIGIN", "EMUNAS_LIVE_ORIGIN"] as const;
+const HOST_VARS = [
+  "EMUNAS_DOMAIN",
+  "EMUNAS_WORKERS_SUBDOMAIN",
+  "EMUNAS_HOME_ORIGIN",
+  "EMUNAS_QUIET_ORIGIN",
+  "EMUNAS_LIVE_ORIGIN",
+] as const;
 const EMAIL_RE = /^[^\s@<>"?&#]+@[^\s@<>"?&#]+\.[^\s@<>"?&#]+$/;
 
 export interface SiteEnv {
@@ -60,7 +67,7 @@ export function siteEnv(env: SiteEnvVars): SiteEnv {
     hosts = hostsFromEnv(env); // throws on malformed or incomplete values
   } else if (deploy) {
     throw new Error(
-      "Quiet deploy build: no site hosts configured; set EMUNAS_DOMAIN or EMUNAS_WORKERS_SUBDOMAIN (or EMUNAS_QUIET_ORIGIN and EMUNAS_LIVE_ORIGIN)",
+      "Quiet deploy build: no site hosts configured; set EMUNAS_DOMAIN or EMUNAS_WORKERS_SUBDOMAIN (or EMUNAS_HOME_ORIGIN, EMUNAS_QUIET_ORIGIN and EMUNAS_LIVE_ORIGIN)",
     );
   } else {
     hosts = PLACEHOLDER_HOSTS;

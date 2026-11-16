@@ -1,0 +1,18 @@
+---
+/** A cover with its title (a link to the PDF) and the file's real size. */
+import Cover from "./Cover.astro";
+import { formatSize, type LegacyFile } from "../lib/legacy-schema.ts";
+import { ARTICLE_INFO } from "../lib/content.ts";
+
+interface Props {
+  file: LegacyFile;
+}
+
+const { file } = Astro.props;
+const title = file.kind === "article" ? (ARTICLE_INFO[file.path]?.headline ?? file.title) : file.title;
+---
+<li class="doc-card">
+  <Cover file={file} />
+  <a class="title" href={file.path}>{title}</a>
+  <p class="meta"><span>{file.kind === "article" ? "Article" : "Essay"}</span><span>PDF</span><span>{formatSize(file.sizeBytes)}</span></p>
+</li>

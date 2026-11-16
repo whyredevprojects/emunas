@@ -7,7 +7,7 @@
  * - the light/dark switch, a sun and a moon (lib/theme.client.ts; hidden until script shows it). Light is the
  *   default; components/ThemeHead.astro applies a dark choice before paint;
  * - optional breadcrumb that mirrors the catalog;
- * - `main#main`, footer (its last line is the dedication), and the print layer (styles/print.css: nav, switches and player hidden).
+ * - `main#main`, footer (About, the other edition, the home site; its last line is the dedication), and the print layer (styles/print.css: nav, switches and player hidden).
  *
  * Slots: default (page body), `head` (extra head tags). Canonical, hreflang, OG and robots come
  * from components/seo/Seo.astro (W4.6).
@@ -25,6 +25,7 @@ import { navItems, navSectionOf, type Crumb } from "../lib/nav.ts";
 import { useT } from "../i18n/index.ts";
 import Seo from "../components/seo/Seo.astro";
 import Dedication from "../components/Dedication.astro";
+import { currentSiteEnv } from "../components/seo/site-env.ts";
 import ThemeHead from "../components/ThemeHead.astro";
 
 interface Props {
@@ -50,6 +51,7 @@ const editionScript = ed === "yi" ? "he" : "latin";
 const titleText = scriptOf(title) === editionScript ? title : isolateText(title);
 const fullTitle = path === home ? t("site.name") : `${titleText} · ${t("site.name")}`;
 const otherDir = dirOf(other);
+const homeSite = `${currentSiteEnv().hosts.home}/`;
 ---
 <!doctype html>
 <html lang={ed} dir={dir}>
@@ -128,6 +130,8 @@ const otherDir = dirOf(other);
         <a href={formatQuiet({ kind: "index", ed, index: "about" })}>{t("nav.about")}</a>
         <span aria-hidden="true"> · </span>
         <a href={switchHref} hreflang={other} data-edition-switch>{t("footer.otherEdition")}</a>
+        <span aria-hidden="true"> · </span>
+        <a href={homeSite}>{t("footer.home")}</a>
       </p>
       <p class="print-only print-source"><bdi dir="ltr">{path}</bdi></p>
       <Dedication />

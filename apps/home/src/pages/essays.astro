@@ -1,0 +1,76 @@
+---
+/**
+ * Every essay, grouped by sefer and Yomim Tovim, each a PDF. The section filter works without
+ * JavaScript: each filter link targets an empty marker before the rail and the list, and CSS
+ * (styles/home.css) hides the other groups. "All" clears the target.
+ */
+import Base from "../layouts/Base.astro";
+import PageHead from "../components/PageHead.astro";
+import Cover from "../components/Cover.astro";
+import { ESSAYS, ESSAY_GROUP_LISTS } from "../lib/legacy-files.ts";
+import { formatSize, splitTitle } from "../lib/legacy-schema.ts";
+import { GROUP_INFO } from "../lib/content.ts";
+
+const groups = ESSAY_GROUP_LISTS.map((g) => ({ ...g, info: GROUP_INFO[g.group] }));
+---
+<Base
+  title="Essays"
+  description={`${ESSAYS.length} free essays from the Mashgiach, Harav Moshe Wolfson zt"l, on the parsha and the Yomim Tovim, as PDFs to download, print and share.`}
+>
+  <div class="wrap">
+    <PageHead
+      title="Essays"
+      label="The archive"
+      labelYi="מאמרים"
+      intro="Free essays on the parsha, the zmanim and the Yomim Tovim. Every essay is a PDF to download, print and share."
+    />
+    <div class="dl-layout">
+      {groups.map((g) => <span class="tgt" id={g.info.id} />)}
+      <aside class="facets" aria-label="Filter essays">
+        <div class="facet">
+          <h2>Section</h2>
+          <ul>
+            <li><a class="is-all" href="#all"><span>All essays</span><span class="n">{ESSAYS.length}</span></a></li>
+            {groups.map((g) => (
+              <li><a href={`#${g.info.id}`}><span>{g.info.label}</span><span class="n">{g.essays.length}</span></a></li>
+            ))}
+          </ul>
+          <p class="note">Each section is a link you can bookmark or share.</p>
+        </div>
+        <div class="facet also">
+          <h2>Also</h2>
+          <ul>
+            <li><a href="/weekly-devar-torah/"><span>A Devar Torah each week by email</span></a></li>
+          </ul>
+        </div>
+      </aside>
+      <div class="dl-main" id="all">
+        {groups.map((g) => (
+          <p class="status" role="status" data-status={g.info.id}>
+            Showing {g.info.label}. <a href="#all">Show all essays</a>
+          </p>
+        ))}
+        {groups.map((g) => (
+          <details class="grp" data-group={g.info.id} open>
+            <summary>
+              <h2 id={`g-${g.info.id}`}>{g.info.label} <span class="yi" lang="he" dir="rtl">{g.info.he}</span></h2>
+              <span class="cnt">{g.essays.length} {g.essays.length === 1 ? "essay" : "essays"}</span>
+            </summary>
+            <ul class="rows">
+              {g.essays.map((e) => (
+                <li class="doc">
+                  <Cover file={e} mini />
+                  <div>
+                    <div class="t"><a href={e.path}>{e.title}</a></div>
+                    <div class="m">PDF &middot; {formatSize(e.sizeBytes)}</div>
+                  </div>
+                  <a class="dlbtn" href={e.path}>PDF<span class="vh">: {splitTitle(e.title).head} ({formatSize(e.sizeBytes)})</span></a>
+                </li>
+              ))}
+            </ul>
+          </details>
+        ))}
+      </div>
+    </div>
+  </div>
+</Base>

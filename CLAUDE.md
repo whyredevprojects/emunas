@@ -4,8 +4,9 @@ Shiurim of Harav Moshe Wolfson zt"l: a data pipeline (`data/`, `scripts/`, `src/
 
 ## How to refer to him
 
-- Always **"the Mashgiach"** in English and **"דער משגיח"** in Yiddish. Never "the Rav" or "the Rov" (or "דער רב") for him. This applies to UI copy, labels, meta and SEO text, docs, prompts, and generated write-ups.
-- Possessive: "the Mashgiach's".
+- In English: "the Mashgiach", "Rav Wolfson", "Rabbi Wolfson" or `Harav Moshe Wolfson zt"l`. In Yiddish: "דער משגיח". Possessive: "the Mashgiach's".
+- Never "the Rav" or "the Rov" (or "דער רב") as a stand-in for him, and never `shlit"a`: he has passed away, so `zt"l`.
+- This applies to UI copy, labels, meta and SEO text, docs, prompts, and generated write-ups.
 - Other people who are titled Rav keep their titles ("the Rav of Sanz", "Rav Chaim").
 
 ## Transcripts are never published

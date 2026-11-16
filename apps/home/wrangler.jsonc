@@ -1,0 +1,35 @@
+// emunas-home: the landing site on the apex. Static assets from dist/; worker/index.ts runs only
+// for /files/* (essay and article PDFs and images, read from R2 bucket `emunas` under the key
+// prefix site/files/). Build first (`npm run build --workspace=@emunas/home`).
+// Deploy: `wrangler deploy` (production) or `--env staging`.
+// Custom domain: the apex <domain> (Library is on library.<domain>, Listen on listen.<domain>; the
+// hostname must equal productionHosts(EMUNAS_DOMAIN).home, checked by
+// apps/quiet/worker/test/site-routes.test.ts). There is no www host.
+// Staging sets "routes": [] because routes are inherited and a staging deploy must not claim it;
+// r2_buckets is not inherited, so staging names the bucket again (read-only use).
+{
+  "name": "emunas-home",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-10-28",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/files/*"]
+  },
+  "r2_buckets": [{ "binding": "FILES", "bucket_name": "emunas" }],
+  "routes": [{ "pattern": "emunas.torahlearningtools.com", "custom_domain": true }],
+  "workers_dev": true,
+  "preview_urls": true,
+  "observability": { "enabled": true },
+  "env": {
+    // Manual staging deploys and per-PR previews (`wrangler versions upload --env staging
+    // --preview-alias pr-<n>`) go to this Worker, never to production.
+    "staging": {
+      "name": "emunas-home-staging",
+      "routes": [],
+      "r2_buckets": [{ "binding": "FILES", "bucket_name": "emunas" }]
+    }
+  }
+}

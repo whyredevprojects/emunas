@@ -4,8 +4,9 @@
 // No audio route and no R2 binding: audio is served from the media host.
 // Build first (`npm run build --workspace=@emunas/live`), then render
 // build/client/_headers (worker/render-headers.ts). Deploy: `wrangler deploy` or `--env staging`.
-// Custom domain (owner decision O8: root emunas.torahlearningtools.com). Staging sets
-// "routes": [] because routes are inherited and a staging deploy must not claim it.
+// Custom domain listen.<domain> (home is on the apex, Quiet on library.<domain>; the hostname
+// must equal productionHosts(EMUNAS_DOMAIN).live, checked by apps/quiet/worker/test/site-routes.test.ts).
+// Staging sets "routes": [] because routes are inherited and a staging deploy must not claim it.
 // See docs/sites/ops-runbook.md.
 {
   "name": "emunas-live",

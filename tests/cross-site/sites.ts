@@ -20,7 +20,7 @@ import { createLinks, pageLookupFromLayer, type LayerPagesInput, type LinkData, 
 
 export const REPO = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
 export const DOMAIN = "emunas.example";
-export const QUIET = `https://${DOMAIN}`;
+export const QUIET = `https://library.${DOMAIN}`;
 export const LIVE = `https://listen.${DOMAIN}`;
 
 export interface SitePaths {
