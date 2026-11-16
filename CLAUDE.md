@@ -27,7 +27,7 @@ Shiurim of Harav Moshe Wolfson zt"l: a data pipeline (`data/`, `scripts/`, `src/
 ## Ownership and branches
 
 - **Pipeline:** `data/`, `scripts/`, `src/`, `config/` and `prompts/` belong to the pipeline session (branch `claude/vibrant-curie-ioreux`). Site work does not modify them.
-- **Site work:** pushes to `main`.
+- **Site work:** goes on its own branch and reaches `main` through a pull request. Never push to `main` directly.
 
 ## Dedication
 
