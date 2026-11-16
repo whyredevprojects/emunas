@@ -1,0 +1,57 @@
+name: Setup Node and dependencies
+description: >-
+  Node from NODE_VERSION, then node_modules restored from the Actions cache (keyed on the lockfile,
+  every workspace package.json, the runner OS/arch and the Node version). npm ci runs only on a miss,
+  and the result is saved straight after the install, before any build writes into node_modules
+  (.astro, .vite), and only from main, so PR branches read main's entry instead of each adding one.
+
+inputs:
+  node-version:
+    description: Node version
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v5
+      with:
+        node-version: ${{ inputs.node-version }}
+    - name: Restore node_modules
+      id: nm
+      uses: actions/cache/restore@v4
+      with:
+        path: |
+          node_modules
+          apps/*/node_modules
+          packages/*/node_modules
+          workers/*/node_modules
+        key: nm-${{ runner.os }}-${{ runner.arch }}-node${{ inputs.node-version }}-${{ hashFiles('package-lock.json', 'package.json', 'apps/*/package.json', 'packages/*/package.json', 'workers/*/package.json') }}
+    # On a miss only: ~/.npm (the download cache) so npm ci does not fetch every tarball again.
+    - name: Restore npm download cache
+      if: steps.nm.outputs.cache-hit != 'true'
+      id: npm
+      uses: actions/cache/restore@v4
+      with:
+        path: ~/.npm
+        key: npm-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+        restore-keys: npm-${{ runner.os }}-
+    - name: Install
+      if: steps.nm.outputs.cache-hit != 'true'
+      shell: bash
+      run: npm ci
+    - name: Save node_modules
+      if: steps.nm.outputs.cache-hit != 'true' && github.ref == 'refs/heads/main'
+      uses: actions/cache/save@v4
+      with:
+        path: |
+          node_modules
+          apps/*/node_modules
+          packages/*/node_modules
+          workers/*/node_modules
+        key: ${{ steps.nm.outputs.cache-primary-key }}
+    - name: Save npm download cache
+      if: steps.nm.outputs.cache-hit != 'true' && steps.npm.outputs.cache-hit != 'true' && github.ref == 'refs/heads/main'
+      uses: actions/cache/save@v4
+      with:
+        path: ~/.npm
+        key: npm-${{ runner.os }}-${{ hashFiles('package-lock.json') }}

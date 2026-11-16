@@ -14,6 +14,8 @@ name: ci
 
 on:
   pull_request:
+  # Lets a merge queue on main run this workflow on the queued commit (and record its marker).
+  merge_group:
   push:
     branches: [main]
   workflow_dispatch:
@@ -36,12 +38,9 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
+      - uses: ./.github/actions/setup
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: npm
-      - name: Install
-        run: npm ci
       - name: Typecheck (pipeline, unchanged)
         run: npm run typecheck
       # site:typecheck and site:test also cover the site Workers (site:*:workers) and the Live
@@ -68,12 +67,9 @@ jobs:
     steps:
       # The transcript folder is in git; only the guard steps below read it (from its default path).
       - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
+      - uses: ./.github/actions/setup
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: npm
-      - name: Install
-        run: npm ci
 
       - name: Corpus build
         run: npm run corpus:build
@@ -195,14 +191,38 @@ jobs:
       HTML_VALIDATE_VERSION: 11.17.0
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
+      - uses: ./.github/actions/setup
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: npm
-      - name: Install
-        run: npm ci
+      # Browsers are cached per Playwright version (saved from main only, like node_modules); the
+      # system libraries are apt packages, so install-deps runs either way.
+      - name: Playwright version
+        id: pw
+        run: echo "version=$(node -p "require('playwright/package.json').version")" >> "$GITHUB_OUTPUT"
+      - name: Restore Playwright browsers
+        id: pw-cache
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: pw-${{ runner.os }}-${{ runner.arch }}-${{ steps.pw.outputs.version }}-chromium-webkit
       - name: Install Playwright browsers (Chromium, WebKit)
+        if: steps.pw-cache.outputs.cache-hit != 'true'
         run: npx playwright install --with-deps chromium webkit
+      - name: Install Playwright system dependencies (browsers restored from cache)
+        if: steps.pw-cache.outputs.cache-hit == 'true'
+        run: npx playwright install-deps chromium webkit
+      - name: Save Playwright browsers
+        if: steps.pw-cache.outputs.cache-hit != 'true' && github.ref == 'refs/heads/main'
+        uses: actions/cache/save@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ steps.pw-cache.outputs.cache-primary-key }}
+      # html-validate and @lhci/cli run through npx and are not in the lockfile.
+      - name: Cache npx packages (html-validate, Lighthouse CI)
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm/_npx
+          key: npx-${{ runner.os }}-html-validate-${{ env.HTML_VALIDATE_VERSION }}-lhci-${{ env.LHCI_VERSION }}
 
       - name: Corpus, guard pre, suppress rebuild, search rows, Live data, both builds (real data, test domain)
         # The chain's build steps (tests/chain/site-chain.ts), so the browser gates see the same
@@ -283,6 +303,29 @@ jobs:
             .lighthouseci
           if-no-files-found: ignore
           retention-days: 7
+
+  passed:
+    # Records that this exact tree passed check, build and e2e: an artifact named after the git
+    # tree id (content only, not the commit). deploy.yml looks it up and skips its typecheck, lint
+    # and unit tests for a tree CI already passed; a squash or rebase merge of a PR whose last run
+    # tested refs/pull/N/merge against the current main has the same tree. A miss only means the
+    # deploy runs those checks again.
+    needs: [check, build, e2e]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - name: Tree id
+        id: tree
+        run: |
+          echo "tree=$(git rev-parse 'HEAD^{tree}')" >> "$GITHUB_OUTPUT"
+          printf '%s\n' "$GITHUB_SHA" > "$RUNNER_TEMP/ci-passed.txt"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ci-passed-${{ steps.tree.outputs.tree }}
+          path: ${{ runner.temp }}/ci-passed.txt
+          retention-days: 30
+          if-no-files-found: error
 
   preview:
     # Same-repo PRs only (fork PRs get no secrets). Uploads a version of each staging Worker
