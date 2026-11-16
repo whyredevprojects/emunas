@@ -13,6 +13,7 @@ import { MAX_NEWLY } from "../model.ts";
 import { settingsStore } from "../../../shell/settings.ts";
 import { createTestRouter } from "../../../shell/test-router.tsx";
 import { momentContent } from "../format.ts";
+import { todayT } from "../strings.ts";
 import { registerProgressSource } from "../personal.ts";
 
 const dataFetch: DataFetch = fixtureFetch;
@@ -69,7 +70,9 @@ describe("Today page", () => {
     const first = await renderAt(`/en/?date=${NOACH_WEEK}`);
     const box = await waitFor(() => {
       const el = first.container.querySelector("[data-moment]");
-      if (!el || !el.querySelector("[lang]")) throw new Error("moment not loaded");
+      // The box renders before the shiur file arrives (the "From:" title already carries `lang`),
+      // so wait for its loading line to go, not for any `[lang]` element.
+      if (!el || el.textContent!.includes(todayT("en")("today.loading"))) throw new Error("moment not loaded");
       return el;
     });
     const id = box.getAttribute("data-moment")!;

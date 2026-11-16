@@ -13,7 +13,7 @@ wrong, and a point can come out stronger or weaker than the Mashgiach said it.
 The notes are not the Mashgiach's words. They report what he says and do not quote him. Where the notes
 and the recording differ, the recording is right.
 
-The search looks in the catalog and the notes.
+The [search](/en/search/) looks in the [catalog](/en/contents/) and the notes.
 
 Items the model itself marked as uncertain are left out. A source the model inferred is marked
 "apparently"; where only the sefer is known and not the place in it, it says "place not
