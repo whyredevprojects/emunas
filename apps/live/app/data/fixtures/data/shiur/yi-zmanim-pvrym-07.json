@@ -1,7 +1,7 @@
 {
- "schemaVersion": 4,
+ "schemaVersion": 5,
  "id": "yi-zmanim-pvrym-07",
- "rev": "f8325db55889",
+ "rev": "ee41fa0284a0",
  "lang": "yi",
  "category": "zman",
  "catalog": {
@@ -378,14 +378,24 @@
    {
     "momentId": "yi-zmanim-pvrym-07~st0",
     "storyId": "the-satmar-rav-on-purim",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "the Satmar Rav (Rabbi Yoel Teitelbaum)"
+     }
+    ]
    },
    {
     "momentId": "yi-zmanim-pvrym-07~st1",
     "storyId": "the-shomer-emunim-and-the-silver-kearah",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rabbi Aharon Roth (the Shomer Emunim)"
+     }
+    ]
    }
   ],
   "insights": []
@@ -948,12 +958,6 @@
      "en": "The Rav recounts that the Satmar Rav used to drink cup after cup on Purim until he became drunk and had to be carried out. His whole Purim tish took about twenty minutes: he washed, ate a little challah and fish, and began drinking. In those minutes he spoke lofty words and secrets of the Torah that he never revealed the rest of the year, though his sefarim are full of halachah and sweet derashos.",
      "yi": "דער משגיח דערציילט אז דער סאטמארער רב פלעגט פורים טרינקען איין כוס נאכן אנדערן ביז ער איז געווארן שיכור און מען האט אים געדארפט ארויסטראגן. זיין גאנצער פורים טיש האט געדויערט בערך צוואנציג מינוט: ער האט זיך געוואשן, געגעסן א ביסל חלה און פיש, און גענומען טרינקען. אין יענע מינוטן האט ער גערעדט הויכע דיבורים און סודות התורה וואס ער האט קיינמאל א גאנץ יאר נישט ארויסגעוויזן, הגם זיינע ספרים זענען פול מיט הלכות און זיסע דרושים."
     },
-    "people": [
-     "the Satmar Rav"
-    ],
-    "peopleKeys": [
-     "satmar-rav"
-    ],
     "t": 1310.45,
     "end": 1421.24
    },
@@ -967,110 +971,8 @@
      "en": "On Purim, the Shomer Emunim, a man with ruach hakodesh, suddenly announced that whoever needed a yeshuah with children could come to him, but he wanted a ke'arah for Pesach. One man, in the poverty of Yerushalayim then, bought a copper ke'arah plated with silver; the Rebbe threw it to the other end of the beis medrash, calling it falsehood because it fooled people into thinking it was silver. Another childless man ran to the market and bought a beautiful silver ke'arah with three tiers for the matzos. The Rebbe said his own Rebbe had such a ke'arah and gave him a blessing, and that man had a son and a daughter.",
      "yi": "פורים האט דער שומר אמונים, א בעל רוח הקודש, פלוצלונג געזאגט אז ווער עס דארף א ישועה מיט קינדער קען צו אים קומען, נאר ער וויל א קערה אויף פסח. איין איד, אין דער ארעמקייט פון ירושלים דעמאלט, האט געקויפט א קופערנע קערה איבערגעצויגן מיט זילבער; דער רבי האט זי אוועקגעווארפן צום אנדערן עק בית המדרש, ווייל זי איז שקר, זי נארט מענטשן אז זי איז זילבער. אן אנדער איד אן קינדער איז געלאפן אויפן מארק און געקויפט א שיינע זילבערנע קערה מיט דריי שטאקן פאר די מצות. דער רבי האט געזאגט אז אזא קערה האט זיין רבי געהאט און אים געבענטשט, און יענער האט געהאט א זון און א טאכטער."
     },
-    "people": [
-     "the Shomer Emunim"
-    ],
-    "peopleKeys": [
-     "shomer-emunim"
-    ],
     "t": 2050.35,
     "end": 2214.99
-   }
-  ],
-  "people": [
-   {
-    "name": "the Chasam Sofer",
-    "key": "chasam-sofer"
-   },
-   {
-    "name": "Reb Tzadok HaKohen",
-    "key": "rav-tzadok-hakohen"
-   },
-   {
-    "name": "the Satmar Rav",
-    "key": "satmar-rav"
-   },
-   {
-    "name": "Reb Avraham of Tchechanov",
-    "key": "rabbi-avraham-of-tchechanov"
-   },
-   {
-    "name": "Noach",
-    "key": "noach"
-   },
-   {
-    "name": "Adam HaRishon",
-    "key": "adam-harishon"
-   },
-   {
-    "name": "Yehoshua bin Nun",
-    "key": "yehoshua-bin-nun"
-   },
-   {
-    "name": "Shmuel HaNavi",
-    "key": "shmuel-hanavi"
-   },
-   {
-    "name": "the Shomer Emunim",
-    "key": "shomer-emunim"
-   },
-   {
-    "name": "Esther",
-    "key": "esther"
-   },
-   {
-    "name": "Mordechai",
-    "key": "mordechai"
-   },
-   {
-    "name": "the Ba'al Shem Tov",
-    "key": "baal-shem-tov"
-   }
-  ],
-  "concepts": [
-   {
-    "he": "ונהפוך הוא",
-    "key": "vnhpvk-hva-31fe09"
-   },
-   {
-    "he": "שלשת ימי הגבלה",
-    "key": "shlshs-ymy-hgblh-52a08d"
-   },
-   {
-    "he": "תורה שבעל פה",
-    "key": "svrh-shbel-ph-9901bd"
-   },
-   {
-    "he": "קבלת התורה",
-    "key": "kbls-hsvrh-2299ba"
-   },
-   {
-    "he": "כתר",
-    "key": "ksr-21b997"
-   },
-   {
-    "he": "יום הכפורים",
-    "key": "yvm-hkpvrym-a16487"
-   },
-   {
-    "he": "עת רצון",
-    "key": "es-rtzvn-c7770e"
-   },
-   {
-    "he": "מאכלות אסורות",
-    "key": "maklvs-asvrvs-c3ba0e"
-   },
-   {
-    "he": "ימי משתה ושמחה",
-    "key": "ymy-mshsh-vshmchh-917e3a"
-   },
-   {
-    "he": "קערה",
-    "key": "kerh-55d8a3"
-   },
-   {
-    "he": "כרך המוקף חומה",
-    "key": "krk-hmvkf-chvmh-a5d849"
    }
   ],
   "writeupLangs": [

@@ -1,7 +1,7 @@
 {
- "schemaVersion": 4,
+ "schemaVersion": 5,
  "id": "yi-parshas-hashavua-hzynv-01",
- "rev": "d130112d19cb",
+ "rev": "577d4a67d7fd",
  "lang": "yi",
  "category": "parsha",
  "catalog": {
@@ -591,26 +591,55 @@
    {
     "momentId": "yi-parshas-hashavua-hzynv-01~st0",
     "storyId": "the-ramban-and-his-student-avner",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "id": "ramban",
+      "label": {
+       "en": "the Ramban",
+       "yi": "דער רמב\"ן",
+       "he": "רמב\"ן"
+      },
+      "page": true
+     },
+     {
+      "name": "Avner"
+     }
+    ]
    },
    {
     "momentId": "yi-parshas-hashavua-hzynv-01~st1",
     "storyId": "the-chassan-waiting-for-the-mechutan",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rav Nosson Wachtfogel"
+     }
+    ]
    },
    {
     "momentId": "yi-parshas-hashavua-hzynv-01~st2",
     "storyId": "the-lechovitcher-chassid-who-heard-hamelech",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rabbi Mordechai of Lechovitch"
+     }
+    ]
    },
    {
     "momentId": "yi-parshas-hashavua-hzynv-01~st3",
     "storyId": "rebbi-the-calf-and-the-mouse",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rabbi Yehudah HaNasi (Rebbi)"
+     }
+    ]
    }
   ],
   "insights": [
@@ -1467,14 +1496,6 @@
      "en": "The Ramban told his students that everything is contained in Haazinu. A student named Avner, who had left the path, asked where he himself was hinted, not expecting his teacher to know. The Ramban showed him his name in a verse of Haazinu, and the student was shaken by it. The account ends with a ship that sank.",
      "yi": "דער רמב\"ן האט געזאגט פאר זיינע תלמידים אז אלעס איז כולל אין האזינו. א תלמיד מיטן נאמען אבנר, וואס איז ארויס פונעם וועג, האט אים געפרעגט וואו ער אליין איז רמז'ט, און האט נישט ערווארטעט אז דער רבי וועט וויסן. דער רמב\"ן האט אים געוויזן זיין נאמען אין א פסוק פון האזינו, און דער תלמיד האט זיך דערשראקן. די מעשה ענדיגט זיך מיט א שיף וואס איז פארזונקען געווארן."
     },
-    "people": [
-     "the Ramban",
-     "Avner"
-    ],
-    "peopleKeys": [
-     "ramban",
-     "avner"
-    ],
     "t": 141.95,
     "end": 196.07,
     "soft": true
@@ -1489,12 +1510,6 @@
      "en": "The Rav tells that R' Nosson Wachtfogel, who always speaks of the redemption being near, had promised him the redemption, and when it had not come he asked him about it. R' Nosson answered with a mashal of a bachur who waited very long for his match; his friends kept pushing him, but once the wedding had begun, the guests were seated and the kallah was waiting, there was no more need to push. So too now, he said, everything is already prepared and one can already see it.",
      "yi": "דער משגיח דערציילט אז ר' נתן וואכטפויגל, וואס רעדט כסדר אז די גאולה איז נאנט, האט אים צוגעזאגט די גאולה, און ווען זי איז נישט געקומען האט ער אים געפרעגט. ר' נתן האט געענטפערט מיט א משל פון א בחור וואס איז לאנג געזעסן אן א שידוך; זיינע חברים האבן אים כסדר געשטופט, אבער ווען די חתונה האט שוין אנגעהויבן, די געסט זיצן שוין און די כלה ווארט, דארף מען שוין נישט שטופן. אזוי אויך יעצט, האט ער געזאגט, איז שוין אלעס גרייט און מ'קען עס שוין זען."
     },
-    "people": [
-     "R' Nosson Wachtfogel"
-    ],
-    "peopleKeys": [
-     "rabbi-nosson-wachtfogel"
-    ],
     "t": 699.57,
     "end": 806.27,
     "soft": true
@@ -1509,12 +1524,6 @@
      "en": "A Lechovitcher chassid travelling to his Rebbe for Rosh Hashanah got lost in a forest and had to daven alone there. At Shacharis, the word 'HaMelech' as his Rebbe says it suddenly came into his mind, and this gave him great strength to daven. When he later came to the Rebbe, R' Mordechai of Lechovitch told him that when a Jew says 'HaMelech' it is heard across the whole world.",
      "yi": "א לעכאוויטשער חסיד וואס איז געפארן צום רבי'ן אויף ראש השנה האט זיך פארבלאנדזשעט אין א וואלד און האט געמוזט דארט דאווענען אליין. ביי שחרית איז אים פלוצלינג אריינגעפלויגן אין זינען ווי זיין רבי זאגט \"המלך\", און דאס האט אים געגעבן גרויס כח צו דאווענען. ווען ער איז שפעטער געקומען צום רבי'ן, האט אים ר' מרדכי לעכאוויטשער געזאגט אז ווען א איד זאגט \"המלך\" הערט מען עס איבער דער גאנצער וועלט."
     },
-    "people": [
-     "R' Mordechai of Lechovitch"
-    ],
-    "peopleKeys": [
-     "rabbi-mordechai-of-lechovitch"
-    ],
     "t": 3425.8,
     "end": 3475.14,
     "soft": true
@@ -1529,135 +1538,9 @@
      "en": "A calf being led to slaughter fled to Rebbi for protection, and he sent it back, saying it was created for this. Because he showed no mercy, he suffered great pain for thirteen years, until he again showed mercy.",
      "yi": "א קעלבל וואס מ'האט געפירט צו דער שחיטה איז אנטלאפן צו רבי'ן זוכן שוץ, און ער האט עס צוריקגעשיקט און געזאגט אז דערצו איז עס באשאפן. ווייל ער האט נישט געהאט רחמנות, האט ער דרייצן יאר געליטן גרויסע יסורים, ביז ער האט ווידער ארויסגעוויזן רחמנות."
     },
-    "people": [
-     "Rebbi (R' Yehuda HaNasi)"
-    ],
-    "peopleKeys": [
-     "rebbi"
-    ],
     "t": 3662.51,
     "end": 3754.85,
     "soft": true
-   }
-  ],
-  "people": [
-   {
-    "name": "the Ramban",
-    "key": "ramban"
-   },
-   {
-    "name": "Avner",
-    "key": "avner"
-   },
-   {
-    "name": "R' Nosson Wachtfogel",
-    "key": "rabbi-nosson-wachtfogel"
-   },
-   {
-    "name": "R' Aharon Kotler",
-    "key": "rabbi-aharon-kotler"
-   },
-   {
-    "name": "the Apter Rav (Ohev Yisroel)",
-    "key": "apter-rav"
-   },
-   {
-    "name": "the Rizhiner",
-    "key": "ruzhiner"
-   },
-   {
-    "name": "Nasser",
-    "key": "nasser"
-   },
-   {
-    "name": "the Rambam",
-    "key": "rambam"
-   },
-   {
-    "name": "the Sfas Emes",
-    "key": "sfas-emes"
-   },
-   {
-    "name": "Kayin",
-    "key": "kayin"
-   },
-   {
-    "name": "R' Elchonon Wasserman",
-    "key": "rabbi-elchonon-wasserman"
-   },
-   {
-    "name": "Yehoshua bin Nun",
-    "key": "yehoshua-bin-nun"
-   },
-   {
-    "name": "R' Mordechai of Lechovitch",
-    "key": "rabbi-mordechai-of-lechovitch"
-   },
-   {
-    "name": "Rebbi (R' Yehuda HaNasi)",
-    "key": "rebbi"
-   }
-  ],
-  "concepts": [
-   {
-    "he": "האזינו",
-    "key": "hazynv-00107d"
-   },
-   {
-    "he": "ראש השנה",
-    "key": "rash-hshnh-833f25"
-   },
-   {
-    "he": "יום כיפור",
-    "key": "yvm-kypvr-c5e624"
-   },
-   {
-    "he": "עשרת ימי תשובה",
-    "key": "eshrs-ymy-sshvbh-03066e"
-   },
-   {
-    "he": "עשרה מאמרות",
-    "key": "eshrh-mamrvs-f47d90"
-   },
-   {
-    "he": "שירה",
-    "key": "shyrh-f1dc80"
-   },
-   {
-    "he": "אמונה",
-    "key": "amvnh-6dd509"
-   },
-   {
-    "he": "קול השופר",
-    "key": "kvl-hshvpr-2687ea"
-   },
-   {
-    "he": "חזרת הש\"ץ",
-    "key": "chzrs-hshtz-8d5eec"
-   },
-   {
-    "he": "יחידה",
-    "key": "ychydh-52db0e"
-   },
-   {
-    "he": "מלכיות",
-    "key": "mlkyvs-ee86b4"
-   },
-   {
-    "he": "עלינו לשבח",
-    "key": "elynv-lshbch-58c258"
-   },
-   {
-    "he": "רבונו של עולם",
-    "key": "rbvnv-shl-evlm-52e424"
-   },
-   {
-    "he": "יום הדין",
-    "key": "yvm-hdyn-343343"
-   },
-   {
-    "he": "קיבוץ",
-    "key": "kybvtz-cce670"
    }
   ],
   "writeupLangs": [

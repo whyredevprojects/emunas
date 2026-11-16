@@ -1,7 +1,7 @@
 {
- "schemaVersion": 4,
+ "schemaVersion": 5,
  "id": "yi-zmanim-svds-shvshn-pvrym-01",
- "rev": "1f773c41c7be",
+ "rev": "f832158b1054",
  "lang": "yi",
  "category": "zman",
  "catalog": {
@@ -654,8 +654,26 @@
    {
     "momentId": "yi-zmanim-svds-shvshn-pvrym-01~st0",
     "storyId": "the-jews-complaint-to-mordechai-on-the-night-of-the-kings",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "id": "mordechai",
+      "label": {
+       "en": "Mordechai HaTzaddik",
+       "yi": "מרדכי הצדיק"
+      },
+      "page": true
+     },
+     {
+      "id": "haman",
+      "label": {
+       "en": "Haman",
+       "yi": "המן"
+      },
+      "page": true
+     }
+    ]
    }
   ],
   "insights": []
@@ -1654,140 +1672,8 @@
      "en": "As the Rav reads it from the Targum, on the night the king could not sleep the Jews gathered around Mordechai and complained that his refusal to bow to Haman had brought the whole trouble upon them. Mordechai answered that Haman wore a garment with images painted on its front and back, so bowing to him would be bowing to an idol. Hearing this, the Jews fell silent and complained no more.",
      "yi": "ווי דער משגיח לערנט עס פונעם תרגום, האבן זיך די אידן אין דער נאכט פון \"נדדה שנת המלך\" פארזאמלט ביי מרדכי און געטענה'ט אז זיין נישט בוקן זיך פאר המן האט געברענגט די גאנצע צרה. מרדכי האט געענטפערט אז המן האט געטראגן א קלייד מיט צלמים אויסגעמאלט פון פארנט און פון הינטן, און זיך בוקן פאר אים וואלט געווען זיך בוקן צו עבודה זרה. ווען די אידן האבן דאס געהערט האבן זיי געשוויגן און מער נישט געטענה'ט."
     },
-    "people": [
-     "Mordechai",
-     "Haman"
-    ],
-    "peopleKeys": [
-     "mordechai",
-     "haman"
-    ],
     "t": 1756.693,
     "end": 1830.233
-   }
-  ],
-  "people": [
-   {
-    "name": "Mordechai",
-    "key": "mordechai"
-   },
-   {
-    "name": "Esther",
-    "key": "esther"
-   },
-   {
-    "name": "Haman",
-    "key": "haman"
-   },
-   {
-    "name": "Achashverosh",
-    "key": "achashverosh"
-   },
-   {
-    "name": "Avraham Avinu",
-    "key": "avraham-avinu"
-   },
-   {
-    "name": "the Satmar Rav",
-    "key": "satmar-rav"
-   },
-   {
-    "name": "Rabbi Yonasan ben Uziel",
-    "key": "rabbi-yonasan-ben-uziel"
-   },
-   {
-    "name": "the Ba'al Shem Tov",
-    "key": "baal-shem-tov"
-   },
-   {
-    "name": "Shmuel (Amora)",
-    "key": "shmuel-amora"
-   },
-   {
-    "name": "the Rambam",
-    "key": "rambam"
-   },
-   {
-    "name": "the Bnei Yissaschar",
-    "key": "bnei-yissaschar"
-   },
-   {
-    "name": "the Chasam Sofer",
-    "key": "chasam-sofer"
-   },
-   {
-    "name": "Yehoshua",
-    "key": "yehoshua-bin-nun"
-   },
-   {
-    "name": "Shaul",
-    "key": "shaul-hamelech"
-   },
-   {
-    "name": "Agag",
-    "key": "agag"
-   }
-  ],
-  "concepts": [
-   {
-    "he": "שושן פורים",
-    "key": "shvshn-pvrym-a64302"
-   },
-   {
-    "he": "מוקפין חומה",
-    "key": "mvkpyn-chvmh-b17cd6"
-   },
-   {
-    "he": "פרזות",
-    "key": "przvs-f54fa4"
-   },
-   {
-    "he": "עמלק",
-    "key": "emlk-0d87dc"
-   },
-   {
-    "he": "מחיית עמלק",
-    "key": "mchyys-emlk-732201"
-   },
-   {
-    "he": "עשרת בני המן",
-    "key": "eshrs-bny-hmn-7bec64"
-   },
-   {
-    "he": "כוחות הנפש",
-    "key": "kvchvs-hnpsh-72be36"
-   },
-   {
-    "he": "הסתר פנים",
-    "key": "hssr-pnym-a7560d"
-   },
-   {
-    "he": "עבודה זרה",
-    "key": "ebvdh-zrh-d8ef39"
-   },
-   {
-    "he": "השגחה פרטית",
-    "key": "hshgchh-prtys-2f201f"
-   },
-   {
-    "he": "פנימיות התורה",
-    "key": "pnymyvs-hsvrh-4f1421"
-   },
-   {
-    "he": "מטמא את הידים",
-    "key": "mtma-as-hydym-3f61e9"
-   },
-   {
-    "he": "תכשיטי כלה",
-    "key": "skshyty-klh-5609d0"
-   },
-   {
-    "he": "ערלה",
-    "key": "erlh-a33de8"
-   },
-   {
-    "he": "שולי המעיל",
-    "key": "shvly-hmeyl-3ff4bc"
    }
   ],
   "writeupLangs": [

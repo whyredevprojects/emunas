@@ -10,6 +10,7 @@ import {
   insightMark,
   mainTopics,
   storyMark,
+  storyPeople,
   threadsThrough,
 } from "./corpus.ts";
 import { roomEn, roomYi } from "./strings.ts";
@@ -114,6 +115,28 @@ describe("story counts", () => {
   it("a story told once has no line", () => {
     expect(storyMark(brshys03, "yi-parshas-hashavua-brshys-03~st1")).toBeNull();
     expect(storyMark(brshys03, "yi-parshas-hashavua-brshys-03~st9")).toBeNull();
+  });
+
+  it("counts the distinct other shiurim the build wrote, never tellings; none elsewhere: no line", () => {
+    const s = clone(brshys03);
+    const x = s.corpus!.stories.find((y) => y.momentId === "yi-parshas-hashavua-brshys-03~st0")!;
+    x.otherShiurim = 0;
+    expect(storyMark(s, x.momentId)).toBeNull();
+    x.otherShiurim = 3;
+    expect(storyMark(s, x.momentId)!.others).toBe(3);
+  });
+});
+
+describe("story people (F.1)", () => {
+  it("come from the merged story in the corpus block: chips and display names, nothing else", () => {
+    const s = clone(brshys03);
+    const x = s.corpus!.stories[0]!;
+    x.people = [{ id: "chizkiyahu", label: { en: "Chizkiyahu", yi: "חזקיהו" }, page: true }, { name: "the Yeshuos Yaakov" }, { name: " " }];
+    expect(storyPeople(s, x.momentId)).toEqual([{ id: "chizkiyahu", label: { en: "Chizkiyahu", yi: "חזקיהו" }, page: true }, { name: "the Yeshuos Yaakov" }]);
+    expect(storyPeople(s, "yi-parshas-hashavua-brshys-03~st9")).toEqual([]);
+    const loose = clone(brshys03);
+    (loose as { corpus: unknown }).corpus = { stories: [{ momentId: x.momentId, storyId: "s" }] };
+    expect(storyPeople(loose, x.momentId)).toEqual([]);
   });
 });
 

@@ -171,7 +171,6 @@ function sectionsOf(catalogs: Catalogs, listed: Shiur[], report: ReportCollector
 
 function indexRow(p: PublicShiur): IndexRow {
   const n = p.notes;
-  const uniq = (xs: (string | null)[]) => [...new Set(xs.filter((x): x is string => x !== null))].sort();
   const { topics: _topics, note: _note, ...catalog } = p.catalog;
   return {
     id: p.id,
@@ -188,11 +187,6 @@ function indexRow(p: PublicShiur): IndexRow {
     duration: p.duration,
     recordingIds: p.recordings.map((r) => r.id),
     oneLiner: n ? n.summary.oneLiner : null,
-    entities: {
-      works: n ? uniq(n.sources.map((s) => s.workKey)) : [],
-      people: n ? uniq([...n.people.map((x) => x.key), ...n.stories.flatMap((s) => s.peopleKeys)]) : [],
-      concepts: n ? uniq(n.concepts.map((c) => c.key)) : [],
-    },
     counts: {
       chapters: n?.chapters.length ?? 0,
       sources: n?.sources.length ?? 0,

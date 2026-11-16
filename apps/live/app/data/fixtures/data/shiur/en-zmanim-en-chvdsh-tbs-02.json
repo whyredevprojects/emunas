@@ -1,7 +1,7 @@
 {
- "schemaVersion": 4,
+ "schemaVersion": 5,
  "id": "en-zmanim-en-chvdsh-tbs-02",
- "rev": "50cfc2c43f78",
+ "rev": "ad822a1ea81d",
  "lang": "en",
  "category": "zman",
  "catalog": {
@@ -581,20 +581,46 @@
    {
     "momentId": "en-zmanim-en-chvdsh-tbs-02~st0",
     "storyId": "adam-harishon-and-the-shortening-days",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "id": "adam-harishon",
+      "label": {
+       "en": "Adam HaRishon",
+       "yi": "אדם הראשון"
+      },
+      "page": true
+     }
+    ]
    },
    {
     "momentId": "en-zmanim-en-chvdsh-tbs-02~st1",
     "storyId": "onkelos-consults-the-dead",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Onkelos"
+     },
+     {
+      "name": "Titus"
+     },
+     {
+      "name": "Bilaam"
+     }
+    ]
    },
    {
     "momentId": "en-zmanim-en-chvdsh-tbs-02~st2",
     "storyId": "rabbi-yonasan-eybeshutz-answers-the-priests",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rabbi Yonasan Eybeschutz"
+     }
+    ]
    }
   ],
   "insights": [
@@ -1317,12 +1343,6 @@
      "en": "The Rav retells the Gemara that Adam Harishon, created on Rosh Hashanah, saw the days grow shorter and the nights longer and thought that because of his sin the world would sink into an eternal night. He fasted and did teshuvah. When the tekufah of Teves came and he saw the next day grow longer, he made a festival for Hashem; the idolaters after him kept the day for their avodah zarah.",
      "yi": "דער משגיח דערציילט די גמרא אז אדם הראשון, וואס איז באשאפן געווארן ראש השנה, האט געזען ווי די טעג ווערן קירצער און די נעכט לענגער, און האט געמיינט אז צוליב זיין חטא וועט די וועלט אריינפאלן אין אן אייביגער נאכט. ער האט געפאסט און תשובה געטון. ווען די תקופת טבת איז געקומען און ער האט געזען אז דער טאג ווערט לענגער, האט ער געמאכט א יום טוב פארן אייבערשטן; די עובדי עבודה זרה נאך אים האבן געהאלטן דעם טאג פאר זייער עבודה זרה."
     },
-    "people": [
-     "Adam Harishon"
-    ],
-    "peopleKeys": [
-     "adam-harishon"
-    ],
     "t": 999.59,
     "end": 1084.53
    },
@@ -1336,16 +1356,6 @@
      "en": "The Rav retells the Gemara in Gittin that Onkelos, when he considered becoming a ger, raised the dead through kishuf to consult them. Titus and Bilaam told him not to become a Jew, while Yeshu told him to. When asked his punishment, Yeshu answered that he is punished with excrement, and the Rav explains that it is something rejected from the body, as he was rejected from Klal Yisrael.",
      "yi": "דער משגיח דערציילט די גמרא אין גיטין אז אונקלוס, ווען ער האט געטראכט צו ווערן א גר, האט מיט כישוף אויפגעברענגט מתים זיך צו דורכרעדן מיט זיי. טיטוס און בלעם האבן אים געזאגט נישט צו ווערן קיין איד, בשעת יש\"ו האט געזאגט יא. ווען ער האט אים געפרעגט מיט וואס ער ווערט געשטראפט, האט ער געענטפערט \"בצואה רותחת\", און דער משגיח ערקלערט אז דאס איז א זאך וואס דער גוף שטויסט ארויס, אזוי ווי ער איז ארויסגעשטויסן געווארן פון כלל ישראל."
     },
-    "people": [
-     "Onkelos",
-     "Titus",
-     "Bilaam"
-    ],
-    "peopleKeys": [
-     "onkelos",
-     "titus",
-     "bilaam"
-    ],
     "t": 1711.96,
     "end": 1799.9
    },
@@ -1359,182 +1369,8 @@
      "en": "The Rav relates that Rabbi Yonasan Eybeshutz used to debate with the priests. They asked him how the world exists on Nittel, when Jews say the world stands on Torah and yet they do not learn. He answered that since not learning is a minhag Yisrael, the minhag itself is Torah, and through it the world exists.",
      "yi": "דער משגיח דערציילט אז רבי יונתן אייבעשיץ פלעגט האבן וויכוחים מיט די גלחים. זיי האבן אים געפרעגט ווי אזוי די וועלט עקזיסטירט ניטל, ווען אידן זאגן אז די וועלט שטייט אויף תורה און דעמאלט לערנען זיי נישט. ער האט געענטפערט אז ווייל נישט לערנען איז א מנהג ישראל, איז דער מנהג אליין תורה, און דורך דעם שטייט די וועלט."
     },
-    "people": [
-     "Rabbi Yonasan Eybeshutz"
-    ],
-    "peopleKeys": [
-     "rabbi-yonasan-eybeshutz"
-    ],
     "t": 1851.09,
     "end": 1893.01
-   }
-  ],
-  "people": [
-   {
-    "name": "Yaakov Avinu",
-    "key": "yaakov-avinu"
-   },
-   {
-    "name": "Yosef Hatzaddik",
-    "key": "yosef-hatzaddik"
-   },
-   {
-    "name": "Yehudah",
-    "key": "yehudah"
-   },
-   {
-    "name": "Naphtali",
-    "key": "naphtali"
-   },
-   {
-    "name": "Dan",
-    "key": "dan"
-   },
-   {
-    "name": "Adam Harishon",
-    "key": "adam-harishon"
-   },
-   {
-    "name": "Haman",
-    "key": "haman"
-   },
-   {
-    "name": "Shmuel",
-    "key": "shmuel-hanavi"
-   },
-   {
-    "name": "Rav Ada",
-    "key": "rabbi-ada"
-   },
-   {
-    "name": "Onkelos",
-    "key": "onkelos"
-   },
-   {
-    "name": "Titus",
-    "key": "titus"
-   },
-   {
-    "name": "Bilaam",
-    "key": "bilaam"
-   },
-   {
-    "name": "the Ramban",
-    "key": "ramban"
-   },
-   {
-    "name": "Rashi",
-    "key": "rashi"
-   },
-   {
-    "name": "the Chofetz Chaim",
-    "key": "chofetz-chaim"
-   },
-   {
-    "name": "Rabbi Yonasan Eybeshutz",
-    "key": "rabbi-yonasan-eybeshutz"
-   },
-   {
-    "name": "the Chasam Sofer",
-    "key": "chasam-sofer"
-   },
-   {
-    "name": "the Arizal",
-    "key": "arizal"
-   },
-   {
-    "name": "Rabbi Chaim Vital",
-    "key": "rabbi-chaim-vital"
-   },
-   {
-    "name": "the Abudraham",
-    "key": "abudraham"
-   },
-   {
-    "name": "Chanah",
-    "key": "chana"
-   },
-   {
-    "name": "Eli",
-    "key": "eli"
-   }
-  ],
-  "concepts": [
-   {
-    "he": "טבת",
-    "key": "tbs-94f122"
-   },
-   {
-    "he": "ניטל",
-    "key": "nytl-4619ef"
-   },
-   {
-    "he": "תקופת טבת",
-    "key": "skvps-tbs-093531"
-   },
-   {
-    "he": "הסתר פנים",
-    "key": "hssr-pnym-a7560d"
-   },
-   {
-    "he": "קליפות",
-    "key": "klyph-ab9afa"
-   },
-   {
-    "he": "דגלים",
-    "key": "dglym-f4e0d8"
-   },
-   {
-    "he": "גאולה",
-    "key": "gavlh-3d2e5c"
-   },
-   {
-    "he": "תשובה",
-    "key": "sshvbh-376006"
-   },
-   {
-    "he": "רבונו של עולם",
-    "key": "rbvnv-shl-evlm-52e424"
-   },
-   {
-    "he": "כנסת ישראל",
-    "key": "knss-yshral-315464"
-   },
-   {
-    "he": "יום אידם",
-    "key": "yvm-aydm-f8f80f"
-   },
-   {
-    "he": "מנהג ישראל תורה",
-    "key": "mnhg-yshral-svrh-f2f852"
-   },
-   {
-    "he": "עולם שנה נפש",
-    "key": "evlm-shnh-npsh-32b48d"
-   },
-   {
-    "he": "במראות הלילה",
-    "key": "bmravs-hlylh-dbcb45"
-   },
-   {
-    "he": "לשון חיבה",
-    "key": "lshvn-chybh-a29084"
-   },
-   {
-    "he": "עשרה בטבת",
-    "key": "eshrh-btbs-71c744"
-   },
-   {
-    "he": "סמך מלך בבל",
-    "key": "smk-mlk-bbl-3f2e04"
-   },
-   {
-    "he": "תלמיד חכם",
-    "key": "slmyd-chkm-cf0abb"
-   },
-   {
-    "he": "שורש הנשמה",
-    "key": "shvrsh-hnshmh-9cac7d"
    }
   ],
   "writeupLangs": [

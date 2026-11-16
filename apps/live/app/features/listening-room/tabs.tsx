@@ -21,7 +21,7 @@ import { loadShiur, type Ed } from "./data.ts";
 import { settingsStore } from "../../shell/settings.ts";
 import type { FeedbackField } from "../feedback/index.ts";
 import type { RoomContext } from "./context.ts";
-import { groupSourcesByWork, insightMark, mainTopics, storyMark, threadsThrough, type PairedInsight } from "./corpus.ts";
+import { groupSourcesByWork, insightMark, mainTopics, storyMark, storyPeople, threadsThrough, type PairedInsight } from "./corpus.ts";
 import { activeParagraphId, sefariaUrl } from "./model.ts";
 import { AiLabel, Report, TimeButton, isActive } from "./parts.tsx";
 import type { RoomKey } from "./strings.ts";
@@ -460,6 +460,36 @@ function StoryMarkLine({ room, momentId }: { room: RoomContext; momentId: string
   );
 }
 
+/**
+ * The people of a story, from the merged story in the corpus layer (F.1): a person with a Live page
+ * links there, anyone else is a corpus entity's display name as plain text. A story moment with no
+ * merged story names no one; the extraction's raw names are never shown.
+ */
+function StoryPeopleLine({ room, momentId }: { room: RoomContext; momentId: string }): JSX.Element | null {
+  const people = storyPeople(room.shiur, momentId);
+  if (people.length === 0) return null;
+  const { rt, ui } = room;
+  return (
+    <p className={s.note} data-story-people="">
+      {rt("stories.people")}:{" "}
+      {people.map((p, i) => (
+        <span key={"id" in p ? p.id : `n${i}`}>
+          {i > 0 ? ", " : null}
+          {"id" in p && p.page ? (
+            <Link to={paths.person(ui, p.id)} data-entity={`p:${p.id}`} data-story-person="">
+              <Text value={p.label[ui]} lang={ui} />
+            </Link>
+          ) : (
+            <span data-story-person="">
+              <Text value={"id" in p ? p.label[ui] : p.name} shiurLang={ui} />
+            </span>
+          )}
+        </span>
+      ))}
+    </p>
+  );
+}
+
 function StoriesTab({ room }: { room: RoomContext }): JSX.Element {
   const { rt, reading, shiur } = room;
   const stories = shiur.notes!.stories;
@@ -470,17 +500,7 @@ function StoriesTab({ room }: { room: RoomContext }): JSX.Element {
         {stories.map((st) => (
           <MomentItem key={st.id} room={room} id={st.id} t={st.t} end={st.end}>
             <Text as="h3" className={s.h3} value={st.title} lang={reading} />
-            {st.people.length > 0 ? (
-              <p className={s.note}>
-                {rt("stories.people")}:{" "}
-                {st.people.map((p, i) => (
-                  <span key={`${p}-${i}`}>
-                    {i > 0 ? ", " : null}
-                    <Text value={p} shiurLang={shiur.lang} />
-                  </span>
-                ))}
-              </p>
-            ) : null}
+            <StoryPeopleLine room={room} momentId={st.id} />
             <details className={s.details}>
               <summary>{rt("stories.retelling")}</summary>
               <Text as="p" value={st.retelling} lang={reading} />

@@ -1,7 +1,7 @@
 {
- "schemaVersion": 4,
+ "schemaVersion": 5,
  "id": "yi-zmanim-shbs-chzvn-01",
- "rev": "157ef6299236",
+ "rev": "6c0bdb03f9c5",
  "lang": "yi",
  "category": "zman",
  "catalog": {
@@ -753,20 +753,49 @@
    {
     "momentId": "yi-zmanim-shbs-chzvn-01~st0",
     "storyId": "the-father-and-the-third-garment",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rabbi Levi Yitzchak of Berditchev"
+     }
+    ]
    },
    {
     "momentId": "yi-zmanim-shbs-chzvn-01~st1",
     "storyId": "the-beis-aharon-and-the-simple-jews-shir-hashirim",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rabbi Mordechai of Lechovitch"
+     },
+     {
+      "name": "the Beis Aharon (Rabbi Aharon II of Karlin-Stolin)"
+     }
+    ]
    },
    {
     "momentId": "yi-zmanim-shbs-chzvn-01~st2",
     "storyId": "eliyahu-in-the-non-jewish-cemetery",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rabbah bar Avuha"
+     },
+     {
+      "id": "eliyahu-hanavi",
+      "label": {
+       "en": "Eliyahu HaNavi",
+       "yi": "אליהו הנביא"
+      },
+      "page": true
+     },
+     {
+      "name": "Rabbi Shimon bar Yochai"
+     }
+    ]
    }
   ],
   "insights": []
@@ -1978,12 +2007,6 @@
      "en": "Bringing the teaching attributed to the Kedushas Levi, the Rav tells a parable. A father bought his son a garment, and the wild child tore it; he bought a second, and the child tore that too. He then bought a third, beautiful garment and said he would not give it until the son showed he could take care of it, but from time to time he showed it to him so he would improve himself and earn it. Shabbos Chazon, the Rav explains, is when Hashem shows the third garment, the third Beis HaMikdash.",
      "yi": "בשעת ער ברענגט פונעם קדושת לוי, דערציילט דער משגיח א משל. א טאטע האט געקויפט פאר זיין קינד א בגד, און דאס ווילדע קינד האט אים צעריסן; ער האט געקויפט א צווייטן, און דאס קינד האט אויך יענעם צעריסן. דערנאך האט ער געקויפט א דריטן שיינעם בגד און געזאגט אז ער גיט אים נישט ביז ער וועט זען אז דער זון קען אכטונג געבן, נאר פון צייט צו צייט האט ער אים געוויזן דעם בגד, כדי ער זאל ווערן א מענטש און עס זוכה זיין. שבת חזון, ערקלערט דער משגיח, ווייזט דער אייבערשטער דעם דריטן בגד, דעם בית השלישי."
     },
-    "people": [
-     "Levi Yitzchak of Berditchev"
-    ],
-    "peopleKeys": [
-     "levi-yitzchak-of-berditchev"
-    ],
     "t": 1848.74,
     "end": 1896.82
    },
@@ -1997,12 +2020,6 @@
      "en": "The Beis Aharon once saw a precious chassidish Jew who could not learn, sitting in the beis medrash on Shabbos and saying Shir HaShirim with great sweetness. He asked him whether he perhaps knew its meaning. The man answered that one need not know the meaning, since the words themselves are so sweet. The Rav compares this to the Shabbos meal of Atika Kadisha, which one tastes without understanding.",
      "yi": "דער בית אהרן האט אמאל געזען א טייערן חסידישן איד וואס האט נישט געקענט לערנען, זיצן אין בית המדרש שבת און זאגן שיר השירים מיט אזא געשמאק. ער האט אים געפרעגט צי ער ווייסט אפשר דעם טייטש. דער איד האט געענטפערט אז מ'דארף נישט וויסן דעם טייטש, ווייל די ווערטער אליין זענען אזוי געשמאק. דער משגיח גלייכט עס צו דער שבת'דיגער סעודה פון עתיקא קדישא, וואס מ'שמעקט אן צו פארשטיין."
     },
-    "people": [
-     "the Beis Aharon"
-    ],
-    "peopleKeys": [
-     "rabbi-aharon-of-karlin"
-    ],
     "t": 4055.34,
     "end": 4090.64
    },
@@ -2016,162 +2033,8 @@
      "en": "Rabbah bar Avuha found Eliyahu HaNavi in a non-Jewish cemetery and asked him questions in halacha, which Eliyahu answered. Then he asked: is the master not a kohen, so what is he doing in a cemetery? Eliyahu answered that he had forgotten what they learned, that according to Rabbi Shimon graves of non-Jews do not make tumah in a tent. The Rav asks why Eliyahu did not simply say he was not a kohen, and explains that he is a kohen of the future.",
      "yi": "רבה בר אבוה האט געטראפן אליהו הנביא אין א בית הקברות פון גוים, און אים געפרעגט שאלות אין הלכה, און אליהו האט געענטפערט. דערנאך האט ער געפרעגט: איז דער רבי נישט קיין כהן, וואס טוט ער אויף א בית הקברות? אליהו האט געענטפערט אז ער האט פארגעסן וואס מ'האט געלערנט, אז לויט רבי שמעון זענען קברי עכו\"ם נישט מטמא באהל. דער משגיח פרעגט פארוואס אליהו האט נישט פשוט געזאגט אז ער איז נישט קיין כהן, און ערקלערט אז ער איז א כהן פון לעתיד."
     },
-    "people": [
-     "Rabbah bar Avuha",
-     "Eliyahu HaNavi",
-     "Rabbi Shimon bar Yochai"
-    ],
-    "peopleKeys": [
-     "rabba-bar-avuha",
-     "eliyahu-hanavi",
-     "rabbi-shimon-bar-yochai"
-    ],
     "t": 4517.44,
     "end": 4628.89
-   }
-  ],
-  "people": [
-   {
-    "name": "Moshe Rabbeinu",
-    "key": "moshe-rabbeinu"
-   },
-   {
-    "name": "Avraham Avinu",
-    "key": "avraham-avinu"
-   },
-   {
-    "name": "Esav",
-    "key": "esav"
-   },
-   {
-    "name": "Yaakov Avinu",
-    "key": "yaakov-avinu"
-   },
-   {
-    "name": "Rabban Yochanan ben Zakkai",
-    "key": "rabban-yochanan-ben-zakkai"
-   },
-   {
-    "name": "Rabbi Eliezer",
-    "key": "rabbi-eliezer"
-   },
-   {
-    "name": "Rabbi Akiva",
-    "key": "rabbi-akiva"
-   },
-   {
-    "name": "Rabbi Yehoshua",
-    "key": "rabbi-yehoshua"
-   },
-   {
-    "name": "Yehoshua bin Nun",
-    "key": "yehoshua-bin-nun"
-   },
-   {
-    "name": "the Chasam Sofer",
-    "key": "chasam-sofer"
-   },
-   {
-    "name": "Levi Yitzchak of Berditchev",
-    "key": "levi-yitzchak-of-berditchev"
-   },
-   {
-    "name": "Rabbi Tzadok HaKohen of Lublin",
-    "key": "rav-tzadok-hakohen"
-   },
-   {
-    "name": "Osniel ben Kenaz",
-    "key": "osniel-ben-kenaz"
-   },
-   {
-    "name": "Eliyahu HaNavi",
-    "key": "eliyahu-hanavi"
-   },
-   {
-    "name": "Dovid HaMelech",
-    "key": "dovid-hamelech"
-   },
-   {
-    "name": "Rabbi Shimon bar Yochai",
-    "key": "rabbi-shimon-bar-yochai"
-   },
-   {
-    "name": "Rabbi Yishmael",
-    "key": "rabbi-yishmael"
-   },
-   {
-    "name": "Rabbah bar Avuha",
-    "key": "rabba-bar-avuha"
-   },
-   {
-    "name": "the Beis Aharon",
-    "key": "rabbi-aharon-of-karlin"
-   },
-   {
-    "name": "the Ramban",
-    "key": "ramban"
-   },
-   {
-    "name": "the Rambam",
-    "key": "rambam"
-   },
-   {
-    "name": "Yeshayahu",
-    "key": "yeshayahu-hanavi"
-   }
-  ],
-  "concepts": [
-   {
-    "he": "קיני קניזי וקדמוני",
-    "key": "kyny-knyzy-vkdmvny-9319f6"
-   },
-   {
-    "he": "עשו",
-    "key": "eshv-01c631"
-   },
-   {
-    "he": "אדום",
-    "key": "advm-c4c36f"
-   },
-   {
-    "he": "שעיר",
-    "key": "sheyr-e8e93e"
-   },
-   {
-    "he": "סיחון ועוג",
-    "key": "sychvn-vevg-fdd337"
-   },
-   {
-    "he": "שמיטה",
-    "key": "shmyth-0806d8"
-   },
-   {
-    "he": "תוספות שבת",
-    "key": "svspvs-shbs-756c33"
-   },
-   {
-    "he": "חלקת מחוקק",
-    "key": "chlks-mchvkk-aad040"
-   },
-   {
-    "he": "ערלה",
-    "key": "erlh-a33de8"
-   },
-   {
-    "he": "עתיקא קדישא",
-    "key": "esyka-kdysha-fe7d1c"
-   },
-   {
-    "he": "יום שכולו שבת",
-    "key": "yvm-shkvlv-shbs-8b8acc"
-   },
-   {
-    "he": "שושבינים",
-    "key": "shvshbynym-530bfd"
-   },
-   {
-    "he": "מדת הדין",
-    "key": "mds-hdyn-1c0cfd"
    }
   ],
   "writeupLangs": [

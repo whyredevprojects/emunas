@@ -4,7 +4,8 @@
  * comma-separated line of people and one of glossary terms, by corpus id with the names from the
  * layer (`refs.ts` `mentionedView`), so "the Sanzer Rav" and "the Divrei Chaim" land on one page.
  * An entry with its own page links there; one listed in its index without a page links to its
- * line there; one in no index is named without a link. No tag cloud.
+ * line there; one in no index is named without a link. No tag cloud. Each person's name is marked
+ * `data-person="<id>"` so the guard can check it is that corpus person's display name (F.1).
  */
 import type { Ed } from "../../lib/edition.ts";
 import type { MentionedView, NamedLink } from "./refs.ts";
@@ -19,8 +20,8 @@ const { ed, mentioned } = Astro.props;
 const t = useShiurT(ed);
 const attrs = (n: NamedLink) => (n.hebrew ? { lang: ed === "yi" ? "yi" : "he", dir: "rtl" } : { lang: "en", dir: "ltr" });
 const lines = [
-  { label: t("mentioned.people"), items: mentioned.people },
-  { label: t("mentioned.concepts"), items: mentioned.concepts },
+  { kind: "person", label: t("mentioned.people"), items: mentioned.people },
+  { kind: "concept", label: t("mentioned.concepts"), items: mentioned.concepts },
 ].filter((l) => l.items.length > 0);
 ---
 {lines.length > 0 && (
@@ -29,7 +30,10 @@ const lines = [
     {lines.map((l) => (
       <p class="mentioned-line">
         <span class="label">{l.label}</span>{" "}
-        {l.items.map((n, i) => <>{i > 0 && ", "}{n.href ? <a href={n.href}><bdi {...attrs(n)}>{n.name}</bdi></a> : <bdi {...attrs(n)}>{n.name}</bdi>}</>)}
+        {l.items.map((n, i) => {
+          const mark = l.kind === "person" ? { "data-person": n.id } : {};
+          return <>{i > 0 && ", "}{n.href ? <a href={n.href}><bdi {...attrs(n)} {...mark}>{n.name}</bdi></a> : <bdi {...attrs(n)} {...mark}>{n.name}</bdi>}</>;
+        })}
       </p>
     ))}
   </section>

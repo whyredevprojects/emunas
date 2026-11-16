@@ -17,7 +17,7 @@
  * counts are the visible recounts the build wrote (never `shiurCount` of the raw corpus).
  */
 import type { PublicSource } from "@emunas/corpus/public";
-import type { Ed, EntityChip, L, ShiurCorpus, ShiurFile } from "./data.ts";
+import type { Ed, EntityChip, L, ShiurCorpus, ShiurFile, StoryPerson } from "./data.ts";
 
 /** Salience a shiur-level topic needs for the header line and "more on this". */
 export const MAIN_TOPIC_SALIENCE = 0.5;
@@ -110,16 +110,32 @@ export function insightMark(shiur: CorpusOf, momentId: string): InsightMark | nu
 
 export interface StoryMark {
   storyId: string;
-  /** Visible tellings in other places (the build counts this telling too). */
+  /** Other visible shiurim the story is told in (distinct shiurim; this one not counted). */
   others: number;
   page: boolean;
 }
 
-/** "Told in N other shiurim" for a story moment of a merged story told more than once, else null. */
+/** "Told in N other shiurim" for a story moment of a merged story told in another shiur, else null. */
 export function storyMark(shiur: CorpusOf, momentId: string): StoryMark | null {
   const x = arr(corpusOf(shiur).stories).find((s) => s.momentId === momentId);
-  if (!x || typeof x.tellings !== "number" || x.tellings < 2) return null;
-  return { storyId: x.storyId, others: x.tellings - 1, page: x.page === true };
+  if (!x || typeof x.otherShiurim !== "number" || x.otherShiurim < 1) return null;
+  return { storyId: x.storyId, others: x.otherShiurim, page: x.page === true };
+}
+
+/**
+ * The people of a story moment: the merged story's people from the corpus layer (a chip with a
+ * Live page, else a corpus entity's display name). A story moment with no merged story names no
+ * one: the extraction's raw names may be ASR mishearings and are never shown (F.1).
+ */
+export function storyPeople(shiur: CorpusOf, momentId: string): StoryPerson[] {
+  const x = arr(corpusOf(shiur).stories).find((s) => s.momentId === momentId);
+  return arr(x?.people).filter(
+    (p): p is StoryPerson =>
+      typeof p === "object" &&
+      p !== null &&
+      (("id" in p && typeof p.id === "string" && typeof p.label === "object" && p.label !== null) ||
+        ("name" in p && typeof p.name === "string" && p.name.trim() !== "")),
+  );
 }
 
 export interface WorkGroup {

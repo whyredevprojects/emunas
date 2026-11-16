@@ -1,7 +1,7 @@
 {
- "schemaVersion": 4,
+ "schemaVersion": 5,
  "id": "en-miscellaneous-en-02",
- "rev": "ef69faea6173",
+ "rev": "94994dbe787a",
  "lang": "en",
  "category": "misc",
  "catalog": {
@@ -399,14 +399,42 @@
    {
     "momentId": "en-miscellaneous-en-02~st0",
     "storyId": "rav-shimon-sofer-and-the-factory-on-shabbos",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rabbi Shimon Sofer"
+     },
+     {
+      "id": "chasam-sofer",
+      "label": {
+       "en": "the Chasam Sofer",
+       "yi": "דער חתם סופר",
+       "he": "חתם סופר"
+      },
+      "page": true
+     }
+    ]
    },
    {
     "momentId": "en-miscellaneous-en-02~st1",
     "storyId": "the-chiddushei-harim-declines-to-name-a-child",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "id": "chiddushei-harim",
+      "label": {
+       "en": "the Chiddushei HaRim",
+       "yi": "דער חידושי הרי\"ם",
+       "he": "רבי יצחק מאיר מגור"
+      },
+      "page": true
+     },
+     {
+      "name": "the Chozeh of Lublin"
+     }
+    ]
    }
   ],
   "insights": [
@@ -941,14 +969,6 @@
      "en": "When Rav Shimon Sofer, son of the Chasam Sofer, came to Krakow as Rav, some who had opposed him prepared questions to embarrass him at his first drasha. He stopped and told a story from his youth: in his father's city a factory owner kept his factory open on Shabbos, and the Chasam Sofer sent his son to warn him. The owner mocked him, then threatened to set his dogs on him; the third time his father taught him a holy name, and when the dogs were set loose and he pronounced it, the factory went up in flames with its owner. Rav Shimon Sofer then told his listeners that if they wanted to learn, all would be well, but if not, he still remembered that name.",
      "yi": "ווען רב שמעון סופר, דער זון פונעם חתם סופר, איז געקומען קיין קראקא אלס רב, האבן געוויסע וואס האבן נישט געוואלט אים געגרייט קשיות כדי אים צו פארשעמען ביי זיין ערשטע דרשה. ער האט זיך אפגעשטעלט און דערציילט א מעשה פון זיין יוגנט: אין זיין טאטנ'ס שטאט האט א פאבריק בעל הבית געהאלטן זיין פאבריק אפן אום שבת, און דער חתם סופר האט געשיקט זיין זון אים צו ווארענען. דער בעל הבית האט אים אויסגעלאכט, דערנאך געסטראשעט אז ער וועט אויף אים אנהעצן זיינע הינט; דאס דריטע מאל האט אים דער טאטע געלערנט א שם, און ווען מ'האט ארויסגעלאזט די הינט און ער האט ארויסגעזאגט דעם שם, איז די פאבריק אויפגעגאנגען אין פייער מיטן בעל הבית. רב שמעון סופר האט דאן געזאגט צום עולם אז אויב זיי ווילן לערנען איז אלעס גוט, אבער אויב נישט, געדענקט ער נאך דעם שם."
     },
-    "people": [
-     "Rav Shimon Sofer",
-     "the Chasam Sofer"
-    ],
-    "peopleKeys": [
-     "rabbi-shimon-sofer",
-     "chasam-sofer"
-    ],
     "t": 870.66,
     "end": 1108.44
    },
@@ -962,102 +982,8 @@
      "en": "Someone asked the Chiddushei HaRim what name to give his newborn child. He answered that he did not want to deprive the father of the chance to receive ruach hakodesh, since a father merits ruach hakodesh when he names his child.",
      "yi": "איינער האט געפרעגט דעם חידושי הרי\"ם וואספארא נאמען ער זאל געבן זיין נייגעבוירן קינד. ער האט געענטפערט אז ער וויל אים נישט צונעמען די געלעגנהייט צו באקומען רוח הקודש, ווייל א טאטע ווערט זוכה צו רוח הקודש ווען ער גיט א נאמען."
     },
-    "people": [
-     "the Chiddushei HaRim"
-    ],
-    "peopleKeys": [
-     "chiddushei-harim"
-    ],
     "t": 1375.21,
     "end": 1390.29
-   }
-  ],
-  "people": [
-   {
-    "name": "Adam HaRishon",
-    "key": "adam-harishon"
-   },
-   {
-    "name": "Rabbeinu HaKadosh",
-    "key": "rebbi"
-   },
-   {
-    "name": "David HaMelech",
-    "key": "dovid-hamelech"
-   },
-   {
-    "name": "Rashi",
-    "key": "rashi"
-   },
-   {
-    "name": "Rav Shimon Sofer",
-    "key": "rabbi-shimon-sofer"
-   },
-   {
-    "name": "the Chasam Sofer",
-    "key": "chasam-sofer"
-   },
-   {
-    "name": "Moshe Rabbeinu",
-    "key": "moshe-rabbeinu"
-   },
-   {
-    "name": "the Chiddushei HaRim",
-    "key": "chiddushei-harim"
-   },
-   {
-    "name": "Rabbi Meir",
-    "key": "rabbi-meir"
-   }
-  ],
-  "concepts": [
-   {
-    "he": "רוח הקודש",
-    "key": "rvch-hkvdsh-1fd584"
-   },
-   {
-    "he": "לשון הקודש",
-    "key": "lshvn-hkvdsh-63af69"
-   },
-   {
-    "he": "ברייתא",
-    "key": "bryysa-06f9c5"
-   },
-   {
-    "he": "הפסק",
-    "key": "hpsk-41d4a6"
-   },
-   {
-    "he": "שם",
-    "key": "shm-a29008"
-   },
-   {
-    "he": "דיבור",
-    "key": "dybvr-a776b8"
-   },
-   {
-    "he": "תורה לשמה",
-    "key": "svrh-lshmh-f5d40c"
-   },
-   {
-    "he": "עולם הבא",
-    "key": "evlm-hba-68958b"
-   },
-   {
-    "he": "יין המשומר",
-    "key": "yyn-hmshvmr-4ebe98"
-   },
-   {
-    "he": "יין נסך",
-    "key": "yyn-nsk-679502"
-   },
-   {
-    "he": "אותיות",
-    "key": "avsyvs-c8d5a2"
-   },
-   {
-    "he": "רחמים",
-    "key": "rchmym-096a2e"
    }
   ],
   "writeupLangs": [

@@ -168,7 +168,8 @@ describe("buildCorpusWithAggregates", () => {
     const report = readJson<BuildReport>(join(out, "build-report.json"));
     expect(report.unmapped.zman).toEqual([{ raw: "zzz not a zman", key: "other", count: 1 }]);
     expect(report.unmapped.parsha).toEqual([{ raw: "qqq not a parsha", key: "other", count: 1 }]);
-    expect(report.unmapped.person.length).toBeGreaterThan(0);
+    // People are not projected (F.1), so no person string is keyed.
+    expect(report.unmapped.person).toEqual([]);
     expect(report.warnings.some((w) => w.startsWith("aggregate: "))).toBe(true);
     expect(r.report.counts.total).toBe(60);
     const o = readJson<OccasionsFile>(join(out, "occasions.json"));

@@ -1,7 +1,7 @@
 {
- "schemaVersion": 4,
+ "schemaVersion": 5,
  "id": "en-parsha-en-nch-01",
- "rev": "ead86062362e",
+ "rev": "45dfd9a5f15a",
  "lang": "en",
  "category": "parsha",
  "catalog": {
@@ -505,8 +505,22 @@
    {
     "momentId": "en-parsha-en-nch-01~st0",
     "storyId": "rav-nachum-of-chernobyl-and-his-little-bread",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rabbi Menachem Nachum of Chernobyl (the Me'or Einayim)"
+     },
+     {
+      "id": "baal-shem-tov",
+      "label": {
+       "en": "the Baal Shem Tov",
+       "yi": "דער הייליגער בעל שם טוב",
+       "he": "רבי ישראל בעל שם טוב"
+      },
+      "page": true
+     }
+    ]
    }
   ],
   "insights": []
@@ -1321,149 +1335,9 @@
      "en": "The Rav tells that Rav Nachum of Chernobyl ate only a very small amount of bread each day, and yet he was a heavy man. The Ba'al Shem Tov said of him that he was heavy from the nourishment he received from answering 'Amen, yehei shmei rabba'. The Rav brings this to show that a tzaddik extracts much life from little food.",
      "yi": "דער משגיח דערציילט אז רב נחום פון טשערנאביל האט געגעסן נאר א גאנץ קליין ביסל ברויט יעדן טאג, און פונדעסטוועגן איז ער געווען א גראבער מענטש. דער בעל שם טוב האט געזאגט אויף אים אז ער איז גראב פון דער נארונג וואס ער באקומט פון ענטפערן \"אמן יהא שמיה רבא\". דער משגיח ברענגט דאס צו ווייזן אז א צדיק ציט ארויס א סך לעבן פון ווייניג שפייז."
     },
-    "people": [
-     "Rav Nachum of Chernobyl",
-     "the Ba'al Shem Tov"
-    ],
-    "peopleKeys": [
-     "rabbi-nachum-of-chernobyl",
-     "baal-shem-tov"
-    ],
     "t": 3171.06,
     "end": 3186.78,
     "soft": true
-   }
-  ],
-  "people": [
-   {
-    "name": "Noach",
-    "key": "noach"
-   },
-   {
-    "name": "Cham",
-    "key": "cham"
-   },
-   {
-    "name": "Adam HaRishon",
-    "key": "adam-harishon"
-   },
-   {
-    "name": "Chava",
-    "key": "chavah"
-   },
-   {
-    "name": "Avraham Avinu",
-    "key": "avraham-avinu"
-   },
-   {
-    "name": "Rashi",
-    "key": "rashi"
-   },
-   {
-    "name": "the Ramban",
-    "key": "ramban"
-   },
-   {
-    "name": "the Ibn Ezra",
-    "key": "ibn-ezra"
-   },
-   {
-    "name": "the Chazon Ish",
-    "key": "chazon-ish"
-   },
-   {
-    "name": "Yeshayahu HaNavi",
-    "key": "yeshayahu-hanavi"
-   },
-   {
-    "name": "the Lechovicher tzaddik",
-    "key": "lechovicher-tzaddik"
-   },
-   {
-    "name": "Rav Nachum of Chernobyl",
-    "key": "rabbi-nachum-of-chernobyl"
-   },
-   {
-    "name": "the Ba'al Shem Tov",
-    "key": "baal-shem-tov"
-   },
-   {
-    "name": "David HaMelech",
-    "key": "dovid-hamelech"
-   },
-   {
-    "name": "Miriam",
-    "key": "miriam-haneviah"
-   },
-   {
-    "name": "Aharon HaKohen",
-    "key": "aharon-hakohen"
-   }
-  ],
-  "concepts": [
-   {
-    "he": "תיבה",
-    "key": "sybh-210ce3"
-   },
-   {
-    "he": "מבול",
-    "key": "mbvl-34b703"
-   },
-   {
-    "he": "חשון",
-    "key": "chshvn-dc0f93"
-   },
-   {
-    "he": "ירח בול",
-    "key": "yrch-bvl-a79bd9"
-   },
-   {
-    "he": "צירוף",
-    "key": "tzyrvf-a40a60"
-   },
-   {
-    "he": "שם הוי\"ה",
-    "key": "shm-hvyh-ebf833"
-   },
-   {
-    "he": "דבש",
-    "key": "dbsh-b274b5"
-   },
-   {
-    "he": "אב הרחמן",
-    "key": "ab-hrchmn-b1ecc8"
-   },
-   {
-    "he": "זכרונות",
-    "key": "zkrvnvs-6779b2"
-   },
-   {
-    "he": "מלכיות",
-    "key": "mlkyvs-ee86b4"
-   },
-   {
-    "he": "שופרות",
-    "key": "shvprvs-c0f194"
-   },
-   {
-    "he": "עץ הדעת",
-    "key": "etz-hdes-7164a8"
-   },
-   {
-    "he": "נעמיות",
-    "key": "nemyvs-8e3150"
-   },
-   {
-    "he": "סייעתא דשמיא",
-    "key": "syyesa-dshmya-bc83f9"
-   },
-   {
-    "he": "התחדשות",
-    "key": "hschdshvs-c1b1c6"
-   },
-   {
-    "he": "קדושה",
-    "key": "kdvshh-2d0766"
    }
   ],
   "writeupLangs": [

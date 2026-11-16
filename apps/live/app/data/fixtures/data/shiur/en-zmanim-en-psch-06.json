@@ -1,7 +1,7 @@
 {
- "schemaVersion": 4,
+ "schemaVersion": 5,
  "id": "en-zmanim-en-psch-06",
- "rev": "c27786607ea0",
+ "rev": "f2b2a9cde4bf",
  "lang": "en",
  "category": "zman",
  "catalog": {
@@ -520,8 +520,13 @@
    {
     "momentId": "en-zmanim-en-psch-06~st0",
     "storyId": "the-malbim-and-the-cookie",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "the Malbim"
+     }
+    ]
    }
   ],
   "insights": []
@@ -1184,119 +1189,9 @@
      "en": "The Malbim was a Rav in a German city with maskilim who had no yoke of Heaven, and he had many disputes with them. Once, after a group of them came to debate him and left, he said that they know. His students protested that he was much smarter and had beaten them, and he answered that they know, but he knows how to eat. He described waking up hungry and each time first doing what a Jew must do: negel vasser, dressing, davening, washing and dipping the bread in salt, before eating.",
      "yi": "דער מלבי\"ם איז געווען רב אין א דייטשע שטאט מיט משכילים וואס האבן נישט געהאט קיין עול מלכות שמים, און ער האט געהאט אסאך מחלוקת מיט זיי. איינמאל איז א גרופע געקומען זיך וויכוחן מיט אים, און ווען זיי זענען אוועק האט ער געזאגט \"זיי קענען\". די תלמידים האבן געפרעגט, דער רבי איז דאך פיל קלוגער און האט זיי באזיגט, און ער האט געענטפערט: זיי קענען, אבער איך קען עסן. ער האט אויסגעשילדערט ווי ער שטייט אויף הונגעריג, און יעדעס מאל טוט ער פריער וואס א איד דארף: נעגל וואסער, זיך אנטון, דאווענען, וואשן און איינטונקען דאס ברויט אין זאלץ, און ערשט דערנאך עסט ער."
     },
-    "people": [
-     "the Malbim"
-    ],
-    "peopleKeys": [
-     "malbim"
-    ],
     "t": 1514.62,
     "end": 1603.22,
     "soft": true
-   }
-  ],
-  "people": [
-   {
-    "name": "Shlomo HaMelech",
-    "key": "shlomo-hamelech"
-   },
-   {
-    "name": "the Malbim",
-    "key": "malbim"
-   },
-   {
-    "name": "Esav",
-    "key": "esav"
-   },
-   {
-    "name": "the Ba'al HaTanya",
-    "key": "baal-hatanya"
-   },
-   {
-    "name": "Eliyahu HaNavi",
-    "key": "eliyahu-hanavi"
-   },
-   {
-    "name": "Rashi",
-    "key": "rashi"
-   },
-   {
-    "name": "the Rema",
-    "key": "rema"
-   },
-   {
-    "name": "the Avnei Nezer",
-    "key": "avnei-nezer"
-   },
-   {
-    "name": "Adam HaRishon",
-    "key": "adam-harishon"
-   }
-  ],
-  "concepts": [
-   {
-    "he": "כרת",
-    "key": "krs-2bcde2"
-   },
-   {
-    "he": "התקשרות",
-    "key": "hskshrvs-ec31f4"
-   },
-   {
-    "he": "ראשית",
-    "key": "rashys-93edef"
-   },
-   {
-    "he": "קליפה",
-    "key": "klyph-ab9afa"
-   },
-   {
-    "he": "רבונו של עולם",
-    "key": "rbvnv-shl-evlm-52e424"
-   },
-   {
-    "he": "שם הוי\"ה",
-    "key": "shm-hvyh-ebf833"
-   },
-   {
-    "he": "מילוי",
-    "key": "mylvy-a3710e"
-   },
-   {
-    "he": "עשרה מאמרות",
-    "key": "eshrh-mamrvs-f47d90"
-   },
-   {
-    "he": "המוציא",
-    "key": "hmvtzya-cee108"
-   },
-   {
-    "he": "טל של תחיה",
-    "key": "tl-shl-schyh-4125b2"
-   },
-   {
-    "he": "תחיית המתים",
-    "key": "schyys-hmsym-fa97ab"
-   },
-   {
-    "he": "מפתח של חיה",
-    "key": "mpsch-shl-chyh-c9d20f"
-   },
-   {
-    "he": "פטירא",
-    "key": "ptyra-c1c6b8"
-   },
-   {
-    "he": "פתיחת הארון",
-    "key": "psychs-harvn-affa47"
-   },
-   {
-    "he": "יציאת מצרים",
-    "key": "ytzyas-mtzrym-ff4d50"
-   },
-   {
-    "he": "כנסת ישראל",
-    "key": "knss-yshral-315464"
    }
   ],
   "writeupLangs": [

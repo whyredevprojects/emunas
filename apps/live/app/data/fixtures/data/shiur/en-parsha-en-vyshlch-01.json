@@ -1,7 +1,7 @@
 {
- "schemaVersion": 4,
+ "schemaVersion": 5,
  "id": "en-parsha-en-vyshlch-01",
- "rev": "04236827df83",
+ "rev": "07bd9808bc3f",
  "lang": "en",
  "category": "parsha",
  "catalog": {
@@ -538,32 +538,105 @@
    {
     "momentId": "en-parsha-en-vyshlch-01~st0",
     "storyId": "rabbi-shimon-bar-yochai-and-the-hunters-birds",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rabbi Shimon bar Yochai"
+     }
+    ]
    },
    {
     "momentId": "en-parsha-en-vyshlch-01~st1",
     "storyId": "rabbi-pinchas-ben-yairs-donkey",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rabbi Pinchas ben Yair"
+     }
+    ]
    },
    {
     "momentId": "en-parsha-en-vyshlch-01~st2",
     "storyId": "eliyahus-two-oxen",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "id": "eliyahu-hanavi",
+      "label": {
+       "en": "Eliyahu HaNavi",
+       "yi": "אליהו הנביא"
+      },
+      "page": true
+     }
+    ]
    },
    {
     "momentId": "en-parsha-en-vyshlch-01~st3",
     "storyId": "rabbi-hoshaya-and-the-unlearned-man",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rabbi Hoshaya"
+     }
+    ]
    },
    {
     "momentId": "en-parsha-en-vyshlch-01~st4",
     "storyId": "asnas-and-the-charm",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Shechem ben Chamor"
+     },
+     {
+      "id": "yaakov-avinu",
+      "label": {
+       "en": "Yaakov Avinu",
+       "yi": "יעקב אבינו"
+      },
+      "page": true
+     },
+     {
+      "id": "yosef-hatzaddik",
+      "label": {
+       "en": "Yosef HaTzaddik",
+       "yi": "יוסף הצדיק"
+      },
+      "page": true
+     },
+     {
+      "name": "Dinah"
+     },
+     {
+      "name": "Osnas"
+     },
+     {
+      "name": "Potiphar"
+     },
+     {
+      "name": "the angel Michael"
+     },
+     {
+      "name": "the angel Gavriel"
+     },
+     {
+      "name": "Potiphar's wife"
+     },
+     {
+      "name": "Ephraim"
+     },
+     {
+      "name": "Menashe"
+     },
+     {
+      "name": "Potiphera"
+     }
+    ]
    }
   ],
   "insights": []
@@ -1330,12 +1403,6 @@
      "en": "Rabbi Shimon bar Yochai hid in a cave for thirteen years from the Roman king. When he came out he saw a hunter catching birds and heard a heavenly voice announce for each bird whether it would be caught. He concluded that if a bird is not caught without a decree from Hashem, he would certainly not be caught by the king of Rome without one, and he went out.",
      "yi": "רבי שמעון בר יוחאי האט זיך באהאלטן דרייצן יאר אין א הייל פונעם קייסער פון רוים. ווען ער איז ארויס האט ער געזען א יעגער וואס כאפט פייגל, און ער האט געהערט א בת קול וואס האט אויסגערופן ביי יעדן פויגל צי ער וועט געכאפט ווערן. ער האט געזאגט אז אויב א פויגל ווערט נישט געכאפט אן א גזירה פונעם אייבערשטן, וועט ער זיכער נישט געכאפט ווערן פונעם קייסער פון רוים אן דעם, און ער איז ארויס."
     },
-    "people": [
-     "Rabbi Shimon bar Yochai"
-    ],
-    "peopleKeys": [
-     "rabbi-shimon-bar-yochai"
-    ],
     "t": 402.23,
     "end": 466.19
    },
@@ -1349,12 +1416,6 @@
      "en": "At an inn, the donkey of Rabbi Pinchas ben Yair refused to eat the oats it was served. When the innkeeper complained, Rabbi Pinchas asked whether the tithe had been taken; once it was, the donkey ate. The Rav notes that a donkey may eat untithed food, especially where the obligation was only a doubt, but this donkey held sparks of its master's soul and would not transgress.",
      "yi": "אין א קרעטשמע האט דער אייזל פון רבי פנחס בן יאיר נישט געוואלט עסן דעם האבער וואס מ'האט אים געגעבן. ווען דער קרעטשמער האט זיך באקלאגט, האט רבי פנחס געפרעגט צי מ'האט אפגעשיידט מעשר; ווען מ'האט עס געטון, האט דער אייזל געגעסן. דער משגיח מערקט אן אז א אייזל מעג עסן אן מעשר, בפרט ווען עס איז נאר געווען א ספק, נאר דער אייזל האט געהאט ניצוצות פון זיין בעל הבית'ס נשמה און האט נישט געוואלט עובר זיין."
     },
-    "people": [
-     "Rabbi Pinchas ben Yair"
-    ],
-    "peopleKeys": [
-     "rabbi-pinchas-ben-yair"
-    ],
     "t": 568.77,
     "end": 639.54
    },
@@ -1368,12 +1429,6 @@
      "en": "At Eliyahu's contest with the worshippers of the Baal, two oxen were prepared, one for Hashem and one for the Baal. The ox chosen for the Baal refused to move, arguing that it and its companion had eaten from the same trough. Eliyahu told it that by being offered to the Baal, with no fire descending, it too would sanctify Hashem's name by proving the negative, and the ox agreed to go.",
      "yi": "ביי אליהו הנביא'ס נסיון מיט די עובדי הבעל האט מען צוגעגרייט צוויי אקסן, איינעם פארן אייבערשטן און איינעם פארן בעל. דער אקס וואס מ'האט אויסגעוועלט פארן בעל האט זיך נישט געוואלט רירן, ווייל ער און זיין חבר האבן געגעסן פון איין קאריטע. אליהו האט אים געזאגט אז אויב ער וועט מקריב ווערן צום בעל און קיין פייער וועט נישט אראפקומען, וועט ער אויך מאכן א קידוש השם, און דער אקס האט מסכים געווען צו גיין."
     },
-    "people": [
-     "Eliyahu HaNavi"
-    ],
-    "peopleKeys": [
-     "eliyahu-hanavi"
-    ],
     "t": 1251.4,
     "end": 1378.71
    },
@@ -1387,12 +1442,6 @@
      "en": "An unlearned man asked Rabbi Hoshaya whether he would repeat a chiddush of his in his name, and Rabbi Hoshaya said he would if it was fitting for the congregation. The man explained that the verse in Tehillim says the kings will 'return' a gift to Mashiach because Esav still holds Yaakov's gift and will have to give it back. Rabbi Hoshaya praised it and repeated it in his name, and it entered the Midrash.",
      "yi": "אן עם הארץ האט געפרעגט רבי הושעיא צי ער וועט זאגן זיין חידוש אין זיין נאמען, און רבי הושעיא האט געזאגט אז יא, אויב עס פאסט פארן עולם. דער עם הארץ האט מסביר געווען אז דער פסוק אין תהלים זאגט אז די מלכים וועלן \"צוריקגעבן\" א מנחה צו משיח, ווייל עשו האלט נאך יעקב'ס מנחה און וועט זי מוזן צוריקגעבן. רבי הושעיא האט עס געלויבט און געזאגט אין זיין נאמען, און עס איז אריין אין מדרש."
     },
-    "people": [
-     "Rabbi Hoshaya"
-    ],
-    "peopleKeys": [
-     "rabbi-hoshaya"
-    ],
     "t": 1469.45,
     "end": 1603.6
    },
@@ -1406,204 +1455,8 @@
      "en": "Dina bore a daughter to Shechem, and the brothers wanted to kill her. According to the Midrash, Yaakov carried her to the desert and placed her on a thorn bush, which is where her name came from, and the angel Gavriel carried her to Mitzrayim. She became Osnas, who married Yosef; Yosef was given Shechem and is buried there with his two sons at his sides.",
      "yi": "דינה האט געבוירן א טאכטער פון שכם, און די שבטים האבן זי געוואלט הרג'ענען. לויטן מדרש האט יעקב זי אוועקגעטראגן אין מדבר און אוועקגעלייגט אויף א סנה, א דארן-קוסט, און פון דארט האט זי באקומען איר נאמען; דער מלאך גבריאל האט זי אוועקגעטראגן קיין מצרים. זי איז געווען אסנת וואס האט חתונה געהאט מיט יוסף; יוסף האט באקומען שכם און ליגט דארט באגראבן מיט זיינע צוויי זין ביי זיינע זייטן."
     },
-    "people": [
-     "Dina",
-     "Shechem",
-     "Osnas",
-     "Yaakov Avinu",
-     "the angel Gavriel",
-     "Yosef",
-     "Efraim",
-     "Menashe"
-    ],
-    "peopleKeys": [
-     "dinah",
-     "shechem-ben-chamor",
-     "osnas",
-     "yaakov-avinu",
-     "gavriel",
-     "yosef-hatzaddik",
-     "efraim",
-     "menashe"
-    ],
     "t": 3983.51,
     "end": 4061.8
-   }
-  ],
-  "people": [
-   {
-    "name": "Yaakov Avinu",
-    "key": "yaakov-avinu"
-   },
-   {
-    "name": "Esav",
-    "key": "esav"
-   },
-   {
-    "name": "Lavan",
-    "key": "lavan"
-   },
-   {
-    "name": "the Ba'al Shem Tov",
-    "key": "baal-shem-tov"
-   },
-   {
-    "name": "Rabbi Shimon bar Yochai",
-    "key": "rabbi-shimon-bar-yochai"
-   },
-   {
-    "name": "Rabbi Pinchas ben Yair",
-    "key": "rabbi-pinchas-ben-yair"
-   },
-   {
-    "name": "the Ohr HaChaim",
-    "key": "ohr-hachaim"
-   },
-   {
-    "name": "Eliyahu HaNavi",
-    "key": "eliyahu-hanavi"
-   },
-   {
-    "name": "Rabbi Hoshaya",
-    "key": "rabbi-hoshaya"
-   },
-   {
-    "name": "the Arizal",
-    "key": "arizal"
-   },
-   {
-    "name": "Rashi",
-    "key": "rashi"
-   },
-   {
-    "name": "Dina",
-    "key": "dinah"
-   },
-   {
-    "name": "Leah",
-    "key": "leah-imeinu"
-   },
-   {
-    "name": "Rachel",
-    "key": "rachel-imeinu"
-   },
-   {
-    "name": "Shechem ben Chamor",
-    "key": "shechem-ben-chamor"
-   },
-   {
-    "name": "Osnas",
-    "key": "osnas"
-   },
-   {
-    "name": "Yosef",
-    "key": "yosef-hatzaddik"
-   },
-   {
-    "name": "Rabbi Chanina ben Teradyon",
-    "key": "rabbi-chanina-ben-teradyon"
-   },
-   {
-    "name": "Rus",
-    "key": "rus"
-   },
-   {
-    "name": "Boaz",
-    "key": "boaz"
-   }
-  ],
-  "concepts": [
-   {
-    "he": "השגחה פרטית",
-    "key": "hshgchh-prtys-2f201f"
-   },
-   {
-    "he": "ניצוצות",
-    "key": "nytzvtzvs-07037a"
-   },
-   {
-    "he": "פכים קטנים",
-    "key": "pkym-ktnym-98a7c5"
-   },
-   {
-    "he": "מנחה",
-    "key": "mnchh-5a7391"
-   },
-   {
-    "he": "גימטריא",
-    "key": "gymtrya-50ea10"
-   },
-   {
-    "he": "שעיר",
-    "key": "sheyr-e8e93e"
-   },
-   {
-    "he": "שעיר לעזאזל",
-    "key": "sheyr-lezazl-8c8e19"
-   },
-   {
-    "he": "לילית",
-    "key": "lylys-5637e7"
-   },
-   {
-    "he": "קליפות",
-    "key": "klyph-ab9afa"
-   },
-   {
-    "he": "קידוש השם",
-    "key": "kydvsh-hshm-dd21a4"
-   },
-   {
-    "he": "עם הארץ",
-    "key": "em-hartz-150855"
-   },
-   {
-    "he": "חידוש",
-    "key": "chydvsh-6eaec1"
-   },
-   {
-    "he": "אות בספר תורה",
-    "key": "avs-bspr-svrh-d15e85"
-   },
-   {
-    "he": "הגבהה",
-    "key": "hgbhh-a05617"
-   },
-   {
-    "he": "יצר הרע",
-    "key": "ytzr-hre-b32929"
-   },
-   {
-    "he": "יצר טוב",
-    "key": "ytzr-tvb-17ba65"
-   },
-   {
-    "he": "בינונים",
-    "key": "bynvnym-c2bed7"
-   },
-   {
-    "he": "שופט",
-    "key": "shvpt-1758ac"
-   },
-   {
-    "he": "גאולה",
-    "key": "gavlh-3d2e5c"
-   },
-   {
-    "he": "השבה",
-    "key": "hshbh-603398"
-   },
-   {
-    "he": "זיווג",
-    "key": "zyvvg-ae5f16"
-   },
-   {
-    "he": "ישראל מומר",
-    "key": "yshral-mvmr-9573e3"
-   },
-   {
-    "he": "עשרה הרוגי מלכות",
-    "key": "eshrh-hrvgy-mlkvs-1016ab"
    }
   ],
   "writeupLangs": [

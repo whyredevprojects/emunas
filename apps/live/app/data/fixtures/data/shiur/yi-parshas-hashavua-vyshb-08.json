@@ -1,7 +1,7 @@
 {
- "schemaVersion": 4,
+ "schemaVersion": 5,
  "id": "yi-parshas-hashavua-vyshb-08",
- "rev": "cfe7e3a00531",
+ "rev": "77f6d1e956e5",
  "lang": "yi",
  "category": "parsha",
  "catalog": {
@@ -488,8 +488,13 @@
    {
     "momentId": "yi-parshas-hashavua-vyshb-08~st0",
     "storyId": "the-belzer-rav-and-the-frozen-river",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "the Sar Shalom of Belz (Rabbi Shalom of Belz)"
+     }
+    ]
    }
   ],
   "insights": []
@@ -1192,139 +1197,9 @@
      "en": "Timber merchants in the days of Rabbi Sholom of Belz cut logs in the forests, bound them and floated them down the river to the lumber mills when the river opened at Nissan time. One year it was already spring time but the river was still frozen, and they had a contract to deliver the logs by a set day, so they feared a great loss. They came to the Belzer Rav, who asked which parsha the children were learning in cheder. Hearing that they were learning a winter parsha, he told them to start learning the parsha of the week, and the river would open.",
      "yi": "אין די צייטן פון רבי שלום פון בעלזא פלעגן האלץ-סוחרים אפהאקן ביימער אין די וועלדער, זיי צובינדן און שיקן אויפן טייך צו די האלץ-מילן ווען דער טייך האט זיך געעפנט ניסן צייט. איין יאר איז שוין געווען פרילינג, אבער דער טייך איז נאך געווען פארפרוירן, און זיי האבן געהאט א קאנטראקט אז די האלץ מוז אנקומען ביז א געוויסן טאג, האבן זיי מורא געהאט פאר א גרויסן הפסד. זיי זענען געקומען צום בעלזער רב, און ער האט געפרעגט וועלכע סדרה די קינדער לערנען אין חדר. ווען ער האט געהערט אז מ'לערנט א ווינטערדיגע סדרה, האט ער געזאגט מ'זאל אנהייבן לערנען די פרשה פון דער וואך, וועט דער טייך זיך עפענען."
     },
-    "people": [
-     "Rabbi Sholom of Belz"
-    ],
-    "peopleKeys": [
-     "rabbi-shalom-of-belz"
-    ],
     "t": 76.02,
     "end": 277.06,
     "soft": true
-   }
-  ],
-  "people": [
-   {
-    "name": "Rabbi Sholom of Belz",
-    "key": "rabbi-shalom-of-belz"
-   },
-   {
-    "name": "Rashi",
-    "key": "rashi"
-   },
-   {
-    "name": "Rabbeinu Bachya",
-    "key": "rabbeinu-bachya"
-   },
-   {
-    "name": "Bnei Yissaschar",
-    "key": "bnei-yissaschar"
-   },
-   {
-    "name": "Rambam",
-    "key": "rambam"
-   },
-   {
-    "name": "Yehuda",
-    "key": "yehudah"
-   },
-   {
-    "name": "Tamar",
-    "key": "tamar"
-   },
-   {
-    "name": "Yosef",
-    "key": "yosef-hatzaddik"
-   },
-   {
-    "name": "Peretz",
-    "key": "peretz"
-   },
-   {
-    "name": "Asenath",
-    "key": "osnas"
-   },
-   {
-    "name": "Dinah",
-    "key": "dinah"
-   },
-   {
-    "name": "Yaakov",
-    "key": "yaakov-avinu"
-   },
-   {
-    "name": "Ephraim",
-    "key": "ephraim"
-   },
-   {
-    "name": "Michael the angel",
-    "key": "michael"
-   },
-   {
-    "name": "Adam HaRishon",
-    "key": "adam-harishon"
-   },
-   {
-    "name": "the Chashmonaim",
-    "key": "the-chashmonaim"
-   }
-  ],
-  "concepts": [
-   {
-    "he": "פתילות ושמנים",
-    "key": "psylvs-vshmnym-52b16a"
-   },
-   {
-    "he": "אור הגנוז",
-    "key": "avr-hgnvz-365048"
-   },
-   {
-    "he": "אורו של משיח",
-    "key": "avrv-shl-mshych-a081f0"
-   },
-   {
-    "he": "משיח בן יוסף",
-    "key": "mshych-bn-yvsf-350136"
-   },
-   {
-    "he": "משיח בן דוד",
-    "key": "mshych-bn-dvd-7d25ff"
-   },
-   {
-    "he": "כד הקמח",
-    "key": "kd-hkmch-66cb86"
-   },
-   {
-    "he": "אצטגנינות",
-    "key": "atztgnynvs-6e1c37"
-   },
-   {
-    "he": "אשת פוטיפר",
-    "key": "ashs-pvtypr-f15b96"
-   },
-   {
-    "he": "למטה מעשרה",
-    "key": "lmth-meshrh-921eb4"
-   },
-   {
-    "he": "תקופה",
-    "key": "skvph-9b2f91"
-   },
-   {
-    "he": "ניטל",
-    "key": "nytl-4619ef"
-   },
-   {
-    "he": "סטרא אחרא",
-    "key": "stra-achra-b50a94"
-   },
-   {
-    "he": "מכירת יוסף",
-    "key": "mkyrs-yvsf-c0693e"
-   },
-   {
-    "he": "מסירות נפש",
-    "key": "msyrvs-npsh-a8d223"
    }
   ],
   "writeupLangs": [

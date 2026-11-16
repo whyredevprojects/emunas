@@ -1,7 +1,7 @@
 {
- "schemaVersion": 4,
+ "schemaVersion": 5,
  "id": "en-miscellaneous-en-01",
- "rev": "0be2dddb2e6a",
+ "rev": "1a031de3b5d0",
  "lang": "en",
  "category": "misc",
  "catalog": {
@@ -634,44 +634,99 @@
    {
     "momentId": "en-miscellaneous-en-01~st0",
     "storyId": "the-shoemaker-who-said-tzaddikims-names",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": []
    },
    {
     "momentId": "en-miscellaneous-en-01~st1",
     "storyId": "the-baal-shem-tov-smiles-at-a-fallen-building",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "id": "baal-shem-tov",
+      "label": {
+       "en": "the Baal Shem Tov",
+       "yi": "דער הייליגער בעל שם טוב",
+       "he": "רבי ישראל בעל שם טוב"
+      },
+      "page": true
+     }
+    ]
    },
    {
     "momentId": "en-miscellaneous-en-01~st2",
     "storyId": "the-beis-halevi-and-the-chicken-for-the-road",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rabbi Yehoshua Leib Diskin"
+     },
+     {
+      "name": "the Beis HaLevi (Rabbi Yosef Dov Soloveitchik of Brisk)"
+     },
+     {
+      "name": "Rabbi Binyamin Diskin"
+     }
+    ]
    },
    {
     "momentId": "en-miscellaneous-en-01~st3",
     "storyId": "the-yeshuos-yaakov-and-the-pancake",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "the Yeshuos Yaakov"
+     }
+    ]
    },
    {
     "momentId": "en-miscellaneous-en-01~st4",
     "storyId": "the-vitebskers-fish-and-the-voices-of-tzfas",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rabbi Menachem Mendel of Vitebsk"
+     }
+    ]
    },
    {
     "momentId": "en-miscellaneous-en-01~st5",
     "storyId": "the-chiddushei-harim-and-the-shaylah",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "id": "chiddushei-harim",
+      "label": {
+       "en": "the Chiddushei HaRim",
+       "yi": "דער חידושי הרי\"ם",
+       "he": "רבי יצחק מאיר מגור"
+      },
+      "page": true
+     }
+    ]
    },
    {
     "momentId": "en-miscellaneous-en-01~st6",
     "storyId": "the-slonimer-rebbe-and-the-unimmersed-plates",
-    "tellings": 2,
-    "page": true
+    "otherShiurim": 1,
+    "page": true,
+    "people": [
+     {
+      "name": "the Beis Avraham of Slonim"
+     },
+     {
+      "name": "Zvulun (a Yerushalmi chassid)"
+     },
+     {
+      "name": "Reb Leib Osofsky"
+     }
+    ]
    }
   ],
   "insights": [
@@ -1605,8 +1660,6 @@
      "en": "In Europe there was a simple Jew, a shoemaker, who knew very little and could not even say over Mishnayos while he worked. All day in his shop, with every blow of his hammer on the shoes, he said the name of a tzaddik: Avraham, Yitzchak, Yaakov, and on. The Rav explains that such simple Jews knew their neshamah would be purified by connecting to a tzaddik.",
      "yi": "אין אייראפע איז געווען א פשוט'ער איד, א שוסטער, וואס האט ווייניג געקענט און האט אפילו נישט געקענט איבערזאגן משניות בשעת די ארבעט. דעם גאנצן טאג אין זיין קראם, ביי יעדן קלאפ מיטן האמער אויף די שיך, האט ער געזאגט דעם נאמען פון א צדיק: אברהם, יצחק, יעקב, און ווייטער. דער משגיח ערקלערט אז אזעלכע פשוט'ע אידן האבן געוואוסט אז זייער נשמה ווערט געלייטערט ווען מ'פארבינדט זיך מיט א צדיק."
     },
-    "people": [],
-    "peopleKeys": [],
     "t": 455.66,
     "end": 533.3
    },
@@ -1620,8 +1673,6 @@
      "en": "A tzaddik was seen smiling, and when asked why, he said he had just seen something in a far-off country. A king had built a beautiful castle with twenty thousand workers over twenty years. A tzaddik passing by took shelter under it from the rain, and after he left an earthquake brought the castle down. The Rav explains that the true reason for the whole building was those few minutes of shelter for the tzaddik.",
      "yi": "מ'האט געזען א צדיק שמייכלען, און ווען מ'האט אים געפרעגט פארוואס, האט ער געזאגט אז ער האט יעצט געזען עפעס אין א ווייטער מדינה. א קעניג האט געבויט א שיינעם שלאס מיט צוואנציג טויזנט ארבעטער צוואנציג יאר. א צדיק וואס איז דורכגעגאנגען האט זיך באהאלטן דארט פון רעגן, און נאכדעם וואס ער איז אוועק האט אן ערדציטערניש איינגעווארפן דעם שלאס. דער משגיח ערקלערט אז די אמת'ע סיבה פונעם גאנצן בנין זענען געווען יענע פאר מינוט שוץ פאר'ן צדיק."
     },
-    "people": [],
-    "peopleKeys": [],
     "t": 1995.94,
     "end": 2064.48
    },
@@ -1635,14 +1686,6 @@
      "en": "The Beis Halevi stayed with Rav Yehoshua Leib Diskin, and when he had to travel on, the Rebbetzin prepared a piece of chicken for him to eat on the way. About two hours later she found something wrong with the chicken and that it was not kosher. Rav Yehoshua Leib said the Brisker would not eat it, and indeed it was found that he had not eaten it, saying it did not smell good.",
      "yi": "דער בית הלוי איז געווען ביי ר' יהושע לייב דיסקין, און ווען ער האט געדארפט ווייטער פארן האט די רביצין אים צוגעגרייט א שטיקל עוף צו עסן אויפ'ן וועג. בערך צוויי שעה שפעטער האט זי געפונען א פעלער אינעם עוף, און אז עס איז נישט כשר. ר' יהושע לייב האט געזאגט אז דער בריסקער וועט עס נישט עסן, און טאקע האט מען שפעטער געזען אז ער האט עס נישט געגעסן, ווייל עס האט נישט גוט געשמעקט."
     },
-    "people": [
-     "the Beis Halevi",
-     "Rav Yehoshua Leib Diskin"
-    ],
-    "peopleKeys": [
-     "beis-halevi",
-     "rabbi-yehoshua-leib-diskin"
-    ],
     "t": 3569.22,
     "end": 3653.86,
     "soft": true
@@ -1657,12 +1700,6 @@
      "en": "The Yeshuos Yaakov visited a certain Rav, whose wife brought in a piping hot egg pancake, and he was honored to make the brachah. He stuck in the knife but delayed for a long while, until the Rebbetzin rushed in to say she had made it with butter in a fleishig pan. The Rav said he had not known his guest had ruach hakodesh, and the Yeshuos Yaakov answered that the pancake had spurted in his face when he cut it, and a kosher pancake would not do that.",
      "yi": "דער ישועות יעקב איז געקומען צו א געוויסן רב, און די רביצין האט אריינגעברענגט א הייסן פאנקעיק פון אייער, און מ'האט אים מכבד געווען מיט דער ברכה. ער האט אריינגעשטעקט דעם מעסער אבער האט זיך לאנג געזאמט, ביז די רביצין איז אריינגעלאפן און געזאגט אז זי האט עס געמאכט מיט פוטער אין א פלייש'יגע פאן. דער רב האט געזאגט אז ער האט נישט געוואוסט אז זיין גאסט האט רוח הקודש, און דער ישועות יעקב האט געענטפערט אז דער פאנקעיק האט אים געשפריצט אין פנים ווען ער האט אים געשניטן, און א כשר'ער פאנקעיק וואלט דאס נישט געטון."
     },
-    "people": [
-     "the Yeshuos Yaakov"
-    ],
-    "peopleKeys": [
-     "yeshuos-yaakov"
-    ],
     "t": 3668.94,
     "end": 3820.93
    },
@@ -1676,12 +1713,6 @@
      "en": "Rav Menachem Mendel of Vitebsk lived near a river, and every Friday his gabbai would announce there that the Vitebsker needed fish for Shabbos, and a big fish would swim into the net. In Eretz Yisrael he first lived in Tzfas, but the air was so clear that he heard the heavenly calls to teshuvah and could not sleep, so he moved to Teveria. There the gabbai announced at the Kinneres three times; the third time small fish came and splashed him from head to foot, and the Vitebsker explained that the creatures of Eretz Yisrael have a strength of their own.",
      "yi": "ר' מנחם מענדל פון וויטעבסק האט געוואוינט נעבן א טייך, און יעדן פרייטאג האט זיין גבאי דארט אויסגערופן אז דער וויטעבסקער דארף פיש לכבוד שבת, און א גרויסער פיש איז אריינגעשוואומען אין נעץ. אין ארץ ישראל האט ער קודם געוואוינט אין צפת, אבער די לופט איז געווען אזוי קלאר אז ער האט געהערט די כרוזים פון הימל צו תשובה און האט נישט געקענט שלאפן, און ער איז אריבער קיין טבריה. דארט האט דער גבאי אויסגערופן ביים כנרת דריי מאל; דאס דריטע מאל זענען געקומען קליינע פישלעך און אים באשפריצט פון קאפ ביז די פיס, און דער וויטעבסקער האט ערקלערט אז די באשעפענישן פון ארץ ישראל האבן אן אייגענע תקיפות."
     },
-    "people": [
-     "Rav Menachem Mendel of Vitebsk"
-    ],
-    "peopleKeys": [
-     "rabbi-mendel-of-vitebsk"
-    ],
     "t": 3941.48,
     "end": 4208.12
    },
@@ -1695,12 +1726,6 @@
      "en": "The Chiddushei HaRim had a practice never to eat anything on which there had been a shaylah. Once there was a shaylah in the kitchen, and the Rav of the city ruled that there was no shaylah at all, and that it could even be given to the Chiddushei HaRim. When it was served to him, he put it down and would not eat it: he sensed that it had been brought for a ruling.",
      "yi": "דער חידושי הרי\"ם האט געהאט א מנהג קיינמאל נישט צו עסן קיין זאך וואס עס איז געווען א שאלה דערויף. איינמאל איז געווען א שאלה אין קיך, און דער רב פון שטאט האט פסק'נט אז עס איז בכלל נישט קיין שאלה, און מ'קען עס אפילו געבן דעם חידושי הרי\"ם. ווען מ'האט עס אים דערלאנגט, האט ער עס אוועקגעלייגט און נישט געגעסן: ער האט געשפירט אז מ'האט דערויף געפרעגט א שאלה."
     },
-    "people": [
-     "the Chiddushei HaRim"
-    ],
-    "peopleKeys": [
-     "chiddushei-harim"
-    ],
     "t": 4430.76,
     "end": 4468.8,
     "soft": true
@@ -1715,202 +1740,8 @@
      "en": "The Slonimer Rebbe, Rav Avraham, visited Yerushalayim and wished to draw close a poor, G-d-fearing Jew who did not wear a beard, so he announced he would eat supper at his home. Neighbors helped, and the Rebbe came with dozens of people, but when the fish was served he pushed the plate away and no one ate. The host admitted that a bearded neighbor had lent him the plates, and the neighbor, asked whether they were toveled, said they had been in a hurry. The Rebbe told the host that in the next world they would ask him 'Jew, where is your beard?', and the neighbor 'Beard, where is your Jew?'",
      "yi": "דער סלאנימער רבי, ר' אברהם, איז געקומען קיין ירושלים און האט געוואלט מקרב זיין א ארעמען ירא שמים וואס האט נישט געטראגן קיין בארד, האט ער געזאגט אז ער וועט עסן וועטשערע ביי אים. די שכנים האבן געהאלפן, און דער רבי איז געקומען מיט צענדליגער מענטשן, אבער ווען מ'האט דערלאנגט דעם פיש האט ער אוועקגעשטופט דעם טעלער און קיינער האט נישט געגעסן. דער בעל הבית האט מודה געווען אז א שכן מיט א בארד האט אים געבארגט די טעלער, און דער שכן, ווען מ'האט אים געפרעגט צי זיי זענען געטובלט, האט געזאגט אז מ'האט זיך געאיילט. דער רבי האט געזאגט צום בעל הבית אז אויף יענער וועלט וועט מען אים פרעגן \"איד, וואו איז דיין בארד?\", און דעם שכן \"בארד, וואו איז דיין איד?\""
     },
-    "people": [
-     "the Slonimer Rebbe, Rav Avraham"
-    ],
-    "peopleKeys": [
-     "slonimer-rebbe-rav-avraham"
-    ],
     "t": 4687.81,
     "end": 5045.43
-   }
-  ],
-  "people": [
-   {
-    "name": "Rabbi Meir",
-    "key": "rabbi-meir"
-   },
-   {
-    "name": "Rabbi Akiva",
-    "key": "rabbi-akiva"
-   },
-   {
-    "name": "Rabbi Levi Yitzchak of Berditchev",
-    "key": "berditchever-rav"
-   },
-   {
-    "name": "Adam HaRishon",
-    "key": "adam-harishon"
-   },
-   {
-    "name": "Zimri ben Salu",
-    "key": "zimri-ben-salu"
-   },
-   {
-    "name": "Cozbi",
-    "key": "cozbi"
-   },
-   {
-    "name": "Pinchas",
-    "key": "pinchas"
-   },
-   {
-    "name": "Moshe Rabbeinu",
-    "key": "moshe-rabbeinu"
-   },
-   {
-    "name": "Dasan and Aviram",
-    "key": "dasan-and-aviram"
-   },
-   {
-    "name": "Eliav",
-    "key": "eliav"
-   },
-   {
-    "name": "Ben Zoma",
-    "key": "ben-zoma"
-   },
-   {
-    "name": "Vashti",
-    "key": "vashti"
-   },
-   {
-    "name": "Achashveirosh",
-    "key": "achashverosh"
-   },
-   {
-    "name": "the Ramchal",
-    "key": "ramchal"
-   },
-   {
-    "name": "Noach",
-    "key": "noach"
-   },
-   {
-    "name": "the Beis Halevi",
-    "key": "beis-halevi"
-   },
-   {
-    "name": "Rav Yehoshua Leib Diskin",
-    "key": "rabbi-yehoshua-leib-diskin"
-   },
-   {
-    "name": "the Yeshuos Yaakov",
-    "key": "yeshuos-yaakov"
-   },
-   {
-    "name": "Rav Menachem Mendel of Vitebsk",
-    "key": "rabbi-mendel-of-vitebsk"
-   },
-   {
-    "name": "the Maggid of Mezritch",
-    "key": "maggid-of-mezritch"
-   },
-   {
-    "name": "the Ba'al HaTanya",
-    "key": "baal-hatanya"
-   },
-   {
-    "name": "Rav Nachum of Chernobyl",
-    "key": "rabbi-nachum-of-chernobyl"
-   },
-   {
-    "name": "the Chiddushei HaRim",
-    "key": "chiddushei-harim"
-   },
-   {
-    "name": "the Belzer Rav",
-    "key": "belzer-rav"
-   },
-   {
-    "name": "the Slonimer Rebbe, Rav Avraham",
-    "key": "slonimer-rebbe-rav-avraham"
-   },
-   {
-    "name": "the Radziner Rebbe",
-    "key": "radziner-rebbe"
-   }
-  ],
-  "concepts": [
-   {
-    "he": "תורה לשמה",
-    "key": "svrh-lshmh-f5d40c"
-   },
-   {
-    "he": "לשון המשנה",
-    "key": "lshvn-hmshnh-f1649f"
-   },
-   {
-    "he": "ברייתא",
-    "key": "bryysa-06f9c5"
-   },
-   {
-    "he": "קנין תורה",
-    "key": "knyn-svrh-ff28b5"
-   },
-   {
-    "he": "קדושה",
-    "key": "kdvshh-2d0766"
-   },
-   {
-    "he": "ישועה",
-    "key": "yshveh-e448d4"
-   },
-   {
-    "he": "רבונו של עולם",
-    "key": "rbvnv-shl-evlm-52e424"
-   },
-   {
-    "he": "דברים הרבה",
-    "key": "dbrym-hrbh-7deedb"
-   },
-   {
-    "he": "יין המשומר",
-    "key": "yyn-hmshvmr-4ebe98"
-   },
-   {
-    "he": "עולם הבא",
-    "key": "evlm-hba-68958b"
-   },
-   {
-    "he": "ספר תורה",
-    "key": "spr-svrh-a81c20"
-   },
-   {
-    "he": "הגבהה",
-    "key": "hgbhh-a05617"
-   },
-   {
-    "he": "שפע",
-    "key": "shpe-efd2a5"
-   },
-   {
-    "he": "רע",
-    "key": "re-d19424"
-   },
-   {
-    "he": "חלק אלוק ממעל",
-    "key": "chlk-alvk-mmel-14b9d1"
-   },
-   {
-    "he": "מחלוקת",
-    "key": "mchlvks-d1fbbd"
-   },
-   {
-    "he": "הוה אמינא",
-    "key": "hvh-amyna-5fa650"
-   },
-   {
-    "he": "רוח הטומאה",
-    "key": "rvch-htvmah-ee908e"
-   },
-   {
-    "he": "תקיפות",
-    "key": "skypvs-77f62d"
-   },
-   {
-    "he": "מעמדות",
-    "key": "memdvs-ac0d28"
    }
   ],
   "writeupLangs": [

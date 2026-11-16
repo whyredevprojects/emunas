@@ -1,7 +1,7 @@
 {
- "schemaVersion": 4,
+ "schemaVersion": 5,
  "id": "yi-zmanim-lvl-02",
- "rev": "d8521894846b",
+ "rev": "887562abd4fe",
  "lang": "yi",
  "category": "zman",
  "catalog": {
@@ -460,14 +460,33 @@
    {
     "momentId": "yi-zmanim-lvl-02~st0",
     "storyId": "the-torn-shoe-at-the-chuppah",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rabbi Yisrael Salanter"
+     }
+    ]
    },
    {
     "momentId": "yi-zmanim-lvl-02~st1",
     "storyId": "the-malbim-in-the-chasam-sofers-place",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "the Malbim"
+     },
+     {
+      "id": "chasam-sofer",
+      "label": {
+       "en": "the Chasam Sofer",
+       "yi": "דער חתם סופר",
+       "he": "חתם סופר"
+      },
+      "page": true
+     }
+    ]
    }
   ],
   "insights": []
@@ -1157,12 +1176,6 @@
      "en": "A shoemaker became wealthy and made a lavish wedding, and another man resented it. When everyone stood under the chuppah, that man ran up, called out loudly and handed the father a torn shoe, asking how much it would cost to fix. People laughed and the father was badly shamed. When Rabbi Yisrael Salanter heard of it, he said the rabbanim of Vilna must make an accounting for such a thing happening in Vilna, for not having taught better middos.",
      "yi": "א שוסטער איז רייך געווארן און האט געמאכט א גרויסע רייכע חתונה, און אן אנדערער האט עס פארדראסן. ווען אלע זענען געשטאנען אונטער דער חופה, איז ער צוגעלאפן, אויסגעשריגן הויך פאר אלעמען, און דערלאנגט דעם מחותן א צעריסענעם שוך, פרעגנדיג וויפיל ס'קאסט אים צו פאררעכטן. ס'איז געווארן א געלעכטער און יענער איז שטארק פארשעמט געווארן. ווען ר' ישראל סאלאנטער האט דאס געהערט, האט ער געזאגט אז די רבנים פון ווילנא דארפן מאכן א חשבון הנפש פארוואס אזא זאך קען פאסירן אין ווילנא, אז מ'האט נישט אויסגעלערנט בעסערע מידות."
     },
-    "people": [
-     "Rabbi Yisrael Salanter"
-    ],
-    "peopleKeys": [
-     "rabbi-yisrael-salanter"
-    ],
     "t": 2231.49,
     "end": 2288.05
    },
@@ -1176,104 +1189,8 @@
      "en": "As a young bachur of about seventeen, already famous as a genius, the Malbim came to Pressburg, where the Chasam Sofer hosted him and gave him permission to say a drashah on Shabbos before Minchah, though the Chasam Sofer did not attend. When the minyan then stood up to daven, the Malbim stood in the Chasam Sofer's place, and the Chasam Sofer came in and saw it and was distressed. The results were immediate: the gates of Torah closed for the Malbim, and all his life he could write only a commentary on Tanach, though he was a vessel for far more. Every Shabbos at Minchah time he would go into a room alone and ask Hashem forgiveness for having slighted a talmid chacham.",
      "yi": "ווי א יונגער בחור פון ארום זיבעצן, שוין באקאנט אלס א עילוי, איז דער מלבי\"ם געקומען קיין פרעשבורג, וואו דער חתם סופר האט אים אויפגענומען און אים געגעבן רשות צו זאגן א דרשה שבת פאר מנחה, כאטש דער חתם סופר אליין איז נישט געקומען. ווען דער מנין איז דערנאך אוועקגעשטאנען דאווענען, האט זיך דער מלבי\"ם געשטעלט אויף'ן חתם סופר'ס ארט, און דער חתם סופר איז אריינגעקומען, דאס געזען, און געהאט חלישות הדעת. די תוצאות זענען געווען גלייך: ביים מלבי\"ם האבן זיך פארמאכט די שערי תורה, און זיין גאנץ לעבן האט ער געקענט שרייבן נאר א פירוש אויף תנ\"ך, כאטש ער איז געווען א כלי אויף אסאך מער. יעדן שבת מנחה צייט פלעגט ער אריינגיין אליין אין א צימער און בעטן מחילה ביים רבונו של עולם פאר'ן מבזה זיין א תלמיד חכם."
     },
-    "people": [
-     "the Malbim",
-     "the Chasam Sofer"
-    ],
-    "peopleKeys": [
-     "malbim",
-     "chasam-sofer"
-    ],
     "t": 2697.19,
     "end": 2791.71
-   }
-  ],
-  "people": [
-   {
-    "name": "Rabbi Yisrael Salanter",
-    "key": "rabbi-yisrael-salanter"
-   },
-   {
-    "name": "the Malbim",
-    "key": "malbim"
-   },
-   {
-    "name": "the Chasam Sofer",
-    "key": "chasam-sofer"
-   },
-   {
-    "name": "the Arizal",
-    "key": "arizal"
-   },
-   {
-    "name": "Rabbi Akiva",
-    "key": "rabbi-akiva"
-   },
-   {
-    "name": "Rabbi Elazar ben Azaryah",
-    "key": "rabbi-elazar-ben-azaryah"
-   },
-   {
-    "name": "Rabbi Yochanan ben Zakkai",
-    "key": "rabban-yochanan-ben-zakkai"
-   },
-   {
-    "name": "Rabbi Pinchas of Koretz",
-    "key": "rabbi-pinchas-of-koretz"
-   },
-   {
-    "name": "Rabbi Shabsai",
-    "key": "rabbi-shabsai"
-   },
-   {
-    "name": "Rashi",
-    "key": "rashi"
-   }
-  ],
-  "concepts": [
-   {
-    "he": "עיר מקלט",
-    "key": "eyr-mklt-ac13c0"
-   },
-   {
-    "he": "גואל הדם",
-    "key": "gval-hdm-c00d2b"
-   },
-   {
-    "he": "פרשת דרכים",
-    "key": "prshs-drkym-8b66d2"
-   },
-   {
-    "he": "בטחון",
-    "key": "btchvn-032372"
-   },
-   {
-    "he": "לדוד ה' אורי",
-    "key": "ldvd-h-avry-aa9fc1"
-   },
-   {
-    "he": "ארבעים סאה",
-    "key": "arbeym-sah-0548dc"
-   },
-   {
-    "he": "השקה",
-    "key": "hshkh-a48f21"
-   },
-   {
-    "he": "שפיכת דמים",
-    "key": "shpyks-dmym-f2d99a"
-   },
-   {
-    "he": "בין אדם לחבירו",
-    "key": "byn-adm-lchbyrv-7e4049"
-   },
-   {
-    "he": "נעילה",
-    "key": "neylh-4068a2"
-   },
-   {
-    "he": "קליפה",
-    "key": "klyph-ab9afa"
    }
   ],
   "writeupLangs": [

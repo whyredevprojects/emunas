@@ -31,7 +31,7 @@ import type { Meta } from "./schemas.ts";
 import { TimeModel, mergeRanges, type RecTime, type SpanResult } from "./time.ts";
 
 /** Bump when the projection output changes for the same input (feeds every fingerprint). */
-export const PROJECTOR_VERSION = "2";
+export const PROJECTOR_VERSION = "3";
 
 export interface ProjectContext {
   keyer: Keyer;
@@ -343,8 +343,7 @@ function buildNotes(
       id: mid,
       title: L2(st.title),
       retelling: L2(st.retelling),
-      people: [...st.people],
-      peopleKeys: st.people.map((p) => keyed(ctx, "person", p, shiurId)),
+      // st.people (raw extraction names) is never projected: the layer's merged story names them.
       ...time(mid, tm.span(st.evidence.recordingId, st.evidence.segs)),
     };
     if (soft) out.soft = true;
@@ -391,8 +390,6 @@ function buildNotes(
     takeaways: moments("tk", ex.takeaways),
     questions,
     stories,
-    people: ex.people.map((p) => ({ name: p.name, key: keyed(ctx, "person", p.name, shiurId) })),
-    concepts: ex.concepts.map((c) => ({ he: c.he, key: keyed(ctx, "concept", c.he, shiurId) })),
     writeup: { en: writeupOf("en"), yi: writeupOf("yi") },
   };
 }

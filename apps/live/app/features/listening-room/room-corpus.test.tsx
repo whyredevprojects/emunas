@@ -18,7 +18,7 @@ import { fileURLToPath } from "node:url";
 import { RouterProvider } from "react-router";
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
 import { configureData, resetDataConfig, type DataFetch, type ShiurFile } from "./data.ts";
-import { brshys03, fixtureFetch, misc01, misc01WithThread, tanya, tvbb } from "./test-fixtures.ts";
+import { brshys03, clone, fixtureFetch, misc01, misc01WithThread, tanya, tvbb } from "./test-fixtures.ts";
 import { createPlayerEngine, type PlayerEngine } from "../../player-engine/index.ts";
 import { FakeAudio, FakeClock, fakeMediaSession } from "../../player-engine/test/fakes.ts";
 import { appDescribe, installEngine } from "../../player-ui/index.ts";
@@ -218,6 +218,21 @@ describe("stories and sources", () => {
     expect(a.textContent).toBe("Told in 1 other shiur");
     expect(a.getAttribute("href")).toBe("/en/maasios/chizkiyahu-sleeps-during-sanherivs-siege");
     expect(panel.querySelector(`[data-moment='${brshys03.notes!.stories[1]!.id}'] [data-story-mark]`)).toBeNull();
+  });
+
+  it("names a story's people from the merged story only: a chip links, a display name is plain (F.1)", async () => {
+    const s = clone(brshys03);
+    const x = s.corpus!.stories.find((y) => y.momentId === s.notes!.stories[0]!.id)!;
+    x.people = [{ id: "chizkiyahu", label: { en: "Chizkiyahu", yi: "חזקיהו" }, page: true }, { name: "Sancheriv" }];
+    for (const y of s.corpus!.stories) if (y !== x) y.people = [];
+    overrides.set(s.id, s);
+    await openAt(`/en/s/${s.id}`);
+    const panel = await tab("Stories");
+    const names = [...panel.querySelectorAll("[data-story-person]")];
+    expect(names.map((n) => n.textContent)).toEqual(["Chizkiyahu", "Sancheriv"]);
+    expect(names[0]!.getAttribute("href")).toBe("/en/p/chizkiyahu");
+    expect(names[1]!.tagName).toBe("SPAN");
+    expect(panel.querySelectorAll("[data-story-people]")).toHaveLength(1);
   });
 
   it("groups sources by merged work and links a work with a Live page", async () => {

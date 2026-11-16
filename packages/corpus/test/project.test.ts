@@ -62,6 +62,33 @@ describe("mini corpus projection", () => {
     expect(toJson({ ...byId(p, id), rev: "<rev>" })).toBe(golden);
   });
 
+  it("publishes no raw extraction name: no people/concept lists, no story people (F.1)", () => {
+    let stories = 0;
+    for (const s of p.shiurim) {
+      const n = s.notes;
+      if (!n) continue;
+      expect(Object.keys(n)).not.toContain("people");
+      expect(Object.keys(n)).not.toContain("concepts");
+      for (const st of n.stories) {
+        stories++;
+        expect(Object.keys(st).sort()).toEqual(["end", "id", "retelling", "t", "title", ...(st.soft ? ["soft"] : [])].sort());
+      }
+      const ex = readJson<Extraction>(shiurFile(MINI_DATA, s.id, "extraction"));
+      // A raw name may appear inside prose (title, retelling), but never as a value of its own.
+      const values = new Set<string>();
+      const walk = (x: unknown): void => {
+        if (typeof x === "string") values.add(x);
+        else if (Array.isArray(x)) x.forEach(walk);
+        else if (x && typeof x === "object") Object.values(x).forEach(walk);
+      };
+      walk({ ...s, notes: { ...n, sources: [] } });
+      // (A source's work string is the cited work, not a person name; "Rashi" is both.)
+      for (const raw of [...ex.people.map((x) => x.name), ...ex.stories.flatMap((x) => x.people)]) expect(values.has(raw), raw).toBe(false);
+    }
+    expect(stories).toBeGreaterThan(0);
+    for (const row of p.index.shiurim) expect(Object.keys(row)).not.toContain("entities");
+  });
+
   it("keeps the partial directory and the not-yet-processed shiur catalog-only", () => {
     expect(byId(p, "yi-zmanim-msybs-lchyym-bkmp-01-c").status).toBe("catalog-only");
     expect(byId(p, "yi-zmanim-msybs-lchyym-bkmp-01-c").notes).toBeUndefined();
@@ -301,16 +328,19 @@ describe("allow-list projection", () => {
         version: "1",
         key(kind, raw) {
           seen.add(kind);
-          return { key: `${kind}:${raw.length}`, mapped: kind !== "concept" };
+          return { key: `${kind}:${raw.length}`, mapped: kind !== "work" };
         },
       },
     });
-    expect([...seen].sort()).toEqual(["concept", "parsha", "person", "work", "zman"]);
+    // People and concepts are not keyed: their raw names are never projected (F.1).
+    expect([...seen].sort()).toEqual(["parsha", "work", "zman"]);
     const s = byId(p, "yi-zmanim-tv-bb-04");
     expect(s.zman?.key).toMatch(/^zman:\d+$/);
-    expect(s.notes!.concepts.every((c) => c.key.startsWith("concept:"))).toBe(true);
+    expect(s.notes!.sources.filter((x) => x.workKey !== null).every((x) => x.workKey!.startsWith("work:"))).toBe(true);
     const rep = p.report.finish({ ...p.counts, notDone: p.notDone }, 1, []);
-    expect(rep.unmapped.concept.length).toBeGreaterThan(0);
+    expect(rep.unmapped.work.length).toBeGreaterThan(0);
+    expect(rep.unmapped.concept).toEqual([]);
+    expect(rep.unmapped.person).toEqual([]);
     expect(rep.unmapped.parsha).toEqual([]);
   });
 });

@@ -1,7 +1,7 @@
 {
- "schemaVersion": 4,
+ "schemaVersion": 5,
  "id": "yi-zmanim-nysn-05",
- "rev": "96a18cfdffd7",
+ "rev": "99f727fdd355",
  "lang": "yi",
  "category": "zman",
  "catalog": {
@@ -632,14 +632,24 @@
    {
     "momentId": "yi-zmanim-nysn-05~st0",
     "storyId": "rav-gifter-takes-out-the-garbage",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rav Gifter"
+     }
+    ]
    },
    {
     "momentId": "yi-zmanim-nysn-05~st1",
     "storyId": "reb-arele-lights-the-chanukah-lights",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rabbi Aharon Roth (the Shomer Emunim)"
+     }
+    ]
    }
   ],
   "insights": []
@@ -1405,12 +1415,6 @@
      "en": "A young couple came to Rav Gifter with an argument: the wife, busy with the children, wanted her husband to take out the garbage, and he said that as a ben Torah it was beneath the honor of the Torah. Rav Gifter ruled that the husband was right. Ten minutes after they went home there was a knock at the door, and it was Rav Gifter. He said that the wife is busy with the babies and cannot take out the garbage, and the husband is a ben Torah and cannot either, so he had come to take it out himself.",
      "yi": "א יונג פארפאלק איז געקומען צו רב גיפטער מיט א מחלוקת: די ווייב, וואס איז פארנומען מיט די קינדער, האט געוואלט אז דער מאן זאל ארויסטראגן דעם מיסט, און ער האט געזאגט אז אלס בן תורה איז דאס נישט קיין כבוד התורה. רב גיפטער האט געזאגט אז דער מאן איז גערעכט. צען מינוט נאכדעם וואס זיי זענען אהיימגעגאנגען האט מען געקלאפט אין טיר, און ס'איז געווען רב גיפטער. ער האט געזאגט אז די ווייב איז פארנומען מיט די קינדער און קען נישט ארויסטראגן דעם מיסט, דער מאן איז א בן תורה און קען אויך נישט, איז ער געקומען עס אליין ארויסטראגן."
     },
-    "people": [
-     "Rav Gifter"
-    ],
-    "peopleKeys": [
-     "rabbi-gifter"
-    ],
     "t": 302.98,
     "end": 365.36
    },
@@ -1424,154 +1428,8 @@
      "en": "Reb Arele was always very weak; his daily food was a glass of borsht, which he would bring back up, living on the little that remained. Once he grew so weak that he could not move a finger, and the doctor said that this was the end. It was a night of Chanukah, and he signaled that the menorah be brought to his bed. With the greatest mesirus nefesh he said the brachah word by word, sat up, stood, and lit the Chanukah lights. He then asked that the doctor be called and began a fervent dance; the doctor, who had not wanted to come to a dying man, found him dancing, and Reb Arele told him he wanted him to see that there is a Ribono shel Olam who runs the world.",
      "yi": "רבי ארל'ע איז אלעמאל געווען זייער שוואך; זיין עסן יעדן טאג איז געווען א גלעזל בארשט, וואס ער האט אויסגעבראכן, און ער האט געלעבט פון דאס ביסל וואס איז געבליבן. איינמאל איז ער געווארן אזוי שוואך אז ער האט נישט געקענט רירן מיט א פינגער, און דער דאקטער האט געזאגט אז דאס איז דער סוף. ס'איז געווען חנוכה ביינאכט, און ער האט געמאכט א סימן מ'זאל אים צוברענגען די מנורה צום בעט. מיט די גרעסטע מסירת נפש האט ער געזאגט די ברכה ווארט ביי ווארט, זיך אויפגעזעצט, זיך אויפגעשטעלט און אנגעצונדן די חנוכה ליכט. דערנאך האט ער געהייסן רופן דעם דאקטער און האט אנגעהויבן טאנצן מיט התלהבות; דער דאקטער, וואס האט נישט געוואלט גיין צו א שטארבנדיגן מענטש, האט אים געטראפן טאנצן, און רבי ארל'ע האט אים געזאגט אז ער האט געוואלט ער זאל זען אז ס'איז דא א רבונו של עולם וואס פירט די וועלט."
     },
-    "people": [
-     "Reb Arele Roth"
-    ],
-    "peopleKeys": [
-     "rabbi-arele-roth"
-    ],
     "t": 2626,
     "end": 2791.36
-   }
-  ],
-  "people": [
-   {
-    "name": "Rav Gifter",
-    "key": "rabbi-gifter"
-   },
-   {
-    "name": "Rabbi Eliezer",
-    "key": "rabbi-eliezer"
-   },
-   {
-    "name": "Rabbi Yehoshua",
-    "key": "rabbi-yehoshua"
-   },
-   {
-    "name": "the Ostrovtzer Rebbe",
-    "key": "ostrovtzer-rebbe"
-   },
-   {
-    "name": "Eliyahu HaNavi",
-    "key": "eliyahu-hanavi"
-   },
-   {
-    "name": "Shlomo HaMelech",
-    "key": "shlomo-hamelech"
-   },
-   {
-    "name": "Adam HaRishon",
-    "key": "adam-harishon"
-   },
-   {
-    "name": "the Maharal",
-    "key": "maharal"
-   },
-   {
-    "name": "the Bnei Yissaschar",
-    "key": "bnei-yissaschar"
-   },
-   {
-    "name": "Moshe Rabbeinu",
-    "key": "moshe-rabbeinu"
-   },
-   {
-    "name": "Miriam",
-    "key": "miriam-haneviah"
-   },
-   {
-    "name": "Korach",
-    "key": "korach"
-   },
-   {
-    "name": "Rav Samson Raphael Hirsch",
-    "key": "rabbi-samson-raphael-hirsch"
-   },
-   {
-    "name": "Esther",
-    "key": "esther"
-   },
-   {
-    "name": "Avraham Avinu",
-    "key": "avraham-avinu"
-   },
-   {
-    "name": "Reb Arele Roth",
-    "key": "rabbi-arele-roth"
-   },
-   {
-    "name": "the Ba'al Shem Tov",
-    "key": "baal-shem-tov"
-   }
-  ],
-  "concepts": [
-   {
-    "he": "תרומת הדשן",
-    "key": "srvms-hdshn-bfc191"
-   },
-   {
-    "he": "זאת תורת העולה",
-    "key": "zas-svrs-hevlh-60e3bf"
-   },
-   {
-    "he": "אברים ופדרים",
-    "key": "abrym-vpdrym-71dc58"
-   },
-   {
-    "he": "עקבתא דמשיחא",
-    "key": "ekbsa-dmshycha-99233e"
-   },
-   {
-    "he": "ברכת החמה",
-    "key": "brks-hchmh-8e9432"
-   },
-   {
-    "he": "עולם מתוקן",
-    "key": "evlm-msvkn-1ec48d"
-   },
-   {
-    "he": "שבע יפול צדיק וקם",
-    "key": "shbe-ypvl-tzdyk-vkm-6d991e"
-   },
-   {
-    "he": "תחיית המתים",
-    "key": "schyys-hmsym-fa97ab"
-   },
-   {
-    "he": "מיכלא דמהימנותא",
-    "key": "mykla-dmhymnvsa-b1776c"
-   },
-   {
-    "he": "פטיר",
-    "key": "ptyr-56cb27"
-   },
-   {
-    "he": "אמונת חכמים",
-    "key": "amvns-chkmym-a5f3ec"
-   },
-   {
-    "he": "נעשה אדם",
-    "key": "neshh-adm-9ec8a3"
-   },
-   {
-    "he": "חשבון הנפש",
-    "key": "chshbvn-hnpsh-793e98"
-   },
-   {
-    "he": "יצר הרע",
-    "key": "ytzr-hre-b32929"
-   },
-   {
-    "he": "ברית בין הבתרים",
-    "key": "brys-byn-hbsrym-b23137"
-   },
-   {
-    "he": "שלישי למילה",
-    "key": "shlyshy-lmylh-47cef0"
-   },
-   {
-    "he": "מאמינים בני מאמינים",
-    "key": "mamynym-bny-mamynym-4f0bc8"
    }
   ],
   "writeupLangs": [

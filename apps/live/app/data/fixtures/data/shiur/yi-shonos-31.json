@@ -1,7 +1,7 @@
 {
- "schemaVersion": 4,
+ "schemaVersion": 5,
  "id": "yi-shonos-31",
- "rev": "b3e48830502a",
+ "rev": "2a3324ef4870",
  "lang": "yi",
  "category": "shonos",
  "catalog": {
@@ -385,20 +385,27 @@
    {
     "momentId": "yi-shonos-31~st0",
     "storyId": "the-author-of-unesaneh-tokef-asks-for-three-days",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": []
    },
    {
     "momentId": "yi-shonos-31~st1",
     "storyId": "the-girl-of-sedom-who-fed-a-poor-man",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Lot"
+     }
+    ]
    },
    {
     "momentId": "yi-shonos-31~st2",
     "storyId": "a-spoonful-every-hour",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": []
    }
   ],
   "insights": [
@@ -918,8 +925,6 @@
      "en": "The Rav contrasts Yehuda with the author of Unesaneh Tokef. When the king pressed him with his demand, he asked for three days to think it over. Yehuda, the Rav says, had no three days; he had to admit on the spot.",
      "yi": "דער משגיח שטעלט אוועק יהודה קעגן דעם מחבר פון ונתנה תוקף. ווען דער קעניג האט אים געדריקט מיט זיין פאדערונג, האט ער געבעטן דריי טעג איבערצוטראכטן. יהודה, זאגט דער משגיח, האט נישט געהאט קיין דריי טעג; ער האט געמוזט מודה זיין אויפן ארט."
     },
-    "people": [],
-    "peopleKeys": [],
     "t": 922.38,
     "end": 944.06,
     "soft": true
@@ -934,12 +939,6 @@
      "en": "In Sodom it was punishable to take in a guest or give charity. Citing a Midrash, the Rav tells that Lot had a daughter who gave bread to a poor man. The people of Sodom seized her, smeared her with honey and exposed her to the bees, and she was killed because she had given bread. This, the Rav says, shows that Lot's hospitality was real mesiras nefesh.",
      "yi": "אין סדום איז מען געווען באשטראפט פאר אריינעמען אן אורח אדער געבן צדקה. לויט א מדרש דערציילט דער משגיח אז לוט האט געהאט א טאכטער וואס האט געגעבן ברויט פאר אן ארעמאן. די אנשי סדום האבן זי געכאפט, באשמירט מיט האניג און אוועקגעשטעלט פאר די בינען, און זי איז אומגעקומען ווייל זי האט געגעבן ברויט. דאס, זאגט דער משגיח, ווייזט אז לוט'ס הכנסת אורחים איז געווען אמת'ע מסירת נפש."
     },
-    "people": [
-     "Lot"
-    ],
-    "peopleKeys": [
-     "lot"
-    ],
     "t": 1348.44,
     "end": 1404.31
    },
@@ -953,106 +952,8 @@
      "en": "A tzaddik in Yerushalayim, Reb Aryeh, had nothing to give the poor who came to him, so he would go with them door to door collecting tzedakah, and people knew to give him. Once he went around with one poor man, an hour later came another, and then a third, each time collecting again. One of the householders asked how much he could give, as this was the third time in three hours. Reb Aryeh answered that the doctor had prescribed a spoonful every hour.",
      "yi": "א צדיק אין ירושלים, ר' אריה, האט נישט געהאט וואס צו געבן פאר די ארעמעלייט וואס זענען צו אים געקומען, איז ער מיטגעגאנגען מיט זיי פון טיר צו טיר קלייבן צדקה, און מ'האט אים געגעבן. איינמאל איז ער ארומגעגאנגען מיט איין ארעמאן, א שעה שפעטער איז געקומען נאך איינער, און דערנאך א דריטער, און יעדעס מאל איז ער ווידער ארומגעגאנגען. האט איינער פון די בעלי בתים געפרעגט וויפיל ער קען נאך געבן, ס'איז שוין דאס דריטע מאל אין דריי שעה. האט ר' אריה געענטפערט אז דער דאקטער האט פארשריבן א לעפעלע יעדע שעה."
     },
-    "people": [
-     "Reb Aryeh"
-    ],
-    "peopleKeys": [
-     "rabbi-aryeh"
-    ],
     "t": 1564.32,
     "end": 1661.04
-   }
-  ],
-  "people": [
-   {
-    "name": "Pharaoh",
-    "key": "pharaoh"
-   },
-   {
-    "name": "Haman",
-    "key": "haman"
-   },
-   {
-    "name": "Mordechai",
-    "key": "mordechai"
-   },
-   {
-    "name": "Yehuda",
-    "key": "yehudah"
-   },
-   {
-    "name": "Tamar",
-    "key": "tamar"
-   },
-   {
-    "name": "Yaakov Avinu",
-    "key": "yaakov-avinu"
-   },
-   {
-    "name": "Er",
-    "key": "er"
-   },
-   {
-    "name": "Onan",
-    "key": "onan"
-   },
-   {
-    "name": "Peretz",
-    "key": "peretz"
-   },
-   {
-    "name": "Lot",
-    "key": "lot"
-   },
-   {
-    "name": "Avraham",
-    "key": "avraham-avinu"
-   },
-   {
-    "name": "Reb Aryeh",
-    "key": "rabbi-aryeh"
-   }
-  ],
-  "concepts": [
-   {
-    "he": "מסירת נפש",
-    "key": "msyrvs-npsh-a8d223"
-   },
-   {
-    "he": "הכנסת כלה",
-    "key": "hknss-klh-dee407"
-   },
-   {
-    "he": "הכנסת אורחים",
-    "key": "hknss-avrchym-f6fdcd"
-   },
-   {
-    "he": "שטן",
-    "key": "shtn-ecbd0e"
-   },
-   {
-    "he": "השגחה פרטית",
-    "key": "hshgchh-prtys-2f201f"
-   },
-   {
-    "he": "רבונו של עולם",
-    "key": "rbvnv-shl-evlm-52e424"
-   },
-   {
-    "he": "יציאת מצרים",
-    "key": "ytzyas-mtzrym-ff4d50"
-   },
-   {
-    "he": "יבום",
-    "key": "ybvm-daa773"
-   },
-   {
-    "he": "עובד השם",
-    "key": "evbd-hshm-6df52e"
-   },
-   {
-    "he": "יאוש",
-    "key": "yavsh-43cd21"
    }
   ],
   "writeupLangs": [

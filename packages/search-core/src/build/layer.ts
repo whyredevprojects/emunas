@@ -112,6 +112,35 @@ export function readSearchLayer(corpusDir: string, files: LayerFiles, shiurIds: 
       .filter((x): x is string => x !== null && facetIds.person.has(x));
     storyPeople.set(st.id, [...new Set(ids)].sort());
   }
+  const nonEmpty = (xs: unknown[]): string[] => {
+    const out: string[] = [];
+    for (const x of xs) {
+      const v = typeof x === "string" ? x.trim() : "";
+      if (v !== "" && !out.includes(v)) out.push(v);
+    }
+    return out;
+  };
+  const personNames = new Map<string, readonly string[]>();
+  for (const p of files.people.people) {
+    if (typeof p.id !== "string" || (p.excluded ?? null) !== null) continue;
+    const names = nonEmpty([p.nameEn, p.nameYi, p.nameHe]);
+    if (names.length > 0) personNames.set(p.id, names);
+  }
+  const conceptNames = new Map<string, readonly string[]>();
+  for (const c of files.concepts.concepts) {
+    if (typeof c.id !== "string" || !(c.count > 0)) continue;
+    const names = nonEmpty([c.canonicalHe, c.label?.en, c.label?.yi]);
+    if (names.length > 0) conceptNames.set(c.id, names);
+  }
+  const storyNames = new Map<string, readonly string[]>();
+  for (const st of files.stories?.stories ?? []) {
+    const names: string[] = [];
+    for (const p of arr<{ id?: unknown; name?: unknown }>(st.people)) {
+      const got = typeof p.id === "string" ? (personNames.get(p.id) ?? []) : nonEmpty([p.name]);
+      for (const n of got) if (!names.includes(n)) names.push(n);
+    }
+    if (names.length > 0) storyNames.set(st.id, names);
+  }
   const sectionConcepts = new Map<string, string[]>();
   for (const c of files.concepts.concepts) {
     if (!facetIds.concept.has(c.id)) continue;
@@ -123,7 +152,7 @@ export function readSearchLayer(corpusDir: string, files: LayerFiles, shiurIds: 
     }
   }
   for (const l of sectionConcepts.values()) l.sort();
-  return { topics, synonyms, refs, storyPeople, sectionConcepts, facetIds };
+  return { topics, synonyms, refs, storyPeople, personNames, conceptNames, storyNames, sectionConcepts, facetIds };
 }
 
 // ---------------------------------------------------------------- synonym check

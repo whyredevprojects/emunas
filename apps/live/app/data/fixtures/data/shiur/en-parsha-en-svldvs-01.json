@@ -1,7 +1,7 @@
 {
- "schemaVersion": 4,
+ "schemaVersion": 5,
  "id": "en-parsha-en-svldvs-01",
- "rev": "d275236a0eb7",
+ "rev": "0043d7173158",
  "lang": "en",
  "category": "parsha",
  "catalog": {
@@ -475,20 +475,44 @@
    {
     "momentId": "en-parsha-en-svldvs-01~st0",
     "storyId": "the-yismach-moshe-eats-the-dish-rag",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "the Yismach Moshe"
+     },
+     {
+      "name": "the Satmar Rav (Rabbi Yoel Teitelbaum)"
+     }
+    ]
    },
    {
     "momentId": "en-parsha-en-svldvs-01~st1",
     "storyId": "the-slonimer-rebbe-and-the-unimmersed-plates",
-    "tellings": 2,
-    "page": true
+    "otherShiurim": 1,
+    "page": true,
+    "people": [
+     {
+      "name": "the Beis Avraham of Slonim"
+     },
+     {
+      "name": "Zvulun (a Yerushalmi chassid)"
+     },
+     {
+      "name": "Reb Leib Osofsky"
+     }
+    ]
    },
    {
     "momentId": "en-parsha-en-svldvs-01~st2",
     "storyId": "the-cholent-of-reb-yechezkel-of-kuzmir",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rabbi Yechezkel of Kuzmir"
+     }
+    ]
    }
   ],
   "insights": []
@@ -1202,12 +1226,6 @@
      "en": "The wife of the Yismach Moshe had to go out one evening and asked him to serve himself supper from the pot on the stove. On the same stove stood a dirty pot soaking in soapy water. He warmed the wrong pot and ate the soapy water for supper. When his wife returned and discovered it, it was clear he had not known the difference.",
      "yi": "דעם ישמח משה'ס ווייב האט געדארפט ארויסגיין איין אוונט, און זי האט אים געבעטן ער זאל זיך אליין דערלאנגען וועטשערע פונעם טאפ אויפ'ן אויוון. אויפ'ן זעלבן אויוון איז געשטאנען א שמוציגער טאפ מיט זייף-וואסער. ער האט אנגעווארעמט דעם אומריכטיגן טאפ און געגעסן דאס זייף-וואסער. ווען זי איז צוריקגעקומען און דאס אנטדעקט, האט מען געזען אז ער האט נישט געוואוסט דעם חילוק."
     },
-    "people": [
-     "the Yismach Moshe"
-    ],
-    "peopleKeys": [
-     "yismach-moshe"
-    ],
     "t": 3001.01,
     "end": 3097.77
    },
@@ -1221,12 +1239,6 @@
      "en": "On a visit to Yerushalayim the Slonimer Rebbe ate each night at a different chassid's house, and once chose a poor, G-d-fearing man without a beard. When the fish was served the Rebbe did not eat, and asked for a big plate; the host looked at a man with a long beard from whom he had borrowed the plates. The Rebbe asked that man whether the plates were immersed in a mikveh, and he said no, relying on poskim. The Rebbe told the host that above they would ask him 'Jew, where is your beard?', but the other man 'Beard, where is your Jew?'",
      "yi": "ווען דער סלאנימער רבי איז געווען אין ירושלים, האט ער יעדע נאכט געגעסן ביי אן אנדער חסיד, און איינמאל האט ער אויסגעקליבן א ארעמען ירא שמים אן א בארד. ווען מ'האט דערלאנגט פיש, האט דער רבי נישט געגעסן, און ער האט געבעטן א גרויסן טעלער; דער בעל הבית האט א קוק געטון אויף א איד מיט א לאנגע בארד ביי וועם ער האט געבארגט די טעלערס. דער רבי האט געפרעגט יענעם איד צי די טעלערס זענען געטובל'ט, און ער האט געזאגט ניין, ער פירט זיך לויט פוסקים. דער רבי האט געזאגט פארן בעל הבית אז אויבן וועט מען אים פרעגן \"איד, וואו איז דיין בארד?\", אבער דעם אנדערן \"בארד, וואו איז דיין איד?\""
     },
-    "people": [
-     "the Slonimer Rebbe"
-    ],
-    "peopleKeys": [
-     "slonimer-rebbe"
-    ],
     "t": 3457.3,
     "end": 3696.61
    },
@@ -1240,146 +1252,8 @@
      "en": "A great rav spent a Shabbos with a tzaddik about 150 years ago and found the chulent more delicious than any he had eaten. He asked the Rebbetzin for the recipe, but when his wife followed it the chulent was ordinary. The next time he came, the Rebbetzin explained what was missing: every Friday her husband the tzaddik came into the kitchen and threw a handful of beans into the pot himself.",
      "yi": "א גרויסער רב איז געווען א שבת ביי א צדיק מיט ארום הונדערט פופציג יאר צוריק, און דער טשאלנט האט אים געשמעקט ווי קיינמאל פריער. ער האט געבעטן ביי דער רביצין דעם רעצעפט, אבער ווען זיין ווייב האט אים נאכגעטון, איז געווען א פשוט'ער טשאלנט. דאס קומענדיגע מאל האט די רביצין אים ערקלערט וואס פעלט: יעדן ערב שבת קומט איר מאן דער צדיק אריין אין קיך און ווארפט אליין א האנטפול בעבלעך אין טאפ."
     },
-    "people": [],
-    "peopleKeys": [],
     "t": 3936.28,
     "end": 4047.15
-   }
-  ],
-  "people": [
-   {
-    "name": "Yitzchak",
-    "key": "yitzchak-avinu"
-   },
-   {
-    "name": "Esav",
-    "key": "esav"
-   },
-   {
-    "name": "Yaakov",
-    "key": "yaakov-avinu"
-   },
-   {
-    "name": "Avraham Avinu",
-    "key": "avraham-avinu"
-   },
-   {
-    "name": "Nimrod",
-    "key": "nimrod"
-   },
-   {
-    "name": "Rivka",
-    "key": "rivkah-imeinu"
-   },
-   {
-    "name": "Yosef",
-    "key": "yosef-hatzaddik"
-   },
-   {
-    "name": "Eliyahu HaNavi",
-    "key": "eliyahu-hanavi"
-   },
-   {
-    "name": "Elisha",
-    "key": "elisha"
-   },
-   {
-    "name": "Moshe Rabbeinu",
-    "key": "moshe-rabbeinu"
-   },
-   {
-    "name": "the Chasam Sofer",
-    "key": "chasam-sofer"
-   },
-   {
-    "name": "Rabbi Nosson Adler",
-    "key": "rabbi-nosson-adler"
-   },
-   {
-    "name": "Rabbi Yehoshua ben Chananya",
-    "key": "rabbi-yehoshua-ben-chananya"
-   },
-   {
-    "name": "Chushim ben Dan",
-    "key": "chushim-ben-dan"
-   },
-   {
-    "name": "Naftali",
-    "key": "naftali"
-   },
-   {
-    "name": "the Yismach Moshe",
-    "key": "yismach-moshe"
-   },
-   {
-    "name": "the Slonimer Rebbe",
-    "key": "slonimer-rebbe"
-   }
-  ],
-  "concepts": [
-   {
-    "he": "ברכה",
-    "key": "brkh-086007"
-   },
-   {
-    "he": "שלום",
-    "key": "shlvm-0b8351"
-   },
-   {
-    "he": "אושפיזין",
-    "key": "avshpyzyn-df018b"
-   },
-   {
-    "he": "בכורה",
-    "key": "bkvrh-1d4a5e"
-   },
-   {
-    "he": "אפיקורס",
-    "key": "apykvrs-b63d5c"
-   },
-   {
-    "he": "תחיית המתים",
-    "key": "schyys-hmsym-fa97ab"
-   },
-   {
-    "he": "י\"ג עיקרים",
-    "key": "yg-eykrym-dbe5ec"
-   },
-   {
-    "he": "פי שנים",
-    "key": "py-shnym-f61d72"
-   },
-   {
-    "he": "קדושה",
-    "key": "kdvshh-2d0766"
-   },
-   {
-    "he": "טומאה",
-    "key": "tvmah-577ade"
-   },
-   {
-    "he": "ל\"ו צדיקים",
-    "key": "lv-tzdykym-39b7db"
-   },
-   {
-    "he": "לשם מצות מצוה",
-    "key": "lshm-mtzvs-mtzvh-8bac78"
-   },
-   {
-    "he": "מכרה כיום",
-    "key": "mkrh-kyvm-14536c"
-   },
-   {
-    "he": "היום לעשותם ומחר לקבל שכרם",
-    "key": "hyvm-leshvsm-vmchr-lkbl-shkrm-aedde8"
-   },
-   {
-    "he": "אכול ושתו כי מחר נמות",
-    "key": "akvl-vshsv-ky-mchr-nmvs-d82d92"
-   },
-   {
-    "he": "מערת המכפלה",
-    "key": "mers-hmkplh-1a3fe9"
    }
   ],
   "writeupLangs": [

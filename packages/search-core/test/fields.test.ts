@@ -31,7 +31,7 @@ import {
   readSearchLayerInput,
   writeSearchOutputs,
 } from "../src/build/index.ts";
-import { MINI_POLICY, PKG, allKeys, allStrings, buildCorpusTo, miniCopy, readNdjson } from "./helpers.ts";
+import { MINI_POLICY, PKG, allKeys, allStrings, buildCorpusTo, corpusDataDir, miniCopy, readNdjson } from "./helpers.ts";
 
 /** Planted in an extraction's retired topic list: it must not reach any output. */
 const SENTINEL = "zqxvplanted keyword phrase";
@@ -252,7 +252,14 @@ describe("search outputs on the corpus layer (mini corpus)", () => {
     expect(d.years).toEqual(expect.arrayContaining(["5736", 'תשל"ו']));
     expect(d.sections).toHaveLength(s.notes!.chapters.length);
     expect(d.questions[0]).toEqual(s.notes!.questions[0]!.q);
-    expect(d.people).toContain("the Rambam");
+    const r = refs(d.id)!;
+    const personById = new Map(people.people.map((p) => [p.id, p]));
+    const want = r.personIds.flatMap((id) => {
+      const p = personById.get(id);
+      return p && p.excluded === null ? [p.nameEn, p.nameYi, p.nameHe].filter((x) => x.trim() !== "") : [];
+    });
+    expect(want.length).toBeGreaterThan(0);
+    expect(d.people).toEqual(expect.arrayContaining([...new Set(want)]));
     expect(d.sources[0]).toEqual({ work: "Mishnah Sukkah", ref: "Mishnah Sukkah 2:9" });
     const answer = s.notes!.questions[0]!.a.en;
     expect(allStrings(d).some((x) => x.value === answer)).toBe(false);
@@ -261,6 +268,55 @@ describe("search outputs on the corpus layer (mini corpus)", () => {
     expect(allStrings(d).some((x) => x.value === para.text)).toBe(false);
     const row = moments.find((m) => m.id === para.id)!;
     expect(row).toMatchObject({ kind: "writeup", body_en: para.text, body_yi: null, t: para.t });
+  });
+});
+
+describe("person and concept names come only from the corpus layer (F.1)", () => {
+  const { docs, shiurim, data, corpus } = setup();
+  // Display names of every corpus entity (the corpus data, as the guard reads them): a story may
+  // name a "person" that the corpus now files as a concept.
+  const read = (f: string) => JSON.parse(readFileSync(join(corpusDataDir(data), f), "utf8")) as Record<string, unknown>[];
+  const display = new Set<string>();
+  const add = (...xs: unknown[]) => {
+    for (const x of xs) if (typeof x === "string" && x.trim() !== "") display.add(x.trim());
+  };
+  for (const p of read("people.json")) add(p["nameEn"], p["nameYi"], p["nameHe"]);
+  for (const c of read("concepts.json")) {
+    const l = (c["label"] ?? {}) as Record<string, unknown>;
+    add(c["canonicalHe"], l["en"], l["yi"]);
+  }
+  const concepts = JSON.parse(readFileSync(join(corpus, "layer/concepts.json"), "utf8")) as {
+    concepts: { canonicalHe: string; label: { en: string; yi: string } }[];
+  };
+  const conceptDisplay = new Set(concepts.concepts.flatMap((c) => [c.canonicalHe, c.label.en, c.label.yi]).map((x) => x.trim()));
+
+  it("every SearchDoc person name is a display name of a corpus person", () => {
+    const named = docs.filter((d) => d.people.length > 0);
+    expect(named.length).toBeGreaterThan(0);
+    for (const d of docs) for (const n of d.people) expect(display.has(n), `${d.id} person ${n}`).toBe(true);
+    for (const d of docs) for (const n of d.concepts) expect(conceptDisplay.has(n), `${d.id} concept ${n}`).toBe(true);
+  });
+
+  it("an extraction name with no corpus entity is never indexed", () => {
+    // Every raw name in the extractions that is not some person's display name: none may be indexed.
+    const raw = new Set<string>();
+    for (const s of shiurim) {
+      if (s.status !== "full") continue;
+      const ex = JSON.parse(readFileSync(join(data, "derived/shiurim", s.id, "extraction.json"), "utf8")) as {
+        people: { name: string }[];
+        stories: { people: string[] }[];
+      };
+      for (const n of [...ex.people.map((p) => p.name), ...ex.stories.flatMap((x) => x.people)]) if (!display.has(n.trim())) raw.add(n);
+    }
+    expect(raw.size).toBeGreaterThan(0);
+    for (const d of docs) for (const n of d.people) expect(raw.has(n)).toBe(false);
+  });
+
+  it("without the layer a doc indexes no names", () => {
+    const s = shiurim.find((x) => x.status === "full")!;
+    const d = buildSearchDoc({ shiur: s });
+    expect(d.people).toEqual([]);
+    expect(d.concepts).toEqual([]);
   });
 });
 

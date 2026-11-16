@@ -1,7 +1,7 @@
 {
- "schemaVersion": 4,
+ "schemaVersion": 5,
  "id": "yi-shonos-10",
- "rev": "3da65830148a",
+ "rev": "57a966d8f649",
  "lang": "yi",
  "category": "shonos",
  "catalog": {
@@ -327,26 +327,52 @@
    {
     "momentId": "yi-shonos-10~st0",
     "storyId": "the-baal-hatanya-and-the-minister-where-are-you",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "id": "baal-hatanya",
+      "label": {
+       "en": "the Baal HaTanya (Rabbi Shneur Zalman of Liadi)",
+       "yi": "דער בעל התניא",
+       "he": "רבי שניאור זלמן מלאדי"
+      },
+      "page": true
+     },
+     {
+      "id": "adam-harishon",
+      "label": {
+       "en": "Adam HaRishon",
+       "yi": "אדם הראשון"
+      },
+      "page": true
+     }
+    ]
    },
    {
     "momentId": "yi-shonos-10~st1",
     "storyId": "the-ravs-first-telephone",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": []
    },
    {
     "momentId": "yi-shonos-10~st2",
     "storyId": "the-man-who-wanted-his-cell-phone-in-the-beis-medrash",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": []
    },
    {
     "momentId": "yi-shonos-10~st3",
     "storyId": "the-skverer-rebbe-and-the-young-mans-mikveh",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Reb Dovid'l of Skver"
+     }
+    ]
    }
   ],
   "insights": []
@@ -878,12 +904,6 @@
      "en": "While the Ba'al HaTanya was imprisoned, his gentile jailer asked him about the verse 'ayeka', where are you. The Ba'al HaTanya answered by telling him his exact age, in years, months, weeks, days and hours, and asked why in all that time he had never thought about what he is doing in the world. The jailer was deeply moved, because the age was exactly right.",
      "yi": "ווען דער בעל התניא איז געזעסן אין תפיסה, האט דער גוי וואס האט אים געהיטן געפרעגט וועגן דעם פסוק \"איכה\". דער בעל התניא האט אים געענטפערט מיט זיין פונקטליכן עלטער, אין יארן, חדשים, וואכן, טעג און שעה'ן, און געפרעגט פארוואס ער האט אין דער גאנצער צייט קיינמאל נישט געטראכט וואס ער טוט אויף דער וועלט. דער גוי איז שטארק נתפעל געווארן, ווייל דער עלטער איז געווען פונקט ריכטיג."
     },
-    "people": [
-     "the Ba'al HaTanya"
-    ],
-    "peopleKeys": [
-     "baal-hatanya"
-    ],
     "t": 770.58,
     "end": 851.3
    },
@@ -897,8 +917,6 @@
      "en": "The Rav recalls that after his wedding he did not want a telephone at all. Then one night someone broke into their home, they were frightened and could not sleep, and only then did he get a phone so that they could call for help.",
      "yi": "דער משגיח דערמאנט זיך אז נאך זיין חתונה האט ער בכלל נישט געוואלט האבן קיין טעלעפאן. איין נאכט האט מען אריינגעכאפט אין זייער שטוב, מ'איז געווען דערשראקן און נישט געקענט שלאפן, און ערשט דעמאלט האט ער איינגעשטעלט א טעלעפאן כדי מ'זאל קענען רופן הילף."
     },
-    "people": [],
-    "peopleKeys": [],
     "t": 1232.88,
     "end": 1268.94
    },
@@ -912,8 +930,6 @@
      "en": "When a sign was put up in the beis medrash asking that cell phones not be brought in, a man came to the Rav to protest. He said he wants to sit and learn, but as a real estate owner he must have his phone in case of an emergency such as a fire. The Rav says the man simply did not understand that a ringing phone takes away the seriousness of the beis medrash.",
      "yi": "ווען מ'האט אויפגעהאנגען א שילד אין בית המדרש אז מ'זאל נישט האבן קיין סעלפאנס, איז א איד געקומען צום משגיח זיך באקלאגן. ער האט געזאגט אז ער וויל זיצן און לערנען, אבער ווייל ער האט ריעל עסטעיט מוז ער האבן דעם טעלעפאן אויב עס מאכט זיך אן עמערדזשענסי ווי א פייער. דער משגיח זאגט אז דער איד האט פשוט נישט פארשטאנען אז א טעלעפאן וואס קלינגט נעמט צו די ערנסטקייט פונעם בית המדרש."
     },
-    "people": [],
-    "peopleKeys": [],
     "t": 1534.87,
     "end": 1616.49
    },
@@ -927,103 +943,9 @@
      "en": "A young man eating at his father-in-law's table began going to the mikveh ten or fifteen times a day, and the father-in-law was unhappy and brought him to Reb Duvid'l of Skver. Asked why he did this, the young man answered that the Rebbe himself goes very often to the mikveh. The Rav brings the story to ask whether every practice of the Rebbes must be imitated.",
      "yi": "א יונגערמאן וואס איז געזעסן אויף קעסט ביים שווער האט זיך גענומען גיין אין מקוה צען, פופצן מאל א טאג, און דער שווער איז נישט געווען צופרידן און האט אים געברענגט צו ר' דוד'ל סקווירער. ווען מ'האט אים געפרעגט פארוואס ער טוט אזוי, האט ער געענטפערט אז דער רבי אליין גייט זייער אסאך אין מקוה. דער משגיח ברענגט די מעשה צו פרעגן צי מ'מוז נאכטון די רביים אין אלע זאכן."
     },
-    "people": [
-     "Reb Duvid'l of Skver"
-    ],
-    "peopleKeys": [
-     "rabbi-duvidl-of-skver"
-    ],
     "t": 1857.68,
     "end": 1913.88,
     "soft": true
-   }
-  ],
-  "people": [
-   {
-    "name": "Reb Elchonon Wasserman",
-    "key": "rabbi-elchonon-wasserman"
-   },
-   {
-    "name": "Moshe Rabbeinu",
-    "key": "moshe-rabbeinu"
-   },
-   {
-    "name": "Pharaoh",
-    "key": "pharaoh"
-   },
-   {
-    "name": "Yaakov Avinu",
-    "key": "yaakov-avinu"
-   },
-   {
-    "name": "Yosef HaTzaddik",
-    "key": "yosef-hatzaddik"
-   },
-   {
-    "name": "the Ba'al Shem Tov",
-    "key": "baal-shem-tov"
-   },
-   {
-    "name": "Reb Mottele of Chernobyl",
-    "key": "rabbi-mottele-of-chernobyl"
-   },
-   {
-    "name": "the Trisker Maggid",
-    "key": "trisker-maggid"
-   },
-   {
-    "name": "the Ba'al HaTanya",
-    "key": "baal-hatanya"
-   },
-   {
-    "name": "the Lubavitcher Rebbe",
-    "key": "lubavitcher-rebbe"
-   },
-   {
-    "name": "Reb Duvid'l of Skver",
-    "key": "rabbi-duvidl-of-skver"
-   }
-  ],
-  "concepts": [
-   {
-    "he": "תכבד העבודה",
-    "key": "skbd-hebvdh-dd3258"
-   },
-   {
-    "he": "ישוב הדעת",
-    "key": "yshvb-hdes-178900"
-   },
-   {
-    "he": "קליפה",
-    "key": "klyph-ab9afa"
-   },
-   {
-    "he": "מבית עבדים",
-    "key": "mbys-ebdym-13bcf5"
-   },
-   {
-    "he": "סטרא אחרא",
-    "key": "stra-achra-b50a94"
-   },
-   {
-    "he": "מנוחת הנפש",
-    "key": "mnvchs-hnpsh-fd60d9"
-   },
-   {
-    "he": "איכה",
-    "key": "aykh-7e4749"
-   },
-   {
-    "he": "חשבון הנפש",
-    "key": "chshbvn-hnpsh-793e98"
-   },
-   {
-    "he": "שבע ברכות",
-    "key": "shbe-brkvs-a0ae09"
-   },
-   {
-    "he": "פשיעה",
-    "key": "pshyeh-636f5b"
    }
   ],
   "writeupLangs": [

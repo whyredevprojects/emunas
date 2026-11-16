@@ -8,11 +8,9 @@ import { pageLookupFromLayer } from "@emunas/links";
 import { describe, expect, it } from "vitest";
 import {
   entryHref,
-  foldName,
   mentionedView,
   sourceLinks,
   storyLines,
-  tellingName,
   topicLine,
   TOPIC_LINE_MAX,
   type ShiurLayer,
@@ -279,17 +277,25 @@ describe("storyLines", () => {
     expect(m.has("s1~st4")).toBe(false);
   });
 
-  it("gives a telling's names the edition's spelling when they are the story's people", () => {
+  it("names the merged story's people in the edition's spelling; never a telling's raw name (F.1)", () => {
     const withPeople: ShiurLayer = {
       ...layer,
-      story: (id) => (id === "twice" ? story("twice", ["s1", "s2"], { people: [{ id: "divrei-chaim" }, { id: "ravs-father" }, { name: "a wagon driver", linked: false }] }) : undefined),
+      story: (id) =>
+        id === "twice"
+          ? story("twice", ["s1", "s2"], {
+              people: [{ id: "divrei-chaim" }, { id: "ravs-father" }, { name: "the Yeshuos Yaakov", linked: false }, { id: "divrei-chaim" }, { name: " ", linked: false }],
+            })
+          : undefined,
     };
-    const line = storyLines("yi", withPeople, "s1", refs).get("s1~st0");
-    expect(tellingName(line, "the Sanzer Rav")).toBe("דער דברי חיים");
-    expect(tellingName(line, "The Divrei Chaim")).toBe("דער דברי חיים");
-    expect(tellingName(line, "ravs-father-en")).toBe("ravs-father-en");
-    expect(tellingName(line, "a wagon driver")).toBe("a wagon driver");
-    expect(tellingName(undefined, "x")).toBe("x");
-    expect(foldName("  The  Sanzer-Rav ")).toBe("the sanzerrav");
+    const line = storyLines("yi", withPeople, "s1", refs).get("s1~st0")!;
+    // The family member is left out; a plain layer name (an entity's display name) is printed as is.
+    expect(line.people).toEqual([
+      { id: "divrei-chaim", name: "דער דברי חיים", href: "/yi/people/divrei-chaim/", hebrew: true },
+      { id: "", name: "the Yeshuos Yaakov", href: null, hebrew: false },
+    ]);
+    const en = storyLines("en", withPeople, "s1", refs).get("s1~st0")!;
+    expect(en.people.map((p) => p.name)).toEqual(["The Divrei Chaim", "the Yeshuos Yaakov"]);
+    // A story the layer gives no people names no one.
+    expect(storyLines("en", layer, "s1", refs).get("s1~st2")!.people).toEqual([]);
   });
 });

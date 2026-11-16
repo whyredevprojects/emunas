@@ -7,16 +7,18 @@
  * are empty.
  *
  * A story told in other shiurim too (two or more visible tellings in the corpus layer) gains one
- * line, "told in N other shiurim →", linking to the story's entry (concept-quiet-corpus C4.5). The
- * names in a story are printed as this telling gives them, in the edition's spelling when they are
- * one of the merged story's people. No teaching-cluster (עיין) lines in this cut.
+ * line, "told in N other shiurim →", linking to the story's entry (concept-quiet-corpus C4.5),
+ * counted in distinct shiurim. The people of a story are the merged story's people from the corpus
+ * layer, in the edition's spelling, each marked `data-story-person` for the guard; the extraction's
+ * raw names (possible ASR mishearings) are never printed (F.1). No teaching-cluster (עיין) lines in
+ * this cut.
  */
 import { corpusLabel } from "@emunas/i18n";
 import type { PublicNotes, PublicRecording } from "@emunas/corpus/public";
 import Time from "./Time.astro";
 import type { Ed } from "../../lib/edition.ts";
 import { useShiurT } from "./strings.ts";
-import { tellingName, type StoryLine } from "./refs.ts";
+import type { NamedLink, StoryLine } from "./refs.ts";
 import { hasApparatus } from "./view.ts";
 
 interface Props {
@@ -36,6 +38,7 @@ const moments = [
   { id: "takeaways", heading: t("takeaways.heading"), items: notes.takeaways },
 ] as const;
 const [keyPoints, insights, takeaways] = moments;
+const attrs = (n: NamedLink) => (n.hebrew ? { lang: ed === "yi" ? "yi" : "he", dir: "rtl" } : { lang: "en", dir: "ltr" });
 ---
 {hasApparatus(notes) && (
   <div class="apparatus" id="apparatus">
@@ -83,10 +86,12 @@ const [keyPoints, insights, takeaways] = moments;
                 {s.title[ed]}
               </h3>
               {s.retelling[ed] !== "" && <p>{s.retelling[ed]}</p>}
-              {s.people.length > 0 && (
+              {line && line.people.length > 0 && (
                 <p class="story-people">
                   {t("stories.people")}{" "}
-                  {s.people.map((name, i) => <>{i > 0 && ", "}{tellingName(line, name)}</>)}
+                  {line.people.map((n, i) => (
+                    <>{i > 0 && ", "}{n.href ? <a href={n.href}><bdi {...attrs(n)} data-story-person>{n.name}</bdi></a> : <bdi {...attrs(n)} data-story-person>{n.name}</bdi>}</>
+                  ))}
                 </p>
               )}
               {line && line.otherShiurim > 0 && (

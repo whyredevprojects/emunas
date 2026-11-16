@@ -88,15 +88,14 @@ describe("aggregates on real data", () => {
     expect(r.info.counts.total).toBe(inScope.length);
     const report = readJson<BuildReport>(join(out, "build-report.json"));
     expect(report.unmapped.work.length).toBeGreaterThan(0);
-    expect(report.unmapped.person.length).toBeGreaterThan(0);
+    expect(report.unmapped.person).toEqual([]);
     const works = readJson<Aggregates["works"]>(join(out, AGGREGATE_FILES.works)).works;
     const byKey = new Map(works.map((w) => [w.key, w]));
     for (const u of report.unmapped.work) {
       expect(byKey.get(u.key)?.mapped, u.raw).toBe(false);
     }
     console.log(
-      `aggregates: ${works.length} works (${report.unmapped.work.length} unmapped strings), ` +
-        `${report.unmapped.person.length} unmapped people`,
+      `aggregates: ${works.length} works (${report.unmapped.work.length} unmapped strings)`,
     );
   });
 });

@@ -1,7 +1,7 @@
 {
- "schemaVersion": 4,
+ "schemaVersion": 5,
  "id": "en-zmanim-en-tv-bshbt-01",
- "rev": "484d38d8fa3a",
+ "rev": "91516efc2517",
  "lang": "en",
  "category": "zman",
  "catalog": {
@@ -588,8 +588,24 @@
    {
     "momentId": "en-zmanim-en-tv-bshbt-01~st0",
     "storyId": "the-ohr-hachaim-and-the-two-dogs",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "the Ohr HaChaim HaKadosh"
+     },
+     {
+      "id": "yaakov-avinu",
+      "label": {
+       "en": "Yaakov Avinu",
+       "yi": "יעקב אבינו"
+      },
+      "page": true
+     },
+     {
+      "name": "Ahavas Yisrael (love of a fellow Jew)"
+     }
+    ]
    }
   ],
   "insights": []
@@ -1267,158 +1283,8 @@
      "en": "The Rav relates what the Ohr HaChaim writes in Parshas Vayechi: he had a dream in which the power of tumah appeared to him as two dogs, a male and a female. The male he overpowered immediately. With the female he had a very hard time, and even when he overpowered it, it was not completely.",
      "yi": "דער משגיח דערציילט וואס דער אור החיים שרייבט אין פרשת ויחי: ער האט געהאט א חלום וואו דער כח הטומאה האט זיך אים באוויזן ווי צוויי הינט, א זכר און א נקבה. דעם זכר האט ער גלייך באזיגט. מיט דער נקבה האט ער געהאט זייער שווער, און אפילו ווען ער האט זי באזיגט, איז עס נישט געווען אינגאנצן."
     },
-    "people": [
-     "the Ohr HaChaim"
-    ],
-    "peopleKeys": [
-     "ohr-hachaim"
-    ],
     "t": 2427.8,
     "end": 2459.42
-   }
-  ],
-  "people": [
-   {
-    "name": "the Ba'al HaTanya",
-    "key": "baal-hatanya"
-   },
-   {
-    "name": "Rashi",
-    "key": "rashi"
-   },
-   {
-    "name": "Yaakov",
-    "key": "yaakov-avinu"
-   },
-   {
-    "name": "Esav",
-    "key": "esav"
-   },
-   {
-    "name": "Rachel",
-    "key": "rachel-imeinu"
-   },
-   {
-    "name": "Bilhah",
-    "key": "bilha"
-   },
-   {
-    "name": "Avraham",
-    "key": "avraham-avinu"
-   },
-   {
-    "name": "Vashti",
-    "key": "vashti"
-   },
-   {
-    "name": "Achashverosh",
-    "key": "achashverosh"
-   },
-   {
-    "name": "Rebbe Nachman of Breslov",
-    "key": "rabbi-nachman-of-breslov"
-   },
-   {
-    "name": "the Divrei Chaim of Sanz",
-    "key": "sanzer-rav"
-   },
-   {
-    "name": "the Ohr HaChaim",
-    "key": "ohr-hachaim"
-   },
-   {
-    "name": "the Bnei Yissaschar",
-    "key": "bnei-yissaschar"
-   },
-   {
-    "name": "Adam HaRishon",
-    "key": "adam-harishon"
-   }
-  ],
-  "concepts": [
-   {
-    "he": "צירופי החודש",
-    "key": "tzyrvpy-hchvdsh-52850e"
-   },
-   {
-    "he": "שם הוי\"ה",
-    "key": "shm-hvyh-ebf833"
-   },
-   {
-    "he": "שם אדנות",
-    "key": "shm-adnvs-85c765"
-   },
-   {
-    "he": "מדת החסד",
-    "key": "mds-hchsd-8a2d8f"
-   },
-   {
-    "he": "מדת הדין",
-    "key": "mds-hdyn-1c0cfd"
-   },
-   {
-    "he": "זכר",
-    "key": "zkr-7c9904"
-   },
-   {
-    "he": "נקבה",
-    "key": "nkbh-2f8e40"
-   },
-   {
-    "he": "משפיע",
-    "key": "mshpye-57cc67"
-   },
-   {
-    "he": "מקבלת",
-    "key": "mkbls-8646fb"
-   },
-   {
-    "he": "המתקה",
-    "key": "hmskh-490f89"
-   },
-   {
-    "he": "ראשי תיבות",
-    "key": "rashy-sybvs-096cab"
-   },
-   {
-    "he": "סופי תיבות",
-    "key": "svpy-sybvs-38eb79"
-   },
-   {
-    "he": "ט\"ו בשבט",
-    "key": "tv-bshbt-9f765e"
-   },
-   {
-    "he": "שרף",
-    "key": "shrf-f8e756"
-   },
-   {
-    "he": "אילן",
-    "key": "ayln-33539f"
-   },
-   {
-    "he": "טומאה",
-    "key": "tvmah-577ade"
-   },
-   {
-    "he": "סטרא אחרא",
-    "key": "stra-achra-b50a94"
-   },
-   {
-    "he": "כנסת ישראל",
-    "key": "knss-yshral-315464"
-   },
-   {
-    "he": "אתרוג",
-    "key": "asrvg-35777d"
-   },
-   {
-    "he": "פרי עץ הדר",
-    "key": "pry-etz-hdr-20aad7"
-   },
-   {
-    "he": "אילני סרק",
-    "key": "aylny-srk-d4eaa4"
    }
   ],
   "writeupLangs": [

@@ -91,6 +91,14 @@ export function topicKeywords(topicIds: readonly string[], layer: SearchLayer): 
 const keep = (set: ReadonlySet<string> | undefined, ids: Iterable<string | null | undefined>): string[] =>
   sortedUniq([...ids].filter((x) => typeof x === "string" && set !== undefined && set.has(x)));
 
+/** Display names of the shiur's people and of the people of its merged stories, from the layer. */
+function personNamesOf(refs: LayerShiurRefs, layer: SearchLayer): string[] {
+  return uniq([
+    ...listOf(refs.personIds).flatMap((id) => layer.personNames.get(id) ?? []),
+    ...listOf(refs.stories).flatMap((x) => layer.storyNames.get(x.storyId) ?? []),
+  ]);
+}
+
 /** Build one SearchDoc. */
 export function buildSearchDoc(input: SearchInput): SearchDoc {
   const s = input.shiur;
@@ -143,8 +151,10 @@ export function buildSearchDoc(input: SearchInput): SearchDoc {
     storyTitles: (n?.stories ?? []).map((st) => lcopy(st.title)).filter(present),
     questions: (n?.questions ?? []).map((q) => lcopy(q.q)).filter(present),
     sources,
-    people: uniq([...(n?.people ?? []).map((p) => p.name), ...(n?.stories ?? []).flatMap((st) => st.people)]),
-    concepts: uniq((n?.concepts ?? []).map((c) => c.he)),
+    // Names only from the corpus layer (entities' own display names); raw extraction names, which
+    // may be ASR mishearings, are never indexed (F.1). Without layer refs: none.
+    people: refs && layer ? personNamesOf(refs, layer) : [],
+    concepts: refs && layer ? uniq(listOf(refs.conceptIds).flatMap((id) => layer.conceptNames.get(id) ?? [])) : [],
     // Topic labels and aliases only here, and only for full shiurim in the visible set.
     keywords: refs && layer ? topicKeywords(shiurTopicIds(refs, layer), layer) : [],
     facets,

@@ -352,6 +352,77 @@ describe("corpus-layer files on the mini corpus", () => {
     expect(named).toBeGreaterThan(0);
   });
 
+  it("shiur files publish no raw extraction name: story people come from the merged story only (F.1)", () => {
+    const rawPeople = JSON.parse(readFileSync(join(MINI_DATA, "derived", "corpus", "people.json"), "utf8")) as { nameEn: string }[];
+    const rawConcepts = JSON.parse(readFileSync(join(MINI_DATA, "derived", "corpus", "concepts.json"), "utf8")) as { label: { en: string } }[];
+    const display = new Set([...rawPeople.map((p) => p.nameEn), ...rawConcepts.map((c) => c.label.en)]);
+    let named = 0;
+    let chips = 0;
+    for (const f of under("shiur/")) {
+      const file = get<ShiurFile>(f);
+      const notes = file.notes as unknown as Record<string, unknown> | undefined;
+      if (notes) {
+        expect(Object.keys(notes)).not.toContain("people");
+        expect(Object.keys(notes)).not.toContain("concepts");
+        for (const st of file.notes!.stories) expect(Object.keys(st), f).not.toContain("people");
+      }
+      // Every name the shiur file carries is a corpus entity's display name; extraction names never.
+      if (file.status !== "full") continue;
+      const ex = JSON.parse(readFileSync(join(MINI_DATA, "derived", "shiurim", file.id, "extraction.json"), "utf8")) as {
+        stories?: { people?: string[] }[];
+        people?: { name: string }[];
+      };
+      // (A source's work string is the cited work, not a person: "Bnei Yissaschar" is both.)
+      const text = JSON.stringify({ ...file, notes: file.notes ? { ...file.notes, sources: [] } : undefined });
+      for (const n of [...(ex.people ?? []).map((p) => p.name), ...(ex.stories ?? []).flatMap((x) => x.people ?? [])]) {
+        if (!display.has(n)) expect(text, `${f}: ${n}`).not.toContain(JSON.stringify(n));
+      }
+      for (const x of file.corpus?.stories ?? []) {
+        for (const p of x.people) {
+          if ("name" in p) {
+            named++;
+            expect(display.has(p.name), `${f}: ${p.name}`).toBe(true);
+          } else {
+            chips++;
+            expect(layer.people.some((q) => q.id === p.id), p.id).toBe(true);
+          }
+        }
+      }
+    }
+    expect(named).toBeGreaterThan(0);
+    expect(chips).toBeGreaterThan(0);
+  });
+
+  it("'told in N other shiurim' counts distinct other shiurim, not tellings (F.1)", () => {
+    // A story told twice in one shiur and once in another: one other shiur, never two.
+    const refs = [...layer.refs.values()].find((r) => (r.stories ?? []).length > 0)!;
+    const ref = refs.stories[0]!;
+    const other = input.shiurim.find((s) => s.status === "full" && s.id !== refs.shiurId && s.notes!.stories.length > 0)!;
+    const edited = withLayer((l) => {
+      const st = l.stories!.find((x) => x.id === ref.storyId)!;
+      const t0 = st.tellings.find((t) => t.shiurId === refs.shiurId)!;
+      st.tellings = [
+        { ...t0 },
+        { ...t0, momentId: `${refs.shiurId}~st99` },
+        { ...t0, shiurId: other.id, momentId: other.notes!.stories[0]!.id },
+        { ...t0, shiurId: other.id, momentId: `${other.id}~st98` },
+      ];
+    });
+    const out = emitLiveData(edited, { generatedAt: GENERATED_AT });
+    const mine = get<ShiurFile>(`shiur/${refs.shiurId}.json`, out).corpus!.stories.find((x) => x.momentId === ref.momentId)!;
+    expect(mine.otherShiurim).toBe(1);
+    // With only this shiur's two tellings there is no other shiur: no line.
+    const alone = emitLiveData(
+      withLayer((l) => {
+        const st = l.stories!.find((x) => x.id === ref.storyId)!;
+        const t0 = st.tellings.find((t) => t.shiurId === refs.shiurId)!;
+        st.tellings = [{ ...t0 }, { ...t0, momentId: `${refs.shiurId}~st99` }];
+      }),
+      { generatedAt: GENERATED_AT },
+    );
+    expect(get<ShiurFile>(`shiur/${refs.shiurId}.json`, alone).corpus!.stories.find((x) => x.momentId === ref.momentId)!.otherShiurim).toBe(0);
+  });
+
   it("stories-index.json (C2.7): labelled people, plain names, the topic join and one telling to play per language", () => {
     const idx = get<StoriesIndexFile>("stories-index.json");
     const stories = new Map((layer.stories ?? []).map((st) => [st.id, st]));

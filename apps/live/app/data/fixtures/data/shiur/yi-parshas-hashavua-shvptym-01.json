@@ -1,7 +1,7 @@
 {
- "schemaVersion": 4,
+ "schemaVersion": 5,
  "id": "yi-parshas-hashavua-shvptym-01",
- "rev": "7d5c4e18b996",
+ "rev": "218ecb81c5a9",
  "lang": "yi",
  "category": "parsha",
  "catalog": {
@@ -621,14 +621,27 @@
    {
     "momentId": "yi-parshas-hashavua-shvptym-01~st0",
     "storyId": "r-naftali-amsterdams-sefer",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rabbi Naftali Amsterdam"
+     }
+    ]
    },
    {
     "momentId": "yi-parshas-hashavua-shvptym-01~st1",
     "storyId": "king-yannai-and-the-sanhedrin",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Shimon ben Shetach"
+     },
+     {
+      "name": "Yannai HaMelech"
+     }
+    ]
    }
   ],
   "insights": []
@@ -1688,12 +1701,6 @@
      "en": "The Rav relates what is told among the Lithuanian ba'alei mussar about R' Naftali Amsterdam: he always went about holding a sefer. When he came into the shul he took a sefer with him, so that if people rose for him he would not feel they rose for him, since one rises for a sefer anyway.",
      "yi": "דער משגיח דערציילט וואס מ'דערציילט ביי די ליטווישע בעלי מוסר פון רבי נפתלי אמסטערדאם: ער איז אלעמאל ארומגעגאנגען מיט א ספר. ווען ער איז אריין אין שול האט ער מיטגענומען א ספר, כדי אז מ'שטעלט זיך אויף פאר אים זאל ער נישט שפירן אז מ'שטייט אויף פאר אים, ווייל פאר א ספר שטייט מען סיי ווי אויף."
     },
-    "people": [
-     "R' Naftali Amsterdam"
-    ],
-    "peopleKeys": [
-     "rabbi-naftali-amsterdam"
-    ],
     "t": 2354.36,
     "end": 2378.7
    },
@@ -1707,141 +1714,9 @@
      "en": "The Rav tells the Gemara's story that a servant of King Yannai killed someone and Yannai had to be brought to judgment. Shimon ben Shetach called on Yannai to come and stand before the court, but he would not. From then on, the Rav says, it was established that kings of Yisrael neither judge nor are judged, while the kings of Dovid's house must stand before the Sanhedrin.",
      "yi": "דער משגיח דערציילט די מעשה אין גמרא אז דער עבד פון ינאי המלך האט געהרגעט א מענטש, און מ'האט געדארפט ברענגען ינאי צום דין. שמעון בן שטח האט געהייסן אז ינאי זאל קומען און זיך שטעלן פארן בית דין, אבער ער האט נישט געוואלט. פון דעמאלט אן, זאגט דער משגיח, איז געווארן דער דין אז מלכי ישראל לא דנין ולא דנין אותם, אבער מלכי בית דוד דארפן זיך שטעלן פארן סנהדרין."
     },
-    "people": [
-     "King Yannai",
-     "Shimon ben Shetach"
-    ],
-    "peopleKeys": [
-     "king-yannai",
-     "shimon-ben-shetach"
-    ],
     "t": 3227.93,
     "end": 3293.43,
     "soft": true
-   }
-  ],
-  "people": [
-   {
-    "name": "Avraham Avinu",
-    "key": "avraham-avinu"
-   },
-   {
-    "name": "Malki-Tzedek",
-    "key": "malki-tzedek"
-   },
-   {
-    "name": "Shem ben Noach",
-    "key": "shem-ben-noach"
-   },
-   {
-    "name": "Dovid HaMelech",
-    "key": "dovid-hamelech"
-   },
-   {
-    "name": "Shmuel HaNavi",
-    "key": "shmuel-hanavi"
-   },
-   {
-    "name": "Shlomo HaMelech",
-    "key": "shlomo-hamelech"
-   },
-   {
-    "name": "Rashi",
-    "key": "rashi"
-   },
-   {
-    "name": "the Rambam",
-    "key": "rambam"
-   },
-   {
-    "name": "the Mishneh LaMelech",
-    "key": "mishneh-lamelech"
-   },
-   {
-    "name": "the Bnei Yissaschar",
-    "key": "bnei-yissaschar"
-   },
-   {
-    "name": "the Alter Rebbe (Ba'al HaTanya)",
-    "key": "baal-hatanya"
-   },
-   {
-    "name": "R' Naftali Amsterdam",
-    "key": "rabbi-naftali-amsterdam"
-   },
-   {
-    "name": "King Yannai",
-    "key": "king-yannai"
-   },
-   {
-    "name": "Shimon ben Shetach",
-    "key": "shimon-ben-shetach"
-   },
-   {
-    "name": "Moshe Rabbeinu",
-    "key": "moshe-rabbeinu"
-   }
-  ],
-  "concepts": [
-   {
-    "he": "רבונו של עולם",
-    "key": "rbvnv-shl-evlm-52e424"
-   },
-   {
-    "he": "ביטול",
-    "key": "bytvl-5b36e7"
-   },
-   {
-    "he": "מלכות שמים",
-    "key": "mlkvs-shmym-27ce7c"
-   },
-   {
-    "he": "משפט הכהנים",
-    "key": "mshpt-hkhnym-87c592"
-   },
-   {
-    "he": "לעמוד לשרת",
-    "key": "lemvd-lshrs-91de40"
-   },
-   {
-    "he": "אין שירות אלא מעומד",
-    "key": "ayn-shyrvs-ala-mevmd-694f49"
-   },
-   {
-    "he": "מלכי צדק",
-    "key": "mlky-tzdk-981448"
-   },
-   {
-    "he": "משפיע ומקבל",
-    "key": "mshpye-vmkbl-606043"
-   },
-   {
-    "he": "עזרה",
-    "key": "ezrh-e59ba3"
-   },
-   {
-    "he": "מלכי בית דוד",
-    "key": "mlky-bys-dvd-ae715c"
-   },
-   {
-    "he": "תמים תהיה",
-    "key": "smym-shyh-fb26ef"
-   },
-   {
-    "he": "בטחון",
-    "key": "btchvn-032372"
-   },
-   {
-    "he": "עומדים צפופים ומשתחוים רווחים",
-    "key": "evmdym-tzpvpym-vmshschvym-rvvchym-625fae"
-   },
-   {
-    "he": "אושפיזין",
-    "key": "avshpyzyn-df018b"
-   },
-   {
-    "he": "חודש אלול",
-    "key": "chvdsh-alvl-82bbff"
    }
   ],
   "writeupLangs": [

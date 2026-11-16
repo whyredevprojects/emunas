@@ -1,7 +1,7 @@
 {
- "schemaVersion": 4,
+ "schemaVersion": 5,
  "id": "yi-parshas-hashavua-brshys-03",
- "rev": "c8d387918ca9",
+ "rev": "1708bcceba75",
  "lang": "yi",
  "category": "parsha",
  "catalog": {
@@ -594,14 +594,31 @@
    {
     "momentId": "yi-parshas-hashavua-brshys-03~st0",
     "storyId": "chizkiyahu-sleeps-during-sanherivs-siege",
-    "tellings": 2,
-    "page": true
+    "otherShiurim": 1,
+    "page": true,
+    "people": [
+     {
+      "name": "Chizkiyahu HaMelech"
+     },
+     {
+      "name": "Sancheiriv"
+     },
+     {
+      "id": "yeshayahu-hanavi",
+      "label": {
+       "en": "Yeshayahu HaNavi",
+       "yi": "ישעיהו הנביא"
+      },
+      "page": true
+     }
+    ]
    },
    {
     "momentId": "yi-parshas-hashavua-brshys-03~st1",
     "storyId": "the-man-who-nursed-his-infant",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": []
    }
   ],
   "insights": []
@@ -1479,14 +1496,6 @@
      "en": "The Rav brings the Midrash that King Chizkiyahu said he would go to sleep and Hashem would fight his wars. When Sancheriv besieged Yerushalayim on the night of Pesach, the Jews made the Korban Pesach and told of the Exodus, and in the middle of the night Sancheriv's whole camp was destroyed by an angel.",
      "yi": "דער משגיח ברענגט דעם מדרש אז דער מלך חזקיהו האט געזאגט אז ער גייט שלאפן און דער אייבערשטער וועט פירן זיינע מלחמות. ווען סנחריב האט ארומגערינגלט ירושלים פסח ביינאכט, האבן די אידן געמאכט דעם קרבן פסח און דערציילט פון יציאת מצרים, און אינמיטן דער נאכט איז דאס גאנצע מחנה פון סנחריב אומגעקומען דורך א מלאך."
     },
-    "people": [
-     "Chizkiyahu",
-     "Sancheriv"
-    ],
-    "peopleKeys": [
-     "chizkiyahu-hamelech",
-     "sancheriv"
-    ],
     "t": 338.35,
     "end": 372.75
    },
@@ -1500,158 +1509,8 @@
      "en": "The Rav retells the Gemara in Shabbos about a poor man who could not afford a nursemaid for his infant. A miracle happened and he was able to nurse the child himself. The Gemara comments how lowly this man was that the order of creation was changed for him.",
      "yi": "דער משגיח דערציילט די גמרא אין שבת פון אן ארעמאן וואס האט נישט געהאט מיט וואס צו דינגען א נאמע פאר זיין קליין קינד. עס איז געשען א נס און ער האט אליין געקענט זייגן דאס קינד. די גמרא זאגט ווי גרינג איז געווען דער מענטש אז מען האט פאר אים געטוישט סדרי בראשית."
     },
-    "people": [],
-    "peopleKeys": [],
     "t": 1142.85,
     "end": 1191.43
-   }
-  ],
-  "people": [
-   {
-    "name": "Adam",
-    "key": "adam-harishon"
-   },
-   {
-    "name": "Eliezer",
-    "key": "eliezer"
-   },
-   {
-    "name": "Yitzchak Avinu",
-    "key": "yitzchak-avinu"
-   },
-   {
-    "name": "Dovid HaMelech",
-    "key": "dovid-hamelech"
-   },
-   {
-    "name": "Chizkiyahu",
-    "key": "chizkiyahu-hamelech"
-   },
-   {
-    "name": "Sancheriv",
-    "key": "sancheriv"
-   },
-   {
-    "name": "Yaakov Avinu",
-    "key": "yaakov-avinu"
-   },
-   {
-    "name": "Lavan",
-    "key": "lavan"
-   },
-   {
-    "name": "Rashi",
-    "key": "rashi"
-   },
-   {
-    "name": "Rabbi Yitzchak",
-    "key": "rabbi-yitzchak"
-   },
-   {
-    "name": "Avraham Avinu",
-    "key": "avraham-avinu"
-   },
-   {
-    "name": "Esav",
-    "key": "esav"
-   },
-   {
-    "name": "Yishmael",
-    "key": "yishmael"
-   },
-   {
-    "name": "Moshe Rabbeinu",
-    "key": "moshe-rabbeinu"
-   },
-   {
-    "name": "Hevel",
-    "key": "hevel"
-   },
-   {
-    "name": "the Rambam",
-    "key": "rambam"
-   }
-  ],
-  "concepts": [
-   {
-    "he": "עזר כנגדו",
-    "key": "ezr-kngdv-4b2e8f"
-   },
-   {
-    "he": "בטחון",
-    "key": "btchvn-032372"
-   },
-   {
-    "he": "סוכה",
-    "key": "svkh-c20d03"
-   },
-   {
-    "he": "תרדמה",
-    "key": "srdmh-de6d51"
-   },
-   {
-    "he": "ביטול",
-    "key": "bytvl-5b36e7"
-   },
-   {
-    "he": "תורת הבריאה",
-    "key": "svrs-hbryah-51cf5b"
-   },
-   {
-    "he": "תורת האדם",
-    "key": "svrs-hadm-e2268b"
-   },
-   {
-    "he": "תורת ישראל",
-    "key": "svrs-yshral-7d197d"
-   },
-   {
-    "he": "שבע מצוות בני נח",
-    "key": "shbe-mtzvvs-bny-nch-89ec40"
-   },
-   {
-    "he": "סדרי בראשית",
-    "key": "sdry-brashys-160915"
-   },
-   {
-    "he": "טבע",
-    "key": "tbe-8cf116"
-   },
-   {
-    "he": "בחירה",
-    "key": "bchyrh-32f6c2"
-   },
-   {
-    "he": "ליסטים אתם",
-    "key": "lystym-asm-f9e7c8"
-   },
-   {
-    "he": "כיבוש",
-    "key": "kybvsh-9a220f"
-   },
-   {
-    "he": "דור הפלגה",
-    "key": "dvr-hplgh-3f0c12"
-   },
-   {
-    "he": "מבול",
-    "key": "mbvl-34b703"
-   },
-   {
-    "he": "מן",
-    "key": "mn-a474e8"
-   },
-   {
-    "he": "שבעה עממים",
-    "key": "shbeh-emmym-11c544"
-   },
-   {
-    "he": "רבונו של עולם",
-    "key": "rbvnv-shl-evlm-52e424"
-   },
-   {
-    "he": "החודש הזה לכם",
-    "key": "hchvdsh-hzh-lkm-bcaf05"
    }
   ],
   "writeupLangs": [

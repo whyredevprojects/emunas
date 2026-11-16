@@ -1,7 +1,7 @@
 {
- "schemaVersion": 4,
+ "schemaVersion": 5,
  "id": "en-parsha-en-ky-sb-01",
- "rev": "73bd7e03ba01",
+ "rev": "4c6f978f8e70",
  "lang": "en",
  "category": "parsha",
  "catalog": {
@@ -520,14 +520,25 @@
    {
     "momentId": "en-parsha-en-ky-sb-01~st0",
     "storyId": "yaakov-wakes-at-the-place-of-the-beis-hamikdash",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "id": "yaakov-avinu",
+      "label": {
+       "en": "Yaakov Avinu",
+       "yi": "יעקב אבינו"
+      },
+      "page": true
+     }
+    ]
    },
    {
     "momentId": "en-parsha-en-ky-sb-01~st1",
     "storyId": "a-listener-counts-the-pesukim-of-ki-savo",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": []
    }
   ],
   "insights": []
@@ -1259,12 +1270,6 @@
      "en": "The Rav relates that Yaakov Avinu, not knowing it, went to sleep at the place of the Beis HaMikdash, and Hashem told him in a dream what place it was. When he awoke he called it the gate of heaven and was sorry, and Rashi explains that had he known, he would not have slept there.",
      "yi": "דער משגיח דערציילט אז יעקב אבינו האט, אן צו וויסן, געשלאפן ביים ארט פונעם בית המקדש, און דער אויבערשטער האט אים אין חלום געזאגט וואס פאר א ארט דאס איז. ווען ער האט זיך אויפגעוועקט האט ער עס אנגערופן שער השמים און חרטה געהאט, און רש\"י ערקלערט אז ווען ער וואלט געוואוסט וואלט ער דארט נישט געשלאפן."
     },
-    "people": [
-     "Yaakov Avinu"
-    ],
-    "peopleKeys": [
-     "yaakov-avinu"
-    ],
     "t": 1649.2,
     "end": 1700.6
    },
@@ -1278,110 +1283,8 @@
      "en": "The Rav relates that when he once said this derashah before an audience, someone remarked that Ki Savo, the parsha before these, also has 122 pesukim. The Rav calls it very fitting, since Ki Savo ushers in the season of teshuvah.",
      "yi": "דער משגיח דערציילט אז ווען ער האט אמאל געזאגט די דרשה פאר א עולם, האט איינער אנגעמערקט אז כי תבא, די פרשה פאר זיי, האט אויך 122 פסוקים. דער משגיח זאגט אז דאס פאסט זייער, ווייל כי תבא עפנט אריין די ימי התשובה."
     },
-    "people": [],
-    "peopleKeys": [],
     "t": 2628.25,
     "end": 2657.94
-   }
-  ],
-  "people": [
-   {
-    "name": "Adam HaRishon",
-    "key": "adam-harishon"
-   },
-   {
-    "name": "the Ba'al Shem Tov",
-    "key": "baal-shem-tov"
-   },
-   {
-    "name": "David HaMelech",
-    "key": "dovid-hamelech"
-   },
-   {
-    "name": "Rashi",
-    "key": "rashi"
-   },
-   {
-    "name": "Moshe Rabbeinu",
-    "key": "moshe-rabbeinu"
-   },
-   {
-    "name": "Yaakov Avinu",
-    "key": "yaakov-avinu"
-   },
-   {
-    "name": "the Rambam",
-    "key": "rambam"
-   },
-   {
-    "name": "the Baal HaTurim",
-    "key": "baal-haturim"
-   },
-   {
-    "name": "the Arizal",
-    "key": "arizal"
-   }
-  ],
-  "concepts": [
-   {
-    "he": "ביכורים",
-    "key": "bykvrym-4f735d"
-   },
-   {
-    "he": "ניצוצות קדושה",
-    "key": "nytzvtzvs-07037a"
-   },
-   {
-    "he": "רבונו של עולם",
-    "key": "rbvnv-shl-evlm-52e424"
-   },
-   {
-    "he": "לקט שכחה ופאה",
-    "key": "lkt-shkchh-vpah-b94e5c"
-   },
-   {
-    "he": "אבן שתיה",
-    "key": "abn-shsyh-be9d67"
-   },
-   {
-    "he": "כהנים זריזים הם",
-    "key": "khnym-zryzym-hm-070de4"
-   },
-   {
-    "he": "השכמה",
-    "key": "hshkmh-d3fc88"
-   },
-   {
-    "he": "בית המקדש",
-    "key": "bys-hmkdsh-196420"
-   },
-   {
-    "he": "תאנה שביכרה",
-    "key": "sanh-shbykrh-929082"
-   },
-   {
-    "he": "ראשית",
-    "key": "rashys-93edef"
-   },
-   {
-    "he": "הושענא רבה",
-    "key": "hvshena-rbh-e66c97"
-   },
-   {
-    "he": "זאת חנוכה",
-    "key": "zas-chnvkh-7f741a"
-   },
-   {
-    "he": "תוכחה",
-    "key": "svkchh-8f69ee"
-   },
-   {
-    "he": "המלך הקדוש",
-    "key": "hmlk-hkdvsh-2c0bd9"
-   },
-   {
-    "he": "תשובה",
-    "key": "sshvbh-376006"
    }
   ],
   "writeupLangs": [

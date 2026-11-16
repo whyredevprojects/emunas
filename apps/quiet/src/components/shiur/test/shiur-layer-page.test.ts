@@ -143,8 +143,26 @@ function checkPage(corpus: ShiurCorpus, ed: Ed, shiur: PublicShiur, html: string
   const m = mentionedView(ed, corpus.layer, refs);
   if (m.people.length + m.concepts.length === 0) expect(html).not.toContain('id="mentioned"');
   else expect(html).toContain('id="mentioned"');
+  // Names (F.1): every marked person is that corpus person's name; every story name is one of the
+  // merged stories' people from the layer. No other name is printed in a story.
+  const marked = [...html.matchAll(/<bdi[^>]*\sdata-person="([^"]+)"[^>]*>([^<]*)<\/bdi>/g)].map((x) => [x[1]!, unescapeHtml(x[2]!)] as const);
+  expect(marked.map(([id, name]) => [id, name])).toEqual(m.people.map((p) => [p.id, p.name]));
+  const storyNames = new Set([...lines.values()].flatMap((l) => l.people.map((p) => p.name)));
+  const printed = [...html.matchAll(/<bdi[^>]*\sdata-story-person[^>]*>([^<]*)<\/bdi>/g)].map((x) => unescapeHtml(x[1]!));
+  for (const n of printed) expect(storyNames.has(n), n).toBe(true);
+  const paragraphs = [...html.matchAll(/<p class="story-people"[^>]*>([\s\S]*?)<\/p>/g)].map((x) => x[1]!);
+  for (const para of paragraphs) {
+    // Only the label and the marked names: strip the marked names and the label, nothing else remains.
+    const rest = para.replace(/<a [^>]*>|<\/a>/g, "").replace(/<bdi[^>]*\sdata-story-person[^>]*>[^<]*<\/bdi>/g, "").replace(/[,\s]/g, "");
+    expect(rest.replace(/<!--[\s\S]*?-->/g, ""), para).toMatch(/^[^<>]*$/);
+  }
   return expected.length;
 }
+
+/** Text of an element as the browser reads it (the entities Astro writes). */
+const unescapeHtml = (s: string): string =>
+  s.replace(/&#(\d+);/g, (_, n: string) => String.fromCodePoint(Number(n))).replace(/&#x([0-9a-f]+);/gi, (_, n: string) => String.fromCodePoint(parseInt(n, 16)))
+    .replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
 
 describe("the shiur page on the mini corpus layer", () => {
   let corpus: ShiurCorpus;
@@ -270,7 +288,7 @@ describe.runIf(hasRealData)("the shiur page on the real corpus layer", () => {
           const story = corpus.layer.story(r.storyId)!;
           // the per-shiur ref and the story agree on the number of tellings
           expect(r.tellings, r.storyId).toBe(story.tellings.length);
-          expect(l.otherShiurim).toBe(story.tellings.length >= 2 ? new Set(story.tellings.map((t) => t.shiurId).filter((id) => id !== row.id)).size : 0);
+          expect(l.otherShiurim).toBe(new Set(story.tellings.map((t) => t.shiurId).filter((id) => id !== row.id)).size);
           if (ed === "en" && l.otherShiurim > 0) told++;
         }
       }

@@ -1,7 +1,7 @@
 {
- "schemaVersion": 4,
+ "schemaVersion": 5,
  "id": "yi-zmanim-lvl-01",
- "rev": "af394c1c2c5e",
+ "rev": "8acad73c5588",
  "lang": "yi",
  "category": "zman",
  "catalog": {
@@ -443,14 +443,30 @@
    {
     "momentId": "yi-zmanim-lvl-01~st0",
     "storyId": "the-baal-shem-tov-and-the-man-from-danzig",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "id": "baal-shem-tov",
+      "label": {
+       "en": "the Baal Shem Tov",
+       "yi": "דער הייליגער בעל שם טוב",
+       "he": "רבי ישראל בעל שם טוב"
+      },
+      "page": true
+     }
+    ]
    },
    {
     "momentId": "yi-zmanim-lvl-01~st1",
     "storyId": "rebbi-i-dont-like-fish",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rav Shraga Feivel Mendlowitz"
+     }
+    ]
    }
   ],
   "insights": []
@@ -1161,12 +1177,6 @@
      "en": "The Ba'al Shem Tov once came over to a man after davening and greeted him with 'shalom aleichem'. The man asked why, since he had been there all along. The Ba'al Shem Tov answered that during davening the man had been in Danzig, where his thoughts about his merchandise were.",
      "yi": "דער בעל שם טוב איז אמאל צוגעקומען צו א איד נאכן דאווענען און אים געזאגט שלום עליכם. דער איד האט געפרעגט פארוואס, ער איז דאך די גאנצע צייט דא געווען. האט דער בעל שם טוב געענטפערט אז ביים דאווענען איז ער געווען אין דאנציג, וואו זיינע מחשבות וועגן זיין סחורה זענען געווען."
     },
-    "people": [
-     "the Ba'al Shem Tov"
-    ],
-    "peopleKeys": [
-     "baal-shem-tov"
-    ],
     "t": 1296.67,
     "end": 1312.91,
     "soft": true
@@ -1181,107 +1191,9 @@
      "en": "The Rav relates a story he was told about a teacher of young students who spoke to them about the good prepared for tzaddikim, including the great fish, the Leviasan, made ready for them. A child raised his hand and said that he does not like fish. That was the end of the derashah, the Rav says, since one cannot answer such a remark.",
      "yi": "דער משגיח דערציילט א מעשה וואס מ'האט אים דערציילט, פון א מלמד פון יונגע תלמידים וואס האט זיי גערעדט וועגן דעם גוטן וואס איז אנגעגרייט פאר צדיקים, און וועגן דעם גרויסן פיש, דער לויתן, וואס איז אנגעגרייט פאר זיי. האט א קינד אויפגעהויבן די האנט און געזאגט אז ער האט נישט ליב קיין פיש. דאס, זאגט דער משגיח, איז געווען דער סוף פון דער דרשה, ווייל אויף אזא זאך קען מען נישט ענטפערן."
     },
-    "people": [],
-    "peopleKeys": [],
     "t": 1879.96,
     "end": 1935.2,
     "soft": true
-   }
-  ],
-  "people": [
-   {
-    "name": "Moshe Rabbeinu",
-    "key": "moshe-rabbeinu"
-   },
-   {
-    "name": "Adam HaRishon",
-    "key": "adam-harishon"
-   },
-   {
-    "name": "Rabbi Tzadok HaKohen of Lublin",
-    "key": "rav-tzadok-hakohen"
-   },
-   {
-    "name": "the Ba'al Shem Tov",
-    "key": "baal-shem-tov"
-   },
-   {
-    "name": "Pharaoh",
-    "key": "pharaoh"
-   },
-   {
-    "name": "Rashi",
-    "key": "rashi"
-   },
-   {
-    "name": "Yosef",
-    "key": "yosef-hatzaddik"
-   }
-  ],
-  "concepts": [
-   {
-    "he": "ימי רצון",
-    "key": "ymy-rtzvn-2177df"
-   },
-   {
-    "he": "לוחות שניות",
-    "key": "lvchvs-shnyvs-ca3ddf"
-   },
-   {
-    "he": "בעלי תשובה",
-    "key": "bely-sshvbh-926545"
-   },
-   {
-    "he": "רושם לדורות",
-    "key": "rvshm-ldvrvs-aec5d0"
-   },
-   {
-    "he": "שמיטה",
-    "key": "shmyth-0806d8"
-   },
-   {
-    "he": "כל השביעין חביבין",
-    "key": "kl-hshbyeyn-chbybyn-eb233c"
-   },
-   {
-    "he": "חוב",
-    "key": "chvb-23e739"
-   },
-   {
-    "he": "השטן",
-    "key": "hshtn-991193"
-   },
-   {
-    "he": "ואהבת לרעך כמוך",
-    "key": "vahbs-lrek-kmvk-939763"
-   },
-   {
-    "he": "ליצנות",
-    "key": "lytznvs-c3d04f"
-   },
-   {
-    "he": "לץ",
-    "key": "ltz-de6109"
-   },
-   {
-    "he": "אמונה",
-    "key": "amvnh-6dd509"
-   },
-   {
-    "he": "היכלות התפילה",
-    "key": "hyklvs-hspylh-23f3a8"
-   },
-   {
-    "he": "פני השכינה",
-    "key": "pny-hshkynh-3ab65f"
-   },
-   {
-    "he": "מדה כנגד מדה",
-    "key": "mdh-kngd-mdh-5d00b5"
-   },
-   {
-    "he": "רבונו של עולם",
-    "key": "rbvnv-shl-evlm-52e424"
    }
   ],
   "writeupLangs": [

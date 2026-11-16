@@ -33,7 +33,7 @@ import type {
 
 export type { Ed, L, Moment, ShiurStatus };
 
-export const LIVE_DATA_SCHEMA_VERSION = 4;
+export const LIVE_DATA_SCHEMA_VERSION = 5;
 
 // ---------------------------------------------------------------------------------------------
 // Shared pieces
@@ -302,8 +302,13 @@ export interface ShiurCorpus {
   terms: EntityChip[];
   /** Resolved work per source moment. */
   sources: { momentId: string; workId: string; page: boolean }[];
-  /** Story moments that belong to a merged story: visible tellings (this one included) and page flag. */
-  stories: { momentId: string; storyId: string; tellings: number; page: boolean }[];
+  /**
+   * Story moments that belong to a merged story: the number of other visible shiurim it is told in
+   * (distinct shiurim, this one not counted), its page flag, and the merged story's people. The
+   * people are corpus entities (a chip, or an entity's display name as plain text): the
+   * extraction's raw names may be ASR mishearings and are never published (F.1).
+   */
+  stories: { momentId: string; storyId: string; otherShiurim: number; page: boolean; people: StoryPerson[] }[];
   /**
    * Insight moments in a thread: distinct shiurim, year span, page flag; a two-shiur thread carries
    * the other member instead (one line at the insight, never a headline).

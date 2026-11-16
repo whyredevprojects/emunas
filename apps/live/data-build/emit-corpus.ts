@@ -688,7 +688,18 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
       sources: arr(r.sources)
         .filter((x) => view.allWorks.has(x.workId))
         .map((x) => ({ momentId: x.momentId, workId: x.workId, page: view.works.has(x.workId) })),
-      stories: arr(r.stories).map((x) => ({ momentId: x.momentId, storyId: x.storyId, tellings: x.tellings, page: liveStoryPage(storyById.get(x.storyId) ?? {}) })),
+      stories: arr(r.stories).map((x) => {
+        const st = storyById.get(x.storyId);
+        // Distinct other shiurim, not tellings: one shiur may tell the story twice.
+        const others = new Set(arr(st?.tellings).flatMap((t) => (t.shiurId !== shiurId && visible(t.shiurId) ? [t.shiurId] : [])));
+        return {
+          momentId: x.momentId,
+          storyId: x.storyId,
+          otherShiurim: others.size,
+          page: liveStoryPage(st ?? {}),
+          people: arr(st?.people).flatMap((p) => storyPerson(p) ?? []),
+        };
+      }),
       insights: arr(r.insights).map((x) => ({
         momentId: x.momentId,
         threadId: x.threadId,

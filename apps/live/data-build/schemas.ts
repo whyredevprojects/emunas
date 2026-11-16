@@ -138,15 +138,11 @@ const notes = v.strictObject({
       id: str,
       title: L,
       retelling: L,
-      people: v.array(str),
-      peopleKeys: v.array(str),
       t: nnum,
       end: nnum,
       soft,
     }),
   ),
-  people: v.array(v.strictObject({ name: str, key: str })),
-  concepts: v.array(v.strictObject({ he: str, key: str })),
   writeupLangs: v.array(ed),
 });
 
@@ -214,6 +210,8 @@ export const FacetsSchema = v.strictObject({
 const yearSpan = v.nullable(v.tuple([int, int]));
 const level = v.picklist([1, 2, 3]);
 const chip = v.strictObject({ id: str, label: facetLabel, page: v.boolean() });
+/** A story's person: a chip, or a corpus entity's display name as plain text (never a raw extraction name). */
+const storyPerson = v.union([chip, v.strictObject({ name: str })]);
 const card = v.strictObject({
   id: str,
   lang: ed,
@@ -286,7 +284,9 @@ export const ShiurSchema = v.strictObject({
       topicLabels: v.record(str, chip),
       terms: v.array(chip),
       sources: v.array(v.strictObject({ momentId: str, workId: str, page: v.boolean() })),
-      stories: v.array(v.strictObject({ momentId: str, storyId: str, tellings: int, page: v.boolean() })),
+      stories: v.array(
+        v.strictObject({ momentId: str, storyId: str, otherShiurim: int, page: v.boolean(), people: v.array(storyPerson) }),
+      ),
       insights: v.array(
         v.strictObject({
           momentId: str,
@@ -530,7 +530,7 @@ export const StorySchema = v.strictObject({
   title: L,
   retelling: L,
   reviewed: v.boolean(),
-  people: v.array(v.union([chip, v.strictObject({ name: str })])),
+  people: v.array(storyPerson),
   attributionVaries: v.boolean(),
   tellings: v.array(v.strictObject(memberEntries)),
 });
