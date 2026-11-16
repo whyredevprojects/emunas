@@ -24,7 +24,8 @@ export const seriesEn = {
   "series.continue": "Continue with part {n}",
   "series.heard": "Heard",
   "series.started": "Started",
-  "series.overviewGap": "Series overviews have not been written yet; the parts are listed with their catalog titles and notes.",
+  "series.about": "About this series",
+  "series.keyThemes": "Key themes",
 } as const;
 
 export type SeriesKey = keyof typeof seriesEn;
@@ -52,7 +53,8 @@ export const seriesYi: MessageTable<SeriesKey> = {
   "series.continue": "ווייטער מיט טייל {n}",
   "series.heard": "געהערט",
   "series.started": "אנגעהויבן",
-  "series.overviewGap": "איבערבליקן פון די סדרות זענען נאך נישט געשריבן; די טיילן ווערן געוויזן מיט זייערע קעפלעך פונעם קאטאלאג און נאטיצן.",
+  "series.about": "וועגן דער סדרה",
+  "series.keyThemes": "די הויפט ענינים",
 };
 
 export type SeriesT = TFunction<SeriesKey>;
