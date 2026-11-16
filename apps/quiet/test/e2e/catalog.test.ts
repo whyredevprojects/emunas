@@ -11,6 +11,7 @@
  * server and drives Chrome through playwright-core.
  */
 import { spawnSync } from "node:child_process";
+import { createHash } from "node:crypto";
 import { existsSync, mkdtempSync, readFileSync, readdirSync, rmSync, statSync } from "node:fs";
 import { createServer, type Server } from "node:http";
 import { createRequire } from "node:module";
@@ -316,11 +317,16 @@ describe("built output", () => {
     expect(missing).toEqual([]);
   });
 
-  it("has no inline script or style for the CSP to block", () => {
+  it("has no inline script or style for the CSP to block (an inline script needs its hash in the CSP)", () => {
+    const allowed = new Set(Array.from(CSP.matchAll(/'(sha256-[A-Za-z0-9+/=]+)'/g), (m) => m[1]!));
     const bad: string[] = [];
     for (const f of files()) {
       const text = readFileSync(f, "utf8");
-      for (const m of text.matchAll(/<script\b([^>]*)>/g)) if (!/\bsrc=/.test(m[1]!)) bad.push(`${f.slice(outDir.length)}: <script${m[1]}>`);
+      for (const m of text.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)) {
+        if (/\bsrc=/.test(m[1]!)) continue;
+        const hash = `sha256-${createHash("sha256").update(m[2]!, "utf8").digest("base64")}`;
+        if (!allowed.has(hash)) bad.push(`${f.slice(outDir.length)}: <script${m[1]}> (${hash} not in the CSP)`);
+      }
       if (/<style\b/.test(text)) bad.push(`${f.slice(outDir.length)}: <style>`);
       if (/\sstyle="/.test(text)) bad.push(`${f.slice(outDir.length)}: style=""`);
     }
