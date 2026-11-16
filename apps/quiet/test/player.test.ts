@@ -1,6 +1,6 @@
 /** Pure parts of the player script (W3.2): hash parsing, the margin-mark search, chapter-back rule. */
 import { describe, expect, it } from "vitest";
-import { currentIndex, parseTimeHash, previousStart, timeHash } from "../src/scripts/player.ts";
+import { currentIndex, markIndex, parseTimeHash, previousStart, timeHash } from "../src/scripts/player.ts";
 
 describe("parseTimeHash", () => {
   it("reads #t=<seconds> and nothing else", () => {
@@ -19,6 +19,17 @@ describe("timeHash", () => {
     expect(timeHash(-3)).toBe("#t=0");
     expect(timeHash(Number.NaN)).toBe("#t=0");
     for (const g of [0, 0.5, 30.05, 582.12, 1855.544, 9999.999]) expect(parseTimeHash(timeHash(g))).toBe(g);
+  });
+});
+
+describe("markIndex", () => {
+  it("marks the item a seek asked for even when the reported position is a frame early", () => {
+    const starts = [0, 30.05, 582.12, 600];
+    expect(markIndex(starts, 582.12)).toBe(2);
+    expect(markIndex(starts, 582.12 - 0.026)).toBe(2);
+    expect(markIndex(starts, 582.0)).toBe(1);
+    expect(markIndex(starts, 599.99)).toBe(3);
+    expect(markIndex(starts, -1)).toBe(-1);
   });
 });
 

@@ -52,6 +52,18 @@ export function currentIndex(starts: readonly number[], now: number): number {
   return found;
 }
 
+/**
+ * Seconds of slack for the margin mark. A media element reports the position it could seek to, which
+ * for mp3 can sit a frame (~26 ms) before the time asked for; without slack a seek to an item that
+ * starts at 582.12 would mark the item before it.
+ */
+export const MARK_SLACK = 0.05;
+
+/** The item the margin mark sits on at `now`: `currentIndex` with `MARK_SLACK`. */
+export function markIndex(starts: readonly number[], now: number): number {
+  return currentIndex(starts, now + MARK_SLACK);
+}
+
 /** Previous-chapter rule: restart the current chapter if more than 3 s into it, else go back one. */
 export function previousStart(starts: readonly number[], now: number): number {
   const i = currentIndex(starts, now);
@@ -102,7 +114,7 @@ export function initPlayer(doc: Document, win: Window): Player | null {
 
   function mark(g: number): void {
     for (const group of groups) {
-      const i = currentIndex(group.starts, g);
+      const i = markIndex(group.starts, g);
       if (i === group.cur) continue;
       group.els[group.cur]?.removeAttribute("aria-current");
       group.els[i]?.setAttribute("aria-current", "time");
