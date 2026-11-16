@@ -213,6 +213,12 @@ export interface TodayMix {
   shiurim: number;
   /** The first items, ready to queue. */
   first: TodayMixItem[];
+  /**
+   * Not featured (D7) among the topic's moment list: shiur ids mostly by another speaker, then
+   * section ids tagged with an excluded topic. The client drops them when it fills the rest of the
+   * mix from the topic file. Omitted when empty.
+   */
+  skip?: string[];
 }
 
 /** Shiurim per audio language in an occasion's row (the occasion page lists all of them). */

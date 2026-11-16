@@ -17,6 +17,7 @@ import { buildEntityDocs, buildSearchDoc } from "@emunas/search-core/build";
 import { foldForIndex, type SearchDoc } from "@emunas/search-core";
 import MiniSearch from "minisearch";
 import { dataFileOf, dataPaths } from "../app/data/paths.ts";
+import { occasionMix } from "../app/features/mix/occasion.ts";
 import {
   LIVE_DATA_SCHEMA_VERSION,
   MOMENT_SHARD_SIZE,
@@ -382,9 +383,12 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
             label: mix.label,
             sections: mix.sections,
             shiurim: mix.shiurim,
-            first: mix.first
-              .slice(0, EMIT_LIMITS.todayMixFirst)
-              .map((x) => ({ id: x.id, t: x.t, end: x.end, title: x.title })),
+            // The head the button plays at once: the same rule as the client's rest (the occasion's
+            // own catalog shiurim first, one section per shiur), over the featured sections.
+            first: occasionMix({ head: [], topic: mix.first, catalog: o.ids, audio: "both", size: EMIT_LIMITS.todayMixFirst }).items.map(
+              (x) => ({ id: x.id, t: x.t, end: x.end, title: x.title }),
+            ),
+            ...(mix.skip.length > 0 ? { skip: mix.skip } : {}),
           },
         },
       ];
