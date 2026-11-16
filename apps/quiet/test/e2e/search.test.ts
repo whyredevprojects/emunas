@@ -189,6 +189,7 @@ describe.each(["yi", "en"] as const)("search page, %s edition", (ed) => {
       `/${ed}/stories/`,
       `/${ed}/people/`,
       `/${ed}/inyanim/`,
+      `/${ed}/erachim/`,
     ]);
     await page.context().close();
   });
