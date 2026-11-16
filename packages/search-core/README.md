@@ -32,7 +32,7 @@ Before anything is built, the layer's `synonyms.json` is checked against the ent
 ## Rules
 
 - **Allow-list, copy only.** The builders copy fields one by one from a `PublicShiur`, which has no transcript-derived field. The type checks in `src/types.ts` fail to compile if `SearchDoc`, `MomentRow` or the builder input gains a key from `FORBIDDEN_SEARCH_KEYS` (`heardAs`, `asrNotes`, `segs`, …), or if an interface drifts from its field list. Tests assert that the emitted objects have exactly the allow-listed keys at every level.
-- **Topic keywords, not candidateTopics.** The extraction's candidate topics (C9) are retired: nothing reads them, and the key is in `FORBIDDEN_SEARCH_KEYS`. Keywords are topic labels and topic aliases only, written only to `SearchDoc.keywords`. Engines give `keywords` low weight and never display it. `buildSearchDoc` still accepts (and ignores) extra keys from older callers until the Live emitter adopts the layer (C1.7).
+- **Topic keywords, not candidateTopics.** The extraction's candidate topics (C9) are retired: nothing reads them, and the key is in `FORBIDDEN_SEARCH_KEYS`. Keywords are topic labels and topic aliases only, written only to `SearchDoc.keywords`. Engines give `keywords` low weight and never display it. `buildSearchDoc` takes the shiur and the corpus layer only (`SearchInput`).
 - **Clean synonyms.** Synonyms and aliases come only from each entity's own display fields, through the layer's `synonyms.json`, checked again at build. Nothing in this package reads the corpus raw folder (alias maps, ASR variants) or the pipeline's per-section search dump; ESLint enforces the first.
 - **No transcripts.** This package never reads transcripts. Its leak test locates the transcript folder through `@emunas/corpus-guard`.
 

@@ -146,13 +146,16 @@ Edition/UI language is the first path segment on both sites (`yi` | `en`). Time 
 | Series | `/{ed}/series/{seriesId}/` | `/{ui}/series/{seriesId}` |
 | Parsha | `/{ed}/calendar/parsha/{parshaKey}/` | `/{ui}/o/{parshaKey}` |
 | Zman | `/{ed}/calendar/zman/{zmanKey}/` | `/{ui}/o/{zmanKey}` |
-| Work | `/{ed}/sources/{workKey}/` | `/{ui}/seforim/{workKey}` |
-| Person | `/{ed}/people/{personKey}/` | `/{ui}/p/{personKey}` |
-| Concept | `/{ed}/inyanim/{conceptKey}/` | `/{ui}/c/{conceptKey}` |
+| Topic | `/{ed}/inyanim/{topicId}/` (+ `all/`) | `/{ui}/t/{topicId}` |
+| Work | `/{ed}/sources/{workId}/` | `/{ui}/seforim/{workId}` |
+| Person | `/{ed}/people/{personId}/` (+ `all/`) | `/{ui}/p/{personId}` |
+| Concept (glossary entry) | `/{ed}/erachim/{conceptId}/` | `/{ui}/c/{conceptId}` (merged into a topic: the topic) |
+| Story | `/{ed}/stories/{storyId}/` | `/{ui}/maasios/{storyId}` |
+| Thread | none (edition home `#indexes`) | `/{ui}/th/{threadId}` (noindex) |
 | Search | `/{ed}/search/?q=` | `/{ui}/search?q=` |
 | Audio | `recordings[].audioUrl` on `media.<domain>` (A1; not built by `@emunas/links`) | same URL |
 
-All keys come from `@emunas/normalize` and exist before any AI data, so URLs never change when notes arrive. Parsha keys and zman keys share one occasion namespace and are guaranteed disjoint by a test. Quiet creates entity pages only at ≥2 shiurim (concepts ≥3); `links.quiet.entity()` falls back to the index page anchor (`/{ed}/people/#{key}`) below the threshold, using the counts in `.corpus/entities.json`. Live serves every entity through its SPA fallback.
+Parsha and zman keys come from `@emunas/normalize`; they share one occasion namespace and are guaranteed disjoint by a test. Topics, concepts, people, works, stories and threads are addressed by their corpus id (corpus-wave-plan §3.5). Whether an entry has a page on a site is the corpus layer's page flag (`pageLookupFromLayer`); a Quiet entry without a page links to its index anchor (`/{ed}/people/#{id}`), a Live one has no link.
 
 Moving between sites: Quiet shiur page has "Open in the listening app" (`links.live.shiur(id, {t: currentTime})`; JS adds the live player time). Live listening room has "Printable page / catalog entry" (`links.quiet.shiur(id, {section})`). Live-only query params (`audio`, `read`, `lens`) are dropped when crossing.
 
@@ -267,8 +270,14 @@ deploy.yml on main
   build.json            { buildId, dataSha, schemaVersion, mediaOrigin, counts: {total, full, catalogOnly, downgraded} }
   shiurim/<id>.json     PublicShiur (below), one per in-scope shiur (997)
   index.json            list rows for all shiurim (catalog fields, oneLiner, duration, status, entity ids)
-  series.json, occasions.json, years.json, works.json, people.json, concepts.json, stories.json, entities.json
-  search/docs.ndjson    SearchDoc per shiur and per moment (search-core allow-list; includes candidateTopics keywords)
+  sections.json, neighbours.json, series.json, occasions.json, years.json
+                        catalog aggregates (W2.1)
+  works.json            the works pages' reference-order layout, each entry keyed by its corpus `workId`
+  layer/                corpus layer (corpus-wave-plan §3.3): layer.json, topics.json, concepts.json,
+                        people.json, works.json, stories.json, threads.json, series/<id>.json,
+                        shiur/<shiurId>.json, synonyms.json, occasion-topics.json
+  search/               docs.ndjson, moments.ndjson, entities.ndjson (search-core allow-list; keywords
+                        are topic labels and aliases)
   audio-table.json      recordingId → { url, canonicalId, playable, size }   (A1; url null when not playable)
   build-report.json     downgrades, unmapped values, dropped items, time warnings, suppressed ids
   suppress.json         from guard pre-pass (ids only)

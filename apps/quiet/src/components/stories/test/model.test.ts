@@ -95,14 +95,14 @@ const STORIES: LayerStory[] = [
   story(
     "the-poretz-and-the-sled",
     [telling("yi-a-02", 0, 5750), telling("en-b-01", 1, null), telling("yi-a-01", 2, 5743), telling("en-b-02", 3, 5770), telling("yi-c-01", 4, null), telling("no-such-shiur", 0, 5700)],
-    { people: [{ id: "baal-shem-tov" }, { name: "Reb Aryeh", linked: false }], attributionVaries: true },
+    { people: [{ id: "baal-shem-tov" }, { name: "Moshiach", linked: false }], attributionVaries: true },
   ),
   // told twice, Avraham Avinu and the Baal Shem Tov
   story("avraham-and-the-guests", [telling("yi-a-01", 1, 5743), telling("en-b-01", 0, null)], { people: [{ id: "avraham-avinu" }, { id: "baal-shem-tov" }] }),
   // told once, about the Chofetz Chaim (listed, no page)
   story("the-chofetz-chaim-and-the-wagon", [telling("yi-a-02", 3, 5750, 615.4)], { people: [{ id: "chofetz-chaim" }] }),
   // told once, nobody listed: only an unresolved name, an unlisted and an excluded person
-  story("the-cook", [telling("en-b-02", 1, 5770, null, 4)], { people: [{ name: "Chaim", linked: false }, { id: "a-politician" }, { id: "the-ravs-father" }] }),
+  story("the-cook", [telling("en-b-02", 1, 5770, null, 4)], { people: [{ name: "the Rav's grandfather", linked: false }, { id: "a-politician" }, { id: "the-ravs-father" }] }),
   // told once with no time and no chapter
   story("a-boy-at-the-kosel", [telling("en-b-01", 2, null, null, null)], { title: { en: "A boy at the Kosel", yi: "" } }),
   // nothing citable: dropped from the index
@@ -165,7 +165,7 @@ describe("story page", () => {
     expect(m.title.text).toBe("Story the-poretz-and-the-sled");
     expect(m.people.map((p) => [p.name.text, p.href])).toEqual([
       ["the Baal Shem Tov", "/en/people/baal-shem-tov/"],
-      ["Reb Aryeh", null],
+      ["Moshiach", null],
     ]);
     expect(m.attributionVaries).toBe(true);
     expect(m.retelling).toBe("Retelling of the-poretz-and-the-sled.");
@@ -183,7 +183,7 @@ describe("story page", () => {
   it("prints unlisted and excluded people as plain names, never linked", () => {
     const people = storyPeople("en", STORIES[3]!, source());
     expect(people.map((p) => [p.name.text, p.href])).toEqual([
-      ["Chaim", null],
+      ["the Rav's grandfather", null],
       ["A Politician", null],
       ["the Rav's father", null],
     ]);

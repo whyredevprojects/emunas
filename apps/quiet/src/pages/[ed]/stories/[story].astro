@@ -1,8 +1,10 @@
 ---
 /**
  * A story page (Quiet C4.5): only for a story the Rav told in two or more shiurim (the layer's
- * Quiet page flag, counted from the visible set). In order: the title, the people (a name the
- * pipeline could not resolve is plain text), the merged retelling under its own label ("Retold
+ * Quiet page flag, counted from the visible set). In order: the title, the people (linked when
+ * they have a page; a corpus entity's display name as plain text otherwise; a raw name the
+ * pipeline could not resolve is never shown, and the guard checks every name marked
+ * `data-story-person`), the merged retelling under its own label ("Retold
  * here from N tellings; details differ from one to another. Hear it in the shiur."), then where
  * he tells it: one row per telling, by year where known and the undated ones last, each with the
  * shiur, the occasion, the language and the time. The entry label and the report link close the
@@ -46,9 +48,9 @@ const model = storyPageModel(ed, story, layer, indexRows(loadCatalogCorpus()));
           <>
             {i > 0 && <span class="sep" aria-hidden="true"> · </span>}
             {p.href ? (
-              <a href={p.href}><bdi lang={p.name.lang} dir={p.name.dir}>{p.name.text}</bdi></a>
+              <a href={p.href}><bdi lang={p.name.lang} dir={p.name.dir} data-story-person>{p.name.text}</bdi></a>
             ) : (
-              <bdi lang={p.name.lang} dir={p.name.dir}>{p.name.text}</bdi>
+              <bdi lang={p.name.lang} dir={p.name.dir} data-story-person>{p.name.text}</bdi>
             )}
           </>
         ))}

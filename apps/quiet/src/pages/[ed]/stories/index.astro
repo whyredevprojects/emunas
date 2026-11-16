@@ -71,8 +71,8 @@ const jump = [
           {g.people.map((p) => (
             <section class="stories-person" id={p.anchor} aria-labelledby={`${p.anchor}-h`}>
               <h4 id={`${p.anchor}-h`}>
-                <a href={p.href}><bdi lang={p.name.lang} dir={p.name.dir}>{p.name.text}</bdi></a>
-                {p.alt && <> <span class="alt-name"><bdi lang={p.alt.lang} dir={p.alt.dir}>{p.alt.text}</bdi></span></>}
+                <a href={p.href}><bdi lang={p.name.lang} dir={p.name.dir} data-story-person>{p.name.text}</bdi></a>
+                {p.alt && <> <span class="alt-name"><bdi lang={p.alt.lang} dir={p.alt.dir} data-story-person>{p.alt.text}</bdi></span></>}
               </h4>
               <ul class="story-lines" role="list">
                 {p.stories.map((line) => <StoryLine ed={ed} line={line} />)}
