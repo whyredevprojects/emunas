@@ -1,8 +1,8 @@
 ---
-status: DRAFT
-approvedBy: null
-approvedAt: null
-note: "W5.3 draft for the owner. Not published. The page itself adds the report address below this text. The Yiddish needs a named reviewer."
+status: approved
+approvedBy: owner (in the session chat)
+approvedAt: 2026-11-16
+yiddishReview: pending (no named reviewer yet)
 ---
 
 ווען איר טרעפט א טעות אין די נאטיצן, למשל א פאלשער מקור, א פאלשער נאמען, א פאלשע צייט, אדער
@@ -12,5 +12,3 @@ note: "W5.3 draft for the owner. Not published. The page itself adds the report 
 איז דא נישט ריכטיג“.
 
 שרייבט ביטע וואס איז נישט ריכטיג, און אויב איר קענט, ביי וועלכע מינוט אין דער רעקארדירונג.
-
-[[OWNER: וואס טוט זיך מיט א מעלדונג, און ווי שנעל.]]
