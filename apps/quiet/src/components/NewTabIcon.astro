@@ -1,0 +1,23 @@
+---
+/**
+ * The "opens in a new tab" mark after an external link: a box with an arrow leaving it. Decorative;
+ * the link carries the words. Mirrors in RTL so the arrow leaves on the reading side.
+ */
+---
+<svg class="new-tab-icon" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
+  <path d="M14 3h7v7h-2V6.41l-9.3 9.3-1.41-1.42L17.59 5H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z" fill="currentColor" />
+</svg>
+
+<style>
+  .new-tab-icon {
+    display: inline-block;
+    inline-size: 0.8em;
+    block-size: 0.8em;
+    margin-inline-start: 0.25em;
+    vertical-align: baseline;
+  }
+
+  :global([dir="rtl"]) .new-tab-icon {
+    transform: scaleX(-1);
+  }
+</style>

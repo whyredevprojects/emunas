@@ -213,7 +213,7 @@ function OccasionMix({ mix, ui }: { mix: WeekMix; ui: UiLang }): JSX.Element {
       <button type="button" className={s.mixPlay} data-testid="occasion-mix-play" disabled={status === "loading"} onClick={() => void play()}>
         {status === "loading" && mix.head.length === 0
           ? mt("mix.preparing")
-          : withSlot(tt("today.mix.play"), "name", <Text value={mix.label[ui]} lang={ui} />)}
+          : <span>{withSlot(tt("today.mix.play"), "name", <Text value={mix.label[ui]} lang={ui} />)}</span>}
       </button>
       <p className={s.sectionLead}>
         {tt("today.mix.lead")}

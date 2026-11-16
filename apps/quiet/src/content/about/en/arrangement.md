@@ -4,8 +4,7 @@ approvedBy: owner (in the session chat)
 approvedAt: 2026-11-16
 ---
 
-The site is set out like a sefer. The contents follow the order of the 2012 Pocket Guide: first
-the shiurim in Yiddish, then those in English, and last the recordings the guide does not list.
+The contents follow the order of the 2012 Pocket Guide: first the shiurim in Yiddish, then those in English, and last the recordings the guide does not list.
 
 Every shiur has its own page. At the top is the shiur as the catalog lists it, with the recording
 to listen to or download. Below a rule come the notes: a summary, the order of the shiur with its

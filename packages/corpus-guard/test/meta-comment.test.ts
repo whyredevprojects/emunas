@@ -30,6 +30,8 @@ describe("findMetaComments", () => {
     expect(terms("דער חלק איז שטארק צעמישט.")).toEqual(["חלק איז שטארק צעמישט*"]);
     expect(terms("דער שיעור איז נישט קלאר")).toEqual(["שיעור איז נישט קלאר"]);
     expect(terms("דער טראנסקריפט האט נישט אויפגעכאפט.")).toEqual(["טראנסקריפ*"]);
+    expect(terms("פון אן איבערשרייבונג וואס א מענטש האט באשטעטיגט")).toEqual(["איבערשרייבונג*"]);
+    expect(terms("מאשין־איבערשרייבונגען")).toEqual(["איבערשרייבונג*"]);
   });
 
   it("lets remarks on the sound or the recording pass", () => {
@@ -49,6 +51,7 @@ describe("findMetaComments", () => {
     // The teaching's own "not clear" and "confused" pass.
     expect(terms("די תורה האט איבערגעלאזט די שיעורים נישט קלאר כדי א איד זאל גיין צום רב")).toEqual([]);
     expect(terms("דער שופר צעמישט דעם שטן; די וועלט איז צעמישט")).toEqual([]);
+    expect(terms("דאס איבערשרייבן ביי האנט האט געברענגט א שטארקע הבנה")).toEqual([]);
   });
 
   it("gives the term and a short folded context", () => {

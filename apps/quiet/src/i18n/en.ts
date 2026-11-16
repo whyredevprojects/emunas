@@ -8,7 +8,7 @@
 export const en = {
   "site.name": "The Shiurim of the Mashgiach",
   "site.nameShort": "Shiurim",
-  "site.description": "The recorded shiurim of Harav Moshe Wolfson zt\"l, arranged as a catalog.",
+  "site.description": "The recorded shiurim of Harav Moshe Wolfson zt\"l.",
 
   "skip.toMain": "Skip to the text",
 
@@ -23,6 +23,8 @@ export const en = {
   "edition.current": "English edition",
   "edition.other": "אידיש",
   "edition.otherName": "Yiddish edition",
+
+  "link.newTab": "(opens in a new tab)",
 
   "breadcrumb.label": "You are here",
 

@@ -89,6 +89,24 @@
     color: var(--color-ink);
   }
 
+  .railOut {
+    margin-block-start: var(--space-s);
+    padding-block-start: var(--space-s);
+    border-block-start: var(--rule-hairline) solid var(--color-rule);
+    font-size: var(--step--1);
+  }
+
+  .railOutIcon {
+    flex: none;
+    inline-size: 0.85em;
+    block-size: 0.85em;
+    margin-inline-start: 0.35em;
+  }
+
+  .railOutIcon:dir(rtl) {
+    transform: scaleX(-1);
+  }
+
   .railLink[aria-current="page"] {
     border-inline-start-color: var(--color-accent);
     font-weight: var(--weight-semibold);
@@ -264,6 +282,13 @@
 
     .railList > li {
       flex: 1 0 auto;
+    }
+
+    .railOut {
+      margin: 0;
+      padding: 0;
+      border-block-start: 0;
+      border-inline-start: var(--rule-hairline) solid var(--color-rule);
     }
 
     .railLink {

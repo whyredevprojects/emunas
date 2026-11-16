@@ -21,6 +21,8 @@ export const en = {
   "nav.maasios": "Maasios",
   "nav.series": "Series",
   "nav.shelf": "My Shelf",
+  "nav.quiet": "Catalog and indexes",
+  "nav.newTab": "(opens in a new tab)",
   "nav.search": "Search",
 
   "lang.button": "Language",

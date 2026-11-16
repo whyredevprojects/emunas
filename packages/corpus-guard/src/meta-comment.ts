@@ -34,9 +34,11 @@ export const META_COMMENT_TERMS: readonly string[] = [
   "shiur is not clear",
   "shiur is incoherent",
   "hard to follow in the recording",
-  // Yiddish: the transcript
+  // Yiddish: the transcript ("איבערשרייבונג" is the W5.3 glossary word for a transcription; the verb
+  // "איבערשרייבן", to copy out by hand, is ordinary teaching and is not listed)
   "טראנסקריפ*",
   "טראנסקריבי*",
+  "איבערשרייבונג*",
   // Yiddish: the shiur or its words judged unclear (נישט קלאר alone is ordinary teaching)
   "נישט קלאר אויפן שיעור",
   "שיעור איז נישט קלאר",

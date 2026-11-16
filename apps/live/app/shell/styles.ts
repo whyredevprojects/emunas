@@ -27,6 +27,8 @@ export const SHELL_CLASSES = [
   "rail",
   "railLink",
   "railList",
+  "railOut",
+  "railOutIcon",
   "shell",
   "skip",
   "stubNote",
