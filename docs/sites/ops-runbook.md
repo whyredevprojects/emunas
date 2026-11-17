@@ -441,6 +441,45 @@ what it tests; `LIVE_E2E_DATA=build` serves the built data instead for a manual 
 | Live data budgets | a data file over its hard limit (warnings alone do not fail) | look at what grew; targets are in `apps/live/data-build/budgets.ts` |
 | Deploy emunas-live | service binding target missing | deploy `emunas-api` for that environment first |
 
+### Known CI failures that can come back
+
+These have failed before for reasons other than a bug, and are likely to fail again. Check this list before
+debugging from scratch.
+
+**Search eval regression gate** (ci.yml `cross-site`: "fail on a drop of more than 5 points")
+- *Why it fails:* the expected shiur ids in `apps/live/tests/eval/queries.json` are frozen, but
+  `data/` keeps growing through pipeline merges. New on-topic shiurim count as misses and there are
+  more distractors, so recall@10 and MRR fall without any change to the search code. First seen
+  2026-11-16: the corpus grew from 36,595 to 59,512 moments, and the drop was ~10 points recall
+  and ~12 points MRR.
+- *How to tell it's the data, not a regression:* the moment count in the header of
+  `apps/live/tests/eval/report.md` is well below the current corpus, and `git log` shows no
+  search change since the baseline (`packages/search-core`, the Live search code). If unsure,
+  run the baseline commit's code on today's data. A matching score means it's the data.
+- *Quick fix:* regenerate the baseline. Never loosen the 5-point threshold.
+  ```bash
+  EMUNAS_MEDIA_ORIGIN=https://media.example.invalid EMUNAS_DOMAIN=emunas.example npm run site:chain -- --to search-build
+  npx tsx apps/live/tests/eval/run.ts --embedder fake
+  ```
+  Commit `report.json` and `report.md`, and give the old and new numbers in the commit message.
+- *Lasting fix (not done yet):* `run.ts --refresh` re-resolves the expected ids from the selectors
+  and rewrites `queries.json`. It added 305 ids (800 → 1105) on 2026-11-16. That changes what the
+  gate measures, so make it a deliberate decision. Then do it on every large data merge, or in CI
+  before the gate.
+
+**Live e2e: multi-page axe tests time out** (`shell.spec` stubs, `explore.spec` lenses, `browse.spec`)
+- *Why it fails:* each test loads and scans several pages. With 4 Playwright workers on the 4-vCPU
+  runner, each page takes 2–3× longer than on an idle machine. The tests get `axeBudget(pages)`
+  (`apps/live/test/e2e/helpers.ts`): 8 s per page, at least 30 s.
+- *Fix:* if they time out again (more pages, a slower runner), raise `AXE_PAGE_MS`. Don't drop
+  pages from the scan.
+
+**Live first-load gate: `today.json ≤ 30 KiB`** (`first-load.spec`)
+- *Why it fails:* the gate counts brotli bytes, which is what production serves. The plain-HTTP test
+  server gives WebKit gzip only, which is ~6% larger, so a gzip-based measurement fails first.
+  If the gate fails on brotli bytes, Today's data has really outgrown its budget.
+- *Fix:* that is a product or data-size question. Don't raise the budget silently.
+
 ## 9. Contracts for later packages
 
 - `workers/api/wrangler.jsonc` (W2.6): `name: "emunas-api"`, `workers_dev: false`,
