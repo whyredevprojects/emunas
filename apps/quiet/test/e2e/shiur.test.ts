@@ -214,6 +214,19 @@ const audioState = (page: Page) =>
     (els as HTMLAudioElement[]).map((a) => ({ paused: a.paused, t: a.currentTime, current: a.closest(".track")?.hasAttribute("data-current") ?? false })),
   );
 
+/**
+ * Waits until the first recording is really playing. `paused` turns false as soon as play() is
+ * called, which can be before the metadata arrives; the player then applies the time link's seek on
+ * `loadedmetadata`, and a position set by the test in between would be undone. Once `currentTime`
+ * has moved, that seek has run.
+ */
+async function playingFirst(page: Page): Promise<void> {
+  await page.waitForFunction(() => {
+    const a = document.querySelector<HTMLAudioElement>("audio.listen-audio")!;
+    return !a.paused && a.readyState >= 1 && a.currentTime > 0;
+  });
+}
+
 function walk(dir: string): string[] {
   return readdirSync(dir).flatMap((name) => {
     const p = join(dir, name);
@@ -358,7 +371,7 @@ describe("player", () => {
   it("continues into the next recording when one ends", async () => {
     const page = await open(`/en/shiur/${MULTI}/`);
     await page.locator("#s0 a.time").click();
-    await page.waitForFunction(() => !document.querySelector<HTMLAudioElement>("audio.listen-audio")!.paused);
+    await playingFirst(page);
     await page.evaluate(() => {
       const a = document.querySelector<HTMLAudioElement>("audio.listen-audio")!;
       a.currentTime = a.duration - 0.6;
@@ -380,7 +393,7 @@ describe("player", () => {
   it("answers the keyboard only while the dock has focus", async () => {
     const page = await open(`/en/shiur/en-parsha-en-nch-01/`);
     await page.locator("#s0 a.time").click();
-    await page.waitForFunction(() => !document.querySelector<HTMLAudioElement>("audio.listen-audio")!.paused);
+    await playingFirst(page);
     // focus elsewhere: Space/K do nothing to the player
     await page.locator("h1").click();
     await page.keyboard.press("k");
