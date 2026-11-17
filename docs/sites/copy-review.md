@@ -135,8 +135,8 @@ and on any change of keys or `{placeholders}` against English.
 - **Q7. AI in Yiddish.** Kept the Latin "AI". Alternatives: "קינסטליכע אינטעליגענץ" (Daytshmerish
   feel), or "א קאמפיוטער פראגראם".
 - **Q8. Site names.** Quiet is branded Library and Live is branded Analyze (עיון). Quiet's
-  `site.name` is "ביבליאטעק — שיעורים פון דעם משגיח" and Live's is "עיון — שיעורים פון דעם משגיח"
-  (`site.short` "עיון"). "ביבליאטעק" is a proposal for the owner to confirm. "אין עיון" (in
+  `site.name` is "ספריה — שיעורים" and Live's is "עיון — שיעורים"
+  (`site.short` "עיון"). "ספריה" was chosen by the owner. "אין עיון" (in
   `live.open` and the About report text) can also read as "in depth"; the owner may want the name
   set off, for example „עיון“.
 - **Q9. About in Live.** Live has no About page. Should its label or menu link to Quiet's About?

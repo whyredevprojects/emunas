@@ -6,7 +6,7 @@
  * "content" vocabulary (concept-quiet §11): shiurim, recordings, notes.
  */
 export const en = {
-  "site.name": "Library — Shiurim of the Mashgiach",
+  "site.name": "Library — Shiurim",
   "site.nameShort": "Shiurim",
   "site.description": "The recorded shiurim of Harav Moshe Wolfson zt\"l.",
 

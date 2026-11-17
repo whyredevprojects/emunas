@@ -6,7 +6,7 @@ import type { UiKey } from "./en.ts";
  * `tsc`. Wording is unreviewed until the Yiddish UI review (W5.3).
  */
 export const yi: MessageTable<UiKey> = {
-  "site.name": "עיון — שיעורים פון דעם משגיח",
+  "site.name": "עיון — שיעורים",
   "site.short": "עיון",
   "site.tagline": 'שיעורים פון הרב משה וואלפסאן זצ"ל',
 
@@ -21,7 +21,7 @@ export const yi: MessageTable<UiKey> = {
   "nav.maasios": "מעשיות",
   "nav.series": "סדרות",
   "nav.shelf": "מיין פאליצע",
-  "nav.quiet": "ביבליאטעק",
+  "nav.quiet": "ספריה",
   "nav.newTab": "(עפנט זיך אין א נייעם טאב)",
   "nav.search": "זוכן",
 

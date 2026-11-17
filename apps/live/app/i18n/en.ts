@@ -6,7 +6,7 @@
  * Data vocabulary (categories, section kinds, AI-notes labels) comes from `@emunas/i18n`, not here.
  */
 export const en = {
-  "site.name": "Analyze — Shiurim of the Mashgiach",
+  "site.name": "Analyze — Shiurim",
   "site.short": "Analyze",
   "site.tagline": 'Shiurim of Harav Moshe Wolfson zt"l',
 

@@ -9,7 +9,7 @@ import type { UiKey } from "./en.ts";
  * (concept-quiet §8): סדר השיעור, מראי מקומות, מעשיות, מפתחות; "דער משגיח".
  */
 export const yi: MessageTable<UiKey> = {
-  "site.name": "ביבליאטעק — שיעורים פון דעם משגיח",
+  "site.name": "ספריה — שיעורים",
   "site.nameShort": "שיעורים",
   "site.description": "די רעקארדירטע שיעורים פון הרב משה וואלפסאן זצ\"ל.",
 

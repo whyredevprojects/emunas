@@ -185,7 +185,7 @@ describe("Base layout", () => {
 
   it("isolates a catalog title in <title> and preloads the edition's body font", async () => {
     const html = await page("yi", "/yi/shiur/x/");
-    expect(html).toContain("<title>⁨The קדושה of צדיקים⁩ · ביבליאטעק — שיעורים פון דעם משגיח</title>");
+    expect(html).toContain("<title>⁨The קדושה of צדיקים⁩ · ספריה — שיעורים</title>");
     expect(html).toContain('<link rel="preload" href="/fonts/frank-ruhl-libre-hebrew.woff2" as="font" type="font/woff2" crossorigin>');
   });
 });

@@ -28,11 +28,11 @@ const args = (pathname: string, data: RootSeoData | undefined, ui = pathname.spl
 
 describe("seoMeta", () => {
   it("titles a prerendered content page by its name", () => {
-    expect(seoMeta("page.concept")(args("/en/c/emunah", root(page({}))))).toEqual([{ title: "אמונה · Analyze — Shiurim of the Mashgiach" }]);
+    expect(seoMeta("page.concept")(args("/en/c/emunah", root(page({}))))).toEqual([{ title: "אמונה · Analyze — Shiurim" }]);
     const shiur = page({ path: "/yi/s/x", kind: "shiur", ui: "yi", title: "דרוש — חלק א", titleLang: null });
     const [t] = seoMeta("page.shiur")(args("/yi/s/x/", root(shiur)));
     expect(t!.title.startsWith("דרוש — חלק א · ")).toBe(true);
-    expect(t!.title.endsWith("עיון — שיעורים פון דעם משגיח")).toBe(true);
+    expect(t!.title.endsWith("עיון — שיעורים")).toBe(true);
   });
 
   it("falls back to the page kind after client navigation, without data, and on non-content pages", () => {
@@ -50,7 +50,7 @@ describe("seoMeta", () => {
   it("clips a long name like og:title", () => {
     const long = page({ title: `${"word ".repeat(60)}end` });
     const t = contentTitle(long)!;
-    expect(t.endsWith("… · Analyze — Shiurim of the Mashgiach")).toBe(true);
-    expect(t.length).toBeLessThanOrEqual(TITLE_MAX + TITLE_SEPARATOR.length + "Analyze — Shiurim of the Mashgiach".length);
+    expect(t.endsWith("… · Analyze — Shiurim")).toBe(true);
+    expect(t.length).toBeLessThanOrEqual(TITLE_MAX + TITLE_SEPARATOR.length + "Analyze — Shiurim".length);
   });
 });
