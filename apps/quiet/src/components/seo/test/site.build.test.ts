@@ -5,7 +5,7 @@
  * - each edition sitemap lists exactly the pages built for that edition, every shiur among them;
  *   the sitemap index and robots.txt name them;
  * - the About page exists in both editions with `#notes`, every page links to it, and it holds
- *   the approved texts from src/content/about/ and a placeholder for every part without one;
+ *   the approved texts from src/content/about/ and no part without one;
  * - link checker over every page: internal links and anchors resolve, cross-site links to the
  *   listening app match the Live route table (apps/live/app/routes.ts) and map back to a built
  *   Quiet page through @emunas/links; the only other external links are the media host, Sefaria
@@ -192,10 +192,11 @@ describe("sitemaps and robots.txt", () => {
 // ------------------------------------------------------------------ About
 
 describe("About", () => {
-  it("exists in both editions with the notes anchor and every part", () => {
+  it("exists in both editions with the notes anchor and every approved part", () => {
+    const content = join(app, "src/content/about");
     for (const ed of EDS) {
       const ids = idsOf(`/${ed}/about/`);
-      for (const p of ABOUT_PARTS) expect(ids.has(p), `${ed} #${p}`).toBe(true);
+      for (const p of ABOUT_PARTS) expect(ids.has(p), `${ed} #${p}`).toBe(existsSync(join(content, ed, `${p}.md`)));
       expect(ids.has("notes")).toBe(true);
     }
   });
@@ -210,18 +211,18 @@ describe("About", () => {
     expect(missing.slice(0, 20)).toEqual([]);
   });
 
-  it("shows the approved texts and a placeholder for every part still unwritten", () => {
+  it("shows the approved texts and leaves out every part still unwritten", () => {
     const content = join(app, "src/content/about");
     for (const ed of EDS) {
       const main = mainOf(html(`/${ed}/about/`));
       for (const part of ABOUT_PARTS) {
-        const approved = existsSync(join(content, ed, `${part}.md`));
+        if (!existsSync(join(content, ed, `${part}.md`))) continue;
         const section = new RegExp(`<section[^>]*id="${part}"[\\s\\S]*?</section>`).exec(main)?.[0] ?? "";
-        expect(section, `${ed}/${part}`).toContain(approved ? 'class="about-text"' : `data-placeholder="${part}"`);
-        expect(section, `${ed}/${part}`).not.toContain(approved ? "data-placeholder=" : 'class="about-text"');
+        expect(section, `${ed}/${part}`).toContain('class="about-text"');
       }
       expect(main).toContain(`href="mailto:${FEEDBACK}"`);
-      expect(main).toContain('data-placeholder="mashgiach"');
+      expect(main).not.toContain('id="mashgiach"');
+      expect(main).not.toContain("about-placeholder");
     }
   });
 });

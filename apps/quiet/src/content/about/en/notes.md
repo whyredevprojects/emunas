@@ -4,8 +4,7 @@ approvedBy: owner (in the session chat)
 approvedAt: 2026-11-16
 ---
 
-The notes on each shiur page were written by an AI model from the shiur: the summary, the order
-of the shiur, the write-up, the sources, the stories and the other points.
+The notes on each shiur page were written by an AI model from the shiur.
 
 No person has reviewed the notes, and they can contain mistakes. A name, a source or a time can be
 wrong, and a point can come out stronger or weaker than the Mashgiach said it.
