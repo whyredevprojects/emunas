@@ -4,7 +4,7 @@
  */
 import type { IndexRow } from "@emunas/corpus/public";
 import { describe, expect, it } from "vitest";
-import { byLetter, citeFromRow, compareNames, letterOf, run, sectionHref, sefariaHref, sortForm } from "../model.ts";
+import { byLetter, citeFromRow, compareNames, letterOf, run, sefariaHref, shiurHref, sortForm } from "../model.ts";
 
 describe("helpers", () => {
   it("sortForm drops articles, marks and leading quote marks", () => {
@@ -54,7 +54,8 @@ describe("helpers", () => {
       t: 90,
     });
     expect(citeFromRow(row, "yi", null, "/yi/x/").href).toBe("/yi/x/");
-    expect(sectionHref("yi", "yi-a-01", 3)).toBe("/yi/shiur/yi-a-01/#s3");
+    expect(shiurHref("yi", "yi-a-01", 61.5)).toBe("/yi/shiur/yi-a-01/#t=61.5");
+    expect(shiurHref("yi", "yi-a-01", null)).toBe("/yi/shiur/yi-a-01/");
   });
 
   it("sefariaHref encodes the ref as one path segment", () => {

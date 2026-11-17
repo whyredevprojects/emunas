@@ -2,23 +2,17 @@
 /**
  * The shiur page (concept-quiet §5.4; tech-quiet §4, §7), the page the site exists for.
  *
- * Full page (status "full"): catalog header · jump list · listen · notes area under the rule and
- * the single standing label (about this shiur, order of the shiur, [reserved transcript slot:
- * renders nothing], the write-up with margin times and source letters, graded sources, the
- * apparatus, mentioned) · place in the catalog · report an error.
+ * Full page (status "full"): catalog header (title and one meta line) · listen · "open in the
+ * listening app" · the notes area under its single standing AI label (about this shiur, with one
+ * line of ענינים from the corpus layer: concept-quiet-corpus C4.8, `refs.ts`) · previous and next ·
+ * report an error.
  *
- * From the corpus layer (concept-quiet-corpus C4.8; `refs.ts`), for a shiur in the visible set:
- * one line of ענינים under the abstract, sources linked to their work entry by corpus work id,
- * "told in N other shiurim →" under a story told elsewhere too, and "mentioned in this shiur" by
- * corpus id. The order of the page does not change, and the place in the catalog stays
- * catalog-only. These sit inside the notes area, under its one standing AI label.
+ * Catalog-only page: the same without the notes area, which is one sentence instead ("Notes for
+ * this shiur have not been prepared yet."). No skeletons, no placeholders.
  *
- * Catalog-only page: catalog header, listen, one sentence ("Notes for this shiur have not been
- * prepared yet."), place in the catalog. No skeletons, no placeholders.
- *
- * Works without script: every time is a link to `audioUrl#t=<local seconds>`. With script
- * (`scripts/player.ts`, ≤ 6 KB br) the times seek a docked player instead and the item being heard
- * gets a quiet margin mark.
+ * Works without script: every recording is a native `<audio>`. With script (`scripts/player.ts`)
+ * the playing recording docks, and `#t=<global seconds>` in the address (the deep links from the
+ * topic, story and index pages) seeks there.
  *
  * Input is the public contract only (`PublicShiur`; integration-plan §5.2): no transcript field
  * exists to render.
@@ -30,27 +24,22 @@ import CatalogHeader from "../CatalogHeader.astro";
 import Listen from "../Listen.astro";
 import NotesLabel from "../NotesLabel.astro";
 import { formatQuiet } from "@emunas/links";
+import { runAttrs } from "../../lib/bidi.ts";
 import type { Crumb } from "../../lib/nav.ts";
 import type { Ed } from "../../lib/edition.ts";
 import { useT } from "../../i18n/index.ts";
-import Apparatus from "./Apparatus.astro";
-import CatalogPlace from "./CatalogPlace.astro";
-import JumpList from "./JumpList.astro";
-import Mentioned from "./Mentioned.astro";
-import Outline from "./Outline.astro";
-import SourceList from "./SourceList.astro";
+import PrevNext from "./PrevNext.astro";
 import TopicLine from "./TopicLine.astro";
-import TranscriptSlot from "./TranscriptSlot.astro";
-import Writeup from "./Writeup.astro";
 import { useShiurT } from "./strings.ts";
-import { mentionedView, sourceLinks, storyLines, topicLine, type ShiurLayer } from "./refs.ts";
-import { buildSources, hasWriteup, pageParts, sectionHref, type CatalogPlaceView } from "./view.ts";
+import { topicLine, type ShiurLayer } from "./refs.ts";
+import { sectionHref, type PrevNextView } from "./view.ts";
 import "./shiur.css";
 
 interface Props {
   ed: Ed;
   shiur: PublicShiur;
-  place: CatalogPlaceView;
+  /** Previous and next in the series or the section; null when the aggregate has none. */
+  prevNext: PrevNextView | null;
   /** The corpus layer's entity records and page flags (`.corpus/layer/`). */
   layer?: ShiurLayer;
   /** The shiur's layer refs (`.corpus/layer/shiur/<id>.json`); null when it is not in the visible set. */
@@ -61,7 +50,7 @@ interface Props {
   reportHref?: string | null;
 }
 
-const { ed, shiur, place, layer, refs = null, liveHref = null, reportHref = null } = Astro.props;
+const { ed, shiur, prevNext, layer, refs = null, liveHref = null, reportHref = null } = Astro.props;
 const t = useShiurT(ed);
 const ui = useT(ed);
 const c = shiur.catalog;
@@ -69,15 +58,12 @@ const notes = shiur.status === "full" ? shiur.notes : undefined;
 // Only a shiur with notes is in the visible set; a catalog-only page shows no corpus line.
 const shiurRefs = notes && layer ? refs : null;
 const topics = layer && shiurRefs ? topicLine(ed, layer, shiurRefs) : [];
-const mentioned = layer && shiurRefs ? mentionedView(ed, layer, shiurRefs) : { people: [], concepts: [] };
-const sources = notes ? buildSources(notes, ed, layer && shiurRefs ? sourceLinks(ed, layer, shiurRefs) : undefined) : undefined;
-const stories = layer && shiurRefs ? storyLines(ed, layer, shiur.id, shiurRefs) : undefined;
-const parts = pageParts(shiur, ed, sources, mentioned);
 const section = sectionHref(ed, c);
+// The last crumb is always the title (cut short by CSS only, so the full text stays readable).
 const crumbs: Crumb[] = [
   { label: ui("nav.contents"), href: formatQuiet({ kind: "index", ed, index: "contents" }) },
-  { label: c.sectionTitle, href: section, ...(/[א-ת]/.test(c.sectionTitle) ? { lang: shiur.lang === "en" ? "he" : "yi", dir: "rtl" as const } : { lang: "en", dir: "ltr" as const }) },
-  c.n ? { label: ui("citation.number", { n: "⁨" + c.n + "⁩" }) } : { label: c.titleOriginal, dir: /[א-ת]/.test(c.titleOriginal) ? "rtl" : "ltr" },
+  { label: c.sectionTitle, href: section, ...runAttrs(c.sectionTitle, shiur.lang) },
+  { label: c.titleOriginal, ...runAttrs(c.titleOriginal, shiur.lang) },
 ];
 const description = notes?.summary.oneLiner[ed] || undefined;
 const path = formatQuiet({ kind: "shiur", ed, id: shiur.id }, {}, { bare: true });
@@ -90,13 +76,12 @@ const path = formatQuiet({ kind: "shiur", ed, id: shiur.id }, {}, { bare: true }
     data-player-artist={ui("site.name")}
     data-player-album={c.sectionTitle}
   >
-    <CatalogHeader ed={ed} shiur={shiur} sectionHref={section} />
-    <JumpList ed={ed} parts={parts} />
+    <CatalogHeader ed={ed} shiur={shiur} />
     <Listen ed={ed} recordings={shiur.recordings} />
     {liveHref && (
       <p class="open-live" data-print="hide"><a href={liveHref} hreflang={ed}>{t("live.open")}</a></p>
     )}
-    {notes && sources ? (
+    {notes ? (
       <div class="voice-notes" lang={ed}>
         <NotesLabel ed={ed} />
         <section class="about-shiur" id="about" aria-labelledby="about-heading">
@@ -105,17 +90,11 @@ const path = formatQuiet({ kind: "shiur", ed, id: shiur.id }, {}, { bare: true }
           {notes.summary.abstract[ed] !== "" && <p class="abstract">{notes.summary.abstract[ed]}</p>}
           <TopicLine ed={ed} topics={topics} />
         </section>
-        {notes.chapters.length > 0 && <Outline ed={ed} chapters={notes.chapters} recordings={shiur.recordings} />}
-        <TranscriptSlot recordings={shiur.recordings} />
-        {hasWriteup(notes, ed) && <Writeup ed={ed} blocks={notes.writeup[ed]} recordings={shiur.recordings} sources={sources} />}
-        {sources.count > 0 && <SourceList ed={ed} sources={sources} recordings={shiur.recordings} />}
-        <Apparatus ed={ed} notes={notes} recordings={shiur.recordings} {...(stories ? { stories } : {})} />
-        <Mentioned ed={ed} mentioned={mentioned} />
       </div>
     ) : (
       <p class="notes-pending" lang={ed}>{notice("notesPending", ed)}</p>
     )}
-    <CatalogPlace ed={ed} place={place} shiurLang={shiur.lang} />
+    {prevNext && <PrevNext ed={ed} view={prevNext} shiurLang={shiur.lang} />}
     {reportHref && (
       <p class="report-error" data-print="hide"><a href={reportHref}>{t("report.link")}</a></p>
     )}

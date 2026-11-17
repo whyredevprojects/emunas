@@ -17,7 +17,7 @@ import { formatQuiet, type CorpusKind, type IndexName } from "@emunas/links";
 import type { LayerTopicDetail } from "@emunas/corpus/public";
 import { clock } from "../../lib/bidi.ts";
 import type { Ed } from "../../lib/edition.ts";
-import { run, sectionHref, type Cite, type Run } from "../indexes/model.ts";
+import { run, shiurHref, type Cite, type Run } from "../indexes/model.ts";
 import type { LayerIndexCounts } from "./layer.ts";
 import { useCorpusT, type CorpusKey } from "./strings.ts";
 
@@ -89,7 +89,7 @@ export function reportEntryHref(address: string | null | undefined, ed: Ed, kind
 export interface TouchedPart {
   readonly idx: number;
   readonly t: number;
-  /** The shiur page at that part (`#s{idx}`). */
+  /** The shiur page at that part (`#t=<global seconds>`). */
   readonly href: string;
   /** The time as printed (`12:34`). */
   readonly time: string;
@@ -136,7 +136,7 @@ export function gradeListModel(ed: Ed, grades: Partial<LayerTopicDetail["grades"
     seen.add(r.shiurId);
     const parts = (Array.isArray(r.chapters) ? r.chapters : [])
       .filter((ch) => Number.isInteger(ch?.idx) && typeof ch?.t === "number" && Number.isFinite(ch.t))
-      .map((ch) => ({ idx: ch.idx, t: ch.t, href: sectionHref(ed, r.shiurId, ch.idx), time: clock(ch.t) }));
+      .map((ch) => ({ idx: ch.idx, t: ch.t, href: shiurHref(ed, r.shiurId, ch.t), time: clock(ch.t) }));
     touched.push({ cite: c, parts });
   }
   return { main: rows(grades?.main), discussed: rows(grades?.discussed), touched };

@@ -11,7 +11,7 @@ import {
   sefariaUrl,
   topicTargets,
 } from "./model.ts";
-import { printableUrl, quietOrigin } from "./quiet-link.ts";
+import { libraryUrl, quietOrigin } from "./quiet-link.ts";
 import { roomEn, roomYi } from "./strings.ts";
 
 const full = tvbb;
@@ -114,7 +114,7 @@ describe("sources", () => {
   });
 });
 
-describe("printable page link (Quiet)", () => {
+describe("In the Library link (Quiet)", () => {
   it("uses the configured origin", () => {
     expect(quietOrigin({ VITE_EMUNAS_QUIET_ORIGIN: "https://example.org/" }, null)).toBe("https://example.org");
     expect(quietOrigin({ VITE_EMUNAS_DOMAIN: "example.org" }, null)).toBe("https://library.example.org");
@@ -132,9 +132,9 @@ describe("printable page link (Quiet)", () => {
   });
 
   it("builds the Quiet shiur URL via @emunas/links", () => {
-    expect(printableUrl("https://example.org", "yi", "yi-tanya-1-01")).toBe("https://example.org/yi/shiur/yi-tanya-1-01/");
-    expect(printableUrl("https://example.org", "en", "x", 754)).toBe("https://example.org/en/shiur/x/#t=754");
-    expect(printableUrl(null, "en", "x")).toBeNull();
+    expect(libraryUrl("https://example.org", "yi", "yi-tanya-1-01")).toBe("https://example.org/yi/shiur/yi-tanya-1-01/");
+    expect(libraryUrl("https://example.org", "en", "x", 754)).toBe("https://example.org/en/shiur/x/#t=754");
+    expect(libraryUrl(null, "en", "x")).toBeNull();
   });
 });
 

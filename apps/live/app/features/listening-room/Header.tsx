@@ -1,7 +1,8 @@
 /**
  * The room header (concept-live §5.3): catalog title as written, the generated one-liner, year,
  * parsha/zman, series position, duration, recording language, path notes, the catalog topics as a
- * clickable table of contents (`catalogTopicIdx`), the play control and the "Printable page" link.
+ * clickable table of contents (`catalogTopicIdx`), the play control and the "In the Library" link
+ * (the shiur page on the Quiet site).
  * Above them, the shiur's top three topics (salience 0.5 and above) as one line, each opening the topic
  * beside the shiur, with the corpus layer's AI label once for the page (concept-live-corpus D, E.3).
  */
@@ -15,7 +16,7 @@ import type { RoomContext } from "./context.ts";
 import { mainTopics } from "./corpus.ts";
 import { topicTargets } from "./model.ts";
 import { AiLabel, Report, TopicChipButton } from "./parts.tsx";
-import { printableUrl } from "./quiet-link.ts";
+import { libraryUrl } from "./quiet-link.ts";
 import { roomStyles as s } from "./styles.ts";
 
 export function RoomHeaderDetails({ room, quietOrigin }: { room: RoomContext; quietOrigin: string | null }): JSX.Element {
@@ -24,7 +25,7 @@ export function RoomHeaderDetails({ room, quietOrigin }: { room: RoomContext; qu
   const targets = topicTargets(shiur.catalog.topics.length, notes);
   const occasion = shiur.parsha ?? shiur.zman;
   const series = room.info.seriesTitle;
-  const printable = printableUrl(quietOrigin, ui, shiur.id);
+  const library = libraryUrl(quietOrigin, ui, shiur.id);
   const main = mainTopics(shiur);
 
   const onPlay = () => {
@@ -114,13 +115,13 @@ export function RoomHeaderDetails({ room, quietOrigin }: { room: RoomContext; qu
         >
           {room.playing ? rt("room.pause") : rt("room.playShiur")}
         </button>
-        {printable ? (
-          <a className={s.printable} href={printable}>
-            {rt("room.printable")}
+        {library ? (
+          <a className={s.headLink} href={library}>
+            {rt("room.library")}
           </a>
         ) : null}
         <Report room={room} id={null} />
-        <DownloadButton shiur={shiur} ui={ui} className={s.printable} />
+        <DownloadButton shiur={shiur} ui={ui} className={s.headLink} />
       </div>
       {!room.playable ? <p className={s.note}>{rt("room.unavailable")}</p> : null}
       {shiur.recordings.some((r) => !r.playable) && room.playable ? (

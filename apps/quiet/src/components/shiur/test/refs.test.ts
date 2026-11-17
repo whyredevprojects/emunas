@@ -1,20 +1,11 @@
 /**
- * C2.4: the shiur page's corpus-layer lines as pure models (`refs.ts`) on a small synthetic layer:
- * the ענינים line, entry links by corpus id, "mentioned", sources by work id, "told in N other
- * shiurim".
+ * C2.4: the shiur page's corpus-layer line as a pure model (`refs.ts`) on a small synthetic layer:
+ * the ענינים line and entry links by corpus id.
  */
 import type { LayerConcept, LayerPerson, LayerShiurRefs, LayerStory, LayerTopicNode, LayerWork } from "@emunas/corpus/public";
 import { pageLookupFromLayer } from "@emunas/links";
 import { describe, expect, it } from "vitest";
-import {
-  entryHref,
-  mentionedView,
-  sourceLinks,
-  storyLines,
-  topicLine,
-  TOPIC_LINE_MAX,
-  type ShiurLayer,
-} from "../refs.ts";
+import { entryHref, topicLine, TOPIC_LINE_MAX, type ShiurLayer } from "../refs.ts";
 
 const flags = (quiet: boolean) => ({ quiet, live: quiet });
 
@@ -223,79 +214,5 @@ describe("topicLine", () => {
     expect(topicLine("en", layer, { topics: [{ id: "emunah", salience: 0.59 }] })).toEqual([]);
     // read defensively: odd records are skipped
     expect(topicLine("en", layer, { topics: [null, { id: 3 }, { id: "emunah" }] as unknown as LayerShiurRefs["topics"] })).toEqual([]);
-  });
-});
-
-describe("mentionedView", () => {
-  it("names people and terms by corpus id, once each, with the layer's names", () => {
-    const v = mentionedView("en", layer, refs);
-    expect(v.people.map((p) => [p.id, p.name, p.href])).toEqual([
-      ["line-only", "line-only-en", "/en/people/#line-only"],
-      ["divrei-chaim", "The Divrei Chaim", "/en/people/divrei-chaim/"],
-      ["unlisted-other", "unlisted-other-en", null],
-    ]);
-    // the Mashgiach's family is not printed at all
-    expect(v.people.some((p) => p.id === "ravs-father")).toBe(false);
-    expect(v.concepts.map((c) => [c.id, c.name, c.href])).toEqual([
-      ["ahavas-yisrael", "אהבת ישראל", "/en/erachim/ahavas-yisrael/"],
-      ["bitachon-term", "בטחון", "/en/inyanim/bitachon/"],
-      ["bitul", "ביטול", "/en/erachim/#bitul"],
-    ]);
-  });
-
-  it("prints Yiddish names in the Yiddish edition", () => {
-    const v = mentionedView("yi", layer, refs);
-    expect(v.people.find((p) => p.id === "divrei-chaim")).toEqual({ id: "divrei-chaim", name: "דער דברי חיים", href: "/yi/people/divrei-chaim/", hebrew: true });
-  });
-
-  it("is empty without refs", () => {
-    expect(mentionedView("en", layer, null)).toEqual({ people: [], concepts: [] });
-  });
-});
-
-describe("sourceLinks", () => {
-  it("maps each source moment to its corpus work and the work's entry", () => {
-    const m = sourceLinks("en", layer, refs);
-    expect(m.get("s1~src0")).toEqual({ workId: "tanya", href: "/en/sources/tanya/", orderGroup: "acharonim" });
-    expect(m.get("s1~src1")).toEqual({ workId: "small-sefer", href: "/en/sources/#small-sefer", orderGroup: "rishonim" });
-    expect(m.get("s1~src2")).toEqual({ workId: "midrash", href: null, orderGroup: null });
-    expect(m.get("s1~src3")).toEqual({ workId: "not-in-layer", href: null, orderGroup: null });
-    expect(sourceLinks("en", layer, null).size).toBe(0);
-  });
-});
-
-describe("storyLines", () => {
-  it("counts the other visible shiurim a story is told in, and links its entry", () => {
-    const m = storyLines("en", layer, "s1", refs);
-    expect(m.get("s1~st0")).toMatchObject({ storyId: "twice", otherShiurim: 1, href: "/en/stories/twice/" });
-    // two tellings in this shiur and one elsewhere: told in one other shiur
-    expect(m.get("s1~st1")).toMatchObject({ storyId: "thrice-two-shiurim", otherShiurim: 1 });
-    // told once: no line
-    expect(m.get("s1~st2")).toMatchObject({ storyId: "once", otherShiurim: 0 });
-    expect(m.get("s1~st3")).toMatchObject({ otherShiurim: 1, href: "/en/stories/#anchor-only" });
-    // a story the layer does not have gets nothing
-    expect(m.has("s1~st4")).toBe(false);
-  });
-
-  it("names the merged story's people in the edition's spelling; never a telling's raw name (F.1)", () => {
-    const withPeople: ShiurLayer = {
-      ...layer,
-      story: (id) =>
-        id === "twice"
-          ? story("twice", ["s1", "s2"], {
-              people: [{ id: "divrei-chaim" }, { id: "ravs-father" }, { name: "the Yeshuos Yaakov", linked: false }, { id: "divrei-chaim" }, { name: " ", linked: false }],
-            })
-          : undefined,
-    };
-    const line = storyLines("yi", withPeople, "s1", refs).get("s1~st0")!;
-    // The family member is left out; a plain layer name (an entity's display name) is printed as is.
-    expect(line.people).toEqual([
-      { id: "divrei-chaim", name: "דער דברי חיים", href: "/yi/people/divrei-chaim/", hebrew: true },
-      { id: "", name: "the Yeshuos Yaakov", href: null, hebrew: false },
-    ]);
-    const en = storyLines("en", withPeople, "s1", refs).get("s1~st0")!;
-    expect(en.people.map((p) => p.name)).toEqual(["The Divrei Chaim", "the Yeshuos Yaakov"]);
-    // A story the layer gives no people names no one.
-    expect(storyLines("en", layer, "s1", refs).get("s1~st2")!.people).toEqual([]);
   });
 });

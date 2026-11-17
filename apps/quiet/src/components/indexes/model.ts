@@ -27,10 +27,6 @@ export function shiurHref(ed: Ed, shiurId: string, t: number | null): string {
   return t === null ? formatQuiet({ kind: "shiur", ed, id: shiurId }) : formatQuiet({ kind: "shiur", ed, id: shiurId, t });
 }
 
-export function sectionHref(ed: Ed, shiurId: string, idx: number): string {
-  return formatQuiet({ kind: "shiur", ed, id: shiurId, moment: { kind: "s", index: idx } });
-}
-
 /** Outbound Sefaria link (tech-quiet §4: resolved references only, encoded as one path segment). */
 export function sefariaHref(ref: string): string {
   return `https://www.sefaria.org/${encodeURIComponent(ref.trim())}`;

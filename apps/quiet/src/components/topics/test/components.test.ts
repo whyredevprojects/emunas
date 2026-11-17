@@ -99,8 +99,8 @@ const grades: Grades = {
       section: "פרשת השבוע",
       onOccasion: null,
       parts: [
-        { idx: 6, t: 1732.6, time: "28:52", href: "/en/shiur/c/#s6", title: "Tehillim: Your right hand holds me" },
-        { idx: 8, t: 2880, time: "48:00", href: "/en/shiur/c/#s8", title: null },
+        { idx: 6, t: 1732.6, time: "28:52", href: "/en/shiur/c/#t=1732.6", title: "Tehillim: Your right hand holds me" },
+        { idx: 8, t: 2880, time: "48:00", href: "/en/shiur/c/#t=2880", title: null },
       ],
     },
   ],
@@ -126,9 +126,9 @@ describe("TopicGrades", () => {
     expect(html).toContain('data-on-occasion="zman:purim"');
     expect(html).toContain('<a href="/en/calendar/zman/purim/">said on Purim</a>');
     // touched: each part's title and time as the link to the section
-    expect(html).toContain('href="/en/shiur/c/#s6"');
+    expect(html).toContain('href="/en/shiur/c/#t=1732.6"');
     expect(text(html)).toContain("Tehillim: Your right hand holds me 28:52");
-    expect(html).toContain('href="/en/shiur/c/#s8"');
+    expect(html).toContain('href="/en/shiur/c/#t=2880"');
   });
 
   it("leaves out an empty grade", async () => {

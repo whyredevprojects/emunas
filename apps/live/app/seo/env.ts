@@ -3,7 +3,7 @@
  * links to the home site), from the same variables as
  * `@emunas/links` (`EMUNAS_DOMAIN`, `EMUNAS_WORKERS_SUBDOMAIN` + `EMUNAS_STAGE`, or explicit
  * `EMUNAS_QUIET_ORIGIN` / `EMUNAS_LIVE_ORIGIN`), with the `VITE_`-prefixed spellings the listening
- * room's "Printable page" link reads as fallbacks. Null when nothing is configured (local dev): then
+ * room's "In the Library" link reads as fallbacks. Null when nothing is configured (local dev): then
  * no canonical or hreflang is emitted rather than a guessed one.
  */
 import { siteHostsFromEnv, type HostEnv, type SiteHosts } from "@emunas/links";

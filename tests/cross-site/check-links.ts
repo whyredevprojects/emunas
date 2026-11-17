@@ -1,6 +1,6 @@
 /**
  * Cross-site link check (W5.1): every Quiet → Live link in Quiet's `dist/` must land on a Live route
- * with its data file, and every Live → Quiet link (canonical, "Printable page") in Live's prerendered
+ * with its data file, and every Live → Quiet link (canonical, "In the Library") in Live's prerendered
  * HTML must land on a built Quiet page (and anchor). Exit 1 on any finding.
  *
  *   npx tsx tests/cross-site/check-links.ts [--quiet <dist>] [--live <build/client>] [--corpus <dir>]

@@ -90,8 +90,9 @@ export function shiurHref(ed: Ed, shiurId: string): string {
   return formatQuiet({ kind: "shiur", ed, id: shiurId });
 }
 
-export function sectionHref(ed: Ed, shiurId: string, idx: number): string {
-  return formatQuiet({ kind: "shiur", ed, id: shiurId, moment: { kind: "s", index: idx } });
+/** A place in a shiur: `#t=<global seconds>`, which the shiur page's player seeks to. */
+export function momentHref(ed: Ed, shiurId: string, t: number): string {
+  return formatQuiet({ kind: "shiur", ed, id: shiurId, t });
 }
 
 export function occasionHref(ed: Ed, kind: "parsha" | "zman", key: string): string {
@@ -400,7 +401,7 @@ export function topicGrades(ed: Ed, src: Pick<TopicsSource, "rows" | "occasions"
           idx: c.idx,
           t: c.t,
           time: clock(c.t),
-          href: sectionHref(ed, r.shiurId, c.idx),
+          href: momentHref(ed, r.shiurId, c.t),
           title: title ? str(title[ed]) || null : null,
         };
       });
