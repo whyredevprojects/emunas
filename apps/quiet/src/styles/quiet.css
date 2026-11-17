@@ -249,10 +249,16 @@
   }
 
   /* Light and dark: a sun and a moon, the icon exception to "a word will do". Each button is named
-     (aria-label); the chosen one is in ink with a hairline under it, the other muted. */
-  .theme-switch:not([hidden]) {
+     (aria-label); the chosen one is in ink with a hairline under it, the other muted.
+     Until script shows it (`hidden`), it keeps its box but is invisible: its 44px buttons set the
+     height of the header row, so revealing it after first paint must not push the page down (CLS). */
+  .theme-switch {
     display: flex;
     gap: var(--space-2xs);
+  }
+
+  .theme-switch[hidden] {
+    visibility: hidden;
   }
 
   .theme-switch button {
