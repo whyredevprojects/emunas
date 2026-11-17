@@ -305,6 +305,11 @@ jobs:
       - uses: ./.github/actions/playwright
         with:
           browsers: webkit
+      # shiur.test.ts makes its silent test recordings with ffmpeg, which the runner image lacks.
+      - name: Install ffmpeg
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q --no-install-recommends ffmpeg
       - uses: actions/download-artifact@v4
         with:
           name: test-builds
