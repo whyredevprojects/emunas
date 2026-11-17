@@ -110,7 +110,11 @@ export function initPlayer(doc: Document, win: Window): Player | null {
     return { starts: items.map((x) => x.t), els: items.map((x) => x.el), cur: -1 };
   });
 
-  const now = () => offset(current) + (current.currentTime || 0);
+  // A seek into a recording whose metadata has not loaded waits for `loadedmetadata`; until then its
+  // target stands in for `currentTime` (still 0), so `play` and `timeupdate` keep the mark on the
+  // clicked item instead of moving it to the first one.
+  const pending = new Map<HTMLAudioElement, number>();
+  const now = () => offset(current) + (pending.get(current) ?? (current.currentTime || 0));
 
   function mark(g: number): void {
     for (const group of groups) {
@@ -137,9 +141,21 @@ export function initPlayer(doc: Document, win: Window): Player | null {
   function seek(a: HTMLAudioElement, local: number, play: boolean): void {
     setCurrent(a);
     const t = Math.max(0, local);
-    if (a.readyState >= 1) a.currentTime = t;
-    else {
-      a.addEventListener("loadedmetadata", () => (a.currentTime = t), { once: true });
+    if (a.readyState >= 1) {
+      pending.delete(a);
+      a.currentTime = t;
+    } else {
+      if (!pending.has(a)) {
+        a.addEventListener(
+          "loadedmetadata",
+          () => {
+            a.currentTime = pending.get(a) ?? 0;
+            pending.delete(a);
+          },
+          { once: true },
+        );
+      }
+      pending.set(a, t);
       if (!play) {
         a.preload = "metadata";
         a.load();

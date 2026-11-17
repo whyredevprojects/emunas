@@ -12,7 +12,7 @@
  * `@data`: expectations come from the served `/data/*`, so this also runs on a real-data build.
  */
 import { expect, test, type APIRequestContext, type Page } from "@playwright/test";
-import { axeViolations, dataJson, dock, LinkResolver, NO_SERVICE_WORKER, pageErrors, serveSilentMedia, settled, UIS } from "./helpers.ts";
+import { axeBudget, axeViolations, dataJson, dock, LinkResolver, NO_SERVICE_WORKER, pageErrors, serveSilentMedia, settled, UIS } from "./helpers.ts";
 
 test.use(NO_SERVICE_WORKER);
 
@@ -245,6 +245,7 @@ test.describe("accessibility", () => {
       const g = await genesis(request);
       if (g) paths.push(`/${ui}/seforim/${g.work.key}`, `/${ui}/seforim/${g.work.key}/${g.chapter}`);
       for (const { kind, key } of await entitySample(request, 1)) paths.push(`/${ui}/${kind}/${encodeURIComponent(key)}`);
+      axeBudget(paths.length);
       for (const p of paths) {
         await open(page, p);
         expect(await axeViolations(page), p).toEqual([]);

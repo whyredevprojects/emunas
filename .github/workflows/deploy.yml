@@ -33,6 +33,8 @@ on:
 
 permissions:
   contents: read
+  # Read ci.yml's ci-passed-<tree> marker artifacts (see the "Already passed CI?" step).
+  actions: read
 
 concurrency:
   # Syncs are hash-diffed and idempotent, so cancelling a stale run is safe.
@@ -96,18 +98,39 @@ jobs:
 
       # The transcript folder is in git; only the guard steps below read it (from its default path).
       - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
+      - uses: ./.github/actions/setup
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: npm
-      - name: Install
-        run: npm ci
-      # The same checks as ci.yml's quality job: a red typecheck, lint or unit test deploys nothing.
+      # ci.yml's `passed` job uploads ci-passed-<tree id> once check, build and e2e are green for a
+      # tree. When this commit's tree has one (from this repository, not a fork, not expired), those
+      # checks already ran on exactly these files, so typecheck, lint and unit tests are skipped
+      # here. Everything from the corpus build on, guard post-pass included, always runs on the
+      # bytes that ship. No marker (a direct push, a data-sync merge, an expired marker) = full checks.
+      - name: Already passed CI?
+        id: ci
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO_ID: ${{ github.repository_id }}
+        run: |
+          tree="$(git rev-parse 'HEAD^{tree}')"
+          n="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts?name=ci-passed-${tree}&per_page=100" \
+            --jq "[.artifacts[] | select(.expired | not) | select(.workflow_run.head_repository_id == ${REPO_ID})] | length")" || n=0
+          if [ "${n:-0}" -gt 0 ]; then
+            echo "passed=true" >> "$GITHUB_OUTPUT"
+            echo "::notice::tree ${tree:0:12} already passed ci.yml; skipping typecheck, lint and unit tests"
+          else
+            echo "passed=false" >> "$GITHUB_OUTPUT"
+            echo "no ci-passed marker for tree ${tree:0:12}; running the full checks"
+          fi
+      # The same checks as ci.yml's check job: a red typecheck, lint or unit test deploys nothing.
       - name: Typecheck (sites, site Workers, eval suite)
+        if: steps.ci.outputs.passed != 'true'
         run: npm run site:typecheck
       - name: Lint
+        if: steps.ci.outputs.passed != 'true'
         run: npm run site:lint
       - name: Unit tests (sites, site Workers, eval suite)
+        if: steps.ci.outputs.passed != 'true'
         run: npm run site:test
       - name: Check emunas-api resources are provisioned
         # wrangler.jsonc ships placeholder D1 ids (00000000-0000-4000-8000-…) until the resources

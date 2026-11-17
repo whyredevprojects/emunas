@@ -13,6 +13,7 @@ Shared tooling for the site workspaces (`apps/*`, `packages/*`, `workers/*`). Se
 ## Root scripts
 
 - `npm run site:typecheck` / `site:test` / `site:build`: run each workspace's `typecheck` / `test` / `build` script (`--workspaces --if-present`). A new package only needs those scripts.
+  `site:test` runs in four groups (`site:test:api`, `:quiet`, `:live`, `:rest`; CI runs them as parallel jobs). `:rest` covers every workspace under `packages/` and Home; a new app or Worker needs adding to a group.
 - `npm run site:lint`: ESLint over `apps packages workers` with this config, then Stylelint.
 - `npm run corpus:build`: forwards to `@emunas/corpus`'s `corpus:build` script (W1.2).
 

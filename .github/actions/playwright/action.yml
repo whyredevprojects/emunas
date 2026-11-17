@@ -1,0 +1,42 @@
+name: Playwright browsers
+description: >-
+  Installs the named Playwright browsers, cached per Playwright version and browser set (saved from
+  main only). The system libraries are apt packages, so install-deps runs on a cache hit too.
+  Needs node_modules (run ./.github/actions/setup first).
+
+inputs:
+  browsers:
+    description: Space-separated Playwright browsers, e.g. "chromium webkit"
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Playwright version
+      id: pw
+      shell: bash
+      env:
+        BROWSERS: ${{ inputs.browsers }}
+      run: |
+        echo "version=$(node -p "require('playwright/package.json').version")" >> "$GITHUB_OUTPUT"
+        echo "slug=$(printf '%s' "$BROWSERS" | tr -s ' ' '-')" >> "$GITHUB_OUTPUT"
+    - name: Restore Playwright browsers
+      id: cache
+      uses: actions/cache/restore@v4
+      with:
+        path: ~/.cache/ms-playwright
+        key: pw-${{ runner.os }}-${{ runner.arch }}-${{ steps.pw.outputs.version }}-${{ steps.pw.outputs.slug }}
+    - name: Install Playwright browsers
+      if: steps.cache.outputs.cache-hit != 'true'
+      shell: bash
+      run: npx playwright install --with-deps ${{ inputs.browsers }}
+    - name: Install Playwright system dependencies (browsers restored from cache)
+      if: steps.cache.outputs.cache-hit == 'true'
+      shell: bash
+      run: npx playwright install-deps ${{ inputs.browsers }}
+    - name: Save Playwright browsers
+      if: steps.cache.outputs.cache-hit != 'true' && github.ref == 'refs/heads/main'
+      uses: actions/cache/save@v4
+      with:
+        path: ~/.cache/ms-playwright
+        key: ${{ steps.cache.outputs.cache-primary-key }}

@@ -6,7 +6,7 @@
  * against a real-data build (`LIVE_E2E_DATA=build`, after `corpus:build` + `data:build` + `build`).
  */
 import AxeBuilder from "@axe-core/playwright";
-import { expect, type APIRequestContext, type Page, type Route } from "@playwright/test";
+import { expect, test, type APIRequestContext, type Page, type Route } from "@playwright/test";
 
 export const UIS = ["en", "yi"] as const;
 export type Ui = (typeof UIS)[number];
@@ -31,6 +31,19 @@ export async function ready(page: Page): Promise<void> {
 export async function settled(page: Page): Promise<void> {
   await ready(page);
   await expect(page.locator("main [aria-busy=true]")).toHaveCount(0, { timeout: 15_000 });
+}
+
+/**
+ * Time allowed per page in a test that loads and axe-scans several pages. One page (load, settle,
+ * axe pass) takes 1–2 s on an idle machine, but several times that when four workers share the CI
+ * runner's four vCPUs (WebKit most of all), so a scan of six to sixteen pages overran the 30 s
+ * per-test default. The budget is per page, so it grows with the list and stays bounded.
+ */
+export const AXE_PAGE_MS = 8_000;
+
+/** Gives the running test `AXE_PAGE_MS` per page it scans (never less than the 30 s default). */
+export function axeBudget(pages: number): void {
+  test.setTimeout(Math.max(30_000, pages * AXE_PAGE_MS));
 }
 
 /** axe (WCAG 2.0–2.2 A/AA + best practices): one line per violation, `[]` when clean. */

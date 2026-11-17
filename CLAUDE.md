@@ -37,3 +37,7 @@ Every page of both sites ends with the line `לעילוי נשמת אשר בן �
 ## Secrets
 
 `.env` holds the Cloudflare and R2 credentials. It is gitignored. Never commit it, print it or send it anywhere other than Cloudflare.
+
+## Known CI failures
+
+Some CI gates fail as the data grows, not because of a bug: the search eval baseline, the Live axe timeouts and the `today.json` budget. Before debugging one, read "Known CI failures that can come back" in `docs/sites/ops-runbook.md` §8. It explains how to tell data growth from a regression, and what to do about each. Add new cases there.

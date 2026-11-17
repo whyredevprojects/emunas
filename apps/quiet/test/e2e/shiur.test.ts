@@ -83,6 +83,7 @@ async function listen(server: Server): Promise<number> {
 
 function run(cmd: string, args: string[], env: NodeJS.ProcessEnv = process.env): void {
   const r = spawnSync(cmd, args, { cwd: app, env, encoding: "utf8", maxBuffer: 64 * 1024 * 1024 });
+  if (r.error) throw new Error(`${cmd} could not be started (${r.error.message}); is it installed and on PATH?`);
   if (r.status !== 0) throw new Error(`${cmd} ${args.join(" ")} failed:\n${r.stdout}\n${r.stderr}`);
 }
 

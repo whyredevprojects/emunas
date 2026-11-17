@@ -27,6 +27,9 @@ export default defineConfig({
   testDir: ".",
   testMatch: "**/*.spec.ts",
   fullyParallel: true,
+  // Playwright's default (half the cores it detects) resolved to a single worker on the 4-vCPU
+  // GitHub runner, so ~470 tests ran one at a time.
+  ...(process.env["CI"] ? { workers: 4 } : {}),
   forbidOnly: Boolean(process.env["CI"]),
   retries: process.env["CI"] ? 1 : 0,
   reporter: process.env["CI"] ? [["github"], ["html", { open: "never", outputFolder: "../../playwright-report" }]] : "list",
