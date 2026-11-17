@@ -145,7 +145,7 @@ describe("root loader", () => {
   it("works without a corpus or hosts (dev): Today keeps its text, no canonical anywhere", () => {
     const ctx = createSeoContext({ EMUNAS_CORPUS_DIR: join(tmp(), "none") }, tmp());
     expect(seoDataFor(ctx, "/en/s/x")).toEqual({ seo: { hosts: null, page: null } });
-    expect(seoDataFor(ctx, "/yi/").seo.page).toMatchObject({ kind: "today", title: "אמונת — הערן", canonical: null });
+    expect(seoDataFor(ctx, "/yi/").seo.page).toMatchObject({ kind: "today", title: "עיון — שיעורים פון דעם משגיח", canonical: null });
   });
 });
 

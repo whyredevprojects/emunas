@@ -15,7 +15,7 @@ describe("live root page", () => {
   });
 
   it("has a title", () => {
-    expect(meta()).toEqual([{ title: "Emunas — Listen" }]);
+    expect(meta()).toEqual([{ title: "Analyze — Shiurim of the Mashgiach" }]);
   });
 
   it("picks the stored language, then the browser's", () => {

@@ -1,7 +1,7 @@
 /** Route titles from the W4.5 root loader data (W5.4 `meta.ts`). */
 import { describe, expect, it } from "vitest";
 import type { RootSeoData, SeoPage } from "./head.ts";
-import { contentTitle, kindTitle, seoMeta } from "./meta.ts";
+import { contentTitle, kindTitle, seoMeta, TITLE_MAX, TITLE_SEPARATOR } from "./meta.ts";
 
 function page(over: Partial<SeoPage>): SeoPage {
   return {
@@ -28,11 +28,11 @@ const args = (pathname: string, data: RootSeoData | undefined, ui = pathname.spl
 
 describe("seoMeta", () => {
   it("titles a prerendered content page by its name", () => {
-    expect(seoMeta("page.concept")(args("/en/c/emunah", root(page({}))))).toEqual([{ title: "אמונה · Emunas — Listen" }]);
+    expect(seoMeta("page.concept")(args("/en/c/emunah", root(page({}))))).toEqual([{ title: "אמונה · Analyze — Shiurim of the Mashgiach" }]);
     const shiur = page({ path: "/yi/s/x", kind: "shiur", ui: "yi", title: "דרוש — חלק א", titleLang: null });
     const [t] = seoMeta("page.shiur")(args("/yi/s/x/", root(shiur)));
     expect(t!.title.startsWith("דרוש — חלק א · ")).toBe(true);
-    expect(t!.title.endsWith("אמונת — הערן")).toBe(true);
+    expect(t!.title.endsWith("עיון — שיעורים פון דעם משגיח")).toBe(true);
   });
 
   it("falls back to the page kind after client navigation, without data, and on non-content pages", () => {
@@ -50,7 +50,7 @@ describe("seoMeta", () => {
   it("clips a long name like og:title", () => {
     const long = page({ title: `${"word ".repeat(60)}end` });
     const t = contentTitle(long)!;
-    expect(t.endsWith("… · Emunas — Listen")).toBe(true);
-    expect(t.length).toBeLessThan(150);
+    expect(t.endsWith("… · Analyze — Shiurim of the Mashgiach")).toBe(true);
+    expect(t.length).toBeLessThanOrEqual(TITLE_MAX + TITLE_SEPARATOR.length + "Analyze — Shiurim of the Mashgiach".length);
   });
 });
