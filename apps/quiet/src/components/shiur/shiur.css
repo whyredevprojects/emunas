@@ -82,6 +82,19 @@
     margin-inline: var(--space-xs);
     color: var(--color-ink-muted);
   }
+
+  /* Long neighbour titles are cut short so the line stays one line on a wide screen and two on a
+     phone. The full title stays in the DOM. An inline-block does not take its link's underline, so
+     it repeats the link's decoration. */
+  .prev-next-title {
+    display: inline-block;
+    max-inline-size: min(24ch, 38vw);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: bottom;
+    text-decoration: inherit;
+  }
 }
 
 @layer print {

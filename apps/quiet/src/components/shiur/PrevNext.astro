@@ -3,7 +3,8 @@
  * Previous and next (concept-quiet §5.4): one line at the foot of the shiur page,
  * `← previous title · series or section · next title →`, in the series order when the shiur is in a
  * series, else in the section order (`view.ts` `prevNext`). The first and the last shiur have one
- * side only. Rendered on every shiur page, with or without notes.
+ * side only. Long titles are cut short with an ellipsis on screen (shiur.css); the full title stays in
+ * the DOM and in the link's title attribute. Rendered on every shiur page, with or without notes.
  */
 import { runAttrs } from "../../lib/bidi.ts";
 import type { Ed } from "../../lib/edition.ts";
@@ -28,7 +29,7 @@ const [back, forward] = ed === "yi" ? ["→", "←"] : ["←", "→"];
   <p>
     {view.prev && (
       <>
-        <a href={view.prev.href} rel="prev"><span aria-hidden="true">{back}</span> <span class="visually-hidden">{t("prevNext.prev")} </span><bdi {...runAttrs(title(view.prev), view.prev.lang)}>{title(view.prev)}</bdi></a>
+        <a href={view.prev.href} rel="prev" title={title(view.prev)}><span aria-hidden="true">{back}</span> <span class="visually-hidden">{t("prevNext.prev")} </span><bdi class="prev-next-title" {...runAttrs(title(view.prev), view.prev.lang)}>{title(view.prev)}</bdi></a>
         <span class="sep" aria-hidden="true">·</span>
       </>
     )}
@@ -36,7 +37,7 @@ const [back, forward] = ed === "yi" ? ["→", "←"] : ["←", "→"];
     {view.next && (
       <>
         <span class="sep" aria-hidden="true">·</span>
-        <a href={view.next.href} rel="next"><span class="visually-hidden">{t("prevNext.next")} </span><bdi {...runAttrs(title(view.next), view.next.lang)}>{title(view.next)}</bdi> <span aria-hidden="true">{forward}</span></a>
+        <a href={view.next.href} rel="next" title={title(view.next)}><span class="visually-hidden">{t("prevNext.next")} </span><bdi class="prev-next-title" {...runAttrs(title(view.next), view.next.lang)}>{title(view.next)}</bdi> <span aria-hidden="true">{forward}</span></a>
       </>
     )}
   </p>
