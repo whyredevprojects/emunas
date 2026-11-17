@@ -1,7 +1,7 @@
 ---
 /**
  * Layout of every home page: masthead (brand, primary nav, the light/dark switch, Library and
- * Listen pills), `main`, the internet notice, and the footer whose last line is the dedication,
+ * Analyze pills), `main`, the internet notice, and the footer whose last line is the dedication,
  * alone. Light is the default; components/ThemeHead.astro applies a dark choice before paint, and
  * the sun and moon switch (lib/theme.client.ts) is hidden until script shows it.
  * Canonical and Open Graph tags point at the home origin from the build environment
@@ -81,8 +81,8 @@ const tags = headTags(
             </ul>
           </nav>
           <div class="sitelinks">
-            <a class="pill" href={links.library}>Library <span class="arr" aria-hidden="true">&#8599;</span></a>
-            <a class="pill pill--ink" href={links.listen}>Listen <span class="arr" aria-hidden="true">&#8599;</span></a>
+            <a class="pill pill--ink" href={links.library}>Library <span class="arr" aria-hidden="true">&#8599;</span></a>
+            <a class="pill" href={links.listen}>Analyze <span class="arr" aria-hidden="true">&#8599;</span></a>
           </div>
           <div class="theme-switch" role="group" aria-label="Colours" hidden data-theme-switch>
             <button type="button" data-theme-value="light" aria-pressed="true" aria-label="Light" title="Light">
@@ -130,7 +130,7 @@ const tags = headTags(
           <h2 id="f-shiur">The shiurim</h2>
           <ul>
             <li><a href={links.library}>Library</a></li>
-            <li><a href={links.listen}>Listen</a></li>
+            <li><a href={links.listen}>Analyze</a></li>
             <li><a href={EXTERNAL.torahAnytime}>TorahAnytime</a></li>
             <li>By phone: <a href={CONTACT.phoneHref}>{CONTACT.phone}</a></li>
           </ul>

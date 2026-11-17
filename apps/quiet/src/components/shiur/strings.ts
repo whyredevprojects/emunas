@@ -55,7 +55,7 @@ export const shiurEn = {
   "catalog.sameOccasion": "Also on {occasion}",
   "catalog.noTitle": "Untitled",
 
-  "live.open": "Open in the listening app",
+  "live.open": "Open in Analyze",
   "report.link": "Report an error on this page",
   "report.subject": "Error report: {id}",
   "report.body": "Shiur: {id}\nPage: {url}\n\nWhat is wrong:\n",
@@ -109,7 +109,7 @@ export const shiurYi: MessageTable<ShiurKey> = {
   "catalog.sameOccasion": "אויך אויף {occasion}",
   "catalog.noTitle": "אן א קעפל",
 
-  "live.open": "עפענען אין דער אפליקאציע צום הערן",
+  "live.open": "עפענען אין עיון",
   "report.link": "מעלדן א טעות אויף דעם בלאט",
   "report.subject": "א טעות: {id}",
   "report.body": "שיעור: {id}\nבלאט: {url}\n\nוואס איז נישט ריכטיג:\n",

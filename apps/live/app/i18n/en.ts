@@ -6,8 +6,8 @@
  * Data vocabulary (categories, section kinds, AI-notes labels) comes from `@emunas/i18n`, not here.
  */
 export const en = {
-  "site.name": "Emunas — Listen",
-  "site.short": "Emunas",
+  "site.name": "Analyze — Shiurim of the Mashgiach",
+  "site.short": "Analyze",
   "site.tagline": 'Shiurim of Harav Moshe Wolfson zt"l',
 
   "shell.skip": "Skip to content",
@@ -21,7 +21,7 @@ export const en = {
   "nav.maasios": "Maasios",
   "nav.series": "Series",
   "nav.shelf": "My Shelf",
-  "nav.quiet": "Catalog and indexes",
+  "nav.quiet": "Library",
   "nav.newTab": "(opens in a new tab)",
   "nav.search": "Search",
 

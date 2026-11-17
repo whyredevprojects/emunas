@@ -235,7 +235,7 @@ describe("full page details", () => {
       liveHref: "https://listen.example.org/en/s/en-parsha-en-nch-01",
       reportHref: "mailto:e@example.org?subject=x",
     });
-    expect(html).toContain('<a href="https://listen.example.org/en/s/en-parsha-en-nch-01" hreflang="en">Open in the listening app</a>');
+    expect(html).toContain('<a href="https://listen.example.org/en/s/en-parsha-en-nch-01" hreflang="en">Open in Analyze</a>');
     expect(html).toContain('href="mailto:e@example.org?subject=x"');
   });
 
