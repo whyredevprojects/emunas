@@ -147,7 +147,7 @@ export const roomYi: MessageTable<RoomKey> = {
   "room.playFrom": "שפילן פון {time}",
   "room.unavailable": "די רעקארדירונג פון דעם שיעור קען מען דא נישט שפילן.",
   "room.unavailablePart": "טייל {n} פון דער רעקארדירונג קען מען דא נישט שפילן.",
-  "room.library": "אין דער ביבליאטעק",
+  "room.library": "אין דער ספריה",
   "room.years": "יאר",
   "room.duration": "לענג",
   "room.audioLang": "שיעור",
