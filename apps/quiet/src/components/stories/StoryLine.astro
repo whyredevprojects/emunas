@@ -2,8 +2,8 @@
 /**
  * One story on the stories index (Quiet C4.5): the generated title in the edition's language. A
  * story with a page links to it, with how often it is told. A story without a page links straight
- * to the place in the shiur where it is told: the occasion as catalogued, the year, the shiur's
- * language and the time. The retelling is never shown here; it is on the story page and the shiur
+ * to the place in the shiur where it is told: the shiur's title and the time, then the occasion as
+ * catalogued, the year and the shiur's language. The retelling is never shown here; it is on the story page and the shiur
  * page. With `anchor`, the line carries the story's id, where `@emunas/links` sends a story that
  * has no page.
  */
@@ -39,11 +39,14 @@ const years = (ys: readonly number[]) => (ys.length > 0 ? formatHebrewYears(ys, 
             <>
               {i > 0 && <span class="sep" aria-hidden="true"> · </span>}
               <a class="cite" href={m.href}>
-                <bdi lang={m.occasion.lang} dir={m.occasion.dir}>{m.occasion.text}</bdi>
-                {y && <> <bdi lang="he" dir="rtl">{y}</bdi></>}
-                {" "}<span class="cite-lang">({m.langName})</span>
+                <bdi lang={m.title.lang} dir={m.title.dir}>{m.title.text}</bdi>
                 {m.time && <> <span class="time"><bdi {...NUMERIC_RUN}>{m.time}</bdi></span></>}
               </a>
+              <span class="cite-meta">
+                {m.occasion && <>{" · "}<bdi lang={m.occasion.lang} dir={m.occasion.dir}>{m.occasion.text}</bdi></>}
+                {y && <>{" · "}<bdi lang="he" dir="rtl">{y}</bdi></>}
+                {" "}<span class="cite-lang">({m.langName})</span>
+              </span>
             </>
           );
         })}

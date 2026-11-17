@@ -11,7 +11,7 @@
  * - Shiur records and entity records are searched apart (`filters.type`). An entity record whose
  *   entity the query names (a headword: `normalizeQuery(...).entities`) comes first, as "Topic: Hashgacha Pratis · 120 shiurim", then the shiurim, merged by
  *   best score. At most `MAX_ENTRIES` entries, one per address.
- * - Results render from record meta only (title, citation, one-liner in the edition's language;
+ * - Results render from record meta only (title; parsha or zman, year and language; one-liner in the edition's language;
  *   for entries kind, label and count). No excerpts. Text is set with `textContent`, never parsed as
  *   HTML.
  * - Pagefind (`/pagefind/pagefind.js`) is loaded at runtime, not bundled.
@@ -189,14 +189,19 @@ export function renderResult(doc: Document, ed: string, d: ResultData, msg: (k: 
   title.dir = "auto";
   a.append(title);
   li.append(a);
-  const cite = d.meta["citation"];
-  if (cite) {
-    const p = el(doc, "p", "citation");
-    const b = el(doc, "bdi", undefined, cite);
+  // Occasion · year · language; the catalog strings are isolates.
+  const parts: (HTMLElement | string)[] = [];
+  for (const text of [d.meta["occasion"], d.meta["year"]]) {
+    if (!text) continue;
+    const b = el(doc, "bdi", undefined, text);
     b.dir = "auto";
-    p.append(b);
-    const n = d.meta["n"];
-    if (n) p.append(" · ", msg("number").replace("{n}", n));
+    parts.push(b);
+  }
+  const lang = d.meta["lang"] === "yi" ? msg("langYi") : d.meta["lang"] === "en" ? msg("langEn") : "";
+  if (lang) parts.push(lang);
+  if (parts.length > 0) {
+    const p = el(doc, "p", "citation");
+    parts.forEach((x, i) => (i > 0 ? p.append(" · ", x) : p.append(x)));
     li.append(p);
   }
   const one = d.meta[ed === "yi" ? "oneLinerYi" : "oneLinerEn"];

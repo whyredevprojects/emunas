@@ -140,10 +140,11 @@ describe("tellings", () => {
     expect(rows.map((r) => r.shiurId)).toEqual(["yi-a-01", "yi-a-02", "en-b-02", "en-b-01", "yi-c-01"]);
     expect(rows.map((r) => r.lang)).toEqual(["yi", "yi", "en", "en", "yi"]);
     expect(rows.map((r) => r.langName)).toEqual(["Yiddish", "Yiddish", "English", "English", "Yiddish"]);
-    expect(rows[0]).toMatchObject({ occasion: { text: "נח", dir: "rtl" }, n: "12", years: [5743], time: "5:00", href: "/en/shiur/yi-a-01/#t=300" });
+    expect(rows[0]).toMatchObject({ occasion: { text: "נח", dir: "rtl" }, years: [5743], time: "5:00", href: "/en/shiur/yi-a-01/#t=300" });
+    expect(rows[0]).not.toHaveProperty("n");
     expect(rows[3]!.years).toEqual([]);
-    // the occasion falls back to the catalog section
-    expect(rows[1]!.occasion.text).toBe("Section of yi-a-02");
+    // no parsha or zman: no occasion (never the catalog section)
+    expect(rows[1]!.occasion).toBeNull();
   });
 
   it("links to the time, else the chapter, else the shiur", () => {

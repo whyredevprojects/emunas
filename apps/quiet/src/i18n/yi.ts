@@ -35,7 +35,7 @@ export const yi: MessageTable<UiKey> = {
 
   "breadcrumb.label": "דא זענט איר",
 
-  "footer.recordingIsSource": "דער מקור איז די רעקארדירונגען. די קעפלעך זענען ווי געדרוקט אינעם פאקעט גייד פון 2012.",
+  "footer.recordingIsSource": "דער מקור איז די רעקארדירונגען.",
   "footer.otherEdition": "דער בלאט אויף ענגליש",
   "footer.home": "אמונת",
 

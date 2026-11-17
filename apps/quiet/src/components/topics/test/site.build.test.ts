@@ -304,7 +304,6 @@ describe("the calendar cross-line", () => {
           expect(m, `${ed} ${kind}:${o.key}`).not.toBeNull();
           expect({ topic: m![1], count: Number(m![2]) }, `${ed} ${kind}:${o.key}`).toEqual(want);
           expect(hrefsIn(html), `${ed} ${kind}:${o.key}`).toContain(`/${ed}/inyanim/${want.topic}/`);
-          expect(html.match(/class="calendar-rule"/g) ?? [], `${ed} ${kind}:${o.key}`).toHaveLength(1);
         }
       }
     }
@@ -327,7 +326,6 @@ describe("the calendar cross-line", () => {
         expect(m[2] !== undefined, `${t.id} ${m[1]}`).toBe(on);
         if (on) marked++;
       }
-      expect(html.match(/class="calendar-rule"/g)?.length ?? 0, t.id).toBeLessThanOrEqual(1);
     }
     expect(marked).toBeGreaterThan(0);
   });

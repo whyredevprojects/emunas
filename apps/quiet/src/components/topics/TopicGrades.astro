@@ -33,7 +33,7 @@ const partsOf = (r: TopicRow): readonly TouchedPart[] => ("parts" in r ? (r as T
 ---
 {TOPIC_GRADES.filter((g) => sizes[g] > 0).map((g) => (
   <section class={`grade topic-grade grade-${g}`} aria-labelledby={`grade-${g}`} data-grade={g}>
-    <h2 id={`grade-${g}`}>{topicGradeLabel(g, ed)} <span class="grade-count">({sizes[g].toLocaleString("en")})</span></h2>
+    <h2 id={`grade-${g}`}>{topicGradeLabel(g, ed)}</h2>
     <ol role="list" class="topic-rows">
       {rowsOf(g).map((r) => (
         <li class={`topic-row${g === "main" ? " principal" : ""}`} data-shiur={r.shiurId} data-on-occasion={r.onOccasion ? `${r.onOccasion.kind}:${r.onOccasion.key}` : undefined}>
@@ -41,7 +41,6 @@ const partsOf = (r: TopicRow): readonly TouchedPart[] => ("parts" in r ? (r as T
           <span class="citation topic-row-cite">
             {r.occasion && <span class="cite-item"><bdi {...runAttrs(r.occasion, r.lang)}>{r.occasion}</bdi></span>}
             <span class="cite-item">{r.years.length > 0 ? <HebrewYear year={r.years} civil={false} /> : t("row.yearUnknown")}</span>
-            {r.section && <span class="cite-item"><bdi {...runAttrs(r.section, r.lang)}>{r.section}</bdi></span>}
             <span class="cite-item" data-lang={r.lang}>{languageName(r.lang, ed)}</span>
             {r.onOccasion && (
               <span class="cite-item on-occasion"><a href={r.onOccasion.href}>{t("row.onOccasion", { occasion: r.onOccasion.name })}</a></span>
