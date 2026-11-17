@@ -129,6 +129,8 @@ describe("root loader", () => {
 
   it("marks the SPA fallback render and reads process.env once", () => {
     const saved = { ...process.env };
+    // A staging deploy runs the tests with its own host variables set; this test pins its own.
+    for (const k of ["EMUNAS_STAGE", "EMUNAS_WORKERS_SUBDOMAIN", "EMUNAS_QUIET_ORIGIN", "EMUNAS_LIVE_ORIGIN", "EMUNAS_HOME_ORIGIN"]) delete process.env[k];
     Object.assign(process.env, env);
     try {
       resetSeoContext();
