@@ -4,7 +4,7 @@
  * list of indexes, which are the real way to look things up. With script (`scripts/search.ts`):
  * the search form appears; results come from the Pagefind index built by `scripts/build-search.ts`:
  * headword entries first ("Topic: … · n shiurim", AI-compiled, labelled once), then shiurim with
- * title, citation and one-liner only (record meta; no excerpts).
+ * title; parsha or zman, year and language; and one-liner only (record meta; no excerpts).
  */
 import type { GetStaticPaths } from "astro";
 import { formatQuiet } from "@emunas/links";
@@ -39,7 +39,8 @@ const indexes = [
     data-msg-one={s.one}
     data-msg-count={s.count}
     data-msg-error={s.error}
-    data-msg-number={s.number}
+    data-msg-lang-yi={s.langYi}
+    data-msg-lang-en={s.langEn}
     data-msg-pending={s.pending}
     data-msg-kind-topic={s.kindTopic}
     data-msg-kind-concept={s.kindConcept}

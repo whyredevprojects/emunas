@@ -19,6 +19,7 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { buildCorpus } from "@emunas/corpus/build";
 import { buildCorpusWithAggregates } from "@emunas/corpus/build/aggregate";
 import { AliasRules, DEFAULT_TRANSCRIPTS_DIR, LeakScanner, createLeakScanner } from "@emunas/corpus-guard";
+import { formatHebrewYears } from "@emunas/i18n";
 import { fold } from "@emunas/normalize";
 import {
   FORBIDDEN_SEARCH_KEYS,
@@ -67,6 +68,7 @@ import {
   parseSynonymRows,
   pickHeadwords,
   renderEntry,
+  renderResult,
   resultHref,
   searchAll,
   searchVariants,
@@ -203,7 +205,7 @@ describe("shiur records", () => {
     expect(records.find((r) => r.shiurId === topicDoc.id)!.record.content).toContain(fold("Hashgacha Pratis"));
   });
 
-  it("meta copies title, one-liners, lang and status from the doc and the citation from the catalog", () => {
+  it("meta copies title, one-liners, lang and status from the doc, and the occasion and year from the catalog", () => {
     const cites = readCitations(corpus);
     for (const [i, doc] of docs.entries()) {
       const { meta, filters } = records[i]!.record;
@@ -212,7 +214,12 @@ describe("shiur records", () => {
       expect(meta.status).toBe(doc.status);
       expect(meta.oneLinerEn).toBe(doc.oneLiner?.en || undefined);
       expect(meta.oneLinerYi).toBe(doc.oneLiner?.yi || undefined);
-      expect(meta.citation).toBe(cites.get(doc.id)!.catalog.sectionTitle);
+      const row = cites.get(doc.id)!;
+      const occasion = (row.parsha?.raw ?? row.zman?.raw ?? "").trim();
+      expect(meta.occasion).toBe(occasion !== "" && occasion !== doc.titleOriginal.trim() ? occasion : undefined);
+      expect(meta.year).toBe(row.years.length > 0 ? formatHebrewYears(row.years, "en", { civil: false }) : undefined);
+      expect(meta).not.toHaveProperty("citation");
+      expect(meta).not.toHaveProperty("n");
       expect(filters).toEqual({ type: ["shiur"], lang: [doc.lang], category: [doc.category], status: [doc.status] });
       if (doc.status === "catalog-only") expect(meta.oneLinerEn ?? meta.oneLinerYi).toBeUndefined();
     }
@@ -684,6 +691,16 @@ describe("search glue (pure parts)", () => {
     expect(a.className).toBe("catalog-title");
     const en = renderEntry(fakeDocument(), "en", { url: "people/#divrei-chaim", meta: { kind: "person", labelEn: "the Divrei Chaim", count: "2" } }, (k) => (SEARCH_STRINGS.en as Record<string, string>)[k] ?? "");
     expect(en.textContent).toBe("Person: the Divrei Chaim · 2 shiurim");
+  });
+
+  it("renders a shiur result as its title, then occasion · year · language, then the one-liner", () => {
+    const msg = (k: string) => (SEARCH_STRINGS.en as Record<string, string>)[k] ?? "";
+    const meta = { titleOriginal: "חנוכה", occasion: "חנוכה ה", year: 'תשנ"ז', lang: "yi", oneLinerEn: "On the lights." };
+    const li = renderResult(fakeDocument(), "en", { url: "shiur/a/", meta }, msg);
+    expect(li.textContent).toBe('חנוכהחנוכה ה · תשנ"ז · YiddishOn the lights.');
+    expect(li.textContent).not.toMatch(/no\. /);
+    const bare = renderResult(fakeDocument(), "yi", { url: "shiur/b/", meta: { titleOriginal: "x", lang: "en" } }, (k) => (SEARCH_STRINGS.yi as Record<string, string>)[k] ?? "");
+    expect(bare.textContent).toBe(`xענגליש${SEARCH_STRINGS.yi.pending}`);
   });
 
   it("the page strings call /inyanim/ Topics and /erachim/ the glossary, and say the entries are AI-compiled", () => {

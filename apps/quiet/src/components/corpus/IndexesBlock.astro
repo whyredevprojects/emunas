@@ -2,8 +2,7 @@
 /**
  * The title page's indexes, one line each, in the order of Quiet C5: ענינים · ערכים · שמות ·
  * מראי מקומות · מעשיות · לוח · שנים (lines from `indexesBlock()` in model.ts). The corpus indexes
- * carry their counts from the layer and one AI label under the heading; the calendar and years are
- * the catalog's own. The block is the target of the "Indexes" nav item (`#indexes`).
+ * carry one AI label under the heading; the calendar and years are the catalog's own. The block is the target of the "Indexes" nav item (`#indexes`).
  */
 import EntityLabel from "./EntityLabel.astro";
 import type { Ed } from "../../lib/edition.ts";
@@ -33,7 +32,6 @@ const generated = lines.some((l) => l.generated);
           <span class="note">: {l.sub.map((s, i) => <>{i > 0 && <span aria-hidden="true"> · </span>}<a href={s.href}>{s.label}</a></>)}</span>
         )}
         {l.note !== "" && <span class="note">: {l.note}</span>}
-        {l.count !== null && <><span class="sep" aria-hidden="true"> · </span><span class="count">{l.count}</span></>}
       </li>
     ))}
   </ul>

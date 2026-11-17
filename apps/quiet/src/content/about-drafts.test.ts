@@ -1,8 +1,9 @@
 /**
- * The About texts (W5.3): a part is either an approved file under `content/about/{ed}/` in both
- * editions, or a draft under `content/about-drafts/{ed}/` in both editions, never both. Drafts stay
- * marked DRAFT and are never in the folder the About page reads, so an unapproved part keeps its
- * placeholder (integration-plan §8 W5.3, "No generated text in About").
+ * The About texts (W5.3): a part is an approved file under `content/about/{ed}/` in both editions,
+ * or a draft under `content/about-drafts/{ed}/` in both editions, or both: an approved part may
+ * have a revision waiting for the owner. Drafts stay marked DRAFT and are never in the folder the
+ * About page reads, so an unapproved part is left off the page and an approved one keeps its
+ * approved text (integration-plan §8 W5.3, "No generated text in About").
  */
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { dirname, join, relative } from "node:path";
@@ -16,7 +17,8 @@ const drafts = join(here, "about-drafts");
 const published = join(here, "about");
 const EDS = ["en", "yi"] as const;
 const PUBLISHED = ABOUT_PARTS.filter((p) => existsSync(join(published, "en", `${p}.md`)));
-const DRAFTED = ABOUT_PARTS.filter((p) => !PUBLISHED.includes(p));
+/** Parts with a draft: every unpublished part, and revisions of published ones. */
+const DRAFTED = ABOUT_PARTS.filter((p) => existsSync(join(drafts, "en", `${p}.md`)));
 const POINTED = /[\u05B0-\u05BD\u05BF\u05C1\u05C2\u05C4\u05C5\u05C7\u05F0-\u05F2]/u;
 
 function frontMatter(text: string): Record<string, string> {
@@ -45,6 +47,7 @@ function walk(dir: string): string[] {
 describe("About drafts", () => {
   it("cover every part not published, in both editions, and nothing else", () => {
     expect(DRAFTED).toContain("mashgiach");
+    for (const part of ABOUT_PARTS) expect(PUBLISHED.includes(part) || DRAFTED.includes(part), part).toBe(true);
     for (const ed of EDS) {
       expect(readdirSync(join(drafts, ed)).sort(), ed).toEqual(DRAFTED.map((p) => `${p}.md`).sort());
       expect(readdirSync(join(published, ed)).sort(), ed).toEqual(PUBLISHED.map((p) => `${p}.md`).sort());
@@ -69,15 +72,21 @@ describe("About drafts", () => {
     expect(body(readFileSync(join(drafts, "en", "mashgiach.md"), "utf8"))).toContain("[[OWNER: the Mashgiach's name with his full titles");
   });
 
-  const dirOf = (part: (typeof ABOUT_PARTS)[number]): string => (PUBLISHED.includes(part) ? published : drafts);
+  /** Every text of a part: the approved one and the draft, where they exist. */
+  const dirsOf = (part: (typeof ABOUT_PARTS)[number]): string[] => [
+    ...(PUBLISHED.includes(part) ? [published] : []),
+    ...(DRAFTED.includes(part) ? [drafts] : []),
+  ];
 
   it("are written in the edition's script; the Yiddish has no nikud or ligatures", () => {
     for (const part of ABOUT_PARTS) {
-      const en = body(readFileSync(join(dirOf(part), "en", `${part}.md`), "utf8"));
-      const yi = body(readFileSync(join(dirOf(part), "yi", `${part}.md`), "utf8")).replace(/\[\[OWNER:[^\]]*\]\]/g, "");
-      expect(en, part).not.toMatch(/[\u0590-\u05FF]/u);
-      expect(yi, part).toMatch(/[\u05D0-\u05EA]/u);
-      expect(yi, part).not.toMatch(POINTED);
+      for (const dir of dirsOf(part)) {
+        const en = body(readFileSync(join(dir, "en", `${part}.md`), "utf8"));
+        const yi = body(readFileSync(join(dir, "yi", `${part}.md`), "utf8")).replace(/\[\[OWNER:[^\]]*\]\]/g, "");
+        expect(en, part).not.toMatch(/[\u0590-\u05FF]/u);
+        expect(yi, part).toMatch(/[\u05D0-\u05EA]/u);
+        expect(yi, part).not.toMatch(POINTED);
+      }
     }
   });
 
@@ -90,8 +99,10 @@ describe("About drafts", () => {
   it("never remark on the transcript or the shiur itself (the guard's term list)", () => {
     for (const ed of EDS) {
       for (const part of ABOUT_PARTS) {
-        const text = body(readFileSync(join(dirOf(part), ed, `${part}.md`), "utf8"));
-        expect(findMetaComments(text).map((h) => h.term), `${ed}/${part}`).toEqual([]);
+        for (const dir of dirsOf(part)) {
+          const text = body(readFileSync(join(dir, ed, `${part}.md`), "utf8"));
+          expect(findMetaComments(text).map((h) => h.term), `${ed}/${part}`).toEqual([]);
+        }
       }
     }
   });

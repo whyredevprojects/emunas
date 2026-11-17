@@ -13,10 +13,7 @@ export const topicsEn = {
   "tree.intro":
     "The subjects of the shiurim by gate, with the topics under each and their subtopics after a dash. The number is how many shiurim speak of it.",
   "tree.gates": "Gates of the index",
-  /** C4.1 "Topics and the calendar": stated once on the topic and the calendar pages. */
-  "rule.calendar": "The calendar lists what was said on a day; the index of topics lists where it is spoken about.",
   "count.shiurim": { one: "{count} shiur", other: "{count} shiurim" },
-  "topic.place": "In the index",
   "topic.beginHere": "Begin here",
   "topic.children": "The topics under it",
   "topic.fullList": { one: "The complete list: {count} shiur", other: "The complete list: {count} shiurim" },
@@ -34,9 +31,7 @@ export const topicsYi: MessageTable<TopicsKey> = {
   "tree.intro":
     "די ענינים פון די שיעורים לויט די שערים, מיט די ענינים אונטער יעדן שער און זייערע פרטים נאך א שטריך. די צאל זאגט אין וויפיל שיעורים מען רעדט דערפון.",
   "tree.gates": "די שערים פונעם מפתח",
-  "rule.calendar": "דער לוח ווייזט וואס איז געזאגט געווארן אויף א טאג; דער מפתח הענינים ווייזט וואו מען רעדט דערפון.",
   "count.shiurim": { one: "{count} שיעור", other: "{count} שיעורים" },
-  "topic.place": "אינעם מפתח",
   "topic.beginHere": "הייבט אן דא",
   "topic.children": "די ענינים אונטער דעם",
   "topic.fullList": { one: "די גאנצע רשימה: {count} שיעור", other: "די גאנצע רשימה: {count} שיעורים" },

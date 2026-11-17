@@ -307,7 +307,6 @@ export interface TopicRow {
   readonly years: readonly number[];
   /** Parsha or zman as catalogued (null: none, or only a guess from a file name). */
   readonly occasion: string | null;
-  readonly section: string;
   /** The catalog places this shiur on one of the topic's occasions. */
   readonly onOccasion: OccasionRef | null;
 }
@@ -357,7 +356,6 @@ export function topicRow(ed: Ed, row: IndexRow, occasions: readonly OccasionRef[
     lang: row.lang,
     years: [...(Array.isArray(row.years) ? row.years : [])].sort((a, b) => a - b),
     occasion,
-    section: str(row.catalog?.sectionTitle),
     onOccasion: on,
   };
 }

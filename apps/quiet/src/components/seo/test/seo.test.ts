@@ -251,7 +251,7 @@ describe("@emunas/links section paths", () => {
     const out = mkdtempSync(join(tmpdir(), "quiet-seo-sections-"));
     dirs.push(out);
     buildCorpus(repo, out, "https://media.example.org");
-    const sections = sectionSummaries(loadCatalogCorpus(out));
+    const sections = sectionSummaries(loadCatalogCorpus(out), "en");
     expect(sections.length).toBeGreaterThan(10);
     expect(sections.some((s) => s.source !== "pocket-guide-2012")).toBe(true);
     for (const s of sections) {

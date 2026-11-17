@@ -35,20 +35,6 @@ import {
 import { pageLookupFromLayer, type CorpusKind, type LayerLinkData } from "@emunas/links";
 import { findCorpusDir } from "../indexes/corpus.ts";
 
-/** Entries per index on the title page (Quiet C5), counted from the layer. */
-export interface LayerIndexCounts {
-  /** ענינים: every topic in the tree. */
-  readonly topics: number;
-  /** ערכים: every glossary entry. */
-  readonly glossary: number;
-  /** שמות: people listed on Quiet (type `other` below the line threshold and excluded people are not). */
-  readonly names: number;
-  /** מראי מקומות: every work. */
-  readonly sources: number;
-  /** מעשיות: every story with a visible telling. */
-  readonly stories: number;
-}
-
 export interface QuietLayer {
   /** `.corpus/layer/`. */
   readonly dir: string;
@@ -78,7 +64,6 @@ export interface QuietLayer {
   readonly links: LayerLinkData;
   /** Whether Quiet builds a page for this entry (threads: never in this cut). */
   hasPage(kind: CorpusKind, id: string): boolean;
-  readonly counts: LayerIndexCounts;
   /** What the reader skipped or could not find (printed once per build). */
   readonly warnings: readonly string[];
 }
@@ -218,13 +203,6 @@ export function loadQuietLayer(dir: string): QuietLayer {
     shiurRefs: (id) => perId<LayerShiurRefs>(shiurCache, LAYER_FILES.shiurDir, id, (v) => isRecord(v) && v["shiurId"] === id),
     links,
     hasPage: (kind, id) => kind !== "thread" && links.hasPage("quiet", kind, id) === true,
-    counts: {
-      topics: topics.length,
-      glossary: concepts.length,
-      names: people.filter((p) => p.listed?.quiet === true && (p.excluded ?? null) === null).length,
-      sources: works.length,
-      stories: stories.length,
-    },
     warnings,
   };
 }

@@ -10,7 +10,7 @@
  *   (principal rows), those that discuss it (plain rows), and those that touch it in one part (one
  *   line per shiur with a link to each tagged part, at its time). Only shiurim the caller can cite
  *   are kept, so a shiur outside the corpus is never linked.
- * - `indexesBlock`: the title page's indexes, in the order of Quiet C5, with counts from the layer.
+ * - `indexesBlock`: the title page's indexes, in the order of Quiet C5.
  */
 import { corpusLabel, type CorpusLabelKey } from "@emunas/i18n";
 import { formatQuiet, type CorpusKind, type IndexName } from "@emunas/links";
@@ -18,7 +18,6 @@ import type { LayerTopicDetail } from "@emunas/corpus/public";
 import { clock } from "../../lib/bidi.ts";
 import type { Ed } from "../../lib/edition.ts";
 import { run, shiurHref, type Cite, type Run } from "../indexes/model.ts";
-import type { LayerIndexCounts } from "./layer.ts";
 import { useCorpusT, type CorpusKey } from "./strings.ts";
 
 // ------------------------------------------------------------------ headword
@@ -154,8 +153,6 @@ export interface IndexLine {
   readonly label: string;
   readonly href: string;
   readonly note: string;
-  /** Count from the layer (corpus indexes only; null for the calendar and years). */
-  readonly count: string | null;
   /** Extra links on the line (calendar: by parsha, by zman). */
   readonly sub: readonly { readonly label: string; readonly href: string }[];
   /** Built from the corpus layer (AI-generated, unreviewed). */
@@ -163,13 +160,13 @@ export interface IndexLine {
 }
 
 const CORPUS_LINES: Readonly<
-  Record<Exclude<IndexLineId, "calendar" | "years">, { index: IndexName; label: CorpusLabelKey; note: CorpusKey; count: CorpusKey; of: keyof LayerIndexCounts }>
+  Record<Exclude<IndexLineId, "calendar" | "years">, { index: IndexName; label: CorpusLabelKey; note: CorpusKey }>
 > = {
-  topics: { index: "topics", label: "index.topics", note: "indexes.topics.note", count: "count.topics", of: "topics" },
-  glossary: { index: "glossary", label: "index.glossary", note: "indexes.glossary.note", count: "count.entries", of: "glossary" },
-  names: { index: "people", label: "index.names", note: "indexes.names.note", count: "count.names", of: "names" },
-  sources: { index: "sources", label: "index.sources", note: "indexes.sources.note", count: "count.works", of: "sources" },
-  stories: { index: "stories", label: "index.stories", note: "indexes.stories.note", count: "count.stories", of: "stories" },
+  topics: { index: "topics", label: "index.topics", note: "indexes.topics.note" },
+  glossary: { index: "glossary", label: "index.glossary", note: "indexes.glossary.note" },
+  names: { index: "people", label: "index.names", note: "indexes.names.note" },
+  sources: { index: "sources", label: "index.sources", note: "indexes.sources.note" },
+  stories: { index: "stories", label: "index.stories", note: "indexes.stories.note" },
 };
 
 /** The index page a line links to (root-relative, with a trailing slash). */
@@ -180,10 +177,10 @@ export function indexLineHref(ed: Ed, id: IndexLineId): string {
 }
 
 /**
- * The lines of the indexes block, with counts from the layer. `built` says whether an index page exists in this build; a line whose page is not built is left out, so
+ * The lines of the indexes block. `built` says whether an index page exists in this build; a line whose page is not built is left out, so
  * the title page never links to a page that is not there.
  */
-export function indexesBlock(ed: Ed, counts: LayerIndexCounts, built: (href: string) => boolean = () => true): IndexLine[] {
+export function indexesBlock(ed: Ed, built: (href: string) => boolean = () => true): IndexLine[] {
   const t = useCorpusT(ed);
   const out: IndexLine[] = [];
   for (const id of INDEX_LINE_ORDER) {
@@ -195,7 +192,6 @@ export function indexesBlock(ed: Ed, counts: LayerIndexCounts, built: (href: str
         label: t("indexes.calendar"),
         href,
         note: "",
-        count: null,
         sub: [
           { label: t("indexes.calendar.parsha"), href: formatQuiet({ kind: "index", ed, index: "calendar-parsha" }) },
           { label: t("indexes.calendar.zman"), href: formatQuiet({ kind: "index", ed, index: "calendar-zman" }) },
@@ -205,7 +201,7 @@ export function indexesBlock(ed: Ed, counts: LayerIndexCounts, built: (href: str
       continue;
     }
     if (id === "years") {
-      out.push({ id, label: t("indexes.years"), href, note: t("indexes.years.note"), count: null, sub: [], generated: false });
+      out.push({ id, label: t("indexes.years"), href, note: t("indexes.years.note"), sub: [], generated: false });
       continue;
     }
     const line = CORPUS_LINES[id];
@@ -214,7 +210,6 @@ export function indexesBlock(ed: Ed, counts: LayerIndexCounts, built: (href: str
       label: corpusLabel(line.label, ed),
       href,
       note: t(line.note),
-      count: t(line.count, { count: counts[line.of] }),
       sub: [],
       generated: true,
     });

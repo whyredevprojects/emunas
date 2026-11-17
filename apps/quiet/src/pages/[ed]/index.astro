@@ -4,8 +4,8 @@
  * in. The name and one sentence; "this week" (parsha and nearest zman, built for the days around the
  * build and showing the visitor's own day with script);
  * the contents in brief (sections with counts); the indexes, one line each, in the order of
- * concept-quiet-corpus C5 with counts from the corpus layer (anchor `#indexes`, the target of the
- * "Indexes" nav item); and the standing coverage line. No featured, popular or recently added.
+ * concept-quiet-corpus C5 (anchor `#indexes`, the target of the "Indexes" nav item); and the size
+ * of the collection. No featured, popular or recently added.
  */
 import Base from "../../layouts/Base.astro";
 import ThisWeek from "../../components/catalog/ThisWeek.astro";
@@ -13,7 +13,7 @@ import { loadCatalogCorpus } from "../../components/catalog/corpus.ts";
 import IndexesBlock from "../../components/corpus/IndexesBlock.astro";
 import { quietLayer } from "../../components/corpus/layer.ts";
 import { indexesBlock } from "../../components/corpus/model.ts";
-import { buildDate, contentsHref, contentsModel, corpusTotals, pocketGuideUrl, sectionHref, thisWeekWindow } from "../../components/catalog/model.ts";
+import { buildDate, contentsHref, contentsModel, corpusTotals, sectionHref, thisWeekWindow } from "../../components/catalog/model.ts";
 import { catalogSlot, useCatalogT } from "../../components/catalog/strings.ts";
 import NewTabLink from "../../components/NewTabLink.astro";
 import { currentSiteEnv } from "../../components/seo/site-env.ts";
@@ -32,9 +32,9 @@ const c = useCatalogT(ed);
 const totals = corpusTotals(corpus);
 const contents = contentsModel(corpus, ed);
 const week = thisWeekWindow(corpus, ed, buildDate(process.env));
-// Guide sections by name; the uncatalogued ones (whose titles repeat the guide's) as one line.
+// Guide sections by name; the other recordings (whose section titles repeat the guide's) as one line.
 const sections = [...contents.yiddish, ...contents.english];
-const uncataloguedCount = contents.uncatalogued.reduce((a, s) => a + s.count, 0);
+const moreCount = contents.more.reduce((a, s) => a + s.count, 0);
 
 // The index pages this build has (`<dir>/index.astro` beside this page): a line whose page is not
 // built yet is left out rather than linked to a 404.
@@ -45,16 +45,13 @@ const layer = quietLayer();
 // The Live site's home in this edition, opened in a new tab; the lead's `{link}` is the link.
 const liveHome = currentSiteEnv().links.live.home(ed);
 const [liveBefore, liveAfter] = catalogSlot(ed, "home.liveLead", "link");
-const [leadBefore, leadAfter] = catalogSlot(ed, "home.lead", "guide");
-const indexLines = indexesBlock(ed, layer.counts, (href) => builtDirs.has(href.split("/")[2] ?? ""));
+const indexLines = indexesBlock(ed, (href) => builtDirs.has(href.split("/")[2] ?? ""));
 ---
 <Base ed={ed} title={t("site.name")}>
   <header class="title-page">
     <h1>{t("site.name")}</h1>
-    <p class="title-lead">{leadBefore}<NewTabLink ed={ed} href={pocketGuideUrl(corpus)}>{c("guide.link")}</NewTabLink>{leadAfter}</p>
-    <p class="standing" data-coverage>
-      {c("home.standing", { total: totals.total, hours: totals.hoursAbout, full: totals.full })}
-    </p>
+    <p class="title-lead">{c("home.lead")}</p>
+    <p class="standing">{c("home.standing", { total: totals.total, hours: totals.hoursAbout })}</p>
     <p class="live-lead" data-print="hide">
       {liveBefore}<NewTabLink ed={ed} href={liveHome} hreflang={ed}>{c("home.liveLink")}</NewTabLink>{liveAfter}
     </p>
@@ -72,11 +69,11 @@ const indexLines = indexesBlock(ed, layer.counts, (href) => builtDirs.has(href.s
           <span class="count">{c("count.shiurim", { count: s.count })}</span>
         </li>
       ))}
-      {uncataloguedCount > 0 && (
-        <li data-section="uncatalogued">
-          <a href={`${contentsHref(ed)}#uncatalogued`}>{c("contents.uncatalogued")}</a>
+      {moreCount > 0 && (
+        <li data-section="more">
+          <a href={`${contentsHref(ed)}#more`}>{c("contents.more")}</a>
           <span class="sep" aria-hidden="true"> · </span>
-          <span class="count">{c("count.shiurim", { count: uncataloguedCount })}</span>
+          <span class="count">{c("count.shiurim", { count: moreCount })}</span>
         </li>
       )}
     </ul>

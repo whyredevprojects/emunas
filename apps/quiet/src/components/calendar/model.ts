@@ -16,6 +16,7 @@ import type { OccasionShiurRef, OccasionsFile, YearsFile } from "@emunas/corpus/
 import type { CorpusIndex, IndexRow } from "@emunas/corpus/public";
 import { formatQuiet } from "@emunas/links";
 import type { Ed } from "../../lib/edition.ts";
+import { sectionDisplayTitle } from "../catalog/model.ts";
 import type { CalendarKey } from "./strings.ts";
 
 export interface CalendarData {
@@ -335,11 +336,11 @@ export function unknownYearGroups(data: CalendarData, ed: Ed): SectionGroup[] {
   for (const s of data.index.sections) {
     const list = bySection.get(s.key);
     if (list) {
-      groups.push({ key: s.key, title: s.title, shiurim: list });
+      groups.push({ key: s.key, title: sectionDisplayTitle(s.key, s.title, ed), shiurim: list });
       bySection.delete(s.key);
     }
   }
   // A row whose section is missing from the sections list still appears (data keeps arriving).
-  for (const [key, list] of bySection) groups.push({ key, title: list[0]?.sectionTitle ?? key, shiurim: list });
+  for (const [key, list] of bySection) groups.push({ key, title: sectionDisplayTitle(key, list[0]?.sectionTitle ?? key, ed), shiurim: list });
   return groups;
 }

@@ -32,7 +32,7 @@ export const en = {
 
   "breadcrumb.label": "You are here",
 
-  "footer.recordingIsSource": "The recordings are the source. Titles are as printed in the 2012 Pocket Guide.",
+  "footer.recordingIsSource": "The recordings are the source.",
   "footer.otherEdition": "This page in Yiddish",
   "footer.home": "Emunas home",
 

@@ -11,7 +11,7 @@ import { quietPaths } from "@emunas/links";
 import type { IndexRow, PublicCatalog, PublicShiur } from "@emunas/corpus/public";
 import type { Neighbours } from "@emunas/corpus/aggregate";
 import type { Ed } from "../../lib/edition.ts";
-import { sectionHref as catalogSectionHref } from "../catalog/model.ts";
+import { sectionDisplayTitle, sectionHref as catalogSectionHref } from "../catalog/model.ts";
 
 // ---------------------------------------------------------------- IRIs
 
@@ -62,6 +62,11 @@ export function sectionHref(ed: Ed, catalog: Pick<PublicCatalog, "source" | "sec
   return catalogSectionHref(ed, { source: catalog.source, id: catalog.sectionId });
 }
 
+/** The shiur's section title as the edition shows it (the display name, else as catalogued). */
+export function sectionTitle(ed: Ed, catalog: Pick<PublicCatalog, "source" | "sectionId" | "sectionTitle">): string {
+  return sectionDisplayTitle(`${catalog.source}:${catalog.sectionId}`, catalog.sectionTitle, ed);
+}
+
 /**
  * Previous and next: in the series order when the shiur is in a series (a series can run past the
  * end of its catalog section, and its neighbours are the next part, not the next row of the
@@ -89,7 +94,7 @@ export function prevNext(
   }
   return {
     of: "section",
-    label: shiur.catalog.sectionTitle,
+    label: sectionTitle(ed, shiur.catalog),
     href: sectionHref(ed, shiur.catalog),
     prev: ref(neighbours.section.prev),
     next: ref(neighbours.section.next),

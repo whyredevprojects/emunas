@@ -108,10 +108,8 @@ export interface TellingRow {
   readonly href: string;
   /** The title exactly as catalogued. */
   readonly title: Run;
-  /** Parsha or zman as catalogued, else the catalog section. */
-  readonly occasion: Run;
-  /** Catalog number as printed. */
-  readonly n: string | null;
+  /** Parsha or zman as catalogued (null: none, or the same text as the title). */
+  readonly occasion: Run | null;
   /** Year of the shiur (the layer's year, else the catalog's years); empty when undated. */
   readonly years: readonly number[];
   /** Spoken language of this shiur. */
@@ -151,13 +149,14 @@ export function tellingRows(ed: Ed, tellings: readonly LayerMomentRef[] | null |
     const t = typeof ref.t === "number" && Number.isFinite(ref.t) && ref.t >= 0 ? ref.t : null;
     const y = yearOf(ref);
     const lang: Ed = row.lang;
+    const title = row.catalog.titleOriginal;
+    const occasion = (row.parsha?.raw ?? row.zman?.raw ?? "").trim();
     return {
       momentId: typeof ref.momentId === "string" ? ref.momentId : "",
       shiurId: row.id,
       href: tellingHref(ed, ref),
-      title: run(row.catalog.titleOriginal, lang),
-      occasion: run(row.parsha?.raw ?? row.zman?.raw ?? row.catalog.sectionTitle, lang),
-      n: row.catalog.n,
+      title: run(title, lang),
+      occasion: occasion !== "" && occasion !== title.trim() ? run(occasion, lang) : null,
       years: y !== null ? [y] : row.years,
       lang,
       langName: languageName(lang, ed),

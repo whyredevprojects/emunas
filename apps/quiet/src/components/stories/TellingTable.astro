@@ -36,9 +36,8 @@ const t = useStoriesT(ed);
       <tr class="telling" data-moment={r.momentId} data-lang={r.lang}>
         <th scope="row">
           <a href={r.href}><bdi lang={r.title.lang} dir={r.title.dir}>{r.title.text}</bdi></a>
-          {r.n !== null && <> <span class="telling-n"><bdi {...NUMERIC_RUN}>{r.n}</bdi></span></>}
         </th>
-        <td><bdi lang={r.occasion.lang} dir={r.occasion.dir}>{r.occasion.text}</bdi></td>
+        <td>{r.occasion && <bdi lang={r.occasion.lang} dir={r.occasion.dir}>{r.occasion.text}</bdi>}</td>
         <td class="telling-year">{r.years.length > 0 ? <HebrewYear year={r.years} /> : <span class="muted">{t("telling.undated")}</span>}</td>
         <td>{r.langName}</td>
         <td class="telling-time">{r.time && <a href={r.href}><bdi {...NUMERIC_RUN}>{r.time}</bdi></a>}</td>

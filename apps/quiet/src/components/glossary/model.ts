@@ -125,7 +125,7 @@ export function conceptPage(d: EntryData, ed: Ed, c: LayerConcept): ConceptPage 
     if (!cite) continue;
     seen.add(key);
     const title = ch ? textOf(ch.title, ed) : "";
-    examples.push({ shiurId: r.shiurId, title: title === "" ? cite.occasion : run(title, ed), time: clock(at), href, cite });
+    examples.push({ shiurId: r.shiurId, title: title === "" ? cite.title : run(title, ed), time: clock(at), href, cite });
   }
   const throughout = c.passim === true;
   const gloss = glossOf(c, ed, he);

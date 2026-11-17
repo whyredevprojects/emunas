@@ -32,7 +32,7 @@ import PrevNext from "./PrevNext.astro";
 import TopicLine from "./TopicLine.astro";
 import { useShiurT } from "./strings.ts";
 import { topicLine, type ShiurLayer } from "./refs.ts";
-import { sectionHref, type PrevNextView } from "./view.ts";
+import { sectionHref, sectionTitle, type PrevNextView } from "./view.ts";
 import "./shiur.css";
 
 interface Props {
@@ -59,10 +59,11 @@ const notes = shiur.status === "full" ? shiur.notes : undefined;
 const shiurRefs = notes && layer ? refs : null;
 const topics = layer && shiurRefs ? topicLine(ed, layer, shiurRefs) : [];
 const section = sectionHref(ed, c);
+const sectionName = sectionTitle(ed, c);
 // The last crumb is always the title (cut short by CSS only, so the full text stays readable).
 const crumbs: Crumb[] = [
   { label: ui("nav.contents"), href: formatQuiet({ kind: "index", ed, index: "contents" }) },
-  { label: c.sectionTitle, href: section, ...runAttrs(c.sectionTitle, shiur.lang) },
+  { label: sectionName, href: section, ...runAttrs(sectionName, shiur.lang) },
   { label: c.titleOriginal, ...runAttrs(c.titleOriginal, shiur.lang) },
 ];
 const description = notes?.summary.oneLiner[ed] || undefined;
@@ -74,7 +75,7 @@ const path = formatQuiet({ kind: "shiur", ed, id: shiur.id }, {}, { bare: true }
     data-shiur={shiur.id}
     data-player-title={c.titleOriginal}
     data-player-artist={ui("site.name")}
-    data-player-album={c.sectionTitle}
+    data-player-album={sectionName}
   >
     <CatalogHeader ed={ed} shiur={shiur} />
     <Listen ed={ed} recordings={shiur.recordings} />
