@@ -56,7 +56,7 @@ const INDEX_PATH: Readonly<Record<IndexName, string | null>> = {
 };
 
 export interface FormatOptions {
-  /** Drop fragments (`#s3`, `#t=…`, index anchors stay): for canonical and hreflang. */
+  /** Drop fragments (`#t=…`; index anchors stay): for canonical and hreflang. */
   readonly bare?: boolean;
 }
 
@@ -69,7 +69,7 @@ export function formatQuiet(route: Route, data: LinkData = {}, opts: FormatOptio
     case "shiur": {
       const base = `/${route.ed}/shiur/${seg(route.id)}/`;
       if (opts.bare) return base;
-      if (route.moment?.kind === "s") return `${base}#s${route.moment.index}`;
+      // A Quiet shiur page has one place to point at: a time. Moments (Live's `m=`) are not kept.
       const t = formatExactSeconds(route.t);
       return t === undefined ? base : `${base}#t=${t}`;
     }
@@ -171,8 +171,6 @@ function decodeAnchor(hash: string): string | null {
 }
 
 function shiurFromHash(ed: Ed, id: string, hash: string): Route {
-  const sec = /^s(\d{1,5})$/.exec(hash);
-  if (sec) return { kind: "shiur", ed, id, moment: { kind: "s", index: Number(sec[1]) } };
   const tm = /^t=(.*)$/.exec(hash);
   const t = tm ? parseExactSeconds(tm[1]) : undefined;
   return t === undefined ? { kind: "shiur", ed, id } : { kind: "shiur", ed, id, t };

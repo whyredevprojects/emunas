@@ -139,8 +139,8 @@ describe("GradeList", () => {
     expect(m.discussed.map((c) => c.shiurId)).toEqual(["b"]);
     expect(m.touched).toHaveLength(1);
     expect(m.touched[0]!.parts).toEqual([
-      { idx: 2, t: 754, href: "/en/shiur/c/#s2", time: "12:34" },
-      { idx: 5, t: 3723, href: "/en/shiur/c/#s5", time: "1:02:03" },
+      { idx: 2, t: 754, href: "/en/shiur/c/#t=754", time: "12:34" },
+      { idx: 5, t: 3723, href: "/en/shiur/c/#t=3723", time: "1:02:03" },
     ]);
   });
 
@@ -159,7 +159,7 @@ describe("GradeList", () => {
     expect(html).toContain("Touched on in one part");
     expect(html).toMatch(/<li class="grade-row principal" data-shiur="a"><strong><a class="cite" href="\/en\/shiur\/a\/">/);
     expect(html).toMatch(/<li class="grade-row" data-shiur="b"><a class="cite"/);
-    expect(html).toMatch(/<li class="grade-row touched" data-shiur="c">.*href="\/en\/shiur\/c\/#s2".*12:34.*href="\/en\/shiur\/c\/#s5".*1:02:03/s);
+    expect(html).toMatch(/<li class="grade-row touched" data-shiur="c">.*href="\/en\/shiur\/c\/#t=754".*12:34.*href="\/en\/shiur\/c\/#t=3723".*1:02:03/s);
     expect(html).not.toContain("gone-1");
   });
 

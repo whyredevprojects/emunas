@@ -65,7 +65,6 @@ const headingId = `${id}-heading`;
                 <a class="download" href={url} download>
                   {count > 1 ? t("listen.downloadPart", { part }) : t("listen.download")}
                 </a>
-                {count === 1 && duration && <> · <span>{t("listen.duration", { duration })}</span></>}
               </p>
             </>
           ) : (

@@ -76,7 +76,7 @@ describe("canonicalFor", () => {
 
 describe("hreflangPair", () => {
   it("quiet shiur: both editions plus x-default to the root", () => {
-    expect(links.hreflangPair(`/en/shiur/${ID}/#s2`)).toEqual([
+    expect(links.hreflangPair(`/en/shiur/${ID}/#t=845`)).toEqual([
       { hreflang: "yi", href: `${HOSTS.quiet}/yi/shiur/${ID}/` },
       { hreflang: "en", href: `${HOSTS.quiet}/en/shiur/${ID}/` },
       { hreflang: "x-default", href: `${HOSTS.quiet}/` },
@@ -117,7 +117,7 @@ describe("hreflangPair", () => {
 
 describe("withEdition", () => {
   it("switches edition keeping place", () => {
-    expect(links.withEdition(`${HOSTS.quiet}/en/shiur/${ID}/#s2`, "yi")).toBe(`${HOSTS.quiet}/yi/shiur/${ID}/#s2`);
+    expect(links.withEdition(`${HOSTS.quiet}/en/shiur/${ID}/#t=845`, "yi")).toBe(`${HOSTS.quiet}/yi/shiur/${ID}/#t=845`);
     expect(links.withEdition(`${HOSTS.live}/en/s/${ID}?t=9&read=en`, "yi")).toBe(`${HOSTS.live}/yi/s/${ID}?t=9`);
     expect(links.withEdition(`${HOSTS.quiet}/`, "en")).toBe(`${HOSTS.quiet}/en/`);
     expect(links.withEdition(`${HOSTS.quiet}/audio/a.mp3`, "en")).toBe(`${HOSTS.quiet}/en/`);

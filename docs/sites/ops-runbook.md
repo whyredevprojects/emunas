@@ -564,7 +564,7 @@ In order; each step names where it is described. Staging first, then production.
       `/` (Live redirects to `/yi/` or `/en/`), a shiur page in both editions, audio plays and
       seeks (Range), the response carries `X-Robots-Tag: noindex`, page `<link rel="canonical">`
       points at the staging Quiet host, Quiet → "Open in the listening app" and Live →
-      "Printable page" stay on staging, search returns results, "report a problem" submits (or is
+      "In the Library" stay on staging, search returns results, "report a problem" submits (or is
       hidden when no site key is set), an offline download completes (CORS).
 
 **Production run**

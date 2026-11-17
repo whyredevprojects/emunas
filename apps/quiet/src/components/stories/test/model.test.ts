@@ -146,10 +146,9 @@ describe("tellings", () => {
     expect(rows[1]!.occasion.text).toBe("Section of yi-a-02");
   });
 
-  it("links to the time, else the chapter, else the shiur", () => {
-    expect(tellingHref("yi", { shiurId: "x", t: 61.5, chapterIdx: 3 })).toBe("/yi/shiur/x/#t=61.5");
-    expect(tellingHref("yi", { shiurId: "x", t: null, chapterIdx: 3 })).toBe("/yi/shiur/x/#s3");
-    expect(tellingHref("yi", { shiurId: "x", t: null, chapterIdx: null })).toBe("/yi/shiur/x/");
+  it("links to the time, else the shiur", () => {
+    expect(tellingHref("yi", { shiurId: "x", t: 61.5 })).toBe("/yi/shiur/x/#t=61.5");
+    expect(tellingHref("yi", { shiurId: "x", t: null })).toBe("/yi/shiur/x/");
   });
 
   it("reads odd input defensively", () => {
@@ -235,13 +234,14 @@ describe("stories index", () => {
     expect(m.withoutName.map((l) => l.id)).toEqual(["a-boy-at-the-kosel", "the-cook"]);
   });
 
-  it("links a story with a page to it and a story told once to the place in the shiur", () => {
+  it("links a story with a page to it and a story told once to its time in the shiur", () => {
     const once = m.groups[1]!.people[0]!.stories[0]!;
     expect(once.id).toBe("the-chofetz-chaim-and-the-wagon");
     expect(once.href).toBeNull();
     expect(once.moments.map((x) => [x.href, x.time, x.langName])).toEqual([["/en/shiur/yi-a-02/#t=615.4", "10:15", "Yiddish"]]);
     const cook = m.withoutName.find((l) => l.id === "the-cook")!;
-    expect(cook.moments[0]!.href).toBe("/en/shiur/en-b-02/#s4");
+    // a telling without a time links the shiur itself
+    expect(cook.moments[0]!.href).toBe("/en/shiur/en-b-02/");
   });
 
   it("gives every listed story exactly one anchor, where @emunas/links sends a story without a page", () => {

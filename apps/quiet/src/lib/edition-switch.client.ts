@@ -1,7 +1,7 @@
 /**
  * Browser enhancement for the edition switch (concept-quiet §8 "switching edition keeps your
  * place"). The built `href` already points at the same path in the other edition; this adds the
- * live `?query` and `#hash` (`#s3`, `#t=754`, `#src12`, a search query), which only exist at
+ * live `?query` and `#hash` (`#t=754`, an index anchor, a search query), which only exist at
  * runtime. The href is refreshed on load, on `hashchange`, and right before activation (the
  * player may change the hash with `history.replaceState`, which fires no event).
  */

@@ -46,15 +46,10 @@ export const en = {
   "listen.unavailable": "The recording is not yet available online.",
   "listen.unavailablePart": "Part {part}: not yet available online.",
   "listen.noSupport": "This browser cannot play the recording here. Use the download link.",
-  "listen.duration": "Length {duration}",
 
-  "citation.label": "Catalog entry",
+  "citation.label": "Details",
   "citation.number": "no. {n}",
-  "citation.guidePage": "Pocket Guide p. {page}",
-  "citation.series": "series",
-
-  "catalog.derived.filename": "Not in the 2012 Pocket Guide; the title is taken from the file name.",
-  "catalog.derived.dirPrefix": "Not in the 2012 Pocket Guide; the title is taken from the folder and file name.",
+  "citation.perek": "Perek {perek}",
 
   "notes.label": "Notes",
 

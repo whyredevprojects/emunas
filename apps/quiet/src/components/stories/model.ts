@@ -82,12 +82,9 @@ export function storyHref(ed: Ed, id: string, links: LinkData): string {
   return formatQuiet({ kind: "entry", ed, entry: "story", id }, links);
 }
 
-/** The place in the shiur: at the telling's time, else its chapter, else the shiur itself. */
-export function tellingHref(ed: Ed, ref: Pick<LayerMomentRef, "shiurId" | "t" | "chapterIdx">): string {
+/** The place in the shiur: at the telling's time (`#t=`), else the shiur itself. */
+export function tellingHref(ed: Ed, ref: Pick<LayerMomentRef, "shiurId" | "t">): string {
   if (typeof ref.t === "number" && Number.isFinite(ref.t) && ref.t >= 0) return formatQuiet({ kind: "shiur", ed, id: ref.shiurId, t: ref.t });
-  if (Number.isInteger(ref.chapterIdx) && (ref.chapterIdx ?? -1) >= 0) {
-    return formatQuiet({ kind: "shiur", ed, id: ref.shiurId, moment: { kind: "s", index: ref.chapterIdx as number } });
-  }
   return formatQuiet({ kind: "shiur", ed, id: ref.shiurId });
 }
 

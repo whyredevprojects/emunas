@@ -35,7 +35,7 @@ const contents = formatQuiet({ kind: "index", ed, index: "contents" });
     { label: t("citation.number", { n: sampleShiur.catalog.n ?? "" }) },
   ]}
 >
-  <CatalogHeader ed={ed} shiur={sampleShiur} sectionHref={contents} />
+  <CatalogHeader ed={ed} shiur={sampleShiur} />
   <Listen ed={ed} recordings={sampleRecordings} />
   <section class="voice-notes" aria-labelledby="about-shiur" lang={ed}>
     <NotesLabel ed={ed} />
