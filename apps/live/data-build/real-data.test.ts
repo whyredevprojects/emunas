@@ -9,6 +9,7 @@
 import { existsSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
+import { UI_LANGS } from "@emunas/i18n";
 import { DEFAULT_TRANSCRIPTS_DIR, createLeakScanner, runPrePass } from "@emunas/corpus-guard";
 import type { ShiurFile } from "../app/data/types.ts";
 import { brotliSize, checkLiveBudgets, describeFinding, prerenderSetsFromCorpus } from "./budgets.ts";
@@ -16,7 +17,7 @@ import { readCorpusInput, readFeaturedPolicy } from "./corpus-input.ts";
 import { emitLiveData } from "./emit.ts";
 import { validateFile } from "./schemas.ts";
 import { GENERATED_AT, REAL_DATA, REAL_POLICY, REPO, buildCorpusTo, tmp } from "./test-helpers.ts";
-import { writeDataDir } from "./write.ts";
+import { serialize, writeDataDir } from "./write.ts";
 
 const transcripts = join(REPO, DEFAULT_TRANSCRIPTS_DIR);
 const haveRealData = existsSync(join(REAL_DATA, "derived/ingest.json"));
@@ -49,6 +50,12 @@ describe.runIf(haveRealData)("Live data emit on real data", () => {
     writeDataDir(dataDir, files);
     const b = checkLiveBudgets({ dataDir, publicDir: root, clientDir: null, prerender: prerenderSetsFromCorpus(corpusDir) });
     expect(b.findings.map(describeFinding)).toEqual([]);
+    // One Today file per reading language, each within its own 30 KiB target (checked above).
+    const todaySizes = UI_LANGS.map((l) => {
+      const body = files.get(`today.${l}.json`);
+      expect(body, l).toBeDefined();
+      return `today.${l}.json ${brotliSize(serialize(body))} B br`;
+    });
     expect(b.projectedFiles).toBeLessThanOrEqual(18_000);
     // The corpus layer is on: its files exist (plan §4 budgets are in BR_TARGETS, checked above).
     for (const kind of ["topics", "topic", "thread", "story", "storiesIndex", "glossary", "exploreEntities"] as const) {
@@ -82,7 +89,7 @@ describe.runIf(haveRealData)("Live data emit on real data", () => {
     console.log(
       `[live data-build] real data: ${files.size} files, ${b.projectedFiles} projected with prerender, ` +
         `corpus.json ${b.byKind.corpus?.brBytes} B br (${b.warnings.length} soft-target warnings); ` +
-        `today.json ${b.byKind.today?.brBytes} B br, topics.json ${b.byKind.topics?.brBytes} B br, shiur growth median ${median} B br; ` +
+        `${todaySizes.join(", ")}, topics.json ${b.byKind.topics?.brBytes} B br, shiur growth median ${median} B br; ` +
         `pre-pass suppressed ${suppressed}; post-pass ${post.counts.textUnits} units, verbatim ${post.verbatimChecked}, ` +
         `${post.findings.length} findings in ${((performance.now() - t0) / 1000).toFixed(1)} s`,
     );

@@ -7,8 +7,9 @@
  * - per-file size targets (brotli) for the data files, and at most 1,000 work files;
  * - the corpus layer's files (corpus-wave-plan §4, C1.7): topic tree ≤ 8 KiB, topic file and topic
  *   moment page ≤ 24 KiB, thread and story file ≤ 6 KiB, stories index ≤ 120 KiB, glossary shard
- *   ≤ 8 KiB, today ≤ 30 KiB (all brotli). The median growth of a shiur file (≤ 2 KiB) is checked by
- *   `real-data.test.ts`, since it needs the file without its additions.
+ *   ≤ 8 KiB, each Today file (`today.<lang>.json`, one per reading language) ≤ 30 KiB (all
+ *   brotli). The median growth of a shiur file (≤ 2 KiB) is checked by `real-data.test.ts`, since it
+ *   needs the file without its additions.
  *
  * Sizes are measured with brotli at quality 5, close to on-the-fly edge compression and below what
  * a precompressing deploy would get, so the targets are checked conservatively.
@@ -32,6 +33,7 @@ export const BR_TARGETS: Partial<Record<DataKind, number>> = {
   // corpus, so it grows with the number of summarized shiurim: about 73 KiB br (74,854 B) at 993 of
   // 997 full on 2026-11-15, concepts alone about 37 KiB. 90 KiB leaves ~20% headroom.
   facets: 90 * KB,
+  // Per file: one Today file per reading language, each holding only its reader's texts.
   today: 30 * KB,
   shiur: 40 * KB,
   writeup: 8 * KB,

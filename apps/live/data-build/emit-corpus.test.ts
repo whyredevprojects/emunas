@@ -73,7 +73,8 @@ describe("corpus-layer files on the mini corpus", () => {
       ["stories-index.json", null],
       [under("glossary/")[0]!, null],
       ["explore/entities.json", null],
-      ["today.json", null],
+      ["today.en.json", null],
+      ["today.he.json", null],
       ["build.json", null],
     ];
     const threadFile = under("thread/", thread)[0]!;
@@ -215,7 +216,7 @@ describe("corpus-layer files on the mini corpus", () => {
     expect(touchedSeen).toBeGreaterThan(0);
   });
 
-  it("generated layer text stays out of corpus.json, facets.json, today.json and the shiur files", () => {
+  it("generated layer text stays out of corpus.json, facets.json, the Today files and the shiur files", () => {
     const generated = [
       ...[...layer.topicDetail.values()].flatMap((d) => (d.description ? [d.description.en, d.description.yi] : [])),
       ...(layer.stories ?? []).flatMap((s) => [s.retelling.en, s.retelling.yi]),
@@ -228,7 +229,7 @@ describe("corpus-layer files on the mini corpus", () => {
     const own = JSON.stringify(input.shiurim.map((x) => x.notes ?? null));
     const layerOnly = generated.filter((g) => !own.includes(JSON.stringify(g).slice(1, -1)));
     expect(layerOnly.length).toBeGreaterThan(50);
-    const firstLoad = ["corpus.json", "facets.json", "today.json", ...under("shiur/")];
+    const firstLoad = ["corpus.json", "facets.json", ...under("today."), ...under("shiur/")];
     for (const f of firstLoad) {
       const text = JSON.stringify(files.get(f));
       for (const g of layerOnly) expect(text.includes(JSON.stringify(g).slice(1, -1)), `${f} carries layer text`).toBe(false);
@@ -485,7 +486,7 @@ describe("corpus-layer files on the mini corpus", () => {
   });
 });
 
-describe("the occasion mix in today.json (D7)", () => {
+describe("the occasion mix in the Today files (D7)", () => {
   // The mini corpus maps no occasion to a topic; give Noach the topic with the most tagged sections.
   const topicId = [...layer.topicDetail.values()].sort((a, b) => b.grades.main.length - a.grades.main.length)[0]!.id;
   const mapped = withLayer((l) => {
@@ -493,13 +494,13 @@ describe("the occasion mix in today.json (D7)", () => {
   });
 
   it("carries the first sections of the occasion's topic, with titles, and a card for each shiur", () => {
-    const today = get<TodayFile>("today.json", emitLiveData(mapped, { generatedAt: GENERATED_AT }));
+    const today = get<TodayFile>("today.en.json", emitLiveData(mapped, { generatedAt: GENERATED_AT }));
     const mix = today.occasions["noach"]!.mix!;
     expect(mix.topicId).toBe(topicId);
     expect(mix.first.length).toBeGreaterThan(0);
     expect(mix.first.length).toBeLessThanOrEqual(3);
     for (const m of mix.first) {
-      expect(m.title.en.length).toBeGreaterThan(0);
+      expect(m.title).toMatchObject({ lang: "en", text: expect.stringMatching(/\S/u) });
       expect(today.cards[m.id.split("~")[0]!]).toBeDefined();
     }
     expect(mix.sections).toBeGreaterThanOrEqual(mix.first.length);
@@ -508,14 +509,14 @@ describe("the occasion mix in today.json (D7)", () => {
 
   it("leaves out excluded topics and shiurim mostly by another speaker", () => {
     const excluded = emitLiveData(mapped, { generatedAt: GENERATED_AT, featured: { maxOtherSpeakerShare: 0.5, excludeTopicIds: [topicId] } });
-    expect(get<TodayFile>("today.json", excluded).occasions["noach"]!.mix).toBeNull();
-    const base = get<TodayFile>("today.json", emitLiveData(mapped, { generatedAt: GENERATED_AT })).occasions["noach"]!.mix!;
+    expect(get<TodayFile>("today.en.json", excluded).occasions["noach"]!.mix).toBeNull();
+    const base = get<TodayFile>("today.en.json", emitLiveData(mapped, { generatedAt: GENERATED_AT })).occasions["noach"]!.mix!;
     const firstShiur = base.first[0]!.id.split("~")[0]!;
     const speaker = withLayer((l) => {
       l.occasionTopics = [{ key: "noach", kind: "parsha", topicId, source: "derived", share: 0.6 }];
       l.refs.get(firstShiur)!.otherSpeakerShare = 0.9;
     });
-    const mix = get<TodayFile>("today.json", emitLiveData(speaker, { generatedAt: GENERATED_AT })).occasions["noach"]!.mix;
+    const mix = get<TodayFile>("today.en.json", emitLiveData(speaker, { generatedAt: GENERATED_AT })).occasions["noach"]!.mix;
     for (const m of mix?.first ?? []) expect(m.id.startsWith(`${firstShiur}~`)).toBe(false);
     // The client fills the rest of the mix from the topic file and drops what `skip` names.
     expect(mix?.skip).toEqual([firstShiur]);
@@ -523,7 +524,7 @@ describe("the occasion mix in today.json (D7)", () => {
   });
 
   it("skip names the sections tagged with an excluded topic, not the whole shiur", () => {
-    const today = get<TodayFile>("today.json", emitLiveData(mapped, { generatedAt: GENERATED_AT })).occasions["noach"]!.mix!;
+    const today = get<TodayFile>("today.en.json", emitLiveData(mapped, { generatedAt: GENERATED_AT })).occasions["noach"]!.mix!;
     const topicFile = get<TopicFile>(`topic/${topicId}.json`, emitLiveData(mapped, { generatedAt: GENERATED_AT }));
     // Exclude a topic co-tagged on one of the topic's sections (not the mix topic or an ancestor).
     const parent = new Map(layer.topics.map((t) => [t.id, t.parentId]));
@@ -538,7 +539,7 @@ describe("the occasion mix in today.json (D7)", () => {
     expect(first).toBeDefined();
     const co = coTag(first)!;
     const out = emitLiveData(mapped, { generatedAt: GENERATED_AT, featured: { maxOtherSpeakerShare: 0.5, excludeTopicIds: [co] } });
-    const mix = get<TodayFile>("today.json", out).occasions["noach"]!.mix!;
+    const mix = get<TodayFile>("today.en.json", out).occasions["noach"]!.mix!;
     expect(mix.skip ?? []).toContain(first.id);
     expect(mix.skip ?? []).not.toContain(first.shiurId);
     expect(mix.sections).toBeLessThan(today.sections);

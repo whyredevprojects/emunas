@@ -9,6 +9,7 @@ import MiniSearch from "minisearch";
 import { describe, expect, it } from "vitest";
 import { AliasRules, LeakScanner } from "@emunas/corpus-guard";
 import { normalizeQuery } from "@emunas/search-core";
+import { CONTENT_FALLBACK, pickText, UI_LANGS } from "@emunas/i18n";
 import type {
   BuildFile,
   CorpusFile,
@@ -169,8 +170,8 @@ describe("emitLiveData on the mini corpus", () => {
     }
   });
 
-  it("today.json lists the occasions with year-ordered rows, timed moment pools and a card for each", () => {
-    const today = get<TodayFile>("today.json");
+  it("the Today file lists the occasions with year-ordered rows, timed moment pools and a card for each", () => {
+    const today = get<TodayFile>("today.en.json");
     expect(Object.keys(today.occasions).length).toBeGreaterThan(5);
     expect(today.counts).toEqual(input.info.counts);
     for (const [k, o] of Object.entries(today.occasions)) {
@@ -201,6 +202,29 @@ describe("emitLiveData on the mini corpus", () => {
     expect(ns[0]).toEqual({ shiurId: expect.any(String), updatedAt: "2026-11-15T04:40:14.798Z" });
     expect([...ns].sort((a, b) => (a.updatedAt < b.updatedAt ? 1 : -1))).toEqual(ns);
     for (const n of ns) expect(input.shiurim.find((s) => s.id === n.shiurId)?.status).toBe("full");
+  });
+
+  it("emits one Today file per interface language, differing only in texts picked for its reader", () => {
+    expect([...files.keys()].filter((f) => f.startsWith("today")).sort()).toEqual(UI_LANGS.map((l) => `today.${l}.json`).sort());
+    expect(files.has("today.json")).toBe(false);
+    /** The file with every generated text blanked: what every language shares. */
+    const shape = (t: TodayFile) =>
+      JSON.parse(JSON.stringify({ ...t, lang: null }), (k, v: unknown) => (k === "oneLiner" || k === "title") && typeof v === "object" && v !== null ? null : v) as unknown;
+    const en = get<TodayFile>("today.en.json");
+    for (const lang of UI_LANGS) {
+      const today = get<TodayFile>(`today.${lang}.json`);
+      expect(today.lang).toBe(lang);
+      expect(shape(today)).toEqual(shape(en));
+      for (const [id, c] of Object.entries(today.cards)) {
+        if (!c.oneLiner) continue;
+        const picked = pickText(input.shiurim.find((x) => x.id === id)!.notes!.summary.oneLiner, lang);
+        expect(c.oneLiner, id).toEqual({ lang: picked.lang, text: picked.text });
+        expect(CONTENT_FALLBACK[lang]).toContain(c.oneLiner.lang);
+      }
+      for (const o of Object.values(today.occasions)) {
+        for (const x of o.mix?.first ?? []) expect(CONTENT_FALLBACK[lang]).toContain(x.title.lang);
+      }
+    }
   });
 
   it("series, works and stories follow the aggregates", () => {
@@ -339,7 +363,7 @@ describe("validateFile", () => {
   it("accepts the committed W2.4 fixtures (the emitter and the fixtures share one contract)", () => {
     const dir = join(import.meta.dirname, "../app/data/fixtures/data");
     const fixtureFiles: EmittedFiles = new Map();
-    for (const f of ["corpus.json", "facets.json", "today.json", "stories-index.json", "works.json", "build.json"]) {
+    for (const f of ["corpus.json", "facets.json", ...UI_LANGS.map((l) => `today.${l}.json`), "stories-index.json", "works.json", "build.json"]) {
       fixtureFiles.set(f, JSON.parse(readFileSync(join(dir, f), "utf8")) as never);
     }
     for (const [f, body] of fixtureFiles) expect(validateFile(f, body), f).toBeNull();
@@ -390,6 +414,21 @@ describe("Hebrew translations (overlays applied by the corpus build)", () => {
     if (second) expect(second.titleLang).toBe("yi");
     const yiRows = Array.from({ length: build.momentShards.yi }, (_, i) => heGet<{ moments: { titleLang?: string }[] }>(`moments/yi-${i}.json`).moments).flat();
     expect(yiRows.some((r) => r.titleLang !== undefined && r.titleLang !== "en")).toBe(false);
+  });
+
+  it("the Hebrew Today file shows the Hebrew text where translated, the fallback with its language elsewhere", () => {
+    // Put the translated shiur among the newly summarized, so its card carries the one-liner.
+    const newest = { ...heInput, updatedAt: { ...heInput.updatedAt, [base.id]: "2099-01-01T00:00:00.000Z" } };
+    const out = emitLiveData(newest, { generatedAt: GENERATED_AT });
+    const heToday = out.get("today.he.json") as TodayFile;
+    expect(heToday.cards[base.id]!.oneLiner).toEqual({ lang: "he", text: "שורה בעברית" });
+    for (const [id, c] of Object.entries(heToday.cards)) {
+      if (id !== base.id && c.oneLiner) expect(c.oneLiner.lang, id).not.toBe("he");
+    }
+    // Readers of the other languages never get the Hebrew text.
+    for (const l of UI_LANGS.filter((x) => x !== "he")) {
+      expect((out.get(`today.${l}.json`) as TodayFile).cards[base.id]!.oneLiner!.lang).toBe(l);
+    }
   });
 
   it("emits a quick index per interface language; the Hebrew one finds the Hebrew one-liner", () => {

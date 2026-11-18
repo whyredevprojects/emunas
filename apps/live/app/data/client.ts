@@ -7,7 +7,7 @@
  * }
  * ```
  *
- * - One in-flight request per path; small shared files (`build`, `corpus`, `facets`, `today`, `works`,
+ * - One in-flight request per path; small shared files (`build`, `corpus`, `facets`, `today.<lang>`, `works`,
  *   `topics`, `stories-index`, glossary shards, `explore/entities`) are
  *   memoized for the session, per-item files are not (the HTTP cache handles those:
  *   `/data/*` is `max-age=300, stale-while-revalidate`).
@@ -150,7 +150,8 @@ function memoized<T>(path: string, opts: LoadOptions): Promise<T> {
 export const loadBuild = (o: LoadOptions = {}) => memoized<BuildFile>(dataPaths.build(), o);
 export const loadCorpus = (o: LoadOptions = {}) => memoized<CorpusFile>(dataPaths.corpus(), o);
 export const loadFacets = (o: LoadOptions = {}) => memoized<FacetsFile>(dataPaths.facets(), o);
-export const loadToday = (o: LoadOptions = {}) => memoized<TodayFile>(dataPaths.today(), o);
+/** Today's file for readers of `lang` (the reading language); a language switch loads the other file. */
+export const loadToday = (lang: UiLang, o: LoadOptions = {}) => memoized<TodayFile>(dataPaths.today(lang), o);
 export const loadWorks = (o: LoadOptions = {}) => memoized<WorksFile>(dataPaths.works(), o);
 export const loadShiur = (id: string, o: LoadOptions = {}) => fetchData<ShiurFile>(dataPaths.shiur(id), o);
 export const loadWriteup = (id: string, lang: UiLang, o: LoadOptions = {}) =>

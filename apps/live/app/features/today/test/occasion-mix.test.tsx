@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 /**
  * C3.4 acceptance: Today's occasion mix in the real route tree, over the fixture files, with a fetch
- * spy. First paint needs only today.json; pressing play starts the inline head without a request,
+ * spy. First paint needs only the Today file; pressing play starts the inline head without a request,
  * then loads the occasion topic's file and at most one moments page; corpus.json is never requested.
  */
 import { act, cleanup, render, waitFor } from "@testing-library/react";
@@ -109,7 +109,7 @@ function playButton(container: HTMLElement): HTMLButtonElement {
 const clone = <T,>(x: T): T => structuredClone(x);
 
 describe("Today: the occasion mix", () => {
-  it("first paint requests only today.json; the button is there before any other file arrives", async () => {
+  it("first paint requests only the Today file; the button is there before any other file arrives", async () => {
     holdShiurFiles = true;
     const { container } = await renderAt(`/en/?date=${NOACH_WEEK}`);
     const box = container.querySelector("[data-testid=occasion-mix]")!;
@@ -121,8 +121,8 @@ describe("Today: the occasion mix", () => {
     expect(container.querySelectorAll("[data-mix-label=auto]")).toHaveLength(1);
     expect(box.textContent).toContain("Assembled automatically from AI tags.");
     expect(box.textContent).toContain("10 sections from 3 shiurim.");
-    // Only today.json, plus the moment of the day's own shiur file (held, never answered).
-    expect(requested.filter((p) => !p.startsWith("/data/shiur/"))).toEqual(["/data/today.json"]);
+    // Only the English Today file, plus the moment of the day's own shiur file (held, never answered).
+    expect(requested.filter((p) => !p.startsWith("/data/shiur/"))).toEqual(["/data/today.en.json"]);
     expect(requested.filter((p) => p.startsWith("/data/shiur/")).length).toBeLessThanOrEqual(1);
     expect(requested.some(isCorpusWide)).toBe(false);
   });
@@ -190,7 +190,7 @@ describe("Today: the occasion mix", () => {
   it("leaves out what the build marks as not featured (D7), head and rest", async () => {
     const today = clone(todayFixture) as unknown as TodayFile;
     today.occasions["noach"]!.mix!.skip = ["yi-parshas-hashavua-brshys-03", "en-parsha-en-nch-01~s5"];
-    overrides.set("/data/today.json", today);
+    overrides.set("/data/today.en.json", today);
     const { container } = await renderAt(`/en/?date=${NOACH_WEEK}`);
     await act(async () => {
       playButton(container).click();
@@ -204,7 +204,7 @@ describe("Today: the occasion mix", () => {
   it("with no head in the listener's language, play assembles the mix from the topic file first", async () => {
     const today = clone(todayFixture) as unknown as TodayFile;
     today.occasions["noach"]!.mix!.first = today.occasions["noach"]!.mix!.first.filter((x) => x.id.startsWith("en-"));
-    overrides.set("/data/today.json", today);
+    overrides.set("/data/today.en.json", today);
     const { container } = await renderAt(`/en/?date=${NOACH_WEEK}&audio=yi`);
     expect(container.querySelector("[data-testid=occasion-mix]")!.textContent).not.toContain("sections from");
     await act(async () => {
@@ -217,7 +217,7 @@ describe("Today: the occasion mix", () => {
   it("no button in a week whose occasions have no mix", async () => {
     const today = clone(todayFixture) as unknown as TodayFile;
     for (const o of Object.values(today.occasions)) o.mix = null;
-    overrides.set("/data/today.json", today);
+    overrides.set("/data/today.en.json", today);
     const { container } = await renderAt(`/en/?date=${NOACH_WEEK}`);
     expect(container.querySelector("[data-testid=occasion-mix]")).toBeNull();
   });

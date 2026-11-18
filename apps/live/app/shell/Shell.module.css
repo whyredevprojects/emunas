@@ -353,9 +353,16 @@
       padding-block: var(--space-2xs) var(--space-xs);
     }
 
+    /* With two other interface languages the tools need tighter spacing and less side padding on
+       the links (which keep the tap minimum), so the site name and the tools stay on one row on a
+       phone (390 px and up) in every language. */
     .headerTools,
     .lang {
-      gap: var(--space-xs);
+      gap: var(--space-2xs);
+    }
+
+    .langSwitch {
+      padding-inline: var(--space-2xs);
     }
 
     .header > :not(.brand, .headerTools) {

@@ -219,7 +219,7 @@ Live already misses its mobile budget (LCP 3.5 to 4.9 s against 2 s) because `co
 
 | Moment | What loads | Rough size |
 |---|---|---|
-| First paint of Today | Shell, `today.json` (now including the occasion's topic group and the mix's first items, inline) | as today or smaller; no corpus-layer file |
+| First paint of Today | Shell, the reader's Today file `today.<lang>.json` (now including the occasion's topic group and the mix's first items, inline) | as today or smaller; no corpus-layer file |
 | First paint of a shiur | That shiur's file, now with section topic chips, thread marks, story counts, term labels | about 1 to 2 KB more per shiur |
 | Idle after first paint, or opening Explore | The topic tree (ids, labels, parents, counts; no descriptions, aliases or hubs) | a few KB |
 | Opening a topic | One topic file: description, hubs, threads, stories, first 30 moments. Further moments in pages on scroll | small; the largest topics are paged |

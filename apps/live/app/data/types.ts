@@ -35,7 +35,7 @@ import type { UiLang } from "@emunas/i18n";
 export type { Ed, LocalizedText, Moment, ShiurStatus };
 export type { UiLang };
 
-export const LIVE_DATA_SCHEMA_VERSION = 7;
+export const LIVE_DATA_SCHEMA_VERSION = 8;
 
 // ---------------------------------------------------------------------------------------------
 // Shared pieces
@@ -55,6 +55,16 @@ export interface MomentRef {
 
 /** Facet / entity kinds. `o` = occasion (parsha and zman keys share one namespace). */
 export type EntityKind = "p" | "c" | "o";
+
+/**
+ * A generated text as one reader is shown it, in a per-language file (`/data/today.<lang>.json`):
+ * the first present language along `CONTENT_FALLBACK[reader]` (@emunas/i18n), with the language it
+ * is actually in, so the element showing it carries that `lang`/`dir` (`<Text value={x} … />`).
+ */
+export interface ReaderText {
+  lang: UiLang;
+  text: string;
+}
 
 /** Labels for a facet value. `he` is the original Hebrew-script form where one exists. */
 export interface FacetLabel {
@@ -126,7 +136,7 @@ export interface SeriesFacetValue extends FacetValue {
 export interface OccasionFacetValue extends FacetValue {
   type: "parsha" | "zman";
   /**
-   * True when `/data/entity/o/<key>.json` exists (the occasion is listed in `today.json` with at
+   * True when `/data/entity/o/<key>.json` exists (the occasion is listed in the Today files with at
    * least two shiurim), so links to `/o/<key>` need no other file. `count` can be higher than the
    * listed membership: it also counts uncatalogued file-name guesses.
    */
@@ -150,7 +160,7 @@ export interface FacetsFile {
 }
 
 // ---------------------------------------------------------------------------------------------
-// /data/today.json
+// /data/today.<lang>.json (one per reading language, `UI_LANGS`)
 
 /** A shiur card (topic hubs): what a card renders without the shiur file. */
 export interface ShiurCard {
@@ -175,8 +185,8 @@ export interface MixItem {
 }
 
 /**
- * A card in today.json, keyed by shiur id. Compact on purpose (today.json ≤ 30 KiB br, plan §4):
- * the one-liner only on the newly-summarized cards, the duration in whole seconds.
+ * A card in a Today file, keyed by shiur id. Compact on purpose (each Today file ≤ 30 KiB br, plan
+ * §4): the one-liner only on the newly-summarized cards, the duration in whole seconds.
  */
 export interface TodayCard {
   lang: Ed;
@@ -184,7 +194,7 @@ export interface TodayCard {
   duration: number;
   years: number[];
   status: ShiurStatus;
-  oneLiner?: LocalizedText;
+  oneLiner?: ReaderText;
 }
 
 /** A "moment for today" candidate; the shiur is the moment id's prefix (`<shiurId>~<kind><n>`). */
@@ -193,12 +203,12 @@ export interface TodayMoment {
   t: number;
 }
 
-/** A mix section in today.json; the shiur is the id's prefix, its language is on the shiur's card. */
+/** A mix section in a Today file; the shiur is the id's prefix, its language is on the shiur's card. */
 export interface TodayMixItem {
   id: string;
   t: number;
   end: number;
-  title: LocalizedText;
+  title: ReaderText;
 }
 
 /**
@@ -244,8 +254,15 @@ export interface TodayOccasion {
   mix: TodayMix | null;
 }
 
+/**
+ * `/data/today.<lang>.json`: everything Today renders, for readers of `lang` (the reading language,
+ * `UI_LANGS`). The files differ only in their generated texts (`ReaderText`): each keeps the one
+ * text its reader is shown. Labels (`FacetLabel`) are names in the interface language and stay whole.
+ */
 export interface TodayFile {
   schemaVersion: typeof LIVE_DATA_SCHEMA_VERSION;
+  /** The reading language the file is for. */
+  lang: UiLang;
   /** The corpus counter. */
   counts: BuildCounts;
   occasions: Record<string, TodayOccasion>;

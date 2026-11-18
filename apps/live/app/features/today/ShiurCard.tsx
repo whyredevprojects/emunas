@@ -9,6 +9,7 @@ import { livePaths } from "@emunas/links";
 import type { JSX, ReactNode } from "react";
 import { Link } from "react-router";
 import { Text } from "../../components/Text.tsx";
+import type { ReaderText } from "../../data/types.ts";
 import { yearLabel } from "./format.ts";
 import { todayT } from "./strings.ts";
 import { todayStyles as s } from "./styles.ts";
@@ -17,7 +18,8 @@ export interface CardData {
   id: string;
   lang: Ed;
   title: string;
-  oneLiner: LocalizedText | null;
+  /** A `ReaderText` on Today (picked at build time for the reader), a `LocalizedText` elsewhere. */
+  oneLiner: LocalizedText | ReaderText | null;
   duration: number;
   years: readonly number[];
   status: ShiurStatus;

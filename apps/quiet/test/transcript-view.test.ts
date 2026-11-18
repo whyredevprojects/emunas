@@ -18,7 +18,7 @@ import { createRequire } from "node:module";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { afterAll, describe, expect, it } from "vitest";
+import { afterAll, describe, expect, inject, it } from "vitest";
 import { createLeakScanner } from "@emunas/corpus-guard";
 import { astroBuild } from "./astro-build.ts";
 import { EDS } from "../src/lib/edition.ts";
@@ -27,7 +27,6 @@ const require = createRequire(import.meta.url);
 const app = join(dirname(fileURLToPath(import.meta.url)), "..");
 const repo = join(app, "..", "..");
 const mini = join(repo, "packages", "corpus", "test", "fixtures", "mini");
-const realData = join(repo, "data");
 const realPolicy = join(repo, "site-policy");
 
 const REC = "e-parsha-bereshes-02-01-noach-english-the-special-qualities-of-the-teivah";
@@ -152,12 +151,12 @@ describe("Quiet transcript view (W5.2)", () => {
     expect(mentions(dist)).toEqual([]);
   }, 300_000);
 
-  it.runIf(existsSync(join(realData, "derived", "ingest.json")))(
+  it(
     "real data with the defaults: nothing transcript-related in .corpus/ or dist/, guard clean",
     () => {
-      const corpus = corpusBuild(realData, realPolicy, OFF);
+      // The shared real-data build (test/site-builds.ts), made with EMUNAS_TRANSCRIPT_VIEW unset.
+      const { corpus, dist } = inject("quietSite");
       expect(existsSync(join(corpus, "transcript"))).toBe(false);
-      const dist = siteBuild(corpus, OFF);
       expect(existsSync(join(dist, "transcript"))).toBe(false);
       expect(mentions(dist)).toEqual([]);
       // Keys, substrings and transcript files; the verbatim part of the post-pass on real data runs in
@@ -166,6 +165,6 @@ describe("Quiet transcript view (W5.2)", () => {
       expect(g.findings).toEqual([]);
       expect(g.counts.transcriptFilesAllowed).toBe(0);
     },
-    600_000,
+    120_000,
   );
 });

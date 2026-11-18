@@ -69,7 +69,7 @@ Exact versions: pin exact versions in the scaffold task (W0), taking the newest 
 | Route | Prerendered | Data |
 |---|---|---|
 | `/` | redirect by `Accept-Language` / stored preference → `/en/` or `/yi/` (a tiny Worker rule, or a client redirect in the HTML) | |
-| `/:ui/` (Today) | yes | `corpus.json`, `today.json` |
+| `/:ui/` (Today) | yes | `today.<reading lang>.json` |
 | `/:ui/s/:shiurId` (listening room); `?t=<sec>` and optional `&m=<momentId>` | yes | `shiur/<id>.json`, `writeup/<id>.<lang>.json` (lazy) |
 | `/:ui/explore?…facets…&lens=list|luach|years&unit=shiurim|moments` | no | `corpus.json`, `facets.json`, `moments/<shard>.json` |
 | `/:ui/seforim`, `/:ui/seforim/:workId`, `/:ui/seforim/:workId/:chapter` | shelf + works yes | `works.json`, `work/<id>.json` |
@@ -207,7 +207,7 @@ Write-up per language, lazily loaded (`/data/writeup/<id>.<lang>.json` for each 
 |---|---|---|
 | `/data/corpus.json` | One row per shiur: id, rev, lang, category, title, oneLiner (`LocalizedText`: en/yi, he when translated), parsha/occasion ids, years, series/order/perek, duration, status, derived flag, entity id arrays (works/people/concepts, ids only), counts (stories, questions) | ≤ 150 KB br |
 | `/data/facets.json` | Facet dictionaries (id → labels en/yi/he, count) | ≤ 60 KB br |
-| `/data/today.json` | Occasion → shiur ids ordered by year; "moment of the day" candidate pools per occasion; newly summarized (from `manifest.updatedAt`) | ≤ 30 KB br |
+| `/data/today.<lang>.json` (one per UI language) | Occasion → shiur ids ordered by year; "moment of the day" candidate pools per occasion; newly summarized (from `manifest.updatedAt`); generated texts already picked for that reader | ≤ 30 KB br each |
 | `/data/shiur/<id>.json` ×997 | above | ≤ 40 KB br each |
 | `/data/writeup/<id>.<lang>.json` ×(2×done) | above | ≤ 8 KB br each |
 | `/data/series/<id>.json` ×17 | ordered parts, perek groups, one-liners | small |
@@ -294,7 +294,7 @@ Optional sync (later, decision D4): a `sync` Worker with a D1 table per user (`u
 
 - `corpus.json` is loaded into a Web Worker that builds a bitset per facet value over the 997 rows. Facet counts are recomputed on each change in under 5 ms. Zero-count values are dimmed.
 - Moments mode: filter shiurim with facets, then stream `moments/<lang>-<n>.json` shards, rendered in a virtualized list (`@tanstack/react-virtual`). Facets at moment level (work, person, concept) use the per-shiur entity arrays and then the item's own entity links.
-- Lenses: Luach (an SVG ring of 54 parshiyos plus occasion stops on an inner ring, with `today.json` counts), Years (an SVG histogram for 5724–5780 plus an "undated (n)" lane), Connections (one-hop radial SVG from `entity/*.json` co-occurrence; edges with fewer than 5 shared shiurim are hidden).
+- Lenses: Luach (an SVG ring of 54 parshiyos plus occasion stops on an inner ring, with the Today file's counts), Years (an SVG histogram for 5724–5780 plus an "undated (n)" lane), Connections (one-hop radial SVG from `entity/*.json` co-occurrence; edges with fewer than 5 shared shiurim are hidden).
 
 ### 4.4 Command bar
 

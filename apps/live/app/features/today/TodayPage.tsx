@@ -3,9 +3,11 @@
  * per interface language); the date-dependent parts are computed on the client after mount from the
  * visitor's own day, so the page stays current without a rebuild and hydration never mismatches.
  *
- * Loading (corpus-wave-plan §4, C1.7): the page renders from `today.json` alone. The moment of the
- * day then loads its one shiur file for the text, and Continue loads the heard shiurim's files only
- * when the personal store has progress. `corpus.json`, `facets.json` and the corpus layer's
+ * Loading (corpus-wave-plan §4, C1.7): the page renders from its Today file alone, the one for the
+ * reading language (`today.<lang>.json`, whose generated texts are already picked for that reader);
+ * switching the language loads that language's file. The moment of the day then loads its one
+ * shiur file for the text, and Continue loads the heard shiurim's files only when the personal
+ * store has progress. `corpus.json`, `facets.json` and the corpus layer's
  * corpus-wide files are never requested here. The occasion mix button plays its inline head at once
  * and only then loads the occasion topic's file for the rest (`occasion-mix.ts`).
  */
@@ -44,8 +46,8 @@ interface TodayData {
   today: TodayFile;
 }
 
-async function loadTodayData(): Promise<TodayData> {
-  return { today: await loadToday() };
+async function loadTodayData(read: UiLang): Promise<TodayData> {
+  return { today: await loadToday(read) };
 }
 
 export function cardOf(r: TodayRow): CardData {
@@ -76,7 +78,7 @@ export function TodayPage(): JSX.Element {
     setDate(dateFromQuery(location.search) ?? localIsoDay());
   }, [location.search]);
 
-  const data = useLoad(loadTodayData, []);
+  const data = useLoad(() => loadTodayData(read), [read]);
   const view = useMemo<TodayView | null>(() => {
     if (date === null || data.status !== "ok") return null;
     return buildToday({ date, israel, audio, today: data.data.today });

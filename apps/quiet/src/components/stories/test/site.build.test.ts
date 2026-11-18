@@ -1,6 +1,7 @@
 /**
  * C2.3 acceptance on the real corpus, end to end:
- *   corpus:build (repo data, into a temp dir, layer included) → astro build → checks on dist.
+ *   corpus:build (repo data, layer included) → astro build → checks on dist (the shared build of
+ *   test/site-builds.ts).
  *
  * - story pages: exactly the stories whose layer Quiet page flag is set, in both editions; the
  *   survivor of an upstream merge is listed (with a page when its flag says so) and the retired id
@@ -15,46 +16,19 @@
  *
  * Reads the repository's data folder only through the corpus CLI, like CI does.
  */
-import { spawnSync } from "node:child_process";
-import { existsSync, mkdtempSync, readFileSync, readdirSync, rmSync, statSync } from "node:fs";
-import { tmpdir } from "node:os";
+import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import type { SeriesFile } from "@emunas/corpus/aggregate";
 import type { CorpusIndex, LayerInfo, LayerPeopleFile, LayerStoriesFile, PublicShiur } from "@emunas/corpus/public";
 import { corpusLabel, pickText, type LocalizedText } from "@emunas/i18n";
-import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import { astroBuild } from "../../../../test/astro-build.ts";
+import { describe, expect, inject, it } from "vitest";
 import { EDS } from "../../../lib/edition.ts";
 
-const here = dirname(fileURLToPath(import.meta.url));
-const app = join(here, "..", "..", "..", "..");
-const repo = join(app, "..", "..");
-
-let tmp = "";
-let corpus = "";
-let dist = "";
+const repo = join(dirname(fileURLToPath(import.meta.url)), "..", "..", "..", "..", "..", "..");
+const { corpus, dist } = inject("quietSite");
 
 const readJson = <T,>(p: string): T => JSON.parse(readFileSync(p, "utf8")) as T;
-
-beforeAll(() => {
-  tmp = mkdtempSync(join(tmpdir(), "quiet-stories-"));
-  corpus = join(tmp, "corpus");
-  dist = join(tmp, "dist");
-  const tsx = join(repo, "node_modules", ".bin", "tsx");
-  const c = spawnSync(tsx, [join(repo, "packages", "corpus", "src", "cli.ts"), "--out", corpus], {
-    cwd: repo,
-    env: { ...process.env, INIT_CWD: repo },
-    encoding: "utf8",
-  });
-  if (c.status !== 0) throw new Error(`corpus:build failed:\n${c.stdout}\n${c.stderr}`);
-  const b = astroBuild(app, dist, { EMUNAS_CORPUS_DIR: corpus });
-  if (b.status !== 0) throw new Error(`astro build failed:\n${b.stdout.slice(-4000)}\n${b.stderr.slice(-4000)}`);
-}, 600_000);
-
-afterAll(() => {
-  if (tmp) rmSync(tmp, { recursive: true, force: true });
-});
 
 const page = (path: string): string => readFileSync(join(dist, path, "index.html"), "utf8");
 const mainOf = (html: string): string => {

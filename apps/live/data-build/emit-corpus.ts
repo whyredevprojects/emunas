@@ -76,7 +76,7 @@ export interface FeaturedPolicy {
 export const DEFAULT_FEATURED: FeaturedPolicy = { maxOtherSpeakerShare: 0.5, excludeTopicIds: [] };
 
 export const CORPUS_LIMITS = {
-  /** Sections in today.json's occasion mix. */
+  /** Sections in the Today files' occasion mix. */
   mixFirst: 12,
   /** Rows in a topic file's thread and story lists (the totals say how many there are). */
   topicThreads: 20,
@@ -222,7 +222,7 @@ export interface CorpusEmitContext {
   featured: FeaturedPolicy;
 }
 
-/** A topic's featured mix (today.json compacts it). */
+/** A topic's featured mix (the Today files compact it). */
 export interface FeaturedMix {
   topicId: string;
   label: FacetLabel;
@@ -239,7 +239,7 @@ export interface FeaturedMix {
 
 export interface CorpusEmitResult {
   glossaryShards: string[];
-  /** Topic id → the featured mix (D7 filters applied), for today.json. */
+  /** Topic id → the featured mix (D7 filters applied), for the Today files. */
   featuredMix(topicId: string): FeaturedMix | null;
   /** Occasion key → topic id (occasion-topics of the layer). */
   occasionTopic: Map<string, string>;
@@ -500,7 +500,7 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
     }
   }
 
-  // ------------------------------------------------------------------ featured mixes (today.json)
+  // ------------------------------------------------------------------ featured mixes (Today files)
   const excluded = new Set(ctx.featured.excludeTopicIds);
   const otherSpeaker = (shiurId: string): boolean => {
     const share = layer.refs.get(shiurId)?.otherSpeakerShare;

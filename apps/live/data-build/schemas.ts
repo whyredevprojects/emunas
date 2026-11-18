@@ -60,6 +60,8 @@ function localizedStr(): v.StrictObjectSchema<
 }
 /** `LocalizedText`: the source languages always, a translated language only when present. */
 const L = localizedStr();
+/** `ReaderText`: one text as a reader is shown it, with the language it is in. */
+const readerText = v.strictObject({ lang: uiLang, text: str });
 const version = v.literal(LIVE_DATA_SCHEMA_VERSION);
 const soft = v.exactOptional(v.literal(true));
 const category = v.picklist(["parsha", "zman", "shonos", "set", "simcha", "misc", "current", "purim"]);
@@ -244,6 +246,7 @@ const mixItemEntries = { id: str, shiurId: str, t: num, end: num, lang: ed, titl
 
 export const TodaySchema = v.strictObject({
   schemaVersion: version,
+  lang: uiLang,
   counts,
   occasions: v.record(
     str,
@@ -258,7 +261,7 @@ export const TodaySchema = v.strictObject({
           label: facetLabel,
           sections: int,
           shiurim: int,
-          first: v.array(v.strictObject({ id: str, t: num, end: num, title: L })),
+          first: v.array(v.strictObject({ id: str, t: num, end: num, title: readerText })),
           skip: v.exactOptional(v.array(str)),
         }),
       ),
@@ -267,7 +270,7 @@ export const TodaySchema = v.strictObject({
   newlySummarized: v.array(v.strictObject({ shiurId: str, updatedAt: str })),
   cards: v.record(
     str,
-    v.strictObject({ lang: ed, title: str, duration: num, years: v.array(int), status, oneLiner: v.exactOptional(L) }),
+    v.strictObject({ lang: ed, title: str, duration: num, years: v.array(int), status, oneLiner: v.exactOptional(readerText) }),
   ),
 });
 
@@ -684,6 +687,7 @@ export const _allKinds: _AllKinds = true;
 /** `en|yi|he`: the reading languages a per-language file path may name (`UI_LANGS`). */
 const LANGS_RE = UI_LANGS.join("|");
 const QUICK_INDEX_FILE = new RegExp(`^quick-index\\.(${LANGS_RE})\\.json$`);
+const TODAY_FILE = new RegExp(`^today\\.(${LANGS_RE})\\.json$`);
 const WRITEUP_FILE = new RegExp(`^writeup\\/[^/]+\\.(${LANGS_RE})\\.json$`);
 const MOMENTS_FILE = new RegExp(`^moments\\/(${LANGS_RE})-\\d+\\.json$`);
 
@@ -692,7 +696,7 @@ export function kindOfFile(file: string): DataKind | null {
   if (file === "build.json") return "build";
   if (file === "corpus.json") return "corpus";
   if (file === "facets.json") return "facets";
-  if (file === "today.json") return "today";
+  if (TODAY_FILE.test(file)) return "today";
   if (file === "works.json") return "works";
   if (file === "topics.json") return "topics";
   if (file === "stories-index.json") return "storiesIndex";

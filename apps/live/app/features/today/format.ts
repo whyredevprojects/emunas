@@ -43,7 +43,7 @@ function tableLabel(key: string): FacetLabel | undefined {
 }
 
 /**
- * The label for an occasion key: from the data file at hand (`today.json` states it where it differs
+ * The label for an occasion key: from the data file at hand (the Today file states it where it differs
  * from the shared tables; Explore passes `facets.json`), else from the `@emunas/normalize` tables,
  * else the key made readable.
  */

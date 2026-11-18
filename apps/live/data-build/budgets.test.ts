@@ -35,6 +35,8 @@ describe("checkLiveBudgets", () => {
       "shiur/b.json": "{}",
       "writeup/a.en.json": noise(BR_TARGETS.writeup! + 4096),
       "notes.txt": "x",
+      // One Today file per reading language; a single today.json is no contract path.
+      "today.json": "{}",
     });
     const r = checkLiveBudgets({ dataDir: data, clientDir: null, maxFileBytes: 60_000 });
     const kinds = r.findings.map((f) => `${f.kind}:${"file" in f ? f.file : ""}`).sort();
@@ -43,12 +45,13 @@ describe("checkLiveBudgets", () => {
       "br-size:writeup/a.en.json",
       "file-size:shiur/a.json",
       "unknown-file:notes.txt",
+      "unknown-file:today.json",
     ]);
     expect(r.byKind.shiur?.files).toBe(2);
-    expect(r.dataFiles).toBe(4);
+    expect(r.dataFiles).toBe(5);
   });
 
-  it("fires for each corpus-layer budget (plan §4) and for today.json", () => {
+  it("fires for each corpus-layer budget (plan §4) and for each Today file", () => {
     const targets = {
       "topics.json": "topics",
       "topic/hester-panim.json": "topic",
@@ -58,7 +61,9 @@ describe("checkLiveBudgets", () => {
       "story/sugar-sled.json": "story",
       "stories-index.json": "storiesIndex",
       "glossary/ha.json": "glossary",
-      "today.json": "today",
+      "today.en.json": "today",
+      "today.yi.json": "today",
+      "today.he.json": "today",
     } as const;
     const expected = { topics: 8, topic: 24, topicMoments: 24, topicShiurim: 24, thread: 6, story: 6, storiesIndex: 120, glossary: 8, today: 30 };
     for (const [kind, kib] of Object.entries(expected)) expect(BR_TARGETS[kind as keyof typeof BR_TARGETS], kind).toBe(kib * 1024);

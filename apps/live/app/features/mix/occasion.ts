@@ -4,10 +4,10 @@
  * "This week" on Today gains one button that plays a mix for the current parsha or zman. The mix is
  * a queue of *sections*, like the topic mix (`model.ts`), assembled from two sources:
  *
- * - **The head, inline in `today.json`.** The build takes the occasion's topic (occasion-topics of the
- *   corpus layer, D11), applies the featured rules and puts the first sections in the occasion's
- *   entry, preferring sections from the occasion's own catalog shiurim. The button plays these
- *   without another request.
+ * - **The head, inline in the Today file** (`today.<lang>.json`). The build takes the occasion's
+ *   topic (occasion-topics of the corpus layer, D11), applies the featured rules and puts the first
+ *   sections in the occasion's entry, preferring sections from the occasion's own catalog shiurim.
+ *   The button plays these without another request.
  * - **The rest, from the topic's moment list** (`topic/<id>.json`, the first sections with times), on
  *   demand once the head is playing. The pool is drawn from both the occasion's catalog shiurim and
  *   the topic's section tags: sections of the occasion's own shiurim come first, then the other
@@ -24,24 +24,25 @@
  * data is read defensively, since the data keeps growing and its shape may change.
  */
 import type { Ed, LocalizedText } from "@emunas/corpus/public";
+import type { ReaderText } from "../../data/types.ts";
 import { MIX_SIZE, mixPool, type AudioFilter, type Mix, type MixSource } from "./model.ts";
 
-/** The parts of a today.json mix item this module reads (the shiur is the id's prefix). */
+/** The parts of a Today file mix item this module reads (the shiur is the id's prefix). */
 export interface OccasionMixHead {
   id: string;
   t: number;
   end: number;
-  title?: LocalizedText | null;
+  title?: LocalizedText | ReaderText | null;
 }
 
-/** The parts of a today.json occasion mix this module reads. */
+/** The parts of a Today file occasion mix this module reads. */
 export interface OccasionMixData {
   topicId: string;
   first?: readonly OccasionMixHead[] | null;
   skip?: readonly string[] | null;
 }
 
-/** The parts of a today.json occasion this module reads. */
+/** The parts of a Today file occasion this module reads. */
 export interface OccasionData {
   shiurIds?: readonly string[] | null;
   moments?: readonly { id: string }[] | null;
@@ -69,7 +70,7 @@ export function skipSet(mix: OccasionMixData | null | undefined): Set<string> {
 }
 
 /**
- * The occasion's catalog shiurim as today.json knows them: its row and the shiurim of its moment
+ * The occasion's catalog shiurim as the Today file knows them: its row and the shiurim of its moment
  * pool, over every key of the occasion (both parts of a combined parsha), in that order.
  */
 export function occasionCatalog(occasions: readonly (OccasionData | null | undefined)[]): string[] {
@@ -83,7 +84,7 @@ export function occasionCatalog(occasions: readonly (OccasionData | null | undef
 
 /**
  * The head as mix sources: each inline item with its shiur and the shiur's audio language from the
- * today.json cards. An item whose card is missing is dropped (its language is unknown).
+ * Today file's cards. An item whose card is missing is dropped (its language is unknown).
  */
 export function headSources(mix: OccasionMixData | null | undefined, langOf: (shiurId: string) => Ed | undefined): MixSource[] {
   const out: MixSource[] = [];
@@ -98,7 +99,7 @@ export function headSources(mix: OccasionMixData | null | undefined, langOf: (sh
 }
 
 export interface OccasionMixInput<T extends MixSource = MixSource> {
-  /** The inline head (today.json), in its order. */
+  /** The inline head (Today file), in its order. */
   head: readonly T[];
   /** The topic's tagged sections (topic file moments, then any later pages), best first. */
   topic?: readonly T[];

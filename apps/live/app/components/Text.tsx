@@ -9,6 +9,8 @@
  * - `<Text value={l} lang={reader} />` with a `LocalizedText` (`{en, yi, he?}`): picks the reader's
  *   language, falling back along `CONTENT_FALLBACK` (@emunas/i18n) when there is no current
  *   translation. The element carries the `lang`/`dir` of the text actually shown.
+ * - `<Text value={r} lang={reader} />` with a `ReaderText` (`{lang, text}`, the per-language Today
+ *   files): the text was already picked for the reader at build time; the element carries `r.lang`.
  * - `<Text value="..." shiurLang="yi" />`: a catalog/original string of unknown script. `lang` and
  *   `dir` come from `langFor` with the page's edition (Hebrew script → he in the Hebrew edition; yi in
  *   a Yiddish shiur, or with `shiurLang={null}` (no one shiur) in the Yiddish edition; he otherwise.
@@ -20,6 +22,7 @@
  */
 import { langFor, pickText, UI_DIR, type AudioLang, type Dir, type LocalizedText, type UiLang } from "@emunas/i18n";
 import type { JSX } from "react";
+import type { ReaderText } from "../data/types.ts";
 import { useUi } from "../i18n/index.ts";
 
 type TextTag = "bdi" | "span" | "p" | "div" | "h1" | "h2" | "h3" | "h4" | "li" | "dd" | "dt" | "cite" | "strong" | "em";
@@ -33,7 +36,7 @@ interface Common {
 export type TextProps = Common &
   (
     | { value: string; lang: UiLang; shiurLang?: never; edition?: never }
-    | { value: LocalizedText; lang: UiLang; shiurLang?: never; edition?: never }
+    | { value: LocalizedText | ReaderText; lang: UiLang; shiurLang?: never; edition?: never }
     | { value: string; shiurLang: AudioLang | null; edition?: UiLang; lang?: never }
   );
 
@@ -50,8 +53,14 @@ export function textAttrs(props: TextProps, edition: UiLang): { text: string; la
   if (typeof props.value === "string") {
     return { text: props.value, lang, dir: UI_DIR[lang] };
   }
+  if (isReaderText(props.value)) return { text: props.value.text, lang: props.value.lang, dir: UI_DIR[props.value.lang] };
   const picked = pickText(props.value, lang);
   return { text: picked.text, lang: picked.lang, dir: picked.dir };
+}
+
+/** A text already picked for its reader (`ReaderText`), as opposed to a `LocalizedText`. */
+export function isReaderText(value: LocalizedText | ReaderText): value is ReaderText {
+  return "text" in value && "lang" in value;
 }
 
 export function Text(props: TextProps): JSX.Element {

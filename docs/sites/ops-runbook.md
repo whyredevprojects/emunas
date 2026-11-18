@@ -474,17 +474,40 @@ debugging from scratch.
 - *Fix:* if they time out again (more pages, a slower runner), raise `AXE_PAGE_MS`. Don't drop
   pages from the scan.
 
-**Live first-load gate: `today.json ≤ 30 KiB`** (`first-load.spec`)
+**Live e2e: mirroring on mobile** (`shell.spec` "yi is the mirror image of en", mobile projects)
+- *Why it fails:* on a phone the header holds the site name, one link per other interface language,
+  the Language button and the dark-colours toggle. When they no longer fit one row in one language
+  (English is the widest: "Emunas", "Language") the tools wrap to a second row there but not in
+  Yiddish, and every header box is ~52 px lower in `en` than in `yi`. First seen 2026-11-18, when
+  Hebrew added a second language link: `en` needed 392 px of the 380 px row on Pixel 7.
+- *Fix used:* tighter spacing for the header tools and the language links below 36rem
+  (`apps/live/app/shell/Shell.module.css`): `en` now needs 344 of 358 px on iPhone 14 (390 px).
+  If a language or a longer label comes back over, measure the row (brand + gap + `.headerTools`)
+  against the viewport minus the header padding; don't drop the test or the tap minimum.
+
+**Live first-load gate: each Today file ≤ 30 KiB** (`first-load.spec`)
+- *What it checks:* Today loads one file, the one for its reading language: `today.<lang>.json`, one
+  per UI language (`today.en.json`, `today.yi.json`, `today.he.json`). Each must be ≤ 30 KiB brotli.
 - *Why it fails:* the gate counts brotli bytes, which is what production serves. The plain-HTTP test
   server gives WebKit gzip only, which is ~6% larger, so a gzip-based measurement fails first.
-  If the gate fails on brotli bytes, Today's data has really outgrown its budget.
+  If the gate fails on brotli bytes, that Today file has really outgrown its budget.
 - *Fix:* that is a product or data-size question. Don't raise the budget silently.
-- *Also fails in* `data:budgets` ("over budget: today.json … (today target)") and in the Live
-  data-build real-data test, which use the same 30 KiB target at brotli quality 5.
-- *Seen 2026-11-18, Hebrew:* once the Hebrew overlays are current, every generated text in
-  `today.json` carries a `he` key as well as `en`/`yi`. That adds ~2.8 KiB br (29,278 → 32,068
-  bytes). The way to fix it is to give each language its own Today file, holding only the texts on
-  the reader's `CONTENT_FALLBACK` chain, or to choose a new budget on purpose.
+- *Also fails in* `data:budgets` ("today.<lang>.json: … bytes br > 30720 (today target)") and in the
+  Live data-build real-data test, which use the same 30 KiB target per file at brotli quality 5. The
+  real-data test logs the size of each Today file.
+- *Seen 2026-11-18, Hebrew:* once the Hebrew overlays were current, every generated text in the
+  single `today.json` carried `he` as well as `en`/`yi`, which took it from 29,278 to 32,068 bytes br.
+  *Fixed* by splitting it into one Today file per UI language (`LIVE_DATA_SCHEMA_VERSION` 8). In
+  each file, every generated text (one-liners, mix section titles) is a `{ lang, text }` holding only
+  the text that reader is shown: the first present language along `CONTENT_FALLBACK[lang]`, with
+  the language it is in, so the page gives it the right `lang`/`dir`. The Today page fetches the file
+  for the reading language and fetches again when the language changes. On the real data
+  (2026-11-18): en 26,161, yi 25,962, he 25,379 bytes br. A new UI language adds a file of about the
+  same size; it does not grow the others.
+- *If it comes back:* find out which file is over and what grew (`data:budgets` names the largest).
+  More occasions with a mix, longer titles or more cards grow every file alike. Look at
+  `EMIT_LIMITS` in `apps/live/data-build/emit.ts` (`todayMixFirst`, `todayPoolPerOccasion`,
+  `newlySummarized`) and `TODAY_ROW_PER_LANG` before you touch the budget.
 
 ## 9. Contracts for later packages
 

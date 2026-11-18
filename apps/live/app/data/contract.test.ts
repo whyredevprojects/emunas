@@ -80,7 +80,7 @@ const REQUIRED: { [K in keyof DataFiles]: readonly (keyof DataFiles[K])[] } = {
   build: ["schemaVersion", "corpusSchemaVersion", "buildId", "dataSha", "generatedAt", "counts", "momentShards", "glossaryShards"],
   corpus: ["schemaVersion", "buildId", "counts", "shiurim"],
   facets: ["schemaVersion", "category", "lang", "occasion", "year", "series", "work", "person", "concept"],
-  today: ["schemaVersion", "counts", "occasions", "newlySummarized", "cards"],
+  today: ["schemaVersion", "lang", "counts", "occasions", "newlySummarized", "cards"],
   shiur: ["schemaVersion", "id", "rev", "lang", "category", "catalog", "recordings", "status", "related", "duration", "seriesTitle"],
   writeup: ["schemaVersion", "shiurId", "rev", "lang", "blocks"],
   series: ["schemaVersion", "id", "title", "lang", "parts", "perekGroups"],
@@ -104,7 +104,7 @@ function kindOf(file: string): keyof DataFiles {
   if (file === "build.json") return "build";
   if (file === "corpus.json") return "corpus";
   if (file === "facets.json") return "facets";
-  if (file === "today.json") return "today";
+  if (/^today\.[a-z]+\.json$/u.test(file)) return "today";
   if (file === "works.json") return "works";
   if (file === "topics.json") return "topics";
   if (file === "stories-index.json") return "storiesIndex";
@@ -181,7 +181,7 @@ describe("data contract", () => {
 
     const facets = await loadFacets();
     expect(Object.keys(facets.occasion).length).toBeGreaterThan(0);
-    const today = await loadToday();
+    const today = await loadToday("en");
     // An occasion has a page exactly when facets.json says so (≥2 listed shiurim); Today's row is a
     // few of them per language, the page lists all.
     for (const key of Object.keys(today.occasions)) {

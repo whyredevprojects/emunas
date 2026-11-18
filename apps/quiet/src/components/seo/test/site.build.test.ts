@@ -1,6 +1,7 @@
 /**
  * W4.6 acceptance on a real build (integration-plan §8 W4.6):
- *   corpus (today's data, into a temp dir) → astro build with production hosts → checks on dist:
+ *   corpus (today's data) → astro build with production hosts → checks on dist (the `quietSeoSite`
+ *   build of test/site-builds.ts):
  * - every edition page is self-canonical with one hreflang per edition plus x-default and OG tags;
  * - each edition sitemap lists exactly the pages built for that edition, every shiur among them;
  *   the sitemap index and robots.txt name them;
@@ -13,55 +14,27 @@
  *   Quiet page through @emunas/links; the only other external links are the media host, Sefaria
  *   and the report address.
  */
-import { existsSync, mkdtempSync, readdirSync, readFileSync, rmSync, statSync } from "node:fs";
-import { tmpdir } from "node:os";
+import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { dirname, join, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { CONTENT_FALLBACK, UI_DIR, pickText } from "@emunas/i18n";
 import { createLinks } from "@emunas/links";
-import { buildCorpus } from "./corpus-build.ts";
-import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import { astroBuild } from "../../../../test/astro-build.ts";
+import { describe, expect, inject, it } from "vitest";
+import { SEO_SITE } from "../../../../test/site-builds.ts";
 import { ABOUT_PARTS } from "../../../pages/[ed]/about/_strings.ts";
 import { EDS, editionOfPath, pathInEdition } from "../../../lib/edition.ts";
 
 const app = resolve(dirname(fileURLToPath(import.meta.url)), "../../../..");
 const repo = resolve(app, "../..");
-const DOMAIN = "emunas.example";
+const DOMAIN = SEO_SITE.domain;
 const HOME = `https://${DOMAIN}`;
 const QUIET = `https://library.${DOMAIN}`;
 const LIVE = `https://listen.${DOMAIN}`;
-const MEDIA = "https://media.example.org";
-const FEEDBACK = "errors@emunas.example";
+const MEDIA = SEO_SITE.mediaOrigin;
+const FEEDBACK = SEO_SITE.feedbackEmail;
 const links = createLinks({ hosts: { quiet: QUIET, live: LIVE } });
 
-let tmp = "";
-let corpus = "";
-let dist = "";
-
-beforeAll(() => {
-  tmp = mkdtempSync(join(tmpdir(), "quiet-seo-"));
-  corpus = join(tmp, "corpus");
-  dist = join(tmp, "dist");
-  buildCorpus(repo, corpus, MEDIA);
-  const b = astroBuild(app, dist, {
-    EMUNAS_CORPUS_DIR: corpus,
-    EMUNAS_DOMAIN: DOMAIN,
-    EMUNAS_FEEDBACK_EMAIL: FEEDBACK,
-    // Never let a caller's own host settings leak into this build.
-    EMUNAS_HOME_ORIGIN: "",
-    EMUNAS_QUIET_ORIGIN: "",
-    EMUNAS_LIVE_ORIGIN: "",
-    EMUNAS_WORKERS_SUBDOMAIN: "",
-    EMUNAS_STAGE: "",
-    EMUNAS_SHELL_SAMPLE: "",
-  });
-  if (b.status !== 0) throw new Error(`astro build failed:\n${b.stdout.slice(-4000)}\n${b.stderr.slice(-4000)}`);
-}, 300_000);
-
-afterAll(() => {
-  if (tmp) rmSync(tmp, { recursive: true, force: true });
-});
+const { corpus, dist } = inject("quietSeoSite");
 
 // ------------------------------------------------------------------ helpers
 

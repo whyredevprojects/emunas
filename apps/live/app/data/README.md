@@ -9,7 +9,7 @@ contract in `@emunas/corpus/public` (integration-plan §5.2). W3.6 emits files t
 | `/data/build.json` | `BuildFile` (counts, moment shard counts) | `loadBuild()` (memoized) |
 | `/data/corpus.json` | `CorpusFile`: one `CorpusRow` per shiur | `loadCorpus()` (memoized) |
 | `/data/facets.json` | `FacetsFile`: id → labels + count per facet | `loadFacets()` (memoized) |
-| `/data/today.json` | `TodayFile`: occasion → shiurim + moment pool; newly summarized | `loadToday()` (memoized) |
+| `/data/today.<lang>.json` | `TodayFile`, one per reading language (`UI_LANGS`): occasion → shiurim + moment pool; newly summarized; each generated text a `ReaderText` (`{lang, text}`) picked along `CONTENT_FALLBACK[lang]` | `loadToday(lang)` (memoized) |
 | `/data/shiur/<id>.json` | `ShiurFile`: `PublicShiur` without the write-up, recordings with `audioUrl` | `loadShiur(id)` |
 | `/data/writeup/<id>.<lang>.json` | `WriteupFile` (one language, lazy): en and yi; he only when the shiur has a complete, current Hebrew translation (`notes.writeupLangs`) | `loadWriteup(id, lang)` |
 | `/data/series/<id>.json` | `SeriesFile` (ordered parts, perek groups) | `loadSeries(id)` |
@@ -26,8 +26,9 @@ contract in `@emunas/corpus/public` (integration-plan §5.2). W3.6 emits files t
 | `/data/glossary/<prefix>.json` | `GlossaryShardFile` (`glossaryShardFor(id, build.glossaryShards)`) | `loadGlossaryShard(prefix)` (memoized) |
 | `/data/explore/entities.json` | `ExploreEntitiesFile` (corpus ids per shiur, for Explore) | `loadExploreEntities()` (memoized) |
 
-**Loading rules (corpus-wave-plan §4, C1.7).** Today renders from `today.json` alone and the
-listening room from `shiur/<id>.json` alone: neither loads `corpus.json`, `facets.json` or any
+**Loading rules (corpus-wave-plan §4, C1.7).** Today renders from the Today file of its reading
+language (`today.<lang>.json`) alone, and loads the other language's file when the reading language
+changes; the listening room renders from `shiur/<id>.json` alone: neither loads `corpus.json`, `facets.json` or any
 corpus-layer file other than its own (`loading.test.tsx` spies on the fetches). `corpus.json` is for
 Explore, search and the shelf. Every corpus entity is AI-generated and unreviewed: an entity page
 shows `<CorpusLabel>` (app/components) once. Entity ids are corpus ids; which entities have a Live

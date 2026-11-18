@@ -92,7 +92,7 @@ describe("live data fixtures", async () => {
   });
 
   it("keys occasions the way the real build does (normalize keys, never raw Hebrew)", () => {
-    const today = generated.get("today.json") as TodayFile;
+    const today = generated.get("today.en.json") as TodayFile;
     const facets = generated.get("facets.json") as FacetsFile;
     const keys = [...Object.keys(today.occasions), ...Object.keys(facets.occasion)];
     expect(keys.length).toBeGreaterThan(0);

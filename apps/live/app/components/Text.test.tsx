@@ -50,6 +50,11 @@ describe("<Text>", () => {
     expect(renderToStaticMarkup(<Text value={englishOnly} lang="he" />)).toBe('<bdi lang="en" dir="ltr">Opening</bdi>');
   });
 
+  it("shows a ReaderText (picked at build time) with the language it is in, not the reader's", () => {
+    expect(renderToStaticMarkup(<Text value={{ lang: "yi", text: "הקדמה" }} lang="he" as="p" />)).toBe('<p lang="yi" dir="rtl">הקדמה</p>');
+    expect(renderToStaticMarkup(<Text value={{ lang: "en", text: "Opening" }} lang="he" />)).toBe('<bdi lang="en" dir="ltr">Opening</bdi>');
+  });
+
   it("never alters the text", () => {
     const s = 'ל”ג בעומר — תשל"ו';
     expect(textAttrs({ value: s, shiurLang: "yi" }, "yi").text).toBe(s);

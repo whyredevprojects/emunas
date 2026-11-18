@@ -37,6 +37,7 @@ import {
   type PersonChip,
   type QuickEntity,
   type QuickIndexFile,
+  type ReaderText,
   type SeriesFile,
   type SeriesFacetValue,
   type ShiurFile,
@@ -64,7 +65,7 @@ import {
 } from "./emit-corpus.ts";
 
 /** Bump when the emit logic changes the output for the same input (part of `buildId`). */
-export const EMITTER_VERSION = 2;
+export const EMITTER_VERSION = 3;
 
 /** Tunables (tech-live §3.3). */
 export const EMIT_LIMITS = {
@@ -76,15 +77,15 @@ export const EMIT_LIMITS = {
   /** `related` lists entities sharing at least this many shiurim. */
   relatedMinShared: 5,
   relatedMax: 12,
-  /** "A moment for today" candidates per occasion in today.json (from the row's shiurim). */
+  /** "A moment for today" candidates per occasion in the Today files (from the row's shiurim). */
   todayPoolPerOccasion: 4,
   /**
-   * Sections of the occasion mix in today.json (enough to start playing; the rest come from the
+   * Sections of the occasion mix in the Today files (enough to start playing; the rest come from the
    * topic's moment pages). Two since corpus v2: its topic parsha/zman keys link about 90 occasions
-   * to a topic, and three per mix took today.json past its 30 KiB budget.
+   * to a topic, and three per mix took the Today file past its 30 KiB budget.
    */
   todayMixFirst: 2,
-  /** Entries in today.json `newlySummarized` (Today shows 8 after the language filter). */
+  /** Entries in the Today files' `newlySummarized` (Today shows 8 after the language filter). */
   newlySummarized: 12,
 } as const;
 
@@ -115,6 +116,15 @@ function sortedRecord<T>(entries: Iterable<[string, T]>): Record<string, T> {
 
 function uniq<T>(xs: Iterable<T>): T[] {
   return [...new Set(xs)];
+}
+
+/**
+ * `text` as a reader of `lang` is shown it: the first present language along
+ * `CONTENT_FALLBACK[lang]`, with the language it is in (per-language files).
+ */
+function forReader(text: LocalizedText, lang: UiLang): ReaderText {
+  const picked = pickText(text, lang);
+  return { lang: picked.lang, text: picked.text };
 }
 
 /** Year label: digits+civil in English, Hebrew letters in Yiddish and Hebrew. */
@@ -317,7 +327,7 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
   };
   put<"facets">(dataPaths.facets(), facets);
 
-  // ------------------------------------------------------------------ today.json
+  // ------------------------------------------------------------------ today.<lang>.json
   /** Round-robin over the occasion's shiurim (in year order) so the pool spans shiurim and years. */
   const todayPool = (ids: readonly string[]): MomentRef[] => {
     const per = ids.map((id) => {
@@ -347,10 +357,12 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
     }
     return out;
   };
-  // Today renders from this file alone (plan §4): a compact card for every shiur it names, the
+  // Today renders from its file alone (plan §4): a compact card for every shiur it names, the
   // occasion labels, and per occasion the first items of its mix (occasion → topic, corpus layer).
   // Rows hold a few shiurim per audio language (the occasion page lists all); only the
-  // newly-summarized cards carry a one-liner. That keeps the file inside its 30 KiB budget.
+  // newly-summarized cards carry a one-liner. There is one file per reading language, and each
+  // generated text in it is the one its reader is shown (`ReaderText`). That keeps every file inside
+  // its 30 KiB budget however many languages a text is published in.
   const newlySummarized = Object.entries(input.updatedAt)
     .filter(([id]) => byId.get(id)?.status === "full")
     .sort(([a, x], [b, y]) => cmp(y, x) || cmp(a, b))
@@ -367,44 +379,45 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
   };
   const sharedLabel = new Map([...PARSHIYOS, ...OCCASIONS].map((r) => [r.key, { en: r.en, yi: r.yi }]));
   const sameAsShared = (k: string, l: FacetLabel) => sharedLabel.get(k)?.en === l.en && sharedLabel.get(k)?.yi === l.yi;
-  const todayOccasions = sortedRecord(
-    [...listed].map(([k, o]): [string, TodayOccasion] => {
+  /** The occasions with their generated texts in every language; each Today file picks its reader's. */
+  const occasionsAll = [...listed]
+    .sort(([a], [b]) => cmp(a, b))
+    .map(([k, o]) => {
       const row = rowOf(o.ids);
       const topicId = layerOut.occasionTopic.get(k);
       const mix = topicId ? layerOut.featuredMix(topicId) : null;
-      return [
-        k,
-        {
-          ...(sameAsShared(k, o.label) ? {} : { label: o.label }),
-          shiurIds: row,
-          total: o.ids.length,
-          moments: todayPool(row).flatMap((m) => (m.t === null ? [] : [{ id: m.id, t: m.t }])),
-          mix: mix && {
-            topicId: mix.topicId,
-            label: mix.label,
-            sections: mix.sections,
-            shiurim: mix.shiurim,
-            // The head the button plays at once: the same rule as the client's rest (the occasion's
-            // own catalog shiurim first, one section per shiur), over the featured sections.
-            first: occasionMix({ head: [], topic: mix.first, catalog: o.ids, audio: "both", size: EMIT_LIMITS.todayMixFirst }).items.map(
-              (x) => ({ id: x.id, t: x.t, end: x.end, title: x.title }),
-            ),
-            ...(mix.skip.length > 0 ? { skip: mix.skip } : {}),
-          },
+      return {
+        key: k,
+        label: sameAsShared(k, o.label) ? null : o.label,
+        shiurIds: row,
+        total: o.ids.length,
+        moments: todayPool(row).flatMap((m) => (m.t === null ? [] : [{ id: m.id, t: m.t }])),
+        mix: mix && {
+          topicId: mix.topicId,
+          label: mix.label,
+          sections: mix.sections,
+          shiurim: mix.shiurim,
+          // The head the button plays at once: the same rule as the client's rest (the occasion's
+          // own catalog shiurim first, one section per shiur), over the featured sections.
+          first: occasionMix({ head: [], topic: mix.first, catalog: o.ids, audio: "both", size: EMIT_LIMITS.todayMixFirst }).items,
+          skip: mix.skip,
         },
-      ];
-    }),
-  );
+      };
+    });
   const withOneLiner = new Set(newlySummarized.map((n) => n.shiurId));
   const cardIds = new Set<string>([
-    ...Object.values(todayOccasions).flatMap((o) => [
+    ...occasionsAll.flatMap((o) => [
       ...o.shiurIds,
       ...o.moments.map((m) => shiurOfMoment(m.id)),
       ...(o.mix?.first.map((m) => shiurOfMoment(m.id)) ?? []),
     ]),
     ...withOneLiner,
   ]);
-  const todayCard = (s: PublicShiur): TodayCard => {
+  const cardShiurim = [...cardIds].sort(cmp).flatMap((id) => {
+    const s = byId.get(id);
+    return s ? [s] : [];
+  });
+  const todayCard = (s: PublicShiur, lang: UiLang): TodayCard => {
     const ol = withOneLiner.has(s.id) ? s.notes?.summary.oneLiner : undefined;
     return {
       lang: s.lang,
@@ -412,22 +425,38 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
       duration: Math.round(s.duration),
       years: [...s.years],
       status: s.status,
-      ...(ol ? { oneLiner: lcopy(ol) } : {}),
+      ...(ol ? { oneLiner: forReader(ol, lang) } : {}),
     };
   };
-  const today: TodayFile = {
-    schemaVersion: V,
-    counts,
-    occasions: todayOccasions,
-    newlySummarized,
-    cards: sortedRecord(
-      [...cardIds].flatMap((id) => {
-        const s = byId.get(id);
-        return s ? [[id, todayCard(s)] as const] : [];
-      }),
-    ),
-  };
-  put<"today">(dataPaths.today(), today);
+  for (const lang of UI_LANGS) {
+    const today: TodayFile = {
+      schemaVersion: V,
+      lang,
+      counts,
+      occasions: Object.fromEntries(
+        occasionsAll.map((o): [string, TodayOccasion] => [
+          o.key,
+          {
+            ...(o.label ? { label: o.label } : {}),
+            shiurIds: o.shiurIds,
+            total: o.total,
+            moments: o.moments,
+            mix: o.mix && {
+              topicId: o.mix.topicId,
+              label: o.mix.label,
+              sections: o.mix.sections,
+              shiurim: o.mix.shiurim,
+              first: o.mix.first.map((x) => ({ id: x.id, t: x.t, end: x.end, title: forReader(x.title, lang) })),
+              ...(o.mix.skip.length > 0 ? { skip: o.mix.skip } : {}),
+            },
+          },
+        ]),
+      ),
+      newlySummarized,
+      cards: Object.fromEntries(cardShiurim.map((s) => [s.id, todayCard(s, lang)])),
+    };
+    put<"today">(dataPaths.today(lang), today);
+  }
 
   // ------------------------------------------------------------------ shiur/<id>.json, writeup/<id>.<lang>.json
   const seriesById = new Map(agg.series.series.map((x) => [x.id, x]));
