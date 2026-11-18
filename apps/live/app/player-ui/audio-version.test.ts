@@ -33,8 +33,7 @@ function memoryStorage(): Storage {
 
 const open: Personal[] = [];
 function personal(): Personal {
-  const backend = new MemoryBackend();
-  const p = createPersonal({ open: async () => backend, channel: null });
+  const p = createPersonal({ open: async () => ({ backend: new MemoryBackend(), fallbackReason: "test" }), channel: null });
   open.push(p);
   return p;
 }
