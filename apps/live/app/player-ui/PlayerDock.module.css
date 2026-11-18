@@ -171,7 +171,17 @@
     color: var(--color-ink-muted);
   }
 
+  /* A notice sentence that may be cut short; the button after it never is. */
+  .noticeText {
+    min-inline-size: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
   .textButton {
+    flex: none;
+    white-space: nowrap;
     border: 0;
     background: transparent;
     color: var(--color-accent);
@@ -194,7 +204,8 @@
   @media (max-width: 40rem) {
     .wide,
     .extras,
-    .time {
+    .time,
+    .versionText {
       display: none;
     }
 

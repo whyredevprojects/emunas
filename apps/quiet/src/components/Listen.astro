@@ -7,9 +7,17 @@
  *
  * Works without script; the player script (W3.2) docks the first `audio.listen-audio` and
  * drives the others through `data-rec`.
+ *
+ * Improved audio (docs/sites/cleaned-audio-ux.md §3–§4): `src` is the copy with the sound improved
+ * by AI when the recording has one (`defaultUrl`), with `data-cleaned` / `data-original` for the
+ * script. Downloads always use the original. When any part has an improved copy, `p.listen-version`
+ * follows the tracks: "Sound improved by AI · Switch to the original", where the action is a plain
+ * link to the original file without script and a button with it (it switches every part, and the
+ * script rewrites the line to state B, whose strings ride on `data-*`). A part without an improved
+ * copy says so in its meta line.
  */
-import { formatDuration } from "@emunas/i18n";
-import { playableUrl, type AudioRecording } from "../lib/audio.ts";
+import { audioVersionLabel, formatDuration, type AudioVersionLabelKey } from "@emunas/i18n";
+import { cleanedUrl, playableUrl, type AudioRecording } from "../lib/audio.ts";
 import type { Ed } from "../lib/edition.ts";
 import { useT } from "../i18n/index.ts";
 
@@ -29,10 +37,15 @@ const tracks = recordings.map((rec, i) => ({
   rec,
   part: i + 1,
   url: playableUrl(rec),
+  cleaned: cleanedUrl(rec),
   duration: formatDuration(rec.duration, ed),
 }));
 const Heading = `h${level}` as "h2" | "h3";
 const headingId = `${id}-heading`;
+const v = (key: AudioVersionLabelKey, params?: { part: number }) => audioVersionLabel(key, ed, params);
+// The no-JS link opens the original of the first part that has an improved copy.
+const switchTo = tracks.find((x) => x.url && x.cleaned)?.url;
+const versionTextId = `${id}-version-text`;
 ---
 <section class="listen" id={id} aria-labelledby={headingId} data-recordings={count}>
   <Heading class="label" id={headingId}>{t("listen.heading")}</Heading>
@@ -40,7 +53,7 @@ const headingId = `${id}-heading`;
     <p class="listen-unavailable">{t("listen.unavailable")}</p>
   ) : (
     <ol class="tracks" role="list">
-      {tracks.map(({ rec, part, url, duration }) => (
+      {tracks.map(({ rec, part, url, cleaned, duration }) => (
         <li class="track" data-rec={rec.id}>
           {count > 1 && (
             <p class="track-label" id={`${id}-part-${part}`}>
@@ -54,8 +67,10 @@ const headingId = `${id}-heading`;
                 class="listen-audio"
                 controls
                 preload="none"
-                src={url}
+                src={cleaned ?? url}
                 data-rec={rec.id}
+                data-original={url}
+                data-cleaned={cleaned ?? undefined}
                 data-offset={rec.offset}
                 aria-label={count > 1 ? t("listen.part", { part, count }) : t("listen.heading")}
               >
@@ -66,6 +81,7 @@ const headingId = `${id}-heading`;
                   {count > 1 ? t("listen.downloadPart", { part }) : t("listen.download")}
                 </a>
                 {count === 1 && duration && <> · <span>{t("listen.duration", { duration })}</span></>}
+                {switchTo && !cleaned && <> · <span>{v("partOriginal", { part })}</span></>}
               </p>
             </>
           ) : (
@@ -76,5 +92,19 @@ const headingId = `${id}-heading`;
         </li>
       ))}
     </ol>
+  )}
+  {switchTo && (
+    <p
+      class="listen-version"
+      data-text-cleaned={v("cleaned.text")}
+      data-action-cleaned={v("cleaned.action")}
+      data-text-original={v("original.text")}
+      data-action-original={v("original.action")}
+      data-announce-cleaned={v("announce.cleaned")}
+      data-announce-original={v("announce.original")}
+    >
+      <span id={versionTextId}>{v("cleaned.text")}</span> · <a class="listen-version-switch" href={switchTo} aria-describedby={versionTextId}>{v("cleaned.action")}</a>
+      <span class="visually-hidden" role="status"></span>
+    </p>
   )}
 </section>

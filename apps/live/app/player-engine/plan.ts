@@ -3,7 +3,7 @@
  * the skip plan. No DOM, no timers.
  */
 import { toLocal } from "@emunas/corpus/public";
-import type { PlayerChapter, PlayerRecording, PlayerShiur, SkipKind, SkipRange, SkipSettings } from "./types.ts";
+import type { AudioVersion, PlayerChapter, PlayerRecording, PlayerShiur, SkipKind, SkipRange, SkipSettings } from "./types.ts";
 
 /** Times within this many seconds count as "reached" (timers and media clocks are not exact). */
 export const EPS = 0.05;
@@ -25,9 +25,13 @@ export function clampRate(rate: number): number {
   return Math.min(MAX_RATE, Math.max(MIN_RATE, rate));
 }
 
-/** The playable URL of a recording (Amendment A1): `audioUrl` on the media host; null (or empty) = unavailable. */
-export function recordingAudioUrl(rec: PlayerRecording): string | null {
-  return rec.audioUrl ? rec.audioUrl : null;
+/**
+ * The playable URL of a recording (Amendment A1): `audioUrl` on the media host; null (or empty) =
+ * unavailable. With `version` "cleaned" it is the AI-improved copy when the recording has one.
+ */
+export function recordingAudioUrl(rec: PlayerRecording, version: AudioVersion = "original"): string | null {
+  if (!rec.audioUrl) return null;
+  return version === "cleaned" && rec.cleanedUrl ? rec.cleanedUrl : rec.audioUrl;
 }
 
 /** Global seconds → index of the recording and seconds into it. */

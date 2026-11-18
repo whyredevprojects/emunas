@@ -1,7 +1,7 @@
 {
- "schemaVersion": 6,
+ "schemaVersion": 7,
  "id": "yi-zmanim-tv-bb-04",
- "rev": "d800c202550f",
+ "rev": "5d507393ee87",
  "lang": "yi",
  "category": "zman",
  "catalog": {
@@ -38,6 +38,7 @@
    "offset": 0,
    "duration": 1855.544,
    "audioUrl": "https://media.example.invalid/fixture/y-zemanim-taamuz-av-07-04-1-15-av.mp3",
+   "cleanedUrl": "https://media.example.invalid/fixed/sidon/fixture/y-zemanim-taamuz-av-07-04-1-15-av.mp3",
    "playable": true,
    "transcript": {
     "eligible": false
@@ -49,6 +50,7 @@
    "offset": 1855.544,
    "duration": 1172.207,
    "audioUrl": "https://media.example.invalid/fixture/y-zemanim-taamuz-av-07-04-2-15-av.mp3",
+   "cleanedUrl": "https://media.example.invalid/fixed/sidon/fixture/y-zemanim-taamuz-av-07-04-2-15-av.mp3",
    "playable": true,
    "transcript": {
     "eligible": false

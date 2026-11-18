@@ -5,6 +5,7 @@ export {
   IDLE_STATE,
   appDescribe,
   canPlay,
+  chooseAudioVersion,
   getEngine,
   installEngine,
   playAt,
@@ -15,3 +16,4 @@ export {
   type PlayingInfo,
 } from "./engine.ts";
 export { makeDescribe, type SeriesTitleOf } from "./describe.ts";
+export { VersionLine, versionLineState } from "./VersionLine.tsx";

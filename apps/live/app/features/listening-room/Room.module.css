@@ -83,6 +83,28 @@
     margin-block: var(--space-2xs);
   }
 
+  /* "Sound improved by AI · Switch to the original" under the play button (cleaned-audio-ux §4). */
+  .versionLine {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: var(--space-2xs);
+    margin-block: var(--space-2xs);
+    color: var(--color-ink-muted);
+    font-size: var(--step--1);
+  }
+
+  .versionButton {
+    min-block-size: var(--tap-min);
+    padding-inline: var(--space-3xs);
+    border: 0;
+    background: transparent;
+    color: var(--color-accent);
+    font: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
   .pending {
     padding: var(--space-s) var(--space-m);
     border-inline-start: var(--rule-thick) solid var(--color-rule-strong);

@@ -77,8 +77,8 @@ const recordingBase = {
   transcript: v.strictObject({ eligible: v.literal(false) }),
 };
 const recording = v.union([
-  v.strictObject({ ...recordingBase, audioUrl: mediaUrl, playable: v.literal(true) }),
-  v.strictObject({ ...recordingBase, audioUrl: v.null(), playable: v.literal(false) }),
+  v.strictObject({ ...recordingBase, audioUrl: mediaUrl, cleanedUrl: v.nullable(mediaUrl), playable: v.literal(true) }),
+  v.strictObject({ ...recordingBase, audioUrl: v.null(), cleanedUrl: v.null(), playable: v.literal(false) }),
 ]);
 
 const catalogEntries = {

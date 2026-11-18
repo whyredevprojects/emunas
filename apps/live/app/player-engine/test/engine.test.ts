@@ -27,8 +27,8 @@ function twoRecordings(over: Partial<PlayerShiur> = {}): PlayerShiur {
     duration: 160,
     catalog: { titleOriginal: "Catalog title" },
     recordings: [
-      { id: "a", offset: 0, duration: 100, audioUrl: A },
-      { id: "b", offset: 100, duration: 60, audioUrl: B },
+      { id: "a", offset: 0, duration: 100, audioUrl: A, cleanedUrl: null },
+      { id: "b", offset: 100, duration: 60, audioUrl: B, cleanedUrl: null },
     ],
     notes: {
       chapters: [
@@ -51,7 +51,10 @@ function twoRecordings(over: Partial<PlayerShiur> = {}): PlayerShiur {
 function setup(shiur: PlayerShiur = twoRecordings(), opts: PlayerEngineOptions = {}) {
   const clock = new FakeClock();
   const durations: Record<string, number> = {};
-  for (const r of shiur.recordings) if (r.audioUrl) durations[r.audioUrl] = r.duration;
+  for (const r of shiur.recordings) {
+    if (r.audioUrl) durations[r.audioUrl] = r.duration;
+    if (r.cleanedUrl) durations[r.cleanedUrl] = r.duration;
+  }
   const audio = new FakeAudio(clock, durations);
   const lifecycle = new FakeLifecycle();
   const ms = fakeMediaSession();
@@ -281,7 +284,7 @@ describe("skip rules", () => {
     const real = golden as unknown as PublicShiur;
     const shiur: PlayerShiur = {
       ...real,
-      recordings: real.recordings.map((r) => ({ ...r, audioUrl: `https://media.example.org/${r.id}.mp3` })),
+      recordings: real.recordings.map((r) => ({ ...r, audioUrl: `https://media.example.org/${r.id}.mp3`, cleanedUrl: null })),
     };
     const { clock, engine, events } = setup(shiur);
     engine.setRate(1.5);
@@ -456,8 +459,8 @@ describe("speed, sleep, availability", () => {
   it("marks a shiur without playable audio unavailable", () => {
     const shiur = twoRecordings({
       recordings: [
-        { id: "a", offset: 0, duration: 100, audioUrl: null },
-        { id: "b", offset: 100, duration: 60, audioUrl: null },
+        { id: "a", offset: 0, duration: 100, audioUrl: null, cleanedUrl: null },
+        { id: "b", offset: 100, duration: 60, audioUrl: null, cleanedUrl: null },
       ],
     });
     const { engine, audio } = setup(shiur);
@@ -469,8 +472,8 @@ describe("speed, sleep, availability", () => {
   it("ends after the last playable recording when a later one is unavailable", () => {
     const shiur = twoRecordings({
       recordings: [
-        { id: "a", offset: 0, duration: 100, audioUrl: A },
-        { id: "b", offset: 100, duration: 60, audioUrl: null },
+        { id: "a", offset: 0, duration: 100, audioUrl: A, cleanedUrl: null },
+        { id: "b", offset: 100, duration: 60, audioUrl: null, cleanedUrl: null },
       ],
     });
     const { clock, engine, events } = setup(shiur, { skip: { enabled: false } });
@@ -482,7 +485,7 @@ describe("speed, sleep, availability", () => {
   it("reports a media error", () => {
     const { clock, engine, events } = setup();
     const shiur = twoRecordings({
-      recordings: [{ id: "a", offset: 0, duration: 160, audioUrl: "https://media.example.org/missing.mp3" }],
+      recordings: [{ id: "a", offset: 0, duration: 160, audioUrl: "https://media.example.org/missing.mp3", cleanedUrl: null }],
     });
     engine.load(shiur, { autoplay: true });
     clock.flush();
@@ -616,5 +619,137 @@ describe("store contract", () => {
       expect(src, f).not.toMatch(/from\s+["'](react|react-dom)(\/[^"']*)?["']/);
       expect(src, f).not.toMatch(/require\(["']react/);
     }
+  });
+});
+
+describe("audio versions (cleaned-audio-ux §6)", () => {
+  const CA = "https://media.example.org/fixed/sidon/shiurim/a.mp3";
+  const CB = "https://media.example.org/fixed/sidon/shiurim/b.mp3";
+  const withCleaned = (over: Partial<PlayerShiur> = {}) =>
+    twoRecordings({
+      recordings: [
+        { id: "a", offset: 0, duration: 100, audioUrl: A, cleanedUrl: CA },
+        { id: "b", offset: 100, duration: 60, audioUrl: B, cleanedUrl: CB },
+      ],
+      ...over,
+    });
+
+  it("plays the improved copy by default and the original when chosen", () => {
+    const { clock, audio, engine } = setup(withCleaned());
+    engine.load(withCleaned(), { start: 10 });
+    clock.flush();
+    expect(audio.src).toBe(CA);
+    expect(engine.getState()).toMatchObject({ audioVersion: "cleaned", playingVersion: "cleaned", cleanedAvailable: true });
+
+    const b = setup(withCleaned(), { audioVersion: "original" });
+    b.engine.load(withCleaned(), { start: 10 });
+    b.clock.flush();
+    expect(b.audio.src).toBe(A);
+    expect(b.engine.getState()).toMatchObject({ audioVersion: "original", playingVersion: "original", cleanedAvailable: true });
+  });
+
+  it("has no line (state C) when the recording has no improved copy", () => {
+    const { clock, audio, engine } = setup();
+    engine.load(twoRecordings(), { start: 10 });
+    clock.flush();
+    expect(audio.src).toBe(A);
+    expect(engine.getState()).toMatchObject({ playingVersion: "original", cleanedAvailable: false });
+  });
+
+  it("switching keeps the position, the playing state and the speed", () => {
+    const { clock, audio, engine } = setup(withCleaned(), { skip: { enabled: false } });
+    engine.setRate(1.5);
+    engine.load(withCleaned(), { start: 40, autoplay: true });
+    clock.flush();
+    clock.tick(2000);
+    const before = engine.getState().t;
+    expect(before).toBeCloseTo(43, 1);
+    engine.setAudioVersion("original");
+    expect(engine.getState().t).toBeCloseTo(before, 1);
+    clock.flush();
+    expect(audio.src).toBe(A);
+    expect(audio.currentTime).toBeCloseTo(before, 1);
+    expect(audio.playbackRate).toBe(1.5);
+    expect(audio.defaultPlaybackRate).toBe(1.5);
+    expect(engine.getState()).toMatchObject({ status: "playing", rate: 1.5, playingVersion: "original", audioVersion: "original" });
+    clock.tick(2000);
+    expect(engine.getState().t).toBeCloseTo(before + 3, 1);
+
+    engine.setAudioVersion("cleaned");
+    clock.flush();
+    expect(audio.src).toBe(CA);
+    expect(engine.getState()).toMatchObject({ status: "playing", playingVersion: "cleaned" });
+  });
+
+  it("switching while paused stays paused", () => {
+    const { clock, audio, engine } = setup(withCleaned());
+    engine.load(withCleaned(), { start: 110 });
+    clock.flush();
+    expect(audio.src).toBe(CB);
+    engine.setAudioVersion("original");
+    clock.flush();
+    expect(audio.src).toBe(B);
+    expect(audio.currentTime).toBeCloseTo(10, 6);
+    expect(audio.paused).toBe(true);
+    expect(engine.getState()).toMatchObject({ status: "paused", t: 110 });
+  });
+
+  it("the next recording follows the chosen version", () => {
+    const { clock, audio, engine } = setup(withCleaned(), { skip: { enabled: false }, audioVersion: "original" });
+    engine.load(withCleaned(), { start: 98, autoplay: true });
+    clock.flush();
+    expect(audio.src).toBe(A);
+    clock.tick(3000);
+    expect(audio.src).toBe(B);
+  });
+
+  it("falls back once to the original when the improved file fails, keeping the preference", () => {
+    const { clock, audio, engine, events } = setup(withCleaned({ id: "yi-test-02" }), { skip: { enabled: false } });
+    const shiur = withCleaned({
+      recordings: [
+        { id: "a", offset: 0, duration: 100, audioUrl: A, cleanedUrl: "https://media.example.org/fixed/sidon/gone.mp3" },
+        { id: "b", offset: 100, duration: 60, audioUrl: B, cleanedUrl: CB },
+      ],
+    });
+    engine.load(shiur, { start: 20, autoplay: true });
+    clock.flush();
+    clock.flush();
+    expect(audio.src).toBe(A);
+    expect(audio.currentTime).toBeCloseTo(20, 1);
+    expect(events.error).toHaveLength(0);
+    expect(engine.getState()).toMatchObject({
+      status: "playing",
+      audioVersion: "cleaned",
+      playingVersion: "original",
+      versionFallback: false,
+    });
+    // The next recording still tries its improved copy.
+    engine.seek(110);
+    clock.flush();
+    expect(audio.src).toBe(CB);
+  });
+
+  it("an explicit switch that cannot load (offline) falls back to the stored original with a brief notice", () => {
+    const { clock, audio, engine } = setup(withCleaned(), { canTryCleaned: () => false, skip: { enabled: false } });
+    // The improved copy is not reachable: only the downloaded originals load.
+    const offline = withCleaned({
+      recordings: [
+        { id: "a", offset: 0, duration: 100, audioUrl: A, cleanedUrl: "https://media.example.org/fixed/sidon/offline-a.mp3" },
+        { id: "b", offset: 100, duration: 60, audioUrl: B, cleanedUrl: CB },
+      ],
+    });
+    engine.load(offline, { start: 30, autoplay: true });
+    clock.flush();
+    expect(audio.src).toBe(A);
+    expect(engine.getState()).toMatchObject({ audioVersion: "cleaned", playingVersion: "original", versionFallback: false });
+
+    engine.setAudioVersion("cleaned");
+    clock.flush();
+    clock.flush();
+    expect(audio.src).toBe(A);
+    expect(engine.getState()).toMatchObject({ status: "playing", playingVersion: "original", versionFallback: true });
+    expect(engine.getState().t).toBeCloseTo(30, 0);
+    clock.tick(9000);
+    expect(engine.getState().versionFallback).toBe(false);
   });
 });
