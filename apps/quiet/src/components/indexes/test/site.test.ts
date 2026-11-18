@@ -27,6 +27,7 @@ import type { CorpusIndex, LayerConceptsFile, LayerPeopleFile, LayerWorksFile, P
 import { corpusLabel } from "@emunas/i18n";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { astroBuild } from "../../../../test/astro-build.ts";
+import { EDS, dirOf, type Ed } from "../../../lib/edition.ts";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const app = join(here, "..", "..", "..", "..");
@@ -66,7 +67,6 @@ afterAll(() => {
   if (tmp) rmSync(tmp, { recursive: true, force: true });
 });
 
-const EDS = ["yi", "en"] as const;
 const DIRS = ["people", "sources", "erachim"] as const;
 
 function walk(dir: string): string[] {
@@ -199,7 +199,7 @@ describe("C2.1 names, works and glossary on the real corpus", () => {
           continue;
         }
         const [p, frag] = href.split("#") as [string, string | undefined];
-        const shiur = /^\/(yi|en)\/shiur\/([^/]+)\/$/.exec(p);
+        const shiur = /^\/(en|yi|he)\/shiur\/([^/]+)\/$/.exec(p);
         if (shiur) {
           shiurLinks++;
           if (shiur[1] !== path.split("/")[1]) bad("crosses editions");
@@ -221,8 +221,8 @@ describe("C2.1 names, works and glossary on the real corpus", () => {
           continue;
         }
         // Topic and story entries belong to other indexes (C2.2, C2.3): well-formed addresses only.
-        if (/^\/(yi|en)\/(inyanim|stories)\/(?:[a-z0-9-]+\/)?$/.test(p)) continue;
-        if (/^\/(yi|en)\/(about|)\/?$/.test(p)) continue; // edition home (#indexes) and About
+        if (/^\/(en|yi|he)\/(inyanim|stories)\/(?:[a-z0-9-]+\/)?$/.test(p)) continue;
+        if (/^\/(en|yi|he)\/(about|)\/?$/.test(p)) continue; // edition home (#indexes) and About
         if (!pages.has(p)) {
           bad("no such page");
           continue;
@@ -237,10 +237,10 @@ describe("C2.1 names, works and glossary on the real corpus", () => {
 
   it("carries the AI label once on every page and one report link on every entry page", () => {
     for (const [path, file] of entryPages()) {
-      const ed = path.split("/")[1] as "yi" | "en";
+      const ed = path.split("/")[1] as Ed;
       const html = readFileSync(file, "utf8");
       const main = mainOf(html);
-      const isIndex = /^\/(yi|en)\/[a-z]+\/$/.test(path);
+      const isIndex = /^\/(en|yi|he)\/[a-z]+\/$/.test(path);
       expect(count(main, 'class="corpus-label'), `${path} label`).toBe(1 + (isIndex ? 0 : 1)); // entry: the footer wraps the label
       expect(count(main, '<p class="corpus-label'), `${path} label text`).toBe(1);
       expect(count(main, 'class="report-entry"'), `${path} report`).toBe(isIndex ? 0 : 1);
@@ -250,7 +250,7 @@ describe("C2.1 names, works and glossary on the real corpus", () => {
         expect(/href="mailto:[^"]*subject=/.test(main), `${path} mailto`).toBe(true);
       }
       expect((main.match(/<h1\b/g) ?? []).length, `${path} h1`).toBe(1);
-      expect(html).toContain(`<html lang="${ed}" dir="${ed === "yi" ? "rtl" : "ltr"}"`);
+      expect(html).toContain(`<html lang="${ed}" dir="${dirOf(ed)}"`);
     }
   });
 

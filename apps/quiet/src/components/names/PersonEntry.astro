@@ -9,6 +9,7 @@ import EntryHead from "../corpus/EntryHead.astro";
 import CiteList from "../indexes/CiteList.astro";
 import EntryFoot from "../indexes/EntryFoot.astro";
 import { useIndexesT } from "../indexes/strings.ts";
+import { langAttrsIn } from "../../lib/content.ts";
 import type { Ed } from "../../lib/edition.ts";
 import type { PersonPage } from "./model.ts";
 import "../indexes/indexes.css";
@@ -28,7 +29,7 @@ const listHeading = t("names.shiurim");
   {!all && page.also.length > 0 && (
     <p class="entry-also">{t("names.also")}{" "}{page.also.map((n, i) => <>{i > 0 && ", "}<bdi lang={n.lang} dir={n.dir}>{n.text}</bdi></>)}</p>
   )}
-  {!all && page.description && <p class="entry-definition">{page.description}</p>}
+  {!all && page.description && <p class="entry-definition" {...langAttrsIn(page.description, ed)}>{page.description.text}</p>}
 </EntryHead>
 {!all && page.seforim.length > 0 && (
   <section class="index-block" aria-labelledby="seforim-h">

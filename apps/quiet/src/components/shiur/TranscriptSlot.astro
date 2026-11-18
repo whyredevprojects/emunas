@@ -9,11 +9,13 @@
  */
 import type { PublicRecording } from "@emunas/corpus/public";
 import FollowText from "./FollowText.astro";
+import { isEd } from "../../lib/edition.ts";
 
 interface Props {
   recordings: readonly PublicRecording[];
 }
 
-const ed = Astro.params["ed"] === "yi" ? "yi" : "en";
+const param = Astro.params["ed"];
+const ed = isEd(param) ? param : "en";
 ---
 <FollowText recordings={Astro.props.recordings} ed={ed} />

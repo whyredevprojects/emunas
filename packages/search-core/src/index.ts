@@ -21,6 +21,8 @@ export {
   docTextParts,
   foldForIndex,
   indexTokens,
+  localizedTexts,
+  momentRowText,
   momentSearchText,
   parshaLabels,
   yearLabels,

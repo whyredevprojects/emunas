@@ -4,13 +4,17 @@
  * same functions run in the pages and in the tests.
  *
  * Only catalog fields and the published one-line summary of shiurim with notes are read. Rows of
- * catalog-only shiurim carry no AI text at all.
+ * catalog-only shiurim carry no AI text at all. Generated text is picked per edition with its own
+ * language (`PickedText`, ../../lib/content.ts): the Hebrew edition shows a Hebrew translation where
+ * one exists, else the Yiddish, else the English.
  */
 import { calendar as defaultCalendar, type Calendar } from "@emunas/calendar";
 import type { OccasionShiurRef, ParshaOccasion, SeriesEntry, ZmanOccasion } from "@emunas/corpus/aggregate";
 import type { CatalogGap, CatalogSource, IndexRow, IndexSection } from "@emunas/corpus/public";
-import { hebrewNumeral, hebrewYearParts } from "@emunas/i18n";
+import { SOURCE_LANGS, UI_DIR, hebrewNumeral, hebrewYearParts, pickLocalized, pickText, type AudioLang, type LocalizedText, type PickedText } from "@emunas/i18n";
 import { formatQuiet } from "@emunas/links";
+import { LANG_SCRIPT } from "@emunas/tokens";
+import { shownText } from "../../lib/content.ts";
 import type { Ed } from "../../lib/edition.ts";
 import type { CatalogCorpus } from "./corpus.ts";
 
@@ -52,7 +56,7 @@ export interface CatalogRow {
   readonly id: string;
   readonly href: string;
   /** Spoken language of the shiur (decides the script run of its catalog text). */
-  readonly lang: Ed;
+  readonly lang: AudioLang;
   readonly status: IndexRow["status"];
   readonly title: string;
   readonly heading: string | null;
@@ -68,14 +72,17 @@ export interface CatalogRow {
   readonly duration: number;
   /** At least one recording can be played from the media host. */
   readonly playable: boolean;
-  /** The one-line summary in the edition's language; only for shiurim with notes (status "full"). */
-  readonly oneLiner: string | null;
+  /**
+   * The one-line summary for the edition (its own language, else the fallback, with the language it
+   * is in); only for shiurim with notes (status "full").
+   */
+  readonly oneLiner: PickedText | null;
   /** A guide row with no recording at all (`index.json` gaps): greyed, no page, no link. */
   readonly gap?: true;
 }
 
 export function catalogRow(row: IndexRow, ed: Ed, audio: CatalogCorpus["audio"]): CatalogRow {
-  const oneLiner = row.status === "full" && row.oneLiner ? row.oneLiner[ed].trim() || null : null;
+  const oneLiner = row.status === "full" ? shownText(row.oneLiner, ed) : null;
   return {
     id: row.id,
     href: shiurHref(ed, row.id),
@@ -180,7 +187,7 @@ export interface SectionSummary {
   /** Script direction of the printed section title. */
   readonly dir: "rtl" | "ltr";
   /** Language of most of its shiurim. */
-  readonly lang: Ed;
+  readonly lang: AudioLang;
   readonly count: number;
   readonly pages: readonly [number, number] | null;
   readonly order: number;
@@ -206,7 +213,7 @@ export function sectionSummaries(corpus: CatalogCorpus): SectionSummary[] {
       const yi = langs.filter((l) => l === "yi").length;
       const en = langs.length - yi;
       const dir = m?.dir ?? (/[֐-׿]/.test(s.title) ? "rtl" : "ltr");
-      const lang: Ed = yi > en ? "yi" : en > yi ? "en" : dir === "rtl" ? "yi" : "en";
+      const lang: AudioLang = yi > en ? "yi" : en > yi ? "en" : dir === "rtl" ? "yi" : "en";
       return {
         key: s.key,
         source,
@@ -228,16 +235,23 @@ export function sectionSummaries(corpus: CatalogCorpus): SectionSummary[] {
 export interface SeriesSummary {
   readonly id: string;
   readonly href: string;
-  /** Title in the edition's language. */
+  /** Title for the edition (its own language, else the fallback). */
   readonly title: string;
-  readonly lang: Ed;
+  /** `lang`/`dir` of `title` as shown. */
+  readonly titleLang: PickedText["lang"];
+  readonly titleDir: PickedText["dir"];
+  /** Spoken language of the series. */
+  readonly lang: AudioLang;
   readonly count: number;
 }
 
 export function seriesSummaries(corpus: CatalogCorpus, ed: Ed): SeriesSummary[] {
   return corpus.series.series
     .filter((s) => s.parts.length > 0)
-    .map((s) => ({ id: s.id, href: seriesHref(ed, s.id), title: s.title[ed], lang: s.lang, count: s.parts.length }));
+    .map((s) => {
+      const title = pickText(s.title, ed);
+      return { id: s.id, href: seriesHref(ed, s.id), title: title.text, titleLang: title.lang, titleDir: title.dir, lang: s.lang, count: s.parts.length };
+    });
 }
 
 export interface ContentsModel {
@@ -247,7 +261,8 @@ export interface ContentsModel {
   readonly english: SectionSummary[];
   /** Uncatalogued-guide sections, in that file's order. */
   readonly uncatalogued: SectionSummary[];
-  readonly series: { readonly yi: SeriesSummary[]; readonly en: SeriesSummary[] };
+  /** Series by the language they are spoken in. */
+  readonly series: Readonly<Record<AudioLang, SeriesSummary[]>>;
 }
 
 /** The contents (concept-quiet §5.2): guide order, Yiddish then English, then the uncatalogued sections. */
@@ -270,7 +285,7 @@ export interface RowGroup {
   readonly id: string;
   readonly label: string;
   /** Language of `label` when it is catalog text rather than UI text. */
-  readonly labelLang?: "he" | "yi" | "en";
+  readonly labelLang?: Ed;
   readonly rows: CatalogRow[];
 }
 
@@ -299,8 +314,9 @@ export interface SectionModel {
 export const GROUP_MIN_ROWS = 12;
 const GROUP_SHARE = 0.9;
 
-function occasionLabel(o: { yi: string; en: string }, ed: Ed): string {
-  return ed === "yi" ? o.yi : o.en;
+/** An occasion's name in the edition's language (occasions carry a name in every language). */
+function occasionLabel(o: Readonly<Record<Ed, string>>, ed: Ed): string {
+  return o[ed];
 }
 
 function parshaLayout(rows: CatalogRow[], parshiyos: readonly ParshaOccasion[], ed: Ed): SectionLayout {
@@ -403,19 +419,20 @@ export interface PerekGroup {
  */
 export interface SeriesIntro {
   /** The generated title, shown as a subtitle (null when blank). */
-  readonly subtitle: string | null;
+  readonly subtitle: PickedText | null;
   /** Null when blank (for example a field blanked by the verbatim scan). */
-  readonly overview: string | null;
+  readonly overview: PickedText | null;
   /** Plain text, never links. */
-  readonly keyThemes: readonly string[];
+  readonly keyThemes: readonly PickedText[];
   readonly reviewed: boolean;
 }
 
 export interface SeriesModel {
   readonly entry: SeriesEntry;
-  readonly title: string;
-  /** The title in the other edition's language (for the subtitle). */
-  readonly otherTitle: string;
+  /** The catalog title for the edition (its own language, else the fallback). */
+  readonly title: PickedText;
+  /** The catalog title in the other source language, when it differs (for the subtitle). */
+  readonly otherTitle: PickedText | null;
   readonly count: number;
   readonly rows: SeriesRow[];
   /** Tanya: consecutive runs of the same perek, in series order; null when the parts carry no perek. */
@@ -427,8 +444,8 @@ export interface SeriesModel {
   readonly intro: SeriesIntro | null;
 }
 
-/** A generated text in both languages (separate texts: never a fallback from one to the other). */
-type Texts = { readonly en?: unknown; readonly yi?: unknown } | null | undefined;
+/** A generated text per language, read defensively (a `LocalizedText` when well formed). */
+type Texts = { readonly [L in Ed]?: unknown } | null | undefined;
 
 /**
  * The parts of a layer series synthesis (`LayerSeries`) the page reads. Typed loosely: the
@@ -442,9 +459,12 @@ export interface SeriesSynthesis {
   readonly reviewed?: boolean;
 }
 
-function textIn(t: Texts, ed: Ed): string | null {
-  const v = t?.[ed];
-  return typeof v === "string" && v.trim() !== "" ? v.trim() : null;
+/** The text to show in `ed` along `CONTENT_FALLBACK`, trimmed; null when no language has one. */
+function textIn(t: Texts, ed: Ed): PickedText | null {
+  const picked = pickLocalized<unknown>(t, ed, (v) => typeof v === "string" && v.trim() !== "");
+  return picked && typeof picked.value === "string"
+    ? { text: picked.value.trim(), lang: picked.lang, dir: picked.dir, fallback: picked.fallback }
+    : null;
 }
 
 /**
@@ -458,7 +478,7 @@ export function seriesModel(corpus: CatalogCorpus, id: string, ed: Ed, synthesis
   if (!entry || entry.parts.length === 0) return null;
   const count = entry.parts.length;
   const position = new Map(entry.parts.map((p, i) => [p.id, i + 1]));
-  const arcLine = new Map<string, string | null>();
+  const arcLine = new Map<string, PickedText | null>();
   for (const a of Array.isArray(synthesis?.arc) ? synthesis.arc : []) {
     if (typeof a?.shiurId === "string" && position.has(a.shiurId) && !arcLine.has(a.shiurId)) {
       arcLine.set(a.shiurId, textIn(a.oneLiner, ed));
@@ -489,7 +509,7 @@ export function seriesModel(corpus: CatalogCorpus, id: string, ed: Ed, synthesis
     : null;
   const partIds = new Set(entry.parts.map((p) => p.id));
   const sections = sectionSummaries(corpus).filter((s) => s.shiurIds.some((x) => partIds.has(x)));
-  const other: Ed = ed === "yi" ? "en" : "yi";
+  const title = pickText(entry.title, ed);
   const intro: SeriesIntro | null =
     withIntro && synthesis !== null
       ? {
@@ -497,14 +517,14 @@ export function seriesModel(corpus: CatalogCorpus, id: string, ed: Ed, synthesis
           overview: textIn(synthesis.overview, ed),
           keyThemes: (Array.isArray(synthesis.keyThemes) ? synthesis.keyThemes : [])
             .map((k) => textIn(k, ed))
-            .filter((k): k is string => k !== null),
+            .filter((k): k is PickedText => k !== null),
           reviewed: synthesis.reviewed === true,
         }
       : null;
   return {
     entry,
-    title: entry.title[ed],
-    otherTitle: entry.title[other],
+    title,
+    otherTitle: otherSourceTitle(entry.title, title),
     count,
     rows,
     groups,
@@ -512,6 +532,20 @@ export function seriesModel(corpus: CatalogCorpus, id: string, ed: Ed, synthesis
     anyNotes: rows.some((r) => r.oneLiner !== null || r.notPrepared),
     intro,
   };
+}
+
+/**
+ * The catalog title in the first source language (en, yi) other than the one shown, when its text
+ * differs: the subtitle of a series page (an English page shows the Yiddish title, and the
+ * Yiddish and Hebrew pages the English).
+ */
+function otherSourceTitle(title: LocalizedText, shown: PickedText): PickedText | null {
+  for (const lang of SOURCE_LANGS) {
+    if (lang === shown.lang) continue;
+    const text = title[lang].trim();
+    if (text !== "" && text !== shown.text.trim()) return { text, lang, dir: UI_DIR[lang], fallback: true };
+  }
+  return null;
 }
 
 /**
@@ -561,7 +595,7 @@ function pick(
   corpus: CatalogCorpus,
   ed: Ed,
   kind: "parsha" | "zman",
-  o: { key: string; yi: string; en: string },
+  o: { readonly key: string } & Readonly<Record<Ed, string>>,
   refs: readonly OccasionShiurRef[],
   active: boolean,
 ): OccasionPick {
@@ -689,7 +723,7 @@ export function thisWeekWindow(corpus: CatalogCorpus, ed: Ed, date: string, cal:
 export function hebrewDateLabel(cal: Calendar, date: string, ed: Ed): string | null {
   const h = cal.hebrewDate(date);
   if (!h) return null;
-  if (ed === "en") return `${h.day} ${h.monthName} ${h.year}`;
+  if (LANG_SCRIPT[ed] === "latin") return `${h.day} ${h.monthName} ${h.year}`;
   const year = hebrewYearParts(h.year)?.hebrew ?? String(h.year);
   return `${hebrewNumeral(h.day)} ${h.monthNameHe} ${year}`;
 }

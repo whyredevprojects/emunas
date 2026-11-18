@@ -22,6 +22,9 @@ describe("language settings", () => {
     expect(parseSettingsQuery("?audio=yi,en&read=en")).toEqual({ audio: "both", read: "en" });
     expect(parseSettingsQuery("audio=en")).toEqual({ audio: "en" });
     expect(parseSettingsQuery("audio=fr&read=de")).toEqual({});
+    // Any interface language can be the reading language; Hebrew is not an audio language.
+    expect(parseSettingsQuery("read=he")).toEqual({ read: "he" });
+    expect(parseSettingsQuery("audio=he")).toEqual({});
     expect(parseSettingsQuery("")).toEqual({});
   });
 
@@ -37,6 +40,7 @@ describe("language settings", () => {
       { audio: "both", read: null },
       { audio: "yi", read: "en" },
       { audio: "en", read: "yi" },
+      { audio: "yi", read: "he" },
     ] as const) {
       expect({ ...DEFAULT_SETTINGS, ...parseSettingsQuery(settingsToQuery(s)) }).toEqual(s);
     }

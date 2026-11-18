@@ -7,6 +7,7 @@
  */
 import * as v from "valibot";
 import type { MediaUrl } from "@emunas/corpus/public";
+import { UI_LANGS } from "@emunas/i18n";
 import {
   LIVE_DATA_SCHEMA_VERSION,
   type BuildFile,
@@ -40,7 +41,10 @@ const int = v.pipe(v.number(), v.integer());
 const nnum = v.nullable(num);
 const nstr = v.nullable(str);
 const ed = v.picklist(["en", "yi"]);
-const L = v.strictObject({ en: str, yi: str });
+/** A reading / interface language (`UI_LANGS`). */
+const uiLang = v.picklist(UI_LANGS);
+/** `LocalizedText`: the source languages always, a translated language only when present. */
+const L = v.strictObject({ en: str, yi: str, he: v.exactOptional(str) });
 const version = v.literal(LIVE_DATA_SCHEMA_VERSION);
 const soft = v.exactOptional(v.literal(true));
 const category = v.picklist(["parsha", "zman", "shonos", "set", "simcha", "misc", "current", "purim"]);
@@ -143,7 +147,7 @@ const notes = v.strictObject({
       soft,
     }),
   ),
-  writeupLangs: v.array(ed),
+  writeupLangs: v.array(uiLang),
 });
 
 export const BuildSchema = v.strictObject({
@@ -153,7 +157,7 @@ export const BuildSchema = v.strictObject({
   dataSha: nstr,
   generatedAt: v.pipe(str, v.isoTimestamp()),
   counts,
-  momentShards: v.strictObject({ en: int, yi: int }),
+  momentShards: v.strictObject({ en: int, yi: int, he: int }),
   glossaryShards: v.array(str),
 });
 
@@ -307,7 +311,7 @@ export const WriteupSchema = v.strictObject({
   schemaVersion: version,
   shiurId: str,
   rev: str,
-  lang: ed,
+  lang: uiLang,
   blocks: v.array(writeupBlock),
 });
 
@@ -414,14 +418,16 @@ export const EntitySchema = v.strictObject({
 
 export const MomentShardSchema = v.strictObject({
   schemaVersion: version,
-  lang: ed,
+  lang: uiLang,
   shard: int,
-  moments: v.array(v.strictObject({ ...momentRefEntries, title: str, sectionKind: v.exactOptional(sectionKind) })),
+  moments: v.array(
+    v.strictObject({ ...momentRefEntries, title: str, titleLang: v.exactOptional(uiLang), sectionKind: v.exactOptional(sectionKind) }),
+  ),
 });
 
 export const QuickIndexSchema = v.strictObject({
   schemaVersion: version,
-  lang: ed,
+  lang: uiLang,
   options: v.strictObject({ fields: v.array(str), storeFields: v.array(str), idField: str }),
   index: v.unknown(),
   entities: v.array(
@@ -660,6 +666,12 @@ export const _allKinds: _AllKinds = true;
 
 // ---------------------------------------------------------------- validation
 
+/** `en|yi|he`: the reading languages a per-language file path may name (`UI_LANGS`). */
+const LANGS_RE = UI_LANGS.join("|");
+const QUICK_INDEX_FILE = new RegExp(`^quick-index\\.(${LANGS_RE})\\.json$`);
+const WRITEUP_FILE = new RegExp(`^writeup\\/[^/]+\\.(${LANGS_RE})\\.json$`);
+const MOMENTS_FILE = new RegExp(`^moments\\/(${LANGS_RE})-\\d+\\.json$`);
+
 /** The file kind of a data file path relative to `/data/` (`shiur/x.json` → `shiur`). */
 export function kindOfFile(file: string): DataKind | null {
   if (file === "build.json") return "build";
@@ -676,13 +688,13 @@ export function kindOfFile(file: string): DataKind | null {
   if (/^thread\/[^/]+\.json$/.test(file)) return "thread";
   if (/^story\/[^/]+\.json$/.test(file)) return "story";
   if (/^glossary\/[^/]+\.json$/.test(file)) return "glossary";
-  if (/^quick-index\.(en|yi)\.json$/.test(file)) return "quickIndex";
+  if (QUICK_INDEX_FILE.test(file)) return "quickIndex";
   if (/^shiur\/[^/]+\.json$/.test(file)) return "shiur";
-  if (/^writeup\/[^/]+\.(en|yi)\.json$/.test(file)) return "writeup";
+  if (WRITEUP_FILE.test(file)) return "writeup";
   if (/^series\/[^/]+\.json$/.test(file)) return "series";
   if (/^work\/[^/]+\.json$/.test(file)) return "work";
   if (/^entity\/[pco]\/[^/]+\.json$/.test(file)) return "entity";
-  if (/^moments\/(en|yi)-\d+\.json$/.test(file)) return "moments";
+  if (MOMENTS_FILE.test(file)) return "moments";
   return null;
 }
 

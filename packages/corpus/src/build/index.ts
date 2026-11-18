@@ -12,10 +12,11 @@ export { FatalDataError, loadCatalogs, loadIngest, loadManifest, loadShiurFiles 
 export type { Catalogs, ShiurFiles } from "./load.ts";
 export { DEFAULT_POLICY, loadAudioTranscoded, loadPublishPolicy, loadSuppressFile } from "./policy.ts";
 export type { PublishPolicy } from "./policy.ts";
-export { PROJECTOR_VERSION, projectShiur, splitCatalogTopics } from "./project.ts";
+export { PROJECTOR_VERSION, localizedText, projectShiur, splitCatalogTopics, translatedWriteup } from "./project.ts";
 export type { ProjectContext, ProjectInput } from "./project.ts";
 export {
   DATA_ALLOW_LIST,
+  DATA_LIST_ALLOW_LIST,
   ForbiddenPathError,
   POLICY_ALLOW_LIST,
   REPO_ROOT,
@@ -26,7 +27,18 @@ export {
 } from "./read.ts";
 export type { DataReader } from "./read.ts";
 export { ReportCollector } from "./report.ts";
-export type { BuildReport, DowngradeEntry, TimeWarning } from "./report.ts";
+export type { BuildReport, DowngradeEntry, TimeWarning, TranslationReport } from "./report.ts";
 export { TimeModel, mergeRanges } from "./time.ts";
+export {
+  TRANSLATED_LANGS,
+  corpusEntrySlots,
+  currentCorpusOverlays,
+  currentShiurOverlays,
+  hashSlots,
+  loadCorpusOverlays,
+  loadShiurOverlays,
+  shiurSlots,
+} from "./translations.ts";
+export type { CorpusOverlayFiles, CorpusTranslatable, ShiurOverlays, Slot } from "./translations.ts";
 export type { RecTime, Span, SpanResult } from "./time.ts";
 export * as schemas from "./schemas.ts";

@@ -1,7 +1,8 @@
 ---
 /**
- * The root: the two editions side by side, Yiddish on the right and English on the left
- * (concept-quiet §8, integration-plan C20). Static, no redirect, remembers nothing.
+ * The root: every edition side by side, the right-to-left editions (Yiddish, Hebrew) on the right
+ * and English on the left (concept-quiet §8, integration-plan C20; `CHOOSER_ORDER`). Static, no
+ * redirect, remembers nothing.
  */
 import "../styles/fonts.css";
 import "@emunas/tokens/tokens.css";
@@ -9,12 +10,13 @@ import "../styles/quiet.css";
 import "../styles/print.css";
 import { formatQuiet } from "@emunas/links";
 import { useT } from "../i18n/index.ts";
+import { CHOOSER_ORDER, dirOf } from "../lib/edition.ts";
 import Seo from "../components/seo/Seo.astro";
 import Dedication from "../components/Dedication.astro";
 import ThemeHead from "../components/ThemeHead.astro";
 
 const en = useT("en");
-const yi = useT("yi");
+const editions = CHOOSER_ORDER.map((ed) => ({ ed, dir: dirOf(ed), t: useT(ed), home: formatQuiet({ kind: "home", ed }), about: formatQuiet({ kind: "index", ed, index: "about" }) }));
 ---
 <!doctype html>
 <html lang="en" dir="ltr">
@@ -31,18 +33,14 @@ const yi = useT("yi");
     <main id="main">
       <h1 class="visually-hidden">{en("chooser.title")}</h1>
       <div class="chooser" dir="rtl">
-        <section lang="yi" dir="rtl" aria-labelledby="chooser-yi">
-          <h2 id="chooser-yi"><a href={formatQuiet({ kind: "home", ed: "yi" })}>{yi("site.name")}</a></h2>
-          <p>{yi("site.description")}</p>
-          <p><a href={formatQuiet({ kind: "home", ed: "yi" })}>{yi("chooser.enter")}</a> · {yi("chooser.enterNote")}</p>
-          <p><a href={formatQuiet({ kind: "index", ed: "yi", index: "about" })}>{yi("nav.about")}</a></p>
-        </section>
-        <section lang="en" dir="ltr" aria-labelledby="chooser-en">
-          <h2 id="chooser-en"><a href={formatQuiet({ kind: "home", ed: "en" })}>{en("site.name")}</a></h2>
-          <p>{en("site.description")}</p>
-          <p><a href={formatQuiet({ kind: "home", ed: "en" })}>{en("chooser.enter")}</a> · {en("chooser.enterNote")}</p>
-          <p><a href={formatQuiet({ kind: "index", ed: "en", index: "about" })}>{en("nav.about")}</a></p>
-        </section>
+        {editions.map(({ ed, dir, t, home, about }) => (
+          <section lang={ed} dir={dir} aria-labelledby={`chooser-${ed}`}>
+            <h2 id={`chooser-${ed}`}><a href={home}>{t("site.name")}</a></h2>
+            <p>{t("site.description")}</p>
+            <p><a href={home}>{t("chooser.enter")}</a> · {t("chooser.enterNote")}</p>
+            <p><a href={about}>{t("nav.about")}</a></p>
+          </section>
+        ))}
       </div>
     </main>
     <footer class="site-footer">

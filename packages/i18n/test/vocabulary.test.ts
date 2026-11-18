@@ -14,6 +14,7 @@ import {
   categoryLabel,
   coverageNotice,
   formatSourceRef,
+  languageName,
   notice,
   scriptOf,
   sectionKindLabel,
@@ -40,6 +41,7 @@ describe("label tables", () => {
     LANGUAGE_NAMES,
     AUDIO_LANGUAGE_LABELS,
     NOTICES,
+    RESOLUTION_LABELS: { inferred: RESOLUTION_LABELS.inferred, unresolved: RESOLUTION_LABELS.unresolved },
   };
 
   it("are complete, non-empty and in the right script for each language", () => {
@@ -50,9 +52,11 @@ describe("label tables", () => {
           expect(value, `${name}.${key}.${lang}`).toBeTruthy();
         }
         const en = (labels as Record<string, string>)["en"] ?? "";
-        const yi = (labels as Record<string, string>)["yi"] ?? "";
         expect(scriptOf(en), `${name}.${key}.en`).toBe("latin");
-        expect(["he", "mixed"], `${name}.${key}.yi`).toContain(scriptOf(yi));
+        for (const lang of ["yi", "he"] as const) {
+          const value = (labels as Record<string, string>)[lang] ?? "";
+          expect(["he", "mixed"], `${name}.${key}.${lang}`).toContain(scriptOf(value));
+        }
       }
     }
   });
@@ -65,7 +69,12 @@ describe("label tables", () => {
       "Notes prepared by AI from the recording; not reviewed, and not the Mashgiach's words. The recording is the source.",
     );
     expect(notice("notesPending", "en")).toBe("Notes for this shiur have not been prepared yet.");
-    expect(RESOLUTION_LABELS.inferred).toEqual({ en: "apparently", yi: "לכאורה" });
+    expect(RESOLUTION_LABELS.inferred).toEqual({ en: "apparently", yi: "לכאורה", he: "לכאורה" });
+    expect(categoryLabel("current", "he")).toBe("ענייני השעה");
+    expect(audioLanguageLabel("yi", "he")).toBe("שיעור באידיש");
+    expect(languageName("he", "he")).toBe("עברית");
+    expect(languageName("he", "en")).toBe("Hebrew");
+    expect(notice("notesPending", "he")).toBe("הרשימות לשיעור זה עדיין לא הוכנו.");
   });
 
   it("has one standing AI label, identical in both sites (W5.3)", () => {
@@ -82,6 +91,9 @@ describe("label tables", () => {
     expect(AI_LABEL.en).toMatch(/recording is the source/);
     expect(AI_LABEL.yi).toContain("נישט איבערגעקוקט");
     expect(AI_LABEL.yi).toContain("דער מקור איז די רעקארדירונג");
+    expect(AI_LABEL.he).toContain("לא נבדקו");
+    expect(AI_LABEL.he).toContain("המשגיח");
+    expect(AI_LABEL.he).toContain("המקור הוא ההקלטה");
     expect(AI_LABEL_STATUS).toBe("proposed");
   });
 
@@ -94,6 +106,17 @@ describe("label tables", () => {
     }
   });
 
+  it("writes Hebrew without nikud and never calls the Mashgiach הרב or שליט\"א", () => {
+    const pointed = /[\u05B0-\u05BD\u05BF\u05C1\u05C2\u05C4\u05C5\u05C7]/u;
+    for (const [name, table] of Object.entries(tables)) {
+      for (const [key, labels] of Object.entries(table)) {
+        const he = (labels as Record<string, string>)["he"];
+        expect(he, `${name}.${key}.he`).not.toMatch(pointed);
+        expect(he, `${name}.${key}.he`).not.toMatch(/(^|\s)הרב(\s|$)|שליט"א/);
+      }
+    }
+  });
+
   it("shows an unknown value as itself instead of throwing", () => {
     expect(categoryLabel("brand-new" as Category, "en")).toBe("brand-new");
     expect(sectionKindLabel("toString" as SectionKind, "yi")).toBe("toString");
@@ -102,6 +125,7 @@ describe("label tables", () => {
   it("formats the coverage line", () => {
     expect(coverageNotice(518, 997, "en")).toBe("Compiled from the 518 shiurim that have notes so far, of 997.");
     expect(coverageNotice(1518, 1997, "yi")).toBe("צוזאמגעשטעלט פון די 1,518 שיעורים וואס האבן שוין נאטיצן, פון 1,997.");
+    expect(coverageNotice(1518, 1997, "he")).toBe("לוקט מ־1,518 השיעורים שכבר יש להם רשימות, מתוך 1,997.");
   });
 });
 
@@ -118,6 +142,8 @@ describe("source references", () => {
     expect(formatSourceRef(unresolved, "en")).toBe("Zohar (place not identified)");
     expect(formatSourceRef(unresolved, "yi")).toBe("Zohar (מקום נישט באשטימט)");
     expect(formatSourceRef(nothing, "en")).toBeNull();
+    expect(formatSourceRef(unresolved, "he")).toBe("Zohar (המקום לא זוהה)");
+    expect(formatSourceRef(inferred, "he")).toBe("לכאורה Tanya ch. 2");
     expect(sourceRefParts(inferred, "yi")).toEqual({ text: "Tanya ch. 2", qualifier: "לכאורה", position: "before" });
   });
 

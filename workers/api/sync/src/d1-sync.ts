@@ -10,11 +10,12 @@
  * `meta.corpus_rev` is written after everything else, and only when it changes.
  */
 import type { MomentRow } from "@emunas/search-core";
-import { corpusRevOf, ENTITY_TYPES, ftsRowid, LANGS, toMomentRecord, type EntityType, type MomentRecord } from "./rows.ts";
+import { UI_LANGS } from "@emunas/i18n";
+import { corpusRevOf, ENTITY_TYPES, ftsRowid, toMomentRecord, type EntityType, type MomentRecord } from "./rows.ts";
 import { stmt, type SqlTarget, type Stmt } from "./sql.ts";
 
-/** The search schema version this sync writes (migrations/search/0001_init.sql). */
-export const EXPECTED_SCHEMA_VERSION = "1";
+/** The search schema version this sync writes (migrations/search/0002_languages.sql). */
+export const EXPECTED_SCHEMA_VERSION = "2";
 const PAGE = 5000;
 
 export interface D1Plan {
@@ -111,7 +112,8 @@ export function chunkStatements(records: readonly MomentRecord[], deletedIds: re
   const touched = [...deletedIds, ...records.map((r) => r.id)];
   if (touched.length === 0) return [];
   const ids = JSON.stringify(touched);
-  const rowids = JSON.stringify(touched.flatMap((id) => LANGS.map((l) => ftsRowid(id, l))));
+  // Every interface language, not only the row's: a language the moment no longer has goes too.
+  const rowids = JSON.stringify(touched.flatMap((id) => UI_LANGS.map((l) => ftsRowid(id, l))));
   const out: Stmt[] = [
     stmt(`DELETE FROM moment_entities WHERE moment_id IN (${IDS})`, ids),
     stmt(`DELETE FROM moment_text WHERE id IN (${IDS})`, ids),
@@ -137,12 +139,12 @@ export function chunkStatements(records: readonly MomentRecord[], deletedIds: re
   }
   const moments = records.map(({ moment: m }) => [
     m.id, m.shiur_id, m.kind, m.t, m.end_t, m.audio_lang, m.category, m.occasion, m.series, m.year, m.catalogued,
-    m.confidence, m.title_en, m.title_yi, m.hash,
+    m.confidence, m.titles, m.hash,
   ]);
   out.push(
     stmt(
-      "INSERT OR REPLACE INTO moments (id, shiur_id, kind, t, end_t, audio_lang, category, occasion, series, year, catalogued, confidence, title_en, title_yi, hash) " +
-        `SELECT ${cols(15)} FROM json_each(?)`,
+      "INSERT OR REPLACE INTO moments (id, shiur_id, kind, t, end_t, audio_lang, category, occasion, series, year, catalogued, confidence, titles, hash) " +
+        `SELECT ${cols(14)} FROM json_each(?)`,
       JSON.stringify(moments),
     ),
   );

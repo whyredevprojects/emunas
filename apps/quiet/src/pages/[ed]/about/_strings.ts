@@ -50,4 +50,18 @@ export const ABOUT_STRINGS: Readonly<Record<Ed, AboutStrings>> = {
     reportAddress: "אדרעס פאר מעלדונגען:",
     reportPlaceholderAddress: "(א צייטווייליגער אדרעס; דער ריכטיגער ווערט באשטימט ווען דער זייטל ווערט ארויסגעגעבן)",
   },
+  he: {
+    title: "אודות",
+    headings: {
+      mashgiach: "המשגיח והאוסף",
+      arrangement: "כיצד האתר מסודר",
+      notes: "כיצד נעשו הרשימות",
+      report: "כיצד לדווח על טעות",
+      excluded: "מה אינו כלול",
+    },
+    placeholderLabel: "עדיין לא נכתב",
+    placeholder: "חלק זה ייכתב בידי אדם, ועדיין לא נמסר.",
+    reportAddress: "כתובת לדיווחים:",
+    reportPlaceholderAddress: "(כתובת זמנית; הכתובת הנכונה תיקבע כשהאתר יפורסם)",
+  },
 };

@@ -16,6 +16,7 @@
 import { existsSync, readFileSync, statSync } from "node:fs";
 import { join, relative, sep } from "node:path";
 import { brotliCompressSync, constants } from "node:zlib";
+import { UI_LANGS } from "@emunas/i18n";
 import { readSeoCorpus } from "../app/seo/corpus.server.ts";
 import { MAX_FILES, MAX_FILE_BYTES, checkBudgets, walkFiles } from "@emunas/corpus-guard/budgets";
 import type { DataKind } from "../app/data/types.ts";
@@ -197,7 +198,7 @@ export function projectedPrerender(dataFiles: Iterable<string>, sets: PrerenderS
         break;
     }
   }
-  return 2 * perUi;
+  return UI_LANGS.length * perUi;
 }
 
 export function checkLiveBudgets(opts: LiveBudgetOptions): LiveBudgetResult {

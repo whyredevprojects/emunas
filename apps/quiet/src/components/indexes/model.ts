@@ -5,19 +5,34 @@
  * `works.ts` and the `names`/`glossary`/`stories` components; everything here is pure.
  */
 import type { IndexRow } from "@emunas/corpus/public";
-import { langFor, scriptOf, type ContentLang, type Dir } from "@emunas/i18n";
+import { langFor, scriptOf, type AudioLang, type Dir, type UiLang } from "@emunas/i18n";
 import { formatQuiet } from "@emunas/links";
+import { LANG_SCRIPT } from "@emunas/tokens";
 import type { Ed } from "../../lib/edition.ts";
 
 /** A data string with the `lang`/`dir` of its script (rendered as a `<bdi>`). */
 export interface Run {
   readonly text: string;
-  readonly lang: ContentLang;
+  readonly lang: UiLang;
   readonly dir: Dir;
 }
 
-export function run(text: string, ed: Ed): Run {
-  const { lang, dir } = langFor(text, ed);
+/**
+ * A data string shown in edition `ed`, with `lang`/`dir` from its script (`langFor` of
+ * `@emunas/i18n`). `shiurLang` is the spoken language of the shiur the string belongs to (catalog
+ * titles, occasions), or null for a string that belongs to no one shiur (names, index entries).
+ */
+export function run(text: string, ed: Ed, shiurLang: AudioLang | null = null): Run {
+  const { lang, dir } = langFor(text, shiurLang, ed);
+  return { text, lang, dir };
+}
+
+/**
+ * A loshn-koydesh term (a topic's Hebrew headword, a concept's Hebrew form): Hebrew-script text is
+ * `he` in every edition, Latin is `en`.
+ */
+export function termRun(text: string): Run {
+  const { lang, dir } = langFor(text, "en", "en");
   return { text, lang, dir };
 }
 
@@ -47,8 +62,8 @@ export interface Cite {
   /** Catalog number as printed. */
   readonly n: string | null;
   readonly years: readonly number[];
-  /** Language of the shiur; shown only when it differs from the edition. */
-  readonly lang: Ed;
+  /** Spoken language of the shiur; shown only when it differs from the edition. */
+  readonly lang: AudioLang;
   /** Global seconds of the moment, or null (link to the shiur itself). */
   readonly t: number | null;
 }
@@ -58,7 +73,7 @@ export function citeFromRow(row: IndexRow, ed: Ed, t: number | null, href?: stri
   return {
     shiurId: row.id,
     href: href ?? shiurHref(ed, row.id, t),
-    occasion: run(occasion, row.lang),
+    occasion: run(occasion, ed, row.lang),
     n: row.catalog.n,
     years: row.years,
     lang: row.lang,
@@ -94,10 +109,10 @@ const collators = { he: new Intl.Collator("he", { sensitivity: "base", numeric: 
 
 /**
  * Alphabetical order for an edition: names in the edition's script first (Hebrew letters in the
- * Yiddish edition, Latin in the English one), each part in its own collation; ties by key.
+ * Yiddish and Hebrew editions, Latin in the English one), each part in its own collation; ties by key.
  */
 export function compareNames(ed: Ed) {
-  const primary = ed === "yi" ? "he" : "latin";
+  const primary = LANG_SCRIPT[ed] === "hebrew" ? "he" : "latin";
   return (a: { name: Run; key: string }, b: { name: Run; key: string }): number => {
     const sa = scriptOf(a.name.text) === primary ? 0 : 1;
     const sb = scriptOf(b.name.text) === primary ? 0 : 1;

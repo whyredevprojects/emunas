@@ -31,7 +31,8 @@ import {
   SITEMAP_URL_LIMIT,
   xmlEscape,
 } from "../sitemap.ts";
-import { aboutFileKey, resolveAboutLinks } from "../../../pages/[ed]/about/_content.ts";
+import { aboutFileKey, aboutText, resolveAboutLinks } from "../../../pages/[ed]/about/_content.ts";
+import { EDS } from "../../../lib/edition.ts";
 import { ABOUT_PARTS, ABOUT_STRINGS } from "../../../pages/[ed]/about/_strings.ts";
 
 const repo = resolve(dirname(fileURLToPath(import.meta.url)), "../../../../../..");
@@ -109,18 +110,20 @@ describe("head tags", () => {
     expect(() => barePath("en/")).toThrow(TypeError);
   });
 
-  it("pair the same path in both editions plus x-default → the root", () => {
-    for (const path of ["/yi/section/unc-zmanim/", "/en/years/5780/", "/en/people/baal-shem-tov/"]) {
+  it("give the same path in every edition plus x-default → the root", () => {
+    for (const path of ["/yi/section/unc-zmanim/", "/en/years/5780/", "/en/people/baal-shem-tov/", "/he/inyanim/emunah/"]) {
       const rest = path.slice(3);
       expect(hreflangFor(path, hosts.quiet)).toEqual([
-        { hreflang: "yi", href: `https://emunas.example/yi${rest}` },
         { hreflang: "en", href: `https://emunas.example/en${rest}` },
+        { hreflang: "yi", href: `https://emunas.example/yi${rest}` },
+        { hreflang: "he", href: `https://emunas.example/he${rest}` },
         { hreflang: "x-default", href: "https://emunas.example/" },
       ]);
     }
     expect(hreflangFor("/", hosts.quiet).map((a) => a.href)).toEqual([
-      "https://emunas.example/yi/",
       "https://emunas.example/en/",
+      "https://emunas.example/yi/",
+      "https://emunas.example/he/",
       "https://emunas.example/",
     ]);
     expect(hreflangFor("/robots.txt", hosts.quiet)).toEqual([]);
@@ -138,6 +141,9 @@ describe("head tags", () => {
       "og:locale": "en_US",
     });
     expect(headTags({ ...base, path: "/yi/" }, hosts).og.find((m) => m.property === "og:type")?.content).toBe("website");
+    const he = Object.fromEntries(headTags({ ...base, path: "/he/shiur/x/" }, hosts).og.map((m) => [m.property, m.content]));
+    expect(he["og:type"]).toBe("article");
+    expect(he["og:locale"]).toBe("he_IL");
   });
 
   it("drop canonical and hreflang and say noindex on noindex pages and placeholder builds", () => {
@@ -170,21 +176,23 @@ describe("sitemaps", () => {
   it("collect every page of each edition, without check-only pages", async () => {
     const paths = await pagePaths({
       "../../pages/index.astro": undefined,
-      "../../pages/[ed]/index.astro": () => [{ params: { ed: "yi" } }, { params: { ed: "en" } }],
+      "../../pages/[ed]/index.astro": () => [{ params: { ed: "yi" } }, { params: { ed: "en" } }, { params: { ed: "he" } }],
       "../../pages/[ed]/shiur/[id]/index.astro": async () => [{ params: { ed: "en", id: "b" } }, { params: { ed: "en", id: "a" } }],
-      "../../pages/[ed]/shell-sample/index.astro": () => [{ params: { ed: "en" } }],
+      "../../pages/[ed]/shell-sample/index.astro": () => [{ params: { ed: "en" } }, { params: { ed: "he" } }],
       "../../pages/[ed]/search/_strings.astro": undefined,
     });
-    expect(paths).toEqual(["/", "/en/", "/en/shell-sample/", "/en/shiur/a/", "/en/shiur/b/", "/yi/"]);
+    expect(paths).toEqual(["/", "/en/", "/en/shell-sample/", "/en/shiur/a/", "/en/shiur/b/", "/he/", "/he/shell-sample/", "/yi/"]);
     expect(editionPaths(paths, "en")).toEqual(["/en/", "/en/shiur/a/", "/en/shiur/b/"]);
     expect(editionPaths(paths, "yi")).toEqual(["/yi/"]);
+    expect(editionPaths(paths, "he")).toEqual(["/he/"]);
     await expect(pagePaths({ "../../pages/[ed]/x.astro": undefined })).rejects.toThrow(/getStaticPaths/);
   });
 
-  it("write a urlset with alternates and an index of both editions", () => {
+  it("write a urlset with alternates and an index of every edition", () => {
     const xml = sitemapXml("https://e.example", ["/en/", "/en/search/?q=a&b"]);
     expect(xml).toContain("<loc>https://e.example/en/</loc>");
     expect(xml).toContain('<xhtml:link rel="alternate" hreflang="yi" href="https://e.example/yi/"/>');
+    expect(xml).toContain('<xhtml:link rel="alternate" hreflang="he" href="https://e.example/he/"/>');
     expect(xml).toContain('hreflang="x-default" href="https://e.example/"');
     expect(xml).toContain("q=a&amp;b");
     expect(xml.match(/<url>/g)).toHaveLength(2);
@@ -193,6 +201,7 @@ describe("sitemaps", () => {
     const index = sitemapIndexXml("https://e.example");
     expect(index).toContain("<loc>https://e.example/sitemap-yi.xml</loc>");
     expect(index).toContain("<loc>https://e.example/sitemap-en.xml</loc>");
+    expect(index).toContain("<loc>https://e.example/sitemap-he.xml</loc>");
   });
 
   it("robots.txt allows all but /api/ and /admin/ and names the index; placeholder builds disallow all", () => {
@@ -212,17 +221,19 @@ describe("sitemaps", () => {
 // ------------------------------------------------------------------ About contract
 
 describe("About", () => {
-  it("has the five parts of concept-quiet §5.11, notes among them, in both editions", () => {
+  it("has the five parts of concept-quiet §5.11, notes among them, in every edition", () => {
     expect(ABOUT_PARTS).toEqual(["mashgiach", "arrangement", "notes", "report", "excluded"]);
-    for (const ed of ["yi", "en"] as const) {
+    for (const ed of EDS) {
       for (const p of ABOUT_PARTS) expect(ABOUT_STRINGS[ed].headings[p].trim(), `${ed} ${p}`).not.toBe("");
     }
     for (const v of Object.values(ABOUT_STRINGS.yi.headings)) expect(/[א-ת]/.test(v)).toBe(true);
+    for (const v of Object.values(ABOUT_STRINGS.he.headings)) expect(/[א-ת]/.test(v)).toBe(true);
   });
 
   it("reads human texts only from content/about/{ed}/{part}.md", () => {
     expect(aboutFileKey("../../../content/about/en/notes.md")).toEqual({ ed: "en", part: "notes" });
     expect(aboutFileKey("../../../content/about/yi/mashgiach.md")).toEqual({ ed: "yi", part: "mashgiach" });
+    expect(aboutFileKey("../../../content/about/he/notes.md")).toEqual({ ed: "he", part: "notes" });
     expect(aboutFileKey("../../../content/about/de/mashgiach.md")).toBeNull();
     expect(aboutFileKey("../../../content/about/en/other.md")).toBeNull();
   });
@@ -236,6 +247,25 @@ describe("About", () => {
     expect(out).toContain('<a href="/yi/calendar/">lu\'ach</a>, <a href="#notes">n</a>');
     expect(() => resolveAboutLinks('<a href="lve:">x</a>', t)).toThrow(/unknown link "lve:"/);
     expect(() => resolveAboutLinks('<a href="https://example.com/">x</a>', t)).toThrow(/unknown link/);
+  });
+
+  it("falls back along the content chain for a part an edition has no text of, and keeps the reader in the edition", () => {
+    const md = (html: string) => ({ compiledContent: async () => html }) as never;
+    const files = {
+      "../../../content/about/en/notes.md": md("en"),
+      "../../../content/about/yi/notes.md": md("yi"),
+      "../../../content/about/en/report.md": md("en"),
+    };
+    expect(aboutText("he", "notes", files)).toMatchObject({ lang: "yi", dir: "rtl", fallback: true });
+    expect(aboutText("he", "report", files)).toMatchObject({ lang: "en", dir: "ltr", fallback: true });
+    expect(aboutText("yi", "notes", files)).toMatchObject({ lang: "yi", fallback: false });
+    expect(aboutText("he", "excluded", files)).toBeNull();
+    const t = { ed: "he", textLang: "yi", live: "https://l.example/he/", guide: "https://g.example/g.pdf", newTab: "(new tab)" } as const;
+    const out = resolveAboutLinks('<a href="/yi/calendar/">c</a> <a href="/yi/">yi</a> <a href="/en/">en</a> <a href="live:">app</a>', t);
+    expect(out).toContain('<a href="/he/calendar/">c</a>');
+    expect(out).toContain('<a href="/yi/">yi</a>');
+    expect(out).toContain('<a href="/en/">en</a>');
+    expect(out).toContain('<a href="https://l.example/he/" hreflang="he"');
   });
 });
 
@@ -258,7 +288,7 @@ describe("@emunas/links section paths", () => {
       const ref = { source: s.source, id: s.key.slice(s.key.indexOf(":") + 1) };
       expect(linksSectionSlug(ref), s.key).toBe(sectionSlug(ref));
       expect(linksSectionSlug(ref), s.key).toBe(s.slug);
-      for (const ed of ["yi", "en"] as const) expect(quietPaths().section(ed, ref)).toBe(sectionHref(ed, ref));
+      for (const ed of EDS) expect(quietPaths().section(ed, ref)).toBe(sectionHref(ed, ref));
     }
   }, 60_000);
 });

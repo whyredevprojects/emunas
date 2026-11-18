@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { playableUrl, timeTarget, type AudioRecording } from "../src/lib/audio.ts";
 import { clock, runAttrs } from "../src/lib/bidi.ts";
 import { catalogNotice } from "../src/lib/catalog.ts";
-import { dirOf, editionOfPath, otherEdition, switchEdition } from "../src/lib/edition.ts";
+import { CHOOSER_ORDER, EDS, NAME_ORDER, dirOf, editionOfPath, otherEditions, pathInEdition, switchEdition } from "../src/lib/edition.ts";
 import { withPlace } from "../src/lib/edition-switch.client.ts";
 import { fontPreloads, quietFontsCss } from "../src/lib/fonts.ts";
 import { INDEXES_ANCHOR, navItems, navSectionOf } from "../src/lib/nav.ts";
@@ -15,17 +15,37 @@ const two: AudioRecording[] = [
 ];
 
 describe("edition", () => {
-  it("knows direction and the other edition", () => {
+  it("has one edition per interface language, Hebrew included", () => {
+    expect(EDS).toEqual(["en", "yi", "he"]);
+  });
+
+  it("knows direction and the other editions", () => {
     expect(dirOf("yi")).toBe("rtl");
+    expect(dirOf("he")).toBe("rtl");
     expect(dirOf("en")).toBe("ltr");
-    expect(otherEdition("yi")).toBe("en");
-    expect(otherEdition("en")).toBe("yi");
+    expect(otherEditions("yi")).toEqual(["en", "he"]);
+    expect(otherEditions("en")).toEqual(["yi", "he"]);
+    expect(otherEditions("he")).toEqual(["en", "yi"]);
+  });
+
+  it("puts the right-to-left editions on the right of the chooser", () => {
+    expect(CHOOSER_ORDER).toEqual(["yi", "he", "en"]);
+  });
+
+  it("orders an entry's names per edition", () => {
+    expect(NAME_ORDER.he).toEqual(["he", "yi", "en"]);
+    for (const ed of EDS) expect(NAME_ORDER[ed][0]).toBe(ed);
   });
 
   it("reads the edition from the first segment only", () => {
     expect(editionOfPath("/yi/shiur/x/")).toBe("yi");
     expect(editionOfPath("/en")).toBe("en");
     expect(editionOfPath("/en?q=1")).toBe("en");
+    expect(editionOfPath("/he/inyanim/x/")).toBe("he");
+    expect(editionOfPath("/hebrew/")).toBeNull();
+    expect(pathInEdition("/he/search/?q=x")).toBe("/search/?q=x");
+    expect(pathInEdition("/he")).toBe("/");
+    expect(pathInEdition("/robots.txt")).toBeNull();
     expect(editionOfPath("/")).toBeNull();
     expect(editionOfPath("/english/")).toBeNull();
     expect(editionOfPath("/audio/en.mp3")).toBeNull();
@@ -38,6 +58,8 @@ describe("edition", () => {
     expect(switchEdition("/en/search/?q=lag%20baomer#r2", "yi")).toBe("/yi/search/?q=lag%20baomer#r2");
     expect(switchEdition("/en/people/#baal-shem-tov", "yi")).toBe("/yi/people/#baal-shem-tov");
     expect(switchEdition("/en/", "yi")).toBe("/yi/");
+    expect(switchEdition("/yi/shiur/x/#p0-1", "he")).toBe("/he/shiur/x/#p0-1");
+    expect(switchEdition("/he/calendar/", "en")).toBe("/en/calendar/");
     expect(switchEdition("/en", "yi")).toBe("/yi/");
     expect(switchEdition("/", "yi")).toBe("/yi/");
     // a segment that merely starts with "en" is not swapped
@@ -72,6 +94,8 @@ describe("nav", () => {
     expect(navSectionOf("/yi/inyanim/emunah/")).toBe("indexes");
     expect(navSectionOf("/en/search/")).toBe("search");
     expect(navSectionOf("/en/about/")).toBe("about");
+    expect(navSectionOf("/he/inyanim/emunah/")).toBe("indexes");
+    expect(navSectionOf("/he/shiur/x/")).toBe("contents");
     expect(navSectionOf("/en/")).toBeNull();
     expect(navSectionOf("/")).toBeNull();
   });
@@ -119,11 +143,19 @@ describe("audio (Amendment A1)", () => {
 
 describe("bidi", () => {
   it("sets lang/dir for catalog runs by script and shiur language", () => {
-    expect(runAttrs("The Power of Man", "en")).toEqual({ lang: "en", dir: "ltr" });
-    expect(runAttrs("פרשת השבוע", "yi")).toEqual({ lang: "yi", dir: "rtl" });
-    expect(runAttrs("נח", "en")).toEqual({ lang: "he", dir: "rtl" });
-    expect(runAttrs("The קדושה of צדיקים", "en")).toEqual({ lang: "en", dir: "ltr" });
-    expect(runAttrs("המקוה והתיבה הם כמו embassy של שמים", "yi")).toEqual({ lang: "yi", dir: "rtl" });
+    expect(runAttrs("The Power of Man", "en", "en")).toEqual({ lang: "en", dir: "ltr" });
+    expect(runAttrs("פרשת השבוע", "yi", "yi")).toEqual({ lang: "yi", dir: "rtl" });
+    expect(runAttrs("פרשת השבוע", "yi", "en")).toEqual({ lang: "yi", dir: "rtl" });
+    expect(runAttrs("נח", "en", "yi")).toEqual({ lang: "he", dir: "rtl" });
+    expect(runAttrs("The קדושה of צדיקים", "en", "en")).toEqual({ lang: "en", dir: "ltr" });
+    expect(runAttrs("המקוה והתיבה הם כמו embassy של שמים", "yi", "yi")).toEqual({ lang: "yi", dir: "rtl" });
+  });
+
+  it("reads Hebrew-script data as Hebrew in the Hebrew edition", () => {
+    expect(runAttrs("פרשת השבוע", "yi", "he")).toEqual({ lang: "he", dir: "rtl" });
+    expect(runAttrs("The Power of Man", "en", "he")).toEqual({ lang: "en", dir: "ltr" });
+    expect(runAttrs("ספר חסידים", null, "he")).toEqual({ lang: "he", dir: "rtl" });
+    expect(runAttrs("ספר חסידים", null, "yi")).toEqual({ lang: "yi", dir: "rtl" });
   });
 
   it("formats clock times with ordinary digits", () => {
@@ -153,6 +185,7 @@ describe("fonts", () => {
   it("preloads only the edition's serif body face", () => {
     expect(fontPreloads("yi")).toEqual(["/fonts/frank-ruhl-libre-hebrew.woff2"]);
     expect(fontPreloads("en")).toEqual(["/fonts/source-serif-4-latin.woff2"]);
+    expect(fontPreloads("he")).toEqual(["/fonts/frank-ruhl-libre-hebrew.woff2"]);
   });
 
   it("the preloaded files exist in public/fonts", () => {

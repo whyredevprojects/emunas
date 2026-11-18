@@ -6,9 +6,10 @@
  * against a real-data build (`LIVE_E2E_DATA=build`, after `corpus:build` + `data:build` + `build`).
  */
 import AxeBuilder from "@axe-core/playwright";
+import { isUiLang, UI_LANGS } from "@emunas/i18n";
 import { expect, test, type APIRequestContext, type Page, type Route } from "@playwright/test";
 
-export const UIS = ["en", "yi"] as const;
+export const UIS = UI_LANGS;
 export type Ui = (typeof UIS)[number];
 
 /**
@@ -148,7 +149,7 @@ export class LinkResolver {
     if (url.origin !== "http://x") return null; // other hosts (Quiet, Sefaria, media) are not ours to resolve here
     const parts = url.pathname.split("/").filter(Boolean).map(decodeURIComponent);
     const [ui, kind, key, extra] = parts;
-    if (ui !== "en" && ui !== "yi") return parts.length === 0 ? null : `no UI language in ${href}`;
+    if (!isUiLang(ui)) return parts.length === 0 ? null : `no UI language in ${href}`;
     const seg = kind ?? "";
     if (parts.length === 1 || (parts.length === 2 && STATIC_PAGES.has(seg))) return null;
     if (seg === "shelf" && parts.length === 3 && SHELF_SECTIONS.has(key!)) return null;

@@ -4,7 +4,8 @@
  * (`data-build/emit.ts` `quickIndex`: the same fields and stored fields, values pre-folded with
  * search-core's `foldForIndex`, plus the Live-page entities with their clean synonyms).
  */
-import type { Ed, L } from "@emunas/corpus/public";
+import type { Ed, LocalizedText } from "@emunas/corpus/public";
+import { pickText, type UiLang } from "@emunas/i18n";
 import { foldForIndex } from "@emunas/search-core";
 import MiniSearch from "minisearch";
 import {
@@ -24,7 +25,7 @@ interface RowInput {
   id: string;
   lang: Ed;
   title: string;
-  oneLiner?: L;
+  oneLiner?: LocalizedText;
   parsha?: string;
   zman?: string;
   years?: number[];
@@ -32,7 +33,7 @@ interface RowInput {
   perek?: string;
   people?: string[];
   works?: string[];
-  sections?: L[];
+  sections?: LocalizedText[];
 }
 
 function row(r: RowInput): CorpusRow {
@@ -179,7 +180,7 @@ export const ENTITIES: QuickEntity[] = [
 const QUICK_FIELDS = ["title", "occasion", "oneLiner", "sections", "entities"];
 
 /** A real MiniSearch dump with the emitter's fields, stored fields and folding. */
-export function quickIndexFile(lang: Ed, entities: QuickEntity[] = ENTITIES): QuickIndexFile {
+export function quickIndexFile(lang: UiLang, entities: QuickEntity[] = ENTITIES): QuickIndexFile {
   const options = { fields: [...QUICK_FIELDS], storeFields: ["name", "lang"], idField: "id" };
   const ms = new MiniSearch(options);
   const f = (xs: (string | null | undefined)[]) =>
@@ -196,8 +197,8 @@ export function quickIndexFile(lang: Ed, entities: QuickEntity[] = ENTITIES): Qu
         lang: r.lang,
         title: f([r.title]),
         occasion: f(occ ? [occ.label.en, occ.label.yi, occ.label.he] : []),
-        oneLiner: f([r.oneLiner?.[lang]]),
-        sections: f((r.sections ?? []).map((s) => s[lang])),
+        oneLiner: f([r.oneLiner ? pickText(r.oneLiner, lang).text : undefined]),
+        sections: f((r.sections ?? []).map((s) => pickText(s, lang).text)),
         entities: f([...(r.works ?? []).map((w) => FACETS.work[w]?.label.en), ...(r.people ?? []).map((p) => FACETS.person[p]?.label.en)]),
       };
     }),
@@ -254,13 +255,13 @@ export function dataServer(opts: { quick?: "real" | "placeholder" | "missing" } 
       if (path === "/data/facets.json") return json(FACETS);
       if (path === "/data/series/tanya-yi.json") return json(TANYA);
       if (path === "/data/explore/entities.json") return json(EXPLORE_ENTITIES);
-      const m = /^\/data\/quick-index\.(en|yi)\.json$/.exec(path);
+      const m = /^\/data\/quick-index\.([a-z]+)\.json$/.exec(path);
       if (m) {
         if (quick === "missing") return json({ error: "not found" }, 404);
         if (quick === "placeholder") {
           return json({ schemaVersion: V, lang: m[1], options: { fields: ["title"], storeFields: ["title"], idField: "id" }, index: null, entities: [] });
         }
-        return json(quickIndexFile(m[1] as Ed));
+        return json(quickIndexFile(m[1] as UiLang));
       }
       return json({ error: "not found" }, 404);
     },
@@ -275,7 +276,7 @@ export function apiResult(over: Partial<ApiResult> & Pick<ApiResult, "momentId" 
     kind: "section",
     t: 754,
     end: 900,
-    title: { en: "The lion ate grass", yi: "דער לייב האט געגעסן גראז" },
+    title: { en: "The lion ate grass", yi: "דער לייב האט געגעסן גראז", he: null },
     matched: "text",
     snippet: { text: "In the Teivah even the lion ate grass.", lang: "en", marks: [[23, 27]] },
     score: 0.9,
@@ -310,7 +311,7 @@ export function poisonedBody(): unknown {
         asrNotes: PLANTED.asrNotes,
         text: PLANTED.transcript,
         html: PLANTED.html,
-        title: { ...r.title, he: PLANTED.heardAs },
+        title: { ...r.title, fr: PLANTED.heardAs },
         snippet: { ...r.snippet, transcriptText: PLANTED.transcript, html: PLANTED.html },
       },
     ],

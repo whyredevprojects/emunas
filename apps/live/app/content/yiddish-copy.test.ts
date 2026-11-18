@@ -21,7 +21,7 @@ import { topicsEn, topicsYi } from "../features/topics/strings.ts";
 import { maasiosEn } from "../features/maasios/strings.ts";
 import { threadsEn } from "../features/threads/strings.ts";
 import { transcriptEn, transcriptYi } from "../features/transcript/strings.ts";
-import { AI_LABEL, corpusLabelsEn } from "@emunas/i18n";
+import { AI_LABEL } from "@emunas/i18n";
 import { UI_TABLES } from "../i18n/index.ts";
 import { seoStrings, type SeoStrings } from "../seo/strings.ts";
 
@@ -131,7 +131,7 @@ describe("Yiddish UI copy (Live)", () => {
       ...strings(seoSamples(seoStrings.en), "seo"),
       ...strings(threadsEn, "threads"),
       ...strings(maasiosEn, "maasios"),
-      ...strings(corpusLabelsEn, "corpus"),
+      ...strings(CORPUS_LABELS.en, "corpus"),
       ...strings(AI_LABEL.en, "aiLabel"),
     ];
     expect(en.length).toBeGreaterThan(200);

@@ -50,6 +50,7 @@ export const roomEn = {
   "read.readingIn": "Reading in",
   "read.loading": "Loading the write-up",
   "read.missing": "The write-up in this language is not available.",
+  "read.fallback": "This write-up is not available in {lang} yet. It is shown in {shown}.",
   "read.sources": "Sources in this paragraph",
 
   "sources.quoted": "quoted",
@@ -176,6 +177,7 @@ export const roomYi: MessageTable<RoomKey> = {
   "read.readingIn": "לייענען אויף",
   "read.loading": "מ׳לאדט דעם אויסשרייב",
   "read.missing": "דער אויסשרייב אויף דער שפראך איז נישט דא.",
+  "read.fallback": "דער אויסשרייב איז נאך נישט דא אויף {lang}. ער ווערט געוויזן אויף {shown}.",
   "read.sources": "מראי מקומות אין דעם פאראגראף",
 
   "sources.quoted": "ציטירט",
@@ -257,10 +259,135 @@ export const roomYi: MessageTable<RoomKey> = {
   "dock.chapterNow": "יעצט: {title}",
 };
 
+export const roomHe: MessageTable<RoomKey> = {
+  "room.loading": "השיעור נטען",
+  "room.notFound": "השיעור לא נמצא",
+  "room.notFound.lead": "ייתכן שהקישור אינו מעודכן.",
+  "room.error": "לא ניתן היה לטעון את השיעור",
+  "room.error.lead": "אנא בדקו את החיבור ונסו שוב.",
+  "room.retry": "נסו שוב",
+
+  "room.play": "השמעה",
+  "room.playShiur": "השמעת השיעור",
+  "room.pause": "השהיה",
+  "room.playFrom": "השמעה מ־{time}",
+  "room.unavailable": "לא ניתן להשמיע כאן את הקלטת השיעור.",
+  "room.unavailablePart": "לא ניתן להשמיע כאן את חלק {n} של ההקלטה.",
+  "room.printable": "דף להדפסה",
+  "room.years": "שנה",
+  "room.duration": "אורך",
+  "room.audioLang": "שפת השיעור",
+  "room.seriesPart": "{series}, חלק {n} מתוך {count}",
+  "room.seriesPartNoOrder": "{series}",
+  "room.perek": "פרק {perek}",
+  "room.occasion": "זמן",
+  "room.catalogTopics": "הנושאים הרשומים בקטלוג",
+  "room.topicGo": "מעבר לנושא זה בהקלטה",
+
+  "room.chapters": "פרקים",
+  "room.chapterSkipped": "דולג בזמן ההאזנה",
+  "room.storyMarker": "מעשה",
+  "room.moreAbout": "עוד",
+  "room.outline": "ראשי פרקים מהקטלוג",
+  "room.outline.note": "עדיין ללא זמנים: הרשימות לשיעור זה בהכנה.",
+
+  "room.tabs": "על השיעור",
+  "tab.read": "קריאה",
+  "tab.sources": "מקורות",
+  "tab.insights": "תובנות",
+  "tab.questions": "שאלות",
+  "tab.stories": "מעשיות",
+  "tab.related": "קשור",
+
+  "read.readingIn": "קריאה ב",
+  "read.loading": "הסיכום המורחב נטען",
+  "read.missing": "הסיכום המורחב אינו זמין בשפה זו.",
+  "read.fallback": "סיכום זה עדיין אינו זמין ב{lang}. הוא מוצג ב{shown}.",
+  "read.sources": "המקורות בפסקה זו",
+
+  "sources.quoted": "מצוטט",
+  "sources.paraphrased": "מובא בשינוי לשון",
+  "sources.alluded": "נרמז",
+  "sources.onSefaria": "פתיחה בספריא",
+  "sources.notLocated": "{work}, המקום לא זוהה",
+  "sources.unnamed": "מקור שלא זוהה",
+  "sources.newTab": "(נפתח בכרטיסייה חדשה)",
+
+  "insights.keyPoints": "נקודות עיקריות",
+  "insights.insights": "תובנות",
+  "insights.takeaways": "לקחים",
+
+  "questions.hearQuestion": "שמיעת השאלה",
+  "questions.hearAnswer": "שמיעת התשובה",
+  "questions.answer": "תשובה",
+
+  "stories.people": "אישים",
+  "stories.retelling": "קריאת המעשה",
+  "stories.play": "שמיעת המעשה",
+
+  "related.sameOccasion": "שנים אחרות של אותו זמן",
+  "related.series": "בסדרה זו",
+  "related.prev": "הקודם",
+  "related.next": "הבא",
+  "related.neighbors": "דומים, הוצעו אוטומטית",
+  "related.none": "עדיין לא רשום דבר קשור.",
+
+  "corpus.topics": "נושאי השיעור",
+  "corpus.chapterTopics": "נושאי הפרק",
+  "pane.close": "סגירה",
+  "pane.loading": "הנושא נטען",
+  "pane.fullPage": "פתיחת דף הנושא",
+  "pane.label": "נושא: {topic}",
+  "thread.mark": { one: "נלמד ב־{count} שיעור נוסף, {from} עד {to}", other: "נלמד ב־{count} שיעורים נוספים, {from} עד {to}" },
+  "thread.markOneYear": { one: "נלמד ב־{count} שיעור נוסף, {from}", other: "נלמד ב־{count} שיעורים נוספים, {from}" },
+  "thread.markNoYears": { one: "נלמד ב־{count} שיעור נוסף", other: "נלמד ב־{count} שיעורים נוספים" },
+  "thread.also": "נלמד גם ב",
+  "thread.play": "השמעה בשיעור האחר",
+  "stories.toldElsewhere": { one: "סופר ב־{count} שיעור נוסף", other: "סופר ב־{count} שיעורים נוספים" },
+  "sources.workPage": "דף הספר",
+  "related.threads": "חוטים שעוברים בשיעור זה",
+  "related.topics": "נושאים עיקריים",
+  "related.moreOn": "עוד בעניין זה",
+  "end.title": "השיעור הסתיים.",
+  "end.next": "החלק הבא:",
+  "end.thread": "המשיכו חוט משיעור זה",
+  "end.topic": "עוד על {topic}",
+
+  "moment.focused": "הנקודה שהקישור מפנה אליה",
+  "time.at": "ב־{time}",
+
+  "dock.label": "נגן",
+  "dock.open": "פתיחת חדר ההאזנה",
+  "dock.seek": "מיקום",
+  "dock.position": "{now} מתוך {total}",
+  "dock.positionChapter": "{now} מתוך {total}, פרק {n}: {title}",
+  "dock.play": "השמעה",
+  "dock.pause": "השהיה",
+  "dock.back": "15 שניות אחורה",
+  "dock.forward": "15 שניות קדימה",
+  "dock.prevChapter": "הפרק הקודם",
+  "dock.nextChapter": "הפרק הבא",
+  "dock.speed": "מהירות",
+  "dock.sleep": "טיימר שינה",
+  "dock.sleep.off": "כבוי",
+  "dock.sleep.minutes": "בעוד {n} דקות",
+  "dock.sleep.chapter": "בסוף הפרק",
+  "dock.sleep.shiur": "בסוף השיעור",
+  "dock.sleep.running": "הטיימר פועל",
+  "dock.skipped": "דולגו {time} של {kind}",
+  "dock.undo": "ביטול",
+  "dock.momentEnded": "הנקודה הסתיימה.",
+  "dock.keepListening": "להמשיך לשמוע",
+  "dock.loading": "טוען",
+  "dock.unavailable": "לא ניתן להשמיע כאן הקלטה זו.",
+  "dock.error": "לא ניתן היה להשמיע את ההקלטה.",
+  "dock.chapterNow": "כעת: {title}",
+};
+
 export type RoomT = TFunction<RoomKey>;
 
 const cache: Partial<Record<UiLang, RoomT>> = {};
 
 export function roomT(ui: UiLang): RoomT {
-  return (cache[ui] ??= createT<RoomKey>({ en: roomEn, yi: roomYi }, ui));
+  return (cache[ui] ??= createT<RoomKey>({ en: roomEn, yi: roomYi, he: roomHe }, ui));
 }

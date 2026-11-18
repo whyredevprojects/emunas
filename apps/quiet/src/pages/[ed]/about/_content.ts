@@ -1,6 +1,9 @@
 /**
  * Where the human-written About texts come from: `src/content/about/{ed}/{part}.md` (W5.3 owns
- * src/content/**). A part without its file renders a marked placeholder. Nothing is generated.
+ * src/content/**). A part without a file in the edition's language falls back along
+ * `CONTENT_FALLBACK` from `@emunas/i18n` (Hebrew → Yiddish → English), shown with the `lang`/`dir` of
+ * the text actually used; a part with no file in any language renders a marked placeholder.
+ * Nothing is generated or machine-translated.
  *
  * Links in the texts are ordinary Markdown links. Pages of this site are written root-relative
  * (`/en/calendar/`) or as in-page anchors (`#report`); the two targets whose address depends on the
@@ -14,7 +17,8 @@
 import type { MarkdownInstance } from "astro";
 import { NEW_TAB_ICON_SVG } from "../../../components/new-tab-icon.ts";
 import { ABOUT_PARTS, type AboutPart } from "./_strings.ts";
-import type { Ed } from "../../../lib/edition.ts";
+import { pickLocalized } from "@emunas/i18n";
+import { isEd, switchEdition, type Ed } from "../../../lib/edition.ts";
 
 type Md = MarkdownInstance<Record<string, unknown>>;
 
@@ -22,23 +26,44 @@ const FILES = import.meta.glob<Md>("../../../content/about/*/*.md", { eager: tru
 
 /** Parses `…/content/about/{ed}/{part}.md` into its edition and part, or null for other files. */
 export function aboutFileKey(path: string): { ed: Ed; part: AboutPart } | null {
-  const m = /\/content\/about\/(yi|en)\/([a-z]+)\.md$/.exec(path);
-  if (!m) return null;
+  const m = /\/content\/about\/([a-z]+)\/([a-z]+)\.md$/.exec(path);
+  if (!m || !isEd(m[1])) return null;
   const part = m[2] as AboutPart;
-  return ABOUT_PARTS.includes(part) ? { ed: m[1] as Ed, part } : null;
+  return ABOUT_PARTS.includes(part) ? { ed: m[1], part } : null;
 }
 
-/** The supplied text of a part in an edition, or null (placeholder). */
-export function aboutText(ed: Ed, part: AboutPart, files: Readonly<Record<string, Md>> = FILES): Md | null {
+/** An About text picked for an edition, with the language it is actually written in. */
+export interface AboutText {
+  readonly md: Md;
+  /** The language of the file used; differs from the edition when the part fell back. */
+  readonly lang: Ed;
+  readonly dir: "ltr" | "rtl";
+  readonly fallback: boolean;
+}
+
+/**
+ * The supplied text of a part for an edition: the edition's own file, else the first file along
+ * `CONTENT_FALLBACK[ed]`; null when no language has one (placeholder).
+ */
+export function aboutText(ed: Ed, part: AboutPart, files: Readonly<Record<string, Md>> = FILES): AboutText | null {
+  const byLang: Partial<Record<Ed, Md>> = {};
   for (const [path, mod] of Object.entries(files)) {
     const key = aboutFileKey(path);
-    if (key && key.ed === ed && key.part === part) return mod;
+    if (key && key.part === part) byLang[key.ed] = mod;
   }
-  return null;
+  const picked = pickLocalized(byLang, ed, () => true);
+  return picked ? { md: picked.value, lang: picked.lang, dir: picked.dir, fallback: picked.fallback } : null;
 }
 
 export interface AboutLinkTargets {
+  /** The edition of the page the text is shown on. */
   readonly ed: Ed;
+  /**
+   * The language the text is written in, when it differs from `ed` (a fallback text). Its links into
+   * its own edition (`/yi/calendar/`) are moved to `ed` so the reader stays in the edition; a link to
+   * an edition's home (`/yi/`) names that edition on purpose and is kept.
+   */
+  readonly textLang?: Ed;
   /** The Live home in `ed` (absolute). */
   readonly live: string;
   /** The Pocket Guide (absolute). */
@@ -55,7 +80,12 @@ const escapeAttr = (v: string): string => v.replace(/&/g, "&amp;").replace(/"/g,
  */
 export function resolveAboutLinks(html: string, t: AboutLinkTargets): string {
   return html.replace(/<a href="([^"]*)"([^>]*)>([\s\S]*?)<\/a>/g, (whole, href: string, rest: string, text: string) => {
-    if (href.startsWith("/") || href.startsWith("#")) return whole;
+    if (href.startsWith("#")) return whole;
+    if (href.startsWith("/")) {
+      const from = t.textLang ?? t.ed;
+      if (from === t.ed || href === `/${from}/` || !href.startsWith(`/${from}/`)) return whole;
+      return whole.replace(`href="${href}"`, `href="${switchEdition(href, t.ed)}"`);
+    }
     const target = href === "live:" ? { url: t.live, lang: t.ed } : href === "guide:" ? { url: t.guide, lang: undefined } : null;
     if (target === null) throw new Error(`About text (${t.ed}): unknown link "${href}"; use a root-relative path, #anchor, live: or guide:`);
     const lang = target.lang === undefined ? "" : ` hreflang="${target.lang}"`;

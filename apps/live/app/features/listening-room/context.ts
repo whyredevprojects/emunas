@@ -1,6 +1,6 @@
 /** What every part of the listening room needs: the shiur, languages, the play position and actions. */
 import type { UiLang } from "@emunas/i18n";
-import type { Ed, EntityChip, ShiurFile } from "./data.ts";
+import type { EntityChip, ShiurFile } from "./data.ts";
 import type { PlayingInfo } from "../../player-ui/index.ts";
 import type { RoomT } from "./strings.ts";
 
@@ -10,7 +10,7 @@ export interface RoomContext {
   shiur: ShiurFile;
   info: PlayingInfo;
   /** Reading language for generated text. */
-  reading: Ed;
+  reading: UiLang;
   /** Global seconds playing in this shiur, or null when the engine is on another shiur / idle. */
   now: number | null;
   /** Whether this shiur is the one loaded and currently playing. */

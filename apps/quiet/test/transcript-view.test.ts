@@ -21,6 +21,7 @@ import { fileURLToPath } from "node:url";
 import { afterAll, describe, expect, it } from "vitest";
 import { createLeakScanner } from "@emunas/corpus-guard";
 import { astroBuild } from "./astro-build.ts";
+import { EDS } from "../src/lib/edition.ts";
 
 const require = createRequire(import.meta.url);
 const app = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -122,11 +123,8 @@ describe("Quiet transcript view (W5.2)", () => {
 
     expect(readdirSync(join(dist, "transcript")).sort()).toEqual([`${REC}.json`, "follow-text.js"]);
     expect(walk(dist).filter((p) => /[\\/]transcript[\\/][^\\/]+\.json$/.test(p))).toHaveLength(1);
-    expect(mentions(dist)).toEqual([
-      `en/shiur/${SHIUR}/index.html`,
-      "transcript/follow-text.js",
-      `yi/shiur/${SHIUR}/index.html`,
-    ]);
+    // the shiur's page in every edition, and the script
+    expect(mentions(dist)).toEqual([...EDS.map((ed) => `${ed}/shiur/${SHIUR}/index.html`), "transcript/follow-text.js"].sort());
     // The words are only in the transcript file, never in a page.
     const withWords = walk(dist).filter((p) => readFileSync(p).includes("zephyr"));
     expect(withWords.map((p) => p.slice(dist.length + 1))).toEqual([`transcript/${REC}.json`]);

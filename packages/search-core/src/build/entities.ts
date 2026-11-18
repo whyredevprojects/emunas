@@ -4,6 +4,7 @@
  * come only from the layer's synonyms.json (display fields). People of type `other` and excluded
  * people never get one. Stories and threads are second cut.
  */
+import { byUiLang, type UiLang } from "@emunas/i18n";
 import { synonymKey } from "../layer-types.ts";
 import type { EntityDoc, EntityDocFlags, EntityDocKind, EntityDocLabels } from "../types.ts";
 import { contentHash } from "./hash.ts";
@@ -22,6 +23,12 @@ const flags = (f: { quiet?: unknown; live?: unknown } | null | undefined): Entit
 
 const BOTH: EntityDocFlags = { quiet: true, live: true };
 
+/** A layer `label` (`LocalizedText`) read per interface language. */
+const labelIn = (label: Partial<Record<UiLang, unknown>> | null | undefined, l: UiLang): string | null => {
+  const v = label?.[l];
+  return typeof v === "string" ? v : null;
+};
+
 function entityDoc(
   kind: EntityDocKind,
   id: string,
@@ -35,7 +42,7 @@ function entityDoc(
   const body: Omit<EntityDoc, "hash"> = {
     kind,
     id,
-    labels: { he: nz(labels.he), en: nz(labels.en), yi: nz(labels.yi) },
+    labels: byUiLang((l) => nz(labels[l])),
     synonyms: [...(synonyms.get(synonymKey(kind, id)) ?? [])],
     count,
     listed: { quiet: listed.quiet, live: listed.live },
@@ -57,7 +64,7 @@ export function buildEntityDocs(files: LayerFiles): EntityDoc[] {
   const out: EntityDoc[] = [];
   for (const t of files.topics.tree) {
     if (!ok.topic.has(t.id)) continue;
-    out.push(entityDoc("topic", t.id, { he: t.label?.he ?? null, en: t.label?.en ?? null, yi: t.label?.yi ?? null }, syn, t.count, BOTH, flags(t.pages), null));
+    out.push(entityDoc("topic", t.id, byUiLang((l) => labelIn(t.label, l)), syn, t.count, BOTH, flags(t.pages), null));
   }
   for (const c of files.concepts.concepts) {
     if (!ok.concept.has(c.id)) continue;
@@ -65,17 +72,30 @@ export function buildEntityDocs(files: LayerFiles): EntityDoc[] {
     const target = nz(c.mergedIntoTopic);
     const merged = target !== null && ok.topic.has(target) ? target : null;
     out.push(
-      entityDoc("concept", c.id, { he: c.canonicalHe, en: c.label?.en ?? null, yi: c.label?.yi ?? null }, syn, c.count, BOTH, merged ? { quiet: false, live: false } : flags(c.pages), merged),
+      entityDoc(
+        "concept",
+        c.id,
+        // `he`: the term itself (canonicalHe) before any translation of its label.
+        byUiLang((l) => (l === "he" ? (nz(c.canonicalHe) ?? labelIn(c.label, l)) : labelIn(c.label, l))),
+        syn,
+        c.count,
+        BOTH,
+        merged ? { quiet: false, live: false } : flags(c.pages),
+        merged,
+      ),
     );
   }
   for (const p of files.people.people) {
     if (!ok.person.has(p.id)) continue;
-    out.push(entityDoc("person", p.id, { he: p.nameHe, en: p.nameEn, yi: p.nameYi }, syn, p.count, flags(p.listed), flags(p.pages), null));
+    // A person's names are display fields of the record, one per language that has one.
+    const names: EntityDocLabels = { en: p.nameEn, yi: p.nameYi, he: p.nameHe };
+    out.push(entityDoc("person", p.id, names, syn, p.count, flags(p.listed), flags(p.pages), null));
   }
   for (const w of files.works.works) {
     if (!ok.work.has(w.id)) continue;
-    // Works have no Yiddish title of their own.
-    out.push(entityDoc("work", w.id, { he: w.titleHe, en: w.titleEn, yi: null }, syn, w.count, BOTH, flags(w.pages), null));
+    // Works have no Yiddish title of their own; their Hebrew title is the sefer's name.
+    const titles: EntityDocLabels = { en: w.titleEn, yi: null, he: w.titleHe };
+    out.push(entityDoc("work", w.id, titles, syn, w.count, BOTH, flags(w.pages), null));
   }
   return out.sort(cmp);
 }

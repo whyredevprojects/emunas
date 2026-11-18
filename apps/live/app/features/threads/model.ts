@@ -13,12 +13,12 @@
  *   ("3 more in Yiddish"). Language is a property of each member (F.1): nothing pairs a Yiddish
  *   member with an English one, and the page never says the wording is the same.
  */
-import type { Ed, L } from "@emunas/corpus/public";
+import type { Ed, LocalizedText } from "@emunas/corpus/public";
 import type { CorpusMember, ThreadFile } from "../../data/index.ts";
 import type { AudioFilter } from "../../shell/settings.ts";
 
 /** A member row: the shiur, its year and language, and the shiur's own insight text. */
-export type ThreadMember = CorpusMember & { text: L | null };
+export type ThreadMember = CorpusMember & { text: LocalizedText | null };
 
 /** The default `threads.timelineMinDated` (corpus-wave-plan D3), used only when the file has no flag. */
 export const TIMELINE_MIN_DATED = 3;

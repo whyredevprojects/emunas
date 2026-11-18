@@ -1,6 +1,9 @@
 /**
  * W3.2 acceptance on rendered HTML (Astro Container API):
- * - the 7 sample shiurim render in both editions (full and catalog-only pages);
+ * - the 7 sample shiurim render in every edition (full and catalog-only pages);
+ * - generated text is shown in the edition's language, else the fallback along `CONTENT_FALLBACK`,
+ *   with the lang/dir of the language shown (a Hebrew overlay is planted for one shiur; the others
+ *   fall back to Yiddish in the Hebrew edition);
  * - items below confidence 0.6 are absent (one planted in a copy of the mini corpus);
  * - source letters link both ways; every time link works without script (`audioUrl#t=`);
  * - unplayable recordings are shown as unavailable, their times as plain text;
@@ -11,7 +14,7 @@
  * `corpus:build` CLI, so the pages are rendered from exactly what the site build reads.
  */
 import { spawnSync } from "node:child_process";
-import { cpSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { cpSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { createRequire } from "node:module";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -19,12 +22,14 @@ import { fileURLToPath } from "node:url";
 import { brotliCompressSync } from "node:zlib";
 import { experimental_AstroContainer as AstroContainer } from "astro/container";
 import { round3, type PublicShiur } from "@emunas/corpus/public";
+import { hashSlots, shiurSlots } from "@emunas/corpus/build";
+import { SOURCE_LANGS, UI_DIR, notice, pickText } from "@emunas/i18n";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import ShiurPage from "../src/components/shiur/ShiurPage.astro";
 import TranscriptSlot from "../src/components/shiur/TranscriptSlot.astro";
 import { findCorpusDir, loadShiurCorpus, type ShiurCorpus } from "../src/components/shiur/corpus.ts";
-import { catalogPlace } from "../src/components/shiur/view.ts";
-import type { Ed } from "../src/lib/edition.ts";
+import { catalogPlace, shownWriteup } from "../src/components/shiur/view.ts";
+import { EDS, type Ed } from "../src/lib/edition.ts";
 
 const app = fileURLToPath(new URL("..", import.meta.url));
 const repo = join(app, "..", "..");
@@ -41,7 +46,8 @@ const SAMPLES = [
   "yi-zmanim-msybs-lchyym-bkmp-01-c",
   "en-miscellaneous-en-01",
 ] as const;
-const EDS: readonly Ed[] = ["yi", "en"];
+/** The shiur given a current Hebrew translation overlay in the fixture copy. */
+const TRANSLATED = "yi-zmanim-tv-bb-04";
 
 /** The planted low-confidence items (raw text that must not reach the page). */
 const planted: string[] = [];
@@ -63,6 +69,24 @@ beforeAll(async () => {
   ex.takeaways[0].evidence.confidence = 0.59;
   planted.push(ex.takeaways[0].text.en, ex.takeaways[0].text.yi);
   writeFileSync(extractionPath, JSON.stringify(ex));
+
+  // A current Hebrew overlay for one shiur: every slot, so its Hebrew write-up is published too.
+  const tdir = join(fixture, "data", "derived", "shiurim", TRANSLATED);
+  const tx = JSON.parse(readFileSync(join(tdir, "extraction.json"), "utf8"));
+  const tw = JSON.parse(readFileSync(join(tdir, "writeup.json"), "utf8"));
+  const slots = shiurSlots(tx, tw);
+  mkdirSync(join(tdir, "i18n"), { recursive: true });
+  writeFileSync(
+    join(tdir, "i18n", "he.json"),
+    JSON.stringify({
+      shiurId: TRANSLATED,
+      lang: "he",
+      model: "test",
+      promptVersion: "test",
+      sourceHash: hashSlots(slots),
+      text: Object.fromEntries(slots.map((sl) => [sl.k, `בעברית ${sl.k}`])),
+    }),
+  );
 
   const out = join(work, "corpus");
   const cli = join(repo, "packages", "corpus", "src", "cli.ts");
@@ -106,7 +130,7 @@ describe.each(EDS)("the 7 sample shiurim, %s edition", (ed) => {
   it.each(SAMPLES)("%s renders", async (id) => {
     const shiur = corpus.shiur(id);
     const html = await renderPage(ed, shiur);
-    expect(html).toContain(`<html lang="${ed}" dir="${ed === "yi" ? "rtl" : "ltr"}">`);
+    expect(html).toContain(`<html lang="${ed}" dir="${UI_DIR[ed]}">`);
     expect(html.match(/<h1\b/g)?.length).toBe(1);
     expect(html).toContain('class="listen"');
     expect(html).toContain('id="catalog"');
@@ -119,15 +143,31 @@ describe.each(EDS)("the 7 sample shiurim, %s edition", (ed) => {
       expect(html.match(/class="notes-label"/g)?.length).toBe(1);
       expect(html).toContain('id="outline"');
       expect(html).not.toContain("notes-pending");
-      // the edition's write-up and summary, not the other language's
+      // the write-up and summary the edition shows (its language, else the fallback), not another's
       const notes = shiur.notes!;
-      expect(html).toContain(escape(notes.summary.oneLiner[ed]));
-      const firstPara = notes.writeup[ed][0]?.paragraphs[0]?.text;
+      const one = pickText(notes.summary.oneLiner, ed);
+      expect(html).toContain(escape(one.text));
+      const shown = shownWriteup(notes, ed);
+      const firstPara = shown?.value[0]?.paragraphs[0]?.text;
       if (firstPara) expect(html).toContain(escape(firstPara));
-      const otherPara = notes.writeup[ed === "yi" ? "en" : "yi"][0]?.paragraphs[0]?.text;
-      if (otherPara) expect(html).not.toContain(escape(otherPara));
+      for (const lang of [...SOURCE_LANGS, "he" as const]) {
+        if (lang === shown?.lang) continue;
+        const otherPara = notes.writeup[lang]?.[0]?.paragraphs[0]?.text;
+        if (otherPara && otherPara !== firstPara) expect(html, lang).not.toContain(escape(otherPara));
+      }
+      // A fallback text carries its own language: no Hebrew yet except in the planted overlay.
+      if (ed === "he") {
+        if (id === TRANSLATED) {
+          expect(one.lang).toBe("he");
+          expect(shown?.lang).toBe("he");
+          expect(html).toContain(`<p class="one-liner">${escape(one.text)}</p>`);
+        } else {
+          expect(one.lang).toBe("yi");
+          expect(html).toContain(`<p class="one-liner" lang="yi" dir="rtl">${escape(one.text)}</p>`);
+        }
+      }
     } else {
-      expect(html).toContain(ed === "en" ? "Notes for this shiur have not been prepared yet." : "נאטיצן פאר דעם שיעור זענען נאך נישט צוגעגרייט.");
+      expect(html).toContain(notice("notesPending", ed));
       expect(html).not.toMatch(/class="voice-notes"|id="outline"|id="writeup"|id="sources"|notes-label|class="jump-list"/);
     }
 
@@ -246,6 +286,24 @@ describe("full page details", () => {
     expect(html).toContain('data-place="series"');
     expect(html).toContain('href="/en/series/tanya-yi/"');
     expect(html).toMatch(/rel="next"/);
+  });
+
+  it("shows the Hebrew edition its translation, and the Yiddish (marked as Yiddish) where there is none", async () => {
+    const translated = corpus.shiur(TRANSLATED);
+    expect(translated.notes!.writeup.he?.length).toBeGreaterThan(0);
+    const he = await renderPage("he", translated);
+    const firstHe = translated.notes!.writeup.he![0]!.paragraphs[0]!.text;
+    expect(he).toContain(`<p> ${escape(firstHe)}`);
+    expect(he).not.toMatch(/<p lang="yi"/);
+
+    const other = corpus.shiur("yi-parshas-hashavua-brshys-01");
+    expect(other.notes!.writeup.he).toBeUndefined();
+    const fallback = await renderPage("he", other);
+    const firstYi = other.notes!.writeup.yi[0]!.paragraphs[0]!.text;
+    expect(fallback).toContain(`<p lang="yi" dir="rtl"> ${escape(firstYi)}`);
+    // the Hebrew edition's own UI around it
+    expect(fallback).toContain('<html lang="he" dir="rtl">');
+    expect(fallback).toContain("סדר השיעור");
   });
 
   it("renders nothing in the reserved transcript slot", async () => {

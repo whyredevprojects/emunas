@@ -21,7 +21,7 @@ import type {
   Ed,
   IndexRow,
   KeyedValue,
-  L,
+  LocalizedText,
   Moment,
   PublicNotes,
   PublicRecording,
@@ -30,10 +30,12 @@ import type {
   SectionKind,
   ShiurStatus,
 } from "@emunas/corpus/public";
+import type { UiLang } from "@emunas/i18n";
 
-export type { Ed, L, Moment, ShiurStatus };
+export type { Ed, LocalizedText, Moment, ShiurStatus };
+export type { UiLang };
 
-export const LIVE_DATA_SCHEMA_VERSION = 6;
+export const LIVE_DATA_SCHEMA_VERSION = 7;
 
 // ---------------------------------------------------------------------------------------------
 // Shared pieces
@@ -73,8 +75,8 @@ export interface BuildFile {
   /** ISO 8601. */
   generatedAt: string;
   counts: BuildCounts;
-  /** Number of `/data/moments/<lang>-<n>.json` shards per reading language (n = 0 … count-1). */
-  momentShards: Record<Ed, number>;
+  /** Number of `/data/moments/<lang>-<n>.json` shards per reading language, every `UI_LANGS` one (n = 0 … count-1). */
+  momentShards: Record<UiLang, number>;
   /**
    * Glossary shard prefixes (`/data/glossary/<prefix>.json`). A concept's card is in the shard whose
    * prefix is the longest one its id starts with (`glossaryShardFor`).
@@ -156,7 +158,7 @@ export interface ShiurCard {
   lang: Ed;
   /** `catalog.titleOriginal`, as written. */
   title: string;
-  oneLiner: L | null;
+  oneLiner: LocalizedText | null;
   duration: number;
   years: number[];
   status: ShiurStatus;
@@ -169,7 +171,7 @@ export interface MixItem {
   t: number;
   end: number;
   lang: Ed;
-  title: L;
+  title: LocalizedText;
 }
 
 /**
@@ -182,7 +184,7 @@ export interface TodayCard {
   duration: number;
   years: number[];
   status: ShiurStatus;
-  oneLiner?: L;
+  oneLiner?: LocalizedText;
 }
 
 /** A "moment for today" candidate; the shiur is the moment id's prefix (`<shiurId>~<kind><n>`). */
@@ -196,7 +198,7 @@ export interface TodayMixItem {
   id: string;
   t: number;
   end: number;
-  title: L;
+  title: LocalizedText;
 }
 
 /**
@@ -264,8 +266,12 @@ export type LiveRecording = PublicRecording;
 
 /** Notes without the write-up (loaded lazily per language from `/data/writeup/`). */
 export interface LiveNotes extends Omit<PublicNotes, "writeup"> {
-  /** Languages for which `/data/writeup/<id>.<lang>.json` exists. */
-  writeupLangs: Ed[];
+  /**
+   * Languages for which `/data/writeup/<id>.<lang>.json` exists, in `UI_LANGS` order: the source
+   * languages with a write-up, and a translated language (he) only when its write-up is complete
+   * and current. The reader gets the first along `CONTENT_FALLBACK` (`writeupLangFor`).
+   */
+  writeupLangs: UiLang[];
 }
 
 export interface ShiurRelated {
@@ -330,7 +336,7 @@ export interface ShiurFile extends Omit<PublicShiur, "recordings" | "notes"> {
   notes?: LiveNotes;
   related: ShiurRelated;
   /** The series title (catalog), so the room needs no other file. */
-  seriesTitle: L | null;
+  seriesTitle: LocalizedText | null;
   /** Present for full shiurim in the corpus layer's visible set. */
   corpus?: ShiurCorpus;
 }
@@ -343,7 +349,7 @@ export interface WriteupFile {
   shiurId: string;
   /** Same as the shiur's `rev`, so a stale write-up can be detected. */
   rev: string;
-  lang: Ed;
+  lang: UiLang;
   blocks: PublicWriteupBlock[];
 }
 
@@ -354,7 +360,7 @@ export interface SeriesPart {
   shiurId: string;
   order: number | null;
   title: string;
-  oneLiner: L | null;
+  oneLiner: LocalizedText | null;
   duration: number;
   years: number[];
   status: ShiurStatus;
@@ -363,19 +369,19 @@ export interface SeriesPart {
 
 /** The series synthesis (concept-live C.6): generated, unreviewed. Absent when there is none. */
 export interface SeriesSynthesis {
-  title: L;
-  overview: L;
+  title: LocalizedText;
+  overview: LocalizedText;
   /** Plain text, not topic ids. */
-  keyThemes: L[];
+  keyThemes: LocalizedText[];
   /** Position-aware one-liners for the visible parts. */
-  arc: { shiurId: string; oneLiner: L }[];
+  arc: { shiurId: string; oneLiner: LocalizedText }[];
   reviewed: boolean;
 }
 
 export interface SeriesFile {
   schemaVersion: typeof LIVE_DATA_SCHEMA_VERSION;
   id: string;
-  title: L;
+  title: LocalizedText;
   lang: Ed;
   parts: SeriesPart[];
   /** Tanya: parts grouped by perek, in order. Empty for series without perakim. */
@@ -492,7 +498,7 @@ export interface EntityFile {
 /** A merged story on a person page. */
 export interface PersonStory {
   id: string;
-  title: L;
+  title: LocalizedText;
   /** Visible tellings. */
   tellings: number;
   /** `/maasios/<id>` exists (told at least twice). */
@@ -513,7 +519,7 @@ export interface PersonDetail {
   /** Display aliases ("also called"); never ASR spellings. */
   aliases: string[];
   /** Generated disambiguation note, or null. */
-  description: L | null;
+  description: LocalizedText | null;
   /** His seforim (`Work.authorPersonId`, and the work with his id). */
   works: WorkChip[];
   /** Shiurim citing his seforim (or a work in their family), by year. */
@@ -525,9 +531,9 @@ export interface PersonDetail {
 /** The concept's own fields; `EntityFile.moments` holds its example sections. */
 export interface ConceptDetail {
   he: string;
-  label: L;
+  label: LocalizedText;
   /** Generated ("as the term is used in these shiurim"). */
-  definition: L;
+  definition: LocalizedText;
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -536,15 +542,20 @@ export interface ConceptDetail {
 export const MOMENT_SHARD_SIZE = 1000;
 
 export interface MomentRow extends MomentRef {
-  /** Title (chapter title, story title, question) or text (insight, takeaway, key point) in the shard's language. */
+  /**
+   * Title (chapter title, story title, question) or text (insight, takeaway, key point) in the
+   * shard's language, or, where it has none, the next language along `CONTENT_FALLBACK`.
+   */
   title: string;
+  /** Present only when `title` is not in the shard's language (a fallback): the language it is in. */
+  titleLang?: UiLang;
   /** Chapter kind for `s` moments. */
   sectionKind?: SectionKind;
 }
 
 export interface MomentShardFile {
   schemaVersion: typeof LIVE_DATA_SCHEMA_VERSION;
-  lang: Ed;
+  lang: UiLang;
   shard: number;
   moments: MomentRow[];
 }
@@ -554,7 +565,7 @@ export interface MomentShardFile {
 
 export interface QuickIndexFile {
   schemaVersion: typeof LIVE_DATA_SCHEMA_VERSION;
-  lang: Ed;
+  lang: UiLang;
   /** Options to pass to `MiniSearch.loadJSON` (fields and stored fields). */
   options: { fields: string[]; storeFields: string[]; idField: string };
   /** `JSON.stringify(miniSearch)`; opaque to the contract. */
@@ -578,7 +589,7 @@ export interface QuickEntity {
   kind: QuickEntityKind;
   /** Corpus id (the Live route key). */
   id: string;
-  labels: { he: string | null; en: string | null; yi: string | null };
+  labels: { [L in UiLang]: string | null };
   synonyms: string[];
   /** Visible shiurim. */
   count: number;
@@ -635,10 +646,10 @@ export interface TopicFile {
   /** Ancestors, root first. */
   breadcrumb: { id: string; label: FacetLabel }[];
   /** Generated; null when the label stands alone. */
-  description: L | null;
+  description: LocalizedText | null;
   reviewed: boolean;
   /** The concept with the same subject: its definition is shown as "the term" (concept-live C.2). */
-  term: { conceptId: string; he: string; definition: L } | null;
+  term: { conceptId: string; he: string; definition: LocalizedText } | null;
   /** Same-subject person or sefer pages (cross-links only). */
   person: EntityChip | null;
   work: EntityChip | null;
@@ -650,10 +661,10 @@ export interface TopicFile {
   /** "Often together with" (section co-tagging). */
   coTopics: { id: string; label: FacetLabel; sections: number }[];
   /** Largest first; `page: false` threads are shown as a line, never a link. */
-  threads: { id: string; label: L; shiurCount: number; page: boolean }[];
+  threads: { id: string; label: LocalizedText; shiurCount: number; page: boolean }[];
   threadTotal: number;
   /** Stories with a telling inside a tagged section, most told first. */
-  stories: { id: string; title: L; tellings: number; page: boolean }[];
+  stories: { id: string; title: LocalizedText; tellings: number; page: boolean }[];
   storyTotal: number;
   /** Occasion keys this topic is the calendar topic of. */
   occasions: string[];
@@ -688,7 +699,7 @@ export interface TopicShiurRow {
   /** Shiur-level salience (two decimals); 0 for `touched`. */
   salience: number;
   /** `touched` only: the first tagged section and how many sections carry the topic. */
-  section?: { id: string; t: number; title: L; count: number };
+  section?: { id: string; t: number; title: LocalizedText; count: number };
 }
 
 export const TOPIC_FIRST_SHIURIM = 40;
@@ -724,19 +735,19 @@ export interface CorpusMember {
   /** The shiur's catalog title, as written. */
   title: string;
   /** The chapter the moment sits in. */
-  chapterTitle: L | null;
+  chapterTitle: LocalizedText | null;
 }
 
 /** /data/thread/<id>.json: threads with a page (≥3 shiurim). Always noindex (D8). */
 export interface ThreadFile {
   schemaVersion: typeof LIVE_DATA_SCHEMA_VERSION;
   id: string;
-  label: L;
-  summary: L;
+  label: LocalizedText;
+  summary: LocalizedText;
   reviewed: boolean;
   topics: { id: string; label: FacetLabel }[];
   /** By year (undated last); `text` is the per-shiur insight. */
-  members: (CorpusMember & { text: L | null })[];
+  members: (CorpusMember & { text: LocalizedText | null })[];
   shiurCount: number;
   datedCount: number;
   years: [number, number] | null;
@@ -751,8 +762,8 @@ export type StoryPerson = { id: string; label: FacetLabel; page: boolean } | { n
 export interface StoryFile {
   schemaVersion: typeof LIVE_DATA_SCHEMA_VERSION;
   id: string;
-  title: L;
-  retelling: L;
+  title: LocalizedText;
+  retelling: LocalizedText;
   reviewed: boolean;
   people: StoryPerson[];
   /** The tellings credit the story to different people; the page says so (the retelling does too). */
@@ -772,7 +783,7 @@ export interface StoryPlay {
 /** /data/stories-index.json: every merged story, without retellings (Maasios). */
 export interface StoryIndexRow {
   id: string;
-  title: L;
+  title: LocalizedText;
   /** Linked people with a Live listing (labels in `StoriesIndexFile.people`). */
   people: string[];
   /** People named on the story without a Live listing: plain text, never links or facets. */
@@ -802,8 +813,8 @@ export interface StoriesIndexFile {
 export interface GlossaryCard {
   id: string;
   he: string;
-  label: L;
-  definition: L;
+  label: LocalizedText;
+  definition: LocalizedText;
   count: number;
   /** Live concept page. */
   page: boolean;

@@ -6,13 +6,13 @@
  */
 import { existsSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
-import type { L } from "@emunas/corpus/public";
+import type { LocalizedText } from "@emunas/corpus/public";
 
 /** A chapter of a shiur, as the entry pages cite it. */
 export interface ChapterRef {
   idx: number;
   t: number;
-  title: L;
+  title: LocalizedText;
 }
 
 /** The `.corpus/` directory to read, or null when there is none. */

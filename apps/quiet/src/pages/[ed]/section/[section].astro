@@ -32,7 +32,7 @@ if (!model) throw new Error(`section page: unknown section ${Astro.params.sectio
 const { section, layout } = model;
 const t = useT(ed);
 const c = useCatalogT(ed);
-const titleAttrs = runAttrs(section.title, section.lang);
+const titleAttrs = runAttrs(section.title, section.lang, ed);
 const allUncatalogued = model.rows.every((r) => r.uncatalogued);
 const flatOccasion = layout.kind === "flat" && model.rows.some((r) => r.parsha !== null || r.zman !== null);
 const caption = (label: string) => c("table.caption", { name: label });
@@ -79,7 +79,7 @@ const pages = section.pages;
       <p class="section-series">
         {c("section.alsoSeries")}{" "}
         {model.series.map((s, i) => (
-          <>{i > 0 && ", "}<a href={s.href}>{s.title}</a> <span class="muted">({formatNumber(s.count, ed)})</span></>
+          <>{i > 0 && ", "}<a href={s.href}><bdi lang={s.titleLang} dir={s.titleDir}>{s.title}</bdi></a> <span class="muted">({formatNumber(s.count, ed)})</span></>
         ))}
       </p>
     )}

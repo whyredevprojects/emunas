@@ -24,6 +24,7 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { buildCorpusWithAggregates } from "@emunas/corpus/build/aggregate";
 import { DEFAULT_TRANSCRIPTS_DIR } from "@emunas/corpus-guard";
 import { buildSearch } from "../../scripts/build-search.ts";
+import { EDS } from "../../src/lib/edition.ts";
 
 const app = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const repo = resolve(app, "../..");
@@ -160,7 +161,7 @@ describe("search index", () => {
   });
 
   it("glue script is at most 3 KB brotli", () => {
-    for (const ed of ["yi", "en"]) {
+    for (const ed of EDS) {
       const html = readFileSync(join(outDir, ed, "search", "index.html"), "utf8");
       const srcs = [...html.matchAll(/<script[^>]*\ssrc="([^"]+)"/g)].map((m) => m[1]!);
       const glue = srcs.filter((s) => !s.includes("Base.astro"));
@@ -173,7 +174,7 @@ describe("search index", () => {
   });
 });
 
-describe.each(["yi", "en"] as const)("search page, %s edition", (ed) => {
+describe.each(EDS)("search page, %s edition", (ed) => {
   it("works without JS: sentence and index links, no form", async () => {
     const page = await open(`/${ed}/search/`, false);
     expect(await page.getAttribute("html", "lang")).toBe(ed);

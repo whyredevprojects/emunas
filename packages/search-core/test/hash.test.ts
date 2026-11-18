@@ -53,7 +53,8 @@ describe("hashes", () => {
     expect(buildMomentRows(revChanged, layer).map((r) => r.hash)).toEqual(rows.map((r) => r.hash));
 
     const textChanged = clone();
-    textChanged.notes!.chapters[0]!.summary.en += " More.";
+    const ch0 = textChanged.notes!.chapters[0]!;
+    ch0.summary = { ...ch0.summary, en: `${ch0.summary.en} More.` };
     expect(buildSearchDoc({ shiur: textChanged, layer }).hash).not.toBe(base.hash);
     const changedRows = buildMomentRows(textChanged, layer);
     const changedIds = rows.filter((r, i) => r.hash !== changedRows[i]!.hash).map((r) => r.id);

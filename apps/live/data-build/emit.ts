@@ -8,13 +8,13 @@
  * search-core documents without their `keywords`.
  */
 import { createHash } from "node:crypto";
-import type { PublicShiur, Ed, L, LayerWork } from "@emunas/corpus/public";
+import type { PublicShiur, Ed, LocalizedText, LayerWork } from "@emunas/corpus/public";
 import { livePersonChipList, liveStoryPage } from "../app/data/live-pages.ts";
 import type { MentionRef, OccasionShiurRef, WorkRef } from "@emunas/corpus/aggregate";
 import { OCCASIONS, OTHER_OCCASION_KEY, PARSHIYOS } from "@emunas/normalize";
-import { CATEGORY_LABELS, formatHebrewYear, hebrewYearParts } from "@emunas/i18n";
+import { CATEGORY_LABELS, formatHebrewYear, hebrewYearParts, LANGUAGE_NAMES, pickText, UI_LANGS, type UiLang } from "@emunas/i18n";
 import { buildEntityDocs, buildSearchDoc } from "@emunas/search-core/build";
-import { foldForIndex, type SearchDoc } from "@emunas/search-core";
+import { foldForIndex, localizedTexts, type SearchDoc } from "@emunas/search-core";
 import MiniSearch from "minisearch";
 import { dataFileOf, dataPaths } from "../app/data/paths.ts";
 import { occasionMix } from "../app/features/mix/occasion.ts";
@@ -57,6 +57,7 @@ import {
   corpusView,
   emitCorpusFiles,
   facetLabel,
+  lcopy,
   seriesSynthesis,
   type CorpusView,
   type FeaturedPolicy,
@@ -102,7 +103,6 @@ export interface EmitOptions {
 export type EmittedFiles = Map<string, DataFiles[keyof DataFiles]>;
 
 const V = LIVE_DATA_SCHEMA_VERSION;
-const EDS: readonly Ed[] = ["en", "yi"];
 
 const cmp = (a: string, b: string): number => (a < b ? -1 : a > b ? 1 : 0);
 
@@ -117,21 +117,21 @@ function uniq<T>(xs: Iterable<T>): T[] {
   return [...new Set(xs)];
 }
 
-/** Year label: digits+civil in English, Hebrew letters in Yiddish. */
+/** Year label: digits+civil in English, Hebrew letters in Yiddish and Hebrew. */
 function yearLabel(key: string): FacetLabel {
-  if (key === "unknown") return { en: "Year unknown", yi: "יאר נישט באקאנט" };
+  if (key === "unknown") return { en: "Year unknown", yi: "יאר נישט באקאנט", he: "שנה לא ידועה" };
   const y = Number(key);
   const parts = hebrewYearParts(y);
   if (!parts) return { en: key, yi: key };
   return { en: formatHebrewYear(y, "en"), yi: parts.hebrew, he: parts.hebrew };
 }
 
-const LANG_LABELS: Record<Ed, FacetLabel> = {
-  en: { en: "English", yi: "ענגליש" },
-  yi: { en: "Yiddish", yi: "אידיש" },
-};
+/** A UI vocabulary entry (`Labels` from @emunas/i18n) as a facet label: one string per interface language. */
+const uiLabel = (l: Readonly<Record<UiLang, string>>): FacetLabel => ({ en: l.en, yi: l.yi, he: l.he });
 
-const OTHER_OCCASION: FacetLabel = { en: "Other occasions", yi: "אנדערע געלעגנהייטן" };
+const LANG_LABELS: Record<Ed, FacetLabel> = { en: uiLabel(LANGUAGE_NAMES.en), yi: uiLabel(LANGUAGE_NAMES.yi) };
+
+const OTHER_OCCASION: FacetLabel = { en: "Other occasions", yi: "אנדערע געלעגנהייטן", he: "שאר הזמנים" };
 
 /** A label whose `he` is set only when it differs from the Yiddish form (keeps facets.json small). */
 const label = facetLabel;
@@ -276,7 +276,7 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
   const category: FacetsFile["category"] = {};
   for (const [k, n] of [...categoryCounts].sort(([a], [b]) => cmp(a, b))) {
     const c = k as keyof typeof CATEGORY_LABELS;
-    category[c] = fv({ en: CATEGORY_LABELS[c].en, yi: CATEGORY_LABELS[c].yi }, n);
+    category[c] = fv(uiLabel(CATEGORY_LABELS[c]), n);
   }
   const langCounts = tally((r) => [r.lang]);
   const occasionFacet = new Map<string, OccasionFacetValue>();
@@ -302,7 +302,7 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
     .filter((x) => x.parts.length > 0)
     .map((x) => [
       x.id,
-      { label: { en: x.title.en, yi: x.title.yi }, count: x.parts.length, lang: x.lang },
+      { label: lcopy(x.title), count: x.parts.length, lang: x.lang },
     ]);
   const facets: FacetsFile = {
     schemaVersion: V,
@@ -412,7 +412,7 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
       duration: Math.round(s.duration),
       years: [...s.years],
       status: s.status,
-      ...(ol ? { oneLiner: { en: ol.en, yi: ol.yi } } : {}),
+      ...(ol ? { oneLiner: lcopy(ol) } : {}),
     };
   };
   const today: TodayFile = {
@@ -455,16 +455,18 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
       ...rest,
       recordings: recordings.map((r) => ({ ...r })),
       related: { sameOccasion, prev, next, neighbors, titles },
-      seriesTitle: series ? { en: series.title.en, yi: series.title.yi } : null,
+      seriesTitle: series ? lcopy(series.title) : null,
     };
     const refs = layerOut.shiurCorpus(s.id);
     if (refs) file.corpus = refs;
     if (s.status === "full" && notes) {
       const { writeup, ...without } = notes;
-      const langs = EDS.filter((l) => writeup[l].length > 0);
+      // Every language the corpus has a write-up in: en and yi, and he only when its translation is
+      // complete and current (the corpus leaves it out otherwise).
+      const langs = UI_LANGS.filter((l) => (writeup[l]?.length ?? 0) > 0);
       file.notes = { ...without, writeupLangs: langs };
       for (const l of langs) {
-        const w: WriteupFile = { schemaVersion: V, shiurId: s.id, rev: s.rev, lang: l, blocks: writeup[l] };
+        const w: WriteupFile = { schemaVersion: V, shiurId: s.id, rev: s.rev, lang: l, blocks: writeup[l] ?? [] };
         put<"writeup">(dataPaths.writeup(s.id, l), w);
       }
     }
@@ -477,7 +479,7 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
     const file: SeriesFile = {
       schemaVersion: V,
       id: x.id,
-      title: { en: x.title.en, yi: x.title.yi },
+      title: lcopy(x.title),
       lang: x.lang,
       parts: x.parts.flatMap((p) => {
         const s = byId.get(p.id);
@@ -671,7 +673,7 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
       return [
         {
           id: sid,
-          title: { en: st.title?.en ?? "", yi: st.title?.yi ?? "" },
+          title: lcopy(st.title),
           tellings: tellings.length,
           page: liveStoryPage(st),
           first: { shiurId: first.shiurId, momentId: first.momentId, t: first.t ?? null },
@@ -692,7 +694,7 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
           id: p.id,
           names: { he: p.nameHe ?? "", en: p.nameEn ?? "", yi: p.nameYi ?? "" },
           aliases: uniq((p.aliases ?? []).filter((a) => typeof a === "string" && a.trim() !== "")),
-          description: p.description ? { en: p.description.en ?? "", yi: p.description.yi ?? "" } : null,
+          description: p.description ? lcopy(p.description) : null,
           works: own.map((id) => workChip(id)),
           cited: sortByYear(own.flatMap((id) => familyShiurim(id))),
           stories: personStories,
@@ -717,8 +719,8 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
         reviewed: c.reviewed === true,
         concept: {
           he: c.canonicalHe ?? "",
-          label: { en: c.label?.en ?? "", yi: c.label?.yi ?? "" },
-          definition: { en: c.definition?.en ?? "", yi: c.definition?.yi ?? "" },
+          label: lcopy(c.label),
+          definition: lcopy(c.definition),
         },
       },
     });
@@ -778,20 +780,18 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
   });
 
   // ------------------------------------------------------------------ moments/<lang>-<n>.json
-  const momentShards: Record<Ed, number> = { en: 0, yi: 0 };
-  for (const lang of EDS) {
+  // One set of shards per reading language. A title with no text in the shard's language falls back
+  // along CONTENT_FALLBACK, and the row says which language it is in (`titleLang`).
+  const momentShards = Object.fromEntries(UI_LANGS.map((l) => [l, 0])) as Record<UiLang, number>;
+  for (const lang of UI_LANGS) {
     const rows: MomentRow[] = [];
     for (const s of shiurim) {
       const n = s.notes;
       if (!n) continue;
-      const row = (kind: MomentKind, id: string, t: number | null, end: number | null, title: L): MomentRow => ({
-        id,
-        shiurId: s.id,
-        kind,
-        t,
-        end,
-        title: title[lang],
-      });
+      const row = (kind: MomentKind, id: string, t: number | null, end: number | null, title: LocalizedText): MomentRow => {
+        const picked = pickText(title, lang);
+        return { id, shiurId: s.id, kind, t, end, title: picked.text, ...(picked.lang !== lang ? { titleLang: picked.lang } : {}) };
+      };
       for (const c of n.chapters) rows.push({ ...row("s", c.id, c.t, c.end, c.title), sectionKind: c.kind });
       for (const k of n.summary.keyPoints) rows.push(row("kp", k.id, k.t, k.end, k.text));
       for (const i of n.insights) rows.push(row("i", i.id, i.t, i.end, i.text));
@@ -821,7 +821,7 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
     return keys.flatMap((k) => names.get(k) ?? []);
   };
   const suggestible = quickEntities(view);
-  for (const lang of EDS) put<"quickIndex">(dataPaths.quickIndex(lang), quickIndex(docs, lang, entityText, suggestible));
+  for (const lang of UI_LANGS) put<"quickIndex">(dataPaths.quickIndex(lang), quickIndex(docs, lang, entityText, suggestible));
 
   // ------------------------------------------------------------------ build.json, corpus.json
   const buildId = createHash("sha256")
@@ -876,7 +876,7 @@ function entityNames(view: CorpusView): Map<string, string[]> {
   });
   for (const d of docs) {
     if (!d.listed.live) continue;
-    out.set(`${d.kind}:${d.id}`, uniq([d.labels.en, d.labels.yi, d.labels.he].filter((x): x is string => x !== null)));
+    out.set(`${d.kind}:${d.id}`, uniq(UI_LANGS.map((l) => d.labels[l]).filter((x): x is string => x !== null)));
   }
   return out;
 }
@@ -909,7 +909,12 @@ export function quickEntities(view: CorpusView): QuickEntity[] {
     }));
 }
 
-function quickDoc(d: SearchDoc, lang: Ed, entityText: (shiurId: string) => readonly string[]): QuickDoc {
+/**
+ * One shiur in the quick index of reading language `lang`: generated text in `lang`, or, where it
+ * has none, along `CONTENT_FALLBACK` (search-core `localizedTexts(text, lang)`), so the Hebrew index
+ * holds he, else yi, else en.
+ */
+function quickDoc(d: SearchDoc, lang: UiLang, entityText: (shiurId: string) => readonly string[]): QuickDoc {
   const f = (xs: readonly (string | null | undefined)[]) =>
     xs
       .flatMap((x) => (x ? [foldForIndex(x)] : []))
@@ -921,15 +926,15 @@ function quickDoc(d: SearchDoc, lang: Ed, entityText: (shiurId: string) => reado
     lang: d.lang,
     title: f([d.titleOriginal, d.heading, d.subTitle]),
     occasion: f([...d.parsha, ...d.zman]),
-    oneLiner: f([d.oneLiner?.[lang]]),
-    sections: f(d.sections.map((s) => s.title[lang])),
+    oneLiner: f(localizedTexts(d.oneLiner, lang)),
+    sections: f(d.sections.flatMap((s) => localizedTexts(s.title, lang))),
     entities: f([...entityText(d.id)]),
   };
 }
 
 export function quickIndex(
   docs: readonly SearchDoc[],
-  lang: Ed,
+  lang: UiLang,
   entityText: (shiurId: string) => readonly string[] = () => [],
   entities: readonly QuickEntity[] = [],
 ): QuickIndexFile {

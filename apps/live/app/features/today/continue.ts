@@ -15,7 +15,7 @@ export function continueRowOf(s: ShiurFile): ContinueRow {
     id: s.id,
     lang: s.lang,
     title: s.catalog.titleOriginal,
-    oneLiner: ol ? { en: ol.en, yi: ol.yi } : null,
+    oneLiner: ol,
     duration: s.duration,
     years: [...s.years],
     status: s.status,

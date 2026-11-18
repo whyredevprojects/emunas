@@ -7,15 +7,8 @@ import { error, json, UNKNOWN_PARAMETER } from "./http.ts";
 import type { Env } from "./env.ts";
 import { verifyTurnstile } from "./turnstile.ts";
 import { isMomentId } from "./params.ts";
-import {
-  FEEDBACK_FIELDS,
-  FEEDBACK_REASONS,
-  isLang,
-  type FeedbackAccepted,
-  type FeedbackField,
-  type FeedbackReason,
-  type Lang,
-} from "./contract.ts";
+import { isUiLang, type UiLang } from "@emunas/i18n";
+import { FEEDBACK_FIELDS, FEEDBACK_REASONS, type FeedbackAccepted, type FeedbackField, type FeedbackReason } from "./contract.ts";
 
 export const MAX_BODY_BYTES = 8 * 1024;
 export const MAX_TEXT_LENGTH = 1000;
@@ -29,7 +22,8 @@ export interface FeedbackInput {
   field: FeedbackField | null;
   reason: FeedbackReason;
   text: string | null;
-  ui: Lang;
+  /** Interface language the report was sent from (any `UI_LANGS` language). */
+  ui: UiLang;
   rev: string;
   turnstile: string;
 }
@@ -83,7 +77,7 @@ export function parseFeedback(raw: unknown): Parsed {
   }
 
   const ui = raw["ui"];
-  if (typeof ui !== "string" || !isLang(ui)) return { ok: false, param: "ui" };
+  if (typeof ui !== "string" || !isUiLang(ui)) return { ok: false, param: "ui" };
   const rev = raw["rev"];
   if (typeof rev !== "string" || rev.length === 0 || rev.length > MAX_REV_LENGTH || !/^[\x21-\x7E]+$/.test(rev)) {
     return { ok: false, param: "rev" };

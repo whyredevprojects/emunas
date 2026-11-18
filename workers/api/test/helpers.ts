@@ -3,7 +3,8 @@ import { applyD1Migrations } from "cloudflare:test";
 import { foldTokens } from "@emunas/normalize/fold";
 import worker from "../src/index.ts";
 import type { EmbeddingModel, Env, VectorIndex } from "../src/env.ts";
-import { vectorIdFor, type EntityType, type Kind, type Lang } from "../src/contract.ts";
+import { UI_LANGS, type AudioLang, type UiLang } from "@emunas/i18n";
+import { vectorIdFor, type EntityType, type Kind } from "../src/contract.ts";
 
 export const ctx = {
   waitUntil: (p: Promise<unknown>) => {
@@ -113,17 +114,19 @@ export interface SeedMoment {
   kind: Kind;
   t: number;
   end?: number;
-  audioLang: Lang;
+  audioLang: AudioLang;
   category: string;
   occasion?: string;
   series?: string;
   year?: number;
   catalogued?: boolean;
   confidence?: number;
-  titleEn?: string;
-  titleYi?: string;
+  /** Generated display titles (`moments.titles`). */
+  titles?: Partial<Record<UiLang, string>>;
+  /** Extra raw keys written into the `titles` JSON (planted; never returned). */
+  titlesExtra?: Record<string, unknown>;
   hash?: string;
-  text: Partial<Record<Lang, { title?: string; body: string }>>;
+  text: Partial<Record<UiLang, { title?: string; body: string }>>;
   /** Extra search-form text written only to the FTS rows (never displayed). */
   ftsExtra?: string;
   entities?: { type: EntityType; id: string }[];
@@ -146,11 +149,11 @@ export const MOMENTS: SeedMoment[] = [
     occasion: "noach",
     year: 5743,
     catalogued: true,
-    titleEn: "The Flood and trust",
-    titleYi: "דער מבול און בטחון",
+    titles: { en: "The Flood and trust", yi: "דער מבול און בטחון", he: "המבול והבטחון" },
     text: {
       en: { title: "The Flood and trust", body: "Noach built the ark with complete trust in Hashem while the world laughed." },
       yi: { title: "דער מבול און בטחון", body: "נח האט געבויט די תבה מיט פולן בטחון אין השם." },
+      he: { title: "המבול והבטחון", body: "נח בנה את התיבה בבטחון שלם בה׳ כשהעולם לעג לו." },
     },
     entities: [{ type: "work", id: "bereishis" }, { type: "topic", id: "emunah" }],
   },
@@ -165,8 +168,7 @@ export const MOMENTS: SeedMoment[] = [
     occasion: "noach",
     year: 5743,
     catalogued: true,
-    titleEn: "Learning Torah in a flood",
-    titleYi: "לערנען אין א מבול",
+    titles: { en: "Learning Torah in a flood", yi: "לערנען אין א מבול" },
     text: {
       yi: { body: "מען דארף זיך האלטן בתורה אפילו ווען די וועלט איז א מבול." },
       en: { body: "One must hold on to Torah even when the world is a flood." },
@@ -184,8 +186,7 @@ export const MOMENTS: SeedMoment[] = [
     occasion: "lag-baomer",
     year: 5760,
     catalogued: true,
-    titleEn: "Lag BaOmer and the Zohar",
-    titleYi: "ל\"ג בעומר און דער זוהר",
+    titles: { en: "Lag BaOmer and the Zohar", yi: "ל\"ג בעומר און דער זוהר" },
     text: {
       en: { title: "Lag BaOmer and the Zohar", body: "On Lag BaOmer we celebrate Rabbi Shimon bar Yochai and the light of the Zohar." },
       yi: { title: "ל\"ג בעומר און דער זוהר", body: "ל\"ג בעומר פייערט מען רבי שמעון בר יוחאי און דאס ליכט פון זוהר." },
@@ -202,7 +203,7 @@ export const MOMENTS: SeedMoment[] = [
     occasion: "lag-baomer",
     year: 5760,
     catalogued: true,
-    titleEn: "A story in Meron",
+    titles: { en: "A story in Meron" },
     text: {
       en: {
         body:
@@ -222,7 +223,7 @@ export const MOMENTS: SeedMoment[] = [
     category: "misc",
     catalogued: false,
     confidence: 0.65,
-    titleEn: "Trust is daily work",
+    titles: { en: "Trust is daily work" },
     text: { en: { body: "Trust in Hashem has to be worked on every single day." } },
   },
   {
@@ -236,9 +237,9 @@ export const MOMENTS: SeedMoment[] = [
     occasion: "purim",
     year: 5750,
     catalogued: true,
-    titleEn: "Why do we rejoice on Purim",
-    titleYi: "פארוואס פרייט מען זיך פורים",
+    titles: { en: "Why do we rejoice on Purim", yi: "פארוואס פרייט מען זיך פורים" },
     hash: `heardAs:${PLANTED}`,
+    titlesExtra: { heardAs: PLANTED, fr: PLANTED, he: 7 },
     text: { en: { body: "Why do we rejoice on Purim more than on other days?" } },
     ftsExtra: `${PLANTED} heardAs asrNotes`,
     entities: [{ type: "concept", id: `heardas-${PLANTED.toLowerCase()}` }],
@@ -264,21 +265,21 @@ export async function seed(vec: FakeVectorize, moments: readonly SeedMoment[] = 
     stmts.push(
       db
         .prepare(
-          "INSERT INTO moments (id, shiur_id, kind, t, end_t, audio_lang, category, occasion, series, year, catalogued, confidence, title_en, title_yi, hash) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+          "INSERT INTO moments (id, shiur_id, kind, t, end_t, audio_lang, category, occasion, series, year, catalogued, confidence, titles, hash) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
         )
         .bind(
           m.id, m.shiurId, m.kind, m.t, m.end ?? null, m.audioLang, m.category, m.occasion ?? null, m.series ?? null,
-          m.year ?? null, m.catalogued ? 1 : 0, m.confidence ?? null, m.titleEn ?? null, m.titleYi ?? null, m.hash ?? `h-${m.id}`,
+          m.year ?? null, m.catalogued ? 1 : 0, m.confidence ?? null, JSON.stringify({ ...m.titles, ...m.titlesExtra }), m.hash ?? `h-${m.id}`,
         ),
     );
     for (const e of m.entities ?? []) {
       stmts.push(db.prepare("INSERT INTO moment_entities (moment_id, type, entity_id) VALUES (?, ?, ?)").bind(m.id, e.type, e.id));
     }
-    for (const lang of ["en", "yi"] as const) {
+    for (const lang of UI_LANGS) {
       const t = m.text[lang];
       if (!t) continue;
       stmts.push(db.prepare("INSERT INTO moment_text (id, lang, title, body) VALUES (?, ?, ?, ?)").bind(m.id, lang, t.title ?? null, t.body));
-      const title = searchForm(t.title ?? (lang === "en" ? m.titleEn : m.titleYi));
+      const title = searchForm(t.title ?? m.titles?.[lang]);
       const body = [searchForm(t.body), searchForm(m.ftsExtra)].filter((s) => s.length > 0).join(" ");
       for (const table of ["fts_words", "fts_tri"]) {
         stmts.push(db.prepare(`INSERT INTO ${table} (id, lang, title, body) VALUES (?, ?, ?, ?)`).bind(m.id, lang, title, body));

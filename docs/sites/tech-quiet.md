@@ -23,11 +23,11 @@ Verified against the repo on 15 Nov 2026: 997 in-scope shiurim in `data/derived/
 | Concern | Choice | Why |
 |---|---|---|
 | Language | TypeScript, `strict: true`, `noUncheckedIndexedAccess`, `exactOptionalPropertyTypes` | The data has a lot of optional and nullable fields (`work`, `ref`, `recordingId?`); these flags make them visible. |
-| Site framework | **Astro** (current major at start, exact version pinned), `output: "static"` | Zero JS by default, `.astro` components are close to plain HTML, and `getStaticPaths` fits 997 × 2 pages. No UI framework runtime (no React, no Preact). |
+| Site framework | **Astro** (current major at start, exact version pinned), `output: "static"` | Zero JS by default, `.astro` components are close to plain HTML, and `getStaticPaths` fits 997 × 3 pages (one per edition). No UI framework runtime (no React, no Preact). |
 | Client scripts | Vanilla TS modules bundled by Astro/Vite, attached with `<script>` and progressive enhancement | The player (§7), search (§5), the edition switch and "this week" on the title page run script. Every page works without it. |
 | Styling | One hand-written CSS system: custom properties for tokens, **logical properties only** (`margin-inline-start`, `inset-inline-end`), `@layer` for base/layout/components/print; Stylelint with a logical-properties rule | RTL and LTR from the same CSS. No Tailwind, so print and RTL behave predictably. |
 | Fonts | Self-hosted woff2, subset at build time with `fonttools`/`glyphhanger`: a Hebrew text face (candidate: Frank Ruhl Libre, OFL) and a Latin book face (candidate: Source Serif 4, OFL) | Concept rule: no third-party resources. Yiddish needs U+05F0–U+05F2 (װ ױ ײ), U+FB1D–FB4F and nikud. A test checks that coverage (§11). |
-| i18n | Two editions as a route parameter `[ed]` ∈ {`yi`,`en`}, typed string tables `src/i18n/yi.ts` and `en.ts` sharing one `UiKey` union (a missing key fails `tsc`); `<html lang dir>` set per edition | Astro's i18n routing isn't needed. The two editions have identical structure (concept §8). |
+| i18n | One edition per `UI_LANGS` language (`@emunas/i18n`: en, yi, he) as a route parameter `[ed]`, typed string tables `src/i18n/{en,yi,he}.ts` sharing one `UiKey` union (a missing key or a missing language fails `tsc`); `<html lang dir>` set per edition; generated text picked with `pickText`/`pickLocalized` and the fallback chain (integration-plan §2.4) | Astro's i18n routing isn't needed. The editions have identical structure (concept §8). |
 | Search | **Pagefind** (pinned), index built with its Node API from custom records, no HTML scraping (§5) | Static, chunked and lazy-loaded, no backend, works on a filtered connection. |
 | Hosting | **Cloudflare Workers with static assets**: one Worker `quiet-site` serves `dist/` and handles `/audio/*` only (`run_worker_first: ["/audio/*"]`) | One deployable. The Worker runs code only for audio. |
 | Audio | A separate **public-content R2 bucket** with only mp3s, keyed by `recordingId`, read through an R2 binding from the site Worker with Range support (§6) | Keeps the transcripts' bucket private. |
@@ -45,7 +45,7 @@ All slugs are ASCII and stable, built from ids that exist before any AI data. Tr
 
 | Path | Page | Source |
 |---|---|---|
-| `/` | Edition chooser (yi right, en left). Static, no redirect. | — |
+| `/` | Edition chooser (the right-to-left editions on the right, en on the left). Static, no redirect. | — |
 | `/{ed}/` | Title page: this week, contents in brief, indexes, coverage line | corpus + calendar |
 | `/{ed}/contents/` | Guide sections in guide order, Yiddish then English | `pocket-guide-2012.json` `sections[]` order, then uncatalogued sections |
 | `/{ed}/section/{sectionId}/` | Section table, sub-grouped (chumash/parsha, zman order) | `catalog.sectionId` |
@@ -100,7 +100,7 @@ The data root is configurable (`EMUNAS_DATA_DIR`, default `<repo>/data`) so test
 6. **Aggregate** the indexes: calendar, years, sources (work → ref → [shiur, time]), stories by person, people, concepts, catalog neighbours, series prev/next, coverage counts.
 7. **Emit** `apps/quiet/.generated/` (git-ignored):
    - `corpus/shiur/<id>.json`, one `PublicShiur` per file (pages import per id, so no 100 MB object sits in memory per page)
-   - `corpus/index.json`: list rows for all shiurim (id, catalog fields, oneLiner en/yi, duration, status), about 600 KB
+   - `corpus/index.json`: list rows for all shiurim (id, catalog fields, oneLiner as `LocalizedText`, duration, status), about 600 KB
    - `indexes/*.json`: calendar, years, sources, stories, people, concepts
    - `search-records.json`: input for Pagefind (§5)
    - `build-report.json`: counts (total / withNotes / pending / downgraded), unmapped zman/parsha/work/person values, dropped items, time-resolution warnings, verbatim-overlap findings (§11)
@@ -216,11 +216,11 @@ Rules:
 
 ## 5. Search
 
-**Choice: Pagefind, static, custom records, one shared index for both editions.**
+**Choice: Pagefind, static, custom records, one shared index for every edition.**
 
 - Built by `apps/quiet/scripts/build-search.ts` with the Pagefind Node API (`createIndex` → `addCustomRecord` → `writeFiles` to `dist/pagefind/`). We don't let Pagefind crawl HTML, so the exact fields that get indexed are under our control.
-- One record per shiur (997). `url` is the edition-less path `shiur/{id}/`; the client prefixes `/{ed}/`. `content` is the folded text of: `titleOriginal`, `heading`, `subTitle`, parsha, zman, Hebrew year string, `catalogTopics`, and when notes exist `oneLiner`/`abstract`/`keyPoints`/section titles+summaries/story titles/question text in **both** en and yi, source `work`/`ref`, people names, concept terms, `candidateTopics`. **Not** included: write-up paragraphs (too large for the gain, and redundant with section summaries), anything transcript, `heardAs`.
-- `meta`: `titleOriginal`, citation string, `oneLinerEn`, `oneLinerYi`, `lang`, `status`. `filters`: `lang`, `category`, `status`. Results render from meta only (title, citation, one-liner in the edition's language). **Excerpts are not shown** because they would mix languages; this also keeps result text to fields we chose.
+- One record per shiur (997). `url` is the edition-less path `shiur/{id}/`; the client prefixes `/{ed}/`. `content` is the folded text of: `titleOriginal`, `heading`, `subTitle`, parsha, zman, Hebrew year string, `catalogTopics`, and when notes exist `oneLiner`/`abstract`/`keyPoints`/section titles+summaries/story titles/question text in **every** language present (en, yi, and he where a current translation exists), source `work`/`ref`, people names, concept terms, `candidateTopics`. **Not** included: write-up paragraphs (too large for the gain, and redundant with section summaries), anything transcript, `heardAs`.
+- `meta`: `titleOriginal`, citation string, one one-liner per edition (`oneLinerEn`, `oneLinerYi`, `oneLinerHe`, each already picked along the fallback chain), `lang`, `status`. `filters`: `lang`, `category`, `status`. Results render from meta only (title, citation, one-liner in the edition's language). **Excerpts are not shown** because they would mix languages; this also keeps result text to fields we chose.
 - **Folding** (`packages/corpus-maps/fold.ts`, used both at index time and on the query): strip nikud and cantillation (U+0591–U+05C7), remove geresh/gershayim and ASCII/curly quotes (`ל"ג`, `ל”ג`, `ל״ג` → `לג`), unify `־`/`-`, lowercase Latin, and apply a small transliteration variant table (chanukah/chanuka/hanukkah, shabbos/shabbat…). The record language is `"unknown"` (no stemming), so Hebrew and English tokens sit in one index.
 - **Size:** at full corpus about 1,000 fragments plus index chunks, a few MB total, each query loads tens of KB.
 - **Later, if wanted:** section-level records (~10k files at full corpus) would show "matching section". That needs the Paid plan file budget. Deferred.
@@ -370,14 +370,14 @@ Each table has a test: "every value currently in the corpus maps or is explicitl
 - JavaScript **disabled** project: title page, contents, a section, a shiur with notes, a pending shiur, the calendar, a sources work page, the search fallback. Every page renders, time links have `#t=` hrefs, and there are no broken internal links.
 - JavaScript enabled: clicking a time link seeks the docked player; the margin mark moves; search for `לג בעומר` and `lag baomer` finds the same shiurim.
 - Sample real pages of each kind: a Yiddish parsha (`yi-parshas-hashavua-brshys-01`), an English parsha (`en-parsha-en-nch-02`), a zman, a Tanya set (pending), a Simchos row (pending, uncatalogued), the shiur with several recordings.
-- Visual snapshots in both editions plus print-media screenshots.
+- Visual snapshots in every edition plus print-media screenshots.
 
 **Link and HTML checks:** crawl `dist/` for internal links (every href resolves to a file, every anchor exists) and run `html-validate` on a sample of 200 pages.
 
 **Budgets (`check-budgets.ts`, fails CI):** the table in §3.5. Lighthouse CI on 5 representative pages: performance ≥ 95 on mobile, LCP < 1.8 s on simulated 4G, CLS < 0.02, total blocking time ≈ 0.
 
 **Accessibility (WCAG 2.2 AA)**
-- axe-core in Playwright on every sampled page, both editions; zero violations
+- axe-core in Playwright on every sampled page, every edition; zero violations
 - `lang` and `dir` correct on `<html>` and on every mixed-script run; screen readers switch voices on Hebrew catalog titles inside English pages
 - skip link, landmarks (`nav`, `main`, `aside` for the apparatus), one `h1`, a heading outline that follows the page parts
 - time links have localised accessible names ("Play from 12:34" / "שפיל פון 12:34"); the current item uses `aria-current`, not colour alone

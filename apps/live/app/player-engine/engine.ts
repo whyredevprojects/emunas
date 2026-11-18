@@ -23,9 +23,9 @@ import {
   recordingAudioUrl,
   skipContaining,
 } from "./plan.ts";
+import type { UiLang } from "@emunas/i18n";
 import type {
   Clock,
-  Ed,
   LoadOptions,
   MediaElementLike,
   PlayerEngine,
@@ -120,7 +120,7 @@ export function createPlayerEngine(options: PlayerEngineOptions = {}): PlayerEng
   let momentEnd: number | null = null;
   let momentEnded = false;
   let sleep: SleepState | null = null;
-  let readingLang: Ed = options.readingLang ?? "yi";
+  let readingLang: UiLang = options.readingLang ?? "yi";
   let readingLangExplicit = options.readingLang !== undefined;
 
   let boundaryTimer: unknown = null;

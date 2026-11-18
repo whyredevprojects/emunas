@@ -1,6 +1,6 @@
 /**
  * Remarks on the transcript or on the shiur itself (meta-comment.ts): the term list matches whole
- * folded words in English and Yiddish, remarks on the sound or the recording pass, the post-pass fails on a planted remark in a built page and in a
+ * folded words in every interface language (English, Yiddish, Hebrew with its attached prefixes), remarks on the sound or the recording pass, the post-pass fails on a planted remark in a built page and in a
  * published data file, and the reviewed allow-list passes exactly the file and term it names.
  */
 import { writeFileSync } from "node:fs";
@@ -8,7 +8,8 @@ import { join } from "node:path";
 import { afterEach, describe, expect, it } from "vitest";
 import { main } from "../src/cli.ts";
 import { LeakScanner, createLeakScanner } from "../src/index.ts";
-import { META_COMMENT_TERMS, findMetaComments, readMetaCommentAllow } from "../src/meta-comment.ts";
+import { UI_LANGS } from "@emunas/i18n";
+import { META_COMMENT_PREFIX_LETTERS, META_COMMENT_TERMS, META_COMMENT_TERMS_BY_LANG, findMetaComments, readMetaCommentAllow } from "../src/meta-comment.ts";
 import { SHIUR, makeFixture, shiurJson, writeFile, type Fixture } from "./fixtures.ts";
 
 let fx: Fixture | null = null;
@@ -32,6 +33,33 @@ describe("findMetaComments", () => {
     expect(terms("דער טראנסקריפט האט נישט אויפגעכאפט.")).toEqual(["טראנסקריפ*"]);
     expect(terms("פון אן איבערשרייבונג וואס א מענטש האט באשטעטיגט")).toEqual(["איבערשרייבונג*"]);
     expect(terms("מאשין־איבערשרייבונגען")).toEqual(["איבערשרייבונג*"]);
+  });
+
+  it("finds the listed remarks in Hebrew, with or without the prefixes Hebrew attaches", () => {
+    expect(terms("בתמלול של השיעור חסר קטע")).toEqual(["תמלול*"]);
+    expect(terms("והתמלולים אינם שלמים")).toEqual(["תמלול*"]);
+    expect(terms("לפי התמליל")).toEqual(["תמליל*"]);
+    expect(terms("השיעור המתומלל")).toEqual(["תומלל*"]);
+    expect(terms("כפי שזיהוי הדיבור קלט")).toEqual(["זיהוי דיבור"]);
+    expect(terms("הטרנסקריפט חסר")).toEqual(["טרנסקריפ*"]);
+    expect(terms("כאן השיעור משובש מאוד")).toEqual(["שיעור משובש*"]);
+    expect(terms("בקטע משובש מדבר המשגיח על השמחה")).toEqual(["קטע משובש*"]);
+    expect(terms("המילים משובשות")).toEqual(["מילים משובשות"]);
+    expect(terms("החלק הזה משובש ולא ברור")).toEqual(["משובש* לא ברור*"]);
+    expect(terms("כאן השיעור אינו ברור")).toEqual(["שיעור אינו ברור"]);
+    expect(terms("הדבר לא ברור בשיעור")).toEqual(["לא ברור* בשיעור"]);
+    // Niqqud and geresh fold away.
+    expect(terms("הַתַּמְלוּל")).toEqual(["תמלול*"]);
+  });
+
+  it("lets Hebrew teaching that says unclear or corrupt pass", () => {
+    expect(terms("הגירסא משובשת, וכך צריך לגרוס")).toEqual([]);
+    expect(terms("לא ברור מה כוונת הפסוק, והמשגיח מבאר")).toEqual([]);
+    expect(terms("הקלטה באיכות ירודה; ההקלטה נקטעת")).toEqual([]);
+    expect(terms("מלמד, מלאכה, שמחה, בשמחה")).toEqual([]);
+    expect(terms("העתקה בכתב יד")).toEqual([]);
+    // A prefix letter is taken off only in front of a listed Hebrew word, never from an English or Yiddish term.
+    expect(terms("ושיעור איז נישט קלאר")).toEqual([]);
   });
 
   it("lets remarks on the sound or the recording pass", () => {
@@ -74,6 +102,17 @@ describe("findMetaComments", () => {
     expect(META_COMMENT_TERMS.some((t) => t.includes("צעמישט"))).toBe(true);
     expect(META_COMMENT_TERMS.some((t) => t.includes("נישט קלאר"))).toBe(true);
   });
+
+  it("has a list (and prefix letters) for every interface language, flattened in UI_LANGS order", () => {
+    for (const lang of UI_LANGS) {
+      expect(META_COMMENT_TERMS_BY_LANG[lang].length, lang).toBeGreaterThan(3);
+      expect(typeof META_COMMENT_PREFIX_LETTERS[lang], lang).toBe("string");
+    }
+    expect(META_COMMENT_TERMS).toEqual(UI_LANGS.flatMap((l) => META_COMMENT_TERMS_BY_LANG[l]));
+    expect(META_COMMENT_TERMS_BY_LANG.he).toContain("תמלול*");
+    // Ordinary teaching words are never listed alone.
+    for (const t of ["משובש*", "לא ברור", "נישט קלאר", "צעמישט*"]) expect(META_COMMENT_TERMS, t).not.toContain(t);
+  });
 });
 
 describe("post-pass: remarks on the transcript or the shiur", () => {
@@ -114,9 +153,11 @@ describe("post-pass: remarks on the transcript or the shiur", () => {
     writeFile(join(d, "en", "shiur", SHIUR, "index.html"), `<html><body><ol><li><span class="chapter-title">Opening</span><span class="chapter-kind"> (garbled)</span></li></ol></body></html>`);
     writeFile(join(d, "yi", "about", "index.html"), `<html><body><p aria-label="דער חלק איז צעמישט">טיילן וואו מ'הערט נישט קלאר</p></body></html>`);
     writeFile(join(d, "yi", "teaching", "index.html"), `<html><body><p>די שיעורים זענען נישט קלאר, און דער שופר צעמישט דעם שטן.</p></body></html>`);
+    writeFile(join(d, "he", "shiur", SHIUR, "index.html"), `<html><body><p title="קטע משובש">פתיחה</p><p>הגירסא משובשת כאן.</p></body></html>`);
     const r = scan(fx, d);
     expect(r.findings).toEqual([
       { kind: "meta-comment", source: `dist/en/shiur/${SHIUR}/index.html`, term: "garbl*", context: "opening [garbled]", count: 1 },
+      { kind: "meta-comment", source: `dist/he/shiur/${SHIUR}/index.html`, term: "קטע משובש*", context: "פתיחה הגירסא משובשת כאן [קטע משובש]", count: 1 },
       { kind: "meta-comment", source: "dist/yi/about/index.html", term: "חלק איז צעמישט*", context: "טיילן וואו מהערט נישט קלאר דער [חלק איז צעמישט]", count: 1 },
     ]);
   });
@@ -126,11 +167,13 @@ describe("post-pass: remarks on the transcript or the shiur", () => {
     const d = dist(fx);
     const shiur = shiurJson({ paragraph: "In a badly garbled stretch, the Mashgiach speaks of the joy above." }) as { notes: { chapters: { title: { yi: string } }[] } };
     shiur.notes.chapters[0]!.title.yi = "אנהייב אן א טראנסקריפט";
+    (shiur.notes.chapters[0]!.title as Record<string, string>).he = "פתיחה, לפי התמלול";
     writeFile(join(d, "data", "shiur", `${SHIUR}.json`), JSON.stringify(shiur));
     writeFile(join(d, "search", "docs.ndjson"), `${JSON.stringify({ id: SHIUR, text: "the transcript holds only fragments" })}\n`);
     const r = scan(fx, d);
     const hits = r.findings.map((f) => (f.kind === "meta-comment" ? `${f.source} ${f.field ?? ""} ${f.term}` : f.kind)).sort();
     expect(hits).toEqual([
+      `dist/data/shiur/${SHIUR}.json notes.chapters[].title.he תמלול*`,
       `dist/data/shiur/${SHIUR}.json notes.chapters[].title.yi טראנסקריפ*`,
       `dist/data/shiur/${SHIUR}.json notes.writeup.en[].paragraphs[].text garbl*`,
       "dist/search/docs.ndjson:1 text transcri*",

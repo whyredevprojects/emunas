@@ -4,6 +4,7 @@
  * mid-flight), emitted and written; then the manifest flips it to "done", and the whole chain
  * (corpus:build → emit → write) runs again over the same output directories.
  */
+import { UI_LANGS } from "@emunas/i18n";
 import { statSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
@@ -42,9 +43,9 @@ function expectedFiles(s: PublicShiur, occasionKeys: string[], input: CorpusInpu
     "facets.json",
     "today.json",
     "works.json",
-    "quick-index.en.json",
-    "quick-index.yi.json",
+    ...UI_LANGS.map((l) => `quick-index.${l}.json`),
     `shiur/${s.id}.json`,
+    // A write-up per language the shiur has one in (no Hebrew translation in the mini corpus).
     `writeup/${s.id}.en.json`,
     `writeup/${s.id}.yi.json`,
     "topics.json",

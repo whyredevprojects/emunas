@@ -11,15 +11,19 @@
  * - Shiur records and entity records are searched apart (`filters.type`). An entity record whose
  *   entity the query names (a headword: `normalizeQuery(...).entities`) comes first, as "Topic: Hashgacha Pratis · 120 shiurim", then the shiurim, merged by
  *   best score. At most `MAX_ENTRIES` entries, one per address.
- * - Results render from record meta only (title, citation, one-liner in the edition's language;
- *   for entries kind, label and count). No excerpts. Text is set with `textContent`, never parsed as
+ * - Results render from record meta only (title, citation, one-liner: the edition's language, else
+ *   the next along `CONTENT_FALLBACK`, marked with the `lang`/`dir` of the language shown; for
+ *   entries kind, label in the edition's `NAME_ORDER`, and count). No excerpts. Text is set with `textContent`, never parsed as
  *   HTML.
  * - Pagefind (`/pagefind/pagefind.js`) is loaded at runtime, not bundled.
  * - `?q=` is read on load and kept in the address bar, so a search can be linked.
  *
  * UI strings come from `data-*` attributes on the `[data-search]` root (no inline script, CSP).
  */
+import { CONTENT_FALLBACK, UI_DIR, UI_LANGS, isUiLang, type UiLang } from "@emunas/i18n";
 import type { NormalizedQuery, SynonymSource, SynonymTable } from "@emunas/search-core";
+import { NAME_ORDER } from "../lib/edition.ts";
+import { labelKey, oneLinerKey } from "../lib/search-meta.ts";
 
 export interface ResultData {
   url: string;
@@ -77,7 +81,7 @@ export function parseSynonymRows(json: unknown): SynonymSource[] {
     out.push({
       kind: kind as SynonymSource["kind"],
       id,
-      labels: { he: s(l["he"]), en: s(l["en"]), yi: s(l["yi"]) },
+      labels: Object.fromEntries(UI_LANGS.map((lang) => [lang, s(l[lang])])) as SynonymSource["labels"],
       synonyms: Array.isArray(syn) ? syn.filter((x): x is string => typeof x === "string") : [],
       count: typeof o["count"] === "number" ? o["count"] : 0,
     });
@@ -139,14 +143,30 @@ export function resultHref(ed: string, url: string): string {
   return `/${ed}/${url.replace(/^\/+/, "")}`;
 }
 
-/** The label an entry shows in an edition: its own language first, then Hebrew, then the other. */
+/** The edition of a page (`data-ed`); English for anything unknown. */
+export function editionOf(ed: string | undefined): UiLang {
+  return isUiLang(ed) ? ed : "en";
+}
+
+/** The label an entry shows in an edition, in the edition's `NAME_ORDER` (its own language first). */
 export function entryLabel(ed: string, meta: Record<string, string | undefined>): string {
-  const order = ed === "yi" ? ["labelYi", "labelHe", "labelEn"] : ["labelEn", "labelHe", "labelYi"];
-  for (const k of order) {
-    const v = meta[k];
+  for (const lang of NAME_ORDER[editionOf(ed)]) {
+    const v = meta[labelKey(lang)];
     if (v) return v;
   }
   return "";
+}
+
+/**
+ * The one-line summary a shiur result shows in an edition: the edition's language, else the next
+ * along `CONTENT_FALLBACK`, with the language it is in; null when the shiur has none.
+ */
+export function resultOneLiner(ed: string, meta: Record<string, string | undefined>): { text: string; lang: UiLang } | null {
+  for (const lang of CONTENT_FALLBACK[editionOf(ed)]) {
+    const v = meta[oneLinerKey(lang)];
+    if (v) return { text: v, lang };
+  }
+  return null;
 }
 
 /** The data key of a kind's label (`kindTopic`, `kindConcept`, …). */
@@ -199,8 +219,15 @@ export function renderResult(doc: Document, ed: string, d: ResultData, msg: (k: 
     if (n) p.append(" · ", msg("number").replace("{n}", n));
     li.append(p);
   }
-  const one = d.meta[ed === "yi" ? "oneLinerYi" : "oneLinerEn"];
-  li.append(one ? el(doc, "p", "search-oneliner", one) : el(doc, "p", "search-pending", msg("pending")));
+  const one = resultOneLiner(ed, d.meta);
+  if (one) {
+    const p = el(doc, "p", "search-oneliner", one.text);
+    if (one.lang !== editionOf(ed)) {
+      p.lang = one.lang;
+      p.dir = UI_DIR[one.lang];
+    }
+    li.append(p);
+  } else li.append(el(doc, "p", "search-pending", msg("pending")));
   return li;
 }
 

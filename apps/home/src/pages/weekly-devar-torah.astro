@@ -2,14 +2,14 @@
 /** Sign-up for the weekly Devar Torah by email (an external Brevo form). */
 import Base from "../layouts/Base.astro";
 import PageHead from "../components/PageHead.astro";
-import { EXTERNAL } from "../lib/content.ts";
+import { ASIDES, EXTERNAL } from "../lib/content.ts";
 ---
 <Base
   title="Weekly Devar Torah"
   description={'Free weekly divrei Torah from the Mashgiach, Harav Moshe Wolfson zt"l, by email, with news of new English sefarim.'}
 >
   <div class="wrap">
-    <PageHead title="Weekly Devar Torah" label="By email" labelYi="דבר תורה" />
+    <PageHead title="Weekly Devar Torah" label="By email" labelAside={ASIDES.devarTorah} />
     <div class="page-body prose">
       <p>Sign up for free weekly divrei Torah from the Mashgiach, Harav Moshe Wolfson zt"l. You will also receive
       emails with updates about new English sefarim.</p>

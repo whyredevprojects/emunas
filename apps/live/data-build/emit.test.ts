@@ -345,3 +345,62 @@ describe("validateFile", () => {
     for (const [f, body] of fixtureFiles) expect(validateFile(f, body), f).toBeNull();
   });
 });
+
+describe("Hebrew translations (overlays applied by the corpus build)", () => {
+  // The mini corpus has no overlays, so one shiur is given Hebrew text in memory, as the corpus build
+  // writes it when a current overlay exists: `he` beside en/yi, and a complete Hebrew write-up.
+  const base = input.shiurim.find((s) => s.status === "full" && s.notes && s.notes.chapters.length > 0)!;
+  const notes = base.notes!;
+  const he = {
+    ...base,
+    notes: {
+      ...notes,
+      summary: { ...notes.summary, oneLiner: { ...notes.summary.oneLiner, he: "שורה בעברית" } },
+      chapters: notes.chapters.map((c, i) => (i === 0 ? { ...c, title: { ...c.title, he: "פרק ראשון" } } : c)),
+      writeup: { ...notes.writeup, he: notes.writeup.yi.map((b) => ({ ...b, heading: b.heading === null ? null : "כותרת" })) },
+    },
+  };
+  const heInput = { ...input, shiurim: input.shiurim.map((s) => (s.id === base.id ? he : s)) };
+  const heFiles = emitLiveData(heInput, { generatedAt: GENERATED_AT });
+  const heGet = <T>(f: string): T => heFiles.get(f) as T;
+
+  it("every file still validates", () => {
+    expect([...heFiles].flatMap(([f, body]) => validateFile(f, body) ?? [])).toEqual([]);
+  });
+
+  it("writes the Hebrew write-up and lists it, and the shiur file keeps the Hebrew texts", () => {
+    const f = heGet<ShiurFile>(`shiur/${base.id}.json`);
+    expect(f.notes!.writeupLangs).toEqual(["en", "yi", "he"]);
+    expect(heGet<WriteupFile>(`writeup/${base.id}.he.json`).lang).toBe("he");
+    expect(f.notes!.summary.oneLiner.he).toBe("שורה בעברית");
+    // Without a translation nothing Hebrew is invented.
+    const other = input.shiurim.find((s) => s.status === "full" && s.id !== base.id)!;
+    expect(heGet<ShiurFile>(`shiur/${other.id}.json`).notes!.writeupLangs).toEqual(["en", "yi"]);
+    expect(heFiles.has(`writeup/${other.id}.he.json`)).toBe(false);
+  });
+
+  it("Hebrew moment shards use Hebrew where translated and mark every fallback with its language", () => {
+    const build = heGet<BuildFile>("build.json");
+    expect(Object.keys(build.momentShards).sort()).toEqual(["en", "he", "yi"]);
+    const rows = Array.from({ length: build.momentShards.he }, (_, i) => heGet<{ moments: { id: string; title: string; titleLang?: string }[] }>(`moments/he-${i}.json`).moments).flat();
+    const first = rows.find((r) => r.id === notes.chapters[0]!.id)!;
+    expect(first).toMatchObject({ title: "פרק ראשון" });
+    expect(first).not.toHaveProperty("titleLang");
+    const second = rows.find((r) => r.id === notes.chapters[1]?.id);
+    if (second) expect(second.titleLang).toBe("yi");
+    const yiRows = Array.from({ length: build.momentShards.yi }, (_, i) => heGet<{ moments: { titleLang?: string }[] }>(`moments/yi-${i}.json`).moments).flat();
+    expect(yiRows.some((r) => r.titleLang !== undefined && r.titleLang !== "en")).toBe(false);
+  });
+
+  it("emits a quick index per interface language; the Hebrew one finds the Hebrew one-liner", () => {
+    for (const l of ["en", "yi", "he"]) expect(heFiles.has(`quick-index.${l}.json`), l).toBe(true);
+    const q = heGet<QuickIndexFile>("quick-index.he.json");
+    expect(q.lang).toBe("he");
+    const ms = MiniSearch.loadJSON(JSON.stringify(q.index), q.options as never);
+    const hits = ms.search(normalizeQuery("בעברית").tokens.join(" "), { prefix: true });
+    expect(hits.map((h) => h.id)).toContain(base.id);
+    const en = heGet<QuickIndexFile>("quick-index.en.json");
+    const msEn = MiniSearch.loadJSON(JSON.stringify(en.index), en.options as never);
+    expect(msEn.search(normalizeQuery("בעברית").tokens.join(" "), { prefix: true }).map((h) => h.id)).not.toContain(base.id);
+  });
+});

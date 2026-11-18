@@ -21,12 +21,12 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { astroBuild } from "../../../test/astro-build.ts";
 import { readCalendarData } from "./data.ts";
 import { isGuessedRow, type CalendarData } from "./model.ts";
+import { EDS } from "../../lib/edition.ts";
 
 const require = createRequire(import.meta.url);
 const here = dirname(fileURLToPath(import.meta.url));
 const app = join(here, "..", "..", "..");
 const repo = join(app, "..", "..");
-const EDS = ["yi", "en"] as const;
 
 let work = "";
 let dist = "";
@@ -177,20 +177,20 @@ describe("all calendar and year pages", () => {
     const pages = calendarPages();
     // per edition: /calendar/ (W4.9), the parsha and zman indexes, every occasion, the year index,
     // the unknown-year page and every year
-    expect(pages.length).toBe(2 * (3 + data.occasions.parshiyos.length + data.occasions.zmanim.length + 2 + data.years.years.length));
+    expect(pages.length).toBe(EDS.length * (3 + data.occasions.parshiyos.length + data.occasions.zmanim.length + 2 + data.years.years.length));
     for (const p of pages) {
       const html = page(p);
       expect(html, p).not.toContain("astro-island");
       expect(html, p).not.toMatch(/\son(click|load)=/);
       expect(html, p).toMatch(/<h1>/);
       for (const href of hrefsIn(html)) {
-        if (/^\/(yi|en)\/(calendar|years)\//.test(href)) expect(exists(href.replace(/#.*$/, "")), `${p} → ${href}`).toBe(true);
+        if (/^\/(en|yi|he)\/(calendar|years)\//.test(href)) expect(exists(href.replace(/#.*$/, "")), `${p} → ${href}`).toBe(true);
       }
     }
   });
 
   it("/{ed}/calendar/ leads to the three ways in (W4.9)", () => {
-    for (const ed of ["yi", "en"] as const) {
+    for (const ed of EDS) {
       const html = page(`${ed}/calendar`);
       const hrefs = hrefsIn(html);
       for (const want of [`/${ed}/calendar/parsha/`, `/${ed}/calendar/zman/`, `/${ed}/years/`]) expect(hrefs, ed).toContain(want);
@@ -198,7 +198,7 @@ describe("all calendar and year pages", () => {
   });
 
   it("nav and breadcrumbs lead to /{ed}/calendar/ (W5.5)", () => {
-    for (const ed of ["yi", "en"] as const) {
+    for (const ed of EDS) {
       const home = `/${ed}/calendar/`;
       const nav = (html: string): string => html.match(/<nav[^>]*class="site-nav[^"]*"[\s\S]*?<\/nav>/)?.[0] ?? "";
       const crumbs = (html: string): string => html.match(/<nav[^>]*class="breadcrumb[^"]*"[\s\S]*?<\/nav>/)?.[0] ?? "";

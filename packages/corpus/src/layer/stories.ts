@@ -65,8 +65,8 @@ export function buildStories(ctx: LayerContext, personOf: (raw: string) => Layer
     }
     out.push({
       id: s.id,
-      title: { en: s.title.en, yi: s.title.yi },
-      retelling: { en: s.retelling.en, yi: s.retelling.yi },
+      title: ctx.text("stories", s.id, "title", s.title),
+      retelling: ctx.text("stories", s.id, "retelling", s.retelling),
       people,
       attributionVaries: s.attributionVaries,
       tellings,
@@ -142,8 +142,8 @@ export function buildThreads(ctx: LayerContext): ThreadsResult {
     }
     out.push({
       id: c.id,
-      label: { en: c.label.en, yi: c.label.yi },
-      summary: { en: c.summary.en, yi: c.summary.yi },
+      label: ctx.text("teaching-clusters", c.id, "label", c.label),
+      summary: ctx.text("teaching-clusters", c.id, "summary", c.summary),
       topicIds,
       members,
       shiurCount,

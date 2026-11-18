@@ -1,5 +1,6 @@
 import { env } from "cloudflare:workers";
 import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
+import { UI_LANGS } from "@emunas/i18n";
 import { ALLOWED_KEYS } from "../src/contract.ts";
 import { SITEVERIFY_URL } from "../src/turnstile.ts";
 import { sha256Hex } from "../src/feedback.ts";
@@ -77,6 +78,16 @@ describe("POST /api/feedback", () => {
     expect(res.status).toBe(202);
   });
 
+  it("accepts a report from every interface language (UI_LANGS) and stores its ui", async () => {
+    for (const ui of UI_LANGS) {
+      const res = await post({ target: { shiurId: "en-misc-01" }, reason: "other", ui, rev: "r", turnstile: "t" }, {}, `198.51.100.${40 + UI_LANGS.indexOf(ui)}`);
+      expect(res.status, ui).toBe(202);
+      const { id } = (await res.json()) as { id: string };
+      const row = await env.DB_FEEDBACK.prepare("SELECT ui FROM feedback WHERE id = ?").bind(id).first<{ ui: string }>();
+      expect(row?.ui).toBe(ui);
+    }
+  });
+
   it("answers 403 when Turnstile rejects the token and stores nothing", async () => {
     siteverify.reply = () => Response.json({ success: false, "error-codes": ["invalid-input-response"] });
     const { status, body } = await getJson(e, "/api/feedback", {
@@ -104,6 +115,7 @@ describe("POST /api/feedback", () => {
       [{ ...valid, text: "bell\u0007" }, "text"],
       [{ ...valid, reason: "spam" }, "reason"],
       [{ ...valid, ui: "fr" }, "ui"],
+      [{ ...valid, ui: "HE" }, "ui"],
       [{ ...valid, rev: "" }, "rev"],
       [{ ...valid, rev: "r".repeat(65) }, "rev"],
       [{ ...valid, turnstile: "" }, "turnstile"],

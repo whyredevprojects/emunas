@@ -7,7 +7,7 @@
  */
 import { existsSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
-import type { IndexRow, L, PublicShiur } from "@emunas/corpus/public";
+import type { IndexRow, LocalizedText, PublicShiur } from "@emunas/corpus/public";
 import { quietLayer, type QuietLayer } from "../corpus/layer.ts";
 import { loadCalendarData } from "../calendar/data.ts";
 import type { CalendarData } from "../calendar/model.ts";
@@ -19,11 +19,11 @@ const SAFE_ID = /^[A-Za-z0-9][A-Za-z0-9._~-]*$/;
 /** A topics source from a loaded layer and calendar data (`corpusDir`: where `shiurim/` is). */
 export function topicsSourceOf(layer: QuietLayer, calendar: CalendarData, corpusDir: string | null): TopicsSource {
   const rows = new Map<string, IndexRow>(calendar.index.shiurim.map((r) => [r.id, r]));
-  const chapters = new Map<string, Map<number, L>>();
-  const chaptersOf = (shiurId: string): Map<number, L> => {
+  const chapters = new Map<string, Map<number, LocalizedText>>();
+  const chaptersOf = (shiurId: string): Map<number, LocalizedText> => {
     const hit = chapters.get(shiurId);
     if (hit) return hit;
-    const map = new Map<number, L>();
+    const map = new Map<number, LocalizedText>();
     const path = corpusDir !== null && SAFE_ID.test(shiurId) && rows.has(shiurId) ? join(corpusDir, "shiurim", `${shiurId}.json`) : null;
     if (path && existsSync(path)) {
       const shiur = JSON.parse(readFileSync(path, "utf8")) as Pick<PublicShiur, "notes">;

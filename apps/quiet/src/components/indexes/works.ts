@@ -20,9 +20,9 @@ import { RESOLUTION_LABELS } from "@emunas/i18n";
 import type { MentionRef, WorkEntry } from "@emunas/corpus/aggregate";
 import type { LayerWork } from "@emunas/corpus/public";
 import { headword, type Headword } from "../corpus/model.ts";
-import type { Ed } from "../../lib/edition.ts";
+import { isHebrewScriptEdition, type Ed } from "../../lib/edition.ts";
 import type { EntryData } from "./entries.ts";
-import { byCatalog, citeShiur, citeShiurim, entryHref, hasEntryPage, run, str, strings, textOf } from "./entry-model.ts";
+import { byCatalog, citeShiur, citeShiurim, entryHref, hasEntryPage, run, str, strings, textRun } from "./entry-model.ts";
 import { sefariaHref, type Cite, type MentionLine, type OtherRefLine, type RefBlock, type Run, type WorkGroupId } from "./model.ts";
 import { useIndexesT, type IndexesKey } from "./strings.ts";
 
@@ -191,7 +191,7 @@ function references(d: EntryData, ed: Ed, entries: readonly WorkEntry[]): { refs
     .map(([ref, r]) => {
       const mentions = [...r.mentions].sort(cmp).map(line).filter((l): l is MentionLine => l !== null);
       for (const m of mentions) placed.add(m.cite.shiurId);
-      const label = (ed === "yi" ? str(r.label?.he) : str(r.label?.en)) || ref;
+      const label = (isHebrewScriptEdition(ed) ? str(r.label?.he) : str(r.label?.en)) || ref;
       return {
         ref,
         label: run(label, ed),
@@ -231,8 +231,8 @@ export function workPage(d: EntryData, ed: Ed, w: LayerWork): WorkPage {
   const topicId = typeof w.sameAsTopic === "string" ? w.sameAsTopic : null;
   if (topicId !== null) {
     const topic = d.layer.topic(topicId);
-    const label = topic ? textOf(topic.label, ed) : "";
-    if (label !== "") seeAlso.push({ label: run(label, ed), href: entryHref(d, ed, "topic", topicId) });
+    const label = topic ? textRun(topic.label, ed) : null;
+    if (label) seeAlso.push({ label, href: entryHref(d, ed, "topic", topicId) });
     for (const p of d.layer.people) {
       if (p.sameAsTopic !== topicId || p.id === authorRec?.id || p.listed?.quiet !== true) continue;
       const name = headword(ed, { en: str(p.nameEn), yi: str(p.nameYi), he: str(p.nameHe) }).title;

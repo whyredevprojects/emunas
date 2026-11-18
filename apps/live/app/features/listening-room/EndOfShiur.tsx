@@ -10,6 +10,7 @@ import { Text } from "../../components/Text.tsx";
 import type { RoomContext } from "./context.ts";
 import { endOfShiur } from "./corpus.ts";
 import { roomStyles as s } from "./styles.ts";
+import { labelText } from "../../i18n/content.ts";
 
 const paths = livePaths();
 
@@ -49,7 +50,7 @@ export function EndOfShiur({ room }: { room: RoomContext }): JSX.Element {
       {offer?.kind === "topic" ? (
         <p>
           <Link to={paths.topic(ui, offer.topic.id)} className={s.relatedLink} data-end-topic={offer.topic.id}>
-            {rt("end.topic", { topic: offer.topic.label[ui] })}
+            {rt("end.topic", { topic: labelText(offer.topic.label, ui) })}
           </Link>
         </p>
       ) : null}

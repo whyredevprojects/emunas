@@ -14,7 +14,6 @@
  * there is no list of all threads (K). An id with no thread file (a two-shiur cluster, a retired id)
  * is a 404. Thread pages are always noindex with no canonical (D8; `app/seo`).
  */
-import type { Ed } from "@emunas/corpus/public";
 import { corpusLabel, formatHebrewYear, languageName, type UiLang } from "@emunas/i18n";
 import { livePaths } from "@emunas/links";
 import { useEffect, useMemo, useState, type JSX } from "react";
@@ -131,7 +130,7 @@ function ThreadBody({ file, ui }: { file: ThreadFile; ui: UiLang }): JSX.Element
             {topics.map((x) => (
               <li key={x.id}>
                 <Link className={s.chip} to={paths.topic(ui, x.id)} data-topic-link={x.id}>
-                  <Text value={x.label[ui]} lang={ui} />
+                  <Text value={x.label} lang={ui} />
                 </Link>
               </li>
             ))}
@@ -205,7 +204,7 @@ function MemberRow({
 }: {
   member: ThreadMember;
   ui: UiLang;
-  read: Ed;
+  read: UiLang;
   current: boolean;
   onPlay: () => void;
 }): JSX.Element {

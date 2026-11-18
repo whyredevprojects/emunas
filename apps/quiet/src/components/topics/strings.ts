@@ -1,12 +1,12 @@
 /**
  * UI strings of the topic index, מפתח הענינים (concept-quiet-corpus C4.1). The AI label, kind and
  * grade names are shared with Live and come from `@emunas/i18n` (`corpusLabel`); only Quiet's own
- * wording is here. `yi` is typed against the English keys, so a missing key fails `tsc`.
+ * wording is here. `yi` and `he` are typed against the English keys, so a missing key fails `tsc`.
  *
  * Wording status: unreviewed (proposed; the Yiddish needs a native reader). Yiddish speaks of the
  * Mashgiach as "דער משגיח".
  */
-import { createT, type MessageTable, type TFunction } from "@emunas/i18n";
+import { byUiLang, createT, type MessageTable, type TFunction } from "@emunas/i18n";
 import type { Ed } from "../../lib/edition.ts";
 
 export const topicsEn = {
@@ -48,8 +48,26 @@ export const topicsYi: MessageTable<TopicsKey> = {
   "row.sections": "טיילן וועגן דעם",
 };
 
-const tables = { en: topicsEn, yi: topicsYi };
+export const topicsHe: MessageTable<TopicsKey> = {
+  "tree.intro":
+    "נושאי השיעורים לפי שערים, עם הנושאים שתחת כל שער ופרטיהם אחרי מקף. המספר הוא בכמה שיעורים מדובר בו.",
+  "tree.gates": "שערי המפתח",
+  "rule.calendar": "הלוח מראה מה נאמר ביום מסוים; מפתח הענינים מראה היכן מדובר בכך.",
+  "count.shiurim": { one: "{count} שיעור", other: "{count} שיעורים" },
+  "topic.place": "במפתח",
+  "topic.beginHere": "התחילו כאן",
+  "topic.children": "הנושאים שתחתיו",
+  "topic.fullList": { one: "הרשימה המלאה: {count} שיעור", other: "הרשימה המלאה: {count} שיעורים" },
+  "topic.allTitle": "כל השיעורים",
+  "topic.backToEntry": "חזרה לערך",
+  "topic.calendar": "בלוח",
+  "row.onOccasion": "נאמר ב{occasion}",
+  "row.yearUnknown": "השנה לא נרשמה",
+  "row.sections": "חלקים בנושא זה",
+};
+
+const ts = byUiLang((ed) => createT<TopicsKey>({ en: topicsEn, yi: topicsYi, he: topicsHe }, ed));
 
 export function useTopicsT(ed: Ed): TFunction<TopicsKey> {
-  return createT<TopicsKey>(tables, ed);
+  return ts[ed];
 }

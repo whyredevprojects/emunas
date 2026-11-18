@@ -2,7 +2,6 @@
  * Explore's two result units (concept-live §5.2): shiurim and moments, both virtualized
  * (`virtual.ts`). Rows have a fixed height; long one-liners and titles are clamped by the CSS.
  */
-import type { Ed } from "@emunas/corpus/public";
 import { formatClock, formatDuration, formatNumber, languageName, notice, type UiLang } from "@emunas/i18n";
 import { livePaths } from "@emunas/links";
 import { useId, useRef, type JSX, type ReactNode } from "react";
@@ -71,7 +70,7 @@ function YearMeta({ years, ui }: { years: readonly number[]; ui: UiLang }): JSX.
   );
 }
 
-export function ShiurList({ rows, ui, read, label }: { rows: readonly CorpusRow[]; ui: UiLang; read: Ed; label: string }): JSX.Element {
+export function ShiurList({ rows, ui, read, label }: { rows: readonly CorpusRow[]; ui: UiLang; read: UiLang; label: string }): JSX.Element {
   const et = exploreT(ui);
   return (
     <VirtualList
@@ -110,8 +109,8 @@ export function MomentList({
   moments: readonly MomentRow[];
   rowsById: ReadonlyMap<string, CorpusRow>;
   ui: UiLang;
-  /** Language of the moment titles (the shard's language). */
-  lang: Ed;
+  /** Language of the moment titles (the shard's language; a row's `titleLang` overrides it). */
+  lang: UiLang;
   label: string;
 }): JSX.Element {
   const et = exploreT(ui);
@@ -130,7 +129,7 @@ export function MomentList({
           return (
             <div className={s.momentRow} data-moment={m.id}>
               <span className={s.kind}>{et(`explore.kind.one.${m.kind}` as ExploreKey)}</span>
-              <Text as="span" id={labelId} className={s.rowTitle} value={m.title} lang={lang} />
+              <Text as="span" id={labelId} className={s.rowTitle} value={m.title} lang={m.titleLang ?? lang} />
               {shiur ? (
                 <span className={s.rowMeta}>
                   <Text value={shiur.title} shiurLang={shiur.lang} />

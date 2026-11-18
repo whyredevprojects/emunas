@@ -362,9 +362,8 @@
   }
 
   /* Hebrew letters have no case and no tracking. */
-  :lang(yi) .label,
   .label:lang(yi),
-  :lang(he) .label {
+  .label:lang(he) {
     letter-spacing: 0;
     text-transform: none;
   }
@@ -425,8 +424,10 @@
     font-style: italic;
   }
 
-  :lang(yi).path-note,
-  :lang(yi) .catalog-notice {
+  .path-note:lang(yi),
+  .path-note:lang(he),
+  .catalog-notice:lang(yi),
+  .catalog-notice:lang(he) {
     font-style: normal;
   }
 
@@ -507,7 +508,8 @@
     font-variant-numeric: lining-nums;
   }
 
-  /* The root chooser: Yiddish on the right, English on the left (concept-quiet §8). */
+  /* The root chooser: one column per edition, the right-to-left editions on the right and English
+     on the left (concept-quiet §8; order from lib/edition.ts `CHOOSER_ORDER`). */
   .chooser {
     display: grid;
     gap: var(--space-xl);
@@ -519,7 +521,7 @@
 
   @media (min-width: 40rem) {
     .chooser {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
     }
   }
 

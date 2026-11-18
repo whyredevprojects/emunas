@@ -23,7 +23,6 @@ import { byYear } from "../entities/model.ts";
 import { CorpusLabel } from "../../components/CorpusLabel.tsx";
 import { NotFound } from "../../shell/PageStub.tsx";
 import { readingLang, useSettings } from "../../shell/settings.ts";
-import type { Ed } from "@emunas/corpus/public";
 import {
   loadCorpus,
   loadWork,
@@ -46,6 +45,7 @@ import {
   type ChapterGroup,
   type Place,
 } from "./model.ts";
+import { latinEdition, hebrewFormLang } from "../../i18n/content.ts";
 
 const paths = livePaths();
 
@@ -77,7 +77,7 @@ export function WorkPage(): JSX.Element {
 
   const heading = data ? (
     group ? (
-      <Text value={chapterLabel(group, ui)} lang={ui === "en" ? "en" : "he"} />
+      <Text value={chapterLabel(group, ui)} lang={hebrewFormLang(ui)} />
     ) : (
       <EntityName label={data.work.label} kind="w" ui={ui} />
     )
@@ -126,7 +126,7 @@ function WorkBody({ data, ui }: { data: Loaded; ui: UiLang }): JSX.Element {
   const index = wantsChapterIndex(layout);
   return (
     <>
-      {ui === "en" && work.label.he ? (
+      {latinEdition(ui) && work.label.he ? (
         <p className={s.muted}>
           <Text value={work.label.he} lang="he" />
         </p>
@@ -148,7 +148,7 @@ function WorkBody({ data, ui }: { data: Loaded; ui: UiLang }): JSX.Element {
             {layout.chapters.map((g) => (
               <li key={g.key}>
                 <Link className={s.chapterLink} to={chapterHref(ui, work.key, g.key)} data-chapter={g.key}>
-                  <Text value={chapterLabel(g, ui)} lang={ui === "en" ? "en" : "he"} />
+                  <Text value={chapterLabel(g, ui)} lang={hebrewFormLang(ui)} />
                   <span className={s.momentKind}>
                     {bt("seforim.chapter.places", { count: g.places.length })} · {bt("browse.shiurim", { count: shiurimIn(g.places).length })}
                   </span>
@@ -161,7 +161,7 @@ function WorkBody({ data, ui }: { data: Loaded; ui: UiLang }): JSX.Element {
         layout.chapters.map((g) => (
           <section key={g.key} className={s.section} aria-labelledby={`ch-${g.key}`} data-chapter={g.key}>
             <h2 id={`ch-${g.key}`} className={s.sectionTitle}>
-              <Text value={chapterLabel(g, ui)} lang={ui === "en" ? "en" : "he"} />
+              <Text value={chapterLabel(g, ui)} lang={hebrewFormLang(ui)} />
             </h2>
             <PlaceList places={g.places} rows={rows} ui={ui} sefaria={offersSefaria(work)} />
           </section>
@@ -197,7 +197,7 @@ function ChapterView({ data, chapters, group, ui }: { data: Loaded; chapters: re
   const i = chapters.indexOf(group);
   const prev = chapters[i - 1];
   const next = chapters[i + 1];
-  const lang = ui === "en" ? "en" : "he";
+  const lang = hebrewFormLang(ui);
   return (
     <>
       <p className={s.meta}>
@@ -247,7 +247,7 @@ function PlaceList({
           <li key={`${pl.location.ref}|${i}`} className={s.place} data-place={pl.location.sefariaRef ?? pl.location.ref}>
             <span className={s.moment}>
               {label.script === "cited" ? (
-                <Text as="strong" className={s.placeLabel} value={label.text} shiurLang={ui} />
+                <Text as="strong" className={s.placeLabel} value={label.text} shiurLang={null} />
               ) : (
                 <Text as="strong" className={s.placeLabel} value={label.text} lang={label.script} />
               )}
@@ -339,7 +339,7 @@ function WorkLinks({ work, ui }: { work: WorkFile; ui: UiLang }): JSX.Element | 
 }
 
 /** A family hub: its child works in data order with counts, then every shiur citing the family. */
-function Family({ work, rows, ui, read }: { work: WorkFile; rows: ReadonlyMap<string, CorpusRow>; ui: UiLang; read: Ed }): JSX.Element {
+function Family({ work, rows, ui, read }: { work: WorkFile; rows: ReadonlyMap<string, CorpusRow>; ui: UiLang; read: UiLang }): JSX.Element {
   const bt = browseT(ui);
   const familyRows = byYear(work.shiurIds.flatMap((id) => rows.get(id) ?? []));
   return (

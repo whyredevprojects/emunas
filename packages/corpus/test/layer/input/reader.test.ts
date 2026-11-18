@@ -35,6 +35,10 @@ function spy(inner: DataReader): DataReader & { paths: string[] } {
       paths.push(rel);
       return inner.exists(rel);
     },
+    list(rel) {
+      paths.push(rel);
+      return inner.list(rel);
+    },
     readText(rel) {
       paths.push(rel);
       return inner.readText(rel);

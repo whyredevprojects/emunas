@@ -24,6 +24,7 @@ import {
   type WorkGroup,
 } from "@emunas/normalize";
 import type { FacetLabel, WorkCitation, WorkFile, WorkLocation, WorkSummary } from "../entities/live-data.ts";
+import { latinEdition } from "../../i18n/content.ts";
 
 // ------------------------------------------------------------------------------------------ shelf
 
@@ -162,26 +163,26 @@ export function wantsChapterIndex(layout: WorkLayout): boolean {
 
 // ------------------------------------------------------------------------------------------ labels
 
-const num = (n: number, ui: UiLang): string => (ui === "en" || n < 1 || n > 999 ? String(n) : hebrewNumeral(n, "hebrew"));
+const num = (n: number, ui: UiLang): string => (latinEdition(ui) || n < 1 || n > 999 ? String(n) : hebrewNumeral(n, "hebrew"));
 
 /** "Bereishis 12", "Shabbos, daf 21" / "בראשית יב", "שבת דף כא". */
 export function chapterLabel(g: Pick<ChapterGroup, "parsed" | "unit">, ui: UiLang): string {
-  const name = ui === "en" ? g.parsed.en : g.parsed.he;
-  const section = ui === "en" ? g.parsed.section : (g.parsed.sectionHe ?? g.parsed.section);
+  const name = latinEdition(ui) ? g.parsed.en : g.parsed.he;
+  const section = latinEdition(ui) ? g.parsed.section : (g.parsed.sectionHe ?? g.parsed.section);
   const head = section ? `${name}, ${section}` : name;
-  if (g.unit.kind === "daf") return ui === "en" ? `${head}, daf ${g.unit.n}` : `${head} דף ${num(g.unit.n, ui)}`;
+  if (g.unit.kind === "daf") return latinEdition(ui) ? `${head}, daf ${g.unit.n}` : `${head} דף ${num(g.unit.n, ui)}`;
   return `${head} ${num(g.unit.n, ui)}`;
 }
 
 /** Label of one cited place: the parsed ref in the interface language, else the ref as cited. */
 export function placeLabel(pl: Place, ui: UiLang): { text: string; script: "he" | "en" | "cited" } {
-  if (pl.parsed) return ui === "en" ? { text: refLabel(pl.parsed, "en"), script: "en" } : { text: refLabel(pl.parsed, "he"), script: "he" };
+  if (pl.parsed) return latinEdition(ui) ? { text: refLabel(pl.parsed, "en"), script: "en" } : { text: refLabel(pl.parsed, "he"), script: "he" };
   return { text: pl.location.ref, script: "cited" };
 }
 
 /** The work's display name: Hebrew-script label in Yiddish, English otherwise. */
 export function workName(label: FacetLabel, ui: UiLang): string {
-  return ui === "en" ? label.en : label.he || label.yi || label.en;
+  return latinEdition(ui) ? label.en : label.he || label.yi || label.en;
 }
 
 /** Distinct shiurim citing the places of a chapter. */

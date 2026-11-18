@@ -36,12 +36,12 @@ import type {
 } from "@emunas/corpus/public";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { astroBuild } from "../../../../test/astro-build.ts";
+import { EDS } from "../../../lib/edition.ts";
 
 const require = createRequire(import.meta.url);
 const here = dirname(fileURLToPath(import.meta.url));
 const app = join(here, "..", "..", "..", "..");
 const repo = join(app, "..", "..");
-const EDS = ["yi", "en"] as const;
 
 let work = "";
 let corpus = "";
@@ -190,7 +190,7 @@ describe("topic pages", () => {
         for (const path of [`${ed}/inyanim/${dir}`, `${ed}/inyanim/${dir}/all`]) {
           if (!exists(path)) continue;
           for (const href of hrefsIn(mainOf(page(path)))) {
-            const m = /^\/(yi|en)\/shiur\/([^/]+)\/(?:#s(\d+))?$/.exec(href);
+            const m = /^\/(en|yi|he)\/shiur\/([^/]+)\/(?:#s(\d+))?$/.exec(href);
             if (!m) continue;
             expect(visible.has(m[2]!), `${path} → ${href}`).toBe(true);
             expect(status.get(m[2]!), `${path} → ${href}`).toBe("full");
@@ -257,7 +257,7 @@ describe("topic pages", () => {
             const p = href.replace(/#.*$/, "");
             // Names and sources pages are built by their own package (C2.1) from the same layer page
             // flags: a link there must name an entry the layer gives a Quiet page.
-            const entry = /^\/(?:yi|en)\/(people|sources)\/([^/]+)\/$/.exec(p);
+            const entry = /^\/(?:en|yi|he)\/(people|sources)\/([^/]+)\/$/.exec(p);
             if (entry) {
               if (!(entry[1] === "people" ? peoplePages : workPages).has(entry[2]!)) broken.push(`${path} → ${href}`);
               continue;

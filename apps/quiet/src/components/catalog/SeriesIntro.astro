@@ -6,8 +6,10 @@
  * wording and not the guide's), the overview, and the key themes as a short plain list (never
  * links). Generated, reported speech: set as plain paragraphs, without quotation styling. The
  * caller renders it only when the model has an intro, so a series without a synthesis shows no
- * empty block.
+ * empty block. Each text carries the lang/dir of the language it is shown in (the edition's, or
+ * the fallback's when there is no translation).
  */
+import { langAttrs } from "../../lib/content.ts";
 import type { Ed } from "../../lib/edition.ts";
 import type { SeriesIntro } from "./model.ts";
 import { useCatalogT } from "./strings.ts";
@@ -22,13 +24,13 @@ const c = useCatalogT(ed);
 ---
 <section class="series-intro" aria-labelledby="series-intro-h" data-series-intro data-reviewed={intro.reviewed ? "true" : undefined}>
   <h2 id="series-intro-h" class="visually-hidden">{c("series.intro")}</h2>
-  {intro.subtitle && <p class="series-subtitle" lang={ed}>{intro.subtitle}</p>}
-  {intro.overview && <p class="series-overview" lang={ed}>{intro.overview}</p>}
+  {intro.subtitle && <p class="series-subtitle" {...langAttrs(intro.subtitle)}>{intro.subtitle.text}</p>}
+  {intro.overview && <p class="series-overview" {...langAttrs(intro.overview)}>{intro.overview.text}</p>}
   {intro.keyThemes.length > 0 && (
     <>
       <h3 class="series-themes-h">{c("series.keyThemes")}</h3>
-      <ul class="series-themes" lang={ed}>
-        {intro.keyThemes.map((k) => <li>{k}</li>)}
+      <ul class="series-themes">
+        {intro.keyThemes.map((k) => <li {...langAttrs(k)}>{k.text}</li>)}
       </ul>
     </>
   )}
@@ -44,7 +46,8 @@ const c = useCatalogT(ed);
     font-style: italic;
   }
 
-  .series-subtitle:lang(yi) {
+  .series-subtitle:lang(yi),
+  .series-subtitle:lang(he) {
     font-style: normal;
   }
 

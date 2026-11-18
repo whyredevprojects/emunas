@@ -22,6 +22,7 @@ import { THEME_INIT_SCRIPT, colors } from "@emunas/tokens";
 import { chromium, type Browser, type Page } from "playwright-core";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { parseHeaders, renderHeaders } from "../../worker/render-headers.ts";
+import { EDS, dirOf, isHebrewScriptEdition } from "../../src/lib/edition.ts";
 
 const app = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const require = createRequire(import.meta.url);
@@ -152,13 +153,13 @@ async function open(
 }
 const errorsOf = (page: Page) => (page as Page & { errors?: string[] }).errors ?? [];
 
-describe.each(["yi", "en"] as const)("sample page, %s edition", (ed) => {
+describe.each(EDS)("sample page, %s edition", (ed) => {
   const path = `/${ed}/shell-sample/`;
 
   it("renders with the edition's lang and dir, nav, switch and both voices", async () => {
     const page = await open(path);
     expect(await page.getAttribute("html", "lang")).toBe(ed);
-    expect(await page.getAttribute("html", "dir")).toBe(ed === "yi" ? "rtl" : "ltr");
+    expect(await page.getAttribute("html", "dir")).toBe(dirOf(ed));
     expect(await page.locator(".site-nav a").count()).toBe(5);
     expect(await page.locator("h1").count()).toBe(1);
     expect(await page.locator("audio[preload=none]").count()).toBe(2);
@@ -166,11 +167,11 @@ describe.each(["yi", "en"] as const)("sample page, %s edition", (ed) => {
     expect(await page.locator(".voice-notes .notes-label").count()).toBe(1);
     expect(await page.locator("blockquote, q").count()).toBe(0);
 
-    // Yiddish: the nav starts at the right edge; English: at the left.
+    // Yiddish and Hebrew: the nav starts at the right edge; English: at the left.
     const nav = await page.locator(".site-nav li").first().boundingBox();
     const last = await page.locator(".site-nav li").last().boundingBox();
     expect(nav && last).toBeTruthy();
-    if (ed === "yi") expect(nav!.x).toBeGreaterThan(last!.x);
+    if (dirOf(ed) === "rtl") expect(nav!.x).toBeGreaterThan(last!.x);
     else expect(nav!.x).toBeLessThan(last!.x);
 
     // Header, breadcrumb, main and footer share one column.
@@ -184,7 +185,7 @@ describe.each(["yi", "en"] as const)("sample page, %s edition", (ed) => {
 
     // The body face is the self-hosted one.
     const family = await page.evaluate(() => getComputedStyle(document.querySelector("main p")!).fontFamily);
-    expect(family).toContain(ed === "yi" ? "Frank Ruhl Libre" : "Source Serif 4");
+    expect(family).toContain(isHebrewScriptEdition(ed) ? "Frank Ruhl Libre" : "Source Serif 4");
 
     await page.screenshot({ path: join(shotDir, `shell-sample-${ed}.png`), fullPage: true });
     await page.context().close();
@@ -239,7 +240,8 @@ describe("edition switch", () => {
   it("keeps the path without script", async () => {
     const page = await open("/en/shell-sample/#s2", { js: false });
     const hrefs = await page.$$eval("a[data-edition-switch]", (as) => as.map((a) => a.getAttribute("href")));
-    expect(hrefs).toEqual(["/yi/shell-sample/", "/yi/shell-sample/"]);
+    // header: every other edition; footer: "this page in …" for each
+    expect(hrefs).toEqual(["/yi/shell-sample/", "/he/shell-sample/", "/yi/shell-sample/", "/he/shell-sample/"]);
     // the no-JS time link opens the media file at the recording-local time, fractional seconds kept
     expect(await page.locator("#s2 a.time").getAttribute("href")).toBe(
       "https://media.example.org/Sample%20Folder/Part%202.mp3#t=269.5",
@@ -249,22 +251,32 @@ describe("edition switch", () => {
 
   it("keeps path and hash with script, also after the hash changes", async () => {
     const page = await open("/en/shell-sample/#s2");
-    expect(await page.locator(".edition-switch a").getAttribute("href")).toBe("/yi/shell-sample/#s2");
+    expect(await page.locator(".edition-switch a[hreflang=yi]").getAttribute("href")).toBe("/yi/shell-sample/#s2");
+    expect(await page.locator(".edition-switch a[hreflang=he]").getAttribute("href")).toBe("/he/shell-sample/#s2");
 
     await page.evaluate(() => (location.hash = "#t=754"));
-    await page.waitForFunction(() => document.querySelector(".edition-switch a")?.getAttribute("href")?.endsWith("#t=754"));
+    await page.waitForFunction(() =>
+      [...document.querySelectorAll(".edition-switch a")].every((a) => a.getAttribute("href")?.endsWith("#t=754")),
+    );
 
     // a hash set by replaceState (no hashchange event) is picked up on activation
     await page.evaluate(() => history.replaceState(null, "", "#s1"));
-    await page.locator(".edition-switch a").click();
+    await page.locator(".edition-switch a[hreflang=yi]").click();
     await page.waitForURL(`${origin}/yi/shell-sample/#s1`);
     expect(await page.getAttribute("html", "lang")).toBe("yi");
     expect(await page.locator("#s1").count()).toBe(1);
 
     // and back again from the footer link
     await page.evaluate(() => (location.hash = "#s0"));
-    await page.locator(".footer-links a[data-edition-switch]").click();
+    await page.locator(".footer-links a[data-edition-switch][hreflang=en]").click();
     await page.waitForURL(`${origin}/en/shell-sample/#s0`);
+
+    // and to the Hebrew edition
+    await page.evaluate(() => (location.hash = "#s2"));
+    await page.locator(".edition-switch a[hreflang=he]").click();
+    await page.waitForURL(`${origin}/he/shell-sample/#s2`);
+    expect(await page.getAttribute("html", "lang")).toBe("he");
+    expect(await page.getAttribute("html", "dir")).toBe("rtl");
     expect(errorsOf(page)).toEqual([]);
     await page.context().close();
   });
@@ -386,13 +398,14 @@ describe("axe harness", () => {
 });
 
 describe("root edition chooser", () => {
-  it("offers both editions, Yiddish on the right, with zero axe violations", async () => {
+  it("offers every edition, Yiddish and Hebrew on the right, with zero axe violations", async () => {
     const page = await open("/");
     const yi = await page.locator("#chooser-yi").boundingBox();
+    const he = await page.locator("#chooser-he").boundingBox();
     const en = await page.locator("#chooser-en").boundingBox();
     expect(yi!.x).toBeGreaterThan(en!.x);
-    expect(await page.locator('a[href="/yi/"]').count()).toBeGreaterThan(0);
-    expect(await page.locator('a[href="/en/"]').count()).toBeGreaterThan(0);
+    expect(he!.x).toBeGreaterThan(en!.x);
+    for (const ed of EDS) expect(await page.locator(`a[href="/${ed}/"]`).count(), ed).toBeGreaterThan(0);
     expect(await axe(page)).toEqual([]);
     await page.screenshot({ path: join(shotDir, "root-chooser.png"), fullPage: true });
     await page.context().close();

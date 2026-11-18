@@ -23,9 +23,6 @@ export const yi: MessageTable<UiKey> = {
   "nav.about": "וועגן",
 
   "edition.label": "אויסגאבע",
-  "edition.current": "אידישע אויסגאבע",
-  "edition.other": "English",
-  "edition.otherName": "ענגלישע אויסגאבע",
 
   "theme.label": "פארבן",
   "theme.light": "העל",
@@ -36,7 +33,7 @@ export const yi: MessageTable<UiKey> = {
   "breadcrumb.label": "דא זענט איר",
 
   "footer.recordingIsSource": "דער מקור איז די רעקארדירונגען. די קעפלעך זענען ווי געדרוקט אינעם פאקעט גייד פון 2012.",
-  "footer.otherEdition": "דער בלאט אויף ענגליש",
+  "footer.inLanguage": "דער בלאט אויף {language}",
   "footer.home": "אמונת",
 
   "time.playFrom": "שפילן פון {time}",

@@ -4,9 +4,11 @@ import { trigramMatch, wordsMatch } from "../src/fts.ts";
 import { adjust, groupByShiur, rrf } from "../src/rank.ts";
 import { decodeCursor, encodeCursor } from "../src/cursor.ts";
 import { findMarks, makeSnippet, SNIPPET_LENGTH } from "../src/snippet.ts";
-import { ENTITY_TYPES, fnv1a32Hex, parseVectorId, vectorIdFor } from "../src/contract.ts";
+import { UI_LANGS } from "@emunas/i18n";
+import { ALLOWED_KEYS, AUDIO_LANGS, ENTITY_TYPES, fnv1a32Hex, isAudioLang, parseVectorId, vectorIdFor } from "../src/contract.ts";
+import { parseTitles, snippetOrder } from "../src/search.ts";
 import { filterClause } from "../src/filters.ts";
-import { canonicalSearchKey, parseSearchParams } from "../src/params.ts";
+import { canonicalSearchKey, isMomentId, parseSearchParams } from "../src/params.ts";
 
 describe("normalizeQuery (search-core shim)", () => {
   it("folds Lag BaOmer spellings to the same tokens", () => {
@@ -108,6 +110,44 @@ describe("snippets", () => {
     const none = makeSnippet(long, "en", ["absent"]);
     expect(none.text.startsWith("filler")).toBe(true);
     expect(none.marks).toEqual([]);
+  });
+});
+
+describe("languages (UI_LANGS)", () => {
+  it("titles have one key per interface language", () => {
+    expect([...ALLOWED_KEYS.title]).toEqual([...UI_LANGS].sort());
+    expect(Object.keys(parseTitles("{}")).sort()).toEqual([...UI_LANGS].sort());
+  });
+
+  it("parseTitles keeps string titles of interface languages only", () => {
+    expect(parseTitles(JSON.stringify({ en: "A", he: "ב", yi: "", fr: "x", heardAs: "x" }))).toEqual({ en: "A", yi: null, he: "ב" });
+    expect(parseTitles(JSON.stringify({ en: 3, yi: ["x"], he: { t: "x" } }))).toEqual({ en: null, yi: null, he: null });
+    for (const bad of [null, "", "not json", "[1]", '"str"', "null"]) expect(parseTitles(bad)).toEqual({ en: null, yi: null, he: null });
+  });
+
+  it("snippets follow the reader's language, the matched language, then CONTENT_FALLBACK", () => {
+    expect(snippetOrder("he", undefined)).toEqual(["he", "yi", "en"]);
+    expect(snippetOrder("he", "en")).toEqual(["he", "en", "yi"]);
+    expect(snippetOrder("yi", undefined)).toEqual(["yi", "en", "he"]);
+    expect(snippetOrder("en", "en")).toEqual(["en", "yi", "he"]);
+    for (const l of UI_LANGS) expect([...snippetOrder(l, undefined)].sort()).toEqual([...UI_LANGS].sort());
+  });
+
+  it("ui takes every interface language; audio only recording languages", () => {
+    for (const l of UI_LANGS) expect(parseSearchParams(new URLSearchParams(`q=a&ui=${l}`)).ui).toBe(l);
+    expect(() => parseSearchParams(new URLSearchParams("q=a&ui=fr"))).toThrow();
+    expect(AUDIO_LANGS).toEqual(["en", "yi"]);
+    expect(isAudioLang("he")).toBe(false);
+    expect(parseSearchParams(new URLSearchParams("q=a&audio=yi,en")).filters.audio).toEqual(["en", "yi"]);
+  });
+
+  it("moment ids and vector ids take every interface language", () => {
+    for (const l of UI_LANGS) {
+      expect(isMomentId(`a-b~wp3.1.${l}`), l).toBe(true);
+      expect(parseVectorId(vectorIdFor("a-b~s3", l))).toEqual({ momentId: "a-b~s3", lang: l });
+    }
+    expect(isMomentId("a-b~wp3.1.fr")).toBe(false);
+    expect(isMomentId("a-b~whe2.1")).toBe(true);
   });
 });
 

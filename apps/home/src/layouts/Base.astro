@@ -12,11 +12,12 @@ import "@emunas/tokens/tokens.css";
 import "../styles/home.css";
 import Dedication from "../components/Dedication.astro";
 import ThemeHead from "../components/ThemeHead.astro";
-import { CONTACT, EXTERNAL, INSTITUTION, INTERNET_NOTICE, SITE_DESCRIPTION, SITE_NAME, SITE_NAME_YI } from "../lib/content.ts";
+import { CONTACT, EXTERNAL, INSTITUTION, INTERNET_NOTICE, SITE_DESCRIPTION, SITE_NAME, SITE_NAME_HEBREW_SCRIPT } from "../lib/content.ts";
 import { fontPreloads } from "../lib/fonts.ts";
 import { NAV } from "../lib/nav.ts";
 import { headTags } from "../lib/seo.ts";
-import { currentSiteEnv, siteLinks } from "../lib/site-env.ts";
+import { siteLinks } from "../lib/langs.ts";
+import { currentSiteEnv } from "../lib/site-env.ts";
 
 interface Props {
   /** Page title without the site name; omitted on the home page. */
@@ -70,7 +71,7 @@ const tags = headTags(
       <div class="bar">
         <div class="wrap">
           <a class="brand" href="/" aria-label={`${SITE_NAME}, home`} aria-current={path === "/" ? "page" : undefined}>
-            <span class="brand-yi" lang="yi" dir="rtl" aria-hidden="true">{SITE_NAME_YI}</span>
+            <span class="brand-he" lang="he" dir="rtl" aria-hidden="true">{SITE_NAME_HEBREW_SCRIPT}</span>
             <span class="brand-en">{SITE_NAME}</span>
           </a>
           <nav class="primary" aria-label="Main">
@@ -116,7 +117,7 @@ const tags = headTags(
     <footer class="site-foot">
       <div class="wrap cols">
         <div class="f-about">
-          <a class="brand" href="/"><span class="brand-yi" lang="yi" dir="rtl" aria-hidden="true">{SITE_NAME_YI}</span><span class="brand-en">{SITE_NAME}</span></a>
+          <a class="brand" href="/"><span class="brand-he" lang="he" dir="rtl" aria-hidden="true">{SITE_NAME_HEBREW_SCRIPT}</span><span class="brand-en">{SITE_NAME}</span></a>
           <p>The shiurim, essays and sefarim of Harav Moshe Wolfson zt"l, the Mashgiach. The shiurim are free.</p>
           <p><a href={EXTERNAL.support}>Support the printing of the Mashgiach&rsquo;s sefarim</a></p>
         </div>

@@ -98,10 +98,55 @@ export const maasiosYi: MessageTable<MaasiosKey> = {
   "only.replaces": "דאס בייט אויס אייער ריי.",
 };
 
+export const maasiosHe: MessageTable<MaasiosKey> = {
+  "loading": "טוען…",
+  "error": "לא ניתן היה לטעון דף זה. בדקו את החיבור וטענו מחדש.",
+  "more": "הצגת עוד (נותרו {count})",
+  "lead": "המעשיות שסופרו בשיעורים. מעשה שהמשגיח סיפר יותר מפעם אחת מופיע פעם אחת, עם כל הפעמים שסופר.",
+  "facet.people": "מעשיות על",
+  "facet.people.all": "כולם",
+  "facet.people.more": "אישים נוספים",
+  "facet.people.page": "הדף של {name}",
+  "facet.topic": "נושא",
+  "facet.topic.all": "כל הנושאים",
+  "facet.many": "סופר יותר מפעם אחת",
+  "count": "{shown} מתוך {total} מעשיות",
+  "none": "אין מעשיות מתאימות.",
+  "card.told": { one: "סופר פעם אחת", other: "סופר {count} פעמים" },
+  "card.play": "השמעה",
+  "card.time.none": "הזמן אינו ידוע",
+  "card.tellings": "כל הפעמים שסופר",
+  "card.expand": "היכן הוא מסופר",
+  "card.collapse": "הסתרה",
+  "telling.show": "כפי שסופר בשיעור זה",
+  "telling.hide": "הסתרת סיפור זה",
+  "telling.loading": "טוען את הסיפור…",
+  "telling.error": "לא ניתן היה לטעון את הסיפור.",
+  "telling.none": "לשיעור זה אין סיכום משלו של המעשה.",
+  "telling.listen": "פתיחה בשיעור",
+  "telling.play": "השמעת הסיפור הזה",
+  "telling.playing": "מתנגן",
+  "telling.year.none": "השנה אינה ידועה",
+  "story.play": "השמעת אחד הסיפורים",
+  "story.tellings": "הפעמים שסופר",
+  "story.tellings.lead": "כל פעם שסופר, עם הקטע בשיעור שבו הוא נמצא.",
+  "only.title": "מעשיות בלבד",
+  "only.lead": "משמיע את המעשיות שלהלן זו אחר זו, סיפור אחד מכל מעשה.",
+  "only.play": { one: "השמעת {count} מעשה", other: "השמעת {count} מעשיות" },
+  "only.skipped": {
+    one: "{count} מעשה ששמעתם בביקור זה מדולג.",
+    other: "{count} מעשיות ששמעתם בביקור זה מדולגות.",
+  },
+  "only.reset": "לכלול אותן שוב",
+  "only.playing": { one: "משמיע {count} מעשה בתור.", other: "משמיע {count} מעשיות בתור." },
+  "only.failed": "לא ניתן היה להתחיל את ההשמעה.",
+  "only.replaces": "מחליף את התור שלכם.",
+};
+
 export type MaasiosT = TFunction<MaasiosKey>;
 
 const cache: Partial<Record<UiLang, MaasiosT>> = {};
 
 export function maasiosT(ui: UiLang): MaasiosT {
-  return (cache[ui] ??= createT<MaasiosKey>({ en: maasiosEn, yi: maasiosYi }, ui));
+  return (cache[ui] ??= createT<MaasiosKey>({ en: maasiosEn, yi: maasiosYi, he: maasiosHe }, ui));
 }

@@ -5,7 +5,7 @@
  *
  * Ids and keys are single path segments; anything that could escape the segment is rejected.
  */
-import type { Ed } from "@emunas/corpus/public";
+import { isUiLang, type UiLang } from "@emunas/i18n";
 import type { DataKind, EntityKind } from "./types.ts";
 
 export const DATA_ROOT = "/data";
@@ -23,8 +23,9 @@ function segment(what: string, value: string): string {
   return encodeURIComponent(value);
 }
 
-function lang(value: Ed): Ed {
-  if (value !== "en" && value !== "yi") throw new DataPathError(`invalid language: ${String(value)}`);
+/** A reading language: any interface language (`UI_LANGS`). */
+function lang(value: UiLang): UiLang {
+  if (!isUiLang(value)) throw new DataPathError(`invalid language: ${String(value)}`);
   return value;
 }
 
@@ -34,7 +35,7 @@ export const dataPaths = {
   facets: () => `${DATA_ROOT}/facets.json`,
   today: () => `${DATA_ROOT}/today.json`,
   shiur: (id: string) => `${DATA_ROOT}/shiur/${segment("shiur id", id)}.json`,
-  writeup: (id: string, l: Ed) => `${DATA_ROOT}/writeup/${segment("shiur id", id)}.${lang(l)}.json`,
+  writeup: (id: string, l: UiLang) => `${DATA_ROOT}/writeup/${segment("shiur id", id)}.${lang(l)}.json`,
   series: (id: string) => `${DATA_ROOT}/series/${segment("series id", id)}.json`,
   works: () => `${DATA_ROOT}/works.json`,
   work: (key: string) => `${DATA_ROOT}/work/${segment("work key", key)}.json`,
@@ -42,11 +43,11 @@ export const dataPaths = {
     if (kind !== "p" && kind !== "c" && kind !== "o") throw new DataPathError(`invalid entity kind: ${String(kind)}`);
     return `${DATA_ROOT}/entity/${kind}/${segment("entity key", key)}.json`;
   },
-  moments: (l: Ed, shard: number) => {
+  moments: (l: UiLang, shard: number) => {
     if (!Number.isInteger(shard) || shard < 0) throw new DataPathError(`invalid shard: ${shard}`);
     return `${DATA_ROOT}/moments/${lang(l)}-${shard}.json`;
   },
-  quickIndex: (l: Ed) => `${DATA_ROOT}/quick-index.${lang(l)}.json`,
+  quickIndex: (l: UiLang) => `${DATA_ROOT}/quick-index.${lang(l)}.json`,
   topics: () => `${DATA_ROOT}/topics.json`,
   topic: (id: string) => `${DATA_ROOT}/topic/${segment("topic id", id)}.json`,
   topicMoments: (id: string, page: number) => {

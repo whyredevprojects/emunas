@@ -41,7 +41,7 @@ const t = useShiurT(ed);
       <h3 class="label" id={`sources-${g.group}`}>{g.label}</h3>
       <ol role="list" class="source-list">
         {g.sources.map((s) => {
-          const ref = <bdi {...runAttrs(s.ref.text, ed)}>{s.ref.text}</bdi>;
+          const ref = <bdi {...runAttrs(s.ref.text, null, ed)}>{s.ref.text}</bdi>;
           return (
             <li id={s.anchor}>
               <span>{s.letter}</span>

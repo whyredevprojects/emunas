@@ -2,11 +2,11 @@
  * UI strings for the calendar (לוח) and year (שנים) pages (concept-quiet §5.5, §5.6). Kept beside
  * the components that use them so this package does not edit the shared table in `src/i18n/`
  * (W2.3); the integrator may fold them in later. Same rules: `createT` from `@emunas/i18n`, the
- * Yiddish table is typed against the English keys.
+ * Yiddish and Hebrew tables are typed against the English keys.
  *
  * Wording status: unreviewed (W5.3 does the fixed-copy pass).
  */
-import { createT, type MessageTable, type TFunction } from "@emunas/i18n";
+import { byUiLang, createT, type MessageTable, type TFunction } from "@emunas/i18n";
 import type { Ed } from "../../lib/edition.ts";
 
 export const calendarEn = {
@@ -117,14 +117,62 @@ export const calendarYi: MessageTable<CalendarKey> = {
     "די סדרות און די שמחות זענען נישט דאטירט אינעם פאקעט גייד פון 2012, און רוב רעקארדירונגען אויסער דעם גייד האבן נישט קיין יאר. זיי שטייען דא לויט די אפטיילונגען, אינעם סדר פון קאטאלאג.",
 };
 
-const cache = new Map<Ed, TFunction<CalendarKey>>();
+export const calendarHe: MessageTable<CalendarKey> = {
+  "cal.label": "לוח",
+  "cal.views": "הלוח לפי",
+  "cal.byParsha": "לפי הפרשיות",
+  "cal.byZman": "לפי הזמנים",
+  "cal.byYear": "לפי השנים",
+
+  "cal.parsha.title": "שיעורים לפי הפרשיות",
+  "cal.parsha.intro": "כל שיעור על כל פרשה, באידיש ובאנגלית יחד, לפי השנים.",
+  "cal.zman.title": "שיעורים לפי הזמנים",
+  "cal.zman.intro": "לאורך השנה, מאלול. כל שיעור על כל זמן, באידיש ובאנגלית יחד, לפי השנים.",
+
+  "cal.chumash.bereishis": "ספר בראשית",
+  "cal.chumash.shemos": "ספר שמות",
+  "cal.chumash.vayikra": "ספר ויקרא",
+  "cal.chumash.bamidbar": "ספר במדבר",
+  "cal.chumash.devarim": "ספר דברים",
+
+  "cal.count": { one: "{count} שיעור", other: "{count} שיעורים" },
+  "cal.countNone": "אין שיעורים",
+  "cal.parsha.pageIntro": "כל שיעור על פרשה זו בקטלוג, באידיש ובאנגלית, לפי השנים.",
+  "cal.zman.pageIntro": "כל שיעור על זמן זה בקטלוג, באידיש ובאנגלית, לפי השנים.",
+  "cal.parsha.empty": "אין בקטלוג שיעור על פרשה זו.",
+  "cal.zman.empty": "אין בקטלוג שיעור על זמן זה.",
+  "cal.sub.seudah": "בסעודה",
+  "cal.sub.lechaim": "בלחיים",
+  "cal.audience.children": "לילדים",
+  "cal.audience.bachurim": "לבחורים",
+  "cal.yearUnknown": "השנה לא נרשמה",
+
+  "cal.topicLine": {
+    one: "על {occasion} מדובר גם ב־{count} שיעור שנאמר בזמן אחר",
+    other: "על {occasion} מדובר גם ב־{count} שיעורים שנאמרו בזמנים אחרים",
+  },
+
+  "cal.other.title": "זמנים אחרים",
+  "cal.other.intro": "שיעורים שהמדריך מונה תחת זמן שאין לו מקום משלו למעלה.",
+
+  "years.title": "שיעורים לפי השנים",
+  "years.intro": "השנה נרשמה ל־{known} מתוך {total} השיעורים. שיעור שנאמר במשך שתי שנים רשום תחת שתיהן.",
+  "years.col.year": "שנה",
+  "years.col.count": "שיעורים",
+  "years.unknown": "השנה לא נרשמה",
+  "years.page.intro": "לפי סדר השנה, לפי פרשה וזמן. הקטלוג אינו נותן תאריך מדויק יותר מן השנה.",
+  "years.unknown.title": "השנה לא נרשמה",
+  "years.unknown.intro": {
+    one: "הקטלוג אינו נותן שנה לשיעור זה.",
+    other: "הקטלוג אינו נותן שנה ל־{count} השיעורים האלה.",
+  },
+  "years.unknown.why":
+    "הסדרות והשמחות לא תוארכו במדריך הכיס משנת 2012, ורוב ההקלטות שמחוץ למדריך אינן נושאות שנה. הן רשומות כאן לפי המדורים, בסדר הקטלוג.",
+};
+
+const ts = byUiLang((ed) => createT<CalendarKey>({ en: calendarEn, yi: calendarYi, he: calendarHe }, ed));
 
 /** The typed `t()` for the calendar pages of an edition. */
 export function useCalendarT(ed: Ed): TFunction<CalendarKey> {
-  let t = cache.get(ed);
-  if (!t) {
-    t = createT<CalendarKey>({ en: calendarEn, yi: calendarYi }, ed);
-    cache.set(ed, t);
-  }
-  return t;
+  return ts[ed];
 }

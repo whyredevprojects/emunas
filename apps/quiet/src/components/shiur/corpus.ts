@@ -9,6 +9,7 @@
  * walking up from the working directory (`astro build` runs in `apps/quiet`). Without a corpus the
  * site still builds, with no shiur pages and a warning.
  */
+import { pickText } from "@emunas/i18n";
 import { existsSync, readFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import type { BuildInfo, CorpusIndex, IndexRow, PublicShiur } from "@emunas/corpus/public";
@@ -76,7 +77,10 @@ export function loadShiurCorpus(dir: string): ShiurCorpus {
     index,
     rows: (id) => rowMap.get(id),
     neighbours,
-    seriesTitle: (id, ed) => seriesTitles.get(id)?.[ed],
+    seriesTitle: (id, ed) => {
+      const title = seriesTitles.get(id);
+      return title ? pickText(title, ed).text : undefined;
+    },
     layer,
     // Only a shiur in the corpus index can have refs; a catalog-only shiur never does.
     refs: (id) => (rowMap.get(id) ? layer.shiurRefs(id) : null),

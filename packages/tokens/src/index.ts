@@ -14,8 +14,10 @@ export {
 export {
   FALLBACK_FACES,
   FONT_FAMILIES,
+  LANG_SCRIPT,
   fontManifest,
   fontStacks,
+  langsOfScript,
   preloadFonts,
   sizeAdjustOf,
   type FallbackFace,
@@ -24,6 +26,7 @@ export {
   type FontManifest,
   type FontMetrics,
   type FontRole,
+  type FontScript,
 } from "./fonts.ts";
 export {
   SHARED_COOKIE_DOMAIN,

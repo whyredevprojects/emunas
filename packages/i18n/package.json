@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "Shared i18n for both sites: typed t() factory, plurals, Hebrew years, durations, numbers, script/bidi helpers and data-vocabulary labels (en/yi). Framework-free and browser-safe.",
+  "description": "Shared i18n for both sites: the interface-language list (en/yi/he), content-language fallback, typed t() factory, plurals, Hebrew years, durations, numbers, script/bidi helpers and data-vocabulary labels. Framework-free and browser-safe.",
   "sideEffects": false,
   "exports": {
     ".": "./src/index.ts",

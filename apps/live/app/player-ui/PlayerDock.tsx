@@ -7,7 +7,7 @@
  * `aria-valuetext` like "12:03 of 43:10, chapter 3: …"; chapter changes go to a polite live region,
  * at most one per 10 s; all buttons have names; 44 px targets.
  */
-import { formatClock, sectionKindLabel, type UiLang } from "@emunas/i18n";
+import { formatClock, pickText, sectionKindLabel, type UiLang } from "@emunas/i18n";
 import { livePaths } from "@emunas/links";
 import { useEffect, useRef, useState, type ChangeEvent, type JSX } from "react";
 import { Link } from "react-router";
@@ -91,7 +91,8 @@ export function PlayerDock(): JSX.Element {
   const chapters = info?.shiur.notes?.chapters ?? [];
   const chapter = chapters[state.chapterIndex] ?? null;
   const reading = state.readingLang;
-  const chapterTitle = chapter ? chapter.title[reading] || chapter.title[reading === "en" ? "yi" : "en"] : null;
+  const picked = chapter ? pickText(chapter.title, reading) : null;
+  const chapterTitle = picked ? picked.text : null;
   const playing = state.status === "playing" || state.status === "loading";
   const announcement = useChapterAnnouncement(chapterTitle, state.chapterIndex, playing);
 
@@ -175,7 +176,7 @@ export function PlayerDock(): JSX.Element {
         <div className={s.titleRow}>
           <Link className={s.title} to={paths.shiur(ui, shiur.id)} aria-label={`${rt("dock.open")}: ${chapterTitle ?? shiur.catalog.titleOriginal}`}>
             {chapterTitle !== null ? (
-              <Text value={chapterTitle} lang={reading} />
+              <Text value={chapterTitle} lang={picked?.lang ?? reading} />
             ) : (
               <Text value={shiur.catalog.titleOriginal} shiurLang={shiur.lang} />
             )}

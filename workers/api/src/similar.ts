@@ -6,7 +6,8 @@ import { BadRequest, error, json } from "./http.ts";
 import type { Env } from "./env.ts";
 import { parseSimilarParams, type SimilarParams } from "./params.ts";
 import { corpusRev, hydrate, momentIdsOfVectors } from "./search.ts";
-import { vectorIdFor, type Lang, type SimilarResponse, type SimilarResult } from "./contract.ts";
+import { otherUiLangs, type UiLang } from "@emunas/i18n";
+import { vectorIdFor, type SimilarResponse, type SimilarResult } from "./contract.ts";
 import { roundScore } from "./rank.ts";
 
 export async function handleSimilar(request: Request, env: Env): Promise<Response> {
@@ -23,7 +24,8 @@ export async function handleSimilar(request: Request, env: Env): Promise<Respons
   const source = self.get(p.moment);
   if (!source) return error("not_found");
 
-  const langs: Lang[] = source.audioLang === "yi" ? ["yi", "en"] : ["en", "yi"];
+  // The recording's own language first, then every other interface language (UI_LANGS order).
+  const langs: UiLang[] = [source.audioLang, ...otherUiLangs(source.audioLang)];
   let matches: VectorizeMatch[] | null = null;
   for (const lang of langs) {
     try {
@@ -56,7 +58,7 @@ export async function handleSimilar(request: Request, env: Env): Promise<Respons
       kind: f.kind,
       t: f.t,
       end: f.end,
-      title: { en: f.titleEn, yi: f.titleYi },
+      title: { ...f.titles },
       score: roundScore(score),
     });
     if (results.length >= p.limit) break;

@@ -1,12 +1,12 @@
 /**
  * UI strings of the corpus-entry indexes (names, sources, glossary). Kept beside the index
  * components; shared shell strings (nav, citation number,
- * notes label) come from `src/i18n`. Same rules as the shell tables: `yi` is typed against the
+ * notes label) come from `src/i18n`. Same rules as the shell tables: `yi` and `he` are typed against the
  * English keys, so a missing key fails `tsc`; plain voice, no marketing words.
  *
  * Wording status: unreviewed (W5.3 does the fixed-copy pass; Yiddish needs a native reader).
  */
-import { createT, type MessageTable, type TFunction } from "@emunas/i18n";
+import { byUiLang, createT, type MessageTable, type TFunction } from "@emunas/i18n";
 import type { Ed } from "../../lib/edition.ts";
 
 export const indexesEn = {
@@ -112,15 +112,59 @@ export const indexesYi: MessageTable<IndexesKey> = {
   "glossary.also": "אויך געשריבן:",
 };
 
-const tables = { en: indexesEn, yi: indexesYi } as const;
-const cache = new Map<Ed, TFunction<IndexesKey>>();
+export const indexesHe: MessageTable<IndexesKey> = {
+  "index.jump": "עברו אל",
+
+  "count.shiurim": { one: "{count} שיעור", other: "{count} שיעורים" },
+  "count.stories": { one: "{count} מעשה", other: "{count} מעשיות" },
+
+  "work.group.torah": "תורה",
+  "work.group.neviim": "נביאים",
+  "work.group.kesuvim": "כתובים",
+  "work.group.targum": "תרגום",
+  "work.group.mishnah": "משנה",
+  "work.group.bavli": "תלמוד בבלי",
+  "work.group.yerushalmi": "תלמוד ירושלמי",
+  "work.group.midrash": "מדרש",
+  "work.group.zohar": "זוהר וקבלה",
+  "work.group.rishonim": "ראשונים",
+  "work.group.acharonim": "אחרונים וחסידות",
+  "work.group.tefillah": "תפילה ופיוט",
+  "work.group.other": "ספרים אחרים",
+  "work.group.unmapped": "עדיין אינם ברשימת הספרים",
+  "work.group.general": "מראי מקומות כלליים",
+  "work.generalNote": "נזכרים בלי ספר או מקום מסוים (\"אומר המדרש\").",
+  "work.refs": "לפי המקום",
+  "work.otherRefs": "מראי מקומות אחרים",
+  "work.onSefaria": "ספריא",
+  "work.onSefariaLabel": "{ref} בספריא (אתר חיצוני)",
+
+  "names.intro": "אישים הנזכרים בשיעורים, לפי הדורות: תנ\"ך, חז\"ל, ראשונים, אחרונים, צדיקי החסידות, ואחריהם אחרים. מי שנזכר בשיעור אחד או בשניים רשום עם השיעורים האלה; לכל אחד אחר יש דף.",
+  "names.also": "גם:",
+  "names.see": "ראה",
+  "names.seforim": "ספרים המובאים",
+  "names.stories": "מעשיות",
+  "names.shiurim": "שיעורים",
+  "names.allShiurim": { one: "השיעור ({count})", other: "כל {count} השיעורים" },
+  "names.allTitle": "{name}: כל השיעורים",
+  "works.intro": "ספרים המובאים בשיעורים, בסדר של מפתח: תורה, נביאים, כתובים, משנה וגמרא לפי המסכתות, מדרש, זוהר, ראשונים, ואחריהם ספרים מאוחרים. ספר המובא בשיעור אחד רשום עם אותו שיעור; שם כללי (\"המדרש\") רשום עם שיעוריו בסוף.",
+  "works.by": "מאת",
+  "works.onSefaria": "בספריא",
+  "works.onSefariaLabel": "{title} בספריא (אתר חיצוני)",
+  "works.family": "ספרים במשפחה זו",
+  "works.familyShiurim": "שיעורים המביאים אותו בשם זה",
+  "works.shiurim": "שיעורים",
+  "works.alsoCited": "מובא גם, בלי מקום",
+  "glossary.intro": "מושגים כפי שהם משמשים בשיעורים, מא׳ עד ת׳, כל אחד עם הגדרה קצרה. למושג המופיע בחמישה שיעורים או יותר יש דף עם המקומות שבהם הוא מבואר היטב; מושג המופיע בהרבה מאוד שיעורים מסומן כך.",
+  "glossary.examples": "מבואר היטב ב",
+  "glossary.shiurim": "שיעורים",
+  "glossary.topic": "ראה את הנושא",
+  "glossary.also": "נכתב גם:",
+};
+
+const ts = byUiLang((ed) => createT<IndexesKey>({ en: indexesEn, yi: indexesYi, he: indexesHe }, ed));
 
 /** The typed `t()` for the index strings of an edition. */
 export function useIndexesT(ed: Ed): TFunction<IndexesKey> {
-  let t = cache.get(ed);
-  if (!t) {
-    t = createT<IndexesKey>(tables, ed);
-    cache.set(ed, t);
-  }
-  return t;
+  return ts[ed];
 }

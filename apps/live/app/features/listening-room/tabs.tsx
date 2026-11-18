@@ -10,14 +10,25 @@
  * through this shiur, main topics, other years of the same occasion, then the automatic neighbours.
  * There is no "counterpart in the other language" item.
  */
-import { audioLanguageLabel, formatClock, formatHebrewYear, sourceRefParts } from "@emunas/i18n";
+import {
+  audioLanguageLabel,
+  formatClock,
+  formatHebrewYear,
+  languageName,
+  sourceRefParts,
+  UI_DIR,
+  UI_ENDONYM,
+  UI_LANGS,
+  UI_LOCALE,
+  type UiLang,
+} from "@emunas/i18n";
 import { livePaths, parseMomentId } from "@emunas/links";
 import { useEffect, useRef, type JSX, type ReactNode } from "react";
 import { Tab, TabList, TabPanel, Tabs, type Key } from "react-aria-components";
 import { Link } from "react-router";
 import { Text } from "../../components/Text.tsx";
 import type { PublicSource } from "@emunas/corpus/public";
-import { loadShiur, type Ed } from "./data.ts";
+import { loadShiur } from "./data.ts";
 import { settingsStore } from "../../shell/settings.ts";
 import type { FeedbackField } from "../feedback/index.ts";
 import type { RoomContext } from "./context.ts";
@@ -30,6 +41,7 @@ import { relatedTitles, seriesTitle, useWriteup, type RelatedTitle } from "./use
 import { playAt as enginePlayAt } from "../../player-ui/index.ts";
 import { TRANSCRIPT_VIEW } from "../../config/feature-flags.ts";
 import { TRANSCRIPT_TAB, TranscriptTab, transcriptT, useTranscripts } from "../transcript/index.ts";
+import { labelText } from "../../i18n/content.ts";
 
 export type TabId = "read" | "sources" | "insights" | "questions" | "stories" | "related" | typeof TRANSCRIPT_TAB;
 
@@ -158,7 +170,7 @@ function ReadTab({ room }: { room: RoomContext }): JSX.Element {
   const sources = shiur.notes?.sources ?? [];
 
   // Language switch keeps position by sectionIndex (shared by both languages).
-  const switchTo = (lang: Ed) => {
+  const switchTo = (lang: UiLang) => {
     const blocks = container.current?.querySelectorAll<HTMLElement>("[data-section-index]") ?? [];
     for (const b of blocks) {
       if (b.getBoundingClientRect().bottom > 0) {
@@ -178,25 +190,31 @@ function ReadTab({ room }: { room: RoomContext }): JSX.Element {
   return (
     <div ref={container}>
       <div className={s.langToggle} role="group" aria-label={rt("read.readingIn")}>
-        {(["en", "yi"] as const).map((l) => (
+        {UI_LANGS.map((l) => (
           <button
             key={l}
             type="button"
             className={s.toggle}
             aria-pressed={reading === l}
             onClick={() => switchTo(l)}
-            lang={l}
+            lang={UI_LOCALE[l]}
+            dir={UI_DIR[l]}
           >
-            {l === "en" ? "English" : "אידיש"}
+            {UI_ENDONYM[l]}
           </button>
         ))}
       </div>
       <AiLabel ui={room.ui} />
+      {w.status === "ready" && w.fallback ? (
+        <p className={s.note} data-writeup-fallback={w.lang}>
+          {rt("read.fallback", { lang: languageName(reading, room.ui), shown: languageName(w.lang, room.ui) })}
+        </p>
+      ) : null}
       {w.status === "loading" ? <p className={s.note}>{rt("read.loading")}</p> : null}
       {w.status === "missing" ? <p className={s.note}>{rt("read.missing")}</p> : null}
       {w.status === "ready"
         ? w.file.blocks.map((b) => (
-            <section key={b.sectionIndex} className={s.block} data-section-index={b.sectionIndex} lang={w.lang} dir={w.lang === "yi" ? "rtl" : "ltr"}>
+            <section key={b.sectionIndex} className={s.block} data-section-index={b.sectionIndex} lang={w.lang} dir={UI_DIR[w.lang]}>
               {b.heading ? <Text as="h3" className={s.h3} value={b.heading} lang={w.lang} /> : null}
               {b.paragraphs.map((p) => {
                 const on = p.id === active;
@@ -477,11 +495,11 @@ function StoryPeopleLine({ room, momentId }: { room: RoomContext; momentId: stri
           {i > 0 ? ", " : null}
           {"id" in p && p.page ? (
             <Link to={paths.person(ui, p.id)} data-entity={`p:${p.id}`} data-story-person="">
-              <Text value={p.label[ui]} lang={ui} />
+              <Text value={p.label} lang={ui} />
             </Link>
           ) : (
             <span data-story-person="">
-              <Text value={"id" in p ? p.label[ui] : p.name} shiurLang={ui} />
+              <Text value={"id" in p ? labelText(p.label, ui) : p.name} shiurLang={null} />
             </span>
           )}
         </span>
@@ -560,7 +578,7 @@ function RelatedTab({ room }: { room: RoomContext }): JSX.Element {
             {topics.map((t) => (
               <li key={t.id} data-topic={t.id}>
                 <Link to={paths.topic(ui, t.id)} className={s.relatedLink}>
-                  {rt("end.topic", { topic: t.label[ui] })}
+                  {rt("end.topic", { topic: labelText(t.label, ui) })}
                 </Link>
               </li>
             ))}
@@ -612,7 +630,7 @@ function RelatedTab({ room }: { room: RoomContext }): JSX.Element {
             {shiur.series ? (
               <li>
                 <Link to={paths.series(ui, shiur.series.id)} className={s.relatedLink}>
-                  {room.info.seriesTitle ? room.info.seriesTitle[ui] : <Text value={shiur.series.id} lang="en" />}
+                  {room.info.seriesTitle ? labelText(room.info.seriesTitle, ui) : <Text value={shiur.series.id} lang="en" />}
                 </Link>
               </li>
             ) : null}

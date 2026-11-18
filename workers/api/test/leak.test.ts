@@ -1,10 +1,12 @@
 /**
  * Acceptance: a planted heardAs-like string seeded into columns that are never returned
- * (moments.hash, moment_entities.entity_id, meta, the FTS search form, Vectorize metadata) does
+ * (moments.hash, unknown keys of moments.titles, moment_entities.entity_id, meta, the FTS search
+ * form, Vectorize metadata) does
  * not appear in any response, even when the planted moment itself is a hit.
  */
 import { env } from "cloudflare:workers";
 import { beforeAll, describe, expect, it } from "vitest";
+import { UI_LANGS } from "@emunas/i18n";
 import { FakeAI, FakeVectorize, PLANTED, call, makeEnv, migrate, seed } from "./helpers.ts";
 import type { SearchResponse } from "../src/contract.ts";
 
@@ -31,14 +33,18 @@ describe("planted transcript-like strings never reach a response", () => {
   it("the planted moment is found by its search form, but nothing planted is returned", async () => {
     for (const mode of ["lexical", "hybrid", "semantic"]) {
       for (const q of [PLANTED, "heardAs", "asrNotes", "purim"]) {
-        const { status, text } = await bodyOf(`/api/search?q=${encodeURIComponent(q)}&mode=${mode}`);
-        expect(status).toBe(200);
-        expectClean(text, `search ${mode} ${q}`);
+        for (const ui of UI_LANGS) {
+          const { status, text } = await bodyOf(`/api/search?q=${encodeURIComponent(q)}&mode=${mode}&ui=${ui}`);
+          expect(status).toBe(200);
+          expectClean(text, `search ${mode} ${q} ${ui}`);
+        }
       }
     }
     const hit = JSON.parse((await bodyOf(`/api/search?q=${PLANTED}&mode=lexical`)).text) as SearchResponse;
     expect(hit.results.map((r) => r.momentId)).toEqual(["yi-zmanim-planted-01~q0"]);
     expect(hit.results[0]?.snippet?.text).toBe("Why do we rejoice on Purim more than on other days?");
+    // The planted keys and the non-string he value in its titles column are dropped.
+    expect(hit.results[0]?.title).toEqual({ en: "Why do we rejoice on Purim", yi: "פארוואס פרייט מען זיך פורים", he: null });
   });
 
   it("filters, similar, health and errors are clean too", async () => {
@@ -62,6 +68,8 @@ describe("planted transcript-like strings never reach a response", () => {
     expect(row?.hash).toContain(PLANTED);
     const fts = await env.DB_SEARCH.prepare("SELECT count(*) AS n FROM fts_words WHERE fts_words MATCH ?").bind(`"${PLANTED.toLowerCase()}"`).first<{ n: number }>();
     expect(fts?.n).toBeGreaterThan(0);
+    const titles = await env.DB_SEARCH.prepare("SELECT titles FROM moments WHERE id = 'yi-zmanim-planted-01~q0'").first<{ titles: string }>();
+    expect(titles?.titles).toContain(PLANTED);
     const meta = await env.DB_SEARCH.prepare("SELECT v FROM meta WHERE k = 'heardAs'").first<{ v: string }>();
     expect(meta?.v).toBe(PLANTED);
   });

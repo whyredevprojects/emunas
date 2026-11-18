@@ -24,11 +24,12 @@
 import type { PublicRecording } from "@emunas/corpus/public";
 import { readPublishedTranscripts } from "@emunas/corpus/transcript-gate";
 import { findCorpusDir } from "./corpus.ts";
-import { followTextEn, followTextYi } from "./follow-text-strings.ts";
+import { FOLLOW_TEXT } from "./follow-text-strings.ts";
+import type { Ed } from "../../lib/edition.ts";
 
 interface Props {
   recordings: readonly PublicRecording[];
-  ed: "en" | "yi";
+  ed: Ed;
 }
 
 const { recordings, ed } = Astro.props;
@@ -37,7 +38,7 @@ const published = corpusDir ? readPublishedTranscripts(corpusDir) : new Map();
 const shown = recordings.filter((r) => published.has(r.id));
 const multi = recordings.length > 1;
 
-const c = ed === "yi" ? followTextYi : followTextEn;
+const c = FOLLOW_TEXT[ed];
 ---
 {shown.length > 0 && (
   <section class="follow-text" id="follow-text" aria-labelledby="follow-text-heading" data-print="hide" data-follow-text data-loading={c.loading} data-failed={c.failed}>

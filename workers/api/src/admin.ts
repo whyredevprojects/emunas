@@ -2,7 +2,8 @@
 import { error, json, UNKNOWN_PARAMETER } from "./http.ts";
 import type { Env } from "./env.ts";
 import { verifyAccess } from "./access.ts";
-import { FEEDBACK_STATUSES, type FeedbackField, type FeedbackReason, type FeedbackRow, type FeedbackStatus, type Lang } from "./contract.ts";
+import type { UiLang } from "@emunas/i18n";
+import { FEEDBACK_STATUSES, type FeedbackField, type FeedbackReason, type FeedbackRow, type FeedbackStatus } from "./contract.ts";
 
 export const DEFAULT_ADMIN_LIMIT = 500;
 export const MAX_ADMIN_LIMIT = 5000;
@@ -62,7 +63,7 @@ export async function handleAdminFeedback(request: Request, env: Env): Promise<R
     field: r.field as FeedbackField | null,
     reason: r.reason as FeedbackReason,
     text: r.text,
-    ui: r.ui as Lang,
+    ui: r.ui as UiLang,
     rev: r.rev,
     status: r.status as FeedbackStatus,
   }));

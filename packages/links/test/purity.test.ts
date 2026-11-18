@@ -14,14 +14,15 @@ describe("browser safety", () => {
   });
 
   for (const f of files) {
-    it(`${f} uses no Node, DOM or environment globals and imports only package-local modules`, () => {
+    it(`${f} uses no Node, DOM or environment globals and imports only package-local modules and @emunas/i18n`, () => {
       // Comments may mention globals (e.g. "pass process.env"); code may not.
       const text = readFileSync(join(SRC, f), "utf8")
         .replace(/\/\*[\s\S]*?\*\//g, "")
         .replace(/^\s*\/\/.*$/gm, "");
       expect(text).not.toMatch(/from\s+["']node:/);
       expect(text).not.toMatch(/\b(?:process|window|document|globalThis|localStorage|location)\s*[.[]/);
-      for (const m of text.matchAll(/from\s+["']([^"']+)["']/g)) expect(m[1]).toMatch(/^\.\//);
+      // @emunas/i18n (itself pure) is the one place the language set lives.
+      for (const m of text.matchAll(/from\s+["']([^"']+)["']/g)) expect(m[1]).toMatch(/^(?:\.\/|@emunas\/i18n$)/);
     });
   }
 });

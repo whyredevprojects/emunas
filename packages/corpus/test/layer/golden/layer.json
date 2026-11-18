@@ -1,5 +1,5 @@
 {
- "layerSchemaVersion": 3,
+ "layerSchemaVersion": 4,
  "corpusVersion": 2,
  "knownCorpusVersion": true,
  "generatedAt": "2026-11-15T16:59:42.611Z",
@@ -78,5 +78,14 @@
  "droppedRecords": 0,
  "lint": {
   "clusterCounts": []
+ },
+ "translations": {
+  "he": {
+   "files": 0,
+   "invalidFiles": 0,
+   "entries": 586,
+   "current": 0,
+   "stale": 0
+  }
  }
 }

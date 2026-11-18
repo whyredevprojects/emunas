@@ -52,7 +52,7 @@ One principle is added to the six in §3:
 > **גלות וגאולה** · 553
 > עקבתא דמשיחא 201 — עבודת הדור האחרון 134, סימני עקבתא דמשיחא 87 · ימות המשיח 181 · נסיונות הדור 87 · …
 
-The Hebrew label is the headword in both editions; the English edition puts "Hashgacha Pratis" beside it and sorts by that. The whole tree prints on three or four sheets, and it is the best single picture of what the Mashgiach spoke about. It deserves a place on the title page as one line: "ענינים: 207".
+The Hebrew label is the headword in every edition; the English edition puts "Hashgacha Pratis" beside it and sorts by that. The whole tree prints on three or four sheets, and it is the best single picture of what the Mashgiach spoke about. It deserves a place on the title page as one line: "ענינים: 207".
 
 **A topic page** (example: השגחה פרטית, under אמונה):
 

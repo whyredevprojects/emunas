@@ -21,7 +21,8 @@ import {
 } from "@emunas/corpus/public";
 import { liveConceptPage, livePersonPage, liveStoryPage, liveThreadPage, liveTopicPage, liveWorkPage } from "../data/live-pages.ts";
 import type { OccasionsFile, SeriesFile } from "@emunas/corpus/aggregate";
-import type { SeoCorpus, SeoEntity, SeoOccasion } from "./model.ts";
+import { byUiLang, pickText, type UiLang } from "@emunas/i18n";
+import type { SeoCorpus, SeoEntity, SeoLabel, SeoOccasion } from "./model.ts";
 
 function readJson<T>(dir: string, file: string): T {
   return JSON.parse(readFileSync(join(dir, file), "utf8")) as T;
@@ -55,6 +56,12 @@ interface LayerLists {
   threads: SeoEntity[];
 }
 
+/** A generated layer text as an SEO label: each interface language's text along `CONTENT_FALLBACK`. */
+function seoLabel(l: Partial<Record<UiLang, unknown>> | null | undefined): SeoLabel {
+  const text = byUiLang((lang) => str(l?.[lang]));
+  return byUiLang((lang) => pickText(text, lang).text);
+}
+
 /** The corpus layer's entities with their page flags. Throws when a `.corpus/layer/` file is missing. */
 export function readLayerLists(corpusDir: string): LayerLists {
   const dir = join(corpusDir, LAYER_DIR);
@@ -67,14 +74,18 @@ export function readLayerLists(corpusDir: string): LayerLists {
   return {
     topics: arr<LayerTopicNode>(read(LAYER_FILES.topics)["tree"]).map((t) => ({
       key: t.id,
-      label: { en: str(t.label?.en), yi: str(t.label?.yi) },
+      label: seoLabel(t.label),
       count: t.count,
       prerender: liveTopicPage(t),
       quietPage: quiet(t),
     })),
     concepts: arr<LayerConcept>(read(LAYER_FILES.concepts)["concepts"]).map((c) => ({
       key: c.id,
-      label: { en: str(c.label?.en) || str(c.canonicalHe), yi: str(c.label?.yi) || str(c.canonicalHe) },
+      label: {
+        en: str(c.label?.en) || str(c.canonicalHe),
+        yi: str(c.label?.yi) || str(c.canonicalHe),
+        he: str(c.canonicalHe) || str(c.label?.he) || str(c.label?.yi),
+      },
       count: c.count,
       prerender: liveConceptPage(c),
       quietPage: quiet(c),
@@ -82,28 +93,32 @@ export function readLayerLists(corpusDir: string): LayerLists {
     })),
     people: arr<LayerPerson>(read(LAYER_FILES.people)["people"]).map((p) => ({
       key: p.id,
-      label: { en: str(p.nameEn), yi: str(p.nameYi) || str(p.nameHe) || str(p.nameEn) },
+      label: {
+        en: str(p.nameEn),
+        yi: str(p.nameYi) || str(p.nameHe) || str(p.nameEn),
+        he: str(p.nameHe) || str(p.nameYi) || str(p.nameEn),
+      },
       count: p.count,
       prerender: livePersonPage(p),
       quietPage: quiet(p),
     })),
     works: arr<LayerWork>(read(LAYER_FILES.works)["works"]).map((w) => ({
       key: w.id,
-      label: { en: str(w.titleEn), yi: str(w.titleHe) || str(w.titleEn) },
+      label: { en: str(w.titleEn), yi: str(w.titleHe) || str(w.titleEn), he: str(w.titleHe) || str(w.titleEn) },
       count: w.count,
       prerender: liveWorkPage(w),
       quietPage: quiet(w),
     })),
     stories: arr<LayerStory>(read(LAYER_FILES.stories)["stories"]).map((s) => ({
       key: s.id,
-      label: { en: str(s.title?.en), yi: str(s.title?.yi) },
+      label: seoLabel(s.title),
       count: arr(s.tellings).length,
       prerender: liveStoryPage(s),
       quietPage: quiet(s),
     })),
     threads: arr<LayerThread>(read(LAYER_FILES.threads)["threads"]).map((t) => ({
       key: t.id,
-      label: { en: str(t.label?.en), yi: str(t.label?.yi) },
+      label: seoLabel(t.label),
       count: t.shiurCount,
       prerender: liveThreadPage(t),
       quietPage: false,
@@ -133,8 +148,8 @@ export function readSeoCorpus(corpusDir: string): SeoCorpus {
   // then the keys of the "other" bucket (one-off events, values outside the tables), grouped by the
   // shiur's own key as the data emit groups them and labelled by the catalog spelling.
   const occasions: SeoOccasion[] = [
-    ...occasionsFile.parshiyos.map((p): SeoOccasion => ({ key: p.key, kind: "parsha", label: { en: p.en, yi: p.yi }, count: p.count })),
-    ...occasionsFile.zmanim.map((z): SeoOccasion => ({ key: z.key, kind: "zman", label: { en: z.en, yi: z.yi }, count: z.count })),
+    ...occasionsFile.parshiyos.map((p): SeoOccasion => ({ key: p.key, kind: "parsha", label: { en: p.en, yi: p.yi, he: p.he || p.yi }, count: p.count })),
+    ...occasionsFile.zmanim.map((z): SeoOccasion => ({ key: z.key, kind: "zman", label: { en: z.en, yi: z.yi, he: z.he || z.yi }, count: z.count })),
   ];
   const table = new Set(occasions.map((o) => o.key));
   const rows = new Map(index.shiurim.map((r) => [r.id, r]));
@@ -144,7 +159,7 @@ export function readSeoCorpus(corpusDir: string): SeoCorpus {
     const v = r?.zman && !table.has(r.zman.key) ? r.zman : (r?.parsha ?? null);
     if (!v || table.has(v.key)) continue;
     const prev = other.get(v.key);
-    other.set(v.key, { key: v.key, kind: null, label: prev?.label ?? { en: v.raw, yi: v.raw }, count: (prev?.count ?? 0) + 1 });
+    other.set(v.key, { key: v.key, kind: null, label: prev?.label ?? byUiLang(() => v.raw), count: (prev?.count ?? 0) + 1 });
   }
   occasions.push(...other.values());
 

@@ -5,12 +5,13 @@
 import { createT, isUiLang, type TFunction, type UiLang } from "@emunas/i18n";
 import { useParams } from "react-router";
 import { en, type UiKey } from "./en.ts";
+import { he } from "./he.ts";
 import { yi } from "./yi.ts";
 
 export type { UiKey };
 export type LiveT = TFunction<UiKey>;
 
-export const UI_TABLES = { en, yi } as const;
+export const UI_TABLES = { en, yi, he } as const;
 
 const cache: Partial<Record<UiLang, LiveT>> = {};
 

@@ -1,6 +1,12 @@
-/** Edition (Quiet) / UI language (Live): always the first path segment on both sites. */
-export type Ed = "yi" | "en";
-export const EDS: readonly Ed[] = ["yi", "en"];
+import { UI_LANGS, isUiLang, type UiLang } from "@emunas/i18n";
+
+/**
+ * Edition (Quiet) / UI language (Live): always the first path segment on both sites. The set is
+ * `UI_LANGS` of `@emunas/i18n` (en, yi, he); a language added there is an edition here with no
+ * change in this package.
+ */
+export type Ed = UiLang;
+export const EDS: typeof UI_LANGS = UI_LANGS;
 
 export type Site = "quiet" | "live";
 
@@ -90,5 +96,10 @@ export interface LinkData {
 }
 
 export function isEd(value: unknown): value is Ed {
-  return value === "yi" || value === "en";
+  return isUiLang(value);
+}
+
+/** The TypeError message for a value that is not an edition. */
+export function badEdition(value: unknown): string {
+  return `@emunas/links: edition must be one of ${EDS.map((e) => JSON.stringify(e)).join(", ")}, got ${JSON.stringify(value)}`;
 }

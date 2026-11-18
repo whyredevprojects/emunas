@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { UI_LANGS } from "@emunas/i18n";
 import { createLinks, EDS, workersDevHosts } from "../src/index.ts";
 import { DATA, HOSTS, links } from "./fixtures.ts";
 
@@ -74,50 +75,59 @@ describe("canonicalFor", () => {
   });
 });
 
-describe("hreflangPair", () => {
-  it("quiet shiur: both editions plus x-default to the root", () => {
-    expect(links.hreflangPair(`/en/shiur/${ID}/#s2`)).toEqual([
-      { hreflang: "yi", href: `${HOSTS.quiet}/yi/shiur/${ID}/` },
+describe("hreflangAlternates", () => {
+  it("quiet shiur: every edition plus x-default to the root", () => {
+    expect(links.hreflangAlternates(`/en/shiur/${ID}/#s2`)).toEqual([
       { hreflang: "en", href: `${HOSTS.quiet}/en/shiur/${ID}/` },
+      { hreflang: "yi", href: `${HOSTS.quiet}/yi/shiur/${ID}/` },
+      { hreflang: "he", href: `${HOSTS.quiet}/he/shiur/${ID}/` },
       { hreflang: "x-default", href: `${HOSTS.quiet}/` },
     ]);
   });
 
-  it("quiet root lists both edition homes", () => {
-    expect(links.hreflangPair("/")).toEqual([
-      { hreflang: "yi", href: `${HOSTS.quiet}/yi/` },
+  it("quiet root lists every edition home", () => {
+    expect(links.hreflangAlternates("/")).toEqual([
       { hreflang: "en", href: `${HOSTS.quiet}/en/` },
+      { hreflang: "yi", href: `${HOSTS.quiet}/yi/` },
+      { hreflang: "he", href: `${HOSTS.quiet}/he/` },
       { hreflang: "x-default", href: `${HOSTS.quiet}/` },
     ]);
   });
 
   it("live pages use the live host", () => {
-    expect(links.hreflangPair(`/yi/s/${ID}?t=5`, "live")).toEqual([
-      { hreflang: "yi", href: `${HOSTS.live}/yi/s/${ID}` },
+    expect(links.hreflangAlternates(`/he/s/${ID}?t=5`, "live")).toEqual([
       { hreflang: "en", href: `${HOSTS.live}/en/s/${ID}` },
+      { hreflang: "yi", href: `${HOSTS.live}/yi/s/${ID}` },
+      { hreflang: "he", href: `${HOSTS.live}/he/s/${ID}` },
       { hreflang: "x-default", href: `${HOSTS.live}/` },
     ]);
   });
 
-  it("every Quiet page type pairs to the same page in each edition", () => {
+  it("covers exactly UI_LANGS plus x-default", () => {
+    expect(links.hreflangAlternates("/yi/").map((h) => h.hreflang)).toEqual([...UI_LANGS, "x-default"]);
+  });
+
+  it("every Quiet page type maps to the same page in each edition", () => {
     const paths = ["/en/series/tanya-1/", "/en/calendar/zman/lag-baomer/", "/en/inyanim/emunah/", "/en/search/?q=a", "/en/about/"];
     for (const p of paths) {
-      const pair = links.hreflangPair(p);
-      expect(pair).toHaveLength(3);
+      const alts = links.hreflangAlternates(p);
+      expect(alts).toHaveLength(EDS.length + 1);
       for (const ed of EDS) {
-        expect(pair.find((x) => x.hreflang === ed)?.href).toBe(HOSTS.quiet + p.replace(/^\/en\//, `/${ed}/`));
+        expect(alts.find((x) => x.hreflang === ed)?.href).toBe(HOSTS.quiet + p.replace(/^\/en\//, `/${ed}/`));
       }
     }
   });
 
   it("is empty for non-pages", () => {
-    expect(links.hreflangPair("/nope/")).toEqual([]);
+    expect(links.hreflangAlternates("/nope/")).toEqual([]);
   });
 });
 
 describe("withEdition", () => {
   it("switches edition keeping place", () => {
     expect(links.withEdition(`${HOSTS.quiet}/en/shiur/${ID}/#s2`, "yi")).toBe(`${HOSTS.quiet}/yi/shiur/${ID}/#s2`);
+    expect(links.withEdition(`${HOSTS.quiet}/yi/shiur/${ID}/#s2`, "he")).toBe(`${HOSTS.quiet}/he/shiur/${ID}/#s2`);
+    expect(links.withEdition(`${HOSTS.live}/he/s/${ID}?t=5`, "en")).toBe(`${HOSTS.live}/en/s/${ID}?t=5`);
     expect(links.withEdition(`${HOSTS.live}/en/s/${ID}?t=9&read=en`, "yi")).toBe(`${HOSTS.live}/yi/s/${ID}?t=9`);
     expect(links.withEdition(`${HOSTS.quiet}/`, "en")).toBe(`${HOSTS.quiet}/en/`);
     expect(links.withEdition(`${HOSTS.quiet}/audio/a.mp3`, "en")).toBe(`${HOSTS.quiet}/en/`);

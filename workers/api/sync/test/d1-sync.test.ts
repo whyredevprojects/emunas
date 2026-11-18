@@ -6,7 +6,8 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { afterEach, describe, expect, it } from "vitest";
-import { syncD1, SchemaError } from "../src/d1-sync.ts";
+import { UI_LANGS } from "@emunas/i18n";
+import { chunkStatements, syncD1, SchemaError } from "../src/d1-sync.ts";
 import { MiniflareD1Target } from "../src/local.ts";
 import { corpusRevOf, ftsRowid, rowLangs } from "../src/rows.ts";
 import { normalizeQuery } from "../../src/query.ts";
@@ -204,13 +205,17 @@ describe("D1 content meets the Worker", () => {
     expect(wpTxt).toEqual([{ lang: "en" }]);
     const m = await t.all<Record<string, unknown>>("SELECT * FROM moments WHERE id = ?", [insight.id]);
     expect(m[0]).toMatchObject({ shiur_id: insight.shiurId, kind: "insight", audio_lang: insight.lang, category: insight.facets.category, hash: insight.hash });
+    expect(JSON.parse(m[0]!["titles"] as string)).toEqual({ en: insight.title_en, yi: insight.title_yi });
   });
 
   it("FTS rowids are stable per (moment, language)", () => {
     expect(ftsRowid("a~s1", "en")).toBe(ftsRowid("a~s1", "en"));
     expect(ftsRowid("a~s1", "en")).not.toBe(ftsRowid("a~s1", "yi"));
     expect(Number.isSafeInteger(ftsRowid("a~s1", "yi"))).toBe(true);
-    const ids = miniMoments().flatMap((r) => [ftsRowid(r.id, "en"), ftsRowid(r.id, "yi")]);
+    const ids = miniMoments().flatMap((r) => UI_LANGS.map((l) => ftsRowid(r.id, l)));
     expect(new Set(ids).size).toBe(ids.length);
+    // A touched moment's FTS rows are deleted in every interface language.
+    const [, , del] = chunkStatements([], ["a~s1"]);
+    expect(JSON.parse(String(del!.params[0]))).toEqual(UI_LANGS.map((l) => ftsRowid("a~s1", l)));
   });
 });

@@ -26,6 +26,7 @@ import {
   type LayerWorksFile,
 } from "@emunas/corpus/public";
 import { loadLayerInput } from "@emunas/corpus/layer";
+import { UI_LANGS, byUiLang } from "@emunas/i18n";
 import { synonymKey, type SearchLayer, type SearchLayerTopic } from "../layer-types.ts";
 import { ENTITY_DOC_KINDS, type EntityDocKind } from "../types.ts";
 
@@ -92,7 +93,14 @@ export function readSearchLayer(corpusDir: string, files: LayerFiles, shiurIds: 
   const topics = new Map<string, SearchLayerTopic>();
   for (const t of files.topics.tree) {
     if (!facetIds.topic.has(t.id)) continue;
-    topics.set(t.id, { en: t.label?.en ?? "", yi: t.label?.yi ?? "", he: t.label?.he ?? null });
+    const label: Partial<Record<string, unknown>> = t.label ?? {};
+    topics.set(
+      t.id,
+      byUiLang((l) => {
+        const v = label[l];
+        return typeof v === "string" && v.trim() !== "" ? v : null;
+      }),
+    );
   }
   const synonyms = new Map<string, readonly string[]>();
   for (const s of files.synonyms.synonyms) {
@@ -129,7 +137,8 @@ export function readSearchLayer(corpusDir: string, files: LayerFiles, shiurIds: 
   const conceptNames = new Map<string, readonly string[]>();
   for (const c of files.concepts.concepts) {
     if (typeof c.id !== "string" || !(c.count > 0)) continue;
-    const names = nonEmpty([c.canonicalHe, c.label?.en, c.label?.yi]);
+    const label: Partial<Record<string, unknown>> = c.label ?? {};
+    const names = nonEmpty([c.canonicalHe, ...UI_LANGS.map((l) => label[l])]);
     if (names.length > 0) conceptNames.set(c.id, names);
   }
   const storyNames = new Map<string, readonly string[]>();
@@ -179,9 +188,9 @@ export function displayFieldsOf(kind: EntityDocKind, r: Rec): string[] {
   const label = (typeof r["label"] === "object" && r["label"] !== null ? r["label"] : {}) as Rec;
   switch (kind) {
     case "topic":
-      return strs(label["en"], label["yi"], label["he"], r["aliases"]);
+      return strs(...UI_LANGS.map((l) => label[l]), r["aliases"]);
     case "concept":
-      return strs(r["canonicalHe"], label["en"], label["yi"], r["transliterations"]);
+      return strs(r["canonicalHe"], ...UI_LANGS.map((l) => label[l]), r["transliterations"]);
     case "person":
       return strs(r["nameHe"], r["nameEn"], r["nameYi"], r["aliases"]);
     case "work":

@@ -7,6 +7,7 @@
  * line there; one in no index is named without a link. No tag cloud. Each person's name is marked
  * `data-person="<id>"` so the guard can check it is that corpus person's display name (F.1).
  */
+import { nameAttrs } from "../../lib/bidi.ts";
 import type { Ed } from "../../lib/edition.ts";
 import type { MentionedView, NamedLink } from "./refs.ts";
 import { useShiurT } from "./strings.ts";
@@ -18,7 +19,7 @@ interface Props {
 
 const { ed, mentioned } = Astro.props;
 const t = useShiurT(ed);
-const attrs = (n: NamedLink) => (n.hebrew ? { lang: ed === "yi" ? "yi" : "he", dir: "rtl" } : { lang: "en", dir: "ltr" });
+const attrs = (n: NamedLink) => nameAttrs(n.hebrew, ed);
 const lines = [
   { kind: "person", label: t("mentioned.people"), items: mentioned.people },
   { kind: "concept", label: t("mentioned.concepts"), items: mentioned.concepts },

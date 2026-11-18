@@ -20,6 +20,7 @@ import { topicCrumbs } from "../../../../components/topics/crumbs.ts";
 import { topicsSource } from "../../../../components/topics/data.ts";
 import { topicGrades, topicHref, topicPage, topicPageIds } from "../../../../components/topics/model.ts";
 import { useTopicsT } from "../../../../components/topics/strings.ts";
+import { langAttrs } from "../../../../lib/content.ts";
 import { EDS, type Ed } from "../../../../lib/edition.ts";
 import "../../../../components/topics/topics.css";
 
@@ -39,7 +40,7 @@ const lookup = src.occasions ? occasionLookup(src.occasions) : undefined;
 const hubs = page.hubs.map((h) => shiurEntry(src.rows.get(h)!, ed, lookup ? { lookup } : {}));
 const grades = page.gateway ? null : topicGrades(ed, src, src.topicDetail(id));
 ---
-<Base ed={ed} title={page.name.title.text} crumbs={topicCrumbs(ed, page)} {...(page.description ? { description: page.description } : {})}>
+<Base ed={ed} title={page.name.title.text} crumbs={topicCrumbs(ed, page)} {...(page.description ? { description: page.description.text } : {})}>
   <TopicHead ed={ed} page={page} />
 
   {page.gateway && page.children.length > 0 && (
@@ -50,7 +51,7 @@ const grades = page.gateway ? null : topicGrades(ed, src, src.topicDetail(id));
           <li data-topic={c.id}>
             {c.href ? <a href={c.href}><TopicName name={c.name} /></a> : <TopicName name={c.name} />}{" "}
             <span class="count">{t("count.shiurim", { count: c.count })}</span>
-            {c.description && <p lang={ed}>{c.description}</p>}
+            {c.description && <p {...langAttrs(c.description)}>{c.description.text}</p>}
           </li>
         ))}
       </ul>

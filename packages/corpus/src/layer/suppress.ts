@@ -30,7 +30,7 @@ import type {
   LayerThreadsFile,
   LayerTopicsFile,
 } from "../public/corpus-layer.ts";
-import type { L } from "../public/types.ts";
+import type { LocalizedText } from "../public/types.ts";
 
 export const CORPUS_ITEM_PREFIX = "corpus:";
 
@@ -75,7 +75,7 @@ export interface CorpusSuppressReport {
   unmatched: string[];
 }
 
-type Bilingual = L | Record<string, string>;
+type Bilingual = LocalizedText | Record<string, string>;
 
 /** Blank `lang` in a bilingual object; true when the field existed (and is now empty). */
 function blank(obj: Bilingual | null | undefined, lang: string): boolean {

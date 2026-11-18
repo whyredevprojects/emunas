@@ -8,10 +8,13 @@ needed before launch (integration-plan §8 W5.3 acceptance, W6.1):
 | Standing AI label (en + yi) | owner | proposed, unsigned |
 | About texts, all five parts (en + yi) | owner; Yiddish by a named reviewer | drafts only, not published |
 | Yiddish UI strings, both sites | a named Yiddish reader | reviewed by the W5.3 copy pass (AI); human sign-off pending |
+| Hebrew UI strings, both sites and the home asides (`apps/home/src/lib/content.ts` `ASIDES`) | a named Hebrew reader | written by AI, unreviewed |
+| Hebrew translations of the notes (overlays, `docs/translation-runbook.md`) | a named Hebrew reader, by sample | generated, unreviewed |
 
 Reviewer sign-off (fill in):
 
 - Yiddish UI reviewed by: ________________ on ____________ (Quiet / Live / both)
+- Hebrew UI reviewed by: ________________ on ____________ (Quiet / Live / Home)
 - AI label approved by: ________________ on ____________
 - About texts approved by: ________________ on ____________ (parts: rav / arrangement / notes / report / excluded)
 

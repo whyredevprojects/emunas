@@ -22,14 +22,14 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import type { SeriesFile } from "@emunas/corpus/aggregate";
 import type { CorpusIndex, LayerInfo, LayerPeopleFile, LayerStoriesFile, PublicShiur } from "@emunas/corpus/public";
-import { corpusLabel } from "@emunas/i18n";
+import { corpusLabel, pickText, type LocalizedText } from "@emunas/i18n";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { astroBuild } from "../../../../test/astro-build.ts";
+import { EDS } from "../../../lib/edition.ts";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const app = join(here, "..", "..", "..", "..");
 const repo = join(app, "..", "..");
-const EDS = ["yi", "en"] as const;
 
 let tmp = "";
 let corpus = "";
@@ -107,7 +107,8 @@ describe("C2.3 stories on the real corpus", () => {
       const index = page(`${ed}/stories`);
       let checked = 0;
       for (const s of stories) {
-        const text = s.retelling[ed].trim();
+        // the edition's retelling, else the fallback's (no Hebrew translations in today's data)
+        const text = pickText(s.retelling, ed).text.trim();
         if (text === "") continue;
         const needle = esc(text);
         if (!s.pages.quiet) continue;
@@ -214,7 +215,7 @@ describe("C2.3 stories on the real corpus", () => {
           }
           const [p, frag] = href.split("#") as [string, string | undefined];
           if (!p.startsWith(`/${ed}/`)) bad("crosses editions");
-          const shiur = /^\/(yi|en)\/shiur\/([^/]+)\/$/.exec(p);
+          const shiur = /^\/(en|yi|he)\/shiur\/([^/]+)\/$/.exec(p);
           if (shiur) {
             shiurLinks++;
             const row = rows.get(decodeURIComponent(shiur[2]!));
@@ -233,12 +234,12 @@ describe("C2.3 stories on the real corpus", () => {
           const rel = p.replace(/^\//, "").replace(/\/$/, "");
           // Person pages and the index of names are C2.1's (built from the same layer flags):
           // a person link must name a person with a Quiet page, or point at the index of names.
-          const personPage = /^\/(?:yi|en)\/people\/([^/]+)\/$/.exec(p);
+          const personPage = /^\/(?:en|yi|he)\/people\/([^/]+)\/$/.exec(p);
           if (personPage) {
             if (people.get(decodeURIComponent(personPage[1]!))?.pages.quiet !== true) bad("person without a Quiet page");
             continue;
           }
-          if (/^\/(?:yi|en)\/people\/$/.test(p)) {
+          if (/^\/(?:en|yi|he)\/people\/$/.test(p)) {
             const id = frag === undefined ? null : decodeURIComponent(frag);
             const person = id === null ? undefined : people.get(id);
             if (!person || person.listed.quiet !== true || person.pages.quiet) bad("not an index line of a listed person without a page");
@@ -284,7 +285,7 @@ describe("C2.3 series introductions on the real corpus", () => {
   });
 
   it("tanya-yi keeps its part without notes as a row: notes not prepared yet", () => {
-    const synth = readJson<{ missing: number[]; title: { en: string; yi: string } }>(join(corpus, "layer", "series", "tanya-yi.json"));
+    const synth = readJson<{ missing: number[]; title: LocalizedText }>(join(corpus, "layer", "series", "tanya-yi.json"));
     expect(synth.missing.length).toBeGreaterThan(0);
     const parts = readJson<SeriesFile>(join(corpus, "series.json")).series.find((s) => s.id === "tanya-yi")!.parts;
     for (const ed of EDS) {
@@ -298,8 +299,9 @@ describe("C2.3 series introductions on the real corpus", () => {
         expect(html.slice(at, html.indexOf("</tr>", at))).toContain(label);
       }
       // the generated title is a subtitle in the notes area; the catalog name stays the h1
-      expect(html).toContain(esc(synth.title[ed]));
-      expect(html.slice(html.indexOf("<h1"), html.indexOf("</h1>"))).not.toContain(esc(synth.title[ed]));
+      const subtitle = esc(pickText(synth.title, ed).text);
+      expect(html).toContain(subtitle);
+      expect(html.slice(html.indexOf("<h1"), html.indexOf("</h1>"))).not.toContain(subtitle);
     }
   });
 });

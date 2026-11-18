@@ -6,6 +6,7 @@
  *   AND the structural checks below pass.
  * Anything else is "catalog-only" plus a report entry. Never throws.
  */
+import { SOURCE_LANGS } from "@emunas/i18n";
 import type { Extraction, Shiur, Writeup } from "../../../../src/types.ts";
 import type { ManifestEntry, Meta } from "./schemas.ts";
 import type { ShiurFiles } from "./load.ts";
@@ -101,7 +102,7 @@ export function structuralProblems(shiur: Shiur, meta: Meta, ex: Extraction, wu:
   if (recIds.some((id) => id !== undefined && !own.has(id))) err("an evidence recordingId is not part of the shiur");
 
   // Write-up indexes into the extraction.
-  for (const ed of ["en", "yi"] as const) {
+  for (const ed of SOURCE_LANGS) {
     wu[ed].forEach((b, i) => {
       if (b.sectionIndex >= ex.sections.length) err(`writeup.${ed}[${i}].sectionIndex out of range`);
       b.paragraphs.forEach((p, j) => {

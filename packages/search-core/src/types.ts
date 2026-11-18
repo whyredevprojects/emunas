@@ -10,14 +10,41 @@
  * `SearchDoc.keywords` (low weight, never displayed). The retired extraction topic strings (C9) are
  * not read at all and are a forbidden key.
  */
-import type { Category, Ed, L, LayerShiurRefs, MomentKind, PublicShiur, ShiurStatus } from "@emunas/corpus/public";
+import type { Category, Ed, LayerShiurRefs, MomentKind, PublicShiur, ShiurStatus, WriteupMomentKind } from "@emunas/corpus/public";
+import { UI_LANGS, type LocalizedText, type UiLang } from "@emunas/i18n";
 import type { SearchLayer } from "./layer-types.ts";
 
 /**
  * Bump when the shape of a SearchDoc, MomentRow or EntityDoc, or the text that feeds a hash, changes.
  * 2: corpus-layer keywords, corpus-id facets and entities (+ topics), entities.ndjson.
+ * 3: every interface language (`UI_LANGS`): SearchDoc texts are `LocalizedText` (translations
+ *    when current), MomentRow `title_<lang>`/`body_<lang>` per language, EntityDoc labels per language.
  */
-export const SEARCH_SCHEMA_VERSION = 2;
+export const SEARCH_SCHEMA_VERSION = 3;
+
+// ---------------------------------------------------------------- languages
+
+/**
+ * Text languages are the interface languages (`UI_LANGS` of `@emunas/i18n`). Generated text is in
+ * `en` and `yi` always and in a translated language (`he`) only when the corpus applied a current
+ * translation overlay; nothing here fills a missing translation from another language. Readers
+ * that show or index one language pick along `CONTENT_FALLBACK` (`docTextParts(doc, reader)`,
+ * `pickText`).
+ */
+export type MomentRowTextPart = "title" | "body";
+/** `title_<lang>` / `body_<lang>` of a MomentRow. */
+export type MomentRowTextField = `${MomentRowTextPart}_${UiLang}`;
+
+/** The MomentRow field holding `part` in `lang`. */
+export function momentRowTextField(part: MomentRowTextPart, lang: UiLang): MomentRowTextField {
+  return `${part}_${lang}`;
+}
+
+/** Every per-language text field of a MomentRow: the titles, then the bodies, each in `UI_LANGS` order. */
+export const MOMENT_ROW_TEXT_FIELDS: readonly MomentRowTextField[] = [
+  ...UI_LANGS.map((l) => momentRowTextField("title", l)),
+  ...UI_LANGS.map((l) => momentRowTextField("body", l)),
+];
 
 // ---------------------------------------------------------------- allow-lists
 
@@ -62,21 +89,20 @@ export const DOC_FACET_FIELDS = [
   "topics",
 ] as const;
 
-export const MOMENT_ROW_FIELDS = [
+/** MomentRow fields in output order; the text fields are `MOMENT_ROW_TEXT_FIELDS`. */
+export const MOMENT_ROW_FIELDS: readonly MomentRowField[] = [
   "id",
   "shiurId",
   "kind",
   "t",
   "end",
   "lang",
-  "title_en",
-  "title_yi",
-  "body_en",
-  "body_yi",
+  ...MOMENT_ROW_TEXT_FIELDS,
   "entities",
   "facets",
   "hash",
-] as const;
+];
+export type MomentRowField = "id" | "shiurId" | "kind" | "t" | "end" | "lang" | MomentRowTextField | "entities" | "facets" | "hash";
 
 export const MOMENT_ENTITY_FIELDS = ["works", "people", "concepts", "topics"] as const;
 export const MOMENT_FACET_FIELDS = ["category", "occasion", "series", "year", "catalogued", "soft"] as const;
@@ -88,7 +114,8 @@ export const ENTITY_DOC_KINDS = ["topic", "concept", "person", "work"] as const;
 export type EntityDocKind = (typeof ENTITY_DOC_KINDS)[number];
 
 export const ENTITY_DOC_FIELDS = ["kind", "id", "labels", "synonyms", "count", "listed", "pages", "mergedInto", "hash"] as const;
-export const ENTITY_DOC_LABEL_FIELDS = ["he", "en", "yi"] as const;
+/** One label per interface language (`UI_LANGS`). */
+export const ENTITY_DOC_LABEL_FIELDS: typeof UI_LANGS = UI_LANGS;
 export const ENTITY_DOC_FLAG_FIELDS = ["quiet", "live"] as const;
 
 /** Keys that must never appear anywhere in search output (§0.1, §5.2). */
@@ -116,10 +143,10 @@ export type ForbiddenSearchKey = (typeof FORBIDDEN_SEARCH_KEYS)[number];
 
 // ---------------------------------------------------------------- SearchDoc
 
-/** Labels of a parsha/zman: the catalog string plus the table names (he/yi/en) when mapped. */
+/** A chapter of a SearchDoc. */
 export interface SearchDocSection {
-  title: L;
-  summary: L;
+  title: LocalizedText;
+  summary: LocalizedText;
 }
 
 export interface SearchDocSource {
@@ -162,23 +189,27 @@ export interface SearchDoc {
   /** Hebrew years as letters (תשל"ו) and digits ("5736"). */
   years: string[];
   catalogTopics: string[];
-  oneLiner: L | null;
-  abstract: L | null;
-  keyPoints: L[];
+  /**
+   * Generated text: `en` and `yi`, plus each translated language (`he`) present and non-blank only
+   * when the corpus has a current translation. Null (or left out of a list) when every language is blank.
+   */
+  oneLiner: LocalizedText | null;
+  abstract: LocalizedText | null;
+  keyPoints: LocalizedText[];
   sections: SearchDocSection[];
-  storyTitles: L[];
+  storyTitles: LocalizedText[];
   /** Question text only (answers are moment-level). */
-  questions: L[];
+  questions: LocalizedText[];
   sources: SearchDocSource[];
   /**
    * Display names (corpus layer) of the shiur's people and of the people of its merged stories.
    * Never a raw extraction name: those may be ASR mishearings (F.1). Empty without layer refs.
    */
   people: string[];
-  /** Display names (canonicalHe, label en/yi) of the shiur's concepts in the corpus layer. */
+  /** Display names (canonicalHe, label in every language) of the shiur's concepts in the corpus layer. */
   concepts: string[];
   /**
-   * The shiur's visible topics: labels (he/en/yi) and the topics' own aliases (search-folded),
+   * The shiur's visible topics: labels (every language) and the topics' own aliases (search-folded),
    * deduplicated after folding. Low weight, never displayed.
    */
   keywords: string[];
@@ -192,7 +223,7 @@ export interface SearchDoc {
 export const MOMENT_ROW_KINDS = ["section", "insight", "question", "takeaway", "story", "keypoint", "writeup"] as const;
 export type MomentRowKind = (typeof MOMENT_ROW_KINDS)[number];
 
-/** Corpus moment-id kind behind each row kind. */
+/** Corpus moment-id kind behind each row kind (every write-up kind, `w<lang>`, is a `writeup` row). */
 export const ROW_KIND_OF: Readonly<Record<Exclude<MomentKind, "src" | "ol" | "ab">, MomentRowKind>> = {
   s: "section",
   i: "insight",
@@ -200,8 +231,7 @@ export const ROW_KIND_OF: Readonly<Record<Exclude<MomentKind, "src" | "ol" | "ab
   tk: "takeaway",
   st: "story",
   kp: "keypoint",
-  wen: "writeup",
-  wyi: "writeup",
+  ...(Object.fromEntries(UI_LANGS.map((l) => [`w${l}`, "writeup"])) as Record<WriteupMomentKind, "writeup">),
 };
 
 /**
@@ -229,10 +259,18 @@ export interface MomentFacets {
 }
 
 /**
- * One timed, searchable item (a D1 row; also the unit for embeddings). Ids are the corpus moment
- * ids (`<shiurId>~s3`, `<shiurId>~wen2.1`). Items whose time could not be resolved are not rows.
+ * Display text per language (generated text only): `title_<lang>` and `body_<lang>` for every
+ * `UiLang`. A language without text (no current translation) is null; a write-up paragraph has a
+ * body only in its own language. Read them with `momentRowText`.
  */
-export interface MomentRow {
+export type MomentRowTexts = { [F in MomentRowTextField]: string | null };
+
+/**
+ * One timed, searchable item (a D1 row; also the unit for embeddings). Ids are the corpus moment
+ * ids (`<shiurId>~s3`, `<shiurId>~wen2.1`, `<shiurId>~whe2.1`). Items whose time could not be
+ * resolved are not rows.
+ */
+export interface MomentRow extends MomentRowTexts {
   id: string;
   shiurId: string;
   kind: MomentRowKind;
@@ -241,12 +279,6 @@ export interface MomentRow {
   end: number | null;
   /** Audio language of the shiur. */
   lang: Ed;
-  /** Display title per language (generated text only). */
-  title_en: string | null;
-  title_yi: string | null;
-  /** Further text per language; a write-up paragraph has only its own language. */
-  body_en: string | null;
-  body_yi: string | null;
   entities: MomentEntities;
   facets: MomentFacets;
   hash: string;
@@ -261,12 +293,11 @@ export interface SearchInput {
 
 // ---------------------------------------------------------------- EntityDoc
 
-/** Display labels: topic label, concept label (+ canonicalHe), person names, work titles. */
-export interface EntityDocLabels {
-  he: string | null;
-  en: string | null;
-  yi: string | null;
-}
+/**
+ * Display labels per interface language: topic label, concept label (`he`: canonicalHe, else its
+ * translation), person names, work titles. Null when the entity has none in that language.
+ */
+export type EntityDocLabels = { [L in UiLang]: string | null };
 
 export interface EntityDocFlags {
   quiet: boolean;

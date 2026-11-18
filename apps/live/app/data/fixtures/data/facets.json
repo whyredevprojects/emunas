@@ -1,52 +1,59 @@
 {
- "schemaVersion": 6,
+ "schemaVersion": 7,
  "category": {
   "current": {
    "label": {
     "en": "Current",
-    "yi": "ענינים פון דער צייט"
+    "yi": "ענינים פון דער צייט",
+    "he": "ענייני השעה"
    },
    "count": 4
   },
   "misc": {
    "label": {
     "en": "Miscellaneous",
-    "yi": "פארשידנס"
+    "yi": "פארשידנס",
+    "he": "כללי"
    },
    "count": 3
   },
   "parsha": {
    "label": {
     "en": "Parshas Hashavua",
-    "yi": "פרשת השבוע"
+    "yi": "פרשת השבוע",
+    "he": "פרשת השבוע"
    },
    "count": 11
   },
   "set": {
    "label": {
     "en": "Series",
-    "yi": "סדרות"
+    "yi": "סדרות",
+    "he": "סדרות"
    },
    "count": 15
   },
   "shonos": {
    "label": {
     "en": "Various topics",
-    "yi": "שונות"
+    "yi": "שונות",
+    "he": "שונות"
    },
    "count": 3
   },
   "simcha": {
    "label": {
     "en": "Simchos",
-    "yi": "שמחות"
+    "yi": "שמחות",
+    "he": "שמחות"
    },
    "count": 5
   },
   "zman": {
    "label": {
     "en": "Zmanim",
-    "yi": "זמנים"
+    "yi": "זמנים",
+    "he": "זמנים"
    },
    "count": 19
   }
@@ -55,14 +62,16 @@
   "en": {
    "label": {
     "en": "English",
-    "yi": "ענגליש"
+    "yi": "ענגליש",
+    "he": "אנגלית"
    },
    "count": 17
   },
   "yi": {
    "label": {
     "en": "Yiddish",
-    "yi": "אידיש"
+    "yi": "אידיש",
+    "he": "אידיש"
    },
    "count": 43
   }
@@ -179,7 +188,8 @@
   "other": {
    "label": {
     "en": "Other occasions",
-    "yi": "אנדערע געלעגנהייטן"
+    "yi": "אנדערע געלעגנהייטן",
+    "he": "שאר הזמנים"
    },
    "count": 1,
    "type": "zman",
@@ -578,7 +588,8 @@
   "unknown": {
    "label": {
     "en": "Year unknown",
-    "yi": "יאר נישט באקאנט"
+    "yi": "יאר נישט באקאנט",
+    "he": "שנה לא ידועה"
    },
    "count": 25
   }

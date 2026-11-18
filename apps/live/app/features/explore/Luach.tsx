@@ -12,6 +12,7 @@ import type { FacetLabel, FacetsFile } from "./live-data.ts";
 import { useRoving } from "./roving.ts";
 import { exploreT } from "./strings.ts";
 import { exploreStyles as s } from "./styles.ts";
+import { labelText } from "../../i18n/content.ts";
 
 const SIZE = 420;
 const C = SIZE / 2;
@@ -41,7 +42,7 @@ export function Luach({ counts, facets, ui, selected, onChoose }: LuachProps): J
   const max = Math.max(1, ...model.outer.map((x) => x.count), ...model.inner.map((x) => x.count));
   const sel = new Set(selected);
   const shown = focus ?? [...model.outer, ...model.inner].find((x) => sel.has(x.key)) ?? null;
-  const stopLabel = (x: { label: FacetLabel; count: number }) => et("explore.luach.stop", { name: x.label[ui], count: formatNumber(x.count, ui) });
+  const stopLabel = (x: { label: FacetLabel; count: number }) => et("explore.luach.stop", { name: labelText(x.label, ui), count: formatNumber(x.count, ui) });
 
   return (
     <section className={s.lens} aria-labelledby={titleId} data-lens="luach">
@@ -95,7 +96,7 @@ export function Luach({ counts, facets, ui, selected, onChoose }: LuachProps): J
                   onClick={() => onChoose(o.key)}
                   data-stop={o.key}
                 >
-                  <Text value={o.label[ui]} shiurLang={ui} /> <span className={s.count}>{formatNumber(o.count, ui)}</span>
+                  <Text value={labelText(o.label, ui)} shiurLang={null} /> <span className={s.count}>{formatNumber(o.count, ui)}</span>
                 </button>
               </li>
             ))}
@@ -117,7 +118,7 @@ export function Luach({ counts, facets, ui, selected, onChoose }: LuachProps): J
                 <tr key={x.key}>
                   <th scope="row">
                     <button type="button" className={s.textButton} aria-pressed={sel.has(x.key)} onClick={() => onChoose(x.key)}>
-                      <Text value={x.label[ui]} shiurLang={ui} />
+                      <Text value={labelText(x.label, ui)} shiurLang={null} />
                     </button>
                   </th>
                   <td>{formatNumber(x.count, ui)}</td>

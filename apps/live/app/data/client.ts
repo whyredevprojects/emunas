@@ -16,7 +16,7 @@
  * - The fetch implementation and base URL are configurable (`configureData`) so tests and the dev
  *   fixture mode (`VITE_LIVE_DATA=fixtures`) can serve files without a network.
  */
-import type { Ed } from "@emunas/corpus/public";
+import type { UiLang } from "@emunas/i18n";
 import { dataPaths } from "./paths.ts";
 import {
   LIVE_DATA_SCHEMA_VERSION,
@@ -153,15 +153,15 @@ export const loadFacets = (o: LoadOptions = {}) => memoized<FacetsFile>(dataPath
 export const loadToday = (o: LoadOptions = {}) => memoized<TodayFile>(dataPaths.today(), o);
 export const loadWorks = (o: LoadOptions = {}) => memoized<WorksFile>(dataPaths.works(), o);
 export const loadShiur = (id: string, o: LoadOptions = {}) => fetchData<ShiurFile>(dataPaths.shiur(id), o);
-export const loadWriteup = (id: string, lang: Ed, o: LoadOptions = {}) =>
+export const loadWriteup = (id: string, lang: UiLang, o: LoadOptions = {}) =>
   fetchData<WriteupFile>(dataPaths.writeup(id, lang), o);
 export const loadSeries = (id: string, o: LoadOptions = {}) => fetchData<SeriesFile>(dataPaths.series(id), o);
 export const loadWork = (key: string, o: LoadOptions = {}) => fetchData<WorkFile>(dataPaths.work(key), o);
 export const loadEntity = (kind: EntityKind, key: string, o: LoadOptions = {}) =>
   fetchData<EntityFile>(dataPaths.entity(kind, key), o);
-export const loadMomentShard = (lang: Ed, shard: number, o: LoadOptions = {}) =>
+export const loadMomentShard = (lang: UiLang, shard: number, o: LoadOptions = {}) =>
   fetchData<MomentShardFile>(dataPaths.moments(lang, shard), o);
-export const loadQuickIndex = (lang: Ed, o: LoadOptions = {}) =>
+export const loadQuickIndex = (lang: UiLang, o: LoadOptions = {}) =>
   fetchData<QuickIndexFile>(dataPaths.quickIndex(lang), o);
 
 // Corpus layer (C1.7). None of these is needed for the first paint of Today or a shiur (plan §4).

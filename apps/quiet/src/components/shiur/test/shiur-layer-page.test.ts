@@ -19,7 +19,7 @@ import { corpusLabel } from "@emunas/i18n";
 import type { CorpusKind } from "@emunas/links";
 import type { PublicShiur } from "@emunas/corpus/public";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import type { Ed } from "../../../lib/edition.ts";
+import { EDS, type Ed } from "../../../lib/edition.ts";
 import ShiurPage from "../ShiurPage.astro";
 import { loadShiurCorpus, type ShiurCorpus } from "../corpus.ts";
 import { mentionedView, sourceLinks, storyLines, topicLine, TOPIC_LINE_MAX, TOPIC_LINE_MIN_SALIENCE } from "../refs.ts";
@@ -30,7 +30,6 @@ const repo = resolve(here, "../../../../../..");
 const corpusPkg = join(repo, "packages/corpus");
 const realData = join(repo, "data");
 const hasRealData = existsSync(join(realData, "derived", "corpus", "index.json"));
-const EDS: readonly Ed[] = ["en", "yi"];
 
 let work = "";
 let container: AstroContainer;
@@ -127,7 +126,7 @@ function checkPage(corpus: ShiurCorpus, ed: Ed, shiur: PublicShiur, html: string
   expect(order).toEqual(PART_IDS.filter((id) => order.includes(id)));
   // The place in the catalog is catalog-only: no corpus entry link in it.
   const place = /<section class="catalog-place"[\s\S]*?<\/section>/.exec(html)?.[0] ?? html.slice(html.indexOf('id="catalog"'));
-  expect(place).not.toMatch(/href="\/(en|yi)\/(inyanim|erachim|people|sources|stories)\//);
+  expect(place).not.toMatch(/href="\/(en|yi|he)\/(inyanim|erachim|people|sources|stories)\//);
   // "Told in N other shiurim": exactly the stories with other visible tellings, with the layer's count.
   const lines = storyLines(ed, corpus.layer, shiur.id, refs);
   const shown = [...html.matchAll(/<p class="story-elsewhere"[^>]*>([\s\S]*?)<\/p>/g)].map((m) => m[1]!);

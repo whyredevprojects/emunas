@@ -4,7 +4,6 @@
  * and a play button that plays one telling. A story told at least twice links to its page with every
  * telling; a story told once opens in place and links to the moment in the shiur.
  */
-import type { Ed } from "@emunas/corpus/public";
 import { formatClock, type UiLang } from "@emunas/i18n";
 import { livePaths } from "@emunas/links";
 import { useId, useState, type JSX } from "react";
@@ -31,7 +30,7 @@ export function StoryCard({
   row: StoryIndexRow;
   people: Readonly<Record<string, FacetLabel>>;
   ui: UiLang;
-  read: Ed;
+  read: UiLang;
   audio: AudioFilter;
   /** The person the list is faceted on, not repeated on every card. */
   skipPerson?: string | null;
@@ -48,12 +47,12 @@ export function StoryCard({
         <p className={s.meta} data-testid="story-people">
           {linked.map((id) => (
             <Link key={id} to={paths.person(ui, id)} data-entity={`p:${id}`}>
-              <Text value={people[id]![ui]} lang={ui} />
+              <Text value={people[id]!} lang={ui} />
             </Link>
           ))}
           {row.names.map((name) => (
             <span key={`n:${name}`} data-name="">
-              <Text value={name} shiurLang={ui} />
+              <Text value={name} shiurLang={null} />
             </span>
           ))}
         </p>

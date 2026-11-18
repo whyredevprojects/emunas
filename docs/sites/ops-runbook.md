@@ -31,9 +31,9 @@ Workers, so a preview can never reach production D1.
 
 Live Worker behaviour:
 
-- `GET|HEAD /` → `302` to `/yi/` or `/en/` (query kept). Order: cookie `emunas_ui=yi|en`
-  (written by the Live app when the reader picks a language), then `Accept-Language`
-  (highest q; `yi`/`ji`/`he`/`iw` → `yi`, `en` → `en`), else `en`. `Cache-Control: private, no-store`,
+- `GET|HEAD /` → `302` to `/<ui>/` for a `UI_LANGS` language (`/en/`, `/yi/`, `/he/`; query kept).
+  Order: cookie `emunas_ui=<ui>` (written by the Live app when the reader picks a language), then
+  `Accept-Language` (highest q; `ji` → `yi`, `iw` → `he`), else `en`. `Cache-Control: private, no-store`,
   `Vary: Cookie, Accept-Language`. Other methods → `405`.
 - `/api`, `/api/*`, `/admin`, `/admin/*` → forwarded unchanged to `env.API`.
 - On `*.workers.dev` hosts the Worker adds `X-Robots-Tag: noindex` to the responses it makes
@@ -260,8 +260,8 @@ keeping the domain off staging makes that explicit.
 
 What this means for search engines:
 
-- Quiet is the canonical copy. Its pages are self-canonical with `hreflang` yi/en/x-default and a
-  sitemap per edition; Live pages carry `<link rel="canonical">` to the Quiet equivalent and no
+- Quiet is the canonical copy. Its pages are self-canonical with an `hreflang` alternate per
+  edition (en, yi, he) plus x-default, and a sitemap per edition; Live pages carry `<link rel="canonical">` to the Quiet equivalent and no
   sitemap (integration-plan §2.3).
 - Every `*.workers.dev` host (production without a domain, all of staging, PR previews) answers
   with `X-Robots-Tag: noindex` (`_headers` and the Live Worker), so staging canonicals pointing at
@@ -561,7 +561,7 @@ In order; each step names where it is described. Staging first, then production.
 - [ ] Guard drill: dispatch `target: staging`, `plant_leak_fixture: true`; the run must stop at
       "Guard post-pass" and deploy nothing.
 - [ ] Smoke on `emunas-quiet-staging.<sub>.workers.dev` and `emunas-live-staging.<sub>.workers.dev`:
-      `/` (Live redirects to `/yi/` or `/en/`), a shiur page in both editions, audio plays and
+      `/` (Live redirects to `/<ui>/`), a shiur page in every edition, audio plays and
       seeks (Range), the response carries `X-Robots-Tag: noindex`, page `<link rel="canonical">`
       points at the staging Quiet host, Quiet → "Open in the listening app" and Live →
       "Printable page" stay on staging, search returns results, "report a problem" submits (or is

@@ -11,6 +11,7 @@ import { Link } from "react-router";
 import type { EntityChip } from "./data.ts";
 import type { RoomContext } from "./context.ts";
 import { roomStyles as s } from "./styles.ts";
+import { labelText } from "../../i18n/content.ts";
 
 const TopicPage = lazy(() => import("../topics/index.ts").then((m) => ({ default: m.TopicPage })));
 
@@ -37,7 +38,7 @@ export function TopicPane({
     >
       <Modal className={s.pane}>
         {topic ? (
-          <Dialog className={s.paneDialog} aria-label={rt("pane.label", { topic: topic.label[ui] })} data-topic-pane={topic.id}>
+          <Dialog className={s.paneDialog} aria-label={rt("pane.label", { topic: labelText(topic.label, ui) })} data-topic-pane={topic.id}>
             <div className={s.paneHead}>
               <Link to={paths.topic(ui, topic.id)} className={s.relatedLink}>
                 {rt("pane.fullPage")}

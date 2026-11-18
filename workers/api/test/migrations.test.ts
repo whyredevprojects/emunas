@@ -2,7 +2,9 @@ import { env } from "cloudflare:workers";
 import { applyD1Migrations } from "cloudflare:test";
 import { beforeAll, describe, expect, it } from "vitest";
 import { migrate } from "./helpers.ts";
+import { UI_LANGS } from "@emunas/i18n";
 import { ENTITY_TYPES } from "../src/contract.ts";
+import { EXPECTED_SCHEMA_VERSION } from "../sync/src/d1-sync.ts";
 
 async function names(db: D1Database): Promise<string[]> {
   const { results } = await db
@@ -38,7 +40,7 @@ describe("D1 migrations on a fresh local database", () => {
     const { results } = await env.DB_SEARCH.prepare("SELECT k, v FROM meta WHERE k IN ('schema_version', 'corpus_rev') ORDER BY k").all();
     expect(results).toEqual([
       { k: "corpus_rev", v: "empty" },
-      { k: "schema_version", v: "1" },
+      { k: "schema_version", v: EXPECTED_SCHEMA_VERSION },
     ]);
   });
 
@@ -69,6 +71,50 @@ describe("D1 migrations on a fresh local database", () => {
       env.DB_SEARCH.prepare("DELETE FROM fts_tri WHERE id = 'x~s0'"),
       env.DB_SEARCH.prepare("DELETE FROM fts_words WHERE id = 'x~s0'"),
     ]);
+  });
+
+  it("moments carry one titles JSON object (no per-language columns); moment_text takes every interface language", async () => {
+    const cols = await env.DB_SEARCH.prepare("SELECT name FROM pragma_table_info('moments') ORDER BY cid").all<{ name: string }>();
+    const names = cols.results.map((r) => r.name);
+    expect(names).toContain("titles");
+    expect(names.filter((n) => n.startsWith("title_"))).toEqual([]);
+    const db = env.DB_SEARCH;
+    const moment = (id: string, titles: string) =>
+      db.prepare("INSERT INTO moments (id, shiur_id, kind, t, audio_lang, category, titles, hash) VALUES (?, 'mig', 'section', 0, 'yi', 'misc', ?, 'h')").bind(id, titles).run();
+    await moment("mig~s0", JSON.stringify({ en: "A", yi: "ב", he: "ג" }));
+    for (const bad of ["not json", "[1]", '"x"']) await expect(moment("mig~s1", bad)).rejects.toThrow();
+    await db.batch(UI_LANGS.map((l) => db.prepare("INSERT INTO moment_text (id, lang, title, body) VALUES ('mig~s0', ?, NULL, 'b')").bind(l)));
+    for (const bad of ["EN", "e", "h e", "verylonglang"]) {
+      await expect(db.prepare("INSERT INTO moment_text (id, lang, title, body) VALUES ('mig~s0', ?, NULL, 'b')").bind(bad).run()).rejects.toThrow();
+    }
+    await db.batch([db.prepare("DELETE FROM moment_text WHERE id = 'mig~s0'"), db.prepare("DELETE FROM moments WHERE shiur_id = 'mig'")]);
+  });
+
+  it("feedback 0002 keeps every report and lets ui take every interface language", async () => {
+    // Replay the feedback migrations on a scratch copy (in the search database, where no feedback
+    // table exists): a report stored under 0001 survives 0002 unchanged.
+    const db = env.DB_SEARCH;
+    const [first, second] = env.TEST_FEEDBACK_MIGRATIONS;
+    expect(first?.name).toMatch(/^0001_/);
+    expect(second?.name).toMatch(/^0002_/);
+    for (const q of first!.queries) await db.prepare(q).run();
+    await db
+      .prepare("INSERT INTO feedback (id, created_at, shiur_id, moment_id, field, reason, text, ui, rev, ua_hash, status) VALUES ('old', '2026-01-01T00:00:00Z', 's', 's~s0', 'source', 'other', 'טעקסט', 'yi', 'r', 'h', 'done')")
+      .run();
+    for (const q of second!.queries) await db.prepare(q).run();
+    expect(await db.prepare("SELECT * FROM feedback").all()).toMatchObject({
+      results: [{ id: "old", created_at: "2026-01-01T00:00:00Z", shiur_id: "s", moment_id: "s~s0", field: "source", reason: "other", text: "טעקסט", ui: "yi", rev: "r", ua_hash: "h", status: "done" }],
+    });
+    await db.prepare("DROP TABLE feedback").run();
+    // The real feedback database is on 0002.
+    const insert = (ui: string) =>
+      env.DB_FEEDBACK.prepare("INSERT INTO feedback (id, created_at, shiur_id, reason, ui, rev, ua_hash) VALUES (?, '2026-01-01T00:00:00Z', 's', 'other', ?, 'r', 'h')")
+        .bind(crypto.randomUUID(), ui)
+        .run();
+    for (const l of UI_LANGS) await insert(l);
+    for (const bad of ["EN", "x", "e n", "<script>"]) await expect(insert(bad)).rejects.toThrow();
+    const idx = await env.DB_FEEDBACK.prepare("SELECT name FROM sqlite_master WHERE type = 'index' AND tbl_name = 'feedback' AND name NOT LIKE 'sqlite_%' ORDER BY name").all<{ name: string }>();
+    expect(idx.results.map((r) => r.name)).toEqual(["feedback_shiur", "feedback_status"]);
   });
 
   it("feedback constraints reject an unknown reason and over-long text", async () => {

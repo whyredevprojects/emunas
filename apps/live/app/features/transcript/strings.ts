@@ -30,8 +30,20 @@ export const transcriptYi: MessageTable<TranscriptKey> = {
   "tx.part": "טייל {n}",
 };
 
+export const transcriptHe: MessageTable<TranscriptKey> = {
+  "tx.tab": "טקסט",
+  "tx.heading": "דברי ההקלטה",
+  "tx.note": "מתוך רישום בכתב שאדם אישר עבור הקלטה זו. ייתכנו בו עדיין טעויות.",
+  "tx.reviewed": "רישום בכתב שנבדק",
+  "tx.highAsr": "רישום ממוחשב, מאושר",
+  "tx.loading": "הטקסט נטען",
+  "tx.failed": "לא ניתן היה לטעון את הטקסט.",
+  "tx.none": "אין טקסט מאושר עבור הקלטה זו.",
+  "tx.part": "חלק {n}",
+};
+
 export type TranscriptT = TFunction<TranscriptKey>;
 
 export function transcriptT(ui: UiLang): TranscriptT {
-  return createT<TranscriptKey>({ en: transcriptEn, yi: transcriptYi }, ui);
+  return createT<TranscriptKey>({ en: transcriptEn, yi: transcriptYi, he: transcriptHe }, ui);
 }

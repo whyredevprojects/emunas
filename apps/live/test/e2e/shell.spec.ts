@@ -6,6 +6,7 @@
  */
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test, type Page } from "@playwright/test";
+import { UI_DIR, UI_LANGS } from "@emunas/i18n";
 import { axeBudget } from "./helpers.ts";
 
 const STUB_PATHS = [
@@ -157,7 +158,7 @@ test.describe("layout", () => {
 });
 
 test.describe("accessibility", () => {
-  for (const ui of ["en", "yi"] as const) {
+  for (const ui of UI_LANGS) {
     test(`axe finds no violations on any stub (${ui})`, async ({ page }) => {
       axeBudget(STUB_PATHS.length);
       for (const p of STUB_PATHS) {
@@ -222,7 +223,7 @@ test.describe("colour theme", () => {
     await expect(html).not.toHaveAttribute("data-theme");
   });
 
-  for (const ui of ["en", "yi"] as const) {
+  for (const ui of UI_LANGS) {
     test(`axe finds no violations in dark colours (${ui})`, async ({ page, context, baseURL }) => {
       await context.addCookies([{ name: "emunas_theme", value: "dark", url: baseURL! }]);
       for (const p of ["", "explore", "search?q=teshuvah", "shelf"]) {
@@ -249,7 +250,8 @@ test.describe("client navigation", () => {
     const loads: string[] = [];
     page.on("load", () => loads.push(page.url()));
 
-    for (const ui of ["en", "yi"] as const) {
+    const cycle = [...UI_LANGS, UI_LANGS[0]];
+    for (const [i, ui] of cycle.entries()) {
       // Rail links
       const links = page.locator("nav a");
       const n = await links.count();
@@ -266,7 +268,7 @@ test.describe("client navigation", () => {
         await ready(page);
       }
       // Language switch link in the header
-      await page.locator(`header a[hreflang="${ui === "en" ? "yi" : "en"}"]`).click();
+      await page.locator(`header a[hreflang="${cycle[i + 1] ?? UI_LANGS[1]}"]`).click();
       await ready(page);
     }
 
@@ -288,13 +290,14 @@ test.describe("client navigation", () => {
   test("/ redirects to the browser's language", async ({ browser }) => {
     for (const [locale, ui] of [
       ["en-US", "en"],
-      ["he-IL", "yi"],
+      ["he-IL", "he"],
+      ["yi", "yi"],
     ] as const) {
       const ctx = await browser.newContext({ locale });
       const page = await ctx.newPage();
       await page.goto("/");
       await page.waitForURL(`**/${ui}/`);
-      await expect(page.locator("html")).toHaveAttribute("dir", ui === "yi" ? "rtl" : "ltr");
+      await expect(page.locator("html")).toHaveAttribute("dir", UI_DIR[ui]);
       await ctx.close();
     }
   });

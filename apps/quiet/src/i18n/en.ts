@@ -1,6 +1,6 @@
 /**
  * Quiet UI strings, English edition. The key union `UiKey` is defined by this table;
- * `yi.ts` must have every key (a missing one fails `tsc`).
+ * `yi.ts` and `he.ts` must have every key (a missing one fails `tsc`).
  *
  * Wording status: unreviewed (W5.3 does the fixed-copy pass). Plain voice, no
  * "content" vocabulary (concept-quiet §11): shiurim, recordings, notes.
@@ -20,9 +20,6 @@ export const en = {
   "nav.about": "About",
 
   "edition.label": "Edition",
-  "edition.current": "English edition",
-  "edition.other": "אידיש",
-  "edition.otherName": "Yiddish edition",
 
   "theme.label": "Colours",
   "theme.light": "Light",
@@ -33,7 +30,7 @@ export const en = {
   "breadcrumb.label": "You are here",
 
   "footer.recordingIsSource": "The recordings are the source. Titles are as printed in the 2012 Pocket Guide.",
-  "footer.otherEdition": "This page in Yiddish",
+  "footer.inLanguage": "This page in {language}",
   "footer.home": "Emunas home",
 
   "time.playFrom": "Play from {time}",

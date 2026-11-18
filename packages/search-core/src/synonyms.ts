@@ -12,6 +12,7 @@
  *    aliases, which are too broad for that), e.g. `hester` → the topic labelled "Hester Panim and
  *    Suffering". Spans made only of function words, or shorter than three letters, never prefix-match.
  */
+import { UI_LANGS } from "@emunas/i18n";
 import { fold } from "@emunas/normalize";
 import type { EntityDocKind, EntityDocLabels } from "./types.ts";
 
@@ -27,7 +28,7 @@ export interface SynonymSource {
 export interface SynonymEntry {
   kind: EntityDocKind;
   id: string;
-  /** Folded labels (he, en, yi), deduplicated: the canonical forms offered as expansions. */
+  /** Folded labels (every language, `UI_LANGS` order), deduplicated: the canonical forms offered as expansions. */
   forms: string[];
   count: number;
 }
@@ -77,7 +78,13 @@ const FUNCTION_WORDS = new Set([
   "פון",
   "רבי",
   "ר",
+  // Hebrew (the he edition's queries and labels)
+  "הרב",
   "של",
+  "את",
+  "על",
+  "עם",
+  "מן",
   "ה",
   "ו",
 ]);
@@ -121,7 +128,8 @@ export function buildSynonymTable(sources: Iterable<SynonymSource>, opts: Synony
   };
   for (const s of sources) {
     const forms: string[] = [];
-    for (const l of [s.labels.he, s.labels.en, s.labels.yi]) {
+    for (const lang of UI_LANGS) {
+      const l = s.labels[lang];
       const f = l === null ? "" : fold(l);
       if (f !== "" && !forms.includes(f)) forms.push(f);
     }

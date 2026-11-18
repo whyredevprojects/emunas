@@ -14,8 +14,10 @@
  */
 import type { OccasionShiurRef, OccasionsFile, YearsFile } from "@emunas/corpus/aggregate";
 import type { CorpusIndex, IndexRow } from "@emunas/corpus/public";
+import type { AudioLang } from "@emunas/i18n";
 import { formatQuiet } from "@emunas/links";
-import type { Ed } from "../../lib/edition.ts";
+import { shownText, type PickedText } from "../../lib/content.ts";
+import { isHebrewScriptEdition, type Ed } from "../../lib/edition.ts";
 import type { CalendarKey } from "./strings.ts";
 
 export interface CalendarData {
@@ -42,13 +44,13 @@ export interface ShiurEntry {
   /** `titleOriginal`, exactly as catalogued. */
   title: string;
   /** Spoken language of the shiur. */
-  lang: Ed;
+  lang: AudioLang;
   years: number[];
   sectionTitle: string;
   /** Who the shiur was given for, from the catalog (null when not stated). */
   audience: Audience;
-  /** `oneLiner` in the edition's language, or null (catalog-only shiur). */
-  oneLiner: string | null;
+  /** `oneLiner` for the edition (its language, else the fallback, with its lang/dir), or null (catalog-only shiur). */
+  oneLiner: PickedText | null;
   /** Year pages: the parsha/zman of the shiur, linked to its calendar page. Empty elsewhere. */
   occasions: { name: OccasionName; href: string | null; raw: string | null }[];
 }
@@ -154,8 +156,13 @@ export function occasionLookup(occ: OccasionsFile): Map<string, OccasionInfo> {
   return m;
 }
 
-export function occasionName(o: { he: string; yi: string; en: string }, ed: Ed): OccasionName {
-  return ed === "yi" ? { name: o.yi, he: null } : { name: o.en, he: o.he };
+/**
+ * An occasion's name in the edition: a Hebrew-script edition shows its own name (the Yiddish
+ * edition the Yiddish, the Hebrew edition the Hebrew); the English edition the English name with
+ * the Hebrew beside it.
+ */
+export function occasionName(o: Readonly<Record<Ed, string>>, ed: Ed): OccasionName {
+  return isHebrewScriptEdition(ed) ? { name: o[ed], he: null } : { name: o[ed], he: o.he };
 }
 
 // ---------------------------------------------------------------- entries
@@ -183,7 +190,7 @@ export function shiurEntry(
     years: [...row.years].sort((a, b) => a - b),
     sectionTitle: row.catalog.sectionTitle,
     audience: opts.audience ?? null,
-    oneLiner: row.oneLiner?.[ed] || null,
+    oneLiner: shownText(row.oneLiner, ed),
     occasions,
   };
 }

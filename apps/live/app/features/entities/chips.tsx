@@ -20,6 +20,7 @@ import type { FacetLabel, PersonChip as PersonChipData } from "./live-data.ts";
 import { EntityName } from "./common.tsx";
 import { browseT } from "./strings.ts";
 import { browseStyles as s } from "./styles.ts";
+import { latinEdition } from "../../i18n/content.ts";
 
 const paths = livePaths();
 
@@ -40,7 +41,7 @@ export function conceptHref(ui: UiLang, c: { id: string; page: boolean; topicId?
 
 /** The display name of a person in the interface language. */
 function personName(label: FacetLabel, ui: UiLang): string {
-  return ui === "en" ? label.en : label.he || label.yi;
+  return latinEdition(ui) ? label.en : label.he || label.yi;
 }
 
 export function PersonChip({ chip, ui }: { chip: PersonChipData; ui: UiLang }): JSX.Element {

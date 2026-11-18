@@ -17,6 +17,7 @@ import { topicTargets } from "./model.ts";
 import { AiLabel, Report, TopicChipButton } from "./parts.tsx";
 import { printableUrl } from "./quiet-link.ts";
 import { roomStyles as s } from "./styles.ts";
+import { labelText } from "../../i18n/content.ts";
 
 export function RoomHeaderDetails({ room, quietOrigin }: { room: RoomContext; quietOrigin: string | null }): JSX.Element {
   const { shiur, ui, rt, reading } = room;
@@ -77,8 +78,8 @@ export function RoomHeaderDetails({ room, quietOrigin }: { room: RoomContext; qu
             <dt className={s.visuallyHidden}>{rt("related.series")}</dt>
             <dd>
               {shiur.series.order !== null
-                ? rt("room.seriesPart", { series: series[ui], n: shiur.series.order, count: shiur.series.count })
-                : rt("room.seriesPartNoOrder", { series: series[ui] })}
+                ? rt("room.seriesPart", { series: labelText(series, ui), n: shiur.series.order, count: shiur.series.count })
+                : rt("room.seriesPartNoOrder", { series: labelText(series, ui) })}
               {shiur.perek ? <> · {rt("room.perek", { perek: shiur.perek })}</> : null}
             </dd>
           </div>

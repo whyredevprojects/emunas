@@ -53,9 +53,9 @@ describe("grouping", () => {
   });
 
   it("titles fall back to the other language", () => {
-    expect(hitTitle({ title: { en: null, yi: "שאלה" } }, "en")).toEqual({ text: "שאלה", lang: "yi" });
-    expect(hitTitle({ title: { en: "Q", yi: "שאלה" } }, "en")).toEqual({ text: "Q", lang: "en" });
-    expect(hitTitle({ title: { en: null, yi: null } }, "yi")).toBeNull();
+    expect(hitTitle({ title: { en: null, yi: "שאלה", he: null } }, "en")).toEqual({ text: "שאלה", lang: "yi" });
+    expect(hitTitle({ title: { en: "Q", yi: "שאלה", he: null } }, "en")).toEqual({ text: "Q", lang: "en" });
+    expect(hitTitle({ title: { en: null, yi: null, he: null } }, "yi")).toBeNull();
   });
 });
 

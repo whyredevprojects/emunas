@@ -8,6 +8,7 @@ import NotesLabel from "../src/components/NotesLabel.astro";
 import TimeLink from "../src/components/TimeLink.astro";
 import Base from "../src/layouts/Base.astro";
 import type { AudioRecording } from "../src/lib/audio.ts";
+import { EDS, type Ed } from "../src/lib/edition.ts";
 import { sampleRecordings, sampleShiur, sampleUncatalogued } from "../src/lib/sample.ts";
 
 let container: AstroContainer;
@@ -155,12 +156,13 @@ describe("NotesLabel and Coverage", () => {
 });
 
 describe("Base layout", () => {
-  const page = (ed: "yi" | "en", path: string) =>
+  const page = (ed: Ed, path: string) =>
     render(Base, { ed, title: "The קדושה of צדיקים", path, crumbs: [{ label: "Contents", href: `/${ed}/contents/` }, { label: "here" }] }, { default: "<p>body</p>" });
 
   it("sets lang and dir per edition", async () => {
     expect(await page("yi", "/yi/shiur/x/")).toMatch(/<html lang="yi" dir="rtl">/);
     expect(await page("en", "/en/shiur/x/")).toMatch(/<html lang="en" dir="ltr">/);
+    expect(await page("he", "/he/shiur/x/")).toMatch(/<html lang="he" dir="rtl">/);
   });
 
   it("has a skip link, one nav line, a breadcrumb, main and footer", async () => {
@@ -175,12 +177,33 @@ describe("Base layout", () => {
     expect(html).toContain('<span aria-current="page"><bdi>here</bdi></span>');
   });
 
-  it("links the edition switch to the same path in the other edition", async () => {
+  it("links the edition switch to the same path in every other edition, each named in its own language", async () => {
     const html = await page("yi", "/yi/shiur/x/");
     const switches = attrs(html, "a").filter((a) => "data-edition-switch" in a);
-    expect(switches).toHaveLength(2);
-    for (const a of switches) expect(a).toMatchObject({ href: "/en/shiur/x/", hreflang: "en" });
+    // header: one link per other edition; footer: "this page in …" per other edition
+    expect(switches).toHaveLength(4);
+    expect(switches.map((a) => a["href"])).toEqual(["/en/shiur/x/", "/he/shiur/x/", "/en/shiur/x/", "/he/shiur/x/"]);
+    expect(switches.map((a) => a["hreflang"])).toEqual(["en", "he", "en", "he"]);
     expect(switches[0]).toMatchObject({ lang: "en", dir: "ltr" });
+    expect(switches[1]).toMatchObject({ lang: "he", dir: "rtl" });
+    expect(html).toContain(">English</a>");
+    expect(html).toContain(">עברית</a>");
+    expect(html).toContain("דער בלאט אויף ענגליש");
+
+    const he = await page("he", "/he/shiur/x/#p0-1");
+    const heSwitches = attrs(he, "a").filter((a) => "data-edition-switch" in a);
+    expect(heSwitches.map((a) => a["href"])).toEqual(["/en/shiur/x/#p0-1", "/yi/shiur/x/#p0-1", "/en/shiur/x/#p0-1", "/yi/shiur/x/#p0-1"]);
+    expect(he).toContain(">אידיש</a>");
+    expect(he).toContain("הדף הזה באנגלית");
+    expect(he).toContain("הדף הזה באידיש");
+  });
+
+  it("ends every page with the dedication, in every edition", async () => {
+    for (const ed of EDS) {
+      const html = await page(ed, `/${ed}/`);
+      const footer = html.slice(html.indexOf("<footer"), html.indexOf("</footer>"));
+      expect(footer.trimEnd()).toMatch(/לעילוי נשמת אשר בן ישראל<\/p>$/);
+    }
   });
 
   it("isolates a catalog title in <title> and preloads the edition's body font", async () => {

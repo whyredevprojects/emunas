@@ -16,7 +16,7 @@
  *
  * Every dependency is injectable for the unit tests; the defaults are the browser's.
  */
-import type { Ed } from "@emunas/corpus/public";
+import { UI_LANGS, type UiLang } from "@emunas/i18n";
 import { dataPaths } from "../../app/data/paths.ts";
 import type { ShiurFile } from "../../app/data/types.ts";
 import type { DownloadRecord, Personal } from "../../app/store/index.ts";
@@ -65,7 +65,7 @@ export function planDownload(shiur: ShiurFile): DownloadPlan | null {
     .sort((a, b) => a.order - b.order)
     .map((r) => ({ recordingId: r.id, url: r.audioUrl as string }));
   if (audio.length === 0) return null;
-  const langs: Ed[] = shiur.notes?.writeupLangs ?? [];
+  const langs: readonly UiLang[] = shiur.notes?.writeupLangs ?? [];
   return {
     shiurId: shiur.id,
     audio,
@@ -341,7 +341,7 @@ export async function removeShiurDownload(shiurId: string, shiur: ShiurFile | nu
     const plan = own ? planDownload(own) : null;
     for (const a of plan?.audio ?? []) if (!inUse.has(a.url)) await audioCache.delete(a.url);
     const pins = plan?.pins ?? [dataPaths.shiur(shiurId)];
-    for (const l of ["en", "yi"] as const) pins.push(dataPaths.writeup(shiurId, l));
+    for (const l of UI_LANGS) pins.push(dataPaths.writeup(shiurId, l));
     for (const p of new Set(pins)) await pinned.delete(new URL(p, deps.origin).href);
   }
   await deps.personal.removeDownload(shiurId);

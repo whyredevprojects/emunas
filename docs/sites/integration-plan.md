@@ -88,7 +88,7 @@ All packages are `"private": true`, named `@emunas/<dir>`, ESM, TypeScript sourc
 | Query folding / alias expansion | yes | `@emunas/search-core` (uses `normalize`) | same in Pagefind glue, MiniSearch, Worker |
 | Cross-site URLs | yes | `@emunas/links` | |
 | i18n: formatting + data vocabulary (category, section kind, resolution wording, occasion labels) | yes | `@emunas/i18n` | |
-| i18n: UI strings | **no** | `apps/*/…/i18n/{en,yi}.ts` | different products, different voice; both use `createT<Keys>()` from `@emunas/i18n` |
+| i18n: UI strings | **no** | `apps/*/…/i18n/{en,yi,he}.ts` (one table per `UI_LANGS` language) | different products, different voice; both use `createT<Keys>()` from `@emunas/i18n` |
 | Design tokens: fonts, type scale, spacing, base palette roles | yes | `@emunas/tokens` | |
 | Theme, components, CSS | **no** | each app | Quiet: printed catalog; Live: app shell |
 | Player | **no** | Quiet `apps/quiet/src/scripts/player.ts` (≤6 KB vanilla); Live `apps/live/app/player-engine/` | timeline math (global ↔ recording-local seconds) is shared in `@emunas/corpus/public` |
@@ -119,7 +119,7 @@ All packages are `"private": true`, named `@emunas/<dir>`, ESM, TypeScript sourc
 | C17 | Transcript eligibility file | `apps/quiet/config/…` | `apps/live/config/…` | **One file** `site-policy/transcript-eligibility.json`, entries keyed by recordingId: `{ model, mode, transcribedAt, quality: "reviewed" \| "high-asr", approvedBy, approvedAt, allowSearch: false, note }`. Identity fields must equal the compact transcript's top-level fields, so re-transcription voids approval. Plus build flag `EMUNAS_TRANSCRIPT_VIEW` (default off). Public descriptor per recording: `transcript: { eligible: false }` (literal type today). |
 | C18 | Feedback | `mailto:` | `/api/feedback` + D1 | Live uses `/api/feedback` (in `emunas-api`). Quiet keeps `mailto:` at launch (no-JS, no Turnstile); it can post to the same endpoint later. |
 | C19 | Search backend | Pagefind only, Worker rejected | D1 + Vectorize Worker + MiniSearch | **Both, as planned per site**, over one `search-core` document definition. The D1/Vectorize Worker is shared infrastructure; Quiet may call it later, but launches static. |
-| C20 | Root `/` | edition chooser (static) | redirect by Accept-Language | Each keeps its own: Quiet `/` = chooser page (it is the canonical root); Live `/` = Worker redirect to `/yi/` or `/en/` (cookie, then Accept-Language). |
+| C20 | Root `/` | edition chooser (static) | redirect by Accept-Language | Each keeps its own: Quiet `/` = chooser page (it is the canonical root); Live `/` = Worker redirect to `/<ui>/` for a `UI_LANGS` language (cookie, then Accept-Language). |
 | C21 | Workspace edits | reconciler | reconciler | Done in W1.1 (this plan). |
 
 ---
@@ -163,10 +163,30 @@ Moving between sites: Quiet shiur page has "Open in the listening app" (`links.l
 
 ### 2.3 SEO
 
-- Quiet: self-canonical; `hreflang="yi"`/`"en"` pairs + `x-default` → `/`; `sitemap-index.xml` (per edition) built from `.corpus`; OG tags from catalog title + `oneLiner`.
+- Quiet: self-canonical; one `hreflang` alternate per edition (`links.hreflangAlternates`: en, yi, he) + `x-default` → `/`; `sitemap-index.xml` (per edition) built from `.corpus`; OG tags from catalog title + `oneLiner` in the edition's language (with the §2.4 fallback).
+- Home (`apps/home`): English only, self-canonical, no alternates. It shows its Yiddish and Hebrew labels as asides and links every edition of Library and Listen.
 - Live: prerendered shiur/series/occasion/work/entity pages carry OG tags (share previews) and `<link rel="canonical">` **to the Quiet equivalent**. Today, Explore, search, shelf, playlists: `noindex`. No sitemap. One indexable copy of each shiur, so the two sites do not compete.
 - Catalog-only shiurim are indexable (catalog title, section, year); they gain description text when notes land.
 - `robots.txt` on both: allow all, disallow `/api/`, `/admin/`. (Audio lives on `media.<domain>`, A1; whether that host gets its own `robots.txt` is the owner's call.)
+
+### 2.4 Languages
+
+The interface languages are one list, `UI_LANGS` in `@emunas/i18n` (`en`, `yi`, `he`; Yiddish and Hebrew right-to-left). Nothing else in the repo lists them: editions (`@emunas/links` `EDS`), message tables (`MessageTables` is a mapped type, so tsc reports a missing language), hreflang, sitemaps, search fields (`title_<lang>`, `body_<lang>`), the API's `ui` parameter and the guard's term lists are all derived from it. A fourth language is a new `UI_LANGS` entry plus its message tables, its style rules and its translations.
+
+Two languages are kept apart:
+
+- **Audio language** (`AudioLang`, `en` | `yi`): the language the Mashgiach spoke in. It is a property of the recording, shown in the citation line, and filtered on. Hebrew is never an audio language.
+- **Content language**: the language of the generated text (summaries, sections, stories, Q&A, write-ups, corpus concepts, topics, stories, threads and series). The pipeline writes `en` and `yi` (`SOURCE_LANGS`); every further language (`TranslatedLang`, today `he`) comes from **translation overlays**.
+
+Overlays (contract: `ShiurTranslation`, `CorpusTranslation` and `TRANSLATION_LANGS` in `src/types.ts`; how they are made: [`docs/translation-runbook.md`](../translation-runbook.md)):
+
+- One file per shiur, `data/derived/shiurim/<id>/i18n/<lang>.json`, and any number of corpus parts, `data/derived/corpus/i18n/<lang>/<part>.json`. Keys are paths of the translated text (`x.sections.2.title`, `w.0.paragraphs.1.text`, `concepts:<id>.label`, `series:<id>.arc.<shiurId>.oneLiner`).
+- Each file carries the hash of the en/yi text it was made from. `corpus:build` applies an overlay only while that hash matches the current source; a stale one is ignored and counted in `build-report.json` and `layer.json` (`translations`).
+- The build writes every generated text as `LocalizedText` (`{ en, yi, he? }`): `he` only where a current translation exists. A Hebrew write-up is published only when the overlay covers every Yiddish heading and paragraph, so a write-up never mixes languages.
+
+**Fallback.** A text with no current translation in the reader's language falls back along one chain, `CONTENT_FALLBACK` in `@emunas/i18n`: he → yi → en, yi → en, en → yi. `pickText` / `pickLocalized` return the text together with the language actually shown, and the element carries that language's `lang` and `dir`, so a Yiddish fallback on a Hebrew page is still marked `lang="yi"`.
+
+**Wording.** Hebrew UI text has no nikud; the Mashgiach is "המשגיח" (formally הגה"צ רבי משה וולפסון זצ"ל), never "הרב" as a stand-in and never שליט"א. When a Yiddish UI word is hard to render in Hebrew, use the Hebrew word.
 
 ---
 
@@ -242,6 +262,7 @@ pipeline session → commits data/derived/** (batches, several a day)
       ▼
 deploy.yml on main
   1. corpus:build     ingest + manifest + catalog + shiurim/*/{meta,extraction,writeup}  → .corpus/
+                      + translation overlays shiurim/*/i18n/<lang>.json, corpus/i18n/<lang>/*.json (§2.4)
                       (status gate C4, projection, time, normalize keys, aggregates, build-report.json)
   2. guard pre-pass   reads data/transcripts (CI only) vs .corpus text → .corpus/suppress.json (ids only, ≥20-token runs)
   3. corpus:build --suppress .corpus/suppress.json   (re-projects only affected shiurim; fingerprints)
@@ -257,6 +278,7 @@ deploy.yml on main
 
 - **New data appears automatically**: a shiur flipping to `done` changes its fingerprint → full page, indexes, counts, search rows and vectors on the next run. No hand-kept lists.
 - **Manifest is the source of truth, files are not** (the partial `-01-c` directory stays catalog-only).
+- **Translations** arrive the same way (translation sessions commit `data/derived/**/i18n/**`). A reprocessed shiur's overlay goes stale and drops out until it is translated again; its readers see the Yiddish meanwhile.
 - **Reprocessing** (new `promptVersion`) changes content at the same URLs; moment ids may shift, so every link also carries `t` and Live falls back to `t` on a dangling `m`.
 - **What fails a deploy**: invalid `ingest.json`/`manifest.json`, guard post-pass findings, budget overrun, code errors. **What never fails it**: a malformed shiur file, an unmapped string, a verbatim hit (auto-suppressed and reported).
 - **Branch**: production builds from `main`. The pipeline currently commits to `claude/dual-website-concepts-sm99sh`. Default: `data-sync.yml` (hourly) merges new commits from a configured `DATA_BRANCH` into `main` **only if they touch nothing outside `data/`**; otherwise it opens a PR. Simpler alternative for the owner (O9): the pipeline commits to `main` once the sites exist.
@@ -290,8 +312,8 @@ deploy.yml on main
 ### 5.2 Public contract (`@emunas/corpus/public`, sketch)
 
 ```ts
-type Ed = "yi" | "en";
-type L = { en: string; yi: string };
+type Ed = "yi" | "en";                // the audio language (AudioLang)
+type L = LocalizedText;               // { en, yi, he? } from @emunas/i18n (§2.4); the corpus exports LocalizedText itself
 interface PublicRecording { id: string; order: number; offset: number; duration: number;
   audioUrl: string | null /* media.<domain> URL (A1); null when !playable */; playable: boolean;
   transcript: { eligible: false } }
@@ -318,7 +340,7 @@ interface PublicShiur {
     // No people or concept names, and no story people: raw extraction names may be ASR mishearings.
     // People, concepts, works and a story's people come from the corpus layer: the shiur's refs in
     // `.corpus/layer/shiur/<id>.json` (personIds, conceptIds, merged story ids) and the entity files.
-    writeup: Record<Ed, { sectionIndex: number; heading: string | null;
+    writeup: Localized<{ sectionIndex: number; heading: string | null;   // en, yi; he only when fully translated
                           paragraphs: { text: string; src: number[]; t: number; end: number }[] }[]>;
   };
 }

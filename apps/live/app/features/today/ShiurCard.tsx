@@ -3,7 +3,7 @@
  * reading language, the duration and a language mark. Used by Today's rows and the series pages.
  * The whole card is one link to the listening room.
  */
-import type { Ed, L, ShiurStatus } from "@emunas/corpus/public";
+import type { Ed, LocalizedText, ShiurStatus } from "@emunas/corpus/public";
 import { formatDuration, languageName, type UiLang } from "@emunas/i18n";
 import { livePaths } from "@emunas/links";
 import type { JSX, ReactNode } from "react";
@@ -17,7 +17,7 @@ export interface CardData {
   id: string;
   lang: Ed;
   title: string;
-  oneLiner: L | null;
+  oneLiner: LocalizedText | null;
   duration: number;
   years: readonly number[];
   status: ShiurStatus;
@@ -27,7 +27,7 @@ export interface ShiurCardProps {
   shiur: CardData;
   ui: UiLang;
   /** Reading language for the one-liner. */
-  read: Ed;
+  read: UiLang;
   /** Start position for the link (`?t=`). */
   t?: number;
   /** A line above the title (e.g. "Part 3", "Resume at 12:30"). */

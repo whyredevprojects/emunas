@@ -8,14 +8,17 @@
  * that are `full` in `.corpus` and in the corpus index, with the items they point at still present
  * after projection. `shiurCount`, `shiurIds.length` and the like are never read as counts.
  *
- * Text fields marked "generated" are AI-written, unreviewed prose (reported speech). `reviewed` is
+ * Text fields marked "generated" are AI-written, unreviewed prose (reported speech). Every one is a
+ * `LocalizedText` (`en`, `yi`, plus `he` when a current corpus translation overlay exists; see
+ * src/build/translations.ts), picked by the sites with `pickText`. `reviewed` is
  * true only when the entity carries `reviewStatus: "reviewed"`. No file here carries transcript
  * wording: no ASR variants, no alias-map keys, no segment indices.
  */
-import type { Ed, L } from "./types.ts";
+import type { TranslatedLang } from "@emunas/i18n";
+import type { Ed, LocalizedText } from "./types.ts";
 
 /** Bump when the shape of anything in `.corpus/layer/` changes. Separate from SCHEMA_VERSION. */
-export const LAYER_SCHEMA_VERSION = 3;
+export const LAYER_SCHEMA_VERSION = 4;
 
 /** The layer folder inside `.corpus/`. */
 export const LAYER_DIR = "layer";
@@ -124,6 +127,21 @@ export interface LayerInfo {
   droppedKeys: Record<string, number>;
   droppedRecords: number;
   lint: { clusterCounts: LayerCountLint[] };
+  /** Corpus translation overlays per translated language (counts only). */
+  translations: Record<TranslatedLang, LayerTranslationCounts>;
+}
+
+/** How much of the corpus text has a current translation in one language. */
+export interface LayerTranslationCounts {
+  /** Part files read, and those that were not a translation of this language. */
+  files: number;
+  invalidFiles: number;
+  /** Corpus entries with translatable text (`<collection>:<id>`). */
+  entries: number;
+  /** Entries with a current translation (applied). */
+  current: number;
+  /** Entries whose translation was made from older en/yi text (ignored). */
+  stale: number;
 }
 
 // ---------------------------------------------------------------- topics.json
@@ -133,7 +151,8 @@ export interface LayerTopicNode {
   /** null for level 1 (or when the parent record is missing). */
   parentId: string | null;
   level: 1 | 2 | 3;
-  label: { en: string; yi: string; he?: string };
+  /** `he`: the topic's own loshon-hakodesh name when it has one, else its current translation. */
+  label: LocalizedText;
   /** Visible shiurim tagged with this topic or a descendant (shiur or section level). */
   count: number;
   /** Explicit same-subject entity (`topics[].sameAs`), only targets that exist. */
@@ -159,7 +178,7 @@ export interface LayerTouchedRow {
 export interface LayerTopicDetail {
   id: string;
   /** Generated; null when the label stands alone. */
-  description: L | null;
+  description: LocalizedText | null;
   /** "Begin here": up to ten visible shiurim, other-speaker shiurim excluded, by salience. */
   hubs: string[];
   /**
@@ -190,11 +209,11 @@ export interface LayerTopicsFile {
 export interface LayerConcept {
   id: string;
   canonicalHe: string;
-  label: L;
+  label: LocalizedText;
   /** Display spellings (the entity's own field). */
   transliterations: string[];
   /** Generated. */
-  definition: L;
+  definition: LocalizedText;
   /** Visible shiurim, catalog order. */
   shiurIds: string[];
   count: number;
@@ -263,7 +282,7 @@ export interface LayerPerson {
   /** Position of `group` in `LAYER_PERSON_GROUPS` (tanach first, other last). */
   groupOrder: number;
   /** Generated disambiguation note (who this is, as against similarly named persons); null when none. */
-  description: L | null;
+  description: LocalizedText | null;
   shiurIds: string[];
   count: number;
   /** Stories (with a visible telling) that name this person. */
@@ -345,9 +364,9 @@ export type LayerStoryPerson = { id: string } | { name: string; linked: false };
 export interface LayerStory {
   id: string;
   /** Generated. */
-  title: L;
+  title: LocalizedText;
   /** Generated merged retelling. */
-  retelling: L;
+  retelling: LocalizedText;
   people: LayerStoryPerson[];
   /** The tellings credit the story to different people (the retelling says so); `people` lists all of them. */
   attributionVaries: boolean;
@@ -367,9 +386,9 @@ export interface LayerStoriesFile {
 export interface LayerThread {
   id: string;
   /** Generated. */
-  label: L;
+  label: LocalizedText;
   /** Generated. */
-  summary: L;
+  summary: LocalizedText;
   topicIds: string[];
   /** Visible members by year (undated last), then catalog order. */
   members: LayerMomentRef[];
@@ -395,11 +414,11 @@ export interface LayerThreadsFile {
 export interface LayerSeries {
   seriesId: string;
   /** Generated subtitle (the catalog name stays the title). */
-  title: L;
-  overview: L;
-  keyThemes: L[];
+  title: LocalizedText;
+  overview: LocalizedText;
+  keyThemes: LocalizedText[];
   /** Visible parts only, in series order. */
-  arc: { shiurId: string; part: number; oneLiner: L }[];
+  arc: { shiurId: string; part: number; oneLiner: LocalizedText }[];
   /**
    * Part numbers (1-based, series order) of the parts that are not visible (no notes yet), so the
    * page can keep their rows. Numbers only: a shiur that is not visible is never named here.

@@ -50,10 +50,30 @@ export const threadsYi: MessageTable<ThreadsKey> = {
   "row.playing": "שפילט יעצט",
 };
 
+export const threadsHe: MessageTable<ThreadsKey> = {
+  "loading": "טוען…",
+  "error": "לא ניתן היה לטעון דף זה. בדקו את החיבור וטענו מחדש.",
+  "count": { one: "ב־{count} שיעור", other: "ב־{count} שיעורים" },
+  "span": "{from} עד {to}",
+  "topics": "נושאים",
+  "members": "היכן זה עולה",
+  "members.lead": "הנקודה של כל שיעור, עם הקטע בשיעור שבו היא נמצאת.",
+  "undated": "השנה אינה ידועה",
+  "play": { one: "השמעת החוט ({count} שיעור)", other: "השמעת החוט ({count} שיעורים)" },
+  "play.lead": "משמיע את החלק של כל שיעור לפי סדר השנים, זה אחר זה. מחליף את התור שלכם.",
+  "play.playing": { one: "משמיע {count} חלק בתור.", other: "משמיע {count} חלקים בתור." },
+  "play.failed": "לא ניתן היה להתחיל את ההשמעה.",
+  "leftOut": { one: "עוד {count} ב{language}", other: "עוד {count} ב{language}" },
+  "leftOut.why": "לא הושמע: לפי הגדרת שפת השיעורים שלכם.",
+  "untimed": { one: "ל־{count} אין זמן בהקלטה.", other: "ל־{count} אין זמן בהקלטה." },
+  "row.play": "השמעת חלק זה",
+  "row.playing": "מתנגן",
+};
+
 export type ThreadsT = TFunction<ThreadsKey>;
 
 const cache: Partial<Record<UiLang, ThreadsT>> = {};
 
 export function threadsT(ui: UiLang): ThreadsT {
-  return (cache[ui] ??= createT<ThreadsKey>({ en: threadsEn, yi: threadsYi }, ui));
+  return (cache[ui] ??= createT<ThreadsKey>({ en: threadsEn, yi: threadsYi, he: threadsHe }, ui));
 }

@@ -6,6 +6,7 @@
 import { act, cleanup, render, screen, waitFor } from "@testing-library/react";
 import axe from "axe-core";
 import { RouterProvider } from "react-router";
+import { UI_LANGS } from "@emunas/i18n";
 import { afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
 import { configureData, resetDataConfig, type DataFetch, type ShiurFile } from "../live-data.ts";
 import { buildFixture, fixtureFetch, shiurNoachFixture as shiurNoach, todayFixture } from "./fixtures.ts";
@@ -147,7 +148,7 @@ describe("Today page", () => {
     expect(container.querySelectorAll("main h1")).toHaveLength(1);
   });
 
-  for (const ui of ["en", "yi"] as const) {
+  for (const ui of UI_LANGS) {
     it(`has no axe violations (${ui})`, async () => {
       await renderAt(`/${ui}/?date=${NOACH_WEEK}`);
       await waitFor(() => expect(document.querySelector("[data-moment] [lang]")).not.toBeNull());

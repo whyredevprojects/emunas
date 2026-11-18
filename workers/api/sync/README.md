@@ -11,9 +11,14 @@ moments.ndjson ──validate (allow-list)──► leak guard ──► Vectori
 
 ## What it writes
 
+Languages: every `UI_LANGS` language (`@emunas/i18n`) whose `title_<lang>` and `body_<lang>` are in
+search-core's `MOMENT_ROW_FIELDS` (`ROW_LANGS` in `src/rows.ts`). The sync lists no languages itself;
+the FTS rows of a changed moment are deleted in every `UI_LANGS` language. It needs search schema
+version 2 (`migrations/search/0002_languages.sql`).
+
 | Target | Content | Diff key |
 |---|---|---|
-| D1 `moments` | one row per moment; facets copied from the shiur; `confidence` = 0.6 for `soft` items, else NULL | `hash` (search-core content hash) |
+| D1 `moments` | one row per moment; facets copied from the shiur; `titles` = JSON object of language → display title (normalizeHe); `confidence` = 0.6 for `soft` items, else NULL | `hash` (search-core content hash) |
 | D1 `moment_entities` | `(moment_id, work\|person\|concept\|topic, corpus id)` from `MomentRow.entities` (`works`, `people`, `concepts`, `topics`); the report counts rows per type (`entityRows`) | with the moment |
 | D1 `moment_text` | display title/body per language (normalizeHe). Insights, key points and takeaways have only a title: it goes in `body`. Write-up paragraphs only in their own language. | with the moment |
 | D1 `fts_words`, `fts_tri` | the same text in search form: search-core `momentSearchText` (`fold`), so `normalizeQuery` tokens meet it | with the moment; FTS rowid = 48 bits of sha256(`id@lang`), so changed rows are deleted by rowid |

@@ -11,6 +11,8 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { THEME_INIT_SCRIPT } from "@emunas/tokens";
 import { DEDICATION } from "../src/components/dedication.ts";
 import { checkFiles } from "../src/lib/check-files.ts";
+import { ASIDES } from "../src/lib/content.ts";
+import { ASIDE_LANGS, asideTexts } from "../src/lib/langs.ts";
 import { SITEMAP_PATHS } from "../src/lib/seo.ts";
 import { astroBuild } from "./astro-build.ts";
 
@@ -106,10 +108,23 @@ describe("the built home site", () => {
     expect(html).toContain(`href="https://listen.${DOMAIN}/en/"`);
   });
 
+  it("links every other edition of Library and Listen, and shows each aside in every language", () => {
+    const html = read("index.html");
+    for (const lang of ASIDE_LANGS) {
+      expect(html).toContain(`href="https://library.${DOMAIN}/${lang}/"`);
+      expect(html).toContain(`href="https://listen.${DOMAIN}/${lang}/"`);
+    }
+    for (const a of [ASIDES.mashgiach, ASIDES.startHere, ASIDES.libraryName, ASIDES.listenName, ASIDES.archive]) {
+      for (const x of asideTexts(a)) expect(html).toContain(`lang="${x.lang}" dir="${x.dir}">${x.text}<`);
+    }
+    const about = read("about/index.html");
+    for (const x of asideTexts(ASIDES.about)) expect(about).toContain(`lang="${x.lang}" dir="${x.dir}">${x.text}<`);
+  });
+
   it("follows the naming rules and never mentions transcripts", () => {
     for (const f of htmlFiles()) {
       const text = read(f).replace(/<[^>]+>/g, " ");
-      expect(text, f).not.toMatch(/\bthe Ro?v\b|\bthe Rav\b|דער רב|shlit|transcri|\bASR\b/i);
+      expect(text, f).not.toMatch(/\bthe Ro?v\b|\bthe Rav\b|דער רב|shlit|שליט|transcri|\bASR\b|תמלול|תמליל/i);
     }
   });
 

@@ -52,10 +52,14 @@ letters/digits, lowercase. Runs may cross ASR segment boundaries, not recording 
 ### Remarks on the audio or the transcript
 
 Owner rule: published text never comments on the audio or the transcript ("garbled", "inaudible",
-"the recording breaks off", "the transcript", ASR, "צעמישט", "נישט קלאר", …). Such a line reads as if
-the Mashgiach spoke unclearly. `META_COMMENT_TERMS` in `src/meta-comment.ts` is the one curated list
-(English and Yiddish). Both sides are folded with `foldBasic` (@emunas/normalize) and compared as whole
-words; a trailing `*` lets the last word run on (`garbl*`, `transcri*`). A finding (`meta-comment`)
+"the recording breaks off", "the transcript", ASR, "צעמישט", "נישט קלאר", "תמלול", "קטע משובש", …). Such a
+line reads as if the Mashgiach spoke unclearly. `META_COMMENT_TERMS_BY_LANG` in `src/meta-comment.ts` is
+the one curated list, one entry per interface language (`UI_LANGS` in `@emunas/i18n`, so a new language
+fails `tsc` until it has its list); every list is matched against every text. Both sides are folded
+with `foldBasic` (@emunas/normalize) and compared as whole words; a trailing `*` lets the last word run
+on (`garbl*`, `transcri*`), and a Hebrew term word also matches with the one-letter prefixes Hebrew
+attaches (`META_COMMENT_PREFIX_LETTERS`: "התמלול", "בשיעור"). Words that are ordinary teaching alone
+("נישט קלאר", "לא ברור", "צעמישט", "משובש") are listed only inside phrases that tie them to the shiur. A finding (`meta-comment`)
 names the file, the field (JSON), the term, a count and about 60 characters of folded context on each
 side. This is the one finding that carries published text, never transcript text: the check reads only
 the built output.
@@ -78,9 +82,13 @@ must be one of its display fields (`not-display-field`, `unknown-entity`; an ASR
 as `asr-variant`). Without one, only the raw ban applies (a term that is a display name of any
 entity passes). Emitters can also call `scanner.checkEntityAliases(entity, terms, source)`.
 
-Display fields: topic `label.{en,yi,he}`, `aliases` · concept `canonicalHe`, `label.{en,yi}`,
+Display fields: topic `label.<lang>`, `aliases` · concept `canonicalHe`, `label.<lang>`,
 `transliterations` · person `nameHe`, `nameEn`, `nameYi`, `aliases` · work `titleHe`, `titleEn`,
-`sefariaIndexTitle`, `aliases`.
+`sefariaIndexTitle`, `aliases` (`<lang>`: every `UI_LANGS` language). A topic or concept label
+translated in an overlay (`data/derived/corpus/i18n/<lang>/*.json`, keys `topics:<id>.label` and
+`concepts:<id>.label`) is a display name too (`readTranslatedLabels`): translations are made from
+the published en/yi text, never from the transcript. Pagefind entity records carry one
+`label<Lang>` meta key per interface language (`PAGEFIND_LABEL_KEYS`).
 
 Story names (C3.1): in story files (`.corpus/layer/stories.json`, Live `story/<id>.json` and
 `stories-index.json`) every `people[].name` and every entity-less `names` term, and on built HTML
@@ -138,7 +146,7 @@ Corpus-layer text units (`src/layer.ts`), shared with `corpus:build --suppress`
 | `people.json` | `person` | `description` | `shiurIds[]` |
 | `series/<id>.json` | `series` | `title`, `overview`, `keyThemes.<i>`, `arc.<shiurId>` (its `oneLiner`) | `arc[].shiurId` |
 
-`<lang>` is `en` or `yi`. Example: `corpus:story:the-divrei-chaim-and-the-man-who-shamed#retelling.en`.
+`<lang>` is the key of the per-language object (any `UI_LANGS` language: `en`, `yi`, `he`). Example: `corpus:story:the-divrei-chaim-and-the-man-who-shamed#retelling.en`.
 `corpus:build --suppress` blanks that one field (the entity, its counts, links and page flags stay;
 its page shows the AI label without the text) and lists it in `layer/layer.json` `warnings`.
 

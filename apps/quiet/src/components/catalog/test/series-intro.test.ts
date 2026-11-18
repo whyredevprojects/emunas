@@ -87,14 +87,25 @@ describe("series strings", () => {
 describe("series model with a synthesis (mini catalog)", () => {
   it("keeps the catalog name as the title and puts the generated title in the intro", () => {
     const m = seriesModel(mini, "tanya-yi", "en", SYNTH)!;
-    expect(m.title).toBe(mini.series.series.find((s) => s.id === "tanya-yi")!.title.en);
+    expect(m.title.text).toBe(mini.series.series.find((s) => s.id === "tanya-yi")!.title.en);
+    const en = (text: string) => ({ text, lang: "en", dir: "ltr", fallback: false });
     expect(m.intro).toEqual({
-      subtitle: "Tanya: The Two Souls",
-      overview: "The Mashgiach learns through the first part of the Tanya.",
-      keyThemes: ["The two souls", "The beinoni"],
+      subtitle: en("Tanya: The Two Souls"),
+      overview: en("The Mashgiach learns through the first part of the Tanya."),
+      keyThemes: [en("The two souls"), en("The beinoni")],
       reviewed: false,
     });
-    expect(seriesModel(mini, "tanya-yi", "yi", SYNTH)!.intro!.subtitle).toBe("תניא: די צוויי נפשות");
+    expect(seriesModel(mini, "tanya-yi", "yi", SYNTH)!.intro!.subtitle?.text).toBe("תניא: די צוויי נפשות");
+  });
+
+  it("gives the Hebrew edition the Yiddish where there is no Hebrew, and the Hebrew where there is", () => {
+    const m = seriesModel(mini, "tanya-yi", "he", SYNTH)!;
+    expect(m.title).toMatchObject({ lang: "yi", fallback: true });
+    expect(m.otherTitle?.lang).toBe("en");
+    expect(m.intro!.subtitle).toEqual({ text: "תניא: די צוויי נפשות", lang: "yi", dir: "rtl", fallback: true });
+    const he = seriesModel(mini, "tanya-yi", "he", { ...SYNTH, title: { ...SYNTH.title, he: "תניא: שתי הנפשות" } })!;
+    expect(he.intro!.subtitle).toEqual({ text: "תניא: שתי הנפשות", lang: "he", dir: "rtl", fallback: false });
+    expect(seriesModel(mini, "tanya-yi", "en", SYNTH)!.otherTitle?.lang).toBe("yi");
   });
 
   it("uses arc one-liners as the parts' lines and keeps the parts without notes as rows", () => {
@@ -103,10 +114,10 @@ describe("series model with a synthesis (mini catalog)", () => {
     expect(m.rows.map((r) => r.part)).toEqual([1, 2, 3, 4]);
     expect(m.rows.map((r) => r.id)).toEqual(plain.rows.map((r) => r.id));
     const byId = new Map(m.rows.map((r) => [r.id, r]));
-    expect(byId.get("yi-tanya-1-01")!.oneLiner).toBe("Opening the Tanya.");
+    expect(byId.get("yi-tanya-1-01")!.oneLiner?.text).toBe("Opening the Tanya.");
     // a blank arc line falls back to the part's own summary
     expect(byId.get("yi-tanya-1-10")!.oneLiner).toBe(plain.rows.find((r) => r.id === "yi-tanya-1-10")!.oneLiner);
-    expect(byId.get("yi-tanya-1-29")!.oneLiner).toBe("The beinoni.");
+    expect(byId.get("yi-tanya-1-29")!.oneLiner?.text).toBe("The beinoni.");
     expect(byId.get("yi-tanya-2-02")).toMatchObject({ oneLiner: null, notPrepared: true, part: 4 });
     expect(m.rows.filter((r) => r.notPrepared).map((r) => r.id)).toEqual(["yi-tanya-2-02"]);
     expect(m.anyNotes).toBe(true);
@@ -160,7 +171,7 @@ describe("series introductions on the real data", () => {
       expect(missing.length).toBeGreaterThan(0);
       for (const r of missing) expect(r.oneLiner).toBeNull();
       const arc = new Map(synth!.arc.map((a) => [a.shiurId, a.oneLiner[ed]]));
-      for (const r of m.rows) if (!r.notPrepared && arc.get(r.id)) expect(r.oneLiner).toBe(arc.get(r.id));
+      for (const r of m.rows) if (!r.notPrepared && arc.get(r.id)) expect(r.oneLiner?.text).toBe(arc.get(r.id)?.trim());
     }
   });
 
@@ -183,7 +194,18 @@ describe("series components", () => {
 
   it("the intro prints the subtitle, overview and key themes as plain text", async () => {
     const html = await container.renderToString(SeriesIntro, {
-      props: { ed: "en", intro: { subtitle: "Tanya: The Two Souls", overview: "An overview.", keyThemes: ["One", "Two"], reviewed: false } },
+      props: {
+        ed: "en",
+        intro: {
+          subtitle: { text: "Tanya: The Two Souls", lang: "en", dir: "ltr", fallback: false },
+          overview: { text: "An overview.", lang: "en", dir: "ltr", fallback: false },
+          keyThemes: [
+            { text: "One", lang: "en", dir: "ltr", fallback: false },
+            { text: "Two", lang: "en", dir: "ltr", fallback: false },
+          ],
+          reviewed: false,
+        },
+      },
     });
     expect(html).toContain("data-series-intro");
     expect(html).toContain('class="series-subtitle" lang="en"');

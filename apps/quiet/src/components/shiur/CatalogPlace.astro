@@ -5,7 +5,7 @@
  * years). Catalog fields only; no AI-made "related shiurim". Rendered on every shiur page, with or
  * without notes.
  */
-import { languageName } from "@emunas/i18n";
+import { languageName, type AudioLang } from "@emunas/i18n";
 import HebrewYear from "../HebrewYear.astro";
 import { runAttrs } from "../../lib/bidi.ts";
 import type { Ed } from "../../lib/edition.ts";
@@ -16,7 +16,7 @@ interface Props {
   ed: Ed;
   place: CatalogPlaceView;
   /** Spoken language of the shiur: section names and the parsha/zman are catalog text in it. */
-  shiurLang: Ed;
+  shiurLang: AudioLang;
 }
 
 const { ed, place, shiurLang } = Astro.props;
@@ -51,20 +51,20 @@ const title = (r: RowRef) => r.title || t("catalog.noTitle");
     return (
       <div class="place" data-place={key}>
         <p class="place-where">
-          {before}{view.href ? <a href={view.href}><bdi {...runAttrs(name, shiurLang)}>{name}</bdi></a> : <bdi {...runAttrs(name, shiurLang)}>{name}</bdi>}{after}
+          {before}{view.href ? <a href={view.href}><bdi {...runAttrs(name, shiurLang, ed)}>{name}</bdi></a> : <bdi {...runAttrs(name, shiurLang, ed)}>{name}</bdi>}{after}
         </p>
         {(view.prev || view.next) && (
           <ul role="list" class="prev-next">
             {view.prev && (
               <li class="prev">
                 <span class="label">{t("catalog.prev")}</span>{" "}
-                <a href={view.prev.href} rel="prev"><bdi {...runAttrs(title(view.prev), view.prev.lang)}>{title(view.prev)}</bdi></a>
+                <a href={view.prev.href} rel="prev"><bdi {...runAttrs(title(view.prev), view.prev.lang, ed)}>{title(view.prev)}</bdi></a>
               </li>
             )}
             {view.next && (
               <li class="next">
                 <span class="label">{t("catalog.next")}</span>{" "}
-                <a href={view.next.href} rel="next"><bdi {...runAttrs(title(view.next), view.next.lang)}>{title(view.next)}</bdi></a>
+                <a href={view.next.href} rel="next"><bdi {...runAttrs(title(view.next), view.next.lang, ed)}>{title(view.next)}</bdi></a>
               </li>
             )}
           </ul>
@@ -75,12 +75,12 @@ const title = (r: RowRef) => r.title || t("catalog.noTitle");
   {place.sameOccasion.length > 0 && place.occasion && (
     <div class="place" data-place="occasion">
       <h3 class="place-where">
-        {split(t("catalog.sameOccasion", { occasion: "\u0000" }))[0]}<a href={place.occasion.href}><bdi {...runAttrs(place.occasion.raw, shiurLang)}>{place.occasion.raw}</bdi></a>{split(t("catalog.sameOccasion", { occasion: "\u0000" }))[1]}
+        {split(t("catalog.sameOccasion", { occasion: "\u0000" }))[0]}<a href={place.occasion.href}><bdi {...runAttrs(place.occasion.raw, shiurLang, ed)}>{place.occasion.raw}</bdi></a>{split(t("catalog.sameOccasion", { occasion: "\u0000" }))[1]}
       </h3>
       <ul role="list" class="same-occasion">
         {place.sameOccasion.map((r) => (
           <li>
-            <a href={r.href}><bdi {...runAttrs(title(r), r.lang)}>{title(r)}</bdi></a>
+            <a href={r.href}><bdi {...runAttrs(title(r), r.lang, ed)}>{title(r)}</bdi></a>
             <span class="row-meta">
               {" · "}{languageName(r.lang, ed)}
               {r.years.length > 0 && <>{" · "}<HebrewYear year={r.years} /></>}

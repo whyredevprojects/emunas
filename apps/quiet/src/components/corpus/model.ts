@@ -16,7 +16,7 @@ import { corpusLabel, type CorpusLabelKey } from "@emunas/i18n";
 import { formatQuiet, type CorpusKind, type IndexName } from "@emunas/links";
 import type { LayerTopicDetail } from "@emunas/corpus/public";
 import { clock } from "../../lib/bidi.ts";
-import type { Ed } from "../../lib/edition.ts";
+import { NAME_ORDER, type Ed } from "../../lib/edition.ts";
 import { run, sectionHref, type Cite, type Run } from "../indexes/model.ts";
 import type { LayerIndexCounts } from "./layer.ts";
 import { useCorpusT, type CorpusKey } from "./strings.ts";
@@ -38,16 +38,19 @@ export interface EntryNames {
 
 const clean = (s: string | null | undefined): string => (typeof s === "string" ? s.trim() : "");
 
+/** The entry's name the edition shows (`NAME_ORDER`), or "" when it has none. */
+export function editionName(ed: Ed, names: EntryNames): string {
+  return NAME_ORDER[ed].map((k) => clean(names[k])).find((n) => n !== "") ?? "";
+}
+
 /**
  * The headword in the edition's language (English edition: English; Yiddish edition: Yiddish, else
- * Hebrew), with the Hebrew beside it when it differs. Falls back across the names, so an entry with
- * one name still has a headword.
+ * Hebrew; Hebrew edition: Hebrew, else Yiddish), with the Hebrew beside it when it differs. Falls
+ * back across the names, so an entry with one name still has a headword.
  */
 export function headword(ed: Ed, names: EntryNames): Headword {
-  const en = clean(names.en);
-  const yi = clean(names.yi);
   const he = clean(names.he);
-  const main = ed === "en" ? en || he || yi : yi || he || en;
+  const main = editionName(ed, names);
   const beside = he !== "" && he !== main ? he : null;
   return { title: run(main, ed), alt: beside ? run(beside, ed) : null };
 }

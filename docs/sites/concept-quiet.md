@@ -27,7 +27,7 @@ Design decisions below lean on these facts, so they are stated once here.
 | Concepts: 3,044 distinct Hebrew terms (רבונו של עולם 218, עקבתא דמשיחא 85, הסתר פנים 47, …) | `Extraction.concepts[].he` | Usable as a plain alphabetical index once trivial terms are filtered |
 | Segment start/end times are in `meta.json` (`recordings[].starts[]`, `ends[]`), with no text | `data/derived/shiurim/<id>/meta.json` | **Every timestamp on the site can be computed without opening a transcript file** |
 | Several fields contain raw ASR text: `SourceMention.heardAs`, `concepts[].heardAs`, `people[].heardAs`, `asrNotes`, and the whole of `input.txt` | `extraction.json`, shiur directory | These are transcript in disguise and are never published (§9) |
-| The Yiddish text calls him "דער משגיח", the English "the Mashgiach" | `summary.*.yi` / `.en` | The two editions keep their own voice; neither is a translation of the other (plan rule 8) |
+| The Yiddish text calls him "דער משגיח", the English "the Mashgiach" | `summary.*.yi` / `.en` | The English and Yiddish notes keep their own voice; neither is a translation of the other (plan rule 8). The Hebrew notes are translations of them ("המשגיח"), made as overlays (§8) |
 
 ## 3. Design principles
 
@@ -40,7 +40,7 @@ Design decisions below lean on these facts, so they are stated once here.
 
 ## 4. Information architecture
 
-Two parallel editions with identical structure: `/yi/…` (Yiddish interface, right-to-left) and `/en/…` (English interface, left-to-right). Every page exists in both. The corpus is the same in both; only the interface language and the language of the notes differ.
+Parallel editions with identical structure, one per interface language (`UI_LANGS`): `/yi/…` (Yiddish, right-to-left), `/he/…` (Hebrew, right-to-left) and `/en/…` (English, left-to-right). Every page exists in each. The corpus is the same in all of them; only the interface language and the language of the notes differ.
 
 ```
 שער / Title page
@@ -224,7 +224,7 @@ Rules that keep it sane: names that occur in nearly every shiur (Moshe Rabbeinu 
 
 ### 5.10 Inyanim index (ענינים)
 
-At launch: an alphabetical index of **concepts** by their Hebrew term (`concepts[].he`), filtered to terms that occur in at least a handful of shiurim and are not mere vocabulary (הסתר פנים, עקבתא דמשיחא, מסירות נפש, אור הגנוז, השגחה פרטית, המתקת הדינים). Each term has a page listing shiurim and, where the term matches a section title, the section. The Hebrew term is the headword in both editions; the English edition adds a transliteration for sorting.
+At launch: an alphabetical index of **concepts** by their Hebrew term (`concepts[].he`), filtered to terms that occur in at least a handful of shiurim and are not mere vocabulary (הסתר פנים, עקבתא דמשיחא, מסירות נפש, אור הגנוז, השגחה פרטית, המתקת הדינים). Each term has a page listing shiurim and, where the term matches a section title, the section. The Hebrew term is the headword in every edition; the English edition adds a transliteration for sorting.
 
 Not at launch: a topic hierarchy. `candidateTopics` is 3,873 free phrases with no shared vocabulary, and the plan's frozen taxonomy has not been built. Showing them as browsable topics would manufacture structure that is not there. They are used only as search keywords (§7) until the taxonomy pass exists, at which point this index gains a second, hierarchical page. The index page says in one line that it is partial and unreviewed.
 
@@ -252,7 +252,7 @@ Three short sections: the Mashgiach and the collection (written by a person, to 
 
 One page, reachable from the navigation. With script it loads a compact index and filters as you type; results are a list of shiurim (and sections within them), each showing only catalog and notes text: title, citation line, one-liner, and the matching section title if any.
 
-What is indexed: `titleOriginal`, `heading`, `parsha`, `zman`, year, `oneLiner`, `abstract`, `keyPoints`, section `title` and `summary`, story titles, question text, source `work` and `ref`, people names, concept terms, `candidateTopics`. Both languages are indexed in both editions, so a Hebrew term typed in the English edition still finds things.
+What is indexed: `titleOriginal`, `heading`, `parsha`, `zman`, year, `oneLiner`, `abstract`, `keyPoints`, section `title` and `summary`, story titles, question text, source `work` and `ref`, people names, concept terms, `candidateTopics`. Every language is indexed in every edition, so a Hebrew term typed in the English edition still finds things.
 
 What is not indexed: any transcript text, and the `heardAs` strings. See decision 1 in §12.
 
@@ -260,17 +260,17 @@ Without script the search page shows the same links as the Indexes page with a s
 
 Spelling is the practical problem: Yiddish and transliterated Hebrew have many spellings (Chanukah/Chanuka/Hanukkah, לג בעומר with and without gershayim). The index should fold punctuation and common transliteration variants. The alias tables built for the sources and people indexes serve here too.
 
-## 8. Two languages, two directions
+## 8. Languages and directions
 
-- **Interface edition and shiur language are independent.** The edition decides the language of the interface and of the notes. The shiur's language is a property of the recording and is shown in the citation line. Both editions list all 997 shiurim.
-- **Switching edition keeps your place.** The switch on any page goes to the same page in the other edition, same anchor.
-- **First visit.** The root address offers both editions side by side, Yiddish on the right and English on the left, and remembers nothing unless script is on. No automatic redirect by browser language: many Yiddish readers browse with English-language devices.
-- **Direction.** The Yiddish edition is right-to-left throughout: navigation, tables, margin times on the left edge of the column, previous/next reversed. The English edition is left-to-right.
+- **Interface edition and shiur language are independent.** The edition decides the language of the interface and of the notes. The shiur's language (English or Yiddish) is a property of the recording and is shown in the citation line. Every edition lists all 997 shiurim.
+- **Notes in Hebrew are translations.** The pipeline writes the notes in English and Yiddish. The Hebrew edition shows Hebrew translations of them, made as overlays and applied only while they match the current text (integration-plan §2.4, `docs/translation-runbook.md`). A note with no current Hebrew translation is shown in Yiddish, then English, marked with its own language; a write-up is shown in Hebrew only when all of it is translated.
+- **Switching edition keeps your place.** The switch on any page offers the same page in each other edition, same anchor.
+- **First visit.** The root address offers every edition side by side, the right-to-left ones on the right and English on the left, and remembers nothing unless script is on. No automatic redirect by browser language: many Yiddish readers browse with English-language devices.
+- **Direction.** The Yiddish and Hebrew editions are right-to-left throughout: navigation, tables, margin times on the left edge of the column, previous/next reversed. The English edition is left-to-right.
 - **Mixed text is the norm, not the exception.** Catalog titles mix scripts within a line ("המקוה והתיבה הם כמו embassy של שמים על הארץ"; "The קדושה of צדיקים and the חשיבות of Learning תורה"), and the English notes are full of transliterated terms. Every catalog title is treated as its own run with its own direction, set by its dominant script, so punctuation and numbers do not jump. Times, daf and pasuk numbers are isolated the same way.
 - **Type.** A serious Hebrew text face for Hebrew and Yiddish (with proper Yiddish digraphs and nikud support for the occasional pointed word) and a matching book face for English. Hebrew type is set somewhat larger than the Latin beside it so the two read at equal weight.
-- **Numbers and dates.** Years shown as Hebrew years with the civil pair in parentheses. Catalog numbers as printed. Durations and times in ordinary digits in both editions.
-- **Voice.** Yiddish notes say "דער משגיח", English notes say "the Mashgiach"; the interface copy follows the same usage in each edition. Interface wording is heimish and plain in Yiddish (סדר השיעור, מראי מקומות, מעשיות, מפתחות) and plain in English; no marketing language in either.
-- `Localized.he` is optional in the types and absent in practice; there is no Hebrew edition.
+- **Numbers and dates.** Years shown as Hebrew years with the civil pair in parentheses. Catalog numbers as printed. Durations and times in ordinary digits in every edition.
+- **Voice.** Yiddish notes say "דער משגיח", Hebrew notes "המשגיח", English notes "the Mashgiach"; the interface copy follows the same usage in each edition. Interface wording is heimish and plain in Yiddish (סדר השיעור, מראי מקומות, מעשיות, מפתחות), plain Torah-world Hebrew without nikud (where a Yiddish word is hard to render, the Hebrew word itself), and plain English; no marketing language in any.
 
 ## 9. Keeping the transcript out, and leaving the door open
 

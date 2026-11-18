@@ -3,21 +3,23 @@
  * string is its own isolated run (`<bdi>`) with `lang`/`dir` from its dominant script; times,
  * numbers and daf/pasuk references sit in `<bdi dir="ltr">`.
  */
-import { formatClock, isolate, langFor, type ContentLang, type Dir } from "@emunas/i18n";
+import { UI_DIR, formatClock, hebrewScriptLang, isolate, langFor, type AudioLang, type Dir, type UiLang } from "@emunas/i18n";
 import type { Ed } from "./edition.ts";
 
 export interface RunAttrs {
-  readonly lang: ContentLang;
+  readonly lang: UiLang;
   readonly dir: Dir;
 }
 
 /**
- * `lang`/`dir` for a catalog or data string of a shiur in language `shiurLang`. Hebrew-script
- * text is `yi` in a Yiddish shiur and `he` in an English one; Latin is `en`; mixed text follows
+ * `lang`/`dir` for a catalog or data string shown in edition `ed`, of a shiur in language
+ * `shiurLang` (`null` for a string that belongs to no one shiur: corpus names, index entries).
+ * Hebrew-script text follows `hebrewScriptLang` from `@emunas/i18n` (`he` in the Hebrew edition;
+ * otherwise `yi` in a Yiddish context and `he` in an English one); Latin is `en`; mixed text follows
  * its first strong character (the same rule as `dir="auto"`, decided at build time).
  */
-export function runAttrs(text: string, shiurLang: Ed): RunAttrs {
-  const { lang, dir } = langFor(text, shiurLang);
+export function runAttrs(text: string, shiurLang: AudioLang | null, ed: Ed): RunAttrs {
+  const { lang, dir } = langFor(text, shiurLang, ed);
   return { lang, dir };
 }
 
@@ -37,4 +39,17 @@ export function isolateText(text: string): string {
 /** An LTR-isolated time for plain-text contexts inside RTL strings (accessible names). */
 export function isolateClock(seconds: number): string {
   return isolate(clock(seconds), "ltr");
+}
+
+/**
+ * `lang`/`dir` of a name already known to be in Hebrew script or not (a corpus name as the layer
+ * gives it): Hebrew script follows `hebrewScriptLang` for a string of no one shiur, Latin is `en`.
+ */
+export function nameAttrs(hebrew: boolean, ed: Ed): RunAttrs {
+  return hebrew ? { lang: hebrewScriptLang(null, ed), dir: "rtl" } : { lang: "en", dir: "ltr" };
+}
+
+/** The arrow that points forward in the edition's reading direction ("told in N other shiurim →"). */
+export function forwardArrow(ed: Ed): "←" | "→" {
+  return UI_DIR[ed] === "rtl" ? "←" : "→";
 }

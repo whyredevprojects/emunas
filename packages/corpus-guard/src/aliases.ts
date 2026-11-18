@@ -7,10 +7,14 @@
  *    be in that entity's display-field set, read here independently from
  *    `data/derived/corpus/{topics,concepts,people,works}.json` (never from `.corpus`).
  *
- * Display fields: topic `label.{en,yi,he}` + `aliases`; concept `canonicalHe`, `label.{en,yi}`,
+ * Display fields: topic `label.<lang>` + `aliases`; concept `canonicalHe`, `label.<lang>`,
  * `transliterations`; person `nameHe/En/Yi` + `aliases`; work `titleHe`, `titleEn`,
- * `sefariaIndexTitle` + `aliases`. Terms compare after `fold` (@emunas/normalize), the same fold
- * the layer's synonyms.json and the search code use.
+ * `sefariaIndexTitle` + `aliases` (`<lang>`: every interface language, `UI_LANGS`). A topic's or a
+ * concept's label translated into a further language (the overlays in
+ * `data/derived/corpus/i18n/<lang>/*.json`, keys `topics:<id>.label` and `concepts:<id>.label`) is
+ * a display name too: translations are made from the published en/yi text, never from the
+ * transcript. Terms compare after `fold` (@emunas/normalize), the same fold the layer's
+ * synonyms.json and the search code use.
  *
  *  - **Story names** (C3.1). In story files (`.corpus/layer/stories.json`, Live
  *    `story/<id>.json` and `stories-index.json`) every person name (`people[].name`, `names`) and,
@@ -22,7 +26,7 @@
  *    every person name (a string in a `people` list, a `people[].name`, a `people[].label.*`) and
  *    every concept name (`concepts[].he`); in search docs (`SearchDoc`: `kind` "shiur" with a
  *    `titleOriginal`) every `people`/`concepts` string; in Pagefind records every name-bearing
- *    meta/filter key (`people`, `person`, `names`, `concepts`, `labelHe/En/Yi`); in entity rows
+ *    meta/filter key (`people`, `person`, `names`, `concepts`, `label<Lang>` (every `UI_LANGS` language)); in entity rows
  *    (an object with an entity `kind` and `id`: quick-index entities, EntityDocs) every `labels.*`;
  *    and on built pages every element marked `data-person` (its first `<bdi>`, else its text) must
  *    be a display name of a corpus entity (of that entity when the position names one). The
@@ -33,7 +37,9 @@
  */
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
+import { readdirSync } from "node:fs";
 import { fold } from "@emunas/normalize";
+import { UI_LANGS } from "@emunas/i18n";
 
 /** JSON keys whose strings are aliases or search synonyms of an entity. */
 export const ALIAS_KEYS = ["aliases", "synonyms", "transliterations", "names", "terms"] as const;
@@ -87,11 +93,12 @@ function readArray(file: string): J[] {
 /** Display-field strings of one entity record of `kind` (raw, not folded). */
 export function displayFields(kind: EntityKind, r: J): string[] {
   const label = isRecord(r.label) ? r.label : {};
+  const labels = UI_LANGS.map((lang) => label[lang]);
   switch (kind) {
     case "topic":
-      return strs(label.en, label.yi, label.he, r.aliases);
+      return strs(...labels, r.aliases);
     case "concept":
-      return strs(r.canonicalHe, label.en, label.yi, r.transliterations);
+      return strs(r.canonicalHe, ...labels, r.transliterations);
     case "person":
       return strs(r.nameHe, r.nameEn, r.nameYi, r.aliases);
     case "work":
@@ -131,6 +138,11 @@ export class AliasRules {
       }
       display.set(kind, m);
     }
+    for (const { kind, id, label } of readTranslatedLabels(corpusDataDir)) {
+      const f = fold(label);
+      const set = display.get(kind)?.get(id);
+      if (f !== "" && set) set.add(f);
+    }
     return new AliasRules(display, readAsrVariants(corpusDataDir));
   }
 
@@ -157,6 +169,36 @@ export class AliasRules {
     if (f === "" || this.anyDisplay.has(f)) return null;
     return { rule: this.variants.has(f) ? "asr-variant" : "not-entity-name" };
   }
+}
+
+/** Translation overlay folder of the corpus data (`<corpusDataDir>/i18n/<lang>/<part>.json`). */
+export const CORPUS_TRANSLATIONS_DIR = "i18n";
+
+const TRANSLATED_LABEL_KEY = /^(topics|concepts):(.+)\.label$/;
+const LABEL_KIND: Record<string, EntityKind> = { topics: "topic", concepts: "concept" };
+
+/**
+ * Topic and concept labels from every translation overlay of every interface language
+ * (`CorpusTranslation.text`, keys `topics:<id>.label` / `concepts:<id>.label`). Read defensively:
+ * a folder that is missing gives nothing, a part that does not parse is an error (a broken overlay
+ * must not silently drop names the sites print).
+ */
+export function readTranslatedLabels(corpusDataDir: string): { kind: EntityKind; id: string; label: string }[] {
+  const out: { kind: EntityKind; id: string; label: string }[] = [];
+  for (const lang of UI_LANGS) {
+    const dir = join(corpusDataDir, CORPUS_TRANSLATIONS_DIR, lang);
+    if (!existsSync(dir)) continue;
+    for (const name of readdirSync(dir).sort()) {
+      if (!name.endsWith(".json")) continue;
+      const v: unknown = JSON.parse(readFileSync(join(dir, name), "utf8"));
+      const text = isRecord(v) && isRecord(v.text) ? v.text : {};
+      for (const [key, label] of Object.entries(text)) {
+        const m = TRANSLATED_LABEL_KEY.exec(key);
+        if (m && typeof label === "string") out.push({ kind: LABEL_KIND[m[1]!]!, id: m[2]!, label });
+      }
+    }
+  }
+  return out;
 }
 
 /**
@@ -263,5 +305,8 @@ export function isShiurNamesFile(path: string): boolean {
 
 /** Meta/filter keys of a Pagefind record whose values are names. */
 export const PAGEFIND_NAME_KEYS = ["people", "person", "names", "concepts"] as const;
-/** Meta keys of a Pagefind entity record whose values are its entity's display labels. */
-export const PAGEFIND_LABEL_KEYS = ["labelHe", "labelEn", "labelYi"] as const;
+/**
+ * Meta keys of a Pagefind entity record whose values are its entity's display labels, one per
+ * interface language (`labelEn`, `labelYi`, `labelHe`, …, from `UI_LANGS`).
+ */
+export const PAGEFIND_LABEL_KEYS: readonly string[] = UI_LANGS.map((lang) => `label${lang[0]!.toUpperCase()}${lang.slice(1)}`);

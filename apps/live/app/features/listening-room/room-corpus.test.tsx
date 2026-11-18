@@ -16,6 +16,7 @@ import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { RouterProvider } from "react-router";
+import { UI_LANGS } from "@emunas/i18n";
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
 import { configureData, resetDataConfig, type DataFetch, type ShiurFile } from "./data.ts";
 import { brshys03, clone, fixtureFetch, misc01, misc01WithThread, tanya, tvbb } from "./test-fixtures.ts";
@@ -312,7 +313,7 @@ describe("end of shiur", () => {
 });
 
 describe("accessibility", () => {
-  for (const ui of ["en", "yi"] as const) {
+  for (const ui of UI_LANGS) {
     it(`axe finds no violations with marks, chips and the open pane (${ui})`, async () => {
       overrides.set(misc01.id, misc01WithThread());
       const { container } = await openAt(`/${ui}/s/${misc01.id}`);

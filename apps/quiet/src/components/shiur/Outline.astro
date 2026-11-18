@@ -11,10 +11,14 @@
  *
  * The list is a margin-mark group (`data-marks`): with script, the chapter being heard gets
  * `aria-current="time"` on its time.
+ *
+ * Titles and summaries are generated text: the edition's language, else the fallback along
+ * `CONTENT_FALLBACK`, each carrying the `lang`/`dir` of the language it is shown in.
  */
-import { sectionKindLabel } from "@emunas/i18n";
+import { pickText, sectionKindLabel } from "@emunas/i18n";
 import type { PublicChapter, PublicRecording } from "@emunas/corpus/public";
 import Time from "./Time.astro";
+import { langAttrsIn, shownText } from "../../lib/content.ts";
 import type { Ed } from "../../lib/edition.ts";
 import { useShiurT } from "./strings.ts";
 import { isQuietKind, sectionAnchor } from "./view.ts";
@@ -33,29 +37,33 @@ const t = useShiurT(ed);
   <ol role="list" class="outline-list" data-marks>
     {chapters.map((c) => {
       const quiet = isQuietKind(c.kind);
-      const title = c.title[ed];
-      const summary = c.summary[ed];
+      const title = shownText(c.title, ed);
+      const summary = shownText(c.summary, ed);
       return (
         <li id={sectionAnchor(c.idx)} class:list={["chapter", quiet && "chapter-quiet"]} data-mark>
           <p class="chapter-head">
             <Time ed={ed} recordings={recordings} t={c.t} />
             {" "}
-            <span class="chapter-title">{quiet && title === "" ? sectionKindLabel(c.kind, ed) : title}</span>
-            {quiet && title !== "" && c.kind !== "noise" && <span class="chapter-kind"> ({sectionKindLabel(c.kind, ed)})</span>}
+            {title ? <span class="chapter-title" {...langAttrsIn(title, ed)}>{title.text}</span> : <span class="chapter-title">{quiet ? sectionKindLabel(c.kind, ed) : ""}</span>}
+            {quiet && title && c.kind !== "noise" && <span class="chapter-kind"> ({sectionKindLabel(c.kind, ed)})</span>}
             {c.kind === "story" && <span class="chapter-mark">{sectionKindLabel("story", ed)}</span>}
             {c.catalogTopicIdx.length > 0 && <span class="chapter-mark">{t("outline.listedInGuide")}</span>}
           </p>
-          {!quiet && summary !== "" && <p class="chapter-summary">{summary}</p>}
+          {!quiet && summary && <p class="chapter-summary" {...langAttrsIn(summary, ed)}>{summary.text}</p>}
           {!quiet && c.sub.length > 0 && (
             <ol role="list" class="outline-sub">
-              {c.sub.map((s) => (
-                <li>
-                  <Time ed={ed} recordings={recordings} t={s.t} />
-                  {" "}
-                  <span class="chapter-title">{s.title[ed]}</span>
-                  {s.summary[ed] !== "" && <span class="sub-summary">: {s.summary[ed]}</span>}
-                </li>
-              ))}
+              {c.sub.map((s) => {
+                const subTitle = pickText(s.title, ed);
+                const subSummary = shownText(s.summary, ed);
+                return (
+                  <li>
+                    <Time ed={ed} recordings={recordings} t={s.t} />
+                    {" "}
+                    <span class="chapter-title" {...langAttrsIn(subTitle, ed)}>{subTitle.text}</span>
+                    {subSummary && <span class="sub-summary">: <span {...langAttrsIn(subSummary, ed)}>{subSummary.text}</span></span>}
+                  </li>
+                );
+              })}
             </ol>
           )}
         </li>

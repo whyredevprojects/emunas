@@ -7,6 +7,7 @@
  *   ("showing shiur-level results").
  */
 import type { Ed } from "@emunas/corpus/public";
+import type { UiLang } from "@emunas/i18n";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { fetchSearch, SearchApiError, type ApiResponse, type EntityFilters } from "./api.ts";
 import { seriesPartSuggestions, type QuickSearch, type ShiurHit, type Suggestion } from "./engine.ts";
@@ -23,13 +24,13 @@ export interface QuickState {
   ensure: () => void;
 }
 
-export function useQuickSearch(ui: Ed, eager = false): QuickState {
-  const [state, setState] = useState<{ status: QuickStatus; engine: QuickSearch | null; ui: Ed }>({
+export function useQuickSearch(ui: UiLang, eager = false): QuickState {
+  const [state, setState] = useState<{ status: QuickStatus; engine: QuickSearch | null; ui: UiLang }>({
     status: "idle",
     engine: null,
     ui,
   });
-  const started = useRef<Ed | null>(null);
+  const started = useRef<UiLang | null>(null);
   const live = useRef(true);
   useEffect(() => {
     live.current = true;
@@ -109,7 +110,7 @@ export interface FullSearch {
 }
 
 export interface FullSearchOptions {
-  ui: Ed;
+  ui: UiLang;
   audio?: Ed[];
   limit?: number;
   /** Corpus-id entity filters (topic, concept, person, work); sent to the API as they are. */

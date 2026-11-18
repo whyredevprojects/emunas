@@ -6,6 +6,7 @@
  * page. Nothing renders when the shiur has no such topic (or is not in the corpus layer).
  */
 import { corpusLabel } from "@emunas/i18n";
+import { nameAttrs } from "../../lib/bidi.ts";
 import type { Ed } from "../../lib/edition.ts";
 import type { NamedLink } from "./refs.ts";
 
@@ -20,7 +21,7 @@ const { ed, topics } = Astro.props;
   <p class="topic-line" data-corpus="topics">
     <span class="label">{corpusLabel("index.topics", ed)}:</span>{" "}
     {topics.map((tp, i) => (
-      <>{i > 0 && " · "}{tp.href ? <a href={tp.href}><bdi {...(tp.hebrew ? { lang: ed === "yi" ? "yi" : "he", dir: "rtl" } : { lang: "en", dir: "ltr" })}>{tp.name}</bdi></a> : <bdi>{tp.name}</bdi>}</>
+      <>{i > 0 && " · "}{tp.href ? <a href={tp.href}><bdi {...nameAttrs(tp.hebrew, ed)}>{tp.name}</bdi></a> : <bdi>{tp.name}</bdi>}</>
     ))}
   </p>
 )}

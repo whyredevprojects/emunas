@@ -11,7 +11,7 @@ contract in `@emunas/corpus/public` (integration-plan §5.2). W3.6 emits files t
 | `/data/facets.json` | `FacetsFile`: id → labels + count per facet | `loadFacets()` (memoized) |
 | `/data/today.json` | `TodayFile`: occasion → shiurim + moment pool; newly summarized | `loadToday()` (memoized) |
 | `/data/shiur/<id>.json` | `ShiurFile`: `PublicShiur` without the write-up, recordings with `audioUrl` | `loadShiur(id)` |
-| `/data/writeup/<id>.<en\|yi>.json` | `WriteupFile` (one language, lazy) | `loadWriteup(id, lang)` |
+| `/data/writeup/<id>.<lang>.json` | `WriteupFile` (one language, lazy): en and yi; he only when the shiur has a complete, current Hebrew translation (`notes.writeupLangs`) | `loadWriteup(id, lang)` |
 | `/data/series/<id>.json` | `SeriesFile` (ordered parts, perek groups) | `loadSeries(id)` |
 | `/data/works.json`, `/data/work/<key>.json` | `WorksFile`, `WorkFile` (locations, unlocated) | `loadWorks()`, `loadWork(key)` |
 | `/data/entity/{p,c,o}/<key>.json` | `EntityFile` | `loadEntity(kind, key)` |

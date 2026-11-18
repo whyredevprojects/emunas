@@ -16,6 +16,7 @@ import { loadCalendarData } from "../../../../../components/calendar/data.ts";
 import { calendarHref, occasionPage, parshaKeys } from "../../../../../components/calendar/model.ts";
 import { useCalendarT } from "../../../../../components/calendar/strings.ts";
 import { formatQuiet } from "@emunas/links";
+import { occasionNameAttrs } from "../../../../../lib/content.ts";
 import { EDS, type Ed } from "../../../../../lib/edition.ts";
 
 export const getStaticPaths = (() => {
@@ -31,7 +32,8 @@ if (!data) throw new Error("calendar: no .corpus/");
 const page = occasionPage(data, "parsha", key, ed);
 if (!page) throw new Error(`calendar: unknown parsha ${key}`);
 const t = useCalendarT(ed);
-const title = ed === "yi" ? page.name : `${page.name} ${page.he ?? ""}`.trim();
+// `he` is null in a Hebrew-script edition (the name is already Hebrew).
+const title = `${page.name} ${page.he ?? ""}`.trim();
 ---
 <Base
   ed={ed}
@@ -39,7 +41,7 @@ const title = ed === "yi" ? page.name : `${page.name} ${page.he ?? ""}`.trim();
   crumbs={[
     { label: t("cal.label"), href: calendarHref(ed) },
     { label: t("cal.byParsha"), href: formatQuiet({ kind: "index", ed, index: "calendar-parsha" }) },
-    { label: page.name, lang: ed === "yi" ? "he" : "en", dir: ed === "yi" ? "rtl" : "ltr" },
+    { label: page.name, ...occasionNameAttrs(ed) },
   ]}
 >
   <h1><OccasionName ed={ed} name={page} /></h1>

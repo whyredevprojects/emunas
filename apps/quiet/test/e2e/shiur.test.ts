@@ -24,6 +24,7 @@ import { brotliCompressSync } from "node:zlib";
 import { chromium, type Browser, type Page } from "playwright-core";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { round3, type PublicShiur } from "@emunas/corpus/public";
+import { EDS, dirOf } from "../../src/lib/edition.ts";
 
 const app = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const repo = join(app, "..", "..");
@@ -237,7 +238,7 @@ function walk(dir: string): string[] {
 describe("build output", () => {
   it("has a page per shiur and edition, within the size budget, with no transcript UI", () => {
     const index = JSON.parse(readFileSync(join(corpusDir, "index.json"), "utf8")) as { shiurim: { id: string }[] };
-    for (const ed of ["yi", "en"]) {
+    for (const ed of EDS) {
       for (const { id } of index.shiurim) {
         const file = join(outDir, ed, "shiur", id, "index.html");
         expect(existsSync(file), file).toBe(true);
@@ -261,11 +262,11 @@ describe("build output", () => {
   });
 });
 
-describe.each(["yi", "en"] as const)("the 7 sample shiurim, %s edition", (ed) => {
+describe.each(EDS)("the 7 sample shiurim, %s edition", (ed) => {
   it.each(SAMPLES)("%s renders and is axe-clean", async (id) => {
     for (const dark of [false, true]) {
       const page = await open(`/${ed}/shiur/${id}/`, { dark });
-      expect(await page.getAttribute("html", "dir")).toBe(ed === "yi" ? "rtl" : "ltr");
+      expect(await page.getAttribute("html", "dir")).toBe(dirOf(ed));
       expect(await page.locator("h1").count()).toBe(1);
       const violations = await axe(page);
       expect(violations, JSON.stringify(violations, null, 2)).toEqual([]);

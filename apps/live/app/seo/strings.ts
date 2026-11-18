@@ -1,9 +1,9 @@
 /**
  * Share-preview and search-result descriptions (W4.5). Built from catalog values and entity names
- * only; never from transcripts (integration-plan §0). Yiddish wording follows the UI tables.
+ * only; never from transcripts (integration-plan §0). Yiddish and Hebrew wording follow the UI tables.
  */
 import type { Ed } from "@emunas/corpus/public";
-import type { UiLang } from "@emunas/i18n";
+import { languageName, type UiLang } from "@emunas/i18n";
 
 export interface SeoStrings {
   shiurim(n: number): string;
@@ -25,12 +25,13 @@ export interface SeoStrings {
 
 const RAV_EN = 'Harav Moshe Wolfson zt"l';
 const RAV_YI = 'הרב משה וואלפסאן זצ"ל';
+const RAV_HE = 'הגה"צ רבי משה וולפסון זצ"ל';
 
 export const seoStrings: Readonly<Record<UiLang, SeoStrings>> = {
   en: {
     shiurim: (n) => (n === 1 ? "1 shiur" : `${n} shiurim`),
     shiurFallback: (lang, section, years) =>
-      `A shiur by ${RAV_EN}, in ${lang === "yi" ? "Yiddish" : "English"}. ${section}${years ? `, ${years}` : ""}.`,
+      `A shiur by ${RAV_EN}, in ${languageName(lang, "en")}. ${section}${years ? `, ${years}` : ""}.`,
     series: (title, count) => `${title}: ${count} in order, from the shiurim of ${RAV_EN}.`,
     occasion: (title, count) => `${title}: ${count} of ${RAV_EN}.`,
     work: (title, count) => `Where ${title} is cited in ${count} of ${RAV_EN}.`,
@@ -44,7 +45,7 @@ export const seoStrings: Readonly<Record<UiLang, SeoStrings>> = {
   yi: {
     shiurim: (n) => (n === 1 ? "1 שיעור" : `${n} שיעורים`),
     shiurFallback: (lang, section, years) =>
-      `א שיעור פון ${RAV_YI}, אויף ${lang === "yi" ? "אידיש" : "ענגליש"}. ${section}${years ? `, ${years}` : ""}.`,
+      `א שיעור פון ${RAV_YI}, אויף ${languageName(lang, "yi")}. ${section}${years ? `, ${years}` : ""}.`,
     series: (title, count) => `${title}: ${count} על הסדר, פון די שיעורים פון ${RAV_YI}.`,
     occasion: (title, count) => `${title}: ${count} פון ${RAV_YI}.`,
     work: (title, count) => `וואו ${title} ווערט געברענגט אין ${count} פון ${RAV_YI}.`,
@@ -54,5 +55,19 @@ export const seoStrings: Readonly<Record<UiLang, SeoStrings>> = {
     story: (title, tellings) => `${title}: א מעשה וואס ווערט דערציילט ${tellings === 1 ? "איין מאל" : `${tellings} מאל`} אין די שיעורים פון ${RAV_YI}.`,
     thread: (count) => `א לימוד וואס דער משגיח קומט צוריק צו אים, אין ${count} פון ${RAV_YI}. צוזאמענגעשטעלט דורך AI.`,
     locale: "yi",
+  },
+  he: {
+    shiurim: (n) => (n === 1 ? "שיעור אחד" : `${n} שיעורים`),
+    shiurFallback: (lang, section, years) =>
+      `שיעור מאת ${RAV_HE}, ב${languageName(lang, "he")}. ${section}${years ? `, ${years}` : ""}.`,
+    series: (title, count) => `${title}: ${count} על הסדר, מתוך השיעורים של ${RAV_HE}.`,
+    occasion: (title, count) => `${title}: ${count} של ${RAV_HE}.`,
+    work: (title, count) => `היכן ש${title} מובא ב־${count} של ${RAV_HE}.`,
+    person: (name, count) => `${name} ב־${count} של ${RAV_HE}: מובא, במעשיות ובדברים עליו.`,
+    concept: (term, count) => `${term} ב־${count} של ${RAV_HE}.`,
+    topic: (title, count) => `${title}: ${count} של ${RAV_HE}, מקובצים לפי נושא על ידי AI.`,
+    story: (title, tellings) => `${title}: מעשה שסופר ${tellings === 1 ? "פעם אחת" : `${tellings} פעמים`} בשיעורים של ${RAV_HE}.`,
+    thread: (count) => `לימוד שהמשגיח חוזר אליו, ב־${count} של ${RAV_HE}. קובץ על ידי AI.`,
+    locale: "he_IL",
   },
 };

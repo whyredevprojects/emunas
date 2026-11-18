@@ -3,10 +3,12 @@
  *
  * The shell is everything needed to start the app on any route without the network: the hashed
  * JS/CSS/font chunks (`assets/`, all route chunks included, so every page can open offline), icons,
- * the web manifest, the SPA fallback page and the UI home pages (`/en/`, `/yi/`).
+ * the web manifest, the SPA fallback page and the home page of every UI language (`/en/`, `/yi/`, …).
  * Not precached: `/data/*` (runtime, stale-while-revalidate), the thousands of other prerendered
  * pages (the SPA fallback renders them offline), source maps, `_headers` and the worker itself.
  */
+
+import { UI_LANGS } from "@emunas/i18n";
 
 /**
  * The SPA fallback page as it is precached and served offline. React Router writes the fallback
@@ -25,8 +27,7 @@ export const SPA_FALLBACK_SOURCE = "index.html";
  * default `auto-trailing-slash`: `en/index.html` → `/en/`, `x.html` → `/x`).
  */
 const TOP_PAGES: ReadonlyMap<string, string> = new Map([
-  ["en/index.html", "/en/"],
-  ["yi/index.html", "/yi/"],
+  ...UI_LANGS.map((ui): [string, string] => [`${ui}/index.html`, `/${ui}/`]),
   [SPA_FALLBACK_FILE, SPA_FALLBACK],
 ]);
 

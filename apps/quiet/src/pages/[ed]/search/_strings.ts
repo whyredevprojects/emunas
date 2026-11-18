@@ -8,7 +8,7 @@ import type { Ed } from "../../../lib/edition.ts";
 export const SEARCH_STRINGS = {
   en: {
     title: "Search",
-    lede: "Search the catalog and the notes: titles, parsha and zman, years, summaries, topics, sources, people and stories. Hebrew, Yiddish and English all work in both editions.",
+    lede: "Search the catalog and the notes: titles, parsha and zman, years, summaries, topics, sources, people and stories. Hebrew, Yiddish and English all work in every edition.",
     noscript: "Search needs JavaScript. The indexes below are the way to look things up without it.",
     label: "Search the shiurim",
     submit: "Search",
@@ -40,7 +40,7 @@ export const SEARCH_STRINGS = {
   },
   yi: {
     title: "זוכן",
-    lede: "זוכט אינעם קאטאלאג און אין די נאטיצן: קעפלעך, פרשה און זמן, יארן, קיצורים, ענינים, מראי מקומות, פערזאנען און מעשיות. לשון קודש, אידיש און ענגליש ארבעטן אין ביידע אויסגאבעס.",
+    lede: "זוכט אינעם קאטאלאג און אין די נאטיצן: קעפלעך, פרשה און זמן, יארן, קיצורים, ענינים, מראי מקומות, פערזאנען און מעשיות. לשון קודש, אידיש און ענגליש ארבעטן אין אלע אויסגאבעס.",
     noscript: "צום זוכן דארף מען JavaScript. אן דעם קען מען נוצן די מפתחות אונטן.",
     label: "זוכט די שיעורים",
     submit: "זוכן",
@@ -70,9 +70,41 @@ export const SEARCH_STRINGS = {
     kindPerson: "פערזאן",
     kindWork: "ספר",
   },
+  he: {
+    title: "חיפוש",
+    lede: "חפשו בקטלוג וברשימות: כותרות, פרשה וזמן, שנים, תקצירים, נושאים, מראי מקומות, אישים ומעשיות. אפשר לחפש בעברית, באידיש ובאנגלית בכל המהדורות.",
+    noscript: "החיפוש דורש JavaScript. בלעדיו אפשר להשתמש במפתחות שלמטה.",
+    label: "חיפוש בשיעורים",
+    submit: "חיפוש",
+    resultsLabel: "תוצאות",
+    searching: "מחפש…",
+    none: "לא נמצאו שיעורים. נסו כתיב אחר, או השתמשו במפתחות שלמטה.",
+    one: "שיעור אחד",
+    count: "{n} שיעורים",
+    error: "לא ניתן היה לטעון את החיפוש. המפתחות שלמטה עדיין פועלים.",
+    number: "מס׳ {n}",
+    pending: "הרשימות עדיין לא נכתבו.",
+    note: "החיפוש הוא בקטלוג וברשימות, לא בהקלטות עצמן.",
+    indexesHeading: "מפתחות",
+    contents: "תוכן (לפי מדורי הקטלוג)",
+    parsha: "לפי פרשה",
+    zman: "לפי זמן",
+    years: "לפי שנה",
+    sources: "מראי מקומות",
+    stories: "מעשיות",
+    people: "אישים",
+    inyanim: "ענינים",
+    erachim: "ערכים",
+    entriesLabel: "ערכים במפתחות",
+    entriesNote: "הערכים במפתחות לוקטו על ידי AI מן הרשימות ולא נבדקו על ידי אדם.",
+    kindTopic: "נושא",
+    kindConcept: "ערך",
+    kindPerson: "אישיות",
+    kindWork: "ספר",
+  },
 } as const satisfies Record<Ed, Record<string, string>>;
 
 export type SearchStringKey = keyof (typeof SEARCH_STRINGS)["en"];
 
-/** Both editions have every key (a missing Yiddish string fails `tsc`). */
+/** Every edition has every key (a missing string or a missing edition fails `tsc`). */
 export const _complete: Record<Ed, Record<SearchStringKey, string>> = SEARCH_STRINGS;

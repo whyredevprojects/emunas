@@ -6,12 +6,12 @@
  * Nothing here reads raw data: the input is the allow-listed public contract, so there is no
  * field through which transcript text could arrive.
  */
-import { sourceRefParts, type SourceRefParts } from "@emunas/i18n";
+import { pickLocalized, sourceRefParts, type AudioLang, type Picked, type SourceRefParts } from "@emunas/i18n";
 import { quietPaths } from "@emunas/links";
 import { sefariaUrl, WORK_GROUP_LABELS, WORK_GROUPS, workByKey, type WorkGroup } from "@emunas/normalize";
-import type { IndexRow, PublicCatalog, PublicNotes, PublicShiur, PublicSource } from "@emunas/corpus/public";
+import type { IndexRow, PublicCatalog, PublicNotes, PublicShiur, PublicSource, PublicWriteupBlock } from "@emunas/corpus/public";
 import type { Neighbours } from "@emunas/corpus/aggregate";
-import type { Ed } from "../../lib/edition.ts";
+import { isHebrewScriptEdition, type Ed } from "../../lib/edition.ts";
 import { sectionHref as catalogSectionHref } from "../catalog/model.ts";
 import type { MentionedView, SourceWork } from "./refs.ts";
 
@@ -19,7 +19,7 @@ import type { MentionedView, SourceWork } from "./refs.ts";
 
 /** Section anchor, `#s{idx}` (tech-quiet §2, `@emunas/links` `#s{i}`): idx = extraction section index. */
 export const sectionAnchor = (idx: number): string => `s${idx}`;
-/** Write-up paragraph anchor, `#p{block}-{paragraph}` (positions in the edition's write-up). */
+/** Write-up paragraph anchor, `#p{block}-{paragraph}` (positions in the write-up shown, `shownWriteup`). */
 export const paragraphAnchor = (block: number, paragraph: number): string => `p${block}-${paragraph}`;
 /** Source anchor, `#src{idx}` (idx in the published source list). */
 export const sourceAnchor = (idx: number): string => `src${idx}`;
@@ -32,10 +32,10 @@ const HEBREW = "אבגדהוזחטיכלמנסעפצקרשת";
 
 /**
  * Footnote letter for the n-th source (0-based): a, b, … z, aa, ab, … in English; א, ב, … ת, אא, …
- * in Yiddish (bijective numbering, so no letter is ever skipped or doubled).
+ * in the Yiddish and Hebrew editions (bijective numbering, so no letter is ever skipped or doubled).
  */
 export function sourceLetter(n: number, ed: Ed): string {
-  const alphabet = ed === "yi" ? HEBREW : LATIN;
+  const alphabet = isHebrewScriptEdition(ed) ? HEBREW : LATIN;
   const base = alphabet.length;
   let i = Math.max(0, Math.floor(n)) + 1;
   let out = "";
@@ -86,7 +86,7 @@ export interface SourceView {
   readonly group: WorkGroup;
   /** The work's entry (page or index anchor) by corpus work id; null when there is none. */
   readonly indexHref: string | null;
-  /** Write-up paragraphs (edition language) that cite this source, in reading order. */
+  /** Write-up paragraphs (of the write-up shown, `shownWriteup`) that cite this source, in reading order. */
   readonly citedBy: readonly CitedBy[];
 }
 
@@ -126,7 +126,7 @@ function groupOf(source: Pick<PublicSource, "workKey">, work: SourceWork | undef
 export function buildSources(notes: PublicNotes, ed: Ed, works: ReadonlyMap<string, SourceWork> = new Map()): SourcesView {
   const cited = new Map<number, CitedBy[]>();
   let n = 0;
-  notes.writeup[ed].forEach((block, b) => {
+  (shownWriteup(notes, ed)?.value ?? []).forEach((block, b) => {
     block.paragraphs.forEach((p, i) => {
       n += 1;
       for (const idx of new Set(p.src)) {
@@ -197,8 +197,17 @@ export function apparatusCounts(notes: PublicNotes): ApparatusCounts {
 export const hasApparatus = (notes: PublicNotes): boolean =>
   Object.values(apparatusCounts(notes)).some((n) => n > 0);
 
-export const hasWriteup = (notes: PublicNotes, ed: Ed): boolean =>
-  notes.writeup[ed].some((b) => b.paragraphs.length > 0);
+/**
+ * The write-up the edition shows: its own language when that write-up has a paragraph, else the
+ * next language along `CONTENT_FALLBACK` (Hebrew → Yiddish → English), with the language it is in.
+ * A translated write-up is published only whole (every heading and paragraph), so the page never
+ * mixes languages inside it. Null when no language has a paragraph.
+ */
+export function shownWriteup(notes: Pick<PublicNotes, "writeup">, ed: Ed): Picked<readonly PublicWriteupBlock[]> | null {
+  return pickLocalized<readonly PublicWriteupBlock[]>(notes.writeup, ed, (blocks) => blocks.some((b) => b.paragraphs.length > 0));
+}
+
+export const hasWriteup = (notes: PublicNotes, ed: Ed): boolean => shownWriteup(notes, ed) !== null;
 
 export type PagePart = "about" | "outline" | "writeup" | "sources" | "apparatus" | "mentioned" | "catalog";
 
@@ -227,7 +236,7 @@ export interface RowRef {
   readonly id: string;
   readonly href: string;
   readonly title: string;
-  readonly lang: Ed;
+  readonly lang: AudioLang;
   readonly years: readonly number[];
   readonly n: string | null;
 }

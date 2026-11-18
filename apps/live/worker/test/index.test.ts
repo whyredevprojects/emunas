@@ -38,6 +38,7 @@ const DEV = "https://emunas-live.acct.workers.dev";
 describe("uiFromCookie", () => {
   it("reads emunas_ui among other cookies", () => {
     expect(uiFromCookie("a=1; emunas_ui=yi; b=2")).toBe("yi");
+    expect(uiFromCookie("emunas_ui=he")).toBe("he");
     expect(uiFromCookie("emunas_ui=en")).toBe("en");
     expect(uiFromCookie("emunas_ui=en ;x=1")).toBe("en");
   });
@@ -53,7 +54,9 @@ describe("uiFromAcceptLanguage", () => {
   it.each([
     ["yi", "yi"],
     ["en-US,en;q=0.9", "en"],
-    ["he-IL,he;q=0.9,en;q=0.8", "yi"],
+    ["he-IL,he;q=0.9,en;q=0.8", "he"],
+    ["iw", "he"],
+    ["ji", "yi"],
     ["fr-FR,fr;q=0.9,en;q=0.5,yi;q=0.4", "en"],
     ["en;q=0.3, yi;q=0.8", "yi"],
     ["yi;q=0, en;q=0.1", "en"],

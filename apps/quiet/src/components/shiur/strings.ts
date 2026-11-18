@@ -1,12 +1,12 @@
 /**
  * UI strings of the shiur page (concept-quiet §5.4). Kept next to the shiur components so the
  * page does not edit the shell's shared tables (`src/i18n/`, W2.3); same `createT` pattern, same
- * rule: `yi` is typed against the English key union, so a missing key fails `tsc`.
+ * rule: `yi` and `he` are typed against the English key union, so a missing key fails `tsc`.
  *
  * Wording status: unreviewed (W5.3 does the fixed-copy pass). Plain voice, reported speech,
- * "the Mashgiach" / "דער משגיח"; no "content" vocabulary.
+ * "the Mashgiach" / "דער משגיח" / "המשגיח"; no "content" vocabulary.
  */
-import { createT, type MessageTable, type TFunction } from "@emunas/i18n";
+import { byUiLang, createT, type MessageTable, type MessageTables, type TFunction } from "@emunas/i18n";
 import type { Ed } from "../../lib/edition.ts";
 
 export const shiurEn = {
@@ -115,16 +115,63 @@ export const shiurYi: MessageTable<ShiurKey> = {
   "report.body": "שיעור: {id}\nבלאט: {url}\n\nוואס איז נישט ריכטיג:\n",
 };
 
-export const shiurTables = { en: shiurEn, yi: shiurYi } as const;
+export const shiurHe: MessageTable<ShiurKey> = {
+  "jump.label": "בדף זה",
+  "jump.about": "על השיעור",
+  "jump.outline": "סדר השיעור",
+  "jump.writeup": "השיעור בכתב",
+  "jump.sources": "מראי מקומות",
+  "jump.apparatus": "נקודות, קושיות ומעשיות",
+  "jump.mentioned": "נזכרים",
+  "jump.catalog": "מקומו בקטלוג",
 
-const cache = new Map<Ed, TFunction<ShiurKey>>();
+  "about.heading": "על השיעור",
+  "about.abstract": "תקציר",
+
+  "outline.heading": "סדר השיעור",
+  "outline.listedInGuide": "רשום בקטלוג",
+
+  "writeup.heading": "השיעור, בכתב",
+  "writeup.cite": "מקור {letter}",
+
+  "sources.heading": "מראי מקומות",
+  "sources.inNotes": "בשיעור שבכתב:",
+  "sources.index": "מפתח",
+  "sources.sefaria": "טקסט",
+
+  "keyPoints.heading": "עיקרי הדברים",
+  "questions.heading": "קושיות ותירוצים",
+  "questions.q": "קושיא",
+  "questions.a": "תירוץ",
+  "stories.heading": "מעשיות",
+  "stories.people": "במעשה:",
+  "insights.heading": "הערות",
+  "takeaways.heading": "מה שהמשגיח אומר ללמוד מכך",
+
+  "mentioned.heading": "נזכרים בשיעור זה",
+  "mentioned.people": "אישים",
+  "mentioned.concepts": "ערכים",
+
+  "catalog.heading": "מקומו בקטלוג",
+  "catalog.prev": "הקודם",
+  "catalog.next": "הבא",
+  "catalog.inSection": "{section}: מס׳ {pos} מתוך {count}",
+  "catalog.inSeries": "{series}: חלק {pos} מתוך {count}",
+  "catalog.seriesFallback": "סדרה",
+  "catalog.sameOccasion": "גם על {occasion}",
+  "catalog.noTitle": "ללא כותרת",
+
+  "live.open": "פתיחה באתר ההאזנה",
+  "report.link": "דיווח על טעות בדף זה",
+  "report.subject": "דיווח על טעות: {id}",
+  "report.body": "שיעור: {id}\nדף: {url}\n\nמה אינו נכון:\n",
+};
+
+export const shiurTables: MessageTables<ShiurKey> = { en: shiurEn, yi: shiurYi, he: shiurHe };
+
+const ts = byUiLang((ed) => createT<ShiurKey>(shiurTables, ed));
 
 /** The typed `t()` for the shiur page strings of an edition. */
 export function useShiurT(ed: Ed): TFunction<ShiurKey> {
-  let t = cache.get(ed);
-  if (!t) {
-    t = createT<ShiurKey>(shiurTables, ed);
-    cache.set(ed, t);
-  }
-  return t;
+  return ts[ed];
 }

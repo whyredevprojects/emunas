@@ -240,9 +240,10 @@ describe("canonicalFor and noindexFor on corpus entries", () => {
   });
 
   it("hreflang and withEdition keep the entry", () => {
-    expect(links.hreflangPair("/en/inyanim/emunah/all/").map((h) => h.href)).toEqual([
-      `${HOSTS.quiet}/yi/inyanim/emunah/all/`,
+    expect(links.hreflangAlternates("/en/inyanim/emunah/all/").map((h) => h.href)).toEqual([
       `${HOSTS.quiet}/en/inyanim/emunah/all/`,
+      `${HOSTS.quiet}/yi/inyanim/emunah/all/`,
+      `${HOSTS.quiet}/he/inyanim/emunah/all/`,
       `${HOSTS.quiet}/`,
     ]);
     expect(links.withEdition(`${HOSTS.live}/en/th/lechem-matzah-45`, "yi")).toBe(`${HOSTS.live}/yi/th/lechem-matzah-45`);

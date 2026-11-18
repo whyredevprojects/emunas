@@ -1,10 +1,10 @@
 import type { UiLang } from "./lang.ts";
 
 /**
- * Numbers are written with ordinary (Western) digits in both editions
- * (concept-quiet §8). Yiddish uses the same grouping as English, so both
- * editions format through the `en` locale; this keeps output identical across
- * ICU builds, some of which have no `yi` number data.
+ * Numbers are written with ordinary (Western) digits in every edition
+ * (concept-quiet §8). Yiddish and Hebrew use the same grouping as English
+ * (1,997), so every edition formats through the `en` locale; this keeps output
+ * identical across ICU builds, some of which have no `yi` number data.
  */
 const formatters = new Map<string, Intl.NumberFormat>();
 

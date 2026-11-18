@@ -8,7 +8,7 @@
  */
 import { formatQuiet } from "@emunas/links";
 import type { UiKey } from "../i18n/index.ts";
-import type { Ed } from "./edition.ts";
+import { pathInEdition, type Ed } from "./edition.ts";
 
 export type NavId = "contents" | "calendar" | "indexes" | "search" | "about";
 
@@ -32,17 +32,20 @@ export function navItems(ed: Ed): NavItem[] {
   ];
 }
 
+/** Matched against the path after the edition segment (`/he/search/` → `/search/`). */
 const SECTION_OF: ReadonlyArray<readonly [RegExp, NavId]> = [
-  [/^\/(?:yi|en)\/(?:contents|section|series|shiur)\//, "contents"],
-  [/^\/(?:yi|en)\/(?:calendar|years)\//, "calendar"],
-  [/^\/(?:yi|en)\/(?:inyanim|erachim|people|sources|stories)\//, "indexes"],
-  [/^\/(?:yi|en)\/search\//, "search"],
-  [/^\/(?:yi|en)\/about\//, "about"],
+  [/^\/(?:contents|section|series|shiur)\//, "contents"],
+  [/^\/(?:calendar|years)\//, "calendar"],
+  [/^\/(?:inyanim|erachim|people|sources|stories)\//, "indexes"],
+  [/^\/search\//, "search"],
+  [/^\/about\//, "about"],
 ];
 
 /** Which nav item a page belongs to (for `aria-current`), or null (title page, root). */
 export function navSectionOf(path: string): NavId | null {
-  for (const [re, id] of SECTION_OF) if (re.test(path)) return id;
+  const rest = pathInEdition(path);
+  if (rest === null) return null;
+  for (const [re, id] of SECTION_OF) if (re.test(rest)) return id;
   return null;
 }
 

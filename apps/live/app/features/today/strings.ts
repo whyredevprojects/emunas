@@ -78,10 +78,46 @@ export const todayYi: MessageTable<TodayKey> = {
   "card.part": "טייל {n}",
 };
 
+export const todayHe: MessageTable<TodayKey> = {
+  "today.heading": "היום",
+  "today.loading": "טוען…",
+  "today.error": "לא ניתן היה לטעון את דף היום. בדקו את החיבור וטענו מחדש.",
+  "today.week": "השבוע",
+  "today.parsha": "פרשת {name}",
+  "today.parsha.deferred": "נקראת בשבת {date}, אחרי היום טוב.",
+  "today.count": { one: "{count} שיעור", other: "{count} שיעורים" },
+  "today.parsha.empty": "אין שיעורים על פרשה זו בשפה שנבחרה.",
+  "today.occasion.active": "עכשיו",
+  "today.occasion.soon": { one: "בעוד {count} יום", other: "בעוד {count} ימים" },
+  "today.outOfRange": "הלוח לתאריך זה אינו זמין.",
+  "today.israel": "לוח ארץ ישראל",
+  "today.moment": "נקודה להיום",
+  "today.moment.play": "האזנה מ־{time}",
+  "today.moment.from": "מתוך: {title}",
+  "today.moment.kind.i": "תובנה",
+  "today.moment.kind.q": "שאלה",
+  "today.moment.kind.st": "מעשה",
+  "today.moment.kind.kp": "נקודה עיקרית",
+  "today.moment.kind.tk": "לקח",
+  "today.moment.kind.s": "פרק",
+  "today.mix.play": "השמעת מיקס על {name}",
+  "today.mix.lead": "קטעים בעניין השבוע מתוך שיעורים רבים, זה אחר זה.",
+  "today.continue": "להמשיך",
+  "today.continue.empty": "שיעורים שתתחילו יופיעו כאן, כדי שתוכלו להמשיך מהמקום שבו עצרתם.",
+  "today.continue.resume": "המשך מ־{time}",
+  "today.continue.next": "הבא בסדרה",
+  "today.newly": "סוכמו לאחרונה",
+  "today.newly.lead": "לשיעורים אלה נוספו רשימות לאחרונה.",
+  "today.counter": "ל־{full} מתוך {total} שיעורים יש כבר רשימות.",
+  "card.year.unknown": "השנה אינה ידועה",
+  "card.notesPending": "הרשימות עדיין לא הוכנו",
+  "card.part": "חלק {n}",
+};
+
 export type TodayT = TFunction<TodayKey>;
 
 const cache: Partial<Record<UiLang, TodayT>> = {};
 
 export function todayT(ui: UiLang): TodayT {
-  return (cache[ui] ??= createT<TodayKey>({ en: todayEn, yi: todayYi }, ui));
+  return (cache[ui] ??= createT<TodayKey>({ en: todayEn, yi: todayYi, he: todayHe }, ui));
 }

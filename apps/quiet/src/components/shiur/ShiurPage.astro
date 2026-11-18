@@ -31,6 +31,8 @@ import Listen from "../Listen.astro";
 import NotesLabel from "../NotesLabel.astro";
 import { formatQuiet } from "@emunas/links";
 import type { Crumb } from "../../lib/nav.ts";
+import { runAttrs } from "../../lib/bidi.ts";
+import { langAttrsIn, shownText } from "../../lib/content.ts";
 import type { Ed } from "../../lib/edition.ts";
 import { useT } from "../../i18n/index.ts";
 import Apparatus from "./Apparatus.astro";
@@ -44,7 +46,7 @@ import TranscriptSlot from "./TranscriptSlot.astro";
 import Writeup from "./Writeup.astro";
 import { useShiurT } from "./strings.ts";
 import { mentionedView, sourceLinks, storyLines, topicLine, type ShiurLayer } from "./refs.ts";
-import { buildSources, hasWriteup, pageParts, sectionHref, type CatalogPlaceView } from "./view.ts";
+import { buildSources, pageParts, sectionHref, shownWriteup, type CatalogPlaceView } from "./view.ts";
 import "./shiur.css";
 
 interface Props {
@@ -76,10 +78,14 @@ const parts = pageParts(shiur, ed, sources, mentioned);
 const section = sectionHref(ed, c);
 const crumbs: Crumb[] = [
   { label: ui("nav.contents"), href: formatQuiet({ kind: "index", ed, index: "contents" }) },
-  { label: c.sectionTitle, href: section, ...(/[א-ת]/.test(c.sectionTitle) ? { lang: shiur.lang === "en" ? "he" : "yi", dir: "rtl" as const } : { lang: "en", dir: "ltr" as const }) },
-  c.n ? { label: ui("citation.number", { n: "⁨" + c.n + "⁩" }) } : { label: c.titleOriginal, dir: /[א-ת]/.test(c.titleOriginal) ? "rtl" : "ltr" },
+  { label: c.sectionTitle, href: section, ...runAttrs(c.sectionTitle, shiur.lang, ed) },
+  c.n ? { label: ui("citation.number", { n: "⁨" + c.n + "⁩" }) } : { label: c.titleOriginal, ...runAttrs(c.titleOriginal, shiur.lang, ed) },
 ];
-const description = notes?.summary.oneLiner[ed] || undefined;
+// Generated text: the edition's language, else the fallback, each with its own lang/dir.
+const oneLiner = shownText(notes?.summary.oneLiner, ed);
+const abstract = shownText(notes?.summary.abstract, ed);
+const writeup = notes ? shownWriteup(notes, ed) : null;
+const description = oneLiner?.text;
 const path = formatQuiet({ kind: "shiur", ed, id: shiur.id }, {}, { bare: true });
 ---
 <Base ed={ed} title={c.titleOriginal} path={path} crumbs={crumbs} {...(description ? { description } : {})}>
@@ -101,13 +107,13 @@ const path = formatQuiet({ kind: "shiur", ed, id: shiur.id }, {}, { bare: true }
         <NotesLabel ed={ed} />
         <section class="about-shiur" id="about" aria-labelledby="about-heading">
           <h2 id="about-heading">{t("about.heading")}</h2>
-          {notes.summary.oneLiner[ed] !== "" && <p class="one-liner">{notes.summary.oneLiner[ed]}</p>}
-          {notes.summary.abstract[ed] !== "" && <p class="abstract">{notes.summary.abstract[ed]}</p>}
+          {oneLiner && <p class="one-liner" {...langAttrsIn(oneLiner, ed)}>{oneLiner.text}</p>}
+          {abstract && <p class="abstract" {...langAttrsIn(abstract, ed)}>{abstract.text}</p>}
           <TopicLine ed={ed} topics={topics} />
         </section>
         {notes.chapters.length > 0 && <Outline ed={ed} chapters={notes.chapters} recordings={shiur.recordings} />}
         <TranscriptSlot recordings={shiur.recordings} />
-        {hasWriteup(notes, ed) && <Writeup ed={ed} blocks={notes.writeup[ed]} recordings={shiur.recordings} sources={sources} />}
+        {writeup && <Writeup ed={ed} blocks={writeup.value} lang={writeup.lang} dir={writeup.dir} recordings={shiur.recordings} sources={sources} />}
         {sources.count > 0 && <SourceList ed={ed} sources={sources} recordings={shiur.recordings} />}
         <Apparatus ed={ed} notes={notes} recordings={shiur.recordings} {...(stories ? { stories } : {})} />
         <Mentioned ed={ed} mentioned={mentioned} />

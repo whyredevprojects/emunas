@@ -5,6 +5,7 @@
  * the topic tree and Explore's entity file). Rows carry Explore's entity ids, topics with their
  * ancestors.
  */
+import type { UiLang } from "@emunas/i18n";
 import { OCCASIONS, PARSHIYOS } from "@emunas/normalize";
 import {
   LIVE_DATA_SCHEMA_VERSION,
@@ -211,7 +212,7 @@ export function facetsFile(rows: ExploreRow[]): FacetsFile {
 const KINDS: readonly MomentKind[] = ["s", "i", "st", "q", "tk", "kp"];
 
 /** Three moments per full shiur, cycling through the kinds; one of every seven has no time. */
-export function momentRows(rows: CorpusRow[], lang: "en" | "yi"): MomentRow[] {
+export function momentRows(rows: CorpusRow[], lang: UiLang): MomentRow[] {
   const out: MomentRow[] = [];
   let k = 0;
   for (const r of rows) {
@@ -225,7 +226,7 @@ export function momentRows(rows: CorpusRow[], lang: "en" | "yi"): MomentRow[] {
   return out;
 }
 
-export function momentShards(rows: CorpusRow[], lang: "en" | "yi"): MomentShardFile[] {
+export function momentShards(rows: CorpusRow[], lang: UiLang): MomentShardFile[] {
   const all = momentRows(rows, lang);
   const shards: MomentShardFile[] = [];
   for (let i = 0; i * MOMENT_SHARD_SIZE < all.length || i === 0; i++) {
@@ -234,7 +235,7 @@ export function momentShards(rows: CorpusRow[], lang: "en" | "yi"): MomentShardF
   return shards;
 }
 
-export function buildFile(rows: CorpusRow[], shards: { en: number; yi: number }): BuildFile {
+export function buildFile(rows: CorpusRow[], shards: Record<UiLang, number>): BuildFile {
   const full = rows.filter((r) => r.status === "full").length;
   return {
     schemaVersion: LIVE_DATA_SCHEMA_VERSION,

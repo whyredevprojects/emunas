@@ -1,6 +1,8 @@
 ---
 /**
- * The write-up, the main text of the page (concept-quiet §5.4 part 5): `writeup[ed]` in section
+ * The write-up, the main text of the page (concept-quiet §5.4 part 5): the write-up the edition
+ * shows (`shownWriteup`: its own language, else the fallback along `CONTENT_FALLBACK`; headings and
+ * paragraphs carry the `lang`/`dir` of that language when it is not the edition's) in section
  * order with each block's heading, one measured column. In the margin beside each paragraph its
  * time, as a link like the outline's; with script the paragraph being heard gets the quiet margin
  * mark (`aria-current="time"` on its time; `data-marks` group). Source citations are superscript
@@ -10,6 +12,8 @@
  */
 import type { PublicRecording, PublicWriteupBlock } from "@emunas/corpus/public";
 import Time from "./Time.astro";
+import type { UiLang } from "@emunas/i18n";
+import { langAttrsIn } from "../../lib/content.ts";
 import type { Ed } from "../../lib/edition.ts";
 import { useShiurT } from "./strings.ts";
 import { paragraphAnchor, type SourcesView } from "./view.ts";
@@ -17,25 +21,29 @@ import { paragraphAnchor, type SourcesView } from "./view.ts";
 interface Props {
   ed: Ed;
   blocks: readonly PublicWriteupBlock[];
+  /** The language the blocks are written in (`shownWriteup(…).lang`). */
+  lang: UiLang;
+  dir: "ltr" | "rtl";
   recordings: readonly PublicRecording[];
   sources: SourcesView;
 }
 
-const { ed, blocks, recordings, sources } = Astro.props;
+const { ed, blocks, lang, dir, recordings, sources } = Astro.props;
 const t = useShiurT(ed);
+const textAttrs = langAttrsIn({ lang, dir }, ed);
 ---
 <section class="writeup" id="writeup" aria-labelledby="writeup-heading">
   <h2 id="writeup-heading">{t("writeup.heading")}</h2>
   <div class="writeup-text" data-marks>
     {blocks.map((block, b) => (
       <div class="writeup-block">
-        {block.heading && <h3>{block.heading}</h3>}
+        {block.heading && <h3 {...textAttrs}>{block.heading}</h3>}
         {block.paragraphs.map((p, i) => {
           const cites = [...new Set(p.src)].map((idx) => sources.byIdx.get(idx)).filter((s) => s !== undefined);
           return (
             <div class="para" id={paragraphAnchor(b, i)} data-mark>
               <span class="para-time">{p.t !== null && <Time ed={ed} recordings={recordings} t={p.t} />}</span>
-              <p>
+              <p {...textAttrs}>
                 {p.text}
                 {cites.length > 0 && (
                   <sup class="cite">

@@ -23,7 +23,7 @@
  * Everything respects the audio-language filter (settings store), except the counter.
  */
 import { calendar as defaultCalendar, type Calendar, type HebrewDate, type ThisWeek } from "@emunas/calendar";
-import type { BuildCounts, Ed, L, ShiurStatus } from "@emunas/corpus/public";
+import type { BuildCounts, Ed, LocalizedText, ShiurStatus } from "@emunas/corpus/public";
 import type { FacetLabel, TodayFile } from "./live-data.ts";
 import { MIX_SIZE, type MixSource } from "../mix/model.ts";
 import { headSources, occasionCatalog, occasionMix, skipSet } from "../mix/occasion.ts";
@@ -55,7 +55,7 @@ export interface TodayRow {
   id: string;
   lang: Ed;
   title: string;
-  oneLiner: L | null;
+  oneLiner: LocalizedText | null;
   duration: number;
   years: number[];
   status: ShiurStatus;

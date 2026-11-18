@@ -1,3 +1,4 @@
+import { UI_LANGS, type UiLang } from "@emunas/i18n";
 import manifestJson from "../fonts/manifest.json" with { type: "json" };
 import { hebrewSizeAdjust } from "./tokens.ts";
 
@@ -137,18 +138,35 @@ export function sizeAdjustOf(family: FontFamily, manifest: FontManifest = fontMa
 
 export type FontRole = "serif" | "sans";
 
+/** The script a language is set in: it picks the font stacks (`--font-*-latin` / `--font-*-hebrew`). */
+export type FontScript = "latin" | "hebrew";
+
+/**
+ * The script of each interface language (`UI_LANGS` of `@emunas/i18n`). Yiddish and Hebrew both
+ * take the Hebrew stacks. A new language must be given its script here (tsc reports it).
+ */
+export const LANG_SCRIPT: Readonly<Record<UiLang, FontScript>> = {
+  en: "latin",
+  yi: "hebrew",
+  he: "hebrew",
+};
+
+/** Interface languages set in `script`, in `UI_LANGS` order. */
+export function langsOfScript(script: FontScript): UiLang[] {
+  return UI_LANGS.filter((l) => LANG_SCRIPT[l] === script);
+}
+
+/** The body face (manifest face id) of each role in each script. */
+const BODY_FACE: Readonly<Record<FontRole, Readonly<Record<FontScript, string>>>> = {
+  serif: { latin: "source-serif-4-latin", hebrew: "frank-ruhl-libre-hebrew" },
+  sans: { latin: "noto-sans-latin", hebrew: "noto-sans-hebrew-hebrew" },
+};
+
 /**
  * Files worth `<link rel=preload>` for an edition: only the body face of the
  * edition's script (tech-quiet §3.5 "only the edition's body face preloaded").
  */
-export function preloadFonts(role: FontRole, lang: "en" | "yi", manifest: FontManifest = fontManifest): string[] {
-  const id =
-    role === "serif"
-      ? lang === "yi"
-        ? "frank-ruhl-libre-hebrew"
-        : "source-serif-4-latin"
-      : lang === "yi"
-        ? "noto-sans-hebrew-hebrew"
-        : "noto-sans-latin";
+export function preloadFonts(role: FontRole, lang: UiLang, manifest: FontManifest = fontManifest): string[] {
+  const id = BODY_FACE[role][LANG_SCRIPT[lang]];
   return manifest.faces.filter((f) => f.id === id).map((f) => f.file);
 }

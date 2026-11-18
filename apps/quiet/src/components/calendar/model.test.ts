@@ -151,8 +151,11 @@ describe("parshaIndex", () => {
     expect(g[0]!.items[1]).toMatchObject({ href: "/en/calendar/parsha/noach/", count: 2, name: "Noach", he: "נח" });
   });
 
-  it("names parshiyos in Hebrew letters only in the Yiddish edition", () => {
+  it("names parshiyos in Hebrew letters only in the Hebrew-script editions", () => {
     expect(parshaIndex(occasions, "yi")[0]!.items[1]).toMatchObject({ name: "נח", he: null, href: "/yi/calendar/parsha/noach/" });
+    // The Hebrew edition: the Hebrew name, no second name beside it.
+    expect(parshaIndex(occasions, "he")[0]!.items[1]).toMatchObject({ he: null, href: "/he/calendar/parsha/noach/" });
+    expect(parshaIndex(occasions, "he")[0]!.items[1]!.name).toBe(occasions.parshiyos.find((p) => p.key === "noach")!.he);
   });
 });
 
@@ -173,7 +176,7 @@ describe("occasionPage", () => {
       ["en-noach-1", "en", [5749]],
     ]);
     expect(p.shiurim[1]!.audience).toBe("bachurim");
-    expect(p.shiurim[0]).toMatchObject({ href: "/en/shiur/yi-noach-1/", title: "Title of yi-noach-1", oneLiner: "One line." });
+    expect(p.shiurim[0]).toMatchObject({ href: "/en/shiur/yi-noach-1/", title: "Title of yi-noach-1", oneLiner: { text: "One line.", lang: "en", fallback: false } });
     expect(p.shiurim[1]!.oneLiner).toBeNull();
     expect(p.subs).toEqual([]);
   });

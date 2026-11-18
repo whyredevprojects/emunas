@@ -31,7 +31,7 @@ export interface PagefindCheckOptions extends ScannerOptions {
  * the raw ban and the alias-key assertion when the scanner has the corpus data.
  *
  * Names (F.1): the name-bearing meta/filter keys (`people`, `person`, `names`, `concepts`) must be
- * display names of corpus entities, and an entity record's `labelHe/En/Yi` display names of its
+ * display names of corpus entities, and an entity record's `label<Lang>` (every `UI_LANGS` language) display names of its
  * entity. A raw extraction name never reaches a record.
  */
 export function checkPagefindRecord(

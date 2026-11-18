@@ -71,6 +71,18 @@
           "type": "image/png"
         }
       ]
+    },
+    {
+      "name": "עברית",
+      "short_name": "עברית",
+      "url": "/he/",
+      "icons": [
+        {
+          "src": "/icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
     }
   ],
   "translations": {
@@ -78,6 +90,11 @@
       "name": "אמונת — הערן",
       "short_name": "אמונת",
       "description": "שיעורים צו הערן און דורכזוכן, אויף אידיש און ענגליש."
+    },
+    "he": {
+      "name": "אמונת — האזנה",
+      "short_name": "אמונת",
+      "description": "שיעורים להאזנה ולעיון, באידיש ובאנגלית."
     }
   }
 }

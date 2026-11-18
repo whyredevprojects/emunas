@@ -23,7 +23,7 @@
  * filter drops items, it never pairs a Yiddish and an English section). Everything optional in the
  * data is read defensively, since the data keeps growing and its shape may change.
  */
-import type { Ed, L } from "@emunas/corpus/public";
+import type { Ed, LocalizedText } from "@emunas/corpus/public";
 import { MIX_SIZE, mixPool, type AudioFilter, type Mix, type MixSource } from "./model.ts";
 
 /** The parts of a today.json mix item this module reads (the shiur is the id's prefix). */
@@ -31,7 +31,7 @@ export interface OccasionMixHead {
   id: string;
   t: number;
   end: number;
-  title?: L | null;
+  title?: LocalizedText | null;
 }
 
 /** The parts of a today.json occasion mix this module reads. */

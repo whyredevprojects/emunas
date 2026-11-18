@@ -30,40 +30,56 @@ function placeholders(m: Message): string[] {
   return [...new Set(forms(m).flatMap((f) => [...f.matchAll(/\{(\w+)\}/g)].map((x) => x[1] as string)))].sort();
 }
 
-describe("corpus vocabulary: every key exists in en and yi", () => {
-  it("has the same keys in both tables", () => {
-    expect(Object.keys(CORPUS_LABELS.yi).sort()).toEqual([...KEYS].sort());
+describe("corpus vocabulary: every key exists in every language", () => {
+  it("has the same keys in every table", () => {
+    for (const lang of UI_LANGS) expect(Object.keys(CORPUS_LABELS[lang]).sort(), lang).toEqual([...KEYS].sort());
     expect(KEYS.length).toBeGreaterThan(40);
   });
 
-  it("types: both tables are complete over one key union", () => {
-    expectTypeOf(CORPUS_LABELS.yi).toHaveProperty("thread.heading");
+  it("types: every table is complete over one key union", () => {
+    expectTypeOf(CORPUS_LABELS.he).toHaveProperty("thread.heading");
     expectTypeOf<keyof typeof CORPUS_LABELS.yi>().toEqualTypeOf<CorpusLabelKey>();
+    expectTypeOf<keyof typeof CORPUS_LABELS.he>().toEqualTypeOf<CorpusLabelKey>();
     expectTypeOf<keyof typeof CORPUS_LABELS.en>().toEqualTypeOf<CorpusLabelKey>();
   });
 
+  const others = UI_LANGS.filter((l) => l !== "en");
   for (const key of KEYS) {
-    it(`${key}: non-empty, same shape and placeholders, Yiddish in Hebrew script`, () => {
+    it(`${key}: non-empty, same shape and placeholders, Yiddish and Hebrew in Hebrew script`, () => {
       const en = CORPUS_LABELS.en[key];
-      const yi = CORPUS_LABELS.yi[key];
-      expect(typeof en).toBe(typeof yi);
-      if (typeof en !== "string" && typeof yi !== "string") expect(Object.keys(yi).sort()).toEqual(Object.keys(en).sort());
-      for (const f of [...forms(en), ...forms(yi)]) expect(f.trim()).not.toBe("");
-      expect(placeholders(yi)).toEqual(placeholders(en));
       for (const f of forms(en)) expect(scriptOf(f.replace(/\{\w+\}/g, ""))).toBe("latin");
-      // "AI" is the one Latin word allowed in the Yiddish wording
-      for (const f of forms(yi)) expect(scriptOf(f.replace(/\{\w+\}/g, "").replace(/\bAI\b/g, ""))).toBe("he");
+      for (const lang of others) {
+        const m = CORPUS_LABELS[lang][key];
+        expect(typeof m, lang).toBe(typeof en);
+        // Same plural forms as English; Hebrew may add its dual (`two`).
+        if (typeof en !== "string" && typeof m !== "string") {
+          expect(Object.keys(m).filter((k) => k !== "two").sort(), lang).toEqual(Object.keys(en).sort());
+        }
+        for (const f of forms(m)) expect(f.trim()).not.toBe("");
+        expect(placeholders(m), lang).toEqual(placeholders(en));
+        // "AI" is the one Latin word allowed in the Yiddish and Hebrew wording
+        for (const f of forms(m)) expect(scriptOf(f.replace(/\{\w+\}/g, "").replace(/\bAI\b/g, "")), lang).toBe("he");
+      }
     });
   }
 
-  it("names the Mashgiach as דער משגיח in Yiddish wherever English says the Mashgiach", () => {
+  it("names the Mashgiach as דער משגיח / המשגיח wherever English says the Mashgiach", () => {
     for (const key of KEYS) {
       const en = forms(CORPUS_LABELS.en[key]).join(" ");
       const yi = forms(CORPUS_LABELS.yi[key]).join(" ");
-      if (/\bthe Mashgiach\b/.test(en)) expect(yi, key).toContain("דער משגיח");
+      const he = forms(CORPUS_LABELS.he[key]).join(" ");
+      if (/\bthe Mashgiach\b/.test(en)) {
+        expect(yi, key).toContain("דער משגיח");
+        expect(he, key).toContain("המשגיח");
+      }
       expect(en, key).not.toMatch(/\bthe R[ao]v\b/i);
       expect(yi, key).not.toMatch(/\bRav\b|רב'ס|דעם רב\b/);
+      expect(he, key).not.toMatch(/(^|[\s(])הרב(?=[\s,.;:)]|$)|שליט"א/);
     }
+  });
+
+  it("writes Hebrew without nikud", () => {
+    for (const key of KEYS) for (const f of forms(CORPUS_LABELS.he[key])) expect(f, key).not.toMatch(/[\u05B0-\u05BD\u05BF\u05C1\u05C2\u05C4\u05C5\u05C7]/u);
   });
 
   it("is marked as proposed wording", () => {
@@ -92,6 +108,8 @@ describe("corpus labels", () => {
     expect(corpusEntryLabel("live", false, "en")).toBe("Grouped and named by AI across all the shiurim. Not reviewed by a person.");
     expect(corpusEntryLabel("live", true, "en")).toBe("Reviewed");
     expect(corpusEntryLabel("live", true, "yi")).toBe("איבערגעקוקט");
+    expect(corpusEntryLabel("live", true, "he")).toBe("נבדק");
+    expect(corpusLabel("thread.heading", "he")).toBe("לימוד שהמשגיח חוזר אליו");
     expect(corpusLabel("thread.heading", "en")).toBe("A teaching the Mashgiach returns to");
   });
 
@@ -107,6 +125,10 @@ describe("corpus labels", () => {
       "also taught in Tanya (English) no. 19, תשס\"ג",
     );
     expect(corpusLabel("throughout", "yi")).toBe("אומעטום");
+    expect(corpusLabel("count.toldInOther", "he", { count: 1 })).toBe("סופר בעוד שיעור אחד");
+    expect(corpusLabel("count.toldInOther", "he", { count: 2 })).toBe("סופר בעוד שני שיעורים");
+    expect(corpusLabel("count.toldInOther", "he", { count: 13 })).toBe("סופר בעוד 13 שיעורים");
+    expect(corpusLabel("label.index", "he", { count: 1997 })).toContain("1,997 שיעורים");
     expect(corpusLabel("notesNotPrepared", "en")).toBe("notes not prepared yet");
   });
 });
@@ -136,6 +158,16 @@ describe("person groups and topic grades", () => {
       "Kings and rulers",
       "Others",
     ]);
+    expect(PERSON_GROUP_ORDER.map((g) => personGroupLabel(g, "he"))).toEqual([
+      "תנ\"ך",
+      "מלאכים",
+      "חז\"ל",
+      "ראשונים",
+      "אחרונים",
+      "צדיקי החסידות",
+      "מלכים ושליטים",
+      "אחרים",
+    ]);
   });
 
   it("has a line for stories whose tellings differ on the attribution", () => {
@@ -154,7 +186,10 @@ describe("person groups and topic grades", () => {
       "Discussed in the shiur",
       "Touched on in one part",
     ]);
-    for (const g of TOPIC_GRADES) expect(scriptOf(topicGradeLabel(g, "yi"))).toBe("he");
+    for (const g of TOPIC_GRADES) {
+      expect(scriptOf(topicGradeLabel(g, "yi"))).toBe("he");
+      expect(scriptOf(topicGradeLabel(g, "he"))).toBe("he");
+    }
   });
 });
 
@@ -181,7 +216,7 @@ describe("corpus tables under tsc", () => {
     expect(result.ok).toBe(true);
   });
 
-  it("a Yiddish table missing a key fails tsc", () => {
+  it("a Hebrew table missing a key fails tsc", () => {
     const result = compile("corpus-incomplete");
     expect(result.ok).toBe(false);
     expect(result.output).toMatch(/error TS2741/);

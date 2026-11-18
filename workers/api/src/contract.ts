@@ -6,11 +6,18 @@
  * so a column added to D1 later cannot reach a client unless it is mapped here on purpose.
  */
 
+import { UI_LANGS, isUiLang, type AudioLang, type UiLang } from "@emunas/i18n";
+
 export const KINDS = ["shiur", "section", "insight", "question", "takeaway", "story", "keypoint", "writeup"] as const;
 export type Kind = (typeof KINDS)[number];
 
-export const LANGS = ["en", "yi"] as const;
-export type Lang = (typeof LANGS)[number];
+/**
+ * Text languages are the interface languages (`UI_LANGS`, `UiLang` from @emunas/i18n): titles,
+ * snippets, vector ids and the `ui` parameter cover every one of them, so a language added there
+ * reaches the API with no change here. The language of a recording (`audio_lang`, the `audio`
+ * filter) is an `AudioLang`: only en and yi shiurim exist.
+ */
+export const AUDIO_LANGS = ["en", "yi"] as const satisfies readonly AudioLang[];
 
 export const MODES = ["hybrid", "lexical", "semantic"] as const;
 export type Mode = (typeof MODES)[number];
@@ -26,15 +33,14 @@ export type EntityType = (typeof ENTITY_TYPES)[number];
 /** How a result matched: words in its generated title, words in its generated text, or meaning only. */
 export type Matched = "title" | "text" | "semantic";
 
-export interface Title {
-  en: string | null;
-  yi: string | null;
-}
+/** The generated display title in every interface language; null where a language has none. */
+export type Title = { [L in UiLang]: string | null };
 
 /** A snippet cut from generated text in D1. `marks` are [start, end) UTF-16 offsets into `text`. */
 export interface Snippet {
   text: string;
-  lang: Lang;
+  /** The language of `text` (it can differ from `ui`: the API falls back along `CONTENT_FALLBACK`). */
+  lang: UiLang;
   marks: [number, number][];
 }
 
@@ -105,7 +111,7 @@ export interface FeedbackRow {
   field: FeedbackField | null;
   reason: FeedbackReason;
   text: string | null;
-  ui: Lang;
+  ui: UiLang;
   rev: string;
   status: FeedbackStatus;
 }
@@ -114,7 +120,7 @@ export interface FeedbackRow {
 export const ALLOWED_KEYS = {
   search: ["groups", "next", "results", "rev", "tookMs"],
   searchResult: ["end", "kind", "matched", "momentId", "score", "shiurId", "snippet", "t", "title"],
-  title: ["en", "yi"],
+  title: [...UI_LANGS].sort(),
   snippet: ["lang", "marks", "text"],
   group: ["count", "shiurId"],
   similar: ["results", "rev"],
@@ -148,7 +154,7 @@ export interface VectorAlias {
   local: string;
 }
 
-export type ParsedVectorId = { momentId: string; lang: Lang; alias?: undefined } | { momentId: null; lang: Lang; alias: VectorAlias };
+export type ParsedVectorId = { momentId: string; lang: UiLang; alias?: undefined } | { momentId: null; lang: UiLang; alias: VectorAlias };
 
 const utf8Length = (s: string): number => new TextEncoder().encode(s).length;
 
@@ -162,7 +168,7 @@ export function fnv1a32Hex(s: string): string {
   return h.toString(16).padStart(8, "0");
 }
 
-export function vectorIdFor(momentId: string, lang: Lang): string {
+export function vectorIdFor(momentId: string, lang: UiLang): string {
   const plain = `${momentId}@${lang}`;
   const cut = momentId.indexOf("~");
   if (utf8Length(plain) <= VECTOR_ID_MAX_BYTES || cut <= 0) return plain;
@@ -176,7 +182,7 @@ export function parseVectorId(id: string): ParsedVectorId | null {
   const at = id.lastIndexOf("@");
   if (at <= 0) return null;
   const lang = id.slice(at + 1);
-  if (lang !== "en" && lang !== "yi") return null;
+  if (!isUiLang(lang)) return null;
   const momentId = id.slice(0, at);
   const m = /^([^~]+)~h([0-9a-f]{8})(~[^~]+)$/.exec(momentId);
   if (m) return { momentId: null, lang, alias: { shiurHead: m[1]!, shiurHash: m[2]!, local: m[3]! } };
@@ -187,6 +193,6 @@ export function isKind(v: string): v is Kind {
   return (KINDS as readonly string[]).includes(v);
 }
 
-export function isLang(v: string): v is Lang {
-  return v === "en" || v === "yi";
+export function isAudioLang(v: string): v is AudioLang {
+  return (AUDIO_LANGS as readonly string[]).includes(v);
 }

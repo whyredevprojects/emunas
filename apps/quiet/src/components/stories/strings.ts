@@ -2,13 +2,13 @@
  * UI strings of the stories index and the story pages (Quiet C4.5). The AI-label sentences
  * ("Retold here from N tellings…", the entry foot note), the person-group names and the
  * "tellings differ on the attribution" line are shared with Live and come from `@emunas/i18n`
- * (`corpusLabel`); only Quiet's own wording lives here. `yi` is typed against the English keys, so
+ * (`corpusLabel`); only Quiet's own wording lives here. `yi` and `he` are typed against the English keys, so
  * a missing key fails `tsc`.
  *
  * Wording status: unreviewed (proposed; the Yiddish needs a native reader). Yiddish speaks of the
  * Mashgiach as "דער משגיח".
  */
-import { createT, type MessageTable, type TFunction } from "@emunas/i18n";
+import { byUiLang, createT, type MessageTable, type TFunction } from "@emunas/i18n";
 import type { Ed } from "../../lib/edition.ts";
 
 export const storiesEn = {
@@ -65,8 +65,33 @@ export const storiesYi: MessageTable<StoriesKey> = {
   "telling.caption": "די שיעורים אין וועלכע די מעשה ווערט דערציילט",
 };
 
-const tables = { en: storiesEn, yi: storiesYi };
+export const storiesHe: MessageTable<StoriesKey> = {
+  "index.lead":
+    "המעשיות שהמשגיח מספר בשיעורים. למעשה שסיפר ביותר משיעור אחד יש דף משלה, עם כל מקום שבו הוא מספר אותה; מעשה שסופרה פעם אחת מקשרת למקומה בשיעור.",
+  "index.jump": "במפתח זה",
+  "index.mostRetold": "המסופרות ביותר",
+  "index.mostRetoldLead": "מעשיות שסופרו ב־{min} שיעורים או יותר, המסופרות ביותר תחילה.",
+  "index.byPerson": "לפי האישים",
+  "index.byPersonLead": "מעשיות על האישים הנזכרים בהן, בסדר של מפתח השמות.",
+  "index.withoutName": "בלי שם",
+  "index.withoutNameLead": "מעשיות שאינן מזכירות איש ממפתח השמות, לפי שם המעשה.",
+  "count.tellings": { one: "סופרה פעם אחת", two: "סופרה פעמיים", other: "סופרה {count} פעמים" },
+
+  "story.people": "על",
+  "story.retelling": "המעשה",
+  "story.where": "היכן הוא מספר אותה",
+  "story.whereLead": "לפי השנה היכן שהיא ידועה; אלה שבלי שנה בסוף.",
+  "telling.shiur": "שיעור",
+  "telling.occasion": "זמן",
+  "telling.year": "שנה",
+  "telling.lang": "שפה",
+  "telling.time": "בהקלטה",
+  "telling.undated": "לא ידוע",
+  "telling.caption": "השיעורים שבהם המעשה מסופרת",
+};
+
+const ts = byUiLang((ed) => createT<StoriesKey>({ en: storiesEn, yi: storiesYi, he: storiesHe }, ed));
 
 export function useStoriesT(ed: Ed): TFunction<StoriesKey> {
-  return createT<StoriesKey>(tables, ed);
+  return ts[ed];
 }

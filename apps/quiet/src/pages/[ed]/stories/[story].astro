@@ -24,6 +24,7 @@ import TellingTable from "../../../components/stories/TellingTable.astro";
 import { storiesCrumbs, storyPageModel } from "../../../components/stories/model.ts";
 import { useStoriesT } from "../../../components/stories/strings.ts";
 import "../../../components/stories/stories.css";
+import { langAttrs } from "../../../lib/content.ts";
 import { EDS, type Ed } from "../../../lib/edition.ts";
 
 export const getStaticPaths = (() => {
@@ -62,7 +63,7 @@ const model = storyPageModel(ed, story, layer, indexRows(loadCatalogCorpus()));
   <section class="story-retelling" aria-labelledby="story-retelling-h">
     <h2 id="story-retelling-h" class="visually-hidden">{t("story.retelling")}</h2>
     <EntityLabel ed={ed} variant="story" count={model.rows.length} />
-    {model.retelling && <p class="retelling" lang={ed} data-retelling>{model.retelling}</p>}
+    {model.retelling && <p class="retelling" {...langAttrs(model.retelling)} data-retelling>{model.retelling.text}</p>}
   </section>
 
   <section class="story-where" aria-labelledby="story-where-h">

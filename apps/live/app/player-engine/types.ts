@@ -6,7 +6,7 @@
  */
 import type {
   Ed,
-  L,
+  LocalizedText,
   PublicChapter,
   PublicRecording,
   PublicShiur,
@@ -14,7 +14,9 @@ import type {
   SkipRange,
 } from "@emunas/corpus/public";
 
-export type { Ed, L, SkipKind, SkipRange };
+import type { UiLang } from "@emunas/i18n";
+
+export type { Ed, LocalizedText, SkipKind, SkipRange };
 
 /**
  * A recording as the engine needs it. Amendment A1: the corpus build emits `audioUrl` (absolute URL
@@ -115,7 +117,7 @@ export interface PlayerState {
   /** The most recent automatic skip, for the dock's "skipped … / undo"; null after undo or load. */
   lastSkip: SkipEvent | null;
   skip: SkipSettings;
-  readingLang: Ed;
+  readingLang: UiLang;
   error: string | null;
 }
 
@@ -185,7 +187,7 @@ export interface LifecycleTarget {
 export interface DescribeContext {
   shiur: PlayerShiur;
   chapter: PlayerChapter | null;
-  readingLang: Ed;
+  readingLang: UiLang;
 }
 
 export interface PlayerEngineOptions {
@@ -202,7 +204,7 @@ export interface PlayerEngineOptions {
   describe?: (ctx: DescribeContext) => MediaMetadataInit;
   skip?: Partial<SkipSettings>;
   rate?: number;
-  readingLang?: Ed;
+  readingLang?: UiLang;
   /** Default 5000 ms. */
   progressIntervalMs?: number;
   /** Seek step for Media Session seekbackward/seekforward without an offset (default 15 s). */
@@ -230,7 +232,7 @@ export interface PlayerEngine {
   /** After a moment end: clear it and continue playing the shiur. */
   keepListening(): void;
   setSleepTimer(spec: SleepSpec | null): void;
-  setReadingLanguage(lang: Ed): void;
+  setReadingLanguage(lang: UiLang): void;
   /** Emit a progress event now (e.g. before navigating away from the app). */
   flushProgress(reason?: ProgressReason): void;
   destroy(): void;

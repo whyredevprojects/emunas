@@ -35,6 +35,7 @@ import { playStoriesOnly } from "./play.ts";
 import { StoryCard } from "./StoryCard.tsx";
 import { maasiosT } from "./strings.ts";
 import { maasiosStyles as s } from "./styles.ts";
+import { labelText } from "../../i18n/content.ts";
 
 const paths = livePaths();
 
@@ -167,7 +168,7 @@ function PeopleFacet({
               data-person={p.id}
               replace
             >
-              <Text value={data.index.people[p.id]![ui]} lang={ui} />
+              <Text value={data.index.people[p.id]!} lang={ui} />
               <span className={s.status}>{formatNumber(p.count, ui)}</span>
             </Link>
           </li>
@@ -183,7 +184,7 @@ function PeopleFacet({
       {facets.person !== null && label ? (
         <p className={s.muted}>
           <Link to={paths.person(ui, facets.person)} data-entity={`p:${facets.person}`}>
-            <Text value={label[ui]} lang={ui} />
+            <Text value={label} lang={ui} />
           </Link>
         </p>
       ) : null}
@@ -225,10 +226,10 @@ function TopicFacet({
         }}
       >
         <option value="">{mt("facet.topic.all")}</option>
-        {selectedMissing ? <option value={facets.topic!}>{labels.get(facets.topic!)![ui]}</option> : null}
+        {selectedMissing ? <option value={facets.topic!}>{labelText(labels.get(facets.topic!)!, ui)}</option> : null}
         {options.map((o) => (
           <option key={o.id} value={o.id}>
-            {`${"  ".repeat(o.level - 1)}${labels.get(o.id)?.[ui] ?? o.id} (${formatNumber(o.count, ui)})`}
+            {`${"  ".repeat(o.level - 1)}${labels.has(o.id) ? labelText(labels.get(o.id)!, ui) : o.id} (${formatNumber(o.count, ui)})`}
           </option>
         ))}
       </select>

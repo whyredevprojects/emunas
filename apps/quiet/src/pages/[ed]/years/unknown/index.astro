@@ -37,10 +37,10 @@ const title = t("years.unknown.title");
   <p class="cal-intro">{t("years.unknown.why")}</p>
   <NotesKey ed={ed} entries={all} />
   {groups.map((g, i) => {
-    const lang = g.shiurim[0]?.lang ?? ed;
+    const lang = g.shiurim[0]?.lang ?? null;
     return (
       <div class="cal-sub">
-        <h2 id={`section-${i}`}><bdi {...runAttrs(g.title, lang)}>{g.title}</bdi></h2>
+        <h2 id={`section-${i}`}><bdi {...runAttrs(g.title, lang, ed)}>{g.title}</bdi></h2>
         <ShiurList ed={ed} entries={g.shiurim} showYear={false} />
       </div>
     );

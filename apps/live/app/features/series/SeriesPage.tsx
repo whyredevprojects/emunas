@@ -38,6 +38,7 @@ import {
 import { PartCard } from "./PartCard.tsx";
 import { seriesT, type SeriesT } from "./strings.ts";
 import { seriesStyles as s } from "./styles.ts";
+import { labelText } from "../../i18n/content.ts";
 
 const paths = livePaths();
 
@@ -68,7 +69,7 @@ export function SeriesPage(): JSX.Element {
   const records = progress.status === "ok" ? progress.data : [];
 
   const data = loaded.status === "ok" ? loaded.data : null;
-  const title = data ? data.series.title[ui] : tFor(ui)("page.seriesOne");
+  const title = data ? labelText(data.series.title, ui) : tFor(ui)("page.seriesOne");
 
   return (
     <article className={s.page} aria-busy={loaded.status === "loading"} data-series={seriesId}>
@@ -100,7 +101,7 @@ function SeriesBody({
 }: {
   data: Loaded;
   ui: UiLang;
-  read: Ed;
+  read: UiLang;
   search: string;
   records: readonly ProgressRecord[];
 }): JSX.Element {
@@ -124,7 +125,7 @@ function SeriesBody({
       <p className={s.meta}>
         {st("series.lang", { lang: languageName(series.lang, ui) })} · {st("series.parts", { count: parts.length })}
       </p>
-      {intro ? <Synthesis intro={intro} ui={ui} read={read} /> : null}
+      {intro ? <Synthesis intro={intro} ui={ui} /> : null}
 
       {parts.length > 0 ? <Progress ui={ui} done={prog.completed} total={prog.total} next={prog.next} /> : null}
 
@@ -143,7 +144,7 @@ function SeriesBody({
       ) : view === "perek" ? (
         <PerekView groups={groups} ui={ui} read={read} heard={heard} lineOf={lineOf} />
       ) : (
-        <PartList parts={parts} lang={series.lang} ui={ui} read={read} heard={heard} label={series.title[ui]} lineOf={lineOf} />
+        <PartList parts={parts} lang={series.lang} ui={ui} read={read} heard={heard} label={labelText(series.title, ui)} lineOf={lineOf} />
       )}
       {anyNotes ? <p className={s.aiNote}>{notice("aiNotesShort", ui)}</p> : null}
     </>
@@ -151,19 +152,19 @@ function SeriesBody({
 }
 
 /** The generated title, overview and key themes (plain text, never links). */
-function Synthesis({ intro, ui, read }: { intro: SeriesIntro; ui: UiLang; read: Ed }): JSX.Element | null {
+function Synthesis({ intro, ui }: { intro: SeriesIntro; ui: UiLang }): JSX.Element | null {
   const st = seriesT(ui);
   if (intro.title === null && intro.overview === null && intro.keyThemes.length === 0) return null;
   return (
     <section className={s.synthesis} aria-label={st("series.about")} data-testid="series-synthesis">
-      {intro.title !== null ? <Text as="h2" className={s.subtitle} value={intro.title} lang={read} /> : null}
-      {intro.overview !== null ? <Text as="p" className={s.overview} value={intro.overview} lang={read} /> : null}
+      {intro.title !== null ? <Text as="h2" className={s.subtitle} value={intro.title.text} lang={intro.title.lang} /> : null}
+      {intro.overview !== null ? <Text as="p" className={s.overview} value={intro.overview.text} lang={intro.overview.lang} /> : null}
       {intro.keyThemes.length > 0 ? (
         <>
           <h3 className={s.themesTitle}>{st("series.keyThemes")}</h3>
           <ul className={s.themes} data-testid="series-themes">
             {intro.keyThemes.map((k, i) => (
-              <Text key={i} as="li" value={k} lang={read} />
+              <Text key={i} as="li" value={k.text} lang={k.lang} />
             ))}
           </ul>
         </>
@@ -218,7 +219,7 @@ function PartList({
   parts: readonly SeriesPart[];
   lang: Ed;
   ui: UiLang;
-  read: Ed;
+  read: UiLang;
   heard: Map<string, ProgressRecord>;
   label: string;
   lineOf: (p: SeriesPart) => PartLine;
@@ -266,7 +267,7 @@ function PerekView({
 }: {
   groups: readonly PerekGroup[];
   ui: UiLang;
-  read: Ed;
+  read: UiLang;
   heard: Map<string, ProgressRecord>;
   lineOf: (p: SeriesPart) => PartLine;
 }): JSX.Element {

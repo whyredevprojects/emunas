@@ -73,6 +73,22 @@ describe("response contract", () => {
     expect([...textual].sort()).toEqual([".results[].snippet.text", ".results[].title.en", ".results[].title.yi"]);
   });
 
+  it("copies a title key per interface language, Hebrew included, and a Hebrew snippet", () => {
+    const r = apiResult({
+      momentId: "a~s0",
+      shiurId: "a",
+      title: { en: "The lion", yi: "דער לייב", he: "האריה" },
+      snippet: { text: "האריה אכל תבן", lang: "he", marks: [[0, 5]] },
+    });
+    const parsed = parseSearchResponse(apiResponse([r]))!;
+    expect(parsed.results[0]!.title).toEqual({ en: "The lion", yi: "דער לייב", he: "האריה" });
+    expect(parsed.results[0]!.snippet).toEqual({ text: "האריה אכל תבן", lang: "he", marks: [[0, 5]] });
+    const noHe = { ...r, title: { en: "The lion", yi: "דער לייב" } };
+    expect(parseSearchResponse(apiResponse([noHe as typeof r]))).toBeNull();
+    const fr = { ...r, snippet: { text: "x", lang: "fr", marks: [] } };
+    expect(parseSearchResponse(apiResponse([fr as unknown as typeof r]))).toBeNull();
+  });
+
   it("rejects bodies that do not fit the contract", () => {
     expect(parseSearchResponse(null)).toBeNull();
     expect(parseSearchResponse({ rev: "r", tookMs: 1, results: "x", groups: [] })).toBeNull();

@@ -47,7 +47,7 @@ const series: { id: string; title: string; list: SeriesSummary[] }[] = [
       <ol role="list" class="toc" data-group={g.id}>
         {g.sections.map((s) => (
           <li data-section={s.key}>
-            <a href={sectionHref(ed, s)}><bdi {...runAttrs(s.title, s.lang)}>{s.title}</bdi></a>
+            <a href={sectionHref(ed, s)}><bdi {...runAttrs(s.title, s.lang, ed)}>{s.title}</bdi></a>
             <span class="toc-leader" aria-hidden="true"></span>
             <span class="toc-count">{c("count.shiurim", { count: s.count })}</span>
             {pagesOf(s) && <span class="toc-pages">{pagesOf(s)}</span>}
@@ -66,7 +66,7 @@ const series: { id: string; title: string; list: SeriesSummary[] }[] = [
         <ul role="list" class="toc">
           {g.list.map((s) => (
             <li data-series={s.id}>
-              <a href={s.href}>{s.title}</a>
+              <a href={s.href}><bdi lang={s.titleLang} dir={s.titleDir}>{s.title}</bdi></a>
               <span class="toc-leader" aria-hidden="true"></span>
               <span class="toc-count">{c("count.shiurim", { count: s.count })}</span>
             </li>

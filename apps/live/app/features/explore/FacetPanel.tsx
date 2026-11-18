@@ -16,6 +16,7 @@ import { DURATION_BUCKETS, SET_FACETS, UNDATED, type ExploreFilters, type SetFac
 import { exploreT, type ExploreKey } from "./strings.ts";
 import { exploreStyles as s } from "./styles.ts";
 import { CATEGORIES, toggleValue } from "./url.ts";
+import { labelText } from "../../i18n/content.ts";
 
 const FIXED_ORDER: Partial<Record<SetFacet, readonly string[]>> = {
   lang: ["yi", "en"],
@@ -136,7 +137,7 @@ function FacetGroup({ facet, filters, counts, facets, ui, onChange, hidden: hide
             <li key={v} className={n === 0 && !checked ? s.dimmed : undefined} data-value={v} data-count={n}>
               <label className={s.value}>
                 <input type="checkbox" checked={checked} onChange={() => onChange(toggleValue(filters, facet, v))} />
-                {label.data ? <Text value={label.text} shiurLang={ui} /> : <span>{label.text}</span>}
+                {label.data ? <Text value={label.text} shiurLang={null} /> : <span>{label.text}</span>}
                 <span className={s.count}>{formatNumber(n, ui)}</span>
               </label>
             </li>
@@ -196,7 +197,7 @@ function TopicFacet({ filters, counts, ui, onChange, topics = [] }: FacetPanelPr
         const checked = selected.includes(n.id);
         const kids = children.get(n.id) ?? [];
         const expanded = open.has(n.id);
-        const name = n.label[ui];
+        const name = labelText(n.label, ui);
         return (
           <li key={n.id} className={count === 0 && !checked ? s.dimmed : undefined} data-value={n.id} data-count={count} data-level={n.level}>
             <div className={s.topicValue}>

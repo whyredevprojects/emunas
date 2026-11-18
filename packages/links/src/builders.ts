@@ -6,10 +6,10 @@ import { parseMomentId } from "./moment.ts";
 import { formatLive } from "./live.ts";
 import { formatQuiet } from "./quiet.ts";
 import { quietSectionPath, type SectionRef } from "./section.ts";
-import { isEd, type CorpusKind, type Ed, type LinkData, type MomentRef, type Route } from "./types.ts";
+import { badEdition, isEd, type CorpusKind, type Ed, type LinkData, type MomentRef, type Route } from "./types.ts";
 
 function ed(value: Ed): Ed {
-  if (!isEd(value)) throw new TypeError(`@emunas/links: edition must be "yi" or "en", got ${JSON.stringify(value)}`);
+  if (!isEd(value)) throw new TypeError(badEdition(value));
   return value;
 }
 

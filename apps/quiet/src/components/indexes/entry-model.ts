@@ -3,8 +3,9 @@
  * order, entry links through `@emunas/links` with the layer's page flags, the names an entry is
  * shown under, and alphabetical order for an edition.
  */
+import { pickLocalized } from "@emunas/i18n";
 import { formatQuiet, type CorpusKind } from "@emunas/links";
-import type { Ed } from "../../lib/edition.ts";
+import { isHebrewScriptEdition, type Ed } from "../../lib/edition.ts";
 import type { EntryData } from "./entries.ts";
 import { citeFromRow, letterOf, run, sortForm, type Cite, type Run } from "./model.ts";
 
@@ -38,14 +39,18 @@ export function hasEntryPage(d: EntryData, kind: CorpusKind, id: string): boolea
 
 export const str = (v: unknown): string => (typeof v === "string" ? v.trim() : "");
 
-/** Reads `{en, yi}` defensively: the edition's text, else the other one. */
-export function textOf(l: unknown, ed: Ed): string {
-  if (typeof l !== "object" || l === null) return "";
-  const r = l as Record<string, unknown>;
-  return str(r[ed]) || str(r[ed === "en" ? "yi" : "en"]);
+/**
+ * Reads a generated text (`LocalizedText`) defensively: the edition's text, else the next language
+ * along `CONTENT_FALLBACK`, as a run with the `lang`/`dir` of the language shown; null when blank in
+ * every language.
+ */
+export function textRun(l: unknown, ed: Ed): Run | null {
+  if (typeof l !== "object" || l === null) return null;
+  const picked = pickLocalized<unknown>(l as Partial<Record<Ed, unknown>>, ed, (v) => str(v) !== "");
+  return picked ? { text: str(picked.value), lang: picked.lang, dir: picked.dir } : null;
 }
 
-/** Reads `{en, yi}` defensively: the edition's text only. */
+/** Reads a generated text defensively: the edition's own language only (no fallback). */
 export function ownTextOf(l: unknown, ed: Ed): string {
   if (typeof l !== "object" || l === null) return "";
   return str((l as Record<string, unknown>)[ed]);
@@ -77,23 +82,24 @@ const collators = {
 
 /**
  * Alphabetical order of names for an edition: names in the edition's script first (Hebrew
- * letters in the Yiddish edition, Latin in the English one), then the rest; each in its own
- * collation, articles ignored; ties by id.
+ * letters in the Yiddish and Hebrew editions, Latin in the English one), then the rest; each in its
+ * own collation, articles ignored; ties by id.
  */
 export function compareRuns(ed: Ed): (a: { name: Run; id: string }, b: { name: Run; id: string }) => number {
   const hebrew = (s: string) => /[א-ת]/.test(s.charAt(0));
+  const hebrewFirst = isHebrewScriptEdition(ed);
   return (a, b) => {
     const ka = nameSortForm(a.name.text);
     const kb = nameSortForm(b.name.text);
-    const pa = hebrew(ka) === (ed === "yi") ? 0 : 1;
-    const pb = hebrew(kb) === (ed === "yi") ? 0 : 1;
+    const pa = hebrew(ka) === hebrewFirst ? 0 : 1;
+    const pb = hebrew(kb) === hebrewFirst ? 0 : 1;
     if (pa !== pb) return pa - pb;
     const c = hebrew(ka) || hebrew(kb) ? collators.he : collators.en;
     return c.compare(ka, kb) || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
   };
 }
 
-/** A Hebrew data string as a run (glossary headwords are Hebrew in both editions). */
+/** A Hebrew data string as a run (glossary headwords are Hebrew in every edition). */
 export function hebrewRun(text: string): Run {
   return { text, lang: "he", dir: "rtl" };
 }

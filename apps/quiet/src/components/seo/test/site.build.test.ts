@@ -1,11 +1,13 @@
 /**
  * W4.6 acceptance on a real build (integration-plan §8 W4.6):
  *   corpus (today's data, into a temp dir) → astro build with production hosts → checks on dist:
- * - every edition page is self-canonical with the yi/en/x-default hreflang set and OG tags;
+ * - every edition page is self-canonical with one hreflang per edition plus x-default and OG tags;
  * - each edition sitemap lists exactly the pages built for that edition, every shiur among them;
  *   the sitemap index and robots.txt name them;
- * - the About page exists in both editions with `#notes`, every page links to it, and it holds
- *   the approved texts from src/content/about/ and a placeholder for every part without one;
+ * - the About page exists in every edition with `#notes`, every page links to it, and it holds
+ *   the approved texts from src/content/about/ (an edition without its own text of a part shows the
+ *   text along `CONTENT_FALLBACK`, marked with its language) and a placeholder for every part with
+ *   no text in any language;
  * - link checker over every page: internal links and anchors resolve, cross-site links to the
  *   listening app match the Live route table (apps/live/app/routes.ts) and map back to a built
  *   Quiet page through @emunas/links; the only other external links are the media host, Sefaria
@@ -15,11 +17,13 @@ import { existsSync, mkdtempSync, readdirSync, readFileSync, rmSync, statSync } 
 import { tmpdir } from "node:os";
 import { dirname, join, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
+import { CONTENT_FALLBACK, UI_DIR, pickText } from "@emunas/i18n";
 import { createLinks } from "@emunas/links";
 import { buildCorpus } from "./corpus-build.ts";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { astroBuild } from "../../../../test/astro-build.ts";
 import { ABOUT_PARTS } from "../../../pages/[ed]/about/_strings.ts";
+import { EDS, editionOfPath, pathInEdition } from "../../../lib/edition.ts";
 
 const app = resolve(dirname(fileURLToPath(import.meta.url)), "../../../..");
 const repo = resolve(app, "../..");
@@ -29,7 +33,6 @@ const QUIET = `https://library.${DOMAIN}`;
 const LIVE = `https://listen.${DOMAIN}`;
 const MEDIA = "https://media.example.org";
 const FEEDBACK = "errors@emunas.example";
-const EDS = ["yi", "en"] as const;
 const links = createLinks({ hosts: { quiet: QUIET, live: LIVE } });
 
 let tmp = "";
@@ -88,7 +91,7 @@ const mainOf = (h: string): string => h.slice(h.indexOf("<main"), h.indexOf("</m
 const attr = (tag: string, name: string): string | undefined =>
   new RegExp(`\\s${name}="([^"]*)"`).exec(tag)?.[1]?.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#39;/g, "'");
 const tags = (h: string, name: string): string[] => [...h.matchAll(new RegExp(`<${name}\\s[^>]*>`, "g"))].map((m) => m[0]);
-const editionOf = (p: string) => /^\/(yi|en)\//.exec(p)?.[1] as "yi" | "en" | undefined;
+const editionOf = (p: string) => editionOfPath(p) ?? undefined;
 const locs = (xml: string) => [...xml.matchAll(/<loc>([^<]*)<\/loc>/g)].map((m) => m[1]!.replace(/&amp;/g, "&"));
 
 const idCache = new Map<string, Set<string>>();
@@ -106,10 +109,12 @@ function liveRoutes(): RegExp[] {
   const text = readFileSync(join(repo, "apps/live/app/routes.ts"), "utf8");
   const children = text.slice(text.indexOf("UI_CHILD_ROUTES"), text.indexOf("export default"));
   const toRe = (pattern: string) => pattern.split("/").map((s) => (s.startsWith(":") ? "[^/?#]+" : s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))).join("/");
-  const out: RegExp[] = [/^\/$/, /^\/(?:en|yi)\/$/];
+  // Live serves every interface language under its own first segment, as Quiet does.
+  const eds = EDS.join("|");
+  const out: RegExp[] = [/^\/$/, new RegExp(`^/(?:${eds})/$`)];
   for (const m of children.matchAll(/route\("([^"]+)"/g)) {
     if (m[1] === "*") continue;
-    out.push(new RegExp(`^/(?:en|yi)/${toRe(m[1]!)}$`));
+    out.push(new RegExp(`^/(?:${eds})/${toRe(m[1]!)}$`));
   }
   expect(out.length, "live route table parsed").toBeGreaterThan(10);
   return out;
@@ -118,22 +123,22 @@ function liveRoutes(): RegExp[] {
 // ------------------------------------------------------------------ head tags
 
 describe("head tags on every page", () => {
-  it("are self-canonical with hreflang yi/en/x-default and OG title, description and url", () => {
+  it("are self-canonical with one hreflang per edition plus x-default, and OG title, description and url", () => {
     const bad: string[] = [];
     let n = 0;
     for (const [path] of pages()) {
       const h = head(html(path));
       const ed = editionOf(path);
       if (ed === undefined && path !== "/") continue;
-      if (/\/(?:shell-sample)\//.test(path)) continue;
+      if (/^\/shell-sample\//.test(pathInEdition(path) ?? "")) continue;
       n++;
       const canonical = tags(h, "link").filter((t) => attr(t, "rel") === "canonical");
       if (canonical.length !== 1 || attr(canonical[0]!, "href") !== QUIET + path) bad.push(`${path}: canonical`);
       const alt = tags(h, "link")
         .filter((t) => attr(t, "rel") === "alternate")
         .map((t) => `${attr(t, "hreflang")} ${attr(t, "href")}`);
-      const rest = path === "/" ? "/" : path.slice(3);
-      const want = [`yi ${QUIET}/yi${rest}`, `en ${QUIET}/en${rest}`, `x-default ${QUIET}/`];
+      const rest = pathInEdition(path) ?? "/";
+      const want = [...EDS.map((e) => `${e} ${QUIET}/${e}${rest}`), `x-default ${QUIET}/`];
       if (JSON.stringify(alt) !== JSON.stringify(want)) bad.push(`${path}: hreflang ${JSON.stringify(alt)}`);
       const og = new Map(tags(h, "meta").filter((t) => attr(t, "property")).map((t) => [attr(t, "property")!, attr(t, "content") ?? ""]));
       for (const p of ["og:title", "og:description", "og:site_name"]) if (!og.get(p)?.trim()) bad.push(`${path}: ${p}`);
@@ -150,13 +155,14 @@ describe("head tags on every page", () => {
     };
     const full = index.shiurim.find((s) => s.status === "full")!;
     const shiur = JSON.parse(readFileSync(join(corpus, "shiurim", `${full.id}.json`), "utf8")) as {
-      notes: { summary: { oneLiner: { en: string; yi: string } } };
+      notes: { summary: { oneLiner: { en: string; yi: string; he?: string } } };
     };
     for (const ed of EDS) {
       const h = head(html(`/${ed}/shiur/${full.id}/`));
       const og = new Map(tags(h, "meta").filter((t) => attr(t, "property")).map((t) => [attr(t, "property")!, attr(t, "content") ?? ""]));
       expect(og.get("og:title")).toBe(full.catalog.titleOriginal);
-      expect(og.get("og:description")).toBe(shiur.notes.summary.oneLiner[ed]);
+      // the edition's own one-liner, else the fallback (no Hebrew translation yet: the Yiddish)
+      expect(og.get("og:description")).toBe(pickText(shiur.notes.summary.oneLiner, ed).text);
       expect(og.get("og:type")).toBe("article");
     }
   });
@@ -182,7 +188,7 @@ describe("sitemaps and robots.txt", () => {
   });
 
   it("are named by the sitemap index and robots.txt", () => {
-    expect(locs(readFileSync(join(dist, "sitemap-index.xml"), "utf8"))).toEqual([`${QUIET}/sitemap-yi.xml`, `${QUIET}/sitemap-en.xml`]);
+    expect(locs(readFileSync(join(dist, "sitemap-index.xml"), "utf8"))).toEqual(EDS.map((e) => `${QUIET}/sitemap-${e}.xml`));
     const robots = readFileSync(join(dist, "robots.txt"), "utf8");
     expect(robots).toContain("User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /admin/\n");
     expect(robots).toContain(`Sitemap: ${QUIET}/sitemap-index.xml`);
@@ -192,7 +198,7 @@ describe("sitemaps and robots.txt", () => {
 // ------------------------------------------------------------------ About
 
 describe("About", () => {
-  it("exists in both editions with the notes anchor and every part", () => {
+  it("exists in every edition with the notes anchor and every part", () => {
     for (const ed of EDS) {
       const ids = idsOf(`/${ed}/about/`);
       for (const p of ABOUT_PARTS) expect(ids.has(p), `${ed} #${p}`).toBe(true);
@@ -210,15 +216,17 @@ describe("About", () => {
     expect(missing.slice(0, 20)).toEqual([]);
   });
 
-  it("shows the approved texts and a placeholder for every part still unwritten", () => {
+  it("shows the approved texts (or the next language's) and a placeholder for every part still unwritten", () => {
     const content = join(app, "src/content/about");
     for (const ed of EDS) {
       const main = mainOf(html(`/${ed}/about/`));
       for (const part of ABOUT_PARTS) {
-        const approved = existsSync(join(content, ed, `${part}.md`));
+        const textLang = CONTENT_FALLBACK[ed].find((l) => existsSync(join(content, l, `${part}.md`)));
+        const approved = textLang !== undefined;
         const section = new RegExp(`<section[^>]*id="${part}"[\\s\\S]*?</section>`).exec(main)?.[0] ?? "";
         expect(section, `${ed}/${part}`).toContain(approved ? 'class="about-text"' : `data-placeholder="${part}"`);
         expect(section, `${ed}/${part}`).not.toContain(approved ? "data-placeholder=" : 'class="about-text"');
+        if (approved && textLang !== ed) expect(section, `${ed}/${part}`).toContain(`class="about-text" lang="${textLang}" dir="${UI_DIR[textLang]}"`);
       }
       expect(main).toContain(`href="mailto:${FEEDBACK}"`);
       expect(main).toContain('data-placeholder="mashgiach"');

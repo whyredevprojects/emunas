@@ -1,5 +1,6 @@
 import type { UiLang } from "./lang.ts";
 import { formatNumber } from "./numbers.ts";
+import type { AudioLang } from "./script.ts";
 import { AI_LABEL } from "./vocab/ai-label.ts";
 
 /**
@@ -9,7 +10,9 @@ import { AI_LABEL } from "./vocab/ai-label.ts";
  * copy (navigation, buttons) stays in each app.
  *
  * Wording follows concept-quiet §5.4/§8/§11 and concept-live §2/§7/§9: plain,
- * no marketing voice; Yiddish speaks of "דער משגיח", English of "the Mashgiach".
+ * no marketing voice; Yiddish speaks of "דער משגיח", Hebrew of "המשגיח", English of
+ * "the Mashgiach". Every table is a `Record<UiLang, …>`, so a new language fails `tsc` until
+ * each label has it.
  * All wording is unreviewed (reviewStatus below) until the owner signs it off.
  */
 export const VOCABULARY_REVIEW_STATUS = "unreviewed" as const;
@@ -34,30 +37,28 @@ export type SectionKind =
 /** Mirrors `SourceMention["resolution"]` in src/types.ts. */
 export type Resolution = "resolved" | "inferred" | "unresolved";
 
-/** Spoken language of a recording (`Shiur["lang"]`). */
-export type AudioLang = "yi" | "en";
 
 export const CATEGORY_LABELS: Labels<Category> = {
-  parsha: { en: "Parshas Hashavua", yi: "פרשת השבוע" },
-  zman: { en: "Zmanim", yi: "זמנים" },
-  shonos: { en: "Various topics", yi: "שונות" },
-  set: { en: "Series", yi: "סדרות" },
-  simcha: { en: "Simchos", yi: "שמחות" },
-  misc: { en: "Miscellaneous", yi: "פארשידנס" },
-  current: { en: "Current", yi: "ענינים פון דער צייט" },
-  purim: { en: "Purim", yi: "פורים" },
+  parsha: { en: "Parshas Hashavua", yi: "פרשת השבוע", he: "פרשת השבוע" },
+  zman: { en: "Zmanim", yi: "זמנים", he: "זמנים" },
+  shonos: { en: "Various topics", yi: "שונות", he: "שונות" },
+  set: { en: "Series", yi: "סדרות", he: "סדרות" },
+  simcha: { en: "Simchos", yi: "שמחות", he: "שמחות" },
+  misc: { en: "Miscellaneous", yi: "פארשידנס", he: "כללי" },
+  current: { en: "Current", yi: "ענינים פון דער צייט", he: "ענייני השעה" },
+  purim: { en: "Purim", yi: "פורים", he: "פורים" },
 };
 
 export const SECTION_KIND_LABELS: Labels<SectionKind> = {
-  intro: { en: "Opening", yi: "הקדמה" },
-  main: { en: "Main part", yi: "עיקר השיעור" },
-  story: { en: "Story", yi: "מעשה" },
-  tangent: { en: "Aside", yi: "אגב" },
-  closing: { en: "Closing", yi: "סיום" },
-  brachah: { en: "Brachah", yi: "ברכה" },
-  singing: { en: "Singing", yi: "ניגון" },
-  other_speaker: { en: "Another speaker", yi: "אן אנדער רעדנער" },
-  noise: { en: "Interlude", yi: "הפסקה" },
+  intro: { en: "Opening", yi: "הקדמה", he: "פתיחה" },
+  main: { en: "Main part", yi: "עיקר השיעור", he: "עיקר השיעור" },
+  story: { en: "Story", yi: "מעשה", he: "מעשה" },
+  tangent: { en: "Aside", yi: "אגב", he: "אגב" },
+  closing: { en: "Closing", yi: "סיום", he: "סיום" },
+  brachah: { en: "Brachah", yi: "ברכה", he: "ברכה" },
+  singing: { en: "Singing", yi: "ניגון", he: "ניגון" },
+  other_speaker: { en: "Another speaker", yi: "אן אנדער רעדנער", he: "דובר אחר" },
+  noise: { en: "Interlude", yi: "הפסקה", he: "הפסקה" },
 };
 
 /**
@@ -66,20 +67,22 @@ export const SECTION_KIND_LABELS: Labels<SectionKind> = {
  * work is followed by "(place not identified)".
  */
 export const RESOLUTION_LABELS: Labels<Resolution> = {
-  resolved: { en: "", yi: "" },
-  inferred: { en: "apparently", yi: "לכאורה" },
-  unresolved: { en: "place not identified", yi: "מקום נישט באשטימט" },
+  resolved: { en: "", yi: "", he: "" },
+  inferred: { en: "apparently", yi: "לכאורה", he: "לכאורה" },
+  unresolved: { en: "place not identified", yi: "מקום נישט באשטימט", he: "המקום לא זוהה" },
 };
 
-export const LANGUAGE_NAMES: Labels<AudioLang> = {
-  yi: { en: "Yiddish", yi: "אידיש" },
-  en: { en: "English", yi: "ענגליש" },
+/** Names of the languages (audio languages and interface languages) in each interface language. */
+export const LANGUAGE_NAMES: Labels<UiLang> = {
+  en: { en: "English", yi: "ענגליש", he: "אנגלית" },
+  yi: { en: "Yiddish", yi: "אידיש", he: "אידיש" },
+  he: { en: "Hebrew", yi: "לשון קודש", he: "עברית" },
 };
 
 /** The audio-language mark on every card and citation line (concept-live §7). */
 export const AUDIO_LANGUAGE_LABELS: Labels<AudioLang> = {
-  yi: { en: "Shiur in Yiddish", yi: "שיעור אויף אידיש" },
-  en: { en: "Shiur in English", yi: "שיעור אויף ענגליש" },
+  yi: { en: "Shiur in Yiddish", yi: "שיעור אויף אידיש", he: "שיעור באידיש" },
+  en: { en: "Shiur in English", yi: "שיעור אויף ענגליש", he: "שיעור באנגלית" },
 };
 
 export type NoticeKey = "aiNotes" | "aiNotesShort" | "notesPending" | "uncatalogued" | "listedInGuide";
@@ -96,14 +99,16 @@ export const NOTICES: Labels<NoticeKey> = {
   notesPending: {
     en: "Notes for this shiur have not been prepared yet.",
     yi: "נאטיצן פאר דעם שיעור זענען נאך נישט צוגעגרייט.",
+    he: "הרשימות לשיעור זה עדיין לא הוכנו.",
   },
   /** A shiur that is not in the 2012 Pocket Guide (catalog.source "uncatalogued-guide"). */
   uncatalogued: {
     en: "Not listed in the 2012 Pocket Guide; its details are taken from the recording.",
     yi: "שטייט נישט אינעם פאקעט גייד פון 2012; די פרטים זענען גענומען פון דער רעקארדירונג.",
+    he: "אינו רשום במדריך הכיס משנת 2012; פרטיו נלקחו מההקלטה.",
   },
   /** A section the catalog title anticipated (`catalogTopicIdx`). */
-  listedInGuide: { en: "listed in the guide", yi: "שטייט אינעם קאטאלאג" },
+  listedInGuide: { en: "listed in the guide", yi: "שטייט אינעם קאטאלאג", he: "רשום בקטלוג" },
 };
 
 function label<K extends string>(table: Labels<K>, key: K, lang: UiLang): string {
@@ -113,20 +118,22 @@ function label<K extends string>(table: Labels<K>, key: K, lang: UiLang): string
 
 export const categoryLabel = (c: Category, lang: UiLang): string => label(CATEGORY_LABELS, c, lang);
 export const sectionKindLabel = (k: SectionKind, lang: UiLang): string => label(SECTION_KIND_LABELS, k, lang);
-export const languageName = (l: AudioLang, lang: UiLang): string => label(LANGUAGE_NAMES, l, lang);
+export const languageName = (l: UiLang, lang: UiLang): string => label(LANGUAGE_NAMES, l, lang);
 export const audioLanguageLabel = (l: AudioLang, lang: UiLang): string => label(AUDIO_LANGUAGE_LABELS, l, lang);
 export const notice = (k: NoticeKey, lang: UiLang): string => label(NOTICES, k, lang);
+
+const COVERAGE: Readonly<Record<UiLang, (done: string, all: string) => string>> = {
+  en: (done, all) => `Compiled from the ${done} shiurim that have notes so far, of ${all}.`,
+  yi: (done, all) => `צוזאמגעשטעלט פון די ${done} שיעורים וואס האבן שוין נאטיצן, פון ${all}.`,
+  he: (done, all) => `לוקט מ־${done} השיעורים שכבר יש להם רשימות, מתוך ${all}.`,
+};
 
 /**
  * The coverage line under each AI-derived index heading (concept-quiet §10):
  * "Compiled from the 518 shiurim that have notes so far, of 997."
  */
 export function coverageNotice(withNotes: number, total: number, lang: UiLang): string {
-  const done = formatNumber(withNotes, lang);
-  const all = formatNumber(total, lang);
-  return lang === "en"
-    ? `Compiled from the ${done} shiurim that have notes so far, of ${all}.`
-    : `צוזאמגעשטעלט פון די ${done} שיעורים וואס האבן שוין נאטיצן, פון ${all}.`;
+  return COVERAGE[lang](formatNumber(withNotes, lang), formatNumber(total, lang));
 }
 
 export interface SourceRefInput {

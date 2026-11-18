@@ -3,7 +3,8 @@ import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
-import { fontManifest, preloadFonts } from "../src/index.ts";
+import { UI_DIR, UI_LANGS } from "@emunas/i18n";
+import { LANG_SCRIPT, fontManifest, langsOfScript, preloadFonts } from "../src/index.ts";
 import { parseUnicodeRange, readWoff2 } from "./woff2.ts";
 
 const pkg = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -147,5 +148,17 @@ describe("preloadFonts", () => {
     expect(preloadFonts("serif", "en")).toEqual(["source-serif-4-latin.woff2"]);
     expect(preloadFonts("sans", "yi")).toEqual(["noto-sans-hebrew-hebrew.woff2"]);
     expect(preloadFonts("sans", "en")).toEqual(["noto-sans-latin.woff2"]);
+    // Hebrew takes the Hebrew body faces, as Yiddish does.
+    expect(preloadFonts("serif", "he")).toEqual(["frank-ruhl-libre-hebrew.woff2"]);
+    expect(preloadFonts("sans", "he")).toEqual(["noto-sans-hebrew-hebrew.woff2"]);
+  });
+
+  it("every interface language has a script, and every rtl language is set in Hebrew", () => {
+    for (const l of UI_LANGS) {
+      expect(LANG_SCRIPT[l]).toMatch(/^(latin|hebrew)$/);
+      if (UI_DIR[l] === "rtl") expect(LANG_SCRIPT[l]).toBe("hebrew");
+      expect(preloadFonts("serif", l)).toHaveLength(1);
+    }
+    expect(langsOfScript("hebrew")).toEqual(["yi", "he"]);
   });
 });

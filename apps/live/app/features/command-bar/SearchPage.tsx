@@ -207,7 +207,7 @@ function Body(props: {
   state: FullState;
   more: () => void;
   ui: UiLang;
-  read: Ed;
+  read: UiLang;
   rows: ReadonlyMap<string, CorpusRow>;
   audioFilter: "both" | Ed;
 }): JSX.Element {

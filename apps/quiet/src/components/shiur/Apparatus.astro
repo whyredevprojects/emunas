@@ -12,10 +12,15 @@
  * layer, in the edition's spelling, each marked `data-story-person` for the guard; the extraction's
  * raw names (possible ASR mishearings) are never printed (F.1). No teaching-cluster (עיין) lines in
  * this cut.
+ *
+ * Every generated text is shown in the edition's language, else the fallback along
+ * `CONTENT_FALLBACK`, and carries the `lang`/`dir` of the language shown.
  */
-import { corpusLabel } from "@emunas/i18n";
+import { corpusLabel, pickText, type LocalizedText } from "@emunas/i18n";
 import type { PublicNotes, PublicRecording } from "@emunas/corpus/public";
 import Time from "./Time.astro";
+import { forwardArrow, nameAttrs } from "../../lib/bidi.ts";
+import { langAttrsIn, shownText } from "../../lib/content.ts";
 import type { Ed } from "../../lib/edition.ts";
 import { useShiurT } from "./strings.ts";
 import type { NamedLink, StoryLine } from "./refs.ts";
@@ -30,7 +35,7 @@ interface Props {
 }
 
 const { ed, notes, recordings, stories = new Map<string, StoryLine>() } = Astro.props;
-const arrow = ed === "yi" ? "←" : "→";
+const arrow = forwardArrow(ed);
 const t = useShiurT(ed);
 const moments = [
   { id: "key-points", heading: t("keyPoints.heading"), items: notes.summary.keyPoints },
@@ -38,7 +43,12 @@ const moments = [
   { id: "takeaways", heading: t("takeaways.heading"), items: notes.takeaways },
 ] as const;
 const [keyPoints, insights, takeaways] = moments;
-const attrs = (n: NamedLink) => (n.hebrew ? { lang: ed === "yi" ? "yi" : "he", dir: "rtl" } : { lang: "en", dir: "ltr" });
+const attrs = (n: NamedLink) => nameAttrs(n.hebrew, ed);
+/** A generated text for the edition (its language, else the fallback), with that language's lang/dir. */
+const shown = (text: LocalizedText) => {
+  const p = pickText(text, ed);
+  return { text: p.text, attrs: langAttrsIn(p, ed) };
+};
 ---
 {hasApparatus(notes) && (
   <div class="apparatus" id="apparatus">
@@ -47,7 +57,7 @@ const attrs = (n: NamedLink) => (n.hebrew ? { lang: ed === "yi" ? "yi" : "he", d
         <h2 id={`${m.id}-heading`}>{m.heading}</h2>
         <ol role="list" class="moment-list">
           {m.items.map((item) => (
-            <li>{item.t !== null && <><Time ed={ed} recordings={recordings} t={item.t} />{" "}</>}{item.text[ed]}</li>
+            <li>{item.t !== null && <><Time ed={ed} recordings={recordings} t={item.t} />{" "}</>}<span {...shown(item.text).attrs}>{shown(item.text).text}</span></li>
           ))}
         </ol>
       </section>
@@ -61,12 +71,12 @@ const attrs = (n: NamedLink) => (n.hebrew ? { lang: ed === "yi" ? "yi" : "he", d
               <p class="qa-q">
                 <span class="qa-label">{t("questions.q")}:</span>{" "}
                 {q.tq !== null && <><Time ed={ed} recordings={recordings} t={q.tq} />{" "}</>}
-                {q.q[ed]}
+                <span {...shown(q.q).attrs}>{shown(q.q).text}</span>
               </p>
               <p class="qa-a">
                 <span class="qa-label">{t("questions.a")}:</span>{" "}
                 {q.ta !== null && <><Time ed={ed} recordings={recordings} t={q.ta} />{" "}</>}
-                {q.a[ed]}
+                <span {...shown(q.a).attrs}>{shown(q.a).text}</span>
               </p>
             </li>
           ))}
@@ -79,13 +89,15 @@ const attrs = (n: NamedLink) => (n.hebrew ? { lang: ed === "yi" ? "yi" : "he", d
         <ol role="list" class="story-list">
           {notes.stories.map((s) => {
             const line = stories.get(s.id);
+            const title = shown(s.title);
+            const retelling = shownText(s.retelling, ed);
             return (
             <li class="story">
               <h3 class="story-title">
                 {s.t !== null && <><Time ed={ed} recordings={recordings} t={s.t} />{" "}</>}
-                {s.title[ed]}
+                <span {...title.attrs}>{title.text}</span>
               </h3>
-              {s.retelling[ed] !== "" && <p>{s.retelling[ed]}</p>}
+              {retelling && <p {...langAttrsIn(retelling, ed)}>{retelling.text}</p>}
               {line && line.people.length > 0 && (
                 <p class="story-people">
                   {t("stories.people")}{" "}
@@ -114,7 +126,7 @@ const attrs = (n: NamedLink) => (n.hebrew ? { lang: ed === "yi" ? "yi" : "he", d
         <h2 id={`${m.id}-heading`}>{m.heading}</h2>
         <ol role="list" class="moment-list">
           {m.items.map((item) => (
-            <li>{item.t !== null && <><Time ed={ed} recordings={recordings} t={item.t} />{" "}</>}{item.text[ed]}</li>
+            <li>{item.t !== null && <><Time ed={ed} recordings={recordings} t={item.t} />{" "}</>}<span {...shown(item.text).attrs}>{shown(item.text).text}</span></li>
           ))}
         </ol>
       </section>

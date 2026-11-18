@@ -84,9 +84,9 @@ Exact versions: pin exact versions in the scaffold task (W0), taking the newest 
 
 ### i18n and RTL
 
-- UI strings: typed dictionaries `apps/live/app/i18n/{en,yi}.ts` with a `t(key, params)` that fails typecheck on a missing key. Plurals use `Intl.PluralRules` (`yi` is supported). Hebrew years go through `@hebcal/core` gematriya (`תשל"ו`) with the numeric year secondary.
+- UI strings: typed dictionaries `apps/live/app/i18n/{en,yi,he}.ts`, one per `UI_LANGS` language, with a `t(key, params)` that fails typecheck on a missing key or a missing language. Plurals use `Intl.PluralRules` (`yi` and `he` are supported; Hebrew `two` falls back to `other` where a message leaves it out). Hebrew years go through `@hebcal/core` gematriya (`תשל"ו`) with the numeric year secondary.
 - Data strings: every rendered data string is wrapped in `<bdi>` or carries `dir="auto"` (component `<Text value lang>`), because catalog titles mix scripts (`The קדושה of צדיקים`). Nothing is transliterated or rewritten.
-- `lang` attributes: the en text of a generated item gets `lang="en"`. The yi text gets `lang="yi"`. Catalog originals get `lang="he"` if they are Hebrew script, else `en`.
+- `lang` attributes: a generated text carries the language of the text actually shown (`pickText` / `pickLocalized` from `@emunas/i18n`): `en`, `yi`, or `he`; on a Hebrew interface a text with no current Hebrew translation falls back to Yiddish, then English, and keeps `lang="yi"` / `lang="en"` (integration-plan §2.4). Catalog originals in Hebrew script get `langFor(text, shiur.lang, ui)`: `he` in the Hebrew interface, `yi` for a Yiddish shiur otherwise, else `he`; Latin text gets `en`.
 - Fonts: self-hosted woff2, subset to Hebrew + Latin: one serif for Hebrew headings and one sans for UI. `font-display: swap` with metric-matched fallbacks.
 - Mirroring: the shell (rail, dock, list order, chevrons) mirrors with `dir`. The audio progress bar follows a `progressDirection` setting (default `rtl` in yi mode; this is concept decision 8) and is implemented with logical `inset-inline-start`.
 
@@ -145,6 +145,7 @@ The build reads only these, through `packages/corpus` `readDataFile()`, which as
 | `data/derived/shiurim/<id>/meta.json` | `recordings[].starts`, `ends`, `durationSec`, `noise`, `asrModel`, `catalogTopics` |
 | `data/derived/shiurim/<id>/extraction.json` | Summaries, sections, sources, insights, stories, questions, takeaways, concepts, people, candidateTopics (topics are not displayed, see below) |
 | `data/derived/shiurim/<id>/writeup.json` | en/yi write-up |
+| `data/derived/shiurim/<id>/i18n/<lang>.json` | translation overlay (he): applied by `corpus:build` while its source hash is current (integration-plan §2.4) |
 
 It **never** opens `data/transcripts/**`, `**/input.txt`, `data/derived/audits/**`, `out/**`, or `data/catalog/*.pdf`. (`ingest.json` already carries the catalog fields, so `data/catalog/*.json` is not needed. If a field turns out to be missing, add `pocket-guide-2012.json` to the allowlist.) An ESLint `no-restricted-syntax` rule also bans the literals `transcripts`, `input.txt` and `audits` in `apps/live/build` and `packages/corpus`, with `packages/corpus-guard` exempt.
 
@@ -196,7 +197,7 @@ type L = { en: string; yi: string };
 type Moment = { id: string; text: L; t: number; end: number; soft?: true };
 ```
 
-Write-up per language, lazily loaded (`/data/writeup/<id>.<en|yi>.json`, about 9 KB raw each): `{ blocks: { sectionIndex, heading, paragraphs: { text, sourceIdx, t, end }[] }[] }`.
+Write-up per language, lazily loaded (`/data/writeup/<id>.<lang>.json` for each language the shiur's write-up has: en and yi, and he when fully translated; about 9 KB raw each): `{ blocks: { sectionIndex, heading, paragraphs: { text, sourceIdx, t, end }[] }[] }`.
 
 **Moment ids** are `<shiurId>~<kind><index>` (`s3`, `i2`, `q0`, `st1`, `tk4`, `kp0`). Indices can shift if a shiur is re-extracted, so every link also carries `t`. On a dangling `m` the client falls back to `t`.
 
@@ -204,7 +205,7 @@ Write-up per language, lazily loaded (`/data/writeup/<id>.<en|yi>.json`, about 9
 
 | Output | Content | Size target (at completion) |
 |---|---|---|
-| `/data/corpus.json` | One row per shiur: id, rev, lang, category, title, oneLiner (en/yi), parsha/occasion ids, years, series/order/perek, duration, status, derived flag, entity id arrays (works/people/concepts, ids only), counts (stories, questions) | ≤ 150 KB br |
+| `/data/corpus.json` | One row per shiur: id, rev, lang, category, title, oneLiner (`LocalizedText`: en/yi, he when translated), parsha/occasion ids, years, series/order/perek, duration, status, derived flag, entity id arrays (works/people/concepts, ids only), counts (stories, questions) | ≤ 150 KB br |
 | `/data/facets.json` | Facet dictionaries (id → labels en/yi/he, count) | ≤ 60 KB br |
 | `/data/today.json` | Occasion → shiur ids ordered by year; "moment of the day" candidate pools per occasion; newly summarized (from `manifest.updatedAt`) | ≤ 30 KB br |
 | `/data/shiur/<id>.json` ×997 | above | ≤ 40 KB br each |
@@ -305,7 +306,7 @@ Optional sync (later, decision D4): a `sync` Worker with a D1 table per user (`u
 
 - Service worker (hand-written; Workbox is optional): precache the shell; `/data/*` stale-while-revalidate with a size cap; `/audio/*` is network-only unless downloaded.
 - Downloads: fetch the full mp3 (with `?dl=1`) into Cache Storage `audio-v1` and request `navigator.storage.persist()`. The SW answers `Range` requests for downloaded files by slicing the cached Blob into 206 responses, which iOS needs. The shiur and write-up JSON are pinned with the audio.
-- `manifest.webmanifest` with en/yi names. The shell works offline. Search offline uses MiniSearch.
+- `manifest.webmanifest` with a name per interface language. The shell works offline. Search offline uses MiniSearch.
 
 ---
 
@@ -352,9 +353,9 @@ The `trigram` table exists because Hebrew and Yiddish attach prefixes to words (
 ### 5.4 Search Worker API (`workers/search`)
 
 ```
-GET /api/search?q=&ui=en|yi&audio=yi,en&kind=section,insight,…&category=&occasion=&series=
+GET /api/search?q=&ui=en|yi|he&audio=yi,en&kind=section,insight,…&category=&occasion=&series=
                &yearFrom=&yearTo=&work=&person=&concept=&mode=hybrid|lexical|semantic&limit=20&cursor=
-→ 200 { rev, tookMs, results: [{ momentId, shiurId, kind, t, end, title: {en,yi}, matched: "section|insight|story|source|writeup|…",
+→ 200 { rev, tookMs, results: [{ momentId, shiurId, kind, t, end, title: {en,yi,he} /* null where missing */, matched: "section|insight|story|source|writeup|…",
                                   snippet?: string /* from generated text only, <mark> by offsets */, score }],
         groups: [{ shiurId, count }], next?: string }
 GET /api/similar?moment=<id>&limit=10   → neighbours from Vectorize (fallback when not precomputed)
@@ -400,7 +401,7 @@ Loudness-normalized, lower-bitrate mobile variants (for example AAC 64 kbps) bui
 ```
 POST /api/feedback  { target: { shiurId, momentId?, field?: "source|person|time|summary|other" },
                       reason: "wrong-source|wrong-name|wrong-time|misrepresents|other",
-                      text?: string(≤1000), ui: "en|yi", rev: string, turnstile: string }
+                      text?: string(≤1000), ui: "en|yi|he", rev: string, turnstile: string }
 → 202 { id }
 GET  /admin/feedback?status=open  (Cloudflare Access protected) → JSON / CSV
 ```

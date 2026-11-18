@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { firstStrongDir, isolate, langFor, scriptOf, stripBidiControls } from "../src/index.ts";
+import { UI_LANGS, firstStrongDir, hebrewScriptLang, isolate, langFor, scriptOf, stripBidiControls } from "../src/index.ts";
 
 describe("scriptOf", () => {
   it("handles the mixed catalog title from the brief", () => {
@@ -36,19 +36,55 @@ describe("firstStrongDir", () => {
 
 describe("langFor", () => {
   it("gives lang/dir for mixed titles", () => {
-    expect(langFor("The קדושה of צדיקים", "en")).toEqual({ lang: "en", dir: "ltr", script: "mixed" });
-    expect(langFor("The קדושה of צדיקים", "yi")).toEqual({ lang: "en", dir: "ltr", script: "mixed" });
-    expect(langFor("המקוה והתיבה הם כמו embassy של שמים על הארץ", "yi")).toEqual({
+    expect(langFor("The קדושה of צדיקים", "en", "en")).toEqual({ lang: "en", dir: "ltr", script: "mixed" });
+    expect(langFor("The קדושה of צדיקים", "yi", "yi")).toEqual({ lang: "en", dir: "ltr", script: "mixed" });
+    expect(langFor("המקוה והתיבה הם כמו embassy של שמים על הארץ", "yi", "yi")).toEqual({
       lang: "yi",
+      dir: "rtl",
+      script: "mixed",
+    });
+    expect(langFor("המקוה והתיבה הם כמו embassy של שמים על הארץ", "yi", "he")).toEqual({
+      lang: "he",
       dir: "rtl",
       script: "mixed",
     });
   });
 
   it("uses the shiur language to tell Yiddish from Hebrew in Hebrew script", () => {
-    expect(langFor("ענין חנוכה", "yi")).toEqual({ lang: "yi", dir: "rtl", script: "he" });
-    expect(langFor("צדיקים", "en")).toEqual({ lang: "he", dir: "rtl", script: "he" });
-    expect(langFor("The Mashgiach on Chanukah", "yi")).toEqual({ lang: "en", dir: "ltr", script: "latin" });
+    expect(langFor("ענין חנוכה", "yi", "yi")).toEqual({ lang: "yi", dir: "rtl", script: "he" });
+    expect(langFor("ענין חנוכה", "yi", "en")).toEqual({ lang: "yi", dir: "rtl", script: "he" });
+    expect(langFor("צדיקים", "en", "yi")).toEqual({ lang: "he", dir: "rtl", script: "he" });
+    expect(langFor("The Mashgiach on Chanukah", "yi", "yi")).toEqual({ lang: "en", dir: "ltr", script: "latin" });
+  });
+
+  it("reads Hebrew-script text as Hebrew in the Hebrew edition", () => {
+    expect(langFor("ענין חנוכה", "yi", "he")).toEqual({ lang: "he", dir: "rtl", script: "he" });
+    expect(langFor("צדיקים", null, "he")).toEqual({ lang: "he", dir: "rtl", script: "he" });
+    expect(langFor("The Mashgiach on Chanukah", "yi", "he")).toEqual({ lang: "en", dir: "ltr", script: "latin" });
+  });
+
+  it("follows the edition for strings that belong to no one shiur", () => {
+    expect(langFor("ענין חנוכה", null, "yi").lang).toBe("yi");
+    expect(langFor("ענין חנוכה", null, "en").lang).toBe("he");
+  });
+});
+
+describe("hebrewScriptLang", () => {
+  it("is he in the Hebrew edition, otherwise yi only in a Yiddish context", () => {
+    const rows = (["yi", "en", null] as const).flatMap((shiur) =>
+      UI_LANGS.map((ed) => `${shiur ?? "-"}/${ed} → ${hebrewScriptLang(shiur, ed)}`),
+    );
+    expect(rows).toEqual([
+      "yi/en → yi",
+      "yi/yi → yi",
+      "yi/he → he",
+      "en/en → he",
+      "en/yi → he",
+      "en/he → he",
+      "-/en → he",
+      "-/yi → yi",
+      "-/he → he",
+    ]);
   });
 });
 
